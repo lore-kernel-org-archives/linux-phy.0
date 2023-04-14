@@ -4,87 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D5D9C77B6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 16:44:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF534C77B71
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 20:54:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I00Rs4EWvY7XZj1S6lDpu7NZJy3hXibwLTqJcD3vzgw=; b=nVmSZ7FqTERkT0
-	VuAGIm45tHcfCz0OF5CiBOBohbGhL9uEn/GEQ/goRtYV7lYps/InQCTPmL+AJM00txwf/6p+TZNnP
-	Wb1pnAOuQOgCpnapqUjQFTMk0raZL64Y2gEQjDgrNNxZUheOCSERiHZ5bwfpkURkI2bSnBkF21+4c
-	lsI7t/IMP72sdcQQOfI3Y0cDBRhNZrE0FB8zsAq/doIz+BzzLYH4BePr7mkjbf6OzDyR+CaWw3Gmq
-	NtadZwOqp7V299mOefY7Zmyy64FDFB16QJrONHtvjGKGZqVbG/KeQtwZF6+yeUcH3rnjsEFNIXm2j
-	IzV6K4VT18/VEvDshSYw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/xgl8vZzdbkVRl0yENsc4pUE5wR2qQgVNJnKeKqCh30=; b=L5V+3GPSlLgy1R
+	xYzKTYvB0oQ1DDt9J7aj9l4FZhVVnhbdtDUzMglKCek/iMKGA/+MJQUmR3K+XxjOugDXDLTZSwLpX
+	QWcPHwX/DVkA7BqsgFfMhk6ComMqeIdfpzpOzZqtftCFMzQeDJQbBTp6cACueAE9B4YI3ndVPGQ05
+	IikA+BC0ZdDXuD1RUWJ0WdKUDat8elE+NoxzByImkdpQCb3V9wybifkwA8dY2CKOaHWCrc3VOIz6N
+	kSuyJbjP2zufnUbZvhA49STKXwf0UlaD1uMH/eTXrV30RR5AdVzDzEDQE1p6K/z6+c+EGXSoc8h2k
+	ITY8cEvjSsB1C+c1Gdng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnMXR-00A8pG-2Q;
-	Fri, 14 Apr 2023 16:44:41 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1pnQRG-00AYFB-1S;
+	Fri, 14 Apr 2023 20:54:34 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnMXM-00A8n8-2c;
-	Fri, 14 Apr 2023 16:44:38 +0000
-Received: by mail-wr1-x434.google.com with SMTP id e16so4882377wra.6;
-        Fri, 14 Apr 2023 09:44:34 -0700 (PDT)
+	id 1pnQRC-00AYEW-0r
+	for linux-phy@lists.infradead.org;
+	Fri, 14 Apr 2023 20:54:31 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-4eca19c3430so52916e87.1
+        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 13:54:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681490673; x=1684082673;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=/ExngqUZl/pg1Kd6E34uU7m6iwz6q/2qwB8gBrD6lrQ=;
-        b=GhkswUhAKDkCiKoc9t/eyiaF53+6JyxpB18rycr+qlp/lNeetlGLuu6GC3ZG8hfb3p
-         fqfpoGQ1pqAOcdlI8Y+sJ72mfNnaJ4FPwqnqMuQ+izLObeSwa41gXQt8sJodv5jGa/0T
-         DCHyxVmFTXoiZAJKFeYg2l3HyO7R7QqyznuMMRwhr31tpWeC+kKGYa4XZgae5wk9hU5v
-         VC7eE6Gxz4FTNBR5+PHuTW33T3KogEu+IssYXh1wsleN/owJgoVClrGYWJ1UOi2BxTfn
-         OAH2m6K62WkIgosirUt4RSz7l1iPN9jNIyueDp5i7cjxMfGJCzjb0B8HHgaz47wDrAyd
-         iNkA==
+        d=linaro.org; s=google; t=1681505667; x=1684097667;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=a9cFFq/KYsVmXdRW5BoGPPdCt3V+TRMXS12ipPluoCk=;
+        b=I38UCYH84Rgc9hSzF3d2E2pCxutrAD4gaIrN8dF/9+lawahHToFCecs36OEG3hJfCm
+         wwDbAYe7A7us0KJu6Vlh9P1c+KrZqmfr0L9CPuqD6CuY2rdxVi4xthUy7qvgF7vv+JUz
+         nHJdRyfGX6DH7bDV552BBN603R7e2ZquCWFaePWN+sUnCuDnTOKqaeHx+IGg9QnDWCkr
+         UFz7ECuzpnEhLHt7S4mDBzMijvO5/qplA0snuhvjPEfRW5jdNN/7Gb0Ysxy+5ONK5sVY
+         c2WPXNBgibr7UWfyqJwLPVrtUcTWii8o5vOFfyiEADAqyKn/tsGKrd02gbKGlbrhMDXo
+         PdZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681490673; x=1684082673;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=/ExngqUZl/pg1Kd6E34uU7m6iwz6q/2qwB8gBrD6lrQ=;
-        b=A64x2V9SId03yf8vYto2lhCFRIFl9vTx6MjIY/3+mBU1G6pBCokOvD4Wy78wx8Cyfg
-         XksnN2Kzj4piPb2VXEx01TAkRmvNP6zc+aXGXEHHBhx9/hA2xaJyPkqBQAz1KbalSpr/
-         BI+9X+6nxXN0Wyf6hBTE7HdHTAk6HBLncXzbZOHPOXSw9mm293WAuePVba4Bje1i4DUR
-         sQ/VEQpPPM/8CPZTGjN3cFO0+E0OrQ8UReYA0k7ktnqvhfb32VTsymC4SMx0UVxVr3M/
-         UU2njhh3qfkZ59l9uwFKVNxAoyXkjqMbPMDKWXKUesJ4kpGlblucnzKM0x2kMtK7zUNW
-         p7Yg==
-X-Gm-Message-State: AAQBX9dFWPVIV869oG6x0AKqyllX+PwiT+ay822elryEFVPVicwCoJf1
-	i8WGBzbgkZqjhOYDbJZs7Z/rwP6THJCFRg==
-X-Google-Smtp-Source: AKy350bpkl/XH9EejX97SLMedFqNtcocLz0dofiURStn1ZlIYfmxrsXsRPyGC/UDwV0n9ZyuKK9coQ==
-X-Received: by 2002:adf:ed45:0:b0:2f7:faa0:3f19 with SMTP id u5-20020adfed45000000b002f7faa03f19mr349951wro.28.1681490673410;
-        Fri, 14 Apr 2023 09:44:33 -0700 (PDT)
-Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id r16-20020a056000015000b002f21a96c161sm3936139wrx.70.2023.04.14.09.44.31
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 14 Apr 2023 09:44:32 -0700 (PDT)
-Message-ID: <8e40e46a-edf4-96c5-7248-21f39a93a410@gmail.com>
-Date: Fri, 14 Apr 2023 18:44:30 +0200
+        d=1e100.net; s=20221208; t=1681505667; x=1684097667;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=a9cFFq/KYsVmXdRW5BoGPPdCt3V+TRMXS12ipPluoCk=;
+        b=CpVDg6crot4/Mm5nXMaY3RuUs+8dE1VY9ALFSCYnNgzae9IyfNOHQbd2NMrPP6dE4r
+         v9zFNUha8qYULiN+nHK9v6ATp2drxkVjGiK5110j9ZxtWPBPUW+k191t9ME4ClzA6Hoy
+         dXvhGYxb7bcxzpK6PvSFC7cVMC0KuX+deuqffIzcXei76V51mk3mCu/HHA7B/RMBd6By
+         41K+I+BdP+4hmsTPeSpBKBsxdCrOGfKlCidvSSMqnxhA8MOEp5QyBwJp9FYaWi88DA2g
+         S9NKuWtrVYWdWWlo7pwJyYKLlo81uVaGZmAK76jrATwe/ALbdpRIcN7sRQ3mqXlke6OL
+         wWmA==
+X-Gm-Message-State: AAQBX9dVssUa6TtQLTM5DZvV8lvdXWBbHU2S4Pz2Ff03NBMEcq9TnIYl
+	ja9RTCRiqXtisyjJBpfVVdFyyw==
+X-Google-Smtp-Source: AKy350aIc+knsXz3Ima8K4XlqscLTViTEtHan5itjvGxmj/JhSbh1Igh+tw0ubW9oYJa0nxQySG4ZQ==
+X-Received: by 2002:a05:6512:946:b0:4db:26b1:ec52 with SMTP id u6-20020a056512094600b004db26b1ec52mr39253lft.59.1681505667285;
+        Fri, 14 Apr 2023 13:54:27 -0700 (PDT)
+Received: from eriador.lan (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
+        by smtp.gmail.com with ESMTPSA id d25-20020ac241d9000000b004ec87fb5ebcsm959734lfi.286.2023.04.14.13.54.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Apr 2023 13:54:26 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH] phy: qcom-qmp-pcie: correct sm8350 PHY tables
+Date: Fri, 14 Apr 2023 23:54:25 +0300
+Message-Id: <20230414205425.3878902-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH v2 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
- variable usage in pll_calc
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
-References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
- <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_094436_853906_6BE4148B 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20230414_135430_431699_989C76AB 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,65 +89,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Correct sm8350 PCIe PHY tables according to the vendor dtsi file.
+This accounts some additional differences between PHY programming on
+sm8350 and sm8450.
 
+The name for the PCS register 0x8 is not present in the vendor kernels,
+but since on other generations the register prior to POWER_STATE_CONFIG2
+is called POWER_STATE_CONFIG1, we can establish that as its name.
 
-On 14/04/2023 18:07, Guillaume Ranquet wrote:
-> The ret variable in mtk_hdmi_pll_calc() was used unitialized as reported
-> by the kernel test robot.
-> 
-> Fix the issue by removing the variable altogether and testing out the
-> return value of mtk_hdmi_pll_set_hw()
-> 
-> Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
-> Reported-by: kernel test robot <lkp@intel.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+Fixes: c70052739d16 ("phy: qcom-qmp-pcie: add support for sm8350 platform")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 42 +++++++++++++++----
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  1 +
+ 2 files changed, 35 insertions(+), 8 deletions(-)
 
-Looks good, but got unfortunately already fixed 4 hours ago with
-20230414122253.3171524-1-trix@redhat.com
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 5182aeac43ee..cd3e031bf506 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1265,10 +1265,10 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen3_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE0, 0x07),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE1, 0x06),
+-	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
+ };
+ 
+ static const struct qmp_phy_init_tbl sm8450_qmp_gen3x1_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_BUF_ENABLE, 0x07),
+ };
+ 
+@@ -1321,11 +1321,16 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
+ };
+ 
++static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_BUF_ENABLE, 0x07),
++};
++
+ static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_4, 0x3f),
+-	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x1d),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x0c),
+ };
+ 
+@@ -1334,6 +1339,25 @@ static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_rc_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x3f),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x07),
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_PI_CONTROLS, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_TERM_AC_BYPASS_DC_COUPLE_OFFSET, 0x18),
++};
++
++static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RX_SIGDET_LVL, 0xa8),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RATE_SLEW_CNTRL1, 0x0b),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x05),
++};
++
++static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_EQ_CONFIG2, 0x0f),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG1, 0x0f),
++	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
++};
++
++static const struct qmp_phy_init_tbl sm8350_qmp_gen3x2_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
+ };
+ 
+ static const struct qmp_phy_init_tbl sm8350_qmp_gen3x2_pcie_rc_rx_tbl[] = {
+@@ -2325,15 +2349,15 @@ static const struct qmp_phy_cfg sm8350_qmp_gen3x1_pciephy_cfg = {
+ 		.tx_num		= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_tx_tbl),
+ 		.rx		= sm8450_qmp_gen3_pcie_rx_tbl,
+ 		.rx_num		= ARRAY_SIZE(sm8450_qmp_gen3_pcie_rx_tbl),
+-		.pcs		= sm8450_qmp_gen3_pcie_pcs_tbl,
+-		.pcs_num	= ARRAY_SIZE(sm8450_qmp_gen3_pcie_pcs_tbl),
+-		.pcs_misc	= sm8450_qmp_gen3x1_pcie_pcs_misc_tbl,
+-		.pcs_misc_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_pcs_misc_tbl),
++		.pcs		= sm8350_qmp_gen3x1_pcie_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_pcs_tbl),
++		.pcs_misc	= sm8350_qmp_gen3x1_pcie_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_pcs_misc_tbl),
+ 	},
+ 
+ 	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
+-		.serdes		= sm8450_qmp_gen3x1_pcie_rc_serdes_tbl,
+-		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_rc_serdes_tbl),
++		.serdes		= sm8350_qmp_gen3x1_pcie_rc_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_rc_serdes_tbl),
+ 		.rx		= sm8350_qmp_gen3x1_pcie_rc_rx_tbl,
+ 		.rx_num		= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_rc_rx_tbl),
+ 	},
+@@ -2369,6 +2393,8 @@ static const struct qmp_phy_cfg sm8350_qmp_gen3x2_pciephy_cfg = {
+ 	},
+ 
+ 	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
++		.serdes		= sm8350_qmp_gen3x2_pcie_rc_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sm8350_qmp_gen3x2_pcie_rc_serdes_tbl),
+ 		.rx		= sm8350_qmp_gen3x2_pcie_rc_rx_tbl,
+ 		.rx_num		= ARRAY_SIZE(sm8350_qmp_gen3x2_pcie_rc_rx_tbl),
+ 		.pcs		= sm8350_qmp_gen3x2_pcie_rc_pcs_tbl,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
+index a469ae2a10a1..ea466e14ca12 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
+@@ -8,6 +8,7 @@
+ #define QCOM_PHY_QMP_PCS_PCIE_V5_H_
+ 
+ /* Only for QMP V5 PHY - PCS_PCIE registers */
++#define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG1		0x08
+ #define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
+ #define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG4		0x14
+ #define QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x20
+-- 
+2.39.2
 
-:)
-
-Regards,
-Matthias
-
-> ---
->   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 8 ++------
->   1 file changed, 2 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> index abfc077fb0a8..054b73cb31ee 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> @@ -213,7 +213,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->   	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
->   	u8 txpredivs[4] = { 2, 4, 6, 12 };
->   	u32 fbkdiv_low;
-> -	int i, ret;
-> +	int i;
->   
->   	pixel_clk = rate;
->   	tmds_clk = pixel_clk;
-> @@ -292,13 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->   	if (!(digital_div <= 32 && digital_div >= 1))
->   		return -EINVAL;
->   
-> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
-> +	return mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
->   			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
->   			    txposdiv, digital_div);
-> -	if (ret)
-> -		return -EINVAL;
-> -
-> -	return 0;
->   }
->   
->   static int mtk_hdmi_pll_drv_setting(struct clk_hw *hw)
-> 
 
 -- 
 linux-phy mailing list
