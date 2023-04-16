@@ -4,101 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA00AC77B61
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 14:45:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78DD0C77B77
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 15:12:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n4SiwWrI1FKtGCDkPwV0THeLuf3wO8t4hxwTwMWslUg=; b=BptoaLCDHfDVur
-	A6UprdwkgSQLTCd35U0LVPZHQXmoh5Cu85gchbhMvI88DeMQnJeRsTwYxMzuNyqZlCVIJT+LiBzQu
-	250BrYx54ThWGO7NiM4Kn8IppZa+8BNZsMM3t2k1wMse4JNmJ+L8DlIVnb6TwgEvK2ZpwhaUFl/MS
-	V2seg+3l/roidoHhon9HsmVlgegmDpQ1O2Nyfz7LFeLX9aubtIwPPH4gGbWEq1DZd4etqaRAfQIaS
-	NnGS6byWdXM5YQlZf7/tlqfNJwIwU8NA7fiwdMy3xFDtHSjv6KPfx+Hhczuraih15D43VMbAXV0+c
-	h42cQizVFJkp/Dw1nW9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ubN4d7fXgZSZu33OK30rGA8pAm/R/YX58tsaN0F2sKI=; b=bwupX7ZwkZvCLV
+	4ViLueVRBcC4b+cEo/mvxFdFGhvya7ZzptrC2b+YnifgBzJP8x7dtIVd3kpPoDP5fuDUnjJU7Okgk
+	64Kdvv2ehNqjV6+YL834qFcdnNcpUPsdRVGgtpyUZlaCCLAM/KTwSNIf7EEXfEBSb/CjkWnuk2sZV
+	Ct0eIknN0gkDv9qcvXn8/Ubglj46A3sHc6lbR/hMs11yuTe6w+FMx+NwEN+VrmgQfYrJR/JCfzK2u
+	7MiVx6XIe+goAPLTO3sMXZs2qEjT8S6DqJdmKJpztScBsCTK4nxlC2C3lEefD0PPFqZeykb+sgtqt
+	5mcWcJ7YryEsqf7OxfaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1po3cu-00DybA-1R;
-	Sun, 16 Apr 2023 14:45:12 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1po43X-00E01i-09;
+	Sun, 16 Apr 2023 15:12:43 +0000
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1po2Xn-00Ds9X-11;
-	Sun, 16 Apr 2023 13:35:52 +0000
-Received: by mail-ej1-x634.google.com with SMTP id kt6so19302632ejb.0;
-        Sun, 16 Apr 2023 06:35:50 -0700 (PDT)
+	id 1po43T-00E00l-2R
+	for linux-phy@lists.infradead.org;
+	Sun, 16 Apr 2023 15:12:41 +0000
+Received: by mail-ej1-x62d.google.com with SMTP id fw30so5040163ejc.5
+        for <linux-phy@lists.infradead.org>; Sun, 16 Apr 2023 08:12:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681652149; x=1684244149;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
-        b=jpx0NRbyMusb0ecSr5/iGMxYz0JwUDJN886OD/9YfiIzcVKnJXLY1BYn+1t78nwV/y
-         9nqeIod/pXUqjApOqH5PHrxNljX+93tczHKOM9pYDHpgALFBPRH2cgBNjKuGHFbW/BSh
-         zXwzu+r8BKDFt/NS4dgd9QHVM4vSwtgzMt3N06YoEi35nns7MZdzSQg1qy1c4v0pXPbw
-         sldLFMjV93K8as7gmDeIcBrtXMy6fWb+Zo8ctWts38oyC+of47DRGUVY/13hsB/y/5n6
-         pWQaJO0+RH+PoMjECv/s/3drmcniEaMqsCurZ1l5/zrpHramZCQWCzqqCHiqkMvK87O6
-         5Q7g==
+        d=linaro.org; s=google; t=1681657956; x=1684249956;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=xlWlvCWzrovrnqFvYZa6sVT2dx6B7igBCNASIvtKe9k=;
+        b=ofuNa16m1w1KPW5fhX8kOZV6iA3lUxhQjy4U44tnXZ0qMuT+JO+fsjXJwxiyc0niJf
+         /QUO4b8lsrltY7rwihIhq5ewsI/26fOmG5uCtnB8az4Jt9Anw9vyqUdzCaMw5uh3KgOv
+         VAOkGVTZRKq1VXDhzOU5bjND7F57mPLNWUw1mibGlMTsE3LTgROWQlYxM1aJo4QSIU4/
+         79A3yLVaOBsBiGzRZuteNFkIcdbGfU+rbwNFZwtQwIXCPFVGdHFbiXqovZmOfKiGS1Kd
+         zdA+b9ejFY1YfrI2VZZZpbCQX00CAzB3nK3FyHcvP4+vIu8eepwVva3QRBQz6DDNzbvB
+         F4kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681652149; x=1684244149;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
-        b=LaGeCcrea8dHV6Q5gy15RXmYgWQDBImG8+zv2pUpLjGT67eF31cbQHzqBLV6jXfmvQ
-         NlztLO7cQKqWHRDAxFfyI81jrPOmOm2ndnE84Fm0rAKUWQjs/Tvkbc8wfTT+TIyeYJNo
-         vb9/r8lWEI8hvAKLl4CGYBoh8veoA9o3S4sIzhsO8wjy8H1Z4ajsA58JdBeN/sihCaEb
-         4uhn4dhN6nybAfSspkWcJr1sm2359H1TCgu1spuIqBo2O0BO0aJfkNXuvz3cDBp5kxUS
-         0KtbZxMtQJ3eIcj8wzJLPmlqb7QAoAc6Tk+jxFOOC/Ykywo88TOudjiD2LJVSdnhCRs9
-         ztTw==
-X-Gm-Message-State: AAQBX9eyDsfzwbvKShuy43oqZ+pP/wyNCykIk8QJ6cKP01bBZpZPY3em
-	eK0r2LYuSKC7Ss6INABo0Hw=
-X-Google-Smtp-Source: AKy350YPmstbPVajjknyXiRkvg9C+KqbRwgdFKT785sk0SCoKCnq3TzeyY7LVWJnakbCk4/HQ+J22w==
-X-Received: by 2002:a17:907:2ccc:b0:94f:3cb2:9351 with SMTP id hg12-20020a1709072ccc00b0094f3cb29351mr2253935ejc.40.1681652148930;
-        Sun, 16 Apr 2023 06:35:48 -0700 (PDT)
-Received: from localhost.my.domain (83.8.121.70.ipv4.supernova.orange.pl. [83.8.121.70])
-        by smtp.gmail.com with ESMTPSA id gn23-20020a1709070d1700b009373f1b5c4esm5122958ejc.161.2023.04.16.06.35.46
+        d=1e100.net; s=20221208; t=1681657956; x=1684249956;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xlWlvCWzrovrnqFvYZa6sVT2dx6B7igBCNASIvtKe9k=;
+        b=KkLANUYxO/AamEsSnbq/Jb1QCpue2kVm9YEKMP3gdWhb5oI7xzNvdq8z+/WK0+6aVu
+         6kRyJy4nB3VBDUz7nTUJm934ZWeL0vdKuPQX1WK+CPInyvK/AKnbufgi2S4kKPqt7pIv
+         UGRlusjiopaCByE4Dx16fj+ijYFEPm/6wKchtkACTEDQ37CbReK3u65OgFxEqvJer+Og
+         +jmWf+WgJQAF/rg/cHz3OMwSg41Qm6bxRG7sQscdHrOJpGRLUXQDlC4jE3xUOTCwuljL
+         FfYxUDlM2KdIQkRTM9OV+oPyNQDhLstzLZaG76UOsgxo1dNYNuKHeQ/QVK4KF0S6g0s7
+         7kWw==
+X-Gm-Message-State: AAQBX9fPdzujtm1kUyQ3rMndPbK8WggV9cVwD/LqDBTuwC0nStUxYvXw
+	kEKs9VeC8nf/sZ10JFlKx+pdyw==
+X-Google-Smtp-Source: AKy350ZI6BgnI3mupLhl88+iHzgLlBV1xT4C3FRFxxGbWQfUvHA+oyjPfjPjRJIwh1KODZ7vbnE2QA==
+X-Received: by 2002:a17:906:6992:b0:930:6c71:64eb with SMTP id i18-20020a170906699200b009306c7164ebmr4772616ejr.29.1681657955997;
+        Sun, 16 Apr 2023 08:12:35 -0700 (PDT)
+Received: from krzk-bin.. ([2a02:810d:15c0:828:ba4d:301c:484d:5c9])
+        by smtp.gmail.com with ESMTPSA id s13-20020a1709060c0d00b0094e729d333fsm5169635ejf.222.2023.04.16.08.12.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 16 Apr 2023 06:35:48 -0700 (PDT)
-From: Artur Weber <aweber.kernel@gmail.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Alim Akhtar <alim.akhtar@samsung.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Tomasz Figa <tomasz.figa@gmail.com>,
-	Chanwoo Choi <cw00.choi@samsung.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Olof Johansson <olof@lixom.net>,
-	soc@kernel.org,
-	Russell King <linux@armlinux.org.uk>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Kukjin Kim <kgene@kernel.org>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
+        Sun, 16 Apr 2023 08:12:35 -0700 (PDT)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org,
-	linux-pm@vger.kernel.org,
-	linux-media@vger.kernel.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	~postmarketos/upstreaming@lists.sr.ht,
-	Artur Weber <aweber.kernel@gmail.com>
-Subject: [PATCH v2 07/12] Revert "media: exynos4-is: Remove dependency on obsolete SoC support"
-Date: Sun, 16 Apr 2023 15:34:17 +0200
-Message-Id: <20230416133422.1949-8-aweber.kernel@gmail.com>
-X-Mailer: git-send-email 2.40.0
-In-Reply-To: <20230416133422.1949-1-aweber.kernel@gmail.com>
-References: <20230416133422.1949-1-aweber.kernel@gmail.com>
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: qcom,edp-phy: allow power-domains
+Date: Sun, 16 Apr 2023 17:12:33 +0200
+Message-Id: <20230416151233.346336-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230416_063551_388773_6528EDCC 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20230416_081239_862120_4D328C05 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,62 +99,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The platform was originally dropped in commit bca9085e0ae9 ("ARM:
-dts: exynos: remove Exynos4212 support (dead code)"), as there were
-no boards using it.
+At least on SC8280XP the eDP PHY is part of power domain:
 
-We will be adding a device that uses it, so add it back.
+  sc8280xp-crd.dtb: phy@220c2a00: 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
 
-This reverts commit 2d41a0c9ae51ac363d107f2510022106e7234b33.
-
-Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- drivers/media/platform/samsung/exynos4-is/Kconfig     | 2 +-
- drivers/media/platform/samsung/exynos4-is/fimc-core.c | 2 +-
- drivers/media/platform/samsung/exynos4-is/fimc-lite.c | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/media/platform/samsung/exynos4-is/Kconfig b/drivers/media/platform/samsung/exynos4-is/Kconfig
-index da33faa7132e..7f9ba053dd8e 100644
---- a/drivers/media/platform/samsung/exynos4-is/Kconfig
-+++ b/drivers/media/platform/samsung/exynos4-is/Kconfig
-@@ -47,7 +47,7 @@ config VIDEO_S5P_MIPI_CSIS
- config VIDEO_EXYNOS_FIMC_LITE
- 	tristate "EXYNOS FIMC-LITE camera interface driver"
- 	depends on I2C
--	depends on SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
-+	depends on SOC_EXYNOS4212 || SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
- 	depends on HAS_DMA
- 	select VIDEOBUF2_DMA_CONTIG
- 	select VIDEO_EXYNOS4_IS_COMMON
-diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-core.c b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
-index 1791100b6935..e2f394e60dee 100644
---- a/drivers/media/platform/samsung/exynos4-is/fimc-core.c
-+++ b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
-@@ -1129,7 +1129,7 @@ static const struct fimc_drvdata fimc_drvdata_exynos4210 = {
- 	.out_buf_count	= 32,
- };
+diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+index c4f8e6ffa5c3..6566353f1a02 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+@@ -43,6 +43,9 @@ properties:
+   "#phy-cells":
+     const: 0
  
--/* EXYNOS4412 */
-+/* EXYNOS4212, EXYNOS4412 */
- static const struct fimc_drvdata fimc_drvdata_exynos4x12 = {
- 	.num_entities	= 4,
- 	.lclk_frequency	= 166000000UL,
-diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
-index e185a40305a8..f80047095f30 100644
---- a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
-+++ b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
-@@ -1619,7 +1619,7 @@ static const struct dev_pm_ops fimc_lite_pm_ops = {
- 			   NULL)
- };
++  power-domains:
++    maxItems: 1
++
+   vdda-phy-supply: true
+   vdda-pll-supply: true
  
--/* EXYNOS4412 */
-+/* EXYNOS4212, EXYNOS4412 */
- static struct flite_drvdata fimc_lite_drvdata_exynos4 = {
- 	.max_width		= 8192,
- 	.max_height		= 8192,
 -- 
-2.40.0
+2.34.1
 
 
 -- 
