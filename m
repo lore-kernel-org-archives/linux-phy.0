@@ -4,94 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5A37C77B73
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 14:14:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA00AC77B61
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 14:45:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P87tXL9ju9tzET3SMIZzvv8GArcCoeyDGZ0dCa1xSCA=; b=drpvTMgDZSPBl6
-	BCzh9ViQY5wwonORQqCQkgbhqh9o8u91lEAHsrqiyGp4akjL3+GJIDINFdHQoZ6Bz5RGOcd6tc4kv
-	YabNC2cqXkfI0zFIgMt6q+nloM7U3JBKdlnZoCYbOKgogUXbIPM5nrJTjZRUxsn2DcWaaI7TzhS7+
-	bhoL0Uk5O0ZaNo8okcX9Sx9PXKc4SmoMq3yz/Z0KAzdsbv2+uEVWKsxPUv1Thnqa3J5zlPJcpSWbs
-	ytPtds/6O6oaVU6YxHcmLrjx7ZCnTN5uxRZ7IiyjrerTWUG/HAXZ4UyRg2uuazehMzk/0KQGdZerf
-	EvFm1itfOfh4RYEidfaA==;
+	List-Owner; bh=n4SiwWrI1FKtGCDkPwV0THeLuf3wO8t4hxwTwMWslUg=; b=BptoaLCDHfDVur
+	A6UprdwkgSQLTCd35U0LVPZHQXmoh5Cu85gchbhMvI88DeMQnJeRsTwYxMzuNyqZlCVIJT+LiBzQu
+	250BrYx54ThWGO7NiM4Kn8IppZa+8BNZsMM3t2k1wMse4JNmJ+L8DlIVnb6TwgEvK2ZpwhaUFl/MS
+	V2seg+3l/roidoHhon9HsmVlgegmDpQ1O2Nyfz7LFeLX9aubtIwPPH4gGbWEq1DZd4etqaRAfQIaS
+	NnGS6byWdXM5YQlZf7/tlqfNJwIwU8NA7fiwdMy3xFDtHSjv6KPfx+Hhczuraih15D43VMbAXV0+c
+	h42cQizVFJkp/Dw1nW9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1po38x-00DwPe-14;
-	Sun, 16 Apr 2023 14:14:15 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1po3cu-00DybA-1R;
+	Sun, 16 Apr 2023 14:45:12 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1po38v-00DwNj-1U
-	for linux-phy@lists.infradead.org;
-	Sun, 16 Apr 2023 14:14:14 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id fy21so14652244ejb.9
-        for <linux-phy@lists.infradead.org>; Sun, 16 Apr 2023 07:14:04 -0700 (PDT)
+	id 1po2Xn-00Ds9X-11;
+	Sun, 16 Apr 2023 13:35:52 +0000
+Received: by mail-ej1-x634.google.com with SMTP id kt6so19302632ejb.0;
+        Sun, 16 Apr 2023 06:35:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681654443; x=1684246443;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=CqjZpfyKPAXa2my2S9Kqm0ywJgkkRuAyH0u0+ZgWeBo=;
-        b=j4GkOa4aNXRE+r4a4/nRTgrCWkl7MYHpNnYSl0JUMuXQMFmbIBleGTKd4PpQexnVfb
-         ybv3marMchyBRQjoztB01LrSlUdnNIgEC2ZRC9/I9vufBTND2fzAkZTAK27uji8UbvVN
-         eXR7Vj1YD0XwMQTYaih7Z7jTeVysyDnc2M/CwTZYD7pe01ug16FiAD3Excw0mMBKNXxE
-         ZLVfBxHmOA3nj0qVdBkY6gXLPmuqkoPl62SIH8BJpmyd/dkWX6gNXzS9gq9SWdgsZX6a
-         WW3kWlsSnOis2a9y4OWL5EztRceKZZ4dk438V1Mjju23FydTqMpKSxldchxID3YY+pFo
-         zGFQ==
+        d=gmail.com; s=20221208; t=1681652149; x=1684244149;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
+        b=jpx0NRbyMusb0ecSr5/iGMxYz0JwUDJN886OD/9YfiIzcVKnJXLY1BYn+1t78nwV/y
+         9nqeIod/pXUqjApOqH5PHrxNljX+93tczHKOM9pYDHpgALFBPRH2cgBNjKuGHFbW/BSh
+         zXwzu+r8BKDFt/NS4dgd9QHVM4vSwtgzMt3N06YoEi35nns7MZdzSQg1qy1c4v0pXPbw
+         sldLFMjV93K8as7gmDeIcBrtXMy6fWb+Zo8ctWts38oyC+of47DRGUVY/13hsB/y/5n6
+         pWQaJO0+RH+PoMjECv/s/3drmcniEaMqsCurZ1l5/zrpHramZCQWCzqqCHiqkMvK87O6
+         5Q7g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681654443; x=1684246443;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=CqjZpfyKPAXa2my2S9Kqm0ywJgkkRuAyH0u0+ZgWeBo=;
-        b=V1jQDReKTzk7T2JRwR7v4gCaAtqHmeu8/+DMtnwB419jS05l54+o8uoCZ4jJzoimaX
-         dYOIXegw2f2syyAhvZJuStBCeZpi6g+SqWABsk2NuF4zU24s1GQOjnTwk9pGyG6f49MP
-         INismhW4Iw113hzaeoN+59s1LV6vU/c895Qed7EsJOogEhiFm1iKYnmrIPx1h6BdEKgz
-         XhIVQB1+b9mQTFVqCr1Tfsy2dOznFjUrH7SEKo2sckmVQJW76z6YTJzpsbnT8JhstcUE
-         wQdFbOcrBchKB0rNu8LNjUr+5mJM10T5T84WfQMtPCxrzJ4SBVeVxAeWnyxjYJtHduSe
-         1AzQ==
-X-Gm-Message-State: AAQBX9cDP0F2aEG8Dsx+N1GTZ+UA4ISOtG7TPQ2ksjGsAiSFU4K4Pe2u
-	gzV+TTxfehqBqofIDOxOUMQbPw==
-X-Google-Smtp-Source: AKy350ayEmg9ZXfl/HB5LQ9Hom4UKULeEgkxZWgCAIx/UHNm3rrpWuZPfU3gw9Fv1tjxFQ4I1e04Cw==
-X-Received: by 2002:a17:906:6091:b0:94c:93e4:b0c with SMTP id t17-20020a170906609100b0094c93e40b0cmr4922508ejj.76.1681654443262;
-        Sun, 16 Apr 2023 07:14:03 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:ba4d:301c:484d:5c9? ([2a02:810d:15c0:828:ba4d:301c:484d:5c9])
-        by smtp.gmail.com with ESMTPSA id ce18-20020a170906b25200b0094ee2b8ab77sm3589650ejb.73.2023.04.16.07.14.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 16 Apr 2023 07:14:02 -0700 (PDT)
-Message-ID: <421f998a-8d66-d333-4e41-58a74bc687e9@linaro.org>
-Date: Sun, 16 Apr 2023 16:14:00 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH v2 00/12] Re-introduce Exynos4212 support and add Samsung
- Galaxy Tab 3 8.0 boards
-To: Artur Weber <aweber.kernel@gmail.com>
-Cc: Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Olof Johansson <olof@lixom.net>, soc@kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Kukjin Kim <kgene@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
- ~postmarketos/upstreaming@lists.sr.ht
-References: <20230416133422.1949-1-aweber.kernel@gmail.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+        d=1e100.net; s=20221208; t=1681652149; x=1684244149;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
+        b=LaGeCcrea8dHV6Q5gy15RXmYgWQDBImG8+zv2pUpLjGT67eF31cbQHzqBLV6jXfmvQ
+         NlztLO7cQKqWHRDAxFfyI81jrPOmOm2ndnE84Fm0rAKUWQjs/Tvkbc8wfTT+TIyeYJNo
+         vb9/r8lWEI8hvAKLl4CGYBoh8veoA9o3S4sIzhsO8wjy8H1Z4ajsA58JdBeN/sihCaEb
+         4uhn4dhN6nybAfSspkWcJr1sm2359H1TCgu1spuIqBo2O0BO0aJfkNXuvz3cDBp5kxUS
+         0KtbZxMtQJ3eIcj8wzJLPmlqb7QAoAc6Tk+jxFOOC/Ykywo88TOudjiD2LJVSdnhCRs9
+         ztTw==
+X-Gm-Message-State: AAQBX9eyDsfzwbvKShuy43oqZ+pP/wyNCykIk8QJ6cKP01bBZpZPY3em
+	eK0r2LYuSKC7Ss6INABo0Hw=
+X-Google-Smtp-Source: AKy350YPmstbPVajjknyXiRkvg9C+KqbRwgdFKT785sk0SCoKCnq3TzeyY7LVWJnakbCk4/HQ+J22w==
+X-Received: by 2002:a17:907:2ccc:b0:94f:3cb2:9351 with SMTP id hg12-20020a1709072ccc00b0094f3cb29351mr2253935ejc.40.1681652148930;
+        Sun, 16 Apr 2023 06:35:48 -0700 (PDT)
+Received: from localhost.my.domain (83.8.121.70.ipv4.supernova.orange.pl. [83.8.121.70])
+        by smtp.gmail.com with ESMTPSA id gn23-20020a1709070d1700b009373f1b5c4esm5122958ejc.161.2023.04.16.06.35.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 16 Apr 2023 06:35:48 -0700 (PDT)
+From: Artur Weber <aweber.kernel@gmail.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Tomasz Figa <tomasz.figa@gmail.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Olof Johansson <olof@lixom.net>,
+	soc@kernel.org,
+	Russell King <linux@armlinux.org.uk>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Kukjin Kim <kgene@kernel.org>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	linux-media@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	Artur Weber <aweber.kernel@gmail.com>
+Subject: [PATCH v2 07/12] Revert "media: exynos4-is: Remove dependency on obsolete SoC support"
+Date: Sun, 16 Apr 2023 15:34:17 +0200
+Message-Id: <20230416133422.1949-8-aweber.kernel@gmail.com>
+X-Mailer: git-send-email 2.40.0
 In-Reply-To: <20230416133422.1949-1-aweber.kernel@gmail.com>
+References: <20230416133422.1949-1-aweber.kernel@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230416_071413_501556_9B773A69 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20230416_063551_388773_6528EDCC 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,40 +115,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/04/2023 15:34, Artur Weber wrote:
-> This patches re-introduces the Exynos4212 platform and adds support
-> for the Samsung Galaxy Tab 3 8.0 series of tablets that uses it:
-> 
->  - Samsung Galaxy Tab 3 8.0 WiFi (SM-T310/lt01wifi)
->  - Samsung Galaxy Tab 3 8.0 3G (SM-T311/lt013g)
->  - Samsung Galaxy Tab 3 8.0 LTE (SM-T315/lt01lte)
-> 
-> What works:
-> 
->  - Display and backlight
->  - Touchscreen (without touchkeys)
->  - GPIO buttons, hall sensor
->  - WiFi and Bluetooth
->  - USB, fuel gauge, charging (partial)
->  - Accelerometer and magnetometer
->  - WiFi model only: light sensor
-> 
-> Display panel bindings used by the Tab3 DTSI are added in a separate
-> patchset - "[PATCH 0/3] Add Samsung S6D7AA0 panel controller driver":
-> https://lore.kernel.org/all/20230416131632.31673-1-aweber.kernel@gmail.com/
-> 
-> Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
-> 
-> Changed in v2:
->  - Added note about display panel bindings to cover letter and
->    Tab3 DTSI commit
+The platform was originally dropped in commit bca9085e0ae9 ("ARM:
+dts: exynos: remove Exynos4212 support (dead code)"), as there were
+no boards using it.
 
-That's not really a reason for resend and you explained me the bindings.
-Wait for at least a day before sending big patchsets, to get a chance of
-review.
+We will be adding a device that uses it, so add it back.
 
-Best regards,
-Krzysztof
+This reverts commit 2d41a0c9ae51ac363d107f2510022106e7234b33.
+
+Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
+---
+ drivers/media/platform/samsung/exynos4-is/Kconfig     | 2 +-
+ drivers/media/platform/samsung/exynos4-is/fimc-core.c | 2 +-
+ drivers/media/platform/samsung/exynos4-is/fimc-lite.c | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/media/platform/samsung/exynos4-is/Kconfig b/drivers/media/platform/samsung/exynos4-is/Kconfig
+index da33faa7132e..7f9ba053dd8e 100644
+--- a/drivers/media/platform/samsung/exynos4-is/Kconfig
++++ b/drivers/media/platform/samsung/exynos4-is/Kconfig
+@@ -47,7 +47,7 @@ config VIDEO_S5P_MIPI_CSIS
+ config VIDEO_EXYNOS_FIMC_LITE
+ 	tristate "EXYNOS FIMC-LITE camera interface driver"
+ 	depends on I2C
+-	depends on SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
++	depends on SOC_EXYNOS4212 || SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
+ 	depends on HAS_DMA
+ 	select VIDEOBUF2_DMA_CONTIG
+ 	select VIDEO_EXYNOS4_IS_COMMON
+diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-core.c b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
+index 1791100b6935..e2f394e60dee 100644
+--- a/drivers/media/platform/samsung/exynos4-is/fimc-core.c
++++ b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
+@@ -1129,7 +1129,7 @@ static const struct fimc_drvdata fimc_drvdata_exynos4210 = {
+ 	.out_buf_count	= 32,
+ };
+ 
+-/* EXYNOS4412 */
++/* EXYNOS4212, EXYNOS4412 */
+ static const struct fimc_drvdata fimc_drvdata_exynos4x12 = {
+ 	.num_entities	= 4,
+ 	.lclk_frequency	= 166000000UL,
+diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
+index e185a40305a8..f80047095f30 100644
+--- a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
++++ b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
+@@ -1619,7 +1619,7 @@ static const struct dev_pm_ops fimc_lite_pm_ops = {
+ 			   NULL)
+ };
+ 
+-/* EXYNOS4412 */
++/* EXYNOS4212, EXYNOS4412 */
+ static struct flite_drvdata fimc_lite_drvdata_exynos4 = {
+ 	.max_width		= 8192,
+ 	.max_height		= 8192,
+-- 
+2.40.0
 
 
 -- 
