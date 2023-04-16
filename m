@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57254C77B61
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 10:18:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF6DDC7EE20
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 10:18:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g00GZTtc++Id70mXk5c/FXFmhD32ygphrrHXHD+5l4o=; b=KzHw0Q1q0zjtOG
-	595bV7/JpX9Rq/qGH5GGDHslL0xLaps0BseCUI4sBU243NbYj8hPHnHdpLhXjkXfzdKGmGn9pObBA
-	cKZozdDWxXKFOL+BqFuB+JacfIus5J5PBD8+breptNG3KWdhbSWghZJP0x6hE9Mh54A2tqQI0j4Cz
-	d3eVX73M9mQ1CktnbMp2R3+hHFMzp37XHc7wS7InpFqP2rbE7PaZtJq4dst/d7HBOVWU/dsmQnBzU
-	Fddj0A88xBFiAMSyj/jTFFY9z5WcHB8/Y2PRytUGprLqJNMxtZRHAHcigwWtQiRfMeBXgMFttR84R
-	IFcC3mghKCYbL9d2soRw==;
+	List-Owner; bh=n4SiwWrI1FKtGCDkPwV0THeLuf3wO8t4hxwTwMWslUg=; b=kM+XEwncKyJf35
+	zQksVrfhu4NPc+Oz4oV4rwL0fOnfTH4mAayH/Rz0n7fDsWFJkplvcX6Ars3CyJSPwd/J069mlKN3c
+	jzEtPyBLdep7Om2TnFQ8BNyjLXAIloN6HxwO6V3R+rNdCDCCjwoFymjhsTtqDwZGEKaF39rWCqLvk
+	Pj91F439lQpQOGf6yrEFMSzI8bn9EM4SSX5u5m4DGIdD891/ZOG+hMJZrMC19oggmFWy8u4VIPmRW
+	Uz4wAQemPHu8o40TIvtZCd8jkO3kUONbuQTiV+WaVbEw2t7DF5JA3e2KRbAXtu4i8FXMVTPX6OqXj
+	kazK963eHUug6kM80w1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnzSr-00DVit-35;
-	Sun, 16 Apr 2023 10:18:33 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1pnzSt-00DVjz-1h;
+	Sun, 16 Apr 2023 10:18:35 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnzSf-00DVXt-0I;
-	Sun, 16 Apr 2023 10:18:22 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id dm2so56906493ejc.8;
-        Sun, 16 Apr 2023 03:18:20 -0700 (PDT)
+	id 1pnzSh-00DVZH-1u;
+	Sun, 16 Apr 2023 10:18:25 +0000
+Received: by mail-ej1-x635.google.com with SMTP id q23so47331583ejz.3;
+        Sun, 16 Apr 2023 03:18:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681640300; x=1684232300;
+        d=gmail.com; s=20221208; t=1681640302; x=1684232302;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=rsVMP+nc4oNcZ87McW4OVdy6DpQdiSat54tBtHLhBBY=;
-        b=nfr1zVEw9kPnLlYUrcbByybp16B3MuFjdqImbC7ms95NuitM7HO538K0NAk+bYVGm+
-         VMfIGm5E5jFbUYTbOhrKD/2XnlznH5U1I/XmsKu5kq9+yPUCQztZKlJ5S7+tHyCHRLdp
-         pLNOWMIuBaP969GCwvUkFO6A+9hbN3sT0yhfbjvzyetl/obzZqNpcQdTFk/lpmhlbTnb
-         WpnuV3fHhpRne6stvD2t6TvjxTORCuTkrGwhFFkFctwvBlJvi1BLivYa5XK9bRExHFDj
-         YCVhGMK7QkfpJlp9R2Jdh0UQ8vje0IiCc+JWfPDLD6Pgy2kcaU4J2dK4wI5joxk1ubv2
-         hD0Q==
+        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
+        b=cqXiolsx0L2qOIBAA7EALCik+iaaMM62IB0P+KqocrXkk7GYA93KjBCpZoy0NZhJUd
+         zFaSWz7Pk/WRCBJVmp76y9w8+t7VnQLSiTi0SzoZ1VSEtpmbzRMTxFrqiGFAYYFBIsGx
+         WPYkkPYTcimur1fXWbF9clpXQOhh6c/8gItlzWD0C74yR1BtOioezl+95Jpx2Pz4K5gn
+         /EBQZXYEXoszFUQPGeQznA9XBQtpL8d9IW4DEizt/m2fZDYEdmlYRdVBr5SbXw2B77mz
+         yI3+V/Rn+urSLxJtYLfbjVP6d8B8WC0W4ZxKS7UmQ7rHRGzxlhBhZE3Qiv+xlVEXTHKR
+         A14g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681640300; x=1684232300;
+        d=1e100.net; s=20221208; t=1681640302; x=1684232302;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=rsVMP+nc4oNcZ87McW4OVdy6DpQdiSat54tBtHLhBBY=;
-        b=kOARCj2OTpiN3YBMcB64TwsM4hhjPKP3DcSNmxHRM0ovnWKomxLTyb1RX2S2v+HXym
-         De8g5xoo+MHFLqADETviCyrcqM4Zzo0fOgQ+6fz3vijeHZStCp0RpsTzGy6ejzSGmWdI
-         mNT3ym1ierMcrAyUjmx3ksWTW83wMO6yIY6sVWS4J27gEnWJiPyUSjKEf7JqO8P6VtMp
-         Xb9nsVKlkylrTH64MqJPrHXsAjGuhSgDLIizLzKOzqZ5XCNWLj8EWdcFRGd0jqAnkvj8
-         +T7pEuoCu44is46XWVpqxlsRIJ1C3bLTF+CQCc+R5OJxeIl3mCReDI85QMAalMajFq+M
-         K5dg==
-X-Gm-Message-State: AAQBX9dSqqZskxdoo676vvJOTfJ7OjbR8jFpqtp6btiI/OASZ+FD9w+A
-	uHaTUaFWXSP/qNjgMKpJz/I=
-X-Google-Smtp-Source: AKy350Y2lZk3tbzxpDLIO3N9WFJh/eVD/q3CDUxh62fYMbYn+3t5erUqoeMqEi2LTAa6ReHdAtk0pQ==
-X-Received: by 2002:a17:907:8a1e:b0:94f:695f:b177 with SMTP id sc30-20020a1709078a1e00b0094f695fb177mr422788ejc.30.1681640299547;
-        Sun, 16 Apr 2023 03:18:19 -0700 (PDT)
+        bh=MKVIgiz58zIFJgX8elDwMTDtG02bu6kIfybVoLMLnnE=;
+        b=Ge/BGi0KHFP7zfO3VfdPT2AZPsFvvc2AunUshqrvTWMz2HeSEd2kK3+B7rOTrT9ocN
+         scpBIDcAbi6FnHWoiHtJGLGuNblhdr6sP4HcfGlJeXIfkDOvHcfPO5hOoms7E2E/ILKC
+         yjDT8jkgwX3Ao24i2MxLdtRryrqIGnDpagMjbmourB0482dcOc52bVWreNyIbLWouwU2
+         8K2BuCxlwypRPwmnAKu8U9m1YlbvRJtp93FAZhQQU1Mznxj78diYR4ucum2SbcCBgeUw
+         E3O7Sbvkz0mw91kREFOW8JcB19ooKlf0FS0AfdOQj0qTnQ0pdiG1aQHqkpOzfstDs739
+         vB9w==
+X-Gm-Message-State: AAQBX9c2azO/GDYvl09uhNRf70puWLHoIVVhEIn2ZhFuVZxKwc/p8x9S
+	7lRKXnx1MYVdSS3s8v0ia+g=
+X-Google-Smtp-Source: AKy350Zs3joV9ktaohSXSoa5ZOuDSyR6CCu/nkacUYcu2ur7+lu2yQnFNAz/9zbkpqhVoD9a6AMQUA==
+X-Received: by 2002:a17:906:57d5:b0:94e:dd1c:dc78 with SMTP id u21-20020a17090657d500b0094edd1cdc78mr4487386ejr.69.1681640301702;
+        Sun, 16 Apr 2023 03:18:21 -0700 (PDT)
 Received: from localhost.my.domain (83.8.121.70.ipv4.supernova.orange.pl. [83.8.121.70])
-        by smtp.gmail.com with ESMTPSA id r20-20020a056402019400b0050476da5160sm4427443edv.45.2023.04.16.03.18.17
+        by smtp.gmail.com with ESMTPSA id r20-20020a056402019400b0050476da5160sm4427443edv.45.2023.04.16.03.18.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 16 Apr 2023 03:18:19 -0700 (PDT)
+        Sun, 16 Apr 2023 03:18:21 -0700 (PDT)
 From: Artur Weber <aweber.kernel@gmail.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Alim Akhtar <alim.akhtar@samsung.com>,
@@ -89,16 +89,16 @@ Cc: Alim Akhtar <alim.akhtar@samsung.com>,
 	linux-phy@lists.infradead.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	Artur Weber <aweber.kernel@gmail.com>
-Subject: [PATCH 06/12] clk: samsung: Re-add support for Exynos4212 CPU clock
-Date: Sun, 16 Apr 2023 12:16:18 +0200
-Message-Id: <20230416101624.15866-7-aweber.kernel@gmail.com>
+Subject: [PATCH 07/12] Revert "media: exynos4-is: Remove dependency on obsolete SoC support"
+Date: Sun, 16 Apr 2023 12:16:19 +0200
+Message-Id: <20230416101624.15866-8-aweber.kernel@gmail.com>
 X-Mailer: git-send-email 2.40.0
 In-Reply-To: <20230416101624.15866-1-aweber.kernel@gmail.com>
 References: <20230416101624.15866-1-aweber.kernel@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230416_031821_131954_4FB3A8B7 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20230416_031823_650307_0494E6A1 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,101 +121,54 @@ no boards using it.
 
 We will be adding a device that uses it, so add it back.
 
-This is effectively a revert of commit c9194fb623b0 ("clk: samsung:
-Remove support for obsolete Exynos4212 CPU clock"); the driver
-has changed significantly since then, prompting this re-make.
+This reverts commit 2d41a0c9ae51ac363d107f2510022106e7234b33.
 
 Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
 ---
- drivers/clk/samsung/clk-exynos4.c | 44 +++++++++++++++++++++++++++----
- 1 file changed, 39 insertions(+), 5 deletions(-)
+ drivers/media/platform/samsung/exynos4-is/Kconfig     | 2 +-
+ drivers/media/platform/samsung/exynos4-is/fimc-core.c | 2 +-
+ drivers/media/platform/samsung/exynos4-is/fimc-lite.c | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/clk/samsung/clk-exynos4.c b/drivers/clk/samsung/clk-exynos4.c
-index 22009cb53428..9655f46db95c 100644
---- a/drivers/clk/samsung/clk-exynos4.c
-+++ b/drivers/clk/samsung/clk-exynos4.c
-@@ -138,7 +138,8 @@
- /* the exynos4 soc type */
- enum exynos4_soc {
- 	EXYNOS4210,
--	EXYNOS4X12,
-+	EXYNOS4412,
-+	EXYNOS4212,
+diff --git a/drivers/media/platform/samsung/exynos4-is/Kconfig b/drivers/media/platform/samsung/exynos4-is/Kconfig
+index da33faa7132e..7f9ba053dd8e 100644
+--- a/drivers/media/platform/samsung/exynos4-is/Kconfig
++++ b/drivers/media/platform/samsung/exynos4-is/Kconfig
+@@ -47,7 +47,7 @@ config VIDEO_S5P_MIPI_CSIS
+ config VIDEO_EXYNOS_FIMC_LITE
+ 	tristate "EXYNOS FIMC-LITE camera interface driver"
+ 	depends on I2C
+-	depends on SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
++	depends on SOC_EXYNOS4212 || SOC_EXYNOS4412 || SOC_EXYNOS5250 || COMPILE_TEST
+ 	depends on HAS_DMA
+ 	select VIDEOBUF2_DMA_CONTIG
+ 	select VIDEO_EXYNOS4_IS_COMMON
+diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-core.c b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
+index 1791100b6935..e2f394e60dee 100644
+--- a/drivers/media/platform/samsung/exynos4-is/fimc-core.c
++++ b/drivers/media/platform/samsung/exynos4-is/fimc-core.c
+@@ -1129,7 +1129,7 @@ static const struct fimc_drvdata fimc_drvdata_exynos4210 = {
+ 	.out_buf_count	= 32,
  };
  
- /* list of PLLs to be registered */
-@@ -1205,6 +1206,24 @@ static const struct exynos_cpuclk_cfg_data e4210_armclk_d[] __initconst = {
- 	{  0 },
+-/* EXYNOS4412 */
++/* EXYNOS4212, EXYNOS4412 */
+ static const struct fimc_drvdata fimc_drvdata_exynos4x12 = {
+ 	.num_entities	= 4,
+ 	.lclk_frequency	= 166000000UL,
+diff --git a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
+index e185a40305a8..f80047095f30 100644
+--- a/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
++++ b/drivers/media/platform/samsung/exynos4-is/fimc-lite.c
+@@ -1619,7 +1619,7 @@ static const struct dev_pm_ops fimc_lite_pm_ops = {
+ 			   NULL)
  };
  
-+static const struct exynos_cpuclk_cfg_data e4212_armclk_d[] __initconst = {
-+	{ 1500000, E4210_CPU_DIV0(2, 1, 6, 0, 7, 3), E4210_CPU_DIV1(2, 6), },
-+	{ 1400000, E4210_CPU_DIV0(2, 1, 6, 0, 7, 3), E4210_CPU_DIV1(2, 6), },
-+	{ 1300000, E4210_CPU_DIV0(2, 1, 5, 0, 7, 3), E4210_CPU_DIV1(2, 5), },
-+	{ 1200000, E4210_CPU_DIV0(2, 1, 5, 0, 7, 3), E4210_CPU_DIV1(2, 5), },
-+	{ 1100000, E4210_CPU_DIV0(2, 1, 4, 0, 6, 3), E4210_CPU_DIV1(2, 4), },
-+	{ 1000000, E4210_CPU_DIV0(1, 1, 4, 0, 5, 2), E4210_CPU_DIV1(2, 4), },
-+	{  900000, E4210_CPU_DIV0(1, 1, 3, 0, 5, 2), E4210_CPU_DIV1(2, 3), },
-+	{  800000, E4210_CPU_DIV0(1, 1, 3, 0, 5, 2), E4210_CPU_DIV1(2, 3), },
-+	{  700000, E4210_CPU_DIV0(1, 1, 3, 0, 4, 2), E4210_CPU_DIV1(2, 3), },
-+	{  600000, E4210_CPU_DIV0(1, 1, 3, 0, 4, 2), E4210_CPU_DIV1(2, 3), },
-+	{  500000, E4210_CPU_DIV0(1, 1, 3, 0, 4, 2), E4210_CPU_DIV1(2, 3), },
-+	{  400000, E4210_CPU_DIV0(1, 1, 3, 0, 4, 2), E4210_CPU_DIV1(2, 3), },
-+	{  300000, E4210_CPU_DIV0(1, 1, 2, 0, 4, 2), E4210_CPU_DIV1(2, 3), },
-+	{  200000, E4210_CPU_DIV0(1, 1, 1, 0, 3, 1), E4210_CPU_DIV1(2, 3), },
-+	{  0 },
-+};
-+
- #define E4412_CPU_DIV1(cores, hpm, copy)				\
- 		(((cores) << 8) | ((hpm) << 4) | ((copy) << 0))
- 
-@@ -1233,6 +1252,11 @@ static const struct samsung_cpu_clock exynos4210_cpu_clks[] __initconst = {
- 			CLK_CPU_NEEDS_DEBUG_ALT_DIV | CLK_CPU_HAS_DIV1, 0x14200, e4210_armclk_d),
- };
- 
-+static const struct samsung_cpu_clock exynos4212_cpu_clks[] __initconst = {
-+	CPU_CLK(CLK_ARM_CLK, "armclk", CLK_MOUT_APLL, CLK_MOUT_MPLL_USER_C,
-+			CLK_CPU_NEEDS_DEBUG_ALT_DIV | CLK_CPU_HAS_DIV1, 0x14200, e4212_armclk_d),
-+};
-+
- static const struct samsung_cpu_clock exynos4412_cpu_clks[] __initconst = {
- 	CPU_CLK(CLK_ARM_CLK, "armclk", CLK_MOUT_APLL, CLK_MOUT_MPLL_USER_C,
- 			CLK_CPU_NEEDS_DEBUG_ALT_DIV | CLK_CPU_HAS_DIV1, 0x14200, e4412_armclk_d),
-@@ -1326,11 +1350,15 @@ static void __init exynos4_clk_init(struct device_node *np,
- 		samsung_clk_register_fixed_factor(ctx,
- 			exynos4x12_fixed_factor_clks,
- 			ARRAY_SIZE(exynos4x12_fixed_factor_clks));
--		samsung_clk_register_cpu(ctx, exynos4412_cpu_clks,
--				ARRAY_SIZE(exynos4412_cpu_clks));
-+		if (soc == EXYNOS4412)
-+			samsung_clk_register_cpu(ctx, exynos4412_cpu_clks,
-+					ARRAY_SIZE(exynos4412_cpu_clks));
-+		else
-+			samsung_clk_register_cpu(ctx, exynos4212_cpu_clks,
-+					ARRAY_SIZE(exynos4212_cpu_clks));
- 	}
- 
--	if (soc == EXYNOS4X12)
-+	if (soc == EXYNOS4412 || soc == EXYNOS4212)
- 		exynos4x12_core_down_clock();
- 
- 	samsung_clk_extended_sleep_init(reg_base,
-@@ -1363,8 +1391,14 @@ static void __init exynos4210_clk_init(struct device_node *np)
- }
- CLK_OF_DECLARE(exynos4210_clk, "samsung,exynos4210-clock", exynos4210_clk_init);
- 
-+static void __init exynos4212_clk_init(struct device_node *np)
-+{
-+	exynos4_clk_init(np, EXYNOS4212);
-+}
-+CLK_OF_DECLARE(exynos4212_clk, "samsung,exynos4212-clock", exynos4212_clk_init);
-+
- static void __init exynos4412_clk_init(struct device_node *np)
- {
--	exynos4_clk_init(np, EXYNOS4X12);
-+	exynos4_clk_init(np, EXYNOS4412);
- }
- CLK_OF_DECLARE(exynos4412_clk, "samsung,exynos4412-clock", exynos4412_clk_init);
+-/* EXYNOS4412 */
++/* EXYNOS4212, EXYNOS4412 */
+ static struct flite_drvdata fimc_lite_drvdata_exynos4 = {
+ 	.max_width		= 8192,
+ 	.max_height		= 8192,
 -- 
 2.40.0
 
