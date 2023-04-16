@@ -4,95 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BE58C77B61
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 17:29:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 953B3C77B73
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 17:54:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iMfcdfWVQaNzMx4MqbCXDPgrNMxach91sxzYzJzS1xE=; b=prbKsLV7h789fi
-	xLcPfIKa/JzFkel+oE/szBVoPvraCIR4KBy8pkyk9X1hE3m3cm/XpbZjf2kIosEqL9ndEKOQByusF
-	AsVO2rfbIFBG/+gdC3OOiPSv2WJT7snDrfSfQ5J3y/1t9p5pAyOJ6iJ+j9A7nAksmYaPCR03lDRs4
-	lyZEzAkC5JDfIFJB0zjvEQ5FteiO+BF+deI8wqIAMuhQJWnYQ12KL9CK6MPZsceBck2ygmuvRyEs7
-	zMkIK3FMHfGfc18nftJKHEIhMcUGhNBsyFLrfVjjO9JaCAg/gSK5Pm7Xlm9mrH2nejKJ7pZ1sbFa0
-	KGdMh/sG+gMsP4ym+Dvw==;
+	List-Owner; bh=ftLmUxcZyzvU3pMFZRmY4+F8b1siUvj2MQpY4g61gEk=; b=FsnDu+/mYR+Z8R
+	Lt+OOacfyRANYZgobZJrYnoh1yNBeNbpZoJY3VIcjzb801osrfjAfF3Kax2tfFzoUIfVek0sJKd/B
+	JNePviCzWEB8LeXbMeo/vXc5Yjvs8ecFIJiowpChv1iEwU6TrpgRjUEG69DQoQ6m9F+LeO/N8s5QH
+	aVQ+3bAacBoZ3Bt4LwKJK3dpLcfHEpFMKno9c+FkoiSqJc614EVBg4BhvqXfhOT6CGHLpxINZZqVi
+	QjCCz00nuLKGzjQoS+n2nJZ0JK0J0JHORNnrN5B0tG6SaJPsFd0KcBj9j/jlDDE8Wmiw1JD/+/JFm
+	drUOtXcnFijG/QAiLlgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1po6C4-00EBit-2k;
-	Sun, 16 Apr 2023 17:29:40 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1po6aJ-00EE6c-0e;
+	Sun, 16 Apr 2023 17:54:43 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1po6C1-00EBh9-2P
+	id 1po6aF-00EE5n-1H
 	for linux-phy@lists.infradead.org;
-	Sun, 16 Apr 2023 17:29:38 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a5so1841180ejb.6
-        for <linux-phy@lists.infradead.org>; Sun, 16 Apr 2023 10:29:35 -0700 (PDT)
+	Sun, 16 Apr 2023 17:54:41 +0000
+Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5058181d58dso3491398a12.1
+        for <linux-phy@lists.infradead.org>; Sun, 16 Apr 2023 10:54:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681666174; x=1684258174;
+        d=linaro.org; s=google; t=1681667677; x=1684259677;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ALGubGI9vcPFVNhBw3xYsBRMIAknnF9aicGsi1XUPLk=;
-        b=sMuKVfCxr89Rs5nPX29H3CNTFQvBvR/XM4KqkDBiCu3zHbHhec+m6gNXeH8Zro6/hP
-         AihhHjRPgDkJMjkI9u+4MLflks+a3mpVBvuGtxpTgNNGVTSObVXzkGGaz7a2JUv7qXlL
-         ck4H9Pehfnd6zoAs7HLhocAskPw2zuiFDODfK63C8a+ttTQd2kG9jUvcK8TuiQfejL12
-         Iyi6hcI7sHL7i7GHwwqVBigCeaPwPbl2UAZscjInSEvlGpRjCKkNjXCYYVhBTHAUrtwY
-         up30+jmftwHc5xx/Vx/sX4QcSUcACPcmCemhZyfGVGReFJiD62AG5oi5XkFEDBOmFG0F
-         Mr7w==
+        bh=JS6gaHiphUmSOWpn+pmyiSugcXzg+J545dx/xJnnaxk=;
+        b=WuWEb3nQKRcBC4aQq5LCsl/QIdpbFKoJvTV/SSvo7+KcXslPZLEolPou2WpIPh9FCF
+         srBTN+NGP3wj8rwbrUDV8VW47d+Ia+cdOt36cVwkpPie84WhNTiO/G08tM6139DnVgOd
+         Dy8L6Fa6tgCAG04ZtOxo+uyGTfV4VjAkykB/5otTlNrA2UVIuusuAX/F56nUUuVtwxWD
+         96eYsH0axlMBFn6uCuZh8OTkFdS2nLbwtuzoUk7tVDlq+GxwnO2hQIDEnvwl1J3GmSt1
+         ugYCUXZV3Sj18cLHhJWSKF3gciUab1+yK2RmZV3x+B4zT8k8zJmTdCetNRpPXt6ybdBk
+         ZCWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681666174; x=1684258174;
+        d=1e100.net; s=20221208; t=1681667677; x=1684259677;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ALGubGI9vcPFVNhBw3xYsBRMIAknnF9aicGsi1XUPLk=;
-        b=LOD0jzbWQOj7JjEmj+x2YQjz1xj92weXAQwdDwqAGSXrBZSRW/LpRYpul/4sVZj4+C
-         3I0prtTVvWDvLs7QfNJY270UicHYEa2AixmEBVFyaoLD+xbqu034TfG/8WwXkypkRifa
-         4iW3DVFI6nHewwP7BLp9lF6GgvKNwJEnHrsRQKBzB8jUNOKB6A4bLAFzZZ58FAY7oHrP
-         3xlbO4/nYbSkw/jZSX0qCNRnv6JDqVB48pYsyO7xzt34FPxwUz/TVWZQb/rmg00r8Bhk
-         mav9uIWO2YOV7EnebSHWMDUVE0WlHMSVgRgQRQmiXWYZJaD2UM1E7YItoDVoZ4vZ2nkW
-         BVfg==
-X-Gm-Message-State: AAQBX9co3cw67QItGRYrsUMcwdpl0nC0jDNTKCzRU9ay9N0YCwWOvvMC
-	1GJgBgiJ+3WmWUZXQQj1nbVWsVK9lobgCjAC/9E=
-X-Google-Smtp-Source: AKy350YFnbIUE8o83ZkVTdY4/9rW/e7dq7GqM6STdl/F8jdbMAVS3RxyoIDP9UaCahROrbK+1R6w/Q==
-X-Received: by 2002:a17:907:2089:b0:947:a6d7:e2b4 with SMTP id pv9-20020a170907208900b00947a6d7e2b4mr4755130ejb.8.1681666173907;
-        Sun, 16 Apr 2023 10:29:33 -0700 (PDT)
+        bh=JS6gaHiphUmSOWpn+pmyiSugcXzg+J545dx/xJnnaxk=;
+        b=O2FPLSYiNnDQeha7k96MBhObtkKmRIAUKVSZRXiQwHMbnzCXWARuptX1TexDHMG/bF
+         bCdgjzPvqc6UkT4wnqFd2Qrm0QFGb0BH3YxYmewLrivHoC+x+vWsfZTJbzo3Lg7VfV+m
+         fw0BFA43Wd7CDD+g3pmTAzYOY0xtrUK1nKqY+xilmoTFTRk7lcDehW13NGIjbO6xPRyu
+         llppTMAflnGQhsBBRGJqLlqrF6q0WTuiZbiXKNIkkCYPCLxePm1VqgGdE7xMVx+TPCtT
+         j/F8noMmmks27tYXUSbRqNvKsAy9VNo4Gimi6sKx0vVLA/2JQMnjQh92v0Au2aypFy4a
+         aJvw==
+X-Gm-Message-State: AAQBX9fTu4U3xjvTXTt+Z1PgmH09HYRgu92zb17Yjv+PoOanuO4qdVkm
+	5eCoKyJYFJgXtMANU3SjUFbnRw==
+X-Google-Smtp-Source: AKy350Y5iFghGHPVY/+36B4z9G0r8ayC/uD7aU0dvjOxkfyBYGegI5B/Jo7ShhZXPQ/Ssg96Hx350Q==
+X-Received: by 2002:a05:6402:1486:b0:4fd:29a1:6a58 with SMTP id e6-20020a056402148600b004fd29a16a58mr13688436edv.19.1681667677169;
+        Sun, 16 Apr 2023 10:54:37 -0700 (PDT)
 Received: from ?IPV6:2a02:810d:15c0:828:f9e3:1d38:66a7:ae92? ([2a02:810d:15c0:828:f9e3:1d38:66a7:ae92])
-        by smtp.gmail.com with ESMTPSA id h20-20020a1709067cd400b0094a86ccb634sm5278610ejp.210.2023.04.16.10.29.32
+        by smtp.gmail.com with ESMTPSA id h23-20020aa7c957000000b005066ca60b2csm4695188edt.63.2023.04.16.10.54.35
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 16 Apr 2023 10:29:33 -0700 (PDT)
-Message-ID: <31c582a7-682a-330e-51d4-53b4a0c5f3a2@linaro.org>
-Date: Sun, 16 Apr 2023 19:29:32 +0200
+        Sun, 16 Apr 2023 10:54:36 -0700 (PDT)
+Message-ID: <00bd1ec1-0745-c521-4df9-e31e1057a6ff@linaro.org>
+Date: Sun, 16 Apr 2023 19:54:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.10.0
-Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Subject: Re: [PATCH v2 01/12] dt-bindings: soc: samsung: add Exynos4212 PMU
+ compatible
 Content-Language: en-US
-To: Changhuang Liang <changhuang.liang@starfivetech.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+To: Artur Weber <aweber.kernel@gmail.com>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Olof Johansson <olof@lixom.net>, soc@kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Kukjin Kim <kgene@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-riscv@lists.infradead.org
-References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
- <20230412084540.295411-2-changhuang.liang@starfivetech.com>
- <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
- <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
- <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
- <b34a8d59-34e4-8358-9d2b-367f4707ca7c@starfivetech.com>
- <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
- <0c94aadf-fac3-d05c-1c54-ae8337526849@starfivetech.com>
+ linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+ ~postmarketos/upstreaming@lists.sr.ht
+References: <20230416133422.1949-1-aweber.kernel@gmail.com>
+ <20230416133422.1949-2-aweber.kernel@gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <0c94aadf-fac3-d05c-1c54-ae8337526849@starfivetech.com>
+In-Reply-To: <20230416133422.1949-2-aweber.kernel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230416_102937_781073_9763F4EA 
-X-CRM114-Status: GOOD (  16.48  )
+X-CRM114-CacheID: sfid-20230416_105439_443385_E1334584 
+X-CRM114-Status: GOOD (  13.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,51 +109,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/04/2023 11:02, Changhuang Liang wrote:
-> 
-> 
-> On 2023/4/13 16:41, Krzysztof Kozlowski wrote:
->> On 13/04/2023 04:34, Changhuang Liang wrote:
->>>>>>> +  lane_maps:
->>>>>>
->>>>>> Why did this appear? Underscores are not allowed. It looks like you
->>>>>> re-implement some standard property.
->>>>>>
->>>>>
->>>>> Will change to lane-maps.
->>>>> Yes, according to Vinod advice, lane mapping table use device tree
->>>>> to parse makes sense.
->>>>
->>>> Hm, I have a feeling that I saw such property, so you should dig into
->>>> existing and in-flight bindings.
->>>>
->>>> Best regards,
->>>> Krzysztof
->>>>
->>>
->>> A standard property? Like "clocks" or "resets"?
->>
->> Like lane-polarities now submitted to one MIPI.
->>
->> Anyway it does not look like a property of a board. You said it is fixed
->> per SoC, so it should be implied from the compatible. Otherwise please
->> explain in description and provide some rationale.
->>
->> Best regards,
->> Krzysztof
->>
-> 
-> This property is the only one used for this IP, I have compared this IP with
-> other DPHY rx module, DPHY modules form the other manufacturers not have this
-> configure.
-> And we also have a SoC called JH7100. It DPHY rx module is the same as JH7110.
-> But we don't do the upstream work on it. If it use this lane-maps will be 
-> configure as "lane_maps = /bits/ 8 <0 1 2 3 4 5>;".
+On 16/04/2023 15:34, Artur Weber wrote:
+> The platform was originally dropped in commit bca9085e0ae9 ("ARM:
+> dts: exynos: remove Exynos4212 support (dead code)"), as there were
+> no boards using it.
 
-And JH7100 is different SoC, so you have different compatible. Again -
-is this board specific? If not, looks like SoC specific, thus imply it
-from compatible.
+You meant commit c40610198f35e? This is the one which you partially revert.
 
+> 
+> We will be adding a device that uses it, so add it back.
+> 
+> Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/soc/samsung/exynos-pmu.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
 
 Best regards,
 Krzysztof
