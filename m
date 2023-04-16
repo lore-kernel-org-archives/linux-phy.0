@@ -4,80 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF534C77B71
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Apr 2023 20:54:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BD76C77B76
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 10:18:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/xgl8vZzdbkVRl0yENsc4pUE5wR2qQgVNJnKeKqCh30=; b=L5V+3GPSlLgy1R
-	xYzKTYvB0oQ1DDt9J7aj9l4FZhVVnhbdtDUzMglKCek/iMKGA/+MJQUmR3K+XxjOugDXDLTZSwLpX
-	QWcPHwX/DVkA7BqsgFfMhk6ComMqeIdfpzpOzZqtftCFMzQeDJQbBTp6cACueAE9B4YI3ndVPGQ05
-	IikA+BC0ZdDXuD1RUWJ0WdKUDat8elE+NoxzByImkdpQCb3V9wybifkwA8dY2CKOaHWCrc3VOIz6N
-	kSuyJbjP2zufnUbZvhA49STKXwf0UlaD1uMH/eTXrV30RR5AdVzDzEDQE1p6K/z6+c+EGXSoc8h2k
-	ITY8cEvjSsB1C+c1Gdng==;
+	List-Owner; bh=4ttsowl3Mv32PoOBYvQSIe1NuqL+8uqpi/144ZJp7K4=; b=s5fq8UdPv3rUFx
+	cp6D+iJT1jez6DG61Aeb/nFW30jBr7w+iFi93APMlh4XQiA/0LdWC6CLEkO8/IOEPk1S0iPTrHGoH
+	hI4ITVIUNZiA2Xq81Wwcb51DxGJPmigiYeGO+gXv6oxqi09goL/2YFVnpcLREmogjcc5Pi/u9fNcN
+	oZeB2I5WHLJJT8FWC8yAXD+MFj11e3cSQnUKagtDU3JaVCnJU6b1jvp9KpcIrPFwXInm82PKdiGrl
+	2T+RNjjdyG3DSIFDcOEL0rI1KhzzBWc4Rly6Yg7KfovJdUMVvFj9cms8oni94hCYaOjHnTHKc2U+e
+	6b01Adqt4/6xPSX1p7qQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnQRG-00AYFB-1S;
-	Fri, 14 Apr 2023 20:54:34 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1pnzSW-00DVTE-0a;
+	Sun, 16 Apr 2023 10:18:12 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnQRC-00AYEW-0r
-	for linux-phy@lists.infradead.org;
-	Fri, 14 Apr 2023 20:54:31 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-4eca19c3430so52916e87.1
-        for <linux-phy@lists.infradead.org>; Fri, 14 Apr 2023 13:54:28 -0700 (PDT)
+	id 1pnzSS-00DVS4-1f;
+	Sun, 16 Apr 2023 10:18:09 +0000
+Received: by mail-ej1-x633.google.com with SMTP id kt6so18630646ejb.0;
+        Sun, 16 Apr 2023 03:18:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1681505667; x=1684097667;
+        d=gmail.com; s=20221208; t=1681640286; x=1684232286;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=a9cFFq/KYsVmXdRW5BoGPPdCt3V+TRMXS12ipPluoCk=;
-        b=I38UCYH84Rgc9hSzF3d2E2pCxutrAD4gaIrN8dF/9+lawahHToFCecs36OEG3hJfCm
-         wwDbAYe7A7us0KJu6Vlh9P1c+KrZqmfr0L9CPuqD6CuY2rdxVi4xthUy7qvgF7vv+JUz
-         nHJdRyfGX6DH7bDV552BBN603R7e2ZquCWFaePWN+sUnCuDnTOKqaeHx+IGg9QnDWCkr
-         UFz7ECuzpnEhLHt7S4mDBzMijvO5/qplA0snuhvjPEfRW5jdNN/7Gb0Ysxy+5ONK5sVY
-         c2WPXNBgibr7UWfyqJwLPVrtUcTWii8o5vOFfyiEADAqyKn/tsGKrd02gbKGlbrhMDXo
-         PdZQ==
+        bh=lMKv1eC7oXKgQg7kmPBpEEYkcLgFu/zreUxyQ3hjVRU=;
+        b=XY2jm6IUO7nOh7iJmLWXmOyrQaQ2zXMn6pKvFRann89LpKvUgmwOJ4vPQxCYYtgl/r
+         VHL5qEdKbz4cEa32T3mijCoxrubeICJTC1oz9/SCZMyviJQLMi2owVoreb9Buhr4/On6
+         +o2yhR4LpvZkgSUrbVIEN6JQCj+xh2qQYpvQOaE/rBhfkuXWUlon8FcmuFiI9DUUPlfq
+         GSxXv2IZ3AKkBNmIGQ1qMt92cC07eFOt0Ask8D23d61JCAwY7jtB1ylHQUY+4l+MsSZ6
+         xPDpywU+Y4gJRduqySkVW4gkcY+GLnvnZArfwxLArMPu+F8KS2LsXiVjNmbrJDBY73Id
+         5njQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681505667; x=1684097667;
+        d=1e100.net; s=20221208; t=1681640286; x=1684232286;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=a9cFFq/KYsVmXdRW5BoGPPdCt3V+TRMXS12ipPluoCk=;
-        b=CpVDg6crot4/Mm5nXMaY3RuUs+8dE1VY9ALFSCYnNgzae9IyfNOHQbd2NMrPP6dE4r
-         v9zFNUha8qYULiN+nHK9v6ATp2drxkVjGiK5110j9ZxtWPBPUW+k191t9ME4ClzA6Hoy
-         dXvhGYxb7bcxzpK6PvSFC7cVMC0KuX+deuqffIzcXei76V51mk3mCu/HHA7B/RMBd6By
-         41K+I+BdP+4hmsTPeSpBKBsxdCrOGfKlCidvSSMqnxhA8MOEp5QyBwJp9FYaWi88DA2g
-         S9NKuWtrVYWdWWlo7pwJyYKLlo81uVaGZmAK76jrATwe/ALbdpRIcN7sRQ3mqXlke6OL
-         wWmA==
-X-Gm-Message-State: AAQBX9dVssUa6TtQLTM5DZvV8lvdXWBbHU2S4Pz2Ff03NBMEcq9TnIYl
-	ja9RTCRiqXtisyjJBpfVVdFyyw==
-X-Google-Smtp-Source: AKy350aIc+knsXz3Ima8K4XlqscLTViTEtHan5itjvGxmj/JhSbh1Igh+tw0ubW9oYJa0nxQySG4ZQ==
-X-Received: by 2002:a05:6512:946:b0:4db:26b1:ec52 with SMTP id u6-20020a056512094600b004db26b1ec52mr39253lft.59.1681505667285;
-        Fri, 14 Apr 2023 13:54:27 -0700 (PDT)
-Received: from eriador.lan (dzccz6yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a085:4d00::8a5])
-        by smtp.gmail.com with ESMTPSA id d25-20020ac241d9000000b004ec87fb5ebcsm959734lfi.286.2023.04.14.13.54.26
+        bh=lMKv1eC7oXKgQg7kmPBpEEYkcLgFu/zreUxyQ3hjVRU=;
+        b=BhIsfcLQTA2XIl4ikKYylMYebDH4F8r81o44hFacAbjO9gGucV3c+/9nux5ga7K4Ij
+         hQPrNkHI/KewTkIIab/4hWjarViKypt5BWy61KxvEdhpDfmY4ZtM6TKbeOZo2Ctg0J8K
+         OHah9XA+GbUb1hFzhpJvq8648DFnXiL65Nn/yHP3UYfkYkJur4UoqQfZDpfWGervWk3Q
+         QDT9c/JkO0yxxN52ZJsETRjh2gNVFAHZ5/7dDU3seQX1iCxCHN2vpVmwfdI7mMWWIvSo
+         rGW32FQsgsYC3DiLJnml6VJk/wFyEfXenTq8C0QLbWbSylCKED7ZFwHY+iHYdesZAD0F
+         CNdw==
+X-Gm-Message-State: AAQBX9fzwz4qUmpb4gCeMCfAzYm0gMh+nSZUxdMCJQyrZOMHxIh2M3Y7
+	hLEvnLpSeyh9yYCzGJxpXLM=
+X-Google-Smtp-Source: AKy350aFxJm7/QXCtBcZGPfDmRrIsMdjN4hcBIIu5aXI7tPRyjlAly8QSDd0d6aOaUWrFr4Ex5a1Pg==
+X-Received: by 2002:a17:906:3454:b0:94e:8431:4767 with SMTP id d20-20020a170906345400b0094e84314767mr4666485ejb.38.1681640286211;
+        Sun, 16 Apr 2023 03:18:06 -0700 (PDT)
+Received: from localhost.my.domain (83.8.121.70.ipv4.supernova.orange.pl. [83.8.121.70])
+        by smtp.gmail.com with ESMTPSA id r20-20020a056402019400b0050476da5160sm4427443edv.45.2023.04.16.03.18.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Apr 2023 13:54:26 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Sun, 16 Apr 2023 03:18:05 -0700 (PDT)
+From: Artur Weber <aweber.kernel@gmail.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Tomasz Figa <tomasz.figa@gmail.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Olof Johansson <olof@lixom.net>,
+	soc@kernel.org,
+	Russell King <linux@armlinux.org.uk>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Kukjin Kim <kgene@kernel.org>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH] phy: qcom-qmp-pcie: correct sm8350 PHY tables
-Date: Fri, 14 Apr 2023 23:54:25 +0300
-Message-Id: <20230414205425.3878902-1-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.39.2
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	linux-media@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	Artur Weber <aweber.kernel@gmail.com>
+Subject: [PATCH 00/12] Re-introduce Exynos4212 support and add Samsung Galaxy Tab 3 8.0 boards
+Date: Sun, 16 Apr 2023 12:16:12 +0200
+Message-Id: <20230416101624.15866-1-aweber.kernel@gmail.com>
+X-Mailer: git-send-email 2.40.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230414_135430_431699_989C76AB 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20230416_031808_575529_4417F84E 
+X-CRM114-Status: GOOD (  12.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,126 +112,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Correct sm8350 PCIe PHY tables according to the vendor dtsi file.
-This accounts some additional differences between PHY programming on
-sm8350 and sm8450.
+This patches re-introduces the Exynos4212 platform and adds support
+for the Samsung Galaxy Tab 3 8.0 series of tablets that uses it:
 
-The name for the PCS register 0x8 is not present in the vendor kernels,
-but since on other generations the register prior to POWER_STATE_CONFIG2
-is called POWER_STATE_CONFIG1, we can establish that as its name.
+ - Samsung Galaxy Tab 3 8.0 WiFi (SM-T310/lt01wifi)
+ - Samsung Galaxy Tab 3 8.0 3G (SM-T311/lt013g)
+ - Samsung Galaxy Tab 3 8.0 LTE (SM-T315/lt01lte)
 
-Fixes: c70052739d16 ("phy: qcom-qmp-pcie: add support for sm8350 platform")
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 42 +++++++++++++++----
- .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  1 +
- 2 files changed, 35 insertions(+), 8 deletions(-)
+What works:
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 5182aeac43ee..cd3e031bf506 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1265,10 +1265,10 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen3_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE0, 0x07),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_STEP_SIZE2_MODE1, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
- };
- 
- static const struct qmp_phy_init_tbl sm8450_qmp_gen3x1_pcie_rc_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_BUF_ENABLE, 0x07),
- };
- 
-@@ -1321,11 +1321,16 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
- };
- 
-+static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_rc_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0xf0),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_BUF_ENABLE, 0x07),
-+};
-+
- static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_PI_QEC_CTRL, 0x20),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0x75),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_4, 0x3f),
--	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x1d),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x0c),
- };
- 
-@@ -1334,6 +1339,25 @@ static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_rc_rx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x3f),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x07),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_UCDR_PI_CONTROLS, 0xf0),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_RX_RX_TERM_AC_BYPASS_DC_COUPLE_OFFSET, 0x18),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RX_SIGDET_LVL, 0xa8),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_RATE_SLEW_CNTRL1, 0x0b),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_REFGEN_REQ_CONFIG1, 0x05),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8350_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_EQ_CONFIG2, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG1, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8350_qmp_gen3x2_pcie_rc_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_ENABLE1, 0x90),
- };
- 
- static const struct qmp_phy_init_tbl sm8350_qmp_gen3x2_pcie_rc_rx_tbl[] = {
-@@ -2325,15 +2349,15 @@ static const struct qmp_phy_cfg sm8350_qmp_gen3x1_pciephy_cfg = {
- 		.tx_num		= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_tx_tbl),
- 		.rx		= sm8450_qmp_gen3_pcie_rx_tbl,
- 		.rx_num		= ARRAY_SIZE(sm8450_qmp_gen3_pcie_rx_tbl),
--		.pcs		= sm8450_qmp_gen3_pcie_pcs_tbl,
--		.pcs_num	= ARRAY_SIZE(sm8450_qmp_gen3_pcie_pcs_tbl),
--		.pcs_misc	= sm8450_qmp_gen3x1_pcie_pcs_misc_tbl,
--		.pcs_misc_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_pcs_misc_tbl),
-+		.pcs		= sm8350_qmp_gen3x1_pcie_pcs_tbl,
-+		.pcs_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_pcs_tbl),
-+		.pcs_misc	= sm8350_qmp_gen3x1_pcie_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_pcs_misc_tbl),
- 	},
- 
- 	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
--		.serdes		= sm8450_qmp_gen3x1_pcie_rc_serdes_tbl,
--		.serdes_num	= ARRAY_SIZE(sm8450_qmp_gen3x1_pcie_rc_serdes_tbl),
-+		.serdes		= sm8350_qmp_gen3x1_pcie_rc_serdes_tbl,
-+		.serdes_num	= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_rc_serdes_tbl),
- 		.rx		= sm8350_qmp_gen3x1_pcie_rc_rx_tbl,
- 		.rx_num		= ARRAY_SIZE(sm8350_qmp_gen3x1_pcie_rc_rx_tbl),
- 	},
-@@ -2369,6 +2393,8 @@ static const struct qmp_phy_cfg sm8350_qmp_gen3x2_pciephy_cfg = {
- 	},
- 
- 	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
-+		.serdes		= sm8350_qmp_gen3x2_pcie_rc_serdes_tbl,
-+		.serdes_num	= ARRAY_SIZE(sm8350_qmp_gen3x2_pcie_rc_serdes_tbl),
- 		.rx		= sm8350_qmp_gen3x2_pcie_rc_rx_tbl,
- 		.rx_num		= ARRAY_SIZE(sm8350_qmp_gen3x2_pcie_rc_rx_tbl),
- 		.pcs		= sm8350_qmp_gen3x2_pcie_rc_pcs_tbl,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
-index a469ae2a10a1..ea466e14ca12 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
-@@ -8,6 +8,7 @@
- #define QCOM_PHY_QMP_PCS_PCIE_V5_H_
- 
- /* Only for QMP V5 PHY - PCS_PCIE registers */
-+#define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG1		0x08
- #define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
- #define QPHY_V5_PCS_PCIE_POWER_STATE_CONFIG4		0x14
- #define QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x20
+ - Display and backlight
+ - Touchscreen (without touchkeys)
+ - GPIO buttons, hall sensor
+ - WiFi and Bluetooth
+ - USB, fuel gauge, charging (partial)
+ - Accelerometer and magnetometer
+ - WiFi model only: light sensor
+
+Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
+
+Artur Weber (12):
+  dt-bindings: soc: samsung: add Exynos4212 PMU compatible
+  dt-bindings: clock: add Exynos4212 clock compatible
+  ARM: exynos: Re-introduce Exynos4212 support
+  soc: samsung: Re-introduce Exynos4212 support
+  clk: samsung: Add Exynos4212 compatible to CLKOUT driver
+  clk: samsung: Re-add support for Exynos4212 CPU clock
+  Revert "media: exynos4-is: Remove dependency on obsolete SoC support"
+  Revert "phy: Remove SOC_EXYNOS4212 dep. from PHY_EXYNOS4X12_USB"
+  ARM: dts: Move common Exynos4x12 definitions to exynos4x12.dtsi
+  ARM: dts: Re-introduce Exynos4212 DTSI
+  dt-bindings: arm: samsung: Add Samsung Galaxy Tab3 family boards
+  ARM: dts: exynos: Add Samsung Galaxy Tab 3 8.0 boards
+
+ .../bindings/arm/samsung/samsung-boards.yaml  |   10 +
+ .../bindings/clock/samsung,exynos-clock.yaml  |    1 +
+ .../bindings/soc/samsung/exynos-pmu.yaml      |    3 +
+ arch/arm/boot/dts/Makefile                    |    3 +
+ arch/arm/boot/dts/exynos4212-tab3-3g8.dts     |   30 +
+ arch/arm/boot/dts/exynos4212-tab3-lte8.dts    |   43 +
+ arch/arm/boot/dts/exynos4212-tab3-wifi8.dts   |   25 +
+ arch/arm/boot/dts/exynos4212-tab3.dtsi        | 1175 +++++++++++++++++
+ arch/arm/boot/dts/exynos4212.dtsi             |  157 +++
+ arch/arm/boot/dts/exynos4412.dtsi             |  645 +--------
+ ...2-pinctrl.dtsi => exynos4x12-pinctrl.dtsi} |    4 +-
+ arch/arm/boot/dts/exynos4x12.dtsi             |  665 ++++++++++
+ arch/arm/mach-exynos/Kconfig                  |    5 +
+ arch/arm/mach-exynos/common.h                 |    8 +
+ arch/arm/mach-exynos/exynos.c                 |    2 +
+ arch/arm/mach-exynos/firmware.c               |    8 +-
+ arch/arm/mach-exynos/pm.c                     |    2 +-
+ arch/arm/mach-exynos/suspend.c                |    4 +
+ drivers/clk/samsung/clk-exynos-clkout.c       |    3 +
+ drivers/clk/samsung/clk-exynos4.c             |   44 +-
+ .../media/platform/samsung/exynos4-is/Kconfig |    2 +-
+ .../platform/samsung/exynos4-is/fimc-core.c   |    2 +-
+ .../platform/samsung/exynos4-is/fimc-lite.c   |    2 +-
+ drivers/phy/samsung/Kconfig                   |    2 +-
+ drivers/soc/samsung/exynos-pmu.c              |    9 +
+ drivers/soc/samsung/exynos-pmu.h              |    2 +
+ drivers/soc/samsung/exynos4-pmu.c             |   13 +-
+ 27 files changed, 2213 insertions(+), 656 deletions(-)
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-3g8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-lte8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-wifi8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3.dtsi
+ create mode 100644 arch/arm/boot/dts/exynos4212.dtsi
+ rename arch/arm/boot/dts/{exynos4412-pinctrl.dtsi => exynos4x12-pinctrl.dtsi} (99%)
+ create mode 100644 arch/arm/boot/dts/exynos4x12.dtsi
+
 -- 
-2.39.2
+2.40.0
 
 
 -- 
