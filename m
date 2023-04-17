@@ -4,81 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BD4FC77B77
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Apr 2023 20:56:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 784C0C77B61
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 03:39:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZgoZgtc8qWMrGeElc3CSBaoMJbxJTJiCTPGJSnyiD0=; b=aFY5leiKiKhncK
-	N0N+1W3Fq5dBKGHX0Gir3TNFazXzSsaltvWtfCQWM7chj1oSrdds6HaN0zC3CnorlXFooCkBP1vmv
-	A2torJLcAwAR44nGUq44N+6fQYDodkuFVWkY15v1BIGD5Z7xt1jyxKP6MvmwehsQA33yAkP8lL3Ll
-	DdsPt2bjHwOA1RIdWc+GJm5U7iYfT4GB0ff8qC7vOxkT3BoV1x2MjDVmzcbUnuM1z0geJwGI5bOjs
-	nzHSt6EW0/6vvrCCL9OO37zN7Wo3w1d5QgbOdYeI9jV01KslyooTEfLDmbPB2j85W0KmQEVGeTwmt
-	aHvN3BIJ5D+5Oj6ilstg==;
+	List-Owner; bh=xxnlrw4aqIdr08VdXr76pHFtGtXHeK2sJKcZRO3MIp0=; b=JQ8StoFEMCta9i
+	uFHU+Y8+Mhg5Q+5pDdABbXpONZ5S6LWQjPDL7cIuMYBLieLQfVJ7YEgdbnpG/stxVE2MSFQsLEIgi
+	bbZyoWiV7PgJQfsbQfEGW52Rd/bZuzUHV+NhOTE/6+B0PNEC+wWzsOcC34n8pDss/8XW0wcnKYJZd
+	Y2jyMmt4p4SPw275MpCc+uPpf4y+DAQ23i9JiCcpfBCRmvqVJ70QzVh6WhspWg9yXBNjEX3a0YNwZ
+	d3HspWB2f75Ne9hKOnuCBbILZohiBrqiNVHxxqdwe010iE/N7RXG7dnJliCux+CJ/tDxMKzznlT5T
+	VyE8RsjMsw5QS+T+ipcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1po9Qc-00EQeI-2T;
-	Sun, 16 Apr 2023 20:56:54 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1po9QY-00EQcg-28;
-	Sun, 16 Apr 2023 20:56:51 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id xi5so59160463ejb.13;
-        Sun, 16 Apr 2023 13:56:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=googlemail.com; s=20221208; t=1681678608; x=1684270608;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=0WS1S2J47m9oZfeWP6yf02N4PR4c/sbbG9OpnnKVNb0=;
-        b=Y1MtgDTM9NDmIpajiqJlE+6DdkvMLOoVa3VmvdAft4qxVRnLve++ZydABxkHv8okQs
-         lNdimhxM1p+SzvXifOHGHG0RxMapoI1z00KvMeXjDXsFhN+mJmMSRPIwcTNq+188RkNL
-         w8y42mUxpWfiaOKBd6/x+4Vvm6ONnANnO80FXhOpioMXcOvkqMj2gPhEg6VPOxJxpleF
-         h9/JIntF3/Ml8569J/WDwrEtlxvV7WAypD48jWo+HNbZXSjTAw/9Ue2uG/zSnQvbrP7i
-         jy1EX3IzlOb4ECnd5O0c6MdrUbRX2ZO13DQMTQl2y6yqL23SqjPnN/piGBwGtr3Ft67e
-         8sSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681678608; x=1684270608;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=0WS1S2J47m9oZfeWP6yf02N4PR4c/sbbG9OpnnKVNb0=;
-        b=JNeKMqM+BlRLwyY4rZaJD2tWKjND3df7Ho4FFEtKAJrj34qtYADkF14zGZVS4CX53M
-         i2TGfpBLRU5MiH8VPkxVIX2WOPzEnjir2AnRz3BYL9/dgKq6Cp/Q7dIesQIEd6kMzn3o
-         cOjWaaU/pikE0FIGE17p7ZyIHgFZbiTk/bRQuN60DZ9wG5a1gqYYg9BrpqsQtLOO5qF0
-         ERNSMOYCw7hUeNmldErLnOIjdYKXl0wU8qRhzOyYzUEPVFEtqgyD0mIWlP/p4ugIolY5
-         uy7Sjy9DelVCNsE47GGvA0vr6w5EslJIw6VuinKnjj+Ick3irMLefPHkc9G17oLOUIQN
-         l1ww==
-X-Gm-Message-State: AAQBX9d46RouB1Sef/4nCYlQIdAKVdgYKDnTYm73bVKtNIjuBtLdiCds
-	euCmCVjfOMYhrWMGw0TVcAHrQKdPsN2GiRDzZ8g=
-X-Google-Smtp-Source: AKy350aAl7oqe1ri0rb5+ehDUovVW9O7EQwAqt1kFQNqQPClScpqKDS+kcHcWi9AGVPNc7cnTNruAr0Rv5/TYwEPLuE=
-X-Received: by 2002:a17:907:590:b0:94f:3338:2431 with SMTP id
- vw16-20020a170907059000b0094f33382431mr3499453ejb.32.1681678608156; Sun, 16
- Apr 2023 13:56:48 -0700 (PDT)
+	id 1poFhr-00EnSS-0C;
+	Mon, 17 Apr 2023 03:39:07 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1poFhn-00EnR3-20;
+	Mon, 17 Apr 2023 03:39:06 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 1BF0580CF;
+	Mon, 17 Apr 2023 11:37:52 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 17 Apr
+ 2023 11:37:52 +0800
+Received: from [192.168.125.106] (183.27.97.249) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 17 Apr
+ 2023 11:37:51 +0800
+Message-ID: <0a17d229-16b5-e562-ae55-8ff6ae1c15cf@starfivetech.com>
+Date: Mon, 17 Apr 2023 11:37:53 +0800
 MIME-Version: 1.0
-References: <20230414152423.19842-1-ddrokosov@sberdevices.ru> <20230414152423.19842-5-ddrokosov@sberdevices.ru>
-In-Reply-To: <20230414152423.19842-5-ddrokosov@sberdevices.ru>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sun, 16 Apr 2023 22:56:36 +0200
-Message-ID: <CAFBinCDyUBWd-V0mDy_edzH=3JM5SAuX=vtT4MG9Fb62Rcv=mA@mail.gmail.com>
-Subject: Re: [PATCH v1 4/5] usb: dwc3-meson-g12a: support OTG switch
-To: Dmitry Rokosov <ddrokosov@sberdevices.ru>
-Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, neil.armstrong@linaro.org, 
-	khilman@baylibre.com, jbrunet@baylibre.com, mturquette@baylibre.com, 
-	vkoul@kernel.org, kishon@kernel.org, hminas@synopsys.com, 
-	Thinh.Nguyen@synopsys.com, yue.wang@amlogic.com, hanjie.lin@amlogic.com, 
-	kernel@sberdevices.ru, rockosov@gmail.com, linux-usb@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
-	linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Vinod Koul
+	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+CC: Jack Zhu <jack.zhu@starfivetech.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>
+References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
+ <20230412084540.295411-2-changhuang.liang@starfivetech.com>
+ <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
+ <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
+ <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
+ <b34a8d59-34e4-8358-9d2b-367f4707ca7c@starfivetech.com>
+ <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
+ <0c94aadf-fac3-d05c-1c54-ae8337526849@starfivetech.com>
+ <31c582a7-682a-330e-51d4-53b4a0c5f3a2@linaro.org>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <31c582a7-682a-330e-51d4-53b4a0c5f3a2@linaro.org>
+X-Originating-IP: [183.27.97.249]
+X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230416_135650_702437_3C38C79F 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230416_203903_951386_DF4C2425 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,18 +83,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBBcHIgMTQsIDIwMjMgYXQgNToyNOKAr1BNIERtaXRyeSBSb2tvc292IDxkZHJva29z
-b3ZAc2JlcmRldmljZXMucnU+IHdyb3RlOgpbLi4uXQo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IGR3
-YzNfbWVzb25fZzEyYV9kcnZkYXRhIGExX2RydmRhdGEgPSB7Cj4gLSAgICAgICAub3RnX3N3aXRj
-aF9zdXBwb3J0ZWQgPSBmYWxzZSwKPiArICAgICAgIC5vdGdfc3dpdGNoX3N1cHBvcnRlZCA9IHRy
-dWUsCml0IHdvdWxkIGJlIGdyZWF0IGlmIHlvdSBjb3VsZCBhbHNvIGZvbGxvdyB1cCB3aXRoIGEg
-cGF0Y2ggdGhhdApyZW1vdmVzIG90Z19zd2l0Y2hfc3VwcG9ydGVkLgpBMSB3YXMgdGhlIG9ubHkg
-dmFyaWFudCB0aGF0IG5lZWRlZCBpdCBhbmQgYWZ0ZXIgdGhpcyBwYXRjaCBpdCdzIGp1c3QgZGVh
-ZCBjb2RlLgoKCkJlc3QgcmVnYXJkcywKTWFydGluCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+
+On 2023/4/17 1:29, Krzysztof Kozlowski wrote:
+> On 13/04/2023 11:02, Changhuang Liang wrote:
+>>
+>>
+>> On 2023/4/13 16:41, Krzysztof Kozlowski wrote:
+>>> On 13/04/2023 04:34, Changhuang Liang wrote:
+>>>>>>>> +  lane_maps:
+>>>>>>>
+>>>>>>> Why did this appear? Underscores are not allowed. It looks like you
+>>>>>>> re-implement some standard property.
+>>>>>>>
+>>>>>>
+>>>>>> Will change to lane-maps.
+>>>>>> Yes, according to Vinod advice, lane mapping table use device tree
+>>>>>> to parse makes sense.
+>>>>>
+>>>>> Hm, I have a feeling that I saw such property, so you should dig into
+>>>>> existing and in-flight bindings.
+>>>>>
+>>>>> Best regards,
+>>>>> Krzysztof
+>>>>>
+>>>>
+>>>> A standard property? Like "clocks" or "resets"?
+>>>
+>>> Like lane-polarities now submitted to one MIPI.
+>>>
+>>> Anyway it does not look like a property of a board. You said it is fixed
+>>> per SoC, so it should be implied from the compatible. Otherwise please
+>>> explain in description and provide some rationale.
+>>>
+>>> Best regards,
+>>> Krzysztof
+>>>
+>>
+>> This property is the only one used for this IP, I have compared this IP with
+>> other DPHY rx module, DPHY modules form the other manufacturers not have this
+>> configure.
+>> And we also have a SoC called JH7100. It DPHY rx module is the same as JH7110.
+>> But we don't do the upstream work on it. If it use this lane-maps will be 
+>> configure as "lane_maps = /bits/ 8 <0 1 2 3 4 5>;".
+> 
+> And JH7100 is different SoC, so you have different compatible. Again -
+> is this board specific? If not, looks like SoC specific, thus imply it
+> from compatible.
+> 
+> 
+> Best regards,
+> Krzysztof
+> 
+
+Hi, Vinod
+
+I agree with Krzysztof. What about your comments?
+
+Best regards,
+Changhuang
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
