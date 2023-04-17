@@ -4,65 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F4DAC77B70
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 13:12:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46ADFC77B76
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 15:39:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZMoaei6/FEGKtb+sFhGnKJXdWiT3Ttz3ZCyjC50U32Q=; b=BRdJmOoj3Q5v29
-	5lABYsNa4k2Gu4db5JxYvgeUcBVH/jtk0Nz5a0roMUqnmU5WOKtJkeDCMZG8dvnaav/MCLb6x06PM
-	VolZtMv7fvIowHIyv/XTHyN5AD6weNSc1iEBmZj29IbMD1h33yexSySZID9AKiAx63tMgYc/UcpuT
-	ZztVz1ytXCtKIidPKwH9r8WXR9fLD7tlaKwkjnFWO/qhLjZkVhJH/xR+yXRveXcGR9vkVmfckJMrb
-	nVNMBMNBUVEZQpBYAe372ki9HhaYapLSUXPcs5lhfTF5oEuU1RHLf5Dx/ZLOhkgTbf+eJg6QfRUBe
-	1VhVg3aLOnGPmCmBZduQ==;
+	List-Owner; bh=Ld3eYEpp7diABk0xMlHKAMBB7QrQRsgXk2SgxS4Jh5o=; b=p09GgDHQm4W+Jy
+	HdA7XWBnHBSRtNyKWCdviWqWJ0EZjBj89QWht9m2lrrPFSV1hA2FkG2bqrxOx9J5e5tUgIUPA6d9B
+	Ys/8uRQFA2I7a248tOlC+CgAXfCl8gw9ICDbnQQfY5lM0Q7qu0lICA2+lnVhJArr4zlMHAt3Xd2wf
+	FoZ3cjEN3RuddTVbBatkGZJfTDAhvmakTSVL8S3z5QX3ZcaqwOkm5B3jQNMZ1VHU2pzXYexarwXAV
+	p/UYzHKvCdfkimCv1cm0HhJviMJI8Lr6HWQqITTb34hKHzi6J3+80F0m06Cak/qGE0ct4deyQ81VW
+	dofJ0inHEVdnxbF3UXWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poOes-00GLTl-2i;
-	Mon, 17 Apr 2023 13:12:38 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1poQxP-00GvU3-2u;
+	Mon, 17 Apr 2023 15:39:55 +0000
+Received: from relay11.mail.gandi.net ([2001:4b98:dc4:8::231])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poOeq-00GLT4-08
+	id 1poQxM-00GvSp-06
 	for linux-phy@lists.infradead.org;
-	Mon, 17 Apr 2023 13:12:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=FE2aYU852rz8VFM71Zf0NPY5Z8xae5dz5AyrnjR6CRk=; b=aJO/xqw0yuG5O0J+EcNakJf//S
-	jzGliHgT+hO5VJysONNxACqWx9cAg62h2SZ5mS/OBrJE0Fer/DZJzEa9IP+R1H82atNsd49uJw+oy
-	wsHrQS19ZtsSzuXogSnjNYeaw5qhXNof8ab5dvXe8qF3W1SaXJg9OmAL0YjB+t69jIpQ=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1poOeU-00AVCY-SX; Mon, 17 Apr 2023 15:12:14 +0200
-Date: Mon, 17 Apr 2023 15:12:14 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Herve Codina <herve.codina@bootlin.com>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Christophe Leroy <christophe.leroy@csgroup.eu>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+	Mon, 17 Apr 2023 15:39:54 +0000
+Received: (Authenticated sender: herve.codina@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPSA id C7858100004;
+	Mon, 17 Apr 2023 15:39:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1681745988;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1QbBR2bB5LMaN7h7i/xMkA3oEaeoCIU14nuN9j563/8=;
+	b=pPIzZVuga4kjB4/iB25V+Bk/IIoSnmzhdgtOYrWqun9VhrA0CjDBbJxIYPQRH49qrB+xtu
+	kez/uQDOIz1E3W9OQYlz+tYjlqMLOvz3i1bgiO83IcpkXFAT9RDFrQ4UlKThLWzwLYChku
+	zXYnJiPhToWVd2fAAHUglQsXQIBzREt1PXAENKp6eJlNddThO1DZrJXcqUY/HwZCT3a3TE
+	RmrQ7fWoekLXQJEmp3KUUP9VwEDx0FN+dtNs7l6c0AZflXlJwIJjXtgZ2L+c+1bjUGPVsZ
+	FE3YoIz7S6NONlfFJPBgcESokBYC5f5Ck0jSMOA27dcabLgO95G/67qDHV+Vwg==
+Date: Mon, 17 Apr 2023 17:39:41 +0200
+From: Herve Codina <herve.codina@bootlin.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: "David S. Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+ <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
+ linux-phy@lists.infradead.org, Christophe Leroy
+ <christophe.leroy@csgroup.eu>, Thomas Petazzoni
+ <thomas.petazzoni@bootlin.com>
 Subject: Re: [RFC PATCH 0/4] Add support for QMC HDLC and PHY
-Message-ID: <a2615755-f009-4a21-b464-88ec5e58f32a@lunn.ch>
+Message-ID: <20230417173941.0206f696@bootlin.com>
+In-Reply-To: <a2615755-f009-4a21-b464-88ec5e58f32a@lunn.ch>
 References: <20230323103154.264546-1-herve.codina@bootlin.com>
- <885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
- <20230414165504.7da4116f@bootlin.com>
- <c99a99c5-139d-41c5-89a4-0722e0627aea@lunn.ch>
- <20230417121629.63e97b80@bootlin.com>
+	<885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
+	<20230414165504.7da4116f@bootlin.com>
+	<c99a99c5-139d-41c5-89a4-0722e0627aea@lunn.ch>
+	<20230417121629.63e97b80@bootlin.com>
+	<a2615755-f009-4a21-b464-88ec5e58f32a@lunn.ch>
+Organization: Bootlin
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.37; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230417121629.63e97b80@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_061236_242960_EBD1A3A8 
-X-CRM114-Status: GOOD (  64.83  )
+X-CRM114-CacheID: sfid-20230417_083952_382861_33D2D9D2 
+X-CRM114-Status: GOOD (  81.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,142 +78,162 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > I'm surprised to see so much in the binding. I assume you are familiar
-> > with DAHDI. It allows nearly everything to be configured at
-> > runtime. The systems i've used allow you to select the clock
-> > configuration, line build out, user side vs networks side signalling
-> > CRC4 enables or not, etc.
-> 
-> Well, I am not familiar with DAHDI at all.
-> I didn't even know about the DAHDI project.
-> The project seems to use specific kernel driver and I would like to avoid
-> these external drivers.
-
-DAHDI is kind of the reference. Pretty much any Linux system being
-used as a open source PBX runs Asterisk, and has the out of tree DAHDI
-code to provide access to E1/T1 hardware and analogue POTS. I doubt it
-will ever be merged into mainline, but i think it gives a good idea
-what is needed to fully make use of such hardware.
-
-I don't know what you application is. Are you using libpri for
-signalling? How are you exposing the B channel to user space so that
-libpri can use it?
-
-> > > Further more, the QMC HDLC is not the only PEF2256 consumer.
-> > > The PEF2256 is also used for audio path (ie audio over E1) and so the
-> > > configuration is shared between network and audio. The setting cannot be
-> > > handle by the network part as the PEF2256 must be available and correctly
-> > > configured even if the network part is not present.  
-> > 
-> > But there is no reason why the MFD could not provide a generic PHY to
-> > actually configure the 'PHY'. The HDLC driver can then also use the
-> > generic PHY. It would make your generic PHY less 'pointless'. I'm not
-> > saying it has to be this way, but it is an option.
-> 
-> If the pef2256 PHY provides a configure function, who is going to call this
-> configure(). I mean the one calling the configure will be the configuration
-> owner. None of the MFD child can own the configuration as this configuration
-> will impact other children. So the MFD (top level node) owns the configuration.
-
-Fine. Nothing unusual there. The netdev owns the configuration for an
-Ethernet device. The MAC driver passes a subset down to any generic
-PHY being used to implement a SERDES.
-
-You could have the same architecture here. The MFD implements a
-standardised netlink API for configuring E1/T1/J1 devices. Part of it
-gets passed to the framer, which could be part of a generic PHY. I
-assume you also need to configure the HDLC hardware. It needs to know
-if it is using the whole E1 channel in unframed mode, or it should do
-a fractional link, using a subset of slots, or is just using one slot
-for 64Kbps, which would be an ISDN B channel.
-
-> > > > In fact, this PHY driver does not seem to do any configuration of any
-> > > > sort on the framer. All it seems to be doing is take notification from
-> > > > one chain and send them out another chain!  
-> > > 
-> > > Configuration is done by the parent MFD driver.
-> > > The PHY driver has nothing more to do.
-> > >   
-> > > > 
-> > > > I also wounder if this get_status() call is sufficient. Don't you also
-> > > > want Red, Yellow and Blue alarms? It is not just the carrier is down,
-> > > > but why it is down.  
-> > > 
-> > > I don't need them in my use case but if needed can't they be added later?
-> > > Also, from the HDLC device point of view what can be done with these alarms?  
-> > 
-> > https://elixir.bootlin.com/linux/latest/source/Documentation/networking/ethtool-netlink.rst#L472
-> 
-> Thanks for pointing this interface.
-> It is specific to ethtool but I can see the idea.
-
-Don't equate ethtool with Ethernet. Any netdev can implement it, and a
-HDLC device is a netdev. So it could well return link down reason.
-
-> But indeed this could be changed.
-> If changed, the MFD pef2256 will have to handle the full struct
-> phy_status_basic as the translation will not be there anymore.
-> Right now, this structure is pretty simple and contains only the link state
-> flag. But in the future, this PHY structure can move to something more
-> complex and I am not sure that filling this struct is the MFD pef2256
-> responsibility. The PHY pef2256 is responsible for the correct structure
-> contents not sure that this should be moved to the MFD part.
-
-Framers, like Ethernet PHYs, are reasonably well defined, because
-there are clear standards to follow. You could put the datasheets for
-the various frames side by side and quickly get an idea of the common
-properties. So you could define a structure now. In order to make it
-extendable, just avoid 0 having any meaning other than UNKNOWN. If you
-look at ethernet, SPEED_UNKNOWN is 0, DUPLEX_UNKNOWN is 0. So if a new
-field is added, we know if a driver has not filled it in.
-
-> > And why is the notifier specific to the PEF2256? What would happen if
-> > i used a analog devices DS2155, DS21Q55, and DS2156, or the IDT
-> > 82P2281? Would each have its own notifier? And hence each would need
-> > its own PHY which translates one notifier into another?
-> 
-> Each of them should have their own notifier if they can notify.
-
-I doubt you will find a framer which cannot report lost of framing. It
-is too much a part of the standards. There are signalling actions you
-need to do when a link goes does. So all framer drivers will have a
-notifier.
-
-> At least they will need their own notifier at they PHY driver level.
-> Having or not a translation from something else would depend on each device
-> PHY driver implementation.
-
-Have you ever look at Ethernet PHYs? They all export the same API. You
-can plug any Linux MAC driver into any Linux Ethernet PHY driver. It
-should be the same here. You should be able to plug any HDLC driver
-into any Framer. I should be able to take the same SoC you have
-implementing the TDM interface, and plug it into the IDT framer i know
-of. We want a standardised API between the HDLC device and the framer.
-
-> I would like this first implementation without too much API restriction
-> in order to see how it goes.
-> The actual proposal imposes nothing on the PHY internal implementation.
-> the pef2256 implementation chooses to have two notifiers (one at MFD
-> level and one at PHY level) but it was not imposed by the API.
-
-What i would like to see is some indication the API you are proposing
-is generic, and could be implemented by multiple frames and HDLC
-devices. The interface between the HDLC driver and the framer should
-be generic. The HDLC driver has an abstract reference to a framer. The
-framer has a reference to a netdev for the HDLC device.
-
-You can keep this API very simple, just have link up/down
-notification, since that is all you want at the moment. But the
-implementation should give hints how it can be extended.
-
-	Andrew
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCAxNyBBcHIgMjAyMyAxNToxMjoxNCArMDIwMApBbmRyZXcgTHVubiA8YW5kcmV3QGx1
+bm4uY2g+IHdyb3RlOgoKPiA+ID4gSSdtIHN1cnByaXNlZCB0byBzZWUgc28gbXVjaCBpbiB0aGUg
+YmluZGluZy4gSSBhc3N1bWUgeW91IGFyZSBmYW1pbGlhcgo+ID4gPiB3aXRoIERBSERJLiBJdCBh
+bGxvd3MgbmVhcmx5IGV2ZXJ5dGhpbmcgdG8gYmUgY29uZmlndXJlZCBhdAo+ID4gPiBydW50aW1l
+LiBUaGUgc3lzdGVtcyBpJ3ZlIHVzZWQgYWxsb3cgeW91IHRvIHNlbGVjdCB0aGUgY2xvY2sKPiA+
+ID4gY29uZmlndXJhdGlvbiwgbGluZSBidWlsZCBvdXQsIHVzZXIgc2lkZSB2cyBuZXR3b3JrcyBz
+aWRlIHNpZ25hbGxpbmcKPiA+ID4gQ1JDNCBlbmFibGVzIG9yIG5vdCwgZXRjLiAgCj4gPiAKPiA+
+IFdlbGwsIEkgYW0gbm90IGZhbWlsaWFyIHdpdGggREFIREkgYXQgYWxsLgo+ID4gSSBkaWRuJ3Qg
+ZXZlbiBrbm93IGFib3V0IHRoZSBEQUhESSBwcm9qZWN0Lgo+ID4gVGhlIHByb2plY3Qgc2VlbXMg
+dG8gdXNlIHNwZWNpZmljIGtlcm5lbCBkcml2ZXIgYW5kIEkgd291bGQgbGlrZSB0byBhdm9pZAo+
+ID4gdGhlc2UgZXh0ZXJuYWwgZHJpdmVycy4gIAo+IAo+IERBSERJIGlzIGtpbmQgb2YgdGhlIHJl
+ZmVyZW5jZS4gUHJldHR5IG11Y2ggYW55IExpbnV4IHN5c3RlbSBiZWluZwo+IHVzZWQgYXMgYSBv
+cGVuIHNvdXJjZSBQQlggcnVucyBBc3RlcmlzaywgYW5kIGhhcyB0aGUgb3V0IG9mIHRyZWUgREFI
+REkKPiBjb2RlIHRvIHByb3ZpZGUgYWNjZXNzIHRvIEUxL1QxIGhhcmR3YXJlIGFuZCBhbmFsb2d1
+ZSBQT1RTLiBJIGRvdWJ0IGl0Cj4gd2lsbCBldmVyIGJlIG1lcmdlZCBpbnRvIG1haW5saW5lLCBi
+dXQgaSB0aGluayBpdCBnaXZlcyBhIGdvb2QgaWRlYQo+IHdoYXQgaXMgbmVlZGVkIHRvIGZ1bGx5
+IG1ha2UgdXNlIG9mIHN1Y2ggaGFyZHdhcmUuCj4gCj4gSSBkb24ndCBrbm93IHdoYXQgeW91IGFw
+cGxpY2F0aW9uIGlzLiBBcmUgeW91IHVzaW5nIGxpYnByaSBmb3IKPiBzaWduYWxsaW5nPyBIb3cg
+YXJlIHlvdSBleHBvc2luZyB0aGUgQiBjaGFubmVsIHRvIHVzZXIgc3BhY2Ugc28gdGhhdAo+IGxp
+YnByaSBjYW4gdXNlIGl0PwoKTXkgYXBwbGljYXRpb24gKHByb2JhYmx5IGEgc3Vic2V0IG9mIHdo
+YXQgd2UgY2FuIGRvIHdpdGggRTEgbGluZXMpIGRvZXMKbm90IHVzZSBzaWduYWxpbmcuCgpJIGRv
+bid0IGV4cG9zZSBhbnkgY2hhbm5lbCB0byB0aGUgdXNlciBzcGFjZSBidXQganVzdDoKLSBPbmUg
+aGRsYyBpbnRlcmZhY2UgdXNpbmcgb25lIHRpbWVzbG90LgotIE9uZSBvciBtb3JlIGRhaSBsaW5r
+cyAoYXVkaW8gY2hhbm5lbHMpIHRoYXQgY2FuIGJlIHVzZWQgdXNpbmcgQUxTQSBsaWJyYXJ5LgoK
+PiAKPiA+ID4gPiBGdXJ0aGVyIG1vcmUsIHRoZSBRTUMgSERMQyBpcyBub3QgdGhlIG9ubHkgUEVG
+MjI1NiBjb25zdW1lci4KPiA+ID4gPiBUaGUgUEVGMjI1NiBpcyBhbHNvIHVzZWQgZm9yIGF1ZGlv
+IHBhdGggKGllIGF1ZGlvIG92ZXIgRTEpIGFuZCBzbyB0aGUKPiA+ID4gPiBjb25maWd1cmF0aW9u
+IGlzIHNoYXJlZCBiZXR3ZWVuIG5ldHdvcmsgYW5kIGF1ZGlvLiBUaGUgc2V0dGluZyBjYW5ub3Qg
+YmUKPiA+ID4gPiBoYW5kbGUgYnkgdGhlIG5ldHdvcmsgcGFydCBhcyB0aGUgUEVGMjI1NiBtdXN0
+IGJlIGF2YWlsYWJsZSBhbmQgY29ycmVjdGx5Cj4gPiA+ID4gY29uZmlndXJlZCBldmVuIGlmIHRo
+ZSBuZXR3b3JrIHBhcnQgaXMgbm90IHByZXNlbnQuICAgIAo+ID4gPiAKPiA+ID4gQnV0IHRoZXJl
+IGlzIG5vIHJlYXNvbiB3aHkgdGhlIE1GRCBjb3VsZCBub3QgcHJvdmlkZSBhIGdlbmVyaWMgUEhZ
+IHRvCj4gPiA+IGFjdHVhbGx5IGNvbmZpZ3VyZSB0aGUgJ1BIWScuIFRoZSBIRExDIGRyaXZlciBj
+YW4gdGhlbiBhbHNvIHVzZSB0aGUKPiA+ID4gZ2VuZXJpYyBQSFkuIEl0IHdvdWxkIG1ha2UgeW91
+ciBnZW5lcmljIFBIWSBsZXNzICdwb2ludGxlc3MnLiBJJ20gbm90Cj4gPiA+IHNheWluZyBpdCBo
+YXMgdG8gYmUgdGhpcyB3YXksIGJ1dCBpdCBpcyBhbiBvcHRpb24uICAKPiA+IAo+ID4gSWYgdGhl
+IHBlZjIyNTYgUEhZIHByb3ZpZGVzIGEgY29uZmlndXJlIGZ1bmN0aW9uLCB3aG8gaXMgZ29pbmcg
+dG8gY2FsbCB0aGlzCj4gPiBjb25maWd1cmUoKS4gSSBtZWFuIHRoZSBvbmUgY2FsbGluZyB0aGUg
+Y29uZmlndXJlIHdpbGwgYmUgdGhlIGNvbmZpZ3VyYXRpb24KPiA+IG93bmVyLiBOb25lIG9mIHRo
+ZSBNRkQgY2hpbGQgY2FuIG93biB0aGUgY29uZmlndXJhdGlvbiBhcyB0aGlzIGNvbmZpZ3VyYXRp
+b24KPiA+IHdpbGwgaW1wYWN0IG90aGVyIGNoaWxkcmVuLiBTbyB0aGUgTUZEICh0b3AgbGV2ZWwg
+bm9kZSkgb3ducyB0aGUgY29uZmlndXJhdGlvbi4gIAo+IAo+IEZpbmUuIE5vdGhpbmcgdW51c3Vh
+bCB0aGVyZS4gVGhlIG5ldGRldiBvd25zIHRoZSBjb25maWd1cmF0aW9uIGZvciBhbgo+IEV0aGVy
+bmV0IGRldmljZS4gVGhlIE1BQyBkcml2ZXIgcGFzc2VzIGEgc3Vic2V0IGRvd24gdG8gYW55IGdl
+bmVyaWMKPiBQSFkgYmVpbmcgdXNlZCB0byBpbXBsZW1lbnQgYSBTRVJERVMuCj4gCj4gWW91IGNv
+dWxkIGhhdmUgdGhlIHNhbWUgYXJjaGl0ZWN0dXJlIGhlcmUuIFRoZSBNRkQgaW1wbGVtZW50cyBh
+Cj4gc3RhbmRhcmRpc2VkIG5ldGxpbmsgQVBJIGZvciBjb25maWd1cmluZyBFMS9UMS9KMSBkZXZp
+Y2VzLiBQYXJ0IG9mIGl0Cj4gZ2V0cyBwYXNzZWQgdG8gdGhlIGZyYW1lciwgd2hpY2ggY291bGQg
+YmUgcGFydCBvZiBhIGdlbmVyaWMgUEhZLiBJCj4gYXNzdW1lIHlvdSBhbHNvIG5lZWQgdG8gY29u
+ZmlndXJlIHRoZSBIRExDIGhhcmR3YXJlLiBJdCBuZWVkcyB0byBrbm93Cj4gaWYgaXQgaXMgdXNp
+bmcgdGhlIHdob2xlIEUxIGNoYW5uZWwgaW4gdW5mcmFtZWQgbW9kZSwgb3IgaXQgc2hvdWxkIGRv
+Cj4gYSBmcmFjdGlvbmFsIGxpbmssIHVzaW5nIGEgc3Vic2V0IG9mIHNsb3RzLCBvciBpcyBqdXN0
+IHVzaW5nIG9uZSBzbG90Cj4gZm9yIDY0S2Jwcywgd2hpY2ggd291bGQgYmUgYW4gSVNETiBCIGNo
+YW5uZWwuCgpUaGUgSERMQyBkcml2ZXIgdXNlcyBhIFFNQyBjaGFubmVsIGFuZCB0aGUgRFQgYmlu
+ZGluZyByZWxhdGVkIHRvIHRoaXMKUU1DIGNoYW5uZWwgZGVmaW5lcyB0aGUgdGltZXNsb3RzIHVz
+ZWQgYnkgdGhpcyBjaGFubmVsLgoKRnJvbSB0aGUgUU1DIEhETEMgbm90aGluZyBpcyBjb25maWd1
+cmVkLiBUaGlzIGlzIGRvbmUgYXQgdGhlIFFNQyBsZXZlbC4KICBodHRwczovL2dpdC5rZXJuZWwu
+b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9uZXh0L2xpbnV4LW5leHQuZ2l0L3RyZWUvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NvYy9mc2wvY3BtX3FlL2ZzbCxjcG0xLXNj
+Yy1xbWMueWFtbCNuOTEKCj4gCj4gPiA+ID4gPiBJbiBmYWN0LCB0aGlzIFBIWSBkcml2ZXIgZG9l
+cyBub3Qgc2VlbSB0byBkbyBhbnkgY29uZmlndXJhdGlvbiBvZiBhbnkKPiA+ID4gPiA+IHNvcnQg
+b24gdGhlIGZyYW1lci4gQWxsIGl0IHNlZW1zIHRvIGJlIGRvaW5nIGlzIHRha2Ugbm90aWZpY2F0
+aW9uIGZyb20KPiA+ID4gPiA+IG9uZSBjaGFpbiBhbmQgc2VuZCB0aGVtIG91dCBhbm90aGVyIGNo
+YWluISAgICAKPiA+ID4gPiAKPiA+ID4gPiBDb25maWd1cmF0aW9uIGlzIGRvbmUgYnkgdGhlIHBh
+cmVudCBNRkQgZHJpdmVyLgo+ID4gPiA+IFRoZSBQSFkgZHJpdmVyIGhhcyBub3RoaW5nIG1vcmUg
+dG8gZG8uCj4gPiA+ID4gICAgIAo+ID4gPiA+ID4gCj4gPiA+ID4gPiBJIGFsc28gd291bmRlciBp
+ZiB0aGlzIGdldF9zdGF0dXMoKSBjYWxsIGlzIHN1ZmZpY2llbnQuIERvbid0IHlvdSBhbHNvCj4g
+PiA+ID4gPiB3YW50IFJlZCwgWWVsbG93IGFuZCBCbHVlIGFsYXJtcz8gSXQgaXMgbm90IGp1c3Qg
+dGhlIGNhcnJpZXIgaXMgZG93biwKPiA+ID4gPiA+IGJ1dCB3aHkgaXQgaXMgZG93bi4gICAgCj4g
+PiA+ID4gCj4gPiA+ID4gSSBkb24ndCBuZWVkIHRoZW0gaW4gbXkgdXNlIGNhc2UgYnV0IGlmIG5l
+ZWRlZCBjYW4ndCB0aGV5IGJlIGFkZGVkIGxhdGVyPwo+ID4gPiA+IEFsc28sIGZyb20gdGhlIEhE
+TEMgZGV2aWNlIHBvaW50IG9mIHZpZXcgd2hhdCBjYW4gYmUgZG9uZSB3aXRoIHRoZXNlIGFsYXJt
+cz8gICAgCj4gPiA+IAo+ID4gPiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC9sYXRl
+c3Qvc291cmNlL0RvY3VtZW50YXRpb24vbmV0d29ya2luZy9ldGh0b29sLW5ldGxpbmsucnN0I0w0
+NzIgIAo+ID4gCj4gPiBUaGFua3MgZm9yIHBvaW50aW5nIHRoaXMgaW50ZXJmYWNlLgo+ID4gSXQg
+aXMgc3BlY2lmaWMgdG8gZXRodG9vbCBidXQgSSBjYW4gc2VlIHRoZSBpZGVhLiAgCj4gCj4gRG9u
+J3QgZXF1YXRlIGV0aHRvb2wgd2l0aCBFdGhlcm5ldC4gQW55IG5ldGRldiBjYW4gaW1wbGVtZW50
+IGl0LCBhbmQgYQo+IEhETEMgZGV2aWNlIGlzIGEgbmV0ZGV2LiBTbyBpdCBjb3VsZCB3ZWxsIHJl
+dHVybiBsaW5rIGRvd24gcmVhc29uLgoKT2suClNvIHRoZSBsaW5rIGRvd24gcmVhc29uIHNob3Vs
+ZCBiZSByZXR1cm5lZCBieSB0aGUgbmV3bHkgaW50cm9kdWNlZCBRTUMgSERMQy4KCkFkZGluZyB0
+aGlzIGluIHRoZSBnZW5lcmljIFBIWSBpbmZyYXN0cnVjdHVyZSBJIHVzZWQgKGRyaXZlcnMvcGh5
+KSBpcyBhZGRpbmcKc29tZSBzcGVjaWZpYyBuZXRkZXYgc3R1ZmYgaW4gdGhpcyBzdWJzeXN0ZW0u
+CkRvbid0IGZvcmdldCB0aGF0IHRoZSBwZWYyMjU2IGNhbiBiZSB1c2VkIHdpdGhvdXQgYW55IG5l
+dHdvcmsgcGFydCBieSB0aGUKYXVkaW8gc3Vic3lzdGVtIGluIG9yZGVyIHRvIGhhdmUgdGhlIHVz
+ZXIgYXVkaW8gZGF0YSBzZW50IHRvIEUxIHVzaW5nIHB1cmUKQUxTQSBwYXRoLgoKCj4gCj4gPiBC
+dXQgaW5kZWVkIHRoaXMgY291bGQgYmUgY2hhbmdlZC4KPiA+IElmIGNoYW5nZWQsIHRoZSBNRkQg
+cGVmMjI1NiB3aWxsIGhhdmUgdG8gaGFuZGxlIHRoZSBmdWxsIHN0cnVjdAo+ID4gcGh5X3N0YXR1
+c19iYXNpYyBhcyB0aGUgdHJhbnNsYXRpb24gd2lsbCBub3QgYmUgdGhlcmUgYW55bW9yZS4KPiA+
+IFJpZ2h0IG5vdywgdGhpcyBzdHJ1Y3R1cmUgaXMgcHJldHR5IHNpbXBsZSBhbmQgY29udGFpbnMg
+b25seSB0aGUgbGluayBzdGF0ZQo+ID4gZmxhZy4gQnV0IGluIHRoZSBmdXR1cmUsIHRoaXMgUEhZ
+IHN0cnVjdHVyZSBjYW4gbW92ZSB0byBzb21ldGhpbmcgbW9yZQo+ID4gY29tcGxleCBhbmQgSSBh
+bSBub3Qgc3VyZSB0aGF0IGZpbGxpbmcgdGhpcyBzdHJ1Y3QgaXMgdGhlIE1GRCBwZWYyMjU2Cj4g
+PiByZXNwb25zaWJpbGl0eS4gVGhlIFBIWSBwZWYyMjU2IGlzIHJlc3BvbnNpYmxlIGZvciB0aGUg
+Y29ycmVjdCBzdHJ1Y3R1cmUKPiA+IGNvbnRlbnRzIG5vdCBzdXJlIHRoYXQgdGhpcyBzaG91bGQg
+YmUgbW92ZWQgdG8gdGhlIE1GRCBwYXJ0LiAgCj4gCj4gRnJhbWVycywgbGlrZSBFdGhlcm5ldCBQ
+SFlzLCBhcmUgcmVhc29uYWJseSB3ZWxsIGRlZmluZWQsIGJlY2F1c2UKPiB0aGVyZSBhcmUgY2xl
+YXIgc3RhbmRhcmRzIHRvIGZvbGxvdy4gWW91IGNvdWxkIHB1dCB0aGUgZGF0YXNoZWV0cyBmb3IK
+PiB0aGUgdmFyaW91cyBmcmFtZXMgc2lkZSBieSBzaWRlIGFuZCBxdWlja2x5IGdldCBhbiBpZGVh
+IG9mIHRoZSBjb21tb24KPiBwcm9wZXJ0aWVzLiBTbyB5b3UgY291bGQgZGVmaW5lIGEgc3RydWN0
+dXJlIG5vdy4gSW4gb3JkZXIgdG8gbWFrZSBpdAo+IGV4dGVuZGFibGUsIGp1c3QgYXZvaWQgMCBo
+YXZpbmcgYW55IG1lYW5pbmcgb3RoZXIgdGhhbiBVTktOT1dOLiBJZiB5b3UKPiBsb29rIGF0IGV0
+aGVybmV0LCBTUEVFRF9VTktOT1dOIGlzIDAsIERVUExFWF9VTktOT1dOIGlzIDAuIFNvIGlmIGEg
+bmV3Cj4gZmllbGQgaXMgYWRkZWQsIHdlIGtub3cgaWYgYSBkcml2ZXIgaGFzIG5vdCBmaWxsZWQg
+aXQgaW4uCj4gCj4gPiA+IEFuZCB3aHkgaXMgdGhlIG5vdGlmaWVyIHNwZWNpZmljIHRvIHRoZSBQ
+RUYyMjU2PyBXaGF0IHdvdWxkIGhhcHBlbiBpZgo+ID4gPiBpIHVzZWQgYSBhbmFsb2cgZGV2aWNl
+cyBEUzIxNTUsIERTMjFRNTUsIGFuZCBEUzIxNTYsIG9yIHRoZSBJRFQKPiA+ID4gODJQMjI4MT8g
+V291bGQgZWFjaCBoYXZlIGl0cyBvd24gbm90aWZpZXI/IEFuZCBoZW5jZSBlYWNoIHdvdWxkIG5l
+ZWQKPiA+ID4gaXRzIG93biBQSFkgd2hpY2ggdHJhbnNsYXRlcyBvbmUgbm90aWZpZXIgaW50byBh
+bm90aGVyPyAgCj4gPiAKPiA+IEVhY2ggb2YgdGhlbSBzaG91bGQgaGF2ZSB0aGVpciBvd24gbm90
+aWZpZXIgaWYgdGhleSBjYW4gbm90aWZ5LiAgCj4gCj4gSSBkb3VidCB5b3Ugd2lsbCBmaW5kIGEg
+ZnJhbWVyIHdoaWNoIGNhbm5vdCByZXBvcnQgbG9zdCBvZiBmcmFtaW5nLiBJdAo+IGlzIHRvbyBt
+dWNoIGEgcGFydCBvZiB0aGUgc3RhbmRhcmRzLiBUaGVyZSBhcmUgc2lnbmFsbGluZyBhY3Rpb25z
+IHlvdQo+IG5lZWQgdG8gZG8gd2hlbiBhIGxpbmsgZ29lcyBkb2VzLiBTbyBhbGwgZnJhbWVyIGRy
+aXZlcnMgd2lsbCBoYXZlIGEKPiBub3RpZmllci4KPiAKPiA+IEF0IGxlYXN0IHRoZXkgd2lsbCBu
+ZWVkIHRoZWlyIG93biBub3RpZmllciBhdCB0aGV5IFBIWSBkcml2ZXIgbGV2ZWwuCj4gPiBIYXZp
+bmcgb3Igbm90IGEgdHJhbnNsYXRpb24gZnJvbSBzb21ldGhpbmcgZWxzZSB3b3VsZCBkZXBlbmQg
+b24gZWFjaCBkZXZpY2UKPiA+IFBIWSBkcml2ZXIgaW1wbGVtZW50YXRpb24uICAKPiAKPiBIYXZl
+IHlvdSBldmVyIGxvb2sgYXQgRXRoZXJuZXQgUEhZcz8gVGhleSBhbGwgZXhwb3J0IHRoZSBzYW1l
+IEFQSS4gWW91Cj4gY2FuIHBsdWcgYW55IExpbnV4IE1BQyBkcml2ZXIgaW50byBhbnkgTGludXgg
+RXRoZXJuZXQgUEhZIGRyaXZlci4gSXQKPiBzaG91bGQgYmUgdGhlIHNhbWUgaGVyZS4gWW91IHNo
+b3VsZCBiZSBhYmxlIHRvIHBsdWcgYW55IEhETEMgZHJpdmVyCj4gaW50byBhbnkgRnJhbWVyLiBJ
+IHNob3VsZCBiZSBhYmxlIHRvIHRha2UgdGhlIHNhbWUgU29DIHlvdSBoYXZlCj4gaW1wbGVtZW50
+aW5nIHRoZSBURE0gaW50ZXJmYWNlLCBhbmQgcGx1ZyBpdCBpbnRvIHRoZSBJRFQgZnJhbWVyIGkg
+a25vdwo+IG9mLiBXZSB3YW50IGEgc3RhbmRhcmRpc2VkIEFQSSBiZXR3ZWVuIHRoZSBIRExDIGRl
+dmljZSBhbmQgdGhlIGZyYW1lci4KCkNhbiB5b3UgdGVsbCBtZSBtb3JlLgpJIHRob3VnaHQgSSB3
+YXMgcHJvdmlkaW5nIGEgInN0YW5kYXJkaXNlZCIgQVBJIGJldHdlZW4gdGhlIEhETEMgZGV2aWNl
+CmFuZCB0aGUgZnJhbWVyLiBNYXliZSBpdCB3YXMgbm90IGFzIGNvbXBsZXRlIGFzIHlvdSBjb3Vs
+ZCBleHBlY3QgYnV0IEkgaGFkCnRoZSBmZWVsaW5nIHRoYXQgaXQgd2FzIHN0YW5kYXJkaXNlZC4K
+UmlnaHQgbm93IGl0IGlzIGp1c3QgYSBsaW5rIHN0YXRlIG5vdGlmaWNhdGlvbiBwcm92aWRlZCBi
+eSBhIHNpbXBsZSAnYmFzaWMKUEhZJy4gQW55IEhETEMgZGV2aWNlIHRoYXQgdXNlcyBhICdiYXNp
+YyBQSFknIGNhbiBiZSBub3RpZmllZCBvZiBhbnkgY2hhbmdlcwpvZiB0aGlzIGxpbmsgc3RhdGUg
+cHJvdmlkZWQgYnkgdGhlIFBIWSB3aXRob3V0IGtub3dpbmcgd2hhdCBpcyB0aGUgZXhhY3QKUEhZ
+IGJlaGluZCB0aGlzICdiYXNpYyBwaHknLgoKPiAKPiA+IEkgd291bGQgbGlrZSB0aGlzIGZpcnN0
+IGltcGxlbWVudGF0aW9uIHdpdGhvdXQgdG9vIG11Y2ggQVBJIHJlc3RyaWN0aW9uCj4gPiBpbiBv
+cmRlciB0byBzZWUgaG93IGl0IGdvZXMuCj4gPiBUaGUgYWN0dWFsIHByb3Bvc2FsIGltcG9zZXMg
+bm90aGluZyBvbiB0aGUgUEhZIGludGVybmFsIGltcGxlbWVudGF0aW9uLgo+ID4gdGhlIHBlZjIy
+NTYgaW1wbGVtZW50YXRpb24gY2hvb3NlcyB0byBoYXZlIHR3byBub3RpZmllcnMgKG9uZSBhdCBN
+RkQKPiA+IGxldmVsIGFuZCBvbmUgYXQgUEhZIGxldmVsKSBidXQgaXQgd2FzIG5vdCBpbXBvc2Vk
+IGJ5IHRoZSBBUEkuICAKPiAKPiBXaGF0IGkgd291bGQgbGlrZSB0byBzZWUgaXMgc29tZSBpbmRp
+Y2F0aW9uIHRoZSBBUEkgeW91IGFyZSBwcm9wb3NpbmcKPiBpcyBnZW5lcmljLCBhbmQgY291bGQg
+YmUgaW1wbGVtZW50ZWQgYnkgbXVsdGlwbGUgZnJhbWVzIGFuZCBIRExDCj4gZGV2aWNlcy4gVGhl
+IGludGVyZmFjZSBiZXR3ZWVuIHRoZSBIRExDIGRyaXZlciBhbmQgdGhlIGZyYW1lciBzaG91bGQK
+PiBiZSBnZW5lcmljLiBUaGUgSERMQyBkcml2ZXIgaGFzIGFuIGFic3RyYWN0IHJlZmVyZW5jZSB0
+byBhIGZyYW1lci4gVGhlCj4gZnJhbWVyIGhhcyBhIHJlZmVyZW5jZSB0byBhIG5ldGRldiBmb3Ig
+dGhlIEhETEMgZGV2aWNlLgoKSGVyZSwgSSBkbyBub3QgZnVsbHkgdW5kZXJzdGFuZC4KV2h5IGRv
+ZXMgdGhlIGZyYW1lciBuZWVkIGEgcmVmZXJlbmNlIHRvIHRoZSBuZXRkZXYgPwoKPiAKPiBZb3Ug
+Y2FuIGtlZXAgdGhpcyBBUEkgdmVyeSBzaW1wbGUsIGp1c3QgaGF2ZSBsaW5rIHVwL2Rvd24KPiBu
+b3RpZmljYXRpb24sIHNpbmNlIHRoYXQgaXMgYWxsIHlvdSB3YW50IGF0IHRoZSBtb21lbnQuIEJ1
+dCB0aGUKPiBpbXBsZW1lbnRhdGlvbiBzaG91bGQgZ2l2ZSBoaW50cyBob3cgaXQgY2FuIGJlIGV4
+dGVuZGVkLgo+IAoKQmVzdCByZWdhcmRzLApIZXJ2w6kKCi0tIApIZXJ2w6kgQ29kaW5hLCBCb290
+bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwgZW5naW5lZXJpbmcKaHR0cHM6Ly9ib290bGlu
+LmNvbQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
