@@ -4,86 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABD02C77B76
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 13:05:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F4DAC77B70
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 13:12:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=giiVurdIrWY6w4UtsZyNuYyEjTqsqeE0CwU81+OoHe8=; b=s0bQXlhqGCZyLw
-	Y4aUpK/uJyn3/xO+byON++PnUryV99RMWTWN+ufirqm1P4YYSvqyg/Bho8+HxaRhfBXFJZc1IrOqU
-	tXhXAu8nsK9BoppGUkjSKgz91Hx/VSTUzlZP6n6Ren1zn2BqhNoKgYSBZJslJLAtWW1BuDyGY3eXT
-	MMkaokHGdVqB1/ysJ5eATNPiXEwM11DFZ6DuhtzWjj60wBClGB3DlpktB2zlJjdUxtMSNX0PQXCXc
-	ZtliJCykintEnlnn330zJbiSVzH4Se1g/CS8uo45SZMM0DgPehrq7q3peh8TMnAgS0ZlKmEY9ypm9
-	JjOcPUsuslbym9lyLVnA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZMoaei6/FEGKtb+sFhGnKJXdWiT3Ttz3ZCyjC50U32Q=; b=BRdJmOoj3Q5v29
+	5lABYsNa4k2Gu4db5JxYvgeUcBVH/jtk0Nz5a0roMUqnmU5WOKtJkeDCMZG8dvnaav/MCLb6x06PM
+	VolZtMv7fvIowHIyv/XTHyN5AD6weNSc1iEBmZj29IbMD1h33yexSySZID9AKiAx63tMgYc/UcpuT
+	ZztVz1ytXCtKIidPKwH9r8WXR9fLD7tlaKwkjnFWO/qhLjZkVhJH/xR+yXRveXcGR9vkVmfckJMrb
+	nVNMBMNBUVEZQpBYAe372ki9HhaYapLSUXPcs5lhfTF5oEuU1RHLf5Dx/ZLOhkgTbf+eJg6QfRUBe
+	1VhVg3aLOnGPmCmBZduQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poOY7-00GJPW-0o;
-	Mon, 17 Apr 2023 13:05:39 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1poOes-00GLTl-2i;
+	Mon, 17 Apr 2023 13:12:38 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poOXw-00GJI9-1u
+	id 1poOeq-00GLT4-08
 	for linux-phy@lists.infradead.org;
-	Mon, 17 Apr 2023 13:05:38 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-2f3fe12de15so888440f8f.3
-        for <linux-phy@lists.infradead.org>; Mon, 17 Apr 2023 06:05:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1681736725; x=1684328725;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=+pN7CHTmhcpk+kvQFe2Qj4nSZeBGIjHXqqKasTb6lhk=;
-        b=Bgg3k2q1I4LWyoS114Sz0KymTKA2sEwO4Aef31BG8tNohuz0BdZB2B6nEsGZrY1GEo
-         wOL+m/NcuDjyrWBSVrXOiH+20/n5djMM3Dj1qAOIbHSAXzClWaMolmUBcuAsxBtLFHk4
-         HfxfOH2gCCClo5PVsp5KjDQEOY9g6s6MYLKtYEtkXErOp5Hxzh7wj5jce0B1LY4YewB+
-         eE2pEIyZuyiVlWF7hMpadTMqa+h7dYLiQ/adwFBbZdTwXXm+6wt4KdRNMGo4T8XyxzPG
-         gk8CmhFlPuxt4gFWkzqSI0ID94xRb4AU70e6df5XjkEEnTizT1/rtIICx00xrshMzWfP
-         0ySQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681736725; x=1684328725;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=+pN7CHTmhcpk+kvQFe2Qj4nSZeBGIjHXqqKasTb6lhk=;
-        b=lkJs0kY6Y1fl6H5ZCeEnC526yq/5Wv83UP62Y0j/FRXX+EZnxjdcbhvFSZh0+XtwAC
-         BKsA8IVPK6jlcbXk34H3MIfWIupEQ1CNNQ2iO/7JzmjybW6LK0VMyeAdPrINKYfE4gUg
-         sRC1hC5h4wEGGWop1GxnMIJfCbyqaoGMvhFXCiyyrf5rCkFlKaKHxXPgYQlCl+DAVLMh
-         JFjybeNKjwol5DtC7Fpj6Xj0Xpaxsqi23n+c2rhsVT1zQOiXXnCzcsh/kg0WHDyymAgk
-         WSW40HOg8RKKBfiil9no1j4GcRNxn1HL20niCqgdNBurQXw04Jpo5R9ZWi7B298DvFt0
-         y5CA==
-X-Gm-Message-State: AAQBX9cbUr+G4FjdBMpclw1IUfuZcwOaONdlV0VJcSCUXM4m+ZVXn/2p
-	HK1jWVXy6AZVV6efBe7ANjXKVw==
-X-Google-Smtp-Source: AKy350Ya7/njYFXhgTJTc7VF5jmgWE3WlJqHe1HiKD8ysBAxGWWzpzzvX4+3LSjuaxGp4l/qwi72Uw==
-X-Received: by 2002:a5d:4576:0:b0:2f2:501b:bca6 with SMTP id a22-20020a5d4576000000b002f2501bbca6mr6649069wrc.17.1681736725582;
-        Mon, 17 Apr 2023 06:05:25 -0700 (PDT)
-Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:374a:ffae:fd26:4893])
-        by smtp.gmail.com with ESMTPSA id q14-20020a05600000ce00b002f0075ccf7bsm10509938wrx.71.2023.04.17.06.05.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Apr 2023 06:05:25 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Mon, 17 Apr 2023 13:12:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=FE2aYU852rz8VFM71Zf0NPY5Z8xae5dz5AyrnjR6CRk=; b=aJO/xqw0yuG5O0J+EcNakJf//S
+	jzGliHgT+hO5VJysONNxACqWx9cAg62h2SZ5mS/OBrJE0Fer/DZJzEa9IP+R1H82atNsd49uJw+oy
+	wsHrQS19ZtsSzuXogSnjNYeaw5qhXNof8ab5dvXe8qF3W1SaXJg9OmAL0YjB+t69jIpQ=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1poOeU-00AVCY-SX; Mon, 17 Apr 2023 15:12:14 +0200
+Date: Mon, 17 Apr 2023 15:12:14 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Herve Codina <herve.codina@bootlin.com>
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-scsi@vger.kernel.org,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: [PATCH] dt-bindings: phy: qmp-ufs: fix clock and clock-names for sa8775p
-Date: Mon, 17 Apr 2023 15:05:22 +0200
-Message-Id: <20230417130522.401605-1-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.37.2
+	Christophe Leroy <christophe.leroy@csgroup.eu>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [RFC PATCH 0/4] Add support for QMC HDLC and PHY
+Message-ID: <a2615755-f009-4a21-b464-88ec5e58f32a@lunn.ch>
+References: <20230323103154.264546-1-herve.codina@bootlin.com>
+ <885e4f20-614a-4b8e-827e-eb978480af87@lunn.ch>
+ <20230414165504.7da4116f@bootlin.com>
+ <c99a99c5-139d-41c5-89a4-0722e0627aea@lunn.ch>
+ <20230417121629.63e97b80@bootlin.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230417121629.63e97b80@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_060528_637197_ECE23C41 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230417_061236_242960_EBD1A3A8 
+X-CRM114-Status: GOOD (  64.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,36 +79,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> > I'm surprised to see so much in the binding. I assume you are familiar
+> > with DAHDI. It allows nearly everything to be configured at
+> > runtime. The systems i've used allow you to select the clock
+> > configuration, line build out, user side vs networks side signalling
+> > CRC4 enables or not, etc.
+> 
+> Well, I am not familiar with DAHDI at all.
+> I didn't even know about the DAHDI project.
+> The project seems to use specific kernel driver and I would like to avoid
+> these external drivers.
 
-We must set *minItems* to 3, not maxItems as this platform requires
-exactly three clocks and maxItems is already set to 3 globally.
+DAHDI is kind of the reference. Pretty much any Linux system being
+used as a open source PBX runs Asterisk, and has the out of tree DAHDI
+code to provide access to E1/T1 hardware and analogue POTS. I doubt it
+will ever be merged into mainline, but i think it gives a good idea
+what is needed to fully make use of such hardware.
 
-Fixes: e5796a9cdf73 ("dt-bindings: phy: qmp-ufs: describe the UFS PHY for sa8775p")
-Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
----
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+I don't know what you application is. Are you using libpri for
+signalling? How are you exposing the B channel to user space so that
+libpri can use it?
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-index 94c0fab065a8..a1897a7606df 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-@@ -78,9 +78,9 @@ allOf:
-     then:
-       properties:
-         clocks:
--          maxItems: 3
-+          minItems: 3
-         clock-names:
--          maxItems: 3
-+          minItems: 3
-     else:
-       properties:
-         clocks:
--- 
-2.37.2
+> > > Further more, the QMC HDLC is not the only PEF2256 consumer.
+> > > The PEF2256 is also used for audio path (ie audio over E1) and so the
+> > > configuration is shared between network and audio. The setting cannot be
+> > > handle by the network part as the PEF2256 must be available and correctly
+> > > configured even if the network part is not present.  
+> > 
+> > But there is no reason why the MFD could not provide a generic PHY to
+> > actually configure the 'PHY'. The HDLC driver can then also use the
+> > generic PHY. It would make your generic PHY less 'pointless'. I'm not
+> > saying it has to be this way, but it is an option.
+> 
+> If the pef2256 PHY provides a configure function, who is going to call this
+> configure(). I mean the one calling the configure will be the configuration
+> owner. None of the MFD child can own the configuration as this configuration
+> will impact other children. So the MFD (top level node) owns the configuration.
 
+Fine. Nothing unusual there. The netdev owns the configuration for an
+Ethernet device. The MAC driver passes a subset down to any generic
+PHY being used to implement a SERDES.
+
+You could have the same architecture here. The MFD implements a
+standardised netlink API for configuring E1/T1/J1 devices. Part of it
+gets passed to the framer, which could be part of a generic PHY. I
+assume you also need to configure the HDLC hardware. It needs to know
+if it is using the whole E1 channel in unframed mode, or it should do
+a fractional link, using a subset of slots, or is just using one slot
+for 64Kbps, which would be an ISDN B channel.
+
+> > > > In fact, this PHY driver does not seem to do any configuration of any
+> > > > sort on the framer. All it seems to be doing is take notification from
+> > > > one chain and send them out another chain!  
+> > > 
+> > > Configuration is done by the parent MFD driver.
+> > > The PHY driver has nothing more to do.
+> > >   
+> > > > 
+> > > > I also wounder if this get_status() call is sufficient. Don't you also
+> > > > want Red, Yellow and Blue alarms? It is not just the carrier is down,
+> > > > but why it is down.  
+> > > 
+> > > I don't need them in my use case but if needed can't they be added later?
+> > > Also, from the HDLC device point of view what can be done with these alarms?  
+> > 
+> > https://elixir.bootlin.com/linux/latest/source/Documentation/networking/ethtool-netlink.rst#L472
+> 
+> Thanks for pointing this interface.
+> It is specific to ethtool but I can see the idea.
+
+Don't equate ethtool with Ethernet. Any netdev can implement it, and a
+HDLC device is a netdev. So it could well return link down reason.
+
+> But indeed this could be changed.
+> If changed, the MFD pef2256 will have to handle the full struct
+> phy_status_basic as the translation will not be there anymore.
+> Right now, this structure is pretty simple and contains only the link state
+> flag. But in the future, this PHY structure can move to something more
+> complex and I am not sure that filling this struct is the MFD pef2256
+> responsibility. The PHY pef2256 is responsible for the correct structure
+> contents not sure that this should be moved to the MFD part.
+
+Framers, like Ethernet PHYs, are reasonably well defined, because
+there are clear standards to follow. You could put the datasheets for
+the various frames side by side and quickly get an idea of the common
+properties. So you could define a structure now. In order to make it
+extendable, just avoid 0 having any meaning other than UNKNOWN. If you
+look at ethernet, SPEED_UNKNOWN is 0, DUPLEX_UNKNOWN is 0. So if a new
+field is added, we know if a driver has not filled it in.
+
+> > And why is the notifier specific to the PEF2256? What would happen if
+> > i used a analog devices DS2155, DS21Q55, and DS2156, or the IDT
+> > 82P2281? Would each have its own notifier? And hence each would need
+> > its own PHY which translates one notifier into another?
+> 
+> Each of them should have their own notifier if they can notify.
+
+I doubt you will find a framer which cannot report lost of framing. It
+is too much a part of the standards. There are signalling actions you
+need to do when a link goes does. So all framer drivers will have a
+notifier.
+
+> At least they will need their own notifier at they PHY driver level.
+> Having or not a translation from something else would depend on each device
+> PHY driver implementation.
+
+Have you ever look at Ethernet PHYs? They all export the same API. You
+can plug any Linux MAC driver into any Linux Ethernet PHY driver. It
+should be the same here. You should be able to plug any HDLC driver
+into any Framer. I should be able to take the same SoC you have
+implementing the TDM interface, and plug it into the IDT framer i know
+of. We want a standardised API between the HDLC device and the framer.
+
+> I would like this first implementation without too much API restriction
+> in order to see how it goes.
+> The actual proposal imposes nothing on the PHY internal implementation.
+> the pef2256 implementation chooses to have two notifiers (one at MFD
+> level and one at PHY level) but it was not imposed by the API.
+
+What i would like to see is some indication the API you are proposing
+is generic, and could be implemented by multiple frames and HDLC
+devices. The interface between the HDLC driver and the framer should
+be generic. The HDLC driver has an abstract reference to a framer. The
+framer has a reference to a netdev for the HDLC device.
+
+You can keep this API very simple, just have link up/down
+notification, since that is all you want at the moment. But the
+implementation should give hints how it can be extended.
+
+	Andrew
 
 -- 
 linux-phy mailing list
