@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A747C77B76
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 18:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6006EC77B7A
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 18:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETz6DSgZi6mbqzBwUvRJvIyMTAElD8Mx3hWlYEh7Ow8=; b=il+NkhOpodeIib
-	upGN0OfHtZb2TyNLa+/UPXtiNr06rFhzrIUdX+BLGK4XaotrvpZlvwud8HAQT56lqycAuVG7WwKXA
-	+HtdMU66AgKrxvmDgs4P+lqcFIY1ip4+hS2svaXI1UI292w7XyGf+1o0gBRO+FSFR4r3E1PgI/cDK
-	5vAGgd08f7FkYqBKbMcgsa4h0weQIDn5PaFCVQJHUVIRApfgxO/oAUtHWbzTUenVSArcjQNCQBpf+
-	HBNACJQ4HwXJYvqKqbnSCXF58r0FCMVvDhH3HeQhlUj2KHy0VlZCPobckbLmMrvoQU9KInS/NAKLN
-	SrGQGIXGrYUqWQSWOEsQ==;
+	List-Owner; bh=8XGFRPh83Y+Mxg1/N0oebKP35T2ZUia1CovSsue6NKY=; b=cLABJO7x6vA2PX
+	vKj2zYD6anDOLwg7f17mH3MbezvTlX1ExDA94Kpi3MGYbUYesAkkV9UY7HgFZvZ7warIB9IPZzpW/
+	Us0esCHB6bXZBLfIne/Z+4RU0QEJ14qkiMRg8JdQKX5Yg7WRsFMAMf9d7S9r5UsmE1faPaLY6ybmB
+	BFk5jX0agoPx5ta5OpoGSL/z+O6b26gggnmk5BAYFOpacPimNHAoPkz870t7MFH6seqerwWToyD3Z
+	HrufkNQXhdkND0cpH8wW/rtcRXHuXdYcMqg+q5OSStxz3s1e6LpnvydS4RzU9k2CSYiJmHIzN48Fl
+	AsRuTQ4lln+SQk21Akpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTDA-00HGCV-0e;
-	Mon, 17 Apr 2023 18:04:20 +0000
+	id 1poTDE-00HGF6-06;
+	Mon, 17 Apr 2023 18:04:24 +0000
 Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTCr-00HFzr-2U;
-	Mon, 17 Apr 2023 18:04:05 +0000
+	id 1poTCv-00HFzw-11;
+	Mon, 17 Apr 2023 18:04:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1681754641; x=1713290641;
+  t=1681754645; x=1713290645;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=3uLKkGcs/8EltrBSlra1gjG4qIRlejr3L2TWbWqYgXw=;
-  b=InC1BfxSzLL3iNPrIpaar3h1cvvJfddhR+EZWqnbmJ6yyFbSPDLaJzGJ
-   T8KgA7Jp6poZGXoCXTdSttF+I9MiFlFyFKtWcAskdmXspn5kVhk01QzaC
-   pvAU3nmbALqesHGHMZhVdZR43FegQVVlX9Fij8nvzWz6qqddQ1ZVR6XXA
-   vBdvz69728YmbsbRfbNanhQQKDrFZj8VU2GaatIH+NyQp6aKnrAjV08cg
-   aQ7dhksiZiUROrOU9SKhqQIEd+Zb4La8Opi4AdM8yfFiTDi2bx6VduHWg
-   6+eBfOCXXKPCKNWoI7NJfxAfEIBCFz6nPV349XaYMi8QfIQZBtDZmTteb
+  bh=3HuikI716f2ys2CohTnjAOi+mGw2PSL74PJSePfvn8A=;
+  b=0SMi9TqYOEijHumuQEKdUQNeXJIx1608hAc5+l/HhkQXwthrkWExKmkF
+   0A1ff4Y7+oMXpo8Wmo+FLBPNxTYBTk5h1ybMQTMJgdN/8CgtSl624mPpT
+   FbjXkzl5/8n+vfNQAO1OOH30VUkPgHADo8BOLhFI2UZoUtu/o6W3ekrNp
+   oYrdadTo2iYHdpRDcX2rnc/l3sUS+Yx/pW+PakOIRcc8SLus2h2I+wD4i
+   MP1YSFzm5vGuZcm0DJC6dm3XN6/iUKKJ7Jej/2N+LVHpOnuC1JGGI1bOr
+   7LyLP2SEDIH5Ocs2NB8g5FjtU6+vC+WA45Rby/CT18ry6G5YE5MUJYD6o
    Q==;
 X-IronPort-AV: E=Sophos;i="5.99,204,1677567600"; 
-   d="scan'208";a="147469770"
+   d="scan'208";a="147469789"
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Apr 2023 11:03:57 -0700
+  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Apr 2023 11:04:00 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Mon, 17 Apr 2023 11:03:48 -0700
+ 15.1.2507.21; Mon, 17 Apr 2023 11:03:56 -0700
 Received: from DEN-LT-70577.microchip.com (10.10.115.15) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.2507.21 via Frontend Transport; Mon, 17 Apr 2023 11:03:46 -0700
+ 15.1.2507.21 via Frontend Transport; Mon, 17 Apr 2023 11:03:54 -0700
 From: Daniel Machon <daniel.machon@microchip.com>
 To: <vkoul@kernel.org>
 CC: <kishon@kernel.org>, <Steen.Hegelund@microchip.com>,
 	<daniel.machon@microchip.com>, <UNGLinuxDriver@microchip.com>,
 	<joe@perches.com>, <linux-phy@lists.infradead.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 3/7] phy: sparx5-serdes: reorder CMU functions
-Date: Mon, 17 Apr 2023 20:03:31 +0200
-Message-ID: <20230417180335.2787494-4-daniel.machon@microchip.com>
+Subject: [PATCH 7/7] phy: sparx5-serdes: add skip_cmu_cfg check when configuring lanes
+Date: Mon, 17 Apr 2023 20:03:35 +0200
+Message-ID: <20230417180335.2787494-8-daniel.machon@microchip.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230417180335.2787494-1-daniel.machon@microchip.com>
 References: <20230417180335.2787494-1-daniel.machon@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_110401_877284_D09CE9AE 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20230417_110405_420257_5D5E6A74 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,338 +82,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reorder CMU functions, as some of them are now required by the serdes
-functions. No functional changes.
+Add a check for skip_cmu_cfg when configuring the serdes lane.  All
+individual serdeses are reset upon first configuration. Resetting the
+serdes involves reconfiguring it with preset values. The serdesmode is
+required to determine the clock-providing CMU, therefore make sure the
+serdes is not reconfigured if the serdesmode is not set.
 
 Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
 ---
- drivers/phy/microchip/sparx5_serdes.c | 306 +++++++++++++-------------
- 1 file changed, 153 insertions(+), 153 deletions(-)
+ drivers/phy/microchip/sparx5_serdes.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index 6ba058b2482f..d8620e0fae7b 100644
+index eb9352d1de7e..01bd5ea620c5 100644
 --- a/drivers/phy/microchip/sparx5_serdes.c
 +++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -925,6 +925,159 @@ static void sparx5_sd10g28_get_params(struct sparx5_serdes_macro *macro,
- 	*params = init;
- }
+@@ -1646,6 +1646,10 @@ static int sparx5_sd10g28_apply_params(struct sparx5_serdes_macro *macro,
+ 	u32 value, cmu_idx;
+ 	int err;
  
-+static int sparx5_cmu_apply_cfg(struct sparx5_serdes_private *priv,
-+				u32 cmu_idx,
-+				void __iomem *cmu_tgt,
-+				void __iomem *cmu_cfg_tgt,
-+				u32 spd10g)
-+{
-+	void __iomem **regs = priv->regs;
-+	struct device *dev = priv->dev;
-+	int value;
++	/* Do not configure serdes if CMU is not to be configured too */
++	if (params->skip_cmu_cfg)
++		return 0;
 +
-+	cmu_tgt = sdx5_inst_get(priv, TARGET_SD_CMU, cmu_idx);
-+	cmu_cfg_tgt = sdx5_inst_get(priv, TARGET_SD_CMU_CFG, cmu_idx);
-+
-+	if (cmu_idx == 1 || cmu_idx == 4 || cmu_idx == 7 ||
-+	    cmu_idx == 10 || cmu_idx == 13) {
-+		spd10g = 0;
-+	}
-+
-+	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST_SET(1),
-+		      SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST,
-+		      cmu_cfg_tgt,
-+		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST_SET(0),
-+		      SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST,
-+		      cmu_cfg_tgt,
-+		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_CMU_RST_SET(1),
-+		      SD_CMU_CFG_SD_CMU_CFG_CMU_RST,
-+		      cmu_cfg_tgt,
-+		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_45_R_DWIDTHCTRL_FROM_HWT_SET(0x1) |
-+		      SD_CMU_CMU_45_R_REFCK_SSC_EN_FROM_HWT_SET(0x1) |
-+		      SD_CMU_CMU_45_R_LINK_BUF_EN_FROM_HWT_SET(0x1) |
-+		      SD_CMU_CMU_45_R_BIAS_EN_FROM_HWT_SET(0x1) |
-+		      SD_CMU_CMU_45_R_EN_RATECHG_CTRL_SET(0x0),
-+		      SD_CMU_CMU_45_R_DWIDTHCTRL_FROM_HWT |
-+		      SD_CMU_CMU_45_R_REFCK_SSC_EN_FROM_HWT |
-+		      SD_CMU_CMU_45_R_LINK_BUF_EN_FROM_HWT |
-+		      SD_CMU_CMU_45_R_BIAS_EN_FROM_HWT |
-+		      SD_CMU_CMU_45_R_EN_RATECHG_CTRL,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_45(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_47_R_PCS2PMA_PHYMODE_4_0_SET(0),
-+		      SD_CMU_CMU_47_R_PCS2PMA_PHYMODE_4_0,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_47(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_1B_CFG_RESERVE_7_0_SET(0),
-+		      SD_CMU_CMU_1B_CFG_RESERVE_7_0,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_1B(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_0D_CFG_JC_BYP_SET(0x1),
-+		      SD_CMU_CMU_0D_CFG_JC_BYP,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_0D(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_1F_CFG_VTUNE_SEL_SET(1),
-+		      SD_CMU_CMU_1F_CFG_VTUNE_SEL,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_1F(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_00_CFG_PLL_TP_SEL_1_0_SET(3),
-+		      SD_CMU_CMU_00_CFG_PLL_TP_SEL_1_0,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_00(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_05_CFG_BIAS_TP_SEL_1_0_SET(3),
-+		      SD_CMU_CMU_05_CFG_BIAS_TP_SEL_1_0,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_05(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_30_R_PLL_DLOL_EN_SET(1),
-+		      SD_CMU_CMU_30_R_PLL_DLOL_EN,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_30(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_09_CFG_SW_10G_SET(spd10g),
-+		      SD_CMU_CMU_09_CFG_SW_10G,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_09(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_CMU_RST_SET(0),
-+		      SD_CMU_CFG_SD_CMU_CFG_CMU_RST,
-+		      cmu_cfg_tgt,
-+		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
-+
-+	msleep(20);
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_44_R_PLL_RSTN_SET(0),
-+		      SD_CMU_CMU_44_R_PLL_RSTN,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_44(cmu_idx));
-+
-+	sdx5_inst_rmw(SD_CMU_CMU_44_R_PLL_RSTN_SET(1),
-+		      SD_CMU_CMU_44_R_PLL_RSTN,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_44(cmu_idx));
-+
-+	msleep(20);
-+
-+	value = readl(sdx5_addr(regs, SD_CMU_CMU_E0(cmu_idx)));
-+	value = SD_CMU_CMU_E0_PLL_LOL_UDL_GET(value);
-+
-+	if (value) {
-+		dev_err(dev, "CMU PLL Loss of Lock: 0x%x\n", value);
-+		return -EINVAL;
-+	}
-+	sdx5_inst_rmw(SD_CMU_CMU_0D_CFG_PMA_TX_CK_PD_SET(0),
-+		      SD_CMU_CMU_0D_CFG_PMA_TX_CK_PD,
-+		      cmu_tgt,
-+		      SD_CMU_CMU_0D(cmu_idx));
-+	return 0;
-+}
-+
-+static int sparx5_cmu_cfg(struct sparx5_serdes_private *priv, u32 cmu_idx)
-+{
-+	void __iomem *cmu_tgt, *cmu_cfg_tgt;
-+	u32 spd10g = 1;
-+
-+	if (cmu_idx == 1 || cmu_idx == 4 || cmu_idx == 7 ||
-+	    cmu_idx == 10 || cmu_idx == 13) {
-+		spd10g = 0;
-+	}
-+
-+	cmu_tgt = sdx5_inst_get(priv, TARGET_SD_CMU, cmu_idx);
-+	cmu_cfg_tgt = sdx5_inst_get(priv, TARGET_SD_CMU_CFG, cmu_idx);
-+
-+	return sparx5_cmu_apply_cfg(priv, cmu_idx, cmu_tgt, cmu_cfg_tgt, spd10g);
-+}
-+
-+static int sparx5_serdes_cmu_enable(struct sparx5_serdes_private *priv)
-+{
-+	int idx, err = 0;
-+
-+	if (!priv->cmu_enabled) {
-+		for (idx = 0; idx < SPX5_CMU_MAX; idx++) {
-+			err  = sparx5_cmu_cfg(priv, idx);
-+			if (err) {
-+				dev_err(priv->dev, "CMU %u, error: %d\n", idx, err);
-+				goto leave;
-+			}
-+		}
-+		priv->cmu_enabled = true;
-+	}
-+leave:
-+	return err;
-+}
-+
- static void sparx5_sd25g28_reset(void __iomem *regs[],
- 				 struct sparx5_sd25g28_params *params,
- 				 u32 sd_index)
-@@ -1966,159 +2119,6 @@ static int sparx5_serdes_clock_config(struct sparx5_serdes_macro *macro)
- 	return 0;
- }
+ 	cmu_idx = sparx5_serdes_cmu_get(params->cmu_sel, lane_index);
+ 	err = sparx5_cmu_cfg(priv, cmu_idx);
+ 	if (err)
+@@ -2111,6 +2115,7 @@ static int sparx5_sd10g28_config(struct sparx5_serdes_macro *macro, bool reset)
+ 		.rxinvert = 1,
+ 		.txswing = 240,
+ 		.reg_rst = reset,
++		.skip_cmu_cfg = reset,
+ 	};
+ 	int err;
  
--static int sparx5_cmu_apply_cfg(struct sparx5_serdes_private *priv,
--				u32 cmu_idx,
--				void __iomem *cmu_tgt,
--				void __iomem *cmu_cfg_tgt,
--				u32 spd10g)
--{
--	void __iomem **regs = priv->regs;
--	struct device *dev = priv->dev;
--	int value;
--
--	cmu_tgt = sdx5_inst_get(priv, TARGET_SD_CMU, cmu_idx);
--	cmu_cfg_tgt = sdx5_inst_get(priv, TARGET_SD_CMU_CFG, cmu_idx);
--
--	if (cmu_idx == 1 || cmu_idx == 4 || cmu_idx == 7 ||
--	    cmu_idx == 10 || cmu_idx == 13) {
--		spd10g = 0;
--	}
--
--	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST_SET(1),
--		      SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST,
--		      cmu_cfg_tgt,
--		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST_SET(0),
--		      SD_CMU_CFG_SD_CMU_CFG_EXT_CFG_RST,
--		      cmu_cfg_tgt,
--		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_CMU_RST_SET(1),
--		      SD_CMU_CFG_SD_CMU_CFG_CMU_RST,
--		      cmu_cfg_tgt,
--		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_45_R_DWIDTHCTRL_FROM_HWT_SET(0x1) |
--		      SD_CMU_CMU_45_R_REFCK_SSC_EN_FROM_HWT_SET(0x1) |
--		      SD_CMU_CMU_45_R_LINK_BUF_EN_FROM_HWT_SET(0x1) |
--		      SD_CMU_CMU_45_R_BIAS_EN_FROM_HWT_SET(0x1) |
--		      SD_CMU_CMU_45_R_EN_RATECHG_CTRL_SET(0x0),
--		      SD_CMU_CMU_45_R_DWIDTHCTRL_FROM_HWT |
--		      SD_CMU_CMU_45_R_REFCK_SSC_EN_FROM_HWT |
--		      SD_CMU_CMU_45_R_LINK_BUF_EN_FROM_HWT |
--		      SD_CMU_CMU_45_R_BIAS_EN_FROM_HWT |
--		      SD_CMU_CMU_45_R_EN_RATECHG_CTRL,
--		      cmu_tgt,
--		      SD_CMU_CMU_45(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_47_R_PCS2PMA_PHYMODE_4_0_SET(0),
--		      SD_CMU_CMU_47_R_PCS2PMA_PHYMODE_4_0,
--		      cmu_tgt,
--		      SD_CMU_CMU_47(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_1B_CFG_RESERVE_7_0_SET(0),
--		      SD_CMU_CMU_1B_CFG_RESERVE_7_0,
--		      cmu_tgt,
--		      SD_CMU_CMU_1B(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_0D_CFG_JC_BYP_SET(0x1),
--		      SD_CMU_CMU_0D_CFG_JC_BYP,
--		      cmu_tgt,
--		      SD_CMU_CMU_0D(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_1F_CFG_VTUNE_SEL_SET(1),
--		      SD_CMU_CMU_1F_CFG_VTUNE_SEL,
--		      cmu_tgt,
--		      SD_CMU_CMU_1F(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_00_CFG_PLL_TP_SEL_1_0_SET(3),
--		      SD_CMU_CMU_00_CFG_PLL_TP_SEL_1_0,
--		      cmu_tgt,
--		      SD_CMU_CMU_00(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_05_CFG_BIAS_TP_SEL_1_0_SET(3),
--		      SD_CMU_CMU_05_CFG_BIAS_TP_SEL_1_0,
--		      cmu_tgt,
--		      SD_CMU_CMU_05(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_30_R_PLL_DLOL_EN_SET(1),
--		      SD_CMU_CMU_30_R_PLL_DLOL_EN,
--		      cmu_tgt,
--		      SD_CMU_CMU_30(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_09_CFG_SW_10G_SET(spd10g),
--		      SD_CMU_CMU_09_CFG_SW_10G,
--		      cmu_tgt,
--		      SD_CMU_CMU_09(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CFG_SD_CMU_CFG_CMU_RST_SET(0),
--		      SD_CMU_CFG_SD_CMU_CFG_CMU_RST,
--		      cmu_cfg_tgt,
--		      SD_CMU_CFG_SD_CMU_CFG(cmu_idx));
--
--	msleep(20);
--
--	sdx5_inst_rmw(SD_CMU_CMU_44_R_PLL_RSTN_SET(0),
--		      SD_CMU_CMU_44_R_PLL_RSTN,
--		      cmu_tgt,
--		      SD_CMU_CMU_44(cmu_idx));
--
--	sdx5_inst_rmw(SD_CMU_CMU_44_R_PLL_RSTN_SET(1),
--		      SD_CMU_CMU_44_R_PLL_RSTN,
--		      cmu_tgt,
--		      SD_CMU_CMU_44(cmu_idx));
--
--	msleep(20);
--
--	value = readl(sdx5_addr(regs, SD_CMU_CMU_E0(cmu_idx)));
--	value = SD_CMU_CMU_E0_PLL_LOL_UDL_GET(value);
--
--	if (value) {
--		dev_err(dev, "CMU PLL Loss of Lock: 0x%x\n", value);
--		return -EINVAL;
--	}
--	sdx5_inst_rmw(SD_CMU_CMU_0D_CFG_PMA_TX_CK_PD_SET(0),
--		      SD_CMU_CMU_0D_CFG_PMA_TX_CK_PD,
--		      cmu_tgt,
--		      SD_CMU_CMU_0D(cmu_idx));
--	return 0;
--}
--
--static int sparx5_cmu_cfg(struct sparx5_serdes_private *priv, u32 cmu_idx)
--{
--	void __iomem *cmu_tgt, *cmu_cfg_tgt;
--	u32 spd10g = 1;
--
--	if (cmu_idx == 1 || cmu_idx == 4 || cmu_idx == 7 ||
--	    cmu_idx == 10 || cmu_idx == 13) {
--		spd10g = 0;
--	}
--
--	cmu_tgt = sdx5_inst_get(priv, TARGET_SD_CMU, cmu_idx);
--	cmu_cfg_tgt = sdx5_inst_get(priv, TARGET_SD_CMU_CFG, cmu_idx);
--
--	return sparx5_cmu_apply_cfg(priv, cmu_idx, cmu_tgt, cmu_cfg_tgt, spd10g);
--}
--
--static int sparx5_serdes_cmu_enable(struct sparx5_serdes_private *priv)
--{
--	int idx, err = 0;
--
--	if (!priv->cmu_enabled) {
--		for (idx = 0; idx < SPX5_CMU_MAX; idx++) {
--			err  = sparx5_cmu_cfg(priv, idx);
--			if (err) {
--				dev_err(priv->dev, "CMU %u, error: %d\n", idx, err);
--				goto leave;
--			}
--		}
--		priv->cmu_enabled = true;
--	}
--leave:
--	return err;
--}
--
- static int sparx5_serdes_get_serdesmode(phy_interface_t portmode, int speed)
- {
- 	switch (portmode) {
 -- 
 2.34.1
 
