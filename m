@@ -4,81 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC005C77B72
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 12:30:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABD02C77B76
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 13:05:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RAj1snU31sgoPDMfb3h6Y0qsE30OLUFm03LQ/mfgjug=; b=zO3GtoOlCiRmrS
-	00DPcV0SPvrroOAROoQ1y81HnTNK+JcD8BRFE3lqD3UB5KFgnQopaMbnzmJHOJqoAFHtbQxQEVrJw
-	6J+BfvJuZ0B/+q/HvCdljNXwtEXKnFKUUsiHexVoGgB20VAwJOmIe15BjIBo+/Im/9QSSktVa4PjU
-	Qd164BZRt7MAwXp1jK2MgvIRMVyLSrfPHOgnUrTIXpB5uoOVtk5ROJm3YIgkVWC6l4MuRpVQKwLix
-	95rOwwvKCsfLJkgKLRZRzQHT+oG37AlgRAoWmxhPMxGtjVQYJUGz2qyghtpFUyg/vVt6o/s5bH4nA
-	roZOGJ26aerxPqCXax+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=giiVurdIrWY6w4UtsZyNuYyEjTqsqeE0CwU81+OoHe8=; b=s0bQXlhqGCZyLw
+	Y4aUpK/uJyn3/xO+byON++PnUryV99RMWTWN+ufirqm1P4YYSvqyg/Bho8+HxaRhfBXFJZc1IrOqU
+	tXhXAu8nsK9BoppGUkjSKgz91Hx/VSTUzlZP6n6Ren1zn2BqhNoKgYSBZJslJLAtWW1BuDyGY3eXT
+	MMkaokHGdVqB1/ysJ5eATNPiXEwM11DFZ6DuhtzWjj60wBClGB3DlpktB2zlJjdUxtMSNX0PQXCXc
+	ZtliJCykintEnlnn330zJbiSVzH4Se1g/CS8uo45SZMM0DgPehrq7q3peh8TMnAgS0ZlKmEY9ypm9
+	JjOcPUsuslbym9lyLVnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poNzd-00G99y-1D;
-	Mon, 17 Apr 2023 12:30:01 +0000
-Received: from mx.sberdevices.ru ([45.89.227.171])
+	id 1poOY7-00GJPW-0o;
+	Mon, 17 Apr 2023 13:05:39 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poNzZ-00G991-0S;
-	Mon, 17 Apr 2023 12:29:58 +0000
-Received: from s-lin-edge02.sberdevices.ru (localhost [127.0.0.1])
-	by mx.sberdevices.ru (Postfix) with ESMTP id B6A735FD1F;
-	Mon, 17 Apr 2023 15:29:54 +0300 (MSK)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sberdevices.ru;
-	s=mail; t=1681734594;
-	bh=jvK4cXeO8Jj4+6kMoLy/DP4MK+U8SvFogPOaVUzPgzM=;
-	h=Date:From:To:Subject:Message-ID:MIME-Version:Content-Type;
-	b=eDdQtACxFXEqW9lv0/TbVuemLFGr05aN/2rtSitOukENevq2YpZU1eJIDGIUzC3op
-	 IpM60h1IZiEXMQsxT+Lype5cB1mZa2XUi7KJBeTaUltlibH1bZmx9qPU+yR54J0Nv2
-	 gHeV002pL93tMlt6tfVHZPlsXqxDyhDcrrOTooj2H1bU+pOdjNDCl9PJbN2pF1hf7U
-	 Df7myAOXL2YSMclFwSiu3k2Zy7VTy6xO5aTH3NhaHqSE+ydMDNx42kww5CgHFVbf60
-	 kTSRCd10xUeAsFYOboT8GI9umuSD9aXbt7yNaVsr9qWokp1G2cROb58jVVwW3czh5D
-	 lj2Qe3T++gS9A==
-Received: from S-MS-EXCH01.sberdevices.ru (S-MS-EXCH01.sberdevices.ru [172.16.1.4])
-	by mx.sberdevices.ru (Postfix) with ESMTP;
-	Mon, 17 Apr 2023 15:29:53 +0300 (MSK)
-Date: Mon, 17 Apr 2023 15:29:52 +0300
-From: Dmitry Rokosov <ddrokosov@sberdevices.ru>
-To: <neil.armstrong@linaro.org>
-CC: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	<gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
-	<krzysztof.kozlowski+dt@linaro.org>, <khilman@baylibre.com>,
-	<jbrunet@baylibre.com>, <mturquette@baylibre.com>, <vkoul@kernel.org>,
-	<kishon@kernel.org>, <hminas@synopsys.com>, <Thinh.Nguyen@synopsys.com>,
-	<yue.wang@amlogic.com>, <hanjie.lin@amlogic.com>, <kernel@sberdevices.ru>,
-	<rockosov@gmail.com>, <linux-usb@vger.kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-amlogic@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v1 4/5] usb: dwc3-meson-g12a: support OTG switch
-Message-ID: <20230417122952.s6ag2mtc7exdbr4n@CAB-WSD-L081021>
-References: <20230414152423.19842-1-ddrokosov@sberdevices.ru>
- <20230414152423.19842-5-ddrokosov@sberdevices.ru>
- <CAFBinCDyUBWd-V0mDy_edzH=3JM5SAuX=vtT4MG9Fb62Rcv=mA@mail.gmail.com>
- <20230417114739.r7aoiodqybalbn4o@CAB-WSD-L081021>
- <3381d124-1049-16da-bcdb-1cbbec379154@linaro.org>
+	id 1poOXw-00GJI9-1u
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Apr 2023 13:05:38 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-2f3fe12de15so888440f8f.3
+        for <linux-phy@lists.infradead.org>; Mon, 17 Apr 2023 06:05:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1681736725; x=1684328725;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=+pN7CHTmhcpk+kvQFe2Qj4nSZeBGIjHXqqKasTb6lhk=;
+        b=Bgg3k2q1I4LWyoS114Sz0KymTKA2sEwO4Aef31BG8tNohuz0BdZB2B6nEsGZrY1GEo
+         wOL+m/NcuDjyrWBSVrXOiH+20/n5djMM3Dj1qAOIbHSAXzClWaMolmUBcuAsxBtLFHk4
+         HfxfOH2gCCClo5PVsp5KjDQEOY9g6s6MYLKtYEtkXErOp5Hxzh7wj5jce0B1LY4YewB+
+         eE2pEIyZuyiVlWF7hMpadTMqa+h7dYLiQ/adwFBbZdTwXXm+6wt4KdRNMGo4T8XyxzPG
+         gk8CmhFlPuxt4gFWkzqSI0ID94xRb4AU70e6df5XjkEEnTizT1/rtIICx00xrshMzWfP
+         0ySQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681736725; x=1684328725;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+pN7CHTmhcpk+kvQFe2Qj4nSZeBGIjHXqqKasTb6lhk=;
+        b=lkJs0kY6Y1fl6H5ZCeEnC526yq/5Wv83UP62Y0j/FRXX+EZnxjdcbhvFSZh0+XtwAC
+         BKsA8IVPK6jlcbXk34H3MIfWIupEQ1CNNQ2iO/7JzmjybW6LK0VMyeAdPrINKYfE4gUg
+         sRC1hC5h4wEGGWop1GxnMIJfCbyqaoGMvhFXCiyyrf5rCkFlKaKHxXPgYQlCl+DAVLMh
+         JFjybeNKjwol5DtC7Fpj6Xj0Xpaxsqi23n+c2rhsVT1zQOiXXnCzcsh/kg0WHDyymAgk
+         WSW40HOg8RKKBfiil9no1j4GcRNxn1HL20niCqgdNBurQXw04Jpo5R9ZWi7B298DvFt0
+         y5CA==
+X-Gm-Message-State: AAQBX9cbUr+G4FjdBMpclw1IUfuZcwOaONdlV0VJcSCUXM4m+ZVXn/2p
+	HK1jWVXy6AZVV6efBe7ANjXKVw==
+X-Google-Smtp-Source: AKy350Ya7/njYFXhgTJTc7VF5jmgWE3WlJqHe1HiKD8ysBAxGWWzpzzvX4+3LSjuaxGp4l/qwi72Uw==
+X-Received: by 2002:a5d:4576:0:b0:2f2:501b:bca6 with SMTP id a22-20020a5d4576000000b002f2501bbca6mr6649069wrc.17.1681736725582;
+        Mon, 17 Apr 2023 06:05:25 -0700 (PDT)
+Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:374a:ffae:fd26:4893])
+        by smtp.gmail.com with ESMTPSA id q14-20020a05600000ce00b002f0075ccf7bsm10509938wrx.71.2023.04.17.06.05.24
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 17 Apr 2023 06:05:25 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: qmp-ufs: fix clock and clock-names for sa8775p
+Date: Mon, 17 Apr 2023 15:05:22 +0200
+Message-Id: <20230417130522.401605-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.37.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3381d124-1049-16da-bcdb-1cbbec379154@linaro.org>
-User-Agent: NeoMutt/20220415
-X-Originating-IP: [172.16.1.6]
-X-ClientProxiedBy: S-MS-EXCH02.sberdevices.ru (172.16.1.5) To
- S-MS-EXCH01.sberdevices.ru (172.16.1.4)
-X-KSMG-Rule-ID: 4
-X-KSMG-Message-Action: clean
-X-KSMG-AntiSpam-Status: not scanned, disabled by settings
-X-KSMG-AntiSpam-Interceptor-Info: not scanned
-X-KSMG-AntiPhishing: not scanned, disabled by settings
-X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, bases: 2023/04/17 09:07:00 #21118574
-X-KSMG-AntiVirus-Status: Clean, skipped
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_052957_358344_EEB5421B 
-X-CRM114-Status: GOOD (  22.43  )
+X-CRM114-CacheID: sfid-20230417_060528_637197_ECE23C41 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,32 +95,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGVsbG8gTmVpbCwKClRoYW5rIHlvdSBmb3IgcmV2aWV3LCBhcHByZWNpYXRlIGl0IQoKT24gTW9u
-LCBBcHIgMTcsIDIwMjMgYXQgMDI6MjI6MjZQTSArMDIwMCwgbmVpbC5hcm1zdHJvbmdAbGluYXJv
-Lm9yZyB3cm90ZToKPiBPbiAxNy8wNC8yMDIzIDEzOjQ3LCBEbWl0cnkgUm9rb3NvdiB3cm90ZToK
-PiA+IEhlbGxvIE1hcnRpbiwKPiA+IAo+ID4gVGhhbmsgeW91IGZvciBxdWljayByZXZpZXcsIGFw
-cHJlY2lhdGUgaXQhCj4gPiBQbGVhc2UgZmluZCBteSBjb21tZW50cyBiZWxvdyBhbmQgaW4gdGhl
-IG90aGVyIHJlcGxpZXMuCj4gPiAKPiA+IE9uIFN1biwgQXByIDE2LCAyMDIzIGF0IDEwOjU2OjM2
-UE0gKzAyMDAsIE1hcnRpbiBCbHVtZW5zdGluZ2wgd3JvdGU6Cj4gPiA+IE9uIEZyaSwgQXByIDE0
-LCAyMDIzIGF0IDU6MjTigK9QTSBEbWl0cnkgUm9rb3NvdiA8ZGRyb2tvc292QHNiZXJkZXZpY2Vz
-LnJ1PiB3cm90ZToKPiA+ID4gWy4uLl0KPiA+ID4gPiAgIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZHdj
-M19tZXNvbl9nMTJhX2RydmRhdGEgYTFfZHJ2ZGF0YSA9IHsKPiA+ID4gPiAtICAgICAgIC5vdGdf
-c3dpdGNoX3N1cHBvcnRlZCA9IGZhbHNlLAo+ID4gPiA+ICsgICAgICAgLm90Z19zd2l0Y2hfc3Vw
-cG9ydGVkID0gdHJ1ZSwKPiA+ID4gaXQgd291bGQgYmUgZ3JlYXQgaWYgeW91IGNvdWxkIGFsc28g
-Zm9sbG93IHVwIHdpdGggYSBwYXRjaCB0aGF0Cj4gPiA+IHJlbW92ZXMgb3RnX3N3aXRjaF9zdXBw
-b3J0ZWQuCj4gPiA+IEExIHdhcyB0aGUgb25seSB2YXJpYW50IHRoYXQgbmVlZGVkIGl0IGFuZCBh
-ZnRlciB0aGlzIHBhdGNoIGl0J3MganVzdCBkZWFkIGNvZGUuCj4gPiAKPiA+IEl0IG1ha2VzIHNl
-bnNlLiBJIHRob3VnaHQgYWJvdXQgaXQgYmVmb3JlIHNlbmRpbmcgdGhlIGZpcnN0IHZlcnNpb24s
-IGJ1dAo+ID4gSSBmb3VuZCBhIGNvdW50ZXItYXJndW1lbnQ6IGZ1dHVyZSBTb0NzIG1heSB1c2Ug
-dGhpcyBwYXJhbWV0ZXIuCj4gPiBCdXQgaWYgeW91IGFzaywgSSB3aWxsIHJlbW92ZSAnb3RnX3N3
-aXRjaF9zdXBwb3J0ZWQnIGluIHRoZSBuZXh0IHZlcnNpb24KPiA+IAo+IAo+IFBsZWFzZSByZW1v
-dmUgaXQsIGl0J3MgZWFzeSB0byBhZGQgaXQgYWdhaW4gaWYgbmVlZGVkLgoKU3VyZSwgbm8gcHJv
-YmxlbS4gSXQgd2lsbCBiZSByZW1vdmVkIGluIHRoZSBuZXh0IHZlcnNpb24uCgotLSAKVGhhbmsg
-eW91LApEbWl0cnkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+
+We must set *minItems* to 3, not maxItems as this platform requires
+exactly three clocks and maxItems is already set to 3 globally.
+
+Fixes: e5796a9cdf73 ("dt-bindings: phy: qmp-ufs: describe the UFS PHY for sa8775p")
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 94c0fab065a8..a1897a7606df 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -78,9 +78,9 @@ allOf:
+     then:
+       properties:
+         clocks:
+-          maxItems: 3
++          minItems: 3
+         clock-names:
+-          maxItems: 3
++          minItems: 3
+     else:
+       properties:
+         clocks:
+-- 
+2.37.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
