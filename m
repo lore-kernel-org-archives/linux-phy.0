@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3871C77B7D
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 18:04:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D381FC77B7A
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 18:04:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dRP6n26GbiQK5+LggsBM8PgFzf2IyuvF/OELjvYfGKY=; b=jvfvsdDLsYoyk8
-	cKbQZ7u9WEyQZGKIbdVgw0/QJ+4/70KJW2GloCq6ZVY6eNK5Aav2JmkzrdSfMdxLFENobe+xDwPUa
-	FIs9Wb1m2nJUNnS4QyCIIsor2Dw9Tq6cwzGvbqBxZLU+1i0u4SzF7zaYjf35djWWnHQmZUhcAHCJP
-	SWl71WwGheGenjZuU6XTktl+F+U8XX/6bybJ+RDegDR4cZ8h/pQp2ZV5g5wSi5w2Njnsl7Am45vZv
-	N3D6ACrYzgGWqvNOfTsAtLnkSG+X1Q7R4d58VKuGLjc6IrfiQdzohw9dAMuYtcHgrkGr42ab0NtvV
-	F7BdNYB1O8beLltbOPMg==;
+	List-Owner; bh=KUTGfHgxmd11Y+ncTnumDvqdTAkFxiIK//NKjv3o4Rc=; b=P9WCpB7FY9MaEb
+	qMpTfwL6CKTWR1bbrxYBd8q1rRCJ5DuP3IXlx5LgAvz/IcQSmhfxNn5/r/lG2Ys9+R6sWJaumGFmd
+	FAVIoqrRoSVL86cpne1xALYvYx3UHwhwZFdUxs/TiQ3Y3Cl+kMboMxGksF/ultudK4LlVmeh9Iaab
+	r4jc+KdDOdPeOhzfRKXrugPQPPdQ7u+eiOBjCH/Adn3V0eugAOIXNSo9jSrCXFGR0gJdABfJzyci/
+	cjmFZq2w9ZYA1tOcJ4WedjCQEzwb5oWonL9rrdWN3U/nGEozwzV53E+8Atx1ASUO9L2eQvFVY/9JP
+	KoqeiakvCzzO7OoSIzZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTCy-00HG5d-1d;
-	Mon, 17 Apr 2023 18:04:08 +0000
+	id 1poTDA-00HGCn-1c;
+	Mon, 17 Apr 2023 18:04:20 +0000
 Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTCt-00HFzw-2W;
+	id 1poTCu-00HG1U-0A;
 	Mon, 17 Apr 2023 18:04:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
   t=1681754643; x=1713290643;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=qWBx4BKoFDrQnCpgyAMwdPuAQ4nlRpG6oep6/zjdvDg=;
-  b=u4Yp0yxyAttCTD5RHzOJ7cFEmjHZ0JAkMX6HUC/rWAS3kguEegFQTm5r
-   yCrCLFKFDbg086gcSsVrXK0uEpJBT1+lv7hveIR1h0/EI8ygZOn3rZFVZ
-   kjdkm72d6m8YSF0tZxVtpD+FTEmMoeTbh+COrsKuXQtrhaqAC+qwFiJuG
-   2tyOj6fWfs/HG/q4LN28qD6j46yQ3wLX0WDCT/xdw/L3ioOtAC4aOnllG
-   iz6Kd42l+GZhOcvfKVO+PyP3Y/EgxIVQ3/wGYMKWNou/i9e+5CcrI4CSe
-   tXL9zmaU4oJTkVAjgUTfwSEi2KO86MgcCA8F5d6iQabQjvM3mEh1XFXwy
-   g==;
+  bh=k+uQ6AuSXVO9NTO3vnNTGE3OcG8q0cmFmyPP7RNm0jA=;
+  b=yLTdveWd2TwW9UXfIXFjpmNvQhZPYbAYFbnaeW3+W7LxJ29X0eL/nQHV
+   4pjm5IXecJSjVqr6w2NboDMpO5/WV2TmKL6Rm63ZDfan2tkr3KEVo64nQ
+   jMY6BuQl5XBdmo4t+Shhp/fQZ38sk7F4exycZGKqg2yDWYXZECgjJ0g/9
+   B2HwxBoWUKsuxtO6rNGrNA9mMTHXw2o5VyWVMjvIPQLUOkrB0lpDQ1MWL
+   Ln37dwAMA+AgqSskC4jniBkK3WrCOOCdvW4IwB+wdUqqCiOSXbOMnmbXf
+   Kpc49ytCTQ3vkuZczokrIlNmvqTiBd4HJbdtLDoHETqFLVpxsEctbD8ZD
+   Q==;
 X-IronPort-AV: E=Sophos;i="5.99,204,1677567600"; 
-   d="scan'208";a="147469779"
+   d="scan'208";a="147469783"
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Apr 2023 11:03:58 -0700
+  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Apr 2023 11:03:59 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Mon, 17 Apr 2023 11:03:52 -0700
+ 15.1.2507.21; Mon, 17 Apr 2023 11:03:54 -0700
 Received: from DEN-LT-70577.microchip.com (10.10.115.15) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.2507.21 via Frontend Transport; Mon, 17 Apr 2023 11:03:50 -0700
+ 15.1.2507.21 via Frontend Transport; Mon, 17 Apr 2023 11:03:52 -0700
 From: Daniel Machon <daniel.machon@microchip.com>
 To: <vkoul@kernel.org>
 CC: <kishon@kernel.org>, <Steen.Hegelund@microchip.com>,
 	<daniel.machon@microchip.com>, <UNGLinuxDriver@microchip.com>,
 	<joe@perches.com>, <linux-phy@lists.infradead.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 5/7] phy: sparx5-serdes: power on CMUs individually
-Date: Mon, 17 Apr 2023 20:03:33 +0200
-Message-ID: <20230417180335.2787494-6-daniel.machon@microchip.com>
+Subject: [PATCH 6/7] phy: sparx5-serdes: remove power up of all CMUs
+Date: Mon, 17 Apr 2023 20:03:34 +0200
+Message-ID: <20230417180335.2787494-7-daniel.machon@microchip.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230417180335.2787494-1-daniel.machon@microchip.com>
 References: <20230417180335.2787494-1-daniel.machon@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_110403_894852_589E86EE 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20230417_110404_151627_F61671C4 
+X-CRM114-Status: GOOD (  10.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,90 +82,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Power on the CMU instance, that provides the clock for the serdes, given the
-specified serdes mode and index. The CMU instance is looked up, using a
-preset map of serdes mode and index to CMU index.
+CMUs should not be powered up by default anymore, so remove responsible
+code.
 
 Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
 ---
- drivers/phy/microchip/sparx5_serdes.c | 43 ++++++++++++++++++++++++++-
- 1 file changed, 42 insertions(+), 1 deletion(-)
+ drivers/phy/microchip/sparx5_serdes.c | 25 -------------------------
+ drivers/phy/microchip/sparx5_serdes.h |  1 -
+ 2 files changed, 26 deletions(-)
 
 diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index 0e9db7b36b60..a6638d783a01 100644
+index a6638d783a01..eb9352d1de7e 100644
 --- a/drivers/phy/microchip/sparx5_serdes.c
 +++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -25,6 +25,7 @@
- 
- #define SPX5_SERDES_10G_START 13
- #define SPX5_SERDES_25G_START 25
-+#define SPX5_SERDES_6G10G_CNT SPX5_SERDES_25G_START
- 
- /* Optimal power settings from GUC */
- #define SPX5_SERDES_QUIET_MODE_VAL 0x01ef4e0c
-@@ -34,6 +35,7 @@ enum sparx5_10g28cmu_mode {
- 	SPX5_SD10G28_CMU_AUX1 = 1,
- 	SPX5_SD10G28_CMU_AUX2 = 3,
- 	SPX5_SD10G28_CMU_NONE = 4,
-+	SPX5_SD10G28_CMU_MAX,
- };
- 
- enum sparx5_sd25g28_mode_preset_type {
-@@ -1078,6 +1080,39 @@ static int sparx5_serdes_cmu_enable(struct sparx5_serdes_private *priv)
- 	return err;
+@@ -1062,24 +1062,6 @@ static int sparx5_cmu_cfg(struct sparx5_serdes_private *priv, u32 cmu_idx)
+ 	return sparx5_cmu_apply_cfg(priv, cmu_idx, cmu_tgt, cmu_cfg_tgt, spd10g);
  }
  
-+/* Map of 6G/10G serdes mode and index to CMU index. */
-+static const int
-+sparx5_serdes_cmu_map[SPX5_SD10G28_CMU_MAX][SPX5_SERDES_6G10G_CNT] = {
-+	[SPX5_SD10G28_CMU_MAIN] = {  2,  2,  2,  2,  2,
-+				     2,  2,  2,  5,  5,
-+				     5,  5,  5,  5,  5,
-+				     5,  8, 11, 11, 11,
-+				    11, 11, 11, 11, 11 },
-+	[SPX5_SD10G28_CMU_AUX1] = {  0,  0,  3,  3,  3,
-+				     3,  3,  3,  3,  3,
-+				     6,  6,  6,  6,  6,
-+				     6,  6,  9,  9, 12,
-+				    12, 12, 12, 12, 12 },
-+	[SPX5_SD10G28_CMU_AUX2] = {  1,  1,  1,  1,  4,
-+				     4,  4,  4,  4,  4,
-+				     4,  4,  7,  7,  7,
-+				     7,  7, 10, 10, 10,
-+				    10, 13, 13, 13, 13 },
-+	[SPX5_SD10G28_CMU_NONE] = {  1,  1,  1,  1,  4,
-+				     4,  4,  4,  4,  4,
-+				     4,  4,  7,  7,  7,
-+				     7,  7, 10, 10, 10,
-+				    10, 13, 13, 13, 13 },
-+};
-+
-+/* Get the index of the CMU which provides the clock for the specified serdes
-+ * mode and index.
-+ */
-+static int sparx5_serdes_cmu_get(enum sparx5_10g28cmu_mode mode, int sd_index)
-+{
-+	return sparx5_serdes_cmu_map[mode][sd_index];
-+}
-+
- static void sparx5_serdes_cmu_power_off(struct sparx5_serdes_private *priv)
- {
- 	void __iomem *cmu_inst, *cmu_cfg_inst;
-@@ -1626,7 +1661,13 @@ static int sparx5_sd10g28_apply_params(struct sparx5_serdes_macro *macro,
- 	u32 lane_index = macro->sidx;
- 	u32 sd_index = macro->stpidx;
- 	void __iomem *sd_inst;
--	u32 value;
-+	u32 value, cmu_idx;
-+	int err;
-+
-+	cmu_idx = sparx5_serdes_cmu_get(params->cmu_sel, lane_index);
-+	err = sparx5_cmu_cfg(priv, cmu_idx);
-+	if (err)
-+		return err;
+-static int sparx5_serdes_cmu_enable(struct sparx5_serdes_private *priv)
+-{
+-	int idx, err = 0;
+-
+-	if (!priv->cmu_enabled) {
+-		for (idx = 0; idx < SPX5_CMU_MAX; idx++) {
+-			err  = sparx5_cmu_cfg(priv, idx);
+-			if (err) {
+-				dev_err(priv->dev, "CMU %u, error: %d\n", idx, err);
+-				goto leave;
+-			}
+-		}
+-		priv->cmu_enabled = true;
+-	}
+-leave:
+-	return err;
+-}
+-
+ /* Map of 6G/10G serdes mode and index to CMU index. */
+ static const int
+ sparx5_serdes_cmu_map[SPX5_SD10G28_CMU_MAX][SPX5_SERDES_6G10G_CNT] = {
+@@ -2236,10 +2218,6 @@ static int sparx5_serdes_config(struct sparx5_serdes_macro *macro)
+ 	int serdesmode;
+ 	int err;
  
- 	if (params->is_6g)
- 		sd_inst = sdx5_inst_get(priv, TARGET_SD6G_LANE, sd_index);
+-	err = sparx5_serdes_cmu_enable(macro->priv);
+-	if (err)
+-		return err;
+-
+ 	serdesmode = sparx5_serdes_get_serdesmode(macro->portmode, macro->speed);
+ 	if (serdesmode < 0) {
+ 		dev_err(dev, "SerDes %u, interface not supported: %s\n",
+@@ -2331,9 +2309,6 @@ static int sparx5_serdes_reset(struct phy *phy)
+ 	struct sparx5_serdes_macro *macro = phy_get_drvdata(phy);
+ 	int err;
+ 
+-	err = sparx5_serdes_cmu_enable(macro->priv);
+-	if (err)
+-		return err;
+ 	if (macro->serdestype == SPX5_SDT_25G)
+ 		err = sparx5_sd25g28_config(macro, true);
+ 	else
+diff --git a/drivers/phy/microchip/sparx5_serdes.h b/drivers/phy/microchip/sparx5_serdes.h
+index 0a3e496e6210..13f94a29225a 100644
+--- a/drivers/phy/microchip/sparx5_serdes.h
++++ b/drivers/phy/microchip/sparx5_serdes.h
+@@ -30,7 +30,6 @@ struct sparx5_serdes_private {
+ 	struct device *dev;
+ 	void __iomem *regs[NUM_TARGETS];
+ 	struct phy *phys[SPX5_SERDES_MAX];
+-	bool cmu_enabled;
+ 	unsigned long coreclock;
+ };
+ 
 -- 
 2.34.1
 
