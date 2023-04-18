@@ -4,92 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5965CC6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 11:56:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45A1BC6FD18
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 12:22:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ei2Cf7JxVeGOS/YSbsVUY68foem2jnHk0zOoXnuajGI=; b=dbRz3fwhai+aD/
-	EXJvHvXHBSB3zKKkI7sTmPmMdGD9ES1tp1bU92KgDVvrw6PKFnpRoC39l9InyvzeF0+jGmXZMtkX+
-	Uycdh1x/vCuHz+Yw8h99cRud3c2z5HK1GzFrz3iFwttfdMfzevwYsiJRPbHm+j7uG3Hw8c53499uF
-	boYLPz8gokITqbeo1yDiQIskCBZ4VxBVrMXf1whXqvloAlujOcvZGSPBGWCP0Womi6daRoAsBSUVQ
-	qdOL47eMee3txMIShcn7xo2lyDu1ZHJMLXy1FXwdzIUXu7zEmuHAXby7KKlxMJoQ631mefep6UiMy
-	YWWYsRDHLhWZd6FP3p9w==;
+	List-Owner; bh=qsjp85WHNdMVKcLKz1Mh1exCru0EwuWYGhGdsWT1L2M=; b=WqUERNkELFT6hj
+	e8PSrTDPv7Af+PcGDxGEY6su79GDVfFFvpI4cSW8xrJNxrj4n3M4In0y//P8+hqeZm+p0clstk/6m
+	+PIyPGG4hgriKiRoUkaycTGGd/Q2i9/yEsltCwrZOm2CEtV6JOeqS3pzLrxub2oChRYNvt8Wf+EnL
+	WP1HyifAixhRlAZXjyk1LKR5vn3FkcmJcYId0E3/n8TYjpJrbhyHTJKIkI609a9FQ2j3e/id2ELwO
+	UgvMaSIVGhHt+9S0km4xofkRu5f+95jBC9Mu+RKIuClKsBoIE8r2Ghe8WtyCFu/0AvCQ7oXqbKiY6
+	7QNaYjYqiQfloW4nb4ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pojx1-0022NP-03;
-	Tue, 18 Apr 2023 11:56:47 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1pokM5-0026JM-30;
+	Tue, 18 Apr 2023 12:22:41 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pojww-0022MD-2c;
-	Tue, 18 Apr 2023 11:56:43 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id n43-20020a05600c502b00b003f17466a9c1so2900993wmr.2;
-        Tue, 18 Apr 2023 04:56:41 -0700 (PDT)
+	id 1pokM3-0026IN-20
+	for linux-phy@lists.infradead.org;
+	Tue, 18 Apr 2023 12:22:41 +0000
+Received: by mail-ej1-x633.google.com with SMTP id dm2so72771090ejc.8
+        for <linux-phy@lists.infradead.org>; Tue, 18 Apr 2023 05:22:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1681819000; x=1684411000;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=linaro.org; s=google; t=1681820558; x=1684412558;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=T9oSeZGJaO3G9BEkK1S2Mgd4sINffRf+WgKyKKehfmI=;
-        b=EXHJXEGXy79uUSSwalxffycq7KWxOyLGcigWWbEvbe4A/tHuCrJx3bi9fyVr30xbvt
-         2ohr0yYvurqh89V5/02Q1Lxqa1lcYhqwJT9gY2OkB9rEfs9TqLQHFDOXD5xueuIZKLIi
-         0enhdobg6t6Pn+69lbxkw5PDTNIKBWJC2ntey0mtiKfSW2kKhayCaxskZc6WC/vPvrhO
-         bC1syUexCP1omtV1npNjjcM6CzulU+hIVBIJEb6WXUrn9tqFidigErpnMAl0gPt0EZ8e
-         vjD7hAefkxeTGZK7t8fEssZ0/C8eTQFa8cG8kZc3cSanJT3q9kEr34rQ5C6FT2zXaJ4j
-         khRQ==
+        bh=9NCi64XGNvnIcRoPfYbsVQEhFpTLdIc0VlKvzW5v7qU=;
+        b=maFFAOMtTbJViPc8gHoncMZVt1U2Au3ypnEeegMeWLUYOz6jdNkKS7yJLBivFHX7J+
+         jeU/saqkWGkaad+b3a/AkjcMbAsLUZNS+KdH5D6U92eyJMJ/oeHuW9kyfBN4dYvlR6dg
+         tyJ0Xsiax7fTOTj2z5GhwpsK/PY8T5SvFWA0JIaKYVoVrj+hE2izgsjeVWS4sope6xdO
+         Vl9l3xhodT7SzE+rpu4QOMchQwMFpLLw+ZTXH8vUdwS5eMjzBTHwvmkTqKGMJR4hSYAF
+         /HCx5yMn6FXudnjiaHZz4m4/Kd4oEFC8yPXzZSW9tQgp6iBj79h0aGxj2ERsNK8TepBO
+         iy4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681819000; x=1684411000;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1681820558; x=1684412558;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=T9oSeZGJaO3G9BEkK1S2Mgd4sINffRf+WgKyKKehfmI=;
-        b=hpxrdodoBm/ALHsJ+9GFXQX1teRfv/z2kjLF1Se4PrV55gjmLRJARIn9bD11LjQ0YM
-         6QD2rU9NdQlYuohTnTQe24iUqAgEMC5VDvPtZGXd2pfuZkWmzkrsS6krKlXAZDCgxGj8
-         PahgWUATZ7273Wl1cRNbIpz35jZE7OneDuQjSKuFo8UbbdKc5LmD+YFVscFCQTs3rMEi
-         SB7zk3SbQm8wfVUgmUYcJGjGxBhHsYtbeyeS/lpK/f9aTqsh2LMyQHSfoNMWZTifK6y7
-         YDWD9RVZqYv8Vg5ROZ1Su0t3a5ZvEsYCfVqSFuIKmHOQ5v9Cbp4p52zBnkXnFyuK5juj
-         79kQ==
-X-Gm-Message-State: AAQBX9dK/Nul4YvTiduLPyYLKW5GU6ERRuyJIiN9/xMl4d46SllWBR+q
-	MBspjpXZqbFvLUtNDJ7sDR7F5uGkMY5ZYQ==
-X-Google-Smtp-Source: AKy350bbx0bJ/4L8a44U/aCtvaM2RV9kN1tMXWOPsHUuu0HTywAsjz+gzSejmnkzvEnhtHbDS3+jEw==
-X-Received: by 2002:a05:600c:b47:b0:3f1:6cdf:93ac with SMTP id k7-20020a05600c0b4700b003f16cdf93acmr7012569wmr.17.1681819000111;
-        Tue, 18 Apr 2023 04:56:40 -0700 (PDT)
-Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id v3-20020a1cf703000000b003f04646838esm14855802wmh.39.2023.04.18.04.56.37
+        bh=9NCi64XGNvnIcRoPfYbsVQEhFpTLdIc0VlKvzW5v7qU=;
+        b=Wdps4bSrEwSa5cYJYcKqEOs4d1XPDW6MJHKqujRY9jhiZXhMds0JQWWockc+g5gtnW
+         5QQEHSdAWjF3r7t3R/d0SZxdhNzSnI0giZX7IRoHaDoR65X+g4GBc3tuMvG/oWVp+7Ut
+         ivaB9Oy2n2M21QV4I7HWI8TwNopvNAT6X77vWwQryBm1FkK++R6wVIuYMrDlPPgq3D/5
+         UT6vODMgm4mmX5UJylOtzbuAocQnxM2BjLLaO+bH1qGc9oKGcW4RNmWST+lVh+c2bGBY
+         Pma8mudF/UVqzN+8Sn2ztH/ODpTmOKiTCkpQCD90NpPERFh4xh1AKKULXFEgQlBgwNCg
+         IO7w==
+X-Gm-Message-State: AAQBX9fy8kt/7I13HcAVkjEk2DQ07jAcFdUrNBCYml8yv7wcUVfwiZid
+	od4Y+uutVKS9xLX1LLcCDeUPFg==
+X-Google-Smtp-Source: AKy350b1rlGbHV/ZqnW3dz26WRMbmKf54LQJWDdP80OW6WaojgFD3laTViuXV1OQzbIbItrUdqokLA==
+X-Received: by 2002:a17:906:82c5:b0:94b:88c6:9282 with SMTP id a5-20020a17090682c500b0094b88c69282mr12465494ejy.22.1681820558103;
+        Tue, 18 Apr 2023 05:22:38 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:a276:7d35:5226:1c77? ([2a02:810d:15c0:828:a276:7d35:5226:1c77])
+        by smtp.gmail.com with ESMTPSA id rx22-20020a1709068e1600b0094f968ecc97sm2278664ejc.13.2023.04.18.05.22.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Apr 2023 04:56:39 -0700 (PDT)
-Message-ID: <1e55328e-aaa2-78e3-ddc8-c2717f6283f5@gmail.com>
-Date: Tue, 18 Apr 2023 13:56:36 +0200
+        Tue, 18 Apr 2023 05:22:37 -0700 (PDT)
+Message-ID: <c79e7d05-0b62-40e6-0864-35b2821c69e7@linaro.org>
+Date: Tue, 18 Apr 2023 14:22:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.6.1
-Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
- MT6795
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v4 0/7] Add JH7110 USB and USB PHY driver support
+To: Minda Chen <minda.chen@starfivetech.com>,
+ Emil Renner Berthing <emil.renner.berthing@canonical.com>,
+ Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Peter Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Mason Huo <mason.huo@starfivetech.com>
+References: <20230406015216.27034-1-minda.chen@starfivetech.com>
+ <517670ca-ba2e-811e-3eb2-7f38011c9690@linaro.org>
+ <985d0a57-1fc8-5725-4d3a-33dcc5d49d67@starfivetech.com>
+ <5953bc83-9609-6d12-7e9b-ca5202151fb3@linaro.org>
+ <a75ed45c-55c4-ff94-86f9-313ec79720ac@starfivetech.com>
 Content-Language: en-US
-To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com, chunkuang.hu@kernel.org,
- ck.hu@mediatek.com, jitao.shi@mediatek.com, xinlei.lee@mediatek.com,
- houlong.wei@mediatek.com, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org,
- kernel@collabora.com, phone-devel@vger.kernel.org,
- ~postmarketos/upstreaming@lists.sr.ht
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
- <20230414054345.ip3ug53ivr3elbpy@pengutronix.de>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <20230414054345.ip3ug53ivr3elbpy@pengutronix.de>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <a75ed45c-55c4-ff94-86f9-313ec79720ac@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230418_045642_844608_6F6CC647 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20230418_052239_661155_57764380 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,22 +104,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAxNC8wNC8yMDIzIDA3OjQzLCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToKPiBIZWxsbywK
-PiAKPiBPbiBXZWQsIEFwciAxMiwgMjAyMyBhdCAwMToyNzoxM1BNICswMjAwLCBBbmdlbG9HaW9h
-Y2NoaW5vIERlbCBSZWdubyB3cm90ZToKPj4gQWRkIGEgY29tcGF0aWJsZSBzdHJpbmcgZm9yIE1l
-ZGlhVGVrIEhlbGlvIFgxMCBNVDY3OTUncyBkaXNwbGF5IFBXTQo+PiBibG9jazogdGhpcyBpcyB0
-aGUgc2FtZSBhcyBNVDgxNzMuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEFuZ2Vsb0dpb2FjY2hpbm8g
-RGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9yYS5jb20+Cj4gCj4g
-QWNrZWQtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXgu
-ZGU+Cj4gCj4gSSBhc3N1bWUgdGhpcyBwYXRjaCB3aWxsIGdvIGluIHRvZ2V0aGVyIHdpdGggdGhl
-IG90aGVyIHBhdGNoZXMgaW4gdGhpcwo+IHNlcmllcyB2aWEgYW4gQVJNIHRyZWU/IChJLmUuIG5v
-dCB2aWEgcHdtLikKPiAKClRoYXQncyB0b3RhbGx5IGZpbmUsIEknbGwgdGFrZSB0aGlzIHBhdGNo
-IHRocm91Z2ggbXkgdHJlZSBvbmNlIGV2ZXJ5dGhpbmcgaXMgcmVhZHkuCgpSZWdhcmRzLApNYXR0
-aGlhcwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+On 18/04/2023 13:12, Minda Chen wrote:
+>>>>>
+>>>>>
+>>>>> base-commit: 0ec57cfa721fbd36b4c4c0d9ccc5d78a78f7fa35
+>>>>> prerequisite-patch-id: 24a6e3442ed1f5454ffb4a514cfd768436a87090
+>>>>> prerequisite-patch-id: 55390537360f25c8b9cbfdc30b73ade004f436f7
+>>>>
+>>>> fatal: bad object 55390537360f25c8b9cbfdc30b73ade004f436f7
+>>>>
+>>>> What commits do you reference? How are they helpful?
+>>>>
+>>> I use "git format-patch --base=(commit) to generate patchset.
+>>> Maybe I set the wrong base commit.
+>>
+>> How are they helpful if these are private commits?
+>>> Best regards,
+>> Krzysztof
+>>
+> base-commit is not private commits. 
+> I should set base commit 197b6b60ae7bc51dd0814953c562833143b292aa. This is 6.3-rc4 commit.
+> But I set 0ec57cfa721fbd36b4c4c0d9ccc5d78a78f7fa35. This is 6.3-rc4's previous commit.
+
+You missed the point. I am not talking about base commit. I am talking
+about your prerequisites, which are useless. What can we do with such SHA?
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
