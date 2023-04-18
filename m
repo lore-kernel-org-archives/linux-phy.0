@@ -4,68 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6006EC77B7A
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Apr 2023 18:04:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 021C2C77B76
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 00:58:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8XGFRPh83Y+Mxg1/N0oebKP35T2ZUia1CovSsue6NKY=; b=cLABJO7x6vA2PX
-	vKj2zYD6anDOLwg7f17mH3MbezvTlX1ExDA94Kpi3MGYbUYesAkkV9UY7HgFZvZ7warIB9IPZzpW/
-	Us0esCHB6bXZBLfIne/Z+4RU0QEJ14qkiMRg8JdQKX5Yg7WRsFMAMf9d7S9r5UsmE1faPaLY6ybmB
-	BFk5jX0agoPx5ta5OpoGSL/z+O6b26gggnmk5BAYFOpacPimNHAoPkz870t7MFH6seqerwWToyD3Z
-	HrufkNQXhdkND0cpH8wW/rtcRXHuXdYcMqg+q5OSStxz3s1e6LpnvydS4RzU9k2CSYiJmHIzN48Fl
-	AsRuTQ4lln+SQk21Akpg==;
+	List-Owner; bh=14QszpdKNQTlA8+5GXk/f74mPVHJzXiZNkn9BY1++LY=; b=ejvxFqXIJLdQ/0
+	JFUTpxBmVblqgk2rCTSR7TNACc3WSGvSo2X1Vn+u8lGnEwWjB8FYt65HtdmTvRDuwpOq8JITScMgX
+	pfn0ae998PikiW1zSkRUtX5KzJtiboSLZc3kY+hmeQpKDvhcl1rLJDZDB+dIn3ZLIDmkQNIIYgDWc
+	tkvCMtyk59LzJqb3mFuUTKIaWUREnpZ8c4d0Cyk+oUay1sqZVpFJNgD9hxrjdJ1d1kMLZLCugDUsE
+	SoE49ylv1AzdedVvDrV67FDkdKIWiyEIrcfb/RSA0ejCrLsaDv6rOlpXq74YM8bki/1LRqO59Mr4a
+	D0nhP8EfOiRjAhi9Z09Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTDE-00HGF6-06;
-	Mon, 17 Apr 2023 18:04:24 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1poZg5-000XEI-1Z;
+	Tue, 18 Apr 2023 00:58:37 +0000
+Received: from mail-oo1-f50.google.com ([209.85.161.50])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poTCv-00HFzw-11;
-	Mon, 17 Apr 2023 18:04:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1681754645; x=1713290645;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=3HuikI716f2ys2CohTnjAOi+mGw2PSL74PJSePfvn8A=;
-  b=0SMi9TqYOEijHumuQEKdUQNeXJIx1608hAc5+l/HhkQXwthrkWExKmkF
-   0A1ff4Y7+oMXpo8Wmo+FLBPNxTYBTk5h1ybMQTMJgdN/8CgtSl624mPpT
-   FbjXkzl5/8n+vfNQAO1OOH30VUkPgHADo8BOLhFI2UZoUtu/o6W3ekrNp
-   oYrdadTo2iYHdpRDcX2rnc/l3sUS+Yx/pW+PakOIRcc8SLus2h2I+wD4i
-   MP1YSFzm5vGuZcm0DJC6dm3XN6/iUKKJ7Jej/2N+LVHpOnuC1JGGI1bOr
-   7LyLP2SEDIH5Ocs2NB8g5FjtU6+vC+WA45Rby/CT18ry6G5YE5MUJYD6o
-   Q==;
-X-IronPort-AV: E=Sophos;i="5.99,204,1677567600"; 
-   d="scan'208";a="147469789"
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 17 Apr 2023 11:04:00 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Mon, 17 Apr 2023 11:03:56 -0700
-Received: from DEN-LT-70577.microchip.com (10.10.115.15) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.2507.21 via Frontend Transport; Mon, 17 Apr 2023 11:03:54 -0700
-From: Daniel Machon <daniel.machon@microchip.com>
-To: <vkoul@kernel.org>
-CC: <kishon@kernel.org>, <Steen.Hegelund@microchip.com>,
-	<daniel.machon@microchip.com>, <UNGLinuxDriver@microchip.com>,
-	<joe@perches.com>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 7/7] phy: sparx5-serdes: add skip_cmu_cfg check when configuring lanes
-Date: Mon, 17 Apr 2023 20:03:35 +0200
-Message-ID: <20230417180335.2787494-8-daniel.machon@microchip.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230417180335.2787494-1-daniel.machon@microchip.com>
-References: <20230417180335.2787494-1-daniel.machon@microchip.com>
+	id 1poZg1-000XDU-2t;
+	Tue, 18 Apr 2023 00:58:35 +0000
+Received: by mail-oo1-f50.google.com with SMTP id 006d021491bc7-544f2c5730aso67584eaf.2;
+        Mon, 17 Apr 2023 17:58:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681779512; x=1684371512;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=jXYI9t+uhIrIqHGofk7KodCSd0KD+a+f9muMXWOvwoI=;
+        b=M9AHmitoGklqxTsAl+8QtopY6UJyjQRWmxbejg0rwXkwQBEd2ykCeuE2x+F3bLutvt
+         74wJ29NNTQDblNyaEz6o0qounVGmqY2fyihoEg0MZ4+0t0FgZAblubU4K5+bTl12700O
+         SNZCBYvmQhf//RfxQ2yZB/nF4GCbrikf8ml1EI7kmXTisMYk5sHHGBpZNyLJsT9nnTYA
+         ll7JwsSzz7AczN2lASVFbqmk4iQb/23vxX0rv0JykuhLddjDhojp1H2tyIjKlO2/4twM
+         gGIGZhMcFEX53Q3kmC3HmWVHYTe/uzhH+zkj47LI7MIPFrc385lagDLuxrITCnt7Yiua
+         LVQw==
+X-Gm-Message-State: AAQBX9fPXXC5tfvQsFZKgozNCGB8PIWchjLYSrhdydUVHUqxhhGIASa6
+	EQ0zdrPCuj9JDppNNDNuHw==
+X-Google-Smtp-Source: AKy350bPqPxucQ0TtF2gVHTpq49ndfYCjdXmxQpqh32tloC6VCltN0j5EIggvm/aGOCZJnEkxuXLNQ==
+X-Received: by 2002:a05:6870:65a0:b0:183:fab4:efb9 with SMTP id fp32-20020a05687065a000b00183fab4efb9mr254235oab.43.1681779512502;
+        Mon, 17 Apr 2023 17:58:32 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id 125-20020a4a0d83000000b005251e3f92ecsm5306962oob.47.2023.04.17.17.58.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 17 Apr 2023 17:58:32 -0700 (PDT)
+Received: (nullmailer pid 3814440 invoked by uid 1000);
+	Tue, 18 Apr 2023 00:58:30 -0000
+Date: Mon, 17 Apr 2023 19:58:30 -0500
+From: Rob Herring <robh@kernel.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, p.zabel@pengutronix.de, linux-pwm@vger.kernel.org, kernel@collabora.com, chunkuang.hu@kernel.org, linux-phy@lists.infradead.org, ck.hu@mediatek.com, jitao.shi@mediatek.com, houlong.wei@mediatek.com, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, vkoul@kernel.org, chunfeng.yun@mediatek.com, daniel@ffwll.ch, linux-mediatek@lists.infradead.org, xinlei.lee@mediatek.com, airlied@gmail.com, u.kleine-koenig@pengutronix.de, linux-arm-kernel@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org, kishon@kernel.org, ~postmarketos/upstreaming@lists.sr.ht, thierry.reding@gmail.com, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, jassisinghbrar@gmail.com
+Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
+ MT6795
+Message-ID: <20230418005830.GA3802030-robh@kernel.org>
+References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
+ <168133318912.3190428.16120880490622098945.robh@kernel.org>
+ <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_110405_420257_5D5E6A74 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20230417_175833_957145_E5BF514F 
+X-CRM114-Status: GOOD (  23.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,43 +84,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a check for skip_cmu_cfg when configuring the serdes lane.  All
-individual serdeses are reset upon first configuration. Resetting the
-serdes involves reconfiguring it with preset values. The serdesmode is
-required to determine the clock-providing CMU, therefore make sure the
-serdes is not reconfigured if the serdesmode is not set.
+On Thu, Apr 13, 2023 at 10:52:28AM +0200, Matthias Brugger wrote:
+> 
+> 
+> On 12/04/2023 23:03, Rob Herring wrote:
+> > 
+> > On Wed, 12 Apr 2023 13:27:13 +0200, AngeloGioacchino Del Regno wrote:
+> > > Add a compatible string for MediaTek Helio X10 MT6795's display PWM
+> > > block: this is the same as MT8173.
+> > > 
+> > > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> > > ---
+> > >   Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml | 4 +++-
+> > >   1 file changed, 3 insertions(+), 1 deletion(-)
+> > > 
+> > 
+> > Running 'make dtbs_check' with the schema in this patch gives the
+> > following warnings. Consider if they are expected or the schema is
+> > incorrect. These may not be new warnings.
+> > 
+> 
+> These are not new warnings. I think we should address them in a different
+> patch. In my opinion it shouldn't block this patch. In the end it only add
+> as compatible here.
 
-Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
----
- drivers/phy/microchip/sparx5_serdes.c | 5 +++++
- 1 file changed, 5 insertions(+)
+I disagree if it's the schema that needs fixing. From the looks of 
+it, I'd say it's probably at least some schema fixes needed.
 
-diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index eb9352d1de7e..01bd5ea620c5 100644
---- a/drivers/phy/microchip/sparx5_serdes.c
-+++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -1646,6 +1646,10 @@ static int sparx5_sd10g28_apply_params(struct sparx5_serdes_macro *macro,
- 	u32 value, cmu_idx;
- 	int err;
- 
-+	/* Do not configure serdes if CMU is not to be configured too */
-+	if (params->skip_cmu_cfg)
-+		return 0;
-+
- 	cmu_idx = sparx5_serdes_cmu_get(params->cmu_sel, lane_index);
- 	err = sparx5_cmu_cfg(priv, cmu_idx);
- 	if (err)
-@@ -2111,6 +2115,7 @@ static int sparx5_sd10g28_config(struct sparx5_serdes_macro *macro, bool reset)
- 		.rxinvert = 1,
- 		.txswing = 240,
- 		.reg_rst = reset,
-+		.skip_cmu_cfg = reset,
- 	};
- 	int err;
- 
--- 
-2.34.1
+> 
+> Regards,
+> Matthias
+> 
+> > Note that it is not yet a requirement to have 0 warnings for dtbs_check.
+> > This will change in the future.
+> > 
+> > Full log is available here: https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230412112739.160376-2-angelogioacchino.delregno@collabora.com
+> > 
+> > 
+> > pwm@1100e000: 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
 
+Are you saying the MT6795 has no power-domains?
+
+> > 	arch/arm64/boot/dts/mediatek/mt8183-evb.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dtb
+> > 
+> > pwm@1400a000: compatible: 'oneOf' conditional failed, one must be fixed:
+> > 	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+> > 	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+> > 
+> > pwm@1401e000: compatible: 'oneOf' conditional failed, one must be fixed:
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+> > 
+> > pwm@1401f000: compatible: 'oneOf' conditional failed, one must be fixed:
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
+> > 	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+
+The commit message says the MT6795 is the same as the MT8173. Which is 
+wrong here, the dtb or the schema? 
+
+Rob
 
 -- 
 linux-phy mailing list
