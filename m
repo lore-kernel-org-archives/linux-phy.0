@@ -4,70 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 021C2C77B76
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 00:58:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9B35C77B71
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 07:30:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14QszpdKNQTlA8+5GXk/f74mPVHJzXiZNkn9BY1++LY=; b=ejvxFqXIJLdQ/0
-	JFUTpxBmVblqgk2rCTSR7TNACc3WSGvSo2X1Vn+u8lGnEwWjB8FYt65HtdmTvRDuwpOq8JITScMgX
-	pfn0ae998PikiW1zSkRUtX5KzJtiboSLZc3kY+hmeQpKDvhcl1rLJDZDB+dIn3ZLIDmkQNIIYgDWc
-	tkvCMtyk59LzJqb3mFuUTKIaWUREnpZ8c4d0Cyk+oUay1sqZVpFJNgD9hxrjdJ1d1kMLZLCugDUsE
-	SoE49ylv1AzdedVvDrV67FDkdKIWiyEIrcfb/RSA0ejCrLsaDv6rOlpXq74YM8bki/1LRqO59Mr4a
-	D0nhP8EfOiRjAhi9Z09Q==;
+	List-Owner; bh=PCpE7HQ0Kof0TtdwDg428GXzcgrcsqqRT3VKNPdXx6s=; b=ZRG5bGm/Fwq7ar
+	tImgod9dOa2ex3eq5/du4ynwOJyddDYpBsMdNp5x27ZnvsrhaXoflN8l/U5QmoaLOETmXu5aZqYqC
+	w/96H5V3tYjqJcUYSdXdsZN8hgxgDmvy26bTvjjmukTm6YuPGWwpfRBkMCrBMrWVCjmtxajRvD80z
+	64DtPpg4p0rpXPlxk2rboOI91buT+qRhH9q/mbueAXMQcs2OT4UdxqBNNlFsZjnK1g2eVyAsuMjWi
+	sI/TvtqM/5zVI3g4JG+iH8GUvLiN67MKIAFBitlSmr9QFgDjaQbVnWpAFElEUjZnVqVd8N+TSS1+v
+	5Zk2f9z3pPvrBuMoI/0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poZg5-000XEI-1Z;
-	Tue, 18 Apr 2023 00:58:37 +0000
-Received: from mail-oo1-f50.google.com ([209.85.161.50])
+	id 1pofnZ-0018GT-1Q;
+	Tue, 18 Apr 2023 07:30:45 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poZg1-000XDU-2t;
-	Tue, 18 Apr 2023 00:58:35 +0000
-Received: by mail-oo1-f50.google.com with SMTP id 006d021491bc7-544f2c5730aso67584eaf.2;
-        Mon, 17 Apr 2023 17:58:33 -0700 (PDT)
+	id 1pofnW-0018Fy-1U
+	for linux-phy@lists.infradead.org;
+	Tue, 18 Apr 2023 07:30:43 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-5058181d58dso4737367a12.1
+        for <linux-phy@lists.infradead.org>; Tue, 18 Apr 2023 00:30:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1681803040; x=1684395040;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rVgNSlQei7ClLmAXgHdLYMij5O05eDXWOobwGEh17DQ=;
+        b=vR0c1V6fHjkOyv3+jlpqY5zM6LZj07DmVTLUWBjOaBOnR6s/0Baom+vEKaqJuhxeZ/
+         Xc2D6F3qbZCYol/JMWRydydPtMlGMn5e+nfsLiGcOe5rc+35obwyzfmNe1GgK97zBtTt
+         1Koogst0alt2YUOp73Y6GIQGW4PtGqo+3GIbQ5sYJDaUBLFX+vSBPMZa8Z6RiFe+5SP9
+         yt3weQk73jK4zbBsH2P4E87ne3NJ2xeH/QFqzjwYBdS26g7e7C44okeVj6RGWC5JQhu+
+         im64hz/ErmPn7+rNBHTtTkWqnC+09/Ynd1k5kWaNwVHcekfYvFmrb29OqVqmTdj8tHfQ
+         sdLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681779512; x=1684371512;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=jXYI9t+uhIrIqHGofk7KodCSd0KD+a+f9muMXWOvwoI=;
-        b=M9AHmitoGklqxTsAl+8QtopY6UJyjQRWmxbejg0rwXkwQBEd2ykCeuE2x+F3bLutvt
-         74wJ29NNTQDblNyaEz6o0qounVGmqY2fyihoEg0MZ4+0t0FgZAblubU4K5+bTl12700O
-         SNZCBYvmQhf//RfxQ2yZB/nF4GCbrikf8ml1EI7kmXTisMYk5sHHGBpZNyLJsT9nnTYA
-         ll7JwsSzz7AczN2lASVFbqmk4iQb/23vxX0rv0JykuhLddjDhojp1H2tyIjKlO2/4twM
-         gGIGZhMcFEX53Q3kmC3HmWVHYTe/uzhH+zkj47LI7MIPFrc385lagDLuxrITCnt7Yiua
-         LVQw==
-X-Gm-Message-State: AAQBX9fPXXC5tfvQsFZKgozNCGB8PIWchjLYSrhdydUVHUqxhhGIASa6
-	EQ0zdrPCuj9JDppNNDNuHw==
-X-Google-Smtp-Source: AKy350bPqPxucQ0TtF2gVHTpq49ndfYCjdXmxQpqh32tloC6VCltN0j5EIggvm/aGOCZJnEkxuXLNQ==
-X-Received: by 2002:a05:6870:65a0:b0:183:fab4:efb9 with SMTP id fp32-20020a05687065a000b00183fab4efb9mr254235oab.43.1681779512502;
-        Mon, 17 Apr 2023 17:58:32 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id 125-20020a4a0d83000000b005251e3f92ecsm5306962oob.47.2023.04.17.17.58.31
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Apr 2023 17:58:32 -0700 (PDT)
-Received: (nullmailer pid 3814440 invoked by uid 1000);
-	Tue, 18 Apr 2023 00:58:30 -0000
-Date: Mon, 17 Apr 2023 19:58:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, p.zabel@pengutronix.de, linux-pwm@vger.kernel.org, kernel@collabora.com, chunkuang.hu@kernel.org, linux-phy@lists.infradead.org, ck.hu@mediatek.com, jitao.shi@mediatek.com, houlong.wei@mediatek.com, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, vkoul@kernel.org, chunfeng.yun@mediatek.com, daniel@ffwll.ch, linux-mediatek@lists.infradead.org, xinlei.lee@mediatek.com, airlied@gmail.com, u.kleine-koenig@pengutronix.de, linux-arm-kernel@lists.infradead.org, krzysztof.kozlowski+dt@linaro.org, kishon@kernel.org, ~postmarketos/upstreaming@lists.sr.ht, thierry.reding@gmail.com, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, jassisinghbrar@gmail.com
-Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
- MT6795
-Message-ID: <20230418005830.GA3802030-robh@kernel.org>
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
- <168133318912.3190428.16120880490622098945.robh@kernel.org>
- <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
+        d=1e100.net; s=20221208; t=1681803040; x=1684395040;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=rVgNSlQei7ClLmAXgHdLYMij5O05eDXWOobwGEh17DQ=;
+        b=MS8w/5wdl/4S7rKpLiUvYpgwaliLhTHfYAoH2om4K/8MLQlHuE3MjjTzOJPvPiYd52
+         rgPzyZnV+beTEl8WUAO3LUabj0deFScQhTWtby0XOA9LbYROzq/Vx5y/UUpOmHbfBJZM
+         UNSCi2AcQIQEvQkGI4fAEPLcmMpPVRbrZNfcqmMl4iTaWzuWmxQ2dKOIpPhPoZ8k8dBU
+         rzbusfkCczHdA3xocwh5m1tSZ5O+3LkVPILQY9z2pCy2pahTdu5Kh+VndZtPk+wz+JTN
+         P+37Hqx+R0HBAeWCB3m4tjX1rTzehOAYS+QKvx5LoLOoXWl8gKOcFuwaqktunYrtCD7s
+         030A==
+X-Gm-Message-State: AAQBX9cJj0yJyMZ5e0vNwEb7AfHn6uZGBRIBpGoXGCYF5R65N0LtdbL7
+	ELnhd/FP40qR9MipU+PKi3+27w==
+X-Google-Smtp-Source: AKy350Zoyxpwx+/pSMVZgdFa6Mkl6usfBX3ptXBL+sCtn0/rIgDyyeOnSAiaOQ8GnTcResGJW+JT7A==
+X-Received: by 2002:a50:fb17:0:b0:502:70e9:2c14 with SMTP id d23-20020a50fb17000000b0050270e92c14mr1498794edq.29.1681803039878;
+        Tue, 18 Apr 2023 00:30:39 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:a276:7d35:5226:1c77? ([2a02:810d:15c0:828:a276:7d35:5226:1c77])
+        by smtp.gmail.com with ESMTPSA id m21-20020a509995000000b0050684020babsm5369235edb.27.2023.04.18.00.30.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 18 Apr 2023 00:30:39 -0700 (PDT)
+Message-ID: <b28e6e12-6eb3-582a-25e2-34fa2f3544f8@linaro.org>
+Date: Tue, 18 Apr 2023 09:30:38 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5c0bc1f2-5917-ab84-8b0b-f2adc48f8be7@gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH] dt-bindings: phy: qmp-ufs: fix clock and clock-names for
+ sa8775p
+Content-Language: en-US
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-scsi@vger.kernel.org,
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+References: <20230417130522.401605-1-brgl@bgdev.pl>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230417130522.401605-1-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230417_175833_957145_E5BF514F 
-X-CRM114-Status: GOOD (  23.25  )
+X-CRM114-CacheID: sfid-20230418_003042_509650_FB0E0591 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,91 +101,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Apr 13, 2023 at 10:52:28AM +0200, Matthias Brugger wrote:
+On 17/04/2023 15:05, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
+> We must set *minItems* to 3, not maxItems as this platform requires
+> exactly three clocks and maxItems is already set to 3 globally.
 > 
-> On 12/04/2023 23:03, Rob Herring wrote:
-> > 
-> > On Wed, 12 Apr 2023 13:27:13 +0200, AngeloGioacchino Del Regno wrote:
-> > > Add a compatible string for MediaTek Helio X10 MT6795's display PWM
-> > > block: this is the same as MT8173.
-> > > 
-> > > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> > > ---
-> > >   Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml | 4 +++-
-> > >   1 file changed, 3 insertions(+), 1 deletion(-)
-> > > 
-> > 
-> > Running 'make dtbs_check' with the schema in this patch gives the
-> > following warnings. Consider if they are expected or the schema is
-> > incorrect. These may not be new warnings.
-> > 
-> 
-> These are not new warnings. I think we should address them in a different
-> patch. In my opinion it shouldn't block this patch. In the end it only add
-> as compatible here.
+> Fixes: e5796a9cdf73 ("dt-bindings: phy: qmp-ufs: describe the UFS PHY for sa8775p")
 
-I disagree if it's the schema that needs fixing. From the looks of 
-it, I'd say it's probably at least some schema fixes needed.
+Your change makes the code easier to read (more obvious), so I am okay
+with the change, but I am not okay with commit msg and Fixes tag. Issue
+is described inaccurately. There is nothing to fix here, because
+original code was correct.
 
-> 
-> Regards,
-> Matthias
-> 
-> > Note that it is not yet a requirement to have 0 warnings for dtbs_check.
-> > This will change in the future.
-> > 
-> > Full log is available here: https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230412112739.160376-2-angelogioacchino.delregno@collabora.com
-> > 
-> > 
-> > pwm@1100e000: 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
+maxItems:3 in implies minItems:3, thus everything worked as should.
 
-Are you saying the MT6795 has no power-domains?
+Feel free to re-phrase the commit msg and remove the Fixes tag.
 
-> > 	arch/arm64/boot/dts/mediatek/mt8183-evb.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dtb
-> > 
-> > pwm@1400a000: compatible: 'oneOf' conditional failed, one must be fixed:
-> > 	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
-> > 	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
-> > 
-> > pwm@1401e000: compatible: 'oneOf' conditional failed, one must be fixed:
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
-> > 
-> > pwm@1401f000: compatible: 'oneOf' conditional failed, one must be fixed:
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
-> > 	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> ---
 
-The commit message says the MT6795 is the same as the MT8173. Which is 
-wrong here, the dtb or the schema? 
+Best regards,
+Krzysztof
 
-Rob
 
 -- 
 linux-phy mailing list
