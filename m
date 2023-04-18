@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50C8CC6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 11:16:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74839C77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 11:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxFWO9LLfPIWCyPWGOlePlZ0jGF+uCNALbkPtw/mPLY=; b=lnhEuEW1JdSIXg
-	/tv6LcIP8htIJprLQBhMWY1TLujuynzk9umIdYpebArA+tLtp0mMD5TNRDqhb5OZjVnhNyqOWbc0J
-	5Hk8EAdOZVO0NwCx4/PkN9nbbUcb3I47HEmPWXoHBJmqCTuon6iTvQOMR0CeR00BeuoMBe9erWM5m
-	LfRUobUeoVOCc6vQTIRmNnWngkqmMJuJ3EBNjni63vqp3rBSTGArWssBRRmwsxudUhYYsYRM1yDnL
-	Ucdy29diMrUGErFXDMfsAsGfiQ+38XGKDw8lTWyM9enC4BZ1ig8a3Lz/5n7oYnPjYnnSqZGsY4TXO
-	vF26ltTTL7dmsqyWXEjw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b4BkLpBB1nsUecdoDNOUuT4g2srroPF5Ax5lEpOxqzw=; b=LhXZcYxYj0Zpwc
+	RiSiIV/rnK01Vzo7DqdWck5To7eq5z0kYEDdLFLrAjJrXqIuaw8dUiHRl/Xc98cBgvKubZQ98Olzp
+	z/IqZK77eGL2qiM2/yNYvx3CelNWwyxx/6ZQcYzgN6bNzxkoWi4gk4xBIp8r3YKfNFbdkWsRC83wL
+	VOvunnz0KQIG5fz4qL4ZUQcKLIyvMZUyfsBfVcXAHkMdvx2bkDqfYioo/FOMpx9iCXhCRyMKDYkoH
+	4TsB0Si1omhJ/k8ut4RH9S0QcBtaF4/IdrA8vzm0alcWh0D57BzCEoy2gkRdFtpYLNlHyRHiKjPPl
+	2rZBgc/fATGjK04rSEFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pojK3-001tz5-2k;
-	Tue, 18 Apr 2023 11:16:31 +0000
+	id 1pojKE-001u5M-0O;
+	Tue, 18 Apr 2023 11:16:42 +0000
 Received: from mx.sberdevices.ru ([45.89.227.171])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pojJx-001tvG-0L;
-	Tue, 18 Apr 2023 11:16:27 +0000
+	id 1pojJx-001tvF-0K;
+	Tue, 18 Apr 2023 11:16:28 +0000
 Received: from s-lin-edge02.sberdevices.ru (localhost [127.0.0.1])
-	by mx.sberdevices.ru (Postfix) with ESMTP id 97E325FD79;
-	Tue, 18 Apr 2023 14:16:21 +0300 (MSK)
+	by mx.sberdevices.ru (Postfix) with ESMTP id C9C5E5FD76;
+	Tue, 18 Apr 2023 14:16:20 +0300 (MSK)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sberdevices.ru;
-	s=mail; t=1681816581;
-	bh=09WqdKYRyw2DjfHpWjzV6C/vopcEZSQEhMfI25aDH40=;
+	s=mail; t=1681816580;
+	bh=rV+/2Zo+MYA4X9kDnUDGtNKqBpG9r9Rn4Sf3ySX9kzE=;
 	h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
-	b=Ep+FkMATP9znbpgX9YxDSrzdFnc1QzE+e8seNxmUoGbckEssC0tFPLKO7lDxfJteU
-	 0f7NHTt3civIEIjddl8oT84XvxlGKz9Mqihu7znuIr3ECf8WO9JtBPIfHvtg8W1MaX
-	 ZJ2QXKvjzXgfOs/7gtzvmHKwP4oSHDkHEKrLRdSFn/ZcyvlgbfSdukdHZGRlK09xlI
-	 uCtEc5luBNTD6F4SISibbPOToKKkdvaRhAo4p8Bb+M2zAroO9v5ESwbink0Ik8yRss
-	 xExKkHII/TfN7KTAFCPvPBnSmMOkP0EiswsugeIkGIOOwqgWvZkNdy+rcP7BXZllOe
-	 s8K1r/p/wXhMA==
+	b=F0653ogbGcbwdRloENjlGCckoaKBL+kNs03aZ1bCYLxyxxRYxSx6sLtZ3MJnjlAyo
+	 OXg9yMVSSyzK5NbKaTiYACuCBX2U04u7iukNEHSvKw+LhT635rkAvyg6tBEhXHKmmA
+	 PHaCnPB/NnvBpafk2Yo5Xj2lclnbLp+/RKtJIc6kCmQtOjISGp9A0MTngxEyCx0RY/
+	 qmXSdNJTWhoGP046V1q6ahddQ8ux1e2XOjxBdSCc3K6JdPhrf++FGXz0+1IZj8mpTl
+	 4m9dJPgYLNLpDrt2oQjcjEXm//X8hds6NCi0bZF11OwMeVqS8+wpIeDfCgLkk+PN4p
+	 8UniCupfsTXHg==
 Received: from S-MS-EXCH01.sberdevices.ru (S-MS-EXCH01.sberdevices.ru [172.16.1.4])
 	by mx.sberdevices.ru (Postfix) with ESMTP;
-	Tue, 18 Apr 2023 14:16:21 +0300 (MSK)
+	Tue, 18 Apr 2023 14:16:19 +0300 (MSK)
 From: Dmitry Rokosov <ddrokosov@sberdevices.ru>
 To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
 	<krzysztof.kozlowski+dt@linaro.org>, <neil.armstrong@linaro.org>,
@@ -54,12 +54,10 @@ CC: <yue.wang@amlogic.com>, <hanjie.lin@amlogic.com>, <kernel@sberdevices.ru>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-amlogic@lists.infradead.org>,
 	<linux-phy@lists.infradead.org>, Dmitry Rokosov <ddrokosov@sberdevices.ru>
-Subject: [PATCH v2 2/5] usb: dwc2: support dwc2 IP for Amlogic A1 SoC family
-Date: Tue, 18 Apr 2023 14:16:09 +0300
-Message-ID: <20230418111612.19479-3-ddrokosov@sberdevices.ru>
+Subject: [PATCH v2 0/5] arm64: meson: support Amlogic A1 USB OTG controller
+Date: Tue, 18 Apr 2023 14:16:07 +0300
+Message-ID: <20230418111612.19479-1-ddrokosov@sberdevices.ru>
 X-Mailer: git-send-email 2.36.0
-In-Reply-To: <20230418111612.19479-1-ddrokosov@sberdevices.ru>
-References: <20230418111612.19479-1-ddrokosov@sberdevices.ru>
 MIME-Version: 1.0
 X-Originating-IP: [172.16.1.6]
 X-ClientProxiedBy: S-MS-EXCH01.sberdevices.ru (172.16.1.4) To
@@ -72,9 +70,8 @@ X-KSMG-AntiPhishing: not scanned, disabled by settings
 X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, bases: 2023/04/18 05:44:00 #21123121
 X-KSMG-AntiVirus-Status: Clean, skipped
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230418_041625_680551_F4B169E9 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230418_041625_681420_E17ECF0E 
+X-CRM114-Status: GOOD (  11.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,54 +88,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Amlogic A1 uses dwc2 Synopsys IP as its USB peripheral (gadget)
-endpoint, with different DWC2 parameters when compared to previous
-Amlogic SoCs.
+This patch series introduces full support for the Amlogic A1 USB controller
+in OTG mode (peripheral and host modes switching).
 
-Signed-off-by: Dmitry Rokosov <ddrokosov@sberdevices.ru>
----
- drivers/usb/dwc2/params.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+Previously, Amlogic's patch series [1] was applied to the upstream tree,
+but it only had USB host mode support.
+Furthermore, the device tree patchset [2] wasn't merged due to a missing
+clk driver.
+Patchset [2] has been completely reworked:
+    - changed register base offsets to proper values
+    - introduced dwc2 in peripheral mode
+    - OTG mode support
+    - the SoB of Amlogic authors still remain
 
-diff --git a/drivers/usb/dwc2/params.c b/drivers/usb/dwc2/params.c
-index 9ed9fd956940..098fbfc774ab 100644
---- a/drivers/usb/dwc2/params.c
-+++ b/drivers/usb/dwc2/params.c
-@@ -161,6 +161,25 @@ static void dwc2_set_amlogic_g12a_params(struct dwc2_hsotg *hsotg)
- 	p->hird_threshold_en = false;
- }
- 
-+static void dwc2_set_amlogic_a1_params(struct dwc2_hsotg *hsotg)
-+{
-+	struct dwc2_core_params *p = &hsotg->params;
-+
-+	p->otg_caps.hnp_support = false;
-+	p->otg_caps.srp_support = false;
-+	p->speed = DWC2_SPEED_PARAM_HIGH;
-+	p->host_rx_fifo_size = 192;
-+	p->host_nperio_tx_fifo_size = 128;
-+	p->host_perio_tx_fifo_size = 128;
-+	p->phy_type = DWC2_PHY_TYPE_PARAM_UTMI;
-+	p->phy_utmi_width = 8;
-+	p->ahbcfg = GAHBCFG_HBSTLEN_INCR8 << GAHBCFG_HBSTLEN_SHIFT;
-+	p->lpm = false;
-+	p->lpm_clock_gating = false;
-+	p->besl = false;
-+	p->hird_threshold_en = false;
-+}
-+
- static void dwc2_set_amcc_params(struct dwc2_hsotg *hsotg)
- {
- 	struct dwc2_core_params *p = &hsotg->params;
-@@ -258,6 +277,8 @@ const struct of_device_id dwc2_of_match_table[] = {
- 	  .data = dwc2_set_amlogic_params },
- 	{ .compatible = "amlogic,meson-g12a-usb",
- 	  .data = dwc2_set_amlogic_g12a_params },
-+	{ .compatible = "amlogic,meson-a1-usb",
-+	  .data = dwc2_set_amlogic_a1_params },
- 	{ .compatible = "amcc,dwc-otg", .data = dwc2_set_amcc_params },
- 	{ .compatible = "apm,apm82181-dwc-otg", .data = dwc2_set_amcc_params },
- 	{ .compatible = "st,stm32f4x9-fsotg",
+Testing:
+    - USB OTG role switching between gadget and host - OK
+    - Peripheral mode - OK (tested with adb shell/push/pop)
+    - Host mode - OK (tested only USB enumeration and detection)
+
+Changes v2 since v1 at [3]:
+    - as Martin suggested in v1, this commit completely removes
+      the 'otg_switch_supported' parameter from dwc3_meson_g12a_drvdata;
+      this parameter is no longer necessary as all IP versions now
+      support OTG switching
+    - this commit moves the USB PHY clkin enable/disable calls to
+      the PHY init/exit routines
+
+Links:
+    [1] https://lore.kernel.org/all/1581990859-135234-1-git-send-email-hanjie.lin@amlogic.com/
+    [2] https://lore.kernel.org/all/1581990859-135234-4-git-send-email-hanjie.lin@amlogic.com/
+    [3] https://lore.kernel.org/all/20230414152423.19842-1-ddrokosov@sberdevices.ru/
+
+Dmitry Rokosov (5):
+  phy: amlogic: enable/disable clkin during Amlogic USB PHY init/exit
+  usb: dwc2: support dwc2 IP for Amlogic A1 SoC family
+  dt-bindings: usb: dwc2: add support for Amlogic A1 SoC USB peripheral
+  usb: dwc3-meson-g12a: support OTG switch for all IP versions
+  arm64: dts: meson: a1: support USB controller in OTG mode
+
+ .../devicetree/bindings/usb/dwc2.yaml         |  1 +
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi     | 59 +++++++++++++++++++
+ drivers/phy/amlogic/phy-meson-g12a-usb2.c     | 13 +++-
+ drivers/usb/dwc2/params.c                     | 21 +++++++
+ drivers/usb/dwc3/dwc3-meson-g12a.c            | 16 +----
+ 5 files changed, 95 insertions(+), 15 deletions(-)
+
 -- 
 2.36.0
 
