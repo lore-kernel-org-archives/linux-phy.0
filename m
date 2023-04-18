@@ -4,70 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 430CDC77B76
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 21:45:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C479C77B7C
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 22:02:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PR3n5/p5Cj3fSxa0wBtO5g1bz8noHEVmJZIpiBhNsdw=; b=cJ3dn0PMtyIu/AxPdgDdD8Zc5/
-	LmIC3+713Qa5sWAOvF8aDvUr6LpUga+FTXTZzmomBQ3NOknn2oVtAQ18XBiB0xAIvbmxfEM7RstvL
-	u4biUjw48x2kdqw4aJbTctv1S0Cl5wjCcY4LrljA+8rXfNmJ/sNI/sR1V/rqihfz3FZOl0yR/1l+v
-	CLDJZUSfPlIF9WLMnVhT6PjTHp/Se5VclSnOX08qPq2UBnH+FwV5pdQAeE/nRJCXXfu0XOrU9Jkv6
-	LHemZZZ/XPe6bjMgtHf4fpkaRaMiNdQv5U0DK2A8SuApCCa7HxtyiF7G/VG/ke0ixcsUb2fgddJP0
-	OEDwiXHg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4fOWOk703IFSDzUC9zu6dukuVqHx8VLM7npzY68px6M=; b=wwKz1x1OrTjGRv
+	0IGYZ1ZGt1KYmAJFVJYMmdU9MKN5QEImSbtI8gY+lBoofcgEovVc7jqbYMpPDORwehl0Q+4kC1/Iz
+	rI3ZWVferp14G7gYUjqEBa4eLqeCKGjjBcGNiADHzhxsKQLIHmDcACEkMNPGd4lttqOBxLBbqm13x
+	b5Fx1jTiTJk/BH//UusHjpFSKEMI2eqRdk+N1H6B448foGDd5UCrKlFwOqlYT+MesMB5sOeypA5EL
+	zoq6c5fVRP8J9oadAg5FAI3k4mzYTzoiJKL1CFxfpBCM+G0dNULB3TuVxaYAT21NZ16w3IzuPllVX
+	mUGlygOMkrNh8DgXz43w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pot8K-003QoS-2b;
-	Tue, 18 Apr 2023 21:45:04 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1potPc-003SfP-0E;
+	Tue, 18 Apr 2023 22:02:56 +0000
+Received: from mail-oa1-f50.google.com ([209.85.160.50])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pot8H-003Qn7-1R;
-	Tue, 18 Apr 2023 21:45:03 +0000
-Received: from mercury (unknown [185.209.196.239])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 6BE9D6603217;
-	Tue, 18 Apr 2023 22:44:57 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1681854297;
-	bh=sdgXZWB61ikcdoR6k+DOEhzGhE10wgrKBIzUUFMlXMA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=aIQAGMUCzN7JKN6FIKofs07efe157XyVCT0+2FpttWZsPrC789sJpi5y/Ghr3/Raw
-	 8Yl7znactE6Epm4o0O7eXb2emquphikOgt1FR/d2evggCQmNXvfCtWzRtRnm7/tiEB
-	 pUrS1yPfIrZVDzJGEzdH2fwqX2i1Q40Z7ek/+vSCzK8dueHfpw97/4yP1BnSOm2OPD
-	 5a4IsV8GypyuTPi3R/f4EgAsAxBh8/p9+uN5EVhOgM+NZiqwzBCxFdvGJvd1F/ZT8Z
-	 uFAPRLNgDIq54KLvBKFF2FFnYnhAG/Ql1TDRUdNlLGInyvDvLhFPznWQEwWBPP+lIE
-	 rP/rYgDesrySQ==
-Received: by mercury (Postfix, from userid 1000)
-	id D9F201066F5D; Tue, 18 Apr 2023 23:44:54 +0200 (CEST)
-Date: Tue, 18 Apr 2023 23:44:54 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Rob Herring <robh@kernel.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCHv1 3/5] dt-bindings: phy: rockchip: rk3588 has two reset
- lines
-Message-ID: <20230418214454.m24t2s3lnsukwppn@mercury.elektranox.org>
-References: <20230413182345.92557-1-sebastian.reichel@collabora.com>
- <20230413182345.92557-4-sebastian.reichel@collabora.com>
- <20230418204136.GA2299798-robh@kernel.org>
+	id 1potPZ-003Ser-1J
+	for linux-phy@lists.infradead.org;
+	Tue, 18 Apr 2023 22:02:54 +0000
+Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-18785c2f39fso603169fac.3
+        for <linux-phy@lists.infradead.org>; Tue, 18 Apr 2023 15:02:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681855371; x=1684447371;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QI7D87InjhbBs5EZ8THYXnMAUWuofN84rJTqz1HIfe0=;
+        b=Fx/2rt4jEIo1ayuj2SZxA1P0bjxffofJEeq2AQe2+5nc1JYrsc5lBUOd95hyVyM73o
+         FTQDNH4p3c6bN9V0sGTZWY36Gg1npy7UYCVzaU7e5lKpmukYQVnPq1ibF2Wurp4KSuwl
+         S1to6hhtzoTS+Byk6ia2ZOdMBb1INtiu4wY9H+qn79wqo6tgNSlyDyjLDfKXjZ6r16QJ
+         PVgzjOhGTm5gFRCPY2vG0DpfBXU17TYGxkojJmD34x5x9zdOBQY0p1hxLqx1lP5PIbjb
+         H9J9qXklOe09Q7ywqxvG8wfRVs6cfjU7QYlzATskChlO2xXan7BcEPHM9Xy58Teovxm6
+         H8aQ==
+X-Gm-Message-State: AAQBX9ePC8/gmz5kSnlBKus/00xPqaTTCEqIyAfx/RJfWXCeP/X8Tkiu
+	eLzZhoQC/xOmjP3HNu/8zQ==
+X-Google-Smtp-Source: AKy350adrkwoDBM/BxR6mRY2zD33IZaIewcPncoeCx+VQU/atsuFvdm7h8sMt7+MTUZiPvNZONir+g==
+X-Received: by 2002:a05:6870:8928:b0:177:a4d0:e389 with SMTP id i40-20020a056870892800b00177a4d0e389mr2034044oao.28.1681855371247;
+        Tue, 18 Apr 2023 15:02:51 -0700 (PDT)
+Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id u5-20020a056870b0c500b00172ac40356csm6011756oag.50.2023.04.18.15.02.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 18 Apr 2023 15:02:50 -0700 (PDT)
+Received: (nullmailer pid 2408753 invoked by uid 1000);
+	Tue, 18 Apr 2023 22:02:49 -0000
+Date: Tue, 18 Apr 2023 17:02:49 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-phy@lists.infradead.org, Bjorn Andersson <andersson@kernel.org>
+Subject: Re: [PATCH] dt-bindings: phy: qcom,edp-phy: allow power-domains
+Message-ID: <168185536811.2408674.3978903723829554887.robh@kernel.org>
+References: <20230416151233.346336-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20230418204136.GA2299798-robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20230416151233.346336-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230418_144501_723427_78840585 
-X-CRM114-Status: GOOD (  21.38  )
+X-CRM114-CacheID: sfid-20230418_150253_462212_F5362781 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,103 +77,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0294211890459039127=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============0294211890459039127==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="s6ptsftpn4p7qth6"
-Content-Disposition: inline
+On Sun, 16 Apr 2023 17:12:33 +0200, Krzysztof Kozlowski wrote:
+> At least on SC8280XP the eDP PHY is part of power domain:
+> 
+>   sc8280xp-crd.dtb: phy@220c2a00: 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
---s6ptsftpn4p7qth6
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hello Rob,
-
-On Tue, Apr 18, 2023 at 03:41:36PM -0500, Rob Herring wrote:
-> On Thu, Apr 13, 2023 at 08:23:43PM +0200, Sebastian Reichel wrote:
-> > The RK3588 has two reset lines for the combphy. One for the
-> > APB interface and one for the actual PHY.
-> >=20
-> > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> > ---
-> >  .../bindings/phy/phy-rockchip-naneng-combphy.yaml          | 7 ++++++-
-> >  1 file changed, 6 insertions(+), 1 deletion(-)
-> >=20
-> > diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-=
-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-co=
-mbphy.yaml
-> > index 9ae514fa7533..bac1aae07555 100644
-> > --- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy=
-=2Eyaml
-> > +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy=
-=2Eyaml
-> > @@ -31,8 +31,13 @@ properties:
-> >        - const: pipe
-> > =20
-> >    resets:
-> > +    minItems: 1
-> > +    maxItems: 2
-> > +
-> > +  reset-names:
-> >      items:
-> > -      - description: exclusive PHY reset line
-> > +      - const: phy
-> > +      - const: apb
->=20
-> This will fail on any existing users with single entry. You need to add=
-=20
-> 'minItems: 1' here.
->=20
-> It also fails if they didn't use 'phy' as the name, but names should be=
-=20
-> defined.
-
-My understanding is, there there currently are users with one entry
-and no reset-names. I suppose its sensible not to provide a
-reset-name, iff there is only one line. As far as I can tell that
-should still work after my changes.
-
--- Sebastian
-
---s6ptsftpn4p7qth6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmQ/D00ACgkQ2O7X88g7
-+pq29w//Q5Slb98DCTi7eVp+a3iZCQ7kw1XvBK/cvgJLcPFl2ZT79eUY7JQon9pq
-DJs/ln/d65z4AmEX4MNqJU7k3lnv6cX2P2CtjR9oS32WPgxxkmT/kyY/d9yz/Ext
-kD5/QnZ30czThOPar6MWXMHhpXPnzFLBNjHexWU3mU0Qztdf3l8F5dwEhaG3hhnP
-yyuoolfYUHZRoOqCKF83Y/jCUOlpdLt1OB781DuxzVXqFO3r1dvbHTa2gH6vyr38
-clLOSRJ941nMNGxsT5h1QuEd91btcjcuAyPXLAiWfC8ofx9gx2GEApSBIMwlesKm
-/B2OYA2H2u/nKF/+uOld39p2Kf7fvSxZr+WDlc2rUqhMnBhTAMa+loOVfi0ENNOp
-DK+ya0xnJWalRn6v2qYz4vj8yu7nj20njNVgfotw2X2cPfufHOF4HWB19qNmpZmA
-H78RJJrmvZHBdrqwkyufscTaUsJKUjlNk1X1MflBFrl3LzuaIzO2AJ3sbC4q6pXV
-FeOp2ozw9ovlgj0RMUKEb/K62jGwM4RaufZAlzps3FRX35mJ1QhHH4Ro+bd+eja+
-kBAI6Ra69Tz+vn/FAN5zc39IKBZUtJ0tM9uZgwLbHZD/IAx0SicHYtKNYhLD2Cm0
-yc4EQhaCRQKo8k4BgCvxfShpyxJyHBrDQVA5IfWHz31ZP7vg2lM=
-=vQoE
------END PGP SIGNATURE-----
-
---s6ptsftpn4p7qth6--
-
-
---===============0294211890459039127==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0294211890459039127==--
-
