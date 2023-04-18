@@ -4,72 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DEADC77B75
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 18:42:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BF0C6FD18
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Apr 2023 18:46:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=avPC4E6PfAHyvQOkwvDfY/zDRuZHb84808786HlwjC0=; b=Eb9hjjlqLizqcK
-	t9w6wbVAbwBWBAnQg7eHGSL2p4/Qct4Ak64s43jWb8jiH3hoVPVaOdvElkr7P8nyBCz85LNY9BUon
-	V7Yk4re96N9AKrbVlZiIArLI2mSlQhsEKzB/1TVw1S6dpKVtyG69y2b+L6RehXsAbFlkpGpdnWloa
-	pMm9BSn8Qob6Jw51TWia+1KBqE8f8Hh0vaZQ9MzJLPbZUJDNe3Eq7RRgSyTC9nk0AoVd3lZSmeBpp
-	oVs0BSMSiHDJjKsDAtg1PSR0JC7C3FXtbSoM/H7KtLlTpugpgIXoiFY9wo5Q0vaxhZPva6yVTmS1D
-	chhbFtpSZlIBTlCBnb0Q==;
+	List-Owner; bh=KlpLwh3jEedfZt0nszQFYoW7T1SjSggA2sIg8G23niQ=; b=vdImb/0NCuzaZ/
+	IFtNHqdw68+1/6JZpeJ32smX/ug2KCSf5Dh76Y+KtY7JyCuxYyI08/tpKMtMMGqLlxqBYI8TqM/gR
+	eG80+tqNr6k8gTDfivSXj0AltZwp6qtE053G6pqlQ7MwL4j37qBEGFMSeEYbqZtE5TkdU7fzFfVPW
+	CftBHwrwvA6MCn5F/l+qQVeXug2G7uldlOl9LfmfMfRAPgXr94IEfDgYury+e5YKcrZoGrbHPsYGB
+	aF+baNxd4Rvz+P2+Whn/XPpda1jrTo0qp84LaPfJtg7Eye1FRAkaNbVxRdszMPQJ727z3GncxyhHj
+	xP0nizIioC9OZ5VXbRJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1poqI0-0036Nw-0u;
-	Tue, 18 Apr 2023 18:42:52 +0000
-Received: from mail-ot1-f41.google.com ([209.85.210.41])
+	id 1poqLo-0037CK-20;
+	Tue, 18 Apr 2023 18:46:48 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1poqHx-0036N7-22;
-	Tue, 18 Apr 2023 18:42:50 +0000
-Received: by mail-ot1-f41.google.com with SMTP id 46e09a7af769-6a5f765d5b8so501045a34.3;
-        Tue, 18 Apr 2023 11:42:48 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681843367; x=1684435367;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=eX9q8gX+UiR7CnmbV0JhOILFmnfK5QRyHCsxTtqP7h8=;
-        b=QcwoGXi9ll4wD3U8iEnhSFiAC8ho+sL8AiUiWlMmQDNKLLapBP8aBVS1dn7DVX+2CD
-         K9IlE4i/0ID6oV0q4kjxda433NOwYrlOrBkS40tA55rM8lArAnTi7JJJJQPbzbHUCo5U
-         6Av5CVsYnA3ZYj7Klmxvn+tuDWtX5vhbZpbrcn2k80nU8UGhNcTAf6F1vVBOFIC/errz
-         hh245a/sR1uTiMcVGMXQKn0sy1RP4exVV6PkQX7M0UhdSj7yL0XH/8fAfTW/lRbOE+Wx
-         jBOmbWxb7yCIX58VgC6cXYYxMYzJK6shCPnJ28Qlb4Utqthr+kdN+sezU21oGRn6Pfkx
-         6/Lw==
-X-Gm-Message-State: AAQBX9cLN0AFsWynKACnDTyLXhHkO6WwVx7GAYypaDj+128x4KysxveW
-	oDD+vjJpz/6tP0nlwfSJBA==
-X-Google-Smtp-Source: AKy350YkFGdSrcH78VWgdiZeex/IhpEM1/tIWlB0tUde/R1j0VFPBv9n0B3D5YWlYqCkIfq6XkKf9A==
-X-Received: by 2002:a9d:7454:0:b0:6a3:2513:c452 with SMTP id p20-20020a9d7454000000b006a32513c452mr1455755otk.23.1681843367361;
-        Tue, 18 Apr 2023 11:42:47 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id c7-20020a9d6847000000b0069f0794861asm5786365oto.63.2023.04.18.11.42.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 18 Apr 2023 11:42:46 -0700 (PDT)
-Received: (nullmailer pid 2105101 invoked by uid 1000);
-	Tue, 18 Apr 2023 18:42:46 -0000
-Date: Tue, 18 Apr 2023 13:42:46 -0500
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Changhuang Liang <changhuang.liang@starfivetech.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>, Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-Message-ID: <20230418184246.GA2103246-robh@kernel.org>
+	id 1poqLm-0037Bc-0H;
+	Tue, 18 Apr 2023 18:46:47 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 50B4763819;
+	Tue, 18 Apr 2023 18:46:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9E09C4339B;
+	Tue, 18 Apr 2023 18:46:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1681843604;
+	bh=pKJj9g3tBEkFJP6eRoZIhrGdL6/PVt203b7XHIVgCB8=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=MA532bzdkC8gnUE8qJC+Z9XJx4r60U4jXHWdnFCAP1lqtSvNm63zBg9I7tps0GmeO
+	 LZhywIGCGgapvYxPTRWSgInBfrtV1qOOUBoxfUZzd43xfjpfRniaqx7y3xdQroY2Pb
+	 YG7PK7BrpCd844yVBrwErw45bhlpqdwYPo4joG9p2uOq46lHNRF3U8u/Oi/KtS5eRq
+	 o17pjw1qlLb7yIiMx3swcZFILGOI9UNAtMuhNTvLyHmKiesKs+wx04aay0+N2wu3iX
+	 8lN5XQzvH3nnHwnn7BQh3GCjaZ2Vc2Nri+6GT7Gn4OMvjt5P4gbWVpX9opCgjGGdSG
+	 ElO46apzLuPCA==
+Received: by mail-yw1-f173.google.com with SMTP id 00721157ae682-54fe82d8bf5so156583517b3.3;
+        Tue, 18 Apr 2023 11:46:44 -0700 (PDT)
+X-Gm-Message-State: AAQBX9dawoGqTuM92w4wqEHdIjPD0JmlhmdfR/9/XL/OWV8goNgKoea8
+	bQVyG4vNknmxe8wsS4Vou/Dj9i5DDAADhFVaIA==
+X-Google-Smtp-Source: AKy350YZVJSdk9pRa2UGMByWO/Ybo+AAHEAwh2PwITon48BeO0ZkbmsZmJF6/RAw5tyZru+XXDUnu779QuByl8GQZhE=
+X-Received: by 2002:a81:bc05:0:b0:54f:b27f:286a with SMTP id
+ a5-20020a81bc05000000b0054fb27f286amr476178ywi.5.1681843603770; Tue, 18 Apr
+ 2023 11:46:43 -0700 (PDT)
+MIME-Version: 1.0
 References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
  <20230412084540.295411-2-changhuang.liang@starfivetech.com>
- <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org>
- <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
- <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org>
- <b34a8d59-34e4-8358-9d2b-367f4707ca7c@starfivetech.com>
- <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org>
+ <8dd0dc63-e0df-8764-f756-da032d9d671c@linaro.org> <eb47b7c7-bdbb-92d9-ba39-604ce487f297@starfivetech.com>
+ <f6a4fb28-d635-4d99-44bb-d929cb41eef2@linaro.org> <b34a8d59-34e4-8358-9d2b-367f4707ca7c@starfivetech.com>
+ <f0d82428-aaa5-3dd4-bc29-f1057fe749bc@linaro.org> <20230418184246.GA2103246-robh@kernel.org>
+In-Reply-To: <20230418184246.GA2103246-robh@kernel.org>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 18 Apr 2023 13:46:31 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKVa+XHkoDbDLaD+haC2J7QDJ_oLr9RAT=7Pvwa-rWHLg@mail.gmail.com>
+Message-ID: <CAL_JsqKVa+XHkoDbDLaD+haC2J7QDJ_oLr9RAT=7Pvwa-rWHLg@mail.gmail.com>
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+	Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>, 
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>, 
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230418_114249_671722_0C107CEC 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20230418_114646_198379_94EDAE6B 
+X-CRM114-Status: GOOD (  17.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,40 +86,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Apr 13, 2023 at 10:41:23AM +0200, Krzysztof Kozlowski wrote:
-> On 13/04/2023 04:34, Changhuang Liang wrote:
-> >>>>> +  lane_maps:
-> >>>>
-> >>>> Why did this appear? Underscores are not allowed. It looks like you
-> >>>> re-implement some standard property.
-> >>>>
-> >>>
-> >>> Will change to lane-maps.
-> >>> Yes, according to Vinod advice, lane mapping table use device tree
-> >>> to parse makes sense.
-> >>
-> >> Hm, I have a feeling that I saw such property, so you should dig into
-> >> existing and in-flight bindings.
-> >>
-> >> Best regards,
-> >> Krzysztof
-> >>
-> > 
-> > A standard property? Like "clocks" or "resets"?
-> 
-> Like lane-polarities now submitted to one MIPI.
-> 
-
-data-lanes perhaps?
-
-Rob
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBBcHIgMTgsIDIwMjMgYXQgMTo0MuKAr1BNIFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5l
+bC5vcmc+IHdyb3RlOgo+Cj4gT24gVGh1LCBBcHIgMTMsIDIwMjMgYXQgMTA6NDE6MjNBTSArMDIw
+MCwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPiA+IE9uIDEzLzA0LzIwMjMgMDQ6MzQsIENo
+YW5naHVhbmcgTGlhbmcgd3JvdGU6Cj4gPiA+Pj4+PiArICBsYW5lX21hcHM6Cj4gPiA+Pj4+Cj4g
+PiA+Pj4+IFdoeSBkaWQgdGhpcyBhcHBlYXI/IFVuZGVyc2NvcmVzIGFyZSBub3QgYWxsb3dlZC4g
+SXQgbG9va3MgbGlrZSB5b3UKPiA+ID4+Pj4gcmUtaW1wbGVtZW50IHNvbWUgc3RhbmRhcmQgcHJv
+cGVydHkuCj4gPiA+Pj4+Cj4gPiA+Pj4KPiA+ID4+PiBXaWxsIGNoYW5nZSB0byBsYW5lLW1hcHMu
+Cj4gPiA+Pj4gWWVzLCBhY2NvcmRpbmcgdG8gVmlub2QgYWR2aWNlLCBsYW5lIG1hcHBpbmcgdGFi
+bGUgdXNlIGRldmljZSB0cmVlCj4gPiA+Pj4gdG8gcGFyc2UgbWFrZXMgc2Vuc2UuCj4gPiA+Pgo+
+ID4gPj4gSG0sIEkgaGF2ZSBhIGZlZWxpbmcgdGhhdCBJIHNhdyBzdWNoIHByb3BlcnR5LCBzbyB5
+b3Ugc2hvdWxkIGRpZyBpbnRvCj4gPiA+PiBleGlzdGluZyBhbmQgaW4tZmxpZ2h0IGJpbmRpbmdz
+Lgo+ID4gPj4KPiA+ID4+IEJlc3QgcmVnYXJkcywKPiA+ID4+IEtyenlzenRvZgo+ID4gPj4KPiA+
+ID4KPiA+ID4gQSBzdGFuZGFyZCBwcm9wZXJ0eT8gTGlrZSAiY2xvY2tzIiBvciAicmVzZXRzIj8K
+PiA+Cj4gPiBMaWtlIGxhbmUtcG9sYXJpdGllcyBub3cgc3VibWl0dGVkIHRvIG9uZSBNSVBJLgo+
+ID4KPgo+IGRhdGEtbGFuZXMgcGVyaGFwcz8KCkV4Y2VwdCB0aGF0IGlzIGZvciB0aGUgY29udHJv
+bGxlcidzIGVuZHBvaW50IHJhdGhlciB0aGFuIHRoZSBwaHkuClByZXN1bWFibHkgaWYgdGhlIGNv
+bnRyb2xsZXIga25vd3MgdGhlIG1hcHBpbmcsIHRoZW4gaXQgY2FuIHRlbGwgdGhlCnBoeSBpZiBp
+dCBuZWVkcyB0aGUgaW5mb3JtYXRpb24uIElPVywgZG9uJ3QganVzdCBjb3B5ICdkYXRhLWxhbmVz
+JyB0bwp0aGUgcGh5LiBGb2xsb3cgdGhlIG5vcm1hbCBwYXR0ZXJucy4KClJvYgoKLS0gCmxpbnV4
+LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
