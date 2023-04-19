@@ -4,75 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C7B9C6FD18
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Apr 2023 08:17:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51388C77B73
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Apr 2023 09:30:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LDfrAwfVRE9U4mBtbZiQY9st0gniw63MuRr/8q4cPQA=; b=nO7aKdRqQGzND4
-	Jhbts/1zjbGt7Udc93dBya4hnZE++9GxKw2nyle7J0rTF2TjjTPobzBYTLVyTOmrQMlQa3SXSzJiM
-	9V54F0mNVzlRQHAkJkkrMHdyMAM8oeCAvF0VE6Y9HqgIpcvOj401Ge1mD+mpQxHg/qqnBVVNg7qWU
-	6ppEBVj0TzBodPzVc6fNrAAS3EHJKxKUnS2THv/15Y+axw+I8q+He7/8f+CmjX0lIbY9VRYKKMe+g
-	KF2CyS+Ze6j7y85KcLjgvScp7QfnwjGh8KLuw93kbp206zEOs3wKziTzCTXJz8sYFz6INeHBaAeoP
-	KJsoAZEYDAiGsxj9huKg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KbpT8qQLX935BvPFCG/GH4KVX2Evsr8E/58JaTa/TJE=; b=r9YYnUBlFEMYCh
+	C/phgGK82lHQhwzL4iGyhlY/7JVwanyV383bfo8St8n/yFqSdXJOqnyFjwQv8G7inHpa3DfAnGCeQ
+	Ub+PS0RWDRVqOtVGsyVkwSWVhTiW5beO8MYRQMyrKZlkp0onrKzc/lQRyMUmuPCPFU6MtQFHWJRmy
+	rJ99vLpWKdlJNaCECBZJgPS2Ad0nHsCgEqt4SqF6cxytBYAhfo799RTWzGLJLnyvuqHXjUr+hxD8U
+	TgREDmyKWo+Raqy0Ob55lSbYgEfDoMUNVEFeDuglRSXT0ObvFDU+Rd0wj4aKy3EbJMiv+IhTaYZ1m
+	JtJydhuPCf4z1hWchvZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pp30A-004ZC7-0e;
-	Wed, 19 Apr 2023 08:17:18 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pp305-004Z8M-2O;
-	Wed, 19 Apr 2023 08:17:16 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 12E2824DBBD;
-	Wed, 19 Apr 2023 16:16:42 +0800 (CST)
-Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 19 Apr
- 2023 16:16:41 +0800
-Received: from [192.168.125.108] (113.72.144.253) by EXMBX171.cuchost.com
- (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 19 Apr
- 2023 16:16:40 +0800
-Message-ID: <f7e07efc-c274-4fc2-20c1-4c5e2e1c989e@starfivetech.com>
-Date: Wed, 19 Apr 2023 16:16:40 +0800
+	id 1pp48x-004kFi-3A;
+	Wed, 19 Apr 2023 09:30:27 +0000
+Received: from alln-iport-1.cisco.com ([173.37.142.88])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pp48u-004kE5-1w
+	for linux-phy@lists.infradead.org;
+	Wed, 19 Apr 2023 09:30:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=cisco.com; i=@cisco.com; l=9378; q=dns/txt; s=iport;
+  t=1681896624; x=1683106224;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=/fR/nh2jewOctfzkM0zGV6bWFCdyeSG1xDmEGIQgCeE=;
+  b=TVul5251NY2TMx3Almk/4v2It0+0LyVc7HxffCRGqlL6Sz1ebwu8HC6Y
+   6dVAFR+OdKuBmVqr2lgPYafXrqqTV9v7yCerDEMvyFlpj+e7wfS8Q/G6A
+   4sIOgwFhVjaHUZdPRsYS1utlBWmEVFiahSGZHkBbPp2ehYj20wtGRRuT7
+   w=;
+X-IronPort-AV: E=Sophos;i="5.99,208,1677542400"; 
+   d="scan'208";a="102064421"
+Received: from alln-core-9.cisco.com ([173.36.13.129])
+  by alln-iport-1.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA; 19 Apr 2023 09:30:17 +0000
+Received: from sjc-ads-7449.cisco.com (sjc-ads-7449.cisco.com [10.30.220.234])
+	by alln-core-9.cisco.com (8.15.2/8.15.2) with ESMTPS id 33J9UCwM005352
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Wed, 19 Apr 2023 09:30:15 GMT
+Received: by sjc-ads-7449.cisco.com (Postfix, from userid 1777032)
+	id 944A9CCD0B2; Wed, 19 Apr 2023 02:30:11 -0700 (PDT)
+From: Marcin Wierzbicki <mawierzb@cisco.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Lars-Peter Clausen <lars@metafoo.de>,
+        Marcin Wierzbicki <mawierzb@cisco.com>,
+        Bartosz Wawrzyniak <bwawrzyn@cisco.com>, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+Cc: xe-linux-external@cisco.com, danielwa@cisco.com, olicht@cisco.com
+Subject: [PATCH] phy: cadence: Sierra: Add support for SGMII
+Date: Wed, 19 Apr 2023 02:30:07 -0700
+Message-Id: <20230419093008.195094-1-mawierzb@cisco.com>
+X-Mailer: git-send-email 2.35.6
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.1
-Subject: Re: [PATCH v4 0/7] Add JH7110 USB and USB PHY driver support
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Conor Dooley <conor@kernel.org>,
-	"Kishon Vijay Abraham I" <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Peter Chen"
-	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, "Philipp Zabel"
-	<p.zabel@pengutronix.de>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-usb@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	"Mason Huo" <mason.huo@starfivetech.com>
-References: <20230406015216.27034-1-minda.chen@starfivetech.com>
- <517670ca-ba2e-811e-3eb2-7f38011c9690@linaro.org>
- <985d0a57-1fc8-5725-4d3a-33dcc5d49d67@starfivetech.com>
- <5953bc83-9609-6d12-7e9b-ca5202151fb3@linaro.org>
- <a75ed45c-55c4-ff94-86f9-313ec79720ac@starfivetech.com>
- <c79e7d05-0b62-40e6-0864-35b2821c69e7@linaro.org>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <c79e7d05-0b62-40e6-0864-35b2821c69e7@linaro.org>
-X-Originating-IP: [113.72.144.253]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX171.cuchost.com
- (172.16.6.91)
-X-YovoleRuleAgent: yovoleflag
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-Outbound-SMTP-Client: 10.30.220.234, sjc-ads-7449.cisco.com
+X-Outbound-Node: alln-core-9.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230419_011713_958870_D1D892FB 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230419_023024_835312_D53F5114 
+X-CRM114-Status: GOOD (  13.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,30 +76,266 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAyMDIzLzQvMTggMjA6MjIsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24gMTgv
-MDQvMjAyMyAxMzoxMiwgTWluZGEgQ2hlbiB3cm90ZToKPj4+Pj4+Cj4+Pj4+Pgo+Pj4+Pj4gYmFz
-ZS1jb21taXQ6IDBlYzU3Y2ZhNzIxZmJkMzZiNGM0YzBkOWNjYzVkNzhhNzhmN2ZhMzUKPj4+Pj4+
-IHByZXJlcXVpc2l0ZS1wYXRjaC1pZDogMjRhNmUzNDQyZWQxZjU0NTRmZmI0YTUxNGNmZDc2ODQz
-NmE4NzA5MAo+Pj4+Pj4gcHJlcmVxdWlzaXRlLXBhdGNoLWlkOiA1NTM5MDUzNzM2MGYyNWM4Yjlj
-YmZkYzMwYjczYWRlMDA0ZjQzNmY3Cj4+Pj4+Cj4+Pj4+IGZhdGFsOiBiYWQgb2JqZWN0IDU1Mzkw
-NTM3MzYwZjI1YzhiOWNiZmRjMzBiNzNhZGUwMDRmNDM2ZjcKPj4+Pj4KPj4+Pj4gV2hhdCBjb21t
-aXRzIGRvIHlvdSByZWZlcmVuY2U/IEhvdyBhcmUgdGhleSBoZWxwZnVsPwo+Pj4+Pgo+Pj4+IEkg
-dXNlICJnaXQgZm9ybWF0LXBhdGNoIC0tYmFzZT0oY29tbWl0KSB0byBnZW5lcmF0ZSBwYXRjaHNl
-dC4KPj4+PiBNYXliZSBJIHNldCB0aGUgd3JvbmcgYmFzZSBjb21taXQuCj4+Pgo+Pj4gSG93IGFy
-ZSB0aGV5IGhlbHBmdWwgaWYgdGhlc2UgYXJlIHByaXZhdGUgY29tbWl0cz8KPj4+PiBCZXN0IHJl
-Z2FyZHMsCj4+PiBLcnp5c3p0b2YKPj4+Cj4+IGJhc2UtY29tbWl0IGlzIG5vdCBwcml2YXRlIGNv
-bW1pdHMuIAo+PiBJIHNob3VsZCBzZXQgYmFzZSBjb21taXQgMTk3YjZiNjBhZTdiYzUxZGQwODE0
-OTUzYzU2MjgzMzE0M2IyOTJhYS4gVGhpcyBpcyA2LjMtcmM0IGNvbW1pdC4KPj4gQnV0IEkgc2V0
-IDBlYzU3Y2ZhNzIxZmJkMzZiNGM0YzBkOWNjYzVkNzhhNzhmN2ZhMzUuIFRoaXMgaXMgNi4zLXJj
-NCdzIHByZXZpb3VzIGNvbW1pdC4KPiAKPiBZb3UgbWlzc2VkIHRoZSBwb2ludC4gSSBhbSBub3Qg
-dGFsa2luZyBhYm91dCBiYXNlIGNvbW1pdC4gSSBhbSB0YWxraW5nCj4gYWJvdXQgeW91ciBwcmVy
-ZXF1aXNpdGVzLCB3aGljaCBhcmUgdXNlbGVzcy4gV2hhdCBjYW4gd2UgZG8gd2l0aCBzdWNoIFNI
-QT8KPiAKPiBCZXN0IHJlZ2FyZHMsCj4gS3J6eXN6dG9mCj4gCk9L77yMIEkgd2lsbCBkZWxldGUg
-dGhlbQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+Added SGMII link support for cdns,sierra-phy-t0 compatibility string.
+The configuration is based on Sierra Programming Guide and
+validated in Cisco CrayAR SoC.
+
+Co-developed-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+Signed-off-by: Marcin Wierzbicki <mawierzb@cisco.com>
+---
+ drivers/phy/cadence/phy-cadence-sierra.c | 112 ++++++++++++++++++++++-
+ 1 file changed, 110 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 6e86a6517f37..9d00a45ef092 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -24,32 +24,44 @@
+ #include <dt-bindings/phy/phy-cadence.h>
+ 
+ #define NUM_SSC_MODE		3
+-#define NUM_PHY_TYPE		4
++#define NUM_PHY_TYPE		5
+ 
+ /* PHY register offsets */
+ #define SIERRA_COMMON_CDB_OFFSET			0x0
+ #define SIERRA_MACRO_ID_REG				0x0
+ #define SIERRA_CMN_PLLLC_GEN_PREG			0x42
++#define SIERRA_CMN_PLLLC_FBDIV_INT_MODE0_PREG		0x43
++#define SIERRA_CMN_PLLLC_DCOCAL_CTRL_PREG		0x45
++#define SIERRA_CMN_PLLLC_INIT_PREG			0x46
++#define SIERRA_CMN_PLLLC_ITERTMR_PREG			0x47
+ #define SIERRA_CMN_PLLLC_MODE_PREG			0x48
+ #define SIERRA_CMN_PLLLC_LF_COEFF_MODE1_PREG		0x49
+ #define SIERRA_CMN_PLLLC_LF_COEFF_MODE0_PREG		0x4A
+ #define SIERRA_CMN_PLLLC_LOCK_CNTSTART_PREG		0x4B
++#define SIERRA_CMN_PLLLC_LOCKSEARCH_PREG		0x4C
+ #define SIERRA_CMN_PLLLC_CLK1_PREG			0x4D
++#define SIERRA_CMN_PLLLC_CLK0_PREG			0x4E
+ #define SIERRA_CMN_PLLLC_BWCAL_MODE1_PREG		0x4F
+ #define SIERRA_CMN_PLLLC_BWCAL_MODE0_PREG		0x50
+ #define SIERRA_CMN_PLLLC_DSMCORR_PREG			0x51
+ #define SIERRA_CMN_PLLLC_SS_PREG			0x52
+ #define SIERRA_CMN_PLLLC_SS_AMP_STEP_SIZE_PREG		0x53
+ #define SIERRA_CMN_PLLLC_SSTWOPT_PREG			0x54
++#define SIERRA_CMN_PLLCSM_PLLEN_TMR_PREG		0x5D
++#define SIERRA_CMN_PLLCSM_PLLPRE_TMR_PREG		0x5E
+ #define SIERRA_CMN_PLLLC_SS_TIME_STEPSIZE_MODE_PREG	0x62
+ #define SIERRA_CMN_PLLLC_LOCK_DELAY_CTRL_PREG		0x63
++#define SIERRA_SDOSCCAL_CLK_CNT_PREG			0x6E
+ #define SIERRA_CMN_REFRCV_PREG				0x98
++#define SIERRA_CMN_RESCAL_CTRLA_PREG			0xA0
+ #define SIERRA_CMN_REFRCV1_PREG				0xB8
+ #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
++#define SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG		0xC5
+ #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
+ #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
+ #define SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG	0xE2
+ 
++
+ #define SIERRA_LANE_CDB_OFFSET(ln, block_offset, reg_offset)	\
+ 				((0x4000 << (block_offset)) + \
+ 				 (((ln) << 9) << (reg_offset)))
+@@ -74,6 +86,7 @@
+ #define SIERRA_PSC_RX_A1_PREG				0x031
+ #define SIERRA_PSC_RX_A2_PREG				0x032
+ #define SIERRA_PSC_RX_A3_PREG				0x033
++#define SIERRA_PLLCTRL_FBDIV_MODE01_PREG		0x039
+ #define SIERRA_PLLCTRL_SUBRATE_PREG			0x03A
+ #define SIERRA_PLLCTRL_GEN_A_PREG			0x03B
+ #define SIERRA_PLLCTRL_GEN_D_PREG			0x03E
+@@ -83,6 +96,7 @@
+ #define SIERRA_DFE_BIASTRIM_PREG			0x04C
+ #define SIERRA_DRVCTRL_ATTEN_PREG			0x06A
+ #define SIERRA_DRVCTRL_BOOST_PREG			0x06F
++#define SIERRA_LANE_TX_RECEIVER_DETECT_PREG		0x071
+ #define SIERRA_TX_RCVDET_OVRD_PREG			0x072
+ #define SIERRA_CLKPATHCTRL_TMR_PREG			0x081
+ #define SIERRA_RX_CREQ_FLTR_A_MODE3_PREG		0x085
+@@ -98,6 +112,8 @@
+ #define SIERRA_CREQ_SPARE_PREG				0x096
+ #define SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG		0x097
+ #define SIERRA_CTLELUT_CTRL_PREG			0x098
++#define SIERRA_DEQ_BLK_TAU_CTRL1_PREG			0x0AC
++#define SIERRA_DEQ_BLK_TAU_CTRL4_PREG			0x0AF
+ #define SIERRA_DFE_ECMP_RATESEL_PREG			0x0C0
+ #define SIERRA_DFE_SMP_RATESEL_PREG			0x0C1
+ #define SIERRA_DEQ_PHALIGN_CTRL				0x0C4
+@@ -126,6 +142,9 @@
+ #define SIERRA_DEQ_GLUT14				0x0F6
+ #define SIERRA_DEQ_GLUT15				0x0F7
+ #define SIERRA_DEQ_GLUT16				0x0F8
++#define SIERRA_POSTPRECUR_EN_CEPH_CTRL_PREG		0x0F9
++#define SIERRA_TAU_EN_CEPH2TO0_PREG			0x0FB
++#define SIERRA_TAU_EN_CEPH5TO3_PREG			0x0FC
+ #define SIERRA_DEQ_ALUT0				0x108
+ #define SIERRA_DEQ_ALUT1				0x109
+ #define SIERRA_DEQ_ALUT2				0x10A
+@@ -140,6 +159,7 @@
+ #define SIERRA_DEQ_ALUT11				0x113
+ #define SIERRA_DEQ_ALUT12				0x114
+ #define SIERRA_DEQ_ALUT13				0x115
++#define SIERRA_OEPH_EN_CTRL_PREG			0x124
+ #define SIERRA_DEQ_DFETAP_CTRL_PREG			0x128
+ #define SIERRA_DEQ_DFETAP0				0x129
+ #define SIERRA_DEQ_DFETAP1				0x12B
+@@ -154,6 +174,7 @@
+ #define SIERRA_DEQ_TAU_CTRL2_PREG			0x151
+ #define SIERRA_DEQ_TAU_CTRL3_PREG			0x152
+ #define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x158
++#define SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG		0x159
+ #define SIERRA_DEQ_PICTRL_PREG				0x161
+ #define SIERRA_CPICAL_TMRVAL_MODE1_PREG			0x170
+ #define SIERRA_CPICAL_TMRVAL_MODE0_PREG			0x171
+@@ -162,6 +183,7 @@
+ #define SIERRA_CPI_RESBIAS_BIN_PREG			0x17E
+ #define SIERRA_CPI_TRIM_PREG				0x17F
+ #define SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG		0x183
++#define SIERRA_CPICAL_RES_STARTCODE_MODE01_PREG		0x184
+ #define SIERRA_EPI_CTRL_PREG				0x187
+ #define SIERRA_LFPSDET_SUPPORT_PREG			0x188
+ #define SIERRA_LFPSFILT_NS_PREG				0x18A
+@@ -173,6 +195,7 @@
+ #define SIERRA_RXBUFFER_CTLECTRL_PREG			0x19E
+ #define SIERRA_RXBUFFER_RCDFECTRL_PREG			0x19F
+ #define SIERRA_RXBUFFER_DFECTRL_PREG			0x1A0
++#define SIERRA_LN_SPARE_REG_PREG			0x1B0
+ #define SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG		0x14F
+ #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
+ 
+@@ -298,7 +321,8 @@ enum cdns_sierra_phy_type {
+ 	TYPE_NONE,
+ 	TYPE_PCIE,
+ 	TYPE_USB,
+-	TYPE_QSGMII
++	TYPE_QSGMII,
++	TYPE_SGMII
+ };
+ 
+ enum cdns_sierra_ssc_mode {
+@@ -939,6 +963,9 @@ static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+ 	case PHY_TYPE_QSGMII:
+ 		inst->phy_type = TYPE_QSGMII;
+ 		break;
++	case PHY_TYPE_SGMII:
++		inst->phy_type = TYPE_SGMII;
++		break;
+ 	default:
+ 		return -EINVAL;
+ 	}
+@@ -2352,6 +2379,77 @@ static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
+ 	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+ };
+ 
++/* SGMII PHY common configuration */
++static const struct cdns_reg_pairs sgmii_cmn_regs[] = {
++	{0x0180, SIERRA_SDOSCCAL_CLK_CNT_PREG},
++	{0x6000, SIERRA_CMN_REFRCV_PREG},
++	{0x0031, SIERRA_CMN_RESCAL_CTRLA_PREG},
++	{0x001C, SIERRA_CMN_PLLLC_FBDIV_INT_MODE0_PREG},
++	{0x2106, SIERRA_CMN_PLLLC_LF_COEFF_MODE0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC_LOCKSEARCH_PREG},
++	{0x8103, SIERRA_CMN_PLLLC_CLK0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC_BWCAL_MODE0_PREG},
++	{0x0027, SIERRA_CMN_PLLCSM_PLLEN_TMR_PREG},
++	{0x0062, SIERRA_CMN_PLLCSM_PLLPRE_TMR_PREG},
++	{0x0800, SIERRA_CMN_PLLLC_SS_TIME_STEPSIZE_MODE_PREG},
++	{0x0000, SIERRA_CMN_PLLLC_INIT_PREG},
++	{0x0000, SIERRA_CMN_PLLLC_ITERTMR_PREG},
++	{0x0020, SIERRA_CMN_PLLLC_LOCK_CNTSTART_PREG},
++	{0x0013, SIERRA_CMN_PLLLC_DCOCAL_CTRL_PREG},
++	{0x0013, SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG},
++};
++
++static struct cdns_sierra_vals sgmii_cmn_vals = {
++	.reg_pairs = sgmii_cmn_regs,
++	.num_regs = ARRAY_SIZE(sgmii_cmn_regs),
++};
++
++/* SGMII PHY lane configuration */
++static const struct cdns_reg_pairs sgmii_ln_regs[] = {
++	{0x691E, SIERRA_DET_STANDEC_D_PREG},
++	{0x0FFE, SIERRA_PSC_RX_A0_PREG},
++	{0x0104, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
++	{0x0013, SIERRA_PLLCTRL_SUBRATE_PREG},
++	{0x0106, SIERRA_PLLCTRL_GEN_D_PREG},
++	{0x5234, SIERRA_PLLCTRL_CPGAIN_MODE_PREG},
++	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
++	{0x00AB, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
++	{0x3C0E, SIERRA_CREQ_CCLKDET_MODE01_PREG},
++	{0x3220, SIERRA_CREQ_FSMCLK_SEL_PREG},
++	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
++	{0x6320, SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG},
++	{0x0000, SIERRA_CPI_OUTBUF_RATESEL_PREG},
++	{0x15A2, SIERRA_LN_SPARE_REG_PREG},
++	{0x7900, SIERRA_DEQ_BLK_TAU_CTRL1_PREG},
++	{0x2202, SIERRA_DEQ_BLK_TAU_CTRL4_PREG},
++	{0x2206, SIERRA_DEQ_TAU_CTRL2_PREG},
++	{0x0005, SIERRA_LANE_TX_RECEIVER_DETECT_PREG},
++	{0x8001, SIERRA_CREQ_SPARE_PREG},
++	{0x0000, SIERRA_DEQ_CONCUR_CTRL1_PREG},
++	{0xD004, SIERRA_DEQ_CONCUR_CTRL2_PREG},
++	{0x0101, SIERRA_DEQ_GLUT9},
++	{0x0101, SIERRA_DEQ_GLUT10},
++	{0x0101, SIERRA_DEQ_GLUT11},
++	{0x0101, SIERRA_DEQ_GLUT12},
++	{0x0000, SIERRA_DEQ_GLUT13},
++	{0x0000, SIERRA_DEQ_GLUT16},
++	{0x0000, SIERRA_POSTPRECUR_EN_CEPH_CTRL_PREG},
++	{0x0000, SIERRA_TAU_EN_CEPH2TO0_PREG},
++	{0x0003, SIERRA_TAU_EN_CEPH5TO3_PREG},
++	{0x0101, SIERRA_DEQ_ALUT8},
++	{0x0101, SIERRA_DEQ_ALUT9},
++	{0x0100, SIERRA_DEQ_ALUT10},
++	{0x0000, SIERRA_OEPH_EN_CTRL_PREG},
++	{0x5425, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x7458, SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG},
++	{0x321F, SIERRA_CPICAL_RES_STARTCODE_MODE01_PREG},
++};
++
++static struct cdns_sierra_vals sgmii_ln_vals = {
++	.reg_pairs = sgmii_ln_regs,
++	.num_regs = ARRAY_SIZE(sgmii_ln_regs),
++};
++
+ static const struct cdns_sierra_data cdns_map_sierra = {
+ 	.id_value = SIERRA_MACRO_ID,
+ 	.block_offset_shift = 0x2,
+@@ -2395,6 +2493,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[INTERNAL_SSC] = &qsgmii_100_no_ssc_plllc1_cmn_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sgmii_cmn_vals,
++			},
++		},
+ 	},
+ 	.pma_ln_vals = {
+ 		[TYPE_PCIE] = {
+@@ -2421,6 +2524,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[INTERNAL_SSC] = &qsgmii_100_no_ssc_plllc1_ln_vals,
+ 			},
+ 		},
++		[TYPE_SGMII] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sgmii_ln_vals,
++			},
++		},
+ 	},
+ };
+ 
+-- 
+2.35.6
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
