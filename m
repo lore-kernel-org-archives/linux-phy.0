@@ -4,83 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7E2C6FD18
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Apr 2023 13:52:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 721E3C77B78
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Apr 2023 18:30:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=L2NE8Ld1XzF252iskWR7XUpZkLnl5vYM7erTZ+bnD1U=; b=V13Tdmq+sNAsc2iV7abQ3nZ7qT
-	cNGYOjH6SD0PSjDFs1MSpUBFztunG60yenp8QALqtx1OO5Tgt+IG+arENVeqe+aoMLfbs0KBUcDsJ
-	f5Xej55FOkNQh8wh0qi0DiPG94IPziuI1pBc1Zgh5Zd75zJU0xXROZjrwf1XwUkE8A/FJsS0ifdCU
-	tpAG0tcpfj0bAKcPsKGexv147ct74SX6puXSE78/GwVbkSxcmDU3VkRFyGAtmsiLok5t75w5fxVwe
-	bxVeWqhsaSKzZMNM9x0YIvKeXUUmx/UTXO0W+i0XCReAYVs2xVh1QniXyMLDed6uuG1wUcZQDIytm
-	eYWe5eXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Bqgwu+uvmrEoaLdanInUfxOL5p8ckrbtIZeXOwVPai4=; b=HT8muFejY2dO/6dvFGR/PnJRf7
+	dSBvD7YjRH8D3hcHU9lcWIRhdlMrKfMBPxy+FmU6vmaz+f9OIC85NwAwzM5QB86umTtpxjNOCe4DY
+	GZ2Kf+4JkftcPrjNruVt3Ax+8Yo98QprCL+ejUS5OYhePiZjVsCn//se9TccOwDyQ7z1MSfJxZG18
+	N18rWYV3SIkV49uhClFk5UqaifDh3C+xgTcGswp/WRusbof4Jso+Xc/DbCdgk0J65b0ogkUdGi5pe
+	hZogkknOd61SwxETRpSn2usOtzXCfz4sBFpWhpb3OuoQ4ASnb3rbgIEvy8krmtwCQB2bgiZiWrQNr
+	xKtnSCKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pp8Em-005ZOu-2p;
-	Wed, 19 Apr 2023 13:52:44 +0000
-Received: from mail-qv1-xf2f.google.com ([2607:f8b0:4864:20::f2f])
+	id 1ppCZ5-006A2b-1e;
+	Wed, 19 Apr 2023 18:29:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pp8Eh-005ZMR-2h
-	for linux-phy@lists.infradead.org;
-	Wed, 19 Apr 2023 13:52:42 +0000
-Received: by mail-qv1-xf2f.google.com with SMTP id js7so13204841qvb.5
-        for <linux-phy@lists.infradead.org>; Wed, 19 Apr 2023 06:52:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1681912357; x=1684504357;
-        h=content-transfer-encoding:cc:to:subject:message-id:date
-         :mime-version:in-reply-to:references:user-agent:from:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=FPjrLq9D2NGXVQL2kIu0v3AaBsn7YPrZkOXYspxigx0=;
-        b=fi3j63QI2hRJJqEPPrC0RFh2ARuCl2lLAooXulavHnWokQVzUGIWqjFHEYBPcJ1OTi
-         wfnbfYwrLToEwwC8cMmIyPQgnCSgawqdR/wo/xo8Ri63rtB9WB0skau7BMYm9igb40+n
-         Il7yCzWrJKYa9+FtJBykUsfYCDg5ZR23Whx46r41NGYKp8oxRFAYU7cP1ppCNEARQ6p0
-         TSj9l0FZ34cztLvvNcJNGXUMoO/6AOIg+slZn7ytIodY+WO68mV1JVeu8/ppb0MBIsNN
-         v86q1naPa6AtheeVYvy1i51MaYf5miOUx4TBrB5k9I0K0mowEiEcUygWDp1RyQZt/4xv
-         YlGw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1681912357; x=1684504357;
-        h=content-transfer-encoding:cc:to:subject:message-id:date
-         :mime-version:in-reply-to:references:user-agent:from
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FPjrLq9D2NGXVQL2kIu0v3AaBsn7YPrZkOXYspxigx0=;
-        b=daJbdHXogakuSTaPKGPmohQKQMr5/pO4z0siMmv1RFsTtdvdL8dQ/UM4Yq08KDfjTK
-         9i1JcvRfjKO/F5Q094xOPM2Dpso/0Vdvx9D1V9xa6Z53ZGgODENCB4AvSTRRUInI2tmh
-         3GVgbnpVlZjt5dMDCCob2tFZK8Y8MYi5KY+hHGFmrEk1luU+6IwN6HKcpU/zor8EFuq0
-         fMXGj3Y/mljL8NAaF5JrhZqEDGVv/dXfiPwcCXYVmXTp7yNuDJLP/oTP+6fiyECTo+yw
-         4JLWZL2y0vkwCYJBnkwM2fGIZilQ2pNA4bJMjIc08vHGUqDV4ToONNJvYe+7B9S73TcL
-         8rOA==
-X-Gm-Message-State: AAQBX9eHvNyRB2hqg3fn9A77zCwpZDhRDgUpV4e80X3OlUaAFdXGw71W
-	Z+XX98bw5nVk376v11crz2Ftj37GgwGcu4LSHnjeRA==
-X-Google-Smtp-Source: AKy350bqSRMHi7mtCynvIyCs4PEfhJSxOVP7yhnmkrSs9ps3OwCrZt5hBXC3DVgKOCg654JGHtMmNafIr7aQqM2fbKs=
-X-Received: by 2002:a05:6214:1c8a:b0:5ef:4ae4:4da6 with SMTP id
- ib10-20020a0562141c8a00b005ef4ae44da6mr22429745qvb.31.1681912357324; Wed, 19
- Apr 2023 06:52:37 -0700 (PDT)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Wed, 19 Apr 2023 06:52:36 -0700
-From: Guillaume Ranquet <granquet@baylibre.com>
-User-Agent: meli 0.7.2
-References: <20230419122131.2167122-1-thierry.reding@gmail.com>
-In-Reply-To: <20230419122131.2167122-1-thierry.reding@gmail.com>
+	id 1ppCZ2-006A1r-2x;
+	Wed, 19 Apr 2023 18:29:58 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A5F8F62937;
+	Wed, 19 Apr 2023 18:29:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 526D2C433D2;
+	Wed, 19 Apr 2023 18:29:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1681928994;
+	bh=vMXfRaz6Lvtcg+eyS+REMKN/wpTcy7NYyfkAUOR0zJg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=MjGLzzXjq3WtVQOhNBbkXl6tYCYtPzO7X4nxU4kRLw1P2i7DNLZMHGATgULoqm3nh
+	 w39+dRh5X6znik+W2DQw3jNpX9NOmBuh2kcSemVX0FQgnpmtDPVuLBRrVuUMr1L2rp
+	 rVz9e09h+sUvI8vvmV31wNWfqW7ZhNW8ruqcw9VqsjB8s9x2+tq7qWqNxcfXgo2D6e
+	 RRQ3yOAnfaoMuIKJ1CvsjXCZ1Oq6i50w2SC1KazzvkRHIEG9QXLP/guBTV56kmY1m+
+	 IPktL+tnHi8Q3VgoSq5K8yId0fDO/QIJ8EmFHNc+YKV5kcd4ieOj7xvv8bY7Ei4ri8
+	 PYOONAfsqpnbg==
+Date: Wed, 19 Apr 2023 19:29:48 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Walker Chen <walker.chen@starfivetech.com>,
+	Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+	vkoul@kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+Message-ID: <20230419-labored-camper-644d51a7ca96@spud>
+References: <20230419035646.43702-1-changhuang.liang@starfivetech.com>
+ <20230419035646.43702-2-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
-Date: Wed, 19 Apr 2023 06:52:36 -0700
-Message-ID: <CABnWg9v_1PuQ5w7+=mAWL-T8j=taF8L63Q0Xa268PvjK1yW_Eg@mail.gmail.com>
-Subject: Re: [PATCH] phy: mediatek: Avoid floating point constants
-To: Thierry Reding <thierry.reding@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Guillaume Ranquet <granquet@baylibre.com>, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	Jonathan Hunter <jonathanh@nvidia.com>
+In-Reply-To: <20230419035646.43702-2-changhuang.liang@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230419_065240_092252_87677BAE 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20230419_112957_028061_894944A3 
+X-CRM114-Status: GOOD (  23.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,61 +76,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============1260793096277981859=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCAxOSBBcHIgMjAyMyAxNDoyMSwgVGhpZXJyeSBSZWRpbmcgPHRoaWVycnkucmVkaW5n
-QGdtYWlsLmNvbT4gd3JvdGU6Cj5Gcm9tOiBUaGllcnJ5IFJlZGluZyA8dHJlZGluZ0BudmlkaWEu
-Y29tPgo+Cj5XaGVuIGJ1aWxkaW5nIHdpdGggb2xkIHZlcnNpb25zIG9mIEdDQyAoNi4zIGluIHRo
-aXMgY2FzZSksIHRoZSBjb21waWxlcgo+c3R1bWJsZXMgb3ZlciB0aGUgZmxvYXRpbmcgcG9pbnQg
-Y29uc3RhbnRzIGluIHRoaXMgZHJpdmVyOgo+Cj4JZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10
-ay1oZG1pLW10ODE5NS5jOiBJbiBmdW5jdGlvbiDigJhtdGtfaGRtaV9wbGxfcHJlcGFyZeKAmToK
-Pglkcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmM6MzMxOjIzOiBlcnJv
-cjog4oCYLW1nZW5lcmFsLXJlZ3Mtb25seeKAmSBpcyBpbmNvbXBhdGlibGUgd2l0aCBmbG9hdGlu
-Zy1wb2ludCBjb2RlCj4JICB9IGVsc2UgaWYgKHBpeGVsX2NsayA+PSA3NC4xNzUgKiBNRUdBICYm
-IHBpeGVsX2NsayA8PSAzMDAgKiBNRUdBKSB7Cj4KPglkcml2ZXJzL3BoeS9tZWRpYXRlay9waHkt
-bXRrLWhkbWktbXQ4MTk1LmM6MzYxOjEyOiBlcnJvcjog4oCYLW1nZW5lcmFsLXJlZ3Mtb25seeKA
-mSBpcyBpbmNvbXBhdGlibGUgd2l0aCBmbG9hdGluZy1wb2ludCBjb2RlCj4JIHN0YXRpYyBpbnQg
-bXRrX2hkbWlfcGxsX3ByZXBhcmUoc3RydWN0IGNsa19odyAqaHcpCj4JCSAgICBefn5+fn5+fn5+
-fn5+fn5+fn5+fgo+CWRyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYzoz
-NjE6MTI6IGVycm9yOiDigJgtbWdlbmVyYWwtcmVncy1vbmx54oCZIGlzIGluY29tcGF0aWJsZSB3
-aXRoIGZsb2F0aW5nLXBvaW50IGNvZGUKPgo+Rml4IHRoaXMgYnkgc3dpdGNoaW5nIHRvIHRoZSBL
-SUxPIG1hY3JvIGluc3RlYWQgYW5kIG11bHRpcGx5aW5nIHRoZQo+Y29uc3RhbnRzIGJ5IDEwMDAg
-dG8gZ2V0IHJpZCBvZiB0aGUgZmxvYXRpbmcgcG9pbnQuCj4KPkZpeGVzOiA0NTgxMGQ0ODZiYjQg
-KCJwaHk6IG1lZGlhdGVrOiBhZGQgc3VwcG9ydCBmb3IgcGh5LW10ay1oZG1pLW10ODE5NSIpCj5S
-ZXBvcnRlZC1ieTogSm9uYXRoYW4gSHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4KPlNpZ25l
-ZC1vZmYtYnk6IFRoaWVycnkgUmVkaW5nIDx0cmVkaW5nQG52aWRpYS5jb20+Cj4tLS0KPiBkcml2
-ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmMgfCA4ICsrKystLS0tCj4gMSBm
-aWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPgo+ZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYyBiL2RyaXZlcnMv
-cGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYwo+aW5kZXggYWJmYzA3N2ZiMGE4Li5i
-MTBhZjI2Y2FkMmYgMTAwNjQ0Cj4tLS0gYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhk
-bWktbXQ4MTk1LmMKPisrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgx
-OTUuYwo+QEAgLTIzOSw5ICsyMzksOSBAQCBzdGF0aWMgaW50IG10a19oZG1pX3BsbF9jYWxjKHN0
-cnVjdCBtdGtfaGRtaV9waHkgKmhkbWlfcGh5LCBzdHJ1Y3QgY2xrX2h3ICpodywKPiAJCXR4cG9z
-ZGl2ID0gODsKPiAJZWxzZSBpZiAodG1kc19jbGsgPj0gNTQgKiBNRUdBICYmIHRtZHNfY2xrIDwg
-MTQ4LjM1ICogTUVHQSkKPiAJCXR4cG9zZGl2ID0gNDsKPi0JZWxzZSBpZiAodG1kc19jbGsgPj0g
-MTQ4LjM1ICogTUVHQSAmJiB0bWRzX2NsayA8IDI5Ni43ICogTUVHQSkKPisJZWxzZSBpZiAodG1k
-c19jbGsgPj0gMTQ4MzUwICogS0lMTyAmJiB0bWRzX2NsayA8IDI5NjcwMCAqIEtJTE8pCj4gCQl0
-eHBvc2RpdiA9IDI7Cj4tCWVsc2UgaWYgKHRtZHNfY2xrID49IDI5Ni43ICogTUVHQSAmJiB0bWRz
-X2NsayA8PSA1OTQgKiBNRUdBKQo+KwllbHNlIGlmICh0bWRzX2NsayA+PSAyOTY3MDAgKiBLSUxP
-ICYmIHRtZHNfY2xrIDw9IDU5NCAqIE1FR0EpCj4gCQl0eHBvc2RpdiA9IDE7Cj4gCWVsc2UKPiAJ
-CXJldHVybiAtRUlOVkFMOwo+QEAgLTMyOCwxMiArMzI4LDEyIEBAIHN0YXRpYyBpbnQgbXRrX2hk
-bWlfcGxsX2Rydl9zZXR0aW5nKHN0cnVjdCBjbGtfaHcgKmh3KQo+IAkJY2xrX2NoYW5uZWxfYmlh
-cyA9IDB4MzQ7IC8qIDIwbUEgKi8KPiAJCWltcGVkYW5jZV9lbiA9IDB4ZjsKPiAJCWltcGVkYW5j
-ZSA9IDB4MzY7IC8qIDEwMG9obSAqLwo+LQl9IGVsc2UgaWYgKHBpeGVsX2NsayA+PSA3NC4xNzUg
-KiBNRUdBICYmIHBpeGVsX2NsayA8PSAzMDAgKiBNRUdBKSB7Cj4rCX0gZWxzZSBpZiAocGl4ZWxf
-Y2xrID49IDc0MTc1ICogS0lMTyAmJiBwaXhlbF9jbGsgPD0gMzAwICogTUVHQSkgewo+IAkJZGF0
-YV9jaGFubmVsX2JpYXMgPSAweDM0OyAvKiAyMG1BICovCj4gCQljbGtfY2hhbm5lbF9iaWFzID0g
-MHgyYzsgLyogMTZtQSAqLwo+IAkJaW1wZWRhbmNlX2VuID0gMHhmOwo+IAkJaW1wZWRhbmNlID0g
-MHgzNjsgLyogMTAwb2htICovCj4tCX0gZWxzZSBpZiAocGl4ZWxfY2xrID49IDI3ICogTUVHQSAm
-JiBwaXhlbF9jbGsgPCA3NC4xNzUgKiBNRUdBKSB7Cj4rCX0gZWxzZSBpZiAocGl4ZWxfY2xrID49
-IDI3ICogTUVHQSAmJiBwaXhlbF9jbGsgPCA3NDE3NSAqIEtJTE8pIHsKPiAJCWRhdGFfY2hhbm5l
-bF9iaWFzID0gMHgxNDsgLyogMTBtQSAqLwo+IAkJY2xrX2NoYW5uZWxfYmlhcyA9IDB4MTQ7IC8q
-IDEwbUEgKi8KPiAJCWltcGVkYW5jZV9lbiA9IDB4MDsKPi0tCj4yLjQwLjAKPgoKVGh4IGZvciB0
-aGUgZml4IQoKUmV2aWV3ZWQtYnk6IEd1aWxsYXVtZSBSYW5xdWV0IDxncmFucXVldEBiYXlsaWJy
-ZS5jb20+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1waHkK
+
+--===============1260793096277981859==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="WQONS9/NxbuziPoO"
+Content-Disposition: inline
+
+
+--WQONS9/NxbuziPoO
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hey Changhuang, DT/PHY folks,
+
+On Tue, Apr 18, 2023 at 08:56:41PM -0700, Changhuang Liang wrote:
+> Add AON PMU for StarFive JH7110 SoC, it can be used to turn on/off DPHY
+> rx/tx power switch, and it don't need the properties of reg and
+> interrupts.
+
+Putting this here since the DT guys are more likely to see it this way..
+Given how the implementation of the code driving this new
+power-controller and the code driving the existing one are rather
+different (you've basically re-written the entire driver in this series),
+should the dphy driver implement its own power-controller?
+
+I know originally Changuang had tried something along those lines:
+https://lore.kernel.org/linux-riscv/5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@st=
+arfivetech.com/
+
+I see that that was shut down pretty much, partly due to the
+non-standard property, hence this series adding the dphy power domain to
+the existing driver.
+
+If it was done by looking up the pmu with a
+of_find_compatible_node(NULL, "power-controller", "starfive,jh7110-aon-pmu")
+type thing, would that make sense? Although, maybe that is not a
+question for you, and this series may actually have been better entirely
+bundled with the dphy series so the whole thing can be reviewed as a
+unit. I've added=20
+
+IOW, don't change this patch, or the dts patch, but move all of the
+code back into the phy driver..
+
+Sorry for not asking this sooner Changhuang,
+Conor.
+
+(hopefully this didn't get sent twice, mutt complained of a bad email
+addr during sending the first time)
+
+>=20
+> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+> ---
+>  .../bindings/power/starfive,jh7110-pmu.yaml       | 15 +++++++++++++--
+>  include/dt-bindings/power/starfive,jh7110-pmu.h   |  3 +++
+>  2 files changed, 16 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.=
+yaml b/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+> index 98eb8b4110e7..c50507c38e14 100644
+> --- a/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+> +++ b/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+> @@ -8,6 +8,7 @@ title: StarFive JH7110 Power Management Unit
+> =20
+>  maintainers:
+>    - Walker Chen <walker.chen@starfivetech.com>
+> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
+> =20
+>  description: |
+>    StarFive JH7110 SoC includes support for multiple power domains which =
+can be
+> @@ -17,6 +18,7 @@ properties:
+>    compatible:
+>      enum:
+>        - starfive,jh7110-pmu
+> +      - starfive,jh7110-aon-pmu
+> =20
+>    reg:
+>      maxItems: 1
+> @@ -29,10 +31,19 @@ properties:
+> =20
+>  required:
+>    - compatible
+> -  - reg
+> -  - interrupts
+>    - "#power-domain-cells"
+> =20
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: starfive,jh7110-pmu
+> +    then:
+> +      required:
+> +        - reg
+> +        - interrupts
+> +
+>  additionalProperties: false
+> =20
+>  examples:
+> diff --git a/include/dt-bindings/power/starfive,jh7110-pmu.h b/include/dt=
+-bindings/power/starfive,jh7110-pmu.h
+> index 132bfe401fc8..0bfd6700c144 100644
+> --- a/include/dt-bindings/power/starfive,jh7110-pmu.h
+> +++ b/include/dt-bindings/power/starfive,jh7110-pmu.h
+> @@ -14,4 +14,7 @@
+>  #define JH7110_PD_ISP		5
+>  #define JH7110_PD_VENC		6
+> =20
+> +#define JH7110_PD_DPHY_TX	0
+> +#define JH7110_PD_DPHY_RX	1
+> +
+>  #endif
+> --=20
+> 2.25.1
+>=20
+
+--WQONS9/NxbuziPoO
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZEAzHAAKCRB4tDGHoIJi
+0u+LAQDoC/J42sKvykFP5qu+R/A4l+E/risoiAZPqG87amq8hAEAu8g9zCq2G8zr
+mxK73nG/PSMv3yXlgoY53l0N+kWSgw8=
+=pKPl
+-----END PGP SIGNATURE-----
+
+--WQONS9/NxbuziPoO--
+
+
+--===============1260793096277981859==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1260793096277981859==--
+
