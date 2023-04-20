@@ -4,74 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84ACDC77B73
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Apr 2023 20:24:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A235CC77B72
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Apr 2023 07:00:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O9gSG2Znk/GxWrjfglNPphEjfyGmXbglKAdpIg4AKqI=; b=XNxT9bAK5yTvcI
-	eInSxd9AlVrH1QusFGAX/I1aVjsh0vs4lJ9EnrqutaxWDz9lmp9NGmVmpNC8Y50MeiUzY2MAqPpbT
-	8tOiMTE0ynCT8rqFmqX9atdVCiCCt9ZA6RKQ8jc8XC0bb7RC8x99ppa4HYfTprUJk0QlKwhe6dD1z
-	AlI5NclZsDMERYt3yO1uHaAEm8AtSj5o0SufpkSBQ7SgHlhRQKTC3NxtIkOt+QpaernRXymvrpeHH
-	dJuUpAMRQUdQX5I97b9nrYAp4TT32JQ/SS48Cafh3pefnvxXSq/qn1CGPA6w5C67G+eaepMoeSSj2
-	RYy2uDXWmRilWIiYLDUA==;
+	List-Owner; bh=1NTXxEnnU2iAP9oj75ZDi9X2JO5lyYRiHKjd1mhOV+w=; b=bWTKSc806EG8sR
+	ikOwT+ypjZFX5/0nrsN2HG00CibDXZ3blXacsw+gnCqWmRXItEmBMK4GcyxKRzURM94MMjLRjUuuf
+	wixyJNOLzmoBT6qGY6SMkP+yfMxYyXMn/Xf/wOujYKtsdnV1qmhlk3YbE8wvdiBdbW/yNld3yFwyZ
+	NO5dzGngiWOIECz6lVzz4LkW2rNMhu/9BbOFVslLMBkgMBt3n+ugQRa8259vsE4a9eYm4Z8ww+x2B
+	2Tula1E575dcBag1GnKf195yAWMvpd/0AD8mepfAWOxfK+iOHhVy7bYJNjGpwPjh7/5u1V9Qx4xKp
+	6degQamUIwbK4mfT/AQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppELr-006LL1-0k;
-	Wed, 19 Apr 2023 20:24:27 +0000
-Received: from out-42.mta0.migadu.com ([2001:41d0:1004:224b::2a])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppELm-006LIv-2S
-	for linux-phy@lists.infradead.org;
-	Wed, 19 Apr 2023 20:24:24 +0000
-Date: Wed, 19 Apr 2023 22:24:16 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=grimler.se; s=key1;
-	t=1681935859;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=V20VJv1TvezaAhFXg1TxVwCOql54YGFqOYPkGP8pazQ=;
-	b=cT8c6lY/bJVW3tUmDsyOXCpLyLqQnkGWUJhsaPyDTQDN+T0llTayhLrryh//uChH+//JHo
-	x17+hr5gXmgXXv214KbPtSXg1i5+Whi6AkB87RxbFU1t5mpoZ5++enCMNkSEDLKNkmnQb6
-	3IMIQH5r+ho1nDTvIw+DjYAL79D8v9M=
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Henrik Grimler <henrik@grimler.se>
-To: Artur Weber <aweber.kernel@gmail.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Tomasz Figa <tomasz.figa@gmail.com>,
-	Chanwoo Choi <cw00.choi@samsung.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
-	Olof Johansson <olof@lixom.net>, soc@kernel.org,
-	Russell King <linux@armlinux.org.uk>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Kukjin Kim <kgene@kernel.org>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
-	linux-pm@vger.kernel.org, linux-media@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: [PATCH v2 03/12] ARM: exynos: Re-introduce Exynos4212 support
-Message-ID: <ZEBN8ImTp/tRdej+@L14.lan>
-References: <20230416133422.1949-1-aweber.kernel@gmail.com>
- <20230416133422.1949-4-aweber.kernel@gmail.com>
+	id 1ppOHe-007ElW-0z;
+	Thu, 20 Apr 2023 07:00:46 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1ppOHa-007EkM-0J;
+	Thu, 20 Apr 2023 07:00:44 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 0A42F24E0F6;
+	Thu, 20 Apr 2023 15:00:13 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 20 Apr
+ 2023 15:00:13 +0800
+Received: from [192.168.125.106] (113.72.144.253) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 20 Apr
+ 2023 15:00:12 +0800
+Message-ID: <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
+Date: Thu, 20 Apr 2023 15:00:10 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230416133422.1949-4-aweber.kernel@gmail.com>
-X-Migadu-Flow: FLOW_OUT
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+Content-Language: en-US
+To: Conor Dooley <conor@kernel.org>
+CC: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
+	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
+	<linux-phy@lists.infradead.org>
+References: <20230419035646.43702-1-changhuang.liang@starfivetech.com>
+ <20230419035646.43702-2-changhuang.liang@starfivetech.com>
+ <20230419-labored-camper-644d51a7ca96@spud>
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230419-labored-camper-644d51a7ca96@spud>
+X-Originating-IP: [113.72.144.253]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230419_132422_941502_8AC74477 
-X-CRM114-Status: GOOD (  30.73  )
+X-CRM114-CacheID: sfid-20230420_000042_411015_061B0CF4 
+X-CRM114-Status: GOOD (  26.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,178 +81,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Artur,
 
-On Sun, Apr 16, 2023 at 03:34:13PM +0200, Artur Weber wrote:
-> The platform was originally dropped in commit bca9085e0ae9 ("ARM:
-> dts: exynos: remove Exynos4212 support (dead code)"), as there were
-> no boards using it.
+
+On 2023/4/20 2:29, Conor Dooley wrote:
+> Hey Changhuang, DT/PHY folks,
 > 
-> We will be adding a device that uses it, so add it back.
+> On Tue, Apr 18, 2023 at 08:56:41PM -0700, Changhuang Liang wrote:
+>> Add AON PMU for StarFive JH7110 SoC, it can be used to turn on/off DPHY
+>> rx/tx power switch, and it don't need the properties of reg and
+>> interrupts.
 > 
-> This effectively reverts commit 9e43eca3c874 ("ARM: EXYNOS: Remove
-> Exynos4212 related dead code").
+> Putting this here since the DT guys are more likely to see it this way..
+> Given how the implementation of the code driving this new
+> power-controller and the code driving the existing one are rather
+> different (you've basically re-written the entire driver in this series),
+> should the dphy driver implement its own power-controller?
 > 
-> Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
-> ---
->  arch/arm/mach-exynos/Kconfig    | 5 +++++
->  arch/arm/mach-exynos/common.h   | 8 ++++++++
->  arch/arm/mach-exynos/exynos.c   | 2 ++
->  arch/arm/mach-exynos/firmware.c | 8 +++++++-
->  arch/arm/mach-exynos/pm.c       | 2 +-
->  arch/arm/mach-exynos/suspend.c  | 4 ++++
->  6 files changed, 27 insertions(+), 2 deletions(-)
+> I know originally Changuang had tried something along those lines:
+> https://lore.kernel.org/linux-riscv/5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@starfivetech.com/
 > 
-> diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
-> index 4d3b40e4049a..b3d5df5225fe 100644
-> --- a/arch/arm/mach-exynos/Kconfig
-> +++ b/arch/arm/mach-exynos/Kconfig
-> @@ -78,6 +78,11 @@ config CPU_EXYNOS4210
->  	default y
->  	depends on ARCH_EXYNOS4
->  
-> +config SOC_EXYNOS4212
-> +	bool "Samsung Exynos4212"
-> +	default y
-> +	depends on ARCH_EXYNOS4
-> +
->  config SOC_EXYNOS4412
->  	bool "Samsung Exynos4412"
->  	default y
-> diff --git a/arch/arm/mach-exynos/common.h b/arch/arm/mach-exynos/common.h
-> index 29eb075b24a4..c9e85d33c309 100644
-> --- a/arch/arm/mach-exynos/common.h
-> +++ b/arch/arm/mach-exynos/common.h
-> @@ -15,6 +15,7 @@
->  #define EXYNOS3_SOC_MASK	0xFFFFF000
->  
->  #define EXYNOS4210_CPU_ID	0x43210000
-> +#define EXYNOS4212_CPU_ID	0x43220000
->  #define EXYNOS4412_CPU_ID	0xE4412200
->  #define EXYNOS4_CPU_MASK	0xFFFE0000
->  
-> @@ -34,6 +35,7 @@ static inline int is_samsung_##name(void)	\
->  
->  IS_SAMSUNG_CPU(exynos3250, EXYNOS3250_SOC_ID, EXYNOS3_SOC_MASK)
->  IS_SAMSUNG_CPU(exynos4210, EXYNOS4210_CPU_ID, EXYNOS4_CPU_MASK)
-> +IS_SAMSUNG_CPU(exynos4212, EXYNOS4212_CPU_ID, EXYNOS4_CPU_MASK)
->  IS_SAMSUNG_CPU(exynos4412, EXYNOS4412_CPU_ID, EXYNOS4_CPU_MASK)
->  IS_SAMSUNG_CPU(exynos5250, EXYNOS5250_SOC_ID, EXYNOS5_SOC_MASK)
->  IS_SAMSUNG_CPU(exynos5410, EXYNOS5410_SOC_ID, EXYNOS5_SOC_MASK)
-> @@ -52,6 +54,12 @@ IS_SAMSUNG_CPU(exynos5800, EXYNOS5800_SOC_ID, EXYNOS5_SOC_MASK)
->  # define soc_is_exynos4210()	0
->  #endif
->  
-> +#if defined(CONFIG_SOC_EXYNOS4212)
-> +# define soc_is_exynos4212()	is_samsung_exynos4212()
-> +#else
-> +# define soc_is_exynos4212()	0
-> +#endif
-> +
->  #if defined(CONFIG_SOC_EXYNOS4412)
->  # define soc_is_exynos4412()	is_samsung_exynos4412()
->  #else
-> diff --git a/arch/arm/mach-exynos/exynos.c b/arch/arm/mach-exynos/exynos.c
-> index 51a247ca4da8..5671621f1661 100644
-> --- a/arch/arm/mach-exynos/exynos.c
-> +++ b/arch/arm/mach-exynos/exynos.c
-> @@ -178,6 +178,7 @@ static void __init exynos_dt_machine_init(void)
->  		exynos_cpuidle.dev.platform_data = &cpuidle_coupled_exynos_data;
->  #endif
->  	if (of_machine_is_compatible("samsung,exynos4210") ||
-> +	    of_machine_is_compatible("samsung,exynos4212") ||
->  	    (of_machine_is_compatible("samsung,exynos4412") &&
->  	     (of_machine_is_compatible("samsung,trats2") ||
->  		  of_machine_is_compatible("samsung,midas") ||
-> @@ -192,6 +193,7 @@ static char const *const exynos_dt_compat[] __initconst = {
->  	"samsung,exynos3250",
->  	"samsung,exynos4",
->  	"samsung,exynos4210",
-> +	"samsung,exynos4212",
->  	"samsung,exynos4412",
->  	"samsung,exynos5",
->  	"samsung,exynos5250",
-> diff --git a/arch/arm/mach-exynos/firmware.c b/arch/arm/mach-exynos/firmware.c
-> index 2da5b60b59e2..110c8064ee64 100644
-> --- a/arch/arm/mach-exynos/firmware.c
-> +++ b/arch/arm/mach-exynos/firmware.c
-> @@ -63,12 +63,18 @@ static int exynos_cpu_boot(int cpu)
->  	 *
->  	 * On Exynos5 devices the call is ignored by trustzone firmware.
->  	 */
-> -	if (!soc_is_exynos4210() && !soc_is_exynos4412())
-> +	if (!soc_is_exynos4210() && !soc_is_exynos4412() &&
-> +	    !soc_is_exynos4212())
-
-Seems more logical to have 4212 before 4412 here.
-
->  		return 0;
->  
->  	/*
->  	 * The second parameter of SMC_CMD_CPU1BOOT command means CPU id.
-> +	 * But, Exynos4212 has only one secondary CPU so second parameter
-> +	 * isn't used for informing secure firmware about CPU id.
->  	 */
-> +	if (soc_is_exynos4212())
-> +		cpu = 0;
-
-Is it necessary to set cpu = 0?  Are there any obvious issues without
-it (like second cpu not being brought up)?  It seems vendor kernel
-does this for both exynos4210 and exynos4212 [1], but mainline has not
-done this for exynos4210 and there has been no reported issues on for
-that platform as far as I know.
-
-The assembly that handles SMC_CMD_CPU1BOOT in sboot.bin from firmware
-version T310XXSBQB2 is identical to what is found in sboot.bin from
-exynos4412-galaxy-s3, and it uses the cpu arg in both cases, so seems
-likely that we need this and I am mostly asking out of curiosity.
-
-[1] https://github.com/krzk/linux-vendor-backup/blob/mokee/android-3.4-samsung-galaxy-tab-s-10.5-sm-t805-exynos5420/arch/arm/mach-exynos/platsmp.c#L225-L229
-
-Best regards,
-Henrik Grimler
-
->  	exynos_smc(SMC_CMD_CPU1BOOT, cpu, 0, 0);
->  	return 0;
->  }
-> diff --git a/arch/arm/mach-exynos/pm.c b/arch/arm/mach-exynos/pm.c
-> index 30f4e55bf39e..9b6db04e4e34 100644
-> --- a/arch/arm/mach-exynos/pm.c
-> +++ b/arch/arm/mach-exynos/pm.c
-> @@ -161,7 +161,7 @@ void exynos_enter_aftr(void)
->  
->  	exynos_pm_central_suspend();
->  
-> -	if (soc_is_exynos4412()) {
-> +	if (soc_is_exynos4412() || soc_is_exynos4212()) {
->  		/* Setting SEQ_OPTION register */
->  		pmu_raw_writel(S5P_USE_STANDBY_WFI0 | S5P_USE_STANDBY_WFE0,
->  			       S5P_CENTRAL_SEQ_OPTION);
-> diff --git a/arch/arm/mach-exynos/suspend.c b/arch/arm/mach-exynos/suspend.c
-> index 3bf14ca78b62..df1e10033f90 100644
-> --- a/arch/arm/mach-exynos/suspend.c
-> +++ b/arch/arm/mach-exynos/suspend.c
-> @@ -231,6 +231,7 @@ static int __init exynos_pmu_irq_init(struct device_node *node,
->  
->  EXYNOS_PMU_IRQ(exynos3250_pmu_irq, "samsung,exynos3250-pmu");
->  EXYNOS_PMU_IRQ(exynos4210_pmu_irq, "samsung,exynos4210-pmu");
-> +EXYNOS_PMU_IRQ(exynos4212_pmu_irq, "samsung,exynos4212-pmu");
->  EXYNOS_PMU_IRQ(exynos4412_pmu_irq, "samsung,exynos4412-pmu");
->  EXYNOS_PMU_IRQ(exynos5250_pmu_irq, "samsung,exynos5250-pmu");
->  EXYNOS_PMU_IRQ(exynos5420_pmu_irq, "samsung,exynos5420-pmu");
-> @@ -640,6 +641,9 @@ static const struct of_device_id exynos_pmu_of_device_ids[] __initconst = {
->  	}, {
->  		.compatible = "samsung,exynos4210-pmu",
->  		.data = &exynos4_pm_data,
-> +	}, {
-> +		.compatible = "samsung,exynos4212-pmu",
-> +		.data = &exynos4_pm_data,
->  	}, {
->  		.compatible = "samsung,exynos4412-pmu",
->  		.data = &exynos4_pm_data,
-> -- 
-> 2.40.0
+> I see that that was shut down pretty much, partly due to the
+> non-standard property, hence this series adding the dphy power domain to
+> the existing driver.
 > 
+> If it was done by looking up the pmu with a
+> of_find_compatible_node(NULL, "power-controller", "starfive,jh7110-aon-pmu")
+> type thing, would that make sense? Although, maybe that is not a
+> question for you, and this series may actually have been better entirely
+> bundled with the dphy series so the whole thing can be reviewed as a
+> unit. I've added 
+> 
+> IOW, don't change this patch, or the dts patch, but move all of the
+> code back into the phy driver..
+> 
+
+Maybe this way can not do that? power domain is binding before driver probe,
+if I use "of_find_compatible_node" it phy(DPHY rx) probe. Maybe I can only operate 
+this power switch in my phy(DPHY rx) driver, so the all patch of this series isn't 
+make sense.
+
+In my opinion, We will also submit DPHY TX module later which use this series.
+Maybe this series should independent?
+
+> Sorry for not asking this sooner Changhuang,
+> Conor.
+> 
+> (hopefully this didn't get sent twice, mutt complained of a bad email
+> addr during sending the first time)
+> 
+
+I'm sorry for that, I will notice later.
+
+>>
+>> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+>> ---
+>>  .../bindings/power/starfive,jh7110-pmu.yaml       | 15 +++++++++++++--
+>>  include/dt-bindings/power/starfive,jh7110-pmu.h   |  3 +++
+>>  2 files changed, 16 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml b/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+>> index 98eb8b4110e7..c50507c38e14 100644
+>> --- a/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+>> +++ b/Documentation/devicetree/bindings/power/starfive,jh7110-pmu.yaml
+>> @@ -8,6 +8,7 @@ title: StarFive JH7110 Power Management Unit
+>>  
+>>  maintainers:
+>>    - Walker Chen <walker.chen@starfivetech.com>
+>> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
+>>  
+>>  description: |
+>>    StarFive JH7110 SoC includes support for multiple power domains which can be
+>> @@ -17,6 +18,7 @@ properties:
+>>    compatible:
+>>      enum:
+>>        - starfive,jh7110-pmu
+>> +      - starfive,jh7110-aon-pmu
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -29,10 +31,19 @@ properties:
+>>  
+>>  required:
+>>    - compatible
+>> -  - reg
+>> -  - interrupts
+>>    - "#power-domain-cells"
+>>  
+>> +allOf:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            const: starfive,jh7110-pmu
+>> +    then:
+>> +      required:
+>> +        - reg
+>> +        - interrupts
+>> +
+>>  additionalProperties: false
+>>  
+>>  examples:
+>> diff --git a/include/dt-bindings/power/starfive,jh7110-pmu.h b/include/dt-bindings/power/starfive,jh7110-pmu.h
+>> index 132bfe401fc8..0bfd6700c144 100644
+>> --- a/include/dt-bindings/power/starfive,jh7110-pmu.h
+>> +++ b/include/dt-bindings/power/starfive,jh7110-pmu.h
+>> @@ -14,4 +14,7 @@
+>>  #define JH7110_PD_ISP		5
+>>  #define JH7110_PD_VENC		6
+>>  
+>> +#define JH7110_PD_DPHY_TX	0
+>> +#define JH7110_PD_DPHY_RX	1
+>> +
+>>  #endif
+>> -- 
+>> 2.25.1
+>>
 
 -- 
 linux-phy mailing list
