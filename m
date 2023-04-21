@@ -4,68 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42ABEC77B76
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Apr 2023 21:23:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CBE3C77B76
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Apr 2023 22:13:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZlNEpIECH8dy0UPvBKM6sobDdor1gNz46OmRP5E5IWw=; b=p0GlHxuo+D+6US
-	o2eKd02bFbWomadl0VnmkV+VSNIjVufSAJgNPh9Cok/i9S89ZEiif07EotCblD5HDONaP0Is5nBW2
-	ADWvFGLk0cxZ9Rk0DIzh21n9WnEyOmLnwFFcWPTmJ2YDlwoz398IsZkKlB8GM79LDLy4YNiwWb51I
-	I3MzY8+qphGeReV9+lpfEYZCH+MH4LfuoYfnxwXAm0CBfy1V+p2G14SZROie3aP7GkVoXRmo/ygaO
-	/FzZzRPjyJlXPSMBjL51XADQoGfwiqtJz6lMQF839aNzebKMVWiem008WPHtFf3h+ie6W2NcQprOP
-	vbmKeFtYa7EM6nCPkyMg==;
+	List-Owner; bh=rnZl8m5dNsUmJjtx15wNXnLL4U6pupnIo4qzpADq36E=; b=2im6HWGnJVJ+XM
+	B0/YVTUgAvgiFXBMMdRUL9FNMcByXEPxnuD6QcOasulD46ZSrpGMN+4UpL/PXbVElIKB4401h1Yu8
+	Gx6jZZ3mUSnaSGeZtcCdTjeZhoy2Fck+pBa/7abgmIp1DMiutwycPJ97U2SGfqG5nTSjY25fLBZU/
+	2hvBb8hObZ5Y45Az+X+XyWRpGNGDRLjlZoy0OxMBzA+9EQ+Qht/QsKYXb+TQpkLxBuxoN1wKQtnB+
+	YvJEeAlIFA9ESoNBryi0zcYqPKiLJy/9entVYgaBJFOsTAmoOPVAkNC0B5bRlvoiy8GV45aKk8Tj3
+	VxX6XNON/Rt1Q23RVIZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppyEY-00BsId-2p;
-	Fri, 21 Apr 2023 21:23:58 +0000
-Received: from mail-oo1-f52.google.com ([209.85.161.52])
+	id 1ppz0d-00Bvky-1V;
+	Fri, 21 Apr 2023 22:13:39 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppyEW-00BsHJ-0O;
-	Fri, 21 Apr 2023 21:23:57 +0000
-Received: by mail-oo1-f52.google.com with SMTP id 006d021491bc7-5422726207fso770751eaf.0;
-        Fri, 21 Apr 2023 14:23:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682112235; x=1684704235;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=IbaXCpUXe4iUKhx65n7G15ksj7GhXIVMeVUGx6UoeCY=;
-        b=Rl/kqrXYkbooCjv3XZkm+Yxgc9uw1ic/DJ3GYA0K87W34OA9zx4SH0Eul7Egp6wM8U
-         K5WdkZVcbu+B5DFpS4agxzN3SiZI8J6KVtnAsbq0IY5zMfvzzu5ugpzeI2O5Tt6C+TQ7
-         wIHycYtuLoUKlhBojoQa9N06Tob9PeUj0vckhkCKO+6EyP5akaZcCE9U9RjrMQ6K5FH4
-         M/wx9B58+6y04L10WuCBjqG2t4rx6L2oGk0IJjT//e1WTh/Y1h+Hx1pLtzefm8ptO3Nu
-         ol5p/T3XHkhhO6zmC534dlEF9VCklcD7Wj/f/hLg7vrJkHB4qGxzvMhqhCBj4bx+f34J
-         Evgg==
-X-Gm-Message-State: AAQBX9ehPuqJS1VK3LNMm6klQFm7tIK3wqPy0OUz4K6jRzg/2fIcS5NM
-	DkkE3O/W1VfOebKUQAXN6Q==
-X-Google-Smtp-Source: AKy350bHXXS6OurY5nmMtPS/MaZh5XGH97e5KRD0bzQucEfG8t+AZTkCzTlqn5WIELiRv7gofzvDNA==
-X-Received: by 2002:a4a:cb1a:0:b0:547:6879:e9aa with SMTP id r26-20020a4acb1a000000b005476879e9aamr549944ooq.5.1682112234455;
-        Fri, 21 Apr 2023 14:23:54 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id q123-20020a4a4b81000000b00546daaf33cfsm2156853ooa.14.2023.04.21.14.23.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Apr 2023 14:23:54 -0700 (PDT)
-Received: (nullmailer pid 1785271 invoked by uid 1000);
-	Fri, 21 Apr 2023 21:23:53 -0000
-Date: Fri, 21 Apr 2023 16:23:53 -0500
-From: Rob Herring <robh@kernel.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Mason Huo <mason.huo@starfivetech.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>, Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, Roger Quadros <rogerq@kernel.org>, Pawel Laszczak <pawell@cadence.com>, Peter Chen <peter.chen@kernel.org>, linux-usb@vger.kernel.org, linux-riscv@lists.infradead.org, Albert Ou <aou@eecs.berkeley.edu>, Conor Dooley <conor@kernel.org>, Emil Renner Berthing <emil.renner.berthing@canonical.com>, devicetree@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 2/7] dt-bindings: phy: Add StarFive JH7110 PCIe PHY
-Message-ID: <168211223285.1785232.7377797349982243568.robh@kernel.org>
-References: <20230420110052.3182-1-minda.chen@starfivetech.com>
- <20230420110052.3182-3-minda.chen@starfivetech.com>
+	id 1ppz0Z-00Bvjw-0d;
+	Fri, 21 Apr 2023 22:13:36 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1A4BD649A3;
+	Fri, 21 Apr 2023 22:13:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB865C4339B;
+	Fri, 21 Apr 2023 22:13:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1682115213;
+	bh=XZd3xOHh9hRBu/JySb+r9z3kK1JjV1tv32skF1cGDD4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=mTwMl+eJzSMy03iFAPAUp2luKiUzmKPxD1vHfIkFe4Op2MvFaumks9ziuyiKumi0v
+	 Kb/A8ohF449C24/uFul9iePPNOmLn95Zm4ndeWMsNRXj/rv9p/xW25pi4mfS/fVaTf
+	 VFwB+RLND2DfSaBonTlBPJP1WiV8fiFmWzg4E84lUoQJzQ9GA+ndAvfyfCj0W1FnD4
+	 m3EuUHMyJy4e15fVTJUwSxUh7WEUDFlfghF/VUXYforrGmxivzem48PrTb9o3XkUWl
+	 qaF8VAirH/9KOwHFiHeOTm+Yga6UiorhrHPbmTSc+hc2glWjs/f1Eg5f/NB/e4vYra
+	 wWAJqLWNq8X6g==
+Date: Fri, 21 Apr 2023 15:13:30 -0700
+From: Nathan Chancellor <nathan@kernel.org>
+To: Guillaume Ranquet <granquet@baylibre.com>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>,
+	llvm@lists.linux.dev
+Subject: Re: [PATCH v2 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
+ variable usage in pll_calc
+Message-ID: <20230421221330.GA3657732@dev-arch.thelio-3990X>
+References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
+ <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230420110052.3182-3-minda.chen@starfivetech.com>
+In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230421_142356_163918_6E768D5B 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230421_151335_291641_B8DFA8D3 
+X-CRM114-Status: GOOD (  20.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,21 +84,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 20 Apr 2023 19:00:47 +0800, Minda Chen wrote:
-> Add StarFive JH7110 SoC PCIe 2.0 PHY dt-binding.
-> PCIe PHY0 (phy@10210000) can be used as USB 3.0 PHY.
+On Fri, Apr 14, 2023 at 06:07:46PM +0200, Guillaume Ranquet wrote:
+> The ret variable in mtk_hdmi_pll_calc() was used unitialized as reported
+> by the kernel test robot.
 > 
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-> Reviewed-by: Hal Feng <hal.feng@starfivetech.com>
+> Fix the issue by removing the variable altogether and testing out the
+> return value of mtk_hdmi_pll_set_hw()
+> 
+> Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
+> Reported-by: kernel test robot <lkp@intel.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+
+Reviewed-by: Nathan Chancellor <nathan@kernel.org>
+
+Can somebody pick this up? It fixes a rather obvious warning, which is
+breaking clang builds (as evidenced by three versions of the same fix).
+
 > ---
->  .../phy/starfive,jh7110-pcie-phy.yaml         | 58 +++++++++++++++++++
->  1 file changed, 58 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-pcie-phy.yaml
+>  drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 8 ++------
+>  1 file changed, 2 insertions(+), 6 deletions(-)
 > 
-
-Reviewed-by: Rob Herring <robh@kernel.org>
-
+> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> index abfc077fb0a8..054b73cb31ee 100644
+> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+> @@ -213,7 +213,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>  	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
+>  	u8 txpredivs[4] = { 2, 4, 6, 12 };
+>  	u32 fbkdiv_low;
+> -	int i, ret;
+> +	int i;
+>  
+>  	pixel_clk = rate;
+>  	tmds_clk = pixel_clk;
+> @@ -292,13 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>  	if (!(digital_div <= 32 && digital_div >= 1))
+>  		return -EINVAL;
+>  
+> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+> +	return mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+>  			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
+>  			    txposdiv, digital_div);
+> -	if (ret)
+> -		return -EINVAL;
+> -
+> -	return 0;
+>  }
+>  
+>  static int mtk_hdmi_pll_drv_setting(struct clk_hw *hw)
+> 
+> -- 
+> 2.40.0
+> 
 
 -- 
 linux-phy mailing list
