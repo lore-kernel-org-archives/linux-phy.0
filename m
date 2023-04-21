@@ -4,68 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C6F5C7EE20
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Apr 2023 16:09:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8F7CC7618E
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Apr 2023 16:28:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3lFAJLu3w7zNhBg4KgTXECPqlNq07uuEw6em6zgBZ0M=; b=CRsNEeXgXoRyJ4
-	s60498PLywPQyHQG9MO0Yfj+HWFvgp2XdWb6ChJqmphDhlqnRW0qF0Auq8IEBTqVV/aaMshETua8l
-	yPStwCF3uNuVEP1f3VjIcdRUHMNDL7XyeYr59REegVWKy+l0SniNZX6J9KS6s8ZYPJHb83Jc556DM
-	Vh1yAS0gA25hZIhGXM1UCR3koEltNLVz3dTMtQTVdDkuqWszJVzMrBwIfFXJ9hH9u/XC3oXLYVXwf
-	+PYtkQh0jGoBD8PZLq5XIzrL/8H5EdBBzbDASb65E1RDc4yQ/t7ovHBum+SnO2MKKEukSjy8uGTE7
-	wFOmyG36MEPPkv5GXomQ==;
+	List-Owner; bh=gnSY83HA8c4z+LkggfNl4d3cP6DM4DjUEPmY5Zwr0XQ=; b=uIwFvnq8B1GqHf
+	S6NrSsQpnCI2TwXa6+DsiVktAt63iptd0Ylwp/fesHfxzOgPDYxrnXhai037RuPQsfMdeaWW2fRT6
+	d86ghi3x/65sERgCTwHCaLXKYwhF0sTt80XYXVEvcdPveH7Ck1XC7LjPBWxiIQZPFF0afZ4cIRMiJ
+	mlxEKSbHvsMDp8tCOGoGOeuYloQwxOn8uhYCCJJxam4XPCpWGyyo90UaqxswXDE9yplRvYl+J9aFq
+	ZRMtY12ZYk8ETjU79WcQ0oNDAIIJGjZHTKamM490sghUFkpT98cC/3FhoStHDAPHChZM7bGb4zfxb
+	WLlK9v9gzrrnv8ivuYZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pptKB-00BLbB-0k;
-	Fri, 21 Apr 2023 16:09:27 +0000
-Received: from mail-oi1-f172.google.com ([209.85.167.172])
+	id 1pptcC-00BNfe-1E;
+	Fri, 21 Apr 2023 16:28:04 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pptK8-00BLaX-2o
+	id 1pptcA-00BNdL-1C
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Apr 2023 16:09:26 +0000
-Received: by mail-oi1-f172.google.com with SMTP id 5614622812f47-38c0a331d3cso1346632b6e.1
-        for <linux-phy@lists.infradead.org>; Fri, 21 Apr 2023 09:09:24 -0700 (PDT)
+	Fri, 21 Apr 2023 16:28:03 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-506bfe81303so3099487a12.1
+        for <linux-phy@lists.infradead.org>; Fri, 21 Apr 2023 09:28:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1682094479; x=1684686479;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=S51TzJEKK9WWVDYr4Tc1gJpcMzkHWh1WXqblt4YDlC0=;
+        b=CETPV90ihN3b3DZOnlv9hQKr0fh4gspi1VCr9VdP4hwDkdtmZ9AgF5tdmnECAHPp+V
+         RKWp1KvQD2X5o8mx+dj5hshVZywtPp011NNTJ1RVMADvlgve1fngNYOOtu8/mkGQv8S3
+         UQ4bja+i7aMHCdtiERCr0Kgvko21kA8OJ2FNFCa6SRpFiBUyyaljnZWHdVDyu8sksfeI
+         h/qQuwtNvzj1lVvuYVJr/87Ah+oIUnGt4mEOfV5eBH3noIbpPg+/FxLR9om20wPDR89K
+         TyR4zf0P3Hb8lkQ6duOweA3p9nR6TklUsLo05M+ge6x8oJzsaY0bBFh/y2FVuvSzXZaw
+         IJhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682093363; x=1684685363;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=Dy8PONCFIhkTcUEPgQ+0ISj/L7cH8cV88i3Z2JVEn8I=;
-        b=DzgzBzD1ymkgw1VmBWRFF3rBSe14k4OV8OsUFrKu7XBz3v/JOYg5ZfhMLWPG8oUMkN
-         CvLOM1s4K4s/LuHkAnwlvepP3PvCoX/rEqdGM29UhozOL6lZgPZP4yQleue4tyPOxpTi
-         TimuHcpWa/cbkMY8lRlenJB93kBXfQFk4Ys5lWhqyCAiguqejr2cFHTCSKsXlwObfe+7
-         BHBykCoFB4Zw9tBe0fXEz/6RxNm/mKP/XMi4k9TjvOTPMmAwSBZHi4pW1TnlUULaon8R
-         mKOZNEbZv/iKdXW10hywSxVxkP13pHSIxyyUy35D5NeGXsf8FjnSvXXn7PPTt1W10ubi
-         nq/Q==
-X-Gm-Message-State: AAQBX9cLK/eoauGSwaylElo68bLpFbQ5hhomdPYd+KGT+MXs/TwopjO2
-	0RgZvd9rZkJ+sSf5cnOqcQ==
-X-Google-Smtp-Source: AKy350by7amp0emL+mL2CpzJ0zhDlakUU2+NGUL4HO/d07ZTE3P2I7Im/lYMDDV6YK4JiOm2Espbyw==
-X-Received: by 2002:a05:6808:151:b0:38e:46ed:7738 with SMTP id h17-20020a056808015100b0038e46ed7738mr2927007oie.0.1682093363590;
-        Fri, 21 Apr 2023 09:09:23 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id a38-20020a4a98a9000000b0053a7aaa85a0sm1916335ooj.0.2023.04.21.09.09.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Apr 2023 09:09:23 -0700 (PDT)
-Received: (nullmailer pid 1412184 invoked by uid 1000);
-	Fri, 21 Apr 2023 16:09:21 -0000
+        d=1e100.net; s=20221208; t=1682094479; x=1684686479;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=S51TzJEKK9WWVDYr4Tc1gJpcMzkHWh1WXqblt4YDlC0=;
+        b=TiWOUl5mBYwTEng6egk7KeryQQ5lAFuODZCIQpld0NBMUVpcMml1HlNcEhAD253VBq
+         2hzaiLpIZXwawV7wz021geV7Joo7z4j4bVEhunUHO7OTLrjDgT68ttE52R15ffKXJHIT
+         qg5ATx2YsoXK3o94oial8JZAcKHYnLA1Kl7atxzSTryIB7xGUvoOHtYnsLB99nbRXwd/
+         l8AJaZgw5a5bxfwcaYo+AZgCUvcMpovkjZzzvou2WnCzsRWWcMP/W/mVjzRoEoCLVN/j
+         C+R8EzDHAm+ybW08YhlG72tUWO2BtZonCR1F3HsdqT8i11PtBI7VCQc4tveEv8AEkw9O
+         sfCQ==
+X-Gm-Message-State: AAQBX9f1IIDKn79xfFqWeD6+OCuyA67roGrk1s6g6mV3HKff4nUa7nEJ
+	WrJpLRxnN6q1PF+GveoKEfZFIw==
+X-Google-Smtp-Source: AKy350YDsOgKLoK5tAIioZExs34dWYBZrpIx7o0tWafmx6898YyxY8cwVVzZn6+Qk1owXo7rwySlYg==
+X-Received: by 2002:a05:6402:6c7:b0:504:9345:ffa4 with SMTP id n7-20020a05640206c700b005049345ffa4mr7172456edy.21.1682094479554;
+        Fri, 21 Apr 2023 09:27:59 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:687d:8c5:41cb:9883? ([2a02:810d:15c0:828:687d:8c5:41cb:9883])
+        by smtp.gmail.com with ESMTPSA id v1-20020aa7dbc1000000b005029c47f814sm1983225edt.49.2023.04.21.09.27.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 21 Apr 2023 09:27:59 -0700 (PDT)
+Message-ID: <f8aae62c-e3c5-5fca-7a56-0bc9c0efbd66@linaro.org>
+Date: Fri, 21 Apr 2023 18:27:57 +0200
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Devi Priya <quic_devipriy@quicinc.com>
-Cc: linux-phy@lists.infradead.org, quic_arajkuma@quicinc.com, linux-arm-msm@vger.kernel.org, quic_kathirav@quicinc.com, quic_srichara@quicinc.com, linux-kernel@vger.kernel.org, agross@kernel.org, quic_ipkumar@quicinc.com, quic_anusha@quicinc.com, konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, devicetree@vger.kernel.org, andersson@kernel.org, quic_sjaganat@quicinc.com
-In-Reply-To: <20230421124150.21190-2-quic_devipriy@quicinc.com>
-References: <20230421124150.21190-1-quic_devipriy@quicinc.com>
- <20230421124150.21190-2-quic_devipriy@quicinc.com>
-Message-Id: <168209295793.1394458.6036002891116983900.robh@kernel.org>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qmp-pcie: Add ipq9574
- bindings
-Date: Fri, 21 Apr 2023 11:09:21 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v8 2/8] dt-bindings: phy: qcom,qmp-usb: Add IPQ9574 USB3
+ PHY
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>,
+ Johan Hovold <johan@kernel.org>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+ vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, gregkh@linuxfoundation.org,
+ mturquette@baylibre.com, sboyd@kernel.org, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-clk@vger.kernel.org
+References: <cover.1680693149.git.quic_varada@quicinc.com>
+ <1efa9a64499767d939efadd0aef897ac4a6e54eb.1680693149.git.quic_varada@quicinc.com>
+ <0a66e291-a86d-1ff9-e674-839b8cc8f1da@linaro.org>
+ <ZDz9t9TkBqZ1fcfn@hovoldconsulting.com>
+ <20230421095838.GA5813@varda-linux.qualcomm.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230421095838.GA5813@varda-linux.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230421_090924_909160_4F7AB3AE 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20230421_092802_415121_221C8D0A 
+X-CRM114-Status: GOOD (  15.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,50 +105,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 21 Apr 2023 18:11:49 +0530, Devi Priya wrote:
-> Add bindings for the PCIe QMP PHYs found on IPQ9574.
+On 21/04/2023 11:58, Varadarajan Narayanan wrote:
+> On Mon, Apr 17, 2023 at 10:05:11AM +0200, Johan Hovold wrote:
+>> On Thu, Apr 06, 2023 at 09:41:49AM +0200, Krzysztof Kozlowski wrote:
+>>> On 05/04/2023 13:41, Varadarajan Narayanan wrote:
+>>>> Add dt-bindings for USB3 PHY found on Qualcomm IPQ9574
+>>>>
+>>>> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+>>>> ---
+>>>>  Changes in v8:
+>>>> 	- Update clock names for ipq9574
+>>>>
+>>>>  Changes in v6:
+>>>> 	- Made power-domains optional
+>>>>
+>>>> Note: In the earlier patch sets, had used the (legacy)
+>>>> specification available in qcom,msm8996-qmp-usb3-phy.yaml. Moved
+>>>> to newer specification in qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+>>>> ---
+>>>>  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 43 +++++++++++++++++++---
+>>>>  1 file changed, 37 insertions(+), 6 deletions(-)
+>>
+>>>> +        clock-names:
+>>>> +          items:
+>>>> +            - const: aux
+>>>> +            - const: ref
+>>>> +            - const: com_aux
+>>>
+>>> Can anyone explain me why do we name these (here and other Qualcomm
+>>> bindings) based on clock name, not input? Just because different clock
+>>> is fed to the block, does not necessarily mean the input should be named
+>>> differently.
+>>
+>> I guess part of the answer is that this has just been copied from the
+>> vendor dts and (almost) no one but Qualcomm has access to the
+>> documentation. What would the input names be here?
+>>
+>> Also note that there are SoCs that enable both 'cfg_ahb' and 'com_aux'
+>> (e.g. sc7180).
 > 
-> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
-> ---
->  Changes in V1:
-> 	- Introduced a new binding for ipq9574 as suggested by Krzysztof
-> 
->  .../phy/qcom,ipq9574-qmp-pcie-phy.yaml        | 90 +++++++++++++++++++
->  1 file changed, 90 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq9574-qmp-pcie-phy.yaml
-> 
+> The clock name definitions are auto-generated based on the clock
+> tree definitions provided by the h/w team. We followed the naming
+> pattern done in the previous SoCs.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+Are you sure? We talk about clock inputs here.
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/phy/qcom,ipq9574-qmp-pcie-phy.example.dts:18:18: fatal error: dt-bindings/clock/qcom,ipq9574-gcc.h: No such file or directory
-   18 |         #include <dt-bindings/clock/qcom,ipq9574-gcc.h>
-      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [scripts/Makefile.lib:419: Documentation/devicetree/bindings/phy/qcom,ipq9574-qmp-pcie-phy.example.dtb] Error 1
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1512: dt_binding_check] Error 2
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230421124150.21190-2-quic_devipriy@quicinc.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+Krzysztof
 
 
 -- 
