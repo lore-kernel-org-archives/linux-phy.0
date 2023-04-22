@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47F2BC7618E
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Apr 2023 00:09:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB35DC77B7F
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Apr 2023 00:11:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eOX0dKVMxe7WS2fHdmyQ5JkIYFSl8S7Dmk9X46eyzdg=; b=1GR7/ZQ37udOfC
-	ogL25qRlTXlQDYsk28lfGUSTcrsaBoIbB4dbUNp+8kz8KhyOIRhKzmeI2MA0gE9hutPRpqqRQrB5/
-	vocn7fCGSV+/N3cismdr2iJBdJIz7mYtMUOrX1L2MKr7pUrcbJbQvrUwyWaHG0V3wTdf3ydciwlw7
-	psdcir2+b0uBqaQu70aP4asaUkdEim0g/FoiT4ukcMjUmPwKiTnGTFLlJ26GO2jzXxNkqFR7qXyfm
-	Wm4fcJTsPcp8BuYw6LyPnAZDS96EIYEX3rRd4mm2sB294aAH2YmWhqJEzUUS8lvLDCiezAvfuTBQr
-	zuSsn8/Vemfcl2Hg6wCQ==;
+	List-Owner; bh=Yw6IQMvHQ2W2nL7+JhQByx00nv+sx9eyM6GS/sXLHPU=; b=qtSIzwlpianDa6
+	z6LB43fwr0FxzJlHtw5KPibjAkDAyDSIDhqgjt8kxkSeTWSL7r6tSIgvN2r50YWe0bHn7RG0k1Zr6
+	yy501EJXVI8/mKYhnpWDRmZ8wcmBKj7VVuhtnypWBntVdiNC5DSRXlPg0WIkpsFHvBoLFF/yPwHND
+	6/M9/te8gcMVwEXMpGNuNiLh4gJa3PuG/zu1leEllT6pjp01JE4dW89AK3ROpL2X4OnLK6oovuonc
+	EF1o6Hmz6a08/QSU80emhooXGbAW5Fkoq4BGJ7Adeot/kaQg2aYLdItKOY9ob8mL1HtRUEl1RNJJq
+	VkOO/2x9KYmLCdw9L65Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pq0ob-00C7wh-30;
-	Sat, 22 Apr 2023 00:09:21 +0000
-Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
+	id 1pq0qR-00C84g-18;
+	Sat, 22 Apr 2023 00:11:15 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pq0oZ-00C7ue-1h
+	id 1pq0qO-00C84E-0K
 	for linux-phy@lists.infradead.org;
-	Sat, 22 Apr 2023 00:09:20 +0000
-Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-b8f72e5bd9bso3165361276.0
-        for <linux-phy@lists.infradead.org>; Fri, 21 Apr 2023 17:09:12 -0700 (PDT)
+	Sat, 22 Apr 2023 00:11:13 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-54fc94476e2so26760517b3.1
+        for <linux-phy@lists.infradead.org>; Fri, 21 Apr 2023 17:11:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1682122151; x=1684714151;
+        d=linaro.org; s=google; t=1682122269; x=1684714269;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=MmdtSh1w/AUsFLevVQK84fJ32J2WUs/jp0y/0rXdHOc=;
-        b=lbNqDq7FL+eHY0F/4x20VfGmaNxBVQkHRX1smlrAvAwO2PYd7PPVRyF6nDKQUWSynF
-         aaT8ElQtpKBYzL8CilDIeZontx72c77/FYA2K4RWLELEKk+0VNVOI7C6ODyC5LuMQ8cW
-         2gVlJltSlPoLhI73VglEjQ2UpeXnlEIwNEK404tdG0E3ROhZV9wlzt0Ufn4GKpNhX/OT
-         FRPTTzPa8pYITQzBwEq1Ekbyg3ENyqcWAJDGptbpnYR3dWXMfHfHRjjZSHkl7IXp0ol+
-         foU5BKQg95VeZ1DX/rZH9UsOG0qJPBN1gq+fIMhiehZ9S5qBBqK6RnjK8nI5PindSbCR
-         emlQ==
+        bh=r3HVdBHp8ZBwMLtZhZM5THuZ2ayBVN8mjzgRnQU8doU=;
+        b=TjWZ3JK9IrZTvA1Bv6JMW20hD5ah5RMXp0tjjtzTlUyd+jMQ+x4f1teFgMqG+4lqaI
+         m+7CzrP2VyA1O97vbAgY8i76DQ0mHZjwNk5w98X0C6Mgm3Q9cNOl1POlCNpQVjWAw4pP
+         Hv8qDMxEK5hdPhwikYvjsU9I8ENe3RW9dyYETQwruOElgdzEEtUOry3T97pqvJlkYdWa
+         Zcny1b0NrqcW3tqnWqIBpxv7JVQBsyWjrCQQlcfJbHDz+yNkf3H2BqR7TuIvN5+qdbCK
+         8mKGbkwQEZgEQxm4iiHHv94lf2GfHuaNBrZkxaGGUvbfwcsZw8VlJNALiCt/xoeVx+Oc
+         UYHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682122151; x=1684714151;
+        d=1e100.net; s=20221208; t=1682122269; x=1684714269;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=MmdtSh1w/AUsFLevVQK84fJ32J2WUs/jp0y/0rXdHOc=;
-        b=gvjUP8VB+XQ+GQqKBgoZkZpp8aBrVcZVDuAU1UAcXMJsAQB5SQK6+J5UlZWE1lLyYW
-         1ZLWPsdM98qOW9Vtpm79WGAyxtZkb8CT5lfle7FzL2RXY6WVCLspL2zHfUVXLvmL9xJH
-         BD3Ok8X1DNUaOzs/yTZa/657v3YP8j5tn/+6ygXigLjmXrzFWhiFL/VC3zibPIv9SzZb
-         //bEGhhiRumLwrupLe61V/1r28foaOtf1knMiFiXLhvkah8rHjOMjM0LCXkpDxE77Y8i
-         U5gy61caV46tVvz0L7aLZ6dvWDILQ9O46ASGwo0abajV7Fu4trZYXx6hAK1eWLOowUCe
-         Dd8g==
-X-Gm-Message-State: AAQBX9cVt8dMcSWO3FukfevHbzJ4fFAbW849l9z7XFhmL6oMlpNzqN8O
-	BxxiLuNf1RA3mnwI6Ce1KoOmJsBKiQQmdlli6q89eA==
-X-Google-Smtp-Source: AKy350b+L7wCHVqP/UYw/lYuSGq2eOHagsapMSK+wVxHlAmrKjAoUyAzY8gAYEeJb7AKvcAd6Hno1NVDdenS+k1+P0I=
-X-Received: by 2002:a25:e0d5:0:b0:b98:41a9:8db9 with SMTP id
- x204-20020a25e0d5000000b00b9841a98db9mr4365078ybg.0.1682122151678; Fri, 21
- Apr 2023 17:09:11 -0700 (PDT)
+        bh=r3HVdBHp8ZBwMLtZhZM5THuZ2ayBVN8mjzgRnQU8doU=;
+        b=UnsC/ici7cLvly+ruw2brzOrvoSqCezR11MyxRZ27Aj9/Mm3LJGzZeY2t02l9PbuGi
+         lE9tUFUgKbwvhD7tQJFgJvBAKxdnb8qR60NSMVygH2vmm/qqMvstXULo8S3AjHh7UxaR
+         Zuy/ilzU4SP1hejdPuczoe14avatPK5lEbmovUmW6jlyRzlGvfgjyUsAGFMXpuPBXJRJ
+         bq0i9RSs7HydMTUGzYPePhixwbeiJ/m8c7p1cXeVMLt56BXvwTw47Mv286mnXcPntPKh
+         lzBb6wRsbn+EBsHv1rflnT4wuq+WZUvEwcgfV6bWVotIGLNT3NM7XORCbkLvAUL9a5ea
+         qTfQ==
+X-Gm-Message-State: AAQBX9eTnWPhA1OpxLC8fnUbBE2PIi8n0GmtWfKptMsr5g7mlXgt6Yml
+	VzO1qJx0ZGlX+kYWbck43bmwexVxgB/iONiyqJ0S8g==
+X-Google-Smtp-Source: AKy350axjsvBsIM3jCVhZmPPFcVSlFJAhwx2i17gUtOdiELJB+ptq7C/I/6poiIDNXWz2u2AhTVw2PMBoYbPM4q2pZo=
+X-Received: by 2002:a81:61c2:0:b0:552:b9ad:f2e4 with SMTP id
+ v185-20020a8161c2000000b00552b9adf2e4mr3038639ywb.51.1682122269662; Fri, 21
+ Apr 2023 17:11:09 -0700 (PDT)
 MIME-Version: 1.0
-References: <20230421133922.8520-1-quic_shazhuss@quicinc.com> <20230421133922.8520-5-quic_shazhuss@quicinc.com>
-In-Reply-To: <20230421133922.8520-5-quic_shazhuss@quicinc.com>
+References: <20230421133922.8520-1-quic_shazhuss@quicinc.com> <20230421133922.8520-7-quic_shazhuss@quicinc.com>
+In-Reply-To: <20230421133922.8520-7-quic_shazhuss@quicinc.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 22 Apr 2023 03:09:00 +0300
-Message-ID: <CAA8EJppLfk4DZ8Qc8qKH=--vXGQcVY_eZ8hQCb5s3CGR54v2Hg@mail.gmail.com>
-Subject: Re: [PATCH v1 4/6] phy: qcom-qmp: Add SA8775P USB3 UNI phy
+Date: Sat, 22 Apr 2023 03:10:58 +0300
+Message-ID: <CAA8EJpov_2TS65NZimVmXe0meNV8rz_wXyNDz_0wK-qQJHW7tQ@mail.gmail.com>
+Subject: Re: [PATCH v1 6/6] arm64: dts: qcom: sa8775p-ride: enable USB nodes
 To: Shazad Hussain <quic_shazhuss@quicinc.com>
 Cc: agross@kernel.org, andersson@kernel.org, robh+dt@kernel.org, 
 	krzysztof.kozlowski+dt@linaro.org, Konrad Dybcio <konrad.dybcio@linaro.org>, 
@@ -74,8 +74,8 @@ Cc: agross@kernel.org, andersson@kernel.org, robh+dt@kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-usb@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230421_170919_563068_B62734C5 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20230421_171112_166957_37B1F7B8 
+X-CRM114-Status: UNSURE (   6.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,17 +95,12 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Fri, 21 Apr 2023 at 16:41, Shazad Hussain <quic_shazhuss@quicinc.com> wrote:
 >
-> The SA8775P platform has 5nm USB3 UNI phy attached to the USB0 and USB1
-> controllers.
->
-> Add QMP PHY config, pcs entries and support for the new compatible for
-> SA8775P platform.
+> Enable usb0, usb1 and usb2 nodes and their respective phy's.
 >
 > Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 45 +++++++++++++++++++++++++
->  1 file changed, 45 insertions(+)
->
+>  arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 92 +++++++++++++++++++++++
+>  1 file changed, 92 insertions(+)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
