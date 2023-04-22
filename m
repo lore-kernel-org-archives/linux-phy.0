@@ -4,92 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DCC3C6FD18
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Apr 2023 09:14:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34B8AC77B76
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Apr 2023 13:50:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNKhAAq1hdALan/rLsFx5MN/E1b1OFHmUh2kmimL8Ow=; b=orPvQoKbQFuSC5
-	W6JZDN5L2K9dQfFtu0K+QkpLKqTMKQKkRwqc8HlgaTdJSs8c7Gp4mn5tUOdvJsk+vpqEjuZ5DeJ2P
-	gVpZazBXUETsLOBSm0l1oUZnDdjJKkts53eE1vQ+rriSElCjuv+9HjoYykQh3Mu4MmYv00pmV2Igi
-	Kq6w6GkTJgwPtKqO+bIQU5htTzyN06IDxXvTK+dFDF4ZLTlSGNJ0Ghb4s/k4tw0pfiYpb64xJbQAs
-	SqyLFP4V+8/HbJaWmyPCRkQD4i8o9EoeDWKOCLSOyUJof8OMZbzrtC2Uj98JG1QAE0oqj25OmGuCJ
-	behKV6+mIAnGOC49OxxQ==;
+	List-Owner; bh=UZsWzmO88RpQUuP8pcIG/MrpgpF6hLp/WOBLfpz2p8U=; b=z+31rdXgm8utPV
+	zSZMYxC6NcUQEZiHxYSFujKcWd4jmbNgEpHoSBCE7van4dvqrhMe3tb0XXorgGfxLoxFB2vAmayKj
+	w6n5oPnddTivkmf4Rixodx9LRvEAXmG0tCYo3uRzLy8+OweJpROXG3eHg0B5gKFdG66yFDCPNj1nM
+	LHFvmtNBXcBE235RVPiSrPAovTxiweDb3BB8YRXub9mo6Sfqa8dYQLik49IzF4++Abi6/royVqMIP
+	7e5eboI6azWWiIOGhuINwFeiy4tXbJottFrXSd7em9p82zKGGGkRozir0g2sg8OETfHH3DDMCrfgr
+	MXyVqLxR6nSYlEAaPsUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pq9KF-00Cady-1h;
-	Sat, 22 Apr 2023 09:14:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pqDcw-00CyWT-2b;
+	Sat, 22 Apr 2023 13:50:10 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pq9KC-00Cada-1P
-	for linux-phy@lists.infradead.org;
-	Sat, 22 Apr 2023 09:14:34 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33M9BmRl018828;
-	Sat, 22 Apr 2023 09:14:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=jwIMpzTLAw1N3sO+o954FUjaABUc40+u3uVtBjTNF20=;
- b=JVgeR4NLoGlL7G0cHVeJZr54Ls/9OuAsiHQxctaRlE+f5aOqn32akac3huNnjoUxSHyG
- rfyow4mHO8rmsh1YQvGwOzowbucvrENbTvkn1fM7x+TCRVzlhbYlOJeTT2nJlSh0CNHT
- vpnNQx3ktAe5U4FB+ltAU2JPQXNv99P8repHR7gE25Sb2uhimVFeqM60TqAGDdD2lNDx
- gr3+CzwB3FI/WEyPC3AeqmcBWZ9ApzVaYoRH8TfllLaEdlDRZg9ok3xEf0MFSQ3e2lgl
- bE8k8pfSy3aP8mdSo/rqzKLNeFrPAXs55+ElXFLm81Vn2/9/YbQCxGii1my03bllpweE Eg== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q48ch08ne-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 22 Apr 2023 09:14:28 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33M9ESe2013947
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 22 Apr 2023 09:14:28 GMT
-Received: from [10.216.25.248] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Sat, 22 Apr
- 2023 02:14:22 -0700
-Message-ID: <af12bafd-9433-6639-b55f-478517ebc33d@quicinc.com>
-Date: Sat, 22 Apr 2023 14:44:18 +0530
+	id 1pqDct-00CyVT-05;
+	Sat, 22 Apr 2023 13:50:08 +0000
+Received: by mail-ed1-x541.google.com with SMTP id 4fb4d7f45d1cf-506bfe81303so4536532a12.1;
+        Sat, 22 Apr 2023 06:50:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1682171404; x=1684763404;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:subject:from:user-agent:mime-version:date:message-id:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=WFcPcfg308BxIs2D12U44N+18aoFFJxwabh2xPhsPSk=;
+        b=ZRWs3JpD4Cp5/pHGbDd0vrTAVGX7MoGwPJIJGgfDW35EVVzY7pVHO1cr+CMew4W30p
+         LssfreTk3/208zOZke8KMcbc5fRWXdHA1gLcffdeonmQ1cUm09zZdb7Qax14xXqktigh
+         QxVFZlPxVn+VDM9CKTWGq2LYuxR3RzYjFrprgWqmNAwY/xi4H8xNsc+kt0VKUI+/YJis
+         qEI1pzNybL5k5euRWSNV8a+Zk0eVTMAXFwkhC0Ved4lMSY7As7fGXewYKgf18p+dGQsc
+         OWQWry1WTSwtalqKuUvjPaulrvkzhckKJWomjmsPu5aIEGm3MfwYgVjIgZ9AR3G3sIm1
+         gFYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682171404; x=1684763404;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:subject:from:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WFcPcfg308BxIs2D12U44N+18aoFFJxwabh2xPhsPSk=;
+        b=Hbj/bH3tckwGA9pFj62Gi1H6v9jITfBCaunIHzMNCtvJmsP4pJOSvL7D+XhHq2zhGf
+         jss+Ij5alZCp/H6oy9Mv/tZn1tMlUg0sH051HGnO9KYlFEXYQRabEmRKrPRUS5Fs+Lx/
+         roedjXUW2IXSmuS6ZDthTPKDdMGftlQRiCBuM+lvcbSc9ry9WT4ChrSugywbPkknLSzD
+         2ZnpTDHkXmrA8u8jDu2e1yThRle8pu5JgOB4DU1bensEr6ZAYZ65XN64fplvVMxpPRw7
+         H0kTyC3DsGbP3qIa94BgafFz1Fn0JirQWot2URYGFyWWbWNix8N2NxA5jwkpHB0VTp+E
+         /vkw==
+X-Gm-Message-State: AAQBX9cmPKB0+T+EJ5W5bqSiUu+SuEI0Ptl/iUYvpxebXEr70DbP/hfh
+	U0EROEn61DMDCfiN0J7wFpA=
+X-Google-Smtp-Source: AKy350agXYSrpjkbP6WbEUuG++nS8/psneQ03hXKL+jNOlMEImcYh4gHMeo5CK525yNYdOAzt8ZgwA==
+X-Received: by 2002:aa7:da41:0:b0:506:8660:77a3 with SMTP id w1-20020aa7da41000000b00506866077a3mr8228114eds.37.1682171403662;
+        Sat, 22 Apr 2023 06:50:03 -0700 (PDT)
+Received: from [192.168.50.244] (83.11.224.11.ipv4.supernova.orange.pl. [83.11.224.11])
+        by smtp.gmail.com with ESMTPSA id v2-20020aa7d802000000b004ad601533a3sm2846990edq.55.2023.04.22.06.50.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 22 Apr 2023 06:50:03 -0700 (PDT)
+Message-ID: <5818b5be-f9cc-8009-e2a4-1049d84a944d@gmail.com>
+Date: Sat, 22 Apr 2023 15:50:01 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.10.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qmp-pcie: Add ipq9574 bindings
+From: Artur Weber <aweber.kernel@gmail.com>
+Subject: Re: [PATCH v2 12/12] ARM: dts: exynos: Add Samsung Galaxy Tab 3 8.0
+ boards
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Olof Johansson <olof@lixom.net>, soc@kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Kukjin Kim <kgene@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+ ~postmarketos/upstreaming@lists.sr.ht
+References: <20230416133422.1949-1-aweber.kernel@gmail.com>
+ <20230416133422.1949-13-aweber.kernel@gmail.com>
+ <9aba4c1d-93f3-7613-6fb5-0591a281ec0a@linaro.org>
 Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-CC: <quic_srichara@quicinc.com>, <quic_sjaganat@quicinc.com>,
-        <quic_kathirav@quicinc.com>, <quic_arajkuma@quicinc.com>,
-        <quic_anusha@quicinc.com>, <quic_ipkumar@quicinc.com>
-References: <20230421124150.21190-1-quic_devipriy@quicinc.com>
- <20230421124150.21190-2-quic_devipriy@quicinc.com>
- <49e0e62e-3746-1387-fb9a-49739423fb63@linaro.org>
-From: Devi Priya <quic_devipriy@quicinc.com>
-In-Reply-To: <49e0e62e-3746-1387-fb9a-49739423fb63@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: HMGISo8qQvS8ZoAExfut7ha-xU-K1Nfm
-X-Proofpoint-GUID: HMGISo8qQvS8ZoAExfut7ha-xU-K1Nfm
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-21_08,2023-04-21_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
- adultscore=0 impostorscore=0 spamscore=0 malwarescore=0 bulkscore=0
- mlxlogscore=999 suspectscore=0 priorityscore=1501 lowpriorityscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304220080
+In-Reply-To: <9aba4c1d-93f3-7613-6fb5-0591a281ec0a@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230422_021432_505507_AFB57E11 
-X-CRM114-Status: GOOD (  16.68  )
+X-CRM114-CacheID: sfid-20230422_065007_107427_18F3FC18 
+X-CRM114-Status: GOOD (  16.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,46 +104,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi,
 
+thank you for the review.
 
-On 4/21/2023 10:19 PM, Krzysztof Kozlowski wrote:
-> On 21/04/2023 14:41, Devi Priya wrote:
->> Add bindings for the PCIe QMP PHYs found on IPQ9574.
->>
->> Signed-off-by: Devi Priya <quic_devipriy@quicinc.com>
->> ---
->>   Changes in V1:
->> 	- Introduced a new binding for ipq9574 as suggested by Krzysztof
+On 16/04/2023 20:26, Krzysztof Kozlowski wrote:
+> On 16/04/2023 15:34, Artur Weber wrote:
+> [...]
+>> +
+>> +		backlight: backlight@2c {
+>> +			compatible = "ti,lp8556";
 > 
-> It looks it depends on the clock header.
+> You need to convert bindings to DT schema first. I don't accept any new
+> usages of TXT bindings anymore, sorry.
 > 
-> Either mention the dependency here or better convert the clock IDs to
-> numerical values. With the second approach the patch can be applied
-> independently from clock headers patch.
-Got it. will use numerical values for clock IDs.
-Just to mention, it depends on the below series which is merged in 
-linux-next/master
-https://patchwork.kernel.org/project/linux-arm-msm/cover/20230316072940.29137-1-quic_devipriy@quicinc.com/
+
+I'll be taking a look at the conversion (will likely submit it as a
+separate patchset, since I've been looking into some minor driver-side
+changes there as well...), although I have one question - who should I
+list as the bindings maintainer ("maintainers" field in YAML format)? Is
+this someone specific for that subsystem, or the author of the driver,
+or someone else? (It's worth noting that there isn't a maintainer listed
+for the lp855x driver in the MAINTAINERS file.)
+Documentation/devicetree/bindings/writing-schema.rst doesn't really
+mention anything about this.
+
+>> +&bus_acp {
 > 
->>
->>   .../phy/qcom,ipq9574-qmp-pcie-phy.yaml        | 90 +++++++++++++++++++
->>   1 file changed, 90 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq9574-qmp-pcie-phy.yaml
->>
+> Order label/phandle overrides by name, so acp before dmc.
 > 
-> Assuming you tested it (as Rob's bot cannot due to dependency):
-> 
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Yup, thanks!
-> 
-> Best regards,
-> Krzysztof
-> 
+
+Out of curiosity - should I order the children of the / node or the
+pinctrl nodes by name as well?
+
+Best regards
+Artur Weber
+
 
 -- 
 linux-phy mailing list
