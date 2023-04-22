@@ -4,70 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CBE3C77B76
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Apr 2023 22:13:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47F2BC7618E
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Apr 2023 00:09:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rnZl8m5dNsUmJjtx15wNXnLL4U6pupnIo4qzpADq36E=; b=2im6HWGnJVJ+XM
-	B0/YVTUgAvgiFXBMMdRUL9FNMcByXEPxnuD6QcOasulD46ZSrpGMN+4UpL/PXbVElIKB4401h1Yu8
-	Gx6jZZ3mUSnaSGeZtcCdTjeZhoy2Fck+pBa/7abgmIp1DMiutwycPJ97U2SGfqG5nTSjY25fLBZU/
-	2hvBb8hObZ5Y45Az+X+XyWRpGNGDRLjlZoy0OxMBzA+9EQ+Qht/QsKYXb+TQpkLxBuxoN1wKQtnB+
-	YvJEeAlIFA9ESoNBryi0zcYqPKiLJy/9entVYgaBJFOsTAmoOPVAkNC0B5bRlvoiy8GV45aKk8Tj3
-	VxX6XNON/Rt1Q23RVIZw==;
+	List-Owner; bh=eOX0dKVMxe7WS2fHdmyQ5JkIYFSl8S7Dmk9X46eyzdg=; b=1GR7/ZQ37udOfC
+	ogL25qRlTXlQDYsk28lfGUSTcrsaBoIbB4dbUNp+8kz8KhyOIRhKzmeI2MA0gE9hutPRpqqRQrB5/
+	vocn7fCGSV+/N3cismdr2iJBdJIz7mYtMUOrX1L2MKr7pUrcbJbQvrUwyWaHG0V3wTdf3ydciwlw7
+	psdcir2+b0uBqaQu70aP4asaUkdEim0g/FoiT4ukcMjUmPwKiTnGTFLlJ26GO2jzXxNkqFR7qXyfm
+	Wm4fcJTsPcp8BuYw6LyPnAZDS96EIYEX3rRd4mm2sB294aAH2YmWhqJEzUUS8lvLDCiezAvfuTBQr
+	zuSsn8/Vemfcl2Hg6wCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppz0d-00Bvky-1V;
-	Fri, 21 Apr 2023 22:13:39 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pq0ob-00C7wh-30;
+	Sat, 22 Apr 2023 00:09:21 +0000
+Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ppz0Z-00Bvjw-0d;
-	Fri, 21 Apr 2023 22:13:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1A4BD649A3;
-	Fri, 21 Apr 2023 22:13:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB865C4339B;
-	Fri, 21 Apr 2023 22:13:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1682115213;
-	bh=XZd3xOHh9hRBu/JySb+r9z3kK1JjV1tv32skF1cGDD4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mTwMl+eJzSMy03iFAPAUp2luKiUzmKPxD1vHfIkFe4Op2MvFaumks9ziuyiKumi0v
-	 Kb/A8ohF449C24/uFul9iePPNOmLn95Zm4ndeWMsNRXj/rv9p/xW25pi4mfS/fVaTf
-	 VFwB+RLND2DfSaBonTlBPJP1WiV8fiFmWzg4E84lUoQJzQ9GA+ndAvfyfCj0W1FnD4
-	 m3EuUHMyJy4e15fVTJUwSxUh7WEUDFlfghF/VUXYforrGmxivzem48PrTb9o3XkUWl
-	 qaF8VAirH/9KOwHFiHeOTm+Yga6UiorhrHPbmTSc+hc2glWjs/f1Eg5f/NB/e4vYra
-	 wWAJqLWNq8X6g==
-Date: Fri, 21 Apr 2023 15:13:30 -0700
-From: Nathan Chancellor <nathan@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>,
-	llvm@lists.linux.dev
-Subject: Re: [PATCH v2 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
- variable usage in pll_calc
-Message-ID: <20230421221330.GA3657732@dev-arch.thelio-3990X>
-References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
- <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
+	id 1pq0oZ-00C7ue-1h
+	for linux-phy@lists.infradead.org;
+	Sat, 22 Apr 2023 00:09:20 +0000
+Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-b8f72e5bd9bso3165361276.0
+        for <linux-phy@lists.infradead.org>; Fri, 21 Apr 2023 17:09:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1682122151; x=1684714151;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=MmdtSh1w/AUsFLevVQK84fJ32J2WUs/jp0y/0rXdHOc=;
+        b=lbNqDq7FL+eHY0F/4x20VfGmaNxBVQkHRX1smlrAvAwO2PYd7PPVRyF6nDKQUWSynF
+         aaT8ElQtpKBYzL8CilDIeZontx72c77/FYA2K4RWLELEKk+0VNVOI7C6ODyC5LuMQ8cW
+         2gVlJltSlPoLhI73VglEjQ2UpeXnlEIwNEK404tdG0E3ROhZV9wlzt0Ufn4GKpNhX/OT
+         FRPTTzPa8pYITQzBwEq1Ekbyg3ENyqcWAJDGptbpnYR3dWXMfHfHRjjZSHkl7IXp0ol+
+         foU5BKQg95VeZ1DX/rZH9UsOG0qJPBN1gq+fIMhiehZ9S5qBBqK6RnjK8nI5PindSbCR
+         emlQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682122151; x=1684714151;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MmdtSh1w/AUsFLevVQK84fJ32J2WUs/jp0y/0rXdHOc=;
+        b=gvjUP8VB+XQ+GQqKBgoZkZpp8aBrVcZVDuAU1UAcXMJsAQB5SQK6+J5UlZWE1lLyYW
+         1ZLWPsdM98qOW9Vtpm79WGAyxtZkb8CT5lfle7FzL2RXY6WVCLspL2zHfUVXLvmL9xJH
+         BD3Ok8X1DNUaOzs/yTZa/657v3YP8j5tn/+6ygXigLjmXrzFWhiFL/VC3zibPIv9SzZb
+         //bEGhhiRumLwrupLe61V/1r28foaOtf1knMiFiXLhvkah8rHjOMjM0LCXkpDxE77Y8i
+         U5gy61caV46tVvz0L7aLZ6dvWDILQ9O46ASGwo0abajV7Fu4trZYXx6hAK1eWLOowUCe
+         Dd8g==
+X-Gm-Message-State: AAQBX9cVt8dMcSWO3FukfevHbzJ4fFAbW849l9z7XFhmL6oMlpNzqN8O
+	BxxiLuNf1RA3mnwI6Ce1KoOmJsBKiQQmdlli6q89eA==
+X-Google-Smtp-Source: AKy350b+L7wCHVqP/UYw/lYuSGq2eOHagsapMSK+wVxHlAmrKjAoUyAzY8gAYEeJb7AKvcAd6Hno1NVDdenS+k1+P0I=
+X-Received: by 2002:a25:e0d5:0:b0:b98:41a9:8db9 with SMTP id
+ x204-20020a25e0d5000000b00b9841a98db9mr4365078ybg.0.1682122151678; Fri, 21
+ Apr 2023 17:09:11 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com>
+References: <20230421133922.8520-1-quic_shazhuss@quicinc.com> <20230421133922.8520-5-quic_shazhuss@quicinc.com>
+In-Reply-To: <20230421133922.8520-5-quic_shazhuss@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Sat, 22 Apr 2023 03:09:00 +0300
+Message-ID: <CAA8EJppLfk4DZ8Qc8qKH=--vXGQcVY_eZ8hQCb5s3CGR54v2Hg@mail.gmail.com>
+Subject: Re: [PATCH v1 4/6] phy: qcom-qmp: Add SA8775P USB3 UNI phy
+To: Shazad Hussain <quic_shazhuss@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230421_151335_291641_B8DFA8D3 
-X-CRM114-Status: GOOD (  20.22  )
+X-CRM114-CacheID: sfid-20230421_170919_563068_B62734C5 
+X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,58 +93,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 14, 2023 at 06:07:46PM +0200, Guillaume Ranquet wrote:
-> The ret variable in mtk_hdmi_pll_calc() was used unitialized as reported
-> by the kernel test robot.
-> 
-> Fix the issue by removing the variable altogether and testing out the
-> return value of mtk_hdmi_pll_set_hw()
-> 
-> Fixes: 45810d486bb44 ("phy: mediatek: add support for phy-mtk-hdmi-mt8195")
-> Reported-by: kernel test robot <lkp@intel.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-
-Reviewed-by: Nathan Chancellor <nathan@kernel.org>
-
-Can somebody pick this up? It fixes a rather obvious warning, which is
-breaking clang builds (as evidenced by three versions of the same fix).
-
+On Fri, 21 Apr 2023 at 16:41, Shazad Hussain <quic_shazhuss@quicinc.com> wrote:
+>
+> The SA8775P platform has 5nm USB3 UNI phy attached to the USB0 and USB1
+> controllers.
+>
+> Add QMP PHY config, pcs entries and support for the new compatible for
+> SA8775P platform.
+>
+> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
 > ---
->  drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 8 ++------
->  1 file changed, 2 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> index abfc077fb0a8..054b73cb31ee 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-> @@ -213,7 +213,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->  	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
->  	u8 txpredivs[4] = { 2, 4, 6, 12 };
->  	u32 fbkdiv_low;
-> -	int i, ret;
-> +	int i;
->  
->  	pixel_clk = rate;
->  	tmds_clk = pixel_clk;
-> @@ -292,13 +292,9 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
->  	if (!(digital_div <= 32 && digital_div >= 1))
->  		return -EINVAL;
->  
-> -	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
-> +	return mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
->  			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
->  			    txposdiv, digital_div);
-> -	if (ret)
-> -		return -EINVAL;
-> -
-> -	return 0;
->  }
->  
->  static int mtk_hdmi_pll_drv_setting(struct clk_hw *hw)
-> 
-> -- 
-> 2.40.0
-> 
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 45 +++++++++++++++++++++++++
+>  1 file changed, 45 insertions(+)
+>
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
