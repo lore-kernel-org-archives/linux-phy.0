@@ -4,102 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86016C77B73
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Apr 2023 18:32:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EB5C77B61
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Apr 2023 20:42:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Pj6ebvwtEBvVzSeugh04dsQzOGABnxcnx4tnBz3iTA=; b=zcwMSnyVLxP0iC
-	JafjIIOhJWTOzJLtIaP7geDqgsKXBkqYtPwHOn1QtTG2o7yt2eRc9g1hp6t14KEKsfPeomKAhbe/g
-	pUjiZbRD1RXpK2j5dve2XAt3DVIjKuU+6YG+d1xX8pen7ZjegiyZ+y9ewbb43iqnHM8ROJo5AWWYZ
-	7hsZmT1bnLjaHq543QnB2ECiGN4zLtNBw9l0VVK+k9kdYFqJh2IafkMsdDJ9UcsCZK7+rpyUHSRgw
-	7pb2VSSdLTOihuHlTrzsjAvxIeQpf8olbSjvVR2g6PskvFvzuRcdyA0xvMjmmPQ5L91Mpc09JSlD8
-	npeM2G9zX6JaOoE13W1g==;
+	List-Owner; bh=vG3/9S8+AeVREjBMHZRnYc9T2wXcVRf8jsCHKkz8Yc8=; b=rPTdZgOgaFK4vT
+	CRtXHx5I01hbif9XJhVb7IUbUyFEDKZQ3M1f+1BFG5Ao9PC37VRJOYQWUVpqSRnEcUipwVsyl/5IK
+	fsw9CAHg25OINELD4zzU6gRI/kvePfhqeJC/2xD1xdsCHIQEj7rdFQWVVyFrhmxmxBgPg4ZlAbFtX
+	zA4chbUPvlQE/bmqibjJUPSyD2Z7eslt3ekmPZ/0nyIMiqkZRSWzepIPPCVCzP/4tEDkOHZ/ro7/R
+	96nAi+R4oxgDxKE4OHbyxPCLysi7kIbWU8vcOU5PTHXLT8cwrd0KIhqaobz7a8tWvd60LTSZdKCwu
+	VU1Odk8KUJyGTntuFzxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr0zS-00Gz4e-0I;
-	Mon, 24 Apr 2023 18:32:42 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pr312-00H9Uc-2B;
+	Mon, 24 Apr 2023 20:42:28 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr0zN-00Gz3c-0y;
-	Mon, 24 Apr 2023 18:32:38 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id D0F47620BD;
-	Mon, 24 Apr 2023 18:32:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6DC2C433EF;
-	Mon, 24 Apr 2023 18:32:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1682361155;
-	bh=Qwb6xQXtIp9IK5K1XYNjKtQG2ZIwhMNhHPe94Eain8I=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=AL1mQRPIK32zEIp1g3UTreatnys6JEiIOElV8WxQ0HCWYrYOh9FUa/pV+J28wkIb0
-	 kuYZuUJpavJkOZaHtCtWDI71bQfr8PqKub4qFn3x5yzC4y8fbdLxu7HbJwBzC+XQwm
-	 VrE7IOJkHHjP11gDLRWFy86EVLqVWwQrt/B4cpTsksi6B3BO3cBvv6mbtnfmE01ZgB
-	 TzxQElbzcDm36YDmuacquU8+DAzm2Bx6Sa8BvlgfPXGSzs47J+MRnxBY/ACBhDqqPE
-	 NaKy9ZqKj3mZAujGR2xqbrAlZIyDJXBbelkgz2XIH4N+SG2lVTYr08TXhvRv/t7uAi
-	 Q8Hr8qGO9TEdw==
-Message-ID: <679921ee-98d4-d6ef-5934-e009fd4b31fc@kernel.org>
-Date: Mon, 24 Apr 2023 13:32:28 -0500
+	id 1pr30y-00H9Rw-2e
+	for linux-phy@lists.infradead.org;
+	Mon, 24 Apr 2023 20:42:26 +0000
+Received: by mail-pf1-x436.google.com with SMTP id d2e1a72fcca58-63b73203e0aso30837491b3a.1
+        for <linux-phy@lists.infradead.org>; Mon, 24 Apr 2023 13:42:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20221208; t=1682368939; x=1684960939;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=F5ZMC5VZS+YuBCnDNL+LpSQZtLatJs+u2JnjBvK8Odc=;
+        b=DGbRYrvKbvAoKpxgR0HQbFQbYXIsz+xp2DGSkA2iOQ8mk1waOeWr+SQSqHjNuasxPf
+         8n+vMTsSnPigKcKIoYZz5PxLBhE5efTfaOCZ8JQV/rP6KgWH3nnIBQVYIr26Po+rSVfL
+         XKUeFmdh9NNpkHFwRbRXZrVl72cOFnBWI8Dgk+co7z1DsCZf3I+iGPR2qA6JciXH6DEX
+         Qh0waztvz2vfOG82eC66kLBXYiKWml2zHWu/0w++9GWg6HxYxWvVKbS71C6Drwt+GaGj
+         UnoKPfxkLl/YsG6phBs1KAw1BycVRWcxeqF4Q9S3pHsn0wCjS3bASvhbon6oYA/iVdX2
+         4r2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682368939; x=1684960939;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=F5ZMC5VZS+YuBCnDNL+LpSQZtLatJs+u2JnjBvK8Odc=;
+        b=I4h0GWW1IZUr06DbSDsLnTmF0gy+x6ft/bkAphtVdued1B1mycZpIrPLXrbIcykKvW
+         /9uD2BD77uuTfOkXA+KjX9KUwGivteaz2nvJS1Y6L/6EffUFVwB/e1mwzErUoQzcRDNR
+         RgFKtQAZIJ28XoXbgDXZ6rbY3v8Y2zfSUKD9S2rc4+glWHz1K4P2b3bi7r99s2c2yZSC
+         1HFqKlmu6p+Tr9MOJFI+8PrgOYbAhjlAa2pir7Ddf4LPWWbjrAJ0S/qsjsd371n6FwOA
+         V/dS14Idq6+x5C+m6acJ7tH92nFH8xHKdR6IEw6hqoXdy4Tt9X/20Bx1PyeiuOj25eIF
+         yP1Q==
+X-Gm-Message-State: AAQBX9cN1CljL0hsDIGAl7vA5A8lTh6YDQXiBSw7jzHuV9/C7VOpfkWy
+	hLtcGOJZU3BNAJehT7mxSSrGED5dyh39QcbYvGl5kA==
+X-Google-Smtp-Source: AKy350bsHQq1EzNGt73/j+nTzeIplaa5l3Hebw0touKLhbf8se1E6Dle8Z8ftc4k7i07Zf4ORu/GiUefhBFP9DGqO5w=
+X-Received: by 2002:a17:90a:6b43:b0:246:9517:30b6 with SMTP id
+ x3-20020a17090a6b4300b00246951730b6mr22012160pjl.4.1682368939446; Mon, 24 Apr
+ 2023 13:42:19 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH v3 29/65] clk: socfpga: gate: Add a determine_rate hook
-To: Maxime Ripard <maxime@cerno.tech>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- Max Filippov <jcmvbkbc@gmail.com>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
- Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, Paul Cercueil <paul@crapouillou.net>,
- Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
- <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>
-Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org,
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
- linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org,
- linux-mips@vger.kernel.org
-References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
- <20221018-clk-range-checks-fixes-v3-29-9a1358472d52@cerno.tech>
-Content-Language: en-US
-From: Dinh Nguyen <dinguyen@kernel.org>
-In-Reply-To: <20221018-clk-range-checks-fixes-v3-29-9a1358472d52@cerno.tech>
+References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
+ <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com> <20230421221330.GA3657732@dev-arch.thelio-3990X>
+In-Reply-To: <20230421221330.GA3657732@dev-arch.thelio-3990X>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Mon, 24 Apr 2023 13:42:08 -0700
+Message-ID: <CAKwvOd=5szkx5yA0bxcyktx85opAwLrB3_4n13SMV7p3m9x7LQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
+ variable usage in pll_calc
+To: Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+	Vinod Koul <vkoul@kernel.org>
+Cc: Guillaume Ranquet <granquet@baylibre.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, dri-devel@lists.freedesktop.org, 
+	linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	kernel test robot <lkp@intel.com>, llvm@lists.linux.dev, Nathan Chancellor <nathan@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230424_113237_440267_46C3FA7B 
-X-CRM114-Status: GOOD (  31.36  )
+X-CRM114-CacheID: sfid-20230424_134224_860343_8D6CBC2C 
+X-CRM114-Status: GOOD (  20.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,76 +90,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Maxime,
-
-On 4/4/23 05:11, Maxime Ripard wrote:
-> The SoCFGPA gate clock implements a mux with a set_parent hook, but
-> doesn't provide a determine_rate implementation.
-> 
-> This is a bit odd, since set_parent() is there to, as its name implies,
-> change the parent of a clock. However, the most likely candidate to
-> trigger that parent change is a call to clk_set_rate(), with
-> determine_rate() figuring out which parent is the best suited for a
-> given rate.
-> 
-> The other trigger would be a call to clk_set_parent(), but it's far less
-> used, and it doesn't look like there's any obvious user for that clock.
-> 
-> So, the set_parent hook is effectively unused, possibly because of an
-> oversight. However, it could also be an explicit decision by the
-> original author to avoid any reparenting but through an explicit call to
-> clk_set_parent().
-> 
-> The latter case would be equivalent to setting the flag
-> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
-> to __clk_mux_determine_rate(). Indeed, if no determine_rate
-> implementation is provided, clk_round_rate() (through
-> clk_core_round_rate_nolock()) will call itself on the parent if
-> CLK_SET_RATE_PARENT is set, and will not change the clock rate
-> otherwise. __clk_mux_determine_rate() has the exact same behavior when
-> CLK_SET_RATE_NO_REPARENT is set.
-> 
-> And if it was an oversight, then we are at least explicit about our
-> behavior now and it can be further refined down the line.
-> 
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->   drivers/clk/socfpga/clk-gate.c | 3 ++-
->   1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/clk/socfpga/clk-gate.c b/drivers/clk/socfpga/clk-gate.c
-> index 32ccda960f28..cbba8462a09e 100644
-> --- a/drivers/clk/socfpga/clk-gate.c
-> +++ b/drivers/clk/socfpga/clk-gate.c
-> @@ -110,6 +110,7 @@ static unsigned long socfpga_clk_recalc_rate(struct clk_hw *hwclk,
->   
->   static struct clk_ops gateclk_ops = {
->   	.recalc_rate = socfpga_clk_recalc_rate,
-> +	.determine_rate = __clk_mux_determine_rate,
->   	.get_parent = socfpga_clk_get_parent,
->   	.set_parent = socfpga_clk_set_parent,
->   };
-> @@ -166,7 +167,7 @@ void __init socfpga_gate_init(struct device_node *node)
->   
->   	init.name = clk_name;
->   	init.ops = ops;
-> -	init.flags = 0;
-> +	init.flags = CLK_SET_RATE_NO_REPARENT;
->   
->   	init.num_parents = of_clk_parent_fill(node, parent_name, SOCFPGA_MAX_PARENTS);
->   	if (init.num_parents < 2) {
-> 
-
-This patch broke SoCFPGA boot serial port. The characters are mangled.
-
-Dinh
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBBcHIgMjEsIDIwMjMgYXQgMzoxM+KAr1BNIE5hdGhhbiBDaGFuY2VsbG9yIDxuYXRo
+YW5Aa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiBGcmksIEFwciAxNCwgMjAyMyBhdCAwNjowNzo0
+NlBNICswMjAwLCBHdWlsbGF1bWUgUmFucXVldCB3cm90ZToKPiA+IFRoZSByZXQgdmFyaWFibGUg
+aW4gbXRrX2hkbWlfcGxsX2NhbGMoKSB3YXMgdXNlZCB1bml0aWFsaXplZCBhcyByZXBvcnRlZAo+
+ID4gYnkgdGhlIGtlcm5lbCB0ZXN0IHJvYm90Lgo+ID4KPiA+IEZpeCB0aGUgaXNzdWUgYnkgcmVt
+b3ZpbmcgdGhlIHZhcmlhYmxlIGFsdG9nZXRoZXIgYW5kIHRlc3Rpbmcgb3V0IHRoZQo+ID4gcmV0
+dXJuIHZhbHVlIG9mIG10a19oZG1pX3BsbF9zZXRfaHcoKQo+ID4KPiA+IEZpeGVzOiA0NTgxMGQ0
+ODZiYjQ0ICgicGh5OiBtZWRpYXRlazogYWRkIHN1cHBvcnQgZm9yIHBoeS1tdGstaGRtaS1tdDgx
+OTUiKQo+ID4gUmVwb3J0ZWQtYnk6IGtlcm5lbCB0ZXN0IHJvYm90IDxsa3BAaW50ZWwuY29tPgo+
+ID4gU2lnbmVkLW9mZi1ieTogR3VpbGxhdW1lIFJhbnF1ZXQgPGdyYW5xdWV0QGJheWxpYnJlLmNv
+bT4KPgo+IFJldmlld2VkLWJ5OiBOYXRoYW4gQ2hhbmNlbGxvciA8bmF0aGFuQGtlcm5lbC5vcmc+
+Cj4KPiBDYW4gc29tZWJvZHkgcGljayB0aGlzIHVwPyBJdCBmaXhlcyBhIHJhdGhlciBvYnZpb3Vz
+IHdhcm5pbmcsIHdoaWNoIGlzCj4gYnJlYWtpbmcgY2xhbmcgYnVpbGRzIChhcyBldmlkZW5jZWQg
+YnkgdGhyZWUgdmVyc2lvbnMgb2YgdGhlIHNhbWUgZml4KS4KCiQgLi9zY3JpcHRzL2dldF9tYWlu
+dGFpbmVyLnBsIC1mCmRyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYyB8
+IGdyZXAgbWFpbnRhaW5lcgpDaHVuZmVuZyBZdW4gPGNodW5mZW5nLnl1bkBtZWRpYXRlay5jb20+
+IChtYWludGFpbmVyOkFSTS9NZWRpYXRlayBVU0IzClBIWSBEUklWRVIpCk1hdHRoaWFzIEJydWdn
+ZXIgPG1hdHRoaWFzLmJnZ0BnbWFpbC5jb20+IChtYWludGFpbmVyOkFSTS9NZWRpYXRlayBTb0Mg
+c3VwcG9ydCkKCkNodW5mZW5nLCBNYXR0aGlhcywgY2FuIG9uZSBvZiB5b3UgcGljayB0aGlzIHVw
+LCBwbGVhc2U/CgpPciBWaW5vZCB3aG8gbWVyZ2VkIDQ1ODEwZDQ4NmJiNDQgRldJQ1Q/Cgo+Cj4g
+PiAtLS0KPiA+ICBkcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmMgfCA4
+ICsrLS0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgNiBkZWxldGlv
+bnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1o
+ZG1pLW10ODE5NS5jIGIvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5j
+Cj4gPiBpbmRleCBhYmZjMDc3ZmIwYTguLjA1NGI3M2NiMzFlZSAxMDA2NDQKPiA+IC0tLSBhL2Ry
+aXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYwo+ID4gKysrIGIvZHJpdmVy
+cy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5jCj4gPiBAQCAtMjEzLDcgKzIxMyw3
+IEBAIHN0YXRpYyBpbnQgbXRrX2hkbWlfcGxsX2NhbGMoc3RydWN0IG10a19oZG1pX3BoeSAqaGRt
+aV9waHksIHN0cnVjdCBjbGtfaHcgKmh3LAo+ID4gICAgICAgdTY0IHRtZHNfY2xrLCBwaXhlbF9j
+bGssIGRhX2hkbWl0eDIxX3JlZl9jaywgbnNfaGRtaXBsbF9jaywgcGN3Owo+ID4gICAgICAgdTgg
+dHhwcmVkaXZzWzRdID0geyAyLCA0LCA2LCAxMiB9Owo+ID4gICAgICAgdTMyIGZia2Rpdl9sb3c7
+Cj4gPiAtICAgICBpbnQgaSwgcmV0Owo+ID4gKyAgICAgaW50IGk7Cj4gPgo+ID4gICAgICAgcGl4
+ZWxfY2xrID0gcmF0ZTsKPiA+ICAgICAgIHRtZHNfY2xrID0gcGl4ZWxfY2xrOwo+ID4gQEAgLTI5
+MiwxMyArMjkyLDkgQEAgc3RhdGljIGludCBtdGtfaGRtaV9wbGxfY2FsYyhzdHJ1Y3QgbXRrX2hk
+bWlfcGh5ICpoZG1pX3BoeSwgc3RydWN0IGNsa19odyAqaHcsCj4gPiAgICAgICBpZiAoIShkaWdp
+dGFsX2RpdiA8PSAzMiAmJiBkaWdpdGFsX2RpdiA+PSAxKSkKPiA+ICAgICAgICAgICAgICAgcmV0
+dXJuIC1FSU5WQUw7Cj4gPgo+ID4gLSAgICAgbXRrX2hkbWlfcGxsX3NldF9odyhodywgUExMX1BS
+RURJViwgZmJrZGl2X2hpZ2gsIGZia2Rpdl9sb3csCj4gPiArICAgICByZXR1cm4gbXRrX2hkbWlf
+cGxsX3NldF9odyhodywgUExMX1BSRURJViwgZmJrZGl2X2hpZ2gsIGZia2Rpdl9sb3csCj4gPiAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIFBMTF9GQktESVZfSFMzLCBwb3NkaXYxLCBwb3NkaXYy
+LCB0eHByZWRpdiwKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgdHhwb3NkaXYsIGRpZ2l0
+YWxfZGl2KTsKPiA+IC0gICAgIGlmIChyZXQpCj4gPiAtICAgICAgICAgICAgIHJldHVybiAtRUlO
+VkFMOwo+ID4gLQo+ID4gLSAgICAgcmV0dXJuIDA7Cj4gPiAgfQo+ID4KPiA+ICBzdGF0aWMgaW50
+IG10a19oZG1pX3BsbF9kcnZfc2V0dGluZyhzdHJ1Y3QgY2xrX2h3ICpodykKPiA+Cj4gPiAtLQo+
+ID4gMi40MC4wCj4gPgo+CgoKLS0gClRoYW5rcywKfk5pY2sgRGVzYXVsbmllcnMKCi0tIApsaW51
+eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
