@@ -4,81 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EB5C77B61
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Apr 2023 20:42:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7059CC77B61
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Apr 2023 22:43:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vG3/9S8+AeVREjBMHZRnYc9T2wXcVRf8jsCHKkz8Yc8=; b=rPTdZgOgaFK4vT
-	CRtXHx5I01hbif9XJhVb7IUbUyFEDKZQ3M1f+1BFG5Ao9PC37VRJOYQWUVpqSRnEcUipwVsyl/5IK
-	fsw9CAHg25OINELD4zzU6gRI/kvePfhqeJC/2xD1xdsCHIQEj7rdFQWVVyFrhmxmxBgPg4ZlAbFtX
-	zA4chbUPvlQE/bmqibjJUPSyD2Z7eslt3ekmPZ/0nyIMiqkZRSWzepIPPCVCzP/4tEDkOHZ/ro7/R
-	96nAi+R4oxgDxKE4OHbyxPCLysi7kIbWU8vcOU5PTHXLT8cwrd0KIhqaobz7a8tWvd60LTSZdKCwu
-	VU1Odk8KUJyGTntuFzxQ==;
+	List-Owner; bh=p4jVvHR72UCEvefVstfxAje3I3Kn3UJ7p4bUgzz7Xyo=; b=AEOJjfi5SkmOCH
+	KZkVTNHpEzykSfpGCsMPk84mAtA5x0qBxNzrcvY25KEIBc5ti9C4LcvuEPsAtbSMjqsC8/RJB33tr
+	E+Fp2DR5Szw82YZOFduwoJHCLL17jpaOjuVGFJC5W/WHht6vGJ2365n2pIfUgd29mla1WlKwDMAqK
+	rMCLJ9uesGnwjYNSpaWkMlPl7aDYbYbDnULQJVYZSc3YovXVuRqaBQ708qcY7V8FVpKX14eGhlcar
+	IAlmucy/GBZ4WsV4LPNSHUZnXPP/LtmQmG8SzxUKUo60OK29/H6FaY6GRFAXVSAFH91dV48/+O+S3
+	NTSNdoWKGZgBKUdhpO1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr312-00H9Uc-2B;
-	Mon, 24 Apr 2023 20:42:28 +0000
-Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
+	id 1pr4tn-00HIne-0E;
+	Mon, 24 Apr 2023 22:43:07 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr30y-00H9Rw-2e
+	id 1pr4tj-00HIn1-1q
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Apr 2023 20:42:26 +0000
-Received: by mail-pf1-x436.google.com with SMTP id d2e1a72fcca58-63b73203e0aso30837491b3a.1
-        for <linux-phy@lists.infradead.org>; Mon, 24 Apr 2023 13:42:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20221208; t=1682368939; x=1684960939;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=F5ZMC5VZS+YuBCnDNL+LpSQZtLatJs+u2JnjBvK8Odc=;
-        b=DGbRYrvKbvAoKpxgR0HQbFQbYXIsz+xp2DGSkA2iOQ8mk1waOeWr+SQSqHjNuasxPf
-         8n+vMTsSnPigKcKIoYZz5PxLBhE5efTfaOCZ8JQV/rP6KgWH3nnIBQVYIr26Po+rSVfL
-         XKUeFmdh9NNpkHFwRbRXZrVl72cOFnBWI8Dgk+co7z1DsCZf3I+iGPR2qA6JciXH6DEX
-         Qh0waztvz2vfOG82eC66kLBXYiKWml2zHWu/0w++9GWg6HxYxWvVKbS71C6Drwt+GaGj
-         UnoKPfxkLl/YsG6phBs1KAw1BycVRWcxeqF4Q9S3pHsn0wCjS3bASvhbon6oYA/iVdX2
-         4r2Q==
+	Mon, 24 Apr 2023 22:43:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1682376181;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=p8uiUKAh1MkDDewdBSb2LEHqUzT7fTsXNylXR5bsSUM=;
+	b=YlTv1z/TGP9k9KBP3bmbLt0MaduhaXExpAj1jpc25qTXAENsfk74jb4hk0qVCqunhFXUYP
+	nJLR4rB6qxLPZIpDSnPjt4IZYJvsqG9eaKKmrX7FlDAGNLzSYiAChq/l6dwybvXJl+t+Er
+	wY05ypbXUp11SKNbZt86IewSAd4q3Us=
+Received: from mail-qt1-f199.google.com (209.85.160.199 [209.85.160.199]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-139-J-dKJsVIPu2CutH_1ZSacA-1; Mon,
+ 24 Apr 2023 18:35:14 -0400
+X-MC-Unique: J-dKJsVIPu2CutH_1ZSacA-1
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-3ef3ca5b5afso66018611cf.0
+        for <linux-phy@lists.infradead.org>; Mon, 24 Apr 2023 15:35:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682368939; x=1684960939;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=F5ZMC5VZS+YuBCnDNL+LpSQZtLatJs+u2JnjBvK8Odc=;
-        b=I4h0GWW1IZUr06DbSDsLnTmF0gy+x6ft/bkAphtVdued1B1mycZpIrPLXrbIcykKvW
-         /9uD2BD77uuTfOkXA+KjX9KUwGivteaz2nvJS1Y6L/6EffUFVwB/e1mwzErUoQzcRDNR
-         RgFKtQAZIJ28XoXbgDXZ6rbY3v8Y2zfSUKD9S2rc4+glWHz1K4P2b3bi7r99s2c2yZSC
-         1HFqKlmu6p+Tr9MOJFI+8PrgOYbAhjlAa2pir7Ddf4LPWWbjrAJ0S/qsjsd371n6FwOA
-         V/dS14Idq6+x5C+m6acJ7tH92nFH8xHKdR6IEw6hqoXdy4Tt9X/20Bx1PyeiuOj25eIF
-         yP1Q==
-X-Gm-Message-State: AAQBX9cN1CljL0hsDIGAl7vA5A8lTh6YDQXiBSw7jzHuV9/C7VOpfkWy
-	hLtcGOJZU3BNAJehT7mxSSrGED5dyh39QcbYvGl5kA==
-X-Google-Smtp-Source: AKy350bsHQq1EzNGt73/j+nTzeIplaa5l3Hebw0touKLhbf8se1E6Dle8Z8ftc4k7i07Zf4ORu/GiUefhBFP9DGqO5w=
-X-Received: by 2002:a17:90a:6b43:b0:246:9517:30b6 with SMTP id
- x3-20020a17090a6b4300b00246951730b6mr22012160pjl.4.1682368939446; Mon, 24 Apr
- 2023 13:42:19 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1682375708; x=1684967708;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=p8uiUKAh1MkDDewdBSb2LEHqUzT7fTsXNylXR5bsSUM=;
+        b=l11PueoOxJvvvOc+i0Ymya/4K3ui2DvGsvnVadQ1WIVsvd7njycs9nJySqEt4SVAyK
+         c7D7bXVSMZAW1adA3k7rCVQnMbbXprf9/rCQO8Gu7Vf76rUNDdUJ/H2x5gLsDI5ApU3p
+         +w1ciXNcgpCpEzzeDXu1+by3hM1+zdiNeZ82C5PZ/MeShqnvTCiDWZeaAJDpa7Xhamac
+         Qrn6hsiEmKaIZaGlCsLAp+rJxiMbeuM3Au7bNPqf1Fryv3s1fnaOPI3fM1qdMJr1gD3C
+         Q4GfNlWVjSDxoLVAdv+/gAyJdYy41zSuGOuOI53oNq49z98DoeWs/w37Fpl7YTRN2eSh
+         9h4A==
+X-Gm-Message-State: AAQBX9fKnAAI1pm9UGi8wWNCmnUUiCj4JV/MNPsf1U88yK4GWEYUosJp
+	vC1aXeaX/rINvlgUg1NNgJaOtagslazIwuHSIrOOV99TinTth+cwGofA4wDJX+5L7IRlop+80Ap
+	FuG1bbHjyhXEgecD/nS8Z2hTCHXXR2uLrvw==
+X-Received: by 2002:ac8:7f42:0:b0:3ed:4a17:8b0f with SMTP id g2-20020ac87f42000000b003ed4a178b0fmr24709363qtk.25.1682375708327;
+        Mon, 24 Apr 2023 15:35:08 -0700 (PDT)
+X-Google-Smtp-Source: AKy350aBh9WN4eEBfeqITYWvJioz91FsGNrKf2GwcoO3UjeLguJG/OpDDT7yB41icNJRnpnxpchBoA==
+X-Received: by 2002:ac8:7f42:0:b0:3ed:4a17:8b0f with SMTP id g2-20020ac87f42000000b003ed4a178b0fmr24709331qtk.25.1682375707944;
+        Mon, 24 Apr 2023 15:35:07 -0700 (PDT)
+Received: from fedora (modemcable181.5-202-24.mc.videotron.ca. [24.202.5.181])
+        by smtp.gmail.com with ESMTPSA id a9-20020ac844a9000000b003d3a34d2eb2sm3997005qto.41.2023.04.24.15.35.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 24 Apr 2023 15:35:07 -0700 (PDT)
+Date: Mon, 24 Apr 2023 18:35:04 -0400
+From: Adrien Thierry <athierry@redhat.com>
+To: Shazad Hussain <quic_shazhuss@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v1 0/6] arm64: qcom: sa8775p: add support for USB
+Message-ID: <ZEcEGJiikEC2wIVE@fedora>
+References: <20230421133922.8520-1-quic_shazhuss@quicinc.com>
 MIME-Version: 1.0
-References: <20230413-fixes-for-mt8195-hdmi-phy-v2-0-bbad62e64321@baylibre.com>
- <20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com> <20230421221330.GA3657732@dev-arch.thelio-3990X>
-In-Reply-To: <20230421221330.GA3657732@dev-arch.thelio-3990X>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 24 Apr 2023 13:42:08 -0700
-Message-ID: <CAKwvOd=5szkx5yA0bxcyktx85opAwLrB3_4n13SMV7p3m9x7LQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] phy: mediatek: hdmi: mt8195: fix uninitialized
- variable usage in pll_calc
-To: Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Vinod Koul <vkoul@kernel.org>
-Cc: Guillaume Ranquet <granquet@baylibre.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, dri-devel@lists.freedesktop.org, 
-	linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	kernel test robot <lkp@intel.com>, llvm@lists.linux.dev, Nathan Chancellor <nathan@kernel.org>
+In-Reply-To: <20230421133922.8520-1-quic_shazhuss@quicinc.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230424_134224_860343_8D6CBC2C 
-X-CRM114-Status: GOOD (  20.37  )
+X-CRM114-CacheID: sfid-20230424_154303_715103_3D50A5AC 
+X-CRM114-Status: GOOD (  15.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,55 +102,122 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBBcHIgMjEsIDIwMjMgYXQgMzoxM+KAr1BNIE5hdGhhbiBDaGFuY2VsbG9yIDxuYXRo
-YW5Aa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiBGcmksIEFwciAxNCwgMjAyMyBhdCAwNjowNzo0
-NlBNICswMjAwLCBHdWlsbGF1bWUgUmFucXVldCB3cm90ZToKPiA+IFRoZSByZXQgdmFyaWFibGUg
-aW4gbXRrX2hkbWlfcGxsX2NhbGMoKSB3YXMgdXNlZCB1bml0aWFsaXplZCBhcyByZXBvcnRlZAo+
-ID4gYnkgdGhlIGtlcm5lbCB0ZXN0IHJvYm90Lgo+ID4KPiA+IEZpeCB0aGUgaXNzdWUgYnkgcmVt
-b3ZpbmcgdGhlIHZhcmlhYmxlIGFsdG9nZXRoZXIgYW5kIHRlc3Rpbmcgb3V0IHRoZQo+ID4gcmV0
-dXJuIHZhbHVlIG9mIG10a19oZG1pX3BsbF9zZXRfaHcoKQo+ID4KPiA+IEZpeGVzOiA0NTgxMGQ0
-ODZiYjQ0ICgicGh5OiBtZWRpYXRlazogYWRkIHN1cHBvcnQgZm9yIHBoeS1tdGstaGRtaS1tdDgx
-OTUiKQo+ID4gUmVwb3J0ZWQtYnk6IGtlcm5lbCB0ZXN0IHJvYm90IDxsa3BAaW50ZWwuY29tPgo+
-ID4gU2lnbmVkLW9mZi1ieTogR3VpbGxhdW1lIFJhbnF1ZXQgPGdyYW5xdWV0QGJheWxpYnJlLmNv
-bT4KPgo+IFJldmlld2VkLWJ5OiBOYXRoYW4gQ2hhbmNlbGxvciA8bmF0aGFuQGtlcm5lbC5vcmc+
-Cj4KPiBDYW4gc29tZWJvZHkgcGljayB0aGlzIHVwPyBJdCBmaXhlcyBhIHJhdGhlciBvYnZpb3Vz
-IHdhcm5pbmcsIHdoaWNoIGlzCj4gYnJlYWtpbmcgY2xhbmcgYnVpbGRzIChhcyBldmlkZW5jZWQg
-YnkgdGhyZWUgdmVyc2lvbnMgb2YgdGhlIHNhbWUgZml4KS4KCiQgLi9zY3JpcHRzL2dldF9tYWlu
-dGFpbmVyLnBsIC1mCmRyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYyB8
-IGdyZXAgbWFpbnRhaW5lcgpDaHVuZmVuZyBZdW4gPGNodW5mZW5nLnl1bkBtZWRpYXRlay5jb20+
-IChtYWludGFpbmVyOkFSTS9NZWRpYXRlayBVU0IzClBIWSBEUklWRVIpCk1hdHRoaWFzIEJydWdn
-ZXIgPG1hdHRoaWFzLmJnZ0BnbWFpbC5jb20+IChtYWludGFpbmVyOkFSTS9NZWRpYXRlayBTb0Mg
-c3VwcG9ydCkKCkNodW5mZW5nLCBNYXR0aGlhcywgY2FuIG9uZSBvZiB5b3UgcGljayB0aGlzIHVw
-LCBwbGVhc2U/CgpPciBWaW5vZCB3aG8gbWVyZ2VkIDQ1ODEwZDQ4NmJiNDQgRldJQ1Q/Cgo+Cj4g
-PiAtLS0KPiA+ICBkcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmMgfCA4
-ICsrLS0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgNiBkZWxldGlv
-bnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1o
-ZG1pLW10ODE5NS5jIGIvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5j
-Cj4gPiBpbmRleCBhYmZjMDc3ZmIwYTguLjA1NGI3M2NiMzFlZSAxMDA2NDQKPiA+IC0tLSBhL2Ry
-aXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYwo+ID4gKysrIGIvZHJpdmVy
-cy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5jCj4gPiBAQCAtMjEzLDcgKzIxMyw3
-IEBAIHN0YXRpYyBpbnQgbXRrX2hkbWlfcGxsX2NhbGMoc3RydWN0IG10a19oZG1pX3BoeSAqaGRt
-aV9waHksIHN0cnVjdCBjbGtfaHcgKmh3LAo+ID4gICAgICAgdTY0IHRtZHNfY2xrLCBwaXhlbF9j
-bGssIGRhX2hkbWl0eDIxX3JlZl9jaywgbnNfaGRtaXBsbF9jaywgcGN3Owo+ID4gICAgICAgdTgg
-dHhwcmVkaXZzWzRdID0geyAyLCA0LCA2LCAxMiB9Owo+ID4gICAgICAgdTMyIGZia2Rpdl9sb3c7
-Cj4gPiAtICAgICBpbnQgaSwgcmV0Owo+ID4gKyAgICAgaW50IGk7Cj4gPgo+ID4gICAgICAgcGl4
-ZWxfY2xrID0gcmF0ZTsKPiA+ICAgICAgIHRtZHNfY2xrID0gcGl4ZWxfY2xrOwo+ID4gQEAgLTI5
-MiwxMyArMjkyLDkgQEAgc3RhdGljIGludCBtdGtfaGRtaV9wbGxfY2FsYyhzdHJ1Y3QgbXRrX2hk
-bWlfcGh5ICpoZG1pX3BoeSwgc3RydWN0IGNsa19odyAqaHcsCj4gPiAgICAgICBpZiAoIShkaWdp
-dGFsX2RpdiA8PSAzMiAmJiBkaWdpdGFsX2RpdiA+PSAxKSkKPiA+ICAgICAgICAgICAgICAgcmV0
-dXJuIC1FSU5WQUw7Cj4gPgo+ID4gLSAgICAgbXRrX2hkbWlfcGxsX3NldF9odyhodywgUExMX1BS
-RURJViwgZmJrZGl2X2hpZ2gsIGZia2Rpdl9sb3csCj4gPiArICAgICByZXR1cm4gbXRrX2hkbWlf
-cGxsX3NldF9odyhodywgUExMX1BSRURJViwgZmJrZGl2X2hpZ2gsIGZia2Rpdl9sb3csCj4gPiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIFBMTF9GQktESVZfSFMzLCBwb3NkaXYxLCBwb3NkaXYy
-LCB0eHByZWRpdiwKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgdHhwb3NkaXYsIGRpZ2l0
-YWxfZGl2KTsKPiA+IC0gICAgIGlmIChyZXQpCj4gPiAtICAgICAgICAgICAgIHJldHVybiAtRUlO
-VkFMOwo+ID4gLQo+ID4gLSAgICAgcmV0dXJuIDA7Cj4gPiAgfQo+ID4KPiA+ICBzdGF0aWMgaW50
-IG10a19oZG1pX3BsbF9kcnZfc2V0dGluZyhzdHJ1Y3QgY2xrX2h3ICpodykKPiA+Cj4gPiAtLQo+
-ID4gMi40MC4wCj4gPgo+CgoKLS0gClRoYW5rcywKfk5pY2sgRGVzYXVsbmllcnMKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Shazad,
+
+On Fri, Apr 21, 2023 at 07:09:15PM +0530, Shazad Hussain wrote:
+> Update relavent DT bindings for USB, add new config to the phy driver,
+> add USB and PHY nodes to the .dtsi and enable them in the board .dts
+> for the sa8775p-ride platform.
+> 
+> Shazad Hussain (6):
+>   dt-bindings: usb: qcom,dwc3: Add bindings for SA8775P
+>   dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings for SA8775P
+>   dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add SA8775P USB PHY
+>     binding
+>   phy: qcom-qmp: Add SA8775P USB3 UNI phy
+>   arm64: dts: qcom: sa8775p: add USB nodes
+>   arm64: dts: qcom: sa8775p-ride: enable USB nodes
+> 
+>  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |   1 +
+>  .../bindings/phy/qcom,usb-snps-femto-v2.yaml  |   1 +
+>  .../devicetree/bindings/usb/qcom,dwc3.yaml    |   5 +
+>  arch/arm64/boot/dts/qcom/sa8775p-ride.dts     |  92 +++++++
+>  arch/arm64/boot/dts/qcom/sa8775p.dtsi         | 239 +++++++++++++++++-
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |  45 ++++
+>  6 files changed, 381 insertions(+), 2 deletions(-)
+> 
+> -- 
+> 2.17.1
+> 
+
+Thanks for posting this. I tested the series on the sa8775p, and it seems
+initialization for the controller at a400000 sometimes fails with a
+timeout (-110) error:
+
+    dwc3 a400000.usb: Adding to iommu group 2
+    xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+    xhci-hcd xhci-hcd.0.auto: can't setup: -110
+    xhci-hcd xhci-hcd.0.auto: USB bus 1 deregistered
+    xhci-hcd: probe of xhci-hcd.0.auto failed with error -110
+    dwc3 a600000.usb: Adding to iommu group 3
+    dwc3 a800000.usb: Adding to iommu group 4
+    xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 1
+    xhci-hcd xhci-hcd.1.auto: hcc params 0x0110ffc5 hci version 0x110 quirks 0x0000000000010010
+    xhci-hcd xhci-hcd.1.auto: irq 162, io mem 0x0a800000
+    xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 2
+    xhci-hcd xhci-hcd.1.auto: Host supports USB 3.1 Enhanced SuperSpeed
+    hub 1-0:1.0: USB hub found
+    hub 1-0:1.0: 1 port detected
+    usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+    hub 2-0:1.0: USB hub found
+    hub 2-0:1.0: 1 port detected
+
+In this case, only usb devices for a800000 are showing:
+
+    dracut:/# ls -alh /sys/bus/usb/devices
+    total 0
+    drwxr-xr-x 2 root root 0 Feb 27 00:00 .
+    drwxr-xr-x 4 root root 0 Feb 27 00:00 ..
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 1-0:1.0 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.1.auto/usb1/1-0:1.0
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 2-0:1.0 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.1.auto/usb2/2-0:1.0
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 usb1 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.1.auto/usb1
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 usb2 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.1.auto/usb2
+
+This happens approximately 1 out of 2 reboots. Here's the kernel output
+when initialization succeeds:
+
+    dwc3 a600000.usb: Adding to iommu group 2
+    dwc3 a800000.usb: Adding to iommu group 3
+    xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+    xhci-hcd xhci-hcd.0.auto: hcc params 0x0110ffc5 hci version 0x110 quirks 0x0000000000010010
+    xhci-hcd xhci-hcd.0.auto: irq 161, io mem 0x0a800000
+    xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+    xhci-hcd xhci-hcd.0.auto: Host supports USB 3.1 Enhanced SuperSpeed
+    hub 1-0:1.0: USB hub found
+    hub 1-0:1.0: 1 port detected
+    usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+    hub 2-0:1.0: USB hub found
+    hub 2-0:1.0: 1 port detected
+    dwc3 a400000.usb: Adding to iommu group 4
+    xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+    xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+    xhci-hcd xhci-hcd.1.auto: USB3 root hub has no ports
+    xhci-hcd xhci-hcd.1.auto: hcc params 0x0220fe65 hci version 0x110 quirks 0x0000000000010010
+    xhci-hcd xhci-hcd.1.auto: irq 162, io mem 0x0a400000
+    hub 3-0:1.0: USB hub found
+    hub 3-0:1.0: 1 port detected
+
+And the list of usb devices:
+
+    dracut:/# ls -alh /sys/bus/usb/devices
+    total 0
+    drwxr-xr-x 2 root root 0 Feb 27 00:00 .
+    drwxr-xr-x 4 root root 0 Feb 27 00:00 ..
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 1-0:1.0 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.0.auto/usb1/1-0:1.0
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 2-0:1.0 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.0.auto/usb2/2-0:1.0
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 3-0:1.0 -> ../../../devices/platform/soc@0/a4f8800.usb/a400000.usb/xhci-hcd.1.auto/usb3/3-0:1.0
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 usb1 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.0.auto/usb1
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 usb2 -> ../../../devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.0.auto/usb2
+    lrwxrwxrwx 1 root root 0 Feb 27 00:00 usb3 -> ../../../devices/platform/soc@0/a4f8800.usb/a400000.usb/xhci-hcd.1.auto/usb3
+
+Have you also encountered this?
+
+Best,
+
+Adrien
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
