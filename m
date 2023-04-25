@@ -4,82 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D508BC77B61
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 09:36:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EC5BC77B61
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 10:29:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=V5D2TW8rhfGCC1sBDJ9dvcC/+XgS19XwOXK2+5EEi7Q=; b=wtI6krMIG/4hKx+nKfIiqQHyui
-	oZPtNt5bP/SpG8oda/kOLWPvEnf2E70NzD4hgIf2CTLIGTh6kju0mPAXO/b34RhjEiluNfgzohtlY
-	e/dcyDRR7gkBUePmbkcAZSPioGU869PfHjgnoYgXuGJ7Jm1seihg2KKrtEQBbp27UqSjFn9GzxKhl
-	BGIiscneEf7iH1KONyQucF3YzFfr9ZzBrkdToGKkcEGVGPvNluyTUhjUdkbQ3i8hTWFF+hLJigIGQ
-	TezmCTMmw2KqZzn4XUeAxJ23mhoLxenETYlm3ECZxATAv3UAYkIpDVIbLLRsF72aEIkHITGMsjqw9
-	7RG/NVhg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6kkAbjzJA6gYtrDrnc/bn9gda8z6A/6rMsaQcvwt3CI=; b=iQzWO6V9+IJg4G
+	Ti6p5Dn6nhN2wJZKGfAcAukieywFOjlSJb+s+ge/wjwoFFRa4yVSwKNuL/ZhQ6uAs9r5LW5HcJjL1
+	XAOJhIenj+YC+bj5S/kVePe0KFEZ/qCvFkoEnIBCPKATTlh4rlNhjFaPbDk66OEk578fX7Dv1mREb
+	yQxVoaBNooqLQHmAJOLEEUsacUdOrL0yKYh/aHQggxaFHbysUafooB0kL38nsulQL4WxDOpKzRkvR
+	sQ3L0KWfgXfLynBHQYZbJwBinaVyDiasKn2XaU0rxAQJEZq+MsPSlUAsvzR7N7z/ZXpermWnHIkmo
+	dzTLeoo7gwFt+K37LLZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prF5u-000fRR-1k;
-	Tue, 25 Apr 2023 09:36:18 +0000
-Received: from esa.microchip.iphmx.com ([68.232.153.233])
+	id 1prFvP-000mJ0-1p;
+	Tue, 25 Apr 2023 10:29:31 +0000
+Received: from mx.sberdevices.ru ([45.89.227.171])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prF5q-000fPi-2X;
-	Tue, 25 Apr 2023 09:36:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1682415374; x=1713951374;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=cdJ5RCl0jRK2WkiOSErGKVWigi6cRYrQGKqxUv/5kOQ=;
-  b=OVAPbpgePymf7U/RSTiTg7eyn2vs1cozI2HnzJHtt1u66YUsKqdkBr24
-   qOB9IbMwovBoV9OHl9+8BNkYR0yX0jx/BlaUKa7QSeI+Ui15iQzkmhES8
-   0KlrBNtY59pB/cJI9w2hohFIX6s8lvvkuV/5VUNnZfx7ojM/E3wAcmraY
-   xqG3zL032oCKvc0tIERkz4zPe4ckPpkTuWG70Um0jagCGemFGsuiDdr2O
-   EStISeV2lsQndeU+z4JLAyCcbz3oIBjC9at75aFtiCIokUpMsBOa0a+ZU
-   da+/NjZCOu7TfvS7hfIXycNA09AvM+Rs/RD4Uvh6uI9HIGLuQB9uslHjx
-   g==;
-X-IronPort-AV: E=Sophos;i="5.99,225,1677567600"; 
-   d="asc'?scan'208";a="210571348"
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 25 Apr 2023 02:36:05 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Tue, 25 Apr 2023 02:36:05 -0700
-Received: from wendy (10.10.115.15) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
- Transport; Tue, 25 Apr 2023 02:36:02 -0700
-Date: Tue, 25 Apr 2023 10:35:45 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
-	<conor@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Message-ID: <20230425-resale-footrest-de667778c4fe@wendy>
-References: <20230419035646.43702-1-changhuang.liang@starfivetech.com>
- <20230419035646.43702-2-changhuang.liang@starfivetech.com>
- <20230419-labored-camper-644d51a7ca96@spud>
- <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
- <20230424-baffle-punch-ec73098f2b6a@spud>
- <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
- <20230425-unquote-eligible-09f743d81981@wendy>
- <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
- <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
- <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+	id 1prFvH-000mE4-1L;
+	Tue, 25 Apr 2023 10:29:28 +0000
+Received: from s-lin-edge02.sberdevices.ru (localhost [127.0.0.1])
+	by mx.sberdevices.ru (Postfix) with ESMTP id C33525FD3A;
+	Tue, 25 Apr 2023 13:29:16 +0300 (MSK)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sberdevices.ru;
+	s=mail; t=1682418556;
+	bh=7hJUvsqyjWvVw7Khab8QmwY8D6Cfdc1hwURLPhG6nao=;
+	h=Date:From:To:Subject:Message-ID:MIME-Version:Content-Type;
+	b=R8pi8/0owL2UIrCSxT7v/uznrT6w4UND+ouhHulfzffi8K9KU7C0DQcQhAhVmfAUO
+	 bHj8WqBB6H3BW1VsgjG3heM0vG131VbHEWGjsGvYd6WiRfhLDQC+BjixfJoQWUJeiz
+	 ROjtBRLmM6MkBYX2seBbll/WzJT3znwgbP3HS2VrCZQ5nh/kBIi7sdABi4Fqda4bgR
+	 7INi08hXNI89fs09g1mxsJ/25OH3jp7k2WWjMjIm5VGQsmkI1P6sBaNM8CrPG8UyB8
+	 lnkB6hSsKBEYNlxyImd8z94Jdf+255FWgkHqsDP4ABG6+1fWhF2DEYPaq3rK9kj7H1
+	 e1HLqiXav4S0Q==
+Received: from S-MS-EXCH01.sberdevices.ru (S-MS-EXCH01.sberdevices.ru [172.16.1.4])
+	by mx.sberdevices.ru (Postfix) with ESMTP;
+	Tue, 25 Apr 2023 13:29:12 +0300 (MSK)
+Date: Tue, 25 Apr 2023 13:29:12 +0300
+From: Dmitry Rokosov <ddrokosov@sberdevices.ru>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+CC: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>,
+	<krzysztof.kozlowski+dt@linaro.org>, <neil.armstrong@linaro.org>,
+	<khilman@baylibre.com>, <jbrunet@baylibre.com>, <mturquette@baylibre.com>,
+	<vkoul@kernel.org>, <kishon@kernel.org>, <hminas@synopsys.com>,
+	<Thinh.Nguyen@synopsys.com>, <yue.wang@amlogic.com>,
+	<hanjie.lin@amlogic.com>, <kernel@sberdevices.ru>, <rockosov@gmail.com>,
+	<linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-amlogic@lists.infradead.org>, <linux-phy@lists.infradead.org>
+Subject: Re: [PATCH v2 1/5] phy: amlogic: enable/disable clkin during Amlogic
+ USB PHY init/exit
+Message-ID: <20230425102912.qhey7fpbuqvwg44j@CAB-WSD-L081021>
+References: <20230418111612.19479-1-ddrokosov@sberdevices.ru>
+ <20230418111612.19479-2-ddrokosov@sberdevices.ru>
+ <CAFBinCDyhBQ5Nob38EmXor1PtcO09dRdReDTW+tc5CN4i20HhA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+Content-Disposition: inline
+In-Reply-To: <CAFBinCDyhBQ5Nob38EmXor1PtcO09dRdReDTW+tc5CN4i20HhA@mail.gmail.com>
+User-Agent: NeoMutt/20220415
+X-Originating-IP: [172.16.1.6]
+X-ClientProxiedBy: S-MS-EXCH01.sberdevices.ru (172.16.1.4) To
+ S-MS-EXCH01.sberdevices.ru (172.16.1.4)
+X-KSMG-Rule-ID: 4
+X-KSMG-Message-Action: clean
+X-KSMG-AntiSpam-Status: not scanned, disabled by settings
+X-KSMG-AntiSpam-Interceptor-Info: not scanned
+X-KSMG-AntiPhishing: not scanned, disabled by settings
+X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, bases: 2023/04/25 07:55:00 #21159618
+X-KSMG-AntiVirus-Status: Clean, skipped
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_023614_833642_86AD4D2E 
-X-CRM114-Status: GOOD (  24.77  )
+X-CRM114-CacheID: sfid-20230425_032924_154499_E06D1728 
+X-CRM114-Status: GOOD (  36.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,143 +88,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1731026098186067808=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============1731026098186067808==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="NyVSyvpBVoaqkS2m"
-Content-Disposition: inline
-
---NyVSyvpBVoaqkS2m
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Apr 25, 2023 at 05:18:10PM +0800, Changhuang Liang wrote:
->=20
->=20
-> On 2023/4/25 16:19, Krzysztof Kozlowski wrote:
-> > On 25/04/2023 09:57, Changhuang Liang wrote:
-> >>>>>>>> =20
-> >>>>>>>>  description: |
-> >>>>>>>>    StarFive JH7110 SoC includes support for multiple power domai=
-ns which can be
-> >>>>>>>> @@ -17,6 +18,7 @@ properties:
-> >>>>>>>>    compatible:
-> >>>>>>>>      enum:
-> >>>>>>>>        - starfive,jh7110-pmu
-> >>>>>>>> +      - starfive,jh7110-aon-pmu
-> >>>>>
-> >>>>> I was speaking to Rob about this over the weekend, he asked:
-> >>>>> 'Why isn't "starfive,jh7110-aon-syscon" just the power-domain provi=
-der
-> >>>>> itself?'
-> >>>>
-> >>>> Maybe not, this syscon only offset "0x00" configure power switch.
-> >>>> other offset configure other functions, maybe not power, so this
-> >>>> "starfive,jh7110-aon-syscon" not the power-domain itself.
-> >>>>
-> >>>>> Do we actually need to add a new binding for this at all?
-> >>>>>
-> >>>>> Cheers,
-> >>>>> Conor.
-> >>>>>
-> >>>>
-> >>>> Maybe this patch do that.
-> >>>> https://lore.kernel.org/all/20230414024157.53203-6-xingyu.wu@starfiv=
-etech.com/
-> >>>
-> >>> This makes it a child-node right? I think Rob already said no to that=
- in
-> >>> and earlier revision of this series. What he meant the other day was
-> >>> making the syscon itself a power domain controller, since the child n=
-ode
-> >>> has no meaningful properties (reg, interrupts etc).
-> >>>
-> >>> Cheers,
-> >>> Conor.
-> >>
-> >> Yes, "starfive,jh7110-aon-pmu" is a child-node of "starfive,jh7110-aon=
--syscon".
-> >> In my opinion, "0x17010000" is "aon-syscon" on JH7110 SoC, and this "a=
-on-pmu" is just=20
-> >> a part of "aon-syscon" function, so I think it is inappropriate to mak=
-e "aon-syscon"
-> >> to a power domain controller. I think using the child-node description=
- is closer to
-> >> JH7110 SoC.=20
-> >=20
-> > Unfortunately, I do not see the correlation between these, any
-> > connection. Why being a child of syscon block would mean that this
-> > should no be power domain controller? Really, why? These are two
-> > unrelated things.
-> >=20
-> > Best regards,
-> > Krzysztof
-> >=20
->=20
-> Let me summarize what has been discussed above.=20
->=20
-> There has two ways to describe this "starfive,jh7110-aon-syscon"(0x170100=
-00).
-> 1. (0x17010000) is power-controller node:
->=20
-> 	aon_pwrc: power-controller@17010000 {
-> 		compatible =3D "starfive,jh7110-aon-pmu", "syscon";
-> 		reg =3D <0x0 0x17010000 0x0 0x1000>;
-> 		#power-domain-cells =3D <1>;
-> 	};
->=20
->=20
-> 2. (0x17010000) is syscon node, power-controller is child-node of syscon:
->=20
-> 	aon_syscon: syscon@17010000 {
-> 		compatible =3D "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
-> 		reg =3D <0x0 0x17010000 0x0 0x1000>;
->=20
-> 		aon_pwrc: power-controller {
-> 			compatible =3D "starfive,jh7110-aon-pmu";
-> 			#power-domain-cells =3D <1>;
-> 		};
-> 	};
-
-I thought that Rob was suggesting something like this:
-	aon_syscon: syscon@17010000 {
-		compatible =3D "starfive,jh7110-aon-syscon", ...
-		reg =3D <0x0 0x17010000 0x0 0x1000>;
-		#power-domain-cells =3D <1>;
-	};
-
-Cheers,
-Conor.
-
-
---NyVSyvpBVoaqkS2m
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZEee8QAKCRB4tDGHoIJi
-0iAjAQCAYkbFL/ydjRkg7qdZ1xejJeKnKpac8GkxwCp7ovCnGwD/S+XqbVNUcOyu
-xaeZnAsWfEaTMKgIuWoqCeIrvwvPlAQ=
-=31W+
------END PGP SIGNATURE-----
-
---NyVSyvpBVoaqkS2m--
-
-
---===============1731026098186067808==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1731026098186067808==--
-
+SGVsbG8gTWFydGluLAoKVGhhbmtzIGEgbG90IGZvciB0aGUgcmV2aWV3ISBBcHByZWNpYXRlIGl0
+IQpQbGVhc2UgZmluZCBteSBjb21tZW50cyBiZWxvdy4KCk9uIFN1biwgQXByIDIzLCAyMDIzIGF0
+IDA3OjQyOjI1UE0gKzAyMDAsIE1hcnRpbiBCbHVtZW5zdGluZ2wgd3JvdGU6Cj4gSGkgRG1pdHJ5
+LAo+IAo+IE9uIFR1ZSwgQXByIDE4LCAyMDIzIGF0IDE6MTbigK9QTSBEbWl0cnkgUm9rb3NvdiA8
+ZGRyb2tvc292QHNiZXJkZXZpY2VzLnJ1PiB3cm90ZToKPiA+Cj4gPiBQcmV2aW91c2x5LCBhbGwg
+QW1sb2dpYyBib2FyZHMgdXNlZCB0aGUgWFRBTCBjbG9jayBhcyB0aGUgZGVmYXVsdCBib2FyZAo+
+ID4gY2xvY2sgZm9yIHRoZSBVU0IgUEhZIGlucHV0LCBzbyB0aGVyZSB3YXMgbm8gbmVlZCB0byBl
+bmFibGUgaXQuCj4gPiBIb3dldmVyLCB3aXRoIHRoZSBpbnRyb2R1Y3Rpb24gb2YgbmV3IEFtbG9n
+aWMgU29DcyBsaWtlIHRoZSBBMSBmYW1pbHksCj4gPiB0aGUgVVNCIFBIWSBub3cgdXNlcyBhIGdh
+dGVkIGNsb2NrLiBIZW5jZSwgaXQgaXMgbmVjZXNzYXJ5IHRvIGVuYWJsZQo+ID4gdGhpcyBnYXRl
+ZCBjbG9jayBkdXJpbmcgdGhlIFBIWSBpbml0aWFsaXphdGlvbiBzZXF1ZW5jZSwgb3IgZGlzYWJs
+ZSBpdAo+ID4gZHVyaW5nIHRoZSBQSFkgZXhpdCwgYXMgYXBwcm9wcmlhdGUuCj4gPgo+ID4gU2ln
+bmVkLW9mZi1ieTogRG1pdHJ5IFJva29zb3YgPGRkcm9rb3NvdkBzYmVyZGV2aWNlcy5ydT4KPiA+
+IC0tLQo+ID4gIGRyaXZlcnMvcGh5L2FtbG9naWMvcGh5LW1lc29uLWcxMmEtdXNiMi5jIHwgMTMg
+KysrKysrKysrKystLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxMSBpbnNlcnRpb25zKCspLCAyIGRl
+bGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbWxvZ2ljL3BoeS1t
+ZXNvbi1nMTJhLXVzYjIuYyBiL2RyaXZlcnMvcGh5L2FtbG9naWMvcGh5LW1lc29uLWcxMmEtdXNi
+Mi5jCj4gPiBpbmRleCA5ZDFlZmEwZDkzOTQuLjgwOTM4NzUxZGE0ZiAxMDA2NDQKPiA+IC0tLSBh
+L2RyaXZlcnMvcGh5L2FtbG9naWMvcGh5LW1lc29uLWcxMmEtdXNiMi5jCj4gPiArKysgYi9kcml2
+ZXJzL3BoeS9hbWxvZ2ljL3BoeS1tZXNvbi1nMTJhLXVzYjIuYwo+ID4gQEAgLTE3MiwxMCArMTcy
+LDE2IEBAIHN0YXRpYyBpbnQgcGh5X21lc29uX2cxMmFfdXNiMl9pbml0KHN0cnVjdCBwaHkgKnBo
+eSkKPiA+ICAgICAgICAgaW50IHJldDsKPiA+ICAgICAgICAgdW5zaWduZWQgaW50IHZhbHVlOwo+
+ID4KPiA+IC0gICAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9yZXNldChwcml2LT5yZXNldCk7Cj4g
+PiArICAgICAgIHJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShwcml2LT5jbGspOwo+ID4gICAgICAg
+ICBpZiAocmV0KQo+ID4gICAgICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4gPgo+ID4gKyAgICAg
+ICByZXQgPSByZXNldF9jb250cm9sX3Jlc2V0KHByaXYtPnJlc2V0KTsKPiA+ICsgICAgICAgaWYg
+KHJldCkgewo+ID4gKyAgICAgICAgICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZShwcml2LT5j
+bGspOwo+ID4gKyAgICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4gPiArICAgICAgIH0KPiA+ICsK
+PiBUaGlzIHBhcnQgbG9va3MgZ29vZC4gWW91IGFza2VkIHdoeSBJIHN1Z2dlc3RlZCB0aGlzIGFw
+cHJvYWNoIGluc3RlYWQKPiBvZiBlbmFibGluZyB0aGUgY2xvY2sgYXQgcHJvYmUgdGltZSBhbmQg
+b25seSBub3cgSSBoYXZlIHRpbWUgdG8gcmVwbHkKPiB0byBpdC4KPiBDb25zaWRlciB0aGUgZm9s
+bG93aW5nIHNjZW5hcmlvOgo+IC0gbW9kcHJvYmUgcGh5LW1lc29uLWcxMmEtdXNiMgo+IC0gbW9k
+cHJvYmUgZHdjMy1tZXNvbi1nMTJhICh0aGlzIHdpbGwgY2FsbCBwaHlfaW5pdCkKPiAtIHJtbW9k
+IGR3YzMtbWVzb24tZzEyYSAodGhpcyB3aWxsIGNhbGwgcGh5X2V4aXQpCj4gCj4gSWYgdGhlIGNs
+b2NrIHdhcyBlbmFibGVkIGF0IHByb2JlIHRpbWUgdGhlbiBpdCB3b3VsZCBvbmx5IGJlIGRpc2Fi
+bGVkCj4gd2hlbiB1c2luZyBybW1vZCBwaHktbWVzb24tZzEyYS11c2IyLgo+IEJ5IG1hbnVhbGx5
+IGNhbGxpbmcgY2xrX3ByZXBhcmVfZW5hYmxlL2Nsa19kaXNhYmxlX3VucHJlcGFyZSB3ZSBlbnN1
+cmUKPiB0aGF0IHRoZSBjbG9jayBnZXRzIGRpc2FibGVkIHdoZW4gd2UgZG9uJ3QgbmVlZCB0aGUg
+UEhZIGFueW1vcmUuCj4gV2hldGhlciB0aGlzIG1ha2VzIGFueSBkaWZmZXJlbmNlIGluIHRlcm1z
+IG9mIHBvd2VyIGRyYXc6IEkgY2FuJ3Qgc2F5Lgo+IAoKSXQgbWFrZXMgc2Vuc2UuIEkgZnVsbHkg
+YWdyZWUgd2l0aCB5b3VyIGFwcHJvYWNoLCB3aGljaCBsb29rcyBiZXR0ZXIKY29tcGFyZWQgdG8g
+dXNpbmcgdGhlIGF1dG9tYXRpYyBkZXZtX2NsayBBUEkuCgo+ID4gICAgICAgICB1ZGVsYXkoUkVT
+RVRfQ09NUExFVEVfVElNRSk7Cj4gPgo+ID4gICAgICAgICAvKiB1c2IyX290Z19hY2FfZW4gPT0g
+MCAqLwo+ID4gQEAgLTI3Nyw4ICsyODMsMTEgQEAgc3RhdGljIGludCBwaHlfbWVzb25fZzEyYV91
+c2IyX2luaXQoc3RydWN0IHBoeSAqcGh5KQo+ID4gIHN0YXRpYyBpbnQgcGh5X21lc29uX2cxMmFf
+dXNiMl9leGl0KHN0cnVjdCBwaHkgKnBoeSkKPiA+ICB7Cj4gPiAgICAgICAgIHN0cnVjdCBwaHlf
+bWVzb25fZzEyYV91c2IyX3ByaXYgKnByaXYgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiA+ICsg
+ICAgICAgaW50IHJldCA9IHJlc2V0X2NvbnRyb2xfcmVzZXQocHJpdi0+cmVzZXQpOwo+ID4gKwo+
+ID4gKyAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUocHJpdi0+Y2xrKTsKPiA+Cj4gPiAtICAg
+ICAgIHJldHVybiByZXNldF9jb250cm9sX3Jlc2V0KHByaXYtPnJlc2V0KTsKPiA+ICsgICAgICAg
+cmV0dXJuIHJldDsKPiBJIHRoaW5rIHRoaXMgY2FuIGNhdXNlIGlzc3VlcyBpbiBjYXNlIHdoZW4g
+cmVzZXRfY29udHJvbF9yZXNldCByZXR1cm5zCj4gYW4gZXJyb3I6IElmIEkgdW5kZXJzdGFuZCB0
+aGUgY29kZSBpbiBwaHktY29yZS5jIGNvcnJlY3RseSBpdCB3aWxsCj4gb25seSBkZWNyZWFzZSB0
+aGUgaW5pdCByZWYtY291bnQgaWYgZXhpdCByZXR1cm5zIDAuCj4gV2hlbmV2ZXIgcGh5X2V4aXQg
+aXMgY2FsbGVkIGZvciB0aGUgc2Vjb25kIHRpbWUKPiBjbGtfZGlzYWJsZV91bnByZXBhcmUoKSB3
+aWxsIGJlIGNhbGxlZCB3aXRoIGEgY2xvY2sgcmVmLWNvdW50IG9mIDAsIHNvCj4gaXQnbGwgbGlr
+ZWx5IHByaW50IHNvbWUgd2FybmluZy4KPiAKPiBNeSBzdWdnZXN0aW9uIGlzIHRvIHJldHVybiBl
+YXJseSBpZiByZXNldF9jb250cm9sX3Jlc2V0KCkgZmFpbHMgYW5kCj4gbm90IGNhbGwgY2xrX2Rp
+c2FibGVfdW5wcmVwYXJlKCkgaW4gdGhhdCBjYXNlLgo+IFdoYXQgZG8geW91IHRoaW5rPwoKQWZ0
+ZXIgdGFraW5nIGEgY2xvc2VyIGxvb2sgYXQgdGhlIHBoeV9leGl0IGNvcmUgY29kZSwgaXQgYXBw
+ZWFycyB0aGF0CnlvdXIgaWRlYSBpcyBzcG90IG9uLiBFeGl0aW5nIGltbWVkaWF0ZWx5IHdoZW4g
+cmVzZXQgZmFpbHMgc2VlbXMgbGlrZQp0aGUgYmV0dGVyIGNob2ljZS4KSSB3aWxsIHdvcmsgb24g
+YSBuZXcgdmVyc2lvbiBvZiB0aGUgY29kZSBhY2NvcmRpbmdseS4KCi0tIApUaGFuayB5b3UsCkRt
+aXRyeQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
