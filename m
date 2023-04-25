@@ -4,77 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AB9DC6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 16:57:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AADCC6FD18
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 18:03:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EWDO4Rl7PEgsreNI7wRKtfJFGIlrV7ZNiq6af8+6Hn0=; b=bXY5lwHx+ViJ+qrDKJ000vQXrB
-	GR7l473vn/9/+En6o0L6N7UiHiVOSmKG934lrCYcSni7GLLURsaUKneaQ3cmaWEcuez6DdDxmivQ2
-	XboN6U/RUUnCwFGMn/pk2QslovY4bhuBeK3kih0jZvJ8oXiU7MUPibzzXUW2Xn2rZvPFBGH44MuAi
-	OiTHe9Hw3wnBWHrw9IsBiXgzyxlMgydud88tB9ekwl6Npn/epsEcUTQ60AUefEIO5hIWwVxNj+cIX
-	Ff76Wf4F2hemc30Z7xWCGr07ZZVwlig6oFisveVtOn9akjU4aoeSJF8n/6wtY65h/CEBQ0ip4zKrl
-	VJOCgdjA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wb+e6EyxsOsxDwq9GhOOcIK1Wh+n42gN88BvKKFgGI0=; b=2jHUxJvefIGdoK
+	4KiO1N4aNzyt474PYm7+hpcvE2d/NmMeMJlt7hXPVVribdbN2s4URZdHvPNHFoM+JIrqnuhvk33ep
+	GWTASOdck7UDdian7WHW5+7jTT9iATYYZcQ+b8iwynaGO4I04N60jS3qXomYjPj1EFLZRtUK5jFts
+	IU1PRQaC8aRkJFazz6lyLhgERQ9HgMpV/f0V5UG3+FR4ZUfdH6IR0PfjWsnXk177iomB6lL3i/8g4
+	gh0sFBh0WY/zYk+nmKgVeEiccT3cf7bdn4cDYluAYS95GyJ/f1D0kt3PeQy6EKIfBZzmE3hKj/Hdk
+	ndG4E3N3v3Ys8VKAgWgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prLyV-001jJC-28;
-	Tue, 25 Apr 2023 16:57:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1prN10-001u3J-07;
+	Tue, 25 Apr 2023 18:03:46 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prLyS-001jI9-39;
-	Tue, 25 Apr 2023 16:57:06 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E5F4062D52;
-	Tue, 25 Apr 2023 16:57:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13196C4339C;
-	Tue, 25 Apr 2023 16:56:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1682441823;
-	bh=cUDv7w0pj/dy7GYFDIBt/oc/4E1U2yx8meJnVqD9X/g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PYHdqVra8pVt5vIloxWIOlZzNWPHB97kBVaD8zgRIdazyyvvdDc//MVDzgjTsi6qb
-	 SR3RNWqiX+8O73EBTrj85JSM+TlenznTLp5se1SYsQFBvMOqtozZDCENNcyOq6xbqf
-	 NqfdhgqX8zq+1VsXIeZCM2c6oDtbKx/YTtczx6Ombg8cxkm8YsdVKKKIW2DGnGW+0y
-	 0pdnTnx+hrVn7NqzopgkiuqR4uHuDqgUhyqCmId8Lsk+qpwdUcW8UTX75Ve72iaCXn
-	 lRDud2C/nI9OQJ9Mz9V008Mxvf7T6PMor/2QdiXoKn9zoZv42fWWQPTWAeUdpd3i+r
-	 Eu7TwFD4U3iYA==
-Date: Tue, 25 Apr 2023 17:56:57 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Walker Chen <walker.chen@starfivetech.com>,
-	Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
-	vkoul@kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Message-ID: <20230425-commotion-prewashed-876247bed4ab@spud>
-References: <20230419-labored-camper-644d51a7ca96@spud>
- <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
- <20230424-baffle-punch-ec73098f2b6a@spud>
- <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
- <20230425-unquote-eligible-09f743d81981@wendy>
- <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
- <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
- <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
- <20230425-resale-footrest-de667778c4fe@wendy>
- <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+	id 1prN0x-001u26-0A
+	for linux-phy@lists.infradead.org;
+	Tue, 25 Apr 2023 18:03:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1682445822;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=mLRDaEM8IkNU4aroONTY8q5AePgj7Z5Af/7/yOM3ivs=;
+	b=PevYoZejm0YZm0ADwPkEWjnmqEA3rxFksg3sHZmBKv+NrI9l4RpVSNh+PSKcP4fq3RGoUZ
+	/YOwI73hlPiI0c3C2+yEB7CWabilX1qs48o1vglFh0QUxZx+nUkB42jdBFd61D2km8vR4G
+	zb90gEFTT3p0CDGU8odTJ6CDZ1O6e6s=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-214-OOLmGhWpNL2TwZqC2498ag-1; Tue, 25 Apr 2023 14:03:40 -0400
+X-MC-Unique: OOLmGhWpNL2TwZqC2498ag-1
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-74e12dd9c54so971823685a.0
+        for <linux-phy@lists.infradead.org>; Tue, 25 Apr 2023 11:03:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682445820; x=1685037820;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=mLRDaEM8IkNU4aroONTY8q5AePgj7Z5Af/7/yOM3ivs=;
+        b=GYSHxZuU54zmuIHeXcJtArjxpOK0jOrl1yNt9adn2pU1EBKkIIcTqb5iJHbFVpn3Mr
+         F/ioOTsHmvlIrsBOrlxi2b7vIUoUVIK43dBYldHxfQQ5V+9ElwsjyssvfTbm/Qw76/3f
+         obRul/DW/u+El08f2gR5JB+mEz+P1v6u1RQjbyb2zUCdYFrpZ8FBeYiJZ6Xk6VSD4qXN
+         Ijf+HMC6EMXqpRhsXQftTQqC+2L2FBZGMlF1CJ2wcYqgyWJUjsQxKr0PxXPVMmM2Je4e
+         Un2H/r5oDea5rLQd2dsqVPkPqehqzvpu+QtW/o8lcEOhPsAgGSb6hmEMqd2x8uKeRgCo
+         wazg==
+X-Gm-Message-State: AAQBX9c0mmkrPjECgqCeT6IEIALN+aTxW5If2CmKFK9KZX6LqxYh9zht
+	spABjwR4r619SlIIU34P3qO6zY2SEfuO/kclrkXQSV4NcmMDaW6mcztxUF4n1vnnlDmZl9d7xqo
+	xYsmJ8mrdrsdGnvjzpR76RO6vPQ==
+X-Received: by 2002:ac8:5c01:0:b0:3e1:59e8:745a with SMTP id i1-20020ac85c01000000b003e159e8745amr28268793qti.3.1682445820211;
+        Tue, 25 Apr 2023 11:03:40 -0700 (PDT)
+X-Google-Smtp-Source: AKy350ZR+URkOBjqHmQb78faZMLxITsne2FMxrzysNlFS71f08K8wvOrg5C2bC9hBB1dS3N1M/UwJg==
+X-Received: by 2002:ac8:5c01:0:b0:3e1:59e8:745a with SMTP id i1-20020ac85c01000000b003e159e8745amr28268745qti.3.1682445819878;
+        Tue, 25 Apr 2023 11:03:39 -0700 (PDT)
+Received: from fedora (modemcable181.5-202-24.mc.videotron.ca. [24.202.5.181])
+        by smtp.gmail.com with ESMTPSA id ge8-20020a05622a5c8800b003e3914c6839sm1868947qtb.43.2023.04.25.11.03.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 25 Apr 2023 11:03:39 -0700 (PDT)
+Date: Tue, 25 Apr 2023 14:03:36 -0400
+From: Adrien Thierry <athierry@redhat.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Shazad Hussain <quic_shazhuss@quicinc.com>, agross@kernel.org,
+	andersson@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v1 0/6] arm64: qcom: sa8775p: add support for USB
+Message-ID: <ZEgV+H3yZLp48Dlc@fedora>
+References: <20230421133922.8520-1-quic_shazhuss@quicinc.com>
+ <ZEcEGJiikEC2wIVE@fedora>
+ <CAA8EJpr27=2jAXbamN6J7yF+7G=L5Af8+XReB5UnFuihcEwMQA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+In-Reply-To: <CAA8EJpr27=2jAXbamN6J7yF+7G=L5Af8+XReB5UnFuihcEwMQA@mail.gmail.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_095705_117658_02CDD8DC 
-X-CRM114-Status: GOOD (  24.56  )
+X-CRM114-CacheID: sfid-20230425_110343_159685_186FCD5E 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,116 +106,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1680867796580109588=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Dmitry,
 
---===============1680867796580109588==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2jPozkJrlsTQK/jH"
-Content-Disposition: inline
+> Semi-random suggestion, but could you please try using
+> clk_regmap_phy_mux/clk_regmap_phy_mux_ops for USB pipe clk src?
 
+Which specific clock are you refering to? I'm not very familiar with
+those, in the device tree I'm seeing "pipe" clocks for usb_0 and usb_1
+phys, but not for usb_2, which is the one that's causing issues.
 
---2jPozkJrlsTQK/jH
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Best,
 
-On Tue, Apr 25, 2023 at 08:26:35PM +0800, Changhuang Liang wrote:
-> On 2023/4/25 17:35, Conor Dooley wrote:
-> > On Tue, Apr 25, 2023 at 05:18:10PM +0800, Changhuang Liang wrote:
-> >> On 2023/4/25 16:19, Krzysztof Kozlowski wrote:
-> >>> On 25/04/2023 09:57, Changhuang Liang wrote:
-> >>>> Yes, "starfive,jh7110-aon-pmu" is a child-node of "starfive,jh7110-a=
-on-syscon".
-> >>>> In my opinion, "0x17010000" is "aon-syscon" on JH7110 SoC, and this =
-"aon-pmu" is just=20
-> >>>> a part of "aon-syscon" function, so I think it is inappropriate to m=
-ake "aon-syscon"
-> >>>> to a power domain controller. I think using the child-node descripti=
-on is closer to
-> >>>> JH7110 SoC.=20
-> >>>
-> >>> Unfortunately, I do not see the correlation between these, any
-> >>> connection. Why being a child of syscon block would mean that this
-> >>> should no be power domain controller? Really, why? These are two
-> >>> unrelated things.
-> >>
-> >> Let me summarize what has been discussed above.=20
-> >>
-> >> There has two ways to describe this "starfive,jh7110-aon-syscon"(0x170=
-10000).
-> >> 1. (0x17010000) is power-controller node:
-> >>
-> >> 	aon_pwrc: power-controller@17010000 {
-> >> 		compatible =3D "starfive,jh7110-aon-pmu", "syscon";
-> >> 		reg =3D <0x0 0x17010000 0x0 0x1000>;
-> >> 		#power-domain-cells =3D <1>;
-> >> 	};
-> >>
-> >>
-> >> 2. (0x17010000) is syscon node, power-controller is child-node of sysc=
-on:
-> >>
-> >> 	aon_syscon: syscon@17010000 {
-> >> 		compatible =3D "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
-> >> 		reg =3D <0x0 0x17010000 0x0 0x1000>;
-> >>
-> >> 		aon_pwrc: power-controller {
-> >> 			compatible =3D "starfive,jh7110-aon-pmu";
-> >> 			#power-domain-cells =3D <1>;
-> >> 		};
-> >> 	};
-> >=20
-> > I thought that Rob was suggesting something like this:
-> > 	aon_syscon: syscon@17010000 {
-> > 		compatible =3D "starfive,jh7110-aon-syscon", ...
-> > 		reg =3D <0x0 0x17010000 0x0 0x1000>;
-> > 		#power-domain-cells =3D <1>;
-> > 	};
+Adrien
 
-> I see the kernel:
-> https://elixir.bootlin.com/linux/latest/source/arch/arm64/boot/dts/mediat=
-ek/mt8167.dtsi
-> this file line 42:
-> it's power-controller also has no meaningful properties.
-> What do you think?
-
-I'm not sure that I follow. It has a bunch of child-nodes does it not,
-each of which is a domain?
-
-I didn't see such domains in your dts patch, they're defined directly in
-the driver instead AFAIU. Assuming I have understood that correctly,
-your situation is different to that mediatek one?
-
-Cheers,
-Conor.
-
---2jPozkJrlsTQK/jH
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZEgGWQAKCRB4tDGHoIJi
-0n5hAQCXOV1SrfD6iA2QcZe3hIYyiXSLArZEvyZM7JlrkXLP+QD/dv8/MQyPmHPt
-hLWQvz3H3XVzqkslQ4ihE4QPcfIn8wI=
-=AfU5
------END PGP SIGNATURE-----
-
---2jPozkJrlsTQK/jH--
-
-
---===============1680867796580109588==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1680867796580109588==--
-
