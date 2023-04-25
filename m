@@ -4,142 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1077C7EE22
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 20:23:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D03FDC77B7F
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 21:59:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=VM7KX5S92HoAJtp5zQtpbYiTH+hSxS7YlU9cYn1u9aU=; b=vD6sVuSaspx+KOUCsFqc1b3vNG
-	dSfbUn/i7nPFfhCHfhX3AHlbxj4dWZxddxVT4K5pWuZPnRZyS8YHGqHcmQCNUm8tWcwZsH+hkgjpz
-	VDNY8QuAa10tIGQFvLYrd+NIXw5L+TMpR0U2Oqq3Q6CPrJUed6F6v+jKSEw8TIvUorUbLT4AlmT74
-	lSmr3qSf2Iajl9qb+jCo6HqbAsuy2zXt1i/iMptUQWkgsksVk8+yUD4xM3QoegPsyAWpHJqYTsE7g
-	54aHUOXzL4u+CKZhJubCLoN3qOoYosVRBcYu7ytoFyhDBcgDvc+kxx7Ihu3OKBU6VfMUp9j+1c4Vs
-	s3eAHmqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fvmNfK20q/0VdchCbUJn687TYPZdE8/9xFiQUedLjCQ=; b=2zzr4pqoSBdLu+
+	0urVHaIt7q7HJ13+J0QZ+gflb28AKpqTtaYCIvjQi9Lm207fpUNR2JIDugCnpSG7I7geH4NWI6RBH
+	FxVtq66tN8mDQB1bIFuG+/TdJ0as752aa9hGYLbsz299IqaHMoQs5LO+vTzrXS1MzW60taOpzRNDh
+	OQLvpENTjfaZtNSuI9Vnke2D50ZHsSanG/oSKEW7S6AEcIM5zghm7H/U7t38ET6z9OItOfb0PMT4l
+	8j6CaZ3yub5udSegIGLezXxEI3naosZMd2kIL4vC5qKmWEGXfmJ7rnDNKMg+qvf9GU+WBoQ0Ptbze
+	L+B9YXDgl3Rp1ogTN4Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prPBl-0029pk-0t;
-	Tue, 25 Apr 2023 20:23:01 +0000
-Received: from mail-vi1eur05hn20316.outbound.protection.outlook.com ([2a01:111:f400:7d00::316] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1prQhL-002Hzi-1N;
+	Tue, 25 Apr 2023 21:59:43 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prPBg-0029ol-2B;
-	Tue, 25 Apr 2023 20:23:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=A35MjgsPAR019rLosEKIlnYK8D1ulr8c9+RAkS+2t3Y=;
- b=kmJj7wkkDPNlUFZV7AZQDjUBTU1uKIiOjF0mDAYhtSitZnbtLn4kjiAo5vT9blucnlIKRprKUYCs7UU8o4/Y0DMWbtx0HE2HwReMXpLoiN5tZ81RUtw+wEzzH0KispkIy9r1sNg0xx0uY0DzWT92Jh7QUx4qNdW72phpa8mEYLGKDbJZfZAbYIKgArPm4iCfZCv+sp6spUgLi2HvfuiIk30YyBjID4lbMW7Q5I7GJdEKsEt0fg8p1MelknQ9bQbNSozqE5tcv854DqfPvg3ENrHQUTAoFCLQq+I/axoWHo+gXLnoQuvcGR0+EL7AVELi73nMJ6aANv7icBnauEPekg==
-Received: from FR0P281CA0063.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:49::11)
- by GV2PR03MB8777.eurprd03.prod.outlook.com (2603:10a6:150:c2::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6298.49; Tue, 25 Apr
- 2023 20:22:47 +0000
-Received: from VI1EUR05FT026.eop-eur05.prod.protection.outlook.com
- (2603:10a6:d10:49:cafe::74) by FR0P281CA0063.outlook.office365.com
- (2603:10a6:d10:49::11) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6340.20 via Frontend
- Transport; Tue, 25 Apr 2023 20:22:47 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.84)
- smtp.mailfrom=seco.com; dkim=pass (signature was verified)
- header.d=seco.com;dmarc=pass action=none header.from=seco.com;
-Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
- 20.160.56.84 as permitted sender) receiver=protection.outlook.com;
- client-ip=20.160.56.84; helo=inpost-eu.tmcas.trendmicro.com; pr=C
-Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.84) by
- VI1EUR05FT026.mail.protection.outlook.com (10.233.242.175) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6340.21 via Frontend Transport; Tue, 25 Apr 2023 20:22:46 +0000
-Received: from outmta (unknown [192.168.82.135])
-	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 5D52420080086;
-	Tue, 25 Apr 2023 20:22:46 +0000 (UTC)
-Received: from EUR04-HE1-obe.outbound.protection.outlook.com (unknown [104.47.13.52])
-	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id CA5572008006C;
-	Tue, 25 Apr 2023 20:22:45 +0000 (UTC)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ukp6s2IO4MbJ8xz7ome9ua4kNpjHvYFqj7tXImcpqQZ+0syw2vLBA8J4A1UYBDoLdC4MadpVYXYZ8SigFCAWH/+2AkKzHjp+oqIYLvoVcQFHoB0bzpAGnOBkP2NnjGOqz35Vrrw6TaYADDYExPc8Vz2u9yjNE6+l1Pn1uMt6nwNvDN+VNAYblY8fxQVH2V1wlfRSVkYV7762eNAAtbnlcgqZ0xIE0OxWgHcDZ/vrmYAtom6QgQu3p3WkAsXY160B4WOXMpcFur8sX/vRb+dhQQpiLIwVXm2L7qoZ3coHARXjvR5rd5lmXohr9OJ3M5UT+GTv/sMXd6VxSjfrsWsZ9w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=A35MjgsPAR019rLosEKIlnYK8D1ulr8c9+RAkS+2t3Y=;
- b=BQ98W3Uyx0iPfEmTqetk2BIkczn1ipFQeFggMTxQTOAMLz14KU4cglQxkdzERNFrulQVFqr0ltXfDclmYejhfan5io2r408d+d+lnIxa10DtNQEj7JhNx0FWEIEM0+ysSSqn/zYyxi7qKmzWiruR3tmssi7vGaY9NE1yB2hzApMb4AakbyK9rZhJPBDNegM1C/IfmnR4soDdmeEUpESclye9yoDD78d8wGCtZOMnjkgExRas01NB0MQiq5CVmv66gLL7S1hTREeKziJOZcHpcWQ2J9Khm0G7j42LvXTRzsqwFVbFrXM+wdBtM2aIAoYRoCHS13N18lTRSucBsefFZA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=A35MjgsPAR019rLosEKIlnYK8D1ulr8c9+RAkS+2t3Y=;
- b=kmJj7wkkDPNlUFZV7AZQDjUBTU1uKIiOjF0mDAYhtSitZnbtLn4kjiAo5vT9blucnlIKRprKUYCs7UU8o4/Y0DMWbtx0HE2HwReMXpLoiN5tZ81RUtw+wEzzH0KispkIy9r1sNg0xx0uY0DzWT92Jh7QUx4qNdW72phpa8mEYLGKDbJZfZAbYIKgArPm4iCfZCv+sp6spUgLi2HvfuiIk30YyBjID4lbMW7Q5I7GJdEKsEt0fg8p1MelknQ9bQbNSozqE5tcv854DqfPvg3ENrHQUTAoFCLQq+I/axoWHo+gXLnoQuvcGR0+EL7AVELi73nMJ6aANv7icBnauEPekg==
-Authentication-Results-Original: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
- by PA4PR03MB6750.eurprd03.prod.outlook.com (2603:10a6:102:ec::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6340.21; Tue, 25 Apr
- 2023 20:22:39 +0000
-Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2226:eb03:a8c:a7e5]) by DB9PR03MB8847.eurprd03.prod.outlook.com
- ([fe80::2226:eb03:a8c:a7e5%2]) with mapi id 15.20.6298.054; Tue, 25 Apr 2023
- 20:22:39 +0000
-Message-ID: <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
-Date: Tue, 25 Apr 2023 16:22:32 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
-Content-Language: en-US
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, linux-phy@lists.infradead.org,
- Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org,
- Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
- Bagas Sanjaya <bagasdotme@gmail.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
- =?UTF-8?Q?Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>,
- Jonas Gorski <jonas.gorski@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
- Li Yang <leoyang.li@nxp.com>, Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Shawn Guo
- <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
- linux-gpio@vger.kernel.org
-References: <20230425195002.fls5cmwolyrslpad@skbuf>
-From: Sean Anderson <sean.anderson@seco.com>
-In-Reply-To: <20230425195002.fls5cmwolyrslpad@skbuf>
-X-ClientProxiedBy: BL0PR1501CA0028.namprd15.prod.outlook.com
- (2603:10b6:207:17::41) To DB9PR03MB8847.eurprd03.prod.outlook.com
- (2603:10a6:10:3dd::13)
+	id 1prQhH-002HzD-2R
+	for linux-phy@lists.infradead.org;
+	Tue, 25 Apr 2023 21:59:41 +0000
+Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-1a66b9bd7dfso67203435ad.2
+        for <linux-phy@lists.infradead.org>; Tue, 25 Apr 2023 14:59:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1682459977; x=1685051977;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=difEtPuCDEVNmMp3S1bKLId011LEY1AQ3x0QKrDmjBQ=;
+        b=S3w+hxVSXUjf+CkB5IyKTXkNPx182kQt0bKRPexETKFUkN8pGQjz1YYaCBNrFBYpzr
+         cgi4wmshcc49UKLYxPdlTPvHulSkuLEXFIQxZiNrH+GokivUC6o8+5D82mUqwg3gvDrS
+         O95mwo//wvuVH5ZzO04oQsPyJKr0GYNAwK63URxj6fmM5x9ZwdRK6D6H1IMfHTz1FBRV
+         PIK6bE6VGLjTpoFHFH6ZREy3i66Ja7naVM+8/4w0CQjcR16K9JDilSNHPEmPPpMrRxr7
+         DC8ZkZqGmVeldX3G6n2+sR5A/n1ow4wFTp9DFKP4PbJ4amp+JbuywNG0iU/iar1fJOOf
+         iZ4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682459977; x=1685051977;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=difEtPuCDEVNmMp3S1bKLId011LEY1AQ3x0QKrDmjBQ=;
+        b=dh1Hivk56S3RkkvqdjioVqXPKjTqNU4BgfHogJ20VX0+eC8ko9R2biQJ1O2lFppCyt
+         Lz/CAwmhte32GMtFZMJMwJNfRogzUO2ppyUkZX0dOxON3WLh6SL1Xlb36ihAFDznq0Lt
+         zQqai1XxYoQ0JnJpPcwFfO5PG86x7pwzd5XMjxnOOyqZ973vkudbuOvaCPNSW6WPj4Z5
+         8zbSs/uiXJDbEUnl/fRKyjXKbMqlq6jIP8IkT66Tha+qJ1XbxogGiDQ2r7hnza57s8EW
+         rJovvh1ogNMFHF0wUcp1WZWHtYBP4deYexJELJ3SFVuX7clC7Ix/9qSeoK3R0fQ2wFDL
+         toWw==
+X-Gm-Message-State: AAQBX9fTwJl1NXjARU7qQEAu/3R9MrkOL+XedyiOri9OBQRGcx5+BtWK
+	3keP3Ys8CQKTPLLsV5uZIjQ=
+X-Google-Smtp-Source: AKy350bwWHi609pFymTUNkUnd3Frl4I/UsuTySFhImTSUYKfyFWlWHvltuFBRCbB+upAb9j6bMrEng==
+X-Received: by 2002:a17:903:32cc:b0:1a1:f5dd:2dce with SMTP id i12-20020a17090332cc00b001a1f5dd2dcemr23876138plr.6.1682459976758;
+        Tue, 25 Apr 2023 14:59:36 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id d9-20020a170902b70900b001a96d295f15sm4414634pls.284.2023.04.25.14.59.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 25 Apr 2023 14:59:36 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: stable@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org,
+	sashal@kernel.org,
+	gregkh@linuxfoundation.org,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Justin Chen <justinpopo6@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Al Cooper <alcooperx@gmail.com>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
+Subject: [PATCH stable 6.1] phy: phy-brcm-usb: Utilize platform_get_irq_byname_optional()
+Date: Tue, 25 Apr 2023 14:59:32 -0700
+Message-Id: <20230425215932.4063037-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|PA4PR03MB6750:EE_|VI1EUR05FT026:EE_|GV2PR03MB8777:EE_
-X-MS-Office365-Filtering-Correlation-Id: 995e07b0-2d74-485f-4953-08db45cad56a
-X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original:  +svtPfkN2XXYlJReU7gCXmA83F/KAX2qtgwa7z6GnkLJQ8SsQU0m3WWh33RyiYUSNOXK5INztB4fjy11Een3/BIKYU21SmRwVTx/7J8IpESga5hq4J2+a/eyYPPw1a1Y1Fgj48ICvK94MHw767n0YJ61aX/w3Oj9dZK+LAnyoUN/2cyGWNoXa/qzmKh6iCDI4sgL83xKJ/OY/x1td9EeDXl93Ys3wtJ3ha0NSE+9cVGb5NSpKufExXr1O6ZCrEbORhhSFraW7xHSG1VqOpR17V8DcCj2Z/zkm733fsOIsiemsDLywZIVClm8ddvnYCdysK4WTTTMtvCi5ASJMjxz4Q10qU0fhSvlOr9b/UZXNuddXhegG6prOKKVBt9aCpBX5UF5XhcOPMcmk1gcSUMvfLOw72CxZsox/fnmQyOcz9fHraM6dF6bRhYilNrvxpcyTsRmUq7Gjz2qb82h4H0alLDmyWB/Zaw6fu2prMk1eZWqLSkhN5NDUE+dKDdUu19znVPhCNvVrgDzxnTqkgnN0DcXSI7iYp/7sRG2lxVhSnxZzPqTdmaYbgEiC0gzDWIiQmgbVvH04+OZUdx3/0YxwWqenC3o2j4r0uhkhvqo9v9kvfLKt/sVw8nZrFFhk0QvRDickIctW96tcZR1cmHHXNktRvFJeIYZ49sGenuYX8DQFdOc28n0Oym+S87o2mvr
-X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(136003)(366004)(396003)(346002)(376002)(39850400004)(451199021)(83380400001)(52116002)(6666004)(2906002)(478600001)(54906003)(44832011)(5660300002)(41300700001)(316002)(8936002)(8676002)(66556008)(66946007)(6916009)(4326008)(66476007)(7416002)(31696002)(86362001)(38100700002)(38350700002)(6486002)(36756003)(186003)(6506007)(6512007)(26005)(53546011)(31686004)(2616005)(66899021)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR03MB6750
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped:  VI1EUR05FT026.eop-eur05.prod.protection.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 	f4cdf33a-9348-4d92-db32-08db45cad09d
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	7yRa+hc2luBLA3LZdw2Gk2LEuOsulK2q3eJsaGjN6AmnsYgLabVwbS27YZI2Sfq6b3Z88YyXCIJUIFXyYoAA5Vd4aoAWWNWNxymJJ4CWKPujURQ1/TgL2t3TZfVL2XR6C8mEbPDQOxlJE3pHGZDdtD6DyHSv+4muPNVCuckMOstME8I+vib++6ui0MTCxK5AZIxwP+jr24BnZglxSZO8JiQf/TqLzglAfSXGM9fcSAGNSJBhedYAIQhDxK2HadnmLN+ZLXFIRd7n89ciDldbFMz3Kz8m5WWxrSMPvDJHZtkzucA2bO7gGcyymDjL2DQ/a1fJZL4GWHQRFhRhkC5TKBmgCEyETpw4Kp7eOH8kGFBmoXlg4Zpfj0BkStbxNn7kdrg5tsveEauk0DNPtHD1+fhqitd8WHbRadszjIj1hux2NGYDqQaSHpstfOhDJZWc1tkAzLghJWGW42INOs8q+DSxQ/dxo1Tcvamo5kPegowpAWhiZ4w7Ba3f92ph/fW0raTvhkgyMvAx3KFAnwPGhZEJt2fCfbJnpvtaRTsZhbKmA04jcd774KFm9B7hswEnt3zF+lsK1BD3HZEg//PZVodu7TxwtrSdOUXw3RIxEF4wlzVkUwdQS8JjiMem56fRZtGeGXM0VaE4dmbZTgowTQKByd0uOqoZnB0VgdLTOv3a4GyrZ9gh3RLT2B1aVZZ0eHldmpjOIxaDUew4dJsMgaESIQd1VXPcH/24RWT+0sUzaku+RKhhav7ha7J+oPqYq1/py8fFrlVT05RJeDr+Q+cMJ5M+/9UhKFOisAQK6PA=
-X-Forefront-Antispam-Report: 	CIP:20.160.56.84;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(39850400004)(376002)(396003)(136003)(346002)(451199021)(5400799015)(40470700004)(46966006)(36840700001)(31686004)(83380400001)(47076005)(2616005)(36860700001)(6506007)(53546011)(82310400005)(6512007)(336012)(26005)(36756003)(478600001)(6666004)(34070700002)(86362001)(54906003)(31696002)(6486002)(41300700001)(316002)(7636003)(70206006)(356005)(70586007)(4326008)(7596003)(40460700003)(66899021)(8936002)(82740400003)(6916009)(40480700001)(8676002)(186003)(44832011)(7416002)(2906002)(5660300002)(43740500002)(12100799030);DIR:OUT;SFP:1501;
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Apr 2023 20:22:46.8342
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 995e07b0-2d74-485f-4953-08db45cad56a
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.84];Helo=[inpost-eu.tmcas.trendmicro.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	VI1EUR05FT026.eop-eur05.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR03MB8777
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_132258_047839_B0C0F1BB 
-X-CRM114-Status: GOOD (  32.73  )
+X-CRM114-CacheID: sfid-20230425_145939_799450_01B1DF5B 
+X-CRM114-Status: GOOD (  11.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,83 +97,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/25/23 15:50, Vladimir Oltean wrote:
-> Hello,
-> 
-> On Thu, 13 Apr 2023 12:05:52 -0400, Sean Anderson wrote:
->> This series is ready for review by the phy maintainers. I have addressed
->> all known feedback and there are no outstanding issues.
->> 
->> Major reconfiguration of baud rate (e.g. 1G->10G) does not work.
->> 
->> There are several stand-alone commits in this series. Please feel free
->> to pick them as appropriate. In particular, commits 1, 3, 4, 12, 13, and
->> 14 are all good candidates for picking.
->> 
->> - Although this is untested, it should support 2.5G SGMII as well as
->>   1000BASE-KX. The latter needs MAC and PCS support, but the former
->>   should work out of the box.
->> - It allows for clock configurations not supported by the RCW. This is
->>   very useful if you want to use e.g. SRDS_PRTCL_S1=0x3333 and =0x1133
->>   on the same board. This is because the former setting will use PLL1
->>   as the 1G reference, but the latter will use PLL1 as the 10G
->>   reference. Because we can reconfigure the PLLs, it is possible to
->>   always use PLL1 as the 1G reference.
-> 
-> I am an engineer working for NXP and I have access to the majority of
-> hardware that includes the Lynx 10G SERDES, as well as to block guides
-> that are not visible to customers, and to people from the hardware
-> design and validation teams.
-> 
-> I have an interest in adding a driver for this SERDES to support dynamic
-> Ethernet protocol reconfiguration, and perhaps the internal PHY for
-> copper backplane modes (1000Base-KX, 10GBase-KR) and its link training
-> procedure - although the latter will need more work.
-> 
-> I would like to thank you for starting the effort, but please, stop
-> submitting code for modes that are untested, and do not submit features
-> that do not work. 
+commit 53bffe0055741440a6c91abb80bad1c62ea443e3 upstream
 
-The features which do not work (major protocol changes) are disabled :)
+The wake-up interrupt lines are entirely optional, avoid printing
+messages that interrupts were not found by switching to the _optional
+variant.
 
-If it would cause this series to be immediately merged, I would remove
-KX/KR and 2.5G which are the only untested link modes.
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Acked-by: Justin Chen <justinpopo6@gmail.com>
+Link: https://lore.kernel.org/r/20221026224450.2958762-1-f.fainelli@gmail.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+---
+This patch is only needed in Linux 6.1 and is already in Linux 6.2.
 
-That said, PCS support is necessary for these modes, so it is not even
-possible to select them.
+ drivers/phy/broadcom/phy-brcm-usb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-> If you do not have the time to fix up the loose ends
-> for this patch submission now
+diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+index 2bfd78e2d8fd..7a4c328bac58 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb.c
++++ b/drivers/phy/broadcom/phy-brcm-usb.c
+@@ -445,9 +445,9 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
+ 		priv->suspend_clk = NULL;
+ 	}
+ 
+-	priv->wake_irq = platform_get_irq_byname(pdev, "wake");
++	priv->wake_irq = platform_get_irq_byname_optional(pdev, "wake");
+ 	if (priv->wake_irq < 0)
+-		priv->wake_irq = platform_get_irq_byname(pdev, "wakeup");
++		priv->wake_irq = platform_get_irq_byname_optional(pdev, "wakeup");
+ 	if (priv->wake_irq >= 0) {
+ 		err = devm_request_irq(dev, priv->wake_irq,
+ 				       brcm_usb_phy_wake_isr, 0,
+-- 
+2.34.1
 
-I have time to fix up any loose ends preventing this series from being
-applied. However, I am not very sympathetic to larger requests, since
-there has been extensive time to supply feedback already.
-
-> , you won't have the time to debug
-> regressions on boards you might not even have access to, which worked
-> fine previously due to the static RCW/PBL configuration.
-
-I have gotten no substantive feedback on this driver. I have been
-working on this series since June last year, and no one has commented on
-the core algotithms thus far. My capacity for making large changes has
-decreased because the project funding the development has ended. I
-appreciate that you are taking interest now, but frankly I think it is
-rather past time...
-
-> I have downloaded your patches, and although I have objections to some
-> of them already, I will be in the process of evaluating, testing,
-> changing them, for the coming weeks, perhaps even more. Please consider
-> this a NACK for the current patch set due to the SERDES related material,
-> although the unrelated patches (like "dt-bindings: Convert gpio-mmio to
-> yaml") can and should have been submitted separately, so they can be
-> analyzed by their respective maintainers based on their own merit and
-> not as part of an overall problematic set.
-
-This patchset has been ready to merge for several revisions now. I do
-not consider it problematic. However, I do consider the (nonexistant)
-review process for this subsystem extremely problematic.
-
---Sean
 
 -- 
 linux-phy mailing list
