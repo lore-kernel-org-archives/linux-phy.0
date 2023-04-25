@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18735C7EE22
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62FDDC7EE24
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 03:40:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,59 +12,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dCjYblRorS5fMmyZpC8Q2NeNJirmWsAo7+cA0XVhhf4=; b=XZthVVa+0RUIrW
-	mLouHWVjam9D8h+mEEjXGb0feBJDEqcChnTGElN/oj6s4N7vA8r9rGEBuFxMrgkrvX1SHmEgBPTD8
-	LSzp9tbtglHwlrmkNbgDSiCnnFIumui/G7J0+wW2BuF3+HhFlRY+U4Wut8d3h37pXX9vPtWg4BjbB
-	umIBDdWDW8WNqk1sKDleCCqMJe2CA770glYH+FBsTE1qxnhlQbyi7v4FNLtInlHMaSwrewBgnl/8E
-	IDI+u0rNA7VBuqwU7o2Ob3FhIPfOmLXWoluh8JELTIk2rlmSHT4JJqJ3ApoxICzvmxQHkRg5dkC4Y
-	d8/08r9nZerB5ddE22Qw==;
+	List-Owner; bh=rk26NurfgiOwoF2hgpaXWtKrRIDU+fng3xM3CEsedW4=; b=XfUy9T8Of9IMuM
+	XyhXlzUVZqGVoVnQVzgJSIpjspPGGxHfzKm07VszK5i0Sl2JAp99w10/pFZ9lQ0sgL8vCzRDQJQLh
+	Mec/FY0wn7HCmp2g3YhT3faZBxosL31wNM8ay0M688CO0mIabte1I58ee660VBeNvAUO8+XsIWd1B
+	KKPx8TDXYOf7Cx7ehOOv+PJo2YP1bNVgZGaVeCKvgl+I0dj0k5/XmmANs9rrl0/m8TPPX8jAtxbm3
+	/ea3vVfAQzv5auYdf2fAqweHO2LAs4JmG0//q9xuMsDboqzBhS54LGTYohAwX/HlT0wouIsE1K8eL
+	utmCcB/SvnQrj3+T7PfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9XY-0006og-2L;
-	Tue, 25 Apr 2023 03:40:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pr9XZ-0006ot-0C;
+	Tue, 25 Apr 2023 03:40:29 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9XS-0006kv-1j
+	id 1pr9XS-0006le-27
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Apr 2023 03:40:25 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33P2o721000378;
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33P3Pj6A000756;
 	Tue, 25 Apr 2023 03:40:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=aZXRuimsYDfEKNRtGkkjpUi7/TQN+pdGssePz8bGgXU=;
- b=NNht8sjcDohEFfXV/dPxTfvyS11rgBVI4O+vECmMDmVzQVzEeR2FRP0ij6iMcYR48RWi
- pCW4fbyqZcXoDseF9pewxI1e+dsG2jbR43W+Iibg6ceDY+vk3qrRaw6QpE1+ydJtxZlA
- OROOhPAqnxRw5ejjvHvhVfH924M2/g2FoO2+PIxyia7Ojg/qKWqk2LjxEZrVz4+5yjhD
- 5t5a8yh8+S6q50RZ4E8A9pm9T/zaHh9X59TRAby6v3RC3Uz0mz4mSBT0H1Cck5N2wpzR
- S+WFzxDc6839FTwvLHz5eydNsMwgQbRASs+ry2TP9jhwwKk2H45kCl8piL5ZSVzLvbGK Cg== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q5mnnjcms-1
+ bh=ZLYPvSeQr3Tg2IaIDunQUSVRvAmXPI3fsbmQUToA1V8=;
+ b=MEmToFlqHwZglNNDqUJGdOcgy3ORrx3xKyP2zYNj3SEJ0K2+u5LQUOAWOqt0y8Mdh0yq
+ vOpFFvJBqUrM2cpwPrR9X+P1cBe8EPpXVsNe4AIORQPfX+cu+naikqQDphiNsZi2zVJO
+ CcrweNUXQV5DgEMrKHDxXsL6s8UbxuLoHwYeUXwuBTvr6zXOLrLPrmZFhczOK6VTybDJ
+ 9SBjLqxNNZMz99xyyG8jB/fnqQWTygNUWMZt+1E0qoXPdCe6Iu/G/fZLb8ngywRglf2z
+ EeYYVUJ756/Yeg4sbZBD20rU6Llm/JXrcfAgJsC9A7DhGpy0tutldluPoE2rjurr4NkZ YQ== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q5uwj1d7m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Tue, 25 Apr 2023 03:40:18 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33P3eHsm008571
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33P3eI0J028539
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Apr 2023 03:40:17 GMT
+	Tue, 25 Apr 2023 03:40:18 GMT
 Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Mon, 24 Apr 2023 20:40:16 -0700
+ 15.2.986.42; Mon, 24 Apr 2023 20:40:17 -0700
 From: Bjorn Andersson <quic_bjorande@quicinc.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Johan Hovold <johan@kernel.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
+To: Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio
 	<konrad.dybcio@linaro.org>,
+        Johan Hovold <johan@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
         Rob Herring <robh+dt@kernel.org>,
-        Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 4/7] phy: qcom-qmp-combo: Introduce orientation switching
-Date: Mon, 24 Apr 2023 20:40:07 -0700
-Message-ID: <20230425034010.3789376-5-quic_bjorande@quicinc.com>
+Subject: [PATCH 7/7] arm64: dts: qcom: sc8280xp-x13s: Add QMP to SuperSpeed graph
+Date: Mon, 24 Apr 2023 20:40:10 -0700
+Message-ID: <20230425034010.3789376-8-quic_bjorande@quicinc.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
 References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
@@ -74,19 +74,19 @@ X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: t4NiNz6Nwbkn6kc_j81ajb9bw1g2KFvz
-X-Proofpoint-ORIG-GUID: t4NiNz6Nwbkn6kc_j81ajb9bw1g2KFvz
+X-Proofpoint-ORIG-GUID: fqcO8NGRT-IF1vzzOgL8aH3iBx-f8XFL
+X-Proofpoint-GUID: fqcO8NGRT-IF1vzzOgL8aH3iBx-f8XFL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-25_03,2023-04-21_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 phishscore=0 mlxscore=0 lowpriorityscore=0 malwarescore=0
- suspectscore=0 adultscore=0 mlxlogscore=999 spamscore=0 clxscore=1015
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304250031
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
+ lowpriorityscore=0 phishscore=0 suspectscore=0 impostorscore=0
+ adultscore=0 priorityscore=1501 clxscore=1015 malwarescore=0 spamscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304250032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230424_204022_716371_EFCC5E1F 
-X-CRM114-Status: GOOD (  28.07  )
+X-CRM114-CacheID: sfid-20230424_204022_745945_0913D557 
+X-CRM114-Status: GOOD (  15.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,230 +103,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The data lanes of the QMP PHY is swapped in order to handle changing
-orientation of the USB Type-C cable. Register a typec_switch device to
-allow a TCPM to configure the orientation.
+Following the CRD, connect the two QMP phys inbetween the USB Type-C
+connectors and the DisplayPort controller, to handle orientation
+switching.
 
-The newly introduced orientation variable is adjusted based on the
-request, and the initialized components are brought down and up again.
-To keep track of what parts needs to be cycled new variables to keep
-track of the individual init_count is introduced.
-
-Both the USB and the DisplayPort altmode signals are properly switched.
-For DisplayPort the controller will after the TCPM having established
-orientation power on the PHY, so this is not done implicitly, but for
-USB the PHY typically is kept initialized across the switch, and must
-therefor then be reinitialized.
-
-This is based on initial work by Wesley Cheng.
-
-Link: https://lore.kernel.org/r/20201009082843.28503-3-wcheng@codeaurora.org/
 Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 92 ++++++++++++++++++++---
- 1 file changed, 83 insertions(+), 9 deletions(-)
+ .../qcom/sc8280xp-lenovo-thinkpad-x13s.dts    | 28 ++++++++++++++++---
+ 1 file changed, 24 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 6748f31da7a3..5d6d6ef3944b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -20,6 +20,7 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- #include <linux/usb/typec.h>
-+#include <linux/usb/typec_mux.h>
+diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+index 5ef3f4c07d75..382f27946468 100644
+--- a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
++++ b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+@@ -106,7 +106,7 @@ port@1 {
+ 					reg = <1>;
  
- #include <dt-bindings/phy/phy-qcom-qmp.h>
+ 					pmic_glink_con0_ss: endpoint {
+-						remote-endpoint = <&mdss0_dp0_out>;
++						remote-endpoint = <&usb_0_qmpphy_out>;
+ 					};
+ 				};
  
-@@ -1320,15 +1321,18 @@ struct qmp_combo {
+@@ -141,7 +141,7 @@ port@1 {
+ 					reg = <1>;
  
- 	struct phy *usb_phy;
- 	enum phy_mode mode;
-+	unsigned int usb_init_count;
+ 					pmic_glink_con1_ss: endpoint {
+-						remote-endpoint = <&mdss0_dp1_out>;
++						remote-endpoint = <&usb_1_qmpphy_out>;
+ 					};
+ 				};
  
- 	struct phy *dp_phy;
- 	unsigned int dp_aux_cfg;
- 	struct phy_configure_opts_dp dp_opts;
-+	unsigned int dp_init_count;
+@@ -554,7 +554,7 @@ &mdss0_dp0 {
  
- 	struct clk_fixed_rate pipe_clk_fixed;
- 	struct clk_hw dp_link_hw;
- 	struct clk_hw dp_pixel_hw;
- 
-+	struct typec_switch_dev *sw;
- 	enum typec_orientation orientation;
+ &mdss0_dp0_out {
+ 	data-lanes = <0 1>;
+-	remote-endpoint = <&pmic_glink_con0_ss>;
++	remote-endpoint = <&usb_0_qmpphy_dp_in>;
  };
  
-@@ -2458,14 +2462,14 @@ static int qmp_combo_dp_calibrate(struct phy *phy)
- 	return 0;
- }
+ &mdss0_dp1 {
+@@ -563,7 +563,7 @@ &mdss0_dp1 {
  
--static int qmp_combo_com_init(struct qmp_combo *qmp)
-+static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *com = qmp->com;
- 	int ret;
- 	u32 val;
+ &mdss0_dp1_out {
+ 	data-lanes = <0 1>;
+-	remote-endpoint = <&pmic_glink_con1_ss>;
++	remote-endpoint = <&usb_1_qmpphy_dp_in>;
+ };
  
--	if (qmp->init_count++)
-+	if (!force && qmp->init_count++)
- 		return 0;
+ &mdss0_dp3 {
+@@ -1140,9 +1140,19 @@ &usb_0_qmpphy {
+ 	vdda-phy-supply = <&vreg_l9d>;
+ 	vdda-pll-supply = <&vreg_l4d>;
  
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-@@ -2526,11 +2530,11 @@ static int qmp_combo_com_init(struct qmp_combo *qmp)
- 	return ret;
- }
- 
--static int qmp_combo_com_exit(struct qmp_combo *qmp)
-+static int qmp_combo_com_exit(struct qmp_combo *qmp, bool force)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
--	if (--qmp->init_count)
-+	if (!force && --qmp->init_count)
- 		return 0;
- 
- 	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-@@ -2550,12 +2554,14 @@ static int qmp_combo_dp_init(struct phy *phy)
- 
- 	mutex_lock(&qmp->phy_mutex);
- 
--	ret = qmp_combo_com_init(qmp);
-+	ret = qmp_combo_com_init(qmp, false);
- 	if (ret)
- 		goto out_unlock;
- 
- 	cfg->dp_aux_init(qmp);
- 
-+	qmp->dp_init_count++;
++	orientation-switch;
 +
- out_unlock:
- 	mutex_unlock(&qmp->phy_mutex);
- 	return ret;
-@@ -2567,8 +2573,9 @@ static int qmp_combo_dp_exit(struct phy *phy)
+ 	status = "okay";
+ };
  
- 	mutex_lock(&qmp->phy_mutex);
++&usb_0_qmpphy_dp_in {
++	remote-endpoint = <&mdss0_dp0_out>;
++};
++
++&usb_0_qmpphy_out {
++	remote-endpoint = <&pmic_glink_con0_ss>;
++};
++
+ &usb_0_role_switch {
+ 	remote-endpoint = <&pmic_glink_con0_hs>;
+ };
+@@ -1167,9 +1177,19 @@ &usb_1_qmpphy {
+ 	vdda-phy-supply = <&vreg_l4b>;
+ 	vdda-pll-supply = <&vreg_l3b>;
  
--	qmp_combo_com_exit(qmp);
-+	qmp_combo_com_exit(qmp, false);
++	orientation-switch;
++
+ 	status = "okay";
+ };
  
-+	qmp->dp_init_count--;
- 	mutex_unlock(&qmp->phy_mutex);
- 
- 	return 0;
-@@ -2688,16 +2695,18 @@ static int qmp_combo_usb_init(struct phy *phy)
- 	int ret;
- 
- 	mutex_lock(&qmp->phy_mutex);
--	ret = qmp_combo_com_init(qmp);
-+	ret = qmp_combo_com_init(qmp, false);
- 	if (ret)
- 		goto out_unlock;
- 
- 	ret = qmp_combo_usb_power_on(phy);
- 	if (ret) {
--		qmp_combo_com_exit(qmp);
-+		qmp_combo_com_exit(qmp, false);
- 		goto out_unlock;
- 	}
- 
-+	qmp->usb_init_count++;
++&usb_1_qmpphy_dp_in {
++	remote-endpoint = <&mdss0_dp1_out>;
++};
 +
- out_unlock:
- 	mutex_unlock(&qmp->phy_mutex);
- 	return ret;
-@@ -2713,10 +2722,12 @@ static int qmp_combo_usb_exit(struct phy *phy)
- 	if (ret)
- 		goto out_unlock;
- 
--	ret = qmp_combo_com_exit(qmp);
-+	ret = qmp_combo_com_exit(qmp, false);
- 	if (ret)
- 		goto out_unlock;
- 
-+	qmp->usb_init_count--;
++&usb_1_qmpphy_out {
++	remote-endpoint = <&pmic_glink_con1_ss>;
++};
 +
- out_unlock:
- 	mutex_unlock(&qmp->phy_mutex);
- 	return ret;
-@@ -3351,6 +3362,65 @@ static struct phy *qmp_combo_phy_xlate(struct device *dev, struct of_phandle_arg
- 	return ERR_PTR(-EINVAL);
- }
- 
-+#if IS_ENABLED(CONFIG_TYPEC)
-+static int qmp_combo_typec_switch_set(struct typec_switch_dev *sw,
-+				      enum typec_orientation orientation)
-+{
-+	struct qmp_combo *qmp = typec_switch_get_drvdata(sw);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+
-+	if (orientation == qmp->orientation || orientation == TYPEC_ORIENTATION_NONE)
-+		return 0;
-+
-+	mutex_lock(&qmp->phy_mutex);
-+	qmp->orientation = orientation;
-+
-+	if (qmp->init_count) {
-+		if (qmp->usb_init_count)
-+			qmp_combo_usb_power_off(qmp->usb_phy);
-+		qmp_combo_com_exit(qmp, true);
-+
-+		qmp_combo_com_init(qmp, true);
-+		if (qmp->usb_init_count)
-+			qmp_combo_usb_power_on(qmp->usb_phy);
-+		if (qmp->dp_init_count)
-+			cfg->dp_aux_init(qmp);
-+	}
-+	mutex_unlock(&qmp->phy_mutex);
-+
-+	return 0;
-+}
-+
-+static void qmp_combo_typec_unregister(void *data)
-+{
-+	struct qmp_combo *qmp = data;
-+
-+	typec_switch_unregister(qmp->sw);
-+}
-+
-+static int qmp_combo_typec_switch_register(struct qmp_combo *qmp)
-+{
-+	struct typec_switch_desc sw_desc = {};
-+	struct device *dev = qmp->dev;
-+
-+	sw_desc.drvdata = qmp;
-+	sw_desc.fwnode = dev->fwnode;
-+	sw_desc.set = qmp_combo_typec_switch_set;
-+	qmp->sw = typec_switch_register(dev, &sw_desc);
-+	if (IS_ERR(qmp->sw)) {
-+		dev_err(dev, "Unable to register typec switch: %pe\n", qmp->sw);
-+		return PTR_ERR(qmp->sw);
-+	}
-+
-+	return devm_add_action_or_reset(dev, qmp_combo_typec_unregister, qmp);
-+}
-+#else
-+static int qmp_combo_typec_switch_register(struct qmp_combo *qmp)
-+{
-+	return 0;
-+}
-+#endif
-+
- static int qmp_combo_probe(struct platform_device *pdev)
- {
- 	struct qmp_combo *qmp;
-@@ -3385,6 +3455,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
-+	ret = qmp_combo_typec_switch_register(qmp);
-+	if (ret)
-+		return ret;
-+
- 	/* Check for legacy binding with child nodes. */
- 	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
- 	if (usb_np) {
+ &usb_1_role_switch {
+ 	remote-endpoint = <&pmic_glink_con1_hs>;
+ };
 -- 
 2.39.2
 
