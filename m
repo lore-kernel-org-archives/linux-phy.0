@@ -4,69 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C651DC77B61
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 18:58:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA9A3C6FD18
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 20:04:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AacZuROq/0fg+yFpWPwM/+PMFSqZPTozsy6VVOXEAL8=; b=XoyAx2V6ZpWLRZ
-	amIa6VtgiVJPCrip0rogVwulJrp4YlFOSBQxUGfI5c/eOJBT75IEdRiXO/uCWyMzmanKqOkUr/a/j
-	dZOfzzKjIT48oas52fCGvuCPl3FAOWlHFE6D7JBzrckm2RN7SqOLOlH+0Qv8Egv+BaanKieIW6Q3F
-	Zpw8EH234KH2qF7tdm5S5PtUhf0U42YLIH7zqsH8ouyi1T0ry9R062wJvHbJpWs89D7ahOP2FSsXp
-	42H69YWxhj6SfXqd9wVMbwwYy5f28vx79dAXTn37fQl/BxxFpLmmEpj0IJvXdq1GZc9FUDYluaaY0
-	nvjRAoNdhns2JNUv7FYg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=8shOlUd1bENkXkbpZweVHV+fqp6N7//cUjn6xvF1tHs=; b=q52sh+iRzU90uy
+	n6UPAMS3SgxexOQOSTtIrcAgJQXQc2YKS9rXCh8dTCnimwWZ+KocqZ4PoxzSM+/TNYB7pzaTmNYnf
+	pv4r29699v7HMA4erRNebrI54cdjuhSIrCRxXgDkHLcH9OC4dgIer8Olf/KTey/nailxetaz7+UMn
+	i/fXYGbf/XD6BkAOBdU0eTcPg25aZBN/9Oq510TbHcOUzM2eutKvaffgFit7ifB67PkSYk9/C+LGh
+	4hZukjDXxWKcMIsPB1Zj1Wh9fJZ0AS8J+oYCKaFxCKmUP+KgErs9G4dqirL4mVOKyr8LhkjeUXRHV
+	qmiruZl6ShWmnd9UygzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prNs9-0020BA-1V;
-	Tue, 25 Apr 2023 18:58:41 +0000
-Received: from mail-oa1-f46.google.com ([209.85.160.46])
+	id 1prOtx-0027pR-0e;
+	Tue, 25 Apr 2023 20:04:37 +0000
+Received: from mail-am6eur05on2061d.outbound.protection.outlook.com ([2a01:111:f400:7e1b::61d] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prNs7-0020Ah-11
-	for linux-phy@lists.infradead.org;
-	Tue, 25 Apr 2023 18:58:40 +0000
-Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-18ecdb1f2aaso6623309fac.1
-        for <linux-phy@lists.infradead.org>; Tue, 25 Apr 2023 11:58:38 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682449118; x=1685041118;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=UCPUjU42PRIffLcz9TbBJOAbKvwZwWa3dQczE6gwtwg=;
-        b=VnBN4LJi0oSO2cRVKl1HbB2RbF/1OXcG2xxhIrOyAiH2Qbveux2b1zd6i6FgSYNhMA
-         UPG6vcjGs1I/3tHtVRKswdRbKyEr8Hf0SAqvCX9eL9QYL3LPBk9RYwjNzXBp//nFs3IU
-         uavp4dDOVicT+zSrWhk5b3hC7sV0ZRGO4omiuZwIOBjJIDouN1IEXRFQHMRZVLeDvgyO
-         EkS3w70gdTokEDrIWwgxoopr9DRzrDnE4/I5Nms+bGAQ1ptR1/NmM1ZO4eP700KjO0u1
-         gIxxf75Wp7BNPFaiNT8R25Ju7MUb/wF3+qmZMgn3waH8aI0HZbt/nGUZVBP8yzEBK3AX
-         ywPg==
-X-Gm-Message-State: AAQBX9dYdR7obRTUobErEMjv0tx+Fq7APolBmOT0s6VlH2Ig7ZVVJzP4
-	sPWaqspS77ex3ca91ivTZA==
-X-Google-Smtp-Source: AKy350bVDkDMdeLblHdVNzD9BQfck4ZUsL4yNpzgQj1n/n4pupILFLzx+5zjoco+7TdvhHSqedp9LA==
-X-Received: by 2002:a05:6870:e416:b0:187:fc1c:c1a9 with SMTP id n22-20020a056870e41600b00187fc1cc1a9mr9584459oag.6.1682449117979;
-        Tue, 25 Apr 2023 11:58:37 -0700 (PDT)
-Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id i4-20020a056870864400b0018e996a507esm2629684oal.31.2023.04.25.11.58.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Apr 2023 11:58:37 -0700 (PDT)
-Received: (nullmailer pid 2083974 invoked by uid 1000);
-	Tue, 25 Apr 2023 18:58:36 -0000
-Date: Tue, 25 Apr 2023 13:58:36 -0500
-From: Rob Herring <robh@kernel.org>
-To: Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Johan Hovold <johan@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/7] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add
- ports and orientation-switch
-Message-ID: <20230425185836.GA2081377-robh@kernel.org>
-References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-2-quic_bjorande@quicinc.com>
-MIME-Version: 1.0
+	id 1prOtt-0027oe-1r;
+	Tue, 25 Apr 2023 20:04:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=O6VPW9W20IGEHF3jZ0eHMH5zA5a9XP2oJWSoC/cXSXCfVXtOywqAfUgVVSJ4hzSss2N1r++OAPPVOdfe97GY6RQttefX3y7nXeeF3hJRQQppU2jJQEedOoW3hJojbL82T5Aw0yWMcTEziuXTsUsi0TgwH7+vGS6mzxiiMrZB9EFwvtbpiPSNIkXR5w2Xpw5KzeWOFw0tY9F9RWDJW+qsnTPCrIlMjDlRiLib8srmuAc4J++7MFtlRPH70Oh1WsdgMDQ3x3hWzBZk+pAAavHGHa2sOXKK1qH3UWbXYraQ8VgDTITbiMsLdJeKbe7aajaDhFNUcf8l2Zz7CPBeqs9xnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=xPUSvF7LN1rVFVxFdogdQ2h+NrHGM3qeAPXi8cgk6bY=;
+ b=nwG8WZapTJyOykVmzvZrEqhC4KAEZZ2m0fbmH4S8uSWZ11FpG15FEyO4ojDuHHyKimyl/Ym9NgfrE9XA4IQwOnEZDVtXhwh2Z4B5Aggj0rP5juzBPzXb2y4s7lS8GS9JCzbYecLUX5MiZA30p4QPkWsaeWREqKfMOy+43VKDir58X7pBRF+lnylbDjbS8uFGXrtr1K2q++QHv/BlXheIXm8E+FFRSh5WfGW+xqDXYS2BCawuf9ZwoGxf2IR+RDMiSO9HRDrpDRWc7DPgb+xflPrFWmJSV+T+sNTdmuLLel4cFwaiZFKAZBc+O95TlRlIsvL49qyds8JY75ZluK7NKQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xPUSvF7LN1rVFVxFdogdQ2h+NrHGM3qeAPXi8cgk6bY=;
+ b=gu2x2vMOrkc/tXkm/xP+3QbdGfzdlCMyW3KLM8D5dl0DbSf5f41RE6Oeb4ZeOYNQ+raV2L+sg6aJv+V7PF8g6FidA7WwVv7WsmPI4HPIV5XSK9gw5sp4QPwTXUDpEAs4lr5dvxTIPJkgO82D4kDg+FO8MlaJCw81HoVpcdR1GVE=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
+ by PA4PR04MB7663.eurprd04.prod.outlook.com (2603:10a6:102:e9::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6340.21; Tue, 25 Apr
+ 2023 19:50:07 +0000
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::245a:9272:b30a:a21c]) by AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::245a:9272:b30a:a21c%3]) with mapi id 15.20.6319.033; Tue, 25 Apr 2023
+ 19:50:06 +0000
+Date: Tue, 25 Apr 2023 22:50:02 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	=?utf-8?Q?Fern=C3=A1ndez?= Rojas <noltari@gmail.com>,
+	Jonas Gorski <jonas.gorski@gmail.com>,
+	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Message-ID: <20230425195002.fls5cmwolyrslpad@skbuf>
 Content-Disposition: inline
-In-Reply-To: <20230425034010.3789376-2-quic_bjorande@quicinc.com>
+In-Reply-To: <20230413160607.4128315-1-sean.anderson@seco.com>
+X-ClientProxiedBy: AM0PR06CA0141.eurprd06.prod.outlook.com
+ (2603:10a6:208:ab::46) To AM0PR04MB6452.eurprd04.prod.outlook.com
+ (2603:10a6:208:16d::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PA4PR04MB7663:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0f959091-4d7c-4a30-3640-08db45c644e6
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:  xooMwcBQ0eonaiXtYvJPguQzI61gN3Vhekhw5v6JVsWgyWj+3ZwCdak1WIwn3Cl/7bj9UlBFqBvWPXo/POwExlb9dmUgI8UDzic5aOj60hkee4allPlfD/a2M64/rE8140jfRcmWyH1E4BLsK5JNP6Jk/ZSD9mkrIikAl65Sqt9akuX3J0qPcE+KoI2s5GWbkeelYRcXNIwGTuWVIQ5X3tM5VkGSHXDwqkwtif1G2QaUuTvtzbCxRJLfeYV8jR4gWdW5QU2Rt8Kl8z/tJUmpIvb8TvTbDRe36aPFx7gZH1B+HPKwB562t5E+qbwAXQpX7pYN8jKjoOdNU7zQ5nLYJ0rF202DpelRDoMTfAouliVjI3HHPjRmluZj5ithj56lFZ/OdIoYSU6auNdaUeBZ5XR7+S+5PG1cmQFB8Q5dB3mdGto1Dfihrs4lnZ5F7etcXipaSPnWtncAQN8PlShAXYasCfr0RvLmJOx8AxgCqbYpDWi83jXnTFl3yPKQoFsttRLEvNbb7vVd+gMJcBTraiGKJ45AUklPOR0hGGRZTZgcpv0LDhbDcHdT/1kIZIqE
+X-Forefront-Antispam-Report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(7916004)(376002)(136003)(39860400002)(346002)(366004)(396003)(451199021)(38100700002)(66899021)(83380400001)(33716001)(44832011)(478600001)(186003)(7416002)(54906003)(2906002)(6666004)(6486002)(26005)(9686003)(6506007)(1076003)(6512007)(8936002)(41300700001)(316002)(5660300002)(4326008)(66556008)(66476007)(66946007)(6916009)(8676002)(86362001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:  =?us-ascii?Q?B7+8Y6IO8WS/ulvfXdLmfVNgnB3muD82SLwVgv4XTuthjwWdcmtM3DWoO4jK?=
+ =?us-ascii?Q?+z6nOmf2ZJJvTbw8iQPJ1nq1Ztqo+vIvrgBJ42nUlXWnCPxmdIWb8HA1C3EE?=
+ =?us-ascii?Q?ch2aHMQTgJ61Hyfoe9ejaqReUvQXek/7ff3lG8QzNpukWLBaFwoxg38zTru6?=
+ =?us-ascii?Q?AdL5WHJ+f9hH2wvbI18RdTMv4eIvovl44SaUls2NL4z/pusB6gPNcGLWSG9f?=
+ =?us-ascii?Q?NvK8nbP2Lyo4WUIOfi1SNqzlBwShpQEbZJetzUGOUy8q0G3FLgrZINQ3Mblm?=
+ =?us-ascii?Q?4GzaSK9nevtaE/8GX6k9oVv7ewYudtOCIsLYKXBiYf0P280XbR/enhqU6Cia?=
+ =?us-ascii?Q?udgp+Trv61g6GVICTC/YYFGREZLjorRfYLYp/tuhuoyrkCMpr10sboaCgrdU?=
+ =?us-ascii?Q?03m9a24YaGrs8p+Pza4k+xSa/n9sR0OCsacKPzQPuyuX/NO1fOfLn80xeF9t?=
+ =?us-ascii?Q?CYK5IV75u0a04V+Jp5NGPd5R83kYwzMGt1F2rrNMuaeFNsoUk7nvqj4DMt8y?=
+ =?us-ascii?Q?1fM7cnRVeYg7mvAmXjr1fLpwTgh7tmGOlqt9YjSEaNaVB0F+k/otiPtrX/Uu?=
+ =?us-ascii?Q?fmEyxG5J3q9tUHHqjH94J1kNfMGeNw2PM1Iy2E7CmzQRUaS3KWc88AeDjKRF?=
+ =?us-ascii?Q?o53IK4fnoFQ9qvZCMuiN5wDctcgwsAndyMlj6a355O1x2VIMwvyZXx8XTouK?=
+ =?us-ascii?Q?5nKMwrqgbduFvXvNYnL8euD5lS160vBQQjAcfvW8l/BvGajSSaY5PLRkWNbY?=
+ =?us-ascii?Q?CeF9f5SESzWrIv8ltux70cD+YtsEjlg2iRZWgXVvw+KhbK27gtJIUmxXybY2?=
+ =?us-ascii?Q?0CrtbtA6bp0gjj0Kd5/DiAC43lHSq0gE3v3zzUfeuO4L9IKISzzMkvrQR9Dl?=
+ =?us-ascii?Q?mxaFUcEZPcc/3TmENKX7X7aW9CWKSwlbUrgcUrkSRrE0NgKHGliNRqUGIta6?=
+ =?us-ascii?Q?cAo0LkhKOcwJzEt9U9oNeQKujp4EvBmoRJ0LATbWQfvpO/2YD7Y/CT+iOP2e?=
+ =?us-ascii?Q?5Ez7V+LCFm6ipPx9pvEqlrzwCaichW3iVwoQlbM3gUImlcWowOj/4v+QEvMr?=
+ =?us-ascii?Q?bhg19rWKhdwnRnhz2mxo0eBf6lS+9xlVOK35F1eHbdU10G8ze9at4WGRqPG0?=
+ =?us-ascii?Q?vHVZ+jbIQanCidWbi5Cp1+W9hkU7aPkw16t/pL42IsTlxcg2LTdF7QkgYik0?=
+ =?us-ascii?Q?lk/i+jRbeCZwEphPgyCxcb8UZ3G4C0ek+pwFXY3LLqpCvyNSslveMHFraCRA?=
+ =?us-ascii?Q?RvV894WmE2bVtzuW1UY1nYLXSIzraDoqPMY3PCMDOu22ojAyrsTElQpb8tRE?=
+ =?us-ascii?Q?ZcgzmCX26dRiqnm0IuEAoTTW6B2VMRqnf/STz4Cr1/ozFrDSYKS38qe4+V/a?=
+ =?us-ascii?Q?u+LCJeC1w3IiANyHS8suhXS13kEct58XbMuf9SFE6O/RogWlA/m0PQgQGuJu?=
+ =?us-ascii?Q?xbmtZVVS4gcboAO38DznCTOXTN/pjpEm7jD46aDIIZODu23R6XrLQN4lFmCu?=
+ =?us-ascii?Q?fdEH9RT7pn+xPZEuAr8DbBRs0vfAQNz8bYWKnamsA4wj+D3LirYt50I1vSXo?=
+ =?us-ascii?Q?xuCNMTszig+W6neBpY3Zs7+JQxmUjkHlzGr1MJTY86Bdu2lSVHDC0B2pEUIw?=
+ =?us-ascii?Q?xQ=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0f959091-4d7c-4a30-3640-08db45c644e6
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Apr 2023 19:50:06.7432
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: swUwIdu9MFW3wNDDG0JS1oWSz4QPBZAsK1sHz79U/OQp91CL1K/E/B6LMRanoGJ++/Z0APfUKPGrDVryOU9PVw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7663
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_115839_351460_B4C1AC64 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20230425_130433_639103_659711C2 
+X-CRM114-Status: GOOD (  22.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,94 +150,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 24, 2023 at 08:40:04PM -0700, Bjorn Andersson wrote:
-> The QMP combo phy can be connected to a TCPM, a USB controller and a
-> DisplayPort controller for handling USB Type-C orientation switching
-> and propagating HPD signals.
-> 
-> Extend the binding to allow these connections to be described.
-> 
-> Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> ---
->  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 51 +++++++++++++++++++
->  1 file changed, 51 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> index 3cd5fc3e8fab..c037ac90ce7f 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> @@ -60,6 +60,26 @@ properties:
->      description:
->        See include/dt-bindings/dt-bindings/phy/phy-qcom-qmp.h
->  
-> +  orientation-switch:
-> +    description:
-> +      Flag the PHY as possible handler of USB Type-C orientation switching
-> +    type: boolean
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Output endpoint of the PHY
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
+Hello,
 
-'port-base' means you have extra properties to add. Where are they? It 
-also needs 'unevaluatedProperties: false'.
-
-> +        description: Incoming endpoint from the USB controller
-> +
-> +      port@2:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        description: Incoming endpoint from the DisplayPort controller
-> +
->  required:
->    - compatible
->    - reg
-> @@ -98,6 +118,37 @@ examples:
->        vdda-phy-supply = <&vreg_l9d>;
->        vdda-pll-supply = <&vreg_l4d>;
->  
-> +      orientation-switch;
-> +
->        #clock-cells = <1>;
->        #phy-cells = <1>;
-> +
-> +      ports {
-> +          #address-cells = <1>;
-> +          #size-cells = <0>;
-> +
-> +          port@0 {
-> +              reg = <0>;
-> +
-> +              endpoint {
-> +                  remote-endpoint = <&typec_connector_ss>;
-> +              };
-> +          };
-> +
-> +          port@1 {
-> +              reg = <1>;
-> +
-> +              endpoint {
-> +                  remote-endpoint = <&dwc3_ss_out>;
-> +              };
-> +          };
-> +
-> +          port@2 {
-> +              reg = <2>;
-> +
-> +              endpoint {
-> +                  remote-endpoint = <&mdss_dp_out>;
-> +              };
-> +          };
-> +      };
->      };
-> -- 
-> 2.39.2
+On Thu, 13 Apr 2023 12:05:52 -0400, Sean Anderson wrote:
+> This series is ready for review by the phy maintainers. I have addressed
+> all known feedback and there are no outstanding issues.
 > 
+> Major reconfiguration of baud rate (e.g. 1G->10G) does not work.
+> 
+> There are several stand-alone commits in this series. Please feel free
+> to pick them as appropriate. In particular, commits 1, 3, 4, 12, 13, and
+> 14 are all good candidates for picking.
+> 
+> - Although this is untested, it should support 2.5G SGMII as well as
+>   1000BASE-KX. The latter needs MAC and PCS support, but the former
+>   should work out of the box.
+> - It allows for clock configurations not supported by the RCW. This is
+>   very useful if you want to use e.g. SRDS_PRTCL_S1=0x3333 and =0x1133
+>   on the same board. This is because the former setting will use PLL1
+>   as the 1G reference, but the latter will use PLL1 as the 10G
+>   reference. Because we can reconfigure the PLLs, it is possible to
+>   always use PLL1 as the 1G reference.
+
+I am an engineer working for NXP and I have access to the majority of
+hardware that includes the Lynx 10G SERDES, as well as to block guides
+that are not visible to customers, and to people from the hardware
+design and validation teams.
+
+I have an interest in adding a driver for this SERDES to support dynamic
+Ethernet protocol reconfiguration, and perhaps the internal PHY for
+copper backplane modes (1000Base-KX, 10GBase-KR) and its link training
+procedure - although the latter will need more work.
+
+I would like to thank you for starting the effort, but please, stop
+submitting code for modes that are untested, and do not submit features
+that do not work. If you do not have the time to fix up the loose ends
+for this patch submission now, you won't have the time to debug
+regressions on boards you might not even have access to, which worked
+fine previously due to the static RCW/PBL configuration.
+
+I have downloaded your patches, and although I have objections to some
+of them already, I will be in the process of evaluating, testing,
+changing them, for the coming weeks, perhaps even more. Please consider
+this a NACK for the current patch set due to the SERDES related material,
+although the unrelated patches (like "dt-bindings: Convert gpio-mmio to
+yaml") can and should have been submitted separately, so they can be
+analyzed by their respective maintainers based on their own merit and
+not as part of an overall problematic set.
 
 -- 
 linux-phy mailing list
