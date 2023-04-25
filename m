@@ -4,69 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 484DBC6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 03:42:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50027C77B61
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 04:58:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xdvyk+OT0kg3jhlyB4fm8rlKE7kMXDgbincBqSpHCMI=; b=g3susKvTGnBncY
-	FNB4DEOvn1OKSlVIW1zGEc081mYkXpZ0pDS+K6F3daugmZzXTkaSIZvt5Po1w9gn2Qrn2sMJrpJNq
-	T94LPmfnCzeYr0dWJJt26YAohq1SU2louKbsWd52x98FhpLLUwfVatPmgsIy+tiqYwrDHwYTHLOjR
-	455DwT1abuiCBp4deKcQqbmhtqeMOKo1fwvG8QFfubrtbDdkDmS3CJf0Z+ZiOCTCCqIMne1p5pxKe
-	iLsqYu8srevxtnfryrySgHE9SLkjMb8ZOI+2r86I40tuKyOb32azZtLOnnIWs61CJbR5Eu9A+793o
-	ry3q/rYzXe3rJkmSBaSg==;
+	List-Owner; bh=N5x03RZPiu05AhUkTRxH9hs3K+Zl0rWmAt0NSwzG1j8=; b=Wnc3k8SyjK7/yG
+	cyrgv6VMyqUr9imoIGNsAkW8XF30QeHehwWPmV29sShWyf5LhKtOJEHBnqkX+/IjjRaqMebt9K4Kd
+	L36uky0BjdWxjg5hL/2PUG7wpAJdVP72Yq+wOkWXJnUgD6HovFw0J2/CtVMIS/21cUpKPZwlj8o9a
+	q7LUQWvxOzpiLF+SsU//N/3zeMssATdizjBKYBxJ4MXaEg1rZUKjE6gnt427dSyCt3E6ZTgtF8VMi
+	r+/nUnngf+Q0B0Ty99ORsJJ+xdP1717cP7+ZisCALpeHY0CY6Gq2B3rmA7tCIQPr7hlLoLrrK5sXt
+	YYNxEg/4Om6eX5XdhREg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9ZD-0006vg-34;
-	Tue, 25 Apr 2023 03:42:11 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9ZA-0006uy-0c;
-	Tue, 25 Apr 2023 03:42:11 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 00C7C7FFD;
-	Tue, 25 Apr 2023 11:41:40 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Apr
- 2023 11:41:40 +0800
-Received: from [192.168.125.106] (113.72.145.137) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Apr
- 2023 11:41:39 +0800
-Message-ID: <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
-Date: Tue, 25 Apr 2023 11:41:38 +0800
+	id 1prAl4-000BhK-2q;
+	Tue, 25 Apr 2023 04:58:30 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1prAl2-000BgI-0H
+	for linux-phy@lists.infradead.org;
+	Tue, 25 Apr 2023 04:58:29 +0000
+Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-504fce3d7fbso8059333a12.2
+        for <linux-phy@lists.infradead.org>; Mon, 24 Apr 2023 21:58:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=kali.org; s=google; t=1682398705; x=1684990705;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=b0Eu6RwlDMBI2VACTLVW3OyI+qTBgEnmFpIUv7kN7Xg=;
+        b=f7goMULptLM/h4aCQSheJXz1NcaoQxEI6Y09Gh8UZTO77/S24BAPjTWfUCQvp4jqNX
+         qaAnVant+f04AGkWz61s25P0VxS6cO0gxQSRz+l9tfT/E6rCBaxrTHC+EyAn8iCDtgKY
+         cV30I4N67+Tl6b8aNJCy7WUOEt91S4PrhzlZ1sLAx6WKXGdVvBm4KuG0e0TY1Ut3gNj2
+         R+jAy3FVLCXRZpzRCYtr06tBO4ZaVPmHAPQmTGZsxiiWpFWPMOmNsvokQBJoh044w5ig
+         RPVeNSJf/y1LvkvIBPi003s3V8hIcycBahJjyKKt89NOrJ+OwMfFKYNeI5VJdefT7W+M
+         5WVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682398705; x=1684990705;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=b0Eu6RwlDMBI2VACTLVW3OyI+qTBgEnmFpIUv7kN7Xg=;
+        b=hU0upvMvdy0I+U9TckEknxPBPNGYZ4QoQ+SruvCCmQnlp+HNpRWM/EQuVgdqFeKLbQ
+         5IQ/4j0/neNoWGjEwHpn3e9JP5bnaxNxBFC4iixksXwA1OYcBt+G49nJVhOpK3SAH0y0
+         ByNSDr4JfWTtLHeueUlgUzlYH0gSPJBi+FXoRiJUWuHcDKNWpjIb7KMNUI9TsrkFQKHX
+         n+KsB+NlZVlUyQeX1mDrybJqzj5DwttfaJg3BCscKFDuQD9s3hPX0q1GDMvqpwTLkTtW
+         ZuLCze/yXWcrPBIb07kbpOIC4iFRkLYiXtzVAgRedTw7MoKVsshuM3HXQ+sx5R9xnDav
+         ixMA==
+X-Gm-Message-State: AAQBX9fDe6E53mhvAnn8NLzntCGgqhbZl1sY+mZc/qcJ4U4X1OwgbeS5
+	+jcds0mB2yL962DQStlpxgyOQJM9uObwuEWOaEeYcQ==
+X-Google-Smtp-Source: AKy350auphzv7gCr2o8Iiur9PYK2zIXYRVW6d8MJgcNm8GMQeGwmvI+FOwh/BdkzaQO41xURDxBCvys3dBu3FMP0kdw=
+X-Received: by 2002:aa7:c916:0:b0:504:78aa:4f2d with SMTP id
+ b22-20020aa7c916000000b0050478aa4f2dmr13658270edt.0.1682398705333; Mon, 24
+ Apr 2023 21:58:25 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-To: Conor Dooley <conor@kernel.org>
-CC: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-References: <20230419035646.43702-1-changhuang.liang@starfivetech.com>
- <20230419035646.43702-2-changhuang.liang@starfivetech.com>
- <20230419-labored-camper-644d51a7ca96@spud>
- <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
- <20230424-baffle-punch-ec73098f2b6a@spud>
-Content-Language: en-US
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230424-baffle-punch-ec73098f2b6a@spud>
-X-Originating-IP: [113.72.145.137]
-X-ClientProxiedBy: EXCAS061.cuchost.com (172.16.6.21) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
+In-Reply-To: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
+From: Steev Klimaszewski <steev@kali.org>
+Date: Mon, 24 Apr 2023 23:58:14 -0500
+Message-ID: <CAKXuJqiL6_Mrh07HrBm6hMc3wZkW7vcfxR3_+h4_pY6hjMf2XQ@mail.gmail.com>
+Subject: Re: [PATCH 0/7] phy: qcom-qmp-combo: Support orientation switching
+To: Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Johan Hovold <johan@kernel.org>, 
+	Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230424_204208_598929_58120AE0 
-X-CRM114-Status: GOOD (  36.57  )
+X-CRM114-CacheID: sfid-20230424_215828_142566_EE6AC6CE 
+X-CRM114-Status: GOOD (  11.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,149 +87,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/4/25 0:52, Conor Dooley wrote:
-> Hey Changhuang,
-> 
-> On Thu, Apr 20, 2023 at 03:00:10PM +0800, Changhuang Liang wrote:
->> On 2023/4/20 2:29, Conor Dooley wrote:
->>> On Tue, Apr 18, 2023 at 08:56:41PM -0700, Changhuang Liang wrote:
->>>> Add AON PMU for StarFive JH7110 SoC, it can be used to turn on/off DPHY
->>>> rx/tx power switch, and it don't need the properties of reg and
->>>> interrupts.
->>>
->>> Putting this here since the DT guys are more likely to see it this way..
->>> Given how the implementation of the code driving this new
->>> power-controller and the code driving the existing one are rather
->>> different (you've basically re-written the entire driver in this series),
->>> should the dphy driver implement its own power-controller?
->>>
->>> I know originally Changuang had tried something along those lines:
->>> https://lore.kernel.org/linux-riscv/5dc4ddc2-9d15-ebb2-38bc-8a544ca67e0d@starfivetech.com/
->>>
->>> I see that that was shut down pretty much, partly due to the
->>> non-standard property, hence this series adding the dphy power domain to
->>> the existing driver.
->>>
->>> If it was done by looking up the pmu with a
->>> of_find_compatible_node(NULL, "power-controller", "starfive,jh7110-aon-pmu")
->>> type thing, would that make sense? Although, maybe that is not a
->>> question for you, and this series may actually have been better entirely
->>> bundled with the dphy series so the whole thing can be reviewed as a
->>> unit. I've added 
->>>
->>> IOW, don't change this patch, or the dts patch, but move all of the
->>> code back into the phy driver..
->>>
->>
->> Maybe this way can not do that? power domain is binding before driver probe,
->> if I use "of_find_compatible_node" it phy(DPHY rx) probe. Maybe I can only operate 
->> this power switch in my phy(DPHY rx) driver, so the all patch of this series isn't 
->> make sense.
-> 
-> I'm a wee bit lost here, as I unfortunately know little about how Linux
-> handles this power-domain stuff. If the DPHY tries to probe and some
-> pre-requisite does not yet exist, you can return -EPROBE_DEFER right?
-> 
-> But I don't think that's what you are asking, as using
-> of_find_compatible_node() doesn't depend on there being a driver AFAIU.
-> 
->> In my opinion, We will also submit DPHY TX module later which use this series.
->> Maybe this series should independent?
-> 
-> Is the DPHY tx module a different driver to the rx one?> If yes, does it have a different bit you must set in the syscon?
-> 
-
-Yes, DPHY tx module is a different driver to the DPHY rx. And I have do a
-different bit in PATCH 1:
-
-#define JH7110_PD_DPHY_TX	0
-#define JH7110_PD_DPHY_RX	1
-
-also in PATCH 5:
-
-static const struct jh71xx_domain_info jh7110_aon_power_domains[] = {
-	[JH7110_PD_DPHY_TX] = {
-		.name = "DPHY-TX",
-		.bit = 30,
-	},
-	[JH7110_PD_DPHY_RX] = {
-		.name = "DPHY-RX",
-		.bit = 31,
-	},
-};
-
-> +CC Walker, do you have a register map for the jh7110? My TRM only says
-> what the registers are, but not the bits in them. Would make life easier
-> if I had that info.
-> 
-> I'm fine with taking this code, I just want to make sure that the soc
-> driver doing this is the right thing to do.
-> I was kinda hoping that combining with the DPHY-rx series might allow
-> the PHY folk to spot if you are doing something here with the power
-> domains that doesn't make sense.
-> 
-
-I asked about our soc colleagues. This syscon register,
-offset 0x00:
-bit[31] ---> dphy rx power switch
-bit[30] ---> dphy tx power switch 
-other bits ---> Reserved
-
->>> Sorry for not asking this sooner Changhuang,
->>> Conor.
->>>
->>> (hopefully this didn't get sent twice, mutt complained of a bad email
->>> addr during sending the first time)
->>>
->>
->> I'm sorry for that, I will notice later.
-> 
-> No, this was my mail client doing things that I was unsure of. You
-> didn't do anything wrong.
-> 
-[...]
->>>>    - Walker Chen <walker.chen@starfivetech.com>
->>>> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
->>>>  
->>>>  description: |
->>>>    StarFive JH7110 SoC includes support for multiple power domains which can be
->>>> @@ -17,6 +18,7 @@ properties:
->>>>    compatible:
->>>>      enum:
->>>>        - starfive,jh7110-pmu
->>>> +      - starfive,jh7110-aon-pmu
-> 
-> I was speaking to Rob about this over the weekend, he asked:
-> 'Why isn't "starfive,jh7110-aon-syscon" just the power-domain provider
-> itself?'
-
-Maybe not, this syscon only offset "0x00" configure power switch.
-other offset configure other functions, maybe not power, so this
-"starfive,jh7110-aon-syscon" not the power-domain itself.
-
-> Do we actually need to add a new binding for this at all?
-> 
-> Cheers,
-> Conor.
-> 
-
-Maybe this patch do that.
-https://lore.kernel.org/all/20230414024157.53203-6-xingyu.wu@starfivetech.com/
-
->>>>  
->>>>    reg:
->>>>      maxItems: 1
->>>> @@ -29,10 +31,19 @@ properties:
->>>>  
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgQmpvcm4sCgpPbiBNb24sIEFwciAyNCwgMjAyMyBhdCAxMDo0MOKAr1BNIEJqb3JuIEFuZGVy
+c3Nvbgo8cXVpY19iam9yYW5kZUBxdWljaW5jLmNvbT4gd3JvdGU6Cj4KPiBUaGlzIGFkZHMgc3Vw
+cG9ydCBmb3IgVVNCIGFuZCBEaXNwbGF5UG9ydCBvcmllbnRhdGlvbiBzd2l0Y2hpbmcgdG8gdGhl
+Cj4gUU1QIGNvbWJvIFBIWSwgYXMgd2VsbCBhcyB1cGRhdGluZyB0aGUgc2M4MjgweHAgZGV2aWNl
+cyB0byBpbmNsdWRlIHRoZQo+IFFNUCBpbiB0aGUgU3VwZXJTcGVlZCBncmFwaC4KPgo+IEJqb3Ju
+IEFuZGVyc3NvbiAoNyk6Cj4gICBkdC1iaW5kaW5nczogcGh5OiBxY29tLHNjODI4MHhwLXFtcC11
+c2I0M2RwOiBBZGQgcG9ydHMgYW5kCj4gICAgIG9yaWVudGF0aW9uLXN3aXRjaAo+ICAgcGh5OiBx
+Y29tLXFtcC1jb21ibzogTW92ZSBwaHlfbXV0ZXggb3V0IG9mIGNvbV9pbml0L2V4aXQKPiAgIHBo
+eTogcWNvbS1xbXAtY29tYm86IEludHJvZHVjZSBvcmllbnRhdGlvbiB2YXJpYWJsZQo+ICAgcGh5
+OiBxY29tLXFtcC1jb21ibzogSW50cm9kdWNlIG9yaWVudGF0aW9uIHN3aXRjaGluZwo+ICAgcGh5
+OiBxY29tLXFtcC1jb21ibzogSW50cm9kdWNlIGRybV9icmlkZ2UKPiAgIGFybTY0OiBkdHM6IHFj
+b206IHNjODI4MHhwLWNyZDogQWRkIFFNUCB0byBTdXBlclNwZWVkIGdyYXBoCj4gICBhcm02NDog
+ZHRzOiBxY29tOiBzYzgyODB4cC14MTNzOiBBZGQgUU1QIHRvIFN1cGVyU3BlZWQgZ3JhcGgKPgo+
+ICAuLi4vcGh5L3Fjb20sc2M4MjgweHAtcW1wLXVzYjQzZHAtcGh5LnlhbWwgICAgfCAgNTEgKysr
+Kwo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2M4MjgweHAtY3JkLmR0cyAgICAgfCAgMjgg
+KystCj4gIC4uLi9xY29tL3NjODI4MHhwLWxlbm92by10aGlua3BhZC14MTNzLmR0cyAgICB8ICAy
+OCArKy0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjODI4MHhwLmR0c2kgICAgICAgIHwg
+IDM0ICsrKwo+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYyAgICAg
+fCAyMjcgKysrKysrKysrKysrKystLS0tCj4gIDUgZmlsZXMgY2hhbmdlZCwgMzA5IGluc2VydGlv
+bnMoKyksIDU5IGRlbGV0aW9ucygtKQo+Cj4gLS0KPiAyLjM5LjIKPgpUaGFuayB5b3UhIEkgaGF2
+ZSBiZWVuIGxvb2tpbmcgZm9yd2FyZCB0byB0aGlzIHBhdGNoc2V0IGZvciBhIHdoaWxlIDopCgpU
+ZXN0ZWQgd2l0aCAwNWFjOjE0NjAgQXBwbGUsIEluYy4gRGlnaXRhbCBBViBNdWx0aXBvcnQgQWRh
+cHRlciBhbmQKMDYzOTo3MjEwIENocm9udGVsLCBJbmMuIEJpbGxib2FyZCBhbmQgYm90aCB3b3Jr
+IHdpdGggb3JpZW50YXRpb24Kc3dpdGNoaW5nLgoKVGVzdGVkLWJ5OiBTdGVldiBLbGltYXN6ZXdz
+a2kgPHN0ZWV2QGthbGkub3JnPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
