@@ -4,76 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03662C6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 12:27:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25768C6FD18
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 14:47:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zCmQ8h0Z1u1URaSmKKDfdDrVf2U2oFjphXQta+SRVTc=; b=sKE6Qty7GHNVK4
-	kq4BlqUYS/AZBQIw/T/vXc2EdcvS1kT7HZdGRtDIN1LkJv85ETsNmIJvA9my0TvrjG7zPUsSh9HRt
-	Xfff8BN4MIDf5T89fRsW9GzgBEnW6McQbXOH/40QwkS9BJ1g1U5LFz2GM4ePGRK6sK52QXjMUnsW5
-	yPr/eDjAO3gcSKzoiCp64qBPXyeDWSZD+OTSujm8NLx47S2L2hFthrZK7VL9ZCEyph2NtxlbXaRs0
-	3U8YyI+ys2pPHxH+6t2ZGWViqHrS2MZ6JqftejVV7VGh0XnkeSYjojONSTOjdff3fRfK2xZDyc0hN
-	yh0lba9ZGBg9NyeogSRw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AHrIZp3i54sKNV0OtQNEg7SKqW0VShN3fsN0vAFohqg=; b=mIhTO5sHf634/ThjAlgFcTrf7z
+	JviTDPqCfFXsUmxoW6z8/WjlFId6f6tStRwoCDhgtPd+yE+Rxn+7y1T0X96uSsjDSkDTnAwN32BeL
+	QSIfbdyXqfBhMrr0d6XkBsIE3fxePKt4vscI/WJVtim5mHjs3joUZ+acX9j2qHRSzCH7DZSAheqS2
+	WHhy6fEpHD1B+LDWojqNVB3Ac0D9jNTrjz9PpzRztJeNHchSiiajOE23+sfcNMnvhzuHYxzINP6sa
+	Xt0K6kFwR5biHXGpvQLiNS6XE2uHA/krLtHbzOo172ABkrTDGS2HM3GVgzVoorHL0dqU/mJBfH+hL
+	VvxUETUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prHlN-0014aH-27;
-	Tue, 25 Apr 2023 12:27:17 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prHlI-0014Y7-2W;
-	Tue, 25 Apr 2023 12:27:15 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id A545124E1B7;
-	Tue, 25 Apr 2023 20:26:36 +0800 (CST)
-Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Apr
- 2023 20:26:37 +0800
-Received: from [192.168.125.106] (113.72.145.137) by EXMBX162.cuchost.com
- (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Apr
- 2023 20:26:35 +0800
-Message-ID: <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
-Date: Tue, 25 Apr 2023 20:26:35 +0800
+	id 1prJwk-001SXU-2Z;
+	Tue, 25 Apr 2023 14:47:10 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1prJwg-001STl-1S;
+	Tue, 25 Apr 2023 14:47:07 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 07934582407;
+	Tue, 25 Apr 2023 10:46:53 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute4.internal (MEProxy); Tue, 25 Apr 2023 10:46:53 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:sender
+	:subject:subject:to:to; s=fm2; t=1682434013; x=1682441213; bh=en
+	1RVV51OfqfCNU3FiRu/BosXNaMgZdQKojjPV9z+Rc=; b=fQzHTOZ6paF2GmxznV
+	Yv4EqX4UawQN8UDH75BiX1XxbOrFyU34s885PjMpGmyFMhfA2Gsr+GJx6hMQ05IV
+	0gJ+lU3HbK6G0vkyPFGb5q6b03Ka/Q4k6BOLyanUIeemgQyB0Ih17ta8J99y/cug
+	hpRzOQ0KZRKhiCAUBGW5XcWVmf6BFlMx5FwlMlfY5UXqPWl0BcywSTzuBly2UEjc
+	h7AU70R3O5OqjWix8REwSV3sblDjCOI2srd7fKlv5IWutajBwGjvCxdr76mhCs9N
+	qkjPjTojtlO9cHj0dmUJuooH30DNVLAGbFufLHaBIbG9LKaU3ZUUmQji0imf2S/V
+	N9aw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm3; t=1682434013; x=1682441213; bh=en1RVV51OfqfC
+	NU3FiRu/BosXNaMgZdQKojjPV9z+Rc=; b=I4t0FWm0dd6OFi2aSkWgpBABu+oaf
+	WqgmyEJsiXORvFRmbJmFTqpY0AGTB7ZiQOFWetUU/JNxbjy4awAyYQ4JFunU6fQf
+	Rz+Oo/78vsrhL7Xkd8XgDdzZc58Sn+bc2bhSNb9apFI6z32c4uxp7Jb7/JF84hLo
+	50q5CCLpg7WyRTIQ/jjJak+lY0QtglRaq5zbBVpM7F0ejZDuJ3Jty6mNptPCS4lH
+	IAavcbAaVhI2BTifppMGXs2pXMyXaUtNaP1H9y8Nfjphg2Obw5TFmGQit0AgN9sQ
+	e6tJfBVMAZW+5CiaANrEmAqkn2M7v02jYqf1Ma7CXd24tcB0Zncp/Xktw==
+X-ME-Sender: <xms:2udHZFwZ_QIiF6SL-QlmC_Lewd6M6MaNvyZn1MfROHTcLFhUquQfCw>
+    <xme:2udHZFSQUhtCOxwN2fiIy3C_t4pC3IVp_h6i1PqECr5h6skrj7BGyl2fDN84P5jZV
+    ibCEta40AdQ2KE4Rb8>
+X-ME-Received: <xmr:2udHZPVDo6xGsCdHJlh86bbHJAp8xNFq-UiRmarNnxxDS1F3L26uiLFS8bOwjYUZsR7ELMSYtIqVyZm7eHacuuXL5xIZwXg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeduvddgkedtucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepfffhvfevuffkfhggtggujgesghdtsfertddtvdenucfhrhhomhepofgrgihi
+    mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
+    htthgvrhhnpeeuveduheeutdekvefgudevjeeufedvvdevhfejgfelgfdtkeevueegteek
+    gfelfeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    hmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:2udHZHh5UZHEMBw8jN195wMlo8i_gan7Xb4fMuWhW1OoxPCppna0Zg>
+    <xmx:2udHZHBMtlk6pfPmyMwPAprlvh-iE56gRWWUWOQmEoL8Gji1fZrb8g>
+    <xmx:2udHZALIcRP02Uga96xJwRNOAbOCCE-tsfoPqljmdqRavM_KDfchpg>
+    <xmx:3edHZBNJxelcn1gOxFFPqvUDnAdocnUy8ZCixw6-Tz1yPY9Rt8skdg>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
+ 25 Apr 2023 10:46:48 -0400 (EDT)
+Date: Tue, 25 Apr 2023 16:46:47 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Stephen Boyd <sboyd@kernel.org>
+Cc: Abel Vesa <abelvesa@kernel.org>,
+ 	Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+ 	Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ 	Chen-Yu Tsai <wens@csie.org>, Chunyan Zhang <zhang.lyra@gmail.com>,
+ 	Claudiu Beznea <claudiu.beznea@microchip.com>,
+ Daniel Vetter <daniel@ffwll.ch>, 	David Airlie <airlied@gmail.com>,
+ David Lechner <david@lechnology.com>, 	Dinh Nguyen <dinguyen@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ 	Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jaroslav Kysela <perex@perex.cz>,
+ 	Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ 	Kishon Vijay Abraham I <kishon@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ 	Linus Walleij <linus.walleij@linaro.org>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ 	Manivannan Sadhasivam <mani@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ 	Matthias Brugger <matthias.bgg@gmail.com>,
+ Max Filippov <jcmvbkbc@gmail.com>,
+ 	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ 	NXP Linux Team <linux-imx@nxp.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ 	Orson Zhai <orsonzhai@gmail.com>, Paul Cercueil <paul@crapouillou.net>,
+ 	Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ 	Prashant Gaikwad <pgaikwad@nvidia.com>,
+ Richard Fitzgerald <rf@opensource.cirrus.com>,
+ 	Samuel Holland <samuel@sholland.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, 	Sekhar Nori <nsekhar@ti.com>,
+ Shawn Guo <shawnguo@kernel.org>, Takashi Iwai <tiwai@suse.com>,
+ 	Thierry Reding <thierry.reding@gmail.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, 	Vinod Koul <vkoul@kernel.org>,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+ 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, 	linux-actions@lists.infradead.org,
+ patches@opensource.cirrus.com, 	linux-stm32@st-md-mailman.stormreply.com,
+ linux-mediatek@lists.infradead.org, 	linux-renesas-soc@vger.kernel.org,
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ 	linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
+ linux-sunxi@lists.linux.dev, 	alsa-devel@alsa-project.org,
+ linux-mips@vger.kernel.org, Liam Beguin <liambeguin@gmail.com>
+Subject: Re: [PATCH v3 00/65] clk: Make determine_rate mandatory for muxes
+Message-ID: <3nwpjtfa46zorfpuvvugximqe5qmovff76dqphoxbndr6mczcc@ndau7cegfxb2>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+ <636b8f855b6009ba068010e00c20e7f5.sboyd@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Content-Language: en-US
-To: Conor Dooley <conor.dooley@microchip.com>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
-	<conor@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-References: <20230419035646.43702-1-changhuang.liang@starfivetech.com>
- <20230419035646.43702-2-changhuang.liang@starfivetech.com>
- <20230419-labored-camper-644d51a7ca96@spud>
- <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
- <20230424-baffle-punch-ec73098f2b6a@spud>
- <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
- <20230425-unquote-eligible-09f743d81981@wendy>
- <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
- <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
- <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
- <20230425-resale-footrest-de667778c4fe@wendy>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230425-resale-footrest-de667778c4fe@wendy>
-X-Originating-IP: [113.72.145.137]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX162.cuchost.com
- (172.16.6.72)
-X-YovoleRuleAgent: yovoleflag
+In-Reply-To: <636b8f855b6009ba068010e00c20e7f5.sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_052713_123215_137F9A0B 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20230425_074706_556568_98A1AB52 
+X-CRM114-Status: GOOD (  24.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,111 +143,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8547006815620537168=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
+--===============8547006815620537168==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="75sfg4dfrxr3i5xc"
+Content-Disposition: inline
 
-On 2023/4/25 17:35, Conor Dooley wrote:
-> On Tue, Apr 25, 2023 at 05:18:10PM +0800, Changhuang Liang wrote:
->>
->>
->> On 2023/4/25 16:19, Krzysztof Kozlowski wrote:
->>> On 25/04/2023 09:57, Changhuang Liang wrote:
->>>>>>>>>>  
->>>>>>>>>>  description: |
->>>>>>>>>>    StarFive JH7110 SoC includes support for multiple power domains which can be
->>>>>>>>>> @@ -17,6 +18,7 @@ properties:
->>>>>>>>>>    compatible:
->>>>>>>>>>      enum:
->>>>>>>>>>        - starfive,jh7110-pmu
->>>>>>>>>> +      - starfive,jh7110-aon-pmu
->>>>>>>
->>>>>>> I was speaking to Rob about this over the weekend, he asked:
->>>>>>> 'Why isn't "starfive,jh7110-aon-syscon" just the power-domain provider
->>>>>>> itself?'
->>>>>>
->>>>>> Maybe not, this syscon only offset "0x00" configure power switch.
->>>>>> other offset configure other functions, maybe not power, so this
->>>>>> "starfive,jh7110-aon-syscon" not the power-domain itself.
->>>>>>
->>>>>>> Do we actually need to add a new binding for this at all?
->>>>>>>
->>>>>>> Cheers,
->>>>>>> Conor.
->>>>>>>
->>>>>>
->>>>>> Maybe this patch do that.
->>>>>> https://lore.kernel.org/all/20230414024157.53203-6-xingyu.wu@starfivetech.com/
->>>>>
->>>>> This makes it a child-node right? I think Rob already said no to that in
->>>>> and earlier revision of this series. What he meant the other day was
->>>>> making the syscon itself a power domain controller, since the child node
->>>>> has no meaningful properties (reg, interrupts etc).
->>>>>
->>>>> Cheers,
->>>>> Conor.
->>>>
->>>> Yes, "starfive,jh7110-aon-pmu" is a child-node of "starfive,jh7110-aon-syscon".
->>>> In my opinion, "0x17010000" is "aon-syscon" on JH7110 SoC, and this "aon-pmu" is just 
->>>> a part of "aon-syscon" function, so I think it is inappropriate to make "aon-syscon"
->>>> to a power domain controller. I think using the child-node description is closer to
->>>> JH7110 SoC. 
->>>
->>> Unfortunately, I do not see the correlation between these, any
->>> connection. Why being a child of syscon block would mean that this
->>> should no be power domain controller? Really, why? These are two
->>> unrelated things.
->>>
->>> Best regards,
->>> Krzysztof
->>>
->>
->> Let me summarize what has been discussed above. 
->>
->> There has two ways to describe this "starfive,jh7110-aon-syscon"(0x17010000).
->> 1. (0x17010000) is power-controller node:
->>
->> 	aon_pwrc: power-controller@17010000 {
->> 		compatible = "starfive,jh7110-aon-pmu", "syscon";
->> 		reg = <0x0 0x17010000 0x0 0x1000>;
->> 		#power-domain-cells = <1>;
->> 	};
->>
->>
->> 2. (0x17010000) is syscon node, power-controller is child-node of syscon:
->>
->> 	aon_syscon: syscon@17010000 {
->> 		compatible = "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
->> 		reg = <0x0 0x17010000 0x0 0x1000>;
->>
->> 		aon_pwrc: power-controller {
->> 			compatible = "starfive,jh7110-aon-pmu";
->> 			#power-domain-cells = <1>;
->> 		};
->> 	};
-> 
-> I thought that Rob was suggesting something like this:
-> 	aon_syscon: syscon@17010000 {
-> 		compatible = "starfive,jh7110-aon-syscon", ...
-> 		reg = <0x0 0x17010000 0x0 0x1000>;
-> 		#power-domain-cells = <1>;
-> 	};
-> 
-> Cheers,
-> Conor.
-> 
 
-I see the kernel:
-https://elixir.bootlin.com/linux/latest/source/arch/arm64/boot/dts/mediatek/mt8167.dtsi
-this file line 42:
-it's power-controller also has no meaningful properties.
-What do you think?
+--75sfg4dfrxr3i5xc
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Thu, Apr 13, 2023 at 02:44:51PM -0700, Stephen Boyd wrote:
+> Quoting Maxime Ripard (2023-04-04 03:10:50)
+> > Hi,
+> >=20
+> > This is a follow-up to a previous series that was printing a warning
+> > when a mux has a set_parent implementation but is missing
+> > determine_rate().
+> >=20
+> > The rationale is that set_parent() is very likely to be useful when
+> > changing the rate, but it's determine_rate() that takes the parenting
+> > decision. If we're missing it, then the current parent is always going
+> > to be used, and thus set_parent() will not be used. The only exception
+> > being a direct call to clk_set_parent(), but those are fairly rare
+> > compared to clk_set_rate().
+> >=20
+> > Stephen then asked to promote the warning to an error, and to fix up all
+> > the muxes that are in that situation first. So here it is :)
+> >=20
+>=20
+> Thanks for resending.
+>=20
+> I was thinking that we apply this patch first and then set
+> determine_rate clk_ops without setting the clk flag. The function name
+> is up for debate.
+
+Ack, I'll send a new version following your proposal
+
+Maxime
+
+--75sfg4dfrxr3i5xc
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZEfn1wAKCRDj7w1vZxhR
+xaSaAP96/77zpjIZ1yxHOKTWolPnSBrvZZStILbYFUHTfnf4ZQEAy9TnDb76xLC+
+cV82CRmIHcP1MQoDgnjetPo+R14sLwk=
+=xg1X
+-----END PGP SIGNATURE-----
+
+--75sfg4dfrxr3i5xc--
+
+
+--===============8547006815620537168==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8547006815620537168==--
+
