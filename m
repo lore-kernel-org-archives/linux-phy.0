@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7033C7EE20
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 03:40:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32240C77B61
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 03:40:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kgxyaQiMAzmouLk9av88uaK4l/0j9wLaWmAC4uRGREs=; b=DKMYEcWXYhusLo
-	jA7mcMXKNytnOn4ZBz8bMeFdKliqOS+6Jz82XMhQAWwV1fHDRUY/AJ8/mIHYOgrWII3ApZbqmuyHr
-	i+MpuwB3nl8lV/L9+iiRddu5xrm7Zz8XQHlbOF75W38ZvnmopDW0V509x3+99onb57H6fVB5uQWIP
-	rApj8Xv/1z8+CRwuR+XlcRR7HbSiFQyA9euMaOIX4rY3bk4k4Of8PNwLdCivQIq8flFZHjqHvH8pv
-	iMg5RI53zSmTe0GCOx6sW2pVwmGg1YGogqGAP4J+xzzhHWamoIPeEoKAaJhS/+3+ikgXDnJk9PafU
-	56Us7cU+TKQuwmgQE/uQ==;
+	List-Owner; bh=k4Sp4FRXPB7KGDlm48Pizdv0R/kRGZWkfO+krGzYmtw=; b=0QtB+H+1OunYOo
+	C6dSuxfgECiK/QErsIZKj8rUL1a8bVEFcgvMHEn6fh3HZo5s9fVXGY7Siteyiyf7HGjfiB5HpRfAu
+	u+Pdq8VXHxDZstfmpSsDzfJ3T4MUXmwZNlhyQoaD9s+igWpdqC80mjtWpaizqID0n/CdUUGQcKkpI
+	DCCY3tz0QGo+ySUvXG+4wg+eijSyTC+8W7CINSCQGoTYa3MsdJwr9yTdTHJActaewf9c8JscCYO0j
+	GxPfQx0mDKLQSvbmM+KCRfSM3J1VWQeMUzDGF1rSHXLAhYjf/ouebHVUiM+NNM4a4yqaY1gs+SJN1
+	qH9vrcGFBUfoidOqrV7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9XX-0006nl-1o;
+	id 1pr9XX-0006o1-2i;
 	Tue, 25 Apr 2023 03:40:27 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pr9XS-0006ke-0C
+	id 1pr9XS-0006kg-1G
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Apr 2023 03:40:24 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33P2vRbb011628;
-	Tue, 25 Apr 2023 03:40:17 GMT
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33P2Sf0S011857;
+	Tue, 25 Apr 2023 03:40:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=cNOclMCELNCK+CMcCiTtKRwn+cFcMI0/gkzNAob37fA=;
- b=iJTjbqPmCmIKcdRtZVrmnVZnyPks0Ij1aSm7r92nBaRyGwKall4QKtWZUn/BtSeFk4LH
- EWuOCTt+jIPEMzwQgwfHKkinhonEEDmrDxbDcXI0brT29Z69sEx6FALplR3yydrzsxJG
- eUewEoVlGcdngDBpEVQ9saIsIxhogrhld77eCBGso/lLMkdPL63dO7KpoS1Xg5wlS/Gc
- 2QH1VifoUA352B1pTbVXzT/tW5HbXm9mOKGfEw0xYxDgIFROSUVuSASaN/TBtal1tC/x
- DD4uPmfql1WO9UjSPYwx2JGWozdLOHxANNGIVZpKFb0yBljjr81DzGtw8AjH8RdO96w9 nA== 
+ bh=laQuqRmAsI/tQdeTM7pfgQ6bc34k+aBrbLSOtsopZMA=;
+ b=gKE2o4nXs+JtwHGpCc2KZz6f0WAI/Z03vF3UGs5ZueXyKZ33mBnwopjwtEfk7RTRafek
+ r/Eb0MMD05wk0gFsjvUVEY30Po5HRTFNHrNd6GOL3cu+HgEWUf2LH5V6HFl3DXq5T+IO
+ eTQ2lZV5nWDixzjGy+JgX6ppbx68SCxWthcXIrm7g0wzKPtT7ZRMWZ/v4u5wn307hHZZ
+ EE08/kRNbJvBFdZoFiNcJ1Jodk1G2Aot97d/yiyTKfwlLVMlIpI70Yt6XBuTbVibahUo
+ plpCuEGEQ7tnsN2hwQYwEnrsim4RVGLVLvdONsdJkRhfgBaVz1bEKN2yroOHSCPZoPOo Dw== 
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q628x8g4k-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q5uwj1d7k-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Apr 2023 03:40:17 +0000
+	Tue, 25 Apr 2023 03:40:18 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33P3eGLP008563
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33P3eHsx008583
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Apr 2023 03:40:16 GMT
+	Tue, 25 Apr 2023 03:40:17 GMT
 Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Mon, 24 Apr 2023 20:40:16 -0700
+ 15.2.986.42; Mon, 24 Apr 2023 20:40:17 -0700
 From: Bjorn Andersson <quic_bjorande@quicinc.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Johan Hovold <johan@kernel.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
+To: Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio
 	<konrad.dybcio@linaro.org>,
+        Johan Hovold <johan@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
         Rob Herring <robh+dt@kernel.org>,
-        Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 3/7] phy: qcom-qmp-combo: Introduce orientation variable
-Date: Mon, 24 Apr 2023 20:40:06 -0700
-Message-ID: <20230425034010.3789376-4-quic_bjorande@quicinc.com>
+Subject: [PATCH 6/7] arm64: dts: qcom: sc8280xp-crd: Add QMP to SuperSpeed graph
+Date: Mon, 24 Apr 2023 20:40:09 -0700
+Message-ID: <20230425034010.3789376-7-quic_bjorande@quicinc.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
 References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
@@ -74,19 +74,19 @@ X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1qUof-jEfrUBfTujVuhJCCli9bGpI3RS
-X-Proofpoint-ORIG-GUID: 1qUof-jEfrUBfTujVuhJCCli9bGpI3RS
+X-Proofpoint-ORIG-GUID: P687bBa9sFBWMwcq1jRezx0jYFe2K9-0
+X-Proofpoint-GUID: P687bBa9sFBWMwcq1jRezx0jYFe2K9-0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-25_03,2023-04-21_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 spamscore=0
- clxscore=1015 mlxscore=0 bulkscore=0 malwarescore=0 impostorscore=0
- adultscore=0 phishscore=0 lowpriorityscore=0 priorityscore=1501
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
+ lowpriorityscore=0 phishscore=0 suspectscore=0 impostorscore=0
+ adultscore=0 priorityscore=1501 clxscore=1015 malwarescore=0 spamscore=0
+ mlxlogscore=977 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2303200000 definitions=main-2304250032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230424_204022_101245_AD5AA382 
-X-CRM114-Status: GOOD (  23.22  )
+X-CRM114-CacheID: sfid-20230424_204022_430432_2E2A45CD 
+X-CRM114-Status: GOOD (  16.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,154 +103,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In multiple places throughout the driver code has been written in
-prepration for handling of orientation switching.
+With support for the QMP combo phy to react to USB Type-C switch events,
+introduce it as the next hop for the SuperSpeed lanes of the two USB
+Type-C connectors, and connect the output of the DisplayPort controller
+to the QMP combo phy.
 
-Introduce a typec_orientation in qmp_combo and fill out the various
-"placeholders" with the associated logic. By initializing the
-orientation to "normal" this change has no functional impact, but
-reduces the size of the upcoming introduction of dynamic orientation
-switching.
+This allows the TCPM to perform orientation switching of both USB and
+DisplayPort signals.
 
 Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 54 +++++++++++++----------
- 1 file changed, 30 insertions(+), 24 deletions(-)
+ arch/arm64/boot/dts/qcom/sc8280xp-crd.dts | 28 ++++++++++++++++---
+ arch/arm64/boot/dts/qcom/sc8280xp.dtsi    | 34 +++++++++++++++++++++++
+ 2 files changed, 58 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7280f7141961..6748f31da7a3 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -19,6 +19,7 @@
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
-+#include <linux/usb/typec.h>
+diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts b/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
+index 547277924ea3..33c973661fa5 100644
+--- a/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
++++ b/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
+@@ -64,7 +64,7 @@ port@1 {
+ 					reg = <1>;
  
- #include <dt-bindings/phy/phy-qcom-qmp.h>
+ 					pmic_glink_con0_ss: endpoint {
+-						remote-endpoint = <&mdss0_dp0_out>;
++						remote-endpoint = <&usb_0_qmpphy_out>;
+ 					};
+ 				};
  
-@@ -63,6 +64,10 @@
- /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
- #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+@@ -99,7 +99,7 @@ port@1 {
+ 					reg = <1>;
  
-+/* QPHY_V3_DP_COM_TYPEC_CTRL register bits */
-+#define SW_PORTSELECT_VAL			BIT(0)
-+#define SW_PORTSELECT_MUX			BIT(1)
-+
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
+ 					pmic_glink_con1_ss: endpoint {
+-						remote-endpoint = <&mdss0_dp1_out>;
++						remote-endpoint = <&usb_1_qmpphy_out>;
+ 					};
+ 				};
  
- struct qmp_phy_init_tbl {
-@@ -1323,6 +1328,8 @@ struct qmp_combo {
- 	struct clk_fixed_rate pipe_clk_fixed;
- 	struct clk_hw dp_link_hw;
- 	struct clk_hw dp_pixel_hw;
-+
-+	enum typec_orientation orientation;
+@@ -412,7 +412,7 @@ &mdss0_dp0 {
+ 
+ &mdss0_dp0_out {
+ 	data-lanes = <0 1>;
+-	remote-endpoint = <&pmic_glink_con0_ss>;
++	remote-endpoint = <&usb_0_qmpphy_dp_in>;
  };
  
- static void qmp_v3_dp_aux_init(struct qmp_combo *qmp);
-@@ -1955,29 +1962,23 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
- static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
- {
- 	u32 val;
--	bool reverse = false;
-+	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
-+	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ &mdss0_dp1 {
+@@ -421,7 +421,7 @@ &mdss0_dp1 {
  
- 	val = DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
- 	      DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN;
+ &mdss0_dp1_out {
+ 	data-lanes = <0 1>;
+-	remote-endpoint = <&pmic_glink_con1_ss>;
++	remote-endpoint = <&usb_1_qmpphy_dp_in>;
+ };
  
--	/*
--	 * TODO: Assume orientation is CC1 for now and two lanes, need to
--	 * use type-c connector to understand orientation and lanes.
--	 *
--	 * Otherwise val changes to be like below if this code understood
--	 * the orientation of the type-c cable.
--	 *
--	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC2)
--	 *	val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
--	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC1)
--	 *	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
--	 * if (orientation == ORIENTATION_CC2)
--	 *	writel(0x4c, qmp->dp_dp_phy + QSERDES_V3_DP_PHY_MODE);
--	 */
--	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
-+	if (dp_opts->lanes == 4 || reverse)
-+		val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
-+	if (dp_opts->lanes == 4 || !reverse)
-+		val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
+ &mdss0_dp3 {
+@@ -670,9 +670,19 @@ &usb_0_qmpphy {
+ 	vdda-phy-supply = <&vreg_l9d>;
+ 	vdda-pll-supply = <&vreg_l4d>;
+ 
++	orientation-switch;
 +
- 	writel(val, qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
+ 	status = "okay";
+ };
  
--	writel(0x5c, qmp->dp_dp_phy + QSERDES_DP_PHY_MODE);
-+	if (reverse)
-+		writel(0x4c, qmp->pcs + QSERDES_DP_PHY_MODE);
-+	else
-+		writel(0x5c, qmp->pcs + QSERDES_DP_PHY_MODE);
- 
- 	return reverse;
- }
-@@ -2235,7 +2236,7 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
--	bool reverse = false;
-+	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
- 	u32 status;
- 	int ret;
- 
-@@ -2299,7 +2300,7 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
--	bool reverse = false;
-+	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
- 	u32 status;
- 	int ret;
- 
-@@ -2358,7 +2359,7 @@ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
--	bool reverse = false;
-+	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
- 	u32 status;
- 	int ret;
- 
-@@ -2462,6 +2463,7 @@ static int qmp_combo_com_init(struct qmp_combo *qmp)
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *com = qmp->com;
- 	int ret;
-+	u32 val;
- 
- 	if (qmp->init_count++)
- 		return 0;
-@@ -2495,10 +2497,12 @@ static int qmp_combo_com_init(struct qmp_combo *qmp)
- 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
- 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
- 
--	/* Default type-c orientation, i.e CC1 */
--	qphy_setbits(com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x02);
--
--	qphy_setbits(com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE | DP_MODE);
-+	/* Use software based port select and switch on typec orientation */
-+	val = SW_PORTSELECT_MUX;
-+	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
-+		val |= SW_PORTSELECT_VAL;
-+	writel(val, com + QPHY_V3_DP_COM_TYPEC_CTRL);
-+	writel(USB3_MODE | DP_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
- 
- 	/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
- 	qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-@@ -3361,6 +3365,8 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 
- 	qmp->dev = dev;
- 
-+	qmp->orientation = TYPEC_ORIENTATION_NORMAL;
++&usb_0_qmpphy_dp_in {
++	remote-endpoint = <&mdss0_dp0_out>;
++};
 +
- 	qmp->cfg = of_device_get_match_data(dev);
- 	if (!qmp->cfg)
- 		return -EINVAL;
++&usb_0_qmpphy_out {
++	remote-endpoint = <&pmic_glink_con0_ss>;
++};
++
+ &usb_0_role_switch {
+ 	remote-endpoint = <&pmic_glink_con0_hs>;
+ };
+@@ -697,9 +707,19 @@ &usb_1_qmpphy {
+ 	vdda-phy-supply = <&vreg_l4b>;
+ 	vdda-pll-supply = <&vreg_l3b>;
+ 
++	orientation-switch;
++
+ 	status = "okay";
+ };
+ 
++&usb_1_qmpphy_dp_in {
++	remote-endpoint = <&mdss0_dp1_out>;
++};
++
++&usb_1_qmpphy_out {
++	remote-endpoint = <&pmic_glink_con1_ss>;
++};
++
+ &usb_1_role_switch {
+ 	remote-endpoint = <&pmic_glink_con1_hs>;
+ };
+diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+index 0e691bb0120c..1eb3a295e8fa 100644
+--- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+@@ -3006,6 +3006,23 @@ usb_0_qmpphy: phy@88eb000 {
+ 			#phy-cells = <1>;
+ 
+ 			status = "disabled";
++
++			ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				port@0 {
++					reg = <0>;
++
++					usb_0_qmpphy_out: endpoint {};
++				};
++
++				port@1 {
++					reg = <1>;
++
++					usb_0_qmpphy_dp_in: endpoint {};
++				};
++			};
+ 		};
+ 
+ 		usb_1_hsphy: phy@8902000 {
+@@ -3042,6 +3059,23 @@ usb_1_qmpphy: phy@8903000 {
+ 			#phy-cells = <1>;
+ 
+ 			status = "disabled";
++
++			ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				port@0 {
++					reg = <0>;
++
++					usb_1_qmpphy_out: endpoint {};
++				};
++
++				port@1 {
++					reg = <1>;
++
++					usb_1_qmpphy_dp_in: endpoint {};
++				};
++			};
+ 		};
+ 
+ 		mdss1_dp0_phy: phy@8909a00 {
 -- 
 2.39.2
 
