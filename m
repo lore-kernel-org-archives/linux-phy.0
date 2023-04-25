@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7132AC6FD18
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 18:38:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C651DC77B61
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 18:58:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8a7fQuudjz2JkBbS/Q08sSjB6dUpDuk00X6o6xOBFSI=; b=QRzkt5jRFnU1VR
-	mxI23Nymk5WzaTyo/KqELWPDApLTqmjMMNPV4JXqKXOZq2r0WfoiCurGtipZGV6Qa3LiuysRvavk4
-	4gxHlItKf0+GovLn7xIUDbBUh/hX5M5UlYYOODGzHBEVUFUA3VzYPFH2q7GzmctcZ3JuKquJAWy8y
-	SPviT9B8SKxfS9IKXF86WTCSQmtpkxCRaj5lcZWz2MkkJCDv1T5VTQI4cV26WkA1SpHboiWknlsUM
-	mhKP2NFO4cGtLsFCH9pD1LtodoNQ83pk1AkMLk2Pe23gzegjiTMmGbe/yKhJ8jmF5yZt3Y5Cu6Fe1
-	HPMSxjlxGaLARnPXKMHA==;
+	List-Owner; bh=AacZuROq/0fg+yFpWPwM/+PMFSqZPTozsy6VVOXEAL8=; b=XoyAx2V6ZpWLRZ
+	amIa6VtgiVJPCrip0rogVwulJrp4YlFOSBQxUGfI5c/eOJBT75IEdRiXO/uCWyMzmanKqOkUr/a/j
+	dZOfzzKjIT48oas52fCGvuCPl3FAOWlHFE6D7JBzrckm2RN7SqOLOlH+0Qv8Egv+BaanKieIW6Q3F
+	Zpw8EH234KH2qF7tdm5S5PtUhf0U42YLIH7zqsH8ouyi1T0ry9R062wJvHbJpWs89D7ahOP2FSsXp
+	42H69YWxhj6SfXqd9wVMbwwYy5f28vx79dAXTn37fQl/BxxFpLmmEpj0IJvXdq1GZc9FUDYluaaY0
+	nvjRAoNdhns2JNUv7FYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prNYX-001xd4-0b;
-	Tue, 25 Apr 2023 18:38:25 +0000
-Received: from mail-oi1-f170.google.com ([209.85.167.170])
+	id 1prNs9-0020BA-1V;
+	Tue, 25 Apr 2023 18:58:41 +0000
+Received: from mail-oa1-f46.google.com ([209.85.160.46])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prNYV-001xci-0Z
+	id 1prNs7-0020Ah-11
 	for linux-phy@lists.infradead.org;
-	Tue, 25 Apr 2023 18:38:24 +0000
-Received: by mail-oi1-f170.google.com with SMTP id 5614622812f47-38dec65ab50so3525242b6e.2
-        for <linux-phy@lists.infradead.org>; Tue, 25 Apr 2023 11:38:22 -0700 (PDT)
+	Tue, 25 Apr 2023 18:58:40 +0000
+Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-18ecdb1f2aaso6623309fac.1
+        for <linux-phy@lists.infradead.org>; Tue, 25 Apr 2023 11:58:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682447902; x=1685039902;
+        d=1e100.net; s=20221208; t=1682449118; x=1685041118;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=+TSCz7QCmWjwuRcVpOo2qZlT76Hnne+7Du/Iuknn3Qg=;
-        b=kPduSCZ5g/HWz2OJeMGhf8wy2VIga0Mjlk0HAuzaF7VmMT43ZeuERrxvNrLOZ19O1v
-         f1oCcTIYD+Kvz/N8+WKtT3Bz4L1+5jnpJBWuLWSrcJOZ11ehxF9P0mORjlEnxYgSRAw3
-         xDeFdOM9yM9NW1l9zQFGt27ecCPBQXLMeL0SbwXTRViyYdsaTlf83WgAeb76WzizEEid
-         PFYwYJSmWaIVTHTYB2YrR+gf2exTCafhLE4yrXq6OyCNpPMJ9d9GVnr0EtVu7hIKICG8
-         AJP3w6Gogm8JSffJIVrpWCbaXJMVfEpFypbdp8oEQ3xxU92Mz2InUOznOQvRcPkcNkif
-         afog==
-X-Gm-Message-State: AAQBX9erWykBQ/uDf8O/sR2TaBlho25u+3saHwqGM5n5GjY/uhNKNNet
-	tUlor7prOcLe4rFfQVv9ouZnNhYf/g==
-X-Google-Smtp-Source: AKy350baxMv1XV1+Ib7RtbH+radYPwF8Djs2uNuSzsYTcwt0TF3nKAN8Iz8fVFAXUp+IQJyPzxBzYA==
-X-Received: by 2002:a05:6808:1597:b0:388:fff3:61e6 with SMTP id t23-20020a056808159700b00388fff361e6mr10967697oiw.38.1682447901864;
-        Tue, 25 Apr 2023 11:38:21 -0700 (PDT)
+        bh=UCPUjU42PRIffLcz9TbBJOAbKvwZwWa3dQczE6gwtwg=;
+        b=VnBN4LJi0oSO2cRVKl1HbB2RbF/1OXcG2xxhIrOyAiH2Qbveux2b1zd6i6FgSYNhMA
+         UPG6vcjGs1I/3tHtVRKswdRbKyEr8Hf0SAqvCX9eL9QYL3LPBk9RYwjNzXBp//nFs3IU
+         uavp4dDOVicT+zSrWhk5b3hC7sV0ZRGO4omiuZwIOBjJIDouN1IEXRFQHMRZVLeDvgyO
+         EkS3w70gdTokEDrIWwgxoopr9DRzrDnE4/I5Nms+bGAQ1ptR1/NmM1ZO4eP700KjO0u1
+         gIxxf75Wp7BNPFaiNT8R25Ju7MUb/wF3+qmZMgn3waH8aI0HZbt/nGUZVBP8yzEBK3AX
+         ywPg==
+X-Gm-Message-State: AAQBX9dYdR7obRTUobErEMjv0tx+Fq7APolBmOT0s6VlH2Ig7ZVVJzP4
+	sPWaqspS77ex3ca91ivTZA==
+X-Google-Smtp-Source: AKy350bVDkDMdeLblHdVNzD9BQfck4ZUsL4yNpzgQj1n/n4pupILFLzx+5zjoco+7TdvhHSqedp9LA==
+X-Received: by 2002:a05:6870:e416:b0:187:fc1c:c1a9 with SMTP id n22-20020a056870e41600b00187fc1cc1a9mr9584459oag.6.1682449117979;
+        Tue, 25 Apr 2023 11:58:37 -0700 (PDT)
 Received: from robh_at_kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id m129-20020acabc87000000b0037d8c938d62sm5834891oif.50.2023.04.25.11.38.20
+        by smtp.gmail.com with ESMTPSA id i4-20020a056870864400b0018e996a507esm2629684oal.31.2023.04.25.11.58.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Apr 2023 11:38:21 -0700 (PDT)
-Received: (nullmailer pid 2061092 invoked by uid 1000);
-	Tue, 25 Apr 2023 18:38:20 -0000
-Date: Tue, 25 Apr 2023 13:38:20 -0500
+        Tue, 25 Apr 2023 11:58:37 -0700 (PDT)
+Received: (nullmailer pid 2083974 invoked by uid 1000);
+	Tue, 25 Apr 2023 18:58:36 -0000
+Date: Tue, 25 Apr 2023 13:58:36 -0500
 From: Rob Herring <robh@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: quic_wcheng@quicinc.com, linux-kernel@vger.kernel.org, vkoul@kernel.org, linux-usb@vger.kernel.org, devicetree@vger.kernel.org, agross@kernel.org, gregkh@linuxfoundation.org, krzysztof.kozlowski+dt@linaro.org, sboyd@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, linux-clk@vger.kernel.org, robh+dt@kernel.org, linux-arm-msm@vger.kernel.org, mturquette@baylibre.com, kishon@kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v9 3/8] dt-bindings: usb: dwc3: Add IPQ9574 compatible
-Message-ID: <168244790024.2061037.14160381736561499893.robh@kernel.org>
-References: <cover.1682092324.git.quic_varada@quicinc.com>
- <f9ba5b4f3dfd299ec7cefd038bc1d9ed5a817b8d.1682092324.git.quic_varada@quicinc.com>
+To: Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Johan Hovold <johan@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/7] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add
+ ports and orientation-switch
+Message-ID: <20230425185836.GA2081377-robh@kernel.org>
+References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
+ <20230425034010.3789376-2-quic_bjorande@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <f9ba5b4f3dfd299ec7cefd038bc1d9ed5a817b8d.1682092324.git.quic_varada@quicinc.com>
+In-Reply-To: <20230425034010.3789376-2-quic_bjorande@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_113823_217933_37CBF103 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20230425_115839_351460_B4C1AC64 
+X-CRM114-Status: GOOD (  17.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,35 +83,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 21 Apr 2023 21:24:45 +0530, Varadarajan Narayanan wrote:
-> * Document the IPQ9574 dwc3 compatible.
+On Mon, Apr 24, 2023 at 08:40:04PM -0700, Bjorn Andersson wrote:
+> The QMP combo phy can be connected to a TCPM, a USB controller and a
+> DisplayPort controller for handling USB Type-C orientation switching
+> and propagating HPD signals.
 > 
-> * Make power-domains as optional since IPQ9574 doesn't have GDSCs
+> Extend the binding to allow these connections to be described.
 > 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> 
+> Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
->  Changes in v9:
-> 	- Place ipq9574 alongwith similar SoCs instead of new entry
-> 	- Make power-domains as optional since IPQ9574 doesn't have GDSCs
->  Changes in v6:
-> 	- Made power-domains as optional
-> 	- Resolved all 'make dtbs_check' messages
+>  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 51 +++++++++++++++++++
+>  1 file changed, 51 insertions(+)
 > 
->  Changes in v5:
-> 	- Restore removed constraints
-> 
->  Changes in v4:
-> 	- Update other relevant sections
-> 	- Remove constraints not applicable to IPQ9574
-> ---
->  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> index 3cd5fc3e8fab..c037ac90ce7f 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> @@ -60,6 +60,26 @@ properties:
+>      description:
+>        See include/dt-bindings/dt-bindings/phy/phy-qcom-qmp.h
+>  
+> +  orientation-switch:
+> +    description:
+> +      Flag the PHY as possible handler of USB Type-C orientation switching
+> +    type: boolean
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Output endpoint of the PHY
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+'port-base' means you have extra properties to add. Where are they? It 
+also needs 'unevaluatedProperties: false'.
 
+> +        description: Incoming endpoint from the USB controller
+> +
+> +      port@2:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: Incoming endpoint from the DisplayPort controller
+> +
+>  required:
+>    - compatible
+>    - reg
+> @@ -98,6 +118,37 @@ examples:
+>        vdda-phy-supply = <&vreg_l9d>;
+>        vdda-pll-supply = <&vreg_l4d>;
+>  
+> +      orientation-switch;
+> +
+>        #clock-cells = <1>;
+>        #phy-cells = <1>;
+> +
+> +      ports {
+> +          #address-cells = <1>;
+> +          #size-cells = <0>;
+> +
+> +          port@0 {
+> +              reg = <0>;
+> +
+> +              endpoint {
+> +                  remote-endpoint = <&typec_connector_ss>;
+> +              };
+> +          };
+> +
+> +          port@1 {
+> +              reg = <1>;
+> +
+> +              endpoint {
+> +                  remote-endpoint = <&dwc3_ss_out>;
+> +              };
+> +          };
+> +
+> +          port@2 {
+> +              reg = <2>;
+> +
+> +              endpoint {
+> +                  remote-endpoint = <&mdss_dp_out>;
+> +              };
+> +          };
+> +      };
+>      };
+> -- 
+> 2.39.2
+> 
 
 -- 
 linux-phy mailing list
