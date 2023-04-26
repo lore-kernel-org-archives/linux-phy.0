@@ -4,66 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED467C77B7C
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Apr 2023 22:42:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88644C77B7C
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Apr 2023 02:12:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+eVI/PLqoZ9C1vvYX0G9JuGUydSBooSMWo489roNFuE=; b=46uIPiXmghwSve
-	hsYHndsqdXuDJCIRcMjbV4SHDLM157OSCAWcRZZgTLT+264CuZGfMtKlSfv49jy3oLA4I9WxPojmo
-	r1cU1ftTqUxqPRw/qToEZ+UCLjITsMc8bBntj1/ToEj3Q1FMFrzPNKIrwpy6N7aWf0WihSwhpVpCh
-	DhdwULI+fluSBFyPgtPxd+Fr+Hc6w+Qz3uK1RTedDe7r9Jp5yjLsgrk9ICdg2pXP1iomCQnomyA9C
-	qMFK2pCLveHPaBURKeoz1U4DZu+vj8R0Utn5SsO6LBYJQBg5Vsqh3dcKPU6IylrZm9Zrb7lRmzbLf
-	YJbFcgMK12dJlQrvk+5A==;
+	List-Owner; bh=nvm4htupenARrbNzYC142U+DeRmTvGd+PLJv4sTb2/c=; b=1TmVMtXo9sQF5O
+	1G5Sbqdcl0IRAr1uVuIzyEmMEjhSUfaeVmVm17rSyndkqULKJh7y2nrCTYzVXcu6dl15J7E0uhxu4
+	XT8WSqVyTjH8yN7xdC14BxquR2PqkNC5cgeh28lwJAY8q7hJEt8MfKo3U3lYgJ15Od+Bna6aUlbkH
+	CaaqgYUBS9WBZjs9tbgamG81GPN/5CVRlmiwlnaugjYdnW84eBxyeUl/OOEHAlHDo6E1V/KRkpGry
+	YC58UjI0kcNidX/S1xUpvRpqxyP6QO7nvgJDBLEx5ngUnmfeCuWhIDp6VlhuIzNzNxX0wASDQw/yw
+	Ujv2J0AvWCYv83WIUaSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1prRMy-002LXg-1Q;
-	Tue, 25 Apr 2023 22:42:44 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1prRMv-002LVx-1M
-	for linux-phy@lists.infradead.org;
-	Tue, 25 Apr 2023 22:42:42 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4FB1F6282C;
-	Tue, 25 Apr 2023 22:42:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2744C433EF;
-	Tue, 25 Apr 2023 22:42:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1682462557;
-	bh=XyM8lR5M10fiZgWRQ3U0hnMcuI8zf5/9gAQknS/eazM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cjDkm3LUgPURAvpPiWvr0FoUJ+2lumJ+dJXBuG1ubztX3/CItCq70Yyu212veYjYU
-	 I+jGc3ZQGjSCkCfxS56h/JanDVYnF1G/rMacHMFcO5qipDQMMjaXnXz59xatG611+P
-	 m420nhVj1e30D8i9tDq/3Of0Uatx6GzwewJMzhPgy6ljfdhHS7KxTetys1sXejuKx0
-	 Ip8rSi5hd+JScSnPcjlBPWlKdI+0y979asRn/GXyhQB4Oa3HAf60bgodO7pneGKpxk
-	 59MdEFL3lbm5AnMRcEZ82ypTnYBdm9yPgh2Dz7jgD+166S/y9EIJWoZFvAS1AuJG5b
-	 u8tQmQ6dcBOtA==
-Date: Tue, 25 Apr 2023 15:46:19 -0700
-From: Bjorn Andersson <andersson@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: qcom,edp-phy: allow power-domains
-Message-ID: <20230425224619.66zcpogqc2efq6nq@ripper>
-References: <20230416151233.346336-1-krzysztof.kozlowski@linaro.org>
+	id 1prUdy-002dV4-0R;
+	Wed, 26 Apr 2023 02:12:30 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1prUdu-002dTv-1O;
+	Wed, 26 Apr 2023 02:12:29 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id B16BC24DF03;
+	Wed, 26 Apr 2023 10:11:50 +0800 (CST)
+Received: from EXMBX162.cuchost.com (172.16.6.72) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Apr
+ 2023 10:11:50 +0800
+Received: from [192.168.125.106] (113.72.145.137) by EXMBX162.cuchost.com
+ (172.16.6.72) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Apr
+ 2023 10:11:49 +0800
+Message-ID: <f082999f-e870-9685-98c8-e43bdda67744@starfivetech.com>
+Date: Wed, 26 Apr 2023 10:11:48 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230416151233.346336-1-krzysztof.kozlowski@linaro.org>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+To: Conor Dooley <conor@kernel.org>
+CC: Conor Dooley <conor.dooley@microchip.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+	"Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Emil Renner
+ Berthing <kernel@esmil.dk>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer
+ Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
+	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
+	<linux-phy@lists.infradead.org>
+References: <20230419-labored-camper-644d51a7ca96@spud>
+ <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
+ <20230424-baffle-punch-ec73098f2b6a@spud>
+ <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
+ <20230425-unquote-eligible-09f743d81981@wendy>
+ <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
+ <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
+ <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+ <20230425-resale-footrest-de667778c4fe@wendy>
+ <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+ <20230425-commotion-prewashed-876247bed4ab@spud>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230425-commotion-prewashed-876247bed4ab@spud>
+X-Originating-IP: [113.72.145.137]
+X-ClientProxiedBy: EXCAS064.cuchost.com (172.16.6.24) To EXMBX162.cuchost.com
+ (172.16.6.72)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230425_154241_518966_E6A5A835 
-X-CRM114-Status: GOOD (  15.00  )
+X-CRM114-CacheID: sfid-20230425_191226_804613_23C5D9C5 
+X-CRM114-Status: GOOD (  17.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,41 +90,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Apr 16, 2023 at 05:12:33PM +0200, Krzysztof Kozlowski wrote:
-> At least on SC8280XP the eDP PHY is part of power domain:
-> 
->   sc8280xp-crd.dtb: phy@220c2a00: 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Thank you.
 
-Reviewed-by: Bjorn Andersson <andersson@kernel.org>
-
-Regards,
-Bjorn
-
-> ---
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 3 +++
->  1 file changed, 3 insertions(+)
+On 2023/4/26 0:56, Conor Dooley wrote:
+> On Tue, Apr 25, 2023 at 08:26:35PM +0800, Changhuang Liang wrote:
+>> On 2023/4/25 17:35, Conor Dooley wrote:
+>>> On Tue, Apr 25, 2023 at 05:18:10PM +0800, Changhuang Liang wrote:
+>>>> On 2023/4/25 16:19, Krzysztof Kozlowski wrote:
+>>>>> On 25/04/2023 09:57, Changhuang Liang wrote:
+>>>>>> Yes, "starfive,jh7110-aon-pmu" is a child-node of "starfive,jh7110-aon-syscon".
+>>>>>> In my opinion, "0x17010000" is "aon-syscon" on JH7110 SoC, and this "aon-pmu" is just 
+>>>>>> a part of "aon-syscon" function, so I think it is inappropriate to make "aon-syscon"
+>>>>>> to a power domain controller. I think using the child-node description is closer to
+>>>>>> JH7110 SoC. 
+>>>>>
+>>>>> Unfortunately, I do not see the correlation between these, any
+>>>>> connection. Why being a child of syscon block would mean that this
+>>>>> should no be power domain controller? Really, why? These are two
+>>>>> unrelated things.
+>>>>
+>>>> Let me summarize what has been discussed above. 
+>>>>
+>>>> There has two ways to describe this "starfive,jh7110-aon-syscon"(0x17010000).
+>>>> 1. (0x17010000) is power-controller node:
+>>>>
+>>>> 	aon_pwrc: power-controller@17010000 {
+>>>> 		compatible = "starfive,jh7110-aon-pmu", "syscon";
+>>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>>> 		#power-domain-cells = <1>;
+>>>> 	};
+>>>>
+>>>>
+>>>> 2. (0x17010000) is syscon node, power-controller is child-node of syscon:
+>>>>
+>>>> 	aon_syscon: syscon@17010000 {
+>>>> 		compatible = "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
+>>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>>>
+>>>> 		aon_pwrc: power-controller {
+>>>> 			compatible = "starfive,jh7110-aon-pmu";
+>>>> 			#power-domain-cells = <1>;
+>>>> 		};
+>>>> 	};
+>>>
+>>> I thought that Rob was suggesting something like this:
+>>> 	aon_syscon: syscon@17010000 {
+>>> 		compatible = "starfive,jh7110-aon-syscon", ...
+>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>> 		#power-domain-cells = <1>;
+>>> 	};
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> index c4f8e6ffa5c3..6566353f1a02 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> @@ -43,6 +43,9 @@ properties:
->    "#phy-cells":
->      const: 0
->  
-> +  power-domains:
-> +    maxItems: 1
-> +
->    vdda-phy-supply: true
->    vdda-pll-supply: true
->  
-> -- 
-> 2.34.1
+>> I see the kernel:
+>> https://elixir.bootlin.com/linux/latest/source/arch/arm64/boot/dts/mediatek/mt8167.dtsi
+>> this file line 42:
+>> it's power-controller also has no meaningful properties.
+>> What do you think?
 > 
+> I'm not sure that I follow. It has a bunch of child-nodes does it not,
+> each of which is a domain?
+> 
+> I didn't see such domains in your dts patch, they're defined directly in
+> the driver instead AFAIU. Assuming I have understood that correctly,
+> your situation is different to that mediatek one?
+> 
+> Cheers,
+> Conor.
+
+I think there child-nodes just need to operate some clock signals. Maybe
+we don't need to discuss other platforms.
+
+If Rob's method is confirmed. I will try it next version.
+
+Maybe like this:
+aon_syscon: syscon@17010000 {
+	compatible = "starfive,jh7110-aon-syscon", "syscon", "starfive,jh7110-aon-pmu";
+	reg = <0x0 0x17010000 0x0 0x1000>;
+	#power-domain-cells = <1>;
+};
+
+Rob and krzystof:
+
+And I think patch[1][2] need to change. Right? 
+
+[1] https://lore.kernel.org/all/20230414024157.53203-6-xingyu.wu@starfivetech.com/
+[2] https://lore.kernel.org/all/20230414024157.53203-7-xingyu.wu@starfivetech.com/
 
 -- 
 linux-phy mailing list
