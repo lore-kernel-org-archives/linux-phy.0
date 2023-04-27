@@ -4,79 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6131EC77B61
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Apr 2023 19:07:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F24C7EE29
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Apr 2023 19:10:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8S2k4IlVpfXix0xpBwZSojahoZKYOwJorCNpwJMJelA=; b=kgTmgrOonmwpOD
-	BxC2anVJ4eu67M+ei4kTbKNDuJX90/kQDWw1slFQlDFZn4Fqxz6nygNv6BDcyitdwsIeKQE5Ut+p9
-	o/0wEYPnToopKn7/W7+rAc5a7FO6NUSvXCHmwo7fQvjA0jkvfR4yIDzzrPKF2IYZ8HmUcT1QOEEGQ
-	Piz9B72fImBNddvTlGzyqNPmm7eO8wBVcJoz3ZUVqrsRawp+6liqYsJC+9HE/QsWBh0pqLhZGDoc5
-	FFTMwsDYoW3SdQiNcnuAxw0NgX5hDNV2tlTwqzZ4v70Mh8nKscdLN8gMHMrbaLPBcY/wHtpwR9UZ9
-	y1Sd6fzSMmA1B7Q/3dEQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wHWqAAl1XXGG4NW+Ae9n2nqGmwMyZ5WEWF3pJG9YlNw=; b=cLIkIb5Q3MTfxF
+	eU+2KaC+aGHTPQ+wNyTkwZkWTGVNdXxvayRhMv9dKq2ShIK+9vSSXiqgVKjTaARlMTvDHVg9zscRY
+	k1lJVhtrsU6fIAp7f+FBrAjfof0oI/Gl/bP852VdFFOFi1ikox3E4J8TuYp3tOGotPJOMMmn1RXSG
+	VxEwwailcLMhsEc+wyl7fH623RN6LrR6PWKis8HCFVrdhMibuDZSYlHgjo9iAR00v2/J9/1xE5DaD
+	ft37U9xrXHmQpcAk6aEoJqo2rT5lK5U9HoOghB2sQ/VBN0G5KfOO76my3Mk62cvqp397UgUAeNDpl
+	JmB1qJ5SNsjCVwlPAK1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ps6xs-007IEK-06;
-	Thu, 27 Apr 2023 19:07:36 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1ps70C-007IYY-2f;
+	Thu, 27 Apr 2023 19:10:00 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ps6xo-007ICk-2q
-	for linux-phy@lists.infradead.org;
-	Thu, 27 Apr 2023 19:07:34 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-3f315712406so35555385e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 27 Apr 2023 12:07:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1682622447; x=1685214447;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=1DD/i3pbFgHoXQYJbjBQbgWQpfiH0mY/V+lPtAi5i5E=;
-        b=KYfywVJpr98BpGpUIMqxiOWLoVzT8wTs6KkJbyntKqr1amFwN4b1tANgZotb31/3Tr
-         dV1pjRe8tKdaAl6HOWDQ3K+bZo7pMh76x84iLn4BaG7KwdzQFAfOMomj7I0V9G3gA76H
-         8CJYQjapq5+VBAmdu916oOuPUT91BUQAlsLKLVaJnt/vPlm62OaJ+3v/MxmMh07DDnml
-         3SIAiVH5I1m5oYEc8JJMxPZjtE2jLpHMZi1Px2lgsUXW+iv2G7F4qytfXTfdJTXSgEYa
-         YilTrc3ZX4Hv+mzrIdJduqriNZDI2f554NjTYB5tqQNCSXrpx2+uM23KE0KSAt/CEW8L
-         qyFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682622447; x=1685214447;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1DD/i3pbFgHoXQYJbjBQbgWQpfiH0mY/V+lPtAi5i5E=;
-        b=SM/evZCa4XYm0n4pH1VOS1n1CaOz88W/WTIKzXb+847K54YtdBsFgI6jx/bBmusWpz
-         gmujV7Rz7bC8oAfGeWIh/yyQ+SFpUUYpPAOYNG+bWZaZt9DdvEvogWgFdhYSS/GwIGB3
-         DVeyYhW15yMZD1rOOw9oG1HYuwlBSZ2H9HzMfO2CL+/3Q5lxVtXYBnO1r+0PGHqcChqP
-         genGZWUbnzFWJ6AoFBLfkXb0DFKLADvmNNp/kCTGQz1VDSMVLB8JJmv0l1lkcF4UkxCh
-         nCB+K7dfipn7Nx6Epzkd+F/hNdfU0b74s96ARccaVvcKzYrhrp1eXpdD5Or3FPXowppw
-         jm4g==
-X-Gm-Message-State: AC+VfDwfpNdV2LzS5Pc0QrRsbz50gvNGR87hs3CKpHQ0e4wYEQIaHhXE
-	hNvkKUDpZthPXOEk7HkCTq0=
-X-Google-Smtp-Source: ACHHUZ6YOdz4pEj5ILXL0eZIKrBh1KFvZPGv9RzTwKeNdO3k5tHQ12aCAisCbRh5jM2+tRbYYlKFlw==
-X-Received: by 2002:adf:f5c1:0:b0:2f5:dad1:41a4 with SMTP id k1-20020adff5c1000000b002f5dad141a4mr2302395wrp.6.1682622447461;
-        Thu, 27 Apr 2023 12:07:27 -0700 (PDT)
-Received: from standask-GA-A55M-S2HP ([188.123.113.247])
-        by smtp.gmail.com with ESMTPSA id d14-20020a5d538e000000b002efac42ff35sm19217573wrv.37.2023.04.27.12.07.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 27 Apr 2023 12:07:27 -0700 (PDT)
-Date: Thu, 27 Apr 2023 21:07:25 +0200
-From: Stanislav Jakubek <stano.jakubek@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: phy: brcm,kona-usb2-phy: convert to YAML
-Message-ID: <20230427190725.GA7730@standask-GA-A55M-S2HP>
+	id 1ps708-007IXP-1u;
+	Thu, 27 Apr 2023 19:09:58 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 65910637E8;
+	Thu, 27 Apr 2023 19:09:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9DAF8C433EF;
+	Thu, 27 Apr 2023 19:09:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1682622594;
+	bh=4MuGyWTQQD8YDc9ZDP5EuTvCXfhs1RGXEGefTe8GbFs=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=OEyoAdAg2oHj1kpUaFAUQnORGNgUcMTwXna94WirWc4/7OFURAmKcVKLlVxGAFkME
+	 toxsg2t0o0U7Q+9nKKAWfOe1B/t1z3g1kRabot2L3KU7VvngL293h0JsGHTQ534ZJP
+	 wb/t5pQP0ryuyOaWJAQ0Akswuclq647TVGmt1KHHbj8adW21pY6mXqBy4ogxoG3XiT
+	 nl8v4DuX6FhDVh3IAmmeTltphT6HmwSaAdaxUAAee3iYvoH2HR36H28EF1sUk2sy35
+	 kac9ZjDMYlfFNHS8ZZYJ4TPcDUlbU3BEvZYy9X6SsaJklf3YKOr0nvFwrR0eNy/XBZ
+	 ccVK16xunjKbA==
+Message-ID: <57dd81d0-510e-0fab-670d-1109eb8dd974@kernel.org>
+Date: Thu, 27 Apr 2023 14:09:48 -0500
 MIME-Version: 1.0
-Content-Disposition: inline
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v3 29/65] clk: socfpga: gate: Add a determine_rate hook
+Content-Language: en-US
+To: Maxime Ripard <maxime@cerno.tech>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, =?UTF-8?Q?Andreas_F=c3=a4rber?=
+ <afaerber@suse.de>, Manivannan Sadhasivam <mani@kernel.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ Max Filippov <jcmvbkbc@gmail.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+ Abel Vesa <abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>, Paul Cercueil <paul@crapouillou.net>,
+ Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
+ <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, linux-actions@lists.infradead.org,
+ patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
+ linux-sunxi@lists.linux.dev, alsa-devel@alsa-project.org,
+ linux-mips@vger.kernel.org
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+ <20221018-clk-range-checks-fixes-v3-29-9a1358472d52@cerno.tech>
+ <679921ee-98d4-d6ef-5934-e009fd4b31fc@kernel.org>
+ <sjlp5ubnpvulgwhhymmfkmmobkgxacyqwagqozodkee3di2qik@3igj6k3zgbk6>
+From: Dinh Nguyen <dinguyen@kernel.org>
+In-Reply-To: <sjlp5ubnpvulgwhhymmfkmmobkgxacyqwagqozodkee3di2qik@3igj6k3zgbk6>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230427_120732_936292_C4388529 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20230427_120956_707835_9E04FC37 
+X-CRM114-Status: GOOD (  26.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,87 +113,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert Broadcom Kona family USB 2.0 PHY bindings to DT schema.
+Hi Maxime,
 
-Signed-off-by: Stanislav Jakubek <stano.jakubek@gmail.com>
----
- .../bindings/phy/brcm,kona-usb2-phy.txt       | 15 --------
- .../bindings/phy/brcm,kona-usb2-phy.yaml      | 36 +++++++++++++++++++
- 2 files changed, 36 insertions(+), 15 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.yaml
+On 4/25/23 09:48, Maxime Ripard wrote:
+> Hi Dinh,
+> 
+> On Mon, Apr 24, 2023 at 01:32:28PM -0500, Dinh Nguyen wrote:
+>> On 4/4/23 05:11, Maxime Ripard wrote:
+>>> The SoCFGPA gate clock implements a mux with a set_parent hook, but
+>>> doesn't provide a determine_rate implementation.
+>>>
+>>> This is a bit odd, since set_parent() is there to, as its name implies,
+>>> change the parent of a clock. However, the most likely candidate to
+>>> trigger that parent change is a call to clk_set_rate(), with
+>>> determine_rate() figuring out which parent is the best suited for a
+>>> given rate.
+>>>
+>>> The other trigger would be a call to clk_set_parent(), but it's far less
+>>> used, and it doesn't look like there's any obvious user for that clock.
+>>>
+>>> So, the set_parent hook is effectively unused, possibly because of an
+>>> oversight. However, it could also be an explicit decision by the
+>>> original author to avoid any reparenting but through an explicit call to
+>>> clk_set_parent().
+>>>
+>>> The latter case would be equivalent to setting the flag
+>>> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+>>> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+>>> implementation is provided, clk_round_rate() (through
+>>> clk_core_round_rate_nolock()) will call itself on the parent if
+>>> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+>>> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+>>> CLK_SET_RATE_NO_REPARENT is set.
+>>>
+>>> And if it was an oversight, then we are at least explicit about our
+>>> behavior now and it can be further refined down the line.
+>>>
+>>> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+>>> ---
+>>>    drivers/clk/socfpga/clk-gate.c | 3 ++-
+>>>    1 file changed, 2 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/clk/socfpga/clk-gate.c b/drivers/clk/socfpga/clk-gate.c
+>>> index 32ccda960f28..cbba8462a09e 100644
+>>> --- a/drivers/clk/socfpga/clk-gate.c
+>>> +++ b/drivers/clk/socfpga/clk-gate.c
+>>> @@ -110,6 +110,7 @@ static unsigned long socfpga_clk_recalc_rate(struct clk_hw *hwclk,
+>>>    static struct clk_ops gateclk_ops = {
+>>>    	.recalc_rate = socfpga_clk_recalc_rate,
+>>> +	.determine_rate = __clk_mux_determine_rate,
+>>>    	.get_parent = socfpga_clk_get_parent,
+>>>    	.set_parent = socfpga_clk_set_parent,
+>>>    };
+>>> @@ -166,7 +167,7 @@ void __init socfpga_gate_init(struct device_node *node)
+>>>    	init.name = clk_name;
+>>>    	init.ops = ops;
+>>> -	init.flags = 0;
+>>> +	init.flags = CLK_SET_RATE_NO_REPARENT;
+>>>    	init.num_parents = of_clk_parent_fill(node, parent_name, SOCFPGA_MAX_PARENTS);
+>>>    	if (init.num_parents < 2) {
+>>>
+>>
+>> This patch broke SoCFPGA boot serial port. The characters are mangled.
+> 
+> Do you have any other access to that board? If so, could you dump
+> clk_summary in debugfs with and without that patch?
+> 
 
-diff --git a/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.txt b/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.txt
-deleted file mode 100644
-index 3dc8b3d2ffbb..000000000000
---- a/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.txt
-+++ /dev/null
-@@ -1,15 +0,0 @@
--BROADCOM KONA USB2 PHY
--
--Required properties:
-- - compatible: brcm,kona-usb2-phy
-- - reg: offset and length of the PHY registers
-- - #phy-cells: must be 0
--Refer to phy/phy-bindings.txt for the generic PHY binding properties
--
--Example:
--
--	usbphy: usb-phy@3f130000 {
--		compatible = "brcm,kona-usb2-phy";
--		reg = <0x3f130000 0x28>;
--		#phy-cells = <0>;
--	};
-diff --git a/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.yaml
-new file mode 100644
-index 000000000000..d7faeb81f7a7
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/brcm,kona-usb2-phy.yaml
-@@ -0,0 +1,36 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/brcm,kona-usb2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Broadcom Kona family USB 2.0 PHY
-+
-+maintainers:
-+  - Florian Fainelli <f.fainelli@gmail.com>
-+
-+properties:
-+  compatible:
-+    const: brcm,kona-usb2-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#phy-cells':
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#phy-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    usb-phy@3f130000 {
-+        compatible = "brcm,kona-usb2-phy";
-+        reg = <0x3f130000 0x28>;
-+        #phy-cells = <0>;
-+    };
-+...
--- 
-2.25.1
-
+That dump from the clk_summary are identical for both cases.
 
 -- 
 linux-phy mailing list
