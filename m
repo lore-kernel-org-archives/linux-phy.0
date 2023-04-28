@@ -4,91 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32313C7EE25
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:09:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF8DBC77B60
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XdgaMjXdeL+NNLEGq3FS6RhaIU6KkVXp9qfTrKOWIM0=; b=IozmsrGbkvBKuE
-	4PP0OKNR/5PGVxgCLMOLaYwmhaYsX6OPUrItMGmnawDhO1xqZeOyJXwu2+ItvdTqhIhg1HTLkV4pm
-	tVDgZNqo5SaXKRUw8GtuDPFk/VP4tw288KrKIlAG9IhbfOEj+KgQIbid8mFBTi1wpKKuwBkhYibqE
-	Nw/dWBss/9mhz9/f6CjsnUrFLJAAWirTek0+Lkyy/+uT95mCYFqUkJ9C+xHs5GphW2T6Kvsh3ADGL
-	ev0F4Ulxdxgv9heEE7K7USWj+NeYh19788uZvIBhXBHx1/sdHXn4Y8+eTrkH3KtR8s73WrUcuq5gY
-	nHCStN4bRhu42YW3XzrA==;
+	List-Owner; bh=hdvljkH1PY0tKy1y2/1u+gq2+t88KwhyJeLr0Rouz6s=; b=4PW2kWgU7ouCsY
+	Kh4o0aS08mZyPptA4T0enUaanRI7eCJB5BDVWZSpHvBHDrcpaPMUS1z0+RugNDZ9KCQSpOYLF97EI
+	ldwa3W7lvfe1G2CKHWHfady9ZwyULc+KqWtQDZxc7/BmMMjA0zCwez9+YyyeMChQothiCngJBF5ji
+	7DS44N6p+APqcA4iwkD6wVd8xWGBAnpNmjPUGLB/aFAZPqY6FQSG7ELW62vQ/69wH3rpIEoOjxyR6
+	FfaWNzDITsQDio+CpK05eDPpyDS5oabGL7T8isJAFpgI23APLuDtu6Vuvfziyc97VAjRV5hKzYTyA
+	FKsnmc2UYjPYEbZq7ghQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1psNrI-00AE65-1Z;
-	Fri, 28 Apr 2023 13:09:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1psO82-00AOpX-0e;
+	Fri, 28 Apr 2023 13:27:14 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1psNrF-00AE3I-1H
+	id 1psO7y-00AOl6-0d
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Apr 2023 13:09:54 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33S70NUB015686;
-	Fri, 28 Apr 2023 13:09:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=7mxb4wLKWJP+pjCcuM3HAF2KMurguGOcHs/u8RmGmQU=;
- b=WAZJ1nN8B5CF2kCdz31OGiFcb+r+9tpj6SwFxRtZl+5S8tJ6m5pbw4vMxzADWCP4SCl5
- eWWT8KkY4qsMmeCTqXI1CXfBX9UUyd1DWNbNAV2iRqU8RnXIduQlFIc+pt6DNWTxglr2
- F8dPLqlvQLtWfwPupIJJr0axwXE7Efw/JePxyUUJp56o+3+xQQIxdr/bOoZhYWqHfBeD
- /mQ1crpl8GKxAqION7gWFgRTPorb/j08dLR3T6+ZaDn/oDmBD+7DxXqZyJf0a4uoF0d4
- WP4v6evvm12yrR25h5+9Cmf0dEAck2S7ZVKjvlpvzkZU5PLIxJk3uLih2un8L4bw5Rw5 tQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q882g9c9t-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:09:49 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33SD9mP6004162
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:09:48 GMT
-Received: from hu-shazhuss-hyd.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Fri, 28 Apr 2023 06:09:43 -0700
-From: Shazad Hussain <quic_shazhuss@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>
-CC: <dmitry.baryshkov@linaro.org>, <athierry@redhat.com>, <robh@kernel.org>,
-        <konrad.dybcio@linaro.org>, Shazad Hussain <quic_shazhuss@quicinc.com>,
-        "Vinod Koul" <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
-        Wesley Cheng
-	<quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-Subject: [PATCH v2 6/6] arm64: dts: qcom: sa8775p-ride: enable USB nodes
-Date: Fri, 28 Apr 2023 18:38:24 +0530
-Message-ID: <20230428130824.23803-7-quic_shazhuss@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
-References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
+	Fri, 28 Apr 2023 13:27:11 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f178da219bso98264605e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 28 Apr 2023 06:27:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1682688426; x=1685280426;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gkJoG1LPHO8i6Q8wWiW6Rl5rdW7E3T2NGYe6a0Rghqs=;
+        b=ZdfR/e7VVW6XiNkmL3LmeM9+R4kj8X362H1qodHBMdg+uyiTshG0jpKr6rOibBTLeu
+         DA6AQrMAhDORd2ChFpbJX2cLTnbyPu/BHIGoBE75Na1jUzq6e5AC0V+UIGD++SG/sNXJ
+         mGDaZ8yLslXk5mssqHuBP36BhSqhv+mPHsLS0BPVVZ4BED7q8ohax35mMWz6I9VPGZ3t
+         OPOLiuu8l7Yaw62vcREt7DtwhNkiHcKre57Q5mvg4Esp9IK6s6lMW30S6s6PLj05uT4H
+         e+sgnqYRSRKx4U2/nHvg3skEwxeqVxsEjqS6KT74CuzPHkxQDm2TxYR1vuAwCaLefcer
+         MIsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682688426; x=1685280426;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gkJoG1LPHO8i6Q8wWiW6Rl5rdW7E3T2NGYe6a0Rghqs=;
+        b=W6Pn9RhxL8JMVnm8/3H8h3AMWd7nvL292UiPsAwzb8nvIyJ373Low5c5G3DacfmUBa
+         imX/QTkXWMNzWuhAPVWDm9UIL/zozBjSbplAMTcfhAsyMQtEU7LX2OKdpKPvh/GrH1Bn
+         RvD2B7ldrLmULYSKW+/DJ1tsqfo3VIZZpgJzay6JhHthcJKQma1qiyMhAREGMhSLjIta
+         +9HTOhiEkwx7wh+nG9Zm7BGYt249GGTJKr6CEnpDI5jgoxolIGRsNyQ05DpD6hOalPko
+         0EsSB9qG1VvEkJslpcEuA0qvW3sS8GQOaXFKbnTI9NOwlp9pbLpCMW2IuD2KR7xdTlzm
+         9ggA==
+X-Gm-Message-State: AC+VfDxsXPv+eIMFlYRRo0iPbPY+iWZVJhHdRdP+HeXBQ9pfxBfzt4F5
+	gqCVv52fXxMODmvMSLmWPhVnEQ==
+X-Google-Smtp-Source: ACHHUZ4s83IplXBwoNtSQYlpNZ2jgP0cGcl1S9RUA3BThTitRPqEC3TEtyd9ZfVctIWKGMQH4+ujZQ==
+X-Received: by 2002:adf:e54c:0:b0:2fa:a4b5:6b8 with SMTP id z12-20020adfe54c000000b002faa4b506b8mr3865844wrm.27.1682688426294;
+        Fri, 28 Apr 2023 06:27:06 -0700 (PDT)
+Received: from [172.23.2.142] ([195.167.132.10])
+        by smtp.gmail.com with ESMTPSA id f6-20020a5d6646000000b002f6dafef040sm21107235wrw.12.2023.04.28.06.27.04
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 28 Apr 2023 06:27:05 -0700 (PDT)
+Message-ID: <4b690859-be5a-c331-8243-b875136d4807@linaro.org>
+Date: Fri, 28 Apr 2023 15:27:04 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ry8O2btAD5eaCFyHi0lG49OE86imv_Kb
-X-Proofpoint-ORIG-GUID: ry8O2btAD5eaCFyHi0lG49OE86imv_Kb
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-28_04,2023-04-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 spamscore=0 lowpriorityscore=0 mlxlogscore=674 phishscore=0
- mlxscore=0 clxscore=1015 bulkscore=0 impostorscore=0 adultscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304280108
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v2 1/6] dt-bindings: usb: qcom,dwc3: Add bindings for
+ SA8775P
+To: Shazad Hussain <quic_shazhuss@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org
+Cc: dmitry.baryshkov@linaro.org, athierry@redhat.com, robh@kernel.org,
+ konrad.dybcio@linaro.org, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
+ <20230428130824.23803-2-quic_shazhuss@quicinc.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230428130824.23803-2-quic_shazhuss@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230428_060953_442485_D6DFE668 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20230428_062710_298528_C95D85E3 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,134 +103,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable usb0, usb1 and usb2 nodes and their respective phy's.
+On 28/04/2023 15:08, Shazad Hussain wrote:
+> Add the compatible string for SA8775P SoC from Qualcomm.
+> 
+> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
+> ---
 
-Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Tested-by: Adrien Thierry <athierry@redhat.com>
----
- arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 92 +++++++++++++++++++++++
- 1 file changed, 92 insertions(+)
+(...)
 
-diff --git a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-index f238a02a5448..13ac60ddd170 100644
---- a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-+++ b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-@@ -291,6 +291,13 @@
- 			  "BT_EN",
- 			  "USB2_PWR_EN",
- 			  "USB2_FAULT";
-+
-+	usb2_en_state: usb2-en-state {
-+		pins = "gpio9";
-+		function = "normal";
-+		output-high;
-+		power-source = <0>;
-+	};
- };
- 
- &pmm8654au_2_gpios {
-@@ -306,6 +313,20 @@
- 			  "USB1_PWR_ENABLE",
- 			  "USB1_FAULT",
- 			  "VMON_SPX8";
-+
-+	usb0_en_state: usb0-en-state {
-+		pins = "gpio3";
-+		function = "normal";
-+		output-high;
-+		power-source = <0>;
-+	};
-+
-+	usb1_en_state: usb1-en-state {
-+		pins = "gpio10";
-+		function = "normal";
-+		output-high;
-+		power-source = <0>;
-+	};
- };
- 
- &pmm8654au_3_gpios {
-@@ -426,6 +447,77 @@
- 	status = "okay";
- };
- 
-+&usb_0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usb0_en_state>;
-+
-+	status = "okay";
-+};
-+
-+&usb_0_dwc3 {
-+	dr_mode = "peripheral";
-+};
-+
-+&usb_0_hsphy {
-+	vdda-pll-supply = <&vreg_l7a>;
-+	vdda18-supply = <&vreg_l6c>;
-+	vdda33-supply = <&vreg_l9a>;
-+
-+	status = "okay";
-+};
-+
-+&usb_0_qmpphy {
-+	vdda-phy-supply = <&vreg_l1c>;
-+	vdda-pll-supply = <&vreg_l7a>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usb1_en_state>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_1_hsphy {
-+	vdda-pll-supply = <&vreg_l7a>;
-+	vdda18-supply = <&vreg_l6c>;
-+	vdda33-supply = <&vreg_l9a>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1_qmpphy {
-+	vdda-phy-supply = <&vreg_l1c>;
-+	vdda-pll-supply = <&vreg_l7a>;
-+
-+	status = "okay";
-+};
-+
-+&usb_2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usb2_en_state>;
-+
-+	status = "okay";
-+};
-+
-+&usb_2_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_2_hsphy {
-+	vdda-pll-supply = <&vreg_l7a>;
-+	vdda18-supply = <&vreg_l6c>;
-+	vdda33-supply = <&vreg_l9a>;
-+
-+	status = "okay";
-+};
-+
- &xo_board_clk {
- 	clock-frequency = <38400000>;
- };
--- 
-2.17.1
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,sa8775p-dwc3
+> +    then:
+> +      properties:
+> +        interrupts:
+> +          minItems: 3
+> +          maxItems: 4
+> +        interrupt-names:
+> +          minItems: 3
+> +          items:
+> +            - const: pwr_event
+> +            - const: dp_hs_phy_irq
+> +            - const: dm_hs_phy_irq
+> +            - const: ss_phy_irq
+
+Why the last interrupt line is optional? Is it really optional?
+
+Best regards,
+Krzysztof
 
 
 -- 
