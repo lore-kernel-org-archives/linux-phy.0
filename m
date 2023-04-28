@@ -4,97 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2E40C77B60
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:59:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6074C77B7E
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 19:51:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l4Hc2Zz1KSDFGlp4huufg6aL6fxnq4TSQfjCWq3YaEo=; b=X8b81kY/t2suqJ
-	R6DXX0kUh1hFPjx7nXeb8YoxMRCvrxCDDXnefkwQK37AtN4cAGQDZWgogis6zeOsrQlQmFkQuiNlS
-	sQ1pNrF7M0LAmbEHw31iOyf5g4ylT39WjOCuxvTuebKdrzjGNSL8wg3U1tPq9h1lg8tiBusrRczba
-	WoaOt9qXBpwFybbH8BsQ0oaRtxQl0ogaBoV28uv/ry1Zb3YQK3QN4jCUv11zYBECOzGOR/vR0kp2M
-	gNikLb2824CzLMBPztjHn9oOIZO8XrFNmiSkmsx1ZqLDU8cJozexqq6VFAB4cmmsj6m8N2Wtf9R0Z
-	pykH7Lq2TcpWgliOoMSQ==;
+	List-Owner; bh=ckmVFhy7s9tYqW+314UrfFxKefG7CWVYxLlhg4tGvbs=; b=kIkWVo37wloHN8
+	53s9TIn7AAjcVUI5YAsws1TE5GYKm1yBDi7g5fHK7+sNEzrtEhN7wZKyZGzPYz4Z2a7h9CTP0+SuC
+	4TtktzpxpXKPZoyz5S6VfrXJ/egT42vLR/K5Aoy3SIU6PGp+yYvA1cqSXE+6svQ0wTCw5J7xPZDjT
+	hlKs4yr+pAk8TMPtK2CX2akIY0Ghy4VthY0p2Vyxc36KvvHycd05iJYKkPdS99hENVKqS8OfU1kSz
+	qRG6KuRUAX8IM5K+ERklPtEu8mdJYMcm+jGJAF4jQ97wvn0hQfqQ0PWIf6GcYATcZC6vtDBSo9IH+
+	IpzjbHsAPVx7V4TgV/Yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1psOdI-00Ai3n-1J;
-	Fri, 28 Apr 2023 13:59:32 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1psU7x-00Bf3W-1E;
+	Fri, 28 Apr 2023 19:51:33 +0000
+Received: from mail-yw1-x112e.google.com ([2607:f8b0:4864:20::112e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1psOdF-00Ai1d-10
+	id 1psU7u-00Bf2I-1U
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Apr 2023 13:59:30 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33S8WERM030672;
-	Fri, 28 Apr 2023 13:59:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=sXgCvAqReI9c/G7x++MikQU7zyYHVvzEj4BLpnZ95vs=;
- b=BZtgEM2Wd+iRqqSBZ3I8lwxG1KsFuz7BM/yFBEebC5/e93kmn8N9Y4ySc878FW39AvdN
- lBocCXPxNdb2mc5r0z7wfRScS5eOSP0+cIquQ/KpOt+HeAZHj2cg62KCrbtA+UdZT4yv
- +K58qsB3ELNPpmQ09L3kXMJn+V4u1H/ABPz0lNo4WhnJw8wTlhKuarUZwv8tIzjWZX05
- yMWKzLy253iO8wdysGIZ03Vm+NLhWvTzhiZoCRiZRAhTOiP7SAFgZgoGVNmGF7yTmXiw
- 27/1F/dMoEOl8g8FuLouuIpS10Qg/pAr30QLvUr5J1gMN1VbnVHfnFdXMXmJDlPgSbx0 Xg== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q7xdyagg5-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:59:24 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33SDxFNV025719
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:59:15 GMT
-Received: from [10.216.44.214] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Fri, 28 Apr
- 2023 06:59:09 -0700
-Message-ID: <3fe4ff88-4640-a348-e88f-ef7d8bcbef19@quicinc.com>
-Date: Fri, 28 Apr 2023 19:29:06 +0530
+	Fri, 28 Apr 2023 19:51:31 +0000
+Received: by mail-yw1-x112e.google.com with SMTP id 00721157ae682-54fe2e39156so3637657b3.2
+        for <linux-phy@lists.infradead.org>; Fri, 28 Apr 2023 12:51:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1682711488; x=1685303488;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=2iUrTPEcxwWc1vNuZJ0gmdY5s32MtFeY+VlTLWDJ5mA=;
+        b=IYwVfznzCb27JVtO7XYFTgG9lBTn6zfLk7WiEJQUf6G1Oe4VXbqKnK6E2OGpFsZH/M
+         LrWUXblHF+S+sg4XZXYlx+M3sNNuObYln5mr0O1HyiBnzx/la/UmVbFQpNYCrw12NgdG
+         d4G7ybCs2F8mI7oCAyLIt3XaMlU0Xvo4ZgXZ4S7uxIHBHKRcHxHSvOw2CVGsv++KQROw
+         7QMd9nSy9kLQwY/v7SMVM1xmLKrF/WCG+I8097teM6D4yF+UfQMLrz7r/ik9PtjS8o5h
+         9lAqRgSIweGOXM652o3j3CDUu0xB/Ez75eA9E4jOlDqd59WJibjjUw/T6jxrU3BIQEkZ
+         EETg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682711488; x=1685303488;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=2iUrTPEcxwWc1vNuZJ0gmdY5s32MtFeY+VlTLWDJ5mA=;
+        b=hGO6hNzlDVdC54JjxqsLs6Cvw6Vypkqthdm2sGmGwIA2AcbLx8zdDlvD2OKzRLMcNc
+         fzogGFA2N75HTVmNQs7970X5HXhF3KxvMTPTqCDkrTkPDsgGaSibmTBexM9wmQjfBGRu
+         KpXLysnL2w2Jj9WnTyFlmzLVCcZeKjEjDnEOMUiQcpJARlwZ02dyPMODqePKhEU2LlON
+         adLeXYaZpvYqcFzOgrks+MqM0v7KzvgiteeeiYYhtCCauKdyWF+/fGIpTisT/UjFUCG/
+         XbdrgbYAoAEs4Ashd7bP6bBELiC7HdF+fDFKfxSVWvP590dBCI46eYrMFS+IsxO5IGB/
+         IyWg==
+X-Gm-Message-State: AC+VfDyH5vNDDgZlvHlZvRFXtH9Z7XuQvMVM+7Pxc8jCleGQw0QkBPqK
+	K9JwdNQM/+R3BBD0861n10RPYHDED9CnLsOlp9cPfg==
+X-Google-Smtp-Source: ACHHUZ6b2Zhn/Hf+c8mpZ1dPunRRP2tAfSGwIMtecKEcAfaGGa72JA+vw89D1VNEwvTUPKxVX1/bDBkuQCL1hQSvp9Y=
+X-Received: by 2002:a81:6bc2:0:b0:552:dfbf:b19a with SMTP id
+ g185-20020a816bc2000000b00552dfbfb19amr6068497ywc.4.1682711486494; Fri, 28
+ Apr 2023 12:51:26 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.0
-Subject: Re: [PATCH v2 1/6] dt-bindings: usb: qcom,dwc3: Add bindings for
- SA8775P
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, <agross@kernel.org>,
-        <andersson@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>
-CC: <dmitry.baryshkov@linaro.org>, <athierry@redhat.com>, <robh@kernel.org>,
-        <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
-        "Kishon Vijay
- Abraham I" <kishon@kernel.org>,
-        Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
- <20230428130824.23803-2-quic_shazhuss@quicinc.com>
- <4b690859-be5a-c331-8243-b875136d4807@linaro.org>
-From: Shazad Hussain <quic_shazhuss@quicinc.com>
-In-Reply-To: <4b690859-be5a-c331-8243-b875136d4807@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ZoZMd2WWWcv0frsVlMOGPDzxgLeb-BuF
-X-Proofpoint-ORIG-GUID: ZoZMd2WWWcv0frsVlMOGPDzxgLeb-BuF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-28_04,2023-04-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- lowpriorityscore=0 suspectscore=0 bulkscore=0 priorityscore=1501
- phishscore=0 adultscore=0 mlxlogscore=390 clxscore=1015 mlxscore=0
- spamscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304280115
+References: <20230428130824.23803-1-quic_shazhuss@quicinc.com> <20230428130824.23803-5-quic_shazhuss@quicinc.com>
+In-Reply-To: <20230428130824.23803-5-quic_shazhuss@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Fri, 28 Apr 2023 22:51:15 +0300
+Message-ID: <CAA8EJpqKBoJoxgjRKT0zPtqtg7f52aw6pyz6WTnYghVCJ6UH5g@mail.gmail.com>
+Subject: Re: [PATCH v2 4/6] phy: qcom-qmp: Add SA8775P USB3 UNI phy
+To: Shazad Hussain <quic_shazhuss@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, athierry@redhat.com, robh@kernel.org, 
+	konrad.dybcio@linaro.org, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230428_065929_360669_CD7BF499 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20230428_125130_507218_F1B56A69 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,52 +88,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+On Fri, 28 Apr 2023 at 16:09, Shazad Hussain <quic_shazhuss@quicinc.com> wrote:
+>
+> The SA8775P platform has 5nm USB3 UNI phy attached to the USB0 and USB1
+> controllers.
+>
+> Add QMP PHY config, pcs entries and support for the new compatible for
+> SA8775P platform.
+>
+> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 45 +++++++++++++++++++++++++
+>  1 file changed, 45 insertions(+)
 
-On 4/28/2023 6:57 PM, Krzysztof Kozlowski wrote:
-> On 28/04/2023 15:08, Shazad Hussain wrote:
->> Add the compatible string for SA8775P SoC from Qualcomm.
->>
->> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
->> ---
-> 
-> (...)
-> 
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - qcom,sa8775p-dwc3
->> +    then:
->> +      properties:
->> +        interrupts:
->> +          minItems: 3
->> +          maxItems: 4
->> +        interrupt-names:
->> +          minItems: 3
->> +          items:
->> +            - const: pwr_event
->> +            - const: dp_hs_phy_irq
->> +            - const: dm_hs_phy_irq
->> +            - const: ss_phy_irq
-> 
-> Why the last interrupt line is optional? Is it really optional?
-> 
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Third usb controller i.e usb_2 supports only high speed, so I believe
-ss_phy_irq is not required for that instance.
-
-> Best regards,
-> Krzysztof
-> 
-
--Shazad
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
