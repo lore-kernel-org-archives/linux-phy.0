@@ -4,89 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF8DBC77B60
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:27:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 531A6C77B61
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:38:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hdvljkH1PY0tKy1y2/1u+gq2+t88KwhyJeLr0Rouz6s=; b=4PW2kWgU7ouCsY
-	Kh4o0aS08mZyPptA4T0enUaanRI7eCJB5BDVWZSpHvBHDrcpaPMUS1z0+RugNDZ9KCQSpOYLF97EI
-	ldwa3W7lvfe1G2CKHWHfady9ZwyULc+KqWtQDZxc7/BmMMjA0zCwez9+YyyeMChQothiCngJBF5ji
-	7DS44N6p+APqcA4iwkD6wVd8xWGBAnpNmjPUGLB/aFAZPqY6FQSG7ELW62vQ/69wH3rpIEoOjxyR6
-	FfaWNzDITsQDio+CpK05eDPpyDS5oabGL7T8isJAFpgI23APLuDtu6Vuvfziyc97VAjRV5hKzYTyA
-	FKsnmc2UYjPYEbZq7ghQ==;
+	List-Owner; bh=acnUvC9WFySOBPKcoeAhobJVfxTzpopjCCeAUi5JEso=; b=jm4bWJ1VXwHXs+
+	dTBixvwb8GbOphZLkIYfJdTZdo9Ln35QwdGsHx3OsSHqlhezefYZFB9HQMI9U+aniKGNz0TsB1K4i
+	91WzHb06WsLMiKsZy+LY9SB5TIdJeKTqFdj74schIsWv4KKzVdEX6BBZ1b2M4EWpFCT1fsRVjK5An
+	8IAJpsc9QFnwef6XxuuqAGXEuN4uXyrVK3/dhMiuR0JsFfW0EJAKFeUNayCykufZ0u22xV/562yeX
+	jJQvCyx6KWCS64Jf+0v6HrfJLQ1N/bHKNm4fm5JNILepTsID7CggGv+bz3p3U1at9LhrtH/Ir8RPd
+	eMi9zJIHRfMYmq3xwVew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1psO82-00AOpX-0e;
-	Fri, 28 Apr 2023 13:27:14 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1psOIn-00AVg4-1i;
+	Fri, 28 Apr 2023 13:38:21 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1psO7y-00AOl6-0d
+	id 1psOIk-00AVcv-12
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Apr 2023 13:27:11 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f178da219bso98264605e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 28 Apr 2023 06:27:07 -0700 (PDT)
+	Fri, 28 Apr 2023 13:38:19 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-3f19ab994ccso76685205e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 28 Apr 2023 06:38:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1682688426; x=1685280426;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=linaro.org; s=google; t=1682689096; x=1685281096;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=gkJoG1LPHO8i6Q8wWiW6Rl5rdW7E3T2NGYe6a0Rghqs=;
-        b=ZdfR/e7VVW6XiNkmL3LmeM9+R4kj8X362H1qodHBMdg+uyiTshG0jpKr6rOibBTLeu
-         DA6AQrMAhDORd2ChFpbJX2cLTnbyPu/BHIGoBE75Na1jUzq6e5AC0V+UIGD++SG/sNXJ
-         mGDaZ8yLslXk5mssqHuBP36BhSqhv+mPHsLS0BPVVZ4BED7q8ohax35mMWz6I9VPGZ3t
-         OPOLiuu8l7Yaw62vcREt7DtwhNkiHcKre57Q5mvg4Esp9IK6s6lMW30S6s6PLj05uT4H
-         e+sgnqYRSRKx4U2/nHvg3skEwxeqVxsEjqS6KT74CuzPHkxQDm2TxYR1vuAwCaLefcer
-         MIsw==
+        bh=awr90pDSVtfyy1jd/suGdmmMMbIzI+zduHlGNGrtMxw=;
+        b=DK9RVn9I2jrEnbfhIqefEft0dxw3pPj9Tmez44q30xQGunOW5BKzt656k4Zwb+QvqA
+         QnPRKI+QpF0wKVjuXSxUhEgINyUMvfPnUMN6FY5QUPinUXTCsPzC3kzdZB9DrJPFy0D9
+         mCPI38C+pi/6SPUnoAFb4JCg5VpSvUCWA1EK0HokthXoE+ICqz8wrJeV8bstKe8t4XB2
+         8q5vBGsWeSvBy1b+siABTEAfFcgEa5FSXObhJ4x/N5f0m4gpHXTeIIeJ51jN2rbiVZZq
+         ZWOT14kZVWyjNohmQAizYT7bfd6UgnAd9rHrl8ACuHaaFxj2Fjzo/s3tooHm8irkuGLp
+         GJZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682688426; x=1685280426;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1682689096; x=1685281096;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=gkJoG1LPHO8i6Q8wWiW6Rl5rdW7E3T2NGYe6a0Rghqs=;
-        b=W6Pn9RhxL8JMVnm8/3H8h3AMWd7nvL292UiPsAwzb8nvIyJ373Low5c5G3DacfmUBa
-         imX/QTkXWMNzWuhAPVWDm9UIL/zozBjSbplAMTcfhAsyMQtEU7LX2OKdpKPvh/GrH1Bn
-         RvD2B7ldrLmULYSKW+/DJ1tsqfo3VIZZpgJzay6JhHthcJKQma1qiyMhAREGMhSLjIta
-         +9HTOhiEkwx7wh+nG9Zm7BGYt249GGTJKr6CEnpDI5jgoxolIGRsNyQ05DpD6hOalPko
-         0EsSB9qG1VvEkJslpcEuA0qvW3sS8GQOaXFKbnTI9NOwlp9pbLpCMW2IuD2KR7xdTlzm
-         9ggA==
-X-Gm-Message-State: AC+VfDxsXPv+eIMFlYRRo0iPbPY+iWZVJhHdRdP+HeXBQ9pfxBfzt4F5
-	gqCVv52fXxMODmvMSLmWPhVnEQ==
-X-Google-Smtp-Source: ACHHUZ4s83IplXBwoNtSQYlpNZ2jgP0cGcl1S9RUA3BThTitRPqEC3TEtyd9ZfVctIWKGMQH4+ujZQ==
-X-Received: by 2002:adf:e54c:0:b0:2fa:a4b5:6b8 with SMTP id z12-20020adfe54c000000b002faa4b506b8mr3865844wrm.27.1682688426294;
-        Fri, 28 Apr 2023 06:27:06 -0700 (PDT)
+        bh=awr90pDSVtfyy1jd/suGdmmMMbIzI+zduHlGNGrtMxw=;
+        b=kZ5kfwHiljylZkhl5dxuCZ9J8VGpWCxza0cnR/jtrMSFqK3GxnCmc+MXi/gmpXaOiy
+         NROVY2hiXHj0Y4d/EpFLY5ZBJ4RG9uI3uyltTDDhWl2Q98Nc2tMW6T7RrPPV0tw8YanO
+         PFdhqqtLXFhiSQOEVwe60/k1g4qlyWK9ilOqbJYw4x++StsPFdjUL4NLrpipAagEnTtg
+         1Jzb8XKsmyvkjFg6CdzssJ0HGKUuNqFYrLc/zmzvYd87liknbcaSI708haSa/ejHZQzj
+         eO4Bhzr/vRP8hyLe169wF5oq30ln+OW4EiR9zb5kSYkriMBY5qXlfBHVHfsIvNf1/jwf
+         ULZQ==
+X-Gm-Message-State: AC+VfDxR5qmQaNQl7DLJyZGe4TyDgnYkXxXXKXrxBIwivkN/SFnTlTqm
+	xbyy0A0Jnuw58OEW+YRXit1X1Q==
+X-Google-Smtp-Source: ACHHUZ7Li1J3Go9LqCYnt2dUoy8OLEwkppMDtn0ZUPfIxAq4HnbEkWk05MJi7txIpvF9W8iCOao85w==
+X-Received: by 2002:a1c:ed0e:0:b0:3f1:7372:66d1 with SMTP id l14-20020a1ced0e000000b003f1737266d1mr4315648wmh.0.1682689096103;
+        Fri, 28 Apr 2023 06:38:16 -0700 (PDT)
 Received: from [172.23.2.142] ([195.167.132.10])
-        by smtp.gmail.com with ESMTPSA id f6-20020a5d6646000000b002f6dafef040sm21107235wrw.12.2023.04.28.06.27.04
+        by smtp.gmail.com with ESMTPSA id o2-20020a05600c4fc200b003f1738e64c0sm28006319wmq.20.2023.04.28.06.38.14
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 28 Apr 2023 06:27:05 -0700 (PDT)
-Message-ID: <4b690859-be5a-c331-8243-b875136d4807@linaro.org>
-Date: Fri, 28 Apr 2023 15:27:04 +0200
+        Fri, 28 Apr 2023 06:38:15 -0700 (PDT)
+Message-ID: <af7e5037-50b2-5ee3-83cc-42311483bc85@linaro.org>
+Date: Fri, 28 Apr 2023 15:38:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.10.0
-Subject: Re: [PATCH v2 1/6] dt-bindings: usb: qcom,dwc3: Add bindings for
- SA8775P
-To: Shazad Hussain <quic_shazhuss@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org
-Cc: dmitry.baryshkov@linaro.org, athierry@redhat.com, robh@kernel.org,
- konrad.dybcio@linaro.org, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
- <20230428130824.23803-2-quic_shazhuss@quicinc.com>
+Subject: Re: [PATCH v9 7/8] arm64: dts: qcom: ipq9574: Add USB related nodes
 Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org,
+ quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-clk@vger.kernel.org
+References: <cover.1682092324.git.quic_varada@quicinc.com>
+ <dc573596d863767748d0bc9541bd4e6c0abef441.1682092324.git.quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230428130824.23803-2-quic_shazhuss@quicinc.com>
+In-Reply-To: <dc573596d863767748d0bc9541bd4e6c0abef441.1682092324.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230428_062710_298528_C95D85E3 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230428_063818_369186_F5B16CAE 
+X-CRM114-Status: GOOD (  18.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,34 +100,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28/04/2023 15:08, Shazad Hussain wrote:
-> Add the compatible string for SA8775P SoC from Qualcomm.
+On 21/04/2023 17:54, Varadarajan Narayanan wrote:
+> Add USB phy and controller related nodes
 > 
-> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> 
 > ---
+>  Changes in v8:
+> 	- Change clocks order to match the bindings
+>  Changes in v7:
+> 	- Change com_aux -> cfg_ahb
+>  Changes in v6:
+> 	- Introduce fixed regulators for the phy
+> 	- Resolved all 'make dtbs_check' messages
+> 
+>  Changes in v5:
+> 	- Fix additional comments
+> 	- Edit nodes to match with qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> 	- 'make dtbs_check' giving the following messages since
+> 	  ipq9574 doesn't have power domains. Hope this is ok
+> 
+> 		/local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: phy@7d000: 'power-domains' is a required property
+>         	From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+> 		/local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: usb@8a00000: 'power-domains' is a required property
+>         	From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> 
+>  Changes in v4:
+> 	- Use newer bindings without subnodes
+> 	- Fix coding style issues
+> 
+>  Changes in v3:
+> 	- Insert the nodes at proper location
+> 
+>  Changes in v2:
+> 	- Fixed issues flagged by Krzysztof
+> 	- Fix issues reported by make dtbs_check
+> 	- Remove NOC related clocks (to be added with proper
+> 	  interconnect support)
+> ---
+>  arch/arm64/boot/dts/qcom/ipq9574.dtsi | 120 ++++++++++++++++++++++++++++++++++
+>  1 file changed, 120 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> index 6a8680a..a6790fb 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> @@ -150,6 +150,33 @@
+>  		method = "smc";
+>  	};
+>  
+> +	reg_usb_3p3: s3300 {
 
-(...)
+Nothing improved here.
 
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sa8775p-dwc3
-> +    then:
-> +      properties:
-> +        interrupts:
-> +          minItems: 3
-> +          maxItems: 4
-> +        interrupt-names:
-> +          minItems: 3
-> +          items:
-> +            - const: pwr_event
-> +            - const: dp_hs_phy_irq
-> +            - const: dm_hs_phy_irq
-> +            - const: ss_phy_irq
+Node names should be generic, so at least regulator prefix or suffix.
+Prefix is preferred as it keeps them grouped.
+https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
 
-Why the last interrupt line is optional? Is it really optional?
 
 Best regards,
 Krzysztof
