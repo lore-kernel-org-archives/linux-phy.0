@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7228AC77B60
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:09:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24F36C77B60
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Apr 2023 13:09:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BvO9+sNKYGZsNcf1rxaCVx4BmN+vUH9PIjyTjY5WMY4=; b=PvXNu6wyRTm55+
-	EUSv0HrEqTloRhYpQkk/AMW1GT/h0wvoQWM0rnLrPaQic3JSMv0789rK6rMAnxBA/q1D0XQtQg2OI
-	XQqoxhDmrX6bU0t2SJxWiS72Me4t5jKWP5Wja20zdMlvSH7Djo+amLln2VtJ9rVHegv8lEuJ9rF09
-	Gu0n94Z4hMQIIenOD/597iMaHZJ6eK8S+DpcxrijKlyKRcc78ncOJ9XCJNBiZw4C7btxzQaqDTD5v
-	8HTzjg9uwflEyua22Y1WVKUSL0ZftU42GyuTMHFEnWKdvBzbGQFR9zg4h/W5v1IYBoMqoUswzUoQj
-	9uEtyZA+E4VirwDJoJLg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sjTfeyojWvKstNhXWJKf8iHNhb1LANHlHpgpf2/pPMI=; b=yRWxUiTKcapxWN
+	5/cmWTorxqE+/dp75DFGGTqkIcMj7b3OOqdhNluXBHH/PnwDl+UIInMys7EpfpoJFdRgKk4y7+CqB
+	fDOP6R8ya/noA3mX8DZMxRtGam64BcV9z8bdTrkWTsVGWON2UmgdpY7c7UkeJ/8R78vou7iy1dDHv
+	K6e3YbGTGv1z4HdjsNu6OsNXeNizB7gnQ6Nj61eww0oZ5uzcudpjZ5qagqljOwcREC60W2fEoyGsW
+	QgiIa+IKV8VRyQbVLsjp/k18RgGA7Gx+ZA9LGoAQlRCj10x5Le8biDYKnk6jut5tRqudYj4OZG9BP
+	IBNDvhY8Uq1bVEOLoiVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1psNqO-00ADSJ-09;
-	Fri, 28 Apr 2023 13:09:00 +0000
+	id 1psNqV-00ADXv-2C;
+	Fri, 28 Apr 2023 13:09:07 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1psNqK-00ADOA-27
+	id 1psNqU-00ADWS-05
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Apr 2023 13:08:58 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33SC7v67005683;
-	Fri, 28 Apr 2023 13:08:50 GMT
+	Fri, 28 Apr 2023 13:09:07 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33S7GIwn002744;
+	Fri, 28 Apr 2023 13:09:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=qcppdkim1;
- bh=ZL5/JD/Drh/dxAmEDRIWOzwDjmp5D5m1E43a19rtE+0=;
- b=OM42HIdm76iBp3LLT+1xY5SzWUYBqad2oEFugtswbrkmSCFcNT4+tUglmoTU/uEc3Q0B
- V68FOTpaGHGwSdJl4C55PJ/i6zWGZJ2Za09BP72WFjwUlod+qxnxYaakx+jY+ecQ1/hS
- LlBLdOnuZv9/Gva9VaXgSQ81+62ap0bzheXr+aiZ1YBHr3CsE1GO5kQMk/NoJuZ3OTkn
- YnS14hsmBpaSxiQu3yH6KNxT5TVKJ13furcHbSVrAFe78PeA+X7mtQMoPT6dxj9P6qQm
- JHHk1HK75dmUUHtjX+bp37KmVfrUX/D44W4LvAAaRPs0CSt7SYXIdndHiWn4k7T9cyI5 Ow== 
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=wd/navJ7KT21T2aIrcw9LU5B+UH8U3Um8S1mTxjTOE8=;
+ b=MbrB2j/eRZ4eTM/UwmswDr8JtFEYWf+ddiXiNxkb0L1TBM4ChGkkfKlWN5znAtptafEO
+ XPyJ3ylDpBWsUJx9+WWFBcQAuRF/y33lTVsyGqygRHsc4Pewdi1M09abPbx2CNeEc5bj
+ iAEWG8CRCt15hPPSMd4UfBj9K1WkCIB0pt+jFLris3FUJg4fDJ/vXyRwtleFCvuQX3E+
+ 8uTCR11Znv0EVIB5HSy7HUxJTUSFwt0X3C5qnpa0vRSzr/rNQ7a6fykgI2MlQrdLmnll
+ GGWNdJ9aUMsR2wx3ZSpQEl0+0rsTd5A/cR3GSXjd85c4AKqSD9r2H0O237Qb6KaWwPHr 2g== 
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q850csp4g-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q89kss51m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:08:49 +0000
+	Fri, 28 Apr 2023 13:09:02 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33SD8m6E003190
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33SD91E3003448
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Apr 2023 13:08:48 GMT
+	Fri, 28 Apr 2023 13:09:01 GMT
 Received: from hu-shazhuss-hyd.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Fri, 28 Apr 2023 06:08:43 -0700
+ 15.2.986.42; Fri, 28 Apr 2023 06:08:55 -0700
 From: Shazad Hussain <quic_shazhuss@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <robh+dt@kernel.org>,
         <krzysztof.kozlowski+dt@linaro.org>
@@ -63,29 +64,31 @@ CC: <dmitry.baryshkov@linaro.org>, <athierry@redhat.com>, <robh@kernel.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>
-Subject: [PATCH v2 0/6] arm64: qcom: sa8775p: add support for USB
-Date: Fri, 28 Apr 2023 18:38:18 +0530
-Message-ID: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
+Subject: [PATCH v2 1/6] dt-bindings: usb: qcom,dwc3: Add bindings for SA8775P
+Date: Fri, 28 Apr 2023 18:38:19 +0530
+Message-ID: <20230428130824.23803-2-quic_shazhuss@quicinc.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
+References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: a6LqkUgj-DKO6lfB0rvfvIjdwvlTdG9K
-X-Proofpoint-GUID: a6LqkUgj-DKO6lfB0rvfvIjdwvlTdG9K
+X-Proofpoint-GUID: JHi5ns7rPUtDqr6VFKHWqUYButyIY9rd
+X-Proofpoint-ORIG-GUID: JHi5ns7rPUtDqr6VFKHWqUYButyIY9rd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-28_04,2023-04-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1011
- suspectscore=0 mlxlogscore=583 mlxscore=0 phishscore=0 bulkscore=0
- adultscore=0 impostorscore=0 spamscore=0 lowpriorityscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
+ priorityscore=1501 adultscore=0 clxscore=1015 bulkscore=0 mlxlogscore=741
+ impostorscore=0 malwarescore=0 mlxscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2303200000 definitions=main-2304280108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230428_060856_716459_261869D8 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20230428_060906_073243_7908EE87 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,31 +105,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update relavent DT bindings for USB, add new config to the phy driver,
-add USB and PHY nodes to the .dtsi and enable them in the board .dts
-for the sa8775p-ride platform.
+Add the compatible string for SA8775P SoC from Qualcomm.
 
-v1 -> v2:
-- correct dwc3 device tree bindings for irq's.
-- collect R-b, A-b and T-b tags.
+Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
+---
+ .../devicetree/bindings/usb/qcom,dwc3.yaml    | 21 +++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-Shazad Hussain (6):
-  dt-bindings: usb: qcom,dwc3: Add bindings for SA8775P
-  dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings for SA8775P
-  dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add SA8775P USB PHY
-    binding
-  phy: qcom-qmp: Add SA8775P USB3 UNI phy
-  arm64: dts: qcom: sa8775p: add USB nodes
-  arm64: dts: qcom: sa8775p-ride: enable USB nodes
-
- .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |   1 +
- .../bindings/phy/qcom,usb-snps-femto-v2.yaml  |   1 +
- .../devicetree/bindings/usb/qcom,dwc3.yaml    |  21 ++
- arch/arm64/boot/dts/qcom/sa8775p-ride.dts     |  92 +++++++
- arch/arm64/boot/dts/qcom/sa8775p.dtsi         | 239 +++++++++++++++++-
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |  45 ++++
- 6 files changed, 397 insertions(+), 2 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index d84281926f10..4a36e2b6c8fb 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -23,6 +23,7 @@ properties:
+           - qcom,msm8998-dwc3
+           - qcom,qcm2290-dwc3
+           - qcom,qcs404-dwc3
++          - qcom,sa8775p-dwc3
+           - qcom,sc7180-dwc3
+           - qcom,sc7280-dwc3
+           - qcom,sc8280xp-dwc3
+@@ -180,6 +181,7 @@ allOf:
+               - qcom,msm8953-dwc3
+               - qcom,msm8996-dwc3
+               - qcom,msm8998-dwc3
++              - qcom,sa8775p-dwc3
+               - qcom,sc7180-dwc3
+               - qcom,sc7280-dwc3
+               - qcom,sdm670-dwc3
+@@ -455,6 +457,25 @@ allOf:
+             - const: dm_hs_phy_irq
+             - const: ss_phy_irq
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,sa8775p-dwc3
++    then:
++      properties:
++        interrupts:
++          minItems: 3
++          maxItems: 4
++        interrupt-names:
++          minItems: 3
++          items:
++            - const: pwr_event
++            - const: dp_hs_phy_irq
++            - const: dm_hs_phy_irq
++            - const: ss_phy_irq
++
+ additionalProperties: false
+ 
+ examples:
 -- 
 2.17.1
 
