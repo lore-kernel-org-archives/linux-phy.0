@@ -4,77 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CDAFC7EE2F
-	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 19:56:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D130C77B73
+	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 21:00:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NOLn7uO4ZV3n0Vxnjrn/DpOn/aDe7Fva8nL1MhC1z2I=; b=DGnVXfjSMuKnEL
-	caYnFEQaaIR1v2kKPsZHdSEVs7YgS5rsWCU4Cm54C5+sszbA7ZJ+YzCeOCaKttg6ICJNvHQVShBbT
-	Yv6rr1+vDepGuBdUHk0fznNdk/tBKU8ozo7o/5WQ+KDBmGDoVWhjwvGHL5xAWSkqOPArP1h0OkzS4
-	1pIhLaEBkBo7/v8L1/U6qaVE3VEfObCiZKgzTjnMKq9gAj+Oy4i3AJG7rNoyqKrNLmmsEHWrDAMNe
-	3nvaEVdnBG7kTc2V3iEbM4JTCKVanoyj0Wxu1egq44lSKc3nXpm0GegcxJZ26SJE/c3k7Sml0tkK9
-	4wizbj8t1vOJ9v6eBLeg==;
+	List-Owner; bh=w6SpvpqH4PUTXjdRy8bFobbPtzbMnaqcns2ry5z4SAI=; b=qmgCMjMSlt1BLA
+	KWeHqxcy/jV1CaeNTUif1/I+yEFHwPbTen8An0Zmr7dKmawuSCFhfIb0TwrGl9jW22muGc06zMNoI
+	+nmLAGLBA7z477rijGQeE9tvfwk89J10lnjTkkHOME0ljXQo3/VxGI3GKpz4EOHxZaEv6TFNm807H
+	OP40wvZmNyVUztOAI8sDphBnYA6pJb7xVRbh6iBzQ0zy0PVJEIIoP7Yesd8LYn4/+b2/hIe5ByUf4
+	E7fu6W8rhTI4H9VnpTN5+iuoR9YN/Stv/tH+uogSm2Pd83u0T/fRUQKIxb5JkHFdDEJJrFESjWeKT
+	zOmsWu4qZps3x+g+fM9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptZd6-00Gojz-2a;
-	Mon, 01 May 2023 19:56:12 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ptadC-00Gxbl-2w;
+	Mon, 01 May 2023 21:00:22 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptZd2-00Goed-0r;
-	Mon, 01 May 2023 19:56:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=YTzD+ObYPqz4vMUGcRmByVEWvAs3h4l+qXUdZRMrqEU=; b=ZitgWlBsxalEbbm/86336gnaJQ
-	aosNa21A0yFhn4TdpHKVIcSmSiwF7/647+8wrpZNcfd6lghqpV5OqfRY6DtaZdI+++1l0dnvvVNpX
-	oGXz/9iQijNewNeF3zrIM1Nhjy3PopxeTdOJQQ+yU1BrEbIngAj7M/+yGN3OuBki8ngsiPirwsK7l
-	RfDOAxx3SIcx0PM6uiyJTo5U6lTwiG9j1I3LwqLhvL2z+wzvWslWYjzywRH+cyvF+O666hlU7gnlP
-	rDnAWzyJ18LQnq9DkwZCGuRob6BXCJl7eQ+JrweifiEtZPCRXbWb8KlxYHnzLdM1SyLYHOLVxCCRD
-	wRQpc4Kg==;
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptZcx-00EzPl-05;
-	Mon, 01 May 2023 19:56:06 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-94f910ea993so480586166b.3;
-        Mon, 01 May 2023 12:55:57 -0700 (PDT)
+	id 1ptZck-00GoIx-1g;
+	Mon, 01 May 2023 19:55:55 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-94f3df30043so472164066b.2;
+        Mon, 01 May 2023 12:55:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1682970956; x=1685562956;
+        d=gmail.com; s=20221208; t=1682970950; x=1685562950;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=YTzD+ObYPqz4vMUGcRmByVEWvAs3h4l+qXUdZRMrqEU=;
-        b=T15jY1Mn7c6eIkNv1Ps9edBAwkf5/aQXqP/2vEri1eioCfDdUo8F5bQSB5ds/YbrZs
-         kzW1MzleqUfq1DrXcbOoiw+0++IjuuOalC9Vjs/935chfOZ0Po6zsc94J8D5gs7JgiwK
-         6xM1VRl/3X8zOiKu0LIyON5uyQEadbztGvLb8JYy02AmioCgN5mT0k5J6kDxksHtaBeb
-         I1ZKEeC2zXQQBc1wZt+FmCfOVWSBk9ipHzTniA+6Lp5+CJVgdaflGcfxzV0W20qQ154v
-         1/l14i7Y5ttPq359OpuMbK0nX/euKnVf8ErbQ0hdIX384142+QJ4y9XDVoyCkLzlsmZr
-         2ITw==
+        bh=x41Rg6UGBVxB2CZI4/pmV3nNtVhSY5a7bp8dr/r2VXc=;
+        b=LRbtxMsrEoS0cnnnNKFtH631Ne6kYzqk/tYkiXcJeBrTbmcDnJ+0JcCuHH84XlKeUI
+         /s/9m6VkzF/rc6O61455cx9thVYOiiHoekhP5x/4lgqnSbQ2cV6VpBYMh0Q8DxKMEe7G
+         jVnzzA7mxUAYd/lpajVjHEB85KogbY4QWRNnPVcrpdMK8k+ppb4iaOGDi+2rsAfQ38Es
+         f8COKxjZh71sFRH5ey0cWa3udbQU2qHrf8qM+8g1dO5yQWAIBQ11jcHbNW1AcHBmyYvs
+         lKYiD5PTxUTtozgoG9M9xpbOyATtZS6kTNFX86nP030WLkQ3UftRG5FzB2gMD3LONPaH
+         dkEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682970956; x=1685562956;
+        d=1e100.net; s=20221208; t=1682970950; x=1685562950;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=YTzD+ObYPqz4vMUGcRmByVEWvAs3h4l+qXUdZRMrqEU=;
-        b=TUAq38Ja+QUakk/dIByCCY2bXdUKdr56VSx3HQ9q7HpT5NQa19ylIUnb19ZThfHSTl
-         iZK/ank4paAbDvOwKdJ0lwK/WN9H+/6ZNLGp2flG4DgHUkX3NF2MA7tT6L2tgvCdRmo7
-         OnjiTY1S0DHJewqZ5POIDr2TjsbwOl+WvyhwcPztHGC7j8VEyDS8TF2FZZhNO+SgjD8c
-         uBTzmH4/G/APq1rfBlLkF65siugj6TVVAs/1/lfOANDWmp00OT5TSix7HiyQckCdmFjU
-         aGNKPnVoQyVaK3uzPct/7bY87U1+bg3w1q9L/tcPndCk7FHUO+mAsbxgB5J+w22H6oil
-         w6+w==
-X-Gm-Message-State: AC+VfDy2iZ4GBD1DnTV07oeQ2lXL0glWL9TeevHNWaFej9XyCJF39KxH
-	XA93ON9anWvmSRhq8P8l0rU=
-X-Google-Smtp-Source: ACHHUZ6+4vLeKUkttnnAwUq3xaysMH1UDPT0yO2wXLoODVKlxgGlnE0tDhFVNqWffYf1KKFksbIg6g==
-X-Received: by 2002:a17:907:6d03:b0:947:55ad:dd00 with SMTP id sa3-20020a1709076d0300b0094755addd00mr15076107ejc.26.1682970956138;
-        Mon, 01 May 2023 12:55:56 -0700 (PDT)
+        bh=x41Rg6UGBVxB2CZI4/pmV3nNtVhSY5a7bp8dr/r2VXc=;
+        b=O+9L/WF3UcrjQeC85P6oF7VRwpKsMDhb0SJcSBuZ3Bn0dFZiWQgODb41DX9hCEWVZp
+         cyn9XuDePKNLOJ1CmO+aiUB2116LfqIUS6OWO+glruph2s0T2ZOVA24iBOfSZi87KXu/
+         OPOkeUD53eNrnohCRNl8rJiKFEG9M7HN27bT//w1p+5iM8uYwp9KVkyDtS01O7lGeYLE
+         6u59AxUwg2coHoL1n8ESZ4yj+h8f9CHHKNdAoLD1y+RX4guJXiR6Fe8s2Nr17Kg9/Nxr
+         lMy74QHdTIJuf3pBQcsCnDSDyCYlVymN8L61FJb6r+hUfipSW7CXmGkOSYjRU8NPSCgJ
+         r0gA==
+X-Gm-Message-State: AC+VfDwLCMJ1y2A3X62zG3R10lZeoFOcVsZ9HPSpizuWqzFXje5FFEH9
+	vlJT7o+dAHT6Phh/8yJ3TL4=
+X-Google-Smtp-Source: ACHHUZ7AxhKdIN66WDgu++ctdp6boWb+cJb8n9FmKfdkyC/NknF1vHc9HIs12u2PVF0P3YGZHpz78g==
+X-Received: by 2002:a17:907:1b1c:b0:962:9ffa:be22 with SMTP id mp28-20020a1709071b1c00b009629ffabe22mr118910ejc.7.1682970949642;
+        Mon, 01 May 2023 12:55:49 -0700 (PDT)
 Received: from localhost.my.domain (83.8.115.30.ipv4.supernova.orange.pl. [83.8.115.30])
-        by smtp.gmail.com with ESMTPSA id og36-20020a1709071de400b009600ce4fb53sm6333650ejc.37.2023.05.01.12.55.54
+        by smtp.gmail.com with ESMTPSA id og36-20020a1709071de400b009600ce4fb53sm6333650ejc.37.2023.05.01.12.55.47
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 01 May 2023 12:55:55 -0700 (PDT)
+        Mon, 01 May 2023 12:55:49 -0700 (PDT)
 From: Artur Weber <aweber.kernel@gmail.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Alim Akhtar <alim.akhtar@samsung.com>,
@@ -103,16 +89,16 @@ Cc: Alim Akhtar <alim.akhtar@samsung.com>,
 	linux-phy@lists.infradead.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	Artur Weber <aweber.kernel@gmail.com>
-Subject: [PATCH v3 12/13] dt-bindings: arm: samsung: Add Samsung Galaxy Tab3 family boards
-Date: Mon,  1 May 2023 21:55:24 +0200
-Message-Id: <20230501195525.6268-13-aweber.kernel@gmail.com>
+Subject: [PATCH v3 09/13] ARM: dts: Move common Exynos4x12 definitions to exynos4x12.dtsi
+Date: Mon,  1 May 2023 21:55:21 +0200
+Message-Id: <20230501195525.6268-10-aweber.kernel@gmail.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <20230501195525.6268-1-aweber.kernel@gmail.com>
 References: <20230501195525.6268-1-aweber.kernel@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230501_205603_193867_789DC855 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20230501_125550_657606_940B3701 
+X-CRM114-Status: GOOD (  12.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,39 +115,957 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the compatible strings for the Samsung Galaxy Tab 3 8.0 series
-of tablets.
+In preparation for the re-introduction of the Exynos4212, move
+their shared definitions to a separate file. Rename the pinctrl
+definitions accordingly, and adapt the Exynos4412 DTSI to these
+changes.
+
+This reverts part of commit bca9085e0ae9 ("ARM: dts: exynos:
+remove Exynos4212 support (dead code)").
 
 Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
 ---
 Changed in v3:
- - Moved Exynos4212 board before 4412
- - Changed description to Galaxy Tab3 instead of just Tab3
+ - Rebased on next/dt
 ---
- .../bindings/arm/samsung/samsung-boards.yaml           | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm/boot/dts/exynos4412.dtsi             | 644 +-----------------
+ ...2-pinctrl.dtsi => exynos4x12-pinctrl.dtsi} |   4 +-
+ .../dts/{exynos4412.dtsi => exynos4x12.dtsi}  | 165 +----
+ 3 files changed, 11 insertions(+), 802 deletions(-)
+ rename arch/arm/boot/dts/{exynos4412-pinctrl.dtsi => exynos4x12-pinctrl.dtsi} (99%)
+ copy arch/arm/boot/dts/{exynos4412.dtsi => exynos4x12.dtsi} (81%)
 
-diff --git a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-index deb2cf971871..e3ffd8159ab6 100644
---- a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-+++ b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-@@ -72,6 +72,16 @@ properties:
-           - const: samsung,exynos4210
-           - const: samsung,exynos4
+diff --git a/arch/arm/boot/dts/exynos4412.dtsi b/arch/arm/boot/dts/exynos4412.dtsi
+index 82a36fb5ee8b..8660c4c76e3a 100644
+--- a/arch/arm/boot/dts/exynos4412.dtsi
++++ b/arch/arm/boot/dts/exynos4412.dtsi
+@@ -14,150 +14,11 @@
+  * nodes can be added to this file.
+  */
  
-+      - description: Samsung Galaxy Tab3 family boards
-+        items:
-+          - enum:
-+              - samsung,t310                    # Samsung Galaxy Tab 3 8.0 WiFi (SM-T310)
-+              - samsung,t311                    # Samsung Galaxy Tab 3 8.0 3G (SM-T311)
-+              - samsung,t315                    # Samsung Galaxy Tab 3 8.0 LTE (SM-T315)
-+          - const: samsung,tab3
-+          - const: samsung,exynos4212
-+          - const: samsung,exynos4
-+
-       - description: Exynos4412 based boards
-         items:
-           - enum:
+-#include "exynos4.dtsi"
+-
+-#include "exynos4-cpu-thermal.dtsi"
++#include "exynos4x12.dtsi"
+ 
+ / {
+ 	compatible = "samsung,exynos4412", "samsung,exynos4";
+ 
+-	aliases {
+-		pinctrl0 = &pinctrl_0;
+-		pinctrl1 = &pinctrl_1;
+-		pinctrl2 = &pinctrl_2;
+-		pinctrl3 = &pinctrl_3;
+-		fimc-lite0 = &fimc_lite_0;
+-		fimc-lite1 = &fimc_lite_1;
+-	};
+-
+-	bus_acp: bus-acp {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_DIV_ACP>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_acp_opp_table>;
+-		status = "disabled";
+-
+-		bus_acp_opp_table: opp-table {
+-			compatible = "operating-points-v2";
+-
+-			opp-100000000 {
+-				opp-hz = /bits/ 64 <100000000>;
+-			};
+-			opp-134000000 {
+-				opp-hz = /bits/ 64 <134000000>;
+-			};
+-			opp-160000000 {
+-				opp-hz = /bits/ 64 <160000000>;
+-			};
+-			opp-267000000 {
+-				opp-hz = /bits/ 64 <267000000>;
+-			};
+-		};
+-	};
+-
+-	bus_c2c: bus-c2c {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_DIV_C2C>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_dmc_opp_table>;
+-		status = "disabled";
+-	};
+-
+-	bus_dmc: bus-dmc {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_DIV_DMC>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_dmc_opp_table>;
+-		samsung,data-clock-ratio = <4>;
+-		#interconnect-cells = <0>;
+-		status = "disabled";
+-	};
+-
+-	bus_display: bus-display {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_ACLK160>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_display_opp_table>;
+-		interconnects = <&bus_leftbus &bus_dmc>;
+-		#interconnect-cells = <0>;
+-		status = "disabled";
+-
+-		bus_display_opp_table: opp-table {
+-			compatible = "operating-points-v2";
+-
+-			opp-160000000 {
+-				opp-hz = /bits/ 64 <160000000>;
+-			};
+-			opp-200000000 {
+-				opp-hz = /bits/ 64 <200000000>;
+-			};
+-		};
+-	};
+-
+-	bus_fsys: bus-fsys {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_ACLK133>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_fsys_opp_table>;
+-		status = "disabled";
+-
+-		bus_fsys_opp_table: opp-table {
+-			compatible = "operating-points-v2";
+-
+-			opp-100000000 {
+-				opp-hz = /bits/ 64 <100000000>;
+-			};
+-			opp-134000000 {
+-				opp-hz = /bits/ 64 <134000000>;
+-			};
+-		};
+-	};
+-
+-	bus_leftbus: bus-leftbus {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_DIV_GDL>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_leftbus_opp_table>;
+-		interconnects = <&bus_dmc>;
+-		#interconnect-cells = <0>;
+-		status = "disabled";
+-	};
+-
+-	bus_mfc: bus-mfc {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_SCLK_MFC>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_leftbus_opp_table>;
+-		status = "disabled";
+-	};
+-
+-	bus_peri: bus-peri {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_ACLK100>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_peri_opp_table>;
+-		status = "disabled";
+-
+-		bus_peri_opp_table: opp-table {
+-			compatible = "operating-points-v2";
+-
+-			opp-50000000 {
+-				opp-hz = /bits/ 64 <50000000>;
+-			};
+-			opp-100000000 {
+-				opp-hz = /bits/ 64 <100000000>;
+-			};
+-		};
+-	};
+-
+-	bus_rightbus: bus-rightbus {
+-		compatible = "samsung,exynos-bus";
+-		clocks = <&clock CLK_DIV_GDR>;
+-		clock-names = "bus";
+-		operating-points-v2 = <&bus_leftbus_opp_table>;
+-		status = "disabled";
+-	};
+-
+ 	cpus {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+@@ -297,499 +158,20 @@ cpu0_opp_1500: opp-1500000000 {
+ 			turbo-mode;
+ 		};
+ 	};
++};
+ 
+-	bus_dmc_opp_table: opp-table-1 {
+-		compatible = "operating-points-v2";
+-
+-		opp-100000000 {
+-			opp-hz = /bits/ 64 <100000000>;
+-			opp-microvolt = <900000>;
+-		};
+-		opp-134000000 {
+-			opp-hz = /bits/ 64 <134000000>;
+-			opp-microvolt = <900000>;
+-		};
+-		opp-160000000 {
+-			opp-hz = /bits/ 64 <160000000>;
+-			opp-microvolt = <900000>;
+-		};
+-		opp-267000000 {
+-			opp-hz = /bits/ 64 <267000000>;
+-			opp-microvolt = <950000>;
+-		};
+-		opp-400000000 {
+-			opp-hz = /bits/ 64 <400000000>;
+-			opp-microvolt = <1050000>;
+-			opp-suspend;
+-		};
+-	};
+-
+-	bus_leftbus_opp_table: opp-table-2 {
+-		compatible = "operating-points-v2";
+-
+-		opp-100000000 {
+-			opp-hz = /bits/ 64 <100000000>;
+-			opp-microvolt = <900000>;
+-		};
+-		opp-134000000 {
+-			opp-hz = /bits/ 64 <134000000>;
+-			opp-microvolt = <925000>;
+-		};
+-		opp-160000000 {
+-			opp-hz = /bits/ 64 <160000000>;
+-			opp-microvolt = <950000>;
+-		};
+-		opp-200000000 {
+-			opp-hz = /bits/ 64 <200000000>;
+-			opp-microvolt = <1000000>;
+-			opp-suspend;
+-		};
+-	};
+-
+-	soc: soc {
+-
+-		pinctrl_0: pinctrl@11400000 {
+-			compatible = "samsung,exynos4x12-pinctrl";
+-			reg = <0x11400000 0x1000>;
+-			interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+-		};
+-
+-		pinctrl_1: pinctrl@11000000 {
+-			compatible = "samsung,exynos4x12-pinctrl";
+-			reg = <0x11000000 0x1000>;
+-			interrupts = <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>;
+-
+-			wakup_eint: wakeup-interrupt-controller {
+-				compatible = "samsung,exynos4210-wakeup-eint";
+-				interrupt-parent = <&gic>;
+-				interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+-			};
+-		};
+-
+-		pinctrl_2: pinctrl@3860000 {
+-			compatible = "samsung,exynos4x12-pinctrl";
+-			reg = <0x03860000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <10 0>;
+-		};
+-
+-		pinctrl_3: pinctrl@106e0000 {
+-			compatible = "samsung,exynos4x12-pinctrl";
+-			reg = <0x106e0000 0x1000>;
+-			interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+-		};
+-
+-		sram@2020000 {
+-			compatible = "mmio-sram";
+-			reg = <0x02020000 0x40000>;
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			ranges = <0 0x02020000 0x40000>;
+-
+-			smp-sram@0 {
+-				compatible = "samsung,exynos4210-sysram";
+-				reg = <0x0 0x1000>;
+-			};
+-
+-			smp-sram@2f000 {
+-				compatible = "samsung,exynos4210-sysram-ns";
+-				reg = <0x2f000 0x1000>;
+-			};
+-		};
+-
+-		pd_isp: power-domain@10023ca0 {
+-			compatible = "samsung,exynos4210-pd";
+-			reg = <0x10023ca0 0x20>;
+-			#power-domain-cells = <0>;
+-			label = "ISP";
+-		};
+-
+-		l2c: cache-controller@10502000 {
+-			compatible = "arm,pl310-cache";
+-			reg = <0x10502000 0x1000>;
+-			cache-unified;
+-			cache-level = <2>;
+-			prefetch-data = <1>;
+-			prefetch-instr = <1>;
+-			arm,tag-latency = <2 2 1>;
+-			arm,data-latency = <3 2 1>;
+-			arm,double-linefill = <1>;
+-			arm,double-linefill-incr = <0>;
+-			arm,double-linefill-wrap = <1>;
+-			arm,prefetch-drop = <1>;
+-			arm,prefetch-offset = <7>;
+-		};
+-
+-		clock: clock-controller@10030000 {
+-			compatible = "samsung,exynos4412-clock";
+-			reg = <0x10030000 0x18000>;
+-			#clock-cells = <1>;
+-		};
+-
+-		isp_clock: clock-controller@10048000 {
+-			compatible = "samsung,exynos4412-isp-clock";
+-			reg = <0x10048000 0x1000>;
+-			#clock-cells = <1>;
+-			power-domains = <&pd_isp>;
+-			clocks = <&clock CLK_ACLK200>,
+-				 <&clock CLK_ACLK400_MCUISP>;
+-			clock-names = "aclk200", "aclk400_mcuisp";
+-		};
+-
+-		timer@10050000 {
+-			compatible = "samsung,exynos4412-mct";
+-			reg = <0x10050000 0x800>;
+-			clocks = <&clock CLK_FIN_PLL>, <&clock CLK_MCT>;
+-			clock-names = "fin_pll", "mct";
+-			interrupts-extended = <&gic GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
+-					      <&combiner 12 5>,
+-					      <&combiner 12 6>,
+-					      <&combiner 12 7>,
+-					      <&gic GIC_PPI 12 IRQ_TYPE_LEVEL_HIGH>;
+-		};
+-
+-		watchdog: watchdog@10060000 {
+-			compatible = "samsung,exynos5250-wdt";
+-			reg = <0x10060000 0x100>;
+-			interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&clock CLK_WDT>;
+-			clock-names = "watchdog";
+-			samsung,syscon-phandle = <&pmu_system_controller>;
+-		};
+-
+-		adc: adc@126c0000 {
+-			compatible = "samsung,exynos4212-adc";
+-			reg = <0x126c0000 0x100>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <10 3>;
+-			clocks = <&clock CLK_TSADC>;
+-			clock-names = "adc";
+-			#io-channel-cells = <1>;
+-			samsung,syscon-phandle = <&pmu_system_controller>;
+-			status = "disabled";
+-		};
+-
+-		g2d: g2d@10800000 {
+-			compatible = "samsung,exynos4212-g2d";
+-			reg = <0x10800000 0x1000>;
+-			interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&clock CLK_SCLK_FIMG2D>, <&clock CLK_G2D>;
+-			clock-names = "sclk_fimg2d", "fimg2d";
+-			iommus = <&sysmmu_g2d>;
+-		};
+-
+-		mshc_0: mmc@12550000 {
+-			compatible = "samsung,exynos4412-dw-mshc";
+-			reg = <0x12550000 0x1000>;
+-			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			fifo-depth = <0x80>;
+-			clocks = <&clock CLK_SDMMC4>, <&clock CLK_SCLK_MMC4>;
+-			clock-names = "biu", "ciu";
+-			status = "disabled";
+-		};
+-
+-		sysmmu_g2d: sysmmu@10a40000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x10a40000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <4 7>;
+-			clock-names = "sysmmu", "master";
+-			clocks = <&clock CLK_SMMU_G2D>, <&clock CLK_G2D>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_isp: sysmmu@12260000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x12260000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 2>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu";
+-			clocks = <&isp_clock CLK_ISP_SMMU_ISP>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_drc: sysmmu@12270000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x12270000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 3>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu";
+-			clocks = <&isp_clock CLK_ISP_SMMU_DRC>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_fd: sysmmu@122a0000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x122a0000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 4>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu";
+-			clocks = <&isp_clock CLK_ISP_SMMU_FD>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_mcuctl: sysmmu@122b0000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x122b0000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 5>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu";
+-			clocks = <&isp_clock CLK_ISP_SMMU_ISPCX>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_lite0: sysmmu@123b0000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x123b0000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 0>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu", "master";
+-			clocks = <&isp_clock CLK_ISP_SMMU_LITE0>,
+-				 <&isp_clock CLK_ISP_FIMC_LITE0>;
+-			#iommu-cells = <0>;
+-		};
+-
+-		sysmmu_fimc_lite1: sysmmu@123c0000 {
+-			compatible = "samsung,exynos-sysmmu";
+-			reg = <0x123c0000 0x1000>;
+-			interrupt-parent = <&combiner>;
+-			interrupts = <16 1>;
+-			power-domains = <&pd_isp>;
+-			clock-names = "sysmmu", "master";
+-			clocks = <&isp_clock CLK_ISP_SMMU_LITE1>,
+-				 <&isp_clock CLK_ISP_FIMC_LITE1>;
+-			#iommu-cells = <0>;
+-		};
+-	};
++&clock {
++	compatible = "samsung,exynos4412-clock";
+ };
+ 
+ &combiner {
+ 	samsung,combiner-nr = <20>;
+-	interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+-};
+-
+-&camera {
+-	clocks = <&clock CLK_SCLK_CAM0>, <&clock CLK_SCLK_CAM1>,
+-		 <&clock CLK_PIXELASYNCM0>, <&clock CLK_PIXELASYNCM1>;
+-	clock-names = "sclk_cam0", "sclk_cam1", "pxl_async0", "pxl_async1";
+-
+-	/* fimc_[0-3] are configured outside, under phandles */
+-	fimc_lite_0: fimc-lite@12390000 {
+-		compatible = "samsung,exynos4212-fimc-lite";
+-		reg = <0x12390000 0x1000>;
+-		interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>;
+-		power-domains = <&pd_isp>;
+-		clocks = <&isp_clock CLK_ISP_FIMC_LITE0>;
+-		clock-names = "flite";
+-		iommus = <&sysmmu_fimc_lite0>;
+-		status = "disabled";
+-	};
+-
+-	fimc_lite_1: fimc-lite@123a0000 {
+-		compatible = "samsung,exynos4212-fimc-lite";
+-		reg = <0x123a0000 0x1000>;
+-		interrupts = <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH>;
+-		power-domains = <&pd_isp>;
+-		clocks = <&isp_clock CLK_ISP_FIMC_LITE1>;
+-		clock-names = "flite";
+-		iommus = <&sysmmu_fimc_lite1>;
+-		status = "disabled";
+-	};
+-
+-	fimc_is: fimc-is@12000000 {
+-		compatible = "samsung,exynos4212-fimc-is";
+-		reg = <0x12000000 0x260000>;
+-		interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>,
+-			     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
+-		power-domains = <&pd_isp>;
+-		clocks = <&isp_clock CLK_ISP_FIMC_LITE0>,
+-			 <&isp_clock CLK_ISP_FIMC_LITE1>,
+-			 <&isp_clock CLK_ISP_PPMUISPX>,
+-			 <&isp_clock CLK_ISP_PPMUISPMX>,
+-			 <&isp_clock CLK_ISP_FIMC_ISP>,
+-			 <&isp_clock CLK_ISP_FIMC_DRC>,
+-			 <&isp_clock CLK_ISP_FIMC_FD>,
+-			 <&isp_clock CLK_ISP_MCUISP>,
+-			 <&isp_clock CLK_ISP_GICISP>,
+-			 <&isp_clock CLK_ISP_MCUCTL_ISP>,
+-			 <&isp_clock CLK_ISP_PWM_ISP>,
+-			 <&isp_clock CLK_ISP_DIV_ISP0>,
+-			 <&isp_clock CLK_ISP_DIV_ISP1>,
+-			 <&isp_clock CLK_ISP_DIV_MCUISP0>,
+-			 <&isp_clock CLK_ISP_DIV_MCUISP1>,
+-			 <&clock CLK_MOUT_MPLL_USER_T>,
+-			 <&clock CLK_ACLK200>,
+-			 <&clock CLK_ACLK400_MCUISP>,
+-			 <&clock CLK_DIV_ACLK200>,
+-			 <&clock CLK_DIV_ACLK400_MCUISP>,
+-			 <&clock CLK_UART_ISP_SCLK>;
+-		clock-names = "lite0", "lite1", "ppmuispx",
+-			      "ppmuispmx", "isp",
+-			      "drc", "fd", "mcuisp",
+-			      "gicisp", "mcuctl_isp", "pwm_isp",
+-			      "ispdiv0", "ispdiv1", "mcuispdiv0",
+-			      "mcuispdiv1", "mpll", "aclk200",
+-			      "aclk400mcuisp", "div_aclk200",
+-			      "div_aclk400mcuisp", "uart";
+-		iommus = <&sysmmu_fimc_isp>, <&sysmmu_fimc_drc>,
+-			 <&sysmmu_fimc_fd>, <&sysmmu_fimc_mcuctl>;
+-		iommu-names = "isp", "drc", "fd", "mcuctl";
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		ranges;
+-		status = "disabled";
+-
+-		pmu@10020000 {
+-			reg = <0x10020000 0x3000>;
+-		};
+-
+-		i2c1_isp: i2c-isp@12140000 {
+-			compatible = "samsung,exynos4212-i2c-isp";
+-			reg = <0x12140000 0x100>;
+-			clocks = <&isp_clock CLK_ISP_I2C1_ISP>;
+-			clock-names = "i2c_isp";
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-		};
+-	};
+-};
+-
+-&exynos_usbphy {
+-	compatible = "samsung,exynos4x12-usb2-phy";
+-	samsung,sysreg-phandle = <&sys_reg>;
+-};
+-
+-&fimc_0 {
+-	compatible = "samsung,exynos4212-fimc";
+-	samsung,pix-limits = <4224 8192 1920 4224>;
+-	samsung,mainscaler-ext;
+-	samsung,isp-wb;
+-	samsung,cam-if;
+-};
+-
+-&fimc_1 {
+-	compatible = "samsung,exynos4212-fimc";
+-	samsung,pix-limits = <4224 8192 1920 4224>;
+-	samsung,mainscaler-ext;
+-	samsung,isp-wb;
+-	samsung,cam-if;
+-};
+-
+-&fimc_2 {
+-	compatible = "samsung,exynos4212-fimc";
+-	samsung,pix-limits = <4224 8192 1920 4224>;
+-	samsung,mainscaler-ext;
+-	samsung,isp-wb;
+-	samsung,lcd-wb;
+-	samsung,cam-if;
+-};
+-
+-&fimc_3 {
+-	compatible = "samsung,exynos4212-fimc";
+-	samsung,pix-limits = <1920 8192 1366 1920>;
+-	samsung,rotators = <0>;
+-	samsung,mainscaler-ext;
+-	samsung,isp-wb;
+-	samsung,lcd-wb;
+ };
+ 
+ &gic {
+ 	cpu-offset = <0x4000>;
+ };
+ 
+-&gpu {
+-	interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
+-		     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
+-	interrupt-names = "gp",
+-			  "gpmmu",
+-			  "pp0",
+-			  "ppmmu0",
+-			  "pp1",
+-			  "ppmmu1",
+-			  "pp2",
+-			  "ppmmu2",
+-			  "pp3",
+-			  "ppmmu3",
+-			  "pmu";
+-	operating-points-v2 = <&gpu_opp_table>;
+-
+-	gpu_opp_table: opp-table {
+-		compatible = "operating-points-v2";
+-
+-		opp-160000000 {
+-			opp-hz = /bits/ 64 <160000000>;
+-			opp-microvolt = <875000>;
+-		};
+-		opp-267000000 {
+-			opp-hz = /bits/ 64 <267000000>;
+-			opp-microvolt = <900000>;
+-		};
+-		opp-350000000 {
+-			opp-hz = /bits/ 64 <350000000>;
+-			opp-microvolt = <950000>;
+-		};
+-		opp-440000000 {
+-			opp-hz = /bits/ 64 <440000000>;
+-			opp-microvolt = <1025000>;
+-		};
+-	};
+-};
+-
+-&hdmi {
+-	compatible = "samsung,exynos4212-hdmi";
+-};
+-
+-&jpeg_codec {
+-	compatible = "samsung,exynos4212-jpeg";
+-};
+-
+-&rotator {
+-	compatible = "samsung,exynos4212-rotator";
+-};
+-
+-&mixer {
+-	compatible = "samsung,exynos4212-mixer";
+-	clock-names = "mixer", "hdmi", "sclk_hdmi", "vp";
+-	clocks = <&clock CLK_MIXER>, <&clock CLK_HDMI>,
+-		 <&clock CLK_SCLK_HDMI>, <&clock CLK_VP>;
+-	interconnects = <&bus_display &bus_dmc>;
+-};
+-
+ &pmu {
+ 	interrupts = <2 2>, <3 2>, <18 2>, <19 2>;
+ 	interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
+@@ -798,22 +180,4 @@ &pmu {
+ 
+ &pmu_system_controller {
+ 	compatible = "samsung,exynos4412-pmu", "simple-mfd", "syscon";
+-	clock-names = "clkout0", "clkout1", "clkout2", "clkout3",
+-			"clkout4", "clkout8", "clkout9";
+-	clocks = <&clock CLK_OUT_DMC>, <&clock CLK_OUT_TOP>,
+-		<&clock CLK_OUT_LEFTBUS>, <&clock CLK_OUT_RIGHTBUS>,
+-		<&clock CLK_OUT_CPU>, <&clock CLK_XXTI>, <&clock CLK_XUSBXTI>;
+-	#clock-cells = <1>;
+ };
+-
+-&tmu {
+-	compatible = "samsung,exynos4412-tmu";
+-	interrupt-parent = <&combiner>;
+-	interrupts = <2 4>;
+-	reg = <0x100c0000 0x100>;
+-	clocks = <&clock CLK_TMU_APBIF>;
+-	clock-names = "tmu_apbif";
+-	status = "disabled";
+-};
+-
+-#include "exynos4412-pinctrl.dtsi"
+diff --git a/arch/arm/boot/dts/exynos4412-pinctrl.dtsi b/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
+similarity index 99%
+rename from arch/arm/boot/dts/exynos4412-pinctrl.dtsi
+rename to arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
+index 8ab31c3daa48..9f7ea5f2a91f 100644
+--- a/arch/arm/boot/dts/exynos4412-pinctrl.dtsi
++++ b/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
+@@ -1,11 +1,11 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Samsung's Exynos4412 SoCs pin-mux and pin-config device tree source
++ * Samsung's Exynos4x12 SoCs pin-mux and pin-config device tree source
+  *
+  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
+  *
+- * Samsung's Exynos4412 SoCs pin-mux and pin-config optiosn are listed as device
++ * Samsung's Exynos4x12 SoCs pin-mux and pin-config optiosn are listed as device
+  * tree nodes are listed in this file.
+  */
+ 
+diff --git a/arch/arm/boot/dts/exynos4412.dtsi b/arch/arm/boot/dts/exynos4x12.dtsi
+similarity index 81%
+copy from arch/arm/boot/dts/exynos4412.dtsi
+copy to arch/arm/boot/dts/exynos4x12.dtsi
+index 82a36fb5ee8b..dcbb19824620 100644
+--- a/arch/arm/boot/dts/exynos4412.dtsi
++++ b/arch/arm/boot/dts/exynos4x12.dtsi
+@@ -5,12 +5,12 @@
+  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+  *		http://www.samsung.com
+  *
+- * Samsung's Exynos4412 SoC device nodes are listed in this file. Exynos4412
+- * based board files can include this file and provide values for board specfic
+- * bindings.
++ * Samsung's Exynos4x12 SoC series device nodes are listed in this file.
++ * Particular SoCs from Exynos4x12 series can include this file and provide
++ * values for SoCs specfic bindings.
+  *
+  * Note: This file does not include device nodes for all the controllers in
+- * Exynos4412 SoC. As device tree coverage for Exynos4412 increases, additional
++ * Exynos4x12 SoCs. As device tree coverage for Exynos4x12 increases, additional
+  * nodes can be added to this file.
+  */
+ 
+@@ -19,8 +19,6 @@
+ #include "exynos4-cpu-thermal.dtsi"
+ 
+ / {
+-	compatible = "samsung,exynos4412", "samsung,exynos4";
+-
+ 	aliases {
+ 		pinctrl0 = &pinctrl_0;
+ 		pinctrl1 = &pinctrl_1;
+@@ -158,146 +156,6 @@ bus_rightbus: bus-rightbus {
+ 		status = "disabled";
+ 	};
+ 
+-	cpus {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		cpu-map {
+-			cluster0 {
+-				core0 {
+-					cpu = <&cpu0>;
+-				};
+-				core1 {
+-					cpu = <&cpu1>;
+-				};
+-				core2 {
+-					cpu = <&cpu2>;
+-				};
+-				core3 {
+-					cpu = <&cpu3>;
+-				};
+-			};
+-		};
+-
+-		cpu0: cpu@a00 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0xa00>;
+-			clocks = <&clock CLK_ARM_CLK>;
+-			clock-names = "cpu";
+-			operating-points-v2 = <&cpu0_opp_table>;
+-			#cooling-cells = <2>; /* min followed by max */
+-		};
+-
+-		cpu1: cpu@a01 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0xa01>;
+-			clocks = <&clock CLK_ARM_CLK>;
+-			clock-names = "cpu";
+-			operating-points-v2 = <&cpu0_opp_table>;
+-			#cooling-cells = <2>; /* min followed by max */
+-		};
+-
+-		cpu2: cpu@a02 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0xa02>;
+-			clocks = <&clock CLK_ARM_CLK>;
+-			clock-names = "cpu";
+-			operating-points-v2 = <&cpu0_opp_table>;
+-			#cooling-cells = <2>; /* min followed by max */
+-		};
+-
+-		cpu3: cpu@a03 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0xa03>;
+-			clocks = <&clock CLK_ARM_CLK>;
+-			clock-names = "cpu";
+-			operating-points-v2 = <&cpu0_opp_table>;
+-			#cooling-cells = <2>; /* min followed by max */
+-		};
+-	};
+-
+-	cpu0_opp_table: opp-table-0 {
+-		compatible = "operating-points-v2";
+-		opp-shared;
+-
+-		opp-200000000 {
+-			opp-hz = /bits/ 64 <200000000>;
+-			opp-microvolt = <900000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-300000000 {
+-			opp-hz = /bits/ 64 <300000000>;
+-			opp-microvolt = <900000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-400000000 {
+-			opp-hz = /bits/ 64 <400000000>;
+-			opp-microvolt = <925000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-500000000 {
+-			opp-hz = /bits/ 64 <500000000>;
+-			opp-microvolt = <950000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-600000000 {
+-			opp-hz = /bits/ 64 <600000000>;
+-			opp-microvolt = <975000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-700000000 {
+-			opp-hz = /bits/ 64 <700000000>;
+-			opp-microvolt = <987500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-800000000 {
+-			opp-hz = /bits/ 64 <800000000>;
+-			opp-microvolt = <1000000>;
+-			clock-latency-ns = <200000>;
+-			opp-suspend;
+-		};
+-		opp-900000000 {
+-			opp-hz = /bits/ 64 <900000000>;
+-			opp-microvolt = <1037500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-1000000000 {
+-			opp-hz = /bits/ 64 <1000000000>;
+-			opp-microvolt = <1087500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-1100000000 {
+-			opp-hz = /bits/ 64 <1100000000>;
+-			opp-microvolt = <1137500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-1200000000 {
+-			opp-hz = /bits/ 64 <1200000000>;
+-			opp-microvolt = <1187500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-1300000000 {
+-			opp-hz = /bits/ 64 <1300000000>;
+-			opp-microvolt = <1250000>;
+-			clock-latency-ns = <200000>;
+-		};
+-		opp-1400000000 {
+-			opp-hz = /bits/ 64 <1400000000>;
+-			opp-microvolt = <1287500>;
+-			clock-latency-ns = <200000>;
+-		};
+-		cpu0_opp_1500: opp-1500000000 {
+-			opp-hz = /bits/ 64 <1500000000>;
+-			opp-microvolt = <1350000>;
+-			clock-latency-ns = <200000>;
+-			turbo-mode;
+-		};
+-	};
+-
+ 	bus_dmc_opp_table: opp-table-1 {
+ 		compatible = "operating-points-v2";
+ 
+@@ -421,7 +279,6 @@ l2c: cache-controller@10502000 {
+ 		};
+ 
+ 		clock: clock-controller@10030000 {
+-			compatible = "samsung,exynos4412-clock";
+ 			reg = <0x10030000 0x18000>;
+ 			#clock-cells = <1>;
+ 		};
+@@ -571,7 +428,6 @@ sysmmu_fimc_lite1: sysmmu@123c0000 {
+ };
+ 
+ &combiner {
+-	samsung,combiner-nr = <20>;
+ 	interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
+ 		     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>,
+ 		     <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>,
+@@ -719,10 +575,6 @@ &fimc_3 {
+ 	samsung,lcd-wb;
+ };
+ 
+-&gic {
+-	cpu-offset = <0x4000>;
+-};
+-
+ &gpu {
+ 	interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>,
+ 		     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
+@@ -790,14 +642,7 @@ &mixer {
+ 	interconnects = <&bus_display &bus_dmc>;
+ };
+ 
+-&pmu {
+-	interrupts = <2 2>, <3 2>, <18 2>, <19 2>;
+-	interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
+-	status = "okay";
+-};
+-
+ &pmu_system_controller {
+-	compatible = "samsung,exynos4412-pmu", "simple-mfd", "syscon";
+ 	clock-names = "clkout0", "clkout1", "clkout2", "clkout3",
+ 			"clkout4", "clkout8", "clkout9";
+ 	clocks = <&clock CLK_OUT_DMC>, <&clock CLK_OUT_TOP>,
+@@ -816,4 +661,4 @@ &tmu {
+ 	status = "disabled";
+ };
+ 
+-#include "exynos4412-pinctrl.dtsi"
++#include "exynos4x12-pinctrl.dtsi"
 -- 
 2.40.1
 
