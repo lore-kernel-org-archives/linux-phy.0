@@ -4,76 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37D8CC77B73
-	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 05:15:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC094C77B73
+	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 06:42:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lfKjsPX0Ma8qqK2rJMwBUnWiAIMek78cxo1Yf5RDL7A=; b=yliNiQhozwoWSz
-	+A3+GGvCcz3mPUJ9A6mFSTxMZQk8GqDGmtyEbL29m6JPT4+R2ODpVSPLQplQOlPHEF5vGC7oBe58F
-	6nGruYXlf+5G6SlzVYlUw72qoaGNdQSgGdbxhtQbiBsOUM9036NdqKt0IsSaHICJzxxBveWDcYjIc
-	btggsbq8qtk0nu5vV1iUSUbBSSPCladDK0QtPI38em1sxe9yAx55m4NLNmDI+MCLMbFPc2rxBqAuN
-	wLVgCuctgXkXhVvJXIW8T8ExfrIabRpG4XFywxJjtSsKM96hkoKoRco1L2mI2zMGf3fBzgQg8co1V
-	ybb648qg8cnpfZyH6b6A==;
+	List-Owner; bh=165n8U1mTbp3dFd42bSaXK9L1OvDt82QUiulpz5g89E=; b=VYxeg0ZG3MV6+q
+	cLScUSkeyZ1iFMK+0o0mlEpEE3cP7TJV/jAs9DUZSHL4YloEdkXIw0KBlgo5G5nbrEtYpAbVVLW+q
+	jBTN91AeG77Ts9AK1s96xyMrK93zcBW22m8oGkBgXg81iTQPyCmvE7HCw5T2w1xTYUq3ImGWLai8r
+	M2ewyzn7BzW/ggTchxsQc5l9eRiS9EFwE+unYz7cq6biADA4eipjpjvqIPMX/pvMDxcy1HeAWl3fp
+	r1ny0ad8M+RlE9TdO1ipkfqWVaKIJ4lFvqFlw9yYc4DL9zwe0b6ibyT2K+tN8dGafP67hamOwB6Qs
+	ltSqUO3Oqp0y78CxI6Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptLsV-00FHcy-2L;
-	Mon, 01 May 2023 05:15:11 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1ptNEi-00FLeS-1Z;
+	Mon, 01 May 2023 06:42:12 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptLsS-00FHc7-04;
-	Mon, 01 May 2023 05:15:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1682918108; x=1714454108;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=Ux9Ts+3V9zBCVDNMcJUyurtBq8zr7ey0DE6a6V0SDgM=;
-  b=YrJeOalhYmcnedJnYlHRHXoxNlptURfpqIFhzYLE2ou7yUUA0H+GLl1h
-   nb6XDxineQGk136OYM6McCcbl6DCMhzfRG97l315r3katATc+qBhqaork
-   rBqNZpx5zSShyr21sIK+UHmsLUMjZ1+NuKaedg2XKAOEbTyqvj/TzJU69
-   AfEu9jBJI/EPzR7FKWHtCz5wJq5hMvFjWolyyKC/Z2KexMfn5cSYNfguL
-   qpVPs94Mde50F02fZC2x5N6JXOLDVl32ejZ35r8xQeIfUlrvMBpkrZoxt
-   IvojH7c28b5vWtqJ6dAg6vhgDKKkOSli8K4aZKgOyDKfa3GySXCqzoO4O
-   g==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10696"; a="376132469"
-X-IronPort-AV: E=Sophos;i="5.99,239,1677571200"; 
-   d="scan'208";a="376132469"
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Apr 2023 22:15:02 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10696"; a="765181857"
-X-IronPort-AV: E=Sophos;i="5.99,239,1677571200"; 
-   d="scan'208";a="765181857"
-Received: from lkp-server01.sh.intel.com (HELO e3434d64424d) ([10.239.97.150])
-  by fmsmga004.fm.intel.com with ESMTP; 30 Apr 2023 22:14:58 -0700
-Received: from kbuild by e3434d64424d with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1ptLsH-0000JV-23;
-	Mon, 01 May 2023 05:14:57 +0000
-Date: Mon, 1 May 2023 13:14:51 +0800
-From: kernel test robot <lkp@intel.com>
-To: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de, chunfeng.yun@mediatek.com, vkoul@kernel.org,
-	kishon@kernel.org, matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Tom Rix <trix@redhat.com>, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] phy: mediatek: rework the floating point comparisons to
- fixed point
-Message-ID: <202305011302.fwiJuq8v-lkp@intel.com>
-References: <20230501025716.2905609-1-trix@redhat.com>
+	id 1ptNEf-00FLdM-0p
+	for linux-phy@lists.infradead.org;
+	Mon, 01 May 2023 06:42:10 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-94f7a7a3351so439118766b.2
+        for <linux-phy@lists.infradead.org>; Sun, 30 Apr 2023 23:42:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1682923327; x=1685515327;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+Ug3ALriauxRZK5BuCGHz3hy7oRHCk3NYUeB/1prBrY=;
+        b=yt4JG8tWk8wAOJfdh9RJqmqYq+roQX5gM6HshQPz6CUcPGCj2zgsoNeviCmkeSK1tu
+         jLH0eWFDXwvPLCM1TByk4uSY7nKHkCqrzb94JchNYgFfM2hVp0DLuwFXaSuzH4p5ViM8
+         SC2eMqgoSPA2hPTDMaOsbRIHPxKsiQmMk1gGwAiLhu7xNqd2SZEiLNZIQcoe4ItIz5pF
+         VMlWNVe6ecfuN7CYfc/8rYbNZ2TPBAt0gV1dDSwiVRCSJCskh6fRup0ZtwYnKmKgoyDT
+         /e2TtOW+gMlHD2EKruh6ByuUhwuzGXvdm2nqF367cylbXkVOH9TW8++pjimXZTr5WjtX
+         /DzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682923327; x=1685515327;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+Ug3ALriauxRZK5BuCGHz3hy7oRHCk3NYUeB/1prBrY=;
+        b=Eoxbwzy/6iYbj1+pkb/N+PsjHxNhwpbmZvhT5F8FVpk8NNMzhOjMD63lTPq3spSqfZ
+         azloAd23t/64ICwJvvEWcXW1HWeHdOE1B6H/cZ1LFwHRFxkBHvVVSDiByPP7+q8ulDOh
+         RbtP0gxI613uPDeK1lYu2cp71g9apqi0baYspXkPwq5TSNvvyDR0f4t2r+wvteotZMOC
+         5rUqNhBhK0NM4zjq2ZCORnrNRByWQs+JA1Y7XMEBvogPu456unV7rp9jiMnYsUesJXiI
+         +QrDLNoMY4m2PIi4sGuemXL8fIATVP/fLobUULiV6qgvhik5MnQTeFy+IXibqQyEW1/S
+         +5UQ==
+X-Gm-Message-State: AC+VfDwmrl/oGPw8elMLAH//qpeQHnyu08xulFXNqGU8zGTTFW0874/T
+	9nm4BtXFciigpP7rsw6LTlUPkg==
+X-Google-Smtp-Source: ACHHUZ4oeAdjiUq5MyBqbc28cNuh/LNOYUFqAHRwLNOTfAIWvWHzI5qhT7JQdltUKNsMvkYD7E9eGA==
+X-Received: by 2002:a17:907:7245:b0:88f:a236:69e6 with SMTP id ds5-20020a170907724500b0088fa23669e6mr10854766ejc.7.1682923326687;
+        Sun, 30 Apr 2023 23:42:06 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:637a:fd0c:58fd:9f00? ([2a02:810d:15c0:828:637a:fd0c:58fd:9f00])
+        by smtp.gmail.com with ESMTPSA id pv22-20020a170907209600b0094f0025983fsm14605371ejb.84.2023.04.30.23.42.05
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 30 Apr 2023 23:42:06 -0700 (PDT)
+Message-ID: <e9a00e55-e2f5-1f02-56c7-8e12b551867b@linaro.org>
+Date: Mon, 1 May 2023 08:42:04 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230501025716.2905609-1-trix@redhat.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+Subject: Re: [PATCH v2 1/6] dt-bindings: usb: qcom,dwc3: Add bindings for
+ SA8775P
+Content-Language: en-US
+To: Shazad Hussain <quic_shazhuss@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org
+Cc: dmitry.baryshkov@linaro.org, athierry@redhat.com, robh@kernel.org,
+ konrad.dybcio@linaro.org, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+References: <20230428130824.23803-1-quic_shazhuss@quicinc.com>
+ <20230428130824.23803-2-quic_shazhuss@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230428130824.23803-2-quic_shazhuss@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230430_221508_108650_3AFEC62E 
-X-CRM114-Status: GOOD (  15.94  )
+X-CRM114-CacheID: sfid-20230430_234209_291332_2F547CBB 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,122 +103,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Tom,
-
-kernel test robot noticed the following build warnings:
-
-[auto build test WARNING on next-20230428]
-[cannot apply to linus/master pza/reset/next pza/imx-drm/next mbgg-mediatek/for-next v6.3 v6.3-rc7 v6.3-rc6 v6.3]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Tom-Rix/phy-mediatek-rework-the-floating-point-comparisons-to-fixed-point/20230501-110044
-base:   next-20230428
-patch link:    https://lore.kernel.org/r/20230501025716.2905609-1-trix%40redhat.com
-patch subject: [PATCH] phy: mediatek: rework the floating point comparisons to fixed point
-config: arm64-randconfig-r026-20230430 (https://download.01.org/0day-ci/archive/20230501/202305011302.fwiJuq8v-lkp@intel.com/config)
-compiler: clang version 17.0.0 (https://github.com/llvm/llvm-project b1465cd49efcbc114a75220b153f5a055ce7911f)
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # install arm64 cross compiling tool for clang build
-        # apt-get install binutils-aarch64-linux-gnu
-        # https://github.com/intel-lab-lkp/linux/commit/7a707b74a3a3ce9d018ee340e478e5c75301c894
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Tom-Rix/phy-mediatek-rework-the-floating-point-comparisons-to-fixed-point/20230501-110044
-        git checkout 7a707b74a3a3ce9d018ee340e478e5c75301c894
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=arm64 olddefconfig
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=arm64 SHELL=/bin/bash drivers/phy/mediatek/
-
-If you fix the issue, kindly add following tag where applicable
-| Reported-by: kernel test robot <lkp@intel.com>
-| Link: https://lore.kernel.org/oe-kbuild-all/202305011302.fwiJuq8v-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-           if (ret)
-               ^~~
-   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:216:12: note: initialize the variable 'ret' to silence this warning
-           int i, ret;
-                     ^
-                      = 0
->> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:331:32: warning: result of comparison of constant 74175000000 with expression of type 'u32' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
-           } else if ((pixel_clk * 1000) >= 74175 * MEGA && pixel_clk <= 300 * MEGA) {
-                      ~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~
->> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:336:58: warning: result of comparison of constant 74175000000 with expression of type 'u32' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
-           } else if (pixel_clk >= 27 * MEGA && (pixel_clk * 1000) < 74175 * MEGA) {
-                                                ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~
-   3 warnings generated.
+On 28/04/2023 15:08, Shazad Hussain wrote:
+> Add the compatible string for SA8775P SoC from Qualcomm.
+> 
+> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
+> ---
 
 
-vim +331 drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-   303	
-   304	static int mtk_hdmi_pll_drv_setting(struct clk_hw *hw)
-   305	{
-   306		struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
-   307		void __iomem *regs = hdmi_phy->regs;
-   308		u8 data_channel_bias, clk_channel_bias;
-   309		u8 impedance, impedance_en;
-   310		u32 tmds_clk;
-   311		u32 pixel_clk = hdmi_phy->pll_rate;
-   312	
-   313		tmds_clk = pixel_clk;
-   314	
-   315		/* bias & impedance setting:
-   316		 * 3G < data rate <= 6G: enable impedance 100ohm,
-   317		 *      data channel bias 24mA, clock channel bias 20mA
-   318		 * pixel clk >= HD,  74.175MHZ <= pixel clk <= 300MHZ:
-   319		 *      enalbe impedance 100ohm
-   320		 *      data channel 20mA, clock channel 16mA
-   321		 * 27M =< pixel clk < 74.175: disable impedance
-   322		 *      data channel & clock channel bias 10mA
-   323		 */
-   324	
-   325		/* 3G < data rate <= 6G, 300M < tmds rate <= 594M */
-   326		if (tmds_clk > 300 * MEGA && tmds_clk <= 594 * MEGA) {
-   327			data_channel_bias = 0x3c; /* 24mA */
-   328			clk_channel_bias = 0x34; /* 20mA */
-   329			impedance_en = 0xf;
-   330			impedance = 0x36; /* 100ohm */
- > 331		} else if ((pixel_clk * 1000) >= 74175 * MEGA && pixel_clk <= 300 * MEGA) {
-   332			data_channel_bias = 0x34; /* 20mA */
-   333			clk_channel_bias = 0x2c; /* 16mA */
-   334			impedance_en = 0xf;
-   335			impedance = 0x36; /* 100ohm */
- > 336		} else if (pixel_clk >= 27 * MEGA && (pixel_clk * 1000) < 74175 * MEGA) {
-   337			data_channel_bias = 0x14; /* 10mA */
-   338			clk_channel_bias = 0x14; /* 10mA */
-   339			impedance_en = 0x0;
-   340			impedance = 0x0;
-   341		} else {
-   342			return -EINVAL;
-   343		}
-   344	
-   345		/* bias */
-   346		mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D0, data_channel_bias);
-   347		mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D1, data_channel_bias);
-   348		mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D2, data_channel_bias);
-   349		mtk_phy_update_field(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_IBIAS_CLK, clk_channel_bias);
-   350	
-   351		/* impedance */
-   352		mtk_phy_update_field(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_IMP_EN, impedance_en);
-   353		mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D0_EN1, impedance);
-   354		mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D1_EN1, impedance);
-   355		mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D2_EN1, impedance);
-   356		mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_CLK_EN1, impedance);
-   357	
-   358		return 0;
-   359	}
-   360	
+Best regards,
+Krzysztof
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
