@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C90C7EE26
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFCA2C77B7C
 	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 21:00:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,55 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lfw8+66T0NwXej3obokibDh8J41CCKNMMgbqwAnp0nQ=; b=4BXiidON25vPlS
-	62fvNI4LP/On0OunFW19t1mbFYxNBCvYrj9GmmdY2rB6GGbtQqmSkYJMaiERPXRiFk/hDgwIWd7o1
-	Lu9FDG4tSzeilcEx/6kXcWcziZtWcDV3HfUr++bL660SzIcfdcXIMVoCFfAj9r8IqhEXLvZEUnvdq
-	NmMZ98oyLlnnQah9j8qyFPqIfAC4sDvYFcSIU8e1Wti5RZmM2dcvFe7aVq5K8qKeMJ+uyQzE31lid
-	GcV7l0e0eHqsopkiSJbh9eAG7S3xAvgKhkOqDCdCQFKq5e4kxF2m9Ypedm1SOr+71/UOZgONYwZr8
-	+O++bj0PQ+gtZP9/zALQ==;
+	List-Owner; bh=5+kDYUslzF/sJ0R1WevDlvjTJgf9Rc4qGIshoazfJxg=; b=q7Hq6KDTFBSE7A
+	yeVx1T5GLVUnvrDgDEYzXNZbrMJpOrPDN0L9AAUnlYpE8f/lFlsGNpFWGYqAMLZ6nh/UdKgOyPr4e
+	Uyxp/IJ6782jlcyLwIFnSApa/2zPNwr+zqBLtAVY8FFGItrb/OnwGTxN8d/dHrQxcmrqH6IhILLQ5
+	JfdEDOjTfh7GLYG9U+x2SE14T/6tlYh8GD0YX21amVqEmIisfD2LMIGav9PS3y1GZtPONtKSHiCd6
+	RIOYbwyF452ZeslJxLoQ6RxZ2J+amktn7lF5Kz8eFI/PKoI0TXHTLfGYiuU/UVcIzqbC/soGFyqTZ
+	Y9WGBe6wPkHqu+/1pL4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptadG-00Gxdh-0g;
+	id 1ptadG-00Gxdx-1a;
 	Mon, 01 May 2023 21:00:26 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+Received: from mail-ej1-f49.google.com ([209.85.218.49])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptZcp-00GoUB-1s;
-	Mon, 01 May 2023 19:55:59 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-95678d891d6so607401066b.1;
-        Mon, 01 May 2023 12:55:55 -0700 (PDT)
+	id 1ptZcu-00GoYf-36;
+	Mon, 01 May 2023 19:56:07 +0000
+Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-95678d891d6so607419766b.1;
+        Mon, 01 May 2023 12:56:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1682970954; x=1685562954;
+        d=gmail.com; s=20221208; t=1682970959; x=1685562959;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=GOGc04EDBprGbJg+xQxod7skhjSvhIqdrB9AcENrHNw=;
-        b=MDFKEJj+fNR9dFy63SUj0w/8qJvYvIdmPdpyRp3KMEmqP2Gqkq7ivo/jYTVKThi403
-         voVrlABZkWkdKZUPypiwf6tMBNSPbXcH2cnB4Mn7tK/dqcemgVHC/WW7ieYx0n/0tZYI
-         BgeGRCXWsbzqmhQHh7L+REcZe8DRgecIW1I1AuUfMfbHb3VTgHk1GK0VQL4R6OKf4vNr
-         05muX+X1250ydN/Jw9X8JW1a+MFyhAkMydtOIJQkwJoNi0nJQl+A6WIPSCqZGjbIcoYt
-         8/A8S0EUA1NXj+SlouEcWUXmXyLoOxcIYFJsnoG+rbD4eE9l/+vbAo041ZIQkFY5xmEM
-         DDqw==
+        bh=38VxhEHFtKrWmQoVafTaTac+t9mAIUG54Wwwm7whBs8=;
+        b=KI1LlAlF5L474QaFyDyrTkmCDVYL20sWRyjpdVhVO3KFLhelx4Dp/xlcLM3i6NjoqL
+         UXrHCMJfAXf8M4UyhnT52MqIiGEgurLu/0Ygcobm639zk5AbVJIdPkNyHMZ0BfQtqeg+
+         ivNXVHA9f6aRm0jgRNYdCsQTBeFGPgQGP2IfuDKTQyj1KYIbKURJbd/mTAapTMd7q0W6
+         ldIkPqh42IYU578BqI5kIYfB53RnWOPcau9OzvWqfFoMY694ndb2Na1r15igCpFdusPD
+         xVvr9mNrGb+ccR3TDLuop7LlXgU4TCni9Pu5JD1tp3k+AA4qACl7M3oNW6kUKwoI8duT
+         KkXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682970954; x=1685562954;
+        d=1e100.net; s=20221208; t=1682970959; x=1685562959;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=GOGc04EDBprGbJg+xQxod7skhjSvhIqdrB9AcENrHNw=;
-        b=R118lEJF2P9YVZLtD08KtivFOq/mHqdh/Jhw8ukec+3woMDcDYUuuDEczw4cXjbk7T
-         lAaw/g3sI0DqhHlK/AIzRxlNC4Wld027B/EU18RSe9HC3NuJ46sWxJ9KScAGWBasu+FE
-         3R2O/7yNMJpyOedQHgt/9DPt7LzDWW9edcomGFsnMkAX1GppnTLNgva68fE/T4qrn5jn
-         LhsS2oS+IYQ5hGyjEQ87z7YLYmEvHhMnfnoCjBslfa1Q4rQsRy1A4QW3tiBabcmfLk+E
-         o2YfuaqjUyiC9dv8C2CwAmGfXbVMDDE5zqrVf4NYIIh2HJZ615lRtuQme2WVDTMpskY4
-         cEkg==
-X-Gm-Message-State: AC+VfDwMCI3mQIgJavklGLwTLXNFNCHVuN0mMqh82aRWwpmWRYG9orkM
-	KzPla6hbgKW0238GHeoRLVQ=
-X-Google-Smtp-Source: ACHHUZ5YT2x0QKzCJJLQq62PFbEPGc3kSht7PP/vDOQLc8119XR8mTn25GSabF+hymsYKVZjXCrHwg==
-X-Received: by 2002:a17:907:7215:b0:94a:56ec:7f12 with SMTP id dr21-20020a170907721500b0094a56ec7f12mr14342929ejc.30.1682970953955;
-        Mon, 01 May 2023 12:55:53 -0700 (PDT)
+        bh=38VxhEHFtKrWmQoVafTaTac+t9mAIUG54Wwwm7whBs8=;
+        b=RECPtsN/AUDUxauD9Tp2UBidO+tqJPL8Eu8QrH3PtHpfil4KXT/bHFXYrtm8+NLzGM
+         2Z1LZxDSEho0UIF7EdDN7Z75E1f9npBS8OYHGjhHrFQcG8NVhWtjckbrYrAN7nBgtv4S
+         muvwnV0doSxpCCFde4bPjHcYVIlbyy650pnq/n6vBc53LLzo4Mhe1ctS3IayzU/DvaZ5
+         m8pDp4Awu+qugu49IjGTlcp5x77jgJLOzUqH0PlpvFGY2CGaPMHA/w5AbVXRIsWGsdIY
+         RrAFDyBwQzk0D9A29h7Soua6V9AzmZ6eOefqjPRQXbOKkcdJ9lttuxnFeRrFuUav3Wra
+         tIVg==
+X-Gm-Message-State: AC+VfDz/Y35YzbuS64AL7P6pTUsqIJtK/PbEZVIwEV9pmqKbOScUyTqG
+	2YAyhZduB9WeAQ3F65A83hQ=
+X-Google-Smtp-Source: ACHHUZ5ntPn/4VDN5YhtuLaVgjQ9ijtrOMINj7po7N+cYC1Qu+HtoEkdX/Nhf+UB36Tc72vnU+wevA==
+X-Received: by 2002:a17:907:3e9f:b0:953:7e25:2156 with SMTP id hs31-20020a1709073e9f00b009537e252156mr14246695ejc.51.1682970958448;
+        Mon, 01 May 2023 12:55:58 -0700 (PDT)
 Received: from localhost.my.domain (83.8.115.30.ipv4.supernova.orange.pl. [83.8.115.30])
-        by smtp.gmail.com with ESMTPSA id og36-20020a1709071de400b009600ce4fb53sm6333650ejc.37.2023.05.01.12.55.51
+        by smtp.gmail.com with ESMTPSA id og36-20020a1709071de400b009600ce4fb53sm6333650ejc.37.2023.05.01.12.55.56
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 01 May 2023 12:55:53 -0700 (PDT)
+        Mon, 01 May 2023 12:55:58 -0700 (PDT)
 From: Artur Weber <aweber.kernel@gmail.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Alim Akhtar <alim.akhtar@samsung.com>,
@@ -89,16 +89,16 @@ Cc: Alim Akhtar <alim.akhtar@samsung.com>,
 	linux-phy@lists.infradead.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	Artur Weber <aweber.kernel@gmail.com>
-Subject: [PATCH v3 11/13] ARM: dts: exynos: Fix some typos in comments
-Date: Mon,  1 May 2023 21:55:23 +0200
-Message-Id: <20230501195525.6268-12-aweber.kernel@gmail.com>
+Subject: [PATCH v3 13/13] ARM: dts: exynos: Add Samsung Galaxy Tab 3 8.0 boards
+Date: Mon,  1 May 2023 21:55:25 +0200
+Message-Id: <20230501195525.6268-14-aweber.kernel@gmail.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <20230501195525.6268-1-aweber.kernel@gmail.com>
 References: <20230501195525.6268-1-aweber.kernel@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230501_125555_761986_02443308 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20230501_125601_032413_86D48CEB 
+X-CRM114-Status: GOOD (  19.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,315 +115,1359 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change 'specfic' to 'specific', 'optiosn' to 'options' and remove
-duplicated 'are listed' in DTSI heading comments.
+Introduce support for the Galaxy Tab 3 8.0 series of boards:
+
+ - Samsung Galaxy Tab 3 8.0 WiFi (SM-T310/lt01wifi)
+ - Samsung Galaxy Tab 3 8.0 3G (SM-T311/lt013g)
+ - Samsung Galaxy Tab 3 8.0 LTE (SM-T315/lt01lte)
+
+What works:
+
+ - Display and backlight
+ - Touchscreen (without touchkeys)
+ - GPIO buttons, hall sensor
+ - WiFi and Bluetooth
+ - USB, fuel gauge, charging
+ - Accelerometer and magnetometer
+ - WiFi model only: light sensor
 
 Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
 ---
- arch/arm/boot/dts/exynos3250-pinctrl.dtsi | 4 ++--
- arch/arm/boot/dts/exynos3250.dtsi         | 2 +-
- arch/arm/boot/dts/exynos4.dtsi            | 2 +-
- arch/arm/boot/dts/exynos4210-pinctrl.dtsi | 4 ++--
- arch/arm/boot/dts/exynos4212.dtsi         | 2 +-
- arch/arm/boot/dts/exynos4412.dtsi         | 2 +-
- arch/arm/boot/dts/exynos4x12-pinctrl.dtsi | 4 ++--
- arch/arm/boot/dts/exynos4x12.dtsi         | 2 +-
- arch/arm/boot/dts/exynos5.dtsi            | 2 +-
- arch/arm/boot/dts/exynos5250-pinctrl.dtsi | 4 ++--
- arch/arm/boot/dts/exynos5250.dtsi         | 2 +-
- arch/arm/boot/dts/exynos5260-pinctrl.dtsi | 2 +-
- arch/arm/boot/dts/exynos5410.dtsi         | 2 +-
- arch/arm/boot/dts/exynos5420-pinctrl.dtsi | 2 +-
- arch/arm/boot/dts/exynos5420.dtsi         | 2 +-
- arch/arm/boot/dts/exynos5800.dtsi         | 2 +-
- arch/arm/boot/dts/s3c6400.dtsi            | 2 +-
- arch/arm/boot/dts/s3c6410.dtsi            | 2 +-
- arch/arm/boot/dts/s3c64xx.dtsi            | 2 +-
- arch/arm/boot/dts/s5pv210-pinctrl.dtsi    | 2 +-
- arch/arm/boot/dts/s5pv210.dtsi            | 2 +-
- 21 files changed, 25 insertions(+), 25 deletions(-)
+Changed in v3:
+ - Addressed review comments
+ - Removed rtc node (RTC is provided by PMIC)
+ - Added CPU thermal node
+ - Fixed dtb_check warnings
+ - Added common changes from next/dt
 
-diff --git a/arch/arm/boot/dts/exynos3250-pinctrl.dtsi b/arch/arm/boot/dts/exynos3250-pinctrl.dtsi
-index 011ba2eff29e..07828551d4b3 100644
---- a/arch/arm/boot/dts/exynos3250-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos3250-pinctrl.dtsi
-@@ -5,8 +5,8 @@
-  * Copyright (c) 2014 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * Samsung's Exynos3250 SoCs pin-mux and pin-config optiosn are listed as device
-- * tree nodes are listed in this file.
-+ * Samsung's Exynos3250 SoCs pin-mux and pin-config options are listed as device
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos3250.dtsi b/arch/arm/boot/dts/exynos3250.dtsi
-index bd37f1b587f0..3f1015edab43 100644
---- a/arch/arm/boot/dts/exynos3250.dtsi
-+++ b/arch/arm/boot/dts/exynos3250.dtsi
-@@ -6,7 +6,7 @@
-  *		http://www.samsung.com
-  *
-  * Samsung's Exynos3250 SoC device nodes are listed in this file. Exynos3250
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/exynos4.dtsi b/arch/arm/boot/dts/exynos4.dtsi
-index 8dd6976ab0a7..549e63b51242 100644
---- a/arch/arm/boot/dts/exynos4.dtsi
-+++ b/arch/arm/boot/dts/exynos4.dtsi
-@@ -9,7 +9,7 @@
-  *
-  * Samsung's Exynos4 SoC series device nodes are listed in this file.  Particular
-  * SoCs from Exynos4 series can include this file and provide values for SoCs
-- * specfic bindings.
-+ * specific bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-  * Exynos4 SoCs. As device tree coverage for Exynos4 increases, additional
-diff --git a/arch/arm/boot/dts/exynos4210-pinctrl.dtsi b/arch/arm/boot/dts/exynos4210-pinctrl.dtsi
-index 76f44ae0de46..70d268f9fcb1 100644
---- a/arch/arm/boot/dts/exynos4210-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos4210-pinctrl.dtsi
-@@ -7,8 +7,8 @@
-  * Copyright (c) 2011-2012 Linaro Ltd.
-  *		www.linaro.org
-  *
-- * Samsung's Exynos4210 SoC pin-mux and pin-config optiosn are listed as device
-- * tree nodes are listed in this file.
-+ * Samsung's Exynos4210 SoC pin-mux and pin-config options are listed as device
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos4212.dtsi b/arch/arm/boot/dts/exynos4212.dtsi
-index 0ac3245788fc..aa984601ee06 100644
---- a/arch/arm/boot/dts/exynos4212.dtsi
-+++ b/arch/arm/boot/dts/exynos4212.dtsi
-@@ -6,7 +6,7 @@
-  *		http://www.samsung.com
-  *
-  * Samsung's Exynos4212 SoC device nodes are listed in this file. Exynos4212
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/exynos4412.dtsi b/arch/arm/boot/dts/exynos4412.dtsi
-index 8660c4c76e3a..dcbe0ce6180f 100644
---- a/arch/arm/boot/dts/exynos4412.dtsi
-+++ b/arch/arm/boot/dts/exynos4412.dtsi
-@@ -6,7 +6,7 @@
-  *		http://www.samsung.com
-  *
-  * Samsung's Exynos4412 SoC device nodes are listed in this file. Exynos4412
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi b/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
-index 9f7ea5f2a91f..04935fbe2f2a 100644
---- a/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos4x12-pinctrl.dtsi
-@@ -5,8 +5,8 @@
-  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * Samsung's Exynos4x12 SoCs pin-mux and pin-config optiosn are listed as device
-- * tree nodes are listed in this file.
-+ * Samsung's Exynos4x12 SoCs pin-mux and pin-config options are listed as device
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos4x12.dtsi b/arch/arm/boot/dts/exynos4x12.dtsi
-index dcbb19824620..84c1db221c98 100644
---- a/arch/arm/boot/dts/exynos4x12.dtsi
-+++ b/arch/arm/boot/dts/exynos4x12.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung's Exynos4x12 SoC series device nodes are listed in this file.
-  * Particular SoCs from Exynos4x12 series can include this file and provide
-- * values for SoCs specfic bindings.
-+ * values for SoCs specific bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-  * Exynos4x12 SoCs. As device tree coverage for Exynos4x12 increases, additional
-diff --git a/arch/arm/boot/dts/exynos5.dtsi b/arch/arm/boot/dts/exynos5.dtsi
-index 48e43b6b3213..4a17a19586bb 100644
---- a/arch/arm/boot/dts/exynos5.dtsi
-+++ b/arch/arm/boot/dts/exynos5.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung's Exynos5 SoC series device nodes are listed in this file. Particular
-  * SoCs from Exynos5 series can include this file and provide values for SoCs
-- * specfic bindings.
-+ * specific bindings.
-  */
- 
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-diff --git a/arch/arm/boot/dts/exynos5250-pinctrl.dtsi b/arch/arm/boot/dts/exynos5250-pinctrl.dtsi
-index 48732edadff1..d956540a2d88 100644
---- a/arch/arm/boot/dts/exynos5250-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos5250-pinctrl.dtsi
-@@ -5,8 +5,8 @@
-  * Copyright (c) 2012 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-  *
-- * Samsung's Exynos5250 SoC pin-mux and pin-config optiosn are listed as device
-- * tree nodes are listed in this file.
-+ * Samsung's Exynos5250 SoC pin-mux and pin-config options are listed as device
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
-index 1a4c6c028d03..99c84bebf25a 100644
---- a/arch/arm/boot/dts/exynos5250.dtsi
-+++ b/arch/arm/boot/dts/exynos5250.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung Exynos5250 SoC device nodes are listed in this file.
-  * Exynos5250 based board files can include this file and provide
-- * values for board specfic bindings.
-+ * values for board specific bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-  * Exynos5250 SoC. As device tree coverage for Exynos5250 increases,
-diff --git a/arch/arm/boot/dts/exynos5260-pinctrl.dtsi b/arch/arm/boot/dts/exynos5260-pinctrl.dtsi
-index 43e4a541f479..d15494b4bda9 100644
---- a/arch/arm/boot/dts/exynos5260-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos5260-pinctrl.dtsi
-@@ -6,7 +6,7 @@
-  *		http://www.samsung.com
-  *
-  * Samsung's Exynos5260 SoC pin-mux and pin-config options are listed as device
-- * tree nodes are listed in this file.
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos5410.dtsi b/arch/arm/boot/dts/exynos5410.dtsi
-index 350b8afa0a3a..546035e78f40 100644
---- a/arch/arm/boot/dts/exynos5410.dtsi
-+++ b/arch/arm/boot/dts/exynos5410.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung Exynos5410 SoC device nodes are listed in this file.
-  * Exynos5410 based board files can include this file and provide
-- * values for board specfic bindings.
-+ * values for board specific bindings.
-  */
- 
- #include "exynos54xx.dtsi"
-diff --git a/arch/arm/boot/dts/exynos5420-pinctrl.dtsi b/arch/arm/boot/dts/exynos5420-pinctrl.dtsi
-index 14cf9c4ca0ed..93b9873fa84f 100644
---- a/arch/arm/boot/dts/exynos5420-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/exynos5420-pinctrl.dtsi
-@@ -6,7 +6,7 @@
-  *		http://www.samsung.com
-  *
-  * Samsung's Exynos5420 SoC pin-mux and pin-config options are listed as device
-- * tree nodes are listed in this file.
-+ * tree nodes in this file.
-  */
- 
- #include "exynos-pinctrl.h"
-diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-index dd291f1199f2..25ed90374679 100644
---- a/arch/arm/boot/dts/exynos5420.dtsi
-+++ b/arch/arm/boot/dts/exynos5420.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung Exynos5420 SoC device nodes are listed in this file.
-  * Exynos5420 based board files can include this file and provide
-- * values for board specfic bindings.
-+ * values for board specific bindings.
-  */
- 
- #include "exynos54xx.dtsi"
-diff --git a/arch/arm/boot/dts/exynos5800.dtsi b/arch/arm/boot/dts/exynos5800.dtsi
-index 8328ddb3b02f..72d3a3535a7a 100644
---- a/arch/arm/boot/dts/exynos5800.dtsi
-+++ b/arch/arm/boot/dts/exynos5800.dtsi
-@@ -7,7 +7,7 @@
-  *
-  * Samsung Exynos5800 SoC device nodes are listed in this file.
-  * Exynos5800 based board files can include this file and provide
-- * values for board specfic bindings.
-+ * values for board specific bindings.
-  */
- 
- #include "exynos5420.dtsi"
-diff --git a/arch/arm/boot/dts/s3c6400.dtsi b/arch/arm/boot/dts/s3c6400.dtsi
-index 8c28e8a0c824..7cc785a63866 100644
---- a/arch/arm/boot/dts/s3c6400.dtsi
-+++ b/arch/arm/boot/dts/s3c6400.dtsi
-@@ -5,7 +5,7 @@
-  * Copyright (c) 2013 Tomasz Figa <tomasz.figa@gmail.com>
-  *
-  * Samsung's S3C6400 SoC device nodes are listed in this file. S3C6400
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/s3c6410.dtsi b/arch/arm/boot/dts/s3c6410.dtsi
-index a766d6de696c..13e9cc69b8a8 100644
---- a/arch/arm/boot/dts/s3c6410.dtsi
-+++ b/arch/arm/boot/dts/s3c6410.dtsi
-@@ -5,7 +5,7 @@
-  * Copyright (c) 2013 Tomasz Figa <tomasz.figa@gmail.com>
-  *
-  * Samsung's S3C6410 SoC device nodes are listed in this file. S3C6410
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/s3c64xx.dtsi b/arch/arm/boot/dts/s3c64xx.dtsi
-index c03df6355500..0b59135ffe88 100644
---- a/arch/arm/boot/dts/s3c64xx.dtsi
-+++ b/arch/arm/boot/dts/s3c64xx.dtsi
-@@ -6,7 +6,7 @@
-  *
-  * Samsung's S3C64xx SoC series device nodes are listed in this file.
-  * Particular SoCs from S3C64xx series can include this file and provide
-- * values for SoCs specfic bindings.
-+ * values for SoCs specific bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-  * S3C64xx SoCs. As device tree coverage for S3C64xx increases, additional
-diff --git a/arch/arm/boot/dts/s5pv210-pinctrl.dtsi b/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-index 6d6daef9fb7a..d5bd506d3ddc 100644
---- a/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-@@ -8,7 +8,7 @@
-  * Tomasz Figa <t.figa@samsung.com>
-  *
-  * Samsung's S5PV210 SoC device nodes are listed in this file. S5PV210
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
-diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
-index 1a9e4a96b2ff..0db5a687a530 100644
---- a/arch/arm/boot/dts/s5pv210.dtsi
-+++ b/arch/arm/boot/dts/s5pv210.dtsi
-@@ -8,7 +8,7 @@
-  * Tomasz Figa <t.figa@samsung.com>
-  *
-  * Samsung's S5PV210 SoC device nodes are listed in this file. S5PV210
-- * based board files can include this file and provide values for board specfic
-+ * based board files can include this file and provide values for board specific
-  * bindings.
-  *
-  * Note: This file does not include device nodes for all the controllers in
+Display panel bindings are added by a separate patchset:
+"[PATCH 0/3] Add Samsung S6D7AA0 panel controller driver"[1]
+
+LP855X node is adapted to changes from a separate patchset:
+"[PATCH 0/4] video: backlight: lp855x: modernize bindings"[2]
+
+[1] https://lore.kernel.org/all/20230501185103.25939-1-aweber.kernel@gmail.com/
+[2] https://lore.kernel.org/all/20230429104534.28943-1-aweber.kernel@gmail.com/
+---
+ arch/arm/boot/dts/Makefile                  |    3 +
+ arch/arm/boot/dts/exynos4212-tab3-3g8.dts   |   29 +
+ arch/arm/boot/dts/exynos4212-tab3-lte8.dts  |   44 +
+ arch/arm/boot/dts/exynos4212-tab3-wifi8.dts |   26 +
+ arch/arm/boot/dts/exynos4212-tab3.dtsi      | 1171 +++++++++++++++++++
+ 5 files changed, 1273 insertions(+)
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-3g8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-lte8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3-wifi8.dts
+ create mode 100644 arch/arm/boot/dts/exynos4212-tab3.dtsi
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index efe4152e5846..e5f63b636637 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -217,6 +217,9 @@ dtb-$(CONFIG_ARCH_EXYNOS4) += \
+ 	exynos4210-smdkv310.dtb \
+ 	exynos4210-trats.dtb \
+ 	exynos4210-universal_c210.dtb \
++	exynos4212-tab3-3g8.dtb \
++	exynos4212-tab3-lte8.dtb \
++	exynos4212-tab3-wifi8.dtb \
+ 	exynos4412-i9300.dtb \
+ 	exynos4412-i9305.dtb \
+ 	exynos4412-itop-elite.dtb \
+diff --git a/arch/arm/boot/dts/exynos4212-tab3-3g8.dts b/arch/arm/boot/dts/exynos4212-tab3-3g8.dts
+new file mode 100644
+index 000000000000..6d890353ae76
+--- /dev/null
++++ b/arch/arm/boot/dts/exynos4212-tab3-3g8.dts
+@@ -0,0 +1,29 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Samsung's Exynos4212 based Galaxy Tab 3 8.0 3G board device tree
++ * source
++ *
++ * Copyright (c) 2013 Samsung Electronics Co., Ltd.
++ *		http://www.samsung.com
++ */
++
++/dts-v1/;
++#include "exynos4212-tab3.dtsi"
++
++/ {
++	model = "Samsung Galaxy Tab 3 8.0 3G (SM-T311) based on Exynos4212";
++	compatible = "samsung,t311", "samsung,tab3", "samsung,exynos4212", "samsung,exynos4";
++	chassis-type = "tablet";
++};
++
++/* Pin control sleep state overrides */
++&sleep0 {
++		PIN_SLP(gpb-5, INPUT, UP);
++};
++
++&sleep1 {
++		PIN_SLP(gpl0-0, OUT0, NONE);
++		PIN_SLP(gpl1-0, OUT0, NONE);
++		PIN_SLP(gpl2-4, OUT0, NONE);
++		PIN_SLP(gpm3-3, OUT1, NONE);
++};
+diff --git a/arch/arm/boot/dts/exynos4212-tab3-lte8.dts b/arch/arm/boot/dts/exynos4212-tab3-lte8.dts
+new file mode 100644
+index 000000000000..c5ec68c292b0
+--- /dev/null
++++ b/arch/arm/boot/dts/exynos4212-tab3-lte8.dts
+@@ -0,0 +1,44 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Samsung's Exynos4212 based Galaxy Tab 3 8.0 LTE board device tree
++ * source
++ *
++ * Copyright (c) 2013 Samsung Electronics Co., Ltd.
++ *		http://www.samsung.com
++ */
++
++/dts-v1/;
++#include "exynos4212-tab3.dtsi"
++
++/ {
++	model = "Samsung Galaxy Tab 3 8.0 LTE (SM-T315) based on Exynos4212";
++	compatible = "samsung,t315", "samsung,tab3", "samsung,exynos4212", "samsung,exynos4";
++	chassis-type = "tablet";
++};
++
++/* Pin control sleep state overrides */
++&sleep0 {
++		PIN_SLP(gpa0-4, INPUT, UP);
++		PIN_SLP(gpa0-5, INPUT, UP);
++
++		PIN_SLP(gpb-5, INPUT, UP);
++
++		PIN_SLP(gpc0-0, PREV, NONE);
++		PIN_SLP(gpc1-3, INPUT, NONE);
++
++		PIN_SLP(gpf1-6, INPUT, NONE);
++		PIN_SLP(gpf2-2, PREV, NONE);
++};
++
++&sleep1 {
++		PIN_SLP(gpl0-0, PREV, NONE);
++
++		PIN_SLP(gpl1-0, PREV, NONE);
++
++		PIN_SLP(gpl2-1, INPUT, DOWN);
++		PIN_SLP(gpl2-2, INPUT, DOWN);
++		PIN_SLP(gpl2-4, OUT0, NONE);
++		PIN_SLP(gpl2-5, PREV, NONE);
++
++		PIN_SLP(gpm3-3, OUT1, NONE);
++};
+diff --git a/arch/arm/boot/dts/exynos4212-tab3-wifi8.dts b/arch/arm/boot/dts/exynos4212-tab3-wifi8.dts
+new file mode 100644
+index 000000000000..54cb01703b60
+--- /dev/null
++++ b/arch/arm/boot/dts/exynos4212-tab3-wifi8.dts
+@@ -0,0 +1,26 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Samsung's Exynos4212 based Galaxy Tab 3 8.0 WiFi board device tree
++ * source
++ *
++ * Copyright (c) 2013 Samsung Electronics Co., Ltd.
++ *		http://www.samsung.com
++ */
++
++/dts-v1/;
++#include "exynos4212-tab3.dtsi"
++
++/ {
++	model = "Samsung Galaxy Tab 3 8.0 WiFi (SM-T310) based on Exynos4212";
++	compatible = "samsung,t310", "samsung,tab3", "samsung,exynos4212", "samsung,exynos4";
++	chassis-type = "tablet";
++};
++
++&i2c_lightsensor {
++	status = "okay";
++
++	lightsensor@10 {
++		compatible = "capella,cm3323";
++		reg = <0x10>;
++	};
++};
+diff --git a/arch/arm/boot/dts/exynos4212-tab3.dtsi b/arch/arm/boot/dts/exynos4212-tab3.dtsi
+new file mode 100644
+index 000000000000..b5c2ff464d1f
+--- /dev/null
++++ b/arch/arm/boot/dts/exynos4212-tab3.dtsi
+@@ -0,0 +1,1171 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Samsung's Exynos4212 based Galaxy Tab 3 board common source
++ *
++ * Copyright (c) 2013 Samsung Electronics Co., Ltd.
++ *		http://www.samsung.com
++ */
++
++/dts-v1/;
++#include "exynos4212.dtsi"
++#include "exynos4412-ppmu-common.dtsi"
++#include "exynos-mfc-reserved-memory.dtsi"
++#include <dt-bindings/clock/samsung,s2mps11.h>
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/gpio-keys.h>
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/irq.h>
++#include "exynos-pinctrl.h"
++
++/ {
++	compatible = "samsung,tab3", "samsung,exynos4212", "samsung,exynos4";
++
++	memory@40000000 {
++		device_type = "memory";
++
++		/*
++		 * Technically 1.5GB is available, but the latter 512MB is handled
++		 * in a special way by downstream (every second page is skipped),
++		 * and thus doesn't initialize correctly on mainline. Only 1020M is
++		 * used for now.
++		 */
++		reg = <0x40000000 0x3fc00000>;
++	};
++
++	chosen {
++		stdout-path = &serial_2;
++
++		/* Default S-BOOT bootloader loads initramfs here */
++		linux,initrd-start = <0x42000000>;
++		linux,initrd-end = <0x42800000>;
++	};
++
++	firmware@204f000 {
++		compatible = "samsung,secure-firmware";
++		reg = <0x0204F000 0x1000>;
++	};
++
++	fixed-rate-clocks {
++		xxti {
++			compatible = "samsung,clock-xxti";
++			clock-frequency = <0>;
++		};
++
++		xusbxti {
++			compatible = "samsung,clock-xusbxti";
++			clock-frequency = <24000000>;
++		};
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++		pinctrl-names = "default";
++		pinctrl-0 = <&gpio_keys>;
++
++		key-power {
++			gpios = <&gpx2 7 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_POWER>;
++			label = "power";
++			debounce-interval = <10>;
++			wakeup-source;
++		};
++
++		key-up {
++			gpios = <&gpx2 2 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_VOLUMEUP>;
++			label = "volume down";
++			debounce-interval = <10>;
++		};
++
++		key-down {
++			gpios = <&gpx3 3 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_VOLUMEDOWN>;
++			label = "volume up";
++			debounce-interval = <10>;
++		};
++
++		key-home {
++			gpios = <&gpx1 2 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_HOME>;
++			label = "home";
++			debounce-interval = <10>;
++		};
++
++		switch-hall-sensor {
++			gpios = <&gpx2 4 GPIO_ACTIVE_LOW>;
++			linux,input-type = <EV_SW>;
++			linux,code = <SW_LID>;
++			linux,can-disable;
++			label = "hall effect sensor";
++			debounce-interval = <10>;
++			wakeup-source;
++		};
++	};
++
++	i2c_max77693: i2c-gpio-1 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpm2 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpm2 1 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		i2c-gpio,delay-us = <2>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		pmic@66 {
++			compatible = "maxim,max77693";
++			reg = <0x66>;
++			interrupt-parent = <&gpx1>;
++			interrupts = <5 IRQ_TYPE_EDGE_FALLING>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&max77693_irq>;
++
++			regulators {
++				esafeout1_reg: ESAFEOUT1 {
++					regulator-name = "ESAFEOUT1";
++					regulator-boot-on;
++				};
++
++				esafeout2_reg: ESAFEOUT2 {
++					regulator-name = "ESAFEOUT2";
++				};
++
++				charger_reg: CHARGER {
++					regulator-name = "CHARGER";
++					regulator-min-microamp = <60000>;
++					regulator-max-microamp = <2580000>;
++					regulator-boot-on;
++				};
++			};
++
++			charger {
++				compatible = "maxim,max77693-charger";
++
++				maxim,constant-microvolt = <4350000>;
++				maxim,min-system-microvolt = <3600000>;
++				maxim,thermal-regulation-celsius = <100>;
++				maxim,battery-overcurrent-microamp = <3500000>;
++				maxim,charge-input-threshold-microvolt = <4300000>;
++			};
++		};
++	};
++
++	i2c_max77693_fuel: i2c-gpio-2 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpy0 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpy0 3 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		i2c-gpio,delay-us = <2>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		fuel-gauge@36 {
++			compatible = "maxim,max17050";
++			reg = <0x36>;
++			interrupt-parent = <&gpx2>;
++			interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&max77693_fuel_irq>;
++
++			maxim,over-heat-temp = <500>;
++			maxim,over-volt = <4500>;
++		};
++	};
++
++	i2c_magnetometer: i2c-gpio-3 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpy2 4 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpy2 5 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		i2c-gpio,delay-us = <2>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		magnetometer@2e {
++			compatible = "yamaha,yas532";
++			reg = <0x2e>;
++			iovdd-supply = <&ldo3_reg>;
++			mount-matrix = "-1", "0", "0",
++					  "0", "1", "0",
++					  "0", "0", "-1";
++		};
++	};
++
++	i2c_lightsensor: i2c-gpio-4 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpl0 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpl0 1 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		i2c-gpio,delay-us = <2>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++		status = "disabled";
++
++		/* WiFi model uses CM3323, 3G/LTE use CM36653 */
++	};
++
++	i2c_bl: i2c-gpio-5 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpm4 3 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpm4 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		backlight: backlight@2c {
++			compatible = "ti,lp8556";
++			reg = <0x2c>;
++
++			bl-name = "lcd-bl";
++			dev-ctrl = /bits/ 8 <0x80>;
++			init-brt = /bits/ 8 <0x78>; /* 120 */
++
++			power-supply = <&vbatt_reg>;
++			enable-supply = <&backlight_reset_supply>;
++
++			pwms = <&pwm 1 78770 0>;
++			pwm-names = "lp8556";
++
++			rom-a3h {
++				rom-addr = /bits/ 8 <0xa3>;
++				rom-val = /bits/ 8 <0x5e>;
++			};
++
++			rom-a5h {
++				rom-addr = /bits/ 8 <0xa5>;
++				rom-val = /bits/ 8 <0x34>;
++			};
++
++			rom-a7h {
++				rom-addr = /bits/ 8 <0xa7>;
++				rom-val = /bits/ 8 <0xfa>;
++			};
++		};
++	};
++
++	vbatt_reg: voltage-regulator-1 {
++		compatible = "regulator-fixed";
++		regulator-name = "VBATT";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++	};
++
++	backlight_reset_supply: voltage-regulator-2 {
++		compatible = "regulator-fixed";
++		regulator-name = "BACKLIGHT_ENVDDIO";
++		pinctrl-names = "default";
++		pinctrl-0 = <&backlight_reset>;
++		gpio = <&gpm0 1 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
++	display_3v3_supply: voltage-regulator-3 {
++		compatible = "regulator-fixed";
++		regulator-name = "DISPLAY_3.3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&lcd_en>;
++		gpio = <&gpc0 1 GPIO_ACTIVE_HIGH>; /* LCD_EN */
++		enable-active-high;
++	};
++
++	wlan_pwrseq: sdhci3-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		reset-gpios = <&gpm3 5 GPIO_ACTIVE_LOW>;
++	};
++};
++
++&bus_acp {
++	devfreq = <&bus_dmc>;
++	status = "okay";
++};
++
++&bus_c2c {
++	devfreq = <&bus_dmc>;
++	status = "okay";
++};
++
++&bus_display {
++	devfreq = <&bus_leftbus>;
++	status = "okay";
++};
++
++&bus_dmc {
++	devfreq-events = <&ppmu_dmc0_3>, <&ppmu_dmc1_3>;
++	vdd-supply = <&buck1_reg>;
++	status = "okay";
++};
++
++&bus_fsys {
++	devfreq = <&bus_leftbus>;
++	status = "okay";
++};
++
++&bus_leftbus {
++	devfreq-events = <&ppmu_leftbus_3>, <&ppmu_rightbus_3>;
++	vdd-supply = <&buck3_reg>;
++	status = "okay";
++};
++
++&bus_mfc {
++	devfreq = <&bus_leftbus>;
++	status = "okay";
++};
++
++&bus_peri {
++	devfreq = <&bus_leftbus>;
++	status = "okay";
++};
++
++&bus_rightbus {
++	devfreq = <&bus_leftbus>;
++	status = "okay";
++};
++
++&cpu0 {
++	cpu0-supply = <&buck2_reg>;
++};
++
++&cpu_thermal {
++	cooling-maps {
++		map0 {
++			/* Corresponds to 800MHz at freq_table */
++			cooling-device = <&cpu0 7 7>, <&cpu1 7 7>;
++		};
++		map1 {
++			/* Corresponds to 200MHz at freq_table */
++			cooling-device = <&cpu0 13 13>, <&cpu1 13 13>;
++		};
++	};
++};
++
++&dsi_0 {
++	vddcore-supply = <&ldo8_reg>;
++	vddio-supply = <&ldo10_reg>;
++	samsung,burst-clock-frequency = <500000000>;
++	samsung,esc-clock-frequency = <20000000>;
++	samsung,pll-clock-frequency = <24000000>;
++	status = "okay";
++
++	panel@0 {
++		compatible = "samsung,s6d7aa0-lsl080al02";
++		reg = <0>;
++		power-supply = <&display_3v3_supply>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&lcd_nrst>;
++		reset-gpios = <&gpf0 4 GPIO_ACTIVE_LOW>;
++		backlight = <&backlight>;
++	};
++};
++
++&exynos_usbphy {
++	vbus-supply = <&esafeout1_reg>;
++	status = "okay";
++};
++
++&fimd {
++	status = "okay";
++};
++
++&gpu {
++	mali-supply = <&buck4_reg>;
++	status = "okay";
++};
++
++&hsotg {
++	vusb_d-supply = <&ldo15_reg>;
++	vusb_a-supply = <&ldo12_reg>;
++	dr_mode = "peripheral";
++	status = "okay";
++};
++
++&i2c_1 {
++	pinctrl-0 = <&i2c1_bus>;
++	pinctrl-names = "default";
++	status = "okay";
++
++	lis3dh: accelerometer@19 {
++		/* K2DH seems to be the same as lis2dh12 in terms of registers */
++		compatible = "st,lis2dh12-accel";
++		reg = <0x19>;
++
++		interrupt-parent = <&gpx0>;
++		interrupts = <0 IRQ_TYPE_EDGE_FALLING>;
++
++		vdd-supply = <&ldo17_reg>;
++		vddio-supply = <&ldo3_reg>;
++
++		mount-matrix = "-1", "0", "0",
++				  "0", "1", "0",
++				  "0", "0", "-1";
++	};
++};
++
++&i2c_3 {
++	samsung,i2c-sda-delay = <100>;
++	samsung,i2c-slave-addr = <0x10>;
++	samsung,i2c-max-bus-freq = <400000>;
++	pinctrl-0 = <&i2c3_bus>;
++	pinctrl-names = "default";
++	status = "okay";
++
++	touchscreen@48 {
++		/* MELFAS MMS252, using MMS114 compatible for now */
++		compatible = "melfas,mms114";
++		reg = <0x48>;
++		interrupt-parent = <&gpb>;
++		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
++		touchscreen-size-x = <800>;
++		touchscreen-size-y = <1280>;
++		avdd-supply = <&ldo21_reg>;
++		vdd-supply = <&ldo25_reg>;
++	};
++};
++
++&i2c_7 {
++	samsung,i2c-sda-delay = <100>;
++	samsung,i2c-slave-addr = <0x10>;
++	samsung,i2c-max-bus-freq = <100000>;
++	pinctrl-0 = <&i2c7_bus>;
++	pinctrl-names = "default";
++	status = "okay";
++
++	s5m8767: pmic@66 {
++		compatible = "samsung,s5m8767-pmic";
++		reg = <0x66>;
++		interrupt-parent = <&gpx0>;
++		interrupts = <7 IRQ_TYPE_LEVEL_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&s5m8767_irq &s5m8767_dvs &s5m8767_ds>;
++		wakeup-source;
++
++		s5m8767,pmic-buck-default-dvs-idx = <1>;
++
++		s5m8767,pmic-buck-dvs-gpios = <&gpm3 0 GPIO_ACTIVE_HIGH>,
++						 <&gpm3 1 GPIO_ACTIVE_HIGH>,
++						 <&gpm3 2 GPIO_ACTIVE_HIGH>;
++
++		s5m8767,pmic-buck-ds-gpios = <&gpf3 1 GPIO_ACTIVE_HIGH>,
++						 <&gpf3 2 GPIO_ACTIVE_HIGH>,
++						 <&gpf3 3 GPIO_ACTIVE_HIGH>;
++
++		s5m8767,pmic-buck2-dvs-voltage = <1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>;
++
++		s5m8767,pmic-buck3-dvs-voltage = <1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>;
++
++		s5m8767,pmic-buck4-dvs-voltage = <1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>,
++						<1100000>, <1100000>;
++
++		regulators {
++			ldo1_reg: LDO1 {
++				regulator-name = "VALIVE_1.0V_AP";
++				regulator-min-microvolt = <1000000>;
++				regulator-max-microvolt = <1000000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <1>;
++			};
++
++			ldo2_reg: LDO2 {
++				regulator-name = "VM1M2_1.2V_AP";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1200000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <1>;
++			};
++
++			ldo3_reg: LDO3 {
++				regulator-name = "VCC_1.8V_AP";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				op_mode = <1>;
++			};
++
++			ldo5_reg: LDO5 {
++				regulator-name = "VCC_3.3V_MHL";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				op_mode = <1>;
++			};
++
++			ldo8_reg: LDO8 {
++				regulator-name = "VMIPI_1.0V";
++				regulator-min-microvolt = <1000000>;
++				regulator-max-microvolt = <1000000>;
++				op_mode = <3>;
++			};
++
++			ldo9_reg: LDO9 {
++				regulator-name = "VSIL_1.2V";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1200000>;
++				op_mode = <1>;
++			};
++
++			ldo10_reg: LDO10 {
++				regulator-name = "VMIPI_1.8V";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				op_mode = <3>;
++			};
++
++			ldo12_reg: LDO12 {
++				regulator-name = "VUOTG_3.0V";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3000000>;
++				op_mode = <1>;
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			ldo13_reg: LDO13 {
++				regulator-name = "VCC_1.8V_MHL";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				op_mode = <1>;
++			};
++
++			ldo15_reg: LDO15 {
++				regulator-name = "VHSIC_1.0V";
++				regulator-min-microvolt = <1000000>;
++				regulator-max-microvolt = <1000000>;
++				op_mode = <1>;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++
++			ldo17_reg: LDO17 {
++				regulator-name = "VCC_2.8V_AP";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				op_mode = <1>;
++				regulator-always-on;
++			};
++
++			ldo19_reg: LDO19 {
++				regulator-name = "VLED_IC_1.9V";
++				regulator-min-microvolt = <1900000>;
++				regulator-max-microvolt = <1900000>;
++				op_mode = <1>;
++				regulator-always-on;
++			};
++
++			ldo20_reg: LDO20 {
++				regulator-name = "VTOUCH_3.3V";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				op_mode = <1>;
++			};
++
++			ldo21_reg: LDO21 {
++				regulator-name = "TSP_VDD_3.3V";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				op_mode = <1>;
++			};
++
++			ldo22_reg: LDO22 {
++				regulator-name = "5M_AF_2.8V";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				op_mode = <1>;
++			};
++
++			ldo23_reg: LDO23 {
++				regulator-name = "VTF_2.8V";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				op_mode = <3>;
++			};
++
++			ldo24_reg: LDO24 {
++				regulator-name = "LEDA_2.8V";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				op_mode = <1>;
++			};
++
++			ldo25_reg: LDO25 {
++				regulator-name = "TSP_VDD_1.8V";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				op_mode = <1>;
++			};
++
++			ldo26_reg: LDO26 {
++				regulator-name = "CAM_IO_1.8V";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				op_mode = <1>;
++			};
++
++			ldo27_reg: LDO27 {
++				regulator-name = "VTCAM_1.8V";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				op_mode = <1>;
++			};
++
++			buck1_reg: BUCK1 {
++				regulator-name = "VDD_MIF";
++				regulator-min-microvolt = <850000>;
++				regulator-max-microvolt = <1100000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <3>;
++			};
++
++			buck2_reg: BUCK2 {
++				regulator-name = "VDD_ARM";
++				regulator-min-microvolt = <850000>;
++				regulator-max-microvolt = <1500000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <3>;
++			};
++
++			buck3_reg: BUCK3 {
++				regulator-name = "VDD_INT";
++				regulator-min-microvolt = <850000>;
++				regulator-max-microvolt = <1300000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <3>;
++			};
++
++			buck4_reg: BUCK4 {
++				regulator-name = "VDD_G3D";
++				regulator-min-microvolt = <850000>;
++				regulator-max-microvolt = <1150000>;
++				regulator-boot-on;
++				op_mode = <3>;
++			};
++
++			buck5_reg: BUCK5 {
++				regulator-name = "VMEM_1.2V_AP";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt	= <1200000>;
++				regulator-always-on;
++				regulator-boot-on;
++				op_mode = <1>;
++			};
++
++			buck6_reg: BUCK6 {
++				regulator-name = "CAM_ISP_CORE_1.2V";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1200000>;
++				op_mode = <1>;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++		};
++
++		s5m8767_osc: clocks {
++			compatible = "samsung,s5m8767-clk";
++			#clock-cells = <1>;
++			clock-output-names = "en32khz_ap",
++						 "en32khz_cp",
++						 "en32khz_bt";
++		};
++	};
++};
++
++&mshc_0 {
++	broken-cd;
++	non-removable;
++	card-detect-delay = <200>;
++	vmmc-supply = <&ldo22_reg>;
++	clock-frequency = <400000000>;
++	samsung,dw-mshc-ciu-div = <0>;
++	samsung,dw-mshc-sdr-timing = <2 3>;
++	samsung,dw-mshc-ddr-timing = <1 2>;
++	pinctrl-0 = <&sd4_clk &sd4_cmd &sd4_bus4 &sd4_bus8>;
++	pinctrl-names = "default";
++	bus-width = <8>;
++	cap-mmc-highspeed;
++	mmc-ddr-1_8v;
++	status = "okay";
++};
++
++&pinctrl_0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&sleep0>;
++
++	lcd_en: lcd-en-pins {
++		samsung,pins = "gpc0-1";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	lcd_nrst: lcd-nrst-pins {
++		samsung,pins = "gpf0-4";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	s5m8767_ds: s5m8767-ds-pins {
++		samsung,pins = "gpf3-1", "gpf3-2", "gpf3-3";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_INPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_DOWN>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	sleep0: sleep-state {
++		PIN_SLP(gpa0-0, INPUT, NONE);
++		PIN_SLP(gpa0-1, OUT0, NONE);
++		PIN_SLP(gpa0-2, INPUT, NONE);
++		PIN_SLP(gpa0-3, INPUT, UP);
++		PIN_SLP(gpa0-4, INPUT, DOWN);
++		PIN_SLP(gpa0-5, INPUT, DOWN);
++		PIN_SLP(gpa0-6, INPUT, DOWN);
++		PIN_SLP(gpa0-7, INPUT, DOWN);
++
++		PIN_SLP(gpa1-0, INPUT, DOWN);
++		PIN_SLP(gpa1-1, INPUT, DOWN);
++		PIN_SLP(gpa1-2, INPUT, DOWN);
++		PIN_SLP(gpa1-3, INPUT, DOWN);
++		PIN_SLP(gpa1-4, INPUT, DOWN);
++		PIN_SLP(gpa1-5, INPUT, DOWN);
++
++		PIN_SLP(gpb-0, INPUT, NONE);
++		PIN_SLP(gpb-1, INPUT, NONE);
++		PIN_SLP(gpb-2, INPUT, NONE);
++		PIN_SLP(gpb-3, INPUT, NONE);
++		PIN_SLP(gpb-4, INPUT, DOWN);
++		PIN_SLP(gpb-5, INPUT, DOWN);
++		PIN_SLP(gpb-6, INPUT, DOWN);
++		PIN_SLP(gpb-7, INPUT, DOWN);
++
++		PIN_SLP(gpc0-0, INPUT, DOWN);
++		PIN_SLP(gpc0-1, INPUT, DOWN);
++		PIN_SLP(gpc0-2, INPUT, NONE);
++		PIN_SLP(gpc0-3, INPUT, NONE);
++		PIN_SLP(gpc0-4, INPUT, NONE);
++
++		PIN_SLP(gpc1-0, INPUT, DOWN);
++		PIN_SLP(gpc1-1, INPUT, DOWN);
++		PIN_SLP(gpc1-2, INPUT, DOWN);
++		PIN_SLP(gpc1-3, INPUT, DOWN);
++		PIN_SLP(gpc1-4, INPUT, DOWN);
++
++		PIN_SLP(gpd0-0, INPUT, DOWN);
++		PIN_SLP(gpd0-1, OUT0, NONE);
++		PIN_SLP(gpd0-2, INPUT, NONE);
++		PIN_SLP(gpd0-3, INPUT, NONE);
++
++		PIN_SLP(gpd1-0, INPUT, DOWN);
++		PIN_SLP(gpd1-1, INPUT, DOWN);
++		PIN_SLP(gpd1-2, INPUT, NONE);
++		PIN_SLP(gpd1-3, INPUT, NONE);
++
++		PIN_SLP(gpf0-0, INPUT, DOWN);
++		PIN_SLP(gpf0-1, INPUT, DOWN);
++		PIN_SLP(gpf0-2, INPUT, DOWN);
++		PIN_SLP(gpf0-3, INPUT, DOWN);
++		PIN_SLP(gpf0-4, OUT0, NONE);
++		PIN_SLP(gpf0-5, OUT0, NONE);
++		PIN_SLP(gpf0-6, INPUT, DOWN);
++		PIN_SLP(gpf0-7, INPUT, DOWN);
++
++		PIN_SLP(gpf1-0, INPUT, DOWN);
++		PIN_SLP(gpf1-1, INPUT, DOWN);
++		PIN_SLP(gpf1-2, INPUT, DOWN);
++		PIN_SLP(gpf1-3, INPUT, DOWN);
++		PIN_SLP(gpf1-4, INPUT, DOWN);
++		PIN_SLP(gpf1-5, INPUT, DOWN);
++		PIN_SLP(gpf1-6, INPUT, DOWN);
++		PIN_SLP(gpf1-7, INPUT, DOWN);
++
++		PIN_SLP(gpf2-0, INPUT, DOWN);
++		PIN_SLP(gpf2-1, INPUT, DOWN);
++		PIN_SLP(gpf2-2, INPUT, DOWN);
++		PIN_SLP(gpf2-3, INPUT, DOWN);
++		PIN_SLP(gpf2-4, INPUT, DOWN);
++		PIN_SLP(gpf2-5, INPUT, DOWN);
++		PIN_SLP(gpf2-6, INPUT, DOWN);
++		PIN_SLP(gpf2-7, INPUT, DOWN);
++
++		PIN_SLP(gpf3-0, INPUT, DOWN);
++		PIN_SLP(gpf3-1, INPUT, DOWN);
++		PIN_SLP(gpf3-2, INPUT, DOWN);
++		PIN_SLP(gpf3-3, INPUT, DOWN);
++		PIN_SLP(gpf3-4, PREV, NONE);
++		PIN_SLP(gpf3-5, OUT0, DOWN);
++
++		PIN_SLP(gpj0-0, INPUT, DOWN);
++		PIN_SLP(gpj0-1, INPUT, DOWN);
++		PIN_SLP(gpj0-2, INPUT, DOWN);
++		PIN_SLP(gpj0-3, OUT0, NONE);
++		PIN_SLP(gpj0-4, INPUT, DOWN);
++		PIN_SLP(gpj0-5, INPUT, DOWN);
++		PIN_SLP(gpj0-6, OUT0, NONE);
++		PIN_SLP(gpj0-7, OUT0, NONE);
++
++		PIN_SLP(gpj1-0, OUT0, NONE);
++		PIN_SLP(gpj1-1, INPUT, DOWN);
++		PIN_SLP(gpj1-2, PREV, NONE);
++		PIN_SLP(gpj1-3, INPUT, DOWN);
++		PIN_SLP(gpj1-4, INPUT, DOWN);
++	};
++};
++
++&pinctrl_1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&sleep1>;
++
++	bt_shutdown: bt-shutdown-pins {
++		samsung,pins = "gpl0-6";
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	bt_host_wakeup: bt-host-wakeup-pins {
++		samsung,pins = "gpx2-6";
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	bt_device_wakeup: bt-device-wakeup-pins {
++		samsung,pins = "gpx3-1";
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	backlight_reset: backlight-reset-pins {
++		samsung,pins = "gpm0-1";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	gpio_keys: gpio-keys-pins {
++		samsung,pins = "gpx1-2", "gpx2-2", "gpx2-4", "gpx2-7", "gpx3-3";
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++	};
++
++	max77693_irq: max77693-irq-pins {
++		samsung,pins = "gpx1-5";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_INPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	max77693_fuel_irq: max77693-fuel-irq-pins {
++		samsung,pins = "gpx2-3";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_INPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	sdhci2_cd: sdhci2-cd-irq-pins {
++		samsung,pins = "gpx3-4";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_INPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	s5m8767_dvs: s5m8767-dvs-pins {
++		samsung,pins = "gpm3-0", "gpm3-1", "gpm3-2";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_OUTPUT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	s5m8767_irq: s5m8767-irq-pins {
++		samsung,pins = "gpx0-7";
++		samsung,pin-function = <EXYNOS_PIN_FUNC_EINT>;
++		samsung,pin-pud = <EXYNOS_PIN_PULL_NONE>;
++		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
++	};
++
++	sleep1: sleep-state {
++		PIN_SLP(gpk0-0, PREV, NONE);
++		PIN_SLP(gpk0-1, PREV, NONE);
++		PIN_SLP(gpk0-2, PREV, NONE);
++		PIN_SLP(gpk0-3, PREV, NONE);
++		PIN_SLP(gpk0-4, PREV, NONE);
++		PIN_SLP(gpk0-5, PREV, NONE);
++		PIN_SLP(gpk0-6, PREV, NONE);
++
++		PIN_SLP(gpk1-0, INPUT, DOWN);
++		PIN_SLP(gpk1-1, INPUT, DOWN);
++		PIN_SLP(gpk1-2, INPUT, DOWN);
++		PIN_SLP(gpk1-3, PREV, NONE);
++		PIN_SLP(gpk1-4, PREV, NONE);
++		PIN_SLP(gpk1-5, PREV, NONE);
++		PIN_SLP(gpk1-6, PREV, NONE);
++
++		PIN_SLP(gpk2-0, INPUT, DOWN);
++		PIN_SLP(gpk2-1, INPUT, DOWN);
++		PIN_SLP(gpk2-2, INPUT, DOWN);
++		PIN_SLP(gpk2-3, INPUT, DOWN);
++		PIN_SLP(gpk2-4, INPUT, DOWN);
++		PIN_SLP(gpk2-5, INPUT, DOWN);
++		PIN_SLP(gpk2-6, INPUT, DOWN);
++
++		PIN_SLP(gpk3-0, OUT0, NONE);
++		PIN_SLP(gpk3-1, INPUT, NONE);
++		PIN_SLP(gpk3-2, INPUT, DOWN);
++		PIN_SLP(gpk3-3, INPUT, NONE);
++		PIN_SLP(gpk3-4, INPUT, NONE);
++		PIN_SLP(gpk3-5, INPUT, NONE);
++		PIN_SLP(gpk3-6, INPUT, NONE);
++
++		PIN_SLP(gpl0-0, INPUT, DOWN);
++		PIN_SLP(gpl0-1, INPUT, NONE);
++		PIN_SLP(gpl0-2, INPUT, NONE);
++		PIN_SLP(gpl0-3, INPUT, DOWN);
++		PIN_SLP(gpl0-4, INPUT, DOWN);
++		PIN_SLP(gpl0-6, PREV, NONE);
++
++		PIN_SLP(gpl1-0, INPUT, DOWN);
++		PIN_SLP(gpl1-1, OUT0, NONE);
++		PIN_SLP(gpl2-0, INPUT, DOWN);
++		PIN_SLP(gpl2-1, PREV, NONE);
++		PIN_SLP(gpl2-2, PREV, NONE);
++		PIN_SLP(gpl2-3, INPUT, DOWN);
++		PIN_SLP(gpl2-4, INPUT, DOWN);
++		PIN_SLP(gpl2-5, INPUT, DOWN);
++		PIN_SLP(gpl2-6, INPUT, DOWN);
++		PIN_SLP(gpl2-7, INPUT, DOWN);
++
++		PIN_SLP(gpm0-0, PREV, NONE);
++		PIN_SLP(gpm0-1, OUT0, NONE);
++		PIN_SLP(gpm0-2, INPUT, DOWN);
++		PIN_SLP(gpm0-3, INPUT, DOWN);
++		PIN_SLP(gpm0-4, INPUT, DOWN);
++		PIN_SLP(gpm0-5, INPUT, DOWN);
++		PIN_SLP(gpm0-6, INPUT, DOWN);
++		PIN_SLP(gpm0-7, INPUT, DOWN);
++
++		PIN_SLP(gpm1-0, INPUT, DOWN);
++		PIN_SLP(gpm1-1, INPUT, DOWN);
++		PIN_SLP(gpm1-2, INPUT, NONE);
++		PIN_SLP(gpm1-3, INPUT, NONE);
++		PIN_SLP(gpm1-4, INPUT, NONE);
++		PIN_SLP(gpm1-5, INPUT, NONE);
++		PIN_SLP(gpm1-6, OUT0, NONE);
++
++		PIN_SLP(gpm2-0, INPUT, NONE);
++		PIN_SLP(gpm2-1, INPUT, NONE);
++		PIN_SLP(gpm2-2, OUT0, NONE);
++		PIN_SLP(gpm2-3, INPUT, DOWN);
++		PIN_SLP(gpm2-4, INPUT, DOWN);
++
++		PIN_SLP(gpm3-0, PREV, NONE);
++		PIN_SLP(gpm3-1, PREV, NONE);
++		PIN_SLP(gpm3-2, PREV, NONE);
++		PIN_SLP(gpm3-3, INPUT, DOWN);
++		PIN_SLP(gpm3-4, INPUT, DOWN);
++		PIN_SLP(gpm3-5, PREV, NONE);
++		PIN_SLP(gpm3-6, INPUT, DOWN);
++		PIN_SLP(gpm3-7, OUT0, NONE);
++
++		PIN_SLP(gpm4-0, INPUT, DOWN);
++		PIN_SLP(gpm4-1, INPUT, DOWN);
++		PIN_SLP(gpm4-2, INPUT, DOWN);
++		PIN_SLP(gpm4-3, INPUT, DOWN);
++		PIN_SLP(gpm4-4, PREV, NONE);
++		PIN_SLP(gpm4-5, INPUT, NONE);
++		PIN_SLP(gpm4-6, INPUT, DOWN);
++		PIN_SLP(gpm4-7, INPUT, DOWN);
++
++		PIN_SLP(gpy0-0, INPUT, DOWN);
++		PIN_SLP(gpy0-1, INPUT, DOWN);
++		PIN_SLP(gpy0-2, INPUT, NONE);
++		PIN_SLP(gpy0-3, INPUT, NONE);
++		PIN_SLP(gpy0-4, INPUT, DOWN);
++		PIN_SLP(gpy0-5, INPUT, DOWN);
++
++		PIN_SLP(gpy1-0, INPUT, DOWN);
++		PIN_SLP(gpy1-1, INPUT, DOWN);
++		PIN_SLP(gpy1-2, INPUT, DOWN);
++		PIN_SLP(gpy1-3, INPUT, DOWN);
++
++		PIN_SLP(gpy2-0, PREV, NONE);
++		PIN_SLP(gpy2-1, INPUT, DOWN);
++		PIN_SLP(gpy2-2, INPUT, NONE);
++		PIN_SLP(gpy2-3, INPUT, NONE);
++		PIN_SLP(gpy2-4, INPUT, NONE);
++		PIN_SLP(gpy2-5, INPUT, NONE);
++
++		PIN_SLP(gpy3-0, INPUT, DOWN);
++		PIN_SLP(gpy3-1, INPUT, DOWN);
++		PIN_SLP(gpy3-2, INPUT, DOWN);
++		PIN_SLP(gpy3-3, INPUT, DOWN);
++		PIN_SLP(gpy3-4, INPUT, DOWN);
++		PIN_SLP(gpy3-5, INPUT, DOWN);
++		PIN_SLP(gpy3-6, INPUT, DOWN);
++		PIN_SLP(gpy3-7, INPUT, DOWN);
++
++		PIN_SLP(gpy4-0, INPUT, DOWN);
++		PIN_SLP(gpy4-1, INPUT, DOWN);
++		PIN_SLP(gpy4-2, INPUT, DOWN);
++		PIN_SLP(gpy4-3, INPUT, DOWN);
++		PIN_SLP(gpy4-4, INPUT, DOWN);
++		PIN_SLP(gpy4-5, INPUT, DOWN);
++		PIN_SLP(gpy4-6, INPUT, DOWN);
++		PIN_SLP(gpy4-7, INPUT, DOWN);
++
++		PIN_SLP(gpy5-0, INPUT, DOWN);
++		PIN_SLP(gpy5-1, INPUT, DOWN);
++		PIN_SLP(gpy5-2, INPUT, DOWN);
++		PIN_SLP(gpy5-3, INPUT, DOWN);
++		PIN_SLP(gpy5-4, INPUT, DOWN);
++		PIN_SLP(gpy5-5, INPUT, DOWN);
++		PIN_SLP(gpy5-6, INPUT, DOWN);
++		PIN_SLP(gpy5-7, INPUT, DOWN);
++
++		PIN_SLP(gpy6-0, INPUT, DOWN);
++		PIN_SLP(gpy6-1, INPUT, DOWN);
++		PIN_SLP(gpy6-2, INPUT, DOWN);
++		PIN_SLP(gpy6-3, INPUT, DOWN);
++		PIN_SLP(gpy6-4, INPUT, DOWN);
++		PIN_SLP(gpy6-5, INPUT, DOWN);
++		PIN_SLP(gpy6-6, INPUT, DOWN);
++		PIN_SLP(gpy6-7, INPUT, DOWN);
++	};
++};
++
++&pinctrl_2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&sleep2>;
++
++	sleep2: sleep-state {
++		PIN_SLP(gpz-0, INPUT, DOWN);
++		PIN_SLP(gpz-1, INPUT, DOWN);
++		PIN_SLP(gpz-2, INPUT, DOWN);
++		PIN_SLP(gpz-3, INPUT, DOWN);
++		PIN_SLP(gpz-4, INPUT, DOWN);
++		PIN_SLP(gpz-5, INPUT, DOWN);
++		PIN_SLP(gpz-6, INPUT, DOWN);
++	};
++};
++
++&pinctrl_3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&sleep3>;
++
++	sleep3: sleep-state {
++		PIN_SLP(gpv0-0, INPUT, DOWN);
++		PIN_SLP(gpv0-1, INPUT, DOWN);
++		PIN_SLP(gpv0-2, INPUT, DOWN);
++		PIN_SLP(gpv0-3, INPUT, DOWN);
++		PIN_SLP(gpv0-4, INPUT, DOWN);
++		PIN_SLP(gpv0-5, INPUT, DOWN);
++		PIN_SLP(gpv0-6, INPUT, DOWN);
++		PIN_SLP(gpv0-7, INPUT, DOWN);
++
++		PIN_SLP(gpv1-0, INPUT, DOWN);
++		PIN_SLP(gpv1-1, INPUT, DOWN);
++		PIN_SLP(gpv1-2, INPUT, DOWN);
++		PIN_SLP(gpv1-3, INPUT, DOWN);
++		PIN_SLP(gpv1-4, INPUT, DOWN);
++		PIN_SLP(gpv1-5, INPUT, DOWN);
++		PIN_SLP(gpv1-6, INPUT, DOWN);
++		PIN_SLP(gpv1-7, INPUT, DOWN);
++
++		PIN_SLP(gpv2-0, INPUT, DOWN);
++		PIN_SLP(gpv2-1, INPUT, DOWN);
++		PIN_SLP(gpv2-2, INPUT, DOWN);
++		PIN_SLP(gpv2-3, INPUT, DOWN);
++		PIN_SLP(gpv2-4, INPUT, DOWN);
++		PIN_SLP(gpv2-5, INPUT, DOWN);
++		PIN_SLP(gpv2-6, INPUT, DOWN);
++		PIN_SLP(gpv2-7, INPUT, DOWN);
++
++		PIN_SLP(gpv3-0, INPUT, DOWN);
++		PIN_SLP(gpv3-1, INPUT, DOWN);
++		PIN_SLP(gpv3-2, INPUT, DOWN);
++		PIN_SLP(gpv3-3, INPUT, DOWN);
++		PIN_SLP(gpv3-4, INPUT, DOWN);
++		PIN_SLP(gpv3-5, INPUT, DOWN);
++		PIN_SLP(gpv3-6, INPUT, DOWN);
++		PIN_SLP(gpv3-7, INPUT, DOWN);
++
++		PIN_SLP(gpv4-0, INPUT, DOWN);
++		PIN_SLP(gpv4-1, INPUT, DOWN);
++	};
++};
++
++&pmu_system_controller {
++	assigned-clocks = <&pmu_system_controller 0>;
++	assigned-clock-parents = <&clock CLK_XUSBXTI>;
++};
++
++&pwm {
++	pinctrl-0 = <&pwm1_out>;
++	pinctrl-names = "default";
++	samsung,pwm-outputs = <1>;
++	status = "okay";
++};
++
++&sdhci_2 {
++	bus-width = <4>;
++	cd-gpios = <&gpx3 4 GPIO_ACTIVE_LOW>;
++	pinctrl-0 = <&sd2_clk &sd2_cmd &sd2_bus4 &sdhci2_cd>;
++	pinctrl-names = "default";
++	vmmc-supply = <&ldo23_reg>;
++	status = "okay";
++};
++
++&sdhci_3 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	non-removable;
++	bus-width = <4>;
++
++	mmc-pwrseq = <&wlan_pwrseq>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sd3_clk &sd3_cmd &sd3_bus4>;
++	status = "okay";
++
++	brcmf: wifi@1 {
++		compatible = "brcm,bcm4334-fmac", "brcm,bcm4329-fmac";
++		reg = <1>;
++
++		interrupt-parent = <&gpx2>;
++		interrupts = <5 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "host-wake";
++	};
++};
++
++&serial_0 {
++	pinctrl-0 = <&uart0_data &uart0_fctl>;
++	pinctrl-names = "default";
++	status = "okay";
++
++	bluetooth {
++		compatible = "brcm,bcm4330-bt"; /* BCM4334B0 */
++		pinctrl-0 = <&bt_shutdown &bt_device_wakeup &bt_host_wakeup>;
++		pinctrl-names = "default";
++		max-speed = <3000000>;
++		shutdown-gpios = <&gpl0 6 GPIO_ACTIVE_HIGH>;
++		device-wakeup-gpios = <&gpx3 1 GPIO_ACTIVE_HIGH>;
++		host-wakeup-gpios = <&gpx2 6 GPIO_ACTIVE_HIGH>;
++		clocks = <&s5m8767_osc S2MPS11_CLK_BT>;
++	};
++};
++
++&serial_1 {
++	status = "okay";
++};
++
++&serial_2 {
++	status = "okay";
++};
++
++&serial_3 {
++	status = "okay";
++};
++
++&tmu {
++	vtmu-supply = <&ldo10_reg>;
++	status = "okay";
++};
 -- 
 2.40.1
 
