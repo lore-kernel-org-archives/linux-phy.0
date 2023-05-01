@@ -4,86 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D63E1C77B61
-	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 07:06:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57B51C7EE24
+	for <linux-phy@archiver.kernel.org>; Mon,  1 May 2023 12:50:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nFrGMuiKB4x/cl/MIHc73qN0e+YZjZ71xJzaCDphcMQ=; b=gNIZvbV4bHFcBs
-	yeBtBmdksVmg++K7w158u+31L+IJrc7K8mCFQQmhJ/OodyQaF5CT2zPv8E9sxAbTpiU0Fx7eidZRd
-	sqycHuDgdIba8eXSs2xYrpPIRoCc9ZL9PVILHtQzkcVfy5f5UmcZvt84lV/xcgc1B5kFM3luY2v1L
-	97piQmcMDHAdnyHQ48PMM7oESi2jZHLhB5hNMaknX8K4x+nXiE1Fm64uyg9CN/kRUneQP5zN6wHCo
-	nHziVWMGyqBrqrk1JCAP8cMG8h4A5z9zrB/oNvtAWZ13XTxpnu1lPWLrbiNBUGI1mSNAry5lOc3Yy
-	swh2PlOByy3UzrrAs4xA==;
+	List-Owner; bh=IYGbnjq85yqdjE/zUDdgU7VYz7Md+mZsSWNh7xCsAVE=; b=Z7wRhUVNx4rTdy
+	fIyztrTFiAhUWMtqWb2tYvayr27Mf2LCnYVnsb3LfV8nrGDCixKKhlDS1PaVDerHdFXLs5yMavYPN
+	+QtmlO5nXB0/BzkjJhTO2QebmxOdslAOc3CysQQfaWh1EjZOuSLELK2Owts+itieLk4zNIhN4+Jvh
+	/nobhDRZfIBfszfzVGfjjP314yjWKrBpk5eCtA1mg6Vj9psrC2aELUFRdmEhA3LMiQ4b7fLE08OCJ
+	a0/t3GzXu1htUgh81V4MmayqbXDYlNygkMzfnoZS9UI7QbK3ghp4MzAqgou3xh18S7BTvL15k4Bnm
+	J67EKgJLSjl15JDwoGqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptNcH-00FNo4-0d;
-	Mon, 01 May 2023 07:06:33 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1ptSyg-00G23x-3C;
+	Mon, 01 May 2023 12:50:02 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptNcE-00FNnW-2h
-	for linux-phy@lists.infradead.org;
-	Mon, 01 May 2023 07:06:32 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-50bc34b98edso1634887a12.3
-        for <linux-phy@lists.infradead.org>; Mon, 01 May 2023 00:06:26 -0700 (PDT)
+	id 1ptSyc-00G22T-2p;
+	Mon, 01 May 2023 12:50:00 +0000
+Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-95678d891d6so518075666b.1;
+        Mon, 01 May 2023 05:49:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1682924785; x=1685516785;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Lbzi8KQ4ewDOl8/6+OjZmerGl8/Fh/n/WKcpF1UJuug=;
-        b=aaOHqH0LGk6VIByEO9RGx59+hUQbAMeHNYJykED/CAFy0g91Sca0AuiuZC4Wy+r3SX
-         Zv49g1IMWFbjO0oD9H0P9iy9nEoRMDCxymmAZbdKVehS3qAViZCmyYw8t/2EeqqdhoMd
-         ciGOJmdvNIv45G0PHsOHy9VNz7X+4C718orj3+Y2mI9hwBiL1DRVQz+3JgRyKokNCddg
-         +zmqfgKzWvWCY/3C4yVMYfUC6AtDYq0iaeIMJE7MiWGe1GSxqbiRVwI1p74LUYff0lKb
-         6FiM33hTBV91YZn16qBOqfSN+4Ka/f6UiicMqbp+y0fNmk/qbhgMpu3UqiB9W9PEvdOU
-         1JtQ==
+        d=googlemail.com; s=20221208; t=1682945393; x=1685537393;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=xWw1hTARmw+jKU6qPnbINzsea7Kkb3XA4GzRY4Vsapo=;
+        b=lnSFi3HO3I7Cjd9eGoIl929JDiL/FMATuuWV4zVIETYzfB2SnwJob1osiu713IFDpc
+         HVrPoP+1/gifg6H+Za43d6XMRU4zkL1hSgb9TDald3pA7XHiyr3PW3PlfeKWybenZUts
+         OpupoIem6trMp2RlJmCK8CPcB/yO+ckzyvy6/2FW8WAzEuViJo698b49g0JQbf+6x4Eq
+         bLKw0ZrcMRAxGh2cxNKK9U9cngh99GGksfbB0iDQi+CavYzzcow7KEPe8CYE7ddZ7b09
+         77dlysqi828fEF3v3KRqKCCkd3CNx6FClRE/0xI/KuapVgblQ/hmsvWviEbmAOea4emJ
+         hNeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682924785; x=1685516785;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Lbzi8KQ4ewDOl8/6+OjZmerGl8/Fh/n/WKcpF1UJuug=;
-        b=TYWj111zfIA2bD4h23pbWgiCwb9+lqe3mQcvK6axSqhkWgSWSdb2P3gI5iHj3p1qyq
-         kMu21PrufFJ2ruASDjLNZGgKUAXfFc2J+UVOHNQMef76XNbPkeAoCwlGSlPj90n3amxJ
-         cLmCUwgCx0x7p3Z2xTocmIwdkHm+kEshI1nZl+fB2Af1HPD/1ygEhhAlC1olyBQTE3/e
-         OWoAt8XcIaScUhGiJ/xEtaCiB7KljpsA956Kt3Pee0wBAL4QFk6ZAR+6yl1WBdv7gA2J
-         ZTwrfUOH+HGlaEz4PCb2YekWezSsjtAssTuWPQ6s3P7GzymnstiHJIdHkEhYJiCK//eo
-         UB9g==
-X-Gm-Message-State: AC+VfDx/VV26NvnfQLitE8bGcNYYgJbXfJ3By0auBPDvDu+61rK/Ya7Q
-	kYSUEcunQLDSxKYsc4VT4YDYbTY00YEmdTVkv69TKg==
-X-Google-Smtp-Source: ACHHUZ7iSPkCwcv4sQgaF1lfLUTeLnVGU9VnUBKEqIukwsm/fahS20txrOcdq3QSyl2wnGIIzFNLnw==
-X-Received: by 2002:aa7:c683:0:b0:50b:c48d:5d5b with SMTP id n3-20020aa7c683000000b0050bc48d5d5bmr2250487edq.24.1682924785343;
-        Mon, 01 May 2023 00:06:25 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:637a:fd0c:58fd:9f00? ([2a02:810d:15c0:828:637a:fd0c:58fd:9f00])
-        by smtp.gmail.com with ESMTPSA id b8-20020aa7c6c8000000b005068d7ccfb0sm11652041eds.83.2023.05.01.00.06.24
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 01 May 2023 00:06:24 -0700 (PDT)
-Message-ID: <67f91b8c-b8d2-3484-b637-a631232cd18b@linaro.org>
-Date: Mon, 1 May 2023 09:06:23 +0200
+        d=1e100.net; s=20221208; t=1682945393; x=1685537393;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=xWw1hTARmw+jKU6qPnbINzsea7Kkb3XA4GzRY4Vsapo=;
+        b=JJhJQ8ZpVhqsjelHhmk6xwv9LqSBX7WMdk2Of524lqnC7mPJAfF5uYvmWK328zZ33j
+         vdxvvcqiYwm9RtAF2B3J3njRKYOGKpfP7JLOntDRROP8NFKYZOYXjFPjknnyjYdGatQC
+         qWqIOKW3b1kbugt46nwuWk5Aq7BONSSHWTuTmt8hcR5fzpemS/HMp1mF4XIVdu2wSfVF
+         1cbt3iSVjn4NZvMBLNiz5TBUbKNV5qjfueVCe1VEuYjL13D2TGwtg1iLoW9qabMKyWMw
+         IMk9cnYYk3MhfkvQ7PwythAVAioZl2rQKpBfoXIxux6zfu8F2oMEGO9K9HA4KvwN9BBE
+         ctcQ==
+X-Gm-Message-State: AC+VfDyJ5W8J9msG1cxLa3UoaCL2fCTbw//xASS9Qg/EromXBIzEbaH0
+	Bb626nOf3nthAcFZP5D1yK8oUjKoXrd3iWq6hKo=
+X-Google-Smtp-Source: ACHHUZ7XHHWAxWxgus3mXZZUFeWxirj8s9hcNpD+hHK7EQmccGNvepW2l2c5bOsbsB19SYSwVrJvXeMQs3jsnE8886o=
+X-Received: by 2002:a17:907:c2a:b0:961:b0:3dfd with SMTP id
+ ga42-20020a1709070c2a00b0096100b03dfdmr9809713ejc.7.1682945393457; Mon, 01
+ May 2023 05:49:53 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH] dt-bindings: phy: brcm,kona-usb2-phy: convert to YAML
-To: Stanislav Jakubek <stano.jakubek@gmail.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20230427190725.GA7730@standask-GA-A55M-S2HP>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230427190725.GA7730@standask-GA-A55M-S2HP>
+References: <20230426102922.19705-1-ddrokosov@sberdevices.ru> <20230426102922.19705-2-ddrokosov@sberdevices.ru>
+In-Reply-To: <20230426102922.19705-2-ddrokosov@sberdevices.ru>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 1 May 2023 14:49:42 +0200
+Message-ID: <CAFBinCA+-RXGOzF=Z7kdY3Ct5uME5qcKJ1BJoXJwdjs8_qiByA@mail.gmail.com>
+Subject: Re: [PATCH v3 1/5] phy: amlogic: enable/disable clkin during Amlogic
+ USB PHY init/exit
+To: Dmitry Rokosov <ddrokosov@sberdevices.ru>
+Cc: gregkh@linuxfoundation.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, neil.armstrong@linaro.org, 
+	khilman@baylibre.com, jbrunet@baylibre.com, mturquette@baylibre.com, 
+	vkoul@kernel.org, kishon@kernel.org, hminas@synopsys.com, 
+	Thinh.Nguyen@synopsys.com, yue.wang@amlogic.com, hanjie.lin@amlogic.com, 
+	kernel@sberdevices.ru, rockosov@gmail.com, linux-usb@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
+	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230501_000630_881139_BA101A58 
-X-CRM114-Status: UNSURE (   6.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230501_054958_918338_72DBB634 
+X-CRM114-Status: GOOD (  10.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,24 +90,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/04/2023 21:07, Stanislav Jakubek wrote:
-> Convert Broadcom Kona family USB 2.0 PHY bindings to DT schema.
-> 
-> Signed-off-by: Stanislav Jakubek <stano.jakubek@gmail.com>
-> ---
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBBcHIgMjYsIDIwMjMgYXQgMTI6MjnigK9QTSBEbWl0cnkgUm9rb3Nvdgo8ZGRyb2tv
+c292QHNiZXJkZXZpY2VzLnJ1PiB3cm90ZToKPgo+IFByZXZpb3VzbHksIGFsbCBBbWxvZ2ljIGJv
+YXJkcyB1c2VkIHRoZSBYVEFMIGNsb2NrIGFzIHRoZSBkZWZhdWx0IGJvYXJkCj4gY2xvY2sgZm9y
+IHRoZSBVU0IgUEhZIGlucHV0LCBzbyB0aGVyZSB3YXMgbm8gbmVlZCB0byBlbmFibGUgaXQuCj4g
+SG93ZXZlciwgd2l0aCB0aGUgaW50cm9kdWN0aW9uIG9mIG5ldyBBbWxvZ2ljIFNvQ3MgbGlrZSB0
+aGUgQTEgZmFtaWx5LAo+IHRoZSBVU0IgUEhZIG5vdyB1c2VzIGEgZ2F0ZWQgY2xvY2suIEhlbmNl
+LCBpdCBpcyBuZWNlc3NhcnkgdG8gZW5hYmxlCj4gdGhpcyBnYXRlZCBjbG9jayBkdXJpbmcgdGhl
+IFBIWSBpbml0aWFsaXphdGlvbiBzZXF1ZW5jZSwgb3IgZGlzYWJsZSBpdAo+IGR1cmluZyB0aGUg
+UEhZIGV4aXQsIGFzIGFwcHJvcHJpYXRlLgo+Cj4gU2lnbmVkLW9mZi1ieTogRG1pdHJ5IFJva29z
+b3YgPGRkcm9rb3NvdkBzYmVyZGV2aWNlcy5ydT4KUmV2aWV3ZWQtYnk6IE1hcnRpbiBCbHVtZW5z
+dGluZ2wgPG1hcnRpbi5ibHVtZW5zdGluZ2xAZ29vZ2xlbWFpbC5jb20+CgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
