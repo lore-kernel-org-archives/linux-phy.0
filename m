@@ -4,93 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CD85C77B73
-	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 14:50:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1566FC77B78
+	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 18:49:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3xo9YA4RBvyPbM6/gDeObPV5oWGxFlISif9nRgiZDbU=; b=hRIMAeuKoof+UH
-	GFrefAsWXFlOsgzPIZdZO/rwNdeGTQAze7HzIdneH3fWn1xytVctwVN5kxsdiAQjskwQees5rF5kk
-	iqZYo3P1I7pg4CWdHSOmRZ0AA4lrmN1+JpOQmoDQey/Z5HRUVlpx3hyYY9jA7DpgtlC84nhuS1lPt
-	EHN6Ej+IlPA3V0Ta67fss88IOGMC4sMkady3Maw9kL36CcR9z3RSe8soWlBqosGK5gTtdXVjkGo1z
-	PutbE01ee859/kABuN+gzxVOcBoHgdH6Dy/FQPtx7quqo63rH5uwfggsLsLrDOtB9FN/GwZ5cB8kK
-	XNKT+qHMdLlyAnzzFpGQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xKi5i2ZR7mJgMoVgpTjl76yLXjY8MMJcgr5KbOGEMg4=; b=W4NV2HOYaCq3B4
+	Yw+p3kfqpRsUOFzdmnH2u43EfzQQ+T888Kw/XTbAMeUi+JK47rwwyJnfXMGwxeA4Cy1tat2uDQOgD
+	nMYL/QTi11372xMbZkOLN38s48txeISK1Clcnau+vqUDCc/On/cogAPAvygoeYNjm1QWqpjysnfO2
+	2SF52PlhaED5mCIPjhe/v+zBkpzvW2yr2BvDyuiGbhJWoGUKc5s8hhYsBsp0SBZnCKJn1mGd3uYXK
+	nsgQfnR/fu47Ofci9ddhmf6vsxtJJWKxtAp2v+Lpk0Q9Rfpf48ljT+0P4OMGS200ONviXM4HplFdE
+	o/gZS5DKXY1UbJ26vjxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptrKt-001rfF-0O;
-	Tue, 02 May 2023 14:50:35 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1ptv3q-002P1D-2I;
+	Tue, 02 May 2023 18:49:14 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptrKp-001rdn-2J
+	id 1ptv3o-002P0V-1T
 	for linux-phy@lists.infradead.org;
-	Tue, 02 May 2023 14:50:33 +0000
+	Tue, 02 May 2023 18:49:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1683039030;
+	s=mimecast20190719; t=1683053348;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=XhmeR7C2zfghm/IL/as+Y+pN51ISJ3AaRZIBkHirVVA=;
-	b=MW9c6QbT+K2SwEofhsFBvoyIAlkomDWVsoltZmbc38ZxDHjdkV+UEp5pz5ICp3KAtWa7wS
-	5yOT7rLiqGBQcBljPsxt3a5TLNSOfRsQnCfDP/0AkLATU4pjksZs/Y8negXCJVp4JZA2T/
-	OnIY9pKdKyxWJSdW5oLEaJPXG+3eOC0=
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com
- [209.85.160.198]) by relay.mimecast.com with ESMTP with STARTTLS
+	 in-reply-to:in-reply-to:references:references;
+	bh=DZ0W+FU8PsLfAAZv9zbz/cngBwAlCp+YIRm01kljAiE=;
+	b=WEQWVkoCRuowfnvASph77+4Thuq+xphdcVA6CEuicnmj5DXqDhKhYMsMR/SbLgN9C3Zv9Z
+	ADYuPfWKjJ5w+Kd/daYE5+s+RRQMXhknqlqEV7IVroLu5tU9guAdLWX/EE8mBWleZ6CZGJ
+	z2JW7aE+a9iIIEcyVfy7E2QT/mVd0UE=
+Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
+ [209.85.219.72]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-445-s0NEXZosNqmCGmFm4dxBKw-1; Tue, 02 May 2023 10:50:28 -0400
-X-MC-Unique: s0NEXZosNqmCGmFm4dxBKw-1
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-3f0aa5fef57so20914521cf.3
-        for <linux-phy@lists.infradead.org>; Tue, 02 May 2023 07:50:27 -0700 (PDT)
+ us-mta-538-DhBAVNnMN4yRQnEu_Aha4A-1; Tue, 02 May 2023 14:49:06 -0400
+X-MC-Unique: DhBAVNnMN4yRQnEu_Aha4A-1
+Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-61b60166509so10593256d6.1
+        for <linux-phy@lists.infradead.org>; Tue, 02 May 2023 11:49:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683039027; x=1685631027;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=XhmeR7C2zfghm/IL/as+Y+pN51ISJ3AaRZIBkHirVVA=;
-        b=gb6isNnnZHdie5us76Dxo0P0wux04YfcXJNIZ2MFepNzQwuYW5dA2fK3amjrDwmGxp
-         qWhJpMSF6eUQ9sTMMj9LYExekvh03Aa6/3+Za7A3n2s5yAl7fDxUlGVKWB5c2YQNA2CI
-         j+aIbY2sZ2lTJjm080SRreTOo7iIwNct0aoqKTlPEz8xBuVb6rdL3KEhINcEhpZSEgwf
-         RdfltYFbAZ6CL1O38QBS3OthRqg+cxR1hO4MblU4kfuld0f3RhDJzakmFm+ANWDd6P+x
-         9YKHbc8r04wE1CpQ/NIuN9FJxEXUbhXeKW92bo2XUUB/axG+tw4BgSB99VglZQKVFF27
-         SHeg==
-X-Gm-Message-State: AC+VfDzecZuDfa4SPlJqC+iCmEwfXIP7lCeLQWrQpbQzw620F6oNazHc
-	wtn+JsCISIvZKxbNYJRlxMyrUld9j6Zc6ZqXMOH34zkj2n7uBtOpF7I1EOZAAS51ioVReOJ9Jyi
-	1L5F+064R4ktD1hRIgcBoAToltw==
-X-Received: by 2002:a05:622a:143:b0:3ea:bec4:ef57 with SMTP id v3-20020a05622a014300b003eabec4ef57mr28954476qtw.13.1683039027454;
-        Tue, 02 May 2023 07:50:27 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ4dHp9unnIVk0+Doy1XuqLSB0Po7DZSJ94Ylm3eZ5tLIvbR2wMADu2J7HkOiAWMy91uB3Mwgg==
-X-Received: by 2002:a05:622a:143:b0:3ea:bec4:ef57 with SMTP id v3-20020a05622a014300b003eabec4ef57mr28954428qtw.13.1683039027172;
-        Tue, 02 May 2023 07:50:27 -0700 (PDT)
-Received: from dell-per740-01.7a2m.lab.eng.bos.redhat.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
-        by smtp.gmail.com with ESMTPSA id g7-20020ac81247000000b003ef3bbd242asm10343812qtj.32.2023.05.02.07.50.26
+        d=1e100.net; s=20221208; t=1683053346; x=1685645346;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=DZ0W+FU8PsLfAAZv9zbz/cngBwAlCp+YIRm01kljAiE=;
+        b=leKdz9omuxwsxDnk4fFXfaAxav2UwuScJKPN+MbWLx1cfwA4QItwTIciX7S+Q0YWjg
+         2mKcDWWvxI0cLjvjL6/uXS0kzK8taZ6BbBjGBCouOWJTdxRejbXVynPptZm39gksQSsh
+         CiMGCyKEiV9+QkTsdM+VTPOyM1tV0V8Q2vEZtjB6heNEUKNEbVMtDgFjMIs/wvfv3BJM
+         9d3dpRKXn2Vu9QfV9Wt9SPJ5RnyXJc4679Bbtgi70bYkXLwUnn2M+ik/35Qe+0L36olz
+         DyTxQ1Q89cUOr1u2bf3gsMy2o8o4XRspO0RfGHmzK26k8/UplSfxpBv9atpJjJQn2AnZ
+         2OuQ==
+X-Gm-Message-State: AC+VfDxfH/s5ZuEzwK4twMfq5ZYT6VOyFxMt4VqXK8TzGq4aup/lJbxy
+	WSkccUbofh1WP4Dwxm2Pc5Cnr061eDMGzUyK/k5oWzT3pDULu0QknAc8gMrKlwwlWsdWHwux7Q7
+	mWliPlcAUNyTrfb990FEvOEZX3A==
+X-Received: by 2002:ad4:596b:0:b0:616:5c8b:59d with SMTP id eq11-20020ad4596b000000b006165c8b059dmr6197886qvb.20.1683053346397;
+        Tue, 02 May 2023 11:49:06 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5Wy2JnTAhWuNet9cEToNtvnh6Rgxw5wsbBieiyINBFnufP8DZTowekkRqdmisuq2+jBHV9JA==
+X-Received: by 2002:ad4:596b:0:b0:616:5c8b:59d with SMTP id eq11-20020ad4596b000000b006165c8b059dmr6197852qvb.20.1683053346170;
+        Tue, 02 May 2023 11:49:06 -0700 (PDT)
+Received: from fedora (modemcable181.5-202-24.mc.videotron.ca. [24.202.5.181])
+        by smtp.gmail.com with ESMTPSA id y10-20020ad445aa000000b006057140e017sm9063235qvu.89.2023.05.02.11.49.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 02 May 2023 07:50:26 -0700 (PDT)
-From: Tom Rix <trix@redhat.com>
-To: chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	chunfeng.yun@mediatek.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com
-Cc: dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Tom Rix <trix@redhat.com>
-Subject: [PATCH v2] phy: mediatek: rework the floating point comparisons to fixed point
-Date: Tue,  2 May 2023 10:50:05 -0400
-Message-Id: <20230502145005.2927101-1-trix@redhat.com>
-X-Mailer: git-send-email 2.27.0
+        Tue, 02 May 2023 11:49:05 -0700 (PDT)
+Date: Tue, 2 May 2023 14:49:03 -0400
+From: Adrien Thierry <athierry@redhat.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Shazad Hussain <quic_shazhuss@quicinc.com>, agross@kernel.org,
+	andersson@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v1 0/6] arm64: qcom: sa8775p: add support for USB
+Message-ID: <ZFFbH7bH0pCDdoN1@fedora>
+References: <20230421133922.8520-1-quic_shazhuss@quicinc.com>
+ <ZEcEGJiikEC2wIVE@fedora>
+ <CAA8EJpr27=2jAXbamN6J7yF+7G=L5Af8+XReB5UnFuihcEwMQA@mail.gmail.com>
+ <ZEgV+H3yZLp48Dlc@fedora>
+ <3dc6e993-bcca-4e0d-5aca-686fcc8b5b73@linaro.org>
 MIME-Version: 1.0
+In-Reply-To: <3dc6e993-bcca-4e0d-5aca-686fcc8b5b73@linaro.org>
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230502_075031_847789_51B7349F 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20230502_114912_588384_95BF64E0 
+X-CRM114-Status: GOOD (  14.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,49 +107,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Z2NjIG9uIGFhcmNoNjQgcmVwb3J0cwpkcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWkt
-bXQ4MTk1LmM6IEluIGZ1bmN0aW9uIOKAmG10a19oZG1pX3BsbF9zZXRfcmF0ZeKAmToKZHJpdmVy
-cy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5jOjI0MDo1MjogZXJyb3I6IOKAmC1t
-Z2VuZXJhbC1yZWdzLW9ubHnigJkKICBpcyBpbmNvbXBhdGlibGUgd2l0aCB0aGUgdXNlIG9mIGZs
-b2F0aW5nLXBvaW50IHR5cGVzCiAgMjQwIHwgICAgICAgICBlbHNlIGlmICh0bWRzX2NsayA+PSA1
-NCAqIE1FR0EgJiYgdG1kc19jbGsgPCAxNDguMzUgKiBNRUdBKQoKRmxvYXRpbmcgcG9pbnQgc2hv
-dWxkIG5vdCBiZSB1c2VkLCBzbyByZXdvcmsgdGhlIGZsb2F0aW5nIHBvaW50IGNvbXBhcmlzb25z
-CnRvIGZpeGVkIHBvaW50LgoKU2lnbmVkLW9mZi1ieTogVG9tIFJpeCA8dHJpeEByZWRoYXQuY29t
-PgotLS0KdjI6IHNpbGVuY2Ugcm9ib3QgYnkgY2FzdGluZyB0eXBlcyB0byB1NjQKCi0tLQpkcml2
-ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmMgfCAxMCArKysrKy0tLS0tCiAx
-IGZpbGUgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYyBiL2RyaXZlcnMv
-cGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYwppbmRleCBhYmZjMDc3ZmIwYTguLjA5
-M2M0ZDFkYTU1NyAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1p
-LW10ODE5NS5jCisrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUu
-YwpAQCAtMjM3LDExICsyMzcsMTEgQEAgc3RhdGljIGludCBtdGtfaGRtaV9wbGxfY2FsYyhzdHJ1
-Y3QgbXRrX2hkbWlfcGh5ICpoZG1pX3BoeSwgc3RydWN0IGNsa19odyAqaHcsCiAJICovCiAJaWYg
-KHRtZHNfY2xrIDwgNTQgKiBNRUdBKQogCQl0eHBvc2RpdiA9IDg7Ci0JZWxzZSBpZiAodG1kc19j
-bGsgPj0gNTQgKiBNRUdBICYmIHRtZHNfY2xrIDwgMTQ4LjM1ICogTUVHQSkKKwllbHNlIGlmICh0
-bWRzX2NsayA+PSA1NCAqIE1FR0EgJiYgKHRtZHNfY2xrICogMTAwKSA8IDE0ODM1ICogTUVHQSkK
-IAkJdHhwb3NkaXYgPSA0OwotCWVsc2UgaWYgKHRtZHNfY2xrID49IDE0OC4zNSAqIE1FR0EgJiYg
-dG1kc19jbGsgPCAyOTYuNyAqIE1FR0EpCisJZWxzZSBpZiAoKHRtZHNfY2xrICogMTAwKSA+PSAx
-NDgzNSAqIE1FR0EgJiYgKHRtZHNfY2xrICogMTApIDwgMjk2NyAqIE1FR0EpCiAJCXR4cG9zZGl2
-ID0gMjsKLQllbHNlIGlmICh0bWRzX2NsayA+PSAyOTYuNyAqIE1FR0EgJiYgdG1kc19jbGsgPD0g
-NTk0ICogTUVHQSkKKwllbHNlIGlmICgodG1kc19jbGsgKiAxMCkgPj0gMjk2NyAqIE1FR0EgJiYg
-dG1kc19jbGsgPD0gNTk0ICogTUVHQSkKIAkJdHhwb3NkaXYgPSAxOwogCWVsc2UKIAkJcmV0dXJu
-IC1FSU5WQUw7CkBAIC0zMjgsMTIgKzMyOCwxMiBAQCBzdGF0aWMgaW50IG10a19oZG1pX3BsbF9k
-cnZfc2V0dGluZyhzdHJ1Y3QgY2xrX2h3ICpodykKIAkJY2xrX2NoYW5uZWxfYmlhcyA9IDB4MzQ7
-IC8qIDIwbUEgKi8KIAkJaW1wZWRhbmNlX2VuID0gMHhmOwogCQlpbXBlZGFuY2UgPSAweDM2OyAv
-KiAxMDBvaG0gKi8KLQl9IGVsc2UgaWYgKHBpeGVsX2NsayA+PSA3NC4xNzUgKiBNRUdBICYmIHBp
-eGVsX2NsayA8PSAzMDAgKiBNRUdBKSB7CisJfSBlbHNlIGlmICgoKHU2NClwaXhlbF9jbGsgKiAx
-MDAwKSA+PSA3NDE3NSAqIE1FR0EgJiYgcGl4ZWxfY2xrIDw9IDMwMCAqIE1FR0EpIHsKIAkJZGF0
-YV9jaGFubmVsX2JpYXMgPSAweDM0OyAvKiAyMG1BICovCiAJCWNsa19jaGFubmVsX2JpYXMgPSAw
-eDJjOyAvKiAxNm1BICovCiAJCWltcGVkYW5jZV9lbiA9IDB4ZjsKIAkJaW1wZWRhbmNlID0gMHgz
-NjsgLyogMTAwb2htICovCi0JfSBlbHNlIGlmIChwaXhlbF9jbGsgPj0gMjcgKiBNRUdBICYmIHBp
-eGVsX2NsayA8IDc0LjE3NSAqIE1FR0EpIHsKKwl9IGVsc2UgaWYgKHBpeGVsX2NsayA+PSAyNyAq
-IE1FR0EgJiYgKCh1NjQpcGl4ZWxfY2xrICogMTAwMCkgPCA3NDE3NSAqIE1FR0EpIHsKIAkJZGF0
-YV9jaGFubmVsX2JpYXMgPSAweDE0OyAvKiAxMG1BICovCiAJCWNsa19jaGFubmVsX2JpYXMgPSAw
-eDE0OyAvKiAxMG1BICovCiAJCWltcGVkYW5jZV9lbiA9IDB4MDsKLS0gCjIuMjcuMAoKCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Dmitry,
+
+On Sat, Apr 29, 2023 at 12:41:39AM +0300, Dmitry Baryshkov wrote:
+> On 25/04/2023 21:03, Adrien Thierry wrote:
+> > Hi Dmitry,
+> > 
+> > > Semi-random suggestion, but could you please try using
+> > > clk_regmap_phy_mux/clk_regmap_phy_mux_ops for USB pipe clk src?
+> > 
+> > Which specific clock are you refering to? I'm not very familiar with
+> > those, in the device tree I'm seeing "pipe" clocks for usb_0 and usb_1
+> > phys, but not for usb_2, which is the one that's causing issues.
+> > 
+> 
+> Ah, I see. Could you please try adding the 'qcom,select-utmi-as-pipe-clk'
+> property to the usb_2 host node and running the test again?
+>
+
+Thanks for the suggestion. I tested this but unfortunately the issue is
+still happening.
+
+Best,
+
+Adrien
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
