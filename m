@@ -4,85 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C300C77B73
-	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 11:45:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7CA1C7EE21
+	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 11:48:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uQEp9lj+UXNMjEhND7MnSsfhqXUJ7fQ2BaczuNXLLHM=; b=aVV0ef6GqhIYNZ
-	2uio2wOZzaywQnFNKUm3uD5o4MuYja7nsK6CFlp3FkrKZlq5Ea3NplPI2RCvwHgnVR8Y/LrfDM3mL
-	09sFWggqNuT/Hnlx8JSSuD0qyo4z7nr5LleY+L5HoxCKJCP9iDUeSOaia31MFChC8UGQrEgLTlOyU
-	wi9pNLeHa2EPVN0S/tpJr2ZYDEHjjWf0IWP4LpTeToJvG5Z5WUiOGgsRSvMuQjGsaHMuiUk5Nxval
-	H/mLE5Dg6anuEF+LLD4r9xYol/HWiQeNq9sa8t7k8bwp/f0vIIP5bCtEN2igGBh/zjYZc5JYVTq13
-	pnF5FRhUdDnhcbRCJ8Iw==;
+	List-Owner; bh=yynmDy0zIxjIdKcXXF53JdNRsZL8OS9CxDmnIPsYZK4=; b=2yL9ADrYv6Q3wH
+	ncc59QgDhYKYqJ2U8vCdAQ4c+fS7WJ3vSz47xdTTcidznE0VonK469GP3UKmZHRxivPRZSnzrt2kH
+	99xUfiL6Y4PToVB5JzvgPjnWTohOuvf16+ssD0fEqvSU7Fd8jnkbYY87stNVefC0x6zagQ5FITVMF
+	ZFCo4a50orySabfoBuECsRwniiwsQJkif9aCzYRbcAcPQlvh0RETISgmKXYickAvGrm2YzQBhDIHn
+	H9GQyzq8/J8bOrp+oN5sQoTzVaC8s5ewmVSdw2TXc/0tBq6VqfOKqwyx8eLB/p2OKa3YCb3Uzs1hi
+	jYwuRvyWz+Vq9NTXiXrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptoRj-001I17-0C;
-	Tue, 02 May 2023 11:45:27 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1ptoUU-001IHo-1M;
+	Tue, 02 May 2023 11:48:18 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptnMi-000y42-2J
+	id 1ptoUR-001IHF-1J
 	for linux-phy@lists.infradead.org;
-	Tue, 02 May 2023 10:36:13 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4eff055d4d3so4331145e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 02 May 2023 03:36:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683023765; x=1685615765;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=R5SeO4KO3GWB1zcDZNvr4+FDiqxohtgvlKpp+R8U82o=;
-        b=Idd0paRxxCY3MspEPDx6f2twKYyWsSXBHLFUFKd2iuMSK558630B+RNoQliqB1MaWP
-         IIFwN2IeIyyDdFCfCBXtmdNQ06c+xrCDzYMxP7fWfVU3u9C5TD6a5XD2v0g4kkawYGBG
-         IIb3QGiBRhQYymt6cOBwwM4+x0OGaer3ANx9iASGO9M0jYQ9Q21W5z12h1YIjG/nxeeh
-         OFb9Dg8b75vWs6BwmEOC0ivORcwE04ajMCeytZJeVyy007Z2Lj31RHXDFfoQAScwbYvj
-         ChMdvAFPO6KuqNSdEC9niYdJn6zPwa2vIKblbUGCHdf2wbWLrud/GE1qMlsnhptgfWey
-         XMnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683023765; x=1685615765;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=R5SeO4KO3GWB1zcDZNvr4+FDiqxohtgvlKpp+R8U82o=;
-        b=cf75aVelzbQUfz1atccBuDdy0pM5JoTLF7dXJqUWrMevDX8nc8Hnvn/P2RYCyZpI3D
-         RAqcxMZp9ZP3nV/afFNczmyGNPDL3VOH7KjOkRuB2YPyRrCXTbxk7Yc+LZ7qkDJWKOhK
-         vrSyhbqs0NhvMh20NfW5J9pXkoOogUDDtHu6gERIZWjqhcWdPIM0v523nrVTJUOCeqKo
-         c7hzfODbsZjBYeML82bzw3RvwaoofgpkdEGO8N1dUYjtW/mHtsCaN/+CVCQYVr1ZHowH
-         AT+vdmCf8JLbq4LekM6aMkshTmZ+UzmMB8nKADKeZTwtXpVdche+UDPELMl+OpoFy4SI
-         kTVA==
-X-Gm-Message-State: AC+VfDymgrbMxgicInAhyOJOEE++Tcn1ojvmCchmQCYrltCmEUVCeFwU
-	NV5uFB3MdNHUHmXS5G13ygzC2g==
-X-Google-Smtp-Source: ACHHUZ4acl68cTkDqaKwmcoX0Q2XYrrFgYMNcR1Xg03lVcffNENp+H3AqtVjDaG+/ou5CMF3D1P8Ow==
-X-Received: by 2002:a05:6512:3cc:b0:4ed:cc6d:1da1 with SMTP id w12-20020a05651203cc00b004edcc6d1da1mr4555693lfp.36.1683023765640;
-        Tue, 02 May 2023 03:36:05 -0700 (PDT)
-Received: from [192.168.1.101] (abyl248.neoplus.adsl.tpnet.pl. [83.9.31.248])
-        by smtp.gmail.com with ESMTPSA id j22-20020ac24556000000b004edc72be17csm5280795lfm.2.2023.05.02.03.36.04
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 02 May 2023 03:36:05 -0700 (PDT)
-Message-ID: <38b8139f-e0e3-cd1c-5f9d-49d45e4dc0dd@linaro.org>
-Date: Tue, 2 May 2023 12:36:03 +0200
+	Tue, 02 May 2023 11:48:16 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C437161793;
+	Tue,  2 May 2023 11:48:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25A35C433D2;
+	Tue,  2 May 2023 11:48:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683028094;
+	bh=3kyH1W+UzFVD6G6EyaZ+boLKcJ0HvmBDVvQXrP6u1dg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=E4PZdjU1vyAVpd+DGdFRNTTtGZLknQ4SkJwkn/sjSZ8ngE17xYpB0aNFeBDOq99fD
+	 5syZ65V0u9ik07QFAhmBux9DIbzu1lVaU99X/grjm5fV0vk6DpjUZvbutkmN02cSqE
+	 pIquQjFycnjQIDnwfydJM31XPSKe4Ah963n3mqePywHueWP0lyPh5anIh3YE8ZYsKV
+	 tLTy5zCcIPSvF4wRc+pVCUQn5VxZup4HfE/8nqOKvhJDoAbM3/vkSDbqwZp2O+G+Ky
+	 SI+wWfNM+G1TYObsVNyfTtn8hJ8Bh+u0L9+2HoPfuDOteUH+i0J8LOqJ5stHGHwQKr
+	 N3E/e0U9EtTYQ==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1ptoUS-0003WC-Tz; Tue, 02 May 2023 13:48:16 +0200
+Date: Tue, 2 May 2023 13:48:16 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/7] phy: qcom-qmp-combo: Introduce orientation variable
+Message-ID: <ZFD4gM9dUQwBmSUe@hovoldconsulting.com>
+References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
+ <20230425034010.3789376-4-quic_bjorande@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH v10 4/4] arm64: dts: qcom: qrb4210-rb2: Enable USB node
-Content-Language: en-US
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: agross@kernel.org, linux-kernel@vger.kernel.org, andersson@kernel.org,
- bhupesh.linux@gmail.com, krzysztof.kozlowski@linaro.org, robh+dt@kernel.org,
- kishon@kernel.org, vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- dmitry.baryshkov@linaro.org
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
- <20230502053534.1240553-5-bhupesh.sharma@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20230502053534.1240553-5-bhupesh.sharma@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20230425034010.3789376-4-quic_bjorande@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230502_033612_761042_02BC9B23 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20230502_044815_523822_99367DBE 
+X-CRM114-Status: GOOD (  22.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,55 +84,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2.05.2023 07:35, Bhupesh Sharma wrote:
-> Enable the USB controller and HS/SS PHYs on qrb4210-rb2 board.
+On Mon, Apr 24, 2023 at 08:40:06PM -0700, Bjorn Andersson wrote:
+> In multiple places throughout the driver code has been written in
+> prepration for handling of orientation switching.
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> Introduce a typec_orientation in qmp_combo and fill out the various
+> "placeholders" with the associated logic. By initializing the
+> orientation to "normal" this change has no functional impact, but
+> reduces the size of the upcoming introduction of dynamic orientation
+> switching.
+> 
+> Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-
-Konrad
->  arch/arm64/boot/dts/qcom/qrb4210-rb2.dts | 24 ++++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 54 +++++++++++++----------
+>  1 file changed, 30 insertions(+), 24 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-> index dc80f0bca767..eae3024ce003 100644
-> --- a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-> +++ b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-> @@ -222,6 +222,30 @@ &uart4 {
->  	status = "okay";
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 7280f7141961..6748f31da7a3 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -19,6 +19,7 @@
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/reset.h>
+>  #include <linux/slab.h>
+> +#include <linux/usb/typec.h>
+>  
+>  #include <dt-bindings/phy/phy-qcom-qmp.h>
+>  
+> @@ -63,6 +64,10 @@
+>  /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
+>  #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+>  
+> +/* QPHY_V3_DP_COM_TYPEC_CTRL register bits */
+> +#define SW_PORTSELECT_VAL			BIT(0)
+> +#define SW_PORTSELECT_MUX			BIT(1)
+> +
+>  #define PHY_INIT_COMPLETE_TIMEOUT		10000
+>  
+>  struct qmp_phy_init_tbl {
+> @@ -1323,6 +1328,8 @@ struct qmp_combo {
+>  	struct clk_fixed_rate pipe_clk_fixed;
+>  	struct clk_hw dp_link_hw;
+>  	struct clk_hw dp_pixel_hw;
+> +
+> +	enum typec_orientation orientation;
 >  };
 >  
-> +&usb {
-> +	status = "okay";
-> +};
-> +
-> +&usb_dwc3 {
-> +	maximum-speed = "super-speed";
-> +	dr_mode = "peripheral";
-> +};
-> +
-> +&usb_hsphy {
-> +	vdd-supply = <&vreg_l4a_0p9>;
-> +	vdda-pll-supply = <&vreg_l12a_1p8>;
-> +	vdda-phy-dpdm-supply = <&vreg_l15a_3p128>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&usb_qmpphy {
-> +	vdda-phy-supply = <&vreg_l4a_0p9>;
-> +	vdda-pll-supply = <&vreg_l12a_1p8>;
-> +
-> +	status = "okay";
-> +};
-> +
->  &xo_board {
->  	clock-frequency = <19200000>;
->  };
+>  static void qmp_v3_dp_aux_init(struct qmp_combo *qmp);
+> @@ -1955,29 +1962,23 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
+>  static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
+>  {
+>  	u32 val;
+> -	bool reverse = false;
+> +	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
+
+Adding parentheses around the right-hand side should make this a little
+easier to parse.
+
+It also looks like these callbacks end up being called without holding
+the qmp->phy_mutex via phy->power_on(). Perhaps there is no risk for a
+concurrent switch notification and dp phy power-on but it's not that
+obvious.
+
+> +	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+
+Also could you add these before u32 val to maintain an approximation of
+reverse xmas style?
+
+And similar below.
+
+Johan
 
 -- 
 linux-phy mailing list
