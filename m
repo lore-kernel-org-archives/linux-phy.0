@@ -4,77 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DA9CC77B7E
-	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 08:31:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D95FC77B73
+	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 09:37:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=elA7T6T956AB6yCKMxBOWWfX6YGZVHgVf7ZP6rLj0M0=; b=z7RC2NeDZEmCwN
-	liINMtSynrMfMhY6h4iXS+oeqiDOsMi9yeNx3tCy5PDA6ceFqmn1ZwQ/GjKiUy+gjimvbsFgtCPby
-	nsJcXQYrCHSNLYFuMv3thnMKFlKENfeRsA8Jbpwbhue+4od9JN4kP3HrRTN86ubb2SJ4Jr1h/CfH7
-	E2wHp+N9psBJftwRUP2S5vOZwykQFkPahStlgj8foQJf5loKMTm5pm43PxLixj8uAA/i3QDOvVvga
-	B5hclnHcpcMfYg38HgMVrteh9JOTQzoD35Bjvk2saatswJT4F6vKmQkx0Xf4mfioDlESbixrK2aIM
-	pT31EL7T+OO3bvyr8Arw==;
+	List-Owner; bh=oS/d35g/eWmrdXOdfxbZIyOm0aUl9RqKSRF3+h1xcp8=; b=3bebsQUsvmDMIl
+	lDtnDBYOXu0uw1VGa7LxuxL5MQpi/i+i8PlWDAz8Rd7s93VDlzsjNp14fDhUqmaKD1EV0ID+aijyq
+	F3YLBCj1evj9QgOXtFBmvJvKDyvgURd33l4peLACaXFS+xBTxWpC80vW0owHGurulX9gz9kZ4HpSt
+	5sD3X8WRk8PSOU8lhwgbL8R8f+Dt97FMYusW3teGGSplwfC8ay3PwrCWXduaN7+WK2V1KAlTb9Gy+
+	vympUAa23CEQ2YcFCaMEjsETimrQUi3VUX11Dq7wNFDCazQAga6hrfPPQBY/pvGuAdTSOlWdSbHPk
+	5KldPv1EDzuywRsIJLBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptlPf-000dbX-0q;
-	Tue, 02 May 2023 08:31:07 +0000
-Received: from mail-yb1-xb2e.google.com ([2607:f8b0:4864:20::b2e])
+	id 1ptmSD-000nEn-0k;
+	Tue, 02 May 2023 09:37:49 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptlPa-000daI-2x
-	for linux-phy@lists.infradead.org;
-	Tue, 02 May 2023 08:31:05 +0000
-Received: by mail-yb1-xb2e.google.com with SMTP id 3f1490d57ef6-b9e6ec482b3so482918276.3
-        for <linux-phy@lists.infradead.org>; Tue, 02 May 2023 01:30:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683016258; x=1685608258;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=M5H+/Rm5qbtJ4dIdqMTXfShqYluqFFrGEQJ+3vG1k/0=;
-        b=k0ybPB1xZnsRzjE9uxsaLa3Y8YJel2TI9KYrfYu3ljKNEolwUFYqm+THgsx/O+pWyC
-         AQIEW9g78m/azzRz2AmN6kzRHwRDsf0N7mkcNscjJ29WanD1LxM3ss0wl51bB2TWgF+8
-         6XDkS4c9Z5WAonza3c1cCsTREmRa+S1rWHZHoxNNVHAbGUAymA5Jnqf7eE0Meq1haR5s
-         2JNPpcw0LjhserbAuCiZS7in0dlqg3KT/hZYEeeEVNsro3TOTdXhxz1rvgB18XfRMlmy
-         bSB8894esk49EnDBGXVxodqZDndgop+LzB9Vtecdg9tSfuXL3tcnQG1S6qz3Bs4a+4hh
-         OZgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683016258; x=1685608258;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=M5H+/Rm5qbtJ4dIdqMTXfShqYluqFFrGEQJ+3vG1k/0=;
-        b=f5XWIW1ZO28bDPcLrxuO0Sp4eJm+wTKvAex1SPbmRfJ8BJ3BQw3l1E4Ui3/Gkrq4L3
-         iqGkyr5AZcz684KcaWLcw0gFXUGtNT4wbBRPRw2aT+6w9DHE1X7Eko9JubDCYkE+8kR5
-         iZDxWc6KNw1b96dLHh+Np5N9MwxH8M8/rHff+jez5jmMeKOH8JopZgOZBKTK/6i0UD4V
-         Tng7poxUG48o3BUjyjS8j8OseCwmTK7p+uvUCwwlkIsd7vkdtTeBKRKcsQICPGgKG1HJ
-         kONpN1jCpuEC9eTj7PD7kjEc081H4GBBiI1d9+DMmfKg784t+NSkKnBSSt1zBsTZGL/M
-         PKPA==
-X-Gm-Message-State: AC+VfDy5PhMkmNpbI8nBgdj7YU+oxCIVw3sDobFcOHcnbgDtiwvY61W/
-	3+T4sc/iWJrWOUZ2a2XlEfbme3ChY0LMsyogAiXD9w==
-X-Google-Smtp-Source: ACHHUZ7Ytf30ch8se73LYe26Pqq1R7v3NpXReeiPnVBOxwOSUZAWV2rS0dN+5NiOu4gcx3/Kv7BabsWJ19Ut2dMnBSM=
-X-Received: by 2002:a81:d354:0:b0:541:694a:4c69 with SMTP id
- d20-20020a81d354000000b00541694a4c69mr17244580ywl.52.1683016258565; Tue, 02
- May 2023 01:30:58 -0700 (PDT)
+	id 1ptmSA-000nDv-09;
+	Tue, 02 May 2023 09:37:47 +0000
+Received: from ip4d1634d3.dynamic.kabel-deutschland.de ([77.22.52.211] helo=phil.lan)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1ptmS7-0006ji-PC; Tue, 02 May 2023 11:37:43 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	kernel@collabora.com,
+	linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCHv2 0/7] phy-rockchip-inno-usb2: add RK3588 support
+Date: Tue,  2 May 2023 11:37:42 +0200
+Message-Id: <168302024879.773217.112764704871308038.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.39.0
+In-Reply-To: <20230403202307.120562-1-sebastian.reichel@collabora.com>
+References: <20230403202307.120562-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org> <20230502053534.1240553-3-bhupesh.sharma@linaro.org>
-In-Reply-To: <20230502053534.1240553-3-bhupesh.sharma@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 2 May 2023 11:30:47 +0300
-Message-ID: <CAA8EJpqgmgNTHrXMyejk3-LV7wKo1tHSdixE+xJMhq3chy+B_Q@mail.gmail.com>
-Subject: Re: [PATCH v10 2/4] phy: qcom-qmp-usb: add support for updated
- qcm2290 / sm6115 binding
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, agross@kernel.org, 
-	linux-kernel@vger.kernel.org, andersson@kernel.org, bhupesh.linux@gmail.com, 
-	krzysztof.kozlowski@linaro.org, robh+dt@kernel.org, konrad.dybcio@linaro.org, 
-	kishon@kernel.org, vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230502_013103_078116_EE832DE1 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20230502_023746_082638_699EFF20 
+X-CRM114-Status: GOOD (  12.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,28 +70,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2 May 2023 at 08:35, Bhupesh Sharma <bhupesh.sharma@linaro.org> wrote:
->
-> Add support for the new qcm2290 / sm6115 binding.
->
-> The USB QMP phy on these devices supports 2 lanes. Note that the
-> binding now does not describe every register subregion and instead
-> the driver holds the corresponding offsets.
->
-> While at it also include support for PCS_MISC region which was left
-> out earlier.
->
-> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+On Mon, 3 Apr 2023 22:23:00 +0200, Sebastian Reichel wrote:
+> This adds RK3588 to the Rockchip Inno USB2 PHY driver. I have tested this
+> with USB2_0 and USB2_1.
+> 
+> Changes since PATCHv1:
+>  * https://lore.kernel.org/all/20230331163812.6124-1-sebastian.reichel@collabora.com/
+>  * Added patch simplifying phyclk handling
+>  * Added patch simplifying matchdata handling
+>  * Added patches for reset handling and PHY tuning; after doing more
+>    testing I noticed my previous patchset does not support hotplug and
+>    USB devices need to be plugged in at boot time (more specifically
+>    in PATCHv1 it had to be plugged before the PHY is suspended). This
+>    fixes the issue.
+> 
+> [...]
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Applied, thanks!
 
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 22 ++++++++++++++++++++++
->  1 file changed, 22 insertions(+)
->
+[1/7] dt-bindings: soc: rockchip: add rk3588 usb2phy syscon
+      commit: 980cb53be481a6900fc08e6bbb77a6fe2986b211
+
+Best regards,
 -- 
-With best wishes
-Dmitry
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
