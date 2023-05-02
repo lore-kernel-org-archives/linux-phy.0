@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 950E9C7EE23
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 996FCC7EE25
 	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 05:35:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nXh/z9itIwE9fSc7oeiglR8ejs3vSXpU+JidCsjOKH4=; b=rApq0rdj1hL0Ti
-	E6/D+8XaylCnZoQ0HLYIWPAoT3aIfKR36nHHy+tLtpCg5rEOystCWHACqTegGhJXwyUTBOURxiQ2j
-	ZF+26qyzv48c1I9s+QHt/zEu5U9002GHjfCNQ7cWfULgrZfCDGQbwcZSQxTV7YjnMeezQ3fsfMXo8
-	H3i3Tzl/Q+2ax4Yxh+dyWAIzg6ofC0qudyfq3EEXCIwfqSgxQ8XgvnVz+nyEGYzmJltgdMJ4LjiNO
-	PZOJ5TNRhv2vH/fH7dAtbkMo83G2m2xBfcBCzzHo0hVTcKxOoJHMzas9rhBE9QhOmsYtHmbI5Rpmt
-	cu6Du1s9KGJHQyfoAurw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z0h03E7QkZ+I/h9n2Knk1jus8pmU5MMxmdXFiAJcFxA=; b=q6YPfB2x6DkafE
+	RszXZfbNmYGA6Wpn6yAOkTKzTKUYWa1Pw+1Ew8wfrYsZx9zVrU4yDhMKg4LmE6H0kc/5npDk6YLZW
+	cXHOYAdmTRPf4xSDwFTSTonoXKH2XKKNNbWuav5eVtmOsvmdCPQLMJfNjzcK1mZ1xEEWT7/TknrXJ
+	QrV9cSOpE2+E9lOR0pniy+YHXSkocPaFOYmygc+QUaKGVkRYKDzK3ib4ipfm3eNqhj0OTiQr8DOSQ
+	Pb3EhatK62Z5Q8vKIlxCp4FiUtWGlZidjKOwW3h0xZHKtBN4mtuaXDSd3U5Ai8PPGy9GsiOkrxGLp
+	f8gAC413+LPcvpzzH6eA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptigB-000DEr-07;
-	Tue, 02 May 2023 05:35:59 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptig8-000DDA-0D
-	for linux-phy@lists.infradead.org;
+	id 1ptig9-000DEV-2L;
 	Tue, 02 May 2023 05:35:57 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-1aad5245571so20712255ad.1
-        for <linux-phy@lists.infradead.org>; Mon, 01 May 2023 22:35:53 -0700 (PDT)
+Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1ptig6-000DCi-0h
+	for linux-phy@lists.infradead.org;
+	Tue, 02 May 2023 05:35:55 +0000
+Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-51b661097bfso2227604a12.0
+        for <linux-phy@lists.infradead.org>; Mon, 01 May 2023 22:35:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683005753; x=1685597753;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=jPsBIL7uoiC5DZZtXnqdAvBon8Zv1+SeehoREZW26xk=;
-        b=sHI9PyZCJVqn//9OxaZVViTy6VPsgUe4g9gNXpYCF2YsVEr4Yini1og9wCxfc3vS7s
-         tDgMY7aFvVM3aUNOcUTUdXDk6Yr9i/ayryREiRZPhSM8vxI3DOUFqH8h9vzkz8VqJCAZ
-         7rvEJrTiRCjJNlZSnorun+LLu7vKFMQVVnPsJUz22N8jmYNN+5OvvoIhXj80xRUUHoJj
-         wLjiKII5R4sZxufspsAWALThgLcMvbarEbjIeCpMTZVWi/UgUefFCnx0dAu+PoXy3H5d
-         LF2je2DDNysf11vqkDsCuQChzb87gfzesUFzOCXyeRkI9zV/wk5OH2WVblfGvnP5n9Ow
-         fn8w==
+        d=linaro.org; s=google; t=1683005748; x=1685597748;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=WalWNBbqLP5+H0yr5WCCK7jHS95uZC4dq+Re1T637XE=;
+        b=S6dGmVSsgrHaEr0TUBQULNWA571DsS9PU8wYJmxTdyAfFKX5QzPWj2G39ZuDwKD/dZ
+         CpW/WrbXbGM7nss6yYYrNrjaWa+hlMdP+Gr04koV0DYIqUDXDbqnV85ODGmAuEupk5uN
+         DEk4JmyqMPXutFY1NLeUx2QFZPM1MckjDc82OOHnNWHQ+IfzHCbS/mISMopMzzaZ5Ley
+         /+u0dqewctMvnkSqz9vRCmO4IBkWt7yJiBrb5ROnqhe38hES6+bkB1XfRQQBbrZoe9S6
+         JiDDLZqGBWtZVDVgxBIZA9jmW2arcgMqahWBFdvkH/GmHBQriD1LgK4dACkw0bVH2Biu
+         0fjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683005753; x=1685597753;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=jPsBIL7uoiC5DZZtXnqdAvBon8Zv1+SeehoREZW26xk=;
-        b=iwapOJcE+ZbLxL3xTVI002d/LQP53LMO/tfUCUMmGJe9qOQaSph8vZs0KktM70hq+T
-         ZYi7CJI1a2D4Vtdh1oJUqss31xf6ZNhA+QUI+QMftnF4R/7mAo9Twmmzjji5hEyopnjb
-         qTxkl9l5/hWb/B+jmXkqUgl+3bN0/s8tMZ0nozm8iftIInv/ongg1Kkh/CWGJnJ2huJY
-         2KR/bInTawq14O3Fudj6cDeQFwjPGjSwGev/NZKf/49Elr6vvaS1tSM7RN0ShxqIfv7i
-         JMrUbwLBO7rYdsyEHLEJWuRJtzUZ9q6gSjEhI97G63RSwB9SMh1x8oUTZMoDXo+h6Vmr
-         TYsA==
-X-Gm-Message-State: AC+VfDw0dxk/9uV/CreZM0zEZnQYApcveCxiocfiQ5pW++OS0QumMPAH
-	xLK9J6n7iReUoOiY4KxKGXk3gA==
-X-Google-Smtp-Source: ACHHUZ5ZLJU/YKaypyQQyBoNPSLvs4ylijT97HinpBKB74NfyW0/CAElGmJIsF5HXptOWe8kHagm7Q==
-X-Received: by 2002:a17:902:d505:b0:1a9:9c5d:9fac with SMTP id b5-20020a170902d50500b001a99c5d9facmr20342853plg.33.1683005753137;
-        Mon, 01 May 2023 22:35:53 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1683005748; x=1685597748;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WalWNBbqLP5+H0yr5WCCK7jHS95uZC4dq+Re1T637XE=;
+        b=g6Nz4EMY+/YODiu8xabbaridFeCXiIoIdZNFIm7Ii84QDAhmsZYDsySOlNUtGEO1WY
+         hEiLPDV/vDWEKI1qW6SVqKmF+Ze9oV9Va6c0mH2C8ANUhFOG8YW5ovh+lnGasksY9icg
+         mHr+RlTBw1olXkOuVr5GgV0aVzm2UTWaLaemYGaHXqIdIY1odP6mTn2/IdDQDaYC/OaZ
+         8r2WF9oa5N3lZ0whucwXHsH8Z2VJPOad4jxr81SmkTEsILWd3nS5HvI403eYKCATXIM6
+         Yp4IboFvfbz5faampDUkMPQTaab9shXPfzUl8ZAYQ2GO/8PpD+1X9Vk31nH4qmvqKRgy
+         hdIQ==
+X-Gm-Message-State: AC+VfDxq00qZcqH2nvdtl6f+BOPCwdRujyFIKz0rV1CNJwc/dkv7sMhB
+	OITYFC8yV8A6z5o7EFij08Qysw==
+X-Google-Smtp-Source: ACHHUZ74rhSOrYkhGkK2AaUtssN912iRZKoGc466lxGT7AqULsRjX6hsaMu1K2GGcRE1jlHuRsSc9g==
+X-Received: by 2002:a17:903:1248:b0:1a6:a6e7:8846 with SMTP id u8-20020a170903124800b001a6a6e78846mr18260120plh.40.1683005748053;
+        Mon, 01 May 2023 22:35:48 -0700 (PDT)
 Received: from localhost.localdomain ([2401:4900:1f3b:58fa:39f6:37e1:bb9a:a094])
-        by smtp.gmail.com with ESMTPSA id j12-20020a170902690c00b001a6a6169d45sm18870369plk.168.2023.05.01.22.35.48
+        by smtp.gmail.com with ESMTPSA id j12-20020a170902690c00b001a6a6169d45sm18870369plk.168.2023.05.01.22.35.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 01 May 2023 22:35:52 -0700 (PDT)
+        Mon, 01 May 2023 22:35:47 -0700 (PDT)
 From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 To: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -78,16 +77,14 @@ Cc: agross@kernel.org,
 	vkoul@kernel.org,
 	krzysztof.kozlowski+dt@linaro.org,
 	dmitry.baryshkov@linaro.org
-Subject: [PATCH v10 1/4] dt-bindings: phy: qcom,qmp-usb: Drop legacy bindings and move to newer one (SM6115 & QCM2290)
-Date: Tue,  2 May 2023 11:05:31 +0530
-Message-Id: <20230502053534.1240553-2-bhupesh.sharma@linaro.org>
+Subject: [PATCH v10 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+Date: Tue,  2 May 2023 11:05:30 +0530
+Message-Id: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
 X-Mailer: git-send-email 2.38.1
-In-Reply-To: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230501_223556_105564_B96F6981 
-X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-CacheID: sfid-20230501_223554_379216_05352554 
+X-CRM114-Status: UNSURE (   9.85  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,153 +102,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-'qcom,msm8996-qmp-usb3-phy.yaml' defines bindings for several PHYs
-which predate USB -> USB+DP migration. Since SM6115 and QCM2290
-nodes for USB QMP phy are being added to dtsi files by followup patches,
-move these bindings instead to the newer style
-'qcom,sc8280xp-qmp-usb3-uni-phy.yaml' file.
+Changes since v9:
+-----------------
+- v9 can be seen here: https://lore.kernel.org/linux-arm-msm/20230501192432.1220727-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry on v9, regarding register size
+  and pcs_misc offset handling. Also collected his R-Bs.
 
-Since no device trees use these bindings presently, so we have no ABI breakages
-with this patch.
+Changes since v8:
+-----------------
+- v8 can be seen here: https://lore.kernel.org/linux-arm-msm/20230410171010.2561393-1-bhupesh.sharma@linaro.org/
+- Added driver change for new bindings used for sm6115 / qcm2290
+  devices.
 
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
+Changes since v7:
+-----------------
+- v7 can be seen here: https://lore.kernel.org/linux-arm-msm/20230409200934.2329297-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry and added "pipe clk".
+
+Changes since v6:
+-----------------
+- v6 can be seen here: https://lore.kernel.org/linux-arm-msm/20230407061122.2036838-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Bjorn and Dmitry and dropped old bindings in this
+  version.
+
+Changes since v5:
+-----------------
+- v5 can be seen here: https://lore.kernel.org/linux-arm-msm/20230405191633.1864671-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry and made [PATCH 1/2] compatible with his 
+  'split away legacy USB+DP code' series:
+  <https://patchwork.kernel.org/project/linux-phy/cover/20230324215550.1966809-1-dmitry.baryshkov@linaro.org>
+
+Changes since v4:
+-----------------
+- v4 can be seen here: https://lore.kernel.org/linux-arm-msm/20230401154725.1059563-1-bhupesh.sharma@linaro.org/ 
+- Collected Krzysztof's Ack for [PATCH 1/2].
+- Added more descriptive commit logs as per Dmitry's comments on v4.
+
+Changes since v3:
+-----------------
+- v3 can be seen here: https://lore.kernel.org/linux-arm-msm/20221215094532.589291-4-bhupesh.sharma@linaro.org/
+- Fixed v4 as per the downstream driver code: https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
+
+This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
+SoC. For the previous versions of this patch there were conversations
+on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
+'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
+documentation.
+
+But after a careful look at downstream dtsi (see [1]) it appears that
+this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
+'dp-combo' phy.
+
+[1]. https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
+
+Bhupesh Sharma (4):
+  dt-bindings: phy: qcom,qmp-usb: Drop legacy bindings and move to newer
+    one (SM6115 & QCM2290)
+  phy: qcom-qmp-usb: add support for updated qcm2290 / sm6115 binding
+  arm64: dts: qcom: sm6115: Add USB SS qmp phy node
+  arm64: dts: qcom: qrb4210-rb2: Enable USB node
+
  .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 27 ------------
  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 44 ++++++++++++++++---
- 2 files changed, 39 insertions(+), 32 deletions(-)
+ arch/arm64/boot/dts/qcom/qrb4210-rb2.dts      | 24 ++++++++++
+ .../boot/dts/qcom/sm4250-oneplus-billie2.dts  |  3 ++
+ arch/arm64/boot/dts/qcom/sm6115.dtsi          | 29 +++++++++++-
+ .../boot/dts/qcom/sm6115p-lenovo-j606f.dts    |  3 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 22 ++++++++++
+ 7 files changed, 118 insertions(+), 34 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-index e81a38281f8c..4c96dab5b9e3 100644
---- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
-@@ -23,14 +23,12 @@ properties:
-       - qcom,ipq8074-qmp-usb3-phy
-       - qcom,msm8996-qmp-usb3-phy
-       - qcom,msm8998-qmp-usb3-phy
--      - qcom,qcm2290-qmp-usb3-phy
-       - qcom,sc7180-qmp-usb3-phy
-       - qcom,sc8180x-qmp-usb3-phy
-       - qcom,sdm845-qmp-usb3-phy
-       - qcom,sdm845-qmp-usb3-uni-phy
-       - qcom,sdx55-qmp-usb3-uni-phy
-       - qcom,sdx65-qmp-usb3-uni-phy
--      - qcom,sm6115-qmp-usb3-phy
-       - qcom,sm8150-qmp-usb3-phy
-       - qcom,sm8150-qmp-usb3-uni-phy
-       - qcom,sm8250-qmp-usb3-phy
-@@ -248,29 +246,6 @@ allOf:
-             - const: phy
-             - const: common
- 
--  - if:
--      properties:
--        compatible:
--          contains:
--            enum:
--              - qcom,qcm2290-qmp-usb3-phy
--              - qcom,sm6115-qmp-usb3-phy
--    then:
--      properties:
--        clocks:
--          maxItems: 3
--        clock-names:
--          items:
--            - const: cfg_ahb
--            - const: ref
--            - const: com_aux
--        resets:
--          maxItems: 2
--        reset-names:
--          items:
--            - const: phy_phy
--            - const: phy
--
-   - if:
-       properties:
-         compatible:
-@@ -318,12 +293,10 @@ allOf:
-             enum:
-               - qcom,ipq6018-qmp-usb3-phy
-               - qcom,ipq8074-qmp-usb3-phy
--              - qcom,qcm2290-qmp-usb3-phy
-               - qcom,sc7180-qmp-usb3-phy
-               - qcom,sc8180x-qmp-usb3-phy
-               - qcom,sdx55-qmp-usb3-uni-phy
-               - qcom,sdx65-qmp-usb3-uni-phy
--              - qcom,sm6115-qmp-usb3-phy
-               - qcom,sm8150-qmp-usb3-uni-phy
-               - qcom,sm8250-qmp-usb3-phy
-     then:
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-index 16fce1038285..05335e6bbb58 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-@@ -16,7 +16,9 @@ description:
- properties:
-   compatible:
-     enum:
-+      - qcom,qcm2290-qmp-usb3-phy
-       - qcom,sc8280xp-qmp-usb3-uni-phy
-+      - qcom,sm6115-qmp-usb3-phy
- 
-   reg:
-     maxItems: 1
-@@ -25,11 +27,7 @@ properties:
-     maxItems: 4
- 
-   clock-names:
--    items:
--      - const: aux
--      - const: ref
--      - const: com_aux
--      - const: pipe
-+    maxItems: 4
- 
-   power-domains:
-     maxItems: 1
-@@ -71,6 +69,42 @@ required:
- 
- additionalProperties: false
- 
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,qcm2290-qmp-usb3-phy
-+              - qcom,sm6115-qmp-usb3-phy
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 4
-+        clock-names:
-+          items:
-+            - const: cfg_ahb
-+            - const: ref
-+            - const: com_aux
-+            - const: pipe
-+
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,sc8280xp-qmp-usb3-uni-phy
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 4
-+        clock-names:
-+          items:
-+            - const: aux
-+            - const: ref
-+            - const: com_aux
-+            - const: pipe
-+
- examples:
-   - |
-     #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
 -- 
 2.38.1
 
