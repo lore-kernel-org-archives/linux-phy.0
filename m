@@ -4,90 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9286AC77B73
-	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 05:36:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8026DC77B73
+	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 05:45:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l4jZS264YL+BTq2Chyd5FLU2h9TczHN+TZQVMWt0huM=; b=w+jtf0APIGXKFB
-	DfpcYnGrspfXSA6YIqzH2pYzYaVjFxxgaq81hIQFJLQKCUBLEq3dp82jgv92mkas5yDqbqlCaPsb5
-	XVlFKI9nV+Mk6NuEoHDFQtHVq81yozvOb6RhfydfItniKUErypATJxRnTFT0rk27Z+ZxLlDA5k1Ut
-	i64Kn8Z76PN29uVoy4gdKfJqft7aHTzipX2RWPYW3JbPMIemZRxpJVDyB9MjKERvN+jxSKUZQplaM
-	UUDmfMvNGLEwZEFrxG76vxVo+zPCdT0kEb7kkXrvlPfnJtrzI9JtMaO8KLUyaWlwKbhFezXeUEklj
-	uNONKC2McCZclS7S22QA==;
+	List-Owner; bh=Bcm9USCvILA8s3e18sAF70X65cuQZYXHXOZJ8fL11Ug=; b=cvIKhinlNEJSlR
+	ilrurvv1XbWaiwZ4jWlJ5B62UadsJvBZbjZVtAJJHTtEhdU8hSfCGnpYGlcP6MeiOcjK8CdJ3AvMI
+	xWC7xJo10sCkXssdv45Cad9YsGhq3D3Af9q2LiL8/o3ckArwVwbRQRhtYNgD3oViSGGbzesg3c+U3
+	/Gd2/dVg8dyoIwIFK0MwFOLhzR3Dn9DMV5uuE7V12/aRQKw6/0UXc3BoYLcnPz/qe1WQpOnGXws2H
+	ukaMRcM3m2+wJicCNEBS3pMCRhC0FG1C0LRxrI1Q2pd/PdUdW7naOaM1QLdTPwWVRrgsnaev/D4P5
+	Y92VAAFHCjiUKRjve7QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptigN-000DIN-0k;
-	Tue, 02 May 2023 05:36:11 +0000
-Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
+	id 1ptipJ-000F8T-0X;
+	Tue, 02 May 2023 05:45:25 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptigK-000DEm-2l
+	id 1pthqX-0007Si-38
+	for linux-phy@bombadil.infradead.org;
+	Tue, 02 May 2023 04:42:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=OU7dF3apKAzTMOXKncqRNK1GXeNANPoUeBncqcRUVHo=; b=aigWiycyOqUIirYNHwm2pQuJnQ
+	8YPAklguo2f5dp7kOu+wD21jV428thR4B+oStVB7jHxesULZOymdrX8pAfOZ3y+/bnP+qU8c+iWCD
+	iDOvDL5A7JnBlli1dHZc1XljqQOGdbYm2BxbcNVbJeV+uF5RHMqhN/lV5CFi+7esiyGlaVMAYJj6m
+	AYgqX/pD7WWRMLqo0bviB/zC4HhoQjy4OZdEXkxf4FHNGGTsCRh3dpEH+ZA5MOjUJZfzDxLe4E3HX
+	JvofxIyaz/b5YemUx6a9D5K3ubNeTIPvlOC6RZkDFkkHDKehP0n/8yH6hZ2OTupr8z10AK7yc9COg
+	ZnOH19NA==;
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1ptdhf-00F3tR-1N
 	for linux-phy@lists.infradead.org;
-	Tue, 02 May 2023 05:36:10 +0000
-Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-1ab0c697c84so1870635ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 01 May 2023 22:36:08 -0700 (PDT)
+	Tue, 02 May 2023 00:17:13 +0000
+Received: by mail-lj1-x235.google.com with SMTP id 38308e7fff4ca-2a8bca69e8bso30689111fa.3
+        for <linux-phy@lists.infradead.org>; Mon, 01 May 2023 17:17:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683005768; x=1685597768;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=P5pQrJTTCZJZZKPmjIiq+X+xkUImdFCCiZ3e7a6lOiY=;
-        b=fZP5Z2rmGEmEpMy/cc4ZqxwatyLd6N1517X/g3uf1SrKVGaZW/O0PmycIWhrUpTajl
-         r3ICQ65PAG96adg0yLWV3BYu8Io1tOKqCxKo7QyouVeng7Uv1GnYf6luRWhbqcvKo0Y8
-         lhTMNeAxOgQ/96CNfMBQNnGTEesOCzfPE6rTpr3653xNSDPZ3CMKcO0xdx8TnyKG0u0y
-         aeHN39S3FzCqWfdH7hBmIl+aMdj2+VIXsJkCCix5kialup04MsjsUmv10/3nBUqlrErr
-         aniplwSJ3sJvvni0BQ4M67c2ipOEpcTZyBYeojhiWj7MwJYnSTFiPDGSqTGERTeMU5u1
-         HWOQ==
+        d=linaro.org; s=google; t=1682986624; x=1685578624;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=OU7dF3apKAzTMOXKncqRNK1GXeNANPoUeBncqcRUVHo=;
+        b=mdKURyH6HQo/pfn4Q1Te3gyJ+qAlcaiNaOsEa36+9zRBjFMhLmGKkiqNxDKHC8Q32a
+         bbYMPylauv1XesZNtJ5UG2PSsXZ8w8Of3iAF1w15rRqtk3bOtKOhYG0vXKrB07CzqOYy
+         eBCHRq1Cy5eyLvQ70yuFqGzPM2lEmWt8dH+BNy3msb+WTx1I91IlOMMoFgEMubViK1dz
+         zyjWtVTNZ71vrYmTG0xDrvP55A1X1CxMhyMpOXFQLpAH79MGC6emZhvomwJorVJZ5Rmo
+         qbpgjbfVGkB8GT+4b1lPGVIGaagb4NsSGfrMNLEjWxEiu3DlP8Nxf6bkV6g+BRyjeU74
+         dSYA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683005768; x=1685597768;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=P5pQrJTTCZJZZKPmjIiq+X+xkUImdFCCiZ3e7a6lOiY=;
-        b=cvZ3uN9psWGJyjPDM1KpZMRIRnu2OLaJyE/2+oJkUh1mvgzUzDM/fZRKSkycP2YM7M
-         ggoCUcL2Xo1IvSl7ZmALxSY7+4w4nojXv6YZQspSRr1r2womzxsHVDoqZpzes/rZYFw3
-         wNV3x1woX+ds1ANeuxccfnWyv9crGj/b6YPrXPgVxt9DQkfi7eYepKuicELZUTAcSwVx
-         KDtfPFn3ttu9ILcMH6XRzMbNyd65HRZNvcaogQ0S0k1DChMOVSMw9iHQuvFove3eF4eD
-         7J5wFs63Dz+dOsliNTCPcf6l3XUmv4QID/W33zWl02IJMtOVW5ZXLGwXqHiQXYMbOFbn
-         bF6Q==
-X-Gm-Message-State: AC+VfDx5xmZM23exbpj4CN4HAaGz1ZZ2tLDaZs956nljjMUaAmZi3Fin
-	rkMi8hid8APL1bpficzswiEMnQ==
-X-Google-Smtp-Source: ACHHUZ4tSd8e/JnDsfq3JN6L/4ZDpvPlKlRCROwvaxatf/we7R8ZNaa88ly1NpuHJ+TXY3Txe/QJRw==
-X-Received: by 2002:a17:902:aa85:b0:1a5:22f3:220d with SMTP id d5-20020a170902aa8500b001a522f3220dmr15482431plr.49.1683005768487;
-        Mon, 01 May 2023 22:36:08 -0700 (PDT)
-Received: from localhost.localdomain ([2401:4900:1f3b:58fa:39f6:37e1:bb9a:a094])
-        by smtp.gmail.com with ESMTPSA id j12-20020a170902690c00b001a6a6169d45sm18870369plk.168.2023.05.01.22.36.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 01 May 2023 22:36:08 -0700 (PDT)
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-To: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: agross@kernel.org,
-	linux-kernel@vger.kernel.org,
-	andersson@kernel.org,
-	bhupesh.sharma@linaro.org,
-	bhupesh.linux@gmail.com,
-	krzysztof.kozlowski@linaro.org,
-	robh+dt@kernel.org,
-	konrad.dybcio@linaro.org,
-	kishon@kernel.org,
-	vkoul@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	dmitry.baryshkov@linaro.org
-Subject: [PATCH v10 4/4] arm64: dts: qcom: qrb4210-rb2: Enable USB node
-Date: Tue,  2 May 2023 11:05:34 +0530
-Message-Id: <20230502053534.1240553-5-bhupesh.sharma@linaro.org>
-X-Mailer: git-send-email 2.38.1
-In-Reply-To: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
+        d=1e100.net; s=20221208; t=1682986624; x=1685578624;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=OU7dF3apKAzTMOXKncqRNK1GXeNANPoUeBncqcRUVHo=;
+        b=IvfsCmhDNQv1nfUsg18gADkErEFI1ojjG+we4T0WXNVLWOASsz6wxk+prAmbzG4JgX
+         yhhE5P+z3STVkeQicXshQ/DGKV/4GVMaRCtMnGHZJRU7+miGmgDgzDtt1nwPj5GhziV3
+         qf6/l3uB5/AUdySK/E2GyiOHxFlN550rFImn1Rg2FZ132YY7fvn5ohHWdL8YVr258VAB
+         HyGF2iIopNq292iKVSEH5Qs2hLw+vnKLAi4FELx2yqVUJmphAwRuWV+v8K2mzBNQLhS0
+         Vr1ZN739hS1uWxyr8xYFKjhzdXO/6s9cRFK8xsjHVLdiJizJtmG843RoK69zjTKRhRXZ
+         A2Qw==
+X-Gm-Message-State: AC+VfDx0LmheY1dS8ZxdJQVS/t4aTG7HhU1YjhTYjkg43983230rsgRF
+	AJ9PaBrYtdYzh4kdlPjYh472ng==
+X-Google-Smtp-Source: ACHHUZ6GqVdzKs8IrpnXt7KY+uXWsHZyayfyeH6RXXJ/lfzcq5t7i3oRRhU0NqvTvtGhdrGit4u8NA==
+X-Received: by 2002:ac2:4438:0:b0:4b3:d6e1:26bb with SMTP id w24-20020ac24438000000b004b3d6e126bbmr4123250lfl.29.1682986624134;
+        Mon, 01 May 2023 17:17:04 -0700 (PDT)
+Received: from ?IPV6:2001:14ba:a0db:1f00::8a5? (dzdqv0yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a0db:1f00::8a5])
+        by smtp.gmail.com with ESMTPSA id u21-20020ac248b5000000b004eed7649d33sm4973400lfg.35.2023.05.01.17.17.03
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 01 May 2023 17:17:03 -0700 (PDT)
+Message-ID: <5b36ac86-4aaa-7a6f-a132-95fa62320acb@linaro.org>
+Date: Tue, 2 May 2023 03:17:03 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v9 3/4] arm64: dts: qcom: sm6115: Add USB SS qmp phy node
+Content-Language: en-GB
+To: Bhupesh Sharma <bhupesh.sharma@linaro.org>,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: agross@kernel.org, linux-kernel@vger.kernel.org, andersson@kernel.org,
+ bhupesh.linux@gmail.com, krzysztof.kozlowski@linaro.org, robh+dt@kernel.org,
+ konrad.dybcio@linaro.org, kishon@kernel.org, vkoul@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org
+References: <20230501192432.1220727-1-bhupesh.sharma@linaro.org>
+ <20230501192432.1220727-4-bhupesh.sharma@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230501192432.1220727-4-bhupesh.sharma@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230501_223608_890645_7A5AFFCA 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20230502_011712_084876_A6E6CADF 
+X-CRM114-Status: UNSURE (   9.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,56 +110,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the USB controller and HS/SS PHYs on qrb4210-rb2 board.
+On 01/05/2023 22:24, Bhupesh Sharma wrote:
+> Add USB superspeed qmp phy node to dtsi.
+> 
+> Make sure that the various board dts files (which include sm4250.dtsi file)
+> continue to work as intended.
+> 
+> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> ---
+>   .../boot/dts/qcom/sm4250-oneplus-billie2.dts  |  3 ++
+>   arch/arm64/boot/dts/qcom/sm6115.dtsi          | 29 +++++++++++++++++--
+>   .../boot/dts/qcom/sm6115p-lenovo-j606f.dts    |  3 ++
+>   3 files changed, 33 insertions(+), 2 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
- arch/arm64/boot/dts/qcom/qrb4210-rb2.dts | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-index dc80f0bca767..eae3024ce003 100644
---- a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-+++ b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-@@ -222,6 +222,30 @@ &uart4 {
- 	status = "okay";
- };
- 
-+&usb {
-+	status = "okay";
-+};
-+
-+&usb_dwc3 {
-+	maximum-speed = "super-speed";
-+	dr_mode = "peripheral";
-+};
-+
-+&usb_hsphy {
-+	vdd-supply = <&vreg_l4a_0p9>;
-+	vdda-pll-supply = <&vreg_l12a_1p8>;
-+	vdda-phy-dpdm-supply = <&vreg_l15a_3p128>;
-+
-+	status = "okay";
-+};
-+
-+&usb_qmpphy {
-+	vdda-phy-supply = <&vreg_l4a_0p9>;
-+	vdda-pll-supply = <&vreg_l12a_1p8>;
-+
-+	status = "okay";
-+};
-+
- &xo_board {
- 	clock-frequency = <19200000>;
- };
 -- 
-2.38.1
+With best wishes
+Dmitry
 
 
 -- 
