@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6D4CC77B7E
-	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 12:05:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABC7EC77B73
+	for <linux-phy@archiver.kernel.org>; Tue,  2 May 2023 12:22:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n3IOWh8UNKsI+Fc8wCBhd8X6SxdCX6weDtsQemUYla0=; b=u1GgxRV6H7yv7k
-	DMjqbNm+noT95+7f20LuJGCiJ7KQCLVUPnr3fLkCGKwQcEBTD4jh9iik/L0vQ6ft9yRlTEbo6gOQj
-	ZrdrzCPCxTyD7Qr4ZQTDiv/5vhJJBuN6q8akxbq1tHINRfWiRQ41ehqys/qPuZxnwwwY/Hcc/RsC3
-	52lT4LnQ0oEMIQgWUfqyK5C7RRWQ+LI1oMDbtkQSWMO1Efgvq4mnCp3tic/4q/EKNf2F9B7A1MBuF
-	UlxzngoCc0aRvIkof2FqDHQvoC4Mfd2lt8f05VREfQ2HkSo5LUDnXuGhtTpfkwSIenaIISTciQSFU
-	WWMxDWURQzo+T3mKb/6w==;
+	List-Owner; bh=JRyAQZPCF+dKm961FEUxQvzpugNWAfbdU9h2aGk1AL0=; b=OXng7twTY+rd9c
+	eIP0DudX31/c3u5tDdvdVf/p7fPGPXcPQrQOayISKIrkiPSvORMdInq1Zep20fE5+GcUzkQcbW4k/
+	f/gIqlICHakfbfYbnwWA2SJjY2wCwPcczra3wu1ZgmodeAraPYXEIZiju2IU5JulyvkfSHVF/aMCD
+	/6dfeqCroILivmWBmiUPOUzekme41kdO+wCtq1P2lzfzVQ9/qUfWfAZe5n3cuH6ciY6/HW5OCHwx+
+	Atn+fzUEFJGwab3k2D2VDPHDcIxiVd4rCiRANCbG4SVA97VKkZcpIqa9tSvvgUtqMrQpODwqTCjh2
+	pmBsguLFU5PnMzb2yusw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptolX-001K8w-1C;
-	Tue, 02 May 2023 12:05:55 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ptp1U-001NBY-0d;
+	Tue, 02 May 2023 12:22:24 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptolU-001K7t-1H
+	id 1ptp1R-001N9j-0l
 	for linux-phy@lists.infradead.org;
-	Tue, 02 May 2023 12:05:53 +0000
+	Tue, 02 May 2023 12:22:22 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BC99362387;
-	Tue,  2 May 2023 12:05:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93155C4339B;
-	Tue,  2 May 2023 12:05:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C960D623BE;
+	Tue,  2 May 2023 12:22:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C1D2C433EF;
+	Tue,  2 May 2023 12:22:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683029150;
-	bh=pjosqgAvcJiDE8ocsFRuyjcgaSS47imfs2wX0R23ors=;
+	s=k20201202; t=1683030140;
+	bh=F0jPa7tNnQ7D5aJHQ4nzmWOU1N0VFYe0lBrk9O1VlPE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mgrMCZV3PZlTUxJtlLltDnGq8PpAFqsf3Cpf9J8cImNxENWE13YAYt/fm9H/81QgF
-	 u88v1rhOs2FgynKvqrkMA0JTGOq1ew7Ss4oLmiMy/ZOPctHcROxvgHgFMPogyAk+0g
-	 XX/vZPZX9knrHjscuxBRy3Haov7Ie7VvT63/puN6exZ7bQ1ErQQyLxwL1BfZp7Jj5c
-	 g5DjbazrYult8Hs3qRBcFFA3js3LEm8CnUj8xfrIB567Ti3whxP5gPqaOCZmHcEIrR
-	 Dgc0iaEWGC+GI0KWCIFEWhe1ukMl+RaSO37msxENCVvU1a+SOpL7QDWYME6ijziRv4
-	 qUscBxiY1BjWg==
+	b=rk6YMvjU9y/Qp3ns9rsftJIWNO8/ESFTf+Z9h2R3TytencJLZiVoZ3TWpLcd+5uWl
+	 RnkW77KMyU/VgjCjV3fibO3kfBkgcgNnOym89+3IGbHOEtsC1l2UvKKjA8cLARdSYL
+	 8yEexMexUq06xN72hlervrUJ26BrSpHFMPuHfXw4vv2OYA25tuYsXY0+TSiPTcxszh
+	 RUe8PPTQNU2eWCdBn4L+Pvf5JmkcrbtU6Xv3VXruPjTtkXlkGyIkV6maTN/ZNjhVPD
+	 QX9jxCN6oMYvhOBTGF4l/WbfG17eFQP1AmYyh2a51Gtth5wjWi+DnLY5zsuXyZtobO
+	 IJRDAGyiuBF1w==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1ptolV-0003eH-Di; Tue, 02 May 2023 14:05:53 +0200
-Date: Tue, 2 May 2023 14:05:53 +0200
+	id 1ptp1S-0003lW-CA; Tue, 02 May 2023 14:22:23 +0200
+Date: Tue, 2 May 2023 14:22:22 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
+Cc: Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 5/7] phy: qcom-qmp-combo: Introduce drm_bridge
-Message-ID: <ZFD8oQETtLuDH2Xg@hovoldconsulting.com>
+Subject: Re: [PATCH 6/7] arm64: dts: qcom: sc8280xp-crd: Add QMP to
+ SuperSpeed graph
+Message-ID: <ZFEAfv2GnGeblk-x@hovoldconsulting.com>
 References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-6-quic_bjorande@quicinc.com>
+ <20230425034010.3789376-7-quic_bjorande@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230425034010.3789376-6-quic_bjorande@quicinc.com>
+In-Reply-To: <20230425034010.3789376-7-quic_bjorande@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230502_050552_511634_FE9BDC36 
-X-CRM114-Status: GOOD (  29.47  )
+X-CRM114-CacheID: sfid-20230502_052221_347917_ED0FF354 
+X-CRM114-Status: GOOD (  22.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,109 +85,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 24, 2023 at 08:40:08PM -0700, Bjorn Andersson wrote:
-> The QMP combo PHY sits in an of_graph connected between the DisplayPort
-> controller and a USB Type-C connector (or possibly a redriver).
+On Mon, Apr 24, 2023 at 08:40:09PM -0700, Bjorn Andersson wrote:
+> With support for the QMP combo phy to react to USB Type-C switch events,
+> introduce it as the next hop for the SuperSpeed lanes of the two USB
+> Type-C connectors, and connect the output of the DisplayPort controller
+> to the QMP combo phy.
 > 
-> The TCPM needs to be able to convey the HPD signal to the DisplayPort
-> controller, but no directly link is provided by DeviceTree so the signal
-> needs to "pass through" the QMP combo phy.
-> 
-> Handle this by introducing a drm_bridge which upon initialization finds
-> the next bridge (i.e. the usb-c-connector) and chain this together. This
-> way HPD changes in the connector will propagate to the DisplayPort
-> driver.
-> 
-> The connector bridge is resolved lazily, as the TCPM is expected to be
-> able to resolve the typec mux and switch at probe time, so the QMP combo
-> phy will probe before the TCPM.
+> This allows the TCPM to perform orientation switching of both USB and
+> DisplayPort signals.
 > 
 > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 36 +++++++++++++++++++++++
->  1 file changed, 36 insertions(+)
+>  arch/arm64/boot/dts/qcom/sc8280xp-crd.dts | 28 ++++++++++++++++---
+>  arch/arm64/boot/dts/qcom/sc8280xp.dtsi    | 34 +++++++++++++++++++++++
+>  2 files changed, 58 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index 5d6d6ef3944b..84bc08002537 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> @@ -22,6 +22,8 @@
->  #include <linux/usb/typec.h>
->  #include <linux/usb/typec_mux.h>
+> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts b/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
+> index 547277924ea3..33c973661fa5 100644
+> --- a/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
+> +++ b/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
+> @@ -64,7 +64,7 @@ port@1 {
+>  					reg = <1>;
 >  
-> +#include <drm/drm_bridge.h>
-> +
->  #include <dt-bindings/phy/phy-qcom-qmp.h>
+>  					pmic_glink_con0_ss: endpoint {
+> -						remote-endpoint = <&mdss0_dp0_out>;
+> +						remote-endpoint = <&usb_0_qmpphy_out>;
+>  					};
+>  				};
 >  
->  #include "phy-qcom-qmp.h"
-> @@ -1332,6 +1334,8 @@ struct qmp_combo {
->  	struct clk_hw dp_link_hw;
->  	struct clk_hw dp_pixel_hw;
+> @@ -99,7 +99,7 @@ port@1 {
+>  					reg = <1>;
 >  
-> +	struct drm_bridge bridge;
-> +
->  	struct typec_switch_dev *sw;
->  	enum typec_orientation orientation;
+>  					pmic_glink_con1_ss: endpoint {
+> -						remote-endpoint = <&mdss0_dp1_out>;
+> +						remote-endpoint = <&usb_1_qmpphy_out>;
+>  					};
+>  				};
+>  
+> @@ -412,7 +412,7 @@ &mdss0_dp0 {
+>  
+>  &mdss0_dp0_out {
+>  	data-lanes = <0 1>;
+> -	remote-endpoint = <&pmic_glink_con0_ss>;
+> +	remote-endpoint = <&usb_0_qmpphy_dp_in>;
 >  };
-> @@ -3196,6 +3200,34 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
->  	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, dp_np);
->  }
+
+It's a bit hard to follow what going on when using place holder nodes
+from the dtsi like this (instead of describing all the ports directly in
+the board dts). IIRC we went a bit back and forth over this earlier and
+we already use this scheme for the display port controllers, so I guess
+this is the price we pay for being consistent.
+
+>  &mdss0_dp1 {
+> @@ -421,7 +421,7 @@ &mdss0_dp1 {
 >  
-> +static int qmp_combo_bridge_attach(struct drm_bridge *bridge,
-> +				   enum drm_bridge_attach_flags flags)
-> +{
-> +	struct qmp_combo *qmp = container_of(bridge, struct qmp_combo, bridge);
-> +	struct drm_bridge *next_bridge;
+>  &mdss0_dp1_out {
+>  	data-lanes = <0 1>;
+> -	remote-endpoint = <&pmic_glink_con1_ss>;
+> +	remote-endpoint = <&usb_1_qmpphy_dp_in>;
+>  };
+>  
+>  &mdss0_dp3 {
+> @@ -670,9 +670,19 @@ &usb_0_qmpphy {
+>  	vdda-phy-supply = <&vreg_l9d>;
+>  	vdda-pll-supply = <&vreg_l4d>;
+>  
+> +	orientation-switch;
 > +
-> +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
-> +		return -EINVAL;
-> +
-> +	next_bridge = devm_drm_of_get_bridge(qmp->dev, qmp->dev->of_node, 0, 0);
-> +	if (IS_ERR(next_bridge))
-> +		return dev_err_probe(qmp->dev, PTR_ERR(next_bridge), "failed to acquire drm_bridge\n");
-
-Using dev_err_probe() in an attach callback looks wrong as these
-functions should not be returning -EPROBE_DEFER (and this is not a probe
-function).
-
-> +
-> +	return drm_bridge_attach(bridge->encoder, next_bridge, bridge, DRM_BRIDGE_ATTACH_NO_CONNECTOR);
-
-This line is over 100 chars, but there should be no reason not to break
-it before 80 here.
-
-> +}
-> +
-> +static const struct drm_bridge_funcs qmp_combo_bridge_funcs = {
-> +	.attach	= qmp_combo_bridge_attach,
+>  	status = "okay";
+>  };
+>  
+> +&usb_0_qmpphy_dp_in {
+> +	remote-endpoint = <&mdss0_dp0_out>;
 > +};
 > +
-> +static int qmp_combo_dp_register_bridge(struct qmp_combo *qmp)
-> +{
-> +	qmp->bridge.funcs = &qmp_combo_bridge_funcs;
-> +	qmp->bridge.of_node = qmp->dev->of_node;
+> +&usb_0_qmpphy_out {
+> +	remote-endpoint = <&pmic_glink_con0_ss>;
+> +};
 > +
-> +	return devm_drm_bridge_add(qmp->dev, &qmp->bridge);
-> +}
-
-Guess you need a dummy function also for qmp_combo_dp_register_bridge()
-in case of !CONFIG_DRM.
-
-> +
->  static int qmp_combo_parse_dt_lecacy_dp(struct qmp_combo *qmp, struct device_node *np)
->  {
->  	struct device *dev = qmp->dev;
-> @@ -3459,6 +3491,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
->  	if (ret)
->  		return ret;
+>  &usb_0_role_switch {
+>  	remote-endpoint = <&pmic_glink_con0_hs>;
+>  };
+> @@ -697,9 +707,19 @@ &usb_1_qmpphy {
+>  	vdda-phy-supply = <&vreg_l4b>;
+>  	vdda-pll-supply = <&vreg_l3b>;
 >  
-> +	ret = qmp_combo_dp_register_bridge(qmp);
-> +	if (ret)
-> +		return ret;
+> +	orientation-switch;
 > +
->  	/* Check for legacy binding with child nodes. */
->  	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
->  	if (usb_np) {
+>  	status = "okay";
+>  };
+>  
+> +&usb_1_qmpphy_dp_in {
+> +	remote-endpoint = <&mdss0_dp1_out>;
+> +};
+> +
+> +&usb_1_qmpphy_out {
+> +	remote-endpoint = <&pmic_glink_con1_ss>;
+> +};
+> +
+>  &usb_1_role_switch {
+>  	remote-endpoint = <&pmic_glink_con1_hs>;
+>  };
+> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+> index 0e691bb0120c..1eb3a295e8fa 100644
+> --- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+> @@ -3006,6 +3006,23 @@ usb_0_qmpphy: phy@88eb000 {
+>  			#phy-cells = <1>;
+>  
+>  			status = "disabled";
+> +
+> +			ports {
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +
+> +				port@0 {
+> +					reg = <0>;
+> +
+> +					usb_0_qmpphy_out: endpoint {};
+> +				};
+> +
+> +				port@1 {
+> +					reg = <1>;
+> +
+> +					usb_0_qmpphy_dp_in: endpoint {};
+> +				};
+> +			};
+>  		};
+
+The binding describes three ports, where dp-in is port 2.
+
+Perhaps you don't need to describe ss-in yet, but shouldn't the port
+numbers match? Should some of these be described as required in the
+binding?
 
 Johan
 
