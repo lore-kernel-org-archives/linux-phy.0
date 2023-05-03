@@ -4,86 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78628C7EE21
-	for <linux-phy@archiver.kernel.org>; Wed,  3 May 2023 16:25:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3E43C77B75
+	for <linux-phy@archiver.kernel.org>; Wed,  3 May 2023 18:32:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x9Zq5uvh/BXPI5SxSpChOSGip2OBY0HV/XtP3lil05c=; b=M0FXQHVp+4wMpa
-	E+1q6SeSfUNjeIvMRhv5nvN9izeQdxuAUuzoUIPzGMjzfKTS+AWcfyFkAu7r4NE5R5ATpIVL4A5e2
-	3J2y2KgZ9A8IfweKJLrgmlZ05KST48TJC4Q98IX/jqsE4HcdmaG/2BXgy9gxlmWnPJAxw4yecEYaG
-	dx/q7niKDBhDt0JDFUI6wHKss/OdyXFFmE7Q7U9wxVpUqcIASWeJY/tZPkqAksTtuo1oRqAltfInU
-	s7YI+ghRJrk8rp5xZW6MnRk55GBHCQZFj4LN3kthMfi2dEXLYKgMyrg9zcn4xq4252EmbG0rZGt1T
-	7bl5DsYqWCta0Zc/FPEA==;
+	List-Owner; bh=zQitzoxl/nGOI3xYK9iRyWBodRAKcQR5EQ64KPYgn44=; b=fL3W25vpLjsBNu
+	hqDaYGMpRqQGTZOpVG95MHR81J9DzWnGRzadPxveZBqb7bbwVQDd2K1z7xKVM9vNrQjnKrohS8hfp
+	zYyxSwJY9sk9kGL2CKgWn6xE+Wx5C5TEbIPxQ3FH0YBQ71FUS6LZmOwQO/xwsKGXc+1B6RuBXqIRL
+	oyx7x6IJsFD9e/hhKVigZFpaFoNKvlWbSZ4LyIa82xPUQiHztaccPqK8bX4gvowWTCjOAtTAd+YSe
+	0/zUbP36kPwXEp3djQbsNlfXKZ2prtD4ewjQ5i3aEZh9RujYI8O8ece5O3NSPLgAWcDYNlJ9cKsWU
+	bXm+P3uiDbp9n3NTWzRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puFHu-0054x4-0J;
-	Wed, 03 May 2023 16:25:06 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1puHH3-005PSm-0k;
+	Wed, 03 May 2023 18:32:21 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puFHr-0054w6-2V
+	id 1puHH0-005PRv-07
 	for linux-phy@lists.infradead.org;
-	Wed, 03 May 2023 16:25:05 +0000
-Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-50bd2d7ba74so8411996a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 03 May 2023 09:25:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683131100; x=1685723100;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Ze0Jut8Jaw/ifknxqzKnyodBsn/9QHtRL/qVVYq1llw=;
-        b=gz/b3Y3bnJRGNrunc5pvQ52kNHqDIXCDEt4x4jhB8mASaiBP7eBrSifq20QrXloxgD
-         Li4IrdSsWj6ezR+oguVZMmdxW0P0+tN3zyOOy52LIIkeMNMMNu4696nKi2Ja81xapDAv
-         iT1n4aJKv0PpeVaO3HbD8KRwVX1XQOChLXugETqEqhnOfifjg/1Ry5T1OqdOxwb34tUZ
-         nAWcVntJ7M0CARs7uAFvZyejjKh2pqUO/vUveWuD5VSDRqFB+phI1ToRAdMInwymNhIR
-         eHNPKGU7FOHJNktIfMGCyqkaavg5vCsUiRm4WSkYDk3uCvkuQIg42zSU2gHLaAwrQTJB
-         pvig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683131100; x=1685723100;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ze0Jut8Jaw/ifknxqzKnyodBsn/9QHtRL/qVVYq1llw=;
-        b=TwddJTFP3eKiQXkM2sXTd+tMdavmCOhQRHCGjONM1BmCGknOvvSLMVq3nFcCpoKxDY
-         R5mFScgj+hfGkae2sJnf8EP+kG+/0tYKaYm1xDOzIwyKk0DMuZghCg4yv000ixNWuhlG
-         C5d5ZsssT03nw1sjKZA7nZuHXwH5o0U0O6pKMtrT052/4iiDaCXRKFBxAB8yHvxBYAi7
-         lFofAIasejSXpOXkSzy1LpfFp+ZQ5hKpaziNbj35dOUnknV1eWoujyfTTNB63JgCX/OB
-         cFye0sp699n22UYQ7E1Eos/+NtIIoKZ+DeNZm2F3L41oevpInIPDWr47GxP0uxw2ormC
-         xclw==
-X-Gm-Message-State: AC+VfDzoQYM+l1/2trTTju9mFlHK1cclICBn8iGWeLunwzaPLUImhgIr
-	JpvklckxKdEHE4qXYbYMJlo5MA==
-X-Google-Smtp-Source: ACHHUZ6Ep0HhQcksbydX/7YXvwqa1Tty4Z/q8q7c2xvPyK6lt1j7GimAB71oBrZSotEDHVh5AIKLCQ==
-X-Received: by 2002:a17:907:9308:b0:94e:bf3e:638 with SMTP id bu8-20020a170907930800b0094ebf3e0638mr1939840ejc.11.1683131100188;
-        Wed, 03 May 2023 09:25:00 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:db42:e3d0:c55a:8cf1? ([2a02:810d:15c0:828:db42:e3d0:c55a:8cf1])
-        by smtp.gmail.com with ESMTPSA id sb10-20020a1709076d8a00b00958079b676asm14837366ejc.122.2023.05.03.09.24.58
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 03 May 2023 09:24:59 -0700 (PDT)
-Message-ID: <faefbbed-0f62-e569-455d-0d21b363f8f3@linaro.org>
-Date: Wed, 3 May 2023 18:24:57 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH v10 1/4] dt-bindings: phy: qcom,qmp-usb: Drop legacy
- bindings and move to newer one (SM6115 & QCM2290)
-Content-Language: en-US
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: agross@kernel.org, linux-kernel@vger.kernel.org, andersson@kernel.org,
- bhupesh.linux@gmail.com, robh+dt@kernel.org, konrad.dybcio@linaro.org,
- kishon@kernel.org, vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- dmitry.baryshkov@linaro.org
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
- <20230502053534.1240553-2-bhupesh.sharma@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230502053534.1240553-2-bhupesh.sharma@linaro.org>
+	Wed, 03 May 2023 18:32:19 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BA09462F5F;
+	Wed,  3 May 2023 18:32:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 2DF43C433D2;
+	Wed,  3 May 2023 18:32:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683138736;
+	bh=0wIttIPof6+XCGZuRAIFD1NPVVm2uFFs1iAfaR6EXRw=;
+	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+	b=DFDPL2jz/y2BPyqzrDxGzixTrmCYORISdzEQyawaV5k1XdY9qJ3TkA8eMQ92VsnAW
+	 yWHRM51Y4tr5k8r9Ofs1XSyE6XTFAD9/nM+3pmhYGG8IBEZZd8o72I0Ho/JXQT5DWQ
+	 RSp1/+AQINhehZgBE3m0V74pLPiuLmxQR6skltrkK5UIOrdjLMUPQjqJnkhTl/NluZ
+	 o0+G0aMr+dYG7qKXGZfZM2umMVw/PM+YxXDW25zdugICZJFu7l/MJJ2fADisq4U/p7
+	 uXE4CsnZ2K0NrJOQaXudc2+jQOnD2vPtzxvf4KjH7UZv74iVxE0eesmMSVI844f4Gu
+	 ydpSPRj5GBgsw==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 12552C395C8;
+	Wed,  3 May 2023 18:32:16 +0000 (UTC)
+Subject: Re: [GIT PULL]: Generic phy updates for v6.4
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <ZFI74eeUzVPKhi4f@matsya>
+References: <ZFI74eeUzVPKhi4f@matsya>
+X-PR-Tracked-List-Id: Linux Phy Mailing list <linux-phy.lists.infradead.org>
+X-PR-Tracked-Message-Id: <ZFI74eeUzVPKhi4f@matsya>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-6.4
+X-PR-Tracked-Commit-Id: a0106132372120dd0abf5ad7636614e5aeb5da08
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 54bdf8a39931cf8fe2c74432e715353d9a1c1107
+Message-Id: <168313873606.23026.140779276363218902.pr-tracker-bot@kernel.org>
+Date: Wed, 03 May 2023 18:32:16 +0000
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, LKML <linux-kernel@vger.kernel.org>, Linux Phy <linux-phy@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230503_092503_820915_34E50119 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20230503_113218_137062_EE4F9870 
+X-CRM114-Status: UNSURE (   5.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,60 +77,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/05/2023 07:35, Bhupesh Sharma wrote:
-> 'qcom,msm8996-qmp-usb3-phy.yaml' defines bindings for several PHYs
-> which predate USB -> USB+DP migration. Since SM6115 and QCM2290
-> nodes for USB QMP phy are being added to dtsi files by followup patches,
-> move these bindings instead to the newer style
-> 'qcom,sc8280xp-qmp-usb3-uni-phy.yaml' file.
-> 
+The pull request you sent on Wed, 3 May 2023 16:18:01 +0530:
 
+> git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-6.4
 
->    clock-names:
-> -    items:
-> -      - const: aux
-> -      - const: ref
-> -      - const: com_aux
-> -      - const: pipe
-> +    maxItems: 4
->  
->    power-domains:
->      maxItems: 1
-> @@ -71,6 +69,42 @@ required:
->  
->  additionalProperties: false
->  
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,qcm2290-qmp-usb3-phy
-> +              - qcom,sm6115-qmp-usb3-phy
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 4
-> +        clock-names:
-> +          items:
-> +            - const: cfg_ahb
-> +            - const: ref
-> +            - const: com_aux
-> +            - const: pipe
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/54bdf8a39931cf8fe2c74432e715353d9a1c1107
 
-I am pretty sure I acked it and there were no changes here... but since
-you did not include it, then lets keep the clock order the same as
-sc8280xp. ABI is anyway affected, right?
+Thank you!
 
-Best regards,
-Krzysztof
-
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 -- 
 linux-phy mailing list
