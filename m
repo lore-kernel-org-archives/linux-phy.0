@@ -4,90 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B238C77B78
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 03:29:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A22BC77B78
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 05:55:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5dQbmpNNkX5OmRwzG4LFqekx8cbN9zP1R3S0grren4w=; b=imlpXQCGN455uv
-	R0oAnQdZ1b4vFTlvFiV+12C7clImRM0K9nTyocTNWhk0aLdZkYNSGYry81QSOKzMAo7fI4/LT7Hk0
-	Xq15H1FxvSbkwCPk/QYLAjcqrYiWM8mSu9TtdmThNpUhz+XpJGVoIW6kuWxSKM2YaNXW7kmB0XNj6
-	0Lv1GoTYB0OjLyifBU6urD1o8v3WRb5AD96E3cCffwKvlnbNRj+tT/v3cGmtOR/KnPCjl+CRic6jD
-	WBq2clwVP/6eF95zU2zGfElFyPb+H63bXZaiZrhMbD4l+lqxfpr+kL3PoOd2vqzhsk4xJfVckiX+Q
-	jOvif22WCgW7EESdVO8Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R+NnvcRMbvF56GIOBvCg/j5JO6BzLIoTHrIwRJFzC7c=; b=WhJfs41YkCudyK
+	gXm5S3TGCneT+/7llM12GB5v8EcdtQxmwsBBzFLe/3aqPWwM/eEj6HZYbZPsS5Fq8vyBZ12FztLpo
+	pUsx90no0GJcapkHuPVIkCvtvLM6yu5jXNqg/UuwFf8f7SdpyPJDG+I/cZ0FG/JkV6jjZ38rKi7NI
+	zD7eVWOrgl8W8SCrXO0pcqGlw/l2D+duVys1zB+hokY/KmdY/cDHDDHAPIk4Q9RKccOogiNqOuNXb
+	OvuGBp9W3xmwgxRPEvEqsoaRkLUlin1w0pPvQVXTM244SfZxGcuGp3wbbQICNYN5WxeXnKAZ2TGFo
+	fw3yzWS0kJx+rhsv/7QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puPfK-006TYu-06;
-	Thu, 04 May 2023 03:29:58 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1puRwC-006gd1-0N;
+	Thu, 04 May 2023 05:55:32 +0000
+Received: from mail-dm6nam11on2061d.outbound.protection.outlook.com ([2a01:111:f400:7eaa::61d] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puPfH-006TYH-14
+	id 1puRwA-006gcD-0T
 	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 03:29:56 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3443M0iN010768;
-	Thu, 4 May 2023 03:29:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=8Fr63kfb0qAml3Qgr7x5BnMF93LqV2bwaEcrP8GYe+U=;
- b=bFUNwaj/CokqNgWgcymo+gSJPsEz36yv1ioeKPRhEyaRl9wTL//tbtt0UeYM/D1+xNJb
- t0iEJc+f41F1ZnzABRUnw39A3FUDpgNhBS8A00GytQITOJ9PfD08iS/WMmwXE0m4Z7jW
- iqyArHj5ng9BzLO9DI2r67msSJrMk6ckgMUur+Wy0jphEAm6OCVaCy0Uf689DOqsVAOT
- Kn5Y/OMxOQE7MX9vpXV2qCvD5TztnveBTZzVRUeJppP3N0FOj/LepznYM9M6LMhka7Zz
- sUByF6/eZSZ7QL3/cRAIxWL+1tK4P3my5ve9OWfvgiTyhEXMkRDCJVm9Wjf2sfCot/cH XQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qbeb2twe9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 May 2023 03:29:48 +0000
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3443T8V9014515
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 4 May 2023 03:29:08 GMT
-Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+	Thu, 04 May 2023 05:55:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nFGc3OXTK3iEDZr/Czg9RoD6CDTwXtfh8hk8Oq8HgOYG6HN8YvnQecqzk7za+B6ospyNEIy0P8Qx/peecEFZFTZyw+bWpvdZ6ChrGFsXClGnKf1+VPqh+HV9NNM/giW2qI3ZDCztLJfcR5iN7BizhMGxXRywXSmXZO0W856etAGNhwBuqYJawQ4BzKj1HMCybl090tFWfg+8F6PLgMR3CDkuID7ATRucrtsFrDJ2RIU/Q8qUiVKg25/xASimlDDjp/94NrakCg+mGN9sChisZs/lA5Q5zHOKItDtl79HRhCFS7Q7MJEHjfNltc//SAmbhNbfCElGcMtJT5oLovaWPw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Fsk3/RldXT2w9iuRaYKD1M5QGVxMavvlE5HZXcOCnZU=;
+ b=EonBbsd9+JMqOzdfMshG2XPZtsouAe9od5hCBNvgstI2GRxwH9ia+ujgcBW0bQpqNUfGir93xzTCdYquemXr4XOuHQT6IXLH/15PczS/v9/Eoc2cklUMr3M2rlRl75UtrKSZOpM7Y01DHDweKKSCPAkPfe1dfIX6gW/5gtTjWAkOGZc9Jt6vyiSAls1eQ9bKi+84+owxACM+2eFSqHMATxj6cmOT+7FG6hL26SQdV+H2HIHSx44uPP2reJlW1r7RWbz4tp4owuqYna/J8L1WSNsMm16o3UoD7S3v6sqmWgpYmb6Loc55JIuhlljnl8/EF6K6m5eskDfCyMfMR2hIIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fsk3/RldXT2w9iuRaYKD1M5QGVxMavvlE5HZXcOCnZU=;
+ b=rxiFiLZwuDVdqSKtn77CsxdME0RRoRb/d13o9qQzvZDwKuwOWg8Vk7/tQHRT2g5A7WGUF9FKKy8/DUQEMqeVCj6L1ZvEgxr8zge/cNjFl0l2yjbWNa3UleB/biEsGUzO5YSUcruXbSguouEMnV4O1Hc5nP0Dmxvj3uguf6SXAkyQ7Fg8UyfVg7EKynPH+rT2KUA+Zr5a8HFAa/DU7pkw1te/3NSbD3AikjiT2yrrXNpFFrgB4XdiuR5O9YHqN2FUf7ToT3X9CTZq4DU7jBjyND3cP5zG/3u4SeygEnMqpkwxuC2EdXpeq9wS1DiBD257bCg3qFcOgyJo/aLOap1mhg==
+Received: from BYAPR02CA0012.namprd02.prod.outlook.com (2603:10b6:a02:ee::25)
+ by DM4PR12MB8474.namprd12.prod.outlook.com (2603:10b6:8:181::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6363.20; Thu, 4 May
+ 2023 05:55:23 +0000
+Received: from CO1NAM11FT073.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:a02:ee:cafe::e0) by BYAPR02CA0012.outlook.office365.com
+ (2603:10b6:a02:ee::25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6363.26 via Frontend
+ Transport; Thu, 4 May 2023 05:55:22 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ CO1NAM11FT073.mail.protection.outlook.com (10.13.174.196) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6363.26 via Frontend Transport; Thu, 4 May 2023 05:55:22 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.5; Wed, 3 May 2023
+ 22:55:09 -0700
+Received: from 0e64808-lcelt.nvidia.com (10.126.231.37) by
+ rnnvmail201.nvidia.com (10.129.68.8) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 3 May 2023 20:29:08 -0700
-Date: Wed, 3 May 2023 20:29:07 -0700
-From: Bjorn Andersson <quic_bjorande@quicinc.com>
-To: Johan Hovold <johan@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Rob Herring <robh+dt@kernel.org>,
-        Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 3/7] phy: qcom-qmp-combo: Introduce orientation variable
-Message-ID: <20230504032907.GF870858@hu-bjorande-lv.qualcomm.com>
-References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-4-quic_bjorande@quicinc.com>
- <ZFD4gM9dUQwBmSUe@hovoldconsulting.com>
+ 15.2.986.37; Wed, 3 May 2023 22:55:07 -0700
+From: Haotien Hsu <haotienh@nvidia.com>
+To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, "Kishon Vijay
+ Abraham I" <kishon@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>, Philipp Zabel
+	<p.zabel@pengutronix.de>, <linux-phy@lists.infradead.org>,
+	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+CC: Wayne Chang <waynec@nvidia.com>, EJ Hsu <ejh@nvidia.com>, Haotien Hsu
+	<haotienh@nvidia.com>
+Subject: [PATCH] phy: tegra: xusb: Fix use-after-free issue
+Date: Thu, 4 May 2023 13:54:46 +0800
+Message-ID: <20230504055446.2039372-1-haotienh@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZFD4gM9dUQwBmSUe@hovoldconsulting.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: F59Z4Zrn3cNGM6MqNcKJpje30pYIbVf7
-X-Proofpoint-GUID: F59Z4Zrn3cNGM6MqNcKJpje30pYIbVf7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-04_01,2023-05-03_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 spamscore=0 bulkscore=0 mlxscore=0 phishscore=0
- malwarescore=0 adultscore=0 clxscore=1015 priorityscore=1501
- mlxlogscore=999 lowpriorityscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2303200000 definitions=main-2305040028
+X-Originating-IP: [10.126.231.37]
+X-ClientProxiedBy: rnnvmail203.nvidia.com (10.129.68.9) To
+ rnnvmail201.nvidia.com (10.129.68.8)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CO1NAM11FT073:EE_|DM4PR12MB8474:EE_
+X-MS-Office365-Filtering-Correlation-Id: fd61de34-4801-4e18-7a2d-08db4c642666
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	rQQbkk86WQhJGI+1vc0yJ4/SYAENJExcah2CQqB8FRRcKTQn6L8uaUZ38xuNeCzHrH3BrFOkvjek8ZelAvvPwx/BIz3VwjMMuuBI+fOBgXh5qRh4734a6Yb2TpQoqN7aKUCosCLXJbUTBDgADjRSVLSLJA9ag7bnNS48FbPZXRbhMq1kbTNMCTuBSgeVfrkRSOCnjaXkCBUm7o3tArZrp7amFYQP2f9FcbHKAN9gX7q+BPZepNFlmmXRXtkSstExhW5SZRpJjqYe+RMPiZZQ9w1C7NxwfKXJF9fPNuH3O1ZPfa+ACAtWteV4qnMGTLEf4+HU6ntigbRK9U7BfptADYnDmDOBkFXxDohngqfNyIRjBI26NUCCRXQ2lKOAqkv0bHM6yI9MTZIUgE2NjSpfx1mjRjlJ+Spfe5NGe+OSuiDUTgKajy5rCwQ31ewCrgRyz5z6ZVm42cXnyDmIKLdePHcCnsn9QfWQDQ1PMhs7b9D40q7fn0+GGsNYr8RvbC+D54y41FKIsgCN/jGWwD23PFMFunHJdZ9vxqRglmMm0++eYL0AUFJP6vw70m/iKhoZR+n/dXr5ODf60rvppIb80IAlBx+R1pvSeYdbAwCTUZ88MpRVxlOnc4g1PEGzjJOiByunHSsbUECoQBqYVmLNfaWe10bhtc+95ZkSPh2+hczHmdw5wi+ZMUWtqnuQuSXXeLHmG9feHj4S9pIexD/WSVtmNSugqHTTplmIw/7c7w8=
+X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230028)(4636009)(136003)(376002)(346002)(396003)(39860400002)(451199021)(46966006)(36840700001)(40470700004)(86362001)(36756003)(82310400005)(2906002)(40460700003)(40480700001)(6666004)(36860700001)(47076005)(16526019)(2616005)(336012)(83380400001)(426003)(1076003)(107886003)(4326008)(26005)(186003)(54906003)(478600001)(110136005)(70206006)(70586007)(316002)(82740400003)(356005)(41300700001)(7636003)(5660300002)(7696005)(8676002)(8936002)(2101003);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2023 05:55:22.6810
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd61de34-4801-4e18-7a2d-08db4c642666
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT073.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB8474
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230503_202955_398265_AF2E6E61 
-X-CRM114-Status: GOOD (  32.53  )
+X-CRM114-CacheID: sfid-20230503_225530_208951_33EF63B8 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,93 +125,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 02, 2023 at 01:48:16PM +0200, Johan Hovold wrote:
-> On Mon, Apr 24, 2023 at 08:40:06PM -0700, Bjorn Andersson wrote:
-> > In multiple places throughout the driver code has been written in
-> > prepration for handling of orientation switching.
-> > 
-> > Introduce a typec_orientation in qmp_combo and fill out the various
-> > "placeholders" with the associated logic. By initializing the
-> > orientation to "normal" this change has no functional impact, but
-> > reduces the size of the upcoming introduction of dynamic orientation
-> > switching.
-> > 
-> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 54 +++++++++++++----------
-> >  1 file changed, 30 insertions(+), 24 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > index 7280f7141961..6748f31da7a3 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > @@ -19,6 +19,7 @@
-> >  #include <linux/regulator/consumer.h>
-> >  #include <linux/reset.h>
-> >  #include <linux/slab.h>
-> > +#include <linux/usb/typec.h>
-> >  
-> >  #include <dt-bindings/phy/phy-qcom-qmp.h>
-> >  
-> > @@ -63,6 +64,10 @@
-> >  /* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
-> >  #define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
-> >  
-> > +/* QPHY_V3_DP_COM_TYPEC_CTRL register bits */
-> > +#define SW_PORTSELECT_VAL			BIT(0)
-> > +#define SW_PORTSELECT_MUX			BIT(1)
-> > +
-> >  #define PHY_INIT_COMPLETE_TIMEOUT		10000
-> >  
-> >  struct qmp_phy_init_tbl {
-> > @@ -1323,6 +1328,8 @@ struct qmp_combo {
-> >  	struct clk_fixed_rate pipe_clk_fixed;
-> >  	struct clk_hw dp_link_hw;
-> >  	struct clk_hw dp_pixel_hw;
-> > +
-> > +	enum typec_orientation orientation;
-> >  };
-> >  
-> >  static void qmp_v3_dp_aux_init(struct qmp_combo *qmp);
-> > @@ -1955,29 +1962,23 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
-> >  static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
-> >  {
-> >  	u32 val;
-> > -	bool reverse = false;
-> > +	bool reverse = qmp->orientation == TYPEC_ORIENTATION_REVERSE;
-> 
-> Adding parentheses around the right-hand side should make this a little
-> easier to parse.
-> 
-> It also looks like these callbacks end up being called without holding
-> the qmp->phy_mutex via phy->power_on(). Perhaps there is no risk for a
-> concurrent switch notification and dp phy power-on but it's not that
-> obvious.
-> 
+From: EJ Hsu <ejh@nvidia.com>
 
-It seems we're arriving here from hpd_event_thread(), while
-phy_power_on() and phy_power_off() will be called in some other context.
-I've not been able to convince myself if DP driver ensures ordering, or
-if we have an existing race here...
+For the dual-role port, it will assign the phy dev to usb-phy dev and
+use the port dev driver as the dev driver of usb-phy.
 
-Unless you insist, I would prefer to follow up with an additional patch
-once we've landed this series. The fix will depend on the phy_mutex
-shuffling patch anyways...
+When we try to destroy the port dev, it will destroy its dev driver
+as well. But we did not remove the reference from usb-phy dev. This
+might cause the use-after-free issue in KASAN.
 
-> > +	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-> 
-> Also could you add these before u32 val to maintain an approximation of
-> reverse xmas style?
-> 
+Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
+Cc: stable@vger.kernel.org
 
-I'd be happy to do so :)
+Signed-off-by: EJ Hsu <ejh@nvidia.com>
+Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
+---
+ drivers/phy/tegra/xusb.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
 
-Regards,
-Bjorn
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 78045bd6c214..515298a9a433 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -563,13 +563,6 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
+ 
+ static void tegra_xusb_port_unregister(struct tegra_xusb_port *port)
+ {
+-	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
+-		of_platform_depopulate(&port->dev);
+-		usb_role_switch_unregister(port->usb_role_sw);
+-		cancel_work_sync(&port->usb_phy_work);
+-		usb_remove_phy(&port->usb_phy);
+-	}
+-
+ 	if (port->ops->remove)
+ 		port->ops->remove(port);
+ 
+@@ -832,6 +825,14 @@ void tegra_xusb_usb2_port_remove(struct tegra_xusb_port *port)
+ {
+ 	struct tegra_xusb_usb2_port *usb2 = to_usb2_port(port);
+ 
++	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
++		of_platform_depopulate(&port->dev);
++		usb_role_switch_unregister(port->usb_role_sw);
++		cancel_work_sync(&port->usb_phy_work);
++		usb_remove_phy(&port->usb_phy);
++		port->usb_phy.dev->driver = NULL;
++	}
++
+ 	regulator_put(usb2->supply);
+ }
+ 
+-- 
+2.25.1
 
-> And similar below.
-> 
-> Johan
 
 -- 
 linux-phy mailing list
