@@ -4,92 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3A16C77B78
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 15:00:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA7A4C77B7C
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 15:06:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8FfvgIbdsuXsPEDhWljUbe/C/2C5f1aJnPdBILTeTAk=; b=2KPUbi51H12xXn
-	YDrfmdkH+zsbSukQnECLUgnPa7JFgKoTcWk4ocBWPcUpB/X092K3oIO1lBHWSIhq1Mh6564+pwDXf
-	xkpLFFDjDjjDztQ7T9FU5zqs91CU0troINYQS374QBZelMMhDx5RA/Zxw/Pg0/OMHPOIVh6R4dtn7
-	+1UjO4HJKGe8zK0K4tcCfe7Nh5dGgi66DAktF+glQXN5EPCMZ+dMIRyAI+g2U1uxR/e0tROCVTqEK
-	MVPkRw471N+augZ3QYkMHYxJbKf/ya7pwiz/FSDwej+BJeoSAeCBmcRlvFkWagImWF/Xy4AVjy9lA
-	mJIKP7+JDDPSeCrou2TQ==;
+	List-Owner; bh=AitqDByq4gztt1T7bAD3Ecz2PfUNRYT9IZXMZ/fAniM=; b=Sq/EDhPcQQj9NI
+	Cb6NoRlqIQfXsYneDzQCT8BYHqNLG2m6EvC6s3nO5HUmbEJBwmBgpnO9MktZzDsnylxcCa6lTnHf2
+	BNflgcz1mLiOmlRMC8muhxCW2cz41sQzRj5QnTd8vd5bTrtsQOALKj7Bn006O654kw8doCD6dsDfS
+	EDXf81FCoru1+hlIAD7JsBt9Y89hzuGbkjqkmJSil0rBogO6QDGA+UzXpnPT8A741Sry95D/9WtM7
+	l9y1b1X8CRTZU0RtXciyIpwtf2/b2dP2lWYhpcs1UZNyol2d90k27ZgWnfTcO/r9Rsw7tW/SSMlCX
+	fhZI/vpslLGl2lxdTEKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puaRm-008AL9-11;
-	Thu, 04 May 2023 15:00:42 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1puaXO-008Ame-1a;
+	Thu, 04 May 2023 15:06:30 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puZMM-0080j7-1a
+	id 1puaXM-008Am1-06
 	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 13:51:04 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-2f95231618aso352814f8f.1
-        for <linux-phy@lists.infradead.org>; Thu, 04 May 2023 06:50:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683208254; x=1685800254;
-        h=content-transfer-encoding:in-reply-to:organization:from:references
-         :cc:to:content-language:subject:reply-to:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=CBa5yf09RWH4yiJkKKfGA5cpxuaznqIjeI5vqh5jKnc=;
-        b=xXTCdKLJQRFOFCzlTq25XVRG7iQ2YTig8JrOBlX202YIt83MpXRScjaLxgVkY0zWnX
-         DAVukRu+mKp/O1lsgwViKkyFW5TflkdO+9RSnOsPHJf1UAuvmWhLpdvus2AS6Xx56NDm
-         CfWYEWqfh/q/sQRS9cAWeu5+0DKAw8bGkidhmv8yzMLKCAVlMYDjKTkaErzmqMlx9vh1
-         DbS/JUBo+CCNe2h2qgjAEEJuEUOYtQ2xsNqwMrt8nEvQB4N73in46NuRPL+RS0Rw5t61
-         ZjElPUzI86zAglFLOI5kjjaAYdQ2zK8mOxkBdMX3cvwx4ZC5ZEWZEDh6z887sMcghrwC
-         EYaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683208254; x=1685800254;
-        h=content-transfer-encoding:in-reply-to:organization:from:references
-         :cc:to:content-language:subject:reply-to:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=CBa5yf09RWH4yiJkKKfGA5cpxuaznqIjeI5vqh5jKnc=;
-        b=Rgy9WehFeGShunikXTOuE/K6uwC2QL9/bJnNWqh+LIcvTSZpETwVEGp+qh7+F9BE69
-         KwAQqDWhgTxEtjCrUwqXp8QtYdQsWzY7FC5i+qlDj8opstJ1ji8phVTwfXDvoShclN1N
-         a1bubxDeoyxmeXrc6lcrgfYVF1NXmySppJ/trIPYa953omtuEjCgTO8XWmCbORGjXcvI
-         p7venQ0d/0dH/mKgLTsEJrXJMeg2hBIWo6RwAvjWAO5yWqU47OPB0LW1HWp1Fbl6LwMh
-         xBl0P+DvpBNioBPzi299XGwih+uPbjIlKRdkHIVJQwL2QwEmq/adCvdRwI3Kv+qJoHbE
-         Aknw==
-X-Gm-Message-State: AC+VfDyR6if+x30PkAMp4Ih5hNbG7MZWJJan6xFFcdS+PwZD7f+hBug+
-	fsdqUQsmGLh09EGniCpUwJ0Neg==
-X-Google-Smtp-Source: ACHHUZ5cfrBrKo0XKh8lYl7HP9vVSfMA8XPRqej+s9gQ4qUP1IFXfzgg0heMVynEUJsKqQXaLU6aZw==
-X-Received: by 2002:a05:6000:1b82:b0:306:2a21:b5ff with SMTP id r2-20020a0560001b8200b003062a21b5ffmr2371851wru.17.1683208254591;
-        Thu, 04 May 2023 06:50:54 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:982:cbb0:52fb:80bd:bee3:f741? ([2a01:e0a:982:cbb0:52fb:80bd:bee3:f741])
-        by smtp.gmail.com with ESMTPSA id y6-20020a1c4b06000000b003f17131952fsm4982246wma.29.2023.05.04.06.50.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 04 May 2023 06:50:54 -0700 (PDT)
-Message-ID: <ea0ec8b4-ec87-65f0-4f0e-504d8059b1e6@linaro.org>
-Date: Thu, 4 May 2023 15:50:53 +0200
+	Thu, 04 May 2023 15:06:29 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 37417634DC;
+	Thu,  4 May 2023 15:06:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E19BC433EF;
+	Thu,  4 May 2023 15:06:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683212786;
+	bh=e6TydR08eXObbWSXZBvKj7cOlcyvP0Fh60ymlnpBqgc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=K/Vpd9pZAy58FmzsTrVPg7RSwqo8089WjAItbdp13rLow5t9bcUzlJ4htHc4Mr3FQ
+	 sQXsqiQJ57f2sEWjfnljFUw8gS8TfYGc/xsgHOpksA3N1WVh2qroPFRL/EQMpXVtSo
+	 KntQGMiE5tUy1opVNzPCaLAPpXB4qMHqTebkk7hJPWKm/NBFDI3pkxPAjw7dBp8o4W
+	 uWgRg+XLACf91TLagSJStYTE8+pl9jOen7F/78+UNcxfjL5DpGlqdGOX9ziqlLmYKy
+	 Kj1OWvhGIjccXtWurEAHmJQLAfDmsv/RZAKXAOSQqRQ+q9PqO1BODpLIAxnd7+FfK6
+	 zgdAdQ/dEVdsw==
+Date: Thu, 4 May 2023 08:06:24 -0700
+From: Nathan Chancellor <nathan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>,
+	LKML <linux-kernel@vger.kernel.org>,
+	Linux Phy <linux-phy@lists.infradead.org>,
+	Nick Desaulniers <ndesaulniers@google.com>, llvm@lists.linux.dev
+Subject: Re: [GIT PULL]: Generic phy updates for v6.4
+Message-ID: <20230504150624.GA1000378@dev-arch.thelio-3990X>
+References: <ZFI74eeUzVPKhi4f@matsya>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH 1/7] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add
- ports and orientation-switch
-Content-Language: en-US
-To: Bjorn Andersson <quic_bjorande@quicinc.com>,
- Bryan O'Donoghue <pure.logic@nexus-software.ie>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Johan Hovold <johan@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-2-quic_bjorande@quicinc.com>
- <CAJB8c06H+3pxoUGXWOXyCgtbOj6y0OhSxb9dvoTo1b6iChy7ng@mail.gmail.com>
- <20230427195232.GB870858@hu-bjorande-lv.qualcomm.com>
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Organization: Linaro Developer Services
-In-Reply-To: <20230427195232.GB870858@hu-bjorande-lv.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <ZFI74eeUzVPKhi4f@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_065102_534099_6495D48A 
-X-CRM114-Status: GOOD (  20.49  )
+X-CRM114-CacheID: sfid-20230504_080628_172254_486A53AF 
+X-CRM114-Status: GOOD (  17.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,55 +71,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjcvMDQvMjAyMyAyMTo1MiwgQmpvcm4gQW5kZXJzc29uIHdyb3RlOgo+IE9uIFdlZCwgQXBy
-IDI2LCAyMDIzIGF0IDExOjIxOjI5QU0gKzAxMDAsIEJyeWFuIE8nRG9ub2dodWUgd3JvdGU6Cj4+
-IE9uIFR1ZSwgQXByIDI1LCAyMDIzIGF0IDQ6NDDigK9BTSBCam9ybiBBbmRlcnNzb24KPj4gPHF1
-aWNfYmpvcmFuZGVAcXVpY2luYy5jb20+IHdyb3RlOgo+Pj4KPj4+IFRoZSBRTVAgY29tYm8gcGh5
-IGNhbiBiZSBjb25uZWN0ZWQgdG8gYSBUQ1BNLCBhIFVTQiBjb250cm9sbGVyIGFuZCBhCj4+PiBE
-aXNwbGF5UG9ydCBjb250cm9sbGVyIGZvciBoYW5kbGluZyBVU0IgVHlwZS1DIG9yaWVudGF0aW9u
-IHN3aXRjaGluZwo+Pj4gYW5kIHByb3BhZ2F0aW5nIEhQRCBzaWduYWxzLgo+Pj4KPj4+IEV4dGVu
-ZCB0aGUgYmluZGluZyB0byBhbGxvdyB0aGVzZSBjb25uZWN0aW9ucyB0byBiZSBkZXNjcmliZWQu
-Cj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogQmpvcm4gQW5kZXJzc29uIDxxdWljX2Jqb3JhbmRlQHF1
-aWNpbmMuY29tPgo+Pj4gLS0tCj4+PiAgIC4uLi9waHkvcWNvbSxzYzgyODB4cC1xbXAtdXNiNDNk
-cC1waHkueWFtbCAgICB8IDUxICsrKysrKysrKysrKysrKysrKysKPj4+ICAgMSBmaWxlIGNoYW5n
-ZWQsIDUxIGluc2VydGlvbnMoKykKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFtcC11c2I0M2RwLXBoeS55YW1s
-IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFt
-cC11c2I0M2RwLXBoeS55YW1sCj4+PiBpbmRleCAzY2Q1ZmMzZThmYWIuLmMwMzdhYzkwY2U3ZiAx
-MDA2NDQKPj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNv
-bSxzYzgyODB4cC1xbXAtdXNiNDNkcC1waHkueWFtbAo+Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFtcC11c2I0M2RwLXBoeS55YW1s
-Cj4+PiBAQCAtNjAsNiArNjAsMjYgQEAgcHJvcGVydGllczoKPj4+ICAgICAgIGRlc2NyaXB0aW9u
-Ogo+Pj4gICAgICAgICBTZWUgaW5jbHVkZS9kdC1iaW5kaW5ncy9kdC1iaW5kaW5ncy9waHkvcGh5
-LXFjb20tcW1wLmgKPj4+Cj4+PiArICBvcmllbnRhdGlvbi1zd2l0Y2g6Cj4+PiArICAgIGRlc2Ny
-aXB0aW9uOgo+Pj4gKyAgICAgIEZsYWcgdGhlIFBIWSBhcyBwb3NzaWJsZSBoYW5kbGVyIG9mIFVT
-QiBUeXBlLUMgb3JpZW50YXRpb24gc3dpdGNoaW5nCj4+PiArICAgIHR5cGU6IGJvb2xlYW4KPj4+
-ICsKPj4+ICsgIHBvcnRzOgo+Pj4gKyAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy9wcm9w
-ZXJ0aWVzL3BvcnRzCj4+PiArICAgIHByb3BlcnRpZXM6Cj4+PiArICAgICAgcG9ydEAwOgo+Pj4g
-KyAgICAgICAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFtbCMvcHJvcGVydGllcy9wb3J0Cj4+PiAr
-ICAgICAgICBkZXNjcmlwdGlvbjogT3V0cHV0IGVuZHBvaW50IG9mIHRoZSBQSFkKPj4+ICsKPj4+
-ICsgICAgICBwb3J0QDE6Cj4+PiArICAgICAgICAkcmVmOiAvc2NoZW1hcy9ncmFwaC55YW1sIy8k
-ZGVmcy9wb3J0LWJhc2UKPj4+ICsgICAgICAgIGRlc2NyaXB0aW9uOiBJbmNvbWluZyBlbmRwb2lu
-dCBmcm9tIHRoZSBVU0IgY29udHJvbGxlcgo+Pgo+PiBEbyB5b3UgcmVhbGx5IG5lZWQgdGhpcyBv
-bmUgPwo+Pgo+PiBUaGUgY29udHJvbGxlciBkb2Vzbid0IHByb2Nlc3Mgb3JpZW50YXRpb24gc3dp
-dGNoaW5nLgo+Pgo+IAo+IEkgZG9uJ3QgaGF2ZSBhIG5lZWQgZm9yIGl0LCBhcyB3ZSBjYW4gZGVh
-bCB3aXRoIHJvbGUgc3dpdGNoaW5nIGJ5Cj4gY29ubmVjdGluZyBjb25uZWN0b3IvcG9ydEAwIHRv
-IHRoZSBkd2MzLgo+IAo+IEJ1dCBpZiB3ZSBldmVyIGhhdmUgYSBuZWVkIHRvIGRlc2NyaWJlIHRo
-ZSBkd2MzIC0+IFFNUCAtPiBjb25uZWN0b3IgcGF0aAo+IGluIHRoZSBvZl9ncmFwaCBJIHRoaW5r
-IGl0IHdvdWxkIGxvb2sgcHJldHRpZXIgdG8gaGF2ZSBVU0IgaW5wdXQgYXMKPiBwb3J0QDEgYW5k
-IERQIGlucHV0IGFzIHBvcnRAMi4uLgoKSSB0aGluayBpdCB3b3VsZCBiZSBncmVhdCB0byBoYXZl
-IHBvcnRAMSBmb3IgVVNCIFNTIGFuZCBwb3J0QDIgZm9yIERQLApvdGhlcndpc2Ugd2UgbmVlZCB0
-byBhZGQgMiBlbmRwb2ludHMgYXMgSSBzZW50IGluCmh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2Fs
-bC8yMDIzMDUwMy10b3BpYy1zbTg0NTAtZ3JhcGhpY3MtZHAtbmV4dC12MS0xLWQxZWU5Mzk3ZjJh
-NkBsaW5hcm8ub3JnLwpzaW5jZSB3ZSBzcGxpdCBVU0IgSFMgYW5kIFNTIHN0cmVhbXMgb24gU004
-WzM0NV01MCBwbGF0Zm9ybXMuCgo+IAo+IERvIHlvdSBoYXZlIGEgY29uY2VybiB3aXRoIGtlZXBp
-bmcgaXQgYXJvdW5kIGluIHRoZSBEVCAodGhlCj4gaW1wbGVtZW50YXRpb24gZG9lc24ndCBuZWVk
-IHRvIGNhcmUpPwo+IAo+IFJlZ2FyZHMsCj4gQmpvcm4KCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Vinod,
+
+On Wed, May 03, 2023 at 04:18:01PM +0530, Vinod Koul wrote:
+> Hello Linus,
+> 
+> Please consider pull to receive generic phy updates for v6.4-rc1. We
+> have a bunch of new controller support in qcom, mediatek and rk socs.
+> Intel Thunder Bay eMMC PHY driver is dropped as no users and bunch of
+> driver updates for the subsystem
+> 
+> The following changes since commit fe15c26ee26efa11741a7b632e9f23b01aca4cc6:
+> 
+>   Linux 6.3-rc1 (2023-03-05 14:52:03 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-6.4
+> 
+> for you to fetch changes up to a0106132372120dd0abf5ad7636614e5aeb5da08:
+> 
+>   phy: cadence: cdns-dphy-rx: Add common module reset support (2023-04-12 22:16:16 +0530)
+> 
+> ----------------------------------------------------------------
+> phy-for-6.4
+> 
+>   - New support:
+>         - UFS PHY for Qualcomm SA8775p, SM7150
+>         - PCIe 2 lane phy support for sc8180x and PCIe PHY for SDX65
+>         - Mediatke hdmi phy support for mt8195
+>         - rockchip naneng combo phy support for RK358
+> 
+>   - Updates:
+>         - Drop Thunder Bay eMMC PHY driver
+>         - RC support for PCIe phy for Qualcomm SDX55
+>         - SGMII support in WIZ driver for J721E
+>         - PCIe and multilink SGMII PHY support in cadence driver
+>         - Big pile of platform remove callback returning void conversions
+> 
+> ----------------------------------------------------------------
+...
+> Guillaume Ranquet (3):
+>       dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible
+>       phy: phy-mtk-hdmi: Add generic phy configure callback
+>       phy: mediatek: add support for phy-mtk-hdmi-mt8195
+
+This patch went in without one of the three simple/obvious fixes sent to
+you, so now clang builds with -Werror are broken, as they have been in
+-next for almost three weeks :/
+
+https://lore.kernel.org/20230413-fixes-for-mt8195-hdmi-phy-v2-1-bbad62e64321@baylibre.com/
+https://lore.kernel.org/20230414075842.4006164-1-arnd@kernel.org/
+https://lore.kernel.org/20230414122253.3171524-1-trix@redhat.com/
+
+  drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+          if (ret)
+              ^~~
+  drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:216:12: note: initialize the variable 'ret' to silence this warning
+          int i, ret;
+                    ^
+                     = 0
+  1 error generated.
+
+Could one of these please be picked up by either you or Linus directly,
+since this is the third ping on the matter:
+
+https://lore.kernel.org/20230421221330.GA3657732@dev-arch.thelio-3990X/
+https://lore.kernel.org/CAKwvOd=5szkx5yA0bxcyktx85opAwLrB3_4n13SMV7p3m9x7LQ@mail.gmail.com/
+
+Cheers,
+Nathan
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
