@@ -4,111 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A22BC77B78
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 05:55:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B945C77B7C
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 06:13:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R+NnvcRMbvF56GIOBvCg/j5JO6BzLIoTHrIwRJFzC7c=; b=WhJfs41YkCudyK
-	gXm5S3TGCneT+/7llM12GB5v8EcdtQxmwsBBzFLe/3aqPWwM/eEj6HZYbZPsS5Fq8vyBZ12FztLpo
-	pUsx90no0GJcapkHuPVIkCvtvLM6yu5jXNqg/UuwFf8f7SdpyPJDG+I/cZ0FG/JkV6jjZ38rKi7NI
-	zD7eVWOrgl8W8SCrXO0pcqGlw/l2D+duVys1zB+hokY/KmdY/cDHDDHAPIk4Q9RKccOogiNqOuNXb
-	OvuGBp9W3xmwgxRPEvEqsoaRkLUlin1w0pPvQVXTM244SfZxGcuGp3wbbQICNYN5WxeXnKAZ2TGFo
-	fw3yzWS0kJx+rhsv/7QQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V6VJf+Tuq0NKw1rB6IfIXIY5wWvomn12fl9b69mOqBs=; b=1/LyhMPWDvMvh2
+	pVQnJTPqSCjDEsBKgEuBwZ4SxpiqkN2tQsdfevMkiBKe7w07KijBezmCEKgRl2mrgqbKHzdA1012v
+	J03nXRChk5cuS0grE35uCLufmlFPYYW1cbTH59W+mDUKEy0PNakbKZOrUr5qaQ107OYO9nwrCvJ/I
+	SB9FifauUiH/R/nNUKtJJSp1YOgPh5BIiHy069rmriD0kOQh2eE7N4tQY4jNFfgJnfsyvkkfplYJz
+	sUFuu4LR0jdl2LPY/KZI0+9b+wmogmB6bP3jj2THk93OgHlDMJtiDHMqgogzE8Fmsd5oOEsBg9Mqg
+	VC/qeW/EuDZz3qQS0vng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puRwC-006gd1-0N;
-	Thu, 04 May 2023 05:55:32 +0000
-Received: from mail-dm6nam11on2061d.outbound.protection.outlook.com ([2a01:111:f400:7eaa::61d] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+	id 1puSDt-006jLn-2L;
+	Thu, 04 May 2023 06:13:49 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puRwA-006gcD-0T
+	id 1puSDq-006jJQ-2F
 	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 05:55:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nFGc3OXTK3iEDZr/Czg9RoD6CDTwXtfh8hk8Oq8HgOYG6HN8YvnQecqzk7za+B6ospyNEIy0P8Qx/peecEFZFTZyw+bWpvdZ6ChrGFsXClGnKf1+VPqh+HV9NNM/giW2qI3ZDCztLJfcR5iN7BizhMGxXRywXSmXZO0W856etAGNhwBuqYJawQ4BzKj1HMCybl090tFWfg+8F6PLgMR3CDkuID7ATRucrtsFrDJ2RIU/Q8qUiVKg25/xASimlDDjp/94NrakCg+mGN9sChisZs/lA5Q5zHOKItDtl79HRhCFS7Q7MJEHjfNltc//SAmbhNbfCElGcMtJT5oLovaWPw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Fsk3/RldXT2w9iuRaYKD1M5QGVxMavvlE5HZXcOCnZU=;
- b=EonBbsd9+JMqOzdfMshG2XPZtsouAe9od5hCBNvgstI2GRxwH9ia+ujgcBW0bQpqNUfGir93xzTCdYquemXr4XOuHQT6IXLH/15PczS/v9/Eoc2cklUMr3M2rlRl75UtrKSZOpM7Y01DHDweKKSCPAkPfe1dfIX6gW/5gtTjWAkOGZc9Jt6vyiSAls1eQ9bKi+84+owxACM+2eFSqHMATxj6cmOT+7FG6hL26SQdV+H2HIHSx44uPP2reJlW1r7RWbz4tp4owuqYna/J8L1WSNsMm16o3UoD7S3v6sqmWgpYmb6Loc55JIuhlljnl8/EF6K6m5eskDfCyMfMR2hIIw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Fsk3/RldXT2w9iuRaYKD1M5QGVxMavvlE5HZXcOCnZU=;
- b=rxiFiLZwuDVdqSKtn77CsxdME0RRoRb/d13o9qQzvZDwKuwOWg8Vk7/tQHRT2g5A7WGUF9FKKy8/DUQEMqeVCj6L1ZvEgxr8zge/cNjFl0l2yjbWNa3UleB/biEsGUzO5YSUcruXbSguouEMnV4O1Hc5nP0Dmxvj3uguf6SXAkyQ7Fg8UyfVg7EKynPH+rT2KUA+Zr5a8HFAa/DU7pkw1te/3NSbD3AikjiT2yrrXNpFFrgB4XdiuR5O9YHqN2FUf7ToT3X9CTZq4DU7jBjyND3cP5zG/3u4SeygEnMqpkwxuC2EdXpeq9wS1DiBD257bCg3qFcOgyJo/aLOap1mhg==
-Received: from BYAPR02CA0012.namprd02.prod.outlook.com (2603:10b6:a02:ee::25)
- by DM4PR12MB8474.namprd12.prod.outlook.com (2603:10b6:8:181::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6363.20; Thu, 4 May
- 2023 05:55:23 +0000
-Received: from CO1NAM11FT073.eop-nam11.prod.protection.outlook.com
- (2603:10b6:a02:ee:cafe::e0) by BYAPR02CA0012.outlook.office365.com
- (2603:10b6:a02:ee::25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6363.26 via Frontend
- Transport; Thu, 4 May 2023 05:55:22 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- CO1NAM11FT073.mail.protection.outlook.com (10.13.174.196) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6363.26 via Frontend Transport; Thu, 4 May 2023 05:55:22 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.5; Wed, 3 May 2023
- 22:55:09 -0700
-Received: from 0e64808-lcelt.nvidia.com (10.126.231.37) by
- rnnvmail201.nvidia.com (10.129.68.8) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.37; Wed, 3 May 2023 22:55:07 -0700
-From: Haotien Hsu <haotienh@nvidia.com>
-To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, "Kishon Vijay
- Abraham I" <kishon@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>, Philipp Zabel
-	<p.zabel@pengutronix.de>, <linux-phy@lists.infradead.org>,
-	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-CC: Wayne Chang <waynec@nvidia.com>, EJ Hsu <ejh@nvidia.com>, Haotien Hsu
-	<haotienh@nvidia.com>
-Subject: [PATCH] phy: tegra: xusb: Fix use-after-free issue
-Date: Thu, 4 May 2023 13:54:46 +0800
-Message-ID: <20230504055446.2039372-1-haotienh@nvidia.com>
-X-Mailer: git-send-email 2.25.1
+	Thu, 04 May 2023 06:13:48 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-95369921f8eso9545166b.0
+        for <linux-phy@lists.infradead.org>; Wed, 03 May 2023 23:13:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1683180820; x=1685772820;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=LR67W3cu8TbdbHHvCQSzQmbTfNOrONMNhQlzXKF5QhY=;
+        b=C/inxBvjHBKX6ieqG1SKbI5iXHvEGIAYZJ81VWBub4NdV61svnrIu0nxr3RpLn0swe
+         rjArbctnnIy5zRRZt98Mr6T9r/Km0X8LgbmGISWJJWl7MgdobOkBLexzz7MZcggE57iw
+         kd8uRxX2gxAXP6u2fQtsg7eshSojRfGyIBYQXi6VQwf/ZHIh/5/BXAAm5eCZHmun+Ypc
+         K8glI3FPoZTp0lKA5KEB4j+Xu8WZp2EPfkNi3NAssh89TXL9u4olIzEZXpIuEbfKYN5c
+         aoHVqEA7Ju8fvu8c0WE0CnlkJ3RQbFKlov+yUuQGAHQBJBOfEU5Cm+3yRZf/FYqvP/Gp
+         LZdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1683180820; x=1685772820;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LR67W3cu8TbdbHHvCQSzQmbTfNOrONMNhQlzXKF5QhY=;
+        b=T5Dfkc0QeUbNIw5sXiv0OZu/PjKRx7mAnPsWcdfGLr/7KMJrqmL03kOF0LC7JOCt+w
+         iPT4BuZtqbIq25rtlHpFjFJvWsRS+eXsQ1NjLSOIx8VEgySxE0J4w/bsDdPvWCMJ7Hk8
+         720wOiVW/gMHY496mFZheR67E5oswokwNf8HI5PfhVR+esmbc2TulgD1RDiT8yJ4RYsB
+         ehS0bqV2eIuOJ0zFe/gkOAGAM0Zwj+AKe0iTAioc94nMyLKYZ5i5tzLluJB6oDnRVh9n
+         iQKqlSfUbwfIyQhI32p2JFaHqDk7esQIdhaWEAoAcBqM1IEDR4rm0IXnJ1d+9AmeIZyi
+         Od0Q==
+X-Gm-Message-State: AC+VfDy+Gc6N7WZ3C+gd7Hf/Z1+4cORorZh23WVCCSM+MbQxRkYNC+M6
+	uKsbIraYEbaIAY7cN5TQSQmMOA==
+X-Google-Smtp-Source: ACHHUZ7wIe5zVEzox2wc5lT4hvgbIaXMMXZaqdRJTNEz0rZ6QHnHEVd2ucDuXrE6/fW5nkbcl0TBzQ==
+X-Received: by 2002:a17:907:60d6:b0:960:c5fe:a35a with SMTP id hv22-20020a17090760d600b00960c5fea35amr6542406ejc.64.1683180819754;
+        Wed, 03 May 2023 23:13:39 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:cbf1:e7ef:fb81:e912? ([2a02:810d:15c0:828:cbf1:e7ef:fb81:e912])
+        by smtp.gmail.com with ESMTPSA id o19-20020a1709062e9300b0094f281bd279sm18333085eji.198.2023.05.03.23.13.37
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 03 May 2023 23:13:38 -0700 (PDT)
+Message-ID: <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
+Date: Thu, 4 May 2023 08:13:37 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.126.231.37]
-X-ClientProxiedBy: rnnvmail203.nvidia.com (10.129.68.9) To
- rnnvmail201.nvidia.com (10.129.68.8)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1NAM11FT073:EE_|DM4PR12MB8474:EE_
-X-MS-Office365-Filtering-Correlation-Id: fd61de34-4801-4e18-7a2d-08db4c642666
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	rQQbkk86WQhJGI+1vc0yJ4/SYAENJExcah2CQqB8FRRcKTQn6L8uaUZ38xuNeCzHrH3BrFOkvjek8ZelAvvPwx/BIz3VwjMMuuBI+fOBgXh5qRh4734a6Yb2TpQoqN7aKUCosCLXJbUTBDgADjRSVLSLJA9ag7bnNS48FbPZXRbhMq1kbTNMCTuBSgeVfrkRSOCnjaXkCBUm7o3tArZrp7amFYQP2f9FcbHKAN9gX7q+BPZepNFlmmXRXtkSstExhW5SZRpJjqYe+RMPiZZQ9w1C7NxwfKXJF9fPNuH3O1ZPfa+ACAtWteV4qnMGTLEf4+HU6ntigbRK9U7BfptADYnDmDOBkFXxDohngqfNyIRjBI26NUCCRXQ2lKOAqkv0bHM6yI9MTZIUgE2NjSpfx1mjRjlJ+Spfe5NGe+OSuiDUTgKajy5rCwQ31ewCrgRyz5z6ZVm42cXnyDmIKLdePHcCnsn9QfWQDQ1PMhs7b9D40q7fn0+GGsNYr8RvbC+D54y41FKIsgCN/jGWwD23PFMFunHJdZ9vxqRglmMm0++eYL0AUFJP6vw70m/iKhoZR+n/dXr5ODf60rvppIb80IAlBx+R1pvSeYdbAwCTUZ88MpRVxlOnc4g1PEGzjJOiByunHSsbUECoQBqYVmLNfaWe10bhtc+95ZkSPh2+hczHmdw5wi+ZMUWtqnuQuSXXeLHmG9feHj4S9pIexD/WSVtmNSugqHTTplmIw/7c7w8=
-X-Forefront-Antispam-Report: 	CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230028)(4636009)(136003)(376002)(346002)(396003)(39860400002)(451199021)(46966006)(36840700001)(40470700004)(86362001)(36756003)(82310400005)(2906002)(40460700003)(40480700001)(6666004)(36860700001)(47076005)(16526019)(2616005)(336012)(83380400001)(426003)(1076003)(107886003)(4326008)(26005)(186003)(54906003)(478600001)(110136005)(70206006)(70586007)(316002)(82740400003)(356005)(41300700001)(7636003)(5660300002)(7696005)(8676002)(8936002)(2101003);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2023 05:55:22.6810
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fd61de34-4801-4e18-7a2d-08db4c642666
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	CO1NAM11FT073.eop-nam11.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB8474
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+Content-Language: en-US
+To: Changhuang Liang <changhuang.liang@starfivetech.com>,
+ Conor Dooley <conor@kernel.org>
+Cc: Conor Dooley <conor.dooley@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Emil Renner Berthing <kernel@esmil.dk>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Walker Chen <walker.chen@starfivetech.com>,
+ Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ vkoul@kernel.org, linux-phy@lists.infradead.org
+References: <20230419-labored-camper-644d51a7ca96@spud>
+ <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
+ <20230424-baffle-punch-ec73098f2b6a@spud>
+ <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
+ <20230425-unquote-eligible-09f743d81981@wendy>
+ <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
+ <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
+ <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+ <20230425-resale-footrest-de667778c4fe@wendy>
+ <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+ <20230425-commotion-prewashed-876247bed4ab@spud>
+ <0b0f9187-ad6b-a1d9-6ec4-beb8989ca731@starfivetech.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <0b0f9187-ad6b-a1d9-6ec4-beb8989ca731@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230503_225530_208951_33EF63B8 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20230503_231346_738970_4E8B12D1 
+X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,59 +114,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: EJ Hsu <ejh@nvidia.com>
+On 04/05/2023 03:34, Changhuang Liang wrote:
+> 
+> 
+> On 2023/4/26 0:56, Conor Dooley wrote:
+>> On Tue, Apr 25, 2023 at 08:26:35PM +0800, Changhuang Liang wrote:
+>>> On 2023/4/25 17:35, Conor Dooley wrote:
+>>>> On Tue, Apr 25, 2023 at 05:18:10PM +0800, Changhuang Liang wrote:
+>>>>> On 2023/4/25 16:19, Krzysztof Kozlowski wrote:
+>>>>>> On 25/04/2023 09:57, Changhuang Liang wrote:
+>>>>>>> Yes, "starfive,jh7110-aon-pmu" is a child-node of "starfive,jh7110-aon-syscon".
+>>>>>>> In my opinion, "0x17010000" is "aon-syscon" on JH7110 SoC, and this "aon-pmu" is just 
+>>>>>>> a part of "aon-syscon" function, so I think it is inappropriate to make "aon-syscon"
+>>>>>>> to a power domain controller. I think using the child-node description is closer to
+>>>>>>> JH7110 SoC. 
+>>>>>>
+>>>>>> Unfortunately, I do not see the correlation between these, any
+>>>>>> connection. Why being a child of syscon block would mean that this
+>>>>>> should no be power domain controller? Really, why? These are two
+>>>>>> unrelated things.
+>>>>>
+>>>>> Let me summarize what has been discussed above. 
+>>>>>
+>>>>> There has two ways to describe this "starfive,jh7110-aon-syscon"(0x17010000).
+>>>>> 1. (0x17010000) is power-controller node:
+>>>>>
+>>>>> 	aon_pwrc: power-controller@17010000 {
+>>>>> 		compatible = "starfive,jh7110-aon-pmu", "syscon";
+>>>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>>>> 		#power-domain-cells = <1>;
+>>>>> 	};
+>>>>>
+>>>>>
+>>>>> 2. (0x17010000) is syscon node, power-controller is child-node of syscon:
+>>>>>
+>>>>> 	aon_syscon: syscon@17010000 {
+>>>>> 		compatible = "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
+>>>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>>>>
+>>>>> 		aon_pwrc: power-controller {
+>>>>> 			compatible = "starfive,jh7110-aon-pmu";
+>>>>> 			#power-domain-cells = <1>;
+>>>>> 		};
+>>>>> 	};
+>>>>
+>>>> I thought that Rob was suggesting something like this:
+>>>> 	aon_syscon: syscon@17010000 {
+>>>> 		compatible = "starfive,jh7110-aon-syscon", ...
+>>>> 		reg = <0x0 0x17010000 0x0 0x1000>;
+>>>> 		#power-domain-cells = <1>;
+>>>> 	};
+>>
+>>> I see the kernel:
+>>> https://elixir.bootlin.com/linux/latest/source/arch/arm64/boot/dts/mediatek/mt8167.dtsi
+>>> this file line 42:
+>>> it's power-controller also has no meaningful properties.
+>>> What do you think?
+>>
+>> I'm not sure that I follow. It has a bunch of child-nodes does it not,
+>> each of which is a domain?
+>>
+>> I didn't see such domains in your dts patch, they're defined directly in
+>> the driver instead AFAIU. Assuming I have understood that correctly,
+>> your situation is different to that mediatek one?
+>>
+>> Cheers,
+>> Conor.
+> 
+> Conor and Rob, 
+> 
+> How about this way:
+> 
+> aon_syscon: syscon@17010000 {
+> 	compatible = "starfive,jh7110-aon-syscon", "syscon", "simple-mfd";
+> 	reg = <0x0 0x17010000 0x0 0x1000>;
+> 	
+> 	aon_pwrc: power-controller {
+> 		compatible = "starfive,jh7110-aon-pmu";
+> 		regmap = <&aon_syscon>;
+> 		#power-domain-cells = <1>;
+> 	};
+> };
+> 
+> Add a "regmap" property which is phandle. And it can keep the present child-node
+> structure. This is more consistent with our soc design.
 
-For the dual-role port, it will assign the phy dev to usb-phy dev and
-use the port dev driver as the dev driver of usb-phy.
+Adding property from child to parent does not make any sense. Didn't you
+already receive comment on this?
 
-When we try to destroy the port dev, it will destroy its dev driver
-as well. But we did not remove the reference from usb-phy dev. This
-might cause the use-after-free issue in KASAN.
-
-Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-Cc: stable@vger.kernel.org
-
-Signed-off-by: EJ Hsu <ejh@nvidia.com>
-Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
----
- drivers/phy/tegra/xusb.c | 15 ++++++++-------
- 1 file changed, 8 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 78045bd6c214..515298a9a433 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -563,13 +563,6 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
- 
- static void tegra_xusb_port_unregister(struct tegra_xusb_port *port)
- {
--	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
--		of_platform_depopulate(&port->dev);
--		usb_role_switch_unregister(port->usb_role_sw);
--		cancel_work_sync(&port->usb_phy_work);
--		usb_remove_phy(&port->usb_phy);
--	}
--
- 	if (port->ops->remove)
- 		port->ops->remove(port);
- 
-@@ -832,6 +825,14 @@ void tegra_xusb_usb2_port_remove(struct tegra_xusb_port *port)
- {
- 	struct tegra_xusb_usb2_port *usb2 = to_usb2_port(port);
- 
-+	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
-+		of_platform_depopulate(&port->dev);
-+		usb_role_switch_unregister(port->usb_role_sw);
-+		cancel_work_sync(&port->usb_phy_work);
-+		usb_remove_phy(&port->usb_phy);
-+		port->usb_phy.dev->driver = NULL;
-+	}
-+
- 	regulator_put(usb2->supply);
- }
- 
--- 
-2.25.1
+Best regards,
+Krzysztof
 
 
 -- 
