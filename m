@@ -4,93 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D43C9C77B75
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 03:08:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76FBDC77B75
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 03:14:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mi39CfM1eBVvKPQ+dC9zrEChJDBde3I/gLPrbGDD0fY=; b=ww7jV7YcVMXgeE
-	TuLS6HEZc3D04GoApa2bwmWUPCoc0t13DwlQIwBL44ANCUzlLTK/JM+7Pwzyev5OnXbFMPyWxg3/m
-	FrIpP7xbk56O0/yCPF/viYW5VXxSeKJrxdaE6ofc2PBOR50Y5p93L/Ex3jb5YDG1NYSWY9kwELTK2
-	xS2OrXTww2kszGG75K/MA1rD29ESfnVtig3VmV8sGa8OI8MIMPZldwBhR4MbBiNWTPn+2MR2+Avsx
-	v4FZ/5CdpNN14jNc1IFU6kAtJILkE5soUVxYOuCsxFqAgVvaj5Ccbln/5ODnwYtWxrwIl6T0iDVXZ
-	B36da1nvtfLTFKx5eFeA==;
+	List-Owner; bh=21uZ0DYXikxJgQeCs1fHK/STJB7ahICBx2WqjtRnuto=; b=TG79KWBoQg7WYo
+	gfv+maHj2EuiB0stkC1ovlHxASY2Z20YvWfraI1QkzgTfi6XU5tLEZc5XyCkuzrmFkCM2FpjVHNdy
+	UokmqDKQXxNQhAA6WzEqYnWg+SpNF7KB1u8D9xvxU4aTHIuxpREhxYO9VMbSvNTdJc6MdlWsCuwYq
+	REleHZ7HHUouC8zMk9aFSSzxaSBGDF+oCyfGZVFU+NgT5u3QJX8sMje/PKugcvPcNNcyi4T6iHlxC
+	uGAAzLIVggLIwYpEfWpAwkG418h3Vl+lN+IK4y6CKOWD+uycYHHk2BIeI9V8m9Rv04LQD3vVc9NXm
+	Wpkzs16Bhv9CHpvX2/UQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puPKH-006RWa-1O;
-	Thu, 04 May 2023 03:08:13 +0000
+	id 1puPQ4-006S27-35;
+	Thu, 04 May 2023 03:14:12 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puPKD-006RVA-0G
+	id 1puPQ1-006S1S-0r
 	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 03:08:10 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3442xwZ1019567;
-	Thu, 4 May 2023 03:07:57 GMT
+	Thu, 04 May 2023 03:14:11 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3442jXpT020185;
+	Thu, 4 May 2023 03:14:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
  cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=uI1T/gjvgZvSlXrSpeWUM9w8CwsngVR+EPVD42tV2ps=;
- b=GMkVzfVN064DeJgyuyOdl+mVBBU5caC1femnDupiy573FEMq9gC4ZlS7h60z3oacFzDF
- L7b6IHOQwMxHkOzWwPjbkeLLDUPd07tWKnRszQfORHz+qBbr6cFapuXurwnFzLybjqyU
- xT8I8kkVg7W9PvM/dwpgl4FLrjzjzaCOXpntB4aul435WMyL6AYSph/y9GsPbdiHTBv4
- WvDvV8lvyE4l3f8vw+MaPxGEyR5P3n5xd2dLsQjmwmYq8BwtNZ+ZSWs1fLH1ZKbPw6gr
- tA/wUpl1baX+/m6aaRiZfiWb0yi6SCRgM/zQ3kvZ5zXKmHzAqS/4OU5zEh5fij3JGY8Y 1Q== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qc2aj06hf-1
+ in-reply-to; s=qcppdkim1; bh=n9RlB2veIaoxal2ZlrI+/GHr2aanJqNh+I7gk2LeQ5o=;
+ b=RV39TjzW+kdjI5pMQAOIxPgio1ER/v51JlQfrfO5n9X1hPsodsR/OutwqW8/+B9V9Oyd
+ AX6HbTDsbTrxnUNxF769NWuokzgPKggaeuPw8tBJftr8d82qTSV9jv6HJtQE5PjgItAB
+ rSo0tLXJeUQDbcmZou8gHUzzmVxIq0fdfIhwIuvFDlXPmztrGHpH/pFefYLkY3kJdKQG
+ Sa3QiXaeqPnXmCcGE3Ek6VPhVc9mGjMnPAeOMRPBq9JpLfqx0pb24c0HCKv04Q1Ey4Rs
+ QkqcLSryKylbRQXYyP9G9anVrYu53CqXwoUCbybuECYBqPRSEgLstKea4/cVbCrOnPto jw== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qbbsw31vn-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 May 2023 03:07:57 +0000
+	Thu, 04 May 2023 03:14:04 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 34437uB3014118
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3443E3s2031920
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 4 May 2023 03:07:56 GMT
+	Thu, 4 May 2023 03:14:03 GMT
 Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 3 May 2023 20:07:56 -0700
-Date: Wed, 3 May 2023 20:07:55 -0700
+ 15.2.986.42; Wed, 3 May 2023 20:13:56 -0700
+Date: Wed, 3 May 2023 20:13:54 -0700
 From: Bjorn Andersson <quic_bjorande@quicinc.com>
 To: Johan Hovold <johan@kernel.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio
 	<konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay
- Abraham I <kishon@kernel.org>,
         Rob Herring <robh+dt@kernel.org>,
         Krzysztof
  Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 6/7] arm64: dts: qcom: sc8280xp-crd: Add QMP to
- SuperSpeed graph
-Message-ID: <20230504030755.GD870858@hu-bjorande-lv.qualcomm.com>
+Subject: Re: [PATCH 5/7] phy: qcom-qmp-combo: Introduce drm_bridge
+Message-ID: <20230504031354.GE870858@hu-bjorande-lv.qualcomm.com>
 References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-7-quic_bjorande@quicinc.com>
- <ZFEAfv2GnGeblk-x@hovoldconsulting.com>
+ <20230425034010.3789376-6-quic_bjorande@quicinc.com>
+ <ZFD8oQETtLuDH2Xg@hovoldconsulting.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZFEAfv2GnGeblk-x@hovoldconsulting.com>
+In-Reply-To: <ZFD8oQETtLuDH2Xg@hovoldconsulting.com>
 X-Originating-IP: [10.49.16.6]
 X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: DY91MEa13XJqkST4oJcJLLYk76XFiUyE
-X-Proofpoint-GUID: DY91MEa13XJqkST4oJcJLLYk76XFiUyE
+X-Proofpoint-GUID: JoMKxxekBbMUyLVZ0r1yWGsy1BoMnbKa
+X-Proofpoint-ORIG-GUID: JoMKxxekBbMUyLVZ0r1yWGsy1BoMnbKa
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-05-03_16,2023-05-03_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- adultscore=0 mlxlogscore=866 impostorscore=0 mlxscore=0 clxscore=1015
- lowpriorityscore=0 bulkscore=0 priorityscore=1501 phishscore=0 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303200000
- definitions=main-2305040024
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 adultscore=0 suspectscore=0 malwarescore=0
+ mlxlogscore=999 impostorscore=0 bulkscore=0 mlxscore=0 phishscore=0
+ spamscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2305040025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230503_200809_256769_DAE611E1 
-X-CRM114-Status: GOOD (  21.73  )
+X-CRM114-CacheID: sfid-20230503_201409_420901_1F9A8E5A 
+X-CRM114-Status: GOOD (  36.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,61 +104,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 02, 2023 at 02:22:22PM +0200, Johan Hovold wrote:
-> On Mon, Apr 24, 2023 at 08:40:09PM -0700, Bjorn Andersson wrote:
-> > diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts b/arch/arm64/boot/dts/qcom/sc8280xp-crd.dts
-[..]
-> >  &mdss0_dp0_out {
-> >  	data-lanes = <0 1>;
-> > -	remote-endpoint = <&pmic_glink_con0_ss>;
-> > +	remote-endpoint = <&usb_0_qmpphy_dp_in>;
+On Tue, May 02, 2023 at 02:05:53PM +0200, Johan Hovold wrote:
+> On Mon, Apr 24, 2023 at 08:40:08PM -0700, Bjorn Andersson wrote:
+> > The QMP combo PHY sits in an of_graph connected between the DisplayPort
+> > controller and a USB Type-C connector (or possibly a redriver).
+> > 
+> > The TCPM needs to be able to convey the HPD signal to the DisplayPort
+> > controller, but no directly link is provided by DeviceTree so the signal
+> > needs to "pass through" the QMP combo phy.
+> > 
+> > Handle this by introducing a drm_bridge which upon initialization finds
+> > the next bridge (i.e. the usb-c-connector) and chain this together. This
+> > way HPD changes in the connector will propagate to the DisplayPort
+> > driver.
+> > 
+> > The connector bridge is resolved lazily, as the TCPM is expected to be
+> > able to resolve the typec mux and switch at probe time, so the QMP combo
+> > phy will probe before the TCPM.
+> > 
+> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 36 +++++++++++++++++++++++
+> >  1 file changed, 36 insertions(+)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > index 5d6d6ef3944b..84bc08002537 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > @@ -22,6 +22,8 @@
+> >  #include <linux/usb/typec.h>
+> >  #include <linux/usb/typec_mux.h>
+> >  
+> > +#include <drm/drm_bridge.h>
+> > +
+> >  #include <dt-bindings/phy/phy-qcom-qmp.h>
+> >  
+> >  #include "phy-qcom-qmp.h"
+> > @@ -1332,6 +1334,8 @@ struct qmp_combo {
+> >  	struct clk_hw dp_link_hw;
+> >  	struct clk_hw dp_pixel_hw;
+> >  
+> > +	struct drm_bridge bridge;
+> > +
+> >  	struct typec_switch_dev *sw;
+> >  	enum typec_orientation orientation;
 > >  };
-> 
-> It's a bit hard to follow what going on when using place holder nodes
-> from the dtsi like this (instead of describing all the ports directly in
-> the board dts). IIRC we went a bit back and forth over this earlier and
-> we already use this scheme for the display port controllers, so I guess
-> this is the price we pay for being consistent.
-> 
-
-I agree, this is why I argued in favour of keeping the of_graphs
-together in a single node. But as long as we label things appropriately
-it's pretty ok - and the alternative would be yet another undocumented
-"rule".
-
-So let's stick with this...
-
-> > diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-[..]
-> > +			ports {
-> > +				#address-cells = <1>;
-> > +				#size-cells = <0>;
+> > @@ -3196,6 +3200,34 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
+> >  	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, dp_np);
+> >  }
+> >  
+> > +static int qmp_combo_bridge_attach(struct drm_bridge *bridge,
+> > +				   enum drm_bridge_attach_flags flags)
+> > +{
+> > +	struct qmp_combo *qmp = container_of(bridge, struct qmp_combo, bridge);
+> > +	struct drm_bridge *next_bridge;
 > > +
-> > +				port@0 {
-> > +					reg = <0>;
+> > +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
+> > +		return -EINVAL;
 > > +
-> > +					usb_0_qmpphy_out: endpoint {};
-> > +				};
-> > +
-> > +				port@1 {
-> > +					reg = <1>;
-> > +
-> > +					usb_0_qmpphy_dp_in: endpoint {};
-> > +				};
-> > +			};
-> >  		};
+> > +	next_bridge = devm_drm_of_get_bridge(qmp->dev, qmp->dev->of_node, 0, 0);
+> > +	if (IS_ERR(next_bridge))
+> > +		return dev_err_probe(qmp->dev, PTR_ERR(next_bridge), "failed to acquire drm_bridge\n");
 > 
-> The binding describes three ports, where dp-in is port 2.
-> 
-> Perhaps you don't need to describe ss-in yet, but shouldn't the port
-> numbers match? Should some of these be described as required in the
-> binding?
+> Using dev_err_probe() in an attach callback looks wrong as these
+> functions should not be returning -EPROBE_DEFER (and this is not a probe
+> function).
 > 
 
-This should certainly be port@2, thanks for spotting.
+The problem is that this might return EPROBE_DEFER, and at least today
+propagates out to returning EPROBE_DEFER from our DP controller's
+bind().
 
-Regards,
+This is not optimal, but unfortunately we have a two way dependency
+across the of_graph, so we need to make one of the sides lazy...
+
+> > +
+> > +	return drm_bridge_attach(bridge->encoder, next_bridge, bridge, DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+> 
+> This line is over 100 chars, but there should be no reason not to break
+> it before 80 here.
+> 
+> > +}
+> > +
+> > +static const struct drm_bridge_funcs qmp_combo_bridge_funcs = {
+> > +	.attach	= qmp_combo_bridge_attach,
+> > +};
+> > +
+> > +static int qmp_combo_dp_register_bridge(struct qmp_combo *qmp)
+> > +{
+> > +	qmp->bridge.funcs = &qmp_combo_bridge_funcs;
+> > +	qmp->bridge.of_node = qmp->dev->of_node;
+> > +
+> > +	return devm_drm_bridge_add(qmp->dev, &qmp->bridge);
+> > +}
+> 
+> Guess you need a dummy function also for qmp_combo_dp_register_bridge()
+> in case of !CONFIG_DRM.
+> 
+
+Right, missed that dependency. Will wrap this and provide a dummy.
+
+Thanks,
 Bjorn
+
+> > +
+> >  static int qmp_combo_parse_dt_lecacy_dp(struct qmp_combo *qmp, struct device_node *np)
+> >  {
+> >  	struct device *dev = qmp->dev;
+> > @@ -3459,6 +3491,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
+> >  	if (ret)
+> >  		return ret;
+> >  
+> > +	ret = qmp_combo_dp_register_bridge(qmp);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> >  	/* Check for legacy binding with child nodes. */
+> >  	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
+> >  	if (usb_np) {
+> 
+> Johan
 
 -- 
 linux-phy mailing list
