@@ -4,136 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3691C7EE29
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 17:04:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 950D6C77B78
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 17:13:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=L8JWWad6lNAS2JG09DZfveBhdtAPrzhn8wu+0jt6MHk=; b=ES/QY+q2GhIArM9ZUfM1a8V6yZ
-	rEJeQ4sz8Pkmn2O4EiGIxp3GfmyjxNZh93KVQUB/nPJFRE2FoCcmpePwRCYcKmVjDdRDoCigZF8Vl
-	+MtjGFJFiAi48GyIu0bMcm/eSbp2Eex3+jl4PLkXp8+fCT5lXhDNNRZSwFg7GEM9PMImahJijYGKT
-	qdCDcxWo1oJtEnucFQxVkN0KbBR34wcAd2Cn78cw0ina0F95sytEzDCBDJvNGg6mbKd9yPSkV+el7
-	da8Z0kYvBUFhybf6nM+sJfLkEYz4pRVKrh5mDgjkXf0h1w2A5Z2mLm6ZcWtZK2JOIudfVjz8wOhbR
-	m++KfPUw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b+vc7xXl9fRa3XNC5nBDreSNwuwacWNxKXbMR8dRbTs=; b=TqSzxMnj4jM7/k
+	SfhQ2cgKwcc9fricrxQNq/YzfiddiEGAvtqBoigMtrhvkhgFgdP9040ZntPmIyvW/MnMJYiRxwlQ+
+	3cfeYFf/uRkDFJfCGrYvLJTTAvnyCtQdrGj7RVWoysJyUqOT82DGlNPiYQvyFzD75K4BrZ8OnYItg
+	aBg+nml40hVdG5xCRYz5ynbT2VkvNmXoRpQFNVeZcxoFLbrke3iw4tIC34NDyGU9PQy5gk9CeeI9O
+	KYp9J4y+XVzCJasPSFKC/jYYf63qVBHLszN1oBSDIfDhMcKYyEKeQjkyYZxqrAO1q4X0eA3odzECt
+	SdFtOueI8Op1AuTt6PNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pucNO-008O7m-1E;
-	Thu, 04 May 2023 17:04:18 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1pucVu-008Ovi-0o;
+	Thu, 04 May 2023 17:13:06 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pucNJ-008O6q-2W;
-	Thu, 04 May 2023 17:04:15 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
-	by mailnew.nyi.internal (Postfix) with ESMTP id F1E2E580E6A;
-	Thu,  4 May 2023 13:04:12 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute3.internal (MEProxy); Thu, 04 May 2023 13:04:13 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1683219852; x=1683227052; bh=Pk
-	SQbmz2mEiFvQuMjYfFpQvVcVsNXX6yAK0DMQvrT78=; b=cmJlwLa8yhdC4PdQoI
-	d0hb531eiI2SORxL3Fl3hrBicgmrIqTK2JruPb97I5kPMeDAKroA/qfvcVn4SHpi
-	0GJwBwwJhVyBr0Z3gCWPJStGYlLHJVRHb8h+jKHQvCaAntRpesESAK3sBnsryQLT
-	SY1pMZNm7NeXzxB0X4LGhh4tDtYGJwHvxymMS6zun/yeRMUOk17dwvfkedHb73tr
-	HDJwJT3hqrDjvLymB2DkFIWIl9NAK1sqV8mngyOKOOkARjYozakGWeevZLdVnLJM
-	2r9OCaZnJE/Iut75vl7CK6hrYFM8e09Zs5jDuDCIHU4E46AgWleB+oJARw3dPB4i
-	nWXg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm3; t=1683219852; x=1683227052; bh=PkSQbmz2mEiFv
-	QuMjYfFpQvVcVsNXX6yAK0DMQvrT78=; b=AuagbG+sDeabBm6qygO9uf6q6oPyP
-	ln51yGwNChqfoFi25xJw+emXpwH8g/NTNhI3i5k1yWKZiYlTlAS5rplMF6gQkK/e
-	laonPFrlE/3b3UZB5kH5Oe8M2j6oYoZR4K3PB9E/ohKD6c/GRXCbuk26UWMvS6ps
-	IGPMb413/9tdMInk8seyummLGmLiYcAs0royMw83PEXI5IllNN1DDdz1ub/MnRtP
-	jNV3A8TnFjNuN73VANJme+us+/xozB2Fslb8vtM7RCSV5PVpN7WkauqzxtupFLrH
-	w6KIslwyhc14ZQfGI9ojV26lTWu/2uydNx3dHVpk0RYe0JWyoFktgKk2g==
-X-ME-Sender: <xms:iuVTZB3-j9J9v_I9u_nLe23G-6Km95qYmGddsS8j9B3EISxW2I58tQ>
-    <xme:iuVTZIFcT7ZRU7I8Q-j_hIxB2UA45VX7YZUSc23XiwcJfwvL32Fc00IBM8g7HDbhY
-    fDMxv-M9z8kq6nDOks>
-X-ME-Received: <xmr:iuVTZB6hMgnVSN6caEFK-biUtu_4lRmFrrREwhLfK0aqpVD8obrAFVEs3OgODGka612q-Vxrss0VmiOBn_hzt2nWqkubj9U>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeeftddguddtkecutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
-    enucfjughrpeffhffvvefukfhfgggtuggjsehgtdfsredttddvnecuhfhrohhmpeforgig
-    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
-    grthhtvghrnhepueevudehuedtkeevgfduveejueefvddvvefhjefglefgtdekveeugeet
-    kefgleefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
-    epmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:iuVTZO352jeG413D2-8gCuvaVz9nzir5JVeGb9Qt5T66BjFUHxDI6A>
-    <xmx:iuVTZEEch61XFzQdgNXpnEgchfdDLzHESPV9TD2R7L76K_Tm_CGCzg>
-    <xmx:iuVTZP8JvDB9v2-05uIiSmwcEsdw1ZGXKd400N956wEG9rbS3yqRhA>
-    <xmx:jOVTZIO2DARyLcbYRuAk0sTaKYb8VuLfnAb3kuIJaa_ZaJPDtFbScA>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 4 May 2023 13:04:09 -0400 (EDT)
-Date: Thu, 4 May 2023 19:04:07 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Dinh Nguyen <dinguyen@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
- 	Stephen Boyd <sboyd@kernel.org>,
- Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
- 	Manivannan Sadhasivam <mani@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- 	Max Filippov <jcmvbkbc@gmail.com>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- 	Richard Fitzgerald <rf@opensource.cirrus.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- 	David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
- Abel Vesa <abelvesa@kernel.org>, 	Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- 	Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, 	NXP Linux Team <linux-imx@nxp.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- 	Geert Uytterhoeven <geert+renesas@glider.be>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- 	Prashant Gaikwad <pgaikwad@nvidia.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- 	Jonathan Hunter <jonathanh@nvidia.com>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- 	Linus Walleij <linus.walleij@linaro.org>,
- David Airlie <airlied@gmail.com>, 	Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>,
- 	Kishon Vijay Abraham I <kishon@kernel.org>,
- Alessandro Zummo <a.zummo@towertech.it>, 	Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- 	Samuel Holland <samuel@sholland.org>,
- Liam Girdwood <lgirdwood@gmail.com>, 	Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- 	Paul Cercueil <paul@crapouillou.net>, Orson Zhai <orsonzhai@gmail.com>,
- 	Baolin Wang <baolin.wang@linux.alibaba.com>,
- Chunyan Zhang <zhang.lyra@gmail.com>, linux-clk@vger.kernel.org,
- 	linux-kernel@vger.kernel.org,
- 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- linux-arm-kernel@lists.infradead.org, 	linux-actions@lists.infradead.org,
- patches@opensource.cirrus.com, 	linux-stm32@st-md-mailman.stormreply.com,
- linux-mediatek@lists.infradead.org, 	linux-renesas-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
- 	linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
- linux-sunxi@lists.linux.dev, 	alsa-devel@alsa-project.org,
- linux-mips@vger.kernel.org
-Subject: Re: [PATCH v3 29/65] clk: socfpga: gate: Add a determine_rate hook
-Message-ID: <tgtfisqxubin4cjj6q26fboirbcnjzcazt5y3m322lw5lskz6l@d3tgz4hdfnk2>
-References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
- <20221018-clk-range-checks-fixes-v3-29-9a1358472d52@cerno.tech>
- <679921ee-98d4-d6ef-5934-e009fd4b31fc@kernel.org>
- <sjlp5ubnpvulgwhhymmfkmmobkgxacyqwagqozodkee3di2qik@3igj6k3zgbk6>
- <57dd81d0-510e-0fab-670d-1109eb8dd974@kernel.org>
+	id 1pucVr-008OuZ-0Q
+	for linux-phy@lists.infradead.org;
+	Thu, 04 May 2023 17:13:04 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-2fa47de5b04so720086f8f.1
+        for <linux-phy@lists.infradead.org>; Thu, 04 May 2023 10:12:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1683220375; x=1685812375;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=kddkMECWVqpDHWo8u3obun/sMKv5JNOK16rXJVgFx4g=;
+        b=LOOkQU6n9tZyRfwdWMsGPy6aLyJfZxBcZwYdRCAQ9umZn6cN0gLH+p93ev7FnwrMRA
+         NbRkWvvBVxSMZNqOUuWQUtSKP2TsBNKH5v4PNOvPkZhihSHgZk97wQqcxgYxPCCSLIIl
+         lvW572eEAcmp0BTPpbmx8wBPF718WrmwX6LmTUVxDLY3Ky6pQdVqRauIEjSkuih0FSBF
+         qow/nBQVdOmsZw/s3SPf5BoQIX1C036ioczaiYShWh20sjVWZ71NC8lJjOlWc5EUO36N
+         OiXgZ6FMupA3/w/TEZR4+liF5SzHpETSQDXKZrhx7T4hgiVILnSCi7bDgXtSGgDz9YfX
+         j7kw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1683220375; x=1685812375;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kddkMECWVqpDHWo8u3obun/sMKv5JNOK16rXJVgFx4g=;
+        b=BVs1sfLzvZTkY+RVKWp0DKK0tdueXV+JxWjRb+FZlS78rDnQETGTBa/I8l9Fi8x4sq
+         USq6BDro4E2wpDKu+88+4RO3tGPDEfE6/9MC11WVG0PsMKx7NVdXQeRRZY6IL2oUYDgo
+         exasKz2ugi6mfFaI3jxfinkoKtTmuIIMV9K2qCpsPCA6FJ49bOZI2sTb0KOR0eClfPaf
+         CbydwbPGVRa8RmlHu9BuhBz8o3yCn840VjZyXmNo526E/ikSv9oChyD51UuCEVpHxKfO
+         3h89dcELaYEBMUImB2t0djrY9lO6jk7jIWAGQ+2B2+GuPzkYLT48AHX6NAhg2ZFSCmZN
+         yWfg==
+X-Gm-Message-State: AC+VfDxB28s1iuP/xRNNMpP+sM0cH1rM3RdWz8LVscAlaWtrfg7twhNI
+	GweS7Lcar8ABbxJPTnxdEQDd6ex3JJDUcizEsfRoKQ==
+X-Google-Smtp-Source: ACHHUZ7QxZl1x5phuIX1RVMMYcOgzgMlXlTEPdp+xl3jrd8L/fw1k3OPIva4SO7dTMcMaHMRdDpUBxe7jqpzTrGx8UA=
+X-Received: by 2002:a5d:504a:0:b0:306:35d1:7a98 with SMTP id
+ h10-20020a5d504a000000b0030635d17a98mr3021869wrt.8.1683220375596; Thu, 04 May
+ 2023 10:12:55 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <57dd81d0-510e-0fab-670d-1109eb8dd974@kernel.org>
+References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
+ <20230502053534.1240553-2-bhupesh.sharma@linaro.org> <faefbbed-0f62-e569-455d-0d21b363f8f3@linaro.org>
+In-Reply-To: <faefbbed-0f62-e569-455d-0d21b363f8f3@linaro.org>
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Date: Thu, 4 May 2023 22:42:44 +0530
+Message-ID: <CAH=2NtzfH+7XMFdCq0JENgpJymsHNUfzwhWmDx=g8xBJ4aACpA@mail.gmail.com>
+Subject: Re: [PATCH v10 1/4] dt-bindings: phy: qcom,qmp-usb: Drop legacy
+ bindings and move to newer one (SM6115 & QCM2290)
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-phy@lists.infradead.org, agross@kernel.org, 
+	linux-kernel@vger.kernel.org, andersson@kernel.org, bhupesh.linux@gmail.com, 
+	robh+dt@kernel.org, konrad.dybcio@linaro.org, kishon@kernel.org, 
+	vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	dmitry.baryshkov@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_100413_886292_ED13DDBC 
-X-CRM114-Status: GOOD (  42.01  )
+X-CRM114-CacheID: sfid-20230504_101303_175114_95B98FF2 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,143 +88,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6102434187587927815=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, 3 May 2023 at 21:55, Krzysztof Kozlowski
+<krzysztof.kozlowski@linaro.org> wrote:
+>
+> On 02/05/2023 07:35, Bhupesh Sharma wrote:
+> > 'qcom,msm8996-qmp-usb3-phy.yaml' defines bindings for several PHYs
+> > which predate USB -> USB+DP migration. Since SM6115 and QCM2290
+> > nodes for USB QMP phy are being added to dtsi files by followup patches,
+> > move these bindings instead to the newer style
+> > 'qcom,sc8280xp-qmp-usb3-uni-phy.yaml' file.
+> >
+>
+>
+> >    clock-names:
+> > -    items:
+> > -      - const: aux
+> > -      - const: ref
+> > -      - const: com_aux
+> > -      - const: pipe
+> > +    maxItems: 4
+> >
+> >    power-domains:
+> >      maxItems: 1
+> > @@ -71,6 +69,42 @@ required:
+> >
+> >  additionalProperties: false
+> >
+> > +allOf:
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            enum:
+> > +              - qcom,qcm2290-qmp-usb3-phy
+> > +              - qcom,sm6115-qmp-usb3-phy
+> > +    then:
+> > +      properties:
+> > +        clocks:
+> > +          maxItems: 4
+> > +        clock-names:
+> > +          items:
+> > +            - const: cfg_ahb
+> > +            - const: ref
+> > +            - const: com_aux
+> > +            - const: pipe
+>
+> I am pretty sure I acked it and there were no changes here... but since
+> you did not include it, then lets keep the clock order the same as
+> sc8280xp. ABI is anyway affected, right?
 
---===============6102434187587927815==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="wz33ctz6wi47hpno"
-Content-Disposition: inline
-
-
---wz33ctz6wi47hpno
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Dinh,
-
-On Thu, Apr 27, 2023 at 02:09:48PM -0500, Dinh Nguyen wrote:
-> Hi Maxime,
->=20
-> On 4/25/23 09:48, Maxime Ripard wrote:
-> > Hi Dinh,
-> >=20
-> > On Mon, Apr 24, 2023 at 01:32:28PM -0500, Dinh Nguyen wrote:
-> > > On 4/4/23 05:11, Maxime Ripard wrote:
-> > > > The SoCFGPA gate clock implements a mux with a set_parent hook, but
-> > > > doesn't provide a determine_rate implementation.
-> > > >=20
-> > > > This is a bit odd, since set_parent() is there to, as its name impl=
-ies,
-> > > > change the parent of a clock. However, the most likely candidate to
-> > > > trigger that parent change is a call to clk_set_rate(), with
-> > > > determine_rate() figuring out which parent is the best suited for a
-> > > > given rate.
-> > > >=20
-> > > > The other trigger would be a call to clk_set_parent(), but it's far=
- less
-> > > > used, and it doesn't look like there's any obvious user for that cl=
-ock.
-> > > >=20
-> > > > So, the set_parent hook is effectively unused, possibly because of =
-an
-> > > > oversight. However, it could also be an explicit decision by the
-> > > > original author to avoid any reparenting but through an explicit ca=
-ll to
-> > > > clk_set_parent().
-> > > >=20
-> > > > The latter case would be equivalent to setting the flag
-> > > > CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate =
-hook
-> > > > to __clk_mux_determine_rate(). Indeed, if no determine_rate
-> > > > implementation is provided, clk_round_rate() (through
-> > > > clk_core_round_rate_nolock()) will call itself on the parent if
-> > > > CLK_SET_RATE_PARENT is set, and will not change the clock rate
-> > > > otherwise. __clk_mux_determine_rate() has the exact same behavior w=
-hen
-> > > > CLK_SET_RATE_NO_REPARENT is set.
-> > > >=20
-> > > > And if it was an oversight, then we are at least explicit about our
-> > > > behavior now and it can be further refined down the line.
-> > > >=20
-> > > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > > > ---
-> > > >    drivers/clk/socfpga/clk-gate.c | 3 ++-
-> > > >    1 file changed, 2 insertions(+), 1 deletion(-)
-> > > >=20
-> > > > diff --git a/drivers/clk/socfpga/clk-gate.c b/drivers/clk/socfpga/c=
-lk-gate.c
-> > > > index 32ccda960f28..cbba8462a09e 100644
-> > > > --- a/drivers/clk/socfpga/clk-gate.c
-> > > > +++ b/drivers/clk/socfpga/clk-gate.c
-> > > > @@ -110,6 +110,7 @@ static unsigned long socfpga_clk_recalc_rate(st=
-ruct clk_hw *hwclk,
-> > > >    static struct clk_ops gateclk_ops =3D {
-> > > >    	.recalc_rate =3D socfpga_clk_recalc_rate,
-> > > > +	.determine_rate =3D __clk_mux_determine_rate,
-> > > >    	.get_parent =3D socfpga_clk_get_parent,
-> > > >    	.set_parent =3D socfpga_clk_set_parent,
-> > > >    };
-> > > > @@ -166,7 +167,7 @@ void __init socfpga_gate_init(struct device_nod=
-e *node)
-> > > >    	init.name =3D clk_name;
-> > > >    	init.ops =3D ops;
-> > > > -	init.flags =3D 0;
-> > > > +	init.flags =3D CLK_SET_RATE_NO_REPARENT;
-> > > >    	init.num_parents =3D of_clk_parent_fill(node, parent_name, SOCF=
-PGA_MAX_PARENTS);
-> > > >    	if (init.num_parents < 2) {
-> > > >=20
-> > >=20
-> > > This patch broke SoCFPGA boot serial port. The characters are mangled.
-> >=20
-> > Do you have any other access to that board? If so, could you dump
-> > clk_summary in debugfs with and without that patch?
-> >=20
->=20
-> That dump from the clk_summary are identical for both cases.
-
-Thanks for testing
-
-I'm a bit confused, there should be no difference in behaviour, and if
-there was any difference I would expect the clock tree to be somewhat
-different.
-
-Could you still paste the clk_summary (and dmesg) output? Which UART
-driver is being used?
-
-Also, is there a way for me to test it somehow?
+Yes, I forgot to include your Ack in this version :(
+Ok, I will fix the clock order in v11.
 
 Thanks,
-Maxime
-
---wz33ctz6wi47hpno
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZFPlhwAKCRDj7w1vZxhR
-xctpAQD9sYYRJZv9h/D0iPAAtlYeOZYDF7u18IvdR8rTQHoA/wEAz3/h3C/WCX/e
-9OHv6OkqMBGTFLQxWrqvIxshn0fuYg4=
-=DIwC
------END PGP SIGNATURE-----
-
---wz33ctz6wi47hpno--
-
-
---===============6102434187587927815==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Bhupesh
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6102434187587927815==--
-
