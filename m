@@ -4,92 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3228C7EE23
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 15:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65D2DC7EE22
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 17:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5bjg6fj8x+eFRVkNhkGw3crx8IzlwVtBqDkHh22wB/c=; b=Ydl6MLvi4bq9mW
-	Ay67Ue6tB7XhZjepV3RLrrELEEIqdt/+j/c1FjhPAmJlsW0rmi69P5XFoYUbf22QAdcLTKnRdza9f
-	9obXv53E/SjCmKimyQDf2NO1dBjM3CmsaTfh7CjTNrggfMlMmGI3g5d5KCk5Emhandcq+JQdQxxNC
-	8yICY5WGcU12rCP1NAHDcxr4DovTi+Qa+4UvAe6w6AzIQalBaCezNydj2+IPjfyBZkOqI0nFN/q99
-	rUQGFVOMzcaO3i6zMrMAfyuzBmqB8oTCvx1tkqj27dxotrUYDegdwi2kbsH6Vq33cpzLphuiebc8z
-	Ueq9GSGLYuMnzs0tJU/g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=cjkMzZ/+lcvVx6I5hcJIHV6s2xXkvw08UeCD62CVYBI=; b=BgcCjD1S32G7iEfIyVMPscpbyR
+	TUgJ+EW3SmzFyaKoL6A66UuXRtOhom9pV98qMp8Q9mYUU9xdrbSZDB9FHrcJ7TgEZEl0EwjaeAwQT
+	hgwh00Rc+VkdFC6c4ddY8rt6BG0g9vemc44og1n5S8cfEUsUuijPIWUwKGFKoPK2WGQLwuc67i3Vu
+	T8rAmDB88cdneoZrQ+mkszmvVwGrr8zYgBAwiUTR8AQwrtVD9oZOherwQ8IYE5X7GAr0v5IVN4AUT
+	/ZcwmjxkolfzTIpSPp3+UamG6/ztT+MQi5B4B3HR5EhPIGnzc5HbvWp66CdzbVUxhfo76N4mEhWFv
+	Spy0F7MQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pubD7-008Gi8-1Z;
-	Thu, 04 May 2023 15:49:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pucKq-008Npc-2y;
+	Thu, 04 May 2023 17:01:40 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pubD3-008Gg0-2V
-	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 15:49:35 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 344F6NRN028935;
-	Thu, 4 May 2023 15:49:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=9K2J0Qs4G+xJ3O7DzrxGeAOmOdZ1h98Wxu+vcjU/S8o=;
- b=nXASaCIe2b7vuj5wKzXn6Lsh6LaCqOY3e2pW1NH/G3dH+t2SJer1epjCN8Vhdh9QzDJF
- ygy4aSizT6KBpW+JCgGa8K6bH11JOSYp5Q0cRYzx1yJECGr0KwESNyDVxNy75Q1ahGA3
- iIogo57NoTzFRrbiVDFeoi2EbDf9Ma3ur9lFVvX4c20opwS0ARfMaigWPppAx0xyVpYm
- 0kQ0xoW/gXevJNnDFGO60VNfp2yCrq++gA2XcK9mF5+BE4w1uEioeBkOFkgdN9Qgew0g
- jZ6vV1gKPbicSjvfpjrDD/MNKOFAferMQtSq/9EYiaY9WRqWRjMcQSeRfSz7F387yQwp DQ== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qcf24g3x0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 May 2023 15:49:24 +0000
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 344FnNk1023626
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 4 May 2023 15:49:23 GMT
-Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Thu, 4 May 2023 08:49:23 -0700
-Date: Thu, 4 May 2023 08:49:22 -0700
-From: Bjorn Andersson <quic_bjorande@quicinc.com>
-To: Johan Hovold <johan@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Rob Herring <robh+dt@kernel.org>,
-        Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 5/7] phy: qcom-qmp-combo: Introduce drm_bridge
-Message-ID: <20230504154922.GI870858@hu-bjorande-lv.qualcomm.com>
-References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-6-quic_bjorande@quicinc.com>
- <ZFD8oQETtLuDH2Xg@hovoldconsulting.com>
- <20230504031354.GE870858@hu-bjorande-lv.qualcomm.com>
- <ZFNvHgaYsHUc2Y9L@hovoldconsulting.com>
+	id 1pucKm-008Nnn-1S;
+	Thu, 04 May 2023 17:01:38 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 8758A5803C8;
+	Thu,  4 May 2023 13:01:31 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute3.internal (MEProxy); Thu, 04 May 2023 13:01:31 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:sender
+	:subject:subject:to:to; s=fm2; t=1683219691; x=1683226891; bh=92
+	1YgmgJDyX8fTpEjsf680K9b88j6xKzseERDrln0VI=; b=UYj68jiu63Xrv9446C
+	U+7U9vT/DXuEOuF3C0zduG+D5WwodyQMk5zwxbNyx6IQ/IHLcFFKytQ58Niabyii
+	HVter6AnK4ozGstpWcb5IyV/Epexltg5yOm/kFrPSmr4yj5YIzaeiVlfA1JjwN+q
+	eZIFziOXq/OXFg/9YSOYo2OZTG7PRgSnfuJ/SjE7Y4ew/Bj25quWLuh/t0BdQ1nN
+	gr29J1wULKDJhJMUQ5sC6VZCQ0LmvT5mvjrh1ge/K441JeWExDM+jU8TvC9BbaI7
+	FZBNgnpNSIK7wXulqF9ONHUxtHhw/a67TW9cQwyucpsYz4ig7GrlTNbCH5W9yCeh
+	W5gA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm3; t=1683219691; x=1683226891; bh=921YgmgJDyX8f
+	TpEjsf680K9b88j6xKzseERDrln0VI=; b=WZAQbTl4KhdIBGFggnepbC24ozON+
+	Y9P7RamUUn7KUOWfYKgsofJKMU48g+a442uJvpwU3eSyLQOp4GW03QHV/nxVQUZy
+	kwx1JFK0G0n3OX0QxctPhaenfPjSDIRHfhQCLLL2k/1SNkO0+tdr2ePUDWuuQElv
+	hAIWgE5sxPtyjiqrYoW9Xzd1CGRPuuuJqVj0jqU1tNQgYccAk9hmIGX4ChAah8ut
+	YyPTN1JU564F6RHSmzHnxPcTGjFo5Vzs3IXod7C95xqFT6q0ULFQe2gA2K8RFkeH
+	AkTeomH/mAn/3XjfXDtpF5l4Y14mA6UOEaSmMPu86fbGpwwMJ8npfGAjQ==
+X-ME-Sender: <xms:6eRTZBd0Ca4UchpFkmcVRifBZTiLzDjaNYIL7ROKZYaoG-tDG7sJzw>
+    <xme:6eRTZPMzfdcnM01gMAo4h9ncJjXV2G6Nnz_K08C0TtkeGA9U0GpVI924kPDOXLzG1
+    o3H35qXB0mAKR_nHJo>
+X-ME-Received: <xmr:6eRTZKjIX9LfZkO66qX4gILAEZHe-iK55SIBd3aO1CEJWIS47IOXh50_YQkpM_GGYDtiztC_5PPESExggI7WAxdKyZmWwh8>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeeftddguddtjecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+    enucfjughrpeffhffvvefukfhfgggtuggjsehgtdfsredttddvnecuhfhrohhmpeforgig
+    ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+    grthhtvghrnhepueevudehuedtkeevgfduveejueefvddvvefhjefglefgtdekveeugeet
+    kefgleefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    epmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:6eRTZK_L0pD3f9C6mQznCyuZW59l3sB-Df_ouW1uu_huJ9lMp9fZrQ>
+    <xmx:6eRTZNu3V9DGdTelUE-VIZ4R-xjzfJTdBioowM4FVQ2sC0il4NTMOQ>
+    <xmx:6eRTZJGmUm2SjMFMmFm9mJ4FpEruFnIuKFeUcXhEvcHdHm2GnQML-Q>
+    <xmx:6-RTZB2mU23ipge8XMotfaWkDt4t3YRIYZvJ9OpnSv1sp4-zCY_M7A>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
+ 4 May 2023 13:01:27 -0400 (EDT)
+Date: Thu, 4 May 2023 19:01:25 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Mark Brown <broonie@kernel.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ 	Stephen Boyd <sboyd@kernel.org>,
+ Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+ 	Manivannan Sadhasivam <mani@kernel.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>,
+ 	Max Filippov <jcmvbkbc@gmail.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ 	Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ 	David Lechner <david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+ Abel Vesa <abelvesa@kernel.org>, 	Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ 	Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, 	NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ 	Geert Uytterhoeven <geert+renesas@glider.be>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ 	Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>,
+ 	Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ 	Ulf Hansson <ulf.hansson@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ 	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>,
+ 	Kishon Vijay Abraham I <kishon@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>, 	Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ 	Samuel Holland <samuel@sholland.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, 	Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>, 	Paul Cercueil <paul@crapouillou.net>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ 	Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, linux-clk@vger.kernel.org,
+ 	linux-kernel@vger.kernel.org,
+ 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, 	linux-actions@lists.infradead.org,
+ patches@opensource.cirrus.com, 	linux-stm32@st-md-mailman.stormreply.com,
+ linux-mediatek@lists.infradead.org, 	linux-renesas-soc@vger.kernel.org,
+ linux-tegra@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ 	linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org,
+ linux-sunxi@lists.linux.dev, 	alsa-devel@alsa-project.org,
+ linux-mips@vger.kernel.org
+Subject: Re: [PATCH v3 43/65] ASoC: tlv320aic32x4: Add a determine_rate hook
+Message-ID: <leuxcmkwyb6k77oh47jcpcyp3dujy5f7gjijvkaxjz6gy5im3f@c4kvrnq6auug>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+ <20221018-clk-range-checks-fixes-v3-43-9a1358472d52@cerno.tech>
+ <01f32440-8dd2-4030-9006-a3123be55845@sirena.org.uk>
+ <erm4iq3mygnrr4h2gd5cag3sfuovv47ibdqsbmxcfabngvnwy4@z63ksvj55zuu>
+ <fcc11e4d-eba6-4eff-b3e5-9488a4da84c3@sirena.org.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZFNvHgaYsHUc2Y9L@hovoldconsulting.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: rS1tuSDLI98ujxrx2JOQ8tBxi81fl5Zp
-X-Proofpoint-GUID: rS1tuSDLI98ujxrx2JOQ8tBxi81fl5Zp
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-04_10,2023-05-04_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
- suspectscore=0 bulkscore=0 impostorscore=0 phishscore=0 priorityscore=1501
- spamscore=0 malwarescore=0 clxscore=1015 mlxlogscore=999
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2305040128
+In-Reply-To: <fcc11e4d-eba6-4eff-b3e5-9488a4da84c3@sirena.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_084933_817867_521E721D 
-X-CRM114-Status: GOOD (  43.24  )
+X-CRM114-CacheID: sfid-20230504_100137_063463_FA97D5CA 
+X-CRM114-Status: GOOD (  22.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,104 +146,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1599048980993019289=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 04, 2023 at 10:38:54AM +0200, Johan Hovold wrote:
-> On Wed, May 03, 2023 at 08:13:54PM -0700, Bjorn Andersson wrote:
-> > On Tue, May 02, 2023 at 02:05:53PM +0200, Johan Hovold wrote:
-> > > On Mon, Apr 24, 2023 at 08:40:08PM -0700, Bjorn Andersson wrote:
-> > > > The QMP combo PHY sits in an of_graph connected between the DisplayPort
-> > > > controller and a USB Type-C connector (or possibly a redriver).
-> > > > 
-> > > > The TCPM needs to be able to convey the HPD signal to the DisplayPort
-> > > > controller, but no directly link is provided by DeviceTree so the signal
-> > > > needs to "pass through" the QMP combo phy.
-> > > > 
-> > > > Handle this by introducing a drm_bridge which upon initialization finds
-> > > > the next bridge (i.e. the usb-c-connector) and chain this together. This
-> > > > way HPD changes in the connector will propagate to the DisplayPort
-> > > > driver.
-> > > > 
-> > > > The connector bridge is resolved lazily, as the TCPM is expected to be
-> > > > able to resolve the typec mux and switch at probe time, so the QMP combo
-> > > > phy will probe before the TCPM.
-> > > > 
-> > > > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> > > > ---
-> > > >  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 36 +++++++++++++++++++++++
-> > > >  1 file changed, 36 insertions(+)
-> > > > 
-> > > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > > index 5d6d6ef3944b..84bc08002537 100644
-> > > > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> 
-> > > > @@ -3196,6 +3200,34 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
-> > > >  	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, dp_np);
-> > > >  }
-> > > >  
-> > > > +static int qmp_combo_bridge_attach(struct drm_bridge *bridge,
-> > > > +				   enum drm_bridge_attach_flags flags)
-> > > > +{
-> > > > +	struct qmp_combo *qmp = container_of(bridge, struct qmp_combo, bridge);
-> > > > +	struct drm_bridge *next_bridge;
-> > > > +
-> > > > +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
-> > > > +		return -EINVAL;
-> > > > +
-> > > > +	next_bridge = devm_drm_of_get_bridge(qmp->dev, qmp->dev->of_node, 0, 0);
-> > > > +	if (IS_ERR(next_bridge))
-> > > > +		return dev_err_probe(qmp->dev, PTR_ERR(next_bridge), "failed to acquire drm_bridge\n");
-> > > 
-> > > Using dev_err_probe() in an attach callback looks wrong as these
-> > > functions should not be returning -EPROBE_DEFER (and this is not a probe
-> > > function).
-> > 
-> > The problem is that this might return EPROBE_DEFER, and at least today
-> > propagates out to returning EPROBE_DEFER from our DP controller's
-> > bind().
-> 
-> Due to the known issue with the MSM driver panel lookup, or due to some
-> more fundamental problem with the stack?
-> 
 
-No, but looks for the drm_bridge in the connector.
-
-> At least in the former case, I don't think we should hide the fact that
-> we have an unresolved issue with the MSM driver this way even if it
-> means printing an extra error message until it has been resolved (cf.
-> the panel lookup errors that we've intentionally kept in place).
-> 
-> > This is not optimal, but unfortunately we have a two way dependency
-> > across the of_graph, so we need to make one of the sides lazy...
-> 
-> But this comments seems to suggest this is a bigger issue than the panel
-> lookup.
-> 
-> Could you describe the issue in some more detail (e.g. when would you
-> see -EPROBE_DEFER here)?
-> 
-
-pmic_glink needs to look up the typec_switch_dev through the of_graph,
-which won't be present until the QMP phy is probed. And the QMP phy is
-looking for the connector, which won't be present until pmic_glink has
-found the QMP phy.
-
-So what I'm saying is that either pmic_glink or QMP needs to look up the
-other side lazily.
+--===============1599048980993019289==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="co3427ienkolccfs"
+Content-Disposition: inline
 
 
-The attach happens during bind of the msm_drm component, so at least
-today it's a consistent path to return EPROBE_DEFER in the DP
-controller...
+--co3427ienkolccfs
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Regards,
-Bjorn
+Hi Mark,
+
+On Wed, Apr 05, 2023 at 04:34:31PM +0100, Mark Brown wrote:
+> On Wed, Apr 05, 2023 at 05:17:21PM +0200, Maxime Ripard wrote:
+> > On Tue, Apr 04, 2023 at 04:26:18PM +0100, Mark Brown wrote:
+>=20
+> > > To be honest it's surprising that we'd have to manually specify this,=
+ I
+> > > would expect to be able to reparent.  I suspect it'd be better to go =
+the
+> > > other way here and allow reparenting.
+>=20
+> > Yeah, I think I'd prefer to allow reparenting too, but as can be seen
+> > from the other reviewers in that thread, it seems like we have a very
+> > split community here, so that doesn't sound very realistic without some
+> > major pushback :)
+>=20
+> For these ASoC drivers I think we should just do the reparenting,
+> they're very much at the leaf of the tree so the considerations that
+> make it a problem sometimes are unlikely to apply.
+
+I'd still prefer to remain conservative on this series and try not to
+change the behaviour in it. It's pretty massive already, I'd like to
+avoid tracking regressions left and right :)
+
+Would sending a subsequent series that would do this acceptable for you?
+
+Maxime
+
+--co3427ienkolccfs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZFPk5QAKCRDj7w1vZxhR
+xYK/AQDT76loaORROKC2ghqyIIHmBg+xw8VB5nThUFKuIO4RhgD9ERaCF31CTPdE
+PdgL4dyZrWlQGqGmbyHbk465s505Jww=
+=OlOa
+-----END PGP SIGNATURE-----
+
+--co3427ienkolccfs--
+
+
+--===============1599048980993019289==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1599048980993019289==--
+
