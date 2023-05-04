@@ -4,84 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA549C77B7C
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 09:57:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA58AC77B78
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 13:40:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SM7fnv7x6g/Io8lm3CVerzib/BrRFjSQ3w+AMRDI99g=; b=4jIHWYowmzAVTd1nKC2VPG+LIT
-	vt6totWQwBGkMVwPKdGhGl+FB9Bv/5ORCR3TiH+sRQylzSndE1HyjkutTDnnOq5hMDxAQ0PL1tTEN
-	ebyN7gQGioXTbpIRttuXC8AiYLsXpqaaGz5lHFdBVaPVe6dXo4wcragmkxhuhPOLZsViD9XbPNsjV
-	DZVx9TPTJDYQXgI1LWsfxATUMeUFNiTwFZ3G4G5SnMreh53UuD69ke2MeYywC5WNdZD8q9wxElAlW
-	ritFnUPMmQbqNhcY7FumMUTQzUJKQLMUTxToB/om7+0OapAFMwFkUGCm8STMJv+ZXEu7HQ/9vIMIA
-	ov3lu6cQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4s6Bm+5OJ/4Avopg50CQhhvSavAYFd/Ws2Qex7YI900=; b=2g/7smg5nWHAkQ
+	mrqZaXF9J6NnLAUoMLezKKGuIzKTRBEr4u3nAWjmyHiG7rKOmdOTTbnjj168COlKyd/5I0MAWRwBB
+	wKbCNMzD/YfdUzloWoBUCv/lYd/H7fFdkhUmr6XwXUOMznl+kEGctjGCudf7MdYTp3/wcwhLBYfIx
+	LXJqXsTxsFfmCZZ8rTAxpbN2EqwhkTfb9krEgTOBID8vShaS8G/J3CaGjUJUCHP83eEpf4OOQ7nfb
+	+YQltuh+lcROcNbhznaey/70zVB20zmQV55qUKkvYhZLHj//QtjXYPGcgWJGtdz7k6rhoNrolwIzf
+	pG30VgvGwkdJdQ6fc84w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puVid-007MQv-1D;
-	Thu, 04 May 2023 09:57:47 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1puZCd-007zP8-1f;
+	Thu, 04 May 2023 13:40:59 +0000
+Received: from mx0b-001ae601.pphosted.com ([67.231.152.168])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puViZ-007MPD-2A;
-	Thu, 04 May 2023 09:57:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1683194263; x=1714730263;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=skX0KctM5NyGzhY5XFNMWtwT33oUgFCc7oCsUf4NI6Q=;
-  b=hNdk/pyR6r/PKIAoAkY55Puwy++7w+7BLHTrNQjUBAJ9r7jpS6/7CAE/
-   1VcsAAdbtLhtVtRsPkzUDqMNCf1cbcKMgGnWSP2Ell/DEb4xc0d5EK3m6
-   /oySOEy5DvTLhvGWA2ejPjjER6+CrCQ4rDrenQ2paOYYoSe+yWhgRjQoJ
-   GauC4/bX0/vGDF3SKKQjf8u9daV34l+DD57HyFbgOp0s8rriJlmROLYUw
-   mhlRIA8RoZI0tXXCwjkXpuccTAa7zE1DmXCbk8TCRJf7PU0slVuiOXg8j
-   6263xUxl+8bY+EBwdVAqfxaIgeiC06mdUZwz3OsJAhndeWY+K/q+CYGxa
-   Q==;
-X-IronPort-AV: E=Sophos;i="5.99,249,1677567600"; 
-   d="asc'?scan'208";a="213646175"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 04 May 2023 02:57:38 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Thu, 4 May 2023 02:57:33 -0700
-Received: from wendy (10.10.115.15) by chn-vm-ex03.mchp-main.com
- (10.10.85.151) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
- Transport; Thu, 4 May 2023 02:57:31 -0700
-Date: Thu, 4 May 2023 10:57:12 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
-	<conor@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Message-ID: <20230504-worshiper-ongoing-5581e1f2c2c4@wendy>
-References: <20230425-commotion-prewashed-876247bed4ab@spud>
- <0b0f9187-ad6b-a1d9-6ec4-beb8989ca731@starfivetech.com>
- <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
- <482e812a-05dd-105c-189c-e926b4be9d28@starfivetech.com>
- <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
- <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
- <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
- <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
- <86693969-59bf-5bcc-42a3-b6e94a0d6f3e@linaro.org>
- <fcfc8ba4-40a7-da43-3375-712bd7e7f4d5@starfivetech.com>
+	id 1puZCa-007zNt-0F;
+	Thu, 04 May 2023 13:40:57 +0000
+Received: from pps.filterd (m0077474.ppops.net [127.0.0.1])
+	by mx0b-001ae601.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3445DKX5028271;
+	Thu, 4 May 2023 08:39:27 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cirrus.com; h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=PODMain02222019;
+ bh=zEWDZRH16IxZH8jYRpv51rOx+oio62y+XziPw6IiJ1w=;
+ b=L9OXVtBpZ1h2EQYPU9fS+CdLeJbQogB3ovHqBxHZV93tB0yyeToDCRKM+3p1Z+XcLFZz
+ DhnfCDaIAxZdN2kEgqy91hT0ZkrDGwKDxWYOZyY84Bl71CaNzT/kQ6H7HeGti1LPjN2A
+ 1C53tmN+15LZY4Xx0LsXz3jdPfYj804ASLi4vP04knaO2fZRiDoRcGlVawsjF8dnEBef
+ /SeuYP9ruq4TACIUkQ8hZ4rHae8zIGOhnmbirZT1jFR/3kSOYyRRGhG6Ds8kk3q2z9qA
+ m1ycJOjn8GapD45ROvo5FEKeAAyqeD0ftMxijnIycmgOTyr7CJvQgOt/JbzSOHf7FjX0 fg== 
+Received: from ediex01.ad.cirrus.com ([84.19.233.68])
+	by mx0b-001ae601.pphosted.com (PPS) with ESMTPS id 3q8ynqxxwk-2
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 04 May 2023 08:39:26 -0500
+Received: from ediex02.ad.cirrus.com (198.61.84.81) by ediex01.ad.cirrus.com
+ (198.61.84.80) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.26; Thu, 4 May
+ 2023 08:39:24 -0500
+Received: from ediswmail.ad.cirrus.com (198.61.86.93) by
+ anon-ediex02.ad.cirrus.com (198.61.84.81) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Thu, 4 May 2023 08:39:24 -0500
+Received: from ediswmail.ad.cirrus.com (ediswmail.ad.cirrus.com [198.61.86.93])
+	by ediswmail.ad.cirrus.com (Postfix) with ESMTP id E168D11AA;
+	Thu,  4 May 2023 13:39:23 +0000 (UTC)
+Date: Thu, 4 May 2023 13:39:23 +0000
+From: Charles Keepax <ckeepax@opensource.cirrus.com>
+To: Maxime Ripard <maxime@cerno.tech>
+CC: Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd
+	<sboyd@kernel.org>,
+        Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Nicolas Ferre
+	<nicolas.ferre@microchip.com>,
+        Alexandre Belloni
+	<alexandre.belloni@bootlin.com>,
+        Claudiu Beznea
+	<claudiu.beznea@microchip.com>,
+        Max Filippov <jcmvbkbc@gmail.com>,
+        Richard
+ Fitzgerald <rf@opensource.cirrus.com>,
+        Maxime Coquelin
+	<mcoquelin.stm32@gmail.com>,
+        Alexandre Torgue <alexandre.torgue@foss.st.com>,
+        Luca Ceresoli <luca.ceresoli@bootlin.com>,
+        David Lechner
+	<david@lechnology.com>, Sekhar Nori <nsekhar@ti.com>,
+        Abel Vesa
+	<abelvesa@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+        Sascha Hauer
+	<s.hauer@pengutronix.de>,
+        Pengutronix Kernel Team <kernel@pengutronix.de>,
+        Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+        Matthias Brugger <matthias.bgg@gmail.com>,
+        Geert Uytterhoeven
+	<geert+renesas@glider.be>,
+        Dinh Nguyen <dinguyen@kernel.org>,
+        Peter De
+ Schrijver <pdeschrijver@nvidia.com>,
+        Prashant Gaikwad <pgaikwad@nvidia.com>,
+        Thierry Reding <thierry.reding@gmail.com>,
+        Jonathan Hunter
+	<jonathanh@nvidia.com>,
+        Ulf Hansson <ulf.hansson@linaro.org>,
+        Linus Walleij
+	<linus.walleij@linaro.org>,
+        David Airlie <airlied@gmail.com>, Daniel Vetter
+	<daniel@ffwll.ch>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I
+	<kishon@kernel.org>,
+        Alessandro Zummo <a.zummo@towertech.it>, Chen-Yu Tsai
+	<wens@csie.org>,
+        Jernej Skrabec <jernej.skrabec@gmail.com>,
+        Samuel Holland
+	<samuel@sholland.org>,
+        Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
+	<broonie@kernel.org>,
+        Jaroslav Kysela <perex@perex.cz>, Takashi Iwai
+	<tiwai@suse.com>,
+        Paul Cercueil <paul@crapouillou.net>,
+        Orson Zhai
+	<orsonzhai@gmail.com>,
+        Baolin Wang <baolin.wang@linux.alibaba.com>,
+        Chunyan
+ Zhang <zhang.lyra@gmail.com>, <linux-clk@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>,
+        AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+        <linux-arm-kernel@lists.infradead.org>,
+        <linux-actions@lists.infradead.org>, <patches@opensource.cirrus.com>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-mediatek@lists.infradead.org>,
+        <linux-renesas-soc@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+        <dri-devel@lists.freedesktop.org>, <linux-phy@lists.infradead.org>,
+        <linux-rtc@vger.kernel.org>, <linux-sunxi@lists.linux.dev>,
+        <alsa-devel@alsa-project.org>, <linux-mips@vger.kernel.org>
+Subject: Re: [PATCH v3 14/65] clk: lochnagar: Add a determine_rate hook
+Message-ID: <20230504133923.GE68926@ediswmail.ad.cirrus.com>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+ <20221018-clk-range-checks-fixes-v3-14-9a1358472d52@cerno.tech>
 MIME-Version: 1.0
-In-Reply-To: <fcfc8ba4-40a7-da43-3375-712bd7e7f4d5@starfivetech.com>
+Content-Disposition: inline
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-14-9a1358472d52@cerno.tech>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Proofpoint-GUID: Q2sbiD7_m7STQAOdv3OM1SrTnrP4amce
+X-Proofpoint-ORIG-GUID: Q2sbiD7_m7STQAOdv3OM1SrTnrP4amce
+X-Proofpoint-Spam-Reason: safe
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_025743_959492_28805295 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20230504_064056_255956_5D575C72 
+X-CRM114-Status: GOOD (  26.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,105 +150,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5509737560859328852=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============5509737560859328852==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="+N3Mbg4s7LcQH++0"
-Content-Disposition: inline
+On Tue, Apr 04, 2023 at 12:11:04PM +0200, Maxime Ripard wrote:
+> The lochnagar clocks implement a mux with a set_parent hook, but
+> doesn't provide a determine_rate implementation.
+> 
+> This is a bit odd, since set_parent() is there to, as its name implies,
+> change the parent of a clock. However, the most likely candidate to
+> trigger that parent change is a call to clk_set_rate(), with
+> determine_rate() figuring out which parent is the best suited for a
+> given rate.
+> 
+> The other trigger would be a call to clk_set_parent(), but it's far less
+> used, and it doesn't look like there's any obvious user for that clock.
+> 
+> So, the set_parent hook is effectively unused, possibly because of an
+> oversight. However, it could also be an explicit decision by the
+> original author to avoid any reparenting but through an explicit call to
+> clk_set_parent().
+> 
+> The latter case would be equivalent to setting the flag
+> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+> implementation is provided, clk_round_rate() (through
+> clk_core_round_rate_nolock()) will call itself on the parent if
+> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+> CLK_SET_RATE_NO_REPARENT is set.
+> 
+> And if it was an oversight, then we are at least explicit about our
+> behavior now and it can be further refined down the line.
+> 
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
 
---+N3Mbg4s7LcQH++0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Tested-by: Charles Keepax <ckeepax@opensource.cirrus.com>
 
-On Thu, May 04, 2023 at 05:48:20PM +0800, Changhuang Liang wrote:
-> On 2023/5/4 17:36, Krzysztof Kozlowski wrote:
-> > On 04/05/2023 10:43, Changhuang Liang wrote:
-
-> >> On 2023/5/4 15:26, Krzysztof Kozlowski wrote:
-
-> >>>> aon_syscon: syscon@17010000 {
-> >>>> 	compatible =3D "starfive,jh7110-aon-syscon", "syscon", "starfive,jh=
-7110-aon-pmu";
-> >>>> 	reg =3D <0x0 0x17010000 0x0 0x1000>;
-> >>>> 	#power-domain-cells =3D <1>;
-> >>>> };
-> >>>>
-> >>>> If right? I will tell the syscon patch's owner delete the "simple-mf=
-d" in aon_syscon node.
-> >>>
-> >>> Yes, but your compatibles are now wrong. Just compatible =3D
-> >>> "starfive,jh7110-aon-syscon", "syscon".
-> >>>
-> >>
-> >> If compatible =3D "starfive,jh7110-aon-syscon", "syscon". My pmu drive=
-rs need use=20
-> >> "starfive,jh7110-aon-syscon" to match.
-> >=20
-> > And how it would even work with your proposal
-> > "starfive,jh7110-aon-syscon", "syscon", "starfive,jh7110-aon-pmu"?
-> >=20
-> > Try...
-> >=20
-> >>  And my pmu series will add this=20
-> >> aon_syscon in yaml and device tree, so the syscon patch's owner don't =
-need=20
-> >> to add the aon_syscon in its yaml and device tree?
-> >=20
-> > I don't understand. But if you need to drop syscon, sure, drop it.
-> >=20
->=20
-> Yes, I think it can drop aon_syscon node in syscon patch series. And mayb=
-e my
-> compatible =3D "starfive,jh7110-aon-pmu", "syscon"; is better.
->=20
-> aon_syscon: syscon@17010000 {
-> 	compatible =3D "starfive,jh7110-aon-pmu", "syscon";
-
-I don't really understand why you actually need to have this compatible.
-Why not keep "starfive,jh7110-aon-syscon" & register the PMU using a
-software mechanism?
-
-> 	reg =3D <0x0 0x17010000 0x0 0x1000>;
-> 	#power-domain-cells =3D <1>;
-> };
->=20
-> Best regards,
-> Krzysztof
-
-^^^^^^^^^^^^^^
-btw, your mailer is doing something odd with quotation.
-
-Cheers,
-Conor.
-
---+N3Mbg4s7LcQH++0
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZFOBbgAKCRB4tDGHoIJi
-0kPXAQDud5N7nXj7gDMGD+6MnWsxLG803WiUGD455jBCgzvmeAEAps+uRCXiT365
-KJIw/A5d325YftGjykNMpI0usmQWPg4=
-=HjHL
------END PGP SIGNATURE-----
-
---+N3Mbg4s7LcQH++0--
-
-
---===============5509737560859328852==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Charles
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5509737560859328852==--
-
