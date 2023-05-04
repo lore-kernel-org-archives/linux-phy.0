@@ -4,72 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57335C7EE22
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 08:38:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 125F0C77B78
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 08:44:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i4wqbdSoZu1FiTJsOyWG3zp+vO3i0Ui9L9k2CzJ+aAU=; b=BAb48VAlv/jbSG
-	DXioipHlzs3etjExLs3OjTAcYPdSBDPIWWxEmwurTIIbz2L8CchL5UWE696ywHIBgUG/P0u7QfMSX
-	LQdR5xVn88bmbD9cKTUQLMPjLxHY8RB9Z/FiE7DK7N0NAQviqLa/F5G/M5eU9vbI0V6QNP3+KqpBs
-	5BIU+YXraWp/BdH0NOWTYdEpGRzvNu68Sna3UOn+v+ZBu2SrjT2Nx/Hl/E4H7Lv78yXP45d/4FJ4x
-	K1aBpVZeOBMbZ75oa+IjJVVnM3w87wW0NgY9KenonG8MvrAY4QINb8nQ4+6wIiZfR8ytXhvzuiVWZ
-	7s8EzygmY5PQsVlCWY8A==;
+	List-Owner; bh=Zy6jRhAWauIeXG9jvHc1g+QaurI8mpv4sZNQAqDBc8k=; b=TzRwiQI5O9eW0M
+	DUFOQ6JCb+BYJbmv0u5xEdc51cV0gpBw8CMhFRZyv+yYSfoBE5ZLhunjDyMXy5zYdQVsuy6ttrDl+
+	SFj1VCn2DP5WQr/kpLh8beC1xsrtVx4WP3iKd++jLSPQaW14Z7abbE7QM5S0JOzP9eu/HOpzXp+Cg
+	UTMWidIcAtBE4gPaKsuiXII0on/wWG3Qa21ACKcV1GctRLaKagR1ZFk5HEMX3LTDMwlzCSnKerr4r
+	VHugYq5V8h0z7DM3tCF9QNbXLzx9fbh0t9k/Yee1iTufaEufqW7HVvpiWsSTBUS5/UjnK60Zc4QWU
+	Aejr6lpTBb0L02c/RxPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puUUG-0078uj-2n;
-	Thu, 04 May 2023 08:38:52 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puUUE-0078th-00
-	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 08:38:51 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 520BB63255;
-	Thu,  4 May 2023 08:38:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC04EC433D2;
-	Thu,  4 May 2023 08:38:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683189527;
-	bh=lyHDvvruE+QpJiz2b8/hfSd8MdRly286qX04fvZa2mM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ueEtORMx7XS5bd+UDk3Hr/ohERrwMQUCuGtyanSCF/qNjohVAwU4el94X3HosnmfN
-	 ETP75+9gTknkcKlqcBro8PMcmkQI7ZzOBReJPYQADnyMQRLe/dBXro9plhtEFfRidH
-	 NyA0Y+AjLTD5OKqjaR+a9yqC0sa3/+ByJf/grmabaGxmiMBkrzfUD8UcI3yEeK3Xdz
-	 wS/ljmpfls87SrEw+JM6buDTQYapRU9QVBx1bafQxfv7JXiRrp8uxVPWti2GrNhRU6
-	 4QJTIzdfnCejK4fqWTeTJdDAjl6yleCjTYdtyuzp5dONrJS2aN8hveC3VVMITijJ0g
-	 tNWkAGSCuPTZw==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1puUUJ-0005SO-05; Thu, 04 May 2023 10:38:55 +0200
-Date: Thu, 4 May 2023 10:38:54 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 5/7] phy: qcom-qmp-combo: Introduce drm_bridge
-Message-ID: <ZFNvHgaYsHUc2Y9L@hovoldconsulting.com>
-References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
- <20230425034010.3789376-6-quic_bjorande@quicinc.com>
- <ZFD8oQETtLuDH2Xg@hovoldconsulting.com>
- <20230504031354.GE870858@hu-bjorande-lv.qualcomm.com>
+	id 1puUZZ-0079Qh-1s;
+	Thu, 04 May 2023 08:44:21 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1puUZV-0079P9-1m;
+	Thu, 04 May 2023 08:44:19 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 685EA24E17E;
+	Thu,  4 May 2023 16:43:41 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 4 May
+ 2023 16:43:40 +0800
+Received: from [192.168.125.107] (183.27.99.121) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 4 May
+ 2023 16:43:40 +0800
+Message-ID: <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
+Date: Thu, 4 May 2023 16:43:39 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230504031354.GE870858@hu-bjorande-lv.qualcomm.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+Content-Language: en-US
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
+	<conor@kernel.org>
+CC: Conor Dooley <conor.dooley@microchip.com>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
+	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
+	<linux-phy@lists.infradead.org>
+References: <20230419-labored-camper-644d51a7ca96@spud>
+ <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
+ <20230424-baffle-punch-ec73098f2b6a@spud>
+ <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
+ <20230425-unquote-eligible-09f743d81981@wendy>
+ <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
+ <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
+ <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+ <20230425-resale-footrest-de667778c4fe@wendy>
+ <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+ <20230425-commotion-prewashed-876247bed4ab@spud>
+ <0b0f9187-ad6b-a1d9-6ec4-beb8989ca731@starfivetech.com>
+ <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
+ <482e812a-05dd-105c-189c-e926b4be9d28@starfivetech.com>
+ <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
+ <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
+ <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
+X-Originating-IP: [183.27.99.121]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_013850_132634_70F0E375 
-X-CRM114-Status: GOOD (  34.56  )
+X-CRM114-CacheID: sfid-20230504_014417_906248_15F69B94 
+X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,78 +98,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 03, 2023 at 08:13:54PM -0700, Bjorn Andersson wrote:
-> On Tue, May 02, 2023 at 02:05:53PM +0200, Johan Hovold wrote:
-> > On Mon, Apr 24, 2023 at 08:40:08PM -0700, Bjorn Andersson wrote:
-> > > The QMP combo PHY sits in an of_graph connected between the DisplayPort
-> > > controller and a USB Type-C connector (or possibly a redriver).
-> > > 
-> > > The TCPM needs to be able to convey the HPD signal to the DisplayPort
-> > > controller, but no directly link is provided by DeviceTree so the signal
-> > > needs to "pass through" the QMP combo phy.
-> > > 
-> > > Handle this by introducing a drm_bridge which upon initialization finds
-> > > the next bridge (i.e. the usb-c-connector) and chain this together. This
-> > > way HPD changes in the connector will propagate to the DisplayPort
-> > > driver.
-> > > 
-> > > The connector bridge is resolved lazily, as the TCPM is expected to be
-> > > able to resolve the typec mux and switch at probe time, so the QMP combo
-> > > phy will probe before the TCPM.
-> > > 
-> > > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> > > ---
-> > >  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 36 +++++++++++++++++++++++
-> > >  1 file changed, 36 insertions(+)
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > index 5d6d6ef3944b..84bc08002537 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 
-> > > @@ -3196,6 +3200,34 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
-> > >  	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, dp_np);
-> > >  }
-> > >  
-> > > +static int qmp_combo_bridge_attach(struct drm_bridge *bridge,
-> > > +				   enum drm_bridge_attach_flags flags)
-> > > +{
-> > > +	struct qmp_combo *qmp = container_of(bridge, struct qmp_combo, bridge);
-> > > +	struct drm_bridge *next_bridge;
-> > > +
-> > > +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
-> > > +		return -EINVAL;
-> > > +
-> > > +	next_bridge = devm_drm_of_get_bridge(qmp->dev, qmp->dev->of_node, 0, 0);
-> > > +	if (IS_ERR(next_bridge))
-> > > +		return dev_err_probe(qmp->dev, PTR_ERR(next_bridge), "failed to acquire drm_bridge\n");
-> > 
-> > Using dev_err_probe() in an attach callback looks wrong as these
-> > functions should not be returning -EPROBE_DEFER (and this is not a probe
-> > function).
+
+On 2023/5/4 15:26, Krzysztof Kozlowski wrote:
+> On 04/05/2023 09:20, Changhuang Liang wrote:
+>>>>
+>>>> Krzysztof,
+>>>>
+>>>> I am confused about what to do next. How to add this power-controller's
+>>>> node in device tree?
+>>>>
+>>>
+>>> You just move power-domain-cells up.
+>>>
+>>> Best regards,
+>>> Krzysztof
+>>>
+>>
+>> Like this? 
+>>
+>> aon_syscon: syscon@17010000 {
+>> 	compatible = "starfive,jh7110-aon-syscon", "syscon", "starfive,jh7110-aon-pmu";
+>> 	reg = <0x0 0x17010000 0x0 0x1000>;
+>> 	#power-domain-cells = <1>;
+>> };
+>>
+>> If right? I will tell the syscon patch's owner delete the "simple-mfd" in aon_syscon node.
 > 
-> The problem is that this might return EPROBE_DEFER, and at least today
-> propagates out to returning EPROBE_DEFER from our DP controller's
-> bind().
+> Yes, but your compatibles are now wrong. Just compatible =
+> "starfive,jh7110-aon-syscon", "syscon".
+> 
 
-Due to the known issue with the MSM driver panel lookup, or due to some
-more fundamental problem with the stack?
+If compatible = "starfive,jh7110-aon-syscon", "syscon". My pmu drivers need use 
+"starfive,jh7110-aon-syscon" to match. And my pmu series will add this 
+aon_syscon in yaml and device tree, so the syscon patch's owner don't need 
+to add the aon_syscon in its yaml and device tree?
 
-At least in the former case, I don't think we should hide the fact that
-we have an unresolved issue with the MSM driver this way even if it
-means printing an extra error message until it has been resolved (cf.
-the panel lookup errors that we've intentionally kept in place).
-
-> This is not optimal, but unfortunately we have a two way dependency
-> across the of_graph, so we need to make one of the sides lazy...
-
-But this comments seems to suggest this is a bigger issue than the panel
-lookup.
-
-Could you describe the issue in some more detail (e.g. when would you
-see -EPROBE_DEFER here)?
-
-Johan
+Best regards,
+Changhuang
 
 -- 
 linux-phy mailing list
