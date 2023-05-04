@@ -4,83 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9489AC7EE21
-	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 09:15:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB215C7EE22
+	for <linux-phy@archiver.kernel.org>; Thu,  4 May 2023 09:36:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w97jahGLYUV95J0uQ8XJnnXRumMCVYIH1zC2Ja3YRWg=; b=Tq7lGHSu56ESvU8s24twjyPsvP
-	os96XCQuKVuzcCUm1DOSP/uFrrgCHVBohplUbAsLFGtGDqgRkurTyaO0y4kwqiYn92rLSb+3WgnHm
-	3RhM5ZE/moy3f/KqD4IKIo7bzs6qyxPDmBpisiLvUdENys/xSFr8B5ycM9zTmarXlLsaXoXa+tRlv
-	HS0S4CMM5i8xEeaj53vK+D7dihlRpr2F7T0JAsbkX/RIY43a5VljcSf+7bIPBVtzxJYJlqYe0Wja3
-	ERGiMlgv0RpeCr/JFU/nzEq86+0Z6G9xl5dFvQTmwNrVQrnhWVF6A61639TqLRsWvgPfjg2MdKFX+
-	RV4TCDLQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HF3F5iRnUQ+KLrJURhL6teZay+A/fVmifIBSCcrKBaA=; b=PWl0d0Hqebm6kD
+	3sPfiHGsOHkmJKlHYdabZs2oRFq0QO+DLNElw9It+XfPSudB5uRqVkcfmnEqQJvvDEZInajbak3Rm
+	TI6+kOL3NbuHjVWo4Ix/9Y1a/8/H9bwY0/wuw9qV+5vZM5xZCZ0BU1G6WY0ENBfCG7fq/im76+w8z
+	SzjlF5NRlVy4JowgZRMyZcujrsSFKMHtanPftsq6rV2eOu8vXZd6GT7UwRlqJ/Wx36PquWXec/Fnn
+	thD34Anit8CA+b5uEu5ujJqrIB97UcO/oKpNOH+kEuFGdQKoPr9+4CBDq3LMqSLkvV5TDwglGTM/s
+	kXRw1XQVcFWC8/aPjQfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puV3V-007Elh-0W;
-	Thu, 04 May 2023 09:15:17 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1puVNs-007IQU-1Q;
+	Thu, 04 May 2023 09:36:20 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puV3L-007Ehx-0C
+	id 1puVNp-007IP9-0q
 	for linux-phy@lists.infradead.org;
-	Thu, 04 May 2023 09:15:15 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-956eacbe651so38902866b.3
-        for <linux-phy@lists.infradead.org>; Thu, 04 May 2023 02:15:05 -0700 (PDT)
+	Thu, 04 May 2023 09:36:18 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id 4fb4d7f45d1cf-50bc2feb320so334136a12.3
+        for <linux-phy@lists.infradead.org>; Thu, 04 May 2023 02:36:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1683191704; x=1685783704;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=4wjpkeqWA8qYkH/PiK7uN0tzwP/v0iiItnDke/o/lc0=;
-        b=RkjTlxcCgLCrvnMQ3Fft+HOe6jICiNy9KuA9Q//Xj5CWoU4WUjbkoqqTVuZuISgct0
-         WHvPd+1GujTO88D28NFvhFzw/dKEHL5S5kyaTN3UXRVKUrjErLueJCKPad0VSfkiHDkK
-         AZdtMIqTXHpAxFnUMyaNW0dFSJXuq/IJ9MJXIQgh3d9Brd5u6PYuyE9WDVVyu1e9bqBz
-         xA2rwHY7oHnF25y/pkP2SjY9kTCsLZRZbYNKntpDDJeoqmsf6TGLySC4HPrCIZ6muukZ
-         eM6uPwSSb5i+RllMYtTsMbK74wB61vEd+J+I/e1h4pkbkly6Pl/qsqRQxPULPStCZsn9
-         gBlA==
+        d=linaro.org; s=google; t=1683192973; x=1685784973;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mRcoOC8fngP6Il2rAzvXIOhnaTFot/xB1pDV/8xXBhI=;
+        b=MM3fLTuvY1THuF+Jes6bTaFgdLgelBxjG9Qs0YrJ62r2rXYT0XrFa3z3syIzosle/b
+         ndQzUCfwxP0iURGIxMkTVDjBIChW3aQKQa5lej+0hWz/zOU+BYcZpLtkfqufI9lhZ7es
+         qhlX/+ZSVEuTfyzLRaTd7wSuwjcjxrMHgq8WR24DyKR0x1kNqmw1BPJywXnPdZSaw/uQ
+         v66XZknaiYzEr+EDAw3mGYpAzFgZ8hMx+Krhne2k4sav+gyjx359mGzZ3ot1qt34/94A
+         ghRo/Cb+pg7QBb8ZQd8FiQIU4dfjKh2kVt6C+eOHJNmtQ6FMaiDDLxp2MrDt/PzbP4MN
+         7bgw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683191704; x=1685783704;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=4wjpkeqWA8qYkH/PiK7uN0tzwP/v0iiItnDke/o/lc0=;
-        b=JlufYRehmt8HecqKTo9ot056t1adQ2DvaqdBRTi9PAp5zIcAL+NxhuhrlNNpQA8YZO
-         hq417ryU8slzPrARie68MjX/U5GBCJDtB46zxmHil/zm4HU6hCo9UxndOsNPXy809rnq
-         rDiPutJB1WdEsw8LWg/czPcKtDZGhhZz72hRHe0pV/f4ETybSRRk+qYbO6NYr2yyX9C7
-         bcYh+GDy87BcxwBhBlJnWqLXJZdzv0zTYB//SLvSedrqoAY4A14mfiVz+sDO7jw7xohG
-         gkTCFD5upJgbRa9Dn5dA/U1oIVxo/rIm9m7fBKZS5dZzAcy+YNPcJUGnbbo2uMaHirkB
-         ACWQ==
-X-Gm-Message-State: AC+VfDx3mKOQVhLIVXaRzpQRd0aV9csi5xeTNUFEk6kkWI4k5f9ciUrQ
-	s0Hhtc8h6oWwTTb/BviDrK0=
-X-Google-Smtp-Source: ACHHUZ5o55IayVtrIHn8dSW7K3bSDwy0IWuVh6ib7LF1yUwMiZCjhVrRS3CCIkllKSErOzD4pjP0dA==
-X-Received: by 2002:a17:906:eec7:b0:93e:fa12:aa1a with SMTP id wu7-20020a170906eec700b0093efa12aa1amr5473971ejb.1.1683191704054;
-        Thu, 04 May 2023 02:15:04 -0700 (PDT)
-Received: from orome (p200300e41f053a00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f05:3a00:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id g10-20020a170906594a00b008cecb8f374asm18338172ejr.0.2023.05.04.02.15.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 May 2023 02:15:03 -0700 (PDT)
-Date: Thu, 4 May 2023 11:15:02 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Haotien Hsu <haotienh@nvidia.com>
-Cc: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org, Wayne Chang <waynec@nvidia.com>,
-	EJ Hsu <ejh@nvidia.com>
-Subject: Re: [PATCH] phy: tegra: xusb: Fix use-after-free issue
-Message-ID: <ZFN3lvjjn9Xu-vRl@orome>
-References: <20230504055446.2039372-1-haotienh@nvidia.com>
+        d=1e100.net; s=20221208; t=1683192973; x=1685784973;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mRcoOC8fngP6Il2rAzvXIOhnaTFot/xB1pDV/8xXBhI=;
+        b=PI4biguam6qJXiZFs8c0XVCh6H7/oglfXqWl9AYxHYkkbD7ltQwS2bf3q2DnbY5Xh0
+         UJ19rmeZOe16qu4KZquxIDWQTiVvQIdhX5ndFOsPfWiZ0+VxIS4V98eE779sz5Smcmib
+         yVieaykk5dIbTSU3eSEy5ZWi/AmmnN+uUqIrbdj7T2iqT/7BqlTAaeRp6TIDFgs3GQ/V
+         esXUJ1KaLERwFDTMN0stxTTyweWOIk5vw2pkPhNiXx3fYIl7VAN4qCnpaKS2nIWv+q89
+         +61iHqNsr661S/ygi0WmrFY1Pr8PDfv/kZk8cXMR+MnCc/fv0AcdeqJx3hw8xMhVjkQB
+         ShLw==
+X-Gm-Message-State: AC+VfDx1OYKRutlixcGhf+V+yoDXUkWJuSNgEMWoLYuz76/fn+CJjoaA
+	zA9wgCko9PONjwNKgiS44p48Rg==
+X-Google-Smtp-Source: ACHHUZ76/GLGEckds5wB/s6mHv5yN0exDgClTi+UZl555s4ZPAcE2DRB69WKyTxronDQzYc5TFp31A==
+X-Received: by 2002:a17:907:1b08:b0:957:1df0:9cbf with SMTP id mp8-20020a1709071b0800b009571df09cbfmr6548125ejc.19.1683192973372;
+        Thu, 04 May 2023 02:36:13 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:cbf1:e7ef:fb81:e912? ([2a02:810d:15c0:828:cbf1:e7ef:fb81:e912])
+        by smtp.gmail.com with ESMTPSA id sb21-20020a170906edd500b0094f4d2d81d9sm18480946ejb.94.2023.05.04.02.36.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 04 May 2023 02:36:12 -0700 (PDT)
+Message-ID: <86693969-59bf-5bcc-42a3-b6e94a0d6f3e@linaro.org>
+Date: Thu, 4 May 2023 11:36:11 +0200
 MIME-Version: 1.0
-In-Reply-To: <20230504055446.2039372-1-haotienh@nvidia.com>
-User-Agent: Mutt/2.2.10 (2023-03-25)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
+Content-Language: en-US
+To: Changhuang Liang <changhuang.liang@starfivetech.com>,
+ Conor Dooley <conor@kernel.org>
+Cc: Conor Dooley <conor.dooley@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Emil Renner Berthing <kernel@esmil.dk>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Walker Chen <walker.chen@starfivetech.com>,
+ Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ vkoul@kernel.org, linux-phy@lists.infradead.org
+References: <20230419-labored-camper-644d51a7ca96@spud>
+ <1a5b15fa-4f20-51c2-2ba1-a04a2911a694@starfivetech.com>
+ <20230424-baffle-punch-ec73098f2b6a@spud>
+ <d685a1d4-c07d-7dfa-f1fb-b35ceb2aa0eb@starfivetech.com>
+ <20230425-unquote-eligible-09f743d81981@wendy>
+ <a7cdfabf-2312-eaf3-f462-5bda7f0a120d@starfivetech.com>
+ <68cb565d-bf39-10b0-9e3e-35ba7f54b90b@linaro.org>
+ <0988495f-b87a-7f69-f222-37c67d6eae23@starfivetech.com>
+ <20230425-resale-footrest-de667778c4fe@wendy>
+ <663e9933-b9b3-a48f-98b6-2207215a8ed7@starfivetech.com>
+ <20230425-commotion-prewashed-876247bed4ab@spud>
+ <0b0f9187-ad6b-a1d9-6ec4-beb8989ca731@starfivetech.com>
+ <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
+ <482e812a-05dd-105c-189c-e926b4be9d28@starfivetech.com>
+ <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
+ <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
+ <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
+ <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_021507_115119_60F65ABC 
-X-CRM114-Status: GOOD (  23.33  )
+X-CRM114-CacheID: sfid-20230504_023617_307558_B9405CC8 
+X-CRM114-Status: GOOD (  11.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,118 +115,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1436481259936056454=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 04/05/2023 10:43, Changhuang Liang wrote:
+> 
+> 
+> On 2023/5/4 15:26, Krzysztof Kozlowski wrote:
+>> On 04/05/2023 09:20, Changhuang Liang wrote:
+>>>>>
+>>>>> Krzysztof,
+>>>>>
+>>>>> I am confused about what to do next. How to add this power-controller's
+>>>>> node in device tree?
+>>>>>
+>>>>
+>>>> You just move power-domain-cells up.
+>>>>
+>>>> Best regards,
+>>>> Krzysztof
+>>>>
+>>>
+>>> Like this? 
+>>>
+>>> aon_syscon: syscon@17010000 {
+>>> 	compatible = "starfive,jh7110-aon-syscon", "syscon", "starfive,jh7110-aon-pmu";
+>>> 	reg = <0x0 0x17010000 0x0 0x1000>;
+>>> 	#power-domain-cells = <1>;
+>>> };
+>>>
+>>> If right? I will tell the syscon patch's owner delete the "simple-mfd" in aon_syscon node.
+>>
+>> Yes, but your compatibles are now wrong. Just compatible =
+>> "starfive,jh7110-aon-syscon", "syscon".
+>>
+> 
+> If compatible = "starfive,jh7110-aon-syscon", "syscon". My pmu drivers need use 
+> "starfive,jh7110-aon-syscon" to match.
 
---===============1436481259936056454==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5P7ThJ8lckK4aSHF"
-Content-Disposition: inline
+And how it would even work with your proposal
+"starfive,jh7110-aon-syscon", "syscon", "starfive,jh7110-aon-pmu"?
 
+Try...
 
---5P7ThJ8lckK4aSHF
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+>  And my pmu series will add this 
+> aon_syscon in yaml and device tree, so the syscon patch's owner don't need 
+> to add the aon_syscon in its yaml and device tree?
 
-On Thu, May 04, 2023 at 01:54:46PM +0800, Haotien Hsu wrote:
-> From: EJ Hsu <ejh@nvidia.com>
->=20
-> For the dual-role port, it will assign the phy dev to usb-phy dev and
-> use the port dev driver as the dev driver of usb-phy.
->=20
-> When we try to destroy the port dev, it will destroy its dev driver
-> as well. But we did not remove the reference from usb-phy dev. This
-> might cause the use-after-free issue in KASAN.
->=20
-> Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-> Cc: stable@vger.kernel.org
->=20
-> Signed-off-by: EJ Hsu <ejh@nvidia.com>
-> Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
-> ---
->  drivers/phy/tegra/xusb.c | 15 ++++++++-------
->  1 file changed, 8 insertions(+), 7 deletions(-)
->=20
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index 78045bd6c214..515298a9a433 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -563,13 +563,6 @@ static int tegra_xusb_port_init(struct tegra_xusb_po=
-rt *port,
-> =20
->  static void tegra_xusb_port_unregister(struct tegra_xusb_port *port)
->  {
-> -	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
-> -		of_platform_depopulate(&port->dev);
-> -		usb_role_switch_unregister(port->usb_role_sw);
-> -		cancel_work_sync(&port->usb_phy_work);
-> -		usb_remove_phy(&port->usb_phy);
-> -	}
-> -
->  	if (port->ops->remove)
->  		port->ops->remove(port);
-> =20
-> @@ -832,6 +825,14 @@ void tegra_xusb_usb2_port_remove(struct tegra_xusb_p=
-ort *port)
->  {
->  	struct tegra_xusb_usb2_port *usb2 =3D to_usb2_port(port);
-> =20
-> +	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
-> +		of_platform_depopulate(&port->dev);
-> +		usb_role_switch_unregister(port->usb_role_sw);
-> +		cancel_work_sync(&port->usb_phy_work);
-> +		usb_remove_phy(&port->usb_phy);
-> +		port->usb_phy.dev->driver =3D NULL;
-> +	}
-> +
+I don't understand. But if you need to drop syscon, sure, drop it.
 
-It's a bit difficult to tell what exactly changed because of the
-additional move. The move looks correct because this is only valid for
-USB2 ports, but I think it'd be easier to review if the move was done
-prior to the addition of the ->driver clearing. Or perhaps a mention in
-the commit message would be nice.
+Best regards,
+Krzysztof
 
-It's obviously up to Vinod and Kishon if they want to see this
-clarified. Either way is fine with me, so:
-
-Acked-by: Thierry Reding <treding@nvidia.com>
-
---5P7ThJ8lckK4aSHF
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmRTd5UACgkQ3SOs138+
-s6Gt1Q/9EXhGAYP6JtZG9p/vcDxGeCROBCWGKFaLA5L1NvL+nJbZT9DmodB45UDH
-cEUZPd6fdH6CYvZuM3B+khQvS2yOIvLtBt2WaGs8fp6yINmR0fKsKbWqjqglbrOH
-jZJcpzzz8xjkZ3XvNAXB+qpkBEEzGqTeMz35GRMeDhI6xczHG3k6anhaecI+Gys4
-H8gg7mjVMbiSDSXigfSw080yL7Y+42s8U8YHh9Q20Gszfk/hcI6qs0fUrZXpBy5K
-1wHdrqtoPU7jWn6PF7L/LrFcbcomlPiKiSiB5hhmAj+l7EbQnmXXrtO9A84inZuE
-+V8ylo/jEpxgnTtNYOaQuB5t/BhoZl7MARgJ4C1lMrRODlJtEK9JWqU4sBtz2K3o
-RwnMaGeXq+3GB5kK5wK2+/H6jVLCoyKogm9csmcxpcptIO6EIWlM0EaqztwZNP8V
-lD3UcG7bzrW7DyOJETnw04AjteQ7gsgzm2kNWcrQORCLmfM13yKsTHvsUTfOW6ie
-mY+vFqnjlbslAJnrYEgRMG7KfJAWjVuqWN5NsBCaGChh/9+FiHU2joIZTt/n3SOw
-GtXzPIe7gMJnkicq5VvwRvUskHrztivJEN5nDmx0Zm2sZrUX5gdgQhZ78uyOgM5t
-FgPndVJbPSW8Mgj4R/maEpnK40UH+7hegbbQBT38l9X1NFucPss=
-=1FBR
------END PGP SIGNATURE-----
-
---5P7ThJ8lckK4aSHF--
-
-
---===============1436481259936056454==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1436481259936056454==--
-
