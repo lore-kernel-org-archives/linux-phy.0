@@ -4,67 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F412C77B75
-	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 09:26:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A722CC77B75
+	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 09:28:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zFc0zNcu5qQ/lIlxZhQ2YYQ3nn0eNNsIMyjKku7r2ZI=; b=bMLVqzItYVwVwf
-	wFW8zkMPc0LBUzOs64fABPDdrxn1R31cH/JjlHfKsFZ90+e+h6SLb4zB0RZVcnHO/LilGc4x2hY/5
-	LZ/pRIRuuP9BlOCcWn6ZcBG5NTBYBnMEHBhcO66lFWiaC0F7c/xj0Te+wSOwrlwQJDbt4XReOPA2P
-	NQnO47+mycEefu7ipQavI10GBOG7bV0zOOPFSPC84khDcngiELWYECnRxeGSPhZqmUlQwAY/ZUfMF
-	47zIjV+GDcoWVX/7oNdTvkpn15GYUhU4ZUVg++J3v7IcHDBviS8+BlDWzyKsm1/dIJR9LwtJVbmLg
-	QXrBPRNTtjEqu126shSA==;
+	List-Owner; bh=ikARZHfvqC6N1toC4o7l/r3uEiHviA/vVzfmk38z4gI=; b=lh0aWPeNthBSfC
+	qf+zr0gXVjikrF+oi0W6X/5UTVlhq1Kzct2wopVrDMlliCsgJ1az1wX8RpEYZYYobFFmGJSlWfimJ
+	Dii6oYpDJoUHEwCfnHXS//ibErP0LgKoULqkpYMyj0EQFQI+X3mt/PU0dO/2t7SoB6BNTkrYeC+xQ
+	Rrbm4e9LbFFAh9h+tkxvgRkArxtP8uSgbfvTUhgEry/Ll/OhWgFHXdsa3q+M64f5NrgBY3Y3y33NO
+	T020YQmWDoWdWq6oT4ZmXXpc+fVOd/tfz107l8aeg6dRjwJexxBM5SUnl5qVre6e9gtKJYnzO/FeU
+	7HGVFgNwJfjx0bJOvAhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puriJ-00A8Uo-0M;
-	Fri, 05 May 2023 09:26:55 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1purk0-00A97r-0k;
+	Fri, 05 May 2023 09:28:40 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puriE-00A8S2-0y;
-	Fri, 05 May 2023 09:26:51 +0000
+	id 1purjv-00A950-0w;
+	Fri, 05 May 2023 09:28:37 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id C921B63CB3;
-	Fri,  5 May 2023 09:26:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DD03C433EF;
-	Fri,  5 May 2023 09:26:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A967B63CAC;
+	Fri,  5 May 2023 09:28:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37E38C433D2;
+	Fri,  5 May 2023 09:28:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683278809;
-	bh=cbv7KqFW3EZCwbXiqh1UsSQZA6Dm577W9BTUAcRYjjs=;
+	s=k20201202; t=1683278914;
+	bh=1RAXc0NiBF7f+OxPfJ6Q3iIY0ISS03O5QOmWMYZ+Rxk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YR3ygV1n/WztmQPmypSDHPmCE21+CNyWvFvgd7VAxyi6F+rg2w9GATY0uAdZgQVtQ
-	 4DPVLjOoqN7CfvpJbD/WKRzabu5rhGp9Ppyle//dCD6ZUck8fN4WD5pnVHIojEd4M1
-	 RPonfvoC1x1T+xazjxm6SoE1dCKqLnakzXLmrRFOmOf26GwBTBQpPVLaElgsJL/ZSi
-	 pHIMDgKZTCqpYQVw4qNT9bd4UUuXeZTlP0WCglUiZa8inC1NcroG6UffZRwk2ttqP8
-	 WkF1rPZuz9M7bs8RcKyQ0YcSif40FX9PoP9WEPwGNBcIIt57hNTMxlug7WQ/Jiriuo
-	 E7sWXyesn59lA==
-Date: Fri, 5 May 2023 14:56:44 +0530
+	b=lp9dhKV7U+yAXz8XoM5uYwnqkHMpOJNX4AafF2rX6XK9yCWv+doTi4UXb7tvPuA10
+	 KNpEYJcc5CUUlgK03TE5D+xnA6DFAISKGJiyGMQ1fIpHDx0WtWbMiILEi9dCKltMfE
+	 56Za1I3RJr7hcZUswM+W3tU6MFowUECKSjxGFMjKiu79cHbLzMhQu5pfyeCN2+3JP9
+	 e1kWLDtSmwvSBYQ1amkgCeE+wBlNORJn4wpB/ZX/9DneqFgbaNLwEn5mmAucnMZ1cr
+	 lDtHvKC5USXt8j2jaM4vXqNiPYskuLsmL2dzeUEZQbIx4sswbzPYNHvVjz8f6Y2FF7
+	 Z2swNdODgi6JA==
+Date: Fri, 5 May 2023 14:58:29 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+To: Tom Rix <trix@redhat.com>
+Cc: chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
+	chunfeng.yun@mediatek.com, kishon@kernel.org,
+	matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
+	nathan@kernel.org, ndesaulniers@google.com, granquet@baylibre.com,
 	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
-Subject: Re: [PATCH 0/2] Fix mtk-hdmi-mt8195 unitialized variable usage and
- clock rate calculation
-Message-ID: <ZFTL1BRE+qke209f@matsya>
-References: <20230413-fixes-for-mt8195-hdmi-phy-v1-0-b8482458df0d@baylibre.com>
+	linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+Subject: Re: [PATCH] phy: mediatek: fix returning garbage
+Message-ID: <ZFTMPWp8LhwA9uHz@matsya>
+References: <20230414122253.3171524-1-trix@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230413-fixes-for-mt8195-hdmi-phy-v1-0-b8482458df0d@baylibre.com>
+In-Reply-To: <20230414122253.3171524-1-trix@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230505_022650_374003_12DD9EAA 
-X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-CacheID: sfid-20230505_022835_371580_EDA10196 
+X-CRM114-Status: UNSURE (   7.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,15 +79,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-04-23, 14:46, Guillaume Ranquet wrote:
-> I've received a report from kernel test report [1] that a variable was used
-> unitialized in the mtk8195 hdmi phy code.
-> 
-> I've upon fixing that issue found out that the clock rate calculation
-> was erroneous since the calculus was moved to div_u64.
+On 14-04-23, 08:22, Tom Rix wrote:
+> clang reports
+> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+>   'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+>         if (ret)
+>             ^~~
+> ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
 
-Applied both, thanks
-
+I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
+usage in pll_calc"
 -- 
 ~Vinod
 
