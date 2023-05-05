@@ -4,85 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBAF4C77B7F
-	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 12:39:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C87BC77B7C
+	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 13:40:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YAHEx8EZWjcpNBD4n6YpJ4qvFOzhaIYdZi7RNhECFBM=; b=s07upQeibeCOmDhdX9/K0QFcju
-	jKhE1QvTz4EyUvtLnbwaDrsfchSrF7mVHAiPD/2MxVBhM6CO/kVKO0CQOGllRJarl6HU082IRpkAK
-	+x7/ANWejn8upt8koNu21uVyGqLLyTb5Le0QCAW/fNusdG+9mgyz3KS3bvchucK4edCVFzflwWgk5
-	VaP7rUofzJsxBzkSvexQkazX2sGwIt5cgVc8+LqkgP7VljgXGWi1Y2zsoHqhAbN9Vn97vnucKE9E8
-	qrrkjnj/nARNrDxTY0AZmworka5sx/t/PwmqfxJuN0YUeItGmq8+YmQ1kFhvNud4zt6arHA5Cqzrf
-	NiHrT9Lg==;
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=89OkimpBClRtV8CBc/I7Srzfk2dHoI8iaxruinQ941Q=; b=eX3
+	rq6P7BlZwzHc9Sdyp5LpiguzEAwSNXnUVv6iFroGZ569cfeOF278HgDitBRVSrbu+qKM6ZZ0mpkbD
+	ATn4IKIFXssGP/Ef/eFzv2YczUe9+wclBWIzPPxqoEMfeL9u1+N12/NORf9ztOG9LErQTncbeFisO
+	shCtq/LtA+SbjPFLAXwZcXHCMRaMmIx75ihHqTwLDPta6id04/h33oatHk6lWK0vGxSdS5GOdQu7Y
+	r9QsAJkF8t5bL07MFg8spJn5lkONSU5wVswIM74a/dMrYNBQlDFd2IfmKc0fIiQvV3v2k2dcMQHIc
+	s+2vB448gYimgJQWpcjg8fDBEJ/qgFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puuiH-00Atyn-1L;
-	Fri, 05 May 2023 12:39:05 +0000
-Received: from esa.microchip.iphmx.com ([68.232.153.233])
+	id 1puvfp-00B0jl-2J;
+	Fri, 05 May 2023 13:40:37 +0000
+Received: from desiato.infradead.org ([90.155.92.199])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puuiD-00AtxI-1y;
-	Fri, 05 May 2023 12:39:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1683290341; x=1714826341;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=8xaX52aaPvTWMjYeqa0TqYNGO9iqMeWfTGMQ8/3Jsag=;
-  b=t5zl1IeCZnBeIrWwIfrPEcrtFDTLkHa9wKAgupiytoJYXiByuPHKl1gJ
-   QVRKLw1snRH8CnI6R4LM4orhd2eWarfrR6vlWNj9n4vyHgak3WO8Heiym
-   pqcKCyX/5cShH2wG6t2hBpEqHiKx2CQr0cDcw0c9LX2t6BvlFJgEvu90a
-   fvdal8iLYKD8DdT5h6n+5kXOZIBXfG3Ov5Lrg83Q3AZK/DQwM8I8KGc3S
-   gpx5mkIfDXarwBxX+krLfOwugnoU1fLE+OB7IH807py6rqGL0OkhdKWOk
-   sp53O3W2jFRPqrYTq0ZkE0B4a26QEK/Blru9mTUFeqa5xdIV9i3IVmRPq
-   Q==;
-X-IronPort-AV: E=Sophos;i="5.99,252,1677567600"; 
-   d="asc'?scan'208";a="223989201"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 05 May 2023 05:38:57 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Fri, 5 May 2023 05:38:57 -0700
-Received: from wendy (10.10.115.15) by chn-vm-ex03.mchp-main.com
- (10.10.85.151) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
- Transport; Fri, 5 May 2023 05:38:55 -0700
-Date: Fri, 5 May 2023 13:38:36 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
-	<conor@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Message-ID: <20230505-magician-poet-724c96020c2f@wendy>
-References: <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
- <482e812a-05dd-105c-189c-e926b4be9d28@starfivetech.com>
- <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
- <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
- <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
- <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
- <86693969-59bf-5bcc-42a3-b6e94a0d6f3e@linaro.org>
- <fcfc8ba4-40a7-da43-3375-712bd7e7f4d5@starfivetech.com>
- <20230504-worshiper-ongoing-5581e1f2c2c4@wendy>
- <2f473307-2219-61a4-fa66-5848fe566cf0@starfivetech.com>
+	id 1puvfm-00B0ik-2R
+	for linux-phy@bombadil.infradead.org;
+	Fri, 05 May 2023 13:40:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=EVklULZWobJavjTtgpCvH2nNyWQ73f/vto/gVwCYhHg=; b=mRFBd0DqWRjTKuFHUd6sWkWCk0
+	ZluziF2L9o+pK+d04+gQAF/NOATHOK0HmRQSVbTlxQUOfu7fYeFVGbWc9vQgH3xUkJhkrQTaT8dms
+	MQ4pMUfB9+3KkenSfjlHnoYt32BuKwvRpGtN/hekwWe5VIaBsVxpOgqaz6lQvzxS0dvRJJMKSTaYk
+	bv5VAf1DWMYj6kgA4Gb3+Hf46owahVSG1xq4zBgsIEBETrNonyGMGY+9euOmL6SuqsCMT0MKiJ8G1
+	cYcjRmS7a/QdGez+OZhIeDsCBZq/2re4NEbayUUPSAQRsNfpqY5SD81KAWD6TF1qa6ulmFBUCsSsB
+	q4axFkcw==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1puvSv-003GDA-06
+	for linux-phy@lists.infradead.org;
+	Fri, 05 May 2023 13:27:19 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id CA3E463E17;
+	Fri,  5 May 2023 13:27:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BBC54C433D2;
+	Fri,  5 May 2023 13:27:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683293232;
+	bh=RPMkakcsgGg/pEMX/kFbjCNm3Vpjc9Hgy/zjJOCFcqM=;
+	h=Date:From:To:Cc:Subject:From;
+	b=rMVtuDb5bKIPa9WIwI/JINrOiAYV7vBJgFmTVmiKkj9fIoNuDMmA8frzgfKUhVEFk
+	 8TQ2e6MML4yZZp4jUDV7bXxoO1lhuLYaBvsugAMrYbeb+4+yRJIUXFJYJ8f5SUMc3i
+	 oxso3w2rqCCwy3PLNnMwH75TqKjUA7P0XvTF+JuuojyN7ju/OTFMFOkjqQMnh6k1YA
+	 ZtK9yUSmdW8PzT5bGYvmePjJje3PSlB+VcET+sfnwnsC3Tlv1s9qc2unXgUFF/dB2x
+	 QtTWmsZYgthoqPTxJzIVA/KMAphicjgkt7wXGSNvTkbRS575JM5kqfH7aadFXq9YoM
+	 Ug9sqIrI1JERw==
+Date: Fri, 5 May 2023 18:57:08 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+	Linux Phy <linux-phy@lists.infradead.org>
+Subject: [GIT PULL]: Generic phy fixes for v6.4-rc1
+Message-ID: <ZFUELDT/xaxm0lmP@matsya>
 MIME-Version: 1.0
-In-Reply-To: <2f473307-2219-61a4-fa66-5848fe566cf0@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230505_053901_659177_4C9AC540 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230505_142717_241697_0D63A0B2 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,50 +81,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4978943949231118944=="
+Content-Type: multipart/mixed; boundary="===============5492164184254872753=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============4978943949231118944==
+
+--===============5492164184254872753==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="joHxcNEPtN2DDJ9p"
+	protocol="application/pgp-signature"; boundary="X4DcDbEFAfyTRw2S"
 Content-Disposition: inline
 
---joHxcNEPtN2DDJ9p
+
+--X4DcDbEFAfyTRw2S
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Fri, May 05, 2023 at 09:29:15AM +0800, Changhuang Liang wrote:
+Hi Linus,
 
-> But if keep this "starfive,jh7110-aon-syscon" compatible. Which .yaml match to
-> it? Use this series dt-bindings or syscon series dt-bindings.
+Please pull to receive the two fixes for Mediatek driver warnings
+as reported. Kbuild bot and my tests indicate that this fixes the reported
+issue.
 
-There is no syscon series anymore, it's part of the PLL series now:
-https://lore.kernel.org/linux-clk/20230414024157.53203-1-xingyu.wu@starfivetech.com/
+The following changes since commit a0106132372120dd0abf5ad7636614e5aeb5da08:
 
-I don't really care what you, Walker & Xingyu decide to do, but add the
-binding in one series in a complete form. It's far less confusing to
-have only have one version of the binding on the go at once.
+  phy: cadence: cdns-dphy-rx: Add common module reset support (2023-04-12 2=
+2:16:16 +0530)
 
-Thanks,
-Conor.
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-=
+fixes-6.4-1
+
+for you to fetch changes up to 9d9ff3d2a4a567b543b71c2967d2ccc5e0ac6816:
+
+  phy: mediatek: hdmi: mt8195: fix wrong pll calculus (2023-05-04 23:12:11 =
++0530)
+
+----------------------------------------------------------------
+phy fixes for 6.4
+
+ - Fix for mediatek driver warning for variable used uninitialized and fix
+   for wrong pll math
+
+----------------------------------------------------------------
+Guillaume Ranquet (2):
+      phy: mediatek: hdmi: mt8195: fix uninitialized variable usage in pll_=
+calc
+      phy: mediatek: hdmi: mt8195: fix wrong pll calculus
+
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
 
---joHxcNEPtN2DDJ9p
+--=20
+~Vinod
+
+--X4DcDbEFAfyTRw2S
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZFT4zAAKCRB4tDGHoIJi
-0j7sAQC3yBu80qw2HVfxwCss7YeMwglVk3XoMJwU5Edb0+UMYwD/TodA8cpmhYbt
-lWKK0yqBI6MEjCP3wB/OBKkdc3DOeQI=
-=SIb4
+iQIzBAEBCAAdFiEE+vs47OPLdNbVcHzyfBQHDyUjg0cFAmRVBCsACgkQfBQHDyUj
+g0cHgQ//Rb+Q6bxeU0x33Vvcoy+Acbl8G0EYR2+apDdM2Nv3+4AulrkFto3eWFTp
+yjWM6R/2PMcwEVMoc/TyGTfnGPHpFhrI6gyoLeMtT3dA5yBsIIQXuuaZbOyvqOKX
+gzGwvsMFCMZEslvRXfG2IIRwIATsM7Pbm9EL5p4n2PofI1L1Bhpm32ccoQ3b5GKd
+ADogUaP4cWYVfQ5Qxf56PQD895wDfaVipn9NTPCrq4rrmXwWgPUbNn4Od7+Cszpn
+FdzZja18J3zs74vRpvvEa2LsF5RyvV4jcmPLuba52X5p4UUg4wfHYpmUDbnQLOfF
+Ovtx4SMyURNQVn0yRby/x02sUvJkw0SuBwBkGuKXSWRwcxeThhFM91E6rQ8STxK+
+4ujT0jNzRGGbtKJmFr9HuNrDvkPhbha9602y7o4O9h1widdPyJsOmZgCbyAwKKD/
+PvxHBZDvdiN/KYXtbRP8buTQYmjgnjKOdPlfkWfMu3Tb4Ci9mx5wsVRkXfO4Dq/q
+S1GEikj13tmskcBX5HuTdtJ+rDSJJTsl+GKWS2gwkJ/KpJ+cJZolzBAJ0Bb0nkcY
+M7NKAdjH1k9LesXRDe1k9jNFOCGS4DwqTgCukCi90KXdKUm2Opia8u/6S/EcDUwe
+fHI3sGGa07V9TDc2Lsg7N8VeafEyyhlX4m9zAkKEFC+MTdB0SAE=
+=fVZq
 -----END PGP SIGNATURE-----
 
---joHxcNEPtN2DDJ9p--
+--X4DcDbEFAfyTRw2S--
 
 
---===============4978943949231118944==
+--===============5492164184254872753==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -148,5 +171,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4978943949231118944==--
+--===============5492164184254872753==--
 
