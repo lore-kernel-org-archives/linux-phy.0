@@ -4,90 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3ED6EC77B7C
-	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 10:20:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90C32C77B7F
+	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 11:25:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vAPpO7t9DvPFIzp244rLtBRJqRrK87nvu4W5F3Wgo34=; b=R0q93XwsLormNv
-	bBUEJiBH5V1sbeUyhfob2KdB6YuEnXV/tm6jTM2hVDu7lI9ZfIOTtShGLAzocUnUnafavo6AB8csc
-	Kh1eg5Ono7x7g37yFtRdvgOZCONCmBt/F9K8vbjpohQg5Yxp2dYoKc0AH2+hWbn88qqWK4WiUi0/N
-	5W9YwKN91IOYo/w94lRPrd/kZZ1iB4ZX4X5xF0tyPCg2Vk3rPUM0YgkZrCftvsuBTB/AuYgu6WKGh
-	PsAxpVVMiwOzPniZ5+CBiUqBlO1mohau83iX6jSgxdlMyhw78bvCcYSX0peR/Q1V4lT6UKtBI4FIw
-	wxtgjYCP/3dGDEXSw0eA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BxM2/nNczbcRyCy9VziAwGNVgZNk5PWSHKFwcyIbn4w=; b=g1+yNzkW/BlY+b
+	FjG5Yht9yGzGNjlOkl+RkGAQDz4g5rbrToddqHJxXYR9K//2x0ODZa3Ud2Nt8x9COROCQRe8Tvel6
+	nWdsEEtErXdk30t7CDfubYF5DMkXhuVU5m+NbNI8lj3eslkEFCEroTktZxnHxXIS1dRPwzl4Ac/yB
+	Tn7ZzohVLxv5uEgni3Wq+D2zcvQxxwMxMOlfGLP6v3opIcAgIKkRi0rkpRim5CZ/geD0S/x1k6lkl
+	G0YhTeEO2pzj4YXQsuRNgEeQLlr2y4GvWQ2BxbZrkqVgD7kFc6Szd7Ad7iqMytIJTJzb1OsBqSxNr
+	/7V2FZBVlZplVtHgULOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pusXo-00AFrC-2o;
-	Fri, 05 May 2023 10:20:08 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1putZN-00Af34-0M;
+	Fri, 05 May 2023 11:25:49 +0000
+Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pusXk-00AFqg-38
-	for linux-phy@lists.infradead.org;
-	Fri, 05 May 2023 10:20:06 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3458luUJ014530;
-	Fri, 5 May 2023 10:19:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=aNHgU+0nC7vnaXDt9HRwFXY3R2EPk1kMa3lnhR84wv4=;
- b=SKfGqRYpGNi41XqRxF7oQiR5u2YTHdCYKhGBmQoFAqZBIAmIe6Zqv56n4dlAWbwKr08y
- 3nYsY0IDvcjp21H8WKWG182ydhLUCksnW1m9GzubntUTJ+oGOk1z7HdaiRXKbAd61NHE
- JLvL70WXn9Cpt6X86A5N1YpNltwvCZDPoYZw4um1L9HVgJX9Bnl2ebmLUadXriCaMH+U
- HdeX8+WodSU+77wpHYqZjB5g6TT9ZUW6QzQe7sGxAN5o6RI6yCrb4gMsDuJDnu+/5+zr
- d8bRuFQiH91l8ch9wc0v2l9LAQNvvtEclqzo44jjmqcq28gNTxywJJENiOCjkCEdMaOD gg== 
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qcb24augd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 05 May 2023 10:19:59 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 345AJwwX026871
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 5 May 2023 10:19:58 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Fri, 5 May 2023 03:19:52 -0700
-Date: Fri, 5 May 2023 15:49:48 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v10 7/9] arm64: dts: qcom: ipq9574: Add USB related nodes
-Message-ID: <20230505101947.GB10918@varda-linux.qualcomm.com>
-References: <cover.1683183860.git.quic_varada@quicinc.com>
- <efb655fd19354ee77cf03b3b96a2206065106590.1683183860.git.quic_varada@quicinc.com>
- <CAA8EJprrk7+jRWdhz2MWdFj-jf2ehbXrz97KrkZ4NE6FqhiCNw@mail.gmail.com>
+	id 1putZH-00Af1R-0M;
+	Fri, 05 May 2023 11:25:45 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+	by mailnew.west.internal (Postfix) with ESMTP id EFE7D2B06795;
+	Fri,  5 May 2023 07:25:30 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute4.internal (MEProxy); Fri, 05 May 2023 07:25:36 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:message-id:mime-version:reply-to
+	:sender:subject:subject:to:to; s=fm2; t=1683285930; x=
+	1683293130; bh=l5ioAqLUIgJULjqwKYtOjHFnbY6yI6/LI8d0PR6VtyM=; b=K
+	daFzuUu6XO2LaYjDTphcLLz/GlUPhIOw1rRn6yVXs3eyQLNaa181x0dHDbt9UdLo
+	zyAvbbqqbqt6xguEWLq+Y7XvKxH8h67iwigmG6lIm0397Bk5HScfh1TsqFN0EDMr
+	3LonuK2S0VmFCWYQyaihe+VAnSIiWWLNXU0vMykWBYLbu6ZIqboackHNE0IXfxIR
+	as2IC7+5LWKRCXWB34eIBIQ7u+PTN6mMZnFqmo5giXRuFqZO+hVljeKHPIM7iSCJ
+	w0/C/PvtZnSL78SBaiAHhHXczCOrVc7JURiYnvm0UtZtyN08Y927yIuZ51nxGJWJ
+	3ecp+WM1vrDHFY4zIvbOA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:message-id:mime-version:reply-to:sender
+	:subject:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender
+	:x-me-sender:x-sasl-enc; s=fm3; t=1683285930; x=1683293130; bh=l
+	5ioAqLUIgJULjqwKYtOjHFnbY6yI6/LI8d0PR6VtyM=; b=DaRi2HpzSjUslNUfV
+	+Wxt7duSO5/hYNA2h5A0t8XGQfdp9yTBEQp0yK08w8TSdvKz5sBGFEU2WxcXDYpT
+	3cV8qLYkYFXwVAqSQn5mP0rQxnIN5rLXKyv6FoQpSeQftvNw+Pt0H8KyQbRBA+3V
+	IQGGPQvZv/4gTkVAs5uVT8xAQFzSd1BxMmvHV0Sr/oJgrN2OTr53ytLWNCaT4ReU
+	NGN4AezZPVD8DfXd3DwUFL/96oVoikCr64FddmnTRsceoj0N4vJIAsBSHvFmhCSS
+	Bn/XfJIdxzHcBE7TecPZAQ9KKMBG4dR94DVecCEuaTQVrf4Dg/u7t7NWBo5iw5q5
+	1FxcQ==
+X-ME-Sender: <xms:qOdUZNJT030Zgt0JbyFQ_RKM-cy46jwZsLTVl33BJCq45Pe101WL5g>
+    <xme:qOdUZJJ41xlcocWzLm0jnNS7jBIN8KkghbR3IkcuCflIGMbz56nitKYeNXrfi5TeN
+    gViNhbdGkbU6GCTVhU>
+X-ME-Received: <xmr:qOdUZFvaCVHP_XNid9KfZrJC6EXQ0C-AAcDY8d4bpB7xTzWbi3MxAk88SYyXrBGv0YYlu-vTD2zoc2M2Bibqqrtpo-lEpZk>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeefvddggedtucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhephffufffkgggtgffvvefosehtjeertdertdejnecuhfhrohhmpeforgigihhm
+    vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+    htvghrnhepgfeutdejvdeiheffveetieejtdfhleekleffheejtdfhkeehfeekgedvgeei
+    tddtnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpe
+    dtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:qOdUZOYmJ9ZsaodLa9eaX9Q8q4HKIKwuTBwJAtYSDKF8GpNgXk42fg>
+    <xmx:qOdUZEb46ec3DVsk5A-VwtFLn5NwE5E1PepLOVibVXBwwU6BkntCMA>
+    <xmx:qOdUZCA2HAk2HAzU0PLbBu4ihiyeyzAMLisKixjpCdEI11Zrvkz5Jg>
+    <xmx:qudUZOXd4C3fyX9ywwFJ0Y0vPI9HQrT33VOj41wJMoXxHKeJ6EWEk-kmzE8>
+Feedback-ID: i8771445c:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
+ 5 May 2023 07:25:27 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+Subject: [PATCH v4 00/68] clk: Make determine_rate mandatory for muxes
+Date: Fri, 05 May 2023 13:25:02 +0200
+Message-Id: <20221018-clk-range-checks-fixes-v4-0-971d5077e7d2@cerno.tech>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJprrk7+jRWdhz2MWdFj-jf2ehbXrz97KrkZ4NE6FqhiCNw@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 64DwHVbdC2GWT7uYtzJeQul7pfC4LZbj
-X-Proofpoint-ORIG-GUID: 64DwHVbdC2GWT7uYtzJeQul7pfC4LZbj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-05_16,2023-05-04_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 phishscore=0
- impostorscore=0 mlxscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0
- priorityscore=1501 malwarescore=0 clxscore=1015 adultscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2305050084
+X-B4-Tracking: v=1; b=H4sIAI7nVGQC/43NzQ6CMAwH8FchOzuztQymJ9/DeIBRZIFAsuGiI
+ by7lZvxIKfm349fFxEpeIrinC0iUPLRTyOH/JAJ11XjnaRvOAtQAFppK93Qy7ANXEeuj7L1T4o
+ SFJ5aNICQK8HHdRVJ1rzoOj4fH8PAzc7HeQqv7VnSXK5/3aSlki1Sa5XRVufq4iiM03Emhm9sJ
+ tjnwMcpSiwachot/Ti4z0F2TpVGY/MSGgNfzrqubzQ7VSJSAQAA
+To: Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>
+Cc: linux-clk@vger.kernel.org, Maxime Ripard <maxime@cerno.tech>,
+  Abel Vesa <abelvesa@kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+  Alexandre Belloni <alexandre.belloni@bootlin.com>,
+  Alexandre Torgue <alexandre.torgue@foss.st.com>,
+  =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+  AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+  Baolin Wang <baolin.wang@linux.alibaba.com>,
+  Charles Keepax <ckeepax@opensource.cirrus.com>,
+  Chen-Yu Tsai <wens@csie.org>, Chen-Yu Tsai <wenst@chromium.org>,
+  Chunyan Zhang <zhang.lyra@gmail.com>,
+  Claudiu Beznea <claudiu.beznea@microchip.com>,
+  Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@gmail.com>,
+  David Lechner <david@lechnology.com>, Dinh Nguyen <dinguyen@kernel.org>,
+  Fabio Estevam <festevam@gmail.com>,
+  Geert Uytterhoeven <geert+renesas@glider.be>,
+  Jaroslav Kysela <perex@perex.cz>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+  Jonathan Hunter <jonathanh@nvidia.com>,
+  Kishon Vijay Abraham I <kishon@kernel.org>,
+  Liam Girdwood <lgirdwood@gmail.com>,
+  Linus Walleij <linus.walleij@linaro.org>,
+  Luca Ceresoli <luca.ceresoli@bootlin.com>,
+  Manivannan Sadhasivam <mani@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+  Markus Schneider-Pargmann <msp@baylibre.com>,
+  Max Filippov <jcmvbkbc@gmail.com>,
+  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+  Mikko Perttunen <mperttunen@nvidia.com>,
+  Miles Chen <miles.chen@mediatek.com>,
+  Nicolas Ferre <nicolas.ferre@microchip.com>,
+  Orson Zhai <orsonzhai@gmail.com>, Paul Cercueil <paul@crapouillou.net>,
+  Peng Fan <peng.fan@nxp.com>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+  Prashant Gaikwad <pgaikwad@nvidia.com>,
+  Richard Fitzgerald <rf@opensource.cirrus.com>,
+  Samuel Holland <samuel@sholland.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,  Sekhar Nori <nsekhar@ti.com>,
+ Shawn Guo <shawnguo@kernel.org>,  Takashi Iwai <tiwai@suse.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+  Ulf Hansson <ulf.hansson@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+  dri-devel@lists.freedesktop.org, linux-actions@lists.infradead.org,
+  linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+  linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
+  linux-rtc@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+  linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org,
+  NXP Linux Team <linux-imx@nxp.com>, patches@opensource.cirrus.com,
+  Pengutronix Kernel Team <kernel@pengutronix.de>,
+  Liam Beguin <liambeguin@gmail.com>,
+  Matthias Brugger <matthias.bgg@gmail.com>,
+  linux-mediatek@lists.infradead.org,
+  Miquel Raynal <miquel.raynal@bootlin.com>,
+ Pawel Moll <pawel.moll@arm.com>,  alsa-devel@alsa-project.org
+X-Mailer: b4 0.12.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=8811; i=maxime@cerno.tech;
+ h=from:subject:message-id; bh=DTutEgCIMF28vydDZ/bIJ7FNCahxgFT27xgwey0IUAI=;
+ b=owGbwMvMwCX2+D1vfrpE4FHG02pJDCkhzxe9Xxi/3cvxVqX7ota1NvX8JiY10syKs/hVXlh2s5Wr
+ xyh3lLIwiHExyIopssQImy+JOzXrdScb3zyYOaxMIEMYuDgFYCIG0Qz/3R5ZNfhd/XJhS3zivh2awt
+ u3XDHevLprI+OV15f2zRd/0czIcHfvjUN8sh+uf+NwWChWIG+Rz7NssnmgDruxem/tXuG77AA=
+X-Developer-Key: i=maxime@cerno.tech; a=openpgp;
+ fpr=BE5675C37E818C8B5764241C254BCFC56BF6CE8D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230505_032005_151688_60380814 
-X-CRM114-Status: GOOD (  29.40  )
+X-CRM114-CacheID: sfid-20230505_042543_556569_34080F07 
+X-CRM114-Status: GOOD (  20.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,203 +165,218 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 05, 2023 at 12:31:11PM +0300, Dmitry Baryshkov wrote:
-> On Fri, 5 May 2023 at 11:23, Varadarajan Narayanan
-> <quic_varada@quicinc.com> wrote:
-> >
-> > Add USB phy and controller related nodes
-> >
-> > SS PHY need two supplies and HS PHY needs three supplies. 0.925V
-> > and 3.3V are from fixed regulators and 1.8V is generated from
-> > PMIC's LDO
-> >
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> >  Changes in v10:
-> >         - Fix regulator definitions
-> >  Changes in v8:
-> >         - Change clocks order to match the bindings
-> >  Changes in v7:
-> >         - Change com_aux -> cfg_ahb
-> >  Changes in v6:
-> >         - Introduce fixed regulators for the phy
-> >         - Resolved all 'make dtbs_check' messages
-> >
-> >  Changes in v5:
-> >         - Fix additional comments
-> >         - Edit nodes to match with qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> >         - 'make dtbs_check' giving the following messages since
-> >           ipq9574 doesn't have power domains. Hope this is ok
-> >
-> >                 /local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: phy@7d000: 'power-domains' is a required property
-> >                 From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> >                 /local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: usb@8a00000: 'power-domains' is a required property
-> >                 From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> >
-> >  Changes in v4:
-> >         - Use newer bindings without subnodes
-> >         - Fix coding style issues
-> >
-> >  Changes in v3:
-> >         - Insert the nodes at proper location
-> >
-> >  Changes in v2:
-> >         - Fixed issues flagged by Krzysztof
-> >         - Fix issues reported by make dtbs_check
-> >         - Remove NOC related clocks (to be added with proper
-> >           interconnect support)
-> > ---
-> >  arch/arm64/boot/dts/qcom/ipq9574.dtsi | 104 ++++++++++++++++++++++++++++++++++
-> >  1 file changed, 104 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> > index 93b4ba9..84b80cc 100644
-> > --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> > +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> > @@ -150,6 +150,24 @@
-> >                 method = "smc";
-> >         };
-> >
-> > +       fixed_3p3: s3300 {
-> > +               compatible = "regulator-fixed";
-> > +               regulator-min-microvolt = <3300000>;
-> > +               regulator-max-microvolt = <3300000>;
-> > +               regulator-boot-on;
-> > +               regulator-always-on;
-> > +               regulator-name = "fixed_3p3";
-> > +       };
-> > +
-> > +       fixed_0p925: s0925 {
-> > +               compatible = "regulator-fixed";
-> > +               regulator-min-microvolt = <925000>;
-> > +               regulator-max-microvolt = <925000>;
-> > +               regulator-boot-on;
-> > +               regulator-always-on;
-> > +               regulator-name = "fixed_0p925";
-> > +       };
-> > +
-> >         reserved-memory {
-> >                 #address-cells = <2>;
-> >                 #size-cells = <2>;
-> > @@ -191,6 +209,45 @@
-> >                         reg = <0x00060000 0x6000>;
-> >                 };
-> >
-> > +               usb_0_qusbphy: phy@7b000 {
-> > +                       compatible = "qcom,ipq9574-qusb2-phy";
-> > +                       reg = <0x0007b000 0x180>;
-> > +                       #phy-cells = <0>;
-> > +
-> > +                       clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> > +                                <&xo_board_clk>;
-> > +                       clock-names = "cfg_ahb",
-> > +                                     "ref";
-> > +
-> > +                       resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
-> > +                       status = "disabled";
-> > +               };
-> > +
-> > +               usb_0_qmpphy: phy@7d000 {
-> > +                       compatible = "qcom,ipq9574-qmp-usb3-phy";
-> > +                       reg = <0x0007d000 0xa00>;
-> > +                       #phy-cells = <0>;
-> > +
-> > +                       clocks = <&gcc GCC_USB0_AUX_CLK>,
-> > +                                <&xo_board_clk>,
-> > +                                <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> > +                                <&gcc GCC_USB0_PIPE_CLK>;
-> > +                       clock-names = "aux",
-> > +                                     "ref",
-> > +                                     "cfg_ahb",
-> > +                                     "pipe";
-> > +
-> > +                       resets = <&gcc GCC_USB0_PHY_BCR>,
-> > +                                <&gcc GCC_USB3PHY_0_PHY_BCR>;
-> > +                       reset-names = "phy",
-> > +                                     "phy_phy";
-> > +
-> > +                       status = "disabled";
-> > +
-> > +                       #clock-cells = <0>;
-> > +                       clock-output-names = "usb0_pipe_clk";
-> > +               };
-> > +
-> >                 pcie0_phy: phy@84000 {
-> >                         compatible = "qcom,ipq9574-qmp-gen3x1-pcie-phy";
-> >                         reg = <0x00084000 0x1000>;
-> > @@ -560,6 +617,53 @@
-> >                         status = "disabled";
-> >                 };
-> >
-> > +               usb3: usb@8a00000 {
-> > +                       compatible = "qcom,ipq9574-dwc3", "qcom,dwc3";
-> > +                       reg = <0x08af8800 0x400>;
-> > +                       #address-cells = <1>;
-> > +                       #size-cells = <1>;
-> > +                       ranges;
-> > +
-> > +                       clocks = <&gcc GCC_SNOC_USB_CLK>,
-> > +                                <&gcc GCC_USB0_MASTER_CLK>,
-> > +                                <&gcc GCC_ANOC_USB_AXI_CLK>,
-> > +                                <&gcc GCC_USB0_SLEEP_CLK>,
-> > +                                <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> > +
-> > +                       clock-names = "cfg_noc",
-> > +                                     "core",
-> > +                                     "iface",
-> > +                                     "sleep",
-> > +                                     "mock_utmi";
-> > +
-> > +                       assigned-clocks = <&gcc GCC_USB0_MASTER_CLK>,
-> > +                                         <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> > +                       assigned-clock-rates = <200000000>,
-> > +                                              <24000000>;
-> > +
-> > +                       interrupts-extended = <&intc GIC_SPI 134 IRQ_TYPE_LEVEL_HIGH>;
-> > +                       interrupt-names = "pwr_event";
-> > +
-> > +                       resets = <&gcc GCC_USB_BCR>;
-> > +                       status = "disabled";
-> > +
-> > +                       dwc_0: usb@8a00000 {
->
-> As I wrote in the other email, this better have the usb_0_dwc3 alias.
-> With that fixed:
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Hi,
 
-Sure. Will rename it and send a revised version.
+This is a follow-up to a previous series that was printing a warning
+when a mux has a set_parent implementation but is missing
+determine_rate().
 
-Thanks
-Varada
+The rationale is that set_parent() is very likely to be useful when
+changing the rate, but it's determine_rate() that takes the parenting
+decision. If we're missing it, then the current parent is always going
+to be used, and thus set_parent() will not be used. The only exception
+being a direct call to clk_set_parent(), but those are fairly rare
+compared to clk_set_rate().
 
-> > +                               compatible = "snps,dwc3";
-> > +                               reg = <0x8a00000 0xcd00>;
-> > +                               clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> > +                               clock-names = "ref";
-> > +                               interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-> > +                               phys = <&usb_0_qusbphy>, <&usb_0_qmpphy>;
-> > +                               phy-names = "usb2-phy", "usb3-phy";
-> > +                               tx-fifo-resize;
-> > +                               snps,is-utmi-l1-suspend;
-> > +                               snps,hird-threshold = /bits/ 8 <0x0>;
-> > +                               snps,dis_u2_susphy_quirk;
-> > +                               snps,dis_u3_susphy_quirk;
-> > +                               dr_mode = "host";
-> > +                       };
-> > +               };
-> > +
-> >                 intc: interrupt-controller@b000000 {
-> >                         compatible = "qcom,msm-qgic2";
-> >                         reg = <0x0b000000 0x1000>,  /* GICD */
-> > --
-> > 2.7.4
-> >
->
->
-> --
-> With best wishes
-> Dmitry
+Stephen then asked to promote the warning to an error, and to fix up all
+the muxes that are in that situation first. So here it is :)
+
+It was build-tested on x86, arm and arm64.
+
+Affected drivers have been tracked down by the following coccinelle
+script:
+
+virtual report 
+
+@ clk_ops @
+identifier ops;
+position p;
+@@
+
+ struct clk_ops ops@p = {
+   ...
+ };
+
+@ has_set_parent @
+identifier clk_ops.ops;
+identifier set_parent_f;
+@@
+
+  struct clk_ops ops = {
+	.set_parent = set_parent_f,
+  };
+
+@ has_determine_rate @
+identifier clk_ops.ops;
+identifier determine_rate_f;
+@@
+
+  struct clk_ops ops = {
+	.determine_rate = determine_rate_f,
+  };
+
+@ script:python depends on report && has_set_parent && !has_determine_rate @
+ops << clk_ops.ops;
+set_parent_f << has_set_parent.set_parent_f;
+p << clk_ops.p;
+@@
+
+coccilib.report.print_report(p[0], "ERROR: %s has set_parent (%s)" % (ops, set_parent_f))
+
+Berlin is the only user still matching after this series has been
+applied, but it's because it uses a composite clock which throws the
+script off. The driver has been converted and shouldn't be a problem. 
+
+Let me know what you think,
+Maxime
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+Changes in v4:
+- Switch from __clk_mux_determine_rate to a new helper
+- Introduced unit tests for that new helper
+- Fix kunit regression
+- Reworded most of the commit logs
+- Link to v3: https://lore.kernel.org/r/20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech
+
+Changes in v3:
+- Rebased on top of next-20230404
+- Link to v2: https://lore.kernel.org/r/20221018-clk-range-checks-fixes-v2-0-f6736dec138e@cerno.tech
+
+Changes in v2:
+- Drop all the patches already applied
+- Promote the clk registration warning to an error
+- Make all muxes use determine_rate
+- Link to v1: https://lore.kernel.org/r/20221018-clk-range-checks-fixes-v1-0-f3ef80518140@cerno.tech
+
+---
+Maxime Ripard (66):
+      clk: Export clk_hw_forward_rate_request()
+      clk: test: Fix type sign of rounded rate variables
+      clk: lan966x: Remove unused round_rate hook
+      clk: nodrv: Add a determine_rate hook
+      clk: test: Add a determine_rate hook
+      clk: actions: composite: Add a determine_rate hook for pass clk
+      clk: at91: main: Add a determine_rate hook
+      clk: at91: sckc: Add a determine_rate hook
+      clk: berlin: div: Add a determine_rate hook
+      clk: cdce706: Add a determine_rate hook
+      clk: k210: pll: Add a determine_rate hook
+      clk: k210: aclk: Add a determine_rate hook
+      clk: k210: mux: Add a determine_rate hook
+      clk: lmk04832: clkout: Add a determine_rate hook
+      clk: lochnagar: Add a determine_rate hook
+      clk: qoriq: Add a determine_rate hook
+      clk: si5341: Add a determine_rate hook
+      clk: stm32f4: mux: Add a determine_rate hook
+      clk: vc5: mux: Add a determine_rate hook
+      clk: vc5: clkout: Add a determine_rate hook
+      clk: wm831x: clkout: Add a determine_rate hook
+      clk: davinci: da8xx-cfgchip: Add a determine_rate hook
+      clk: davinci: da8xx-cfgchip: Add a determine_rate hook
+      clk: imx: busy: Add a determine_rate hook
+      clk: imx: fixup-mux: Add a determine_rate hook
+      clk: imx: scu: Add a determine_rate hook
+      clk: mediatek: cpumux: Add a determine_rate hook
+      clk: pxa: Add a determine_rate hook
+      clk: renesas: r9a06g032: Add a determine_rate hook
+      clk: socfpga: gate: Add a determine_rate hook
+      clk: stm32: core: Add a determine_rate hook
+      clk: tegra: bpmp: Add a determine_rate hook
+      clk: tegra: super: Add a determine_rate hook
+      clk: tegra: periph: Add a determine_rate hook
+      clk: ux500: prcmu: Add a determine_rate hook
+      clk: ux500: sysctrl: Add a determine_rate hook
+      clk: versatile: sp810: Add a determine_rate hook
+      drm/tegra: sor: Add a determine_rate hook
+      phy: cadence: sierra: Add a determine_rate hook
+      phy: cadence: torrent: Add a determine_rate hook
+      phy: ti: am654-serdes: Add a determine_rate hook
+      phy: ti: j721e-wiz: Add a determine_rate hook
+      rtc: sun6i: Add a determine_rate hook
+      ASoC: tlv320aic32x4: Add a determine_rate hook
+      clk: actions: composite: div: Switch to determine_rate
+      clk: actions: composite: fact: Switch to determine_rate
+      clk: at91: smd: Switch to determine_rate
+      clk: axi-clkgen: Switch to determine_rate
+      clk: cdce706: divider: Switch to determine_rate
+      clk: cdce706: clkout: Switch to determine_rate
+      clk: si5341: Switch to determine_rate
+      clk: si5351: pll: Switch to determine_rate
+      clk: si5351: msynth: Switch to determine_rate
+      clk: si5351: clkout: Switch to determine_rate
+      clk: da8xx: clk48: Switch to determine_rate
+      clk: imx: scu: Switch to determine_rate
+      clk: ingenic: cgu: Switch to determine_rate
+      clk: ingenic: tcu: Switch to determine_rate
+      clk: sprd: composite: Switch to determine_rate
+      clk: st: flexgen: Switch to determine_rate
+      clk: stm32: composite: Switch to determine_rate
+      clk: tegra: periph: Switch to determine_rate
+      clk: tegra: super: Switch to determine_rate
+      ASoC: tlv320aic32x4: pll: Switch to determine_rate
+      ASoC: tlv320aic32x4: div: Switch to determine_rate
+      clk: Forbid to register a mux without determine_rate
+
+Stephen Boyd (2):
+      clk: Move no reparent case into a separate function
+      clk: Introduce clk_hw_determine_rate_no_reparent()
+
+ drivers/clk/actions/owl-composite.c       |  35 ++++--
+ drivers/clk/at91/clk-main.c               |   1 +
+ drivers/clk/at91/clk-smd.c                |  29 +++--
+ drivers/clk/at91/sckc.c                   |   1 +
+ drivers/clk/berlin/berlin2-div.c          |   1 +
+ drivers/clk/clk-axi-clkgen.c              |  14 ++-
+ drivers/clk/clk-cdce706.c                 |  30 ++---
+ drivers/clk/clk-k210.c                    |   3 +
+ drivers/clk/clk-lan966x.c                 |  17 ---
+ drivers/clk/clk-lmk04832.c                |   1 +
+ drivers/clk/clk-lochnagar.c               |   1 +
+ drivers/clk/clk-qoriq.c                   |   1 +
+ drivers/clk/clk-si5341.c                  |  19 ++--
+ drivers/clk/clk-si5351.c                  |  67 ++++++-----
+ drivers/clk/clk-stm32f4.c                 |   1 +
+ drivers/clk/clk-versaclock5.c             |   2 +
+ drivers/clk/clk-wm831x.c                  |   1 +
+ drivers/clk/clk.c                         | 108 ++++++++++++------
+ drivers/clk/clk_test.c                    | 180 +++++++++++++++++++++++++++++-
+ drivers/clk/davinci/da8xx-cfgchip.c       |  12 +-
+ drivers/clk/imx/clk-busy.c                |   1 +
+ drivers/clk/imx/clk-fixup-mux.c           |   1 +
+ drivers/clk/imx/clk-scu.c                 |  20 +++-
+ drivers/clk/ingenic/cgu.c                 |  15 +--
+ drivers/clk/ingenic/tcu.c                 |  19 ++--
+ drivers/clk/mediatek/clk-cpumux.c         |   1 +
+ drivers/clk/pxa/clk-pxa.c                 |   1 +
+ drivers/clk/renesas/r9a06g032-clocks.c    |   1 +
+ drivers/clk/socfpga/clk-gate.c            |   1 +
+ drivers/clk/sprd/composite.c              |  16 ++-
+ drivers/clk/st/clk-flexgen.c              |  15 +--
+ drivers/clk/stm32/clk-stm32-core.c        |  33 ++++--
+ drivers/clk/tegra/clk-bpmp.c              |   1 +
+ drivers/clk/tegra/clk-periph.c            |  17 ++-
+ drivers/clk/tegra/clk-super.c             |  16 ++-
+ drivers/clk/ux500/clk-prcmu.c             |   1 +
+ drivers/clk/ux500/clk-sysctrl.c           |   1 +
+ drivers/clk/versatile/clk-sp810.c         |   1 +
+ drivers/gpu/drm/tegra/sor.c               |   1 +
+ drivers/phy/cadence/phy-cadence-sierra.c  |   1 +
+ drivers/phy/cadence/phy-cadence-torrent.c |   1 +
+ drivers/phy/ti/phy-am654-serdes.c         |   1 +
+ drivers/phy/ti/phy-j721e-wiz.c            |   1 +
+ drivers/rtc/rtc-sun6i.c                   |   1 +
+ include/linux/clk-provider.h              |   2 +
+ sound/soc/codecs/tlv320aic32x4-clk.c      |  33 +++---
+ 46 files changed, 527 insertions(+), 199 deletions(-)
+---
+base-commit: 145e5cddfe8b4bf607510b2dcf630d95f4db420f
+change-id: 20221018-clk-range-checks-fixes-2039f3523240
+
+Best regards,
+-- 
+Maxime Ripard <maxime@cerno.tech>
+
 
 -- 
 linux-phy mailing list
