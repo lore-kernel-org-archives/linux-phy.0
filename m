@@ -4,85 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 548CCC7EE22
-	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 15:37:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B048EC7EE24
+	for <linux-phy@archiver.kernel.org>; Fri,  5 May 2023 17:16:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xRMGTHPRa3dktsOJOgizQT59i0xJxjIXexw5sbaIUYo=; b=TOnankWgHytmjg
-	VSaC1fE5ZmwXoIDLemOoOtsyDGPXOC+vRtwTJOU/JmleGzjIi4V/Ljq0u9pucW3pgKcC9+ikP5+Zi
-	Onit7bDW63Uwrik/KN9eI+mTIuG/wnq0NnIBZQ5yh641ElpOQex1ld6U40e4TsJjOXoP2NotTNavp
-	0CLS3xRaS4nIVsHcz7PjjIP59VAE6186UGVdUD/1e5w/ijl0bGycVMsW+B2/47C4DmwllEKLS0eqp
-	UiBtKfy2QRtGpmOjTzj5aKv/e5hYyeP468V0hJRgd+/ZK65MnR3D4DSgdExMHDGKZXBtkuO/20iKB
-	H/ixLDYddCgRVGmy6Idw==;
+	List-Owner; bh=XhgPK3UNMVCb+2fHF41uy9SNKCCEHqtFdegl573rDrE=; b=5Dk1wBVRDA3c8G
+	Q8tLevVkTFKDIk3HHCKYI3VcpJkmeel1W+ZDIRdwPW91Ji7LwoNikMkhjYSMZvwYMax1TTjI64R6k
+	HEaFBGUWuj3zsHG0CORDwCQWCKADnVPh4hmZ0qoyyR6ivQW4CL+vgEqrvrlwAUAVXEe4xeuHMjgEa
+	he3qcC8TEZLThqg48ISVK7rW/hPKy8O5JXMFnFRmOY587mJKYKP0bThhJoN5yCkTWgbj+/wCWbw8O
+	reuMbLHlD8me55tFOza1TyRODyqcN2EdvcPUbpyQ8pQHLZQyud05QI6mDO5TTp07/lS5DByz/lzh0
+	eewgRbf27Y0AYUGosvpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puxVB-00BD4M-2V;
-	Fri, 05 May 2023 15:37:46 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1puz2p-00BOJN-10;
+	Fri, 05 May 2023 17:16:35 +0000
+Received: from mga05.intel.com ([192.55.52.43])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puxV6-00BD1c-2v;
-	Fri, 05 May 2023 15:37:42 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-3f199696149so13768015e9.0;
-        Fri, 05 May 2023 08:37:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1683301056; x=1685893056;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=MMQANphqIg54PwzmueerEA1nz6ede73K9wjbTi5bw3k=;
-        b=a3xV0hgeH2+HOW7KQ0n46spF34Mt6cZU8UE6reMTk2Op3pdqgwaIFTbRbmk+e/aQE5
-         RYAMOUEy+fGor1eIm/k7tig6rEzQMOVfL+NVK1QXrIVSfsQt571I3B/Zi3VXe1weaVC/
-         4eomzoHkj+3Vi/NW1q3m/SEAtqWO3jFWjEISvcnd6qBERWdECqpy2CgdFDUJ+tyIH+2S
-         TPs5UtZBwBc/Fnz+SGWOVXs6AsnX8fEaUzPGEI3GH/eyteKctZoFKyigjIjqhB+FSMKh
-         k/g9upF9q7vnODKBoVtt7O8XVD8aYy+d5l91r51H/v49ETPGi28RYnTNUroqmb/D0HmJ
-         jaUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683301056; x=1685893056;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MMQANphqIg54PwzmueerEA1nz6ede73K9wjbTi5bw3k=;
-        b=ADh5dpvETmUK3aapYyi9YHsax71r46bG9ldBOicj14RpgCxQQ8ev365jllZzQjDRJM
-         nHc+B0AAZQHmnR986hbS87uGgwbS+lTF6M3vqtwUN4FvLgBWDsXIJClezG2BdfZipcG/
-         GctasBmeIfLxh05e9nc5obHSf5nk5PzKgoCM95gMpQ8KxWMt7zimL2O6RE+kbgU1xbGI
-         x5HWbeWPEhabI7TSlvoOD6GAVVrJ20yhVDUYf2tJ8pZDc6X8b920vQWdCsmyqddBAgfV
-         4nPm3ZXpDdp7QEFYWDovPTszx8skXRyRaN0Hx/ueQt45Uom8b0F1zpsy71jv8MN8kStt
-         D9Iw==
-X-Gm-Message-State: AC+VfDz6ToqngYeQJzS/GMRaS2xNiKoPjmOr8fSvKDrihJEGvymtU/VG
-	swyXv/PvodgeR0coiq74zNQ=
-X-Google-Smtp-Source: ACHHUZ6YF0JN2q50Mb4Rc5IWpAQlQaY8t82WbF1TW53ociZHjEHxERnMkxklnJoCQ9mt5l5ZwvQpug==
-X-Received: by 2002:adf:f2c2:0:b0:306:3be9:6ab with SMTP id d2-20020adff2c2000000b003063be906abmr1905923wrp.54.1683301055966;
-        Fri, 05 May 2023 08:37:35 -0700 (PDT)
-Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id l8-20020a5d4bc8000000b0030631f199f9sm2696499wrt.34.2023.05.05.08.37.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 05 May 2023 08:37:34 -0700 (PDT)
-Message-ID: <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
-Date: Fri, 5 May 2023 17:37:33 +0200
+	id 1puz2m-00BOIk-21
+	for linux-phy@lists.infradead.org;
+	Fri, 05 May 2023 17:16:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1683306992; x=1714842992;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=COkGdhmzVsdP87GQO1YqoDziPbpeYNGC0sWooQdVgSE=;
+  b=OqahGNVemlZIfWERzN+zpIYNngSgU4PXkwp9gxzvcNzZhVwnbJINGTXd
+   z/f/G5vQskBopAlBR8w0Ks8UPCz38MmVzhmA+lpIrbdGO8gBKJbpfE0T4
+   Rg3JOyDg+SwVnlpeZfhFcJjUzfBrWx1eeDUeMw7JP1RC7s4mrg7be+Vj2
+   36ux3BSaEnXt9eF8NXGpoVgStOKFBo5khouXg5AtP/nC5qaUpumql53Mr
+   DskHFPaaj23yLsjhp0XU6XXpJpxaZckXb6m0VA1bNgY7vUkrluFp7PYm5
+   FBVv1E3sb7FCDlJSUJQKLLDV5xj0923953F3fusLA1fUvpDoj7Kgtxf1+
+   A==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10701"; a="435579045"
+X-IronPort-AV: E=Sophos;i="5.99,252,1677571200"; 
+   d="scan'208";a="435579045"
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+  by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 May 2023 10:16:30 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10701"; a="675166695"
+X-IronPort-AV: E=Sophos;i="5.99,252,1677571200"; 
+   d="scan'208";a="675166695"
+Received: from lkp-server01.sh.intel.com (HELO fe5d646e317d) ([10.239.97.150])
+  by orsmga006.jf.intel.com with ESMTP; 05 May 2023 10:16:23 -0700
+Received: from kbuild by fe5d646e317d with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1puz2d-0000mD-0U;
+	Fri, 05 May 2023 17:16:23 +0000
+Date: Sat, 6 May 2023 01:15:40 +0800
+From: kernel test robot <lkp@intel.com>
+To: Maxime Ripard <maxime@cerno.tech>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Peng Fan <peng.fan@nxp.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Sekhar Nori <nsekhar@ti.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	dri-devel@lists.freedesktop.org, Jaroslav Kysela <perex@perex.cz>,
+	Paul Cercueil <paul@crapouillou.net>,
+	Max Filippov <jcmvbkbc@gmail.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>,
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
+	Abel Vesa <abelvesa@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Samuel Holland <samuel@sholland.org>,
+	Chunyan Zhang <zhang.lyra@gmail.com>, Takashi Iwai <tiwai@suse.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	Chen-Yu Tsai <wens@csie.org>, NXP Linux Team <linux-imx@nxp.com>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>, linux-mips@vger.kernel.org,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	linux-sunxi@lists.linux.dev,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Subject: Re: [PATCH v4 04/68] clk: Introduce
+ clk_hw_determine_rate_no_reparent()
+Message-ID: <202305060103.z9ddfq9A-lkp@intel.com>
+References: <20221018-clk-range-checks-fixes-v4-4-971d5077e7d2@cerno.tech>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH] phy: mediatek: fix returning garbage
-Content-Language: en-US, ca-ES, es-ES
-To: Vinod Koul <vkoul@kernel.org>, Tom Rix <trix@redhat.com>
-Cc: chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
- chunfeng.yun@mediatek.com, kishon@kernel.org,
- angelogioacchino.delregno@collabora.com, nathan@kernel.org,
- ndesaulniers@google.com, granquet@baylibre.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, llvm@lists.linux.dev
-References: <20230414122253.3171524-1-trix@redhat.com>
- <ZFTMPWp8LhwA9uHz@matsya>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <ZFTMPWp8LhwA9uHz@matsya>
+Content-Disposition: inline
+In-Reply-To: <20221018-clk-range-checks-fixes-v4-4-971d5077e7d2@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230505_083740_941010_B25BD7CC 
-X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-CacheID: sfid-20230505_101632_721104_1B1EFA82 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,31 +106,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Maxime,
 
+kernel test robot noticed the following build errors:
 
-On 05/05/2023 11:28, Vinod Koul wrote:
-> On 14-04-23, 08:22, Tom Rix wrote:
->> clang reports
->> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
->>    'ret' is uninitialized when used here [-Werror,-Wuninitialized]
->>          if (ret)
->>              ^~~
->> ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
-> 
-> I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
-> usage in pll_calc"
+[auto build test ERROR on 145e5cddfe8b4bf607510b2dcf630d95f4db420f]
 
-Thanks Vinod, that was on my list for today as well. I was a bit puzzled because 
-you took the patch that added it, but I wasn't sure if you would take the fix. 
-How do you want to handle things like this in the future?
+url:    https://github.com/intel-lab-lkp/linux/commits/Maxime-Ripard/clk-Export-clk_hw_forward_rate_request/20230505-193724
+base:   145e5cddfe8b4bf607510b2dcf630d95f4db420f
+patch link:    https://lore.kernel.org/r/20221018-clk-range-checks-fixes-v4-4-971d5077e7d2%40cerno.tech
+patch subject: [PATCH v4 04/68] clk: Introduce clk_hw_determine_rate_no_reparent()
+config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20230506/202305060103.z9ddfq9A-lkp@intel.com/config)
+compiler: m68k-linux-gcc (GCC) 12.1.0
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/3acd93f10087c4a2905407786d6dc7af83c2a58c
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Maxime-Ripard/clk-Export-clk_hw_forward_rate_request/20230505-193724
+        git checkout 3acd93f10087c4a2905407786d6dc7af83c2a58c
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=m68k olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=m68k SHELL=/bin/bash
 
-Regards,
-Matthias
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+| Link: https://lore.kernel.org/oe-kbuild-all/202305060103.z9ddfq9A-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "clk_hw_determine_rate_no_reparent" [drivers/clk/clk_test.ko] undefined!
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-phy mailing list
