@@ -4,100 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E0F0C77B75
-	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 11:40:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4BC0C77B75
+	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 12:26:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qOBop+389PMl4ewaLkW6pOAqspTWf0KX5QxGXUMFWxQ=; b=oXn1VgzIBIz1ui
-	ayZtxSxv8ArvjqRBC+mGiee5KEtTH3nRhUbEy9xvzSE1O0fm+2QkHXGKicCq84uktsEPmtmGp74rx
-	f+cjbcj9iRpHHROOYTVfiy+K/3hqVp5Bmx4MJ6Ms8ebTqPR1oE7l2eTdkgRF4LZXMrxYxCeHz9Wgc
-	c7UiJTs6Bhh2SDGABeH69CkQlDIo6Vez7g5GBC1Q8h83tdWccK1IV6IVte/9DGWYpHo/VqNgnPZ+q
-	+qBSmRx0ChrbNhsHCZBCJx/et8zNr6XEWz4AqSsWqD3LT5VX4mPJLLnWSnGvCy3KfEGRe69dkG0Ey
-	edCioB8D1Oa78qQpBqDA==;
+	List-Owner; bh=oNxzlZItPxT5ndBly6a/yYmp5nMrAvGomYEMPp6E33Y=; b=CdSvomXhkVrITH
+	4ciszlFwPaDnxOq8OxcZUG1JTlfU16fFyBVcyXVqEku6oirbe7l1LnqdWTQdRBVX7pS2py12RYqI/
+	4K/iK0PhTSZPORuJfLaz+3umbiyqeUjuk3i7o092d5188+/sBfRg4vVXIYKztITZY+xzUi8wocF0X
+	jshomYFyGWfEzsVTaF5xIdb7hr+2B7UGZol741NI8lbli6Rd19syiIvVGV3LN9Jc1E3pdS0cPzOjm
+	rVUBu9yY74EbeGZ7lLVRZsy3wlz8a+G0dSdNLyDg7eqtRWDYc3fFtGI/IkG/VQoF6HSWVbfCU9uqi
+	/elgwIck3ZZKV54I47IA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvGGs-00DKIM-2A;
-	Sat, 06 May 2023 11:40:14 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvGGp-00DKGa-36
-	for linux-phy@bombadil.infradead.org;
-	Sat, 06 May 2023 11:40:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description;
-	bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=; b=k+1UEW+QzIlb5EwQw5fksY5PzY
-	GpKlCk1c8uK9S+sgt+S8CwIoGqsuKOV/ZIkC6r6Voql6DPn/KgNLMe5uoPo4QH2lPkaIgFa9HJDGv
-	o0X2sr7Mu8aORABsFIp5LcmWVDtnWiGRJ/18SEP01kFyg5Spiyjjrc/4UCOk803PcB6OftNjLYLus
-	lKXWHN4sZCWp4MQ8mlUhR9qdTmmEvxmz1BEncIRdszJdqvgNrtqAJK5xAnW8Uk5R798ho0akntpzK
-	jvJiQhGhPOYp7c6XZDLbEvsuspn2heop2Gd3nH6Tdo6DMl3LNTKOQtEXo18FDnORITDVD3n/8hNHJ
-	FCYRWO3g==;
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvFAF-003xD5-0n
-	for linux-phy@lists.infradead.org;
-	Sat, 06 May 2023 10:29:51 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-50bdd7b229cso5266356a12.0
-        for <linux-phy@lists.infradead.org>; Sat, 06 May 2023 03:29:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683368953; x=1685960953;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=;
-        b=pmATmgnNBn1vaw2zFc9jefVTFkd0dnlE2vqaWyus03GIzYhi4HyzVnyelO40yuG4Nf
-         FbsLdOYL+TPWBZlc0TzBjLv23EisWOaFqVtJ7I8hyRdQkIJyGxnKJWf8U+17lEnl87UF
-         nk5FPFUIX9YjFAbDzbOwMQxx/W/figOX/gCjvtt/cHh4kuwHBv699IQhnIP1Th5OsiD4
-         qSZ4Flnl9RaMHEnbxZyUcucZD7QgTsn44dLXogGymzjwvrMwJP1njxSDT/gl5FqAFwMA
-         +xJPkkV4fuyksFjlazHpTM9bvRGVUs2rEmA75iCMNANIdV/MyaVhtx8GrJiSrrhlgeiN
-         QHQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683368953; x=1685960953;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=;
-        b=XUxwqa7bX5hEr3OkWEWBwhaqcnsarMso3az+hI+XT3GJbfrc0KtRsuPDVVlNuXcX4K
-         BXy3tTKAt/YjfH4n9rTpooetFj+E04AJECcn7YMejeDYpNokRJIUXeU9yaqJY7AyvN5u
-         9okNoHWiwYkrb0pNOcduS6YbxSMSWYmUOibGxyfhgnH57uAIHfi+T56irMzABX6Zi4tb
-         Wy9Cyk/3/59Y6mKTFBj7Z4PrCDMA+a+TberQq0jcC83cFU3eIExrrildCm3kAc3/fhEs
-         tDniYy7rlM8NIj4BrFUY65OAU/fIj500ZggDjmCjHqocWPBsvboXDwoOcBhftcSbCv5p
-         +ZMg==
-X-Gm-Message-State: AC+VfDz/F13qphgsyZfZN0j+vUOC5orKfjnaMx1yuzzRuTKiKrkX0K3R
-	EDp4iSkfN86LGDRQ/mkk4pgA9Q==
-X-Google-Smtp-Source: ACHHUZ6/wPqlS3DByla0DrxWiLfSctxz7UcT+4RZsEyKv1NRwAVpbGbddpmZMuF0gSHXShBQ1JQNRA==
-X-Received: by 2002:a17:907:709:b0:961:69a2:c8d6 with SMTP id xb9-20020a170907070900b0096169a2c8d6mr3030336ejb.69.1683368953421;
-        Sat, 06 May 2023 03:29:13 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:efe5:7c03:a10a:7a40? ([2a02:810d:15c0:828:efe5:7c03:a10a:7a40])
-        by smtp.gmail.com with ESMTPSA id hx1-20020a170906846100b00965f1f4bac5sm1532711ejc.124.2023.05.06.03.29.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 06 May 2023 03:29:12 -0700 (PDT)
-Message-ID: <2dd9f9bd-c55e-a887-2e9b-61b2b66512ef@linaro.org>
-Date: Sat, 6 May 2023 12:29:11 +0200
+	id 1pvGzt-00DOP4-1G;
+	Sat, 06 May 2023 12:26:45 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pvGzo-00DON3-1P;
+	Sat, 06 May 2023 12:26:43 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id 953FA24E272;
+	Sat,  6 May 2023 20:26:02 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sat, 6 May
+ 2023 20:26:02 +0800
+Received: from [192.168.125.107] (183.27.98.219) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sat, 6 May
+ 2023 20:26:01 +0800
+Message-ID: <b1965ae2-af2d-b11c-3e34-8129c29333b8@starfivetech.com>
+Date: Sat, 6 May 2023 20:26:01 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH 1/2] phy: cadence: salvo: Add
- usb2-disconnect-threshold-microvolt property
-To: Frank Li <Frank.Li@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- imx@lists.linux.dev, fushi.peng@nxp.com
-References: <20230505185247.1854677-1-Frank.Li@nxp.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
 Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230505185247.1854677-1-Frank.Li@nxp.com>
+To: Conor Dooley <conor@kernel.org>
+CC: Conor Dooley <conor.dooley@microchip.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+	"Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Emil Renner
+ Berthing <kernel@esmil.dk>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer
+ Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
+	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
+	<linux-phy@lists.infradead.org>
+References: <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
+ <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
+ <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
+ <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
+ <86693969-59bf-5bcc-42a3-b6e94a0d6f3e@linaro.org>
+ <fcfc8ba4-40a7-da43-3375-712bd7e7f4d5@starfivetech.com>
+ <20230504-worshiper-ongoing-5581e1f2c2c4@wendy>
+ <2f473307-2219-61a4-fa66-5848fe566cf0@starfivetech.com>
+ <20230505-magician-poet-724c96020c2f@wendy>
+ <ba6a1a47-d3b1-ee16-4785-f5c61d593127@starfivetech.com>
+ <20230506-dating-twiddling-b364de21ed2b@spud>
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230506-dating-twiddling-b364de21ed2b@spud>
+X-Originating-IP: [183.27.98.219]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230506_112921_609109_8813FB9D 
-X-CRM114-Status: UNSURE (   7.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230506_052640_818774_79ACC91F 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,20 +90,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/05/2023 20:52, Frank Li wrote:
-> Add usb2-disconnect-threshold-microvolt property to address fake USB
-> disconnection issue during enumeration or suspend state for difference
-> platform.
+
+
+On 2023/5/6 18:17, Conor Dooley wrote:
+> On Sat, May 06, 2023 at 09:45:07AM +0800, Changhuang Liang wrote:
+>>
+>>
+>> On 2023/5/5 20:38, Conor Dooley wrote:
+>>> On Fri, May 05, 2023 at 09:29:15AM +0800, Changhuang Liang wrote:
+>>>
+>>>> But if keep this "starfive,jh7110-aon-syscon" compatible. Which .yaml match to
+>>>> it? Use this series dt-bindings or syscon series dt-bindings.
+>>>
+>>> There is no syscon series anymore, it's part of the PLL series now:
+>>> https://lore.kernel.org/linux-clk/20230414024157.53203-1-xingyu.wu@starfivetech.com/
+>>>
+>>> I don't really care what you, Walker & Xingyu decide to do, but add the
+>>> binding in one series in a complete form. It's far less confusing to
+>>> have only have one version of the binding on the go at once.
+>>>
+>>
+>> Due to the current aon pmu needs to be adjusted, it affects the syscon in PLL series.
+>> So It's inevitable to change syscon in PLL series.
+>>
+>> My current idea is PLL series don't add the aon_syscon node. I will add it in my
+>> aon pmu series in next version
 > 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8x-mek.dtsi |  1 +
->  drivers/phy/cadence/phy-cadence-salvo.c      | 30 +++++++++++++++++++-
+> That's fine. Rob was happy with the clock related parts, which was the
+> original source of confusion there.
+> 
+>> like this:
+>>
+>> aon_syscon: syscon@17010000 {
+>> 	compatible = "starfive,jh7110-aon-pmu", "syscon";
+> 
+> The syscon does a bunch of things of which one is a pmu. I don't see a
+> reason to name this other than "starfive,jh100-aon-syscon".
+> 
 
-DTS and drivers are always separate.
+OK, will replace "starfive,jh7110-aon-pmu" with "starfive,jh100-aon-syscon" in this series.
 
-Best regards,
-Krzysztof
+Thanks,
+Changhuang
+
 
 
 -- 
