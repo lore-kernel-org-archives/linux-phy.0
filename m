@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEEC3C77B7F
-	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 07:00:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83F50C77B73
+	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 10:17:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zSrmcxHUdnp3btzzBnQiyFgd/2E6rEZf+L5NZW9wdJM=; b=NvhspzI4W6dnZ0
-	13MmbSv6Hg7ubLngYp/bQEaqxG/3S/MFVjcc+6s5QAM1g6+OdY4d+5AakEex7DZxIE0lIpe8CUb2c
-	Wn/AcYdzfjoHCasmdYC339SLLeJ8HTSL9K5G988PUVfZGKxErIkAzBcr1/LqhihIgP/l3tiYmSchx
-	1Wj65CHWfX93HlGW/gVnYqv4ZjKLeI59U/h5PSPPv1LU7oefV81BeMbn+jH2xsvi5rIDQ98hjop5u
-	V8onC2NLbbGJ7+tDayKpZkCZqOd5/LFyMkoFs4e0COiLHfYOufziRakWiSFeYa0Vnxr4ncRr7Svu/
-	uua+YIG83Jr6w3wz+g+w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HZy3EQ6TghN05miPk62oc+hUi6aWJD9zT20Fw30AZ1g=; b=Qmj3JQRCXm39FNiy8hCwoSUA7E
+	y99RlB92PY7nltVmg52nn9YLWlWUtUIzRQ3QVVmVZst33RQrAZera2zXOWA5M90KPf/iWUX/8Wmqh
+	6w6bnSi5yNGpj76lKno8ZGEHnR2GYetpwDt+1VYicbR5Cmbl49Qx5Tb9vGafuj6FGeStJco0ulgyK
+	XTbmcZ7bMyA1nfM4CfHQJ1g+4ijH7yMHoqGDIbm9IDIA9SPKrKCibdSEcUrKeIobQKe+gHNLVYWEP
+	elAFoIy1pD2G/T7bDAoQkgQflrtnBRHhCEo3II3sB/qWVeuYAt3IyAkD0wPprmPL/6K5IgmYb8WUx
+	g0n++Bbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvBuN-00CjLZ-1E;
-	Sat, 06 May 2023 07:00:43 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvBuJ-00CjKS-26;
-	Sat, 06 May 2023 07:00:42 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id C110424E21E;
-	Sat,  6 May 2023 15:00:11 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sat, 6 May
- 2023 15:00:11 +0800
-Received: from [192.168.125.107] (183.27.98.219) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sat, 6 May
- 2023 15:00:10 +0800
-Message-ID: <c4b72d59-8b50-df57-1cc5-586f5c13b60c@starfivetech.com>
-Date: Sat, 6 May 2023 15:00:10 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
+	id 1pvEyX-00D3rm-0T;
+	Sat, 06 May 2023 10:17:13 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pvEyU-00D3rL-2R;
+	Sat, 06 May 2023 10:17:12 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6CF6561A09;
+	Sat,  6 May 2023 10:17:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6B11C433EF;
+	Sat,  6 May 2023 10:17:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683368228;
+	bh=2BKyMfWbuzam8pPIQKLxv0HwFgMr99AvmaRkf2dAMAo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=eIlKEx96qJxg5USu2rhGUPWJhb9u/8flrMmDA0LQgtPSgW5Tf0Pv/FJFVLoUijcDt
+	 pu4/D0odINeiCivQMNpjTt7hM/yIbbAt5q1YAMW37qWmOvMV8fIodOm9kUQh8xxF+e
+	 TERZyFDzjLbo5PEZRrfR2C4oqJSMs0/juZm/XhYx2z3UCWrXnTjhwf3u7nqz13//sM
+	 Be9XcwPCT3fwubVr9HcokKmXGetwyx/nQR1I7i+/DbtyRyj+pH4DuwlUbcOUethHbB
+	 kM06XhXg+iXLKvzBPchI19Qr76NsBiITQ1Ug1MO9Wf8QFX2Eqe9A/xrixtKD7rpUO7
+	 WMff7sfQQysgw==
+Date: Sat, 6 May 2023 11:17:03 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Conor Dooley <conor.dooley@microchip.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Walker Chen <walker.chen@starfivetech.com>,
+	Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+	vkoul@kernel.org, linux-phy@lists.infradead.org
 Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Conor Dooley
-	<conor.dooley@microchip.com>
-CC: Conor Dooley <conor@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing
-	<kernel@esmil.dk>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
-	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
-	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
-	<linux-phy@lists.infradead.org>
-References: <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
- <482e812a-05dd-105c-189c-e926b4be9d28@starfivetech.com>
- <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
+Message-ID: <20230506-dating-twiddling-b364de21ed2b@spud>
+References: <089e24d1-588a-4a56-f00b-0b35d1d99295@linaro.org>
  <ea5b5534-8fc2-7c84-a011-c1b42c6ed7a0@starfivetech.com>
  <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
  <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
@@ -66,16 +70,11 @@ References: <3ed72340-accc-4ad1-098f-4a2eb6448828@linaro.org>
  <2f473307-2219-61a4-fa66-5848fe566cf0@starfivetech.com>
  <20230505-magician-poet-724c96020c2f@wendy>
  <ba6a1a47-d3b1-ee16-4785-f5c61d593127@starfivetech.com>
- <9e7b265d-bfe5-f583-2357-d8e342bcf982@linaro.org>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <9e7b265d-bfe5-f583-2357-d8e342bcf982@linaro.org>
-X-Originating-IP: [183.27.98.219]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
+MIME-Version: 1.0
+In-Reply-To: <ba6a1a47-d3b1-ee16-4785-f5c61d593127@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230506_000039_872532_7602529E 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20230506_031710_896193_F35CE5F2 
+X-CRM114-Status: GOOD (  24.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,47 +86,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6530108721509767068=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
+--===============6530108721509767068==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="olYpGZlk/8KzYW4Y"
+Content-Disposition: inline
 
-On 2023/5/6 14:31, Krzysztof Kozlowski wrote:
-> On 06/05/2023 03:45, Changhuang Liang wrote:
->>
->> Hi, Krzysztof and Conor
->>
->> Due to the current aon pmu needs to be adjusted, it affects the syscon in PLL series.
->> So It's inevitable to change syscon in PLL series.
->>
->> My current idea is PLL series don't add the aon_syscon node. I will add it in my
->> aon pmu series in next version like this:
->>
->> aon_syscon: syscon@17010000 {
->> 	compatible = "starfive,jh7110-aon-pmu", "syscon";
->> 	reg = <0x0 0x17010000 0x0 0x1000>;
->> 	#power-domain-cells = <1>;
->> };
->>
->> In my opinion, the first we add "starfive,jh7110-aon-syscon" because "syscon" can 
->> not appear alone in the compatible. If we have "starfive,jh7110-aon-pmu", this
->> "starfive,jh7110-aon-syscon" is not a must-be need.
->>
->> Do you agree with doing so.
-> 
-> Sorry guys, I don't know what you talk about. I have no clue what are
-> PLL and aon series. More over I don't understand what is complicated
-> here... all SoCs follow the same rules and similar way of development.
-> 
 
-In other words, if I use the above approach, 
-[1] https://lore.kernel.org/all/20230414024157.53203-6-xingyu.wu@starfivetech.com/
-[2] https://lore.kernel.org/all/20230414024157.53203-7-xingyu.wu@starfivetech.com/
-Links [1][2] need to be dropped "aon_syscon" node.
+--olYpGZlk/8KzYW4Y
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, May 06, 2023 at 09:45:07AM +0800, Changhuang Liang wrote:
+>=20
+>=20
+> On 2023/5/5 20:38, Conor Dooley wrote:
+> > On Fri, May 05, 2023 at 09:29:15AM +0800, Changhuang Liang wrote:
+> >=20
+> >> But if keep this "starfive,jh7110-aon-syscon" compatible. Which .yaml =
+match to
+> >> it? Use this series dt-bindings or syscon series dt-bindings.
+> >=20
+> > There is no syscon series anymore, it's part of the PLL series now:
+> > https://lore.kernel.org/linux-clk/20230414024157.53203-1-xingyu.wu@star=
+fivetech.com/
+> >=20
+> > I don't really care what you, Walker & Xingyu decide to do, but add the
+> > binding in one series in a complete form. It's far less confusing to
+> > have only have one version of the binding on the go at once.
+> >=20
+>=20
+> Due to the current aon pmu needs to be adjusted, it affects the syscon in=
+ PLL series.
+> So It's inevitable to change syscon in PLL series.
+>=20
+> My current idea is PLL series don't add the aon_syscon node. I will add i=
+t in my
+> aon pmu series in next version
+
+That's fine. Rob was happy with the clock related parts, which was the
+original source of confusion there.
+
+> like this:
+>=20
+> aon_syscon: syscon@17010000 {
+> 	compatible =3D "starfive,jh7110-aon-pmu", "syscon";
+
+The syscon does a bunch of things of which one is a pmu. I don't see a
+reason to name this other than "starfive,jh100-aon-syscon".
+
+> 	reg =3D <0x0 0x17010000 0x0 0x1000>;
+> 	#power-domain-cells =3D <1>;
+> };
+>=20
+> In my opinion, the first we add "starfive,jh7110-aon-syscon" because "sys=
+con" can=20
+> not appear alone in the compatible. If we have "starfive,jh7110-aon-pmu",=
+ this
+> "starfive,jh7110-aon-syscon" is not a must-be need.
+>=20
+> Do you agree with doing so.
+>=20
+> Thanks,
+> Changhuang
+
+--olYpGZlk/8KzYW4Y
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZFYpHwAKCRB4tDGHoIJi
+0kWCAQCtW6PQ5IpHye69XI8USA4fSTwZKDy0/Fm4JQDlGIHRMgD+K+m3qWCEW3WU
+3xk9P7m7lDqQ3ymNIrglttPFeuusjAs=
+=098q
+-----END PGP SIGNATURE-----
+
+--olYpGZlk/8KzYW4Y--
+
+
+--===============6530108721509767068==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6530108721509767068==--
+
