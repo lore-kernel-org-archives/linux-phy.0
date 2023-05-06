@@ -4,79 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A509C7EE22
-	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 11:33:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E0F0C77B75
+	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 11:40:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kU7YiEVeOys3cBgYNroEZoGLvziGvp4lGeOmlbHKYy4=; b=wOzA7OAwHcBy3/
-	gKW7eUB4Z5rHoDpTBgTrGThH7XSgHieqdghXqzXcL1dsWiZLEFuUAmSt2O8gvFky+G+UnQPbpfdWG
-	AHYq3l96S7oKqMTgzhsal6GV3IJ95io8/7rV/d7NpWcZ1RyAde8Bn+L/s2k7hpCBDeIyrdlkJMVmi
-	yFTpiZMHyemSr5aTb+fzGn8R+XIcMFIM0zvJZfbSfQAnFgFhSlw9WWAO0lHvEjVdNYLeOPD9eZdxT
-	ZT4suROx0NoZS2q/d1COMaYFRQAjTUzxRmSh9NkfmTgOW/RpXzzLDx5+nWiBLtiLJ4ZikPo8QtQKg
-	y87nAbVZ6S0A4+rPEjbg==;
+	List-Owner; bh=qOBop+389PMl4ewaLkW6pOAqspTWf0KX5QxGXUMFWxQ=; b=oXn1VgzIBIz1ui
+	ayZtxSxv8ArvjqRBC+mGiee5KEtTH3nRhUbEy9xvzSE1O0fm+2QkHXGKicCq84uktsEPmtmGp74rx
+	f+cjbcj9iRpHHROOYTVfiy+K/3hqVp5Bmx4MJ6Ms8ebTqPR1oE7l2eTdkgRF4LZXMrxYxCeHz9Wgc
+	c7UiJTs6Bhh2SDGABeH69CkQlDIo6Vez7g5GBC1Q8h83tdWccK1IV6IVte/9DGWYpHo/VqNgnPZ+q
+	+qBSmRx0ChrbNhsHCZBCJx/et8zNr6XEWz4AqSsWqD3LT5VX4mPJLLnWSnGvCy3KfEGRe69dkG0Ey
+	edCioB8D1Oa78qQpBqDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvGAI-00DJHf-1c;
-	Sat, 06 May 2023 11:33:26 +0000
-Received: from mail-yw1-x112b.google.com ([2607:f8b0:4864:20::112b])
+	id 1pvGGs-00DKIM-2A;
+	Sat, 06 May 2023 11:40:14 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvGAF-00DJGx-28
+	id 1pvGGp-00DKGa-36
+	for linux-phy@bombadil.infradead.org;
+	Sat, 06 May 2023 11:40:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:
+	Reply-To:Cc:Content-ID:Content-Description;
+	bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=; b=k+1UEW+QzIlb5EwQw5fksY5PzY
+	GpKlCk1c8uK9S+sgt+S8CwIoGqsuKOV/ZIkC6r6Voql6DPn/KgNLMe5uoPo4QH2lPkaIgFa9HJDGv
+	o0X2sr7Mu8aORABsFIp5LcmWVDtnWiGRJ/18SEP01kFyg5Spiyjjrc/4UCOk803PcB6OftNjLYLus
+	lKXWHN4sZCWp4MQ8mlUhR9qdTmmEvxmz1BEncIRdszJdqvgNrtqAJK5xAnW8Uk5R798ho0akntpzK
+	jvJiQhGhPOYp7c6XZDLbEvsuspn2heop2Gd3nH6Tdo6DMl3LNTKOQtEXo18FDnORITDVD3n/8hNHJ
+	FCYRWO3g==;
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pvFAF-003xD5-0n
 	for linux-phy@lists.infradead.org;
-	Sat, 06 May 2023 11:33:25 +0000
-Received: by mail-yw1-x112b.google.com with SMTP id 00721157ae682-55a44a2637bso41528147b3.2
-        for <linux-phy@lists.infradead.org>; Sat, 06 May 2023 04:33:22 -0700 (PDT)
+	Sat, 06 May 2023 10:29:51 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-50bdd7b229cso5266356a12.0
+        for <linux-phy@lists.infradead.org>; Sat, 06 May 2023 03:29:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683372802; x=1685964802;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=MrqXLh+CItgFF8Zvf5m1YwKEXaRzb+PkDECyM11LKHc=;
-        b=MkpaBYkwpacXiQBX9wyxjvYYFhGVLUxRS4ZMAZXGcRR4Luhc/XHR5TCixlZ+4iPdcy
-         08I6/h04LJUx9ANZTDKYso31rEC8zHUN+eWh+w+zXvWsSdzKFKAU44kGggGZ3ExZA3Em
-         hPJvpUvN4N8e7S2oceXGmbgHY9t0KQ+c68+WTq6CDPrcNFWg4BSOETxEi1jkXITVOOlS
-         NkiUIK1GH5LidQIvdm85bwzlz4aDpBuInpuGoeFMEwpoeHcvvUAEaQpIK7srb9HUbuES
-         z+AxvQh6HxFy6TgIntSemLXYwPHU6pgBJtGyWoKpdgptPTpJ1WivKjv7FfWwJ9dMWhf2
-         W/4Q==
+        d=linaro.org; s=google; t=1683368953; x=1685960953;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=;
+        b=pmATmgnNBn1vaw2zFc9jefVTFkd0dnlE2vqaWyus03GIzYhi4HyzVnyelO40yuG4Nf
+         FbsLdOYL+TPWBZlc0TzBjLv23EisWOaFqVtJ7I8hyRdQkIJyGxnKJWf8U+17lEnl87UF
+         nk5FPFUIX9YjFAbDzbOwMQxx/W/figOX/gCjvtt/cHh4kuwHBv699IQhnIP1Th5OsiD4
+         qSZ4Flnl9RaMHEnbxZyUcucZD7QgTsn44dLXogGymzjwvrMwJP1njxSDT/gl5FqAFwMA
+         +xJPkkV4fuyksFjlazHpTM9bvRGVUs2rEmA75iCMNANIdV/MyaVhtx8GrJiSrrhlgeiN
+         QHQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683372802; x=1685964802;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=MrqXLh+CItgFF8Zvf5m1YwKEXaRzb+PkDECyM11LKHc=;
-        b=T80/ItkLxVCEuHBQj/1aHZG40bzaxhuS0QFcu4k3197vKFl0aTWmrqd3CErl2g9Ass
-         hbr4c+Lb0o/a9IBdhk0XO/ksF8I7TiYoQk9V56rRUM1VUCQx20DaP3F1xh1OPT8EMJli
-         rr+Ao2bnyM+QhE+QocLgc9ooU8mo9z6ACZRs0FIQfGr3UQe6jXp+5K6QOVVuW5I5kwg4
-         gNq0qIz6JpJ9obLyrQaQGEF3B32IV7XeSy9a7ll5KdNQGBn1oa31oSvaXpnaRVPrWr8U
-         J4YsqWS8f660HnoV8wjwWXKkBrfyd2P+v6yH7xnPMpiFIYBy2iqyg/4FVva2uSpDZk7h
-         Xj1w==
-X-Gm-Message-State: AC+VfDz8mAqUbziFCuRcaPxrTJg7w6Jrmu3lcOfsLqcgmnkS+eX/sLcP
-	krpbt3kPt7GvRNvZBXy1+ktlaffkzJ4DdSJy2ZaxZw==
-X-Google-Smtp-Source: ACHHUZ7fly9ZcKfeuDxgPgDWv+YnXLTE4ah466Q9irFBlHZd5XhcGu/UinZknE20fN8kbaJnxJSwuRR/WUWwRP2VVzc=
-X-Received: by 2002:a0d:d487:0:b0:55a:5dce:aa19 with SMTP id
- w129-20020a0dd487000000b0055a5dceaa19mr4648937ywd.51.1683372802023; Sat, 06
- May 2023 04:33:22 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1683368953; x=1685960953;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Q89WWNqgDfTX8XQe+iwDXWhftOpjNe+SVaLkM27Jjlk=;
+        b=XUxwqa7bX5hEr3OkWEWBwhaqcnsarMso3az+hI+XT3GJbfrc0KtRsuPDVVlNuXcX4K
+         BXy3tTKAt/YjfH4n9rTpooetFj+E04AJECcn7YMejeDYpNokRJIUXeU9yaqJY7AyvN5u
+         9okNoHWiwYkrb0pNOcduS6YbxSMSWYmUOibGxyfhgnH57uAIHfi+T56irMzABX6Zi4tb
+         Wy9Cyk/3/59Y6mKTFBj7Z4PrCDMA+a+TberQq0jcC83cFU3eIExrrildCm3kAc3/fhEs
+         tDniYy7rlM8NIj4BrFUY65OAU/fIj500ZggDjmCjHqocWPBsvboXDwoOcBhftcSbCv5p
+         +ZMg==
+X-Gm-Message-State: AC+VfDz/F13qphgsyZfZN0j+vUOC5orKfjnaMx1yuzzRuTKiKrkX0K3R
+	EDp4iSkfN86LGDRQ/mkk4pgA9Q==
+X-Google-Smtp-Source: ACHHUZ6/wPqlS3DByla0DrxWiLfSctxz7UcT+4RZsEyKv1NRwAVpbGbddpmZMuF0gSHXShBQ1JQNRA==
+X-Received: by 2002:a17:907:709:b0:961:69a2:c8d6 with SMTP id xb9-20020a170907070900b0096169a2c8d6mr3030336ejb.69.1683368953421;
+        Sat, 06 May 2023 03:29:13 -0700 (PDT)
+Received: from ?IPV6:2a02:810d:15c0:828:efe5:7c03:a10a:7a40? ([2a02:810d:15c0:828:efe5:7c03:a10a:7a40])
+        by smtp.gmail.com with ESMTPSA id hx1-20020a170906846100b00965f1f4bac5sm1532711ejc.124.2023.05.06.03.29.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 06 May 2023 03:29:12 -0700 (PDT)
+Message-ID: <2dd9f9bd-c55e-a887-2e9b-61b2b66512ef@linaro.org>
+Date: Sat, 6 May 2023 12:29:11 +0200
 MIME-Version: 1.0
-References: <cover.1683183860.git.quic_varada@quicinc.com> <8894bf2c44eaf4959c7a1966b66229e6cf5cda96.1683183860.git.quic_varada@quicinc.com>
- <CAA8EJppvj2nzqwdsC+Xct4cJg2-_yPpiGDELjHJG4HyAH3zGMA@mail.gmail.com> <20230506110918.GC10918@varda-linux.qualcomm.com>
-In-Reply-To: <20230506110918.GC10918@varda-linux.qualcomm.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 6 May 2023 14:33:11 +0300
-Message-ID: <CAA8EJpqg2htfa2QZ7q6SP58N5YAABa8knBn4c5eYqYOU6HQNiA@mail.gmail.com>
-Subject: Re: [PATCH v10 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
-	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, gregkh@linuxfoundation.org, 
-	mturquette@baylibre.com, sboyd@kernel.org, quic_wcheng@quicinc.com, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-clk@vger.kernel.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+Subject: Re: [PATCH 1/2] phy: cadence: salvo: Add
+ usb2-disconnect-threshold-microvolt property
+To: Frank Li <Frank.Li@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ imx@lists.linux.dev, fushi.peng@nxp.com
+References: <20230505185247.1854677-1-Frank.Li@nxp.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230505185247.1854677-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230506_043323_842690_5E347C23 
-X-CRM114-Status: GOOD (  23.51  )
+X-CRM114-CacheID: sfid-20230506_112921_609109_8813FB9D 
+X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,74 +114,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 6 May 2023 at 14:09, Varadarajan Narayanan
-<quic_varada@quicinc.com> wrote:
->
-> On Fri, May 05, 2023 at 12:29:54PM +0300, Dmitry Baryshkov wrote:
-> > On Fri, 5 May 2023 at 11:23, Varadarajan Narayanan
-> > <quic_varada@quicinc.com> wrote:
-> > >
-> > > Add LDO regulator node
-> >
-> > As this LDO is provided by the PMIC, it would be nice to know why it
-> > is modelled as an always-on regulator instead of the proper PMIC
-> > regulator. Up to now we were doing this only for the outstanding power
-> > rails like CX/MX or EBI.
->
-> These are always ON because USB phy doesn't support power
-> collapse, and there is a chance that other IP blocks might be
-> sharing the rail.
+On 05/05/2023 20:52, Frank Li wrote:
+> Add usb2-disconnect-threshold-microvolt property to address fake USB
+> disconnection issue during enumeration or suspend state for difference
+> platform.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8x-mek.dtsi |  1 +
+>  drivers/phy/cadence/phy-cadence-salvo.c      | 30 +++++++++++++++++++-
 
-You are describing the software side here. From the hardware point of
-view, it is an I2C regulator, which is probably also exported as an
-SMD_RPM regulator. Unless you have a good reason not to do so, there
-should be a node under rpm-requests, which describes mp5496 regulators
-exported via RPM. then USB should refer to those regulators.
+DTS and drivers are always separate.
 
->
-> Thanks
-> Varada
->
-> > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > > ---
-> > >  Changes in v10:
-> > >         - Add LDO regulator node
-> > > ---
-> > >  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
-> > >  1 file changed, 7 insertions(+)
-> > >
-> > > diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > index bdc1434..1f5d14f 100644
-> > > --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > @@ -60,6 +60,13 @@
-> > >                         regulator-min-microvolt = <725000>;
-> > >                         regulator-max-microvolt = <1075000>;
-> > >                 };
-> > > +
-> > > +               mp5496_l2: l2 {
-> > > +                       regulator-min-microvolt = <1800000>;
-> > > +                       regulator-max-microvolt = <1800000>;
-> > > +                       regulator-boot-on;
-> > > +                       regulator-always-on;
-> > > +               };
-> > >         };
-> > >  };
-> > >
-> > > --
-> > > 2.7.4
-> > >
-> >
-> >
-> > --
-> > With best wishes
-> > Dmitry
+Best regards,
+Krzysztof
 
-
-
--- 
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
