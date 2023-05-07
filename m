@@ -4,81 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F03CEC77B7C
-	for <linux-phy@archiver.kernel.org>; Sun,  7 May 2023 14:48:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94307C77B7D
+	for <linux-phy@archiver.kernel.org>; Sun,  7 May 2023 15:46:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4GBWPsP/zGYsZFUYIYN2ijvXA8dybW/hlTJUXp6Dq+U=; b=QHSPmruEwkfyZz
-	UdREMWItXQ7QcAaCiCL8DAfuJ2kLLpSlPCsuRhjgdcJpD8Zpgtqgp+3JdJbXrlgFLFMNHPOtUDT/0
-	cppV9K8o7uUS/XtFwa4mVYngMRLSZGelxip9cBhXjtkRBDO86wmPAOkF/fsh0rsphOfP8MdauNKDT
-	VCcNjL6H1z9DK0sCBQifZNwe5BJCFIxLFlJ9l3Z8BzTUZ2AjUIgysEOByTSrArTR+QdINmcQn0L0K
-	w+frnKuO5x196//hG6q/2K4/77lTV9tm9B/OzUdJ2bVzcPIUl2ZeD+Qb0akrqv28NunIDY8vmsAKE
-	QwEOt/bhYyOgTcH/GGZw==;
+	List-Owner; bh=zHFCfkofVwxytQw+2W5J2ko4EtXmiklbdZKJJl2zC+w=; b=LsqfArZaOqHc+w
+	D8giH1TXOfpCF3GaLaxG4z1wmadJQzQtjVcP1o523nLwKNvAjmmACtBwVlY0zesHnDYwSMItvwVqy
+	PML2qX9USRkX0WAWhkk0NnAixr50iNZA2vGndGTrIwfIivquhWWGUANsFJ0s00P57ssUEp7CSlRW6
+	sJoMd/1gVUnlWWPLks3Xa6rGDGjsF0MuuyepoJLoAgz2Y/BXA+GXlGgDG/n2wiVU5fsRqX00QzFys
+	lo5CTLCK0JZoDMN6qgoozENqv549LvEFC8Obcxc+NlHakW/l3IzQmwn8u3i8gLBcooLzmGU6NcFbG
+	iBNmRBhTVncFgsUWy2gA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvfgX-00GDql-2h;
-	Sun, 07 May 2023 14:48:25 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1pvgao-00GKLZ-0b;
+	Sun, 07 May 2023 15:46:34 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvfgV-00GDq0-0F
+	id 1pvgam-00GKL5-07
 	for linux-phy@lists.infradead.org;
-	Sun, 07 May 2023 14:48:24 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-50b383222f7so5421054a12.3
-        for <linux-phy@lists.infradead.org>; Sun, 07 May 2023 07:48:21 -0700 (PDT)
+	Sun, 07 May 2023 15:46:33 +0000
+Received: by mail-pg1-x532.google.com with SMTP id 41be03b00d2f7-51b33c72686so2269200a12.1
+        for <linux-phy@lists.infradead.org>; Sun, 07 May 2023 08:46:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683470900; x=1686062900;
+        d=gmail.com; s=20221208; t=1683474390; x=1686066390;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=QNL3G/zxSdZ+IvZ1XOfmqIgPpnWosZByJqwjHAEj6R4=;
-        b=kP5r1EYAU+Scv98scofN1apJWRF5MqDhL5gWvbtaCxQdQeXv2g0RbB/tDd3IgrjHBS
-         A7DtU7kEPnIw9gSV0X/oCzGGxq2Y85xjBka/zC5nthJ54wq9/IdE5dlCUswDoyoKebln
-         ypTwJ13SnJlbAHZZTkf6+1VJTa/8beRpZd2P9dR+1Rbbr6jQLyxiciiGOJMjUCJze6i0
-         ruNEKncCHZDzGsy2rDT9r1wygasmtBozUEHBVjJR2DdZGHcQBTvqsc5CdfR/uZRvVZ2A
-         WzsADWwRBKvK0gzEQqYnxpd6LOUETYVfrK4Hwr24d4fZqkS85LEv2jqkpkxTdTuGkKOX
-         TSSA==
+        bh=y8aKivAi7Wv2K+b9qOFRY7q/Y6aEZb+fXI+HfgLvAtY=;
+        b=IWQeIrrBhyjfUBgVv6Wh33w6v48aO7VzZkM8EMKF+SFX0yjx8VtFTYPK17fFbMFTh/
+         VuzKf0jbhnwMFEmpHnY52jBWXjoRJx0NGw2s01N3FpB3r59zKJG7WafML+H+1avV84A4
+         fYHxP6SI2dHEauitsNDXUnNOQXrlBtmpzD9XDtVNQd6BkpXT0Ubl3yM+nzUKh1m3b3Y/
+         Em57iUDZVUW7TapXi2HWXL6K5GKneID5I72T0+3GBRIQh0SvPqWkrBctdcWt9f10zEKF
+         mAUNlsBhtuNxI2qxmF/g2m7t+XVK3058UA3zKhlE3iHRylj7Q/1UXyXkMnpQ6hxmWucV
+         Ju1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683470900; x=1686062900;
+        d=1e100.net; s=20221208; t=1683474390; x=1686066390;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=QNL3G/zxSdZ+IvZ1XOfmqIgPpnWosZByJqwjHAEj6R4=;
-        b=Ud4T6MQBcJGLAl7QX37KnU7qjhshUI6gQt7E5I5lto3XbO2rQZXPIO3HH/JL7LGxMc
-         a1mfwLcHqGTg/GNijxSb2zmzcdQR0Isqv6jJbkxGpfWhYqEUTN/1spp7Y1XGD1H3NTn0
-         3ra9MbS7Tpxyg1BJg1p6Pty/F2/Ycvs6RbAVsg6RNhKLdql/zs7f2ZHSLNrHZWJ9qYzI
-         cGN4dS+oYRHJpMysz+uiLNdxOk+WOkAeMdNMM2s9inpf/yUy1Zhu9SrGeB+x2zR6kwhK
-         Ken96SwOvIAcM5CdCf+NGteZ6NSwfC7Lx1YXkbQzshTrJLfGBO/58fadyi/SvLU8L6g1
-         +ziQ==
-X-Gm-Message-State: AC+VfDxcoNOCEZdXBCweSStZpWKIIbtWXhmx7yUCzhCde04qwuA957zS
-	SAF/3bm2nRTL+kUO0VjfeiRn+Q==
-X-Google-Smtp-Source: ACHHUZ412dZZ69NMaMdAVVC/Kr8y7ymxj5N27OqooAVSH+e0ZyzqbU3bA+hcjnoiYD9ORaKf7TaPLQ==
-X-Received: by 2002:aa7:d901:0:b0:50b:d1a6:116a with SMTP id a1-20020aa7d901000000b0050bd1a6116amr6338818edr.32.1683470900249;
-        Sun, 07 May 2023 07:48:20 -0700 (PDT)
-Received: from krzk-bin.. ([2a02:810d:15c0:828:1757:b51a:9965:e81])
-        by smtp.gmail.com with ESMTPSA id y21-20020aa7ccd5000000b00506a09795e6sm5026724edt.26.2023.05.07.07.48.19
+        bh=y8aKivAi7Wv2K+b9qOFRY7q/Y6aEZb+fXI+HfgLvAtY=;
+        b=Odn96WLjmXcYPJ4p3BpLpD1tTAjw8daJjzllKO2beW+KazibAV+c5XgELrWeW0IvoD
+         QScOKHDeWQnDyKDn3ueNst8HTnSAGYAVplEGYVXmZB57xx/npKt24/26F37Foelhu8+G
+         pKNbkIkj2rHsVqksdcbXzMprhvEsQpCdHRUMWMxOgJ+3L/tNHy8esxeJKxxom6CXlG+N
+         cAyRZAbxrbKOkRdSJrWu54d2Ln1aq0XBMYe95g17HbS2qp9WchYMj1Jk4agYKqvqqReN
+         b3D4/CkogfaKn86R6VO2K1hrG5oYJhQfMa2O7JnRBnC5UxjpQEkuxi4Wag6rkSIEjvd/
+         twmw==
+X-Gm-Message-State: AC+VfDwAJlPLGlzRIvCWhhmtH4TqxyK1TIMe2r14REuwvrgfs5mQJLBH
+	elzr2+Yxx3Ohkg+LcDN8yMnGxy+B3CkNYgrNyDE=
+X-Google-Smtp-Source: ACHHUZ7fXwEHFJWMIGi2C6hX1o1O32KJp/bnu5d36edYQAkpBmZY3MGbD+142FU0VyJLxKHTLXzkAg==
+X-Received: by 2002:a17:90a:c908:b0:24e:b0f:8f57 with SMTP id v8-20020a17090ac90800b0024e0b0f8f57mr7008565pjt.48.1683474389605;
+        Sun, 07 May 2023 08:46:29 -0700 (PDT)
+Received: from d.home.yangfl.dn42 ([104.28.245.199])
+        by smtp.gmail.com with ESMTPSA id b3-20020a17090ae38300b0024e47016966sm12989470pjz.1.2023.05.07.08.46.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 07 May 2023 07:48:19 -0700 (PDT)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Sun, 07 May 2023 08:46:29 -0700 (PDT)
+From: David Yang <mmyangfl@gmail.com>
+To: linux-phy@lists.infradead.org
+Cc: David Yang <mmyangfl@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH] phy: qcom-snps: correct struct qcom_snps_hsphy kerneldoc
-Date: Sun,  7 May 2023 16:48:18 +0200
-Message-Id: <20230507144818.193039-1-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.34.1
+Subject: [PATCH] phy: hisilicon: Adopt phy-hisi-inno-usb2 to Hi3798MV100
+Date: Sun,  7 May 2023 23:46:10 +0800
+Message-Id: <20230507154615.793942-1-mmyangfl@gmail.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230507_074823_116922_F695AAEA 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20230507_084632_078775_80136514 
+X-CRM114-Status: GOOD (  16.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,34 +91,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update kerneldoc of struct qcom_snps_hsphy to fix:
+Hisilicon also uses phy-hisi-inno-usb2 on Hi3798MV100, with a slightly
+different register convention.
 
-  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:135: warning: Function parameter or member 'update_seq_cfg' not described in 'qcom_snps_hsphy'
-
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: David Yang <mmyangfl@gmail.com>
 ---
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/hisilicon/Kconfig              |  2 +-
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 67 ++++++++++++++++------
+ 2 files changed, 51 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index a59063596214..6c237f3cc66d 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -115,11 +115,11 @@ struct phy_override_seq {
-  *
-  * @cfg_ahb_clk: AHB2PHY interface clock
-  * @ref_clk: phy reference clock
-- * @iface_clk: phy interface clock
-  * @phy_reset: phy reset control
-  * @vregs: regulator supplies bulk data
-  * @phy_initialized: if PHY has been initialized correctly
-  * @mode: contains the current mode the PHY is in
-+ * @update_seq_cfg: tuning parameters for phy init
-  */
- struct qcom_snps_hsphy {
- 	struct phy *phy;
+diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
+index d3b92c288554..6c89136fc8c2 100644
+--- a/drivers/phy/hisilicon/Kconfig
++++ b/drivers/phy/hisilicon/Kconfig
+@@ -54,7 +54,7 @@ config PHY_HISTB_COMBPHY
+ 
+ config PHY_HISI_INNO_USB2
+ 	tristate "HiSilicon INNO USB2 PHY support"
+-	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
++	depends on ARCH_HISI || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	select MFD_SYSCON
+ 	help
+diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+index b133ae06757a..b5d006f38934 100644
+--- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
++++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+@@ -9,7 +9,7 @@
+ #include <linux/delay.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
+-#include <linux/platform_device.h>
++#include <linux/of_device.h>
+ #include <linux/phy/phy.h>
+ #include <linux/reset.h>
+ 
+@@ -20,12 +20,28 @@
+ #define PHY_CLK_STABLE_TIME	2	/* unit:ms */
+ #define UTMI_RST_COMPLETE_TIME	2	/* unit:ms */
+ #define POR_RST_COMPLETE_TIME	300	/* unit:us */
+-#define PHY_TEST_DATA		GENMASK(7, 0)
+-#define PHY_TEST_ADDR		GENMASK(15, 8)
+-#define PHY_TEST_PORT		GENMASK(18, 16)
+-#define PHY_TEST_WREN		BIT(21)
+-#define PHY_TEST_CLK		BIT(22)	/* rising edge active */
+-#define PHY_TEST_RST		BIT(23)	/* low active */
++
++#define PHY_TYPE_0	0
++#define PHY_TYPE_1	1
++
++#define PHY0_TEST_DATA		GENMASK(7, 0)
++#define PHY0_TEST_ADDR_OFFSET	8
++#define PHY0_TEST_ADDR		GENMASK(15, 8)
++#define PHY0_TEST_PORT_OFFSET	16
++#define PHY0_TEST_PORT		GENMASK(18, 16)
++#define PHY0_TEST_WREN		BIT(21)
++#define PHY0_TEST_CLK		BIT(22)	/* rising edge active */
++#define PHY0_TEST_RST		BIT(23)	/* low active */
++
++#define PHY1_TEST_DATA		GENMASK(7, 0)
++#define PHY1_TEST_ADDR_OFFSET	8
++#define PHY1_TEST_ADDR		GENMASK(11, 8)
++#define PHY1_TEST_PORT_OFFSET	12
++#define PHY1_TEST_PORT		BIT(12)
++#define PHY1_TEST_WREN		BIT(13)
++#define PHY1_TEST_CLK		BIT(14)	/* rising edge active */
++#define PHY1_TEST_RST		BIT(15)	/* low active */
++
+ #define PHY_CLK_ENABLE		BIT(2)
+ 
+ struct hisi_inno_phy_port {
+@@ -37,6 +53,7 @@ struct hisi_inno_phy_priv {
+ 	void __iomem *mmio;
+ 	struct clk *ref_clk;
+ 	struct reset_control *por_rst;
++	unsigned int type;
+ 	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
+ };
+ 
+@@ -45,17 +62,27 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+ {
+ 	void __iomem *reg = priv->mmio;
+ 	u32 val;
+-
+-	val = (data & PHY_TEST_DATA) |
+-	      ((addr << 8) & PHY_TEST_ADDR) |
+-	      ((port << 16) & PHY_TEST_PORT) |
+-	      PHY_TEST_WREN | PHY_TEST_RST;
++	u32 value;
++
++	if (priv->type == PHY_TYPE_0)
++		val = (data & PHY0_TEST_DATA) |
++		      ((addr << PHY0_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
++		      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
++		      PHY0_TEST_WREN | PHY0_TEST_RST;
++	else
++		val = (data & PHY1_TEST_DATA) |
++		      ((addr << PHY1_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
++		      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
++		      PHY1_TEST_WREN | PHY1_TEST_RST;
+ 	writel(val, reg);
+ 
+-	val |= PHY_TEST_CLK;
+-	writel(val, reg);
++	value = val;
++	if (priv->type == PHY_TYPE_0)
++		value |= PHY0_TEST_CLK;
++	else
++		value |= PHY1_TEST_CLK;
++	writel(value, reg);
+ 
+-	val &= ~PHY_TEST_CLK;
+ 	writel(val, reg);
+ }
+ 
+@@ -135,6 +162,8 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->por_rst))
+ 		return PTR_ERR(priv->por_rst);
+ 
++	priv->type = (unsigned int) of_device_get_match_data(dev);
++
+ 	for_each_child_of_node(np, child) {
+ 		struct reset_control *rst;
+ 		struct phy *phy;
+@@ -170,8 +199,12 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id hisi_inno_phy_of_match[] = {
+-	{ .compatible = "hisilicon,inno-usb2-phy", },
+-	{ .compatible = "hisilicon,hi3798cv200-usb2-phy", },
++	{ .compatible = "hisilicon,inno-usb2-phy",
++	  .data = (void *) PHY_TYPE_0 },
++	{ .compatible = "hisilicon,hi3798cv200-usb2-phy",
++	  .data = (void *) PHY_TYPE_0 },
++	{ .compatible = "hisilicon,hi3798mv100-usb2-phy",
++	  .data = (void *) PHY_TYPE_1 },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, hisi_inno_phy_of_match);
 -- 
-2.34.1
+2.39.2
 
 
 -- 
