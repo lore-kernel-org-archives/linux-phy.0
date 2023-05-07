@@ -4,62 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8224DC77B75
-	for <linux-phy@archiver.kernel.org>; Sat,  6 May 2023 12:29:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CB86C77B7C
+	for <linux-phy@archiver.kernel.org>; Sun,  7 May 2023 04:01:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6oAqiwvldt5zxiAWAFVAI4SZPdjWLsFwur9n/kVThas=; b=rR1a8O91bMco+NKy8YA+7THMfj
-	lHZSMPRibq88Kw7gPmT24EflwDXWjEWCW5Y+EA3ZvXqHDDFal7sqKzy4IVPydFdurTm+DoeFl4gSf
-	zt1jdwmX2I5zOwcDpuZWRKh6FaOqW69+kd5q7ddCJyVfNRBOKATMb/zZQOTD7TNUmxkyMFJMDUaEC
-	S2R8tcX2b+vtcBLz6G4zG1Wl+dm2EJQAygTRXwr4jd1xpu74CjZwNZLhd0LENPGsVWqBgUfY4GFsI
-	CoozmZ4kZrwBNxoFIxXaRq4+a6KQISD2uDE3JMVlwC7ELyGRBSf3WtHIrb9rMXRUg408hxehgtFP0
-	ztBvWOXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4KJwOPkCBwTdBaEi0bw4KHb5ao19YYJF+iSO6SCy0lk=; b=fBDWkPvV+E550T
+	WJqSb3OGqIgk6IzP4/MAfX5j32fugJ/NvPPsyy3VpGJkxK57htoR91DuFBACseFXlcNv/8gcCt8cf
+	f2XNwQIbvAAvxXB4KZC+RLh+99XNhJDKvOo9B8cVXz9q81y8laabmoUChfQZqsKOL2ebTqlnEmmnv
+	jJbcUekqqsGmr6PNJuIRnNBuM4OJxq58zTiyTYV//ia8SswAiVyYlyMPszqUOaMczkXJJxwaj/BCf
+	ldM/jD5aJelY18kvflQeR0pwa4KMUjeN3Y3Nn/8TY9Y6+0+FBfpKR3GJOOMbty475PcEKEBDdSAFr
+	AdSot8aGTSOlzPpwqSTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvH2P-00DOgD-0Z;
-	Sat, 06 May 2023 12:29:21 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pvVav-00F6sG-0R;
+	Sun, 07 May 2023 04:01:57 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvH2M-00DOfm-35;
-	Sat, 06 May 2023 12:29:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 83DF960C20;
-	Sat,  6 May 2023 12:29:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAD99C433D2;
-	Sat,  6 May 2023 12:29:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683376157;
-	bh=j9cwmY9NtG4amTk4a1qT7ubgf5DFih5T9cNOvPsUREo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DDGwKoT2T+sm25/C41iscfEklYGdMPO2/m7kBvX7NRAY2tOC7W1HxXhgTbyzUjVmx
-	 7iGm9YorpstFOvxTU+wgJNziVqNJRp8QMOVJgS4FMtHtGxKKhQpMl62HrQQtMZN4Xv
-	 phPG3bhMyp0UvPphAjPv+/9e9QJIwUaYqSDdlQpSVgyEHWun/mqm+mLLxafR9Rn68R
-	 M5a6tszAzniyQOO5YSFdmo1eC2ecrEhJrfE67JdJ5eF12WO4CiJW3Cv5eXe8GiMR7r
-	 0m49OmDn20L7GHo9ODuO7W/f+xG8YMzdZrcn3hfBAWmo/WbNkbe5BPiRdEPuoYI6Ll
-	 D8muthNC0cHJA==
-Date: Sat, 6 May 2023 13:29:12 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Walker Chen <walker.chen@starfivetech.com>,
-	Hal Feng <hal.feng@starfivetech.com>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
-	vkoul@kernel.org, linux-phy@lists.infradead.org
+	id 1pvVat-00F6rI-1P;
+	Sun, 07 May 2023 04:01:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=Tm3SRrA4SJDcdCywgZMwcG/iIZMVXNj+W18OTc7O+Q4=; b=cOWUxR7XfCMM226oph7WJsRYmm
+	MEcpMGs3cE58Wf2K5AahnFEmM+SlDt6DmjF6f/Bizh+hK/7PGGHPTKdlnrHqHbAJ+D0gbNxjc3/sv
+	GmRDP9ES89i5otsZ03hpHlzXKV7p9LsTIV49wvmDEvsD16KWFp1g7PcCVCb26fWnVimUuKvRpcxIO
+	7WQUcdwbboaEzH6g4nLBJNVsuQsuPLYUUzJ4j8nkngzOfF43UCYETBemfM87r/rlRFbIt5QEeZflY
+	4doKj0PfvhPying2ITEtMqVSBUVRG+n1WorhoyPxFDOgWef+i78XepLF20uSxFdj4GdgcPDwTeyyg
+	86W886zQ==;
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by desiato.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1pvVal-004K6c-1r;
+	Sun, 07 May 2023 04:01:53 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 5BE7E24DFDC;
+	Sun,  7 May 2023 12:00:45 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sun, 7 May
+ 2023 12:00:45 +0800
+Received: from [192.168.125.107] (183.27.98.219) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Sun, 7 May
+ 2023 12:00:44 +0800
+Message-ID: <976dbe61-9edd-6003-1d32-888a90c1157f@starfivetech.com>
+Date: Sun, 7 May 2023 12:00:44 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
 Subject: Re: [RESEND v2 1/6] dt-bindings: power: Add JH7110 AON PMU support
-Message-ID: <20230506-foil-basis-31724c50b30b@spud>
+To: Conor Dooley <conor@kernel.org>
+CC: Conor Dooley <conor.dooley@microchip.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+	"Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Emil Renner
+ Berthing <kernel@esmil.dk>, Paul Walmsley <paul.walmsley@sifive.com>, Palmer
+ Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Walker Chen
+	<walker.chen@starfivetech.com>, Hal Feng <hal.feng@starfivetech.com>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-riscv@lists.infradead.org>, <vkoul@kernel.org>,
+	<linux-phy@lists.infradead.org>
 References: <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
  <5adda0ad-965c-fbf0-878c-9d41d28b5c39@starfivetech.com>
  <86693969-59bf-5bcc-42a3-b6e94a0d6f3e@linaro.org>
@@ -70,11 +77,17 @@ References: <1ac26c1a-1726-515d-6598-849a07ed0b86@linaro.org>
  <ba6a1a47-d3b1-ee16-4785-f5c61d593127@starfivetech.com>
  <20230506-dating-twiddling-b364de21ed2b@spud>
  <b1965ae2-af2d-b11c-3e34-8129c29333b8@starfivetech.com>
-MIME-Version: 1.0
-In-Reply-To: <b1965ae2-af2d-b11c-3e34-8129c29333b8@starfivetech.com>
+ <20230506-foil-basis-31724c50b30b@spud>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230506-foil-basis-31724c50b30b@spud>
+X-Originating-IP: [183.27.98.219]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230506_052919_031787_B762D458 
-X-CRM114-Status: UNSURE (   8.18  )
+X-CRM114-CacheID: sfid-20230507_050149_365313_A1261F04 
+X-CRM114-Status: UNSURE (   5.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,52 +100,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7392208048444892791=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============7392208048444892791==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="p9EN/m3kyGka2NQK"
-Content-Disposition: inline
 
+On 2023/5/6 20:29, Conor Dooley wrote:
+> On Sat, May 06, 2023 at 08:26:01PM +0800, Changhuang Liang wrote:
+> 
+>> OK, will replace "starfive,jh7110-aon-pmu" with "starfive,jh100-aon-syscon" in this series.
+>                                                             ^^^^^
+> Just make sure you don't propagate my typo here in the process.
+> 
 
---p9EN/m3kyGka2NQK
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Sat, May 06, 2023 at 08:26:01PM +0800, Changhuang Liang wrote:
-
-> OK, will replace "starfive,jh7110-aon-pmu" with "starfive,jh100-aon-syscon" in this series.
-                                                            ^^^^^
-Just make sure you don't propagate my typo here in the process.
-
-
---p9EN/m3kyGka2NQK
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZFZIGAAKCRB4tDGHoIJi
-0tkdAQDGePU71+pVWUcZa08uxLkEJ5SwKW4PyDZ4uHsqXFegWQEAzoJbhsGCFcjN
-83Bp4hlpjAGUO/5CJiD3fGavYjrZ+gY=
-=oSlD
------END PGP SIGNATURE-----
-
---p9EN/m3kyGka2NQK--
-
-
---===============7392208048444892791==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Yes, "starfive,jh7110-aon-syscon"
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7392208048444892791==--
-
