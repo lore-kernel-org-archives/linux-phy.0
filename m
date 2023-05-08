@@ -4,92 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7631C77B7F
-	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 05:17:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AC0BC77B75
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 07:42:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rtAyuCYMCV+oJ8ZCPLQdXXBiU+6JE1LXm4ZYN4x4yZ0=; b=bDW6pBNsKzn/f6
-	w6BYmQYD1Lpki4kzisKrg3mX4NuXi27JN3fX152QBKVE13RFTIzhM/eCvjNZqMGIsBwIqQQ3HOnge
-	DFnib17EiyyhIBtwxKop+FF5h+fQtQee6pU96wDUmuAC0TAgTi9aLVZDFRDe8RvuNS8AzkfnVjaom
-	tskmI4qIrci5VgsS5ucb+X+yaNpug2njqad0wHKgEGU3frpUneFpLTtRtkhwupttcQG5zyblzG8gZ
-	o46eWpmsvVA+gq+Z/o7eM3K3pbXVwGoUcG8qjIABwqwLHit9iwM3Pz0sY1RZgD1F86m4sxyHWrVnu
-	pcFsqiizIJcVAS8Bq83w==;
+	List-Owner; bh=g8/An9YdJhohEsagWt/jDv36VcauU3303tNqpDcCmxE=; b=EM+NMIYuoKmrVZ
+	h7txeYPZOIbM1oRKeAtCYeSJVcD/c0/Zuzzpwlfk0JpuhqxR5SkdMEl13TFbSW/oUKt5I7AMmAznX
+	klqSK8cTwVwPIJRcAEE0oQXQ3C/jn5kiserBTQvHME9nbEj82FUFpllIHvfoAJEEJQVOFfsxKHnQ+
+	rsp4SJtttabPsyKD/1ze/kTmfKmmxJkORhgU9DNHkRAIkDH479kjLiSMMoKL4Wxai7Y6Mr4XrXtiU
+	f5jp94HVHsgB2bPZP3vFksnZIVvNsmzTb3dVuJ9qot9OeUnT/HkpH/KBGhOCVSirG7Q+thyfs244M
+	DCwbvp8JW5Lbv0pJyofA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvtFW-00HICA-1B;
-	Mon, 08 May 2023 05:17:26 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pvvVS-00HVMx-39;
+	Mon, 08 May 2023 07:42:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvtFT-00HIBm-1m
+	id 1pvvVQ-00HVMY-0r
 	for linux-phy@lists.infradead.org;
-	Mon, 08 May 2023 05:17:25 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3485H9Zc024000;
-	Mon, 8 May 2023 05:17:09 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=TYmfJr7HHvsCMYz1MiZH4pwIzylWNmQxGfoSFBWza8I=;
- b=fF4abupXW4DeZCHGNHsgY95T+i5anWG2nDbBlO9LL/fM/FUk+L9L4keLAxnqJ0lZTzmR
- wPhcD2LFW/4xGxJm+c9Dr3ysODTh0q7O18Wd+MoDyXaCOV3/qmEq/dx4hfndPQHhAxpg
- /rT0tDqMiHGuZ2WQkbF5Iet3CraXPl2Fl5tiZrzlfE3nWLdf1NTKTwiF5MyrUDSXRNTe
- pEAfzr0PgqI3WNeTBe/FGc+aBMNERUcodioPR/wXOa3mVNx/pnuYVwVUrSm8VcEBd/bW
- VT2Lp5S+pHMO5F6WNNZaEPbLIqIlZQNtN9qL29EM6XbTNLgWEQhMWrj+/bS2L6EB5CBZ og== 
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qddwhjtcm-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 08 May 2023 05:17:08 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3485H7fT007437
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 8 May 2023 05:17:07 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Sun, 7 May 2023 22:17:02 -0700
-Date: Mon, 8 May 2023 10:46:58 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v10 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
-Message-ID: <20230508051657.GA24472@varda-linux.qualcomm.com>
-References: <cover.1683183860.git.quic_varada@quicinc.com>
- <8894bf2c44eaf4959c7a1966b66229e6cf5cda96.1683183860.git.quic_varada@quicinc.com>
- <CAA8EJppvj2nzqwdsC+Xct4cJg2-_yPpiGDELjHJG4HyAH3zGMA@mail.gmail.com>
- <20230506110918.GC10918@varda-linux.qualcomm.com>
- <CAA8EJpqg2htfa2QZ7q6SP58N5YAABa8knBn4c5eYqYOU6HQNiA@mail.gmail.com>
+	Mon, 08 May 2023 07:42:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 153286201A;
+	Mon,  8 May 2023 07:41:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEB2CC433EF;
+	Mon,  8 May 2023 07:41:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683531718;
+	bh=yNTGKvnvEJLVtEyVTqWeDENaezR1MgGHS3g9B/4BDWU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=F3loFkYDYcjTv69jeH0SfBGgatd4d0Uo1oq9tbaCm8wUO/Dbha5dCWXW8U/lykg+z
+	 i8iD4eV8sVHXD9lwkcFopZ18gbOawcg+NoybYJY9UDpRAXGP6BTMDNtn9GKhi99cJz
+	 4aMwS6DYHDYDxMtNNl7Wd8JzAzKMxdk79LuNCIrtaFEKY0rTyqCT4mFsQFQre2QxYe
+	 IUDi74XXSv3W+Hw0/ipaaGHT6VWWpu/0eZNMwlx1CxCcRFLmrtAUcELCNsC2PMlRsB
+	 QLDZ0zmQw6IZj8z1IDc5oOiZ5J22s4qptOcwdvxHERfGILH0bVIzyLzH0pRAoeUWa6
+	 9Fpg+y7KvRo9w==
+Date: Mon, 8 May 2023 13:11:54 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: David Yang <mmyangfl@gmail.com>
+Cc: linux-phy@lists.infradead.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: hisilicon: Adopt phy-hisi-inno-usb2 to Hi3798MV100
+Message-ID: <ZFinwhFphe71VeLk@matsya>
+References: <20230507154615.793942-1-mmyangfl@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAA8EJpqg2htfa2QZ7q6SP58N5YAABa8knBn4c5eYqYOU6HQNiA@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: rai6O2lzCM5Y5S4XD8ywvDXPGmLwmYiT
-X-Proofpoint-ORIG-GUID: rai6O2lzCM5Y5S4XD8ywvDXPGmLwmYiT
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-08_02,2023-05-05_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
- adultscore=0 impostorscore=0 mlxscore=0 phishscore=0 priorityscore=1501
- bulkscore=0 spamscore=0 clxscore=1015 lowpriorityscore=0 mlxlogscore=844
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303200000
- definitions=main-2305080036
+In-Reply-To: <20230507154615.793942-1-mmyangfl@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230507_221723_732653_8E2823BE 
-X-CRM114-Status: GOOD (  32.27  )
+X-CRM114-CacheID: sfid-20230508_004200_413451_3E5BA01D 
+X-CRM114-Status: GOOD (  23.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,82 +75,159 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, May 06, 2023 at 02:33:11PM +0300, Dmitry Baryshkov wrote:
-> On Sat, 6 May 2023 at 14:09, Varadarajan Narayanan
-> <quic_varada@quicinc.com> wrote:
-> >
-> > On Fri, May 05, 2023 at 12:29:54PM +0300, Dmitry Baryshkov wrote:
-> > > On Fri, 5 May 2023 at 11:23, Varadarajan Narayanan
-> > > <quic_varada@quicinc.com> wrote:
-> > > >
-> > > > Add LDO regulator node
-> > >
-> > > As this LDO is provided by the PMIC, it would be nice to know why it
-> > > is modelled as an always-on regulator instead of the proper PMIC
-> > > regulator. Up to now we were doing this only for the outstanding power
-> > > rails like CX/MX or EBI.
-> >
-> > These are always ON because USB phy doesn't support power
-> > collapse, and there is a chance that other IP blocks might be
-> > sharing the rail.
->
-> You are describing the software side here. From the hardware point of
-> view, it is an I2C regulator, which is probably also exported as an
-> SMD_RPM regulator. Unless you have a good reason not to do so, there
-> should be a node under rpm-requests, which describes mp5496 regulators
-> exported via RPM. then USB should refer to those regulators.
+On 07-05-23, 23:46, David Yang wrote:
+> Hisilicon also uses phy-hisi-inno-usb2 on Hi3798MV100, with a slightly
+> different register convention.
 
-Yes. It is a part of rpm-requests. That is why have mentioned V10
-is dependent on
-https://lore.kernel.org/lkml/20230407155727.20615-1-quic_devipriy@quicinc.com/T/.
-The 4th patch of the above series
-(https://lore.kernel.org/lkml/20230407155727.20615-1-quic_devipriy@quicinc.com/T/#mea3f0ea37c53cf5e39e10cd6cf3bed5243cec629)
-adds the rpm_requests node and this regulator definition is added
-to it. Hope that is ok.
+OK, so what should I expect from this patch, pls document that here...
 
-Thanks
-Varada
+> 
+> Signed-off-by: David Yang <mmyangfl@gmail.com>
+> ---
+>  drivers/phy/hisilicon/Kconfig              |  2 +-
+>  drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 67 ++++++++++++++++------
+>  2 files changed, 51 insertions(+), 18 deletions(-)
+> 
+> diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
+> index d3b92c288554..6c89136fc8c2 100644
+> --- a/drivers/phy/hisilicon/Kconfig
+> +++ b/drivers/phy/hisilicon/Kconfig
+> @@ -54,7 +54,7 @@ config PHY_HISTB_COMBPHY
+>  
+>  config PHY_HISI_INNO_USB2
+>  	tristate "HiSilicon INNO USB2 PHY support"
+> -	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
+> +	depends on ARCH_HISI || COMPILE_TEST
 
-> > > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > > > ---
-> > > >  Changes in v10:
-> > > >         - Add LDO regulator node
-> > > > ---
-> > > >  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
-> > > >  1 file changed, 7 insertions(+)
-> > > >
-> > > > diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > > index bdc1434..1f5d14f 100644
-> > > > --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > > +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > > @@ -60,6 +60,13 @@
-> > > >                         regulator-min-microvolt = <725000>;
-> > > >                         regulator-max-microvolt = <1075000>;
-> > > >                 };
-> > > > +
-> > > > +               mp5496_l2: l2 {
-> > > > +                       regulator-min-microvolt = <1800000>;
-> > > > +                       regulator-max-microvolt = <1800000>;
-> > > > +                       regulator-boot-on;
-> > > > +                       regulator-always-on;
-> > > > +               };
-> > > >         };
-> > > >  };
-> > > >
-> > > > --
-> > > > 2.7.4
-> > > >
-> > >
-> > >
-> > > --
-> > > With best wishes
-> > > Dmitry
->
->
->
-> --
-> With best wishes
-> Dmitry
+why this change?
+
+>  	select GENERIC_PHY
+>  	select MFD_SYSCON
+>  	help
+> diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> index b133ae06757a..b5d006f38934 100644
+> --- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> +++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> @@ -9,7 +9,7 @@
+>  #include <linux/delay.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+> -#include <linux/platform_device.h>
+> +#include <linux/of_device.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/reset.h>
+>  
+> @@ -20,12 +20,28 @@
+>  #define PHY_CLK_STABLE_TIME	2	/* unit:ms */
+>  #define UTMI_RST_COMPLETE_TIME	2	/* unit:ms */
+>  #define POR_RST_COMPLETE_TIME	300	/* unit:us */
+> -#define PHY_TEST_DATA		GENMASK(7, 0)
+> -#define PHY_TEST_ADDR		GENMASK(15, 8)
+> -#define PHY_TEST_PORT		GENMASK(18, 16)
+> -#define PHY_TEST_WREN		BIT(21)
+> -#define PHY_TEST_CLK		BIT(22)	/* rising edge active */
+> -#define PHY_TEST_RST		BIT(23)	/* low active */
+> +
+> +#define PHY_TYPE_0	0
+> +#define PHY_TYPE_1	1
+> +
+> +#define PHY0_TEST_DATA		GENMASK(7, 0)
+
+same as previous what changed??
+
+> +#define PHY0_TEST_ADDR_OFFSET	8
+> +#define PHY0_TEST_ADDR		GENMASK(15, 8)
+> +#define PHY0_TEST_PORT_OFFSET	16
+> +#define PHY0_TEST_PORT		GENMASK(18, 16)
+> +#define PHY0_TEST_WREN		BIT(21)
+> +#define PHY0_TEST_CLK		BIT(22)	/* rising edge active */
+> +#define PHY0_TEST_RST		BIT(23)	/* low active */
+> +
+> +#define PHY1_TEST_DATA		GENMASK(7, 0)
+> +#define PHY1_TEST_ADDR_OFFSET	8
+> +#define PHY1_TEST_ADDR		GENMASK(11, 8)
+> +#define PHY1_TEST_PORT_OFFSET	12
+> +#define PHY1_TEST_PORT		BIT(12)
+> +#define PHY1_TEST_WREN		BIT(13)
+> +#define PHY1_TEST_CLK		BIT(14)	/* rising edge active */
+> +#define PHY1_TEST_RST		BIT(15)	/* low active */
+> +
+>  #define PHY_CLK_ENABLE		BIT(2)
+>  
+>  struct hisi_inno_phy_port {
+> @@ -37,6 +53,7 @@ struct hisi_inno_phy_priv {
+>  	void __iomem *mmio;
+>  	struct clk *ref_clk;
+>  	struct reset_control *por_rst;
+> +	unsigned int type;
+>  	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
+>  };
+>  
+> @@ -45,17 +62,27 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+>  {
+>  	void __iomem *reg = priv->mmio;
+>  	u32 val;
+> -
+> -	val = (data & PHY_TEST_DATA) |
+> -	      ((addr << 8) & PHY_TEST_ADDR) |
+> -	      ((port << 16) & PHY_TEST_PORT) |
+> -	      PHY_TEST_WREN | PHY_TEST_RST;
+> +	u32 value;
+> +
+> +	if (priv->type == PHY_TYPE_0)
+> +		val = (data & PHY0_TEST_DATA) |
+> +		      ((addr << PHY0_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
+> +		      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
+> +		      PHY0_TEST_WREN | PHY0_TEST_RST;
+> +	else
+> +		val = (data & PHY1_TEST_DATA) |
+> +		      ((addr << PHY1_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
+> +		      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
+> +		      PHY1_TEST_WREN | PHY1_TEST_RST;
+>  	writel(val, reg);
+>  
+> -	val |= PHY_TEST_CLK;
+> -	writel(val, reg);
+> +	value = val;
+> +	if (priv->type == PHY_TYPE_0)
+> +		value |= PHY0_TEST_CLK;
+> +	else
+> +		value |= PHY1_TEST_CLK;
+> +	writel(value, reg);
+>  
+> -	val &= ~PHY_TEST_CLK;
+>  	writel(val, reg);
+>  }
+>  
+> @@ -135,6 +162,8 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+>  	if (IS_ERR(priv->por_rst))
+>  		return PTR_ERR(priv->por_rst);
+>  
+> +	priv->type = (unsigned int) of_device_get_match_data(dev);
+> +
+>  	for_each_child_of_node(np, child) {
+>  		struct reset_control *rst;
+>  		struct phy *phy;
+> @@ -170,8 +199,12 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+>  }
+>  
+>  static const struct of_device_id hisi_inno_phy_of_match[] = {
+> -	{ .compatible = "hisilicon,inno-usb2-phy", },
+> -	{ .compatible = "hisilicon,hi3798cv200-usb2-phy", },
+> +	{ .compatible = "hisilicon,inno-usb2-phy",
+> +	  .data = (void *) PHY_TYPE_0 },
+> +	{ .compatible = "hisilicon,hi3798cv200-usb2-phy",
+> +	  .data = (void *) PHY_TYPE_0 },
+> +	{ .compatible = "hisilicon,hi3798mv100-usb2-phy",
+> +	  .data = (void *) PHY_TYPE_1 },
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(of, hisi_inno_phy_of_match);
+> -- 
+> 2.39.2
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
