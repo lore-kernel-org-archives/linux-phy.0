@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB5A9C7EE22
-	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 08:57:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E7B1C7EE22
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 08:57:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T52M4Cn0Cvx3a5DCmVLrw4Cs1E34UXdY4sLAXg1lsTY=; b=JJTEU9ua65SBpD
-	3G/Eo3zBAT1p1wabiV13UBUE4blcuiiMv+o5yTmaYhTbTLWZoErJSmV1ntyYWSBQcQUTUU4YYljVd
-	SLt7dhdEn7xbNKTSzdZfbMkTSOONkRGOZU2YFV0fld0rEiV3Utlm6TqJUVyA5KMphZH+lS/8dJVkJ
-	ic0WcdcS5xFCT4DyJPMUF/Mf88uV3FLHR31uCPpxpUOjzkfRrb43bDhmumP4JxDG411jF7UzAbh4a
-	q/T+SrNL8BmPVUGebytxu8XaJxYDwzwJS4a3Ikvvpc22IfRAcOEDKzctpJX8yJgeEgHNGPH3rwdM7
-	r4AUg7hEBJQQopDUma1w==;
+	List-Owner; bh=Rj6SSBmneIAqzC3vCqE//5Ztl+dHL5Sj67heDOz9Tuk=; b=aWp2pU8gYceO0O
+	rVxRbrjNVeuDjTR0C6oRL8/2sqgQqJ1G2sb7bkotDnwneyBib429pou25liaZBUGyfAtbDuCnExFz
+	sI9giweNK/stSERHBsdZa9o5+iy9vgntIGLbEDI/jMld9/7ruM/wljyJ9fppZffQgzAWROOM0o4dR
+	vzGUv0xeiyH1/dAjpItQfuV1aCy/vH5Xi3vxUxcCXz8nkHi1NFWyDAooKIb1eK6zx/9gEFq8MQKVi
+	lA/Lx54fJIzQGbe4MgKaJzJoQjSTxLz3U/VwT6lLaGGUOMX5FpZS3+t6GPKYL/eHQoRPBclzh+2Vc
+	8roduLxILfqKziAoOp4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvwgD-0001mR-1b;
-	Mon, 08 May 2023 08:57:13 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pvwgq-0001uU-2I;
+	Mon, 08 May 2023 08:57:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvwg9-0001ls-3A
-	for linux-phy@lists.infradead.org;
-	Mon, 08 May 2023 08:57:11 +0000
+	id 1pvwgn-0001t0-0B;
+	Mon, 08 May 2023 08:57:50 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 96E71611B6;
-	Mon,  8 May 2023 08:57:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E934C433D2;
-	Mon,  8 May 2023 08:57:06 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BB716620B3;
+	Mon,  8 May 2023 08:57:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 54E10C433EF;
+	Mon,  8 May 2023 08:57:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683536228;
-	bh=Meh1xApQc6QmTSta1gO0+RVCqEAE22ANCjwMLkHa9uw=;
+	s=k20201202; t=1683536267;
+	bh=G5v7NSAKXe2kLiZkicPjPQ/vKtmbjwfgIRwrsi4rT4A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=q6RKEAml9+DeDNWX19AHwf4Mft837x6caaqvjSRx1PxYR8qxLnyGAMNNZlffItVMt
-	 P+9EAX4Y1a42nN6458dqcKgtgcamfp05H5XKjNup5NzTLElDHsTyyFhIISuuKyO5sD
-	 8iFJ22+PK02zWmFTxowxLoQ20TUGcqWx2YJIORjk2im8sVw5KhDSPUAM1UFiiSh52O
-	 A82jitYfZoByAKxjDk6cwd1fvgFFPRDbb04/5oruplz3txQCF9oY/vvUuf5eaPnTM2
-	 71W9Kh2ud4j3kvzVgi+Eg5i1D2HCKVqVBVF6SZfbONYCkPJOIemBcSXXa9xpdMMn8a
-	 dIwRn7XOXXmKQ==
-Date: Mon, 8 May 2023 14:27:03 +0530
+	b=pl0UQZj54buaQ35xQcBdmpJB5ccWsOHmiWJ7iamjj1B4SoCPRo1KbNe+Aukzlc5n0
+	 uZMuGpJNslVEQWFdp6SVSfIhl/01niiqlSnP43z5Z5MyWpV91e66gqMkOJI237gRtj
+	 ar6LG2CQu7g7xRL4EVmpPL6H0s6z659skAJLJikwHvbbxMh5NnoDKthlZjFvuauR+7
+	 UHGLwXIF475Aupcf11AcKtW9W9LVMZcZPTlUgJmb7cx5K+Z1MqjMjPoxtdohoSGWUu
+	 ZnDq6Q2bic907kFa2sq5IqN5KB4gpocS4VZx3rcrWCAuBmKvVpfnAgAuP+NM0k8+Ce
+	 lE1EgjLr+fVPg==
+Date: Mon, 8 May 2023 14:27:42 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Cc: Haotien Hsu <haotienh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org, Wayne Chang <waynec@nvidia.com>,
-	EJ Hsu <ejh@nvidia.com>
-Subject: Re: [PATCH] phy: tegra: xusb: Fix use-after-free issue
-Message-ID: <ZFi5XzPjez3lrY49@matsya>
-References: <20230504055446.2039372-1-haotienh@nvidia.com>
- <ZFN3lvjjn9Xu-vRl@orome>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de, chunfeng.yun@mediatek.com,
+	kishon@kernel.org, angelogioacchino.delregno@collabora.com,
+	nathan@kernel.org, ndesaulniers@google.com, granquet@baylibre.com,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+Subject: Re: [PATCH] phy: mediatek: fix returning garbage
+Message-ID: <ZFi5hqhsTKqV96hF@matsya>
+References: <20230414122253.3171524-1-trix@redhat.com>
+ <ZFTMPWp8LhwA9uHz@matsya>
+ <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
+ <ZFipVfhLVyye/eud@matsya>
+ <f5cf30b2-c29c-03ac-e7fc-4c7da2cd0c5b@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZFN3lvjjn9Xu-vRl@orome>
+In-Reply-To: <f5cf30b2-c29c-03ac-e7fc-4c7da2cd0c5b@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230508_015710_105783_6399CA42 
-X-CRM114-Status: GOOD (  28.08  )
+X-CRM114-CacheID: sfid-20230508_015749_139761_A98A677E 
+X-CRM114-Status: GOOD (  21.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,72 +82,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-05-23, 11:15, Thierry Reding wrote:
-> On Thu, May 04, 2023 at 01:54:46PM +0800, Haotien Hsu wrote:
-> > From: EJ Hsu <ejh@nvidia.com>
-> > 
-> > For the dual-role port, it will assign the phy dev to usb-phy dev and
-> > use the port dev driver as the dev driver of usb-phy.
-> > 
-> > When we try to destroy the port dev, it will destroy its dev driver
-> > as well. But we did not remove the reference from usb-phy dev. This
-> > might cause the use-after-free issue in KASAN.
-> > 
-> > Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-> > Cc: stable@vger.kernel.org
-> > 
-> > Signed-off-by: EJ Hsu <ejh@nvidia.com>
-> > Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
-> > ---
-> >  drivers/phy/tegra/xusb.c | 15 ++++++++-------
-> >  1 file changed, 8 insertions(+), 7 deletions(-)
-> > 
-> > diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> > index 78045bd6c214..515298a9a433 100644
-> > --- a/drivers/phy/tegra/xusb.c
-> > +++ b/drivers/phy/tegra/xusb.c
-> > @@ -563,13 +563,6 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
-> >  
-> >  static void tegra_xusb_port_unregister(struct tegra_xusb_port *port)
-> >  {
-> > -	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
-> > -		of_platform_depopulate(&port->dev);
-> > -		usb_role_switch_unregister(port->usb_role_sw);
-> > -		cancel_work_sync(&port->usb_phy_work);
-> > -		usb_remove_phy(&port->usb_phy);
-> > -	}
-> > -
-> >  	if (port->ops->remove)
-> >  		port->ops->remove(port);
-> >  
-> > @@ -832,6 +825,14 @@ void tegra_xusb_usb2_port_remove(struct tegra_xusb_port *port)
-> >  {
-> >  	struct tegra_xusb_usb2_port *usb2 = to_usb2_port(port);
-> >  
-> > +	if (!IS_ERR_OR_NULL(port->usb_role_sw)) {
-> > +		of_platform_depopulate(&port->dev);
-> > +		usb_role_switch_unregister(port->usb_role_sw);
-> > +		cancel_work_sync(&port->usb_phy_work);
-> > +		usb_remove_phy(&port->usb_phy);
-> > +		port->usb_phy.dev->driver = NULL;
-> > +	}
-> > +
+On 08-05-23, 10:24, Matthias Brugger wrote:
 > 
-> It's a bit difficult to tell what exactly changed because of the
-> additional move. The move looks correct because this is only valid for
-> USB2 ports, but I think it'd be easier to review if the move was done
-> prior to the addition of the ->driver clearing. Or perhaps a mention in
-> the commit message would be nice.
 > 
-> It's obviously up to Vinod and Kishon if they want to see this
-> clarified. Either way is fine with me, so:
-
-I agree changes need to be clarified, expecting updated v2 :-)
-
+> On 08/05/2023 09:48, Vinod Koul wrote:
+> > On 05-05-23, 17:37, Matthias Brugger wrote:
+> > > 
+> > > 
+> > > On 05/05/2023 11:28, Vinod Koul wrote:
+> > > > On 14-04-23, 08:22, Tom Rix wrote:
+> > > > > clang reports
+> > > > > drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+> > > > >     'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+> > > > >           if (ret)
+> > > > >               ^~~
+> > > > > ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
+> > > > 
+> > > > I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
+> > > > usage in pll_calc"
+> > > 
+> > > Thanks Vinod, that was on my list for today as well. I was a bit puzzled
+> > > because you took the patch that added it, but I wasn't sure if you would
+> > > take the fix. How do you want to handle things like this in the future?
+> > 
+> > Fixes should be sent as Fixes patch
+> > 
 > 
-> Acked-by: Thierry Reding <treding@nvidia.com>
+> I'm not sure what do you mean. Patch subject includes the word fix and the
+> patch has a fixes tag. What was missing here?
+> 
+> Does this mean you will take fixes for this driver in the future or do you
+> want me to take care of them?
 
-
+Yes I would take the fixes as well for the drivers
 
 -- 
 ~Vinod
