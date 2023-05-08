@@ -4,66 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A9EFC77B75
-	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 07:48:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C403C77B73
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 08:24:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ca0iMe1w4saj4K/ZG8XXSmxmOgbuAcHJbjZ5/r4O9bc=; b=HTjJ3J3wWRo47v
-	5EqE0yz9Z9U+SypY3wew/IFxaxC0qx0SMqu59tI7rwhxBagFs/mBfmMjNC2XKuCLQfqNwJRkQ0Tv0
-	0VEnL70cKA0ghqlMuScAYDxRJmx+mzv2DMaNePD7UKNka2DSinq/yB/rx9etxZ2Gmlj4B/qDF3UeJ
-	Z5QFrI5XxCwPQ5TO9DgUUY+ikv0vZ/4DQtlvxBiP+QKaLaX51XAL/sM6K6NvpsyGnKdHkME9DH0QZ
-	TdkDz+KJvR6KeRh4hAkzzL3pEGY7BKpto0RVNFGnaV6VXafx03Dw3P7B87w8JfaIbH44NaRA66IpN
-	VGlRx/4trHnxmyigMN3Q==;
+	List-Owner; bh=fhPDpCO+cQaITzV756gjVXcnhGjhdMpmzL/+bKn+6hc=; b=ogYdwcKFbBecP3
+	Tgry2caIT2zGYgdqFA7upGhfUTJVN4oy6jVsqVWWQowTW/cZ4VsmbM8IWhqqHzPWwiCXcqsPaqCkH
+	i1Ii8RdKMKzYUglPPv1oTJ1pxCsD51HQQXWKl+Btx+2JViME1pMKof9gBgEa0da2sN9tzhqWuaIVW
+	dgFk+9YA5lQGHUUPDZmrvUkssDUKTYfgRu6pvio2a4kiytCDKVPVh+lUzUb4IbRnZA8KcsffF+32P
+	Nsh6Xsh7y5H5oeZjLGV1VXdzYtHdi5yB5FVK0RBFz6hCCR4AKSBQKGL+5WyQp5fa+MU9zTeL+P2Px
+	//750qxV8IRUVB7P3RKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvvby-00HWWN-0h;
-	Mon, 08 May 2023 07:48:46 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pvwAW-00HZbB-0V;
+	Mon, 08 May 2023 08:24:28 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvvbu-00HWVI-3D;
-	Mon, 08 May 2023 07:48:44 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 292F760F04;
-	Mon,  8 May 2023 07:48:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9BBEC433D2;
-	Mon,  8 May 2023 07:48:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683532121;
-	bh=G9HdM1QJziMzpOUvCuJGpW3lxswdvThqfd4Irkdvc78=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SFLrL35w0Msv/Ut1ZxVUaSrWlMrdhAImX35jJa+vNdjFsaccU4K/Tmt46yGGcK/ab
-	 ShGUwgzPb0DXnrbmb7y+amP1uv5G7AULBvvpwkxkCI8F/TrVO4X4k20OUy7LQhW354
-	 VQpewPMkAJfEPC2bALgNFB95LK7BWdgiYlJlZMw70TcptzYNU6cjXZ08Hv2+wil21O
-	 sidC919sGP4/xfCnp+E8wq+yejJrbmLzoCSv8Fv6Ym+qsqV0c+COSzCe4/6DDVgAN6
-	 SxgSWWuqvXXfvXnWitxgoPYDeztdtBvZsyFeoeZX5IbsFy458+BM+3hXZi1UEKlP5S
-	 A2B38BMSM4HgQ==
-Date: Mon, 8 May 2023 13:18:37 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de, chunfeng.yun@mediatek.com,
-	kishon@kernel.org, angelogioacchino.delregno@collabora.com,
-	nathan@kernel.org, ndesaulniers@google.com, granquet@baylibre.com,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, llvm@lists.linux.dev
-Subject: Re: [PATCH] phy: mediatek: fix returning garbage
-Message-ID: <ZFipVfhLVyye/eud@matsya>
-References: <20230414122253.3171524-1-trix@redhat.com>
- <ZFTMPWp8LhwA9uHz@matsya>
- <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
+	id 1pvwAT-00HZZK-08;
+	Mon, 08 May 2023 08:24:26 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-3f415a9015bso22278295e9.2;
+        Mon, 08 May 2023 01:24:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1683534263; x=1686126263;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=m5LglcJTmAOL674iFSW91v8iQ+c+VWN66eezYdcY/eo=;
+        b=FkoBtct+K+FHjRPlHL9ykOQXt4jjYt99V2O+8Vje8XlvSQzc6v+6j4rXJJruHwHd5I
+         wj2Hp+C2JBQLstF/iJcFcUWQRCc1HgKdzlVL4cXoWSeXlt0Z5chr0kXEnr/CttPDrlbY
+         x2QIlOimiAyMBchumS0veYf//2RtScWx9T2KoBIqrvzBuKroy1jh6B5sGhEZg3rpDDwW
+         4JtorSK0X+Dzb8JNk9ZJ4KEx3ovHxrpZF3/S01fHY/WUoBD8Iy3Xff68c6hi21Ii+H/1
+         51Bt4xy/tufm5jMIKbRql0n/WodjbVuz0M9OOYXrUP1Y5dTSFRLbwg5KNCSV0fIg2hbg
+         ERbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1683534263; x=1686126263;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=m5LglcJTmAOL674iFSW91v8iQ+c+VWN66eezYdcY/eo=;
+        b=CK5O8w9/BkFaBCLLgPPSoN5ZRfWm91bzKnHkOUogHrn1BFZY67U8U++RyON3Fgt1tO
+         eCLo+SiBMlpdujSbmTJJ6U3G5Cy4UwAEvZm8u8gHaEVnSiwistkxHrB/OCYN4r9sAO2A
+         OJlWv+avG8hO1Oksi+RnSj2RD39nBJBCvdrvfqubTwX6DlA3lQO4oXdYIENhW9WBMOLA
+         ieENOPgd/xgsNhOpSTwh/rwBHBEA7BRm/nShzamjI62HjoPE8pqDoUR0EfCIdirOqA6N
+         Qddjbvf1rOXMf0qma9SyTQ0B0PDApb+7qihBvrb7FGCzK4q1S+NSdw1aEwICTAcI8hRv
+         6yGw==
+X-Gm-Message-State: AC+VfDz8/ILxF/5ZOVH0pAwy0gYTBlAqnZBYMRD/Hw+dvQv/8uDdCqHi
+	AzNN5guxeXDWEDps3HGAFpc=
+X-Google-Smtp-Source: ACHHUZ7qgZXuInT52CBe2fdIODHvN3TsFZFGNC53yWfuzxRIbJsq0WD/6yJNKLgPzMeJ/5eb9LSI8A==
+X-Received: by 2002:a05:600c:2191:b0:3f4:1a97:ab1d with SMTP id e17-20020a05600c219100b003f41a97ab1dmr4138816wme.1.1683534262558;
+        Mon, 08 May 2023 01:24:22 -0700 (PDT)
+Received: from [192.168.2.177] ([207.188.167.132])
+        by smtp.gmail.com with ESMTPSA id s13-20020a05600c45cd00b003f1738d0d13sm19383989wmo.1.2023.05.08.01.24.20
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 08 May 2023 01:24:21 -0700 (PDT)
+Message-ID: <f5cf30b2-c29c-03ac-e7fc-4c7da2cd0c5b@gmail.com>
+Date: Mon, 8 May 2023 10:24:19 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH] phy: mediatek: fix returning garbage
+Content-Language: en-US, ca-ES, es-ES
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
+ p.zabel@pengutronix.de, chunfeng.yun@mediatek.com, kishon@kernel.org,
+ angelogioacchino.delregno@collabora.com, nathan@kernel.org,
+ ndesaulniers@google.com, granquet@baylibre.com,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+References: <20230414122253.3171524-1-trix@redhat.com>
+ <ZFTMPWp8LhwA9uHz@matsya> <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
+ <ZFipVfhLVyye/eud@matsya>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <ZFipVfhLVyye/eud@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230508_004843_072789_75A53341 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20230508_012425_076563_240449D1 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,34 +95,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-05-23, 17:37, Matthias Brugger wrote:
-> 
-> 
-> On 05/05/2023 11:28, Vinod Koul wrote:
-> > On 14-04-23, 08:22, Tom Rix wrote:
-> > > clang reports
-> > > drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
-> > >    'ret' is uninitialized when used here [-Werror,-Wuninitialized]
-> > >          if (ret)
-> > >              ^~~
-> > > ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
-> > 
-> > I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
-> > usage in pll_calc"
-> 
-> Thanks Vinod, that was on my list for today as well. I was a bit puzzled
-> because you took the patch that added it, but I wasn't sure if you would
-> take the fix. How do you want to handle things like this in the future?
 
-Fixes should be sent as Fixes patch
 
--- 
-~Vinod
+On 08/05/2023 09:48, Vinod Koul wrote:
+> On 05-05-23, 17:37, Matthias Brugger wrote:
+>>
+>>
+>> On 05/05/2023 11:28, Vinod Koul wrote:
+>>> On 14-04-23, 08:22, Tom Rix wrote:
+>>>> clang reports
+>>>> drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+>>>>     'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+>>>>           if (ret)
+>>>>               ^~~
+>>>> ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
+>>>
+>>> I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
+>>> usage in pll_calc"
+>>
+>> Thanks Vinod, that was on my list for today as well. I was a bit puzzled
+>> because you took the patch that added it, but I wasn't sure if you would
+>> take the fix. How do you want to handle things like this in the future?
+> 
+> Fixes should be sent as Fixes patch
+> 
+
+I'm not sure what do you mean. Patch subject includes the word fix and the patch 
+has a fixes tag. What was missing here?
+
+Does this mean you will take fixes for this driver in the future or do you want 
+me to take care of them?
+
+Regards,
+Matthias
 
 -- 
 linux-phy mailing list
