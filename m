@@ -4,73 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0387C77B75
-	for <linux-phy@archiver.kernel.org>; Sun,  7 May 2023 16:58:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7631C77B7F
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 05:17:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gw1imcuzyPEPLMQf68RH1tS1TsP82H4QaHqMFfcYazw=; b=4cOBl2D7txIfaF
-	gs3T9NBVXX9ZInl4TCkgnK6+GPOdIaWFlQLfWJzW0OiI1OH3c8OwO51KX1PecMiS8ZKui9C7GbTnC
-	p7mx0E/bJ2vQUk1LDHaaG1jpesZUMFu4dF7G24+QgL/9S5GhSTrg/YUMh+BOVTZI1Yugn2YxReX9d
-	SSKCTQwUe8qI77QMN/omn5ICWaup+oWc5GfS/EgUR8q1vfq+MFXpO7Auy4mHXbjYld/B3Jtr/PlIW
-	D4BuW8AGCjANcBinwDf5YxpnJn00sdvKqLSow6lQ3xzhGvHcAx6R1NOjMSwRv/8Xiu+NLJMcRiAls
-	zHdMzC4iAebgd4fFU40w==;
+	List-Owner; bh=rtAyuCYMCV+oJ8ZCPLQdXXBiU+6JE1LXm4ZYN4x4yZ0=; b=bDW6pBNsKzn/f6
+	w6BYmQYD1Lpki4kzisKrg3mX4NuXi27JN3fX152QBKVE13RFTIzhM/eCvjNZqMGIsBwIqQQ3HOnge
+	DFnib17EiyyhIBtwxKop+FF5h+fQtQee6pU96wDUmuAC0TAgTi9aLVZDFRDe8RvuNS8AzkfnVjaom
+	tskmI4qIrci5VgsS5ucb+X+yaNpug2njqad0wHKgEGU3frpUneFpLTtRtkhwupttcQG5zyblzG8gZ
+	o46eWpmsvVA+gq+Z/o7eM3K3pbXVwGoUcG8qjIABwqwLHit9iwM3Pz0sY1RZgD1F86m4sxyHWrVnu
+	pcFsqiizIJcVAS8Bq83w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvhie-00GRqi-1l;
-	Sun, 07 May 2023 16:58:44 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1pvtFW-00HICA-1B;
+	Mon, 08 May 2023 05:17:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvhib-00GRq7-2s
+	id 1pvtFT-00HIBm-1m
 	for linux-phy@lists.infradead.org;
-	Sun, 07 May 2023 16:58:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1683478721; x=1715014721;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=0Qst2DzvBBbU5FzPI4kuEPLqkO/8kAHLFByV3AgoYIE=;
-  b=EzIG4pHsBtRKln9Qkp0138KHq5uZHbsH5znSkkfUPZ+ZgfVm381y8kAW
-   F3aCEQA1en2n3CWEAJAqXG45C4Ji/5jo0tVkJbPLImfQwt2T+0fwsGxWl
-   kXmLNii770OopQH5CzVMBTz4Wkq8RNKdAMwoqKH577xS6L6290nZymSGY
-   OjyUa4UKPZehNPLADf/XWDhccfW3Yc+le6VujAWZ2QAUaYDCM1YzEd1ul
-   YV1t/63tYbtb/OOz9k8XWzjqwiu8mB75ucKq0Oa8ul+amqCBS1BtvgUL+
-   fFxDzTNoUzLeRDLjo/nZYQz7W82lqXW846Gq2C/3OjF2Ps6OG4MZj/j8U
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10703"; a="329857491"
-X-IronPort-AV: E=Sophos;i="5.99,257,1677571200"; 
-   d="scan'208";a="329857491"
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
-  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 May 2023 09:58:38 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10703"; a="787842082"
-X-IronPort-AV: E=Sophos;i="5.99,257,1677571200"; 
-   d="scan'208";a="787842082"
-Received: from lkp-server01.sh.intel.com (HELO dea6d5a4f140) ([10.239.97.150])
-  by FMSMGA003.fm.intel.com with ESMTP; 07 May 2023 09:58:36 -0700
-Received: from kbuild by dea6d5a4f140 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1pvhiV-0000oL-1h;
-	Sun, 07 May 2023 16:58:35 +0000
-Date: Mon, 8 May 2023 00:57:53 +0800
-From: kernel test robot <lkp@intel.com>
-To: David Yang <mmyangfl@gmail.com>, linux-phy@lists.infradead.org
-Cc: oe-kbuild-all@lists.linux.dev, David Yang <mmyangfl@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: hisilicon: Adopt phy-hisi-inno-usb2 to Hi3798MV100
-Message-ID: <202305080013.kOt0Vzuc-lkp@intel.com>
-References: <20230507154615.793942-1-mmyangfl@gmail.com>
+	Mon, 08 May 2023 05:17:25 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3485H9Zc024000;
+	Mon, 8 May 2023 05:17:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
+ cc : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=qcppdkim1; bh=TYmfJr7HHvsCMYz1MiZH4pwIzylWNmQxGfoSFBWza8I=;
+ b=fF4abupXW4DeZCHGNHsgY95T+i5anWG2nDbBlO9LL/fM/FUk+L9L4keLAxnqJ0lZTzmR
+ wPhcD2LFW/4xGxJm+c9Dr3ysODTh0q7O18Wd+MoDyXaCOV3/qmEq/dx4hfndPQHhAxpg
+ /rT0tDqMiHGuZ2WQkbF5Iet3CraXPl2Fl5tiZrzlfE3nWLdf1NTKTwiF5MyrUDSXRNTe
+ pEAfzr0PgqI3WNeTBe/FGc+aBMNERUcodioPR/wXOa3mVNx/pnuYVwVUrSm8VcEBd/bW
+ VT2Lp5S+pHMO5F6WNNZaEPbLIqIlZQNtN9qL29EM6XbTNLgWEQhMWrj+/bS2L6EB5CBZ og== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qddwhjtcm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 08 May 2023 05:17:08 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3485H7fT007437
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 8 May 2023 05:17:07 GMT
+Received: from varda-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Sun, 7 May 2023 22:17:02 -0700
+Date: Mon, 8 May 2023 10:46:58 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <gregkh@linuxfoundation.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>,
+        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>
+Subject: Re: [PATCH v10 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
+Message-ID: <20230508051657.GA24472@varda-linux.qualcomm.com>
+References: <cover.1683183860.git.quic_varada@quicinc.com>
+ <8894bf2c44eaf4959c7a1966b66229e6cf5cda96.1683183860.git.quic_varada@quicinc.com>
+ <CAA8EJppvj2nzqwdsC+Xct4cJg2-_yPpiGDELjHJG4HyAH3zGMA@mail.gmail.com>
+ <20230506110918.GC10918@varda-linux.qualcomm.com>
+ <CAA8EJpqg2htfa2QZ7q6SP58N5YAABa8knBn4c5eYqYOU6HQNiA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230507154615.793942-1-mmyangfl@gmail.com>
+In-Reply-To: <CAA8EJpqg2htfa2QZ7q6SP58N5YAABa8knBn4c5eYqYOU6HQNiA@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: rai6O2lzCM5Y5S4XD8ywvDXPGmLwmYiT
+X-Proofpoint-ORIG-GUID: rai6O2lzCM5Y5S4XD8ywvDXPGmLwmYiT
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-05-08_02,2023-05-05_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
+ adultscore=0 impostorscore=0 mlxscore=0 phishscore=0 priorityscore=1501
+ bulkscore=0 spamscore=0 clxscore=1015 lowpriorityscore=0 mlxlogscore=844
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303200000
+ definitions=main-2305080036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230507_095841_949328_43759312 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20230507_221723_732653_8E2823BE 
+X-CRM114-Status: GOOD (  32.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,117 +106,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi David,
+On Sat, May 06, 2023 at 02:33:11PM +0300, Dmitry Baryshkov wrote:
+> On Sat, 6 May 2023 at 14:09, Varadarajan Narayanan
+> <quic_varada@quicinc.com> wrote:
+> >
+> > On Fri, May 05, 2023 at 12:29:54PM +0300, Dmitry Baryshkov wrote:
+> > > On Fri, 5 May 2023 at 11:23, Varadarajan Narayanan
+> > > <quic_varada@quicinc.com> wrote:
+> > > >
+> > > > Add LDO regulator node
+> > >
+> > > As this LDO is provided by the PMIC, it would be nice to know why it
+> > > is modelled as an always-on regulator instead of the proper PMIC
+> > > regulator. Up to now we were doing this only for the outstanding power
+> > > rails like CX/MX or EBI.
+> >
+> > These are always ON because USB phy doesn't support power
+> > collapse, and there is a chance that other IP blocks might be
+> > sharing the rail.
+>
+> You are describing the software side here. From the hardware point of
+> view, it is an I2C regulator, which is probably also exported as an
+> SMD_RPM regulator. Unless you have a good reason not to do so, there
+> should be a node under rpm-requests, which describes mp5496 regulators
+> exported via RPM. then USB should refer to those regulators.
 
-kernel test robot noticed the following build warnings:
+Yes. It is a part of rpm-requests. That is why have mentioned V10
+is dependent on
+https://lore.kernel.org/lkml/20230407155727.20615-1-quic_devipriy@quicinc.com/T/.
+The 4th patch of the above series
+(https://lore.kernel.org/lkml/20230407155727.20615-1-quic_devipriy@quicinc.com/T/#mea3f0ea37c53cf5e39e10cd6cf3bed5243cec629)
+adds the rpm_requests node and this regulator definition is added
+to it. Hope that is ok.
 
-[auto build test WARNING on linus/master]
-[also build test WARNING on v6.3 next-20230505]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Thanks
+Varada
 
-url:    https://github.com/intel-lab-lkp/linux/commits/David-Yang/phy-hisilicon-Adopt-phy-hisi-inno-usb2-to-Hi3798MV100/20230507-234747
-base:   linus/master
-patch link:    https://lore.kernel.org/r/20230507154615.793942-1-mmyangfl%40gmail.com
-patch subject: [PATCH] phy: hisilicon: Adopt phy-hisi-inno-usb2 to Hi3798MV100
-config: arm64-buildonly-randconfig-r001-20230507 (https://download.01.org/0day-ci/archive/20230508/202305080013.kOt0Vzuc-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 12.1.0
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/fe830916b152e401719061112b0b4fb140502d08
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review David-Yang/phy-hisilicon-Adopt-phy-hisi-inno-usb2-to-Hi3798MV100/20230507-234747
-        git checkout fe830916b152e401719061112b0b4fb140502d08
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm64 olddefconfig
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.1.0 make.cross W=1 O=build_dir ARCH=arm64 SHELL=/bin/bash drivers/phy/hisilicon/
-
-If you fix the issue, kindly add following tag where applicable
-| Reported-by: kernel test robot <lkp@intel.com>
-| Link: https://lore.kernel.org/oe-kbuild-all/202305080013.kOt0Vzuc-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/hisilicon/phy-hisi-inno-usb2.c: In function 'hisi_inno_phy_probe':
->> drivers/phy/hisilicon/phy-hisi-inno-usb2.c:165:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-     165 |         priv->type = (unsigned int) of_device_get_match_data(dev);
-         |                      ^
-
-
-vim +165 drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-
-   136	
-   137	static int hisi_inno_phy_probe(struct platform_device *pdev)
-   138	{
-   139		struct device *dev = &pdev->dev;
-   140		struct device_node *np = dev->of_node;
-   141		struct hisi_inno_phy_priv *priv;
-   142		struct phy_provider *provider;
-   143		struct device_node *child;
-   144		int i = 0;
-   145		int ret;
-   146	
-   147		priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-   148		if (!priv)
-   149			return -ENOMEM;
-   150	
-   151		priv->mmio = devm_platform_ioremap_resource(pdev, 0);
-   152		if (IS_ERR(priv->mmio)) {
-   153			ret = PTR_ERR(priv->mmio);
-   154			return ret;
-   155		}
-   156	
-   157		priv->ref_clk = devm_clk_get(dev, NULL);
-   158		if (IS_ERR(priv->ref_clk))
-   159			return PTR_ERR(priv->ref_clk);
-   160	
-   161		priv->por_rst = devm_reset_control_get_exclusive(dev, NULL);
-   162		if (IS_ERR(priv->por_rst))
-   163			return PTR_ERR(priv->por_rst);
-   164	
- > 165		priv->type = (unsigned int) of_device_get_match_data(dev);
-   166	
-   167		for_each_child_of_node(np, child) {
-   168			struct reset_control *rst;
-   169			struct phy *phy;
-   170	
-   171			rst = of_reset_control_get_exclusive(child, NULL);
-   172			if (IS_ERR(rst)) {
-   173				of_node_put(child);
-   174				return PTR_ERR(rst);
-   175			}
-   176	
-   177			priv->ports[i].utmi_rst = rst;
-   178			priv->ports[i].priv = priv;
-   179	
-   180			phy = devm_phy_create(dev, child, &hisi_inno_phy_ops);
-   181			if (IS_ERR(phy)) {
-   182				of_node_put(child);
-   183				return PTR_ERR(phy);
-   184			}
-   185	
-   186			phy_set_bus_width(phy, 8);
-   187			phy_set_drvdata(phy, &priv->ports[i]);
-   188			i++;
-   189	
-   190			if (i > INNO_PHY_PORT_NUM) {
-   191				dev_warn(dev, "Support %d ports in maximum\n", i);
-   192				of_node_put(child);
-   193				break;
-   194			}
-   195		}
-   196	
-   197		provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-   198		return PTR_ERR_OR_ZERO(provider);
-   199	}
-   200	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests
+> > > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > > > ---
+> > > >  Changes in v10:
+> > > >         - Add LDO regulator node
+> > > > ---
+> > > >  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
+> > > >  1 file changed, 7 insertions(+)
+> > > >
+> > > > diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> > > > index bdc1434..1f5d14f 100644
+> > > > --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> > > > +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> > > > @@ -60,6 +60,13 @@
+> > > >                         regulator-min-microvolt = <725000>;
+> > > >                         regulator-max-microvolt = <1075000>;
+> > > >                 };
+> > > > +
+> > > > +               mp5496_l2: l2 {
+> > > > +                       regulator-min-microvolt = <1800000>;
+> > > > +                       regulator-max-microvolt = <1800000>;
+> > > > +                       regulator-boot-on;
+> > > > +                       regulator-always-on;
+> > > > +               };
+> > > >         };
+> > > >  };
+> > > >
+> > > > --
+> > > > 2.7.4
+> > > >
+> > >
+> > >
+> > > --
+> > > With best wishes
+> > > Dmitry
+>
+>
+>
+> --
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
