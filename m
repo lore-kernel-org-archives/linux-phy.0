@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85606C77B75
-	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 11:43:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FA35C7EE26
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 12:14:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hPP16pguftOuO0Ngv0jnwDUZMwlaDvenQXvOJ4FjrRM=; b=dsBoXTkVfbsyR6
-	L4nm/5ztJqA2H66fpF8JxAs03LKnUHsfs5sUovtkR2ZPEnl0rbVTQI5/Vpz/xa7qwBMVzdkV1XkVb
-	uwGW2Mx9JDaWNF2oft2YxQsW0aFzE8ohVsUl2ZbOZiYB5RnXhiuL1quEWO1JrvrRD8R3+w7f8qbdb
-	7AlSD5kfxw0wcvfKJV7QyMEQcisCLo/ir+SiaMjkuiMiOt9C7vAbyO9lBRWhSF1mAf7GXFyOHLjp1
-	ohRGyt2t48kg3bWSAq8ykUwwr7ZG8Ax11xxZSeRp1jjrOOpga3eXtAKgU0u1WVK1I7cunS0l0HZUV
-	Nblr33poLLSOD5YsyA9w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DTXpAYW/6JN85wnzx0TfyE2Pw6a20BoffkwB705ONpc=; b=rAkyBYEtN3q7uHXkhTrf4H6UFw
+	29y057b59mPGIYJS+a/b3W2RvTkzQSd4cIxVX9mCVgQTcea5+mwfIUmwL95LGuJB1C4RUAxMcjGp4
+	vU3hIt3aMKNUZyPaAzqcFLqwImlipbX3IMHDexJmP/B2drKwhuav1JUAzgSP1sF+XPXgABfSIY9OZ
+	PbXZHvYiCUe5c381h6Wxdmr3kmWvuU2wQtddfIqx9NJNoOHwV+sP+r9MTpwJ2rGSg2uOR6EYc4f3e
+	eKTYpKO0D7EdOxQV7WnI0vso0hyH2hHkY8jmPIU812Lsxs+4f11bn3FP/hUEAIUoQnxDFR5JKWims
+	l4C/Fmmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvzH2-000QjB-0c;
-	Mon, 08 May 2023 11:43:24 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pvzlW-000UZx-2P;
+	Mon, 08 May 2023 12:14:54 +0000
+Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvzGz-000QiD-1Z;
-	Mon, 08 May 2023 11:43:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1377361518;
-	Mon,  8 May 2023 11:43:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E734CC433A0;
-	Mon,  8 May 2023 11:43:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683546200;
-	bh=01f3Go1YWZ5fuIRF6yYHIXEN7EeVi5WcswKnPII6Gxc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=L4rq1gttmEtCjLmqaIPKu7Le4ItutJzvCW83HeWYf+2MX5cR+PdcH+7//L1c2Fqrv
-	 Wt4xkajZwFbwFhl0Pn9gsYztzmZ2WkceRLzXxjh08QrOTkLydZb1tEOGHSzHNJuAHA
-	 qkTdfOuT2YqC0silvowU9qw6/ImUJ1X7K37ixF3J9Q2YG8unWtXsqwAxkVAsavV1Ri
-	 RWIE9aF/0L5IjgHW6jn6Oof3dt+vTacZX3gUVdSh2c/i8acwXL9rAEAT9k9UKXMM6i
-	 WMF2+pyiT//9uwH6do6TU1M6LCixIxUoRVWsSax7OHlj+/cpoLaYtGmeT0OLmYbKB7
-	 c5qIcyOIjDA0g==
-Date: Mon, 8 May 2023 17:13:16 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Daniel Machon <daniel.machon@microchip.com>
-Cc: kishon@kernel.org, Steen.Hegelund@microchip.com,
-	UNGLinuxDriver@microchip.com, joe@perches.com,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/7] Power down serdes lanes and CMUs initially
-Message-ID: <ZFjgVNsyIcLemolS@matsya>
-References: <20230417180335.2787494-1-daniel.machon@microchip.com>
+	id 1pvzlS-000UXw-2n
+	for linux-phy@lists.infradead.org;
+	Mon, 08 May 2023 12:14:53 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed30:6a18:41e7:fcfe:24c0])
+	by albert.telenet-ops.be with bizsmtp
+	id uCEY2900F2WBekD06CEYzh; Mon, 08 May 2023 14:14:43 +0200
+Received: from geert (helo=localhost)
+	by ramsan.of.borg with local-esmtp (Exim 4.95)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1pvzlA-001VjV-5u;
+	Mon, 08 May 2023 14:14:32 +0200
+Date: Mon, 8 May 2023 14:14:32 +0200 (CEST)
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+To: linux-kernel@vger.kernel.org
+cc: Mauro Carvalho Chehab <mchehab@kernel.org>, 
+    Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+    Tudor Ambarus <tudor.ambarus@linaro.org>, 
+    Pratyush Yadav <pratyush@kernel.org>, Richard Weinberger <richard@nod.at>, 
+    Anton Ivanov <anton.ivanov@cambridgegreys.com>, 
+    Johannes Berg <johannes@sipsolutions.net>, 
+    "Darrick J. Wong" <djwong@kernel.org>, 
+    Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+    Philipp Zabel <p.zabel@pengutronix.de>, 
+    "David S. Miller" <davem@davemloft.net>, linux-um@lists.infradead.org, 
+    linux-media@vger.kernel.org, linux-mtd@lists.infradead.org, 
+    linux-xfs@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+    linux-phy@lists.infradead.org, sparclinux@vger.kernel.org
+Subject: Re: Build regressions/improvements in v6.4-rc1
+In-Reply-To: <20230508115727.2597864-1-geert@linux-m68k.org>
+Message-ID: <749c2fc2-93dc-585-3826-dea581602d6e@linux-m68k.org>
+References: <CAHk-=wiUxm-NZ1si8dXWVTTJ9n3c+1SRTC0V+Lk7hOE4bDVwJQ@mail.gmail.com> <20230508115727.2597864-1-geert@linux-m68k.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230417180335.2787494-1-daniel.machon@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230508_044321_562502_F4633467 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20230508_051451_072397_0E8E8C82 
+X-CRM114-Status: GOOD (  16.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,28 +70,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-04-23, 20:03, Daniel Machon wrote:
-> This patch series aims to lower the power consumption of the Sparx5
-> switch chip, by configuring optimal quiet mode for serdes lanes, as well
-> as powering down unused CMUs (Clock Multiplier Unit). Before this series,
-> serdes lane quiet mode were not optimally configured, and all the CMUs were
-> powered on by default. This uses needless power.
-> 
-> Each serdes lane is provided a CMU clock, depending on the serdes mode
-> and the serdes index. CMUs will now be powered on individually, when
-> needed. The amount of power saved varies, depending on the port
-> configuration. As a reference, this change saves about 1W on
-> sparx5_pcb135 and 2W on sparx5_pcb134.
+On Mon, 8 May 2023, Geert Uytterhoeven wrote:
+> Below is the list of build error/warning regressions/improvements in
+> v6.4-rc1[1] compared to v6.3[2].
+>
+> Summarized:
+>  - build errors: +9/-16
+>  - build warnings: +1/-1439
+>
+> Happy fixing! ;-)
+>
+> Thanks to the linux-next team for providing the build service.
+>
+> [1] http://kisskb.ellerman.id.au/kisskb/branch/linus/head/ac9a78681b921877518763ba0e89202254349d1b/ (all 152 configs)
+> [2] http://kisskb.ellerman.id.au/kisskb/branch/linus/head/457391b0380335d5e9a5babdec90ac53928b23b4/ (all 152 configs)
+>
+>
+> *** ERRORS ***
+>
+> 9 error regressions:
+>  + /kisskb/src/drivers/media/platform/nxp/imx8-isi/imx8-isi-core.c: error: 'mxc_isi_pm_resume' defined but not used [-Werror=unused-function]:  => 328:12
+>  + /kisskb/src/drivers/media/platform/nxp/imx8-isi/imx8-isi-core.c: error: 'mxc_isi_pm_suspend' defined but not used [-Werror=unused-function]:  => 314:12
 
-Applied, thanks
+sparc64-gcc{5,11}/sparc-allmodconfig
+(fix was available before the merge window)
 
--- 
-~Vinod
+>  + /kisskb/src/drivers/media/platform/nxp/imx8-isi/imx8-isi-hw.c: error: "CONFIG_ARCH_DMA_ADDR_T_64BIT" is not defined [-Werror=undef]:  => 66:5, 33:5, 51:5
+>  + /kisskb/src/drivers/media/platform/nxp/imx8-isi/imx8-isi-hw.c: error: "CONFIG_ARCH_DMA_ADDR_T_64BIT" is not defined, evaluates to 0 [-Werror=undef]:  => 51:5, 66:5, 33:5
+
+mips-gcc{8,11}/mips-allmodconfig
+xtensa-gcc11/xtensa-allmodconfig
+powerpc-gcc5/ppc32_allmodconfig
+(fix was available before the merge window)
+
+>  + /kisskb/src/drivers/mtd/spi-nor/spansion.c: error: 'op' is used uninitialized [-Werror=uninitialized]:  => 495:27, 364:27
+
+um-x86_64-gcc12/um-allyesconfig
+
+>  + /kisskb/src/fs/xfs/scrub/scrub.h: error: initializer element is not constant:  => 112:28
+
+powerpc-gcc5/ppc64_book3e_allmodconfig
+powerpc-gcc5/powerpc-allmodconfig
+powerpc-gcc5/ppc32_allmodconfig
+powerpc-gcc5/powerpc-allyesconfig
+powerpc-gcc5/ppc64le_allmodconfig
+arm64-gcc5/arm64-allmodconfig
+(fix sent)
+
+>  + error: modpost: "__floatunsidf" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!:  => N/A
+>  + error: modpost: "__gedf2" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!:  => N/A
+>  + error: modpost: "__ltdf2" [drivers/phy/mediatek/phy-mtk-hdmi-drv.ko] undefined!:  => N/A
+
+sparc64-gcc5/sparc64-allmodconfig
+
+Gr{oetje,eeting}s,
+
+ 						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+ 							    -- Linus Torvalds
 
 -- 
 linux-phy mailing list
