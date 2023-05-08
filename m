@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD180C77B73
-	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 07:46:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A9EFC77B75
+	for <linux-phy@archiver.kernel.org>; Mon,  8 May 2023 07:48:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MSXzHtjsZk/58N+WOrZUkgQ3msyVYb9yOIrm/8srG10=; b=uroW6aE3L9BQ07
-	7GhJZA9p4LLCsj2nTsf8uZ/H2O64m4xfSqu5/Ng8rUe8xoqwJhfrlnVUceSpniKeF2UeZw7elhJTB
-	uttDptT5XLph2zlee557uEq/eSDqCipmaK9QO/vwf/7OazevByr3eUFMQ/tXAE6pGCHUd391cwsah
-	f+y73gTyqTPW6dabXAy3BO+1yn3XckVgP29UJFFft82Vqcnp3AYApaqlevkVRuBfbgHdXEKQ1OjZm
-	6fXYaL8MX3z3gsici/BpYJ7ynp42SvIdJkINjeE33FiHdgp+H+fUMU/yhIXUE57sDdngnWKXhSPbi
-	tLG7eiqnWXK+Dg1WwEvA==;
+	List-Owner; bh=ca0iMe1w4saj4K/ZG8XXSmxmOgbuAcHJbjZ5/r4O9bc=; b=HTjJ3J3wWRo47v
+	5EqE0yz9Z9U+SypY3wew/IFxaxC0qx0SMqu59tI7rwhxBagFs/mBfmMjNC2XKuCLQfqNwJRkQ0Tv0
+	0VEnL70cKA0ghqlMuScAYDxRJmx+mzv2DMaNePD7UKNka2DSinq/yB/rx9etxZ2Gmlj4B/qDF3UeJ
+	Z5QFrI5XxCwPQ5TO9DgUUY+ikv0vZ/4DQtlvxBiP+QKaLaX51XAL/sM6K6NvpsyGnKdHkME9DH0QZ
+	TdkDz+KJvR6KeRh4hAkzzL3pEGY7BKpto0RVNFGnaV6VXafx03Dw3P7B87w8JfaIbH44NaRA66IpN
+	VGlRx/4trHnxmyigMN3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvvZf-00HW1Y-18;
-	Mon, 08 May 2023 07:46:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pvvby-00HWWN-0h;
+	Mon, 08 May 2023 07:48:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pvvZc-00HW05-1k;
-	Mon, 08 May 2023 07:46:21 +0000
+	id 1pvvbu-00HWVI-3D;
+	Mon, 08 May 2023 07:48:44 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DC74762038;
-	Mon,  8 May 2023 07:46:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2B69C433D2;
-	Mon,  8 May 2023 07:46:18 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 292F760F04;
+	Mon,  8 May 2023 07:48:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9BBEC433D2;
+	Mon,  8 May 2023 07:48:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683531979;
-	bh=kO6fJ/GkPqwLv735oDhZh3GcxwMT25MvPjdP9/q6LWs=;
+	s=k20201202; t=1683532121;
+	bh=G9HdM1QJziMzpOUvCuJGpW3lxswdvThqfd4Irkdvc78=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IsJASFt06VowLI4Mojie4o75uKwK4x8l3NIR2zXGgoXLJisE91lOQtoOs0Aicbx3N
-	 a6/vQU4f/ARxugTFcJF8XT2PWkjfYEcNUaezefnR7vg5+CsPspqyaGOKQlHVcpF4Z+
-	 EyHeCKrN3z89UH6lE7hDbJQsxBzakyfXAKBVmQ9eXsKkkGfdWJf/mLbhX4ubY6RGq3
-	 swjDAfLofuceyifU3rfTQ6pXP+EZSohgGs1Xe61Xnc6U5MU932sKfnRbFfou98b5qx
-	 kVTq1HwhHjE8xjN5vMN4SFwStCBu4pGRhz+/MgkbCN1zMq8Crc114B8wtj0PGjdl3o
-	 WFTz/uCmt/0VQ==
-Date: Mon, 8 May 2023 13:16:14 +0530
+	b=SFLrL35w0Msv/Ut1ZxVUaSrWlMrdhAImX35jJa+vNdjFsaccU4K/Tmt46yGGcK/ab
+	 ShGUwgzPb0DXnrbmb7y+amP1uv5G7AULBvvpwkxkCI8F/TrVO4X4k20OUy7LQhW354
+	 VQpewPMkAJfEPC2bALgNFB95LK7BWdgiYlJlZMw70TcptzYNU6cjXZ08Hv2+wil21O
+	 sidC919sGP4/xfCnp+E8wq+yejJrbmLzoCSv8Fv6Ym+qsqV0c+COSzCe4/6DDVgAN6
+	 SxgSWWuqvXXfvXnWitxgoPYDeztdtBvZsyFeoeZX5IbsFy458+BM+3hXZi1UEKlP5S
+	 A2B38BMSM4HgQ==
+Date: Mon, 8 May 2023 13:18:37 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	imx@lists.linux.dev, fushi.peng@nxp.com
-Subject: Re: [PATCH 1/2] phy: cadence: salvo: Add
- usb2-disconnect-threshold-microvolt property
-Message-ID: <ZFioxpLaXNeDUnFY@matsya>
-References: <20230505185247.1854677-1-Frank.Li@nxp.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Tom Rix <trix@redhat.com>, chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de, chunfeng.yun@mediatek.com,
+	kishon@kernel.org, angelogioacchino.delregno@collabora.com,
+	nathan@kernel.org, ndesaulniers@google.com, granquet@baylibre.com,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+Subject: Re: [PATCH] phy: mediatek: fix returning garbage
+Message-ID: <ZFipVfhLVyye/eud@matsya>
+References: <20230414122253.3171524-1-trix@redhat.com>
+ <ZFTMPWp8LhwA9uHz@matsya>
+ <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230505185247.1854677-1-Frank.Li@nxp.com>
+In-Reply-To: <db9c3190-28d8-199f-f4f0-a12524d0451e@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230508_004620_665895_FD8CE040 
-X-CRM114-Status: GOOD (  22.42  )
+X-CRM114-CacheID: sfid-20230508_004843_072789_75A53341 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,113 +80,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-05-23, 14:52, Frank Li wrote:
-> Add usb2-disconnect-threshold-microvolt property to address fake USB
-> disconnection issue during enumeration or suspend state for difference
-> platform.
+On 05-05-23, 17:37, Matthias Brugger wrote:
 > 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8x-mek.dtsi |  1 +
->  drivers/phy/cadence/phy-cadence-salvo.c      | 30 +++++++++++++++++++-
->  2 files changed, 30 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8x-mek.dtsi b/arch/arm64/boot/dts/freescale/imx8x-mek.dtsi
-> index 2f8fe59fc131..6a396844c02d 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8x-mek.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8x-mek.dtsi
-> @@ -1051,6 +1051,7 @@ &usbotg1 {
->  
->  &usb3_phy {
->  	status = "okay";
-> +	usb2-disconnect-threshold-microvolt = <645>;
->  };
->  
->  &usbotg3 {
-> diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
-> index 23be27a747a9..06e705dbbc3c 100644
-> --- a/drivers/phy/cadence/phy-cadence-salvo.c
-> +++ b/drivers/phy/cadence/phy-cadence-salvo.c
-> @@ -5,7 +5,7 @@
->   *
->   * Copyright (c) 2019-2020 NXP
->   */
-> -
+> On 05/05/2023 11:28, Vinod Koul wrote:
+> > On 14-04-23, 08:22, Tom Rix wrote:
+> > > clang reports
+> > > drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c:298:6: error: variable
+> > >    'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+> > >          if (ret)
+> > >              ^~~
+> > > ret should have been set by the preceding call to mtk_hdmi_pll_set_hw.
+> > 
+> > I have applied "phy: mediatek: hdmi: mt8195: fix uninitialized variable
+> > usage in pll_calc"
+> 
+> Thanks Vinod, that was on my list for today as well. I was a bit puzzled
+> because you took the patch that added it, but I wasn't sure if you would
+> take the fix. How do you want to handle things like this in the future?
 
-why this change?
-
-> +#include <linux/bitfield.h>
->  #include <linux/clk.h>
->  #include <linux/io.h>
->  #include <linux/module.h>
-> @@ -91,9 +91,19 @@
->  
->  /* USB2 PHY register definition */
->  #define UTMI_REG15				0xaf
-> +#define UTMI_AFE_RX_REG0			0x0d
->  #define UTMI_AFE_RX_REG5			0x12
->  #define UTMI_AFE_BC_REG4			0x29
->  
-> +/* Align UTMI_AFE_RX_REG0 bit[7:6] define */
-> +enum usb2_disconn_threshold {
-> +	USB2_DISCONN_THRESHOLD_575 = 0x0,
-> +	USB2_DISCONN_THRESHOLD_610 = 0x1,
-> +	USB2_DISCONN_THRESHOLD_645 = 0x3,
-> +};
-> +
-> +#define RX_USB2_DISCONN_MASK			GENMASK(7, 6)
-> +
->  /* TB_ADDR_TX_RCVDETSC_CTRL */
->  #define RXDET_IN_P3_32KHZ			BIT(0)
->  /*
-> @@ -125,6 +135,7 @@ struct cdns_salvo_phy {
->  	struct clk *clk;
->  	void __iomem *base;
->  	struct cdns_salvo_data *data;
-> +	enum usb2_disconn_threshold usb2_disconn;
->  };
->  
->  static const struct of_device_id cdns_salvo_phy_of_match[];
-> @@ -261,6 +272,12 @@ static int cdns_salvo_phy_init(struct phy *phy)
->  
->  	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG5,
->  			 0x5);
-> +
-> +	value = cdns_salvo_read(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0);
-> +	value &= ~RX_USB2_DISCONN_MASK;
-> +	value = FIELD_PREP(RX_USB2_DISCONN_MASK, salvo_phy->usb2_disconn);
-> +	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0, value);
-> +
->  	udelay(10);
->  
->  	clk_disable_unprepare(salvo_phy->clk);
-> @@ -315,6 +332,7 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct cdns_salvo_phy *salvo_phy;
->  	struct cdns_salvo_data *data;
-> +	u32 val;
->  
->  	data = (struct cdns_salvo_data *)of_device_get_match_data(dev);
->  	salvo_phy = devm_kzalloc(dev, sizeof(*salvo_phy), GFP_KERNEL);
-> @@ -326,6 +344,16 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
->  	if (IS_ERR(salvo_phy->clk))
->  		return PTR_ERR(salvo_phy->clk);
->  
-> +	if (of_property_read_u32(dev->of_node, "usb2-disconnect-threshold-microvolt", &val))
-> +		val = 575;
-> +
-> +	if (val < 610)
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_575;
-> +	else if (val < 645)
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_610;
-> +	else
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_645;
-> +
->  	salvo_phy->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(salvo_phy->base))
->  		return PTR_ERR(salvo_phy->base);
-> -- 
-> 2.34.1
+Fixes should be sent as Fixes patch
 
 -- 
 ~Vinod
