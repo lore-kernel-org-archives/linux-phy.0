@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EDA2C77B7C
-	for <linux-phy@archiver.kernel.org>; Tue,  9 May 2023 17:42:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B712C77B75
+	for <linux-phy@archiver.kernel.org>; Tue,  9 May 2023 17:42:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=roYAK3T9IS05+pzDOW2bKsGD9mmsQ6jwzsJJgN1FB50=; b=TpWVfjAr6UeCF9
-	09OB20HsNstMEVksd+0GId6oHwNWLVC0vX9KuI/6yd7OahBHNOrl2/GdsH0bPEjN8t4fZwfC5buQq
-	tUYsOmCwd6+pjv1rJj4cYbfeeNZ2Cl4UI3cJA0CekzQoBO+IJFqImOyfUvVVFXcTxMJNU9NiY3u0H
-	z5QT5Fz74G77ZdQfqRPhKTrEBu8xyiCPQHebyzxs+CaRCTD1SUIWSb1o1CSUyDr5g6x/apjNkbB6o
-	3tWlDgBCW8MhZNVYVdDW7UKXyrhmy81YrFICsPSuJeNnt9U3SpNmh0WbGg55avHXhmOz/BVyTy2if
-	/Zdgm0spjWzVmdKj9rhw==;
+	List-Owner; bh=qsGCfRF6NQXuSgfL91L/BnX3ekMX0yOTOjgvDSkygTY=; b=2VWsquaCVARV+U
+	VWKTbB6QPfPhV8H87OntWQ7tJyt5bKCCf+Qk2RBJqAujwzQICXybpXxn3Zmbkfob/EBpgBF83xm0r
+	f0m5nOkhwyAJcsVJAJ6PPVGX7VS6sWmboEezThBkQERpAaGqgZT4d9+paKq2KCAlm2YtDBXjcWaY1
+	IbuV1tGRXA2GYi2qW+WwjYcjhDkrRuf6b0RK6ayCk84Vh6Sv23T42TcTwAG+JHlzpegfJxDE0lct1
+	Jen+Y3mou2fw3cov7kSPbO3C0Z0c247K/NM1Uo6IRl5bsSVgpEYHES0Zy/9DvawXflztk7EN/++LW
+	1URk1DVvFuLItfSVKdRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwRLz-003vSE-2D;
-	Tue, 09 May 2023 17:42:23 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1pwRMY-003vYk-2o;
+	Tue, 09 May 2023 17:42:58 +0000
+Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwRLx-003vNt-1X
+	id 1pwRMW-003vXo-1m
 	for linux-phy@lists.infradead.org;
-	Tue, 09 May 2023 17:42:22 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-50bc0ced1d9so9414074a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 May 2023 10:42:01 -0700 (PDT)
+	Tue, 09 May 2023 17:42:57 +0000
+Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-94a342f7c4cso1087789166b.0
+        for <linux-phy@lists.infradead.org>; Tue, 09 May 2023 10:42:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683654120; x=1686246120;
+        d=linaro.org; s=google; t=1683654174; x=1686246174;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=mgSfezJnFheHWxl/J/jtAx9CEBA9nZXTq9vupUNGWSQ=;
-        b=lRC7iU5SK3AyepBwA/3/NM8aYtocWUOdo7lkdukNvXDY4Jytb85mFREGFNsTrtQ8+j
-         szziW02hihhrpUODgNheXG3gP74Z8t+sHnn0Eb2icPma5NcrzR5G2rYx+NUOeKP52tEG
-         WIJLi6DQSmFhy59cZx8SugPE+sfAaRzkNp5K/qL3umIoGqQGjgJuPXKcn0BDXRCVBqX2
-         5LMf+vPOpJ/BnboXLCMwO0/mL1b5jyE1uYGfXMzdaR2AcPgbi9SQzOlnFQIdKYq1hVG9
-         jYH+NA48cM96FtvteXPLLgUkYc5Cuk6oeXCP2bfYAG/k6DeHLlFW356ohpQvYXETL/AI
-         LEdA==
+        bh=+6CqfpUOuhBdIMyw09BZEvQUMlZ2hFOGBcV2c6lnR3A=;
+        b=AjEyzOVffRUiFWnLDBmNtDe/ucBYt/5khszFHw6tm/dbF0kF3yzZgDjNA7WDufb08B
+         uzBy9ZyTRlDCm7YRIi8rcQWsUH7AaZCYDQUon7B1p9b+WAg86sk5zRyPGwCWdNiBR9vG
+         4J6STzl4OmM1bvOBmyOdfigRKfVsoa9lpD4eoMDeM0qU6Y4VRnkyvVpjM6TXtGNz2Lzd
+         38dlZmByEUfHcyaZ9bG1lwe8TP4cp7Mi4jn4eXkR9fSIuUclx8PW+Wo+m5XfQg8qmn/I
+         tsOBOl/zE6tghsvD+kr1FZgTsDjA+hbYVRXl0yAt7YcEP0sU4rkwuoq8GntYvtDRB0AS
+         JjLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683654120; x=1686246120;
+        d=1e100.net; s=20221208; t=1683654174; x=1686246174;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mgSfezJnFheHWxl/J/jtAx9CEBA9nZXTq9vupUNGWSQ=;
-        b=ZZwjC3hNEFCaU0h9vnMJ7WIhNlI+0vc8q6OVU7oCNxSDrwbZq2tWfQnfEQlK87OXnT
-         UyidvWpCWJ6TPMMEzMf0vFraG5jwM0u7nxy2yin6COjf0fIfH0Lfr8NbwbhpqN57Yr2r
-         4IXLeKCa1CrxBiK82Zf8UAdg+MzZjnB315O7pPTQa3ssJ0/D6/B1vH3l9iq3xVxT3l2o
-         SCgAbXdWKlXuoOaxb4vmLIdv7RPsmGoijTm/MEkGoFf4mkiZT5M12q/yDieQdjjW5qY3
-         CmTjNyzHYjnV6a/uLe/i2VzuP0HpS7hDuj42bwhWBFZVv1Zvd1PEOZrdKf2DJb1iekzl
-         njmg==
-X-Gm-Message-State: AC+VfDzE0zDm1XlLYJt9XKsttj0klhjjGt6K/rLI41c4/a8QDeCXmzAJ
-	fV3FgEie8rs5Etey140V2xqrNQ==
-X-Google-Smtp-Source: ACHHUZ7eebYnB6rhiI+xoinXTZKwvRZJY07rLy5XPSTfTbZWrjT1idLyIRNVuDPZtkAUIN71D6Aavg==
-X-Received: by 2002:a17:907:6d20:b0:969:e304:441d with SMTP id sa32-20020a1709076d2000b00969e304441dmr3709171ejc.4.1683654120430;
-        Tue, 09 May 2023 10:42:00 -0700 (PDT)
+        bh=+6CqfpUOuhBdIMyw09BZEvQUMlZ2hFOGBcV2c6lnR3A=;
+        b=QTHFg0VRJSijvyN+dd1IkpQuTu11Pycedqc9pnjWfixugZuZJn7kQHdFLQNyAu/CNf
+         /7+WjRo1GLWlnchCDqMmTGMFnwY87Ia7MyY0h3g2ZNlisVA22mc+TLwne9jqQ1Ny6OAl
+         MD8aYTCgqQ+2bNF/cwWgnDxDu6RZsrazfKKcIbBYNXpqp55S255qCrHzHiJ9nW1seyDn
+         RUE01xGRxtbu+T3r6X1C9Pw+ugvoCz1y9fbo3mN0u6mNlOJoaotvHu9BdTLa0ttjrl+I
+         5p87CjuImQXyLIwejFqjfEoGUDtJ8FOjXsRbnpiz+bi33evzJ9PhZs1WXVuIew05x59w
+         UxRQ==
+X-Gm-Message-State: AC+VfDxNlnHEg1fZA4BQmsV3IUtR/xH27roYCGJrfyYyTgSzmOgoQD36
+	zsYCeogasYBvMW/ay687sf8irw==
+X-Google-Smtp-Source: ACHHUZ5BzzC72uJ14K+MspznYU/rIVE1+W55VLdtM401cMlKeEaJ5ckngVP1kmYaHsBg4uUNYt4FlA==
+X-Received: by 2002:a17:907:72cc:b0:969:9118:a98f with SMTP id du12-20020a17090772cc00b009699118a98fmr4852570ejc.10.1683654174473;
+        Tue, 09 May 2023 10:42:54 -0700 (PDT)
 Received: from ?IPV6:2a02:810d:15c0:828:d0d5:7818:2f46:5e76? ([2a02:810d:15c0:828:d0d5:7818:2f46:5e76])
-        by smtp.gmail.com with ESMTPSA id 13-20020a170906328d00b00969f44bbef1sm960264ejw.89.2023.05.09.10.41.58
+        by smtp.gmail.com with ESMTPSA id 13-20020a170906300d00b009659cdb2f98sm1574510ejz.23.2023.05.09.10.42.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 09 May 2023 10:41:59 -0700 (PDT)
-Message-ID: <254dcea1-636a-550d-59ae-5889ffe49f6c@linaro.org>
-Date: Tue, 9 May 2023 19:41:58 +0200
+        Tue, 09 May 2023 10:42:53 -0700 (PDT)
+Message-ID: <193f3489-4937-6d4a-2466-a67d335ac37c@linaro.org>
+Date: Tue, 9 May 2023 19:42:52 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.11.0
-Subject: Re: [PATCH v3 07/13] Revert "media: exynos4-is: Remove dependency on
- obsolete SoC support"
+Subject: Re: [PATCH v3 08/13] Revert "phy: Remove SOC_EXYNOS4212 dep. from
+ PHY_EXYNOS4X12_USB"
 Content-Language: en-US
 To: Artur Weber <aweber.kernel@gmail.com>
 Cc: Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
@@ -87,12 +87,12 @@ Cc: Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
  linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
  ~postmarketos/upstreaming@lists.sr.ht
 References: <20230501195525.6268-1-aweber.kernel@gmail.com>
- <20230501195525.6268-8-aweber.kernel@gmail.com>
+ <20230501195525.6268-9-aweber.kernel@gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230501195525.6268-8-aweber.kernel@gmail.com>
+In-Reply-To: <20230501195525.6268-9-aweber.kernel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230509_104221_515979_C8A7241A 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20230509_104256_590286_B89A866B 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,18 +114,12 @@ On 01/05/2023 21:55, Artur Weber wrote:
 > no boards using it. We will be adding a device that uses it, so add
 > it back.
 > 
-> This reverts commit 2d41a0c9ae51ac363d107f2510022106e7234b33.
-> 
-> Signed-off-by: Artur Weber <aweber.kernel@gmail.com>
-> ---
->  drivers/media/platform/samsung/exynos4-is/Kconfig     | 2 +-
->  drivers/media/platform/samsung/exynos4-is/fimc-core.c | 2 +-
->  drivers/media/platform/samsung/exynos4-is/fimc-lite.c | 2 +-
+> This reverts commit fee7e1d50c6e6da1d99035181ba5a5c88f5bb526.
 
 Subject:
-media: Revert "media: Remove dependency on obsolete SoC support"
+phy: Revert "phy: Remove SOC_EXYNOS4212 dep. from PHY_EXYNOS4X12_USB"
 
-I assume this will go via media tree. If not, let me know.
+I assume this will go via phy tree. If not, let me know.
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
