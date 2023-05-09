@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EDFDC7EE2E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AF33C7EE2F
 	for <linux-phy@archiver.kernel.org>; Tue,  9 May 2023 18:10:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FFjTIreb4JRvfI7x1/PHNXZR27Pdoy7MeKXdFnhZpLs=; b=Z00w2wC8LbF5eT
-	8bjpaOWL0aQzTaGgDzR2eus9PeUXMGDvHCy4lpBFjoyt/63bcVubkz3MQraZz4H7zxVOkTVZqfBV7
-	Ee0755qvavSw/BuDWePkmrbD7PAjT5qPzLO3H4THeK3XWfWM3DgxkFhNFEHbB+ylIcEHzu5APnIYg
-	hwZG7Y3jERqki6U8VHIPpVP9rPAWUuJxzTyzAo98N34+javmMiyoLCEbvzv4H/DyRg9rboAZGsPo3
-	hQfErPKICp8fiCSfzNuWg3kN9Zv8CmgMcWJAWmf5auWfrXKapIxYggcS9jf+g131YdMnhBMtsoW5e
-	8/ipfeyJQpi32f1C8dOQ==;
+	List-Owner; bh=FnE4gP4AutinfwZPfBck4qxSrGEVXlfBlBEIxmii99o=; b=tCvPb1/oXa54El
+	S95njHwM8mmulxLOpIbE3Mftwey1l9GkPm0EPPNYiWN/ZJPGW5yW5vJhxOQhefysrb7r2HbczZH11
+	BkBoub5mGPeM0Q1BJm1VUngjMpkI43ZWUCxTQZ39GShrwfyj4Qjs4nr3+g5X6RMCZlakARyd1PHI2
+	1DHEo9ugjZAAVXP/IfiUUj6dMCRRA76ioegxpBXK/mEQQ0p6iRHmCniLGP/bTuZX6nRFNB7I3cmew
+	aNDURhYSbs3GYUEFmXzJHbjodAaSJBeMtJwUMHVzVNZV7aB2o/2ndeAa3GQOwZp/z0xRBex7vGy7w
+	nNUmDw0vp7ci2ChTROeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwRmh-003yYU-2P;
-	Tue, 09 May 2023 18:09:59 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1pwRmi-003yYe-00;
+	Tue, 09 May 2023 18:10:00 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwRmW-003yPB-31
+	id 1pwRmW-003yP3-32
 	for linux-phy@lists.infradead.org;
 	Tue, 09 May 2023 18:09:51 +0000
-Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-50db7f0a1b4so1903230a12.3
-        for <linux-phy@lists.infradead.org>; Tue, 09 May 2023 11:09:45 -0700 (PDT)
+Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-50bd37ca954so61520358a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 09 May 2023 11:09:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683655784; x=1686247784;
+        d=linaro.org; s=google; t=1683655782; x=1686247782;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=zs9IksAZdPUWZueIWev0YHwP3SfwTJngjTY4HAluqu0=;
-        b=k3tXANjes4g05zH+EiJsegWVxlkJzp41oNY3t1dshZB/kkJLq7LyekAftEzAadwf3U
-         10Xc91NiUZEeq+UdneApZrEHyTkl18baPlYBxM/jJeEzJTpktNxhLwWB8UP1qMZEHRPP
-         HxZ9j5syMXIa5W2CbsnzlM1ZWiauPeJOXuaDRRlY/2ZAjQZtsUVKpNWe9Lt9owhhEF5c
-         dpwlWcc7SNI1TSBZMLrOf6Z0ZsQIdhhkXzypjItx/lsFs4Sn5+HRI7IQkvdtCLTBPZnq
-         aq18PWOcv/9gofTZDflgIF2QuHx4juSZoxnRcJYpN0IqRzVl9KB/HAParfVePmCfOVAt
-         DiSg==
+        bh=P531oV9/x4YHyyJQpy3FZFac9rbq6io6m/JeWQjftLM=;
+        b=PzuJq0GFfFoj6RYV71gN0FpO0c7kgBNVclZp3ScvSdrwCgPvIvtiitjlQPUWYijCzT
+         lgBdMEDYmo16sorhdRCZZ2BzE9NTB6YkYxizyhW+4l4IToWnsjGCUcqoSwstw4QUuz1I
+         xDa/2rT4imCNx4inRSVeLRv0OHxZduyxfjcMCltpuEu7L5mbtkS7LzDdl27CCybJpBAw
+         u+GW6TUZ2NxRNiXYs6juxBtzEnhBI4097rg6luDHEgMDzsCkvOzqj/tEp0f4jk0WU8v3
+         +yV/GyHj6smfz9rDL9C0ni0qAjQK/+JArtvwNPvSbL7p95MOF7wXb8+yCAVTwEujSZTt
+         TkNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683655784; x=1686247784;
+        d=1e100.net; s=20221208; t=1683655782; x=1686247782;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=zs9IksAZdPUWZueIWev0YHwP3SfwTJngjTY4HAluqu0=;
-        b=de74Xl6GdMetsv4s0DSamVWD4aE8Et5rrimel2cNiEdrOxvCOzSd6ejqkfEYdncnqC
-         syJFdDces6TL/Uk+1eoI/8zCpc0cTX6uuF7z2MizTZkW+O7MKgPAiDAdPLRXLwJkUjLd
-         13mSlmtLxEqjVSRlE4CPnhl8iwSZ49WHcfoMlRkxiVdR0fLGXmeg8lkuf2ivWdK4wITP
-         15EJ5idhxDl+wCwYIqv8vRD66PPKioy+hq/z6Q9GszBU14xBxSHfXveMcrVKQ5w/RRPa
-         gnSoBd1BSafEsvpGxzD1wG7MaAt5viHdoD3lcngt99Hz/JUhE9O8tUhEEa6WUshrn22+
-         znTw==
-X-Gm-Message-State: AC+VfDwggBuWRxdw6ksoLDVOJIOh1rURhGSKPk8V9+oJobVAGh7LY7vk
-	QwlpzwHY+665n8f3NR7GpOrO4w==
-X-Google-Smtp-Source: ACHHUZ5e5xBUZoC73JkHOAuYZol8+WzHPQzUCswmjDbXMuKS2byDzPvO1tY0/0dKFOjnVbNh6oDCWg==
-X-Received: by 2002:aa7:ccce:0:b0:50b:c085:1991 with SMTP id y14-20020aa7ccce000000b0050bc0851991mr11920150edt.19.1683655783875;
-        Tue, 09 May 2023 11:09:43 -0700 (PDT)
+        bh=P531oV9/x4YHyyJQpy3FZFac9rbq6io6m/JeWQjftLM=;
+        b=PX6wkpZnV1rS6oVu6+mxx0LCo9viaLMNODL4sON1sRGpr83foALLzoy0DcZJwaVXuv
+         SEMvnCLTnN7UbN1ZQrZgcFdS+yPiXrkgNsGSyyFLryPPXUPHwEpY2T14EW3HHNZhfMxB
+         r77Xa9ynsuYBLSC1SnMuJTYDq5/op8xfOA6C5JquGDf1FuVgAr80S+uoqLXKmE53ETrN
+         9fghfMYpTOKDuZkyAZ87pmgJeaceVpDNsYriJydDf46LYc4RSBhM9f4LaUC+M1r2m8xm
+         rPUptn5iktzWCVVRy3eHWvlwYbjTqb5pJQLs20I9l3Y0rAUPSJl0Rx1OFGTi4qAZDgUO
+         A4vw==
+X-Gm-Message-State: AC+VfDw7FhGEyfgcgXRmkcpBHXES5ADqDmfIeq6TwHAPWddrsjsHHICd
+	0iPbQeaKwsUwBQ7qqudwkwfEBg==
+X-Google-Smtp-Source: ACHHUZ6Z2hWW4kJo4XA6wPEBn0RJsE0vvL841HD+tBBP3RwHP6qfpE0ZE/ZwoCyHJIplknssHD1coQ==
+X-Received: by 2002:a05:6402:5202:b0:506:bd27:a2f0 with SMTP id s2-20020a056402520200b00506bd27a2f0mr13339691edd.15.1683655781945;
+        Tue, 09 May 2023 11:09:41 -0700 (PDT)
 Received: from krzk-bin.. ([2a02:810d:15c0:828:d0d5:7818:2f46:5e76])
-        by smtp.gmail.com with ESMTPSA id dy28-20020a05640231fc00b0050d8b5757d1sm1015286edb.54.2023.05.09.11.09.42
+        by smtp.gmail.com with ESMTPSA id dy28-20020a05640231fc00b0050d8b5757d1sm1015286edb.54.2023.05.09.11.09.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 May 2023 11:09:43 -0700 (PDT)
+        Tue, 09 May 2023 11:09:41 -0700 (PDT)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Artur Weber <aweber.kernel@gmail.com>
 Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
@@ -90,16 +90,16 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
 	linux-media@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: (subset) [PATCH v3 03/13] ARM: exynos: Re-introduce Exynos4212 support
-Date: Tue,  9 May 2023 20:09:30 +0200
-Message-Id: <168365575564.242810.13469552889679829335.b4-ty@linaro.org>
+Subject: Re: (subset) [PATCH v3 02/13] dt-bindings: clock: add Exynos4212 clock compatible
+Date: Tue,  9 May 2023 20:09:29 +0200
+Message-Id: <168365575564.242810.8233098910658144453.b4-ty@linaro.org>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230501195525.6268-4-aweber.kernel@gmail.com>
-References: <20230501195525.6268-1-aweber.kernel@gmail.com> <20230501195525.6268-4-aweber.kernel@gmail.com>
+In-Reply-To: <20230501195525.6268-3-aweber.kernel@gmail.com>
+References: <20230501195525.6268-1-aweber.kernel@gmail.com> <20230501195525.6268-3-aweber.kernel@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230509_110949_049450_6C964831 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20230509_110949_049668_8CA3ACB4 
+X-CRM114-Status: GOOD (  11.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,20 +117,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 01 May 2023 21:55:15 +0200, Artur Weber wrote:
+On Mon, 01 May 2023 21:55:14 +0200, Artur Weber wrote:
 > Support for the Exynos4212 SoC was originally dropped as there were
 > no boards using it. We will be adding a device that uses it, so add
-> back the relevant code.
-> 
-> This reverts commit 9e43eca3c87476f75680f472ff3ebcd85f357b86.
+> back the relevant compatible.
 > 
 > 
-> [...]
 
 Applied, thanks!
 
-[03/13] ARM: exynos: Re-introduce Exynos4212 support
-        https://git.kernel.org/krzk/linux/c/4e486a650162a20e5c3c7987715f8297c84c85f4
+[02/13] dt-bindings: clock: add Exynos4212 clock compatible
+        https://git.kernel.org/krzk/linux/c/5b40732af063c3fa2085b247129f065276c4947c
 
 Best regards,
 -- 
