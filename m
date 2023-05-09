@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55FDCC7EE22
-	for <linux-phy@archiver.kernel.org>; Tue,  9 May 2023 11:55:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB378C7EE22
+	for <linux-phy@archiver.kernel.org>; Tue,  9 May 2023 11:55:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iEXpiFUNAN3AGYJl0yM3Yeg1RPaDUninKFhBysOb3ho=; b=PsKDZF+a4bnsZH
-	R/04X+IgoQhtXVXXv8eZAV6Pj/Q4OYlePs/egvuHUsKsy9U4+ekEwUqPnzCADHMkJKhLcuwgewQWq
-	PJhBkVuj10Vb6moKnHaPBdCj4O7g5wETel/54A+mPvidi79KKikYKTqK5zUobJuqfRJnEfHYRz10Y
-	UNnX7+nZDdUuN7g7WPJVBljLoIwakaY3w8y64vsrxPExc3U2zUoK6OVjGTwWsizJDfIBByaJhIrb5
-	xAwKsFdP4y211V2w2hr4APA1w7Kd7gF3newc2/iE5DqXtj81Ov6o7AiCK6ECJJeKq+1xBp/CSJW7D
-	8k5ZKXjLHDr+MQOhwhFA==;
+	List-Owner; bh=UMYiAxK9JlI03EAN48ZefQ/4jiftf3AzGkHZ3In3g/s=; b=js3GAAni6rjS0j
+	cuV9h18i82Da4LjgXDzp8akN6rTh96K6QB7kjV8clbOnq+XC9r2BJXcodyTBoC2O5wxApbYXqs79h
+	TAclCu/NR9VUzrx3hbW5EBPw/jP1PvfYMc8326JPIyEYJRVJvQRL19Kus1ADFtZNIx9eK4CXY2CsF
+	i+b47VCwbMdvoiK3+CoAvHWObq8XlJVn94TlVJyQWbZQukviRGJuWSUlM1y4xtqG6lWhwXbbl9PRx
+	6Mc+FTsgJLAap65fFqeWafXwgRX8Ce/1t6Wq/OT//6R8L29cKM03mNy+DYzdECMBhBX9ek24mlDzv
+	Zp8P9ecUZlHqqQr73oCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwLvz-003CUB-3D;
-	Tue, 09 May 2023 11:55:12 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pwLw5-003CVO-1L;
+	Tue, 09 May 2023 11:55:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwLvx-003CTZ-2W
+	id 1pwLw3-003CUc-0L
 	for linux-phy@lists.infradead.org;
-	Tue, 09 May 2023 11:55:10 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 34997NCr026683;
-	Tue, 9 May 2023 11:55:05 GMT
+	Tue, 09 May 2023 11:55:16 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3498Njc0010792;
+	Tue, 9 May 2023 11:55:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=WZtO0HqANQYzG7rjKke7I95LJ7e1euJQtwGimPfnjXM=;
- b=WEP1zYFkISriUQXgMytNxemdcbnOOYkkRFqlNQfRFL4iHOzQP+4gjc91OWC6zrckEjkx
- u9nixfK3c0ihOnmJASdGxr9R+3FAHF7ubpyhbiCZ0pk+ke5/iHE/MTATe9jGKY021UOQ
- Qll0HTsmqM3hNB2GL7iDgosiTGeMfqEsoXe+RZFa7m5Mvjw+mNiaT8D9C3TEZ4VHfZBm
- +UwFF6J5o3KwH8nyo/yS1b7qle+zztm1eb7zdTz6Crv3RtThTkOzCl2p0OfplcMxMSMt
- ruZhvLgnUfITjWwejO5KrLVeJK2JBGNj2MVl9gZ2ax1mZb9qL4f9EsScPveHoK2lN1iR eA== 
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qf77g1nqd-1
+ bh=2DEuaB+0Kvgjo/S0/NlOOfk9vDVowCbiMci8l0m/HWQ=;
+ b=ai4Tz1O4Vo45n9hNfF3fIPhnmUGDRwpp9pJ2HEDdajkPsQuMg5wZZYEX1sdcJL31eS/H
+ Qo4tsUSNyRSr/wrDldRJUo82Ub6zcanGX2hTu0BWHAbdu4YlHxPpaFJJpvqGiYrQt5qI
+ pLUXoUXbCKkzTpl5ADzcanoO3fZ2PMD4YOQu2hQ4Sk/WWnWWGzjBzTkSk6lJ5rh6LvwL
+ 1DADkzFIGRzaYJZP2aKgjzo686OTrVn+Ms1Gnvm+lBYumTdjLbxSv1ZCiFM+fHPlN+Kn
+ g+RJSU8C0XeZtBgF3JmX3kqZ7n0AE4r0lD3INX/R96a4/98UMCkpT5yHPrpMTMxDaxMF IA== 
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qf78pskke-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 09 May 2023 11:55:05 +0000
+	Tue, 09 May 2023 11:55:10 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 349Bt4Fi022772
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 349Bt9fg015776
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 9 May 2023 11:55:04 GMT
+	Tue, 9 May 2023 11:55:10 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Tue, 9 May 2023 04:54:59 -0700
+ 15.2.986.42; Tue, 9 May 2023 04:55:04 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -61,9 +61,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-clk@vger.kernel.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v11 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
-Date: Tue, 9 May 2023 17:24:08 +0530
-Message-ID: <42bf6244582d6208f51db1a9299fe1c8afab4e14.1683630932.git.quic_varada@quicinc.com>
+Subject: [PATCH v11 9/9] arm64: dts: qcom: ipq9574: Enable USB
+Date: Tue, 9 May 2023 17:24:09 +0530
+Message-ID: <1691872a83758cb65053dce7001e96e88dbeed2a.1683630932.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1683630932.git.quic_varada@quicinc.com>
 References: <cover.1683630932.git.quic_varada@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ygB8CtVpKMHGGTQTMQKY8Wb0M57SIa87
-X-Proofpoint-ORIG-GUID: ygB8CtVpKMHGGTQTMQKY8Wb0M57SIa87
+X-Proofpoint-ORIG-GUID: fD4avqo5DRB3IqlOVr9CjVBt-ctpVdjx
+X-Proofpoint-GUID: fD4avqo5DRB3IqlOVr9CjVBt-ctpVdjx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-05-09_08,2023-05-05_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
- mlxlogscore=776 malwarescore=0 clxscore=1015 mlxscore=0 suspectscore=0
- priorityscore=1501 bulkscore=0 lowpriorityscore=0 spamscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2304280000
- definitions=main-2305090095
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 phishscore=0
+ bulkscore=0 mlxlogscore=689 mlxscore=0 lowpriorityscore=0
+ priorityscore=1501 adultscore=0 clxscore=1015 suspectscore=0
+ impostorscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2304280000 definitions=main-2305090095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230509_045509_824174_EB121190 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20230509_045515_261708_D3D7F4F7 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,34 +102,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add LDO regulator node
+Turn on USB related nodes
+Provide vdd info
 
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
+ Changes in v11:
+	- Rename dwc_0 -> usb_0_dwc3
+	- Maintain sorted order for the usb nodes
+
  Changes in v10:
-	- Add LDO regulator node
+	- Provide vdd info
+
+ Changes in v5:
+	- Move "host" mode specification to board dts
+	- Due to dependency with earlier patches board dts
+	  filename changed ipq9574-al02-c7.dts -> ipq9574-rdp433.dts
+
+ Changes in v2:
+	- Fix node placement and coding style
+	- "ok" -> "okay"
 ---
- arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-index bdc1434..1f5d14f 100644
+index 1f5d14f..ea38098 100644
 --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
 +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-@@ -60,6 +60,13 @@
- 			regulator-min-microvolt = <725000>;
- 			regulator-max-microvolt = <1075000>;
- 		};
-+
-+		mp5496_l2: l2 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-boot-on;
-+			regulator-always-on;
-+		};
+@@ -188,6 +188,29 @@
  	};
  };
  
++&usb_0_dwc3 {
++	dr_mode = "host";
++};
++
++&usb_0_qmpphy {
++	vdda-pll-supply = <&mp5496_l2>;
++	vdda-phy-supply = <&fixed_0p925>;
++
++	status = "okay";
++};
++
++&usb_0_qusbphy {
++	vdd-supply = <&fixed_0p925>;
++	vdda-pll-supply = <&mp5496_l2>;
++	vdda-phy-dpdm-supply = <&fixed_3p3>;
++
++	status = "okay";
++};
++
++&usb3 {
++	status = "okay";
++};
++
+ &xo_board_clk {
+ 	clock-frequency = <24000000>;
+ };
 -- 
 2.7.4
 
