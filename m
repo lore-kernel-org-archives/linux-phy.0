@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1EE0C7EE22
-	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 20:50:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B87E4C77B7D
+	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 20:51:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gIRWAn383DzkI78XKnpwlZLnly++H+jo4KzHjZJQ7ZY=; b=uZEknJbhIKL7Y0
-	LcoQZX1jsGON393jkcJCiAhOr6ljS+AX0BDINx9ViIrEfm1IN1mbavKZRlC2gDcE7HDbaCsGvp7OU
-	2qwHWiUfbU3kU2mLOOj2A9+ELF+I0XrzRNb+gg5ikEp8RhXoH6COuLZ3f8bxHX4ZDSsPB7hupz3oa
-	VTedq8j748ltC6m9vuDOMm8YhjgcKAn6KekU64WMVsKp7MQIJS6vfihekrP78Qk0mtYGlOhVw2kDf
-	vccpN+YA0zGGtyPgDa9mVXsNf8zru6FPn4Fa0CPD6sPlwkgyIC/K43xTdKnFJeZAp1Hukv6h8GpR9
-	vBbP1cXM0yJ4DafjSEVQ==;
+	List-Owner; bh=gIRWAn383DzkI78XKnpwlZLnly++H+jo4KzHjZJQ7ZY=; b=CYI8p7LlrLn971
+	VN4Pc5eU60ABMtDiZlMgiAdBQcDUN00JVZvFXaX1TpnkaMgMkIAnzHcghaJJmoR3iQmi1b+H/I4tX
+	D0LY0GLvBDqSFarmUCjNbTHFBcUKWew9DPPT/tXtuZ8vpB1C28HbsVMFgNP3yXkAlyKyq3RQzb5v6
+	q+6mSNOFOJ7ni0CYjqF+X+3BGvjxYRqPYUrUrTa8w+0aOnLdsuNo86hnizCsSNNkbEplv3FkhlZGq
+	9raP3WkzyRgFq1BGySLXY32lXyqv2qfst6h7S9l2KR4SpgBsx9UFv+58u7g3Wu+9z2i9u5KoBNgFe
+	jDRT7TKJoRIo3HtiWcMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwqm2-006zEN-1S;
-	Wed, 10 May 2023 20:50:58 +0000
+	id 1pwqmF-006zKN-0h;
+	Wed, 10 May 2023 20:51:11 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwqly-006zCB-2w;
-	Wed, 10 May 2023 20:50:56 +0000
+	id 1pwqmA-006zI1-2W;
+	Wed, 10 May 2023 20:51:08 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7277664082;
-	Wed, 10 May 2023 20:50:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1460C433EF;
-	Wed, 10 May 2023 20:50:53 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 564476407C;
+	Wed, 10 May 2023 20:51:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93875C433D2;
+	Wed, 10 May 2023 20:51:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683751853;
+	s=k20201202; t=1683751865;
 	bh=6sGfIeAH+EYa3fOLxgPHH2fMnwBuBPM3BpmYiynwUQo=;
 	h=From:To:Cc:Subject:Date:From;
-	b=MPvG94GTN3Afp7t1kVqNgLhbmbSkLv83HLnmbHhSbqs0phTUmpXMVWaolIAs3ADSX
-	 RJ2C3MDJ2I31Z+ovgotv/M64LiIAJj24zruCbKB7sIqB5soJIfnP3LZiuQMH8cb8B9
-	 CIDaiTxkWHj9K9diDsnnyZYYKPtkAwwnWl0iR5iAftdUc0DIH9JpYOps8lAn6vv//K
-	 iQlAUZmtszRgvJJMih26MlfvCmAA7nTK8UljTXcq5Eu12QThehbbE0JqYMU6F7/4km
-	 aIwilI8t1q8aSOEr2Q90LwMOTEtHmCH/FoETxEVqX+xY7K0belBIqgKddkyKcgeyz/
-	 FmA1LiMju4lHQ==
+	b=YOcOrsjBNH+lCn+8tb/UHG6RN76g7/BR3FTsN1WmQeQD79LZIJaJNt0i1ASs6egoc
+	 lY8wbnETnpJzmP3qILBAbHvNnH4bqBTbYhnKdMdxHWEFMoPqF6CCUrcA92B9Nr9jfm
+	 fZSuRGBoxnG7cEjE+Suya8Z884+3L/tkBDRspPSstcg+Wg+eoCjMPl2MOit+1SDRYQ
+	 TvHGxf6GIVGr+iJa1m8pzOYPqGWVvYBlRtuMA9EIyWxjrA6vTVeSL0//LvrfkruNKg
+	 iFgParFUyIB1bscEQ8TP8kycl+qiiWNbPAb1ZBZoXg5tuCTGWlfSvSlYhd5mEI7mma
+	 Y0V5QbF1KA2Fg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -53,15 +53,15 @@ Cc: Alain Volmat <avolmat@me.com>,
 	kishon@kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 4.19 1/2] phy: st: miphy28lp: use _poll_timeout functions for waits
-Date: Wed, 10 May 2023 16:50:36 -0400
-Message-Id: <20230510205037.105115-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 1/2] phy: st: miphy28lp: use _poll_timeout functions for waits
+Date: Wed, 10 May 2023 16:50:53 -0400
+Message-Id: <20230510205054.105151-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230510_135055_025238_8F9226B6 
+X-CRM114-CacheID: sfid-20230510_135106_897656_B2A6CD83 
 X-CRM114-Status: GOOD (  12.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
