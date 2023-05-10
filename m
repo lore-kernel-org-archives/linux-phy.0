@@ -4,90 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3184C77B7D
-	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 10:23:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A4BBC77B7D
+	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 14:05:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6daKP/VrhBZC4MdTNUGGPqMbXPtqZXFpY/9R83xwKqM=; b=HJD8q3mFwiCxEx
-	7LrAgsAC4+M5aoUUvc61qYdaDWD4h5Glwd56hGDu0wLNUWyuEpY9N/8NPF7wepDpaIlpIrJqm4BLV
-	k9cP+7GU3pkCkwIuvQnVPQKTwdaP2AfG4GpGhSOHtEyPH9QNvY6J7+aAlBFgyvNIGET6IDjaeACMS
-	hOXaG0Z4S+UNWiB9lKAZ4+0PFknNGlNV1aNbyAlznRikIG7zzkGV/gd5d+q/XloHHGHvkS2HU7WuN
-	qrn25r4g5+iXALwXArRfWaPwMIFNOU0j6fuJ/g+1AkMIJfWLi+HfE2NSGNyO1xmCV6lz65vk78HtT
-	Nmp6wwBhtjB/giL6joLg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=acdbtfX0kVIkpZoBklmGQNxrwbVU7A//0PIJbWAVQ4I=; b=f9XaiOXrU/Gnnr
+	g/Y1QoD6fWQzI/YpQ0Y8YuI1YoXNqRBfSboSEJJ2HMyIaH0RDRt6kXFGz8Ab5EA6PLq4M1QAR/kxL
+	SYlObehjcdKiknKm+2caRyJQzSKPA7hl81gVdINu4Fngq7APsUYR3k329gkYP7mo1W9swXwFQ6ayk
+	ABWryqYq/hqY66PkT3USHmHfwriOGEGMedzSLEj3WwthyQG367SI4Md7Fz4uzA+UOgU6cuzdSxD9I
+	mLpG0VaFRt6jtNdJ5QniMCX8PUTJwOBfZcYX6MgpCEL/oXXrij+tKB0ritXgyC+IhKaGZEH4SaCM6
+	7T4ePZvI2kRgKD3EqbBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwgyT-005ktf-1s;
-	Wed, 10 May 2023 10:23:09 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pwkRh-006JGq-2F;
+	Wed, 10 May 2023 14:05:33 +0000
+Received: from mail-vi1eur05on20629.outbound.protection.outlook.com ([2a01:111:f400:7d00::629] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwgyR-005kt1-0I
-	for linux-phy@lists.infradead.org;
-	Wed, 10 May 2023 10:23:08 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 34A9D4ud030035;
-	Wed, 10 May 2023 10:22:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=ZoXXvx1KrUmrm6J8q0QWOx2OVpxXGbg1USHSHzeCXcU=;
- b=CO4YWD1spiikNUO4Je2K8BJXaKPi+CDg3zYbv1RgLjGTinejPMxvQiTWueTPCXW1yYOW
- DRd9anPkcomLHFbnIjtU+X2S0k5P9A5vFL53MlrtlD8PZplEInrEmWSdc6ImW52jdd2R
- XB7v6RJD32okUgudOQJq8ViX3zwomb3PnC1Q71BFGYsEFDDyUz/T7XkM7jvYfFJ1pHc/
- AmuxCZuK5oRO7DEDKTrRMR9VMQ7OmqMmzI89c7j5sFwE6R1N9uld+dwvCouA9Z3gmuLU
- T8fesIEp89VMvRuEayGAzA5kmHKdjOhqbfuNa2YUUGdjOEosiUJ0uuvaZpCEEkAuZjqo Kw== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qg5mprer1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 May 2023 10:22:55 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 34AAMtTd027369
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 May 2023 10:22:55 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 10 May 2023 03:22:49 -0700
-Date: Wed, 10 May 2023 15:52:45 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <mturquette@baylibre.com>,
-        <sboyd@kernel.org>, <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v11 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
-Message-ID: <20230510102244.GA21530@varda-linux.qualcomm.com>
-References: <cover.1683630932.git.quic_varada@quicinc.com>
- <42bf6244582d6208f51db1a9299fe1c8afab4e14.1683630932.git.quic_varada@quicinc.com>
- <CAA8EJpqkSNzx=73JS1Csw+ivVovhrFeM0R5j2tpruEfNqvT48Q@mail.gmail.com>
+	id 1pwkRf-006JEz-0O;
+	Wed, 10 May 2023 14:05:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fYShYMqbuaiTOnJireJhDPZMp909XxkGQRLsI4PxPd5DvxvDGjjK0bq4gHYkSsoKJCQuFGoRXO6rE/HDdV4TZ+F57Nlq4rooVtjBxM8jfgt9YWbg09tgYrdm5eu/iIQBqnSIhOjPXwHKUz/0j/mkLLRcvadyakBdWl7UjL8XGYkMYdXX20U9a4Qzh6rBwYVi9vgfzCfKT3qTftXrpjs2odu4sj8mH2nfGESsdgcJCWViv4ptqa9WjLJltLD5UbPwYrLWoV4AV/0tdS2ZW6ureqJMto5dpwhQT3U8RxFwMK+GbprUBxLORvoyBZkN1FHwxIbfdWjY9Ql1IpMlx8lkow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=FpZ8mIMbagpHr+SmuoP92YIIfhaSGoVJyzZWWHbCPko=;
+ b=Hvojqe4g77tUXNV//BFrfk+/o6JyA5Gj66VX++mF96vnXoNgHo4WfuOfoXjoAtisRbvXd720wR+4ZG4bWp5AXwOnztDdqhWwFUFtdl8LvXfbC8xnNNz19FW+lrbgpm2F2GcoXxAesc93qruH3RkVXzcoQOFOqX+LFkrM3S1icVyYkSimi1GwhpRCQktW7svrzP6p81XvLwfo9FLfek/MHVi+F/1SMhAFKWjuH0GoWP3JJrBTPw9Az3/1ZLhh85TW5zlhN3sgGT3hBPX+ByqLk79whBOalRgxAACbR+OG9nEZIitBw5CnHP7+tyfHjhgiUII2v6OlnWcyFpqRr2LHig==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FpZ8mIMbagpHr+SmuoP92YIIfhaSGoVJyzZWWHbCPko=;
+ b=EyG291+8bgkXEc3354lU+40cjWbvOPrRZb0OISm94YXolXmTGdNHb4MaUGS3AkOZlXWs3lR6lusq7N1WvFdoof25vvJV7mvs9RF+lw67wByPJbXz8thmK+K0+4Kn6SGDaPaf/LF3U7PcSRJYSzNcLCp5+PdNJAfqBdGR3SmStzk=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
+ by AM8PR04MB7379.eurprd04.prod.outlook.com (2603:10a6:20b:1c4::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.18; Wed, 10 May
+ 2023 14:05:24 +0000
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::bcdd:75c9:176c:39ed]) by AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::bcdd:75c9:176c:39ed%4]) with mapi id 15.20.6363.033; Wed, 10 May 2023
+ 14:05:23 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	imx@lists.linux.dev,
+	fushi.peng@nxp.com
+Subject: [PATCH v3 1/2] phy: cadence: salvo: Add cdns,usb2-disconnect-threshold-microvolt property
+Date: Wed, 10 May 2023 10:05:03 -0400
+Message-Id: <20230510140504.2164565-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SJ0PR03CA0235.namprd03.prod.outlook.com
+ (2603:10b6:a03:39f::30) To AM6PR04MB4838.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4::16)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJpqkSNzx=73JS1Csw+ivVovhrFeM0R5j2tpruEfNqvT48Q@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: n9j7NvPT3oQR1Gs-DzZ4KCoQp_4YgHjt
-X-Proofpoint-GUID: n9j7NvPT3oQR1Gs-DzZ4KCoQp_4YgHjt
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-10_04,2023-05-05_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
- priorityscore=1501 phishscore=0 mlxlogscore=999 clxscore=1015
- suspectscore=0 malwarescore=0 mlxscore=0 adultscore=0 lowpriorityscore=0
- impostorscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2304280000 definitions=main-2305100081
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AM8PR04MB7379:EE_
+X-MS-Office365-Filtering-Correlation-Id: a76def96-6d79-400d-ce22-08db515f991c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	PWMFvgLEQnj8rgNhXL+bqqura0d1luGWLQI7ILX5miRveuYZiU9XUkosmafqfdc29tYu2qG7NZQT2bid+pJOHq3F8QXfTROhKB4tRacVnDjFH0BZMfdb0u0nb2ElsuZf8WKFnJiJ/1ufKcVgLOT40EwzD2p3xkW+dHbpsbo/BGGbBCHatiQvBkoLro4Tn3TMGk+rEP3GJ+1aqKLYIw03xcIc0AkgODK8Y8aH/A82DnH8ss5Zy6OmMr9Xqb8pde6eKjoc0aQfBsvu//lMg0CmXD1iDYb8Q2CHRNJVjziXZb0AZEKfpHzbmI9usN6dRM6DfAuZie8l8jPdlfQhi3rCXv95sCrcmXvbGKTqXmKLvVa0YiYB2GLDQ9m4ySpE2LyH5MWYTR3ATrRl7A6zEyVGJInLVjD+TB3cSYSGZmHjG7YgFfIjukXkUIO45NsrDUW0aXeJskJM4aq9tIzv8/luXG4QPUvZjxdzzzcT0hqOvFZbrhwJoulaPCZFG5eBtG5EHmghjjm3HMfS4rg7uLvIXvkU84sNvb1FzlzTB6bQqIn9eFyK8b5Hsk9sXnDRXkwJSIjXlrziUIzEpa2WoyfOe2hk73bKr9jwArlKSQTgGeSc22FN2hYfWRRqMMnmEFKTBPlZdXP0MwODhU9sfDp5kA==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(366004)(136003)(346002)(396003)(39860400002)(376002)(451199021)(5660300002)(7416002)(8676002)(8936002)(41300700001)(316002)(6636002)(66476007)(66556008)(83380400001)(66946007)(36756003)(6512007)(6506007)(478600001)(1076003)(186003)(6486002)(6666004)(52116002)(26005)(2906002)(38100700002)(38350700002)(86362001)(2616005)(921005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?VpiU6PT1Fd8kyDgKAjKB9iO6RgmGloKyLDHjpWZOLhpWm/OpWXMXfCLuryK+?=
+ =?us-ascii?Q?7juezvgN0HWZTol5a2dl952o2cI8e2jAYt1EMDgYrQRD91ME81qtSfhlOS8O?=
+ =?us-ascii?Q?gT29WbijzsPOLaehzzzP8FTa+Lj9t+4EyR6P2auCBlcePFIA4pk1bx8TwHA0?=
+ =?us-ascii?Q?DHHYPwldhyo6y+zCDnFOSPYfkileY2KK+tlYvLvkbS2+JbJEWecRWS4fCgWS?=
+ =?us-ascii?Q?xSug1g8/qnSW+D8xe+/J5n7K467f1hvkZ6ISlN+BlwWf1UEBn8V5o7Wd4p76?=
+ =?us-ascii?Q?8rYMXS96sXKrdfU3wMmr/WS9YvOMUYqTgJaUsmveFKnS6U19z63+kvYfgZTo?=
+ =?us-ascii?Q?/q9/X8oC/QAZ3oOLWSrR1HWCi1F8+c2gzAxEBQXfnkv3IskfCGPq2XMGb7kc?=
+ =?us-ascii?Q?ICQXIicedg/Bc4ylOEqAh2NHZcgQxWIsaXwTy/jfr0q8/8HR+RBUHKEUrz6o?=
+ =?us-ascii?Q?gOUqtAzr9vob/5ZxoRT9uAOXsFqkrV0n4xCKcHiW10A7uIfuTDKMbYdMxdN8?=
+ =?us-ascii?Q?lIncJ85HRWFApiaHPc18wPy0PhXKTnjGZU6GZ2pAmnt3pTfefFYu397ccBnw?=
+ =?us-ascii?Q?4x4QEabW1qAlU5ZGHXLdaWO2aqBQOb+hLd1infSSVEQITJmoiIXk5Q9eIn2X?=
+ =?us-ascii?Q?zLSGmCX+E0R5dy+sk42FlHILWZq6B8s5lVpBPqgdIhzEIc3pTDY1EC0Lo5ce?=
+ =?us-ascii?Q?Zfdiny/rTRl5T7J9TDElNi/lJSI0c+wTrS14pha846wEsIA/WP5nTU4vTRyU?=
+ =?us-ascii?Q?8LSTowwdMAffydm6IrTgXWtYjeeU9QdKDActFmF+S8elxt9viiX5FXQ+jyHc?=
+ =?us-ascii?Q?FzOvr1Pgt0ZU7S9+PfkL8vgqbXxIdOEXE06sL2myHBnPEA5cQiVcIYOKEsei?=
+ =?us-ascii?Q?6U+eskgcZqSnhPPtDoaHyBJV3jWf62E5ne3TTUsDuLNBcqEEAmAET25oXGaR?=
+ =?us-ascii?Q?YpJECfcH2QVlH/hu7rOtnSQuAD2/lTNw3XZGaG+/NHmSTYGY7053Hrvq57Kc?=
+ =?us-ascii?Q?KgomOwPVcR2vTHWOHXVC8/KWKOuMmB2pRksMIK8HnMT/ayidx1IBBgUiPbfE?=
+ =?us-ascii?Q?wfnKjxxl49MEYnXlN8ku3Tzcq6qUIJCHJ/W/iDaREYaSWYgpNhrKOBfb72dh?=
+ =?us-ascii?Q?Yis7du86YqD5BxiEpM6hc8ZC4gAUpxyR2o2Sq4xdxaaanw7izDT7QH+haJmm?=
+ =?us-ascii?Q?4tPq89F3XtILESMLYJvom/XJfzQhhwfe58xsz5k+a56tAwKGEB/N1bsd4NZZ?=
+ =?us-ascii?Q?3jTMs1LM7H4tcM8110+3QhI1F7g86+X7aLVVWzlP8IQsGsHV1Z0OqYVVIrdr?=
+ =?us-ascii?Q?P6OSd8PZmQVxJwDv9jofGV64dVfD76v5t+kpK7qYGPPuJ1R3YfUrSorJSlJE?=
+ =?us-ascii?Q?jtHESTIonOqdlpsgjAfdQ8y6dm3MqTqexRDw41m4h0VLehq5v8udoHFf1M87?=
+ =?us-ascii?Q?K+wp9dWPhF0+yoIGbsiLYno5SwLjnl2F/vI3ARid1dRU+/CMsJWoi6axjEbC?=
+ =?us-ascii?Q?7HycJmNYCM78AdBt2px7UYH6Nq16g8G1XpsTPDrpVHArhZTdYMW1azXzgUX1?=
+ =?us-ascii?Q?lEPBFYns7vWdlCyIV64=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a76def96-6d79-400d-ce22-08db515f991c
+X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 May 2023 14:05:23.7609
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: LVXPNL5VwlgqmChMOc8d/Xvo/JS0lsLt2KCusLPYFQW+4wjkJp/+p8wYprcnK8Pzohlb58obRptweqKk1cGjFg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7379
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230510_032307_133955_6CE1F8C7 
-X-CRM114-Status: GOOD (  22.33  )
+X-CRM114-CacheID: sfid-20230510_070531_245519_22C65B09 
+X-CRM114-Status: GOOD (  14.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,63 +139,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 09, 2023 at 04:08:59PM +0300, Dmitry Baryshkov wrote:
-> On Tue, 9 May 2023 at 14:56, Varadarajan Narayanan
-> <quic_varada@quicinc.com> wrote:
-> >
-> > Add LDO regulator node
-> >
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> >  Changes in v10:
-> >         - Add LDO regulator node
-> > ---
-> >  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
-> >  1 file changed, 7 insertions(+)
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->
-> Minor question below:
->
-> >
-> > diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > index bdc1434..1f5d14f 100644
-> > --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > @@ -60,6 +60,13 @@
-> >                         regulator-min-microvolt = <725000>;
-> >                         regulator-max-microvolt = <1075000>;
-> >                 };
-> > +
-> > +               mp5496_l2: l2 {
-> > +                       regulator-min-microvolt = <1800000>;
-> > +                       regulator-max-microvolt = <1800000>;
-> > +                       regulator-boot-on;
-> > +                       regulator-always-on;
->
-> This usually points out that there are other users which are not yet
-> enabled/properly specified. What users are there for this supply which
-> demand it to be always on?
+Add cdns,usb2-disconnect-threshold-microvolt property to address fake USB
+disconnection issue during enumeration or suspend state for difference
+platform.
 
-The 1.8v rail is used by PCIe PHY, PLL for Ethernet SerDes
-interface and PLLs that generate SoC clocks. The voting for this
-rail is managed by the RPM f/w.
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+Change from v2 to v3
+- add cdns prefix
+Change from v1 to v2
+- remove empty change before #include 
+- Remove dts change from patch
 
-Thanks
-Varada
+ drivers/phy/cadence/phy-cadence-salvo.c | 29 +++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-> > +               };
-> >         };
-> >  };
-> >
-> > --
-> > 2.7.4
-> >
->
->
-> --
-> With best wishes
-> Dmitry
+diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
+index 23be27a747a9..ab7eca515059 100644
+--- a/drivers/phy/cadence/phy-cadence-salvo.c
++++ b/drivers/phy/cadence/phy-cadence-salvo.c
+@@ -6,6 +6,7 @@
+  * Copyright (c) 2019-2020 NXP
+  */
+ 
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
+@@ -91,9 +92,19 @@
+ 
+ /* USB2 PHY register definition */
+ #define UTMI_REG15				0xaf
++#define UTMI_AFE_RX_REG0			0x0d
+ #define UTMI_AFE_RX_REG5			0x12
+ #define UTMI_AFE_BC_REG4			0x29
+ 
++/* Align UTMI_AFE_RX_REG0 bit[7:6] define */
++enum usb2_disconn_threshold {
++	USB2_DISCONN_THRESHOLD_575 = 0x0,
++	USB2_DISCONN_THRESHOLD_610 = 0x1,
++	USB2_DISCONN_THRESHOLD_645 = 0x3,
++};
++
++#define RX_USB2_DISCONN_MASK			GENMASK(7, 6)
++
+ /* TB_ADDR_TX_RCVDETSC_CTRL */
+ #define RXDET_IN_P3_32KHZ			BIT(0)
+ /*
+@@ -125,6 +136,7 @@ struct cdns_salvo_phy {
+ 	struct clk *clk;
+ 	void __iomem *base;
+ 	struct cdns_salvo_data *data;
++	enum usb2_disconn_threshold usb2_disconn;
+ };
+ 
+ static const struct of_device_id cdns_salvo_phy_of_match[];
+@@ -261,6 +273,12 @@ static int cdns_salvo_phy_init(struct phy *phy)
+ 
+ 	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG5,
+ 			 0x5);
++
++	value = cdns_salvo_read(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0);
++	value &= ~RX_USB2_DISCONN_MASK;
++	value = FIELD_PREP(RX_USB2_DISCONN_MASK, salvo_phy->usb2_disconn);
++	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0, value);
++
+ 	udelay(10);
+ 
+ 	clk_disable_unprepare(salvo_phy->clk);
+@@ -315,6 +333,7 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct cdns_salvo_phy *salvo_phy;
+ 	struct cdns_salvo_data *data;
++	u32 val;
+ 
+ 	data = (struct cdns_salvo_data *)of_device_get_match_data(dev);
+ 	salvo_phy = devm_kzalloc(dev, sizeof(*salvo_phy), GFP_KERNEL);
+@@ -326,6 +345,16 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(salvo_phy->clk))
+ 		return PTR_ERR(salvo_phy->clk);
+ 
++	if (of_property_read_u32(dev->of_node, "cdns,usb2-disconnect-threshold-microvolt", &val))
++		val = 575;
++
++	if (val < 610)
++		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_575;
++	else if (val < 645)
++		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_610;
++	else
++		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_645;
++
+ 	salvo_phy->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(salvo_phy->base))
+ 		return PTR_ERR(salvo_phy->base);
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
