@@ -4,80 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8E3DC77B7D
-	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 14:11:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37C93C77B7D
+	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 14:41:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGabiTzMYAcgHhZNea9iqSiszQbbxD9xtAU0t5AkP2s=; b=uyrapmkgs/a71e
-	0upiMdhnqyucRy2uFy1sEpGzEk52ZLefcRm/CQHP2bsq4B+muLIHnYFIm/j87qzWwbR8kLsc7KRDC
-	qdFCOLIdDvBMGtd7d8yszf02YRG+WmVIAdsjsYjXc4+bWnKRs3cDETTwLWxC5unC4JiGbiqWRcHi8
-	DLxIFIfCEUtZtDkoDIfppzJbAHjwj/cEx2Zphd9RM5HNdy4Eap2kO9SldH2wQH09iYq8NR32x2ipR
-	WAP8yuCaORbl/qxYvx4ITR6BlEVOMFdTTrv073ecsLodPCa8qm7FMMQh0Cre7nxkjBPgCo8rH7jt9
-	xv5vTbGXdNUlHkTFhsAw==;
+	List-Owner; bh=jaeEXjVmMF7s0mGcVGscMnrdsDObcrwhwmrRSHYBpCw=; b=WxzEbcuIk/HW3q
+	rEXdoDG72hQyLp+d5i86TAVFozC0ePMO/bGFcZcKhRiaokZCDtXsg8S8ZOlFDVOUj/kdpXSzLar8E
+	7YmYdfdHGdrDhS+JJ+Zl1vBAZesNWTUR2go6nT20x+k+aJgfOQSz/npC+W9rGRJpl4Tll/E//IdNX
+	lUbxHNTNFGK9iG6b3RHfi0FjOxcJxouu35bFHhy+C0EPvVJ1u6XNLWiwIV3bjiscIT1LgFWaSSAFD
+	pCKoOIjGhYsPGVTjHnI6qYhxAEBgyDOeVxJ0gyPa5L7FV0BzZYVotYJN7eYq+4KFT4S/A7RX1I21w
+	kPoWChmJyPpHiBNNdg7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwkXe-006K8P-1W;
-	Wed, 10 May 2023 14:11:42 +0000
-Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
+	id 1pwl0T-006O54-2h;
+	Wed, 10 May 2023 14:41:29 +0000
+Received: from rcdn-iport-7.cisco.com ([173.37.86.78])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwkXb-006K6y-1y
+	id 1pwl0Q-006O43-1T
 	for linux-phy@lists.infradead.org;
-	Wed, 10 May 2023 14:11:40 +0000
-Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-b9a6f17f2b6so36037524276.1
-        for <linux-phy@lists.infradead.org>; Wed, 10 May 2023 07:11:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683727895; x=1686319895;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=ABREL4RA4HQkooXBZ4vFWzYroT9eYO8/4h0/bu7hTPg=;
-        b=nJecOsJyqcRvaPT9m6MbM8DDYx5vc8NikACtgnGDBMlsZ7jEUJkdiuqpUXSwJ+VDLR
-         SV8mBBD/MDHq53G/wg7Y67l/cSYGGnu8Z5LWkidbHXZ8v0zSeOCnpwAO0nSQzFXbVY8z
-         fREaKLtEXgrcDSUNKwxcbxQRHq4YrFYpLHlc8TcY4xQEqEyzykC24djuJbI5K5v9Q775
-         05gR4e2Exo5gy8VpID15rkL7IZNqvJfmwHzeIixJ4NxhmP5fM1+neOLV9IfuD+TN6rBJ
-         VR1FKFpkYm6OLaVPBErbw+bW+/4vfdFxt3vDpMvbuBsqA0C41Te1XXj6Ah1IcqKn+/B7
-         46VA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683727895; x=1686319895;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ABREL4RA4HQkooXBZ4vFWzYroT9eYO8/4h0/bu7hTPg=;
-        b=N80vUg8CwqiMvvlCZW/5dbknZXPGVV2/F/JAnkdzmpFaQyCiK3+2V7mNwit5ojbkRD
-         Pb3wG1EBg6c6c0JyriMabw4qZz7ogf6EjOmBe+iHSq7dl6jZuBFGOFuH+4KhC/AUXF/T
-         mPGMMN/Et8TkVQD1URmbVG2jAsgt/XMYj1IH7KzT2Xbv4tiHaT3ma9RstHyJdlJkf5R3
-         Q7sbxfxQFiboc69nl6WelfDhJTQ+vmXFcQvMcsD1uSkJshxSSKpOWS04ILhdmMTCJjTQ
-         RPQ2rQOwxm7Lj6HVaF6LLYQpAynJ2a1F+Kc0CLYDUlYw0ELNDd6k8S7/ioMq5vGZq9h8
-         j+RA==
-X-Gm-Message-State: AC+VfDyJNZSO8PKlJGpNIbypI4FD7VqfszFGNpftTZUg21toioriaxwJ
-	9trpVxEJav9hq7m3/uBkV7otBsHRHgPVeQ1jObcOMg==
-X-Google-Smtp-Source: ACHHUZ6qSFZacUexcQkHcVAJ+XtxS7EGJ0Aso4chPxbPdm4XjwCwQpJtI34WDH2cWrBtoFXh8o5rCwC8gRl71XOUXuU=
-X-Received: by 2002:a25:a87:0:b0:b9e:772f:34bc with SMTP id
- 129-20020a250a87000000b00b9e772f34bcmr21231831ybk.22.1683727894999; Wed, 10
- May 2023 07:11:34 -0700 (PDT)
+	Wed, 10 May 2023 14:41:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=cisco.com; i=@cisco.com; l=709; q=dns/txt; s=iport;
+  t=1683729686; x=1684939286;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=7RnPl13OyYFSy+YWgrlrfVWl2glDCa70vHjcwnO1YZw=;
+  b=Qa1d3w3oUbELF4Qzr+eUvO6ZgzHNTeRaBWHQTUvSd0Ym95bDz6VaDTKI
+   X3Lg5R0VON4+Imh5zPzgt9Xpj8mTLV4ZUlfDFhI/vMWfLYehID5WxH9Nr
+   YWzSnXsWj9Jt9xj16tQ8648pjoQat+00qgAHvmTY2ZoRdcN+dlSZjB71I
+   0=;
+X-IronPort-AV: E=Sophos;i="5.99,264,1677542400"; 
+   d="scan'208";a="55053121"
+Received: from rcdn-core-12.cisco.com ([173.37.93.148])
+  by rcdn-iport-7.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA; 10 May 2023 14:41:17 +0000
+Received: from sjc-ads-7449.cisco.com (sjc-ads-7449.cisco.com [10.30.220.234])
+	by rcdn-core-12.cisco.com (8.15.2/8.15.2) with ESMTPS id 34AEfG3E001846
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Wed, 10 May 2023 14:41:17 GMT
+Received: by sjc-ads-7449.cisco.com (Postfix, from userid 1777032)
+	id 81DD2CCD0B1; Wed, 10 May 2023 07:41:16 -0700 (PDT)
+From: Marcin Wierzbicki <mawierzb@cisco.com>
+To: rogerq@kernel.org
+Cc: mawierzb@cisco.com, bwawrzyn@cisco.com, danielwa@cisco.com,
+        kishon@kernel.org, lars@metafoo.de, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, olicht@cisco.com, sjakhade@cadence.com,
+        u.kleine-koenig@pengutronix.de, vkoul@kernel.org,
+        xe-linux-external@cisco.com
+Subject: Re: [PATCH v2] phy: cadence: Sierra: Add single link SGMII register configuration
+Date: Wed, 10 May 2023 14:40:56 +0000
+Message-Id: <20230510144056.3648269-1-mawierzb@cisco.com>
+X-Mailer: git-send-email 2.28.0
+In-Reply-To: <20230508160142.2489365-1-mawierzb@cisco.com>
+References: <20230508160142.2489365-1-mawierzb@cisco.com>
 MIME-Version: 1.0
-References: <cover.1683630932.git.quic_varada@quicinc.com> <42bf6244582d6208f51db1a9299fe1c8afab4e14.1683630932.git.quic_varada@quicinc.com>
- <CAA8EJpqkSNzx=73JS1Csw+ivVovhrFeM0R5j2tpruEfNqvT48Q@mail.gmail.com> <20230510102244.GA21530@varda-linux.qualcomm.com>
-In-Reply-To: <20230510102244.GA21530@varda-linux.qualcomm.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 10 May 2023 17:11:24 +0300
-Message-ID: <CAA8EJppgkHREJrBzhSDn9VT--RRcpcxMYvTWoYfkXkv4XFtK6Q@mail.gmail.com>
-Subject: Re: [PATCH v11 8/9] arm64: dts: qcom: ipq9574: Add LDO regulator node
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
-	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
-	gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org, 
-	quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-clk@vger.kernel.org
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-Outbound-SMTP-Client: 10.30.220.234, sjc-ads-7449.cisco.com
+X-Outbound-Node: rcdn-core-12.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230510_071139_648100_D07402D3 
-X-CRM114-Status: GOOD (  22.13  )
+X-CRM114-CacheID: sfid-20230510_074126_707397_3D0823EE 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,77 +84,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 10 May 2023 at 13:23, Varadarajan Narayanan
-<quic_varada@quicinc.com> wrote:
->
-> On Tue, May 09, 2023 at 04:08:59PM +0300, Dmitry Baryshkov wrote:
-> > On Tue, 9 May 2023 at 14:56, Varadarajan Narayanan
-> > <quic_varada@quicinc.com> wrote:
-> > >
-> > > Add LDO regulator node
-> > >
-> > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > > ---
-> > >  Changes in v10:
-> > >         - Add LDO regulator node
-> > > ---
-> > >  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 7 +++++++
-> > >  1 file changed, 7 insertions(+)
-> >
-> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> >
-> > Minor question below:
-> >
-> > >
-> > > diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > index bdc1434..1f5d14f 100644
-> > > --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> > > @@ -60,6 +60,13 @@
-> > >                         regulator-min-microvolt = <725000>;
-> > >                         regulator-max-microvolt = <1075000>;
-> > >                 };
-> > > +
-> > > +               mp5496_l2: l2 {
-> > > +                       regulator-min-microvolt = <1800000>;
-> > > +                       regulator-max-microvolt = <1800000>;
-> > > +                       regulator-boot-on;
-> > > +                       regulator-always-on;
-> >
-> > This usually points out that there are other users which are not yet
-> > enabled/properly specified. What users are there for this supply which
-> > demand it to be always on?
->
-> The 1.8v rail is used by PCIe PHY, PLL for Ethernet SerDes
-> interface and PLLs that generate SoC clocks. The voting for this
-> rail is managed by the RPM f/w.
+Hello,
 
-Then I'm looking forward to seeing the patch which declares all the
-actual users of the lane. Please do not declare power lanes as
-boot-on/always-on unless there is a strong reason for doing it.
+> On 08/05/2023 19:01, Marcin Wierzbicki wrote:
+>> Add single link SGMII register configuration for no SSC for
+>> cdns,sierra-phy-t0 compatibility string.
+>> The configuration is based on Sierra Programmer's Guide and validated
+>> in Cisco CrayAR SoC.
+>>
+>> Co-developed-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+>> Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+>> Signed-off-by: Marcin Wierzbicki <mawierzb@cisco.com>
+>> Change-Id: Id4c093a1bbf409f3176736b5326854a1396391c1
+>> ---
 
->
-> Thanks
-> Varada
->
-> > > +               };
-> > >         };
-> > >  };
-> > >
-> > > --
-> > > 2.7.4
-> > >
-> >
-> >
-> > --
-> > With best wishes
-> > Dmitry
+> What changed in v2?
 
+This is actually a rebased version of the v1 (in the meantime there have been some SGMII related changes). Should have mentioned that before.
 
-
--- 
-With best wishes
-Dmitry
+Best regards,
+Marcin
 
 -- 
 linux-phy mailing list
