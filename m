@@ -4,65 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B87E4C77B7D
-	for <linux-phy@archiver.kernel.org>; Wed, 10 May 2023 20:51:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EEE3C77B7F
+	for <linux-phy@archiver.kernel.org>; Thu, 11 May 2023 09:18:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gIRWAn383DzkI78XKnpwlZLnly++H+jo4KzHjZJQ7ZY=; b=CYI8p7LlrLn971
-	VN4Pc5eU60ABMtDiZlMgiAdBQcDUN00JVZvFXaX1TpnkaMgMkIAnzHcghaJJmoR3iQmi1b+H/I4tX
-	D0LY0GLvBDqSFarmUCjNbTHFBcUKWew9DPPT/tXtuZ8vpB1C28HbsVMFgNP3yXkAlyKyq3RQzb5v6
-	q+6mSNOFOJ7ni0CYjqF+X+3BGvjxYRqPYUrUrTa8w+0aOnLdsuNo86hnizCsSNNkbEplv3FkhlZGq
-	9raP3WkzyRgFq1BGySLXY32lXyqv2qfst6h7S9l2KR4SpgBsx9UFv+58u7g3Wu+9z2i9u5KoBNgFe
-	jDRT7TKJoRIo3HtiWcMw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bTEcMeZXzbTpypRbEvuynlU2DZV4Vjd0Iz1qYiQBlvg=; b=j9My6H+4fUz1dq
+	inHkpc7KkShKpy2JL3cv+1tqHFqP4iUXYrDF6ljs+b31mj9+/Rj3GG0WuSZ3QAQZfBTZkJ7jh1AjO
+	p78j9QJ8jHHeAuKWE+VRxQVSA4TBLQqbQ61JW7bSQHGiANm2M+DvD8amsrq+VoL2DZhbLM3YXCRxU
+	HuNhjK6+Ddr1CDaj5F6EveAOI5Ubn1N/B3O/1DgjeKbI0NtNkt4HhKY2BGZXikuEaqZl5hvCi/wgx
+	A/hrQNgLe9aZKcyidBOU01vosKr4OOkfxjSM5OlLBeP6oJPmzaqFAGREWHWlNskH3vqHE+0VvsmsI
+	Zlnq2j3pKy0ACU0rJGIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwqmF-006zKN-0h;
-	Wed, 10 May 2023 20:51:11 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1px2Rp-008KUV-2G;
+	Thu, 11 May 2023 09:18:53 +0000
+Received: from mail-ua1-x935.google.com ([2607:f8b0:4864:20::935])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pwqmA-006zI1-2W;
-	Wed, 10 May 2023 20:51:08 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 564476407C;
-	Wed, 10 May 2023 20:51:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93875C433D2;
-	Wed, 10 May 2023 20:51:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683751865;
-	bh=6sGfIeAH+EYa3fOLxgPHH2fMnwBuBPM3BpmYiynwUQo=;
-	h=From:To:Cc:Subject:Date:From;
-	b=YOcOrsjBNH+lCn+8tb/UHG6RN76g7/BR3FTsN1WmQeQD79LZIJaJNt0i1ASs6egoc
-	 lY8wbnETnpJzmP3qILBAbHvNnH4bqBTbYhnKdMdxHWEFMoPqF6CCUrcA92B9Nr9jfm
-	 fZSuRGBoxnG7cEjE+Suya8Z884+3L/tkBDRspPSstcg+Wg+eoCjMPl2MOit+1SDRYQ
-	 TvHGxf6GIVGr+iJa1m8pzOYPqGWVvYBlRtuMA9EIyWxjrA6vTVeSL0//LvrfkruNKg
-	 iFgParFUyIB1bscEQ8TP8kycl+qiiWNbPAb1ZBZoXg5tuCTGWlfSvSlYhd5mEI7mma
-	 Y0V5QbF1KA2Fg==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Alain Volmat <avolmat@me.com>,
-	Patrice Chotard <patrice.chotard@foss.st.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Sasha Levin <sashal@kernel.org>,
-	kishon@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 4.14 1/2] phy: st: miphy28lp: use _poll_timeout functions for waits
-Date: Wed, 10 May 2023 16:50:53 -0400
-Message-Id: <20230510205054.105151-1-sashal@kernel.org>
-X-Mailer: git-send-email 2.39.2
+	id 1px2Rl-008KRr-31
+	for linux-phy@lists.infradead.org;
+	Thu, 11 May 2023 09:18:51 +0000
+Received: by mail-ua1-x935.google.com with SMTP id a1e0cc1a2514c-77d0160ed4cso2219568241.0
+        for <linux-phy@lists.infradead.org>; Thu, 11 May 2023 02:18:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1683796727; x=1686388727;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=mCpJk3R8UEUc900fWaZ36e4XkCAv/PqWqpOGayqH3do=;
+        b=IJ2xCqITqQxYd2j21guIc8CZ8a3qzOQddlNmBPpwRr3wVfJWaXyJI/ZKssRhmcOTgA
+         ilyj2rg2fCrteFz+fjY/juhlucDO3hu6UGVP/mhHZ/5db2Ph3NG2SEHP5q6avENqPQEw
+         vd7GdnA5jMAlyOsQA09qOdBp7bqPEQ/s8ZXp8QFwSB7RC/I3DqQbtiDdGq6uemVS2Ld0
+         x0bGAOvDLv5PbDm8I88MTMA4AP3yIQlfKTU+4zyo27lkONLtPWZOXMYYdHg9qekj+JYY
+         lSKV46S0nCXogvNJCBGFhU8sEupT0DaXqxj9jwiG6qCwOmNnPzyk2uadn5QFM2mO4lxW
+         LegQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1683796727; x=1686388727;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=mCpJk3R8UEUc900fWaZ36e4XkCAv/PqWqpOGayqH3do=;
+        b=X5eZRpO4RlLC1R8n6AIKMMO6FhASJnY/yw0JN0S1b1cnf9AGhxsZ9o2cwdop7S6vqb
+         6aNp7TFO4pEYVYQm1u4j/ArxprVeF5vWZpUj/SYQsA4UTj6Z7O+nnbtqWKYgV2mle9Yg
+         OagLRPbIVL3122ZPmuJuvpFT1mSV5M0JUGFLlrd4irMOdk8QTytfDaaHWd58d1+Afy3/
+         U6xP6nKUE9bXWUYQps9njytq9znFo2vSOYBG39fbKJJ3mMqw9oIc4UADJpyf6Vp1VYml
+         JWKWGGV7LN82jpzpv4ySOYtIuA18hLYAPn/DKkIK8yHY7XYhDl3iT/7T0qAGrXdriJ0t
+         +erA==
+X-Gm-Message-State: AC+VfDw1z8cWihVVlCxBAua2U1QRHqtvYJQA6lVqXQ6HSV67cDg1Nfv6
+	W2W7z7nJT8iPQKI2/cERZjX6sG2jWdxMBnm1Add6JQ==
+X-Google-Smtp-Source: ACHHUZ7PfcbhhIISYu9xCWNbAAg7XKAZcsN35LL5BB55uAZP1vndrSeFKFLrjV9j0Mzf8/9C95DuBCkC6LahVX2mBwE=
+X-Received: by 2002:a05:6102:2857:b0:436:158:cf6c with SMTP id
+ az23-20020a056102285700b004360158cf6cmr4794491vsb.6.1683796727674; Thu, 11
+ May 2023 02:18:47 -0700 (PDT)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <20230413160607.4128315-1-sean.anderson@seco.com> <20230413160607.4128315-4-sean.anderson@seco.com>
+In-Reply-To: <20230413160607.4128315-4-sean.anderson@seco.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Thu, 11 May 2023 11:18:36 +0200
+Message-ID: <CAMRc=Mft9a3PNo78jiSGfKaZDhAkpPTrcTfarcr=tSmLWzj-Qw@mail.gmail.com>
+Subject: Re: [PATCH v14 03/15] dt-bindings: Convert gpio-mmio to yaml
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
+	Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org, 
+	Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org, 
+	Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org, 
+	Bagas Sanjaya <bagasdotme@gmail.com>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Ioana Ciornei <ioana.ciornei@nxp.com>, 
+	Linus Walleij <linus.walleij@linaro.org>, =?UTF-8?Q?Fern=C3=A1ndez_Rojas?= <noltari@gmail.com>, 
+	Jonas Gorski <jonas.gorski@gmail.com>, linux-gpio@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230510_135106_897656_B2A6CD83 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20230511_021849_974842_086D1D4B 
+X-CRM114-Status: GOOD (  13.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,121 +89,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Alain Volmat <avolmat@me.com>
-
-[ Upstream commit e3be4dd2c8d8aabfd2c3127d0e2e5754d3ae82d6 ]
-
-This commit introduces _poll_timeout functions usage instead of
-wait loops waiting for a status bit.
-
-Signed-off-by: Alain Volmat <avolmat@me.com>
-Reviewed-by: Patrice Chotard <patrice.chotard@foss.st.com>
-Link: https://lore.kernel.org/r/20230210224309.98452-1-avolmat@me.com
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/phy/st/phy-miphy28lp.c | 42 ++++++++--------------------------
- 1 file changed, 10 insertions(+), 32 deletions(-)
-
-diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
-index 213e2e15339c4..fe23432e5b1a6 100644
---- a/drivers/phy/st/phy-miphy28lp.c
-+++ b/drivers/phy/st/phy-miphy28lp.c
-@@ -13,6 +13,7 @@
- 
- #include <linux/platform_device.h>
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/of.h>
-@@ -488,19 +489,11 @@ static inline void miphy28lp_pcie_config_gen(struct miphy28lp_phy *miphy_phy)
- 
- static inline int miphy28lp_wait_compensation(struct miphy28lp_phy *miphy_phy)
- {
--	unsigned long finish = jiffies + 5 * HZ;
- 	u8 val;
- 
- 	/* Waiting for Compensation to complete */
--	do {
--		val = readb_relaxed(miphy_phy->base + MIPHY_COMP_FSM_6);
--
--		if (time_after_eq(jiffies, finish))
--			return -EBUSY;
--		cpu_relax();
--	} while (!(val & COMP_DONE));
--
--	return 0;
-+	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_COMP_FSM_6,
-+					  val, val & COMP_DONE, 1, 5 * USEC_PER_SEC);
- }
- 
- 
-@@ -809,7 +802,6 @@ static inline void miphy28lp_configure_usb3(struct miphy28lp_phy *miphy_phy)
- 
- static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
- {
--	unsigned long finish = jiffies + 5 * HZ;
- 	u8 mask = HFC_PLL | HFC_RDY;
- 	u8 val;
- 
-@@ -820,21 +812,14 @@ static inline int miphy_is_ready(struct miphy28lp_phy *miphy_phy)
- 	if (miphy_phy->type == PHY_TYPE_SATA)
- 		mask |= PHY_RDY;
- 
--	do {
--		val = readb_relaxed(miphy_phy->base + MIPHY_STATUS_1);
--		if ((val & mask) != mask)
--			cpu_relax();
--		else
--			return 0;
--	} while (!time_after_eq(jiffies, finish));
--
--	return -EBUSY;
-+	return readb_relaxed_poll_timeout(miphy_phy->base + MIPHY_STATUS_1,
-+					  val, (val & mask) == mask, 1,
-+					  5 * USEC_PER_SEC);
- }
- 
- static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
- {
- 	struct miphy28lp_dev *miphy_dev = miphy_phy->phydev;
--	unsigned long finish = jiffies + 5 * HZ;
- 	u32 val;
- 
- 	if (!miphy_phy->osc_rdy)
-@@ -843,17 +828,10 @@ static int miphy_osc_is_ready(struct miphy28lp_phy *miphy_phy)
- 	if (!miphy_phy->syscfg_reg[SYSCFG_STATUS])
- 		return -EINVAL;
- 
--	do {
--		regmap_read(miphy_dev->regmap,
--				miphy_phy->syscfg_reg[SYSCFG_STATUS], &val);
--
--		if ((val & MIPHY_OSC_RDY) != MIPHY_OSC_RDY)
--			cpu_relax();
--		else
--			return 0;
--	} while (!time_after_eq(jiffies, finish));
--
--	return -EBUSY;
-+	return regmap_read_poll_timeout(miphy_dev->regmap,
-+					miphy_phy->syscfg_reg[SYSCFG_STATUS],
-+					val, val & MIPHY_OSC_RDY, 1,
-+					5 * USEC_PER_SEC);
- }
- 
- static int miphy28lp_get_resource_byname(struct device_node *child,
--- 
-2.39.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBBcHIgMTMsIDIwMjMgYXQgNjowNuKAr1BNIFNlYW4gQW5kZXJzb24gPHNlYW4uYW5k
+ZXJzb25Ac2Vjby5jb20+IHdyb3RlOgo+Cj4gVGhpcyBpcyBhIGdlbmVyaWMgYmluZGluZyBmb3Ig
+c2ltcGxlIE1NSU8gR1BJTyBjb250cm9sbGVycy4gQWx0aG91Z2ggd2UKPiBoYXZlIGEgc2luZ2xl
+IGRyaXZlciBmb3IgdGhlc2UgY29udHJvbGxlcnMsIHRoZXkgd2VyZSBwcmV2aW91c2x5IHNwcmVh
+ZAo+IG92ZXIgc2V2ZXJhbCBmaWxlcy4gQ29uc29saWRhdGUgdGhlbS4gVGhlIHJlZ2lzdGVyIGRl
+c2NyaXB0aW9ucyBhcmUKPiBhZGFwdGVkIGZyb20gdGhlIGNvbW1lbnRzIGluIHRoZSBzb3VyY2Uu
+IFRoZXJlIGlzIG5vIHNldCBvcmRlciBmb3IgdGhlCj4gcmVnaXN0ZXJzLCBhbmQgc29tZSByZWdp
+c3RlcnMgbWF5IGJlIG9taXR0ZWQuIEJlY2F1c2Ugb2YgdGhpcywgcmVnLW5hbWVzCj4gaXMgbWFu
+ZGF0b3J5LCBhbmQgbm8gb3JkZXIgaXMgc3BlY2lmaWVkLgo+Cj4gUmVuYW1lIGJyY20sYmNtNjM0
+NS1ncGlvIHRvIGJyY20sYmNtNjN4eC1ncGlvIHRvIHJlZmxlY3QgdGhhdCBiY202MzQ1Cj4gaGFz
+IG1vdmVkLgo+Cj4gU2lnbmVkLW9mZi1ieTogU2VhbiBBbmRlcnNvbiA8c2Vhbi5hbmRlcnNvbkBz
+ZWNvLmNvbT4KPiBSZXZpZXdlZC1ieTogTGludXMgV2FsbGVpaiA8bGludXMud2FsbGVpakBsaW5h
+cm8ub3JnPgo+IC0tLQo+IExpbnVzIG9yIEJhcnRvc3osIGZlZWwgZnJlZSB0byBwaWNrIHRoaXMg
+dXAgYXMgdGhlIHJlc3Qgb2YgdGhpcyBzZXJpZXMKPiBtYXkgbm90IGJlIG1lcmdlZCBhbnkgdGlt
+ZSBzb29uLgo+CgpBcHBsaWVkLCB0aGFua3MhCgpCYXJ0CgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
