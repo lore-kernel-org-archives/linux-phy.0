@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBBACC77B75
-	for <linux-phy@archiver.kernel.org>; Fri, 12 May 2023 13:27:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BFB2C77B75
+	for <linux-phy@archiver.kernel.org>; Fri, 12 May 2023 13:27:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xZQOqNZgxsJ8dphQu3XUyKYNZszb2b2koYiyYBx/U6Q=; b=lgKjS0y9hSeQ/z
-	SjZXcFp3yatMl3BSuIn5U91J26yxvAs26sKf3tPrIOmKzhBZ8Ssf5bITW8Iy2d8Dz5Vbds053QQMR
-	SCfl3Sak/4SwgvKzD2HzsR46AkFeGFqsTxpPMNEA6DG6YLlK+nDPvli047iDV/gqwcMZEcvx9WlS4
-	qoUDETYor6EuWKGkrgmehibW1nGxFvsmEASj7WfctRvtn+jw4qk2dX49xAZVcd/vEj+DfHrW9WGPR
-	bovGGbf259eJ+rb9Kr6Sypue0/sV6KSeoToLfTOKLdtHrdgoOkTevqBWlrubg4xv93/iCHfpe24Ov
-	xANmqPqr0a3KaoWkTIVw==;
+	List-Owner; bh=Es3BDCUJv5pSqmuRtPulp5uHUPQKpJv/MplK9Mz0ths=; b=BwT9kUHHAKYfpQ
+	XXe73EozoB+DpH+ug/UXJfjL3TDmB2iKgYYcTrtm8QEJAxcSRCJvnAvA1LYcV7JHaB/S+v/p53z6c
+	rWsEwDJMnEMTxlFG/lm8t5HPItu2I/FDtxKjFqmKzzpx3mTVTwlvl9N9KY9Uf4HZ0DgOn+icgA1Ry
+	jKct6KyRvWd0Aghkk5avNsfz4N+caY+iEuj1InXBXrlhxD2SYeiJf0e0W5PPGSb3gR0UNoDzZhcfZ
+	f9Tbl6iEF9HkyqCcAjnqO/pELiGuFmXuygK7Ed8Zbudd47tSWtMp62304uSNw3CZT+JP3LgcQl2gF
+	NcKF98fczqPfu1HoBkYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxSny-00C1eZ-18;
-	Fri, 12 May 2023 13:27:30 +0000
+	id 1pxSo2-00C1fg-0a;
+	Fri, 12 May 2023 13:27:34 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxSnw-00C1d4-2P
+	id 1pxSnx-00C1d4-1L
 	for linux-phy@bombadil.infradead.org;
-	Fri, 12 May 2023 13:27:28 +0000
+	Fri, 12 May 2023 13:27:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=; b=XtGsHWm7IQUdofiUK78KGwhWn6
-	HCu66PIAuCQrnyYKhT32vzv3Ln+TBsM7g/gFLyIR2p04SIQ2CZmO5LMPlxHslLrVQlMb0iuB0eLGu
-	JaLh49KA3U8N6QebWljUHOl8x1VD53FaemqGyDeo+vpgbX4wD3KHfw3KX7llacTHHbZFeq/wzLapa
-	PlG+jEyRP40PIRy4Ze00NSQ2GOueH/rkRNLCS2WMZ50gfeDDV0/OoWmjj2tOFrGlSPasR6exsf+3p
-	7SxzpvWOsn0KwS+Rj9juKzu9Ac1ggmRDmGFEA8u9lhZTBLldu3fspUBa01IqbVB5hRbBeWczPTUHy
-	S0heshSw==;
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	bh=E3Upg3aTXOSykFBuswINw2Ynr/KPWdYMePDYZ0wYPGo=; b=mT4b4n7JPEWXQe//h+Uw7TlI9F
+	lXPOFGUjh27Ca38lKbIXjek6SpCHbrCdwCMPWqidHjH2JgQKVJvIlddMfrAQis6f7L72oSlDLhppJ
+	SxTgiLbpV+aRldNiptiJtYYgTszHa2pt/RVzLRpZwy8t2vE/jk6durG7xNBhNZBJG9i1gs2Es6B8u
+	y6OQ7Kyt1HOaByaAlSgMlGS+EM/arT3oA9dmbjkbvygSLkFuU51eKmWKFOwP7/jff3k8pDxMh7LTR
+	1Z08h4OkbgydVCL2gXBrJc1P3/SJ7Cs7rsNWrFfJbm0bmBsM5ixalVwqhHo4zIgO3t20Y9LL7FALJ
+	uSpOIvXA==;
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pxSZ7-000idH-SC
-	for linux-phy@lists.infradead.org; Fri, 12 May 2023 13:12:13 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f41dceb9d4so70457065e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 12 May 2023 06:12:09 -0700 (PDT)
+	id 1pxSZ7-000idD-D9
+	for linux-phy@lists.infradead.org; Fri, 12 May 2023 13:12:11 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-3075e802738so9024637f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 12 May 2023 06:12:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683897128; x=1686489128;
+        d=linaro.org; s=google; t=1683897126; x=1686489126;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=;
-        b=lpgmCeuxFHaO5PM3wj0Vdck9igzRlYYXCBFUAK6dpnF1ra4nWOu4PoWirWsS+ju1Ij
-         SOx0ldklf7uvM59kgruFdBv+mTz65a5+lXHl3mPzydEOkxyamOvRO2dL5S3xyfBytHQ+
-         NJqywVIz0Pd7nATqSDTH0XJa/IP1h+Obvr48anolsJJwIcNjmwyNWv0O6TeojB+CbUi9
-         MvNlp5wMXSt3q1UQrps2ymAsvju5hvWHPE/2yDGH70slOxiCDJlnZoqXZPM88rZoiyxW
-         2pynMiCG4XHmNUDEsN2CaPco9yFFoWCUFesQMHmrAxlLKJpxQKEzkPT3amuYh35iP2e/
-         pgOw==
+        bh=E3Upg3aTXOSykFBuswINw2Ynr/KPWdYMePDYZ0wYPGo=;
+        b=D18WqcyhsEHteDCWs+WiqPrx7Bfi9Z9vjJLQW9XSPMpl1L05XYddY4gGHzkNGgLYHk
+         +frzBijkWqgPEz1j6GP3+EL3wqWndJDgFiCO0f2Ugd6/EUKZJo2Z3CUBbrwVobVww0AX
+         z3LBTW5FfjrK+ugRkeD4Jn1x7ZKMDVJUZsCnkD6qLLTIzMKeoo4j5K1AqV5wvu4ZGA3u
+         2+4ixIjvhAVoCs6XqBEZkf2Nv1P6CUkC0Jl4bLBYvUps+pGxsI1WqZoxSy0/XraTB1MU
+         J5jqZfzRb5S/UTj/UXJNTxClmha7Pv0UR6wme/its+waC3R3ORMYzsrRMMAPlAE6as8n
+         DJ2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683897128; x=1686489128;
+        d=1e100.net; s=20221208; t=1683897126; x=1686489126;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=;
-        b=D13zPxAvgIhP+12Ulq2ckADBdnTTEWNE9Bfpk09gEg3+X3zTlFCAOJgUW9F1NStUsc
-         slMwvWtyXNqzKZbldd8J0A1JCu2RbJyEm1eeoX/W5fjQTaMLpiPrE7+jPyF1en3Rfq5L
-         LObI63rxGwXDS0Ndl9ngayU3479OOUWSUDdAoI5Gz7ryVAQwdBK8zwhsYwdnApPoRJDY
-         KzM3yJYJI5GkMx0Zt7MLptM2njr3Xclm3w3EZXbLCgE7YOjKAJgPGx2YW+hf2fNQU3eN
-         EVTXzdQ8ZEAMYwRFO+dtWGlj54ViV07pOxoPD0mAdGesRoYBA0qZk10tZym3+PfDSSNu
-         HtHQ==
-X-Gm-Message-State: AC+VfDxD6agurC1H1rzokoXtYKudXrx3HA/VB3Y8cTkfbTz8jh7CAnIN
-	Y/n1QIhOhRd9K7BoGnVgq99Usg==
-X-Google-Smtp-Source: ACHHUZ5ajeuEcq+pQ1v8YtLzwGin+V2lQSPMVsxtvoFAJyNZeACF5t6k0d5SbrpG7IMTgOoIBSr2JQ==
-X-Received: by 2002:adf:f407:0:b0:307:c1cb:425b with SMTP id g7-20020adff407000000b00307c1cb425bmr5975290wro.70.1683897128184;
-        Fri, 12 May 2023 06:12:08 -0700 (PDT)
+        bh=E3Upg3aTXOSykFBuswINw2Ynr/KPWdYMePDYZ0wYPGo=;
+        b=NahKZwP7VSP0WDxpvkIzwS7puzQoIEwEZ2PmlI1wuv/KSPh/I4mr9cYllexk7djv34
+         V/gGZEd4N9RrzyRNQxUH1dHB1albmnMhBFtQ+3ZgOaWX/bP8k+8MCOBtkrj83NKUVhur
+         25HgwUxMIi14TUhj8FdQs3CMz8rxJ3D94qD9xs31s2fG9dL6qBrSlOD99W6IRvm1Lag1
+         m1c5CbDT+bTqRTnthrdFoH9axSiObALY+2VdxI+LUUxAMl43U8WFdbX4XBqvtVKDIBpx
+         pGy/aEM52XwVZyaY+nEEoxMVusib814Ly9w2VHtwqW6B4B+6d/G33R5zw4Jl9PtzRJs+
+         0Gtg==
+X-Gm-Message-State: AC+VfDxS+BgcQgbgzPxU6/tmORLfFzqS/qcv+VZ5NtJk67mfZtvJBLst
+	mWru5w1kDi1nqLBaFh44Y95eyg==
+X-Google-Smtp-Source: ACHHUZ4tGXsd4xDhgDdFc7lEbJoFXvqExD7Gt0l3qykkz0SpblsqEw6QIG1AIvKGoKHKnq1EofVGEQ==
+X-Received: by 2002:adf:fe45:0:b0:307:cf55:a7d8 with SMTP id m5-20020adffe45000000b00307cf55a7d8mr4294187wrs.42.1683897126615;
+        Fri, 12 May 2023 06:12:06 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id v10-20020a5d610a000000b0030647449730sm23461965wrt.74.2023.05.12.06.12.06
+        by smtp.gmail.com with ESMTPSA id v10-20020a5d610a000000b0030647449730sm23461965wrt.74.2023.05.12.06.12.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 May 2023 06:12:07 -0700 (PDT)
+        Fri, 12 May 2023 06:12:06 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 12 May 2023 15:11:44 +0200
-Subject: [PATCH v4 13/13] DONOTMERGE: arm64: meson: khadas-vim3l: add DSI
- panel
+Date: Fri, 12 May 2023 15:11:43 +0200
+Subject: [PATCH v4 12/13] arm64: meson: g12-common: add the MIPI DSI nodes
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-13-2592c29ea263@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-12-2592c29ea263@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -100,25 +99,26 @@ Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3821;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3041;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=V+HaYnTuv4vcDBK+f0uefqR8qZNKRB03xg8yBzcvNP8=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkXjsXmuJpoMQSk6iQu6xcYzS3kriWFA8zPdKbBAGo
- rl3t3SSJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZF47FwAKCRB33NvayMhJ0aKkD/
- 9nwkxyX9MQuKNxXmRxjri0mU8pGPrq60X7YBogp3HeA+SV89835c0iK24tOarj/I3GwbTrcA4FAeVa
- FL5M2Oeuo7Od3a02XEV/QfCS75MhXxqYmaaKQQr3+dLmpkWcBAMvhcRREmM8DtJj1rYOia/GXc/iOk
- lZMuL6YtZR8bvvT7Ogvy4Jgy3pvBcC9PpNK+v+JXC9cVO0JOP9GO86k8V/lC390k3K/FOQsI4tk2v6
- zGztDZCgy76+pJrNMOONtLY5H21JumPai4+IDN4u5pZ6TRaTKU9JQ+tUE5r/8T1mdwZ2omWBisMCMQ
- gBTlDPpWaIMjTF97alK5V1AlmrPAB97XhVFWZTZMhgHgpK+YAz0nSii644kfbboUhXm3LuFwY9a2z4
- arLG5eOAGpIz9urzHuk8eEbGMGGXhHC4/B8n2Ogs4kSvOxZYi6k+i4taxvGEq2K8fpcjsJwVoxS8oU
- YQp8eQf3O5N0gF0/pwdKLOrM6c3CfX3OKkZ63U31/nv1H9KWBBODcGgnaxSGGc9pWvEsoXdc1yTG5v
- +0Z399AChZ+otrtUkn2TPK2h54xQDjF/iTJUbm46wlL4erIOZm4CGBuINakMFXQQ+j01ygWx7xA9hg
- GUcUgxDUdawB4651R9Atu0Mca+k2IFoYBv9XhVI7r6AW8ribgLMVUMFyrCWg==
+ bh=ZpI/PJO6Xf8WoOhiydrQaAvUUYE2Db1Ge8Vycxk5Hk4=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkXjsWS1bDD1T7c5jHtVh2mDmi/N/tULfkoyJonBy6
+ aAYW1eGJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZF47FgAKCRB33NvayMhJ0X0hD/
+ kBZHtVqfzeeLoJIm5iDoFYZXWOAwmCuCyXP4SkCEaW14dW6l+MHsVfy7MBBZDE2iy0PQXRuPHE3XUP
+ TtXewezdiGStTjoz79vjbHJdmqA9IVLlPOO4SaH+Ch3QNHk1YW5a6Q0l3fT2DIDH3jUZL5/GN7Ykd6
+ dynU4y5nuqtCwmVWe3/8iXzrKW24pPcx5Z3H73V2jvWyDve35hEVTJ4SAUHdLg5VaJOpI5YaUgCeBv
+ jvgmC9Y8gszu0f5hxrLdRuIDC7O4N8V6QYDNMrqnLoDvLSRmeew8sNRGQBXt1XRBErjP/bJCSosPIc
+ KY623vQ1OC987+OJ5O7W5LUxgPUsLYfxGon4u2Vw5p2dnR/aEafzbgqSPCnTpDDKFy0fM9lZCB7KD7
+ 5cufJ2HNshucaKwqPcv6Fd5k9wdTvs2ssLm7eo/neK+cEKzmO/3twdiQJjgUPZZ3uTD2xFMVi2Mbuk
+ 9P3axoWbL23M6qLbU5T/YVYgk5UrzCdiiPvqaYLIT+kU/QjzuiKg3K+vCm54rkdhzVenyrge2w/oAF
+ N+khm9OMQ5XTzNcdGlN+xOedrnsn5ODaI2KQZjcrGIiKdXH8FHDPw5uQCachOzQg1jOlIxxl/rjjxI
+ GT/OdXMkGmSWxikippEJd0yQb8M+T3jlhQ/j1Mt+JmeEK1+DyPS2ekpHWcvA==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230512_141210_263106_78D75795 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20230512_141209_476685_4F6FD492 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,143 +135,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This add nodes to support the Khadas TS050 panel on the
-Khadas VIM3 & VIM3L boards.
+Add the MIPI DSI Analog & Digital PHY nodes and the DSI control
+nodes with proper port endpoint to the VPU.
 
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- .../boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi   |  2 +-
- arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi | 76 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-sm1-khadas-vim3l.dts    |  2 +-
- 3 files changed, 78 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 70 +++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-index 16dd409051b4..81c3057143b4 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-@@ -98,7 +98,7 @@ &pwm_ab {
- };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+index 0c49655cc90c..a62fd3656406 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+@@ -1662,9 +1662,28 @@ pwrc: power-controller {
+ 								       <250000000>,
+ 								       <0>; /* Do Nothing */
+ 					};
++
++					mipi_analog_dphy: phy {
++						compatible = "amlogic,g12a-mipi-dphy-analog";
++						#phy-cells = <0>;
++						status = "disabled";
++					};
+ 				};
+ 			};
  
- &pwm_AO_cd {
--	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-0 = <&pwm_ao_c_6_pins>, <&pwm_ao_d_e_pins>;
- 	pinctrl-names = "default";
- 	clocks = <&xtal>;
- 	clock-names = "clkin1";
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index c9705941e4ab..0c50a32bb0c0 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -40,6 +40,14 @@ button-function {
- 		};
- 	};
- 
-+	panel_backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm_AO_cd 0 25000 0>;
-+		brightness-levels = <0 255>;
-+		num-interpolated-steps = <255>;
-+		default-brightness-level = <200>;
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -359,6 +367,23 @@ rtc: rtc@51 {
- 	};
- };
- 
-+&i2c3 {
-+	status = "okay";
-+	pinctrl-0 = <&i2c3_sda_a_pins>, <&i2c3_sck_a_pins>;
-+	pinctrl-names = "default";
-+
-+	touch-controller@38 {
-+		compatible = "edt,edt-ft5206";
-+		reg = <0x38>;
-+		interrupt-parent = <&gpio_intc>;
-+		interrupts = <66 IRQ_TYPE_EDGE_FALLING>; /* GPIOA_5 */
-+		reset-gpio = <&gpio_expander 6 GPIO_ACTIVE_LOW>;
-+		touchscreen-size-x = <1080>;
-+		touchscreen-size-y = <1920>;
-+		status = "okay";
-+	};
-+};
-+
- &ir {
- 	status = "okay";
- 	pinctrl-0 = <&remote_input_ao_pins>;
-@@ -366,6 +391,57 @@ &ir {
- 	linux,rc-map-name = "rc-khadas";
- };
- 
-+&mipi_dsi {
-+	status = "okay";
-+
-+	assigned-clocks = <&clkc CLKID_GP0_PLL>,
-+			  <&clkc CLKID_MIPI_DSI_PXCLK_SEL>,
-+			  <&clkc CLKID_MIPI_DSI_PXCLK>,
-+			  <&clkc CLKID_CTS_ENCL_SEL>,
-+			  <&clkc CLKID_VCLK2_SEL>;
-+	assigned-clock-parents = <0>,
-+				 <&clkc CLKID_GP0_PLL>,
-+				 <0>,
-+				 <&clkc CLKID_VCLK2_DIV1>,
-+				 <&clkc CLKID_GP0_PLL>;
-+	assigned-clock-rates = <960000000>,
-+			       <0>,
-+			       <960000000>,
-+			       <0>,
-+			       <0>;
-+
-+	panel@0 {
-+		compatible = "khadas,ts050";
-+		reset-gpios = <&gpio_expander 0 GPIO_ACTIVE_LOW>;
-+		enable-gpios = <&gpio_expander 1 GPIO_ACTIVE_HIGH>;
-+		power-supply = <&vcc_3v3>;
-+		backlight = <&panel_backlight>;
-+		width-mm = <64>;
-+		height-mm = <118>;
-+		reg = <0>;
-+
-+		port {
-+			mipi_in_panel: endpoint {
-+				remote-endpoint = <&mipi_out_panel>;
++			mipi_dphy: phy@44000 {
++				compatible = "amlogic,axg-mipi-dphy";
++				reg = <0x0 0x44000 0x0 0x2000>;
++				clocks = <&clkc CLKID_MIPI_DSI_PHY>;
++				clock-names = "pclk";
++				resets = <&reset RESET_MIPI_DSI_PHY>;
++				reset-names = "phy";
++				phys = <&mipi_analog_dphy>;
++				phy-names = "analog";
++				#phy-cells = <0>;
++				status = "disabled";
 +			};
-+		};
-+	};
-+};
 +
-+&mipi_analog_dphy {
-+	status = "okay";
-+};
+ 			usb3_pcie_phy: phy@46000 {
+ 				compatible = "amlogic,g12a-usb3-pcie-phy";
+ 				reg = <0x0 0x46000 0x0 0x2000>;
+@@ -2151,6 +2170,15 @@ hdmi_tx_out: endpoint {
+ 					remote-endpoint = <&hdmi_tx_in>;
+ 				};
+ 			};
 +
-+&mipi_dphy {
-+	status = "okay";
-+};
++			/* DPI output port */
++			dpi_port: port@2 {
++				reg = <2>;
 +
-+&mipi_dsi_panel_port {
-+	mipi_out_panel: endpoint {
-+		remote-endpoint = <&mipi_in_panel>;
-+	};
-+};
-+
- &pcie {
- 	reset-gpios = <&gpio GPIOA_8 GPIO_ACTIVE_LOW>;
- };
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-index 9c0b544e2209..cb52a55ab70a 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-@@ -76,7 +76,7 @@ &cpu3 {
- };
++				dpi_out: endpoint {
++					remote-endpoint = <&mipi_dsi_in>;
++				};
++			};
+ 		};
  
- &pwm_AO_cd {
--	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-0 = <&pwm_ao_c_6_pins>, <&pwm_ao_d_e_pins>;
- 	pinctrl-names = "default";
- 	clocks = <&xtal>;
- 	clock-names = "clkin1";
+ 		gic: interrupt-controller@ffc01000 {
+@@ -2188,6 +2216,48 @@ gpio_intc: interrupt-controller@f080 {
+ 				amlogic,channel-interrupts = <64 65 66 67 68 69 70 71>;
+ 			};
+ 
++			mipi_dsi: mipi-dsi@7000 {
++				compatible = "amlogic,meson-g12a-dw-mipi-dsi";
++				reg = <0x0 0x7000 0x0 0x1000>;
++				resets = <&reset RESET_MIPI_DSI_HOST>;
++				reset-names = "top";
++				clocks = <&clkc CLKID_MIPI_DSI_HOST>,
++					 <&clkc CLKID_MIPI_DSI_PXCLK>,
++					 <&clkc CLKID_CTS_ENCL>;
++				clock-names = "pclk", "bit_clk", "px_clk";
++				phys = <&mipi_dphy>;
++				phy-names = "dphy";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++
++				assigned-clocks = <&clkc CLKID_MIPI_DSI_PXCLK_SEL>,
++					 <&clkc CLKID_CTS_ENCL_SEL>,
++					 <&clkc CLKID_VCLK2_SEL>;
++				assigned-clock-parents = <&clkc CLKID_GP0_PLL>,
++					 <&clkc CLKID_VCLK2_DIV1>,
++					 <&clkc CLKID_GP0_PLL>;
++
++				ports {
++					#address-cells = <1>;
++					#size-cells = <0>;
++
++					/* VPU VENC Input */
++					mipi_dsi_venc_port: port@0 {
++						reg = <0>;
++
++						mipi_dsi_in: endpoint {
++							remote-endpoint = <&dpi_out>;
++						};
++					};
++
++					/* DSI Output */
++					mipi_dsi_panel_port: port@1 {
++						reg = <1>;
++					};
++				};
++			};
++
+ 			watchdog: watchdog@f0d0 {
+ 				compatible = "amlogic,meson-gxbb-wdt";
+ 				reg = <0x0 0xf0d0 0x0 0x10>;
 
 -- 
 2.34.1
