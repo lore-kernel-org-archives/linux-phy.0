@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B653EC77B75
-	for <linux-phy@archiver.kernel.org>; Fri, 12 May 2023 13:40:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99A49C77B75
+	for <linux-phy@archiver.kernel.org>; Fri, 12 May 2023 13:40:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AJW0YlDtjLIfG2YBLh/FhCT5XdOWgo90JwsSesoJGbU=; b=m+jw1kS1MDkD+A
-	+r3zunuvCdTerNZ4F8kqi0QKnZB8TpEJ2V1x7FDZzakj9jN1A0KmjYEurskaqIxrQs/09DtjoJsng
-	kdpk4M9+bnumoYHtAbbvbQ/LKQOcGDPPKe5Y6yF3yxyKGe7hXbxdTKz4F9LqTFaUSy16gZGMQjJPc
-	ty7KH+uGH76NCuZHQ/vOrdmuSbpEHcsvwdRLLX+c1QBk/IWgBf6wuK3zFn9T2zw8VCFv1/SKTraRv
-	BB7ZIxaO3msGNUuNOMvcyEwe7lo1xiv8RxYr+izFUdbUlTnTNMV+6uIL3IUgnT9gUNP7GsODIGuV7
-	Upv60SH+ZaYPPqOuNxkw==;
+	List-Owner; bh=wP50jbY2Ts/q0avNT/x3Y9G7EFwFY3CFlLypjGOO6vc=; b=ZynRCIxT8Bd2Sv
+	QGnaDHfytCqnpgxm4XlhekTEmNy6kXiATFyU/WfzvIFYLWeZ1bQhIQCGpU6IG7uxDtiFlIPnwPXkx
+	m+j25sJo5NfxRA6ZFsjGQtmEJOrc8K6JFICEma0K3W645VPWbYbW4/ze2QLD2Tj/GGokwDYd7LDE4
+	kR7bbiN3BhpNkER3jwHOHHE4lot88WQsgvI5XmisvU/+ls+rF90Hr6eqWJqCmVMgYIIAuHuFbSCNb
+	hg7xTov0CVhPW4kg8jl/yQ+9VFEyR3HIzqbjQNW1x3tZaPVTe2KbI7+3qdwYQh2zLhkIvDBgLsylY
+	+aJviX+2XLe0exhrzXvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxT0N-00C2tL-1A;
-	Fri, 12 May 2023 13:40:19 +0000
+	id 1pxT0V-00C2yG-0d;
+	Fri, 12 May 2023 13:40:27 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxT0K-00C2q7-1G
+	id 1pxT0T-00C2w4-1M
 	for linux-phy@bombadil.infradead.org;
-	Fri, 12 May 2023 13:40:16 +0000
+	Fri, 12 May 2023 13:40:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=7b90wZD8kl4nSe3L54vqh3vzRZZbXkNospgY2qCejUs=; b=I8EYWblo8b+djg+GIXQ7QQWNUb
-	Z2d/UH1Bjjl3fjUMZ6eQni+Z4ATJeD5GkmKM0P0wQkk73PGtHDDZdmP4GwjQ2l9gOXtYLbdrpKq6d
-	urYlEsoSvmscL0/JVK9nLvDBNakbPFyEbx5DjO5AvHCGxprE64/CzsEkLh8hum36dx7sy5jMb1ED2
-	q1MopssKXQwvdLjyqiVrpE9/BwRgnFq100l77yT6PyEi33/a6/RlbjeoGQvZY+wvHbPJ8WlpqNm4f
-	vqn1AfF7b3ttuLbz+zCoVXDG7McwFIAYtiZwG671iGdStgmgHnl7sN4uV8lfyIkC/6rDmP7ZM6frB
-	qK2HNG5g==;
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	bh=Z2u4iA556Q3YLEzTDMSIWMB9153khMSJN9i27z6trtw=; b=arOENSgAh5wpP0hAG491gqMWPi
+	7vAFYW6tlq/eSFmnO6tM+jQzQLebVtEeKEUkKbQvsVeXn8omtLZmAdy+R7UMOL6mNGVB3jD9S2+VR
+	UYgtAKS4XzN4hLsCbrOy70LaS2RwxIqM+H17241t+2C7slzMkWqVbX6D01wtMt7AsuWDlFgX3nYdP
+	Nls30GqT5iZ9JgbZ3rWt5BdPaAXqkmB1V2izTDmuRU0k/94rcmKtqjGr1UJvPqWOJuZyaEj4qy2Sd
+	Qsjm/zF9HbwF24b6pDCZ2Gd271qdnu/iyXH6AXgQpcowva7fgx8gMlphWVTtkeDbFV8MtkUldy5jX
+	fo+LueJg==;
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxSZ9-0099Oj-1d
+	id 1pxSZ8-0099Of-0o
 	for linux-phy@lists.infradead.org;
-	Fri, 12 May 2023 13:12:15 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-3062b101ae1so6502320f8f.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 May 2023 06:12:03 -0700 (PDT)
+	Fri, 12 May 2023 13:12:13 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-3f315712406so321519945e9.0
+        for <linux-phy@lists.infradead.org>; Fri, 12 May 2023 06:12:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1683897122; x=1686489122;
+        d=linaro.org; s=google; t=1683897120; x=1686489120;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7b90wZD8kl4nSe3L54vqh3vzRZZbXkNospgY2qCejUs=;
-        b=yI2/VTaYsDKekDUxX3m1eXWkp2TR3ofEAIJSz6ah2AGopChpKZjFhupSCYLZF5SHZI
-         pof/haujLQyfMZa8CqzUpaLlqislbpvLX1Mxl3zxDzJZVPVDHiU+Wc4fPHb7ftfxlg/R
-         CUwqQnoinj/uFK8azdHs35qBgAsf8bPOIGR+l1u5erxpGuKspNAh5kQfZckWjQU7Nopw
-         xsXd9AUC8EUie0is0OQj54kemYrvRYdPytDSuiF5kUoN5IgBHw3mvF/GkK/wBRw+mSQH
-         CdD9Cp3LW2lAaJAvD4O7uqjbGYwjeOaea6xJ6GYBU4nrY2EFFOT00BFAJtTU1gVI5zzt
-         TMBQ==
+        bh=Z2u4iA556Q3YLEzTDMSIWMB9153khMSJN9i27z6trtw=;
+        b=UIqCieSWYin+oz7auJGatVSLrMXRlfI0zD77cvuETRm9Sek6lJ8Liof7+r3WSkCAeZ
+         cmkN0Pknbc+9VD0MGtDqwD5ykfUdJ1+U2MTrceMwfZvj4X63vrUoBAkLTbsPS5QT2r+q
+         Yf0DcpGJzqqVuWyl9Gsw7Jpzm+t8jzan5aZBkrdVLZUDZUH8kzchGM15V9DKz9nTHtTE
+         wtTDqAZvbDrYjtXG0lGh6YA28042KBdSrCbQ60U0YpawPAwtjLmUkXJkW1wEHAdsrQH1
+         7BAMPCbYSckLhcD7TlmXVCcdq3ePnLNK7w/k5/OCPQpcyFYMFiRro20FLqw4rE28r3jJ
+         Fd1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683897122; x=1686489122;
+        d=1e100.net; s=20221208; t=1683897120; x=1686489120;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=7b90wZD8kl4nSe3L54vqh3vzRZZbXkNospgY2qCejUs=;
-        b=jcwv+Patk/XL5d6XG5zwAYV2aaKuf6TCfN0rTd6v2NuHReNwd87xWdLK/RfCG/QDol
-         JuBkkFo6m/nEh5Jwut+aTgcIGZvjvjsVsj7wWg/pVVNe9bUHSiXYQigBMzTUTWbCamme
-         tuiZhFLOMMDULp0gYA4SJ6W7/c005+ms995DK32ItQaiKDoJ2rlejF26qyBuA4wd0Z1h
-         r9qQz9DiavI6jD9LNeZzIq9XkH8B43rgLQkXtjIBMibY4RLuGulAyErho/P9WigqY15l
-         T6/yPcrcgn0MVF8ev6VqfKNbHdZQZ56N2rOxIwm7oIu11zpCviqah2j3bexA6uCzobNh
-         +z+g==
-X-Gm-Message-State: AC+VfDxNVLf+0IGvCitf/QaHEDQX9sNOU4Lyx9rIO3mKDc/3FbTpDjW+
-	uzCR6OEbwvWjNY86HQMlcpnYOu4jYeuqKS9niwN/PA==
-X-Google-Smtp-Source: ACHHUZ6IulSV4BEpEuCbtSOSt/0uv03yfEvODajkoW21O50J9lsQFhIrlZhKcn5YX/szOGrxz+CRzw==
-X-Received: by 2002:a5d:4848:0:b0:306:3284:824f with SMTP id n8-20020a5d4848000000b003063284824fmr15495923wrs.8.1683897122067;
-        Fri, 12 May 2023 06:12:02 -0700 (PDT)
+        bh=Z2u4iA556Q3YLEzTDMSIWMB9153khMSJN9i27z6trtw=;
+        b=S2XWZK26AnBslCYGrR0HJkVO+bpcL6C93IRx5jh/p6Jtdbm+3BIbptgrNvGABDMZRa
+         9T0F0nkLUMSZpLc0g5CCKyjvXADs5GN4UBq+SDlpY1LFMFUFg8QVRycoiJNDjOSJfWas
+         Fu4rJfY6/Vw+K/Oq8mXO4UK+euAwIEu5hEJJv/LBhMJDX1UlGf1OoI/xP0/glZ8i1PBX
+         1jQp4ncDY7vbSKGCVTm0LGYztCf37hVLBj7Glva/bJgERBWKV6CWW2BmoHp6DMuScMuN
+         gRVFdmie+mpD2c62yTzQ7QD09zOOfmMO5DXbzKCYFBhdo12BtXZxLkJruXRpJAWSsKBC
+         DDLA==
+X-Gm-Message-State: AC+VfDxeUa1wdOArM0cQFr4Yo0klI6lx1kfBRybJGm8ZVzJYQrm2D9nw
+	xSWc0KNXOsjdVy5LfOjHO12P9Q==
+X-Google-Smtp-Source: ACHHUZ4Lpk6BMX1cUJbI+yBItJVI1j+yCCvXCZzw7+9gNnPJg3syKo8+U4tcTOu7JpVmH1Zi5RRfmA==
+X-Received: by 2002:a7b:cb93:0:b0:3f4:2374:3511 with SMTP id m19-20020a7bcb93000000b003f423743511mr13961936wmi.10.1683897119822;
+        Fri, 12 May 2023 06:11:59 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id v10-20020a5d610a000000b0030647449730sm23461965wrt.74.2023.05.12.06.12.01
+        by smtp.gmail.com with ESMTPSA id v10-20020a5d610a000000b0030647449730sm23461965wrt.74.2023.05.12.06.11.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 May 2023 06:12:01 -0700 (PDT)
+        Fri, 12 May 2023 06:11:59 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 12 May 2023 15:11:39 +0200
-Subject: [PATCH v4 08/13] drm/meson: add DSI encoder
+Date: Fri, 12 May 2023 15:11:37 +0200
+Subject: [PATCH v4 06/13] drm/meson: fix unbind path if HDMI fails to bind
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-8-2592c29ea263@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-6-2592c29ea263@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -98,29 +98,27 @@ Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Jagan Teki <jagan@amarulasolutions.com>, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=9381;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2139;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=HX4/37GDlHAGNLHUHVTRUc93uf2l6U5h3hplLWCS/to=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkXjsVHcarE36UT+Ibqtz4ewrBGuSC/NaLtMhxaQN7
- 3iolF6WJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZF47FQAKCRB33NvayMhJ0ZJoEA
- CSoO1Zuzyw4XWR/XDxUtYBs9dF4ddRxOrmvz+VrpOKxM4+OfwCDuUoQPKaiZBVp3WQgoYVIvl+ZM3N
- iMhZy3DZFUE4e8izSnvvXjN/nb9FhoW3xyFCKzRsj/QLk4WdwMQJE/orLpQOSXYE2/oWuNkS57UxE6
- AVNqEcXZdsIr/3btlXh4BYtZBsSXYcMMz4pm+Y9HlcYU8lj2MyAVlkD/ApmGRbakBTrD4gAwHPNFZC
- jcorXEzD0V9dULFJJxMVfsiKAsNKdRIOLHDDGdNdv6CIN0WiPjJBPYidy/1C9opkRPjF/aWcI78o2Q
- f68bimy0bwY/DlO9reNBNIDxzn7OQ2r/O3eWqsq8SFQX8zISeJGMvSyvDYf7bfPCWAczSWsLw4DR1k
- gt54yU2rYeRLjSB5aKuRWR5FvTnqWX34G7KHQBTPsDsnljyei/kNrOMuEcGPkU1XPalNtJLml9vwIb
- IvHSAzrZSP8h+vJet3ofQeu8OzSGUlNSLzKI/EuVqHLdon0iQQ2W9v5XC7ps7TDlR/pzceZYBhti8n
- XA+yaA9fwnQPsHFuNWPF18znRzDDA/0qlfH/V0QsQFhhQfjYMmoiQgNEaydGHHUnLFRzs3+lMbBrnL
- +seQ3QyU77d8FfDzKSxkvNPhBYzaQ9SS6glpamCtcufDuQalm4LHZa4If1Bg==
+ bh=wXntKS2MMfbFGVJHEKvTbL5c60ujsPIrzZFwFPZkQn0=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkXjsUe2Bl34Y1X3oYbjtzCiQcgLvemuSQ6t+LekDO
+ xNWliTuJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZF47FAAKCRB33NvayMhJ0SyLEA
+ CJbVHW7/fL6lQG5TdpE4H3PQA+IisR16XaLpnTihPM0NgB8lHdrDxpzS3OHp0RyypkLUzfWqjb45Ns
+ iuTpf4zgdW9Diou+fZuBOgOdhrKKRF7F4MNzCU1C8HSPTv7ZxhMvOpHLps5eXd6GwCd/N9Y7QMWnRn
+ sumQ/pV3R+yl3knCPdKvCbNjR2dHMEbfQq9MvPWo45MwXSXGnV0jXmX0ZbXiC08vLPBQDnKlse4VeS
+ 8+hDOW8c/NG7xOpnVLO51YWrQblNWBl7ZqeVVX85DKUFkQ9/L9G9BrAy9WP395oAe6AhBWzh8ilUIS
+ Zz3amS2N9WWigj3k/1a+RXLzlizOuoRXTZT144Q/y3+caNLnzbwP3Uag41YtLmxGuw4wqc1n/qSBCl
+ bE960wuDbE2VaqoTKiH/bLCqUCwC7ytpMOgRC2r6jlbduGQwmyZf+LUStJx9KHVt6XAqycBfjoilXU
+ Lx3QgqtqVFEQOMWwhIypsE1/cY8Pg09299hheyNtQ225CaQGHIQN//dq3KDp/EBptUHa0FlKuWiaY3
+ qD7iobfzR+Cm1nz1gz0Tlfm427bSmxQTySUahYcW0fztQgCCuFkbmC5dKJrpawjcnDDNYMqPaLjngt
+ lIy0v4JZ+3OiiXMWgkoYdtDoVkXxxtF2ydKv6pYykjslmWkIIG2QMovNrcrQ==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230512_141211_716686_99E5E6A5 
-X-CRM114-Status: GOOD (  21.23  )
+X-CRM114-CacheID: sfid-20230512_141210_380295_E6DA1AED 
+X-CRM114-Status: GOOD (  11.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,286 +135,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This adds an encoder bridge designed to drive a MIPI-DSI display
-by using the ENCL encoder through the internal MIPI DSI transceiver
-connected to the output of the ENCL pixel encoder.
+If the case the HDMI controller fails to bind, we try to unbind
+all components before calling drm_dev_put() which makes drm_bridge_detach()
+crash because unbinding the HDMI controller frees the bridge memory.
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Reviewed-by: Jagan Teki <jagan@amarulasolutions.com>
+The solution is the unbind all components at the end like in the remove
+path.
+
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- drivers/gpu/drm/meson/Makefile            |   2 +-
- drivers/gpu/drm/meson/meson_drv.c         |   9 ++
- drivers/gpu/drm/meson/meson_drv.h         |   1 +
- drivers/gpu/drm/meson/meson_encoder_dsi.c | 174 ++++++++++++++++++++++++++++++
- drivers/gpu/drm/meson/meson_encoder_dsi.h |  13 +++
- 5 files changed, 198 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/meson/meson_drv.c | 23 ++++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/gpu/drm/meson/Makefile b/drivers/gpu/drm/meson/Makefile
-index 3afa31bdc950..833e18c20603 100644
---- a/drivers/gpu/drm/meson/Makefile
-+++ b/drivers/gpu/drm/meson/Makefile
-@@ -2,7 +2,7 @@
- meson-drm-y := meson_drv.o meson_plane.o meson_crtc.o meson_encoder_cvbs.o
- meson-drm-y += meson_viu.o meson_vpp.o meson_venc.o meson_vclk.o meson_overlay.o
- meson-drm-y += meson_rdma.o meson_osd_afbcd.o
--meson-drm-y += meson_encoder_hdmi.o
-+meson-drm-y += meson_encoder_hdmi.o meson_encoder_dsi.o
- 
- obj-$(CONFIG_DRM_MESON) += meson-drm.o
- obj-$(CONFIG_DRM_MESON_DW_HDMI) += meson_dw_hdmi.o
 diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
-index a30d61f1c817..7939f8a9ccb5 100644
+index bb72fda9106d..a30d61f1c817 100644
 --- a/drivers/gpu/drm/meson/meson_drv.c
 +++ b/drivers/gpu/drm/meson/meson_drv.c
-@@ -34,6 +34,7 @@
- #include "meson_registers.h"
- #include "meson_encoder_cvbs.h"
- #include "meson_encoder_hdmi.h"
-+#include "meson_encoder_dsi.h"
- #include "meson_viu.h"
- #include "meson_vpp.h"
- #include "meson_rdma.h"
-@@ -329,6 +330,12 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
- 	if (ret)
+@@ -316,32 +316,34 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
  		goto exit_afbcd;
  
-+	if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_G12A)) {
-+		ret = meson_encoder_dsi_init(priv);
-+		if (ret)
-+			goto exit_afbcd;
-+	}
-+
+ 	if (has_components) {
+-		ret = component_bind_all(drm->dev, drm);
++		ret = component_bind_all(dev, drm);
+ 		if (ret) {
+ 			dev_err(drm->dev, "Couldn't bind all components\n");
++			/* Do not try to unbind */
++			has_components = false;
+ 			goto exit_afbcd;
+ 		}
+ 	}
+ 
+ 	ret = meson_encoder_hdmi_init(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
  	ret = meson_plane_create(priv);
  	if (ret)
- 		goto exit_afbcd;
-@@ -367,6 +374,7 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = meson_overlay_create(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = meson_crtc_create(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = request_irq(priv->vsync_irq, meson_irq, 0, drm->driver->name, drm);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	drm_mode_config_reset(drm);
+ 
+@@ -359,15 +361,18 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 
+ uninstall_irq:
+ 	free_irq(priv->vsync_irq, drm);
+-unbind_all:
+-	if (has_components)
+-		component_unbind_all(drm->dev, drm);
+ exit_afbcd:
+ 	if (priv->afbcd.ops)
+ 		priv->afbcd.ops->exit(priv);
  free_drm:
  	drm_dev_put(drm);
  
-+	meson_encoder_dsi_remove(priv);
- 	meson_encoder_hdmi_remove(priv);
- 	meson_encoder_cvbs_remove(priv);
++	meson_encoder_hdmi_remove(priv);
++	meson_encoder_cvbs_remove(priv);
++
++	if (has_components)
++		component_unbind_all(dev, drm);
++
+ 	return ret;
+ }
  
-@@ -399,6 +407,7 @@ static void meson_drv_unbind(struct device *dev)
- 	free_irq(priv->vsync_irq, drm);
- 	drm_dev_put(drm);
- 
-+	meson_encoder_dsi_remove(priv);
- 	meson_encoder_hdmi_remove(priv);
- 	meson_encoder_cvbs_remove(priv);
- 
-diff --git a/drivers/gpu/drm/meson/meson_drv.h b/drivers/gpu/drm/meson/meson_drv.h
-index c62ee358456f..b23009a3380f 100644
---- a/drivers/gpu/drm/meson/meson_drv.h
-+++ b/drivers/gpu/drm/meson/meson_drv.h
-@@ -28,6 +28,7 @@ enum vpu_compatible {
- enum {
- 	MESON_ENC_CVBS = 0,
- 	MESON_ENC_HDMI,
-+	MESON_ENC_DSI,
- 	MESON_ENC_LAST,
- };
- 
-diff --git a/drivers/gpu/drm/meson/meson_encoder_dsi.c b/drivers/gpu/drm/meson/meson_encoder_dsi.c
-new file mode 100644
-index 000000000000..812e172dec63
---- /dev/null
-+++ b/drivers/gpu/drm/meson/meson_encoder_dsi.c
-@@ -0,0 +1,174 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright (C) 2016 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/of_graph.h>
-+
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_simple_kms_helper.h>
-+#include <drm/drm_bridge.h>
-+#include <drm/drm_bridge_connector.h>
-+#include <drm/drm_device.h>
-+#include <drm/drm_probe_helper.h>
-+
-+#include "meson_drv.h"
-+#include "meson_encoder_dsi.h"
-+#include "meson_registers.h"
-+#include "meson_venc.h"
-+#include "meson_vclk.h"
-+
-+struct meson_encoder_dsi {
-+	struct drm_encoder encoder;
-+	struct drm_bridge bridge;
-+	struct drm_bridge *next_bridge;
-+	struct meson_drm *priv;
-+};
-+
-+#define bridge_to_meson_encoder_dsi(x) \
-+	container_of(x, struct meson_encoder_dsi, bridge)
-+
-+static int meson_encoder_dsi_attach(struct drm_bridge *bridge,
-+				    enum drm_bridge_attach_flags flags)
-+{
-+	struct meson_encoder_dsi *encoder_dsi = bridge_to_meson_encoder_dsi(bridge);
-+
-+	return drm_bridge_attach(bridge->encoder, encoder_dsi->next_bridge,
-+				 &encoder_dsi->bridge, flags);
-+}
-+
-+static void meson_encoder_dsi_atomic_enable(struct drm_bridge *bridge,
-+					    struct drm_bridge_state *bridge_state)
-+{
-+	struct meson_encoder_dsi *encoder_dsi = bridge_to_meson_encoder_dsi(bridge);
-+	struct drm_atomic_state *state = bridge_state->base.state;
-+	struct meson_drm *priv = encoder_dsi->priv;
-+	struct drm_connector_state *conn_state;
-+	struct drm_crtc_state *crtc_state;
-+	struct drm_connector *connector;
-+
-+	connector = drm_atomic_get_new_connector_for_encoder(state, bridge->encoder);
-+	if (WARN_ON(!connector))
-+		return;
-+
-+	conn_state = drm_atomic_get_new_connector_state(state, connector);
-+	if (WARN_ON(!conn_state))
-+		return;
-+
-+	crtc_state = drm_atomic_get_new_crtc_state(state, conn_state->crtc);
-+	if (WARN_ON(!crtc_state))
-+		return;
-+
-+	/* ENCL clock setup is handled by CCF */
-+
-+	meson_venc_mipi_dsi_mode_set(priv, &crtc_state->adjusted_mode);
-+	meson_encl_load_gamma(priv);
-+
-+	writel_relaxed(0, priv->io_base + _REG(ENCL_VIDEO_EN));
-+
-+	writel_bits_relaxed(ENCL_VIDEO_MODE_ADV_VFIFO_EN, ENCL_VIDEO_MODE_ADV_VFIFO_EN,
-+			    priv->io_base + _REG(ENCL_VIDEO_MODE_ADV));
-+	writel_relaxed(0, priv->io_base + _REG(ENCL_TST_EN));
-+
-+	writel_bits_relaxed(BIT(0), 0, priv->io_base + _REG(VPP_WRAP_OSD1_MATRIX_EN_CTRL));
-+
-+	writel_relaxed(1, priv->io_base + _REG(ENCL_VIDEO_EN));
-+}
-+
-+static void meson_encoder_dsi_atomic_disable(struct drm_bridge *bridge,
-+					     struct drm_bridge_state *bridge_state)
-+{
-+	struct meson_encoder_dsi *meson_encoder_dsi =
-+					bridge_to_meson_encoder_dsi(bridge);
-+	struct meson_drm *priv = meson_encoder_dsi->priv;
-+
-+	writel_relaxed(0, priv->io_base + _REG(ENCL_VIDEO_EN));
-+
-+	writel_bits_relaxed(BIT(0), BIT(0), priv->io_base + _REG(VPP_WRAP_OSD1_MATRIX_EN_CTRL));
-+}
-+
-+static const struct drm_bridge_funcs meson_encoder_dsi_bridge_funcs = {
-+	.attach	= meson_encoder_dsi_attach,
-+	.atomic_enable = meson_encoder_dsi_atomic_enable,
-+	.atomic_disable	= meson_encoder_dsi_atomic_disable,
-+	.atomic_duplicate_state = drm_atomic_helper_bridge_duplicate_state,
-+	.atomic_destroy_state = drm_atomic_helper_bridge_destroy_state,
-+	.atomic_reset = drm_atomic_helper_bridge_reset,
-+};
-+
-+int meson_encoder_dsi_init(struct meson_drm *priv)
-+{
-+	struct meson_encoder_dsi *meson_encoder_dsi;
-+	struct device_node *remote;
-+	int ret;
-+
-+	meson_encoder_dsi = devm_kzalloc(priv->dev, sizeof(*meson_encoder_dsi), GFP_KERNEL);
-+	if (!meson_encoder_dsi)
-+		return -ENOMEM;
-+
-+	/* DSI Transceiver Bridge */
-+	remote = of_graph_get_remote_node(priv->dev->of_node, 2, 0);
-+	if (!remote) {
-+		dev_err(priv->dev, "DSI transceiver device is disabled");
-+		return 0;
-+	}
-+
-+	meson_encoder_dsi->next_bridge = of_drm_find_bridge(remote);
-+	if (!meson_encoder_dsi->next_bridge) {
-+		dev_dbg(priv->dev, "Failed to find DSI transceiver bridge\n");
-+		return -EPROBE_DEFER;
-+	}
-+
-+	/* DSI Encoder Bridge */
-+	meson_encoder_dsi->bridge.funcs = &meson_encoder_dsi_bridge_funcs;
-+	meson_encoder_dsi->bridge.of_node = priv->dev->of_node;
-+	meson_encoder_dsi->bridge.type = DRM_MODE_CONNECTOR_DSI;
-+
-+	drm_bridge_add(&meson_encoder_dsi->bridge);
-+
-+	meson_encoder_dsi->priv = priv;
-+
-+	/* Encoder */
-+	ret = drm_simple_encoder_init(priv->drm, &meson_encoder_dsi->encoder,
-+				      DRM_MODE_ENCODER_DSI);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to init DSI encoder: %d\n", ret);
-+		return ret;
-+	}
-+
-+	meson_encoder_dsi->encoder.possible_crtcs = BIT(0);
-+
-+	/* Attach DSI Encoder Bridge to Encoder */
-+	ret = drm_bridge_attach(&meson_encoder_dsi->encoder, &meson_encoder_dsi->bridge, NULL, 0);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to attach bridge: %d\n", ret);
-+		return ret;
-+	}
-+
-+	/*
-+	 * We should have now in place:
-+	 * encoder->[dsi encoder bridge]->[dw-mipi-dsi bridge]->[panel bridge]->[panel]
-+	 */
-+
-+	priv->encoders[MESON_ENC_DSI] = meson_encoder_dsi;
-+
-+	dev_dbg(priv->dev, "DSI encoder initialized\n");
-+
-+	return 0;
-+}
-+
-+void meson_encoder_dsi_remove(struct meson_drm *priv)
-+{
-+	struct meson_encoder_dsi *meson_encoder_dsi;
-+
-+	if (priv->encoders[MESON_ENC_DSI]) {
-+		meson_encoder_dsi = priv->encoders[MESON_ENC_DSI];
-+		drm_bridge_remove(&meson_encoder_dsi->bridge);
-+		drm_bridge_remove(meson_encoder_dsi->next_bridge);
-+	}
-+}
-diff --git a/drivers/gpu/drm/meson/meson_encoder_dsi.h b/drivers/gpu/drm/meson/meson_encoder_dsi.h
-new file mode 100644
-index 000000000000..9277d7015193
---- /dev/null
-+++ b/drivers/gpu/drm/meson/meson_encoder_dsi.h
-@@ -0,0 +1,13 @@
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
-+/*
-+ * Copyright (C) 2021 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+
-+#ifndef __MESON_ENCODER_DSI_H
-+#define __MESON_ENCODER_DSI_H
-+
-+int meson_encoder_dsi_init(struct meson_drm *priv);
-+void meson_encoder_dsi_remove(struct meson_drm *priv);
-+
-+#endif /* __MESON_ENCODER_DSI_H */
 
 -- 
 2.34.1
