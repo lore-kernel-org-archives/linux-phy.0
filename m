@@ -4,76 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5F4AC77B7C
-	for <linux-phy@archiver.kernel.org>; Fri, 12 May 2023 21:35:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74B09C77B7D
+	for <linux-phy@archiver.kernel.org>; Sat, 13 May 2023 09:22:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=60Ucv1mto1GRTTWlatkZbnCN3E4rLO/sdGXJS5fVMmQ=; b=H37ACpu8LMNXm9fq60eeoCGD0j
-	9mbqAALUagHQfzQ8i2eIAIieNAKY7uMsC8GD00x41bdBaNvdehuX83hnDNx19IIBvjSu88v3iYuSa
-	jyuNaJfk5DWlkLcIKPp+69DORXBKz0p8OdHeU/0L8hB+FeY1B+jWWqMA+Xt8roVmD1u0F1LE4xrJu
-	tfSJTLr5jFYoez4VzfL33o3IpbN2eDqZKhgjbJx36VthTw6j3HE3ATGmYjUM1q34WJCQfjtPiTVvg
-	RkP6ShDK6UjB3T/cxisb58X773Su/WqaJlKeBcydG15/ieHJ6AdWbmBDJRpLSzFn5Yex6xVZgrSvb
-	xTXQLh0g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=asBDWwnH+dC42JsJ9pbXKOhv3iDRQxSRBelYtsRPVgs=; b=zlLc4omlkRdvLH
+	+GWGw2SEh5dHm/J+7U7p8zEFiI2Udad1eCi+FuNxmv7uXNVuz7jPiy1IL4Hnv3xOKyGTeBDeXvsft
+	/n274IrEHfIGvGs585kRJu+Rt2VN/st0qf3SGNnRfjsW+UFgMsMfAJgvbxJ9XqDslLnn9tDYgOqKV
+	dMWnRaKXxUN1EPgPX//FfpCVYohIQI2xB2Q+UuuH6WJsjyFFW0lpCkSwnZYYWQ6nwNX35thzt/NsW
+	Q5zCxmaqxzyInNqKCyUSXqj+LCXcnbYh3ld17T8fwnpIohBwINiyHI4p1ZXrg6IIKKB6vMV9I3LQD
+	kaw5ivZEVSr7DFskOmyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxaPy-00D67x-14;
-	Fri, 12 May 2023 21:35:14 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pxlST-00E9F9-2a;
+	Sat, 13 May 2023 09:22:33 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxaPt-00D66r-2A;
-	Fri, 12 May 2023 21:35:11 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id DC38B6401D;
-	Fri, 12 May 2023 21:35:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 011DCC433D2;
-	Fri, 12 May 2023 21:35:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683927308;
-	bh=ssPoigezhCRrDjg7mcA2KStxlVolfI3YMYndQSDR72E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rnWJ+EWH6NpSxhEi+rjIYtoO0FVqUzj+M2yz0JL6ra6laKLTgsewUkAJGF7WDI7db
-	 kAMtFsNX2vDmy63695efG66uBHWQLnMGPinOgtPVd4knXqdExsA3zrvoIoHRB9lb3N
-	 BZbZhqEV6/kl0ZSGozTekrAacngCLqYGsopfJKkPhpkK3k0l4lptSMdDGS1i0q7+9S
-	 mBVdrlmEhvFX8CPNgd3rLUSR8GlL+RyA/vXFDMydaftSdcXg+KMQHW/qjGqbgz+tz9
-	 uFBcTtAVC8QM0LM2G+BJxUJQlPEcJrlZmaEPJOxoR7zQtletlJG8vCQCsIyDpc7AeY
-	 HFIAh5kfx00+w==
-Date: Fri, 12 May 2023 22:35:01 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Jerome Brunet <jbrunet@baylibre.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sam Ravnborg <sam@ravnborg.org>,
-	Nicolas Belin <nbelin@baylibre.com>,
-	linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 04/13] dt-bindings: display: add Amlogic MIPI DSI Host
- Controller bindings
-Message-ID: <20230512-elevation-stream-8acf60905d6b@spud>
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
+	id 1pxlSQ-00E9AR-0J;
+	Sat, 13 May 2023 09:22:31 +0000
+X-UUID: aac24ad4f16f11ed912e1518a6540028-20230513
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=5Kkxf3BPerLuhz2Tiv7w0gG5pbHJwAtXbjBqeS8LbOE=;
+	b=iRxb/Qkb2jdO0DTfQiPrY0Y6ScFY4yazVQ12kneqSybw/ADJq43Vt4ZfwoTLsY27rAyBrXQcnBbxySLF2Ob7t2mOsMUJ3B2sMFWowvSqO7LOSP23YvMa+YvgAoLFQ51Uz4WQZG0A2x0f3ejclb1EI3Maj5BSM9NFkMVEoXqVBfo=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.24,REQID:536734d4-12c5-4553-bcba-f5b72290f1e1,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:178d4d4,CLOUDID:0eb0af6b-2f20-4998-991c-3b78627e4938,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0
+X-CID-BVR: 0,NGT
+X-CID-BAS: 0,NGT,0,_
+X-UUID: aac24ad4f16f11ed912e1518a6540028-20230513
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1246045976; Sat, 13 May 2023 02:22:22 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.26; Sat, 13 May 2023 17:22:19 +0800
+Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
+ mtkmbs11n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Sat, 13 May 2023 17:22:19 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Matthias Brugger
+	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH RESEND v9 1/2] phy: core: add debugfs files
+Date: Sat, 13 May 2023 17:22:17 +0800
+Message-ID: <20230513092218.21139-1-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230512_143509_821481_AFDE3C03 
-X-CRM114-Status: GOOD (  20.02  )
+X-CRM114-CacheID: sfid-20230513_022230_181620_09AC5D52 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,201 +78,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0490730216466858560=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add a debugfs root for phy class, and create a debugfs directory under
+the root when create phy, then phy drivers can add debugfs files.
 
---===============0490730216466858560==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="s/aEe9Onk7m7s45t"
-Content-Disposition: inline
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v9: create a 'phy' debugfs root, add a debugfs entry in struct phy suggested by Vinod;
 
+No v8 sent out;
 
---s/aEe9Onk7m7s45t
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+v2~v7: no changes
+---
+ drivers/phy/phy-core.c  | 14 ++++++++++++++
+ include/linux/phy/phy.h |  2 ++
+ 2 files changed, 16 insertions(+)
 
-On Fri, May 12, 2023 at 03:11:35PM +0200, Neil Armstrong wrote:
-> The Amlogic G12A, G12B & SM1 SoCs embeds a Synopsys DW-MIPI-DSI transceiv=
-er (ver 1.21a),
-> with a custom glue managing the IP resets, clock and data input similar t=
-o the DW-HDMI Glue
-> on the same Amlogic SoCs.
->=20
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 6464dcb56d56..96a0b1e111f3 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -11,6 +11,7 @@
+ #include <linux/export.h>
+ #include <linux/module.h>
+ #include <linux/err.h>
++#include <linux/debugfs.h>
+ #include <linux/device.h>
+ #include <linux/slab.h>
+ #include <linux/of.h>
+@@ -20,6 +21,7 @@
+ #include <linux/regulator/consumer.h>
+ 
+ static struct class *phy_class;
++static struct dentry *phy_debugfs_root;
+ static DEFINE_MUTEX(phy_provider_mutex);
+ static LIST_HEAD(phy_provider_list);
+ static LIST_HEAD(phys);
+@@ -996,6 +998,8 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
+ 		pm_runtime_no_callbacks(&phy->dev);
+ 	}
+ 
++	phy->debugfs = debugfs_create_dir(dev_name(&phy->dev), phy_debugfs_root);
++
+ 	return phy;
+ 
+ put_dev:
+@@ -1226,6 +1230,7 @@ static void phy_release(struct device *dev)
+ 
+ 	phy = to_phy(dev);
+ 	dev_vdbg(dev, "releasing '%s'\n", dev_name(dev));
++	debugfs_remove_recursive(phy->debugfs);
+ 	regulator_put(phy->pwr);
+ 	ida_simple_remove(&phy_ida, phy->id);
+ 	kfree(phy);
+@@ -1242,6 +1247,15 @@ static int __init phy_core_init(void)
+ 
+ 	phy_class->dev_release = phy_release;
+ 
++	phy_debugfs_root = debugfs_create_dir("phy", NULL);
++
+ 	return 0;
+ }
+ device_initcall(phy_core_init);
++
++static void __exit phy_core_exit(void)
++{
++	debugfs_remove_recursive(phy_debugfs_root);
++	class_destroy(phy_class);
++}
++module_exit(phy_core_exit);
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index 3a570bc59fc7..f6d607ef0e80 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -148,6 +148,7 @@ struct phy_attrs {
+  * @power_count: used to protect when the PHY is used by multiple consumers
+  * @attrs: used to specify PHY specific attributes
+  * @pwr: power regulator associated with the phy
++ * @debugfs: debugfs directory
+  */
+ struct phy {
+ 	struct device		dev;
+@@ -158,6 +159,7 @@ struct phy {
+ 	int			power_count;
+ 	struct phy_attrs	attrs;
+ 	struct regulator	*pwr;
++	struct dentry		*debugfs;
+ };
+ 
+ /**
+-- 
+2.18.0
 
-This looks fine to me,
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-but I would like Krzysztof to take a look too to be on the safe side!
-
-Cheers,
-Conor.
-
-> ---
->  .../display/amlogic,meson-g12a-dw-mipi-dsi.yaml    | 117 +++++++++++++++=
-++++++
->  1 file changed, 117 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/display/amlogic,meson-g12a=
--dw-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/amlogic,meson=
--g12a-dw-mipi-dsi.yaml
-> new file mode 100644
-> index 000000000000..8169c7e93ff5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mip=
-i-dsi.yaml
-> @@ -0,0 +1,117 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright 2020 BayLibre, SAS
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/amlogic,meson-g12a-dw-mipi-ds=
-i.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Amlogic specific extensions to the Synopsys Designware MIPI DSI H=
-ost Controller
-> +
-> +maintainers:
-> +  - Neil Armstrong <neil.armstrong@linaro.org>
-> +
-> +description: |
-> +  The Amlogic Meson Synopsys Designware Integration is composed of
-> +  - A Synopsys DesignWare MIPI DSI Host Controller IP
-> +  - A TOP control block controlling the Clocks & Resets of the IP
-> +
-> +allOf:
-> +  - $ref: dsi-controller.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - amlogic,meson-g12a-dw-mipi-dsi
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 3
-> +
-> +  clock-names:
-> +    minItems: 3
-> +    items:
-> +      - const: pclk
-> +      - const: bit_clk
-> +      - const: px_clk
-> +      - const: meas_clk
-> +
-> +  resets:
-> +    minItems: 1
-> +
-> +  reset-names:
-> +    items:
-> +      - const: top
-> +
-> +  phys:
-> +    minItems: 1
-> +
-> +  phy-names:
-> +    items:
-> +      - const: dphy
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Input node to receive pixel data.
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: DSI output node to panel.
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - phys
-> +  - phy-names
-> +  - ports
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    dsi@7000 {
-> +          compatible =3D "amlogic,meson-g12a-dw-mipi-dsi";
-> +          reg =3D <0x6000 0x400>;
-> +          resets =3D <&reset_top>;
-> +          reset-names =3D "top";
-> +          clocks =3D <&clk_pclk>, <&bit_clk>, <&clk_px>;
-> +          clock-names =3D "pclk", "bit_clk", "px_clk";
-> +          phys =3D <&mipi_dphy>;
-> +          phy-names =3D "dphy";
-> +
-> +          ports {
-> +              #address-cells =3D <1>;
-> +              #size-cells =3D <0>;
-> +
-> +              /* VPU VENC Input */
-> +              mipi_dsi_venc_port: port@0 {
-> +                  reg =3D <0>;
-> +
-> +                  mipi_dsi_in: endpoint {
-> +                       remote-endpoint =3D <&dpi_out>;
-> +                  };
-> +              };
-> +
-> +              /* DSI Output */
-> +              mipi_dsi_panel_port: port@1 {
-> +                  reg =3D <1>;
-> +
-> +                  mipi_out_panel: endpoint {
-> +                      remote-endpoint =3D <&mipi_in_panel>;
-> +                  };
-> +              };
-> +          };
-> +    };
->=20
-> --=20
-> 2.34.1
->=20
-
---s/aEe9Onk7m7s45t
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZF6xBQAKCRB4tDGHoIJi
-0lkLAP9aw2fomhWlSF6eQEZVTD8Xm33bApDDIK5TJfpd9yZupQD8DFLo/uqOZeTX
-Sifp4pc02lgSSSXPXhf84CIoaGUoHAU=
-=h7tW
------END PGP SIGNATURE-----
-
---s/aEe9Onk7m7s45t--
-
-
---===============0490730216466858560==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0490730216466858560==--
-
