@@ -4,94 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C55DCC7EE22
-	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 10:45:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18492C77B7D
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 12:19:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7mv80nlTl9wNbPyeNo68JzMG0CaLGC2Pcg/tl3CoaBs=; b=zwHaPD2NxRmuuW
-	E2tVemJgSgPC1v6/jT10k13FmBZfaE+6jjoO+XLjFJlZDE9brJxxyY+xysguZPdikf5zQrURjdKfz
-	M0AFt8pLtwAKoNOZC/gEstgL1HIKm+zKtassgDymDCwpVWcQ5lmCF71kh5r/JFMYtAJ+QxFik0hDc
-	sxrQna5TMGQBUoCMv6zvQqdw/e5QjJn/A7iWFrPPJhAipgz4o7J05BLfz6RYhLD2Tigo3AE66LqYD
-	T4DX40fIWqzXPMlrncdt08tNr8BSMCRMqhDvQ9cY7Y5OsCFpj0ZfJ08UlCdPvAgZlxYMjSqohmIFb
-	ijsKhp6MDnORsm7zZJKg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pFvk88J58HTBOJfkz7MLP76hC4eHOAu1jygZYx17oEA=; b=o3pqkA9Qweg01S
+	TEGzQSXDMWc+e75YRM2iAtYi+Kg1KxnWEMcHbS9h9dzj17aQ7bYWWHBb/euyimnuM64P5Gs7YNDC7
+	TA0kcY2WjDtIsBA6mozC2eDm0twT+JqggQYZapzmmB+CohJwRP9tjsp32md3SpRgWVYNnTTicZGxt
+	x/Hw7wrD+5szNdCXRFkO8k5Fj2D5nDZr1X4PB2S4/uhDNj2ASqby5n2Pq6J/NcAIr7yLSKWmWvijG
+	lJsULTHXlwlgotTHpPISoakIvj4TWhZZTCVb3ZJHgK9w3kqQMU12PLs6u9wW8TIIHpBcEnHtopXw9
+	nAKsTIYg9oC2HUWE16/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyVhb-001sr5-14;
-	Mon, 15 May 2023 10:45:15 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1pyXAd-0026Bc-1c;
+	Mon, 15 May 2023 12:19:19 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyUcW-001Zv9-0Y
+	id 1pyXAa-0026B9-1W
 	for linux-phy@lists.infradead.org;
-	Mon, 15 May 2023 09:35:59 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-3f41dceb9d4so93664115e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 02:35:56 -0700 (PDT)
+	Mon, 15 May 2023 12:19:18 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-3f42ba32e24so46800775e9.3
+        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 05:19:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684143355; x=1686735355;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=i1U5d4MLxOVRGxYrIG94ORc3atBG6AwDIhORaNjU7E8=;
-        b=0I7No2h2vVPxZmELHElkO+DCMmo/7h06fCuFCt9VWkpo8/xiz0U4nvQr+oP9mcYZtf
-         FX4pXi+9qn6fWaFgnuy9ee8GlUrAvc8uOIPfMUmMy7ACNpBV4nfERAdFfCntOoJ20RN9
-         zoQsNqlbnxRL3Gg+Kxjq+LQr44RsWRr1z+XR6KwIl47cS1kUp2xFQg0lQLdiHdPsWGRR
-         eAA0GQQjkW/1ExWten9k75ga4J8zLaqeB3zjT9+EgCjfS4qgaI50Zsg4keJHUZPEA3V1
-         XL1tbgpzyYuCd+brFvK8S14n9y8WsypZnjmYhBHTwpgto1VIDsbN7OmbxQm3QCNaUEas
-         mfAw==
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1684153152; x=1686745152;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=L912CSeolNZtYdQ8RZjTKt4b4LSvo4r4682xBt0zJjc=;
+        b=U+ib7nrp1j5RymaVeBottDtU2UQWB9P+aB7p2Kk9adtcpQ3b48jVgUfn+o15WQwh/J
+         VZ+z0d0KjsTba6bzI2SucZqskj6kRcMw+HR4/sWtEI2tPD7/dOcXDeXeXL94BVFDWJor
+         L6kYb0568hAlcDzqPVOtFBFc27Dg6/2icQXSnPvoVgos49/fSF7CsO7Xk8ErEn/WOZhV
+         FYdAg1m2u20V7ajVbbLbHRk2/e10Vvz80LkYxH2v0ZW+1LuWlxW2tkM/fYWE3ioQdNJA
+         9rwJGRKCOjbL1lt5QkoriHmW97ru2MLaNgp44pvlxQVZFhBNLz3nNRK+HtyKNupygwai
+         uDxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684143355; x=1686735355;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=i1U5d4MLxOVRGxYrIG94ORc3atBG6AwDIhORaNjU7E8=;
-        b=B4QMX9fpWrNYJjRhXsldm2PsKsIjTBRXSBc0/J0EwOABlb+5SraKnJQgiEhDz+GRrC
-         SgmfCR/4rwzSgfPy8idquoSmh9L1oyhhiNYVzQmibcL60sOTShEOnZowK7dmwlpbcrKH
-         yqgT//eGYpyYzwXkfGCyB9RSqOOUORyz6Cm64EBnhojx9t1WO3dkwu6ahSjb0hTyrVoS
-         Af5RD15r9la7EHFdtujENRJHShqDB84lMU721/Q6tzumbvYHFUAy1W7OKLTAbRPg23vO
-         a4D/nQL/pktZkob3F3g5Mw3Usll4TWW7K6Z8gi2K58XaIZOWH7kHIGKOavLxAGD4+RL6
-         EH+A==
-X-Gm-Message-State: AC+VfDw/XsKVBBVoJmgWhWebdJtkbqaNnq78+vjLzuMWLmW6lF2yAZYv
-	frVFDmFWZ6k/wnRoUBptSxCNOA==
-X-Google-Smtp-Source: ACHHUZ7+Cb+vH+WpGUTIuorFy/U4TAkpqUMxuly4awYN+dmnigKVjCrRjrsxKfKFu1bnpDBzyacmPA==
-X-Received: by 2002:a1c:cc0e:0:b0:3ef:622c:26d3 with SMTP id h14-20020a1ccc0e000000b003ef622c26d3mr26682092wmb.35.1684143354910;
-        Mon, 15 May 2023 02:35:54 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:55f:21e0:fd3b:9fed:e621:cc8f])
-        by smtp.gmail.com with ESMTPSA id z22-20020a7bc7d6000000b003f42813b315sm21035451wmk.32.2023.05.15.02.35.53
+        d=1e100.net; s=20221208; t=1684153152; x=1686745152;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=L912CSeolNZtYdQ8RZjTKt4b4LSvo4r4682xBt0zJjc=;
+        b=QeE3oRo6rm4lBMLnTSXrTSY3lzELhSaYJP+LBDAz+ULjPWqXXxJ4MMmPks3vwxEcMV
+         6A309k43MPbUgV4r9JNQIfTHUsBbkQUpiWHQ4WjqZDNEdKTvwVtUUsn5iuZcFWpq9dZ6
+         Km4Cz+rCHnspgTLTMfTdtaaWpJOoSx8IdxWe3aNlPfmlcyilC4a0TMvYVR6XMQXA1F1J
+         6tOSIzicPTWDSZZXheeXBofW+UVOTwdKtdA/ENMpuQK08awLWPH1/To53pc8JNLVb2vu
+         Y1dYu2ob6C4DxfP5XqKsz6ZkfUdj7AnIFT2QSA0IRd/UzK8JG1zbteQnSSsDJv0IWwcX
+         t1Eg==
+X-Gm-Message-State: AC+VfDydFnQuF3moZFd3U/OaWsoCrEvsVD2/jCUaDpGdv+iyCUu52SCM
+	/43APEvbQwNhgd6937J2c0V4eA==
+X-Google-Smtp-Source: ACHHUZ4cjC89qH3/rJziQ7Tbr+oTbvM0sVWCqTBk3NprhE9Hucvy65oL/bFZblZQcoXwom6wcpCXUg==
+X-Received: by 2002:a5d:6591:0:b0:2f4:4e1a:bea2 with SMTP id q17-20020a5d6591000000b002f44e1abea2mr22755001wru.59.1684153151997;
+        Mon, 15 May 2023 05:19:11 -0700 (PDT)
+Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:1388:9f6:c7d9:3b77])
+        by smtp.gmail.com with ESMTPSA id k15-20020a5d428f000000b003062d815fa6sm32361582wrq.85.2023.05.15.05.19.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 May 2023 02:35:54 -0700 (PDT)
-From: Julien Stephan <jstephan@baylibre.com>
-To: 
-Cc: krzysztof.kozlowski@linaro.org,
-	robh@kernel.org,
-	chunkuang.hu@kernel.org,
-	linux-mediatek@lists.infradead.org,
-	Florian Sylvestre <fsylvestre@baylibre.com>,
-	Julien Stephan <jstephan@baylibre.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Andy Hsieh <andy.hsieh@mediatek.com>,
+        Mon, 15 May 2023 05:19:11 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
-	linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH v2 1/2] dt-bindings: phy: add  mediatek mipi csi driver v 0.5
-Date: Mon, 15 May 2023 11:05:50 +0200
-Message-Id: <20230515090551.1251389-2-jstephan@baylibre.com>
-X-Mailer: git-send-email 2.40.0
-In-Reply-To: <20230515090551.1251389-1-jstephan@baylibre.com>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Subject: [PATCH] arm64: dts: qcom: sa8775p: mark the UFS controller as dma-coherent
+Date: Mon, 15 May 2023 14:19:08 +0200
+Message-Id: <20230515121908.303432-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230515_023556_212067_E47D5745 
-X-CRM114-Status: GOOD (  16.68  )
+X-CRM114-CacheID: sfid-20230515_051916_751465_45D5B045 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,106 +104,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Florian Sylvestre <fsylvestre@baylibre.com>
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-This adds the bindings, for the MIPI CD-PHY module v 0.5 embedded in
-some Mediatek soc, such as the mt8365
+The UFS is cache coherent, so mark it as such in the dtsi.
 
-Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
-Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 ---
- .../phy/mediatek,phy-mipi-csi-0-5.yaml        | 62 +++++++++++++++++++
- MAINTAINERS                                   |  6 ++
- 2 files changed, 68 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-new file mode 100644
-index 000000000000..5aa8c0b41cdf
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-@@ -0,0 +1,62 @@
-+# SPDX-License-Identifier: (GPL-2.0-Only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/mediatek,phy-mipi-csi-0-5.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Mediatek Sensor Interface MIPI CSI CD-PHY
-+
-+maintainers:
-+  - Julien Stephan <jstephan@baylibre.com>
-+  - Andy Hsieh <andy.hsieh@mediatek.com>
-+
-+description:
-+  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
-+  receivers. The number of PHYs depends on the SoC model.
-+  Depending on the soc model, each PHYs can support CDPHY or DPHY only
-+
-+properties:
-+  compatible:
-+    enum:
-+      - mediatek,phy-mipi-csi-0-5
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#phy-cells':
-+    const: 0
-+
-+  mediatek,is_cdphy:
-+    description:
-+      Specify if the current phy support CDPHY configuration
-+    type: boolean
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#phy-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    soc {
-+      #address-cells = <2>;
-+      #size-cells = <2>;
-+
-+      mipi_rx_csi0: mipi_rx_csi0@11c10000 {
-+        compatible = "mediatek,phy-mipi-csi-0-5";
-+        reg = <0 0x11C10000 0 0x2000>;
-+        status = "okay";
-+        mediatek,is_cdphy;
-+        #phy-cells = <0>;
-+      };
-+
-+      mipi_rx_csi1: mipi-rx-csi1@11c12000 {
-+        compatible = "mediatek,phy-mipi-csi-0-5";
-+        reg = <0 0x11C12000 0 0x2000>;
-+        status = "disabled";
-+        #phy-cells = <0>;
-+      };
-+    };
-+...
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 6d54f3193075..44f0ff11e984 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -13098,6 +13098,12 @@ F:	Documentation/devicetree/bindings/media/mediatek-vpu.txt
- F:	drivers/media/platform/mediatek/vcodec/
- F:	drivers/media/platform/mediatek/vpu/
- 
-+MEDIATEK MIPI-CSI CDPHY DRIVER
-+M:	Julien Stephan <jstephan@baylibre.com>
-+M:	Andy Hsieh <andy.hsieh@mediatek.com>
-+S:	Supported
-+F:	Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-+
- MEDIATEK MMC/SD/SDIO DRIVER
- M:	Chaotian Jing <chaotian.jing@mediatek.com>
- S:	Maintained
+diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+index c5e2e3256bc4..c0717dac100c 100644
+--- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
++++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+@@ -605,6 +605,7 @@ ufs_mem_hc: ufs@1d84000 {
+ 			power-domains = <&gcc UFS_PHY_GDSC>;
+ 			required-opps = <&rpmhpd_opp_nom>;
+ 			iommus = <&apps_smmu 0x100 0x0>;
++			dma-coherent;
+ 			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
+ 				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
+ 				 <&gcc GCC_UFS_PHY_AHB_CLK>,
 -- 
-2.40.0
+2.39.2
 
 
 -- 
