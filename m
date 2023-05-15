@@ -4,97 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75D66C7EE2C
-	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 16:42:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 545ADC7EE24
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 19:59:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oBMTWAf0oZggNwC2bm+KsJzWVpyTCFzsLw/cm0AYIew=; b=t9bHRVSVDEj4qi
-	GtIPtfGtII6k9Hut+DGi3BNEooRH1ttMgCiP/qzSWoVg/cE78EciPiR/M49t4U9sylS85jyv0mSdd
-	06c/nbJLfaP0tNw4Fyv/DROoN92+RIW1SejhWmQrIjR57pX8r6hTRzwjzuAZhzv61+w4dB2FGYIGy
-	CzKmiHFSR8Ohl1GqmppaqQ3w7/eq4v+58ZhsEWeA1OY9W4xKxaI6t6gSyRu29psVOLcjImERAWfem
-	U5SmvTXAJW2sNLuq2EHefe22smcn6N7+3mtESN1Up7k6ae9mit1KDJI6FOjIZfFM6a959lFpbE0/7
-	33vyN9FbWogRsty/g38g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZgepQBGAgHBoy3myoIM+/X6VbURfI7KiI1xd3kNdFLQ=; b=n0U0QenHicl6Ep
+	ibwof3gMrCNRK40JYwzikJA7ZsCJMOvEjAStC4ZsmXTBaDmI6lfjXI/mXbQj4HUv97b2IntD9ZUyu
+	979swl5/dFMGkOJtkfFR5O8lGI5GgsOtB34mBWtfwomeoEMVMVONpCAD/eJBzCUpD1RhuSadB7SKF
+	60PoYmzOQ4n5ET81B0PZmykFD/ntZoyKx7f/KpfV8lHlMjLqkcczigf50aKs4UhiqmbsO41K3Q6cO
+	1TeLi4BfJJjeeIslbCrRrgZKA7u99LVOrdwg5oSXAXVUu5S12u2hF/+Ada5ipxQY1FFwGcfhHT3ds
+	1H6dKh2u3Y1+xHmyGixw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pybH3-002nl6-0I;
-	Mon, 15 May 2023 16:42:13 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1pyeLy-003M35-3B;
+	Mon, 15 May 2023 19:59:30 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pybH0-002nj9-0r
+	id 1pyeLx-003M2I-0I
 	for linux-phy@lists.infradead.org;
-	Mon, 15 May 2023 16:42:11 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-50bc0117683so23085502a12.1
-        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 09:42:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684168929; x=1686760929;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=pGn8HAuIocxoHajMCSRRfoguprnK9ZSWlAhG7ClLNxU=;
-        b=ntSUivjlQsSveCo7qvqN4hvYLt8/4YSecdN3T8kf9zGq+Yc6ZGkxC3iSAbw7l0ol/J
-         p8Y3Fv1b/fXPs8S6bWHfgdBVHc+6f8dC3qXxlEjweK0Dr+BbPMgnTtPsoWsd+7sigaz6
-         P2tI2n8ChAvwCCsm8Ih3MzBzbdX8dufLrMLfasxGZCKS6GwB8edWSB3kMyPnEZvffz38
-         yZuSueXFekNmMyd606fbEUpjGYy/eIEPkIZQfBquwUJNOhU+qXiTycmEaIVG6xV0A25g
-         UhM09eopARPRGIzugkU1Rh6GCT6oy2f+VufN3WG0Ln7+XJHuZ5hlikXTl0kYRaS864d1
-         tuwQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684168929; x=1686760929;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=pGn8HAuIocxoHajMCSRRfoguprnK9ZSWlAhG7ClLNxU=;
-        b=BU/D8mD02u4ZGmYel9Sw7EPjBoWQHYf3ObeU+uaG2To4X1BqoPhgpYRzuu5RU6Q+qh
-         Cf93ZBEGopP131yBqH4IZgWtOhLmYqGZyabeWUJtXxRWm5UnFARNAiaU80RMhbdUUriV
-         qDuk5GkEGtmkQAEKfCy3RfrVltiOJYDXGGRkRgqqLdzasZHL70r955P0XtEOjLWwwYNJ
-         uzPAXw/is1LCBq9YsE/qhHjJH29j4tNwBQdibe+yLHJ3yL5267evuZ0yVZSHvvevntFe
-         noFSHfxT7ffpfKmZl7dj+CVGxwGmzuhrx4Yi6NDvZQGTmiMAQ/QgwD/xqhoqSBleTfPo
-         gQ7A==
-X-Gm-Message-State: AC+VfDz5jwvGAVun5iKZOpZMRD2z9sktOc1L1W1JSwuVK3gJkkNLqVrB
-	u48MPxoK8OuIEEoXUwuhU6tXIA==
-X-Google-Smtp-Source: ACHHUZ7QficGch3Sl9q7M8rHIXIEkBIuRgf/Sni/Jw1SxXmU9/+Vxw6610XGNRBN7zoz6cqyNfYj6A==
-X-Received: by 2002:a17:907:d86:b0:94a:9c4e:d2e9 with SMTP id go6-20020a1709070d8600b0094a9c4ed2e9mr31118316ejc.0.1684168928739;
-        Mon, 15 May 2023 09:42:08 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:6470:25b8:7c2d:1992? ([2a02:810d:15c0:828:6470:25b8:7c2d:1992])
-        by smtp.gmail.com with ESMTPSA id n8-20020a056402514800b0050d8aac0a1esm7408463edd.19.2023.05.15.09.42.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 May 2023 09:42:08 -0700 (PDT)
-Message-ID: <5f41d497-8b3c-42b4-22ba-b24772abb3a5@linaro.org>
-Date: Mon, 15 May 2023 18:42:06 +0200
+	Mon, 15 May 2023 19:59:30 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 34FJxO41053692;
+	Mon, 15 May 2023 14:59:24 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1684180764;
+	bh=ZMmu+Jtm+xCqgH0l6TlKmPYujrA59t9EtYDFwsokG04=;
+	h=From:To:CC:Subject:Date;
+	b=rr5h/hQX+ekYn7BB4x4Osx2Ojjg0N5sq7Mvj3ZI7Xkm2bQ0YhjJ058Z1uxRi9MFxt
+	 OlOv0m+562OQNvLuCClXxrtu+AcuyDSxU1Dgw+O+64hqgxSiHgSGPYSew1FZ2O5oif
+	 HUTuv1PC9Ub9mpc7o/1rKi3V16+wqlCf+HDsLM8s=
+Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 34FJxO4S065727
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 15 May 2023 14:59:24 -0500
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 15
+ May 2023 14:59:23 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 15 May 2023 14:59:23 -0500
+Received: from fllv0039.itg.ti.com (ileaxei01-snat2.itg.ti.com [10.180.69.6])
+	by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 34FJxNP9016442;
+	Mon, 15 May 2023 14:59:23 -0500
+From: Andrew Davis <afd@ti.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Siddharth Vadapalli <s-vadapalli@ti.com>,
+        Roger Quadros <rogerq@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Andrew
+ Davis <afd@ti.com>
+Subject: [PATCH] phy: ti: gmii-sel: Allow parent to not be syscon node
+Date: Mon, 15 May 2023 14:59:22 -0500
+Message-ID: <20230515195922.617243-1-afd@ti.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v4 04/13] dt-bindings: display: add Amlogic MIPI DSI Host
- Controller bindings
-Content-Language: en-US
-To: neil.armstrong@linaro.org, Jerome Brunet <jbrunet@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>
-Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
- <fe2f22c7-8c39-faf3-bc65-a7c089200134@linaro.org>
- <eaa3ecd0-dcf0-01d8-b3ea-9dd900215839@linaro.org>
- <80da6b9e-ba82-d2c9-2854-b444635150fd@linaro.org>
- <14405799-9b56-6767-4a35-51ab8ae636a9@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <14405799-9b56-6767-4a35-51ab8ae636a9@linaro.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230515_094210_305189_51817111 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20230515_125929_182545_E3D2B0AF 
+X-CRM114-Status: GOOD (  10.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,43 +84,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/05/2023 18:28, neil.armstrong@linaro.org wrote:
->> It's just a link stored in automated responses, what's here childish?
->> It's still valid in current cycle! Look:
->>
->> https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
->>
->> What's the difference? Srsly, I can point you to submitting patches
->> without reference to specific line if you wish... Or you can check by
->> yourself.
->>
->> I give the same reviews to so many people that have templates and Elixir
->> happens to be the only place allowing bookmarking specific line. Which
->> is helpful for beginners because the entire doc is huge.
->>
->> I can make an exception for you and never paste direct links.
-> 
-> I value those kind of links for beginners and newcomers, really, it's a good
-> thing to do and we should all do the same.
+If the parent node is not a syscon type, then fallback and check
+if we can get a regmap from our own node. This no longer forces
+us to make the parent of this node a syscon node when that might
+not be appropriate.
 
-Hm, if I understand correctly, you felt being patronized by my link? I
-apologize for that. It was not my intention and there is really no need
-to feel like that. Look, I have many, many templates so I can speed up
-review. This one I gave to many:
+Signed-off-by: Andrew Davis <afd@ti.com>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-https://lore.kernel.org/all/?q=f%3Akrzysztof+%22Please+wrap+commit+message+according+to+Linux+coding+style%22
-
-Writing same review every damn time is a boring, absolutely huge waste
-of time. People just make too many same mistakes. Better to hit key
-shortcut.
-
-Over the time most of my templates grew a bit, because when I wrote
-"Please wrap to 75" submitter did not know what to wrap or why. To save
-myself work I extend the template to something more. The entire text and
-link is for the beginner, not for you.
-
-Best regards,
-Krzysztof
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index 8c667819c39a..1e67ed9a5cf6 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -435,9 +435,12 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+ 
+ 	priv->regmap = syscon_node_to_regmap(node->parent);
+ 	if (IS_ERR(priv->regmap)) {
+-		ret = PTR_ERR(priv->regmap);
+-		dev_err(dev, "Failed to get syscon %d\n", ret);
+-		return ret;
++		priv->regmap = device_node_to_regmap(node);
++		if (IS_ERR(priv->regmap)) {
++			ret = PTR_ERR(priv->regmap);
++			dev_err(dev, "Failed to get syscon %d\n", ret);
++			return ret;
++		}
+ 	}
+ 
+ 	ret = phy_gmii_sel_init_ports(priv);
+-- 
+2.39.2
 
 
 -- 
