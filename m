@@ -4,89 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD5D1C77B75
-	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 16:00:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08F8EC7EE22
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 16:06:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sY2iS/kPTr6aERvISw3h/8O1ZyExVsr9UZn2Sy8qggU=; b=vPBjp3/sS1xaQ3
-	VyD10h/XTXF2qJ9a9mmCg2WoHArYwyp2uK+0XU1A36m8lMEDuqKoz0cys4UJ+zqY2+NxxZL7BrZ1Y
-	lwdcgLIGMvLDB9rVMUbVBmdX+CfcbBwwKc9hPa16aKovgNjPapM6xfvskSLaGKnSGyp7Q7yglTQ2/
-	wjNRVzfbNFGWJmkbO9DrUuYkiVslKnwdBAsCjVRLOcE2Df1u8+Yht+q9+41wvHTalvyL/WEm5rHxm
-	zMK1nAWMpgunFPC5/pz1iEz7Y7lwULS6vAIZBG022rSmk+FIdToSpT1Nup3WJHyf1NGFxMo1agVlp
-	w8+budxkTmfp+JPVoy+g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=dWKkGwyVRyfe3x7eNrYD0VgMz22HZOnzflBjdHPNCtI=; b=nMCrW8URO96UfRW1c4v5KSO+dC
+	C0ioA4xIhoYlXSWOCXmsb0+UaNPvFAktP4NfqyjxHe6LSidBwX8u6d7CNlhIH8ZdEDXU1fALQRhEt
+	IvMW0pDYpAXhAdWi/OhARHadVHcOG+bX96XgroQfxQjbwR0nh2NQ72mdw5cNTj6Nsa7F7ZBHoIgS+
+	qp8IcDckBoDnXFEjGIHbTeHPBigTq7cqs31IDO1WAxb4rOAgsg6KAf4NkTvE8GJqEAl2VM3RCldXe
+	lVf9Nkh9m3iudWvi0cLxTthlrCR1wtz3bGLJ52jhb3qBH2k0UTu6cJlJS+g1xgwlBF2yIUWowBAJj
+	ypQiNiHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyacT-002emZ-0g;
-	Mon, 15 May 2023 16:00:17 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1pyaia-002gWb-22;
+	Mon, 15 May 2023 16:06:36 +0000
+Received: from mail-wm1-f41.google.com ([209.85.128.41])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyZYW-002T2G-0Q
+	id 1pyaiX-002gRJ-17
 	for linux-phy@lists.infradead.org;
-	Mon, 15 May 2023 14:52:12 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-3f450815d02so41001575e9.0
-        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 07:52:07 -0700 (PDT)
+	Mon, 15 May 2023 16:06:35 +0000
+Received: by mail-wm1-f41.google.com with SMTP id 5b1f17b1804b1-3f509ec3196so36604425e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 09:06:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684162326; x=1686754326;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=I6PGsaxxe+r0/tgEPfoiZneEqJdU4NADxCmDaQhFL68=;
-        b=QBUPDu0mnTKpIi/wGbo9UgpiCqziYGcMj3hQWPNefHgGAfqJ8lVJErWsufoP7gVWl/
-         MuKN4tEX1pZzLr340OCucG7rs4ehSVdPZ56+kGhAkPSHTFEanh+UOGRKxl0frSuERoQi
-         znFDPcNKbBBfN9G+5GNepJLzQ0wZAO8nLN1JBJsH87VkOTZzGqNF3dV7QfkvbFQbWwzC
-         8JItnIfYJ0m+YlLGiaXwATFgD5y70Nki5rbnME2c/ITNCpP6jTEfV2/BTzQHtJXbr5Ix
-         ZLYZvkgxPg66jjZAKiLqfZ7H0BYHkg7RRJ+3Kpz8v/kkce6/YnkPjUmtUNTBVfQ11JjK
-         kiqw==
+        d=linaro.org; s=google; t=1684166789; x=1686758789;
+        h=content-transfer-encoding:in-reply-to:organization:content-language
+         :references:cc:to:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=lWOCuNPc2Qhm23nE7fOQTHAU+RRC9bg5RSfsC5uCndw=;
+        b=CAUxT2wohMzyPhNhiBK32M6vlIx8hjwrVFS/n+Ot/KTQtHRMY3fI6QG2sJREE1OTod
+         q0kxQyT51lSIWKyeNrkRGWvXmM6VYcnE/shvjL4QQ4S/Ff4WEwb01lHxi3kURR4jje9q
+         yv2/BxYGfvDvqMI2RPSrnPcYwtM7HmfKOr/IYEnmvKwFcPM2CuyqyquUQzVkKRjTpaKS
+         4pHa2UrqLiNvuuDBv5dY0qoYXayT+6jQV7Kf56962q/E1fkquwmzEZ0fxvYAJ9PXlxKG
+         h9ALmY7IRxNx1ck0lxQ0q1sJua1B/292RKS3TRum9Xg4Ad2WPIGs06g30e6Xa33ZqHKf
+         xnLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684162326; x=1686754326;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=I6PGsaxxe+r0/tgEPfoiZneEqJdU4NADxCmDaQhFL68=;
-        b=gB/UC1zBY6ULPjBR+4+G6flcK/j6u/trq+nemdmAkEeNLSlLBbT2WnriUdL3BeoLVa
-         /jcN51mWjkygdyrJL+sfkSMlAKacViCCAoH63+2B5udQs66czNDdoZB2yluozf+zyTDM
-         Umau5l/MSDlhGnRoNBQuGXPzvCa/o8DI2ui4+OrIuMTsIqV/pZ3Eb85xSqx8edorBa3L
-         Cznrw+cUCwNuVVfX9C1xd6PdV6c75e5u05lH4VbVFfOTpin8xZiJr0F4Xo+aOXBeUekC
-         ClfpQHFlqn6r+LylRpqL0Gsyj1AKbKwOEJjPQDp/ElU/DX5gWeev44x99ShoxEKe5OAs
-         toOA==
-X-Gm-Message-State: AC+VfDyQWWVzkrqmKGpbZXn5+fIJ+U8/3mk9IrRnogm5yZ7pP5FKj23j
-	xN8QlPDtXPddvNf6DXVqryncJA==
-X-Google-Smtp-Source: ACHHUZ5PnVTE8/BjOvD4cpmnU1SfNcpaeP+ththsz81R4NjZ9b8l1B6aIXxY1tdG8cXWxh3+7kD4ow==
-X-Received: by 2002:a1c:f310:0:b0:3f1:74bd:bc22 with SMTP id q16-20020a1cf310000000b003f174bdbc22mr22887492wmq.6.1684162326437;
-        Mon, 15 May 2023 07:52:06 -0700 (PDT)
-Received: from localhost ([2a01:e0a:55f:21e0:fd3b:9fed:e621:cc8f])
-        by smtp.gmail.com with ESMTPSA id p1-20020a05600c204100b003f4e47c6504sm14774860wmg.21.2023.05.15.07.52.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 May 2023 07:52:05 -0700 (PDT)
-Date: Mon, 15 May 2023 16:52:05 +0200
-From: Julien Stephan <jstephan@baylibre.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: krzysztof.kozlowski@linaro.org, robh@kernel.org, 
-	chunkuang.hu@kernel.org, linux-mediatek@lists.infradead.org, 
-	Phi-bang Nguyen <pnguyen@baylibre.com>, Louis Kuo <louis.kuo@mediatek.com>, 
-	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Andy Hsieh <andy.hsieh@mediatek.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	open list <linux-kernel@vger.kernel.org>, 
-	"moderated list:ARM/Mediatek USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
-	"open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>
-Subject: Re: [PATCH v2 2/2] phy: mtk-mipi-csi: add driver for CSI phy
-Message-ID: <jx2ndeoli3ozjiydygwclrpqmwftgf2gv4kfr6dyclf2cyh4hk@fnhvqeef5w4f>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
- <20230515090551.1251389-3-jstephan@baylibre.com>
- <cd6067b2-660a-8f2c-697d-26814a9dc131@collabora.com>
- <ynrvqt24hjgng25r2xa3hxj35cvgotx7sdfrbqfjcvj3foegmr@4lqhen5yu6fh>
- <85500bcc-c5e8-8ce2-edea-233de86c2d35@collabora.com>
+        d=1e100.net; s=20221208; t=1684166789; x=1686758789;
+        h=content-transfer-encoding:in-reply-to:organization:content-language
+         :references:cc:to:subject:reply-to:from:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=lWOCuNPc2Qhm23nE7fOQTHAU+RRC9bg5RSfsC5uCndw=;
+        b=QMFa467Ek6lz0L/xU+xEMrSrHtxesVuKkplWESSkkfulUipWmk1K2X3mN4fEEddxe8
+         h7ZLZEMNnBtglKdpS7UBC7aCp4KIErLQXnKfsstqiMmJTC6W03PA3XGjBnojhJI7DOfp
+         s3edC+2N+0iH1kpaLwQmbKlZXEzN7K9dOmGRntFu3u8x8YAgYoo8uzgrkGtxCs8aZRQ3
+         VI+QcWY4F+AwnI+5esfZgW5VOqww2RA0oJsLLCaHRL+u0WJASWiypkd/yifZWshznTpd
+         z+F1FYz7aFvTcqEMQlUmXGxDFe3eTs02ntx4lVpEuayVrYjO25tho45ndb2CGEvp56xc
+         D9rQ==
+X-Gm-Message-State: AC+VfDw1dbTgRIEpzO9cu5sDD/OkAN2q98fhOXwQ+WuuvLxjKiGrHyff
+	R1ZnVxNt/dHeTXH5zmO+OFdPAw==
+X-Google-Smtp-Source: ACHHUZ5y+S1cl668Cm09EQ1NgXHqr+j/kjOw7Ds31xnaNEbo1aQsxXOF8pRWNpL+J37Gpkvap2Ec/A==
+X-Received: by 2002:a05:600c:4444:b0:3f3:284d:8cec with SMTP id v4-20020a05600c444400b003f3284d8cecmr24800387wmn.2.1684166789290;
+        Mon, 15 May 2023 09:06:29 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:982:cbb0:ee7:a396:6195:bb56? ([2a01:e0a:982:cbb0:ee7:a396:6195:bb56])
+        by smtp.gmail.com with ESMTPSA id c3-20020a7bc843000000b003f42314832fsm25497766wml.18.2023.05.15.09.06.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 May 2023 09:06:28 -0700 (PDT)
+Message-ID: <9fa0662e-8854-05f9-da7f-ec8e08d2badf@linaro.org>
+Date: Mon, 15 May 2023 18:06:27 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <85500bcc-c5e8-8ce2-edea-233de86c2d35@collabora.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 01/13] dt-bindings: clk: g12a-clkc: export VCLK2_SEL
+ and add CTS_ENCL clock ids
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Jerome Brunet <jbrunet@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sam Ravnborg <sam@ravnborg.org>
+Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
+References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
+ <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-1-2592c29ea263@linaro.org>
+ <5cb38be4-a27f-dc1a-cbb9-c195505a9e7c@linaro.org>
+Content-Language: en-US
+Organization: Linaro Developer Services
+In-Reply-To: <5cb38be4-a27f-dc1a-cbb9-c195505a9e7c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230515_075208_391732_1A39D823 
-X-CRM114-Status: GOOD (  32.84  )
+X-CRM114-CacheID: sfid-20230515_090633_382099_F8E1E9BB 
+X-CRM114-Status: GOOD (  12.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,64 +106,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 15, 2023 at 04:22:38PM +0200, AngeloGioacchino Del Regno wrote:
-> Il 15/05/23 15:36, Julien Stephan ha scritto:
-> > On Mon, May 15, 2023 at 02:22:52PM +0200, AngeloGioacchino Del Regno wrote:
-> > > Il 15/05/23 11:05, Julien Stephan ha scritto:
-> >   ..snip..
-> > > > +	port->is_cdphy = of_property_read_bool(dev->of_node, "mediatek,is_cdphy");
-> > >
-> > > This driver doesn't support C-PHY mode, so you either add support for that, or in
-> > > my opinion you should simply refuse to probe it, as it is *dysfunctional* for the
-> > > unsupported case (and might even introduce unstabilities).
-> > >
-> > > 	/* At the moment, only D-PHY mode is supported */
-> > > 	if (!port->is_cdphy)
-> > > 		return -EINVAL;
-> > >
-> > > Also, please don't use underscores for devicetree properties: "mediatek,is-cdphy"
-> > > is fine.
-> > >
-> > Hi Angelo,
-> > You are right this driver does not support C-PHY mode, but some of the
-> > PHYs themselves support BOTH C-PHY AND D-PHY. The idea of `is_cdphy` variable
-> > is to know if the CSI port supports BOTH C-PHY AND D-PHY or only DPHY.
-> > For example mt8365 has 2 PHYs: CSI0 and CSI1. CSI1 support only D-PHY,
-> > while CSI0 can be configured in C-PHY or D-PHY. Registers for CD-PHY and
-> > D-PHY are almost identical, except that CD-PHY compatible has some extra
-> > bitfields to configure properly the mode and the lanes (because supporting
-> > trios for CD-PHY).
-> > If C-PHY support is eventually added into the driver, I think we will need
-> > another variable such as `mode` to know the mode. I was also thinking
-> > of adding a phy argument to determine if the mode is C-PHY or D-PHY.
-> >
-> > So here, I don't want to stop the probe if `is_cdphy` variable is set to
-> > true. Does it make sense ?
-> >
->
-> Comments in the code convinced me that the other PHYs providing only C or D PHY
-> support weren't compatible at all with this driver.
->
-> I got it now - but at this point can you please add a comment in the code actually
-> clarifying that this driver supports both PHYs providing *only* D-PHY and ones
-> providing selectable C-or-D PHY?
->
-> That clarified, it would not make sense to stop probing if it's not a CDPHY because
-> as you said there might be a D-only PHY that would be actually supported here.
->
-> Regards,
-> Angelo
->
->
-Ok, I will add a comment in the code to make it more clear.
+On 13/05/2023 20:28, Krzysztof Kozlowski wrote:
+> On 12/05/2023 15:11, Neil Armstrong wrote:
+>> Expose VCLK2_SEL clock id and add new ids for the CTS_ENCL and CTS_ENCL_SEL
+>> clocks on G12A compatible SoCs.
+>>
+>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>> ---
+>>   drivers/clk/meson/g12a.h              | 1 -
+>>   include/dt-bindings/clock/g12a-clkc.h | 3 +++
+>>   2 files changed, 3 insertions(+), 1 deletion(-)
+> 
+> Bindings must be a separate patch from the driver changes. If this
+> causes bisectability issues, this means entire solution breaks ABI and
+> is not appropriate anyway...
 
-Regards
-Julien
+This is basically how we handled CLK IDs on Amlogic clk bindings for the
+last years, the amount of changes is very low and rather exceptional
+compared to early development stage.
+
+Neil
+
+> 
+> Best regards,
+> Krzysztof
+> 
+
 
 -- 
 linux-phy mailing list
