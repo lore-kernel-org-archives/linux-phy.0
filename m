@@ -4,91 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8B61C77B75
-	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 10:36:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C55DCC7EE22
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 10:45:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SkW4qwka6PSP5zWbNmqBPFXuBvEpIcaRNO34TVH+QJw=; b=fllHCTrVNpmJmdL2pzkVujE/oa
-	7fFvMOE3YTnI/PxLYGcfimFX19b4BksDhym9/9bOMgDsLW0klCr5KQb4MxRfn8KlxmNqKtWZHjNBf
-	Y/rCcrOV3woFbwlflD4rrE6P4k6oOUj5c2L7+6Ueu9IID90Qn+uHNeUilyE9dHeBQLOGgzWnn/5ve
-	/IpuzwXiQtDnHNveJnxc2CCCGBkitcjiUS60fM+xpmNQy363XLmTVF+D6CkUhTgyDE817hEcjdbvI
-	hHp8Csp41s65ZojgetM3Vn9syDo6yXrAOzCiFoOeRJvQD13jKyW4EkcgZWlSQgMdYitMEYbrTYSQo
-	7/8Tn/Jg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7mv80nlTl9wNbPyeNo68JzMG0CaLGC2Pcg/tl3CoaBs=; b=zwHaPD2NxRmuuW
+	E2tVemJgSgPC1v6/jT10k13FmBZfaE+6jjoO+XLjFJlZDE9brJxxyY+xysguZPdikf5zQrURjdKfz
+	M0AFt8pLtwAKoNOZC/gEstgL1HIKm+zKtassgDymDCwpVWcQ5lmCF71kh5r/JFMYtAJ+QxFik0hDc
+	sxrQna5TMGQBUoCMv6zvQqdw/e5QjJn/A7iWFrPPJhAipgz4o7J05BLfz6RYhLD2Tigo3AE66LqYD
+	T4DX40fIWqzXPMlrncdt08tNr8BSMCRMqhDvQ9cY7Y5OsCFpj0ZfJ08UlCdPvAgZlxYMjSqohmIFb
+	ijsKhp6MDnORsm7zZJKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyVZU-001nXk-0m;
-	Mon, 15 May 2023 10:36:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pyVhb-001sr5-14;
+	Mon, 15 May 2023 10:45:15 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyVZR-001nUu-08
+	id 1pyUcW-001Zv9-0Y
 	for linux-phy@lists.infradead.org;
-	Mon, 15 May 2023 10:36:51 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 34F9wd8j029249;
-	Mon, 15 May 2023 10:36:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=2Q2H/6F0QA6haF/RsibQHIgK0WwHTGtWTzV2dagm4/M=;
- b=R/sg+DHG1eGPJyp26EG7GfQrr5PNJJ08ZK25KRGyXNOwx484GFce285rsFG5VEs8ZLiA
- Wqu7t+fM/bFPBwwpFPoXXy16bpJfTMohrHUw17+kdOW8yC9P5rmYUZ0Xl/djZ1fbnPzW
- 0wK7KKPU5cbPio0oM+Vw549I/OywpgqFT/mFfUpV9r6j3SAnt1FE+OMB2deHUTlIsgxB
- xtQmFxParDFu22qkgrgEWUvHob8YT6gQg+ch39iiXV9rSBTMFxkEqbuZbz/siKxyUsPf
- 78XbzDk3GN3I+DvjhAGG5fvfXyUauZSu1mKDD19ju7jnkaBKNWN9N0Mfn7/4WWG/0sRB Pw== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qkjk183s1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 15 May 2023 10:36:43 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 34FAagJH012725
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 15 May 2023 10:36:42 GMT
-Received: from [10.216.17.27] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Mon, 15 May
- 2023 03:36:34 -0700
-Message-ID: <dc816d43-d3ca-62be-3e8d-9e6d7470c530@quicinc.com>
-Date: Mon, 15 May 2023 16:06:29 +0530
+	Mon, 15 May 2023 09:35:59 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-3f41dceb9d4so93664115e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 02:35:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684143355; x=1686735355;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=i1U5d4MLxOVRGxYrIG94ORc3atBG6AwDIhORaNjU7E8=;
+        b=0I7No2h2vVPxZmELHElkO+DCMmo/7h06fCuFCt9VWkpo8/xiz0U4nvQr+oP9mcYZtf
+         FX4pXi+9qn6fWaFgnuy9ee8GlUrAvc8uOIPfMUmMy7ACNpBV4nfERAdFfCntOoJ20RN9
+         zoQsNqlbnxRL3Gg+Kxjq+LQr44RsWRr1z+XR6KwIl47cS1kUp2xFQg0lQLdiHdPsWGRR
+         eAA0GQQjkW/1ExWten9k75ga4J8zLaqeB3zjT9+EgCjfS4qgaI50Zsg4keJHUZPEA3V1
+         XL1tbgpzyYuCd+brFvK8S14n9y8WsypZnjmYhBHTwpgto1VIDsbN7OmbxQm3QCNaUEas
+         mfAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1684143355; x=1686735355;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=i1U5d4MLxOVRGxYrIG94ORc3atBG6AwDIhORaNjU7E8=;
+        b=B4QMX9fpWrNYJjRhXsldm2PsKsIjTBRXSBc0/J0EwOABlb+5SraKnJQgiEhDz+GRrC
+         SgmfCR/4rwzSgfPy8idquoSmh9L1oyhhiNYVzQmibcL60sOTShEOnZowK7dmwlpbcrKH
+         yqgT//eGYpyYzwXkfGCyB9RSqOOUORyz6Cm64EBnhojx9t1WO3dkwu6ahSjb0hTyrVoS
+         Af5RD15r9la7EHFdtujENRJHShqDB84lMU721/Q6tzumbvYHFUAy1W7OKLTAbRPg23vO
+         a4D/nQL/pktZkob3F3g5Mw3Usll4TWW7K6Z8gi2K58XaIZOWH7kHIGKOavLxAGD4+RL6
+         EH+A==
+X-Gm-Message-State: AC+VfDw/XsKVBBVoJmgWhWebdJtkbqaNnq78+vjLzuMWLmW6lF2yAZYv
+	frVFDmFWZ6k/wnRoUBptSxCNOA==
+X-Google-Smtp-Source: ACHHUZ7+Cb+vH+WpGUTIuorFy/U4TAkpqUMxuly4awYN+dmnigKVjCrRjrsxKfKFu1bnpDBzyacmPA==
+X-Received: by 2002:a1c:cc0e:0:b0:3ef:622c:26d3 with SMTP id h14-20020a1ccc0e000000b003ef622c26d3mr26682092wmb.35.1684143354910;
+        Mon, 15 May 2023 02:35:54 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e0a:55f:21e0:fd3b:9fed:e621:cc8f])
+        by smtp.gmail.com with ESMTPSA id z22-20020a7bc7d6000000b003f42813b315sm21035451wmk.32.2023.05.15.02.35.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 15 May 2023 02:35:54 -0700 (PDT)
+From: Julien Stephan <jstephan@baylibre.com>
+To: 
+Cc: krzysztof.kozlowski@linaro.org,
+	robh@kernel.org,
+	chunkuang.hu@kernel.org,
+	linux-mediatek@lists.infradead.org,
+	Florian Sylvestre <fsylvestre@baylibre.com>,
+	Julien Stephan <jstephan@baylibre.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Andy Hsieh <andy.hsieh@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
+	linux-kernel@vger.kernel.org (open list)
+Subject: [PATCH v2 1/2] dt-bindings: phy: add  mediatek mipi csi driver v 0.5
+Date: Mon, 15 May 2023 11:05:50 +0200
+Message-Id: <20230515090551.1251389-2-jstephan@baylibre.com>
+X-Mailer: git-send-email 2.40.0
+In-Reply-To: <20230515090551.1251389-1-jstephan@baylibre.com>
+References: <20230515090551.1251389-1-jstephan@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.7.0
-Subject: Re: [PATCH v11 7/9] arm64: dts: qcom: ipq9574: Add USB related nodes
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <mturquette@baylibre.com>,
-        <sboyd@kernel.org>, <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-clk@vger.kernel.org>
-References: <cover.1683630932.git.quic_varada@quicinc.com>
- <b4c9dcfbfc328e9404be0edeaa70dde076cb7144.1683630932.git.quic_varada@quicinc.com>
-Content-Language: en-US
-From: Kathiravan T <quic_kathirav@quicinc.com>
-In-Reply-To: <b4c9dcfbfc328e9404be0edeaa70dde076cb7144.1683630932.git.quic_varada@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: q3oFru8Y1a-Qa7wyjETsnDLfNc65JTYE
-X-Proofpoint-ORIG-GUID: q3oFru8Y1a-Qa7wyjETsnDLfNc65JTYE
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-15_08,2023-05-05_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
- spamscore=0 bulkscore=0 mlxlogscore=999 clxscore=1011 priorityscore=1501
- adultscore=0 suspectscore=0 lowpriorityscore=0 mlxscore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2304280000
- definitions=main-2305150091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230515_033649_088386_FE07F535 
-X-CRM114-Status: GOOD (  21.85  )
+X-CRM114-CacheID: sfid-20230515_023556_212067_E47D5745 
+X-CRM114-Status: GOOD (  16.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,145 +103,111 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Florian Sylvestre <fsylvestre@baylibre.com>
 
-On 5/9/2023 5:24 PM, Varadarajan Narayanan wrote:
-> Add USB phy and controller related nodes
->
-> SS PHY need two supplies and HS PHY needs three supplies. 0.925V
-> and 3.3V are from fixed regulators and 1.8V is generated from
-> PMIC's LDO
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
->   Changes in v11:
-> 	- Rename dwc_0 -> usb_0_dwc3
->   Changes in v10:
-> 	- Fix regulator definitions
->   Changes in v8:
-> 	- Change clocks order to match the bindings
->   Changes in v7:
-> 	- Change com_aux -> cfg_ahb
->   Changes in v6:
-> 	- Introduce fixed regulators for the phy
-> 	- Resolved all 'make dtbs_check' messages
->
->   Changes in v5:
-> 	- Fix additional comments
-> 	- Edit nodes to match with qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> 	- 'make dtbs_check' giving the following messages since
-> 	  ipq9574 doesn't have power domains. Hope this is ok
->
-> 		/local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: phy@7d000: 'power-domains' is a required property
->          	From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> 		/local/mnt/workspace/varada/varda-linux/arch/arm64/boot/dts/qcom/ipq9574-al02-c7.dtb: usb@8a00000: 'power-domains' is a required property
->          	From schema: /local/mnt/workspace/varada/varda-linux/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
->
->   Changes in v4:
-> 	- Use newer bindings without subnodes
-> 	- Fix coding style issues
->
->   Changes in v3:
-> 	- Insert the nodes at proper location
->
->   Changes in v2:
-> 	- Fixed issues flagged by Krzysztof
-> 	- Fix issues reported by make dtbs_check
-> 	- Remove NOC related clocks (to be added with proper
-> 	  interconnect support)
-> ---
->   arch/arm64/boot/dts/qcom/ipq9574.dtsi | 104 ++++++++++++++++++++++++++++++++++
->   1 file changed, 104 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> index 93b4ba9..42b61f6 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
-> @@ -150,6 +150,24 @@
->   		method = "smc";
->   	};
->   
-> +	fixed_3p3: s3300 {
-> +		compatible = "regulator-fixed";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +		regulator-name = "fixed_3p3";
-> +	};
-> +
-> +	fixed_0p925: s0925 {
-> +		compatible = "regulator-fixed";
-> +		regulator-min-microvolt = <925000>;
-> +		regulator-max-microvolt = <925000>;
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +		regulator-name = "fixed_0p925";
-> +	};
-> +
->   	reserved-memory {
->   		#address-cells = <2>;
->   		#size-cells = <2>;
-> @@ -191,6 +209,45 @@
->   			reg = <0x00060000 0x6000>;
->   		};
->   
-> +		usb_0_qusbphy: phy@7b000 {
-> +			compatible = "qcom,ipq9574-qusb2-phy";
-> +			reg = <0x0007b000 0x180>;
-> +			#phy-cells = <0>;
-> +
-> +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> +				 <&xo_board_clk>;
-> +			clock-names = "cfg_ahb",
-> +				      "ref";
-> +
-> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
-> +			status = "disabled";
-> +		};
-> +
-> +		usb_0_qmpphy: phy@7d000 {
-> +			compatible = "qcom,ipq9574-qmp-usb3-phy";
-> +			reg = <0x0007d000 0xa00>;
-> +			#phy-cells = <0>;
-> +
-> +			clocks = <&gcc GCC_USB0_AUX_CLK>,
-> +				 <&xo_board_clk>,
-> +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> +				 <&gcc GCC_USB0_PIPE_CLK>;
-> +			clock-names = "aux",
-> +				      "ref",
-> +				      "cfg_ahb",
-> +				      "pipe";
-> +
-> +			resets = <&gcc GCC_USB0_PHY_BCR>,
-> +				 <&gcc GCC_USB3PHY_0_PHY_BCR>;
-> +			reset-names = "phy",
-> +				      "phy_phy";
-> +
-> +			status = "disabled";
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "usb0_pipe_clk";
-> +		};
-> +
->   		pcie0_phy: phy@84000 {
->   			compatible = "qcom,ipq9574-qmp-gen3x1-pcie-phy";
->   			reg = <0x00084000 0x1000>;
-> @@ -560,6 +617,53 @@
->   			status = "disabled";
->   		};
->   
-> +		usb3: usb@8a00000 {
+This adds the bindings, for the MIPI CD-PHY module v 0.5 embedded in
+some Mediatek soc, such as the mt8365
 
-node address should be updated to 8af8800 ?
+Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
+Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+---
+ .../phy/mediatek,phy-mipi-csi-0-5.yaml        | 62 +++++++++++++++++++
+ MAINTAINERS                                   |  6 ++
+ 2 files changed, 68 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
 
-Thanks,
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+new file mode 100644
+index 000000000000..5aa8c0b41cdf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: (GPL-2.0-Only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,phy-mipi-csi-0-5.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Mediatek Sensor Interface MIPI CSI CD-PHY
++
++maintainers:
++  - Julien Stephan <jstephan@baylibre.com>
++  - Andy Hsieh <andy.hsieh@mediatek.com>
++
++description:
++  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
++  receivers. The number of PHYs depends on the SoC model.
++  Depending on the soc model, each PHYs can support CDPHY or DPHY only
++
++properties:
++  compatible:
++    enum:
++      - mediatek,phy-mipi-csi-0-5
++
++  reg:
++    maxItems: 1
++
++  '#phy-cells':
++    const: 0
++
++  mediatek,is_cdphy:
++    description:
++      Specify if the current phy support CDPHY configuration
++    type: boolean
++
++required:
++  - compatible
++  - reg
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      mipi_rx_csi0: mipi_rx_csi0@11c10000 {
++        compatible = "mediatek,phy-mipi-csi-0-5";
++        reg = <0 0x11C10000 0 0x2000>;
++        status = "okay";
++        mediatek,is_cdphy;
++        #phy-cells = <0>;
++      };
++
++      mipi_rx_csi1: mipi-rx-csi1@11c12000 {
++        compatible = "mediatek,phy-mipi-csi-0-5";
++        reg = <0 0x11C12000 0 0x2000>;
++        status = "disabled";
++        #phy-cells = <0>;
++      };
++    };
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6d54f3193075..44f0ff11e984 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -13098,6 +13098,12 @@ F:	Documentation/devicetree/bindings/media/mediatek-vpu.txt
+ F:	drivers/media/platform/mediatek/vcodec/
+ F:	drivers/media/platform/mediatek/vpu/
+ 
++MEDIATEK MIPI-CSI CDPHY DRIVER
++M:	Julien Stephan <jstephan@baylibre.com>
++M:	Andy Hsieh <andy.hsieh@mediatek.com>
++S:	Supported
++F:	Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
++
+ MEDIATEK MMC/SD/SDIO DRIVER
+ M:	Chaotian Jing <chaotian.jing@mediatek.com>
+ S:	Maintained
+-- 
+2.40.0
 
 
 -- 
