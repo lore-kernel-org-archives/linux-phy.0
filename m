@@ -4,94 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFE67C77B7A
-	for <linux-phy@archiver.kernel.org>; Sat, 13 May 2023 18:32:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82D85C77B7D
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 03:27:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2CIbJv/SRRPoZq4y3PRZVapoi47nHGF2z/EIDXp0nM=; b=4645ZxF/LlX5GN
-	6q3v2Or/M93EBMvGxo1ZaxzuvE+H5dczON+H1ev+prFQ2xT7COloyvxoHkNhncOo0xvAS5ku3B8Nj
-	ClVvjQN+LEYhqo9dfSRjbAjFsDSwTSyD/USqVg49buq25Y3BhYT6IexPkZHuMA1c20uGQhl7jhZ7D
-	bMpPpbOYAT1cvGUj/ZailCB6wyI7pltiOrjZhoDddM/GPckAobwm9Lxiv0iOLz2pDyj/+ZZcHSHke
-	a4nMJotinEDVNGUdo8B77CoubJ9eIWmUh7rwbHr36hIlIe/HcRv7EmMDSAUKiWdumML3HnR/IEKua
-	inWAxi2MaCKDE2RvKmAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vOW5fFQCUZ+uczJQfYqJepu+gLhbeFGLn162afHwb1U=; b=NROHZ4tQWwynNk
+	3xYF9YD1uGVLGP0ACfXk0AHrd8bsYxTLMb29GjlSiidZjWjOopgMDF9HyvSvnCmZ+gpMDx1MDKtPC
+	p8tB4qJ12tOdy+jKqrePzyNWyxLHcr25IZO+Q4icUxDF6jv1XCkogKOgaV1PrMq1KKWdHYfRv+lP8
+	m4FXjK8aATYFMGvq+lm3P6IjuQkhkVJM3zczGn0tsV3PMiE3c2z6Av7WfLaZcHpwfr5AOZAazgbfx
+	lIYdrHrwI1tuzflINqsNk+yfGcbfmGE43dOge6U9d6H9Hs9uWgPf400u09vyjOznpLMPQbuOCB/pV
+	pLph1hXpb4tLeU4auGrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxu2N-00FaJW-1P;
-	Sat, 13 May 2023 18:32:11 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1pyOsP-000jhf-0N;
+	Mon, 15 May 2023 03:27:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pxu2K-00FaI2-27
+	id 1pyOsM-000jf5-1q
 	for linux-phy@lists.infradead.org;
-	Sat, 13 May 2023 18:32:10 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-965e4be7541so1914193266b.1
-        for <linux-phy@lists.infradead.org>; Sat, 13 May 2023 11:32:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684002726; x=1686594726;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=c6owmun2vUtEZB5TOq0wkGp9DGK60/+9Z1ayq9n03Xc=;
-        b=hhHHv5WrwPvBhaZFdIPSYJ+Jmoii6SjBu9RgdknR/t3A9a/M7OrKPvapzvZsQZGO2y
-         Gy92hotVu5kusAnWhXWRQyMG97KTjoAl/VB6nG5qejmgRTAxWP6LDUhkYsxDsg2D1OoE
-         xGg462JkwPlJ0tUXplsWebMSfPDXRO2itFBc7//5hSmhXKVwUBe5RbPRdWDbJmnal4OJ
-         PdSrNmefKHCD9C1K+/GQPai9nqJZthC6jjeaO5TQZj4MSSM2rb2oGn/SbiI07L406HJz
-         fehwp3yivQ1NCF2rR0GkoPq0M6F+tJR9UoCuOAORXfCcr+WrA/lCEHZ+86tge2DTdh3E
-         dg+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684002726; x=1686594726;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=c6owmun2vUtEZB5TOq0wkGp9DGK60/+9Z1ayq9n03Xc=;
-        b=cr6HKxuEzjp6fmi5aXcxliMyXVcLi7E5MJ3qtY3ysQSKSXrDIlPv7mBOyGF8D12SuF
-         BLUtf5efjgtCA03CIOit76iErONt7xSnfDMrYmmhFQ6Im8B9xnydmicU9eP7p7/CwqiL
-         LbciXkiCXizGuTZN8MXBekSZwWIBXF2bxXZDFh+4dbWVE2krqkkwt99e0Ik3QAOsDUzb
-         JB06XQP3BioD0DpYO/xRSbDfxcXoTt/5G2i3a5C1WRHjRK1cx1D5JNus3EvZMYSOg0gH
-         vq4dBrSUHAbSd/naJPt3auyv0rkuDtw+y6cmubDTe+HQ5SrVnNQNhs4A5+bFOMZNDYtN
-         xF1A==
-X-Gm-Message-State: AC+VfDyLLnmkycvLPk+6zaCysuX4+hyaeaKHJoNhfZ9l/9gjuInn6PEG
-	vrOk4PMYe0FT8Zcfd1+eE/cDLw==
-X-Google-Smtp-Source: ACHHUZ6/MJmpQfYL6g1FK30ruhqexm9LOEc7dgLzIBfHIjDo/z+aM8STzBTfNpMl4RM6pAkC6SjPjg==
-X-Received: by 2002:a17:907:628c:b0:94f:2a13:4e01 with SMTP id nd12-20020a170907628c00b0094f2a134e01mr26298987ejc.74.1684002726245;
-        Sat, 13 May 2023 11:32:06 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:ba68:e5c9:694e:c6e4? ([2a02:810d:15c0:828:ba68:e5c9:694e:c6e4])
-        by smtp.gmail.com with ESMTPSA id ml17-20020a170906cc1100b009661484e84esm7099003ejb.191.2023.05.13.11.32.04
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 13 May 2023 11:32:05 -0700 (PDT)
-Message-ID: <fe2f22c7-8c39-faf3-bc65-a7c089200134@linaro.org>
-Date: Sat, 13 May 2023 20:32:04 +0200
+	Mon, 15 May 2023 03:27:55 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 34F3FxbI028333;
+	Mon, 15 May 2023 03:27:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=Xr1QVDAj7y1cBEmQzYFR1qGU47oaFCDW8VhlXfyyiCs=;
+ b=XIWVHG48hoA5C1pZmzJozPhl9MkJaL5PKbmdmMHmxCZjP18XbDXJDUOdbA88lG6yaxq+
+ yeFIWhws9d6xQX0v0w12QRdNsm/vUBiNC9pEXxccgms+i2YzA+3nw7DnYH+uMQ9fSqlK
+ lIwcyXKvQKulnpMz4RtVoE/uR6R4e2zf0iJJiUXPaa7xa9r2p6MbMF9eV1LNveuNzWUJ
+ x8z1XT2oQbVSBLPZalAXhtk5kzpbLGDf33giCh4j9RgRynbgRoOXP/IjUZ3NYz3EDq41
+ 117KzRyFDTuIShJ3I5+IBgJgnZBLkK6VNe0ZuSVLMMeuBkt7Rpb3rVv5fBaqnoewR3cJ iQ== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qj3amajbs-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 15 May 2023 03:27:50 +0000
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 34F3RnM4030251
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 15 May 2023 03:27:49 GMT
+Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Sun, 14 May 2023 20:27:49 -0700
+From: Bjorn Andersson <quic_bjorande@quicinc.com>
+To: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay
+ Abraham I <kishon@kernel.org>,
+        Johan Hovold <johan@kernel.org>
+CC: Rob Herring <robh+dt@kernel.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v3 0/8] phy: qcom-qmp-combo: Support orientation switching
+Date: Sun, 14 May 2023 20:27:35 -0700
+Message-ID: <20230515032743.400170-1-quic_bjorande@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v4 04/13] dt-bindings: display: add Amlogic MIPI DSI Host
- Controller bindings
-Content-Language: en-US
-To: Neil Armstrong <neil.armstrong@linaro.org>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>
-Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: kxqtCwucodIL01aQZtI6G9bG9xQ75Ny1
+X-Proofpoint-ORIG-GUID: kxqtCwucodIL01aQZtI6G9bG9xQ75Ny1
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-05-15_01,2023-05-05_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 malwarescore=0 impostorscore=0 adultscore=0
+ suspectscore=0 mlxlogscore=999 bulkscore=0 spamscore=0 phishscore=0
+ mlxscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2304280000 definitions=main-2305150028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230513_113208_701002_A9AD9EF5 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20230514_202754_615652_9B70FE66 
+X-CRM114-Status: GOOD (  12.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,137 +103,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/05/2023 15:11, Neil Armstrong wrote:
-> The Amlogic G12A, G12B & SM1 SoCs embeds a Synopsys DW-MIPI-DSI transceiver (ver 1.21a),
-> with a custom glue managing the IP resets, clock and data input similar to the DW-HDMI Glue
-> on the same Amlogic SoCs.
+This adds support for USB and DisplayPort orientation switching to the
+QMP combo PHY, as well as updating the sc8280xp devices to include the
+QMP in the SuperSpeed graph.
 
-Please wrap commit message according to Linux coding style / submission
-process (neither too early nor over the limit):
-https://elixir.bootlin.com/linux/v5.18-rc4/source/Documentation/process/submitting-patches.rst#L586
+Bjorn Andersson (8):
+  dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add ports and
+    orientation-switch
+  phy: qcom-qmp-combo: Move phy_mutex out of com_init/exit
+  phy: qcom-qmp-combo: Extend phy_mutex to all phy_ops
+  phy: qcom-qmp-combo: Introduce orientation variable
+  phy: qcom-qmp-combo: Introduce orientation switching
+  phy: qcom-qmp-combo: Introduce drm_bridge
+  arm64: dts: qcom: sc8280xp-crd: Add QMP to SuperSpeed graph
+  arm64: dts: qcom: sc8280xp-x13s: Add QMP to SuperSpeed graph
 
-Subject: drop second/last, redundant "bindings". The "dt-bindings"
-prefix is already stating that these are bindings.
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |  51 ++++
+ arch/arm64/boot/dts/qcom/sc8280xp-crd.dts     |  28 +-
+ .../qcom/sc8280xp-lenovo-thinkpad-x13s.dts    |  28 +-
+ arch/arm64/boot/dts/qcom/sc8280xp.dtsi        |  34 +++
+ drivers/phy/qualcomm/Kconfig                  |   3 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 255 ++++++++++++++----
+ 6 files changed, 340 insertions(+), 59 deletions(-)
 
-> 
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  .../display/amlogic,meson-g12a-dw-mipi-dsi.yaml    | 117 +++++++++++++++++++++
->  1 file changed, 117 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml
-> new file mode 100644
-> index 000000000000..8169c7e93ff5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml
-> @@ -0,0 +1,117 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright 2020 BayLibre, SAS
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/amlogic,meson-g12a-dw-mipi-dsi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Amlogic specific extensions to the Synopsys Designware MIPI DSI Host Controller
-> +
-> +maintainers:
-> +  - Neil Armstrong <neil.armstrong@linaro.org>
-> +
-> +description: |
-> +  The Amlogic Meson Synopsys Designware Integration is composed of
-> +  - A Synopsys DesignWare MIPI DSI Host Controller IP
-> +  - A TOP control block controlling the Clocks & Resets of the IP
-> +
-> +allOf:
-> +  - $ref: dsi-controller.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - amlogic,meson-g12a-dw-mipi-dsi
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 3
-
-Missing maxItems
-
-> +
-> +  clock-names:
-> +    minItems: 3
-> +    items:
-> +      - const: pclk
-> +      - const: bit_clk
-> +      - const: px_clk
-> +      - const: meas_clk
-
-Drop _clk suffixes. pclk can stay, it's a bit odd but recently Rob
-clarified that suffix with underscore should not be there.
-
-> +
-> +  resets:
-> +    minItems: 1
-
-maxItems instead
-
-> +
-> +  reset-names:
-> +    items:
-> +      - const: top
-> +
-> +  phys:
-> +    minItems: 1
-
-Ditto
-
-> +
-> +  phy-names:
-> +    items:
-> +      - const: dphy
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Input node to receive pixel data.
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: DSI output node to panel.
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - phys
-> +  - phy-names
-> +  - ports
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    dsi@7000 {
-> +          compatible = "amlogic,meson-g12a-dw-mipi-dsi";
-> +          reg = <0x6000 0x400>;
-
-Your reg does not match unit address. The dt_binding_check should
-actually complain about it.
-
-Best regards,
-Krzysztof
+-- 
+2.25.1
 
 
 -- 
