@@ -4,88 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7095FC7EE23
-	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 16:41:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3D09C7EE26
+	for <linux-phy@archiver.kernel.org>; Mon, 15 May 2023 16:41:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=f5OkROuh/mS+LVX/MZMZGazzpjY69BkuwuaIkkiarjM=; b=ae1tJVGqEgsyYl2Aw6IKYtNHIp
-	+OStG6oph0psHoRF8TWNLlof3p1mz2eSE+YxJGPZRTiuzubjQ8uukVTUyud31r2jWUYHkVabR03O2
-	A9x0iiBe+utmx6Mf8rH3AjBpflrIWgkLGRTDmzRrp1uS7Yfte16yRJqId/j05cgQ5uofHf1p8HsS/
-	bd7cEOi/wuAZ2tt7eL93uRKORnjgHMVn59C8ukgOnDElPAP/H0QXxC2jbHWNs40PTs80ducNsSCDg
-	gGyB9yeGmotrvjyBOvP+hW/unPWZkl9Kd9KBp0dwdiVzabXan/cXvE00BfTK4+8xiJFCH+MrK/y2r
-	1hIwg8GA==;
+	bh=5fqhvjLipjUjD9msQxP6Tl/9cP+gyeqM+a9nLLwuZ6c=; b=o9qhb/ywB3gyZQO78KUAleQPmk
+	XBdEHqTUJ/DtwSp4zmGXIOKu0m8iac2qucN/QYJ2i/ftLvUWIhYT9IM/kRMN3nx3ro39Bb43xHsQN
+	xk/uNAWHsBuRJKn4ybDXQ0nhC9edHePVFerLy5i4DKW3UTStuWiVpcM/MTax+b5lG/hJqgu42Iz2X
+	Y8VeQRopLFEUd1dgsBd4vb4/0TUimHDtKcKvfFXmmXe+Oiaprbi5ONEKL9tdlFPAAGSh54lSLFivN
+	u9dOFice63Op+oFjmqYSGrtyTzHtP/atPdU3rCsh60mnkP7eNchbH+SZbdrxqoJ0UlrwI046kCKe6
+	DDG2NG+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pybGF-002nYT-0O;
-	Mon, 15 May 2023 16:41:23 +0000
+	id 1pybGH-002nZ9-1V;
+	Mon, 15 May 2023 16:41:25 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pybGE-002nXg-0a
+	id 1pybGF-002nYN-26
 	for linux-phy@bombadil.infradead.org;
-	Mon, 15 May 2023 16:41:22 +0000
+	Mon, 15 May 2023 16:41:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
 	:In-Reply-To:References:Cc:To:Subject:Reply-To:From:MIME-Version:Date:
 	Message-ID:Sender:Content-ID:Content-Description;
-	bh=1eFh76R1BbOhO7jbuJiT5KDrPf1DGlfPfXIlsfDDt+0=; b=iBo1oZMA1KWRS4KoX5uU0C6XXm
-	jywJl28a9TIk2Cvh4f2ncCyQ8tUvwHDlLUD+v6QZ9t92hhbJwTYP4K4yZl0lyW2FPy10tlxjNsplc
-	sgPuuAmINtojhTRgmJgqQUEkq0RB9xUyqj1UUya2hi1wsD57Jkx/Ij00ntp5L+m7O6qHdw6RtndL1
-	cqyRmup3WUgJg/MkoDqbAh2nhl7IIXsk1zmxEhaAewU64uaC3vB8yGIVZslhRgvYBd1/5vA1oMluI
-	pydsY1JPe6x0VLG44OAQqve6rTSuFgiIkx74l2KSioTK6xOBLSY0k6mlEnfYT96lBbGVjxSmjyxD9
-	kAc/woUw==;
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	bh=L/BFaR2bXmYV85aZ3VRwxHXRXyNTTuSJM62QQ7kJk14=; b=bfpsX1ojnZ1OwjIdJhiaHt60xH
+	JkNYIWNgQHTJDlStv6Ho6E6A/xnPwzrIcYbsn1jgctJVsNdLfvXg4Y1lALpfmJUCnAaBnFFdpDxLw
+	wf6FZxsWOMKgggooWPAr09HO5JbLZfPTFSKNLZ3UOjb+m6aqXY46bmOkc6cW+juMZaxf/Bejx8d81
+	0q2a6+LB92kTK0RZtkYnsKokEYyIZp5dpKGT4ybJq5nPdQnR+IFtERwlWPI3rolgpWxQv7fxafDEK
+	MHS9JW9IwDFFsRDBDmQSE/F6rcJvA4IZwLzBsQfwt6Biq99yS/puTGk4t/kJ0MgurNkurf+9E7hrm
+	t48SPI5w==;
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyarq-00BWJy-1q
+	id 1pyayO-00BWRL-2C
 	for linux-phy@lists.infradead.org;
-	Mon, 15 May 2023 16:16:13 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f475366514so43678985e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 09:16:00 -0700 (PDT)
+	Mon, 15 May 2023 16:22:58 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-3078c092056so6845714f8f.1
+        for <linux-phy@lists.infradead.org>; Mon, 15 May 2023 09:22:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684167359; x=1686759359;
+        d=linaro.org; s=google; t=1684167774; x=1686759774;
         h=content-transfer-encoding:in-reply-to:organization:references:cc:to
          :content-language:subject:reply-to:from:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=1eFh76R1BbOhO7jbuJiT5KDrPf1DGlfPfXIlsfDDt+0=;
-        b=Qv3cGYa1MY+UApUS2SSzI8upM2KLcv3RozBn7O9YHN7jVF9JvR6Xtzh/HsxdeeQ3yR
-         muaB380CPeNT2SzmI+tdjxVBFzpD82fzmUKbwNM0On0PeinadnmlPDcenRkcwfWdUnUp
-         UAkshoNmew207+QEZf4lCTKuxIz3KsgnE6rCmbfPaIra7sUcQzCvyh3yqG2/HL24/dME
-         VFiqLCpzE83ceqYZ54ZRrVYANzujLXdqUJaqC+1HNEgJKMbWDc1LEVu2t69MHmabcnAm
-         atsE3Got5Aq9sKrefAiOXern0fE4uwFPh5uMlKirIIBr6kx2kN0pzRQ+7HtB0D+Z/yBT
-         Y3HQ==
+        bh=L/BFaR2bXmYV85aZ3VRwxHXRXyNTTuSJM62QQ7kJk14=;
+        b=XobnY8dEDD5WdDsk8tbcbCChwsRbJjuhaQcAVTQG6QA4fd8oGxrcXKJ1AgPzDHF4YF
+         iuFoC+kO9NnOf4NjasgKbvGzdkx3vkK8Vq3z5lpynoTjyuR6lI9Wlh5JrwXm9ki5bFUa
+         lvU4eBabnuZjU1+dgRWwwJuO54dZGOF5z31g2iCiTDMwzccWs0cGGRjNZR1rGlMg57za
+         fAt81vYy5OUbGayVg5t4ljnYrTMa20FH+fdAh7okT3u+OZP+B5LNYEG5nyGV/U915VHL
+         ILtJEcIOXMFzppP2iokbEhnB+qHCcr8HCYzYwbQ5eoCcBoJTw1ZMppByQhzC10RLlXj2
+         aVtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684167359; x=1686759359;
+        d=1e100.net; s=20221208; t=1684167774; x=1686759774;
         h=content-transfer-encoding:in-reply-to:organization:references:cc:to
          :content-language:subject:reply-to:from:user-agent:mime-version:date
          :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=1eFh76R1BbOhO7jbuJiT5KDrPf1DGlfPfXIlsfDDt+0=;
-        b=CZBRkiHS0CdI8zId9l8bF0OnHY4I74QwgpmVnP1PDme4liXW72F7jHP6XbuxLkD0y2
-         WZGI66ae5qHLKzRD92Hst2RjcRZHKf7J5tppLJlXPNcNylQs7yeFL/udpAkPWUb+Jhgh
-         jAv2AJRCS64CftE0q6gAiePzPqDwtSha8T3XPfETOqZGxEKMEzB8FeaaRwxbegUJcbRf
-         o8ka67L6J9V7qVigM9hqR0g9FUVo+kM0HxFdZ/WEssskckqB/iHW4JCzlGNsVMhfiuO3
-         pyAh0U5LWr5b0rLgJGZKgvVK3ztJE8uC/b3oiAH77k3VNvRi45RRrl4P8FFSQlR/o3na
-         zYgQ==
-X-Gm-Message-State: AC+VfDz2pD2l1u7fNWs5Cp9i3NeS9AEG81RlccAAJeY8KvgEnKj97Uu5
-	fV4q9Mu/cMCl3w8sx3577mPRWQ==
-X-Google-Smtp-Source: ACHHUZ5wgr21VVtcT7Q5D+SElbddLchkhKpg+bRM3EH8a2/Wwegv+h0BQcv4jrbuguVShjaWyjs2yw==
-X-Received: by 2002:a1c:7412:0:b0:3f4:298f:4d01 with SMTP id p18-20020a1c7412000000b003f4298f4d01mr16772932wmc.26.1684167359358;
-        Mon, 15 May 2023 09:15:59 -0700 (PDT)
+        bh=L/BFaR2bXmYV85aZ3VRwxHXRXyNTTuSJM62QQ7kJk14=;
+        b=ZQgoWSLjbnPz1+flTeD0pkbyjxU6lCh2aOl6BQONVSxX8SQzfLP8TBz1UixT7IOnVT
+         1Km0acPvMMR4jUgV9RAEOIQG7D/YnC8H+v+ekOzVieTeQZfpmj15yZnuxiSE2BWHfM1T
+         OOsfPu29vC+NV6JU2kDtLYtT2ZQ9xE5o53nH8C2o8pMOQMfhDguvOoYteqm702FWmDYZ
+         EgPfmNOQ8FJNbPiY9a/VXn8AOk+F44RPemdEZovG/Ce9xm53jsQUmUsdnQW2cOcEzQ11
+         VF84Fz0ZWcuPlMNXUY8UX6fvOI5g8Qnyx/AnNdpA4xThRV/eB2caxuEqgZobeeV/VNA/
+         yPHg==
+X-Gm-Message-State: AC+VfDw/O8No8y7s975tD6zI/uYyQqL9IX/SU6IawH8RT482DIVfXCGv
+	LTX1lnfZbW73gUM6+LvDZrsflQ==
+X-Google-Smtp-Source: ACHHUZ45LY914ONoEcieAp+9ip6x5dmqMig4lZWDIrIooklY3Q93vho3dB48zUvDlbhW6BuZmPpLZw==
+X-Received: by 2002:a05:6000:1b8f:b0:306:2b31:5935 with SMTP id r15-20020a0560001b8f00b003062b315935mr19815654wru.55.1684167773728;
+        Mon, 15 May 2023 09:22:53 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:982:cbb0:ee7:a396:6195:bb56? ([2a01:e0a:982:cbb0:ee7:a396:6195:bb56])
-        by smtp.gmail.com with ESMTPSA id f24-20020a1cc918000000b003f0ad8d1c69sm37288889wmb.25.2023.05.15.09.15.58
+        by smtp.gmail.com with ESMTPSA id u19-20020a7bc053000000b003f09d7b6e20sm37425314wmc.2.2023.05.15.09.22.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 May 2023 09:15:58 -0700 (PDT)
-Message-ID: <eaa3ecd0-dcf0-01d8-b3ea-9dd900215839@linaro.org>
-Date: Mon, 15 May 2023 18:15:57 +0200
+        Mon, 15 May 2023 09:22:53 -0700 (PDT)
+Message-ID: <9cba6384-123b-1cd1-ed02-08365a0ed529@linaro.org>
+Date: Mon, 15 May 2023 18:22:52 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.10.1
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 04/13] dt-bindings: display: add Amlogic MIPI DSI Host
- Controller bindings
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v4 01/13] dt-bindings: clk: g12a-clkc: export VCLK2_SEL
+ and add CTS_ENCL clock ids
 Content-Language: en-US
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  Jerome Brunet <jbrunet@baylibre.com>,
@@ -103,13 +103,16 @@ Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-4-2592c29ea263@linaro.org>
- <fe2f22c7-8c39-faf3-bc65-a7c089200134@linaro.org>
+ <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-1-2592c29ea263@linaro.org>
+ <5cb38be4-a27f-dc1a-cbb9-c195505a9e7c@linaro.org>
+ <9fa0662e-8854-05f9-da7f-ec8e08d2badf@linaro.org>
+ <d5c030f9-2f4d-25cc-b922-d00f5033ac37@linaro.org>
+ <6228670c-3e06-3061-f304-a2c641962ffa@linaro.org>
 Organization: Linaro Developer Services
-In-Reply-To: <fe2f22c7-8c39-faf3-bc65-a7c089200134@linaro.org>
+In-Reply-To: <6228670c-3e06-3061-f304-a2c641962ffa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230515_171610_748411_CA7793A6 
-X-CRM114-Status: GOOD (  22.02  )
+X-CRM114-CacheID: sfid-20230515_172256_820250_2EA255A1 
+X-CRM114-Status: GOOD (  18.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,163 +130,54 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/05/2023 20:32, Krzysztof Kozlowski wrote:
-> On 12/05/2023 15:11, Neil Armstrong wrote:
->> The Amlogic G12A, G12B & SM1 SoCs embeds a Synopsys DW-MIPI-DSI transceiver (ver 1.21a),
->> with a custom glue managing the IP resets, clock and data input similar to the DW-HDMI Glue
->> on the same Amlogic SoCs.
-> 
-> Please wrap commit message according to Linux coding style / submission
-> process (neither too early nor over the limit):
-> https://elixir.bootlin.com/linux/v5.18-rc4/source/Documentation/process/submitting-patches.rst#L586
-
-This message may be automatic, but context is always important when reviewing,
-this commit message is a re-spin on v3 that was reviewed by rob but I decided to remove the review
-tags since I added a new clock and did some other cleanups.
-
-While the process describes "how the patch itself *should* be formatted", it's a best effort
-and not a blocker.
-
-I'll fix the wrapping since you pointed out, but referring to the submitting-patches.rst
-file (from a very old v5.18-rc4 version) is kind of childish.
-
-> 
-> Subject: drop second/last, redundant "bindings". The "dt-bindings"
-> prefix is already stating that these are bindings.
-> 
+On 15/05/2023 18:15, Krzysztof Kozlowski wrote:
+> On 15/05/2023 18:13, Krzysztof Kozlowski wrote:
+>> On 15/05/2023 18:06, Neil Armstrong wrote:
+>>> On 13/05/2023 20:28, Krzysztof Kozlowski wrote:
+>>>> On 12/05/2023 15:11, Neil Armstrong wrote:
+>>>>> Expose VCLK2_SEL clock id and add new ids for the CTS_ENCL and CTS_ENCL_SEL
+>>>>> clocks on G12A compatible SoCs.
+>>>>>
+>>>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>>>>> ---
+>>>>>    drivers/clk/meson/g12a.h              | 1 -
+>>>>>    include/dt-bindings/clock/g12a-clkc.h | 3 +++
+>>>>>    2 files changed, 3 insertions(+), 1 deletion(-)
+>>>>
+>>>> Bindings must be a separate patch from the driver changes. If this
+>>>> causes bisectability issues, this means entire solution breaks ABI and
+>>>> is not appropriate anyway...
+>>>
+>>> This is basically how we handled CLK IDs on Amlogic clk bindings for the
+>>> last years, the amount of changes is very low and rather exceptional
+>>> compared to early development stage.
 >>
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->> ---
->>   .../display/amlogic,meson-g12a-dw-mipi-dsi.yaml    | 117 +++++++++++++++++++++
->>   1 file changed, 117 insertions(+)
+>> The commits with bindings are used in devicetree-rebasing repo, so we
+>> want them to be separate.
+
+A lot of commits changes the bindings and other part of the kernel source,
+it was solved with git filter-repo a long time ago.
+While I understand in an ideal world those commits should only touch
+Documentation/bindings, it's sometime not possible.
+
 >>
->> diff --git a/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml
->> new file mode 100644
->> index 000000000000..8169c7e93ff5
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/display/amlogic,meson-g12a-dw-mipi-dsi.yaml
->> @@ -0,0 +1,117 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +# Copyright 2020 BayLibre, SAS
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/display/amlogic,meson-g12a-dw-mipi-dsi.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Amlogic specific extensions to the Synopsys Designware MIPI DSI Host Controller
->> +
->> +maintainers:
->> +  - Neil Armstrong <neil.armstrong@linaro.org>
->> +
->> +description: |
->> +  The Amlogic Meson Synopsys Designware Integration is composed of
->> +  - A Synopsys DesignWare MIPI DSI Host Controller IP
->> +  - A TOP control block controlling the Clocks & Resets of the IP
->> +
->> +allOf:
->> +  - $ref: dsi-controller.yaml#
->> +
->> +properties:
->> +  compatible:
->> +    enum:
->> +      - amlogic,meson-g12a-dw-mipi-dsi
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    minItems: 3
-> 
-> Missing maxItems
+>> Meson is the only or almost the only platform making such changes. I
+>> don't get why, because the conflict could be easily avoided with using
+>> different names for defines in bindings and local clock. Approach of
+>> having bindings strictly tied with driver commit is never desired.
 
-Ack
+If we did it now, we would have make it differently and expose all the clock
+IDs on the bindings like on Qcom, be sure of that.
 
 > 
->> +
->> +  clock-names:
->> +    minItems: 3
->> +    items:
->> +      - const: pclk
->> +      - const: bit_clk
->> +      - const: px_clk
->> +      - const: meas_clk
-> 
-> Drop _clk suffixes. pclk can stay, it's a bit odd but recently Rob
-> clarified that suffix with underscore should not be there.
+> Also one more argument maybe not relevant here but for other cases -
+> this makes literally impossible to include the clock ID in DTS in the
+> same kernel revision, because you must not merge driver branch to DTS
+> branch. SoC folks were complaining about this many times.
 
-Ack
-
-> 
->> +
->> +  resets:
->> +    minItems: 1
-> 
-> maxItems instead
-
-Ack
-
-> 
->> +
->> +  reset-names:
->> +    items:
->> +      - const: top
->> +
->> +  phys:
->> +    minItems: 1
-> 
-> Ditto
-
-Ack
-
-> 
->> +
->> +  phy-names:
->> +    items:
->> +      - const: dphy
->> +
->> +  ports:
->> +    $ref: /schemas/graph.yaml#/properties/ports
->> +
->> +    properties:
->> +      port@0:
->> +        $ref: /schemas/graph.yaml#/properties/port
->> +        description: Input node to receive pixel data.
->> +
->> +      port@1:
->> +        $ref: /schemas/graph.yaml#/properties/port
->> +        description: DSI output node to panel.
->> +
->> +    required:
->> +      - port@0
->> +      - port@1
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - reset-names
->> +  - phys
->> +  - phy-names
->> +  - ports
->> +
->> +unevaluatedProperties: false
->> +
->> +examples:
->> +  - |
->> +    dsi@7000 {
->> +          compatible = "amlogic,meson-g12a-dw-mipi-dsi";
->> +          reg = <0x6000 0x400>;
-> 
-> Your reg does not match unit address. The dt_binding_check should
-> actually complain about it.
-
-Well, it doesn't, will fix
-
-Thanks,
-Neil
+Actually we handle this very simply by having such patches merged in a immutable
+branch merged in the clock and DT pull-requests, it worked perfectly so far
+and neither Stephen or Arnd complained about that.
 
 > 
 > Best regards,
