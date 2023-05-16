@@ -4,91 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 817C1C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:05:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8461C77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:07:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l4jZS264YL+BTq2Chyd5FLU2h9TczHN+TZQVMWt0huM=; b=doErkbnvRXXDOO
-	4NYJ9/M1FGi8r8QtnFZDUTXLEdvmVJw9ctGxlv1A8GujwymPZFviGmap9y9FEfPC6OqkVs6PIlPGk
-	RMbKb1ONW11r4qetBztps7Clmk2nGYPwnSN1+Sz9ySYq5Do4L90I5cX0ZWX6soGZG74PXMB/lJu4R
-	za0csznQ77PclnuyKMIekl/t2LPHI3gnEgJCcIa2ja93VTgdmq4B9KLkLlZOIDqFbM3K0J5nyJVLJ
-	0vgjwScaTXYIN/tNAdX0/Y6iSp7dIep6Ejub5hbA7zayPJs3SDJMhGWR9eFMixc84LN1SDLMM1/4O
-	reydQaXUGHjVptoMWqsw==;
+	List-Owner; bh=To61ebIkPqARHFUdt+FdTdL/uwf2sCIEAjY2E9FaQcU=; b=z4KuEEkdfPTzOi
+	ETid/LoSCFFUYT7CAG7WIaSkOo7EJ9mq3xv3bQzwD3bG8rDs3oXVqq9Qw5uoz2+jj/KK07VQJ5aOV
+	KOBajJHOUdXYhD17QOfT1sn7kbzwoWGYRIutk+Y+VpsKYzfKkaCr5+c5KanP50ElFsoCxrNMllAer
+	hqedv7w84+9bZVgTUETH+m4Yumj2pgnRnl+KU8JiJ5y/ENQSBP8GNxPsFEBtIrM4/GTJgLuny2LT/
+	TvaN8QB8pXXuu1nL94baVbBNN1kPDIHGMGYYqTKczdNA0WnFy0TQTbpcCNG9u2SyrF79Ti+0+VENR
+	/3A9ncG0NVA+eiCB5D+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pywFE-006Bqk-0U;
-	Tue, 16 May 2023 15:05:44 +0000
-Received: from mail-pj1-x102a.google.com ([2607:f8b0:4864:20::102a])
+	id 1pywGY-006C13-1j;
+	Tue, 16 May 2023 15:07:06 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pywFB-006BqH-20
+	id 1pywGW-006Bzn-17
 	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 15:05:42 +0000
-Received: by mail-pj1-x102a.google.com with SMTP id 98e67ed59e1d1-24df6bbf765so12122458a91.0
-        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 08:05:41 -0700 (PDT)
+	Tue, 16 May 2023 15:07:05 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-3f475366514so52215135e9.2
+        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 08:06:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684249540; x=1686841540;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=P5pQrJTTCZJZZKPmjIiq+X+xkUImdFCCiZ3e7a6lOiY=;
-        b=oxlwFFM7VIT+474vSuBUObLQisjQgPiVCBd3d1Lc8P7hsUaQufiN6YBpCF59zh1OPC
-         eXm21kGgGlB6gDcfen1BgHo4X6ZRXPdRicMufbqPvp+/aR4uNB95YWVLj8jDGN3NmHE4
-         FVQgQF7bt2BjVTHy+SFlTR58SXkA5iSb+eGXPfw5ADeQoDTHL9wms1BpebNMRi5tyRAK
-         cvLdaf5rYYEjOKEOoC5snAdDCmLpF1/1H+iEJdV/QoxBD2F3vpoJzS+1BGK4b36zzfxO
-         yEHquA3Ii5AtonZKrBpP9Wvi2qEsGKO8Tg1nWMFlLT0hy34Xv77+3s5md4vnbejWic7d
-         P6ow==
+        d=linaro.org; s=google; t=1684249617; x=1686841617;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Tq0XF7+PR1y9o2CZoKmF6U/m48kNTTAS4tN4W2zzPWo=;
+        b=ha7AFsQELZOGiPCowhQVUhOsNZnSyXCe/j+KcIUVhuXNM0PCgcgaeJoIzfjY7RSwPN
+         48+j6+dzld/n3i5Sgzawe3+fdxasZsj3g60SCSfCcbtf7+dxSElVXXDb1Ok0JgezZPKQ
+         HxE0wWNVkT/kobzZWmWC+Q6wvgv1BZwkl0ab/+4vCH6CjbAB+6DBBB3sCi+dRoXSAivK
+         U+M7nk2jByhvDz5ZEg79265k9LMIeyFKavjcowfXCyWhGe16C3i0cqPx0tTuXbBZZgkP
+         hcoYH1Myd149q0vktPY2z8ej5baODQMpBKKcLyErbaXRig377Y44DnEqge4OhyX5glNf
+         NQ3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684249540; x=1686841540;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=P5pQrJTTCZJZZKPmjIiq+X+xkUImdFCCiZ3e7a6lOiY=;
-        b=VU5ItQGw1Dp7/nY50gT6oFYcm8i2x6ru/sjWCMhu6+uQbysPkyGy1yGOxRwhpw4vM+
-         h7/XFbQ2PM2q7tmcjhrh/5DbJ2A/ZJvKHkxkgH9dzrWeSh8Q0CqKiv2BOFW109ecerQu
-         IPgJ8Vnfh46p4qqH91S4lvIhtzcbF/U1vLgr2h2w7FuFd6bhz0YCqwRSt2vpDbxcb0Xg
-         wtCCRv26lm/RiGlL/R8iNUG1H7Tk4KuKKQBfaRo3F53kGuv4Q4+zcG50D66LYPwOlM8g
-         OWiFtTX1uUIWqD8uHdzx9G0jH37yqA1kCJkEDJjcLqRCdIiN4QBkoePtq7KYam7TEAc5
-         FJoQ==
-X-Gm-Message-State: AC+VfDwD4OnXsqHm0r8TOjwVoxXYJMJZaIR9dLNxOhGaGhfwCmMGq04R
-	smfkRbCNYNeKy3/oggm4ICB2mA==
-X-Google-Smtp-Source: ACHHUZ5sKmRFAHk2jFlMiCRrqV1LTt9359wEdaXN6/H3PTTMT3eTGunY7ExJe3vYW5BPMebYidx0fw==
-X-Received: by 2002:a17:90a:9307:b0:24d:ef6a:dd0a with SMTP id p7-20020a17090a930700b0024def6add0amr35974432pjo.5.1684249540547;
-        Tue, 16 May 2023 08:05:40 -0700 (PDT)
-Received: from localhost.localdomain ([2401:4900:1c60:6bed:72cf:f5c9:ba94:6b85])
-        by smtp.gmail.com with ESMTPSA id h1-20020a654801000000b005302682a668sm12817164pgs.17.2023.05.16.08.05.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 16 May 2023 08:05:40 -0700 (PDT)
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-To: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: agross@kernel.org,
-	linux-kernel@vger.kernel.org,
-	andersson@kernel.org,
-	bhupesh.sharma@linaro.org,
-	bhupesh.linux@gmail.com,
-	krzysztof.kozlowski@linaro.org,
-	robh+dt@kernel.org,
-	konrad.dybcio@linaro.org,
-	kishon@kernel.org,
-	vkoul@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	dmitry.baryshkov@linaro.org
-Subject: [PATCH v11 4/4] arm64: dts: qcom: qrb4210-rb2: Enable USB node
-Date: Tue, 16 May 2023 20:35:11 +0530
-Message-Id: <20230516150511.2346357-5-bhupesh.sharma@linaro.org>
-X-Mailer: git-send-email 2.38.1
-In-Reply-To: <20230516150511.2346357-1-bhupesh.sharma@linaro.org>
-References: <20230516150511.2346357-1-bhupesh.sharma@linaro.org>
+        d=1e100.net; s=20221208; t=1684249617; x=1686841617;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Tq0XF7+PR1y9o2CZoKmF6U/m48kNTTAS4tN4W2zzPWo=;
+        b=D/giFqt5oQWGOx8cpP9xdzUS9nlxR9PE2wtctuAliZPWId4KfkgsmGg/Yt2RX5xloV
+         UzAiDzwOnoSkVyJnQHUwpXygtoJW+FwsA67avR7U4GWsQe9F0/+3MifgrOL1gURTYDMD
+         Gx+0frOHTip7OsCBWeD2XQpkWN3HQ2EWBDL3EKklagMYxFDl39yCng1tzVDHeO8HYUX/
+         6AmOAuO57aR8QankGXUqxsS3pCG1o2T5qdp1WnaLvoMlw3fFm2GoQQvBWqdF0Ef7TLUi
+         /8DQ4Mcz2V905ursyEl7gd6cpqx0yUym6qSy5or64z77QTmSM+kRxRYc5uF2Z3N24Kug
+         sXVA==
+X-Gm-Message-State: AC+VfDyjGD0VYsrJEvu8dHvxxsBczDrz54cbe2Lry75pkrdTHZSpQhYs
+	103y3/cc7/GmQAZmT9Yo8BALmBqd/cGV2mT6jiKzWg==
+X-Google-Smtp-Source: ACHHUZ4LY7SDyh/oGJpKHeooYFL7cLCCmViH03hkaW8zKvIkvlfhWmWvmgx6QJpMdS2kjMk7RGoJQtTUXgX4cRY8bBw=
+X-Received: by 2002:a5d:61ce:0:b0:306:30ea:a072 with SMTP id
+ q14-20020a5d61ce000000b0030630eaa072mr30132707wrv.53.1684249617400; Tue, 16
+ May 2023 08:06:57 -0700 (PDT)
 MIME-Version: 1.0
+References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org> <ZGOR+hvLMZLxl8fh@matsya>
+In-Reply-To: <ZGOR+hvLMZLxl8fh@matsya>
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Date: Tue, 16 May 2023 20:36:45 +0530
+Message-ID: <CAH=2NtwWxGbkN4Kpb-FrcKP0qD-ZMa56GQ9x-F4yU3RkB6K6tw@mail.gmail.com>
+Subject: Re: [PATCH v10 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-phy@lists.infradead.org, agross@kernel.org, 
+	linux-kernel@vger.kernel.org, andersson@kernel.org, bhupesh.linux@gmail.com, 
+	krzysztof.kozlowski@linaro.org, robh+dt@kernel.org, konrad.dybcio@linaro.org, 
+	kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	dmitry.baryshkov@linaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_080541_749976_4ADC164F 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230516_080704_413334_A175D8B4 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,52 +91,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the USB controller and HS/SS PHYs on qrb4210-rb2 board.
+On Tue, 16 May 2023 at 19:53, Vinod Koul <vkoul@kernel.org> wrote:
+>
+> On 02-05-23, 11:05, Bhupesh Sharma wrote:
+>
+> >
+> > This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
+> > SoC. For the previous versions of this patch there were conversations
+> > on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
+> > 'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
+> > documentation.
+> >
+> > But after a careful look at downstream dtsi (see [1]) it appears that
+> > this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
+> > 'dp-combo' phy.
+>
+> Fails to apply for me, pls rebase
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
- arch/arm64/boot/dts/qcom/qrb4210-rb2.dts | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+Sent v11 which is rebased on phy/next (see [1]).
 
-diff --git a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-index dc80f0bca767..eae3024ce003 100644
---- a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-+++ b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
-@@ -222,6 +222,30 @@ &uart4 {
- 	status = "okay";
- };
- 
-+&usb {
-+	status = "okay";
-+};
-+
-+&usb_dwc3 {
-+	maximum-speed = "super-speed";
-+	dr_mode = "peripheral";
-+};
-+
-+&usb_hsphy {
-+	vdd-supply = <&vreg_l4a_0p9>;
-+	vdda-pll-supply = <&vreg_l12a_1p8>;
-+	vdda-phy-dpdm-supply = <&vreg_l15a_3p128>;
-+
-+	status = "okay";
-+};
-+
-+&usb_qmpphy {
-+	vdda-phy-supply = <&vreg_l4a_0p9>;
-+	vdda-pll-supply = <&vreg_l12a_1p8>;
-+
-+	status = "okay";
-+};
-+
- &xo_board {
- 	clock-frequency = <19200000>;
- };
--- 
-2.38.1
+[1]. https://lore.kernel.org/linux-arm-msm/20230516150511.2346357-1-bhupesh.sharma@linaro.org/
 
+Thanks,
+Bhupesh
 
 -- 
 linux-phy mailing list
