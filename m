@@ -4,64 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EAA5C7EE25
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 13:17:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 283C6C77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 13:22:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1lcWKHrDRPNY6hTAYXGtiblkJzvLuyMUrxcL5wBVbCk=; b=FMqMUG115gIHGj
-	p8CniSKddF4KtXQkCjtasnQbVb9nncotNMkwdx9iCL0FqHotBUjvSOXxDoqCBEmf0EmEK7can5qTP
-	Hx1kGoBMDyk8FPdEONFNuqMOw0j/41hgEZ6qD+Xgnu5nz5jDvk1j2G1lbXq6QalxSTtkFUNlH1BVM
-	4iOzsq614pS6rh+zSEMtP4PEOfVWEawbKjQuCCZSd1SafAoa7Ke+3XLePIm/yAiZHSeNQWCF6MJbM
-	5Afh1Q+fCzB1+7VVefOLDL+FtxS1KgMo8m1OWPKSjidRgYamiiLuZRLIwlH6ByQORa2C2GGCUsB3M
-	CQHhRhKouXsWHx/9k5Qg==;
+	List-Owner; bh=9rggJbBPKcW05V6QdA485fY18z38C7VWE74FEc6rm7s=; b=hxG3NGN3Hczd75
+	gyapGHzg5s7po3olpmeCfTjuv1rxwzRzpPyHca+2f0MpFjCx/E32DmuAc7G7TnqCjAtJVdQ5SC5aA
+	Bd23jQw8hRDfrsjQ+A2b891elSzbe3T5iZzdLDIjG5n08yVAsQ74tuJTqQDKAYzQPbgNPpftm6rlB
+	JuIxNc8H26Wl4qvMvPMnHl0oQjnA+U5HrPPRoAiHdVnwrn966cTw9Z3e11mX26yQX3zz7/iP5BTlk
+	OpPtYL9ng5ZnxW9ew7AU44pLOZ71is5moS5vUxsvhCRDYQX7lsNY3BEsd0rW1Xeig1UBmggexFAZ7
+	wPwLjAreEGwAyN2WUWvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyuYC-005sbe-2P;
-	Tue, 16 May 2023 13:17:12 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pyudj-005tyU-2g;
+	Tue, 16 May 2023 13:22:55 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyuY9-005sZs-0M;
-	Tue, 16 May 2023 13:17:10 +0000
+	id 1pyudf-005twa-2a;
+	Tue, 16 May 2023 13:22:53 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7CB1661A81;
-	Tue, 16 May 2023 13:17:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09BD4C433D2;
-	Tue, 16 May 2023 13:17:06 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4C65260AB1;
+	Tue, 16 May 2023 13:22:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAC46C4339C;
+	Tue, 16 May 2023 13:22:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684243027;
-	bh=Q822amfXHYVNZj8qT92UOupIha/Yo6CzcR8/30zrIJQ=;
+	s=k20201202; t=1684243370;
+	bh=+sPUthy7aIz73vxHLbcpB1b2jpbwC7HJrTOIMZMo2dE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=T4QvBKtT/hm77F4Yd1YdfW4pv+xrH7qXkvokmjq1Rb10P7TF381PyA+Vho+dkCais
-	 WURsVW6fmrrM5LaLBhL69muJt+NvMPgN1usTXafPB3YNNR8BwhtyFN5AbCFhsrUzoT
-	 IJyesGu0gilMAYuE/M/HEf7TCmthQzY0M1xCk3x//vm2SgYuyJN35edyjoGCnhAQNO
-	 9KCpi7lOLFO34scQvfOL9Qk1GIhcmEGJSq6tEYdh9gz8qUFI0HyJkSmYxmhuBtKRYu
-	 /dLNVm35lozZgsoyNu7U9clt60TUU5O+h/CER9nxn0/B2Z6F0M0TIe8bajFVztMWdO
-	 ygfmMYxWSlQKQ==
-Date: Tue, 16 May 2023 18:47:03 +0530
+	b=uPYOuK4MsGdqbnn/xMDKkUnZ4yYcIuyBc3wmFOmWi0M1zulETSYFuwtqUCrDRWI5S
+	 wVgIQoGalPhgXBR/I5WssTLKmq6aTcrsCJUtSooWl34gqA1lzOk4MpXdwpQp4uI1ix
+	 UxdzERwnISLKF24Av3xmoQrl0qjZ57o4EfWErx8mzgrIZ5TrmzYI5ABlT5e+uuy5rl
+	 m5ShpiTBT8U6M4bVGmzempnsCwRwUYC+UX8Dwlya7GJyyjdUslWoAv5UVFoYyEhMEI
+	 2k0EvrnUPDzM8TriF9OikZq4XzzY8CwIj/Z+UQn841ylHadecHfO4QMMpUByPVPigy
+	 Qi/cGvspkIySw==
+Date: Tue, 16 May 2023 18:52:46 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	imx@lists.linux.dev, fushi.peng@nxp.com
-Subject: Re: [PATCH v3 1/2] phy: cadence: salvo: Add
- cdns,usb2-disconnect-threshold-microvolt property
-Message-ID: <ZGOCT0Mdg3Jtar6c@matsya>
-References: <20230510140504.2164565-1-Frank.Li@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org
+Subject: Re: [PATCH v14 06/15] clk: Add Lynx 10G SerDes PLL driver
+Message-ID: <ZGODpt7MARD47us7@matsya>
+References: <20230413160607.4128315-1-sean.anderson@seco.com>
+ <20230413160607.4128315-7-sean.anderson@seco.com>
+ <ZFi9t84UoIfUyHhi@matsya>
+ <1012f955-180e-0013-cc13-1da10991b5f5@seco.com>
+ <ZFpD4I2LK9YIQQat@matsya>
+ <d230c641-7270-c768-fd48-9012c01621b2@seco.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230510140504.2164565-1-Frank.Li@nxp.com>
+In-Reply-To: <d230c641-7270-c768-fd48-9012c01621b2@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_061709_237556_FBB88A28 
-X-CRM114-Status: GOOD (  23.54  )
+X-CRM114-CacheID: sfid-20230516_062251_917760_1029F340 
+X-CRM114-Status: GOOD (  27.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,111 +87,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10-05-23, 10:05, Frank Li wrote:
-> Add cdns,usb2-disconnect-threshold-microvolt property to address fake USB
-> disconnection issue during enumeration or suspend state for difference
-> platform.
+On 09-05-23, 11:26, Sean Anderson wrote:
+> On 5/9/23 09:00, Vinod Koul wrote:
+> > On 08-05-23, 11:31, Sean Anderson wrote:
+> >> On 5/8/23 05:15, Vinod Koul wrote:
+> > 
+> >> >> +int lynx_clks_init(struct device *dev, struct regmap *regmap,
+> >> >> +		   struct clk *plls[2], struct clk *ex_dlys[2], bool compat);
+> >> > 
+> >> > so you have an exported symbol for clk driver init in phy driver header?
+> >> > can you please explain why..?
+> >> 
+> >> So that it can be called at the appropriate time during the phy's probe function.
+> >> 
+> >> This is really an integral part of the phy driver, but I was directed to split it
+> >> off and put it in another subsystem's directory.
+> > 
+> > That is right clock should be belong to clk driver. IIUC the hardware is
+> > phy along with clocks and you are doing the clk init. I think that may
+> > not be correct model, you should really have a device tree node to
+> > represent the clock and the phy node
+> > 
+> > 
+> > What stops this from being modelled as it is in the hardware?
+> 
+> It *is* modeled as it is in hardware. With just the serdes compatible,
+> we have all the information we need to create the clocks. So we do so.
+> There's no need for a separate device just to create four clocks.
+> 
+> These clocks cannot be used by any other device (except possibly by
+> putting a lane into test mode). So there is no benefit from making them
+> a separate device, except an increase in complexity due to ordering and
+> dynamic lookup. By doing things this way we know that either there was
+> an error or the clocks all exist, and the lifetime of the clocks matches
+> the serdes.
 
-This fails to apply for me on phy/next. What tree was this based on?
+Okay that does makes sense.
 
-> 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
-> Change from v2 to v3
-> - add cdns prefix
-> Change from v1 to v2
-> - remove empty change before #include 
-> - Remove dts change from patch
-> 
->  drivers/phy/cadence/phy-cadence-salvo.c | 29 +++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
-> index 23be27a747a9..ab7eca515059 100644
-> --- a/drivers/phy/cadence/phy-cadence-salvo.c
-> +++ b/drivers/phy/cadence/phy-cadence-salvo.c
-> @@ -6,6 +6,7 @@
->   * Copyright (c) 2019-2020 NXP
->   */
->  
-> +#include <linux/bitfield.h>
->  #include <linux/clk.h>
->  #include <linux/io.h>
->  #include <linux/module.h>
-> @@ -91,9 +92,19 @@
->  
->  /* USB2 PHY register definition */
->  #define UTMI_REG15				0xaf
-> +#define UTMI_AFE_RX_REG0			0x0d
->  #define UTMI_AFE_RX_REG5			0x12
->  #define UTMI_AFE_BC_REG4			0x29
->  
-> +/* Align UTMI_AFE_RX_REG0 bit[7:6] define */
-> +enum usb2_disconn_threshold {
-> +	USB2_DISCONN_THRESHOLD_575 = 0x0,
-> +	USB2_DISCONN_THRESHOLD_610 = 0x1,
-> +	USB2_DISCONN_THRESHOLD_645 = 0x3,
-> +};
-> +
-> +#define RX_USB2_DISCONN_MASK			GENMASK(7, 6)
-> +
->  /* TB_ADDR_TX_RCVDETSC_CTRL */
->  #define RXDET_IN_P3_32KHZ			BIT(0)
->  /*
-> @@ -125,6 +136,7 @@ struct cdns_salvo_phy {
->  	struct clk *clk;
->  	void __iomem *base;
->  	struct cdns_salvo_data *data;
-> +	enum usb2_disconn_threshold usb2_disconn;
->  };
->  
->  static const struct of_device_id cdns_salvo_phy_of_match[];
-> @@ -261,6 +273,12 @@ static int cdns_salvo_phy_init(struct phy *phy)
->  
->  	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG5,
->  			 0x5);
-> +
-> +	value = cdns_salvo_read(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0);
-> +	value &= ~RX_USB2_DISCONN_MASK;
-> +	value = FIELD_PREP(RX_USB2_DISCONN_MASK, salvo_phy->usb2_disconn);
-> +	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0, value);
-> +
->  	udelay(10);
->  
->  	clk_disable_unprepare(salvo_phy->clk);
-> @@ -315,6 +333,7 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct cdns_salvo_phy *salvo_phy;
->  	struct cdns_salvo_data *data;
-> +	u32 val;
->  
->  	data = (struct cdns_salvo_data *)of_device_get_match_data(dev);
->  	salvo_phy = devm_kzalloc(dev, sizeof(*salvo_phy), GFP_KERNEL);
-> @@ -326,6 +345,16 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
->  	if (IS_ERR(salvo_phy->clk))
->  		return PTR_ERR(salvo_phy->clk);
->  
-> +	if (of_property_read_u32(dev->of_node, "cdns,usb2-disconnect-threshold-microvolt", &val))
-> +		val = 575;
-> +
-> +	if (val < 610)
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_575;
-> +	else if (val < 645)
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_610;
-> +	else
-> +		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_645;
-> +
->  	salvo_phy->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(salvo_phy->base))
->  		return PTR_ERR(salvo_phy->base);
-> -- 
-> 2.34.1
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+In that case why should this not be in the phy driver itself. There are
+already few examples og phy drivers having inbuild clk where is makes
+sense. You register the clk_ops as part of phy driver
+
+Thanks
 
 -- 
 ~Vinod
