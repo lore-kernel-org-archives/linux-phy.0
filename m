@@ -4,64 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1524C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 16:35:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F91AC77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 17:00:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zs3uFv2X8VVt6ceMtxc1Ik1z+m4PBoic+hX32n6DFLM=; b=nyViyv8qkKoHAu
-	wFV3djm05Iyi6+Sxw5OFrasml/GW0Ui947IU/W2+0zSMyL+DIW7APb75Q/nD36R4HvMmW/v63x8PL
-	g5M4DpHk7dqFFevBHAdczR+MchUvav/CZCZLjakvOFhA5GamkavqjlYeQ4uIeExGeKz5c+/9vBoa1
-	4RM6xBrEWhOi2wEUdFWdY0CBn9bLIAt5VqlB6InHZDXKQdz0psxIU17E7mFpvzTux1VyfG8W80Enb
-	T59Ojt2fhVpU3lUYeJ5yeEH9gM3Lr5PLTJuVCh/B7OqaHjIAwkZC7vVwDFnQgIEY4IvvlXUoezQHm
-	0aNWOfB15GwAa3oYG9ZQ==;
+	List-Owner; bh=LbDRGnAH1QrWlanKeebRVBCGgLWsfFwUsaOT9VuJTLw=; b=BS2TfJy+rrlRhn
+	taMKYRUUfXuyPQzXHBkQEJN4d2F/FIyhrI/XtW0lLpe3uSCYEM8b4lCRxbtMFbaI5EvQ7ntJnAfvV
+	X+/D1mRFFCjaiyWDDiW0ZKQguNTzNeWyUTxC46dclQRfOMj5BQ8kQxEp9SZnddwoT8zqWJqX/lK/n
+	/Yd+nhcqnkfPjJAZVjNkwIBCeZy5yIB6V2+cPSuHnO47uyQZPrY3mVzzlW3JeUJP4BRh1aykDQkcS
+	1HurU+t7RHfTBevCgl9WCK8JyHLfXKhG2alhPz8z4ywG769K+EnxIWcKn7PVyrhyn0sMWT27elzoW
+	oa8sGtY5avcTJnRTclgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyxdq-006UEE-1l;
-	Tue, 16 May 2023 16:35:14 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1pyy2d-006Z1v-2X;
+	Tue, 16 May 2023 17:00:51 +0000
+Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyxdn-006UCo-0r;
-	Tue, 16 May 2023 16:35:12 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 991A563C45;
-	Tue, 16 May 2023 16:35:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 744D3C433EF;
-	Tue, 16 May 2023 16:35:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684254910;
-	bh=xiAeS/BTnfeGpVs3pyu1705ZSwTqAkahLxezIeK6zis=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qsuxJHITpfMVLrlBAGajT14BlALyhbj1ocEXmV7V+0Cu1B5BhXO/+4jpKzVBS4lXJ
-	 5DasD3Ct/NvzcFmyGd7ryLbNt35wzFMF6bsMjMaMZBeRTHbqI1yUeQpexLv3dFgHT8
-	 iL0TG2pTxSnaCWQmSrdt9Y4DpCBqQeB4sEcetCzNyD1YQ9GO+hRTZj32a4fmGS2XYL
-	 52ULYgJLjeLCx1K6xsPjuNQNT22Y5mVlpsZXzarG+0xw4mnNf631D0Z1ly3+xTpbgR
-	 edrh9EeqZHeplPYxn7dOiRRG8AIdM4F4qnweWM3404bMADu2f3IV/5DEQXuwY9xEon
-	 aQDNsEnW59rGQ==
-Date: Tue, 16 May 2023 22:05:06 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: devicetree@vger.kernel.org, fushi.peng@nxp.com, imx@lists.linux.dev,
-	kernel@pengutronix.de, kishon@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, robh+dt@kernel.org,
-	s.hauer@pengutronix.de, shawnguo@kernel.org
-Subject: Re: [PATCH v4 4/6] phy: cadence: salvo: add .set_mode API
-Message-ID: <ZGOwukxGLdRHNL0l@matsya>
-References: <20230516154329.3155031-1-Frank.Li@nxp.com>
- <20230516154329.3155031-5-Frank.Li@nxp.com>
+	id 1pyy2X-006Yyl-1z
+	for linux-phy@lists.infradead.org;
+	Tue, 16 May 2023 17:00:50 +0000
+Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-1ae4e264e03so298125ad.2
+        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 10:00:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684256441; x=1686848441;
+        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=A2isPeHLFTut2+mOKdMyVDlP/q2NZewEWxVxxvIO/Yc=;
+        b=eRKpjGAcT4ydGtuypR1jvNliTZGpV2leuaDZz83tI20QdbCsZ7qXlYJUXHwpqdpUTN
+         6Qy2YUPnnA7AWrC+94F4nqBjrZ4kI8UjNKQHxif2A8NSP6GfdYx3gUsse5n/WdIqAPyA
+         AnZQbtAdXEWZTmfJXrVtTd25lMZm1XQQ6Ff21a5A7IqpfcMntLfPDtJI/LtLiLCzCXHf
+         BoXaKUGKWYpTpIgM/Tw25G4wh/mrwxeBQmxbZlbmQOoLVFWQfoSI10UGYfz5ukUD9K2m
+         QFytZRFjh8VlGLdt314vkZlNBcBy013jMZtyX3IZpdnraSwkMPaIzA8ubz6xYuJZW12q
+         /c7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1684256441; x=1686848441;
+        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=A2isPeHLFTut2+mOKdMyVDlP/q2NZewEWxVxxvIO/Yc=;
+        b=Z1n8bj+AOVsRWAZDYNx5sdh8678BZMYJIaGeYEZbKrQiD2JjMkQupB2enQVSnQ1oZu
+         FgKGU4UCkGVwwXV1NDJFHSV20zaIDyrzpaDG3JfNyqU0qVziiDFaExtUAyeHI1Y+lduY
+         kGEadHdzBkCqjLhu4clG9+DD5yyC/Wo4Cz6CsEVYBV/gZijo+IgCZ7wI2X00H2xGEyYB
+         7pHm+zIxbQ86T79cfmdsN9LZW+yA7ic9pGaNGqgmIFWFYGxXkp/GV5lNgqhUBiadhU8p
+         oavswwjT6GNaAShpni2HClq/38qoT/gq+W4sXFEWjr2CFpGqYVmKIwE91R0ernHtS1jH
+         +2tQ==
+X-Gm-Message-State: AC+VfDwHvl0M+VuFlKcvZQ1IpyhwObbNL+djUDJuMowtZAuhmx7OnawV
+	ejfSvM90P65n4f5tAOfaLl4DRg==
+X-Google-Smtp-Source: ACHHUZ5Oj+Q36rLinLQtgeWgi/+xRXp4Qu5QFFdXKuJd7rG3YFE70e/wjN6HQkclYeSkPaxJbjPcqg==
+X-Received: by 2002:a17:903:32cc:b0:1ad:cba5:5505 with SMTP id i12-20020a17090332cc00b001adcba55505mr26320003plr.14.1684256441196;
+        Tue, 16 May 2023 10:00:41 -0700 (PDT)
+Received: from localhost (63-228-113-140.tukw.qwest.net. [63.228.113.140])
+        by smtp.gmail.com with ESMTPSA id f10-20020a17090274ca00b001ab28f620d0sm15716212plt.290.2023.05.16.10.00.39
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 16 May 2023 10:00:39 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Julien Stephan <jstephan@baylibre.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, robh@kernel.org,
+ chunkuang.hu@kernel.org, linux-mediatek@lists.infradead.org, Florian
+ Sylvestre <fsylvestre@baylibre.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Andy Hsieh <andy.hsieh@mediatek.com>, Vinod
+ Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, "moderated list:ARM/Mediatek
+ USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, "open
+ list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, "open
+ list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add mediatek mipi csi driver v
+ 0.5
+In-Reply-To: <1853f049-4f00-b7f0-973a-2c4e7b0b2634@linaro.org>
+References: <20230515090551.1251389-1-jstephan@baylibre.com>
+ <20230515090551.1251389-2-jstephan@baylibre.com>
+ <ab9aa30f-82d7-1d14-5561-e19ff10af0b0@linaro.org>
+ <4yppinkucchwnwtnnpbqdn4bejmntjq3q6mx6es55f2pwyce3c@qdhdks47lpyt>
+ <1853f049-4f00-b7f0-973a-2c4e7b0b2634@linaro.org>
+Date: Tue, 16 May 2023 10:00:39 -0700
+Message-ID: <7h353w2oug.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230516154329.3155031-5-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_093511_388278_095E9100 
-X-CRM114-Status: GOOD (  23.91  )
+X-CRM114-CacheID: sfid-20230516_100045_848789_09A648B8 
+X-CRM114-Status: GOOD (  23.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,97 +105,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-05-23, 11:43, Frank Li wrote:
-> From: Peter Chen <peter.chen@nxp.com>
-> 
-> For NXP platform design, the PHY can't know VBUS well, it causes the FSM
-> in controller seeing the disconnection at L1 use case. With .set_mode API
-> introduced, the controller driver could force PHY seeing B Session VALID
-> when it is at the device mode (VBUS is there), and keep FSM working well.
-> 
-> Signed-off-by: Peter Chen <peter.chen@nxp.com>
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
->  drivers/phy/cadence/phy-cadence-salvo.c | 29 +++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
-> index b9866dc146ce..41616f786321 100644
-> --- a/drivers/phy/cadence/phy-cadence-salvo.c
-> +++ b/drivers/phy/cadence/phy-cadence-salvo.c
-> @@ -92,6 +92,7 @@
->  /* USB2 PHY register definition */
->  #define UTMI_REG15				0xaf
->  #define UTMI_AFE_RX_REG5			0x12
-> +#define UTMI_AFE_BC_REG4			0x29
->  
->  /* TB_ADDR_TX_RCVDETSC_CTRL */
->  #define RXDET_IN_P3_32KHZ			BIT(0)
-> @@ -105,6 +106,9 @@
->  /* 0us, txvalid is ready just after HS/FS transmitters have powered up */
->  #define TXVALID_GATE_THRESHOLD_HS_0US		(BIT(4) | BIT(5))
->  
-> +#define SET_B_SESSION_VALID			(BIT(6) | BIT(5))
-> +#define CLR_B_SESSION_VALID			(BIT(6))
-> +
->  struct cdns_reg_pairs {
->  	u16 val;
->  	u32 off;
-> @@ -124,6 +128,13 @@ struct cdns_salvo_phy {
->  };
->  
->  static const struct of_device_id cdns_salvo_phy_of_match[];
-> +static const struct cdns_salvo_data cdns_nxp_salvo_data;
-> +
-> +static bool cdns_is_nxp_phy(struct cdns_salvo_phy *salvo_phy)
-> +{
-> +	return salvo_phy->data == &cdns_nxp_salvo_data;
-> +}
-> +
->  static u16 cdns_salvo_read(struct cdns_salvo_phy *salvo_phy, u32 offset, u32 reg)
->  {
->  	return (u16)readl(salvo_phy->base + offset +
-> @@ -273,11 +284,29 @@ static int cdns_salvo_phy_power_off(struct phy *phy)
->  	return 0;
->  }
->  
-> +static int cdns_salvo_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	struct cdns_salvo_phy *salvo_phy = phy_get_drvdata(phy);
-> +
-> +	if (!cdns_is_nxp_phy(salvo_phy))
-> +		return 0;
-> +
-> +	if (mode == PHY_MODE_INVALID)
-> +		cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_BC_REG4,
-> +			 CLR_B_SESSION_VALID);
-> +	else if (mode == PHY_MODE_USB_DEVICE)
-> +		cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_BC_REG4,
-> +			 SET_B_SESSION_VALID);
+Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> writes:
 
-no else?
+> On 16/05/2023 11:41, Julien Stephan wrote:
+>> On Tue, May 16, 2023 at 10:07:47AM +0200, Krzysztof Kozlowski wrote:
+>>> On 15/05/2023 11:05, Julien Stephan wrote:
+>>>> From: Florian Sylvestre <fsylvestre@baylibre.com>
+>>>>
+>>>> This adds the bindings, for the MIPI CD-PHY module v 0.5 embedded in
+>>>> some Mediatek soc, such as the mt8365
+>>>>
+>>>> Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
+>>>> Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+>>>
+>>> What are the changes? IOW: changelog here or in cover letter.
+>>>
+>> Hi Krzysztof,
+>> I added a changelog in the cover letter, but I will try to be more
+>> descritpive next time. Changes from v1 are mainly style issues fixed
+>> (mostly from your first review)
+>
+> What do you mean by "in cover letter"? There is no cover letter.
 
-> +
-> +	return 0;
+Julien, your cover letter[1] was sent to a a different list of
+recipients than the patches, and most important for this thread, it was
+*not* sent to the devictree list. So I'm guessing that's why Krzysztof
+doesn't see it in his devicetree review queue.  Generally, you should
+have the same list of recipients for the cover letter as the patches
+since reviewers/maintainers generally filter mail based on which mailing
+lists are in to/cc.
 
-return success even when mode is not handled?
+>> 
+>>> Subject: you have some multiple spaces.
+>>>
+>>> Subject: drop driver. Bindings are not for drivers.
+>>>
+>>>> ---
+>>>>  .../phy/mediatek,phy-mipi-csi-0-5.yaml        | 62 +++++++++++++++++++
+>>>>  MAINTAINERS                                   |  6 ++
+>>>>  2 files changed, 68 insertions(+)
+>>>>  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+>>>> new file mode 100644
+>>>> index 000000000000..5aa8c0b41cdf
+>>>> --- /dev/null
+>>>> +++ b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
+>>>> @@ -0,0 +1,62 @@
+>>>> +# SPDX-License-Identifier: (GPL-2.0-Only OR BSD-2-Clause)
+>>>> +%YAML 1.2
+>>>> +---
+>>>> +$id: http://devicetree.org/schemas/phy/mediatek,phy-mipi-csi-0-5.yaml#
+>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>> +
+>>>> +title: Mediatek Sensor Interface MIPI CSI CD-PHY
+>>>> +
+>>>> +maintainers:
+>>>> +  - Julien Stephan <jstephan@baylibre.com>
+>>>> +  - Andy Hsieh <andy.hsieh@mediatek.com>
+>>>> +
+>>>> +description:
+>>>> +  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
+>>>> +  receivers. The number of PHYs depends on the SoC model.
+>>>> +  Depending on the soc model, each PHYs can support CDPHY or DPHY only
+>>>> +
+>>>> +properties:
+>>>> +  compatible:
+>>>> +    enum:
+>>>> +      - mediatek,phy-mipi-csi-0-5
+>>>
+>>> SoC based compatibles. 0-5 is odd.
+>>>
+>>>> +
+>>>> +  reg:
+>>>> +    maxItems: 1
+>>>> +
+>>>> +  '#phy-cells':
+>>>> +    const: 0
+>>>> +
+>>>> +  mediatek,is_cdphy:
+>>>
+>>> No underscores in node names.
+>>>
+>>>> +    description:
+>>>> +      Specify if the current phy support CDPHY configuration
+>>>
+>>> Why this cannot be implied from compatible? Add specific compatibles.
+>>>
+>>>
+>> This cannot be implied by compatible because the number of phys depends
+>> on the soc and each phy can be either D-PHY only or CD-PHY capable.
+>> For example mt8365 has 2 phy: CSI0 and CSI1. CSI1 is DPHY only and CSI0 is CD-PHY
+>
+> So it is SoC specific so why it cannot be implied by compatible? I don't
+> understand. You will have SoC specific compatibles, right? or you just
+> ignored my comments here?
 
-> +}
-> +
->  static const struct phy_ops cdns_salvo_phy_ops = {
->  	.init		= cdns_salvo_phy_init,
->  	.power_on	= cdns_salvo_phy_power_on,
->  	.power_off	= cdns_salvo_phy_power_off,
->  	.owner		= THIS_MODULE,
-> +	.set_mode	= cdns_salvo_set_mode,
->  };
->  
->  static int cdns_salvo_phy_probe(struct platform_device *pdev)
-> -- 
-> 2.34.1
+Julien, I think you had SoC specific compatibles in an earlier version
+but then changed it to be generic based on reviewer feedback.  However,
+that earlier version of the driver was trying to do a bunch of SoC
+specific logic internally and support multiple SoCs.  You've now greatly
+simplified the driver, with only a few SoC specific decisions needed.
+These can be implied by the driver based SoC specific compatible, as
+Krzysztof suggests, so you should just go back to having SoC specific
+compatibles.
 
--- 
-~Vinod
+Kevin
+
+[1] https://lore.kernel.org/linux-mediatek/20230515090551.1251389-1-jstephan@baylibre.com/#r
 
 -- 
 linux-phy mailing list
