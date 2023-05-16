@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDDC3C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:24:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33FF7C77B7F
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:31:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7FIk+EAXBOUZYgTck18EA8q0VFtMfanIohZ+YdzJ4A=; b=bLN5AvHSvvwWZI
-	0R1YSYuR1+StN5+OtHLYTYh9+qOeIESPrjQen10rndwz7JX8TT2lJmWO0/kSDAhxI1VLk9vOrsd6t
-	K3MBzuSq7ZU+j7QdRG9N0c9wLAOHvxK4cWmM87Fm/d0Y3/T5OaLNn8ve6JO6Pt8nBq1XM0pYHByOp
-	Y5De+3nzk13vA0z1TcmABd/oUhEiv5xgkOLWoWfc9E+snTho86YMzKAARtwgjoa44agtO9upvgM/I
-	heJr+cwFq+33nX5k6a1rxPZqJIzWRvPX2TPSkS3M4WehU20qLmTa94FGSUW3w8mMy0ug8t9hIIwQX
-	p7huB/C+v4q1Xvuagmag==;
+	List-Owner; bh=gphb4ovbMPVNeXxDn+KRb5uTzIvMT/qKVTLuqu6CzHs=; b=SALR3ZOk+mAkdp
+	xMBZPgZv+ayckPgRE4FxUkmTCFQFE2owxV7Q6bQAKvy1O0GMvmGWSTScXQuI5SmKgWfYWMtJJb8yx
+	2aV3MSm2YwP5s7CrBJcR7wvMNt9aKmpoGC2HSwDiaFzsUedoalrrs7OYXyNKlskICj7O1U/5TdXDT
+	WqJKt2m6Tx0ZF0vr/EdyAeF/LJbeiQbPmMG4Xx6lJUbdpp81IVvRRtzvGyWeck0Vq3nJ2KS3aOliV
+	G2cOuDd6EUPpzYj7eh2l5vANNPR5iksemG5O+FhJaBG+fQS8LAd7g5R8+h01wec6cVYV25ZqB8hRH
+	VgAs2spG1EoHdeE61ClQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvas-0064p4-1P;
-	Tue, 16 May 2023 14:24:02 +0000
+	id 1pyvhn-0065sM-2j;
+	Tue, 16 May 2023 14:31:11 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvap-0064o0-2b
-	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 14:24:00 +0000
+	id 1pyvhk-0065rX-1y;
+	Tue, 16 May 2023 14:31:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 077D960A07;
-	Tue, 16 May 2023 14:23:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E6150C4339B;
-	Tue, 16 May 2023 14:23:57 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 28B93637CA;
+	Tue, 16 May 2023 14:31:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C302BC433EF;
+	Tue, 16 May 2023 14:31:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684247038;
-	bh=PcwVUUITKY/O/qO722wrvpNOAEQAzpJRIdCPk2unTOY=;
+	s=k20201202; t=1684247467;
+	bh=pDqiW6ik/osmZlDpZv4+OTNlDq/bBmRLJ4LLoeJJWNc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=bY82g5MTrH6hp5Q1RQNsstyUWpf8rwxYFh7Gfb/0CzSU7DhjhQWZTd5Qgv0Ac8Nyq
-	 Jxj8fUna8FXCg+4X3SqxKHiEcGTlcdYAajhPz14zL4fy8lcUQcbgwFuV/LAGnJOSFM
-	 mQDii3vwaavba6aD4YeoXaY/4mYgmeKsvBhoC/x3RxFmUgsQ0spr3ybL1QbQlGsq95
-	 UFr0U4DFupHAUnAmZevrd64lLEWTGoHymC843ZKvp43rB/zAK2TeSUMWlqPaEHDZe1
-	 2jVwsYLc5NPB4nNoJQAXBTHO6WHwJ/wpu/RKxevHx95eXk+xyEyWnGSeE7LTHemRfG
-	 CsMuhXRoucIkw==
-Date: Tue, 16 May 2023 19:53:54 +0530
+	b=Plr0pCH8cfhw6IlqSPg+ZA609N8siQ6D0HDx2JQ3+C15Pv6aeoaa8rvV8lTmgLIJw
+	 CHtLfzF5uy5WUXC4fUvMcDcFwSZjqmwcVLIcVo1PU6wM0JojQtYFWF4/ES1OdIZ6K6
+	 L1VISLMo5aCtfhNK7Yn6DqPpqFCzOr6oc8gEPZelIzw/5M7mWv7eDt75t41e4jAKLd
+	 ICMICECDd0CgaY3zSEklcbNJXy+tLHV6tXtVZYQJ+yrHzzWVPujm6uKNhBdZsv1DDx
+	 PSlY0+2+RbvMGRPxvY6pOAJnFPSBFG3cUgKI2mJuqlokpiCm+qINRJblPC1JR1a1rt
+	 FJjeuKHzwGIwA==
+Date: Tue, 16 May 2023 20:01:03 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org, agross@kernel.org,
-	linux-kernel@vger.kernel.org, andersson@kernel.org,
-	bhupesh.linux@gmail.com, krzysztof.kozlowski@linaro.org,
-	robh+dt@kernel.org, konrad.dybcio@linaro.org, kishon@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, dmitry.baryshkov@linaro.org
-Subject: Re: [PATCH v10 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
-Message-ID: <ZGOR+hvLMZLxl8fh@matsya>
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: kishon@kernel.org, rogerq@kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	srk@ti.com
+Subject: Re: [PATCH v2 0/3] PHY-GMII-SEL: Add support for SGMII mode
+Message-ID: <ZGOTp/tUsZdO/Mqm@matsya>
+References: <20230309063514.398705-1-s-vadapalli@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
+In-Reply-To: <20230309063514.398705-1-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_072359_885935_CD1EC4A3 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20230516_073108_693334_20A4B38C 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,20 +75,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02-05-23, 11:05, Bhupesh Sharma wrote:
-
+On 09-03-23, 12:05, Siddharth Vadapalli wrote:
+> Hello,
 > 
-> This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
-> SoC. For the previous versions of this patch there were conversations
-> on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
-> 'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
-> documentation.
-> 
-> But after a careful look at downstream dtsi (see [1]) it appears that
-> this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
-> 'dp-combo' phy.
+> This series adds support to configure the CPSW MAC's PHY in SGMII mode.
+> Also, SGMII mode is enabled for TI's J7200 and J721E SoCs.
 
-Fails to apply for me, pls rebase
+Applied, thanks
 
 -- 
 ~Vinod
