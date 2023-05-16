@@ -4,95 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBC08C77B7F
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 08:07:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 624E7C77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 08:45:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cdzwf4NxfURM9EbL79z/hnlC1aWqsZkzBfkeLO+9NJs=; b=cFWLEZqkcXojFN
-	x72LJzlyNfPGrIqewuV6/+OPgsRAAJpwwnw2MT2Hmzl6G3H9jxSRpKNrTsc9GAEsOP7lVaJiB1YJ/
-	LDdpFEhxV8hcgp5m5iPw4+f8hPCLopmz/UXAciyzJZrDCpXP28ySgu82XiJV1veVpBEXQuRH051y/
-	3tj7T6d0LVjNLEUOHkFSZufQzJ42rb1zEtNLf4BzkWfNqzjnK435RQAu+/vbsYUaRLt2lj5fd5/qW
-	XHuj0dj9cV5Q5xeQERBUlDMWX7t+FRYt/thxqOvCBDldxR6tyhDLNUKwaXoZ5XEP+EU8F0q5bxZtY
-	DlSbY8Kv4x9HeUKMQljg==;
+	List-Owner; bh=7fzwXaVaGfckwTDfxcpgzPefwxhJ0uRy7occr+XSoXQ=; b=GAGhfc2FArmYjk
+	xPlRVHYhkdvaElJYdw/lfwmVS0ubMxgGzs6vRoRBfnWnYHCqU3bSSvTygOV6WbjlniEyPGhp/v6b3
+	xgy22QPEO77j5sAeDsbEiLA4SDPosW7c1Ts9iue0xddO+sOJ+eyeQJPlQE3Oi+AdZFyaMVkYxlaZa
+	xDxKdsy6ZHG8mCSka04IlgQVq34LhvTL8kXah8wCGl/q0rB/FTK4AgmzJl8A/f1a2nU5v70AVUa8+
+	6BNMwjbEnVbbq0X4/p7lNOnDjxhj7dtp9zYqF9KREDhVngJCMOg3S8FqBHQJiUFYICYSkKWzFaF7Q
+	xP/horV9PCYUrCkY68mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pypis-004mWn-1F;
-	Tue, 16 May 2023 08:07:54 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1pyqIz-004uDD-2c;
+	Tue, 16 May 2023 08:45:13 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pypip-004mUi-0F
-	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 08:07:52 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-96622bca286so2226669766b.1
-        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 01:07:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684224469; x=1686816469;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=BGVHVtrJ1UKArOxL4QLZMf28fxPQFEoR2CUGleXHsCE=;
-        b=JYKeiv25q8zcMTfIUxyjYba4uvXfSoqkHDtJ77yG0ETwlKFEKJjqoelz9b636iC43q
-         NwEMGuL3OUF3SzHNkliudf9CiKYc6qoMpeWTKyembWNoR5IqXIwHlNiQI/Awpc3OhoJO
-         zCZW6yrcE+nJ9fRDAxpuiEHuKdTaSIFd2AV//rWLqyTKlckm1sCblj2Z1pSieKU3zPOD
-         iGT+3eB1+IgAlVjDXoSKiSeBb4xpMSUtOX/nWUY6QNb6u/8/0/UHnmQKMnon8fKW2sRl
-         f04iL/5jEudZbK48jxYkajqRY1IfgMD+bUg21v3KlV2XH4+TsSACN7BmBDahKz8ZRdW/
-         hKwg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684224469; x=1686816469;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=BGVHVtrJ1UKArOxL4QLZMf28fxPQFEoR2CUGleXHsCE=;
-        b=MXcox+D8WSzGsvlD/KFfDJDxOaQhuhlWUgW0zUdTslNjO3hZLwag5c3TDWfHVSGowE
-         PNCXEx6Li9AZsxdgmYUWGe9wQtokiMfBb4xRAQV0AxlUdQ4XMmXkeqX7fZD4CRpBBM0P
-         7rr7CxscT/kVRxKZzNt5hj0r37MxripVxnUnNVYzCq6PfGyag+Wbx2bUeTRKx7IsoxUG
-         sPZnUZlastW6gkzj900gy9+VKZNw4KSEsifa8276VUGcf1Lh4RhBjB0iKVocumYW9yX3
-         E5vYfWRaeOi7P0pxKBR/2hkmibtPma6erocHv0ydkPeX1aMIELT7JVA5qBOFAChkhE/C
-         ownA==
-X-Gm-Message-State: AC+VfDxxcNepcH5ajncsQeTedZPYCPDRUoE8Q3pCRTjIbvlKcWoyYf3k
-	W1mPgAt2qbTAEq2aa8jrg+eHWQ==
-X-Google-Smtp-Source: ACHHUZ4yMXV4Sz3Qo41nq8QUnvqctZ1ziGdHs/WBNjiVR1F3sVaDjIntrsJJsddU6GfMFbs1vxI0IQ==
-X-Received: by 2002:a17:907:360d:b0:94a:7979:41f5 with SMTP id bk13-20020a170907360d00b0094a797941f5mr30753341ejc.71.1684224469553;
-        Tue, 16 May 2023 01:07:49 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:4d4a:9b97:62e:1439? ([2a02:810d:15c0:828:4d4a:9b97:62e:1439])
-        by smtp.gmail.com with ESMTPSA id i8-20020a056402054800b0050bd59fd0efsm7767851edx.49.2023.05.16.01.07.48
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 May 2023 01:07:49 -0700 (PDT)
-Message-ID: <ab9aa30f-82d7-1d14-5561-e19ff10af0b0@linaro.org>
-Date: Tue, 16 May 2023 10:07:47 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add mediatek mipi csi driver v
- 0.5
-Content-Language: en-US
-To: Julien Stephan <jstephan@baylibre.com>
-Cc: robh@kernel.org, chunkuang.hu@kernel.org,
- linux-mediatek@lists.infradead.org,
- Florian Sylvestre <fsylvestre@baylibre.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Andy Hsieh <andy.hsieh@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- "moderated list:ARM/Mediatek USB3 PHY DRIVER"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
- <20230515090551.1251389-2-jstephan@baylibre.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230515090551.1251389-2-jstephan@baylibre.com>
+	id 1pyqIw-004uBW-1f;
+	Tue, 16 May 2023 08:45:11 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.47])
+	by mailnew.nyi.internal (Postfix) with ESMTP id 522B65810AF;
+	Tue, 16 May 2023 04:45:08 -0400 (EDT)
+Received: from imap51 ([10.202.2.101])
+  by compute6.internal (MEProxy); Tue, 16 May 2023 04:45:08 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:sender
+	:subject:subject:to:to; s=fm3; t=1684226708; x=1684233908; bh=u/
+	Wz5MhNACKrizGF564GZclX7WtuKcDjHIIc2sgb46k=; b=LZwQORTPNRSuxtpmnd
+	ncA/M0GDtg3dh7wxSU7uqTrOJWQ0JudOtVmLMg6+XYJJN7JkkhOaqWr9JMUJ1LYN
+	qlsXhsVFZwKdFi7LcqNMpziHyx+mheLQlbmWNeBmG7grA0HCXVgHp5i5BFWTv7Zk
+	c6MbjEN04eqMeNz2WPg04ABVYJiNbL2d4kHKuk9xBc/be9SRSFSG3sdJ2P+YmXuM
+	sWJERm3eaXVLB70uKqLNxSMUjmQZH6ZZra9iVh2PASs3OS1MyTeDVJMwZ8sqRMtF
+	jVJTgCxreoiAubEYMI1cLq2h2/KsLcGqMlxUJTbEv7GhFoqyI5CridlFzwyCyASg
+	t9Aw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm1; t=1684226708; x=1684233908; bh=u/Wz5MhNACKri
+	zGF564GZclX7WtuKcDjHIIc2sgb46k=; b=dIM0d/rWDZRxe7l2yHA8Ys/6jAjJ1
+	jzn5PVRh0UI3hEhDGSbYeitApDeupBmoKf8Z9yRSFCrmvoM7bvYQ3l15E7isPivU
+	Cl+5R+XQQCgSYMG/DRxE/H01o6IhPDbLn9fEsKAlOzn2y4vEsgLxNVmB5WNNJZ9h
+	93ORydUw+VR3p9D5ITaAuZuQ7rIwHhvawr06BPgUH40iOl0/7UbJYdV7H0cNSn6U
+	sAliTsQlKy3hNA7w4PU7Rf87KgM8UDglyqB3tAmaTM+4RSnE+H/GmMrPd/buYSlM
+	w4deceGtaJ8L0m5z3S2tBm5Z7Pt35x0TcDCS+QcRR/N8CCnn3GO4dySDQ==
+X-ME-Sender: <xms:k0JjZHYINi_B2oYrUdT0aJgPICFzDz-f3r20UBg6F9qO6G1GhhxfXw>
+    <xme:k0JjZGa6WQ40P-MeUsiDH97ab1HHMRq3UjfkwX3sF4ds5FYVgY4rFUEwYEt861uJ2
+    WyKDPTJfKgrJkbVQkg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeehledgtdejucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepofgfggfkjghffffhvfevufgtsehttdertderredtnecuhfhrohhmpedftehr
+    nhguuceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrth
+    htvghrnhepffehueegteeihfegtefhjefgtdeugfegjeelheejueethfefgeeghfektdek
+    teffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprg
+    hrnhgusegrrhhnuggsrdguvg
+X-ME-Proxy: <xmx:k0JjZJ9ZFPvUQMdXbAcgS7dLsrFIbc8_NFycwgYtMqV52neATnsIkA>
+    <xmx:k0JjZNpupvUMEJJbur4eJj0b5lnHQ5_2TRz-gy8bZxP9efgBLd7hDw>
+    <xmx:k0JjZCrTsJg_ZlDnOiKui63PzKX-TM63SjAnwzZ8wbPJHvFGGygA7w>
+    <xmx:lEJjZKB3kWYt21PwpKFT5sM6_1Q5NhXKizj5u523ggsCHuQu0KNR9Q>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+	id 8FDBDB60086; Tue, 16 May 2023 04:45:07 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.9.0-alpha0-415-gf2b17fe6c3-fm-20230503.001-gf2b17fe6
+Mime-Version: 1.0
+Message-Id: <2fabe721-7434-43e7-bae5-088a42ba128d@app.fastmail.com>
+In-Reply-To: <9cba6384-123b-1cd1-ed02-08365a0ed529@linaro.org>
+References:  <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
+ <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-1-2592c29ea263@linaro.org>
+ <5cb38be4-a27f-dc1a-cbb9-c195505a9e7c@linaro.org>
+ <9fa0662e-8854-05f9-da7f-ec8e08d2badf@linaro.org>
+ <d5c030f9-2f4d-25cc-b922-d00f5033ac37@linaro.org>
+ <6228670c-3e06-3061-f304-a2c641962ffa@linaro.org>
+ <9cba6384-123b-1cd1-ed02-08365a0ed529@linaro.org>
+Date: Tue, 16 May 2023 10:44:44 +0200
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Neil Armstrong" <neil.armstrong@linaro.org>,
+ "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>,
+ "Jerome Brunet" <jbrunet@baylibre.com>,
+ "Michael Turquette" <mturquette@baylibre.com>,
+ "Stephen Boyd" <sboyd@kernel.org>, "Kevin Hilman" <khilman@baylibre.com>,
+ "Martin Blumenstingl" <martin.blumenstingl@googlemail.com>,
+ "Rob Herring" <robh+dt@kernel.org>,
+ "Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
+ "Conor Dooley" <conor+dt@kernel.org>, "Dave Airlie" <airlied@gmail.com>,
+ "Daniel Vetter" <daniel@ffwll.ch>, "Philipp Zabel" <p.zabel@pengutronix.de>,
+ "Vinod Koul" <vkoul@kernel.org>,
+ "Kishon Vijay Abraham I" <kishon@kernel.org>,
+ "Sam Ravnborg" <sam@ravnborg.org>
+Cc: "Nicolas Belin" <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 01/13] dt-bindings: clk: g12a-clkc: export VCLK2_SEL and add
+ CTS_ENCL clock ids
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_010751_152926_9FB79688 
-X-CRM114-Status: GOOD (  20.92  )
+X-CRM114-CacheID: sfid-20230516_014510_621747_4E8C29C4 
+X-CRM114-Status: GOOD (  14.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,114 +124,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/05/2023 11:05, Julien Stephan wrote:
-> From: Florian Sylvestre <fsylvestre@baylibre.com>
-> 
-> This adds the bindings, for the MIPI CD-PHY module v 0.5 embedded in
-> some Mediatek soc, such as the mt8365
-> 
-> Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
-> Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+On Mon, May 15, 2023, at 18:22, neil.armstrong@linaro.org wrote:
+> On 15/05/2023 18:15, Krzysztof Kozlowski wrote:
+>> On 15/05/2023 18:13, Krzysztof Kozlowski wrote:
+>> 
+>> Also one more argument maybe not relevant here but for other cases -
+>> this makes literally impossible to include the clock ID in DTS in the
+>> same kernel revision, because you must not merge driver branch to DTS
+>> branch. SoC folks were complaining about this many times.
+>
+> Actually we handle this very simply by having such patches merged in a immutable
+> branch merged in the clock and DT pull-requests, it worked perfectly so far
+> and neither Stephen or Arnd complained about that.
 
-What are the changes? IOW: changelog here or in cover letter.
+It's usually benign if you just add a new clk at the end of the binding
+header, as that doesn't touch the internal header file in the same
+commit. I'm certainly happier about drivers that just use numbers from
+a datasheet instead of having to come up with numbers to stick in a binding
+because the hardware is entirely irregular, but there is usually no point
+trying to complain about bad hardware to the driver authors -- I unsterstand
+you are just trying to make things work.
 
-Subject: you have some multiple spaces.
+I agree with Krzysztof that using the same identifiers in the local
+header and in the binding is just making your life harder for no
+reason, and if you are the only ones doing it this way, it would
+help to change it. Maybe just add a namespace prefix to all the internal
+macros so the next time you move one into the documented bindings you
+can do it with the same immutable branch hack but not include the
+driver changes in the dt branch.
 
-Subject: drop driver. Bindings are not for drivers.
-
-> ---
->  .../phy/mediatek,phy-mipi-csi-0-5.yaml        | 62 +++++++++++++++++++
->  MAINTAINERS                                   |  6 ++
->  2 files changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-> new file mode 100644
-> index 000000000000..5aa8c0b41cdf
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,phy-mipi-csi-0-5.yaml
-> @@ -0,0 +1,62 @@
-> +# SPDX-License-Identifier: (GPL-2.0-Only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/mediatek,phy-mipi-csi-0-5.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Mediatek Sensor Interface MIPI CSI CD-PHY
-> +
-> +maintainers:
-> +  - Julien Stephan <jstephan@baylibre.com>
-> +  - Andy Hsieh <andy.hsieh@mediatek.com>
-> +
-> +description:
-> +  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
-> +  receivers. The number of PHYs depends on the SoC model.
-> +  Depending on the soc model, each PHYs can support CDPHY or DPHY only
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mediatek,phy-mipi-csi-0-5
-
-SoC based compatibles. 0-5 is odd.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  '#phy-cells':
-> +    const: 0
-> +
-> +  mediatek,is_cdphy:
-
-No underscores in node names.
-
-> +    description:
-> +      Specify if the current phy support CDPHY configuration
-
-Why this cannot be implied from compatible? Add specific compatibles.
-
-
-> +    type: boolean
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - '#phy-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    soc {
-> +      #address-cells = <2>;
-> +      #size-cells = <2>;
-> +
-> +      mipi_rx_csi0: mipi_rx_csi0@11c10000 {
-
-No underscores in node names. How this is v2?
-
-> +        compatible = "mediatek,phy-mipi-csi-0-5";
-> +        reg = <0 0x11C10000 0 0x2000>;
-> +        status = "okay";
-
-Drop
-
-> +        mediatek,is_cdphy;
-> +        #phy-cells = <0>;
-> +      };
-> +
-> +      mipi_rx_csi1: mipi-rx-csi1@11c12000 {
-> +        compatible = "mediatek,phy-mipi-csi-0-5";
-> +        reg = <0 0x11C12000 0 0x2000>;
-> +        status = "disabled";
-
-???
-
-
-Best regards,
-Krzysztof
-
+    Arnd
 
 -- 
 linux-phy mailing list
