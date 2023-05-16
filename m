@@ -4,103 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A3DAC7EE26
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 09:00:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D6A6C77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 09:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0fMJ6WCEmtLXnOnxzi6hIaIa7dfzAZftRhHyrGnugdA=; b=n7jD2DHai7N0XEsVHPnnmgracI
-	GLQwwkbIeFFkm3o9xr3l39Ogx+gl6ewIy4KtD310OeQ1YZgmFOzewoFJ2hh97lhWsl92LH3oyg/Nt
-	3Rm3GYJ0UmbVeMvRTelu95Jg9mJ2l8fZYJkbdPo6J4q59l1ewvzFDJ9gWpe66lcIw8yOsVvzWv47W
-	N39cPU1QOakhYw8+oiTi3YNo62eXAA8ihk0FN8UNM0fcqyiWURBPZVqke0WCm+YIpAI1eSIMXe/dv
-	ciH6X1vPlis1Fn4L+jIODYcxzJEF0WR/5kSsDC72QJ3fRNltL0COS8N0pMvYiVKbEN1/bn/IDnhUT
-	N+Hi6JvQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/uwWbDeqFn+sPShguLYK09t3bJTw1XhkS6C9nnyXfvE=; b=JWnYHSWKuS7KUz
+	8v0+ZjEh5KqS1hbQWs6fK7BamRKWna5UPClJ+xQk8i32QQb29j44H3P2bouQVsiLChVUcPK2y8sus
+	H8CY8ZMHeXsGVCv7ix577ckrhwKJFOXl7maL28kPxTH4rILODLm4UA0wpSgpK8Ws2Dma8sVVFx8n/
+	bfz9Dqqgw14BmQNPis/iC/O2kBPyT0SLYbncDQ19E7Smyh3lpd8sao6zBZYgomj9cD3s1H3cF9Ut1
+	Yn4JwzoEoMf3BNLfhqDNmZapTDItXb9D1T6J9/sUFSo7fNjeQ4DVIYMHB16qzInByP46ZIDzI99Rk
+	eaEn3WdB4666hvow978A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyqXZ-004xp6-02;
-	Tue, 16 May 2023 09:00:17 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1pyr0k-0054WL-2j;
+	Tue, 16 May 2023 09:30:26 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyqXW-004xmd-0S
+	id 1pyr0h-0054Tp-26
 	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 09:00:16 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-3f415a90215so113013205e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 02:00:13 -0700 (PDT)
+	Tue, 16 May 2023 09:30:25 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-3078cc99232so10509674f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 02:30:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684227612; x=1686819612;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=wrFkte/bezt1PlNhFCGqqPcTWG4E53z6ADYV3K7fF3g=;
-        b=sjp+lL/oyBSGysWhOvH+HyKbaqlOkgM4gPDAx6wEodMzeHJ7CIwWV/D6Czgf7g5b4y
-         3pq0iP4PbZbdtl8nXHy5xEuKwlzOhXlby6wZroKbsZnYXMmr6DQMnSKyM9IHVwYeLosI
-         jzIxHuQExAJ6cdYicbzRPbpf7WMkkR2x9chwjgwmPU2lkF8Fu83tw5V6qQrDhhyB8kHF
-         IoWtbsPD1K3bFtjyChL9/r2atKzi9e9kn9FPjoT1lWrWrBBDbxYKieGQWaiyYI2fqkVv
-         om0/lULQwVmA5ddQZOJTYP0du+5eivl6xsSLSUcY8vxUUwHlPYdzqj3Py8lnvOcrE9jL
-         v2MA==
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684229419; x=1686821419;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=bo1b/bEqOS6KDD6qflz0mFStzeeE7aur/bUdV5C/8NA=;
+        b=vRap7UvFpv5ghKGfHsGU8Sx21psojIcztLgVIfwXWJknaFex0YDfYeBt8QdLUe6Gkb
+         EG8UOIkceBXE/IjJcromhmhBBpTrow4u9OeNW6CAeY3KRZ0bFKuLVdpeY8nmc+myHUdO
+         QhWgL+NzdeSPH23J+bAgDCGqdpH9wbSG5pqBuhWPpuqDrIYLKuRV8gn3+IdCXRGtPLeQ
+         AjSm8pJWYkjp47srU3RKptYEqRNguW1H8a3RokeO9ozq+kjRsQBor8Gk7+nk3ni92ger
+         /HYUENYA8FPWMde5Tv1gEz0Zud3qfusXGXJv1yXRj322ED7prIUFViaYje9qN9wwEY2a
+         XwGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684227612; x=1686819612;
-        h=content-transfer-encoding:in-reply-to:organization:references:cc:to
-         :content-language:subject:reply-to:from:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=wrFkte/bezt1PlNhFCGqqPcTWG4E53z6ADYV3K7fF3g=;
-        b=Dr+sLrq7RT03LivXi10KShZ33Iu8k8XNATHnGDW9bVjWeRRgI59MfQr4sOBuO9xk5b
-         3O05Axro7KX7wlTs+T7cZagtjAhyUYBKCdDTps5FNwW27ESW61EqRIAQEfbkwuvgHHEG
-         Hk1+DcZAKbMvQVfnttCTamiJG6IDGLQBRVhCam5mqPfOVii+Js4iprQPCKg4Ncy83ryf
-         HLz+mOX2DxBV1g7v0ICMbnMxOkxIcxzKTu3D4wHlAPibYTEx838ZgEQS+/Y4sv68im12
-         RBsWVM/5+XOEcCcmM2h/2f8ocPc4ceuKx1EZzBwlWd+oatd4wEmnSUKY4tFFguxSpHB4
-         xBaA==
-X-Gm-Message-State: AC+VfDzY79N2aQgUcyq6+9XBUHMwR1BSSmzKFno1ZubdFe6Fe9eg9ECc
-	jFfP8lV02Q1U7yvnMFhNkHlIKg==
-X-Google-Smtp-Source: ACHHUZ5bSlYDSBtrIk3ZZo2GUz0L3bCKdlDXlaw/wT8THT4atVNx1A2nmPcmuGErziRjmwMbrF+ZaQ==
-X-Received: by 2002:a5d:42ca:0:b0:306:3b78:fe31 with SMTP id t10-20020a5d42ca000000b003063b78fe31mr23654611wrr.69.1684227611789;
-        Tue, 16 May 2023 02:00:11 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:982:cbb0:86be:97a:a043:77a8? ([2a01:e0a:982:cbb0:86be:97a:a043:77a8])
-        by smtp.gmail.com with ESMTPSA id s14-20020a1cf20e000000b003f4285629casm1532562wmc.42.2023.05.16.02.00.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 May 2023 02:00:11 -0700 (PDT)
-Message-ID: <aa22c05d-9db7-eff1-d203-cb795359252b@linaro.org>
-Date: Tue, 16 May 2023 11:00:10 +0200
+        d=1e100.net; s=20221208; t=1684229419; x=1686821419;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=bo1b/bEqOS6KDD6qflz0mFStzeeE7aur/bUdV5C/8NA=;
+        b=gUGldaF0esSF6L+ivNaysS4UzuSZaQvxXMJ8UPP5/+aOurNdPtMiHHksgmHVWZNvC7
+         ni8DPkcK+gh4Bf3ONW2rt2lpwnQ6iUrvviSQ0boHB2q864fkoT0LnlAjrnaflS0bMu4N
+         NRUDmBn7bXm5aCFrVqW25zxqPTn6v7CGzE2WALQvXunpnbhj3JEyWfwMQnHXRA779cIs
+         ZTq+LkIdnOSKQgKxhz23uosZRT8QVDBLT7qDxt80SdE/bTR0M+LS+wpkNpLOEySaHJQj
+         3BSCUbmOf0yc6YRZ6BVn8vCV+NJxcozY6qx8wWiAKARYW4HrjJkvF+emJ1E4ZLB2VCkX
+         YGTA==
+X-Gm-Message-State: AC+VfDyUfst1s+Y16dZwuwbONXIkeG4wqkb4hCP2N0fPngHQ7CC5CP6+
+	nrNhvR7dUZ4g13MmqaTUbJBCOqlS6Qml3aKTkbgsgIn+
+X-Google-Smtp-Source: ACHHUZ7VHIunoibF7bQd4takm4fdk7SjKWAPNooKGJ2N2GmNNWqcstqBa8aSFOHr6/KgX4SlBiDTqQ==
+X-Received: by 2002:adf:f2c3:0:b0:305:fbfb:c7d7 with SMTP id d3-20020adff2c3000000b00305fbfbc7d7mr29019988wrp.44.1684229419563;
+        Tue, 16 May 2023 02:30:19 -0700 (PDT)
+Received: from localhost ([2a01:e0a:55f:21e0:fd3b:9fed:e621:cc8f])
+        by smtp.gmail.com with ESMTPSA id o4-20020a5d6704000000b002e5ff05765esm1928076wru.73.2023.05.16.02.30.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 16 May 2023 02:30:18 -0700 (PDT)
+Date: Tue, 16 May 2023 11:30:17 +0200
+From: Julien Stephan <jstephan@baylibre.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: krzysztof.kozlowski@linaro.org, robh@kernel.org, 
+	chunkuang.hu@kernel.org, linux-mediatek@lists.infradead.org, 
+	Phi-bang Nguyen <pnguyen@baylibre.com>, Louis Kuo <louis.kuo@mediatek.com>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Andy Hsieh <andy.hsieh@mediatek.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	open list <linux-kernel@vger.kernel.org>, 
+	"moderated list:ARM/Mediatek USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
+	"open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>
+Subject: Re: [PATCH v2 2/2] phy: mtk-mipi-csi: add driver for CSI phy
+Message-ID: <shthzc3zekvm2mrcch6vexsq5djpoxwupvdmmovhrz2ack3wxx@s4ptfhq7iwvi>
+References: <20230515090551.1251389-1-jstephan@baylibre.com>
+ <20230515090551.1251389-3-jstephan@baylibre.com>
+ <cd6067b2-660a-8f2c-697d-26814a9dc131@collabora.com>
+ <b2nk4jw2hpy4ndoq4cojazkn6h3tra2zjffhiswb7aqryabf7q@mkbtzhzcbivv>
+ <54e6923c-729a-49de-8395-fbd0b8443aa8@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 01/13] dt-bindings: clk: g12a-clkc: export VCLK2_SEL
- and add CTS_ENCL clock ids
-Content-Language: en-US
-To: Arnd Bergmann <arnd@arndb.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Dave Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>
-Cc: Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-0-2592c29ea263@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v4-1-2592c29ea263@linaro.org>
- <5cb38be4-a27f-dc1a-cbb9-c195505a9e7c@linaro.org>
- <9fa0662e-8854-05f9-da7f-ec8e08d2badf@linaro.org>
- <d5c030f9-2f4d-25cc-b922-d00f5033ac37@linaro.org>
- <6228670c-3e06-3061-f304-a2c641962ffa@linaro.org>
- <9cba6384-123b-1cd1-ed02-08365a0ed529@linaro.org>
- <2fabe721-7434-43e7-bae5-088a42ba128d@app.fastmail.com>
-Organization: Linaro Developer Services
-In-Reply-To: <2fabe721-7434-43e7-bae5-088a42ba128d@app.fastmail.com>
+Content-Disposition: inline
+In-Reply-To: <54e6923c-729a-49de-8395-fbd0b8443aa8@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_020014_176149_16922A20 
-X-CRM114-Status: GOOD (  21.65  )
+X-CRM114-CacheID: sfid-20230516_023023_693160_D04BA0ED 
+X-CRM114-Status: GOOD (  36.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,50 +98,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/05/2023 10:44, Arnd Bergmann wrote:
-> On Mon, May 15, 2023, at 18:22, neil.armstrong@linaro.org wrote:
->> On 15/05/2023 18:15, Krzysztof Kozlowski wrote:
->>> On 15/05/2023 18:13, Krzysztof Kozlowski wrote:
->>>
->>> Also one more argument maybe not relevant here but for other cases -
->>> this makes literally impossible to include the clock ID in DTS in the
->>> same kernel revision, because you must not merge driver branch to DTS
->>> branch. SoC folks were complaining about this many times.
->>
->> Actually we handle this very simply by having such patches merged in a immutable
->> branch merged in the clock and DT pull-requests, it worked perfectly so far
->> and neither Stephen or Arnd complained about that.
-> 
-> It's usually benign if you just add a new clk at the end of the binding
-> header, as that doesn't touch the internal header file in the same
-> commit. I'm certainly happier about drivers that just use numbers from
-> a datasheet instead of having to come up with numbers to stick in a binding
-> because the hardware is entirely irregular, but there is usually no point
-> trying to complain about bad hardware to the driver authors -- I unsterstand
-> you are just trying to make things work.
-> 
-> I agree with Krzysztof that using the same identifiers in the local
-> header and in the binding is just making your life harder for no
-> reason, and if you are the only ones doing it this way, it would
-> help to change it. Maybe just add a namespace prefix to all the internal
-> macros so the next time you move one into the documented bindings you
-> can do it with the same immutable branch hack but not include the
-> driver changes in the dt branch.
+On Mon, May 15, 2023 at 04:32:42PM +0200, AngeloGioacchino Del Regno wrote:
+> Il 15/05/23 16:07, Julien Stephan ha scritto:
+> > On Mon, May 15, 2023 at 02:22:52PM +0200, AngeloGioacchino Del Regno wrote:
+> > > > +#define CSIxB_OFFSET		0x1000
+> > >
+> > > What if we grab two (or three?) iospaces from devicetree?
+> > >
+> > > - base (global)
+> > > - csi_a
+> > > - csi_b
+> > >
+> > > That would make it possible to maybe eventually extend this driver to more
+> > > versions (older or newer) of the CSI PHY IP without putting fixes offsets
+> > > inside of platform data structures and such.
+> > >
+> > Hi Angelo,
+> > The register bank of the CSI port is divided into 2:
+> > * from base address to base + 0x1000 (port A)
+> > * from base + 0x1000 to base +0x2000 (port B)
+> > Some CSI port can be configured in 4D1C mode (4 data + 1 clock) using
+> > the whole register bank from base to base + 0x2000 or in 2D1C mode (2 data +
+> > 1 clock) and use either port A or port B.
+> >
+> > For example  mt8365 has CSI0 that can be used either in 4D1C mode or in
+> > 2 * 2D1C and CSI1 which can use only 4D1C mode
+> >
+> > 2D1C mode can not be tested and is not implemented in the driver so
+> > I guess adding csi_a and csi_b reg value may be confusing?
+> >
+> > What do you think?
+>
+> Ok so we're talking about two data lanes per CSI port... it may still be
+> beneficial to split the two register regions as
+>
+> reg-names = "csi-a", "csi-b"; (whoops, I actually used underscores before,
+>                                and that was a mistake, sorry!)
+>
+> ....but that would be actually good only if we are expecting to get a CSI
+> PHY in the future with four data lanes per port.
+>
+> If you do *not* expect at all such a CSI PHY, or you do *not* expect such
+> a PHY to ever be compatible with this driver (read as: if you expect such
+> a PHY to be literally completely different from this one), then it would
+> not change much to have the registers split in two.
+>
+> Another case in which it would make sense is if we were to get a PHY that
+> provides more than two CSI ports: in that case, we'd avoid platform data
+> machinery to check the number of actual ports in the IP, as we would be
+> just checking how many register regions we were given from the devicetree,
+> meaning that if we got "csi-a", "csi-b", "csi-c", "csi-d", we have four
+> ports.
+>
+> Besides, another thing to think about is... yes you cannot test nor implement
+> 2D1C mode in your submission, but this doesn't mean that others won't ever be
+> interested in this and that other people won't be actually implementing that;
+> Providing them with the right initial driver structure will surely make things
+> easier, encouraging other people from the community to spend their precious
+> time on the topic.
+>
+Hi Angelo,
+Ok, I see your point, but for future potential upgrade to support A/B
+ports I was thinking of something else: adding independent nodes for csixA
+and csixB such as:
 
-Ack, I'll try to find a simple intermediate solution to avoid this situation.
+csi0_rx: phy@11c10000 {
+  reg = <0 0x11C10000 0 0x2000>;
+  mediatek,mode = <4D1c>;
+  ...
+};
 
-Thanks,
-Neil
+csi0a_rx: phy@11c10000 {
+  reg = <0 0x11C10000 0 0x1000>;
+  mediatek,mode = <2D1c>;
+  ...
+};
+csi0b_rx: phy@11c11000 {
+  reg = <0 0x11C11000 0 0x1000>;
+  mediatek,mode = <2D1c>;
+  ...
+};
 
-> 
->      Arnd
+giving the correct register range. One thing I did not mention is that if
+csi0_rx is used csi0a_rx and csi0b_rx cannot be used (they share same
+physical lanes as csio_rx), but csi0a_rx and csi0b_rx can be used simultaneously.
+So platform device will enable only the node(s) it needs and enabling
+csi0_rx and csioa/b_rx will fail because they share the same register
+region and map will fail and it does not have any sense because you
+either have a camera using the whole port or sub port but you cannot have
+both plugged in. What do you think about it?
 
+> > > > +#define CSIxB_OFFSET		0x1000
+Maybe moving this declaration in phy-mtk-mipi-csi-0-5-rx-reg.h would be
+better?
+
+Regards,
+Julien
+> Regards,
+> Angelo
+>
 
 -- 
 linux-phy mailing list
