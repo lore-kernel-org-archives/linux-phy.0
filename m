@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A045C7EE2A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:58:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1855CC77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:58:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=38/Wa8NfdsL4vrs5slzonLJgRUQpP7S8VY362cEbx6c=; b=LmedWUUpVOE6LA
-	0a972NcYbVD/rrcHNA/5Gx+PkyoCtiPjNm0pZmvGD01YeYq1HJrimnzj1cY0EyL+nwxkLiZjw92db
-	sJgL/FB2hkmRUb3Tctox85yzL11Sa5AFdflmJMv4NcS8/W0BPhkkqY4v3eGwVndxVt8du2asxfsLT
-	V/6sQQAm0Br7hks/A6IcS6+MPONqXsy/Lgd668f0/rtn9XQ6Zw7Z4pW7WzDHQSzeViMBIEEdp2cBz
-	NbfQ5DexaB2aGfl6R8vDvfVxuUGhHKcnEorrnZzY/6gjojMRpUdbtSpW2jKWtuc6v7reYmcI7+kP6
-	ekWlgtLDD6RhRZhY1B7g==;
+	List-Owner; bh=1qLLV22g+b1W5a1V2JNNg0mtIByhHDS5TmGRkakKb34=; b=1TEDlAlKa+yFJt
+	IiMo3RTsoxW5Q84klRCrlMM2CC6bCBHPVGkhq0o1gawhhoWIjXTZa8isHXDkRXxZrkZfVgqKS3nDi
+	87nEPCltuDCTSM+/cNe34Ln4Iy52htINNRvn7GEnGEbsG4xIpFKqTtzLchbyvulhivwXlvItgcjj2
+	QF6YMzhlCXEN49WBWUsBs2M3jHdxm9FZVdx5j3HeW8Zd8WPVUFzLsRa863S3hEmwVmGqARxWbrF74
+	GZouRMDxk4SpSH3roUKckJJPB7NCSRGQjEzKiZ5vt+GOt967JQTpbpc2zd49op9bSQ+EjszGecOJR
+	J48dO6NK//Scq32fduxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyx4I-006Mm6-2I;
-	Tue, 16 May 2023 15:58:30 +0000
-Received: from mail-ve1eur01on0622.outbound.protection.outlook.com ([2a01:111:f400:fe1f::622] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1pyx4a-006Mtn-2Q;
+	Tue, 16 May 2023 15:58:48 +0000
+Received: from mail-ve1eur01on0605.outbound.protection.outlook.com ([2a01:111:f400:fe1f::605] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyx4F-006Mjh-2K;
-	Tue, 16 May 2023 15:58:29 +0000
+	id 1pyx4X-006Mq2-0a;
+	Tue, 16 May 2023 15:58:46 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=InHkSrgoAIlxpInZPBtkwjxmXTWYQL0MKh5mQlyLKnVibd0J2+Ne/udIJKy+AF9SLkFfhjELWbj1j+jLXa5gmYjn+VR8YW1Gd/kcVfyWthpwn1/FGWGe7Wt8SEzbeNkr/EdjH5G74uLpwYjVRQYi333W1UrkGADa9cGFfDL7UQmmCyQxmLecYqL9vAkBpLB3SxU4bYJytp6LUi84mSRW1rCX81gxy4XQXut6bFvBr+T7AKF6vy2wXICp3Vkk3j4wyCff4solNPdpkcCNMup356vRxM6kjoLEJ2iJndL62XOhBuDyQeP3o8C01SWlzusg6+drpCLoNeO+pJojHbyQMA==
+ b=I9SuZcek2PDppiIzx+DC2MOSvY9/uuScv9De8cOiwwEh/+6VctASEhHdbKtkQszm6uEYCby7Au2mtlLhs+g4+Z5mixyU3heIXzJL8AS+A7euZ0JLsReeeN5M8FDhmo+sSTcGt2gLq0dAv3brtKW9zAC4cUDya79NaYAh6+FSxs29R1mRE9uiimQ1g7qG4JEOJRx3oI6B9uwa21gNyLiH3iJH0hFTfxnAkMj0shmJGuKeZza3B3OZSuCaD/CzpIYCInPaxWdFamRc8DADcFiLewF3o5HS+YePZNcRlw6bEQ5mETnt0Hd+kb3e4hiVLpZNPimDRx3rheB3psBdyZZARA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=F/lVlNOphIqwV7gd7B24SUtjQSIzYP4wwfRbeZNUMHM=;
- b=L27rZj6zG1leNJ/Vl077rMVSrGg89WCF3Tvnpk+tdyyOshQhaWEzH04zLZUfbmlL3jMPXSuCg9YAO2yYUdq5sVX/0X0Ez7LSw9XvJMm7J8CI1lZtVG2KIDXskjk3S9XaSsE5xuXn+R5zARslavyZbznyDN6nT+anIzaKvapVqxKKziQ8T+dViaZNOkslUtNEhdQdp36dVgORzMvizi8vyZavkaekKWxVX/P3FRXCsIGUHnZnXjdvKCbPK3sb7p7VnT1Ws1lqAMjmh8CDRiOKKU5hYLaoO+KNqDSTxe7dldjBoB8aooZbpPpw4OGVuyeFrV5/niBCNTsrEizOuVNqTA==
+ bh=Ufwrk3zSCeYlo5Nt1ddQQIbHORNCJO0m+VNlmGgjY4k=;
+ b=HoZk1EFkKK4RuGsqViW3TZQ4wNeBMSGwE5G94DFBWBqO0fcTrl/4G8Q9auza1GrPN6pFvt+POw+mCdBr7aX96VeTG1yOBYu0qnG4G379fz127mmfr3+RuvYApneNOwTicKRoiDG+aXLdG50ddDXvayTspoI3J7UKT5dih4E9oNxxhp0gL6AiQjdxpi/ZcmprqujbkNw9ImiP05pN1HvKGCRwYUuwJMTj0mrrEqsgZkQLGoWGbk1J5ozV7HbhImiGJo37bakMYMAXAymRcZw6oIfPjdFPa+0rx1ZbsHHsmcoGzWfur8Hp35f8SUq1dRRax2k3LsvjO9sE0grNPwGMmw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=F/lVlNOphIqwV7gd7B24SUtjQSIzYP4wwfRbeZNUMHM=;
- b=s0G2Z+Ur0iBTqtad+n7oVTa+kIURb6qF25rnsNPKcG6mQMA2e88rEWmKLgxTZeZJlGDvswtoe6+heSWef0vCpDds/VJ96NTgjtgQMym+P5mGdoYjhWMxxz9rbpadsa08zxic5h2jZTr+A/MLfMMBVpRVMFjNI2R871hp5kaX/UU=
+ bh=Ufwrk3zSCeYlo5Nt1ddQQIbHORNCJO0m+VNlmGgjY4k=;
+ b=dG80wmzOmn0TGARNHXD6EjEAQGXmp3aYJPLerAiTDOJu75aoL+jTmmDB3xZFOQ3ZC8mz667UVA8tYKeTfRbCAvGpxeuF1HIV2ivhKzHITtfazR3UnsNktIsRQDD+cFjycLRF4TIxpDL1jgqut58joOxrB8xtdy5v1tSz7/Vu0aU=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
  by PAXPR04MB9008.eurprd04.prod.outlook.com (2603:10a6:102:20d::19) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.30; Tue, 16 May
- 2023 15:44:11 +0000
+ 2023 15:44:05 +0000
 Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
  ([fe80::25d3:de2:ef1:3884]) by AM6PR04MB4838.eurprd04.prod.outlook.com
  ([fe80::25d3:de2:ef1:3884%4]) with mapi id 15.20.6387.033; Tue, 16 May 2023
- 15:44:11 +0000
+ 15:44:04 +0000
 From: Frank Li <Frank.Li@nxp.com>
 To: frank.li@nxp.com,
 	vkoul@kernel.org
@@ -66,9 +66,9 @@ Cc: devicetree@vger.kernel.org,
 	robh+dt@kernel.org,
 	s.hauer@pengutronix.de,
 	shawnguo@kernel.org
-Subject: [PATCH v4 5/6] phy: cadence: salvo: Add cdns,usb2-disconnect-threshold-microvolt property
-Date: Tue, 16 May 2023 11:43:28 -0400
-Message-Id: <20230516154329.3155031-6-Frank.Li@nxp.com>
+Subject: [PATCH v4 3/6] phy: cadence: salvo: add bist fix
+Date: Tue, 16 May 2023 11:43:26 -0400
+Message-Id: <20230516154329.3155031-4-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230516154329.3155031-1-Frank.Li@nxp.com>
 References: <20230516154329.3155031-1-Frank.Li@nxp.com>
@@ -78,54 +78,54 @@ X-ClientProxiedBy: BYAPR08CA0011.namprd08.prod.outlook.com
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|PAXPR04MB9008:EE_
-X-MS-Office365-Filtering-Correlation-Id: 16c710f7-60e9-492e-686c-08db56246505
+X-MS-Office365-Filtering-Correlation-Id: 1d739f33-b62c-43f3-9ad4-08db562460d4
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	Fs2Eb62SXSnBpiqn3JIxT6ST2wUK6LPexJeHly8AfLejfzn2ykEeQ44je1erpZ6VnR15K4Iu0nDdRoUs7MYubGpjojl99iFBlm6uoTES3QqBYbysXMHFLuQlMJUB607zv3i5AVO/JZPj4tI6sa8p5nCE6n3mGn4snCCwld+bbhNkYZdNnVjjFKUu2LNpAzcrRSvkReYXOrSWfTzDU79efhaak8ZjHhWE5JB/tz9qmq8/Xjh7oGZhBrAbtHqkpdG2VOClb/I1STgCbzy/EHTEFanzJEvHtU672i9/gBxO4DHtbT4Z7eCj6tIpAfDXMHWhRJbnDLNFCawFix5rLKM2j3HtQVh/7ADsADpK3A6R3bFpTa56X3D6uWu9Tr67zg2UHB/DhZ00vkaZXgwW/E/fm3Lx5aYKfYkyPY2cPAv6i3EVM0GzL7lxAsWUzBSjWOpIyogo81tbNPbB/pNxC91pQNOP5yyEcyqUm4PcwfkRy+P5VClXtUeipvonX4dUZklEI0yu/1znANNd64PZhnWbCl+1JsDBNejM3dxnTLIGjMPPDQfTubcEg/1I3xPSUYdKnXM9RN3Hc/Y54GIVdS0sMiy79HNCWCzGVEEmZfOSTOSHLtqdwF8dZHmuPATbe4Kk
+X-Microsoft-Antispam-Message-Info: 	c8hHJxgl/RbBhxdcKYfLpxLusFmNbppqAH0Ig6oqQKio14lbYUeo5QS6tgIkDGJl4D8Y5ro87OKaaMD2d7Ns+YZDpXc+OGcLvjhVckscC9Mq/OyAxAQDREP1CmyyoYYxbWYtgNgR0R7jLrEG9nS9kJqKTvKf9FaBwqsQqiFFZAtsM3LGbBCfXikB2ceaF48TmYb5DxgfOCLPijx0xuvPia1ROV8VCH+Ovf3PdqdtB6zE3fb7ToORS8Qws6v3I188H6P0MsarY7frh6fFEnh7mLI3V2PTEJsg8I/KyOJStx+3qrUSy7UdfhXWsrGDwlIWysu7KXtO44aJg/ZpSIBzHuTKsVQ444g0iIGRw0vsZu2hexiU46NYGlDIAPaeR6cHZB36MluJd52wsGdemDmNbT98bBCzDEz7WiXOiqlN73Ev726fLE8b3x0JHFR9qTwVbGfuJv6W8z4aNv6LbTIbPEV1ry0K/XXVckiyqYtEo80QxZDG0e15KkDy5fh8eD0rO61jnxvXmeSN2MKzBcEQqGDPriuwflQOfwNaf1PO9k6d7boL4g69MrCMN0/rbZRYFMNsfBA7pjs3orMHYHzfsZGfu2ToqgcBJSD3XnCqWXXa08DjBUWdxbHhjRFwnBgO
 X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(396003)(39860400002)(346002)(376002)(366004)(136003)(451199021)(66476007)(66556008)(4326008)(66946007)(478600001)(6506007)(186003)(6512007)(38100700002)(38350700002)(83380400001)(2616005)(36756003)(8676002)(8936002)(41300700001)(2906002)(52116002)(6666004)(7416002)(6486002)(316002)(86362001)(5660300002)(1076003)(26005);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?1ydWo0A525b5zZA38kos5qbMyTsmwM9O9vhEO6qoalB9IuyNzTJgbL9V9as6?=
- =?us-ascii?Q?6xEXVm3oytvIZmdvRVSuExhwq+L4xFpzyaOW4JjgrXk5buUqU8VOibbRHNw8?=
- =?us-ascii?Q?4rd4LiF+kNsCWQbDb98Gxd0ff2qBM1fJSqJSuUImvh3TEy0OQp5UC+ipj4Wz?=
- =?us-ascii?Q?5c04r6EOOcQaDnFOFhCK1HLLDZKPOXiHMZ6W1L1+rTpfBpowmBleCiaz3Q1c?=
- =?us-ascii?Q?/OyeEVB5X2MfibMGPR2TIgRgUWZGP21wHHCnemQzow546BbynYxtIe1uZXUW?=
- =?us-ascii?Q?3orqxkOjXK0C6OXsU/8IWPfTkkyn6KXe9DPDl/d0vJ1tNdPOEVabyhYXDQMD?=
- =?us-ascii?Q?p1ATdzECbjh1v9S1xwPBZqQU7Ta5G1giNDwxDSlG8Xcx6JJNiy8DA+JN/vSt?=
- =?us-ascii?Q?nWj968UhwJRelDd25IfsPngQ/c5pX4wXRZkF0ukJfwVIppd9l97tU9DOmtwA?=
- =?us-ascii?Q?aLR/cPeykHBwlvhMlCkWr0O0yh2PcK/ctgM17/85tJTIln53mKVDbKcS1ClI?=
- =?us-ascii?Q?VueF3fgVRWvSAfTZRirswKccjtTAWVjFGFiQZWh6f4L0QEApYWVQvDUv259C?=
- =?us-ascii?Q?cvK28odUS2mkUs9c4MpWroBFHmOCp+PgXe/9spGa/dfB4VeeYUmA7OqXfXku?=
- =?us-ascii?Q?R4DpUuRRGPEo6zHh5kiBfwjS5pn/GMMrqI9wSAseqKtqA+po4683f3BepGBx?=
- =?us-ascii?Q?1Ql+UaOf9SKdEtPAydK6bbaL+HQnPSlBQPMz9tdI707RXAR+mFL28u1lQVls?=
- =?us-ascii?Q?8DChA8jKFWAHR8JYeFpHmuJdzSRvnctccejLsfbbJEG4urNHwX2rWEc0mc9q?=
- =?us-ascii?Q?k3AzuFLw7N0LwPHgdWlLje9wM1vHdgZwvObf0qHBbs5keFb/JmwHDffSrRiy?=
- =?us-ascii?Q?d5YnMOW+4WWm5RrfipAD9GWcDF2yCMdau5u2plsq/xony5e7SoT0xxaptouX?=
- =?us-ascii?Q?fVUidTBOeGlrZFKZHW9VYnvBEwPluiyu0zIeNw4qA4u27rr3cX0+N2KX3OvD?=
- =?us-ascii?Q?L2TwOOClqB7vXcXRY+FNUClbIN6F9miiuml3yrJuk+/PWIg3DtiwaCf26LJ8?=
- =?us-ascii?Q?unF9TBDZmqCbB2c4wV/PoPM3dDbENYXESsa6BLf3mrT267/N2wPlcfKpWIcE?=
- =?us-ascii?Q?8PNhmhRJvp0eJOEocdNPco5jkQUmGq6g7WKkeuCpktREcb/RitIqupBWhBVb?=
- =?us-ascii?Q?sMgB84n30RBvACK/Z4m7OfzdKaFLSl75W8G6REE/RAZAnT56IxBur7MttalB?=
- =?us-ascii?Q?SU0EifgRgXyf3yPT6F9tC2XYq2s/nhihzWfKC3bU/gayqOcKSdvEa6xSMNUJ?=
- =?us-ascii?Q?Uqzz1MbEkklTB3egmuIE91g3R3gk1hbANi7Aqtfg9QyZeXIsxlJTdH7Q6Sej?=
- =?us-ascii?Q?xh12uzG2fb6TT07KiebRhoa/ontUMONf8uk055F6hXFw7P4SGi5NO6yOgR+c?=
- =?us-ascii?Q?+qIOT6IZF/UDV7GFwFJN6PyHWAXijeWdTk/nUe/hYlnFgnyLRVUJhaAhviW+?=
- =?us-ascii?Q?6pVM89qzXSHjOrAIqxmxumgmvgnAooxa1VWCLKZObbJ3CJjTnaMDocLUG9Sd?=
- =?us-ascii?Q?MNyCM3Mp+Jw/3XXZbWpr3swsdnENweEg2DJKMIX2?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?lskkYrIwJxgIUezGXaLpJx7kuXE92o6qVqO+Q53WxSmQiQpTrbpSfGSvW9gI?=
+ =?us-ascii?Q?BYIwNEXJ69u/rWxG76IN6h4VmherplVY3cs1G2eo/781ftAi4F414BPcvYyf?=
+ =?us-ascii?Q?tBJfcV3RmlOhyciAPORTki/lMb7jblQrM4cAYSuvsDdk8qdiITqDj2WSQDbn?=
+ =?us-ascii?Q?5vN/OYKizSmVmgZFNOOtgkZDUS3XkL22eWSrsMacwolaUKXNWSfikAgiA4Xw?=
+ =?us-ascii?Q?NLVBxv4o5A//5RKEQZPL7Sb86v3qew9ebca4fm7inv5vwdaGUt9qXizAHrCP?=
+ =?us-ascii?Q?09s5lguYdUi4pLtbIVZyK9IhJls6Pce6VGoCW8ONHM555trN1k9ouUQWrn/d?=
+ =?us-ascii?Q?fhyuPh4lYY7ysjLYa/45UbzBlDYckSQQmGEooYhxNCgihNIP018kOKu+pUg5?=
+ =?us-ascii?Q?iWmFMFGfWy8cQD9/Ufbf41e9ktPBG2LPki4mRAF2oX/la6pokeL+fieU4gej?=
+ =?us-ascii?Q?86u5W7Dh64H3kvi5rwLFNdyNIPrMt6jKz5i7Fg/RI4WXRNYdWsitHxlytxGk?=
+ =?us-ascii?Q?JXknUM1v5GMJ80BXHWjxqH8+s7fYCQ0t/JqEfkt5XLuIBYPRaQbThtJgjmRF?=
+ =?us-ascii?Q?GmNvZIo6VZe+lcnOOHCF2L1M5YYivx2iSabcJkvGjz6iW/f67tWiG3YRhx1i?=
+ =?us-ascii?Q?clDyt7MihxWzKhcZvtIIX4MEbvGsXcAq9spR6fjTtevyJUDyqDJUDUzJng6Z?=
+ =?us-ascii?Q?DKzuYVmOt3qW/O/N+j+gt1BTDIcZeKeGGoCROoLEGHYuYraWxkv4eAk7Pifd?=
+ =?us-ascii?Q?AmZB7qUshsaGKtSuotsG6lRrSIRlMVaMbepDNooec15VwfbKaS4fKa1Msf5X?=
+ =?us-ascii?Q?xhGfYdSWHq5jWCqq01TeFLggA2iMZi+nCe8lYUZCUrNh67enwwm3T+vZ3nCg?=
+ =?us-ascii?Q?tH/8anK2eH3VUzl8OSGdzFHHUpKYgOsA6HCBhnKHrMQ8RLuzf7wfyd3/H4Nw?=
+ =?us-ascii?Q?/MTVX1z9caQzv7+H6ngT17i+HBklIOIIYYUNz9BeshplG2WTm/qzBOgFniVm?=
+ =?us-ascii?Q?DgVG6ZJe46pYD0Mjm9bMVuLQ5JheVnVYuZzWmqayHXIWy/15IgLHj8Iebn5L?=
+ =?us-ascii?Q?zokmBd17s1SawlIC68IfDtbi6AbCDCmjPwfBzoVaaCoBsjubuleWpTp6Lnwk?=
+ =?us-ascii?Q?RoIUgfctT4AqeOaPzki1PcrmXqZz8vyv+k47BF3BSke/s01UkmjB1HcQFxqL?=
+ =?us-ascii?Q?k7GwA9u/CSBur69H/mjRAe3CjlXoM2RdMkMLhECRKdtmKa0tvkg8E/jeMz+s?=
+ =?us-ascii?Q?SZjfdzdHWEGGJlAOKWGfKUAd/vVwMn3ysz2pBjbpmiA3oPi7xGT483rhZiu7?=
+ =?us-ascii?Q?HKXjx9vC8tdhsD0l2YyQuI4VNm62IoopLWzsO0uKJzuLc6kiltzFNGjW2V8N?=
+ =?us-ascii?Q?OVVufd090WhWtffNe9JcirKPI+hqWDV83fbM6xEvmFE+HEbQl+yFQXsPPKaA?=
+ =?us-ascii?Q?PnaGEyWUwDH0tzj/tO9SSz8ip8DKx7QlfHiwu2y/sJKiDRTaO00lTPZL6OP9?=
+ =?us-ascii?Q?hYd3155O1Wl8Xj2FoXwDnPG0PZhnyFG/UiUAScM7YtEOdDFLhLYKycQ1uY1u?=
+ =?us-ascii?Q?zpHNneNE47fWvE80M0OwXg2JTRyV6YkH/u3ZkYK4?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 16c710f7-60e9-492e-686c-08db56246505
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1d739f33-b62c-43f3-9ad4-08db562460d4
 X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 May 2023 15:44:11.8323
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 May 2023 15:44:04.9567
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ZpRW5rfuFDvZj982nVhmw8THT/yy05hoo3shv3MwFyfU2CmAjtUCpJzTD8nyeImSG+FiiErB5eEaPsH4wTANcA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: idUhHDqjP3OWtNQ5dY6SxlbMmIBSsLi1e2S1zRqeV2Q31kCepyhdPmUqZBhbbu/25Np+Lr4Uhw5ySN6raRPgmA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_085827_761627_C4D56BF4 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20230516_085845_224316_2D48859E 
+X-CRM114-Status: GOOD (  10.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,93 +142,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add cdns,usb2-disconnect-threshold-microvolt property to address fake USB
-disconnection issue during enumeration or suspend state for difference
-platform.
+From: Peter Chen <peter.chen@nxp.com>
 
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
+Very limited parts may fail to work on full speed mode (both host and
+device modes) for USB3 port due to higher threshold in full speed receiver
+of USB2.0 PHY.
+
+One example failure symptom is, the enumeration is failed when connecting
+full speed USB mouse to USB3 port, especially under high temperature.
+
+The workaround is to configure threshold voltage value of single ended
+receiver by setting USB2.0 PHY register AFE_RX_REG5[2:0] to 3'b101.
+
+Signed-off-by: Peter Chen <peter.chen@nxp.com>
 ---
- drivers/phy/cadence/phy-cadence-salvo.c | 29 +++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ drivers/phy/cadence/phy-cadence-salvo.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
-index 41616f786321..881e122f93c2 100644
+index 2e3d4d8fb8eb..b9866dc146ce 100644
 --- a/drivers/phy/cadence/phy-cadence-salvo.c
 +++ b/drivers/phy/cadence/phy-cadence-salvo.c
-@@ -6,6 +6,7 @@
-  * Copyright (c) 2019-2020 NXP
-  */
- 
-+#include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/io.h>
- #include <linux/module.h>
-@@ -91,9 +92,19 @@
+@@ -91,6 +91,7 @@
  
  /* USB2 PHY register definition */
  #define UTMI_REG15				0xaf
-+#define UTMI_AFE_RX_REG0			0x0d
- #define UTMI_AFE_RX_REG5			0x12
- #define UTMI_AFE_BC_REG4			0x29
++#define UTMI_AFE_RX_REG5			0x12
  
-+/* Align UTMI_AFE_RX_REG0 bit[7:6] define */
-+enum usb2_disconn_threshold {
-+	USB2_DISCONN_THRESHOLD_575 = 0x0,
-+	USB2_DISCONN_THRESHOLD_610 = 0x1,
-+	USB2_DISCONN_THRESHOLD_645 = 0x3,
-+};
-+
-+#define RX_USB2_DISCONN_MASK			GENMASK(7, 6)
-+
  /* TB_ADDR_TX_RCVDETSC_CTRL */
  #define RXDET_IN_P3_32KHZ			BIT(0)
- /*
-@@ -125,6 +136,7 @@ struct cdns_salvo_phy {
- 	struct clk *clk;
- 	void __iomem *base;
- 	struct cdns_salvo_data *data;
-+	enum usb2_disconn_threshold usb2_disconn;
- };
+@@ -247,6 +248,8 @@ static int cdns_salvo_phy_init(struct phy *phy)
+ 	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_REG15,
+ 			 value | TXVALID_GATE_THRESHOLD_HS_0US);
  
- static const struct of_device_id cdns_salvo_phy_of_match[];
-@@ -261,6 +273,12 @@ static int cdns_salvo_phy_init(struct phy *phy)
- 
- 	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG5,
- 			 0x5);
-+
-+	value = cdns_salvo_read(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0);
-+	value &= ~RX_USB2_DISCONN_MASK;
-+	value = FIELD_PREP(RX_USB2_DISCONN_MASK, salvo_phy->usb2_disconn);
-+	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG0, value);
-+
++	cdns_salvo_write(salvo_phy, USB2_PHY_OFFSET, UTMI_AFE_RX_REG5,
++			 0x5);
  	udelay(10);
  
  	clk_disable_unprepare(salvo_phy->clk);
-@@ -315,6 +333,7 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct cdns_salvo_phy *salvo_phy;
- 	struct cdns_salvo_data *data;
-+	u32 val;
- 
- 	data = (struct cdns_salvo_data *)of_device_get_match_data(dev);
- 	salvo_phy = devm_kzalloc(dev, sizeof(*salvo_phy), GFP_KERNEL);
-@@ -326,6 +345,16 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
- 	if (IS_ERR(salvo_phy->clk))
- 		return PTR_ERR(salvo_phy->clk);
- 
-+	if (of_property_read_u32(dev->of_node, "cdns,usb2-disconnect-threshold-microvolt", &val))
-+		val = 575;
-+
-+	if (val < 610)
-+		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_575;
-+	else if (val < 645)
-+		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_610;
-+	else
-+		salvo_phy->usb2_disconn = USB2_DISCONN_THRESHOLD_645;
-+
- 	salvo_phy->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(salvo_phy->base))
- 		return PTR_ERR(salvo_phy->base);
 -- 
 2.34.1
 
