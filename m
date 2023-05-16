@@ -4,132 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39293C7EE25
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:38:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C71EC77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:56:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mU+uqzn28NyaPyY/3nVG4hdUw4F1YQxsS50QMvv4eDc=; b=rHUx/O37401Hk+
-	V4PZkqfFg1dAh9QjI38I9lGw+6zhlxwsHlk/OoYJckWa5/ztQu31ICtbs8P+739jSzWIrvWRz1+Wx
-	RRrrYYaKrqTV4le+vE7P5PeF3WMKYVh+T+kvDHFpu/ltxhyaIzNzxPNlxpU4vnjbtD2learcasG8O
-	BB4tT3g2Ff7wQs8IW8JCgrT3B4Rn40VIfiQHpldHfW+iiqdSRNJRkr3wJKg96xzFNb7yDvHL8SgR6
-	h8N1FF+/WoVDK38ZkzHaP03OxZfioVx7486w3A89HZHnMX/wfOkvuVoTm98h0ZrTKB70lMn1WkC2i
-	wQ+IU5Uo5Jhl+B30qCTg==;
+	List-Owner; bh=FPxQWGrdif49SXZ3YIXWOCf2ya3Hj4DcdEk7Q9djh6k=; b=qrVFRdKeaCMpoB
+	0/VkuyOAuXWFmWvkhBMjNWbqcM37rWgk6J8PFotamuSkcjvDHxAG48KSZ/NG02LfRoeoHqd2MW7WF
+	AOJxtRuo39mAm6IL4hyAaMDFfWcCHMZ6j3ZJrUpgXRcufxD/7Ew5dJekB2kP+cSRhDqYnmVOcgfWi
+	xJIdJ9toBESR2VhW4FzkKuitMF8kBaftZEQ2u1AeTSgtK+uIiQOsQVVrcIibWo9HV7KR8D65bRMpd
+	EnAZIS6g6bLCVKi98uBIR8kB//7Kx2a+vfCiirxMup9wQdvo1xj1sVdJjptoJkd/T8xPsBQMzGeH9
+	Mv24di7pXC1ji4Kv96FQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvp6-0067Qb-2k;
-	Tue, 16 May 2023 14:38:44 +0000
-Received: from mail-db8eur05on20607.outbound.protection.outlook.com ([2a01:111:f400:7e1a::607] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1pyw5v-006A9k-0b;
+	Tue, 16 May 2023 14:56:07 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvp4-0067PY-0N;
-	Tue, 16 May 2023 14:38:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cBHD1ccrofFkKVngwb1hrMuC4M/39TIr31qsUlyriMSRf5YtEDWSrO/holTl1qLl/stQxC1oSx8HacOpB86ZxUlEmCKvml3r9Z4OQdaPUw57PWud3L9CAuliEcbhb/zLnAKwVK/gWUDL0petgAWUZEmIgVmey+Rf1u9KD/Xt3L8d3Uz+G1ZYRSF43C0/ezon8oHcIy8fFkUBjNmFf09TpmTUjxz2CATuJb4nl8GJTEUBzStyjM9V08lbmFEt9WVA17wxuoa5DUbD/KVgnq5S2Ew9hBTIy7gzWGZBmeaTrDqwwx52Yoj+cLQayuZFkQEn7fcGpZW8c4lnzXTbSwnCng==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=516FWndNAWE3za7gtlzGUthghYeqkwutFtOikKSEkcI=;
- b=hHhh9GqLS0JlpbP1jsg7kWGBsoai2ZnAqSoePs9s9SmzE2LFgq2iPJP+f9IWDuWZ0HhNNy+Xg+M37hEdWelYnciOD5YOBfEK+e0znK2inYD3ztN3ZXpgN5DiHkcrPA7OlBHot8xkTS5LlNaPu7XWDBWJ9XgHoMjKsiKABmLw8VmTsScTuEvgFikLga8EP/F2Vi7wcbgf4YlXAR8bfOMdM0uQrFFdy/S+ktdzuNKjXiIt9T+K0XuMznuq9MheacMFmtc9RhnIHdxBd59n52d94Ho+fVQ6OuTvqUc1IbYl/I5AcHhaJ/JKopVSgpK9QKVp8QuxvxAs08kqNAlq5mAM9A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=516FWndNAWE3za7gtlzGUthghYeqkwutFtOikKSEkcI=;
- b=dscojq2ZSZNeSkreGB7t0H/MT453lTBWK6+8siAXpaRpRJlmYaSJ8rIotr3sokPwONk+3MdMkJM9Yv9pPxr5WSCWKaHlo6Abnb3t3atXldiMjQxL67gRKQoRyGgnWc19wwuwDSqkLhR+twDq+5sjeNsXqXt/P6pfJUebF8n6iR8=
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by DB9PR04MB9675.eurprd04.prod.outlook.com (2603:10a6:10:307::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.33; Tue, 16 May
- 2023 14:38:37 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::25d3:de2:ef1:3884]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::25d3:de2:ef1:3884%4]) with mapi id 15.20.6387.033; Tue, 16 May 2023
- 14:38:37 +0000
-From: Frank Li <frank.li@nxp.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: "kishon@kernel.org" <kishon@kernel.org>, "robh+dt@kernel.org"
-	<robh+dt@kernel.org>, "krzysztof.kozlowski+dt@linaro.org"
-	<krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org"
-	<shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
-	"kernel@pengutronix.de" <kernel@pengutronix.de>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "imx@lists.linux.dev"
-	<imx@lists.linux.dev>, "F.S. Peng" <fushi.peng@nxp.com>
-Subject: RE: [EXT] Re: [PATCH v3 1/2] phy: cadence: salvo: Add
- cdns,usb2-disconnect-threshold-microvolt property
-Thread-Topic: [EXT] Re: [PATCH v3 1/2] phy: cadence: salvo: Add
- cdns,usb2-disconnect-threshold-microvolt property
-Thread-Index: AQHZg0h2gsxnX4rz1UCs/VVu0rrlkq9c6teAgAAWjuA=
-Date: Tue, 16 May 2023 14:38:37 +0000
-Message-ID:  <AM6PR04MB4838DE5280012693D0F98CB388799@AM6PR04MB4838.eurprd04.prod.outlook.com>
-References: <20230510140504.2164565-1-Frank.Li@nxp.com>
- <ZGOCT0Mdg3Jtar6c@matsya>
-In-Reply-To: <ZGOCT0Mdg3Jtar6c@matsya>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: AM6PR04MB4838:EE_|DB9PR04MB9675:EE_
-x-ms-office365-filtering-correlation-id: 339d834b-835a-4234-61b6-08db561b3be1
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  Y3coINSZcZzisRhwU9La3p1BFIULfciN2Q+28xvsBswtfP3bRWvXDafhczh5pbLxwlrsseZdfoyRt9686p2XczeYYIGPpYKgkZLP+k/s5u9ibcxzc6awv9LhqCD6kqZhpaCj0VOZ2JIPdNJGY+dGZ/IZHaOAF9lJ9cp2QOQUSt5GyvJ7JBMP23Ml2K5SYQls0Myc3OjtD6M9bV7AjXnG8M389Dsqy70tttIEJkm0Bi+cYx4IVe/pyg8TYrgKy0wEJmX6o311nl1OtUAe6wonbI5aoMN5yNZQ9w1wwFd4UhKCyRK8o62XGyDxEDzC5ElNKJiIb1ApT9OUvMpJpHFw7cMeeaH0vCpd8cDXhmDKehWi7hQSx3ZeYAk5FsxN47kNUdp0GeGPxdFN0VjE807fy6rO8LDrcRHBxFX4JSssfrZLdlXDhgZUzcA7fNQOp0w60IAq7h+EXm4jxkP2pvJoIPJ1Jl8E4KVAlUy58GOCMT3P1yZ5fnsRIDBGV7FL/ifT7t9kVnVte6T87GZROnelNKVF/9zkv7mfVvN3wO1RFnOX1YLs23OTMvotkLpX/uvQHDmRNaxl+OIcoZL0BEVFu0BgqrJghhrTEN1nHFZCzGv4csmvXasRc0+FtG3txTR5G3nIr0TueRMzlvARC0WVk4xCU1T1NI51pNlyiWiIMFU=
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(396003)(136003)(376002)(39860400002)(346002)(366004)(451199021)(86362001)(41300700001)(38100700002)(54906003)(316002)(52536014)(5660300002)(44832011)(38070700005)(33656002)(7416002)(8936002)(122000001)(66476007)(4744005)(2906002)(478600001)(76116006)(4326008)(66446008)(66556008)(66946007)(64756008)(6916009)(8676002)(7696005)(71200400001)(6506007)(83380400001)(26005)(53546011)(9686003)(55236004)(186003)(55016003);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?us-ascii?Q?bL09/dFqV9wOpCXaw76tRqOVz5761E3TLDJ/pLKKASdNDjITPj3nL3nnJIFg?=
- =?us-ascii?Q?LsjszpsqHsRvLAOVKnyiSx58jiH880NmW33d5huWrKBkipuB1di434NOKdeu?=
- =?us-ascii?Q?AKvtyHXoDSJ1A8tCaTnIF7UR1fkTtCZOaTDLQW/o9CTUqohv84IiDA2oT8DY?=
- =?us-ascii?Q?+5VsxybOKUljmVGMHXdkd2k4JpT+skfx+m+z7WpWeo7alYVQ894rq68eOUGI?=
- =?us-ascii?Q?wa0BHiI9jywdnB/oW784t3EA1fagUMM/GSpiuCMYgXBaoOmZd2WTOdgRlSo6?=
- =?us-ascii?Q?X9n6STI+nHlAI07d+X9sUorQgkTPBTsG3YqR1wRoFgxKXmTKtsO5tZzOM7H/?=
- =?us-ascii?Q?JHBc6chLnQ9un42tvX52FSOQcMi6zsCK+qtd4b8TA0cld5PZzQ30xqRqKeY1?=
- =?us-ascii?Q?6wyZeEkTGRMvLj9U0Abk9Zbc4/Iuz90f0pQhHYEI5kjdFg1zTPys1qPZ6ir4?=
- =?us-ascii?Q?HJUN5rBHZ/DqSV/jnZrwaTnvgsY5bhklHTroKB5qyC8XeGTNhl/FbAehzAvV?=
- =?us-ascii?Q?/SJsXlAH9Eix5WdBBAiW3xxYMo4CNp9i6cjC5LM4CH/xBOCgXAlJuufX4mLh?=
- =?us-ascii?Q?uPYd39mMJSehzs8TzgIiqIOZecJZ5TVUK1cHhiwQlqof2n/vzAKenIfAIfZx?=
- =?us-ascii?Q?7AmDUc5lKyIQdz3gNPwilDTRTNhv1tI2fdGBlp1ojnWrToEG/bTC3ACtOhKm?=
- =?us-ascii?Q?Nfa4QEpBX0XKIQzp/E9KxC1JTEyWyqR4d+CCUcV4llxUB1MmKejT0zzSNLGT?=
- =?us-ascii?Q?t9H9iVruLBfOPB511UHk1TthaZbHPIunMmCE9279+Vr9krLNHyDp7HQHYjAF?=
- =?us-ascii?Q?l6m8TAMQcGNuKzL8Bo/lyUAIxloH4YVahl6HXCUC4MKel3X4dD0Xs+eK3XqX?=
- =?us-ascii?Q?ml5Jz0z0an3xoPNoVeGTL0qecu7BzPMm77CW5ZOUGc7ZN75Hi9z3i9U09rqL?=
- =?us-ascii?Q?ZPBMbOL9JO2z5M16c9e7qW9XlrdRSBCkPcrnFNJKXkv21ABLViMaDTpUKCMi?=
- =?us-ascii?Q?0r0sB3dFverF2bgPL9NXnLNWqDprPd9/q8U83U9Wfd4OQWNxzFXvKGhxJ4vZ?=
- =?us-ascii?Q?cGa1jJ3d3tuF/kelPgWhBaIf/V1rFC7rCKJkuDVTMCgtKEzWCZ1dI+dABRvC?=
- =?us-ascii?Q?4cW7C/jqgNgR9VMEmWwJuXgLXgCIQ+l9cUDfAMWfcwBpfYDLB/RpdSESJadz?=
- =?us-ascii?Q?qbBjyLpAgrE6D6/I4HwckyYl5x0ovhBIN6HHX6NqkCPGpTw4eeIAdjEEeJKn?=
- =?us-ascii?Q?3YLLpgMvv2+CBZgpqjAKkqhMRq5l2iWoM4F2KEeQt4H8s+xsnBeEgKAgDnYA?=
- =?us-ascii?Q?u2E3hn1QgNv/r38r+HEf4stSRBL0oekq5VnZY8Tgw4Q6DjZTuTko+4AVynyh?=
- =?us-ascii?Q?zzV51rq2A6is5x5PgKsVvVYHKBGFOTPYVRpc0kwohC3XfejoVAi7+gLw7lmq?=
- =?us-ascii?Q?LqSAKxraOvPChvEtVt8CPGrPoAhqnqQOKlXv/wd42bghy4aTZvoX/9lUrRDL?=
- =?us-ascii?Q?i3Ut546Pvzqt9eviM07/YmZqlhe634A7hEmSGWp2Vbmdc4FT8cxie4WHnaHj?=
- =?us-ascii?Q?ncM076siUsZkbUljSsU=3D?=
+	id 1pyw5q-006A7y-28;
+	Tue, 16 May 2023 14:56:04 +0000
+Received: from [IPV6:2001:b07:2ed:14ed:a962:cd4d:a84:1eab] (unknown [IPv6:2001:b07:2ed:14ed:a962:cd4d:a84:1eab])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id A21EF66058F7;
+	Tue, 16 May 2023 15:55:57 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1684248958;
+	bh=A4ghUFGtUYGU+mfPLHdDtAdikMKuNk5QXqN5HGiifkY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=l6JzNxYnLdBMJMUF7phZbXums/Tk1uG/m1vOZ+yGslG8K6suBMltTmgy0f35wA90W
+	 +iGuvufTJpHwl7SXtpg71EXlFI8gUmQsEAuyiqqsSulAjKHFu8IA80zRPnx3efsx1N
+	 ArNSFASWlfNvx/XJ5v2sWNM7lb32+lpEHeZnCkpntR3Ol84e1kfFQqwSJ+F9bT182Q
+	 hcx3VaLjAN1XekVoYBPF+PKSTnMdWkhro/zHqX6dvYJJbmMTiz331iV0Wt6Z5t2gZH
+	 J1MiLGewZMe3gB4bEbfIDhfDbWESRQ2ayLWN9SrKDVVsSu3CUhd/x33oEtCXW9bG7R
+	 MmvNPXmgEsE0g==
+Message-ID: <de62cddc-affe-297c-f020-425f80e683fe@collabora.com>
+Date: Tue, 16 May 2023 16:55:55 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 339d834b-835a-4234-61b6-08db561b3be1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2023 14:38:37.1453
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hZORZLq+trqZhnXqw5zC8U0EplMVYB7RixeF0Wilp+l1BN9fU88Iwv266t7AZW8I9opHSGczMD+Jgw3y/tHGlA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9675
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.1
+Subject: Re: [PATCH v2 2/2] phy: mtk-mipi-csi: add driver for CSI phy
+Content-Language: en-US
+To: Julien Stephan <jstephan@baylibre.com>
+Cc: krzysztof.kozlowski@linaro.org, robh@kernel.org, chunkuang.hu@kernel.org,
+ linux-mediatek@lists.infradead.org, Phi-bang Nguyen <pnguyen@baylibre.com>,
+ Louis Kuo <louis.kuo@mediatek.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Andy Hsieh <andy.hsieh@mediatek.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/Mediatek USB3 PHY DRIVER"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+ "open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>
+References: <20230515090551.1251389-1-jstephan@baylibre.com>
+ <20230515090551.1251389-3-jstephan@baylibre.com>
+ <cd6067b2-660a-8f2c-697d-26814a9dc131@collabora.com>
+ <b2nk4jw2hpy4ndoq4cojazkn6h3tra2zjffhiswb7aqryabf7q@mkbtzhzcbivv>
+ <54e6923c-729a-49de-8395-fbd0b8443aa8@collabora.com>
+ <shthzc3zekvm2mrcch6vexsq5djpoxwupvdmmovhrz2ack3wxx@s4ptfhq7iwvi>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <shthzc3zekvm2mrcch6vexsq5djpoxwupvdmmovhrz2ack3wxx@s4ptfhq7iwvi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_073842_227019_F73369BB 
-X-CRM114-Status: UNSURE (   7.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230516_075603_021978_55C32DC4 
+X-CRM114-Status: GOOD (  29.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,21 +85,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> On 10-05-23, 10:05, Frank Li wrote:
-> > Add cdns,usb2-disconnect-threshold-microvolt property to address fake
-> USB
-> > disconnection issue during enumeration or suspend state for difference
-> > platform.
+Il 16/05/23 11:30, Julien Stephan ha scritto:
+> On Mon, May 15, 2023 at 04:32:42PM +0200, AngeloGioacchino Del Regno wrote:
+>> Il 15/05/23 16:07, Julien Stephan ha scritto:
+>>> On Mon, May 15, 2023 at 02:22:52PM +0200, AngeloGioacchino Del Regno wrote:
+>>>>> +#define CSIxB_OFFSET		0x1000
+>>>>
+>>>> What if we grab two (or three?) iospaces from devicetree?
+>>>>
+>>>> - base (global)
+>>>> - csi_a
+>>>> - csi_b
+>>>>
+>>>> That would make it possible to maybe eventually extend this driver to more
+>>>> versions (older or newer) of the CSI PHY IP without putting fixes offsets
+>>>> inside of platform data structures and such.
+>>>>
+>>> Hi Angelo,
+>>> The register bank of the CSI port is divided into 2:
+>>> * from base address to base + 0x1000 (port A)
+>>> * from base + 0x1000 to base +0x2000 (port B)
+>>> Some CSI port can be configured in 4D1C mode (4 data + 1 clock) using
+>>> the whole register bank from base to base + 0x2000 or in 2D1C mode (2 data +
+>>> 1 clock) and use either port A or port B.
+>>>
+>>> For example  mt8365 has CSI0 that can be used either in 4D1C mode or in
+>>> 2 * 2D1C and CSI1 which can use only 4D1C mode
+>>>
+>>> 2D1C mode can not be tested and is not implemented in the driver so
+>>> I guess adding csi_a and csi_b reg value may be confusing?
+>>>
+>>> What do you think?
+>>
+>> Ok so we're talking about two data lanes per CSI port... it may still be
+>> beneficial to split the two register regions as
+>>
+>> reg-names = "csi-a", "csi-b"; (whoops, I actually used underscores before,
+>>                                 and that was a mistake, sorry!)
+>>
+>> ....but that would be actually good only if we are expecting to get a CSI
+>> PHY in the future with four data lanes per port.
+>>
+>> If you do *not* expect at all such a CSI PHY, or you do *not* expect such
+>> a PHY to ever be compatible with this driver (read as: if you expect such
+>> a PHY to be literally completely different from this one), then it would
+>> not change much to have the registers split in two.
+>>
+>> Another case in which it would make sense is if we were to get a PHY that
+>> provides more than two CSI ports: in that case, we'd avoid platform data
+>> machinery to check the number of actual ports in the IP, as we would be
+>> just checking how many register regions we were given from the devicetree,
+>> meaning that if we got "csi-a", "csi-b", "csi-c", "csi-d", we have four
+>> ports.
+>>
+>> Besides, another thing to think about is... yes you cannot test nor implement
+>> 2D1C mode in your submission, but this doesn't mean that others won't ever be
+>> interested in this and that other people won't be actually implementing that;
+>> Providing them with the right initial driver structure will surely make things
+>> easier, encouraging other people from the community to spend their precious
+>> time on the topic.
+>>
+> Hi Angelo,
+> Ok, I see your point, but for future potential upgrade to support A/B
+> ports I was thinking of something else: adding independent nodes for csixA
+> and csixB such as:
 > 
-> This fails to apply for me on phy/next. What tree was this based on?
+> csi0_rx: phy@11c10000 {
+>    reg = <0 0x11C10000 0 0x2000>;
+>    mediatek,mode = <4D1c>;
+>    ...
+> };
+> 
+> csi0a_rx: phy@11c10000 {
+>    reg = <0 0x11C10000 0 0x1000>;
+>    mediatek,mode = <2D1c>;
+>    ...
+> };
+> csi0b_rx: phy@11c11000 {
+>    reg = <0 0x11C11000 0 0x1000>;
+>    mediatek,mode = <2D1c>;
+>    ...
+> };
+> 
+> giving the correct register range. One thing I did not mention is that if
+> csi0_rx is used csi0a_rx and csi0b_rx cannot be used (they share same
+> physical lanes as csio_rx), but csi0a_rx and csi0b_rx can be used simultaneously.
+> So platform device will enable only the node(s) it needs and enabling
+> csi0_rx and csioa/b_rx will fail because they share the same register
+> region and map will fail and it does not have any sense because you
+> either have a camera using the whole port or sub port but you cannot have
+> both plugged in. What do you think about it?
 > 
 
-Sorry, let me rebase it to latest phy/next.
+Your description of the hardware makes me even more confident in pushing for
+having one single node with multiple iospaces.
+
+You could have a node such as:
+
+csi0_rx: phy@11c10000 {
+	compatible = ....
+	reg = <0 0x11c10000 0 0x1000>, <0 0x11c20000 0 0x1000>;
+	reg-names = "csi-a", "csi-b";
+	/* 4 means 4D1C */
+	num-lanes = <4>;
+		or
+	/* 2 means 2D1C */
+	num-lanes = <2>;
+};
+
+You would then reference the csi0_rx node as:
+
+	/* PHY is configured as 4 lanes (4D1C) */
+	something = <&csi0_rx 0>;
+
+	or
+
+	/* First two lanes (CSI0 PORT-A) */
+	something = <&csi0_rx 0>;
+	/* Second two lanes (CSI0 PORT-B) */
+	something = <&csi0_rx 1>;
+
+Preferrably, you should (or shall?) use a graph to describe such connections,
+anyway.
+
+This is because overriding the number of lanes on a per-board basis becomes
+*otherwise* difficult, in the sense of human readability issues, other than
+duplicated nodes being a real issue.
+
+Regards,
+Angelo
+
 
 -- 
 linux-phy mailing list
