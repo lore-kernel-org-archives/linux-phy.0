@@ -4,76 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C71EC77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:56:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED06AC77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:05:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FPxQWGrdif49SXZ3YIXWOCf2ya3Hj4DcdEk7Q9djh6k=; b=qrVFRdKeaCMpoB
-	0/VkuyOAuXWFmWvkhBMjNWbqcM37rWgk6J8PFotamuSkcjvDHxAG48KSZ/NG02LfRoeoHqd2MW7WF
-	AOJxtRuo39mAm6IL4hyAaMDFfWcCHMZ6j3ZJrUpgXRcufxD/7Ew5dJekB2kP+cSRhDqYnmVOcgfWi
-	xJIdJ9toBESR2VhW4FzkKuitMF8kBaftZEQ2u1AeTSgtK+uIiQOsQVVrcIibWo9HV7KR8D65bRMpd
-	EnAZIS6g6bLCVKi98uBIR8kB//7Kx2a+vfCiirxMup9wQdvo1xj1sVdJjptoJkd/T8xPsBQMzGeH9
-	Mv24di7pXC1ji4Kv96FQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2fbWFqycwpEu+DdKTBIyEexbgAZ/J0gmKtjo0q7j+1U=; b=jssESzbdkGKSwa
+	kcVpRMMPVJWU58MN0CQuwT5jDRtdCuexCm1VW11brfDMvKopRlNEuBkIDmzeDF270Tnsom2PPjh+Q
+	eVn+gymmwlkK0amETvwxXucQlpDejCoTq2zv6aL2ojBKWQ5QFdGY19W7dyUQe5yXXrtVbIefnXP1W
+	EMtazxrnJWkPheYUC76ojAY5CzSCvXkYhnvPugnzhMlXF2QBGt1eu4r3FK/lAmvqKbaastCDJSJMr
+	3Kcdqj5f7O7cgwhCVMT4k0e17WAimNyrpuN7lNNu9hjPUVOfEHrH4Wpg0ltTTJL2nxle+3hwUvB3a
+	J91XgUu/exhj1eJOGXSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyw5v-006A9k-0b;
-	Tue, 16 May 2023 14:56:07 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1pywEv-006Bkv-1o;
+	Tue, 16 May 2023 15:05:25 +0000
+Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyw5q-006A7y-28;
-	Tue, 16 May 2023 14:56:04 +0000
-Received: from [IPV6:2001:b07:2ed:14ed:a962:cd4d:a84:1eab] (unknown [IPv6:2001:b07:2ed:14ed:a962:cd4d:a84:1eab])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id A21EF66058F7;
-	Tue, 16 May 2023 15:55:57 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1684248958;
-	bh=A4ghUFGtUYGU+mfPLHdDtAdikMKuNk5QXqN5HGiifkY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=l6JzNxYnLdBMJMUF7phZbXums/Tk1uG/m1vOZ+yGslG8K6suBMltTmgy0f35wA90W
-	 +iGuvufTJpHwl7SXtpg71EXlFI8gUmQsEAuyiqqsSulAjKHFu8IA80zRPnx3efsx1N
-	 ArNSFASWlfNvx/XJ5v2sWNM7lb32+lpEHeZnCkpntR3Ol84e1kfFQqwSJ+F9bT182Q
-	 hcx3VaLjAN1XekVoYBPF+PKSTnMdWkhro/zHqX6dvYJJbmMTiz331iV0Wt6Z5t2gZH
-	 J1MiLGewZMe3gB4bEbfIDhfDbWESRQ2ayLWN9SrKDVVsSu3CUhd/x33oEtCXW9bG7R
-	 MmvNPXmgEsE0g==
-Message-ID: <de62cddc-affe-297c-f020-425f80e683fe@collabora.com>
-Date: Tue, 16 May 2023 16:55:55 +0200
+	id 1pywEs-006Bk6-0r
+	for linux-phy@lists.infradead.org;
+	Tue, 16 May 2023 15:05:23 +0000
+Received: by mail-pf1-x431.google.com with SMTP id d2e1a72fcca58-6438d95f447so9905684b3a.3
+        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 08:05:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1684249521; x=1686841521;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=7txPToyylLXj/XeurHwXRxqGzvOp+rd7gJyEEX+n+mc=;
+        b=PvT7igHMLEj8zD6P4R7JabDlBcl9puACGqWkd8D8L68rJbLbFTpSBEMtOs0zB59ssb
+         cwjEa6KM18yUWqFIYkxkUO61wBCI8ZTekcW8mvyjgjaKeoJ+XU5mE7hndRPUGjyVbXRZ
+         R0B1qiyVjs69DTDnP+z0TUxs6neB2P7iGxhFn41NVpfS6qPLX9eewNgjvDduIhiMv/vx
+         MlO27RMkw12+Ff8Lg+HGQWMtVF8LkP6+//0JEpYkhiQr/Z0FVnlPRrBPPwk7HszsfFsl
+         HSo0eKqsvH32V7tdH0JrFgJ6U97ERr2FiSm4vU6MGx5YK8A3TM/MAHrZNB28/T9RoBQC
+         BcNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1684249521; x=1686841521;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=7txPToyylLXj/XeurHwXRxqGzvOp+rd7gJyEEX+n+mc=;
+        b=dv/z5TpTMvz1RdXR9pjl0r8wGFeZqwV1rmwrwG1j00MuAUMKtXHzICaV5i6lipeGJG
+         FNT3OgeaomYg6Jy5GH/v4O9E1unERnsSdzfRWT1t27oCY55iht1uqib7AxqoRao/j9hg
+         Tho+YgWYj++e82+zqcC7jocjBnBHv0InvNCK7eg6FoBeuLWBuOGJhM7Uq8Zd92oyITB4
+         9YEqDzBE3G+RYNCaR2t7LhYynVpWDzego7VMaqY2WI6AyVLlnwEGKVoZSoSqA7gDLRaO
+         8VQz8CXt45dJA/O+VUV5qHSLtsz+iW4+EbCu+LoPENP7SVjiER89Ms4aIG6E6wrzPL1M
+         lLOg==
+X-Gm-Message-State: AC+VfDw/V6E6k61GHAiDD295AnsFyH9w/aobWPKFPC7LV1RVozeJuQaO
+	jncsRgZbAgtnvRworu0L6zFOMg==
+X-Google-Smtp-Source: ACHHUZ7OlVfboY2rOaNjd3FbvEe5wJbXRpyzeqvDCudGA3Geq+oEtvj4mUoMHww3/5QfIIX3lMwX4g==
+X-Received: by 2002:a05:6a20:7d82:b0:103:4c5d:667a with SMTP id v2-20020a056a207d8200b001034c5d667amr27948776pzj.4.1684249520825;
+        Tue, 16 May 2023 08:05:20 -0700 (PDT)
+Received: from localhost.localdomain ([2401:4900:1c60:6bed:72cf:f5c9:ba94:6b85])
+        by smtp.gmail.com with ESMTPSA id h1-20020a654801000000b005302682a668sm12817164pgs.17.2023.05.16.08.05.16
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 16 May 2023 08:05:20 -0700 (PDT)
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+To: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: agross@kernel.org,
+	linux-kernel@vger.kernel.org,
+	andersson@kernel.org,
+	bhupesh.sharma@linaro.org,
+	bhupesh.linux@gmail.com,
+	krzysztof.kozlowski@linaro.org,
+	robh+dt@kernel.org,
+	konrad.dybcio@linaro.org,
+	kishon@kernel.org,
+	vkoul@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	dmitry.baryshkov@linaro.org
+Subject: [PATCH v11 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+Date: Tue, 16 May 2023 20:35:07 +0530
+Message-Id: <20230516150511.2346357-1-bhupesh.sharma@linaro.org>
+X-Mailer: git-send-email 2.38.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.1
-Subject: Re: [PATCH v2 2/2] phy: mtk-mipi-csi: add driver for CSI phy
-Content-Language: en-US
-To: Julien Stephan <jstephan@baylibre.com>
-Cc: krzysztof.kozlowski@linaro.org, robh@kernel.org, chunkuang.hu@kernel.org,
- linux-mediatek@lists.infradead.org, Phi-bang Nguyen <pnguyen@baylibre.com>,
- Louis Kuo <louis.kuo@mediatek.com>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Andy Hsieh <andy.hsieh@mediatek.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>,
- open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/Mediatek USB3 PHY DRIVER"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
- "open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
- <20230515090551.1251389-3-jstephan@baylibre.com>
- <cd6067b2-660a-8f2c-697d-26814a9dc131@collabora.com>
- <b2nk4jw2hpy4ndoq4cojazkn6h3tra2zjffhiswb7aqryabf7q@mkbtzhzcbivv>
- <54e6923c-729a-49de-8395-fbd0b8443aa8@collabora.com>
- <shthzc3zekvm2mrcch6vexsq5djpoxwupvdmmovhrz2ack3wxx@s4ptfhq7iwvi>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <shthzc3zekvm2mrcch6vexsq5djpoxwupvdmmovhrz2ack3wxx@s4ptfhq7iwvi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_075603_021978_55C32DC4 
-X-CRM114-Status: GOOD (  29.29  )
+X-CRM114-CacheID: sfid-20230516_080522_334316_57970382 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,140 +97,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 16/05/23 11:30, Julien Stephan ha scritto:
-> On Mon, May 15, 2023 at 04:32:42PM +0200, AngeloGioacchino Del Regno wrote:
->> Il 15/05/23 16:07, Julien Stephan ha scritto:
->>> On Mon, May 15, 2023 at 02:22:52PM +0200, AngeloGioacchino Del Regno wrote:
->>>>> +#define CSIxB_OFFSET		0x1000
->>>>
->>>> What if we grab two (or three?) iospaces from devicetree?
->>>>
->>>> - base (global)
->>>> - csi_a
->>>> - csi_b
->>>>
->>>> That would make it possible to maybe eventually extend this driver to more
->>>> versions (older or newer) of the CSI PHY IP without putting fixes offsets
->>>> inside of platform data structures and such.
->>>>
->>> Hi Angelo,
->>> The register bank of the CSI port is divided into 2:
->>> * from base address to base + 0x1000 (port A)
->>> * from base + 0x1000 to base +0x2000 (port B)
->>> Some CSI port can be configured in 4D1C mode (4 data + 1 clock) using
->>> the whole register bank from base to base + 0x2000 or in 2D1C mode (2 data +
->>> 1 clock) and use either port A or port B.
->>>
->>> For example  mt8365 has CSI0 that can be used either in 4D1C mode or in
->>> 2 * 2D1C and CSI1 which can use only 4D1C mode
->>>
->>> 2D1C mode can not be tested and is not implemented in the driver so
->>> I guess adding csi_a and csi_b reg value may be confusing?
->>>
->>> What do you think?
->>
->> Ok so we're talking about two data lanes per CSI port... it may still be
->> beneficial to split the two register regions as
->>
->> reg-names = "csi-a", "csi-b"; (whoops, I actually used underscores before,
->>                                 and that was a mistake, sorry!)
->>
->> ....but that would be actually good only if we are expecting to get a CSI
->> PHY in the future with four data lanes per port.
->>
->> If you do *not* expect at all such a CSI PHY, or you do *not* expect such
->> a PHY to ever be compatible with this driver (read as: if you expect such
->> a PHY to be literally completely different from this one), then it would
->> not change much to have the registers split in two.
->>
->> Another case in which it would make sense is if we were to get a PHY that
->> provides more than two CSI ports: in that case, we'd avoid platform data
->> machinery to check the number of actual ports in the IP, as we would be
->> just checking how many register regions we were given from the devicetree,
->> meaning that if we got "csi-a", "csi-b", "csi-c", "csi-d", we have four
->> ports.
->>
->> Besides, another thing to think about is... yes you cannot test nor implement
->> 2D1C mode in your submission, but this doesn't mean that others won't ever be
->> interested in this and that other people won't be actually implementing that;
->> Providing them with the right initial driver structure will surely make things
->> easier, encouraging other people from the community to spend their precious
->> time on the topic.
->>
-> Hi Angelo,
-> Ok, I see your point, but for future potential upgrade to support A/B
-> ports I was thinking of something else: adding independent nodes for csixA
-> and csixB such as:
-> 
-> csi0_rx: phy@11c10000 {
->    reg = <0 0x11C10000 0 0x2000>;
->    mediatek,mode = <4D1c>;
->    ...
-> };
-> 
-> csi0a_rx: phy@11c10000 {
->    reg = <0 0x11C10000 0 0x1000>;
->    mediatek,mode = <2D1c>;
->    ...
-> };
-> csi0b_rx: phy@11c11000 {
->    reg = <0 0x11C11000 0 0x1000>;
->    mediatek,mode = <2D1c>;
->    ...
-> };
-> 
-> giving the correct register range. One thing I did not mention is that if
-> csi0_rx is used csi0a_rx and csi0b_rx cannot be used (they share same
-> physical lanes as csio_rx), but csi0a_rx and csi0b_rx can be used simultaneously.
-> So platform device will enable only the node(s) it needs and enabling
-> csi0_rx and csioa/b_rx will fail because they share the same register
-> region and map will fail and it does not have any sense because you
-> either have a camera using the whole port or sub port but you cannot have
-> both plugged in. What do you think about it?
-> 
+Changes since v10:
+-----------------
+- v10 can be seen here: https://lore.kernel.org/lkml/20230502053534.1240553-4-bhupesh.sharma@linaro.org/
+- Rebased on phy/next, as Vinod was seeing rebasing issues with v9 while
+  applying.
 
-Your description of the hardware makes me even more confident in pushing for
-having one single node with multiple iospaces.
+Changes since v9:
+-----------------
+- v9 can be seen here: https://lore.kernel.org/linux-arm-msm/20230501192432.1220727-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry on v9, regarding register size
+  and pcs_misc offset handling. Also collected his R-Bs.
 
-You could have a node such as:
+Changes since v8:
+-----------------
+- v8 can be seen here: https://lore.kernel.org/linux-arm-msm/20230410171010.2561393-1-bhupesh.sharma@linaro.org/
+- Added driver change for new bindings used for sm6115 / qcm2290
+  devices.
 
-csi0_rx: phy@11c10000 {
-	compatible = ....
-	reg = <0 0x11c10000 0 0x1000>, <0 0x11c20000 0 0x1000>;
-	reg-names = "csi-a", "csi-b";
-	/* 4 means 4D1C */
-	num-lanes = <4>;
-		or
-	/* 2 means 2D1C */
-	num-lanes = <2>;
-};
+Changes since v7:
+-----------------
+- v7 can be seen here: https://lore.kernel.org/linux-arm-msm/20230409200934.2329297-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry and added "pipe clk".
 
-You would then reference the csi0_rx node as:
+Changes since v6:
+-----------------
+- v6 can be seen here: https://lore.kernel.org/linux-arm-msm/20230407061122.2036838-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Bjorn and Dmitry and dropped old bindings in this
+  version.
 
-	/* PHY is configured as 4 lanes (4D1C) */
-	something = <&csi0_rx 0>;
+Changes since v5:
+-----------------
+- v5 can be seen here: https://lore.kernel.org/linux-arm-msm/20230405191633.1864671-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Dmitry and made [PATCH 1/2] compatible with his 
+  'split away legacy USB+DP code' series:
+  <https://patchwork.kernel.org/project/linux-phy/cover/20230324215550.1966809-1-dmitry.baryshkov@linaro.org>
 
-	or
+Changes since v4:
+-----------------
+- v4 can be seen here: https://lore.kernel.org/linux-arm-msm/20230401154725.1059563-1-bhupesh.sharma@linaro.org/ 
+- Collected Krzysztof's Ack for [PATCH 1/2].
+- Added more descriptive commit logs as per Dmitry's comments on v4.
 
-	/* First two lanes (CSI0 PORT-A) */
-	something = <&csi0_rx 0>;
-	/* Second two lanes (CSI0 PORT-B) */
-	something = <&csi0_rx 1>;
+Changes since v3:
+-----------------
+- v3 can be seen here: https://lore.kernel.org/linux-arm-msm/20221215094532.589291-4-bhupesh.sharma@linaro.org/
+- Fixed v4 as per the downstream driver code: https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
 
-Preferrably, you should (or shall?) use a graph to describe such connections,
-anyway.
+This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
+SoC. For the previous versions of this patch there were conversations
+on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
+'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
+documentation.
 
-This is because overriding the number of lanes on a per-board basis becomes
-*otherwise* difficult, in the sense of human readability issues, other than
-duplicated nodes being a real issue.
+But after a careful look at downstream dtsi (see [1]) it appears that
+this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
+'dp-combo' phy.
 
-Regards,
-Angelo
+[1]. https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#296
+
+Bhupesh Sharma (4):
+  dt-bindings: phy: qcom,qmp-usb: Drop legacy bindings and move to newer
+    one (SM6115 & QCM2290)
+  phy: qcom-qmp-usb: add support for updated qcm2290 / sm6115 binding
+  arm64: dts: qcom: sm6115: Add USB SS qmp phy node
+  arm64: dts: qcom: qrb4210-rb2: Enable USB node
+
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 27 -------------
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 38 +++++++++++++++++++
+ arch/arm64/boot/dts/qcom/qrb4210-rb2.dts      | 24 ++++++++++++
+ .../boot/dts/qcom/sm4250-oneplus-billie2.dts  |  3 ++
+ arch/arm64/boot/dts/qcom/sm6115.dtsi          | 29 +++++++++++++-
+ .../boot/dts/qcom/sm6115p-lenovo-j606f.dts    |  3 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 22 +++++++++++
+ 7 files changed, 117 insertions(+), 29 deletions(-)
+
+-- 
+2.38.1
 
 
 -- 
