@@ -4,70 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98232C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 16:20:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85C4AC7EE25
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 16:32:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yyqi6OWrK9Rh6nC1UZskvk9UF3OZkg7D52uPekGz7+A=; b=aQ62y9G3E3jL06
-	OVDi6JzUHt2cLQT81bpwPWmBfqj1RB9kXuxBXS74WHaz7H5XtriNp4M+NiLlAfFNs8r7u7rSW0zzZ
-	/3DGDEC26h+9Yc72Ux9+4KzVrUXi/bsyH5ArLD/n1QzpPH7BtPq4+WMqmEMu6mZPmGJQ/ODvKkmy8
-	n+Z00Fnev5XAtbudB+1E4ONdbrXe8MrcShf+s+zshvcKWkiMVTfyHo7zeVgegQ5bA8kbLiAhsr3o/
-	yxuupWscKnwJIZC67yG0VS2z5igK2yh5oQvB+SKneNyccFZL0gEst9pva9d9sSQIVwkyWr6B46rzq
-	RKIiQQ0FixVP+8tEBC5A==;
+	List-Owner; bh=tSnjF0k3XS+rYnsKHimZVz5/OP7cFgrfVdX06O4dtAk=; b=kt2soV0Iof/f9W
+	658bKN6on9cP5OLuUaeGu3FXzXRbSy9lDD0Gqx6aP9kuzzFoTq3+aBECmKolQE1kcRm4oVPDeM+PL
+	VVOnA/aWlmUWIsKLKEantRNJmd43wPAaTVLtCQUh20Pb13RGzQxWXJhVPG0sVoFUdiJt/od21sTui
+	Ea6zWNguIf8tjv1L+lz+f+9dtbzY+kvZ/SrWTAo9cRjz3e0vih7jgrmKyk0Iy96IyESvDiuO3oDZ7
+	/JpZ3Zu8vR2LoHBjfUl01bWjieFuw7Y+lRGCADri1o/5ZvWs+w8GpgWR0I1ObiwVuEP9SFnJ46jqt
+	XEsZ35DI/gQ8dZlrkAfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyxQ3-006Rdw-0z;
-	Tue, 16 May 2023 16:20:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1pyxbK-006TgE-0Y;
+	Tue, 16 May 2023 16:32:38 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyxPx-006Ra2-1l
-	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 16:20:56 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <j.zink@pengutronix.de>)
-	id 1pyxPd-0002ns-CT; Tue, 16 May 2023 18:20:33 +0200
-Received: from [2a0a:edc0:0:1101:1d::39] (helo=dude03.red.stw.pengutronix.de)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <j.zink@pengutronix.de>)
-	id 1pyxPc-000eDw-JF; Tue, 16 May 2023 18:20:32 +0200
-Received: from localhost ([::1] helo=dude03.red.stw.pengutronix.de)
-	by dude03.red.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <j.zink@pengutronix.de>)
-	id 1pyxPb-00DODy-QY; Tue, 16 May 2023 18:20:31 +0200
-From: Johannes Zink <j.zink@pengutronix.de>
-Date: Tue, 16 May 2023 18:20:20 +0200
-Subject: [PATCH v2 2/2] phy: fsl-imx8mp-usb: add support for phy tuning
+	id 1pyxbH-006Tdh-0C;
+	Tue, 16 May 2023 16:32:36 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3510860C92;
+	Tue, 16 May 2023 16:32:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B40F7C433EF;
+	Tue, 16 May 2023 16:32:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1684254751;
+	bh=Aks6nwZaqr/erbBLhafFwZ3Ao9Igx6TSOjyOocCTwx4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fKNjkRfh2IVi0irTeZRo60pDLVfhgKSKiKNVfF+RjDoxU93FsClkrJbOFfjLbBSSD
+	 ygo100c/a33dEf2nLNK71x35ZLvsQtvbKBm60lk9ioQ1TXBhlW+r3Cjcc8KEBRqHdG
+	 MJXMeCRksIp3AnANmyHayxIKVOCShrP8Gq/0ov1SMm+9UVsG3SttBSWX0M/ygL+bLS
+	 frjkaXmI4j6R+gYrFju+Gej/Osl79LU8qyKIgVkW/Ij7H1yqw0459Iw51oo+MTKluV
+	 4WHzDsNZ1B8X45Z8bqmkaAqIjS2IBovcqn7q8dnQkvmvNm/+pRlbJewCaZVIbtMovn
+	 CjImkg1ExKgXA==
+Date: Tue, 16 May 2023 22:02:27 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org
+Subject: Re: [PATCH v14 06/15] clk: Add Lynx 10G SerDes PLL driver
+Message-ID: <ZGOwGypfqeHsP6V0@matsya>
+References: <20230413160607.4128315-1-sean.anderson@seco.com>
+ <20230413160607.4128315-7-sean.anderson@seco.com>
+ <ZFi9t84UoIfUyHhi@matsya>
+ <1012f955-180e-0013-cc13-1da10991b5f5@seco.com>
+ <ZFpD4I2LK9YIQQat@matsya>
+ <d230c641-7270-c768-fd48-9012c01621b2@seco.com>
+ <ZGODpt7MARD47us7@matsya>
+ <7ad1089f-106d-e355-5558-f06f8b428f34@seco.com>
 MIME-Version: 1.0
-Message-Id: <20230516-lustige-usb-phy-dinge-v2-2-3383a0de34ac@pengutronix.de>
-References: <20230516-lustige-usb-phy-dinge-v2-0-3383a0de34ac@pengutronix.de>
-In-Reply-To: <20230516-lustige-usb-phy-dinge-v2-0-3383a0de34ac@pengutronix.de>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>, 
- Li Jun <jun.li@nxp.com>
-Cc: patchwork-jzi@pengutronix.de, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Johannes Zink <j.zink@pengutronix.de>, 
- Haibo Chen <haibo.chen@nxp.com>
-X-Mailer: b4 0.12.2
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: j.zink@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <7ad1089f-106d-e355-5558-f06f8b428f34@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_092053_758693_7818ABE6 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20230516_093235_182438_AC00C49B 
+X-CRM114-Status: GOOD (  30.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,276 +89,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Li Jun <jun.li@nxp.com>
+On 16-05-23, 11:11, Sean Anderson wrote:
+> On 5/16/23 09:22, Vinod Koul wrote:
+> > On 09-05-23, 11:26, Sean Anderson wrote:
+> >> On 5/9/23 09:00, Vinod Koul wrote:
+> >> > On 08-05-23, 11:31, Sean Anderson wrote:
+> >> >> On 5/8/23 05:15, Vinod Koul wrote:
+> >> > 
+> >> >> >> +int lynx_clks_init(struct device *dev, struct regmap *regmap,
+> >> >> >> +		   struct clk *plls[2], struct clk *ex_dlys[2], bool compat);
+> >> >> > 
+> >> >> > so you have an exported symbol for clk driver init in phy driver header?
+> >> >> > can you please explain why..?
+> >> >> 
+> >> >> So that it can be called at the appropriate time during the phy's probe function.
+> >> >> 
+> >> >> This is really an integral part of the phy driver, but I was directed to split it
+> >> >> off and put it in another subsystem's directory.
+> >> > 
+> >> > That is right clock should be belong to clk driver. IIUC the hardware is
+> >> > phy along with clocks and you are doing the clk init. I think that may
+> >> > not be correct model, you should really have a device tree node to
+> >> > represent the clock and the phy node
+> >> > 
+> >> > 
+> >> > What stops this from being modelled as it is in the hardware?
+> >> 
+> >> It *is* modeled as it is in hardware. With just the serdes compatible,
+> >> we have all the information we need to create the clocks. So we do so.
+> >> There's no need for a separate device just to create four clocks.
+> >> 
+> >> These clocks cannot be used by any other device (except possibly by
+> >> putting a lane into test mode). So there is no benefit from making them
+> >> a separate device, except an increase in complexity due to ordering and
+> >> dynamic lookup. By doing things this way we know that either there was
+> >> an error or the clocks all exist, and the lifetime of the clocks matches
+> >> the serdes.
+> > 
+> > Okay that does makes sense.
+> > 
+> > In that case why should this not be in the phy driver itself. There are
+> > already few examples og phy drivers having inbuild clk where is makes
+> > sense. You register the clk_ops as part of phy driver
+> 
+> You told me to do it this way
 
-Add USB PHY parameter tuning for USB certifications.
-
-Reviewed-by: Haibo Chen <haibo.chen@nxp.com>
-Signed-off-by: Li Jun <jun.li@nxp.com>
-[j.zink: ported to v6.3-rc1 from NXP downstream repo + cleanups]
-Signed-off-by: Johannes Zink <j.zink@pengutronix.de>
----
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 218 +++++++++++++++++++++++++++++
- 1 file changed, 218 insertions(+)
-
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index a29b4a6f7c24..88826ceb72f8 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -27,17 +27,231 @@
- #define PHY_CTRL2_TXENABLEN0		BIT(8)
- #define PHY_CTRL2_OTG_DISABLE		BIT(9)
- 
-+#define PHY_CTRL3			0xc
-+#define PHY_CTRL3_COMPDISTUNE_MASK	GENMASK(2, 0)
-+#define PHY_CTRL3_TXPREEMP_TUNE_MASK	GENMASK(16, 15)
-+#define PHY_CTRL3_TXRISE_TUNE_MASK	GENMASK(21, 20)
-+#define PHY_CTRL3_TXVREF_TUNE_MASK	GENMASK(25, 22)
-+#define PHY_CTRL3_TX_VBOOST_LEVEL_MASK	GENMASK(31, 29)
-+
-+#define PHY_CTRL4			0x10
-+#define PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK	GENMASK(20, 15)
-+
-+#define PHY_CTRL5			0x14
-+#define PHY_CTRL5_DMPWD_OVERRIDE_SEL	BIT(23)
-+#define PHY_CTRL5_DMPWD_OVERRIDE	BIT(22)
-+#define PHY_CTRL5_DPPWD_OVERRIDE_SEL	BIT(21)
-+#define PHY_CTRL5_DPPWD_OVERRIDE	BIT(20)
-+#define PHY_CTRL5_PCS_TX_SWING_FULL_MASK	GENMASK(6, 0)
-+
- #define PHY_CTRL6			0x18
- #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
- #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
- 
-+#define PHY_TUNE_DEFAULT		0xffffffff
-+
- struct imx8mq_usb_phy {
- 	struct phy *phy;
- 	struct clk *clk;
- 	void __iomem *base;
- 	struct regulator *vbus;
-+	u32 pcs_tx_swing_full;
-+	u32 pcs_tx_deemph_3p5db;
-+	u32 tx_vref_tune;
-+	u32 tx_rise_tune;
-+	u32 tx_preemp_amp_tune;
-+	u32 tx_vboost_level;
-+	u32 comp_dis_tune;
- };
- 
-+static u32 phy_tx_vref_tune_from_property(u32 percent)
-+{
-+	percent = clamp(percent, 94U, 124U);
-+
-+	return DIV_ROUND_CLOSEST(percent - 94U, 2);
-+}
-+
-+static u32 phy_tx_rise_tune_from_property(u32 percent)
-+{
-+	switch (percent) {
-+	case 0 ... 98:
-+		return 3;
-+	case 99:
-+		return 2;
-+	case 100 ... 101:
-+		return 1;
-+	default:
-+		return 0;
-+	}
-+}
-+
-+static u32 phy_tx_preemp_amp_tune_from_property(u32 microamp)
-+{
-+	microamp = min(microamp, 1800U);
-+
-+	return microamp / 600;
-+}
-+
-+static u32 phy_tx_vboost_level_from_property(u32 microvolt)
-+{
-+	switch (microvolt) {
-+	case 0 ... 960:
-+		return 0;
-+	case 961 ... 1160:
-+		return 2;
-+	default:
-+		return 3;
-+	}
-+}
-+
-+static u32 phy_pcs_tx_deemph_3p5db_from_property(u32 decibel)
-+{
-+	return min(decibel, 36U);
-+}
-+
-+static u32 phy_comp_dis_tune_from_property(u32 percent)
-+{
-+	switch (percent) {
-+	case 0 ... 92:
-+		return 0;
-+	case 93 ... 95:
-+		return 1;
-+	case 96 ... 97:
-+		return 2;
-+	case 98 ... 102:
-+		return 3;
-+	case 103 ... 105:
-+		return 4;
-+	case 106 ... 109:
-+		return 5;
-+	case 110 ... 113:
-+		return 6;
-+	default:
-+		return 7;
-+	}
-+}
-+static u32 phy_pcs_tx_swing_full_from_property(u32 percent)
-+{
-+	percent = min(percent, 100U);
-+
-+	return (percent * 127) / 100;
-+}
-+
-+static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
-+{
-+	struct device *dev = imx_phy->phy->dev.parent;
-+
-+	if (device_property_read_u32(dev, "fsl,phy-tx-vref-tune-percent",
-+				     &imx_phy->tx_vref_tune))
-+		imx_phy->tx_vref_tune = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->tx_vref_tune =
-+			phy_tx_vref_tune_from_property(imx_phy->tx_vref_tune);
-+
-+	if (device_property_read_u32(dev, "fsl,phy-tx-rise-tune-percent",
-+				     &imx_phy->tx_rise_tune))
-+		imx_phy->tx_rise_tune = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->tx_rise_tune =
-+			phy_tx_rise_tune_from_property(imx_phy->tx_rise_tune);
-+
-+	if (device_property_read_u32(dev, "fsl,phy-tx-preemp-amp-tune-microamp",
-+				     &imx_phy->tx_preemp_amp_tune))
-+		imx_phy->tx_preemp_amp_tune = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->tx_preemp_amp_tune =
-+			phy_tx_preemp_amp_tune_from_property(imx_phy->tx_preemp_amp_tune);
-+
-+	if (device_property_read_u32(dev, "fsl,phy-tx-vboost-level-microvolt",
-+				     &imx_phy->tx_vboost_level))
-+		imx_phy->tx_vboost_level = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->tx_vboost_level =
-+			phy_tx_vboost_level_from_property(imx_phy->tx_vboost_level);
-+
-+	if (device_property_read_u32(dev, "fsl,phy-comp-dis-tune-percent",
-+				     &imx_phy->comp_dis_tune))
-+		imx_phy->comp_dis_tune = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->comp_dis_tune =
-+			phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
-+
-+	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db-attenuation-db",
-+				     &imx_phy->pcs_tx_deemph_3p5db))
-+		imx_phy->pcs_tx_deemph_3p5db = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->pcs_tx_deemph_3p5db =
-+			phy_pcs_tx_deemph_3p5db_from_property(imx_phy->pcs_tx_deemph_3p5db);
-+
-+	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-swing-full-percent",
-+				     &imx_phy->pcs_tx_swing_full))
-+		imx_phy->pcs_tx_swing_full = PHY_TUNE_DEFAULT;
-+	else
-+		imx_phy->pcs_tx_swing_full =
-+			phy_pcs_tx_swing_full_from_property(imx_phy->pcs_tx_swing_full);
-+}
-+
-+static void imx8m_phy_tune(struct imx8mq_usb_phy *imx_phy)
-+{
-+	u32 value;
-+
-+	/* PHY tuning */
-+	if (imx_phy->pcs_tx_deemph_3p5db != PHY_TUNE_DEFAULT) {
-+		value = readl(imx_phy->base + PHY_CTRL4);
-+		value &= ~PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK;
-+		value |= FIELD_PREP(PHY_CTRL4_PCS_TX_DEEMPH_3P5DB_MASK,
-+				   imx_phy->pcs_tx_deemph_3p5db);
-+		writel(value, imx_phy->base + PHY_CTRL4);
-+	}
-+
-+	if (imx_phy->pcs_tx_swing_full != PHY_TUNE_DEFAULT) {
-+		value = readl(imx_phy->base + PHY_CTRL5);
-+		value |= FIELD_PREP(PHY_CTRL5_PCS_TX_SWING_FULL_MASK,
-+				   imx_phy->pcs_tx_swing_full);
-+		writel(value, imx_phy->base + PHY_CTRL5);
-+	}
-+
-+	if ((imx_phy->tx_vref_tune & imx_phy->tx_rise_tune &
-+	     imx_phy->tx_preemp_amp_tune & imx_phy->comp_dis_tune &
-+	     imx_phy->tx_vboost_level) == PHY_TUNE_DEFAULT)
-+		/* If all are the default values, no need update. */
-+		return;
-+
-+	value = readl(imx_phy->base + PHY_CTRL3);
-+
-+	if (imx_phy->tx_vref_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXVREF_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXVREF_TUNE_MASK,
-+				   imx_phy->tx_vref_tune);
-+	}
-+
-+	if (imx_phy->tx_rise_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXRISE_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXRISE_TUNE_MASK,
-+				    imx_phy->tx_rise_tune);
-+	}
-+
-+	if (imx_phy->tx_preemp_amp_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TXPREEMP_TUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TXPREEMP_TUNE_MASK,
-+				imx_phy->tx_preemp_amp_tune);
-+	}
-+
-+	if (imx_phy->comp_dis_tune != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_COMPDISTUNE_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_COMPDISTUNE_MASK,
-+				    imx_phy->comp_dis_tune);
-+	}
-+
-+	if (imx_phy->tx_vboost_level != PHY_TUNE_DEFAULT) {
-+		value &= ~PHY_CTRL3_TX_VBOOST_LEVEL_MASK;
-+		value |= FIELD_PREP(PHY_CTRL3_TX_VBOOST_LEVEL_MASK,
-+				    imx_phy->tx_vboost_level);
-+	}
-+
-+	writel(value, imx_phy->base + PHY_CTRL3);
-+}
-+
- static int imx8mq_usb_phy_init(struct phy *phy)
- {
- 	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
-@@ -99,6 +313,8 @@ static int imx8mp_usb_phy_init(struct phy *phy)
- 	value &= ~(PHY_CTRL1_RESET | PHY_CTRL1_ATERESET);
- 	writel(value, imx_phy->base + PHY_CTRL1);
- 
-+	imx8m_phy_tune(imx_phy);
-+
- 	return 0;
- }
- 
-@@ -182,6 +398,8 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
- 
- 	phy_set_drvdata(imx_phy->phy, imx_phy);
- 
-+	imx8m_get_phy_tuning_data(imx_phy);
-+
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	return PTR_ERR_OR_ZERO(phy_provider);
+I agree that was not the right recommendation back then and your view
+was right
 
 -- 
-2.39.2
-
+~Vinod
 
 -- 
 linux-phy mailing list
