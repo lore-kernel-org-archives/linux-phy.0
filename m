@@ -4,100 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A874C77B75
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 17:46:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD115C77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 18:33:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/rJbar/p2yDBbcmF4u4tp7K5lQPffjhberS5rsfrncA=; b=xjhPYX3RT6sbJL
-	/6aO6B/d/vsab00pluoY03l7wWetcGdRB0pR/ZNBRj/MRP6ARtsW3eiwVrQle8U7NeOcjqwgGJYpj
-	QlFHIHdwRLEURe/aXoqch672Si90ECD8DxJwHlQdmJIlCXE6sk5OR79lh+DW4qpZe/yYP4MPDxVPo
-	iTZWOky4y0eSTa2y7BkGVGIkYuuNQbfWOqqS0Dle4AH8MizYUXJL81jgJ3jSnMpMyvFzDgjngnu/E
-	pDILg7l+DQ6M6sYLZuq7TZKJ3Y/w9p9uhI1IS2MIrGBDi9oYsoQn/IjnWGqjkLKeMfGXdXApJWw24
-	z2sx47Xm1XhPu8GJIN4g==;
+	List-Owner; bh=tZve2cLYaBwPqUhW0qEwfOoQooxPPenFQ4IDYl7nono=; b=OFzZwLtcPdR1Q8
+	SMTPz8Fv6BsdViLmHPaXGk+SFblN1m9A9mfKvP7GBL//n4y/8iFctHDl81TLvtB5iy5GPZ5h9Q6Zn
+	y6l62n4ZZwdURM477SEf6NkInKpnibws98xwkBUl2oCKbopG4dZb46Lv84bYQepAVeNfgWl4r6zy7
+	oFgRoVBMp6RQ7Ruwj1cqlu4LyVU5iMFYNAzrWF5WYQmaxtKVLLxzbWaKosaCYSUP9my2QrOSV02rj
+	11PTykDoll4eTixS7LcfM9wG6tRkvU4P5WJTSGilkNe0NjKqCqIdAQYUk27EVxUNN2/1hZOgAlCJf
+	+mS5UGtUvmWgtf2rJ63Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyyl5-006faY-0R;
-	Tue, 16 May 2023 17:46:47 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1pyzUJ-006m3v-0S;
+	Tue, 16 May 2023 18:33:31 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyyl2-006fYl-0G
+	id 1pyzUF-006m3J-0K
 	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 17:46:45 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-965c3f9af2aso2216647166b.0
-        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 10:46:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684259202; x=1686851202;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=GRa69PQOGWHAG7dhMSxTg0hAGqZBZ04lzADv5vDNz8g=;
-        b=RRPQYVAVbvDPGqCKhIMikPDdRRFVC0v/jXgzWQCbjnebcoZlBGSkLq8zU49oZdZ8Hb
-         aULAVglhgjSlAgo4mMhyKohg1Up/VRkVDddLSm+bnC7HAsNSxZrCD34FcZQk/L1Qtx5E
-         6jefn5/zukaN05rftxwwRuDn/ur7cBGCt+R8yBm9ZVT9jPGNqoNA2gF5fPqCGyjhK1yt
-         h/TMZ1TFbp4jvszGMDS1qoct2OjXehPPFQ9dKGHD9CYUGb6Ch00tRs+JRgNNV9GVwU6l
-         k2MYDGxxXUoYH8w0bGcI7YBontOYmpciKjBxbAeyk3zlP4NL6OPTZoYPUR8DVVhuY86D
-         CBOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684259202; x=1686851202;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=GRa69PQOGWHAG7dhMSxTg0hAGqZBZ04lzADv5vDNz8g=;
-        b=J2BZvazQwGBTEzPWajbbQX8Riz42cvqThMDP8avqo8l/RmeQOmf9Lc11TVhNR+lsit
-         429stJfKcM9QBGHUhsF7Ape47LWtSGtM8JBzALZD15Hj/h6JkH5wstdoX4oqFet1di+n
-         SokQsQx5eCFNxTe0cL2B41iTjaV6NCl36nZ0aYw4MXUBTs7fi5Qicq7ZXDK8b0Ld8Tat
-         SMaqEdcN4/dgPiqynfTXg0/cQWFeJkRxr82edV0frcICENR1odzKHFBmW+brP9nlJjwJ
-         QLW9L9muFFBxF+6Yo/UpRCVLF5nJf1LRZ55Wy3XymDT8ZBttP8/QVn/9NODKO/QVUEkV
-         zyFA==
-X-Gm-Message-State: AC+VfDxbqv/52PgYJEBaIhC31O7gEuJA+TOGbezDWt2+4daJ35LqNth0
-	EIwVsRXJn5OWUVLsO5lEYA4KYQ==
-X-Google-Smtp-Source: ACHHUZ4Fqn0IrjbbaMLzr7Bcxhp8gYX9LChIPIyWCrZkZMtVJWRTHK4AUx/ymdIQ4WqijDpz1YPenQ==
-X-Received: by 2002:a17:906:c14f:b0:94d:a2c2:9aeb with SMTP id dp15-20020a170906c14f00b0094da2c29aebmr41011197ejc.49.1684259201897;
-        Tue, 16 May 2023 10:46:41 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:77d1:16a1:abe1:84fc? ([2a02:810d:15c0:828:77d1:16a1:abe1:84fc])
-        by smtp.gmail.com with ESMTPSA id w5-20020a056402128500b0050c03520f68sm8567276edv.71.2023.05.16.10.46.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 May 2023 10:46:41 -0700 (PDT)
-Message-ID: <fbf1b0a6-f45d-69a0-5de6-8269567e15b3@linaro.org>
-Date: Tue, 16 May 2023 19:46:40 +0200
+	Tue, 16 May 2023 18:33:29 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B655F6306B;
+	Tue, 16 May 2023 18:33:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE016C433D2;
+	Tue, 16 May 2023 18:33:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1684262005;
+	bh=a7PTnqs0YEm7IsOGAlvOif0wre27TfjbZbHFQy0cnwU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rEa9im+Rl2Y/r0Y6FeNozIBqp5Zuk3+/eyERtBc0g5sI+ih30RXMoSsu+sN+tFfxj
+	 9HYfjcxHwxe4tLNtYzuGQQKP7uJISNhwhIR5r940lyJs0DQ770/NPseu81MkSQ8tUS
+	 AWipO7RjPqGElhY9WCcGeXysVrsGE74TCy7htWmf9XGXYaN7EDigzEZhkU0M+caz7S
+	 xPDu42RfMh0+W81Ae7ymp1R40QOC7UBEcqeKuobuDrxg1sUwHIJIPoFumo6HONtOnc
+	 KgFpGqblHmIDsVHvHFTry7WJwknjXOjeyjjgYlGV0LRUtIfMXxQ5EmPMyzTizphM3S
+	 ECk+e3H1+1ENA==
+Message-ID: <3c7d7d0b-b859-8921-952c-870c9474969c@kernel.org>
+Date: Tue, 16 May 2023 21:33:21 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add mediatek mipi csi driver v
- 0.5
+ Thunderbird/102.10.0
+Subject: Re: [PATCH] phy: ti: gmii-sel: Allow parent to not be syscon node
 Content-Language: en-US
-To: Kevin Hilman <khilman@baylibre.com>,
- Julien Stephan <jstephan@baylibre.com>
-Cc: robh@kernel.org, chunkuang.hu@kernel.org,
- linux-mediatek@lists.infradead.org,
- Florian Sylvestre <fsylvestre@baylibre.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Andy Hsieh <andy.hsieh@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- "moderated list:ARM/Mediatek USB3 PHY DRIVER"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
- <20230515090551.1251389-2-jstephan@baylibre.com>
- <ab9aa30f-82d7-1d14-5561-e19ff10af0b0@linaro.org>
- <4yppinkucchwnwtnnpbqdn4bejmntjq3q6mx6es55f2pwyce3c@qdhdks47lpyt>
- <1853f049-4f00-b7f0-973a-2c4e7b0b2634@linaro.org>
- <7h353w2oug.fsf@baylibre.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <7h353w2oug.fsf@baylibre.com>
+To: Andrew Davis <afd@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20230515195922.617243-1-afd@ti.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20230515195922.617243-1-afd@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_104644_176366_EC151503 
-X-CRM114-Status: GOOD (  17.26  )
+X-CRM114-CacheID: sfid-20230516_113327_201517_D13FFBA6 
+X-CRM114-Status: GOOD (  20.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,68 +77,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/05/2023 19:00, Kevin Hilman wrote:
->>>>> +  compatible:
->>>>> +    enum:
->>>>> +      - mediatek,phy-mipi-csi-0-5
->>>>
->>>> SoC based compatibles. 0-5 is odd.
->>>>
->>>>> +
->>>>> +  reg:
->>>>> +    maxItems: 1
->>>>> +
->>>>> +  '#phy-cells':
->>>>> +    const: 0
->>>>> +
->>>>> +  mediatek,is_cdphy:
->>>>
->>>> No underscores in node names.
->>>>
->>>>> +    description:
->>>>> +      Specify if the current phy support CDPHY configuration
->>>>
->>>> Why this cannot be implied from compatible? Add specific compatibles.
->>>>
->>>>
->>> This cannot be implied by compatible because the number of phys depends
->>> on the soc and each phy can be either D-PHY only or CD-PHY capable.
->>> For example mt8365 has 2 phy: CSI0 and CSI1. CSI1 is DPHY only and CSI0 is CD-PHY
->>
->> So it is SoC specific so why it cannot be implied by compatible? I don't
->> understand. You will have SoC specific compatibles, right? or you just
->> ignored my comments here?
+Hi Andrew,
+
+On 15/05/2023 22:59, Andrew Davis wrote:
+> If the parent node is not a syscon type, then fallback and check
+> if we can get a regmap from our own node. This no longer forces
+> us to make the parent of this node a syscon node when that might
+> not be appropriate.
+
+Trying to understand the motive for this and if it is better to
+introduce a "syscon = <&syscon_node>" property instead which
+makes it fool proof for all cases.
+
 > 
-> Julien, I think you had SoC specific compatibles in an earlier version
-> but then changed it to be generic based on reviewer feedback.  However,
-> that earlier version of the driver was trying to do a bunch of SoC
-> specific logic internally and support multiple SoCs.  You've now greatly
-> simplified the driver, with only a few SoC specific decisions needed.
-> These can be implied by the driver based SoC specific compatible, as
-> Krzysztof suggests, so you should just go back to having SoC specific
-> compatibles.
+> Signed-off-by: Andrew Davis <afd@ti.com>
+> ---
+>  drivers/phy/ti/phy-gmii-sel.c | 9 ++++++---
+>  1 file changed, 6 insertions(+), 3 deletions(-)
 > 
+> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+> index 8c667819c39a..1e67ed9a5cf6 100644
+> --- a/drivers/phy/ti/phy-gmii-sel.c
+> +++ b/drivers/phy/ti/phy-gmii-sel.c
+> @@ -435,9 +435,12 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>  
+>  	priv->regmap = syscon_node_to_regmap(node->parent);
+>  	if (IS_ERR(priv->regmap)) {
+> -		ret = PTR_ERR(priv->regmap);
+> -		dev_err(dev, "Failed to get syscon %d\n", ret);
+> -		return ret;
+> +		priv->regmap = device_node_to_regmap(node);
+> +		if (IS_ERR(priv->regmap)) {
+> +			ret = PTR_ERR(priv->regmap);
+> +			dev_err(dev, "Failed to get syscon %d\n", ret);
+> +			return ret;
+> +		}
+>  	}
+>  
+>  	ret = phy_gmii_sel_init_ports(priv);
 
-Yes. If there is common part, e.g. several SoCs use the same device with
-same programming model, then the generic recommendation is to have
-SoC-based fallback (used also in the driver) and SoC-specific compatibles.
-
-Second accepted solution is to have generic fallback which does not use
-SoC in the compatible (and of course mandatory SoC-specific comaptibles).
-
-Third is to use versioned IP blocks.
-
-The second case also would work, if it is applicable to you (you really
-have fallback matching all devices). Third solution depends on your
-versioning and Rob expressed dislike about it many times.
-
-We had many discussions on mailing lists, thus simplifying the review -
-I recommend the first choice. For a better recommendation you should say
-a bit more about the block in different SoCs.
-
-Best regards,
-Krzysztof
-
+-- 
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
