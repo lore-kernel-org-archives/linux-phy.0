@@ -4,77 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8461C77B75
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:07:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19036C77B7F
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 15:12:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=To61ebIkPqARHFUdt+FdTdL/uwf2sCIEAjY2E9FaQcU=; b=z4KuEEkdfPTzOi
-	ETid/LoSCFFUYT7CAG7WIaSkOo7EJ9mq3xv3bQzwD3bG8rDs3oXVqq9Qw5uoz2+jj/KK07VQJ5aOV
-	KOBajJHOUdXYhD17QOfT1sn7kbzwoWGYRIutk+Y+VpsKYzfKkaCr5+c5KanP50ElFsoCxrNMllAer
-	hqedv7w84+9bZVgTUETH+m4Yumj2pgnRnl+KU8JiJ5y/ENQSBP8GNxPsFEBtIrM4/GTJgLuny2LT/
-	TvaN8QB8pXXuu1nL94baVbBNN1kPDIHGMGYYqTKczdNA0WnFy0TQTbpcCNG9u2SyrF79Ti+0+VENR
-	/3A9ncG0NVA+eiCB5D+Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=j3Cpx/TODhqqYmoWKT40Zu5a7n656OGYIrPx8p8KZr4=; b=G2h3aNQfONAH5WWy7kNFjLxsWM
+	TyRAACHazgyqrB+T6X5+f04gh/Zi+RWrzoFp+UCk+J9BTVrqr9C6vh0ytd3qHE703imq3jlFMH9M5
+	IBZqz9YlBZmkxP/htgLls5tviGeage+h5yxx7nPIziNB50h4cAdt9H8hY4I6MVhbli0JQoFXb0Aa/
+	aeJUXeJ2J9ZHCEwFtNEVPqC6M/m21wsV0HmzCMeA/gMOIrk282t16raKwUjXkCg5H8cOIXJc0OxQ+
+	+WHTRD5xE7PV6s4il3z62gJTzPWu7zb7023+KSz+vgA8+MsZkc3613GJBsVZLVAIFv1OiZoGhTnON
+	3NWyrZwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pywGY-006C13-1j;
-	Tue, 16 May 2023 15:07:06 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1pywLd-006CXn-2Q;
+	Tue, 16 May 2023 15:12:21 +0000
+Received: from mail-db8eur05hn2031e.outbound.protection.outlook.com ([2a01:111:f400:7e1a::31e] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pywGW-006Bzn-17
-	for linux-phy@lists.infradead.org;
-	Tue, 16 May 2023 15:07:05 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-3f475366514so52215135e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 16 May 2023 08:06:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684249617; x=1686841617;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=Tq0XF7+PR1y9o2CZoKmF6U/m48kNTTAS4tN4W2zzPWo=;
-        b=ha7AFsQELZOGiPCowhQVUhOsNZnSyXCe/j+KcIUVhuXNM0PCgcgaeJoIzfjY7RSwPN
-         48+j6+dzld/n3i5Sgzawe3+fdxasZsj3g60SCSfCcbtf7+dxSElVXXDb1Ok0JgezZPKQ
-         HxE0wWNVkT/kobzZWmWC+Q6wvgv1BZwkl0ab/+4vCH6CjbAB+6DBBB3sCi+dRoXSAivK
-         U+M7nk2jByhvDz5ZEg79265k9LMIeyFKavjcowfXCyWhGe16C3i0cqPx0tTuXbBZZgkP
-         hcoYH1Myd149q0vktPY2z8ej5baODQMpBKKcLyErbaXRig377Y44DnEqge4OhyX5glNf
-         NQ3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684249617; x=1686841617;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Tq0XF7+PR1y9o2CZoKmF6U/m48kNTTAS4tN4W2zzPWo=;
-        b=D/giFqt5oQWGOx8cpP9xdzUS9nlxR9PE2wtctuAliZPWId4KfkgsmGg/Yt2RX5xloV
-         UzAiDzwOnoSkVyJnQHUwpXygtoJW+FwsA67avR7U4GWsQe9F0/+3MifgrOL1gURTYDMD
-         Gx+0frOHTip7OsCBWeD2XQpkWN3HQ2EWBDL3EKklagMYxFDl39yCng1tzVDHeO8HYUX/
-         6AmOAuO57aR8QankGXUqxsS3pCG1o2T5qdp1WnaLvoMlw3fFm2GoQQvBWqdF0Ef7TLUi
-         /8DQ4Mcz2V905ursyEl7gd6cpqx0yUym6qSy5or64z77QTmSM+kRxRYc5uF2Z3N24Kug
-         sXVA==
-X-Gm-Message-State: AC+VfDyjGD0VYsrJEvu8dHvxxsBczDrz54cbe2Lry75pkrdTHZSpQhYs
-	103y3/cc7/GmQAZmT9Yo8BALmBqd/cGV2mT6jiKzWg==
-X-Google-Smtp-Source: ACHHUZ4LY7SDyh/oGJpKHeooYFL7cLCCmViH03hkaW8zKvIkvlfhWmWvmgx6QJpMdS2kjMk7RGoJQtTUXgX4cRY8bBw=
-X-Received: by 2002:a5d:61ce:0:b0:306:30ea:a072 with SMTP id
- q14-20020a5d61ce000000b0030630eaa072mr30132707wrv.53.1684249617400; Tue, 16
- May 2023 08:06:57 -0700 (PDT)
-MIME-Version: 1.0
-References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org> <ZGOR+hvLMZLxl8fh@matsya>
-In-Reply-To: <ZGOR+hvLMZLxl8fh@matsya>
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Date: Tue, 16 May 2023 20:36:45 +0530
-Message-ID: <CAH=2NtwWxGbkN4Kpb-FrcKP0qD-ZMa56GQ9x-F4yU3RkB6K6tw@mail.gmail.com>
-Subject: Re: [PATCH v10 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+	id 1pywLZ-006CVd-1I;
+	Tue, 16 May 2023 15:12:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4C57uS6igxBPemybcqYu1s1Oip14dQJY29vJh5Uzbp4=;
+ b=LV3COoRSf77l3SYjQQtJF/yCTUgDuvCrPSOGSTBAkj5KCSFgMjsz4U9bUz6v6MCUALg866yA+eI8HKrLQ/fMNemdD2uRHTx19kzX6vIauowxZyv0FxO+PM7rqqic8kZEwue7RmUdAG62pc0qlIGdNlOIl33QPSe1Sa0T4yybqBsxZm6sR5fC3FUE6EDieVkgJCx+RcYtBL+E8atAZpkcXJvyW6SmNbGBCH+Pg/Sqa0YsnXw6w7G2RG9BztqRGBRlCsevDcpMwFXcj/hKghT+CcEXSJhdVjcHN0TzYci7Gk51eAoh0u/NBUYpI/+f9a6KDn0gD2Po8dt3VsIIFEDXHg==
+Received: from DB7PR05CA0019.eurprd05.prod.outlook.com (2603:10a6:10:36::32)
+ by DB4PR03MB8657.eurprd03.prod.outlook.com (2603:10a6:10:387::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.30; Tue, 16 May
+ 2023 15:12:09 +0000
+Received: from DB8EUR05FT059.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:10:36:cafe::f9) by DB7PR05CA0019.outlook.office365.com
+ (2603:10a6:10:36::32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.33 via Frontend
+ Transport; Tue, 16 May 2023 15:12:09 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.81)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.81 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.81; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.81) by
+ DB8EUR05FT059.mail.protection.outlook.com (10.233.239.69) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6411.15 via Frontend Transport; Tue, 16 May 2023 15:12:09 +0000
+Received: from outmta (unknown [192.168.82.133])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 441A620081128;
+	Tue, 16 May 2023 15:12:09 +0000 (UTC)
+Received: from EUR02-DB5-obe.outbound.protection.outlook.com (unknown [104.47.11.108])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id C920320080073;
+	Tue, 16 May 2023 15:12:34 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=gB9C3OuA7IGQToNz5LEfwsTJrRJATtEEpzqaugi1kj2JJx0P6dc6K7eMj6Ps+YTryyPkwnS/eTaESUHJpv8Z3xrftCLx5onYEGRM1lkTcAXnX9cXoc15A7o0nYE5QqOuf39brFVbDsUHfiqTqMY0E2cmErgqWiQ7mLSIRJyBIMH9sI2YeX9TiaHcG+KCaKsudpDUMGUXGDvNfS6i1Lf3y312ilJdGf90qRRBG5ocQ2VljRciXExmqaFvYC/wINE6VJA/x95Strglnimqjh2Zdoqu8aHKL0vo5x9t1iKYWz8t5KPxywD32xLo+edccIQ1ge+YJU4i4nAy5XqOzmr0Vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=4C57uS6igxBPemybcqYu1s1Oip14dQJY29vJh5Uzbp4=;
+ b=Dc3rqGM5diM8YhVOCuo+74y9Yx/Pz1IyFMRVGc+DYOhakDPAthTDboJAecfRs6DWj8MoYBb7JA/tBbu5agVJxbM8oTiJs2+ABgDlCT7cGoiVu+UphJ+8tSnCmMgdl+dcXWPtYRiktUKviz0npJKKCD3MRDCX1MztZ7CujDcCpTG+sKhh8UCvuhjtQcWh0GGWdEjeIFmkvXkT9H5VXSufRIvMh2jw28ud8q36rCkNdvLhEmUooNDvn3LlpTGnBv1D2EmRnMbwE7aWdTTqE9y3whotsZohrnF2fPGShYDVO4Qv2DrVdIXXyNT343Q2icPfa5eMT7o+JCsK2d5d1tVRsw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4C57uS6igxBPemybcqYu1s1Oip14dQJY29vJh5Uzbp4=;
+ b=LV3COoRSf77l3SYjQQtJF/yCTUgDuvCrPSOGSTBAkj5KCSFgMjsz4U9bUz6v6MCUALg866yA+eI8HKrLQ/fMNemdD2uRHTx19kzX6vIauowxZyv0FxO+PM7rqqic8kZEwue7RmUdAG62pc0qlIGdNlOIl33QPSe1Sa0T4yybqBsxZm6sR5fC3FUE6EDieVkgJCx+RcYtBL+E8atAZpkcXJvyW6SmNbGBCH+Pg/Sqa0YsnXw6w7G2RG9BztqRGBRlCsevDcpMwFXcj/hKghT+CcEXSJhdVjcHN0TzYci7Gk51eAoh0u/NBUYpI/+f9a6KDn0gD2Po8dt3VsIIFEDXHg==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AM9PR03MB7396.eurprd03.prod.outlook.com (2603:10a6:20b:26c::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.32; Tue, 16 May
+ 2023 15:12:01 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e%3]) with mapi id 15.20.6387.030; Tue, 16 May 2023
+ 15:12:01 +0000
+Message-ID: <7ad1089f-106d-e355-5558-f06f8b428f34@seco.com>
+Date: Tue, 16 May 2023 11:11:56 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v14 06/15] clk: Add Lynx 10G SerDes PLL driver
+Content-Language: en-US
 To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, agross@kernel.org, 
-	linux-kernel@vger.kernel.org, andersson@kernel.org, bhupesh.linux@gmail.com, 
-	krzysztof.kozlowski@linaro.org, robh+dt@kernel.org, konrad.dybcio@linaro.org, 
-	kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	dmitry.baryshkov@linaro.org
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-phy@lists.infradead.org, Madalin Bucur <madalin.bucur@nxp.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ Bagas Sanjaya <bagasdotme@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, linux-clk@vger.kernel.org
+References: <20230413160607.4128315-1-sean.anderson@seco.com>
+ <20230413160607.4128315-7-sean.anderson@seco.com> <ZFi9t84UoIfUyHhi@matsya>
+ <1012f955-180e-0013-cc13-1da10991b5f5@seco.com> <ZFpD4I2LK9YIQQat@matsya>
+ <d230c641-7270-c768-fd48-9012c01621b2@seco.com> <ZGODpt7MARD47us7@matsya>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <ZGODpt7MARD47us7@matsya>
+X-ClientProxiedBy: BL1P222CA0002.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:208:2c7::7) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
+MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|AM9PR03MB7396:EE_|DB8EUR05FT059:EE_|DB4PR03MB8657:EE_
+X-MS-Office365-Filtering-Correlation-Id: b5996450-0cca-4460-7379-08db561feb62
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  RHnaZEFmETnnbfcpluhQotDD3hf7ROT5S+8vcLhrJppGP+2yTMeaDcTO/pcwn+3G3OwYv6yzc4KyXXaZt+/hYt268Yuq2egGmmBbsmgLwmHfhmUO2fOwzE193TIBg05PEvCngN8Q3+Yu/RKUdHf4XA47/AORGcBcTH3pKT/hanE5FJUzaio65Z+ZU0giq56mqpspMCWU9HfJuc+H+VrTqsb0PwC875g4xvsQsrcpMahxuafck/pcpXV++nM+rVFE+/FA427F/ifKlbKLw9pFh01VrbSTcU8JiA5N4PDZuOFe5o1Tp7iBxBh5hvdV4KyJPgXp92+oPvY7eVbiwV44kc/n2475w+/4Y0wRisHPzkNr3WStaKo47OSkpallPgKCYU4F8lKFJxXoDSYJ1Szs+clkEMsGsSYalCTcdFw8pnydBLcuAoVQClVDcaPT3/bLMeAuDJ7jPKUFQVNBsnrhABvPFqq8fPEnvkLlaZ34TQljpp3HuuEltWxsXaFrMp5yQ4T3vthLofjDnUCZoFGjiISpvVXrgGuHsWh8MBNzsosKtYLrccTFjEXEXz4sJQXNH8VqTYJ7OS0TT2OYLEsxKyR8vs2q1qtgp7NiiD3mTVkCQaGbfNyHu0neEbPH3PaTG55O5okwPTPfdw/myPsKjtLHVjAx6CuRR+TiqxFoNqI=
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(396003)(366004)(136003)(346002)(39850400004)(376002)(451199021)(2906002)(478600001)(41300700001)(316002)(54906003)(44832011)(7416002)(6666004)(6486002)(8676002)(66476007)(66556008)(4326008)(6916009)(66946007)(5660300002)(31686004)(8936002)(966005)(6512007)(6506007)(26005)(52116002)(53546011)(186003)(83380400001)(2616005)(36756003)(86362001)(31696002)(38350700002)(38100700002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB7396
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  DB8EUR05FT059.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	ec6c67cb-c25d-4f8b-33d3-08db561fe686
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	4IxorGfVblbVSjJ6FHa+xc66Y+5tRvMbrEBh0oFQIDUH6M3FRjLQgA5TQoM45dSJdContnvppxM7lurlpCExzSxz2jkwykr9In5oxCa5PJfc3XzRBW6XkC5wxavYf69ZcyLLU2wDaiQe+mPyGZbYG4VfPRW0/j2H/mLDwMS6G5U/J+A+OnievSW261eHhNDxW52yF1P/qO1/5hZbL19khbChFwMS3dIWCPYZOYcvQ1wK4EMLcGmYdSq6Z5+QEzWX1xME8+HAgb/ZYLJ/jWuuVNGdVdIaDu/xFZwA7AqbgqlZa++a5PDfsKyToN4cHuVJQy7srsGK8WF8zXVll6jeYJFRRMljl+kcIW//FgX4qkG4dvW/RNWTDsZGPsRM70CVz9IwZ3cqcSYhV4LibmjfGTPj23C8skMgykG8nj7lZcLFAqUR3bD41d3alnPRNzEk+HEdBUEDPD1PaADk/IyYjYF9Ptzk4ett+2ndBmdq9dJToHWruZDKdT9GNouxATScZtjE/xdVVodmiGY+b6pNF8CZg95YTF2Nuj92FEDhzKk/J9nO8hTZraKK/qXhfbQH4rnIMCBquyjYPzU/EjHPKkiJm1xVlkYWcLO4pImt5GVCxGCNGHXhfpLt5urSEpE+TDTivV4MJRhhjxHqsW6ffq5/KSFENEd/D3AdPW5prqW1sFfm0zAD957PD5dcyn/k2QlnXRdAmU5rMaD//f1iY2b+Qmy5jO1mSFhwJrPI4Qp3JPJ0gZOvMGr/aaABfCKEOkSYxW8uZGqe4M0p/9gTSw/0rwcvLpuXt1ZuQcfGoG0=
+X-Forefront-Antispam-Report: 	CIP:20.160.56.81;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(39850400004)(396003)(136003)(346002)(376002)(5400799015)(451199021)(36840700001)(46966006)(36756003)(54906003)(966005)(478600001)(6916009)(70206006)(4326008)(70586007)(316002)(86362001)(6486002)(83380400001)(82740400003)(82310400005)(40480700001)(2616005)(5660300002)(8676002)(7416002)(8936002)(6666004)(2906002)(44832011)(34070700002)(7636003)(31696002)(356005)(7596003)(41300700001)(36860700001)(6512007)(186003)(53546011)(6506007)(26005)(47076005)(336012)(31686004)(43740500002)(12100799033);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 May 2023 15:12:09.5348
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b5996450-0cca-4460-7379-08db561feb62
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.81];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DB8EUR05FT059.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB4PR03MB8657
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_080704_413334_A175D8B4 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20230516_081217_806876_485A6E8A 
+X-CRM114-Status: GOOD (  24.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,29 +154,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 16 May 2023 at 19:53, Vinod Koul <vkoul@kernel.org> wrote:
->
-> On 02-05-23, 11:05, Bhupesh Sharma wrote:
->
-> >
-> > This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
-> > SoC. For the previous versions of this patch there were conversations
-> > on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
-> > 'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
-> > documentation.
-> >
-> > But after a careful look at downstream dtsi (see [1]) it appears that
-> > this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
-> > 'dp-combo' phy.
->
-> Fails to apply for me, pls rebase
+On 5/16/23 09:22, Vinod Koul wrote:
+> On 09-05-23, 11:26, Sean Anderson wrote:
+>> On 5/9/23 09:00, Vinod Koul wrote:
+>> > On 08-05-23, 11:31, Sean Anderson wrote:
+>> >> On 5/8/23 05:15, Vinod Koul wrote:
+>> > 
+>> >> >> +int lynx_clks_init(struct device *dev, struct regmap *regmap,
+>> >> >> +		   struct clk *plls[2], struct clk *ex_dlys[2], bool compat);
+>> >> > 
+>> >> > so you have an exported symbol for clk driver init in phy driver header?
+>> >> > can you please explain why..?
+>> >> 
+>> >> So that it can be called at the appropriate time during the phy's probe function.
+>> >> 
+>> >> This is really an integral part of the phy driver, but I was directed to split it
+>> >> off and put it in another subsystem's directory.
+>> > 
+>> > That is right clock should be belong to clk driver. IIUC the hardware is
+>> > phy along with clocks and you are doing the clk init. I think that may
+>> > not be correct model, you should really have a device tree node to
+>> > represent the clock and the phy node
+>> > 
+>> > 
+>> > What stops this from being modelled as it is in the hardware?
+>> 
+>> It *is* modeled as it is in hardware. With just the serdes compatible,
+>> we have all the information we need to create the clocks. So we do so.
+>> There's no need for a separate device just to create four clocks.
+>> 
+>> These clocks cannot be used by any other device (except possibly by
+>> putting a lane into test mode). So there is no benefit from making them
+>> a separate device, except an increase in complexity due to ordering and
+>> dynamic lookup. By doing things this way we know that either there was
+>> an error or the clocks all exist, and the lifetime of the clocks matches
+>> the serdes.
+> 
+> Okay that does makes sense.
+> 
+> In that case why should this not be in the phy driver itself. There are
+> already few examples og phy drivers having inbuild clk where is makes
+> sense. You register the clk_ops as part of phy driver
 
-Sent v11 which is rebased on phy/next (see [1]).
+You told me to do it this way
 
-[1]. https://lore.kernel.org/linux-arm-msm/20230516150511.2346357-1-bhupesh.sharma@linaro.org/
+https://lore.kernel.org/linux-phy/YsW+4fm%2F613ByK09@matsya/
 
-Thanks,
-Bhupesh
+--Sean
+
 
 -- 
 linux-phy mailing list
