@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 644B2C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:21:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDDC3C77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 16 May 2023 14:24:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nGGPJy7fOTysLJJAw7CLaiU/Zp/3DeIQQu8qXa5TTwQ=; b=V997bpXZBvYzF5
-	emx8a7S8YZZ9wGGmaT5TD6gexelBZifC8XkGlZynDYllSPotaKnHkwYX9m0cWVcjPyLmrND4MepYe
-	Yez+sXi3tm0ZSVl8hwYSOzCUoMR6LHE3vTNr2K2quutVMIE7C6/MZqloJK1P5rR7jwz0TjlFiG/R+
-	PKn5Cc7vo3dEwY+/OvJ8GPiOUV9DkB5wt7X0JmmmA7b5oQNEwLSTyn0nrxzdubypNxXSW0wZ9OrBl
-	zDtwIKKTPk5Wa5ptHAVmyebS9k4BqN9MPG3HqH+DNPZduXW+Qa0p7Z56+Mp6kYFSz0RxS9/G9dtlQ
-	FlLx69cg/x1XvC+IHgcA==;
+	List-Owner; bh=J7FIk+EAXBOUZYgTck18EA8q0VFtMfanIohZ+YdzJ4A=; b=bLN5AvHSvvwWZI
+	0R1YSYuR1+StN5+OtHLYTYh9+qOeIESPrjQen10rndwz7JX8TT2lJmWO0/kSDAhxI1VLk9vOrsd6t
+	K3MBzuSq7ZU+j7QdRG9N0c9wLAOHvxK4cWmM87Fm/d0Y3/T5OaLNn8ve6JO6Pt8nBq1XM0pYHByOp
+	Y5De+3nzk13vA0z1TcmABd/oUhEiv5xgkOLWoWfc9E+snTho86YMzKAARtwgjoa44agtO9upvgM/I
+	heJr+cwFq+33nX5k6a1rxPZqJIzWRvPX2TPSkS3M4WehU20qLmTa94FGSUW3w8mMy0ug8t9hIIwQX
+	p7huB/C+v4q1Xvuagmag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvYe-0064KO-09;
-	Tue, 16 May 2023 14:21:44 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1pyvas-0064p4-1P;
+	Tue, 16 May 2023 14:24:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pyvYZ-0064Id-2X;
-	Tue, 16 May 2023 14:21:40 +0000
+	id 1pyvap-0064o0-2b
+	for linux-phy@lists.infradead.org;
+	Tue, 16 May 2023 14:24:00 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 36CFC63376;
-	Tue, 16 May 2023 14:21:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20626C433EF;
-	Tue, 16 May 2023 14:21:37 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 077D960A07;
+	Tue, 16 May 2023 14:23:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E6150C4339B;
+	Tue, 16 May 2023 14:23:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684246898;
-	bh=MwJW9qECEUezZaNFCk5dvGd5LQA0WLC9PlOo5V0Szu8=;
+	s=k20201202; t=1684247038;
+	bh=PcwVUUITKY/O/qO722wrvpNOAEQAzpJRIdCPk2unTOY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=O07aAXle6UZY59B29dlg7giCM9zC+nl0L2AfWg+B/oCeecFIUJ6ucQytbpbJxOtz7
-	 Eqg7pGh2LLmu16ltEMCbXXLLmHjynher+DYHr8jp09yJSeeKfg0NjmlZD2QFKaToEX
-	 UXjRQxzUHVIs65KQS200+OQra+3vCMo4GunjMCl1/WXj1zYAvUBCLdrD6r2o4ylqNH
-	 GCRhNXaseb1i0AKGNFQtAyxPIFYn1oHMhnkAGt7nJVNqhh1/xINTOaTCadf5WIa02o
-	 08kYCB3QKEb3fhvhJ/Dov+TD20amWGgUxOSlA8sdSSBh5BBfcSaxeziYsWRKlQzE/A
-	 GmWEUwGiy07GQ==
-Date: Tue, 16 May 2023 19:51:35 +0530
+	b=bY82g5MTrH6hp5Q1RQNsstyUWpf8rwxYFh7Gfb/0CzSU7DhjhQWZTd5Qgv0Ac8Nyq
+	 Jxj8fUna8FXCg+4X3SqxKHiEcGTlcdYAajhPz14zL4fy8lcUQcbgwFuV/LAGnJOSFM
+	 mQDii3vwaavba6aD4YeoXaY/4mYgmeKsvBhoC/x3RxFmUgsQ0spr3ybL1QbQlGsq95
+	 UFr0U4DFupHAUnAmZevrd64lLEWTGoHymC843ZKvp43rB/zAK2TeSUMWlqPaEHDZe1
+	 2jVwsYLc5NPB4nNoJQAXBTHO6WHwJ/wpu/RKxevHx95eXk+xyEyWnGSeE7LTHemRfG
+	 CsMuhXRoucIkw==
+Date: Tue, 16 May 2023 19:53:54 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Yang Li <yang.lee@linux.alibaba.com>
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, kishon@kernel.org,
-	kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH -next] phy: freescale: imx8m-pcie: Use
- devm_platform_ioremap_resource()
-Message-ID: <ZGORbzUJkNaI/U4l@matsya>
-References: <20230428052758.38636-1-yang.lee@linux.alibaba.com>
+To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org, agross@kernel.org,
+	linux-kernel@vger.kernel.org, andersson@kernel.org,
+	bhupesh.linux@gmail.com, krzysztof.kozlowski@linaro.org,
+	robh+dt@kernel.org, konrad.dybcio@linaro.org, kishon@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, dmitry.baryshkov@linaro.org
+Subject: Re: [PATCH v10 0/4] Enable USB SS qmp phy for Qualcomm SM6115 SoC
+Message-ID: <ZGOR+hvLMZLxl8fh@matsya>
+References: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230428052758.38636-1-yang.lee@linux.alibaba.com>
+In-Reply-To: <20230502053534.1240553-1-bhupesh.sharma@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_072139_867439_04813718 
-X-CRM114-Status: UNSURE (   7.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230516_072359_885935_CD1EC4A3 
+X-CRM114-Status: GOOD (  10.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,12 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-04-23, 13:27, Yang Li wrote:
-> Convert platform_get_resource(),devm_ioremap_resource() to a single
-> call to devm_platform_ioremap_resource(), as this is exactly what this
-> function does.
+On 02-05-23, 11:05, Bhupesh Sharma wrote:
 
-Applied, thanks
+> 
+> This patchset adds the support for USB SS qmp phy for Qualcomm SM6115
+> SoC. For the previous versions of this patch there were conversations
+> on irc as to whether this was a 'qcom,usb-ssphy-qmp-usb3-or-dp' or a
+> 'qcom,usb-ssphy-qmp-dp-combo' as per downstream code and hardware
+> documentation.
+> 
+> But after a careful look at downstream dtsi (see [1]) it appears that
+> this indeed is a 'qcom,usb-ssphy-qmp-usb3-or-dp' phy and not a
+> 'dp-combo' phy.
+
+Fails to apply for me, pls rebase
 
 -- 
 ~Vinod
