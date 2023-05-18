@@ -4,87 +4,184 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BB88C77B75
-	for <linux-phy@archiver.kernel.org>; Wed, 17 May 2023 18:01:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0AD1C7EE23
+	for <linux-phy@archiver.kernel.org>; Thu, 18 May 2023 07:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o9K2wnxmFPIvwG6vuF2vPOyIQo4qD8QUdyVroJNWi5w=; b=bER2pmYuxteHh2
-	xRXqvyhuMzNDLYz6TODU4I4PSrsw2Jk4n3SjtHK6sqMuyzi9YENNaf6FuECzNK7P/VTL8D0Idy0rH
-	B4VVgKGenGVtdTWO7VT47dEtmr20ibwEbs2tKUJeRmrbPQXJKs8rNzNPYikLFNUsSxv0dRNaTNeJh
-	yvuR87mniaMGfg2cOVm4KyYlu+i9Qf7w4d5cwQXZKxskSbNuis5BNTSB8Khx1Rlq0z4sxF3+b7cyb
-	/PUzg7foNfaXZXJM+vE+A06nlLZ0ddhe1BsGJFcQHBBx/0/ztZVPwupicFlUw2rsSPiL+ZkGm3jTT
-	+vgHvUBqYtvRI5OQeDZQ==;
+	List-Owner; bh=mWA7debOyFE3SYtuumgsm4s20be/JgOvEvfskUmLtvs=; b=bmvTdcheBg/etx
+	JNdjLac9VJ81ywShdTBPdPUDTDamk7K8KfD69vw/5r36Lr4t+9B4lREzgwo/OE1WOJnnWMySiD5iX
+	8fozixSgSnksVlqdeyX0WJVFVVVbPpOSDA/MTAiLFQkAfm3BEGChfCjuIanoT7K0lm9Ktf2JYEwmu
+	NafFUfbcGz26fdw8MEPXeT/ZTO4789Vkoeg/hGZzZ+uI3T4RrZ6pNLZ3+RiChlbiHd6sLuSfltAFE
+	WamOiRUhHS4g6ozP3dlklnD8Ynw3HwSQ/yfdYWw68/x882wFVJyLnDB+cN8s1u7ZQtjEN57Ydr6f7
+	PJ7EX/zk8gxeZvn8O52Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pzLSi-00AgOG-08;
-	Wed, 17 May 2023 18:01:20 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1pzYCe-00CEJZ-0s;
+	Thu, 18 May 2023 07:37:36 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pzLSf-00AgMn-0o
-	for linux-phy@lists.infradead.org;
-	Wed, 17 May 2023 18:01:18 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-96adcb66f37so203731466b.1
-        for <linux-phy@lists.infradead.org>; Wed, 17 May 2023 11:01:10 -0700 (PDT)
+	id 1pzYCY-00CEHl-0Q;
+	Thu, 18 May 2023 07:37:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1684395450; x=1715931450;
+  h=from:to:cc:subject:date:message-id:references:
+   in-reply-to:content-id:content-transfer-encoding:
+   mime-version;
+  bh=QjP5BRvKL20YViOl3cf4xTCLASAgcmH4AzYZnjDG1jc=;
+  b=pOYId05gF1uyS5FWu3ifKuZZiOpfRbXGc00t5ZQR28BQ1P+7+BMDr9/6
+   I2aTRxAZBzIOZcQxXKt6p159j98Vek8hgXE6mWICkCrXRLNYcfE4G8nO5
+   GKGrWk8okLp44GRSp7NQu1QP5sj6j6Ux3hhAmxAXTl7g1kehQcbNcfz5a
+   vBUmkLtUYNLYeh3/DTcPd4mG3qOboAx5jIrWCBEWvGduTr9yDcTCJ7d9G
+   Nof/DCz54UsRD/hfBPnioiPwZp8h9Ix4HMdk+3ht+8/2x7ysqKjxqkz8f
+   ChXM2KZjFADVfSkBLIYjRdXLcqk/Ff21VdX7kNKL1QILq+DhHTFgqQBSs
+   w==;
+X-IronPort-AV: E=Sophos;i="5.99,284,1677567600"; 
+   d="scan'208";a="216050944"
+X-Amp-Result: SKIPPED(no attachment in message)
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 18 May 2023 00:37:17 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.21; Thu, 18 May 2023 00:37:12 -0700
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.21 via Frontend Transport; Thu, 18 May 2023 00:37:12 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=c6EQwqoZgOIIBgSqAz8zlMKi0C7MHzGdo2Xdusg6PJYliGnrsA25pKN/PGpzBMo/JnP5TRrYiGHnihBZq5R2agj0hMGwUVoE9YBonhLXvKl7LvIKB9xeUR7ASGWFJK/z8R7QRnqtPtYfm6GiNiSLKJOlDvhU6aXq4kFTPASHWiu7Z1FsBjpEX/h18ImmmMznPYAorfznmP+LqMr5qmBaYQudOVgiXYqVwQmOzk/ezbxjxs3hactnTLaMGMQd39hHifD4yy7VDOTPs7Sm1UDRsHbvlJ1TC/xVqTyQa9Af55OPc6J/179kv1M//UmjH59Ue4IebBKyt+5SeaAC/bfeUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QjP5BRvKL20YViOl3cf4xTCLASAgcmH4AzYZnjDG1jc=;
+ b=YgwKs7klzhqgZtAfskfVBtwOIbFAPYUl97+ZhHidC9RsJp0T9rl0VeLtwiojB49UpnthN/dvoENKJwvzJ1hv1GtOHJtY/MuloOdYakMeS99d91YRYRBoBqX4eV5Cnyki9iVKCILce+G8ACXPO57iku4XvONQI51Xn1o/kPPr/jn+yruMm3V4VV1uwIbsP7AZpPgEPaJy6f94t1yV6w5l1K10yj3+NqPezTez2/oVLvJmCzffLyk/38lUvaCH6hESBpi7JLMjr/fIv1HugOXPlIQljAHObMNILISitehxBWwveH2jNXOxD1w0CscHVVgq42jmX0eEXBW6ydfmSJ+edQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684346469; x=1686938469;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=VPjH+AyIlGHtcYsMCoD8SjkZqBgLcEDJmRre38IR4fs=;
-        b=m45d4S0F3TH37O+Gj63MF73tYqlxMelat9CME2f4e/lla5QOkzkmD+fq8tvAnDj1/f
-         5fIMbxuuygLE5OscAlgwVZbh7O8cWmg3d1j+40whh7jeEsLyPjX+X8E8gHc4EGczfnVk
-         3MLQmxr5+6nmnuEdbmgFu262RZcoGA1iaOtWpebAtB+0NakFNNCGw0IqGrHETxpAkRQm
-         gqgom7gHtbjw6TmjEmbWw+4cMR3SOrKD1c++tSZYivqmteixmS7LmevAFoP4HV9AZW6z
-         lb7+cOT+qV/+mbqDliGaKgo84Mh7lvja/WxWddTKcn2GVtp7B8DmazUjNQ8Z7cHRja+O
-         zAqQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684346469; x=1686938469;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=VPjH+AyIlGHtcYsMCoD8SjkZqBgLcEDJmRre38IR4fs=;
-        b=F8AvpFbjbwBPlWpo8Oe251yAJutOv17s39AEtyqTxvupDCScZmBQ59dxjQF8n4+1rX
-         wp2rYYazRhA1FoXY0SpsAI8qqcN8MKpoCD9aVwpzzqnyhgN27P7Ov9kP7W+mg6pVrFaL
-         qvH1m4NonLE8L9BEZhwIlM74l0T78TUWWAzV7KiNR8YqsEc8cI+at14znrqYepkVsCZv
-         scQf0AbmKknlOgj/z0eN4LImeaAppcehk3PZkhxoe3/djsIYu4IWgTO9v7hfw9I+xBqD
-         12piM3g8f5u/K+IiyvbkJi4gIUFyWfdTrFFu2HvZMssopXnwbSRdrL/KaFW1XSGAFWeU
-         DaUQ==
-X-Gm-Message-State: AC+VfDxVxF/Z9pExEHtuL1zWINfNioJY2MQxu04CouXoE3ihc4cjOs/7
-	bAiGCv45o0ugL4Z+9R95bBNVNQ==
-X-Google-Smtp-Source: ACHHUZ4g2WtZ5hlvOmXPEF17atv8bVoLgjz7HOHZ3CGenXQf5HRVcvc35O4CYw6HgWqI7/aDgDBmYQ==
-X-Received: by 2002:a17:907:2da9:b0:94f:247d:44d2 with SMTP id gt41-20020a1709072da900b0094f247d44d2mr38652805ejc.5.1684346469404;
-        Wed, 17 May 2023 11:01:09 -0700 (PDT)
-Received: from ?IPV6:2a02:810d:15c0:828:c9ff:4c84:dd21:568d? ([2a02:810d:15c0:828:c9ff:4c84:dd21:568d])
-        by smtp.gmail.com with ESMTPSA id d21-20020a170906c21500b00965fdb90801sm12672206ejz.153.2023.05.17.11.01.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 17 May 2023 11:01:08 -0700 (PDT)
-Message-ID: <904b0fad-16ec-6633-fee9-60c24e9daf14@linaro.org>
-Date: Wed, 17 May 2023 20:01:07 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v11 1/4] dt-bindings: phy: qcom,qmp-usb: Drop legacy
- bindings and move to newer one (SM6115 & QCM2290)
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QjP5BRvKL20YViOl3cf4xTCLASAgcmH4AzYZnjDG1jc=;
+ b=mlHua0VdZE7IO4bp+bGyoHSnUMbGDRA77A+RHRxSvzj1fPGH2TKBnwPBj+GuSO/J+iE4mfIwGj52hKcoMrbMYv6uC0xSRGJvH3TQplQmXaHPVmvqC+AR2uhSxg62lUcFLxrf6vP2ULASC8BVOGtYohPxqR9my1AuQ2TfZ73+o3s=
+Received: from SJ2PR11MB7648.namprd11.prod.outlook.com (2603:10b6:a03:4c3::17)
+ by DS0PR11MB8017.namprd11.prod.outlook.com (2603:10b6:8:115::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.30; Thu, 18 May
+ 2023 07:37:04 +0000
+Received: from SJ2PR11MB7648.namprd11.prod.outlook.com
+ ([fe80::27bf:a69f:806f:67be]) by SJ2PR11MB7648.namprd11.prod.outlook.com
+ ([fe80::27bf:a69f:806f:67be%5]) with mapi id 15.20.6411.019; Thu, 18 May 2023
+ 07:37:04 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <maxime@cerno.tech>, <mturquette@baylibre.com>, <sboyd@kernel.org>,
+	<afaerber@suse.de>, <mani@kernel.org>, <Nicolas.Ferre@microchip.com>,
+	<alexandre.belloni@bootlin.com>, <jcmvbkbc@gmail.com>,
+	<ckeepax@opensource.cirrus.com>, <rf@opensource.cirrus.com>,
+	<mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
+	<luca.ceresoli@bootlin.com>, <david@lechnology.com>, <nsekhar@ti.com>,
+	<abelvesa@kernel.org>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>,
+	<kernel@pengutronix.de>, <festevam@gmail.com>, <linux-imx@nxp.com>,
+	<matthias.bgg@gmail.com>, <geert+renesas@glider.be>, <dinguyen@kernel.org>,
+	<pdeschrijver@nvidia.com>, <pgaikwad@nvidia.com>, <thierry.reding@gmail.com>,
+	<jonathanh@nvidia.com>, <ulf.hansson@linaro.org>, <linus.walleij@linaro.org>,
+	<airlied@gmail.com>, <daniel@ffwll.ch>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <a.zummo@towertech.it>, <wens@csie.org>,
+	<jernej.skrabec@gmail.com>, <samuel@sholland.org>, <lgirdwood@gmail.com>,
+	<broonie@kernel.org>, <perex@perex.cz>, <tiwai@suse.com>,
+	<paul@crapouillou.net>, <orsonzhai@gmail.com>,
+	<baolin.wang@linux.alibaba.com>, <zhang.lyra@gmail.com>
+CC: <linux-clk@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-actions@lists.infradead.org>,
+	<patches@opensource.cirrus.com>, <linux-stm32@st-md-mailman.stormreply.com>,
+	<linux-mediatek@lists.infradead.org>, <linux-renesas-soc@vger.kernel.org>,
+	<linux-tegra@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+	<linux-phy@lists.infradead.org>, <linux-rtc@vger.kernel.org>,
+	<linux-sunxi@lists.linux.dev>, <alsa-devel@alsa-project.org>,
+	<linux-mips@vger.kernel.org>
+Subject: Re: [PATCH v3 06/65] clk: at91: main: Add a determine_rate hook
+Thread-Topic: [PATCH v3 06/65] clk: at91: main: Add a determine_rate hook
+Thread-Index: AQHZiVuK76JtSAxFEUSi6IVLveVz2Q==
+Date: Thu, 18 May 2023 07:37:03 +0000
+Message-ID: <accb9d15-b5ab-e99d-5b02-589688e68964@microchip.com>
+References: <20221018-clk-range-checks-fixes-v3-0-9a1358472d52@cerno.tech>
+ <20221018-clk-range-checks-fixes-v3-6-9a1358472d52@cerno.tech>
+In-Reply-To: <20221018-clk-range-checks-fixes-v3-6-9a1358472d52@cerno.tech>
+Accept-Language: en-US
 Content-Language: en-US
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: agross@kernel.org, linux-kernel@vger.kernel.org, andersson@kernel.org,
- bhupesh.linux@gmail.com, robh+dt@kernel.org, konrad.dybcio@linaro.org,
- kishon@kernel.org, vkoul@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- dmitry.baryshkov@linaro.org
-References: <20230516150511.2346357-1-bhupesh.sharma@linaro.org>
- <20230516150511.2346357-2-bhupesh.sharma@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230516150511.2346357-2-bhupesh.sharma@linaro.org>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=microchip.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SJ2PR11MB7648:EE_|DS0PR11MB8017:EE_
+x-ms-office365-filtering-correlation-id: 3672536e-dba7-4e55-503b-08db5772acd7
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: svgADzVIkG9Ipspkiub+OIQxikKpvfDv79yA952i59OUfKO043EbUFSGar3XJXCDqqDseu4E64H+S0YHJ1fsxd78jL56YL9pjiahzM/MqdIg63n9IUOmotJUIh9ws18EJbfhrEiWXTXerLsg8YONyoEVoQmtgPLzB0DlM621C8FZv6uLxhUXYnzPvT4RDj9SrV7nHBdIv+yxsgzeSrBh6CSVb0u6Yo8Ls2Tazoy5JKJm2cE0pRcnApdpqvO2Ur/sotkXL/eVPnY/yh0bKRySPm2xtQxbM1ILnIaXbPaOCOr/ibwbAO+PdoAXBc9hANHW44+zE/8cVY1Gg40aI5Wsm2qGVajZcFY3xZd24+F0eioNPoBIohcwHrnFrQy1oO5Gngym1ONoDUUGUH25awXaURoPP3/6cOY2G7UvtBhc7J18uxxXCQRltsPliYiy7DeE6wL/SRLtSrbVcGjAt9eYbwLoZOGl+oIt9JHlDgIvKcIW6c9azOsXvJBMOAAp1d/77uyAA7lsyf89wy0RFsIdioE1PShoHcHjO+t/i550COWBMTig6Lr2A9klgFziXS1tThwim7M2dA1i7X4EAcabYOs6biIdZ3sYIB+i+iN3t3JXaOOunHqbA4okXSglCDpgHGKkKdVRaXH21UPhpl1SAh60SLtCD3+HQIFfjG2jSe6wBXK+5AZcSY+7hOeTcWjocifJ7qU2AzpVHwhP8mglLw==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR11MB7648.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(376002)(39860400002)(136003)(396003)(346002)(366004)(451199021)(110136005)(2906002)(91956017)(41300700001)(316002)(54906003)(478600001)(7406005)(7416002)(7366002)(31686004)(71200400001)(6486002)(66946007)(8676002)(66446008)(4326008)(8936002)(66556008)(76116006)(66476007)(64756008)(5660300002)(6506007)(26005)(53546011)(186003)(2616005)(83380400001)(36756003)(86362001)(38070700005)(921005)(38100700002)(122000001)(6512007)(31696002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?NzMzNFdsSHRwLys1eVpQVE4wRFNBbVlBOTNoUXlab0ptZHcxa3lOQUZsa1Rv?=
+ =?utf-8?B?dGJ4dmhNb3N3Tlo5Mmsvd29RZk5lZ2F4czgyM05Ed1F4TUJSbXArK0YvMWtu?=
+ =?utf-8?B?UFV1M3BCY1o5VkhwV0xvYnp3TzVLUFlsNHNJcnprRGJJVGFKS000K29mWnpB?=
+ =?utf-8?B?N2RBa01YMjVaWUJoTXd2K0htWTJUTml0bGNZWHZsZDhWTnRrSS9waWppSEtF?=
+ =?utf-8?B?S2xhTWZyUEJuV1ZCQW5hRzdTdUU5MFBSV01odkJMWkZLaGxuUkd5QVJQSDUz?=
+ =?utf-8?B?aWlrZnY0R0hiTDQzWEw5SU44Wm1xTTFvbi9Ma1FHMFFzZ2phbGI0TjRYSXhy?=
+ =?utf-8?B?cDQ3QXpMc2pZMHhFNTFqUW5kZ3d1bE9IN2hlc2RFMzIyU3lWTU1lOGhKZExm?=
+ =?utf-8?B?ZlRENkkxelVOeWxIZzZKNEt0ZGVsNjJ0ZlhyQ245b1VpQ2tvaDV0ZjN3UWFo?=
+ =?utf-8?B?RktDRm1HSEowUDRZd1NaeFpNUWkzZGZiZ3J0WHNzYS9hRnV2MWduVnBmeWlL?=
+ =?utf-8?B?a2MrWkJjc3NhYkxCTDlab0tBVjBtVnFUbWJVdVRtaVBmd1p1dERBRVRyYUtL?=
+ =?utf-8?B?Mk9xVWhNRlBJMStMVzJqZnNxeThhcVhSL0UwYWhXK2hwTzJaZm1FRWJQUk5M?=
+ =?utf-8?B?TlREQ2Nra2lqOTJnSi9odnZTL3E5bTJuR1FGRFpPYUpXdlB1c2NIMGZYSVAy?=
+ =?utf-8?B?c1dpM0Z6T3YyNlZ2MERiWkhBQTZwY2RORjhtZS80aUxwbDNYM0xzZnRhbXVh?=
+ =?utf-8?B?U2tnMTBxUFFxSUk2VW9MNkFRaXgzNTlyVXNERlQrQmVLVnk3QVdIaVJuWUF0?=
+ =?utf-8?B?WS9vTDc1KzlYTGs1OURwczdCOTZaYmwxQ2JMTjhQQ3E2bm1IVkIya3o3NGYv?=
+ =?utf-8?B?SGk5Mk53MFFELzF6WndITGFSd00vRGFTbUp5VHIxMHpQeXpsVnIyZWxWaklN?=
+ =?utf-8?B?dXRiUDdnRmVvVzBrUUZyUDBMZVR1UUhweEpTalFzeFNjQlprUk9OZndBTnh3?=
+ =?utf-8?B?eGNEbGZ1Y0RVTjBEV1dSaUlrcVhENnFRRjhQTDJrN3dRS1BJNE51RGZBSk5D?=
+ =?utf-8?B?MngySjVEVlc0eTZQVURqUnM4UjdleUc3OVY0WVdtbnZBVXVYa0IvbHFUeG9G?=
+ =?utf-8?B?ek43VFVzaEltdXhKZkVqMENPb1FHZll2Z0ZKbm5uaXloT0xoUDBvQW9QQ3Mv?=
+ =?utf-8?B?VjhEdDd0SEt1Z1VnRFRaS0FZL2crYTYvWFJsL0t4R0g3NGZKOWFmYTQ5bUxU?=
+ =?utf-8?B?NHZVZVI0SzNkVm9KVmV5U0ptaDE3QStOcUlDVGdPYTNucldjcnRReUxUdEtx?=
+ =?utf-8?B?TWliUVpxN2wremllZUMwY3ZpdmQweXBaamFRV0IvT0FOZklCdVA0ZEJFUnpt?=
+ =?utf-8?B?R00zTlkvMkNJclhnV3JTOUJQMDZab2Q5OUg1R1dSQkljSXVGUWpJeFVxa2Za?=
+ =?utf-8?B?d0ROL2lPdDljb1pWOVJ3SEhUL0xVSmRtYitSZGdXcTZVdFE2bW5WVmt6QjZz?=
+ =?utf-8?B?SHYwK0RaVVR3dERQeDRBa1VwNnR3ckdzVUN2UE1kR1QraUF1M2Y4RC9Hanhn?=
+ =?utf-8?B?Mkx6eUFaMGVZbnpySzM5YUorTk1JVEg3cVI4VVYxS3ZsY3FMeWNsZS90UTZt?=
+ =?utf-8?B?ejhnWXVaV2I4d2I1a0NydnlNcksxRHpaR1plOTN4dUttenZpdWxPM2ZnZE8r?=
+ =?utf-8?B?Y0FaQlRQeFB2R01oaERHYW5rU05MSm5yMVdEbE9Hek94eEFPZnRaRnd2eXNw?=
+ =?utf-8?B?ZVNPSUVCUTFDcmRTWXBsVGlxbEdncHNWZzdkaE1IeTl5d21XZkRaaEhZZTRU?=
+ =?utf-8?B?eG5ZWEprd2U2VWdMNk83Wk41REpzTm5sdnRrMmVEK1M3ZG1TL210TzYwR29J?=
+ =?utf-8?B?WmEya1NwUnBzN1VlS2NZUDlrQ1Q3K1JqZExEUDlwVGNhNm1iaVJKR29jaUdW?=
+ =?utf-8?B?eXNXQVR5c2IxQnVWdnNxT1J4Q094Z1FOTlV0clEvY01XTUFrcTlsQzVsclRO?=
+ =?utf-8?B?TFY3THROajlPTWs4dVpRU0IrZnpVSVgzSHgzM0RBbmttREhweDE5aG9aU1Fw?=
+ =?utf-8?B?T2E5b0IzTk9Ga0M3Rm9vZCtCYVAxN2d4OUdDOCtTbTYrR0phRGRhQzJkN0pi?=
+ =?utf-8?B?M2R3Tk85VWhYRnlYSXNJUm9wV0VNZ1dvYUpKUFVBbXk1YzhjVEFwdm5zZURV?=
+ =?utf-8?B?b1E9PQ==?=
+Content-ID: <124125420FC9B54DBBBC21352E2305E4@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SJ2PR11MB7648.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3672536e-dba7-4e55-503b-08db5772acd7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2023 07:37:03.9669
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 4zsk8Js+16+SoYb2hQiTld5L1rVJrJvdp893c3J0N/+wKa4SUiHxoy/6uR9hQJsSJNQPBPfK4icBzLr8PW6Ih8x4aPRr+3Yqet0MM2GNA7o=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR11MB8017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230517_110117_315618_03D27F84 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230518_003730_338097_C24B0F86 
+X-CRM114-Status: GOOD (  28.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,24 +198,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/05/2023 17:05, Bhupesh Sharma wrote:
-> 'qcom,msm8996-qmp-usb3-phy.yaml' defines bindings for several PHYs
-> which predate USB -> USB+DP migration. Since SM6115 and QCM2290
-> nodes for USB QMP phy are being added to dtsi files by followup patches,
-> move these bindings instead to the newer style
-> 'qcom,sc8280xp-qmp-usb3-uni-phy.yaml' file.
+On 04.04.2023 13:10, Maxime Ripard wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 > 
-> Since no device trees use these bindings presently, so we have no ABI breakages
-> with this patch.
+> The SAM9x5 main clock implements a mux with a set_parent hook, but
+> doesn't provide a determine_rate implementation.
 > 
-> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> This is a bit odd, since set_parent() is there to, as its name implies,
+> change the parent of a clock. However, the most likely candidate to
+> trigger that parent change is a call to clk_set_rate(), with
+> determine_rate() figuring out which parent is the best suited for a
+> given rate.
+> 
+> The other trigger would be a call to clk_set_parent(), but it's far less
+> used, and it doesn't look like there's any obvious user for that clock.
+> 
+> So, the set_parent hook is effectively unused, possibly because of an
+> oversight. However, it could also be an explicit decision by the
+> original author to avoid any reparenting but through an explicit call to
+> clk_set_parent().
+> 
+> The latter case would be equivalent to setting the flag
+> CLK_SET_RATE_NO_REPARENT, together with setting our determine_rate hook
+> to __clk_mux_determine_rate(). Indeed, if no determine_rate
+> implementation is provided, clk_round_rate() (through
+> clk_core_round_rate_nolock()) will call itself on the parent if
+> CLK_SET_RATE_PARENT is set, and will not change the clock rate
+> otherwise. __clk_mux_determine_rate() has the exact same behavior when
+> CLK_SET_RATE_NO_REPARENT is set.
+> 
+> And if it was an oversight, then we are at least explicit about our
+> behavior now and it can be further refined down the line.
+> 
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 
+Reviewed-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Tested-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Best regards,
-Krzysztof
-
+> ---
+>  drivers/clk/at91/clk-main.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/clk/at91/clk-main.c b/drivers/clk/at91/clk-main.c
+> index 8601b27c1ae0..e04e72394632 100644
+> --- a/drivers/clk/at91/clk-main.c
+> +++ b/drivers/clk/at91/clk-main.c
+> @@ -533,6 +533,7 @@ static const struct clk_ops sam9x5_main_ops = {
+>         .prepare = clk_sam9x5_main_prepare,
+>         .is_prepared = clk_sam9x5_main_is_prepared,
+>         .recalc_rate = clk_sam9x5_main_recalc_rate,
+> +       .determine_rate = __clk_mux_determine_rate,
+>         .set_parent = clk_sam9x5_main_set_parent,
+>         .get_parent = clk_sam9x5_main_get_parent,
+>         .save_context = clk_sam9x5_main_save_context,
+> @@ -565,7 +566,7 @@ at91_clk_register_sam9x5_main(struct regmap *regmap,
+>         init.ops = &sam9x5_main_ops;
+>         init.parent_names = parent_names;
+>         init.num_parents = num_parents;
+> -       init.flags = CLK_SET_PARENT_GATE;
+> +       init.flags = CLK_SET_PARENT_GATE | CLK_SET_RATE_NO_REPARENT;
+> 
+>         clkmain->hw.init = &init;
+>         clkmain->regmap = regmap;
+> 
+> --
+> 2.39.2
+> 
 
 -- 
 linux-phy mailing list
