@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96D00C77B75
-	for <linux-phy@archiver.kernel.org>; Fri, 19 May 2023 17:48:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99E9DC7EE29
+	for <linux-phy@archiver.kernel.org>; Fri, 19 May 2023 17:50:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w2S4Cdc36LsmuZnC+Q3Ib+OIPcrL06RtkJCctNSUqgo=; b=YP3wR3lAOAkLCU
-	FoiNC8uW/AAT44e5uk8goKapP4IPH5wND1BlTQRIjbUo435CWGkubBGaLKYn0UowdcA7mS7KHrb8t
-	QQbokH5nNtGiLAU0vYq609Jts4u/0AjvgdutTHi2u1zlEc/nDQaXcDRFBj+GatUS+Q2bPcteEzSet
-	xbndcdhFuN7k+5eB8yQiXrHw3zgi8E7Z7HXrjLkQzGVBAENJ1kJLZD1Qbp4EEOs2uN2LlwTVhpyN3
-	7liwHwqM/urBpQG/BfLlEJeiTWWCwULCLjvikktuZP+qXmioPSy7jfNabWOxcYDBO4dHWVVwO9BQv
-	gET6HRD42WRnO2DZxPLg==;
+	List-Owner; bh=fQaJf9NPwRbb/Ie3v3KL8bbs9S0Uk2+/6jCNyqi82as=; b=RgfqYpr2u9FGq4
+	6mkqylQhd3sw3B5+JtoImpiLqUg1fXZCwTeKI7rHAVShJbiV2gxs5YJfyWIsuVz7C/BtoV2ra4K9/
+	k46vDgaf4nDsw3Ei1Uwl/RVKLBre37kbL4Krjx2H6l4gpOfWsbzAJhHhYLYvip6dR7EtyqbU3+xZX
+	QKKxI1s7ZA1LiMdQAyf6vYWw3uo1ogrd5m2Cd6FYGfapOk2cgIXsgGeB7XNkimn0Oiw+WAA+EVCTY
+	A5/9SEPM/SLOdnTJ5udanpAzBBiOA+9Y0RH2g4NO35SDEwXMxdP6FBCdZUm6y6eMJnRqddrCpwU8K
+	I+Tv51zdG0LcSvPWIGow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q04Dc-00Gua2-0r;
-	Fri, 19 May 2023 17:48:44 +0000
+	id 1q04Fd-00Gulx-0b;
+	Fri, 19 May 2023 17:50:49 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q04DY-00GuZP-0E
-	for linux-phy@lists.infradead.org;
-	Fri, 19 May 2023 17:48:42 +0000
+	id 1q04FZ-00Guko-2U;
+	Fri, 19 May 2023 17:50:46 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6A38360F00;
-	Fri, 19 May 2023 17:48:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06B0FC433EF;
-	Fri, 19 May 2023 17:48:37 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4CC4861625;
+	Fri, 19 May 2023 17:50:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0031C433D2;
+	Fri, 19 May 2023 17:50:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684518518;
-	bh=MpiL+YCRJdZiqq849A/3vM4VGc/aBh9GjJgAruPcz+Y=;
+	s=k20201202; t=1684518644;
+	bh=GPLFQUmxCW4bUicLJ/JTla9Va0nrQXI6jzLWU84kVj0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hCTKz0Nhju9Ju4Z89uDp5CEo+bqaKivicq3EDMZj7+vP3h6pl3I1I6LWN8D9voIMc
-	 rQnwWcltGyW5cdu11CI90EAg8fKBjL0840p/XZyt+W2UAmmTjjaEhKe11KwxvaV6Dt
-	 zaZkZiwPIlllWslaBF38iIChk/cZ4MLRqdT56FamdMN8THLCQZ72RvBBheXPT/ZlG/
-	 ifhf2ZF38L+c4QuOJVS58TI65i15Qh334ag4Frap8VSZk3fM14RRBTjD0CrfYZ70s1
-	 GNsw97anaEfY1i7rVMlDakfWD7FERoq5B6HuUq5CMiimWM8JeHggewlp2pbMNunwsq
-	 Uttqd5DTrUMNw==
-Date: Fri, 19 May 2023 23:18:34 +0530
+	b=P89LfOQ+XOErPOdtV8bhG9xzgiKXghm8H2q6uQNtYG650FHlc9HJg1PuIh1yXcqDg
+	 4mwaae8YJ8l/VWyRWqjj3CjHaJq2aksXStKDsyn/bGcu1s2eh32TZg6AVUWHJLYLR4
+	 hvRwpGWFVvH14yn5xg8M1LD4sub11XzJVjtPdbpkTcq2DMCP0+FfxnVfbKoKrokke+
+	 Ce/I9dfisfgfn8NHOYtZUcK7jDqle+4r+sg4EcuYybeqjdFIZ8lSvSOaxOv+GbcJTt
+	 0nlZutyavvq3k9GNG40adWPJzyKTq6t2Pf2L/e8chmdHt+TutZGmMeOGboJU17PtHD
+	 2eo76Zzev4EiA==
+Date: Fri, 19 May 2023 23:20:40 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Johan Hovold <johan@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+To: Johannes Zink <j.zink@pengutronix.de>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 0/8] phy: qcom-qmp-combo: Support orientation switching
-Message-ID: <ZGe2cjmja4KGr05r@matsya>
-References: <20230515032743.400170-1-quic_bjorande@quicinc.com>
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>, Li Jun <jun.li@nxp.com>,
+	patchwork-jzi@pengutronix.de, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Haibo Chen <haibo.chen@nxp.com>
+Subject: Re: [PATCH v2 0/2] Add phy tuning support for imx8mq-usb
+Message-ID: <ZGe28E0CXaJv3eKk@matsya>
+References: <20230516-lustige-usb-phy-dinge-v2-0-3383a0de34ac@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230515032743.400170-1-quic_bjorande@quicinc.com>
+In-Reply-To: <20230516-lustige-usb-phy-dinge-v2-0-3383a0de34ac@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230519_104841_792556_3437F730 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230519_105045_875248_1F230514 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,12 +82,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-05-23, 20:27, Bjorn Andersson wrote:
-> This adds support for USB and DisplayPort orientation switching to the
-> QMP combo PHY, as well as updating the sc8280xp devices to include the
-> QMP in the SuperSpeed graph.
+On 16-05-23, 18:20, Johannes Zink wrote:
+> This series adds support for USB phy tuning parameters, which are
+> required for meeting USB certification and EMI qualification.
+> 
+> Patch 1/2 adds the required properties to the fsl,imx8mq-usb-phy
+> devicetree binding.
+> 
+> Patch 2/2 adds the phy tuning parameters to the phy-fsl-imx8mp driver.
+> This patch is ported and cleaned up from the downstream Freescale vendor
+> tree.
 
-Applied phy patches, thanks
+Applied, thanks
 
 -- 
 ~Vinod
