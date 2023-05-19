@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F88EC7EE2A
-	for <linux-phy@archiver.kernel.org>; Fri, 19 May 2023 17:44:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96D00C77B75
+	for <linux-phy@archiver.kernel.org>; Fri, 19 May 2023 17:48:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JpTXBuB4umWAzMY04xT+gFBmrRaTa6eNYLx7PMlizBk=; b=tGDSbmIQcdRWgO
-	ToIN/bSFZMO9XdZCMrADwq//wv8qGDonYlOYGb9ChPXGRACpxV8XrGZBmmgaVxwVTF/MwrI2Id0Ag
-	mk0MonFoTuCl9ck+PjgTWWJqdxLxC4QKaP1T4WO0lnduE+RONKP5LHOLiy5A1jghwf9vSICa4+1Sy
-	EgK38I3THwsvbDEn5C6TWtyG7TmmO88Ae1LCa9vH0Qll2wNntkr2VY4++yW4VapNn2fBujbpKRci3
-	391bPfApGQaUnbnRj+986n+HEiUBDBc4cLNx2k3xASheD1NzJCtroL2dzaruRGXAPnF78VWXY1EDW
-	ADbLIVG2Ogkx+Au2KUcQ==;
+	List-Owner; bh=w2S4Cdc36LsmuZnC+Q3Ib+OIPcrL06RtkJCctNSUqgo=; b=YP3wR3lAOAkLCU
+	FoiNC8uW/AAT44e5uk8goKapP4IPH5wND1BlTQRIjbUo435CWGkubBGaLKYn0UowdcA7mS7KHrb8t
+	QQbokH5nNtGiLAU0vYq609Jts4u/0AjvgdutTHi2u1zlEc/nDQaXcDRFBj+GatUS+Q2bPcteEzSet
+	xbndcdhFuN7k+5eB8yQiXrHw3zgi8E7Z7HXrjLkQzGVBAENJ1kJLZD1Qbp4EEOs2uN2LlwTVhpyN3
+	7liwHwqM/urBpQG/BfLlEJeiTWWCwULCLjvikktuZP+qXmioPSy7jfNabWOxcYDBO4dHWVVwO9BQv
+	gET6HRD42WRnO2DZxPLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q049Y-00Gtio-0m;
-	Fri, 19 May 2023 17:44:32 +0000
+	id 1q04Dc-00Gua2-0r;
+	Fri, 19 May 2023 17:48:44 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q049U-00Gthn-2X;
-	Fri, 19 May 2023 17:44:30 +0000
+	id 1q04DY-00GuZP-0E
+	for linux-phy@lists.infradead.org;
+	Fri, 19 May 2023 17:48:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1A0CA60C78;
-	Fri, 19 May 2023 17:44:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9E54DC433D2;
-	Fri, 19 May 2023 17:44:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6A38360F00;
+	Fri, 19 May 2023 17:48:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06B0FC433EF;
+	Fri, 19 May 2023 17:48:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684518267;
-	bh=4g8OqdutIps7VawfkwADZsolWCHLUkVTD2tZ2EN5CEk=;
+	s=k20201202; t=1684518518;
+	bh=MpiL+YCRJdZiqq849A/3vM4VGc/aBh9GjJgAruPcz+Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tDGdGSvnlVWsmUkEn52K7K/O5LispEQrhycaR9lIiZr/ew2psx/UIjRdWecIe5PIY
-	 s0hjY27ZXZvxbY6F+a3mNdyF/BLDvgXG5SvATuaBt326RCmAvbJ6M/9gvaRrnRJBpy
-	 Z+coKW6MGJXUeAAhAFXhHoS1XnqJ1Q2UdTR5FdQ4WzkzNJNUuPORw3oD72++KkcMJk
-	 e8dhkpnKCG2vAV75yneUWoI/8hiDmDma0nBlcFBAg63ch/rCDa4ATyyONKA/3MFzkg
-	 RDi89A/fmnD3nZJAq1he3sVixBfAz2JMmsCBzJ9O3cLlovAWSlSx14MKHHoyjvuJ1b
-	 g8jlrkGBf4imA==
-Date: Fri, 19 May 2023 23:14:23 +0530
+	b=hCTKz0Nhju9Ju4Z89uDp5CEo+bqaKivicq3EDMZj7+vP3h6pl3I1I6LWN8D9voIMc
+	 rQnwWcltGyW5cdu11CI90EAg8fKBjL0840p/XZyt+W2UAmmTjjaEhKe11KwxvaV6Dt
+	 zaZkZiwPIlllWslaBF38iIChk/cZ4MLRqdT56FamdMN8THLCQZ72RvBBheXPT/ZlG/
+	 ifhf2ZF38L+c4QuOJVS58TI65i15Qh334ag4Frap8VSZk3fM14RRBTjD0CrfYZ70s1
+	 GNsw97anaEfY1i7rVMlDakfWD7FERoq5B6HuUq5CMiimWM8JeHggewlp2pbMNunwsq
+	 Uttqd5DTrUMNw==
+Date: Fri, 19 May 2023 23:18:34 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: devicetree@vger.kernel.org, fushi.peng@nxp.com, imx@lists.linux.dev,
-	kernel@pengutronix.de, kishon@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, robh+dt@kernel.org,
-	s.hauer@pengutronix.de, shawnguo@kernel.org
-Subject: Re: [PATCH v5 0/6] phy: cadence: salvo: some fixes and workarounds
-Message-ID: <ZGe1d/8tGGl+rTNa@matsya>
-References: <20230517161646.3418250-1-Frank.Li@nxp.com>
+To: Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 0/8] phy: qcom-qmp-combo: Support orientation switching
+Message-ID: <ZGe2cjmja4KGr05r@matsya>
+References: <20230515032743.400170-1-quic_bjorande@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230517161646.3418250-1-Frank.Li@nxp.com>
+In-Reply-To: <20230515032743.400170-1-quic_bjorande@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230519_104428_872871_6EC6EAEE 
-X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-CacheID: sfid-20230519_104841_792556_3437F730 
+X-CRM114-Status: UNSURE (   8.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,18 +80,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-05-23, 12:16, Frank Li wrote:
-> 
-> Sorry I have not realized some patches were missed at upstream kernel.
-> Version number continue with previous
-> https://lore.kernel.org/imx/ZGOCT0Mdg3Jtar6c@matsya/T/#t
-> 
-> Peter's Fixes:
-> - Bist issue
-> - fix corrupt package from devices when start transferring less than 20us
-> - fix the FSM in controller seeing the disconnection at L1 use case.
+On 14-05-23, 20:27, Bjorn Andersson wrote:
+> This adds support for USB and DisplayPort orientation switching to the
+> QMP combo PHY, as well as updating the sc8280xp devices to include the
+> QMP in the SuperSpeed graph.
 
-Applied, thanks
+Applied phy patches, thanks
 
 -- 
 ~Vinod
