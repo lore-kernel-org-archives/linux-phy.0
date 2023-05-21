@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A977C7EE30
-	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 21:45:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A29F8C7EE2E
+	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 21:45:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ON1r9u6p/y22qQ+d0oplGcbRxBaFN4rIbzo4VJogQ8=; b=I2zN90ia2FrPe8
-	ql43hjvUZtMVgGLwmBPycShqmFyn20UW686RJBBMP8zcgoJsLslRj4jSm3c4teTtDwupowhjgbSvI
-	tcm0op7Gd/yqNmMqq61YS06nwG7JtMJpEfcuhdA7XV0YygbievAlc7fkIzk58a9EQXvGJF6xp5/RY
-	MymcD6O2eZjqWxUngQj2nb7OzUkcZ2keTL7CuP23x6BjyYDTOH8spuFf6U+k8GHw2QYdDJts9PYsV
-	5rV2dgEwX69bjKVf1lt+U41R1XsNm5/m+dC64e0n/O2Vga3oNQlE7VvjrHmc+DpUt25zYNDulQ4Q7
-	Pxfq41CmaGSwKtqZjVgQ==;
+	List-Owner; bh=j2EtaAekkrjoQ5OcRJI/lMYU5f07JQCHe4Ajb67Gjow=; b=z5Mp7UazX/vNuE
+	04NgNrSqQTD7/afaU5GjCMZOXAL8ctIIIyxMUMOsK1RgN3Kv38cbVRIA5ksc6YBIQsa8vziiAyVaT
+	afS6tryxqOsjNYL1v7zMgMDRuR81RyashVQ8M/WjXWe+fgXaY2WqOPcAQ1qYYWGbJ3ENUHpFniwe2
+	swv5FKFmxKSPdmrZhffkSPskLAo0B6bm0sKfTfxh0cD8OshuZTw1X8DFp7E037gRkmvcfZDqDAmcA
+	bAdeFdtz0Z9FxYo4aNvMc/15rydUk16LfMqJTK1BrbzsSYC6ct0NI9kbDf8fRti3umtaP0pGebzxY
+	3PrroLKL5zGOhth3f9Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0qrX-004itc-2g;
+	id 1q0qrX-004itC-0m;
 	Sun, 21 May 2023 21:45:11 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0ppE-004cwo-18
+	id 1q0ppB-004cv5-1C
 	for linux-phy@lists.infradead.org;
-	Sun, 21 May 2023 20:38:45 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-4f3b4ed6fdeso1791993e87.3
-        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 13:38:42 -0700 (PDT)
+	Sun, 21 May 2023 20:38:43 +0000
+Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-4f3a99b9177so3914163e87.1
+        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 13:38:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684701521; x=1687293521;
+        d=linaro.org; s=google; t=1684701516; x=1687293516;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6Kd0Grqe79UZr596KesxYlHc6g9tfq6ax8GIQassp/A=;
-        b=rxwteexP+1nh6CjONIZr5CpVVFrMfvmp1jO6T8LthurqFa/1msDZ5g/8CDZHX9ysh2
-         zsJ0Exm/Pe6SyyKSjSrdJZVVitQCfZGoboVC/9inP693w47iZAYjJXFUimeF/t1F3Wlj
-         W0S+nbNPn2IJv28N4YcGKdZbr3Z6cHbs9s6EZvy9nBgXTXnVrk4+dw01cpQIW7rkSETJ
-         ZxufG8BpzKu0VCjwQ4FRgnJHYuHAOPHbch58CiwvTpARj2C1xsQNz+GUMkLQ0DtHbKua
-         kMcX0XciDaVoXxq/V82P1VB8ocJ3A0qbOIXbKMLS6YQZcxccycNwB9YghASuUIq7b/qX
-         qg7Q==
+        bh=Slr3GnICx5gXezzI7sSV6PN44KGk90bj6tbLcS3JUYM=;
+        b=l1aPQ1r83xE9GCTU6l/6+HYUAv7i8UtScW5WKma4YqW7d0lSKQM7+93xatmVfBsXJz
+         tK3+FsfBVK1fXmW822ltHY5+4O4iihVybzbhAPwicha5PUui2WDpZRD2SZxS2qMKtKzn
+         7J7v1vLxnh/6LYb4AGp9Da1uvikGdZj7KR7ZCL1y2vs4Slrwz+xbKIBez12eSX51V4zH
+         v5Wg6R0NPptcnwnGd+HEDnawbsxesJsLzLiD6ztGI8FljUR4+SY5wX4IxnF4qGI3i3hR
+         DE1Ym6Cza2reDpP+FZbUcNmHHzqd/n4Hhouiy77Y5KFLva/UIMr5Bpp3qmSFDL6dKPbA
+         HlNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684701521; x=1687293521;
+        d=1e100.net; s=20221208; t=1684701516; x=1687293516;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=6Kd0Grqe79UZr596KesxYlHc6g9tfq6ax8GIQassp/A=;
-        b=FXibscjW4TdTCWfMflx5/g88+o9lMm3ZqoDXbbr043E/wIjmJHzH0OegduZhiqPedr
-         za0b88ulT1iOt2Wiv1shH40+fixHIELby1fyvTCpKgKvY7Et6MUpmgUd3ASbfNF6akqo
-         v9/+Z9bLuLtbwTk7R/jnK+JkKNzBcOFmaaNhnaAF1WZoGMTaJq7S0su1hy+koYDWZeFF
-         JTMmdBHvOo+2Gwn/K/qQzh0+8bfoz8pgnv3KOpgSS4RQvu/FSAyiyhhiUCDHy9NNtDcp
-         xKzbUr7WgprD4C/9o9lC1JWKH6ozLT5XgMpP4MVWRd1fOE7C/Nh+oSjC+EdnDyVc12ro
-         6GNg==
-X-Gm-Message-State: AC+VfDwG9mOTjug7TOIh/n9y/zmKINgxw/PlFPFKlkcFzFAfxcnfI1VD
-	OzTiSWCHImIXLfrwO5TnF2AC7Q==
-X-Google-Smtp-Source: ACHHUZ4XLF3qbBUiVvvYU3ykQWv79zMtchpy1NLZ2gOLLFNpRC22jZoi5ayM3bowdGVsfAq8TwhW8Q==
-X-Received: by 2002:ac2:5581:0:b0:4d8:8ad1:a05f with SMTP id v1-20020ac25581000000b004d88ad1a05fmr2820050lfg.48.1684701521550;
-        Sun, 21 May 2023 13:38:41 -0700 (PDT)
+        bh=Slr3GnICx5gXezzI7sSV6PN44KGk90bj6tbLcS3JUYM=;
+        b=LyRRmEg65IVQNubcjciiKzMrOgeRJ/DDfyRIAmwNrozGN3J+adkTfttEmClwFQKqlo
+         nhTcBKNAG89dWS0eKf0845bwuUP1CAdzdDkUvC5iHXYPyw00F07I/xiNQw0dOZ3hAY11
+         Zll8SlPX8p1sytuF6Lza+00LnvhsLHcWMCpW9VjRne1BR+FTcdVUsWnZxb+VinPm8tBQ
+         MABf0bE9qJeP1xSlGchn0ZxNnCSWATF6rC8mkst+QwaYIPToIJOub0/31eLM4Fvq2ly7
+         zsGV96/W6mRVgeZNibxvk54XGJeaHISd9Yl94ek2P6tTYvdndJ2f2+DpiS3PKREU45Fc
+         vOKg==
+X-Gm-Message-State: AC+VfDwH8vYbBRka97aIjyv7dlSiua5/QA34bWBIaBbx4ANzLc280VQS
+	jCWyvX7Y5ip3wMDPzvq4IWrF7w==
+X-Google-Smtp-Source: ACHHUZ7SOaSNJDAtGaf6bl86cBy1ZE/pwyq93NeATZgzra5b6UukxF0wZriV+5tbaCRbJ5YvCCb1Ug==
+X-Received: by 2002:ac2:5329:0:b0:4ec:363a:5f24 with SMTP id f9-20020ac25329000000b004ec363a5f24mr2198661lfh.23.1684701516022;
+        Sun, 21 May 2023 13:38:36 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id a15-20020a056512020f00b004f3886a63d1sm718894lfo.298.2023.05.21.13.38.40
+        by smtp.gmail.com with ESMTPSA id a15-20020a056512020f00b004f3886a63d1sm718894lfo.298.2023.05.21.13.38.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 21 May 2023 13:38:41 -0700 (PDT)
+        Sun, 21 May 2023 13:38:35 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -75,17 +75,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	Johan Hovold <johan@kernel.org>
-Subject: [PATCH v2 08/11] arm64: dts: qcom: sm8150: switch UFS QMP PHY to new style of bindings
-Date: Sun, 21 May 2023 23:38:31 +0300
-Message-Id: <20230521203834.22566-9-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 01/11] dt-bindings: phy: migrate QMP UFS PHY bindings to qcom,sc8280xp-qmp-ufs-phy.yaml
+Date: Sun, 21 May 2023 23:38:24 +0300
+Message-Id: <20230521203834.22566-2-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
 References: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230521_133844_388963_E82DD30C 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230521_133841_440746_792F1F18 
+X-CRM114-Status: GOOD (  10.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,60 +101,358 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change the UFS QMP PHY to use newer style of QMP PHY bindings (single
-resource region, no per-PHY subnodes).
+Migrate legacy bindings (described in qcom,msm8996-qmp-ufs-phy.yaml)
+to qcom,sc8280xp-qmp-ufs-phy.yaml. This removes a need to declare
+the child PHY node or split resource regions.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8150.dtsi | 20 ++++++--------------
- 1 file changed, 6 insertions(+), 14 deletions(-)
+ .../phy/qcom,msm8996-qmp-ufs-phy.yaml         | 244 ------------------
+ .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |  48 +++-
+ 2 files changed, 45 insertions(+), 247 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index e2e210e10475..98fd356e87e4 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -2019,7 +2019,7 @@ ufs_mem_hc: ufshc@1d84000 {
- 			      <0 0x01d90000 0 0x8000>;
- 			reg-names = "std", "ice";
- 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
--			phys = <&ufs_mem_phy_lanes>;
-+			phys = <&ufs_mem_phy>;
- 			phy-names = "ufsphy";
- 			lanes-per-direction = <2>;
- 			#reset-cells = <1>;
-@@ -2064,10 +2064,8 @@ ufs_mem_hc: ufshc@1d84000 {
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
+deleted file mode 100644
+index 80a5348dbfde..000000000000
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-ufs-phy.yaml
++++ /dev/null
+@@ -1,244 +0,0 @@
+-# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+-%YAML 1.2
+----
+-$id: http://devicetree.org/schemas/phy/qcom,msm8996-qmp-ufs-phy.yaml#
+-$schema: http://devicetree.org/meta-schemas/core.yaml#
+-
+-title: Qualcomm QMP PHY controller (UFS, MSM8996)
+-
+-maintainers:
+-  - Vinod Koul <vkoul@kernel.org>
+-
+-description:
+-  QMP PHY controller supports physical layer functionality for a number of
+-  controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
+-
+-  Note that these bindings are for SoCs up to SC8180X. For newer SoCs, see
+-  qcom,sc8280xp-qmp-ufs-phy.yaml.
+-
+-properties:
+-  compatible:
+-    enum:
+-      - qcom,msm8996-qmp-ufs-phy
+-      - qcom,msm8998-qmp-ufs-phy
+-      - qcom,sc8180x-qmp-ufs-phy
+-      - qcom,sdm845-qmp-ufs-phy
+-      - qcom,sm6115-qmp-ufs-phy
+-      - qcom,sm6350-qmp-ufs-phy
+-      - qcom,sm8150-qmp-ufs-phy
+-      - qcom,sm8250-qmp-ufs-phy
+-      - qcom,sm8350-qmp-ufs-phy
+-      - qcom,sm8450-qmp-ufs-phy
+-
+-  reg:
+-    items:
+-      - description: serdes
+-
+-  "#address-cells":
+-    enum: [ 1, 2 ]
+-
+-  "#size-cells":
+-    enum: [ 1, 2 ]
+-
+-  ranges: true
+-
+-  clocks:
+-    minItems: 1
+-    maxItems: 3
+-
+-  clock-names:
+-    minItems: 1
+-    maxItems: 3
+-
+-  power-domains:
+-    maxItems: 1
+-
+-  resets:
+-    maxItems: 1
+-
+-  reset-names:
+-    items:
+-      - const: ufsphy
+-
+-  vdda-phy-supply: true
+-
+-  vdda-pll-supply: true
+-
+-  vddp-ref-clk-supply: true
+-
+-patternProperties:
+-  "^phy@[0-9a-f]+$":
+-    type: object
+-    description: single PHY-provider child node
+-    properties:
+-      reg:
+-        minItems: 3
+-        maxItems: 6
+-
+-      "#clock-cells":
+-        const: 1
+-
+-      "#phy-cells":
+-        const: 0
+-
+-    required:
+-      - reg
+-      - "#phy-cells"
+-
+-    additionalProperties: false
+-
+-required:
+-  - compatible
+-  - reg
+-  - "#address-cells"
+-  - "#size-cells"
+-  - ranges
+-  - clocks
+-  - clock-names
+-  - resets
+-  - reset-names
+-  - vdda-phy-supply
+-  - vdda-pll-supply
+-
+-additionalProperties: false
+-
+-allOf:
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8996-qmp-ufs-phy
+-    then:
+-      properties:
+-        clocks:
+-          maxItems: 1
+-        clock-names:
+-          items:
+-            - const: ref
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8998-qmp-ufs-phy
+-              - qcom,sc8180x-qmp-ufs-phy
+-              - qcom,sdm845-qmp-ufs-phy
+-              - qcom,sm6115-qmp-ufs-phy
+-              - qcom,sm6350-qmp-ufs-phy
+-              - qcom,sm8150-qmp-ufs-phy
+-              - qcom,sm8250-qmp-ufs-phy
+-    then:
+-      properties:
+-        clocks:
+-          maxItems: 2
+-        clock-names:
+-          items:
+-            - const: ref
+-            - const: ref_aux
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sm8450-qmp-ufs-phy
+-    then:
+-      properties:
+-        clocks:
+-          maxItems: 3
+-        clock-names:
+-          items:
+-            - const: ref
+-            - const: ref_aux
+-            - const: qref
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8998-qmp-ufs-phy
+-              - qcom,sdm845-qmp-ufs-phy
+-              - qcom,sm6350-qmp-ufs-phy
+-              - qcom,sm8150-qmp-ufs-phy
+-              - qcom,sm8250-qmp-ufs-phy
+-              - qcom,sm8350-qmp-ufs-phy
+-              - qcom,sm8450-qmp-ufs-phy
+-    then:
+-      patternProperties:
+-        "^phy@[0-9a-f]+$":
+-          properties:
+-            reg:
+-              items:
+-                - description: TX lane 1
+-                - description: RX lane 1
+-                - description: PCS
+-                - description: TX lane 2
+-                - description: RX lane 2
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sc8180x-qmp-ufs-phy
+-    then:
+-      patternProperties:
+-        "^phy@[0-9a-f]+$":
+-          properties:
+-            reg:
+-              items:
+-                - description: TX
+-                - description: RX
+-                - description: PCS
+-                - description: PCS_MISC
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8996-qmp-ufs-phy
+-              - qcom,sm6115-qmp-ufs-phy
+-    then:
+-      patternProperties:
+-        "^phy@[0-9a-f]+$":
+-          properties:
+-            reg:
+-              items:
+-                - description: TX
+-                - description: RX
+-                - description: PCS
+-
+-examples:
+-  - |
+-    #include <dt-bindings/clock/qcom,gcc-sm8250.h>
+-    #include <dt-bindings/clock/qcom,rpmh.h>
+-
+-    phy-wrapper@1d87000 {
+-        compatible = "qcom,sm8250-qmp-ufs-phy";
+-        reg = <0x01d87000 0x1c0>;
+-        #address-cells = <1>;
+-        #size-cells = <1>;
+-        ranges = <0x0 0x01d87000 0x1000>;
+-
+-        clocks = <&rpmhcc RPMH_CXO_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+-        clock-names = "ref", "ref_aux";
+-
+-        resets = <&ufs_mem_hc 0>;
+-        reset-names = "ufsphy";
+-
+-        vdda-phy-supply = <&vreg_l6b>;
+-        vdda-pll-supply = <&vreg_l3b>;
+-
+-        phy@400 {
+-            reg = <0x400 0x108>,
+-                  <0x600 0x1e0>,
+-                  <0xc00 0x1dc>,
+-                  <0x800 0x108>,
+-                  <0xa00 0x1e0>;
+-            #phy-cells = <0>;
+-        };
+-    };
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index a1897a7606df..d981d77e82e4 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -16,21 +16,31 @@ description:
+ properties:
+   compatible:
+     enum:
++      - qcom,msm8996-qmp-ufs-phy
++      - qcom,msm8998-qmp-ufs-phy
+       - qcom,sa8775p-qmp-ufs-phy
++      - qcom,sc8180x-qmp-ufs-phy
+       - qcom,sc8280xp-qmp-ufs-phy
++      - qcom,sdm845-qmp-ufs-phy
++      - qcom,sm6115-qmp-ufs-phy
+       - qcom,sm6125-qmp-ufs-phy
++      - qcom,sm6350-qmp-ufs-phy
+       - qcom,sm7150-qmp-ufs-phy
++      - qcom,sm8150-qmp-ufs-phy
++      - qcom,sm8250-qmp-ufs-phy
++      - qcom,sm8350-qmp-ufs-phy
++      - qcom,sm8450-qmp-ufs-phy
+       - qcom,sm8550-qmp-ufs-phy
  
- 		ufs_mem_phy: phy@1d87000 {
- 			compatible = "qcom,sm8150-qmp-ufs-phy";
--			reg = <0 0x01d87000 0 0x1c0>;
--			#address-cells = <2>;
--			#size-cells = <2>;
--			ranges;
-+			reg = <0 0x01d87000 0 0x1000>;
+   reg:
+     maxItems: 1
+ 
+   clocks:
+-    minItems: 2
++    minItems: 1
+     maxItems: 3
+ 
+   clock-names:
+-    minItems: 2
++    minItems: 1
+     items:
+       - const: ref
+       - const: ref_aux
+@@ -75,19 +85,51 @@ allOf:
+           contains:
+             enum:
+               - qcom,sa8775p-qmp-ufs-phy
++              - qcom,sm8450-qmp-ufs-phy
+     then:
+       properties:
+         clocks:
+           minItems: 3
+         clock-names:
+           minItems: 3
+-    else:
 +
- 			clock-names = "ref",
- 				      "ref_aux";
- 			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>,
-@@ -2077,16 +2075,10 @@ ufs_mem_phy: phy@1d87000 {
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,msm8998-qmp-ufs-phy
++              - qcom,sc8180x-qmp-ufs-phy
++              - qcom,sc8280xp-qmp-ufs-phy
++              - qcom,sdm845-qmp-ufs-phy
++              - qcom,sm6115-qmp-ufs-phy
++              - qcom,sm6125-qmp-ufs-phy
++              - qcom,sm6350-qmp-ufs-phy
++              - qcom,sm7150-qmp-ufs-phy
++              - qcom,sm8150-qmp-ufs-phy
++              - qcom,sm8250-qmp-ufs-phy
++              - qcom,sm8350-qmp-ufs-phy
++              - qcom,sm8550-qmp-ufs-phy
++    then:
+       properties:
+         clocks:
+           maxItems: 2
+         clock-names:
+           maxItems: 2
  
- 			resets = <&ufs_mem_hc 0>;
- 			reset-names = "ufsphy";
--			status = "disabled";
- 
--			ufs_mem_phy_lanes: phy@1d87400 {
--				reg = <0 0x01d87400 0 0x16c>,
--				      <0 0x01d87600 0 0x200>,
--				      <0 0x01d87c00 0 0x200>,
--				      <0 0x01d87800 0 0x16c>,
--				      <0 0x01d87a00 0 0x200>;
--				#phy-cells = <0>;
--			};
-+			#phy-cells = <0>;
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,msm8996-qmp-ufs-phy
++    then:
++      properties:
++        clocks:
++          maxItems: 1
++        clock-names:
++          maxItems: 1
 +
-+			status = "disabled";
- 		};
+ additionalProperties: false
  
- 		tcsr_mutex: hwlock@1f40000 {
+ examples:
 -- 
 2.39.2
 
