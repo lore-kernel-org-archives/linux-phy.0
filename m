@@ -4,79 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58BEEC77B73
-	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 21:40:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EC47C77B73
+	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 21:45:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z0I0Utlk5U+YZVEhCvv0kHS4AL7MaZRg/XB27lFh8TY=; b=ULKiirXMltmeGj
-	HcCpoP8UXzJQpIgv1Wrl+mVns98z3rqk3w3CbEh1fGr0uxzBUxT3KJwy2dzdzCncJlze+t1fHaK2s
-	6pwjYZAKnlMI8G+YEOV1pbnxd2229+1aB8LYL4g6bajc0GXs1uRAZRnHrKl4JJK4SK6/wVr36a9PZ
-	K9qNbtM3QAlrEjntFIjqFMD4w/qWzVQPT7xbAia++1CVeG8W1+bhqjrHII4Nv8j6wGMfTJIhIuH3y
-	a8keRj84Tq9fG+UcNTCKpTMh5etQlpn6fDZ2Y6LviEc0aLjR07epngf8/srryAWchFqoC8VuHgoP3
-	xUl2pFqh4QRDWPwwki7A==;
+	List-Owner; bh=ooLvKgAQeMy5DTOxWmR3W8XhFuKQdILGMPA9ee57GiM=; b=KXn0tJJ5D0rCB0
+	S/hE0cJW+AAkTQKtQZa5N/95/4rSp+UUsg+8HLkzj3QcIErqJq8jCY8euQ+lQ3xP1VspwnOWkDgnf
+	YxArM5Lo/cY4fNTTe7vnqZzcy2dz8aO+fl2PSdjlBU3yF0lBy4mrpfcMaFHX2zojzrKVoUMjfPttB
+	D1bu6K4cEvzRxV+7Nf33v6ctOX8Qcs6RbuJgtS3udyvQ43vbulmd/b6GO8AAFmfGpEq3K7Y8nkeod
+	DYGUkRa2GrVbmpJ6BHogdCasCBXgXvDAXArJotNXBn8GK3RcPgTQPibdNhE6XIYVHV+ZTmKgcZe9n
+	rneKrokAcr8828RiLKbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0qnI-004iXZ-0A;
-	Sun, 21 May 2023 21:40:48 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1q0qrW-004isI-0e;
+	Sun, 21 May 2023 21:45:10 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0qnH-004iXB-0I
-	for linux-phy@bombadil.infradead.org;
-	Sun, 21 May 2023 21:40:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=KYaAz3NVZWe0zOO/EfhBaHEvvJ4Fl+YGXj48Osn7Edo=; b=jEmZqN1A/LTFtjS/HbkvGUr0N1
-	2gn4ecyg8T4NieDnaB2/SyCRgNKmGhDPbL9GVjr6R98Y0Jh+/IkpDH4BaCvp7gJ/dCoZe5XuetVdB
-	G9EvCH/6Y16uYUvH6vOujpfgbIiAVoulkyTdpBCLMLaseA0sTirV1Is+LlDWZRn91b4HDtS0LIBE3
-	jdMcpVFlxc1KAjax43bps0z6ELMIcWsoKj1sysNHz7QzopU2KlMLq28Wb1TqBdTbjdVJHd3Nzuruh
-	DiQ2Sd5gh3iV/1JegebOw0c3TxDOrmEce5ZTn2ekIWXXif9XM2o9DYxu0iw8bhH2t9UF7jEbqf4e+
-	RsqmrGUg==;
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0ppI-000c0O-00
+	id 1q0ppA-004cvE-00
 	for linux-phy@lists.infradead.org;
-	Sun, 21 May 2023 20:38:50 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-4f3b314b1d7so2212231e87.1
-        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 13:38:40 -0700 (PDT)
+	Sun, 21 May 2023 20:38:41 +0000
+Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-4f4b0a0b557so285258e87.1
+        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 13:38:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684701519; x=1687293519;
+        d=linaro.org; s=google; t=1684701517; x=1687293517;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=KYaAz3NVZWe0zOO/EfhBaHEvvJ4Fl+YGXj48Osn7Edo=;
-        b=sR7CHc9NFCL6xeWYvz+Y/xARXTFWUKTj3HWQ/7hfvv7JM2K483X3rZJZgT46aS8ueY
-         Rk1TH0YBGD6ShGtxO9H0oppbeiBL3TfvuAecJwze1GT5QLoTpynprC9hEg0jCcBDaB6i
-         CoHB4gIFP37+DtsviszsHyo1RX7NxDZCS3cpcu488XdU6fo4lR5DWlAMFn5socxPt7GA
-         /4I7m+vVq8al+wGkzj86+3IQjvHTcM88AkxwLf5ceUybh+nfPpyRz4jGYwktx7gbA8NN
-         J52vYt/lFdN2c0MvOqHCKlUr53tXTHAaN/j3ip0rAXfeVgthtet4MldbVyGy76fBG3O6
-         dMMw==
+        bh=I68K3BB4iJfx3Xn7rbtjuQH5W+UC/hortCKGNEq34Zo=;
+        b=pj01oD/DhA4/PgO4feLJ8t9ehDOMDF2InPTck84lY5WdhFPA8dFrZ/0ZwtlIAfDSjo
+         mqftDUnLAWtwLc03DikoKEJwHtpN8uHlV3AG1YNFrFhjnNwnrGua0dC/WYiQ4BvLwp1X
+         zriZ3ePEj7338L1BODdoIY0T/530dQGyrKpPfVLFy9Eco0CbF1oZiloeo2l8iG7qVURP
+         Mmm0NPimncaMGDJhA32BYjTzQlw8TJxGhqLuSAZySBpn04KAnO0Ul2Uv0x34d8Ja5IzY
+         I+zHK4sAEIMe7l6focLM82i9Zr7tc/gpUeyjWT9HzhcIqcoBofD/dRjnl8xK7D/CYoqv
+         IlyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684701519; x=1687293519;
+        d=1e100.net; s=20221208; t=1684701517; x=1687293517;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=KYaAz3NVZWe0zOO/EfhBaHEvvJ4Fl+YGXj48Osn7Edo=;
-        b=GlXuPcYpIYgdgFozX9X3p+lHs8tSMiz7i5Xx7/qINFvdw4/RkBh5r+p+vsGw1fJoi5
-         GPnUnqpusD4IlEu7xeHadaUuflinfaKafqDIXOptqO3Sopx89BBEUd5gnwCSK62Q1WEe
-         7iDMLEFqrCewJbxMeW4GpjgJ+zWFdCKAu9mdg5s8We7DNc1+Q3ajumW3+dRVggaI1hmu
-         ikWHa9dFqLapuCIf5ym5pPySXjn2DtlQMHsoNzL+wjCXDi7DAxoYdzLk0FGc5/sz/jvj
-         30pkfW09mIvg6WoYHy4wzwhjmAiWh9DNFQB8vI1mXP429+7uqV+9YAEyNDfOb16PGixt
-         qxPg==
-X-Gm-Message-State: AC+VfDz4Nut0Fj+pUFuj+vnZ6fMQQIAy9FD6AKvNlhHW0U8rzjWxT97b
-	HV0RStvSjESHUIH9isKGElIXJg==
-X-Google-Smtp-Source: ACHHUZ6C8tWgxOGHMTlmqENwZasL+xWlLoCLFxFuVI754CJdE5URzzYz07ox43u2xCQDq9JfhZNXfg==
-X-Received: by 2002:a05:6512:376b:b0:4ef:f4ef:a1cc with SMTP id z11-20020a056512376b00b004eff4efa1ccmr2289426lft.14.1684701519210;
-        Sun, 21 May 2023 13:38:39 -0700 (PDT)
+        bh=I68K3BB4iJfx3Xn7rbtjuQH5W+UC/hortCKGNEq34Zo=;
+        b=Ue2fszdu0PlK/dLx7s39HLmmrHnXm1KhHAB9jK/1b5qSw5L2TYo069Ie5bnZ5lGPID
+         zGlc6O1seZFmkpuNc+54ujeHMFaJ/xeG6ou5Fb9mVnTvzrdpU47dt1jsyPH8oHQoV8m+
+         XW8jmn602c+ASVFmcYldasGWGvbr0vz84ERczVqre7ZDGAuMav6Ldn2JP0iFYGirzyr5
+         fwWRWOtjtE6PU0InakVNzvz5GHibyCEvu+ZZZskdjKZYC9VsdPAS0FYUQd6Hb4kBKOo7
+         9gtm8R3x7Osu9R/z1A9XJXBJPG66PC6YCwBUi8HidUYHNT1hlP+SCYNJCkQce9e/UvNb
+         inMw==
+X-Gm-Message-State: AC+VfDyVnR7xVgswkbvJyO8SryOtI3UmczCo4Ag+X2I+thKtaX2kBlpT
+	/BYL8YMxKhNQF1gvHzUOv+HhyA==
+X-Google-Smtp-Source: ACHHUZ5hmXRPSqTfhQ9vTSq3nxEv2YfyIpbFxNUWDGxjmKUkje/zdKG3uQ4BUNrsBSYS4rZq2NX4tQ==
+X-Received: by 2002:a05:6512:489:b0:4ec:9e40:e445 with SMTP id v9-20020a056512048900b004ec9e40e445mr2666873lfq.19.1684701517021;
+        Sun, 21 May 2023 13:38:37 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id a15-20020a056512020f00b004f3886a63d1sm718894lfo.298.2023.05.21.13.38.38
+        by smtp.gmail.com with ESMTPSA id a15-20020a056512020f00b004f3886a63d1sm718894lfo.298.2023.05.21.13.38.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 21 May 2023 13:38:38 -0700 (PDT)
+        Sun, 21 May 2023 13:38:36 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -90,16 +75,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	Johan Hovold <johan@kernel.org>
-Subject: [PATCH v2 05/11] arm64: dts: qcom: sdm845: switch UFS QMP PHY to new style of bindings
-Date: Sun, 21 May 2023 23:38:28 +0300
-Message-Id: <20230521203834.22566-6-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 02/11] phy: qcom-qmp-ufs: populate offsets configuration
+Date: Sun, 21 May 2023 23:38:25 +0300
+Message-Id: <20230521203834.22566-3-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
 References: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230521_213848_441760_68707CE1 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20230521_133840_103236_AFC3D340 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -117,56 +102,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change the UFS QMP PHY to use newer style of QMP PHY bindings (single
-resource region, no per-PHY subnodes).
+Populate offsets configuration for the rest of UFS PHYs to make it
+possible to switch them to the new (single-node) bindings style.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sdm845.dtsi | 17 ++++-------------
- 1 file changed, 4 insertions(+), 13 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-index 6aa2f8f3affc..559a50c44da1 100644
---- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-@@ -2566,7 +2566,7 @@ ufs_mem_hc: ufshc@1d84000 {
- 			      <0 0x01d90000 0 0x8000>;
- 			reg-names = "std", "ice";
- 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
--			phys = <&ufs_mem_phy_lanes>;
-+			phys = <&ufs_mem_phy>;
- 			phy-names = "ufsphy";
- 			lanes-per-direction = <2>;
- 			power-domains = <&gcc UFS_PHY_GDSC>;
-@@ -2612,10 +2612,8 @@ ufs_mem_hc: ufshc@1d84000 {
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 8c877b668bb9..d99dc1043f74 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -833,6 +833,8 @@ static const struct qmp_ufs_offsets qmp_ufs_offsets_v6 = {
+ static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
+ 	.lanes			= 1,
  
- 		ufs_mem_phy: phy@1d87000 {
- 			compatible = "qcom,sdm845-qmp-ufs-phy";
--			reg = <0 0x01d87000 0 0x18c>;
--			#address-cells = <2>;
--			#size-cells = <2>;
--			ranges;
-+			reg = <0 0x01d87000 0 0x1000>;
++	.offsets		= &qmp_ufs_offsets,
 +
- 			clock-names = "ref",
- 				      "ref_aux";
- 			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>,
-@@ -2625,14 +2623,7 @@ ufs_mem_phy: phy@1d87000 {
- 			reset-names = "ufsphy";
- 			status = "disabled";
+ 	.tbls = {
+ 		.serdes		= msm8996_ufsphy_serdes,
+ 		.serdes_num	= ARRAY_SIZE(msm8996_ufsphy_serdes),
+@@ -924,6 +926,8 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
+ 	.lanes			= 2,
  
--			ufs_mem_phy_lanes: phy@1d87400 {
--				reg = <0 0x01d87400 0 0x108>,
--				      <0 0x01d87600 0 0x1e0>,
--				      <0 0x01d87c00 0 0x1dc>,
--				      <0 0x01d87800 0 0x108>,
--				      <0 0x01d87a00 0 0x1e0>;
--				#phy-cells = <0>;
--			};
-+			#phy-cells = <0>;
- 		};
++	.offsets		= &qmp_ufs_offsets,
++
+ 	.tbls = {
+ 		.serdes		= sdm845_ufsphy_serdes,
+ 		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
+@@ -1038,6 +1042,8 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
+ 	.lanes			= 2,
  
- 		cryptobam: dma-controller@1dc4000 {
++	.offsets		= &qmp_ufs_offsets,
++
+ 	.tbls = {
+ 		.serdes		= sm8150_ufsphy_serdes,
+ 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
+@@ -1070,6 +1076,8 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
++	.offsets		= &qmp_ufs_offsets,
++
+ 	.tbls = {
+ 		.serdes		= sm8350_ufsphy_serdes,
+ 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
+@@ -1102,6 +1110,8 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
+ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
+ 	.lanes			= 2,
+ 
++	.offsets		= &qmp_ufs_offsets,
++
+ 	.tbls = {
+ 		.serdes		= sm8350_ufsphy_serdes,
+ 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
 -- 
 2.39.2
 
