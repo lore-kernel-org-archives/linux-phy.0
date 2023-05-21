@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ACDCC77B7C
-	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 19:52:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CE38C77B7C
+	for <linux-phy@archiver.kernel.org>; Sun, 21 May 2023 19:54:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Rnx6po+d05zBytFdbwfDIjxMfBDu5i0w240c0S7u88s=; b=hdWiX3n82sM2ON
-	YlHZ39m3u0z4AEyn9ykWJI++wkPu5JDwXPQHmudK3Ygftc36AcXRt5DQAyvCGwponkvHf9WRGzTQZ
-	3AxurfP0BmOulJVZnKCPVDkLfIyEa718TddViIhEBakx8l/bE86MOVbstkDZ/mbZRdnSiMzPJDreD
-	XgLeNmHszpPkMl7I7hqiH2AI1WPKDg0R3Z9pDHOMp4j6RN6G1xqf1dFKbcHCpY6cdG25XCfHjGIB8
-	ubNKijaIEg7sDsGutkCK1vmkVa2dq+mdb08V4etcPSnlmZiXS/ic1dvZh4CJ0UUB7JgsmIlCM7Zyr
-	wm5n6ze4b/UjA8JFIz5w==;
+	List-Owner; bh=2wp7QAWyaoQxHi9JYC3L8KhpO4ncGMmyERBVjif/tX8=; b=gRwwPnaSbPfhuK
+	etGW4yDeDGNsCEfWmAz7IAyVTUaWAvzFUL9mlsgdQYvhA3O4KsvwVmfz8FWZNmsBq9taIDbHwJ4Dk
+	+Fy5Yrg/+gm4o9YcbykdBf20bVGTTrpJdPpGFPawT7VPKL/Y2YjO6ZWpFgPoUabjsMysJDC90Qagr
+	xRiu5nXpU54zB51rnrMT6ue085OZY/Tj9Jeve/Fpr7SbTwJeanDzJ6t/Fh5tZ12FyIWT1D4gwokcu
+	xItnjB2mCDnqEtAPl03kmLoCnhZjU5Z9OIz1NmUVDHlUFeqe7Gi03HBze4odLNYn008VD4niF9pEA
+	5kv9UxT9Gv9s2ulWxs/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0p6B-004Y6z-0v;
-	Sun, 21 May 2023 19:52:11 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1q0p8O-004YUD-03;
+	Sun, 21 May 2023 19:54:28 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q0p68-004Y63-3C
+	id 1q0p8L-004YSV-1Z
 	for linux-phy@lists.infradead.org;
-	Sun, 21 May 2023 19:52:10 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-4f3bb61f860so1067206e87.3
-        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 12:52:03 -0700 (PDT)
+	Sun, 21 May 2023 19:54:26 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-96f8d485ef3so253862166b.0
+        for <linux-phy@lists.infradead.org>; Sun, 21 May 2023 12:54:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684698722; x=1687290722;
+        d=linaro.org; s=google; t=1684698862; x=1687290862;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=gf5i76Fimoq5YKoDfPb3rMrH6QNnLwlkbdruP9SSt5Y=;
-        b=ThdvYDCDAdjHiLl/yLo9UQkdplinxigU1NA0qxquQBYNnqCR2QyBfL1yCiP8v1RSIN
-         MXIcqBjJJmKZBV23XOvKxhRTr12+NSYb9peggD6BXY/Fea/2wT0XMYZtbxwspdW6B6Cg
-         yRLNQdMupSam7cF/YlRz50pkLovZQlAfqh9b5K8nqxMpFjK8Hx+n3v5OPxz7tAZBEIvX
-         mB3Ji6kdOsHhvYo3iobYMunDWLB4+BBYqpmJJKojdvuYXTz4l9Yu1IRzce9EHMbdQnd2
-         8LSxBM+aAh4bKlMQ3YGY9toiL6DMB/fGMhQFVbe5U5WdlwPEmKT86DsKrP6uUQvvMDFx
-         i/CA==
+        bh=DPlU+Sdk+xbWk66yiMas0b8B2Fguegxq4ZQMVRAqSUE=;
+        b=JoRw1dCVCQmtBVR7b5wY/wzWwDcNEpu/1oJYZGuci2hlAF5jKpJVe4Zsf8+Shebj35
+         0tt9AQAFMZ2HKd2uMTq06gv5KJzl9CyGUYnuXrICj5yr2dsnvJ/maPe+Ar5jKSh+YrP9
+         mpjzj2/tvhO706E76DvxnE7rjBdvgCHc8MEkfEccC/GaDuDuH7szfA3NLIpWPpsEug3x
+         F5MtoIJ77HFXlhyQ5tdcDQawPlJHd/8Tydnb/BLbkuR5p99GHLAbWE/myduBV/VP3kpM
+         BZ2peT0tQ+HXjprtOtBPCL/Lb6jHMk07FaRftVx5GFfBKE8Wo6OJzLzPRY+uc+fEN4g0
+         Wh/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684698722; x=1687290722;
+        d=1e100.net; s=20221208; t=1684698862; x=1687290862;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=gf5i76Fimoq5YKoDfPb3rMrH6QNnLwlkbdruP9SSt5Y=;
-        b=bkdBJaNqI1lPnK86vWavL7cuTudK7Y6bRIWXrVEl7dzAyxa1fadaPFm3HIIEgsgKgE
-         GNyHcIPP+kUZoNZP1xKdEaBq2QVwhFRzP5/M6tXQTCXRyb/OjqNHxtkZ5KDe6QCi5WSS
-         jQCiDxjQWltf/y9H0rB2OmtPfS0JgiJidviOccRtS9OE3aK3fyzBWW60kN/P+Xrp5/dD
-         5Ws1tAjjbvb8l4tGBVWO07NKSrVvqp5b8m7cj+OQd4y9/aBUBsJftkNpQ0HgTth+XQeo
-         +rLMMMPn/JlthuLyEiZRGmtPilVSAG6ut2pCAcdIsEqiGd8IAoyEI+frH70wVoJzXAla
-         BTfw==
-X-Gm-Message-State: AC+VfDzcgRQyEJ68IL8+XpoV2RDwVGUZn6dx0pyayICC/0uYxthiEmlq
-	Im/EvtDrcCq3hB9lE4nV4VmhQQ==
-X-Google-Smtp-Source: ACHHUZ5M/2izSORC8u2EJNQD6GwQmFNrSUGCtL3QvvEKFvA7na48OSROhx12vi7o71pIBgkmrhE3HA==
-X-Received: by 2002:ac2:5225:0:b0:4f2:455d:18bd with SMTP id i5-20020ac25225000000b004f2455d18bdmr2470689lfl.16.1684698721815;
-        Sun, 21 May 2023 12:52:01 -0700 (PDT)
+        bh=DPlU+Sdk+xbWk66yiMas0b8B2Fguegxq4ZQMVRAqSUE=;
+        b=DHLPnW1dy0HjM9bh+LGsz8kwRXl2SrrNPRYX7XyFRmUHhqen4o4RxzppFSINj/nSIp
+         K0Gj8SN/7s4NggngoOGXfA3W5hzXCuBhjuz2GHSvdshMCExhzc1AFF0GaJfF97tGMae8
+         tiS3JCerY7KDz2hbWsaNcT5BZ9FCPNF1SB/ER8yraYnJbCaFVMNU6lTUMhEBq8IAuPJJ
+         jlsq2+z/pv9GtVeDtapm00P0tl4dRFR0fakSqlHOBwhQQDb5wYVAKSLI89kOjgpNOD4J
+         vMpJMsucxcvYR/giQuf4jINn/iudXBGdg5iMl6BwVC9cUcypJQfImgeektxeSlP9OLpZ
+         zcDQ==
+X-Gm-Message-State: AC+VfDx2FwzrooC/5yt2b6TMun70X1v9OvgO9uT6EQS4/jpXyvNWiUB8
+	v556CZwJJj9KEO5eaIO1CxsoIg==
+X-Google-Smtp-Source: ACHHUZ5GRJ91EhgJXjupdVY1R7oyUpirvxLpLPTV7+4NZ4ggxMoI40S3efNJs8lW7IxwZWD1Fw3D8w==
+X-Received: by 2002:a17:906:76cd:b0:953:4775:baa7 with SMTP id q13-20020a17090676cd00b009534775baa7mr7805190ejn.52.1684698861741;
+        Sun, 21 May 2023 12:54:21 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id m11-20020a19520b000000b004f13f4ec267sm699430lfb.186.2023.05.21.12.52.01
+        by smtp.gmail.com with ESMTPSA id 16-20020a170906101000b00965ffb8407asm2187107ejm.87.2023.05.21.12.54.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 21 May 2023 12:52:01 -0700 (PDT)
+        Sun, 21 May 2023 12:54:21 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,17 +72,15 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Subject: [PATCH] dt-bindings: phy: qcom,qmp-usb: fix bindings error
-Date: Sun, 21 May 2023 22:52:00 +0300
-Message-Id: <20230521195200.11967-1-dmitry.baryshkov@linaro.org>
+	devicetree@vger.kernel.org
+Subject: [RESEND PATCH v2 0/5] phy: qcom-qmp-usb: split away legacy USB+DP code
+Date: Sun, 21 May 2023 22:54:15 +0300
+Message-Id: <20230521195420.12454-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230521_125209_032183_6B99C14D 
-X-CRM114-Status: UNSURE (   6.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230521_125425_532573_9102E045 
+X-CRM114-Status: GOOD (  10.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,72 +97,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Merge two allOf clauses, which sneaked in in two different patches.
+[please excuse me for the spam, resending the patchset to include dts
+mailing list and maintainers into cc list]
 
-/home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with value "[]" (original value: "[]")
-/home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: [error] duplication of key "allOf" in mapping (key-duplicates)
-/home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with value "[]" (original value: "[]")
-/home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml: ignoring, error parsing file
+While working on the QMP binding cleanup, I noticed that USB QMP driver
+supports both simple USB PHYs (which should be updated) and USB-only
+part of USB+DP PHYs (which are largely legacy and don't need to be
+updated). To ease further cleanup perform a quick cleanup of the last
+remaining USB+DP PHY (on sm8150 platform) and split the legacy codepath
+from the USB QMP PHY driver.
 
-Fixes: 2daece5eb51e ("dt-bindings: phy: qcom,qmp-usb: Drop legacy bindings and move to newer one (SM6115 & QCM2290)")
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 28 ++++---------------
- 1 file changed, 5 insertions(+), 23 deletions(-)
+Changes since v1:
+- Rebased on top of phy/next
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-index 2c3e2ede6671..f99fbbcd68fb 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-@@ -84,29 +84,6 @@ allOf:
-             - const: cfg_ahb
-             - const: pipe
- 
--  - if:
--      properties:
--        compatible:
--          contains:
--            enum:
--              - qcom,sa8775p-qmp-usb3-uni-phy
--              - qcom,sc8280xp-qmp-usb3-uni-phy
--    then:
--      properties:
--        clocks:
--          maxItems: 4
--        clock-names:
--          items:
--            - const: aux
--            - const: ref
--            - const: com_aux
--            - const: pipe
--      required:
--        - power-domains
--
--additionalProperties: false
--
--allOf:
-   - if:
-       properties:
-         compatible:
-@@ -130,6 +107,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,sa8775p-qmp-usb3-uni-phy
-               - qcom,sc8280xp-qmp-usb3-uni-phy
-     then:
-       properties:
-@@ -141,6 +119,10 @@ allOf:
-             - const: ref
-             - const: com_aux
-             - const: pipe
-+      required:
-+        - power-domains
-+
-+additionalProperties: false
- 
- examples:
-   - |
+Dmitry Baryshkov (5):
+  dt-bindings: phy: qcom,sc7180-qmp-usb3-dp-phy: add sm8150 USB+DP PHY
+  phy: qcom-qmp-combo: add support for the USB+DP PHY on SM8150 platform
+  arm64: dts: qcom: sm8150: turn first USB PHY into USB+DP PHY
+  dt-bindings: phy: qcom,msm8996-qmp-usb3-phy: drop legacy bindings
+  phy: qcom-qmp-usb: split off the legacy USB+dp_com support
+
+ .../phy/qcom,msm8996-qmp-usb3-phy.yaml        |   80 -
+ .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      |    2 +
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          |   17 +-
+ drivers/phy/qualcomm/Kconfig                  |   10 +
+ drivers/phy/qualcomm/Makefile                 |    1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |    4 +
+ .../phy/qualcomm/phy-qcom-qmp-usb-legacy.c    | 1407 +++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |  556 -------
+ 8 files changed, 1437 insertions(+), 640 deletions(-)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c
+
 -- 
 2.39.2
 
