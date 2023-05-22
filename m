@@ -4,84 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD03DC77B73
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 09:03:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8329CC77B73
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 12:18:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:To:From:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vJrELI3zXgRfH1NGzYj6yyX3NzB9vezeuhjkbD7p5NY=; b=eT9inD5z2zM9ovtjF+O3fVTwZr
-	Yg1xKpVi8+Pb6lS7V9zQST87HHT2JBJ4Q4pPrnF+y3N9IfxVUuRdBoUwZnOHZbJPSkaFM2UJJU/32
-	WD3bWtjlm2bO4TGVUfk/SxAAUTfFwahJBeIigeL9iUUApwearUD/UVLmBkhAgg6z6YkbwmThWpBQr
-	5YK0ID1bKgrcJuiUERhypcSQzQkA0MgctzaXuxtWuROlwOYsdXfy+3syHCSJLPhTAA+oYa3Khkzq3
-	uAVRnAopSAO1VO9zr8m5xKYSDUVJ780PnE49Pvy1DNILLybUDd5wLDst97PeKBJtrlY/GDbxhEL1w
-	q9j8gPDQ==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Bxv4rIL20ncuxkVBTjNwYRzePuE8gNOpHBxXgEHEKHM=; b=zM4pQluJwtSzG9T5i02LA/oIEl
+	U3UktTDcO3cjCT+CYP2X8qTUU9FpiyiRUcc0O2GjgeQWfb+k5mJ9k3Rp4XkqVwufurjTmwm+bs+a+
+	T7hUVni61BBAHPsxBpSKZmjRaD68rATPVVqan4UQYBAJNerf0AyDKev3U72hhu8jQlSop5EP+E+fG
+	DGzQIoDICSoJW/4zWeX876Bqdnbup31Cd9Fzq1wM0/t/7Bh0karRWtPU5UgI2kZWbv6u+nKHq78of
+	ghEKmw1B10dxlh2qflNCBRGHR9kz6ZLhLnMemQ1Gfvs/3fB01p07tz2byh1Q/qAVTnv7/teWR+wWX
+	mi/BPbLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q11RX-005pDc-1V;
-	Mon, 22 May 2023 09:03:03 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1q14V3-006RLz-0Z;
+	Mon, 22 May 2023 12:18:53 +0000
+Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q11RU-005p8F-2M
+	id 1q14Uz-006RJN-3A
 	for linux-phy@lists.infradead.org;
-	Mon, 22 May 2023 09:03:02 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-2532c2c419dso4023791a91.0
-        for <linux-phy@lists.infradead.org>; Mon, 22 May 2023 02:02:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684746177; x=1687338177;
-        h=content-transfer-encoding:in-reply-to:references:subject:to:from
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=fzleLO7MSIVONgXOoe/u8Y3w3EspUsfYYjCprTB4k/g=;
-        b=l/RP/dtBIq81CyGgnIfU19Pv7C8KScdcSHZBdG2deAKCuuDWIENO/nF+eYpwZwZTe+
-         Nuf6JvkaYmhJYmuavURM0fUPaXaiYqN9BDhz4ph/0w4wKnPdfgnQLTRykIZxxainkFJ8
-         CCPs/PdcKjUP/QfPqVCNI2taUHVtdmQZbRm2soKIJ+VObSCOsfXR9uAgY/ZSK5zJriyq
-         rZmYw9n1DwmRNm91bk4A3hi02FiwbmFLf6aePT0hgOcyDOS0de8pMe+vNdIGa5IZS0+3
-         amv+/V14ue8wVdj/IoyIbCDq4+VSh8UxN+XPvyhG4BGLer1lxxvNMT7YbN6+m/ymb9a6
-         Uwng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684746177; x=1687338177;
-        h=content-transfer-encoding:in-reply-to:references:subject:to:from
-         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=fzleLO7MSIVONgXOoe/u8Y3w3EspUsfYYjCprTB4k/g=;
-        b=UZSh9n6rczABX0Uen71SoxQbFWvMybC+Ad7tMFtuwg3nzpVBS4p9xWa+P34WcthB8V
-         ZcYeCT5+TZaILl/BrK1HOcqej/BP+t9C1WwJKbGvEcRLzu/96xH7XW4prL+iT3yE4lOl
-         I7cFAehpjQtbtnb4h50CaJ5pR35laM0REUL9pt/lXvd1DEj43nsToXxLOQ92ignjhBJB
-         oV87R0wSD4LDIcJX/ObJ3UgEqr15FUoFuR5x5GzBdQTB8Sh8nUsRFMSQolVdmLoUxiRX
-         pBPtNbYisGMgRVspS1swgV0eul+FMOBgnSnMVB+AEH8aUDwoA3nweOy7urdAYsAtsVUL
-         0sCQ==
-X-Gm-Message-State: AC+VfDz0qz3FEWetPHIXor8SUU1y2awxoxUp0/ZFS27T6Gn8+rEbUCbx
-	rlYknb8zYn1MIHJe1eSKKsPlOw==
-X-Google-Smtp-Source: ACHHUZ5hmzgd3uQouu5IJy5vUgDsLRB/aYSGM8TclXQmiUfNzep8YlZ/mhBBIoAQR5KM0bwbVrU+ng==
-X-Received: by 2002:a17:902:c407:b0:1ac:451d:34b with SMTP id k7-20020a170902c40700b001ac451d034bmr14623045plk.9.1684746177237;
-        Mon, 22 May 2023 02:02:57 -0700 (PDT)
-Received: from ?IPV6:2401:4900:1c60:d309:883d:817e:8e91:be39? ([2401:4900:1c60:d309:883d:817e:8e91:be39])
-        by smtp.gmail.com with ESMTPSA id y19-20020a170902ed5300b001a9873495f2sm4310279plb.233.2023.05.22.02.02.52
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 22 May 2023 02:02:56 -0700 (PDT)
-Message-ID: <535de61e-b6bd-b15b-87e7-f36ea1a37a86@linaro.org>
-Date: Mon, 22 May 2023 14:32:50 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.3.1
-From: bhupesh.sharma@linaro.org
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
+	Mon, 22 May 2023 12:18:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1684757929; x=1716293929;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=yIjhWDjFMYCl5gznTdFSFGbvICLuiF8BR7thR9CRBN0=;
+  b=STNoILyW8bBnYSmCExW3jX3yBl/JvstGJeOeid3NdezAHaLF0PkMIGG/
+   up5JOL1BjRuaTLnvRiI1nd78hd6EK2FhZH8bD/cjK9jz5NzhmRS2Zdmgc
+   jKBfqNWaXwqlPbSRZQYdCnpXmuVAc336URXr/DIJLB/PXZx1CAF1WvrEc
+   858W1g5KvDiZ+Ks3/Tm1COrpciN2IWjbHESqbp2aXmfATu9T8Gxz+eg0u
+   /gL8n+IWdFlQWHxDDxT2qI7TkK34D9JDMaV9PN/XjJrdumgijGdCxB0nD
+   QPl7pIgsWu839Q6qEKIRzQJgyaEb2pTNROaKHx7iywFo4TV3PXGQo/bk0
+   Q==;
+X-IronPort-AV: E=Sophos;i="6.00,184,1681196400"; 
+   d="asc'?scan'208";a="214312328"
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 22 May 2023 05:18:49 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.21; Mon, 22 May 2023 05:18:48 -0700
+Received: from wendy (10.10.115.15) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
+ Transport; Mon, 22 May 2023 05:18:46 -0700
+Date: Mon, 22 May 2023 13:18:24 +0100
+From: Conor Dooley <conor.dooley@microchip.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, <linux-arm-msm@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>, Bhupesh Sharma
+	<bhupesh.sharma@linaro.org>
 Subject: Re: [PATCH] dt-bindings: phy: qcom,qmp-usb: fix bindings error
+Message-ID: <20230522-babble-impeach-efe7ed754a08@wendy>
 References: <20230521195200.11967-1-dmitry.baryshkov@linaro.org>
+MIME-Version: 1.0
 In-Reply-To: <20230521195200.11967-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_020300_772974_428ED320 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20230522_051850_026335_DA83EDA0 
+X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,86 +84,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============1653296330083892015=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============1653296330083892015==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="Fr1CTYsJQoNe4MTw"
+Content-Disposition: inline
 
+--Fr1CTYsJQoNe4MTw
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On 5/22/23 1:22 AM, Dmitry Baryshkov <dmitry.baryshkov@linaro.org> wrote:
+On Sun, May 21, 2023 at 10:52:00PM +0300, Dmitry Baryshkov wrote:
 > Merge two allOf clauses, which sneaked in in two different patches.
-> 
-> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with value "[]" (original value: "[]")
-> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: [error] duplication of key "allOf" in mapping (key-duplicates)
-> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with value "[]" (original value: "[]")
-> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml: ignoring, error parsing file
-> 
-> Fixes: 2daece5eb51e ("dt-bindings: phy: qcom,qmp-usb: Drop legacy bindings and move to newer one (SM6115 & QCM2290)")
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->   .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 28 ++++---------------
->   1 file changed, 5 insertions(+), 23 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> index 2c3e2ede6671..f99fbbcd68fb 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> @@ -84,29 +84,6 @@ allOf:
->               - const: cfg_ahb
->               - const: pipe
->   
-> -  - if:
-> -      properties:
-> -        compatible:
-> -          contains:
-> -            enum:
-> -              - qcom,sa8775p-qmp-usb3-uni-phy
-> -              - qcom,sc8280xp-qmp-usb3-uni-phy
-> -    then:
-> -      properties:
-> -        clocks:
-> -          maxItems: 4
-> -        clock-names:
-> -          items:
-> -            - const: aux
-> -            - const: ref
-> -            - const: com_aux
-> -            - const: pipe
-> -      required:
-> -        - power-domains
-> -
-> -additionalProperties: false
-> -
-> -allOf:
->     - if:
->         properties:
->           compatible:
-> @@ -130,6 +107,7 @@ allOf:
->           compatible:
->             contains:
->               enum:
-> +              - qcom,sa8775p-qmp-usb3-uni-phy
->                 - qcom,sc8280xp-qmp-usb3-uni-phy
->       then:
->         properties:
-> @@ -141,6 +119,10 @@ allOf:
->               - const: ref
->               - const: com_aux
->               - const: pipe
-> +      required:
-> +        - power-domains
-> +
-> +additionalProperties: false
->   
->   examples:
->     - |
+>=20
+> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/q=
+com,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with =
+value "[]" (original value: "[]")
+> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/q=
+com,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: [error] duplication of key "allOf=
+" in mapping (key-duplicates)
+> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/q=
+com,sc8280xp-qmp-usb3-uni-phy.yaml:109:1: found duplicate key "allOf" with =
+value "[]" (original value: "[]")
+> /home/lumag/Projects/Qcomm/kernel/Documentation/devicetree/bindings/phy/q=
+com,sc8280xp-qmp-usb3-uni-phy.yaml: ignoring, error parsing file
 
-Reviewed-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You may as well trim at least that from the file paths, if not more.
+That's w/e though,
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
 
-Thanks.
+Thanks,
+Conor.
+
+--Fr1CTYsJQoNe4MTw
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZGtdkAAKCRB4tDGHoIJi
+0vy9AQCrMGAUlup6Rz/frrw36p2hRsHwRpCxU53tvu9+2mfi8gEAuC6gDr6AvqqE
+ckJ+nFBCcsUhyAjrfD95zhiK26Bz5gc=
+=OY8I
+-----END PGP SIGNATURE-----
+
+--Fr1CTYsJQoNe4MTw--
+
+
+--===============1653296330083892015==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1653296330083892015==--
+
