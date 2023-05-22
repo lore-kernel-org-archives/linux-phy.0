@@ -4,72 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6405C7EE2E
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 17:34:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1712C7EE23
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 18:38:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AGMzn6Q/469aJw5gISAulMh/PQhAJVAGAWaAi8GAuBQ=; b=wLxTi7Gslhu9h3
-	30vFwDx63uzNxtMdqHdXuYxoDHfz6QN+xLlcp7YbXt3+Q+KPyrFxSQ9m6OS+oQWCmBBVKgAFralF8
-	Eky8//2rNinwMOfCI4ihfTWj9xc0ZbKddAWNn5pbaekPk0JITJvhCY8x+l0fiE3/Qtle/i9VW9fCj
-	ng+GWxptrnsvoyyzDr3/99xoWKZqtrZEztbusHoPYQzsQb9P1ls3/8RascXbhjN1liIybUgcykMDR
-	XVp9yfdBosZWsgfATk1Auc6PymPLGqBUAAlngbsyArrGG07x+bsAkifRubesRGit31R1ba87Z7Nm/
-	TCgNDT9YdtuYoL910DxA==;
+	List-Owner; bh=99TBSjRyDPAVAx2ElhWM4QiHZS9lKb2KyBv7NS9veb0=; b=CvqH7XxeergsXH
+	pf3gOh1Qyayi1V8+xAqjtU/+gMmj6vZm52W1hxQX21itjdue1dwiooW/pADLqBnyI/MW5JeOh5c40
+	3kQYofIN0Trfeu7SJOvB0HN/IyrQC9/d0jm4Mxx5qDpaUxX4Y6dzspmYmYMp4AF55Bu/DYc1G9QaV
+	6jtF8FCxGUQwrlSiKLpvt1Ke80LfJ8nLSWG8dNt3JUgOjEKaO7tjgXYII+QN9aT+LRzlcIuxKEYJw
+	PGFlqD+UPnJrcsMxJj1CxorCwAahprtcFZSU54NyzOk/LTLb1qwTF8OQUyPSHEthQx2KvigFSq7gG
+	CrhsH09L3vnZsnezkslA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q19Qf-007NtT-0m;
-	Mon, 22 May 2023 17:34:41 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1q1AQH-007Xva-1e;
+	Mon, 22 May 2023 18:38:21 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q19Qa-007NoY-1z;
-	Mon, 22 May 2023 17:34:38 +0000
-Received: from jupiter.universe (dyndsl-091-248-208-162.ewe-ip-backbone.de [91.248.208.162])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 07FF06606E73;
-	Mon, 22 May 2023 18:34:34 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1684776874;
-	bh=uHNhWU1jmIOWUBoodh01ywxlZr0fhauLWpShle6WDA0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QdS+9VDGKETNE8Jl+/wmLcacEYcQJeNk3AOrQf05kefFP0aq/3VdjUQyxulx0rqq2
-	 ytOe1Gy7P/pgimlLEhj4xdilYoXsp1xqINgN8diaMsfTw45C3cG6DNMgl8vgPq4qzF
-	 jQySOffH7H2LihdTtDHGYrlaHzT8gLFbKxyIrHNVRvgm+ZYI9MLzTOlUpJIaTUBIIq
-	 USWWwp3E4FKbYCtQ8CSfo1LpBF2ylhZe2jjtQnKjwE1kCUttO3pTTCzYtC8/3Ua4Dt
-	 7vp4gkVFdrlngILc5h/XtbqBaK7CKBmzzfEWQaLy4Tl/S5ylDt9TozyNkWex3EkfIi
-	 /ZJmj+zb0N3ug==
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 9248C4807F0; Mon, 22 May 2023 19:34:29 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com
-Subject: [PATCH v2 6/6] arm64: dts: rockchip: rk3588: add SATA support
-Date: Mon, 22 May 2023 19:34:23 +0200
-Message-Id: <20230522173423.64691-7-sebastian.reichel@collabora.com>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230522173423.64691-1-sebastian.reichel@collabora.com>
-References: <20230522173423.64691-1-sebastian.reichel@collabora.com>
+	id 1q1AQE-007Xu8-1a
+	for linux-phy@lists.infradead.org;
+	Mon, 22 May 2023 18:38:19 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4f3bb395e69so2466314e87.2
+        for <linux-phy@lists.infradead.org>; Mon, 22 May 2023 11:38:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1684780694; x=1687372694;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=7g+eBWdXPpClWzwgE+9KC8dMIxNBnrOJ+PBoFojXwDU=;
+        b=iMrFsTnQvHs2azUIRBShLKj+1/m+uYiDEh3lFC7fKyfiQ2Si0y6/yONmK9yEX2mKfY
+         PESZWrg2BSbmqL2t5n/TUPv/nHj1BV/mhGm03cOU3GLrkTYQoGKYmgHpm8er2Oh+LISe
+         ra9jNmrH4JEu0D2KDhgDq0f1ajkSYlyjmyD9sxeEm9wvsr8/WTiGMW7ilouBHDTWG8J1
+         77D1uNOA8kls3K/LttvhXoSRJeFzbq50w+mQuVW+9GGCe5cLmhJ15uyGWCXQDM4LIvNn
+         ADc1qUzb24fy7LAWvPF9shMtZHy6QUfekjwcdfcn6lNXxwOsOFtWoBDbhQOF6WdoaMl4
+         Fjpw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1684780694; x=1687372694;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=7g+eBWdXPpClWzwgE+9KC8dMIxNBnrOJ+PBoFojXwDU=;
+        b=aNno1YpBR8GQkMXpE921Aqo9oSksgo4+KFI8Tr9TCKSemAS4bgkAFCp9tnn0dh9sOs
+         ieqtkfSqQprB2YxaYhzuKAy6tf1IFX3ZwX934YRcYSUi3qsEYsqqsg9U4M4dwKsB/50g
+         W6l6T6TSdTVieFXK+hW1U756cs0LXye+3U0wqf1qbbyhyC25dSnf23DjE82adVrVcBk4
+         B1v8lcyuQwbBtcofBQ/GRHeHNgNcUDlNxvCETJXpBU37pG/O/HhtVg4opcEoH2yXeNe2
+         KGDrKZXN4YtG9JP4p58Xn9KGp14ILjf2ZLcAcCn/tgR0rLM7n+7gnl+p6tZdAXJq01TW
+         aiyA==
+X-Gm-Message-State: AC+VfDwcaaww9JMwCyLFQ3vNfU+Y7O3o46pY6VaB6dNLfmKTeOPsdsJN
+	bbs5H5u57J1yO5oq60bAwe9Yag==
+X-Google-Smtp-Source: ACHHUZ6I1qjJZwN+hTVMveXFNPlk35jCWxEx22+V+5Br2s5Gi2M7p+E667aAD+xd2QTCwVeIvuXyng==
+X-Received: by 2002:a05:6512:49e:b0:4f1:4d66:ac96 with SMTP id v30-20020a056512049e00b004f14d66ac96mr3283290lfq.19.1684780693706;
+        Mon, 22 May 2023 11:38:13 -0700 (PDT)
+Received: from ?IPV6:2001:14ba:a0db:1f00::8a5? (dzdqv0yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a0db:1f00::8a5])
+        by smtp.gmail.com with ESMTPSA id r11-20020a19ac4b000000b004f252f48e5fsm1079378lfc.40.2023.05.22.11.38.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 May 2023 11:38:13 -0700 (PDT)
+Message-ID: <844191d4-9a6b-605a-5d1a-cd4ad5dc98c9@linaro.org>
+Date: Mon, 22 May 2023 21:38:12 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH v2 04/11] arm64: dts: qcom: msm8998: switch UFS QMP PHY to
+ new style of bindings
+Content-Language: en-GB
+To: Konrad Dybcio <konrad.dybcio@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ Johan Hovold <johan@kernel.org>
+References: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
+ <20230521203834.22566-5-dmitry.baryshkov@linaro.org>
+ <37f97ffc-01c1-797c-f50c-1680f666d79d@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <37f97ffc-01c1-797c-f50c-1680f666d79d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_103436_960420_C83180D1 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20230522_113818_529464_2CE5E438 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,121 +96,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add all three SATA IP blocks to the RK3588 DT.
+On 22/05/2023 19:59, Konrad Dybcio wrote:
+> 
+> 
+> On 21.05.2023 22:38, Dmitry Baryshkov wrote:
+>> Change the UFS QMP PHY to use newer style of QMP PHY bindings (single
+>> resource region, no per-PHY subnodes).
+>>
+>> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>> ---
+>>   arch/arm64/boot/dts/qcom/msm8998.dtsi | 16 +++-------------
+>>   1 file changed, 3 insertions(+), 13 deletions(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+>> index b150437a8355..848fbd2cb3f8 100644
+>> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+>> @@ -980,7 +980,7 @@ ufshc: ufshc@1da4000 {
+>>   			compatible = "qcom,msm8998-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
+>>   			reg = <0x01da4000 0x2500>;
+>>   			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+>> -			phys = <&ufsphy_lanes>;
+>> +			phys = <&ufsphy>;
+>>   			phy-names = "ufsphy";
+>>   			lanes-per-direction = <2>;
+>>   			power-domains = <&gcc UFS_GDSC>;
+>> @@ -1021,11 +1021,8 @@ ufshc: ufshc@1da4000 {
+>>   
+>>   		ufsphy: phy@1da7000 {
+>>   			compatible = "qcom,msm8998-qmp-ufs-phy";
+>> -			reg = <0x01da7000 0x18c>;
+>> -			#address-cells = <1>;
+>> -			#size-cells = <1>;
+>> +			reg = <0x01da7000 0x1000>;
+>>   			status = "disabled";
+>> -			ranges;
+>>   
+>>   			clock-names =
+>>   				"ref",
+>> @@ -1037,14 +1034,7 @@ ufsphy: phy@1da7000 {
+>>   			reset-names = "ufsphy";
+>>   			resets = <&ufshc 0>;
+>>   
+>> -			ufsphy_lanes: phy@1da7400 {
+>> -				reg = <0x01da7400 0x128>,
+>> -				      <0x01da7600 0x1fc>,
+>> -				      <0x01da7c00 0x1dc>,
+>> -				      <0x01da7800 0x128>,
+>> -				      <0x01da7a00 0x1fc>;
+>> -				#phy-cells = <0>;
+>> -			};
+>> +			#phy-cells = <0>;
+> Looks like that will make status not-last?
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- arch/arm64/boot/dts/rockchip/rk3588.dtsi  | 23 +++++++++++
- arch/arm64/boot/dts/rockchip/rk3588s.dtsi | 48 +++++++++++++++++++++++
- 2 files changed, 71 insertions(+)
+It was not the last one beforehand, so I hesitated to move it. Let's fix it.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-index 9d8539b5309b..b9508cea34f1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-@@ -129,6 +129,29 @@ gmac0_mtl_tx_setup: tx-queues-config {
- 		};
- 	};
- 
-+	sata1: sata@fe220000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe220000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA1>, <&cru CLK_PMALIVE1>,
-+			 <&cru CLK_RXOOB1>, <&cru CLK_PIPEPHY1_REF>,
-+			 <&cru CLK_PIPEPHY1_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 274 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy1_ps PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
- 	combphy1_ps: phy@fee10000 {
- 		compatible = "rockchip,rk3588-naneng-combphy";
- 		reg = <0x0 0xfee10000 0x0 0x100>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-index 45ae457a22a4..00a91b08e3bb 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-@@ -9,6 +9,8 @@
- #include <dt-bindings/power/rk3588-power.h>
- #include <dt-bindings/reset/rockchip,rk3588-cru.h>
- #include <dt-bindings/thermal/thermal.h>
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/ata/ahci.h>
- 
- / {
- 	compatible = "rockchip,rk3588";
-@@ -1717,6 +1719,52 @@ gmac1_mtl_tx_setup: tx-queues-config {
- 		};
- 	};
- 
-+	sata0: sata@fe210000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe210000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA0>, <&cru CLK_PMALIVE0>,
-+			 <&cru CLK_RXOOB0>, <&cru CLK_PIPEPHY0_REF>,
-+			 <&cru CLK_PIPEPHY0_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 273 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy0_ps PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
-+	sata2: sata@fe230000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe230000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA2>, <&cru CLK_PMALIVE2>,
-+			 <&cru CLK_RXOOB2>, <&cru CLK_PIPEPHY2_REF>,
-+			 <&cru CLK_PIPEPHY2_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 275 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy2_psu PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
- 	sdmmc: mmc@fe2c0000 {
- 		compatible = "rockchip,rk3588-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xfe2c0000 0x0 0x4000>;
+> 
+> Konrad
+>>   		};
+>>   
+>>   		tcsr_mutex: hwlock@1f40000 {
+
 -- 
-2.39.2
+With best wishes
+Dmitry
 
 
 -- 
