@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 393F8C77B73
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 17:03:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBFF4C77B73
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 17:04:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xnSWddDVJry3Cxe4sSEbAcUlZx5HNhfVtE0knzq+6As=; b=zsnfPPefX2Csst
-	clywpN64fj35FvkPiC0gwYsEAObUKi1Wu2jo0VmNfiBJ06Cwqc//uxUBSSGeMkzyefYID5QLrQTBA
-	oVoki9mayGQuGm9eglMGvPR1xHotJq8dG39duJgNAF/waY/W+9XAbeRoj5RxARKuBc4N28MEFYrvL
-	tMiCGwRnFbblnA8YbeNpMebXhyhdRzDLX21JI9Og9Rt5ruN0AZxDd+qXRYA7nfTJ7eUZZ72OCWZvA
-	Av4IlJbH5hMsvB7/mGWb6B52RI03onka/ACZXWrXHI1Zfs8DmOoIFsxs2T6ohHK9VxV8KlS+aZ6L3
-	pJ7riln58cdv6hy5SOqg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HJYd3eJHHmBozdgRwhNVNFvWxgwBDQKd7iQvXjfhD1Q=; b=ppSNWwUfAoXj5U
+	v2UcBHsM0Kkzk7u38aPD4uhy1dH+KgWHDmS+nGIgGrflICAtm7xcWywIKPFytIQPCxpdnYK0Zc8UU
+	sq9VxOKnc0CDIiGje34t0ZgWAgLo9ObTCWbegE7oyY7SZy8c+tWWMQsdZxWnT6GaSxIGczkpmXrIJ
+	aNCIFpmoRsnRQAEdL8fElAKRdu8f5Og3iEaI8Ui66z0BzSSU4LZS6tGIirj7DXmYu9oOeTtp/7LBn
+	lX1MrkStpZVb4KQ4DlpQKixmWoRQJ5Yj/+af+Nn3p1C/wmDy47FznuagZ8fVCSQ3qzt/CV7hBSN/9
+	C0DW6/VFOUs8B5In/XRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q18wv-007IOU-2r;
-	Mon, 22 May 2023 17:03:57 +0000
+	id 1q18x1-007IR7-1y;
+	Mon, 22 May 2023 17:04:03 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q18wl-007IHe-1N;
-	Mon, 22 May 2023 17:03:49 +0000
+	id 1q18wl-007IHf-1N;
+	Mon, 22 May 2023 17:03:50 +0000
 Received: from jupiter.universe (dyndsl-091-248-208-162.ewe-ip-backbone.de [91.248.208.162])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id CC430660574E;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id E81F76606E69;
 	Mon, 22 May 2023 18:03:42 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1684775022;
-	bh=P4c4yqe0e18spr+hpAbUp22X4HYV0KWO766Aol9DUW4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=EBmJWqi/ZLk9ozgXn3Uk8niKTpQ9V6r1b5yUvuAEHIZfVcgBR9MLUw621uHTb7kqR
-	 Jt91M7bpXMWa+ony0ysg/jxABWQYuEXogIRo6nxlXMwSIK0Wv2ocAxWzCHCWZ4X2pA
-	 9ZkhzKbjiSLv6R8hazEJCng+YDQ2FyGf1E//l/UYJzj9kLS9ESQLRO6wWUBpVzlq/H
-	 bYPQh7NHywsvdXULZda6ROIVjTREsOP7Mq5kfp6UWYU6+Ba/6Y3+VvJfD+D5UFgOT8
-	 cGoE+dBQ+pbVzcYyRnog/O9nQVnOZNVgIZOzd0p1qvOdE2hbZCCgklgoT1aUirNmNV
-	 QVXXOIlgmK7rg==
+	s=mail; t=1684775023;
+	bh=O4ESAX1oWkZABPepXOkCKY7w4k1fSpZvKClJj0JDRNc=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=AISvuS2BSnXpHERZfMru4pssu3VeuPPykVBFscd4PkG8VwQf9aMKyEdMsOmlo9+C6
+	 juowKS4HCBlXa2WLmnv0SCnZjS6rJ2g/q6SfJ36E7rFS2t+W9cNr0B9nJG/uCIcuAW
+	 5CfwBBNggFiGuaKRsyk2bTjK7oYVUfXQmGwj7NJBUR/Mig71w0EdaV30iolLCnAKOg
+	 h62GjIeGetDj4RUa9RJmzaGtrC1GF44Zk5QhB5VSQEbzCTZr84ZpQmFeWgmjDEy1PW
+	 5lXLeQNXKO+99+IN0UZa/BPbWSiy10VQ7LZwM3zpZB/c6wc2Clzk/163qV3PtM3Uvm
+	 ekZGfqxxAZuYg==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 77AAB4805CC; Mon, 22 May 2023 19:03:40 +0200 (CEST)
+	id 7C96C4807E2; Mon, 22 May 2023 19:03:40 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -58,14 +58,16 @@ Cc: Heiko Stuebner <heiko@sntech.de>,
 	devicetree@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v3 0/7] phy-rockchip-inno-usb2: add RK3588 support
-Date: Mon, 22 May 2023 19:03:17 +0200
-Message-Id: <20230522170324.61349-1-sebastian.reichel@collabora.com>
+Subject: [PATCH v3 3/7] phy: phy-rockchip-inno-usb2: add reset support
+Date: Mon, 22 May 2023 19:03:20 +0200
+Message-Id: <20230522170324.61349-4-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230522170324.61349-1-sebastian.reichel@collabora.com>
+References: <20230522170324.61349-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_100347_617932_A1FE76CF 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20230522_100347_622076_8CDF5076 
+X-CRM114-Status: GOOD (  15.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,48 +84,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Add reset handling support, which is needed for proper
+operation with RK3588.
 
-This adds RK3588 to the Rockchip Inno USB2 PHY driver. The RK3588 has four of
-them. Two are used for USB2 and two are used by USB3 controllers (for USB2
-fallback mode). All of them can be used with this patchset.
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 38 +++++++++++++++++++
+ 1 file changed, 38 insertions(+)
 
-Changes since PATCHv2:
- * https://lore.kernel.org/linux-phy/20230403202307.120562-1-sebastian.reichel@collabora.com/
- * Dropped patch adding the syscon compatible to the DT binding (applied by Heiko)
- * Collected Reviewed-by from Rob Herring for DT binding patch (DT binding)
- * Rebased to v6.4-rc1
- * Removed superfluous init found by Vinod Koul
- * Added one additional patch improving the error message for missing phy-config
- * Fixed address_cells=2 code to not break the PHY at offset 0. I didn't notice it with the
-   previous versions, since that PHY is used for USB3 on Rockchip evaluation board and I
-   only started working on that recently.
-
-Changes since PATCHv1:
- * https://lore.kernel.org/all/20230331163812.6124-1-sebastian.reichel@collabora.com/
- * Added patch simplifying phyclk handling
- * Added patch simplifying matchdata handling
- * Added patches for reset handling and PHY tuning; after doing more
-   testing I noticed my previous patchset does not support hotplug and
-   USB devices need to be plugged in at boot time (more specifically
-   in PATCHv1 it had to be plugged before the PHY is suspended). This
-   fixes the issue.
-
--- Sebastian
-
-Sebastian Reichel (7):
-  dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
-  phy: phy-rockchip-inno-usb2: add rk3588 support
-  phy: phy-rockchip-inno-usb2: add reset support
-  phy: phy-rockchip-inno-usb2: add rk3588 phy tuning support
-  phy: phy-rockchip-inno-usb2: simplify phy clock handling
-  phy: phy-rockchip-inno-usb2: simplify getting match data
-  phy: phy-rockchip-inno-usb2: improve error message
-
- .../bindings/phy/rockchip,inno-usb2phy.yaml   |  21 +-
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 357 ++++++++++++++++--
- 2 files changed, 339 insertions(+), 39 deletions(-)
-
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 2c4683c67a8e..101b46939f0b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -24,6 +24,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/power_supply.h>
+ #include <linux/regmap.h>
++#include <linux/reset.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/usb/of.h>
+ #include <linux/usb/otg.h>
+@@ -223,6 +224,7 @@ struct rockchip_usb2phy_port {
+  * @clk: clock struct of phy input clk.
+  * @clk480m: clock struct of phy output clk.
+  * @clk480m_hw: clock struct of phy output clk management.
++ * @phy_reset: phy reset control.
+  * @chg_state: states involved in USB charger detection.
+  * @chg_type: USB charger types.
+  * @dcd_retries: The retry count used to track Data contact
+@@ -239,6 +241,7 @@ struct rockchip_usb2phy {
+ 	struct clk	*clk;
+ 	struct clk	*clk480m;
+ 	struct clk_hw	clk480m_hw;
++	struct reset_control	*phy_reset;
+ 	enum usb_chg_state	chg_state;
+ 	enum power_supply_type	chg_type;
+ 	u8			dcd_retries;
+@@ -280,6 +283,25 @@ static inline bool property_enabled(struct regmap *base,
+ 	return tmp != reg->disable;
+ }
+ 
++static int rockchip_usb2phy_reset(struct rockchip_usb2phy *rphy)
++{
++	int ret;
++
++	ret = reset_control_assert(rphy->phy_reset);
++	if (ret)
++		return ret;
++
++	udelay(10);
++
++	ret = reset_control_deassert(rphy->phy_reset);
++	if (ret)
++		return ret;
++
++	usleep_range(100, 200);
++
++	return 0;
++}
++
+ static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
+ {
+ 	struct rockchip_usb2phy *rphy =
+@@ -534,6 +556,18 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
+ 		return ret;
+ 	}
+ 
++	/*
++	 * For rk3588, it needs to reset phy when exit from
++	 * suspend mode with common_on_n 1'b1(aka REFCLK_LOGIC,
++	 * Bias, and PLL blocks are powered down) for lower
++	 * power consumption. If you don't want to reset phy,
++	 * please keep the common_on_n 1'b0 to set these blocks
++	 * remain powered.
++	 */
++	ret = rockchip_usb2phy_reset(rphy);
++	if (ret)
++		return ret;
++
+ 	/* waiting for the utmi_clk to become stable */
+ 	usleep_range(1500, 2000);
+ 
+@@ -1348,6 +1382,10 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
++	rphy->phy_reset = devm_reset_control_get_optional(dev, "phy");
++	if (IS_ERR(rphy->phy_reset))
++		return PTR_ERR(rphy->phy_reset);
++
+ 	rphy->clk = of_clk_get_by_name(np, "phyclk");
+ 	if (!IS_ERR(rphy->clk)) {
+ 		clk_prepare_enable(rphy->clk);
 -- 
 2.39.2
 
