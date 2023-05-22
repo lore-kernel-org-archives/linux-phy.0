@@ -4,87 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1712C7EE23
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 18:38:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0642BC77B75
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 19:15:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=99TBSjRyDPAVAx2ElhWM4QiHZS9lKb2KyBv7NS9veb0=; b=CvqH7XxeergsXH
-	pf3gOh1Qyayi1V8+xAqjtU/+gMmj6vZm52W1hxQX21itjdue1dwiooW/pADLqBnyI/MW5JeOh5c40
-	3kQYofIN0Trfeu7SJOvB0HN/IyrQC9/d0jm4Mxx5qDpaUxX4Y6dzspmYmYMp4AF55Bu/DYc1G9QaV
-	6jtF8FCxGUQwrlSiKLpvt1Ke80LfJ8nLSWG8dNt3JUgOjEKaO7tjgXYII+QN9aT+LRzlcIuxKEYJw
-	PGFlqD+UPnJrcsMxJj1CxorCwAahprtcFZSU54NyzOk/LTLb1qwTF8OQUyPSHEthQx2KvigFSq7gG
-	CrhsH09L3vnZsnezkslA==;
+	List-Owner; bh=I/eiqm5RR2SpUkCkr/M7gc+S8tnS+D3Psp6qtI+nmzg=; b=UHjujtyu57/jY8
+	NE9GvEFkOUDk0uTQtvv/1075ziJ+PFlTjj+yY3lKSSkLoC/tY2fyAMq1P4syJq5DuU+EPvGVJgfBI
+	PjTqD+Ta9yRvrvZJPzr8Y3ySL3b4qGg9raEUSH56qSrJco04zmlHV+MT/cEpTDjrddCpLnAe2+YWj
+	i2aJmTZssxThLVwBDdLRKIcoJTlqMDYwYMN9g0F/acs1MpvT05IUog6tvQO0CTxCn52zIJyaCFs3i
+	v+M0lTPOV+lJ/WjIchQZCEV71hy7z3c2SRkV2fkp93pZ8gYzIjD+3x5tozFgEVHm12vd3x4SfXigZ
+	tC10KRZZAlkE51mBFFtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1AQH-007Xva-1e;
-	Mon, 22 May 2023 18:38:21 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1q1B0N-007eCk-27;
+	Mon, 22 May 2023 19:15:39 +0000
+Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1AQE-007Xu8-1a
+	id 1q1B0K-007eB2-1B
 	for linux-phy@lists.infradead.org;
-	Mon, 22 May 2023 18:38:19 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4f3bb395e69so2466314e87.2
-        for <linux-phy@lists.infradead.org>; Mon, 22 May 2023 11:38:15 -0700 (PDT)
+	Mon, 22 May 2023 19:15:38 +0000
+Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-64d2a613ec4so3153786b3a.1
+        for <linux-phy@lists.infradead.org>; Mon, 22 May 2023 12:15:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684780694; x=1687372694;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=7g+eBWdXPpClWzwgE+9KC8dMIxNBnrOJ+PBoFojXwDU=;
-        b=iMrFsTnQvHs2azUIRBShLKj+1/m+uYiDEh3lFC7fKyfiQ2Si0y6/yONmK9yEX2mKfY
-         PESZWrg2BSbmqL2t5n/TUPv/nHj1BV/mhGm03cOU3GLrkTYQoGKYmgHpm8er2Oh+LISe
-         ra9jNmrH4JEu0D2KDhgDq0f1ajkSYlyjmyD9sxeEm9wvsr8/WTiGMW7ilouBHDTWG8J1
-         77D1uNOA8kls3K/LttvhXoSRJeFzbq50w+mQuVW+9GGCe5cLmhJ15uyGWCXQDM4LIvNn
-         ADc1qUzb24fy7LAWvPF9shMtZHy6QUfekjwcdfcn6lNXxwOsOFtWoBDbhQOF6WdoaMl4
-         Fjpw==
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684782933; x=1687374933;
+        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=+yOtfK1pFQtCc71cFzgVKT6xOp98rRtV2rALJqQa+Fg=;
+        b=tzCG7+bIvrimmh9A79/cNNYbpqnrTvZ9KS7MzHN8Wwp9N/VNwyNHiWm9sfXmiJN+FZ
+         2NAYs3kITqf86jDQ3tpi3vVo9R3izNAYncChMT8VoVmi6HPAkDIemARWEjqJubVudaVB
+         1atrGX3hl/iXBUubxEcRJXz0FdWG1FKy510pwp3Xpz800d6nlmEUq405nJvUPJafdCLb
+         /Re6eMA2CPNO3M6CKiek6H7kiLzIBPVhu0jT/VtcH4URW2lTu6qP2wWPpBwCM7yxB0nc
+         7iIFFjrTuI1aN9UfKYRt4g6d8659Mn/ft8lHutS63ZrazzQpjQsxrgPANbJl/a3l5cVX
+         5GBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684780694; x=1687372694;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=7g+eBWdXPpClWzwgE+9KC8dMIxNBnrOJ+PBoFojXwDU=;
-        b=aNno1YpBR8GQkMXpE921Aqo9oSksgo4+KFI8Tr9TCKSemAS4bgkAFCp9tnn0dh9sOs
-         ieqtkfSqQprB2YxaYhzuKAy6tf1IFX3ZwX934YRcYSUi3qsEYsqqsg9U4M4dwKsB/50g
-         W6l6T6TSdTVieFXK+hW1U756cs0LXye+3U0wqf1qbbyhyC25dSnf23DjE82adVrVcBk4
-         B1v8lcyuQwbBtcofBQ/GRHeHNgNcUDlNxvCETJXpBU37pG/O/HhtVg4opcEoH2yXeNe2
-         KGDrKZXN4YtG9JP4p58Xn9KGp14ILjf2ZLcAcCn/tgR0rLM7n+7gnl+p6tZdAXJq01TW
-         aiyA==
-X-Gm-Message-State: AC+VfDwcaaww9JMwCyLFQ3vNfU+Y7O3o46pY6VaB6dNLfmKTeOPsdsJN
-	bbs5H5u57J1yO5oq60bAwe9Yag==
-X-Google-Smtp-Source: ACHHUZ6I1qjJZwN+hTVMveXFNPlk35jCWxEx22+V+5Br2s5Gi2M7p+E667aAD+xd2QTCwVeIvuXyng==
-X-Received: by 2002:a05:6512:49e:b0:4f1:4d66:ac96 with SMTP id v30-20020a056512049e00b004f14d66ac96mr3283290lfq.19.1684780693706;
-        Mon, 22 May 2023 11:38:13 -0700 (PDT)
-Received: from ?IPV6:2001:14ba:a0db:1f00::8a5? (dzdqv0yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a0db:1f00::8a5])
-        by smtp.gmail.com with ESMTPSA id r11-20020a19ac4b000000b004f252f48e5fsm1079378lfc.40.2023.05.22.11.38.13
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 22 May 2023 11:38:13 -0700 (PDT)
-Message-ID: <844191d4-9a6b-605a-5d1a-cd4ad5dc98c9@linaro.org>
-Date: Mon, 22 May 2023 21:38:12 +0300
+        d=1e100.net; s=20221208; t=1684782933; x=1687374933;
+        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+yOtfK1pFQtCc71cFzgVKT6xOp98rRtV2rALJqQa+Fg=;
+        b=jiTi12um+aMAcIEKHKFwiGdq0hJaeRV1YKu/qatKrVB3GZGgrU7FwH7UMfwtnj40W+
+         7XQVY7t5AnkbSbe7ocGSEzDc4EAK40R3RROm9Mp1EHArEC8Dj+BTLmfy7ePiI1sG2Tth
+         9NehbcuDOXu46GqnrUKk32k5yqAaXsmASvt+wo5n2NFtAStKeZiGLTAkfSwFTEuAJIUZ
+         uwHjo+LzhhYoDgVdg1FR6meDhQaUkISwEcyJ8voqoHZG1oopP7xbamuPAGM6mEpfk+cz
+         eGnHvZuYXcz7o64uqecj1oWZnEWcX3X6k5HA9stTCuEuoxU4MkxWj47yT98k5bvybzhh
+         BOzQ==
+X-Gm-Message-State: AC+VfDxMooCFYbAwGjjc/cr12weCiY5Xt13JnV1Fnzl7oDqIGBjiziyZ
+	wg9TA1tJFyYpYu94jc2sLkx/Qw==
+X-Google-Smtp-Source: ACHHUZ52ZEECneLAS9tm/UNsmG0ECpBajQruy+F2ybktcTEo240DF7Ky6kbzndheezdG3NztN857vw==
+X-Received: by 2002:a17:902:c407:b0:1ac:451d:34b with SMTP id k7-20020a170902c40700b001ac451d034bmr16613997plk.9.1684782932841;
+        Mon, 22 May 2023 12:15:32 -0700 (PDT)
+Received: from localhost ([75.172.135.98])
+        by smtp.gmail.com with ESMTPSA id bj6-20020a170902850600b001a183ade911sm5205732plb.56.2023.05.22.12.15.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 22 May 2023 12:15:32 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Julien Stephan
+ <jstephan@baylibre.com>
+Cc: robh@kernel.org, chunkuang.hu@kernel.org,
+ linux-mediatek@lists.infradead.org, Florian Sylvestre
+ <fsylvestre@baylibre.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Andy
+ Hsieh <andy.hsieh@mediatek.com>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, "moderated list:ARM/Mediatek
+ USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, "open
+ list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, "open
+ list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add mediatek mipi csi driver v
+ 0.5
+In-Reply-To: <c63ebd7e-8658-9cdd-4fc4-ade9c94dfa64@linaro.org>
+References: <20230515090551.1251389-1-jstephan@baylibre.com>
+ <20230515090551.1251389-2-jstephan@baylibre.com>
+ <ab9aa30f-82d7-1d14-5561-e19ff10af0b0@linaro.org>
+ <4yppinkucchwnwtnnpbqdn4bejmntjq3q6mx6es55f2pwyce3c@qdhdks47lpyt>
+ <1853f049-4f00-b7f0-973a-2c4e7b0b2634@linaro.org>
+ <7h353w2oug.fsf@baylibre.com>
+ <fbf1b0a6-f45d-69a0-5de6-8269567e15b3@linaro.org>
+ <7hwn18yndq.fsf@baylibre.com>
+ <c63ebd7e-8658-9cdd-4fc4-ade9c94dfa64@linaro.org>
+Date: Mon, 22 May 2023 12:15:31 -0700
+Message-ID: <7hcz2snpnw.fsf@baylibre.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH v2 04/11] arm64: dts: qcom: msm8998: switch UFS QMP PHY to
- new style of bindings
-Content-Language: en-GB
-To: Konrad Dybcio <konrad.dybcio@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- Johan Hovold <johan@kernel.org>
-References: <20230521203834.22566-1-dmitry.baryshkov@linaro.org>
- <20230521203834.22566-5-dmitry.baryshkov@linaro.org>
- <37f97ffc-01c1-797c-f50c-1680f666d79d@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <37f97ffc-01c1-797c-f50c-1680f666d79d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_113818_529464_2CE5E438 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20230522_121536_426856_7B730A38 
+X-CRM114-Status: GOOD (  30.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,76 +104,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/05/2023 19:59, Konrad Dybcio wrote:
-> 
-> 
-> On 21.05.2023 22:38, Dmitry Baryshkov wrote:
->> Change the UFS QMP PHY to use newer style of QMP PHY bindings (single
->> resource region, no per-PHY subnodes).
->>
->> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
->>   arch/arm64/boot/dts/qcom/msm8998.dtsi | 16 +++-------------
->>   1 file changed, 3 insertions(+), 13 deletions(-)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
->> index b150437a8355..848fbd2cb3f8 100644
->> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
->> @@ -980,7 +980,7 @@ ufshc: ufshc@1da4000 {
->>   			compatible = "qcom,msm8998-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
->>   			reg = <0x01da4000 0x2500>;
->>   			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
->> -			phys = <&ufsphy_lanes>;
->> +			phys = <&ufsphy>;
->>   			phy-names = "ufsphy";
->>   			lanes-per-direction = <2>;
->>   			power-domains = <&gcc UFS_GDSC>;
->> @@ -1021,11 +1021,8 @@ ufshc: ufshc@1da4000 {
->>   
->>   		ufsphy: phy@1da7000 {
->>   			compatible = "qcom,msm8998-qmp-ufs-phy";
->> -			reg = <0x01da7000 0x18c>;
->> -			#address-cells = <1>;
->> -			#size-cells = <1>;
->> +			reg = <0x01da7000 0x1000>;
->>   			status = "disabled";
->> -			ranges;
->>   
->>   			clock-names =
->>   				"ref",
->> @@ -1037,14 +1034,7 @@ ufsphy: phy@1da7000 {
->>   			reset-names = "ufsphy";
->>   			resets = <&ufshc 0>;
->>   
->> -			ufsphy_lanes: phy@1da7400 {
->> -				reg = <0x01da7400 0x128>,
->> -				      <0x01da7600 0x1fc>,
->> -				      <0x01da7c00 0x1dc>,
->> -				      <0x01da7800 0x128>,
->> -				      <0x01da7a00 0x1fc>;
->> -				#phy-cells = <0>;
->> -			};
->> +			#phy-cells = <0>;
-> Looks like that will make status not-last?
+Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> writes:
 
-It was not the last one beforehand, so I hesitated to move it. Let's fix it.
+> On 16/05/2023 23:31, Kevin Hilman wrote:
+>
+>>> Third is to use versioned IP blocks.
+>>>
+>>> The second case also would work, if it is applicable to you (you really
+>>> have fallback matching all devices). Third solution depends on your
+>>> versioning and Rob expressed dislike about it many times.
+>>>
+>>> We had many discussions on mailing lists, thus simplifying the review -
+>>> I recommend the first choice. For a better recommendation you should say
+>>> a bit more about the block in different SoCs.
+>> 
+>> I'll try to say a bit more about the PHY block, but in fact, it's not
+>> just about differences between SoCs. On the same SoC, 2 different PHYs
+>> may have different features/capabilities.
+>> 
+>> For example, on MT8365, There are 2 PHYs: CSI0 and CSI1.  CSI0 can
+>> function as a C-PHY or a D-PHY, but CSI1 can only function as D-PHY
+>> (used as the example in the binding patch[1].)  On another related SoC,
+>> there are 3 PHYs, where CSI0 is C-D but CSI1 & CSI2 are only D.
+>> 
+>> So that's why it seems (at least to me) that while we need SoC
+>> compatible, it's not enough.  We also need properties to describe
+>> PHY-specific features (e.g. C-D PHY)
+>
+> I recall the same or very similar case... It bugs me now, but
+> unfortunately I cannot find it.
+>
+>> 
+>> Of course, we could rely only on SoC-specific compatibles describe this.
+>> But then driver will need an SoC-specific table with the number of PHYs
+>> and per-PHY features for each SoC encoded in the driver.  Since the
+>> driver otherwise doesn't (and shouldn't, IMHO) need to know how many
+>> PHYs are on each SoC, I suggested to Julien that perhaps the additional
+>> propery was the better solution.
+>
+> Phys were modeled as separate device instances, so you would need
+> difference in compatible to figure out which phy is it.
+>
+> Other way could be to create device for all phys and use phy-cells=1.
+> Whether it makes sense, depends on the actual datasheet - maybe the
+> split phy per device is artificial? There is one PHY block with two
+> address ranges for each PHY - CSI0 and CSI1 - but it is actually one
+> block? You should carefully check this because once design is chosen,
+> you won't be able to go back to other and it might be a problem (e.g.
+> there is some top-level block for powering on all CSI instances).
 
-> 
-> Konrad
->>   		};
->>   
->>   		tcsr_mutex: hwlock@1f40000 {
+We're pretty sure these are multiple instances of the IP block as they
+can operate completely independently. 
 
--- 
-With best wishes
-Dmitry
+>> 
+>> To me it seems redundant to have the driver encode PHYs-per-SoC info,
+>> when the per-SoC DT is going to have the same info, so my suggestion was
+>> to simplify the driver and have this kind of hardware description in the
+>> DT, and keep the driver simple, but we are definitely open to learning
+>> the "right way" of doing this.
+>
+> The property then is reasonable. It should not be bool, though, because
+> it does not scale. There can be next block which supports only D-PHY on
+> CSI0 and C-PHY on CSI1? Maybe some enum or list, depending on possible
+> configurations.
 
+OK, looks like include/dt-bindings/phy/phy.y already has
+
+  #define PHY_TYPE_DPHY		10
+  #define PHY_TYPE_CPHY		11
+
+we'll add a PHY_TYPE_CDPHY and use that.   Sound reasonable?
+
+Kevin
 
 -- 
 linux-phy mailing list
