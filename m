@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53A6AC7EE23
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D16FDC7EE3A
 	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 17:34:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qlZIvy7DRvdoCM6IenSuncIFE3p0DwdMwQYr1rigQ6w=; b=uyD2x3zv4v+7lR
-	5cDLsHv3tmtEqw+VQHe1ShetP4aRTQg8AvB1I6vbseeTysirm+m+RLkrQ0stUJDxZuNpngQeqjtB6
-	MN7q8taOw4FtVcYbNyLBsHo3jioWMXQ5xQBtayT2cpaC7xayU8lWbhqkS8CtFTZxZ86ycFwJREzMr
-	Fh092LLqoYDhkaQI41L/+sgpkWcPZTuCGKAWyN5avaBU9hzDTwiwB9luAay+QOQ5FnNa3+cm57lDL
-	KvNmrWwc2Ir80pOyd5QbldN2WzjnguA4CapdHvLIzx+wTzOTt3hwegBdoccbVFVVgCfglN5m9Ae0e
-	LhNo2R7u/CkoZBmeIB9A==;
+	List-Owner; bh=gO6KItIT3/pHdw/wqb3R/Zfvdhiyo14qKO1Xs2eWnn0=; b=bw+Pva+wtIe7SH
+	Y2+D+qy1U4/S3NR0Up2mq//nSkhxid7GqDT2nmpxuO8PJ1PIuiwNWt4v0H8c4XXykNAMw1MMJENVL
+	pTw9VzVKtnuA5mdtwngeDgdw/FE21Of4mn7KbIJpaTmQE/heKotDLnrC7nk0lk7BslWeExZSWTCmL
+	Osi/b/d6TFk3PMeo00s0xUE1MSH/Hxt3juIlCdqEazz+ynECiSRiB6zelaXnOsq72Fgy6c06rxTvU
+	TAZtoMTG0sPCmSvQO3wuw63BHdgn6lkQR+q/l/3wynfG/EWntJpoPVFA9Pz8bieGdfG5S3YlllFus
+	hix96RHNV5oxzlNu4UOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q19Qc-007NrF-2Z;
-	Mon, 22 May 2023 17:34:38 +0000
+	id 1q19Qd-007Nrt-19;
+	Mon, 22 May 2023 17:34:39 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q19QY-007NnA-2G;
+	id 1q19QY-007NnB-2G;
 	Mon, 22 May 2023 17:34:36 +0000
 Received: from jupiter.universe (dyndsl-091-248-208-162.ewe-ip-backbone.de [91.248.208.162])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 35C3A6606E6C;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 2744C6606E66;
 	Mon, 22 May 2023 18:34:31 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1684776871;
-	bh=BoZKga0PfOsPfbrInX0w9l4g5csiejtz4nprxL0MYaE=;
+	bh=OjRo5bVWm0/EWH6VSr3hLdB1q2WNjk+Aw68TSPXpDNA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=l6Yb8tmQvVAxBYgC8BmNK9J+p20HUxcvpJSEIQNHO8zknX6vcLYLdqzZfSh/v1khR
-	 QVFH4L1q0usZrBVoVswIL2opZJ8nXACy7CbVhdAOM6l1NQNDHou8u6Xcx/ygQOzDmg
-	 EpeoOsx4d8nlnhNqcogBhGVG91Yu/hhXwFcGx7Rk9QXv1GKFQKe+i+KfqRvdRJFsj+
-	 zSo8HlWYhYNiUtLqCc9NuE7cEWFqLCGCOTA5Anpy/G0FDSWzVu2NkJBTPsi0FG4vBo
-	 3ZKSIBgzdFqCMA1OemN20yn+PJaSf1LFI9hRQf5kBxkXFDaxi1g/I4/u4In7C/VDTB
-	 4Szw/jMpV0Zig==
+	b=gmwjDVefrNXll8xF8QMraIRLTng+FkSF3BsD5OE9+cQa8L5mk39EvPAuaK8o8nBbU
+	 x2CazKzY7H8Yebp3Uj4rzo4VEGyqqDJIbb94S+ZBRilzyNMvSpefjBh+KrFyokQxIO
+	 MqdXZUHBcUZBMSODCmnXGiESpKdwOeyVHjj2qX3DfspNEOLrF4dmg3ooVAa75viJkt
+	 UQkszGWFkSxcsaDjbxYO6J3HqCoJtVtROJwM/pOE7UkY4FGfVCbqjiaNGdLdBX83j3
+	 HjdcRV+SynVUOu2VtyxeDCTMhT34uQo7pul5phWiZ6pFfopq5rRB07tPOp6Hd5+gvV
+	 lXTI1WLeARTyA==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 8F6C34807E3; Mon, 22 May 2023 19:34:29 +0200 (CEST)
+	id 8CA1D4807E1; Mon, 22 May 2023 19:34:29 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>
 Cc: Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v2 4/6] dt-bindings: phy: rockchip: rk3588 has two reset lines
-Date: Mon, 22 May 2023 19:34:21 +0200
-Message-Id: <20230522173423.64691-5-sebastian.reichel@collabora.com>
+Subject: [PATCH v2 2/6] dt-bindings: ata: ahci: add RK3588 AHCI controller
+Date: Mon, 22 May 2023 19:34:19 +0200
+Message-Id: <20230522173423.64691-3-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230522173423.64691-1-sebastian.reichel@collabora.com>
 References: <20230522173423.64691-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_103434_876149_22F341C0 
-X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-CacheID: sfid-20230522_103434_882704_8E1F3AEC 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,34 +87,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The RK3588 has two reset lines for the combphy. One for the
-APB interface and one for the actual PHY.
+Just like RK3568, the RK3588 has a DWC based AHCI controller.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- .../bindings/phy/phy-rockchip-naneng-combphy.yaml         | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml     | 8 ++++++--
+ Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml  | 6 ++++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-index 9ae514fa7533..82550a5c2ed5 100644
---- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-@@ -31,8 +31,14 @@ properties:
-       - const: pipe
+diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+index c1457910520b..34c5bf65b02d 100644
+--- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
++++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+@@ -31,11 +31,11 @@ properties:
+       PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx/Tx)
+       clock, etc.
+     minItems: 1
+-    maxItems: 4
++    maxItems: 6
  
-   resets:
-+    minItems: 1
-+    maxItems: 2
-+
-+  reset-names:
-+    minItems: 1
+   clock-names:
+     minItems: 1
+-    maxItems: 4
++    maxItems: 6
      items:
--      - description: exclusive PHY reset line
-+      - const: phy
-+      - const: apb
+       oneOf:
+         - description: Application APB/AHB/AXI BIU clock
+@@ -48,6 +48,10 @@ properties:
+           const: pmalive
+         - description: RxOOB detection clock
+           const: rxoob
++        - description: PHY Transmit Clock
++          const: asic
++        - description: PHY Receive Clock
++          const: rbc
+         - description: SATA Ports reference clock
+           const: ref
  
-   rockchip,enable-ssc:
-     type: boolean
+diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+index 5afa4b57ce20..c6a0d6c8b62c 100644
+--- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
++++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+@@ -23,9 +23,11 @@ properties:
+         const: snps,dwc-ahci
+       - description: SPEAr1340 AHCI SATA device
+         const: snps,spear-ahci
+-      - description: Rockhip RK3568 AHCI controller
++      - description: Rockhip AHCI controller
+         items:
+-          - const: rockchip,rk3568-dwc-ahci
++          - enum:
++              - rockchip,rk3568-dwc-ahci
++              - rockchip,rk3588-dwc-ahci
+           - const: snps,dwc-ahci
+ 
+ patternProperties:
 -- 
 2.39.2
 
