@@ -4,95 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0642BC77B75
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 19:15:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6B7AC77B73
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 19:24:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/eiqm5RR2SpUkCkr/M7gc+S8tnS+D3Psp6qtI+nmzg=; b=UHjujtyu57/jY8
-	NE9GvEFkOUDk0uTQtvv/1075ziJ+PFlTjj+yY3lKSSkLoC/tY2fyAMq1P4syJq5DuU+EPvGVJgfBI
-	PjTqD+Ta9yRvrvZJPzr8Y3ySL3b4qGg9raEUSH56qSrJco04zmlHV+MT/cEpTDjrddCpLnAe2+YWj
-	i2aJmTZssxThLVwBDdLRKIcoJTlqMDYwYMN9g0F/acs1MpvT05IUog6tvQO0CTxCn52zIJyaCFs3i
-	v+M0lTPOV+lJ/WjIchQZCEV71hy7z3c2SRkV2fkp93pZ8gYzIjD+3x5tozFgEVHm12vd3x4SfXigZ
-	tC10KRZZAlkE51mBFFtw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=PgdfjGPgoNcFuooDtVTS17jsCdH6rYfXb/0rsxSKT9Y=; b=mqBSNd0jg00qv2cSF1BEhlabeG
+	VjmfalpVwbjxCcGlIqFURzr63HBPK4zhj3LTh+iGd7YOtqvvwb5UvpZLuAZb8/JgL1yfWCcHv3EL1
+	MnItBIKFy13Wb8sLgpreTRw3FSgvUcwg7bh3kIUvWrlMk1hxPe/tYBUQpwb5Rcwc1VGMvYNnLbADG
+	ObD6b8Pkus/xe5gVeXkbmfwmZ98x9+pxCslwRPmDjfemHBn0hgjYjnIeaJiVY5Sm/JB3m4wYSoueg
+	5MV/StkDGEFjjGILEIQCz3kpf/SY+ps7X+N8NVrpOgmpn3PQkDEU/vdurDXfbmF0OxYwqzq82Rpez
+	vOMEu4DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1B0N-007eCk-27;
-	Mon, 22 May 2023 19:15:39 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1q1B9F-007flb-1b;
+	Mon, 22 May 2023 19:24:49 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1B0K-007eB2-1B
-	for linux-phy@lists.infradead.org;
-	Mon, 22 May 2023 19:15:38 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-64d2a613ec4so3153786b3a.1
-        for <linux-phy@lists.infradead.org>; Mon, 22 May 2023 12:15:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684782933; x=1687374933;
-        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
-         :from:from:to:cc:subject:date:message-id:reply-to;
-        bh=+yOtfK1pFQtCc71cFzgVKT6xOp98rRtV2rALJqQa+Fg=;
-        b=tzCG7+bIvrimmh9A79/cNNYbpqnrTvZ9KS7MzHN8Wwp9N/VNwyNHiWm9sfXmiJN+FZ
-         2NAYs3kITqf86jDQ3tpi3vVo9R3izNAYncChMT8VoVmi6HPAkDIemARWEjqJubVudaVB
-         1atrGX3hl/iXBUubxEcRJXz0FdWG1FKy510pwp3Xpz800d6nlmEUq405nJvUPJafdCLb
-         /Re6eMA2CPNO3M6CKiek6H7kiLzIBPVhu0jT/VtcH4URW2lTu6qP2wWPpBwCM7yxB0nc
-         7iIFFjrTuI1aN9UfKYRt4g6d8659Mn/ft8lHutS63ZrazzQpjQsxrgPANbJl/a3l5cVX
-         5GBQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684782933; x=1687374933;
-        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
-         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+yOtfK1pFQtCc71cFzgVKT6xOp98rRtV2rALJqQa+Fg=;
-        b=jiTi12um+aMAcIEKHKFwiGdq0hJaeRV1YKu/qatKrVB3GZGgrU7FwH7UMfwtnj40W+
-         7XQVY7t5AnkbSbe7ocGSEzDc4EAK40R3RROm9Mp1EHArEC8Dj+BTLmfy7ePiI1sG2Tth
-         9NehbcuDOXu46GqnrUKk32k5yqAaXsmASvt+wo5n2NFtAStKeZiGLTAkfSwFTEuAJIUZ
-         uwHjo+LzhhYoDgVdg1FR6meDhQaUkISwEcyJ8voqoHZG1oopP7xbamuPAGM6mEpfk+cz
-         eGnHvZuYXcz7o64uqecj1oWZnEWcX3X6k5HA9stTCuEuoxU4MkxWj47yT98k5bvybzhh
-         BOzQ==
-X-Gm-Message-State: AC+VfDxMooCFYbAwGjjc/cr12weCiY5Xt13JnV1Fnzl7oDqIGBjiziyZ
-	wg9TA1tJFyYpYu94jc2sLkx/Qw==
-X-Google-Smtp-Source: ACHHUZ52ZEECneLAS9tm/UNsmG0ECpBajQruy+F2ybktcTEo240DF7Ky6kbzndheezdG3NztN857vw==
-X-Received: by 2002:a17:902:c407:b0:1ac:451d:34b with SMTP id k7-20020a170902c40700b001ac451d034bmr16613997plk.9.1684782932841;
-        Mon, 22 May 2023 12:15:32 -0700 (PDT)
-Received: from localhost ([75.172.135.98])
-        by smtp.gmail.com with ESMTPSA id bj6-20020a170902850600b001a183ade911sm5205732plb.56.2023.05.22.12.15.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 22 May 2023 12:15:32 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Julien Stephan
- <jstephan@baylibre.com>
-Cc: robh@kernel.org, chunkuang.hu@kernel.org,
- linux-mediatek@lists.infradead.org, Florian Sylvestre
- <fsylvestre@baylibre.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Andy
- Hsieh <andy.hsieh@mediatek.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, "moderated list:ARM/Mediatek
- USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, "open
- list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, "open
- list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add mediatek mipi csi driver v
- 0.5
-In-Reply-To: <c63ebd7e-8658-9cdd-4fc4-ade9c94dfa64@linaro.org>
-References: <20230515090551.1251389-1-jstephan@baylibre.com>
- <20230515090551.1251389-2-jstephan@baylibre.com>
- <ab9aa30f-82d7-1d14-5561-e19ff10af0b0@linaro.org>
- <4yppinkucchwnwtnnpbqdn4bejmntjq3q6mx6es55f2pwyce3c@qdhdks47lpyt>
- <1853f049-4f00-b7f0-973a-2c4e7b0b2634@linaro.org>
- <7h353w2oug.fsf@baylibre.com>
- <fbf1b0a6-f45d-69a0-5de6-8269567e15b3@linaro.org>
- <7hwn18yndq.fsf@baylibre.com>
- <c63ebd7e-8658-9cdd-4fc4-ade9c94dfa64@linaro.org>
-Date: Mon, 22 May 2023 12:15:31 -0700
-Message-ID: <7hcz2snpnw.fsf@baylibre.com>
+	id 1q1B9C-007fkp-2G;
+	Mon, 22 May 2023 19:24:47 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3E29B6287E;
+	Mon, 22 May 2023 19:24:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA9C2C4339B;
+	Mon, 22 May 2023 19:24:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1684783485;
+	bh=RSKvD+Gg0X0tn8/0dtsFGEkG2OQ9a7Azcy+M2cqCDiw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=jXOEwZO7yCqNHHQ+wkO8E6g3WIXsWRU3srInmTFq8BCIGKR6udYIPuoEiRw8PZQKd
+	 jKND4lNpZDcbU+a0u6vsqN/62wK5cUl+kdUtxpETwgnR54a1P65aCh+1QZQxbZNsXZ
+	 kbTNnbD7SpeOWKPqks2ewaxWsE6DGAWKZgSuD78phXDfug7yEXYKznHTdAlN8ncTGI
+	 uKI6MabT3RF9B4kbAxS1o07SnD/ICx+IgVKcPmVzdXoLgGjJclbpdoITAz+DgbkTO9
+	 oZ8Sk5dAooYC+KCW4CpTQf907LF+ffSaJys863uMg2iGzHNZpNqv4wy9nCy7Om6m+h
+	 4Fq9Sxi5oPKLQ==
+Date: Mon, 22 May 2023 20:24:40 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+	Serge Semin <fancer.lancer@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCH v2 4/6] dt-bindings: phy: rockchip: rk3588 has two reset
+ lines
+Message-ID: <20230522-blanching-unfiled-b89a4378622e@spud>
+References: <20230522173423.64691-1-sebastian.reichel@collabora.com>
+ <20230522173423.64691-5-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
+In-Reply-To: <20230522173423.64691-5-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_121536_426856_7B730A38 
-X-CRM114-Status: GOOD (  30.29  )
+X-CRM114-CacheID: sfid-20230522_122446_803721_CE24A44E 
+X-CRM114-Status: GOOD (  17.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,85 +76,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============9149982170951105058=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> writes:
 
-> On 16/05/2023 23:31, Kevin Hilman wrote:
->
->>> Third is to use versioned IP blocks.
->>>
->>> The second case also would work, if it is applicable to you (you really
->>> have fallback matching all devices). Third solution depends on your
->>> versioning and Rob expressed dislike about it many times.
->>>
->>> We had many discussions on mailing lists, thus simplifying the review -
->>> I recommend the first choice. For a better recommendation you should say
->>> a bit more about the block in different SoCs.
->> 
->> I'll try to say a bit more about the PHY block, but in fact, it's not
->> just about differences between SoCs. On the same SoC, 2 different PHYs
->> may have different features/capabilities.
->> 
->> For example, on MT8365, There are 2 PHYs: CSI0 and CSI1.  CSI0 can
->> function as a C-PHY or a D-PHY, but CSI1 can only function as D-PHY
->> (used as the example in the binding patch[1].)  On another related SoC,
->> there are 3 PHYs, where CSI0 is C-D but CSI1 & CSI2 are only D.
->> 
->> So that's why it seems (at least to me) that while we need SoC
->> compatible, it's not enough.  We also need properties to describe
->> PHY-specific features (e.g. C-D PHY)
->
-> I recall the same or very similar case... It bugs me now, but
-> unfortunately I cannot find it.
->
->> 
->> Of course, we could rely only on SoC-specific compatibles describe this.
->> But then driver will need an SoC-specific table with the number of PHYs
->> and per-PHY features for each SoC encoded in the driver.  Since the
->> driver otherwise doesn't (and shouldn't, IMHO) need to know how many
->> PHYs are on each SoC, I suggested to Julien that perhaps the additional
->> propery was the better solution.
->
-> Phys were modeled as separate device instances, so you would need
-> difference in compatible to figure out which phy is it.
->
-> Other way could be to create device for all phys and use phy-cells=1.
-> Whether it makes sense, depends on the actual datasheet - maybe the
-> split phy per device is artificial? There is one PHY block with two
-> address ranges for each PHY - CSI0 and CSI1 - but it is actually one
-> block? You should carefully check this because once design is chosen,
-> you won't be able to go back to other and it might be a problem (e.g.
-> there is some top-level block for powering on all CSI instances).
+--===============9149982170951105058==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="XlKnjVVIuNeAc4md"
+Content-Disposition: inline
 
-We're pretty sure these are multiple instances of the IP block as they
-can operate completely independently. 
 
->> 
->> To me it seems redundant to have the driver encode PHYs-per-SoC info,
->> when the per-SoC DT is going to have the same info, so my suggestion was
->> to simplify the driver and have this kind of hardware description in the
->> DT, and keep the driver simple, but we are definitely open to learning
->> the "right way" of doing this.
->
-> The property then is reasonable. It should not be bool, though, because
-> it does not scale. There can be next block which supports only D-PHY on
-> CSI0 and C-PHY on CSI1? Maybe some enum or list, depending on possible
-> configurations.
+--XlKnjVVIuNeAc4md
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-OK, looks like include/dt-bindings/phy/phy.y already has
+Hey Sebastian,
 
-  #define PHY_TYPE_DPHY		10
-  #define PHY_TYPE_CPHY		11
+On Mon, May 22, 2023 at 07:34:21PM +0200, Sebastian Reichel wrote:
+> The RK3588 has two reset lines for the combphy. One for the
+> APB interface and one for the actual PHY.
 
-we'll add a PHY_TYPE_CDPHY and use that.   Sound reasonable?
+But the 68 only has one? Should per-compatible enforcement be added
+like you added for the clocks?
 
-Kevin
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> ---
+>  .../bindings/phy/phy-rockchip-naneng-combphy.yaml         | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-co=
+mbphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-comb=
+phy.yaml
+> index 9ae514fa7533..82550a5c2ed5 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.y=
+aml
+> +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.y=
+aml
+> @@ -31,8 +31,14 @@ properties:
+>        - const: pipe
+> =20
+>    resets:
+> +    minItems: 1
+> +    maxItems: 2
+> +
+> +  reset-names:
+> +    minItems: 1
+>      items:
+> -      - description: exclusive PHY reset line
+> +      - const: phy
+> +      - const: apb
+> =20
+>    rockchip,enable-ssc:
+>      type: boolean
+> --=20
+> 2.39.2
+>=20
+
+--XlKnjVVIuNeAc4md
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZGvBeAAKCRB4tDGHoIJi
+0ulrAQDdVYZ0XlkyJr9Pk+AzBZf9DYBqLoF3J5agxBBphJ/icAD+Ps9MqBbyxLxN
+Wtkf7n3izQhheQvLbTM0gYlDXt8TzgU=
+=I8fK
+-----END PGP SIGNATURE-----
+
+--XlKnjVVIuNeAc4md--
+
+
+--===============9149982170951105058==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============9149982170951105058==--
+
