@@ -4,75 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31FF4C7EE26
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 13:11:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3202C77B73
+	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 14:42:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=M6Mdenyfzh6D6YHIMbKxSvyhhMrswovvH4dcjXcqfjU=; b=Uk+TiL4vIF4s26unCeGg7n1UUN
-	DaZB0LphHJvDS/nBifCFoHb5A2BtuEz+mnxSOFGq+UQ3CzqUYh4EnsjQX2ZH/sILyKKL6DRFnMxOZ
-	ZzOQS63+i2ukyjFSp7HmKIw1axq8jn7/C9jdfKZi6XQpM3t+0zNzDzIGax++ioPb12/KaXFgQyYay
-	VbaesZRJNQlAMRdGmxu187HHHBvF/BfFGh4Fw1IOmkzhp3b3mfhKX6qEexpxwacl+nZ0grcTPZN7b
-	xtrti65SiOdXiNVok8BinEMoRp6hcBxSBYunQaTwkj6TMjO2/r6TdXWshOrkc6hGc2GkSUMVwPNbN
-	05q1pQ3A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Cc:
+	To:From:Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V5384PVN7LfAAKTXXaBazjnhai7qdGODGG1wmGJ764I=; b=uv/28UjUe8M1yN
+	qtsgttkWE33WOKCJZsNZjPsfs8jfPJ9G5a6D9rlesM3hTPnOQ80Ol2XkXZZPUo8sWOjWEcFQKqWV+
+	WnNwunQ7TNdZ8QkTav9cxTOXSEMqesU9MGcsrU8WMVAiAd+OIBU69LF7JzVX6lldAoPPjJs0fxhm6
+	/+RWlYQ7Ahd/dHNBbgEUbOxfgf7Ashi8JpLeaEgmdgOcinbVtimliNFjeuTHAQtxDoQ8tPO5GT4B7
+	jR4E2CAMkaXhWlyCNOWMkkHH3XnDCWqLm0sq6vjIRUhafT/QJAIgRTrRwpyGA31l2jC6XcMfg3JCr
+	z193Lkt8pMM9keTIUwZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q15KB-006cSo-2k;
-	Mon, 22 May 2023 13:11:43 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1q16k7-006sK7-0r;
+	Mon, 22 May 2023 14:42:35 +0000
+Received: from mail-dbaeur03hn20325.outbound.protection.outlook.com ([2a01:111:f400:fe1a::325] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q15K9-006cRt-0N;
-	Mon, 22 May 2023 13:11:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1684761101; x=1716297101;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=xpyLIb2+OMD3ly4N+A5YZqQ6cY7XOV1lf25zcvDcWtE=;
-  b=fXhfEnyv6kNzwl4ZHRWWPUb/OPzcAkqbp/S8prAJ1phZQ+8vqIHlHelf
-   KH14Yd/PbpRDmnA2hr4o52S12ANPMcWWulYIIhRshmYE2l1HS2dHwebGm
-   WP3mWSqlLIu8+sNuP+x8kB2arJFHbifdpUl8dcJWG8V5B8767Y4VtqJ/S
-   AkQdaIjeor4KV2C1/5/Mh4cb7+5FSuCrb3zuwGf4A+QX5K6l+v2pvPS11
-   eC6wFlNSYgr6u/3iShhSc78Y8EUrWrOYCZNpSPmnhD4lKHC6uRGuOn8MH
-   OPiFq6BXwGauPHL4aOzYxVFI09Rc70exe8Jf+vKsh2xNjMJMHlxPZZE/c
-   w==;
-X-IronPort-AV: E=Sophos;i="6.00,184,1681196400"; 
-   d="asc'?scan'208";a="153308173"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 22 May 2023 06:11:38 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Mon, 22 May 2023 06:11:36 -0700
-Received: from wendy (10.10.115.15) by chn-vm-ex03.mchp-main.com
- (10.10.85.151) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
- Transport; Mon, 22 May 2023 06:11:34 -0700
-Date: Mon, 22 May 2023 14:11:12 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Changhuang Liang <changhuang.liang@starfivetech.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
-Subject: Re: [PATCH v4 0/3] Add JH7110 MIPI DPHY RX support
-Message-ID: <20230522-extradite-nastily-c2a88cfd2f02@wendy>
-References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
- <93d39956-25c9-971b-e73b-09c69e803341@starfivetech.com>
+	id 1q16k2-006sGk-1q;
+	Mon, 22 May 2023 14:42:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d2vwI/Tgc3elQbSgBEA1vZoVrm+SiySCizDDNzYjRS4=;
+ b=QduOxHXqCnagtGZdkwXWj+Jdhd6ViVj7caVvo1zauV7unfNc6KanHpcBmZkHuLS6NAkom59NB82htusUcquZcrfOvdAh8KvkwXUwyZvKHIR7pCSN7zXMfEqr9Wc8imw5b9KM7dnJj92kV8ZL6SSZqnaJosonDbSRtNP5mOpZs/Tge4sOVI1qg+9lrbSCZFPSA0riMekM3m279RrJQt3XeI7ot8dElKbDAypHnLKLtMm6ibSmpI3kT3Wj2xBikLnTtPm/yty/U0sQmzwR6DWxvHdmQWvjC1ZAV52WPOpckAPp4O0Vt935QEkSChPoUgaH5Eu1d5/R90H+pq6b4Ok5nw==
+Received: from DB6PR0802CA0046.eurprd08.prod.outlook.com (2603:10a6:4:a3::32)
+ by DU0PR03MB9104.eurprd03.prod.outlook.com (2603:10a6:10:467::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6411.27; Mon, 22 May
+ 2023 14:42:24 +0000
+Received: from DB8EUR05FT015.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:4:a3:cafe::d7) by DB6PR0802CA0046.outlook.office365.com
+ (2603:10a6:4:a3::32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6411.28 via Frontend
+ Transport; Mon, 22 May 2023 14:42:24 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.83)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.83; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.83) by
+ DB8EUR05FT015.mail.protection.outlook.com (10.233.238.127) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6433.12 via Frontend Transport; Mon, 22 May 2023 14:42:24 +0000
+Received: from outmta (unknown [192.168.82.133])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id AD2FA2008008E;
+	Mon, 22 May 2023 14:42:23 +0000 (UTC)
+Received: from EUR01-DB5-obe.outbound.protection.outlook.com (unknown [104.47.2.55])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id BEDBB20080073;
+	Mon, 22 May 2023 14:44:45 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XrRJH95z5wI5/z17DDYDdrft0P8xgr8KhgI8kxom8Q5LI/EGSxA9rHQH9ZkUEe63u7Y0t4xG84F66ySM5E57cB1TmJ4PztqVRJz/meP1hQZR4HQe7bjjl2UONTYK9hJR8HzTiT94q/waHvT/B78JXrc6arRVwb1YVIt4fTc8LexMhnhfkdqCYrIfhswtZK90K70qzk9QkJI/4pceddQvPA5sNhueIRkdjnamBJP7YopfF3uayyxd6bH4GZWRh4Iq2v3u2qX4AJ0poRkjB/omaTZQckNH3/cp6A0Jduon1KOkZV32Df2daweXmOH6LHgvGDMEx7yqfni29Wh6ZVjvuQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=d2vwI/Tgc3elQbSgBEA1vZoVrm+SiySCizDDNzYjRS4=;
+ b=UcnowEsFz1hkpU7+Z7/4DzUnCUHOCQPCiGkT7wukfn0UOjdDMqmdgtAM860pXGKnNHAXPHgrgwutlbZ+5cn5diE1iKBF2rojEaDwRfa3OgkHHs3uZLh+J+iD9o+Cw/YCA+Bxgn3aad8eIM+A7CnvFSmeeIEYFYOy3vpsnvUtGz11QgTQpSRI0iSufFOuDqnvNPYclBBRWkxtfeyExgli32qjm2j026FE7oYXePTxk/dJbih69Rua8Nyj5nc3L5n2AzWOlul8DNnvTHRGwmFcQ29+IwN2w9oCATFNlTsQaoZf1jFbiGm2KmtjEbKzajW33hQuXaDJF4xK7GcFD1KXsA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d2vwI/Tgc3elQbSgBEA1vZoVrm+SiySCizDDNzYjRS4=;
+ b=QduOxHXqCnagtGZdkwXWj+Jdhd6ViVj7caVvo1zauV7unfNc6KanHpcBmZkHuLS6NAkom59NB82htusUcquZcrfOvdAh8KvkwXUwyZvKHIR7pCSN7zXMfEqr9Wc8imw5b9KM7dnJj92kV8ZL6SSZqnaJosonDbSRtNP5mOpZs/Tge4sOVI1qg+9lrbSCZFPSA0riMekM3m279RrJQt3XeI7ot8dElKbDAypHnLKLtMm6ibSmpI3kT3Wj2xBikLnTtPm/yty/U0sQmzwR6DWxvHdmQWvjC1ZAV52WPOpckAPp4O0Vt935QEkSChPoUgaH5Eu1d5/R90H+pq6b4Ok5nw==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by VI1PR03MB6207.eurprd03.prod.outlook.com (2603:10a6:800:131::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6411.28; Mon, 22 May
+ 2023 14:42:12 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e%3]) with mapi id 15.20.6411.028; Mon, 22 May 2023
+ 14:42:11 +0000
+Message-ID: <c2f928d2-25f6-0e31-9ab3-9d585968df1b@seco.com>
+Date: Mon, 22 May 2023 10:42:04 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Content-Language: en-US
+From: Sean Anderson <sean.anderson@seco.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ Bagas Sanjaya <bagasdotme@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ =?UTF-8?B?RmVybuKUnMOtbmRleiBSb2phcw==?= <noltari@gmail.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Li Yang <leoyang.li@nxp.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Shawn Guo
+ <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-gpio@vger.kernel.org
+References: <20230425195002.fls5cmwolyrslpad@skbuf>
+ <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
+ <20230426105140.t4yqv6irtjcwptm5@skbuf>
+ <20230425195002.fls5cmwolyrslpad@skbuf>
+ <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
+ <20230426105140.t4yqv6irtjcwptm5@skbuf>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <20230429172422.vc35tnwkekfieoru@skbuf>
+ <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
+In-Reply-To: <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
+X-ClientProxiedBy: BLAPR03CA0133.namprd03.prod.outlook.com
+ (2603:10b6:208:32e::18) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-In-Reply-To: <93d39956-25c9-971b-e73b-09c69e803341@starfivetech.com>
+X-MS-TrafficTypeDiagnostic: 	DB9PR03MB8847:EE_|VI1PR03MB6207:EE_|DB8EUR05FT015:EE_|DU0PR03MB9104:EE_
+X-MS-Office365-Filtering-Correlation-Id: bded69d8-d67d-4523-c7c1-08db5ad2c1ac
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:  b5BR8exlDfMTmg3+NtYaL/G5fg4TGgcciq+5zhgnli84AVfW4FUamK3M5gLSaVBnvhHUQNZFF9EmNc3NqFDNH5s3XpzGh79AiTi/fO+E8nx8OEl/riMZzp+enuWVD7yR4eYP5V/C95yQHdNmSE0fhCTcF1mrzu1qroEcC0tRGvqs1JQiUePXuyHNX5Bc/oE0G3DzfwH0Wgse1pVQXQfxcrD/m/sf/D0MU0X3ftAR0HwqharN0LfQkiwBsY7CbMIqBAIvraLzBUs+cqWgrsspzFHSpafK5B+JU2gM//s3so8FhYgH/5Cijh8+GLiqZzMNRNqaVSpP/ab438VCSwyUn33uB+YDT416FOCCPQpeCL7zwZhyc36zpSs2H0xmy3TJp8Z7SbYPrpLBE/umhzzOMvnkrliGH8AHhDyemPXELrIOGN/YUdaIgDNIGvh+EXfUEWnPvj55EfB7le/Q9jFveZxmObnhSv8Lv6O7OypuX5YWIqtLtVKbs8NcVTaym54suP7jF1AjNfCPqlkqyATzPo3Yx9Nk2fxZbUYZVt+eo4vCDBH9/vPioppwNUGsPF1ODuxlENmgdYXHwR4RvDjp8cbhhxtLIrfYPZyo9uL3ihbPbsxOMDld6eRPOUXloIz9hVyQhNKOI3NLF58C4J61pujLOGm3YMxCeGlUQUhG6BU4JLtDOu6eA8JgSEPAkf73
+X-Forefront-Antispam-Report-Untrusted:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(366004)(376002)(136003)(396003)(39850400004)(346002)(451199021)(38350700002)(38100700002)(66899021)(31696002)(86362001)(36756003)(53546011)(44832011)(6512007)(6506007)(8936002)(8676002)(7416002)(2616005)(2906002)(31686004)(54906003)(186003)(316002)(4326008)(6916009)(26005)(41300700001)(5660300002)(66476007)(6666004)(6486002)(52116002)(478600001)(66556008)(66946007)(83380400001)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR03MB6207
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:  DB8EUR05FT015.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 	5ba8d480-0ef6-4c41-55d7-08db5ad2ba19
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	YPOfUrKvrGScIiuQksw21Bk8Jnfm5E1IwmRPLCfSIeasXETXDHC/AfovP+5pTDDW7mHTOHOKN9Yxo9KYLZddObMku4IuX3VUqFmRVCPIPwBrI+5eVgaZsQBnt9eqWMG+P57uF29DUeCXcWoaP0zICtfG9Pz7elc2NbB0xrvzlkjO3zNYpkKeRMXk8Z6dk/ggnvrLvODI8j6US7KixlNS6+wz00T5t95KMVYKnmTvVU0pPrLCJ0eDBW6SdeVnJOf+lYYCdEjNiHZZitHpC7LEVBlfLVtMFJC+SoCbHWfwPdfQD4yyvi9W2QCwll/FbA/BwdcmS2AMJgPM/JJ7OuaGDSej5zI3yMWAGYWdwdEB+SIEIcfYmy9ufzOQbS22ENeXOyj96KIbsOuiPrIqhBsrDzeMEISk/lTZegJgT+pm1icv5sx2tAQv65ajqsrN2lRgl1yo4oUHxw+MLPd1hFOpn8iis4m2NJ5FibgGaDzpD21PhXnh8JiCR9pVQlB73a22sfj/qkLl7veydAllozPeKMnPERIwHT6RdRrUh8kGKoqVR00pObIRt0H3Q24KyTNXL67L/Wu0W22dfV4U/RJ5q+NTzUyhr/3W5MY0CwCaKXmAab7S1Fy/4fu/rI0ROWH6R5f77Z/Jg5ulG7Pz6ReGl+OdBeV7UKexmUc9wGGlR3hID4BwjaumFWHRWciOjEgAlLrXRu+SnjNMCqV69ULilDIGnIcYHXokn0YB9Esr2dWJEzSphxB2omBOH1uO5/bfg6FrLvRyFtP2TIVdyxs+gfxoEI6UCmjiTRjKOAb0iei6AkAlMEAsWZwbJMnTQsQhLIcAn9yqVqeCqEk1XiVsCw==
+X-Forefront-Antispam-Report: 	CIP:20.160.56.83;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(136003)(396003)(376002)(346002)(39850400004)(451199021)(5400799015)(46966006)(40470700004)(36840700001)(7416002)(44832011)(5660300002)(40460700003)(8676002)(8936002)(36860700001)(83380400001)(47076005)(2906002)(186003)(336012)(2616005)(36756003)(356005)(7596003)(7636003)(82740400003)(31696002)(34070700002)(86362001)(40480700001)(82310400005)(53546011)(6512007)(26005)(6506007)(54906003)(31686004)(316002)(6666004)(478600001)(6916009)(4326008)(70206006)(6486002)(70586007)(66899021)(41300700001)(43740500002)(12100799033);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 May 2023 14:42:24.1077
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: bded69d8-d67d-4523-c7c1-08db5ad2c1ac
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.83];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: 	DB8EUR05FT015.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR03MB9104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_061141_206525_BF455417 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20230522_074231_370507_66A4C59F 
+X-CRM114-Status: GOOD (  33.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,59 +159,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7331384750640968914=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============7331384750640968914==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ueSz+7+usqbjXZtt"
-Content-Disposition: inline
+Hi Vladmir,
 
---ueSz+7+usqbjXZtt
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+On 5/1/23 11:03, Sean Anderson wrote:
+> On 4/29/23 13:24, Vladimir Oltean wrote:
+>> On Wed, Apr 26, 2023 at 10:50:17AM -0400, Sean Anderson wrote:
+>>> > I need to catch up with 14 rounds of patches from you and with the
+>>> > discussions that took place on each version, and understand how you
+>>> > responded to feedback like "don't remove PHY interrupts without finding
+>>> > out why they don't work"
+>>> 
+>>> All I can say is that
+>>> 
+>>> - It doesn't work on my board
+>>> - The traces are on the bottom of the PCB
+>>> - The signal goes through an FPGA which (unlike the LS1046ARDB) is closed-source
+>> 
+>> I don't understand the distinction you are making here. Are the sources
+>> for QIXIS bit streams public for any Layerscape board?
+> 
+> Correct. The sources for the LS1046ARDB QIXIS are available for download.
+> 
+>>> - The alternative is polling once a second (not terribly intensive)
+>> 
+>> It makes a difference to performance (forwarded packets per second), believe it or not.
+> 
+> I don't. Please elaborate how link status latency from the phy affects performance.
+> 
+>>> 
+>>> I think it's very reasonable to make this change. Anyway, it's in a separate
+>>> patch so that it can be applied independently.
+>> 
+>> Perhaps better phrased: "discussed separately"...
+>> 
+>>> > Even if the SERDES and PLL drivers "work for you" in the current form,
+>>> > I doubt the usefulness of a PLL driver if you have to disconnect the
+>>> > SoC's reset request signal on the board to not be stuck in a reboot loop.
+>>> 
+>>> I would like to emphasize that this has *nothing to do with this driver*.
+>>> This behavior is part of the boot ROM (or something like it) and occurs before
+>>> any user code has ever executed. The problem of course is that certain RCWs
+>>> expect the reference clocks to be in certain (incompatible) configurations,
+>>> and will fail the boot without a lock. I think this is rather silly (since
+>>> you only need PLL lock when you actually want to use the serdes), but that's
+>>> how it is. And of course, this is only necessary because I was unable to get
+>>> major reconfiguration to work. In an ideal world, you could always boot with
+>>> the same RCW (with PLL config matching the board) and choose the major protocol
+>>> at runtime.
+>> 
+>> Could you please tell me what are the reference clock frequencies that
+>> your board provides at boot time to the 2 PLLs, and which SERDES
+>> protocol out of those 2 (1133 and 3333) boots correctly (no RESET_REQ
+>> hacks necessary) with those refclks? I will try to get a LS1046A-QDS
+>> where I boot from the same refclk + SERDES protocol configuration as
+>> you, and use PBI commands in the RCW to reconfigure the lanes (PLL
+>> selection and protocol registers) for the other mode, while keeping the
+>> FRATE_SEL of the PLLs unmodified.
+> 
+>  From table 31-1 in the RM, the PLL mapping for 1133 is 2211, and the
+>  PLL mapping for 3333 is 2222. As a consequence, for 1133, PLL 2 must be
+>  156.25 MHz and PLL 1 must be either 100 or 125 MHz. And for 3333, PLL 2
+>  must be either 100 or 125 MHz, and PLL 1 should be shut down (as it is
+>  unused). This conflict for PLL 2 means that the same reference clock
+>  configuration cannot work for both 1133 and 3333. In one of the
+>  configurations, SRDS_RST_RR will be set in RSTRQSR1. On our board,
+>  reference clock 1 is 156.25 MHz, and reference clock 2 is 125 MHz.
+>  Therefore, 3333 will fail to boot. Unfortunately, this reset request
+>  occurs before any user-configurable code has run (except the RCW), so
+>  it is not possible to fix this issue with e.g. PBI.
 
-On Mon, May 22, 2023 at 09:00:04PM +0800, Changhuang Liang wrote:
-> On 2023/4/12 16:45, Changhuang Liang wrote:
-> > This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
-> > It is used to transfer CSI camera data. The series has been tested on
-> > the VisionFive 2 board.
-> >=20
+Have you had a chance to review this driver?
 
-> Can you help to find the Vinod reviewed this patchset?
-
-I am sorry, but I have no idea what you mean.
-Are you asking if I can get Vinod to review the series?
-
-Cheers,
-Conor.
-
---ueSz+7+usqbjXZtt
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZGtp8AAKCRB4tDGHoIJi
-0oseAQC5Ema0k8zP3rAXvlOOucLhHBUucJkcO7G84GGXZOyIgwD/Z9jdZdiFz5Yf
-XgHWF5jAmdOU/G75KFDw9g6CW4IHZQo=
-=1M3+
------END PGP SIGNATURE-----
-
---ueSz+7+usqbjXZtt--
-
-
---===============7331384750640968914==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--Sean
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7331384750640968914==--
-
