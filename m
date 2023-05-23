@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6719C7EE33
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F07A5C7EE37
 	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 14:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ooLvKgAQeMy5DTOxWmR3W8XhFuKQdILGMPA9ee57GiM=; b=0W16XUuYtYg2YF
-	GpqQOJotKlwJZnhafuUrJKkYlXF1rURtiicZMUWncrHjkKOIy6XiY6mqb7x7oFwAtabNqYO74Tl7I
-	v5tzOJuTokeTf74EPlIM54/sggeWT3vhHwGMdKX6isTTcCGc5/DZhehlVGcAOsukepG03lE4ciKFc
-	Dfafld8MX5Nuu2XWABGyW6YNldJl5X67+8kHgW3Mb/UyJJWrpSnu2JQv+FPe2WvzqWgh0OufhGhHd
-	LDRhvo2A//rrLIw1AAmvTKrHdkP8tp4lkHZKmiSz2oq5LSl2lqgLhvH6M4zcW0kaQlZ88hz0YhQN4
-	0Sb83nqsVS5b/cc5oAPA==;
+	List-Owner; bh=FyH40lmWd387pRI4bt4qqN3+jpvz+gyazKXRksGGWmk=; b=paKVkOTDUfQaq8
+	PRHK+ldDXh29KWSmsK+KZVUg1ioWgSotxsz/09nmGk5NAcnCRDyIZI8NUbFhw6k29y6TItRWBa2Mb
+	nWeW8jQ+yS8SZba+jpMBoU/jwmKJHdlRtdFtP4Fbi+v3RTylJt5Yf0Dykfa/sKhTMdizOxZiGEiij
+	Q49Ot7ZiMClvXL8+BZ2FjtXWbBYSjJ57KYXDiKAq1aIgE2en1vMG727ytCBqrSEKFlLJolUOouKIR
+	QOMIvUgYyZM92SY/72e+NpaX/+QiAG29Xyu4gW6Qlq+5RQC6Rm03stOe/OVTdoPpM/Uwrhg7sjbfE
+	YVzWiZOwyXFY0oqxvfAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1Sfj-00ASaO-0v;
+	id 1q1Sfj-00ASaf-1t;
 	Tue, 23 May 2023 14:07:31 +0000
-Received: from mail-lj1-f182.google.com ([209.85.208.182])
+Received: from mail-lj1-f169.google.com ([209.85.208.169])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1Sff-00ASVa-1J
+	id 1q1Sfg-00ASW9-0l
 	for linux-phy@lists.infradead.org;
 	Tue, 23 May 2023 14:07:29 +0000
-Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-2af177f12d1so71501511fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 23 May 2023 07:07:26 -0700 (PDT)
+Received: by mail-lj1-f169.google.com with SMTP id 38308e7fff4ca-2af177f12a5so67536461fa.2
+        for <linux-phy@lists.infradead.org>; Tue, 23 May 2023 07:07:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684850785; x=1687442785;
+        d=linaro.org; s=google; t=1684850786; x=1687442786;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=I68K3BB4iJfx3Xn7rbtjuQH5W+UC/hortCKGNEq34Zo=;
-        b=xGczPVEOxj5TK8sFUdgTtaP289D8M968lk4WpW/rbaC19oN3W63WNxH9xMCeGPbsRe
-         lXk7mR99FXDWSJ8mczu3gXkmcpBRonfAKKMfZvqTqZdJ2DsLF5D8b8RPRchW0PRT6wVg
-         Vj4SCG18Fb7mZWqummeapp5bib7qX91sPjbopQOvPOw3ogubdGr7WpSVgrh1lH1fAZpY
-         miXgOEEy1NxTheOXdeu6Cx1jcqS23RgUYdQ+z5h8m2tv03FgekiQJLzBFsTSPZ9+VNht
-         FdVvCKxRZzePzuEHIJQXGZTLbgcjV+9T9mpNpZP7KuFbOs/4HwpPWI/ssBGeosgs/EpF
-         P59A==
+        bh=veEEIYZ2tnU8dynywIj4SXYMM+OoUP4JXNgjsxIbn3Q=;
+        b=XjUvEjtnI4sX9K3uIvE5szYxsknxYZo/E/5fICgE371p63OG8OmP9tuDSt7WDhNc2P
+         VUyT1x8QsRNZGu/BWjy9iSqAHO+a6p+crTifs+vvB8l9OyBaktHLNGTftA94B1ljbUQK
+         uV3qCb/+jBpMhacXGQ3VqM6eydZnTiuFawDelT5TencczNuTi0bRLiFhtV3v3hzkv6Z2
+         L0WKhrR2m01phInOQQAvmSxvRC5Ix0uEuUYiMvFO9IkYmhUFJ8sgA0HKeOQvJeZOPROO
+         Kn5SGox+Sn4pSn+D/NEuCvqysVNyzDY5RosTVPoc2OgR4wztOOrFj1KpX5LtNFJNEyUn
+         hsnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684850785; x=1687442785;
+        d=1e100.net; s=20221208; t=1684850786; x=1687442786;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=I68K3BB4iJfx3Xn7rbtjuQH5W+UC/hortCKGNEq34Zo=;
-        b=FRJWnQV3oeuyJ6+ji/2SLn5vrBYjC9BuN6vEAbpNLiNOaGqWtp8nhCRWBXqHQv0SOa
-         bgIp2RymwNy/31olmJRlKTHgd9I+WzjyLJGFGtlI8R6zdHn3A3mC3eILJ0jNwofWpB9Z
-         eQwTep9+VE28VgLI1D1aQb+X2BfVuqxjHCf//B8Z4HWztT+109n+kRnunBXKNyXdonMr
-         4zdIOIuSx84REidY/QZ4ACszE69W+vl6rsQodyOCJlJbMdn5jxShKHSrIeLHU8+ghzOH
-         3hLhGGIvMwM4VQWcPgA7oVPzpdHQlK3YQd4H7iEPKUvOtyACG5Vgc7KhGqHZJSGaiUfa
-         Aicg==
-X-Gm-Message-State: AC+VfDyk9hzDzwS0UsK+oRxIE+U+cBiERagoT2bdIYOhpv9ovXsQdg0K
-	n8vc8tWp+LogqqkNFQD526UmjQ==
-X-Google-Smtp-Source: ACHHUZ6/mAovC+w8kfwOqclTWdEbzxxpbdcrvCzhQwrkuGWAZ/+NZ/h/ceBmlSxpU4rb8b+KpRR9kA==
-X-Received: by 2002:a2e:3612:0:b0:2a8:adc4:a928 with SMTP id d18-20020a2e3612000000b002a8adc4a928mr5216807lja.18.1684850785222;
-        Tue, 23 May 2023 07:06:25 -0700 (PDT)
+        bh=veEEIYZ2tnU8dynywIj4SXYMM+OoUP4JXNgjsxIbn3Q=;
+        b=A/kib1pCbKuefnWWEZ07FN6IAs6VYVy2eVzTPRBQj9QeC9cVwSIZDUDnqvhHIVYRvF
+         yhivy9yyr/EBEewKU02AIhSTgHOwEPCr5F3Vub3ClEMmL0bZsin9qNNweEqKFvlPVHuw
+         gsUyVCK6WzAVN3ThNTyXaTZXdAmACU7H0ffTpTZYaOfXv6NHTHGh2XQ8n5xMHXd5hmhy
+         F2B0auvkK1zdKoXhqHMYGoTs8nJgIetQunIHY/53TTvKbXXURjLZSHZ5hlclzzO7kdAv
+         e0u3qfxhQYLwSr9m8vF9KjkDciNs41hScmNZ0lc+ZfZdExHx5aeua+kvHMMR2HS9hrXe
+         8BGA==
+X-Gm-Message-State: AC+VfDxu3t7IG/94Pr45xrYjVcvJbGOK5XSnVo/ob9T7PKlR/3TzQFXj
+	7tlYchUCyO15zIanu9pB7iEwfv02JyAfXD1Kr7A=
+X-Google-Smtp-Source: ACHHUZ7CNdiFHrq8T3qmYAn0vt57lgf7SAwN2+lsoqpjxKV1/nC4Vr3EJf2bwcv1xeYvJWaS2gEEGg==
+X-Received: by 2002:a05:651c:113:b0:2af:a696:3699 with SMTP id a19-20020a05651c011300b002afa6963699mr2600356ljb.52.1684850786703;
+        Tue, 23 May 2023 07:06:26 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id l1-20020a2e9081000000b002adbe01cd69sm1633536ljg.9.2023.05.23.07.06.24
+        by smtp.gmail.com with ESMTPSA id l1-20020a2e9081000000b002adbe01cd69sm1633536ljg.9.2023.05.23.07.06.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 May 2023 07:06:24 -0700 (PDT)
+        Tue, 23 May 2023 07:06:26 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -74,16 +74,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 02/11] phy: qcom-qmp-ufs: populate offsets configuration
-Date: Tue, 23 May 2023 17:06:13 +0300
-Message-Id: <20230523140622.265692-3-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 04/11] arm64: dts: qcom: msm8998: switch UFS QMP PHY to new style of bindings
+Date: Tue, 23 May 2023 17:06:15 +0300
+Message-Id: <20230523140622.265692-5-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230523140622.265692-1-dmitry.baryshkov@linaro.org>
 References: <20230523140622.265692-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230523_070727_450503_BC77FCA3 
-X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-CacheID: sfid-20230523_070728_281297_2905DDAC 
+X-CRM114-Status: UNSURE (   9.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,63 +101,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Populate offsets configuration for the rest of UFS PHYs to make it
-possible to switch them to the new (single-node) bindings style.
+Change the UFS QMP PHY to use newer style of QMP PHY bindings (single
+resource region, no per-PHY subnodes).
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/qcom/msm8998.dtsi | 18 ++++--------------
+ 1 file changed, 4 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 8c877b668bb9..d99dc1043f74 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -833,6 +833,8 @@ static const struct qmp_ufs_offsets qmp_ufs_offsets_v6 = {
- static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
- 	.lanes			= 1,
+diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+index b150437a8355..58c7a52ea8d6 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+@@ -980,7 +980,7 @@ ufshc: ufshc@1da4000 {
+ 			compatible = "qcom,msm8998-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
+ 			reg = <0x01da4000 0x2500>;
+ 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+-			phys = <&ufsphy_lanes>;
++			phys = <&ufsphy>;
+ 			phy-names = "ufsphy";
+ 			lanes-per-direction = <2>;
+ 			power-domains = <&gcc UFS_GDSC>;
+@@ -1021,11 +1021,7 @@ ufshc: ufshc@1da4000 {
  
-+	.offsets		= &qmp_ufs_offsets,
-+
- 	.tbls = {
- 		.serdes		= msm8996_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(msm8996_ufsphy_serdes),
-@@ -924,6 +926,8 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
- static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- 	.lanes			= 2,
+ 		ufsphy: phy@1da7000 {
+ 			compatible = "qcom,msm8998-qmp-ufs-phy";
+-			reg = <0x01da7000 0x18c>;
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			status = "disabled";
+-			ranges;
++			reg = <0x01da7000 0x1000>;
  
-+	.offsets		= &qmp_ufs_offsets,
-+
- 	.tbls = {
- 		.serdes		= sdm845_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
-@@ -1038,6 +1042,8 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- 	.lanes			= 2,
+ 			clock-names =
+ 				"ref",
+@@ -1037,14 +1033,8 @@ ufsphy: phy@1da7000 {
+ 			reset-names = "ufsphy";
+ 			resets = <&ufshc 0>;
  
-+	.offsets		= &qmp_ufs_offsets,
-+
- 	.tbls = {
- 		.serdes		= sm8150_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
-@@ -1070,6 +1076,8 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 	.lanes			= 2,
+-			ufsphy_lanes: phy@1da7400 {
+-				reg = <0x01da7400 0x128>,
+-				      <0x01da7600 0x1fc>,
+-				      <0x01da7c00 0x1dc>,
+-				      <0x01da7800 0x128>,
+-				      <0x01da7a00 0x1fc>;
+-				#phy-cells = <0>;
+-			};
++			#phy-cells = <0>;
++			status = "disabled";
+ 		};
  
-+	.offsets		= &qmp_ufs_offsets,
-+
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-@@ -1102,6 +1110,8 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 	.lanes			= 2,
- 
-+	.offsets		= &qmp_ufs_offsets,
-+
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
+ 		tcsr_mutex: hwlock@1f40000 {
 -- 
 2.39.2
 
