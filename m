@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67D83C77B75
-	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 01:03:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08FCCC77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 02:59:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kcfSBEvyvK62/bMYDpsKTbN67OB7FHpUBjOSmrFrtZg=; b=QHH3uQwZSXsa6I
-	NZq7xOzM/I0XFztdiqk770LyzF5mNVYXBBqPQeapvmD3OULevvfC0zuBT6MzPMM8x4ihBht33irKg
-	uQ+xNq0bHImz6JR5fmv0AH+D/JmDeWfTW6+Gy8F4Jw0QJO1rOI7DWIe3uSk9iDPkt5zwjBCzZkNAb
-	B/FsPvfoMalc7XRfuKkVWdl/cl4zg0u8C3zlaZ8f6mI/Sk9dpZX/6WGNc/+AXIxCxcxPUFgJe6ad/
-	8dGyYCS3uUE9LhmebKOh8EttGH5J/zzMHAxeMqmBOhB8TUB9YIfGsF6BGRu/c3/Ip/kHFUqFROKhg
-	hMcmsmayPFIOm+c01lHg==;
+	List-Owner; bh=YkWNqvUguhe0TUVZPuj8675jNdCeDVm2ZTOiKc3zF/4=; b=lMOCsPeRQWVlfH
+	ocgNx3cXtCPWuegXEbndu0o9O2latxYdYwXwoeL0axLad3cdX4XnElRWizpEuZHIcBkjZ8RZWWMbl
+	wcGnXJ4Eys6am+V0RsUoQQoLQcvTbOuZK8KBknu1s1FFa3kCDYHu4JzZcVBiDMdHZr2R52OL6s9VT
+	0/ZqsmiRDzRUNcSch+ZRCdPaDsdxXcXg+OxR0AgQaKWCAnYdkPEH8xHfrfky9NUzv/DZeZd7IJxsU
+	7Qfb/T1jA0KlTq7R5YqG0D8KoEn4rDtIuKtY1ubIURiVhmygwY0nc3lpLH5INVGeKl4IhY7Pavt+5
+	NzhmKv1cSqr69stZ9GVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1GQj-008XmQ-08;
-	Tue, 23 May 2023 01:03:13 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1GQg-008XkY-1C;
-	Tue, 23 May 2023 01:03:12 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id EA59B24E1BA;
-	Tue, 23 May 2023 09:02:25 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 23 May
- 2023 09:02:25 +0800
-Received: from [192.168.125.107] (183.27.98.143) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 23 May
- 2023 09:02:24 +0800
-Message-ID: <7d4c3c08-6590-5947-92c6-1425c0cb662d@starfivetech.com>
-Date: Tue, 23 May 2023 09:02:24 +0800
+	id 1q1IFP-008kkZ-29;
+	Tue, 23 May 2023 02:59:39 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1q1IFM-008kjm-2t
+	for linux-phy@lists.infradead.org;
+	Tue, 23 May 2023 02:59:38 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2213E62E62;
+	Tue, 23 May 2023 02:59:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9691C433EF;
+	Tue, 23 May 2023 02:59:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1684810775;
+	bh=L1BWY7n5uV+djySaOrcQQBx8wTnk/CYzmuwPx6/o4WE=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=nAvgu6821dC6xU0l9r1c+H92bdKkRZMUf5DFGgQjOo17DRk3PIs8l2IC9PPrlsxdw
+	 G5x8OasLhO4qOzIYX2YzdnVLGWI9SIwIDiT7pbS3rsphFTEDCt2MvHIYuC9sDWmeeK
+	 ld/pk6ecPaxCUuVirQXa5CXSySTKSSnjdP5R3Csk5SksUM5zb56CJLzgNDlCN33+V+
+	 W7VCqrIZOQJGDlfuJ3Lt0XbMey3fm//rynuakE1TBIOGrrd46B9kcp3D0ZTyFw1w+V
+	 DPewEeDkyMoUZnRkasUbgdhmdmUtrbdb3UnkAObrUOqXkGiguRLU58aF0O0GdfLS/B
+	 5wf7tPthLpn2w==
+From: Bjorn Andersson <andersson@kernel.org>
+To: Johan Hovold <johan@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH 0/7] phy: qcom-qmp-combo: Support orientation switching
+Date: Mon, 22 May 2023 20:03:23 -0700
+Message-Id: <168481094821.1229550.15816978324618259434.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
+References: <20230425034010.3789376-1-quic_bjorande@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v4 0/3] Add JH7110 MIPI DPHY RX support
-Content-Language: en-US
-To: Conor Dooley <conor.dooley@microchip.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
-References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
- <93d39956-25c9-971b-e73b-09c69e803341@starfivetech.com>
- <20230522-extradite-nastily-c2a88cfd2f02@wendy>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230522-extradite-nastily-c2a88cfd2f02@wendy>
-X-Originating-IP: [183.27.98.143]
-X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_180310_562553_1D9E6577 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20230522_195936_990980_9F2A8341 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,26 +83,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/5/22 21:11, Conor Dooley wrote:
-> On Mon, May 22, 2023 at 09:00:04PM +0800, Changhuang Liang wrote:
->> On 2023/4/12 16:45, Changhuang Liang wrote:
->>> This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
->>> It is used to transfer CSI camera data. The series has been tested on
->>> the VisionFive 2 board.
->>>
+On Mon, 24 Apr 2023 20:40:03 -0700, Bjorn Andersson wrote:
+> This adds support for USB and DisplayPort orientation switching to the
+> QMP combo PHY, as well as updating the sc8280xp devices to include the
+> QMP in the SuperSpeed graph.
 > 
->> Can you help to find the Vinod reviewed this patchset?
+> Bjorn Andersson (7):
+>   dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add ports and
+>     orientation-switch
+>   phy: qcom-qmp-combo: Move phy_mutex out of com_init/exit
+>   phy: qcom-qmp-combo: Introduce orientation variable
+>   phy: qcom-qmp-combo: Introduce orientation switching
+>   phy: qcom-qmp-combo: Introduce drm_bridge
+>   arm64: dts: qcom: sc8280xp-crd: Add QMP to SuperSpeed graph
+>   arm64: dts: qcom: sc8280xp-x13s: Add QMP to SuperSpeed graph
 > 
-> I am sorry, but I have no idea what you mean.
-> Are you asking if I can get Vinod to review the series?
-> 
+> [...]
 
-Yes, I need his comments.
+Applied, thanks!
 
-Thanks,
-Changhuang
+[1/7] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add ports and orientation-switch
+      (no commit info)
+[2/7] phy: qcom-qmp-combo: Move phy_mutex out of com_init/exit
+      (no commit info)
+[3/7] phy: qcom-qmp-combo: Introduce orientation variable
+      (no commit info)
+[4/7] phy: qcom-qmp-combo: Introduce orientation switching
+      (no commit info)
+[5/7] phy: qcom-qmp-combo: Introduce drm_bridge
+      (no commit info)
+[6/7] arm64: dts: qcom: sc8280xp-crd: Add QMP to SuperSpeed graph
+      commit: 507ceaa5ca9fac0d9fe2521c29d7d6237c1214f4
+[7/7] arm64: dts: qcom: sc8280xp-x13s: Add QMP to SuperSpeed graph
+      commit: 42b08375498e74f094425fad10d10c338fd29858
+
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
