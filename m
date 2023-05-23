@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7A72C7EE2D
-	for <linux-phy@archiver.kernel.org>; Mon, 22 May 2023 19:33:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67D83C77B75
+	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 01:03:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PxxX993T0rJteSo3iG/AgD9cEbxnNQRaqt8utkhbSk0=; b=rCcPjQML2hSX+gLOrgGvUG3dX2
-	bJQapG1+CDEN4RQqT+j29WsepZQlPVjlQueRNL8Qy2Z8SIDkMzGRNfX93deOg0H9RpJSpBImjAUS9
-	/TcaZJ5m68AMh/PnrH1F25K8ZqQ5no/DmF4Gu2Jml8EBJh29xZJbkBiEFoKC6pCKfQVrFIQa1DXv7
-	fl/liL2DNkKTC2507L2wrnzPQA/RiI5bkKkwHpgo5GwWNDK/nQfTZF5dfv7ezcaHPfI1/bcOXz4Fs
-	gMeRa+52i2Ppc7XRkd8zCr8dk3zfjzVu+5khXd2tvT72sDpKyPOZZ8IRzLXdxitG8ktBKN+l1xjZa
-	ul2FxXEg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kcfSBEvyvK62/bMYDpsKTbN67OB7FHpUBjOSmrFrtZg=; b=QHH3uQwZSXsa6I
+	NZq7xOzM/I0XFztdiqk770LyzF5mNVYXBBqPQeapvmD3OULevvfC0zuBT6MzPMM8x4ihBht33irKg
+	uQ+xNq0bHImz6JR5fmv0AH+D/JmDeWfTW6+Gy8F4Jw0QJO1rOI7DWIe3uSk9iDPkt5zwjBCzZkNAb
+	B/FsPvfoMalc7XRfuKkVWdl/cl4zg0u8C3zlaZ8f6mI/Sk9dpZX/6WGNc/+AXIxCxcxPUFgJe6ad/
+	8dGyYCS3uUE9LhmebKOh8EttGH5J/zzMHAxeMqmBOhB8TUB9YIfGsF6BGRu/c3/Ip/kHFUqFROKhg
+	hMcmsmayPFIOm+c01lHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1BHb-007hGd-12;
-	Mon, 22 May 2023 19:33:27 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1BHY-007hFW-32;
-	Mon, 22 May 2023 19:33:26 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7A95362969;
-	Mon, 22 May 2023 19:33:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2850AC433D2;
-	Mon, 22 May 2023 19:33:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684784003;
-	bh=OVB40/WHQmDIjb/DP6ihCpAXDmmjOaFyfPqOk8udXkE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=k3vpqGL0sV2TWfVhqCnmyUrnG6I/z5KBssBlelU9CEM7dUbF7w3OGBbgldXa9cdEj
-	 9kJrVWQ6y/xb6jzB3Ws+NZFEQICjzMMegmAeDDr3aezcYShiIM/9Ctad04B8cHmK6V
-	 x8nPAfiTbnDq1NrPe/1aWO3smf6ZyNSTrVSsa2ClnQuY91+R6pcdgjgFIp91piT+//
-	 P39zUi2bLT5UrzjpBjEJIb1+iGk3lUzod10Pc4PvaVG8j4tZML890GkKNwAHx3InP0
-	 7e70XHsI8qVZuUxUHXYb71LigYE5qGoen63qu0IgTEsZJ49XwEnPix6mlkxBhDJXvH
-	 /6g+Z5MRWmyiQ==
-Date: Mon, 22 May 2023 20:33:18 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCH v2 2/6] dt-bindings: ata: ahci: add RK3588 AHCI controller
-Message-ID: <20230522-galore-unchain-12ad8d5a8536@spud>
-References: <20230522173423.64691-1-sebastian.reichel@collabora.com>
- <20230522173423.64691-3-sebastian.reichel@collabora.com>
+	id 1q1GQj-008XmQ-08;
+	Tue, 23 May 2023 01:03:13 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1q1GQg-008XkY-1C;
+	Tue, 23 May 2023 01:03:12 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id EA59B24E1BA;
+	Tue, 23 May 2023 09:02:25 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 23 May
+ 2023 09:02:25 +0800
+Received: from [192.168.125.107] (183.27.98.143) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 23 May
+ 2023 09:02:24 +0800
+Message-ID: <7d4c3c08-6590-5947-92c6-1425c0cb662d@starfivetech.com>
+Date: Tue, 23 May 2023 09:02:24 +0800
 MIME-Version: 1.0
-In-Reply-To: <20230522173423.64691-3-sebastian.reichel@collabora.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v4 0/3] Add JH7110 MIPI DPHY RX support
+Content-Language: en-US
+To: Conor Dooley <conor.dooley@microchip.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
+References: <20230412084540.295411-1-changhuang.liang@starfivetech.com>
+ <93d39956-25c9-971b-e73b-09c69e803341@starfivetech.com>
+ <20230522-extradite-nastily-c2a88cfd2f02@wendy>
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230522-extradite-nastily-c2a88cfd2f02@wendy>
+X-Originating-IP: [183.27.98.143]
+X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230522_123325_064359_AFA0B28F 
-X-CRM114-Status: GOOD (  18.18  )
+X-CRM114-CacheID: sfid-20230522_180310_562553_1D9E6577 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,94 +77,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5627721342486480370=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5627721342486480370==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Kp1Yl3qJOKQBgdGX"
-Content-Disposition: inline
 
+On 2023/5/22 21:11, Conor Dooley wrote:
+> On Mon, May 22, 2023 at 09:00:04PM +0800, Changhuang Liang wrote:
+>> On 2023/4/12 16:45, Changhuang Liang wrote:
+>>> This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
+>>> It is used to transfer CSI camera data. The series has been tested on
+>>> the VisionFive 2 board.
+>>>
+> 
+>> Can you help to find the Vinod reviewed this patchset?
+> 
+> I am sorry, but I have no idea what you mean.
+> Are you asking if I can get Vinod to review the series?
+> 
 
---Kp1Yl3qJOKQBgdGX
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Yes, I need his comments.
 
-On Mon, May 22, 2023 at 07:34:19PM +0200, Sebastian Reichel wrote:
-> Just like RK3568, the RK3588 has a DWC based AHCI controller.
->=20
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> ---
->  .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml     | 8 ++++++--
->  Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml  | 6 ++++--
->  2 files changed, 10 insertions(+), 4 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.y=
-aml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-> index c1457910520b..34c5bf65b02d 100644
-> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-> @@ -31,11 +31,11 @@ properties:
->        PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx=
-/Tx)
->        clock, etc.
->      minItems: 1
-> -    maxItems: 4
-> +    maxItems: 6
-> =20
->    clock-names:
->      minItems: 1
-> -    maxItems: 4
-> +    maxItems: 6
->      items:
->        oneOf:
->          - description: Application APB/AHB/AXI BIU clock
-> @@ -48,6 +48,10 @@ properties:
->            const: pmalive
->          - description: RxOOB detection clock
->            const: rxoob
-> +        - description: PHY Transmit Clock
-> +          const: asic
-> +        - description: PHY Receive Clock
-> +          const: rbc
->          - description: SATA Ports reference clock
->            const: ref
-
-My brain is failing me at the moment, what is the reason for adding
-these into the middle of the list, as opposed to tacking them onto the
-end? Apologies if this came up on some past version that Rob or
-Krzysztof had a look at.
-
-Cheers,
-Conor.
-
---Kp1Yl3qJOKQBgdGX
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZGvDfgAKCRB4tDGHoIJi
-0nVOAQD94ejc8l5+1xjHan4Ua+e+wRMTehHBJS5M56GhMBexdQEA9Hamo6L62AT0
-g7YVVh9AtaMJexkFYBlyskG+OZkTrQs=
-=fGnh
------END PGP SIGNATURE-----
-
---Kp1Yl3qJOKQBgdGX--
-
-
---===============5627721342486480370==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Changhuang
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5627721342486480370==--
-
