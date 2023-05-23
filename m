@@ -4,80 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BB1BC7EE23
-	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 11:57:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7839C7EE2A
+	for <linux-phy@archiver.kernel.org>; Tue, 23 May 2023 12:15:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PyD1HvDXz7OxYA4o9zcwLjMPlNJnbeNcnJVYESLdgB8=; b=doE9seGHxW143t
-	aqQtfQPp+u2A1t2QxfKmZk5morvmGcDu6s/k1l/mnn2AgkfXteniEj8WSkoTbyeiTOpcrvkrSBjJu
-	5aHVB86z/JmBqLMGe3jBZ8W3zv4nhK4zC//UjNhv1Q7l/2166Kndje3Sg2ahhwHDn3Z6XL8XvSoGy
-	uBh/gphW4efdZrM8FcKGdhQVoVPlixxUNpHwFijkUHu5DWZe4hUdewa0ziHrDTBOExVK+uemGuzlC
-	7OmoAGEJo82gMGTVS3Cjdxp2UHt8MYrMHsK65cejBlcnTA1E0kKHkN0EI7+SN6FsXFhfgNIEPJIyO
-	bt3cNlOUZ1Sg9q859I/g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2sney7/SpUrGSdteMXLCyy0EJ6x50GpGSN4G84IrgQc=; b=pYzKIQ01MVpXPc
+	v2uaS+x2NRINTAPGxQ0ZrKE5/Bv/ZejQuT+hwA881HqeipUyxiiuYae4UfMKno0gE/u8tWj7htIpH
+	Idij/1xvO6RU6qot0VjR8zpE12cTqmw6ZyqYR0VS4w/e0EnH5t68hxfZhqMkhnmfpxTgHcWKUZN9/
+	s6HOQ5kRHJvTyZEb6Fj5aqIPMC0J4100jPsXz9I3eoF7K5sqFqZdCdP3JktZoavRDeFZ6UqgGGRLj
+	PZLzxL+0g63hzbgDATMbj7sI0wwAaMui/HwdsH9t/iBMubc60Um42AmCTH/Esg8Fp5zvtT1bOMczs
+	78Z9RNaybM+l0kEq7IpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1QdX-00A9Ij-0q;
-	Tue, 23 May 2023 11:57:07 +0000
-Received: from mail-lj1-f173.google.com ([209.85.208.173])
+	id 1q1Qvd-00ACSY-0u;
+	Tue, 23 May 2023 12:15:49 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1QdS-00A9HK-0Q
+	id 1q1Qva-00ACQA-1F
 	for linux-phy@lists.infradead.org;
-	Tue, 23 May 2023 11:57:05 +0000
-Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-2af1ae3a21fso67632061fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 23 May 2023 04:56:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1684842958; x=1687434958;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=8zAW8Q5S5rXjdmwhdT0daKqhZraK7B5DKGDiP4be9+o=;
-        b=xZfiKPMNUc7Ut/YI6/ewXndUQ0oiSy8UR1G+OnXfueF0vQVXCEeZlea4FiKyabcS7D
-         BIRW2GqXm8lecbKQuFT4j4Avd99hXl1Z6eASSc4hQLe1PKDBPGth0I+W4ZrTOeeMEHOJ
-         pw7YaRxBQBO+BdLKAQAKY/0Y5PcD/i1N89hSDMczWP/YWnsamOKsgPAIqLoYRYWFB2mn
-         DSSE0FFwVUAeTGhK+7agjtcGr0gZRyacvNiGYixiq1RLuSHmv9sfUrXP2zChB4TBhlUT
-         xWBnuzuf/Pol+0gHO+YqQY6zzrGk5xYuAksds/7ZlYMZofBDgx0ykklTUOA1Sg1dtMGE
-         mD3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684842958; x=1687434958;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=8zAW8Q5S5rXjdmwhdT0daKqhZraK7B5DKGDiP4be9+o=;
-        b=SAZsr0yF1mOlj4ftgwWhQLyV6wcb0EO4oLjc+1uFMcenkge7Z95HdIn2TZRYOahFZz
-         m1Pwd29D/UzkX16y7jki2vPrAg41C4ymWtXgorR9Ii58xI2ghw0i0pARypuZq1XNnkdu
-         62lVottHFvNwSclsI7qeCv5zhCoiRkAQUfRtOZNXOqxLDL6mgQzzsE9Q6CSR41e/8MjB
-         uAwgm48xm64CcxvcL1qpSnLDhomCkdZJT1+W6zPaj7mAVEfcZiBl41FX9T6M+e2m6FqC
-         Stb/oR6PktchSa1zJvkLQ/ywBuTx4rjiWNDKsWEmujSB86YA2FDLtsh5LwQfwOu8Bxog
-         e6UA==
-X-Gm-Message-State: AC+VfDyY4NUnIiPuOOkFbic+rbke9GstGUaxwmVLKdJr9F+xxoCMFDrp
-	nPQtmZqCkSfmiRPK9TeDrLHHZw==
-X-Google-Smtp-Source: ACHHUZ4RUSdkgR3aBpWxg/ICRjbkfam0oSMXvo9mqukxpwQaSjC3XWCHJ9x8Onb/kSokgWfQ3iCcbg==
-X-Received: by 2002:a2e:9213:0:b0:2ad:9c26:3638 with SMTP id k19-20020a2e9213000000b002ad9c263638mr5720015ljg.52.1684842957660;
-        Tue, 23 May 2023 04:55:57 -0700 (PDT)
-Received: from eriador.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id 4-20020a05651c008400b002aa42d728d9sm1585350ljq.36.2023.05.23.04.55.56
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 May 2023 04:55:56 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH] phy: qcom-snps: Fix kerneldoc warning
-Date: Tue, 23 May 2023 14:55:56 +0300
-Message-Id: <20230523115556.3460131-1-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.39.2
+	Tue, 23 May 2023 12:15:47 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 79FED63112;
+	Tue, 23 May 2023 12:15:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FF74C433EF;
+	Tue, 23 May 2023 12:15:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1684844144;
+	bh=t0ZnWXHr4W89C2nVkt32hoIOuOv+Sm2e39jBAIljHG8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=cNFwTc4HnIT0hCWg/Pox+TJQmsquXHgw48FMR12Ekoqv3o5hRha/tCz636z/hSGmJ
+	 eSnViL7YkB7VsKV+YfT4CdM+w8hoh+j2EXs2EhxfDiHFhScplQRpS5PE1Q0LXUBLmR
+	 3WmXeZJ0aovr5Cd2ggg376trsm19HmSkuCzu2DWIiHWp+49+lzQD0Rp0JfnrRF8HNf
+	 350MSeceTyAboG4PcNtUckmaF1f1YMSYCvDps3hx+iCX/UgcEkqqIAGLK1p1DKPK9T
+	 DfLBcYLzgmkNkVI/G+nJUbrTZuoMHQBh9n/+cxMdXSg4vOST3UTuTBGrDh91NsjzW1
+	 EF+kWbdhnK3Hw==
+Message-ID: <a04a6afa-6daf-ca50-9a99-d52764def948@kernel.org>
+Date: Tue, 23 May 2023 15:15:39 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v3] phy: cadence: Sierra: Add single link SGMII register
+ configuration
+Content-Language: en-US
+To: Marcin Wierzbicki <mawierzb@cisco.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Lars-Peter Clausen <lars@metafoo.de>, Swapnil Jakhade
+ <sjakhade@cadence.com>, =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?=
+ <u.kleine-koenig@pengutronix.de>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: xe-linux-external@cisco.com, danielwa@cisco.com, olicht@cisco.com,
+ Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+References: <20230522172415.1668975-1-mawierzb@cisco.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20230522172415.1668975-1-mawierzb@cisco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230523_045702_186281_4D5EADD9 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20230523_051546_461425_0E2BA5D8 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,30 +83,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ad ddocumentation to the update_seq_cfg to fix the kerneldoc warning:
 
-drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:136: warning: Function parameter or member 'update_seq_cfg' not described in 'qcom_snps_hsphy'
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 1 +
- 1 file changed, 1 insertion(+)
+On 22/05/2023 20:24, Marcin Wierzbicki wrote:
+> Add single link SGMII register configuration for no SSC for
+> cdns,sierra-phy-t0 compatibility string.
+> The configuration is based on Sierra Programmer's Guide and
+> validated in Cisco CrayAR SoC.
+> 
+> Co-developed-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+> Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+> Signed-off-by: Marcin Wierzbicki <mawierzb@cisco.com>
+> ---
+> v3> - all reported comments were addressed
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index a59063596214..6fe442d0241b 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -120,6 +120,7 @@ struct phy_override_seq {
-  * @vregs: regulator supplies bulk data
-  * @phy_initialized: if PHY has been initialized correctly
-  * @mode: contains the current mode the PHY is in
-+ * @update_seq_cfg: PHY configuration bits
-  */
- struct qcom_snps_hsphy {
- 	struct phy *phy;
+:)
+You should summarize what changes were done.
+
+> - v2: https://lore.kernel.org/lkml/20230508160142.2489365-1-mawierzb@cisco.com/T/#u
+> 
+> v2
+> - rebased version on top of commit 0cfa43ab46b5 ("phy: cadence: Sierra: Add PCIe + SGMII PHY multilink configuration")
+> - v1: https://lore.kernel.org/lkml/20230419093008.195094-1-mawierzb@cisco.com/T/
+> 
+> Regards,
+> Marcin
+
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
+
 -- 
-2.39.2
-
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
