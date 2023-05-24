@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14969C7EE32
-	for <linux-phy@archiver.kernel.org>; Wed, 24 May 2023 09:35:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84BDCC7EE2E
+	for <linux-phy@archiver.kernel.org>; Wed, 24 May 2023 09:35:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TvW9Xu4shhQKocN2poeFgCWse9KD5eipcifgksjMCUU=; b=FHkQdR4K22h5WW
-	7MQdwwE64ABa8a0yENcPvrlrGuujWLxlixUWGIvJU+3sQnaivoJLgpjG/tstLrGmsyo0GldgW2Rms
-	xS1DvRPT+G3dgpNQ2lpMD3aF1k6nMPm6C5a17wfhYb18Rk68tyJMheZBTcHP2Hn6QkhNLHTFqIex1
-	UiXTSjfQvVH/3wKn+TTcfJTxxEW1ZDgERIbFyX6aVeFFmqxP0Kus78iaNyH5T7I/1E8tITFwxecsH
-	77wJqZth/Gq89qxBQjSihlvZ4jDyk3BLX2mZep4sk1IsQvYQ0LxTiLRtPns3ptfujuwAy/F03PR+F
-	oHZO1G7T5OD1N6B8z5Ag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nlVXgbPi5+HbNwatmaK6IX+Vlkq4kL2sPCrmL/GeEuM=; b=PMC6iEwuk9oMXI
+	iSXkiHLb3cAzLY46EWJgsNplhZgsIkXscrlBVav+je26bHdys/kZo363+AjWSw3h1iYwLvxGNbZlV
+	GjEBOhdICbnsGWVPvLvIVvX1ntLisUzDq3KxHE4hWXJaRvGAJyUyWHeDiQ9YJ/NLqIrHpMA7Dvfy0
+	WFz6u6siiGKw97G13b9XKAszosM1QeU94fzAMZNnqoUvBAwutRgKBHU9BHIoHkM7n2dJXWRSxOo/T
+	sNUwXTybTaW5Uj3F78yWaGQA/qe91rKGrrnO3DRtezrpKMZDM5jXXVvT/N6J0ljZaggAbtMr25nuv
+	NRell/j2yVXKZLd+R96Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1ktj-00Cz7C-0v;
-	Wed, 24 May 2023 09:35:11 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1q1ktl-00Cz96-0W;
+	Wed, 24 May 2023 09:35:13 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q1jtU-00CmZB-2Y
+	id 1q1jtT-00CmYi-2N
 	for linux-phy@lists.infradead.org;
-	Wed, 24 May 2023 08:30:54 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-3f6042d605dso5702665e9.2
-        for <linux-phy@lists.infradead.org>; Wed, 24 May 2023 01:30:48 -0700 (PDT)
+	Wed, 24 May 2023 08:30:55 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-309550263e0so460875f8f.2
+        for <linux-phy@lists.infradead.org>; Wed, 24 May 2023 01:30:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684917047; x=1687509047;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=GFkeXmTsUMY8GSw8DO1YxsHt1wzgz+ONEfDUI+8GUAE=;
-        b=Ky164TgIAjXoNCRewjAvpvhOJ4Fq2aqesYTLjaP4MsCdZWaK7nNI1q4ACUHyf0yARP
-         khE4z1B4Wq3htHoGGiNu+1mMFFRKUkdv/98piGwOHRcsYTzoseEHnt4dQ+gSAMSTXTSb
-         1j75EhptJA+nEMLiybke6sENFCRCPbdkvcEZISCZtt8Ps/JPEsyGSZrxNu9oMC0r5Ecz
-         9O72t84s/Ms51QhGIloJa0e3TS2IsckqzZwn1CpJz4yOfg0/yCZbJbjr8Q0u71l0fRdV
-         HudbAm0rHClx0bTFzAbc85WUmKaoTxiHzJUYrkQYS5aT4NIx1ofDL7RZIuX5kDA6y4nB
-         IbMg==
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1684917044; x=1687509044;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=kffM2qOd8UySQXRHCzIS0BeFu6Pjgruc1iNUigvygb8=;
+        b=TrQn2EijrNey35nJ4xgpghuPuNSrvgrfBZjIxo8csQh6I1eaXFFYJISM7dXKj1+92/
+         bTgTyOVd0m+OAduhxhN/IHEjxY9KQrHQFx0b8TfDbO1amxKvnwAmY0wr06vA99olLews
+         tbxmwz3MeJ+bpNt/W4UcTZbAaGVPov+9EjNBO2fdXCitmVSSsRSwYX70okXZWAqtDU58
+         Pvlw6frc5B8bW8yah2SWWEfYRqzrvLh00WLLEeHhvDAH8CCfGwj3bSbuM8YaEf1KR4yp
+         MDTRv+/fDWL15PFeMb0jw6CnsaB5HN6og5AMXKNxw9torqW5G3CWMgEMndLpudAz7kxc
+         vU3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1684917047; x=1687509047;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=GFkeXmTsUMY8GSw8DO1YxsHt1wzgz+ONEfDUI+8GUAE=;
-        b=RUgZe4Sn8QE0agcXMYKcdKh826RR1OcTxpUKLDUn6SKuZYCXtheqaIskVuJBvcneKh
-         zQboU6IPbFv34LFEI/QPNhO9IKkskh/6NY3pznr+D/5zcCS7WF8UK/y3SjbwZ704rdGM
-         /gktpUnd/hxL5CocrukFo/SL/hr/zNs4l9sndcp7ev63AlWrqbyC+n5Voj/7vAxOQj59
-         S07+RmiDiI90wNK4zigM+VibMAkXDxF3nSrQNRQE7kqA3tFoG8WbncNvTqe4p1TdmUJN
-         OPCtm/7VhMcBVtJKXSP4uv0S/loScjoBhx2JNVgFjUR5433kjoVI7lLhzjZALWY8ARre
-         KUWg==
-X-Gm-Message-State: AC+VfDwCaeBcqQVncwWTY2P4tWfUMJpzutRUNU/93qgehIcs99RfH24W
-	9S9sInognknk0ZK4dBzDWeBiBQ==
-X-Google-Smtp-Source: ACHHUZ6JqNOn6TctkUQ6E/Zh8dcU2trBSmopBqGdD7CTtYD4boZi1njHtt373XgOG0bq+Mr+DhVFKQ==
-X-Received: by 2002:adf:f80d:0:b0:306:4613:e0f0 with SMTP id s13-20020adff80d000000b003064613e0f0mr11012487wrp.68.1684917047325;
-        Wed, 24 May 2023 01:30:47 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1684917044; x=1687509044;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kffM2qOd8UySQXRHCzIS0BeFu6Pjgruc1iNUigvygb8=;
+        b=JsckTpOiraVo4g1/pvBe9aFwYWoQWG5vRKZ7rzJITCt4UvuDipmky0CNF9z3y1omso
+         CfM4uc6ehmcU+1nBT6ac2tGFflfFFEAySPpcjDvV6Zdy8mY8bBRx5T5k3UKUEjPslNUZ
+         /qcRpr7pzicVvoS4+mxXA5lQwAOHXfrGFPrHyQeLX9T0HlL1SW3eOnaxxFQtit+3Ohm6
+         uUGGreHL8woqI2kdc3fnOvsU2rUj6JhOl/KDQQy0Q+w3kQiLNCtfQsWDCyoBI5vmxxFh
+         q/wcSPpP8xaFbuvL1Me82QtdMs1oKZVk+etUUe1dt5YONdaTHF9NWcQULySgel9nYMtm
+         etQA==
+X-Gm-Message-State: AC+VfDxi6jR3QXkAzB1tiwgWx46aKKDyxfeT2PF5ZDBSfHX2DTV2BW8+
+	ExNjxWtFGJQHBIs0SlJ61LNApw==
+X-Google-Smtp-Source: ACHHUZ6RKUgi2r3+ULkAZkHhThnj59JBpVMuBR0BTeba5BRaxoHn2ulZhXc1hJPCT/6mYxsCf65d+Q==
+X-Received: by 2002:adf:f103:0:b0:309:509f:a7ef with SMTP id r3-20020adff103000000b00309509fa7efmr12077478wro.67.1684917044126;
+        Wed, 24 May 2023 01:30:44 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e0a:55f:21e0:9e19:4376:dea6:dbfa])
-        by smtp.gmail.com with ESMTPSA id n11-20020a5d484b000000b00307c0afc030sm13871832wrs.4.2023.05.24.01.30.46
+        by smtp.gmail.com with ESMTPSA id n11-20020a5d484b000000b00307c0afc030sm13871832wrs.4.2023.05.24.01.30.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 May 2023 01:30:46 -0700 (PDT)
+        Wed, 24 May 2023 01:30:43 -0700 (PDT)
 From: Julien Stephan <jstephan@baylibre.com>
 To: 
 Cc: mkorpershoek@baylibre.com,
@@ -84,17 +83,14 @@ Cc: mkorpershoek@baylibre.com,
 	Philipp Zabel <p.zabel@pengutronix.de>,
 	Rob Herring <robh+dt@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v3 1/3] dt-bindings: phy: add PHY_TYPE_CDPHY definition
-Date: Wed, 24 May 2023 10:30:30 +0200
-Message-Id: <20230524083033.486490-2-jstephan@baylibre.com>
+Subject: [PATCH v3 0/3] phy: mtk-mipi-csi: add driver for CSI phy
+Date: Wed, 24 May 2023 10:30:29 +0200
+Message-Id: <20230524083033.486490-1-jstephan@baylibre.com>
 X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230524083033.486490-1-jstephan@baylibre.com>
-References: <20230524083033.486490-1-jstephan@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230524_013052_830184_950D850B 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230524_013051_786313_B23DAF31 
+X-CRM114-Status: GOOD (  18.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,28 +107,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add definition for CDPHY phy type that can be configured in either D-PHY
-mode or C-PHY mode
+Adding a new driver for the MIPI CSI CD-PHY module v 0.5 embedded in
+some Mediatek soc, such as the MT8365
 
-Signed-off-by: Julien Stephan <jstephan@baylibre.com>
----
- include/dt-bindings/phy/phy.h | 1 +
- 1 file changed, 1 insertion(+)
+This driver was adapted from https://patchwork.kernel.org/project/linux-mediatek/cover/20200708104023.3225-1-louis.kuo@mediatek.com/
 
-diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
-index 6b901b342348..a19d85dbbf16 100644
---- a/include/dt-bindings/phy/phy.h
-+++ b/include/dt-bindings/phy/phy.h
-@@ -23,5 +23,6 @@
- #define PHY_TYPE_DPHY		10
- #define PHY_TYPE_CPHY		11
- #define PHY_TYPE_USXGMII	12
-+#define PHY_TYPE_CDPHY		13
- 
- #endif /* _DT_BINDINGS_PHY */
--- 
+v1 can be found here: https://lore.kernel.org/all/20230403071929.360911-1-jstephan@baylibre.com/
+
+v2 can be found here: https://lore.kernel.org/all/20230515090551.1251389-1-jstephan@baylibre.com/
+
+Changelog
+Changes in v3:
+Binding file:
+	- rename compatible string
+	  mediatek,phy-mipi-csi-0-5 -> mediatek,mt8365-csi-rx
+	- rename binding file to be as compatible string
+	- change property mediatek,is_cdphy -> mediatek,phy-type using an
+	  enum value instead of boolean for scalability
+	- remove status property from example nodes
+	- rename example node name 'mipi_rx_csi0: mipi_rx_csi0@11c10000' ->
+	  'csi0_rx: phy@11c10000'
+	- put reg address in lower case
+
+include/dt-bindings/phy/phy.h:
+	- add PHY_TYPE_CDPHY definition
+
+Driver:
+	- rename compatible string
+	- rename property mediatek,is_cdphy -> mediatek,phy-type
+	- rename CSIx* macro to CSIX* (x -> X)
+	- fix style issue on the driver data structure
+	- update MODULE_DESCRIPTION as suggested by Angelo
+	  and update the kconfig module description to match it
+	- add dphy /cdphy eq tuning function to factor the code
+	  and increase readability
+	- fix typo __PHY_MTK__MIPI_CSI__C_0_5_RX_REG_H_ -->
+	  __PHY_MTK_MIPI_CSI_V_0_5_RX_REG_H_
+	- reword commit message to update my contributions
+	- added missing copyright
+	- added module name in Kconfig
+
+Changes in v2:
+	- fix all comments on bindings
+	- move the binding chunk from driver to binding commit
+	- fix dt_binding_check error (reported by DT_CHECKER_FLAGS)
+	- use a more generic compatible string
+	- add a new dt properties to simplify the driver
+	  "mediatek,is_cdphy"
+	- rename the driver and the corresponding file to include
+	  version
+	- drop of_match_ptr()
+	- use devm_platform_ioremap_resource
+	- use phy-mtk-io.h api instead of regmap
+	- rework the driver to use dt nodes to declare PHY instead of an
+	  array in the driver
+	- remove useless define for unused registers
+	- remove support for CSI0A/B because it cannot be tested, and it
+	  simplifies the driver for a first review
+	- edit commit message and bindings to be more descriptive about the
+	  hardware
+
+
+Florian Sylvestre (1):
+  dt-bindings: phy: add mediatek MIPI CD-PHY module v0.5
+
+Julien Stephan (1):
+  dt-bindings: phy: add PHY_TYPE_CDPHY definition
+
+Phi-bang Nguyen (1):
+  phy: mtk-mipi-csi: add driver for CSI phy
+
+ .../bindings/phy/mediatek,mt8365-csi-rx.yaml  |  68 +++++
+ MAINTAINERS                                   |   7 +
+ drivers/phy/mediatek/Kconfig                  |   8 +
+ drivers/phy/mediatek/Makefile                 |   2 +
+ .../mediatek/phy-mtk-mipi-csi-0-5-rx-reg.h    |  58 ++++
+ drivers/phy/mediatek/phy-mtk-mipi-csi-0-5.c   | 272 ++++++++++++++++++
+ include/dt-bindings/phy/phy.h                 |   3 +-
+ 7 files changed, 417 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
+ create mode 100644 drivers/phy/mediatek/phy-mtk-mipi-csi-0-5-rx-reg.h
+ create mode 100644 drivers/phy/mediatek/phy-mtk-mipi-csi-0-5.c
+
+--
 2.40.1
-
 
 -- 
 linux-phy mailing list
