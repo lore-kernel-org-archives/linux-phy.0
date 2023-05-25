@@ -4,69 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 460E0C7EE29
-	for <linux-phy@archiver.kernel.org>; Thu, 25 May 2023 11:53:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 940E3C7EE2F
+	for <linux-phy@archiver.kernel.org>; Thu, 25 May 2023 21:34:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GK1ul/W43qgaofi04/7S0DNhJFPbOVv/+JRbPa4zvPQ=; b=YY5OFe0EZqYTR0
-	uZadYv/1R8aTsoD0/pV4uM8zu4kvhmFExzJtrb7oyEJk6wtEyIPIccSw2wXm+GQVvwgotioO1BOJT
-	QSFvaecJ5SAm0Wkvsgrh/4tyVbvwk2q651jXMQx+Qd1Zr3ngSSCSt/5uN9SMcH4Pau2l2JE9B6suq
-	ioOvaPy91rWaoBqMGLKYBysy7h+puUbg3Xfm8q16scC8FR3teGFfV8oExHtbDPBJ55kshrktC4gv7
-	sBcHLH+fyTxG3Ld7ebw050n0vGoivgQERw9sMVbqUYxwHPTq++H+A1sQZ3JVwp/TD9JglsIdgm1YS
-	/cFDi3l4cU4hmDHSX8bA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xZOUhWaHWAm0XcDpC4E0op642sCm15QkNxQfXr77LRc=; b=otFLOGdwWR4b7zO8jqovHRHi/S
+	ITgZW6PwAbk0wEqYvJne5MchtPHdhmn3L0PvOE/pAC571MT3CJ11ZirtpLtPv2ShVywX67jIcj+B3
+	I2wlbfVz6qlyWCP/qpyE5xXrK/F4SnxzYFfNnUTpWoz9lMo5EDyktieELufsqQFPEjiLUCEGTrfiX
+	C3+uMRCxOsbqnQr+sqi9kNaaYlngmd6NIlAg1/euK3aB64ldA7EvhTJEH0HBvpI5zwQJMKfcavwva
+	YrEROV4JAMOW7M9NxCFm9Eg/aTe8OltAX1bDh4ZZGNxcJPIZGlI2DzTadsxpzuaPLI2/43YTMSe8G
+	ACmdjwiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q29X5-00GYcT-2x;
-	Thu, 25 May 2023 11:53:27 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1q2IbF-000D18-0h;
+	Thu, 25 May 2023 21:34:21 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q29Wl-00GYPe-3A;
-	Thu, 25 May 2023 11:53:09 +0000
-Received: from IcarusMOD.eternityproject.eu (unknown [IPv6:2001:b07:2ed:14ed:a962:cd4d:a84:1eab])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	id 1q2IbC-000D0X-14;
+	Thu, 25 May 2023 21:34:19 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id E43E966059A5;
-	Thu, 25 May 2023 12:53:04 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1685015585;
-	bh=WbEXo3O6eq8DNbznstqMaJK9I2AdQzGF7reesP/HlpQ=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ObeEAKew/EV4k/4CVn0x6SQOFrwwbDVAZ+FzbB0+wvCKGDBeg/9srQrx0mOXI+ckk
-	 5POE11Zgw03CbyOWK3pRg5RpWyU0uLBALigsVQ1Dr63r8pCbG24+5HACVAyjRiKwWa
-	 +6XxDcIxkgnIEvkLe3u4APBEPIjTaaF8CPTnFkEAyTOt1dbh0AWwOfFjGuWDwpDlNi
-	 8aKtkrokLq701yCDGSKAV79QoO9IlZcGaFEBUFZP1hqLz8ETJvLP7vV+NyJtVRryUX
-	 4J6axsXdvNOStwOzSEONcc3M9M6ulB/qPzNREHy4RS5DMc9BRehDp5DE674Q6skiHT
-	 UWM7nCvMnHhuQ==
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunkuang.hu@kernel.org
-Cc: p.zabel@pengutronix.de,
-	chunfeng.yun@mediatek.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@collabora.com
-Subject: [PATCH 2/3] phy: mediatek: mipi-dsi: Use devm variant for of_clk_add_hw_provider()
-Date: Thu, 25 May 2023 13:52:57 +0200
-Message-Id: <20230525115258.90091-3-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230525115258.90091-1-angelogioacchino.delregno@collabora.com>
-References: <20230525115258.90091-1-angelogioacchino.delregno@collabora.com>
+	by dfw.source.kernel.org (Postfix) with ESMTPS id AB0F664AF3;
+	Thu, 25 May 2023 21:34:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4EBA4C433EF;
+	Thu, 25 May 2023 21:34:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1685050457;
+	bh=zZK1RRwMzH2sbsee7VnC7rlgcun9B4/SN/dI3FKVvrg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=sYy8VE1VD0cAgEQuQim7zpsjY9TurkTcJPM8V//GYjopKthjG7swTE5W5MfBkiymv
+	 gptEA5LzE3IQ95cBxZ2YaS+ouWHeojSMRaBTKoUhsGIXRsxsxPjsX6TPztQfMhMldh
+	 SuTIH5cGrlLwRkrvhRW0H4JvwkVdYq4GVx9hTsSWN0X+ERFX/OkNNQPf1/WVd/JLgX
+	 /AFo9muWJpPvbUiV5Vkz+O+/FB7GMsA1yaEPll0FSZXSUItNyIjw43FnpK+hMSGlrj
+	 gSxpoHHqT3QTPfco7ev8HFXnGS/mrM0GTn+0tO7TzsMQgFzKyLBSEnWqD1V1v0qzTR
+	 X5t+2G3DdOoZw==
+Date: Thu, 25 May 2023 22:34:10 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Minda Chen <minda.chen@starfivetech.com>
+Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Pawel Laszczak <pawell@cadence.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Peter Chen <peter.chen@kernel.org>,
+	Roger Quadros <rogerq@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org, linux-riscv@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Mason Huo <mason.huo@starfivetech.com>
+Subject: Re: [PATCH v6 5/7] dt-bindings: usb: Add StarFive JH7110 USB
+ controller
+Message-ID: <20230525-shopper-handbrake-27fc06aede32@spud>
+References: <20230518112750.57924-1-minda.chen@starfivetech.com>
+ <20230518112750.57924-6-minda.chen@starfivetech.com>
 MIME-Version: 1.0
+In-Reply-To: <20230518112750.57924-6-minda.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230525_045308_157489_C4C1ACDD 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20230525_143418_467155_4F7BC74E 
+X-CRM114-Status: GOOD (  17.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,51 +83,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7013868090245419525=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Switch to devm_of_clk_add_hw_provider() in the probe function: this
-also allows to entirely remove the .remove_new() callback, as its
-only task was to unregister the clock provider.
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+--===============7013868090245419525==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="SLOnlnkMNKq6BWyy"
+Content-Disposition: inline
 
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-index 362145198ff5..4e75c34c819b 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-@@ -176,12 +176,7 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 
- 	mtk_mipi_tx_get_calibration_datal(mipi_tx);
- 
--	return of_clk_add_hw_provider(dev->of_node, of_clk_hw_simple_get, &mipi_tx->pll_hw);
--}
--
--static void mtk_mipi_tx_remove(struct platform_device *pdev)
--{
--	of_clk_del_provider(pdev->dev.of_node);
-+	return devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &mipi_tx->pll_hw);
- }
- 
- static const struct of_device_id mtk_mipi_tx_match[] = {
-@@ -197,7 +192,6 @@ MODULE_DEVICE_TABLE(of, mtk_mipi_tx_match);
- 
- static struct platform_driver mtk_mipi_tx_driver = {
- 	.probe = mtk_mipi_tx_probe,
--	.remove_new = mtk_mipi_tx_remove,
- 	.driver = {
- 		.name = "mediatek-mipi-tx",
- 		.of_match_table = mtk_mipi_tx_match,
--- 
-2.40.1
 
+--SLOnlnkMNKq6BWyy
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, May 18, 2023 at 07:27:48PM +0800, Minda Chen wrote:
+> StarFive JH7110 platforms USB have a wrapper module around
+> the Cadence USBSS-DRD controller. Add binding information doc
+> for that.
+>=20
+> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+> Reviewed-by: Peter Chen <peter.chen@kernel.org>
+> Reviewed-by: Hal Feng <hal.feng@starfivetech.com>
+> ---
+>  .../bindings/usb/starfive,jh7110-usb.yaml     | 115 ++++++++++++++++++
+>  1 file changed, 115 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110=
+-usb.yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.ya=
+ml b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
+> new file mode 100644
+> index 000000000000..24aa9c10d6ab
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
+> @@ -0,0 +1,115 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/usb/starfive,jh7110-usb.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD controll=
+er
+
+I think you told Krzysztof you'd rename this to "StarFive JH7110 Cadence
+USBSS-DRD SoC controller"?
+
+Otherwise, it looks like all the stuff from him and Rob have been sorted
+out, so other than $title this is
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+
+Thanks,
+Conor..
+
+--SLOnlnkMNKq6BWyy
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZG/UUgAKCRB4tDGHoIJi
+0v75AP9K+Svm5FyZzmMv+llB8XO317ghvBO5MrADfge2KP6pPwEAl0bZpPNFfw8m
+AK1S29TZeiBbhbcxD8KECfWuk1118AQ=
+=3/eV
+-----END PGP SIGNATURE-----
+
+--SLOnlnkMNKq6BWyy--
+
+
+--===============7013868090245419525==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7013868090245419525==--
+
