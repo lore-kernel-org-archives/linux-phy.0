@@ -4,71 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82F5BC77B7C
-	for <linux-phy@archiver.kernel.org>; Fri, 26 May 2023 10:25:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6153C7EE2C
+	for <linux-phy@archiver.kernel.org>; Fri, 26 May 2023 13:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jd+U07sVPcPPD4QYYco0iDMhcuCjEfAV/wUYq13b0VU=; b=irlWXLBCvDzcEx
-	mclZA+BHoY8S+RkU5QcSJ61zKKJm5EuQwsnERBAm14l49of4ibkBIgmFX9j7u5sA0AaLv8WubgyVz
-	sENxAQxhTyErUcGofjQRBzkT5UcZEEBh74M+/RjSE8+i8uwae3hKLsYZ75kmG8lE79EEst4J8/6dn
-	wy73Vi7OKLE+/8kNNo+5Lbpy/8Qtf24FfXt2qZlIkWTVf2FYgAQKgvLHlD6aemIxswunVQY6FN9kM
-	FdA4Gg6mXp4IcaTBcs4wwvu1+WiJw3W3hIgCofvEvSeXEb632GnO7BdC3zONEaIxs9xdDNYHW9TGc
-	KEb3Y3OS24HOaRx28i2A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=/q+5uIskt/6QCkwZhJyVJ7YcQrAW3Xg0XLxcr2/adGg=; b=IFLdPJjKn0TJeMRByaakMNeV0h
+	1/wZzt3r0AMvKprsJcZBr4jG698kW5v0/VtkRkgnZvRltP041ncq+t73I9S1kAnQS7xjEv8+mEh3M
+	kNnhWXHUW5sf9KYk9aRj7c82rXCfldXSiAEJyGJm1MIIz9L2bPWSAINWrqDbhWQKmoD3s5zMdTSnI
+	Wg+fynmM1BJp0tlVSaxP3tmgwbuNefMrDA2I3emG9+Yq9tnc6hZQb4rH0RO2iiEdit+l4k9qiiRo+
+	7mECo/j5zUO8JHDZm0pQaIycFFf4W4D6beDfRcZR3FUSH8+CfUH+D3dpvguZ9N/7DgPM/Ewraoa3l
+	tTwJ3a6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2Udk-0020qS-05;
-	Fri, 26 May 2023 10:25:44 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2Udg-0020jc-1l;
-	Fri, 26 May 2023 10:25:42 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id E400724E206;
-	Fri, 26 May 2023 18:24:49 +0800 (CST)
-Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 26 May
- 2023 18:24:49 +0800
-Received: from [192.168.125.108] (183.27.98.143) by EXMBX171.cuchost.com
- (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 26 May
- 2023 18:24:48 +0800
-Message-ID: <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
-Date: Fri, 26 May 2023 18:24:48 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH v6 5/7] dt-bindings: usb: Add StarFive JH7110 USB
- controller
-Content-Language: en-US
-To: Conor Dooley <conor@kernel.org>
-CC: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak <pawell@cadence.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Chen
-	<peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, <devicetree@vger.kernel.org>,
+	id 1q2XHL-002bVg-1i;
+	Fri, 26 May 2023 13:14:47 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1q2XHG-002bSt-3D;
+	Fri, 26 May 2023 13:14:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1685106882; x=1716642882;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=TaKFmPvcaWxL63IETqF5z2dA8t53A2LsdWOk3sZfXkU=;
+  b=QslJjpR/7l2NttuUCGUD5GQM2czS3f/a+XdqPwtiCVnjGWkomCUVnpiq
+   r7lLVfyIaDC0atwNxhbZHcK1E2uwtrmGe5RqhRQK/nQYQOueQ3X62c4pv
+   xV6SXl5qNyQH8CF0aEdrJD1Ku5ggSyIL5rG0ToplPbL/WUX7Ci/mEtVqS
+   ZhpHawkIqjrIfhIQlIwNF/9VJ/CdgrG1QD4RdAEWiPSDwKheGCQB/ME5C
+   eTN/2Wxktf/USZLdV2ikzGhiwaIyEIniFQ20UJMGoTgAm/dkCjsdhD46Z
+   0N/SqWePDBJLQZVugkt8/bNMvz9bJJ0ArlIJEOmwpDw3j1vdh1Rg5/FPx
+   A==;
+X-IronPort-AV: E=Sophos;i="6.00,194,1681196400"; 
+   d="asc'?scan'208";a="217467764"
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 26 May 2023 06:14:26 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.21; Fri, 26 May 2023 06:14:16 -0700
+Received: from wendy (10.10.115.15) by chn-vm-ex04.mchp-main.com
+ (10.10.85.152) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
+ Transport; Fri, 26 May 2023 06:14:12 -0700
+Date: Fri, 26 May 2023 14:13:50 +0100
+From: Conor Dooley <conor.dooley@microchip.com>
+To: Minda Chen <minda.chen@starfivetech.com>
+CC: Conor Dooley <conor@kernel.org>, Emil Renner Berthing
+	<emil.renner.berthing@canonical.com>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak
+	<pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter
+ Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp
+ Zabel <p.zabel@pengutronix.de>, <devicetree@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
 	<linux-usb@vger.kernel.org>, <linux-riscv@lists.infradead.org>, Paul Walmsley
 	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
 	<aou@eecs.berkeley.edu>, Mason Huo <mason.huo@starfivetech.com>
+Subject: Re: [PATCH v6 5/7] dt-bindings: usb: Add StarFive JH7110 USB
+ controller
+Message-ID: <20230526-grain-cubical-e0af96202007@wendy>
 References: <20230518112750.57924-1-minda.chen@starfivetech.com>
  <20230518112750.57924-6-minda.chen@starfivetech.com>
  <20230525-shopper-handbrake-27fc06aede32@spud>
-From: Minda Chen <minda.chen@starfivetech.com>
-In-Reply-To: <20230525-shopper-handbrake-27fc06aede32@spud>
-X-Originating-IP: [183.27.98.143]
-X-ClientProxiedBy: EXCAS065.cuchost.com (172.16.6.25) To EXMBX171.cuchost.com
- (172.16.6.91)
-X-YovoleRuleAgent: yovoleflag
+ <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
+MIME-Version: 1.0
+In-Reply-To: <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230526_032540_751077_55C2F720 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20230526_061443_118094_78384D62 
+X-CRM114-Status: GOOD (  13.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,55 +90,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7104676716010242239=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============7104676716010242239==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="2Bn+39uGEqQUGUUq"
+Content-Disposition: inline
+
+--2Bn+39uGEqQUGUUq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, May 26, 2023 at 06:24:48PM +0800, Minda Chen wrote:
+
+> >> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD contr=
+oller
+> >=20
+> > I think you told Krzysztof you'd rename this to "StarFive JH7110 Cadence
+> > USBSS-DRD SoC controller"?
+> >=20
+> The previous title describe whole USB controller for previous dts node is
+> merged. Now the dts node is split.=20
+> "starfive,jh7110-usb" just contain starfive wrapper layer dts configurati=
+on.
+
+Okay, I must have misunderstood the conversation on the previous
+version. Sorry about that.
+
+> > Otherwise, it looks like all the stuff from him and Rob have been sorted
+> > out, so other than $title this is
+> > Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
 
 
-On 2023/5/26 5:34, Conor Dooley wrote:
-> On Thu, May 18, 2023 at 07:27:48PM +0800, Minda Chen wrote:
->> StarFive JH7110 platforms USB have a wrapper module around
->> the Cadence USBSS-DRD controller. Add binding information doc
->> for that.
->> 
->> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
->> Reviewed-by: Peter Chen <peter.chen@kernel.org>
->> Reviewed-by: Hal Feng <hal.feng@starfivetech.com>
->> ---
->>  .../bindings/usb/starfive,jh7110-usb.yaml     | 115 ++++++++++++++++++
->>  1 file changed, 115 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> 
->> diff --git a/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> new file mode 100644
->> index 000000000000..24aa9c10d6ab
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/usb/starfive,jh7110-usb.yaml
->> @@ -0,0 +1,115 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/usb/starfive,jh7110-usb.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD controller
-> 
-> I think you told Krzysztof you'd rename this to "StarFive JH7110 Cadence
-> USBSS-DRD SoC controller"?
-> 
-The previous title describe whole USB controller for previous dts node is merged. Now the dts node is split. 
-"starfive,jh7110-usb" just contain starfive wrapper layer dts configuration.
-> Otherwise, it looks like all the stuff from him and Rob have been sorted
-> out, so other than $title this is
-> Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-> 
-> Thanks,
-> Conor..
-Thanks
+--2Bn+39uGEqQUGUUq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHCwjgAKCRB4tDGHoIJi
+0mgJAQClJBlPXs7N2vOvkTGSfZFOb6z47yAgyiaqavdIEp2UTQD9EB9gGDPr2W/F
+lNVtNtC8iRhO7w0elIt9BCJHjRITMwc=
+=AQaH
+-----END PGP SIGNATURE-----
+
+--2Bn+39uGEqQUGUUq--
+
+
+--===============7104676716010242239==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7104676716010242239==--
+
