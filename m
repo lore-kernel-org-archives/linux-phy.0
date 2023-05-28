@@ -4,81 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6153C7EE2C
-	for <linux-phy@archiver.kernel.org>; Fri, 26 May 2023 13:14:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEE4CC7EE32
+	for <linux-phy@archiver.kernel.org>; Sun, 28 May 2023 00:10:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/q+5uIskt/6QCkwZhJyVJ7YcQrAW3Xg0XLxcr2/adGg=; b=IFLdPJjKn0TJeMRByaakMNeV0h
-	1/wZzt3r0AMvKprsJcZBr4jG698kW5v0/VtkRkgnZvRltP041ncq+t73I9S1kAnQS7xjEv8+mEh3M
-	kNnhWXHUW5sf9KYk9aRj7c82rXCfldXSiAEJyGJm1MIIz9L2bPWSAINWrqDbhWQKmoD3s5zMdTSnI
-	Wg+fynmM1BJp0tlVSaxP3tmgwbuNefMrDA2I3emG9+Yq9tnc6hZQb4rH0RO2iiEdit+l4k9qiiRo+
-	7mECo/j5zUO8JHDZm0pQaIycFFf4W4D6beDfRcZR3FUSH8+CfUH+D3dpvguZ9N/7DgPM/Ewraoa3l
-	tTwJ3a6Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r/C+km0tFcOw41tUq9Fb9myYfoWbaTakmw40uLPqzbs=; b=GtS35+lluoKtKQ
+	MlZKx4ZiVbQh26KscSFBye8+PdBUDsH4Xa2k0fYXoQWr3vtBNv6Wb554FZPtA2+iDlqvXdr8WjKK/
+	uf88WwTOZ26g8JSNE187jQvGM3XWSZ5HTpx4qmjxe0oIIAFGM9PLlWtzWyOV6XHaCHICAwQcZSwt2
+	xlGICZ8Ku4eyUhVpDluZTUSbsT4mV0ablnG4nx9ldxR2oiQNk07EVbJOdDAvcu1u+rtnznyYRGuyq
+	4DCUcBcOO4CahkAM79PlnX84LL+MHV6sk4My3qvoS5/KHIAoQ+rFbIYPeC4Hw1RHd1qP0DRs4V/C2
+	Gx17ElwMKsTIuCgAZJ1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2XHL-002bVg-1i;
-	Fri, 26 May 2023 13:14:47 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1q33ze-006Zke-11;
+	Sun, 28 May 2023 00:10:42 +0000
+Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2XHG-002bSt-3D;
-	Fri, 26 May 2023 13:14:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1685106882; x=1716642882;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=TaKFmPvcaWxL63IETqF5z2dA8t53A2LsdWOk3sZfXkU=;
-  b=QslJjpR/7l2NttuUCGUD5GQM2czS3f/a+XdqPwtiCVnjGWkomCUVnpiq
-   r7lLVfyIaDC0atwNxhbZHcK1E2uwtrmGe5RqhRQK/nQYQOueQ3X62c4pv
-   xV6SXl5qNyQH8CF0aEdrJD1Ku5ggSyIL5rG0ToplPbL/WUX7Ci/mEtVqS
-   ZhpHawkIqjrIfhIQlIwNF/9VJ/CdgrG1QD4RdAEWiPSDwKheGCQB/ME5C
-   eTN/2Wxktf/USZLdV2ikzGhiwaIyEIniFQ20UJMGoTgAm/dkCjsdhD46Z
-   0N/SqWePDBJLQZVugkt8/bNMvz9bJJ0ArlIJEOmwpDw3j1vdh1Rg5/FPx
-   A==;
-X-IronPort-AV: E=Sophos;i="6.00,194,1681196400"; 
-   d="asc'?scan'208";a="217467764"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 26 May 2023 06:14:26 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.21; Fri, 26 May 2023 06:14:16 -0700
-Received: from wendy (10.10.115.15) by chn-vm-ex04.mchp-main.com
- (10.10.85.152) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
- Transport; Fri, 26 May 2023 06:14:12 -0700
-Date: Fri, 26 May 2023 14:13:50 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Minda Chen <minda.chen@starfivetech.com>
-CC: Conor Dooley <conor@kernel.org>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Pawel Laszczak
-	<pawell@cadence.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter
- Chen <peter.chen@kernel.org>, Roger Quadros <rogerq@kernel.org>, Philipp
- Zabel <p.zabel@pengutronix.de>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-usb@vger.kernel.org>, <linux-riscv@lists.infradead.org>, Paul Walmsley
-	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Mason Huo <mason.huo@starfivetech.com>
-Subject: Re: [PATCH v6 5/7] dt-bindings: usb: Add StarFive JH7110 USB
- controller
-Message-ID: <20230526-grain-cubical-e0af96202007@wendy>
-References: <20230518112750.57924-1-minda.chen@starfivetech.com>
- <20230518112750.57924-6-minda.chen@starfivetech.com>
- <20230525-shopper-handbrake-27fc06aede32@spud>
- <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
+	id 1q33zb-006Zk1-0S;
+	Sun, 28 May 2023 00:10:40 +0000
+Received: by mail-qt1-x82e.google.com with SMTP id d75a77b69052e-3f6b9ad956cso11034591cf.1;
+        Sat, 27 May 2023 17:10:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1685232636; x=1687824636;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lMCsGvkoxWSUFyaRQ4KyoqEeH9gxDpYDK1XiImU4CBA=;
+        b=r18LUXZbEyf295PSaklp4P9NGUmzPbTYzCAwdHwZtRNoSN4MoWP2YuVp0GrIvexMeR
+         0dvZK3/dzViFqtqSyIVKcS75h47Z0HTRdZULgLqHn2pijGNSXfYcVcXPL0hrV6LrRbm7
+         IX8y8whrqzZgXL+eL5zMEHBOGAGQtjUhnaRSRsbI9xAtH6fwP4sRU+lNPC64EJu6xyVN
+         EDKroP22n1mKX+NLw59ouc86TefbafTsydeKStJtYZOP8nCuX96jJIMZJft6AfGIcFcd
+         iOlQpbN0xsl0XMoaCYaseu5Hk9mHZgNMJPIabNvxynvvt+MYt2fjdaILPYyFh4JA3DMm
+         1phw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685232636; x=1687824636;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=lMCsGvkoxWSUFyaRQ4KyoqEeH9gxDpYDK1XiImU4CBA=;
+        b=I2vqCkOh+lq1z2X9bF1gDLxBT77xNHxxUHVyT86w+sst2mPBvGAFM0LOdbXX+NfGfE
+         /Z340x25X4YY60epQxdX4sOPvQ1KF94KcSyJZhZXhacxH4f8TNA66XHAAJGrzhDMiDem
+         vjgRTzI8LoAF9RHNFDxfHIhUkRXjwmFh35htcSKFSGVLEnrkBGLFBYuVAWOE0EHwuzJj
+         7rhFRUSbXhreeWB+F22ArJyZt0ojUAdMk5PE0HhQnG3JSwc/KXkNAx7zHjOcjCEYiF9N
+         sw26skcVqW5MoP04F+d1ytk5zDLsz9hlRd03IhZGmhT6k+I+vFC1wrOAfhROy3wGP7sm
+         mb9A==
+X-Gm-Message-State: AC+VfDwjMU1nwUF8Lz63Hl7qmaMSsGlNDbbAt4GKsrhWxBBHi7lrNAFI
+	fDJMPDba3TA/th0hLj0oZMg=
+X-Google-Smtp-Source: ACHHUZ7MIP/VcIjwshjdNl1IQZV0vU+2dA96XzmQnwrcz12nJc3u2smpOSknIIHBeMqz6BwKzt6pug==
+X-Received: by 2002:a05:622a:3d1:b0:3f2:f35:8e6f with SMTP id k17-20020a05622a03d100b003f20f358e6fmr6671214qtx.25.1685232636346;
+        Sat, 27 May 2023 17:10:36 -0700 (PDT)
+Received: from Latitude-E6420.mynetworksettings.com ([2600:4040:2007:9800:28b2:2867:6311:b7d0])
+        by smtp.gmail.com with ESMTPSA id t18-20020ac865d2000000b003f6a7ab1450sm2518454qto.30.2023.05.27.17.10.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 27 May 2023 17:10:35 -0700 (PDT)
+From: Rudraksha Gupta <guptarud@gmail.com>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Olof Johansson <olof@lixom.net>,
+	soc@kernel.org
+Cc: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	Rudraksha Gupta <guptarud@gmail.com>
+Subject: [PATCH v2 0/4] Samsung Galaxy Express SGH-I437 Support
+Date: Sat, 27 May 2023 20:10:05 -0400
+Message-Id: <20230528001010.47868-1-guptarud@gmail.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230527040905.stmnoshkdqgiaex6@ripper>
+References: <20230527040905.stmnoshkdqgiaex6@ripper>
 MIME-Version: 1.0
-In-Reply-To: <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230526_061443_118094_78384D62 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20230527_171039_195092_36400237 
+X-CRM114-Status: GOOD (  13.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,65 +100,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7104676716010242239=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============7104676716010242239==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2Bn+39uGEqQUGUUq"
-Content-Disposition: inline
+This patch series adds support for the Samsung Galaxy Express SGH-I437.
+Currently the following things work on this phone: UART, eMMC, SD Card, and USB.
 
---2Bn+39uGEqQUGUUq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+version 2:
+- Combined patch 1 into patch 4, as the sleep_clk label is specifically needed for the USB node.
+- Reformatted the commit messages to align with the style used in other commit messages that modify the same files.
+- Included a cover letter to provide an overview of the patch series.
+- Slight refactoring of the device tree source (DTS) file.
 
-On Fri, May 26, 2023 at 06:24:48PM +0800, Minda Chen wrote:
+Rudraksha Gupta (4):
+  dt-bindings: arm: qcom: Add Samsung Galaxy Express
+  dt-bindings: Add qcom,usb-hs-phy-msm8960
+  ARM: dts: qcom: msm8960: Add USB node
+  ARM: dts: qcom: Add Samsung Galaxy Express support
 
-> >> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD contr=
-oller
-> >=20
-> > I think you told Krzysztof you'd rename this to "StarFive JH7110 Cadence
-> > USBSS-DRD SoC controller"?
-> >=20
-> The previous title describe whole USB controller for previous dts node is
-> merged. Now the dts node is split.=20
-> "starfive,jh7110-usb" just contain starfive wrapper layer dts configurati=
-on.
+ .../devicetree/bindings/arm/qcom.yaml         |   1 +
+ .../bindings/phy/qcom,usb-hs-phy.yaml         |   1 +
+ arch/arm/boot/dts/Makefile                    |   1 +
+ .../dts/qcom-msm8960-samsung-expressatt.dts   | 334 ++++++++++++++++++
+ arch/arm/boot/dts/qcom-msm8960.dtsi           |  35 +-
+ 5 files changed, 371 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts
 
-Okay, I must have misunderstood the conversation on the previous
-version. Sorry about that.
+-- 
+2.34.1
 
-> > Otherwise, it looks like all the stuff from him and Rob have been sorted
-> > out, so other than $title this is
-> > Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
-
---2Bn+39uGEqQUGUUq
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHCwjgAKCRB4tDGHoIJi
-0mgJAQClJBlPXs7N2vOvkTGSfZFOb6z47yAgyiaqavdIEp2UTQD9EB9gGDPr2W/F
-lNVtNtC8iRhO7w0elIt9BCJHjRITMwc=
-=AQaH
------END PGP SIGNATURE-----
-
---2Bn+39uGEqQUGUUq--
-
-
---===============7104676716010242239==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7104676716010242239==--
-
