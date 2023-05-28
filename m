@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 517C1C77B7E
-	for <linux-phy@archiver.kernel.org>; Sun, 28 May 2023 08:47:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7706C7EE2C
+	for <linux-phy@archiver.kernel.org>; Sun, 28 May 2023 08:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bC0SOLCTS62NjqmqsTV1XiuLNG00keKcF5l1IiPzblc=; b=Cg6FkxTjfXnzQMbZ9wBRXw586w
-	lc6KX+31W4akpbLY3/4oCggC8UnVnU2L73I7ZZGa1oKacnONreu1lsCqz8Ls6/k5Xmu3JmxGkhnrx
-	Z0TJc1KMCipHKr5BxzwG6WXILLENCcmTBocgstSZ4ia/wZpl/n4iqIQXpOthrwJRfuxFBUpt8gRKG
-	6KNZfP2dds6Y9Pt9MjT/4Hl0aRnTSWLrghGoVtqR3oxLU6sKiEsQqpYOY701rdLPZ1Q64UXP2PGJM
-	6HrXEPV/HP8OShcsX7dMdn8neHzff9FXV/pgTW1TzCqkNnGOg1lYZqWeiWc19UekX0zKMJUh496Qa
-	+KxOIE0A==;
+	bh=YAgHdyfTQWrty2dTmyneCxGU/H1JrjntDkq+h25Fe1M=; b=4nA32+2UcJayJb1+kQ7enGd6I+
+	5I5iZ5qFabIkPYPe9GN15mvPtSCHwN6SMu6frnIBUukyMhIDK9rR++VZsGsw3s3WvM+yGPUjqRutL
+	7NkFyTt51vvTIElAmXaOgsugETe/tG/ndEPg/Cvb4Vsf4CtXD71XyuOkaiIotBQ5rNizgIiXQC+s3
+	pFnIqShfuVbgxxTCZoIWIlvGHd5GxNO16e0wBdXoDavDbEjEWBn513+swXMxQnpKV6ZwnVw+31xIi
+	6PncKtlh8Xck5YQReJndmIse/FBOySDCYwUJpn4ePyp436jSfJzXi94GZU19wM8CJxm/5Gsuz9geH
+	K5sHZTjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3C3X-007DAx-2e;
-	Sun, 28 May 2023 08:47:15 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1q3C82-007Dp9-1v;
+	Sun, 28 May 2023 08:51:54 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3C3U-007DAX-2e;
-	Sun, 28 May 2023 08:47:13 +0000
+	id 1q3C7z-007Do4-1x;
+	Sun, 28 May 2023 08:51:52 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 21EEF60EBD;
-	Sun, 28 May 2023 08:47:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A9AAC433EF;
-	Sun, 28 May 2023 08:47:08 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E8CAC611BF;
+	Sun, 28 May 2023 08:51:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 189B7C433D2;
+	Sun, 28 May 2023 08:51:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1685263631;
-	bh=mSAFYjFK3Msc+CKxPMX79YD0dd5HqbJfJuslyqAjF78=;
+	s=k20201202; t=1685263910;
+	bh=+JJGmDILeZCdzp5xrsMpB3VNksO9zZon8ug9gJyhAAU=;
 	h=Date:From:To:List-Id:Cc:Subject:References:In-Reply-To:From;
-	b=jNy0ziajDDEz1i77YnHbB+tBCCRdhuJnwasCpzdJLoC18Op3AX344nnIsO4i0csLC
-	 soHHec5AEgkSDrPUvImCWoinZ48zCcsXVDnR1WT6slOym3hVJN+ydzd9mRrlzcIZRg
-	 ccxko067Ilqr9jRzdpu/SmACoFA4eU1/DD2OTCFM7LDEcsExqhZ14BH7SDwPmWRC7x
-	 41TgBqpMNz+l9NqiypMfWJqad1ej/giK3EfEDwoFbeoHf4B+X0KvF/aB5tykwRSVgu
-	 G1nP1t1laF8eMCHjEGWS4X7QQmsUk+CZ2FAFjNuDZ1aV8B269k0gvJPfJAk1jsomA2
-	 AyqxWnko7ZFYQ==
-Date: Sun, 28 May 2023 09:47:05 +0100
+	b=PA94TnAAXDGGMXlPqNMeD/CjU0PyUqwg3PG458NWTbMbVD4pH31TeQDAvIVC3a67U
+	 ganAoHHwMRFENrVKAXbEnKc49mco8qhG83srX10LYuXCTImHCz3vtAi+/KPNxy/ChK
+	 g4qiQPTIlmxVykq8w3av3CSwkaz6JO7y5GCcewk8hJuDw4+VlkIf29vVVu7k1FdE9W
+	 HxPbna0XjdHVpyzjyBq1JPfEP15mG1I+4JwbUV25C3xYOWy+R4mKll5G75FfJcVeVl
+	 F1tQXHXjkLseepT0NwuLZf8gV66OFSsdnjkbFo10vrL2b6rHEHgAues3JPiySf4yQY
+	 LsoenmYaGh/PQ==
+Date: Sun, 28 May 2023 09:51:44 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Rudraksha Gupta <guptarud@gmail.com>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -56,16 +56,15 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	soc@kernel.org, linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v2 2/4] dt-bindings: Add qcom,usb-hs-phy-msm8960
-Message-ID: <20230528-afar-upside-39eba9813480@spud>
+Subject: Re: [PATCH v2 1/4] dt-bindings: arm: qcom: Add Samsung Galaxy Express
+Message-ID: <20230528-decode-creasing-f5b3996163e5@spud>
 References: <20230527040905.stmnoshkdqgiaex6@ripper>
- <20230528001010.47868-3-guptarud@gmail.com>
+ <20230528001010.47868-2-guptarud@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20230528001010.47868-3-guptarud@gmail.com>
+In-Reply-To: <20230528001010.47868-2-guptarud@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230528_014712_928647_1F55438F 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230528_015151_685279_128FBABF 
+X-CRM114-Status: GOOD (  15.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,47 +76,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4827402640630459096=="
+Content-Type: multipart/mixed; boundary="===============1226398316114932598=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4827402640630459096==
+--===============1226398316114932598==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Emy5jck/mGLYOFyE"
+	protocol="application/pgp-signature"; boundary="CasUnVJJofa3Njq7"
 Content-Disposition: inline
 
 
---Emy5jck/mGLYOFyE
+--CasUnVJJofa3Njq7
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, May 27, 2023 at 08:10:07PM -0400, Rudraksha Gupta wrote:
-> Adds qcom,usb-hs-phy-msm8960 compatible
+On Sat, May 27, 2023 at 08:10:06PM -0400, Rudraksha Gupta wrote:
+> Add a compatible for Samsung Galaxy Express SGH-I437.
 >=20
 > Signed-off-by: Rudraksha Gupta <guptarud@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/arm/qcom.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentat=
+ion/devicetree/bindings/arm/qcom.yaml
+> index d9dd25695c3d..133d69b2b73d 100644
+> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
+> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+> @@ -191,6 +191,7 @@ properties:
+>        - items:
+>            - enum:
+>                - qcom,msm8960-cdp
+> +              - samsung,expressatt
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Where did the "att" come from in the compatible. Is this some carrier
+specific model of the phone?
 
-Thanks,
+Cheers,
 Conor.
 
---Emy5jck/mGLYOFyE
+--CasUnVJJofa3Njq7
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHMVCQAKCRB4tDGHoIJi
-0m2xAQCzqjss3CYZuldnRYb2iA4q16UMQIeEQSplcO/r+dHWHwD/R6PZoNKqVxYi
-e7wSiUvjqtso4nvraqUIhYN1Uu5/WQM=
-=C7T+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHMWIAAKCRB4tDGHoIJi
+0lY5AQDQEJQGBbC+hv3Zo3Aaw95yEgTDYzpNy//WY0pvFWlk6AD/cynxwXs8o1CA
+aCdYIatc6UhTzLJRbwlqUyiL9wI9Lgw=
+=7giL
 -----END PGP SIGNATURE-----
 
---Emy5jck/mGLYOFyE--
+--CasUnVJJofa3Njq7--
 
 
---===============4827402640630459096==
+--===============1226398316114932598==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +142,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4827402640630459096==--
+--===============1226398316114932598==--
 
