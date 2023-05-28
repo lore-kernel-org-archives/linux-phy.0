@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEE4CC7EE32
-	for <linux-phy@archiver.kernel.org>; Sun, 28 May 2023 00:10:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A054FC77B73
+	for <linux-phy@archiver.kernel.org>; Sun, 28 May 2023 00:10:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r/C+km0tFcOw41tUq9Fb9myYfoWbaTakmw40uLPqzbs=; b=GtS35+lluoKtKQ
-	MlZKx4ZiVbQh26KscSFBye8+PdBUDsH4Xa2k0fYXoQWr3vtBNv6Wb554FZPtA2+iDlqvXdr8WjKK/
-	uf88WwTOZ26g8JSNE187jQvGM3XWSZ5HTpx4qmjxe0oIIAFGM9PLlWtzWyOV6XHaCHICAwQcZSwt2
-	xlGICZ8Ku4eyUhVpDluZTUSbsT4mV0ablnG4nx9ldxR2oiQNk07EVbJOdDAvcu1u+rtnznyYRGuyq
-	4DCUcBcOO4CahkAM79PlnX84LL+MHV6sk4My3qvoS5/KHIAoQ+rFbIYPeC4Hw1RHd1qP0DRs4V/C2
-	Gx17ElwMKsTIuCgAZJ1g==;
+	List-Owner; bh=HNqSqdvE13uDDRuQiRpkd+J4Yc96brMh/bTFQf8cSx4=; b=3/HBkSYNDs1MYx
+	hV45jIzchTWxaUygwHcdeWKd5Q6ZxKApWf3OtUv3+uK391bDl6OjU8OLInHv/vljna+Vf7ZooxhXr
+	ev9pJGmPMHdopLbvgLj+uVPKkcmj1W4Ag1kTYi3dM66AG80vFnn7XqPFT6iAXVCgMmbu9zCbyhOng
+	55aj/7mHHMWT/GF0wdeEZR6ZNeDJcyMf3CPh0J00X+XfQlCcyAaoNXDJcJfOari6gPeiYb15Tix2p
+	X3mDOF2rm/B4Y6rnC0yQH/nPZDPQjA3w9PXwaj7pzWG9Guv2bU2pQLvak9RKWpt/mB6X7VL1UnE4c
+	BcZh3/hXRYVoHGTQIo/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q33ze-006Zke-11;
-	Sun, 28 May 2023 00:10:42 +0000
-Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
+	id 1q33zk-006Zm6-0y;
+	Sun, 28 May 2023 00:10:48 +0000
+Received: from mail-qt1-x835.google.com ([2607:f8b0:4864:20::835])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q33zb-006Zk1-0S;
-	Sun, 28 May 2023 00:10:40 +0000
-Received: by mail-qt1-x82e.google.com with SMTP id d75a77b69052e-3f6b9ad956cso11034591cf.1;
-        Sat, 27 May 2023 17:10:37 -0700 (PDT)
+	id 1q33zh-006ZlB-1E;
+	Sun, 28 May 2023 00:10:46 +0000
+Received: by mail-qt1-x835.google.com with SMTP id d75a77b69052e-3f805551a19so10954201cf.3;
+        Sat, 27 May 2023 17:10:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1685232636; x=1687824636;
+        d=gmail.com; s=20221208; t=1685232643; x=1687824643;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=lMCsGvkoxWSUFyaRQ4KyoqEeH9gxDpYDK1XiImU4CBA=;
-        b=r18LUXZbEyf295PSaklp4P9NGUmzPbTYzCAwdHwZtRNoSN4MoWP2YuVp0GrIvexMeR
-         0dvZK3/dzViFqtqSyIVKcS75h47Z0HTRdZULgLqHn2pijGNSXfYcVcXPL0hrV6LrRbm7
-         IX8y8whrqzZgXL+eL5zMEHBOGAGQtjUhnaRSRsbI9xAtH6fwP4sRU+lNPC64EJu6xyVN
-         EDKroP22n1mKX+NLw59ouc86TefbafTsydeKStJtYZOP8nCuX96jJIMZJft6AfGIcFcd
-         iOlQpbN0xsl0XMoaCYaseu5Hk9mHZgNMJPIabNvxynvvt+MYt2fjdaILPYyFh4JA3DMm
-         1phw==
+        bh=wnTseOZCoY+CK3HtI+8c2hP/MGTha5onAmFTzOp40tU=;
+        b=qPT9E0edttTYNdnHFlE81rQuGTNJhwsmQPQnZ7ROVuMiV/mXzz0iptAla7rW9vcOPC
+         4khy8mjXOeVCDVA41H7wzd/gCbAZe5lcCQOACSrmQDJ3ex5xM0B9VJr4G1435wCxYumn
+         M7SNZd6GNh+xbi5T9vSzsYYVaquE1Nb5vIcDtSluj+2XxulMuh6x5B6OIbpG3MkzVSPH
+         s0sJ+jQ3i9TWVPchZBc2JZB08rBUuMAA4moBEEcK70yzfhmBgbHKpvz6bzJbMvuzMMv4
+         w9EMpjGyJBJsgGYy0ESYpzD5+PoqeRiDWpAB4HGbeZGwzahT6Of86nwJzjsJ3o4V/RBs
+         yW5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685232636; x=1687824636;
+        d=1e100.net; s=20221208; t=1685232643; x=1687824643;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=lMCsGvkoxWSUFyaRQ4KyoqEeH9gxDpYDK1XiImU4CBA=;
-        b=I2vqCkOh+lq1z2X9bF1gDLxBT77xNHxxUHVyT86w+sst2mPBvGAFM0LOdbXX+NfGfE
-         /Z340x25X4YY60epQxdX4sOPvQ1KF94KcSyJZhZXhacxH4f8TNA66XHAAJGrzhDMiDem
-         vjgRTzI8LoAF9RHNFDxfHIhUkRXjwmFh35htcSKFSGVLEnrkBGLFBYuVAWOE0EHwuzJj
-         7rhFRUSbXhreeWB+F22ArJyZt0ojUAdMk5PE0HhQnG3JSwc/KXkNAx7zHjOcjCEYiF9N
-         sw26skcVqW5MoP04F+d1ytk5zDLsz9hlRd03IhZGmhT6k+I+vFC1wrOAfhROy3wGP7sm
-         mb9A==
-X-Gm-Message-State: AC+VfDwjMU1nwUF8Lz63Hl7qmaMSsGlNDbbAt4GKsrhWxBBHi7lrNAFI
-	fDJMPDba3TA/th0hLj0oZMg=
-X-Google-Smtp-Source: ACHHUZ7MIP/VcIjwshjdNl1IQZV0vU+2dA96XzmQnwrcz12nJc3u2smpOSknIIHBeMqz6BwKzt6pug==
-X-Received: by 2002:a05:622a:3d1:b0:3f2:f35:8e6f with SMTP id k17-20020a05622a03d100b003f20f358e6fmr6671214qtx.25.1685232636346;
-        Sat, 27 May 2023 17:10:36 -0700 (PDT)
+        bh=wnTseOZCoY+CK3HtI+8c2hP/MGTha5onAmFTzOp40tU=;
+        b=AfXDRfkDYCWTL64DBsGubalbJwgdKcRO5yL2UzEvml6x5nOk28DospK40SyopZ2f91
+         kqyjzNmWYqaaBywNGUbQKhE4GHHevtnv7XyEwL+Rqh4+Rf9SyYtZFHD5kZMwZQRxA6Vw
+         ePwmosM9imeSfK4R6zPW7KDKlKYj2hzPSNf0+MwjhXx5fVW5Zb2WASl4U3YOvr+XbJ7B
+         rxzNW1J6BQAQT4YHsxNx/MR50wfHqOkPAdch9hveMcTRnWG4BajcqMWxfWFBmFQYvYpY
+         7MyBnpZZbL6y+nTMK2kKAyRpJ0PiP1jsifkCWvlREcS2Rgwo/iOR6FavMSiGndUntgcv
+         WnWA==
+X-Gm-Message-State: AC+VfDyRx0ZE4QNx1otbqig3xpfiNmY6XN+HRqB4XTG0drQ/dpRwVHiX
+	WHeW1tIMfeEs+VEN1RJNRTE=
+X-Google-Smtp-Source: ACHHUZ7Z5un5mSANVyiGI2lseOWl6HLDVeQL+/2M1exfjLawjBv+HeCw1oypNDyiaSBwSNJRPhrrXA==
+X-Received: by 2002:ac8:5f06:0:b0:3f5:1d57:9c22 with SMTP id x6-20020ac85f06000000b003f51d579c22mr6537934qta.51.1685232643224;
+        Sat, 27 May 2023 17:10:43 -0700 (PDT)
 Received: from Latitude-E6420.mynetworksettings.com ([2600:4040:2007:9800:28b2:2867:6311:b7d0])
-        by smtp.gmail.com with ESMTPSA id t18-20020ac865d2000000b003f6a7ab1450sm2518454qto.30.2023.05.27.17.10.35
+        by smtp.gmail.com with ESMTPSA id t18-20020ac865d2000000b003f6a7ab1450sm2518454qto.30.2023.05.27.17.10.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 27 May 2023 17:10:35 -0700 (PDT)
+        Sat, 27 May 2023 17:10:42 -0700 (PDT)
 From: Rudraksha Gupta <guptarud@gmail.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -79,16 +79,17 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	Rudraksha Gupta <guptarud@gmail.com>
-Subject: [PATCH v2 0/4] Samsung Galaxy Express SGH-I437 Support
-Date: Sat, 27 May 2023 20:10:05 -0400
-Message-Id: <20230528001010.47868-1-guptarud@gmail.com>
+Subject: [PATCH v2 1/4] dt-bindings: arm: qcom: Add Samsung Galaxy Express
+Date: Sat, 27 May 2023 20:10:06 -0400
+Message-Id: <20230528001010.47868-2-guptarud@gmail.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230527040905.stmnoshkdqgiaex6@ripper>
 References: <20230527040905.stmnoshkdqgiaex6@ripper>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230527_171039_195092_36400237 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20230527_171045_421058_5257D11E 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,29 +106,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for the Samsung Galaxy Express SGH-I437.
-Currently the following things work on this phone: UART, eMMC, SD Card, and USB.
+Add a compatible for Samsung Galaxy Express SGH-I437.
 
-version 2:
-- Combined patch 1 into patch 4, as the sleep_clk label is specifically needed for the USB node.
-- Reformatted the commit messages to align with the style used in other commit messages that modify the same files.
-- Included a cover letter to provide an overview of the patch series.
-- Slight refactoring of the device tree source (DTS) file.
+Signed-off-by: Rudraksha Gupta <guptarud@gmail.com>
+---
+ Documentation/devicetree/bindings/arm/qcom.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Rudraksha Gupta (4):
-  dt-bindings: arm: qcom: Add Samsung Galaxy Express
-  dt-bindings: Add qcom,usb-hs-phy-msm8960
-  ARM: dts: qcom: msm8960: Add USB node
-  ARM: dts: qcom: Add Samsung Galaxy Express support
-
- .../devicetree/bindings/arm/qcom.yaml         |   1 +
- .../bindings/phy/qcom,usb-hs-phy.yaml         |   1 +
- arch/arm/boot/dts/Makefile                    |   1 +
- .../dts/qcom-msm8960-samsung-expressatt.dts   | 334 ++++++++++++++++++
- arch/arm/boot/dts/qcom-msm8960.dtsi           |  35 +-
- 5 files changed, 371 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts
-
+diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
+index d9dd25695c3d..133d69b2b73d 100644
+--- a/Documentation/devicetree/bindings/arm/qcom.yaml
++++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+@@ -191,6 +191,7 @@ properties:
+       - items:
+           - enum:
+               - qcom,msm8960-cdp
++              - samsung,expressatt
+           - const: qcom,msm8960
+ 
+       - items:
 -- 
 2.34.1
 
