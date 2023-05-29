@@ -4,92 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43BD1C7EE2E
-	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 14:05:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D204C7EE29
+	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 14:06:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tkJzySKyswxBry/mViRLZzfCZFqbogXTM30a0gLEzf4=; b=ty5Rw1LQ06xoPI
-	uXH5UuPnex2bstt3bNvhhnVw0fid/xctQkoi1fo6b9KH3GCs3E/iOwwGOWHf5StklgLjMa82LFxm9
-	MAs/b6pRYUKxh3ZPp2kIqenqi9NZ6F8vDX4GoblECOCnDljtStJIJRXQevm17kO8ptYE65SElKqp6
-	tgFlzK9bISuFrTX8OcVFz/fydcSOHGwuts09b9rJfOP6ANBNH7TpKOEQ/JcqQtSFnJ2U+sOWjkn7C
-	htxgizaRyOtPVzWUidkKpfpH3yjYVMaePupDnVIdqaHMw6kEkzxbSauaJGka1lQMA8HM6279CK68q
-	6f2mfdRNDm4Iq8dW4TYA==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Sb5IAYhpSezMIpj4ga5Gqprio5qHXfceXEwt46O/3aI=; b=tQrVQhjI6qXc/ImjW3oJED9DTf
+	uc7eCqlMhzZP/l4/OMdiw+MY2fPwkJlpmZaUzR3otFMH7WnHWPeCkHPvf1Dc4x3K5H1+uDEpL0Lie
+	8hsRGAuD3WdR6KwCCj21zeokADu0DbVdp4XHe57HJdYSAb2qlACPQVxVhCtMou7KIZk0nJaQ3Lz+l
+	/QiI49V1YWTdYLkgyiFRCMayKFjxBxl0ek8zY1FzZnljtu3O0i7JuTh6r9fqQ2nu05hNTWvwYzomI
+	Hd4yCxDAyyl7gh1+PrPZndGS5P/Se7+Z+LBr/auFvZQZIyf4vm0VO2TTYtt9J2RZuksGdUeAZRqoV
+	aCDqnsdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3dV1-00AiFg-32;
-	Mon, 29 May 2023 14:05:27 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1q3dW2-00AiRN-2s;
+	Mon, 29 May 2023 14:06:30 +0000
+Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3dUy-00AiEM-1B;
-	Mon, 29 May 2023 14:05:25 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-30ae7cc0e86so1334160f8f.1;
-        Mon, 29 May 2023 07:05:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1685369122; x=1687961122;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=3IXsQpfygJCaGC5q2YIhqiT7SfrT6glvTqsb9kR3+tg=;
-        b=sdpUq6wtbzHzS8CgQpQdkR+hrukqOa0ISmZZ3Wa4z52ZeXjPlFEu2+gBtYJyxRIfXk
-         iF+hwNmP4E2q798O+VJ+qnu5RdUL3Usuqf+25mgaOmFQUjw+NrPMwOhbuzTce9yOFYmk
-         5oVOjVhSdqxaUI+utRJ1ZBEkYiy4BGUvd7qqfx3be/IBhbeVTynXCun1S40CDXLHBFH2
-         e6izo/1qqqx5+qMie+iSMm0zCCCqtww1FXoT76hSDofbssPi0x4a65NBF9S4iUO7kVu1
-         ERVfgkpK9LeNqI4EHA0XoK2MwnVEjFUubhoUMSp4p8Zvo83+1NxGu8oAW3nTAdt3+AzQ
-         EYRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685369122; x=1687961122;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=3IXsQpfygJCaGC5q2YIhqiT7SfrT6glvTqsb9kR3+tg=;
-        b=d3VLmsBtnPHTgsjdOEVOXbDH8SQ9jCrhWkvUkC9UzTQSAQWffw4DY7giiJWieMY1cd
-         gDffTE0EbGq9VV91ySjzVBF8dJum/UgDSkPywj/R+DdfEVlCdhLN9rpBgyW/vNRy8ROj
-         uVBoU0OUzGXh09RKJB7qTAOPyqdsPhjuRzPwDJ2SD59mgckmXeTZvxw49Fn0b64Dirdc
-         jWYtiXak5LgYuzZaotG1obxBm5qx36/uvP8yZy1I0Bbt+f+UoqIMnDHhf0B1GjbUwXtK
-         BIclsphd0Rmj9nxFB8cHSp064j273SGHYHYQcKBRlKaHJaSCim0M4v6ZAMkMI83LTwt6
-         VeHg==
-X-Gm-Message-State: AC+VfDzj5QwgwokJJVBLqZbHG3rXCJnGo4W5vRfjFkScCWmf+uskE1nj
-	BK3idM3dVuCpBspuPg33tTE=
-X-Google-Smtp-Source: ACHHUZ7g9aINh4JUEKppDSWEt//njGKAVDLn3XhohW2qMJr2ADrXZo3WfUHZJbjvujUEDC7TDLkhcw==
-X-Received: by 2002:a5d:42c8:0:b0:309:4e37:51ed with SMTP id t8-20020a5d42c8000000b003094e3751edmr10601139wrr.27.1685369122506;
-        Mon, 29 May 2023 07:05:22 -0700 (PDT)
-Received: from [192.168.2.177] ([207.188.167.132])
-        by smtp.gmail.com with ESMTPSA id h9-20020a5d5489000000b0030ae6f2e696sm22893wrv.115.2023.05.29.07.05.19
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 29 May 2023 07:05:20 -0700 (PDT)
-Message-ID: <201842f6-c209-201e-35d7-e9af3ff31080@gmail.com>
-Date: Mon, 29 May 2023 16:05:18 +0200
+	id 1q3dVz-00AiQd-2l;
+	Mon, 29 May 2023 14:06:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1685369187; x=1716905187;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=Oj08xjCjJcK4RZu6GGaNFs8lH2uffU413/e6mzg154Q=;
+  b=gDKoxaxQkMm5Q5neffyLvNN6jUoMj6xgccrg+9yZhhc5QbtZGZAI/PXo
+   9IbffV2HPdwK/eTXK/SceFuQ7kF2aYH/TXD+W5N+sUW4owRPSr5uqhmlA
+   3D5pKJ0KLtgaMadXX/JppWzXE+QswOto4ts7AMadRK8SSwhyKe0ZiO+I/
+   kpZvfXsqXI+Ky/jzp2r9haD/nIYfewDsZeiT7N3IsNma3I0T5CWiG9Xza
+   7DJGhS+TaV+hEeTkX3O6AdGbSMF38968Ql5TWKfizfCC8zqeU3GrYMwKW
+   YZJeezA9OK/XJYZ3G8pdIozFqaDl3bJgNndCwjy3FrE4Eq+MZgYTlFyVL
+   Q==;
+X-IronPort-AV: E=Sophos;i="6.00,201,1681196400"; 
+   d="asc'?scan'208";a="215321454"
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256; 29 May 2023 07:06:22 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.21; Mon, 29 May 2023 07:06:21 -0700
+Received: from wendy (10.10.115.15) by chn-vm-ex04.mchp-main.com
+ (10.10.85.152) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21 via Frontend
+ Transport; Mon, 29 May 2023 07:06:19 -0700
+Date: Mon, 29 May 2023 15:05:56 +0100
+From: Conor Dooley <conor.dooley@microchip.com>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
+	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-riscv@lists.infradead.org>
+Subject: Re: [PATCH v5 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
+Message-ID: <20230529-envy-itinerary-e4007cb0da9a@wendy>
+References: <20230529121503.3544-1-changhuang.liang@starfivetech.com>
+ <20230529121503.3544-2-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.10.0
-Subject: Re: [PATCH 02/27] dt-bindings: phy: mediatek,dsi-phy: Add compatible
- for MT6795 Helio X10
-Content-Language: en-US, ca-ES, es-ES
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
- xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-pwm@vger.kernel.org, kernel@collabora.com,
- phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-3-angelogioacchino.delregno@collabora.com>
- <223fcf60-25aa-e45d-159e-6290eeeb6a55@linaro.org>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-In-Reply-To: <223fcf60-25aa-e45d-159e-6290eeeb6a55@linaro.org>
+In-Reply-To: <20230529121503.3544-2-changhuang.liang@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230529_070524_407776_9FFD4E06 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20230529_070628_104907_B86F6FC6 
+X-CRM114-Status: GOOD (  20.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,32 +84,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============5169963829365792989=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============5169963829365792989==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="0IZZL4P6Vx7CUGNI"
+Content-Disposition: inline
+
+--0IZZL4P6Vx7CUGNI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hey Changhuang,
+
+Couple of minor bits from me here, you don't need to fix them unless
+the binding has to change for other reasons.
 
 
-On 14/04/2023 10:22, Krzysztof Kozlowski wrote:
-> On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
->> Add a compatible string for MediaTek Helio X10 MT6795: this SoC uses
->> the same DSI PHY as MT8173.
->>
->> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
->> ---
->>   Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 4 ++++
->>   1 file changed, 4 insertions(+)
-> 
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> 
-> Best regards,
-> Krzysztof
-> 
+On Mon, May 29, 2023 at 05:15:01AM -0700, Changhuang Liang wrote:
+> StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
+> a M31 IP. Add a binding for it.
+>=20
+> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+> ---
+>  .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 71 +++++++++++++++++++
+>  1 file changed, 71 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110=
+-dphy-rx.yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-r=
+x.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> new file mode 100644
+> index 000000000000..46fd370188e8
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> @@ -0,0 +1,71 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: StarFive SoC MIPI D-PHY Rx Controller
 
-Applied, thanks!
+nit: either s/SoC/JH7110/ or s/SoC//.
+
+> +
+> +maintainers:
+> +  - Jack Zhu <jack.zhu@starfivetech.com>
+> +  - Changhuang Liang <changhuang.liang@starfivetech.com>
+> +
+> +description:
+> +  The StarFive SoC uses the MIPI CSI D-PHY based on M31 IP to transfer
+> +  CSI camera data.
+
+nit: "Starfive SoCs contain a MIPI CSI D-PHY based on an M31 IP, used to
+transfer CSI camera data."
+
+> +properties:
+> +  compatible:
+> +    const: starfive,jh7110-dphy-rx
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: config clock
+> +      - description: reference clock
+> +      - description: escape mode transmit clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: cfg
+> +      - const: ref
+> +      - const: tx
+> +
+> +  resets:
+> +    items:
+> +      - description: DPHY_HW reset
+> +      - description: DPHY_B09_ALWAYS_ON reset
+
+I'd prefer not to have what looks like copy-paste from a datasheet
+and instead a description of what they do.
+
+Otherwise, this looks grand to me, but I don't understand the hardware
+so there is no point in me leaving an R-b on this.
+Hopefully Krzysztof can take a look at it in the coming days.
+
+Thanks,
+Conor.
+
+--0IZZL4P6Vx7CUGNI
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHSxRAAKCRB4tDGHoIJi
+0uvtAPwIaGWkhOsEc9q9vrZcLdTF8G+Fzyihpz5TV/XOaitIyQEAnYHnM944Anto
+j60IZxaQ43rxeYAEwWC5DqSoBTwsLAc=
+=cggf
+-----END PGP SIGNATURE-----
+
+--0IZZL4P6Vx7CUGNI--
+
+
+--===============5169963829365792989==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5169963829365792989==--
+
