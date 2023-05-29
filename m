@@ -4,64 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0F6BC77B7E
-	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 12:16:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50AADC7EE31
+	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 13:51:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vc5g5QlQbEm0isJO3WyO1oS+25JRUoOYPrJWgBFknC8=; b=w0JT8kxfcfLZNx
-	aPtYCmqImTszqDkaeyoZ6ocsJiqywnVm4XEkhwTW5/07raTAoHgBfgZMarxaXQibhmDCVKqA852sJ
-	Gm5OeqnreosX9BfeBJgkK42GFJTalyjTLmCgf82h+pk0neCfq025+4kKRvrlq23V7ulMgXdVsW8+Z
-	hZdceh7T0vcVWx/wh0vMYgdgXWSrNkNgImw+ylJwnLBFeqP51v2DxU2B/+eYk5ItOQXRlgJ9MdFHe
-	mSLaVNPNFfHk/LB3NTgDSlnjCRZVNsFl5/GIrRjnH0K21zdO4JRDxsnELGdOopusUwDalkhXLpBqP
-	JsJAt6akyT6pWo3KN6Wg==;
+	List-Owner; bh=Xw9FZtZLqfFlLGsPalbMCVvjHFiXH36DsefLWT7Z5Xk=; b=dN+Pap1XVZyglA
+	AXqvZZurjI1tBIpoZatoVW2p894LugmxLH/z3qnArm+rvtO/bBvQAAAbvKh0pYs0PLiAFR2SEfQD/
+	T3U1Y/YtLLap4Sre1czPrWawqciXZQN6DeLdH1H1/2jZPjQ9LjpYlMpDvxAm+f8ND239pb7KYDRzb
+	eklmX1OiXNJFNzVOH+QRUFza9G9nIAfUHzJ/S3QHKeh9GxPEXsbIvrZXtPS0DwvDKQW2cI7sdW8iP
+	KYXtNThN6ikrRRX9qoqKiEa1VRuazu+Wb+qXcSHiaZ8SHB9sBSS22mOIAShQzqjf2udbSEim+uJ5y
+	CBCu+2A6+KB8xzvYvCsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3bnE-00AORy-1P;
-	Mon, 29 May 2023 12:16:08 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3bnA-00AOJD-38;
-	Mon, 29 May 2023 12:16:06 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 407077FFC;
-	Mon, 29 May 2023 20:15:07 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 29 May
- 2023 20:15:07 +0800
-Received: from ubuntu.localdomain (113.72.147.198) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 29 May
- 2023 20:15:06 +0800
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Emil Renner Berthing <kernel@esmil.dk>,
-	Conor Dooley <conor@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-CC: Jack Zhu <jack.zhu@starfivetech.com>, Changhuang Liang
-	<changhuang.liang@starfivetech.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>
-Subject: [PATCH v5 1/3] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-Date: Mon, 29 May 2023 05:15:01 -0700
-Message-ID: <20230529121503.3544-2-changhuang.liang@starfivetech.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20230529121503.3544-1-changhuang.liang@starfivetech.com>
-References: <20230529121503.3544-1-changhuang.liang@starfivetech.com>
+	id 1q3dHY-00AeoL-30;
+	Mon, 29 May 2023 13:51:32 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1q3dHV-00AemD-1C;
+	Mon, 29 May 2023 13:51:30 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-30aef0b8837so439164f8f.1;
+        Mon, 29 May 2023 06:51:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1685368287; x=1687960287;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=78pcypVpN3CxF4Efbw66eNAU7KdZVo7I7D8DwmPSSNY=;
+        b=RGnHahrqAMOmuuk/E4fXSa9iPqk72Omn6f6aqeKHPz/0xSpC4bL3nJsEoyKF8COt0x
+         cQ3xzsVZvg9pOC5MXDFpHrCyv6GxVACQvk54AJZMptR3Blktf7ReftSc5WdHGJEjLO46
+         R+TdZ9Ttjs20yAV4AzMzN0eq/7XY5ypMuZDM/7zu2vM3vJNwoPRVRq6JnLU7iaIF7Nxm
+         0gq5+8qUOXOJacb+phUkDb3i1PJCpVDKzhF9i0WfvWX35z9I6g4SNDNRR86GnloatUmQ
+         0uFZsI4mjH74yYXx0rbsxNM5VN2lATjny7VRQnXjFX9KACBz7zzQR8Wj0NcO6PaYBtHd
+         J2VQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685368287; x=1687960287;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=78pcypVpN3CxF4Efbw66eNAU7KdZVo7I7D8DwmPSSNY=;
+        b=AYCPiYAzM12mxuXbRaJvSDoafKy+8TdWX10jOGifpTuUSgAjhP4kkT2Qz/q1ErmUv3
+         zMMcAHFMMF9JigugzNge6YromF5kVEa+VDk+h7qMXwFokzbLXvgkj6L20AEXz/9NRJOx
+         gA0orIcvlf9Zrl8CsBggM7BT7GEMUqm1KJYXbjbXZnATCrac2I1EtoyfAikvnGHJVD7H
+         EfHmTa/2653u/plCf4yNZ0Maa9bVLWpi/u3MJpwQGryISlJY8i73XR6Jp+RQt6JG2qhk
+         XSsXQJbX+amvFIFAp35u5owgEi5or7l+H7EZiwI/cjnoZbH8mqQx5+PC8Qidti3EI+sz
+         /HTw==
+X-Gm-Message-State: AC+VfDzU73qcTuvay4TS6SUeEVb9MamQp/jwTMxt4xGLgX9LpgJCwwHG
+	K2M6ClzC9B5oSqE5UUhCXP8=
+X-Google-Smtp-Source: ACHHUZ7XNS0Ka4Zavjp9uZSaETZlKXum4Ox8t6LlTxg+Hui9Jl0m6ncdtdAfQq6dIti7SzAdeGbFiQ==
+X-Received: by 2002:adf:e345:0:b0:309:4f23:e52e with SMTP id n5-20020adfe345000000b003094f23e52emr8944522wrj.15.1685368287334;
+        Mon, 29 May 2023 06:51:27 -0700 (PDT)
+Received: from [192.168.2.177] ([207.188.167.132])
+        by smtp.gmail.com with ESMTPSA id u3-20020a5d6ac3000000b003062ad45243sm53692wrw.14.2023.05.29.06.51.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 May 2023 06:51:26 -0700 (PDT)
+Message-ID: <7b39f7ba-7e29-bf4c-e165-130cd3539d45@gmail.com>
+Date: Mon, 29 May 2023 15:51:24 +0200
 MIME-Version: 1.0
-X-Originating-IP: [113.72.147.198]
-X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
+Subject: Re: [PATCH 01/27] dt-bindings: pwm: Add compatible for MediaTek
+ MT6795
+Content-Language: en-US, ca-ES, es-ES
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+ chunkuang.hu@kernel.org, ck.hu@mediatek.com, jitao.shi@mediatek.com,
+ xinlei.lee@mediatek.com, houlong.wei@mediatek.com,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-pwm@vger.kernel.org, kernel@collabora.com,
+ phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
+References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
+ <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+In-Reply-To: <20230412112739.160376-2-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230529_051605_370240_9B06A186 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20230529_065129_431484_EAE8840D 
+X-CRM114-Status: GOOD (  14.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,100 +99,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-StarFive SoCs like the jh7110 use a MIPI D-PHY RX controller based on
-a M31 IP. Add a binding for it.
 
-Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
----
- .../bindings/phy/starfive,jh7110-dphy-rx.yaml | 71 +++++++++++++++++++
- 1 file changed, 71 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-new file mode 100644
-index 000000000000..46fd370188e8
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-@@ -0,0 +1,71 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-rx.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: StarFive SoC MIPI D-PHY Rx Controller
-+
-+maintainers:
-+  - Jack Zhu <jack.zhu@starfivetech.com>
-+  - Changhuang Liang <changhuang.liang@starfivetech.com>
-+
-+description:
-+  The StarFive SoC uses the MIPI CSI D-PHY based on M31 IP to transfer
-+  CSI camera data.
-+
-+properties:
-+  compatible:
-+    const: starfive,jh7110-dphy-rx
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: config clock
-+      - description: reference clock
-+      - description: escape mode transmit clock
-+
-+  clock-names:
-+    items:
-+      - const: cfg
-+      - const: ref
-+      - const: tx
-+
-+  resets:
-+    items:
-+      - description: DPHY_HW reset
-+      - description: DPHY_B09_ALWAYS_ON reset
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - resets
-+  - power-domains
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    phy@19820000 {
-+      compatible = "starfive,jh7110-dphy-rx";
-+      reg = <0x19820000 0x10000>;
-+      clocks = <&ispcrg 3>,
-+               <&ispcrg 4>,
-+               <&ispcrg 5>;
-+      clock-names = "cfg", "ref", "tx";
-+      resets = <&ispcrg 2>,
-+               <&ispcrg 3>;
-+      power-domains = <&dphy_pwrc 1>;
-+      #phy-cells = <0>;
-+    };
--- 
-2.25.1
+On 12/04/2023 13:27, AngeloGioacchino Del Regno wrote:
+> Add a compatible string for MediaTek Helio X10 MT6795's display PWM
+> block: this is the same as MT8173.
+> 
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
+Applied, thanks!
+
+> ---
+>   Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml | 4 +++-
+>   1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml b/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> index 0088bc8e7c54..153e146df7d4 100644
+> --- a/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> +++ b/Documentation/devicetree/bindings/pwm/mediatek,pwm-disp.yaml
+> @@ -22,7 +22,9 @@ properties:
+>             - mediatek,mt8173-disp-pwm
+>             - mediatek,mt8183-disp-pwm
+>         - items:
+> -          - const: mediatek,mt8167-disp-pwm
+> +          - enum:
+> +              - mediatek,mt6795-disp-pwm
+> +              - mediatek,mt8167-disp-pwm
+>             - const: mediatek,mt8173-disp-pwm
+>         - items:
+>             - enum:
 
 -- 
 linux-phy mailing list
