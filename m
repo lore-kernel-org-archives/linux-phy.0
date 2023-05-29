@@ -4,68 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18DADC77B7C
-	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 00:11:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B27C77B7A
+	for <linux-phy@archiver.kernel.org>; Mon, 29 May 2023 07:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BoDYybBY8AKuj91D7pdTl+xbJiJvJnKtoaVM/ERmnNA=; b=PL0WgG1FwiUxR6
-	xzTO0u44rnmn9q2kTHUqP6V1qIQiqS2u6AOGIw4ZIU7Y6Wp8ADKY4D7dqOHZE7QDN1FsHGSIkh0MI
-	Iq30Ao9MvA2xCC44MKyTQes1QbOJfV9Fvk+dUhGUF269CPT3wUlRVjU/9Ehb8NfLBIgoxVsfHmzfr
-	vv9RkCcPAONcUQuT30qcNa+e0CiIyPjmli3e8T1nOYzK36j+lbGRDmHjQqtMSmQgYLoPOV1HHVsZD
-	18dTyP8KB1TZWzKjg6B7NySvZl43pstiffbRDeFfiWtktjGKabJXMLO6DLtruB85t9GvbTdMR7fXo
-	dHC4G4tFkx2aTLRq9KFA==;
+	List-Owner; bh=bvEOZ5eK2vfRMgihU3xg2mpVuwtIWL6S4zvs3mR73IM=; b=1bO7S1gYeflzGh
+	ibEY2SOjI6JX/nUh47rlz1PIv6Tki3Ahuxt1YqnUYcAGKtsGmTUShsjn6rwv4gNHHC1gVnxtpv1E1
+	4rImKGd4ipkGx9nsVMfg6JQwkrFTlXzLPvzbzvnJ9NFYGZ4hieONfAK2DLVkMk9XkoiDpBe5pzEw6
+	yDRDdn72v7UZueuy4pz1mJsDXJNdPn/WvXiZnnxG6Y+sNk2zM2eccSMjoQPRYciz5L6r8I291B8Og
+	0nImMR7FBGj4QsEP7IOS/02ttr/GLGjSeIs5s0lCGfNV/YUa8+cB6guWagUViytUJ/8R0cqiaWWMB
+	DHjQueps8R2caFLeeT/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3QTk-008i3u-1T;
-	Mon, 29 May 2023 00:11:16 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1q3XVD-009ZMv-0f;
+	Mon, 29 May 2023 07:41:15 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3QTi-008i35-1h
+	id 1q3XV9-009ZL3-2t
 	for linux-phy@lists.infradead.org;
-	Mon, 29 May 2023 00:11:15 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0326360F39;
-	Mon, 29 May 2023 00:11:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 6BCFAC433EF;
-	Mon, 29 May 2023 00:11:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1685319071;
-	bh=63hQ2WLDoWWC5Pz/mOa8TJJ4lnb1Cuun8voMWjta4RU=;
-	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
-	b=HXDZQHOSIMcJo92m7A4X0Pe349uxUzrATmb0TL75u4dHCZ/cRMra0mKUE4pZ56JsB
-	 DTJcq7XUEqiFMRFQnpp584fwT4aJTj+5yiCGJ2xOZ+xrkJ647iiMxPTjj5rGiSbO3n
-	 r7cMqmPvqYgUFlaqXuNAzgkCUU7SqjsP0Pz7JR9pP8QSLu9uiEhs0zMioVbiVL6jJm
-	 NXrJIthRFyo3/6nrq9LPoc2oqE3xJ+87eGJNZPhwXR+qHHycgR8L6tMsy0a8DyPhFY
-	 oREYEFyb9K4T0tOGaEPrMYRCPZJmci3EKoxj0WOXfM7QMZ4xGLGVcXoffgo0wS2Uhp
-	 3Sv9VSLRhiMfA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 4AE12E52BF1;
-	Mon, 29 May 2023 00:11:11 +0000 (UTC)
-Subject: Re: [GIT PULL]: Generic phy fixes for v6.4
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <ZHOUGa/W46wBDwmv@matsya>
-References: <ZHOUGa/W46wBDwmv@matsya>
-X-PR-Tracked-List-Id: Linux Phy Mailing list <linux-phy.lists.infradead.org>
-X-PR-Tracked-Message-Id: <ZHOUGa/W46wBDwmv@matsya>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-fixes-6.4
-X-PR-Tracked-Commit-Id: 2a881183dc5ab2474ef602e48fe7af34db460d95
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: e338142b39cf40155054f95daa28d210d2ee1b2d
-Message-Id: <168531907129.13206.12583291061164513017.pr-tracker-bot@kernel.org>
-Date: Mon, 29 May 2023 00:11:11 +0000
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>, Linux Phy <linux-phy@lists.infradead.org>, LKML <linux-kernel@vger.kernel.org>
+	Mon, 29 May 2023 07:41:13 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-4eed764a10cso3102727e87.0
+        for <linux-phy@lists.infradead.org>; Mon, 29 May 2023 00:41:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1685346068; x=1687938068;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zIyR1lHJkA+sNFp9J1o6uPmPADLzeJ2t6TMfApH2cO0=;
+        b=G4I84p/8BXGAdQhmvw9H0kqEpMVZkOZUBt1/JCz/TZyyBkJgH/IVNGlt15swfM6pMU
+         +Fz3vw2l93bpO61w3Y+E990mCaxZK0f3QXKYGJNdO1bjSIkEotzDCWZNwoa2rOVGuUNO
+         EHDv7+aXWMsQyIRxe0nJszhH+zeykKrEwcn7YFUZFi3YDUVX/u46i0vk4t/34hJAfAEb
+         Q6Jw/uXk9OfQkm9iNVpZfH/o+jKj+73h8eIwawuDVl9h/ElsGaqsxjDs1rrezm6RP+4j
+         7FcFeOdfk+CUI/2xH+tFurLaTKS9UsTdVahpKofk0V8vY8sSEDvdS9zcOzkZO9vLPANZ
+         cc0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685346068; x=1687938068;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=zIyR1lHJkA+sNFp9J1o6uPmPADLzeJ2t6TMfApH2cO0=;
+        b=JCAjGTwvXe2Zv+wqLO6TvXui+gyBBAwe+FwPRFvSozOHL9jH/b2vctJij6lo8ljBvX
+         TjTH7lzyrr7T1Bv3hJh6SX3A8H647T9/5TLhY6esuzkZ/SYbhXNloa43dirTbvCOb8Cu
+         u4iN/85wH0wrP/2V9UEG2dv97uvMhcBMYWpl4LhZQRl2jNWxthzDeX6eVYJr+Zc4YiBA
+         Lkykf+sBE//eIxztmM46Bt6krQS4qzsoAZ24NOoLDsfbovHzXFiqhzN/0QR0WHjbde1p
+         vDzyvWQMmuEh3rg5J5zpSPXZNEbQuAHG+NJE4d4UhZ1ec7OVHIXvnLgrntTvFkJLLEib
+         f3vg==
+X-Gm-Message-State: AC+VfDyZQElQ7KLY1qNgAxVR3dVrEDD/pl4GGClq1NyaqWJDZrZNhs9u
+	kWtxHEuv2lPtnqsUufb3QBZR+A==
+X-Google-Smtp-Source: ACHHUZ7CGoVzdq3YVY4Qh7oruPyoZkhaD7bLodOYquMFSgOk89OF+fipcK/1Q84XygMuQ4wDmXzFjQ==
+X-Received: by 2002:ac2:4423:0:b0:4f3:b2a7:68ef with SMTP id w3-20020ac24423000000b004f3b2a768efmr2891357lfl.10.1685346068232;
+        Mon, 29 May 2023 00:41:08 -0700 (PDT)
+Received: from [192.168.1.101] (abyj77.neoplus.adsl.tpnet.pl. [83.9.29.77])
+        by smtp.gmail.com with ESMTPSA id w25-20020a05651204d900b004cc8196a308sm1876082lfq.98.2023.05.29.00.41.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 May 2023 00:41:07 -0700 (PDT)
+Message-ID: <a8d3d68d-d202-ddba-3289-65b347807538@linaro.org>
+Date: Mon, 29 May 2023 09:41:06 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH v2 1/4] dt-bindings: arm: qcom: Add Samsung Galaxy Express
+Content-Language: en-US
+To: Rudraksha Gupta <guptarud@gmail.com>, Conor Dooley <conor@kernel.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Olof Johansson <olof@lixom.net>, soc@kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+References: <20230527040905.stmnoshkdqgiaex6@ripper>
+ <20230528001010.47868-2-guptarud@gmail.com>
+ <20230528-decode-creasing-f5b3996163e5@spud>
+ <ad7a6ee3-cabb-6f92-a595-8791801cfe97@gmail.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <ad7a6ee3-cabb-6f92-a595-8791801cfe97@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230528_171114_615607_75F469AB 
-X-CRM114-Status: UNSURE (   5.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230529_004111_935717_506B37A9 
+X-CRM114-Status: GOOD (  13.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,24 +99,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Sun, 28 May 2023 23:19:13 +0530:
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-fixes-6.4
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/e338142b39cf40155054f95daa28d210d2ee1b2d
+On 28.05.2023 15:36, Rudraksha Gupta wrote:
+>> Where did the "att" come from in the compatible. Is this some carrier specific model of the phone?
+> 
+> This is the code name for the device. Since there are usually multiple variants of a device, using the code name differentiates between those variants. For example, if I left this as "samsung,express", it would be unclear if I am referring to the GT-I8730 (code name: expresslte) or the SGH-I437 model. This is typically done in postmarketOS: https://wiki.postmarketos.org/wiki/Devices and XDA developers. I believe it is a carrier specific model of the Samsung Galaxy Express.
+> 
 
-Thank you!
+Please fix your email client:
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+- wrap each line at about 80 characters
+- don't trim messages unless they're very long or
+  there's some other good reason
+- Don't send v(n+1) as a reply to v(n), send it in a
+  separate thread.
+
+
+
+Konrad
 
 -- 
 linux-phy mailing list
