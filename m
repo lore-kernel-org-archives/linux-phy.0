@@ -4,84 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC7C2C7EE23
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 08:40:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73D09C7EE23
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 08:41:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pFCM4wN5GIdYVhzbNFMloFueslt2esuvwGVD10ENZgo=; b=M7AlwaxxDqttAL
-	zovFdtMlEUxuQfn2CdDlilSC6GriQ1JrjBHOnUPMtqwJlmAph0o2WQ8VWElREKpk1Eft9FkD2NYlC
-	vDLMuOizFpca8HtWyM4rjpuVn+DgGS45adAiPFhYFKOYxxigzAmmRkhKggIgg6f3SN6bKxLthBM7A
-	uS5fIa3qlM/L+ODCAO3JCF5bo0oC6ATcrkC69yPg0i2u68Brt0Gn0Qx0oMHGkvrRzGH4LJOnvBHVg
-	7urHkdNtx9fyrO7iPRlxbMDOsgeaLxSTMvzYIZXGEfL5W3gvrZxoJL5yqEJasjoUJUSHdlcHi+/ea
-	f1oSl/SAB98hxeBu1YCQ==;
+	List-Owner; bh=OKJfzwSqzCdfbKgUgp6M80itDMjefYxSLPR23+qfJSM=; b=gNX47oee3oYzHv
+	cng8qUX2egxGZUIXAKNOWwwFlZS2bQv0qesSQYAA/QJs+rI9LyJ+7R1O1eOQPG2qMy0/TzoOXcxQA
+	NCLnVM0OZd4gTfFRsAVds9ZBpbII/dBXVlgJcl09eWdPF1yScqQM495Il04Jce1TrD51VwMj19RaF
+	N9lH4dI+j3tbIsvMO2NFtHl8C5fvcAu9SJi8Xq+0FYi/55YkBjfblV/VM6dcg7u4N1aT1QsvyzvIK
+	jjrQznjZ5zVR41muYeWtdCHYopD88anWl1CLji7kw1vP1vApFkV8WAFMPfSyf8fYudNgYyYs4cOQ1
+	I4OhBE0j9bMDv6nNDJ7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uuW-00Cz8V-1F;
-	Tue, 30 May 2023 08:40:56 +0000
+	id 1q3uuf-00CzEC-0P;
+	Tue, 30 May 2023 08:41:05 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uuQ-00Cz4O-1t
+	id 1q3uuX-00Cz8t-1I
 	for linux-phy@bombadil.infradead.org;
-	Tue, 30 May 2023 08:40:50 +0000
+	Tue, 30 May 2023 08:40:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=jfEXvkrzeaqY3Zz/djBQFxvd7vEtcQQIyY+Jgs9PfMk=; b=eMYZQ2Ao5b7zbDE+VtV5p8dYLm
-	uU/ZEX9S7H4XtDAwTy0YyJMSUHfEu7xeslXYCki5/EAcDv68cedViqZFCwVrGjjKvRy7693wrIiDB
-	5/KgPH1s8z2ZpBjXSDhLRCn2hO4GeHplwnpavoPf/fGN2hWcS0siN930/1b+UQ7IKHc3tdJKvz7W7
-	za2GdRLx9zOszL55Q8onnEZ5CqOTa8qqfkQsEfqc9DidCf34MOOfTN9IH9sH3fXqEGoTOnwTg5fRz
-	TDsa76i3gYQBe2wlekj1O9xUmYKvBTZnC2wBh3DUZo9sY3xfU913u9vfSFyKvCfwDZ3XAHoErI9bX
-	8eH3kwwA==;
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	bh=ctRkf1Nrzpq+Bo2Yx960UtDdp4B1S01USNtgO/gQUhM=; b=NtApw/m+UUX6KUP8RuOUihPy3Q
+	LPcVmWbbKG6dyfZ0KjULkzLo8zT6no/EGLTlxCptk+SX1ahhKc+Gv5gVdAJ+jjEnQNQXf+dxJqujg
+	cV8UZXu1PtywVwDCzc49HMkyuxc7ibMBiSurFJScBDpDUpoVIMIdnwD+3qNVnTfVpyEIxZ/l+6/vb
+	xJVQ2Jp1DSFTdNAIG5aN3JG9qouYtIsW+yu2tOtvFm1jEqt5ByIsjBfAbef8BkD9NquopWRb0m87m
+	ZLIvRQN3RHeZKrBcbz0QiPdS3Bc4+aZYWRsUUgMKMgJuEqtgRMAEDcI4ue+GTIYdCx2V0c+VbZ9sW
+	86+ad72Q==;
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3twC-00DbtV-04
+	id 1q3tvw-00Dbrm-2W
 	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 07:38:42 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-30ad458f085so2729812f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:25 -0700 (PDT)
+	Tue, 30 May 2023 07:38:26 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-30ae7cc0e86so2119921f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685432304; x=1688024304;
+        d=linaro.org; s=google; t=1685432298; x=1688024298;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=jfEXvkrzeaqY3Zz/djBQFxvd7vEtcQQIyY+Jgs9PfMk=;
-        b=krxbND8uKOMMZsMfjM4tgwX0/ik3KeKaeWX6435WFpJSGefc/k9tb6CEc6ELkHKQDX
-         gHm1rc7h1CPqB0W8opYJWRRwrkCSsrKUULYrkeLlnwjEo/fHheAG5HE3vUydEIJ8msGk
-         kvdNuyNnOrpIfR8dLNRjJA2daGNb+B9peXTRayFhm+mqrmfVDTWXdjzVJnv/uW/Hrt4K
-         fGd5TXk4puGWhtT2JIc8vrOm2pRyYBa8VWwZ+CcfC9lU13zGAJ5zQeuzeA9unmpZALvq
-         jerl1Ervf0exDkS9wig6JqxHOBALoaNIUDQaGXqRzzTG1cgQE2yEmem1zPnWnhcvymLd
-         Hxfw==
+        bh=ctRkf1Nrzpq+Bo2Yx960UtDdp4B1S01USNtgO/gQUhM=;
+        b=jMMrGUJAvfTZrZqX1mfK3okGKWvfNOoy+yZ4cMmFMBEU5SuvcgxRjsnG3DAsSLAZYT
+         +8ANXDrhIBZOpGdTZFDJa4xt4wOU9Yy1GrENAbMGs0cSSklsmTzzdaPR7sbjsq4Hlwcv
+         jL12ccLOUzaLRA+3w8EKTc5xC61IdMlSvE1LioGfP7sHYLJRWH866kG06J838NOfE0lG
+         +DMABJ5t4tJxq6AAlh2GD0v6jQRgizrj41ayPgvVyaKbAwvbwpHWZtxOTCWeL8qOwvx5
+         eo5dOW1P8R1GPTcODWWuc34BDSeSxqmO1B4LncBZQE6gR2jSF8pfoip9FN8103eg+FD/
+         Qurw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685432304; x=1688024304;
+        d=1e100.net; s=20221208; t=1685432298; x=1688024298;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=jfEXvkrzeaqY3Zz/djBQFxvd7vEtcQQIyY+Jgs9PfMk=;
-        b=QXvwjXmAhQ4oHfwZ688qfTGbYdg0Gqc6mCsxMkn7deqXC2ZpSGE25dU2ADexE0SzTo
-         bhfzhHJMtpikVl8H2ZU3qnK0oyielYToOYtgi2CfmZmsd4HobenPVvddlEhkT7W/nrPj
-         8I2EFhjyS/KtAxbVjiKpa6hVyMh2p+//3QLrQxnXwiWKcMV/+yrjKJdr1roQgCDIznGq
-         ugoUAD75yHnEI/LiOgU1GuPinfymevVdXLyz90VAii2Mmi7sRCjd1Nw/12p56htB/JDt
-         /J/z9LC8xD4i42vvT+Fnnpp7/uRTU5Qpsm6rAQHDtTEiAg4O6sV5T08mcGyob9lEsY7j
-         r5JQ==
-X-Gm-Message-State: AC+VfDzSvo56UtzVujlJnKYGMxJTbI6FlF00ED0/OFM/ycpAlKDyCsOw
-	X3OHwUe5qNmD6vJrE6b0mCfiNg==
-X-Google-Smtp-Source: ACHHUZ6mZIDAxfv5le0pkcFkIO+8ARVgJXLbbQt8/vxlwETrhc1V1bFh5QTnMwv7dpsAPCXNUZOoFg==
-X-Received: by 2002:a5d:4044:0:b0:30a:8e6a:3d77 with SMTP id w4-20020a5d4044000000b0030a8e6a3d77mr1142304wrp.1.1685432304012;
-        Tue, 30 May 2023 00:38:24 -0700 (PDT)
+        bh=ctRkf1Nrzpq+Bo2Yx960UtDdp4B1S01USNtgO/gQUhM=;
+        b=OTLWIRohwiafC37My+PrbVmXQU9f6zlX3s13/E67UA4iV2uXxwxfMXrYQ+mG0oOZAz
+         5EivQ6/3rPKW0WF0VMcR+ATClsfGbzNTBqHWeIv9yE3C4wj+ir8Spke4tJaAXJ45oWdG
+         8+o7hk9rm2+K2uCsL0ylnMct7x1P9G3im4wkOGwj1gZbKz7mZVXrP7bFRB55jleIYf4q
+         YgwfZXLOd6NcpjJbX2jW8gkOtrtLxlGRwdTzQY+3wSKAj/4ubmTxValxP7iXwc5OEJPw
+         i0PEBx4P2zB0hylwkf+sSSSq/Df1p2wcVvfpQDTuy7NWzTkwBcPiCq9dWnp+6Z8UVQYF
+         hoNg==
+X-Gm-Message-State: AC+VfDwIfjQ1+AW/e8N6W2JEbmOtoRm42Cxfpj1RUcu/P2Fw84IMA1Ip
+	+apownC75Akgn+tFpyvFSpIGXw==
+X-Google-Smtp-Source: ACHHUZ4C7tOtF573M3nwtI82CwuRsBcqayZMHzvOm/CW35Q7iEfXvwMttSTu2aZcZb8Vt79OK5xKIQ==
+X-Received: by 2002:adf:e74d:0:b0:2f7:8f62:1a45 with SMTP id c13-20020adfe74d000000b002f78f621a45mr1236774wrn.66.1685432298189;
+        Tue, 30 May 2023 00:38:18 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.22
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 00:38:23 -0700 (PDT)
+        Tue, 30 May 2023 00:38:17 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 30 May 2023 09:38:10 +0200
-Subject: [PATCH v5 09/17] drm/meson: only use components with dw-hdmi
+Date: Tue, 30 May 2023 09:38:05 +0200
+Subject: [PATCH v5 04/17] clk: meson: g12: use VCLK2_SEL, CTS_ENCL &
+ CTS_ENCL_SEL public CLK IDs
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-9-56eb7a4d5b8e@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-4-56eb7a4d5b8e@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -100,25 +101,25 @@ Cc: "Lukas F. Hartmann" <lukas@mntre.com>,
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2777;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4965;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=nVXfezvQbKE5gC4JrB0CVduxieCr6UkdveYDXaG+sjI=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafgB8ChwHhm0E9pEZfTkphqOUzLZTgFYnPzxmOG
- /S4wCUKJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4AAKCRB33NvayMhJ0UkyD/
- 4nse+EzB7hATP8CQAMK3zfVTtmlq8CoWG5Fcwju9bfQsCYBVPvp9Zysjg6wxBX+W13gkaO96AOb2J7
- foQf4doFXgEZJzBRjoX21BePaAK5dtyqI27XYUWL8zvYWQfZ/kDfhezwKt6FBKyalaeNCMgTwsvnbe
- 60ycoHMPi4z56Gc08oDa4f5DcqQ6eWkAXe+SVypHwmoti6uEyl3icc6ca0D8APd+s/Jg4sHopL/Xr3
- JiiGulF3tQXV6hF88aWtgMKQyLpKhbBu2Qcm1mhi+G5rnkdFFxB9spFkTYLuMsn6O/+EZjdC+qhCAI
- rP6BhyvoAYUB+MHEvTbjIja5e9v7x874k5tXcxQ+CpCmIdrJxTAuNQgur1E0DZOMMisqTmeap/vHyZ
- AH09CltXd1ZrSl5qlliTw0vrwplJb6cDK8L/nQka5f868acWitvPVcpUKeA32xF8X6WA7iQWBHBRO4
- EMpnhPZH0+2/2rZZcOqqBgRWs4jL6/D4rXpZzkQZ+Q0l7k5VbNt8tjVG3v3giWr369aRlQNZs9SePj
- vM68t+3W47ka0W7g5jJ3cFXafmjJme1FwBjc9PXiSEeYAjSaDVCE6iNfyQmLtruHqFev5ITlubRTBm
- yIquMb+6j1mJXzhswTrD205PsdVr1BDSFRBvv4WUcoKNU8XCUv7Pfe1GWIUA==
+ bh=ykSwF0V0lUS+Xeggc75UkrBZ6e3mEPjzepbC0GhniEs=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafeS+RBYJ5gBUnorLdUmAymfM1ZVs6kR7L/wisf
+ VI37kfGJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn3gAKCRB33NvayMhJ0T+CEA
+ DGHyBfRCXIDqYZbNurPI1sb/Ze3ilqYZTVrrQuJjM90Tdl5a0o8b0qbWQ4kDxqEAAU/IEY99JNJfed
+ fN2ZePLSSArZ3dWZ27Uz9sHdan8oAH6ato+VnQaXwv0Gr2sVJd0pkIOhITtBi9S/R4LLjuwi4t3n/d
+ j5HDJAkYcOJdI7Dchkjdz48fItlAadx8zAsSwHVL/kKBE9wAQOGjeK1ew+fIyDCkNvQOTadJCi6NxA
+ aV+cql+M0q6BDWHu4yicOdD2mFyMSpVKCToEI/FLBTD+ygyZvxe3eQuKD9SGVqnMC599JfvAAI0N1W
+ oo9R9a2rBKGTakLKlQkvN2mZ2m+8Irmb+TzSa6KuKz7KdvfOt+yr5DKoI8P8xh0PxcafZupyoPe96J
+ zYufDbbAKJ1HvsSWuPk5qiU1wcEmDl8aPbkq48H0J7VDdNgCUIKvpkj3OjW9Q00lhqlubi20bMLBHd
+ DawwHZqV4+uT/DnKHLjjAJXDw3M0lbx8Q7bmDywDggDW9DVEo2WdK2PEFe4Dn4h+ffxePtd3kPt3NU
+ NugxodI/LFlkkgSxrZ0PRvdcAa8mVl34uRbcF+ObjLhe/HiKKIBhKZax7QZsWqxLYX/KjGc940s/fL
+ jLXmJXY5pD4LmSVneMDFo94J6M24fGigo/zZALq+zEpiX1hoqd4Pmbwr0KDQ==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_083839_544131_5C256B9F 
-X-CRM114-Status: GOOD (  13.44  )
+X-CRM114-CacheID: sfid-20230530_083821_509646_9C4ED13E 
+X-CRM114-Status: GOOD (  10.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,77 +136,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Only DW-HDMI currently needs components since it reuses
-the drm-meson driver context to access HHI registers (sic).
+Now those CLK IDs were added to the public bindings header, switch
+to use those defines and drop the PRIV defines.
 
-Once this is solved, we can get rid on components.
-
-Until now, limit the components matching to the dw-hdmi compatibles
-we know to require this hack, for other bridges simply use probe defer
-instead and get over this components sitation.
-
-The back story is that we simply cannot attach DSI adapters bridges
-if we use components, only DSI panels, this is because we bind/unbind
-the DSI controller at each drm-meson driver master bind tentative.
-With this the I2C DSI bridge is unable to find the DSI controller
-host and everything fails to probe.
-
-This will simplify a lot adding new or older HDMI bridges.
-
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- drivers/gpu/drm/meson/meson_drv.c | 30 ++++++++++++++++--------------
- 1 file changed, 16 insertions(+), 14 deletions(-)
+ drivers/clk/meson/g12a.c | 18 +++++++++---------
+ drivers/clk/meson/g12a.h |  3 ---
+ 2 files changed, 9 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
-index e060279dc80a..e935c0286a20 100644
---- a/drivers/gpu/drm/meson/meson_drv.c
-+++ b/drivers/gpu/drm/meson/meson_drv.c
-@@ -451,10 +451,17 @@ static void meson_drv_shutdown(struct platform_device *pdev)
- 	drm_atomic_helper_shutdown(priv->drm);
- }
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index a132aad2aac9..461ebd79497c 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -4411,7 +4411,7 @@ static struct clk_hw_onecell_data g12a_hw_onecell_data = {
+ 		[CLKID_PRIV_VID_PLL_SEL]	= &g12a_vid_pll_sel.hw,
+ 		[CLKID_PRIV_VID_PLL_DIV]	= &g12a_vid_pll.hw,
+ 		[CLKID_PRIV_VCLK_SEL]		= &g12a_vclk_sel.hw,
+-		[CLKID_PRIV_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
++		[CLKID_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
+ 		[CLKID_PRIV_VCLK_INPUT]		= &g12a_vclk_input.hw,
+ 		[CLKID_PRIV_VCLK2_INPUT]	= &g12a_vclk2_input.hw,
+ 		[CLKID_PRIV_VCLK_DIV]		= &g12a_vclk_div.hw,
+@@ -4438,12 +4438,12 @@ static struct clk_hw_onecell_data g12a_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
+-		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
++		[CLKID_CTS_ENCL_SEL]		= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
+-		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
++		[CLKID_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+@@ -4642,7 +4642,7 @@ static struct clk_hw_onecell_data g12b_hw_onecell_data = {
+ 		[CLKID_PRIV_VID_PLL_SEL]	= &g12a_vid_pll_sel.hw,
+ 		[CLKID_PRIV_VID_PLL_DIV]	= &g12a_vid_pll.hw,
+ 		[CLKID_PRIV_VCLK_SEL]		= &g12a_vclk_sel.hw,
+-		[CLKID_PRIV_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
++		[CLKID_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
+ 		[CLKID_PRIV_VCLK_INPUT]		= &g12a_vclk_input.hw,
+ 		[CLKID_PRIV_VCLK2_INPUT]	= &g12a_vclk2_input.hw,
+ 		[CLKID_PRIV_VCLK_DIV]		= &g12a_vclk_div.hw,
+@@ -4669,12 +4669,12 @@ static struct clk_hw_onecell_data g12b_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
+-		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
++		[CLKID_CTS_ENCL_SEL]		= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
+-		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
++		[CLKID_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+@@ -4908,7 +4908,7 @@ static struct clk_hw_onecell_data sm1_hw_onecell_data = {
+ 		[CLKID_PRIV_VID_PLL_SEL]	= &g12a_vid_pll_sel.hw,
+ 		[CLKID_PRIV_VID_PLL_DIV]	= &g12a_vid_pll.hw,
+ 		[CLKID_PRIV_VCLK_SEL]		= &g12a_vclk_sel.hw,
+-		[CLKID_PRIV_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
++		[CLKID_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
+ 		[CLKID_PRIV_VCLK_INPUT]		= &g12a_vclk_input.hw,
+ 		[CLKID_PRIV_VCLK2_INPUT]	= &g12a_vclk2_input.hw,
+ 		[CLKID_PRIV_VCLK_DIV]		= &g12a_vclk_div.hw,
+@@ -4935,12 +4935,12 @@ static struct clk_hw_onecell_data sm1_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
+-		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
++		[CLKID_CTS_ENCL_SEL]		= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
+-		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
++		[CLKID_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+diff --git a/drivers/clk/meson/g12a.h b/drivers/clk/meson/g12a.h
+index 9a3091fcaa41..8275413f2beb 100644
+--- a/drivers/clk/meson/g12a.h
++++ b/drivers/clk/meson/g12a.h
+@@ -168,7 +168,6 @@
+ #define CLKID_PRIV_VID_PLL_SEL			130
+ #define CLKID_PRIV_VID_PLL_DIV			131
+ #define CLKID_PRIV_VCLK_SEL			132
+-#define CLKID_PRIV_VCLK2_SEL			133
+ #define CLKID_PRIV_VCLK_INPUT			134
+ #define CLKID_PRIV_VCLK2_INPUT			135
+ #define CLKID_PRIV_VCLK_DIV			136
+@@ -265,8 +264,6 @@
+ #define CLKID_PRIV_NNA_CORE_CLK_SEL		265
+ #define CLKID_PRIV_NNA_CORE_CLK_DIV		266
+ #define CLKID_PRIV_MIPI_DSI_PXCLK_DIV		268
+-#define CLKID_PRIV_CTS_ENCL			271
+-#define CLKID_PRIV_CTS_ENCL_SEL			272
  
--/* Possible connectors nodes to ignore */
--static const struct of_device_id connectors_match[] = {
--	{ .compatible = "composite-video-connector" },
--	{ .compatible = "svideo-connector" },
-+/*
-+ * Only devices to use as components
-+ * TOFIX: get rid of components when we can finally
-+ * get meson_dx_hdmi to stop using the meson_drm
-+ * private structure for HHI registers.
-+ */
-+static const struct of_device_id components_dev_match[] = {
-+	{ .compatible = "amlogic,meson-gxbb-dw-hdmi" },
-+	{ .compatible = "amlogic,meson-gxl-dw-hdmi" },
-+	{ .compatible = "amlogic,meson-gxm-dw-hdmi" },
-+	{ .compatible = "amlogic,meson-g12a-dw-hdmi" },
- 	{}
- };
- 
-@@ -472,17 +479,12 @@ static int meson_drv_probe(struct platform_device *pdev)
- 			continue;
- 		}
- 
--		/* If an analog connector is detected, count it as an output */
--		if (of_match_node(connectors_match, remote)) {
--			++count;
--			of_node_put(remote);
--			continue;
--		}
--
--		dev_dbg(&pdev->dev, "parent %pOF remote match add %pOF parent %s\n",
--			np, remote, dev_name(&pdev->dev));
-+		if (of_match_node(components_dev_match, remote)) {
-+			component_match_add(&pdev->dev, &match, component_compare_of, remote);
- 
--		component_match_add(&pdev->dev, &match, component_compare_of, remote);
-+			dev_dbg(&pdev->dev, "parent %pOF remote match add %pOF parent %s\n",
-+				np, remote, dev_name(&pdev->dev));
-+		}
- 
- 		of_node_put(remote);
+ #define NR_CLKS					273
  
 
 -- 
