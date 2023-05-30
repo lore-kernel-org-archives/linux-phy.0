@@ -4,73 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40D6EC77B73
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:32:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3229EC7EE23
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:54:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2/SIG6W/fwSdvhhCF9rqzK5JF92nXvslH3bN8VviBgA=; b=tygGuitIkJ8Mvh
-	YhCS53eLhvRgIRYVUr4LjLlqOdlazHQQ61hK8oX9sP/MDMLITRH2XKj6cB76LZuQsbl5cS8Ehl4hB
-	yaOB6OgWPbaiI48H5mntpvcmbl5ffK9Kl1js7t7N3yoK2sstbnJ8XobUBIaZjKda1BQHJraDR+xy2
-	j5yxueUReDrrYbR4hYK8QhRir8Q4LiknLcVaupm4LaIQpevedMZbejGmLso+SeMAKlBRNE8gdVYGv
-	nqpE7av3clAgBATqy9B0+HOkiJq3S1Uqk7A0qDJRQ8gQdCh8jfwwk6iZni5xXQ1IYzE6DH8doWLOI
-	EXnCW9A/MZ85c6TKPGOw==;
+	List-Owner; bh=vR+Vh19biOSxAJEbxjo8iOSN6vAppf6U5j669l0Bufc=; b=3RUSPi19GlGNbC
+	yHf6D0L/OVFEDwvf+xvbYrYZVwGidmN61UjPdkWS0zzfh09CaIA0N5YyucJA9XzG8jYIfSoKdDMho
+	QZGQ/+Gb3DhmPysYSO6MX2HUI3UjSSfx1Za2S8E7ueg3F0D8+WeU+ZoiCe5PcKea/wSKEL1pr0wN+
+	0EbnZSbOsss2zbJ+HBjPBfr8aOnshsdnJFgkc89HLJAiYLpsMrYtTplRbleFk3slNnupgL69f37+g
+	hV2cR5BCR6VmO50F64HiupZoAmpzhQl9is7Rh1nxJOVtIXjWTDCZIitiRkks9MEz2BUETyzBrx1/M
+	/uHrnxIofy6xJf5KwpDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3tqY-00CkGB-2y;
-	Tue, 30 May 2023 07:32:46 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1q3uBk-00Cp00-2C;
+	Tue, 30 May 2023 07:54:40 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3tqW-00CkFL-2I
-	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 07:32:45 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8875760D54;
-	Tue, 30 May 2023 07:32:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 649C6C433D2;
-	Tue, 30 May 2023 07:32:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1685431963;
-	bh=d/OQC623C020own5jXPNP8Wrr5LphZTC2y5V5K1Fmlc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RUzZ3/pbtf1Fbdww88A1RZ8YBfAcq8BaUwdgGXriVxL0DEN+13cFIA0iX0k3OXCn2
-	 hJGgE4ffVxBs/Ow9a5QzZwTelBq0j7ZHfm0NdPLnKcedM+o/G1p5I4AuAwjvk2aX6V
-	 hYnulYpqINz3wyanB+OvLJfmNPla0W0GQvca2B/g=
-Date: Tue, 30 May 2023 08:32:40 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Stanley =?utf-8?B?Q2hhbmdb5piM6IKy5b63XQ==?= <stanley_chang@realtek.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Michael Grzeschik <m.grzeschik@pengutronix.de>,
-	Bagas Sanjaya <bagasdotme@gmail.com>,
-	Flavio Suligoi <f.suligoi@asem.it>,
-	Matthias Kaehlcke <mka@chromium.org>,
-	Mathias Nyman <mathias.nyman@linux.intel.com>,
-	Ray Chi <raychi@google.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH v2 1/3] usb: phy: add usb phy notify port status API
-Message-ID: <2023053014-reassure-footwork-f51c@gregkh>
-References: <20230525022617.30537-1-stanley_chang@realtek.com>
- <2023052905-maimed-studied-3563@gregkh>
- <647ded70ff024a3081cbf5c45f5da12c@realtek.com>
+	id 1q3uBj-00CoxH-0U
+	for linux-phy@bombadil.infradead.org;
+	Tue, 30 May 2023 07:54:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
+	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
+	:Reply-To:Content-ID:Content-Description;
+	bh=WPTgT5sTrYPg8flPG4xUMcekgFYNUWqU72BwizKCWQI=; b=TV2SqC9NtnVMv7l/zIDQ6GIGCh
+	cPZHYUMNcauJQtDqmnx+ZJCHjkUL4p4Bn8pFcN6/796PxXdM69Eb3VWWpSbd5zX/umaNhlUDi4GFw
+	hCTajN26EgFm9mwaeZ4YXD5LKkReV5fWtcWujs9pFNJU26lQsQiBl4YbF9DjUC2lTqCg6Bwd7gBCA
+	O8FxdSjxzpdzwfha6AUgKyiDgUY7Kb9UVp7yASVfxR8ttKvDQSIwdao6FZRF4FKrAo4mtAtQjsKuj
+	D4ToyRu29F79Q52D9TJRZoIV1h9xmhIfb7Xk7+k2+cw/sBBxvbZ3rX3h9naeGHpiq7uQCbnoMwcp/
+	2zirR39Q==;
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1q3twC-0064Wi-LI
+	for linux-phy@lists.infradead.org; Tue, 30 May 2023 07:38:38 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f6da07ff00so43277465e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1685432313; x=1688024313;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WPTgT5sTrYPg8flPG4xUMcekgFYNUWqU72BwizKCWQI=;
+        b=NplXOz0i2TiTLhRt8mv+IMvE5/ghdl7w4A6FBQ2vZZfxFFRgdSuvqx9S0t4su1/9z1
+         Sx7BIAryBniyhXLeiXf/xfSRqrDo8EY5ZD4/lANDei7bvwc3cK2q+HYmbTem4b6v/CHu
+         MBY02B4KtcoFV4rEmWXKoDq8PlSeHQwEauCf9PDcQu1MAOafSOwE3QUGuD3AOWBe81Jy
+         MmQN0Re2MywXNM73GdzEMA1J1wWjroXhS4MSurs6PVg6SMKGA0pdzN+kVcOmxI5DznkA
+         02r4YamtrL34xnlSc3gs5OuCaWVTLxobkHFVulJNWsgMEmXcDypX0pv79NImsfy3vTrB
+         WVLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685432313; x=1688024313;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=WPTgT5sTrYPg8flPG4xUMcekgFYNUWqU72BwizKCWQI=;
+        b=L4SXwArVvJpgb2r6ki84Hz9h90x1hVwKl0rizmaBwAB9/BF8sXM4bZoTjqhmFAGKci
+         DMl6T0d60Y96LeyJNPVm0GL6gsGAJQZiuszRONw/Q6l/pqyMDBWyrvpv3OJAJ6aGBdJR
+         DEHeV7P5YJF9w2o105bBvmqd8eP2qD4DCM6yGlHjj5s4tlPm/ZrtbRhxIBDB6sSCIFPe
+         dXdXqggZYzhkN/4QlhCWpfQrqmbRZ4/xq9pncZPUtoPFMumOx5IULcCG65WrYWTs2XK2
+         3DCyihN6gNdepVcMrWBZ0e7TDQVhp/mOerCGN4GHbSIitqBg7dLxYi/U16gtmjv9y8A2
+         KKLg==
+X-Gm-Message-State: AC+VfDwBN++7G5BM07Ob1OB8dwLeJltZabYK+V7S50VYQhPxCYEa0KLy
+	eKcIsZ3jO8Tp46IsGJqeAzWp5g==
+X-Google-Smtp-Source: ACHHUZ55aC8J+10LoobwjQEvSKfodkTFU78FdBH8VgjoneMRJifTOynig6IaYbY6tvL85S9ppz3FQQ==
+X-Received: by 2002:adf:ed07:0:b0:30a:e9a9:a4f8 with SMTP id a7-20020adfed07000000b0030ae9a9a4f8mr791959wro.38.1685432313418;
+        Tue, 30 May 2023 00:38:33 -0700 (PDT)
+Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 May 2023 00:38:33 -0700 (PDT)
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Date: Tue, 30 May 2023 09:38:18 +0200
+Subject: [PATCH v5 17/17] arm64: dts: amlogic: meson-g12b-bananapi-cm4: add
+ support for MNT Reform2 with CM4 adaper
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <647ded70ff024a3081cbf5c45f5da12c@realtek.com>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-17-56eb7a4d5b8e@linaro.org>
+References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
+In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
+To: Jerome Brunet <jbrunet@baylibre.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, 
+ Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Sam Ravnborg <sam@ravnborg.org>
+Cc: "Lukas F. Hartmann" <lukas@mntre.com>, 
+ Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org, 
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+X-Mailer: b4 0.12.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=9641;
+ i=neil.armstrong@linaro.org; h=from:subject:message-id;
+ bh=GkS2U+nw+ybbVEdw1DycdM+Z+U/0LiiPmHUY9Y78zpw=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafkvu8cDEFq+Fst+nOyF57ND1abc5JqK3VJeCAW
+ OJpugamJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn5AAKCRB33NvayMhJ0fYQD/
+ sHdXfrOJI4jdjblf/m8Q6h6O7C5We6x1ioboALRLbDFvbtpbwpPySxKYTiS6wKPj1wkEwdkaljMEnZ
+ M29fmQ/C3HjxytA1Vb9j/82/pFs3gzdG6oWPtekmP7W3kq+76fbooJUBsipcqjJt4QjBffAAip06eT
+ czfOWMIwZ/ilJ2UXQMgWREMuQQm4TpUvV3eWiJF8zMZ6LoXPx5dU8pTtB3vxUdI1RsCHw2UM2J+6UT
+ UsrZpon/0bgkaZrE3wX37KNX/lqGICXJ/j00gi4/2OuDw4ruBKL8AvhJHhoyaSwUzmEwLyT6t0BlnL
+ /8ieFVt/bOGw8bnZXS2KiA5tR9LYCljux2gqPm1peprgktgxj9mVc9emRKc+neXHd0DYW/eB43RMv8
+ 2/PeCCDTkIzoU1SdJAnLwMFI0ZQhAN73Y703Lrw5ysmiRIYEYZDJ/QstnoKl2FjDKAKm1n8Mb7NpZd
+ sB0HZiqCMly5vzgLUSHrbt755El9Tl6FL3QPbz2axoK9J5sD51/aO18+hQfgPPPtepwmHsN91uZibD
+ LrmcUvwbsEJNH/Fc1xGWWtJoQJ3zZmIO+F9mTVU7mg33lDkfNj7W4vD1Z1LA87RsEAzOTTMm2C2TDJ
+ XxApFZ9MjOnjJnLfHr8ZDIaduz2TWqaZTH2sAx9FkVywSTlz/ATnPKiV2djw==
+X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
+ fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_003244_786249_B22FFE3D 
-X-CRM114-Status: GOOD (  19.91  )
+X-CRM114-CacheID: sfid-20230530_083836_818203_2959A546 
+X-CRM114-Status: GOOD (  13.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,41 +130,433 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBNYXkgMzAsIDIwMjMgYXQgMDI6MTk6NDVBTSArMDAwMCwgU3RhbmxleSBDaGFuZ1vm
-mIzogrLlvrddIHdyb3RlOgo+IEhpIEdyZWcsCj4gCj4gPiA+IC0tLSBhL2luY2x1ZGUvbGludXgv
-dXNiL3BoeS5oCj4gPiA+ICsrKyBiL2luY2x1ZGUvbGludXgvdXNiL3BoeS5oCj4gPiA+IEBAIC0x
-NDQsNiArMTQ0LDEwIEBAIHN0cnVjdCB1c2JfcGh5IHsKPiA+ID4gICAgICAgICovCj4gPiA+ICAg
-ICAgIGludCAgICAgKCpzZXRfd2FrZXVwKShzdHJ1Y3QgdXNiX3BoeSAqeCwgYm9vbCBlbmFibGVk
-KTsKPiA+ID4KPiA+ID4gKyAgICAgLyogbm90aWZ5IHBoeSBwb3J0IHN0YXR1cyBjaGFuZ2UgKi8K
-PiA+ID4gKyAgICAgaW50ICAgICAoKm5vdGlmeV9wb3J0X3N0YXR1cykoc3RydWN0IHVzYl9waHkg
-KngsCj4gPiA+ICsgICAgICAgICAgICAgaW50IHBvcnQsIHUxNiBwb3J0c3RhdHVzLCB1MTYgcG9y
-dGNoYW5nZSk7Cj4gPiA+ICsKPiA+ID4gICAgICAgLyogbm90aWZ5IHBoeSBjb25uZWN0IHN0YXR1
-cyBjaGFuZ2UgKi8KPiA+ID4gICAgICAgaW50ICAgICAoKm5vdGlmeV9jb25uZWN0KShzdHJ1Y3Qg
-dXNiX3BoeSAqeCwKPiA+ID4gICAgICAgICAgICAgICAgICAgICAgIGVudW0gdXNiX2RldmljZV9z
-cGVlZCBzcGVlZCk7Cj4gPiAKPiA+IFdoeSBjYW4ndCB0aGlzIGJlIHBhcnQgb2YgdGhlIHNhbWUg
-bm90aWZ5X2Nvbm5lY3QoKSBjYWxsYmFjaz8KPiAKPiBUaGUgbm90aWZ5IGNvbm5lY3QgaXMgYXQg
-ZGV2aWNlIHJlYWR5LiBCdXQgSSB3YW50IG5vdGlmeSBwb3J0IHN0YXR1cyBjaGFuZ2UgYmVmb3Jl
-IHBvcnQgcmVzZXQuCj4gCj4gPiBXaGF0IG1ha2VzIGl0IGRpZmZlcmVudCBzb21laG93PyAgUGxl
-YXNlIGRvY3VtZW50IHRoaXMgbXVjaCBiZXR0ZXIuCj4gCj4gSW4gUmVhbHRlayBwaHkgZHJpdmVy
-LCB3ZSBoYXZlIGRlc2lnbmVkIHRvIGR5bmFtaWNhbGx5IGFkanVzdCBkaXNjb25uZWN0aW9uIGxl
-dmVsIGFuZCBjYWxpYnJhdGUgcGh5IHBhcmFtZXRlcnMuCj4gU28gd2UgZG8gdGhpcyB3aGVuIHRo
-ZSBkZXZpY2UgY29ubmVjdGVkIGJpdCBjaGFuZ2VzIGFuZCB3aGVuIHRoZSBkaXNjb25uZWN0ZWQg
-Yml0IGNoYW5nZXMuCj4gUG9ydCBzdGF0dXMgY2hhbmdlIG5vdGlmaWNhdGlvbjoKPiAxLiBDaGVj
-ayBpZiBwb3J0c3RhdHVzIGlzIFVTQl9QT1JUX1NUQVRfQ09OTkVDVElPTiBhbmQgcG9ydGNoYW5n
-ZSBpcyBVU0JfUE9SVF9TVEFUX0NfQ09OTkVDVElPTi4KPiAgIFRoZSBkZXZpY2UgaXMgY29ubmVj
-dGVkLCB0aGUgZHJpdmVyIGxvd2VycyB0aGUgZGlzY29ubmVjdGlvbiBsZXZlbCBhbmQgY2FsaWJy
-YXRlcyB0aGUgcGh5IHBhcmFtZXRlcnMuCj4gMi4gVGhlIGRldmljZSBkaXNjb25uZWN0cywgdGhl
-IGRyaXZlciBpbmNyZWFzZXMgdGhlIGRpc2Nvbm5lY3QgbGV2ZWwgYW5kIGNhbGlicmF0ZXMgdGhl
-IHBoeSBwYXJhbWV0ZXJzLgo+IAo+IElmIHdlIGFkanVzdCB0aGUgZGlzY29ubmVjdGlvbiBsZXZl
-bCBpbiBub3RpZnlfY29ubmVjdCAsIHRoZSBkaXNjb25uZWN0IG1heSBoYXZlIGJlZW4gdHJpZ2dl
-cmVkIGF0IHRoaXMgc3RhZ2UuIAo+IFNvIHdlIG5lZWQgdG8gY2hhbmdlIHRoYXQgYXMgZWFybHkg
-YXMgcG9zc2libGUuCgpQbGVhc2UgcHV0IHRoaXMgdHlwZSBvZiBpbmZvcm1hdGlvbiBpbiB0aGUg
-Y2hhbmdlbG9nIGFuZCBpbiB0aGUgY29tbWVudHMKZm9yIHRoZSBjYWxsYmFjayB3aGVuIHlvdSBy
-ZXN1Ym1pdCBpdC4KCnRoYW5rcywKCmdyZWcgay1oCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+This adds a basic devicetree for the MNT Reform2 DIY laptop when using a
+CM4 adapter and a BPI-CM4 module.
+
+Co-developed-by: Lukas F. Hartmann <lukas@mntre.com>
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+---
+ arch/arm64/boot/dts/amlogic/Makefile               |   1 +
+ .../meson-g12b-bananapi-cm4-mnt-reform2.dts        | 388 +++++++++++++++++++++
+ 2 files changed, 389 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+index cd1c5b04890a..30646448f042 100644
+--- a/arch/arm64/boot/dts/amlogic/Makefile
++++ b/arch/arm64/boot/dts/amlogic/Makefile
+@@ -11,6 +11,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-bananapi-m2s.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-khadas-vim3.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-bananapi-cm4-cm4io.dtb
++dtb-$(CONFIG_ARCH_MESON) += meson-g12b-bananapi-cm4-mnt-reform2.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-gsking-x.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-gtking-pro.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-g12b-gtking.dtb
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-bananapi-cm4-mnt-reform2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-bananapi-cm4-mnt-reform2.dts
+new file mode 100644
+index 000000000000..12c4ff9c9372
+--- /dev/null
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-bananapi-cm4-mnt-reform2.dts
+@@ -0,0 +1,388 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2023 Neil Armstrong <neil.armstrong@linaro.org>
++ * Copyright 2023 MNT Research GmbH
++ */
++
++/dts-v1/;
++
++#include "meson-g12b-bananapi-cm4.dtsi"
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/leds/common.h>
++#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
++
++/ {
++	model = "MNT Reform 2 with BPI-CM4 Module";
++	compatible = "mntre,reform2-cm4", "bananapi,bpi-cm4", "amlogic,a311d", "amlogic,g12b";
++	chassis-type = "laptop";
++
++	aliases {
++		ethernet0 = &ethmac;
++		i2c0 = &i2c1;
++		i2c1 = &i2c3;
++	};
++
++	hdmi_connector: hdmi-connector {
++		compatible = "hdmi-connector";
++		type = "a";
++
++		port {
++			hdmi_connector_in: endpoint {
++				remote-endpoint = <&hdmi_tx_tmds_out>;
++			};
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led-blue {
++			color = <LED_COLOR_ID_BLUE>;
++			function = LED_FUNCTION_STATUS;
++			gpios = <&gpio_ao GPIOAO_7 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "heartbeat";
++		};
++
++		led-green {
++			color = <LED_COLOR_ID_GREEN>;
++			function = LED_FUNCTION_STATUS;
++			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_HIGH>;
++		};
++	};
++
++	sound {
++		compatible = "amlogic,axg-sound-card";
++		model = "MNT-REFORM2-BPI-CM4";
++		audio-widgets = "Headphone", "Headphone Jack",
++				"Speaker", "External Speaker",
++				"Microphone", "Mic Jack";
++		audio-aux-devs = <&tdmout_a>, <&tdmout_b>, <&tdmin_b>;
++		audio-routing =	"TDMOUT_A IN 0", "FRDDR_A OUT 0",
++				"TDMOUT_A IN 1", "FRDDR_B OUT 0",
++				"TDMOUT_A IN 2", "FRDDR_C OUT 0",
++				"TDM_A Playback", "TDMOUT_A OUT",
++				"TDMOUT_B IN 0", "FRDDR_A OUT 1",
++				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
++				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
++				"TDM_B Playback", "TDMOUT_B OUT",
++				"TDMIN_B IN 1", "TDM_B Capture",
++				"TDMIN_B IN 4", "TDM_B Loopback",
++				"TODDR_A IN 1", "TDMIN_B OUT",
++				"TODDR_B IN 1", "TDMIN_B OUT",
++				"TODDR_C IN 1", "TDMIN_B OUT",
++				"Headphone Jack", "HP_L",
++				"Headphone Jack", "HP_R",
++				"External Speaker", "SPK_LP",
++				"External Speaker", "SPK_LN",
++				"External Speaker", "SPK_RP",
++				"External Speaker", "SPK_RN",
++				"LINPUT1", "Mic Jack",
++				"Mic Jack", "MICB";
++
++		assigned-clocks = <&clkc CLKID_MPLL2>,
++					<&clkc CLKID_MPLL0>,
++					<&clkc CLKID_MPLL1>;
++		assigned-clock-parents = <0>, <0>, <0>;
++		assigned-clock-rates = <294912000>,
++				       <270950400>,
++				       <393216000>;
++
++		dai-link-0 {
++			sound-dai = <&frddr_a>;
++		};
++
++		dai-link-1 {
++			sound-dai = <&frddr_b>;
++		};
++
++		dai-link-2 {
++			sound-dai = <&frddr_c>;
++		};
++
++		dai-link-3 {
++			sound-dai = <&toddr_a>;
++		};
++
++		dai-link-4 {
++			sound-dai = <&toddr_b>;
++		};
++
++		dai-link-5 {
++			sound-dai = <&toddr_c>;
++		};
++
++		/* 8ch hdmi interface */
++		dai-link-6 {
++			sound-dai = <&tdmif_a>;
++			dai-format = "i2s";
++			dai-tdm-slot-tx-mask-0 = <1 1>;
++			dai-tdm-slot-tx-mask-1 = <1 1>;
++			dai-tdm-slot-tx-mask-2 = <1 1>;
++			dai-tdm-slot-tx-mask-3 = <1 1>;
++			mclk-fs = <256>;
++
++			codec {
++				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_A>;
++			};
++		};
++
++		/* Analog Audio */
++		dai-link-7 {
++			sound-dai = <&tdmif_b>;
++			dai-format = "i2s";
++			dai-tdm-slot-tx-mask-0 = <1 1>;
++			mclk-fs = <256>;
++
++			codec {
++				sound-dai = <&wm8960>;
++			};
++		};
++
++		/* hdmi glue */
++		dai-link-8 {
++			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
++
++			codec {
++				sound-dai = <&hdmi_tx>;
++			};
++		};
++	};
++
++	reg_main_1v8: regulator-main-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "1V8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		vin-supply = <&reg_main_3v3>;
++	};
++
++	reg_main_1v2: regulator-main-1v2 {
++		compatible = "regulator-fixed";
++		regulator-name = "1V2";
++		regulator-min-microvolt = <1200000>;
++		regulator-max-microvolt = <1200000>;
++		vin-supply = <&reg_main_5v>;
++	};
++
++	reg_main_3v3: regulator-main-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "3V3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	reg_main_5v: regulator-main-5v {
++		compatible = "regulator-fixed";
++		regulator-name = "5V";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	reg_main_usb: regulator-main-usb {
++		compatible = "regulator-fixed";
++		regulator-name = "USB_PWR";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		vin-supply = <&reg_main_5v>;
++	};
++
++	backlight: backlight {
++		compatible = "pwm-backlight";
++		pwms = <&pwm_AO_ab 0 10000 0>;
++		power-supply = <&reg_main_usb>;
++		enable-gpios = <&gpio 58 GPIO_ACTIVE_HIGH>;
++		brightness-levels = <0 32 64 128 160 200 255>;
++		default-brightness-level = <6>;
++
++		status = "okay";
++	};
++
++	panel {
++		compatible = "innolux,n125hce-gn1", "simple-panel";
++		power-supply = <&reg_main_3v3>;
++		backlight = <&backlight>;
++		no-hpd;
++
++		status = "okay";
++
++		port {
++			panel_in: endpoint {
++				remote-endpoint = <&edp_bridge_out>;
++			};
++		};
++	};
++
++	clock_12288: clock_12288 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <12288000>;
++	};
++};
++
++&mipi_analog_dphy {
++	status = "okay";
++};
++
++&mipi_dphy {
++	status = "okay";
++};
++
++&mipi_dsi {
++	status = "okay";
++
++	assigned-clocks = <&clkc CLKID_GP0_PLL>,
++			  <&clkc CLKID_MIPI_DSI_PXCLK_SEL>,
++			  <&clkc CLKID_MIPI_DSI_PXCLK>,
++			  <&clkc CLKID_CTS_ENCL_SEL>,
++			  <&clkc CLKID_VCLK2_SEL>;
++	assigned-clock-parents = <0>,
++				 <&clkc CLKID_GP0_PLL>,
++				 <0>,
++				 <&clkc CLKID_VCLK2_DIV1>,
++				 <&clkc CLKID_GP0_PLL>;
++	assigned-clock-rates = <936000000>,
++			       <0>,
++			       <936000000>,
++			       <0>,
++			       <0>;
++};
++
++&mipi_dsi_panel_port {
++	mipi_dsi_out: endpoint {
++		remote-endpoint = <&edp_bridge_in>;
++	};
++};
++
++&cecb_AO {
++	status = "okay";
++};
++
++&ethmac {
++	status = "okay";
++};
++
++&hdmi_tx {
++	status = "okay";
++};
++
++&hdmi_tx_tmds_port {
++	hdmi_tx_tmds_out: endpoint {
++		remote-endpoint = <&hdmi_connector_in>;
++	};
++};
++
++&pwm_AO_ab {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pwm_ao_a_pins>;
++	status = "okay";
++};
++
++&i2c0 {
++	status = "okay";
++};
++
++&i2c3 {
++	status = "okay";
++
++	edp_bridge: bridge@2c {
++		compatible = "ti,sn65dsi86";
++		reg = <0x2c>;
++		enable-gpios = <&gpio GPIOX_10 GPIO_ACTIVE_HIGH>; // PIN_24 / GPIO8
++		vccio-supply = <&reg_main_1v8>;
++		vpll-supply = <&reg_main_1v8>;
++		vcca-supply = <&reg_main_1v2>;
++		vcc-supply = <&reg_main_1v2>;
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++
++				edp_bridge_in: endpoint {
++					remote-endpoint = <&mipi_dsi_out>;
++				};
++			};
++
++			port@1 {
++				reg = <1>;
++
++				edp_bridge_out: endpoint {
++					remote-endpoint = <&panel_in>;
++				};
++			};
++		};
++	};
++};
++
++&i2c2 {
++	status = "okay";
++
++	wm8960: codec@1a {
++		compatible = "wlf,wm8960";
++		reg = <0x1a>;
++		clocks = <&clock_12288>;
++		clock-names = "mclk";
++		#sound-dai-cells = <0>;
++		wlf,shared-lrclk;
++	};
++
++	rtc@68 {
++		compatible = "nxp,pcf8523";
++		reg = <0x68>;
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&sd_emmc_b {
++	status = "okay";
++};
++
++&tdmif_a {
++	status = "okay";
++};
++
++&tdmout_a {
++	status = "okay";
++};
++
++&tdmif_b {
++	pinctrl-0 = <&tdm_b_dout0_pins>, <&tdm_b_fs_pins>, <&tdm_b_sclk_pins>, <&tdm_b_din1_pins>;
++	pinctrl-names = "default";
++
++	assigned-clocks = <&clkc_audio AUD_CLKID_TDM_SCLK_PAD1>,
++			  <&clkc_audio AUD_CLKID_TDM_LRCLK_PAD1>;
++	assigned-clock-parents = <&clkc_audio AUD_CLKID_MST_B_SCLK>,
++				 <&clkc_audio AUD_CLKID_MST_B_LRCLK>;
++	assigned-clock-rates = <0>, <0>;
++};
++
++&tdmin_b {
++	status = "okay";
++};
++
++&toddr_a {
++	status = "okay";
++};
++
++&toddr_b {
++	status = "okay";
++};
++
++&toddr_c {
++	status = "okay";
++};
++
++&tohdmitx {
++	status = "okay";
++};
++
++&usb {
++	dr_mode = "host";
++
++	status = "okay";
++};
+
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
