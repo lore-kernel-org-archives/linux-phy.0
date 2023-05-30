@@ -4,77 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3E02C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 17:11:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B392AC7EE2F
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 17:23:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=D4RwpVtuIiMN6f3boZlBxo2fDJzBId/Kum43IYWEEeM=; b=TboX3dAPH6Lf76IpmfCGsQSYTT
-	ZKnwc60M6iGnAADp6Oz0BrRH5ZSS2aBvFMjHYga8GZZXZxClsoMOuYVCcoeNx1RLAOL9jNtHgE5Ee
-	US7TJKLEtYONqvvmafH6rP/cl0+x58AsgEYsbN8JOUmOSmXoSQXA/glOgeW3ilSer8yPD6//+4yrC
-	zYt8vTQJWaCId1dJYna0QEa01dVvD9kgFevYVx3J1eiEriDYEd+zXkJ8YvKD0ZNxlPdu63yG28zGT
-	mvzh4u8A8xYyuSQq0n1VFiMKSrDA9SGjG2yPK1hr2U+ZN8z5YHj+eSjxfUgcJg8wxPVpChJlCjwKF
-	PfO9dl8g==;
+	bh=a3Q6INKK95IDIba9aBjhzq3J+1m0seghlGB/5wULJpc=; b=tqkkx0J9Nwa6gT57kOiv0j/Jys
+	EXKOrwMfv9lSujCHDiZc7gJ3gEuD8AVpUK/Btx4zqFdSpZ3m521+NfTuRcOFqqzS4udiH1mzr2RpW
+	jiUuA5Xk2W7i4PkTwxVNsUl/tZZvc2+0aDMT7MwZ5ijHwTnCD36wHQEqVo67gtB/s/8k1s2okKN7p
+	x6clgFb1e9Nkgl454AJWUsRqAKbOVFfONU80Io55j8S9qCN2jYokpiWznBIFqKsmH0C9rI+Hrm8eV
+	r3enrfWibsWClM4aurKXgfUPb5D/8xwd6u/rvXg+8IPTFfpYUb4EzwCRQ9ZkrI/glhv25NlJGA6Z/
+	kHHfIdEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q42sP-00Ei01-1q;
-	Tue, 30 May 2023 17:11:17 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1q434e-00EjX5-0S;
+	Tue, 30 May 2023 17:23:56 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q42sN-00Ehzc-07
-	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 17:11:16 +0000
+	id 1q434a-00EjVy-0d;
+	Tue, 30 May 2023 17:23:53 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 65E9761403;
-	Tue, 30 May 2023 17:11:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4A19C4339C;
-	Tue, 30 May 2023 17:11:08 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9047863114;
+	Tue, 30 May 2023 17:23:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6A21C433D2;
+	Tue, 30 May 2023 17:23:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1685466673;
-	bh=N6T7E2wPg+ksFvC4zTDbs7YVrQwcgW2P2fcGeKZjY20=;
+	s=k20201202; t=1685467431;
+	bh=UzR1fj++02HkyWwFEbtMSGXQjQFGcPmg+nk6CBoorTQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CFXovLHe2oCMksV5jMa1XRicI4ibzn2nGkPyGMPtRnC/y08Yp1GJGpfGxkDMnPjUD
-	 qZYV3T982TxPaZJbNLbkVlsLxnwdoXIr1gMYRSbBBtmyb38QYNiI0vOaHqIPHSYlny
-	 f7aHQpTFYKWKABhjocGyZKtjbwZx021cztTm/1LP472sZoPdfbJIF+fQowxr3luvtO
-	 vFKZWc7TtHmcGsP8e7FivPGzTjYgomj+DAEhRquGGK4SNsoZI20AB0mYJmViyDGojr
-	 OgochEVNk8ky0h6j2vMHGI169NU7lgIPPHKOPvuG8aH5roBKLrYsul0Y30Tl0lzs3E
-	 vdCGDlBy+9FxQ==
-Date: Tue, 30 May 2023 18:11:06 +0100
+	b=XRVqqSg7l3gtvrJQiZxWUs3sW3dpPsMZeLs0xK9uSL6mJjYdIfftdEHjGyAasA93F
+	 vp0gLpUnS8qcpk9a3/voHcP+fe0HcgZAQiKxsgSvam2RRuNhrt3VDiHL2skxmXmfz0
+	 UHgEUyQ6JGLAJM989kYc/NlVsmrAxHCIIr/mJrjU+z/jyfCIDmpYobEEaG7Jdff0aL
+	 ptUgFtjkatqQWlWJzTIrFj/ck17aguEcEqHWg/QiVbq37aW3cLY4mOtG4O/KNC2yLK
+	 zZBBLpYcKu8Wous2xnJ4zlBIq3hDm3aDhdBZB4h0Yjhi4MLkcdhGk2cSj+YnhXzP9N
+	 A6/p2tUZSaTqw==
+Date: Tue, 30 May 2023 18:23:44 +0100
 From: Conor Dooley <conor@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Jerome Brunet <jbrunet@baylibre.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
-	Mark Brown <broonie@kernel.org>, Dipen Patel <dipenp@nvidia.com>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Dilip Kota <eswara.kota@linux.intel.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org,
-	linux-rtc@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-spi@vger.kernel.org, timestamp@lists.linux.dev,
-	linux-watchdog@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
-	Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH 0/7] dt-bindings: restrict node name suffixes
-Message-ID: <20230530-banister-luxurious-d33a5d289749@spud>
-References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Sam Ravnborg <sam@ravnborg.org>,
+	"Lukas F. Hartmann" <lukas@mntre.com>,
+	Nicolas Belin <nbelin@baylibre.com>,
+	linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 16/17] dt-bindings: arm: amlogic: Document the MNT
+ Reform 2 CM4 adapter with a BPI-CM4 Module
+Message-ID: <20230530-switch-riverbank-8a2ae8e5ea4a@spud>
+References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
+ <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-16-56eb7a4d5b8e@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-16-56eb7a4d5b8e@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_101115_173197_59420F39 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20230530_102352_298669_097273C2 
+X-CRM114-Status: GOOD (  10.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,84 +85,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0876893504588158286=="
+Content-Type: multipart/mixed; boundary="===============5127247694053485797=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============0876893504588158286==
+--===============5127247694053485797==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3drXRST+roPPVcQt"
+	protocol="application/pgp-signature"; boundary="U7YSC210J2lnKh/+"
 Content-Disposition: inline
 
 
---3drXRST+roPPVcQt
+--U7YSC210J2lnKh/+
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, May 30, 2023 at 04:48:44PM +0200, Krzysztof Kozlowski wrote:
-> Hi,
+On Tue, May 30, 2023 at 09:38:17AM +0200, Neil Armstrong wrote:
+> The MNT Reform 2 CM4 adapter can be populated with any Raspberry Pi CM4
+> compatible module such as a BPI-CM4 Module, document that.
 >=20
-> Tree-wide cleanup of DTS node name suffixes "-N", e.g. "pwm-5", so we all=
-ow
-> only decimal numbers.  In few cases narrow the pattern to also disallow
-> multiple suffixes, e.g. "pwm-5-5".
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 
-I figure there'll be quite a bit of stuff to fix up afterwards?
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
 Thanks,
 Conor.
 
->=20
-> No dependencies, can be applied by individual subsystems.
->=20
-> Cc: Tony Lindgren <tony@atomide.com>
-> Cc: Oleksij Rempel <o.rempel@pengutronix.de>
->=20
-> Link: https://lore.kernel.org/all/20221127182232.GA128974-robh@kernel.org/
->=20
-> Best regards,
-> Krzysztof
->=20
-> Krzysztof Kozlowski (7):
->   dt-bindings: phy: intel,combo-phy: restrict node name suffixes
->   dt-bindings: pwm: restrict node name suffixes
->   dt-bindings: rtc: restrict node name suffixes
->   dt-bindings: slimbus: restrict node name suffixes
->   spi: dt-bindings: restrict node name suffixes
->   dt-bindings: timestamp: restrict node name suffixes
->   dt-bindings: watchdog: restrict node name suffixes
->=20
->  Documentation/devicetree/bindings/phy/intel,combo-phy.yaml    | 2 +-
->  Documentation/devicetree/bindings/pwm/pwm.yaml                | 2 +-
->  Documentation/devicetree/bindings/rtc/rtc.yaml                | 2 +-
->  Documentation/devicetree/bindings/slimbus/slimbus.yaml        | 2 +-
->  Documentation/devicetree/bindings/spi/spi-controller.yaml     | 2 +-
->  .../bindings/timestamp/hardware-timestamps-common.yaml        | 2 +-
->  Documentation/devicetree/bindings/watchdog/watchdog.yaml      | 4 ++--
->  7 files changed, 8 insertions(+), 8 deletions(-)
->=20
-> --=20
-> 2.34.1
->=20
-
---3drXRST+roPPVcQt
+--U7YSC210J2lnKh/+
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHYuKgAKCRB4tDGHoIJi
-0nXKAQDamcvDwarCjeG65qUN+fBYxaI+//cyJEQB1SuuBpUTGgEAy0ivPKjui6wX
-d/shbUIhWWfohF1w8yRNuYfQATp+AAQ=
-=EmEg
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHYxIAAKCRB4tDGHoIJi
+0jYwAQCUXtrTR7MIODftWUrB77h5/mo+g9I8GUIGCkjmSOVnAwD/fepTgXRQjx2p
+dKfe5rmv2Fw9D0GFz7KPFbFjaNP3Wgc=
+=vEeV
 -----END PGP SIGNATURE-----
 
---3drXRST+roPPVcQt--
+--U7YSC210J2lnKh/+--
 
 
---===============0876893504588158286==
+--===============5127247694053485797==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,5 +137,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============0876893504588158286==--
+--===============5127247694053485797==--
 
