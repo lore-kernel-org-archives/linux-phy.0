@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF437C7EE2E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C245FC7EE23
 	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 08:45:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,62 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwtuLNLETpQaNnt2FxQNrAJpdzye/7jQebm7j0aif0s=; b=gqYoVNZmpanRi8
-	IMSE1wdnKvVkdvQnfvgK89GO4daczJ7trPn6tVeh8yyERv1K4cTiJS4nYtriztmmTirG4bTDnO48p
-	eAs3qSAGOtPjdukjc2gvNB00PoUIOz+LF3fMrT83tbHEd1Dss97gTwLgoZJoa6DUGmDVBuqmQPugP
-	Z1Cpu8I3AAOXyBZqaG435OvbadZwGIQ5NdzB2+Ux5eSSBOe1rhWumSZio8WGMaiIO+4+/4NN3CKCd
-	0ToAzdjykaYzuxeIdMLjc7J89gvaOcdeFrP0d0tqq7Q21aY7BZRHiDyb8JHQtDdBCiHu8yHk9J54t
-	yH5iTXGlOTP9uPERQnwA==;
+	List-Owner; bh=EgPbdudeEvbhCpH3oJBU4zE7eBhObRKsK2dt/3JHbFQ=; b=DeJlCThhsjxgvK
+	55sUqvpKmDQKKuqx+RLNMrsMUpreXnN00bYDVoK/fQ4KyXSl18wHyXDUVLAmGFMwD8IvQ4L1jc5Tw
+	xhAHmKcfP79+0cad03iSoGmRPIQbs/c2fljDG5SApFMVzzzJH/xZq9V9Wh6iVFvwrh2puTAVe8r4D
+	Jcwt1+xtfbm7tvWjv+5cVpp8YURjzly52/r30R2HtYHGQzne4Y6gA48K3wc3FZegXHp/uNSwKxhWz
+	EUpjhjP9FF5awT/uAx8xbyoFo2fP8qiYC7dpXvUjMCYumwEt9YS1nKerJX0v9zqWi4GL5860zVk9S
+	G3f8wbaImn+xGef9X0YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uyq-00D0Pr-2H;
+	id 1q3uyq-00D0Pe-1Q;
 	Tue, 30 May 2023 08:45:24 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3tvv-00Cl22-2m
+	id 1q3tvu-00Cl1W-0q
 	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 07:38:22 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-30af56f5f52so134577f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:18 -0700 (PDT)
+	Tue, 30 May 2023 07:38:20 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-30af20f5f67so912951f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685432297; x=1688024297;
+        d=linaro.org; s=google; t=1685432296; x=1688024296;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=XHQhsBTFDkuQhoxNpEokv/0r+NXaRqu/3vue/LdQVcI=;
-        b=NSOr/9NzVuIrWpU6M3oICUcM65vj2wa4VFC/pcBxdk8yg4wjDOTQUDdkQ10UFhmPzq
-         NJa0zm2sk03VGltrRT1+CShBUhnQ/AOjVzFhMMWfn9gKcv585Ws9KZberZYvwh45snpA
-         04nJNegcoOGvx49C6xQ84Er0YKRpYuepLFLi99cuEcYYd7U2nxAOfQki+zGqTd74kICZ
-         ++NDlHLm0jvvGKrfpqPycT7zc5vZftiQ4ZJ5BO2diBjF+HHw6Iha7ZH6FqFas5z2rxgi
-         S8oAvmLzGOsABsiTiqB8NbzlYfNV3c9MmIH1/9hPvf3tPV2zSWVhTp3xsFd967HsyhJH
-         gh3Q==
+        bh=2/Rzsy455UWJxoydYIeagZhdFB/pfUgTfB7t2+UiAU4=;
+        b=C6RCwuEb1eYa1ttEsUpZLRkJuPdxKNyRPnwbV1b/TV7SucFU8GuJZOYZmKYupVqUh4
+         fBLXDuP8C7sMxhzaLU2/NDLjmk6nH69VrMxFOgVJ924qnsksvGYBgn3ntLZszcOguI68
+         00N+iSk3cNqJw8qfc4mUJBnmg8Mx2nVt5y4uH9uoxchS6erzYC2j7vsf0LKnf00BCJ1R
+         Zu3ggqcYXtEoNm1ZrJJQqzs/iJ4d51Cmc2zg+rwqrkI3yyF6lCck9fdckPvw6Y/Ey/7x
+         DmdUW0RxmhUG5IUYsxllNiZRucLw39WN61gU60R73GIQsCpyONoguV6+h1pswdVY0xq8
+         jHuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685432297; x=1688024297;
+        d=1e100.net; s=20221208; t=1685432296; x=1688024296;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=XHQhsBTFDkuQhoxNpEokv/0r+NXaRqu/3vue/LdQVcI=;
-        b=DaZlA82JPkymO2lArubyNy6Nop+ZlqR6ueMm/+cpL66MTi+r64TUkqp0/yWk0PT732
-         igeR1ezgGhMAzTCUooIgU8s8T8DMCMG0j1t8LuVy4p6ABq9uW0dTcObySpiJ2tcbBEQD
-         ZHZf97dYksmHwqFWh83fbU3xXFoR5dZM6Q0CzQUVr4WCrq8olCLhsky2I/Iqkdzvse+Z
-         t+6/ZZTzFi+hgH1CLVlDMXXFqy1X8G7r+UBHOHJYy6SCA8+FRP+LZQC6TS7CfsRLpCDM
-         mCg+HEoM7pLTf4C/NQuyLZhLlXkL1XErujpX7ZjDnARTDTNEZiBViZ4SmKv+DxKeHqgu
-         tfDw==
-X-Gm-Message-State: AC+VfDza3qWb+B/T/aAfHo3G/Ct5ZS2QSKR90CO9eAHwj0xLJvsNODDe
-	t4SAU1/SoWQdmimPwz+eC9virg==
-X-Google-Smtp-Source: ACHHUZ6D/mVI8auwcawNxpq0Xwa8T4pYrpgGAj/BIL5QadBoX48IUg3ysPom8OfSEaTzDh2KrP2T4g==
-X-Received: by 2002:a5d:4f86:0:b0:30a:e977:de3d with SMTP id d6-20020a5d4f86000000b0030ae977de3dmr890345wru.28.1685432297110;
-        Tue, 30 May 2023 00:38:17 -0700 (PDT)
+        bh=2/Rzsy455UWJxoydYIeagZhdFB/pfUgTfB7t2+UiAU4=;
+        b=IN4Q2qzHGkRpD2rABl2l/rJXHEJlbJ9LdhUzPjKlffqzu06YAq9+5ImivbJY0S8rc7
+         QD3DzW4Fqt0ATnI3Uo+PzmAtARH9a5a8twRLCbE4FB+QDKasTwZ9qrVOFp4Lz+H3kxck
+         LV6xvzT3+a0I1ZOjUimedxCRAJDBbsns2ud7/WUd4E4LTmpWwRwnKV9KyFnrmsM8HzYT
+         p8MfrBeCuSLxdgtUcgDXadFLkMGwtR+t9V8KAX7SfUJfNhB9SGsbMKgrueh5SBqGqJP2
+         AAwqgfsqrBO5gDZumdcqLgGVuBMb2yF2mCxrvbx8eunSGa1MP3vo+uMQw6u45V+3fblq
+         7R4w==
+X-Gm-Message-State: AC+VfDy7wff0BKcLZSMizc9GQCLZJXWIw1esNjZkTeY5jHXNPxkDto0K
+	HSOkF5RHIdDTqUEhuwItQ3Vqpg==
+X-Google-Smtp-Source: ACHHUZ6kHAz1oiPKEQXK33denrSn5kXBLF1cckfBI8jkzp4y43WjxLeKORl/3ABRzZa9UKhLM60xZQ==
+X-Received: by 2002:a5d:5508:0:b0:307:a5d1:dbae with SMTP id b8-20020a5d5508000000b00307a5d1dbaemr755726wrv.71.1685432295998;
+        Tue, 30 May 2023 00:38:15 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.16
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 00:38:16 -0700 (PDT)
+        Tue, 30 May 2023 00:38:15 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 30 May 2023 09:38:04 +0200
-Subject: [PATCH v5 03/17] dt-bindings: clk: g12a-clkc: add VCLK2_SEL and
- CTS_ENCL clock ids
+Date: Tue, 30 May 2023 09:38:03 +0200
+Subject: [PATCH v5 02/17] clk: meson: g12a: add CTS_ENCL & CTS_ENCL_SEL
+ clocks
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-3-56eb7a4d5b8e@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-2-56eb7a4d5b8e@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -86,26 +86,25 @@ Cc: "Lukas F. Hartmann" <lukas@mntre.com>,
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=950;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4770;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=KbKcybkRo8Mj5Fjr+ajJFo4x0AGSd+2AQZgecUYttyQ=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafe+1xMsg6o2539TRqhiYXrKqUICj4jB9MBjpMp
- SAripaKJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn3gAKCRB33NvayMhJ0SocEA
- CVAPoxbACS10ENLyJwe5NXAcDDtbSY50/qd5b4dHarLbYdYx+nKJuL20lukVeblk0hTeMLb1Re82Cy
- YLIfoRF1KIcy/UtGwtNXjO1LP5b24dkydr16RZLaQaZoTPcW5o9TK0RguGOtunUkhwWAh9NRmFj4mv
- LK1ZH05YFPMP2OklXlNnUq1d4LHNapDo4IgItrbKyJOtIYODWLelfGKbhAtOAa6s2PCkHApOt8crWG
- 7Wvk2pFohYNDnfJu5BlpMZyKFLDvhudotjT5qW8zjnpcTbceygYgwifx033UE4PG8WVhvWqEo/x60c
- ulseD7mSf1ilVWdtpCWyiqeSly6RwjZ7ORt4ChDyGzpc3ND0sGpkeFfhbJ7FOtrj6+W8s037mZEDYj
- nqFf1WlPv3jcD1OEvUGCPQVL0X1ceF3igcHHxOv9yG5vLCr8BR9EJGoH9QKeqFwwwf01lkAjUO088R
- YXQPYj4TvAlL/tKLQgalcD9oTc2i3AcJssz0hQSuIK14T3fIQB3UcLfF0X+obpMwTI2x1gKWkw+oBM
- cKxXDEBaDBG4y2AKPRRpBQkCnwanZXHE3p8muwUF2O4qayp7lRb5FdhjsksiNOEmegMHHBSCfgRudl
- 999d78OkvkQ237+UYgvkfs7UrJm02EKhWXVtK58gcVwPDpnz9gH4s8Tom+7Q==
+ bh=YshimAv78sTusx5XlbLyLaKmvGYFuT/Nlues9OXV98A=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafdZGnB9zL+CgnVBMve1Z9B0LfgNI/N9xYPM8bx
+ JoupRWiJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn3QAKCRB33NvayMhJ0Rl7EA
+ CJucqpVwIaz1WC0N5elAKMHy0ZF1CnPdHViDAjTl5eMgn20LIrKiWHzVEJCQYdpHUDvPsdsUjLbPol
+ hIXuZOUC4KyTS/dVAwlapVMxSOTolFQQwFBSnc7u98i18ElJu9ONLburHqKdNdtdkvFMi7Q41+Uqu0
+ wkMxecsNgWxUJlN12Zgd0EoynpJEwy8Useyf8fSc5/XqIF96HpITRB4uPQIMVB7ONHwaLhY8vJD+Oe
+ RsASCAup7UujZWZQor7gksEW4VRWO/EUNGzTIadFkHr6CfutBp0InSQtKXe52FIzLHaKXObS2LnvIM
+ nWvRMq4HhG6zqQdY4sfxGJHJ31dkZUgSVxMW2yMejHhGENvttn/7pdaiiqvubrFyStRJK3+OEcFpMV
+ stKm6BJpLUMogz21ysc7PNwmeqdFTiE0mI6ojBV5Gq8b/1rsFvD9L9T9qfNgCNDKtoWa5adCt5YTHe
+ /3Pmva1VUIDOjHRRh4kfZi5bZPjcv3FZrG/AuogP0jux1bLPfg8FLnw2KVfEtZrMb+SjJYa3y/oYba
+ kbqrXFMLJeiazu7xfDNoCkEc58zpXyWZXT2l2UB5ilAjGF+zMWQoo4Px5oZVxCsSo3w4ccC9A8LtB+
+ 0V9N6+2VgBCBU2zUhmOk9XGJomDJsx3sE2uErEJ0p5MhZZYOrP8Nz3r8QlHw==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_003819_923427_FCCBFB13 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230530_003818_341392_4BF754BE 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,34 +121,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add new CLK ids for the VCLK2_SEL, CTS_ENCL and CTS_ENCL_SEL clocks
-on G12A compatible SoCs.
+Add new CTS_ENCL & CTS_ENCL_SEL clocks for the G12A compatible
+SoCs, they are used to feed the VPU LCD Pixel encoder used for
+DSI display purposes.
 
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- include/dt-bindings/clock/g12a-clkc.h | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/clk/meson/g12a.c | 40 ++++++++++++++++++++++++++++++++++++++++
+ drivers/clk/meson/g12a.h |  4 +++-
+ 2 files changed, 43 insertions(+), 1 deletion(-)
 
-diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
-index a93b58c5e18e..80421d7982dd 100644
---- a/include/dt-bindings/clock/g12a-clkc.h
-+++ b/include/dt-bindings/clock/g12a-clkc.h
-@@ -108,6 +108,7 @@
- #define CLKID_VAPB				124
- #define CLKID_HDMI_PLL				128
- #define CLKID_VID_PLL				129
-+#define CLKID_VCLK2_SEL				133
- #define CLKID_VCLK				138
- #define CLKID_VCLK2				139
- #define CLKID_VCLK_DIV1				148
-@@ -149,5 +150,7 @@
- #define CLKID_NNA_CORE_CLK			267
- #define CLKID_MIPI_DSI_PXCLK_SEL		269
- #define CLKID_MIPI_DSI_PXCLK			270
-+#define CLKID_CTS_ENCL				271
-+#define CLKID_CTS_ENCL_SEL			272
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index d2e481ae2429..a132aad2aac9 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -3547,6 +3547,22 @@ static struct clk_regmap g12a_cts_encp_sel = {
+ 	},
+ };
  
- #endif /* __G12A_CLKC_H */
++static struct clk_regmap g12a_cts_encl_sel = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_VIID_CLK_DIV,
++		.mask = 0xf,
++		.shift = 12,
++		.table = mux_table_cts_sel,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cts_encl_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = g12a_cts_parent_hws,
++		.num_parents = ARRAY_SIZE(g12a_cts_parent_hws),
++		.flags = CLK_SET_RATE_NO_REPARENT | CLK_GET_RATE_NOCACHE,
++	},
++};
++
+ static struct clk_regmap g12a_cts_vdac_sel = {
+ 	.data = &(struct clk_regmap_mux_data){
+ 		.offset = HHI_VIID_CLK_DIV,
+@@ -3626,6 +3642,22 @@ static struct clk_regmap g12a_cts_encp = {
+ 	},
+ };
+ 
++static struct clk_regmap g12a_cts_encl = {
++	.data = &(struct clk_regmap_gate_data){
++		.offset = HHI_VID_CLK_CNTL2,
++		.bit_idx = 3,
++	},
++	.hw.init = &(struct clk_init_data) {
++		.name = "cts_encl",
++		.ops = &clk_regmap_gate_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&g12a_cts_encl_sel.hw
++		},
++		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
++	},
++};
++
+ static struct clk_regmap g12a_cts_vdac = {
+ 	.data = &(struct clk_regmap_gate_data){
+ 		.offset = HHI_VID_CLK_CNTL2,
+@@ -4406,10 +4438,12 @@ static struct clk_hw_onecell_data g12a_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
++		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
++		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+@@ -4635,10 +4669,12 @@ static struct clk_hw_onecell_data g12b_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
++		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
++		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+@@ -4899,10 +4935,12 @@ static struct clk_hw_onecell_data sm1_hw_onecell_data = {
+ 		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
+ 		[CLKID_PRIV_CTS_ENCI_SEL]	= &g12a_cts_enci_sel.hw,
+ 		[CLKID_PRIV_CTS_ENCP_SEL]	= &g12a_cts_encp_sel.hw,
++		[CLKID_PRIV_CTS_ENCL_SEL]	= &g12a_cts_encl_sel.hw,
+ 		[CLKID_PRIV_CTS_VDAC_SEL]	= &g12a_cts_vdac_sel.hw,
+ 		[CLKID_PRIV_HDMI_TX_SEL]	= &g12a_hdmi_tx_sel.hw,
+ 		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
+ 		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
++		[CLKID_PRIV_CTS_ENCL]		= &g12a_cts_encl.hw,
+ 		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
+ 		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
+ 		[CLKID_PRIV_HDMI_SEL]		= &g12a_hdmi_sel.hw,
+@@ -5133,10 +5171,12 @@ static struct clk_regmap *const g12a_clk_regmaps[] = {
+ 	&g12a_vclk2_div12_en,
+ 	&g12a_cts_enci_sel,
+ 	&g12a_cts_encp_sel,
++	&g12a_cts_encl_sel,
+ 	&g12a_cts_vdac_sel,
+ 	&g12a_hdmi_tx_sel,
+ 	&g12a_cts_enci,
+ 	&g12a_cts_encp,
++	&g12a_cts_encl,
+ 	&g12a_cts_vdac,
+ 	&g12a_hdmi_tx,
+ 	&g12a_hdmi_sel,
+diff --git a/drivers/clk/meson/g12a.h b/drivers/clk/meson/g12a.h
+index a57f4a9717db..9a3091fcaa41 100644
+--- a/drivers/clk/meson/g12a.h
++++ b/drivers/clk/meson/g12a.h
+@@ -265,8 +265,10 @@
+ #define CLKID_PRIV_NNA_CORE_CLK_SEL		265
+ #define CLKID_PRIV_NNA_CORE_CLK_DIV		266
+ #define CLKID_PRIV_MIPI_DSI_PXCLK_DIV		268
++#define CLKID_PRIV_CTS_ENCL			271
++#define CLKID_PRIV_CTS_ENCL_SEL			272
+ 
+-#define NR_CLKS					271
++#define NR_CLKS					273
+ 
+ /* include the CLKIDs that have been made part of the DT binding */
+ #include <dt-bindings/clock/g12a-clkc.h>
 
 -- 
 2.34.1
