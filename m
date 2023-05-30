@@ -4,76 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1444AC77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 17:29:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C8E4C7EE2F
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 17:47:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y2T32A4FgAhwLKly8u0MC+E9Opi4hZyZ+pWXJidNY1M=; b=K+l4GJP/GkKHd3wm9z281qODqK
-	8763psRIW4qxnthNW1AV7dgyN+c//ucJ/S4rRWqqpaZQ19Pv+KGlO2lnpE1gITeTb4bu4paum7GZW
-	cz/JlDK8c5zUMy8iO2QIh+y26Zs4B1qNTkQvNHAFYCCODOr8zv+YPjxmIr5tuLY2U4ckwsFYOi7sK
-	XFLWQmYYdrko7dbT48EQecX4wMHYLgG3tzGDzRDmYgdyCyyubtjTKp3+V3UMSzxgDTDRyxYYx5Uj2
-	ogNW0a1CwJ2a8cAKaqyJOz0I7sxqimcYYTZC07TuYhy3KjH67ixmrTw7fw5/DwpcmkM4ozd+Yqdk6
-	8r/IYdGQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YAYvWywjjAPXc/Jh1G9k01eC/t0x9LVGP62M1EtpkJs=; b=SVsmqP0CQ2h65N
+	0F+kgZa7zP1ZURdy58suUhaxzEnHsIlvpAkcWg3yrwRQzVM+xGVhtFtOVUxoGTjjFfBxuMCxfPFfo
+	YDXzyuWQZ6UgiHyBEL9RsEuCR4AKzTpib9Y79rXXynf5J2tI6q3LeZmKW2Szko6JvXNaPyoOiwYyB
+	zlw/ZSdmDmxFNfbra2MTZNajvrQBiB8n9u3YdEkL+8OCVaPtk3P2kQC6WuhY9GpAMBkbpzVjSr00O
+	Dw1C3jdf3VTI2u9zSoKfmGzipAbUCo5F1r7SzQwvAKyB7tQTdxQhKtqkDOWA6JBOt9j8oi+sqrWx4
+	oRXgaNwpn71VZ88Z2jKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q439f-00Ekcs-2G;
-	Tue, 30 May 2023 17:29:07 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1q43RG-00EnIZ-02;
+	Tue, 30 May 2023 17:47:18 +0000
+Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q439b-00Ekbr-2J;
-	Tue, 30 May 2023 17:29:04 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 3696063118;
-	Tue, 30 May 2023 17:29:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CDFCC4339B;
-	Tue, 30 May 2023 17:28:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1685467742;
-	bh=2bODZqzDsUoTQkh2zMk1nEE+wHElsvjQpmoMsf7f/Qk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hHOGYhzLNSVRW2KA0PSbdr+3tO52BK5i2Wf+B9H6AQC08PA1PFm0Bkwly4Xk+Zy6s
-	 fpjQGhv3AcA21h6GnNPWiSEPN3pI7J/t9TpNrcOlySMQHRr5sjkbiDF2yt71sn1ClN
-	 6FBrIyVa0KMjPrG6KZ6KmrmVvn+o9Il5gH1wEptuV+dQ6LmxKVh80QOdChihjaG2jt
-	 2j3mtGq60eXLP8Ralhy/kmZTikzXW7Vt7XQBRLdCD/ol94LsWHuNNhjZf+KyZMBetT
-	 cw6lGHcV7QJ9iBnCmUwTCh4/AatytoU1t2wjMpW7vK3IKmvAd2dVDvDTQNXAg0NkfD
-	 mWfjQxCFTIQUw==
-Date: Tue, 30 May 2023 18:28:55 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Jerome Brunet <jbrunet@baylibre.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	id 1q43RE-00EnHm-0j
+	for linux-phy@lists.infradead.org;
+	Tue, 30 May 2023 17:47:17 +0000
+Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-64d5f65a2f7so3525388b3a.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 10:47:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1685468834; x=1688060834;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=4KFcanc4CjzN6hzpjon4X1hruFFYHDR7ugE4zm99DHQ=;
+        b=OdR4Y7H6Nx7sBNTAd11PEkft3yN3efyKaIhV51v9ftLHVjNGbfszMwZosHkg5dbvth
+         fGKbqJWOkQEJBu9OgQv5/ubfry9JCPiWIKt6agjG7Z9uG13BkYg/lmLuPtIG+hdVAG/t
+         WztyPKjFqolTIx3oqTGSy0hNZ+bgyO77i/EWyvAzYxdfOPWR07on947GOAxT3K1cYvcb
+         dRauGNu4twfMxT+IxF3YuBxl3FxAjvRZnR2zhmO1CoAm7Y/bEdSRRZJFIh55JuuGY2HO
+         NLZFONHUXgPe1Yd+JHK7+pyUnZAn8kTI1QC+L6ulzm5YhZyWROjecxT8gFsQvLpmTQwL
+         jOxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685468834; x=1688060834;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=4KFcanc4CjzN6hzpjon4X1hruFFYHDR7ugE4zm99DHQ=;
+        b=l0eqY8k2806WVAhXyRoavCnErd7h+aBzGWeir3RCkuz7JPgo8hT0KwaZrG7utb7/dr
+         7L4lr5+hSIpz4kQiofQSj23bzjCRL0ReY5tj6qeQrKHbiBwze1oJ/1LXaENbz9upawWC
+         RuaFpAsbY9HkLhH3W3aoqHGBr/CviL7IXL40vzYqgBHioWEWOCr4X6E+9g36Tds38cpR
+         TsCbsAX8prIdD4aFpxj8NXKllBZJUaviRdxs54jLkmdIQPG9bsjLHiSI3QmIZ0gCU3SC
+         VZOqOfxoSTIS1n/wheId4e0Phu/+5x1xZLw7ZUqxn/oZsY5PnhbWk1qNAadx8o0FlINF
+         2fig==
+X-Gm-Message-State: AC+VfDwMeBzrJn1qysm2GgHOgzhZblJx08KEVHxKqh2SLHK8yZ+X57aJ
+	gny/xQoBdSPQN8xh66sbFjM=
+X-Google-Smtp-Source: ACHHUZ5H1oTyoutcnUo3XiPYYzwua35COz5cA3FRa6JU3oW4ADLdTbZES7lj7v/2W8drbB6s7qiXwA==
+X-Received: by 2002:a17:903:24e:b0:1af:ff02:bc19 with SMTP id j14-20020a170903024e00b001afff02bc19mr3552294plh.26.1685468834029;
+        Tue, 30 May 2023 10:47:14 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+        by smtp.gmail.com with ESMTPSA id b4-20020a170902b60400b001a6f7744a27sm10604029pls.87.2023.05.30.10.47.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 May 2023 10:47:13 -0700 (PDT)
+Date: Tue, 30 May 2023 10:47:11 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sam Ravnborg <sam@ravnborg.org>,
-	"Lukas F. Hartmann" <lukas@mntre.com>,
-	Nicolas Belin <nbelin@baylibre.com>,
-	linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 06/17] dt-bindings: display: add Amlogic MIPI DSI Host
- Controller bindings
-Message-ID: <20230530-hankering-trident-9cab74e59591@spud>
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-6-56eb7a4d5b8e@linaro.org>
+	Thierry Reding <thierry.reding@gmail.com>,
+	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+	Alessandro Zummo <a.zummo@towertech.it>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+	Mark Brown <broonie@kernel.org>, Dipen Patel <dipenp@nvidia.com>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Dilip Kota <eswara.kota@linux.intel.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org,
+	linux-rtc@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-spi@vger.kernel.org, timestamp@lists.linux.dev,
+	linux-watchdog@vger.kernel.org, Rob Herring <robh@kernel.org>,
+	Tony Lindgren <tony@atomide.com>,
+	Oleksij Rempel <o.rempel@pengutronix.de>
+Subject: Re: [PATCH 7/7] dt-bindings: watchdog: restrict node name suffixes
+Message-ID: <2aaba5d8-37ad-4086-a81d-0d3e78cf5664@roeck-us.net>
+References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
+ <20230530144851.92059-8-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-6-56eb7a4d5b8e@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20230530144851.92059-8-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_102903_798903_35FD0802 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20230530_104716_265536_4B40CB8E 
+X-CRM114-Status: GOOD (  15.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,63 +106,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4278870931015255594=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, May 30, 2023 at 04:48:51PM +0200, Krzysztof Kozlowski wrote:
+> Make the pattern matching node names a bit stricter to improve DTS
+> consistency.  The pattern is restricted to -N suffixes to decimal
+> numbers.
+> 
+> Suggested-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
---===============4278870931015255594==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yUiZQebBLS7labwP"
-Content-Disposition: inline
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
-
---yUiZQebBLS7labwP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, May 30, 2023 at 09:38:07AM +0200, Neil Armstrong wrote:
-> The Amlogic G12A, G12B & SM1 SoCs embeds a Synopsys DW-MIPI-DSI
-> transceiver (ver 1.21a) with a custom glue managing the IP resets,
-> clock and data inputs similar to the DW-HDMI Glue on the same
-> Amlogic SoC families.
->=20
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-
-Welp, I was happy with it last time around before Krzysztof took a look,
-and the things he pointed out seem to be fixed, so you can have my R-b
-back.
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
-Thanks,
-Conor.
-
---yUiZQebBLS7labwP
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHYyVwAKCRB4tDGHoIJi
-0mZYAQDW0DCO9lI9BrijwwOdNaACzk5HrgyW4ZHkJfjAmf3d6AD/cQb89WQt5+7E
-yfiA12g1wqL5SmEpqaTBIFYHn1cucAo=
-=v6gU
------END PGP SIGNATURE-----
-
---yUiZQebBLS7labwP--
-
-
---===============4278870931015255594==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> ---
+> 
+> Cc: Tony Lindgren <tony@atomide.com>
+> Cc: Oleksij Rempel <o.rempel@pengutronix.de>
+> ---
+>  Documentation/devicetree/bindings/watchdog/watchdog.yaml | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/watchdog/watchdog.yaml b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
+> index 519b48889eb1..f0a584af1223 100644
+> --- a/Documentation/devicetree/bindings/watchdog/watchdog.yaml
+> +++ b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
+> @@ -17,11 +17,11 @@ description: |
+>  select:
+>    properties:
+>      $nodename:
+> -      pattern: "^watchdog(@.*|-[0-9a-f])?$"
+> +      pattern: "^watchdog(@.*|-([0-9]|[1-9][0-9]+))?$"
+>  
+>  properties:
+>    $nodename:
+> -    pattern: "^(timer|watchdog)(@.*|-[0-9a-f])?$"
+> +    pattern: "^(timer|watchdog)(@.*|-([0-9]|[1-9][0-9]+))?$"
+>  
+>    timeout-sec:
+>      description:
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4278870931015255594==--
-
