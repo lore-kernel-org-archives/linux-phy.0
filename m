@@ -4,89 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3322C7EE2F
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 08:25:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2C9FC77B73
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 08:40:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NI0fYQ4TnLtSBYtHJJMLJ+wamHA0CD7+QK14wwgOYhI=; b=BZGQw8LFDggWvS
-	lYGi/I74blhFE+N+w9frhBochFFCC795d3hz1RHyQN9V1vb7ekqOpMhTXyzM0ttvGvDHxYrHO0DIe
-	MYgNT/xCRrUgmIm+7jhqRNU2/wE24HG9xCkraQFfy/QqIa67OKNAhASOp2kCL5Oer3jNggaQ0vUSY
-	qH8NelQ2q6U1GS40xufUrHPRGViKPsuGNhe7pTUiYlMe/1vZOzv/ErDrJLTL8A9qIr0a7EYysNrkX
-	luPqJ10UY2sIlEQRnbaNM50fED30oyZQuKxJr39V/y1dN1aBin2JXbsZCOkHGpudRr8PxScz/Mh19
-	7uBHqrelt1ob6lydp2Cg==;
+	List-Owner; bh=VCJhP3GpqVqcA1mkdNvMHc0HNXFHBAjh+rICeKS6/4I=; b=tsGVDwcWJSG5qo
+	Zqc2Q+n/kAMMR4jsZ/09t9LUA1Mn068rMqSN20UXZWyI0enFulG3NtTg0eS6CWUA0cEGBqDydV6aG
+	nC1HKg0m1xkYGiKJySeGLw//JcrpYHoEQYD7iiWG+zq1clMC/wbHxWiKGGMtbwQaPcKshuNxehHLO
+	GUZ1lEb99hu+LeLEgROzseqKSC8Lr7+IEylkx+3dth+PIjJhD72LZngxm/EhPA8fO4pV4PnNaWTCE
+	IFpmYKBBnjg0X/Sjsbgr3GMsypZb6hPZLRXDU/zEcZLBBHrg6rqqT4pRSdmytTmjgNVJGnHO9s92G
+	W8j8vDCs0wXNYWa5y+EA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uff-00CvNC-27;
-	Tue, 30 May 2023 08:25:35 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1q3utp-00CyjO-1e;
+	Tue, 30 May 2023 08:40:13 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3ufb-00CvKV-0j
+	id 1q3uto-00Cyi6-1A
+	for linux-phy@bombadil.infradead.org;
+	Tue, 30 May 2023 08:40:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=iahTtbvqWeLBpjX1+R6MOcvn8qRZV/bBO4iQlxKXPRc=; b=MgpW4QaP7wRkv7Z05pyqiS8Wux
+	2WXQbdbMP8OgsNCHF37QRnx76VGTv7J6qTivsq++927dSXLgunGjhWoWRPQGHrAHaO1tJF2ZcxQNe
+	rEopJUol10zbAg/VAFOw9teV8mcV/G5EVGnq3/7eFExkzJ2EtDDeYLPUHTODXlV4hMw2aBEOhyMEu
+	Oww2Ky0x4rLAABc8mBHeCBRCzz+9A8e0B3SC1MK1RrlFWmr+Ezv+Bwms+kgrsIJ7NaCznif7vk8vy
+	mh04PRn+x27GDfNimk72PnQYiUiBdo1tHhU6DYgderdeMrGZiet6L7f1eIagGc2P8u3TINB9fRDXz
+	WdYpJcSg==;
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1q3tw2-00DbtO-1k
 	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 08:25:34 +0000
-Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-30ad752f433so2479405f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 01:25:30 -0700 (PDT)
+	Tue, 30 May 2023 07:38:38 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-30ad8f33f1aso2493277f8f.0
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1685435129; x=1688027129;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:from:to:cc:subject:date:message-id:reply-to;
-        bh=SvIiC0tOn9JXjgEEMb2AHKhOD9R5hXhsC5m8XidP4wE=;
-        b=hHwXEXJDcZfSy1cHOIb+C4vds2lK2fU4gM1AYiPuppLxTFqTQEiF53w6enCM4NEcSJ
-         e9hdovgvTk7yx8sr8kM6R0pdTZZNdnwiOGYkdN61lMLK2pHUu+zac+bPF8eWYVVLb6IJ
-         FfGcKFexE41CCeHIg08+QyEiBQnGDblXpyJ7y8X5RyDS3zKbVODwwGk3Wz9cj4drWh/e
-         +e59OiG9QjLLN/Sd0cGkJj+bF3FU+CX+fV3OJ2MyrQ2iq+OgqE4HWjghOaiw04Nqwl74
-         eOoKck/Vm0euPB2Q6AvIDdUQzD4SOqhpw4G0udS7lySowMiEZB/SLq3QzwF69PSPKOlG
-         xs/g==
+        d=linaro.org; s=google; t=1685432303; x=1688024303;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=iahTtbvqWeLBpjX1+R6MOcvn8qRZV/bBO4iQlxKXPRc=;
+        b=qKIJNodFI1eDSMKvOuX+HN31BbwkJxrLHUnP+3O5xRrglxzicL47QtkmEZyZPTZ+ED
+         xQ1T5DZbGNH5okD7A4EFrbGC8/vImRvcHlTUNzio/XYVnBEajm9idnuEKUPFQliKXaxl
+         DfmuD1Y59t/Snu0y7i6OGE6oZU9yeDJNBnp1g5HXnCNYjJ8ovgIbx8p+hib7niIK/eoX
+         2tE3z0UinH99WlDiFzmR917ZB2bai/NQvIgPxUj7r+A+e9GFwsrJesHiCWGuBi/vCu5M
+         K83y7juuBVpBYBxF6ZJIjaueFylPdy7kuB1dbJT2CHRIHMPlpd7B7chZEHxYbYcPvOM0
+         MEug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685435129; x=1688027129;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SvIiC0tOn9JXjgEEMb2AHKhOD9R5hXhsC5m8XidP4wE=;
-        b=i7RxGsZsn/J+0Bftboyd2qum8WXgDWCNZOKg6ALGlRH/fp0OhzYrdW0vJdfqA7bG4U
-         +62vfOkXDHRd9UWaL1unTAVYI7/D9giCUhN2ZMo0B2xepNLgFjDSaSNI51R6eOv8cZYT
-         953RFJP2uIE/lU10JBTR34ByU+ACtkRe0N9MK2+q2+sFxJqEeTNrsGeVEwYBiR1lO0Mc
-         4MKj2LAu55uFugs7nRUHkrX85tbWaij1SW39aMzGiOCcUghA6PlB0Vdy3zd2KHs6988z
-         CDXxw4ROPUiGMI5WvfQ4lUpWuX0lZlIc+WVmEcRiddFw03Y5vwNcRxU79tyGmldpLI/b
-         sC5A==
-X-Gm-Message-State: AC+VfDy1TdU1lP3PAKY13JzNRw8O7D0SA4Cc4kIk7x25vOsWkvzxe/qN
-	Tx6e43z9QJH//FaDf8aaWBcSiA==
-X-Google-Smtp-Source: ACHHUZ48T0Rf/UZpdnaERcC1zFBnmkpHQ7DfgsP9176iJ0HDszOp74yGqHswf6xmv5a9/OD6tkX1QQ==
-X-Received: by 2002:a5d:4808:0:b0:306:3284:824f with SMTP id l8-20020a5d4808000000b003063284824fmr1047151wrq.8.1685435129123;
-        Tue, 30 May 2023 01:25:29 -0700 (PDT)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
-        by smtp.gmail.com with ESMTPSA id t4-20020a5d5344000000b00307acec258esm2485843wrv.3.2023.05.30.01.25.28
+        d=1e100.net; s=20221208; t=1685432303; x=1688024303;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=iahTtbvqWeLBpjX1+R6MOcvn8qRZV/bBO4iQlxKXPRc=;
+        b=BCypklIqGo7xMpl+Y4sy7qfRCQLBlnvOxX8dl4wagJDsma7iwJ6kCd4uCzIpnNskoX
+         Hjszklcr4EXIqKstrR1BG0nSrbPpqUipeOsKmzVbTBsw5lZTc+CD5EtlzrtfsPhssO6Q
+         kfodD7lyHyFRP4g9jc/3v/SWy6Eb+biLwVgSUJ77T0lnhcQVHj9h2B8RBjnPbhzkmUiB
+         OE3oGCHPfbFUr5m9Gk1PyEFbHxftUAZMrWJ1P764xVnsCjfkeBwPrxFWudmRXL4nNord
+         jzBAvuqluQ3Vuti9y+GIGmcpGaEzQn/kcWgOrnTxWW3MP7+XWujXVOyXulgmRyHvFnT0
+         apfQ==
+X-Gm-Message-State: AC+VfDw8qa4KWEJOLiki2E27zMyLrjIl7v6uYmQLMimvW8RpkFh9WbnR
+	ucH28c5v+VeGr6zFUnEvsTCdBQ==
+X-Google-Smtp-Source: ACHHUZ7hEv+SRU+om5OwekpJritdJ/v9ZXDhPMZ+N2a+X/vXmaRr91zRHO9sgLtMSUvFH4uBhSUDtA==
+X-Received: by 2002:adf:e8c5:0:b0:30a:f2a5:83dd with SMTP id k5-20020adfe8c5000000b0030af2a583ddmr853668wrn.7.1685432302819;
+        Tue, 30 May 2023 00:38:22 -0700 (PDT)
+Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 01:25:28 -0700 (PDT)
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
- <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-5-56eb7a4d5b8e@linaro.org>
-User-agent: mu4e 1.8.13; emacs 28.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <neil.armstrong@linaro.org>, Michael Turquette
- <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Kevin Hilman
- <khilman@baylibre.com>, Martin Blumenstingl
- <martin.blumenstingl@googlemail.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley
- <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, Daniel Vetter
- <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Sam Ravnborg <sam@ravnborg.org>
-Cc: "Lukas F. Hartmann" <lukas@mntre.com>, Nicolas Belin
- <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 05/17] clk: meson: g12a: make VCLK2 and ENCL clock
- path configurable by CCF
-Date: Tue, 30 May 2023 10:14:51 +0200
-In-reply-to: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-5-56eb7a4d5b8e@linaro.org>
-Message-ID: <1jv8ga445j.fsf@starbuckisacylon.baylibre.com>
+        Tue, 30 May 2023 00:38:22 -0700 (PDT)
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Date: Tue, 30 May 2023 09:38:09 +0200
+Subject: [PATCH v5 08/17] drm/meson: fix unbind path if HDMI fails to bind
 MIME-Version: 1.0
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-8-56eb7a4d5b8e@linaro.org>
+References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
+In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
+To: Jerome Brunet <jbrunet@baylibre.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, 
+ Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Sam Ravnborg <sam@ravnborg.org>
+Cc: "Lukas F. Hartmann" <lukas@mntre.com>, 
+ Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org, 
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+X-Mailer: b4 0.12.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2139;
+ i=neil.armstrong@linaro.org; h=from:subject:message-id;
+ bh=8CpWFO/23ohWXtlw9VlUvRSsoZjkvEPG4DEcAI5MYHo=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafgS67it5Xd/IPSiDYVRkKBdEU3k4dSZcRJg6IY
+ IKzsY56JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4AAKCRB33NvayMhJ0VUhEA
+ DBaG9ujzD1I8t4CF/PcaEnEZkX3oRDTeUQ2mqXuf8uqKMsWiwUq4ejxXcT3M9558+/alirvGZSMGJR
+ je5yXs+uY81A+lDAN/Kfki1r5nLbnqchdCedEoVmGvFwsnzV/kgppLF9dnxOflfOb2BS3BccuktlSL
+ I6v0HTTCGbUJaDDms7NEHyl55fK0+CB7BCXNf68MpylOUs548WCOy8fl2QcPeR05x1BRjOIDHQT66Q
+ XY0Kh1vJYWOe7xhxE1oCFrJqYdv0s+w9WIIF5QjNd54oUF1/jCVL26uYwy6QniOrq+quZU4vav2B8A
+ 9x3xioYs6uEAbKQo8WCDtg/7xMRg+6436OB/XKOSITB/1bCelI1aAYCOhaJ2uf4uGhESocQtsgfS+y
+ 1Sz6eUxltr2DVz6vtzP5PIjalX4CvEzPEbBZdRdnLWpoxVCbI5PJIUtLDNSTEwxsNMm2I4jM5VcjmD
+ gdhMqkdV2yk/e7tSqEafcitTrOsrcQoFgbWgwDLYvTTUCIsmpat11MkLYGrODn/SjzfM0m2yYz9dc4
+ PyUwkUPBoyGcjqdSadGHYXLggtZQ/8WOTu9EUQPxzU3Tv8nQdfdkbWp4JsglxXP+A2HOxZYYFzib8i
+ Kp0vzZvGcm36bLWM3Btf2WRSkwVaM/nsMwg2nO/4Uq5h5NhDaL067x7/sKOQ==
+X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
+ fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_012531_289691_F8E0CB36 
-X-CRM114-Status: GOOD (  32.55  )
+X-CRM114-CacheID: sfid-20230530_083829_790616_35733CFC 
+X-CRM114-Status: GOOD (  11.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,349 +135,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+If the case the HDMI controller fails to bind, we try to unbind
+all components before calling drm_dev_put() which makes drm_bridge_detach()
+crash because unbinding the HDMI controller frees the bridge memory.
 
-On Tue 30 May 2023 at 09:38, Neil Armstrong <neil.armstrong@linaro.org> wrote:
+The solution is the unbind all components at the end like in the remove
+path.
 
-> In order to setup the DSI clock, let's make the unused VCLK2 clock path
-> configuration via CCF.
->
-> The nocache option is removed from following clocks:
-> - vclk2_sel
-> - vclk2_input
-> - vclk2_div
-> - vclk2
-> - vclk_div1
-> - vclk2_div2_en
-> - vclk2_div4_en
-> - vclk2_div6_en
-> - vclk2_div12_en
-> - vclk2_div2
-> - vclk2_div4
-> - vclk2_div6
-> - vclk2_div12
-> - cts_encl_sel
->
-> The missing vclk2 reset sequence is handled via new clkc notifiers
-> in order to reset the vclk2 after each rate change as done by Amlogic
-> in the vendor implementation.
->
-> In order to set a rate on cts_encl via the vclk2 clock path,
-> the NO_REPARENT flag is set on cts_encl_sel & vclk2_sel in order
-> to keep CCF from selection a parent.
-> The parents of cts_encl_sel & vclk2_sel are expected to be defined
-> in DT.
->
-> The following clock scheme is to be used for DSI:
->
-> xtal
-> \_ gp0_pll_dco
->    \_ gp0_pll
->       |- vclk2_sel
->       |  \_ vclk2_input
->       |     \_ vclk2_div
->       |        \_ vclk2
->       |           \_ vclk2_div1
->       |              \_ cts_encl_sel
->       |                 \_ cts_encl	-> to VPU LCD Encoder
->       |- mipi_dsi_pxclk_sel
->       \_ mipi_dsi_pxclk_div
->          \_ mipi_dsi_pxclk		-> to DSI controller
->
-> The mipi_dsi_pxclk_div is set as RO in order to use the same GP0
-> for mipi_dsi_pxclk and vclk2_input.
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+---
+ drivers/gpu/drm/meson/meson_drv.c | 23 ++++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
 
-I don't think notifiers is the appropriate approach here.
-Whenever there is clock change the motifiers would trigger an off/on of
-the clock, regardless of the clock usage or state.
-If you have several consummers on this vclk2, this would
-cause glitches and maybe this is not desirable.
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index ca6d1e59e5d9..e060279dc80a 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -316,32 +316,34 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 		goto exit_afbcd;
+ 
+ 	if (has_components) {
+-		ret = component_bind_all(drm->dev, drm);
++		ret = component_bind_all(dev, drm);
+ 		if (ret) {
+ 			dev_err(drm->dev, "Couldn't bind all components\n");
++			/* Do not try to unbind */
++			has_components = false;
+ 			goto exit_afbcd;
+ 		}
+ 	}
+ 
+ 	ret = meson_encoder_hdmi_init(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = meson_plane_create(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = meson_overlay_create(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = meson_crtc_create(priv);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	ret = request_irq(priv->vsync_irq, meson_irq, 0, drm->driver->name, drm);
+ 	if (ret)
+-		goto unbind_all;
++		goto exit_afbcd;
+ 
+ 	drm_mode_config_reset(drm);
+ 
+@@ -359,15 +361,18 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 
+ uninstall_irq:
+ 	free_irq(priv->vsync_irq, drm);
+-unbind_all:
+-	if (has_components)
+-		component_unbind_all(drm->dev, drm);
+ exit_afbcd:
+ 	if (priv->afbcd.ops)
+ 		priv->afbcd.ops->exit(priv);
+ free_drm:
+ 	drm_dev_put(drm);
+ 
++	meson_encoder_hdmi_remove(priv);
++	meson_encoder_cvbs_remove(priv);
++
++	if (has_components)
++		component_unbind_all(dev, drm);
++
+ 	return ret;
+ }
+ 
 
-I think it would be better to handle the enable and reset with a
-specific gate driver, in prepare() or enable(), and the give the clock
-CLK_SET_RATE_GATE flag.
-
-This would require the clock to be properly turn off before changing the
-rate.
-
->
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  drivers/clk/meson/g12a.c | 131 +++++++++++++++++++++++++++++++++++++++++++----
->  1 file changed, 120 insertions(+), 11 deletions(-)
->
-> diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-> index 461ebd79497c..e4053f4957d5 100644
-> --- a/drivers/clk/meson/g12a.c
-> +++ b/drivers/clk/meson/g12a.c
-> @@ -3163,7 +3163,7 @@ static struct clk_regmap g12a_vclk2_sel = {
->  		.ops = &clk_regmap_mux_ops,
->  		.parent_hws = g12a_vclk_parent_hws,
->  		.num_parents = ARRAY_SIZE(g12a_vclk_parent_hws),
-> -		.flags = CLK_SET_RATE_NO_REPARENT | CLK_GET_RATE_NOCACHE,
-> +		.flags = CLK_SET_RATE_NO_REPARENT,
->  	},
->  };
->  
-> @@ -3191,7 +3191,6 @@ static struct clk_regmap g12a_vclk2_input = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2_sel.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
->  	},
->  };
->  
-> @@ -3212,6 +3211,40 @@ static struct clk_regmap g12a_vclk_div = {
->  	},
->  };
->  
-> +struct g12a_vclk_div_notifier {
-> +	struct clk_regmap *clk;
-> +	unsigned int offset;
-> +	u8 en_bit_idx;
-> +	u8 reset_bit_idx;
-> +	struct notifier_block nb;
-> +};
-> +
-> +static int g12a_vclk_div_notifier_cb(struct notifier_block *nb,
-> +				  unsigned long event, void *data)
-> +{
-> +	struct g12a_vclk_div_notifier *nb_data =
-> +		container_of(nb, struct g12a_vclk_div_notifier, nb);
-> +
-> +	switch (event) {
-> +	case PRE_RATE_CHANGE:
-> +		/* disable and reset vclk2 divider */
-> +		regmap_update_bits(nb_data->clk->map, nb_data->offset,
-> +				   BIT(nb_data->en_bit_idx) |
-> +				   BIT(nb_data->reset_bit_idx),
-> +				   BIT(nb_data->reset_bit_idx));
-> +		return NOTIFY_OK;
-> +	case POST_RATE_CHANGE:
-> +		/* enabled and release reset */
-> +		regmap_update_bits(nb_data->clk->map, nb_data->offset,
-> +				   BIT(nb_data->en_bit_idx) |
-> +				   BIT(nb_data->reset_bit_idx),
-> +				   BIT(nb_data->en_bit_idx));
-> +		return NOTIFY_OK;
-> +	default:
-> +		return NOTIFY_DONE;
-> +	};
-> +};
-> +
->  static struct clk_regmap g12a_vclk2_div = {
->  	.data = &(struct clk_regmap_div_data){
->  		.offset = HHI_VIID_CLK_DIV,
-> @@ -3225,10 +3258,18 @@ static struct clk_regmap g12a_vclk2_div = {
->  			&g12a_vclk2_input.hw
->  		},
->  		.num_parents = 1,
-> -		.flags = CLK_GET_RATE_NOCACHE,
-> +		.flags = CLK_DIVIDER_ROUND_CLOSEST,
->  	},
->  };
->  
-> +static struct g12a_vclk_div_notifier g12a_vclk2_div_data = {
-> +	.clk = &g12a_vclk2_div,
-> +	.offset = HHI_VIID_CLK_DIV,
-> +	.en_bit_idx = 16,
-> +	.reset_bit_idx = 17,
-> +	.nb.notifier_call = g12a_vclk_div_notifier_cb,
-> +};
-> +
->  static struct clk_regmap g12a_vclk = {
->  	.data = &(struct clk_regmap_gate_data){
->  		.offset = HHI_VID_CLK_CNTL,
-> @@ -3243,6 +3284,33 @@ static struct clk_regmap g12a_vclk = {
->  	},
->  };
->  
-> +struct g12a_vclk_reset_notifier {
-> +	struct clk_regmap *clk;
-> +	unsigned int offset;
-> +	u8 bit_idx;
-> +	struct notifier_block nb;
-> +};
-> +
-> +static int g12a_vclk_notifier_cb(struct notifier_block *nb,
-> +				  unsigned long event, void *data)
-> +{
-> +	struct g12a_vclk_reset_notifier *nb_data =
-> +		container_of(nb, struct g12a_vclk_reset_notifier, nb);
-> +
-> +	switch (event) {
-> +	case POST_RATE_CHANGE:
-> +		/* reset vclk2 */
-> +		regmap_update_bits(nb_data->clk->map, nb_data->offset,
-> +				   BIT(nb_data->bit_idx), BIT(nb_data->bit_idx));
-> +		regmap_update_bits(nb_data->clk->map, nb_data->offset,
-> +				   BIT(nb_data->bit_idx), 0);
-> +
-> +		return NOTIFY_OK;
-> +	default:
-> +		return NOTIFY_DONE;
-> +	};
-> +}
-> +
->  static struct clk_regmap g12a_vclk2 = {
->  	.data = &(struct clk_regmap_gate_data){
->  		.offset = HHI_VIID_CLK_CNTL,
-> @@ -3253,10 +3321,17 @@ static struct clk_regmap g12a_vclk2 = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2_div.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> +static struct g12a_vclk_reset_notifier g12a_vclk2_data = {
-> +	.clk = &g12a_vclk2,
-> +	.offset = HHI_VIID_CLK_CNTL,
-> +	.bit_idx = 15,
-> +	.nb.notifier_call = g12a_vclk_notifier_cb,
-> +};
-> +
->  static struct clk_regmap g12a_vclk_div1 = {
->  	.data = &(struct clk_regmap_gate_data){
->  		.offset = HHI_VID_CLK_CNTL,
-> @@ -3337,7 +3412,7 @@ static struct clk_regmap g12a_vclk2_div1 = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3351,7 +3426,7 @@ static struct clk_regmap g12a_vclk2_div2_en = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3365,7 +3440,7 @@ static struct clk_regmap g12a_vclk2_div4_en = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3379,7 +3454,7 @@ static struct clk_regmap g12a_vclk2_div6_en = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3393,7 +3468,7 @@ static struct clk_regmap g12a_vclk2_div12_en = {
->  		.ops = &clk_regmap_gate_ops,
->  		.parent_hws = (const struct clk_hw *[]) { &g12a_vclk2.hw },
->  		.num_parents = 1,
-> -		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3459,6 +3534,7 @@ static struct clk_fixed_factor g12a_vclk2_div2 = {
->  			&g12a_vclk2_div2_en.hw
->  		},
->  		.num_parents = 1,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3472,6 +3548,7 @@ static struct clk_fixed_factor g12a_vclk2_div4 = {
->  			&g12a_vclk2_div4_en.hw
->  		},
->  		.num_parents = 1,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3485,6 +3562,7 @@ static struct clk_fixed_factor g12a_vclk2_div6 = {
->  			&g12a_vclk2_div6_en.hw
->  		},
->  		.num_parents = 1,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3498,6 +3576,7 @@ static struct clk_fixed_factor g12a_vclk2_div12 = {
->  			&g12a_vclk2_div12_en.hw
->  		},
->  		.num_parents = 1,
-> +		.flags = CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3559,7 +3638,7 @@ static struct clk_regmap g12a_cts_encl_sel = {
->  		.ops = &clk_regmap_mux_ops,
->  		.parent_hws = g12a_cts_parent_hws,
->  		.num_parents = ARRAY_SIZE(g12a_cts_parent_hws),
-> -		.flags = CLK_SET_RATE_NO_REPARENT | CLK_GET_RATE_NOCACHE,
-> +		.flags = CLK_SET_RATE_NO_REPARENT | CLK_SET_RATE_PARENT,
->  	},
->  };
->  
-> @@ -3727,7 +3806,7 @@ static struct clk_regmap g12a_mipi_dsi_pxclk_div = {
->  	},
->  	.hw.init = &(struct clk_init_data){
->  		.name = "mipi_dsi_pxclk_div",
-> -		.ops = &clk_regmap_divider_ops,
-> +		.ops = &clk_regmap_divider_ro_ops,
->  		.parent_hws = (const struct clk_hw *[]) {
->  			&g12a_mipi_dsi_pxclk_sel.hw
->  		},
-> @@ -5421,6 +5500,32 @@ static int meson_g12a_dvfs_setup(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static int meson_g12a_vclk_setup(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct clk *notifier_clk;
-> +	int ret;
-> +
-> +	/* Setup clock notifier for vclk2 */
-> +	notifier_clk = devm_clk_hw_get_clk(dev, &g12a_vclk2.hw, DVFS_CON_ID);
-> +	ret = devm_clk_notifier_register(dev, notifier_clk, &g12a_vclk2_data.nb);
-> +	if (ret) {
-> +		dev_err(dev, "failed to register the vlkc2 notifier\n");
-> +		return ret;
-> +	}
-> +
-> +	/* Setup clock notifier for vclk2_div */
-> +	notifier_clk = devm_clk_hw_get_clk(dev, &g12a_vclk2_div.hw, DVFS_CON_ID);
-> +	ret = devm_clk_notifier_register(dev, notifier_clk,
-> +					 &g12a_vclk2_div_data.nb);
-> +	if (ret) {
-> +		dev_err(dev, "failed to register the vclk2_div notifier\n");
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  struct meson_g12a_data {
->  	const struct meson_eeclkc_data eeclkc_data;
->  	int (*dvfs_setup)(struct platform_device *pdev);
-> @@ -5443,6 +5548,10 @@ static int meson_g12a_probe(struct platform_device *pdev)
->  	g12a_data = container_of(eeclkc_data, struct meson_g12a_data,
->  				 eeclkc_data);
->  
-> +	ret = meson_g12a_vclk_setup(pdev);
-> +	if (ret)
-> +		return ret;
-> +
->  	if (g12a_data->dvfs_setup)
->  		return g12a_data->dvfs_setup(pdev);
+-- 
+2.34.1
 
 
 -- 
