@@ -4,90 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFAFAC77B73
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 13:24:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C4BBC7EE23
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 13:24:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZ1ot4X4oBfF+8FibqjPhpKyBxlDkhrv2UJmLqHqFGc=; b=mytdHF1ckM3S9k
-	lwA7j+hv53ObI+4WnCoJUVM11019JwPEruJ47c3aBCOWW4UU4sT4xOLawP1L/DbCe+K4IwU5Y2cNc
-	XDTGOKg1TYYPBTB9zBYR8w44R0lAE8oiam4DnN28xkLipeNiTuG5FqqyO9ddkAQ8JyGbADt5f9tyY
-	ztt+o5kMPDHS4tGvmS/4RACJWl7iMtollxuIUFFs+snsidvjxf04QPaq5l3u+FYdKiMeEOafFah7W
-	O462qsDVKq8nGK2TmrG+85zWn8H2FVcj2QP+qqPf+P6bysDb1ZjGzkg1r0uHQfuaCLiA7/A7mn6kO
-	gSZ9S3rAeNdNpidk8I+A==;
+	List-Owner; bh=gl5ZhHoM+LPZytVrDs6aJORyaY5Z3ShJzhQMs+vDVr4=; b=k6K3tZKgnQXIZr
+	W1iY2POIAHlepoSI+eMeVGswhxkwT1L2eW7R20D+eMs3pC9i6zrUs9O8BzlyiCFzWf17NAm4yxvba
+	DvVq9ZEN/YPnMnHD8dNnwMns/FPDFk7hbekY0yHDk2BYwjTcqIbst+FPiLWF2BVIuWHVDThshnnSL
+	34iBRjx4T+bqThBtIgCnamerPpqRMIZ2030XFJKCtQD5GoVVaHWUmFLNTPduigsFLUCrJYcjgUMDs
+	RvqWX9OdY4yBQsA84xCcZfkUdGXCzoQjt80sjRufyW6JXyM2CHzq4lKRQyg1thbx3JTrF1drhYPLb
+	2ZPsGZu3qYfGxr3Cme0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3zKk-00E27h-1p;
-	Tue, 30 May 2023 13:24:18 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1q3zKo-00E292-0a;
+	Tue, 30 May 2023 13:24:22 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3zKi-00E26w-0m
+	id 1q3zKl-00E27i-1D
 	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 13:24:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1685453052;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9h2qv+kuQ8pwupuNrZsU9iPA+8ZB55lYhU0C+yRT42k=;
-	b=O+X168maF/C6Ihk/lep3GZm65pUOSeWeyZjn5AxEe//p/S2QOyDVM50ljftBeVzX6fDgUx
-	NJQ0QwaeSeZ/sObnQFzShY2neovcYNuPctHId5SAss1PCLaQLrlThPSbFzQ1MrL1+yZhMD
-	OWtOwJwq2TXPsEovh+qqJN87eZ7d+2Q=
-Received: from mail-oi1-f200.google.com (mail-oi1-f200.google.com
- [209.85.167.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-306-ozV2FIi5PNaEFik6SrWdqg-1; Tue, 30 May 2023 09:22:42 -0400
-X-MC-Unique: ozV2FIi5PNaEFik6SrWdqg-1
-Received: by mail-oi1-f200.google.com with SMTP id 5614622812f47-3985cabc77eso3511512b6e.1
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 06:22:42 -0700 (PDT)
+	Tue, 30 May 2023 13:24:20 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-974265a1a40so107867166b.0
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 06:24:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1685453058; x=1688045058;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=f13+//j5TUSK7f17I23pgVcVd7PAgs1drwm4AW53RHM=;
+        b=zC14MYkKGvdGUnL0dteMGGW+ZVB+LtSJnuFAGxZ/yRtnxaHKhM2+owjsNOlMVqR2zz
+         QCOcAeSXtqxWdqUcu7BgM3t1mkvqUHoCIETz/izhIQ2clL/1yrr6/eyi5eujcIjQSDg5
+         4tFrkX5xraNaG4SScrEQ1WIAO7Kh8kjw+ZqfOouXU7sSFWciqn2J2Bby10nGMuy5/bp+
+         pA9XuUc7Ohz7HKYlwJcwl27Y4yA5dz3pstZ1iQB760AJnYos3PDZi+X57zapbUEl5vcX
+         baySGpbCaL4zCDgIGimm8Zl1I0XQPTCng8O/2rpHAfejd3kOnP6x1vI95UeaYIm0F50x
+         eeDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685452961; x=1688044961;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9h2qv+kuQ8pwupuNrZsU9iPA+8ZB55lYhU0C+yRT42k=;
-        b=dHz5XJPDrK5FX+EmiGt5qyNHi9ThtxTM3pLCXatPI8SJBOdiIQ0JGZ+lECVcToHBUn
-         LTsVCKokgCjQ4BDvuScCd2BXty3p688bZwKLmRKSTU7H5WNZNow2OTytBTlQsF/eLtoo
-         b3eT2z1YKBZTtSxgJjlkrENZJVUHzIaDzSAT6l5vlYEBcJNlCf5Awa51gt84aPdOaof/
-         kBqiA7m3WhOSzz1kfmBpGHV0TEvxxA+wk1Zijvd8z2aTxFAbsZAAP/BxYZjrUB8LB5AQ
-         h8wQLCB4LK2Q5eyQ0jeCbbHzxreaXxEx6vkzJ64Ss83UCkwzd4XYI2pwJGtv4GoQRF3w
-         L/rg==
-X-Gm-Message-State: AC+VfDypcUXvsVP+RGfk0AmlRxBh49zxKDCeL3586Zr6W4BeQUoo7uw8
-	EjwVjIyxkWDTNXcPXoG4gSqRVem6jxJqUK8kRTo9yYz/tJfFEXUd6uq2BmaN9FLDs7dWj/Mwssk
-	piYLKFzQV+YY0Q0pHBJayCRl6tw==
-X-Received: by 2002:aca:bf86:0:b0:39a:4170:6840 with SMTP id p128-20020acabf86000000b0039a41706840mr423821oif.21.1685452961711;
-        Tue, 30 May 2023 06:22:41 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ4hvJly164alHc4qnzJk9MLJR7zrivpgNQbh/WGkmSgj9lPucLLDbx/4axIxdcaCBEb1Ukjfg==
-X-Received: by 2002:aca:bf86:0:b0:39a:4170:6840 with SMTP id p128-20020acabf86000000b0039a41706840mr423814oif.21.1685452961485;
-        Tue, 30 May 2023 06:22:41 -0700 (PDT)
-Received: from halaney-x13s ([2600:1700:1ff0:d0e0::12])
-        by smtp.gmail.com with ESMTPSA id m18-20020a056808025200b0039a03e7b65esm3099937oie.53.2023.05.30.06.22.40
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 06:22:41 -0700 (PDT)
-Date: Tue, 30 May 2023 08:22:38 -0500
-From: Andrew Halaney <ahalaney@redhat.com>
-To: Adrien Thierry <athierry@redhat.com>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RFC 1/2] phy: qcom-snps-femto-v2: properly enable ref
- clock
-Message-ID: <20230530132238.7xl2efx4of5u6vzz@halaney-x13s>
-References: <20230529185638.32376-1-athierry@redhat.com>
- <20230529185638.32376-2-athierry@redhat.com>
+        d=1e100.net; s=20221208; t=1685453058; x=1688045058;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=f13+//j5TUSK7f17I23pgVcVd7PAgs1drwm4AW53RHM=;
+        b=dvC3fS88O6WV4Rl5Bcn/rnCVY7TOfuGnjLqX6091Qr5IwDkwVI/E8vOHRlyZaSwZJU
+         swirp3rvTkp3jUmRog+fSDubTt2g0j+3yFmlds4MKLnKMr7dWGOO09LCKESHOUf7Tq/R
+         QI2xFmrRb5rvoeHMS9AW242umSrbM8ygr/vaZgqT58ZNHu7qkgqNFRocM3Um/o41/w8O
+         6l828lYC+Rqlql5aOS47Kc2JWF2HmR3DmL1RrDX9IshNCCJm9elty9ESRKLdcl5//QMy
+         oqsW9jdEzia/Utqj/sif9qROAdJ8j5n7e+CTsd3lRh1GXKINnqi+kcE8Rum1FFXciY+l
+         ETJg==
+X-Gm-Message-State: AC+VfDxR5+n2Pv2omqaZpiVAOyuXUYmalOTc15mUfscrZ6hwHhQkEJ1i
+	5Ew6HLbSeplsi1Ct36GOlP4PMw==
+X-Google-Smtp-Source: ACHHUZ45MHzQv6JgtBdSZV3zezwsX8mKYWid5QGh2Tm9MTh1hRIo/ZlaX97ft0SeEvZoCw6qfiVN2A==
+X-Received: by 2002:a17:906:9753:b0:965:d7c7:24db with SMTP id o19-20020a170906975300b00965d7c724dbmr2131710ejy.32.1685453058029;
+        Tue, 30 May 2023 06:24:18 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.199.204])
+        by smtp.gmail.com with ESMTPSA id me21-20020a170906aed500b0096a16e49b0fsm7305207ejb.51.2023.05.30.06.24.16
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 May 2023 06:24:17 -0700 (PDT)
+Message-ID: <3f2eefcc-fb0b-d374-995d-3c0b7e4b4507@linaro.org>
+Date: Tue, 30 May 2023 15:24:15 +0200
 MIME-Version: 1.0
-In-Reply-To: <20230529185638.32376-2-athierry@redhat.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v2 4/4] ARM: dts: qcom: Add Samsung Galaxy Express support
+Content-Language: en-US
+To: Rudraksha Gupta <guptarud@gmail.com>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Olof Johansson <olof@lixom.net>, soc@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+References: <20230527040905.stmnoshkdqgiaex6@ripper>
+ <20230528001010.47868-5-guptarud@gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230528001010.47868-5-guptarud@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_062416_372017_0CFC2231 
-X-CRM114-Status: GOOD (  20.44  )
+X-CRM114-CacheID: sfid-20230530_062419_415584_F572044A 
+X-CRM114-Status: GOOD (  19.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,99 +102,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 29, 2023 at 02:56:36PM -0400, Adrien Thierry wrote:
-> The driver is not enabling the ref clock, which thus gets disabled by
-> the clk_disable_unused initcall. This leads to the dwc3 controller
-> failing to initialize if probed after clk_disable_unused is called, for
-> instance when the driver is built as a module.
+Thank you for your patch. There is something to discuss/improve.
+
+
+
+On 28/05/2023 02:10, Rudraksha Gupta wrote:
+> This adds a very basic device tree file for the Samsung Galaxy Express
+
+Please do not use "This commit/patch", but imperative mood. See longer
+explanation here:
+https://elixir.bootlin.com/linux/v5.17.1/source/Documentation/process/submitting-patches.rst#L95
+
+
+> SGH-I437. Currently, the following things work: UART, eMMC, SD Card, and
+> USB.
 > 
-> To fix this, add calls to clk_prepare_enable/clk_disable_unprepare at
-> the proper places.
-> 
-
-I'm a sucker for a good paper trail, maybe add:
-Link: https://lore.kernel.org/linux-arm-msm/ZEqvy+khHeTkC2hf@fedora/
-Fixes: 51e8114f80d0 ("phy: qcom-snps: Add SNPS USB PHY driver for QCOM based SOCs")
-
-good work!
-
-> Signed-off-by: Adrien Thierry <athierry@redhat.com>
+> Signed-off-by: Rudraksha Gupta <guptarud@gmail.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 20 +++++++++++++++++--
->  1 file changed, 18 insertions(+), 2 deletions(-)
+>  arch/arm/boot/dts/Makefile                    |   1 +
+>  .../dts/qcom-msm8960-samsung-expressatt.dts   | 334 ++++++++++++++++++
+>  2 files changed, 335 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> index 6c237f3cc66d..8abf482e81a8 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> @@ -166,6 +166,7 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
->  	}
->  
->  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
-> +	clk_disable_unprepare(hsphy->ref_clk);
->  	return 0;
->  }
->  
-> @@ -181,6 +182,12 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
->  		return ret;
->  	}
->  
-> +	ret = clk_prepare_enable(hsphy->ref_clk);
-> +	if (ret) {
-> +		dev_err(&hsphy->phy->dev, "failed to enable ref clock\n");
-> +		return ret;
-> +	}
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 59829fc90315..12c90f263142 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1081,6 +1081,7 @@ dtb-$(CONFIG_ARCH_QCOM) += \
+>  	qcom-msm8916-samsung-grandmax.dtb \
+>  	qcom-msm8916-samsung-serranove.dtb \
+>  	qcom-msm8960-cdp.dtb \
+> +	qcom-msm8960-samsung-expressatt.dtb \
+>  	qcom-msm8974-lge-nexus5-hammerhead.dtb \
+>  	qcom-msm8974-sony-xperia-rhine-amami.dtb \
+>  	qcom-msm8974-sony-xperia-rhine-honami.dtb \
+> diff --git a/arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts b/arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts
+> new file mode 100644
+> index 000000000000..a1ee9c272558
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/qcom-msm8960-samsung-expressatt.dts
+> @@ -0,0 +1,334 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <dt-bindings/input/input.h>
 > +
->  	return 0;
->  }
->  
-> @@ -380,10 +387,16 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->  		goto poweroff_phy;
->  	}
->  
-> +	ret = clk_prepare_enable(hsphy->ref_clk);
-> +	if (ret) {
-> +		dev_err(&phy->dev, "failed to enable ref clock, %d\n", ret);
-> +		goto disable_ahb_clk;
-> +	}
+> +#include "qcom-msm8960.dtsi"
+> +#include <dt-bindings/reset/qcom,gcc-msm8960.h>
 > +
->  	ret = reset_control_assert(hsphy->phy_reset);
->  	if (ret) {
->  		dev_err(&phy->dev, "failed to assert phy_reset, %d\n", ret);
-> -		goto disable_ahb_clk;
-> +		goto disable_ref_clk;
->  	}
->  
->  	usleep_range(100, 150);
-> @@ -391,7 +404,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->  	ret = reset_control_deassert(hsphy->phy_reset);
->  	if (ret) {
->  		dev_err(&phy->dev, "failed to de-assert phy_reset, %d\n", ret);
-> -		goto disable_ahb_clk;
-> +		goto disable_ref_clk;
->  	}
->  
->  	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_CFG0,
-> @@ -448,6 +461,8 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->  
->  	return 0;
->  
-> +disable_ref_clk:
-> +	clk_disable_unprepare(hsphy->ref_clk);
->  disable_ahb_clk:
->  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
->  poweroff_phy:
-> @@ -462,6 +477,7 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
->  
->  	reset_control_assert(hsphy->phy_reset);
->  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
-> +	clk_disable_unprepare(hsphy->ref_clk);
->  	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->  	hsphy->phy_initialized = false;
->  
-> -- 
-> 2.40.1
-> 
+> +/ {
+> +	model = "Samsung Galaxy Express SGH-I437";
+> +	compatible = "samsung,expressatt", "qcom,msm8960";
+> +	chassis-type = "handset";
+> +
+> +	aliases {
+> +		serial0 = &gsbi5_serial;
+> +		mmc0 = &sdcc1; /* SDCC1 eMMC slot */
+> +		mmc1 = &sdcc3; /* SDCC3 SD card slot */
+> +	};
+> +
+> +	chosen {
+> +		stdout-path = "serial0:115200n8";
+> +	};
+> +};
+> +
+> +&gsbi5 {
+> +	qcom,mode = <GSBI_PROT_I2C_UART>;
+> +	status = "okay";
+> +};
+> +
+> +&gsbi5_serial {
+> +	status = "okay";
+> +};
+> +
+> +&sdcc1 {
+> +	vmmc-supply = <&pm8921_l5>;
+> +	status = "okay";
+> +};
+> +
+> +&sdcc3 {
+> +	vmmc-supply = <&pm8921_l6>;
+> +	vqmmc-supply = <&pm8921_l7>;
+> +	status = "okay";
+> +};
+> +
+> +&gsbi1 {
+> +	qcom,mode = <GSBI_PROT_SPI>;
+> +	pinctrl-0 = <&spi1_default>;
+> +	pinctrl-names = "default";
+> +	status = "okay";
+> +};
+> +
+> +&gsbi1_spi {
+> +	status = "okay";
+> +};
+> +
+> +&msmgpio {
+> +	spi1_default: spi1_default {
+
+No underscores in node names, missing proper suffix.
+
+It does not look like you tested the DTS against bindings. Please run
+`make dtbs_check` (see
+Documentation/devicetree/bindings/writing-schema.rst for instructions).
+
+> +		mux {
+
+It does not look like you tested the DTS against bindings. Please run
+`make dtbs_check` (see
+Documentation/devicetree/bindings/writing-schema.rst for instructions).
+
+> +			pins = "gpio6", "gpio7", "gpio9";
+> +			function = "gsbi1";
+> +		};
+> +
+> +		mosi {
+
+It does not look like you tested the DTS against bindings. Please run
+`make dtbs_check` (see
+Documentation/devicetree/bindings/writing-schema.rst for instructions).
+
+> +			pins = "gpio6";
+> +			drive-strength = <12>;
+> +			bias-disable;
+> +		};
+> +
+> +		miso {
+> +			pins = "gpio7";
+> +			drive-strength = <12>;
+> +			bias-disable;
+> +		};
+> +
+> +		cs {
+> +			pins = "gpio8";
+> +			drive-strength = <12>;
+> +			bias-disable;
+> +			output-low;
+> +		};
+> +
+> +		clk {
+> +			pins = "gpio9";
+> +			drive-strength = <12>;
+> +			bias-disable;
+> +		};
+> +	};
+> +};
+> +
+> +
+
+One blank line, not two.
+
+...
+
+> +&usb1 {
+> +	dr_mode = "otg";
+> +	status = "okay";
+> +};
+> +
+
+No improvements here.
+
+Best regards,
+Krzysztof
 
 
 -- 
