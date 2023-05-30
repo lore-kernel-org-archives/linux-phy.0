@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064A1C77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:54:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF5C0C77B7A
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:54:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xZQOqNZgxsJ8dphQu3XUyKYNZszb2b2koYiyYBx/U6Q=; b=jnEMufF3i8SpwK
-	2W6xmsoeYLj8Sd73dEWulV6SHiAb+xNv8NXsFryA0qo5+kYGNTFabA1mu+FD4eD+0NkO30GTgV4Vi
-	2fVt5/hkN/gRU15GoamreGMjTvsJ1GQZQWPskQVyq11vrTt2aDy0DFhJYAbKlKanl39+4J0TRLJt/
-	tFH7VL7FDpOtNrw7fGPWdKMHCr7GQ8fSHAqgm5y/5j0J2EvwcmhU4PY+kmhHwlzckJAgTr3puB4d0
-	Q2dhhQ+LEM78weDn+uOquIFQT/aTsaiqZ8i58N9HRQGeonnenm+puKkg8y4UKdHLFeKntyORmvG6h
-	KJTAvfVALlHxviv4y04w==;
+	List-Owner; bh=LUI51HlBZUHDlFvcIPDLRk8l9JGW7B8JmylyebYLQ68=; b=5Am703UQoP82z4
+	dCfjsBgDRbA3JlsUhuhUcOzLwSgMKBYiaum6mFzg8MM/XymRbG0+w64MJpBaqLfhM/6V1ub298l8U
+	n6qT1IP8P5s7uxXhTr+yfgUd4rQ83QuJcSFI+ZiC3VL6aaz9JKpxge3fh1DIUxH8GcglIsLBHHwV2
+	9E5BPUAdfT1pGj3Dd4TqEeUFg0IFdgfjpe775tE/NZaYRzNcEetRjZfp8nbOXsVUhN0jaGOU8hYcL
+	YzTE9IxQpuWzJS5LhuPyhbvqQI4V1YJfqe3XIXxhLoKCN4B9MG2p1lqbT3x0TG6mTK5PgW/j+8Mxc
+	6HClKP1LJUl1hijKV5kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uBu-00Cp4M-28;
-	Tue, 30 May 2023 07:54:50 +0000
+	id 1q3uC2-00Cp7l-1K;
+	Tue, 30 May 2023 07:54:58 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uBk-00CoxH-1w
+	id 1q3uBl-00CoxH-0y
 	for linux-phy@bombadil.infradead.org;
-	Tue, 30 May 2023 07:54:40 +0000
+	Tue, 30 May 2023 07:54:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=; b=LBu/BAZRr9B2PCUbRfdbB3sfoK
-	vBcQdmUtVrjz8vBogZ4eROldzorSy89oblZaKmNFulR6J7RujMByylIehMGDIu3eVc3QZhJEKHV0I
-	ZlmRT0ByaGOZCCSBywtI0HWEEWfcZhqabgYlmbb/ipGnN1xNkuWW8VNySOU01lJ2XU0ajpXxkz+hQ
-	Rf5HE6obBzYsXIp4fAP/DfoD/wP+aX1ItMFlsYfOlrp/U+efnTfeA3OBNDwzpOfMweCX1FprJdis/
-	a+gidwJ3R8GvSSAoHYhP7s98AXpMC1aSQ5Zlbb3CGKKDhhLz1LeWT3LkxQHS5qfZ3mjdbbx5DnpSa
-	qJN13XWA==;
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	bh=YYg3fc69ScJ7fp+A0MjAsWU7xUehEqfWXj7B6hyn3hM=; b=v0YuwVTChA93uCJqVw5ztTHRWg
+	J0jHKUV+gpFqWmkzxJfFGoQuIXSkQO0nkhdsMc4lE7yQDYNfLo5e4js3lo4/9CkN/kM5R/NrkPpU1
+	DVilNCGKGU5MtDe4nTwTH2F9yKsxdQlqQldMLgEtXi0/QogxhT9X9iI35/xx4qnoKsGMC122EQ8Qg
+	XyLyjdTtrMYB/hqzln42v/XQeOOO6OjretXPvTmYyT37PWoYAdfXEI8YE8xqC/etKv0020bNFVoq9
+	88DB1J4G74FPJaWRtfmNx5u2w4/OumH06VRAm1tKljSBMvPtpomMc580KVOgVXSophj/ScvYkE9v6
+	oaq/Bz7g==;
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1q3tw7-0064T8-E3
-	for linux-phy@lists.infradead.org; Tue, 30 May 2023 07:38:35 +0000
-Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-30ae141785bso3118498f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:31 -0700 (PDT)
+	id 1q3tw6-0064Uv-0o
+	for linux-phy@lists.infradead.org; Tue, 30 May 2023 07:38:34 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-30aef0b8837so977946f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685432311; x=1688024311;
+        d=linaro.org; s=google; t=1685432309; x=1688024309;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=;
-        b=qaLjv7cUcme+r5WIhM+7tjxJn/naDNKiPeRYaKPoxelqInlCh3H6ZtUwUGCOsByQN+
-         8wZLpqoA6dRf25Eh3ke+8QbdrPmVuDr7di34QWuDUarVRBuCFURKJGRRDPomwITIekE1
-         QBjMhNEc6xaPb9mYgxhYB6zXEW0QA5FmgEUfEIFVuoUtwJEHlKHzxrUJvc9iDp/QceOL
-         JZBUcfDfju2nCJaWKvhIhtC6o1Q1sD8gvr34Aamy89cbQ/csil5VNk2Qe6Cz/m1QkqMe
-         vUmweY1X1stXL1hRi4rgY+0zu7AzPWXfttsVQEZdCArl/kXhIIPz6Nz9VtGvB7fNWaH+
-         Yjnw==
+        bh=YYg3fc69ScJ7fp+A0MjAsWU7xUehEqfWXj7B6hyn3hM=;
+        b=JQ04iDdLMSAvRnw33ada0AcNyYSL1kQOGfFyhn38LnU4wNpARK7erpm/jOrY7x1tLF
+         059fkGG17a/oJfyafxgI01ct+6kb2OlEEkol2pmtSb6Z+/NcyZcOyNLhLKUOE7zfrK3U
+         N92qonlieUJZjdqOZgsvOaZywmmOS9PjRcQbMGhJWnsH5rV6U2ffzJJZqWjNzFdFuYZr
+         q+bb3z1lUADWFL3myXY5/fcSXTzNp6ubNdqAQiyLBaQcECl1y0XCFiRMuiyw9Ry6Mzpe
+         cPu9fmNoa/wPIE2sj4ZyJWxHfh3GwKO0z8H3dP81ZaumKnEy75iIWyefh2QvFGSFEURu
+         mqrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685432311; x=1688024311;
+        d=1e100.net; s=20221208; t=1685432309; x=1688024309;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=J1EX8zFqVSXgr77NNt22wgtrby3wVjCcq3AV7vqu9KU=;
-        b=DwUhhTzwX7MUe6eUA+i/8eG31dgqZWeWYY6j7mGOgvTlkx+mGTY9yjptfPBpRBt13t
-         8GqkvnCNz/Az7e2khfBsL/XcXGLRij4Ua/9qh4L7XXi0yJ4eeWrSCNZe6knuAn8YeEWc
-         olE+Jo4RpvgLQjqZvS89DmqZzjbvejydkD9FmaufNFRb8S3Muz0RSwKxWYirjyYuNRUM
-         2495a/E1a2L/jyVRgRsQAIU5viKP86/Y4gJ9amY4dmQOESGJwKhAzFU1IWT4QPD3s7Y4
-         NL2xnTHs6e4JV45pqo6wDQXbKBa/kzZJleAkJ9DW9201FTvuj/NUATLD3z6NH11VxMv/
-         bZVw==
-X-Gm-Message-State: AC+VfDyx+rmyJDrXVMjT/7gXoWDYuayTW4XBmJeGTfb585J+sN+wo6rV
-	jJXkqSbC/f4P18BGDi7TpCwh8w==
-X-Google-Smtp-Source: ACHHUZ7FZgOwvMMqpJDCHJajVUqI+7sSUv6P9yE34kYA0YB1sx9cM4jm+VuamHoiOoA4S3hz+1C3Pw==
-X-Received: by 2002:a05:6000:ce:b0:30a:eada:8b9b with SMTP id q14-20020a05600000ce00b0030aeada8b9bmr847345wrx.41.1685432311177;
-        Tue, 30 May 2023 00:38:31 -0700 (PDT)
+        bh=YYg3fc69ScJ7fp+A0MjAsWU7xUehEqfWXj7B6hyn3hM=;
+        b=YkHRVyk+QljJ9/3QoptdRwwiwq1n0Eg3cZLIWH157p0jY/CGOEBMRpolOSTbkN8B6Y
+         tVvCdYaUjtcrkRvTmLF+0iPwrAe3OLm6RM+dRcyP5kTonR11Jt49ZPu4fCuIS4eLJLKb
+         c26jJel+nUnemJUyGxQ3JVq4OQ1W5gY6tiQ9iMAxfw5PN9Mba3WJyPHIEvzpSWESUw/1
+         j+o1KlCeOYChpccwEYB9nZN/IDJaA4S3W4Kf0v9gmMaj1Y4XTlrXMNxKuekMfdUZVE5R
+         m5/EqaMnl57oiw8j20ra9SxIU+VRG9VorkqMwIE36pS3VeEbV2XBwkWTQv68BNvrzjVE
+         TxjA==
+X-Gm-Message-State: AC+VfDyvJydPPavUrQNgMDqGF/V0ViF2fYJxSmwfnYAS0BRMdgSnqnTo
+	98BbhpyJqswUjqafw18NE7afMQ==
+X-Google-Smtp-Source: ACHHUZ6R3/5jCvzC/EfbuZ2wl9ps+H31Dyo4EwKtZB12YzdkTlX839WIivh9XGpn75rT6sT0OWR+Zg==
+X-Received: by 2002:a5d:5544:0:b0:30a:e86d:17a3 with SMTP id g4-20020a5d5544000000b0030ae86d17a3mr831595wrw.46.1685432308830;
+        Tue, 30 May 2023 00:38:28 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.30
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 00:38:30 -0700 (PDT)
+        Tue, 30 May 2023 00:38:28 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 30 May 2023 09:38:16 +0200
-Subject: [PATCH v5 15/17] DONOTMERGE: arm64: meson: khadas-vim3l: add DSI
- panel
+Date: Tue, 30 May 2023 09:38:14 +0200
+Subject: [PATCH v5 13/17] drm/panel: khadas-ts050: update timings to
+ achieve 60Hz refresh rate
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-15-56eb7a4d5b8e@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-13-56eb7a4d5b8e@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -100,25 +100,25 @@ Cc: "Lukas F. Hartmann" <lukas@mntre.com>,
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3821;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1491;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=V+HaYnTuv4vcDBK+f0uefqR8qZNKRB03xg8yBzcvNP8=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafjZ6babQ9HnVxpzEUksfB80sCD2jl7oBkWoD61
- dUdz5IOJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4wAKCRB33NvayMhJ0WfaD/
- 0USCjacxd0zCYYit6EVReHwJTzJ/KraWYQzWBGEh0waFZqBVxeFTbCGWCfyICAzivOFmZTm8ddyv7/
- Z03i9HU1X+y03y/jJpR6+4fp7GkdS2o373ZYo3NLlDEn8Zm0wGLP3AztJ8VHngVsNduXS249Z5GbgQ
- io6gekHXvHCaAstk4foYEJOtN5oL9H/eKDmf+Z+7KU+KoDe9JwpV/mXWILxmD6DW62FoocExL4Bsko
- VdEUUpi9Dz/s5CUu/gmc3FUpQUGORCaJGN5ihVIyg2IP9i8v7dUKP/7kA/mtkxraU6pyPVISseTPCm
- vs0m4HfJnG/YmxpFY3+hBIRGh+7ow3IhEa6c/saA4oG6K1zNjs9cmnkmcTgC0b+zj/1yg+YHjVBSKk
- /qlji8S+MYhHmaAZnsRJxI/C91zGOX+BIVSZ5Z9+P09SV5GdaTb322oEHOz8ifGMMubRhJ/sQZx5Pt
- yKCt4eymoUvegO2TYM/B5Whr/ykeBC+wy834E4u64rXS2nfTMVh3HmJtUDda5+5xIsX0wen0yoChar
- hpzJjPwHZTUulFhBCUuQ1ZEi5peRP32jWpNtpEaB4hA/3b1f+7fJI61KUHc897G3Z3iSBb2w+MW/Ec
- x9IM16DhU3LAei1C3sz885zcxZJNffbdpLLdtuV7bt/gzjs7qhEQ+nKM99kA==
+ bh=mst4lZ0rnXCLGGf7dowtnVBMlyjZYveMg1KB2R/Nmno=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafiK1ejjQEfL6v/BkAEbC5WdiwOP7ROMvZsKoYw
+ Bm0o05iJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4gAKCRB33NvayMhJ0TDqEA
+ CLl6EorbfHvfwJvkIKiFIEFczCFvIK7+cAt6kXd+MZQMXkMsqn5qPI3QRmk1ZBh7lN3LDRxeDrMoVh
+ aFNCHjmTsOZDWCdughiNifGjmHO72l6LnfjHZC34b6H+87IZJboWXpjoYqFoLYf0YjiPJh/Zbcfg1P
+ UAS97hEdsPuCrQ7fR/PBtK2gtocZFFBhrASg4BvAo5janiHp/zBFZdiGtahO1mn9/NmbYwysvI0hkX
+ /v+ZB9ya+Tp1HwvDvPv3nQbrr6dwbny/i+c2I5MORDsyEKxiNMx5IT8YlHDclQND99GPPeUUWRAmur
+ afkVVauiVFDjNvftRtHg+5c8pSRPApTa8jJ+sRidFqfHuxfkEZ/L76QHULozYOseDrx776EgU2s1V7
+ hJrlpIxerxu8LLI0coEGyEdqkYxwiSlJJ9qgUCJrVu2ifLbFyk7+v9nTw3Y95dzeJvtbeSZG/b2lqx
+ Cwx7FOIZ5xE9N5jmECgXAjFBJvU9TdVQU7NgSt9/y6MWVUBY2sP1JP+PfG2u/9SLBEBFelwpZsletR
+ tefrmAF/JJdCOus8SXEBBcaUexGMqhxqQqyJV0jonRCk/IMnxaPyBGdy6aJ145a2NF1AwzGLeyuda9
+ N5w7eDepG4GrvedwFQN0epbFI86B/7lVlpf09pz2Q2vM1OdV30aAYfxpK4AA==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_083831_494870_FE6D8254 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20230530_083830_074324_CA3E3986 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,143 +135,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This add nodes to support the Khadas TS050 panel on the
-Khadas VIM3 & VIM3L boards.
+This updates the panel timings to achieve a clean 60Hz refresh rate.
 
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- .../boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi   |  2 +-
- arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi | 76 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-sm1-khadas-vim3l.dts    |  2 +-
- 3 files changed, 78 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/panel/panel-khadas-ts050.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-index 16dd409051b4..81c3057143b4 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-@@ -98,7 +98,7 @@ &pwm_ab {
+diff --git a/drivers/gpu/drm/panel/panel-khadas-ts050.c b/drivers/gpu/drm/panel/panel-khadas-ts050.c
+index 1ab1ebe30882..b942a0162274 100644
+--- a/drivers/gpu/drm/panel/panel-khadas-ts050.c
++++ b/drivers/gpu/drm/panel/panel-khadas-ts050.c
+@@ -568,7 +568,7 @@ static const struct khadas_ts050_panel_cmd init_code[] = {
+ 	{0xfb, 0x01},
+ 	/* Select CMD1 */
+ 	{0xff, 0x00},
+-	{0xd3, 0x05}, /* RGBMIPICTRL: VSYNC back porch = 5 */
++	{0xd3, 0x22}, /* RGBMIPICTRL: VSYNC back porch = 34 */
+ 	{0xd4, 0x04}, /* RGBMIPICTRL: VSYNC front porch = 4 */
  };
  
- &pwm_AO_cd {
--	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-0 = <&pwm_ao_c_6_pins>, <&pwm_ao_d_e_pins>;
- 	pinctrl-names = "default";
- 	clocks = <&xtal>;
- 	clock-names = "clkin1";
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index c9705941e4ab..0c50a32bb0c0 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -40,6 +40,14 @@ button-function {
- 		};
- 	};
+@@ -717,15 +717,15 @@ static int khadas_ts050_panel_disable(struct drm_panel *panel)
+ }
  
-+	panel_backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm_AO_cd 0 25000 0>;
-+		brightness-levels = <0 255>;
-+		num-interpolated-steps = <255>;
-+		default-brightness-level = <200>;
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -359,6 +367,23 @@ rtc: rtc@51 {
- 	};
+ static const struct drm_display_mode default_mode = {
+-	.clock = 120000,
+-	.hdisplay = 1088,
+-	.hsync_start = 1088 + 104,
+-	.hsync_end = 1088 + 104 + 4,
+-	.htotal = 1088 + 104 + 4 + 127,
++	.clock = 160000,
++	.hdisplay = 1080,
++	.hsync_start = 1080 + 117,
++	.hsync_end = 1080 + 117 + 5,
++	.htotal = 1080 + 117 + 5 + 160,
+ 	.vdisplay = 1920,
+ 	.vsync_start = 1920 + 4,
+-	.vsync_end = 1920 + 4 + 2,
+-	.vtotal = 1920 + 4 + 2 + 3,
++	.vsync_end = 1920 + 4 + 3,
++	.vtotal = 1920 + 4 + 3 + 31,
+ 	.flags = DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
  };
  
-+&i2c3 {
-+	status = "okay";
-+	pinctrl-0 = <&i2c3_sda_a_pins>, <&i2c3_sck_a_pins>;
-+	pinctrl-names = "default";
-+
-+	touch-controller@38 {
-+		compatible = "edt,edt-ft5206";
-+		reg = <0x38>;
-+		interrupt-parent = <&gpio_intc>;
-+		interrupts = <66 IRQ_TYPE_EDGE_FALLING>; /* GPIOA_5 */
-+		reset-gpio = <&gpio_expander 6 GPIO_ACTIVE_LOW>;
-+		touchscreen-size-x = <1080>;
-+		touchscreen-size-y = <1920>;
-+		status = "okay";
-+	};
-+};
-+
- &ir {
- 	status = "okay";
- 	pinctrl-0 = <&remote_input_ao_pins>;
-@@ -366,6 +391,57 @@ &ir {
- 	linux,rc-map-name = "rc-khadas";
- };
- 
-+&mipi_dsi {
-+	status = "okay";
-+
-+	assigned-clocks = <&clkc CLKID_GP0_PLL>,
-+			  <&clkc CLKID_MIPI_DSI_PXCLK_SEL>,
-+			  <&clkc CLKID_MIPI_DSI_PXCLK>,
-+			  <&clkc CLKID_CTS_ENCL_SEL>,
-+			  <&clkc CLKID_VCLK2_SEL>;
-+	assigned-clock-parents = <0>,
-+				 <&clkc CLKID_GP0_PLL>,
-+				 <0>,
-+				 <&clkc CLKID_VCLK2_DIV1>,
-+				 <&clkc CLKID_GP0_PLL>;
-+	assigned-clock-rates = <960000000>,
-+			       <0>,
-+			       <960000000>,
-+			       <0>,
-+			       <0>;
-+
-+	panel@0 {
-+		compatible = "khadas,ts050";
-+		reset-gpios = <&gpio_expander 0 GPIO_ACTIVE_LOW>;
-+		enable-gpios = <&gpio_expander 1 GPIO_ACTIVE_HIGH>;
-+		power-supply = <&vcc_3v3>;
-+		backlight = <&panel_backlight>;
-+		width-mm = <64>;
-+		height-mm = <118>;
-+		reg = <0>;
-+
-+		port {
-+			mipi_in_panel: endpoint {
-+				remote-endpoint = <&mipi_out_panel>;
-+			};
-+		};
-+	};
-+};
-+
-+&mipi_analog_dphy {
-+	status = "okay";
-+};
-+
-+&mipi_dphy {
-+	status = "okay";
-+};
-+
-+&mipi_dsi_panel_port {
-+	mipi_out_panel: endpoint {
-+		remote-endpoint = <&mipi_in_panel>;
-+	};
-+};
-+
- &pcie {
- 	reset-gpios = <&gpio GPIOA_8 GPIO_ACTIVE_LOW>;
- };
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-index 9c0b544e2209..cb52a55ab70a 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-@@ -76,7 +76,7 @@ &cpu3 {
- };
- 
- &pwm_AO_cd {
--	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-0 = <&pwm_ao_c_6_pins>, <&pwm_ao_d_e_pins>;
- 	pinctrl-names = "default";
- 	clocks = <&xtal>;
- 	clock-names = "clkin1";
 
 -- 
 2.34.1
