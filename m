@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1D08C7EE2E
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:55:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23584C7EE23
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 07:55:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=COqUypEkN/fZ/4H3gyKjWFBfcT4CiQ0lc5gHX7WJ71k=; b=wQzXMxwhpya8uI
-	8C4AgpJWJ0LFBfggAwQIrXT7+JrnRFnLh+p/djYWq/rnwfzoEmNKc1cc3157KuSwz5GkBn+pdS8FQ
-	J6RdM+51JmBQ33LKL5lzKMHjskGy++V9nJo99O/+fSbBJm10uJg52vy1qxQ8DEvEmrCYj0gSH50Dr
-	3HbvsPTzppCK6DJXMcEzuEWWaNBkQhhi3rw9/0CsRoBOd1kT5y3un6T21ZFJ0gaRX8wRzndCn/x11
-	kP6p7WYQRrpYxU71E/dvb6tjrMpQS3I3TuMXIPeoiHRuB1POoFLOH43ZD7lT0ob5XWP2E4cMJizQM
-	kOLzKXRmgVN+9rnHkK/w==;
+	List-Owner; bh=D/tyx+06vZp0reMsU7/Wct/BYeYk37POc05dMmvSWLs=; b=xnHqELn5MCcind
+	smzo22tF1aEimWQ4EOm1Yko2lhB7QYGIYM+CgZF2iESXsKFYCbmFCXBHacqzKIwKXqU5YrIGJuy4I
+	Ww492eaZufNIhF6l+JWlifVDPUDrGrVAnD3pxbK7t0QaAFF7V97DFOi1KERWPEBo5e5AQD9ZOMPES
+	7ZnttDzZykX8iWRwZ/rXIwphsu3YpmHDr3ELvAIeQiiqCnJJtC/yzLDvvpoVHiU5KFeFHpqDGb4VM
+	AtSfxIkMofIcWouAVruwfA8DlO/XMgg5rSWsa3bvVbYk0X2h9TtN1kPO8cowdT90bBGRs+JFCDcnr
+	b68eDI7pFiV8SxuKjyAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uCB-00CpDM-1E;
-	Tue, 30 May 2023 07:55:07 +0000
+	id 1q3uCC-00CpEr-2T;
+	Tue, 30 May 2023 07:55:08 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3uBm-00CoxH-2D
+	id 1q3uBn-00CoxH-2K
 	for linux-phy@bombadil.infradead.org;
-	Tue, 30 May 2023 07:54:42 +0000
+	Tue, 30 May 2023 07:54:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=yMsSn3PxeghPJ4vFjHKvDZOF1432jaj9kLPy4oiu4OI=; b=B9UOutsEoCtYkxtrlrDXbWo7tQ
-	3Od1sl8+fbk+es04oC31ergdZje9ltKggbOAHaqf8xh7yXErWV77ISHYxxD5hzq66AN2/ytjmxNuM
-	noKupdp1auFrtm71wqUIt6IHU+jwwoDwJFd7rXZiuLNgx4JFUWsfmMVKG4KHDlyrUObcbzh1nZtTY
-	d5zJwWSnJ+sPq9w+ChHrcrUSbST4ltC4txcFgtz8tgH7lmTQiU02+euG8bDFvi++OiZ/Ymz5vhU/I
-	n05DPStaX+bRtlOQWVTg6RGPoUr1XwC3oWN8UHATHatLCP05L6Q0q2MOIGBxuRPLw+9N8IwvDJXNQ
-	WvSY/O2w==;
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	bh=nVirsR1zx1llPOHECGyQ0rl8FFDf0ssyzSbaS0M5c+k=; b=UKIrG7Q9PP3f/gsOpN+48nxPyv
+	oUnDUAX44x8CaHa56OZWrnkV/DfbiSE2nlDN1mB9VKzAzaDH/TkvX2ZG3wNRdOzLZMLWMoXWzFwfy
+	+xq4sXSaq9YwyFpRYbqUdit59oSiJUIAwjbUVrRKX54HzmPutuqrTqVWBeMdb5Xl5HsusZE/vjIWR
+	TJzNKyQxCv4NatUntcCmpge2UJE6Zp6gGQ1Z7cLlAFUyA+q9wJxQusWvEIzJz4/vs21g8oEVztygk
+	TNBBfhju8fTuDb8fwbXdsiuaQSRAfLes6Xrl3GOc/vnr1CarSrULq30FQZeSSjsRfcN+wLVE4afHp
+	yTPgUkQw==;
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1q3tw5-0064U8-OL
-	for linux-phy@lists.infradead.org; Tue, 30 May 2023 07:38:32 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-30ad8f33f1aso2493353f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:29 -0700 (PDT)
+	id 1q3tw3-0064T8-Rz
+	for linux-phy@lists.infradead.org; Tue, 30 May 2023 07:38:30 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-30ae141785bso3118411f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 00:38:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685432308; x=1688024308;
+        d=linaro.org; s=google; t=1685432305; x=1688024305;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=yMsSn3PxeghPJ4vFjHKvDZOF1432jaj9kLPy4oiu4OI=;
-        b=DWl8a0FY5O98004Aj5vJ8jCh9gXLO6LsVqfHHsstZDs8dwLPalgUS5NpOTBkyfi/hd
-         yQoHfBWAIECoPmmeANFK3aIfUa2/P3Ma1T6rUPBTvm+qjaGnehMp7piEWESRy5OXnuYO
-         5jexfdU3NtIFDtrh3OplfZ0+AcqWiJid8E/GxTLDvQhC8x/pLTG3x8WbqcXn8qurgHKb
-         kf8ViFr4d0OcvOBFsKVkouUrC3tZnolXJLHFml84mib1EEF0EpNN+33eplvJqYzbiRjZ
-         eetHeKO+Ub/b1Lkcq+P+lPTVEC74dDQykh2RViftjw4L6yRR9KPIhF40Pbn/2kpa0gcN
-         1GVA==
+        bh=nVirsR1zx1llPOHECGyQ0rl8FFDf0ssyzSbaS0M5c+k=;
+        b=PDnyoPMfxWPshci+BRzIukMT8bCt4tlpGSda6vq63dl0sRFU6JSv5RtJqIKyOOZ8hp
+         iolJdj7Yt8hygcIaLd/FVKpFWWlr2Log+3jDP22pRUNmBSKCJdzyTJ9UFKLipEQ6Bjv1
+         ODA1ZuXD5YiSbIYIrKzP18sopSUilqw4sH/iENPOlHFpMuLk6FZSoGkXS0gzz6wMOA6t
+         ydPeWZafayZUEG87gmfLZlCMH8+qFnz/Hfrc8z4t42mury5n+9dYhzSZcIshWoCWwQmp
+         NLUDyIaqEZ7dz+G0djIvr5ZY21diokD6bEc5esLkAMnBgix/i1vtjCj2wkLST4w42w/T
+         luWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685432308; x=1688024308;
+        d=1e100.net; s=20221208; t=1685432305; x=1688024305;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=yMsSn3PxeghPJ4vFjHKvDZOF1432jaj9kLPy4oiu4OI=;
-        b=QvncLpTtMBivzdSnu50zhGeS0A3YnV4w7YJaHidrosqHWZb+i9ANTKInAZN8CPfk16
-         +cLN8T3MowiKS843p6n0XhZdJSjmHtgEGeGCa21ZNCwrHnQFHHzoIlYKzdOmA7d+VKD6
-         ql4502NcWkfFGb+tZG80aRoARgcHmF+GYFmA6fHnD3HUYfFDH8iP0fw4ArqB8VyQmmn0
-         JkWIgXgzmxwuyoJzO0ReMHect5yV6YVkexgkeecsK7LhpiL0sZnk2wIf+XCnlijqLtSG
-         QYPf9Q7akg3Hv+ZuDHuGU8jTOOdjWGjQnim5bFa1UVz0qhb0mlIbc0T4KY7HhRgtqM/L
-         VLSg==
-X-Gm-Message-State: AC+VfDyF9a95zKv4EyL3640x0ARtn1et0v3MZVZXLnV23F8HNAAwrM7Z
-	YDpICxr286zvnjOm9hOhXGvXRQ==
-X-Google-Smtp-Source: ACHHUZ4EtrnIGuC/Dxx8K85WB3LqU4c4OiIgmx0C5nEFPN8WG4nDDhO5W/EjWNaX1TyDE/eeJeKicg==
-X-Received: by 2002:adf:eecc:0:b0:30a:e465:5b29 with SMTP id a12-20020adfeecc000000b0030ae4655b29mr768094wrp.57.1685432307734;
-        Tue, 30 May 2023 00:38:27 -0700 (PDT)
+        bh=nVirsR1zx1llPOHECGyQ0rl8FFDf0ssyzSbaS0M5c+k=;
+        b=GW4OvWaYQh0+S8SHqMq7eh0FUwtU9Ujq2T0ppjgJDlMNC4nRyy9iAJlZSQcbjj175D
+         wCx/FbH6aBn9MEKIuPSqTiedcf22F4Gg7zDCXtgzkrgrCoYXq6yyrwJknq/gGiQfGYHA
+         9TAByBBTANZVcBE0L8SDhzgTcRyzQcD/aVXWS2K9uj+POz+l2C5VsFKchfTTcLgzekia
+         5KjqY7IYnWjItCgONrGBp3siROLsM0LKC5V6hor0buhD4wF91q62gX4pUAxAA2qgMORE
+         rsK8KGvqIYZq2HNfVtwUOifqi+roILnlXf3IlTdd4MKcad66X31LLrnNpNeLzABMokoJ
+         4Shw==
+X-Gm-Message-State: AC+VfDzd/yKB43do6HdW394w6AAulkDvXYr0XwtWZQ6rxPs0ku0iNbZq
+	JHAPMctC1r/4QIHAYcc+/GPcxw==
+X-Google-Smtp-Source: ACHHUZ4qWSFlQ3Ehp8JZk+bnvwY46xayGXVIicnFbJbe2ydjNcTpVqRYQTuEMaJfh5kgSnsCDGloJg==
+X-Received: by 2002:a5d:5011:0:b0:306:3911:dff0 with SMTP id e17-20020a5d5011000000b003063911dff0mr835703wrt.4.1685432305368;
+        Tue, 30 May 2023 00:38:25 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.26
+        by smtp.gmail.com with ESMTPSA id m4-20020a5d4a04000000b003079c402762sm2312013wrq.19.2023.05.30.00.38.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 00:38:27 -0700 (PDT)
+        Tue, 30 May 2023 00:38:24 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 30 May 2023 09:38:13 +0200
-Subject: [PATCH v5 12/17] drm/meson: add support for MIPI-DSI transceiver
+Date: Tue, 30 May 2023 09:38:11 +0200
+Subject: [PATCH v5 10/17] drm/meson: venc: add ENCL encoder setup for
+ MIPI-DSI output
 MIME-Version: 1.0
-Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-12-56eb7a4d5b8e@linaro.org>
+Message-Id: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-10-56eb7a4d5b8e@linaro.org>
 References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -98,28 +99,27 @@ Cc: "Lukas F. Hartmann" <lukas@mntre.com>,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
  dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Jagan Teki <jagan@amarulasolutions.com>, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=19297;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=15394;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=vdNged+bT879opvCVPv6gCiacGfP+EnbSlkc5Uackdg=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafiIkw9gKoaNh108AEtzF2eG4nQrk5QZ25klcNz
- aoxua/aJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4gAKCRB33NvayMhJ0eQKD/
- 9gAts/+rd7NIeBPNj1L6CiWSRU8DVHN75lhmUl4NR11ctuHHc5d2OeckKK49KuhVXfECOZW9f87Qj3
- o6heThKy6y/WboNt03Es3aDEps85ou6hkGg/jAPL2A0R2ifteNyS614qEhVjsL+1qx+r6QEi5XfrN8
- z3WHZMxFI5J+qinxR8IUuewJTxJmeg9K/onJS6zeN42xM2cAVp5q2HIKebAZpkhOe/0S1oAw6KmbMG
- tXwjrH0igxK7iPf5ZuoAp5LYKL6auAmzGDObL96s1t2FIMkct7BuEAUccV1Il9G/Kdc2wCgZYrLs6Z
- AtyGzjvVuWw224xEl28vCq0GK4FOHKurHT5wUXg3XFZcSbjy89F1SDQmwbtsTvfjtdiL9WLKV2MDZs
- qc9u2/yaO064xE5H2lpbn7y7QUtI9NvLBNTjQSVxsszVVOeq1t1j3z50O23sqxQPPIidp59iNug/sz
- 8spTyNn1CB3QmMRyaPH+HaxxFfZiZGwZadPoV50bjqvgDfmv9GSA6+0XI4LkFKPCtfagc/P9+UL7+e
- 0zBO1YHVg4z6zAQvJDXuvlBe4zFTBJh6rSqTHenbS/8Je9T/cZBlvFFHdMFC4f426qFgyXjE2j2XuK
- Eje8R/7+zrxqfZKsNB/b+suRIzvNB/R8MK4nxjf/6q896vvcvUHilBCvY4PQ==
+ bh=PLav+7Gd57z4CzaoRTYbs8F3lsWO01D4ELXIlOs+1aE=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBkdafhYlIyfhrjnMjMpZGXz3V2LZQnR2nSCRorITPd
+ AuxwZA6JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZHWn4QAKCRB33NvayMhJ0T0zEA
+ CPEYFd0yzsl8U3HWRKcyhZ0gfjdAzW0Ql/S0oyzNAvHJXEKLhw4IYJsdekOmGbQ7nrGRfoFblqs3WB
+ 5fVibgnFKDs4c8KdDhNXlqr/Wz52kDVzMim95D7uYhYiHlfLM3QpjAsXUKl9w4q5aRACSwQF9EzH7V
+ qJRFz1E7d/eyLAWlexMAKy9NAMTnXfVNZwAMzhQSnJsFKrMQygmIQo+n9gUoxtwgJVbIiFl/hTG7lR
+ UvOBbJbhSTvc0Nl7FSImuge7nWGJk++cPnoUbn7cH5pVgUz1ZgfJpeQ8PCmaHemTOfyOkUfAL9cS3d
+ XYq202YtwB3oHqyX1LOeJ9F3ts8Hg0bd99V4y/S0PqtSuzqqAct3gCgIGEFGSgjYw2lVSQsH7TkZ8Z
+ 72BOTifejZg/ne/KWtXrGw7VCjw2UCrx6UQ7jZHhZxNKN7NEYGs8KOLnYOWupmbIu1Zm+PrW3FhVVr
+ g7BF3V3SgmfIGbUqOiiQIGJDKn9YOHU3IxEGagejbLSkfYOl6n0J9XWcfEjWp3k/Bnw0HozuQwj8dW
+ mG79erm1b0FBKm64I6ZmOACeKv2vvS/H2E6ANgEoplk7DU87armEFN90r1U1dJa7xZoFKkX0G5hiCP
+ PAPYvcueKytxS1ZwO03s21248MU5atm7TzJzhG9WwzQQlIPBiQaQUnM1dbsg==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_083829_806614_18A3F153 
-X-CRM114-Status: GOOD (  24.48  )
+X-CRM114-CacheID: sfid-20230530_083827_929429_59DE2E43 
+X-CRM114-Status: GOOD (  15.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,575 +136,375 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Amlogic G12A/G12B/SM1 SoCs embeds a Synopsys DW-MIPI-DSI transceiver
-(ver 1.21a), with a custom glue managing the IP resets, clock and data
-inputs similar to the DW-HDMI Glue on other Amlogic SoCs.
-
-This adds support for the Glue managing the transceiver, mimicing the init
-flow provided by Amlogic to setup the ENCL encoder, the glue, the transceiver,
-the digital D-PHY and the Analog PHY in the proper way.
-
-An optional "MEAS" clock can be enabled to measure the delay between each
-vsync feeding the DW-MIPI-DSI transceiver.
+This adds supports for the ENCL encoder connected to a MIPI-DSI transceiver on the
+Amlogic AXG, G12A, G12B & SM1 SoCs.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Reviewed-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- drivers/gpu/drm/meson/Kconfig             |   7 +
- drivers/gpu/drm/meson/Makefile            |   1 +
- drivers/gpu/drm/meson/meson_dw_mipi_dsi.c | 352 ++++++++++++++++++++++++++++++
- drivers/gpu/drm/meson/meson_dw_mipi_dsi.h | 160 ++++++++++++++
- 4 files changed, 520 insertions(+)
+ drivers/gpu/drm/meson/meson_registers.h |  25 ++++
+ drivers/gpu/drm/meson/meson_venc.c      | 211 +++++++++++++++++++++++++++++++-
+ drivers/gpu/drm/meson/meson_venc.h      |   6 +
+ drivers/gpu/drm/meson/meson_vpp.h       |   2 +
+ 4 files changed, 242 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/meson/Kconfig b/drivers/gpu/drm/meson/Kconfig
-index 823909da87db..615fdd0ce41b 100644
---- a/drivers/gpu/drm/meson/Kconfig
-+++ b/drivers/gpu/drm/meson/Kconfig
-@@ -17,3 +17,10 @@ config DRM_MESON_DW_HDMI
- 	default y if DRM_MESON
- 	select DRM_DW_HDMI
- 	imply DRM_DW_HDMI_I2S_AUDIO
-+
-+config DRM_MESON_DW_MIPI_DSI
-+	tristate "MIPI DSI Synopsys Controller support for Amlogic Meson Display"
-+	depends on DRM_MESON
-+	default y if DRM_MESON
-+	select DRM_DW_MIPI_DSI
-+	select GENERIC_PHY_MIPI_DPHY
-diff --git a/drivers/gpu/drm/meson/Makefile b/drivers/gpu/drm/meson/Makefile
-index 833e18c20603..43071bdbd4b9 100644
---- a/drivers/gpu/drm/meson/Makefile
-+++ b/drivers/gpu/drm/meson/Makefile
-@@ -6,3 +6,4 @@ meson-drm-y += meson_encoder_hdmi.o meson_encoder_dsi.o
+diff --git a/drivers/gpu/drm/meson/meson_registers.h b/drivers/gpu/drm/meson/meson_registers.h
+index 0f3cafab8860..3d73d00a1f4c 100644
+--- a/drivers/gpu/drm/meson/meson_registers.h
++++ b/drivers/gpu/drm/meson/meson_registers.h
+@@ -812,6 +812,7 @@
+ #define VENC_STATA 0x1b6d
+ #define VENC_INTCTRL 0x1b6e
+ #define		VENC_INTCTRL_ENCI_LNRST_INT_EN  BIT(1)
++#define		VENC_INTCTRL_ENCP_LNRST_INT_EN  BIT(9)
+ #define VENC_INTFLAG 0x1b6f
+ #define VENC_VIDEO_TST_EN 0x1b70
+ #define VENC_VIDEO_TST_MDSEL 0x1b71
+@@ -1192,7 +1193,11 @@
+ #define ENCL_VIDEO_PB_OFFST 0x1ca5
+ #define ENCL_VIDEO_PR_OFFST 0x1ca6
+ #define ENCL_VIDEO_MODE 0x1ca7
++#define		ENCL_PX_LN_CNT_SHADOW_EN	BIT(15)
+ #define ENCL_VIDEO_MODE_ADV 0x1ca8
++#define		ENCL_VIDEO_MODE_ADV_VFIFO_EN	BIT(3)
++#define		ENCL_VIDEO_MODE_ADV_GAIN_HDTV	BIT(4)
++#define		ENCL_SEL_GAMMA_RGB_IN		BIT(10)
+ #define ENCL_DBG_PX_RST 0x1ca9
+ #define ENCL_DBG_LN_RST 0x1caa
+ #define ENCL_DBG_PX_INT 0x1cab
+@@ -1219,11 +1224,14 @@
+ #define ENCL_VIDEO_VOFFST 0x1cc0
+ #define ENCL_VIDEO_RGB_CTRL 0x1cc1
+ #define ENCL_VIDEO_FILT_CTRL 0x1cc2
++#define		ENCL_VIDEO_FILT_CTRL_BYPASS_FILTER	BIT(12)
+ #define ENCL_VIDEO_OFLD_VPEQ_OFST 0x1cc3
+ #define ENCL_VIDEO_OFLD_VOAV_OFST 0x1cc4
+ #define ENCL_VIDEO_MATRIX_CB 0x1cc5
+ #define ENCL_VIDEO_MATRIX_CR 0x1cc6
+ #define ENCL_VIDEO_RGBIN_CTRL 0x1cc7
++#define		ENCL_VIDEO_RGBIN_RGB	BIT(0)
++#define		ENCL_VIDEO_RGBIN_ZBLK	BIT(1)
+ #define ENCL_MAX_LINE_SWITCH_POINT 0x1cc8
+ #define ENCL_DACSEL_0 0x1cc9
+ #define ENCL_DACSEL_1 0x1cca
+@@ -1300,13 +1308,28 @@
+ #define RDMA_STATUS2 0x1116
+ #define RDMA_STATUS3 0x1117
+ #define L_GAMMA_CNTL_PORT 0x1400
++#define		L_GAMMA_CNTL_PORT_VCOM_POL	BIT(7)	/* RW */
++#define		L_GAMMA_CNTL_PORT_RVS_OUT	BIT(6)	/* RW */
++#define		L_GAMMA_CNTL_PORT_ADR_RDY	BIT(5)	/* Read Only */
++#define		L_GAMMA_CNTL_PORT_WR_RDY	BIT(4)	/* Read Only */
++#define		L_GAMMA_CNTL_PORT_RD_RDY	BIT(3)	/* Read Only */
++#define		L_GAMMA_CNTL_PORT_TR		BIT(2)	/* RW */
++#define		L_GAMMA_CNTL_PORT_SET		BIT(1)	/* RW */
++#define		L_GAMMA_CNTL_PORT_EN		BIT(0)	/* RW */
+ #define L_GAMMA_DATA_PORT 0x1401
+ #define L_GAMMA_ADDR_PORT 0x1402
++#define		L_GAMMA_ADDR_PORT_RD		BIT(12)
++#define		L_GAMMA_ADDR_PORT_AUTO_INC	BIT(11)
++#define		L_GAMMA_ADDR_PORT_SEL_R		BIT(10)
++#define		L_GAMMA_ADDR_PORT_SEL_G		BIT(9)
++#define		L_GAMMA_ADDR_PORT_SEL_B		BIT(8)
++#define		L_GAMMA_ADDR_PORT_ADDR		GENMASK(7, 0)
+ #define L_GAMMA_VCOM_HSWITCH_ADDR 0x1403
+ #define L_RGB_BASE_ADDR 0x1405
+ #define L_RGB_COEFF_ADDR 0x1406
+ #define L_POL_CNTL_ADDR 0x1407
+ #define L_DITH_CNTL_ADDR 0x1408
++#define		L_DITH_CNTL_DITH10_EN	BIT(10)
+ #define L_GAMMA_PROBE_CTRL 0x1409
+ #define L_GAMMA_PROBE_COLOR_L 0x140a
+ #define L_GAMMA_PROBE_COLOR_H 0x140b
+@@ -1363,6 +1386,8 @@
+ #define L_LCD_PWM1_HI_ADDR 0x143f
+ #define L_INV_CNT_ADDR 0x1440
+ #define L_TCON_MISC_SEL_ADDR 0x1441
++#define		L_TCON_MISC_SEL_STV1	BIT(4)
++#define		L_TCON_MISC_SEL_STV2	BIT(5)
+ #define L_DUAL_PORT_CNTL_ADDR 0x1442
+ #define MLVDS_CLK_CTL1_HI 0x1443
+ #define MLVDS_CLK_CTL1_LO 0x1444
+diff --git a/drivers/gpu/drm/meson/meson_venc.c b/drivers/gpu/drm/meson/meson_venc.c
+index 27ef9f88e4ff..2bdc2855e249 100644
+--- a/drivers/gpu/drm/meson/meson_venc.c
++++ b/drivers/gpu/drm/meson/meson_venc.c
+@@ -6,6 +6,7 @@
+  */
  
- obj-$(CONFIG_DRM_MESON) += meson-drm.o
- obj-$(CONFIG_DRM_MESON_DW_HDMI) += meson_dw_hdmi.o
-+obj-$(CONFIG_DRM_MESON_DW_MIPI_DSI) += meson_dw_mipi_dsi.o
-diff --git a/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c
-new file mode 100644
-index 000000000000..dd505ac37976
---- /dev/null
-+++ b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c
-@@ -0,0 +1,352 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright (C) 2021 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/of_graph.h>
-+#include <linux/reset.h>
-+#include <linux/phy/phy.h>
-+#include <linux/bitfield.h>
-+
-+#include <video/mipi_display.h>
-+
-+#include <drm/bridge/dw_mipi_dsi.h>
-+#include <drm/drm_mipi_dsi.h>
-+
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_device.h>
-+#include <drm/drm_probe_helper.h>
-+#include <drm/drm_print.h>
-+
-+#include "meson_drv.h"
-+#include "meson_dw_mipi_dsi.h"
-+#include "meson_registers.h"
-+#include "meson_venc.h"
-+
-+#define DRIVER_NAME "meson-dw-mipi-dsi"
-+#define DRIVER_DESC "Amlogic Meson MIPI-DSI DRM driver"
-+
-+struct meson_dw_mipi_dsi {
-+	struct meson_drm *priv;
-+	struct device *dev;
-+	void __iomem *base;
-+	struct phy *phy;
-+	union phy_configure_opts phy_opts;
-+	struct dw_mipi_dsi *dmd;
-+	struct dw_mipi_dsi_plat_data pdata;
-+	struct mipi_dsi_device *dsi_device;
-+	const struct drm_display_mode *mode;
-+	struct clk *bit_clk;
-+	struct clk *px_clk;
-+	struct reset_control *top_rst;
+ #include <linux/export.h>
++#include <linux/iopoll.h>
+ 
+ #include <drm/drm_modes.h>
+ 
+@@ -1557,6 +1558,205 @@ void meson_venc_hdmi_mode_set(struct meson_drm *priv, int vic,
+ }
+ EXPORT_SYMBOL_GPL(meson_venc_hdmi_mode_set);
+ 
++static unsigned short meson_encl_gamma_table[256] = {
++	0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60,
++	64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124,
++	128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176, 180, 184, 188,
++	192, 196, 200, 204, 208, 212, 216, 220, 224, 228, 232, 236, 240, 244, 248, 252,
++	256, 260, 264, 268, 272, 276, 280, 284, 288, 292, 296, 300, 304, 308, 312, 316,
++	320, 324, 328, 332, 336, 340, 344, 348, 352, 356, 360, 364, 368, 372, 376, 380,
++	384, 388, 392, 396, 400, 404, 408, 412, 416, 420, 424, 428, 432, 436, 440, 444,
++	448, 452, 456, 460, 464, 468, 472, 476, 480, 484, 488, 492, 496, 500, 504, 508,
++	512, 516, 520, 524, 528, 532, 536, 540, 544, 548, 552, 556, 560, 564, 568, 572,
++	576, 580, 584, 588, 592, 596, 600, 604, 608, 612, 616, 620, 624, 628, 632, 636,
++	640, 644, 648, 652, 656, 660, 664, 668, 672, 676, 680, 684, 688, 692, 696, 700,
++	704, 708, 712, 716, 720, 724, 728, 732, 736, 740, 744, 748, 752, 756, 760, 764,
++	768, 772, 776, 780, 784, 788, 792, 796, 800, 804, 808, 812, 816, 820, 824, 828,
++	832, 836, 840, 844, 848, 852, 856, 860, 864, 868, 872, 876, 880, 884, 888, 892,
++	896, 900, 904, 908, 912, 916, 920, 924, 928, 932, 936, 940, 944, 948, 952, 956,
++	960, 964, 968, 972, 976, 980, 984, 988, 992, 996, 1000, 1004, 1008, 1012, 1016, 1020,
 +};
 +
-+#define encoder_to_meson_dw_mipi_dsi(x) \
-+	container_of(x, struct meson_dw_mipi_dsi, encoder)
-+
-+static void meson_dw_mipi_dsi_hw_init(struct meson_dw_mipi_dsi *mipi_dsi)
++static void meson_encl_set_gamma_table(struct meson_drm *priv, u16 *data,
++				       u32 rgb_mask)
 +{
-+	/* Software reset */
-+	writel_bits_relaxed(MIPI_DSI_TOP_SW_RESET_DWC | MIPI_DSI_TOP_SW_RESET_INTR |
-+			    MIPI_DSI_TOP_SW_RESET_DPI | MIPI_DSI_TOP_SW_RESET_TIMING,
-+			    MIPI_DSI_TOP_SW_RESET_DWC | MIPI_DSI_TOP_SW_RESET_INTR |
-+			    MIPI_DSI_TOP_SW_RESET_DPI | MIPI_DSI_TOP_SW_RESET_TIMING,
-+			    mipi_dsi->base + MIPI_DSI_TOP_SW_RESET);
-+	writel_bits_relaxed(MIPI_DSI_TOP_SW_RESET_DWC | MIPI_DSI_TOP_SW_RESET_INTR |
-+			    MIPI_DSI_TOP_SW_RESET_DPI | MIPI_DSI_TOP_SW_RESET_TIMING,
-+			    0, mipi_dsi->base + MIPI_DSI_TOP_SW_RESET);
++	int i, ret;
++	u32 reg;
 +
-+	/* Enable clocks */
-+	writel_bits_relaxed(MIPI_DSI_TOP_CLK_SYSCLK_EN | MIPI_DSI_TOP_CLK_PIXCLK_EN,
-+			    MIPI_DSI_TOP_CLK_SYSCLK_EN | MIPI_DSI_TOP_CLK_PIXCLK_EN,
-+			    mipi_dsi->base + MIPI_DSI_TOP_CLK_CNTL);
++	writel_bits_relaxed(L_GAMMA_CNTL_PORT_EN, 0,
++			    priv->io_base + _REG(L_GAMMA_CNTL_PORT));
 +
-+	/* Take memory out of power down */
-+	writel_relaxed(0, mipi_dsi->base + MIPI_DSI_TOP_MEM_PD);
-+}
-+
-+static int dw_mipi_dsi_phy_init(void *priv_data)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+	unsigned int dpi_data_format, venc_data_width;
-+	int ret;
-+
-+	/* Set the bit clock rate to hs_clk_rate */
-+	ret = clk_set_rate(mipi_dsi->bit_clk,
-+			   mipi_dsi->phy_opts.mipi_dphy.hs_clk_rate);
-+	if (ret) {
-+		dev_err(mipi_dsi->dev, "Failed to set DSI Bit clock rate %lu (ret %d)\n",
-+			mipi_dsi->phy_opts.mipi_dphy.hs_clk_rate, ret);
-+		return ret;
-+	}
-+
-+	/* Make sure the rate of the bit clock is not modified by someone else */
-+	ret = clk_rate_exclusive_get(mipi_dsi->bit_clk);
-+	if (ret) {
-+		dev_err(mipi_dsi->dev,
-+			"Failed to set the exclusivity on the bit clock rate (ret %d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = clk_set_rate(mipi_dsi->px_clk, mipi_dsi->mode->clock * 1000);
-+
-+	if (ret) {
-+		dev_err(mipi_dsi->dev, "Failed to set DSI Pixel clock rate %u (%d)\n",
-+			mipi_dsi->mode->clock * 1000, ret);
-+		return ret;
-+	}
-+
-+	switch (mipi_dsi->dsi_device->format) {
-+	case MIPI_DSI_FMT_RGB888:
-+		dpi_data_format = DPI_COLOR_24BIT;
-+		venc_data_width = VENC_IN_COLOR_24B;
-+		break;
-+	case MIPI_DSI_FMT_RGB666:
-+		dpi_data_format = DPI_COLOR_18BIT_CFG_2;
-+		venc_data_width = VENC_IN_COLOR_18B;
-+		break;
-+	case MIPI_DSI_FMT_RGB666_PACKED:
-+	case MIPI_DSI_FMT_RGB565:
-+		return -EINVAL;
-+	};
-+
-+	/* Configure color format for DPI register */
-+	writel_relaxed(FIELD_PREP(MIPI_DSI_TOP_DPI_COLOR_MODE, dpi_data_format) |
-+		       FIELD_PREP(MIPI_DSI_TOP_IN_COLOR_MODE, venc_data_width) |
-+		       FIELD_PREP(MIPI_DSI_TOP_COMP2_SEL, 2) |
-+		       FIELD_PREP(MIPI_DSI_TOP_COMP1_SEL, 1) |
-+		       FIELD_PREP(MIPI_DSI_TOP_COMP0_SEL, 0),
-+			mipi_dsi->base + MIPI_DSI_TOP_CNTL);
-+
-+	return phy_configure(mipi_dsi->phy, &mipi_dsi->phy_opts);
-+}
-+
-+static void dw_mipi_dsi_phy_power_on(void *priv_data)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+
-+	if (phy_power_on(mipi_dsi->phy))
-+		dev_warn(mipi_dsi->dev, "Failed to power on PHY\n");
-+}
-+
-+static void dw_mipi_dsi_phy_power_off(void *priv_data)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+
-+	if (phy_power_off(mipi_dsi->phy))
-+		dev_warn(mipi_dsi->dev, "Failed to power off PHY\n");
-+
-+	/* Remove the exclusivity on the bit clock rate */
-+	clk_rate_exclusive_put(mipi_dsi->bit_clk);
-+}
-+
-+static int
-+dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
-+			  unsigned long mode_flags, u32 lanes, u32 format,
-+			  unsigned int *lane_mbps)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+	int bpp;
-+
-+	mipi_dsi->mode = mode;
-+
-+	bpp = mipi_dsi_pixel_format_to_bpp(mipi_dsi->dsi_device->format);
-+
-+	phy_mipi_dphy_get_default_config(mode->clock * 1000,
-+					 bpp, mipi_dsi->dsi_device->lanes,
-+					 &mipi_dsi->phy_opts.mipi_dphy);
-+
-+	*lane_mbps = DIV_ROUND_UP(mipi_dsi->phy_opts.mipi_dphy.hs_clk_rate, USEC_PER_SEC);
-+
-+	return 0;
-+}
-+
-+static int
-+dw_mipi_dsi_phy_get_timing(void *priv_data, unsigned int lane_mbps,
-+			   struct dw_mipi_dsi_dphy_timing *timing)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+
-+	switch (mipi_dsi->mode->hdisplay) {
-+	case 240:
-+	case 768:
-+	case 1920:
-+	case 2560:
-+		timing->clk_lp2hs = 23;
-+		timing->clk_hs2lp = 38;
-+		timing->data_lp2hs = 15;
-+		timing->data_hs2lp = 9;
-+		break;
-+
-+	default:
-+		timing->clk_lp2hs = 37;
-+		timing->clk_hs2lp = 135;
-+		timing->data_lp2hs = 50;
-+		timing->data_hs2lp = 3;
-+	}
-+
-+	return 0;
-+}
-+
-+static int
-+dw_mipi_dsi_get_esc_clk_rate(void *priv_data, unsigned int *esc_clk_rate)
-+{
-+	*esc_clk_rate = 4; /* Mhz */
-+
-+	return 0;
-+}
-+
-+static const struct dw_mipi_dsi_phy_ops meson_dw_mipi_dsi_phy_ops = {
-+	.init = dw_mipi_dsi_phy_init,
-+	.power_on = dw_mipi_dsi_phy_power_on,
-+	.power_off = dw_mipi_dsi_phy_power_off,
-+	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
-+	.get_timing = dw_mipi_dsi_phy_get_timing,
-+	.get_esc_clk_rate = dw_mipi_dsi_get_esc_clk_rate,
-+};
-+
-+static int meson_dw_mipi_dsi_host_attach(void *priv_data,
-+					 struct mipi_dsi_device *device)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+	int ret;
-+
-+	mipi_dsi->dsi_device = device;
-+
-+	switch (device->format) {
-+	case MIPI_DSI_FMT_RGB888:
-+		break;
-+	case MIPI_DSI_FMT_RGB666:
-+		break;
-+	case MIPI_DSI_FMT_RGB666_PACKED:
-+	case MIPI_DSI_FMT_RGB565:
-+		dev_err(mipi_dsi->dev, "invalid pixel format %d\n", device->format);
-+		return -EINVAL;
-+	};
-+
-+	ret = phy_init(mipi_dsi->phy);
++	ret = readl_relaxed_poll_timeout(priv->io_base + _REG(L_GAMMA_CNTL_PORT),
++					 reg, reg & L_GAMMA_CNTL_PORT_ADR_RDY, 10, 10000);
 +	if (ret)
-+		return ret;
++		pr_warn("%s: GAMMA ADR_RDY timeout\n", __func__);
 +
-+	meson_dw_mipi_dsi_hw_init(mipi_dsi);
++	writel_relaxed(L_GAMMA_ADDR_PORT_AUTO_INC | rgb_mask |
++		       FIELD_PREP(L_GAMMA_ADDR_PORT_ADDR, 0),
++		       priv->io_base + _REG(L_GAMMA_ADDR_PORT));
 +
-+	return 0;
-+}
++	for (i = 0; i < 256; i++) {
++		ret = readl_relaxed_poll_timeout(priv->io_base + _REG(L_GAMMA_CNTL_PORT),
++						 reg, reg & L_GAMMA_CNTL_PORT_WR_RDY,
++						 10, 10000);
++		if (ret)
++			pr_warn_once("%s: GAMMA WR_RDY timeout\n", __func__);
 +
-+static int meson_dw_mipi_dsi_host_detach(void *priv_data,
-+					 struct mipi_dsi_device *device)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi = priv_data;
-+
-+	if (device == mipi_dsi->dsi_device)
-+		mipi_dsi->dsi_device = NULL;
-+	else
-+		return -EINVAL;
-+
-+	return phy_exit(mipi_dsi->phy);
-+}
-+
-+static const struct dw_mipi_dsi_host_ops meson_dw_mipi_dsi_host_ops = {
-+	.attach = meson_dw_mipi_dsi_host_attach,
-+	.detach = meson_dw_mipi_dsi_host_detach,
-+};
-+
-+static int meson_dw_mipi_dsi_probe(struct platform_device *pdev)
-+{
-+	struct meson_dw_mipi_dsi *mipi_dsi;
-+	struct device *dev = &pdev->dev;
-+
-+	mipi_dsi = devm_kzalloc(dev, sizeof(*mipi_dsi), GFP_KERNEL);
-+	if (!mipi_dsi)
-+		return -ENOMEM;
-+
-+	mipi_dsi->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(mipi_dsi->base))
-+		return PTR_ERR(mipi_dsi->base);
-+
-+	mipi_dsi->phy = devm_phy_get(dev, "dphy");
-+	if (IS_ERR(mipi_dsi->phy))
-+		return dev_err_probe(dev, PTR_ERR(mipi_dsi->phy),
-+				     "failed to get mipi dphy\n");
-+
-+	mipi_dsi->bit_clk = devm_clk_get_enabled(dev, "bit");
-+	if (IS_ERR(mipi_dsi->bit_clk)) {
-+		int ret = PTR_ERR(mipi_dsi->bit_clk);
-+
-+		/* TOFIX GP0 on some platforms fails to lock in early boot, defer probe */
-+		if (ret == -EIO)
-+			ret = -EPROBE_DEFER;
-+
-+		return dev_err_probe(dev, ret, "Unable to get enabled bit_clk\n");
++		writel_relaxed(data[i], priv->io_base + _REG(L_GAMMA_DATA_PORT));
 +	}
 +
-+	mipi_dsi->px_clk = devm_clk_get_enabled(dev, "px");
-+	if (IS_ERR(mipi_dsi->px_clk))
-+		return dev_err_probe(dev, PTR_ERR(mipi_dsi->px_clk),
-+				     "Unable to get enabled px_clk\n");
++	ret = readl_relaxed_poll_timeout(priv->io_base + _REG(L_GAMMA_CNTL_PORT),
++					 reg, reg & L_GAMMA_CNTL_PORT_ADR_RDY, 10, 10000);
++	if (ret)
++		pr_warn("%s: GAMMA ADR_RDY timeout\n", __func__);
 +
-+	/*
-+	 * We use a TOP reset signal because the APB reset signal
-+	 * is handled by the TOP control registers.
-+	 */
-+	mipi_dsi->top_rst = devm_reset_control_get_exclusive(dev, "top");
-+	if (IS_ERR(mipi_dsi->top_rst))
-+		return dev_err_probe(dev, PTR_ERR(mipi_dsi->top_rst),
-+				     "Unable to get reset control\n");
-+
-+	reset_control_assert(mipi_dsi->top_rst);
-+	usleep_range(10, 20);
-+	reset_control_deassert(mipi_dsi->top_rst);
-+
-+	/* MIPI DSI Controller */
-+
-+	mipi_dsi->dev = dev;
-+	mipi_dsi->pdata.base = mipi_dsi->base;
-+	mipi_dsi->pdata.max_data_lanes = 4;
-+	mipi_dsi->pdata.phy_ops = &meson_dw_mipi_dsi_phy_ops;
-+	mipi_dsi->pdata.host_ops = &meson_dw_mipi_dsi_host_ops;
-+	mipi_dsi->pdata.priv_data = mipi_dsi;
-+	platform_set_drvdata(pdev, mipi_dsi);
-+
-+	mipi_dsi->dmd = dw_mipi_dsi_probe(pdev, &mipi_dsi->pdata);
-+	if (IS_ERR(mipi_dsi->dmd))
-+		return dev_err_probe(dev, PTR_ERR(mipi_dsi->dmd),
-+				     "Failed to probe dw_mipi_dsi\n");
-+
-+	return 0;
++	writel_relaxed(L_GAMMA_ADDR_PORT_AUTO_INC | rgb_mask |
++		       FIELD_PREP(L_GAMMA_ADDR_PORT_ADDR, 0x23),
++		       priv->io_base + _REG(L_GAMMA_ADDR_PORT));
 +}
 +
-+static int meson_dw_mipi_dsi_remove(struct platform_device *pdev)
++void meson_encl_load_gamma(struct meson_drm *priv)
 +{
-+	struct meson_dw_mipi_dsi *mipi_dsi = platform_get_drvdata(pdev);
++	meson_encl_set_gamma_table(priv, meson_encl_gamma_table, L_GAMMA_ADDR_PORT_SEL_R);
++	meson_encl_set_gamma_table(priv, meson_encl_gamma_table, L_GAMMA_ADDR_PORT_SEL_G);
++	meson_encl_set_gamma_table(priv, meson_encl_gamma_table, L_GAMMA_ADDR_PORT_SEL_B);
 +
-+	dw_mipi_dsi_remove(mipi_dsi->dmd);
-+
-+	return 0;
++	writel_bits_relaxed(L_GAMMA_CNTL_PORT_EN, L_GAMMA_CNTL_PORT_EN,
++			    priv->io_base + _REG(L_GAMMA_CNTL_PORT));
 +}
 +
-+static const struct of_device_id meson_dw_mipi_dsi_of_table[] = {
-+	{ .compatible = "amlogic,meson-g12a-dw-mipi-dsi", },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, meson_dw_mipi_dsi_of_table);
++void meson_venc_mipi_dsi_mode_set(struct meson_drm *priv,
++				  const struct drm_display_mode *mode)
++{
++	unsigned int max_pxcnt;
++	unsigned int max_lncnt;
++	unsigned int havon_begin;
++	unsigned int havon_end;
++	unsigned int vavon_bline;
++	unsigned int vavon_eline;
++	unsigned int hso_begin;
++	unsigned int hso_end;
++	unsigned int vso_begin;
++	unsigned int vso_end;
++	unsigned int vso_bline;
++	unsigned int vso_eline;
 +
-+static struct platform_driver meson_dw_mipi_dsi_platform_driver = {
-+	.probe		= meson_dw_mipi_dsi_probe,
-+	.remove		= meson_dw_mipi_dsi_remove,
-+	.driver		= {
-+		.name		= DRIVER_NAME,
-+		.of_match_table	= meson_dw_mipi_dsi_of_table,
-+	},
-+};
-+module_platform_driver(meson_dw_mipi_dsi_platform_driver);
++	max_pxcnt = mode->htotal - 1;
++	max_lncnt = mode->vtotal - 1;
++	havon_begin = mode->htotal - mode->hsync_start;
++	havon_end = havon_begin + mode->hdisplay - 1;
++	vavon_bline = mode->vtotal - mode->vsync_start;
++	vavon_eline = vavon_bline + mode->vdisplay - 1;
++	hso_begin = 0;
++	hso_end = mode->hsync_end - mode->hsync_start;
++	vso_begin = 0;
++	vso_end = 0;
++	vso_bline = 0;
++	vso_eline = mode->vsync_end - mode->vsync_start;
 +
-+MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
-+MODULE_DESCRIPTION(DRIVER_DESC);
-+MODULE_LICENSE("GPL");
-diff --git a/drivers/gpu/drm/meson/meson_dw_mipi_dsi.h b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.h
-new file mode 100644
-index 000000000000..e1bd6b85d6a3
---- /dev/null
-+++ b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.h
-@@ -0,0 +1,160 @@
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
-+/*
-+ * Copyright (C) 2020 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ * Copyright (C) 2018 Amlogic, Inc. All rights reserved.
-+ */
++	meson_vpp_setup_mux(priv, MESON_VIU_VPP_MUX_ENCL);
 +
-+#ifndef __MESON_DW_MIPI_DSI_H
-+#define __MESON_DW_MIPI_DSI_H
++	writel_relaxed(0, priv->io_base + _REG(ENCL_VIDEO_EN));
 +
-+/* Top-level registers */
-+/* [31: 4]    Reserved.     Default 0.
-+ *     [3] RW timing_rst_n: Default 1.
-+ *		1=Assert SW reset of timing feature.   0=Release reset.
-+ *     [2] RW dpi_rst_n: Default 1.
-+ *		1=Assert SW reset on mipi_dsi_host_dpi block.   0=Release reset.
-+ *     [1] RW intr_rst_n: Default 1.
-+ *		1=Assert SW reset on mipi_dsi_host_intr block.  0=Release reset.
-+ *     [0] RW dwc_rst_n:  Default 1.
-+ *		1=Assert SW reset on IP core.   0=Release reset.
-+ */
-+#define MIPI_DSI_TOP_SW_RESET                      0x3c0
++	writel_relaxed(ENCL_PX_LN_CNT_SHADOW_EN, priv->io_base + _REG(ENCL_VIDEO_MODE));
++	writel_relaxed(ENCL_VIDEO_MODE_ADV_VFIFO_EN |
++		       ENCL_VIDEO_MODE_ADV_GAIN_HDTV |
++		       ENCL_SEL_GAMMA_RGB_IN, priv->io_base + _REG(ENCL_VIDEO_MODE_ADV));
 +
-+#define MIPI_DSI_TOP_SW_RESET_DWC	BIT(0)
-+#define MIPI_DSI_TOP_SW_RESET_INTR	BIT(1)
-+#define MIPI_DSI_TOP_SW_RESET_DPI	BIT(2)
-+#define MIPI_DSI_TOP_SW_RESET_TIMING	BIT(3)
++	writel_relaxed(ENCL_VIDEO_FILT_CTRL_BYPASS_FILTER,
++		       priv->io_base + _REG(ENCL_VIDEO_FILT_CTRL));
++	writel_relaxed(max_pxcnt, priv->io_base + _REG(ENCL_VIDEO_MAX_PXCNT));
++	writel_relaxed(max_lncnt, priv->io_base + _REG(ENCL_VIDEO_MAX_LNCNT));
++	writel_relaxed(havon_begin, priv->io_base + _REG(ENCL_VIDEO_HAVON_BEGIN));
++	writel_relaxed(havon_end, priv->io_base + _REG(ENCL_VIDEO_HAVON_END));
++	writel_relaxed(vavon_bline, priv->io_base + _REG(ENCL_VIDEO_VAVON_BLINE));
++	writel_relaxed(vavon_eline, priv->io_base + _REG(ENCL_VIDEO_VAVON_ELINE));
 +
-+/* [31: 5] Reserved.   Default 0.
-+ *     [4] RW manual_edpihalt: Default 0.
-+ *		1=Manual suspend VencL; 0=do not suspend VencL.
-+ *     [3] RW auto_edpihalt_en: Default 0.
-+ *		1=Enable IP's edpihalt signal to suspend VencL;
-+ *		0=IP's edpihalt signal does not affect VencL.
-+ *     [2] RW clock_freerun: Apply to auto-clock gate only. Default 0.
-+ *		0=Default, use auto-clock gating to save power;
-+ *		1=use free-run clock, disable auto-clock gating, for debug mode.
-+ *     [1] RW enable_pixclk: A manual clock gate option, due to DWC IP does not
-+ *		have auto-clock gating. 1=Enable pixclk.      Default 0.
-+ *     [0] RW enable_sysclk: A manual clock gate option, due to DWC IP does not
-+ *		have auto-clock gating. 1=Enable sysclk.      Default 0.
-+ */
-+#define MIPI_DSI_TOP_CLK_CNTL                      0x3c4
++	writel_relaxed(hso_begin, priv->io_base + _REG(ENCL_VIDEO_HSO_BEGIN));
++	writel_relaxed(hso_end, priv->io_base + _REG(ENCL_VIDEO_HSO_END));
++	writel_relaxed(vso_begin, priv->io_base + _REG(ENCL_VIDEO_VSO_BEGIN));
++	writel_relaxed(vso_end, priv->io_base + _REG(ENCL_VIDEO_VSO_END));
++	writel_relaxed(vso_bline, priv->io_base + _REG(ENCL_VIDEO_VSO_BLINE));
++	writel_relaxed(vso_eline, priv->io_base + _REG(ENCL_VIDEO_VSO_ELINE));
++	writel_relaxed(ENCL_VIDEO_RGBIN_RGB | ENCL_VIDEO_RGBIN_ZBLK,
++		       priv->io_base + _REG(ENCL_VIDEO_RGBIN_CTRL));
 +
-+#define MIPI_DSI_TOP_CLK_SYSCLK_EN	BIT(0)
-+#define MIPI_DSI_TOP_CLK_PIXCLK_EN	BIT(1)
++	/* default black pattern */
++	writel_relaxed(0, priv->io_base + _REG(ENCL_TST_MDSEL));
++	writel_relaxed(0, priv->io_base + _REG(ENCL_TST_Y));
++	writel_relaxed(0, priv->io_base + _REG(ENCL_TST_CB));
++	writel_relaxed(0, priv->io_base + _REG(ENCL_TST_CR));
++	writel_relaxed(1, priv->io_base + _REG(ENCL_TST_EN));
++	writel_bits_relaxed(ENCL_VIDEO_MODE_ADV_VFIFO_EN, 0,
++			    priv->io_base + _REG(ENCL_VIDEO_MODE_ADV));
 +
-+/* [31:24]    Reserved. Default 0.
-+ * [23:20] RW dpi_color_mode: Define DPI pixel format. Default 0.
-+ *		0=16-bit RGB565 config 1;
-+ *		1=16-bit RGB565 config 2;
-+ *		2=16-bit RGB565 config 3;
-+ *		3=18-bit RGB666 config 1;
-+ *		4=18-bit RGB666 config 2;
-+ *		5=24-bit RGB888;
-+ *		6=20-bit YCbCr 4:2:2;
-+ *		7=24-bit YCbCr 4:2:2;
-+ *		8=16-bit YCbCr 4:2:2;
-+ *		9=30-bit RGB;
-+ *		10=36-bit RGB;
-+ *		11=12-bit YCbCr 4:2:0.
-+ *    [19] Reserved. Default 0.
-+ * [18:16] RW in_color_mode:  Define VENC data width. Default 0.
-+ *		0=30-bit pixel;
-+ *		1=24-bit pixel;
-+ *		2=18-bit pixel, RGB666;
-+ *		3=16-bit pixel, RGB565.
-+ * [15:14] RW chroma_subsample: Define method of chroma subsampling. Default 0.
-+ *		Applicable to YUV422 or YUV420 only.
-+ *		0=Use even pixel's chroma;
-+ *		1=Use odd pixel's chroma;
-+ *		2=Use averaged value between even and odd pair.
-+ * [13:12] RW comp2_sel:  Select which component to be Cr or B: Default 2.
-+ *		0=comp0; 1=comp1; 2=comp2.
-+ * [11:10] RW comp1_sel:  Select which component to be Cb or G: Default 1.
-+ *		0=comp0; 1=comp1; 2=comp2.
-+ *  [9: 8] RW comp0_sel:  Select which component to be Y  or R: Default 0.
-+ *		0=comp0; 1=comp1; 2=comp2.
-+ *     [7]    Reserved. Default 0.
-+ *     [6] RW de_pol:  Default 0.
-+ *		If DE input is active low, set to 1 to invert to active high.
-+ *     [5] RW hsync_pol: Default 0.
-+ *		If HS input is active low, set to 1 to invert to active high.
-+ *     [4] RW vsync_pol: Default 0.
-+ *		If VS input is active low, set to 1 to invert to active high.
-+ *     [3] RW dpicolorm: Signal to IP.   Default 0.
-+ *     [2] RW dpishutdn: Signal to IP.   Default 0.
-+ *     [1]    Reserved.  Default 0.
-+ *     [0]    Reserved.  Default 0.
-+ */
-+#define MIPI_DSI_TOP_CNTL                          0x3c8
++	writel_relaxed(1, priv->io_base + _REG(ENCL_VIDEO_EN));
 +
-+/* VENC data width */
-+#define VENC_IN_COLOR_30B   0x0
-+#define VENC_IN_COLOR_24B   0x1
-+#define VENC_IN_COLOR_18B   0x2
-+#define VENC_IN_COLOR_16B   0x3
++	writel_relaxed(0, priv->io_base + _REG(L_RGB_BASE_ADDR));
++	writel_relaxed(0x400, priv->io_base + _REG(L_RGB_COEFF_ADDR)); /* Magic value */
 +
-+/* DPI pixel format */
-+#define DPI_COLOR_16BIT_CFG_1		0
-+#define DPI_COLOR_16BIT_CFG_2		1
-+#define DPI_COLOR_16BIT_CFG_3		2
-+#define DPI_COLOR_18BIT_CFG_1		3
-+#define DPI_COLOR_18BIT_CFG_2		4
-+#define DPI_COLOR_24BIT			5
-+#define DPI_COLOR_20BIT_YCBCR_422	6
-+#define DPI_COLOR_24BIT_YCBCR_422	7
-+#define DPI_COLOR_16BIT_YCBCR_422	8
-+#define DPI_COLOR_30BIT			9
-+#define DPI_COLOR_36BIT			10
-+#define DPI_COLOR_12BIT_YCBCR_420	11
++	writel_relaxed(L_DITH_CNTL_DITH10_EN, priv->io_base + _REG(L_DITH_CNTL_ADDR));
 +
-+#define MIPI_DSI_TOP_DPI_COLOR_MODE	GENMASK(23, 20)
-+#define MIPI_DSI_TOP_IN_COLOR_MODE	GENMASK(18, 16)
-+#define MIPI_DSI_TOP_CHROMA_SUBSAMPLE	GENMASK(15, 14)
-+#define MIPI_DSI_TOP_COMP2_SEL		GENMASK(13, 12)
-+#define MIPI_DSI_TOP_COMP1_SEL		GENMASK(11, 10)
-+#define MIPI_DSI_TOP_COMP0_SEL		GENMASK(9, 8)
-+#define MIPI_DSI_TOP_DE_INVERT		BIT(6)
-+#define MIPI_DSI_TOP_HSYNC_INVERT	BIT(5)
-+#define MIPI_DSI_TOP_VSYNC_INVERT	BIT(4)
-+#define MIPI_DSI_TOP_DPICOLORM		BIT(3)
-+#define MIPI_DSI_TOP_DPISHUTDN		BIT(2)
++	/* DE signal for TTL */
++	writel_relaxed(havon_begin, priv->io_base + _REG(L_OEH_HS_ADDR));
++	writel_relaxed(havon_end + 1, priv->io_base + _REG(L_OEH_HE_ADDR));
++	writel_relaxed(vavon_bline, priv->io_base + _REG(L_OEH_VS_ADDR));
++	writel_relaxed(vavon_eline, priv->io_base + _REG(L_OEH_VE_ADDR));
 +
-+#define MIPI_DSI_TOP_SUSPEND_CNTL                  0x3cc
-+#define MIPI_DSI_TOP_SUSPEND_LINE                  0x3d0
-+#define MIPI_DSI_TOP_SUSPEND_PIX                   0x3d4
-+#define MIPI_DSI_TOP_MEAS_CNTL                     0x3d8
-+/* [0] R  stat_edpihalt:  edpihalt signal from IP.    Default 0. */
-+#define MIPI_DSI_TOP_STAT                          0x3dc
-+#define MIPI_DSI_TOP_MEAS_STAT_TE0                 0x3e0
-+#define MIPI_DSI_TOP_MEAS_STAT_TE1                 0x3e4
-+#define MIPI_DSI_TOP_MEAS_STAT_VS0                 0x3e8
-+#define MIPI_DSI_TOP_MEAS_STAT_VS1                 0x3ec
-+/* [31:16] RW intr_stat/clr. Default 0.
-+ *		For each bit, read as this interrupt level status,
-+ *		write 1 to clear.
-+ * [31:22] Reserved
-+ * [   21] stat/clr of eof interrupt
-+ * [   21] vde_fall interrupt
-+ * [   19] stat/clr of de_rise interrupt
-+ * [   18] stat/clr of vs_fall interrupt
-+ * [   17] stat/clr of vs_rise interrupt
-+ * [   16] stat/clr of dwc_edpite interrupt
-+ * [15: 0] RW intr_enable. Default 0.
-+ *		For each bit, 1=enable this interrupt, 0=disable.
-+ *	[15: 6] Reserved
-+ *	[    5] eof interrupt
-+ *	[    4] de_fall interrupt
-+ *	[    3] de_rise interrupt
-+ *	[    2] vs_fall interrupt
-+ *	[    1] vs_rise interrupt
-+ *	[    0] dwc_edpite interrupt
-+ */
-+#define MIPI_DSI_TOP_INTR_CNTL_STAT                0x3f0
-+// 31: 2    Reserved.   Default 0.
-+//  1: 0 RW mem_pd.     Default 3.
-+#define MIPI_DSI_TOP_MEM_PD                        0x3f4
++	/* DE signal for TTL */
++	writel_relaxed(havon_begin, priv->io_base + _REG(L_OEV1_HS_ADDR));
++	writel_relaxed(havon_end + 1, priv->io_base + _REG(L_OEV1_HE_ADDR));
++	writel_relaxed(vavon_bline, priv->io_base + _REG(L_OEV1_VS_ADDR));
++	writel_relaxed(vavon_eline, priv->io_base + _REG(L_OEV1_VE_ADDR));
 +
-+#endif /* __MESON_DW_MIPI_DSI_H */
++	/* Hsync signal for TTL */
++	if (mode->flags & DRM_MODE_FLAG_PHSYNC) {
++		writel_relaxed(hso_begin, priv->io_base + _REG(L_STH1_HS_ADDR));
++		writel_relaxed(hso_end, priv->io_base + _REG(L_STH1_HE_ADDR));
++	} else {
++		writel_relaxed(hso_end, priv->io_base + _REG(L_STH1_HS_ADDR));
++		writel_relaxed(hso_begin, priv->io_base + _REG(L_STH1_HE_ADDR));
++	}
++	writel_relaxed(0, priv->io_base + _REG(L_STH1_VS_ADDR));
++	writel_relaxed(max_lncnt, priv->io_base + _REG(L_STH1_VE_ADDR));
++
++	/* Vsync signal for TTL */
++	writel_relaxed(vso_begin, priv->io_base + _REG(L_STV1_HS_ADDR));
++	writel_relaxed(vso_end, priv->io_base + _REG(L_STV1_HE_ADDR));
++	if (mode->flags & DRM_MODE_FLAG_PVSYNC) {
++		writel_relaxed(vso_bline, priv->io_base + _REG(L_STV1_VS_ADDR));
++		writel_relaxed(vso_eline, priv->io_base + _REG(L_STV1_VE_ADDR));
++	} else {
++		writel_relaxed(vso_eline, priv->io_base + _REG(L_STV1_VS_ADDR));
++		writel_relaxed(vso_bline, priv->io_base + _REG(L_STV1_VE_ADDR));
++	}
++
++	/* DE signal */
++	writel_relaxed(havon_begin, priv->io_base + _REG(L_DE_HS_ADDR));
++	writel_relaxed(havon_end + 1, priv->io_base + _REG(L_DE_HE_ADDR));
++	writel_relaxed(vavon_bline, priv->io_base + _REG(L_DE_VS_ADDR));
++	writel_relaxed(vavon_eline, priv->io_base + _REG(L_DE_VE_ADDR));
++
++	/* Hsync signal */
++	writel_relaxed(hso_begin, priv->io_base + _REG(L_HSYNC_HS_ADDR));
++	writel_relaxed(hso_end, priv->io_base + _REG(L_HSYNC_HE_ADDR));
++	writel_relaxed(0, priv->io_base + _REG(L_HSYNC_VS_ADDR));
++	writel_relaxed(max_lncnt, priv->io_base + _REG(L_HSYNC_VE_ADDR));
++
++	/* Vsync signal */
++	writel_relaxed(vso_begin, priv->io_base + _REG(L_VSYNC_HS_ADDR));
++	writel_relaxed(vso_end, priv->io_base + _REG(L_VSYNC_HE_ADDR));
++	writel_relaxed(vso_bline, priv->io_base + _REG(L_VSYNC_VS_ADDR));
++	writel_relaxed(vso_eline, priv->io_base + _REG(L_VSYNC_VE_ADDR));
++
++	writel_relaxed(0, priv->io_base + _REG(L_INV_CNT_ADDR));
++	writel_relaxed(L_TCON_MISC_SEL_STV1 | L_TCON_MISC_SEL_STV2,
++		       priv->io_base + _REG(L_TCON_MISC_SEL_ADDR));
++
++	priv->venc.current_mode = MESON_VENC_MODE_MIPI_DSI;
++}
++EXPORT_SYMBOL_GPL(meson_venc_mipi_dsi_mode_set);
++
+ void meson_venci_cvbs_mode_set(struct meson_drm *priv,
+ 			       struct meson_cvbs_enci_mode *mode)
+ {
+@@ -1747,8 +1947,15 @@ unsigned int meson_venci_get_field(struct meson_drm *priv)
+ 
+ void meson_venc_enable_vsync(struct meson_drm *priv)
+ {
+-	writel_relaxed(VENC_INTCTRL_ENCI_LNRST_INT_EN,
+-		       priv->io_base + _REG(VENC_INTCTRL));
++	switch (priv->venc.current_mode) {
++	case MESON_VENC_MODE_MIPI_DSI:
++		writel_relaxed(VENC_INTCTRL_ENCP_LNRST_INT_EN,
++			       priv->io_base + _REG(VENC_INTCTRL));
++		break;
++	default:
++		writel_relaxed(VENC_INTCTRL_ENCI_LNRST_INT_EN,
++			       priv->io_base + _REG(VENC_INTCTRL));
++	}
+ 	regmap_update_bits(priv->hhi, HHI_GCLK_MPEG2, BIT(25), BIT(25));
+ }
+ 
+diff --git a/drivers/gpu/drm/meson/meson_venc.h b/drivers/gpu/drm/meson/meson_venc.h
+index 9138255ffc9e..0f59adb1c6db 100644
+--- a/drivers/gpu/drm/meson/meson_venc.h
++++ b/drivers/gpu/drm/meson/meson_venc.h
+@@ -21,6 +21,7 @@ enum {
+ 	MESON_VENC_MODE_CVBS_PAL,
+ 	MESON_VENC_MODE_CVBS_NTSC,
+ 	MESON_VENC_MODE_HDMI,
++	MESON_VENC_MODE_MIPI_DSI,
+ };
+ 
+ struct meson_cvbs_enci_mode {
+@@ -47,6 +48,9 @@ struct meson_cvbs_enci_mode {
+ 	unsigned int analog_sync_adj;
+ };
+ 
++/* LCD Encoder gamma setup */
++void meson_encl_load_gamma(struct meson_drm *priv);
++
+ /* HDMI Clock parameters */
+ enum drm_mode_status
+ meson_venc_hdmi_supported_mode(const struct drm_display_mode *mode);
+@@ -63,6 +67,8 @@ void meson_venc_hdmi_mode_set(struct meson_drm *priv, int vic,
+ 			      unsigned int ycrcb_map,
+ 			      bool yuv420_mode,
+ 			      const struct drm_display_mode *mode);
++void meson_venc_mipi_dsi_mode_set(struct meson_drm *priv,
++				  const struct drm_display_mode *mode);
+ unsigned int meson_venci_get_field(struct meson_drm *priv);
+ 
+ void meson_venc_enable_vsync(struct meson_drm *priv);
+diff --git a/drivers/gpu/drm/meson/meson_vpp.h b/drivers/gpu/drm/meson/meson_vpp.h
+index afc9553ed8d3..b790042a1650 100644
+--- a/drivers/gpu/drm/meson/meson_vpp.h
++++ b/drivers/gpu/drm/meson/meson_vpp.h
+@@ -12,6 +12,8 @@
+ struct drm_rect;
+ struct meson_drm;
+ 
++/* Mux VIU/VPP to ENCL */
++#define MESON_VIU_VPP_MUX_ENCL	0x0
+ /* Mux VIU/VPP to ENCI */
+ #define MESON_VIU_VPP_MUX_ENCI	0x5
+ /* Mux VIU/VPP to ENCP */
 
 -- 
 2.34.1
