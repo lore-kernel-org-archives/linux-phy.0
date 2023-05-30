@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9370DC77B7A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 14:49:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81C1C7EE37
+	for <linux-phy@archiver.kernel.org>; Tue, 30 May 2023 14:49:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JeXaI1AWhXK8+GbPOvHXMxb8Xcsfxb4bduD4Ecm/4/Q=; b=3iznMl971V3aEh
-	mf+au7wFY3CNGpy/hX5xvzYT+P2lgPLESzm1hV5++S0F3Xl/n+fjgkyZqsRK+7hd0ufmqvg6M0LVO
-	J4L3/EZhFioMO4BSSIP1IfLFr0GbprriQhM4sRn75jxdAQ4njoPN03/5DTcmKIq9uQmA32cVelw4C
-	rzsOih/07qOVJC6LWfoRVl4QaUEZlm5Eq8+iH/x9CZHRo370g3jQdgQbH3CR/0v2uvFRlVgHxt8IJ
-	sJ04aZ67JkLPtK2IAwQmdsWVcc7hnxfRysQ0+FCFaQu2P2vjA7iI8zi3PvwvHpJxNsK1C2bnxc/lZ
-	+jt3NjumRUlhu0tqU2+Q==;
+	List-Owner; bh=CfO57TSAcUK1leFrWoRpOKP9TW2MIOj+lHzpYmNz5iY=; b=MxMoiHv7dv83qI
+	PGBcobmOu99P0BBRD1Wri0AwcW3zp4gqKJ50gXFlTeOZZsFwjsHOdc3BkKEuuOIwrP6pr4msiwDyC
+	Wzd0WsogXdS7mh/oP64QuMIklSHYf+DhsBRnJZhOAHX5ilkF9DPVZn3G/JbpDeGqYTQCRa3vOVxWt
+	7ZB/5BLQ3vwugcQI8gEqor9Vkxa+SRsq/WNSbSzgAxoTXShpj4/LK/0XyRcEAI6mHlxZ3MordHNw2
+	mqOCCcvFwLgkUN7JfJwgX/ZMAlGGjciVugrdsJKFPwH7bbl3u0W96qT5ln4G4HZB1UqtzuSzZyU8m
+	K4n61YUmWGdCCP+7dtgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q40et-00EHUC-0j;
-	Tue, 30 May 2023 14:49:11 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1q40eu-00EHUp-1o;
+	Tue, 30 May 2023 14:49:12 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q40eo-00EHRT-3D
+	id 1q40es-00EHSp-09
 	for linux-phy@lists.infradead.org;
-	Tue, 30 May 2023 14:49:08 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2af24ee004dso47021381fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 07:49:06 -0700 (PDT)
+	Tue, 30 May 2023 14:49:11 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-51496f57e59so4008100a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 30 May 2023 07:49:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685458145; x=1688050145;
+        d=linaro.org; s=google; t=1685458148; x=1688050148;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=IYFfkWfA3QoQgVvoKYaWNHgXlyKDc3MLd+zuCLSKJyA=;
-        b=cNmu0nPgKOyLJPsM0EDcisLnunATo7htMuua8fjjb2dhKb/bdEMfj0asRSzmGsuh7P
-         44j7Vq1bzp6YWznZJLTZKq9bX9Z3Y91EY6efqTnbDcYlS+17WXOfAJyDYBBeO0P2PLpY
-         Ew5/3U+6ptw6SD59IJt1h2M8GgCyLrFIuSdA0ZRwApWRnnHYfCd3qwfbTFeLjA8jUcob
-         zagphslihs9ef2gj/4YWtdblbVQEHcZE+ZmFnDSeLxgPfiZfYLR2qh68RjdNaRYaKsgo
-         ydoZ+VXgm0D+DG+h+FoHCLSaTTFTZyv5Wjgaee+3q2hGOMaZfSi14hWdrFXBSP52xi4+
-         P6YA==
+        bh=EDtOZScMEhQcxZ0qCP2mG/VW4cw5TvuSdeS8G5ww6IY=;
+        b=QXG1N9nMirFW5x9su+89Sr2YJxHMWbZ7KcizZ5iER13vf1DLIImohOn0evXipGmnBk
+         e2KrLr9sWalAqVL9rZdCzITLPKLYpYgTu5KVHeJc2PPYQaoA9PnCswuJSsDJifPlH7Iq
+         MivJ36BgLvk8rAGSn63g8E5VzaUbsSVNSzKJ91fAf4BNNBtR85ni5HYHTu8Hy64NX0Hu
+         JYoHtS3br90Trzl+YOkYrkIEVZOsfeAOEUi9GLF9Qkrh5i1yR1snbODHovA8Wp66MyEA
+         w1yfm3AmfAb6N21GieYTVCoXvRpNXIPyrYul8/w2zEjQ4axkaLtK0wR5uP/h0woXs/gW
+         dZag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685458145; x=1688050145;
+        d=1e100.net; s=20221208; t=1685458148; x=1688050148;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=IYFfkWfA3QoQgVvoKYaWNHgXlyKDc3MLd+zuCLSKJyA=;
-        b=Rq258ncRmAcs0k/s8lfFcPdKKhf0f07dTuPFXDtM40m0Y7ywCghZNSJdIOOGNx6zDN
-         80CEFS2zDyOvSLWwQ1Uc0H0EwwWR5asgmixx6FlW1V4lhQHLt/rLhg/ValMrgdU601Id
-         McE/JdOh4IbOHYzqDtrRNS/gAgXb0KsxiKggp0rIMnLBlrRMmNMpUyBx5B+ZzFg29tBz
-         EdgwuNqQVGTphz85tgkEtRWWv5vQDfQZDwB5ias3gE6B7A3iOGt+EHc31wETslvN7pHX
-         Gl2S+aq68ycRNNhsEeSSZGD8cQC/zbooCebFbLxUX2hnKMaKTQzvqDWPOkm9Fkc5QBvB
-         LS/A==
-X-Gm-Message-State: AC+VfDyNBOCIhoQnixZ98aM6eHV+u+DvRvq0RYQZ0jUMRM6u1or252DQ
-	MhCLeOgKZxIuPz+RMYNWj/87Aw==
-X-Google-Smtp-Source: ACHHUZ5jvz5LnAumNP/2xr9PcMdbMsGITdxeArnebJmxulNAPz1T+umYnd5f3D0F0Ae9rFUUNWklSw==
-X-Received: by 2002:a05:651c:87:b0:2af:1fd4:9011 with SMTP id 7-20020a05651c008700b002af1fd49011mr906793ljq.34.1685458144944;
-        Tue, 30 May 2023 07:49:04 -0700 (PDT)
+        bh=EDtOZScMEhQcxZ0qCP2mG/VW4cw5TvuSdeS8G5ww6IY=;
+        b=Evn+Y192nYFU2kMRv4AS7phSfQ5njgK7MLhFdSPKcUzLHyfLDhGwZ/n7i0wWGvDxmS
+         P1jAUU63i9Vb02aIbGoJlHoyZfZwzFaXAsRRl8ZEVGj6B3NyQnEfc1rCQeNQwUzyhbfP
+         Xktzm6VGiRlQUBwwEEssBq27NNZ/fiyXdXM4AwZ38ziQ4dLro40UToflQZst84+3Kb6W
+         AnRQsOgD8haSQZ9Ox2pnXUkdQBVeV9yzBYgvsFRoUl8MmTDHDzW95XZif1vX2kUm89k+
+         mUiyevRZnQC0Qj+67gqSOCC/67EWE45nIKqouMbT2GB97khAgFThfr60UDelsiVCMnZG
+         WyGw==
+X-Gm-Message-State: AC+VfDzN/Wpz//actP/Q/6F4bdffg0WJycXC5RPg14oqnLfTx6l941p4
+	eVuPsDsYRKcFGVzvayMTP73FSQ==
+X-Google-Smtp-Source: ACHHUZ5gmAumXj2b1GIfXBoPyWfnVelqgUTij3Kbup650+F2Nc8xc8UrKiGkys3OMi8/buw0FLqxBg==
+X-Received: by 2002:a50:ee04:0:b0:514:90de:423e with SMTP id g4-20020a50ee04000000b0051490de423emr1958340eds.36.1685458147907;
+        Tue, 30 May 2023 07:49:07 -0700 (PDT)
 Received: from krzk-bin.. ([178.197.199.204])
-        by smtp.gmail.com with ESMTPSA id q21-20020aa7cc15000000b00514b2717ec6sm631283edt.28.2023.05.30.07.49.02
+        by smtp.gmail.com with ESMTPSA id q21-20020aa7cc15000000b00514b2717ec6sm631283edt.28.2023.05.30.07.49.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 May 2023 07:49:04 -0700 (PDT)
+        Tue, 30 May 2023 07:49:07 -0700 (PDT)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -91,16 +91,16 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
 	Rob Herring <robh@kernel.org>,
 	Tony Lindgren <tony@atomide.com>,
 	Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: [PATCH 3/7] dt-bindings: rtc: restrict node name suffixes
-Date: Tue, 30 May 2023 16:48:47 +0200
-Message-Id: <20230530144851.92059-4-krzysztof.kozlowski@linaro.org>
+Subject: [PATCH 4/7] dt-bindings: slimbus: restrict node name suffixes
+Date: Tue, 30 May 2023 16:48:48 +0200
+Message-Id: <20230530144851.92059-5-krzysztof.kozlowski@linaro.org>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
 References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_074907_034478_0C8B2F72 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20230530_074910_080253_2A08E1A6 
+X-CRM114-Status: GOOD (  12.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,22 +130,22 @@ Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Tony Lindgren <tony@atomide.com>
 Cc: Oleksij Rempel <o.rempel@pengutronix.de>
 ---
- Documentation/devicetree/bindings/rtc/rtc.yaml | 2 +-
+ Documentation/devicetree/bindings/slimbus/slimbus.yaml | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/rtc/rtc.yaml b/Documentation/devicetree/bindings/rtc/rtc.yaml
-index c6fff5486fe6..efb66df82782 100644
---- a/Documentation/devicetree/bindings/rtc/rtc.yaml
-+++ b/Documentation/devicetree/bindings/rtc/rtc.yaml
-@@ -15,7 +15,7 @@ description: |
+diff --git a/Documentation/devicetree/bindings/slimbus/slimbus.yaml b/Documentation/devicetree/bindings/slimbus/slimbus.yaml
+index 22513fb7c59a..3b8cae9d1016 100644
+--- a/Documentation/devicetree/bindings/slimbus/slimbus.yaml
++++ b/Documentation/devicetree/bindings/slimbus/slimbus.yaml
+@@ -15,7 +15,7 @@ description:
  
  properties:
    $nodename:
--    pattern: "^rtc(@.*|-[0-9a-f])*$"
-+    pattern: "^rtc(@.*|-([0-9]|[1-9][0-9]+))?$"
+-    pattern: "^slim(@.*|-[0-9a-f])*$"
++    pattern: "^slim(@.*|-([0-9]|[1-9][0-9]+))?$"
  
-   aux-voltage-chargeable:
-     $ref: /schemas/types.yaml#/definitions/uint32
+   "#address-cells":
+     const: 2
 -- 
 2.34.1
 
