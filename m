@@ -4,33 +4,33 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC827C77B7C
-	for <linux-phy@archiver.kernel.org>; Wed, 31 May 2023 04:25:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A111C77B7C
+	for <linux-phy@archiver.kernel.org>; Wed, 31 May 2023 04:26:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9cNc7tMCmB35eVczydPtz+7GfyxvhTFPVem9wWrAOkU=; b=3TMqQmwPeqEYpf
-	1RdiE4+g+bzZpQ4WVYXZFwdXk75DahAELZOrLOiHf8qPxtCX7G+oNPgf57a1eyNOBR+8pQTPFTixw
-	lW7STWrSPHIMyUOvE38lftxzFgqDevqpk7z0q5bNRgCenm7jrNpobYklGBT7Sq5m43KNzdd9wmVS3
-	VGsrsDtcMYWQGkBhVobUpza2R8HIqxZp3vwaq7Lrz4UR8li5pY5PPZmQIQYZP+vnHh/sPQ7yGSxDj
-	X9NEVf9rFpkLZvmkLcc+ClRgPnh/GVIKGPmDlK/KAtfv/fchXkq+f5PF13s3r/SrFHJu9KCIf3070
-	aqCCS008ZZcxgu4iLihQ==;
+	List-Owner; bh=9cNc7tMCmB35eVczydPtz+7GfyxvhTFPVem9wWrAOkU=; b=sOVbSC2Hxl5qVD
+	b5L3jIqRVjEw3pJgb7fexS7s/oEwxlu57NPvUcH1H4SqKFUNOytPKeFEt4CjEobClo9FrRg982v29
+	PJH4zHm0qjjTaCdPr+5EYLmuMhaBoIEcKSH09+cgnaQ0NJ06c5v7VeiRJ8mwcJBcNYd4Rit59qmcQ
+	WYkKaAvsIvzwXmSG6IoJyKknAvyG+s+UbXsd0FQ/KopBC+X3pKjx1QPxRAvPeFjxKiY5Za8xTGgon
+	1khoY11NXw+5n0aZneO74q6zXXKtJFH+lr7j2m1D+1k5hJQ0aJ+EgZ9BwYr87O4s2DQh6HNyMg+xG
+	3D5pbFEsEIp+cYstTf6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4DPH-00G2b5-1M;
-	Wed, 31 May 2023 04:25:55 +0000
+	id 1q4DPW-00G2g9-0I;
+	Wed, 31 May 2023 04:26:10 +0000
 Received: from muru.com ([72.249.23.125])
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4DPE-00G2aA-17
+	id 1q4DPT-00G2fH-1d
 	for linux-phy@lists.infradead.org;
-	Wed, 31 May 2023 04:25:53 +0000
+	Wed, 31 May 2023 04:26:08 +0000
 Received: from localhost (localhost [127.0.0.1])
-	by muru.com (Postfix) with ESMTPS id 974818167;
-	Wed, 31 May 2023 04:25:51 +0000 (UTC)
-Date: Wed, 31 May 2023 07:25:50 +0300
+	by muru.com (Postfix) with ESMTPS id BEA558167;
+	Wed, 31 May 2023 04:26:06 +0000 (UTC)
+Date: Wed, 31 May 2023 07:26:05 +0300
 From: Tony Lindgren <tony@atomide.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -53,16 +53,16 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-spi@vger.kernel.org, timestamp@lists.linux.dev,
 	linux-watchdog@vger.kernel.org, Rob Herring <robh@kernel.org>,
 	Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH 3/7] dt-bindings: rtc: restrict node name suffixes
-Message-ID: <20230531042550.GJ14287@atomide.com>
+Subject: Re: [PATCH 4/7] dt-bindings: slimbus: restrict node name suffixes
+Message-ID: <20230531042605.GK14287@atomide.com>
 References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
- <20230530144851.92059-4-krzysztof.kozlowski@linaro.org>
+ <20230530144851.92059-5-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230530144851.92059-4-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230530144851.92059-5-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230530_212552_422215_D5DC9BE8 
-X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-CacheID: sfid-20230530_212607_580565_E76841A5 
+X-CRM114-Status: UNSURE (   8.18  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
