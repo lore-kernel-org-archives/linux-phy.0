@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E905C7EE2A
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 17:10:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0817DC77B7A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 17:12:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f9T48wnXbdgT84NaC7+41NhgDgwQE2dWbMQUa8oLFHE=; b=PeJX1CWXT+lPRR
-	2Mhknq26Juln6toIgu0AKpqtiP4dah1snl4nj4bOvVPR+hCapXOlbfBT11qs4C8RswPVh/UtIMyPe
-	ECanNb86JdxSLYChoaaP0USvdiH4fbWk6joj5lNQ1Q+AKkYlX+hgXMu/xzybSjEPxwQc6nyh02nzQ
-	Di78SgVTEGGHSE1UIUpd2bik2uGk+8+PyQymUhcDcTg7WBxPamm3OlHJSycEeHe0yhe3ERL7MXoEe
-	YQ7U+9lJZfzU5iDz01Wi28vbJf0ISHkYIfTGdDnvd1Zq8IShirzcJ7XbjyyznXl2tyvKm1i7+F+RE
-	XA3bJU9g2Lgdw1gkU0mA==;
+	List-Owner; bh=jDgE3NRcTVfDFesVOqsrYoyJXG4ua9Xhfl/U6/tMYKg=; b=RUUr9gjrUPwuoK
+	ukCk0gXZiScbpSddG4gfFakowIIXEhPtpmlp8gWxjRp/SWMg7nfUjLX/PGOXLtFde/FykITiNOxZG
+	Ezp+rRNtme9MUHl24Rp9+PF/MreoMETuveboNvvURpPuPqw11RKXJi99Olmx1Ek5rGQEOB3FpkX0P
+	/RJCBceGVlLNDTaBcvd64i8snYu2fFJOGUromaF9C8dOYdMIamDchBkICavknTpnLb9tOiETaYq1+
+	aIHCkgHLEazhCe6KzZCpgtotzzqmPf8bs8NSw7N69FKw/6TtkbAL1w++3Nt0T55TuHbMXz4pYk780
+	37MPc78TyuTrQEZmPMFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4loS-004Mv2-1p;
-	Thu, 01 Jun 2023 17:10:12 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1q4lqN-004NF9-2A;
+	Thu, 01 Jun 2023 17:12:11 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4loP-004Mtd-1e
+	id 1q4lqK-004NEQ-2J
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Jun 2023 17:10:11 +0000
+	Thu, 01 Jun 2023 17:12:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1685639404;
+	s=mimecast20190719; t=1685639527;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=AQ46YHscoz6R/uQfk362V/AjgA+jv0Q6KB7cKqmivZo=;
-	b=BYC7h8ZAtxMnFfbhLMEKbZwhUPPziHV33MsGbM97bsw75SN0De4ROm7itcYvSSE3sWWdIB
-	07HMSvuKPrZdYfxM2tUT8/Z9AQCg+B1afps0UZvYfmIlZGDEmOAZOqowjMEkrKPcJMk87J
-	fnsO98c3M09m7wNAaeGqcRlZjHUl6fU=
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com
- [209.85.219.71]) by relay.mimecast.com with ESMTP with STARTTLS
+	bh=5JK5bagIl4mNu2bd8dqzC2ZaUL1SOPOyDNs1gFUPJVk=;
+	b=V9O6EQnN5sbMjz5kIaesQkwTvfdhMDTq9FWnr5eQ7KQ66IW+7B0/4PTZiMoptVscenWx0C
+	vwxCtD4RNtTCAQFS01xAovaC7MZAMlr+qDZoeEiwxkdryM/7TtuA4M+iuloDU3Da3zyX6K
+	UPByt/AbM6IzVacZokcEYz6787YyRRA=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-624-RTI27iFrOE-RLINE6drtxQ-1; Thu, 01 Jun 2023 13:10:02 -0400
-X-MC-Unique: RTI27iFrOE-RLINE6drtxQ-1
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6261d8ffbbaso15217336d6.3
-        for <linux-phy@lists.infradead.org>; Thu, 01 Jun 2023 10:10:02 -0700 (PDT)
+ us-mta-629-CKCKgI6jMum3PWam9N0wlg-1; Thu, 01 Jun 2023 13:12:06 -0400
+X-MC-Unique: CKCKgI6jMum3PWam9N0wlg-1
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-62627366ebeso15542466d6.3
+        for <linux-phy@lists.infradead.org>; Thu, 01 Jun 2023 10:12:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685639402; x=1688231402;
+        d=1e100.net; s=20221208; t=1685639526; x=1688231526;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=AQ46YHscoz6R/uQfk362V/AjgA+jv0Q6KB7cKqmivZo=;
-        b=d5P+5swhFfTxyY1SKG3+lwOCfJKF/UEGvub7yC8zMNgbE6160MOL9qsvr4Iq+TIS5K
-         AqOiNJrfk7txnbbuDoF1ITy8YVR5R3YPcomPUEC3DJShl7RU/DHFKCJ7g0/1rhX7oj85
-         cWNkWNkt7uJcxKXPb7lWoxK2MEkV08hzHVH1WwBZ+0f0TnpEN82dioZ72kVtTlLwR8u8
-         B9O9zcSmouoD8Ci81LyhpFO6HlK6OyTTs9cp3iNEnQ9oifbOZTC7U3Kp8VOCoulv5dFA
-         s6yqDocZAITAaNX5uB1DHNrB02h8wImluXM8QjV6VOpEwFmsn9piW57+28Oo4TFOT6j+
-         HeJA==
-X-Gm-Message-State: AC+VfDwPpYxdRuB1ikn87dgT8YzY0l37Nh99uNAVFwUBXBGVhaS89M+Q
-	TRn3kw+mFGjyVSCM3M6ddk/04V9IKRF5pybUjDVOOEdzXiQBS/eHqo7MiMkKpbJKggg/4fM0QYs
-	O34l37HcKFkltmgxOUfb081XZlw==
-X-Received: by 2002:a05:6214:29e9:b0:626:2b44:40c with SMTP id jv9-20020a05621429e900b006262b44040cmr10212877qvb.59.1685639402010;
-        Thu, 01 Jun 2023 10:10:02 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ5dUqdxQlAlxBL1EhNnf57Lqmh5ZOha/OK75FWVfZPPqCCLt0oSG09+YKOs+j8tJ1bqTCzyWA==
-X-Received: by 2002:a05:6214:29e9:b0:626:2b44:40c with SMTP id jv9-20020a05621429e900b006262b44040cmr10212843qvb.59.1685639401653;
-        Thu, 01 Jun 2023 10:10:01 -0700 (PDT)
+        bh=5JK5bagIl4mNu2bd8dqzC2ZaUL1SOPOyDNs1gFUPJVk=;
+        b=B4R6Hq+AJAZxqX/6ZuPxc5KrcHwTohXGMtVw5j2o9u+ItyXlkwwCAkNtg3Yypb8BB/
+         rL0CxcXER1Z3UtplZILzSYwb7Au8YfYrOBYgnCY7hJbwALQEU0CT9pGTqkBCUHZ1W5Fx
+         auSEqAUHCt//0JkhAxExx1H7+mE+ekpenjrnkP2gBrgvtmwe6fbQT2nC4JCgRc9onbLv
+         oSk7ZTMaUakO5jz36fzuxMNPlqHIuXIWe+B8lYY6AqeQ4LCccrLj9NEF24HsgDifNfTZ
+         fa50I2nTa88m2L3QBsYTMEAQQmZoV95SP5+/Kk4j7Ha6AAq7DW88NOSmeJ6PI0zBJ8yv
+         Cosw==
+X-Gm-Message-State: AC+VfDypG33VHKIzSmuwF//E8K4WKPhyS1Mt0vrmBpTf6fC9x5Kx4O/f
+	ZRjfwOSHcJouIRMAszPjzEFd0824D/Esn89WBQ/85SZbJMtwZA7uZ3MnJFEtcJ+uPvzl/JU4Aca
+	Fl59lNDUpCaXnx920BIVdQOCSbg==
+X-Received: by 2002:ad4:5f8e:0:b0:5f8:f168:e0e7 with SMTP id jp14-20020ad45f8e000000b005f8f168e0e7mr12816498qvb.29.1685639525986;
+        Thu, 01 Jun 2023 10:12:05 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6I8R3fgCzuYzNgh+LioVv3oB78WfcfQrA7Q0GbkEvyKz+5epvEpwpfuytr1FokUwT/oOyJCA==
+X-Received: by 2002:ad4:5f8e:0:b0:5f8:f168:e0e7 with SMTP id jp14-20020ad45f8e000000b005f8f168e0e7mr12816471qvb.29.1685639525725;
+        Thu, 01 Jun 2023 10:12:05 -0700 (PDT)
 Received: from fedora ([107.171.218.122])
-        by smtp.gmail.com with ESMTPSA id m10-20020ad44a0a000000b006235e8fe94esm2307987qvz.58.2023.06.01.10.10.00
+        by smtp.gmail.com with ESMTPSA id pm22-20020ad446d6000000b006263c531f61sm3313822qvb.24.2023.06.01.10.12.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Jun 2023 10:10:00 -0700 (PDT)
-Date: Thu, 1 Jun 2023 13:09:58 -0400
+        Thu, 01 Jun 2023 10:12:04 -0700 (PDT)
+Date: Thu, 1 Jun 2023 13:12:02 -0400
 From: Adrien Thierry <athierry@redhat.com>
 To: Bjorn Andersson <andersson@kernel.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -75,22 +75,20 @@ Cc: Andy Gross <agross@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RFC 1/2] phy: qcom-snps-femto-v2: properly enable ref
- clock
-Message-ID: <ZHjQ5lvfSjKA3zqe@fedora>
+Subject: Re: [PATCH RFC 2/2] phy: qcom-snps-femto-v2: Remove AHB2PHY
+ interface clock
+Message-ID: <ZHjRYpjwHI3bP4yC@fedora>
 References: <20230529185638.32376-1-athierry@redhat.com>
- <20230529185638.32376-2-athierry@redhat.com>
- <20230529211629.7sw542tyyygv4tcs@ripper>
- <ZHZEbW+aSJ5xLOlO@fedora>
- <20230531023441.4dpbsdklerbu2zqx@ripper>
+ <20230529185638.32376-3-athierry@redhat.com>
+ <20230529211921.imf6tttlrkza4lc3@ripper>
 MIME-Version: 1.0
-In-Reply-To: <20230531023441.4dpbsdklerbu2zqx@ripper>
+In-Reply-To: <20230529211921.imf6tttlrkza4lc3@ripper>
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230601_101009_644490_B6823E95 
-X-CRM114-Status: GOOD (  38.83  )
+X-CRM114-CacheID: sfid-20230601_101208_827995_D676097E 
+X-CRM114-Status: GOOD (  30.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,160 +105,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 30, 2023 at 07:34:41PM -0700, Bjorn Andersson wrote:
-> On Tue, May 30, 2023 at 02:46:05PM -0400, Adrien Thierry wrote:
-> > Hi Bjorn, thanks for your reply!
-> > 
-> > On Mon, May 29, 2023 at 02:16:29PM -0700, Bjorn Andersson wrote:
-> > > On Mon, May 29, 2023 at 02:56:36PM -0400, Adrien Thierry wrote:
-> > > > The driver is not enabling the ref clock, which thus gets disabled by
-> > > > the clk_disable_unused initcall. This leads to the dwc3 controller
-> > > > failing to initialize if probed after clk_disable_unused is called, for
-> > > > instance when the driver is built as a module.
-> > > > 
-> > > 
-> > > Good catch!
-> > > 
-> > > A side note though, clk_disable_unused() has no way to take kernel
-> > > modules into consideration today, and it doesn't handle the case where
-> > > clock drivers are built as modules appropriately.
-> > > Work has started to address this, but as of todaybooting the system
-> > > without clk_ignore_unused is not recommended...
-> > >
-> > 
-> > For my understanding, do you have an example of a situation that would
-> > fail with modules when not using clk_ignore_unused?
+Hi Bjorn,
+
+On Mon, May 29, 2023 at 02:19:21PM -0700, Bjorn Andersson wrote:
+> On Mon, May 29, 2023 at 02:56:37PM -0400, Adrien Thierry wrote:
+> > The AHB2PHY interface clock cfg_ahb_clk is not assigned anywhere in the
+> > driver. Moreover, it's not used by any device tree, nor is present in
+> > the qcom,usb-snps-femto-v2 bindings. Remove it.
 > > 
 > 
-> The prime example relates to the display clocks, where the bootloader
-> typically leave clocks on and at lateinit we haven't yet loaded enough
-> modules to bring up the display. And to make matters worse, the code
-> ends up disabling the PLL feeding the clock tree without first disabling
-> some of the muxes - which has side effects...
+> The downstream driver deals with cfg_ahb as well, so I think it would be
+> more appropriate to ensure that it's actually wired up.
 > 
-> Another case, although much less concerning in the short run, is when
-> you have any of the clock drivers built as modules. clk_disable_unused()
-> will be invoked before they are loaded, so your expectation that unused
-> clocks are turned off is just not fulfilled.
+> And in that case, I would find it preferable to switch to use the
+> clk_bulk API for the introduction of the ref clk - to clean up the error
+> paths if nothing else.
 >
 
-Thanks for the explanation!
-
-> > > > To fix this, add calls to clk_prepare_enable/clk_disable_unprepare at
-> > > > the proper places.
-> > > > 
-> > > 
-> > > If I parse the downstream kernel correctly the refclock should be
-> > > turned off across runtime and system suspend as well.
-> > > 
-> > 
-> > Which downstream kernel are you using? I'm not seing a system suspend
-> > callback in mine [1]. refclock should be turned off on runtime suspend in
-> > my patch, in qcom_snps_hsphy_suspend, which is called by
-> > qcom_snps_hsphy_runtime_suspend.
-> > 
-> 
-> Forgive me, but isn't [1] the driver you're modifying?
-> 
-> I'm looking at [2], with set_suspend() being invoked from the runtime
-> and system suspend/resume handlers.
-> 
-> > [1] https://git.codelinaro.org/clo/la/kernel/ark-5.14/-/blob/kernel.lnx.5.14.r2-rel/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> 
-> [2] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c#L908
-> 
-
-Thank you. The femto PHY driver is not using set_suspend(), but has
-runtime PM ops. Is it ok if I add the system sleep PM ops as well with
-SET_SYSTEM_SLEEP_PM_OPS() ?
+I won't be able to properly wire the cfg_ahb clock in the device trees
+because I've got no way of knowing which clock to use for cfg_ahb in the
+various SoCs, but I can at least try to clean the code by using the
+clk_bulk API.
 
 > Regards,
 > Bjorn
 > 
+> > Signed-off-by: Adrien Thierry <athierry@redhat.com>
+> > ---
+> > I'm not 100% sure if the clock should be removed, or if it should be added
+> > to bindings and device trees that use this PHY. Better informed opinions
+> > on the topic are highly welcome.
 > > 
-> > > Regards,
-> > > Bjorn
-> > > 
-> > > > Signed-off-by: Adrien Thierry <athierry@redhat.com>
-> > > > ---
-> > > >  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 20 +++++++++++++++++--
-> > > >  1 file changed, 18 insertions(+), 2 deletions(-)
-> > > > 
-> > > > diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> > > > index 6c237f3cc66d..8abf482e81a8 100644
-> > > > --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> > > > +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> > > > @@ -166,6 +166,7 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
-> > > >  	}
-> > > >  
-> > > >  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
-> > > > +	clk_disable_unprepare(hsphy->ref_clk);
-> > > >  	return 0;
-> > > >  }
-> > > >  
-> > > > @@ -181,6 +182,12 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
-> > > >  		return ret;
-> > > >  	}
-> > > >  
-> > > > +	ret = clk_prepare_enable(hsphy->ref_clk);
-> > > > +	if (ret) {
-> > > > +		dev_err(&hsphy->phy->dev, "failed to enable ref clock\n");
-> > > > +		return ret;
-> > > > +	}
-> > > > +
-> > > >  	return 0;
-> > > >  }
-> > > >  
-> > > > @@ -380,10 +387,16 @@ static int qcom_snps_hsphy_init(struct phy *phy)
-> > > >  		goto poweroff_phy;
-> > > >  	}
-> > > >  
-> > > > +	ret = clk_prepare_enable(hsphy->ref_clk);
-> > > > +	if (ret) {
-> > > > +		dev_err(&phy->dev, "failed to enable ref clock, %d\n", ret);
-> > > > +		goto disable_ahb_clk;
-> > > > +	}
-> > > > +
-> > > >  	ret = reset_control_assert(hsphy->phy_reset);
-> > > >  	if (ret) {
-> > > >  		dev_err(&phy->dev, "failed to assert phy_reset, %d\n", ret);
-> > > > -		goto disable_ahb_clk;
-> > > > +		goto disable_ref_clk;
-> > > >  	}
-> > > >  
-> > > >  	usleep_range(100, 150);
-> > > > @@ -391,7 +404,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
-> > > >  	ret = reset_control_deassert(hsphy->phy_reset);
-> > > >  	if (ret) {
-> > > >  		dev_err(&phy->dev, "failed to de-assert phy_reset, %d\n", ret);
-> > > > -		goto disable_ahb_clk;
-> > > > +		goto disable_ref_clk;
-> > > >  	}
-> > > >  
-> > > >  	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_CFG0,
-> > > > @@ -448,6 +461,8 @@ static int qcom_snps_hsphy_init(struct phy *phy)
-> > > >  
-> > > >  	return 0;
-> > > >  
-> > > > +disable_ref_clk:
-> > > > +	clk_disable_unprepare(hsphy->ref_clk);
-> > > >  disable_ahb_clk:
-> > > >  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
-> > > >  poweroff_phy:
-> > > > @@ -462,6 +477,7 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
-> > > >  
-> > > >  	reset_control_assert(hsphy->phy_reset);
-> > > >  	clk_disable_unprepare(hsphy->cfg_ahb_clk);
-> > > > +	clk_disable_unprepare(hsphy->ref_clk);
-> > > >  	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> > > >  	hsphy->phy_initialized = false;
-> > > >  
-> > > > -- 
-> > > > 2.40.1
-> > > >
+> >  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 20 +------------------
+> >  1 file changed, 1 insertion(+), 19 deletions(-)
 > > 
-> > Best,
-> > Adrien
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > index 8abf482e81a8..2d9c1105e28c 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > @@ -113,7 +113,6 @@ struct phy_override_seq {
+> >   * @phy: generic phy
+> >   * @base: iomapped memory space for snps hs phy
+> >   *
+> > - * @cfg_ahb_clk: AHB2PHY interface clock
+> >   * @ref_clk: phy reference clock
+> >   * @phy_reset: phy reset control
+> >   * @vregs: regulator supplies bulk data
+> > @@ -125,7 +124,6 @@ struct qcom_snps_hsphy {
+> >  	struct phy *phy;
+> >  	void __iomem *base;
+> >  
+> > -	struct clk *cfg_ahb_clk;
+> >  	struct clk *ref_clk;
+> >  	struct reset_control *phy_reset;
+> >  	struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
+> > @@ -165,7 +163,6 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+> >  					   0, USB2_AUTO_RESUME);
+> >  	}
+> >  
+> > -	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+> >  	clk_disable_unprepare(hsphy->ref_clk);
+> >  	return 0;
+> >  }
+> > @@ -176,12 +173,6 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+> >  
+> >  	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
+> >  
+> > -	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+> > -	if (ret) {
+> > -		dev_err(&hsphy->phy->dev, "failed to enable cfg ahb clock\n");
+> > -		return ret;
+> > -	}
+> > -
+> >  	ret = clk_prepare_enable(hsphy->ref_clk);
+> >  	if (ret) {
+> >  		dev_err(&hsphy->phy->dev, "failed to enable ref clock\n");
+> > @@ -381,16 +372,10 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+> >  	if (ret)
+> >  		return ret;
+> >  
+> > -	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+> > -	if (ret) {
+> > -		dev_err(&phy->dev, "failed to enable cfg ahb clock, %d\n", ret);
+> > -		goto poweroff_phy;
+> > -	}
+> > -
+> >  	ret = clk_prepare_enable(hsphy->ref_clk);
+> >  	if (ret) {
+> >  		dev_err(&phy->dev, "failed to enable ref clock, %d\n", ret);
+> > -		goto disable_ahb_clk;
+> > +		goto poweroff_phy;
+> >  	}
+> >  
+> >  	ret = reset_control_assert(hsphy->phy_reset);
+> > @@ -463,8 +448,6 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+> >  
+> >  disable_ref_clk:
+> >  	clk_disable_unprepare(hsphy->ref_clk);
+> > -disable_ahb_clk:
+> > -	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+> >  poweroff_phy:
+> >  	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
+> >  
+> > @@ -476,7 +459,6 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
+> >  	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
+> >  
+> >  	reset_control_assert(hsphy->phy_reset);
+> > -	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+> >  	clk_disable_unprepare(hsphy->ref_clk);
+> >  	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
+> >  	hsphy->phy_initialized = false;
+> > -- 
+> > 2.40.1
 > > 
 
 
