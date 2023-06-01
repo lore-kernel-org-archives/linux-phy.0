@@ -4,93 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4983C7EE2F
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 14:12:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41F53C77B7A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 15:32:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4qLiUvBriyonk7A3ANDbgeagwG31ZNWYlofyO84sL/I=; b=sJDR0dbL8rIz9y
-	o4jDneiNfXinDX5m0rnJfGCL+kn4/h3G7/x+Fwqix6ZFcn4Im8djIWK5smUI4Mc+uRM/kdAw+AxXI
-	P5K5q3iz9UVhHmoxXX38++3nFJImHDYyNNnp2q2VzM9wXZqNlDtSBFAO2ae4yshqeAwsgRWlQi/au
-	dCuOdlH9BTPsHAnp96Zg0EHCTmaSzEgFhoG7z1LgpZTsrjJkWHkmWjwp+L5MSo1inGciAtTLaFq+w
-	oPSXvl+ICniDN51/9pKhpmZY5TprbedPOWwyDtiKAzoM4HCD8FtQe0PcSG6QmYNft2X/HQrABnZKW
-	p8xrSQ7J6RDnGjNCeO+Q==;
+	List-Owner; bh=xM3XJRbyZDJd2FlblDpkSPnE4JQXL/kIaAKpsSBJO/w=; b=OSOUfgYcjdfX0b
+	jdCa2q/kYjbl95uz7H7sbfZkwGlejl0L5qAle8F/1+hD326SzJLIKAZYNmKYZRSmdbgtSkQqci/RV
+	Vbwu203ad2fIgJZpcilxflB9bqoIuLs1JkmFpUbXhdARTs7zIv/Mvbf0yViuoxcvM/eFnZJfbQseS
+	kJrI4NMA3/t6GcJWjnDYU2BYt6YccYa+jXKnJcWx6SDnbZPl4QY1Wl8PcVwb+IZVMlJ6EWhoCBQ7F
+	EVcJwPT5WyVmIvMnED1SXkRe2PvgV/OizOljGf9HpUuC0Ou9q7MsKmML3tRa577Jl/KYF+1X+ex72
+	+WmAviYZTNTIwBZ/oKNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4j2q-003nSk-1U;
-	Thu, 01 Jun 2023 14:12:52 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1q4kIK-0043Ob-2u;
+	Thu, 01 Jun 2023 15:32:56 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4j2n-003nRY-1a
+	id 1q4kII-0043O7-1Y
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Jun 2023 14:12:50 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-3f6042d610fso8886165e9.1
-        for <linux-phy@lists.infradead.org>; Thu, 01 Jun 2023 07:12:49 -0700 (PDT)
+	Thu, 01 Jun 2023 15:32:55 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-5147e441c33so2314330a12.0
+        for <linux-phy@lists.infradead.org>; Thu, 01 Jun 2023 08:32:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685628768; x=1688220768;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=blRDmP8zwUxnWYu3O2q7G8SVs+SLeK3eRrnyEq5ozP4=;
-        b=qdN3sFmE0bkWjRKWetOAT0HHLZIxe86o4BV9VjIYHiUK3XPu2S8gc0aoVmeWcrs4cy
-         agjoc2/Hh7uBRXSKUK6reJT3RUJmkZAEwpys5HDX5bJr6n6VJa7oPa+LItSY9540le1v
-         c5xeuCTZ1QVljMhR3nmnMXrrL0arqyhLw8IIxDSf/EhE6ILbEj1sEW03f3QystUPuj5Z
-         bDEUctCPLc84Ov0ke0ettWxLK3yjWZ3RCAHD2zRdmVaAybo0NiXe5TLVYrUVI645Qq06
-         9BbZlfyjNk5aeQp4Zj1+EaGkNAjjCWOgccsS3/JaCUwjXDNUT+G0TrhVnq5XV5ORs7dF
-         6+6g==
+        d=linaro.org; s=google; t=1685633572; x=1688225572;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=d+hD8sanORaWT0+7h4FlSb8jJyfN127ZPZqGdgRFUik=;
+        b=ElKVSOFj2eQz/HLNwoODWxWCWoi2Kx/s1W/rVvvxdLHDkzhxpGLwE89chXLB0Mnq5q
+         25EkWgrR7i96Rbz+knEOs6rDhevaooR2wnXmShLYc0TtwXW0IGH9npeIYsuUkXM/eHx1
+         ZuSPtyUAl4O8d7ayCPJqGiSKRW44M+xAk0JCdFG8x09GTqkvjvIHK5Z303ohDAIRQ7jP
+         tdZGtiEgqRhhOHYSlYqxuv1bQEOz0ZozvnJcjRyhKEoA0C2dqXxzJWabeMMDhPP4Fs89
+         qsA0JBbna14pQ78O/ir++cbTJWSptZ8LzT4qVMMHmKW2DnOYq2ajzzg6eWAyn3gDhY0O
+         NWFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685628768; x=1688220768;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=blRDmP8zwUxnWYu3O2q7G8SVs+SLeK3eRrnyEq5ozP4=;
-        b=hv+VLaNDcu5H+1eXsFNmb1Tj7ehCaqfUYVoDAisMqB9IbLC0VqXuZmwt6wikBOmMG1
-         bJnOiwPTF1zxjl7vtlsxiMoVnMxHjXW4RsNBFuqXOlPxWs08C9bIZSxSN4yhJ4hI7h1Y
-         jimbq/JXoww64+xMiqvDPttOuODgmShtZlOYjKSIU0l1oq3ySJQoZJM0atb5906m7r+S
-         rb/LsrjR3zTmLae/W98/zQW+lwUt7D1myQ6yunJ2ZRjLIXVlrm/Pfid07cwo9HRF4q0Y
-         BUTuV01vEki+7RwuXOPeEQACuJOf0yQ8PIys8hGedJK7xAUAUQBVqbblsJEXNeJ/m4dL
-         EOOg==
-X-Gm-Message-State: AC+VfDycWWOsFo0Ynrqqi3h21XPnmKqqTUrt+nU+8yEW3vAsyyVKYeT2
-	JHGPkf5n6A+tpv1q2PDv098opw==
-X-Google-Smtp-Source: ACHHUZ6/ivQPA2lY433i2n8DT8ybJaluMhJNQm/WfFkDzmtsk8A31ifylaUb4N2I4BWnvbWtYj/ztw==
-X-Received: by 2002:adf:f244:0:b0:2f6:bf04:c8cc with SMTP id b4-20020adff244000000b002f6bf04c8ccmr2034350wrp.55.1685628767960;
-        Thu, 01 Jun 2023 07:12:47 -0700 (PDT)
-Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id p12-20020adfcc8c000000b0030adfa48e1esm10629591wrj.29.2023.06.01.07.12.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Jun 2023 07:12:47 -0700 (PDT)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-To: Jerome Brunet <jbrunet@baylibre.com>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>, 
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, 
- Daniel Vetter <daniel@ffwll.ch>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Sam Ravnborg <sam@ravnborg.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: "Lukas F. Hartmann" <lukas@mntre.com>, 
- Nicolas Belin <nbelin@baylibre.com>, linux-amlogic@lists.infradead.org, 
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
- Rob Herring <robh@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>
-In-Reply-To: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
-References: <20230512-amlogic-v6-4-upstream-dsi-ccf-vim3-v5-0-56eb7a4d5b8e@linaro.org>
-Subject: Re: (subset) [PATCH v5 00/17] drm/meson: add support for MIPI DSI
- Display
-Message-Id: <168562876692.86739.7052062833690353953.b4-ty@linaro.org>
-Date: Thu, 01 Jun 2023 16:12:46 +0200
+        d=1e100.net; s=20221208; t=1685633572; x=1688225572;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=d+hD8sanORaWT0+7h4FlSb8jJyfN127ZPZqGdgRFUik=;
+        b=MOyTUYWQeZksu8TfHiYAhyumSz0TmukXEQ7deus9vsCRX8ldyY2XF0NBHkE2uBG36h
+         pv7gqSHL4fvF4+3BCo1egvgCM1iwULSzDQTkWh/JEKbNIOL7H6h/rK3GVDRaZ16lqD7G
+         iCrkV5OfntCUy66pR+6Ciq/Q3497g8OPpb1JRZYtSzpX7IcVgZLSmMBUPhvcFZApE05B
+         14BvrL+Vu009hfYCrENTHJ9BhIlNKfRr2cVUgX1X0Lfs14Ffb3ZU6Jg4bByRzXSVLZ02
+         fuUNsH7Qqz5gBFN9Ivx5mPh7esFLHXtBnuBmoTL0hDG+q/wFmVL655tioQgAPo3PRc28
+         OXDw==
+X-Gm-Message-State: AC+VfDy5xZrFQgmPuKWPFhE/nUnSdMdQFsg+q8AGDWRchPJCdffsKLUY
+	ZL+CXbla/Pz/7nWQILmCyHRw4A==
+X-Google-Smtp-Source: ACHHUZ7a+j5H+4n877373TAsr1A1hwAPC3YrdKs+go0xqZQRXTvLCs8FQzyxfAYg3gC+80JnFGDtfA==
+X-Received: by 2002:aa7:ca4f:0:b0:514:a016:9cd1 with SMTP id j15-20020aa7ca4f000000b00514a0169cd1mr140984edt.8.1685633572310;
+        Thu, 01 Jun 2023 08:32:52 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.199.204])
+        by smtp.gmail.com with ESMTPSA id y2-20020a50eb02000000b0050488d1d376sm7361686edp.0.2023.06.01.08.32.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 01 Jun 2023 08:32:51 -0700 (PDT)
+Message-ID: <c49f5619-286c-fbb7-0f18-5869527081c8@linaro.org>
+Date: Thu, 1 Jun 2023 17:32:49 +0200
 MIME-Version: 1.0
-X-Mailer: b4 0.12.2
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v2 3/3] dt-bindings: phy: realtek: Add the doc about the
+ Realtek SoC USB 2.0/3.0 PHY
+Content-Language: en-US
+To: =?UTF-8?B?U3RhbmxleSBDaGFuZ1vmmIzogrLlvrdd?= <stanley_chang@realtek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ Flavio Suligoi <f.suligoi@asem.it>,
+ Mathias Nyman <mathias.nyman@linux.intel.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Ray Chi <raychi@google.com>,
+ Michael Grzeschik <m.grzeschik@pengutronix.de>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+References: <20230525022617.30537-1-stanley_chang@realtek.com>
+ <20230525022617.30537-3-stanley_chang@realtek.com>
+ <0b2143ca-ead7-c8fa-2e80-a94222af51ca@linaro.org>
+ <ee65a9d6d40d4099987db5ff1ad1753f@realtek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <ee65a9d6d40d4099987db5ff1ad1753f@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230601_071249_550594_5E44B9D9 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230601_083254_563594_E61F1E90 
+X-CRM114-Status: GOOD (  17.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,48 +105,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On Tue, 30 May 2023 09:38:01 +0200, Neil Armstrong wrote:
-> The Amlogic G12A, G12B & SM1 SoCs embeds a Synopsys DW-MIPI-DSI transceiver (ver 1.21a),
-> with a custom glue managing the IP resets, clock and data input similar to the DW-HDMI
-> glue on the same Amlogic SoCs.
-> 
-> This adds support for the glue managing the transceiver, mimicing the init flow provided
-> by Amlogic to setup the ENCL encoder, the glue, the transceiver, the digital D-PHY and the
-> Analog PHY in the proper way.
-> 
-> [...]
-
-Thanks, Applied to https://anongit.freedesktop.org/git/drm/drm-misc.git (drm-misc-next)
-
-[06/17] dt-bindings: display: add Amlogic MIPI DSI Host Controller bindings
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=0628f2341e96213c9f2d074853b255f65acd3795
-[07/17] dt-bindings: display: meson-vpu: add third DPI output port
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=25b3b35cd51ef0d98165666d250a51f39db6a1fc
-[08/17] drm/meson: fix unbind path if HDMI fails to bind
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=6a044642988b5f8285f3173b8e88784bef2bc306
-[09/17] drm/meson: only use components with dw-hdmi
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=44e16166e0e9b94d8bcdf55fc0e5fcceca1154f0
-[10/17] drm/meson: venc: add ENCL encoder setup for MIPI-DSI output
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=51fc01a03442cce5e4c21375a1ceb2e4ec93c833
-[11/17] drm/meson: add DSI encoder
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=42dcf15f901c8222352da31d622b4ee844068f42
-[12/17] drm/meson: add support for MIPI-DSI transceiver
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=77d9e1e6b8468f701ab024a060aa9c0339356870
-[13/17] drm/panel: khadas-ts050: update timings to achieve 60Hz refresh rate
-        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=29c6df0d942454cb43334cf0e36de068f4124b94
-
--- 
-Neil
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMDEvMDYvMjAyMyAxMjo0OSwgU3RhbmxleSBDaGFuZ1vmmIzogrLlvrddIHdyb3RlOgo+IEhp
+IEtyenlzenRvZiwKPiAKPj4gVGhhbmsgeW91IGZvciB5b3VyIHBhdGNoLiBUaGVyZSBpcyBzb21l
+dGhpbmcgdG8gZGlzY3Vzcy9pbXByb3ZlLgo+Pgo+PiBBY3R1YWxseSBhIGxvdC4uLiBUaGUgYmlu
+ZGluZ3MgYXJlIG5vdCBzdWl0YWJsZSBmb3IgcmV2aWV3Lgo+IAo+IFRoYW5rcyBmb3IgeW91ciBw
+YXRpZW5jZSBpbiByZXZpZXdpbmcgbXkgcGF0Y2hlcy4KPiAKPiBNb3N0IG9mIHRoZSBwcm9wZXJ0
+aWVzIGFyZSBhYm91dCB0aGUgcGh5IHBhcmFtZXRlcnMuCj4gSXMgdGhlIHBoeSBwYXJhbWV0ZXIg
+ZGF0YSBzdWl0YWJsZSB0byBiZSBwbGFjZWQgaW4gRFRTPwo+IEkgcmVmZXJlbmNlZCBvdGhlciBw
+aHkgZHJpdmVycy4gCj4gVGhlc2UgcGFyYW1ldGVycyBzaG91bGQgbm90IGJlIGRlZmluZWQgaW4g
+ZHRzLgo+IEkgd291bGQgbW92ZSB0aGUgcGFyYW1ldGVycyB0byB0aGUgZHJpdmVyLgoKSWYgdGhl
+c2UgY2FuIGJlIGluIHRoZSBkcml2ZXIsIHdoeSB3b3VsZCBldmVyIHRoZXkgYmUgaW4gRFRTIGlu
+IHRoZQpmaXJzdCBwbGFjZT8KCj4gCj4+PiArICByZWFsdGVrLHVzYjoKPj4+ICsgICAgZGVzY3Jp
+cHRpb246IFRoZSBwaGFuZGxlciBvZiByZWFsdGVrIGR3YzMgbm9kZQo+Pgo+PiAicGhhbmRsZXIi
+PyBFeGNlcHQgb2J2aW91cyB0eXBvLCBkcm9wICJUaGUgcGhhbmRsZXIgb2YiIGFuZCBkZXNjcmli
+ZSB3aGF0IGlzCj4+IGl0IGZvci4KPiAKPiByZWFsdGVrLHVzYiBpcyBhIHBoYW5kbGUgb2Ygc3lz
+Y29uIHVzZWQgdG8gY29udHJvbCByZWFsdGVrIGR3YzMgcmVnaXN0ZXIuCgpUaGVuIG5vLCBwaHkg
+c2hvdWxkIG5vdCBjb250cm9sIGR3YzMuCgo+IAo+Pj4gKyAgICAkcmVmOiAvc2NoZW1hcy90eXBl
+cy55YW1sIy9kZWZpbml0aW9ucy9waGFuZGxlCj4+Cj4+IEFueXdheSwgaXQgc2hvdWxkbid0IGJl
+IGhlcmUuIE5vLCBuby4KPiAKPiBDYW4gSSB1c2UgaXQgZm9yIHBoYW5kbGUgb2Ygc3lzY29uPwoK
+UEhZIGdldHRpbmcgcGhhbmRsZSB0byBibG9jayB1c2luZyB0aGlzIFBIWT8gTG9va3Mgd3Jvbmcu
+IFdoeSB3b3VsZCBQSFkKbmVlZCB0byBwb2tlIElQIGJsb2NrIHJlZ2lzdGVyPwoKCkJlc3QgcmVn
+YXJkcywKS3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
