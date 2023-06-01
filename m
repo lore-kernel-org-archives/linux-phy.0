@@ -4,84 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5B1BC7EE2A
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 17:27:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9162CC7EE23
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jun 2023 20:13:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=986ZI7jH6nz3etGzcM4wjaxLpdDuYGgkZautoe96D2A=; b=bRUfuVKK/REfCM
-	2s5DdqCQDWFfJmj0izFvefLeIOEOLsqP3Qw4fhhvO84LallS8iw3/JDWKYSPy3LT8jHa581xANd80
-	OMAIWrcAhjGRbBmAtY77Xij4nTUDpeCQaFz8Qft+tZ8HFBSMNhqrutaodqfg0Sm9qvB2i0BqJ2JtF
-	djOI97MrQIK7qvYweLRMRR1pGw2UMCruVnrD6EKm3bUBQ0vhPitr7ncWnjVNznOWSAIATxHeprty2
-	8CI1mxJDUrNZQFlJZ2GcWYxkgE3Nu6tm8ddVqdyTmn9BUIpJfKJU/X/ZhCRXYV0WKvA5rmwKfBX43
-	WV3BlyywqnzrPibo0I9w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eaFQkomDnK3A/7+1Eu/wTTXZ3BKUxD1aX0QVbkiF+Qg=; b=zxGPGZBDcssSEvMtmP4NiU18Mi
+	wBlfE50jPWA8YFlIh1M3UJy+V/HoPrWUhYJXzOlS0uT7TmlLskuX3zstEzkQaRgckgi8Zw4Pd+wn7
+	L3/Kx7ERcRh/o5uz1FerYLBuePkcohUVsnYKRp8ZECRLFBbj0OwfMJ7pvgDDXttoOB+oTNbqyusc1
+	Y5zSSMGcJuDZO1Zcf9tURj6bERakRF7Eh2iT1KwJBsJn/nwblS03hXkrYeGmFs5I8K68Tcpk8KHT1
+	ii9fyDJppDKSae7VIvcrZqSESX6kxeOPqZ6TaZyA/54e5nFGCBkKo2gavWl9ck41IxJOvi43KJkuU
+	xaaA2cNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4m59-004PgQ-1B;
-	Thu, 01 Jun 2023 17:27:27 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1q4og4-004pki-0e;
+	Thu, 01 Jun 2023 20:13:44 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q4m56-004PeP-2L
+	id 1q4og0-004pjo-3B
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Jun 2023 17:27:26 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-96f7bf3cf9eso170337666b.0
-        for <linux-phy@lists.infradead.org>; Thu, 01 Jun 2023 10:27:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685640441; x=1688232441;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ywHAd7umX8c1mvBvuckFfVUydEsgHA+GJNFS0AltCkY=;
-        b=BgGNoDLofuERQiTZN/lQ0c7R8WrONxNiD/F9UORGVlGQ/z0mw+rldKvQjq8D/q7V86
-         qkWwITW330snlXH76bz7qIY4w/OEW/xj8R25shaX5GcmhgGi75ZvWSdO9icgK/GNu70f
-         ccEIkX7g9y80DYcHIWIvpAhoQ3o0besVhoTD4o3D6Zk+JIP0C06YJ/bAe4qqbZslnFtO
-         KPO1nbInLw29zJZgTCYQObWX1RPwQBuaVvFtn9Sqm2bkXOg/vM3dtZDSR1JTPNS6qSnl
-         rVa6nhocKOHe+Xo4nib4MUyxPaO5PYVOBWxLd7TMb1pEmt/cogsGaPZxO35Ow2lxrALe
-         O/iQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685640441; x=1688232441;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ywHAd7umX8c1mvBvuckFfVUydEsgHA+GJNFS0AltCkY=;
-        b=GVI4HsHkmtY0PD8htIF4gbV3BgT3HOPkFiPint1dI/qFqgzRS6GIN3/I/SActeVXDL
-         qRdoImD/qWSr9EXQTG5wsgTGPTUOzT+JV/VBXDDVRA8xGdw3zCKQvcHFpPCr2s/XRrMd
-         ouPe2DqiUKQq79gJVdoRYiWwIpRF7X9xlzUZND37sX5fTjteBJz0VAz0XkoSeIiIeSi/
-         vTOecwDmncQ1zCGisxT4vWvQ/3Qz0P3YKroLb1oa4G6lTN8YcSil2icka5+ua2G4SdUu
-         mgxqT4+pqAzugpSNHXgC9aIZmJQRwf0D2Oqu3bk5IR2ls5gW7NfY47pVChf0Cf8S+4vi
-         +eFA==
-X-Gm-Message-State: AC+VfDw86VO1H2GL1cp+lbC8T+UUT8TV/3Bq3rN10qgXtNci46SMknL5
-	s46n/PQCVLVbqorMh23TLL3dvw==
-X-Google-Smtp-Source: ACHHUZ6VsFFYuiOtcvmekbYesmy2WkkSPy+SmgogYFK66VXaWe3UBLyCCmqvWDQLlcaV3532Bqv9Kw==
-X-Received: by 2002:a17:906:4fc7:b0:96f:c988:941 with SMTP id i7-20020a1709064fc700b0096fc9880941mr8516840ejw.15.1685640441032;
-        Thu, 01 Jun 2023 10:27:21 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.199.204])
-        by smtp.gmail.com with ESMTPSA id gt5-20020a170906f20500b0094ee700d8e4sm10846983ejb.44.2023.06.01.10.27.19
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 01 Jun 2023 10:27:20 -0700 (PDT)
-Message-ID: <21819d30-1df4-15a9-f458-32162f2a82b9@linaro.org>
-Date: Thu, 1 Jun 2023 19:27:18 +0200
+	Thu, 01 Jun 2023 20:13:42 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 85E466478E;
+	Thu,  1 Jun 2023 20:13:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51289C43443;
+	Thu,  1 Jun 2023 20:13:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1685650420;
+	bh=DCSJXIhqlYYsF0jNkPfKzV5MfwJ9SAulhFSDDwt8Qu0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UVty/LniZ4Eoxr0CcFWpQoP2bAkQ1mhsCOQqj4ha1ew5zBwoHHjDYmCdN/Ak2d/dJ
+	 cjMdf+VqC2k8mlHM97czldDGclv4vyblevvuCSZdMiF5oBc0G0ehqJArE/0N6gl6Hb
+	 H7EeaAkIY1SDGnH5Qh8VLw8i3mj2MRMIGw41D2HAuIciKuMBHWBKcvYi+ctUaO7Mpx
+	 d3fsqN8NZ0H+z4Ruz7X9YhWYVS4qKEX5/SqVNxi4lSO+Cgb3/XpdwvKZ+KHGctcOqV
+	 l4+uHUlRWAHFh2fLi7C7p2XCoAh1kyI2Birw2cGQu/wwzivUTcIpJwAg9rSVgnSzxN
+	 8tFGadTrIX/DA==
+Date: Thu, 1 Jun 2023 21:13:33 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Stanley =?utf-8?B?Q2hhbmdb5piM6IKy5b63XQ==?= <stanley_chang@realtek.com>
+Cc: Conor Dooley <conor.dooley@microchip.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Flavio Suligoi <f.suligoi@asem.it>,
+	Mathias Nyman <mathias.nyman@linux.intel.com>,
+	Douglas Anderson <dianders@chromium.org>,
+	Matthias Kaehlcke <mka@chromium.org>, Ray Chi <raychi@google.com>,
+	Michael Grzeschik <m.grzeschik@pengutronix.de>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+Subject: Re: [PATCH v2 3/3] dt-bindings: phy: realtek: Add the doc about the
+ Realtek SoC USB 2.0/3.0 PHY
+Message-ID: <20230601-starry-nurture-5aecf1f332ac@spud>
+References: <20230525022617.30537-1-stanley_chang@realtek.com>
+ <20230525022617.30537-3-stanley_chang@realtek.com>
+ <20230529-impurity-dismount-bca5c9100c9b@spud>
+ <44015844858c42a79e0e7f9207d01496@realtek.com>
+ <202305310146.34V1kevI7026106@rtits1.realtek.com.tw>
+ <96a7905208c148debe3791636034a038@realtek.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT schema
- format
-Content-Language: en-US
-To: Xu Yang <xu.yang_2@nxp.com>, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org, jun.li@nxp.com
-References: <20230601080723.1556461-1-xu.yang_2@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230601080723.1556461-1-xu.yang_2@nxp.com>
+In-Reply-To: <96a7905208c148debe3791636034a038@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230601_102724_765658_1A687DED 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20230601_131341_111704_14A4EE09 
+X-CRM114-Status: GOOD (  32.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,146 +89,120 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5709806023828294781=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01/06/2023 10:07, Xu Yang wrote:
-> Convert the binding to DT schema format.
-> 
+
+--===============5709806023828294781==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="oafWaJor0Kq+VBSZ"
+Content-Disposition: inline
 
 
-Thank you for your patch. There is something to discuss/improve.
+--oafWaJor0Kq+VBSZ
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Jun 01, 2023 at 02:24:28AM +0000, Stanley Chang[=E6=98=8C=E8=82=B2=
+=E5=BE=B7] wrote:
+> Hi Conor,
+>=20
+> > > > You have device-specific compatibles, which is great, but you also =
+allow
+> > > > only those two generic ones. I had a _brief_ look at the driver, an=
+d it
+> > > > seems like there is no decision making done based on the compatible=
+s,
+> > > > only on the properties. Is that correct?
+> > > > If it is, I would understand having "realtek,usb3phy" as a fallback
+> > > > compatible for "realtek,rtd1619-usb3phy", but I do not get the curr=
+ent
+> > > > setup.
+> > >
+> > > This driver is compatible with all Realtek RTD SoCs without specifyin=
+g different settings.
+> > > So use "realtek,usb3phy" as fallback compatible for all SoCs.
+> > > This is the compatible name we use.
+> > > Other compatible names simply indicate that the driver supports the S=
+oCs.
+> >=20
+> > Then you should write the binding such that having fallback compatibles
+> > is permitted. Try plugging
+> > compatible =3D "realtek,rtd1295-usb2phy", "realtek,rtd-usb2phy", "realt=
+ek,usb2phy";
+> > into your example below and see what happens.
+> >=20
+> > > The name "usbNphy" and "rtd-usbNphy" seem to be more generic for all =
+RTD SoCs,
+> > > but they are not device-specific compatible.
+> > > Do you have a better suggestion?
+> >=20
+> > Write the binding so that having fallback compatibles in the DT actually
+> > works, don't add the SoC-specific ones merely as indicators that those
+> > SoCs are supported and don't permit "realtek,usbNphy" or
+> > "realtek,rtd-usbNphy" in isolation ;)
+> >
+>=20
+> As far as I understand what you mean.
+> I should follow other docs to define compatible.
+> Reference:
+>   Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+>   drivers/phy/mediatek/phy-mtk-xsphy.c
+>=20
+> For example:
+>=20
+>   compatible:
+>     items:
+>       - enum:
+>           - realtek,rtd1295-usb2phy
+>           - realtek,rtd1395-usb2phy
+>           - realtek,rtd1619-usb2phy
+>           - realtek,rtd1319-usb2phy
+>           - realtek,rtd1619b-usb2phy
+>           - realtek,rtd1312c-usb2phy
+>           - realtek,rtd1319d-usb2phy
+>           - realtek,rtd1315e-usb2phy
+>       - const: realtek,usb2phy
+>=20
+> examples:
+>   -
+>     dwc3_u3drd_usb2phy: dwc3_u3drd_usb2phy@98013e14 {
+>         compatible =3D "realtek,rtd1319-usb2phy", "realtek,usb2phy";
+>  =20
+> And use only "Realtek, usb2phy" in the driver.
+> static const struct of_device_id usbphy_rtk_dt_match[] =3D {
+>         { .compatible =3D "realtek,usb2phy", },
+>         {},
+> };
+
+Yes, this would be a vast improvement, thanks.
+
+--oafWaJor0Kq+VBSZ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZHj77QAKCRB4tDGHoIJi
+0rr9AQCJvO7utcVmJn6jLUWkmuB24q/OS1WxIkdUIU9nFqMwCAEAjyvUtBKHzjkE
+0gbFxWfaaRIrhWYzxPppdQHgaYpl2QU=
+=mWjQ
+-----END PGP SIGNATURE-----
+
+--oafWaJor0Kq+VBSZ--
 
 
-e/bindings/phy/mxs-usb-phy.yaml
-b/Documentation/devicetree/bindings/phy/mxs-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..48b0e654e52c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/mxs-usb-phy.yaml
-
-Filename matching compatibles, so for exmaple fsl,mxs-usbphy.yaml.
-
-> @@ -0,0 +1,97 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/mxs-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale MXS USB Phy Device
-> +
-> +maintainers:
-> +  - Xu Yang <xu.yang_2@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - fsl,imx23-usbphy
-> +          - fsl,vf610-usbphy
-> +      - items:
-> +          - enum:
-> +              - fsl,imx28-usbphy
-> +              - fsl,imx6ul-usbphy
-> +              - fsl,imx6sl-usbphy
-> +              - fsl,imx6sx-usbphy
-> +              - fsl,imx6q-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - enum:
-> +              - fsl,imx7ulp-usbphy
-> +              - fsl,imx6sll-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - const: fsl,imx8dxl-usbphy
-> +          - const: fsl,imx7ulp-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +          - const: fsl,imx23-usbphy
-
-I cannot find these in the old bindings. Please explain changes to
-conversion in commit msg. So far you wrote that it is pure conversion.
-
-> +
-> +  reg:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  interrupts:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  fsl,anatop:
-> +    description:
-> +      phandle for anatop register, it is only for imx6 SoC series
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    maxItems: 1
-> +
-> +  fsl,tx-cal-45-dn-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DN output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-cal-45-dp-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DP output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-d-cal:
-> +    description:
-> +      Current trimming value (as a percentage) of the 17.78 mA TX
-> +      reference current.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 79
-> +    maximum: 119
-> +    default: 100
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +
-
-missing allOf narrowing anatop to imx6. Also interrupts and reg should
-be narrowed to respective variants.
-
-> +unevaluatedProperties: false
-
-Instead additionalProperties: false.
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    usbphy1: usb-phy@20c9000 {
-> +        compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
-> +        reg = <0x020c9000 0x1000>;
-> +        interrupts = <0 44 IRQ_TYPE_LEVEL_HIGH>;
-
-Is 0 known flag? Use defines for it.
-
-> +        fsl,anatop = <&anatop>;
-> +    };
-> +
-> +...
-
-Best regards,
-Krzysztof
-
+--===============5709806023828294781==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5709806023828294781==--
+
