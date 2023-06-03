@@ -4,84 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ABB2C7EE24
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Jun 2023 13:15:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBE18C77B73
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Jun 2023 19:10:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EPFFpenvJwDkgS7+/h+wpf2VF7PG9RYwu3+y6rPzvjk=; b=Yqj3CKQLqLktES
-	tt+MnUfFqm6Z8iGWXkRrXd/TToL9Mzu/um7hJjV7cbc5ZwYnLSckjagSuafjVLtnVR23/zVPVwIDr
-	KR+WUSiz7bIWxFsWpRp+BWa9KSL9VEw84dSLsTUKgaQ5DL3D1kseN8b4J/WrDBuUKs6B0yiNlfxrv
-	Kvu79VXFfZPipF7iTz0Bj8TnjiradOs1fAOB176/xT0AlXPKP5SWEvnaV8rteMfcxhQGjdaH6en/W
-	Yu5+PL6DlxR6CPKSBazBRyrH4tUA0dhzGR9qk8HdkoAx/1NZhI5u8lserJ9YSv/CnHHJ7Udhs0i/c
-	f+jL8FKcI6QsPQL9gVcg==;
+	List-Owner; bh=o9jIS+OsnDQOuchatyxUPzzfHO3A11Gpwz3WexddV44=; b=gsZhjXqdO7+m6+
+	N0O04DP0BnJ6WWyjeJ3t1aKimixaBgvhpJIu6xsTYrwStEP0XtRQuVvGnua4jfQ2ekNUopO9E0C4c
+	aQjV+tnY2ke6EsloIZ722WuPuA3qZvyZfavvV0htH4WpSuiqrkbRUegg2o2KbzB+RpydjAmslmY1n
+	rwTJWVVG9JdwHduoneXH7iztVY6dG0AwUzk3+Sd/JpsJ9on5QpuxIXOY9BRhvWiRArFDTauFyOt1u
+	cQgtCao0xl9nhMn7n/v4Cy6m53Z3fCjU1SGENWpAfOXMSCLysLMTh+Fr4bso0t9cufw0F9GcjYApT
+	N9djrGXSDW4W4bem1o3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q54cr-006yW8-2I;
-	Fri, 02 Jun 2023 13:15:29 +0000
-Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
+	id 1q5Wdf-00AOE5-08;
+	Sat, 03 Jun 2023 19:10:11 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q54co-006yUL-1J
+	id 1q5WdY-00AOC5-2h
 	for linux-phy@lists.infradead.org;
-	Fri, 02 Jun 2023 13:15:28 +0000
-Received: by mail-ed1-x52a.google.com with SMTP id 4fb4d7f45d1cf-514953b3aa6so2810578a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 02 Jun 2023 06:15:21 -0700 (PDT)
+	Sat, 03 Jun 2023 19:10:07 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-51456392cbbso9446777a12.0
+        for <linux-phy@lists.infradead.org>; Sat, 03 Jun 2023 12:10:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685711720; x=1688303720;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:from:user-agent:mime-version:date:message-id:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=DoxSQc1MYJxdASn/j5T3GqnNf7NdGSBlZSYtkdHFO6w=;
-        b=Bt13asXhpMupK2gnrz9Ad4xWSJmCylXAZBfJrKSm2ZseGZeiEi7XmT36b4LpdFkkJh
-         iD3dcQG+FRSCbT/9Gu8L7EoFmjWu7cqnL1NkxEQoYaQ4vU4c2alz9teIsWevkytmOw+Z
-         rFVtNFTPhG27EpYOx9DLfqC656dicazUWWETY08AerzgaGGNRmSmOlSIxCRLgZ2N3BM6
-         xElYJe5u54hPeSd4YtPx0PXEbcntopMroJVmpvLLzB/nLEcbO3hvq4Nfo62K26IJ8sZN
-         YXvNb3E8v+Iw4J6bBQaPI0G5vbMeiTpXE+3+ghBcpPYNBVBZWVV43RKViVXapYnkynXi
-         AdzA==
+        d=linaro.org; s=google; t=1685819402; x=1688411402;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=c/1fXZdlFrD4ZTMnSyIek5ravNGSg+bm7NeK4UcfZ5I=;
+        b=P5/7J6TXhanwBYs0mXaJydYnywL4bWCLmJ010pLWwXwt7htvJiAdmc6U2yURnZw80Z
+         kAeSWmUiZdlN0SoCXytxtVPMogIax/7QPJvluO0bvV/W9kcY+T/kSua6jhGLj205ss+q
+         9UY/aIVxevdATQhU+kCPFukEZUJRH1RatyM+VCzeZi/e+SxwI6FS/IV3I91J0wKffBxm
+         vnFNaMGDqP9dnlFK3b7kUIha5eF8a0ZNNDMEvsUN5ved6w8x0oSl49OJzfRqKikwrUbI
+         z2X2LJrX/Vo5wrDWkJFuzoJK20XpftCfaT+7kHr3iqslpJ413SXnI5q1dgI5hqCsdJPB
+         IGYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685711720; x=1688303720;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:from:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1685819402; x=1688411402;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=DoxSQc1MYJxdASn/j5T3GqnNf7NdGSBlZSYtkdHFO6w=;
-        b=TxTtkztI5f6I49PSAuM/oAEZhug+gYLq3/msP4N2PGvpvhagTQPspVTIab4O8GHgD9
-         aAnogcS6IV8m8++HdK6nVLcFaM7EerYREm5rhuJ/H2ZHuu/VeFVB36auWATTcdk5Cspr
-         qQXo+eoHL9+NxfzpMcUOBgGwSmiSy/0CUyoMshnui4ycrBjIMnETzy/wMxP6oErp2NNK
-         EgM8UB6mTvOTqovCOcGeSxVJxuqGl+416CO91c/ThlSDevwHKLljJpM1DMZ122wdwOjz
-         ZcA7Eiiymp0oDttgQECbMWiGKZQF02TJa+MYLZ+y7ySGqILjTXUqm0cfEWSZeJZgd2Aa
-         hEFw==
-X-Gm-Message-State: AC+VfDyCeB0+pufTWNcKMXCh1esrXh5n2L8FEbwjUYH+dxyxlY3dOSpc
-	9Ve+OpGiqZbmK+eO65zZxspVxQ==
-X-Google-Smtp-Source: ACHHUZ5/PuNFNjq7JBB3HS5a933num/hOxjo3wal9RwgdiUS55cNFnhg/+vZM+ylE0qTXJkQ9P6MpA==
-X-Received: by 2002:aa7:da42:0:b0:510:e80f:fa4e with SMTP id w2-20020aa7da42000000b00510e80ffa4emr2141577eds.1.1685711720149;
-        Fri, 02 Jun 2023 06:15:20 -0700 (PDT)
+        bh=c/1fXZdlFrD4ZTMnSyIek5ravNGSg+bm7NeK4UcfZ5I=;
+        b=hTM1GSnDVOJiceZvv3yCsQw/RsRUhsx0ahYYAtUVzbdPhfPLmGnGaWo5KKmK8bmCZG
+         ajDaz8vP0yJYj+PWeDrHrZnW4q7SpHLQH6g3hSL1rkd4wO9hmcOZEg3RZeBnaPqIXsCp
+         dOO/dKtApGncs0V5pCHs3e3FOI5fiiLSeKMjIOwagG9nTWkSrM/dTEpS2eWJzGGBhi0h
+         ktWkwfxMhzlA7N7HAEfTOUgGgN0UEKBTLmSemRrWgPlF5wErljH4dBmGR/Sgwc71dPFP
+         HjIJ0CfgY1d8Z6bUStX5zi1B2Dc5te6Hrm8xNvYS2+SPxfFL2pdSpPCoC756Dx4ZmW3l
+         O9Zw==
+X-Gm-Message-State: AC+VfDyntkjVxTWoFNNkprmlYTSYfVVl5BMpGExjLPWmbEyLwgnKndJT
+	WH6ufciqFBe9jlXcF7FPECo4IA==
+X-Google-Smtp-Source: ACHHUZ4RopHcJJ7GF3SSU2ePLu5DlX+l9IkWhVj+EuFjvR5yyF0baMdpGCWtH8xOXILm4qx46Z8pUw==
+X-Received: by 2002:a17:906:5d0a:b0:974:5bd2:1807 with SMTP id g10-20020a1709065d0a00b009745bd21807mr2096976ejt.24.1685819401691;
+        Sat, 03 Jun 2023 12:10:01 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.199.204])
-        by smtp.gmail.com with ESMTPSA id g16-20020a056402181000b005149cb5ee2dsm662133edy.82.2023.06.02.06.15.18
+        by smtp.gmail.com with ESMTPSA id bi1-20020a170906a24100b009664cdb3fc5sm2218126ejb.138.2023.06.03.12.09.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 02 Jun 2023 06:15:19 -0700 (PDT)
-Message-ID: <a1c109c9-9cf7-be76-df8f-74259559acb7@linaro.org>
-Date: Fri, 2 Jun 2023 15:15:16 +0200
+        Sat, 03 Jun 2023 12:10:01 -0700 (PDT)
+Message-ID: <d354734e-c8d1-2d75-fec4-e91bb322bbe2@linaro.org>
+Date: Sat, 3 Jun 2023 21:09:58 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.11.2
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT schema
- format
-To: Xu Yang <xu.yang_2@nxp.com>, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org, jun.li@nxp.com
-References: <20230601080723.1556461-1-xu.yang_2@nxp.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: add PHY_TYPE_CDPHY definition
 Content-Language: en-US
-In-Reply-To: <20230601080723.1556461-1-xu.yang_2@nxp.com>
+To: Julien Stephan <jstephan@baylibre.com>
+Cc: mkorpershoek@baylibre.com, khilman@baylibre.com,
+ Andy Hsieh <andy.hsieh@mediatek.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>
+References: <20230524083033.486490-1-jstephan@baylibre.com>
+ <20230524083033.486490-2-jstephan@baylibre.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230524083033.486490-2-jstephan@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230602_061526_449570_B00C57C7 
-X-CRM114-Status: GOOD (  15.36  )
+X-CRM114-CacheID: sfid-20230603_121004_899339_C6919CBE 
+X-CRM114-Status: GOOD (  14.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,136 +106,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Resending as my previous email probably got lost. If you got it twice,
-apologies.
-
-On 01/06/2023 10:07, Xu Yang wrote:
-> Convert the binding to DT schema format.
+On 24/05/2023 10:30, Julien Stephan wrote:
+> Add definition for CDPHY phy type that can be configured in either D-PHY
+> mode or C-PHY mode
 > 
+> Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+> ---
+>  include/dt-bindings/phy/phy.h | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
+> index 6b901b342348..a19d85dbbf16 100644
+> --- a/include/dt-bindings/phy/phy.h
+> +++ b/include/dt-bindings/phy/phy.h
+> @@ -23,5 +23,6 @@
+>  #define PHY_TYPE_DPHY		10
+>  #define PHY_TYPE_CPHY		11
+>  #define PHY_TYPE_USXGMII	12
+> +#define PHY_TYPE_CDPHY		13
 
-
-Thank you for your patch. There is something to discuss/improve.
-
-
-> new file mode 100644
-> index 000000000000..48b0e654e52c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/mxs-usb-phy.yaml
-
-Filename matching compatibles, so for exmaple fsl,mxs-usbphy.yaml.
-
-> @@ -0,0 +1,97 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/mxs-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale MXS USB Phy Device
-> +
-> +maintainers:
-> +  - Xu Yang <xu.yang_2@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - fsl,imx23-usbphy
-> +          - fsl,vf610-usbphy
-> +      - items:
-> +          - enum:
-> +              - fsl,imx28-usbphy
-> +              - fsl,imx6ul-usbphy
-> +              - fsl,imx6sl-usbphy
-> +              - fsl,imx6sx-usbphy
-> +              - fsl,imx6q-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - enum:
-> +              - fsl,imx7ulp-usbphy
-> +              - fsl,imx6sll-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - const: fsl,imx8dxl-usbphy
-> +          - const: fsl,imx7ulp-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +          - const: fsl,imx23-usbphy
-
-I cannot find these in the old bindings. Please explain changes to
-conversion in commit msg. So far you wrote that it is pure conversion.
-
-> +
-> +  reg:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  interrupts:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  fsl,anatop:
-> +    description:
-> +      phandle for anatop register, it is only for imx6 SoC series
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    maxItems: 1
-> +
-> +  fsl,tx-cal-45-dn-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DN output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-cal-45-dp-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DP output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-d-cal:
-> +    description:
-> +      Current trimming value (as a percentage) of the 17.78 mA TX
-> +      reference current.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 79
-> +    maximum: 119
-> +    default: 100
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +
-
-missing allOf narrowing anatop to imx6. Also interrupts and reg should
-be narrowed to respective variants.
-
-> +unevaluatedProperties: false
-
-Instead additionalProperties: false.
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    usbphy1: usb-phy@20c9000 {
-> +        compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
-> +        reg = <0x020c9000 0x1000>;
-> +        interrupts = <0 44 IRQ_TYPE_LEVEL_HIGH>;
-
-Is 0 known flag? Use defines for it.
-
-> +        fsl,anatop = <&anatop>;
-> +    };
-> +
-> +...
+I don't think there is CD phy. It is D-PHY or C-PHY. This is not for all
+possible combinations but just types of phy.
 
 Best regards,
 Krzysztof
