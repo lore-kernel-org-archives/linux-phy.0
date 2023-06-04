@@ -4,88 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 195B1C7EE2E
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Jun 2023 10:30:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20BCCC77B73
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Jun 2023 18:58:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qvsz8GRolodUjGoMkuVamnLOEqJsHrgwJQMQBhyILp8=; b=J8oaIk9x1MZ2pe
-	orK/3/iOnnI5+oeDd3RPzfD/UgAeDJNZXGsmq3DjErM2CB7iYOx269iUZdMMiH3+81Pv95tl4LTGP
-	wtNK4WC0lXNI1+paK2HWeuevd4mBN1sPrRJdVDll+Wz+QWg3vwU4V0tD2kWZo6VwZircBADWfjyJc
-	kblYHhFweT1cL8an4LqQbhBz3gzbOb/j4aUkZSsbBToEQfUO1VTiJwLsLEmBZkCBZ74G8RkkLZX4n
-	6zlI7EFOwTpZ+gas+2mjc5jQvfDdkY3xnR6jTjYkam5/GfoncAN/G4AnUy+82uh0J72Q8T6ym7Dh0
-	5J9wX7xTGXgEDyVvB/sw==;
+	List-Owner; bh=Ojfn80OJf+L5mjwAhizxMlBY+2YvLLWXQpwBBZcgK4A=; b=bIs4spyfPIJd3g
+	esrfvwhcrt7lJUG/ZlfbFfDqleVy28QHgX0vgv/ClGg/pK8JaOAQBk/mQwEgBlfSmaTqfTtRGFSV+
+	yfqepXWElH+2x+oqxl4r+Aw3uD+s0u5xJnnxrcgtsGQ4HJjxvOGEJ1miyLL8iT0Z2jkAv9ieCebyk
+	Tp69AIycjS2h57FPgXGlEc+iN8WS6zZXKYIOqFQfvMysipYXRVTQtSrorAv2G0mlSkH7G0eIh2xbO
+	DWFgpRq4Ii/Lg7FE1Dtn8B2G7+V8TIMyNeTp6YoR/+LdF+VsF3qfEu2TsedekzpNYQfONf0YO3gxk
+	XzOEbRDuzVdXJh42nzBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q5l0b-00BqHS-2O;
-	Sun, 04 Jun 2023 10:30:49 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1q5swK-00Cokm-29;
+	Sun, 04 Jun 2023 18:58:56 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q5l0Z-00BqFX-0h
-	for linux-phy@lists.infradead.org;
-	Sun, 04 Jun 2023 10:30:48 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-977c8423dccso185584466b.1
-        for <linux-phy@lists.infradead.org>; Sun, 04 Jun 2023 03:30:45 -0700 (PDT)
+	id 1q5swH-00Cojv-1O;
+	Sun, 04 Jun 2023 18:58:54 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-4f6255ad8aeso636490e87.2;
+        Sun, 04 Jun 2023 11:58:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1685874644; x=1688466644;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=h3vNtqVcROm9cmZSGS8p4DNNUaV8+gQlhQTyNTjrVxA=;
-        b=sIAWbBAdGBryZiwlY/mxdtpBJH501zroa5MrYPht8XNpeAuh3rCyvqrasCFIOIzj3Y
-         ZSthWz30e9fCXpHBTQBqC9N8QevoGrxDGC3QqnusdLiNQg4cNeQ/DPmuu2Ocksp+Z+U1
-         lPgQKtqcEYhr3kG0EDbhVFPpizaeRKwlD9u1+7BHwiKUR45OH5lh4fa86EjKtHvP4T5H
-         aeX/xUxZLk/HHp47e9zJBgLwbxDkrLo5X02HbARjsTK/AAt8oD/6Jp+ZDWJSR0AQcmpt
-         gZg2NXBSq5A3R6Mzxc6VR4jhonHy0N2GMBbThuna3Tszq7PDt5HGXCDIDGMVMCFRYsED
-         8Vjw==
+        d=gmail.com; s=20221208; t=1685905131; x=1688497131;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=0uLDA7fQ1eFEBxyVgNGzB8pTMv55u419IbeoR7nu4AQ=;
+        b=MuCQKaUvVjjMXgniF8sNia9BsE7FRRYHz4Pk2pNq+aYgc4wvJ8CTRJGdo+nbfVftES
+         0hxG70Lob7NRmTRU/wZ7rFKxlOHaf+bLZfEXsEHXlPGGnwIjbHOxuqPlb+PCb1k9uFZB
+         L067AQi559bjdLcW3ShTD9ijZydSFUoyLMjtjHd+0mubagCLzd4hAEVcMoWANSfs0b/0
+         +W0q6iQxWYUZkysfY/GD86Xy8xsPmbE8VxSSF5ZMDRLJazBN7VWS/j7DZ7q1eciJgMeD
+         e38B0pNnrSxkLEjE7kMJYpSX1Eadx7Fb8cWNM3+6zrihsL6oC318QsCO7fOK365jKiHb
+         9UOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1685874644; x=1688466644;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=h3vNtqVcROm9cmZSGS8p4DNNUaV8+gQlhQTyNTjrVxA=;
-        b=fmQ8SdOwJkViT8MVmkA1oGUuykbbZo05x9jlILh7r72sMdzVSubRwYmh92F8MRzNPP
-         QPztf67rqHbExZTsYDx22uoBUW7PDAzTwCwfDmRB0GiZqrUxOZVni+ULb/IJEFeaiVar
-         df9TNAYDOMVZNeZfjSbPj7ufs67FSjUYzuKoqB9NUoquzhZ6KRVnmBRZN1e+wOB1rrCL
-         ZkUvXDAPFugsuzKGPQdK4A0l9O8NxcmTlKjB2ng0zGqsnJ6juP+VEZluHRzTj3Qdey3P
-         0TJnj2nb20EWZQcq/NYGZrO/4mBPGCGrDRTefKIfVEO87woPAkDFApu5t/o1anWuJYEy
-         lLKA==
-X-Gm-Message-State: AC+VfDypQ6CO/juAVg4UGyW/a72zloS2DW97eYSfwIVd0IWvpu6lVzuh
-	HaiWXvuhUpX6nfLn42L431PnFA==
-X-Google-Smtp-Source: ACHHUZ4u0X18Wv6y5mJX9vW4ELGhL1rGBQ1iVfd46vcj0kfhIfImleIiVNDPTsUMG7E9UKpX3WbtOg==
-X-Received: by 2002:a17:907:6d86:b0:96f:94f1:b0a5 with SMTP id sb6-20020a1709076d8600b0096f94f1b0a5mr3247852ejc.8.1685874644395;
-        Sun, 04 Jun 2023 03:30:44 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.199.204])
-        by smtp.gmail.com with ESMTPSA id sd17-20020a170906ce3100b0095fbb1b72c2sm2910853ejb.63.2023.06.04.03.30.42
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 04 Jun 2023 03:30:43 -0700 (PDT)
-Message-ID: <3c781ae6-4a45-1d6d-840c-d25f33684b00@linaro.org>
-Date: Sun, 4 Jun 2023 12:30:41 +0200
+        d=1e100.net; s=20221208; t=1685905131; x=1688497131;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=0uLDA7fQ1eFEBxyVgNGzB8pTMv55u419IbeoR7nu4AQ=;
+        b=HMGoMkqgT1xFoG6AUk2WMMlr/g4EazFD5U6GwRxR/YOtGBZ1KK12TIwp1kRmhuz8J/
+         BwRhfTOebNimjzCF/lC3On9wVdbKOOREL+SYlDxUbOAfwK8bAjCYfeSqRsHPoKhtEeRS
+         bsMoqk/JDKv3+2mHMVQUnarDOqas2iTvsQfe3HynT9XyszuAF6HbxdQ78MRogayR/68o
+         yoW8BO7ikjj7b3c+vEvQ/lq6czXh0pn3jmDyjy2XT/skn383za9jHfUylYt4cPcffjAv
+         L+v/mNyuYhN8NHq6M5jGbd3VP09ZtM5PW+Ic46+qqQ0d8yn2STxyLrrTZ4F16+GAM9EX
+         sdpQ==
+X-Gm-Message-State: AC+VfDxz4egZMAp2C+hekrBxSzBE3z7VMk3otiAw2t03HzeR47lp9rZx
+	BjdaKIGwJOfYbQZes5jqB3Ynn/IQ8C4=
+X-Google-Smtp-Source: ACHHUZ5EkaqP6x5GqtWx1BZ2gJzmxHf/jE8v3IHyZU6SL7aUosESZU4nC8UiF+0Xk6nOGWSAa+UFKA==
+X-Received: by 2002:ac2:5eca:0:b0:4f3:a0f5:92e5 with SMTP id d10-20020ac25eca000000b004f3a0f592e5mr3904178lfq.31.1685905130670;
+        Sun, 04 Jun 2023 11:58:50 -0700 (PDT)
+Received: from mobilestation ([95.79.140.35])
+        by smtp.gmail.com with ESMTPSA id u9-20020a056512040900b004eb0dcc52ddsm858329lfk.41.2023.06.04.11.58.48
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 04 Jun 2023 11:58:49 -0700 (PDT)
+Date: Sun, 4 Jun 2023 21:58:47 +0300
+From: Serge Semin <fancer.lancer@gmail.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCH v2 2/6] dt-bindings: ata: ahci: add RK3588 AHCI controller
+Message-ID: <20230604185847.r23v53eetd53okyg@mobilestation>
+References: <20230522173423.64691-1-sebastian.reichel@collabora.com>
+ <20230522173423.64691-3-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.2
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
-Content-Language: en-US
-To: Rudraksha Gupta <guptarud@gmail.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Olof Johansson <olof@lixom.net>, soc@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-References: <20230604063032.365775-1-guptarud@gmail.com>
- <20230604063032.365775-3-guptarud@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230604063032.365775-3-guptarud@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20230522173423.64691-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230604_033047_301292_FEED0753 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20230604_115853_477319_57444233 
+X-CRM114-Status: GOOD (  17.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,37 +97,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/06/2023 08:30, Rudraksha Gupta wrote:
-> Adds qcom,usb-hs-phy-msm8960 compatible
+On Mon, May 22, 2023 at 07:34:19PM +0200, Sebastian Reichel wrote:
+> Just like RK3568, the RK3588 has a DWC based AHCI controller.
 > 
-> Signed-off-by: Rudraksha Gupta <guptarud@gmail.com>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+>  .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml     | 8 ++++++--
+>  Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml  | 6 ++++--
+>  2 files changed, 10 insertions(+), 4 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
-> index aa97478dd016..63b6914993fe 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
-> @@ -13,7 +13,9 @@ if:
->    properties:
->      compatible:
->        contains:
-> -        const: qcom,usb-hs-phy-apq8064
-> +        items:
-> +          - const: qcom,usb-hs-phy-apq8064
-> +          - const: qcom,usb-hs-phy-msm8960
+> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> index c1457910520b..34c5bf65b02d 100644
 
-I have no clue what you want to achieve here. You break the bindings.
+> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> @@ -31,11 +31,11 @@ properties:
+>        PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx/Tx)
+>        clock, etc.
+>      minItems: 1
+> -    maxItems: 4
+> +    maxItems: 6
+>  
+>    clock-names:
+>      minItems: 1
+> -    maxItems: 4
+> +    maxItems: 6
+>      items:
+>        oneOf:
+>          - description: Application APB/AHB/AXI BIU clock
+> @@ -48,6 +48,10 @@ properties:
+>            const: pmalive
+>          - description: RxOOB detection clock
+>            const: rxoob
+> +        - description: PHY Transmit Clock
+> +          const: asic
+> +        - description: PHY Receive Clock
+> +          const: rbc
+>          - description: SATA Ports reference clock
+>            const: ref
 
-It does not look like you tested the bindings, at least after quick
-look. Please run `make dt_binding_check` (see
-Documentation/devicetree/bindings/writing-schema.rst for instructions).
-Maybe you need to update your dtschema and yamllint.
+This part looks good but as I mentioned in my comment to the previous
+patchset revision these are generic clocks. Extending the common
+schema could be done in a framework of a preparation patch with
+the justification described in my comment back then.
 
-Best regards,
-Krzysztof
+>  
+> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> index 5afa4b57ce20..c6a0d6c8b62c 100644
+> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> @@ -23,9 +23,11 @@ properties:
+>          const: snps,dwc-ahci
+>        - description: SPEAr1340 AHCI SATA device
+>          const: snps,spear-ahci
 
+> -      - description: Rockhip RK3568 AHCI controller
+> +      - description: Rockhip AHCI controller
+>          items:
+> -          - const: rockchip,rk3568-dwc-ahci
+> +          - enum:
+> +              - rockchip,rk3568-dwc-ahci
+> +              - rockchip,rk3588-dwc-ahci
+
+Regarding this part. I would suggest to just create a separate
+DT-schema instead of extending the generic one. See my comment to the
+next patch in the series and my suggestion posted in a comment to
+the previous patchset revision.
+
+-Serge(y)
+
+>            - const: snps,dwc-ahci
+>  
+>  patternProperties:
+> -- 
+> 2.39.2
+> 
 
 -- 
 linux-phy mailing list
