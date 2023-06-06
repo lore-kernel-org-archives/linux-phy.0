@@ -4,83 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0B7EC77B7A
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Jun 2023 12:36:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D82BC7EE24
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Jun 2023 13:55:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gclezEVefoZMrJGDIhEIw9OwiCmZBXQQlm1oRIKGwzk=; b=xJ10xse8476Fq7OYSqnF50d53X
-	H0sXayPEveb5CnAS+0VsODVQko1AZfHq63kj+mgM252XItwxg/Xw9TLtglf3+ZSC+3nfd8KeKsT87
-	JTWVAUuZrg8IGvq5ZPupMUv3Vwz+TAaY1PgSICMw9uNyX7Cofbd1LVkv2+LGGIhMXRce17cw6ZWNq
-	+kEjH7WAmYO/0jokVs55YllOl3PTDQkpEUchosTqFpoHKd43PZcfdV/JETu7ger8iY2Qr9XaGuzl3
-	xR0ZECeuQiIo9LJ8WjFlSCI5t8oxj6EQHUQrAIhyvLlLjPBudnj+9Rf6ySXAxoHQuaHvqQuZ8yjaT
-	IIHRMUMQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Ev9C34FeAdQcsNn5rz/+3N4+Sr70tYyXfAVFmk3HDM=; b=kmDgFE6xez6/57
+	+RNrLcgXQSassM5FXY3sE5V2EAXih/Izoug4DA0m4MYm8ds8OWX/7Ay11dStHbzf76PALhIyIPPZe
+	Ti16exKk+koC99Q9iS3mknk2efYp7BrgFdEsbUU4J6gPN6oOUFaZQdPTDgIChoY8VAQ958Rp7M3sV
+	I4ON0B7uJNfCccICdoFcusz90MG/ZvlyUwlGw4WYyAQ9yy6hYm+LRMA2H7E85bXMhGW3IhYgujyWk
+	mZV0P3UqKY4Zdx4fe7xzEsXsXr4eQ2h/sMx3DgP76jhFziqZYByORH9pwaDTEMK56MIh33QMwFBlW
+	nHTLVArRIqbJ1TAkRUHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6Vut-001fZO-1M;
-	Tue, 06 Jun 2023 12:36:03 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1q6X9k-001vAR-35;
+	Tue, 06 Jun 2023 13:55:28 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6Vur-001fX5-06
+	id 1q6X9i-001v8s-0v
 	for linux-phy@lists.infradead.org;
-	Tue, 06 Jun 2023 12:36:02 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-97460240863so750335966b.0
-        for <linux-phy@lists.infradead.org>; Tue, 06 Jun 2023 05:35:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1686054956; x=1688646956;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=fDFqFlixqyPP3yOtm62pTXCk1c+zCqOZPFMFr0y6lPk=;
-        b=RcpmWUV2QzYfqN9MDtkblWZQ7UK/At7xh+UmusYkkTEoakieQcSqdyhitNeoPxLT8l
-         CtSUIg6DDbJgt1lXIphlDw1JZjiALsKIfxvXgC6fMTgU+iD2AZPj96yq9qgpsEB0BypZ
-         WOjRsy4Sil/UnsewAWfwhFWhIkZHlA0tRUGEn3EI/UfmfSdVPF568Gk9otuc2RfnmcPj
-         tAh/A51KkPRy+cVgHNwibLzWSqe+/ai5FwFNHYYiJXWaOcrq8omlpH87nAfH0/O804Gj
-         tbuFgcnBPyKKduNUDhadN/84Ksq6LnmfNtGaHPlt02foprHRQYv/vfiP9S0csAmdfL60
-         +nVQ==
+	Tue, 06 Jun 2023 13:55:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1686059722;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=+2vpzcTLmhOhv9xEcha3D2h3sBmK8u0Uc+ZK8J67Uc0=;
+	b=WkBUmzrPF80W0nQL0286X3Ok2aHd1uQCQujXSDgI/kB5yk2xhMHSShUvoXwSGemIPvxZ0E
+	toE69ABfF30NDLgFKTepoIxiVs0js8hAXc91TeNDFn7ooxKYcdHDjw0OYWcfIbLIvAJnsR
+	7MPcwoSAC8xtSIK08dhhoapGo6cNufs=
+Received: from mail-yw1-f199.google.com (mail-yw1-f199.google.com
+ [209.85.128.199]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-339-EOBpHRUiNSeOogwiqxpzVw-1; Tue, 06 Jun 2023 09:55:21 -0400
+X-MC-Unique: EOBpHRUiNSeOogwiqxpzVw-1
+Received: by mail-yw1-f199.google.com with SMTP id 00721157ae682-568a85f180dso90549557b3.2
+        for <linux-phy@lists.infradead.org>; Tue, 06 Jun 2023 06:55:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686054956; x=1688646956;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=fDFqFlixqyPP3yOtm62pTXCk1c+zCqOZPFMFr0y6lPk=;
-        b=G4RpPIgigTogzAjb+zBuzEnEtRbB6LwBOon8Sj+6CjsBTTTv/ob/jV3Kx5gRu97l0l
-         t08gzcB96zfyhjkijZUgfIEi7niFzJK/O2ZR9zTGt8CHFXApuskwGhcWlV6211RVTgpn
-         FbLHyUM3JyouKJmPqoC3fd9rZKydWfA9O9Fj8v59F7PdnAPLWn0prabG7vBpWAkgWfgE
-         XR3xNrxu0vCmqVsr7YaYBWHqg3yNEXYRw+dBpOLz5DIeN53WcJ4R4Qt21nx59K5qJ2Oj
-         0V6ZIBE+N5M7zo2FCNsC69kWaXb5MySHGJ4IQuLYcfoGsEYQ2TF/qpQES5xTi3PwlWW/
-         xnAg==
-X-Gm-Message-State: AC+VfDxYcpQLF2fcnsVYGvvsGJ6okUA34mF3osHCTpBmjBiyEfKPW8cv
-	LCTqNWy3K6kXOcdlDN0efHE=
-X-Google-Smtp-Source: ACHHUZ6stKm1h9XwolResZGNvz8CgkwvfkQ1MhnG+DJKzMAqJ59L+8dn17Ysloj/ltEFM+81ivQejA==
-X-Received: by 2002:a17:907:8a1e:b0:973:e034:fd47 with SMTP id sc30-20020a1709078a1e00b00973e034fd47mr2656250ejc.29.1686054956099;
-        Tue, 06 Jun 2023 05:35:56 -0700 (PDT)
-Received: from orome (p200300e41f305300f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f30:5300:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id c10-20020a1709060fca00b00965a4350411sm5501730ejk.9.2023.06.06.05.35.55
+        d=1e100.net; s=20221208; t=1686059720; x=1688651720;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+2vpzcTLmhOhv9xEcha3D2h3sBmK8u0Uc+ZK8J67Uc0=;
+        b=Hx6tk+vfOPRdtYIZ7GhSP3JEUJrlMrxfEbyr8BR5kDKVIgBkCEgmAtGGOthGwv29oK
+         uKucJw4jf8pqmUVeTEUj5PZ65AkYPxt6ru5wNq34s7rcxel5wNPun1vNnveG38uJAYTR
+         xx6FWClwXkHxw/jfV7ag/w1fxd+Yzec4CCRrQy3DKt7H0aPPTHaA9c+cygOg9D+4LelZ
+         Nra9vb+ygEqv647pCe6nXzcVvKRvKVVDdKriJkWLK6yrlT82ngVutdc1LI0OLd8+GQhd
+         tWpMSS4qJU7lsKUhI3ZztVM+2IfM7uCloGvr4PxALYCQ2jvrNt3xjPANAqL7rXrIjG/M
+         Cf0Q==
+X-Gm-Message-State: AC+VfDxqrp8LeB2vZOayzKv9KVDXwruXmQQX8/4jymlJTqVxqYR0t5Tp
+	x4LXupmxxbUz1IO4RWS03ew5ix/gr0V2p4tY/Xgmi7ua1fu9MMIhxdFE5BCwWFJ+NYbrpKm5nS1
+	g4BMsz20CHop3UlcdZPQ09x9Pzg==
+X-Received: by 2002:a0d:d2c6:0:b0:569:44c3:b39 with SMTP id u189-20020a0dd2c6000000b0056944c30b39mr2095585ywd.11.1686059720548;
+        Tue, 06 Jun 2023 06:55:20 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5Sxu0H11Z3SFSH722R28CZSrOu/ebvsQLCb2Cyw85/QC4Fg3z8y60d2PtVniYr9lJA5vtk7g==
+X-Received: by 2002:a0d:d2c6:0:b0:569:44c3:b39 with SMTP id u189-20020a0dd2c6000000b0056944c30b39mr2095568ywd.11.1686059720247;
+        Tue, 06 Jun 2023 06:55:20 -0700 (PDT)
+Received: from halaney-x13s ([2600:1700:1ff0:d0e0::22])
+        by smtp.gmail.com with ESMTPSA id a138-20020a0dd890000000b00565de196516sm4095534ywe.32.2023.06.06.06.55.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 06 Jun 2023 05:35:55 -0700 (PDT)
-Date: Tue, 6 Jun 2023 14:35:54 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Haotien Hsu <haotienh@nvidia.com>
-Cc: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
+        Tue, 06 Jun 2023 06:55:19 -0700 (PDT)
+Date: Tue, 6 Jun 2023 08:55:16 -0500
+From: Andrew Halaney <ahalaney@redhat.com>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Adrien Thierry <athierry@redhat.com>, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org, Wayne Chang <waynec@nvidia.com>,
-	EJ Hsu <ejh@nvidia.com>
-Subject: Re: [PATCH v2] phy: tegra: xusb: Fix use-after-free issue
-Message-ID: <ZH8oKiteNGxYmw9l@orome>
-References: <20230508100320.345673-1-haotienh@nvidia.com>
+	Stephen Boyd <sboyd@kernel.org>,
+	Manu Gautam <mgautam@codeaurora.org>,
+	Wesley Cheng <wcheng@codeaurora.org>,
+	Philipp Zabel <pza@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 1/2] phy: qcom-snps-femto-v2: properly enable ref clock
+Message-ID: <20230606135516.beujjl2oyvt6gaig@halaney-x13s>
+References: <20230605184455.34832-1-athierry@redhat.com>
+ <20230605184455.34832-2-athierry@redhat.com>
+ <fe51f704-3d24-d184-0251-39dc64a25598@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20230508100320.345673-1-haotienh@nvidia.com>
-User-Agent: Mutt/2.2.10 (2023-03-25)
+In-Reply-To: <fe51f704-3d24-d184-0251-39dc64a25598@linaro.org>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230606_053601_067994_34E3D096 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20230606_065526_422618_7A149618 
+X-CRM114-Status: GOOD (  33.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,84 +103,140 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0413545016331226567=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Jun 06, 2023 at 01:14:00AM +0200, Konrad Dybcio wrote:
+> 
+> 
+> On 5.06.2023 20:44, Adrien Thierry wrote:
+> > The driver is not enabling the ref clock, which thus gets disabled by
+> > the clk_disable_unused initcall. This leads to the dwc3 controller
+> > failing to initialize if probed after clk_disable_unused is called, for
+> > instance when the driver is built as a module.
+> > 
+> > To fix this, switch to the clk_bulk API to handle both cfg_ahb and ref
+> > clocks at the proper places.
+> > 
+> > Note that the cfg_ahb clock is currently not used by any device tree
+> > instantiation of the PHY. Work needs to be done separately to fix this.
+> > 
+> > Link: https://lore.kernel.org/linux-arm-msm/ZEqvy+khHeTkC2hf@fedora/
+> > Fixes: 51e8114f80d0 ("phy: qcom-snps: Add SNPS USB PHY driver for QCOM based SOCs")
+> > Signed-off-by: Adrien Thierry <athierry@redhat.com>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 67 ++++++++++++++-----
+> >  1 file changed, 49 insertions(+), 18 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > index 6c237f3cc66d..ce1d2f8b568a 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > @@ -110,11 +110,13 @@ struct phy_override_seq {
+> >  /**
+> >   * struct qcom_snps_hsphy - snps hs phy attributes
+> >   *
+> > + * @dev: device structure
+> > + *
+> >   * @phy: generic phy
+> >   * @base: iomapped memory space for snps hs phy
+> >   *
+> > - * @cfg_ahb_clk: AHB2PHY interface clock
+> > - * @ref_clk: phy reference clock
+> > + * @num_clks: number of clocks
+> > + * @clks: array of clocks
+> >   * @phy_reset: phy reset control
+> >   * @vregs: regulator supplies bulk data
+> >   * @phy_initialized: if PHY has been initialized correctly
+> > @@ -122,11 +124,13 @@ struct phy_override_seq {
+> >   * @update_seq_cfg: tuning parameters for phy init
+> >   */
+> >  struct qcom_snps_hsphy {
+> > +	struct device *dev;
+> > +
+> >  	struct phy *phy;
+> >  	void __iomem *base;
+> >  
+> > -	struct clk *cfg_ahb_clk;
+> > -	struct clk *ref_clk;
+> > +	int num_clks;
+> > +	struct clk_bulk_data *clks;
+> >  	struct reset_control *phy_reset;
+> >  	struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
+> >  
+> > @@ -135,6 +139,32 @@ struct qcom_snps_hsphy {
+> >  	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
+> >  };
+> >  
+> > +static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
+> > +{
+> > +	struct device *dev = hsphy->dev;
+> > +
+> > +	hsphy->num_clks = 2;
+> > +	hsphy->clks = devm_kcalloc(dev, hsphy->num_clks, sizeof(*hsphy->clks), GFP_KERNEL);
+> > +	if (!hsphy->clks)
+> > +		return -ENOMEM;
+> > +
+> > +	/*
+> > +	 * HACK: For cfg_ahb clock, use devm_clk_get_optional() because currently no device
+> > +	 * tree instantiation of the PHY is using the clock. This needs to be fixed in order
+> > +	 * for this code to be able to use devm_clk_bulk_get().
+> > +	 */
+> > +	hsphy->clks[0].id = "cfg_ahb";
+> > +	hsphy->clks[0].clk = devm_clk_get_optional(dev, "cfg_ahb");
+> Hm, maybe you could first check if we can get this clock
+> properly (!IS_ERR_OR_NULL) and then allocate the second
+> slot..
+> 
 
---===============0413545016331226567==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="vfMTC1L5xpBYeOiz"
-Content-Disposition: inline
+The bulk clk api handles NULL clks without issue if I am reading right,
+so personally if we're going to use the bulk api I say we carry the extra
+slot unconditionally. No expert on this stuff but that seems more
+straightforward. Honestly I wouldn't mind using the bulk optional API,
+then checking the "non optional ref clock" manually. That's closer to
+the ideal flow to me. Super opinionated though, don't take my word as
+right.
 
+> > +
+> > +	hsphy->clks[1].id = "ref";
+> > +	hsphy->clks[1].clk = devm_clk_get(dev, "ref");
+> > +	if (IS_ERR(hsphy->clks[1].clk))
+> > +		return dev_err_probe(dev, PTR_ERR(hsphy->clks[1].clk),
+> > +				     "failed to get ref clk\n");
+> > +
+> > +	return 0;
+> > +}
+> > +
+> >  static inline void qcom_snps_hsphy_write_mask(void __iomem *base, u32 offset,
+> >  						u32 mask, u32 val)
+> >  {
+> > @@ -165,7 +195,7 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+> >  					   0, USB2_AUTO_RESUME);
+> >  	}
+> >  
+> > -	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+> > +	clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
+> >  	return 0;
+> >  }
+> >  
+> > @@ -175,9 +205,9 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+> >  
+> >  	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
+> >  
+> > -	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+> > +	ret = clk_bulk_prepare_enable(hsphy->num_clks, hsphy->clks);
+> Aren't you dereferencing NULL if the optional clock is absent?
+> 
 
---vfMTC1L5xpBYeOiz
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Similar to above, the bulk api seems to handle NULL clks gracefully.
 
-On Mon, May 08, 2023 at 06:03:20PM +0800, Haotien Hsu wrote:
-> From: EJ Hsu <ejh@nvidia.com>
->=20
-> For the dual-role port, it will assign the phy dev to usb-phy dev and
-> use the port dev driver as the dev driver of usb-phy.
->=20
-> When we try to destroy the port dev, it will destroy its dev driver
-> as well. But we did not remove the reference from usb-phy dev. This
-> might cause the use-after-free issue in KASAN.
->=20
-> Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-> Cc: stable@vger.kernel.org
->=20
-> Signed-off-by: EJ Hsu <ejh@nvidia.com>
-> Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
-> ---
-> V1 -> V2: Remove extra movements to clarify the change
-> ---
->  drivers/phy/tegra/xusb.c | 1 +
->  1 file changed, 1 insertion(+)
+Thanks,
+Andrew
 
-Haotien,
-
-I had already given an Acked-by on v1. Typically you should add such
-tags when you post new versions so that people don't have to repeat
-them. Anyway, here it is again:
-
-Acked-by: Thierry Reding <treding@nvidia.com>
-
---vfMTC1L5xpBYeOiz
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmR/KCYACgkQ3SOs138+
-s6Fj3w//SXEz4e+9L1+FbWcfAd5YJtGNumhfQDUBHj/bsNY/K0g/y32rvoqsi40y
-yo89ZtYKlMrZhmWpkXri+FIgFHNsYPScOVQJqOBCmdjY+aog3FQNN6BxNDOqfOJK
-GJ9UDD1+7jTo+42dAsvPcyqBTdaY2w7/AdUIGu3n7+56Uaktwh4o6tqxHYTWP28S
-UfP/IcuqovzEq29xLUOA5FqVK2wgAmA0c6rKUJ1XhDFiMeSIca26xdy4MxoQtKE/
-82G/Aw8Ooi9Req0zZMg3lIZ7HarMfOr28P/2v8RLQCoKTs0ozVv+sg1owdw3jtYp
-QUPvuicR/PUXwr5UYXYninXPSQ8PGLh9ETrZusKJK2fLbguXwXzF2TgqzqIj+ogX
-JiP/dK7E3lSUWmertbNyHmNPc8369AsNAOQIGBe3QwCH7Msr8tOkhJcmfcaKwDrT
-frGN8YwHcLyIHlqEiE1puQ6PgZlOxDCIOiyK1gWe1jCEUCih8zDPwxSzltKDpO5d
-tktHf7hzGCXa44BvHNN3QIRlIyIzTdvxb64LZqAROvILd/l2MEHWHgsc4YdQ7OqL
-ytL1UqUQao3k/LpTgj6E3KYFKmWx3XakRtVpdKi3Ox3lnS+RkwjT7aga0gx4qlw/
-e2gmKVofE4nXJAbwV6nXSvS/LVyfy6DOLtPS1jO+fCCMcNwKcCs=
-=VY0I
------END PGP SIGNATURE-----
-
---vfMTC1L5xpBYeOiz--
-
-
---===============0413545016331226567==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0413545016331226567==--
-
