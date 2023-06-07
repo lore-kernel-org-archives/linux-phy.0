@@ -4,92 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C23CC77B7A
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jun 2023 12:04:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21245C7EE25
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jun 2023 12:29:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5WmUkoWVtBkVp5Gzv0KgfJF6qp7+RuHzfOcmpjnTeaE=; b=4HH7zhXhHx+M06
-	F8c2pyi17JeILaYFzxBvGtYhmWyE/kCb82k5u8PpD0MPkTugaTiPdDtqC6WJjyJxLeHte5El8aKD0
-	QfgLQEoIT4lo5ZttTSFYHaoKd5b6Ua9j/0oXQ8yJnC1C7rQfxBcYJppKupMxECWeHia3mZj8zFJ1O
-	3y2U5yXpPCbOBbv5RaqbQfw3Y9QI5csh178HGFU20cR8Ob0Vu6ZkqzXXo/YoXjW1NblYAgHb5bTaW
-	NUsSskYOqxKxYmQaPvfYS58DZVsWox3HJXJgDieH0vZomgsUf2RWtBIVlIFJbKruvl9Xix0jA4KH/
-	JkdPg3xNM1QG8K+BZ12Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xYERVWBbS2fPLubcevwHcOt7z7BqSsP/XnlMPQ0CbEE=; b=T4ZGmMPxC8ShCcnVmrrM+NBpGZ
+	BTMuAFiI2pjrSS9YHFWmsmqtqnnAmbQzZpqL7UxtgUIQMo5Kq45SHXuCO3aCbIkIokn1bt5mtK8QE
+	1rBsUDg9I/BAMxXpDcC4BK6L711D2x/GAhsvFV+oZb8m5+aVBplAfdQ+XHHrtK/PgHBiPoYGzCs3r
+	3xhQ1vsLWnOpDYCSk6OBWiwaf2/vwuA65oO2YFMCQtQVRe1lQIEPI+5zmZcPCnH+gacX/CB50TUjx
+	kV6ZmREochhfMNrWA6Kiqp1iVRJEHy7k3vx5UKadfPbwk7FcCNtrO8zjWD0nliAJ42Oo2kSUOTeQE
+	mw2XjG7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6rtz-005kS2-2w;
-	Wed, 07 Jun 2023 12:04:35 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1q6sI3-005u43-2b;
+	Wed, 07 Jun 2023 12:29:27 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6rtw-005kRR-0O
+	id 1q6sI0-005u1R-1S
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Jun 2023 12:04:34 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-4f62cf9755eso3731468e87.1
-        for <linux-phy@lists.infradead.org>; Wed, 07 Jun 2023 05:04:31 -0700 (PDT)
+	Wed, 07 Jun 2023 12:29:26 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-4f61d79b0f2so5415907e87.3
+        for <linux-phy@lists.infradead.org>; Wed, 07 Jun 2023 05:29:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686139470; x=1688731470;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:from:user-agent:mime-version:date:message-id:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=KZ6mcI1bKJ1Kz+T1ZnrarK0a6kbd0xZgbwjVj3l23gQ=;
-        b=QyNIyfZNjvs9IoORoZOHIWYIzs/i5XmcHk9EYJVDXS+JzHFp2tltW8FHlmN3Sg9g8y
-         hmIaMvv6uFlwRmY5iv+w7QkRqDzSkn5JYRvFvqcBd4loOW1d8Q14l2plZfWcAUO+n4IW
-         FkuCdTvX+r2gydNGGHI7Im42L/LicBYZK1BKAH1+e3dk8MP1+iJBYYLSjj8JQbVYZwbP
-         zpKeR6gtE7iXZlvDqnhUdc3Uf7R54JkbemoUv7uCyRe4x8Pj0u5HLqhKV5RKZjRr1xNv
-         q7PZPuZnPszQw1pRNO//YWeWi2lHZCx0AQ/bfQWmd9bu+928uyzC3GJbllU2hKdybS7E
-         oRCw==
+        d=linaro.org; s=google; t=1686140960; x=1688732960;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Vvv5K2Fa6/qw28wNbL34OYbssjD8GFHlsFB1b17V23M=;
+        b=KV9fpP2jx6guTOKgEAlO6GhkKJpM1TSY2zJSafASqc7HPVMhRuJY8j8GDFnHslXoXd
+         tsQmZ4Ybww03zHKPSbSH7K0bX/W/4m6cefd8Ete87G9T723V5io/oaflGpqX6BmhMTuj
+         r6dnnncuVDGRCrJDxHt5dxeB6bhDplAltZqEodABoowDtqyLRmdILjXwpojH9A0BGOPl
+         dyMydx8sDJM4tCFZ4EFkKpdKlWbKCEEC8CVYMANtLM/vSx11Nhju3RDTRkTCpSMXVErj
+         AfPMqMS8hQE1YvwrwM5WbZuZJ6KppZuQIKCY2hzogJ5NT/V0Q5B/0h62P0I7fLhET1dv
+         l64Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686139470; x=1688731470;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:from:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1686140960; x=1688732960;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=KZ6mcI1bKJ1Kz+T1ZnrarK0a6kbd0xZgbwjVj3l23gQ=;
-        b=KlxmnfKU99n5INbiTU9rn1paLlfQOXF+Lgg+rQvHqEdWqJ28V6VU/g/wewQhx1rb18
-         nPbwf363iZ46YsT7AXP4Svp1PPuJubWKAKJ4JDQK2SDLvkEH3bgBmEIY0p4lpK/qllSy
-         m3sz7TK7PY5l8NmiqRTzDuiflcIWfbnUiYdilqPwP7ERanwX3sxW2ipQQWeD/NPxSVyJ
-         OdPsmF3TS+x+Ce28I2F0YnKSGKYExhzW1rOvoB/+v6peDMFavnXbIPtaWvTM3Ww1DCJF
-         93riUjXHgJ5ScFizvxtIf5V+mqwgMRSrE23417tb7mGNsrt5IT4WjwqCCDlIdj0p4uDP
-         nRmA==
-X-Gm-Message-State: AC+VfDwpxcRo2sN/GnhlxrVYwR/PoTo+zC5pznc3aLMeN0go0MDxRNQA
-	JzXiYMp9AKnYu2WXyHbOIGuBcA==
-X-Google-Smtp-Source: ACHHUZ65yqG1QTublwh1Yaw6Z8SsrNVJqtjy+wO7w5acN3E/o/a6FRCaVjvVnek45VpoZHg3PnLUmQ==
-X-Received: by 2002:ac2:5d2b:0:b0:4ec:8615:303e with SMTP id i11-20020ac25d2b000000b004ec8615303emr1855791lfb.33.1686139470262;
-        Wed, 07 Jun 2023 05:04:30 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id q22-20020aa7d456000000b0051631518aabsm6057200edr.93.2023.06.07.05.04.27
+        bh=Vvv5K2Fa6/qw28wNbL34OYbssjD8GFHlsFB1b17V23M=;
+        b=AOk2ftYOzfCc4g3qNxpuENxj5jkrwJvutXIqzaOFrzrtcjjiwp5QFlhfwmQrQLCGJP
+         Z1W5Gujkk+V9QWQxsNoaI5AnELW95AQ+KQ6iPkAgQ0qldfDZ28q/QPBAsBKfeTZTv2dh
+         O4kzIhlhEEiBeOvSULMX8/xAQLVpUprI6H1AJNdBkfABdZ1QtgYkg/+hszNQj21DFlHg
+         WK02aomHgg2RVf1JjhUOZx5AwDTcSnZbu6vhGoWeLbKOKnAk1Ma6ieP4pa74lvskWSWk
+         CBuq09zLplSK8IrA0ty7dIqVYuxoWTePjrhjFXwlbO7ox1wojniiCtB5hnCUkt3Q7xpp
+         Nf3w==
+X-Gm-Message-State: AC+VfDzTn068dO+SYjWfzeTOinXVFy0GRj8Xt7ze363SbFDI7J3Vmx+W
+	7QI+VnAWRhsTW9G7hK2OsNBHsQ==
+X-Google-Smtp-Source: ACHHUZ44ZMWKvFqzo9F7XcBtsUXfQ+FLzrGKodpTdTU2l21B1LHoRvSCpL1whhvOLHLsLTnYvfreGQ==
+X-Received: by 2002:a05:6512:40a:b0:4f6:19e0:8ab6 with SMTP id u10-20020a056512040a00b004f619e08ab6mr2021712lfk.30.1686140959818;
+        Wed, 07 Jun 2023 05:29:19 -0700 (PDT)
+Received: from ?IPV6:2001:14ba:a0db:1f00::8a5? (dzdqv0yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a0db:1f00::8a5])
+        by smtp.gmail.com with ESMTPSA id u4-20020a056512040400b004f262997496sm1798376lfk.76.2023.06.07.05.29.18
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 07 Jun 2023 05:04:29 -0700 (PDT)
-Message-ID: <7cce1d72-6b4d-9fff-32bc-942193388134@linaro.org>
-Date: Wed, 7 Jun 2023 14:04:26 +0200
+        Wed, 07 Jun 2023 05:29:19 -0700 (PDT)
+Message-ID: <cf3c98c1-e283-3fac-3144-5a7354378a6b@linaro.org>
+Date: Wed, 7 Jun 2023 15:29:18 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.2
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v3 4/5] dt-bindings: phy: realtek: Add the doc about the
- Realtek SoC USB 2.0 PHY
-To: Stanley Chang <stanley_chang@realtek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
- Ray Chi <raychi@google.com>, Matthias Kaehlcke <mka@chromium.org>,
- Douglas Anderson <dianders@chromium.org>,
- Michael Grzeschik <m.grzeschik@pengutronix.de>,
- Mathias Nyman <mathias.nyman@linux.intel.com>,
- Flavio Suligoi <f.suligoi@asem.it>, linux-phy@lists.infradead.org,
+ Thunderbird/102.11.0
+Subject: Re: [PATCH 3/9] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Content-Language: en-GB
+To: Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
+ mturquette@baylibre.com, sboyd@kernel.org, p.zabel@pengutronix.de,
+ arnd@arndb.de, geert+renesas@glider.be, neil.armstrong@linaro.org,
+ nfraprado@collabora.com, broonie@kernel.org, rafal@milecki.pl,
+ quic_srichara@quicinc.com, quic_varada@quicinc.org, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org
-References: <20230607062500.24669-1-stanley_chang@realtek.com>
- <20230607062500.24669-4-stanley_chang@realtek.com>
-Content-Language: en-US
-In-Reply-To: <20230607062500.24669-4-stanley_chang@realtek.com>
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <cover.1686126439.git.quic_varada@quicinc.com>
+ <6bb345c6a57ee27516764f36ba7d34fd1a719b87.1686126439.git.quic_varada@quicinc.com>
+ <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230607_050432_189639_0854283E 
-X-CRM114-Status: GOOD (  28.51  )
+X-CRM114-CacheID: sfid-20230607_052924_516402_B969E503 
+X-CRM114-Status: GOOD (  20.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,232 +101,165 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/06/2023 08:24, Stanley Chang wrote:
-> Add the documentation explain the property about Realtek USB PHY driver.
+Two minor nits on top of the review:
+
+On 07/06/2023 14:54, Konrad Dybcio wrote:
+> On 7.06.2023 12:56, Varadarajan Narayanan wrote:
+>> Add the M31 USB2 phy driver
+>>
+>> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-m31.c | 360 ++++++++++++++++++++++++++++++++++++
+>>   1 file changed, 360 insertions(+)
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> new file mode 100644
+>> index 0000000..d29a91e
+>> --- /dev/null
+>> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> @@ -0,0 +1,360 @@
+>> +// SPDX-License-Identifier: GPL-2.0+
+>> +/*
+>> + * Copyright (c) 2014-2016, 2020, The Linux Foundation. All rights reserved.
+>> + */
+>> +
+>> +#include <linux/module.h>
+>> +#include <linux/kernel.h>
+>> +#include <linux/err.h>
+>> +#include <linux/slab.h>
+>> +#include <linux/clk.h>
+>> +#include <linux/delay.h>
+>> +#include <linux/io.h>
+>> +#include <linux/of.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/usb/phy.h>
+>> +#include <linux/reset.h>
+>> +#include <linux/of_device.h>
+> Please sort these
 > 
-> Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller. Added the driver to drive the USB 2.0 PHY transceivers.
+>> +
+>> +enum clk_reset_action {
+>> +	CLK_RESET_DEASSERT	= 0,
+>> +	CLK_RESET_ASSERT	= 1
+>> +};
+>> +
+>> +#define USB2PHY_PORT_POWERDOWN		0xA4
+>> +#define POWER_UP			BIT(0)
+>> +#define POWER_DOWN			0
+>> +
+>> +#define USB2PHY_PORT_UTMI_CTRL1	0x40
+>> +
+>> +#define USB2PHY_PORT_UTMI_CTRL2	0x44
+>> +#define UTMI_ULPI_SEL			BIT(7)
+>> +#define UTMI_TEST_MUX_SEL		BIT(6)
+>> +
+>> +#define HS_PHY_CTRL_REG			0x10
+>> +#define UTMI_OTG_VBUS_VALID             BIT(20)
+>> +#define SW_SESSVLD_SEL                  BIT(28)
+>> +
+>> +#define USB_PHY_CFG0			0x94
+>> +#define USB_PHY_UTMI_CTRL5		0x50
+>> +#define USB_PHY_FSEL_SEL		0xB8
+>> +#define USB_PHY_HS_PHY_CTRL_COMMON0	0x54
+>> +#define USB_PHY_REFCLK_CTRL		0xA0
+>> +#define USB_PHY_HS_PHY_CTRL2		0x64
+>> +#define USB_PHY_UTMI_CTRL0		0x3c
+>> +#define USB2PHY_USB_PHY_M31_XCFGI_1	0xBC
+>> +#define USB2PHY_USB_PHY_M31_XCFGI_4	0xC8
+>> +#define USB2PHY_USB_PHY_M31_XCFGI_5	0xCC
+>> +#define USB2PHY_USB_PHY_M31_XCFGI_11	0xE4
+> Could you sort them address-wise?
+
+... and lowercase the hex values, please.
+
 > 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
-> ---
-> v2 to v3 change:
->     1. Broken down into two patches, one for each of USB 2 & 3.
->     2. Add more description about Realtek RTD SoCs architecture.
->     3. Removed parameter v1 support for simplification.
->     4. Revised the compatible name for fallback compatible.
->     5. Remove some properties that can be set in the driver.
-> v1 to v2 change:
->     Add phy-cells for generic phy driver
-> ---
->  .../bindings/phy/realtek,usb2phy.yaml         | 213 ++++++++++++++++++
->  1 file changed, 213 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
+>> +
+>> +#define USB2_0_TX_ENABLE		BIT(2)
+>> +#define HSTX_SLEW_RATE_565PS		3
+>> +#define PLL_CHARGING_PUMP_CURRENT_35UA	(3 << 3)
+>> +#define ODT_VALUE_38_02_OHM		(3 << 6)
+>> +#define ODT_VALUE_45_02_OHM		BIT(2)
+>> +#define HSTX_PRE_EMPHASIS_LEVEL_0_55MA	(1)
+> Weird mix of values, bits, bitfields.. perhaps BIT(n) and
+> GENMASK() (+ FIELD_PREP) would be more suitable?
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-> new file mode 100644
-> index 000000000000..69911e20a561
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-> @@ -0,0 +1,213 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright 2023 Realtek Semiconductor Corporation
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/realtek,usb2phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Realtek DHC SoCs USB 2.0 PHY
-> +
-> +maintainers:
-> +  - Stanley Chang <stanley_chang@realtek.com>
-> +
-> +description:
-> +  Realtek USB 2.0 PHY support the digital home center (DHC) RTD series SoCs.
-> +  The USB 2.0 PHY driver is designed to support the XHCI controller. The SoCs
-> +  support multiple XHCI controllers. One PHY device node maps to one XHCI
-> +  controller.
-> +
-> +  RTD1295/RTD1619 SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY and map one USB 3.0 PHY on some
-> +  controllers.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +
-> +  RTD1395 SoCs USB
-> +  The USB architecture includes two XHCI controllers.
-> +  The controller#0 has one USB 2.0 PHY. The controller#1 includes two USB 2.0
-> +  PHY.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +                               |- phy#1
-> +
-> +  RTD1319/RTD1619b SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY and map one USB 3.0 PHY on controllers#2.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +
-> +  RTD1319d SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each xhci maps to one USB 2.0 PHY and map one USB 3.0 PHY on controllers#0.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +
-> +  RTD1312c/RTD1315e SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - realtek,rtd1295-usb2phy
-> +          - realtek,rtd1395-usb2phy
-> +          - realtek,rtd1619-usb2phy
-> +          - realtek,rtd1319-usb2phy
-> +          - realtek,rtd1619b-usb2phy
-> +          - realtek,rtd1312c-usb2phy
-> +          - realtek,rtd1319d-usb2phy
-> +          - realtek,rtd1315e-usb2phy
+>> +
+>> +#define UTMI_PHY_OVERRIDE_EN		BIT(1)
+>> +#define POR_EN				BIT(1)
+> Please associate these with their registers, like
+> 
+> #define FOO_REG		0xf00
+>   #define POR_EN		BIT(1)
+> 
+>> +#define FREQ_SEL			BIT(0)
+>> +#define COMMONONN			BIT(7)
+>> +#define FSEL				BIT(4)
+>> +#define RETENABLEN			BIT(3)
+>> +#define USB2_SUSPEND_N_SEL		BIT(3)
+>> +#define USB2_SUSPEND_N			BIT(2)
+>> +#define USB2_UTMI_CLK_EN		BIT(1)
+>> +#define CLKCORE				BIT(1)
+>> +#define ATERESET			~BIT(0)
+>> +#define FREQ_24MHZ			(5 << 4)
+>> +#define XCFG_COARSE_TUNE_NUM		(2 << 0)
+>> +#define XCFG_FINE_TUNE_NUM		(1 << 3)
+> same comment
+> 
+>> +
+>> +static void m31usb_write_readback(void *base, u32 offset,
+>> +					const u32 mask, u32 val);
+> We don't need this forward-definition, just move the function up.
+> 
+>> +
+>> +struct m31usb_phy {
+>> +	struct usb_phy		phy;
+>> +	void __iomem		*base;
+>> +	void __iomem		*qscratch_base;
+>> +
+>> +	struct reset_control	*phy_reset;
+>> +
+>> +	bool			cable_connected;
+>> +	bool			suspended;
+>> +	bool			ulpi_mode;
+>> +};
+>> +
+>> +static void m31usb_reset(struct m31usb_phy *qphy, u32 action)
+>> +{
+>> +	if (action == CLK_RESET_ASSERT)
+>> +		reset_control_assert(qphy->phy_reset);
+>> +	else
+>> +		reset_control_deassert(qphy->phy_reset);
+>> +	wmb(); /* ensure data is written to hw register */
+> Please move the comment above the call.
+> 
+>> +}
 
-Keep entries ordered alphabetically.
+Or even better just inline the function. I was never a fan of such 
+multiplexers.
 
-> +      - const: realtek,usb2phy
-> +
-> +  reg:
-> +    items:
-> +      - description: PHY data registers
-> +      - description: PHY control registers
-> +
-> +  "#address-cells":
-> +    const: 1
-> +
-> +  "#size-cells":
-> +    const: 0
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  realtek,usb-ctrl:
-> +    description: The phandle of syscon used to control USB PHY power domain.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
+Also does wmb() make sense here? Doesn't regmap (which is used by reset 
+controller) remove the need for it?
 
-No, we have power-domains for this.
-
-> +
-> +patternProperties:
-> +  "^phy@[0-3]+$":
-> +    type: object
-> +    description:
-> +      Each sub-node is a PHY device for one XHCI controller.
-
-I don't think it is true. You claim above that you have 0 as phy-cells,
-means you have one phy. Here you say you can have up to 4 phys.
-
-> +      For most Relatek SoCs, one XHCI controller only support one the USB 2.0
-> +      phy. For RTD1395 SoC, the one XHCI controller has two USB 2.0 PHYs.
-> +    properties:
-> +      realtek,page0-param:
-> +        description: PHY parameter at page 0. The data are the pair of the
-> +          offset and value.
-
-This needs to be specific. What the heck is "PHY parameter"?
-
-> +        $ref: /schemas/types.yaml#/definitions/uint32-array
-
-Array? Then maxItems.
-
-> +
-> +      realtek,page1-param:
-> +        description: PHY parameter at page 1. The data are the pair of the
-> +          offset and value.
-> +        $ref: /schemas/types.yaml#/definitions/uint32-array
-> +
-> +      realtek,page2-param:
-> +        description: PHY parameter at page 2. The data are the pair of the
-> +          offset and value. If the PHY support the page 2 parameter.
-> +        $ref: /schemas/types.yaml#/definitions/uint32-array
-> +
-> +      realtek,support-page2-param:
-> +        description: Set this flag if PHY support page 2 parameter.
-
-Why this cannot be deducted from compatible?
-
-> +        type: boolean
-> +
-> +      realtek,do-toggle:
-> +        description: Set this flag to enable PHY parameter toggle when port
-> +          status change.
-
-Do not instruct OS what to do. Explain why this is a hardware
-characteristic.
-
-> +        type: boolean
-> +
-> +      realtek,do-toggle-driving:
-> +        description: Set this flag to enable PHY parameter toggle for adjust
-> +          the driving when port status change.
-
-Do not instruct OS what to do. Explain why this is a hardware
-characteristic.
+>> +
+>> +static void m31usb_phy_enable_clock(struct m31usb_phy *qphy)
+>> +{
+>> +	/* Enable override ctrl */
+>> +	writel(UTMI_PHY_OVERRIDE_EN, qphy->base + USB_PHY_CFG0);
+> Some of the comments are missing a space before '*/'
+> 
+> Also, please consider adding some newlines to logically split the
+> actions.
 
 
-> +        type: boolean
-> +
-> +      realtek,check-efuse:
-> +        description: Enable to update PHY parameter from reading otp table.
-
-Do not instruct OS what to do. Explain why this is a hardware
-characteristic.
-
-> +        type: boolean
-> +
-> +      realtek,use-default-parameter:
-> +        description: Don't set parameter and use default value in hardware.
-
-NAK, you are just making things up.
-
-> +        type: boolean
-> +
-> +      realtek,is-double-sensitivity-mode:
-> +        description: Set this flag to enable double sensitivity mode.
-
-All your descriptions copy the name of property. You basically say
-nothing more. I already mentioned this before. Don't ignore the
-feedback, but address it.
-
-> +        type: boolean
-> +
-> +      realtek,ldo-force-enable:
-> +        description: Set this flag to force enable ldo mode.
-
-Drop everywhere "Set this flag to", because it is redundant. Now compare
-what is left with property name.
-
-Property name: realtek,ldo-force-enable
-Your description: "force enable ldo mode"
-
-How is this helpful to anybody?
-
-
-Best regards,
-Krzysztof
+-- 
+With best wishes
+Dmitry
 
 
 -- 
