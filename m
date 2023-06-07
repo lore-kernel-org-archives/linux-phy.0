@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3534C7EE2E
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jun 2023 18:24:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08E8BC7EE43
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jun 2023 18:32:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Subject:From:References:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7uvSHlq9a6es0xLCt3Z02WRt+OO67241GI3Vhj/5Qt8=; b=zKgND1Antvfnzi
-	E1KRZUnP9nmZcOY6jDs4Rwskxjv48CwDhu9Fu147e4h6QYsB+pLbxUjZ/d/E3uq6y2gojVHkSjSaE
-	xEWtc28WuNQUSAtt5cg5LL4d3iwJYRK/3MByy2SqNCbVqX24t1vxBj5yUNlSVoxbzf7D6TKjDlm65
-	/+6w5TLSAM89wGFPLQNyNwGwedHQtr7LQ9V98bY2Jk325LUQ956lpEh3t+MY0+Y2o5KFPpFfSUXtB
-	uuIGUq4NpVjqSm8S+Jo4V2uuYP3Jz0aa/juj7VQBxhvHpnk6PlZvEcjqeUTr0+wdQEzETH3PpZN71
-	Sif6wk4xlCWu1Dr/dKkw==;
+	List-Owner; bh=XPLbbIOJQfPhYfRckwB/o+TZvYdkc9EJpZduopq03l0=; b=Ep9i4+ZCUuIXo7
+	TbOV8/ASP6FHs7EXazw9N//kw16TyWei77F+z2y8XYeZVbf9PTmdVWpZGJOdEaBHd5HDsplk44ZwH
+	kFhxBE23tCzYraRQXN5Z8t5+z6L73OnEi+/tJ/gstObCdJlBjJ31DDV5lB3lt0d+aYCq9UegQjxJB
+	lHVSclBFZNcX3sZCZDeD+MW4HFFPNb4YYZnA9G5dJR7hLTOjVlGhZ+qTT26bHUY42d9AGKcxkBPJ6
+	+YH8tNPi+BlHtkAvo0zw89HhR25HddT86BkZTgXeXFSxTz5ygvdTj1IOuK9vnmnPvA5Xx11TTjvlk
+	4S25+kR+a+S+Dm6CLQnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6xpO-006pd0-1w;
-	Wed, 07 Jun 2023 18:24:14 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1q6xwv-006qjc-26;
+	Wed, 07 Jun 2023 18:32:01 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q6xpL-006paP-0W
+	id 1q6xws-006qhX-2f
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Jun 2023 18:24:12 +0000
-Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-4f640e48bc3so1510718e87.2
-        for <linux-phy@lists.infradead.org>; Wed, 07 Jun 2023 11:24:09 -0700 (PDT)
+	Wed, 07 Jun 2023 18:32:00 +0000
+Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-5149e65c244so1805132a12.3
+        for <linux-phy@lists.infradead.org>; Wed, 07 Jun 2023 11:31:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686162248; x=1688754248;
-        h=content-transfer-encoding:in-reply-to:subject:from:references:to
-         :content-language:user-agent:mime-version:date:message-id:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=GCynyLWoW2V3VpBJECgKopAvXwYKryE2bi0AEhbuOKc=;
-        b=UORlCDAJSTYZ4uIWUmqhcz5py1aYRNayzTtulmKmCRBhjbvUp5Sc4fYPJFnCb75juH
-         uWwpIburuUdUDyFMAIFi8TeiKQuQ6ndhBSsS5tOWCe3itNJG+EtJSRLhAPIX1MjX3f6n
-         oK6t/bVYLQ1CzirArOwccdOg/exui1KseunFxziTYoMvJqkLa8VvUdaH+edeqNCcOK25
-         dstAnZ5d9iOqhh4Vfo6OUP6MHv5/Oh7LrY4ClO8mkR6x0AAOXPd78wcv4HgUaEtAwvih
-         a0VEseZTwFw4fOa6vy/q6yFt2LPcjoswaEAKG2PUkOnoKRsZXXTYfiCsL7wDRFPlkX4C
-         9IrA==
+        d=linaro.org; s=google; t=1686162715; x=1688754715;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=6Z+U5ETKwaoIHltE2aiAd209awkqtpo2q3BiVL0nXYU=;
+        b=iUiL+koEOtPAccW4DAkC8uKKkLCRaCKzOoFR2FJlbkVPhX0BJH52rbIBFel/wEJi5n
+         OGSI2zocWFqKumJ7ZxFDcQwZbEvb1SZ5g5z7rej5gEpRa1zdfFnUHeUJyNJgrOjFuEYb
+         dY4HK37AOWyeJe1foqFmjD3e7nVJDONBSqPSAa4DGTL4aMjptAT5H7lhpZRmqiFyS6hL
+         PO5d1SbABORUMCK91wD4kEhJM6TDXlRJzE2w6M1mLl0l1tn9eySxCH9ao+/XJOdtIXNh
+         wZJSJaIIUPnfz2l4VXkPlJcaLHQhUAtiYPYvxNcpV5DhaMklDUUV015kRbZ7AeKnJoj1
+         gokw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686162248; x=1688754248;
-        h=content-transfer-encoding:in-reply-to:subject:from:references:to
-         :content-language:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1686162715; x=1688754715;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=GCynyLWoW2V3VpBJECgKopAvXwYKryE2bi0AEhbuOKc=;
-        b=GISeze7kbM5RxRnhfaK/9Ey03E1kSCxiBBYYxMuJRmcSpJTDg0Zy+gZx30n75uXR0d
-         SmBDsutj4SKWQ8OU/bhhNyIrYslptD3gkqjXjZoAQif79niJz++5y3RC5cX0Mp2fB4NP
-         49OJhhwvs0Jog1TB5UIHL11Rkukp4Pi0piQSb2OclpzWeqfi7S0igGcW6JeFAEpC8mre
-         VAcRz4W7CDrgQbGJr16Hihb4u1JuQkbNsdfvC19l01iEEHb2GE+YvTnHSNTMHUKqHF8I
-         qOPwDG2kvTKeamM+qwtN+xAI8BqOCEzDR/+el5fXBMNqBEMSqbhXD6iZdIOQ6dkmyqvP
-         hUeg==
-X-Gm-Message-State: AC+VfDwhhqWqhCJW9bCbzvBbVd9npMQbhGLndaxxLdXlYfIdAD30ruRK
-	pOMlRs3hnLzt6un9wpW+EmXY8g==
-X-Google-Smtp-Source: ACHHUZ7cQ53ZaeBJXCSc0n79qlL4eVvWwXaB9K9+BZIUq9VFZ/qoirsRWNkWsGjBsklIkcutqeGZhA==
-X-Received: by 2002:ac2:4c8e:0:b0:4f6:2629:6cf3 with SMTP id d14-20020ac24c8e000000b004f626296cf3mr2269056lfl.46.1686162247872;
-        Wed, 07 Jun 2023 11:24:07 -0700 (PDT)
-Received: from [192.168.1.101] (abyj190.neoplus.adsl.tpnet.pl. [83.9.29.190])
-        by smtp.gmail.com with ESMTPSA id o5-20020ac24345000000b004f004c0498esm1879989lfl.71.2023.06.07.11.24.05
+        bh=6Z+U5ETKwaoIHltE2aiAd209awkqtpo2q3BiVL0nXYU=;
+        b=gWw/2ObdP26mmf2wSdmWsq1WCouJpBsokzLxc0bf5ZS7jLtNeYufjjAUR7xMGOhD6V
+         j0qch7q0C1ZKIGODTc6Fghxt2mvTfhOSw3NxvKj36LekteDDBlHh4nbiV8tAZLp/Snzs
+         N419q0qlBusuZy6hzkeFb/S5053w50JnlQpHiHg5s0AakymJjo6+DKZQDw3bxtC+ljAj
+         I1KBqsXcjfkinu744SJzUdbI/xId4GPBexMvN6f1VMAIdE/j1emRh4jinIR3pvxZzDhG
+         p7DkR/tmsfylwZMFU+QA1wYmnuDUQNudVK0XRVoKQqudgfEIOW9aAEHzKodhVS5hDRol
+         d+Hg==
+X-Gm-Message-State: AC+VfDwg1gvUPPD/+zBKmBccpGaVGudUxMAPEAcR9pTA4pzXihSGSimq
+	iZqbcRvkvJNqxUI3H4YgOnStvQ==
+X-Google-Smtp-Source: ACHHUZ4zm6GVGkQczlCX9ubgue5IBbrzh8OwnXMHvbBaxgCxK5FXWNJMU50WbLRcua8aEYAUxOJlKQ==
+X-Received: by 2002:aa7:c7d5:0:b0:514:9df0:e3ec with SMTP id o21-20020aa7c7d5000000b005149df0e3ecmr5148935eds.0.1686162714757;
+        Wed, 07 Jun 2023 11:31:54 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id h26-20020aa7de1a000000b005148f0e8568sm6450019edv.39.2023.06.07.11.31.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 07 Jun 2023 11:24:07 -0700 (PDT)
-Message-ID: <ff8c76e4-fb6c-106d-eae3-45edc06b0c0b@linaro.org>
-Date: Wed, 7 Jun 2023 20:24:04 +0200
+        Wed, 07 Jun 2023 11:31:54 -0700 (PDT)
+Message-ID: <98960024-7dbc-91a3-75de-90b529637916@linaro.org>
+Date: Wed, 7 Jun 2023 20:31:50 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.11.2
+Subject: Re: [PATCH 2/9] dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
 Content-Language: en-US
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
- mturquette@baylibre.com, sboyd@kernel.org, p.zabel@pengutronix.de,
- arnd@arndb.de, geert+renesas@glider.be, neil.armstrong@linaro.org,
- nfraprado@collabora.com, broonie@kernel.org, rafal@milecki.pl,
- quic_srichara@quicinc.com, quic_varada@quicinc.org, quic_wcheng@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
+ will@kernel.org, mturquette@baylibre.com, sboyd@kernel.org,
+ p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
+ neil.armstrong@linaro.org, nfraprado@collabora.com, broonie@kernel.org,
+ rafal@milecki.pl, quic_srichara@quicinc.com, quic_varada@quicinc.org,
+ quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 References: <cover.1686126439.git.quic_varada@quicinc.com>
- <1b48e737aa14f5b5539cbf04d473182121d5b1ad.1686126439.git.quic_varada@quicinc.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Subject: Re: [PATCH 7/9] arm64: dts: qcom: ipq5332: Add USB related nodes
-In-Reply-To: <1b48e737aa14f5b5539cbf04d473182121d5b1ad.1686126439.git.quic_varada@quicinc.com>
+ <14f60578e2935c0844537eab162af3afa52ffe39.1686126439.git.quic_varada@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <14f60578e2935c0844537eab162af3afa52ffe39.1686126439.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230607_112411_201465_C592BF43 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20230607_113158_863738_BE0F8938 
+X-CRM114-Status: GOOD (  17.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,109 +104,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 07/06/2023 12:56, Varadarajan Narayanan wrote:
+> Document the M31 USB2 phy present in IPQ5332
 
+Full stop.
 
-On 7.06.2023 12:56, Varadarajan Narayanan wrote:
-> Add USB phy and controller nodes
 > 
+> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
->  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 55 +++++++++++++++++++++++++++++++++++
->  1 file changed, 55 insertions(+)
+>  .../devicetree/bindings/phy/qcom,m31.yaml          | 69 ++++++++++++++++++++++
+>  1 file changed, 69 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/qcom,m31.yaml
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> index c2d6cc65..3183357 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> @@ -383,6 +383,61 @@
->  				status = "disabled";
->  			};
->  		};
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,m31.yaml b/Documentation/devicetree/bindings/phy/qcom,m31.yaml
+> new file mode 100644
+> index 0000000..8ad4ba4
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,m31.yaml
+> @@ -0,0 +1,69 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 > +
-> +		usb_0_m31phy: hs_m31phy@7b000 {
-> +			compatible = "qcom,ipq5332-m31-usb-hsphy";
-> +			reg = <0x0007b000 0x12C>,
-random uppercase hex
 
-> +			      <0x08af8800 0x400>;
-> +			reg-names = "m31usb_phy_base",
-> +				    "qscratch_base";
-> +			phy_type= "utmi";
-Missing space before '='
+Drop stray blank lines.
 
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,m31.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
-> +			reset-names = "usb2_phy_reset";
-> +
-> +			status = "okay";
-If you're only defining the node, it's enabled by default
+> +title: Qualcomm M31 USB PHY
 
-In this case, you'd probably want to disable it by default.
-
-> +		};
-> +
-> +		usb2: usb2@8a00000 {
-> +			compatible = "qcom,ipq5332-dwc3", "qcom,dwc3";
-> +			#address-cells = <1>;
-> +			#size-cells = <1>;
-> +			ranges;
-Please push these 3 properties to the end
-
-And add status = "disabled" below them.
+What is M31?
 
 > +
-> +			reg = <0x08af8800 0x100>;
+> +maintainers:
+> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
+> +  - Varadarajan Narayanan <quic_varada@quicinc.org>
 > +
-> +			clocks = <&gcc GCC_USB0_MASTER_CLK>,
-> +				<&gcc GCC_SNOC_USB_CLK>,
-> +				<&gcc GCC_USB0_SLEEP_CLK>,
-> +				<&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> +
-Please remove this newline.
+> +description:
+> +  This file contains documentation for the USB M31 PHY found in Qualcomm
 
-> +			clock-names = "core",
-> +				"iface",
-> +				"sleep",
-> +				"mock_utmi";
-Please align this, and all other similar lists.
+Drop redundant parts ("This file contains documentation for the").
+
+> +  IPQ5018, IPQ5332 SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+
+That's not oneOf.
+
+> +      - items:
+
+No items.
+
+> +          - enum:
+> +              - qcom,m31-usb-hsphy
+
+I am confused what's this. If m31 is coming from some IP block provider,
+then you are using wrong vendor prefix.
+https://www.m31tech.com/download_file/M31_USB.pdf
+
+
+> +              - qcom,ipq5332-m31-usb-hsphy
+
+This confuses me even more. IPQ m31?
 
 > +
-> +			interrupts-extended = <&intc GIC_SPI 134 IRQ_TYPE_LEVEL_HIGH>;
-interrupts-extended is unnecessary with just a single interrupt
-source.. you can make it `interrupts` and drop the GIC reference.
+> +  reg:
+> +    description:
+> +      Offset and length of the M31 PHY register set
 
-It would also be nice to push the interrupt properties below 'reg'.
-We're working on documenting and automating checking the preferred
-property order.
+Drop description, obvious.
 
-> +			interrupt-names = "pwr_event";
+> +    maxItems: 2
 > +
-> +			resets = <&gcc GCC_USB_BCR>;
-> +
-> +			qcom,select-utmi-as-pipe-clk;
-> +
-> +			usb2_0_dwc: usb@8a00000 {
-> +				compatible = "snps,dwc3";
-> +				reg = <0x08a00000 0xe000>;
-> +				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> +				clock-names = "ref";
-> +				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
-> +				usb-phy = <&usb_0_m31phy>;
-> +				tx-fifo-resize;
-> +				snps,is-utmi-l1-suspend;
-> +				snps,hird-threshold = /bits/ 8 <0x0>;
-> +				snps,dis_u2_susphy_quirk;
-> +				snps,dis_u3_susphy_quirk;
-> +				snps,ref-clock-period-ns = <21>;
-1/21 is 0.0476..  that doesn't seem to correspond to the ref
-clk frequency?
+> +  reg-names:
+> +    items:
+> +      - const: m31usb_phy_base
+> +      - const: qscratch_base
 
-Konrad
-> +			};
-> +		};
->  	};
->  
->  	timer {
+Drop "_base" from both.
+
+> +
+> +  phy_type:
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - utmi
+> +              - ulpi
+
+This does not belong to phy, but to USB node.
+
+> +
+> +  resets:
+> +    maxItems: 1
+> +    description:
+> +      List of phandles and reset pairs, one for each entry in reset-names.
+
+Drop useless description.
+
+> +
+> +  reset-names:
+> +    items:
+> +      - const:
+> +          usb2_phy_reset
+
+Drop entire reset-names.
+
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
+> +    hs_m31phy_0: hs_m31phy@5b00 {
+
+Node names should be generic. See also explanation and list of examples
+in DT specification:
+https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
+
+Also, no underscores in node names.
+
+> +        compatible = "qcom,m31-usb-hsphy";
+> +        reg = <0x5b000 0x3000>,
+
+This is not what your unit address is saying.
+
+> +            <0x08af8800 0x400>;
+
+Align it.
+
+> +        reg-names = "m31usb_phy_base",
+> +                "qscratch_base";
+
+Align it.
+
+> +        phy_type = "utmi";
+> +        resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> +        reset-names = "usb2_phy_reset";
+> +
+> +        status = "ok";
+
+Drop.
+
+> +    };
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
