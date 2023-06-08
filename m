@@ -4,72 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E3DBC7EE45
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 16:22:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 370B8C7EE29
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 20:06:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AGMzn6Q/469aJw5gISAulMh/PQhAJVAGAWaAi8GAuBQ=; b=u2AosN7w1nR6xJ
-	J6FbpzRdfH4Bp71shB9nEijFYy61HZrcz489nmEwTz04ucHpnW85ghC8UlPsbAiiIFFFhqn17T52o
-	S2e/rXOXXIOAsEAyVapqDm3QQz2iXO3FXJmhihFfTTA7A1Q9uTVVeYRSmAsvLHYlIvzxAh6xCXZGC
-	g38Ytr8xkBUkXZZnGgYBLsAJUg4PsAKUd+6inyAq+avP4AZ2saB0cuNEcpVdVQS+Bp1MoOruONtsU
-	+X1hPzj0xjuAQaKk2vBtcgGTFOqQkyLN58nQOZREvkFCrzprXzwRjndwVCXpYPh9+GasO3M/CyfMN
-	BeTCdxgIDCMHYunGu0LA==;
+	List-Owner; bh=FNvIP3qGGb32LTYEUM/J+XdiqSakhfB+gEifE0Y0Ybo=; b=p8QYwBGhNu1tg0
+	7uOZSU1ZApbVsHo51HmsrunhP0OeDdokpFbHk3fudLdyFNRl/QpNCG6eep282q/vjjC2J7UXNj2s/
+	c69tcGsAGcepER3+4Rk2uUWWXck+nSikXOwlrjI4DqwIyqalRansViraQgMPWICfUTjSfJbfJ2Ae4
+	SsH4KZl0M3asi7YyrJiWK9IDQvBD6GiW5gvLew9y9f/cdAfRbuMP3acvxgHcmPu2ghsGEu/XiKU9P
+	7lJYQK2dzQNnxvjlKihebkZQQKj/b/p8g4hlQoMfQL+hGErB5R24pCTT0QwsVqoKy5GgHp6/0/A4I
+	Rn8f78saUTkuSeQtkd/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7IPU-009rWI-3A;
-	Thu, 08 Jun 2023 16:22:52 +0000
-Received: from madras.collabora.co.uk ([46.235.227.172])
+	id 1q7LtT-00AUA9-2o;
+	Thu, 08 Jun 2023 20:06:03 +0000
+Received: from mail-io1-f51.google.com ([209.85.166.51])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7IPQ-009rSP-2r;
-	Thu, 08 Jun 2023 16:22:50 +0000
-Received: from jupiter.universe (dyndsl-091-248-189-092.ewe-ip-backbone.de [91.248.189.92])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 8EE466606F26;
-	Thu,  8 Jun 2023 17:22:44 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1686241364;
-	bh=uHNhWU1jmIOWUBoodh01ywxlZr0fhauLWpShle6WDA0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Pm3Hj2LidW5ynLDBvQj0RxL97jnhj5ZAAnLxEFG4m3Duy00ph0zuP3bWlknv/2jZD
-	 8sfzQxQdl27tKGO7AO3pLprPRDFrZR/vDUeWB5KdgH2BbqnEwo7rwEEFAvXYDdKmjU
-	 q7IZWjN0T+YZgJBTUk3TCdOYXiWwzE+d2St7NJsZCRf4uREoCuUQfss/6huPep5W6S
-	 5DAz/R++5uQloHTiKfgmgcZb9tk3pBdYbcNt+ijK9aIKLDRkijhl2V/Xk5v1DSD3kQ
-	 D+Qz23f5wPTApcYfl532rp1vRGy218pg+ScEyQkjntYlhN7EKBIh20R/IXyJCM2c+f
-	 Ym/JBoqw8gopw==
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id D16C64807F0; Thu,  8 Jun 2023 18:22:39 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com
-Subject: [PATCH v3 5/5] arm64: dts: rockchip: rk3588: add SATA support
-Date: Thu,  8 Jun 2023 18:22:38 +0200
-Message-Id: <20230608162238.50078-6-sebastian.reichel@collabora.com>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230608162238.50078-1-sebastian.reichel@collabora.com>
-References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
+	id 1q7LtP-00AU6P-2a;
+	Thu, 08 Jun 2023 20:06:01 +0000
+Received: by mail-io1-f51.google.com with SMTP id ca18e2360f4ac-777a2ef8d45so47267639f.2;
+        Thu, 08 Jun 2023 13:05:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686254755; x=1688846755;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=0/sR8/S11r6POKJwJKZdRyyXC9EYM0/cQxZIkmiJzsI=;
+        b=bDt22+HPS/33Yzg3ZlcmQ1CvIUYfrXQPQbtipA4O6XIOZrMWnFPIspZg+gvDjOWMCx
+         T7DblvfyOSGOqFZQb4rNv+1SfUblE1sLByC1x43ZKa4TCEXMZcTDuMfs5F3GEEoJnLhH
+         TxF7vo9Sn2L/5QBCRkACs5f6Nwss/np5CPAomL2250bQB1zPlHTEwLHgzyL28sGYrUR1
+         b95rVFTpq8epy53CiTYl1wv5EKV79yLjTZxoj0HpWHDgYe3CQaK3rGdR6TTca3i2J055
+         PkOH3+2L7QZmxTbjYPVoJh5DOFh9X7SwK0OdXivFuIixu2VuFB8YwhbGiHQ1ZqQHLPHq
+         zerA==
+X-Gm-Message-State: AC+VfDztM6+5olNGBU+fBb+OETFIJVA5/zGSc5SrETHtWCyy9jykVyE3
+	1QklZtlLoNL2mZI3xEK3jg==
+X-Google-Smtp-Source: ACHHUZ4Z/oQrytUoNlri3g8lDHCGhsb5liDnpSpmhO6hxn9vEvVy6hx4AJ8tUzV/0PRd4R7ABah0Qg==
+X-Received: by 2002:a05:6602:218c:b0:777:b4b7:f6ac with SMTP id b12-20020a056602218c00b00777b4b7f6acmr10471093iob.10.1686254755522;
+        Thu, 08 Jun 2023 13:05:55 -0700 (PDT)
+Received: from robh_at_kernel.org ([64.188.179.250])
+        by smtp.gmail.com with ESMTPSA id u19-20020a02c953000000b0041672c963b3sm483509jao.50.2023.06.08.13.05.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 08 Jun 2023 13:05:54 -0700 (PDT)
+Received: (nullmailer pid 3315825 invoked by uid 1000);
+	Thu, 08 Jun 2023 20:05:52 -0000
+Date: Thu, 8 Jun 2023 14:05:52 -0600
+From: Rob Herring <robh@kernel.org>
+To: Julien Stephan <jstephan@baylibre.com>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, mkorpershoek@baylibre.com, khilman@baylibre.com, Florian Sylvestre <fsylvestre@baylibre.com>, Andy Hsieh <andy.hsieh@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH v3 2/3] dt-bindings: phy: add mediatek MIPI CD-PHY module
+ v0.5
+Message-ID: <20230608200552.GA3303349-robh@kernel.org>
+References: <20230524083033.486490-1-jstephan@baylibre.com>
+ <20230524083033.486490-3-jstephan@baylibre.com>
+ <f92c39c8-177a-e18d-c3b0-79e7349ea4db@collabora.com>
+ <2jfgupyvtuenvm7x52l6bo5xzzpva7u6njeg3ecd52wwj4spv6@y3nsq7j2hl2u>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2jfgupyvtuenvm7x52l6bo5xzzpva7u6njeg3ecd52wwj4spv6@y3nsq7j2hl2u>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230608_092249_060840_0B9E1EEF 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20230608_130559_845702_1B6AA0D7 
+X-CRM114-Status: GOOD (  29.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,117 +84,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add all three SATA IP blocks to the RK3588 DT.
+On Wed, May 24, 2023 at 04:05:03PM +0200, Julien Stephan wrote:
+> On Wed, May 24, 2023 at 11:45:30AM +0200, AngeloGioacchino Del Regno wrote:
+> > Il 24/05/23 10:30, Julien Stephan ha scritto:
+> > > From: Florian Sylvestre <fsylvestre@baylibre.com>
+> > >
+> > > This adds the bindings, for the MIPI CD-PHY module v0.5 embedded in
+> > > some Mediatek soc, such as the mt8365
+> > >
+> > > Signed-off-by: Florian Sylvestre <fsylvestre@baylibre.com>
+> > > Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+> > > ---
+> > >   .../bindings/phy/mediatek,mt8365-csi-rx.yaml  | 67 +++++++++++++++++++
+> > >   MAINTAINERS                                   |  6 ++
+> > >   2 files changed, 73 insertions(+)
+> > >   create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
+> > > new file mode 100644
+> > > index 000000000000..a1bd96a98051
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
+> > > @@ -0,0 +1,67 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > +# Copyright (c) 2023 MediaTek, BayLibre
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/phy/mediatek,mt8365-csi-rx.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Mediatek Sensor Interface MIPI CSI CD-PHY
+> > > +
+> > > +maintainers:
+> > > +  - Julien Stephan <jstephan@baylibre.com>
+> > > +  - Andy Hsieh <andy.hsieh@mediatek.com>
+> > > +
+> > > +description:
+> > > +  The SENINF CD-PHY is a set of CD-PHY connected to the SENINF CSI-2
+> > > +  receivers. The number of PHYs depends on the SoC model.
+> > > +  Depending on the SoC model, each PHYs can be either CD-PHY or D-PHY only
+> > > +  capable.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    enum:
+> > > +      - mediatek,mt8365-csi-rx
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  '#phy-cells':
+> > > +    const: 0
+> > > +
+> > > +  mediatek,phy-type:
+> >
+> > Instead of declaring a phy-type here like this, can't we instead declare that in
+> > the phy cells, like we're doing with MTK TPHY and like other non-MediaTek PHYs are
+> > already doing?
+> >
+> > device {
+> > 	...
+> > 	phys = <&csi0_rx PHY_TYPE_CDPHY>;
+> > 	...
+> > }
+> >
+> > Regards,
+> > Angelo
+> >
+> >
+> 
+> Hi Angelo,
+> 
+> This is a hardware property that is not dynamic, so IMHO it doesn't make sense
+> to use phy argument for that. 
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- arch/arm64/boot/dts/rockchip/rk3588.dtsi  | 23 +++++++++++
- arch/arm64/boot/dts/rockchip/rk3588s.dtsi | 48 +++++++++++++++++++++++
- 2 files changed, 71 insertions(+)
+Why? Interrupt numbers are fixed hardware properties which go in arg 
+cells.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-index 9d8539b5309b..b9508cea34f1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-@@ -129,6 +129,29 @@ gmac0_mtl_tx_setup: tx-queues-config {
- 		};
- 	};
- 
-+	sata1: sata@fe220000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe220000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA1>, <&cru CLK_PMALIVE1>,
-+			 <&cru CLK_RXOOB1>, <&cru CLK_PIPEPHY1_REF>,
-+			 <&cru CLK_PIPEPHY1_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 274 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy1_ps PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
- 	combphy1_ps: phy@fee10000 {
- 		compatible = "rockchip,rk3588-naneng-combphy";
- 		reg = <0x0 0xfee10000 0x0 0x100>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-index 45ae457a22a4..00a91b08e3bb 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-@@ -9,6 +9,8 @@
- #include <dt-bindings/power/rk3588-power.h>
- #include <dt-bindings/reset/rockchip,rk3588-cru.h>
- #include <dt-bindings/thermal/thermal.h>
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/ata/ahci.h>
- 
- / {
- 	compatible = "rockchip,rk3588";
-@@ -1717,6 +1719,52 @@ gmac1_mtl_tx_setup: tx-queues-config {
- 		};
- 	};
- 
-+	sata0: sata@fe210000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe210000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA0>, <&cru CLK_PMALIVE0>,
-+			 <&cru CLK_RXOOB0>, <&cru CLK_PIPEPHY0_REF>,
-+			 <&cru CLK_PIPEPHY0_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 273 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy0_ps PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
-+	sata2: sata@fe230000 {
-+		compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-+		reg = <0 0xfe230000 0 0x1000>;
-+		clocks = <&cru ACLK_SATA2>, <&cru CLK_PMALIVE2>,
-+			 <&cru CLK_RXOOB2>, <&cru CLK_PIPEPHY2_REF>,
-+			 <&cru CLK_PIPEPHY2_PIPE_ASIC_G>;
-+		clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-+		interrupts = <GIC_SPI 275 IRQ_TYPE_LEVEL_HIGH 0>;
-+		ports-implemented = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		sata-port@0 {
-+			reg = <0>;
-+			hba-port-cap = <HBA_PORT_FBSCP>;
-+			phys = <&combphy2_psu PHY_TYPE_SATA>;
-+			phy-names = "sata-phy";
-+			snps,rx-ts-max = <32>;
-+			snps,tx-ts-max = <32>;
-+		};
-+	};
-+
- 	sdmmc: mmc@fe2c0000 {
- 		compatible = "rockchip,rk3588-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xfe2c0000 0x0 0x4000>;
--- 
-2.39.2
+> Some driver already use a 'phy-type'
+> property (such as phy-cadence-torrent.yaml).
+> 
+> I was thinking of using phy argument on future upgrade when driver will
+> support D-PHY and C-PHY modes so the phy user will be able to choose the
+> mode.
 
+Once you design the binding, you don't get to change it.
+
+Rob
 
 -- 
 linux-phy mailing list
