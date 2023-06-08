@@ -4,87 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A595C7EE23
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 07:32:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C29EEC7EE29
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 07:49:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fSwMDUgvOOo0oiRvjGAqr6JmRrojh72Q6V1oJWhWPiU=; b=Ugp9ReVeqIibVk
-	FeUoVuaJ3UGSj90X1ifhtQyT8RBAy5v6xmUZd2rHPZVJbR91aOTE8RyOzIfJkDrFvp6cr6Jqz3YXm
-	k7DqQ1J4B/yZoBfVt2lU5ebMbThioaFvFDt8UC6qFS5bB9Hk/ws8g7cyeBv4wfbFyypY2lZbaTHO8
-	g3hMAEpWYLNaOJK+4Z9BRFvLZn7+5jpvyl4UYOruuQjdwKe4PLesEwudrtckd80azUXSeH0RkRYNN
-	MpmRJBVz01HN1AuSfm7K0PtfMmUEhxik7WCNl0Y5YJesdo5NS7XHHcTnRM6W8OhpV7/TyctGzNgS6
-	zKYs20qLzwyzGEpSAaBQ==;
+	List-Owner; bh=HJaTWN4Bp4qgv2hVJl61h2S8FuQENSCKREGiDzyDiKM=; b=puLIU00z369Urc
+	ahPYdiSgTqIWrrGWVcMu1SMgAcUQ6mjTeTdu85KbAoY0plTDNVa+mZCnilf1TvLKytdJqYtzVgTvS
+	zn8JAtjsvx3j5SZBKMVnWqsFc/l1ThX0ssMqTkcDmFyjD2sSgw6fQ7as54NiN0zavCYXBiNrRiR1a
+	NxOOst6MK60AvEUTffYZQqckTkV1PbgP5uox9N2OoSHsUYs7vEzcBHv4CUp7bfmcMu8KUSuhTEz4D
+	Hzu1cWLnnlFWF8EXaTmD7Q6DKbmyptCeqmcqPTRv4DBg6X0E6RV71yoMEOYLyUHXl9DPHK9ssV8fK
+	jTI+lTq3WKmnaY2QhYZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7A7s-008P8z-0o;
-	Thu, 08 Jun 2023 07:32:08 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1q7AOL-008RvY-1U;
+	Thu, 08 Jun 2023 07:49:09 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7A7o-008P69-2W
+	id 1q7AOI-008Rv5-1T
 	for linux-phy@lists.infradead.org;
-	Thu, 08 Jun 2023 07:32:06 +0000
+	Thu, 08 Jun 2023 07:49:07 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-5147f7d045bso400445a12.2
+        for <linux-phy@lists.infradead.org>; Thu, 08 Jun 2023 00:49:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1686209524; x=1717745524;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=WZqPqMZn3ipI5H7SNd0QAYxuQSytRbg89zQtF1DAKws=;
-  b=Dik7GVcfT44mblgq4LQrB2eL8IDQe5L0V+BhtKnW9geA1NwEpVLgMmlh
-   RNMlgWN0Q0rrl9TYSRWn7UKdFlu3cpxMXxigKT76N8b6typJqd/fR4JET
-   MxrV6GKbagWMi6JynNM9u/f4Gy1t/kfAFNwoifnZ3hmfWqWoAgdQlX4+H
-   BZUUSOf9O16HaaSRt4Sw01innOOGV5v4sd3sgfvVUKOWZvBhGaxIL2N2Y
-   B2pVcoEUTwr2kt5xDsY+mK8TwWX6CLuq+IkHQ+vVgYb0b2QfG2pIyEfvn
-   Ipdm4mhVt5h1RmlA3WcUoZT/wvBVbseSwoe/CGV6OSWi+sA5e7TKOCnAD
-   Q==;
-X-IronPort-AV: E=Sophos;i="6.00,226,1681164000"; 
-   d="scan'208";a="31342720"
-Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
-  by mx1-pgp.tq-group.com with ESMTP; 08 Jun 2023 09:31:58 +0200
-Received: from mx1.tq-group.com ([192.168.6.7])
-  by tq-pgp-pr1.tq-net.de (PGP Universal service);
-  Thu, 08 Jun 2023 09:31:58 +0200
-X-PGP-Universal: processed;
-	by tq-pgp-pr1.tq-net.de on Thu, 08 Jun 2023 09:31:58 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1686209518; x=1717745518;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=WZqPqMZn3ipI5H7SNd0QAYxuQSytRbg89zQtF1DAKws=;
-  b=ndMZGDU9ccJIvIapNqmw47pXOyCdb7P1dWyxwgyFW0+cnT/3VoaqbOUb
-   YNAXdDBiOM9qb+K/WDMLZ6qYNUkgI08uNJ55dBqjNKCZ0RncyEk7TAtbB
-   aPT8EcWujWKw+ybIw7L6Qc400JiuW7luBImSGuvEN9e/5EDvcVhkTndHx
-   5+Rf+hUa6hAxP2PSjS3U7Oc+8kp7F8oHhyAX+9JZVt2IZuC3sZbqyntfR
-   jRO5XuYenAg6QQJQUe7BCrTZnBKbe+N1ToSwHywJMOaDI8PbnnwtQ1Hz7
-   dbX7BVLNdFHWEgMMnVVznCm/2Ol8n7vcnMn/eKWAU3IFsoloQl8ES2Vcj
-   Q==;
-X-IronPort-AV: E=Sophos;i="6.00,226,1681164000"; 
-   d="scan'208";a="31342719"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 08 Jun 2023 09:31:58 +0200
-Received: from steina-w.localnet (unknown [10.123.53.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id EEC32280087;
-	Thu,  8 Jun 2023 09:31:57 +0200 (CEST)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Liu Ying <victor.liu@nxp.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 1/1] dt-bindings: phy: mixel, mipi-dsi-phy: Remove assigned-clock* properties
-Date: Thu, 08 Jun 2023 09:31:57 +0200
-Message-ID: <1855461.tdWV9SEqCh@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20230606-implement-canning-0353ca9afddb@spud>
-References: <20230606144447.775942-1-alexander.stein@ew.tq-group.com> <20230606-implement-canning-0353ca9afddb@spud>
+        d=linaro.org; s=google; t=1686210545; x=1688802545;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wKXuqqogfGtV6X2iudgEbDe3qPnP59JxR6B3QZM/6Dc=;
+        b=bhf+RuA4cxddlwxZKvK2wGkOnl/9IsTFmePcG64J8c5+dhVU8H5Ar6PU7SXUoD134P
+         X94MJk/g8AZRGzJdI3PPL2V1bHwEfi5J7Qg825NZjE8x82rCjKx1cQS/z6JUXTXDApM+
+         PBucjFaVmiMgyg3Vp9mAk8oy9p+Q+rUsKwjnWIPQms3F9ZxG9ZVPU5a/ru/vldHfmfSn
+         +sMw8fBv1FELUTlQcjlkKmHwwski8uJk6bBsfw7qrBeHrOYiaOlqpSyxWqTy3bYMn+Jb
+         0njLxhFKb4sFdZLjlURFzZcQ+OPrQSLBjV4dErXv1gcMV54WuJzf9HVlv/4Q8wMzsIM1
+         9gjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686210545; x=1688802545;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wKXuqqogfGtV6X2iudgEbDe3qPnP59JxR6B3QZM/6Dc=;
+        b=JPTRuFa1Wa+DxqWn6CMLgI10d1zHgMFJK5wZ8p/y0gOJdFKeShdIauvdD56s7AbceA
+         20GvNrn8JN5rhthAxSVcKDaZfV5hw/LOvlZsemnhJx7GzMSqQDTTSfPI/pTubjf3ouDZ
+         IDyzUPfnBy552rnJ9iVstHuEYTPCyblouidyjdXfQnfLoUxYeOoULgZqSLm8gq1zVYeZ
+         rsOnxtAHpd2k2LaE8ey+LUz20FGsLbm6FKJ0Bnu1Q6Maf0HzJNa1gcLv/MvuVI1s20kl
+         Zj0EZsTdDUwTkpivV85/IgPhQSHP6fZ3+l5uF0f6gkr+nCOJtY1LkZNoB7aQwf6TVCrv
+         ujUg==
+X-Gm-Message-State: AC+VfDxPy16DQe1edfBxM6i5G0OK6m3LZGjw/VhtXRsKUbsqIAvU8lyP
+	9t6CcrV3EXsL0/0LSnjOmPRl6Q==
+X-Google-Smtp-Source: ACHHUZ6yjUk/Bupi3XuBm3zPQr5L3cn8gW6giSpWJdT5x1Wi4H/8UZ3u8kE/ol+rO20wF6MKqMUrxA==
+X-Received: by 2002:a05:6402:6c6:b0:50b:d75d:3155 with SMTP id n6-20020a05640206c600b0050bd75d3155mr7195595edy.37.1686210544721;
+        Thu, 08 Jun 2023 00:49:04 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id u11-20020aa7db8b000000b00514b3a2008esm238999edt.2.2023.06.08.00.49.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 08 Jun 2023 00:49:04 -0700 (PDT)
+Message-ID: <7df8ffb6-a544-d10e-5273-fd6c4b368b20@linaro.org>
+Date: Thu, 8 Jun 2023 09:49:01 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH v3 4/5] dt-bindings: phy: realtek: Add the doc about the
+ Realtek SoC USB 2.0 PHY
+Content-Language: en-US
+To: =?UTF-8?B?U3RhbmxleSBDaGFuZ1vmmIzogrLlvrdd?= <stanley_chang@realtek.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ Ray Chi <raychi@google.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ Michael Grzeschik <m.grzeschik@pengutronix.de>,
+ Mathias Nyman <mathias.nyman@linux.intel.com>,
+ Flavio Suligoi <f.suligoi@asem.it>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+References: <20230607062500.24669-1-stanley_chang@realtek.com>
+ <20230607062500.24669-4-stanley_chang@realtek.com>
+ <7cce1d72-6b4d-9fff-32bc-942193388134@linaro.org>
+ <8a88cbee5c6245f2941c700b2bb30697@realtek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <8a88cbee5c6245f2941c700b2bb30697@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230608_003205_123168_911B7D20 
-X-CRM114-Status: GOOD (  20.47  )
+X-CRM114-CacheID: sfid-20230608_004906_499352_E983306C 
+X-CRM114-Status: GOOD (  24.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,119 +104,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Conor,
-
-Am Dienstag, 6. Juni 2023, 20:21:02 CEST schrieb Conor Dooley:
-> * PGP Signed by an unknown key
-> =
-
-> On Tue, Jun 06, 2023 at 04:44:46PM +0200, Alexander Stein wrote:
-> > These properties are allowed anyway and some SoC (e.g. imx8mq) configure
-> > more than just one clock using these properties.
-> =
-
-> What does "allowed anyway" mean?
-> And following from that, why not modify the min/maxItems to suit
-> reality, rather than remove them. Is there enforcement from elsewhere?
-
-As Liu pointed out, assigned-clock* were considered a generic property adde=
-d =
-
-by default at that time. With that support added there is no need to specif=
-y =
-
-these properties in this bindings again.
-Despite that you never know in advance how many items you will have to add =
-to =
-
-assigned-clock* properties, that's totally different to 'clocks', it may ev=
-en =
-
-depend on board specific clock setups.
-
-> > Fixes: f9b0593dd4fc6 ("dt-bindings: phy: Convert mixel,mipi-dsi-phy to
-> > json-schema") Signed-off-by: Alexander Stein
-> > <alexander.stein@ew.tq-group.com>
-> > ---
-> > I can't reproduce the mentioned mis-matches in commit f9b0593dd4fc6
-> > ("dt-bindings: phy: Convert mixel,mipi-dsi-phy to json-schema").
-> =
-
-> I suspect that meant that the property was in the dt but not in the
-> binding at the time of the conversion.
-
-You are right, given the commit [1]. Which, from today's perspective, is al=
-so =
-
-a rationale for this patch.
-
-Best regards,
-Alexander
-
-[1] https://github.com/devicetree-org/dt-schema/commit/
-c3424745f900e8cf0a0e3acebffeeda83a82f6d4
-
-> Cheers,
-> Conor.
-> =
-
-> > Since commit 62270eeb2b639 ("arm64: dts: imx8mq: Add clock parents for
-> > mipi dphy") imx8mq.dtsi configures several clocks using assigned-clocks*
-> > properties.
-> > =
-
-> >  .../devicetree/bindings/phy/mixel,mipi-dsi-phy.yaml      | 9 ---------
-> >  1 file changed, 9 deletions(-)
-> > =
-
-> > diff --git a/Documentation/devicetree/bindings/phy/mixel,mipi-dsi-phy.y=
-aml
-> > b/Documentation/devicetree/bindings/phy/mixel,mipi-dsi-phy.yaml index
-> > 786cfd71cb7eb..3c28ec50f0979 100644
-> > --- a/Documentation/devicetree/bindings/phy/mixel,mipi-dsi-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/mixel,mipi-dsi-phy.yaml
-> > =
-
-> > @@ -32,15 +32,6 @@ properties:
-> >    clock-names:
-> >      const: phy_ref
-> > =
-
-> > -  assigned-clocks:
-> > -    maxItems: 1
-> > -
-> > -  assigned-clock-parents:
-> > -    maxItems: 1
-> > -
-> > -  assigned-clock-rates:
-> > -    maxItems: 1
-> > -
-> > =
-
-> >    "#phy-cells":
-> >      const: 0
-> =
-
-> * Unknown Key
-> * 0xA08262D2
-
-
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
-
-
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMDgvMDYvMjAyMyAwOToyNCwgU3RhbmxleSBDaGFuZ1vmmIzogrLlvrddIHdyb3RlOgo+Pj4g
+KyAgcmVhbHRlayx1c2ItY3RybDoKPj4+ICsgICAgZGVzY3JpcHRpb246IFRoZSBwaGFuZGxlIG9m
+IHN5c2NvbiB1c2VkIHRvIGNvbnRyb2wgVVNCIFBIWSBwb3dlcgo+PiBkb21haW4uCj4+PiArICAg
+ICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3BoYW5kbGUKPj4KPj4gTm8s
+IHdlIGhhdmUgcG93ZXItZG9tYWlucyBmb3IgdGhpcy4KPiAKPiBNYXliZSBJIHVzZSB0aGUgd29y
+ZCAiY29udHJvbCBwb3dlciBkb21haW4iIGlzIG5vdCB3ZWxsLCBJIGp1c3Qgd2FudCB0byBjb250
+cm9sIHRoZSBsZG8gb2YgdXNiIHBoeS4KPiBSZXZpc2VkOgo+IFRoZSBwaGFuZGxlIG9mIHN5c2Nv
+biB1c2VkIHRvIGNvbnRyb2wgdGhlIGxkbyBvZiBVU0IgUEhZLgoKSXNuJ3QgdGhpcyBzdGlsbCBh
+IHBvd2VyIGRvbWFpbj8KCj4gCj4+PiArCj4+PiArcGF0dGVyblByb3BlcnRpZXM6Cj4+PiArICAi
+XnBoeUBbMC0zXSskIjoKPj4+ICsgICAgdHlwZTogb2JqZWN0Cj4+PiArICAgIGRlc2NyaXB0aW9u
+Ogo+Pj4gKyAgICAgIEVhY2ggc3ViLW5vZGUgaXMgYSBQSFkgZGV2aWNlIGZvciBvbmUgWEhDSSBj
+b250cm9sbGVyLgo+Pgo+PiBJIGRvbid0IHRoaW5rIGl0IGlzIHRydWUuIFlvdSBjbGFpbSBhYm92
+ZSB0aGF0IHlvdSBoYXZlIDAgYXMgcGh5LWNlbGxzLCBtZWFucyB5b3UKPj4gaGF2ZSBvbmUgcGh5
+LiBIZXJlIHlvdSBzYXkgeW91IGNhbiBoYXZlIHVwIHRvIDQgcGh5cy4KPiAKPiBJIG1lYW4gdGhl
+IGRyaXZlciBjYW4gc3VwcG9ydCB1cCB0byA0IHBoeXMuCgpXaGF0IGRyaXZlciBjYW4gb3IgY2Fu
+bm90IGRvLCBkb2VzIG5vdCBtYXR0ZXIuIFRoaXMgaXMgYWJvdXQgaGFyZHdhcmUuCgo+IEZvciBS
+VEQxMjk1IGhhcyBvbmx5IG9uZSBwaHkuCj4gRm9yIFJURDEzOTUgaGFzIHR3byBwaHlzLgoKVHdv
+IHBoeXM/IFNvIGhvdyBkbyB5b3UgcmVmZXJlbmNlIHRoZW0gd2hlbiBjZWxscz0wPwoKPiAKPj4+
+ICsgICAgICBGb3IgbW9zdCBSZWxhdGVrIFNvQ3MsIG9uZSBYSENJIGNvbnRyb2xsZXIgb25seSBz
+dXBwb3J0IG9uZSB0aGUgVVNCCj4+IDIuMAo+Pj4gKyAgICAgIHBoeS4gRm9yIFJURDEzOTUgU29D
+LCB0aGUgb25lIFhIQ0kgY29udHJvbGxlciBoYXMgdHdvIFVTQiAyLjAKPj4gUEhZcy4KPj4+ICsg
+ICAgcHJvcGVydGllczoKPj4+ICsgICAgICByZWFsdGVrLHBhZ2UwLXBhcmFtOgo+Pj4gKyAgICAg
+ICAgZGVzY3JpcHRpb246IFBIWSBwYXJhbWV0ZXIgYXQgcGFnZSAwLiBUaGUgZGF0YSBhcmUgdGhl
+IHBhaXIgb2YKPj4gdGhlCj4+PiArICAgICAgICAgIG9mZnNldCBhbmQgdmFsdWUuCj4+Cj4+IFRo
+aXMgbmVlZHMgdG8gYmUgc3BlY2lmaWMuIFdoYXQgdGhlIGhlY2sgaXMgIlBIWSBwYXJhbWV0ZXIi
+Pwo+Pgo+Pj4gKyAgICAgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMv
+dWludDMyLWFycmF5Cj4+Cj4+IEFycmF5PyBUaGVuIG1heEl0ZW1zLgo+IEkgaGF2ZSBmb3VuZCBv
+dGhlciBkb2N1bWVudC4KPiBJdCBzaG91bGQgYmUgYSB1aW50MzItbWF0cml4Lgo+IEkgd2lsbCBh
+ZGQgdGhlIG1heEl0ZW1zLgoKRW50aXJlIHByb3BlcnR5IHNob3VsZCBiZSBkcm9wcGVkLgoKPiAK
+Pj4+ICsKPj4+ICsgICAgICByZWFsdGVrLHBhZ2UxLXBhcmFtOgo+Pj4gKyAgICAgICAgZGVzY3Jp
+cHRpb246IFBIWSBwYXJhbWV0ZXIgYXQgcGFnZSAxLiBUaGUgZGF0YSBhcmUgdGhlIHBhaXIgb2YK
+Pj4gdGhlCj4+PiArICAgICAgICAgIG9mZnNldCBhbmQgdmFsdWUuCj4+PiArICAgICAgICAkcmVm
+OiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzItYXJyYXkKPj4+ICsKPj4+
+ICsgICAgICByZWFsdGVrLHBhZ2UyLXBhcmFtOgo+Pj4gKyAgICAgICAgZGVzY3JpcHRpb246IFBI
+WSBwYXJhbWV0ZXIgYXQgcGFnZSAyLiBUaGUgZGF0YSBhcmUgdGhlIHBhaXIgb2YKPj4gdGhlCj4+
+PiArICAgICAgICAgIG9mZnNldCBhbmQgdmFsdWUuIElmIHRoZSBQSFkgc3VwcG9ydCB0aGUgcGFn
+ZSAyIHBhcmFtZXRlci4KPj4+ICsgICAgICAgICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2Rl
+ZmluaXRpb25zL3VpbnQzMi1hcnJheQo+Pj4gKwo+Pj4gKyAgICAgIHJlYWx0ZWssc3VwcG9ydC1w
+YWdlMi1wYXJhbToKPj4+ICsgICAgICAgIGRlc2NyaXB0aW9uOiBTZXQgdGhpcyBmbGFnIGlmIFBI
+WSBzdXBwb3J0IHBhZ2UgMiBwYXJhbWV0ZXIuCj4+Cj4+IFdoeSB0aGlzIGNhbm5vdCBiZSBkZWR1
+Y3RlZCBmcm9tIGNvbXBhdGlibGU/Cj4gSXQgY2FuIGlkZW50aWZ5IGJ5IGNvbXBhdGlibGUuCgpT
+byBkcm9wIGl0LgoKPiAKPj4KPj4+ICsgICAgICAgIHR5cGU6IGJvb2xlYW4KPj4+ICsKPj4+ICsg
+ICAgICByZWFsdGVrLGRvLXRvZ2dsZToKPj4+ICsgICAgICAgIGRlc2NyaXB0aW9uOiBTZXQgdGhp
+cyBmbGFnIHRvIGVuYWJsZSBQSFkgcGFyYW1ldGVyIHRvZ2dsZSB3aGVuCj4+IHBvcnQKPj4+ICsg
+ICAgICAgICAgc3RhdHVzIGNoYW5nZS4KPj4KPj4gRG8gbm90IGluc3RydWN0IE9TIHdoYXQgdG8g
+ZG8uIEV4cGxhaW4gd2h5IHRoaXMgaXMgYSBoYXJkd2FyZSBjaGFyYWN0ZXJpc3RpYy4KPiAKPiBJ
+biBteSBvcmlnaW5hbCBpbnRlbnRpb24sIHdlIGhvcGUgdGhhdCB0aGlzIHByb3BlcnR5IGNhbiBi
+ZSB1c2VkIHRvIGNvbnRyb2wgdGhlIHBoeSBkcml2ZXIgZG8gcGFyYW1ldGVyIHRvZ2dsZS4KPiBJ
+cyBpdCBhIGhhcmR3YXJlIGNoYXJhY3RlcmlzdGljPyBJIGRvbid0IHRoaW5rIGl0J3MgZXhhY3Rs
+eSBhIGhhcmR3YXJlIGZlYXR1cmUuCj4gTWF5YmUgaXQgY2FuIGJlIHNwZWNpZmllZCBieSB0aGUg
+Y29tcGF0aWJsZS4KCkRyb3AgaXQuCgo+IAo+Pj4gKyAgICAgICAgdHlwZTogYm9vbGVhbgo+Pj4g
+Kwo+Pj4gKyAgICAgIHJlYWx0ZWssZG8tdG9nZ2xlLWRyaXZpbmc6Cj4+PiArICAgICAgICBkZXNj
+cmlwdGlvbjogU2V0IHRoaXMgZmxhZyB0byBlbmFibGUgUEhZIHBhcmFtZXRlciB0b2dnbGUgZm9y
+Cj4+IGFkanVzdAo+Pj4gKyAgICAgICAgICB0aGUgZHJpdmluZyB3aGVuIHBvcnQgc3RhdHVzIGNo
+YW5nZS4KPj4KPj4gRG8gbm90IGluc3RydWN0IE9TIHdoYXQgdG8gZG8uIEV4cGxhaW4gd2h5IHRo
+aXMgaXMgYSBoYXJkd2FyZSBjaGFyYWN0ZXJpc3RpYy4KPj4KPj4KPj4+ICsgICAgICAgIHR5cGU6
+IGJvb2xlYW4KPj4+ICsKPj4+ICsgICAgICByZWFsdGVrLGNoZWNrLWVmdXNlOgo+Pj4gKyAgICAg
+ICAgZGVzY3JpcHRpb246IEVuYWJsZSB0byB1cGRhdGUgUEhZIHBhcmFtZXRlciBmcm9tIHJlYWRp
+bmcgb3RwCj4+IHRhYmxlLgo+Pgo+PiBEbyBub3QgaW5zdHJ1Y3QgT1Mgd2hhdCB0byBkby4gRXhw
+bGFpbiB3aHkgdGhpcyBpcyBhIGhhcmR3YXJlIGNoYXJhY3RlcmlzdGljLgo+IAo+IFNhbWUgYWJv
+dmUuCgpTbyBkcm9wIGFsbCBvZiB0aGVzZS4KCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
