@@ -4,66 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91D30C7EE2E
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 04:26:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7324C7EE25
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 06:40:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=876Q2uhSD7mQLZ9IQKJWfbVL3xF1Z2/kaX4PMrEeASQ=; b=QH5PuLI9WhPt3t
-	hnaI1Bmr6hf2+nCWdSCu/OE89yTyq/9YsVFNyuo7OZOJXoAuPViPK3Bnx0Bnxhm4lNfNZYFjg8yxv
-	dVObRoQ2jrQqBDccUnO4eKeRzex7nzLwTCJn7N2Sk2fMQAShv0hYvUPlq9O91+WS/z08afS6HpDRD
-	65oxznE4/LyoUdQAw3OJDbEJdXcl7wVV+ju0vrmobXjlDN2hnoJJnlSGBDHxeA+/E2x89jLR4XODW
-	GqgYUez/k6uEL+IrGBUQ8w3fiFkQQY2JU+94lqWFomuowsn1ndM/h/COeomba39uHkTqHjEFSMLRO
-	uujc7qcmR0zXjxeMnrEw==;
+	List-Owner; bh=qGYeSo5LLlMsi7oE5qcmrJcQqQSbyFCC4uc7dgglhFA=; b=l6Q6Khr2nDjXLL
+	iiqZbbcwxNT22RJa0d+nfOqZUm3v1BA/7OS+bv8euJ6ovT1Dz3b16DRCebxIgdpMkeGlyq6Ljc8Dv
+	/cPRJczAfJHgwmIZ7S2DsOmcH7fbTkiJtmTTpltSYL5JJK2vZSLQwlGGR0LLqVfhl4cpNdML2waaV
+	n27urPI+PJ+8+gxR5YA7A89bvArjiHb3MC6etoc8+fzD6397ZKSvvFClRF4AzHRi4OOZnei3Do8gk
+	6aFQPgFYtha3wP96Gf3ThGYnutjb+iBWouYqnUoyphsvPFFpKE8GRbGnpTFcujWa+tMR9dX7VAS8v
+	0BoUVLwCRXCpkSce4lpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q77Ee-0082MH-1K;
-	Thu, 08 Jun 2023 04:26:56 +0000
-Received: from mail-il1-f180.google.com ([209.85.166.180])
+	id 1q79Jn-008HId-18;
+	Thu, 08 Jun 2023 06:40:23 +0000
+Received: from mail-he1eur04on0601.outbound.protection.outlook.com ([2a01:111:f400:fe0d::601] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q77Ea-0082LE-2s;
-	Thu, 08 Jun 2023 04:26:54 +0000
-Received: by mail-il1-f180.google.com with SMTP id e9e14a558f8ab-33c37f62e24so274245ab.3;
-        Wed, 07 Jun 2023 21:26:50 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686198410; x=1688790410;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=h+tB5ELcsjPnXMUJmycfD3kXBY74Sh5XYnDuw2D5xms=;
-        b=aLABrgqU8ig9/gswOq5SviBax4+f+o24lrPTBxWvOcw4jEOP7UldRPfoNH21zRj10k
-         rSpjxeMGMixytNuE6K7kZPG6SYejL7IMK0IUk9oH1pOKNsr9GoNyIJwo2DCgvfa3d3ki
-         8oGOKcr0+nGdY3k6YKsUfc1jXQQ6D/pDwqFm+AGXQQDDl6OvB3VAViqKkyI7FrGKyoBN
-         fJXAkHwJ9dVtDqOAFfsE99ZOQ5O9zapDeT6/SW33oXtmYxiqqv38mbLptoQ03SWbTzvE
-         GquQU/MC0qKhUNz42jjuNSkjVUYhbEMkd+4Wv65hZoxl7KHrq1qiprEnG7YUBZ/76Jv4
-         F+Rw==
-X-Gm-Message-State: AC+VfDxAQgeTDqtwvKr+6w+VLjZkRf0FwGA6Tygj0IaCr4zcxKGwEZ8b
-	yLdt9HUL70b+k5xiy8FhYQ==
-X-Google-Smtp-Source: ACHHUZ6gA4SFsH3efdQTd7uj0JEG0W3GLfWPRCgaw9JidNmOXDlGHa56kVdQDQvb95Ji1SF4m8O2tA==
-X-Received: by 2002:a92:c52d:0:b0:338:bcd8:933c with SMTP id m13-20020a92c52d000000b00338bcd8933cmr6943773ili.21.1686198409647;
-        Wed, 07 Jun 2023 21:26:49 -0700 (PDT)
-Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id t14-20020a922c0e000000b0032c999af7ecsm179802ile.7.2023.06.07.21.26.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 Jun 2023 21:26:48 -0700 (PDT)
-Received: (nullmailer pid 769516 invoked by uid 1000);
-	Thu, 08 Jun 2023 04:26:46 -0000
+	id 1q79Jk-008HHS-3B;
+	Thu, 08 Jun 2023 06:40:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Aon3fmj9TMmiDSm94wJ8SDAKvHulk8Db3BFzkq3+4zWhU1/E3QkqZtPk5iCbxFmbFYr/GbmCC+BurTldhMyAD6qibqVipVdtI8ASd9/mvYRbM1NMo3NaUEUT05N+ZqKlsmhJCjfPQ/dn81IREmdTlnII/PDNmdv6PL2YXBQtngaTWCZOwOciBfkSht0dUxa15ieLKM+CXiihqtFabA2ldG/RS3mZKE9QzTPdq20Tet9J+R4ldJiD3ddEjBluD2zAeE2SbeHJCEuco1CBx83EK/XFRdwr5WKzV4GYvm/zwy5rM5wIphjuNI+38n17wCri/Ots4wbE2lQ8TvMFhXabCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=kGszeJP1I+3qjVypfa0VCp1WHX7JW1a83KjNBNBXvv4=;
+ b=OzdPiAVU2I3hL2aBdZFizbRWDvIeB751F+CSpRgHGnk7LaYwAeogf4ZnaUn+U6SVS32Oed7g4jWKFIM4yw5+t6FX/xnKWFlH3LTB8vIDQXlyhM1YhqwtF6DQyBYkLe5l/5eDE9J0qi4L+CTYr3kb0i3Ey3IOy7jXI0cs6tbH+XeLnQYnRHt/AGdIe3jq4lTqkkOrZHqDbJnUWf/4gUfgSMY+JRe3Jlq+3SoSz6YfqhC/bx5t1E7iCBopdjpyBAHYgVjNyhpMshVYyBqjvk96gmcHVNf1fNDIk1ln/0xEqBJuvjXCqTJaoPNZNiY8ZyrBayYn+hguDgTVkhUjg+Wg2A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kGszeJP1I+3qjVypfa0VCp1WHX7JW1a83KjNBNBXvv4=;
+ b=H33921DiZMquibwuNkDu63RJNJAurkMnunEJRWJslJDFgk7xVDxik4uE5VjcZaioLBYvdwTeMhXWS2cgK+eNqOEjK+7jgdo3rbFYFh4fPRtAShkVX8Xg8uRFoXiAygQDK/zfOc+3STz8FA+MOYibR6GMhKM3ZSfQhMSEsdLs3ac=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DB7PR04MB4505.eurprd04.prod.outlook.com (2603:10a6:5:39::26) by
+ PAXPR04MB9596.eurprd04.prod.outlook.com (2603:10a6:102:23e::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.32; Thu, 8 Jun
+ 2023 06:25:35 +0000
+Received: from DB7PR04MB4505.eurprd04.prod.outlook.com
+ ([fe80::f9b0:8c34:e57:92a4]) by DB7PR04MB4505.eurprd04.prod.outlook.com
+ ([fe80::f9b0:8c34:e57:92a4%7]) with mapi id 15.20.6455.030; Thu, 8 Jun 2023
+ 06:25:35 +0000
+From: Xu Yang <xu.yang_2@nxp.com>
+To: robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org
+Cc: shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	jun.li@nxp.com,
+	xu.yang_2@nxp.com
+Subject: [PATCH v3 2/2] dt-bindings: phy: mxs-usb-phy: add imx8ulp and imx8qm compatible
+Date: Thu,  8 Jun 2023 14:28:42 +0800
+Message-Id: <20230608062842.4171157-2-xu.yang_2@nxp.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230608062842.4171157-1-xu.yang_2@nxp.com>
+References: <20230608062842.4171157-1-xu.yang_2@nxp.com>
+X-ClientProxiedBy: SI1PR02CA0039.apcprd02.prod.outlook.com
+ (2603:1096:4:1f6::9) To DB7PR04MB4505.eurprd04.prod.outlook.com
+ (2603:10a6:5:39::26)
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: festevam@gmail.com, kernel@pengutronix.de, linux-imx@nxp.com, s.hauer@pengutronix.de, krzysztof.kozlowski+dt@linaro.org, linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, jun.li@nxp.com, linux-arm-kernel@lists.infradead.org, shawnguo@kernel.org, robh+dt@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org
-In-Reply-To: <20230608033642.4097956-1-xu.yang_2@nxp.com>
-References: <20230608033642.4097956-1-xu.yang_2@nxp.com>
-Message-Id: <168619840676.769499.9945623918727485916.robh@kernel.org>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT
- schema format
-Date: Wed, 07 Jun 2023 22:26:46 -0600
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB7PR04MB4505:EE_|PAXPR04MB9596:EE_
+X-MS-Office365-Filtering-Correlation-Id: c5f42dab-93bc-432c-9cc7-08db67e92b4f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: RsnTFGdIKUP/4vdnE2otfW2ykj67h1TrY/bdChaENYd/mV6VcLLiSS9037KXGugJrDrQMmYdcWCUbmr6C9M8oVnjLt3vwH6ad1UHaMG56Nn2HGb99NTW1EeyBlooHwuzGb5wbvFHyEHSVD7ujhNtOXiD5fZBMgR/4RdpRU0dF4lIINT0NFYoz+dKGwxooh2NSuCk6XxDGaNCHqdfNoFMu7cocw9/D+jnCSOvWy+0mNB7vKXGk9cjdiPH29mCvdhM9fAHUq4k/4uut4b0nPrf8wtj9GWvY/wNrPtQl5Mk5qpKFKdFHdrh9WNmS9HgbBiPPyX/vBffF5b8n8pW3fIKdsLuW0uQIFqvuFM3vTQIsMdBTeoRELespG/7VueOapW2X/2cAFNSBk2opcSu5FmbzjWdN9Ynqhyp8FRiC0d2fuC4KYfXtiAxWN9tCphAgFWAM7KOQqqO10sSqgkVnXOrFHJkPXQqZB1dhKht4BRbKyUcvCH1QLBSqi44bEKG6AqSXcCti6JnUmH+zLuYpFf5BErv6A/u10E6mD6xTz2s9YopmZfdmVF/E8RRfxmbVsHqWzzH0eSRmV99DnMv4X5fY9ZH7yTi3xNKKhpFvi/jox5QtzPrcGOPz1xS/P1gx9X9wW3Ip4J6bkqXttHYnRn9HA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR04MB4505.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(136003)(376002)(366004)(346002)(39860400002)(396003)(451199021)(4744005)(2616005)(26005)(6512007)(1076003)(6506007)(83380400001)(38100700002)(41300700001)(38350700002)(52116002)(6486002)(6666004)(186003)(478600001)(66556008)(66946007)(66476007)(4326008)(316002)(7416002)(5660300002)(8936002)(2906002)(86362001)(8676002)(36756003)(32563001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AZCqOM+xMQJ3vZxcfZdOU0zxiEvOz1Th/Mf0A9Wu3BZI3+XQPzfd6EYet4vf?=
+ =?us-ascii?Q?NpdvK3FXykPAjBpGrLO4Jta2SZIgVNZohwrdLhkPcikQ6JV0ff9JhNTrvpW8?=
+ =?us-ascii?Q?1nQMkeXVksZ6S59KAAeuyEiOCzsEBw9bbA982MZ4drJUfJAtS8+MlVYpWI4Y?=
+ =?us-ascii?Q?v2gjoBUXu+LjTmdO/qp/c/rxzMDvH7mEXRdsD6psbLtMUzxYjlfdzj3ckL16?=
+ =?us-ascii?Q?o0B5XKJsE99IcfMVGMSqczte/NgZ57OFJNMrbOORpNcwrKjMoKzokAHEVrqm?=
+ =?us-ascii?Q?WxxO3xeIgyYdTYIZIX1Aqs6AZup5x5cRxzuXkKDWXJ0z1syFU4L7YKIKQ7Sg?=
+ =?us-ascii?Q?1qBPCA3z93ERm4jFdWQDwPmJF/JaF9yTmaGmsCSE+Dsgb3sRwKdiT9buLmyY?=
+ =?us-ascii?Q?mkFRWxv7NecFSjM0mKaoVhurFPOLLmXPoqlep1BYx6FUUqqUxnbn3J+YYl+o?=
+ =?us-ascii?Q?IejZ+FTkFEIYkAC3a5RMUk/UkUAr8DO+BKOOVrdpT60PaI29pMaiBDb7wSZI?=
+ =?us-ascii?Q?D/Bab+eCx1oxoFPGBAGwcW5ZdIP3+zNTASx3j9JYJS7H/RWN47LoZbrcNXep?=
+ =?us-ascii?Q?nL/VD/j5r3lrwYL6FHQFVwSUFsHp+NQIWPsXG7nBzs+v0Xe56/GJBPo0RPZT?=
+ =?us-ascii?Q?6vBQbK6DV1/kmrdyWVNZ0BpQ+QoAzlTv8Dc6q4TDEuqCnkilcDPC5ouIeLNH?=
+ =?us-ascii?Q?eLs86Y7N673di3sH/kPMM5EX982CBCQlQI5jCRJjfoR8cssMnLqdLGm/XRkb?=
+ =?us-ascii?Q?TF0VWxNwZRsQ6Ak255ixHMgE1MPtu3h/gyWcxhbcZkhVFmusxhG10DPswz5t?=
+ =?us-ascii?Q?3rrE7QeiICk8YLkjnQr253Am3INw1y5207bmAji3/tErpKfGojvYnv6r/MC9?=
+ =?us-ascii?Q?HutmN8s23dlAH9eI4ee9Z4cMQZrvIVNJGxzls6xbJs6vbbf9UpuUsAZ+GdVo?=
+ =?us-ascii?Q?6yiqdrHxk0DtOTHJsCxt2dma8PVKaeSK5vZYLJCOyB2pcd+jfWLUdDlzXpnx?=
+ =?us-ascii?Q?2gNPlYi39fYKjqyhxjdoi/5O9+pQMLlnJgMSIQKWOMqrgGQkMAhp85zbHVw8?=
+ =?us-ascii?Q?PEKfhB7eAutEnz6t6fm6G6hErRHvOto62lpFJEvit5PJn5VbVyJsiD9MjuKM?=
+ =?us-ascii?Q?QlVf0Z5xgpbb2/ZjLeiMOCXEEBawdmui/iVzzXOUZoi628tLMxjBacn30frg?=
+ =?us-ascii?Q?tpRHFWKFkL6viMp9PNk1X8xcsyMe57SlnZqRhXFXs4cfEX6lDQXJLgHAs6mR?=
+ =?us-ascii?Q?kxFYGWzu3aaEV23QN0OrPZBPF2++V1sV7zSe5ppcJMqtRfD4IZ48Orqywspg?=
+ =?us-ascii?Q?ScC0c9/sI6IxIeOp+LiJbsuvL8777ME/OaDg6uKJEzVDp5k1h85TY0drF6py?=
+ =?us-ascii?Q?rfD1nKN3fR7VpRoIWJPOxK1c5UDYFxH6pOn0JVvaghlBm7Pj8iR56z3B6qB2?=
+ =?us-ascii?Q?D+BUbSqyuHNFX+tJxXRrC23IXWkZ81CCdB6PKNWXdpFxrYq2OUBvo3pPJRD1?=
+ =?us-ascii?Q?+l7lJ2VZ/WpsCwbWMQh3Bm8dUoxePFSUjJ8jDAZG3I5sCOWRqum+aK9ttT9O?=
+ =?us-ascii?Q?ZxxWTl2GxFzOHUQuJ2RNJ6/1eGQCMfz6uSpoh8fX?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c5f42dab-93bc-432c-9cc7-08db67e92b4f
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR04MB4505.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jun 2023 06:25:35.7749
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: RGOZuHJetrkg5xJ+hBqWz6enGBQqX/x7Am0oKMQydG8QyreBY8rl6ErJFFB13hxlxzCmDFOUjyAKEqYQYMzpSw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9596
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230607_212652_932363_3DD65D1C 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20230607_234021_031783_D1D3A255 
+X-CRM114-Status: GOOD (  10.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,54 +142,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The imx8ulp and imx8qm are compatible with imx8dxl. This will add such
+compatible.
 
-On Thu, 08 Jun 2023 11:36:41 +0800, Xu Yang wrote:
-> Convert the binding to DT schema format. Besides, this also add other
-> optional properties not contained in txt file.
-> 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - change filename to fsl,mxs-usbphy.yaml
->  - add other optional properties
->  - narrow fsl,anatop to imx6
->  - use additionalProperties
-> ---
->  .../bindings/phy/fsl,mxs-usbphy.yaml          | 128 ++++++++++++++++++
->  .../devicetree/bindings/phy/mxs-usb-phy.txt   |  33 -----
->  2 files changed, 128 insertions(+), 33 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
-> 
+Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+---
+Changes in v2:
+ - no change
+Changes in v3:
+ - no change
+---
+ Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-yamllint warnings/errors:
-./Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml:103:15: [warning] wrong indentation: expected 16 but found 14 (indentation)
-./Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml:109:15: [warning] wrong indentation: expected 16 but found 14 (indentation)
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.example.dtb: usb-phy@20c9000: 'clocks' is a required property
-	From schema: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230608033642.4097956-1-xu.yang_2@nxp.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+index 9b89a8891c5b..cb5d68274b49 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+@@ -32,7 +32,10 @@ properties:
+           - const: fsl,imx7ulp-usbphy
+           - const: fsl,imx6ul-usbphy
+       - items:
+-          - const: fsl,imx8dxl-usbphy
++          - enum:
++              - fsl,imx8ulp-usbphy
++              - fsl,imx8dxl-usbphy
++              - fsl,imx8qm-usbphy
+           - const: fsl,imx7ulp-usbphy
+ 
+   reg:
+-- 
+2.34.1
 
 
 -- 
