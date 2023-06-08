@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81F77C87FDE
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 16:22:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AF10C7EE2E
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jun 2023 16:22:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jHO07sikZm0QtyrCqMxwq0a2CrcWCvI7tf1Hopgyxqk=; b=zh1Uxpi7Ycm/Ie
-	CMH4dZCHG1HYKwtGfcRsdcP5BzUAECbs3aIM13Xp4nBu0J2+uJFuSQ2zKtjGPFnhgTlhDst0gvzgW
-	XPUcYK3s4UAaxjP844SUt25S5rBZaMl9Xv79WoRqW3G9eNYw8jDcF0jAdoqsUNYp5wQ0gURkLsFGe
-	qtlxGTn4bb+jacZfqqMghbW3Z3yyVEAYTS+DokfbtxBVcosOZxhIarcjdlUSTrtMsnxwOuSMwsZH4
-	1eVyZlUGF8q9tqOljqDIy8TaGwQ7Gzw+NMixMOd4D8FH3PfPOavkUdc+bVgEb3MhB5DKg/Asos/tw
-	azPa6GlMJsvjltgpoRqw==;
+	List-Owner; bh=KOgpyo8jmxhoAIAI9UUsWmltZRsXSun0oNrX3PFdaUw=; b=EnvQWYze1dw6i9
+	vS7obLgEFsCzCr4MKhnuaVSXtHKHsXh3ykwjKxLbGeYcxenCkUfHtpx9c8+ZLkE/ja6E2GltDRzHX
+	gEdJ46cWXLCwnyeNaO9ZmzS/IT3mt6k7d1a2ydRtQqBQJ5BD/L44+iPCnxmAE8yNgA807DXYiEUmW
+	7yu8zphtLS2FoBD9Xlx1pCorkmoVIc8aveA+ZstjclsgLsY0FPYnpeHtjAyynRuVF89P1HY74YrSG
+	E9MWAZqVTd05eUn+J9gsmCSc0rpV9ux5dBU6gF00ElxLBPNX5UDVd/+4aiIMj1M4NF2z7GQ1Z5ZqR
+	ydk8iGq/2i6jXQ9xSmpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7IPT-009rUn-04;
+	id 1q7IPT-009rVE-2D;
 	Thu, 08 Jun 2023 16:22:51 +0000
 Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7IPO-009rPv-1c;
+	id 1q7IPO-009rQ8-1j;
 	Thu, 08 Jun 2023 16:22:49 +0000
 Received: from jupiter.universe (dyndsl-091-248-189-092.ewe-ip-backbone.de [91.248.189.92])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id D6CEC6606F21;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id DC7BD6606F22;
 	Thu,  8 Jun 2023 17:22:41 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1686241362;
-	bh=FwPLJSnkJes7aEk1zAq6YjShJyVUZg9nQ3s3arUOpf0=;
+	bh=51auYTRk2rmb/OCj/B4amurTw9Zrd8rSx4SmfWqBalc=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=XCM3/njX/QTdb8Ky5RrlS2NB0s/2mU4RP9KsQ64i4z8VGStaw6NtoWkl8EdqUGY0/
-	 8GTiH2MVJa8jifQeKCjf7c05zm98pre0S6JJOAmHiw2vBU019hEBm3AM5v3VevufDi
-	 6nuU+kK91XQ8MJ8Mu8SywQ3NZysnDA/BpWJWXNxb/oe83vCb8Vx+xBXv1eFYHw8P/L
-	 7fp/iHMC8sZgS4GtD2CovcA7jCo6RxuweGO1HlIjFtGZbUR/qoD91MBAryRya8pw+Z
-	 B+OVB/WzjSRR9zrO3efk2vpwcEXmq1zr4GOpP0/sDcjCjnxIWJOp2qOZB8aa90Orxa
-	 b0OJpb4OWE4Eg==
+	b=GSy9NQNp4kLSJNJFtLoXi/8q2n8MWuFIN3uuUBBABGBOo4qia8lne4hr9cumhCyvD
+	 5eP03Ut2IJNbtqNLJBoTcwDSFTLTcDBJrWp9nWPv91APoAint09BF0rahmTFg+r9Qn
+	 cZhnSu8CaMsrs3qeUejJbjEGq2ErE7GX61TPyXM5PpLJfjVLMEeOjGzzZCSP65hhRy
+	 69Cx1stGNVtd0jJZfQIW7x70kCQaAnbpmImTZgT6O48IZ1NeWCp+urMfJBQgVKeXIf
+	 wMXjRr6Yce35za7whzxiLxn6/UWIPux+JZ+Hzqg5IpvRMjzRN8mfE+yC2U4YyIbEKV
+	 FJtmQU14BZXog==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id CA4164807E0; Thu,  8 Jun 2023 18:22:39 +0200 (CEST)
+	id CFAA04807EF; Thu,  8 Jun 2023 18:22:39 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>
 Cc: Rob Herring <robh+dt@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v3 1/5] dt-bindings: ata: dwc-ahci: add PHY clocks
-Date: Thu,  8 Jun 2023 18:22:34 +0200
-Message-Id: <20230608162238.50078-2-sebastian.reichel@collabora.com>
+Subject: [PATCH v3 4/5] arm64: dts: rockchip: rk3588: add combo PHYs
+Date: Thu,  8 Jun 2023 18:22:37 +0200
+Message-Id: <20230608162238.50078-5-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230608162238.50078-1-sebastian.reichel@collabora.com>
 References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230608_092246_703094_5F5833B9 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20230608_092246_834396_6005135F 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,44 +87,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PHY transmit and receive clocks as described by the
-DW SATA AHCI HW manual.
+Add all 3 combo PHYs that can be found in RK3588.
+They are used for SATA, PCIe or USB3.
 
-Suggested-by: Serge Semin <fancer.lancer@gmail.com>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml     | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3588.dtsi  | 21 ++++++++++++
+ arch/arm64/boot/dts/rockchip/rk3588s.dtsi | 42 +++++++++++++++++++++++
+ 2 files changed, 63 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-index c1457910520b..34c5bf65b02d 100644
---- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-+++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
-@@ -31,11 +31,11 @@ properties:
-       PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx/Tx)
-       clock, etc.
-     minItems: 1
--    maxItems: 4
-+    maxItems: 6
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+index 8be75556af8f..9d8539b5309b 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+@@ -7,6 +7,11 @@
+ #include "rk3588-pinctrl.dtsi"
  
-   clock-names:
-     minItems: 1
--    maxItems: 4
-+    maxItems: 6
-     items:
-       oneOf:
-         - description: Application APB/AHB/AXI BIU clock
-@@ -48,6 +48,10 @@ properties:
-           const: pmalive
-         - description: RxOOB detection clock
-           const: rxoob
-+        - description: PHY Transmit Clock
-+          const: asic
-+        - description: PHY Receive Clock
-+          const: rbc
-         - description: SATA Ports reference clock
-           const: ref
+ / {
++	pipe_phy1_grf: syscon@fd5c0000 {
++		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
++		reg = <0x0 0xfd5c0000 0x0 0x100>;
++	};
++
+ 	i2s8_8ch: i2s@fddc8000 {
+ 		compatible = "rockchip,rk3588-i2s-tdm";
+ 		reg = <0x0 0xfddc8000 0x0 0x1000>;
+@@ -123,4 +128,20 @@ gmac0_mtl_tx_setup: tx-queues-config {
+ 			queue1 {};
+ 		};
+ 	};
++
++	combphy1_ps: phy@fee10000 {
++		compatible = "rockchip,rk3588-naneng-combphy";
++		reg = <0x0 0xfee10000 0x0 0x100>;
++		#phy-cells = <1>;
++		clocks = <&cru CLK_REF_PIPE_PHY1>, <&cru PCLK_PCIE_COMBO_PIPE_PHY1>,
++			 <&cru PCLK_PHP_ROOT>;
++		clock-names = "ref", "apb", "pipe";
++		assigned-clocks = <&cru CLK_REF_PIPE_PHY1>;
++		assigned-clock-rates = <100000000>;
++		resets = <&cru SRST_REF_PIPE_PHY1>, <&cru SRST_P_PCIE2_PHY1>;
++		reset-names = "phy", "apb";
++		rockchip,pipe-grf = <&php_grf>;
++		rockchip,pipe-phy-grf = <&pipe_phy1_grf>;
++		status = "disabled";
++	};
+ };
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+index 01058fed8f96..45ae457a22a4 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+@@ -944,6 +944,16 @@ php_grf: syscon@fd5b0000 {
+ 		reg = <0x0 0xfd5b0000 0x0 0x1000>;
+ 	};
  
++	pipe_phy0_grf: syscon@fd5bc000 {
++		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
++		reg = <0x0 0xfd5bc000 0x0 0x100>;
++	};
++
++	pipe_phy2_grf: syscon@fd5c4000 {
++		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
++		reg = <0x0 0xfd5c4000 0x0 0x100>;
++	};
++
+ 	ioc: syscon@fd5f0000 {
+ 		compatible = "rockchip,rk3588-ioc", "syscon";
+ 		reg = <0x0 0xfd5f0000 0x0 0x10000>;
+@@ -2371,6 +2381,38 @@ dmac2: dma-controller@fed10000 {
+ 		#dma-cells = <1>;
+ 	};
+ 
++	combphy0_ps: phy@fee00000 {
++		compatible = "rockchip,rk3588-naneng-combphy";
++		reg = <0x0 0xfee00000 0x0 0x100>;
++		#phy-cells = <1>;
++		clocks = <&cru CLK_REF_PIPE_PHY0>, <&cru PCLK_PCIE_COMBO_PIPE_PHY0>,
++			 <&cru PCLK_PHP_ROOT>;
++		clock-names = "ref", "apb", "pipe";
++		assigned-clocks = <&cru CLK_REF_PIPE_PHY0>;
++		assigned-clock-rates = <100000000>;
++		resets = <&cru SRST_REF_PIPE_PHY0>, <&cru SRST_P_PCIE2_PHY0>;
++		reset-names = "phy", "apb";
++		rockchip,pipe-grf = <&php_grf>;
++		rockchip,pipe-phy-grf = <&pipe_phy0_grf>;
++		status = "disabled";
++	};
++
++	combphy2_psu: phy@fee20000 {
++		compatible = "rockchip,rk3588-naneng-combphy";
++		reg = <0x0 0xfee20000 0x0 0x100>;
++		#phy-cells = <1>;
++		clocks = <&cru CLK_REF_PIPE_PHY2>, <&cru PCLK_PCIE_COMBO_PIPE_PHY2>,
++			 <&cru PCLK_PHP_ROOT>;
++		clock-names = "ref", "apb", "pipe";
++		assigned-clocks = <&cru CLK_REF_PIPE_PHY2>;
++		assigned-clock-rates = <100000000>;
++		resets = <&cru SRST_REF_PIPE_PHY2>, <&cru SRST_P_PCIE2_PHY2>;
++		reset-names = "phy", "apb";
++		rockchip,pipe-grf = <&php_grf>;
++		rockchip,pipe-phy-grf = <&pipe_phy2_grf>;
++		status = "disabled";
++	};
++
+ 	system_sram2: sram@ff001000 {
+ 		compatible = "mmio-sram";
+ 		reg = <0x0 0xff001000 0x0 0xef000>;
 -- 
 2.39.2
 
