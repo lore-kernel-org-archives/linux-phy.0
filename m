@@ -4,70 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 773EFC7EE29
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 15:37:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B7C7C7EE2E
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 16:43:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nh1FoDBvWN/6H3w9XoDwlSgHilV04Pu6te9kYC1D9Os=; b=aB68kzG6U7DxTi
-	24ODNw+0WfJyQphJ2Vv96RBUxhjxaQeN3xCYbuMCVpmVaCdGDtWEwbS0IgE964aHDtgA8K4OKzWyS
-	GQEa6Ch3TW+avQ7aCHKjEciR5xg8LskNfyPcZo1cWYQv36N7j/C/7ZdG2aKw27jbjwyfC2HewNjEf
-	Tju50w1d/yrw9VapqIKyIretb1X604lSXj43X1VG2rhlDQLfR98elxcVHfsjHQ/fW26Wo6F/STdzx
-	byVHvKbCHqjHxh94ihrYKTv8hdgFByZGkTvpjdtItYqHQLQ2az9fUSfhHF5po2Qoch+weHo7neE1X
-	QWsRLALrP+7S4tDB6UUw==;
+	List-Owner; bh=GxlI1xVIsHfUq2My++4aWMTIdysTzNia05eMLHdSzm8=; b=nhsteaWKeGciqN
+	KNgelXRomCxohn9+EKwzOtt0ePp+GKQRCdS5qWc5rjTIKAu4HrSoY7+zcysMJ9RdpDc3aqycd6K14
+	0fKjzqfGkRBz8yn0JjkvAynx4XeAU+EK20l0qqBKdI+knJ2+7V1Pr2auiW/NS5Jsz8CEw99ncL9pn
+	6hFTL5wTojvv8vC1RxvEUi8o1G56LgB7Ov3WXvnwq+JZX0wSWwjmC21UQ54eWOJnN4P5y+M6Skw3N
+	0gIGn9WSOiM1/8xI24y40q8VE4asSYS75s9zpqg/eRhIeZUhzHroh3wz8y5FifliUN6mJ5owjaB/x
+	zhNv+D3OWOq5geHFqhuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7eBH-00DTXG-0M;
-	Fri, 09 Jun 2023 15:37:39 +0000
-Received: from mail-io1-f50.google.com ([209.85.166.50])
+	id 1q7fDL-00DdW7-2K;
+	Fri, 09 Jun 2023 16:43:51 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7eBE-00DTWH-2p
+	id 1q7fDI-00DdTR-27
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Jun 2023 15:37:37 +0000
-Received: by mail-io1-f50.google.com with SMTP id ca18e2360f4ac-76c64da0e46so81840039f.0
-        for <linux-phy@lists.infradead.org>; Fri, 09 Jun 2023 08:37:34 -0700 (PDT)
+	Fri, 09 Jun 2023 16:43:50 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-973f78329e3so335371266b.3
+        for <linux-phy@lists.infradead.org>; Fri, 09 Jun 2023 09:43:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1686329025; x=1688921025;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=CDvwJ9aeIkOA3iXyv0MPp32gXWxaPsXZJPItdpmp4w0=;
+        b=xmogwDKhpfrIvfAo3aZ+ZANC+mmK04qhGYoKJuRWdwU1uR0hGSwc2J2In+93mOMrtd
+         zZ+Nbc/v+/sPh7QcxiqXiyHYHNG98GlRdbbeZM3Tu+gtmnJ0mj/F6+zx4BZ9fjWikiBg
+         WZOQbJL2nHrhLcAP+SPpyyC2LAWhhKokpqe6PIbn0wQHGKnrT+Y4f+nTZKiqTzQ/BAbM
+         Vrv+4aQxAWSnQp4VFFtYaVkQ4F6gNFsmr8dYpgRXP+Spexn1EtUvG0ja2KOqV7h/+9/c
+         AdscdOwVWDbAawYTuob/OUZ4D2H2BUVYmOKL4amljHDB2O+hIsQv3cn1qB2wTxe5wTx/
+         WkMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686325054; x=1688917054;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=6oTjKIZ7azTHgw2pBNs7zKCt3g58q7A8ytPzbYsnX9c=;
-        b=bcmFBa4yrP93EtwceV1oYrZTYFjCW6jJaFaDE9hdMP4XNUF3rs4Pt2a495cX2UQuPX
-         TwbyxngmgnKpdvZShp/UXUy+HzhCksPJpOc6i1P+vJdl7nZP6Yr4v6u08ZkNGWPwmyh3
-         M9KiUcEs6RUh5t6x+Zaa3Avarsd3wLh76Rq78KKQQjh/58hcRugAq/+PX5kL8nYuq2dV
-         AnR8rFRUD8ZmsYbi4foLXPmhQ7r9d40Ub3XKmopciPXgYp7JgJ+8CyBug3ACFyz7DQ9e
-         aLjZ8Hr7RtrMen75JTDAl+BXjIjwtZRr8kXItCCVSdZoJRmJeTgud28cEDpLkQoCsgIy
-         ikUw==
-X-Gm-Message-State: AC+VfDzHVMcI6ilL/pGOmkJG/AXrCAloExkLC7Uwj3S6cF2GubKEUC3B
-	2xHnbjdZmt6fFSgXV9d58RwsmY9AZw==
-X-Google-Smtp-Source: ACHHUZ7sQGgjnwd79XuSKsjkhH3R+CX/AXWDT5rsE/7aYgV6ugwqWjYzOSDIVHLCmJcdsuPA2SU50w==
-X-Received: by 2002:a6b:6119:0:b0:76f:f54d:36ff with SMTP id v25-20020a6b6119000000b0076ff54d36ffmr1935105iob.11.1686325054238;
-        Fri, 09 Jun 2023 08:37:34 -0700 (PDT)
-Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id h20-20020a056638063400b0041f57eeedc2sm1056437jar.16.2023.06.09.08.37.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Jun 2023 08:37:33 -0700 (PDT)
-Received: (nullmailer pid 1104746 invoked by uid 1000);
-	Fri, 09 Jun 2023 15:37:31 -0000
-Date: Fri, 9 Jun 2023 09:37:31 -0600
-From: Rob Herring <robh@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>, linux-arm-msm@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, devicetree@vger.kernel.org, Andy Gross <agross@kernel.org>, Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org, Bjorn Andersson <andersson@kernel.org>
-Subject: Re: [PATCH v3 4/5] dt-bindings: phy: qcom,msm8996-qmp-usb3-phy: drop
- legacy bindings
-Message-ID: <168632505100.1104691.4662082864689299098.robh@kernel.org>
-References: <20230531023415.1209301-1-dmitry.baryshkov@linaro.org>
- <20230531023415.1209301-5-dmitry.baryshkov@linaro.org>
+        d=1e100.net; s=20221208; t=1686329025; x=1688921025;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=CDvwJ9aeIkOA3iXyv0MPp32gXWxaPsXZJPItdpmp4w0=;
+        b=IVX9Wv65icd5//LbIFhC4pIIOmXTonWEu8sDfuCN3klKr0ZTdz0TWDC4LZL5fWIp3M
+         8LFZpGpqwz8ftSX+oN2351Qfh3mDfOjQZ5yzYg2GHrBK8fdaKmIZ3mMNHonI2ESD6vwO
+         8FGT5lgxQJKPRlGtm8iMLjG8gxhnIoR8ZMsRsAiPxOjqZvxwvlQCSGX0GgDWl1VtE8E7
+         7ZAc0BAgpS1VrOjdMQKrHOf/12RNvevZo5xUbnbx+U2gXl2S9Wyy7Fb/ARFPO/TOPS5u
+         UvtjXDDSP7uQlxagGMn1aNbBhrzgfr0gsfQF+36bRJn+UUMEnIeLeUJamHt/A+bKPTai
+         4vtQ==
+X-Gm-Message-State: AC+VfDx9UoxnXFBbsWabdo7ZtSxmE0xIFwBDpYYTbQTOrV/bCoLzsuls
+	XQVnsOYCaWwO4ZmH52Y1VT6uEg==
+X-Google-Smtp-Source: ACHHUZ7gTP+FH0+rX1aclSuynljP+FikYYhxF2C0Ydmc0OQ2iOdaBhUrUhXrrGI3di08c96cueJ7Hw==
+X-Received: by 2002:a17:907:9620:b0:978:8790:9103 with SMTP id gb32-20020a170907962000b0097887909103mr2808905ejc.70.1686329024821;
+        Fri, 09 Jun 2023 09:43:44 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id dk17-20020a170906f0d100b0097886843f75sm1502034ejb.177.2023.06.09.09.43.42
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Jun 2023 09:43:44 -0700 (PDT)
+Message-ID: <b8f35a9a-7553-92fa-6fdd-2522dc9bd36d@linaro.org>
+Date: Fri, 9 Jun 2023 18:43:42 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230531023415.1209301-5-dmitry.baryshkov@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT
+ schema format
+Content-Language: en-US
+To: Xu Yang <xu.yang_2@nxp.com>, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
+Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-imx@nxp.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-usb@vger.kernel.org, jun.li@nxp.com
+References: <20230608033642.4097956-1-xu.yang_2@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230608033642.4097956-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230609_083736_915968_79D7E4A5 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230609_094348_697571_A7EE3A97 
+X-CRM114-Status: GOOD (  20.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,20 +98,169 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 08/06/2023 05:36, Xu Yang wrote:
+> Convert the binding to DT schema format. Besides, this also add other
+> optional properties not contained in txt file.
 
-On Wed, 31 May 2023 05:34:14 +0300, Dmitry Baryshkov wrote:
-> The qcom,msm8996-qmp-usb3-phy.yaml defines bindings for several PHYs
-> which predate USB -> USB+DP migration. Now as sm8150 has been migrated,
-> drop the legacy bindings completely. No device trees use them anymore.
-> Newer USB+DP bindings should use combo bindings from the beginning.
+Why ones do you add?
+
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> 
 > ---
->  .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 80 -------------------
->  1 file changed, 80 deletions(-)
+> Changes in v2:
+>  - change filename to fsl,mxs-usbphy.yaml
+>  - add other optional properties
+>  - narrow fsl,anatop to imx6
+>  - use additionalProperties
+> ---
+>  .../bindings/phy/fsl,mxs-usbphy.yaml          | 128 ++++++++++++++++++
+>  .../devicetree/bindings/phy/mxs-usb-phy.txt   |  33 -----
+>  2 files changed, 128 insertions(+), 33 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
 > 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> new file mode 100644
+> index 000000000000..1b6b19fdf491
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> @@ -0,0 +1,128 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,mxs-usbphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale MXS USB Phy Device
+> +
+> +maintainers:
+> +  - Xu Yang <xu.yang_2@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - enum:
+> +          - fsl,imx23-usbphy
+> +          - fsl,vf610-usbphy
+> +          - fsl,imx7ulp-usbphy
 
-Acked-by: Rob Herring <robh@kernel.org>
+Keep the list sorted.
+
+> +      - items:
+> +          - enum:
+> +              - fsl,imx28-usbphy
+> +              - fsl,imx6ul-usbphy
+> +              - fsl,imx6sl-usbphy
+> +              - fsl,imx6sx-usbphy
+> +              - fsl,imx6q-usbphy
+> +          - const: fsl,imx23-usbphy
+> +      - items:
+> +          - const: fsl,imx6sll-usbphy
+> +          - const: fsl,imx6ul-usbphy
+> +          - const: fsl,imx23-usbphy
+> +      - items:
+> +          - const: fsl,imx7ulp-usbphy
+> +          - const: fsl,imx6ul-usbphy
+> +      - items:
+> +          - const: fsl,imx8dxl-usbphy
+> +          - const: fsl,imx7ulp-usbphy
+> +
+> +  reg:
+> +    minItems: 1
+> +    maxItems: 2
+
+You should list the items.
+
+> +
+> +  interrupts:
+> +    minItems: 1
+> +    maxItems: 2
+
+You should list the items.
+
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  '#phy-cells':
+> +    const: 0
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  fsl,anatop:
+> +    description:
+> +      phandle for anatop register, it is only for imx6 SoC series.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +
+> +  phy-3p0-supply:
+> +    description:
+> +      One of USB PHY's power supply. Can be used to keep a good signal
+> +      quality.
+> +
+> +  fsl,tx-cal-45-dn-ohms:
+> +    description:
+> +      Resistance (in ohms) of switchable high-speed trimming resistor
+> +      connected in parallel with the 45 ohm resistor that terminates
+> +      the DN output signal.
+> +    minimum: 35
+> +    maximum: 54
+> +    default: 45
+> +
+> +  fsl,tx-cal-45-dp-ohms:
+> +    description:
+> +      Resistance (in ohms) of switchable high-speed trimming resistor
+> +      connected in parallel with the 45 ohm resistor that terminates
+> +      the DP output signal.
+> +    minimum: 35
+> +    maximum: 54
+> +    default: 45
+> +
+> +  fsl,tx-d-cal:
+> +    description:
+> +      Current trimming value (as a percentage) of the 17.78 mA TX
+> +      reference current.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    minimum: 79
+> +    maximum: 119
+> +    default: 100
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          oneOf:
+> +            - enum:
+> +              - fsl,imx6sl-usbphy
+
+It does not look like you tested the bindings, at least after quick
+look. Please run `make dt_binding_check` (see
+Documentation/devicetree/bindings/writing-schema.rst for instructions).
+Maybe you need to update your dtschema and yamllint.
+
+> +              - fsl,imx6sx-usbphy
+> +              - fsl,imx6sll-usbphy
+> +              - fsl,imx6q-usbphy
+> +              - fsl,vf610-usbphy
+> +            - items:
+> +              - const: fsl,imx6ul-usbphy
+> +              - const: fsl,imx23-usbphy
+> +    then:
+> +      required:
+> +        - fsl,anatop
+> +
+> +additionalProperties: false
+> +
+
+
+Best regards,
+Krzysztof
 
 
 -- 
