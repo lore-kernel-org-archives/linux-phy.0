@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC0EC7EE29
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 15:13:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAD92C7EE29
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 15:14:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r+255R0o8FZ6Ka0Ms3icvUIvma3+1t6qfwzqPxAsPQI=; b=qr0k6Jr+kuQG0J
-	wbOr8HzXe4zB65jI50zWle9+zJnQusVCp0BJGpaE5UuiNWcnWZd0mhEbfJ+TiWEwrZwJauRMj+qsK
-	gGJEvuhmfKWQn9crdbk/bZOm0qm/UTUzvw8vWJqPEvo6HCT4d5fAL2fTxbUzd177tHLyj16on0Qri
-	pFrk2TbFaRQ4duHAZprQExSe8X+SnWCwpto5RVQjyDXPzYfRw2mC+tQzGKxz5gucDkcJUmee0unLy
-	OYMvU3pgFvujBgRNOWN+NdecMyHmFpWebkF7w6Zjl5DbnZEW4pZGeX5bpglce7BDNraQkOzQa38e8
-	68ZyylPr1MVOYLxxhk/Q==;
+	List-Owner; bh=P4NVpnU4/qXzErWKYtb2ao+Ekr4JLdeb0XAV0rSwBjk=; b=fAc4jctSwn6wdh
+	0G5lzH92B0qvBhaCcyiSP/SvRoQceupXFjWprTxZhbfA9HIh+nd4R/ENDVSw/f1qjS1lh9uDm18Gg
+	B7guPGE9MR/rt/LQkxRhXm04aBK5wz2ainXAwqq+ccNsUbxwXJiZSxrt/BeKEINiBR6xmwEnPWZpQ
+	k2dwAnhRXfxxF4i1Dl+nvuZIb8dbM6fAzg59nQEAtk5dqvY9lrdLmXKGzlUpX0OQ/1wxD9LzkPO8J
+	l8FNMbhUMPZGHme//atNl0tmJAERZ81xVAx4meyPiufsj0HaWaj2S/9wa/N9Ni+Fca95Jczmuj416
+	C6wyJcOu7chWfIOCykyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7doC-00DOPg-23;
-	Fri, 09 Jun 2023 15:13:48 +0000
-Received: from mail-io1-f51.google.com ([209.85.166.51])
+	id 1q7doT-00DOUw-1A;
+	Fri, 09 Jun 2023 15:14:05 +0000
+Received: from mail-il1-f179.google.com ([209.85.166.179])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7doA-00DONZ-07
+	id 1q7doQ-00DOTT-1m
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Jun 2023 15:13:47 +0000
-Received: by mail-io1-f51.google.com with SMTP id ca18e2360f4ac-7606d460da7so78337939f.1
-        for <linux-phy@lists.infradead.org>; Fri, 09 Jun 2023 08:13:43 -0700 (PDT)
+	Fri, 09 Jun 2023 15:14:03 +0000
+Received: by mail-il1-f179.google.com with SMTP id e9e14a558f8ab-33b6c47898dso8257695ab.0
+        for <linux-phy@lists.infradead.org>; Fri, 09 Jun 2023 08:14:01 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686323622; x=1688915622;
+        d=1e100.net; s=20221208; t=1686323640; x=1688915640;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=SQR5X+cA13kUaYcqbqMobhb9VGgmIkohulmhqJZKYzY=;
-        b=UGpm5xAqyxws6O6SRlutfZSZtqZ/r36sfNuapGkAe6ffHtbyNvgeuW9BkDi8IM+TAD
-         fZ70h/1ZMiC423oEImrsRV2B1BZ6pmKfcgP7msshNX0oYk9IFDNhZg2ET78jOx2QPPwy
-         aHZhGHVze0+fwg8ubGPHPHxwOgtwrfT7k4P2oAElKcZJtkC1DvhJdv6SUMWJ4Fzo3nMc
-         NVPN6YVFdCkHLLvWxUUaghcz9GyGissy5FaGf6o1wbBNXDRmX2g50XcrqLqcCwizrfAE
-         OirKq/ohAYq9BesDNBZlbVlcwTBWML/zS8J7+3rJmTkiz0rpBkzJzzj8cSUXSO6OnS+o
-         HHHA==
-X-Gm-Message-State: AC+VfDx4mYtqDFD7ohWq4XiUqLWa1qbD2XauVae4veh6Nq3y2o+jGyD2
-	tFW0j38njdsQlKOAdEcGXA==
-X-Google-Smtp-Source: ACHHUZ7pPsrApmh1g6QnAT5gDqfYy+vIK4VH1grPnXE4XcsiJ/FkZ0gxKjKu7YP4yiXH0oDQiYhlxA==
-X-Received: by 2002:a05:6602:1851:b0:774:9af9:f45e with SMTP id d17-20020a056602185100b007749af9f45emr2002777ioi.11.1686323622392;
-        Fri, 09 Jun 2023 08:13:42 -0700 (PDT)
+        bh=NlnLe4pfATl+DHVBwqaw0v4jPbOyjTsxndvN+13DO4U=;
+        b=FHqUB6tFFAYv8531izQtG4Tf1u2XfStoO9QmuX7McHv3PU4U85MsWqWANHIf3licBF
+         wFbVXaA2fAeqMGtUCQKxKLKGXC5JUlJ9BNiiG5B1MWA97tXurhog8U9UgxBu7U2q5zJ3
+         mKQsR0tl4wo9LFP1uPgnQuuUhx20xrgBSMnprga1GD7ziM58iMRkCpR3c28JKJ2v8KK5
+         olI4XA/jU1Kr7aQTBpsVSNq6JptstkxhA/rdoCr/VymKIl8o+V0VkYCqrNo4Gl6vg14k
+         cupe9VnmDiPMfKbOO5PtCZ3qACdwlNnoYvCjsD9uTMB0ILkIaFrhbekl1OrtsWKmgkkG
+         sAmA==
+X-Gm-Message-State: AC+VfDxFok9yLFleCsX6/BNQpV7mluabCEg4cHjS4Qx54SmCktFDLVF/
+	QqFnvYnh/9Zu2xzo6t0kjA==
+X-Google-Smtp-Source: ACHHUZ67MRb0rJmdn4+48gimm54npOx3rXtHVsKxV43QbkTdBE7Slc8n9FZ20Hgxkb+KSwVkDi+hYQ==
+X-Received: by 2002:a92:d590:0:b0:33d:72c0:1b4 with SMTP id a16-20020a92d590000000b0033d72c001b4mr1757273iln.10.1686323640384;
+        Fri, 09 Jun 2023 08:14:00 -0700 (PDT)
 Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id p25-20020a02c819000000b0040fc56ad9fasm1000077jao.9.2023.06.09.08.13.39
+        by smtp.gmail.com with ESMTPSA id z3-20020a92bf03000000b0032b72b5c1c3sm1136035ilh.9.2023.06.09.08.13.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 09 Jun 2023 08:13:41 -0700 (PDT)
-Received: (nullmailer pid 1010803 invoked by uid 1000);
-	Fri, 09 Jun 2023 15:13:39 -0000
-Date: Fri, 9 Jun 2023 09:13:39 -0600
+        Fri, 09 Jun 2023 08:13:59 -0700 (PDT)
+Received: (nullmailer pid 1011188 invoked by uid 1000);
+	Fri, 09 Jun 2023 15:13:57 -0000
+Date: Fri, 9 Jun 2023 09:13:57 -0600
 From: Rob Herring <robh@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Conor Dooley <conor+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Mark Brown <broonie@kernel.org>, Dipen Patel <dipenp@nvidia.com>, linux-rtc@vger.kernel.org, Dilip Kota <eswara.kota@linux.intel.com>, alsa-devel@alsa-project.org, Guenter Roeck <linux@roeck-us.net>, Oleksij Rempel <o.rempel@pengutronix.de>, Alessandro Zummo <a.zummo@towertech.it>, linux-spi@vger.kernel.org, Alexandre Belloni <alexandre.belloni@bootlin.com>, Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>, linux-watchdog@vger.kernel.org, Tony Lindgren <tony@atomide.com>, linux-kernel@vger.kernel.org, Wim Van Sebroeck <wim@linux-watchdog.org>, Vinod Koul <vkoul@kernel.org>, linux-pwm@vger.kernel.org, timestamp@lists.linux.dev, Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 4/7] dt-bindings: slimbus: restrict node name suffixes
-Message-ID: <168632361891.1010750.17241199360005605438.robh@kernel.org>
+Cc: Conor Dooley <conor+dt@kernel.org>, Alessandro Zummo <a.zummo@towertech.it>, linux-kernel@vger.kernel.org, linux-watchdog@vger.kernel.org, Mark Brown <broonie@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Thierry Reding <thierry.reding@gmail.com>, Tony Lindgren <tony@atomide.com>, Dilip Kota <eswara.kota@linux.intel.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, alsa-devel@alsa-project.org, Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, devicetree@vger.kernel.org, Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-pwm@vger.kernel.org, linux-rtc@vger.kernel.org, linux-spi@vger.kernel.org, Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>, timestamp@lists.linux.dev, Wim Van Sebroeck <wim@linux-watchdog.org>, linux-phy@lists.infradead.org, Oleksij Rempel <o.rempel@pengutronix.de>, Guenter Roeck <linux@roeck-us.net>, Dipen Patel <dipenp@nvidia.com>, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH 6/7] dt-bindings: timestamp: restrict node name suffixes
+Message-ID: <168632363634.1011122.1495504884843410484.robh@kernel.org>
 References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
- <20230530144851.92059-5-krzysztof.kozlowski@linaro.org>
+ <20230530144851.92059-7-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230530144851.92059-5-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230530144851.92059-7-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230609_081346_070280_D487779C 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20230609_081402_587660_21971C4E 
+X-CRM114-Status: GOOD (  11.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,11 +83,10 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 30 May 2023 16:48:48 +0200, Krzysztof Kozlowski wrote:
+On Tue, 30 May 2023 16:48:50 +0200, Krzysztof Kozlowski wrote:
 > Make the pattern matching node names a bit stricter to improve DTS
-> consistency.  The pattern is restricted to:
-> 1. Only one unit address or one -N suffix,
-> 2. -N suffixes to decimal numbers.
+> consistency.  The pattern is restricted to -N suffixes to decimal
+> numbers.
 > 
 > Suggested-by: Rob Herring <robh@kernel.org>
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
@@ -97,7 +96,7 @@ On Tue, 30 May 2023 16:48:48 +0200, Krzysztof Kozlowski wrote:
 > Cc: Tony Lindgren <tony@atomide.com>
 > Cc: Oleksij Rempel <o.rempel@pengutronix.de>
 > ---
->  Documentation/devicetree/bindings/slimbus/slimbus.yaml | 2 +-
+>  .../bindings/timestamp/hardware-timestamps-common.yaml          | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
