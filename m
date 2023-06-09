@@ -4,84 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B7C7C7EE2E
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 16:43:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 965ABC7EE45
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jun 2023 19:19:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GxlI1xVIsHfUq2My++4aWMTIdysTzNia05eMLHdSzm8=; b=nhsteaWKeGciqN
-	KNgelXRomCxohn9+EKwzOtt0ePp+GKQRCdS5qWc5rjTIKAu4HrSoY7+zcysMJ9RdpDc3aqycd6K14
-	0fKjzqfGkRBz8yn0JjkvAynx4XeAU+EK20l0qqBKdI+knJ2+7V1Pr2auiW/NS5Jsz8CEw99ncL9pn
-	6hFTL5wTojvv8vC1RxvEUi8o1G56LgB7Ov3WXvnwq+JZX0wSWwjmC21UQ54eWOJnN4P5y+M6Skw3N
-	0gIGn9WSOiM1/8xI24y40q8VE4asSYS75s9zpqg/eRhIeZUhzHroh3wz8y5FifliUN6mJ5owjaB/x
-	zhNv+D3OWOq5geHFqhuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=CIjTUOpHWoTHVHMHZESTK/UY9NSSn4HvfZQxKDMI6UQ=; b=fqQp5TRbJ991P7PC5IEJWrZyYv
+	hnefcm0kkr7KX6cnUcqmIxfvcReof92To2mEB+Nk8lKtA98OUlDW664BH5VmwAoboYNQMZqKkUaWY
+	5PWe453Q2KFnc3Se1LYyk+mUyBF4aP3f4xDdIxz+7KQAEiuXocs6PSZ4QESdPlAk0LWilvRrJHtnj
+	hz/C0tZ12IhlZLO8kUWKDNFsw/0TNQ0fhMDBIHALG9M1R36VLI94Y2sRacSSuzzluZxpBq+SVnV0P
+	f3BKSBQoDZ4aa0OiKd/soeSwzKLuyEqIM1vWmM2vkRQtN/IC9D08p7j1aDcXHJ9YxivDGBcCX/0nm
+	LsQEppUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7fDL-00DdW7-2K;
-	Fri, 09 Jun 2023 16:43:51 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1q7heK-00Dz5h-0P;
+	Fri, 09 Jun 2023 19:19:52 +0000
+Received: from mail-dbaeur03hn2030a.outbound.protection.outlook.com ([2a01:111:f400:fe1a::30a] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7fDI-00DdTR-27
-	for linux-phy@lists.infradead.org;
-	Fri, 09 Jun 2023 16:43:50 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-973f78329e3so335371266b.3
-        for <linux-phy@lists.infradead.org>; Fri, 09 Jun 2023 09:43:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686329025; x=1688921025;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=CDvwJ9aeIkOA3iXyv0MPp32gXWxaPsXZJPItdpmp4w0=;
-        b=xmogwDKhpfrIvfAo3aZ+ZANC+mmK04qhGYoKJuRWdwU1uR0hGSwc2J2In+93mOMrtd
-         zZ+Nbc/v+/sPh7QcxiqXiyHYHNG98GlRdbbeZM3Tu+gtmnJ0mj/F6+zx4BZ9fjWikiBg
-         WZOQbJL2nHrhLcAP+SPpyyC2LAWhhKokpqe6PIbn0wQHGKnrT+Y4f+nTZKiqTzQ/BAbM
-         Vrv+4aQxAWSnQp4VFFtYaVkQ4F6gNFsmr8dYpgRXP+Spexn1EtUvG0ja2KOqV7h/+9/c
-         AdscdOwVWDbAawYTuob/OUZ4D2H2BUVYmOKL4amljHDB2O+hIsQv3cn1qB2wTxe5wTx/
-         WkMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686329025; x=1688921025;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=CDvwJ9aeIkOA3iXyv0MPp32gXWxaPsXZJPItdpmp4w0=;
-        b=IVX9Wv65icd5//LbIFhC4pIIOmXTonWEu8sDfuCN3klKr0ZTdz0TWDC4LZL5fWIp3M
-         8LFZpGpqwz8ftSX+oN2351Qfh3mDfOjQZ5yzYg2GHrBK8fdaKmIZ3mMNHonI2ESD6vwO
-         8FGT5lgxQJKPRlGtm8iMLjG8gxhnIoR8ZMsRsAiPxOjqZvxwvlQCSGX0GgDWl1VtE8E7
-         7ZAc0BAgpS1VrOjdMQKrHOf/12RNvevZo5xUbnbx+U2gXl2S9Wyy7Fb/ARFPO/TOPS5u
-         UvtjXDDSP7uQlxagGMn1aNbBhrzgfr0gsfQF+36bRJn+UUMEnIeLeUJamHt/A+bKPTai
-         4vtQ==
-X-Gm-Message-State: AC+VfDx9UoxnXFBbsWabdo7ZtSxmE0xIFwBDpYYTbQTOrV/bCoLzsuls
-	XQVnsOYCaWwO4ZmH52Y1VT6uEg==
-X-Google-Smtp-Source: ACHHUZ7gTP+FH0+rX1aclSuynljP+FikYYhxF2C0Ydmc0OQ2iOdaBhUrUhXrrGI3di08c96cueJ7Hw==
-X-Received: by 2002:a17:907:9620:b0:978:8790:9103 with SMTP id gb32-20020a170907962000b0097887909103mr2808905ejc.70.1686329024821;
-        Fri, 09 Jun 2023 09:43:44 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id dk17-20020a170906f0d100b0097886843f75sm1502034ejb.177.2023.06.09.09.43.42
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Jun 2023 09:43:44 -0700 (PDT)
-Message-ID: <b8f35a9a-7553-92fa-6fdd-2522dc9bd36d@linaro.org>
-Date: Fri, 9 Jun 2023 18:43:42 +0200
-MIME-Version: 1.0
+	id 1q7heH-00Dz4Q-0b;
+	Fri, 09 Jun 2023 19:19:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/fZaCbyPA4PG9YwOAZW6PpKz0tRw29BfdhRN8WKwp3A=;
+ b=xVXWBzVJnPizPru6r0oY2G/JSh717V7+ff0zJnL4CvlyYNYGDfyH20TCSxBJapM7ULazAvAnaV/tIePk2rw9I61RTgeIEwIJxvs/tp8tWeUn+e2hL3L0jZQEuzIqDWJuinfxKU/NU4RimB+igYEJbVuco/YNWCDUZ7uCHfn1du0iVA3w6T1sTYBfblHArHhvDhCZ19CptGCJ9V4hgcqdGXyWD6XQLcjjbkLPHV0g+O4DYqTrirjAc8NmmmOAZIdkuSVwpqSIKKbtZgrDeRddtmojZcRjOrPuZ5Vg44R8SpMJKOl2ZrTXqxq5BoS9oMhqEhG0/nIfDgiE3nBy4NwZbw==
+Received: from AM5PR0402CA0021.eurprd04.prod.outlook.com
+ (2603:10a6:203:90::31) by AS4PR03MB8277.eurprd03.prod.outlook.com
+ (2603:10a6:20b:4ff::16) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.32; Fri, 9 Jun
+ 2023 19:19:41 +0000
+Received: from VI1EUR05FT040.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:203:90:cafe::22) by AM5PR0402CA0021.outlook.office365.com
+ (2603:10a6:203:90::31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6477.19 via Frontend
+ Transport; Fri, 9 Jun 2023 19:19:41 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.86)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.86 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.86; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.86) by
+ VI1EUR05FT040.mail.protection.outlook.com (10.233.243.186) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6477.29 via Frontend Transport; Fri, 9 Jun 2023 19:19:39 +0000
+Received: from outmta (unknown [192.168.82.135])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id C864220081129;
+	Fri,  9 Jun 2023 19:19:38 +0000 (UTC)
+Received: from EUR04-VI1-obe.outbound.protection.outlook.com (unknown [104.47.14.55])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 1945120080073;
+	Fri,  9 Jun 2023 19:23:11 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PBhoh/W5NK9ejofCrVvdDxuaml2HhdgoL5jOJxMlhm4mcOYojGrnLzt3X7MrYAEvwEsEalPuf+K7vIJBGa2ijj0XT/KbGqG48Z9/uuwmw/Yw7qm5lRp06uHvrm+/t5Coe7fP65ssmmHmkuQ4aVeHQxIwCNCvXF7F2M3aO/Z6P6aSY4n7ai1vaklsUmFlVb22LorP3Fojq54SvrLYSaXbxlzNUHZ7wJjYgBxIfRTZk/MoPwpirjSIujlcCGJuzS1xisK5cfeVGBhVXxGbRV+HNf7qdB2eJRQOTKbE4vVz8fhqQ0ROsPWfs5mT1J3/PddX1G/gC/gGZrwjkvjoq6tubw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/fZaCbyPA4PG9YwOAZW6PpKz0tRw29BfdhRN8WKwp3A=;
+ b=O8nqSJe4qRofFFYgr22+cI5zhIMqusbL8yowr3JVvhRzRijMMVGWiRd70gxXvRvI6np/jT8X+t/0rM1B1NjcbH0LS7M+7/bBt98zdgc5kbS+E0PRrvN7BZYc/8VABhEl82JryPuawEVgr9PuNaH7QttN8ePKwB3E3OrnJFhb1+J+WiyQYdGgIgTd16x/nhUmGy+gE1L3NW6NYvcKHWbt0wz5qAj5I5kHwMh/aRYUIpRZBWXCURQ+gB9N+HgzcUgsrbGBgg0q5/cCTQukqa6YZqPktgh8var3jZXP00YI32UYe7tU/co8yHV1douJmOtPIOAgHh4VvZc88Dx71s4f6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/fZaCbyPA4PG9YwOAZW6PpKz0tRw29BfdhRN8WKwp3A=;
+ b=xVXWBzVJnPizPru6r0oY2G/JSh717V7+ff0zJnL4CvlyYNYGDfyH20TCSxBJapM7ULazAvAnaV/tIePk2rw9I61RTgeIEwIJxvs/tp8tWeUn+e2hL3L0jZQEuzIqDWJuinfxKU/NU4RimB+igYEJbVuco/YNWCDUZ7uCHfn1du0iVA3w6T1sTYBfblHArHhvDhCZ19CptGCJ9V4hgcqdGXyWD6XQLcjjbkLPHV0g+O4DYqTrirjAc8NmmmOAZIdkuSVwpqSIKKbtZgrDeRddtmojZcRjOrPuZ5Vg44R8SpMJKOl2ZrTXqxq5BoS9oMhqEhG0/nIfDgiE3nBy4NwZbw==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by PA4PR03MB6958.eurprd03.prod.outlook.com (2603:10a6:102:e5::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.32; Fri, 9 Jun
+ 2023 19:19:27 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e%3]) with mapi id 15.20.6455.030; Fri, 9 Jun 2023
+ 19:19:28 +0000
+Message-ID: <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
+Date: Fri, 9 Jun 2023 15:19:22 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.2
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT
- schema format
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
 Content-Language: en-US
-To: Xu Yang <xu.yang_2@nxp.com>, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org, jun.li@nxp.com
-References: <20230608033642.4097956-1-xu.yang_2@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230608033642.4097956-1-xu.yang_2@nxp.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ Bagas Sanjaya <bagasdotme@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ =?UTF-8?B?RmVybuKUnMOtbmRleiBSb2phcw==?= <noltari@gmail.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Li Yang <leoyang.li@nxp.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Shawn Guo
+ <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-gpio@vger.kernel.org
+References: <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
+ <20230426105140.t4yqv6irtjcwptm5@skbuf>
+ <20230425195002.fls5cmwolyrslpad@skbuf>
+ <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
+ <20230426105140.t4yqv6irtjcwptm5@skbuf>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <20230429172422.vc35tnwkekfieoru@skbuf>
+ <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
+ <c2f928d2-25f6-0e31-9ab3-9d585968df1b@seco.com>
+ <20230522150010.q5zndfwcuvrb6pg2@skbuf>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230522150010.q5zndfwcuvrb6pg2@skbuf>
+X-ClientProxiedBy: MN2PR12CA0013.namprd12.prod.outlook.com
+ (2603:10b6:208:a8::26) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
+MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|PA4PR03MB6958:EE_|VI1EUR05FT040:EE_|AS4PR03MB8277:EE_
+X-MS-Office365-Filtering-Correlation-Id: 92094327-e588-49a8-be8b-08db691e78a1
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: 6Ce6HHma1hB09kOrIu9Ym+j4Woj0JyQMeDohkGIa7BJgl6ZGDJFvemumKBR59xcRLZ3aovgJv6Y5qpFObqe3VIeD1rNxPHL/+Epyi5xJ7PO1Bai5ZO5wp+FWzAjXiPKeLFCy3BhT09DMxdbfJ6imJrny1DydwvBDGZczppGWDJ7UmgZvgP4eZ/ij7YbKpVgpjrp+Pi+n3DxgTTGGbKngMc6fk7uVLYR+4VHq27gkPvx7fe8og4qJbvHdFYX8GBYDeb/0p6YCqPVMXykCWfoT48FIDC+VfOx5rMlh6csnBeQ3i9UDV3M3wLXbcjEUg8azeXgkGl9vc6nLkVFTRww9f1Pu1EzJUK6I1kIvQ7mpOm1rPqNb/rEY7QGjKSE+idMqFfbjuyRqpKcqzYvwxi9o/x69mG4D12Mg4L+bQ7q46uwIUMjygahn6EL+8ynN/GbOFwBORp4FqwfKOqKGV29O7Pndy2eFK6pbK2XwFDVSzUzW1X/9cwY5oAHNbPIfvPyiCdisSKbMgTWP4Fx9fmvkiJ9wl3fSuQJ78+hcUmXjAWxG2r87Euj+WnGXS/CBshXgzL4nbVnAjHo0+sn22vFELPfDtvUNoUwsaMr+gXSWbZjK9aEZtdj0ZlCNejYXnN8sjFLk4NUgrmsi3GXxFeFWhQXKxJH3e0YA6Rgj3ormC1UXS3HIvT+Aj6rRhQ4HudKZ
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(376002)(366004)(136003)(39850400004)(346002)(396003)(451199021)(6506007)(26005)(6512007)(53546011)(31686004)(7416002)(44832011)(4744005)(186003)(2906002)(86362001)(36756003)(8936002)(5660300002)(316002)(41300700001)(31696002)(2616005)(8676002)(6916009)(66946007)(66556008)(38350700002)(54906003)(6666004)(4326008)(38100700002)(478600001)(6486002)(66476007)(52116002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR03MB6958
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VI1EUR05FT040.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 9eee2c1e-4197-4ae6-4ab8-08db691e7205
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 4m6ryoUHJhAC+d6Rdq3lNxv+1lXjFYrYyJvJ/T0+DLAHUYqab4B+YZwebwqN9uvwGrbR8HIkFP8gJ09NbwT1sRHRWdHS3dZEw/MwXH+STae/aBMwnhIW1ZRlzmPMP3MWWu0giHB1beOEVx3cftwWarOiYgNZXLQquEoBy30BCjKwyh31+KcvuUCNcOek/ibAeD8blwmc3QPo0xCmYLc2cK/kllqpIFGDYXVKLVf5x+1H64H3EyBkvbwPjXsQe8xPP+IwIAz0vGGI/vJI9Vx/lyyK6ygsA4epDVklV8tqIss6zoBhZmLk+dy0bBZZV7f9OwImXfsP/P2BwuakpTj4aB/8FtgaOIEnEMZ1M/9Agxn8G9XLYkYvSul4mekGvow44YXgvENyZVhyhAlIadlP5TBzbQpX4ami1BuRZkHtmJdyDr8UEZvk+zW9ebh6qwk0cXV6cAcsP0M5hBiHu8WTh8RlEqfMXYfog7jIw4xjqNZKa+qAvDfjk9V9ziBRuiMwawyIoC+zPLFldC6e5k6UIX/qeOudnp1cDOia8ov/HcByuSZbu0nWtPC5j2GyHJeYyfkjBhKT/kS7rVB0LYCKu0UnWYyBIs8KQQYGj/6QA50d7G1cP7gCEDBJH9rGJF3EpB/z8XZeC1polHKr7Cxp6obfhxYTtA9hK6IqcONW/y4Epd6Uxwh6oZFuMDRX+t/QhjXtMc/epMmluBWCCQC9+8aI0k3W0krw+QWWOMKNOoNXJOsSqKi9ypr9m9FHaA6MhvE8NyUvYdIs4FTSkimphIkvT7J5zIDA8afV+MQ5bW32q+oBj5BiRPjD5BkqCFM3IEQd9DR8nlv4o2o/Rslr+w==
+X-Forefront-Antispam-Report: CIP:20.160.56.86;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(376002)(346002)(136003)(39850400004)(396003)(451199021)(5400799015)(40470700004)(46966006)(36840700001)(40460700003)(31686004)(47076005)(6666004)(70586007)(316002)(70206006)(54906003)(6916009)(4326008)(86362001)(478600001)(36756003)(31696002)(36860700001)(336012)(26005)(6506007)(6512007)(34020700004)(186003)(53546011)(44832011)(8676002)(41300700001)(82310400005)(8936002)(7416002)(2906002)(4744005)(5660300002)(6486002)(40480700001)(7596003)(2616005)(82740400003)(356005)(7636003)(43740500002)(12100799033);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jun 2023 19:19:39.6077
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 92094327-e588-49a8-be8b-08db691e78a1
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.86];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: VI1EUR05FT040.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR03MB8277
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230609_094348_697571_A7EE3A97 
-X-CRM114-Status: GOOD (  20.55  )
+X-CRM114-CacheID: sfid-20230609_121949_254118_7B9FF0C0 
+X-CRM114-Status: GOOD (  11.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,170 +166,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/06/2023 05:36, Xu Yang wrote:
-> Convert the binding to DT schema format. Besides, this also add other
-> optional properties not contained in txt file.
-
-Why ones do you add?
-
+On 5/22/23 11:00, Vladimir Oltean wrote:
+> On Mon, May 22, 2023 at 10:42:04AM -0400, Sean Anderson wrote:
+>> Have you had a chance to review this driver?
 > 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - change filename to fsl,mxs-usbphy.yaml
->  - add other optional properties
->  - narrow fsl,anatop to imx6
->  - use additionalProperties
-> ---
->  .../bindings/phy/fsl,mxs-usbphy.yaml          | 128 ++++++++++++++++++
->  .../devicetree/bindings/phy/mxs-usb-phy.txt   |  33 -----
->  2 files changed, 128 insertions(+), 33 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> new file mode 100644
-> index 000000000000..1b6b19fdf491
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> @@ -0,0 +1,128 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,mxs-usbphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale MXS USB Phy Device
-> +
-> +maintainers:
-> +  - Xu Yang <xu.yang_2@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - fsl,imx23-usbphy
-> +          - fsl,vf610-usbphy
-> +          - fsl,imx7ulp-usbphy
+> Partially / too little (and no, I don't have an answer yet). I am
+> debugging a SERDES protocol change procedure from XFI to SGMII.
 
-Keep the list sorted.
+I'd just like to reiterate that, like I said in the cover letter, I
+believe this driver still has value even if it cannot yet perform
+protocol switching.
 
-> +      - items:
-> +          - enum:
-> +              - fsl,imx28-usbphy
-> +              - fsl,imx6ul-usbphy
-> +              - fsl,imx6sl-usbphy
-> +              - fsl,imx6sx-usbphy
-> +              - fsl,imx6q-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - const: fsl,imx6sll-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +          - const: fsl,imx23-usbphy
-> +      - items:
-> +          - const: fsl,imx7ulp-usbphy
-> +          - const: fsl,imx6ul-usbphy
-> +      - items:
-> +          - const: fsl,imx8dxl-usbphy
-> +          - const: fsl,imx7ulp-usbphy
-> +
-> +  reg:
-> +    minItems: 1
-> +    maxItems: 2
+Please send me your feedback, and I will try and incorporate it into the
+next revision. Previously, you said you had major objections to the
+contents of this series, but you still have not listed them.
 
-You should list the items.
-
-> +
-> +  interrupts:
-> +    minItems: 1
-> +    maxItems: 2
-
-You should list the items.
-
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  '#phy-cells':
-> +    const: 0
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  fsl,anatop:
-> +    description:
-> +      phandle for anatop register, it is only for imx6 SoC series.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  phy-3p0-supply:
-> +    description:
-> +      One of USB PHY's power supply. Can be used to keep a good signal
-> +      quality.
-> +
-> +  fsl,tx-cal-45-dn-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DN output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-cal-45-dp-ohms:
-> +    description:
-> +      Resistance (in ohms) of switchable high-speed trimming resistor
-> +      connected in parallel with the 45 ohm resistor that terminates
-> +      the DP output signal.
-> +    minimum: 35
-> +    maximum: 54
-> +    default: 45
-> +
-> +  fsl,tx-d-cal:
-> +    description:
-> +      Current trimming value (as a percentage) of the 17.78 mA TX
-> +      reference current.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 79
-> +    maximum: 119
-> +    default: 100
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          oneOf:
-> +            - enum:
-> +              - fsl,imx6sl-usbphy
-
-It does not look like you tested the bindings, at least after quick
-look. Please run `make dt_binding_check` (see
-Documentation/devicetree/bindings/writing-schema.rst for instructions).
-Maybe you need to update your dtschema and yamllint.
-
-> +              - fsl,imx6sx-usbphy
-> +              - fsl,imx6sll-usbphy
-> +              - fsl,imx6q-usbphy
-> +              - fsl,vf610-usbphy
-> +            - items:
-> +              - const: fsl,imx6ul-usbphy
-> +              - const: fsl,imx23-usbphy
-> +    then:
-> +      required:
-> +        - fsl,anatop
-> +
-> +additionalProperties: false
-> +
-
-
-Best regards,
-Krzysztof
-
+--Sean
 
 -- 
 linux-phy mailing list
