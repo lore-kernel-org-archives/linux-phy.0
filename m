@@ -4,83 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A851C7EE23
-	for <linux-phy@archiver.kernel.org>; Sun, 11 Jun 2023 20:45:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B804BC7EE25
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 08:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tiEqiNd+pc8F3+cSny1NXmSqzWDg11+t/VFFLqLZvt4=; b=djmYhFKopEbezz
-	b45RMrJ8r1shobHYm6iF+SDww7YqLhcCJUhj+/usfSO5CV0TYfZtvwI1Khj6bA4Xyhjrzmi+CLPJQ
-	ONpvXRBWHQ5rls6T7iNroPYpDlCiHkUBZnL33EqkM3jWA931jHU8KnXHzNMWWGn6OWnV7sAxPveS1
-	mPl/2pvKvqzKpVoj7q6/UObxtQPYpeJ2kh7pqI6mCLYf+FoPAX2JeDhaIFym1/63Bj0WZn8vCWnFM
-	4hQUr6kpX8BCFDZF1JCieTmyDW2A9oOZmqkysC9ec/USPXMKbbePh+teGDMMVrzf/1yZv++dSRUnz
-	ZfZTaIZogXcVa6+492BQ==;
+	List-Owner; bh=VRi0R3Coqfnx3TL3CkdNOyayLYaoeKbGNDhavzC2UUc=; b=aM+7/MbfNz/JsP
+	EnDb+ZCR2tSZltTM2oQ0gFeylf4EEyBapuXzpoZcGbhUeIKJ2b+MHHNKX/26dCx72v7bR0XefspgY
+	fEq1wu41oTpYuYINIEjE20XIGWLAHjRd4UVswmYvhlcpVlfPpgll0gOBwmHcMvRDVnHiF81PFn+96
+	MOPPCLecK/xRv8UHt6ty+fbnZlLIXLYCph/TNwFa/yIc7UltlzGNOZQY0EOsPlP0eY42SvQGMLrGc
+	uZeDBiL0UZg0O/myjZoeGTkS6AHajYw1zfjib8pkSarlSSkJCqm5rIvOYnv5v+7IwOGupv69hcxqf
+	xMvi9TogYO38mPpCI0Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8Rwc-001jh1-2A;
-	Sun, 11 Jun 2023 20:45:50 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1q8ckn-0034tx-0w;
+	Mon, 12 Jun 2023 08:18:21 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8RwZ-001jgW-1O;
-	Sun, 11 Jun 2023 20:45:49 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-4f122ff663eso4131849e87.2;
-        Sun, 11 Jun 2023 13:45:46 -0700 (PDT)
+	id 1q8ckk-0034sQ-1O
+	for linux-phy@lists.infradead.org;
+	Mon, 12 Jun 2023 08:18:19 +0000
+Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-9745d99cfccso717472466b.1
+        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 01:18:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1686516345; x=1689108345;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=SDPR0lN37/Etf4z1x/Vv5z7Cy0H7kYZQC284wUTIpW0=;
-        b=i0AfpQbeRHTGPvbhmR7vj1YhJ7wDpiZiAxYZWjj8qv2SGWX0HRvtZgx53Pxq6aeMme
-         oknN4v3BbtvZGNUmmjBWJv655/C/Mj8/44wvVtNtiX5Zsv9Ww9ODOmqraM6LY//jyWjg
-         ZHJxgBbzaZSUmI1qoeg8GZNN5WoKmbz5rBRL8PlcO9vthFDmCouCAmqzmknOL2DRsOeL
-         /Gg39P6pv4x+vaigZ3bZ+cmvMqZ4xIntrLaEhIsKZSOte8ngwebKrAnOb6xrIwqqm3UA
-         ENQw4TpGBRGGNMG7i1wPx62qXt2tcpRY6m0cVi+8PGP7Tg/CjUZX4HI1Aj3gRwPLHEKQ
-         445w==
+        d=linaro.org; s=google; t=1686557895; x=1689149895;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=bRmQUrzTWRgLw4kBQU5+LQ3tcVlba7PtHtkomNLzIII=;
+        b=vexVIZ0dp8B8C1j+Lo+Kidr/5DKSmQtsmBdj1pB3rMiyA8LG85cEbYhHb7camdfB1U
+         6KGQWKvrlf4K5+GjgDi/KVqhaUHphTdkJLC0/c2v0l4CHGTCU/Pl3xPYdFVfOuMUfG9L
+         EqXwZySBXtkw15EvmTds6DDbx2TkchmJ02hhmbUaEDsjmdwaDxTFLD4Z9W1UoJBnJ9Y0
+         W5vm6i+T+iwhRdNWwUioXKBypP2lS98E8eRLUgciktT6YCX0QXHfrGATZNXZb8lHZEV7
+         y2YuX2Qek1ZrFguNQpg4KT8DQGzTJDns7LwpFARWGgHqNQI7MZFYSjF6rcMCBZuxMOHm
+         S/fA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686516345; x=1689108345;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SDPR0lN37/Etf4z1x/Vv5z7Cy0H7kYZQC284wUTIpW0=;
-        b=JXmVqDJcBvdAi9qVtrOnLiddjWG1fcCNiQcRaOh3GKDj3opV0HiwFokszDR6sVetyk
-         LdKXnssWqI1KxkV5oHn/fp/Kh0+zXVNC/stk/OUbpUEyMu7VCr6jXYglu5hex6knWbL1
-         KkhWV2KpoEaTC6rZbOH577xbmWquTPhFPLR3cdh6vvYzsqmHECGrqDD/0xdF0pplwlQS
-         1Fepck9KfYpaOVh6HKE7iXOPCP+W0RIKWTlJBWOKv1p78/cD3PQiEP0uTDVlo6Wyd3ft
-         D7QwWqG+kI0ZvmyIH5F9Y7AVqbtU6Ybe6QfkWGIqzdqVYqEZeSHPi7rvNq2PjjkfypvB
-         dglA==
-X-Gm-Message-State: AC+VfDzs4sp31oI5rVkhtog6Dvf9J5qK9zuYLlx9rFuY9qMf3qzQtGLI
-	EnpqqVIXshyAQeeQ+Zu/6rs=
-X-Google-Smtp-Source: ACHHUZ6PE4nh1WmokN2W3/3wflfgSUrc+lo6azZRPeMKZg2a89HzQF1TLUulutIQKQegouQsi4GtMg==
-X-Received: by 2002:ac2:5928:0:b0:4f4:7afe:c36 with SMTP id v8-20020ac25928000000b004f47afe0c36mr3364719lfi.10.1686516344956;
-        Sun, 11 Jun 2023 13:45:44 -0700 (PDT)
-Received: from mobilestation ([95.79.140.35])
-        by smtp.gmail.com with ESMTPSA id v16-20020ac25930000000b004f63dd1dab0sm1235673lfi.98.2023.06.11.13.45.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 11 Jun 2023 13:45:44 -0700 (PDT)
-Date: Sun, 11 Jun 2023 23:45:41 +0300
-From: Serge Semin <fancer.lancer@gmail.com>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCH v3 2/5] dt-bindings: ata: dwc-ahci: add Rockchip RK3588
-Message-ID: <20230611204541.ml3ekvsj4qnlmc2s@mobilestation>
-References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
- <20230608162238.50078-3-sebastian.reichel@collabora.com>
+        d=1e100.net; s=20221208; t=1686557895; x=1689149895;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=bRmQUrzTWRgLw4kBQU5+LQ3tcVlba7PtHtkomNLzIII=;
+        b=FPjkgnuLV8w7CbHf6jVUt3MvnM6gOxOY1gAZavazjMZmFFhcREg8ZEAhLQdwM/R2dV
+         mQxVMRSVlJnNAlx7+BwonbLX24OKzAVTk0jP6OnZd1VlpF8ING0hZmPkgNFQUVPJsh6B
+         wG/D2T1i7rNW9xt7ekW4txAO5M7GD7MuPEVG8xK33hCed9MIpuje+gr4hXxNwcrOdpUk
+         nyi08OoHuWzacGzPgScb8kFB27oiGcWpgkrecEdQcwLhblKBskf1rFKzkKd+brnbbn3P
+         Efrw9Uqy07LTYTDWVyIsRbjXfNyUFbJ5cpc8psW5QRWiJizgiWOpo8qcA/ZZ0KepIOYl
+         O5/A==
+X-Gm-Message-State: AC+VfDz5xpmMazX/MO21sZ3rVSVmZTzLeDFHGRcjlW9TjN949Xt1JCsm
+	/BoK1Sfa/AAJoUmFrGFLMSQG6w==
+X-Google-Smtp-Source: ACHHUZ71VvzowsyBKiDCq7DWYBS4cDksMCv4kT0NQarqHtz70SmAMxEqCnkYbWF+lAwBlVADz6Je8w==
+X-Received: by 2002:a17:907:6288:b0:973:903c:35a4 with SMTP id nd8-20020a170907628800b00973903c35a4mr10130123ejc.65.1686557895276;
+        Mon, 12 Jun 2023 01:18:15 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id ks27-20020a170906f85b00b00977eec5bb2csm4821357ejb.156.2023.06.12.01.18.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 12 Jun 2023 01:18:14 -0700 (PDT)
+Message-ID: <2e6caba1-3781-156f-4e55-e261f56a10cb@linaro.org>
+Date: Mon, 12 Jun 2023 10:18:12 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230608162238.50078-3-sebastian.reichel@collabora.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH v3 1/5] dt-bindings: ata: dwc-ahci: add PHY clocks
+Content-Language: en-US
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Cc: Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+ Serge Semin <fancer.lancer@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-ide@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ kernel@collabora.com
+References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
+ <20230608162238.50078-2-sebastian.reichel@collabora.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230608162238.50078-2-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230611_134547_468069_79E236DA 
-X-CRM114-Status: GOOD (  21.31  )
+X-CRM114-CacheID: sfid-20230612_011818_476114_A3A9AB3E 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,207 +102,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 08, 2023 at 06:22:35PM +0200, Sebastian Reichel wrote:
-> This adds Rockchip RK3588 AHCI binding. In order to narrow down the
-> allowed clocks without bloating the generic binding, the description
-> of Rockchip's AHCI controllers has been moved to its own file.
+On 08/06/2023 18:22, Sebastian Reichel wrote:
+> Add PHY transmit and receive clocks as described by the
+> DW SATA AHCI HW manual.
 > 
+> Suggested-by: Serge Semin <fancer.lancer@gmail.com>
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->  .../bindings/ata/rockchip,dwc-ahci.yaml       | 114 ++++++++++++++++++
->  .../bindings/ata/snps,dwc-ahci.yaml           |  17 ++-
->  2 files changed, 125 insertions(+), 6 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
+>  .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml     | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
-> new file mode 100644
-> index 000000000000..86da9bd594a7
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
-> @@ -0,0 +1,114 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/ata/rockchip,dwc-ahci.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synopsys DWC AHCI SATA controller for Rockchip devices
-> +
-> +maintainers:
-> +  - Serge Semin <fancer.lancer@gmail.com>
-> +
-> +description:
-> +  This document defines device tree bindings for the Synopsys DWC
-> +  implementation of the AHCI SATA controller found in Rockchip
-> +  devices.
-> +
-> +select:
-> +  properties:
-> +    compatible:
-> +      contains:
-> +        enum:
-> +          - rockchip,rk3568-dwc-ahci
-> +          - rockchip,rk3588-dwc-ahci
-> +  required:
-> +    - compatible
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - rockchip,rk3568-dwc-ahci
-> +          - rockchip,rk3588-dwc-ahci
-> +      - const: snps,dwc-ahci
-> +
-> +  ports-implemented:
-> +    const: 1
-> +
-> +patternProperties:
-
-> +  "^sata-port@[0-9a-e]$":
-> +    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
-> +
-
-What about adding the "reg" property constraints? Seeing the
-"ports-implemented" property is supposed to be "1" the "reg" property
-should be zero for all the Rockchip AHCI SATA controllers. Right?
-
-> +    unevaluatedProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - ports-implemented
-> +
-> +allOf:
-> +  - $ref: snps,dwc-ahci-common.yaml#
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - rockchip,rk3588-dwc-ahci
-> +    then:
-> +      properties:
-
-> +        clock-names:
-> +          items:
-> +            - const: sata
-> +            - const: pmalive
-> +            - const: rxoob
-> +            - const: ref
-> +            - const: asic
-
-The "clocks" property constraints could have been added too. Right?
-
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - rockchip,rk3568-dwc-ahci
-> +    then:
-> +      properties:
-
-> +        clock-names:
-> +          items:
-> +            - const: sata
-> +            - const: pmalive
-> +            - const: rxoob
-
-ditto
-
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/ata/ahci.h>
-> +    #include <dt-bindings/phy/phy.h>
-> +
-> +    sata@fe210000 {
-> +      compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
-> +      reg = <0xfe210000 0x1000>;
-> +      clocks = <&cru ACLK_SATA0>, <&cru CLK_PMALIVE0>,
-> +               <&cru CLK_RXOOB0>, <&cru CLK_PIPEPHY0_REF>,
-> +               <&cru CLK_PIPEPHY0_PIPE_ASIC_G>;
-> +      clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
-> +      interrupts = <GIC_SPI 273 IRQ_TYPE_LEVEL_HIGH 0>;
-> +      ports-implemented = <0x1>;
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +
-> +      sata-port@0 {
-> +        reg = <0>;
-> +        hba-port-cap = <HBA_PORT_FBSCP>;
-> +        phys = <&combphy0_ps PHY_TYPE_SATA>;
-> +        phy-names = "sata-phy";
-> +        snps,rx-ts-max = <32>;
-> +        snps,tx-ts-max = <32>;
-> +      };
-> +    };
-> +
-> +...
-> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
-> index 5afa4b57ce20..55a4bdfa3d9a 100644
-> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
-> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
-> @@ -13,8 +13,14 @@ description:
->    This document defines device tree bindings for the generic Synopsys DWC
->    implementation of the AHCI SATA controller.
+> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> index c1457910520b..34c5bf65b02d 100644
+> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+> @@ -31,11 +31,11 @@ properties:
+>        PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx/Tx)
+>        clock, etc.
+>      minItems: 1
+> -    maxItems: 4
+> +    maxItems: 6
 >  
+>    clock-names:
+>      minItems: 1
+> -    maxItems: 4
+> +    maxItems: 6
+>      items:
+>        oneOf:
+>          - description: Application APB/AHB/AXI BIU clock
+> @@ -48,6 +48,10 @@ properties:
+>            const: pmalive
+>          - description: RxOOB detection clock
+>            const: rxoob
+> +        - description: PHY Transmit Clock
+> +          const: asic
+> +        - description: PHY Receive Clock
+> +          const: rbc
 
-> -allOf:
-> -  - $ref: snps,dwc-ahci-common.yaml#
-> +select:
-> +  properties:
-> +    compatible:
-> +      enum:
-> +        - snps,dwc-ahci
-> +        - snps,spear-ahci
-> +  required:
-> +    - compatible
+Conor's comment was not resolved. Adding entries in the middle breaks
+existing users and commit msg does not explain this.
 
-Please don't move the allOf property. It's ok to have it defined above
-the object properties clause if it has just a few ref-statements.
+Best regards,
+Krzysztof
 
-* Also make sure please that the "select" property is defined above
-the "allOf" schema composition.
-
--Serge(y)
-
->  
->  properties:
->    compatible:
-> @@ -23,10 +29,6 @@ properties:
->          const: snps,dwc-ahci
->        - description: SPEAr1340 AHCI SATA device
->          const: snps,spear-ahci
-> -      - description: Rockhip RK3568 AHCI controller
-> -        items:
-> -          - const: rockchip,rk3568-dwc-ahci
-> -          - const: snps,dwc-ahci
->  
->  patternProperties:
->    "^sata-port@[0-9a-e]$":
-> @@ -39,6 +41,9 @@ required:
->    - reg
->    - interrupts
->  
-> +allOf:
-> +  - $ref: snps,dwc-ahci-common.yaml#
-> +
->  unevaluatedProperties: false
->  
->  examples:
-> -- 
-> 2.39.2
-> 
 
 -- 
 linux-phy mailing list
