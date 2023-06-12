@@ -4,87 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92A02C7EE25
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 08:52:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23490C7EE23
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 09:24:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+s7asBhcAAl9WMwixNpT6mFTBU/faBkBvcw1cQbq4fQ=; b=KYoCWdbpEz20wj
-	KwOgydpAm5QbADN37Bkxtsc1E1DAHxKnoQXurL5NiBpiH2kIVk27iWW5MZ5H2iTwyZb7WNms+1iwt
-	jPEX8JuEaj4eWqEnuQViD8Y2k0qTTRywo1FYiH5/mGMoD+Bpi+LyFiYdecw25/te2oU3e7NmMluzR
-	PSss0SOD3yQ9hqQ0bXlZQClEh2s/oOdCdGYBFlrH4anbQI2ccyMJD4ihlrSvdRtELh9+H0d7dV2wj
-	AvgVwxMo3eXK5oqhcbnYq7GasvC9n1PqpJ97cQ8CkXmLf5znJxeFtT1kZQyURIN3NxRsTyAYzqrbv
-	F2LtCFVfpbOEeFGEqIVw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5EQAdvLNPRsgBd3JZ9AwwmHFPpvuINAUiw9dT90MvaY=; b=pZuF8rjaUrbpi7
+	jwBkwHtM/Mw4hOrqeIClO/gEiX036/dZ+Lx7KXl8GwJU7P4jOj+fzPXmmFpCoktSkj3zi1rcxvkig
+	QCI9kBA6M0Tqx0t8SMVRTTwWMGzxma6gIshCcMtaIFNLxtkH61J+qf7SO+P9HdwTsNALntx6VGo5K
+	2vYSxWmzPPEqCkvFE7/uK7krwQDrmxbqSUfdqpFv+WcHVypFDTllwQ2IlqshvvOa6Cpp/OCIkY761
+	atvdGeuLpD418Wc66kG70AjtMuOaBHReRPC7T+jbE4sH3P11SKLtTBJS48hOeEE68IGPvr1/WtOlw
+	0F7FQBDfOZwcIJgmC40A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dHb-003AAv-0m;
-	Mon, 12 Jun 2023 08:52:15 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1q8dmn-003Gqw-2A;
+	Mon, 12 Jun 2023 09:24:29 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dHY-003A88-0c;
-	Mon, 12 Jun 2023 08:52:13 +0000
-Received: by mail-lj1-x235.google.com with SMTP id 38308e7fff4ca-2b1a46ad09fso46897931fa.2;
-        Mon, 12 Jun 2023 01:52:05 -0700 (PDT)
+	id 1q8dml-003Gq7-0k
+	for linux-phy@lists.infradead.org;
+	Mon, 12 Jun 2023 09:24:28 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f78a32266bso41286905e9.3
+        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1686559923; x=1689151923;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=vC6uwJ0JqcA9AI2hZ192LN4Lm6HljDsWRRLUQCbqRcI=;
-        b=ha+NLGOPK268A8Rm69MB2VrlRZ+bdLMoCKBLy0i1SKtuixABoEGpHl4oGE70nPdWrI
-         fWHYhWb5EBh38UF+ViInymqzwkg/Zad+alqWfDprpVo9fgantG3Tz2sziWPw8upec7ts
-         /Fv3t/yWt6xY9KXU53ybP9Y85wyqEazYhy6JiPo96nIX5SF4uRKG5GITBsqxWuCk1vQX
-         EkWAFhD8ZV+9RpimOe60IiIxpLQXcl/lff1tzJzFERRz1X4gJJh8cCQuDLq3wpAnM8wY
-         WWTst4ebBmy5XYqnnge0LQw1u/wcQ76+CfadGwNDS32TMQdIsStrT+N5jEUX9QHUrcCk
-         D7qQ==
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561865; x=1689153865;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=FtFss3/4BWnZx7BK6rTdWa1DuApsa4mA3kKtcIcOXC4=;
+        b=qLJytdt6Jb/yVXsOZ6i6XGX8DjxK7ccMzfD1qS6kYgg8kta38u9WMlXXUab9tHe+YF
+         K/ACwxglRzoF8jM6P1rF9+Ps5zpHWb4gIAiIB8L0DD7wQucMjDngSXyODnCyQ/XuJnxZ
+         nDSIkg03r3lFVp/DfGV7PlLS6/gdgMWHdBwV9xrKYmPp4Ix5ADWRxT1D9s+DSFlU0BF+
+         XCGfRDHbr8rlCR3wCnBtDqpED95AsNwmBjVAcdYwcKLoCDQZ7UzlvYNVfZ2xFhNAoZf6
+         QigJ1LWe9B8J+1NmzCzmWHPrW9M+lR0OnYMO5XzU7BetZ902d+e18mzW32Tjru6XU2pp
+         4u2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686559923; x=1689151923;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vC6uwJ0JqcA9AI2hZ192LN4Lm6HljDsWRRLUQCbqRcI=;
-        b=aViVu/1WcEFGxgsEMbVv6LYlM32qgRSL0AtXlDI+2XupXYbQO50fn6uTE/NuBQ/weg
-         KgcBMuk+I05eipWrAfn0R9grI5ZiEaT8MraSd9YcsFgLt2DzMxwOLfuIsnAEZIMAqaK6
-         AJXJ8DDPAmpCHdaOoGPqqftAcjWnjudP3o4FlHmDYBC4AHBBlf6hp8TEr8eYT1K0zQvz
-         tMr3Ogz3QRyYLLlWLnDyLn/vkCN4pLeoipgG8HSAQvWEPO6Gw91aU2bwcIQz+dXWDqrR
-         uLPAp5TPLsu78jKv7BtCG8nXRIp5F8Bjxpsjd8h3NE5OueXTegSqQdZMuWLU6+ybvf0L
-         XVkQ==
-X-Gm-Message-State: AC+VfDypjWeXGARuHuBn10VyPoNpXvZQZ8ytGymu3vwnbVd3paMPkcly
-	+QLazZg/bpnb+FPgUZgJuMg=
-X-Google-Smtp-Source: ACHHUZ7EKA8vldamQ7vDC+e0lKSYEpHmgr+nXY6Twa32SsY75+3B3FPeePjMNjp0U0aabyKDkLIrCw==
-X-Received: by 2002:a05:651c:1039:b0:2af:d2ef:49d4 with SMTP id w25-20020a05651c103900b002afd2ef49d4mr2231817ljm.1.1686559923246;
-        Mon, 12 Jun 2023 01:52:03 -0700 (PDT)
-Received: from mobilestation ([95.79.140.35])
-        by smtp.gmail.com with ESMTPSA id s9-20020a2e9c09000000b002b31e0be2d7sm1003800lji.90.2023.06.12.01.52.02
+        d=1e100.net; s=20221208; t=1686561865; x=1689153865;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=FtFss3/4BWnZx7BK6rTdWa1DuApsa4mA3kKtcIcOXC4=;
+        b=ioJujL/0szJ+oL8EUNzUFEhRhrhaQoHE1ffZw965ZqyE/fb+oWo/ybPFrIotdBZFY6
+         QjD/erlpEA4+mlsW5JjKLkYghKDo3GPgRv7s3hIRwBLR9ZxGGpMMQD0UGjNmNl83N8HQ
+         319anFoFIPv3QbNRhPdGiHHQwsnz2hHoTQ8SdF3Fb4TyWxz4Mr43HNv+n7/GO7fNViBc
+         SkrOeXyJz+iGXUU8OpV5EKUvHpB50FCc67ipUPuoVS/BNHRHphBLFyw768zlSK/zI9cA
+         iHtG5D6cZBKQfx+gnnlflUfiPNA+1/LGhz8Jia+6TuGeLnDUPk6N1UKsECEI1Iuzc8xU
+         L6Zw==
+X-Gm-Message-State: AC+VfDwKBSdYKSJld4fZ68/ruJ2Ydnje15z9EniXuZsiLoqYEs7I+yqY
+	36aJXBnemhXxmrKkqRhfBqG5Rw==
+X-Google-Smtp-Source: ACHHUZ7jVY7WsrzBMbHCfUmR81pNeDeuO6Gb3yzNkzIgysAxxoKNzVSDsJJSKjHa4n/KMAp302GrIQ==
+X-Received: by 2002:a7b:cd8a:0:b0:3f4:1cd8:3e99 with SMTP id y10-20020a7bcd8a000000b003f41cd83e99mr6686652wmj.28.1686561865141;
+        Mon, 12 Jun 2023 02:24:25 -0700 (PDT)
+Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:a222:bbe9:c688:33ae])
+        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.23
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Jun 2023 01:52:02 -0700 (PDT)
-Date: Mon, 12 Jun 2023 11:52:00 +0300
-From: Serge Semin <fancer.lancer@gmail.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+        Mon, 12 Jun 2023 02:24:24 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Vinod Koul <vkoul@kernel.org>,
+	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCH v3 2/5] dt-bindings: ata: dwc-ahci: add Rockchip RK3588
-Message-ID: <20230612085200.5okxcipiw5sofo62@mobilestation>
-References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
- <20230608162238.50078-3-sebastian.reichel@collabora.com>
- <4c914503-c2e5-a5d8-97af-daaee0b4ec7c@linaro.org>
- <20230612083536.q3sq7w6cyiuxaqtv@mobilestation>
- <838ed0e6-985d-9a45-7ece-c607bda15871@linaro.org>
+	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Jose Abreu <joabreu@synopsys.com>
+Cc: netdev@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Subject: [PATCH 00/26] arm64: qcom: sa8775p-ride: enable the first ethernet port
+Date: Mon, 12 Jun 2023 11:23:29 +0200
+Message-Id: <20230612092355.87937-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <838ed0e6-985d-9a45-7ece-c607bda15871@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_015212_228785_C708C0B2 
-X-CRM114-Status: GOOD (  20.62  )
+X-CRM114-CacheID: sfid-20230612_022427_514759_EF2A7304 
+X-CRM114-Status: GOOD (  13.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,85 +110,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 12, 2023 at 10:39:57AM +0200, Krzysztof Kozlowski wrote:
-> On 12/06/2023 10:35, Serge Semin wrote:
-> > On Mon, Jun 12, 2023 at 10:24:06AM +0200, Krzysztof Kozlowski wrote:
-> >> On 08/06/2023 18:22, Sebastian Reichel wrote:
-> >>> This adds Rockchip RK3588 AHCI binding. In order to narrow down the
-> >>> allowed clocks without bloating the generic binding, the description
-> >>> of Rockchip's AHCI controllers has been moved to its own file.
-> >>>
-> >>> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> >>> ---
-> >>
-> >> ...
-> >>
-> >>> +
-> >>> +properties:
-> >>> +  compatible:
-> >>> +    items:
-> >>> +      - enum:
-> >>> +          - rockchip,rk3568-dwc-ahci
-> >>> +          - rockchip,rk3588-dwc-ahci
-> >>> +      - const: snps,dwc-ahci
-> >>> +
-> >>> +  ports-implemented:
-> >>> +    const: 1
-> >>> +
-> >>> +patternProperties:
-> >>> +  "^sata-port@[0-9a-e]$":
-> >>> +    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
-> >>> +
-> >>> +    unevaluatedProperties: false
-> >>
-> > 
-> >> You should be able to skip this patternProperties entirely, because it
-> >> comes from dwc-ahci-common -> ahci-common schema. Did you try the patch
-> >> without it?
-> > 
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-> > Please see my message about this. The "sata-port@[0-9a-e]$" sub-node
-> > bindings could be updated with the "reg" property constraint which,
-> > based on the "ports-implemented" property value, most likely is
-> > supposed to be always set to const: 1.
-> 
-> Then anyway the pattern is wrong as it should be @1 always.
+There are three ethernet ports on sa8775p-ride. This series contains changes
+required to enable one of the two 1Gb ports (the third one is 10Gb). We need
+to add a new driver for the internal SerDes PHY, introduce several extensions
+to the MAC driver (while at it: tweak coding style a bit etc.) and finally
+add the relevant DT nodes.
 
-* I miscalculated a bit, it should have been zero but in general
-the pattern-property is indeed redundant.
+Bartosz Golaszewski (26):
+  phy: qualcomm: fix indentation in Makefile
+  dt-bindings: phy: describe the Qualcomm SGMII PHY
+  phy: qcom: add the SGMII SerDes PHY driver
+  arm64: defconfig: enable the SerDes PHY for Qualcomm DWMAC
+  net: stmmac: dwmac-qcom-ethqos: shrink clock code with devres
+  net: stmmac: dwmac-qcom-ethqos: rename a label in probe()
+  net: stmmac: dwmac-qcom-ethqos: tweak the order of local variables
+  net: stmmac: dwmac-qcom-ethqos: use a helper variable for &pdev->dev
+  net: stmmac: dwmac-qcom-ethqos: add missing include
+  net: stmmac: dwmac-qcom-ethqos: add a newline between headers
+  net: stmmac: dwmac-qcom-ethqos: remove stray space
+  net: stmmac: dwmac-qcom-ethqos: add support for the optional serdes
+    phy
+  net: stmmac: dwmac-qcom-ethqos: make the rgmii clock optional
+  net: stmmac: dwmac-qcom-ethqos: add optional phyaux clock
+  net: stmmac: dwmac-qcom-ethqos: add support for the optional
+    phy-supply
+  net: stmmac: dwmac-qcom-ethqos: prepare the driver for more PHY modes
+  net: stmmac: dwmac-qcom-ethqos: add support for SGMII
+  net: stmmac: add new switch to struct plat_stmmacenet_data
+  dt-bindings: net: snps,dwmac: add compatible for sa8775p ethqos
+  dt-bindings: net: qcom,ethqos: add description for sa8775p
+  net: stmmac: dwmac-qcom-ethqos: add support for emac4 on sa8775p
+    platforms
+  arm64: dts: qcom: sa8775p-ride: add the SGMII PHY node
+  arm64: dts: qcom: sa8775p: add the first 1Gb ethernet interface
+  arm64: dts: qcom: sa8775p-ride: enable the SerDes PHY
+  arm64: dts: qcom: sa8775p-ride: add pin functions for ethernet0
+  arm64: dts: qcom: sa8775p-ride: enable ethernet0
 
-As a conclusion the change should look like this:
+ .../devicetree/bindings/net/qcom,ethqos.yaml  |  14 +-
+ .../devicetree/bindings/net/snps,dwmac.yaml   |   3 +
+ .../phy/qcom,sa8775p-dwmac-sgmii-phy.yaml     |  52 ++
+ arch/arm64/boot/dts/qcom/sa8775p-ride.dts     | 109 +++++
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi         |  39 ++
+ arch/arm64/configs/defconfig                  |   1 +
+ .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 273 ++++++++---
+ .../net/ethernet/stmicro/stmmac/stmmac_main.c |   2 +-
+ drivers/phy/qualcomm/Kconfig                  |   9 +
+ drivers/phy/qualcomm/Makefile                 |   3 +-
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c     | 446 ++++++++++++++++++
+ include/linux/stmmac.h                        |   1 +
+ 12 files changed, 890 insertions(+), 62 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
 
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          - rockchip,rk3568-dwc-ahci
-+          - rockchip,rk3588-dwc-ahci
-+      - const: snps,dwc-ahci
-+
-+  ports-implemented:
-+    const: 1
-+
-+  "sata-port@0":
-+    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
-+
-+    properties:
-+      reg:
-+        const: 0
-+
-+    unevaluatedProperties: false
-+
-+ ...
+-- 
+2.39.2
 
-Right?
-
--Serge(y)
-
-> 
-> Best regards,
-> Krzysztof
-> 
 
 -- 
 linux-phy mailing list
