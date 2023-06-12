@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86C6BC7EE23
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0551C7EE43
 	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 09:24:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B/wgBzg3MeyOeg9j1YkeKwRCA2xmVOCMoOo1oCs65OE=; b=0mp0HNyFdSTvae
-	3cOAuoOcMLDPH0K/f5A0rlVH4xc8bIVif9k/Hp/sTAi7viTRzYjohMqzXbYbPePwvlSyirPKWHUrx
-	UdR+LaQkU/q/Zc2CL6uOkidFd6njVdkyf54l2g7X+b3Qemu4/PL+E+qjgQagIPgf9aA5/NrITovKP
-	wBeAJcrNL3d1HO0DouwN+2LyH50DBVurhmyes+8S7vZ2SKxNijN72b0kjE0TXsX1oQ54RDVRKR8VU
-	aFKRj8WVEBkNz581ZGUUZkFFntN5BAR4NeMzZJIXuBE02FvJbU/AX19kTYWvuBb9S2IxzPiUMgsO0
-	9P/9pXxQmMAripRGYSEw==;
+	List-Owner; bh=sjQXnSDL0N7O2qmR/psC5Q2jMeKsJ6DIm7VsI/6/JMQ=; b=rEEtOs8wEM9WP3
+	z55hwVxsPYQupTwexjZY/FYO8AttQZknucwtiaDzgRpkHObPOHhlfCol/+MAVtW41Pv7pPUViMLdp
+	73z7TRdiRI9s6co5loQ3JN8bIB4S8c934p+g1OksBu6uWLwtGd97jOfPBQjD9NKzlSUNy0ci2lzn0
+	joL8/p3n6iLIhdexTcv9pWyI/wszCh3WiOn2XO0IxL71BwBD27rpBYZRc2toFAKxDpoPT2W8woEGl
+	8p2C5gIOHm0gADSHNk0NEP8PCpeDss/+VbQGM9RH/VAKdJ1uIqO1RBSflKFEHN+uU9av8qirAWC1T
+	q7WtxaBsGd25YqHSgKRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dn9-003H7J-0c;
+	id 1q8dn9-003H7Z-1X;
 	Mon, 12 Jun 2023 09:24:51 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dmx-003Gu2-1o
+	id 1q8dmy-003Gxu-2C
 	for linux-phy@lists.infradead.org;
-	Mon, 12 Jun 2023 09:24:41 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-3f6d7abe934so27873095e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:36 -0700 (PDT)
+	Mon, 12 Jun 2023 09:24:42 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-3f7f6341b99so29814245e9.2
+        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561875; x=1689153875;
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561879; x=1689153879;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=IGA9dmnWHTO9MZBMILRr3rONKWHes12eMbHxxU5rYjo=;
-        b=VJH/EqnpVIY9A4wdvuanh+zRJFMHoqtN9KlHUE4TXf8pfiMb7wFsH2Rj+361K8lWVj
-         iK7LWDPTaXeD0dwIS2hHMT1FGQVyG7CkfGyoZjPt3BdhoFANevsCA4Mo5a8ppPcQhgdp
-         SP9IO3RNxz+n007apXXHJ9NyObniN2jtUwd+h0QRHR2Bm+AD+4TYdaz+x15cqvuNjqJK
-         +/B9tZ8/5bhK+Bt/im5KT0ddam05HuhL9bBrYeCt+Ua0bWcnkwuK/2cTvUpJFUP7Np4F
-         TVwOCy8t2WTgdeXbdqUP2tULpIEZK61tC7Mi6OK+2RsGopFURjr79xtR0s8fMNOjKYNi
-         Hzog==
+        bh=9517L+m6kHVlackMfaxSN+CNphejP2hqUH4D90m9Olw=;
+        b=niV8zcJpx+FM/U+qoIxdAubWZD03pWCf8LOroYc/q2tXxGMobXAhRDTkiRBScpbEha
+         nmxGS6K4K+sMXcJWCBnsRrq2MLQI+me1BzhofFvIbxfFBqtqVfBnlU9NnJ+S/3YdL81N
+         /pMUKBNVFHGFG4pB4KMmO0Tm3YSZ/mtio9kHJMTOzA12sEv0MYYTtbBZ0g1XISkS4YXu
+         HIpSDd0gsNCx9eAULp0cL5z0caPJYHrM67slR1Ji1AyGcoXvSRtRttHMVkb6nWUiHY1I
+         3Vr6JmgkhnmHSgmjDaKJSXOBVvR+k1fRIz9MfUkxMIHyJffKzIcI+Zs0Ptrp3HHe31Zi
+         31rw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686561875; x=1689153875;
+        d=1e100.net; s=20221208; t=1686561879; x=1689153879;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=IGA9dmnWHTO9MZBMILRr3rONKWHes12eMbHxxU5rYjo=;
-        b=aKDX/5swg0sukmdBzmM59v0kCCvTTbZ4PN8FOkRz2zGwUqUGbNCr21FTFBTqAg+Sc5
-         QcAnUorHHBrtyIyKLyzBiEeHixAMr5YWlL46dMonGz36ObCxKxOd50TlezndQYiiTzxs
-         3xQoJXuUJNOHzdIYYk4SLUDmm9ZoO70YfIOCbvMW2USGLZcYLtOmgZ+QFuDp+dTPc6tT
-         19ZE7ZjTB3pkdwyyL3l9QkQ1ZCXGHFXQL3FLJjLNKYP/58cs7TqG4YEBEoOEaWwlWBhq
-         aWkAWzsVdB2Hwi2nfcR1mMRYZXSmGPXJCWbj4DooqOJM2VzxitgOqWB8CCjJASSiQlw4
-         u72A==
-X-Gm-Message-State: AC+VfDyCxRY/+7+hR56loSALRwrDP5haNSvtaEZlewf5Ug++CZ4h9YzQ
-	21tzd3FQx5jW4qfWF/pXo9zcGw==
-X-Google-Smtp-Source: ACHHUZ7q94E48lRzMF+w4RCtrzBLHXU/FPZYndcOaNII7cQ7K4Csdfi3e8CIsHRyLnxHiNiEqwfIkw==
-X-Received: by 2002:a1c:f718:0:b0:3f7:3526:d96f with SMTP id v24-20020a1cf718000000b003f73526d96fmr5606394wmh.27.1686561874950;
-        Mon, 12 Jun 2023 02:24:34 -0700 (PDT)
+        bh=9517L+m6kHVlackMfaxSN+CNphejP2hqUH4D90m9Olw=;
+        b=XG0jXblLdgVGYtPcnZi4tRYnIGmf7vZVe8eFFjsRfCLbZHa1Bs61EDTSXPkspo2h3F
+         T0uO40tpcH1XHZP5ZFDZXZmcjMI7BVCJFlQ3Rwqh02pXYm39f8TigcfCcRW6PD3yxnwv
+         toqGXJaomSvUixE/67Hn9EFHQRvfkBZwNi2dJ6x3afmYiZwi5vUOLbtRWdhvinJAVMV1
+         GQ3NySs7G/kvKGgjYSxVdkC6m2oDCCd7Wosp9Jpux47+2pbhTP4AXI9z1iT2u4PjF4DB
+         ig48anAu0fO2QDrES/dpXjZjXJmxEy3B1VthTladODkp89jepCcx8IMHfbMs41FYcJLb
+         ycng==
+X-Gm-Message-State: AC+VfDzbhTwv3PMDzlTse6MIVn4mePYY57oOG4gEioQ/Gyc+ShTQn26Q
+	GY/SZ4O1Hfw1jCjuUGyP8ZLGAg==
+X-Google-Smtp-Source: ACHHUZ7OmuBoNhbMPtzJgMKKXL9pAuDmUXCPSMeBXS0fx0sGH2DzxWk99X8iZUVMp3kJqiLAHi07Gg==
+X-Received: by 2002:a7b:c84c:0:b0:3f7:33cf:707b with SMTP id c12-20020a7bc84c000000b003f733cf707bmr6349917wml.1.1686561879026;
+        Mon, 12 Jun 2023 02:24:39 -0700 (PDT)
 Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:a222:bbe9:c688:33ae])
-        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.33
+        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Jun 2023 02:24:34 -0700 (PDT)
+        Mon, 12 Jun 2023 02:24:38 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Vinod Koul <vkoul@kernel.org>,
 	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
@@ -87,16 +87,17 @@ Cc: netdev@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: [PATCH 06/26] net: stmmac: dwmac-qcom-ethqos: rename a label in probe()
-Date: Mon, 12 Jun 2023 11:23:35 +0200
-Message-Id: <20230612092355.87937-7-brgl@bgdev.pl>
+Subject: [PATCH 09/26] net: stmmac: dwmac-qcom-ethqos: add missing include
+Date: Mon, 12 Jun 2023 11:23:38 +0200
+Message-Id: <20230612092355.87937-10-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230612092355.87937-1-brgl@bgdev.pl>
 References: <20230612092355.87937-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_022439_616236_AF96ED8A 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20230612_022440_735850_08CC0959 
+X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,70 +116,26 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-The err_mem label's name is unclear. It actually should be reached on
-any error after stmmac_probe_config_dt() succeeds. Name it after the
-cleanup action that needs to be called before exiting.
+device_get_phy_mode() is declared in linux/property.h but this header
+is not included.
 
 Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 ---
- .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 2da0738eed24..16e856861558 100644
+index e19d142630d3..ecb94e5388c7 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -615,14 +615,14 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	ethqos = devm_kzalloc(&pdev->dev, sizeof(*ethqos), GFP_KERNEL);
- 	if (!ethqos) {
- 		ret = -ENOMEM;
--		goto err_mem;
-+		goto out_config_dt;
- 	}
+@@ -6,6 +6,7 @@
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/phy.h>
++#include <linux/property.h>
+ #include "stmmac.h"
+ #include "stmmac_platform.h"
  
- 	ethqos->pdev = pdev;
- 	ethqos->rgmii_base = devm_platform_ioremap_resource_byname(pdev, "rgmii");
- 	if (IS_ERR(ethqos->rgmii_base)) {
- 		ret = PTR_ERR(ethqos->rgmii_base);
--		goto err_mem;
-+		goto out_config_dt;
- 	}
- 
- 	data = of_device_get_match_data(&pdev->dev);
-@@ -634,16 +634,16 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	ethqos->rgmii_clk = devm_clk_get(&pdev->dev, "rgmii");
- 	if (IS_ERR(ethqos->rgmii_clk)) {
- 		ret = PTR_ERR(ethqos->rgmii_clk);
--		goto err_mem;
-+		goto out_config_dt;
- 	}
- 
- 	ret = ethqos_clks_config(ethqos, true);
- 	if (ret)
--		goto err_mem;
-+		goto out_config_dt;
- 
- 	ret = devm_add_action_or_reset(&pdev->dev, ethqos_clks_disable, ethqos);
- 	if (ret)
--		goto err_mem;
-+		goto out_config_dt;
- 
- 	ethqos->speed = SPEED_1000;
- 	ethqos_update_rgmii_clk(ethqos, SPEED_1000);
-@@ -662,11 +662,11 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 
- 	ret = stmmac_dvr_probe(&pdev->dev, plat_dat, &stmmac_res);
- 	if (ret)
--		goto err_mem;
-+		goto out_config_dt;
- 
- 	return ret;
- 
--err_mem:
-+out_config_dt:
- 	stmmac_remove_config_dt(pdev, plat_dat);
- 
- 	return ret;
 -- 
 2.39.2
 
