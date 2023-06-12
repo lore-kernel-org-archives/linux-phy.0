@@ -4,105 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A0A0C7EE2F
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 18:38:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0496AC7EE2E
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 19:27:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nrk3KhQ2VyYaJe5hHshjV9KOhX67U7W79D8GBHnwisQ=; b=M6aDkQWzUmVdT0
-	0hg6ylGMV4ohqHKRtbfFlzZ4OpvgA3n8d/gj8K2FEhkcWY18o3b6jgT5yx27dah+8LKhvePDfnkHR
-	5tRc3JR5+26Y7TJIr73jvYlcSjHNQwOqojgR19eGuIE1lZheepH0DzMdrIp6Bc9mis+J7FyZMJ4Vs
-	8PCS57j/KmKflKIecwglBYSbx7J7sSAAKeFYz/nLLsHHfERxLCATWEg9LW5w+qwx3+rrJAz5QAaNA
-	QDorZ28DeCY0f/0ZcqhQ0XXXuWiAQzTzCtqLZ88ndZjSpAImMwgBT5BTNTEfK1rBYrVKt4cMsF6am
-	awGDnB3JYjY9IGjAm9eQ==;
+	List-Owner; bh=r8igHdU1OERu21GVfapvdNBO5Sgo+YWbtbM//rnOSGg=; b=LpfSqA16/YdSQA
+	xGfwL2y6jN/nD9PKRu7YVJqQAu4RVrQOuB4pFR8Nwuys4zmHO7dsUMPgggWd5UN6tFP6qLPc5gZqr
+	t+luerzrgtUNummacOresX5q+kMlylz+nqjP3Is28kl7xcLGd30Btw5BTOUi+ARP+pIQrxn7ZGfnI
+	MmnmDOcOJStdzaVwhgRInig5BrAVxSjtrKwAtDqiTfd59KVx2nyWsE1c0JaAuJmJfIa52Uj0FJ3or
+	PxQQhGrdsbkz4veOAifZecrFqn6AlJEMSN8A7ihuXiCvh21hnH3pB9gQso/ZFXPvX6GAwGcib9KcV
+	q9Cd5IShvI+h9r5KJ2SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8mRL-004yaP-07;
-	Mon, 12 Jun 2023 18:38:55 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1q8nC7-00573H-1n;
+	Mon, 12 Jun 2023 19:27:15 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8mRI-004yZ5-17
-	for linux-phy@lists.infradead.org;
-	Mon, 12 Jun 2023 18:38:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1686595131;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=PDNy4tlrStiRvaxnMXQiYuj7Ms4xtJijYK3hHSTiCgM=;
-	b=H7qFbt2G/1zA73N8VaJp9BsN+Epzea+/mngAVCVxQtg0eLs7uU+UMfDKhxzzQEto5sEk+K
-	rnpk7My/iNBFXuxbcEjgmhp8coSZhe7nPmEQULO3vkrWRtS8qXZWWGkLWGzltbpBYiI6IS
-	t/SbjcM4qeUMi2jN5allx7QJWNysifw=
-Received: from mail-oi1-f200.google.com (mail-oi1-f200.google.com
- [209.85.167.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-435-KMlOrB1rNOasSBqF5G2Emg-1; Mon, 12 Jun 2023 14:38:50 -0400
-X-MC-Unique: KMlOrB1rNOasSBqF5G2Emg-1
-Received: by mail-oi1-f200.google.com with SMTP id 5614622812f47-39cb2a0b57aso1968088b6e.1
-        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 11:38:49 -0700 (PDT)
+	id 1q8nC4-00571h-25;
+	Mon, 12 Jun 2023 19:27:14 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-4f619c2ba18so5369379e87.1;
+        Mon, 12 Jun 2023 12:27:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1686598024; x=1689190024;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=ejV5kgx3hh37txIAYRNNYKvIriYQUHYrwXp8KRCJYl4=;
+        b=LYER8swJIMWaeDGZ2hkjyJOD6ND8uFats/yvoPB7ibeB5ZjEBi5yxPSWnmn7dYoDy5
+         9YzgYvQa/lmsZH27yWeAyaJHL6o6p/ATfvr/+QI/CvmWSa0LtzaDCFdVtcS4b8hLNmLs
+         KC1DfDe23MY7B+edf2XG9ZSoVcT2hvmexqOIaXRiHdbRDzNhXeL6UNUXz/ihVnXM5RJ8
+         zYolz5pt7aznawgMX4deagz9rt3FU3as8j2na+PvHllzryco963N80M+XQGuh4zcfZPT
+         SYFEq99/wEqAgeId8wN2JeF5sOvL748sDNHQvBq/0c9PsxccdxokurM8rc6/hRKxbakb
+         zRHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686595129; x=1689187129;
+        d=1e100.net; s=20221208; t=1686598024; x=1689190024;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=PDNy4tlrStiRvaxnMXQiYuj7Ms4xtJijYK3hHSTiCgM=;
-        b=PdCkbTlqK/kAXwWqjalXFZMOLs9GkXHs7ag+2o9XGe+V8XXquQWCWPtHjrR9U6NJsD
-         GFexuOKMCeEwoXcer7cDNUtUkyoP+PXihI9f56TsWnZZKGYGdiTYxljCs3/Uj5DR6Fi7
-         dODrGZzFOAFST8o+/MupgKvUJhSI0d5s8yeIBBRMUhbwVntj1n6+eEPV6ThEv2Qva+BL
-         wbQ9e+2zaboA3jylKL6b6u9PGQQ6QhBmV2cVFIGfL14PNG4dALGogb9Vd6pDgNsx75AX
-         dqRezCnqkHHdc0Q1R1BmulBNXB+RVMSKRwHGqxRkUT1+ErOSeFv0IRig7iLS3O46ZxGL
-         08Ww==
-X-Gm-Message-State: AC+VfDznfZwhFMoT88+a/unKVSSync5W6EuDYFgrqRwfiDdkM8t4Lov8
-	BRBHMe0Mf5mLsL56Fvuao3MVi2sZxAv+PdFUkzGj7KYt1HPINMV9/TH3zGbV9qBRqNzEcizNFaJ
-	f6y/HwRI1rwVKhE0KJuScrxHvIQ==
-X-Received: by 2002:a05:6808:2090:b0:398:e4c:d5c2 with SMTP id s16-20020a056808209000b003980e4cd5c2mr6244356oiw.9.1686595129325;
-        Mon, 12 Jun 2023 11:38:49 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ658SXpBYoZENXQUCSYrl2GfGIsHYqLLYyBLRDeoekAAyN1j6b2/N1aFPTIPKR17gwesdJaxg==
-X-Received: by 2002:a05:6808:2090:b0:398:e4c:d5c2 with SMTP id s16-20020a056808209000b003980e4cd5c2mr6244337oiw.9.1686595129080;
-        Mon, 12 Jun 2023 11:38:49 -0700 (PDT)
-Received: from halaney-x13s ([2600:1700:1ff0:d0e0::45])
-        by smtp.gmail.com with ESMTPSA id t7-20020a815f07000000b0054f9e7fed7asm2663490ywb.137.2023.06.12.11.38.47
+        bh=ejV5kgx3hh37txIAYRNNYKvIriYQUHYrwXp8KRCJYl4=;
+        b=RhN1upA4uUCC9B9+ly/a9gTiomPI3ExXACMj/T9b8x0PJCv1OpTNz2QCRUovUnnQRN
+         PCvFFLDfuPKumUa1xsffGfpcwsYk3Vew8cXSa4tQYospupZxeQkGU3mrYBw3YHzlovpA
+         W7sJgFdrkORUk/Yt6wwFgSrVSRB9vVPDPlwpZ/CbiZvmQW4sDka350so61zMkcoY+iT2
+         ljunQT+Z5f5x/8fGPbk0AVemZuyaXE+DsMyHKXA8tcEfjvjJ0gy0+gSjaGeIx4UdJsBQ
+         WS3Ibpfa8lp0e4s7HBEw8Y1IZ0AvBbNxgj59x+vhs3RLuozbBepGXeeiOki8nPtYAqfX
+         mCGA==
+X-Gm-Message-State: AC+VfDyEVSEp7uzeD3bD83i/6S5ZsXwf5anRd+LwNyf5Rp2jud8Ane+w
+	LAolYwL2wnxcdApWFLU5DZ4=
+X-Google-Smtp-Source: ACHHUZ6A6MkVpb+0rEzh/Ln9SlF8OV11QAdT0mkQWx0k205rKa35tH+XEtW7A0DwjsG6evJQCknNXw==
+X-Received: by 2002:a05:6512:60f:b0:4f6:133e:a0ec with SMTP id b15-20020a056512060f00b004f6133ea0ecmr5130780lfe.25.1686598023507;
+        Mon, 12 Jun 2023 12:27:03 -0700 (PDT)
+Received: from mobilestation ([95.79.140.35])
+        by smtp.gmail.com with ESMTPSA id n17-20020a195511000000b004f252a753e1sm1553756lfe.22.2023.06.12.12.27.02
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Jun 2023 11:38:48 -0700 (PDT)
-Date: Mon, 12 Jun 2023 13:38:39 -0500
-From: Andrew Halaney <ahalaney@redhat.com>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh+dt@kernel.org>,
+        Mon, 12 Jun 2023 12:27:02 -0700 (PDT)
+Date: Mon, 12 Jun 2023 22:27:00 +0300
+From: Serge Semin <fancer.lancer@gmail.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
+	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Jose Abreu <joabreu@synopsys.com>, netdev@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: Re: [PATCH 08/26] net: stmmac: dwmac-qcom-ethqos: use a helper
- variable for &pdev->dev
-Message-ID: <20230612183839.zcn5glnhptptmbt4@halaney-x13s>
-References: <20230612092355.87937-1-brgl@bgdev.pl>
- <20230612092355.87937-9-brgl@bgdev.pl>
+	linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCH v4 2/5] dt-bindings: ata: dwc-ahci: add Rockchip RK3588
+Message-ID: <20230612192700.nd5t4ekt6my5dqqo@mobilestation>
+References: <20230612171337.74576-1-sebastian.reichel@collabora.com>
+ <20230612171337.74576-3-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20230612092355.87937-9-brgl@bgdev.pl>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <20230612171337.74576-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_113852_457515_0BB1AAE6 
-X-CRM114-Status: GOOD (  19.40  )
+X-CRM114-CacheID: sfid-20230612_122712_712411_1479ACD5 
+X-CRM114-Status: GOOD (  19.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,113 +97,188 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 12, 2023 at 11:23:37AM +0200, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+On Mon, Jun 12, 2023 at 07:13:34PM +0200, Sebastian Reichel wrote:
+> This adds Rockchip RK3588 AHCI binding. In order to narrow down the
+> allowed clocks without bloating the generic binding, the description
+> of Rockchip's AHCI controllers has been moved to its own file.
 > 
-> Shrink code and avoid line breaks by using a helper variable for
-> &pdev->dev.
-> 
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+Thanks. The patch now looks good.
+Reviewed-by: Serge Semin <fancer.lancer@gmail.com>
+
+-Serge(y)
+
 > ---
->  .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 48 ++++++++++---------
->  1 file changed, 26 insertions(+), 22 deletions(-)
+>  .../bindings/ata/rockchip,dwc-ahci.yaml       | 124 ++++++++++++++++++
+>  .../bindings/ata/snps,dwc-ahci.yaml           |  13 +-
+>  2 files changed, 133 insertions(+), 4 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
 > 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> index 28d2514a8795..e19d142630d3 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> @@ -123,25 +123,26 @@ static void rgmii_updatel(struct qcom_ethqos *ethqos,
->  static void rgmii_dump(void *priv)
->  {
->  	struct qcom_ethqos *ethqos = priv;
-> +	struct device *dev = &ethqos->pdev->dev;
+> diff --git a/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
+> new file mode 100644
+> index 000000000000..b5e5767d8698
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
+> @@ -0,0 +1,124 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/ata/rockchip,dwc-ahci.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synopsys DWC AHCI SATA controller for Rockchip devices
+> +
+> +maintainers:
+> +  - Serge Semin <fancer.lancer@gmail.com>
+> +
+> +description:
+> +  This document defines device tree bindings for the Synopsys DWC
+> +  implementation of the AHCI SATA controller found in Rockchip
+> +  devices.
+> +
+> +select:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        enum:
+> +          - rockchip,rk3568-dwc-ahci
+> +          - rockchip,rk3588-dwc-ahci
+> +  required:
+> +    - compatible
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - rockchip,rk3568-dwc-ahci
+> +          - rockchip,rk3588-dwc-ahci
+> +      - const: snps,dwc-ahci
+> +
+> +  ports-implemented:
+> +    const: 1
+> +
+> +  sata-port@0:
+> +    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
+> +
+> +    properties:
+> +      reg:
+> +        const: 0
+> +
+> +    unevaluatedProperties: false
+> +
+> +patternProperties:
+> +  "^sata-port@[1-9a-e]$": false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - ports-implemented
+> +
+> +allOf:
+> +  - $ref: snps,dwc-ahci-common.yaml#
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - rockchip,rk3588-dwc-ahci
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 5
+> +        clock-names:
+> +          items:
+> +            - const: sata
+> +            - const: pmalive
+> +            - const: rxoob
+> +            - const: ref
+> +            - const: asic
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - rockchip,rk3568-dwc-ahci
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 3
+> +        clock-names:
+> +          items:
+> +            - const: sata
+> +            - const: pmalive
+> +            - const: rxoob
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/ata/ahci.h>
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    sata@fe210000 {
+> +      compatible = "rockchip,rk3588-dwc-ahci", "snps,dwc-ahci";
+> +      reg = <0xfe210000 0x1000>;
+> +      clocks = <&cru ACLK_SATA0>, <&cru CLK_PMALIVE0>,
+> +               <&cru CLK_RXOOB0>, <&cru CLK_PIPEPHY0_REF>,
+> +               <&cru CLK_PIPEPHY0_PIPE_ASIC_G>;
+> +      clock-names = "sata", "pmalive", "rxoob", "ref", "asic";
+> +      interrupts = <GIC_SPI 273 IRQ_TYPE_LEVEL_HIGH 0>;
+> +      ports-implemented = <0x1>;
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +
+> +      sata-port@0 {
+> +        reg = <0>;
+> +        hba-port-cap = <HBA_PORT_FBSCP>;
+> +        phys = <&combphy0_ps PHY_TYPE_SATA>;
+> +        phy-names = "sata-phy";
+> +        snps,rx-ts-max = <32>;
+> +        snps,tx-ts-max = <32>;
+> +      };
+> +    };
+> +
+> +...
+> diff --git a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> index 5afa4b57ce20..4c848fcb5a5d 100644
+> --- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> +++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+> @@ -13,6 +13,15 @@ description:
+>    This document defines device tree bindings for the generic Synopsys DWC
+>    implementation of the AHCI SATA controller.
 >  
-> -	dev_dbg(&ethqos->pdev->dev, "Rgmii register dump\n");
-> -	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_CONFIG: %x\n",
-> +	dev_dbg(dev, "Rgmii register dump\n");
-> +	dev_dbg(dev, "RGMII_IO_MACRO_CONFIG: %x\n",
->  		rgmii_readl(ethqos, RGMII_IO_MACRO_CONFIG));
-> -	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DLL_CONFIG: %x\n",
-> +	dev_dbg(dev, "SDCC_HC_REG_DLL_CONFIG: %x\n",
->  		rgmii_readl(ethqos, SDCC_HC_REG_DLL_CONFIG));
-> -	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DDR_CONFIG: %x\n",
-> +	dev_dbg(dev, "SDCC_HC_REG_DDR_CONFIG: %x\n",
->  		rgmii_readl(ethqos, SDCC_HC_REG_DDR_CONFIG));
-> -	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DLL_CONFIG2: %x\n",
-> +	dev_dbg(dev, "SDCC_HC_REG_DLL_CONFIG2: %x\n",
->  		rgmii_readl(ethqos, SDCC_HC_REG_DLL_CONFIG2));
-> -	dev_dbg(&ethqos->pdev->dev, "SDC4_STATUS: %x\n",
-> +	dev_dbg(dev, "SDC4_STATUS: %x\n",
->  		rgmii_readl(ethqos, SDC4_STATUS));
-> -	dev_dbg(&ethqos->pdev->dev, "SDCC_USR_CTL: %x\n",
-> +	dev_dbg(dev, "SDCC_USR_CTL: %x\n",
->  		rgmii_readl(ethqos, SDCC_USR_CTL));
-> -	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_CONFIG2: %x\n",
-> +	dev_dbg(dev, "RGMII_IO_MACRO_CONFIG2: %x\n",
->  		rgmii_readl(ethqos, RGMII_IO_MACRO_CONFIG2));
-> -	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_DEBUG1: %x\n",
-> +	dev_dbg(dev, "RGMII_IO_MACRO_DEBUG1: %x\n",
->  		rgmii_readl(ethqos, RGMII_IO_MACRO_DEBUG1));
-> -	dev_dbg(&ethqos->pdev->dev, "EMAC_SYSTEM_LOW_POWER_DEBUG: %x\n",
-> +	dev_dbg(dev, "EMAC_SYSTEM_LOW_POWER_DEBUG: %x\n",
->  		rgmii_readl(ethqos, EMAC_SYSTEM_LOW_POWER_DEBUG));
->  }
+> +select:
+> +  properties:
+> +    compatible:
+> +      enum:
+> +        - snps,dwc-ahci
+> +        - snps,spear-ahci
+> +  required:
+> +    - compatible
+> +
+>  allOf:
+>    - $ref: snps,dwc-ahci-common.yaml#
 >  
-> @@ -242,6 +243,7 @@ static const struct ethqos_emac_driver_data emac_v3_0_0_data = {
+> @@ -23,10 +32,6 @@ properties:
+>          const: snps,dwc-ahci
+>        - description: SPEAr1340 AHCI SATA device
+>          const: snps,spear-ahci
+> -      - description: Rockhip RK3568 AHCI controller
+> -        items:
+> -          - const: rockchip,rk3568-dwc-ahci
+> -          - const: snps,dwc-ahci
 >  
->  static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
->  {
-> +	struct device *dev = &ethqos->pdev->dev;
->  	unsigned int val;
->  	int retry = 1000;
->  
-> @@ -279,7 +281,7 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
->  		retry--;
->  	} while (retry > 0);
->  	if (!retry)
-> -		dev_err(&ethqos->pdev->dev, "Clear CK_OUT_EN timedout\n");
-> +		dev_err(dev, "Clear CK_OUT_EN timedout\n");
->  
->  	/* Set CK_OUT_EN */
->  	rgmii_updatel(ethqos, SDCC_DLL_CONFIG_CK_OUT_EN,
-> @@ -296,7 +298,7 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
->  		retry--;
->  	} while (retry > 0);
->  	if (!retry)
-> -		dev_err(&ethqos->pdev->dev, "Set CK_OUT_EN timedout\n");
-> +		dev_err(dev, "Set CK_OUT_EN timedout\n");
->  
->  	/* Set DDR_CAL_EN */
->  	rgmii_updatel(ethqos, SDCC_DLL_CONFIG2_DDR_CAL_EN,
-> @@ -322,12 +324,13 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
->  
->  static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
->  {
-> +	struct device *dev = &ethqos->pdev->dev;
->  	int phase_shift;
->  	int phy_mode;
->  	int loopback;
->  
->  	/* Determine if the PHY adds a 2 ns TX delay or the MAC handles it */
-> -	phy_mode = device_get_phy_mode(&ethqos->pdev->dev);
-> +	phy_mode = device_get_phy_mode(dev);
->  	if (phy_mode == PHY_INTERFACE_MODE_RGMII_ID ||
->  	    phy_mode == PHY_INTERFACE_MODE_RGMII_TXID)
->  		phase_shift = 0;
-> @@ -468,7 +471,7 @@ static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
->  			      loopback, RGMII_IO_MACRO_CONFIG);
->  		break;
->  	default:
-> -		dev_err(&ethqos->pdev->dev,
-> +		dev_err(dev,
->  			"Invalid speed %d\n", ethqos->speed);
-
-nit: You could put this on the prior line now
-
-With that in place, feel free to add:
-
-    Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
-
+>  patternProperties:
+>    "^sata-port@[0-9a-e]$":
+> -- 
+> 2.39.2
+> 
 
 -- 
 linux-phy mailing list
