@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23490C7EE23
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 09:24:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3A1EC7EE2E
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 09:24:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5EQAdvLNPRsgBd3JZ9AwwmHFPpvuINAUiw9dT90MvaY=; b=pZuF8rjaUrbpi7
-	jwBkwHtM/Mw4hOrqeIClO/gEiX036/dZ+Lx7KXl8GwJU7P4jOj+fzPXmmFpCoktSkj3zi1rcxvkig
-	QCI9kBA6M0Tqx0t8SMVRTTwWMGzxma6gIshCcMtaIFNLxtkH61J+qf7SO+P9HdwTsNALntx6VGo5K
-	2vYSxWmzPPEqCkvFE7/uK7krwQDrmxbqSUfdqpFv+WcHVypFDTllwQ2IlqshvvOa6Cpp/OCIkY761
-	atvdGeuLpD418Wc66kG70AjtMuOaBHReRPC7T+jbE4sH3P11SKLtTBJS48hOeEE68IGPvr1/WtOlw
-	0F7FQBDfOZwcIJgmC40A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jHufiRwL2bGwadjSZdPMwGaAzfo6RiOJGTvodR/v8Es=; b=19TqGLWALzP4AC
+	blvRWk7Qpp0lQjfgjaCy66r9miK04oj67Rzahq50Nm8mbyFUcB96RZzUxz7D5CbB+JZLNGa+f8VNJ
+	0rpdxlVAzlI5Wk+MwT09bLUVJj7WC98QBNG4410IB5R/NBtjTylVV8yJfk12a3qMZJ7b4rlu9L3QW
+	xb2F7OAY5D7RRUgxLs5CO96ydOyxnXB81ynJQBSeMWA70UPqUZmESWIaF4n9q8XYVPkSrun+p9dai
+	GpAIaHmRfqeWtQj9OxUg8TIIdEE1kuXTMJ3/LyUQsbUvp5up3JZFmxBJ4z+qtoh+dzm9Nc7f20JkH
+	lzII+Z1hrCjAMZgpMOLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dmn-003Gqw-2A;
-	Mon, 12 Jun 2023 09:24:29 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1q8dmu-003GuJ-0y;
+	Mon, 12 Jun 2023 09:24:36 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dml-003Gq7-0k
+	id 1q8dmo-003GqB-1m
 	for linux-phy@lists.infradead.org;
-	Mon, 12 Jun 2023 09:24:28 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-3f78a32266bso41286905e9.3
-        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:26 -0700 (PDT)
+	Mon, 12 Jun 2023 09:24:31 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-3f6e68cc738so29745685e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561865; x=1689153865;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=FtFss3/4BWnZx7BK6rTdWa1DuApsa4mA3kKtcIcOXC4=;
-        b=qLJytdt6Jb/yVXsOZ6i6XGX8DjxK7ccMzfD1qS6kYgg8kta38u9WMlXXUab9tHe+YF
-         K/ACwxglRzoF8jM6P1rF9+Ps5zpHWb4gIAiIB8L0DD7wQucMjDngSXyODnCyQ/XuJnxZ
-         nDSIkg03r3lFVp/DfGV7PlLS6/gdgMWHdBwV9xrKYmPp4Ix5ADWRxT1D9s+DSFlU0BF+
-         XCGfRDHbr8rlCR3wCnBtDqpED95AsNwmBjVAcdYwcKLoCDQZ7UzlvYNVfZ2xFhNAoZf6
-         QigJ1LWe9B8J+1NmzCzmWHPrW9M+lR0OnYMO5XzU7BetZ902d+e18mzW32Tjru6XU2pp
-         4u2A==
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561867; x=1689153867;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=F1RtgufzwN5zkIc6lOIXx9j+jgAzsHOFWAyMRveQqLo=;
+        b=jxFUBvkZ4Lg20XupS3NzkHFqhu8SEtVVfcnXOO+b6K6/t0uzorkTHwYRDrMhd2dJIU
+         tdhzK6iKF6+sYaQwrNwnE3nbalQyEeuelBYndZA4Zlh1ic3fnVO7sRut7VoIEBGZqyTT
+         j7X7mK1z0w+BQ2GjWcZZVMaxzDmSNJFStDd6l63u1LsPuVC+IR1W1QtTzlOsR9JLI+Vp
+         /C2z7U/al+XLw+5ktMrKm6sW96aoMXXs83R5MH7rwPztSggbFtGmzEURIWOz4sSzPa4R
+         7fu5lNM2p2uS5s2x+WETMW9u7Bl5Y9cMoLBsyEonGg0j/q1FpAfYpaSsN/KMSudrABVj
+         RkUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686561865; x=1689153865;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=FtFss3/4BWnZx7BK6rTdWa1DuApsa4mA3kKtcIcOXC4=;
-        b=ioJujL/0szJ+oL8EUNzUFEhRhrhaQoHE1ffZw965ZqyE/fb+oWo/ybPFrIotdBZFY6
-         QjD/erlpEA4+mlsW5JjKLkYghKDo3GPgRv7s3hIRwBLR9ZxGGpMMQD0UGjNmNl83N8HQ
-         319anFoFIPv3QbNRhPdGiHHQwsnz2hHoTQ8SdF3Fb4TyWxz4Mr43HNv+n7/GO7fNViBc
-         SkrOeXyJz+iGXUU8OpV5EKUvHpB50FCc67ipUPuoVS/BNHRHphBLFyw768zlSK/zI9cA
-         iHtG5D6cZBKQfx+gnnlflUfiPNA+1/LGhz8Jia+6TuGeLnDUPk6N1UKsECEI1Iuzc8xU
-         L6Zw==
-X-Gm-Message-State: AC+VfDwKBSdYKSJld4fZ68/ruJ2Ydnje15z9EniXuZsiLoqYEs7I+yqY
-	36aJXBnemhXxmrKkqRhfBqG5Rw==
-X-Google-Smtp-Source: ACHHUZ7jVY7WsrzBMbHCfUmR81pNeDeuO6Gb3yzNkzIgysAxxoKNzVSDsJJSKjHa4n/KMAp302GrIQ==
-X-Received: by 2002:a7b:cd8a:0:b0:3f4:1cd8:3e99 with SMTP id y10-20020a7bcd8a000000b003f41cd83e99mr6686652wmj.28.1686561865141;
-        Mon, 12 Jun 2023 02:24:25 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1686561867; x=1689153867;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=F1RtgufzwN5zkIc6lOIXx9j+jgAzsHOFWAyMRveQqLo=;
+        b=bqfnX2354STixjXqBFfxJJcOWccITMdskLUEq14jZ5lZWTxPCIfiruNeUXSmsunFv1
+         YlDkmONbek80CvXMLF3ovt5LiaLo7QgU55Ab0DFYvFK5+eOTzzHAfIj1ebjwJ9fwkkMu
+         EN2Ncfoud9eBwdqsEUnnT8awl3ejeSuziBpeMO8B1guRnmvvl0E5d3fUDeEcsUIqLay+
+         GSRbb3KihIGzJJho3tsb2PMMl+BSg1xFzNnduNXFSy4egssoGuwAkcUFwuT+OENHihoW
+         F7puUnY4bPgxnjG2XlJVSBXETh0oCQLp5JPGFaBJxhapCFx0MF8RPtIRhV3sH/CQSm6F
+         u4vg==
+X-Gm-Message-State: AC+VfDzzt2gV8anCiUz5u/9KWy/uG7pEix6lmwENhXwV+7bzna5pMKBB
+	FDnjb8k+gYboduk5W/Ykr0kHYg==
+X-Google-Smtp-Source: ACHHUZ4X9DW5v3nm9ETabAEnO/zHuXwpBxjwwwHIiRMD9OibOaCyO+b+AitZRY7pXVt/6xW+wsS/3g==
+X-Received: by 2002:a1c:4b13:0:b0:3f7:f264:3edc with SMTP id y19-20020a1c4b13000000b003f7f2643edcmr5877256wma.14.1686561866564;
+        Mon, 12 Jun 2023 02:24:26 -0700 (PDT)
 Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:a222:bbe9:c688:33ae])
-        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.23
+        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Jun 2023 02:24:24 -0700 (PDT)
+        Mon, 12 Jun 2023 02:24:25 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Vinod Koul <vkoul@kernel.org>,
 	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
@@ -86,14 +87,17 @@ Cc: netdev@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: [PATCH 00/26] arm64: qcom: sa8775p-ride: enable the first ethernet port
-Date: Mon, 12 Jun 2023 11:23:29 +0200
-Message-Id: <20230612092355.87937-1-brgl@bgdev.pl>
+Subject: [PATCH 01/26] phy: qualcomm: fix indentation in Makefile
+Date: Mon, 12 Jun 2023 11:23:30 +0200
+Message-Id: <20230612092355.87937-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230612092355.87937-1-brgl@bgdev.pl>
+References: <20230612092355.87937-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_022427_514759_EF2A7304 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20230612_022430_592488_3DCF6B62 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,59 +116,23 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-There are three ethernet ports on sa8775p-ride. This series contains changes
-required to enable one of the two 1Gb ports (the third one is 10Gb). We need
-to add a new driver for the internal SerDes PHY, introduce several extensions
-to the MAC driver (while at it: tweak coding style a bit etc.) and finally
-add the relevant DT nodes.
+Align all entries in Makefile.
 
-Bartosz Golaszewski (26):
-  phy: qualcomm: fix indentation in Makefile
-  dt-bindings: phy: describe the Qualcomm SGMII PHY
-  phy: qcom: add the SGMII SerDes PHY driver
-  arm64: defconfig: enable the SerDes PHY for Qualcomm DWMAC
-  net: stmmac: dwmac-qcom-ethqos: shrink clock code with devres
-  net: stmmac: dwmac-qcom-ethqos: rename a label in probe()
-  net: stmmac: dwmac-qcom-ethqos: tweak the order of local variables
-  net: stmmac: dwmac-qcom-ethqos: use a helper variable for &pdev->dev
-  net: stmmac: dwmac-qcom-ethqos: add missing include
-  net: stmmac: dwmac-qcom-ethqos: add a newline between headers
-  net: stmmac: dwmac-qcom-ethqos: remove stray space
-  net: stmmac: dwmac-qcom-ethqos: add support for the optional serdes
-    phy
-  net: stmmac: dwmac-qcom-ethqos: make the rgmii clock optional
-  net: stmmac: dwmac-qcom-ethqos: add optional phyaux clock
-  net: stmmac: dwmac-qcom-ethqos: add support for the optional
-    phy-supply
-  net: stmmac: dwmac-qcom-ethqos: prepare the driver for more PHY modes
-  net: stmmac: dwmac-qcom-ethqos: add support for SGMII
-  net: stmmac: add new switch to struct plat_stmmacenet_data
-  dt-bindings: net: snps,dwmac: add compatible for sa8775p ethqos
-  dt-bindings: net: qcom,ethqos: add description for sa8775p
-  net: stmmac: dwmac-qcom-ethqos: add support for emac4 on sa8775p
-    platforms
-  arm64: dts: qcom: sa8775p-ride: add the SGMII PHY node
-  arm64: dts: qcom: sa8775p: add the first 1Gb ethernet interface
-  arm64: dts: qcom: sa8775p-ride: enable the SerDes PHY
-  arm64: dts: qcom: sa8775p-ride: add pin functions for ethernet0
-  arm64: dts: qcom: sa8775p-ride: enable ethernet0
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+---
+ drivers/phy/qualcomm/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- .../devicetree/bindings/net/qcom,ethqos.yaml  |  14 +-
- .../devicetree/bindings/net/snps,dwmac.yaml   |   3 +
- .../phy/qcom,sa8775p-dwmac-sgmii-phy.yaml     |  52 ++
- arch/arm64/boot/dts/qcom/sa8775p-ride.dts     | 109 +++++
- arch/arm64/boot/dts/qcom/sa8775p.dtsi         |  39 ++
- arch/arm64/configs/defconfig                  |   1 +
- .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 273 ++++++++---
- .../net/ethernet/stmicro/stmmac/stmmac_main.c |   2 +-
- drivers/phy/qualcomm/Kconfig                  |   9 +
- drivers/phy/qualcomm/Makefile                 |   3 +-
- drivers/phy/qualcomm/phy-qcom-sgmii-eth.c     | 446 ++++++++++++++++++
- include/linux/stmmac.h                        |   1 +
- 12 files changed, 890 insertions(+), 62 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
- create mode 100644 drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
-
+diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+index de3dc9ccf067..5fb33628566b 100644
+--- a/drivers/phy/qualcomm/Makefile
++++ b/drivers/phy/qualcomm/Makefile
+@@ -20,4 +20,4 @@ obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
+ obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
+ obj-$(CONFIG_PHY_QCOM_USB_SS)		+= phy-qcom-usb-ss.o
+ obj-$(CONFIG_PHY_QCOM_USB_SNPS_FEMTO_V2)+= phy-qcom-snps-femto-v2.o
+-obj-$(CONFIG_PHY_QCOM_IPQ806X_USB)		+= phy-qcom-ipq806x-usb.o
++obj-$(CONFIG_PHY_QCOM_IPQ806X_USB)	+= phy-qcom-ipq806x-usb.o
 -- 
 2.39.2
 
