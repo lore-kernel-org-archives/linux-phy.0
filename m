@@ -4,99 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D48AC7EE45
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 10:30:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C5E3C88CB6
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 14:35:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xBLGX+HJEFKEJVnDgc/zHzgnOK1eE+IFctUzg/AUXqg=; b=MXE1ABzTjntxwS
-	84JLfsAdlLELt59K4pOeUJHZ6/AA2FYbIABZKpzkDhpJC4cyOnPuM5NgTtIqjbQ087Kdc/PPYaloo
-	RyRb3SLmlD2eCPbnvdOSN5HkXOLqIGA54++qO2I0f9piQM4w6KV2fcgfCVp35QL19f5+3Id8YEopF
-	JgpOtU7aplWB58DxfTBgFwzKlxTvjxVAKchvf0J4eg4CFG78M3aycG0Zf70O/c4nzHC7pa/WTizWp
-	O7iKcQBB4t6mjtskcq/HcWgQxj2F/zCoKVg5hb9NOYmt++0+PEQG1TaXAdWO5XVhRd7mP+KuAenyV
-	XV4x6MUuWD6f6JEn4PfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=U45k4/BUcrayRKp2eZnYpFd4Orx+RUht5USB83LOnO0=; b=2+12Ex8svguRpIKk6Ksb2AACDw
+	9XOyprK2rQs2ciRDF/yeYQAj8GvBGLbscrDbhOQFWnbl+xiwMYjfMTV45MGRqiiOdox3wufhfRyRl
+	AySCpKqdINmkLfEaZqaHItHQHMhhzIqusHb43ylfPywN6tfybjF1LUPjoGG4HWqx/bMa4SU0+Zv0B
+	eBzgiGy0/o5F98RxYTvnb7LdXyShGaN7MovAJlSABQEwuR04Ywcnu1Gndd6qz+OxRSyEyMlM/1p8V
+	AbsknxC6GDM8jsQa8CLVoHFBukJBS107Utt1aV4YuLk6iWDLchuxX2KlXD0kNqmPimEaBXJxK7CAo
+	TEW9vh6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8eoV-003U0I-2g;
-	Mon, 12 Jun 2023 10:30:19 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1q8idx-004Jjd-1X;
+	Mon, 12 Jun 2023 14:35:41 +0000
+Received: from mail-dbaeur03hn20323.outbound.protection.outlook.com ([2a01:111:f400:fe1a::323] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8dmz-003Gw5-0l
-	for linux-phy@lists.infradead.org;
-	Mon, 12 Jun 2023 09:24:43 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-3f736e0c9b1so42685825e9.3
-        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 02:24:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686561877; x=1689153877;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dcof+ioLKEeKphF7CJyWNZmTAfrhrHTZK64Fi/9bNaI=;
-        b=Dg7TMce7jAT0NsV+wlnPsos/ZyuSZyDJqhpW/BBbn9Ka1QrBfiXgqZTaar1M9RU4L5
-         b0/hgLiiaAe+rn1FdxEy7/FLD6PjGJPKwsHiJSy5XLR3CKoVPnRnJftTuKbyjwSHEqLa
-         vYL/OpcY7rEXgXARYIo14jlZxUfWbR5CSWwZ2xL269j3cAoqSSCCVXtt98PBVs1f4AJ/
-         WnZL1Ba1NhJH1alP0S8Hg7FklHXutu80MK1fcTSL92Zz3DE2NQ32qzBIV2acbD0o0xYE
-         3+X7E2SPeEjQYMX4NknRZkL9zF6/7Pvv9gsYdvH8L+GpnsUcew18D7WL5UTxSRjX2aJi
-         /ABw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686561877; x=1689153877;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=dcof+ioLKEeKphF7CJyWNZmTAfrhrHTZK64Fi/9bNaI=;
-        b=ehtqbbuts/8V3TE7ZtobIYzrDufeG96tFDU7s0dGxt1IxMGW4hVJJno+UnOMBnzt8h
-         wtB+Z/Bkp/ANHrnKiXEMyyv7WBonTFemelA4U0At81d+GE+lEVbHbTOnJNWtSKWpwK7y
-         9x1u5DCRzdeDG7lbKjBP9cFg37VF2RCZ1VdjO6+74uzqwcioW/HyiMPlX/C0PFlYbIv2
-         vxH3zbG/Lt+dL+PXm9f5lIGg+BqCF76jvWEO32pWEMWdmkPlk1yXt/6LYJH/xHQkI+AZ
-         UvCYlYJxB/h29OEhWUVHaTq8Ck+bwDwb0kc/Fw3vM9wyHMEv/mmVXQGP4oi/mcp+CP8W
-         Jgdw==
-X-Gm-Message-State: AC+VfDyfqWgqLC61gpOCCkYpNngGYTk/G4c/SqyFFnVPgg+UDdui/fgf
-	PMM0ynnpa6Nwv1/KiL3W5ID5mw==
-X-Google-Smtp-Source: ACHHUZ5PLbX5RWrds3RXFRl4jn09YQCnlI+UoBhYMMMiq3Fz+M1wg2MWodS3yyBlSYaMCUR+2oFIbw==
-X-Received: by 2002:a05:600c:aca:b0:3f7:f614:9970 with SMTP id c10-20020a05600c0aca00b003f7f6149970mr6683496wmr.34.1686561877559;
-        Mon, 12 Jun 2023 02:24:37 -0700 (PDT)
-Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:a222:bbe9:c688:33ae])
-        by smtp.gmail.com with ESMTPSA id p14-20020a7bcc8e000000b003f727764b10sm10892044wma.4.2023.06.12.02.24.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Jun 2023 02:24:37 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Vinod Koul <vkoul@kernel.org>,
-	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Jose Abreu <joabreu@synopsys.com>
-Cc: netdev@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: [PATCH 08/26] net: stmmac: dwmac-qcom-ethqos: use a helper variable for &pdev->dev
-Date: Mon, 12 Jun 2023 11:23:37 +0200
-Message-Id: <20230612092355.87937-9-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230612092355.87937-1-brgl@bgdev.pl>
-References: <20230612092355.87937-1-brgl@bgdev.pl>
+	id 1q8idu-004Jhv-1C;
+	Mon, 12 Jun 2023 14:35:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NaJWH/OuZgFe57gG+gllEceWdteSVqu7/EZZlytr+dM=;
+ b=Zuihk2O5kK9sJAvA4ztNdJkjyiIOj4KSszfrgSDz8xUnOTv/HG3r8Vavk8RnPFRHHfK68uWTKcCLrs9mKcG7SCmqn5MDBkAG1BXpHB9VuIETnjKSVHbVB5dTEJyR/W4xr+PbQBM2QIaAKfatUl+ME81x52I1PxfNX57IbvfKXINgDrRhlBu5HMirfkIfzmT9qXgJp761E1aKkcpds1CLBWJ77eE5SE1y1RVKtCQ0ufwSziJZZyX3vJc0OqQgeCxrn49ASK60ZgnJt2yvGzHQSeVB990S6BQhkNOzEEe7s5M1tBVB1zuZVSU4fX/dUuJ8qXX++gF4AYuqFGRCCo0NcQ==
+Received: from AS8P251CA0023.EURP251.PROD.OUTLOOK.COM (2603:10a6:20b:2f2::12)
+ by AS8PR03MB8859.eurprd03.prod.outlook.com (2603:10a6:20b:56f::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.39; Mon, 12 Jun
+ 2023 14:35:33 +0000
+Received: from AM6EUR05FT030.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:20b:2f2:cafe::65) by AS8P251CA0023.outlook.office365.com
+ (2603:10a6:20b:2f2::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6477.33 via Frontend
+ Transport; Mon, 12 Jun 2023 14:35:32 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.81)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.81 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.81; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.81) by
+ AM6EUR05FT030.mail.protection.outlook.com (10.233.240.61) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6477.34 via Frontend Transport; Mon, 12 Jun 2023 14:35:32 +0000
+Received: from outmta (unknown [192.168.82.140])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 7D7B820080092;
+	Mon, 12 Jun 2023 14:35:32 +0000 (UTC)
+Received: from EUR01-VE1-obe.outbound.protection.outlook.com (unknown [104.47.1.53])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 4049720080073;
+	Mon, 12 Jun 2023 14:39:47 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=SY+dA12UjoV7FhimJCktji9WRYXv076MSltAmCwerb5UFrwUfpfzRpbm/Yq5XOCcnW4DyxBRX+3hPZoQFTsJVmqhU3GELYCS1c181A+WgHnSavoWkoLiWLw1gn4hJNDl+T4BSl+H9bwim/9VnPexduLxPvu4q00RzfkmFsejDzASoaG2jzc4WQ8mG94wLowmovsfVU4PByoBGWDKh8bRfs+31H8uk/pxW04w53BnCKRegeTbqzkARj+7huUFs3l5QaHQVAhpHgOF6cnd+MwDlqAksEg82HtfHM5c/acdr2lIML5R0ZTB+FzhJ6utFWtv2DeP70csbrt3vwR+kQZQ/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=NaJWH/OuZgFe57gG+gllEceWdteSVqu7/EZZlytr+dM=;
+ b=V58og4uqJuAl4XqGBfX3+vFZik/sPqF8xnzfRbNJ1N8lrUklNV3rWzV4eM9Fm/RiDSm4caBcvNHTEiSVLXMf7iFsYM+cdqcgxQxUAtZC4AiHBkbKEQaALCyicUAK87d80k+T7lvyNziHRVofoe+oFxdMBpdY5w6NdNVy8bREK2mIJg8IE/apV9+GyVVByEAZp/RAKvT+4cY1fR7jnyCDPfybczM3ZXJCwAeK3kn6T4VMMPD27oeIX4tbfnMRtGelfDufiQpDqkWyfQz2rID9t81wBYEiA+o8rJx6CsL3yrFVX0/01Q2sYrqa8O9eIL6vr+n0Zi8MEGZZMiEYHbyFNw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NaJWH/OuZgFe57gG+gllEceWdteSVqu7/EZZlytr+dM=;
+ b=Zuihk2O5kK9sJAvA4ztNdJkjyiIOj4KSszfrgSDz8xUnOTv/HG3r8Vavk8RnPFRHHfK68uWTKcCLrs9mKcG7SCmqn5MDBkAG1BXpHB9VuIETnjKSVHbVB5dTEJyR/W4xr+PbQBM2QIaAKfatUl+ME81x52I1PxfNX57IbvfKXINgDrRhlBu5HMirfkIfzmT9qXgJp761E1aKkcpds1CLBWJ77eE5SE1y1RVKtCQ0ufwSziJZZyX3vJc0OqQgeCxrn49ASK60ZgnJt2yvGzHQSeVB990S6BQhkNOzEEe7s5M1tBVB1zuZVSU4fX/dUuJ8qXX++gF4AYuqFGRCCo0NcQ==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AS8PR03MB7860.eurprd03.prod.outlook.com (2603:10a6:20b:343::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.46; Mon, 12 Jun
+ 2023 14:35:28 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::d632:8122:75f7:7b0e%3]) with mapi id 15.20.6455.045; Mon, 12 Jun 2023
+ 14:35:28 +0000
+Message-ID: <c702e2b6-cb0f-4ac9-86fe-a220284d45aa@seco.com>
+Date: Mon, 12 Jun 2023 10:35:21 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.0
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Content-Language: en-US
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ Bagas Sanjaya <bagasdotme@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ =?UTF-8?B?RmVybuKUnMOtbmRleiBSb2phcw==?= <noltari@gmail.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Li Yang <leoyang.li@nxp.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Shawn Guo
+ <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-gpio@vger.kernel.org
+References: <20230425195002.fls5cmwolyrslpad@skbuf>
+ <b7779674-c3ac-e0ab-3ca8-db1ec5953a97@seco.com>
+ <20230426105140.t4yqv6irtjcwptm5@skbuf>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <20230429172422.vc35tnwkekfieoru@skbuf>
+ <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
+ <c2f928d2-25f6-0e31-9ab3-9d585968df1b@seco.com>
+ <20230522150010.q5zndfwcuvrb6pg2@skbuf>
+ <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
+ <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
+X-ClientProxiedBy: BL0PR02CA0104.namprd02.prod.outlook.com
+ (2603:10b6:208:51::45) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
+X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|AS8PR03MB7860:EE_|AM6EUR05FT030:EE_|AS8PR03MB8859:EE_
+X-MS-Office365-Filtering-Correlation-Id: 56fe191f-3c22-4406-034c-08db6b524710
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: 6v7q6MU1Si8e20a55HhlWWCNbyg8aD1ZP7QrRzJ4wcyumEXKhlW/AH6HYWSPQPwc7hiTEopZF7zA8R1hPfGmC6pHyY56BEfWsRuJGLiMBpOe1XefzJHf2FA+x37p3hL2cn4YZupnO7agC38eCKA5ckOsmNtNlkUCQa6VSIc5NhZVUkGALclJRo6KlIQmw1H31ilZdyN1meo7sZXbfq1lYziQ26O6PmmR0iS9CxfZtVymPj8gx4BUtC+nyrSw4FAYFQ9m4UZMKMIEhDFioct4FZMvZrLZoZFFSmyohXZOgkvWRkfZK6fJi3HjnMOPvWvhpedUd71lsf/zx+804KrFjxPz/iiiw+ncbV8hbypo/PK3aCdPVFYda18cA7Ztq4U3xzE43CaxYi36m5ZY8e0O/Ny/k5vtURBfh1zlYRffUSyJ+/Vuk2zJLeSAv00lNc6ExGcJ6q3o12kMEiYSrP58MeFJJikZD1dOJFmOEe9wbkTWbKPzENFVGctZHN6Cv8195f2+8CBFk6aqGi5e82rOdAqqx0ixJ8Fd+JzLOIEAYpcXOiIbrGz+vjVQnkd5xX4xifWChOGiHOpr8Xn1L08sW07piD1RZddhTZ4Ts72nXn0iLZcHWtTsCPOIGMRlAu3fVTnrQE/6R7DEtpHwFWM42tZlZi8AAHbENSOAaUu+fcJkhGjXnT/yqZg1iRWj4Bjy
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(366004)(346002)(39850400004)(396003)(136003)(376002)(451199021)(6916009)(4326008)(44832011)(66476007)(66556008)(66946007)(316002)(7416002)(31686004)(41300700001)(186003)(4744005)(2906002)(54906003)(478600001)(8676002)(8936002)(5660300002)(6666004)(52116002)(6486002)(53546011)(6512007)(6506007)(26005)(83380400001)(36756003)(86362001)(2616005)(31696002)(38100700002)(38350700002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB7860
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM6EUR05FT030.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: e8ef41fb-616e-421e-3dda-08db6b524421
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 4MOQWZ11aCucXZQWKW+6ks4cD8yJv7re6XBboRTMnCN8H5AgLtMX5zWN51uzGHR7BMWdNq7ZpnkbaypH/eLXnExDW1jpm84xCVcutBYw/F7FrEKy7KB8Hr4Uzp8o30QynFHg5LmTvcnuIKMpxk+OfpVnxFscIm9by+6RUek5VCRfu3BWEqrefzzyDVI5DLq0OPZVJttY6caQFm+TDtnpWa1HV4tj86zJ792akUH+X+bnbHadaNANslChH/A+ZBcYWzG6Uu4uZBRg/Z/yGUkhDx/g7IDyQr/bGLbs3AcThm8CrsddbdAq10vAGLWIvzl/54OvdR099w4BWcdiW9GA7/KFbtxexpLaKPtiRLvWiH925jN+DxWWNYukeKQt1Q2R9CPIp2zbj3UBz7Jem+BAygQguuRq8B01uB4e1BVFQevGALYrIAasCs32iNnUmkV0GaD5I1fpC37PlgrO5JiC08ycH69PvX/TOJFxOCEfACCuL1YP4xwwP9ZcB3f4Nm7ZkX8ddW+s9iuuD1f8g/bCnYq0apNQyxMNb/hELv2SKzvMSpg6LU3A9xksJ5hUsBABKkeD0UI9cZ7fB9VSWb5KwpJ0nbj7Wr8HGtY3+vV1ESQOaYBkG/aUU2dBKZMYdnIZZr2en6pK3sYrFnn7jSW2UDdlddM8AFvLN5g87nwjHED3SqzHJtAS0wel+yG5tkonm2sWHZAVbbfH8KgYdsijEj8vpioGf0bykzKgWDFOT667w+5PsOIFhwbHwqWPaEHc+ANsOiyJJ1yLWIQQ3OYysnkMYljEKsVvU2Cv6O+56E5bK7odqKve+e3b37J4JqGBB9G4hQi0m+SSYudVOZG/OA==
+X-Forefront-Antispam-Report: CIP:20.160.56.81;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230028)(39850400004)(376002)(396003)(136003)(346002)(451199021)(5400799015)(36840700001)(40470700004)(46966006)(2906002)(478600001)(4744005)(5660300002)(41300700001)(44832011)(54906003)(316002)(8676002)(8936002)(70586007)(70206006)(4326008)(6486002)(7416002)(6916009)(31686004)(6666004)(2616005)(6506007)(26005)(6512007)(40460700003)(53546011)(36860700001)(40480700001)(82740400003)(186003)(356005)(47076005)(7596003)(83380400001)(34070700002)(36756003)(7636003)(82310400005)(86362001)(31696002)(336012)(43740500002)(12100799033);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Jun 2023 14:35:32.6310
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 56fe191f-3c22-4406-034c-08db6b524710
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.81];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: AM6EUR05FT030.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR03MB8859
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_022441_345740_20A42D0D 
-X-CRM114-Status: GOOD (  15.53  )
+X-CRM114-CacheID: sfid-20230612_073538_766646_4D4D8A7E 
+X-CRM114-Status: GOOD (  16.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,186 +166,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+On 6/10/23 18:21, Vladimir Oltean wrote:
+> Hello Sean,
+> 
+> On Fri, Jun 09, 2023 at 03:19:22PM -0400, Sean Anderson wrote:
+>> On 5/22/23 11:00, Vladimir Oltean wrote:
+>> > On Mon, May 22, 2023 at 10:42:04AM -0400, Sean Anderson wrote:
+>> >> Have you had a chance to review this driver?
+>> > 
+>> > Partially / too little (and no, I don't have an answer yet). I am
+>> > debugging a SERDES protocol change procedure from XFI to SGMII.
+>> 
+>> I'd just like to reiterate that, like I said in the cover letter, I
+>> believe this driver still has value even if it cannot yet perform
+>> protocol switching.
+>> 
+>> Please send me your feedback, and I will try and incorporate it into the
+>> next revision. Previously, you said you had major objections to the
+>> contents of this series, but you still have not listed them.
+> 
+> And if SERDES protocol switching was not physically possible, would this
+> patch set still have value?
 
-Shrink code and avoid line breaks by using a helper variable for
-&pdev->dev.
+Yes. To e.g. set up SGMII25 or to fix the clocking situation.
 
-Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
----
- .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 48 ++++++++++---------
- 1 file changed, 26 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 28d2514a8795..e19d142630d3 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -123,25 +123,26 @@ static void rgmii_updatel(struct qcom_ethqos *ethqos,
- static void rgmii_dump(void *priv)
- {
- 	struct qcom_ethqos *ethqos = priv;
-+	struct device *dev = &ethqos->pdev->dev;
- 
--	dev_dbg(&ethqos->pdev->dev, "Rgmii register dump\n");
--	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_CONFIG: %x\n",
-+	dev_dbg(dev, "Rgmii register dump\n");
-+	dev_dbg(dev, "RGMII_IO_MACRO_CONFIG: %x\n",
- 		rgmii_readl(ethqos, RGMII_IO_MACRO_CONFIG));
--	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DLL_CONFIG: %x\n",
-+	dev_dbg(dev, "SDCC_HC_REG_DLL_CONFIG: %x\n",
- 		rgmii_readl(ethqos, SDCC_HC_REG_DLL_CONFIG));
--	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DDR_CONFIG: %x\n",
-+	dev_dbg(dev, "SDCC_HC_REG_DDR_CONFIG: %x\n",
- 		rgmii_readl(ethqos, SDCC_HC_REG_DDR_CONFIG));
--	dev_dbg(&ethqos->pdev->dev, "SDCC_HC_REG_DLL_CONFIG2: %x\n",
-+	dev_dbg(dev, "SDCC_HC_REG_DLL_CONFIG2: %x\n",
- 		rgmii_readl(ethqos, SDCC_HC_REG_DLL_CONFIG2));
--	dev_dbg(&ethqos->pdev->dev, "SDC4_STATUS: %x\n",
-+	dev_dbg(dev, "SDC4_STATUS: %x\n",
- 		rgmii_readl(ethqos, SDC4_STATUS));
--	dev_dbg(&ethqos->pdev->dev, "SDCC_USR_CTL: %x\n",
-+	dev_dbg(dev, "SDCC_USR_CTL: %x\n",
- 		rgmii_readl(ethqos, SDCC_USR_CTL));
--	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_CONFIG2: %x\n",
-+	dev_dbg(dev, "RGMII_IO_MACRO_CONFIG2: %x\n",
- 		rgmii_readl(ethqos, RGMII_IO_MACRO_CONFIG2));
--	dev_dbg(&ethqos->pdev->dev, "RGMII_IO_MACRO_DEBUG1: %x\n",
-+	dev_dbg(dev, "RGMII_IO_MACRO_DEBUG1: %x\n",
- 		rgmii_readl(ethqos, RGMII_IO_MACRO_DEBUG1));
--	dev_dbg(&ethqos->pdev->dev, "EMAC_SYSTEM_LOW_POWER_DEBUG: %x\n",
-+	dev_dbg(dev, "EMAC_SYSTEM_LOW_POWER_DEBUG: %x\n",
- 		rgmii_readl(ethqos, EMAC_SYSTEM_LOW_POWER_DEBUG));
- }
- 
-@@ -242,6 +243,7 @@ static const struct ethqos_emac_driver_data emac_v3_0_0_data = {
- 
- static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
- {
-+	struct device *dev = &ethqos->pdev->dev;
- 	unsigned int val;
- 	int retry = 1000;
- 
-@@ -279,7 +281,7 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
- 		retry--;
- 	} while (retry > 0);
- 	if (!retry)
--		dev_err(&ethqos->pdev->dev, "Clear CK_OUT_EN timedout\n");
-+		dev_err(dev, "Clear CK_OUT_EN timedout\n");
- 
- 	/* Set CK_OUT_EN */
- 	rgmii_updatel(ethqos, SDCC_DLL_CONFIG_CK_OUT_EN,
-@@ -296,7 +298,7 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
- 		retry--;
- 	} while (retry > 0);
- 	if (!retry)
--		dev_err(&ethqos->pdev->dev, "Set CK_OUT_EN timedout\n");
-+		dev_err(dev, "Set CK_OUT_EN timedout\n");
- 
- 	/* Set DDR_CAL_EN */
- 	rgmii_updatel(ethqos, SDCC_DLL_CONFIG2_DDR_CAL_EN,
-@@ -322,12 +324,13 @@ static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
- 
- static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
- {
-+	struct device *dev = &ethqos->pdev->dev;
- 	int phase_shift;
- 	int phy_mode;
- 	int loopback;
- 
- 	/* Determine if the PHY adds a 2 ns TX delay or the MAC handles it */
--	phy_mode = device_get_phy_mode(&ethqos->pdev->dev);
-+	phy_mode = device_get_phy_mode(dev);
- 	if (phy_mode == PHY_INTERFACE_MODE_RGMII_ID ||
- 	    phy_mode == PHY_INTERFACE_MODE_RGMII_TXID)
- 		phase_shift = 0;
-@@ -468,7 +471,7 @@ static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
- 			      loopback, RGMII_IO_MACRO_CONFIG);
- 		break;
- 	default:
--		dev_err(&ethqos->pdev->dev,
-+		dev_err(dev,
- 			"Invalid speed %d\n", ethqos->speed);
- 		return -EINVAL;
- 	}
-@@ -478,6 +481,7 @@ static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
- 
- static int ethqos_configure(struct qcom_ethqos *ethqos)
- {
-+	struct device *dev = &ethqos->pdev->dev;
- 	volatile unsigned int dll_lock;
- 	unsigned int i, retry = 1000;
- 
-@@ -540,8 +544,7 @@ static int ethqos_configure(struct qcom_ethqos *ethqos)
- 			retry--;
- 		} while (retry > 0);
- 		if (!retry)
--			dev_err(&ethqos->pdev->dev,
--				"Timeout while waiting for DLL lock\n");
-+			dev_err(dev, "Timeout while waiting for DLL lock\n");
- 	}
- 
- 	if (ethqos->speed == SPEED_1000)
-@@ -597,6 +600,7 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	const struct ethqos_emac_driver_data *data;
- 	struct plat_stmmacenet_data *plat_dat;
- 	struct stmmac_resources stmmac_res;
-+	struct device *dev = &pdev->dev;
- 	struct qcom_ethqos *ethqos;
- 	int ret;
- 
-@@ -606,13 +610,13 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 
- 	plat_dat = stmmac_probe_config_dt(pdev, stmmac_res.mac);
- 	if (IS_ERR(plat_dat)) {
--		dev_err(&pdev->dev, "dt configuration failed\n");
-+		dev_err(dev, "dt configuration failed\n");
- 		return PTR_ERR(plat_dat);
- 	}
- 
- 	plat_dat->clks_config = ethqos_clks_config;
- 
--	ethqos = devm_kzalloc(&pdev->dev, sizeof(*ethqos), GFP_KERNEL);
-+	ethqos = devm_kzalloc(dev, sizeof(*ethqos), GFP_KERNEL);
- 	if (!ethqos) {
- 		ret = -ENOMEM;
- 		goto out_config_dt;
-@@ -625,13 +629,13 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 		goto out_config_dt;
- 	}
- 
--	data = of_device_get_match_data(&pdev->dev);
-+	data = of_device_get_match_data(dev);
- 	ethqos->por = data->por;
- 	ethqos->num_por = data->num_por;
- 	ethqos->rgmii_config_loopback_en = data->rgmii_config_loopback_en;
- 	ethqos->has_emac3 = data->has_emac3;
- 
--	ethqos->rgmii_clk = devm_clk_get(&pdev->dev, "rgmii");
-+	ethqos->rgmii_clk = devm_clk_get(dev, "rgmii");
- 	if (IS_ERR(ethqos->rgmii_clk)) {
- 		ret = PTR_ERR(ethqos->rgmii_clk);
- 		goto out_config_dt;
-@@ -641,7 +645,7 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto out_config_dt;
- 
--	ret = devm_add_action_or_reset(&pdev->dev, ethqos_clks_disable, ethqos);
-+	ret = devm_add_action_or_reset(dev, ethqos_clks_disable, ethqos);
- 	if (ret)
- 		goto out_config_dt;
- 
-@@ -660,7 +664,7 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	if (of_device_is_compatible(np, "qcom,qcs404-ethqos"))
- 		plat_dat->rx_clk_runs_in_lpi = 1;
- 
--	ret = stmmac_dvr_probe(&pdev->dev, plat_dat, &stmmac_res);
-+	ret = stmmac_dvr_probe(dev, plat_dat, &stmmac_res);
- 	if (ret)
- 		goto out_config_dt;
- 
--- 
-2.39.2
-
+--Sean
 
 -- 
 linux-phy mailing list
