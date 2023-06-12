@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A205CC88CB8
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 17:13:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C62F2C7EE2F
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jun 2023 17:13:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9Y51jKq1snZa4DT/UjpQpSi7YZTyUVXfa7L9SjlbS/w=; b=QEkeHtj9+OL6eA
-	9+pWUGCN65J9kyk0zAZ3kjXaH5qktISk3c5Rp6Fna9kFf2IheMI2JvMc868ZvnrKP+qGwethG/r+I
-	XcKLOEkOJuWdu5rjxjEPWUtCsgUA6pTbL+wYwvspCViqzG6L9KusSnugAgFA9ThRR8mx9L8g566DF
-	Ze3AO90aoy3sJxVLXalISA9YCHZjlzFSbMnsCTlJqHBI6YYDFxmjMNyvBWWlcqgw1Flph3X2iFYPG
-	Z+kzdOXw59kfw1ZtGkNw1YFf1fDrAbxu998/YqpQariN/mcoCep+ZG+Mt5J2MN2E1hR/Uh215LLpu
-	onsLZjYhEIc3ceGTCNHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KvTnkeQ8AvUoiSsRbaJUSHCbOCm8gdNaPNH9wNSyjNE=; b=mnNPDZWjEwBsjD
+	5MXZ8wwm9sKvIZIAJijSJo1lxjtCFuAKRg+i4R5U5vtVEO+gLb2FvWcrqZf1lRpZ5gMdJXA+sQhxi
+	PoKbxleYXghoWd9fwRtNjsSmoHkcmVdxhie5CpmghP6+rOvLusv8fJDFJF5V6V+Qqeym3C9etm9BZ
+	q9mRbBKxtjpG7gHq2gB0imgFmRFqFmz1Qud7JciMgK27Y5F0YsZuNple2rr7l0CH/6IrbD7bZyWFP
+	d15GkNlt2HRcL/WniiV6hS0xxH8AGjwp9iVqa1RMfPX6bWQuCf87Ekterg64GH2ZI4XtpD2rXOtri
+	mQJ8IhW3gSbc3iw5oclw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8l70-004id9-0X;
-	Mon, 12 Jun 2023 17:13:50 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1q8l71-004ie6-1S;
+	Mon, 12 Jun 2023 17:13:51 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8l6w-004iZB-1E;
-	Mon, 12 Jun 2023 17:13:47 +0000
+	id 1q8l6w-004iZC-19;
+	Mon, 12 Jun 2023 17:13:49 +0000
 Received: from jupiter.universe (dyndsl-091-248-210-131.ewe-ip-backbone.de [91.248.210.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id 0FFA76606ECF;
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 32D5A6606ED2;
 	Mon, 12 Jun 2023 18:13:41 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1686590021;
-	bh=Bf6eekQkfS+tNXR2hhMUzuVzPovEGfpI2wuTSi/+qNc=;
-	h=From:To:Cc:Subject:Date:From;
-	b=NKDg3R0ad4nTEofp9OPAxRwYSdVaJxwT44lcjFXKI4d7Xi+5x+bUQeGodtmYcg7lZ
-	 CihWkGiV4YQGWK0XibuOsYBhPhKvBq5n2q++XkW34XRUU7hjedZvPWK45C6asQeytv
-	 7HIznFxvsgFI2iSPYWq2Og73UhKwcKR99m82VmfFF9xtDaK7ErRHrShNnGe3Dv/OLq
-	 BxYQbL67gBRVTOiG6Ts2iXwQgF5eUKvIU8/JItn9ZnimR5FsMTOqmWhysOgYFujqvh
-	 Erp6KzRT109vU4ITvW+boUVxDRrWiJ9BODaLFbxN2cl7ZFC/CkhdyMdhf/3wftK5xL
-	 wqxHgQwAIUznw==
+	bh=D1KuKR+ZNBWiJnLkvJscHLEqZhzpGY7F8aiTg99e+O0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Dc25F4tg8BzzDJwU/KA452v00Pk/TWG3XHaQOKWhZGngcDouQBUEUkzas1y2nshJ7
+	 zlAEeK9IeRnWdrNZyfqCbblU2ZHNpdV+5ptXn81jsVhy1zIl4QxXny+Uc6OW9t8ZWW
+	 w3SBKC/zM4qcpHhOxfDIVMPIGAIeeuMjwPHBYZm3CB9WJJK4RpMxBWl7m857cfiZpj
+	 ryBUhF5wgKRbTu/ejLOzb7bYhweeGzIBnqY7fbn+uSbH9n9try7R+fPJ5sv4ZuMLys
+	 m2M0++IP5ZtTbBNHxccZxYQhbORXrO1UjoF6Iv/lZBKtzOPJtEEed5bcb6NZVWrIv7
+	 Lgb3GIBjw28Sg==
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id A23304805CC; Mon, 12 Jun 2023 19:13:38 +0200 (CEST)
+	id A76CB4807E2; Mon, 12 Jun 2023 19:13:38 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>
 Cc: Rob Herring <robh+dt@kernel.org>,
@@ -59,15 +59,19 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com
-Subject: [PATCH v4 0/5] Add RK3588 SATA support
-Date: Mon, 12 Jun 2023 19:13:32 +0200
-Message-Id: <20230612171337.74576-1-sebastian.reichel@collabora.com>
+	kernel@collabora.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v4 3/5] dt-bindings: phy: rockchip: rk3588 has two reset lines
+Date: Mon, 12 Jun 2023 19:13:35 +0200
+Message-Id: <20230612171337.74576-4-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230612171337.74576-1-sebastian.reichel@collabora.com>
+References: <20230612171337.74576-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230612_101346_593190_0E4653A5 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20230612_101346_593260_5BED71E9 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,55 +88,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+The RK3588 has two reset lines for the combphy. One for the
+APB interface and one for the actual PHY.
 
-This enables SATA support for RK3588.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ .../phy/phy-rockchip-naneng-combphy.yaml      | 34 ++++++++++++++++++-
+ 1 file changed, 33 insertions(+), 1 deletion(-)
 
-Changes since PATCHv3:
- * https://lore.kernel.org/all/20230608162238.50078-1-sebastian.reichel@collabora.com/
- * Add Reviewed-by from Serge and Krzysztof to patch 1
- * Update patch 2
-   - Add maxItems to 'clocks' property; without specifying minItems it's
-     implied to be the same
-   - Keep allOf above the properties in snps,dwc-ahci.yaml
-   - Add 'sata-port@0' to list of allowed properties
-   - Replace sata-port pattern property, so that it disallows using any
-     sata-port nodes besides @0 to override the pattern property from the
-     common binding
- * Add Reviewed-by from Krzysztof to patch 3
-
-Changes since PATCHv2:
- * https://lore.kernel.org/all/20230522173423.64691-1-sebastian.reichel@collabora.com/
- * Drop patch 1 (applied by Heiko)
- * Update SATA DT binding to split Rockchip into its own file
- * Enforce correct resets numbers for the rk3568/rk3588 combo PHY
-
-Changes since PATCHv1:
- * https://lore.kernel.org/all/20230413182345.92557-1-sebastian.reichel@collabora.com/
- * Rebase to v6.4-rc1
- * Collect Acked-by for syscon DT binding update
- * Use ASIC clock description suggested by Serge Semin
- * Also add RBC clock (not used by RK3588)
- * Add extra patch narrowing down the allowed clocks for RK356x and RK3588
-
--- Sebastian
-
-Sebastian Reichel (5):
-  dt-bindings: ata: dwc-ahci: add PHY clocks
-  dt-bindings: ata: dwc-ahci: add Rockchip RK3588
-  dt-bindings: phy: rockchip: rk3588 has two reset lines
-  arm64: dts: rockchip: rk3588: add combo PHYs
-  arm64: dts: rockchip: rk3588: add SATA support
-
- .../bindings/ata/rockchip,dwc-ahci.yaml       | 124 ++++++++++++++++++
- .../bindings/ata/snps,dwc-ahci-common.yaml    |   8 +-
- .../bindings/ata/snps,dwc-ahci.yaml           |  13 +-
- .../phy/phy-rockchip-naneng-combphy.yaml      |  34 ++++-
- arch/arm64/boot/dts/rockchip/rk3588.dtsi      |  44 +++++++
- arch/arm64/boot/dts/rockchip/rk3588s.dtsi     |  90 +++++++++++++
- 6 files changed, 306 insertions(+), 7 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/ata/rockchip,dwc-ahci.yaml
-
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+index 9ae514fa7533..d3cd7997879f 100644
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+@@ -31,8 +31,14 @@ properties:
+       - const: pipe
+ 
+   resets:
++    minItems: 1
++    maxItems: 2
++
++  reset-names:
++    minItems: 1
+     items:
+-      - description: exclusive PHY reset line
++      - const: phy
++      - const: apb
+ 
+   rockchip,enable-ssc:
+     type: boolean
+@@ -78,6 +84,32 @@ required:
+   - rockchip,pipe-phy-grf
+   - "#phy-cells"
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3568-naneng-combphy
++    then:
++      properties:
++        resets:
++          maxItems: 1
++        reset-names:
++          maxItems: 1
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3588-naneng-combphy
++    then:
++      properties:
++        resets:
++          minItems: 2
++        reset-names:
++          minItems: 2
++      required:
++        - reset-names
++
+ additionalProperties: false
+ 
+ examples:
 -- 
 2.39.2
 
