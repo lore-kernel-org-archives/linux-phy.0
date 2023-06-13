@@ -4,145 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BB4CEB64D0
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 14:28:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1570CEB64D0
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 16:59:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XhLcxGgWeq/ZZM/ImHFL58dSerHDFseWl51B08Pmw24=; b=hXLG/Gdx8h7j/L
-	KTglH1g+dH+nICULQSAXWsfOGuvLbYNxe1WIUGlYkxro95Z5yUitzbTokUyHXlqxdj3G/iaLtnYAr
-	j0RZ7TuNNgnpit3GJ/PqtQ7rOcGlgMdfqyiwCeP2G4BSbi796xqMVmWY35Enp2oqCprwdrufuz3ry
-	h84tnH0TZUZjHCI7o9LVvNdo44jW1yykRNOm1geRmsjxLvWJuzPBKWES5svP3KLQD0ieU4mxR4Aq8
-	7YgiIwAMlkLgTQSbspQoj6i6xW3KI1/yA3AbNqNMGSbTXxxkJL+mjNTHRDe3XdD1q+sMqZvVhCMwR
-	66Xv6Z/3NmLWPOkN6kbQ==;
+	List-Owner; bh=hCoQWCXRfvsCaz88uYdPSIFYYwlMx7HRC7sBbjh95dQ=; b=lDJAXZ+61HPqKk
+	hpC3CkJgSBNnAiCJZm4SWSubPmKrH629D25TlkYQDMkq0/u9KsktvWPWPFfL2WPvdpDhkBGXh81xJ
+	7PTwVbxIaknT2KljcjhX1Kco1/RYWTc8EFuUPWjiWVeUcy8JfS4oswFYSsUWZQNGwqTKpEMZqayOz
+	BM6bGa5H8fmZEbV4dwPDzfkqTXHHZJqqCP+rhproqpUAH0Mi0RYP1sjBQRYXK8CFTwjuO0OgFvsYl
+	BEDAiVTEbR2TddMkPxCyRUArqKY/NemeQ3WeXWnsZKD9Ttvc4oce5Mlg1nxp0tbwKQuDgxpOpnxca
+	YO9PjFaylv6DU4yBo2Yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q950J-008JVl-04;
-	Tue, 13 Jun 2023 14:28:15 +0000
-Received: from mail-vi1eur04on0630.outbound.protection.outlook.com ([2a01:111:f400:fe0e::630] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1q97N6-008eca-2N;
+	Tue, 13 Jun 2023 16:59:56 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q950D-008JU9-2q;
-	Tue, 13 Jun 2023 14:28:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=M63p+OtueD+fLur0A+gvpWSYPLjapcGYuKwCOoRdxEa1sclHJlQlMlZWL8OFiY0HskDWtdmp5ToyqE7IpcVASlks5lWRhNcuC8v+xwJlZlDFrpqRK2z89kAPoUqCnDNKkS/Y4Uv0q0g2hn9RXzLHONwD6lSEkGYC5Ook7xETmooirxmp86/Qh7eRg0b0MqGC7d/SLYe6kwueA6horYiW7NJ/6uDSRM3YbJ/jlck3+8qqLxCpTI6+RFSjqmwuHRuwgLKoAX4NMM9cyllGoVJ/REFgCpgW8NSvVf23e9F0ue+x41zZ+/0C1tUfX4BUfFPVNCfS8rqsvXaZrq7KeBNAIg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3yqzD08utCEzs/KBhbd0tFml476ZMZlAHrteLHly8Ms=;
- b=W34eeVNbLk49OShmEYE+ro0ssrRAPzpErn4A1/ED/yMAcma8Sy6xMAuC428Sn6GjcTXBi6hysy0IRKDr+N0Yko0KNm/aXsQHvjpY1tF58kktiCVJsX0peSuXySnyoTMet5TmhNNM5hYH0q3f6rDjP06feEdEj42pREFeNd8yDrRNSUWC0riQRStPRexewUigjn2/BRYN8u4QIliACupIyvTE3W5vBFFja1MoPEM5FtxKFmemU/PNydm9mz5boSQW694xaXVnoMNMiq1Hfw5BYzfFifpbRYAPySq7Uy/MXUWR1qJ3OEZIRq4w7Pvs6NExTY+sVzrACJOJQLTD/OK53w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3yqzD08utCEzs/KBhbd0tFml476ZMZlAHrteLHly8Ms=;
- b=Ch6QiXAX0lPbjFVCkGmoK6AClvmwgMM8u3lHjARsAk0HxCf4CV8+x5vSB6hofuG3wO4TZPCDl04gwGqYjtPfGGfc6/W03cM/UG/TWk4KB6fyVIkLurnBTKJBOgjxqRPFc62lenx0XPjKAxOyrTqiahE7PR+WOqK5dDgXHynLMaw=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by DU2PR04MB9212.eurprd04.prod.outlook.com (2603:10a6:10:2fb::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.44; Tue, 13 Jun
- 2023 14:27:59 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::c40e:d76:fd88:f460]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::c40e:d76:fd88:f460%4]) with mapi id 15.20.6455.045; Tue, 13 Jun 2023
- 14:27:58 +0000
-Date: Tue, 13 Jun 2023 17:27:54 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Sean Anderson <sean.anderson@seco.com>
+	id 1q97N1-008eaQ-2W
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Jun 2023 16:59:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1686675590;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=j04GnjVnV6VhU15tbBAUt5ncRnXCPvNX2dvFYsA/gBk=;
+	b=iHw6EAIePH85NMkgoWE0GEqFT7RjDlWvkKcgh0VkANARIlCsC/L06u542yBsECCVHHKrQ1
+	d56rSxi3Pv8HLM27+BnwFvs1lT66NBQxlYp+Gnk78lcR0tp82vltrCeyAh54Lh2BQHbr+T
+	85hD0/7E1JfvVe3B7dBqOUcyXw6vm/8=
+Received: from mail-yw1-f199.google.com (mail-yw1-f199.google.com
+ [209.85.128.199]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-553-WjvrH7pOO4Cipd_r5pk_DA-1; Tue, 13 Jun 2023 12:59:48 -0400
+X-MC-Unique: WjvrH7pOO4Cipd_r5pk_DA-1
+Received: by mail-yw1-f199.google.com with SMTP id 00721157ae682-56ff697b86cso6231857b3.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 09:59:47 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686675587; x=1689267587;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=j04GnjVnV6VhU15tbBAUt5ncRnXCPvNX2dvFYsA/gBk=;
+        b=AskBmRhmG9zC6cr0LpDyy20/KCZZwu/AHIaz+j6h5bk1XumKDpRgLtqRFRMMsFUaCF
+         T9uYTbMzzcqzJhzI6XzxPACmlgvk2UcVbRQIOfoJLkCX1YV6uqfkmkI43JaGzQykN5tZ
+         9RPBxhcGrPoZsfjxwe8doPLUqvrH5427lCa7Tqbcy5U+kKFakRj8HE2pqGcUA+/5X7g8
+         a7cKgaELiabJdVJ6Lz9cUOC+fYEMHN5pf7nZUSjsVXsaJdlOHC9xhr/nI/8k1chYKfO/
+         LNFfR0wAcu0fQbGNhaG4ym8uVxhmRK0CglwGB97g7d5oWxB6gwS8+xYUqrJK4jusqlGd
+         Btsw==
+X-Gm-Message-State: AC+VfDyeFWPoetwjehI1eYYlnRV+ESVmgyXx0iH/JsC+WEkrZWmccNRZ
+	/O52yKxcKTaWseUk5SVaHeUlV467LJeStNnObkEalR1EVtuyddq053bi/bA5zss6FqOa8WDAVXb
+	IT/6dxqJ1gQPMRWHuXk4YSlpxug==
+X-Received: by 2002:a81:738b:0:b0:565:e48d:32cf with SMTP id o133-20020a81738b000000b00565e48d32cfmr2533641ywc.7.1686675587353;
+        Tue, 13 Jun 2023 09:59:47 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7O9u46bkmq9uCzDtwjiCxY77/JvONfFU/2txtnkFyT64oc8V6fa+eQ8cwyObh374VppqoV4w==
+X-Received: by 2002:a81:738b:0:b0:565:e48d:32cf with SMTP id o133-20020a81738b000000b00565e48d32cfmr2533610ywc.7.1686675587072;
+        Tue, 13 Jun 2023 09:59:47 -0700 (PDT)
+Received: from halaney-x13s ([2600:1700:1ff0:d0e0::45])
+        by smtp.gmail.com with ESMTPSA id s7-20020a0de907000000b005688f7596ccsm1699074ywe.78.2023.06.13.09.59.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 Jun 2023 09:59:46 -0700 (PDT)
+Date: Tue, 13 Jun 2023 11:59:43 -0500
+From: Andrew Halaney <ahalaney@redhat.com>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
 Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
-	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
-	Jonas Gorski <jonas.gorski@gmail.com>,
-	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
-Message-ID: <20230613142754.wr5njtjo4tbloqwu@skbuf>
-References: <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
- <20230429172422.vc35tnwkekfieoru@skbuf>
- <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
- <c2f928d2-25f6-0e31-9ab3-9d585968df1b@seco.com>
- <20230522150010.q5zndfwcuvrb6pg2@skbuf>
- <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
- <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
- <c702e2b6-cb0f-4ac9-86fe-a220284d45aa@seco.com>
- <20230612163353.dwouatvqbuo6h4ea@skbuf>
- <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
-Content-Disposition: inline
-In-Reply-To: <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
-X-ClientProxiedBy: AM4PR07CA0007.eurprd07.prod.outlook.com
- (2603:10a6:205:1::20) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Jose Abreu <joabreu@synopsys.com>, netdev@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Subject: Re: [PATCH 16/26] net: stmmac: dwmac-qcom-ethqos: prepare the driver
+ for more PHY modes
+Message-ID: <20230613165943.zjr4b4p44jhl2dtx@halaney-x13s>
+References: <20230612092355.87937-1-brgl@bgdev.pl>
+ <20230612092355.87937-17-brgl@bgdev.pl>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DU2PR04MB9212:EE_
-X-MS-Office365-Filtering-Correlation-Id: 02107575-476f-41bd-74e1-08db6c1a62d8
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: LCjZAoPw9Of4yxZcjufAjeKtXhjnb3SJB35cON3zs1klC0vsfdCdzAMYz/bUS5Zuw0QD2NYs2YihdLG9ZGB0NtDiO33fDp8ErPmpaasiBMcUI1AfetbIEuT4uZtlWqL40EMBxbxe81mll9PWyiKJpOoGr3GIFZ4Ptj5RBDfl+PLis7KyF8cvfwIMg3ECj/lZTqRDOXBqDxGfLtf+2IAF8sQAdN5hCKnVPUElmg60kUpZSi096QvbzCrWXiA2Dx8uGZrACZc65RinftmpKWdK2PEMqspBIrnlannXeesoq9KNGVEpM6nzJbhScApjZWNBoGJmlwLWhx5zQl0oJfroJW2ZyKLVIFFim70CvVF0/W+yAPd++s8JVhF/J0UUL7M8nICe/NNmyfuml2QW9mAY8gybtUybzVAQ2lbrhtkW0Fcx3EsNyqdQF0s6NLXFN265l4HoqXrhJG++qxHpOzSeaYnzQjMoLfjntwfFVcuVW4C19h5S6BtneW4uFpXlRkvqmXQav6iPqX6NrNvZ9myvhbxbZfvopnEE/UQT0Yq0LMXzeykQTysvqtaLnlP96KxE
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(7916004)(4636009)(376002)(136003)(396003)(39860400002)(366004)(346002)(451199021)(66556008)(66476007)(6916009)(8676002)(8936002)(5660300002)(66946007)(54906003)(4326008)(478600001)(6666004)(66899021)(41300700001)(6486002)(316002)(38100700002)(53546011)(186003)(6506007)(6512007)(1076003)(9686003)(44832011)(7416002)(26005)(83380400001)(86362001)(33716001)(2906002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gTD+YO9HLpBPpEod/cjNzDlONepQdrNlX4oEV6oeDqWh9u9ndKbBY5D7Sn9R?=
- =?us-ascii?Q?eqFpG7pLGY0jy+qwJGg9/XoY/ZOnl7iAM+I9jF8y2EWYeUILY/PpH8y16tcP?=
- =?us-ascii?Q?2Ba6sLgv+gZieYM/okLvOfA89rGwcBT7ENhW0xnAPszgiNfMCClCXZ2p+MeU?=
- =?us-ascii?Q?cqJD0aLCxoby7qHs019XM7xFHxn1BQDfurC/BXXFe8508QAFFhIPP1Y0K2N9?=
- =?us-ascii?Q?LCp7eymut+9iloBT9JN5wBA9BFc2yOy3r39ZakRf3mVN0/+d6SfubguA/P8+?=
- =?us-ascii?Q?9g88y4UjWnYvv4p/aZA3O36TacSi5vD16le8Gt+pYphu9v5h6XbSB1zQpjJg?=
- =?us-ascii?Q?NF4dqgGTAujS1cAFAWfg7DKbqvAND7fngeUwKnhEDpkq4QaesLs32MhDaYGo?=
- =?us-ascii?Q?Wnwhp9/tJs99/0adQAzw40+K15ifo/x90AX3FM6czBG3U/JTvPmb0UuAgUA8?=
- =?us-ascii?Q?IwI0V/X7G88S82iaLOMpHQw6r8CAw9l6b5HscdlnJyG9FXDogPan27t0E48x?=
- =?us-ascii?Q?BeYsU9qKMUltEuvo+LWtrggeH/IvNqTo8L7wO8uFmeSJ9Lnl+hhSpm3kgO2K?=
- =?us-ascii?Q?NasNOkbCpFXA1z0qc7mwkznoxXLftodJstz5YePIy3ibMqEdnZ2X4KF2zy2m?=
- =?us-ascii?Q?wzY5riphdQ6+5zWjQpgPK2SoxHFlPFf2FeblFsWKJrBbGEcxKqBURf12bugw?=
- =?us-ascii?Q?/EMPvLjR6GEAh+wTfKT8dTy2ppv5/Qs6TtLqLlSfqD237ZnevnbA8qZqM8/x?=
- =?us-ascii?Q?gc6Idhjb7GZGmY/3QuWKL21wTXAmCZrxGubyhCr7LONyeUz0XVxu4NSz2vvI?=
- =?us-ascii?Q?5jpU4ZIi244S00UEJjPM5X3o49QHF3wmJRqXqHAoixaUdDJLG9mUNLAoszBM?=
- =?us-ascii?Q?QljcSNioZlchtbKg9JJUmSc21w3Ok8TrtHBIiIqiynOuFl7lyjdoAF2HLnLA?=
- =?us-ascii?Q?VXCBJ7IBq70wFrbpOU/90SglQyqINx3A7zG/S+6GUCoAV07Ey7txlNS+cKEr?=
- =?us-ascii?Q?M4kuqkeicqdMuRsCAOQ0DgYAaij74IwguqC3h1Ohn5dBiN/a3ToR6X+3JMbm?=
- =?us-ascii?Q?eAI9F9a7gs38dL8DvnJOhOTZchzzvMN73K/UD7kdpY5FQSnxM5SHCuuicIqs?=
- =?us-ascii?Q?p1TF/HTcK1BfS98ZM7neUWqoyw5sLWILkOhHhZKyOKDvBGuIoDx2YBRfZlOJ?=
- =?us-ascii?Q?dLWDsfNsU22Kws/jitp9Kdyh+sqEvM0zVOFiPrfCtyyfcvO8W5g3q67W80o+?=
- =?us-ascii?Q?r6wAyj45/zza3xJ6liAadMIan12muMPywJn6pdB/5AeCA+xqK0VYojswl0x7?=
- =?us-ascii?Q?A5dtwK6AHHowut9SXH+6dOgVcOWmQEye7HEYvBigaVqeaOkzMENnt7OhLG9r?=
- =?us-ascii?Q?ZBykw8AeH1FAAIaem4IP7P6DHSnvf1xYhkEbidiBfoEM0YLktPPAYD6lDSYp?=
- =?us-ascii?Q?+fO4vzRt4Uze8GQasPSwlmwhIQRKA2Kd47efqKsgQxRi4boLMCSJIYwbmrIa?=
- =?us-ascii?Q?uQImnfQBiBoI8LZcNxBxe4C5HaVIiDD4Tg4E+oq1N5TsX60QORu8T0hLPxBI?=
- =?us-ascii?Q?BJq2VDRFmG9BNUKYvumzt1ouVyVyZoQCpNnNasji+Y6/PoSwo8KrgDXb0gpa?=
- =?us-ascii?Q?BA=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02107575-476f-41bd-74e1-08db6c1a62d8
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2023 14:27:58.8559
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UKkZVma6r9HCiNsIzVyqu3nOCytXYr3BnEmXMTgq8nOQxF49sljPGw7Cna2/YVOwaQwT+AeRbzPZv4/Z5yN2JA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9212
+In-Reply-To: <20230612092355.87937-17-brgl@bgdev.pl>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_072810_090385_212B5260 
-X-CRM114-Status: GOOD (  52.16  )
+X-CRM114-CacheID: sfid-20230613_095951_908300_2361D1C7 
+X-CRM114-Status: GOOD (  24.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,157 +119,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 12, 2023 at 04:46:16PM -0400, Sean Anderson wrote:
-> On 6/12/23 12:33, Vladimir Oltean wrote:
-> > On Mon, Jun 12, 2023 at 10:35:21AM -0400, Sean Anderson wrote:
-> >> > And if SERDES protocol switching was not physically possible, would this
-> >> > patch set still have value?
+On Mon, Jun 12, 2023 at 11:23:45AM +0200, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
-> More to the point, did you make any progress in this area?
-
-Aha. It is two email exchanges later that you've thought of asking that.
-
-No, I haven't made progress. Though I managed to get some extra pointers
-and things to try out, and at this stage I am the limiting factor. I will
-let you know once the investigation has reached a conclusion.
-
-So many things depend on whether major SERDES protocol reconfiguration
-is possible, that if I were you, my question would be just that, instead
-of the equivalent of "Vladimir, when can my driver be merged ???".
-I understand how incredibly frustrating it is that the responses are
-coming in so slowly, and this is the reason why I am responding at all
-to your pings even if I have essentially nothing new to say.
-
-And it's not that you don't care whether protocol reconfiguration is
-possible or not - you do, but at the same time you're overcome with this
-strong attachment to your solution just because it is yours, that I
-don't know how to deal with.
-
-> 2222 also does not work, as outlined above.
+> In preparation for supporting SGMII, let's make the code a bit more
+> generic. Add a new callback for MAC configuration so that we can assign
+> a different variant of it in the future.
 > 
-> The clocking is incompatible, and must be fixed by software.
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+
+Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
+
+> ---
+>  .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 31 ++++++++++++++++---
+>  1 file changed, 26 insertions(+), 5 deletions(-)
 > 
-> The only thing self-inflicted is NXP's conflicting design.
-
-The way things are supposed to work (*if* this works at all) is that the
-reset state machine starts with a supported PLL / refclk configuration
-that permits a certain subset of protocols, and the SERDES protocols can
-be changed from the reset state, as desired, for the individual lanes.
-
-What is self-inflicted is that the refclks on your board design are not
-supportable by any reset state machine configuration, and wiring them
-that way was a conscious decision. Did your company's board designers
-receive the recommendation to disconnect RESET_REQ from NXP, and has NXP
-said that the end result will be something that continues to be supportable?
-I've searched the customer support database and the answer seems to be no.
-In any case, if you have to disconnect RESET_REQ from the SoC to make
-the driver in this form useful, then... yeah, no. You're obviously free
-to do whatever you want with your products, but that's not how mainline
-Linux works, it needs to be useful beyond you.
-
-If protocol switching works, I will maintain that your board should have
-wired the refclks to PLLs the other way around (which is supported by
-the RCW), and then proceed to do protocol switching to reach the desired
-configuration.
-
-So you can see that many things change based on whether protocol reconfig
-is possible or not. The patch set presented here looks exactly like the
-product of someone infatuated with form over substance, and who misses
-the overall picture. My belief is that if you shift your attitude from
-"is the work done?" to "is the work generally useful?", the interactions
-will improve by a lot.
-
-> > Have you actually tested changing individual lanes from SGMII to SGMII 2.5?
-> > I know it works on LS1028A, but I don't know if that's also true on LS1046A.
-> > Your comments do say "LYNX_PROTO_SGMII25, /* Not tested */".
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> index 21f329d2f7eb..2f96f2c11278 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> @@ -92,12 +92,14 @@ struct ethqos_emac_driver_data {
+>  struct qcom_ethqos {
+>  	struct platform_device *pdev;
+>  	void __iomem *rgmii_base;
+> +	int (*configure_func)(struct qcom_ethqos *ethqos);
+>  
+>  	unsigned int rgmii_clk_rate;
+>  	struct clk *rgmii_clk;
+>  	struct clk *phyaux_clk;
+>  	struct phy *serdes_phy;
+>  	unsigned int speed;
+> +	int phy_mode;
+>  
+>  	const struct ethqos_emac_por *por;
+>  	unsigned int num_por;
+> @@ -332,13 +334,11 @@ static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
+>  {
+>  	struct device *dev = &ethqos->pdev->dev;
+>  	int phase_shift;
+> -	int phy_mode;
+>  	int loopback;
+>  
+>  	/* Determine if the PHY adds a 2 ns TX delay or the MAC handles it */
+> -	phy_mode = device_get_phy_mode(dev);
+> -	if (phy_mode == PHY_INTERFACE_MODE_RGMII_ID ||
+> -	    phy_mode == PHY_INTERFACE_MODE_RGMII_TXID)
+> +	if (ethqos->phy_mode == PHY_INTERFACE_MODE_RGMII_ID ||
+> +	    ethqos->phy_mode == PHY_INTERFACE_MODE_RGMII_TXID)
+>  		phase_shift = 0;
+>  	else
+>  		phase_shift = RGMII_CONFIG2_TX_CLK_PHASE_SHIFT_EN;
+> @@ -485,7 +485,7 @@ static int ethqos_rgmii_macro_init(struct qcom_ethqos *ethqos)
+>  	return 0;
+>  }
+>  
+> -static int ethqos_configure(struct qcom_ethqos *ethqos)
+> +static int ethqos_configure_rgmii(struct qcom_ethqos *ethqos)
+>  {
+>  	struct device *dev = &ethqos->pdev->dev;
+>  	volatile unsigned int dll_lock;
+> @@ -561,6 +561,11 @@ static int ethqos_configure(struct qcom_ethqos *ethqos)
+>  	return 0;
+>  }
+>  
+> +static int ethqos_configure(struct qcom_ethqos *ethqos)
+> +{
+> +	return ethqos->configure_func(ethqos);
+> +}
+> +
+>  static void ethqos_fix_mac_speed(void *priv, unsigned int speed)
+>  {
+>  	struct qcom_ethqos *ethqos = priv;
+> @@ -660,6 +665,22 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
+>  		goto out_config_dt;
+>  	}
+>  
+> +	ethqos->phy_mode = device_get_phy_mode(dev);
+> +	switch (ethqos->phy_mode) {
+> +	case PHY_INTERFACE_MODE_RGMII:
+> +	case PHY_INTERFACE_MODE_RGMII_ID:
+> +	case PHY_INTERFACE_MODE_RGMII_RXID:
+> +	case PHY_INTERFACE_MODE_RGMII_TXID:
+> +		ethqos->configure_func = ethqos_configure_rgmii;
+> +		break;
+> +	case -ENODEV:
+> +		ret = -ENODEV;
+> +		goto out_config_dt;
+> +	default:
+> +		ret = -EINVAL;
+> +		goto out_config_dt;
+> +	}
+> +
+>  	ethqos->pdev = pdev;
+>  	ethqos->rgmii_base = devm_platform_ioremap_resource_byname(pdev, "rgmii");
+>  	if (IS_ERR(ethqos->rgmii_base)) {
+> -- 
+> 2.39.2
 > 
-> Not yet. 
 
-Aha. So concretely, what makes you so confident with moving this forward?
-You like the code to just be there, no?
-
-It helps your board, I understand. But not everything has to stay in
-mainline if it's not useful for others, and I've proposed an alternative
-solution which I'm not sure how seriously you took.
-
-> This driver would also be a good place to add the KR link training with
-> NXP tried to upstream a few years ago.
-
-Well, speaking as someone who is now also tasked with the copper backplane
-support, believe me that I know that, and this is why I'm so desperate
-with the logic you're trying to push forward. It's clear that we should
-try to collaborate rather than try to push individualistic non-tested
-non-solutions.
-
-> > Assuming a start from SERDES protocol 3333 with PLL mapping 2222,
-> > this protocol change implies powering on PLL 1 (reset state machine
-> > wants it to be disabled) and moving those lanes from PLL 2 to PLL 1.
-> > 
-> > At first sight you might appear to have a point related to the fact that
-> > PLL register writes are necessary, and thus this whole shebang is necessary.
-> > But this can all be done using PBI commands, with the added benefit that
-> > U-Boot can also use those SERDES networking ports, and not just Linux.
-> > You can use the RCW+PBL specific to your board to inform the SoC that
-> > your platform's refclk 1 is 156 MHz (something which the reset state
-> > machine seems unable to learn, with protocol 0x3333). You don't have to
-> > put that in the device tree. You don't have to push code to any open
-> > source project to expose your platform specific details. Then, just like
-> > in the case of the Lynx 28G driver on LX2160, the SERDES driver could
-> > just treat the PLL configuration as read-only, which would greatly
-> > simplify things and eliminate the need for a clk driver.
-> > 
-> > Here is an illustrative example (sorry, I don't have a board with the
-> > right refclk on that PLL, to verify all the way):
-> > 
-> > ... snip ...
-> 
-> (which of course complicates the process of building the PBIs...)
-
-Maybe this is the language barrier, but what are you trying to say here?
-
-> > In short, I believe the reasons you have cited do not justify the
-> > complexity of the solution that you propose.
-> 
-> The work is done,
-
-:)
-
-> and it is certainly more flexible than what you propose. E.g. imagine
-> a clock which needs to be configured before it has the correct
-> frequency. Such a thing is difficult to do in a PBI solution, but is
-> trivial in Linux.
-
-So "a clock which needs to be configured" means a programmable clock
-generator that provides the refclk to the PLL, correct?
-
-With QorIQ/Layerscape SoCs, I imagine that case would typically be done
-by a board CPLD during the boot sequence, because if the PLL refclks
-don't have the right frequency, the main SoC doesn't start. You've hacked
-the RESET_REQ signal so you don't have that problem. But surprise -
-others haven't - so it's not exactly a relevant argument in favor.
-
-It's clear that the hardware has limitations that have impact upon the
-way in which both boards and software is designed. Because you don't
-know whether protocol reconfig is possible, you don't know *if* it is
-possible, *under what circumstances* it will be possible. What if XFI
-only works with 156 MHz provided to PLL 2, and not to PLL 1? You're
-trying to push a non-final solution as a final solution.
-
-The programmable refclk generator that is reconfigured at runtime is
-another can of worms, which I'm not sure can be feasibly implemented on
-this hardware given the fact that multiple lanes share one PLL, and
-there are many more lanes (4 or 8) than PLLs (2). Again, I need to see
-some practical functionality that this patch set provides.
-
-Do you _actually_ have a programmable clock generator that the CPLD
-can't program, or is this a "what if" situation?
-
-More to the point of the "flexibility" that you claim. You haven't
-addressed my point of networking over the SERDES ports in U-Boot.
-You don't need that - I'm clear with that, otherwise we'd be having this
-conversation on the U-Boot mailing lists - but what if others, wanting
-to follow your solution, would? Would you see that as an opportunity to
-write even more code?
 
 -- 
 linux-phy mailing list
