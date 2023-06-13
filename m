@@ -4,97 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C339C7EE2E
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 12:29:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA380EB64D0
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 14:03:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/1HGmAin3iiMMl/SXBVA6vAvs278skSmQnFlGvB+fgo=; b=THNWzKPWqbHPweITZTjbvFIInk
-	4RLs2EspZi6tzpRZri4ZM71OTbap1b+Q8iKxkRQASfxwgVVg/e/yM86GQ7xn4IskweAEEzUxmSem+
-	QnHPQMcIeQjUs71yYden3v3DpnmvcTNoRy5HzWZPSvppVXFzxRXCkwYKkefaGXLUyb6bC7BZu6L7+
-	oVy/+D4eRFZoM2MMnJUoHaLMXtVpC4uzeG92ASs55Xmp/SpKF0CJPTZziizfkzKERAj0KbOIxaQ81
-	zcmbjQZRFWoDbh/hEREUB4ALPagLEA2W9ZM1ugxKuw0orb8lbjRnYbOk8i8jMq5lhun0rGfyLhzoG
-	QC+QrqXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nx66SMuS4ATAfAtucwH/+/Qlr1zt6M5hPWJ5h0W9d/w=; b=cqVJplNlrIYu43
+	GgKFI8ZKf7DzZi7E03XGCDfl63nNv/VOeonjymcae7/I0LkxI38IofP7xkPcj7OWRTje8chQestqG
+	GruUuAHJNFCyhWT0yGywxRApe8vm2qMUBR5pa9n89UJgsb8dp7wczvlZ8n4Lf9OMpNt2G2PqodazW
+	qPtywe7+eiG2LxQ5Ct25l/hlzAQ/BGl+7g4LrUp/oVoRnQ0B8FJGlRpZnaRQbS9T9l9x9Sv13/iXg
+	P6ddZWh95qyRpMKlsW3ACFVPC8M/P5+yUawq4d7Uxn3jHRA5ZR7WGP45K8XMqPi5AZbI99nB70H8H
+	1sVGuiahBox0tPK5cLwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q939D-0083Rb-0T;
-	Tue, 13 Jun 2023 12:29:19 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1q94ci-008GP2-12;
+	Tue, 13 Jun 2023 14:03:52 +0000
+Received: from mail-dm6nam04on2060c.outbound.protection.outlook.com ([2a01:111:f400:7e8b::60c] helo=NAM04-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9398-0083OF-1s;
-	Tue, 13 Jun 2023 12:29:16 +0000
-Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
-	by mailout.nyi.internal (Postfix) with ESMTP id DB9C85C0269;
-	Tue, 13 Jun 2023 08:29:08 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute1.internal (MEProxy); Tue, 13 Jun 2023 08:29:08 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:sender
-	:subject:subject:to:to; s=fm2; t=1686659348; x=1686745748; bh=po
-	Pn2abIHMYUZ1Dx/1E/Yp1yY1WX/gI2qJDM9zz/5yk=; b=PXNsXuFnHmtrexIvo1
-	NFkXSPmStISk2E2hflBLMeucX12cuggg9P/WQUK0Ysg3Re6rxA4pvmZ/ccEEbnYt
-	YSmpd6PiqifW8aY8XcHmNlGi1J9oioxr3Rk7IzaaLUZxkSbA+qjqCq1GhQz8N5VC
-	cB0pektTL5niAg1+mP242Zbe0j7jJTud4HGIJwWArTrFAB9zeDApLkTZn8qeG+q2
-	HQ3U5jgCZYTs8z7/e2C4M6BqRB7LxLhMSP3g+jJw+uKreGAx84bvy19F1VPMeiyA
-	JkKuxbGJxf4vr9V9sEqaWoNvm/bP/fYLHZY5KZLmzisaDsZF0SUlGmw7Tydefs28
-	XkfQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm2; t=1686659348; x=1686745748; bh=poPn2abIHMYUZ
-	1Dx/1E/Yp1yY1WX/gI2qJDM9zz/5yk=; b=hTooP8qZ8p+/dvsXi9bZgAQjvAg0S
-	qO+Yg9UsC/ZYTeBBM2aIfHRN38lkedy//8gdl2lZ364a7t9SANcoQOQLq11N6xyX
-	6iKlxsogBxV0r6ryoNGIpEBc2SOTTt5hMtmsNpNXEiOO11Qi6AF/aN0LrPG7aoWX
-	gSZGppZJI9A2ykXaeL7f4oPQin2Boug31/u5Se13f7X3pVEA0JawKvX0FDICnsHC
-	fEdUOzHwv1rWXiN+2q/IBh20y8jao6JrtD9krS5dNC/ktby8yNdMQDs2h9rriQ5a
-	RF0T1PdrwLcWpOrEDmIlUlKbaGx3Pt69VwsUFBp6pP6aEcJAis5OQravw==
-X-ME-Sender: <xms:FGGIZAqby2px9Do10fciPiXx90B24_WfNzQQi32zqhKD1_CIvMidtQ>
-    <xme:FGGIZGobKkfdXhbbNeNJCij63sG4CHwWLOs93PZ24WjdawvAFes9qdTaxa2C_DW1Q
-    __2lscgLCWBUvT4B-c>
-X-ME-Received: <xmr:FGGIZFNAp0p70b3JOlVZ20jG9QqoYxPr8eKdAsLPYkfT3WElnzr1EwYPcveDytTbsBGJAGWLylyywjowzcmovg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrgedujedghedtucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvfevuffkfhggtggujgesghdtsfertddtudenucfhrhhomhepofgrgihi
-    mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
-    htthgvrhhnpeefjeeiueeiheevtddvgfeluedufeeigeeijefhveelfeevueefieehuefg
-    ffetteenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
-    hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:FGGIZH5haJigjyHQUNGA_FU7XrE8QeZevYfo5Eac1QMl42LnJ66kvg>
-    <xmx:FGGIZP56dAzUZmr2LIg4L-mXgbxCcWrw94Th1AMGCSD0PZ9iujsiEg>
-    <xmx:FGGIZHguJxsuhh_XSoztBXXAPaiKlthqYEJ475FvDuzxci1G8R4omQ>
-    <xmx:FGGIZOSsSpPyFPx2Uocy6BBEycE94g_ucdm3Y_zCQMuKdObb4ftOZA>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 13 Jun 2023 08:29:07 -0400 (EDT)
-Date: Tue, 13 Jun 2023 14:29:05 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Cc: Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org, linux-rtc@vger.kernel.org, 
-	linux-stm32@st-md-mailman.stormreply.com, linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org, 
-	NXP Linux Team <linux-imx@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>
-Subject: Re: [PATCH v4 03/68] clk: Move no reparent case into a separate
- function
-Message-ID: <l7jdpyp4lkqpmdxva4dkdvckjmeht2h3jfbmtvuffqgh4aaigl@k7626f2gv5tx>
-References: <20221018-clk-range-checks-fixes-v4-0-971d5077e7d2@cerno.tech>
- <20221018-clk-range-checks-fixes-v4-3-971d5077e7d2@cerno.tech>
- <b8d0272d-0193-fe40-3294-9e32a0235323@samsung.com>
- <CGME20230613121511eucas1p2595e0de21fadbafc1f6ffdc5636b9271@eucas1p2.samsung.com>
- <c031bff5-6219-adf0-6e73-b688b8de205e@samsung.com>
+	id 1q94cd-008GNr-13;
+	Tue, 13 Jun 2023 14:03:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=n4HrQwboJzoFggRYzLn9sEl3iJKJSghrCK0UyVzHc4TsPV1fveD48uayLnkEBsx4CQRkYxK28QL6EfeTZd8WjsUNry1gqYCigrptrumj0EH8171MiAS3E2G6KalupFx0FYMGeHQkHUC6E6f8Fa5WNjAoxv1JrwqU9QeLlQUmTt5ujRb0sTlJKtAw3qRxCvbD6fsYWLEq/WDp2Box19LaTCFy7cFZSMJObMA56fmtDzmueo1RvwtMNc5vmMxb7SL3ryC5414dxpbJsTwB9KAo7kYCFnyzNajrMn996uNwrH2iRf2TSRD445gWpFbmplOepJ4s1Mx67RV6qnT67UAIHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=O853PUmSbzIY+hSxTHouJeVQTKMfa1e4rD2vhoG+3WY=;
+ b=mRv+mNok0BZlogs6DtcgO+8gqfSTuebF3B0fh0axEr8aCDQGF5kZv/4OBHqwK7SVuy3Mq0wIo/4OTDy16skIuvr2o+D9MwtR1z0F77KHiSVTFK8Yg5OEfoOiKUxmRudTnJRrPknyHXLMdDbrBqjz4FN/htfQmf0nqfqhBggvAcE4IZMIl7MmqcHQcdKBExSK7PAJQ6ZoBGBkARnqroKcEtyHoEGkLIRAW/9htEunVW+VtEY99UPGbGB7zN3baHbk0WyGxpLJjafpKdf/GUnaoUHYD4+6i7b8aI1d7KI2vp0iUixLTSAo0wLatxBXmbJqsxYpZ36R/dV9tLa66U/iKA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=xilinx.com smtp.mailfrom=amd.com; dmarc=pass
+ (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=O853PUmSbzIY+hSxTHouJeVQTKMfa1e4rD2vhoG+3WY=;
+ b=ME5l30/lnF3w8UJT8R4WuZFUUqIQWF7o5A3O0EaiFxzOh9aMmqWLXrf4XEBeE+quD1AYeYahBOMhW0CI4LzjuyJbhPHsZ0rX0qhd/bN2I7Ij54Jz1HxsK72hqflD2GSLQnkUoUjuz34SPlUaREKSAgvA++nLVbZE8PwudpaFbAI=
+Received: from DM6PR12CA0025.namprd12.prod.outlook.com (2603:10b6:5:1c0::38)
+ by PH7PR12MB8016.namprd12.prod.outlook.com (2603:10b6:510:26b::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.36; Tue, 13 Jun
+ 2023 14:03:41 +0000
+Received: from DM6NAM11FT036.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:5:1c0:cafe::9d) by DM6PR12CA0025.outlook.office365.com
+ (2603:10b6:5:1c0::38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6477.35 via Frontend
+ Transport; Tue, 13 Jun 2023 14:03:41 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
+Received: from SATLEXMB04.amd.com (165.204.84.17) by
+ DM6NAM11FT036.mail.protection.outlook.com (10.13.172.64) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.6500.23 via Frontend Transport; Tue, 13 Jun 2023 14:03:40 +0000
+Received: from SATLEXMB06.amd.com (10.181.40.147) by SATLEXMB04.amd.com
+ (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.23; Tue, 13 Jun
+ 2023 09:03:40 -0500
+Received: from SATLEXMB04.amd.com (10.181.40.145) by SATLEXMB06.amd.com
+ (10.181.40.147) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.23; Tue, 13 Jun
+ 2023 09:03:15 -0500
+Received: from xhdnavam40.xilinx.com (10.180.168.240) by SATLEXMB04.amd.com
+ (10.181.40.145) with Microsoft SMTP Server id 15.1.2507.23 via Frontend
+ Transport; Tue, 13 Jun 2023 09:03:12 -0500
+From: Piyush Mehta <piyush.mehta@amd.com>
+To: <anurag.kumar.vulisha@xilinx.com>, <laurent.pinchart@ideasonboard.com>,
+	<vkoul@kernel.org>, <kishon@kernel.org>, <michal.simek@amd.com>
+CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <git@amd.com>, Piyush Mehta
+	<piyush.mehta@amd.com>
+Subject: [PATCH V2 0/2] phy: xilinx: phy-zynqmp: dynamic clock support
+Date: Tue, 13 Jun 2023 19:32:48 +0530
+Message-ID: <20230613140250.3018947-1-piyush.mehta@amd.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <c031bff5-6219-adf0-6e73-b688b8de205e@samsung.com>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM6NAM11FT036:EE_|PH7PR12MB8016:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8f44b917-392b-4dcb-c280-08db6c16fdcd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: aXS9iIIvK4zS0Si0+iTD6fx3UYwVHCOAVFay7ar1LHDWY1lt2hOk1o+fZXat1lKSBXUfXi6JBFslJQIx2ACjNw5YBLjHKr0+wHec1QgurPup5cLUr3+PjwOHw8LbpCD08IF4LKiCSYsEiIfwJUUVdBNl32+oW+i9wVC+mqhQGrQhXOl4VaE9soaOOLVWWbinCkrjGzeFu53sTZL0PtRrvkj3DcKliIY2ogvUSrs7zK/gXaKQ4EJEouQBVS1zTnCcitu8tNl6tdzknn1MpdPyL7k2MgJz51qRnhiAuNssl4caS47lPQazVouz14ECX8mkMva5iJSOnTE+whF1Pf8eEf2eyBKqtNiLdOofufUmXQv8qnP483Wla87wFXAexXMbjtm09rTGAEZ7Inrap9ltRZcXUSp3i0ylkmFVtud1An7+cmGLXuUAjTEXBC65f/haUUihO+awyQ+rPP8FFPG35tFQtakCS2ZFvrxgOUARJZxF3bz85rzX0sgfTsXPENzXTBf0bZtmBOQm3VuvX+7VtSNFkT0QceDm+NOWaM8VThDsXm7jvn0J7TIEPpRbZ9EKrx4Y6iglry1dCneZrNFxXKRefqxhc6jDURy8G9/gy/Hvj7SdmwiceLmkap4NisW1Xcs5afmN6eWlfOcvhiWsRU/2lzwuzYLVr64QZaoIN6bs2VnNx8UhTYdZ4h1v7hWmcrr6DFZ0kkSk+NMDNtong5+0fon/4OsjnD3rtF996Fg18JbSxjGTqMD07pmkhQd7
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230028)(4636009)(346002)(136003)(396003)(39860400002)(376002)(451199021)(36840700001)(46966006)(40470700004)(40460700003)(47076005)(83380400001)(36860700001)(336012)(426003)(44832011)(36756003)(478600001)(8676002)(40480700001)(8936002)(45080400002)(70586007)(86362001)(316002)(41300700001)(82740400003)(356005)(6636002)(81166007)(70206006)(4326008)(5660300002)(6666004)(2906002)(966005)(110136005)(82310400005)(54906003)(186003)(1076003)(26005)(2616005)(36900700001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2023 14:03:40.5476
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8f44b917-392b-4dcb-c280-08db6c16fdcd
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM11FT036.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB8016
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_052914_703211_647E8D36 
-X-CRM114-Status: GOOD (  29.05  )
+X-CRM114-CacheID: sfid-20230613_070347_411193_86ACCFAB 
+X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,158 +117,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3663886128069824354=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This patch of the series adds the following supports:
+- Runtime PM support:
+  Added runtime power management support to power saving during the
+  suspend and resume calls.
 
---===============3663886128069824354==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ym7pmf2huq36hsov"
-Content-Disposition: inline
+- Dynamic clock support:
+  Current zynqmp-phy driver, by default all the clock enabled for all
+  the lanes, that consumes power even PHY is active or idle.
+  So, the dynamic clock feature will be enabled clock only for active
+  PHY in the phy_init and disabled in phy_exit. Clock enabling is not
+  required at multiple times. Activation of PHY depends on the peripheral
+  DT node status (status = "okay";).
 
+---
+Changes in V2:
+- Addressed Vinod Koul review comments:
+ - Added runtime PM support - "DEFINE_RUNTIME_DEV_PM_OPS" MACRO used.
+ - Updated commit message for dynamic clock support.
 
---ym7pmf2huq36hsov
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Link: https://lore.kernel.org/all/MN2PR12MB43339B1089E1CF552152DA2D881A9@MN2PR12MB4333.namprd12.prod.outlook.com/#t
+---
 
-Hi,
+Piyush Mehta (2):
+  phy: xilinx: add runtime PM support
+  phy: xilinx: phy-zynqmp: dynamic clock support for power-save
 
-On Tue, Jun 13, 2023 at 02:15:10PM +0200, Marek Szyprowski wrote:
-> On 13.06.2023 13:15, Marek Szyprowski wrote:
-> > On 05.05.2023 13:25, Maxime Ripard wrote:
-> >> From: Stephen Boyd <sboyd@kernel.org>
-> >>
-> >> We'll need to turn the code in clk_mux_determine_rate_flags() to deal
-> >> with CLK_SET_RATE_NO_REPARENT into a helper clock drivers will be able
-> >> to use if they don't want to allow reparenting.
-> >>
-> >> Cc: Abel Vesa <abelvesa@kernel.org>
-> >> Cc: Alessandro Zummo <a.zummo@towertech.it>
-> >> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> >> Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
-> >> Cc: "Andreas F=E4rber" <afaerber@suse.de>
-> >> Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.co=
-m>
-> >> Cc: Baolin Wang <baolin.wang@linux.alibaba.com>
-> >> Cc: Charles Keepax <ckeepax@opensource.cirrus.com>
-> >> Cc: Chen-Yu Tsai <wens@csie.org>
-> >> Cc: Chen-Yu Tsai <wenst@chromium.org>
-> >> Cc: Chunyan Zhang <zhang.lyra@gmail.com>
-> >> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
-> >> Cc: Daniel Vetter <daniel@ffwll.ch>
-> >> Cc: David Airlie <airlied@gmail.com>
-> >> Cc: David Lechner <david@lechnology.com>
-> >> Cc: Dinh Nguyen <dinguyen@kernel.org>
-> >> Cc: Fabio Estevam <festevam@gmail.com>
-> >> Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-> >> Cc: Jaroslav Kysela <perex@perex.cz>
-> >> Cc: Jernej Skrabec <jernej.skrabec@gmail.com>
-> >> Cc: Jonathan Hunter <jonathanh@nvidia.com>
-> >> Cc: Kishon Vijay Abraham I <kishon@kernel.org>
-> >> Cc: Liam Girdwood <lgirdwood@gmail.com>
-> >> Cc: Linus Walleij <linus.walleij@linaro.org>
-> >> Cc: Luca Ceresoli <luca.ceresoli@bootlin.com>
-> >> Cc: Manivannan Sadhasivam <mani@kernel.org>
-> >> Cc: Mark Brown <broonie@kernel.org>
-> >> Cc: Markus Schneider-Pargmann <msp@baylibre.com>
-> >> Cc: Max Filippov <jcmvbkbc@gmail.com>
-> >> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-> >> Cc: Mikko Perttunen <mperttunen@nvidia.com>
-> >> Cc: Miles Chen <miles.chen@mediatek.com>
-> >> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> >> Cc: Orson Zhai <orsonzhai@gmail.com>
-> >> Cc: Paul Cercueil <paul@crapouillou.net>
-> >> Cc: Peng Fan <peng.fan@nxp.com>
-> >> Cc: Peter De Schrijver <pdeschrijver@nvidia.com>
-> >> Cc: Prashant Gaikwad <pgaikwad@nvidia.com>
-> >> Cc: Richard Fitzgerald <rf@opensource.cirrus.com>
-> >> Cc: Samuel Holland <samuel@sholland.org>
-> >> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> >> Cc: Sekhar Nori <nsekhar@ti.com>
-> >> Cc: Shawn Guo <shawnguo@kernel.org>
-> >> Cc: Takashi Iwai <tiwai@suse.com>
-> >> Cc: Thierry Reding <thierry.reding@gmail.com>
-> >> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> >> Cc: Vinod Koul <vkoul@kernel.org>
-> >> Cc: dri-devel@lists.freedesktop.org
-> >> Cc: linux-actions@lists.infradead.org
-> >> Cc: linux-arm-kernel@lists.infradead.org
-> >> Cc: linux-mips@vger.kernel.org
-> >> Cc: linux-phy@lists.infradead.org
-> >> Cc: linux-renesas-soc@vger.kernel.org
-> >> Cc: linux-rtc@vger.kernel.org
-> >> Cc: linux-stm32@st-md-mailman.stormreply.com
-> >> Cc: linux-sunxi@lists.linux.dev
-> >> Cc: linux-tegra@vger.kernel.org
-> >> Cc: NXP Linux Team <linux-imx@nxp.com>
-> >> Cc: patches@opensource.cirrus.com
-> >> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> >> Signed-off-by: Stephen Boyd <sboyd@kernel.org>
-> >> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> >> ---
-> >
-> > This patch landed in today's linux-next as commit 1b4e99fda73f ("clk:=
-=20
-> > Move no reparent case into a separate function"). Unfortunately it=20
-> > causes serious regression of some of my test boards. Namely Exynos3250=
-=20
-> > based boards are so slow after it, that my test scripts fail with a=20
-> > timeout waiting for them to finish booting. I will try to debug this=20
-> > later in the evening to check what has happened that some clocks got=20
-> > very low rate.
-> >
-> I just got a few spare minutes, so I decided to take a look into this=20
-> issue. The following change fixed my problem:
->=20
-> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-> index ffc9f03840b7..7ac9f7a8cb84 100644
-> --- a/drivers/clk/clk.c
-> +++ b/drivers/clk/clk.c
-> @@ -629,6 +629,7 @@ clk_core_determine_rate_no_reparent(struct clk_hw *hw,
->  =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 best =3D clk_core_get_rate=
-_nolock(core);
->  =A0=A0=A0=A0=A0=A0=A0 }
->=20
-> +=A0=A0=A0=A0=A0=A0 req->best_parent_rate =3D best;
->  =A0=A0=A0=A0=A0=A0=A0 req->rate =3D best;
->=20
->  =A0=A0=A0=A0=A0=A0=A0 return 0;
->=20
-> best_parent_rate is still being used somewhere in the code and needs to=
-=20
-> be updated regardless of the CLK_SET_RATE_NO_REPARENT flag.
+ drivers/phy/xilinx/phy-zynqmp.c | 90 +++++++++++++++------------------
+ 1 file changed, 40 insertions(+), 50 deletions(-)
 
-Yeah, that makes sense, could you send a patch?
+-- 
+2.25.1
 
-Thanks for figuring it out!
-Maxime
-
---ym7pmf2huq36hsov
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZIhhEQAKCRDj7w1vZxhR
-xXOoAQDAK6aw4nYGYRJLqebtaBE5GyDeYP0t1soy+3BsbMlFzwD/ZiRkHp+B0tCO
-03+uhQUNPVl5ZSkl2IyBNKSqkSJtOw0=
-=bV8F
------END PGP SIGNATURE-----
-
---ym7pmf2huq36hsov--
-
-
---===============3663886128069824354==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3663886128069824354==--
-
