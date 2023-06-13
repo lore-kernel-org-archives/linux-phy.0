@@ -4,87 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8856C7EE29
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 07:59:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2C39C7EE2E
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 08:31:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iwo7kRQb+9sONObBmkzCmckiz01Q+y6Iei86plKin94=; b=F6ZUVXga+3D1qR
-	MGe2OwptGAIrAyiTgbHIYdghTJsTFhfU74vqWfiytsiJW7p4sfKo+ISl167GduGRwhCwsSLu6qnTA
-	nb0zXK7vtSPBluC6r9uGwtWPyCG+Qpyfgkha+UovxmLssj90j4cAC1m7mFZHmV2O0On+p/TQRHtAp
-	LrcMzQfGVYYpiOOEKaZSKp1ViMUfz+fr6yYDV8hM8DQFAN5pRcQX4pmFdROnKFXgYEVRa5hqkE0cz
-	b3FOQBvyWyeX5bXzmBG00Mxo8rxCMb6F0Uj8lF0RyrNLA2IXt4N6Yhu23hCopErQJlNhPAhIxubSX
-	h2a3S1gVBrSYyB+3gahA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=n9PQ45svFRTHDx7qolRR4LJjmZRcvZOm47LNCSXkb+4=; b=wGYyuYXq3E1/f4
+	6A8UfTULTEoMyefA20/HLmK12wZOArD5R7iq5DbcH5dZPKS4N3O99FZ60FkfRKyQqA5XFT8zhAjCg
+	vB+DQzjn1YbAPEwysi7Ngct4ciEjrO5crd+GH7LMr3wVIPPnCjcM8NMHupo7SGZV2J2CnDwJrdyKa
+	OFiKGVYIY83KT9r3GFL3e7ApkoeOlFk2FIawk692Frff+JcIqwDtKXL4tCKznDYNkvX6hh4rK7ysv
+	LYYX/DgLhfWyHCMTDse95bcZWPP7SW+L309d7FNzlf6Q8QN4cOWRvAen7bnHr7gCjT/FdZ9HY5NFg
+	PWkuVpRtJ05OQgIiEhAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8yve-007Iqz-14;
-	Tue, 13 Jun 2023 07:59:02 +0000
-Received: from mail-vs1-xe34.google.com ([2607:f8b0:4864:20::e34])
+	id 1q8zRD-007NgL-17;
+	Tue, 13 Jun 2023 08:31:39 +0000
+Received: from mail-dbaeur03on20623.outbound.protection.outlook.com ([2a01:111:f400:fe1a::623] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8yva-007IoV-34
-	for linux-phy@lists.infradead.org;
-	Tue, 13 Jun 2023 07:59:00 +0000
-Received: by mail-vs1-xe34.google.com with SMTP id ada2fe7eead31-43b1c483c39so300982137.2
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 00:58:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686643135; x=1689235135;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=UsJLNzamcvflvt39bJ653iKfbKKP5ytmbnffadMCPyM=;
-        b=NzCmxWBnfmLYJE9eX8SGkh9EhG7MM+9AO4XxEFNdYE36a5jCujth0fxlxzD/WRlvI8
-         wwHufGE06Z+3m94N+4rDADqMOC4ANpUJorLdPwiUD00X2QXZznGT46ZEvMM0nF5r7Hri
-         9GXJltOAClw2tO8tc9BIcNcAmC/T/tpq50YHo40fVChd+g0FeBMUbytkvo7nId5TBP0R
-         1L0PMHqcFc6yCQ9/WNDJ5GubKrmAIjPco7+TvVkVgtJNRwxw658g7/AUVJ8UH0JCOH2P
-         tjKwFbEn3WJEakotGAE6Gq3ferV6U8Sae8+CLPLCZsmps1TPLgesfq6pbt4z12KWyPjJ
-         ekjQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686643135; x=1689235135;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=UsJLNzamcvflvt39bJ653iKfbKKP5ytmbnffadMCPyM=;
-        b=PrJ8IK48d3auTPz5qFgTtR6vm5lnptibV7G0/Y+r33j4oOeMEgUp2041iteFx9lLr9
-         OfgqFpnKBXtaIWfWDihKOSQ73ePA0gz+OOMhBTyBu/HRf/IzhQ1AzuYd72FYVHEQUXNi
-         EV+JuHHDwMzeG7sUkqYJZf5kZHmdeOUXgerELXY4qDgC1hIYiKPip9/FcVCyI6katMlK
-         lA3EZpK2Hcnr/K/fFPUDM+ELejMYHK+9ghz3XwZsGWq0+X2miJ37jeC7WT18WwhMR3VO
-         +hxAas6B6klqi9Swoz5FKKz9xLHWT13QHhkCduPj2KzFJvjRGt/titzicFgy9bEe6ICU
-         gsLQ==
-X-Gm-Message-State: AC+VfDwPfZlGht+hafL5QyZgKcqstgy9yZF+Q8dr8w5Thf17M/MKzrJl
-	mFffDox4EECk3qhcFAaYZBHGHUaoByqNCOugoKnZmQ==
-X-Google-Smtp-Source: ACHHUZ6UD0q4lBsFYRt1iBzo8nMQl6CBXd1e25IrTyG7lfVFArPC+BBaQLENtHQYb5mOM3DJ18qcoESm5mZWq4y4/aI=
-X-Received: by 2002:a67:f610:0:b0:43b:398c:b251 with SMTP id
- k16-20020a67f610000000b0043b398cb251mr6161345vso.5.1686643135653; Tue, 13 Jun
- 2023 00:58:55 -0700 (PDT)
+	id 1q8zR9-007NeW-21;
+	Tue, 13 Jun 2023 08:31:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fFZykcmJgM/fb7BYLnOHS+2meAthzPBF/FLF5eubTp5mCc+Ol6AZsTh9K7FNljbiddFYZEs251wG4ab7dO2JI1uuIN3lCDc/Gel6bBMXqohBf07pvWnXmy5bIfUZUkWDOUELKXb1aRqc0lzJT+RaRU+JYgvwMfxMhHTrZhwfnOJtIG24fUIHNiSx5RCx7TfFwe1fuTfVjR/VHWYcX3IiJ6y70SGNUpH1wfcWD3CD3/N584zL1bAhmGMt+ryCNR5Oz2kfkblIoV36yBe6akjpgIQwokK4R0cy1aHeQ9BaZN4VdeS0Ydt2zgUxMizNfoT61E0EhJJAIGjdI6IZNkc60w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0MgpDp0ZxJpBY8zXmgLRpihh6lEHvMDfQMHA5aKtjk8=;
+ b=IIxlPqK56uecccgtIxKZVNOfhaTsOBR1H4n2T+X4eGaIoFBKWR8O9dRhhwp/8rU68AxrE2qC6nkp6IEi7GwKatuD4b7K07Ag58Wk3nPaIOroTLq7wBVydTPASevxtbZqPrtGmjHza/U/kGdPIpRggXKCn6oc7pO9iG9B0NzYDOlmqB2z0+TgaxXLwwhLNzWeVCWasJMPrsNeZvJc4MSQ0wos/xKoMow8b3mliif479DQQ3vmXYHeR5aWc37uOVlGd3Q5KsOpHcEGvAE9YPEPZPVOWPBv9AVlJqNxZuq7zD9wRBt7w8gsc6m/+6NZHT3C2ZG7ackQc3r06zkqFHldGA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0MgpDp0ZxJpBY8zXmgLRpihh6lEHvMDfQMHA5aKtjk8=;
+ b=WN2e15nc+ALLp/om39XpDHOwGU1k4J+rWuKHd3cETrP2vLCZixQOlNG8oL1UzRJlVoC0rTMMqFN6GLi1YWPupjAmEonuv+aZ2EjQ6BtsE/d/MU1CflOuwQQQ4awjeDirZBtPb6wicm41nhlaf3f0kxvnvgeYTVy5YOWLiC59m0Y=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DB7PR04MB4505.eurprd04.prod.outlook.com (2603:10a6:5:39::26) by
+ DBBPR04MB7529.eurprd04.prod.outlook.com (2603:10a6:10:208::10) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6455.46; Tue, 13 Jun 2023 08:31:31 +0000
+Received: from DB7PR04MB4505.eurprd04.prod.outlook.com
+ ([fe80::f9b0:8c34:e57:92a4]) by DB7PR04MB4505.eurprd04.prod.outlook.com
+ ([fe80::f9b0:8c34:e57:92a4%7]) with mapi id 15.20.6455.045; Tue, 13 Jun 2023
+ 08:31:31 +0000
+From: Xu Yang <xu.yang_2@nxp.com>
+To: robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org
+Cc: shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	jun.li@nxp.com,
+	xu.yang_2@nxp.com
+Subject: [PATCH v4 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT schema format
+Date: Tue, 13 Jun 2023 16:34:44 +0800
+Message-Id: <20230613083445.1129137-1-xu.yang_2@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SG2PR02CA0026.apcprd02.prod.outlook.com
+ (2603:1096:3:18::14) To DB7PR04MB4505.eurprd04.prod.outlook.com
+ (2603:10a6:5:39::26)
 MIME-Version: 1.0
-References: <20230612092355.87937-1-brgl@bgdev.pl> <20230612092355.87937-14-brgl@bgdev.pl>
- <20230612204042.litbbv23zdb3u5k7@halaney-x13s>
-In-Reply-To: <20230612204042.litbbv23zdb3u5k7@halaney-x13s>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Tue, 13 Jun 2023 09:58:44 +0200
-Message-ID: <CAMRc=MeFnbcpjxNb537t0nb8Gd4ZsGVWZn2j+yHusWjmQQge4w@mail.gmail.com>
-Subject: Re: [PATCH 13/26] net: stmmac: dwmac-qcom-ethqos: make the rgmii
- clock optional
-To: Andrew Halaney <ahalaney@redhat.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Bhupesh Sharma <bhupesh.sharma@linaro.org>, 
-	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Giuseppe Cavallaro <peppe.cavallaro@st.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, Jose Abreu <joabreu@synopsys.com>, 
-	netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-stm32@st-md-mailman.stormreply.com, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB7PR04MB4505:EE_|DBBPR04MB7529:EE_
+X-MS-Office365-Filtering-Correlation-Id: 969e06c3-1b3e-46df-c7ce-08db6be896e1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: OIOgHhVMjne2mpsqiJYgMczq8Vdll1TC/JVKMDoe6sloOWoPKxVoy4U8Hoh6YebUtevDlL3gg+hMT8aXvy31ZovlKvOb/66MfzFj0dxGmfzKJZs9aPKEKzGz2dqfTH+qdczTmbgKWMMA+TNVyhH4i0fJJNnX0pZtfC8jBASaLD7IxwQeed7a1PA5TKDJPD0WMnDHgYK9jPpXEn8DdGkX0tFP6V8SWt/wr/nEYL44Y5XA+E5EKQs6PX6Dpk1eM9EHiizND6FovB3Epz8ZU6vakDwdRN8cPZadgm6IAIW7jcYCYv+uy9ZxskJBr++f8NkESZKTkEBdelol+V9mSOedkMomqIGDwfPmOC8YpuGM3PciRrgz4IU0SQg9UYEFSXx1cd8ob9m5rzDIsUwneZfiF7XiXYjCXFQakuyVXy9mvM2URpjmPOy/jbUbvbyoyS+epwY2F2gg6RkgTRk8AwKSvqdTA5+nyV2yLDonZwbTSE1g+rwJx8+/aomldNgqbn2Pe8FuHZKrZR1BiA2U1PQeQiw7OFuhFhTUKQxf3/ALON75JSWihNXndVfbEAVRvVv7IpsuWGkM3ecZvG4Vuqnc8jghzyD7D5p0wn92o9JS6C+/iHxD+X7pOhQWB83zqgnH9lc+DyLez00b482Q4rSvoA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR04MB4505.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(376002)(346002)(366004)(396003)(39860400002)(136003)(451199021)(83380400001)(66946007)(26005)(6512007)(6506007)(6666004)(6486002)(1076003)(52116002)(966005)(186003)(2616005)(7416002)(478600001)(2906002)(8936002)(8676002)(66556008)(86362001)(5660300002)(36756003)(4326008)(41300700001)(38350700002)(38100700002)(316002)(66476007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ECrgp2Hfxp0dx39kcEzIshJPkS9S0sYKcOOamfqwMmkVXPv/slbWn25rbd8W?=
+ =?us-ascii?Q?RwT55vfQvZQjgQQKGTDR5MRzxtXWw6n7ra0RI7QVQuMz3jOi6D2JeBKNqqWT?=
+ =?us-ascii?Q?fFdjRAgeu4Hrzn+nz0lcnlls69XZgfjwWV3REjO9FOZZ5ziHr2/QWp3Wzgzh?=
+ =?us-ascii?Q?wSyAwFX4d4qisewM4xcnvfGt5hw7Gh9m/7qFVETTWXahIfhwhPeRrUAp68/U?=
+ =?us-ascii?Q?PE3yg1qFu1Rf37ShRsMGGhIK426EzJSA+8ZC47q+khi0QJvAI4SRGbYnrr/m?=
+ =?us-ascii?Q?Qb/t2T7aQZuQUobD0EL4ba9kgBgbKVLpHeYFYK5OUwuHzjQxlpHJtuqBjuZG?=
+ =?us-ascii?Q?DUwMfRflhukzs1afLsz8Fsctzgu2CE64U4YxcoeDqZBU34xpaj0O8ocJJtqT?=
+ =?us-ascii?Q?kJ46wCvTtfww6gT0SX4oeudquPROzZWhgn9cnSR5o2Dwp7I+Q8aSgJxlWfMV?=
+ =?us-ascii?Q?Ws1D8kLmL/id2SdXRLgOpd7hlbizQSaqtn4WNym97ryQshWuzbH+pD8VN+8D?=
+ =?us-ascii?Q?3KofkJKRuwU2Uu6ujWfGq3Ej9y6Vcre1x8IlO2zXKGCLk23FT17VODWEv+aW?=
+ =?us-ascii?Q?C1zJJ7b75LU0/4XBbh1JW8fIR2RCGlugEvx24nZzJbYAKltTGK5exKGAemd/?=
+ =?us-ascii?Q?fwULU/Gsjp4yDlRn9P5nqzIOP4i84kkKI93Fx3CfhTeLfdsBXXpiuYK1ogzM?=
+ =?us-ascii?Q?PRPK/ye6yBhYTcbkCtH42sN1G5zSJHSuU/iZoipTF7RwBQ2AepLvkTr8QzFB?=
+ =?us-ascii?Q?qhaqU2AJXthzARXGaPORZtr0mAMRhgeFwtDdwA0VNSSr0LGCbtkyqOOKvKmr?=
+ =?us-ascii?Q?kqkQ7W1MbqMBTuSUTu7CvFqLnHS7FiBN+1+rAtSPSUIqe05WxSvQ9vwPvZ7e?=
+ =?us-ascii?Q?3Z0acSv+Ca7LuMBKVFtwGLU3PKgaEqK8ZbCmf7+29WJbrMYhUpxAvWVHTgzc?=
+ =?us-ascii?Q?raGSp1bTN+qUppJboNvNbXrkpsvu1L8CrAGlM6qOxMHv4xdTH4fKt1IVFjNS?=
+ =?us-ascii?Q?yWhP+l/wuoY44wb1zGkNWbU80MvfjSleZ3SSTicibr6JD2wMM/edQcGilIfP?=
+ =?us-ascii?Q?m8aRj6GXB5qOkKDC+vORu4ezaWlA3eheztQw/nr5+9BgBt/fn3UY3suNgsMS?=
+ =?us-ascii?Q?hTyv4CvvZVmL9qYUcltVDema5qsTGeWEVEy1ABV0v8OfgvlzqINi7LjcDgCW?=
+ =?us-ascii?Q?IP8nTjtan723KAt4S0bEoiZzkbLtME7ew+DJQrBFgaYoO3ZdHeAe0NWMQijL?=
+ =?us-ascii?Q?EoE+ezHcCwcpT/L7GIRZTitPbsFdMrA91jp/L02GV6HRhXqQbRbj43vN6Zww?=
+ =?us-ascii?Q?IoSoKeAKa6Q1a8vBLnKKh955Sgv/kzOz3VzPgOKIxpAJ5V3+3v+CxMEe7lhx?=
+ =?us-ascii?Q?7Mq/nZRMO1gTw2qK2THZEbmmCWDAaXphZtAi2O/aaYqCxBPPWKZXlEA6u5ZQ?=
+ =?us-ascii?Q?HuDz8R03lz8Okt8Xy+tanYDi6HgglacHh9n6AZNQuYViVq6asuZQhg+KIvLR?=
+ =?us-ascii?Q?25xAKdqcLZMYXDDRXYL5lBqnz91GItAfey5GMMXe4CxrT/EQS9gc6LuGuQ1i?=
+ =?us-ascii?Q?cIRZhAMl0vx+dLqDHxbK06sRs1gaIXxOx2Qt8Pko?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 969e06c3-1b3e-46df-c7ce-08db6be896e1
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR04MB4505.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2023 08:31:31.2481
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: vlAADNqyKRB0HPS4X3uyKxGJ1m3rtTSndjlFHg0p5iWIZwk/7i9R+7z01LF/PTC5hUs2N5rwklt5zUCcc5j0pA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7529
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_005858_988241_E21B3A79 
-X-CRM114-Status: GOOD (  23.80  )
+X-CRM114-CacheID: sfid-20230613_013135_719795_7DE5EAC6 
+X-CRM114-Status: GOOD (  16.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,46 +134,213 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdW4gMTIsIDIwMjMgYXQgMTA6NDDigK9QTSBBbmRyZXcgSGFsYW5leSA8YWhhbGFu
-ZXlAcmVkaGF0LmNvbT4gd3JvdGU6Cj4KPiBPbiBNb24sIEp1biAxMiwgMjAyMyBhdCAxMToyMzo0
-MkFNICswMjAwLCBCYXJ0b3N6IEdvbGFzemV3c2tpIHdyb3RlOgo+ID4gRnJvbTogQmFydG9zeiBH
-b2xhc3pld3NraSA8YmFydG9zei5nb2xhc3pld3NraUBsaW5hcm8ub3JnPgo+ID4KPiA+IE9uIHNh
-ODc3NXAgdGhlcmUncyBubyBSR01JSSBjbG9jayBzbyBtYWtlIGl0IG9wdGlvbmFsIGluIHRoZSBk
-cml2ZXIuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogQmFydG9zeiBHb2xhc3pld3NraSA8YmFydG9z
-ei5nb2xhc3pld3NraUBsaW5hcm8ub3JnPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9uZXQvZXRoZXJu
-ZXQvc3RtaWNyby9zdG1tYWMvZHdtYWMtcWNvbS1ldGhxb3MuYyB8IDIgKy0KPiA+ICAxIGZpbGUg
-Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9uZXQvZXRoZXJuZXQvc3RtaWNyby9zdG1tYWMvZHdtYWMtcWNvbS1ldGhxb3Mu
-YyBiL2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL2R3bWFjLXFjb20tZXRocW9z
-LmMKPiA+IGluZGV4IDM0MzhiNjIyOTM1MS4uMjUyZGNhNDAwMDcxIDEwMDY0NAo+ID4gLS0tIGEv
-ZHJpdmVycy9uZXQvZXRoZXJuZXQvc3RtaWNyby9zdG1tYWMvZHdtYWMtcWNvbS1ldGhxb3MuYwo+
-ID4gKysrIGIvZHJpdmVycy9uZXQvZXRoZXJuZXQvc3RtaWNyby9zdG1tYWMvZHdtYWMtcWNvbS1l
-dGhxb3MuYwo+ID4gQEAgLTY2Myw3ICs2NjMsNyBAQCBzdGF0aWMgaW50IHFjb21fZXRocW9zX3By
-b2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiAgICAgICBldGhxb3MtPnJnbWlp
-X2NvbmZpZ19sb29wYmFja19lbiA9IGRhdGEtPnJnbWlpX2NvbmZpZ19sb29wYmFja19lbjsKPiA+
-ICAgICAgIGV0aHFvcy0+aGFzX2VtYWMzID0gZGF0YS0+aGFzX2VtYWMzOwo+ID4KPiA+IC0gICAg
-IGV0aHFvcy0+cmdtaWlfY2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgInJnbWlpIik7Cj4gPiArICAg
-ICBldGhxb3MtPnJnbWlpX2NsayA9IGRldm1fY2xrX2dldF9vcHRpb25hbChkZXYsICJyZ21paSIp
-Owo+Cj4gVGhpcyBtYWtlcyBpdCBvcHRpb25hbCBmb3Igb2xkZXIgcGxhdGZvcm1zIHRvbywgYnV0
-IGFzIGZhciBhcyBJIGtub3cgb24KPiB0aG9zZSBwbGF0Zm9ybXMgaXQgaXMgbWFuZGF0b3J5Lgo+
-Cj4gVGhpcyBjYW4gYmUgZW5mb3JjZWQgaW4gZHQtYmluZGluZyBjaGVja3MsIGJ1dCBzaG91bGQg
-d2UgYWxzbyBlbmZvcmNlCj4gdGhhdCBpbiB0aGUgZHJpdmVyIHN0aWxsPyBIb25lc3RseSBJIGZl
-ZWwgbGlrZSB5ZXMsIGJ1dCB0aGVyZSdzIHByb2JhYmx5Cj4gc29tZSBwcmVjZWRlbnQgbWFpbnRh
-aW5lcnMgZm9sbG93IG9uIHRoaXMgZnJvbnQgdGhhdCBJIGRvbid0IGtub3cgb2YuCj4KCldoaWxl
-IG15IGd1dCBmZWVsaW5nIGlzIHRoYXQgZW5mb3JjaW5nIHRoZSBjbG9jayBsaXN0IG9uIHRoZSBE
-VApiaW5kaW5nIGxldmVyIGlzIGVub3VnaCwgd2UgY2FuIGFsc28gZG8gYSBkaWZmZXJlbnQgdGhp
-bmc6IHJlbmFtZSB0aGUKY2xvY2sgZnJvbSByZ21paV9jbGsgdG8gbGlua19jbGsgb3Igc29tZXRo
-aW5nIHNpbWlsYXIgYW5kIGp1c3QKZGV0ZXJtaW5lIHRoZSBuYW1lIGJhc2VkIG9uIHRoZSBIVyB2
-YXJpYW50ICgicmdtaWkiIG9yICJwaHlhdXgiKS4gT3IKZXZlbiBnZXQgdGhlIGNsb2NrIGJ5IGl0
-cyBpbmRleD8gdGhpcyB3YXkgd2UgY291bGQgZm9sZCB0aGUgbmV4dCBwYXRjaAppbiB0aGUgc2Vy
-aWVzIGludG8gdGhpcyBvbmUgYW5kIHNpbXBsaWZ5IHRoZSBjb2RlLgoKQmFydAoKPgo+ID4gICAg
-ICAgaWYgKElTX0VSUihldGhxb3MtPnJnbWlpX2NsaykpIHsKPiA+ICAgICAgICAgICAgICAgcmV0
-ID0gUFRSX0VSUihldGhxb3MtPnJnbWlpX2Nsayk7Cj4gPiAgICAgICAgICAgICAgIGdvdG8gb3V0
-X2NvbmZpZ19kdDsKPiA+IC0tCj4gPiAyLjM5LjIKPiA+Cj4KCi0tIApsaW51eC1waHkgbWFpbGlu
-ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Convert the binding to DT schema format. Besides, this also add clocks,
+'#phy-cells', phy-3p0-supply and power-domains properties which are not
+contained in txt file due to txt file lack updates.
+
+Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+
+---
+Changes in v2:
+ - change filename to fsl,mxs-usbphy.yaml
+ - add other optional properties
+ - narrow fsl,anatop to imx6
+ - use additionalProperties
+Changes in v3:
+ - fix indentation
+ - add clocks property to example
+Changes in v4:
+ - remove [fsl,imx7ulp-usbphy, fsl,imx6ul-usbphy]
+ - limit item of reg and interrupts to 1
+ - sort enum items
+ - modify commit message
+---
+ .../bindings/phy/fsl,mxs-usbphy.yaml          | 125 ++++++++++++++++++
+ .../devicetree/bindings/phy/mxs-usb-phy.txt   |  33 -----
+ 2 files changed, 125 insertions(+), 33 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+
+diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+new file mode 100644
+index 000000000000..cc9f2bc7e6fb
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+@@ -0,0 +1,125 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/fsl,mxs-usbphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale MXS USB Phy Device
++
++maintainers:
++  - Xu Yang <xu.yang_2@nxp.com>
++
++properties:
++  compatible:
++    oneOf:
++      - enum:
++          - fsl,imx23-usbphy
++          - fsl,imx7ulp-usbphy
++          - fsl,vf610-usbphy
++      - items:
++          - enum:
++              - fsl,imx28-usbphy
++              - fsl,imx6ul-usbphy
++              - fsl,imx6sl-usbphy
++              - fsl,imx6sx-usbphy
++              - fsl,imx6q-usbphy
++          - const: fsl,imx23-usbphy
++      - items:
++          - const: fsl,imx6sll-usbphy
++          - const: fsl,imx6ul-usbphy
++          - const: fsl,imx23-usbphy
++      - items:
++          - const: fsl,imx8dxl-usbphy
++          - const: fsl,imx7ulp-usbphy
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  '#phy-cells':
++    const: 0
++
++  power-domains:
++    maxItems: 1
++
++  fsl,anatop:
++    description:
++      phandle for anatop register, it is only for imx6 SoC series.
++    $ref: /schemas/types.yaml#/definitions/phandle
++
++  phy-3p0-supply:
++    description:
++      One of USB PHY's power supply. Can be used to keep a good signal
++      quality.
++
++  fsl,tx-cal-45-dn-ohms:
++    description:
++      Resistance (in ohms) of switchable high-speed trimming resistor
++      connected in parallel with the 45 ohm resistor that terminates
++      the DN output signal.
++    minimum: 35
++    maximum: 54
++    default: 45
++
++  fsl,tx-cal-45-dp-ohms:
++    description:
++      Resistance (in ohms) of switchable high-speed trimming resistor
++      connected in parallel with the 45 ohm resistor that terminates
++      the DP output signal.
++    minimum: 35
++    maximum: 54
++    default: 45
++
++  fsl,tx-d-cal:
++    description:
++      Current trimming value (as a percentage) of the 17.78 mA TX
++      reference current.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 79
++    maximum: 119
++    default: 100
++
++required:
++  - compatible
++  - reg
++  - clocks
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          oneOf:
++            - enum:
++                - fsl,imx6q-usbphy
++                - fsl,imx6sl-usbphy
++                - fsl,imx6sx-usbphy
++                - fsl,imx6sll-usbphy
++                - fsl,vf610-usbphy
++            - items:
++                - const: fsl,imx6ul-usbphy
++                - const: fsl,imx23-usbphy
++    then:
++      required:
++        - fsl,anatop
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/imx6qdl-clock.h>
++
++    usbphy1: usb-phy@20c9000 {
++        compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
++        reg = <0x020c9000 0x1000>;
++        clocks = <&clks IMX6QDL_CLK_USBPHY1>;
++        interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
++        fsl,anatop = <&anatop>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+deleted file mode 100644
+index 70c813b0755f..000000000000
+--- a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
++++ /dev/null
+@@ -1,33 +0,0 @@
+-* Freescale MXS USB Phy Device
+-
+-Required properties:
+-- compatible: should contain:
+-	* "fsl,imx23-usbphy" for imx23 and imx28
+-	* "fsl,imx6q-usbphy" for imx6dq and imx6dl
+-	* "fsl,imx6sl-usbphy" for imx6sl
+-	* "fsl,vf610-usbphy" for Vybrid vf610
+-	* "fsl,imx6sx-usbphy" for imx6sx
+-	* "fsl,imx7ulp-usbphy" for imx7ulp
+-	* "fsl,imx8dxl-usbphy" for imx8dxl
+-  "fsl,imx23-usbphy" is still a fallback for other strings
+-- reg: Should contain registers location and length
+-- interrupts: Should contain phy interrupt
+-- fsl,anatop: phandle for anatop register, it is only for imx6 SoC series
+-
+-Optional properties:
+-- fsl,tx-cal-45-dn-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+-  high-speed trimming resistor connected in parallel with the 45 ohm resistor
+-  that terminates the DN output signal. Default: 45
+-- fsl,tx-cal-45-dp-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+-  high-speed trimming resistor connected in parallel with the 45 ohm resistor
+-  that terminates the DP output signal. Default: 45
+-- fsl,tx-d-cal: Integer [79-119]. Current trimming value (as a percentage) of
+-  the 17.78mA TX reference current. Default: 100
+-
+-Example:
+-usbphy1: usb-phy@20c9000 {
+-	compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
+-	reg = <0x020c9000 0x1000>;
+-	interrupts = <0 44 0x04>;
+-	fsl,anatop = <&anatop>;
+-};
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
