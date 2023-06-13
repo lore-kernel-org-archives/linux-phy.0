@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 583AFEB64D7
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 19:04:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5EF8EB64D0
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 19:08:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rj/bzhawR5cWt4MqVlsxIGzwmTKi/BGKk/TojVGQ3/w=; b=i5rv7TxYvn+aTI
-	1QCPEZODc4i6/6t4iNmsnGnTdUBGUS/WuL94C8t23bs7GN2A74UK5iRSKeRQr3p01iLXvPb4Y9cUF
-	rZRlxz3T+Z01AqSgbHpZsJrZzscqzJ4c0WZ5jGLh/6wv7f6VZXb62yuYhwRjJJ7JoKGqp6o1kEcl7
-	/Ox0lNKcS0RIIwqLmwWrgcYnLmLtezOHnkafpBkklVy2rHvlAbkPXZBFhQiarhlB5LwON/YxW6x8M
-	QWuVBIn8DPBw5iZ4dkt9CsxUjwhf8EFusFF8ywePzEulWIcP/suYymqE9vMnjhePXuJJO7NZra6kG
-	Mg1F9fml2FKlrxFylI4A==;
+	List-Owner; bh=/EGWjbnAnYz6HrNEMcM9ZYBOKneZKzXUyKoNNQpxgdA=; b=YnL6F7RwZf3RFi
+	iZrhZRtRyNiVPDuOHL6M7gF5xmq7kmBZ/ziBmYhKp0DeSpaUvnlog/DwA4npXvMlQd6X/I66/URAI
+	ojvvEYA86Q2w67TyoZA1BTWyP6FQn+p7NNeffQfzXervVyzIuzbRS68YmtCalZSMjsYw7tD5OZLDW
+	TLpHx4hEpp9jToaW+8Esxx06gixq/rcfoiQVzrCQRKWee+Vtg7/Na2CucaBBIs54ZmsjbuJrypbh4
+	n/CvdNbuILF9YMebCest7HEFx5RHwXBoiCOQpl3g3alU4qncCtM5lomERAFOpsWWv1tt+xcwPmhXv
+	7vsNiY8oc0RP4OPCW3Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q99JX-008vaW-02;
-	Tue, 13 Jun 2023 19:04:23 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1q99NU-008wAs-1H;
+	Tue, 13 Jun 2023 19:08:28 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q99JR-008vXY-04
+	id 1q99NO-008w8P-0J
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jun 2023 19:04:21 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-4f6170b1486so7183374e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 12:04:14 -0700 (PDT)
+	Tue, 13 Jun 2023 19:08:27 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-4f6283d0d84so7400892e87.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 12:08:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686683053; x=1689275053;
+        d=linaro.org; s=google; t=1686683298; x=1689275298;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=woeYYFEiU1y3NclAr5wdCFdPFOi62sLbxPfwISR5Xn8=;
-        b=q2bbZiF2Xy2JxkCX8e3y4fFp2cP9iFKv42xyhROdmk2mpDr7LXZfz3AWcU7AxuHxKc
-         IBySptwOhOAewBK0W7T3JZWk1l4Kj0ib1b7kfAkZPI6Mp/FlSBZj1SdO4XPDtu53cxh+
-         wzJOoSDF5OtB4VFwZt0q+PodkxVuxE0QGoEdHp9BvSX7JmMHiBIIFACiOq9QEDZ5HZeI
-         xXZqzZxo83ru7G7QauolFOyXqjc0HfXZRUJgtbKj7CmSdqc+ucEjOfsDf8AdyWXweCr2
-         C+2eCONnBG/Stb3+zfI0K/svhD1H7VcMrPRWr7lntdBMeOj9IO7/m0BH9YMeFk5YzD5H
-         pxBA==
+        bh=F+tm3+Pdm0PaXfiZEzyRYLx0bL/2PcssnIDcJqEcG00=;
+        b=pXvtSrfvSZFtqXr7gBQNbwO93crNLRG5kDvQKUb9i07WRGV8cuKSZdeN2AHPfkSYEV
+         s9Kj4TDyZ6xACpGIQJynV4qJHfQP8x2u9sRicGgoFESj5RceIKeBfElicevTTgiNi7RL
+         9QVYc+lVnCKM1rsbq+3A8n10G22u07GDwcLiscU3lmCZ6y7WPLfCyTgRAVZA4pyyw5Yn
+         JKU8Q+vKxm0IHBX04DCwxktI6OGATGIu3ihwztTO+oNXjo8vTM8yorfcSd8ysJEEaPSj
+         +opeKcUuZUOr+FiHdS+JpkxNfEiaACOn71VVmdwpa4d0A54Sj9plaNCeEqJ1uAKxPOTX
+         1XpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686683053; x=1689275053;
+        d=1e100.net; s=20221208; t=1686683298; x=1689275298;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=woeYYFEiU1y3NclAr5wdCFdPFOi62sLbxPfwISR5Xn8=;
-        b=jAs1g9F8ShcY8f7/6O8I3KwxEeb1ObuX/p0tgJ2A0FRsrVFOOWmpVB1J7mNhBl6rva
-         Mr1z/zGG3lK8I8id9Uotq4Vk4/s0lZwxNvJym55TLysIJxSTQluIVETnNanqJ6Xd8t/y
-         SKxJz7iNIoO2fSVNfyXgCWMEycyZd2ZzEThmPX1xI8SwVoTfLcniKmWeZs+ILE7mh8cU
-         d7+R2CZwV3rDoLxKM8ehrYVoYz6EMTrlFtqgMGmHcom+m2BvWZwjvn+0Cp3EmydeiLZX
-         8yIwyYYQhjejMGCgQ5JdKiTWL1AWEyadv44RgaqgPKFPk7H73F/52FjsIKK2lsDnoiXK
-         +D4g==
-X-Gm-Message-State: AC+VfDyx7zDa/NP3k6BBBIaIiADVFsB9tdu/S0WvS47bVnA06k0no26U
-	nDdsQIu4h+LjQurjtIsw2tbIuw==
-X-Google-Smtp-Source: ACHHUZ64q3nAkmQiyy1A3DAZ+hVneYytXEVoRe5yh0a8KBFRcAQJiZjhKQQHeFFMapSCKaxVrNlEzA==
-X-Received: by 2002:a19:5e11:0:b0:4ac:b7bf:697a with SMTP id s17-20020a195e11000000b004acb7bf697amr4518741lfb.4.1686683053205;
-        Tue, 13 Jun 2023 12:04:13 -0700 (PDT)
+        bh=F+tm3+Pdm0PaXfiZEzyRYLx0bL/2PcssnIDcJqEcG00=;
+        b=RvYNGyVwVcFrPhau9PGwR6/ZkNKkmQy6/zQNLzbFqdyr5f6nn2HWDWCy+oP1MOflxV
+         LTjI7nNeu7fz8X1NU1Y2Jl48p+aHRhjafDmOKJWZSHF8E0pVP5rb5DUBH5C3SswUhU85
+         yXjje1robnQWCkOgHYOETJc7Uz4wtVZddiIs3rUu276twKDVvmmdF1BSAis02zm+DfU6
+         bPp6q0/8hXmHL2lHh1tUTyrHuLTPjXDzmtbC7rd5cYbQ/pnBhoqeXrKpyXPZSH6UzGSg
+         zP++9/5iNwkpfTJZP0eiPyifi7HON32BswnV6c+wY9pECbsFRdKgDSRlpsqJfT9SPC6X
+         si8Q==
+X-Gm-Message-State: AC+VfDxXgzn34YSl/DfXR/Bjgff78eV9VFmsxC7hnf1RyHlXYfODJ39p
+	fPJEZ12itkADbVyDuqWQVFfuzg==
+X-Google-Smtp-Source: ACHHUZ5hlHejaHU5jlNuZeMW5cevHnRvyHVwiIHOuhObHOVK4r0Ifh+Y4UFnRCtLYlUAMdVar7JMhg==
+X-Received: by 2002:a19:e059:0:b0:4d5:8306:4e9a with SMTP id g25-20020a19e059000000b004d583064e9amr6458878lfj.46.1686683298079;
+        Tue, 13 Jun 2023 12:08:18 -0700 (PDT)
 Received: from [192.168.1.101] (abyj190.neoplus.adsl.tpnet.pl. [83.9.29.190])
-        by smtp.gmail.com with ESMTPSA id u7-20020ac243c7000000b004f42718cbb1sm1856560lfl.292.2023.06.13.12.04.09
+        by smtp.gmail.com with ESMTPSA id m5-20020a056512014500b004f73eac0308sm1148576lfo.183.2023.06.13.12.08.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 13 Jun 2023 12:04:12 -0700 (PDT)
-Message-ID: <7b511c41-4bf5-f7ff-8ae9-5f1bffac50d9@linaro.org>
-Date: Tue, 13 Jun 2023 21:04:08 +0200
+        Tue, 13 Jun 2023 12:08:17 -0700 (PDT)
+Message-ID: <cf515539-9a60-c3ae-18af-463651651a27@linaro.org>
+Date: Tue, 13 Jun 2023 21:08:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.11.2
-Subject: Re: [PATCH 25/26] arm64: dts: qcom: sa8775p-ride: add pin functions
- for ethernet0
+Subject: Re: [PATCH 26/26] arm64: dts: qcom: sa8775p-ride: enable ethernet0
 Content-Language: en-US
 To: Bartosz Golaszewski <brgl@bgdev.pl>, Vinod Koul <vkoul@kernel.org>,
  Bhupesh Sharma <bhupesh.sharma@linaro.org>, Andy Gross <agross@kernel.org>,
@@ -88,12 +87,12 @@ Cc: netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com,
  Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 References: <20230612092355.87937-1-brgl@bgdev.pl>
- <20230612092355.87937-26-brgl@bgdev.pl>
+ <20230612092355.87937-27-brgl@bgdev.pl>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20230612092355.87937-26-brgl@bgdev.pl>
+In-Reply-To: <20230612092355.87937-27-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_120417_077558_4AE36BF1 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20230613_120822_131786_2F8CD8C8 
+X-CRM114-Status: GOOD (  13.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,43 +114,119 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 12.06.2023 11:23, Bartosz Golaszewski wrote:
 > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
-> Add the MDC and MDIO pin functions for ethernet0 on sa8775p-ride.
+> Enable the first 1Gb ethernet port on sa8775p-ride development board.
 > 
 > Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > ---
+I don't know a whole lot about this, but it passes bindings checks
+and looks good overall, so:
+
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
 Konrad
->  arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
+>  arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 89 +++++++++++++++++++++++
+>  1 file changed, 89 insertions(+)
 > 
 > diff --git a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-> index 7754788ea775..dbd9553aa5c7 100644
+> index dbd9553aa5c7..13508271bca8 100644
 > --- a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
 > +++ b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
-> @@ -370,6 +370,22 @@ &spi16 {
+> @@ -261,6 +261,95 @@ vreg_l8e: ldo8 {
+>  	};
 >  };
 >  
->  &tlmm {
-> +	ethernet0_default: ethernet0-default-state {
-> +		ethernet0_mdc: ethernet0-mdc-pins {
-> +			pins = "gpio8";
-> +			function = "emac0_mdc";
-> +			drive-strength = <16>;
-> +			bias-pull-up;
-> +		};
+> +&ethernet0 {
+> +	phy-mode = "sgmii";
+> +	phy-handle = <&sgmii_phy>;
+> +	phy-supply = <&vreg_l5a>;
 > +
-> +		ethernet0_mdio: ethernet0-mdio-pins {
-> +			pins = "gpio9";
-> +			function = "emac0_mdio";
-> +			drive-strength = <16>;
-> +			bias-pull-up;
+> +	pinctrl-0 = <&ethernet0_default>;
+> +	pinctrl-names = "default";
+> +
+> +	snps,mtl-rx-config = <&mtl_rx_setup>;
+> +	snps,mtl-tx-config = <&mtl_tx_setup>;
+> +	snps,ps-speed = <1000>;
+> +
+> +	status = "okay";
+> +
+> +	mdio {
+> +		compatible = "snps,dwmac-mdio";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		reset-gpios = <&pmm8654au_2_gpios 8 GPIO_ACTIVE_LOW>;
+> +		reset-delay-us = <11000>;
+> +		reset-post-delay-us = <70000>;
+> +
+> +		sgmii_phy: phy@8 {
+> +			reg = <0x8>;
+> +			device_type = "ethernet-phy";
 > +		};
 > +	};
 > +
->  	qup_uart10_default: qup-uart10-state {
->  		pins = "gpio46", "gpio47";
->  		function = "qup1_se3";
+> +	mtl_rx_setup: rx-queues-config {
+> +		snps,rx-queues-to-use = <4>;
+> +		snps,rx-sched-sp;
+> +
+> +		queue0 {
+> +			snps,dcb-algorithm;
+> +			snps,map-to-dma-channel = <0x0>;
+> +			snps,route-up;
+> +			snps,priority = <0x1>;
+> +		};
+> +
+> +		queue1 {
+> +			snps,dcb-algorithm;
+> +			snps,map-to-dma-channel = <0x1>;
+> +			snps,route-ptp;
+> +		};
+> +
+> +		queue2 {
+> +			snps,avb-algorithm;
+> +			snps,map-to-dma-channel = <0x2>;
+> +			snps,route-avcp;
+> +		};
+> +
+> +		queue3 {
+> +			snps,avb-algorithm;
+> +			snps,map-to-dma-channel = <0x3>;
+> +			snps,priority = <0xc>;
+> +		};
+> +	};
+> +
+> +	mtl_tx_setup: tx-queues-config {
+> +		snps,tx-queues-to-use = <4>;
+> +		snps,tx-sched-sp;
+> +
+> +		queue0 {
+> +			snps,dcb-algorithm;
+> +		};
+> +
+> +		queue1 {
+> +			snps,dcb-algorithm;
+> +		};
+> +
+> +		queue2 {
+> +			snps,avb-algorithm;
+> +			snps,send_slope = <0x1000>;
+> +			snps,idle_slope = <0x1000>;
+> +			snps,high_credit = <0x3e800>;
+> +			snps,low_credit = <0xffc18000>;
+> +		};
+> +
+> +		queue3 {
+> +			snps,avb-algorithm;
+> +			snps,send_slope = <0x1000>;
+> +			snps,idle_slope = <0x1000>;
+> +			snps,high_credit = <0x3e800>;
+> +			snps,low_credit = <0xffc18000>;
+> +		};
+> +	};
+> +};
+> +
+>  &i2c11 {
+>  	clock-frequency = <400000>;
+>  	pinctrl-0 = <&qup_i2c11_default>;
 
 -- 
 linux-phy mailing list
