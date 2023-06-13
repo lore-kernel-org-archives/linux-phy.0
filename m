@@ -4,89 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74A72EB64D0
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 18:15:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27DF4EB64D0
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 18:57:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+yRraPWhURokjeqciAu5G61q61LNGEDnXHlaEI2pDs=; b=rfLD5yOUVWeWFT
-	mm+HBmqaj1q+ZWjv/Nr3h5dgnuO5HDMPjdr3Kjj6u40pR/0binwg4QO7Gx7HQpmUMaHqDmLTDoQX7
-	CR8bUpvl+1y+QDvlewVVoyalqdf7NXUzm3aEZBkLVCrRlB4tU7xv8JE555oXZNLkqSxUehvqaqRUr
-	6VBvmfnQKKhPKf6YbnxqjIJovGOtjokxvnUers1/c+5cj2tL5/TrbAxhKWPRzJyHeN45lJoP7sIY4
-	1yP9BsAaZJgQpCvzEMtAs/S6zm6uBDawdtUJWPp7oIDFUBJn+8HHn7MTEk4SjD494ZAllyNayCgD0
-	XhtxPiOO+x1uthps/NoQ==;
+	List-Owner; bh=zhDQ2pY0f8kBAqI+0lqQhWzLtljOP876wVlG2UWb2Lw=; b=1nmmFFLo3ud4z/
+	WTFp1N2JVcUPrSI0aAPSPfk45TOjywtGPM0zXM6pFUWsIuoYgFlyCUBSjyUNX6icxP/14UkYgEffP
+	AQMuXp5wyyG3fv+0tKvhsEyHurpC2HpJguTOfUMDxALYyM5yH2RM97kHsX3tO+m7Igf4ur5d0oAn5
+	D8xIoaBXLzw3dowOgj/SxF/XycAJsvifs4HNWEyeMBXn9IekPsR+J06BzpcZium4wIuWVyyxCoKo1
+	g8AKbV5xXMrHrwlVRDas9JK41zVcsTcbuhQFFDEp3TmMtmmSgUKyC7gLGgKyc5Z6A61OvUKbfZJNf
+	IXU+fz6yjHsy6N8RZclw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q98YU-008oya-0F;
-	Tue, 13 Jun 2023 18:15:46 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1q99D0-008uQs-2Z;
+	Tue, 13 Jun 2023 18:57:38 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q98YQ-008ow2-36
+	id 1q99Cx-008uPd-1d
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jun 2023 18:15:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1686680126;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=VMh4CxAaufkupFiXeG/ZZJofgO1Xkx5kTIdymBHMvlM=;
-	b=NEp35MjwKa8qHbBKOFkaq2kZ85FUnSnsB9IJuCmxTKTDAu74AlpamT8EHPHF0ZuxU5xAiK
-	KXMSClyIeeTMJMPTr0Vb8U4x8OsNsZ0tqPXqChSSipngiTauCVjZ98KKfBfD20jfS+T8jE
-	FGv0bXyHswnybJaHx77iTC3efCWVxGA=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-636-Ff3IE4g1MCSZ9T9PMe5OhQ-1; Tue, 13 Jun 2023 14:15:17 -0400
-X-MC-Unique: Ff3IE4g1MCSZ9T9PMe5OhQ-1
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-75d6b90f933so186373585a.0
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 11:15:12 -0700 (PDT)
+	Tue, 13 Jun 2023 18:57:38 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2b227fdda27so51951241fa.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jun 2023 11:57:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1686682651; x=1689274651;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zsyyTwvaw/vp2AvSdxNLXUl1Sss7B+R+faApw6mGFPk=;
+        b=EpsoCgNUbEr8P/ekHeYMePrH3lx9EnGuaih1xSHCfQ6AaSSa7tJ+X0msbZs5zB0RSh
+         Bltvzflx0blflLlM249+PTlK7N38BjYPqzgSrxSeXu4pN3yG6njvv8jc7cWijBiIGKA2
+         6K15ceQw5uqBaHvM5VWV/tYfqevE/SUnWSbXPXmth40TgDyy8NJX7ilVxnozDQGaQSZr
+         SnXicXCwgT2ajHUDvwtsU+MfImTkCTBqZG45sR346wlpG/Ta1gjS62h3xknna+BzTKG+
+         bTpcqwD7/n0NMkoqIJdqnl/lDOYgzFBCp3ZHv8CP7A6SGX8qpgN7xTU61OTuyLZ8X61N
+         Wm6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686680112; x=1689272112;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=VMh4CxAaufkupFiXeG/ZZJofgO1Xkx5kTIdymBHMvlM=;
-        b=gcddAFa+mjMpdYOzVLDyE1bkvBppwp036oOqMSzVowhmnRvWjQoQrk8ytA4XNyHTti
-         tvwzVFqO7PlgTtguMf26US0MYaZL6Vieiy5ixZdY5IXXdd2r2TbK8E6OZiRfb2JSqVB3
-         V+jt/ozZRcbtfZmGJrAbYFecf2EU7360TUPYBBJ3n/dAOY1GAIJC0EI6ABSuAg2ba8SI
-         oZzWG+VTsQPwQna7+PQ47OsYHqHl29dKug0aav1P92P5ytRYIcyJoiKXZKml1/21fKEz
-         LLVMYGI538H4MJSYjKVUNKEcuV/ACnnSpxcQ9UKPWkwr8pcVN6OrTRufraRrGp0JLADs
-         IVGw==
-X-Gm-Message-State: AC+VfDxp+X+ajWUc0hfbybAV/KQZC1oS+GNNl2dKDy9c5+NZKjLLR9Jw
-	tSQzXPwGBVGtt35enz4aGRRDXzuK/FOouZFHN4N6B3I2iww4hu/FZhmsWWT/HAamDuesWiIkfDd
-	Ze/b81rZJuXZH20ul9aKZ9Nv1Fg==
-X-Received: by 2002:a05:620a:2791:b0:75d:5321:fa40 with SMTP id g17-20020a05620a279100b0075d5321fa40mr13049277qkp.51.1686680111981;
-        Tue, 13 Jun 2023 11:15:11 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ5FXQa4iGHaVb03aNKzDgMsYAUueUgnaSI5oJJ062Y4f4KWKzeuDuU7svTdTOE4LRqmwuYETA==
-X-Received: by 2002:a05:620a:2791:b0:75d:5321:fa40 with SMTP id g17-20020a05620a279100b0075d5321fa40mr13049260qkp.51.1686680111740;
-        Tue, 13 Jun 2023 11:15:11 -0700 (PDT)
-Received: from fedora ([107.171.218.122])
-        by smtp.gmail.com with ESMTPSA id w10-20020ae9e50a000000b0075941df3365sm3726463qkf.52.2023.06.13.11.15.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 13 Jun 2023 11:15:11 -0700 (PDT)
-Date: Tue, 13 Jun 2023 14:15:09 -0400
-From: Adrien Thierry <athierry@redhat.com>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Manu Gautam <mgautam@codeaurora.org>,
-	Philipp Zabel <pza@pengutronix.de>, Stephen Boyd <sboyd@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Wesley Cheng <wcheng@codeaurora.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 0/2] Clock fixes for qcom-snps-femto-v2 PHY driver
-Message-ID: <ZIiyLffCbVklU7YV@fedora>
-References: <20230605184455.34832-1-athierry@redhat.com>
+        d=1e100.net; s=20221208; t=1686682651; x=1689274651;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=zsyyTwvaw/vp2AvSdxNLXUl1Sss7B+R+faApw6mGFPk=;
+        b=OrN9c2xUPEqy52os6o3AZ+2BjZ+hjMRKx38u+yWuOJ83q89tbnXfxev6vRvOym925Q
+         Q5bgnmsUWGY0JgrdpR5bXxXswuo64acldOYDVPudgwIuI4UcQOHLIbqAqdnk+bW2m1FQ
+         8Q6NkR2G+/BaQW9Q6iE5AvREVx7HNPk0ayfrUdWUlPwPGowSPppYtFfb3PDxEQXCufAn
+         nENFdBc0Qthqz3XyNpY1+VLV9m1yl38qIOosuOy7QRKe0NjTYwJJXwgmbK3WBo28Vjqh
+         DpyiKzX4NWZgPCCBP9HhGa11ilLqF0JNbYimccbNkpFh1RarWvQKXDM0CJ0z9xBU7F4f
+         sy2g==
+X-Gm-Message-State: AC+VfDyBSOdKSfSw1l8W8FSk68+NaShM766DCz7b2agG8OWQfYdXJ5jj
+	SngbB0YhcvHlzh0bFL3rolqmiQ==
+X-Google-Smtp-Source: ACHHUZ58SPWpBS7mZjv7bdICxXgiAzg0Iw/ZCUujbrRo5NysRIPz5M1A2dBrKoFVdo4w57IT44ob+Q==
+X-Received: by 2002:a2e:b98f:0:b0:2b1:fa7c:9131 with SMTP id p15-20020a2eb98f000000b002b1fa7c9131mr3438013ljp.18.1686682651365;
+        Tue, 13 Jun 2023 11:57:31 -0700 (PDT)
+Received: from [192.168.1.101] (abyj190.neoplus.adsl.tpnet.pl. [83.9.29.190])
+        by smtp.gmail.com with ESMTPSA id a11-20020a2e980b000000b002b1c0a663fbsm2258476ljj.77.2023.06.13.11.57.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 13 Jun 2023 11:57:30 -0700 (PDT)
+Message-ID: <a21cc6ed-e894-7a38-a203-bebcc1c41230@linaro.org>
+Date: Tue, 13 Jun 2023 20:57:27 +0200
 MIME-Version: 1.0
-In-Reply-To: <20230605184455.34832-1-athierry@redhat.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH 23/26] arm64: dts: qcom: sa8775p: add the first 1Gb
+ ethernet interface
+Content-Language: en-US
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Vinod Koul <vkoul@kernel.org>,
+ Bhupesh Sharma <bhupesh.sharma@linaro.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Jose Abreu <joabreu@synopsys.com>
+Cc: netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+References: <20230612092355.87937-1-brgl@bgdev.pl>
+ <20230612092355.87937-24-brgl@bgdev.pl>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <20230612092355.87937-24-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_111543_092295_81EDD779 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20230613_115735_549766_6D549DFD 
+X-CRM114-Status: GOOD (  14.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,34 +110,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 05, 2023 at 02:44:52PM -0400, Adrien Thierry wrote:
-> This series contains a few clock fixes for the qcom-snps-femto-v2 driver:
-> - make sure ref_clk is properly enabled
-> - add system sleep PM ops to disable the clocks on system suspend
-> 
-> v1 -> v2
-> - keep cfg_ahb clock and use clk_bulk API to handle both cfg_ahb and ref
->   clocks (Bjorn Andersson)
-> - add system sleep PM callbacks (Bjorn Andersson)
-> - add Link: and Fixes: tag (Andrew Halaney)
-> 
-> Adrien Thierry (2):
->   phy: qcom-snps-femto-v2: properly enable ref clock
->   phy: qcom-snps-femto-v2: add system sleep PM ops
-> 
->  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 85 +++++++++++++------
->  1 file changed, 59 insertions(+), 26 deletions(-)
-> 
-> -- 
-> 2.40.1
->
 
-Gentle ping Bjorn, is there anything you'd like me to change in a next
-revision?
 
-Best,
-Adrien
+On 12.06.2023 11:23, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> 
+> Add the node for the first ethernet interface on sa8775p platforms.
+> 
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> ---
+>  arch/arm64/boot/dts/qcom/sa8775p.dtsi | 30 +++++++++++++++++++++++++++
+>  1 file changed, 30 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> index 0e59000a0c82..f43a2a5d1d11 100644
+> --- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> @@ -2315,6 +2315,36 @@ cpufreq_hw: cpufreq@18591000 {
+>  
+>  			#freq-domain-cells = <1>;
+>  		};
+> +
+> +		ethernet0: ethernet@23040000 {
+> +			compatible = "qcom,sa8775p-ethqos";
+> +			reg = <0x0 0x23040000 0x0 0x10000>,
+> +			      <0x0 0x23056000 0x0 0x100>;
+> +			reg-names = "stmmaceth", "rgmii";
+> +
+> +			clocks = <&gcc GCC_EMAC0_AXI_CLK>,
+> +				 <&gcc GCC_EMAC0_SLV_AHB_CLK>,
+> +				 <&gcc GCC_EMAC0_PTP_CLK>,
+> +				 <&gcc GCC_EMAC0_PHY_AUX_CLK>;
+> +			clock-names = "stmmaceth", "pclk", "ptp_ref", "phyaux";
+Please make this a vertical list, one per line
 
+> +
+> +			power-domains = <&gcc EMAC0_GDSC>;
+> +
+> +			interrupts = <GIC_SPI 946 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "macirq";
+And another nit, interrupts above clocks would match what I ask others
+to do.. Still working on checks/guidelines for this!
+
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+
+Konrad
+> +
+> +			phys = <&serdes_phy>;
+> +			phy-names = "serdes";
+> +
+> +			iommus = <&apps_smmu 0x120 0xf>;
+> +
+> +			snps,tso;
+> +			snps,pbl = <32>;
+> +			rx-fifo-depth = <16384>;
+> +			tx-fifo-depth = <16384>;
+> +
+> +			status = "disabled";
+> +		};
+>  	};
+>  
+>  	arch_timer: timer {
 
 -- 
 linux-phy mailing list
