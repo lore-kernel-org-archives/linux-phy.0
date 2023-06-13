@@ -4,70 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43728EB64DA
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 22:12:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EB6EB64D7
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 23:45:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/7kGATP+JRrYkSoSPHGdctdcXk3WI426M7ManxD7BCA=; b=w/T9bDSQnd9C6C
-	YVmUQ55prczpvqmsfNu9tQfIlAvUBiBK3vm7TfcxFqpAZTrj+zjXtXaK90lsa2SjyIvZ11jqis5t4
-	nqBMpNKo7e5Ci/pNctDuAwpp0f6uJkCv2X3FvRAwtN0Je+PAkUMeBNVgNb6iYuUGCI3iX6spy9PX7
-	a9ySiv2YWIMo/lq0suDUowMKijnb1D4hxYKExFeHvOxtBIYwYEqKzka89Xptv3+j+v3bfuO4TP3ss
-	tokAkxOt4iyQWkMhVUm5oh8KYNDDhxyTHOzqTG7lnWz0WcKLihlyY3PYSLBVCcYE+ZjKe7tuXppY3
-	PfMQb/sIq5As9VZvIGXw==;
+	List-Owner; bh=FLPbGh9EXGtVAL6gf1c1zVRvkeAVK53UEQ172S+tQmQ=; b=ocxoiEFBsEya/8
+	6j5ds/29siVWsVzg7GCipGC7yLkUzIe0gDbmBUdGhtLmAfdNSRl1sZUI2tdVdsgq243odhiT/zb1Z
+	0UgII+l/SA/BDpQ0VGHt9l+BbmAXEMBEG6XA/KmXahQyLPNMQDYv5qAgGuhMb6OFLQA/HEKswhshv
+	qdwDAJgMa9v0/l/ynwOnMAcSjvksQGJ0Tfb4cM5Rjrs+Az13ReQh38vFuhz3FWd9Wh7VcADOrwK0Q
+	V0XBbJw71nRR4OZtxqnoV/+C0WtlwUmQjwkK7cl0yOssdnN/f4iQUV2lBOtS0iA2Syuw+QEljKfuS
+	4NXfGYXo8m60qDZVAi7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9CFU-009J7J-2U;
-	Tue, 13 Jun 2023 22:12:24 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1q9Dhr-009T3m-3B;
+	Tue, 13 Jun 2023 23:45:47 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9CFL-009J6C-35
-	for linux-phy@lists.infradead.org;
-	Tue, 13 Jun 2023 22:12:23 +0000
+	id 1q9Dhm-009T1D-2t;
+	Tue, 13 Jun 2023 23:45:46 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9072F61884;
-	Tue, 13 Jun 2023 22:12:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2937CC433C0;
-	Tue, 13 Jun 2023 22:12:13 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 654B963C81;
+	Tue, 13 Jun 2023 23:45:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A504CC433C8;
+	Tue, 13 Jun 2023 23:45:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1686694334;
-	bh=sKrQ7hdq4mSomL4LDC24g6oc1MHOuvi2wLr6vE0lxhU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cLiwMUlahN9DTyi23DbZ6NqIxjOb6N1knEUWKRKVTtnPtDYzzbQraEF4t0foek5ve
-	 GTEEBrrxCnfBK4XplQfmh1XS6Yxf3vk72uqDxfWOg1Ozi7GbSnSOzSBvFMkkQ0n+0n
-	 KD15Qsm5oJ6bBZQuPiMZ7EvIM/zYLyRbbd92TLZ7kI8YWvtxT+efgDI7AdQH54SmDP
-	 anH1OdDexSZ1PqSmnOgLApBCoN0JdLZdOkRvaC1MUIwiNSSzRoYzBKHPndwfI5ml0P
-	 eiXrm7VnPP3ZZBpIOmElsQ3jMp0pD2xLV9QD+n4TJno/EAJyfPLADZVFNb7swRHNfC
-	 i5KMJ7S4VGU2g==
-Date: Tue, 13 Jun 2023 15:15:36 -0700
+	s=k20201202; t=1686699941;
+	bh=2jkdPhZImM9+D+figD0v0IHiAIgXVBcYWC3TewoLMZk=;
+	h=From:List-Id:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=F1W6PenN5VkeE70mUR7U1RtCCxa26O0LNdr7DQBjIyeH5sQ92Xsru4m8R4OMafqr8
+	 1PLQwX1vUQuhA4ekWITILW7BwigVzlCGHTDXPuGoV0/AdxycrHBHq+IDF9OuhAcGyx
+	 Hsr0xZupqMPqibu6mmer+iBwSWFt1qQg+KYq5LluxlXKNPTiLv/SGVM916TmFMHp7J
+	 FJieHzwCYD7KR7gV0vOouenRwQdp11VtZYoTmF0CGvaRBtmRKHASc8sJDb+Ghj2uWL
+	 80XD0avmVBr1BWvNzir1eBBk01HtXw6piJhNM8KpydwCE2rrCoHdbp6NwZ+WKjJpMp
+	 jqragYFffxm4w==
 From: Bjorn Andersson <andersson@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Olof Johansson <olof@lixom.net>,
+	Andy Gross <agross@kernel.org>,
+	soc@kernel.org,
+	Rudraksha Gupta <guptarud@gmail.com>,
 	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 02/11] phy: qcom-qmp-ufs: populate offsets
- configuration
-Message-ID: <20230613221536.6tikam262jjvzcfx@ripper>
-References: <20230523140622.265692-1-dmitry.baryshkov@linaro.org>
- <20230523140622.265692-3-dmitry.baryshkov@linaro.org>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org
+Subject: Re: (subset) [PATCH v5 0/4] Samsung Galaxy Express SGH-I437 Support
+Date: Tue, 13 Jun 2023 16:48:45 -0700
+Message-Id: <168670013501.1400697.8528617647603360792.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230607050025.86636-1-guptarud@gmail.com>
+References: <20230607050025.86636-1-guptarud@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230523140622.265692-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_151217_367895_291BC117 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20230613_164542_980304_49F68ACC 
+X-CRM114-Status: GOOD (  12.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,73 +87,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 23, 2023 at 05:06:13PM +0300, Dmitry Baryshkov wrote:
-> Populate offsets configuration for the rest of UFS PHYs to make it
-> possible to switch them to the new (single-node) bindings style.
+On Wed, 7 Jun 2023 01:00:19 -0400, Rudraksha Gupta wrote:
+> This patch series adds support for the Samsung Galaxy Express SGH-I437.
+> Currently the following things work on this phone: UART, eMMC, SD Card, and
+> USB.
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
-Reviewed-by: Bjorn Andersson <andersson@kernel.org>
-
-Regards,
-Bjorn
-
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
+> version 5:
+> - use enum instead of anyOf in qcom,usb-hs-phy.yaml
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index 8c877b668bb9..d99dc1043f74 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -833,6 +833,8 @@ static const struct qmp_ufs_offsets qmp_ufs_offsets_v6 = {
->  static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
->  	.lanes			= 1,
->  
-> +	.offsets		= &qmp_ufs_offsets,
-> +
->  	.tbls = {
->  		.serdes		= msm8996_ufsphy_serdes,
->  		.serdes_num	= ARRAY_SIZE(msm8996_ufsphy_serdes),
-> @@ -924,6 +926,8 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
->  static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
->  	.lanes			= 2,
->  
-> +	.offsets		= &qmp_ufs_offsets,
-> +
->  	.tbls = {
->  		.serdes		= sdm845_ufsphy_serdes,
->  		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
-> @@ -1038,6 +1042,8 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
->  static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
->  	.lanes			= 2,
->  
-> +	.offsets		= &qmp_ufs_offsets,
-> +
->  	.tbls = {
->  		.serdes		= sm8150_ufsphy_serdes,
->  		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
-> @@ -1070,6 +1076,8 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
->  static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
->  	.lanes			= 2,
->  
-> +	.offsets		= &qmp_ufs_offsets,
-> +
->  	.tbls = {
->  		.serdes		= sm8350_ufsphy_serdes,
->  		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-> @@ -1102,6 +1110,8 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
->  static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
->  	.lanes			= 2,
->  
-> +	.offsets		= &qmp_ufs_offsets,
-> +
->  	.tbls = {
->  		.serdes		= sm8350_ufsphy_serdes,
->  		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-> -- 
-> 2.39.2
-> 
+> [...]
+
+Applied, thanks!
+
+[3/4] ARM: dts: qcom: msm8960: Add USB node
+      commit: 80ce22e5cbe705ff2e113890828d44aa0b3ad96f
+[4/4] ARM: dts: qcom: Add Samsung Galaxy Express support
+      commit: 2b01dda16124696c4b64edcd31e8c2d37c559998
+
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
