@@ -4,92 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 189D3C7EE43
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 00:34:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D61EC88CB6
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 06:55:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3fZ0egBaxQrsTzfJvT4jWNht/3BFq300l+D1ypHdwf4=; b=QcQq3Ta26MxpfV
-	lgl9SGo7yKtatVTIxfC1noDm6XE8aQIDbA2RkMOK/MLpfQzxJliRg6Lw/Dr9wvbMun+aTDZFuAqYI
-	i87UdCm8B9sEtBB9A0oPjLDHVVLJPnXVigYjBnvKSox1YAq3pX6GI0jNXRGX+xtYmJT9vnFCTUfJS
-	Rv3dWfHioyH5lb5DGmv9Yddcy3nWgrtBOLbm62j+gO8r4FXKgJCLDn78CAgULQrAtqFmi2Ajq76pw
-	6/kM4LDJMRQh/UszecDAtpihberBPC+buofK+WdQzCYNIDe6gprujTCOgMxwGE9ay+EKf7IRxC9aJ
-	Z0JNUbpiXj8tIse6B6ZQ==;
+	List-Owner; bh=Mqsopfr9KvSdgw4BWZgPxRoA9cCHvfBePzDlQc8K27o=; b=Pfyc1wIPTtY+of
+	Z+HgyGow9nyZI7S7QrkjWx1XXjWhQNRxxxzB9PU4GLZH0bvnuKqpK19fzMi0UfvGzirfy6WtiGLWj
+	N2XtGQEnh/YQ3mADgS39UBJbp+x0983z9+0xcOI76C1+1DXMyHQFgca1cm0cKKVctVCeMaCyXySN3
+	9fLmD+c6lhNF6IYGVrvf1H3lp9y++UQEQ+fI/9foPqEpL7qJVANcHr6+IRR1AN62bEohRc3f1YopE
+	wrwput1mdTq2pFqEIolKh8S1pvLQORXkVmQgq+9N387sTdzxwSpj1uTvkemdaH/TpzPQbqqMi3BO8
+	Tttv9vUROKku2UgwIz0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8rzd-006Oct-2F;
-	Tue, 13 Jun 2023 00:34:41 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1q8xw4-0078lW-0T;
+	Tue, 13 Jun 2023 06:55:24 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8rzb-006Oam-0x;
-	Tue, 13 Jun 2023 00:34:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
-	Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=F9R22THjlPos5MtoTePp0zgW+NFy7C/TY38G1LYxEsk=; b=sMc1ufFAq+6HpLwNO9oNafVYrh
-	NnCg7zA5Kcm508Eq0uYgoL7vt+If2IFyWujWhlZcc5GhmSE7K0dYTtoaXRzktxkpWHQr15qLa6KSe
-	QxpUZV6u+Bl/naWOVlYpc3PQPek6T/PsM5y/A5MiVGQmRTEz6fU8071lPzXpqAXHFa6V0yaYkEGe/
-	rXhDgkpO3WxfOb/gsBz9iN9DwxLKjdjz0Xzl/sAULHcY9A3FGKFmpbrA/mRxJPEAa+aW/fYDOJqZd
-	N0zs3htDIof9OXJEhCUKcmF6jb+DSfmY2a/XgrXH/PvzLnSd2STe13QQg+DD/c/T3nA2f/GtF5uU2
-	YfgRrTtw==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by casper.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1q8reL-003IIU-Uz; Tue, 13 Jun 2023 00:12:44 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 31E6C63067;
-	Tue, 13 Jun 2023 00:12:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6ECB7C433AF;
-	Tue, 13 Jun 2023 00:12:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1686615156;
-	bh=fgQezU9Uhtd/cvT8fMXHuHFSkNX/SBX6F17ynk+Li7c=;
-	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
-	b=qpA4jI42/zyo7xTLzS4PdiFvs6Shs4bsvDP7FZ95DpUGkl5Mjs6Z7Qg28S75n5pS6
-	 RR6Me5RUfUoCZTeWuhzve2bSQiYsVRHO35Oim0DLaEalBT9u71eJ+fPNkYqcn4uBeM
-	 SE/Y+sgyd/s3KddBGvibVr9EPqrMspPYGWom/RzVYoQEauETXMjb6JWUu2rFVwdpg4
-	 XjssPWBFj+pFXbXSB11GOincfTGTzmma7Rb5hnii5wg0JtTyHZBdrGY+wZRiGpSchj
-	 FHTYgcWt7T0DGpx+svuZ+z9y1s+A8cef1LzLrzyC3cC4CMvW+RYRVep3SScEUodCym
-	 48ZVwvYB5SHWA==
-Received: by mail-lf1-f46.google.com with SMTP id 2adb3069b0e04-4f658a17aa4so5035835e87.0;
-        Mon, 12 Jun 2023 17:12:36 -0700 (PDT)
-X-Gm-Message-State: AC+VfDzJCmubFUt0p1AHMWwCsSLBFOtfb6zProxTLyBqop9NeVZJzn/A
-	LHWZVbD73WvepSwNos7kZTfotGDV5hVvoR5njA==
-X-Google-Smtp-Source: ACHHUZ5DoNUKSvAIXqJyVR/dJqHjMXAJmhqi/nRReR8o6lChwcUCm3nF+VoA8dUPGUnBoXAPQ8cGXyQokNL17p9GqwE=
-X-Received: by 2002:a2e:9012:0:b0:2af:30d8:527f with SMTP id
- h18-20020a2e9012000000b002af30d8527fmr3553372ljg.19.1686615154438; Mon, 12
- Jun 2023 17:12:34 -0700 (PDT)
+	id 1q8xw1-0078jx-0p
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Jun 2023 06:55:22 +0000
+Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-51874324c2aso574019a12.1
+        for <linux-phy@lists.infradead.org>; Mon, 12 Jun 2023 23:55:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1686639317; x=1689231317;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Ya0JGjGnBFucsPDfp7+4IKVKKt1JIYfCsKyVruiNX70=;
+        b=ciJ7aMVZ0GMKfRE1QHEWHJ/+hTTifJDeM3EguhxbExT8jSMBHgJBzCzbDyf2dV0YlV
+         6Az9PZ1PjlmWE9kiCF4mSwx3ku/IhIVP9jpKpd7CU2hwdvKez9vJFZDoUgwFU1TTjhs5
+         ysrzafMzuJgWPrr0J97gKj0VSHV1EQS1VzYxb0rp0FXCNo2j+Z6mjlxx/txj5BTeMF/L
+         Sok6htd3FsAkXor9p22+afi0Cqvo0d/r6F55y1AVmgmjRImKqjMjxV7qN+sFsesKF0aP
+         i/hAc/VFHqMJiJO2qu6CyPufIR+23CAViqgaWiwAeV5uMJy/Cu2eIt4xNUu2/8Rn8Pn2
+         lzmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686639317; x=1689231317;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ya0JGjGnBFucsPDfp7+4IKVKKt1JIYfCsKyVruiNX70=;
+        b=VvnuvEnEJUkMM0Ux5yMc1O4+sW4NsifvXUO1j+yBexYsTH1dJS+c5ifZKTDEXLvbX+
+         Bh1IxSVMjvDAr1aoOu7RWpeCsEIHzRe1N1lhC1eQUie5it/KdgU5KsaX3LS3KXv/wSgJ
+         h10Ul7dvOkcoHH7GnLPgkKDl2PjJJXm+UbJXkjBA8xFGsk1lEMlQsruy0LmWizumRqS+
+         sNHyW7PYdxwbAYvjxVTh4aNQtRdUhl90THAoBUZK4CA2vIArc2dwjcAeXAfz8Lx0lGkF
+         6EKdTT806OzJTm3r6iN1/ul1WbnL6AZqBu8FnpT+0yRIUQoM/AJ1x27uyU0yYy7ohT0D
+         jppg==
+X-Gm-Message-State: AC+VfDzkz0fideiJFAZG1UhicsHQqdi6brPIpjfw16sChkPE+vwgE1LI
+	h3fySKrbus7VjypYtTJG7xr6tzjfYNv1gZBiZb0=
+X-Google-Smtp-Source: ACHHUZ7TaDo55fN/TkO5Knr4heKEa4OgXNTHGx+AyyWww42lHuT5Covk8wTO1ijncHvSxtUPa8TbRQ==
+X-Received: by 2002:a17:907:3fa4:b0:977:da9d:b842 with SMTP id hr36-20020a1709073fa400b00977da9db842mr12121149ejc.74.1686639316733;
+        Mon, 12 Jun 2023 23:55:16 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id k14-20020a1709061c0e00b0096f6e2f4d9esm6115589ejg.83.2023.06.12.23.55.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 12 Jun 2023 23:55:16 -0700 (PDT)
+Message-ID: <399ac8fd-b5b1-50ae-c1bd-88951679cf83@linaro.org>
+Date: Tue, 13 Jun 2023 08:55:13 +0200
 MIME-Version: 1.0
-References: <20230412112739.160376-1-angelogioacchino.delregno@collabora.com>
- <20230412112739.160376-4-angelogioacchino.delregno@collabora.com> <02a588ca-680f-ab45-1005-768d5b5db252@gmail.com>
-In-Reply-To: <02a588ca-680f-ab45-1005-768d5b5db252@gmail.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Tue, 13 Jun 2023 08:12:22 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_9Heu3yzwbJgEpOwqabwpyTXMByFgcpoBojaM7MaRTUnQ@mail.gmail.com>
-Message-ID: <CAAOTY_9Heu3yzwbJgEpOwqabwpyTXMByFgcpoBojaM7MaRTUnQ@mail.gmail.com>
-Subject: Re: [PATCH 03/27] dt-bindings: display: mediatek: dpi: Add compatible
- for MediaTek MT6795
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, p.zabel@pengutronix.de, airlied@gmail.com, 
-	daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	jassisinghbrar@gmail.com, chunfeng.yun@mediatek.com, vkoul@kernel.org, 
-	kishon@kernel.org, thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de, 
-	ck.hu@mediatek.com, jitao.shi@mediatek.com, xinlei.lee@mediatek.com, 
-	houlong.wei@mediatek.com, dri-devel@lists.freedesktop.org, 
-	linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org, 
-	kernel@collabora.com, phone-devel@vger.kernel.org, 
-	~postmarketos/upstreaming@lists.sr.ht
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.2
+Subject: Re: [PATCH v3 2/5] dt-bindings: ata: dwc-ahci: add Rockchip RK3588
+Content-Language: en-US
+To: Serge Semin <fancer.lancer@gmail.com>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-ide@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kernel@collabora.com
+References: <20230608162238.50078-1-sebastian.reichel@collabora.com>
+ <20230608162238.50078-3-sebastian.reichel@collabora.com>
+ <4c914503-c2e5-a5d8-97af-daaee0b4ec7c@linaro.org>
+ <20230612083536.q3sq7w6cyiuxaqtv@mobilestation>
+ <838ed0e6-985d-9a45-7ece-c607bda15871@linaro.org>
+ <20230612085200.5okxcipiw5sofo62@mobilestation>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230612085200.5okxcipiw5sofo62@mobilestation>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_011242_249694_3F686267 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20230612_235521_296787_A0F63AA7 
+X-CRM114-Status: GOOD (  16.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,47 +100,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksIE1hdHRoaWFzOgoKTWF0dGhpYXMgQnJ1Z2dlciA8bWF0dGhpYXMuYmdnQGdtYWlsLmNvbT4g
-5pa8IDIwMjPlubQ15pyIMjnml6Ug6YCx5LiAIOS4i+WNiDEwOjA35a+r6YGT77yaCj4KPiBIaSBD
-aHVuLUt1YW5nIEh1LAo+Cj4gQ2FuIHlvdSBoZWxwIHRvIG1lcmdlIHRoZSBtaXNzaW5nIERULWJp
-bmRpbmcgcGF0Y2hlcyBpbiB0aGlzIHNlcmllcz8KCkFwcGx5IGRpc3BsYXkgYmluZGluZyBvZiB0
-aGlzIHNlcmllcyB0byAgbWVkaWF0ZWstZHJtLW5leHQgWzFdLgoKWzFdIGh0dHBzOi8vZ2l0Lmtl
-cm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2NodW5rdWFuZy5odS9saW51eC5naXQv
-bG9nLz9oPW1lZGlhdGVrLWRybS1uZXh0CgpSZWdhcmRzLApDaHVuLUt1YW5nLgoKPgo+IFRoYW5r
-cyBhIGxvdCwKPiBNYXR0aGlhcwo+Cj4gT24gMTIvMDQvMjAyMyAxMzoyNywgQW5nZWxvR2lvYWNj
-aGlubyBEZWwgUmVnbm8gd3JvdGU6Cj4gPiBBZGQgYSBjb21wYXRpYmxlIHN0cmluZyBmb3IgdGhl
-IE1lZGlhVGVrIEhlbGlvIFgxMCBNVDY3OTUgU29DLCB1c2luZwo+ID4gdGhlIHNhbWUgcGFyYW1l
-dGVycyBhcyBNVDgxODMuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBE
-ZWwgUmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KPiA+IC0t
-LQo+ID4gICAuLi4vZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxkcGkueWFtbCAgICAgICAgfCAy
-MyArKysrKysrKysrKy0tLS0tLS0tCj4gPiAgIDEgZmlsZSBjaGFuZ2VkLCAxNCBpbnNlcnRpb25z
-KCspLCA5IGRlbGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxkcGkueWFtbCBiL0Rv
-Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L21lZGlhdGVrL21lZGlhdGVr
-LGRwaS55YW1sCj4gPiBpbmRleCBkOTc2MzgwODAxZTMuLjgwM2MwMGYyNjIwNiAxMDA2NDQKPiA+
-IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L21lZGlhdGVr
-L21lZGlhdGVrLGRwaS55YW1sCj4gPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxkcGkueWFtbAo+ID4gQEAgLTE3LDE1ICsx
-NywyMCBAQCBkZXNjcmlwdGlvbjogfAo+ID4KPiA+ICAgcHJvcGVydGllczoKPiA+ICAgICBjb21w
-YXRpYmxlOgo+ID4gLSAgICBlbnVtOgo+ID4gLSAgICAgIC0gbWVkaWF0ZWssbXQyNzAxLWRwaQo+
-ID4gLSAgICAgIC0gbWVkaWF0ZWssbXQ3NjIzLWRwaQo+ID4gLSAgICAgIC0gbWVkaWF0ZWssbXQ4
-MTczLWRwaQo+ID4gLSAgICAgIC0gbWVkaWF0ZWssbXQ4MTgzLWRwaQo+ID4gLSAgICAgIC0gbWVk
-aWF0ZWssbXQ4MTg2LWRwaQo+ID4gLSAgICAgIC0gbWVkaWF0ZWssbXQ4MTg4LWRwLWludGYKPiA+
-IC0gICAgICAtIG1lZGlhdGVrLG10ODE5Mi1kcGkKPiA+IC0gICAgICAtIG1lZGlhdGVrLG10ODE5
-NS1kcC1pbnRmCj4gPiArICAgIG9uZU9mOgo+ID4gKyAgICAgIC0gZW51bToKPiA+ICsgICAgICAg
-ICAgLSBtZWRpYXRlayxtdDI3MDEtZHBpCj4gPiArICAgICAgICAgIC0gbWVkaWF0ZWssbXQ3NjIz
-LWRwaQo+ID4gKyAgICAgICAgICAtIG1lZGlhdGVrLG10ODE3My1kcGkKPiA+ICsgICAgICAgICAg
-LSBtZWRpYXRlayxtdDgxODMtZHBpCj4gPiArICAgICAgICAgIC0gbWVkaWF0ZWssbXQ4MTg2LWRw
-aQo+ID4gKyAgICAgICAgICAtIG1lZGlhdGVrLG10ODE4OC1kcC1pbnRmCj4gPiArICAgICAgICAg
-IC0gbWVkaWF0ZWssbXQ4MTkyLWRwaQo+ID4gKyAgICAgICAgICAtIG1lZGlhdGVrLG10ODE5NS1k
-cC1pbnRmCj4gPiArICAgICAgLSBpdGVtczoKPiA+ICsgICAgICAgICAgLSBlbnVtOgo+ID4gKyAg
-ICAgICAgICAgICAgLSBtZWRpYXRlayxtdDY3OTUtZHBpCj4gPiArICAgICAgICAgIC0gY29uc3Q6
-IG1lZGlhdGVrLG10ODE4My1kcGkKPiA+Cj4gPiAgICAgcmVnOgo+ID4gICAgICAgbWF4SXRlbXM6
-IDEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On 12/06/2023 10:52, Serge Semin wrote:
+> On Mon, Jun 12, 2023 at 10:39:57AM +0200, Krzysztof Kozlowski wrote:
+>> On 12/06/2023 10:35, Serge Semin wrote:
+>>> On Mon, Jun 12, 2023 at 10:24:06AM +0200, Krzysztof Kozlowski wrote:
+>>>> On 08/06/2023 18:22, Sebastian Reichel wrote:
+>>>>> This adds Rockchip RK3588 AHCI binding. In order to narrow down the
+>>>>> allowed clocks without bloating the generic binding, the description
+>>>>> of Rockchip's AHCI controllers has been moved to its own file.
+>>>>>
+>>>>> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+>>>>> ---
+>>>>
+>>>> ...
+>>>>
+>>>>> +
+>>>>> +properties:
+>>>>> +  compatible:
+>>>>> +    items:
+>>>>> +      - enum:
+>>>>> +          - rockchip,rk3568-dwc-ahci
+>>>>> +          - rockchip,rk3588-dwc-ahci
+>>>>> +      - const: snps,dwc-ahci
+>>>>> +
+>>>>> +  ports-implemented:
+>>>>> +    const: 1
+>>>>> +
+>>>>> +patternProperties:
+>>>>> +  "^sata-port@[0-9a-e]$":
+>>>>> +    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
+>>>>> +
+>>>>> +    unevaluatedProperties: false
+>>>>
+>>>
+>>>> You should be able to skip this patternProperties entirely, because it
+>>>> comes from dwc-ahci-common -> ahci-common schema. Did you try the patch
+>>>> without it?
+>>>
+> 
+>>> Please see my message about this. The "sata-port@[0-9a-e]$" sub-node
+>>> bindings could be updated with the "reg" property constraint which,
+>>> based on the "ports-implemented" property value, most likely is
+>>> supposed to be always set to const: 1.
+>>
+>> Then anyway the pattern is wrong as it should be @1 always.
+> 
+> * I miscalculated a bit, it should have been zero but in general
+> the pattern-property is indeed redundant.
+> 
+> As a conclusion the change should look like this:
+> 
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - rockchip,rk3568-dwc-ahci
+> +          - rockchip,rk3588-dwc-ahci
+> +      - const: snps,dwc-ahci
+> +
+> +  ports-implemented:
+> +    const: 1
+> +
+> +  "sata-port@0":
+> +    $ref: /schemas/ata/snps,dwc-ahci-common.yaml#/$defs/dwc-ahci-port
+> +
+> +    properties:
+> +      reg:
+> +        const: 0
+> +
+> +    unevaluatedProperties: false
+> +
+> + ...
+> 
+> Right?
+
+Code is correct but as I said - probably meaningless. All other ports
+are also accepted via referenced schema. You would need to disallow
+other ports or switch to additionalProperties: false in top-level.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
