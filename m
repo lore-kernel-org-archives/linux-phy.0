@@ -4,109 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88714EB64D0
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 14:04:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BB4CEB64D0
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jun 2023 14:28:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xNcXCEZQJbdci4R59bNb/PIO5NRN/ZQPSerR2HxcXLc=; b=N9T6RgrUr6HTWR
-	oYKqEj+CyFScDNwdiaKLr/IS87eXMd+JIqG6Aw1lp8olJsr0fswodAD3uqUK+QVLr1NyLcJVVY0MW
-	tTGij9L7DUqQbKxBz+mGsKfwmGC2iq1XrcDW3x6k9z4YHie0/sCq5n9zqHLP4R71yiOk5hHyIcs6+
-	QqzKGu1DfhKW5tzuSZd1GcCMO8wKci2iS4aynUiPhobkIC1Mf5EN7AWG8C/LWl4HrrrEcVOjlBukL
-	+C+OpUxTnfMEsfoCWXz16BL0EOLIKezfpUMiCQBrJH4nqZ9LPNjRHu0W10R1OWl7pLLbGf0VkXM2J
-	1T8A0ScBee6fKtk9DV2Q==;
+	List-Owner; bh=XhLcxGgWeq/ZZM/ImHFL58dSerHDFseWl51B08Pmw24=; b=hXLG/Gdx8h7j/L
+	KTglH1g+dH+nICULQSAXWsfOGuvLbYNxe1WIUGlYkxro95Z5yUitzbTokUyHXlqxdj3G/iaLtnYAr
+	j0RZ7TuNNgnpit3GJ/PqtQ7rOcGlgMdfqyiwCeP2G4BSbi796xqMVmWY35Enp2oqCprwdrufuz3ry
+	h84tnH0TZUZjHCI7o9LVvNdo44jW1yykRNOm1geRmsjxLvWJuzPBKWES5svP3KLQD0ieU4mxR4Aq8
+	7YgiIwAMlkLgTQSbspQoj6i6xW3KI1/yA3AbNqNMGSbTXxxkJL+mjNTHRDe3XdD1q+sMqZvVhCMwR
+	66Xv6Z/3NmLWPOkN6kbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q94d5-008GUp-0f;
-	Tue, 13 Jun 2023 14:04:15 +0000
-Received: from mail-dm6nam12on2062e.outbound.protection.outlook.com ([2a01:111:f400:fe59::62e] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1q950J-008JVl-04;
+	Tue, 13 Jun 2023 14:28:15 +0000
+Received: from mail-vi1eur04on0630.outbound.protection.outlook.com ([2a01:111:f400:fe0e::630] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q94d1-008GSi-24;
-	Tue, 13 Jun 2023 14:04:13 +0000
+	id 1q950D-008JU9-2q;
+	Tue, 13 Jun 2023 14:28:12 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NsfK46ICztKLI9fejw+rF5sQDPfE8EP93tc+q78ldA/BNPeXNnAvw4g+/1CVmHOI8ntqKjdUYleDS2pCQQB/GHxgWpDwUxdttumUkDquYiUv3fjEXSNj4m3bd3QyJKRLwGB5g36PbYMkiSyeYlpjG04VPNYSYmQPUUqsxpkF6/w9KW3mRYHGAn667GXDgPiQvaCdKRbAVZC7bWh04FXaOQGT4qrbJ25mNDdsSRDvIYbBODB0juBT4hcmZuI6be+mcJlH33fnVBYlPEVDiYV46grQPL88TkrsBAyY6ktsMswJ+YV1UUew4MSwEfvhsEhhMP1zRjHLDAbX8MlOUqBoeg==
+ b=M63p+OtueD+fLur0A+gvpWSYPLjapcGYuKwCOoRdxEa1sclHJlQlMlZWL8OFiY0HskDWtdmp5ToyqE7IpcVASlks5lWRhNcuC8v+xwJlZlDFrpqRK2z89kAPoUqCnDNKkS/Y4Uv0q0g2hn9RXzLHONwD6lSEkGYC5Ook7xETmooirxmp86/Qh7eRg0b0MqGC7d/SLYe6kwueA6horYiW7NJ/6uDSRM3YbJ/jlck3+8qqLxCpTI6+RFSjqmwuHRuwgLKoAX4NMM9cyllGoVJ/REFgCpgW8NSvVf23e9F0ue+x41zZ+/0C1tUfX4BUfFPVNCfS8rqsvXaZrq7KeBNAIg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=c942uaubACSy7wzt2ONoxJ3Xp7mv8g8ws85JhXodQAo=;
- b=C7h0orCmMd3wqbI5cOkSOchURqAlhl7GsTZfJOgi+u4SHAlIixHUJ4SHBmBVuTql3wvfD/JMF8XctqA5tuw+VNUNu2uNT87+ukWQyfYfF0KpxDy71ememnSIK1nm+h5lIkWaXJHT+jZSELNW9zeSU8R7d3/xRc9wkxVuz5t0CcEXIZ1nrZCwpehUuaYjoA3cPViqxII8nOiRf6iUy8psGR7K98nuFLNoQAnxpil1Ln9sgFplBNkSSa+ZvENXhQzvkUvMjPFPTPnnKD3GaLrR+yCW6FOOnQuKB/EqlVt7s6Ji55YZjBu1yZ4rw7HPMuVNRrIhdvkUJ+jJflx650hg/g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=xilinx.com smtp.mailfrom=amd.com; dmarc=pass
- (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
- dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ bh=3yqzD08utCEzs/KBhbd0tFml476ZMZlAHrteLHly8Ms=;
+ b=W34eeVNbLk49OShmEYE+ro0ssrRAPzpErn4A1/ED/yMAcma8Sy6xMAuC428Sn6GjcTXBi6hysy0IRKDr+N0Yko0KNm/aXsQHvjpY1tF58kktiCVJsX0peSuXySnyoTMet5TmhNNM5hYH0q3f6rDjP06feEdEj42pREFeNd8yDrRNSUWC0riQRStPRexewUigjn2/BRYN8u4QIliACupIyvTE3W5vBFFja1MoPEM5FtxKFmemU/PNydm9mz5boSQW694xaXVnoMNMiq1Hfw5BYzfFifpbRYAPySq7Uy/MXUWR1qJ3OEZIRq4w7Pvs6NExTY+sVzrACJOJQLTD/OK53w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=c942uaubACSy7wzt2ONoxJ3Xp7mv8g8ws85JhXodQAo=;
- b=Okzv2moGKwtxSGdTW5Yoq7OBUdDunAP67nBLc0/NJIn14WGPEVYWPcYQo+OogfBimoXmUqsFPnZEbzuBBXNEvmKqNrRa25xI9l6o+mvn4hr/SUshldKEZzsjdj+eOBuNlYvvjEjH4iWl18tAH/qDH6BL6f/2XDyzF2umnWlZBu0=
-Received: from DS7PR03CA0142.namprd03.prod.outlook.com (2603:10b6:5:3b4::27)
- by MN0PR12MB5761.namprd12.prod.outlook.com (2603:10b6:208:374::6) with
+ bh=3yqzD08utCEzs/KBhbd0tFml476ZMZlAHrteLHly8Ms=;
+ b=Ch6QiXAX0lPbjFVCkGmoK6AClvmwgMM8u3lHjARsAk0HxCf4CV8+x5vSB6hofuG3wO4TZPCDl04gwGqYjtPfGGfc6/W03cM/UG/TWk4KB6fyVIkLurnBTKJBOgjxqRPFc62lenx0XPjKAxOyrTqiahE7PR+WOqK5dDgXHynLMaw=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
+ by DU2PR04MB9212.eurprd04.prod.outlook.com (2603:10a6:10:2fb::6) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.33; Tue, 13 Jun
- 2023 14:04:03 +0000
-Received: from DM6NAM11FT081.eop-nam11.prod.protection.outlook.com
- (2603:10b6:5:3b4:cafe::92) by DS7PR03CA0142.outlook.office365.com
- (2603:10b6:5:3b4::27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6477.35 via Frontend
- Transport; Tue, 13 Jun 2023 14:04:03 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
-Received: from SATLEXMB04.amd.com (165.204.84.17) by
- DM6NAM11FT081.mail.protection.outlook.com (10.13.172.136) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.6455.23 via Frontend Transport; Tue, 13 Jun 2023 14:04:03 +0000
-Received: from SATLEXMB06.amd.com (10.181.40.147) by SATLEXMB04.amd.com
- (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.23; Tue, 13 Jun
- 2023 09:03:44 -0500
-Received: from SATLEXMB04.amd.com (10.181.40.145) by SATLEXMB06.amd.com
- (10.181.40.147) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.23; Tue, 13 Jun
- 2023 09:03:21 -0500
-Received: from xhdnavam40.xilinx.com (10.180.168.240) by SATLEXMB04.amd.com
- (10.181.40.145) with Microsoft SMTP Server id 15.1.2507.23 via Frontend
- Transport; Tue, 13 Jun 2023 09:03:19 -0500
-From: Piyush Mehta <piyush.mehta@amd.com>
-To: <anurag.kumar.vulisha@xilinx.com>, <laurent.pinchart@ideasonboard.com>,
-	<vkoul@kernel.org>, <kishon@kernel.org>, <michal.simek@amd.com>
-CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <git@amd.com>, Piyush Mehta
-	<piyush.mehta@amd.com>
-Subject: [PATCH V2 2/2] phy: xilinx: phy-zynqmp: dynamic clock support for power-save
-Date: Tue, 13 Jun 2023 19:32:50 +0530
-Message-ID: <20230613140250.3018947-3-piyush.mehta@amd.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20230613140250.3018947-1-piyush.mehta@amd.com>
-References: <20230613140250.3018947-1-piyush.mehta@amd.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6455.44; Tue, 13 Jun
+ 2023 14:27:59 +0000
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::c40e:d76:fd88:f460]) by AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::c40e:d76:fd88:f460%4]) with mapi id 15.20.6455.045; Tue, 13 Jun 2023
+ 14:27:58 +0000
+Date: Tue, 13 Jun 2023 17:27:54 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
+	Jonas Gorski <jonas.gorski@gmail.com>,
+	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Message-ID: <20230613142754.wr5njtjo4tbloqwu@skbuf>
+References: <7c7ab84b-3c4a-4e44-b5b5-4acf733a0246@seco.com>
+ <20230429172422.vc35tnwkekfieoru@skbuf>
+ <c81d23b6-ed22-0b37-d71b-ddce9d5d58eb@seco.com>
+ <c2f928d2-25f6-0e31-9ab3-9d585968df1b@seco.com>
+ <20230522150010.q5zndfwcuvrb6pg2@skbuf>
+ <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
+ <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
+ <c702e2b6-cb0f-4ac9-86fe-a220284d45aa@seco.com>
+ <20230612163353.dwouatvqbuo6h4ea@skbuf>
+ <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
+Content-Disposition: inline
+In-Reply-To: <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
+X-ClientProxiedBy: AM4PR07CA0007.eurprd07.prod.outlook.com
+ (2603:10a6:205:1::20) To AM0PR04MB6452.eurprd04.prod.outlook.com
+ (2603:10a6:208:16d::21)
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM6NAM11FT081:EE_|MN0PR12MB5761:EE_
-X-MS-Office365-Filtering-Correlation-Id: da348367-23e0-4026-550b-08db6c170b8c
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DU2PR04MB9212:EE_
+X-MS-Office365-Filtering-Correlation-Id: 02107575-476f-41bd-74e1-08db6c1a62d8
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: nyypsTELipksdvbb1yx9kaCSp3oF04bJ2a7DFrZjE4k2cJ8JEsCXy3EO8ialbOkOCGO/DywnWXTyuROfA1eeRHcTUxtV8c7zcSRQI5jcCQw8tVTF67j74yxUmu3MchuxBNmglARrz6aUD9oYPNigf38EYdvNK2qD/GisWruFLYYNo4hKgDtYa5YP0Atz5vS8j2gt/wOEHsDjtYZHfjR7nTgn8cfCzkL55utLWqfw/KVmDuRvWOtKp+iTmqy1QfLWU0M7yXruIIKmDD7WedVuTKucaqe5gCGcvZ2kw+O3Je0NcwWzMvxRKz0auBsGk4V6mUWm9812G9ousb7O2DYw4XDQVuJbnemTOC3mjRb0dfJEznrUXjlq/Cu5f98BgzfCqIPQSGHWObFIrGZboc+xz9fnJHX8xEt0JKN9ZDX95bsMslp6CaAgfWBWmqUzWbwuu7bQbPpRXxbRUkze8dW4wP97vU8AIiQpcM2NvBJ9onfcy84wIJDycVqmA5q1+I+P9dbuqKDowa50cqz8TZHEsJJhkU7+s/vpOvNeB4GRPZH+Yz483OuO+G/VcyDGjJxNG1AU2FPur4809865oghXDWw37ngjbnd2DS9oV7xkrSnj7yUTiehVD45/01ymCvcIi1zBvhKbqqpxZziLpNKE6dnReOyP44ziyVsaKTWrbG5rHlRbemzDiAPqNneEnq0qfEiIIGpi7YQj2P2bTpv3o4sBPMLE8/IjZ5+m6ZX4VZ03tSEM2uDUBaNFytdI521mU4BByax8/oQyWoUXsQFno7Jyylf/4DVMONmwD8d4Zu/WtcySGcyO5ORSdjdGrUtI
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230028)(4636009)(39860400002)(346002)(376002)(396003)(136003)(451199021)(36840700001)(46966006)(40470700004)(40480700001)(40460700003)(54906003)(110136005)(81166007)(82740400003)(356005)(6636002)(41300700001)(8676002)(8936002)(5660300002)(2616005)(70206006)(4326008)(478600001)(316002)(70586007)(426003)(36860700001)(83380400001)(1076003)(47076005)(6666004)(336012)(186003)(26005)(86362001)(82310400005)(44832011)(2906002)(36756003)(36900700001);DIR:OUT;SFP:1101;
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2023 14:04:03.6069
+X-Microsoft-Antispam-Message-Info: LCjZAoPw9Of4yxZcjufAjeKtXhjnb3SJB35cON3zs1klC0vsfdCdzAMYz/bUS5Zuw0QD2NYs2YihdLG9ZGB0NtDiO33fDp8ErPmpaasiBMcUI1AfetbIEuT4uZtlWqL40EMBxbxe81mll9PWyiKJpOoGr3GIFZ4Ptj5RBDfl+PLis7KyF8cvfwIMg3ECj/lZTqRDOXBqDxGfLtf+2IAF8sQAdN5hCKnVPUElmg60kUpZSi096QvbzCrWXiA2Dx8uGZrACZc65RinftmpKWdK2PEMqspBIrnlannXeesoq9KNGVEpM6nzJbhScApjZWNBoGJmlwLWhx5zQl0oJfroJW2ZyKLVIFFim70CvVF0/W+yAPd++s8JVhF/J0UUL7M8nICe/NNmyfuml2QW9mAY8gybtUybzVAQ2lbrhtkW0Fcx3EsNyqdQF0s6NLXFN265l4HoqXrhJG++qxHpOzSeaYnzQjMoLfjntwfFVcuVW4C19h5S6BtneW4uFpXlRkvqmXQav6iPqX6NrNvZ9myvhbxbZfvopnEE/UQT0Yq0LMXzeykQTysvqtaLnlP96KxE
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(7916004)(4636009)(376002)(136003)(396003)(39860400002)(366004)(346002)(451199021)(66556008)(66476007)(6916009)(8676002)(8936002)(5660300002)(66946007)(54906003)(4326008)(478600001)(6666004)(66899021)(41300700001)(6486002)(316002)(38100700002)(53546011)(186003)(6506007)(6512007)(1076003)(9686003)(44832011)(7416002)(26005)(83380400001)(86362001)(33716001)(2906002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gTD+YO9HLpBPpEod/cjNzDlONepQdrNlX4oEV6oeDqWh9u9ndKbBY5D7Sn9R?=
+ =?us-ascii?Q?eqFpG7pLGY0jy+qwJGg9/XoY/ZOnl7iAM+I9jF8y2EWYeUILY/PpH8y16tcP?=
+ =?us-ascii?Q?2Ba6sLgv+gZieYM/okLvOfA89rGwcBT7ENhW0xnAPszgiNfMCClCXZ2p+MeU?=
+ =?us-ascii?Q?cqJD0aLCxoby7qHs019XM7xFHxn1BQDfurC/BXXFe8508QAFFhIPP1Y0K2N9?=
+ =?us-ascii?Q?LCp7eymut+9iloBT9JN5wBA9BFc2yOy3r39ZakRf3mVN0/+d6SfubguA/P8+?=
+ =?us-ascii?Q?9g88y4UjWnYvv4p/aZA3O36TacSi5vD16le8Gt+pYphu9v5h6XbSB1zQpjJg?=
+ =?us-ascii?Q?NF4dqgGTAujS1cAFAWfg7DKbqvAND7fngeUwKnhEDpkq4QaesLs32MhDaYGo?=
+ =?us-ascii?Q?Wnwhp9/tJs99/0adQAzw40+K15ifo/x90AX3FM6czBG3U/JTvPmb0UuAgUA8?=
+ =?us-ascii?Q?IwI0V/X7G88S82iaLOMpHQw6r8CAw9l6b5HscdlnJyG9FXDogPan27t0E48x?=
+ =?us-ascii?Q?BeYsU9qKMUltEuvo+LWtrggeH/IvNqTo8L7wO8uFmeSJ9Lnl+hhSpm3kgO2K?=
+ =?us-ascii?Q?NasNOkbCpFXA1z0qc7mwkznoxXLftodJstz5YePIy3ibMqEdnZ2X4KF2zy2m?=
+ =?us-ascii?Q?wzY5riphdQ6+5zWjQpgPK2SoxHFlPFf2FeblFsWKJrBbGEcxKqBURf12bugw?=
+ =?us-ascii?Q?/EMPvLjR6GEAh+wTfKT8dTy2ppv5/Qs6TtLqLlSfqD237ZnevnbA8qZqM8/x?=
+ =?us-ascii?Q?gc6Idhjb7GZGmY/3QuWKL21wTXAmCZrxGubyhCr7LONyeUz0XVxu4NSz2vvI?=
+ =?us-ascii?Q?5jpU4ZIi244S00UEJjPM5X3o49QHF3wmJRqXqHAoixaUdDJLG9mUNLAoszBM?=
+ =?us-ascii?Q?QljcSNioZlchtbKg9JJUmSc21w3Ok8TrtHBIiIqiynOuFl7lyjdoAF2HLnLA?=
+ =?us-ascii?Q?VXCBJ7IBq70wFrbpOU/90SglQyqINx3A7zG/S+6GUCoAV07Ey7txlNS+cKEr?=
+ =?us-ascii?Q?M4kuqkeicqdMuRsCAOQ0DgYAaij74IwguqC3h1Ohn5dBiN/a3ToR6X+3JMbm?=
+ =?us-ascii?Q?eAI9F9a7gs38dL8DvnJOhOTZchzzvMN73K/UD7kdpY5FQSnxM5SHCuuicIqs?=
+ =?us-ascii?Q?p1TF/HTcK1BfS98ZM7neUWqoyw5sLWILkOhHhZKyOKDvBGuIoDx2YBRfZlOJ?=
+ =?us-ascii?Q?dLWDsfNsU22Kws/jitp9Kdyh+sqEvM0zVOFiPrfCtyyfcvO8W5g3q67W80o+?=
+ =?us-ascii?Q?r6wAyj45/zza3xJ6liAadMIan12muMPywJn6pdB/5AeCA+xqK0VYojswl0x7?=
+ =?us-ascii?Q?A5dtwK6AHHowut9SXH+6dOgVcOWmQEye7HEYvBigaVqeaOkzMENnt7OhLG9r?=
+ =?us-ascii?Q?ZBykw8AeH1FAAIaem4IP7P6DHSnvf1xYhkEbidiBfoEM0YLktPPAYD6lDSYp?=
+ =?us-ascii?Q?+fO4vzRt4Uze8GQasPSwlmwhIQRKA2Kd47efqKsgQxRi4boLMCSJIYwbmrIa?=
+ =?us-ascii?Q?uQImnfQBiBoI8LZcNxBxe4C5HaVIiDD4Tg4E+oq1N5TsX60QORu8T0hLPxBI?=
+ =?us-ascii?Q?BJq2VDRFmG9BNUKYvumzt1ouVyVyZoQCpNnNasji+Y6/PoSwo8KrgDXb0gpa?=
+ =?us-ascii?Q?BA=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 02107575-476f-41bd-74e1-08db6c1a62d8
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2023 14:27:58.8559
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: da348367-23e0-4026-550b-08db6c170b8c
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: DM6NAM11FT081.eop-nam11.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN0PR12MB5761
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: UKkZVma6r9HCiNsIzVyqu3nOCytXYr3BnEmXMTgq8nOQxF49sljPGw7Cna2/YVOwaQwT+AeRbzPZv4/Z5yN2JA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9212
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230613_070411_684374_AF04329B 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20230613_072810_090385_212B5260 
+X-CRM114-Status: GOOD (  52.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,195 +159,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enabling clock for all the lanes consumes power even PHY is active or
-inactive. To resolve this, enable/disable clocks in phy_init/phy_exit.
+On Mon, Jun 12, 2023 at 04:46:16PM -0400, Sean Anderson wrote:
+> On 6/12/23 12:33, Vladimir Oltean wrote:
+> > On Mon, Jun 12, 2023 at 10:35:21AM -0400, Sean Anderson wrote:
+> >> > And if SERDES protocol switching was not physically possible, would this
+> >> > patch set still have value?
+> 
+> More to the point, did you make any progress in this area?
 
-By default clock is disabled for all the lanes. Whenever phy_init called
-from USB, SATA, or display driver, etc. It enabled the required clock
-for requested lane. On phy_exit cycle, it disabled clock for the active
-PHYs.
+Aha. It is two email exchanges later that you've thought of asking that.
 
-During the suspend/resume cycle, each USB/ SATA/ display driver called
-phy_exit/phy_init individually. It disabled clock on exit, and enabled
-on initialization for the active PHYs.
+No, I haven't made progress. Though I managed to get some extra pointers
+and things to try out, and at this stage I am the limiting factor. I will
+let you know once the investigation has reached a conclusion.
 
-Signed-off-by: Piyush Mehta <piyush.mehta@amd.com>
----
- drivers/phy/xilinx/phy-zynqmp.c | 61 ++++++++-------------------------
- 1 file changed, 15 insertions(+), 46 deletions(-)
+So many things depend on whether major SERDES protocol reconfiguration
+is possible, that if I were you, my question would be just that, instead
+of the equivalent of "Vladimir, when can my driver be merged ???".
+I understand how incredibly frustrating it is that the responses are
+coming in so slowly, and this is the reason why I am responding at all
+to your pings even if I have essentially nothing new to say.
 
-diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index aada18123c19..b0c2045b886e 100644
---- a/drivers/phy/xilinx/phy-zynqmp.c
-+++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -572,6 +572,10 @@ static int xpsgtr_phy_init(struct phy *phy)
- 
- 	mutex_lock(&gtr_dev->gtr_mutex);
- 
-+	/* Configure and enable the clock when peripheral phy_init call */
-+	if (clk_prepare_enable(gtr_dev->clk[gtr_phy->lane]))
-+		goto out;
-+
- 	/* Skip initialization if not required. */
- 	if (!xpsgtr_phy_init_required(gtr_phy))
- 		goto out;
-@@ -616,9 +620,13 @@ static int xpsgtr_phy_init(struct phy *phy)
- static int xpsgtr_phy_exit(struct phy *phy)
- {
- 	struct xpsgtr_phy *gtr_phy = phy_get_drvdata(phy);
-+	struct xpsgtr_dev *gtr_dev = gtr_phy->dev;
- 
- 	gtr_phy->skip_phy_init = false;
- 
-+	/* Ensure that disable clock only, which configure for lane */
-+	clk_disable_unprepare(gtr_dev->clk[gtr_phy->lane]);
-+
- 	return 0;
- }
- 
-@@ -824,15 +832,11 @@ static struct phy *xpsgtr_xlate(struct device *dev,
- static int xpsgtr_runtime_suspend(struct device *dev)
- {
- 	struct xpsgtr_dev *gtr_dev = dev_get_drvdata(dev);
--	unsigned int i;
- 
- 	/* Save the snapshot ICM_CFG registers. */
- 	gtr_dev->saved_icm_cfg0 = xpsgtr_read(gtr_dev, ICM_CFG0);
- 	gtr_dev->saved_icm_cfg1 = xpsgtr_read(gtr_dev, ICM_CFG1);
- 
--	for (i = 0; i < ARRAY_SIZE(gtr_dev->clk); i++)
--		clk_disable_unprepare(gtr_dev->clk[i]);
--
- 	return 0;
- }
- 
-@@ -842,13 +846,6 @@ static int xpsgtr_runtime_resume(struct device *dev)
- 	unsigned int icm_cfg0, icm_cfg1;
- 	unsigned int i;
- 	bool skip_phy_init;
--	int err;
--
--	for (i = 0; i < ARRAY_SIZE(gtr_dev->clk); i++) {
--		err = clk_prepare_enable(gtr_dev->clk[i]);
--		if (err)
--			goto err_clk_put;
--	}
- 
- 	icm_cfg0 = xpsgtr_read(gtr_dev, ICM_CFG0);
- 	icm_cfg1 = xpsgtr_read(gtr_dev, ICM_CFG1);
-@@ -869,12 +866,6 @@ static int xpsgtr_runtime_resume(struct device *dev)
- 		gtr_dev->phys[i].skip_phy_init = skip_phy_init;
- 
- 	return 0;
--
--err_clk_put:
--	while (i--)
--		clk_disable_unprepare(gtr_dev->clk[i]);
--
--	return err;
- }
- 
- static DEFINE_RUNTIME_DEV_PM_OPS(xpsgtr_pm_ops, xpsgtr_runtime_suspend,
-@@ -886,7 +877,6 @@ static DEFINE_RUNTIME_DEV_PM_OPS(xpsgtr_pm_ops, xpsgtr_runtime_suspend,
- static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
- {
- 	unsigned int refclk;
--	int ret;
- 
- 	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->refclk_sscs); ++refclk) {
- 		unsigned long rate;
-@@ -897,19 +887,14 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
- 		snprintf(name, sizeof(name), "ref%u", refclk);
- 		clk = devm_clk_get_optional(gtr_dev->dev, name);
- 		if (IS_ERR(clk)) {
--			ret = dev_err_probe(gtr_dev->dev, PTR_ERR(clk),
--					    "Failed to get reference clock %u\n",
--					    refclk);
--			goto err_clk_put;
-+			return dev_err_probe(gtr_dev->dev, PTR_ERR(clk),
-+					     "Failed to get ref clock %u\n",
-+					     refclk);
- 		}
- 
- 		if (!clk)
- 			continue;
- 
--		ret = clk_prepare_enable(clk);
--		if (ret)
--			goto err_clk_put;
--
- 		gtr_dev->clk[refclk] = clk;
- 
- 		/*
-@@ -929,18 +914,11 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
- 			dev_err(gtr_dev->dev,
- 				"Invalid rate %lu for reference clock %u\n",
- 				rate, refclk);
--			ret = -EINVAL;
--			goto err_clk_put;
-+			return -EINVAL;
- 		}
- 	}
- 
- 	return 0;
--
--err_clk_put:
--	while (refclk--)
--		clk_disable_unprepare(gtr_dev->clk[refclk]);
--
--	return ret;
- }
- 
- static int xpsgtr_probe(struct platform_device *pdev)
-@@ -949,7 +927,6 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 	struct xpsgtr_dev *gtr_dev;
- 	struct phy_provider *provider;
- 	unsigned int port;
--	unsigned int i;
- 	int ret;
- 
- 	gtr_dev = devm_kzalloc(&pdev->dev, sizeof(*gtr_dev), GFP_KERNEL);
-@@ -989,8 +966,7 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 		phy = devm_phy_create(&pdev->dev, np, &xpsgtr_phyops);
- 		if (IS_ERR(phy)) {
- 			dev_err(&pdev->dev, "failed to create PHY\n");
--			ret = PTR_ERR(phy);
--			goto err_clk_put;
-+			return PTR_ERR(phy);
- 		}
- 
- 		gtr_phy->phy = phy;
-@@ -1001,8 +977,7 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 	provider = devm_of_phy_provider_register(&pdev->dev, xpsgtr_xlate);
- 	if (IS_ERR(provider)) {
- 		dev_err(&pdev->dev, "registering provider failed\n");
--		ret = PTR_ERR(provider);
--		goto err_clk_put;
-+		return PTR_ERR(provider);
- 	}
- 
- 	pm_runtime_set_active(gtr_dev->dev);
-@@ -1011,16 +986,10 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 	ret = pm_runtime_resume_and_get(gtr_dev->dev);
- 	if (ret < 0) {
- 		pm_runtime_disable(gtr_dev->dev);
--		goto err_clk_put;
-+		return ret;
- 	}
- 
- 	return 0;
--
--err_clk_put:
--	for (i = 0; i < ARRAY_SIZE(gtr_dev->clk); i++)
--		clk_disable_unprepare(gtr_dev->clk[i]);
--
--	return ret;
- }
- 
- static int xpsgtr_remove(struct platform_device *pdev)
--- 
-2.25.1
+And it's not that you don't care whether protocol reconfiguration is
+possible or not - you do, but at the same time you're overcome with this
+strong attachment to your solution just because it is yours, that I
+don't know how to deal with.
 
+> 2222 also does not work, as outlined above.
+> 
+> The clocking is incompatible, and must be fixed by software.
+> 
+> The only thing self-inflicted is NXP's conflicting design.
+
+The way things are supposed to work (*if* this works at all) is that the
+reset state machine starts with a supported PLL / refclk configuration
+that permits a certain subset of protocols, and the SERDES protocols can
+be changed from the reset state, as desired, for the individual lanes.
+
+What is self-inflicted is that the refclks on your board design are not
+supportable by any reset state machine configuration, and wiring them
+that way was a conscious decision. Did your company's board designers
+receive the recommendation to disconnect RESET_REQ from NXP, and has NXP
+said that the end result will be something that continues to be supportable?
+I've searched the customer support database and the answer seems to be no.
+In any case, if you have to disconnect RESET_REQ from the SoC to make
+the driver in this form useful, then... yeah, no. You're obviously free
+to do whatever you want with your products, but that's not how mainline
+Linux works, it needs to be useful beyond you.
+
+If protocol switching works, I will maintain that your board should have
+wired the refclks to PLLs the other way around (which is supported by
+the RCW), and then proceed to do protocol switching to reach the desired
+configuration.
+
+So you can see that many things change based on whether protocol reconfig
+is possible or not. The patch set presented here looks exactly like the
+product of someone infatuated with form over substance, and who misses
+the overall picture. My belief is that if you shift your attitude from
+"is the work done?" to "is the work generally useful?", the interactions
+will improve by a lot.
+
+> > Have you actually tested changing individual lanes from SGMII to SGMII 2.5?
+> > I know it works on LS1028A, but I don't know if that's also true on LS1046A.
+> > Your comments do say "LYNX_PROTO_SGMII25, /* Not tested */".
+> 
+> Not yet. 
+
+Aha. So concretely, what makes you so confident with moving this forward?
+You like the code to just be there, no?
+
+It helps your board, I understand. But not everything has to stay in
+mainline if it's not useful for others, and I've proposed an alternative
+solution which I'm not sure how seriously you took.
+
+> This driver would also be a good place to add the KR link training with
+> NXP tried to upstream a few years ago.
+
+Well, speaking as someone who is now also tasked with the copper backplane
+support, believe me that I know that, and this is why I'm so desperate
+with the logic you're trying to push forward. It's clear that we should
+try to collaborate rather than try to push individualistic non-tested
+non-solutions.
+
+> > Assuming a start from SERDES protocol 3333 with PLL mapping 2222,
+> > this protocol change implies powering on PLL 1 (reset state machine
+> > wants it to be disabled) and moving those lanes from PLL 2 to PLL 1.
+> > 
+> > At first sight you might appear to have a point related to the fact that
+> > PLL register writes are necessary, and thus this whole shebang is necessary.
+> > But this can all be done using PBI commands, with the added benefit that
+> > U-Boot can also use those SERDES networking ports, and not just Linux.
+> > You can use the RCW+PBL specific to your board to inform the SoC that
+> > your platform's refclk 1 is 156 MHz (something which the reset state
+> > machine seems unable to learn, with protocol 0x3333). You don't have to
+> > put that in the device tree. You don't have to push code to any open
+> > source project to expose your platform specific details. Then, just like
+> > in the case of the Lynx 28G driver on LX2160, the SERDES driver could
+> > just treat the PLL configuration as read-only, which would greatly
+> > simplify things and eliminate the need for a clk driver.
+> > 
+> > Here is an illustrative example (sorry, I don't have a board with the
+> > right refclk on that PLL, to verify all the way):
+> > 
+> > ... snip ...
+> 
+> (which of course complicates the process of building the PBIs...)
+
+Maybe this is the language barrier, but what are you trying to say here?
+
+> > In short, I believe the reasons you have cited do not justify the
+> > complexity of the solution that you propose.
+> 
+> The work is done,
+
+:)
+
+> and it is certainly more flexible than what you propose. E.g. imagine
+> a clock which needs to be configured before it has the correct
+> frequency. Such a thing is difficult to do in a PBI solution, but is
+> trivial in Linux.
+
+So "a clock which needs to be configured" means a programmable clock
+generator that provides the refclk to the PLL, correct?
+
+With QorIQ/Layerscape SoCs, I imagine that case would typically be done
+by a board CPLD during the boot sequence, because if the PLL refclks
+don't have the right frequency, the main SoC doesn't start. You've hacked
+the RESET_REQ signal so you don't have that problem. But surprise -
+others haven't - so it's not exactly a relevant argument in favor.
+
+It's clear that the hardware has limitations that have impact upon the
+way in which both boards and software is designed. Because you don't
+know whether protocol reconfig is possible, you don't know *if* it is
+possible, *under what circumstances* it will be possible. What if XFI
+only works with 156 MHz provided to PLL 2, and not to PLL 1? You're
+trying to push a non-final solution as a final solution.
+
+The programmable refclk generator that is reconfigured at runtime is
+another can of worms, which I'm not sure can be feasibly implemented on
+this hardware given the fact that multiple lanes share one PLL, and
+there are many more lanes (4 or 8) than PLLs (2). Again, I need to see
+some practical functionality that this patch set provides.
+
+Do you _actually_ have a programmable clock generator that the CPLD
+can't program, or is this a "what if" situation?
+
+More to the point of the "flexibility" that you claim. You haven't
+addressed my point of networking over the SERDES ports in U-Boot.
+You don't need that - I'm clear with that, otherwise we'd be having this
+conversation on the U-Boot mailing lists - but what if others, wanting
+to follow your solution, would? Would you see that as an opportunity to
+write even more code?
 
 -- 
 linux-phy mailing list
