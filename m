@@ -4,127 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BB4EEB64D9
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 11:12:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FC2FEB64D8
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 14:47:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Hzmbj/xRMjex9KcfTVgA3wDYxxHh1nuzYWZlRSJ2DXA=; b=A8RIAa8uEzoXYw
-	4UH43XgqZGjq14d3Z81TBpvdvYhdZzBpiHvmLjKBr1mRicAViVpTDd0JHUZXG996h6vYVBfKPGOYb
-	Tfy+XLNikxFduI1oPOH7W1dntzxxHYh29coPQzgNhT7VvayhILCXIUzltsD8CHM+EowzF4L1x4UVk
-	mEsfcMHiNk/z/8hoA7Dn7huEx3Q+TSobBP1pEwUZjTws2rPQsyxVqglr+DVxVWSb699iIlkY9Bu63
-	ublbiL0JA1PY4PsWUqRREdyzijWf71NRDFK4WzjIM5ywIG58+BxzKA/pNeYfts2k9+0Cs8gzPx0di
-	2FENUOuG1+0iVqTeMZNg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0/ZcSLQ5X4g1oNEXjBSzQ+2br6ZlZx5Rb6IoNrxxEWI=; b=vvItPf4HaLK7rN
+	E8WOk2n8SFh9UmjFNJmI4PnWci3qffAZV9Vt/BcLOUl8EbJ4LeKL0LAnkic6TSW+rZvFXcqjISU+O
+	JwxM0UbSSCgEz7ThNEm807r8IQXjFLrcVphvmkSCuCIKUnohNjM/j1JL362UdhP8pX0i3HJQrdNvq
+	KnJWR+cqmFqhARipIjb8+86Bil8WqAvVybnzINBZXAlf/7AcP+jQQOL7kojVP3X5brHzpXj7VKXy2
+	tUS2sqbqJIC1s7bvppg4mbUtAp2o3Pc+QT4BTARMNgIhdvWoZa6XQOZr4v1mvuvVC47UJEY0+pirO
+	yL26naFkv8lxZKc/osNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9OQm-00BRqE-1k;
-	Wed, 14 Jun 2023 11:12:52 +0000
-Received: from mail-he1eur01on0611.outbound.protection.outlook.com ([2a01:111:f400:fe1e::611] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1q9Rmi-00Bwuu-0J;
+	Wed, 14 Jun 2023 14:47:44 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9OQj-00BRnm-2k;
-	Wed, 14 Jun 2023 11:12:51 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eYbXz31sJn3DCaZepgDwUjSz/6SvP/UsQMk9+RHFmrHTkFtw0yLnqhpu1mWazP6fUs4tHA3CMBxCjPQEygVbF6F+7a+93krse7LXX7u0S/0spDLJX1Pa9jVXyHQ4/api0xftjCYYn0cmNMHrl8PgyjpMkJzEOnuN4YBElJ81/5LkQOjcZve9j/G4bqo4Bc4WHl/yo50EW4Q5ytkihD6Npfa6DVLTUnamjrC3AVF/vl5ZNXM5MYICswDBqD9qExmI7EbSoqituJIB/LUsh5adZJo3X2YirIP1lbluc8WprVN1x4Hf9mJltp8CgOOZet1LXxz5cELStN630VoyGCuD8Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=PJ3F+Ab9o+4v2mwEAzoSllaMFtnzcSWi2Y4/wMRo138=;
- b=gVHbBfX3XfCjR5qfT0b/db1hrzJLRvgnLk8Gj1mE3MtzSxXt6BwB4eaj28FWtwGRGy1YCykheKaZSuQVvwofN+7r8nKPtyQZAB5mSw49jwLuw0bNiRuEta/myVh0cFjwE3H8PUzfs5PaX1TD5L+BcKRJDJMEdqp4hZY7xm1aZTeR70PbXoTBEgSwnIUxiFjukI5RALuJeMj2PS6ulLJwb3KdyQC9hCQ2P9sE9RRmrOXi4eEYhDV+0qszAr1sK1iXjmlD9IALUbykPkePv/G7MU4p8FRPH602a9eTHP7Jx/kO1PnWhH/JPDKtfUrS2+iatgpGeCyiy+62HACncco2fw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PJ3F+Ab9o+4v2mwEAzoSllaMFtnzcSWi2Y4/wMRo138=;
- b=QvMc2foxcFrjinhHWPvigwpPRaaRtEngZ40WsXVngtBtBzvyrs+VB8jAQGqXxI0ZZEDUXTv/Az+cjJQgM0A/oiCpAXM1uTr5tbAyzw1Bl7E/xtplaRdaz5xkOU6IJuFS+1e+Glc7XsZCSCUNn7D5n+Fb5NOer+bL0xEU9YWqtc0=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DB7PR04MB4505.eurprd04.prod.outlook.com (2603:10a6:5:39::26) by
- AS8PR04MB9174.eurprd04.prod.outlook.com (2603:10a6:20b:449::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6477.37; Wed, 14 Jun
- 2023 11:12:31 +0000
-Received: from DB7PR04MB4505.eurprd04.prod.outlook.com
- ([fe80::f9b0:8c34:e57:92a4]) by DB7PR04MB4505.eurprd04.prod.outlook.com
- ([fe80::f9b0:8c34:e57:92a4%7]) with mapi id 15.20.6455.045; Wed, 14 Jun 2023
- 11:12:31 +0000
-From: Xu Yang <xu.yang_2@nxp.com>
-To: robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	gregkh@linuxfoundation.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	jun.li@nxp.com
-Cc: Frank.Li@nxp.com,
-	kernel@pengutronix.de,
-	festevam@gmail.com,
-	linux-imx@nxp.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
+	id 1q9Rme-00Bwt9-21;
+	Wed, 14 Jun 2023 14:47:41 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 18C3D6431D;
+	Wed, 14 Jun 2023 14:47:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CB20DC433C9;
+	Wed, 14 Jun 2023 14:47:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1686754059;
+	bh=YBvoPI/IEVtbY5FNxrgQvaHMUweYY58AfZfxW/FUfzs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=e3LNvXuGGMNQtEoM1FFIbIMA86EOKQwXEt+3tALeKxbJwddDvByyh87z716lOdEGC
+	 ay6V6UsAWKdIpfQeOHUTj6uRCRuxoBSQ/ETGAidKLmmAZaEKJNYu7cWBppubt22OZZ
+	 qs7CsgD6eYxPn/6tp8A8zc/IMx9Wwqni4eq6r2HIflQzfEAn2bw6+gBVmE50N1J2VT
+	 xdtONfXgAZr/MN4pOsv/pIk3cO5LxiMXaxi73cLALIFbTrJFx3D++N+lWZ75xNd4yO
+	 zo3zVf4keiHIC1Lp+4V1UkRY9UGYRsboF0z0HH6nx3D0gBBtowUDJNQ1wU4JmuqIAX
+	 iiI/VHltBNFtQ==
+Date: Wed, 14 Jun 2023 07:51:00 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Bartosz Golaszewski <brgl@bgdev.pl>, Vinod Koul <vkoul@kernel.org>,
+	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Jose Abreu <joabreu@synopsys.com>, netdev@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	xu.yang_2@nxp.com
-Subject: [PATCH 1/2] dt-bindings: phy: fsl,mxs-usbphy: add fsl,hold-line-without-vbus property
-Date: Wed, 14 Jun 2023 19:15:47 +0800
-Message-Id: <20230614111548.1815146-1-xu.yang_2@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: SG2PR06CA0191.apcprd06.prod.outlook.com (2603:1096:4:1::23)
- To DB7PR04MB4505.eurprd04.prod.outlook.com (2603:10a6:5:39::26)
+	linux-stm32@st-md-mailman.stormreply.com,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Subject: Re: [PATCH 24/26] arm64: dts: qcom: sa8775p-ride: enable the SerDes
+ PHY
+Message-ID: <20230614145100.xgkme7or7k2i552d@ripper>
+References: <20230612092355.87937-1-brgl@bgdev.pl>
+ <20230612092355.87937-25-brgl@bgdev.pl>
+ <0a57a9ad-67ab-cf1a-9bb7-c645de833450@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB7PR04MB4505:EE_|AS8PR04MB9174:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5ca93a90-65f2-411a-439d-08db6cc83f2e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: VAzqHTg+dTSi+CvJ48kzGzrAVXFaAMUIVKpodZcPXZMNkRfJ9Jzvwlwj6AyV2INDt+YQCnO0dH4LtUmRn/m3a1IyaNA4Tf4Lki+1hyQAw63qVN84VFPuicX/AaFxA4rBEjm3fgmdTW5+BXO7dxa53IXRS9LGLaS2fKpN/hK1VOXAE9HRqmnl24k2kNx5dT8lL7//tDBbkNZWb8qH4lrCo/21Tgj9v/tp/T2MTYecFQWjKdFJmhgBE5Kwos4drhmdePnDC7KugHSKBN6ijIdXep3bth3PzAF8h7QjDEmqBlGiFT0XCCNy4NPu/JZxf2mKGLG0tDi9NkVPHMig5Ii0zKlCHmnM/xngFmJ/+9GobWIrw3MEnXjGxuGY5IlEIp3Rqj/X9t6MGiymsHBVovgpivid9HICHXumZTr477LSewcRGqzt07DyBrx7i9PG9iPlgK+qrqD9boUrWIw4tNXxFSgAwxDKq9Dw7dVeix1gFCmud60Szf2m9sW0sLVA6QGL23iEWGsh/a3yRt6fqhkqe/Yn7vdoYTX/Raj/CmT0MCX1ZPL9uiAq6sqdV6V7CFYiLzVnLZIJRyiot5dFoS7TgRJ7fKiWL/1dulz1AV06o9mkr6RfMNPHi/bo6OMGq66H
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR04MB4505.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(366004)(39860400002)(396003)(346002)(376002)(136003)(451199021)(38350700002)(38100700002)(41300700001)(316002)(6666004)(6486002)(6512007)(1076003)(6506007)(52116002)(26005)(6636002)(66556008)(4326008)(66476007)(66946007)(2906002)(7416002)(86362001)(8936002)(5660300002)(36756003)(8676002)(4744005)(2616005)(478600001)(186003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zelflaCuyEUUd4soRkHtFkorUHBnzIIaXX5OXoHWQ0x3eWlfYQmoKGpVGXEH?=
- =?us-ascii?Q?RVsmrHACaLAbAeifxcox4KR4TwqBjlj47QsJ2n4DJe6rlOBD3AI3vBi4wrES?=
- =?us-ascii?Q?JFADx9FwrP7zvoQQlJ7uXle8bFU7Q9q7c1aPxk/QBzLc9jgQQ8saD46VBSCT?=
- =?us-ascii?Q?DRd26YmpTyo5Z68dUfczJPSUnJfHPf0e+b/WpDjwCGuu75avSjnNcpN4dJP0?=
- =?us-ascii?Q?xHqwWep6ATNK54JuyhlVi5BmeWR21K+a6pDllGEeCIj491uRprAPWtvBeovV?=
- =?us-ascii?Q?h9T5JI7WEN60tuSFjOYi1szFIl0qwk+/2ESguSc0jgwtNyXtHm0bJL4Cr2DM?=
- =?us-ascii?Q?IoBNbiCjxtv3Rb6aBLamPFSiTxQgxb0nJ/hLiyhyWcbBH6k0kIPtrTdrEBF5?=
- =?us-ascii?Q?M/Pze8WKRS6Fcsz5cBhDe80sW4Zs8F7UF/2jPwNe3cIy8rkG53vkxRIbkcEf?=
- =?us-ascii?Q?nhGTuZV6SCJNYsbzJokhDbBtg+xEWNk0KajB7Bo3eFHnWicPPUtOJpX+psED?=
- =?us-ascii?Q?jJwkDTAXQlBSIPVMWco4IteGJpcU8hRs74DZEWnJM9/NlbT+BeZ+3O5xKaS5?=
- =?us-ascii?Q?00o9lk7SMg2eDz0Ce9rBEMDhvntfCUUnHfM5EJxNcLkL7srxg+UYL+nPadZ3?=
- =?us-ascii?Q?MR+9S5nWOcJWOauyOwYRVQSu4lVwj+l187vQTR3KdzdBP1CX9SvlXSZooVgK?=
- =?us-ascii?Q?gIaQ/OfAilKJHDn0/AcHJWFDlVsK9f5aFLv0RynNe3USU1R2lIlb3q7zQB7p?=
- =?us-ascii?Q?eIjGOPmkdWZk8YMl8MVmKLhizEajMpo8uqof7wRrd6tPWNsCUJ4ma1K7FB5+?=
- =?us-ascii?Q?A5cA+XzZP60gS6WCna7qDDhfjFlePKHzsSgGumIL2elYkCZ5ACybp5LqP3We?=
- =?us-ascii?Q?I+2z6ThOnTspeICSycYX/h5pb/px1QScrAMxynIyLiMSYShSZjrZkUom+VoF?=
- =?us-ascii?Q?rFp+RFwR310jZqIXKFsbtspRxq7TIeymlttHbAURbZnJkph6SR6JR9WaQW+k?=
- =?us-ascii?Q?zAFZ9vR+fMPLsIy99jMhHcjY24eCrQicxuEOswB97HUQEA0khG8ouWz9xOiE?=
- =?us-ascii?Q?RrKnicwZSsB4GrtEI3P/X6yy7KeL4wUoKZCmrYpKVn96kcVZ2ew3stKdhaE4?=
- =?us-ascii?Q?CG2Bhyw5cZqs8JIWQO1se087dX04Ui0zBPrCvcTOfeF7m0sPvzHIiqfi8Xw0?=
- =?us-ascii?Q?9mnqRkgudpZJw+YcFJjAYZuHyFc78r2zLTHiLvGn8Aksy7/lXhFD80h1iFtE?=
- =?us-ascii?Q?sTYzQMMain24OI2rrY3rbrO+w7W8bVj71cfw7Fq3I3SM+jKXr+YrWIqNgPCg?=
- =?us-ascii?Q?d55ApNuJa2L7edmiBG0887CRsRKnesMtuuIAeFd3LqK7mL8l5taLymMsj8m0?=
- =?us-ascii?Q?YtEyG3PzeJORFM4bnNfkXHufsb8I3Xgv6dxpShrcDS1CbFOkfI2aEtQG5VIS?=
- =?us-ascii?Q?+rr/5/PvgPfJbc/ND5iskzN6CscPFyiKVfoLEZwFwaxhBCIgyEf64h+dTdNN?=
- =?us-ascii?Q?f+ysZADYJ8SAo9vxEvPDX5bk8pZ4pPGe47Gtxjx8Ayf3jwRYy7d3U4idD1Pr?=
- =?us-ascii?Q?xqZiIGAiR03Cuw5xnR0F7ROdAvrCf9AXcl50DSjF?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5ca93a90-65f2-411a-439d-08db6cc83f2e
-X-MS-Exchange-CrossTenant-AuthSource: DB7PR04MB4505.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jun 2023 11:12:31.5731
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ZsQTBVaWdU6Cc1q5w0+qpg/ZONenE5hcHutiIOMq4GzGPjveEk9CfVPbW6p65NRLAzxVtuzXRQUaZfsWaEDeLA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9174
+Content-Disposition: inline
+In-Reply-To: <0a57a9ad-67ab-cf1a-9bb7-c645de833450@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230614_041249_919517_8E5709A3 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230614_074740_706448_905D7660 
+X-CRM114-Status: GOOD (  19.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,35 +93,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The data line can be kept or disconnected when vbus is not present. This
-will add a flag "fsl,hold-line-without-vbus" to describe this behavior.
+On Tue, Jun 13, 2023 at 09:02:23PM +0200, Konrad Dybcio wrote:
+> 
+> 
+> On 12.06.2023 11:23, Bartosz Golaszewski wrote:
+> > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> > 
+> > Enable the internal PHY on sa8775p-ride.
+> > 
+> > Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> > ---
+> Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+> 
+> ---
+> 
+> Bjorn, Krzysztof.. I was thinking whether we should even be disabling
+> such hardware by default..
+> 
 
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
----
- Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 7 +++++++
- 1 file changed, 7 insertions(+)
+I'm in favor of keeping the configuration as generic/common/simple as
+possible. So I like your suggestion.
 
-diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-index f4b1ca2fb562..c5f9d8a8298e 100644
---- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-@@ -87,6 +87,13 @@ properties:
-     maximum: 119
-     default: 100
- 
-+  fsl,hold-line-without-vbus:
-+    description:
-+      Normaly, the data line should be disconnected if vbus is not
-+      present. This flag is used to hold data line even though vbus
-+      is not present.
-+    type: boolean
-+
- required:
-   - compatible
-   - reg
--- 
-2.34.1
+Regards,
+Bjorn
 
+> Things that reside on the SoC and have no external dependencies could
+> be left enabled:
+> 
+> pros:
+> - less fluff
+> - we'd probably very quickly fix the missing PM calls
+> - possibly less fw_devlink woes if we fail to get rid of references to
+>   the disabled component?
+> 
+> cons:
+> - boot times
+> - slightly more memory usage
+> 
+> Konrad
+> >  arch/arm64/boot/dts/qcom/sa8775p-ride.dts | 4 ++++
+> >  1 file changed, 4 insertions(+)
+> > 
+> > diff --git a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
+> > index ab767cfa51ff..7754788ea775 100644
+> > --- a/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
+> > +++ b/arch/arm64/boot/dts/qcom/sa8775p-ride.dts
+> > @@ -355,6 +355,10 @@ &qupv3_id_2 {
+> >  	status = "okay";
+> >  };
+> >  
+> > +&serdes_phy {
+> > +	status = "okay";
+> > +};
+> > +
+> >  &sleep_clk {
+> >  	clock-frequency = <32764>;
+> >  };
 
 -- 
 linux-phy mailing list
