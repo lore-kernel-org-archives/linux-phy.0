@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF69EEB64D8
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 16:16:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C95EEB64D8
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 17:18:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VNPwkho7ld3HAGynJ+2QZtlyoE1fH9/TVNJcTW9Xe7w=; b=iEUqOV2m8Ek6fx
-	H3uz57/xqZtcoNGL/0teNRDMOVS16uuINZ1HgVq7mXVg6xPmPo8k91ChICHEMc9GCvBIQTVaSOOgj
-	dxhvE5hFBZeTzfJZgMGW0UI2VMTyOo+bzOpocY1no8307t+4G/4zf02XwT9UnhjzZoLxgREXzHiMv
-	nX2PxaAr4dHZkSSLFYBGiGUfpZ8UgodkSvpnEkssz9+Ixh3OABexUWvghDHYfupUf2ET9EHINajMy
-	m8WgsIUs1LsvbKtm0PCA0eQX1TK303EGD98rXQoWZRGCTPzH1BqenKQtXYQ/9nnTOpVOta6VKgPli
-	6wap/zyseFaQ1n6vZwoQ==;
+	List-Owner; bh=AtIZs5w7IxRjpnNxDYbQB6+6aHkSWRDSkZ+sC1P93rM=; b=dLm2jdwN4Eytqd
+	udcz/jjmdOj7ZnEu8IzZSIKlbJwyu1cffu0O7bFySIOZ4GstyS69UzJlLvX4GoG2S0iRVJ1j+dxwS
+	G+O21xEfdJt50L4nIQMAVL/rX8S8vkgox6pkq4n/+TBmTaTuV47codKLuQ+weo0+99hWg/DhoAgci
+	vRN3cIGap2PTPbNkvhq+okFS7/SmwiwwbdbXey4xuqtJWor2kUh1y7Uo0tVFpLntDa7IFoxOf1bfk
+	spNcWi6jRjSxx/pEf1KDIzQBu8/rnXstXNca9f+yi+CQNuQr3SoY2OGNN3EM3+weRS2z62aw5rCQz
+	rtVzktYYAilqMlr1SQRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9TAz-00CBHb-1n;
-	Wed, 14 Jun 2023 16:16:53 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1q9U8O-00CK8M-30;
+	Wed, 14 Jun 2023 17:18:16 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9TAv-00CBGR-1K
+	id 1q9U8L-00CK6x-2h
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Jun 2023 16:16:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1686759409; x=1718295409;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=hNRyqUyJwPRgDx83ggrfVP33lL+susjiOlT7HtsU1sA=;
-  b=KvQdlg5J3yglC7Cz7zcQqCQ8ZOBo4TLWryxlIr2X6vi50GIWq4/xIIaq
-   XSEIVXWWJCMcZzy/Q7e0mNxkDC9e1s1E5Jz//DB7zuvuwNUCFSqWAeFqk
-   EGRtYaTXEVEplL3x3WyyLSfdIjr7shLgYTA7fCThsp4suoopXGSXx8mUG
-   SVXislVcXzI1wqJbzCqJj0+XZEdEj6TVmEjo027qPGiqFHIDLXXmCyZww
-   nSALrEY2b1f1T4B4JtFiGLRya2YAkuKuHVSWavaIrZCJ3ikZK8SLP2Bxi
-   B4r6m3+5aVpiQ7WtiPpI0OfzlRU7GO3T2Ja6yvDBhqOiaaMFjJa3ShiKR
-   w==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10741"; a="424546809"
-X-IronPort-AV: E=Sophos;i="6.00,243,1681196400"; 
-   d="scan'208";a="424546809"
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
-  by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jun 2023 09:14:40 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10741"; a="824872060"
-X-IronPort-AV: E=Sophos;i="6.00,243,1681196400"; 
-   d="scan'208";a="824872060"
-Received: from lkp-server02.sh.intel.com (HELO d59cacf64e9e) ([10.239.97.151])
-  by fmsmga002.fm.intel.com with ESMTP; 14 Jun 2023 09:14:36 -0700
-Received: from kbuild by d59cacf64e9e with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1q9T8l-0000qX-10;
-	Wed, 14 Jun 2023 16:14:35 +0000
-Date: Thu, 15 Jun 2023 00:13:21 +0800
-From: kernel test robot <lkp@intel.com>
-To: Stanley Chang <stanley_chang@realtek.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: oe-kbuild-all@lists.linux.dev,
-	Stanley Chang <stanley_chang@realtek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Bagas Sanjaya <bagasdotme@gmail.com>,
-	Matthias Kaehlcke <mka@chromium.org>,
-	Douglas Anderson <dianders@chromium.org>,
-	Flavio Suligoi <f.suligoi@asem.it>, Ray Chi <raychi@google.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v4 3/5] phy: realtek: usb: Add driver for the Realtek SoC
- USB 3.0 PHY
-Message-ID: <202306142340.nvui81i4-lkp@intel.com>
-References: <20230614092850.21460-3-stanley_chang@realtek.com>
+	Wed, 14 Jun 2023 17:18:15 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-9828a7a39d1so51969166b.0
+        for <linux-phy@lists.infradead.org>; Wed, 14 Jun 2023 10:18:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1686763091; x=1689355091;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=8E7alXFnYsjNnpR3eeRhfbBudzEGWslVHCnpWP7s+Ps=;
+        b=KCw9rCdMRs4kJjHk8mRBUZdS42UXu+0EDm58vQmdK8+4FSUI7VIPjUh5+p721T9S0c
+         wYy1GIWwJXJ+kJTz4JfBR4iSBmWH+Jcc0cJsYS3Xwx9LOynHq8yIyHr9klHtl8F+4ASo
+         zURXuMf5IvpRb1njMo1OFhjf9yWyUz75QLQga5iRH1Ow78VjlBXu0y0fAm2XA800KUVF
+         m71MHUlFOCaR+hZW3Y6H/4g761u6643fjYN7Z+vFVpH8k7HTIBNAC2jgUaNIzHdZDs5S
+         npKpR4a0K4yksS18cbcPampxntv8dpt/xBTD0UwZwOp+OfNx/pHfLURf5U6ECrkgN5xf
+         SgGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686763091; x=1689355091;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=8E7alXFnYsjNnpR3eeRhfbBudzEGWslVHCnpWP7s+Ps=;
+        b=UdUdsvQocHuZvg5qCY3P1dfNMbuiDuND1AmVlXoPqT0yD7ZLol1MFPTdLtn+65k30E
+         kumXo53xvihpEgUTaKdBSPKVLpCAkeDcNf9B+xZxXQjfX0tB6Mc4BqguKeHrx39XCoRd
+         dADY6prVcWkXoqvitDNtqcf9Oou3o/hMiaNRcShsPpqhAv1X0M3EgsyqvFXtx5Ew27pu
+         HCQrJkVInrJ72iXrZaut01/5vRc+Ym1RZekfWCaW7NQojMDwSdndpYVN6JCbv5krwL83
+         Fbf1SQ/pUbwOCauOjtq5q8q+VPOCNEEdGqRPTsr7FiODpdGRmHRGtno+RYlAncTqILNI
+         ljVA==
+X-Gm-Message-State: AC+VfDwND8rK8uekoRG9Qj02MIPJH3bPRe2668U7HruisNHyXytQ62mO
+	YHwKa4PZI0bCPA+T6JT6v6+/qA==
+X-Google-Smtp-Source: ACHHUZ75e4yY8YF/k+wmJTVdekC0yLpMAEC0vuUyrJXPr0t0Ni9R0Ob8GwayNhixL4qkK6ErxbLDAg==
+X-Received: by 2002:a17:907:94ca:b0:96a:52e:5379 with SMTP id dn10-20020a17090794ca00b0096a052e5379mr14942952ejc.63.1686763091507;
+        Wed, 14 Jun 2023 10:18:11 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id r2-20020a170906548200b0096f5b48fe43sm8149752ejo.47.2023.06.14.10.18.08
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 14 Jun 2023 10:18:11 -0700 (PDT)
+Message-ID: <8fdcd38e-7b4b-6016-2014-5d5de05c2267@linaro.org>
+Date: Wed, 14 Jun 2023 19:18:07 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230614092850.21460-3-stanley_chang@realtek.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH 2/2] usb: phy: mxs: add DT bindings to hold data line
+Content-Language: en-US
+To: Xu Yang <xu.yang_2@nxp.com>, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, gregkh@linuxfoundation.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, jun.li@nxp.com
+Cc: Frank.Li@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-usb@vger.kernel.org
+References: <20230614111548.1815146-1-xu.yang_2@nxp.com>
+ <20230614111548.1815146-2-xu.yang_2@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230614111548.1815146-2-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230614_091649_886990_CA3E7208 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20230614_101813_871009_3DE8E4E6 
+X-CRM114-Status: GOOD (  18.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,114 +99,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Stanley,
+On 14/06/2023 13:15, Xu Yang wrote:
+> Whether the data line is disconnected when vbus is not present is related
+> to whether the platform data set MXS_PHY_DISCONNECT_LINE_WITHOUT_VBUS
+> flag. This will provide a override from dts node if the user want to hold
+> the data line when vbus is not present.
+> 
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> ---
+>  drivers/usb/phy/phy-mxs-usb.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/usb/phy/phy-mxs-usb.c b/drivers/usb/phy/phy-mxs-usb.c
+> index e1a2b2ea098b..036bb58a3a71 100644
+> --- a/drivers/usb/phy/phy-mxs-usb.c
+> +++ b/drivers/usb/phy/phy-mxs-usb.c
+> @@ -199,7 +199,7 @@ MODULE_DEVICE_TABLE(of, mxs_phy_dt_ids);
+>  struct mxs_phy {
+>  	struct usb_phy phy;
+>  	struct clk *clk;
+> -	const struct mxs_phy_data *data;
+> +	struct mxs_phy_data *data;
+>  	struct regmap *regmap_anatop;
+>  	int port_id;
+>  	u32 tx_reg_set;
+> @@ -774,6 +774,11 @@ static int mxs_phy_probe(struct platform_device *pdev)
+>  		mxs_phy->tx_reg_set  |= GM_USBPHY_TX_D_CAL(val);
+>  	}
+>  
+> +	mxs_phy->data = (struct mxs_phy_data *)of_device_get_match_data(&pdev->dev);
+> +
+> +	if (of_property_present(np, "fsl,hold-line-without-vbus"))
+> +		mxs_phy->data->flags &= ~MXS_PHY_DISCONNECT_LINE_WITHOUT_VBUS;
 
-kernel test robot noticed the following build warnings:
+How did you test it? What type of memory are you modifying?
 
-[auto build test WARNING on usb/usb-testing]
-[also build test WARNING on usb/usb-next usb/usb-linus robh/for-next linus/master v6.4-rc6 next-20230614]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Best regards,
+Krzysztof
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Stanley-Chang/phy-realtek-usb-Add-driver-for-the-Realtek-SoC-USB-2-0-PHY/20230614-173349
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git usb-testing
-patch link:    https://lore.kernel.org/r/20230614092850.21460-3-stanley_chang%40realtek.com
-patch subject: [PATCH v4 3/5] phy: realtek: usb: Add driver for the Realtek SoC USB 3.0 PHY
-config: sparc-allyesconfig (https://download.01.org/0day-ci/archive/20230614/202306142340.nvui81i4-lkp@intel.com/config)
-compiler: sparc64-linux-gcc (GCC) 12.3.0
-reproduce (this is a W=1 build):
-        mkdir -p ~/bin
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        git remote add usb https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git
-        git fetch usb usb-testing
-        git checkout usb/usb-testing
-        b4 shazam https://lore.kernel.org/r/20230614092850.21460-3-stanley_chang@realtek.com
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.3.0 ~/bin/make.cross W=1 O=build_dir ARCH=sparc olddefconfig
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.3.0 ~/bin/make.cross W=1 O=build_dir ARCH=sparc SHELL=/bin/bash drivers/phy/realtek/
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202306142340.nvui81i4-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/realtek/phy-rtk-usb3.c: In function 'rtk_usb3phy_probe':
->> drivers/phy/realtek/phy-rtk-usb3.c:779:29: warning: variable 'node' set but not used [-Wunused-but-set-variable]
-     779 |         struct device_node *node;
-         |                             ^~~~
-
-
-vim +/node +779 drivers/phy/realtek/phy-rtk-usb3.c
-
-   774	
-   775	static int rtk_usb3phy_probe(struct platform_device *pdev)
-   776	{
-   777		struct rtk_phy *rtk_phy;
-   778		struct device *dev = &pdev->dev;
- > 779		struct device_node *node;
-   780		struct phy *generic_phy;
-   781		struct phy_provider *phy_provider;
-   782		const struct phy_cfg *phy_cfg;
-   783		int ret;
-   784	
-   785		phy_cfg = of_device_get_match_data(dev);
-   786		if (!phy_cfg) {
-   787			dev_err(dev, "phy config are not assigned!\n");
-   788			return -EINVAL;
-   789		}
-   790	
-   791		rtk_phy = devm_kzalloc(dev, sizeof(*rtk_phy), GFP_KERNEL);
-   792		if (!rtk_phy)
-   793			return -ENOMEM;
-   794	
-   795		rtk_phy->dev			= &pdev->dev;
-   796		rtk_phy->phy.dev		= rtk_phy->dev;
-   797		rtk_phy->phy.label		= "rtk-usb3phy";
-   798		rtk_phy->phy.notify_port_status = rtk_phy_notify_port_status;
-   799	
-   800		rtk_phy->phy_cfg = devm_kzalloc(dev, sizeof(*phy_cfg), GFP_KERNEL);
-   801	
-   802		memcpy(rtk_phy->phy_cfg, phy_cfg, sizeof(*phy_cfg));
-   803	
-   804		node = dev->of_node;
-   805	
-   806		rtk_phy->num_phy = 1;
-   807	
-   808		ret = parse_phy_data(rtk_phy);
-   809		if (ret)
-   810			goto err;
-   811	
-   812		platform_set_drvdata(pdev, rtk_phy);
-   813	
-   814		generic_phy = devm_phy_create(rtk_phy->dev, NULL, &ops);
-   815		if (IS_ERR(generic_phy))
-   816			return PTR_ERR(generic_phy);
-   817	
-   818		phy_set_drvdata(generic_phy, rtk_phy);
-   819	
-   820		phy_provider = devm_of_phy_provider_register(rtk_phy->dev, of_phy_simple_xlate);
-   821		if (IS_ERR(phy_provider))
-   822			return PTR_ERR(phy_provider);
-   823	
-   824		ret = usb_add_phy_dev(&rtk_phy->phy);
-   825		if (ret)
-   826			goto err;
-   827	
-   828		create_debug_files(rtk_phy);
-   829	
-   830	err:
-   831		return ret;
-   832	}
-   833	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
