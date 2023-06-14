@@ -4,97 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02ACFEB64D9
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 07:25:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 342E8EB64D9
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jun 2023 07:29:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RcdUs5oEukrkkPmzNvyR0wyBwLJrNWu34tXa5rTeW5s=; b=bKYlgxa3flv0E2
-	/rejoN3CqOnFWDaFG+ojFLBg2SSvnvenm5SCAoSOqOABmCkCRkn2R9ifcb1QXd+qaowA1tKZaaPj3
-	m1y7R4gS+kwBrIrCQDy0JwZwvHNaM5A71njHa+C+QfWRz/GwH08vo8TFGVaRnNG+ROAJTNpnuT0dz
-	jJX0JczeNvah95dvbtlinAz9XEOb7aiWRLt6MGEgeysjaeL7HYW2qWdQ39Z9tqqo+RP6L3CL/myFi
-	v69wMuBYi6hniqkDncoLLf9/VQJ20r6veLOJxRknZ4aY5znIGdOkqXDseTx6FiE764U63AgvxYMIs
-	ghGod4dQLJTUeovwvtfA==;
+	List-Owner; bh=4qNpQUvI9L1xVRGvZF0WT/ypDDSs4LzfqC8WsYyKED8=; b=nFAe1cdl5pz58h
+	nH3KxLum2s2GgVSP9w7JyH2N6LSI0rtvQJE+i+fuKWF6gbm5LT7McvKGK5j8FNUZEKAL0CjBQkTnN
+	92p1N+lLH2fPu/dFo7/6YZgkISetgSuOkjNCVsst5kE8uTuQhpO5kieYnVAi40CC60t5Ks8IJprX/
+	O56JlAtaZ5jBk2y+gWmZJ2fSazFyugz3eZid7FFKK8h2Ks5zHScwdFOIu2Y7Ld3DQfH3cJrgsZQNO
+	bY9Dsf6JYhLBKwX3wk1U0+Dz2WvQ5W0FkZcf/ehNdo4L03S4u+6yzEkZyL+TlqimKYUMZFt0aJ+lB
+	Km5+8YEFMf/HoQbSXqhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9Kt3-00Aeu4-27;
-	Wed, 14 Jun 2023 07:25:49 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1q9KwB-00AfZU-2e;
+	Wed, 14 Jun 2023 07:29:03 +0000
+Received: from mail-vs1-xe29.google.com ([2607:f8b0:4864:20::e29])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9Kt0-00AesZ-0F
+	id 1q9Kw8-00AfY5-29
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Jun 2023 07:25:47 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-51873d9a75dso3080581a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 14 Jun 2023 00:25:45 -0700 (PDT)
+	Wed, 14 Jun 2023 07:29:01 +0000
+Received: by mail-vs1-xe29.google.com with SMTP id ada2fe7eead31-43dd7791396so793090137.0
+        for <linux-phy@lists.infradead.org>; Wed, 14 Jun 2023 00:28:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686727544; x=1689319544;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ZYUp6f+gg9nccS7jAmhavJJDmvTnWdlOMMShB2IfyLM=;
-        b=f+YcEOcsWR8xL+5nkBdWG/XfQuwyydCnwar9FyE0t3Il1q/TbBYviUimty8SCA+6JI
-         OVAHeuvn5JYITI7W9hGiUU7vMeA0ISeoGPV0GNyi9lbrYkZ/vU9OKmTFoGEG1EaL80EF
-         WoVjyhNosru4+9vZSX4c1N0vtx2IB2ySXYBz2+3wBy7u5yU53WuKY2tKmVQuJbfPkb6V
-         ex3iX/Qm0KBiyzrxddSfGNS3SqjqzEj+Dyw+rK8fdfBGTds/xOsFw2TDpwSP/IS5ZAg6
-         +eWVXA0FHOT9SHrACDTibQjZ80tQRKeJNAW01TYc+zt+xoOxBvHkKneW41gn8SX8Pj95
-         V+Xw==
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686727739; x=1689319739;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=5CRRGmdvDVbIEVTAFye64zUK3XOXIsv8ssMpfcABwlc=;
+        b=Nf0/wLoZ38LsOopYbyo0ezI8LUQxgJTAFLkmLtgB++4Cqtqg95I3NTpGl9TXnYDDkY
+         wQhNpaGtN+5iKwyxA/Sc3yKL4QWEEoRYv1tUv0/rZ1jPqpc9h2liqXzIFsH7Mk0PzJ2D
+         8Dt9l/8xaaR/qGP/pxdKD42jgFfMPgpFD59+6wt7ykOg3xU4OOQOIVjAB7xnsarGe2xV
+         S1QJ6zDt5NlO/4rFM4tBxEctZeiRwHUUbqReFG2sT+6YQbOdFDmCmmmOhAPgpwdAefLP
+         SOVujR+y+Jx1AZxSFRB5PTZR3D5aXGCdsLrtMDajNAzKERlzusmNmNlP39Tdtw7fIp0C
+         Jqdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686727544; x=1689319544;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ZYUp6f+gg9nccS7jAmhavJJDmvTnWdlOMMShB2IfyLM=;
-        b=FAIwuUHhI4coW/8Q39sJ1OZ9QJqga7oWhBrfWyBIdYEWo6cTilezPZYwcCk0Ph1yKV
-         4jEzir78WgYpKSfxXOASBDbsN9j0k5jcHXtIEIGKkN6SspeIKDuaaFJzvpsMSdn+SWQT
-         +ZZtnNp7nhPg7FOTyxxYDdrSfZ3cOnXsTCLWRJa3/eNzJgaAvm/gBGnayQ4GuHAWR+Un
-         rMWQJWp/4XyIo8gCKcahNjwNXfoB72flw3wQATpSLRxuYRy21KrgAYubPzsPN0bDhRXc
-         V0DJLKx2kAsqCkHy4gg6dpS6FI8/huxRW2avYBLJ3EXueDOE/0Cc3A3FfU9O64l5UCr7
-         4nwg==
-X-Gm-Message-State: AC+VfDymk+2SHgYHMQozxGq425EBiyBOZ90QobVv/gUOno1uFl+0orKx
-	x3jV0GC7kt8hRVfBw1QC1FqKiA==
-X-Google-Smtp-Source: ACHHUZ7mP70TiHTncN1MepuY33PcI4oQtT42XBiiH2VcreWZ2uAPSk4CyOcrDDgSGNYQSZjYSpcrNQ==
-X-Received: by 2002:a05:6402:180f:b0:513:fa61:397a with SMTP id g15-20020a056402180f00b00513fa61397amr816136edy.12.1686727544263;
-        Wed, 14 Jun 2023 00:25:44 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id b24-20020a056402139800b0051827a12b47sm5256406edv.15.2023.06.14.00.25.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 14 Jun 2023 00:25:43 -0700 (PDT)
-Message-ID: <712b2650-f0c1-088a-612c-ef6d6bcc1eb0@linaro.org>
-Date: Wed, 14 Jun 2023 09:25:40 +0200
+        d=1e100.net; s=20221208; t=1686727739; x=1689319739;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=5CRRGmdvDVbIEVTAFye64zUK3XOXIsv8ssMpfcABwlc=;
+        b=O0rX/olFnjZ90JCZUauhEJP+vyThJgvF89wNX9fNwHjyZlhla9XGjLy+hspsEBO+Ah
+         CARe6C/XQwYvtATBHqxInn5pFEIk4tx5X7jyXfFCxuuashJsXdXdTh8qvRmU5peP+SeX
+         pyLp1P5GIIHc6Vx+tFtpeRedBKKmAn0oCCJ8HYNoqAGJUDWznJ5a5SCA6VTr5kIScprz
+         tAFLuc2cDi3fnqAC9v5+LtGLjf0qcs/TT4GyVdiGSzteWtGdNM+fb7bBxZ7EXwclLTaN
+         ADazJq+6OCL8d+jSNPJ8s0q+MJ37PrY9ZoL4ZDxswFIchiaDQPhML/GZcxrEBZoAZ8xw
+         tpXA==
+X-Gm-Message-State: AC+VfDzyxe1C9W4yYL52J66dqj1WN8FF4XWN57e5KRuXFcglHcZ/Fgvk
+	oTZXlI2C4h9KR6zt4Ua6BqSg778tYtzc71bKPGK9fA==
+X-Google-Smtp-Source: ACHHUZ5IOUv06tiZXv2OeC2IVs2JPsy0d5AliyorYz0hKnjFQVcPktvrX5L1vFgxFRciusLts8S8bofr4NgaMAhMxQo=
+X-Received: by 2002:a05:6102:ca:b0:43d:54e9:35fb with SMTP id
+ u10-20020a05610200ca00b0043d54e935fbmr7796848vsp.14.1686727739229; Wed, 14
+ Jun 2023 00:28:59 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH 20/26] dt-bindings: net: qcom,ethqos: add description for
- sa8775p
-Content-Language: en-US
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Vinod Koul <vkoul@kernel.org>,
- Bhupesh Sharma <bhupesh.sharma@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- "David S . Miller" <davem@davemloft.net>, Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Jose Abreu <joabreu@synopsys.com>
-Cc: netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-References: <20230612092355.87937-1-brgl@bgdev.pl>
- <20230612092355.87937-21-brgl@bgdev.pl>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230612092355.87937-21-brgl@bgdev.pl>
+References: <20230612092355.87937-1-brgl@bgdev.pl> <20230612092355.87937-21-brgl@bgdev.pl>
+ <712b2650-f0c1-088a-612c-ef6d6bcc1eb0@linaro.org>
+In-Reply-To: <712b2650-f0c1-088a-612c-ef6d6bcc1eb0@linaro.org>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Wed, 14 Jun 2023 09:28:48 +0200
+Message-ID: <CAMRc=McvVwk_HGU_cRzJ_qsCriHKfq61qL7bbe10evr-Sp6YSA@mail.gmail.com>
+Subject: Re: [PATCH 20/26] dt-bindings: net: qcom,ethqos: add description for sa8775p
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Bhupesh Sharma <bhupesh.sharma@linaro.org>, 
+	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, "David S . Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Giuseppe Cavallaro <peppe.cavallaro@st.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Jose Abreu <joabreu@synopsys.com>, 
+	netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-stm32@st-md-mailman.stormreply.com, 
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230614_002546_116938_FE035EB0 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20230614_002900_728183_7C4A51F6 
+X-CRM114-Status: GOOD (  19.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,85 +95,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/06/2023 11:23, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> 
-> Add the compatible for the MAC controller on sa8775p platforms. This MAC
-> works with a single interrupt so add minItems to the interrupts property.
-> The fourth clock's name is different here so change it. Enable relevant
-> PHY properties.
-> 
-
-I think the patch should be squashed with previous. Adding compatible to
-common snps,dwmac binding does not make sense on its own. It makes sense
-with adding compatible here.
-
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> ---
->  .../devicetree/bindings/net/qcom,ethqos.yaml       | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-> index 60a38044fb19..b20847c275ce 100644
-> --- a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-> +++ b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-> @@ -20,6 +20,7 @@ properties:
->    compatible:
->      enum:
->        - qcom,qcs404-ethqos
-> +      - qcom,sa8775p-ethqos
->        - qcom,sc8280xp-ethqos
->        - qcom,sm8150-ethqos
->  
-> @@ -32,11 +33,13 @@ properties:
->        - const: rgmii
->  
->    interrupts:
-> +    minItems: 1
->      items:
->        - description: Combined signal for various interrupt events
->        - description: The interrupt that occurs when Rx exits the LPI state
->  
->    interrupt-names:
-> +    minItems: 1
->      items:
->        - const: macirq
->        - const: eth_lpi
-> @@ -49,11 +52,20 @@ properties:
->        - const: stmmaceth
->        - const: pclk
->        - const: ptp_ref
-> -      - const: rgmii
-> +      - enum:
-> +          - rgmii
-> +          - phyaux
->  
->    iommus:
->      maxItems: 1
->  
-> +  phys: true
-> +
-> +  phy-supply: true
-
-Isn't this property of the phy?
-
-> +
-> +  phy-names:
-> +    const: serdes
-
-Keep the phy-names after phys.
-
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBKdW4gMTQsIDIwMjMgYXQgOToyNeKAr0FNIEtyenlzenRvZiBLb3psb3dza2kKPGty
+enlzenRvZi5rb3psb3dza2lAbGluYXJvLm9yZz4gd3JvdGU6Cj4KPiBPbiAxMi8wNi8yMDIzIDEx
+OjIzLCBCYXJ0b3N6IEdvbGFzemV3c2tpIHdyb3RlOgo+ID4gRnJvbTogQmFydG9zeiBHb2xhc3pl
+d3NraSA8YmFydG9zei5nb2xhc3pld3NraUBsaW5hcm8ub3JnPgo+ID4KPiA+IEFkZCB0aGUgY29t
+cGF0aWJsZSBmb3IgdGhlIE1BQyBjb250cm9sbGVyIG9uIHNhODc3NXAgcGxhdGZvcm1zLiBUaGlz
+IE1BQwo+ID4gd29ya3Mgd2l0aCBhIHNpbmdsZSBpbnRlcnJ1cHQgc28gYWRkIG1pbkl0ZW1zIHRv
+IHRoZSBpbnRlcnJ1cHRzIHByb3BlcnR5Lgo+ID4gVGhlIGZvdXJ0aCBjbG9jaydzIG5hbWUgaXMg
+ZGlmZmVyZW50IGhlcmUgc28gY2hhbmdlIGl0LiBFbmFibGUgcmVsZXZhbnQKPiA+IFBIWSBwcm9w
+ZXJ0aWVzLgo+ID4KPgo+IEkgdGhpbmsgdGhlIHBhdGNoIHNob3VsZCBiZSBzcXVhc2hlZCB3aXRo
+IHByZXZpb3VzLiBBZGRpbmcgY29tcGF0aWJsZSB0bwo+IGNvbW1vbiBzbnBzLGR3bWFjIGJpbmRp
+bmcgZG9lcyBub3QgbWFrZSBzZW5zZSBvbiBpdHMgb3duLiBJdCBtYWtlcyBzZW5zZQo+IHdpdGgg
+YWRkaW5nIGNvbXBhdGlibGUgaGVyZS4KPgo+ID4gU2lnbmVkLW9mZi1ieTogQmFydG9zeiBHb2xh
+c3pld3NraSA8YmFydG9zei5nb2xhc3pld3NraUBsaW5hcm8ub3JnPgo+ID4gLS0tCj4gPiAgLi4u
+L2RldmljZXRyZWUvYmluZGluZ3MvbmV0L3Fjb20sZXRocW9zLnlhbWwgICAgICAgfCAxNCArKysr
+KysrKysrKysrLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspLCAxIGRlbGV0
+aW9uKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9uZXQvcWNvbSxldGhxb3MueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9uZXQvcWNvbSxldGhxb3MueWFtbAo+ID4gaW5kZXggNjBhMzgwNDRmYjE5Li5iMjA4NDdj
+Mjc1Y2UgMTAwNjQ0Cj4gPiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+bmV0L3Fjb20sZXRocW9zLnlhbWwKPiA+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
+aW5kaW5ncy9uZXQvcWNvbSxldGhxb3MueWFtbAo+ID4gQEAgLTIwLDYgKzIwLDcgQEAgcHJvcGVy
+dGllczoKPiA+ICAgIGNvbXBhdGlibGU6Cj4gPiAgICAgIGVudW06Cj4gPiAgICAgICAgLSBxY29t
+LHFjczQwNC1ldGhxb3MKPiA+ICsgICAgICAtIHFjb20sc2E4Nzc1cC1ldGhxb3MKPiA+ICAgICAg
+ICAtIHFjb20sc2M4MjgweHAtZXRocW9zCj4gPiAgICAgICAgLSBxY29tLHNtODE1MC1ldGhxb3MK
+PiA+Cj4gPiBAQCAtMzIsMTEgKzMzLDEzIEBAIHByb3BlcnRpZXM6Cj4gPiAgICAgICAgLSBjb25z
+dDogcmdtaWkKPiA+Cj4gPiAgICBpbnRlcnJ1cHRzOgo+ID4gKyAgICBtaW5JdGVtczogMQo+ID4g
+ICAgICBpdGVtczoKPiA+ICAgICAgICAtIGRlc2NyaXB0aW9uOiBDb21iaW5lZCBzaWduYWwgZm9y
+IHZhcmlvdXMgaW50ZXJydXB0IGV2ZW50cwo+ID4gICAgICAgIC0gZGVzY3JpcHRpb246IFRoZSBp
+bnRlcnJ1cHQgdGhhdCBvY2N1cnMgd2hlbiBSeCBleGl0cyB0aGUgTFBJIHN0YXRlCj4gPgo+ID4g
+ICAgaW50ZXJydXB0LW5hbWVzOgo+ID4gKyAgICBtaW5JdGVtczogMQo+ID4gICAgICBpdGVtczoK
+PiA+ICAgICAgICAtIGNvbnN0OiBtYWNpcnEKPiA+ICAgICAgICAtIGNvbnN0OiBldGhfbHBpCj4g
+PiBAQCAtNDksMTEgKzUyLDIwIEBAIHByb3BlcnRpZXM6Cj4gPiAgICAgICAgLSBjb25zdDogc3Rt
+bWFjZXRoCj4gPiAgICAgICAgLSBjb25zdDogcGNsawo+ID4gICAgICAgIC0gY29uc3Q6IHB0cF9y
+ZWYKPiA+IC0gICAgICAtIGNvbnN0OiByZ21paQo+ID4gKyAgICAgIC0gZW51bToKPiA+ICsgICAg
+ICAgICAgLSByZ21paQo+ID4gKyAgICAgICAgICAtIHBoeWF1eAo+ID4KPiA+ICAgIGlvbW11czoK
+PiA+ICAgICAgbWF4SXRlbXM6IDEKPiA+Cj4gPiArICBwaHlzOiB0cnVlCj4gPiArCj4gPiArICBw
+aHktc3VwcGx5OiB0cnVlCj4KPiBJc24ndCB0aGlzIHByb3BlcnR5IG9mIHRoZSBwaHk/Cj4KCkl0
+IGlzLCBhbmQgYXMgZGlzY3Vzc2VkIGVsc2V3aGVyZSB3aXRoIEFuZHJldywgSSB3aWxsIG1vdmUg
+aXQgdG8gdGhlClNlckRlcyBQSFkgZHJpdmVyLgoKQmFydAoKPiA+ICsKPiA+ICsgIHBoeS1uYW1l
+czoKPiA+ICsgICAgY29uc3Q6IHNlcmRlcwo+Cj4gS2VlcCB0aGUgcGh5LW5hbWVzIGFmdGVyIHBo
+eXMuCj4KPgo+IEJlc3QgcmVnYXJkcywKPiBLcnp5c3p0b2YKPgoKLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
