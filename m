@@ -4,70 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63FD8EB64D9
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 17:10:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB455EB64DA
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 20:06:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:Subject:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GYlgSnGfoHQS5/ibqISptmH2vcLS41N0IV1/jPECHno=; b=cQ6ejDgEDbrjb7QegnLyFB5wT5
-	VQdPSNX9PYlkc7mFCYtaPi4NRog8i8OjHMKP2c4Lmc3/q5PO1xQK/TpuGKmh4rytLL0bDOlbvj3Ic
-	nPdgwJMf/9Ecvrnoxyhe6Y4knrs4CLKCRHSL6LnQjQ5UXnpmAd2Uv+kLb55z3aOgB6Uu6gOs/QBsy
-	dZsYgVuh0651iJJU7+0LhzK1ATyfVPd1FnzAeOvJYJYFdNJ4uByXgwnP8uy6g/cFhp3Rr6WHCNtrp
-	3207lC60fa9PNjJGnowZwk1GYGwBHsuO/LGlMZCBH/SzS35EQT0QmDOdbvEjIZvv3QougxpBE0WiG
-	mHNclWcw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe
+	:List-Id:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=G5hOS96zfl+QRNsW0zIvzoWgjvx8hULCior5qHCMqI4=; b=qnl
+	pJ8iNKnmNPwAKK5otaBHZUfAsToultMFMe6w7tuH/k6Fn8+Vtqni5Qn7e/60CM+yHDcksPDCvfkrq
+	CaS+6949vfL61rCTiLZRxaz8qrE2NJErLXF5XhQk9GJWf+7zoxCIBMz22CCvOS5EgwVronmo6X6AF
+	ECaswKH2yyqfw9ac+9GxF2QU72ak69dl2FQRE7aJla1JqCq/JT4rb/js9dtfx8wg53/agpFIsP7i0
+	8zydJwyPfMFhqyJeR/5DbWXh3iAQtQV14+1HwEJ2sTWPLunn58dxD+9n+eU2tMKZR+jcE1XY41SpV
+	PBypORfPTkX+QlIc7OPJIyv5h545OMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9qUg-00FXYc-0D;
-	Thu, 15 Jun 2023 17:10:46 +0000
-Received: from s.wrqvtzvf.outbound-mail.sendgrid.net ([149.72.126.143])
+	id 1q9tEl-00Fz01-1F;
+	Thu, 15 Jun 2023 20:06:31 +0000
+Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9qUL-00FXFW-1A
+	id 1q9tEh-00FyyG-1T
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Jun 2023 17:10:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
-	h=from:subject:in-reply-to:references:mime-version:to:cc:
-	content-transfer-encoding:content-type:cc:content-type:from:subject:to;
-	s=s1; bh=vA0siNNoQPy3/vIOzvke7+l30gRVntlLCictzmh3vc4=;
-	b=L64zJrLw3eZ2e4DG7uxcRJqNHwnk8peGVI8BsMgi1WAnJ1taOMGTyATt1iCkBzk7UN0c
-	hZ5oQ1wpZISnM+8QT5ncBm1mNrSQXgbaFAIS3eu2v/Mwn0Jcm15W6HWsgMp5B9ammkbFTO
-	c+0fxmCmpOKDIRVjcSSOVCknAWUiHvxfY7h3Xn65P6ebwBr/znzhFrEcy691wmjAhPoo3H
-	ncIsiLwlO5dVvxbDqHHf0EAswnCDUDNpGwIXhzi1HtH5vEMGG5ZjEZsCVQA+M19+LfBEh5
-	a4h+3HR65KYy+UUBjOyaeKoQgegbGRMQAX2ZXKItKRr3DHBCvCHsvObhZ/KdwGhw==
-Received: by filterdrecv-77869f68cc-wnrh7 with SMTP id filterdrecv-77869f68cc-wnrh7-1-648B4600-23
-        2023-06-15 17:10:24.425570446 +0000 UTC m=+3087264.078000380
-Received: from bionic.localdomain (unknown)
-	by geopod-ismtpd-2 (SG)
-	with ESMTP
-	id HQNKjoSjR1mzIcQ_hvUZmQ
-	Thu, 15 Jun 2023 17:10:24.176 +0000 (UTC)
-From: Jonas Karlman <jonas@kwiboo.se>
-Subject: [PATCH v4 6/6] phy/rockchip: inno-hdmi: add more supported pre-pll
- rates
-Date: Thu, 15 Jun 2023 17:10:24 +0000 (UTC)
-Message-Id: <20230615171005.2251032-7-jonas@kwiboo.se>
-X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230615171005.2251032-1-jonas@kwiboo.se>
-References: <20230615171005.2251032-1-jonas@kwiboo.se>
-MIME-Version: 1.0
-X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
- =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0hz8oSuRXGDMMoZV6B?=
- =?us-ascii?Q?CxIqjmFYxi1bh4TJ6nKozoHh9FOiC8fAFX0eSLn?=
- =?us-ascii?Q?M+Ufr7bz5a2Un1rlQ03elOU3nDdr+qO3pMSaqWp?=
- =?us-ascii?Q?l8epCyqunaSLFgXBpjQgJDiEZpqhnHC9TuZZmG6?=
- =?us-ascii?Q?wVHotJQxDlpUCR=2Fa2rojpDkN5lXe+KnFeS8NOw?=
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Cc: Alex Bee <knaerzche@gmail.com>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org, Jonas Karlman <jonas@kwiboo.se>
-X-Entity-ID: P7KYpSJvGCELWjBME/J5tg==
+	Thu, 15 Jun 2023 20:06:29 +0000
+Received: by mail-qk1-x72b.google.com with SMTP id af79cd13be357-75d4f12d4a3so1481385a.0
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 13:06:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1686859582; x=1689451582;
+        h=message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Hnzd+palwcWRC52VmHn5woaQBvZDH0Q0iYxHV+VK4xk=;
+        b=YsbmnBsLUPHJWMlVhW90OJbH8ZLTajJW0iV+D6eXkTMDen5FJu0jS1r0oHTwOZxZpB
+         wu2NLbVCW/ycfNNDwQ8SnhGy0H6EYisho7maBmyVOrHEc/jpZURVVt0xhg19u4uLeV7z
+         343JeHKOW2TTu4Fuq/U1L+ykGhqUAZfIGeXaA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686859582; x=1689451582;
+        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Hnzd+palwcWRC52VmHn5woaQBvZDH0Q0iYxHV+VK4xk=;
+        b=QLDR39LNOtrPE4oTQ3kUg/mwJXPfTXv/CvMq8qslqsGhE6hj6qb8q8cx2hNk9ILeq3
+         MIqG3KkQi1xmSndRr4egLy0bnQvwpUliOkLBD5/j6LIaqF8jEpFTzuPG3P6cBWePDsc/
+         HyyrUcHCqWVWo/P5VhJfRV4BiMkoaGrR80VeeWSyCD7UTSr3r4qkAO1bku2xmUropdd8
+         8S6r2bSPqESGamSq6BzyS8JpvDIxCN7B44IA4YmcgWFQwtmYcUq9jZPebi/BXGK+g316
+         fRQiC7TU6a0xYGQGUTR8yB0SWk5jxmYcrQDHaJuOPZul7jshJ55/jfyH0RQzo60YV8ed
+         tfyw==
+X-Gm-Message-State: AC+VfDwfeY9dPk//U4v6So4diQnNqGzm2uIgKhuv6JbDaFmZOtjGXkVC
+	I33HD/hlnJh2pz39nCOK08+9oXDNVosUR6tadeQ/m0BJm1fwYCzSkxQq3tOHTtGT5+sI4y9Q3m8
+	cgAKGVyPRzRLThqifvbXV3Qkr709MG9T/w/thKXrvQZapf0OwB/kcDHEidK36T2r1ZePB7ZgM8p
+	YT1vp9wB2GFov/
+X-Google-Smtp-Source: ACHHUZ6aJuyRgu9b+N8ZuwBH1x3qSUMNn1jby5ECwfrBPwroKUXZiIUJRvRQuK/BrqpKNWQSpv4NPA==
+X-Received: by 2002:a05:620a:214c:b0:75d:4d8f:5f37 with SMTP id m12-20020a05620a214c00b0075d4d8f5f37mr19691404qkm.52.1686859582283;
+        Thu, 15 Jun 2023 13:06:22 -0700 (PDT)
+Received: from stbirv-lnx-2.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id k4-20020a05620a142400b0075ceca53e84sm5721407qkj.15.2023.06.15.13.06.20
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 15 Jun 2023 13:06:21 -0700 (PDT)
+From: Justin Chen <justin.chen@broadcom.com>
+To: linux-phy@lists.infradead.org
+Cc: bcm-kernel-feedback-list@broadcom.com,
+	florian.fainelli@broadcom.com,
+	Justin Chen <justin.chen@broadcom.com>
+Subject: [PATCH 0/2] phy: usb: brcmstb bug fix and improvements
+Date: Thu, 15 Jun 2023 13:06:15 -0700
+Message-Id: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_101025_588453_443AE703 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20230615_130627_760831_769DA998 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,254 +83,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============1799012248665569798=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Alex Bee <knaerzche@gmail.com>
+--===============1799012248665569798==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
+	boundary="0000000000003695e205fe309a82"
 
-This adds a bunch of new pixel clock- and tmds rates to the pre-pll
-table which are required to get more VESA and some DMT rates working.
+--0000000000003695e205fe309a82
 
-It has been completely re-calculated to match the min- and max-vco of
-(750 MHz - 3.2 GHz) requirements. If more than one configuration would
-have been possible the lowest fbdiv and refdiv (and therefore lowest
-vco rate) has been preferred.
+Work around false positive overcurrent condition due to HW bug.
 
-It's important to note, that RK3228 version of the phy does not support
-fractional dividers. To support the most possible rates for this version
-also in both 8-bit and 10-bit variant, some rates are not exact. The
-maximum deviation of the pixel clock is 0.26, which perfectly fits into
-VESA DMT recommendation of 0.5%.
+Improvement power management.
 
-I tested all possible rates on several screens from different
-manufacturers with both RK3228 and RK3328. Both pre- and post-PLL
-locking are slighlty faster now.
+Justin Chen (2):
+  phy: usb: Turn off phy when port is in suspend
+  phy: usb: suppress OC condition for 7439b2
 
-Signed-off-by: Alex Bee <knaerzche@gmail.com>
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
----
-v3:
-- replaced patch with more improved rates
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 15 ++++++++--
+ drivers/phy/broadcom/phy-brcm-usb-init.c          | 34 +++++++++++++++++++++++
+ drivers/phy/broadcom/phy-brcm-usb-init.h          |  8 ++++++
+ 3 files changed, 55 insertions(+), 2 deletions(-)
 
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 198 +++++++++++++++---
- 1 file changed, 173 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index a1fb39af6493..88ddbfb90eed 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -292,31 +292,179 @@ struct inno_hdmi_phy_drv_data {
- };
- 
- static const struct pre_pll_config pre_pll_cfg_table[] = {
--	{ 27000000,  27000000, 1,  90, 3, 2, 2, 10, 3, 3, 4, 0, 0},
--	{ 27000000,  33750000, 1,  90, 1, 3, 3, 10, 3, 3, 4, 0, 0},
--	{ 40000000,  40000000, 1,  80, 2, 2, 2, 12, 2, 2, 2, 0, 0},
--	{ 59341000,  59341000, 1,  98, 3, 1, 2,  1, 3, 3, 4, 0, 0xE6AE6B},
--	{ 59400000,  59400000, 1,  99, 3, 1, 1,  1, 3, 3, 4, 0, 0},
--	{ 59341000,  74176250, 1,  98, 0, 3, 3,  1, 3, 3, 4, 0, 0xE6AE6B},
--	{ 59400000,  74250000, 1,  99, 1, 2, 2,  1, 3, 3, 4, 0, 0},
--	{ 74176000,  74176000, 1,  98, 1, 2, 2,  1, 2, 3, 4, 0, 0xE6AE6B},
--	{ 74250000,  74250000, 1,  99, 1, 2, 2,  1, 2, 3, 4, 0, 0},
--	{ 74176000,  92720000, 4, 494, 1, 2, 2,  1, 3, 3, 4, 0, 0x816817},
--	{ 74250000,  92812500, 4, 495, 1, 2, 2,  1, 3, 3, 4, 0, 0},
--	{148352000, 148352000, 1,  98, 1, 1, 1,  1, 2, 2, 2, 0, 0xE6AE6B},
--	{148500000, 148500000, 1,  99, 1, 1, 1,  1, 2, 2, 2, 0, 0},
--	{148352000, 185440000, 4, 494, 0, 2, 2,  1, 3, 2, 2, 0, 0x816817},
--	{148500000, 185625000, 4, 495, 0, 2, 2,  1, 3, 2, 2, 0, 0},
--	{296703000, 296703000, 1,  98, 0, 1, 1,  1, 0, 2, 2, 0, 0xE6AE6B},
--	{297000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2, 2, 0, 0},
--	{296703000, 370878750, 4, 494, 1, 2, 0,  1, 3, 1, 1, 0, 0x816817},
--	{297000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1, 1, 0, 0},
--	{593407000, 296703500, 1,  98, 0, 1, 1,  1, 0, 2, 1, 0, 0xE6AE6B},
--	{594000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2, 1, 0, 0},
--	{593407000, 370879375, 4, 494, 1, 2, 0,  1, 3, 1, 1, 1, 0x816817},
--	{594000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1, 1, 1, 0},
--	{593407000, 593407000, 1,  98, 0, 2, 0,  1, 0, 1, 1, 0, 0xE6AE6B},
--	{594000000, 594000000, 1,  99, 0, 2, 0,  1, 0, 1, 1, 0, 0},
-+	{ 25175000,  25175000,  3,  125, 3, 1, 1,  1, 3, 3,  4, 0, 0xe00000},
-+	{ 25175000,  31468750,  1,   41, 0, 3, 3,  1, 3, 3,  4, 0, 0xf5554f},
-+	{ 27000000,  27000000,  1,   36, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 27000000,  33750000,  1,   45, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 31500000,  31500000,  1,   42, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 31500000,  39375000,  1,  105, 1, 3, 3, 10, 0, 3,  4, 0,      0x0},
-+	{ 33750000,  33750000,  1,   45, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 33750000,  42187500,  1,  169, 2, 3, 3, 15, 0, 3,  4, 0,      0x0},
-+	{ 35500000,  35500000,  1,   71, 2, 2, 2,  6, 0, 3,  4, 0,      0x0},
-+	{ 35500000,  44375000,  1,   74, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{ 36000000,  36000000,  1,   36, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 36000000,  45000000,  1,   45, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{ 40000000,  40000000,  1,   40, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 40000000,  50000000,  1,   50, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{ 49500000,  49500000,  1,   66, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 49500000,  61875000,  1,  165, 1, 3, 3, 10, 0, 3,  4, 0,      0x0},
-+	{ 50000000,  50000000,  1,   50, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 50000000,  62500000,  1,  125, 2, 2, 2, 15, 0, 2,  2, 0,      0x0},
-+	{ 54000000,  54000000,  1,   36, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{ 54000000,  67500000,  1,   45, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{ 56250000,  56250000,  1,   75, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 56250000,  70312500,  1,  117, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{ 59341000,  59341000,  1,  118, 2, 2, 2,  6, 0, 3,  4, 0, 0xae978d},
-+	{ 59341000,  74176250,  2,  148, 2, 1, 1, 15, 0, 1,  1, 0, 0x5a3d70},
-+	{ 59400000,  59400000,  1,   99, 3, 1, 1,  1, 3, 3,  4, 0,      0x0},
-+	{ 59400000,  74250000,  1,   99, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 65000000,  65000000,  1,   65, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 65000000,  81250000,  3,  325, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 68250000,  68250000,  1,   91, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 68250000,  85312500,  1,  142, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{ 71000000,  71000000,  1,   71, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 71000000,  88750000,  3,  355, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 72000000,  72000000,  1,   36, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{ 72000000,  90000000,  1,   60, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{ 73250000,  73250000,  3,  293, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 73250000,  91562500,  1,   61, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{ 74176000,  74176000,  1,   37, 2, 0, 0,  1, 1, 2,  2, 0, 0x16872b},
-+	{ 74176000,  92720000,  2,  185, 2, 1, 1, 15, 0, 1,  1, 0, 0x70a3d7},
-+	{ 74250000,  74250000,  1,   99, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 74250000,  92812500,  4,  495, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 75000000,  75000000,  1,   50, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{ 75000000,  93750000,  1,  125, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 78750000,  78750000,  1,  105, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 78750000,  98437500,  1,  164, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{ 79500000,  79500000,  1,   53, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{ 79500000,  99375000,  1,  199, 2, 2, 2, 15, 0, 2,  2, 0,      0x0},
-+	{ 83500000,  83500000,  2,  167, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{ 83500000, 104375000,  1,  104, 2, 1, 1, 15, 0, 1,  1, 0, 0x600000},
-+	{ 85500000,  85500000,  1,   57, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{ 85500000, 106875000,  1,  178, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{ 85750000,  85750000,  3,  343, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 85750000, 107187500,  1,  143, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{ 88750000,  88750000,  3,  355, 0, 3, 3,  1, 2, 3,  4, 0,      0x0},
-+	{ 88750000, 110937500,  1,  110, 2, 1, 1, 15, 0, 1,  1, 0, 0xf00000},
-+	{ 94500000,  94500000,  1,   63, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{ 94500000, 118125000,  1,  197, 3, 1, 1, 25, 0, 1,  1, 0,      0x0},
-+	{101000000, 101000000,  1,  101, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{101000000, 126250000,  1,   42, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{102250000, 102250000,  4,  409, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{102250000, 127812500,  1,  128, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{106500000, 106500000,  1,   71, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{106500000, 133125000,  1,  133, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{108000000, 108000000,  1,   36, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{108000000, 135000000,  1,   45, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{115500000, 115500000,  1,   77, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{115500000, 144375000,  1,   48, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{117500000, 117500000,  2,  235, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{117500000, 146875000,  1,   49, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{119000000, 119000000,  1,  119, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{119000000, 148750000,  3,  148, 0, 1, 1,  1, 3, 1,  1, 0, 0xc00000},
-+	{121750000, 121750000,  4,  487, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{121750000, 152187500,  1,  203, 0, 3, 3,  1, 3, 3,  4, 0,      0x0},
-+	{122500000, 122500000,  2,  245, 2, 1, 1,  1, 1, 3,  4, 0,      0x0},
-+	{122500000, 153125000,  1,   51, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{135000000, 135000000,  1,   45, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{135000000, 168750000,  1,  169, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{136750000, 136750000,  1,   68, 2, 0, 0,  1, 1, 2,  2, 0, 0x600000},
-+	{136750000, 170937500,  1,  113, 0, 2, 2,  1, 3, 2,  2, 0, 0xf5554f},
-+	{140250000, 140250000,  2,  187, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{140250000, 175312500,  1,  117, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{146250000, 146250000,  2,  195, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{146250000, 182812500,  1,   61, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{148250000, 148250000,  3,  222, 2, 0, 0,  1, 1, 2,  2, 0, 0x600000},
-+	{148250000, 185312500,  1,  123, 0, 2, 2,  1, 3, 2,  2, 0, 0x8aaab0},
-+	{148352000, 148352000,  2,  148, 2, 0, 0,  1, 1, 2,  2, 0, 0x5a1cac},
-+	{148352000, 185440000,  3,  185, 0, 1, 1,  1, 3, 1,  1, 0, 0x70a3d7},
-+	{148500000, 148500000,  1,   99, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{148500000, 185625000,  4,  495, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{154000000, 154000000,  1,   77, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{154000000, 192500000,  1,   64, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{156000000, 156000000,  1,   52, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{156000000, 195000000,  1,   65, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{156750000, 156750000,  2,  209, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{156750000, 195937500,  1,  196, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{157000000, 157000000,  2,  157, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{157000000, 196250000,  1,  131, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{157500000, 157500000,  1,  105, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{157500000, 196875000,  1,  197, 2, 1, 1, 15, 0, 1,  1, 0,      0x0},
-+	{162000000, 162000000,  1,   54, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{162000000, 202500000,  2,  135, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{175500000, 175500000,  1,  117, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{175500000, 219375000,  1,   73, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{179500000, 179500000,  3,  359, 0, 2, 2,  1, 0, 3,  4, 0,      0x0},
-+	{179500000, 224375000,  1,   75, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{182750000, 182750000,  1,   91, 2, 0, 0,  1, 1, 2,  2, 0, 0x600000},
-+	{182750000, 228437500,  1,  152, 0, 2, 2,  1, 3, 2,  2, 0, 0x4aaab0},
-+	{182750000, 228437500,  1,  152, 0, 2, 2,  1, 3, 2,  2, 0, 0x4aaab0},
-+	{187000000, 187000000,  2,  187, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{187000000, 233750000,  1,   39, 0, 0, 0,  1, 3, 0,  0, 1,      0x0},
-+	{187250000, 187250000,  3,  280, 2, 0, 0,  1, 1, 2,  2, 0, 0xe00000},
-+	{187250000, 234062500,  1,  156, 0, 2, 2,  1, 3, 2,  2, 0,  0xaaab0},
-+	{189000000, 189000000,  1,   63, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{189000000, 236250000,  1,   79, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{193250000, 193250000,  3,  289, 2, 0, 0,  1, 1, 2,  2, 0, 0xe00000},
-+	{193250000, 241562500,  1,  161, 0, 2, 2,  1, 3, 2,  2, 0,  0xaaab0},
-+	{202500000, 202500000,  2,  135, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{202500000, 253125000,  1,  169, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{204750000, 204750000,  4,  273, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{204750000, 255937500,  1,  171, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{208000000, 208000000,  1,  104, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{208000000, 260000000,  1,  173, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{214750000, 214750000,  1,  107, 2, 0, 0,  1, 1, 2,  2, 0, 0x600000},
-+	{214750000, 268437500,  1,  178, 0, 2, 2,  1, 3, 2,  2, 0, 0xf5554f},
-+	{218250000, 218250000,  4,  291, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{218250000, 272812500,  1,   91, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{229500000, 229500000,  2,  153, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{229500000, 286875000,  1,  191, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{234000000, 234000000,  1,   39, 0, 0, 0,  1, 0, 1,  1, 0,      0x0},
-+	{234000000, 292500000,  1,  195, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{241500000, 241500000,  2,  161, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{241500000, 301875000,  1,  201, 0, 2, 2,  1, 3, 2,  2, 0,      0x0},
-+	{245250000, 245250000,  4,  327, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{245250000, 306562500,  1,   51, 0, 0, 0,  1, 3, 0,  0, 1,      0x0},
-+	{245500000, 245500000,  4,  491, 2, 0, 0,  1, 1, 2,  2, 0,      0x0},
-+	{245500000, 306875000,  1,   51, 0, 0, 0,  1, 3, 0,  0, 1,      0x0},
-+	{261000000, 261000000,  1,   87, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{261000000, 326250000,  1,  109, 0, 1, 1,  1, 3, 1,  1, 0,      0x0},
-+	{268250000, 268250000,  9,  402, 0, 0, 0,  1, 0, 1,  1, 0, 0x600000},
-+	{268250000, 335312500,  1,  111, 0, 1, 1,  1, 3, 1,  1, 0, 0xc5554f},
-+	{268500000, 268500000,  2,  179, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{268500000, 335625000,  1,   56, 0, 0, 0,  1, 3, 0,  0, 1,      0x0},
-+	{281250000, 281250000,  4,  375, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{281250000, 351562500,  1,  117, 0, 3, 1,  1, 3, 1,  1, 0,      0x0},
-+	{288000000, 288000000,  1,   48, 0, 0, 0,  1, 0, 1,  1, 0,      0x0},
-+	{288000000, 360000000,  1,   60, 0, 2, 0,  1, 3, 0,  0, 1,      0x0},
-+	{296703000, 296703000,  1,   49, 0, 0, 0,  1, 0, 1,  1, 0, 0x7353f7},
-+	{296703000, 370878750,  1,  123, 0, 3, 1,  1, 3, 1,  1, 0, 0xa051eb},
-+	{297000000, 297000000,  1,   99, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{297000000, 371250000,  4,  495, 0, 3, 1,  1, 3, 1,  1, 0,      0x0},
-+	{312250000, 312250000,  9,  468, 0, 0, 0,  1, 0, 1,  1, 0, 0x600000},
-+	{312250000, 390312500,  1,  130, 0, 3, 1,  1, 3, 1,  1, 0, 0x1aaab0},
-+	{317000000, 317000000,  3,  317, 0, 1, 1,  1, 0, 2,  2, 0,      0x0},
-+	{317000000, 396250000,  1,   66, 0, 2, 0,  1, 3, 0,  0, 1,      0x0},
-+	{319750000, 319750000,  3,  159, 0, 0, 0,  1, 0, 1,  1, 0, 0xe00000},
-+	{319750000, 399687500,  3,  199, 0, 2, 0,  1, 3, 0,  0, 1, 0xd80000},
-+	{333250000, 333250000,  9,  499, 0, 0, 0,  1, 0, 1,  1, 0, 0xe00000},
-+	{333250000, 416562500,  1,  138, 0, 3, 1,  1, 3, 1,  1, 0, 0xdaaab0},
-+	{348500000, 348500000,  9,  522, 0, 2, 0,  1, 0, 1,  1, 0, 0xc00000},
-+	{348500000, 435625000,  1,  145, 0, 3, 1,  1, 3, 1,  1, 0, 0x35554f},
-+	{356500000, 356500000,  9,  534, 0, 2, 0,  1, 0, 1,  1, 0, 0xc00000},
-+	{356500000, 445625000,  1,  148, 0, 3, 1,  1, 3, 1,  1, 0, 0x8aaab0},
-+	{380500000, 380500000,  9,  570, 0, 2, 0,  1, 0, 1,  1, 0, 0xc00000},
-+	{380500000, 475625000,  1,  158, 0, 3, 1,  1, 3, 1,  1, 0, 0x8aaab0},
-+	{443250000, 443250000,  1,   73, 0, 2, 0,  1, 0, 1,  1, 0, 0xe00000},
-+	{443250000, 554062500,  1,   92, 0, 2, 0,  1, 3, 0,  0, 1, 0x580000},
-+	{505250000, 505250000,  9,  757, 0, 2, 0,  1, 0, 1,  1, 0, 0xe00000},
-+	{552750000, 552750000,  3,  276, 0, 2, 0,  1, 0, 1,  1, 0, 0x600000},
-+	{593407000, 296703500,  3,  296, 0, 1, 1,  1, 0, 1,  1, 0, 0xb41893},
-+	{593407000, 370879375,  4,  494, 0, 3, 1,  1, 3, 0,  0, 1, 0x817e4a},
-+	{593407000, 593407000,  3,  296, 0, 2, 0,  1, 0, 1,  1, 0, 0xb41893},
-+	{594000000, 297000000,  1,   99, 0, 1, 1,  1, 0, 1,  1, 0,      0x0},
-+	{594000000, 371250000,  4,  495, 0, 3, 1,  1, 3, 0,  0, 1,      0x0},
-+	{594000000, 594000000,  1,   99, 0, 2, 0,  1, 0, 1,  1, 0,      0x0},
- 	{ /* sentinel */ }
- };
- 
 -- 
-2.40.1
+2.7.4
 
+
+--0000000000003695e205fe309a82
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+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
+NhTY3E+cXCB11wty89QStajwXdhGJTYEvUgvsq1h8CwJj9w/38ldAQf5WjhPmApYeJR2ewFrBMCM
+4lHkdRJ6TDc9nXoEkypUfjJkJHe7Eal06tosh6JpAgMBAAGjggHZMIIB1TAOBgNVHQ8BAf8EBAMC
+BaAwgaMGCCsGAQUFBwEBBIGWMIGTME4GCCsGAQUFBzAChkJodHRwOi8vc2VjdXJlLmdsb2JhbHNp
+Z24uY29tL2NhY2VydC9nc2djY3IzcGVyc29uYWxzaWduMmNhMjAyMC5jcnQwQQYIKwYBBQUHMAGG
+NWh0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNwZXJzb25hbHNpZ24yY2EyMDIwME0G
+A1UdIARGMEQwQgYKKwYBBAGgMgEoCjA0MDIGCCsGAQUFBwIBFiZodHRwczovL3d3dy5nbG9iYWxz
+aWduLmNvbS9yZXBvc2l0b3J5LzAJBgNVHRMEAjAAMEkGA1UdHwRCMEAwPqA8oDqGOGh0dHA6Ly9j
+cmwuZ2xvYmFsc2lnbi5jb20vZ3NnY2NyM3BlcnNvbmFsc2lnbjJjYTIwMjAuY3JsMCMGA1UdEQQc
+MBqBGGp1c3Rpbi5jaGVuQGJyb2FkY29tLmNvbTATBgNVHSUEDDAKBggrBgEFBQcDBDAfBgNVHSME
+GDAWgBSWM9HmWBdbNHWKgVZk1b5I3qGPzzAdBgNVHQ4EFgQUIWGeYuaTsnIada5Xx8TR3cheUbgw
+DQYJKoZIhvcNAQELBQADggEBAHNQlMqQOFYPYFO71A+8t+qWMmtOdd2iGswSOvpSZ/pmGlfw8ZvY
+dRTkl27m37la84AxRkiVMes14JyOZJoMh/g7fbgPlU14eBc6WQWkIA6AmNkduFWTr1pRezkjpeo6
+xVmdBLM4VY1TFDYj7S8H2adPuypd62uHMY/MZi+BIUys4uAFA+N3NuUBNjcVZXYPplYxxKEuIFq6
+sDL+OV16G+F9CkNMN3txsym8Nnx5WAYZb6+rBUIhMGz70V05xsHQfzvo2s7f0J1tJ5BoRlPPhL0h
+VOnWA3h71u9TfSsv+PXVm3P21TfOS2uc1hbzEqyENCP4i5XQ0rv0TmPW42GZ0o4xggJtMIICaQIB
+ATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYDVQQDEyhH
+bG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgwj8BKLXNpALfemdRAwDQYJ
+YIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIG9OHz+nHsXUN+LhMA4/eRpPfETpFiD2BGEM
+6JBsPtp0MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIzMDYxNTIw
+MDYyMlowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
+AwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFlAwQCATAN
+BgkqhkiG9w0BAQEFAASCAQA1Kzccv9UrML3gsUSmJC4CDO5s88nUTEM/qzA3K8cKCgzxXwznvPBD
+YmIvIob0soBDiUBrJtsAhVPPdeTJGDx53AXpNt/waGjRWAttZ8IVSwdjw0ACCnVZqUAtNqftN6nK
+CWO/FZEY+IBnz4p5sbG4ZRWb2DLPY5mayA6qSHhVPcTTCIuy70alpim1f36jVdolXnH+NF3+V1L7
+OhTShN0egvDFmoj5TY3qxtCHJuyfQKeFxXR9qXs5nKOCX00KGhLwP9D+V56IvCXN8WYAjaYB/myN
+IWZalWl1voCssRSl4k394RPUR20+ab5m/fHQjMRg5RyMVNY45m+2QTm2kmKY
+--0000000000003695e205fe309a82--
+
+
+--===============1799012248665569798==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1799012248665569798==--
+
