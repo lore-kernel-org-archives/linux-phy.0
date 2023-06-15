@@ -4,74 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB455EB64DA
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 20:06:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D6C9EB64D9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 20:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe
-	:List-Id:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	:List-Id:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=G5hOS96zfl+QRNsW0zIvzoWgjvx8hULCior5qHCMqI4=; b=qnl
-	pJ8iNKnmNPwAKK5otaBHZUfAsToultMFMe6w7tuH/k6Fn8+Vtqni5Qn7e/60CM+yHDcksPDCvfkrq
-	CaS+6949vfL61rCTiLZRxaz8qrE2NJErLXF5XhQk9GJWf+7zoxCIBMz22CCvOS5EgwVronmo6X6AF
-	ECaswKH2yyqfw9ac+9GxF2QU72ak69dl2FQRE7aJla1JqCq/JT4rb/js9dtfx8wg53/agpFIsP7i0
-	8zydJwyPfMFhqyJeR/5DbWXh3iAQtQV14+1HwEJ2sTWPLunn58dxD+9n+eU2tMKZR+jcE1XY41SpV
-	PBypORfPTkX+QlIc7OPJIyv5h545OMw==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=a+8JgyT6PkzpnqKjDgjw7DRwD7bt7X8/DsilnxyACjw=; b=sVXRjvKvU5anb4fTuUGEwBinqB
+	3DnkRxTsrpZ7p9n02BSLDErdBtXbkmVAADN7ViPZ+uWAaeEJnPPIitfLjBjRP5azRLGnxoECqSl2c
+	1Q8ptB2LnfvrzyQBQvVV/SOVFUMrMBfTEBiR6TA8ZAB/xA8e63OBHX1gfAyhBVXsXddnS45beS4q4
+	piECRAf5plyfzUVgJjXM4S4RghyAfHeOFUgltGGzJsqxRfglm//L6kPABfzCOc6q2vq9vyTPoYp8y
+	gkd4qtrLdxx1pwYKrnjqbATg4HLbWiUncCAhuUP8pp/KF1XU6X+wTwbKj5LnEAgHm5SZIHJb114Z7
+	5c6Q2RnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9tEl-00Fz01-1F;
+	id 1q9tEl-00Fz0L-27;
 	Thu, 15 Jun 2023 20:06:31 +0000
-Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
+Received: from mail-qk1-x72f.google.com ([2607:f8b0:4864:20::72f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9tEh-00FyyG-1T
+	id 1q9tEh-00FyyV-22
 	for linux-phy@lists.infradead.org;
 	Thu, 15 Jun 2023 20:06:29 +0000
-Received: by mail-qk1-x72b.google.com with SMTP id af79cd13be357-75d4f12d4a3so1481385a.0
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 13:06:23 -0700 (PDT)
+Received: by mail-qk1-x72f.google.com with SMTP id af79cd13be357-75d4f12d4a3so1484685a.0
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 13:06:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1686859582; x=1689451582;
-        h=message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Hnzd+palwcWRC52VmHn5woaQBvZDH0Q0iYxHV+VK4xk=;
-        b=YsbmnBsLUPHJWMlVhW90OJbH8ZLTajJW0iV+D6eXkTMDen5FJu0jS1r0oHTwOZxZpB
-         wu2NLbVCW/ycfNNDwQ8SnhGy0H6EYisho7maBmyVOrHEc/jpZURVVt0xhg19u4uLeV7z
-         343JeHKOW2TTu4Fuq/U1L+ykGhqUAZfIGeXaA=
+        d=broadcom.com; s=google; t=1686859584; x=1689451584;
+        h=references:in-reply-to:message-id:date:subject:cc:to:from:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=9bWmXJX5XEWUbF60J+VXK2ykeeH1d/FXn2EHqiwots8=;
+        b=E3dbS8+31/ZAzxx0HkRY5M9nrzM1/rfGu9wAKQU+FG4oFc3arpmQWik9ZQ//rLvtXB
+         4mgtVBPtvrUuhHtA4z4iWAET+SsZd8DNQtnp0mw25uvGxqYGXR3vEwCspV9LpVOJsEqh
+         BGX+gTjcKTRqwJb5PHkhB8IgaiRNJ4LWKvny8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686859582; x=1689451582;
-        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Hnzd+palwcWRC52VmHn5woaQBvZDH0Q0iYxHV+VK4xk=;
-        b=QLDR39LNOtrPE4oTQ3kUg/mwJXPfTXv/CvMq8qslqsGhE6hj6qb8q8cx2hNk9ILeq3
-         MIqG3KkQi1xmSndRr4egLy0bnQvwpUliOkLBD5/j6LIaqF8jEpFTzuPG3P6cBWePDsc/
-         HyyrUcHCqWVWo/P5VhJfRV4BiMkoaGrR80VeeWSyCD7UTSr3r4qkAO1bku2xmUropdd8
-         8S6r2bSPqESGamSq6BzyS8JpvDIxCN7B44IA4YmcgWFQwtmYcUq9jZPebi/BXGK+g316
-         fRQiC7TU6a0xYGQGUTR8yB0SWk5jxmYcrQDHaJuOPZul7jshJ55/jfyH0RQzo60YV8ed
-         tfyw==
-X-Gm-Message-State: AC+VfDwfeY9dPk//U4v6So4diQnNqGzm2uIgKhuv6JbDaFmZOtjGXkVC
-	I33HD/hlnJh2pz39nCOK08+9oXDNVosUR6tadeQ/m0BJm1fwYCzSkxQq3tOHTtGT5+sI4y9Q3m8
-	cgAKGVyPRzRLThqifvbXV3Qkr709MG9T/w/thKXrvQZapf0OwB/kcDHEidK36T2r1ZePB7ZgM8p
-	YT1vp9wB2GFov/
-X-Google-Smtp-Source: ACHHUZ6aJuyRgu9b+N8ZuwBH1x3qSUMNn1jby5ECwfrBPwroKUXZiIUJRvRQuK/BrqpKNWQSpv4NPA==
-X-Received: by 2002:a05:620a:214c:b0:75d:4d8f:5f37 with SMTP id m12-20020a05620a214c00b0075d4d8f5f37mr19691404qkm.52.1686859582283;
-        Thu, 15 Jun 2023 13:06:22 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1686859584; x=1689451584;
+        h=references:in-reply-to:message-id:date:subject:cc:to:from
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=9bWmXJX5XEWUbF60J+VXK2ykeeH1d/FXn2EHqiwots8=;
+        b=Dk67XIsbiQr7KivCtVt3DSpQoFI7oeiKwV/uK6+LYt0k3XepPaZ2J85DmaH1ExsRgA
+         V1WTl1Td6nwOtsOT8W2Y88zD8UAdsjxp/fofF7DcZQNMOH3ZdtSEYz2stlkT+N4C193y
+         FM0FQhRKqSU8s56hEwf1x4HYkT4eldAqfqMtXxboFfejQIOwSAbnRc8cxntrMUQ5PvT/
+         OyjOKUpkDWPQwG+4vkQirp39ExCqRgKgF4+NBnjTwbKhv27KOCekMu4HIz2LBUd32wJ8
+         F43jGOWVF4dY7ZaOYAr8OXL72tN/9xCw7ChgTvTW0zrXIGnYOcK7hW57ZTS3lyQkb273
+         Wlfg==
+X-Gm-Message-State: AC+VfDxwHlpHASOGkNWk4uByN6BmAT3R7dJIabNYt3lxeEMX0FfLmDy2
+	mWP4tV4EIMNEN5EteR0LQDVat3tCIxlFZKAHTGGOFoaekqz+L/IfDqFVibw95EAlSN/JEA+2Jgh
+	4IuyOAV51xC4UiJJOo/CODvzOCqfaz2R8AC7WjjrPlYslp0FlaRJuP752R8xMQgUPJPa914rOjP
+	qSVbZrDEFvnIY76Ks=
+X-Google-Smtp-Source: ACHHUZ4I8QqRqxVTJ00VzyT9TWYR5uen+/Rc2bZUMBzr1gHqwNZ161+yG9cqJ5FNF2WEFkeOMAPi8Q==
+X-Received: by 2002:a37:688f:0:b0:75d:44af:19f2 with SMTP id d137-20020a37688f000000b0075d44af19f2mr19579005qkc.11.1686859584470;
+        Thu, 15 Jun 2023 13:06:24 -0700 (PDT)
 Received: from stbirv-lnx-2.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id k4-20020a05620a142400b0075ceca53e84sm5721407qkj.15.2023.06.15.13.06.20
+        by smtp.gmail.com with ESMTPSA id k4-20020a05620a142400b0075ceca53e84sm5721407qkj.15.2023.06.15.13.06.23
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 15 Jun 2023 13:06:21 -0700 (PDT)
+        Thu, 15 Jun 2023 13:06:24 -0700 (PDT)
 From: Justin Chen <justin.chen@broadcom.com>
 To: linux-phy@lists.infradead.org
 Cc: bcm-kernel-feedback-list@broadcom.com,
 	florian.fainelli@broadcom.com,
-	Justin Chen <justin.chen@broadcom.com>
-Subject: [PATCH 0/2] phy: usb: brcmstb bug fix and improvements
-Date: Thu, 15 Jun 2023 13:06:15 -0700
-Message-Id: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
+	Justin Chen <justin.chen@broadcom.com>,
+	Justin Chen <justinpopo6@gmail.com>,
+	Al Cooper <alcooperx@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-kernel@vger.kernel.org (open list:BROADCOM BRCMSTB USB2 and USB3 PHY DRIVER)
+Subject: [PATCH 1/2] phy: usb: Turn off phy when port is in suspend
+Date: Thu, 15 Jun 2023 13:06:16 -0700
+Message-Id: <1686859578-45242-2-git-send-email-justin.chen@broadcom.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
+References: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_130627_760831_769DA998 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230615_130627_760271_A8323444 
+X-CRM114-Status: GOOD (  18.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,34 +90,111 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="===============1799012248665569798=="
+Content-Type: multipart/mixed; boundary="===============4545129588530576642=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============1799012248665569798==
+--===============4545129588530576642==
 Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
-	boundary="0000000000003695e205fe309a82"
+	boundary="00000000000057212705fe309a2c"
 
---0000000000003695e205fe309a82
+--00000000000057212705fe309a2c
 
-Work around false positive overcurrent condition due to HW bug.
+The COMMONONN bit turns off the PHY when the host controller puts it
+into suspend state. This can happen during the following...
+- Nothing is connected to the port
+- The host controller goes into low power mode whatever due to auto
+  suspend or system suspend.
 
-Improvement power management.
+With COMMONONN we also must unset U2_FREECLK_EXISTS since the UTMI
+clock is fed by the PHY.
 
-Justin Chen (2):
-  phy: usb: Turn off phy when port is in suspend
-  phy: usb: suppress OC condition for 7439b2
+With these changes we see a power savings of ~12mW when port is in
+suspend.
 
- drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 15 ++++++++--
- drivers/phy/broadcom/phy-brcm-usb-init.c          | 34 +++++++++++++++++++++++
- drivers/phy/broadcom/phy-brcm-usb-init.h          |  8 ++++++
- 3 files changed, 55 insertions(+), 2 deletions(-)
+Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
+Signed-off-by: Justin Chen <justin.chen@broadcom.com>
+---
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 15 +++++++++++++--
+ drivers/phy/broadcom/phy-brcm-usb-init.h          |  8 ++++++++
+ 2 files changed, 21 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+index 76cf4280d7ed..4c10cafded4e 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+@@ -59,6 +59,8 @@
+ #define   USB_CTLR_TP_DIAG1_wake_MASK			BIT(1)
+ #define USB_CTRL_CTLR_CSHCR		0x50
+ #define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK		BIT(18)
++#define USB_CTRL_P0_U2PHY_CFG1		0x68
++#define   USB_CTRL_P0_U2PHY_CFG1_COMMONONN_MASK		BIT(10)
+ 
+ /* Register definitions for the USB_PHY block in 7211b0 */
+ #define USB_PHY_PLL_CTL			0x00
+@@ -90,6 +92,8 @@
+ #define   BDC_EC_AXIRDA_RTS_MASK			GENMASK(31, 28)
+ #define   BDC_EC_AXIRDA_RTS_SHIFT			28
+ 
++#define USB_XHCI_GBL_GUSB2PHYCFG	0x100
++#define   USB_XHCI_GBL_GUSB2PHYCFG_U2_FREECLK_EXISTS_MASK	BIT(30)
+ 
+ static void usb_mdio_write_7211b0(struct brcm_usb_init_params *params,
+ 				  uint8_t addr, uint16_t data)
+@@ -140,13 +144,17 @@ static void xhci_soft_reset(struct brcm_usb_init_params *params,
+ 			int on_off)
+ {
+ 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
++	void __iomem *xhci_gbl = params->regs[BRCM_REGS_XHCI_GBL];
+ 
+ 	/* Assert reset */
+-	if (on_off)
++	if (on_off) {
+ 		USB_CTRL_UNSET(ctrl, USB_PM, XHC_SOFT_RESETB);
+ 	/* De-assert reset */
+-	else
++	} else {
+ 		USB_CTRL_SET(ctrl, USB_PM, XHC_SOFT_RESETB);
++		/* Required for COMMONONN to be set */
++		USB_XHCI_GBL_UNSET(xhci_gbl, GUSB2PHYCFG, U2_FREECLK_EXISTS);
++	}
+ }
+ 
+ static void usb_init_ipp(struct brcm_usb_init_params *params)
+@@ -320,6 +328,9 @@ static void usb_init_common_7216(struct brcm_usb_init_params *params)
+ 	/* 1 millisecond - for USB clocks to settle down */
+ 	usleep_range(1000, 2000);
+ 
++	/* Disable PHY when port is suspended */
++	USB_CTRL_SET(ctrl, P0_U2PHY_CFG1, COMMONONN);
++
+ 	usb_wake_enable_7216(params, false);
+ 	usb_init_common(params);
+ }
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
+index f9fbf8fb80e5..c1a88f5cd4cd 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init.h
++++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
+@@ -34,6 +34,14 @@ enum brcmusb_reg_sel {
+ 	brcm_usb_ctrl_unset(USB_CTRL_REG(base, reg),		\
+ 			    USB_CTRL_##reg##_##field##_MASK)
+ 
++#define USB_XHCI_GBL_REG(base, reg) ((void __iomem *)base + USB_XHCI_GBL_##reg)
++#define USB_XHCI_GBL_SET(base, reg, field) \
++	brcm_usb_ctrl_set(USB_XHCI_GBL_REG(base, reg), \
++			  USB_XHCI_GBL_##reg##_##field##_MASK)
++#define USB_XHCI_GBL_UNSET(base, reg, field) \
++	brcm_usb_ctrl_unset(USB_XHCI_GBL_REG(base, reg), \
++			    USB_XHCI_GBL_##reg##_##field##_MASK)
++
+ struct  brcm_usb_init_params;
+ 
+ struct brcm_usb_init_ops {
 -- 
 2.7.4
 
 
---0000000000003695e205fe309a82
+--00000000000057212705fe309a2c
 Content-Type: application/pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -182,19 +265,19 @@ sDL+OV16G+F9CkNMN3txsym8Nnx5WAYZb6+rBUIhMGz70V05xsHQfzvo2s7f0J1tJ5BoRlPPhL0h
 VOnWA3h71u9TfSsv+PXVm3P21TfOS2uc1hbzEqyENCP4i5XQ0rv0TmPW42GZ0o4xggJtMIICaQIB
 ATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYDVQQDEyhH
 bG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgwj8BKLXNpALfemdRAwDQYJ
-YIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIG9OHz+nHsXUN+LhMA4/eRpPfETpFiD2BGEM
-6JBsPtp0MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIzMDYxNTIw
-MDYyMlowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
+YIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEINtZb5cf9qd15jixqpoWNzibUdqt9XGAeZoV
+yIB+dGwQMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIzMDYxNTIw
+MDYyNFowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
 AwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFlAwQCATAN
-BgkqhkiG9w0BAQEFAASCAQA1Kzccv9UrML3gsUSmJC4CDO5s88nUTEM/qzA3K8cKCgzxXwznvPBD
-YmIvIob0soBDiUBrJtsAhVPPdeTJGDx53AXpNt/waGjRWAttZ8IVSwdjw0ACCnVZqUAtNqftN6nK
-CWO/FZEY+IBnz4p5sbG4ZRWb2DLPY5mayA6qSHhVPcTTCIuy70alpim1f36jVdolXnH+NF3+V1L7
-OhTShN0egvDFmoj5TY3qxtCHJuyfQKeFxXR9qXs5nKOCX00KGhLwP9D+V56IvCXN8WYAjaYB/myN
-IWZalWl1voCssRSl4k394RPUR20+ab5m/fHQjMRg5RyMVNY45m+2QTm2kmKY
---0000000000003695e205fe309a82--
+BgkqhkiG9w0BAQEFAASCAQAUGRd6J79XMl1TNQvpI+YVqnKhJc0Iron9sd1BE1l5Kj+8tmTLD940
+6IBH6SmD8E1sO55SBgmbexF5vSJnnnT04HcorzAneUj11TZyC9s9OoTT1gf7NIc+/LFDozdFPtUu
+yotA+s1v1tTMjEg3Hl9YDpPqVucjjeSc9GN6QeMHRA4+WV6BYyEJzhZtgzHMqSusIfh9jo65paxP
+IKTqJLoQ0oH56T3UoJX5C9EdMeAUppuc+hFC4MDuUnP4msQ7yrb3cyiOkLjGgGZKQ9fdIDXoz5Uh
+GiaWr2jH7PF3gKx+yLyHfSM0dbftCImKn823a5e4Tdf+FXMbb5WVpqLm3GtK
+--00000000000057212705fe309a2c--
 
 
---===============1799012248665569798==
+--===============4545129588530576642==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -205,5 +288,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============1799012248665569798==--
+--===============4545129588530576642==--
 
