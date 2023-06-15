@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6002EB64D9
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 04:15:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFBE4EB64D9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 05:28:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q5OOgaorgiHnOMiXLtgiBCy65UjIgoS8wUxTiNFUYU4=; b=vjwRCfYWckVmW4
-	8zWsSFzqsScXdGhu/qlUtGA00/Lr5V+PfZYXZT5mS2m7O0q9nV+zjOVS3A+syOnraO12nhzp+X616
-	3YmV/ztprhpaeBccvDcTlO0Jiqj0jJpTYUxgv4j4epHdGz596c/Au3DgtmPIWFQDtIEfD7f7MAYQX
-	CmakC2SMVvH9oHQWlk1a3y5INB8kUkPsau2I1E0DH7HXZGSeej+hv5K5MBglC40YIwOpF0r57B/Ul
-	eh5dxvccKJiroPpHiJlmHMByRM/HOTAjSJHtCV/zWt8WRQ6pnl1gBh8u+dPQqRCnjIHH2oyQcvr2P
-	hf0+lPYRMKGJpitCyt8Q==;
+	List-Owner; bh=dv/ej345TjEieyUB98aS0S+J4jNj5Vip3VU69E5wf74=; b=o6LqNywD20ySpT
+	rbs6JTNXIV2/efqVc/XyUj6a5abU7L2JVn1cEZjzGIzut7k9G+l9EkPNLQhqOXLWOgaexmtAx7xB6
+	8uPgcOYd80NkKx50sR41NAKdK9gOWfi8o12/HrlmYMI04LFa4InDBMJH87riCCZdu7FoIGAHSm6NE
+	aGlCsPYz6zsBtkvDji/je07FWfjBaorIDXNySl6C2yC72W9Iwh+YoC7Hc43BV26OveXhM+ktGymSx
+	lXBF1wnlIxDjDeQwGpkq3/6ksQs5au7j4P+HEwRPceFNFTtTnNSTZe5UpW9dInqOfmQ7SMauckkKJ
+	3XvNB7Q1PeceI+k72lBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9eOt-00DZfE-1Y;
-	Thu, 15 Jun 2023 04:15:59 +0000
+	id 1q9fWx-00DiOL-1M;
+	Thu, 15 Jun 2023 05:28:23 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9eOp-00DZeE-1i;
-	Thu, 15 Jun 2023 04:15:57 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35F41PAN010558;
-	Thu, 15 Jun 2023 04:15:38 GMT
+	id 1q9fWu-00DiMZ-2t;
+	Thu, 15 Jun 2023 05:28:22 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35F5RMsw013905;
+	Thu, 15 Jun 2023 05:28:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
  cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=+Z0nhqBAyEln1rQXqXvG8yP5Loe3eBpMLTiQInpJfK4=;
- b=TdOB1emnadtAzeFGv745tQzYSXHWmwMlUu70OIDB9LrZiU/YacCsQseW4h6RbJRpNbFv
- 4VDSCLxDfrC9NxxR+UZQkq6NnFS789cnw6O7q8jyuOdNl3AFYqqV171w1m/HS7McPaIP
- oHwRjLTbxYCcMZsvZrBzyUzbZ13WNOMcwTKBhChYF3zuHtzG2BxLopJPvL7ippxo6+G/
- B3CIFgI+4wsNZ0/UtVgZbPql8s2/o3CHxRfOLFHd6wVB43xqHxwMhrEnIA4i/iwFSxZp
- woA605ZEfA/OC/ip07NS6yEKzvb0LmLzqToFcz81TdFs7pN0uypo+1oSIsDyWyRwCZAC Dw== 
+ in-reply-to; s=qcppdkim1; bh=JzYgkcS+xjpO5zjTAPM30RHvptVH8EP1NWTFiI7sVfk=;
+ b=mfs0hXPiSmbJ7E1CROAhuafdu7rIUX5xAzIZlbkKvM4+YmmtQ9YDqMGDMp7jcKeRMAYZ
+ gXcyGleQl0tXoAdHQ8DnkmBzu55LePuoPRM03vrgnXU7Lr/JwhR1+P6NrIVw7bIYWhbq
+ jmwgCSr+/4NGNPRDWJHrD9AhTZxPeDJ9vEXLkWpDorDuTR/amdT5nDf2WTvmpqw98gw8
+ a4NhKgVJrOQzr1pyo50ceBnAgDWl5os8ZGjChSGghsy3JsAOfRDo6sX20qZfA0wYKCqi
+ /iKGEEX89/VOmsqlyhhKa/tuqJskHRflY46iW8zcmgI4xJj28PSJ2uuvMyq+bFbYS2z8 Lw== 
 Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3r7u8c80ja-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3r7fae9g7d-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 15 Jun 2023 04:15:37 +0000
+	Thu, 15 Jun 2023 05:28:02 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35F4FaFa017126
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35F5S1YQ013748
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 15 Jun 2023 04:15:36 GMT
+	Thu, 15 Jun 2023 05:28:01 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 14 Jun 2023 21:15:27 -0700
-Date: Thu, 15 Jun 2023 09:45:23 +0530
+ 15.2.986.42; Wed, 14 Jun 2023 22:27:51 -0700
+Date: Thu, 15 Jun 2023 10:57:47 +0530
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
@@ -65,33 +65,33 @@ CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
         <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH 1/9] dt-bindings: usb: dwc3: Add IPQ5332 compatible
-Message-ID: <20230615041522.GA22186@varda-linux.qualcomm.com>
+Subject: Re: [PATCH 2/9] dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
+Message-ID: <20230615052746.GB22186@varda-linux.qualcomm.com>
 References: <cover.1686126439.git.quic_varada@quicinc.com>
- <d07f804802f0678746aeba55910a83209ecbe054.1686126439.git.quic_varada@quicinc.com>
- <8fdd584e-988f-8542-f635-c0f6b5e63580@linaro.org>
+ <14f60578e2935c0844537eab162af3afa52ffe39.1686126439.git.quic_varada@quicinc.com>
+ <98960024-7dbc-91a3-75de-90b529637916@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8fdd584e-988f-8542-f635-c0f6b5e63580@linaro.org>
+In-Reply-To: <98960024-7dbc-91a3-75de-90b529637916@linaro.org>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: uobfYjFoiKBivPOIJ3P6if7bRUruzbMz
-X-Proofpoint-GUID: uobfYjFoiKBivPOIJ3P6if7bRUruzbMz
+X-Proofpoint-ORIG-GUID: HQxXuzhjPPT6BMwONL5mJFqqsvTWLvxK
+X-Proofpoint-GUID: HQxXuzhjPPT6BMwONL5mJFqqsvTWLvxK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.573,FMLib:17.11.176.26
- definitions=2023-06-15_01,2023-06-14_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 suspectscore=0 mlxlogscore=556 malwarescore=0
- phishscore=0 bulkscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- mlxscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2305260000 definitions=main-2306150035
+ definitions=2023-06-15_02,2023-06-14_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 bulkscore=0 adultscore=0
+ impostorscore=0 suspectscore=0 phishscore=0 mlxscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2305260000
+ definitions=main-2306150046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230614_211555_580852_32B454BF 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20230614_222820_952379_29A1ABFF 
+X-CRM114-Status: GOOD (  33.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,45 +108,198 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 07, 2023 at 08:33:26PM +0200, Krzysztof Kozlowski wrote:
+On Wed, Jun 07, 2023 at 08:31:50PM +0200, Krzysztof Kozlowski wrote:
 > On 07/06/2023 12:56, Varadarajan Narayanan wrote:
-> > Document the IPQ5332 dwc3 compatible
+> > Document the M31 USB2 phy present in IPQ5332
 >
 > Full stop.
 
 Ok.
 
+> > Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
 > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > > ---
-> >  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 2 ++
-> >  1 file changed, 2 insertions(+)
+> >  .../devicetree/bindings/phy/qcom,m31.yaml          | 69 ++++++++++++++++++++++
+> >  1 file changed, 69 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/qcom,m31.yaml
 > >
-> > diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> > index ae24dac..9c3d6f4 100644
-> > --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> > +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> > @@ -14,6 +14,7 @@ properties:
-> >      items:
-> >        - enum:
-> >            - qcom,ipq4019-dwc3
-> > +          - qcom,ipq5332-dwc3
-> >            - qcom,ipq6018-dwc3
-> >            - qcom,ipq8064-dwc3
-> >            - qcom,ipq8074-dwc3
-> > @@ -246,6 +247,7 @@ allOf:
-> >          compatible:
-> >            contains:
-> >              enum:
-> > +              - qcom,ipq5332-dwc3
-> >                - qcom,msm8994-dwc3
-> >                - qcom,qcs404-dwc3
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,m31.yaml b/Documentation/devicetree/bindings/phy/qcom,m31.yaml
+> > new file mode 100644
+> > index 0000000..8ad4ba4
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,m31.yaml
+> > @@ -0,0 +1,69 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +
 >
-> What about interrupts?
+> Drop stray blank lines.
 
-Will fix and post next version.
+Ok.
+
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/qcom,m31.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Qualcomm M31 USB PHY
+>
+> What is M31?
+
+M31 is an external IP integrated into IPQ5332 SoC.
+
+> > +
+> > +maintainers:
+> > +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
+> > +  - Varadarajan Narayanan <quic_varada@quicinc.org>
+> > +
+> > +description:
+> > +  This file contains documentation for the USB M31 PHY found in Qualcomm
+>
+> Drop redundant parts ("This file contains documentation for the").
+
+Ok.
+
+> > +  IPQ5018, IPQ5332 SoCs.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    oneOf:
+>
+> That's not oneOf.
+
+Ok.
+
+> > +      - items:
+>
+> No items.
+
+Ok.
+
+> > +          - enum:
+> > +              - qcom,m31-usb-hsphy
+>
+> I am confused what's this. If m31 is coming from some IP block provider,
+> then you are using wrong vendor prefix.
+> https://www.m31tech.com/download_file/M31_USB.pdf
+>
+>
+> > +              - qcom,ipq5332-m31-usb-hsphy
+>
+> This confuses me even more. IPQ m31?
+
+Will change this to m31,usb-hsphy and m31,ipq5332-usb-hsphy respectively.
+Will that be acceptable?
+
+> > +
+> > +  reg:
+> > +    description:
+> > +      Offset and length of the M31 PHY register set
+>
+> Drop description, obvious.
+
+Ok.
+
+> > +    maxItems: 2
+> > +
+> > +  reg-names:
+> > +    items:
+> > +      - const: m31usb_phy_base
+> > +      - const: qscratch_base
+>
+> Drop "_base" from both.
+
+Ok. Will drop qscratch_base. This is in the controller space.
+Should not come here.
+
+> > +
+> > +  phy_type:
+> > +    oneOf:
+> > +      - items:
+> > +          - enum:
+> > +              - utmi
+> > +              - ulpi
+>
+> This does not belong to phy, but to USB node.
+
+This is used by the driver to set a bit during phy init. Hence
+have it as a replication of the USB node's entry. If this is not
+permissible, is there some way to get this from the USB node,
+or any other alternative mechanism?
+
+> > +
+> > +  resets:
+> > +    maxItems: 1
+> > +    description:
+> > +      List of phandles and reset pairs, one for each entry in reset-names.
+>
+> Drop useless description.
+
+Ok.
+
+> > +
+> > +  reset-names:
+> > +    items:
+> > +      - const:
+> > +          usb2_phy_reset
+>
+> Drop entire reset-names.
+
+Ok.
+
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
+> > +    hs_m31phy_0: hs_m31phy@5b00 {
+>
+> Node names should be generic. See also explanation and list of examples
+> in DT specification:
+> https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
+>
+> Also, no underscores in node names.
+
+Will change this as usbphy0:hs_m31phy@7b000
+
+> > +        compatible = "qcom,m31-usb-hsphy";
+> > +        reg = <0x5b000 0x3000>,
+>
+> This is not what your unit address is saying.
+
+Will change to 0x0007b000.
+
+> > +            <0x08af8800 0x400>;
+>
+> Align it.
+
+Will drop this. This is in the controller space.
+
+> > +        reg-names = "m31usb_phy_base",
+> > +                "qscratch_base";
+>
+> Align it.
+
+Ok.
+
+> > +        phy_type = "utmi";
+> > +        resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> > +        reset-names = "usb2_phy_reset";
+> > +
+> > +        status = "ok";
+>
+> Drop.
+
+Ok. Hopefully will get an alternative for the phy_type.
 
 Thanks
 Varada
+
+> > +    };
+>
+> Best regards,
+> Krzysztof
+>
 
 -- 
 linux-phy mailing list
