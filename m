@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C2DFEB64D9
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 12:15:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F911EB64DD
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 12:15:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46rflM9b+lZtObbzrQPfyIfbAYOfrvfTyLMFU7CPzFg=; b=l5oQALU/1m5sjJ
-	qUE3lLX62KQlAGN94EIydHIjLk8tttqvJROki7EKZvP9tSgF02FFpYG4b60I6zFrP8VtWuXbZfRek
-	72CfvLikAZu6tY98WnqkM/43cyM5asIXKShx6X/0RpXP3tELXm/fJOqwJhNf1A8PTmJgZj/eTCh5T
-	0apRcIZEnGHU5IvVk40R7QCvBcqUGtJKJj/fUoPjXys311zQxZsw0ManEFFZ13lHJ9PfPOUk4dsNZ
-	V8R22vylVa0WRr1zNnl+4hm+n4xQiwOz8jmW//QmvGinhZMCuOgHr4V9NPPMpdetliqzlnaxLzHPc
-	ZBesT6uCcEXWjrWn15Eg==;
+	List-Owner; bh=DQnr0fRbic2fYXOvvrXYcbsHRUqNhPcVZzGpuT0cEcY=; b=IxTHMfvK/hUhXK
+	TH2kfL9P5ugYE7cljVAMiHfTbdARWGbdrzOLYjnB051fCSso6SvErs/pjEO6tY0aUdorRok8evIhX
+	zViaIiWZaeKDeVQoJn6rJ+5dqE7vlF7loa+5rN4NMMBQf4eHRFKeKbjEHpq2Tf2rIrvgkhAWLIIFM
+	ciDoYMx1q6xdJ/TIQHrU0wqND0S/lD5bS8OPhFt4eGpzi75GW/0Y8xx8ygnWIMFa9uNxH+HRHd9NH
+	TTcAMw3A4zAUOaSvpRZVy2jlC3ttMHqi++7nrgAtQ/KTVYMEad7e57UjYS/FEBJVd3dkByvUPdPMM
+	a/jBPorLtJV3EmuQNSkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lsy-00Epg6-2E;
-	Thu, 15 Jun 2023 12:15:32 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1q9lt0-00Ephb-0e;
+	Thu, 15 Jun 2023 12:15:34 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lsP-00EpCC-1Y
+	id 1q9lsQ-00EpCh-0Q
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Jun 2023 12:14:58 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-4f62b512fe2so10634967e87.1
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 05:14:54 -0700 (PDT)
+	Thu, 15 Jun 2023 12:15:00 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-30af159b433so7580208f8f.3
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 05:14:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686831293; x=1689423293;
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686831294; x=1689423294;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=x8IJKtNsdBW540hrOificFtv5+xZ0NqYlT5TEOHx1Rg=;
-        b=hWbCXGcv61TNwzMbg1XoJftMz5eDZjIKkarh2w/UlhGsbyobt6DtN5q3Rf0TnJtwVc
-         SQhUtL+U/IB2D7suFH8Hwx51xIdC3SyINWGSnpj10yzHz0rBBtyL+g4SFF1XM1gz1O58
-         Vj+U+igTIiYVeRAQIDpf3c1fSCsnx1cNKZcTj6Ud3gTLuXZ+lRkyshuUzFTR2eY/lazd
-         scl2cmv+E+TzQLbZYM19LKWYKluERyjmW2H3rFQlsy/qLIoAjOpc8VwrLLqMXx7eeqmC
-         AtMllLAc4AqmcyiDg2Vm/0FteXUqZ/hw/TeGpCJdJFqgxaoKfBWA9MU1/JQ62Ja68L12
-         uuqg==
+        bh=shVe7iXJ1awuGuKmYEwLb77YVMpGOLIOU4Dax+RDeEA=;
+        b=dlDrDMLMnb7Fqq0jlcStDO6lq+BgV1BfRZwnKtZFFdb4XCdj/yS1mzXym+jFMCCAFW
+         e7gmAgV+RXQSXrLTUFhmgTfDuga7xUrMOkEZucx+NwOVw2xhebk+U/OcZCJ1mX8ljybX
+         n9K6gSI2fpxqPuQjXTfUX0EdBVZ8P9KiVOGqSNDqM1rg/Y3N6CJZcxz2gvWpmRzxduVN
+         /JxdvSpLleT1D8Tnvkvw33d/dz8cC2YVWHwLtxy9s0j7+Jb9zNDSq/9VB2mXZ2g3EDdK
+         BpXjShwkImCDkpDNrzFR3lQOvZsHH+V23Zb7CiSVLKAzYHIWPyxPmFDfc4uFbK2HY8Yh
+         wmvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686831293; x=1689423293;
+        d=1e100.net; s=20221208; t=1686831294; x=1689423294;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=x8IJKtNsdBW540hrOificFtv5+xZ0NqYlT5TEOHx1Rg=;
-        b=F17rLZWP9z37lvbNdp3MdWV4qGjHV0HsHT569I3LFf4ZMVGbSe5BvR6QpqNCcUtdbn
-         gaWfdg+TUC8wDbjj4ghJwkEHDSkYc/MA3QIjWrPotExnFZsS40ofpDEGLnvPZDXvleBh
-         fG1wvXJFotqbAIIsxIOd3au+A3ee021zdVZPSm789P5P+9SZmJ/UGmamHECYPz+gurlU
-         cpt0OHeFOo7d92d/C4MrIA3I8f2UUa2EcNJ/Ii3dipgNMAGle30gHWDAfawfDe9ZhRTV
-         3YjHv+yviUzpKRWURocjZY4S7qvBTLIpU32PJAvFc2A5jLhXARNUOjlhZxRFq/m648mK
-         M1IA==
-X-Gm-Message-State: AC+VfDzh7+F32yibQQgtfa3kMxyYMOF0VsBDMMb0dTaDIURCq1MDwoa9
-	fbFB+zKNs7hwwxR5uNtYxi6Yug==
-X-Google-Smtp-Source: ACHHUZ7XruAIF0Kx9k8rfaa+hqAvt+jzQnQco8XpTV0z6tAB1miHHB04Cy/KHjOiLoWqUteF97rVfw==
-X-Received: by 2002:a19:6706:0:b0:4f7:68eb:7c27 with SMTP id b6-20020a196706000000b004f768eb7c27mr3013726lfc.29.1686831293307;
-        Thu, 15 Jun 2023 05:14:53 -0700 (PDT)
+        bh=shVe7iXJ1awuGuKmYEwLb77YVMpGOLIOU4Dax+RDeEA=;
+        b=UcxJLoQMNki1YyblZBO3cm4wRuMO1SXDZkmJlfXDNjyaHbDLM8wUSHMlu1orlMQ9Nt
+         bSV+JXwvzZY4Ja5FBrhejZJTCnt6EPkJKfpjUTZkIfvz7cnxA7bTC++gpnY2tJ/KVVwN
+         /SPrmAFcIak6YUEy6+QKQTCa66NKgOGEoTyPZtAHjpWBCuxKFy7iRMt3uslNpZjwDiC7
+         IoPMthND0wlXDWzBJpRYsPSla0tdwLNygt1ULc/6jrqyignCoDgYPz4GMB1mTXDIy8Or
+         s2eZ6Uf1DCJpaN0eFXxBbvFoWwD9WCsx44VFwi67H7J8tyE9kBrFF3LCXqW54ttcJR3g
+         3sBw==
+X-Gm-Message-State: AC+VfDxb0oO9pPuB0WBdBt4GgvLeueeSGWDRCOCoIQGq8zG0i0RAWr0R
+	rxepPWcqR+e6DzaR8EIB2m6TuA==
+X-Google-Smtp-Source: ACHHUZ4BkD4qzQRvEGU7o6thVVlbRBFaFM9VgeCVSPJzBcEEoIH1q6H2OVvNrwnKfIKircfJZPizMA==
+X-Received: by 2002:adf:f8d0:0:b0:311:14ab:5621 with SMTP id f16-20020adff8d0000000b0031114ab5621mr1145607wrq.30.1686831294636;
+        Thu, 15 Jun 2023 05:14:54 -0700 (PDT)
 Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:2ad4:65a7:d9f3:a64e])
-        by smtp.gmail.com with ESMTPSA id k17-20020a5d4291000000b003047ea78b42sm20918012wrq.43.2023.06.15.05.14.52
+        by smtp.gmail.com with ESMTPSA id k17-20020a5d4291000000b003047ea78b42sm20918012wrq.43.2023.06.15.05.14.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Jun 2023 05:14:52 -0700 (PDT)
+        Thu, 15 Jun 2023 05:14:54 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Vinod Koul <vkoul@kernel.org>,
 	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
@@ -86,17 +86,18 @@ Cc: netdev@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Subject: [PATCH v2 15/23] net: stmmac: dwmac-qcom-ethqos: add support for SGMII
-Date: Thu, 15 Jun 2023 14:14:11 +0200
-Message-Id: <20230615121419.175862-16-brgl@bgdev.pl>
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: [PATCH v2 16/23] net: stmmac: add new switch to struct plat_stmmacenet_data
+Date: Thu, 15 Jun 2023 14:14:12 +0200
+Message-Id: <20230615121419.175862-17-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230615121419.175862-1-brgl@bgdev.pl>
 References: <20230615121419.175862-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_051457_530330_2F351F56 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20230615_051458_174017_45C7A6F8 
+X-CRM114-Status: GOOD (  14.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,90 +116,41 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-On sa8775p the MAC is connected to the external PHY over SGMII so add
-support for it to the driver.
+On some platforms, the PCS can be integrated in the MAC so the driver
+will not see any PCS link activity. Add a switch that allows the platform
+drivers to let the core code know.
 
 Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Reviewed-by: Jose Abreu <Jose.Abreu@synopsys.com>
 ---
- .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 37 +++++++++++++++++++
- 1 file changed, 37 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 +-
+ include/linux/stmmac.h                            | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 0ececc951528..bdf59a179f87 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -75,6 +75,10 @@
- #define RGMII_CONFIG2_DATA_DIVIDE_CLK_SEL	BIT(6)
- #define RGMII_CONFIG2_TX_CLK_PHASE_SHIFT_EN	BIT(5)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index fa07b0d50b46..fdcf1684487c 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -5793,7 +5793,7 @@ static void stmmac_common_interrupt(struct stmmac_priv *priv)
+ 		}
  
-+/* MAC_CTRL_REG bits */
-+#define ETHQOS_MAC_CTRL_SPEED_MODE		BIT(14)
-+#define ETHQOS_MAC_CTRL_PORT_SEL		BIT(15)
-+
- struct ethqos_emac_por {
- 	unsigned int offset;
- 	unsigned int value;
-@@ -92,6 +96,7 @@ struct ethqos_emac_driver_data {
- struct qcom_ethqos {
- 	struct platform_device *pdev;
- 	void __iomem *rgmii_base;
-+	void __iomem *mac_base;
- 	int (*configure_func)(struct qcom_ethqos *ethqos);
- 
- 	unsigned int link_clk_rate;
-@@ -559,6 +564,33 @@ static int ethqos_configure_rgmii(struct qcom_ethqos *ethqos)
- 	return 0;
- }
- 
-+static int ethqos_configure_sgmii(struct qcom_ethqos *ethqos)
-+{
-+	int val;
-+
-+	val = readl(ethqos->mac_base + MAC_CTRL_REG);
-+
-+	switch (ethqos->speed) {
-+	case SPEED_1000:
-+		val &= ~ETHQOS_MAC_CTRL_PORT_SEL;
-+		rgmii_updatel(ethqos, RGMII_CONFIG2_RGMII_CLK_SEL_CFG,
-+			      RGMII_CONFIG2_RGMII_CLK_SEL_CFG,
-+			      RGMII_IO_MACRO_CONFIG2);
-+		break;
-+	case SPEED_100:
-+		val |= ETHQOS_MAC_CTRL_PORT_SEL | ETHQOS_MAC_CTRL_SPEED_MODE;
-+		break;
-+	case SPEED_10:
-+		val |= ETHQOS_MAC_CTRL_PORT_SEL;
-+		val &= ~ETHQOS_MAC_CTRL_SPEED_MODE;
-+		break;
-+	}
-+
-+	writel(val, ethqos->mac_base + MAC_CTRL_REG);
-+
-+	return val;
-+}
-+
- static int ethqos_configure(struct qcom_ethqos *ethqos)
- {
- 	return ethqos->configure_func(ethqos);
-@@ -663,6 +695,9 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 	case PHY_INTERFACE_MODE_RGMII_TXID:
- 		ethqos->configure_func = ethqos_configure_rgmii;
- 		break;
-+	case PHY_INTERFACE_MODE_SGMII:
-+		ethqos->configure_func = ethqos_configure_sgmii;
-+		break;
- 	case -ENODEV:
- 		ret = -ENODEV;
- 		goto out_config_dt;
-@@ -678,6 +713,8 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 		goto out_config_dt;
- 	}
- 
-+	ethqos->mac_base = stmmac_res.addr;
-+
- 	data = of_device_get_match_data(dev);
- 	ethqos->por = data->por;
- 	ethqos->num_por = data->num_por;
+ 		/* PCS link status */
+-		if (priv->hw->pcs) {
++		if (priv->hw->pcs && !priv->plat->has_integrated_pcs) {
+ 			if (priv->xstats.pcs_link)
+ 				netif_carrier_on(priv->dev);
+ 			else
+diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
+index 225751a8fd8e..06090538fe2d 100644
+--- a/include/linux/stmmac.h
++++ b/include/linux/stmmac.h
+@@ -293,5 +293,6 @@ struct plat_stmmacenet_data {
+ 	bool sph_disable;
+ 	bool serdes_up_after_phy_linkup;
+ 	const struct dwmac4_addrs *dwmac4_addrs;
++	bool has_integrated_pcs;
+ };
+ #endif
 -- 
 2.39.2
 
