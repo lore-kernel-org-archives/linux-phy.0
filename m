@@ -4,56 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87597EB64DC
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 06:03:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBC6BEB64D9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 06:05:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sput/Dletd+R8veSfRNmTkTjSJ+D3dYpLCeLq9tzEDY=; b=yaQsDyJhPCVPBb
-	sceSUZwr8Hre5HW7hzhiV6nEq9Yh2nObp1TAEZSRaRV86znIFxYFMBDdq8OKMbQadNaZEXTti8Yb8
-	cFF/1R0dZac7WWWL3U2ASa62Zj9RlCShV8jyN2f143q8Nz7kjN9cqjVWcqEGAQ7dmEmEKmT342zut
-	3krqko2+l6ROAt/stD7kOrCislvRFCXgN1PqCvCeJsMfB4h7WFMltkxtFytF82DYYYX8rF84gX+0G
-	G8FHptMb512TBMSpFE/KUM/7YOV/Yb6c1arMEX2xGBySIJx52JTnzTGT8ic3sQEu+XEahRFybvetS
-	rfYBl+7gcoqDhVlZ7+Hg==;
+	List-Owner; bh=vOLcwAJuag1IO4r+lfp/whBHYg+CJJJPwkIgMKqSuYo=; b=R4FzOurThof5wm
+	0VmNQ8km0rTjMFVvuK6lAJosxzpO69rl86l3hjM2Ob7nnbBBmUk6GviGTi35UVKQj8+mPIwnUnNsx
+	veTzeJ+V99YnxoD6LXrCGBunILRxgsCko5WKjXZ89AR9sLCMkdJij469I4r5vRWL+yutsKgKcr0vX
+	QCPD3lLwdFMHJlmBHGERavQmLXGLYQnvy39k3PEVaLFRMYfsgQS2FmWaQLoMVlcZK0WRlNhsf55Ca
+	25Nk75K5y77ESIZSsBiwGUiZGCrlOBNRA5Lip3JOC0IZ6vCVGNK+xQikIbkkqHC4hmHuGjqXSM3CP
+	oG5DyTqOwKglg87Dy+Gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9g4h-00Dnc1-0d;
-	Thu, 15 Jun 2023 06:03:15 +0000
+	id 1q9g7H-00Dnxg-1K;
+	Thu, 15 Jun 2023 06:05:55 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9g4e-00Dnb5-1E;
-	Thu, 15 Jun 2023 06:03:14 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35F5SG37012701;
-	Thu, 15 Jun 2023 06:03:00 GMT
+	id 1q9g7E-00DnxB-2s;
+	Thu, 15 Jun 2023 06:05:54 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35F54gCO012998;
+	Thu, 15 Jun 2023 06:05:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
  cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=PJ/1Znm3xPH4qhX7g21KCyUELVzb7W7eFMUpfPfTkLg=;
- b=afq9XVM/TAowO+AL03ycwTc9tDxivEKnwqGnHXjiCW0mzOkak/I5GqdoDbHshH71EqAp
- TbQy66ClRSzS3XHEaFm8U8S8j4TjZLLyCRFIeLlAHORO4ZzBfJKtrRjIxA1Tkk+Mq9l9
- 3tC7AVtBLXybZ017hOsDuDkRDtfhgw7Cc6RKNFKSR5nvyRP684jB06pt5+FQSv1ZPZQr
- asMjnUQg5kenNePwOA2NmqZJYHrBs0WxLcc0y9N2+op/CrBBTEeb9WKqCP3oe6isnZex
- HLUGOLgASBNme/PY6N2F4KsDwGNS7zNwCkJOdXfB5UP2mVSh6dNt36WF3ywkJVI5t2Kp TA== 
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3r7auy2a58-1
+ in-reply-to; s=qcppdkim1; bh=rZrcYOGgNAGIojSS1//Lwf9G0BVqC5oeL2SJ+WOtc6k=;
+ b=kuN0aquf8OQ85UR/hZVGuDooUDadbdedal0/RBn2UE32b3Gg7r7pAxBIFWgVhBk2eJC1
+ myjNGcZiDVr4KDPfkL6BQEPGEuc7HzXhQAxrr2ubCSkmpxZpqVG64kKzO4EUeofNQ2ZH
+ 9X0WHMYLfWKqV9Sss3OxWcKpNGlWusoJ80WOIalOY65MRPGqXhg5q+CBOuL3o6X+4XYm
+ tq0BT5C7NsRprvVLM9IFBgUpmr7GoZguQhW3pmzBHtqdbc+bI8YGuDnnotNabnsWQkQS
+ 4JKbVp6jzXIn+lIG3GyDCm6er+qoJ/WAcU7I2kut1QtSPv7jRU25ko7FSFldImbKdqkw YA== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3r7ukm856f-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 15 Jun 2023 06:02:59 +0000
+	Thu, 15 Jun 2023 06:05:41 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35F62wRv018823
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35F65dML018330
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 15 Jun 2023 06:02:58 GMT
+	Thu, 15 Jun 2023 06:05:39 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 14 Jun 2023 23:02:49 -0700
-Date: Thu, 15 Jun 2023 11:32:40 +0530
+ 15.2.986.42; Wed, 14 Jun 2023 23:05:30 -0700
+Date: Thu, 15 Jun 2023 11:35:26 +0530
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+CC: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, <agross@kernel.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
         <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
         <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
         <will@kernel.org>, <mturquette@baylibre.com>, <sboyd@kernel.org>,
@@ -65,33 +66,34 @@ CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
         <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH 4/9] clk: qcom: ipq5332: Fix USB related clock defines
-Message-ID: <20230615060239.GE22186@varda-linux.qualcomm.com>
+Subject: Re: [PATCH 5/9] phy: qcom-m31: Introduce qcom,m31 USB phy
+Message-ID: <20230615060525.GF22186@varda-linux.qualcomm.com>
 References: <cover.1686126439.git.quic_varada@quicinc.com>
- <3840e5b5795ef55ecbf25d0faa8c328f09c6d976.1686126439.git.quic_varada@quicinc.com>
- <87810fde-c824-d494-17b3-b6ff34237bea@linaro.org>
+ <636308462efb579734de829fb6e9cbda81b982f7.1686126439.git.quic_varada@quicinc.com>
+ <f007fbf0-b1a7-cb44-d662-c30bf114365e@linaro.org>
+ <cba3834a-8ed3-b3a8-32cc-b0397fa5ae41@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87810fde-c824-d494-17b3-b6ff34237bea@linaro.org>
+In-Reply-To: <cba3834a-8ed3-b3a8-32cc-b0397fa5ae41@linaro.org>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ZbI92rQll4LM-qgKjLMcu-NqYmH-ri1Q
-X-Proofpoint-GUID: ZbI92rQll4LM-qgKjLMcu-NqYmH-ri1Q
+X-Proofpoint-GUID: zXxp3tJD1rQq6534dlYRBpPltmkRdgja
+X-Proofpoint-ORIG-GUID: zXxp3tJD1rQq6534dlYRBpPltmkRdgja
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.573,FMLib:17.11.176.26
  definitions=2023-06-15_03,2023-06-14_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 spamscore=0 impostorscore=0 mlxlogscore=986
- adultscore=0 phishscore=0 suspectscore=0 bulkscore=0 malwarescore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 adultscore=0
+ suspectscore=0 mlxlogscore=611 lowpriorityscore=0 spamscore=0
+ clxscore=1015 bulkscore=0 mlxscore=0 priorityscore=1501 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2305260000 definitions=main-2306150050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230614_230312_532744_ACCB9DBF 
-X-CRM114-Status: GOOD (  23.36  )
+X-CRM114-CacheID: sfid-20230614_230553_067853_F3637AEE 
+X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,103 +110,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 07, 2023 at 02:19:09PM +0300, Dmitry Baryshkov wrote:
-> On 07/06/2023 13:56, Varadarajan Narayanan wrote:
-> >Fix the USB related clock defines and add details
-> >referenced by them
+On Wed, Jun 07, 2023 at 08:37:05PM +0200, Krzysztof Kozlowski wrote:
+> On 07/06/2023 13:20, Dmitry Baryshkov wrote:
+> > On 07/06/2023 13:56, Varadarajan Narayanan wrote:
+> >> Introduce CONFIG_PHY_QCOM_M31_USB for including the M31 phy driver
+> >>
+> >> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > >
-> >Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> >---
-> >  drivers/clk/qcom/gcc-ipq5332.c | 34 +++++++++++++++++++++++-----------
-> >  1 file changed, 23 insertions(+), 11 deletions(-)
-> >
-> >diff --git a/drivers/clk/qcom/gcc-ipq5332.c b/drivers/clk/qcom/gcc-ipq5332.c
-> >index a75ab88..2b58558 100644
-> >--- a/drivers/clk/qcom/gcc-ipq5332.c
-> >+++ b/drivers/clk/qcom/gcc-ipq5332.c
-> >@@ -351,6 +351,16 @@ static const struct freq_tbl ftbl_gcc_adss_pwm_clk_src[] = {
-> >  	{ }
-> >  };
-> >+static const struct clk_parent_data gcc_usb3phy_0_cc_pipe_clk_xo[] = {
-> >+	{ .fw_name = "usb3phy_0_cc_pipe_clk" },
-> >+	{ .fw_name = "xo" },
+> > Is there any reason to keep Kconfig, Makefile and driver in different
+> > commits?
 >
-> gcc-ipq5332 uses DT indices, please don't mix that with .fw_name.
->
-> >+};
-> >+
-> >+static const struct parent_map gcc_usb3phy_0_cc_pipe_clk_xo_map[] = {
-> >+	{ P_USB3PHY_0_PIPE, 0 },
-> >+	{ P_XO, 2 },
-> >+};
-> >+
-> >  static struct clk_rcg2 gcc_adss_pwm_clk_src = {
-> >  	.cmd_rcgr = 0x1c004,
-> >  	.mnd_width = 0,
-> >@@ -1101,16 +1111,18 @@ static struct clk_rcg2 gcc_usb0_mock_utmi_clk_src = {
-> >  	},
-> >  };
-> >-static struct clk_regmap_phy_mux gcc_usb0_pipe_clk_src = {
-> >+static struct clk_regmap_mux usb0_pipe_clk_src = {
-> >  	.reg = 0x2c074,
-> >+	.shift = 8,
-> >+	.width = 2,
-> >+	.parent_map = gcc_usb3phy_0_cc_pipe_clk_xo_map,
-> >  	.clkr = {
-> >-		.hw.init = &(struct clk_init_data) {
-> >-			.name = "gcc_usb0_pipe_clk_src",
-> >-			.parent_data = &(const struct clk_parent_data) {
-> >-				.index = DT_USB_PCIE_WRAPPER_PIPE_CLK,
-> >-			},
-> >-			.num_parents = 1,
-> >-			.ops = &clk_regmap_phy_mux_ops,
-> >+		.hw.init = &(const struct clk_init_data){
-> >+			.name = "usb0phy_0_cc_pipe_clk_src",
-> >+			.parent_data = gcc_usb3phy_0_cc_pipe_clk_xo,
-> >+			.num_parents = 2,
-> >+			.ops = &clk_regmap_mux_closest_ops,
-> >+			.flags = CLK_SET_RATE_PARENT,
-> >  		},
->
-> Soo... As you are reverting this. Is USB0 PIPE clock required to be parked
-> to the XO? I was going to write 'before turning USB0_GDSC' off, but then I
-> noticed that gcc-ipq5332 doesn't declare GDSCs. Does this platform have
-> GDSCs?
->
-> >  	},
-> >  };
-> >@@ -3041,8 +3053,8 @@ static struct clk_branch gcc_usb0_pipe_clk = {
-> >  		.enable_mask = BIT(0),
-> >  		.hw.init = &(const struct clk_init_data) {
-> >  			.name = "gcc_usb0_pipe_clk",
-> >-			.parent_hws = (const struct clk_hw*[]) {
-> >-				&gcc_usb0_pipe_clk_src.clkr.hw,
-> >+			.parent_names = (const char *[]){
-> >+				"usb0_pipe_clk_src"
->
-> complete and definitive NAK. Do not use parent_names, we have just stopped
-> migrating from them.
+> KPI? Yearly objectives/goals?
 
-Will drop changes to this file and post a new patch.
+No :-). Was not sure, hence split them.
+Will combine in the next version.
 
 Thanks
 Varada
-> >  			},
-> >  			.num_parents = 1,
-> >  			.flags = CLK_SET_RATE_PARENT,
-> >@@ -3580,7 +3592,7 @@ static struct clk_regmap *gcc_ipq5332_clocks[] = {
-> >  	[GCC_PCIE3X2_PIPE_CLK_SRC] = &gcc_pcie3x2_pipe_clk_src.clkr,
-> >  	[GCC_PCIE3X1_0_PIPE_CLK_SRC] = &gcc_pcie3x1_0_pipe_clk_src.clkr,
-> >  	[GCC_PCIE3X1_1_PIPE_CLK_SRC] = &gcc_pcie3x1_1_pipe_clk_src.clkr,
-> >-	[GCC_USB0_PIPE_CLK_SRC] = &gcc_usb0_pipe_clk_src.clkr,
-> >+	[GCC_USB0_PIPE_CLK_SRC] = &usb0_pipe_clk_src.clkr,
-> >  };
-> >  static const struct qcom_reset_map gcc_ipq5332_resets[] = {
->
-> --
-> With best wishes
-> Dmitry
->
 
 -- 
 linux-phy mailing list
