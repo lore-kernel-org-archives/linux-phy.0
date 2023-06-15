@@ -4,98 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8397AEB64D9
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 13:37:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A140CEB64DC
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 16:33:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LCh0V/gHpFsi3TCM5NFQSIcHXPh94b3SQJL3ICwNm6s=; b=Yhgv75Ywmgxxlp
-	8dvDx9UMhwr3tOTGgos4M3teuZUqZAKDkx54tbTq+jOw0YbhK3GehWVYCJXVfOYd0+dh80FFVKdN4
-	YiXw5j7xImr8xMHUkn5CqsFZib7osyV7/pgE17GGqBSxVukR9BUTp8TKWkZ5u7A5ZFvmxgxvpd0a3
-	b/mH2KkuVYupHJBjXMhas7SL+v9NopuaQjfw+tK0mIxkJ2v16CNrjvtD005UC+jc0eqy7F4sfNPEg
-	5+dqK82kLP5l0Wa17ubizuDGniuvQ3WhGoMHDiKsAAfSpBuPsw/joRtdOAktHOefJPX7NRSs7Ds4d
-	xCUeN0bHEfvmzIfqfboA==;
+	List-Owner; bh=OY/N9kAbu3PZZ6JMBH5pUZT3MlP+8PMtFgphEuI2A8c=; b=YUsFSo7ZYslGc8
+	qOG79qG6jp74TZYxogA19wmkzTl+s8bmI09SioBSNf+1cDiK0DX7udyIbRJrdMyFm6YLJELoq8amt
+	Qg+iBQ9J9fHJnwB5lZuZBkPFR2FhmAfxbc9etWjnByJP8gsz103KSP7suoLyaYco4+DDCV7dR/rD2
+	GPZhuVl2qo6sF/ZP8VC4bUqSN6EHbV0/t4mRf06g/3RxzZYPDHZjh9lCjUKbDsHnmuJGWRiFP2RLg
+	qb1hIfr7ZzE1qUHoY2o0yfMn5NxOgMk86ArlNC2j9ZAZFmFP2Lf3qdchhuhcdTgygj/njvoPHNQQ2
+	4bFAWhN4IERZKzUj7ArQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9nAS-00F1qt-0g;
-	Thu, 15 Jun 2023 13:37:40 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1q9puU-00FRhk-14;
+	Thu, 15 Jun 2023 16:33:22 +0000
+Received: from mailrelay3-1.pub.mailoutpod2-cph3.one.com ([2a02:2350:5:402::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9nAO-00F1ph-0e
+	id 1q9puQ-00FRfB-2F
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Jun 2023 13:37:37 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-970056276acso264615566b.2
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 06:37:34 -0700 (PDT)
+	Thu, 15 Jun 2023 16:33:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1686836253; x=1689428253;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=mYo4mo9LxJ5Bb1u21M6AxJhHfaaBpi4Yfj8oS2RZGik=;
-        b=gwnpCAL+9XD9YTcrhW22JHHze+0ln59G79fG0PbzPCPkUume7cpPMe9N1MpVazB8T0
-         1VNcvHhrMsDbjcPaCwwELzdmSj2CInEWwxUmLYNOwRUXECqbkD21NOCA6zL0LkId1xTe
-         Jmz5KNhEGQlTF8AQJe7uUwDQ4+pi/99NutlpmFMGKD3/SppKORWaGtI+PmV14ZbcTUXg
-         SQ/xFGrRUrJug8frUn3FxCFoHdEvGjOv0zxfZtED6wTv76W+YYbrOe0XjczsTNc6FnX6
-         BTbrSi6sWw9Hr8PLExxfqiIVT6LsvR3Q/5vN6OlV0JnK2Yv0FbMnNpMYEzZJu4bCBpMD
-         RaPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686836253; x=1689428253;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mYo4mo9LxJ5Bb1u21M6AxJhHfaaBpi4Yfj8oS2RZGik=;
-        b=TSX/sykDadAbQ+P1aRqGiM91evas+22z3tq2rRnKogu4g4qnqbU0Y0yB23ofjykKMu
-         FRX5+Q0aw1CFiDGcf766xnYMyTY02kyIAUfWwhYeuJRFzhzKfhhuzn7La9nwe/3rTuPL
-         j0amOl4kNb0wvIH8hCge9gn+BTVngcuZo2+153qu6mwCxRs7PD7yf1VCy2pV9wjgs6/Q
-         HfOsvtWyX1XBkeqS1zTIXLCu3X4rAj7xH6uoz1NvCC4Yy4YjfNnVFFfYNll3eBlLxAqv
-         /DjD8rwZtWPIv6L2EkA4Jtdb142ZstkK2Q28kKmzMUuN2Q/Nma/bQNGhQZ/HCMtQpCEH
-         2+ag==
-X-Gm-Message-State: AC+VfDyvQbGU32pVv+0vlyVbUEQxtur8HBBA7qOK3e3hRyBe+W37CsNa
-	1sKfumi4h6RXMidmPhbSMfVayw==
-X-Google-Smtp-Source: ACHHUZ4+n13L4jhgYrrrc4ptTI3RmwMq1dwvCZV4MDbjtdu4sLMN7fnVBOOcDFGxP2/w6+shDoBlfg==
-X-Received: by 2002:a17:906:6a07:b0:982:a376:1d3f with SMTP id qw7-20020a1709066a0700b00982a3761d3fmr1542823ejc.41.1686836253221;
-        Thu, 15 Jun 2023 06:37:33 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id d23-20020a17090648d700b00982c84e5dadsm196414ejt.170.2023.06.15.06.37.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 15 Jun 2023 06:37:32 -0700 (PDT)
-Message-ID: <b326151c-24ed-e603-d1c7-3ebe8dbaa6c4@linaro.org>
-Date: Thu, 15 Jun 2023 15:37:30 +0200
+	d=ravnborg.org; s=rsa1;
+	h=in-reply-to:content-type:mime-version:references:message-id:subject:cc:to:
+	 from:date:from;
+	bh=kRWfxKU6iLOyQwwGx2ME57rRsTmS+Y/mv8gYh4DhOyg=;
+	b=okJlCJ3JHQ3+H0XLiMBf0glJchvuuMsEcUCgzmvJnyKMoDMx5KHnSTtuAyw0+6C02Fj+PIczYsQAb
+	 1sJXFppRbmiGQviCKIb6gD9tGzLEdywy9YByMgoeRCa84fyqZkmGszeCCOuLk+544Y+QNzLZKDM87E
+	 R+MDZJ4STSxW54XyqvVk2jeDkTM+7hDVzHkzZIH7HZecVf7PLr7GF7PWoIRiAkQPtxs1vJ7iZjPeUI
+	 8aMMfkVKa1VnG0CWOwYTNA76VeemsnDscjlKWyMSZ0Wyx32wByG6pAy08mMt1KyZN9XMciIJhmstwO
+	 20X+A/bkr4Y7SdFgKgk+vxuxgnP+UnQ==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed;
+	d=ravnborg.org; s=ed1;
+	h=in-reply-to:content-type:mime-version:references:message-id:subject:cc:to:
+	 from:date:from;
+	bh=kRWfxKU6iLOyQwwGx2ME57rRsTmS+Y/mv8gYh4DhOyg=;
+	b=XINu3AbpGKXRusYWTJ6IxnhI3JYWGjV1+42EsWbHmdUP4+C57+XyPjz9QZOcgglPnTa8mYWRY3EwX
+	 WRTXCTvAw==
+X-HalOne-ID: 4f77e8bb-0b9a-11ee-8d88-b90637070a9d
+Received: from ravnborg.org (2-105-2-98-cable.dk.customer.tdc.net [2.105.2.98])
+	by mailrelay3 (Halon) with ESMTPSA
+	id 4f77e8bb-0b9a-11ee-8d88-b90637070a9d;
+	Thu, 15 Jun 2023 16:33:10 +0000 (UTC)
+Date: Thu, 15 Jun 2023 18:33:08 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org,
+	robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com,
+	jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com,
+	daniel@ffwll.ch, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+	s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org,
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, oliver.brown@nxp.com,
+	linux-imx@nxp.com, kernel@pengutronix.de
+Subject: Re: [PATCH v6 3/8] drm: bridge: Cadence: Add MHDP8501 DP driver
+Message-ID: <20230615163308.GA1588386@ravnborg.org>
+References: <cover.1686729444.git.Sandor.yu@nxp.com>
+ <67f54be91e91f6291c4ad3f5155598d699b8bc09.1686729444.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH v2 17/23] dt-bindings: net: qcom,ethqos: add description
- for sa8775p
-Content-Language: en-US
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Vinod Koul <vkoul@kernel.org>,
- Bhupesh Sharma <bhupesh.sharma@linaro.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- "David S . Miller" <davem@davemloft.net>, Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Jose Abreu <joabreu@synopsys.com>
-Cc: netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-References: <20230615121419.175862-1-brgl@bgdev.pl>
- <20230615121419.175862-18-brgl@bgdev.pl>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230615121419.175862-18-brgl@bgdev.pl>
+Content-Disposition: inline
+In-Reply-To: <67f54be91e91f6291c4ad3f5155598d699b8bc09.1686729444.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_063736_238573_99752EA7 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230615_093319_662892_523FC62B 
+X-CRM114-Status: GOOD (  15.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,23 +88,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/06/2023 14:14, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Hi Sandor,
+
+On Thu, Jun 15, 2023 at 09:38:13AM +0800, Sandor Yu wrote:
+> Add a new DRM DisplayPort bridge driver for Candence MHDP8501
+> used in i.MX8MQ SOC. MHDP8501 could support HDMI or DisplayPort
+> standards according embedded Firmware running in the uCPU.
 > 
-> Add the compatible for the MAC controller on sa8775p platforms. This MAC
-> works with a single interrupt so add minItems to the interrupts property.
-> The fourth clock's name is different here so change it. Enable relevant
-> PHY properties. Add the relevant compatibles to the binding document for
-> snps,dwmac as well.
-> 
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> For iMX8MQ SOC, the DisplayPort FW was loaded and activated by SOC
+> ROM code. Bootload binary included HDMI FW was required for the driver.
 
+The bridge driver supports creating a connector, but is this really
+necessary?
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+This part:
+> +static const struct drm_connector_funcs cdns_dp_connector_funcs = {
+> +	.fill_modes = drm_helper_probe_single_connector_modes,
+> +	.destroy = drm_connector_cleanup,
+> +	.reset = drm_atomic_helper_connector_reset,
+> +	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
+> +	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
+> +};
+> +
+> +static const struct drm_connector_helper_funcs cdns_dp_connector_helper_funcs = {
+> +	.get_modes = cdns_dp_connector_get_modes,
+> +};
+> +
+> +static int cdns_dp_bridge_attach(struct drm_bridge *bridge,
+> +				 enum drm_bridge_attach_flags flags)
+> +{
+> +	struct cdns_mhdp_device *mhdp = bridge->driver_private;
+> +	struct drm_encoder *encoder = bridge->encoder;
+> +	struct drm_connector *connector = &mhdp->connector;
+> +	int ret;
+> +
+> +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR)) {
+> +		connector->interlace_allowed = 0;
+> +
+> +		connector->polled = DRM_CONNECTOR_POLL_HPD;
+> +
+> +		drm_connector_helper_add(connector, &cdns_dp_connector_helper_funcs);
+> +
+> +		drm_connector_init(bridge->dev, connector, &cdns_dp_connector_funcs,
+> +				   DRM_MODE_CONNECTOR_DisplayPort);
+> +
+> +		drm_connector_attach_encoder(connector, encoder);
+> +	}
 
-Best regards,
-Krzysztof
+Unless you have a display driver that do not create their own connector
+then drop the above and error out if DRM_BRIDGE_ATTACH_NO_CONNECTOR is
+not set.
+It is encouraged that display drivers create their own connector.
 
+This was the only detail I looked for in the driver, I hope some else
+volunteer to review it.
+
+	Sam
 
 -- 
 linux-phy mailing list
