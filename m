@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C684EB64DC
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 12:15:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0770EC0015E
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 12:15:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C3I7hNlE9TX1UV0elaceWWlI/KXGIwladNPbIYKTytU=; b=psMiEWBNzFUAPy
-	IEIyLjLsYKukkMZimh7ZojFl6dBtVR0B7U4yVdJJY5E5NWT4KQoilS64yFkIK3E8QXU7kr8vipEKn
-	Z8dNb+1p1S64Ig2OuMiE3affS84eipA2UeQ3J9NF+Vdo208XZbasH5SOnuW28DtUbZhOmZ+DYWsnL
-	y+9gJyxZhg9EAxWlZgLNnmI4r9BZ4oVc4JiAa9BLY2alEsgO7CeyVqHRp8EFLJ9NaOJDuW9CqmWMZ
-	IEqT4kIZ6XPwMeMcZTtRuFrnH6nfLgiPaglMj1fvzMOws82K/RZDzYYTuay4mw1UiBfas+EkigZSm
-	A4GyeCXNzXEVR3yuNxjw==;
+	List-Owner; bh=jiXOhqQWCqzUiZ6Hx/8VtKs7fuAS4YQois0C9EXrNuI=; b=SaZfcNd0LE4JUD
+	pV+Dd1TPMpre43bRrUG3CAKnhFHtczTpB5Eo42OJAk2QyznhObkBMyjb4Ll7RPPNBM9sU4EleJF77
+	KY/witjcBfUXYku4ZlrhkmQF9gEl1GCECJtOjBZKwl/EsdWYeyYKADXRMF5nIBNF60owJ8bgEypZd
+	rNs/XephV/SW7p+e2+GGxX/0Illgx9cQ5gIMbstKJaQF9AZ957lH3HbmhRoa1Z6KncjAmb0oL6Rsm
+	CX5LryVDbwBtOxQH0VGo2DXNsli+0zdWphdlFVI2hQ/6/SbsuRb/UaE8odYdhlcYaDHj3qkSOYZYF
+	ZuAsAm+oKv5QZM/W/JQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lsr-00EpYe-1m;
-	Thu, 15 Jun 2023 12:15:25 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1q9lss-00EpZh-1z;
+	Thu, 15 Jun 2023 12:15:26 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lsI-00Ep4q-1U
+	id 1q9lsJ-00Ep6m-0D
 	for linux-phy@lists.infradead.org;
 	Thu, 15 Jun 2023 12:14:52 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-3f8d1eb535eso15870505e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 05:14:47 -0700 (PDT)
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-3f7ff69824dso5290115e9.1
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 05:14:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686831286; x=1689423286;
+        d=bgdev-pl.20221208.gappssmtp.com; s=20221208; t=1686831288; x=1689423288;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=r1Ok1IYka1vb/vM8tvKH2bExKZHEfvi4JId7lcZB7pk=;
-        b=H2PTh4hD9hzbycE5igomrrO0DCv84czKWu9BdxtjyDf6LSzC48IU4LSjyvYlAgB8nt
-         jNpjXeMumj8pFyWnMh0IldN/tcmk/RBW7X/oAbEjT5pHbowgacjdTyikRxoqYb/fN4C0
-         arIdhnzIjcn+mByXIb+/knuZZ5BRjT6+YbTRmovjHKlg1gmvOmEkzkBTGV7CsOjZbMoi
-         IkbAMBaShTFb6BN0Mgu9ccN6nDsZFfr4ZUeDKfws4BZZJbGyf/GrbDS41qv7hZIp9caW
-         GGj+yG4g8SfHbqd9po7aVCM6vChyNGXDXkNcvDjxKScxrOgS7Vpim+2KqOL1bfg5tDPJ
-         1Edw==
+        bh=uMgaAHe76eIn3F9IB6JgFSErZkAha9wqjAecsB/W5Vk=;
+        b=v/JROUtIn1Fn9P10DPijytJUNeMgvE979wcEBNHrOGUdG6qtCKQ7nd6DTn78TsgPK9
+         oUGOJElAik/a1BznjNO6USDB/u5nHsu/PStgHyApHHv40RgcfIHdXONrGyB4WGs3N9q2
+         P63IyhbcJA1JqCZcROq+tanvqlpIehMj3UQRBQ+UlGU+jlpNfEMVUEz0MEtBoShEy4ZU
+         AQ/i+SxJff++kZZD7Sf5WR8dfphK1E/o4XQNiVfem4vMTW3A/Bom43nQ69X1BXRfPwkq
+         wfno0VaUOkbOKuWBS3EM/692Ilu/HgF+kCT3+x3uTUUE5d1uhem6sSeoZ6PbKoMXoxD3
+         UQ8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686831286; x=1689423286;
+        d=1e100.net; s=20221208; t=1686831288; x=1689423288;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=r1Ok1IYka1vb/vM8tvKH2bExKZHEfvi4JId7lcZB7pk=;
-        b=CcRXZuT+buwEWqjQn+7v7qVzqp2cjn7UhdODJAhVvvAS6Eps9fDJKiO9WSKBGIKK8D
-         6E/OMoLr2fcFahj+nBFe2JWaWJa1siXQE4u7AQ5CWziflAOYWBkwuLWzRHRTckJOuBQc
-         xAAsmxARI9YJ15BhGiz6/4p6rYWfIVIaBtjPirn4oVIh6irvexkdsY9irZPRXNBkaiz/
-         wriw1EY7D/B44sVkqRln5myzqmm6jbAua723w+wYUvnOlbskYBLXOwOJ8O52EjwrMbIj
-         OmgC7GdPejkSsPcs07p6GYGEWhZOXRlmX1Qc8DUlMbfjff0S9HvRHaQ08yGzv27iSKzm
-         g/6w==
-X-Gm-Message-State: AC+VfDxrqu4Gzef/BGgITtq0EoXTmFJFVMwk42ZUyL577LV22++o0tJv
-	/4F8TNstdfG0F0yIZqxrSPnRQQ==
-X-Google-Smtp-Source: ACHHUZ4r1A3qaTK5WSf+N6NhTfrUIoixv+YgCS9FosZwGOvt8xYnavFbEe9tPLw5/qL92M2SWSYV4Q==
-X-Received: by 2002:adf:ec0f:0:b0:30f:cc8f:e48c with SMTP id x15-20020adfec0f000000b0030fcc8fe48cmr4937374wrn.25.1686831286752;
-        Thu, 15 Jun 2023 05:14:46 -0700 (PDT)
+        bh=uMgaAHe76eIn3F9IB6JgFSErZkAha9wqjAecsB/W5Vk=;
+        b=RtdW8QAEEfXiNSNLQVWnaZdk+epHYRX4hsgLzZyMh8HaIpSmA9VtXqJlRBWGDpqizs
+         w1Qg7jkil4L/GHo681lu1YXbSDmJ3Ucgp6UV0xrIJxZX++yYJhcYCN608UZ0TuknEPb5
+         gYNCvjlWb+pOod4sdBKB5Vqa5Wd8ZlI1gmH6I12bB+bqlkaX8WA1LG6aP4wHzRrr/AMi
+         tUpUmVKtSs0ogDIY0OlpSOyzkblzJhcXYYbrVXkVI+clKSv7wg+WowI6Lo/LBS0mu0vL
+         Axx3cTKCcpUHFB4E7cG+FiGwNi8zNQe7Z+RKfxVz53hBTWWUwT7+QxB73UWBtV8u1elM
+         LHSA==
+X-Gm-Message-State: AC+VfDw6QgezS2Qd5s7QKZ4FrGLl1Wxte2LAiE2IvXZKjpw84aTpo7sm
+	PAmKJTHPLOt4+lhjiXDmlxYNmw==
+X-Google-Smtp-Source: ACHHUZ7hpsGhA1APGWhKHqXJARHR7T/asvTIBCcezaYjJwRDKg1LmwDvqWkfZ7PEzsLAv9Oam4DVuQ==
+X-Received: by 2002:a5d:6a88:0:b0:307:f75:f581 with SMTP id s8-20020a5d6a88000000b003070f75f581mr3870500wru.18.1686831288107;
+        Thu, 15 Jun 2023 05:14:48 -0700 (PDT)
 Received: from brgl-uxlite.home ([2a01:cb1d:334:ac00:2ad4:65a7:d9f3:a64e])
-        by smtp.gmail.com with ESMTPSA id k17-20020a5d4291000000b003047ea78b42sm20918012wrq.43.2023.06.15.05.14.45
+        by smtp.gmail.com with ESMTPSA id k17-20020a5d4291000000b003047ea78b42sm20918012wrq.43.2023.06.15.05.14.46
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Jun 2023 05:14:46 -0700 (PDT)
+        Thu, 15 Jun 2023 05:14:47 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Vinod Koul <vkoul@kernel.org>,
 	Bhupesh Sharma <bhupesh.sharma@linaro.org>,
@@ -88,17 +88,16 @@ Cc: netdev@vger.kernel.org,
 	linux-stm32@st-md-mailman.stormreply.com,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
 	Andrew Halaney <ahalaney@redhat.com>
-Subject: [PATCH v2 10/23] net: stmmac: dwmac-qcom-ethqos: add a newline between headers
-Date: Thu, 15 Jun 2023 14:14:06 +0200
-Message-Id: <20230615121419.175862-11-brgl@bgdev.pl>
+Subject: [PATCH v2 11/23] net: stmmac: dwmac-qcom-ethqos: remove stray space
+Date: Thu, 15 Jun 2023 14:14:07 +0200
+Message-Id: <20230615121419.175862-12-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230615121419.175862-1-brgl@bgdev.pl>
 References: <20230615121419.175862-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_051450_518451_3968A0B1 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230615_051451_157443_E47DCD02 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,27 +116,27 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-Typically we use a newline between global and local headers so add it
-here as well.
+There's an unnecessary space in the rgmii_updatel() function, remove it.
 
 Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 Reviewed-by: Andrew Halaney <ahalaney@redhat.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index b66d64d138cb..e3a9b785334d 100644
+index e3a9b785334d..ec3bbd199501 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -7,6 +7,7 @@
- #include <linux/platform_device.h>
- #include <linux/phy.h>
- #include <linux/property.h>
-+
- #include "stmmac.h"
- #include "stmmac_platform.h"
+@@ -117,7 +117,7 @@ static void rgmii_updatel(struct qcom_ethqos *ethqos,
+ {
+ 	unsigned int temp;
  
+-	temp =  rgmii_readl(ethqos, offset);
++	temp = rgmii_readl(ethqos, offset);
+ 	temp = (temp & ~(mask)) | val;
+ 	rgmii_writel(ethqos, temp, offset);
+ }
 -- 
 2.39.2
 
