@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D6C9EB64D9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 749B2EB64DC
 	for <linux-phy@archiver.kernel.org>; Thu, 15 Jun 2023 20:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:List-Id:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=a+8JgyT6PkzpnqKjDgjw7DRwD7bt7X8/DsilnxyACjw=; b=sVXRjvKvU5anb4fTuUGEwBinqB
-	3DnkRxTsrpZ7p9n02BSLDErdBtXbkmVAADN7ViPZ+uWAaeEJnPPIitfLjBjRP5azRLGnxoECqSl2c
-	1Q8ptB2LnfvrzyQBQvVV/SOVFUMrMBfTEBiR6TA8ZAB/xA8e63OBHX1gfAyhBVXsXddnS45beS4q4
-	piECRAf5plyfzUVgJjXM4S4RghyAfHeOFUgltGGzJsqxRfglm//L6kPABfzCOc6q2vq9vyTPoYp8y
-	gkd4qtrLdxx1pwYKrnjqbATg4HLbWiUncCAhuUP8pp/KF1XU6X+wTwbKj5LnEAgHm5SZIHJb114Z7
-	5c6Q2RnA==;
+	bh=Ri1KGlIMVKsSZOe/yMw0OQdJorMD4NEDUg6GcOebUiw=; b=JXGWNhUZUT1KyZJZTflk8Qra/x
+	ONyJLz2KRZClytR6AgC+Cmd/y32iymxrZMdvHvTZfU8KJUrce8EPNTgImqPZZU3/JUXbCdi0BRTpe
+	57BRwF8ApjLrpQ2fetiUb75BJNSn/WPbuijv2ti8evGXaHocNzlvmG4ZC75vwJ0GbPRdG/9sPZDoy
+	fVhMQkowAUEKBfGBOZPEikgJBf7+Yk6RNy4/yGM6GiI0AEhNW6fruefPwnlzvNWHa13b6iC1DKsGb
+	93oOddKsX7ZBs0YR/knltMEjZ+FXQ/qsZkYVV+aUbMw5SK0mQjP6j6lDAIboVI5Nwn9e46LPRpPM5
+	cZiMiXsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9tEl-00Fz0L-27;
+	id 1q9tEl-00Fz0U-35;
 	Thu, 15 Jun 2023 20:06:31 +0000
-Received: from mail-qk1-x72f.google.com ([2607:f8b0:4864:20::72f])
+Received: from mail-qk1-x72a.google.com ([2607:f8b0:4864:20::72a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9tEh-00FyyV-22
+	id 1q9tEi-00Fyyg-0v
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Jun 2023 20:06:29 +0000
-Received: by mail-qk1-x72f.google.com with SMTP id af79cd13be357-75d4f12d4a3so1484685a.0
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 13:06:25 -0700 (PDT)
+	Thu, 15 Jun 2023 20:06:30 +0000
+Received: by mail-qk1-x72a.google.com with SMTP id af79cd13be357-75d4a4cf24aso356354385a.1
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jun 2023 13:06:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1686859584; x=1689451584;
+        d=broadcom.com; s=google; t=1686859587; x=1689451587;
         h=references:in-reply-to:message-id:date:subject:cc:to:from:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=9bWmXJX5XEWUbF60J+VXK2ykeeH1d/FXn2EHqiwots8=;
-        b=E3dbS8+31/ZAzxx0HkRY5M9nrzM1/rfGu9wAKQU+FG4oFc3arpmQWik9ZQ//rLvtXB
-         4mgtVBPtvrUuhHtA4z4iWAET+SsZd8DNQtnp0mw25uvGxqYGXR3vEwCspV9LpVOJsEqh
-         BGX+gTjcKTRqwJb5PHkhB8IgaiRNJ4LWKvny8=
+        bh=YCQenxYFeyaV5eKPdOLFCCjg1GdqRS0vyPwDfYFS6uw=;
+        b=fSursZHJepI9EFuUfWxGEb5IM+jBGOgXQ/CRPG7h1t7snG6YcEMvpElsSRouWUev3b
+         xKzPeC4KLPiS1Bnqi445Kk8bSf7FO4OumbJNrjF/8LA9fMoGLXySmnSPAy6eccAPMyaC
+         V6611mLVniw3872L1hiudCqmP1dCNa06kKX1I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1686859584; x=1689451584;
+        d=1e100.net; s=20221208; t=1686859587; x=1689451587;
         h=references:in-reply-to:message-id:date:subject:cc:to:from
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=9bWmXJX5XEWUbF60J+VXK2ykeeH1d/FXn2EHqiwots8=;
-        b=Dk67XIsbiQr7KivCtVt3DSpQoFI7oeiKwV/uK6+LYt0k3XepPaZ2J85DmaH1ExsRgA
-         V1WTl1Td6nwOtsOT8W2Y88zD8UAdsjxp/fofF7DcZQNMOH3ZdtSEYz2stlkT+N4C193y
-         FM0FQhRKqSU8s56hEwf1x4HYkT4eldAqfqMtXxboFfejQIOwSAbnRc8cxntrMUQ5PvT/
-         OyjOKUpkDWPQwG+4vkQirp39ExCqRgKgF4+NBnjTwbKhv27KOCekMu4HIz2LBUd32wJ8
-         F43jGOWVF4dY7ZaOYAr8OXL72tN/9xCw7ChgTvTW0zrXIGnYOcK7hW57ZTS3lyQkb273
-         Wlfg==
-X-Gm-Message-State: AC+VfDxwHlpHASOGkNWk4uByN6BmAT3R7dJIabNYt3lxeEMX0FfLmDy2
-	mWP4tV4EIMNEN5EteR0LQDVat3tCIxlFZKAHTGGOFoaekqz+L/IfDqFVibw95EAlSN/JEA+2Jgh
-	4IuyOAV51xC4UiJJOo/CODvzOCqfaz2R8AC7WjjrPlYslp0FlaRJuP752R8xMQgUPJPa914rOjP
-	qSVbZrDEFvnIY76Ks=
-X-Google-Smtp-Source: ACHHUZ4I8QqRqxVTJ00VzyT9TWYR5uen+/Rc2bZUMBzr1gHqwNZ161+yG9cqJ5FNF2WEFkeOMAPi8Q==
-X-Received: by 2002:a37:688f:0:b0:75d:44af:19f2 with SMTP id d137-20020a37688f000000b0075d44af19f2mr19579005qkc.11.1686859584470;
-        Thu, 15 Jun 2023 13:06:24 -0700 (PDT)
+        bh=YCQenxYFeyaV5eKPdOLFCCjg1GdqRS0vyPwDfYFS6uw=;
+        b=H2aHJyDqJqwaVXEqpUMytROwWGNLKvWa81er4Pc5OywHATll5L2VD9EbUvhjKp31+K
+         mwPt868Q2KmVdsXso6Qb/IAF5YJ22bilmIYpW2kjVoGcZd4erioV41i8AgjOLMQ2lRK1
+         q9HULBYUEumCHVvMjK7d7Nf1i1AolN02r6LuM9Id1q2TiijH/z0fsZMQGsYkxbBWpXdu
+         Lbx635yXKgMWcYxi3SmJ+7XSNCHSBW7eeQ2sgj+k37apn35W7iSTR7rD+e3k0XB6utbN
+         R1FChm6cb7jA7ik0CsS/u9R/HSdoBbaQ553E7HbulEf/v4TH9qNpejhU81hfzoQJDZo+
+         aHPg==
+X-Gm-Message-State: AC+VfDx1qgHB2xz6xkeZfXXc42udnj5P8WyV/ycm9Ujavo23UogjjMkL
+	sk43xOpqAz/nG/LqYx7aZXf7zjAnhh4HEGQTNTRNx/s2Vd8ULqJlCLUhbiDTGkGLtcL66GvMYwn
+	+6kL18N5odUXpWYtXZSRM54gCYSxegeM161aZJn4KBa+v1ftcvkfG2x1fkzZ3Bf5RDnQ50Ze+3P
+	ibrwuQp4/3A773uLo=
+X-Google-Smtp-Source: ACHHUZ4nbdc+NMWLTaoFQA+gFzuMVyutwZpNyFoF6NOU3BIz13ty/29ts1p06jRmNXaSpaVrqI4aRQ==
+X-Received: by 2002:a05:620a:298e:b0:75b:23a0:d9c3 with SMTP id r14-20020a05620a298e00b0075b23a0d9c3mr25997037qkp.25.1686859586650;
+        Thu, 15 Jun 2023 13:06:26 -0700 (PDT)
 Received: from stbirv-lnx-2.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id k4-20020a05620a142400b0075ceca53e84sm5721407qkj.15.2023.06.15.13.06.23
+        by smtp.gmail.com with ESMTPSA id k4-20020a05620a142400b0075ceca53e84sm5721407qkj.15.2023.06.15.13.06.25
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 15 Jun 2023 13:06:24 -0700 (PDT)
+        Thu, 15 Jun 2023 13:06:26 -0700 (PDT)
 From: Justin Chen <justin.chen@broadcom.com>
 To: linux-phy@lists.infradead.org
 Cc: bcm-kernel-feedback-list@broadcom.com,
@@ -69,15 +69,15 @@ Cc: bcm-kernel-feedback-list@broadcom.com,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-kernel@vger.kernel.org (open list:BROADCOM BRCMSTB USB2 and USB3 PHY DRIVER)
-Subject: [PATCH 1/2] phy: usb: Turn off phy when port is in suspend
-Date: Thu, 15 Jun 2023 13:06:16 -0700
-Message-Id: <1686859578-45242-2-git-send-email-justin.chen@broadcom.com>
+Subject: [PATCH 2/2] phy: usb: suppress OC condition for 7439b2
+Date: Thu, 15 Jun 2023 13:06:17 -0700
+Message-Id: <1686859578-45242-3-git-send-email-justin.chen@broadcom.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
 References: <1686859578-45242-1-git-send-email-justin.chen@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_130627_760271_A8323444 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20230615_130628_329625_8945FE86 
+X-CRM114-Status: GOOD (  14.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,111 +90,159 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="===============4545129588530576642=="
+Content-Type: multipart/mixed; boundary="===============5349264186786371065=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============4545129588530576642==
+--===============5349264186786371065==
 Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
-	boundary="00000000000057212705fe309a2c"
+	boundary="00000000000078eabd05fe309a83"
 
---00000000000057212705fe309a2c
+--00000000000078eabd05fe309a83
 
-The COMMONONN bit turns off the PHY when the host controller puts it
-into suspend state. This can happen during the following...
-- Nothing is connected to the port
-- The host controller goes into low power mode whatever due to auto
-  suspend or system suspend.
+We hit a false positive OC for 7439b2 in DRD/device mode for the
+second port. So disable the OC check for this use case. Add capability
+to suppress OC condition for specific ports.
 
-With COMMONONN we also must unset U2_FREECLK_EXISTS since the UTMI
-clock is fed by the PHY.
-
-With these changes we see a power savings of ~12mW when port is in
-suspend.
-
-Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
 Signed-off-by: Justin Chen <justin.chen@broadcom.com>
 ---
- drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 15 +++++++++++++--
- drivers/phy/broadcom/phy-brcm-usb-init.h          |  8 ++++++++
- 2 files changed, 21 insertions(+), 2 deletions(-)
+ drivers/phy/broadcom/phy-brcm-usb-init.c | 34 ++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-index 76cf4280d7ed..4c10cafded4e 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-@@ -59,6 +59,8 @@
- #define   USB_CTLR_TP_DIAG1_wake_MASK			BIT(1)
- #define USB_CTRL_CTLR_CSHCR		0x50
- #define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK		BIT(18)
-+#define USB_CTRL_P0_U2PHY_CFG1		0x68
-+#define   USB_CTRL_P0_U2PHY_CFG1_COMMONONN_MASK		BIT(10)
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
+index a1ca83308f98..39536b6d96a9 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
+@@ -35,6 +35,11 @@
+ #define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		BIT(25) /* option */
+ #define   USB_CTRL_SETUP_CC_DRD_MODE_ENABLE_MASK	BIT(26) /* option */
+ #define   USB_CTRL_SETUP_STRAP_CC_DRD_MODE_ENABLE_SEL_MASK BIT(27) /* opt */
++#define   USB_CTRL_SETUP_OC_DISABLE_PORT0_MASK		BIT(28)
++#define   USB_CTRL_SETUP_OC_DISABLE_PORT1_MASK		BIT(29)
++#define   USB_CTRL_SETUP_OC_DISABLE_MASK		GENMASK(29, 28) /* option */
++#define   USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK		BIT(30)
++#define   USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK		BIT(31)
+ #define   USB_CTRL_SETUP_OC3_DISABLE_MASK		GENMASK(31, 30) /* option */
+ #define USB_CTRL_PLL_CTL		0x04
+ #define   USB_CTRL_PLL_CTL_PLL_SUSPEND_EN_MASK		BIT(27)
+@@ -114,6 +119,8 @@ enum {
+ 	USB_CTRL_SETUP_SCB2_EN_SELECTOR,
+ 	USB_CTRL_SETUP_SS_EHCI64BIT_EN_SELECTOR,
+ 	USB_CTRL_SETUP_STRAP_IPP_SEL_SELECTOR,
++	USB_CTRL_SETUP_OC3_DISABLE_PORT0_SELECTOR,
++	USB_CTRL_SETUP_OC3_DISABLE_PORT1_SELECTOR,
+ 	USB_CTRL_SETUP_OC3_DISABLE_SELECTOR,
+ 	USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_SELECTOR,
+ 	USB_CTRL_USB_PM_BDC_SOFT_RESETB_SELECTOR,
+@@ -190,6 +197,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		USB_CTRL_SETUP_STRAP_IPP_SEL_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -232,6 +241,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK,
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -253,6 +264,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		0, /* USB_CTRL_SETUP_SCB2_EN_MASK */
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		USB_CTRL_SETUP_STRAP_IPP_SEL_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK,
+@@ -274,6 +287,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK,
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -295,6 +310,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -316,6 +333,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_VAR_MASK,
+ 		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
++		0, /* USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK */
++		0, /* USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK */
+ 		0, /* USB_CTRL_SETUP_OC3_DISABLE_MASK */
+ 		USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK,
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -337,6 +356,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		USB_CTRL_SETUP_STRAP_IPP_SEL_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK,
+@@ -358,6 +379,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		USB_CTRL_SETUP_SCB2_EN_MASK,
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_VAR_MASK,
+ 		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK,
+ 		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
+@@ -379,6 +402,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		0, /* USB_CTRL_SETUP_SCB2_EN_MASK */
+ 		USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK,
+ 		USB_CTRL_SETUP_STRAP_IPP_SEL_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK,
+@@ -400,6 +425,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+ 		0, /* USB_CTRL_SETUP_SCB2_EN_MASK */
+ 		0, /*USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK */
+ 		USB_CTRL_SETUP_STRAP_IPP_SEL_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK,
++		USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK,
+ 		USB_CTRL_SETUP_OC3_DISABLE_MASK,
+ 		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+ 		USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK,
+@@ -872,6 +899,13 @@ static void usb_init_common(struct brcm_usb_init_params *params)
  
- /* Register definitions for the USB_PHY block in 7211b0 */
- #define USB_PHY_PLL_CTL			0x00
-@@ -90,6 +92,8 @@
- #define   BDC_EC_AXIRDA_RTS_MASK			GENMASK(31, 28)
- #define   BDC_EC_AXIRDA_RTS_SHIFT			28
+ 	brcmusb_memc_fix(params);
  
-+#define USB_XHCI_GBL_GUSB2PHYCFG	0x100
-+#define   USB_XHCI_GBL_GUSB2PHYCFG_U2_FREECLK_EXISTS_MASK	BIT(30)
- 
- static void usb_mdio_write_7211b0(struct brcm_usb_init_params *params,
- 				  uint8_t addr, uint16_t data)
-@@ -140,13 +144,17 @@ static void xhci_soft_reset(struct brcm_usb_init_params *params,
- 			int on_off)
- {
- 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+	void __iomem *xhci_gbl = params->regs[BRCM_REGS_XHCI_GBL];
- 
- 	/* Assert reset */
--	if (on_off)
-+	if (on_off) {
- 		USB_CTRL_UNSET(ctrl, USB_PM, XHC_SOFT_RESETB);
- 	/* De-assert reset */
--	else
-+	} else {
- 		USB_CTRL_SET(ctrl, USB_PM, XHC_SOFT_RESETB);
-+		/* Required for COMMONONN to be set */
-+		USB_XHCI_GBL_UNSET(xhci_gbl, GUSB2PHYCFG, U2_FREECLK_EXISTS);
++	/* Workaround for false positive OC for 7439b2 in DRD/Device mode */
++	if ((params->family_id == 0x74390012) &&
++	    (params->supported_port_modes != USB_CTLR_MODE_HOST)) {
++		USB_CTRL_SET(ctrl, SETUP, OC_DISABLE_PORT1);
++		USB_CTRL_SET_FAMILY(params, SETUP, OC3_DISABLE_PORT1);
 +	}
- }
- 
- static void usb_init_ipp(struct brcm_usb_init_params *params)
-@@ -320,6 +328,9 @@ static void usb_init_common_7216(struct brcm_usb_init_params *params)
- 	/* 1 millisecond - for USB clocks to settle down */
- 	usleep_range(1000, 2000);
- 
-+	/* Disable PHY when port is suspended */
-+	USB_CTRL_SET(ctrl, P0_U2PHY_CFG1, COMMONONN);
 +
- 	usb_wake_enable_7216(params, false);
- 	usb_init_common(params);
- }
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
-index f9fbf8fb80e5..c1a88f5cd4cd 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.h
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
-@@ -34,6 +34,14 @@ enum brcmusb_reg_sel {
- 	brcm_usb_ctrl_unset(USB_CTRL_REG(base, reg),		\
- 			    USB_CTRL_##reg##_##field##_MASK)
- 
-+#define USB_XHCI_GBL_REG(base, reg) ((void __iomem *)base + USB_XHCI_GBL_##reg)
-+#define USB_XHCI_GBL_SET(base, reg, field) \
-+	brcm_usb_ctrl_set(USB_XHCI_GBL_REG(base, reg), \
-+			  USB_XHCI_GBL_##reg##_##field##_MASK)
-+#define USB_XHCI_GBL_UNSET(base, reg, field) \
-+	brcm_usb_ctrl_unset(USB_XHCI_GBL_REG(base, reg), \
-+			    USB_XHCI_GBL_##reg##_##field##_MASK)
-+
- struct  brcm_usb_init_params;
- 
- struct brcm_usb_init_ops {
+ 	if (USB_CTRL_MASK_FAMILY(params, USB_DEVICE_CTL1, PORT_MODE)) {
+ 		reg = brcm_usb_readl(USB_CTRL_REG(ctrl, USB_DEVICE_CTL1));
+ 		reg &= ~USB_CTRL_MASK_FAMILY(params, USB_DEVICE_CTL1,
 -- 
 2.7.4
 
 
---00000000000057212705fe309a2c
+--00000000000078eabd05fe309a83
 Content-Type: application/pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -265,19 +313,19 @@ sDL+OV16G+F9CkNMN3txsym8Nnx5WAYZb6+rBUIhMGz70V05xsHQfzvo2s7f0J1tJ5BoRlPPhL0h
 VOnWA3h71u9TfSsv+PXVm3P21TfOS2uc1hbzEqyENCP4i5XQ0rv0TmPW42GZ0o4xggJtMIICaQIB
 ATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYDVQQDEyhH
 bG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgwj8BKLXNpALfemdRAwDQYJ
-YIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEINtZb5cf9qd15jixqpoWNzibUdqt9XGAeZoV
-yIB+dGwQMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIzMDYxNTIw
-MDYyNFowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
+YIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIJpM3SEFZBv2dV4s/fUhjsDLFwYDAz26eG66
+Xr1G38KJMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIzMDYxNTIw
+MDYyN1owaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
 AwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFlAwQCATAN
-BgkqhkiG9w0BAQEFAASCAQAUGRd6J79XMl1TNQvpI+YVqnKhJc0Iron9sd1BE1l5Kj+8tmTLD940
-6IBH6SmD8E1sO55SBgmbexF5vSJnnnT04HcorzAneUj11TZyC9s9OoTT1gf7NIc+/LFDozdFPtUu
-yotA+s1v1tTMjEg3Hl9YDpPqVucjjeSc9GN6QeMHRA4+WV6BYyEJzhZtgzHMqSusIfh9jo65paxP
-IKTqJLoQ0oH56T3UoJX5C9EdMeAUppuc+hFC4MDuUnP4msQ7yrb3cyiOkLjGgGZKQ9fdIDXoz5Uh
-GiaWr2jH7PF3gKx+yLyHfSM0dbftCImKn823a5e4Tdf+FXMbb5WVpqLm3GtK
---00000000000057212705fe309a2c--
+BgkqhkiG9w0BAQEFAASCAQApTmeSPG1D+df2O60s4M5vMubUUcmQD9DidS+Bu7O5jkM78J1KfLpC
+XC9F9B+bC/k2ap1H3UwpvcmuhDfO3Tr/5SNL0UGPWrvct67Qal5YBWWIx5DctDX3/c5ThfvRPC2w
+v+z4kvo0cdB0RFAwAcvLAEhHGrDt0B6S++pKvlGz2x80ZTBnVaF9/rqzpc0+vuzio7q4zLDdMtUU
+XTXjHD6x2zQlAB3qBbsE5Gen2czMLeie0F87ehfohivqZfZ04g0/Sbo8S6q0b6XalwvLuk9x5rou
+n97xlxCCRJ+0X2VZPkg9BB9bu1x48pASE5suV9lqxZnCfe9OzOp3iXX06BHP
+--00000000000078eabd05fe309a83--
 
 
---===============4545129588530576642==
+--===============5349264186786371065==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -288,5 +336,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4545129588530576642==--
+--===============5349264186786371065==--
 
