@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8FDDEB64D8
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Jun 2023 09:31:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99A58EB64DA
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Jun 2023 09:34:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cftQ26fDNOIVLSwlwcEgoQH6XVepiGx4aVjRvg2v1hs=; b=FT7xzRGlDs6czI
-	mt1nb/XwFLS4gu+Rg3GYwnY9xplz4mbr1eiYO3uhBcgJ7ZvQ7DFu5mIDPo/scYYlrd40pO0ISUMlu
-	T0j/0Ipk+pMavDy1yL3gfvjIjPQts8yuknD/H8VSTPKKXjkNbl9CwKFMi15SaORN2HY2vO28WCaML
-	xrY2teTQQKK+fpGNbdxnOO2RwdQgOOW2Dr95m3XIXDLccN9AdSeJ5kK+vhY0MTTTgmHklTMjnGkf+
-	EaXBLOKO4ASlVMQ6xIq9Mx9CU7QBSbsJqeGK2iKSE1sdTIqVvYqW2Wj6lAM3T0WS9DlhqtsS+BSR/
-	AgB855gtT1bfFJSQg04Q==;
+	List-Owner; bh=NG3C97cbPQP4wwKZiBks1XkvQ0iVz/PXDC4Mdedz0U8=; b=voyMQknotaNYsU
+	PxFhesIKE+8xI2HEfi+TItpOc65HQwtgWtkVTwkOyYGTaONWpRR9BxwA4o+ZruzemB5ogsB9Ag3fH
+	0Kj0NBIVW4v0lVk7sYLvELs/ZNWhXCX+tATGeIRggOZB2wY4biRl9+WBFVxx1rHhgjhhXx+RFoXjg
+	f+Tdvju5TgnmFsHyPl8sM0dpgPzMIBAyVPimWZNsso3gtVEUmDBz7XCCzQKNzXs+LckAaoIgDs3b9
+	k+HxPts/3jyxmNPvWklj06cVhst+XVx4yuc8mQQC2j3wwc0BZqcmvahPeVkXJ3W4Ob3X64ClRuWWw
+	jdYiqjKDN21i9FJNNIrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qA5oA-00HT6p-1l;
-	Fri, 16 Jun 2023 09:31:54 +0000
+	id 1qA5qr-00HTcK-0x;
+	Fri, 16 Jun 2023 09:34:41 +0000
 Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qA5o3-00HT2u-0m;
-	Fri, 16 Jun 2023 09:31:49 +0000
+	id 1qA5qn-00HTbX-3D;
+	Fri, 16 Jun 2023 09:34:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
   d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1686907907; x=1718443907;
+  t=1686908078; x=1718444078;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=pMlSGOdl8IvS4LImlgrl3MIkfMf7pCHaKnwUSkpFQ1o=;
-  b=Ucx9RZNsmD3Rl+YRm4tesuCUnyA4blWYjogWt2mLCliH8wbZe8HbGAnB
-   U4aFixU0UnRw7+PRqhRiJYX3lO141UKkXPQ7tQXUlX/4OzW0azwtG6S9o
-   AHehv30VsHSw1rbMNL5qBt0dwRJKOLk0XN9YxUVFbkHgPOMqtIhQdn135
-   qF1zWPaMHYMkhk1G6wAFPl66uCIvLI2+XVq3Xw5uya/42BhoWsXe+ZlNF
-   bKiR9fl1F49fbn02KYhgesw4w00mw1sNwY5zB99bWCWOeyUnL7U1+tl9H
-   UtsmrLL/61wmrV3mc1RP8fC5YfJAmcg/EHYqohnJBGz64RnIYcx8+LUKH
-   A==;
+  bh=7fUinrxNf0MsjqefM35xcVOtugPMdveh6egjO57sMYk=;
+  b=C4wgZ4SHjvgQisADXAwNNyGJrUoNvxDmQ0c7fEbqJ1XApjOrvsvSIwY+
+   sd4gZk/kFqivo+TfqIuzAIPFIJ1/VvXlk1wqsboMJfnybD6buE1xrPtIP
+   nxl0ABmCKbe7/q5wtUXAIq2jzKFDSzHpwDM2bkuLjfA4v4MNBxHfMt4Hi
+   g1NIY9/txb533oLTidFyB/Ej1lHWX9SorSmo5bqqOIUUL6SPlzvr+ExSx
+   +Tb72vJQehAW1ZZOhi4ZDkBG5wWy3BGkHL9El/ZCdOfzLL9gQu3r0RHtV
+   OKFWSgscfepTghl8yR4B77rzC3TOGOPW26229xqwdR/EEu9P42/jFbpDD
+   Q==;
 X-IronPort-AV: E=Sophos;i="6.00,247,1681164000"; 
-   d="scan'208";a="31462623"
+   d="scan'208";a="31462666"
 Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 16 Jun 2023 11:31:42 +0200
+  by mx1.tq-group.com with ESMTP; 16 Jun 2023 11:34:35 +0200
 Received: from steina-w.localnet (unknown [10.123.53.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 3A7A9280082;
-	Fri, 16 Jun 2023 11:31:42 +0200 (CEST)
+	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id A19C0280082;
+	Fri, 16 Jun 2023 11:34:35 +0200 (CEST)
 From: Alexander Stein <alexander.stein@ew.tq-group.com>
 To: andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 Cc: oliver.brown@nxp.com, Sandor.yu@nxp.com, linux-imx@nxp.com, kernel@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>
-Subject: Re: [PATCH v6 2/8] dt-bindings: display: bridge: Add Cadence MHDP8501 HDMI and DP
-Date: Fri, 16 Jun 2023 11:31:43 +0200
-Message-ID: <3439354.PYKUYFuaPT@steina-w>
+Subject: Re: [PATCH v6 6/8] dt-bindings: phy: Add Freescale iMX8MQ DP and HDMI PHY
+Date: Fri, 16 Jun 2023 11:34:37 +0200
+Message-ID: <5009063.iIbC2pHGDl@steina-w>
 Organization: TQ-Systems GmbH
-In-Reply-To: <8687f2221299b120e12f29fdccf264e120227bd7.1686729444.git.Sandor.yu@nxp.com>
-References: <cover.1686729444.git.Sandor.yu@nxp.com> <8687f2221299b120e12f29fdccf264e120227bd7.1686729444.git.Sandor.yu@nxp.com>
+In-Reply-To: <2ccb849de420ced29b3f9be38e12664e1919b631.1686729444.git.Sandor.yu@nxp.com>
+References: <cover.1686729444.git.Sandor.yu@nxp.com> <2ccb849de420ced29b3f9be38e12664e1919b631.1686729444.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230616_023147_582684_38CF9740 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20230616_023438_188869_49C68997 
+X-CRM114-Status: GOOD (  13.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,141 +80,87 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Sandor,
 
-Am Donnerstag, 15. Juni 2023, 03:38:12 CEST schrieb Sandor Yu:
-> Add bindings for Cadence MHDP8501 DisplayPort and HDMI driver.
+Am Donnerstag, 15. Juni 2023, 03:38:16 CEST schrieb Sandor Yu:
+> Add bindings for Freescale iMX8MQ DP and HDMI PHY.
 > =
 
 > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
 > ---
->  .../display/bridge/cdns,mhdp8501.yaml         | 105 ++++++++++++++++++
->  1 file changed, 105 insertions(+)
+>  .../bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml  | 53 +++++++++++++++++++
+>  1 file changed, 53 insertions(+)
 >  create mode 100644
-> Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml
 > =
 
 > diff --git
-> a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml new
+> a/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml
+> b/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml new
 > file mode 100644
-> index 000000000000..a54756815e6f
+> index 000000000000..917f113503dc
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> @@ -0,0 +1,105 @@
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml
+> @@ -0,0 +1,53 @@
 > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
+> +$id: http://devicetree.org/schemas/phy/fsl,imx8mq-dp-hdmi-phy.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Cadence MHDP8501 Displayport bridge
+> +title: Cadence HDP-TX DP/HDMI PHY for Freescale i.MX8MQ SoC
 > +
 > +maintainers:
-> +  - Sandor Yu <Sandor.yu@nxp.com>
-> +
-> +description:
-> +  The Cadence MHDP8501 Displayport/HDMI TX interface.
+> +  - Sandor Yu <sandor.yu@nxp.com>
 > +
 > +properties:
 > +  compatible:
 > +    enum:
-> +      - cdns,mhdp8501-dp
-> +      - cdns,mhdp8501-hdmi
-> +      - fsl,imx8mq-mhdp8501-dp
-> +      - fsl,imx8mq-mhdp8501-hdmi
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: MHDP8501 DP/HDMI APB clock.
-> +
-> +  phys:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    items:
-> +      - description: Hotplug cable plugin.
-> +      - description: Hotplug cable plugout.
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: plug_in
-> +      - const: plug_out
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description:
-> +          Input port from display controller output.
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description:
-> +          Output port to DP/HDMI connector.
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
+> +      - fsl,imx8mq-dp-phy
+> +      - fsl,imx8mq-hdmi-phy
 
-You mark these ports as required, but apparently the drivers do not use the=
-m, =
+How is it intended to select DP or HDMI? E.g. provide a single default dp-p=
+hy =
 
-AFAICT. E.g. missing port@1 is not resulting in an error, at lease for HDMI =
-
-one.
+node in imx8mq.dtsi and change the compatible to HDMI on board-level?
 
 Best regards,
 Alexander
 
 > +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: PHY reference clock.
+> +      - description: APB clock.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ref
+> +      - const: apb
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
 > +required:
 > +  - compatible
 > +  - reg
 > +  - clocks
-> +  - interrupts
-> +  - interrupt-names
-> +  - phys
-> +  - ports
+> +  - clock-names
+> +  - "#phy-cells"
 > +
 > +additionalProperties: false
 > +
 > +examples:
 > +  - |
 > +    #include <dt-bindings/clock/imx8mq-clock.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    mhdp_dp: dp-bridge@32c00000 {
-> +        compatible =3D "fsl,imx8mq-mhdp8501-dp";
+> +    #include <dt-bindings/phy/phy.h>
+> +    dp_phy: phy@32c00000 {
+> +        compatible =3D "fsl,imx8mq-dp-phy";
 > +        reg =3D <0x32c00000 0x100000>;
-> +        interrupts =3D <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
-> +                     <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-> +        interrupt-names =3D "plug_in", "plug_out";
-> +        clocks =3D <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
-> +        phys =3D <&dp_phy>;
-> +
-> +        ports {
-> +            #address-cells =3D <1>;
-> +            #size-cells =3D <0>;
-> +
-> +            port@0 {
-> +                reg =3D <0>;
-> +
-> +                mhdp_in: endpoint {
-> +                    remote-endpoint =3D <&dcss_out>;
-> +                };
-> +            };
-> +
-> +            port@1 {
-> +                reg =3D <1>;
-> +
-> +                mhdp_out: endpoint {
-> +                    remote-endpoint =3D <&dp_con>;
-> +                };
-> +            };
-> +        };
+> +        #phy-cells =3D <0>;
+> +        clocks =3D <&hdmi_phy_27m>, <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
+> +        clock-names =3D "ref", "apb";
 > +    };
 
 
