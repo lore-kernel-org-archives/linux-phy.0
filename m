@@ -4,78 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1992DEB64DA
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jun 2023 13:35:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 673B4EB64D9
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jun 2023 14:45:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VvNCOWQevLUzS8dleTJz64phFul1ZD1G++km+kBuZto=; b=UwFH8uRpNj+TR2
-	WvpNFVEEJeYoMK7KuS5ltDj8U892Fd/zUb652Lp4Mtj9l6PMODk3wRpeNh7AlxYhKNKB1FAaNtrsP
-	W7lPYM5VGgOWJbLOqNPuOZRnoZGADb4u2CIV0Tyx9d4FMA4mc262r6UiXYYxAcyc/pCz/c4vAhn4D
-	FFWKnDTs+tWORQ83d+cqYYyNpd9X4eN7rAWj+DeZSTZz9oD0c2eYb/zKH18rpDQCt9I+TsSFk2yo+
-	VPyvo0wcDZzNvRwDhbi/wUmNrReymmL1lCK6aLmFyBt3YjgQqPVGjkJ9tKcW6o8mljNPS5LUHY3Qj
-	lPtlFuIYiRdoOKYGNiew==;
+	List-Owner; bh=q7FQrDA8ZkUF8EVFkN/ZZ0S2nut63QHL3Ih3zSmz1Bw=; b=t9g6qZjP4ZJy1p
+	JWlPAlPcMIWpy6LT7jLYf2rHnPFcZ7cjv8+PWwf8F+dQtauAtLCmgRgvgQARvBlrbCgehoLQn3a7b
+	EKxzOvNnSfuVezHHd/MuB2pBWLeBkehu52bKjHta2CRvrBg3uVMxLVIVs7xT18on/m6IroZFojp52
+	pCDKqAcAfNaC6XaVxcSIal6gJaW7RmEzDqpDJJsPLn0bdTfVODUXjJoYRyQ4RhDb3xwI7M2Duy0ET
+	Z5mJEyRzPmkX0O7d1uqrx+EHA/06F48UTqnTQ/8g3/NMya3wn6kw/EcGh4FVtIMi11wECcWoyEffS
+	vthR7fhCLCRRDgdOGUYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBF2y-008ZX4-2L;
-	Mon, 19 Jun 2023 13:35:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qBG8W-008fw1-31;
+	Mon, 19 Jun 2023 14:45:44 +0000
+Received: from mga01.intel.com ([192.55.52.88])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBF2w-008ZVy-1M;
-	Mon, 19 Jun 2023 13:35:55 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id C71E860C68;
-	Mon, 19 Jun 2023 13:35:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A6B1C433C8;
-	Mon, 19 Jun 2023 13:35:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1687181752;
-	bh=0Clqdzr8ksnDkV+ZCSDshro8OIUJJGdZ5wYLpnZqzUY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fwzq1KJKGuiDsTlLvIiQh0/jqhtxg5tocu13OII5gIvkOGmNEhDza3mmh9Gee3JdZ
-	 0OBPYmd9hVUIlvldbvP3kzO3I8/jV9fG4dVfth4nhqB0wbmQreSQj3eizRIlwyVqDQ
-	 7veBCotYt2cLnodWKa/VCMMjMwMUEi1NEfQOGfVU=
-Date: Mon, 19 Jun 2023 15:35:49 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Conor Dooley <conor@kernel.org>,
+	id 1qBG8U-008fuu-0i;
+	Mon, 19 Jun 2023 14:45:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1687185942; x=1718721942;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=yoEByqBkambGkCJiJIubqQfRE/V06XGkaD+JTvok5Kw=;
+  b=KX9YoiaNUO93e7UCxJTEjYriLR4jGiCmANktF8zceV0P9jzrxYH5iL2T
+   QhtCmB3cwo0h2GYOQ92FM2PBaZX4ZjAR1Zu+UkD2NO2P2t2db0slwTlry
+   oJkHMUVLtI/m1VCgI/We7hocxO64n6X7sknmH8qYSK1G0OE5+KP9TyhAR
+   BXgEAVLGJM948kyVj4erGoAxkqgOpBrOJRDpfnWRuv4V75lStzgq76Xw/
+   k8vMGsR7KdhoNLxrVgIsuJPTXLQ7Eo9oO1mn/J7PLlZt2rEkzhyQt0yN5
+   zBr486fyzWMxsa9MARPCXneUcZp6kOqdYTAgByLpAMqPXxsjYcsAiG/fS
+   w==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10746"; a="388725058"
+X-IronPort-AV: E=Sophos;i="6.00,254,1681196400"; 
+   d="scan'208";a="388725058"
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Jun 2023 07:45:37 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10746"; a="743478143"
+X-IronPort-AV: E=Sophos;i="6.00,254,1681196400"; 
+   d="scan'208";a="743478143"
+Received: from lkp-server01.sh.intel.com (HELO 783282924a45) ([10.239.97.150])
+  by orsmga008.jf.intel.com with ESMTP; 19 Jun 2023 07:45:33 -0700
+Received: from kbuild by 783282924a45 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1qBG8K-0004o6-25;
+	Mon, 19 Jun 2023 14:45:32 +0000
+Date: Mon, 19 Jun 2023 22:45:26 +0800
+From: kernel test robot <lkp@intel.com>
+To: Minda Chen <minda.chen@starfivetech.com>,
 	Emil Renner Berthing <emil.renner.berthing@canonical.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Pawel Laszczak <pawell@cadence.com>,
-	Peter Chen <peter.chen@kernel.org>,
-	Roger Quadros <rogerq@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Roger Quadros <rogerq@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, linux-riscv@lists.infradead.org,
+	linux-riscv@lists.infradead.org,
 	Paul Walmsley <paul.walmsley@sifive.com>,
 	Palmer Dabbelt <palmer@dabbelt.com>,
 	Albert Ou <aou@eecs.berkeley.edu>,
+	Minda Chen <minda.chen@starfivetech.com>,
 	Mason Huo <mason.huo@starfivetech.com>
-Subject: Re: [PATCH v6 5/7] dt-bindings: usb: Add StarFive JH7110 USB
- controller
-Message-ID: <2023061941-bok-gooey-c4fc@gregkh>
-References: <20230518112750.57924-1-minda.chen@starfivetech.com>
- <20230518112750.57924-6-minda.chen@starfivetech.com>
- <20230525-shopper-handbrake-27fc06aede32@spud>
- <5124e6a8-8ca6-71a5-19d6-8c15e954c458@starfivetech.com>
- <20230526-grain-cubical-e0af96202007@wendy>
- <a91f4167-e797-435f-8867-dbef4b109df8@starfivetech.com>
+Subject: Re: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
+Message-ID: <202306192215.TvQco9m6-lkp@intel.com>
+References: <20230619094759.21013-5-minda.chen@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a91f4167-e797-435f-8867-dbef4b109df8@starfivetech.com>
+In-Reply-To: <20230619094759.21013-5-minda.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230619_063554_518969_BA002FAE 
-X-CRM114-Status: GOOD (  21.15  )
+X-CRM114-CacheID: sfid-20230619_074542_270323_D50806EE 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,45 +96,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Jun 18, 2023 at 08:22:05PM +0800, Minda Chen wrote:
-> 
-> 
-> On 2023/5/26 21:13, Conor Dooley wrote:
-> > On Fri, May 26, 2023 at 06:24:48PM +0800, Minda Chen wrote:
-> > 
-> >> >> +title: StarFive JH7110 wrapper module for the Cadence USBSS-DRD controller
-> >> > 
-> >> > I think you told Krzysztof you'd rename this to "StarFive JH7110 Cadence
-> >> > USBSS-DRD SoC controller"?
-> >> > 
-> >> The previous title describe whole USB controller for previous dts node is
-> >> merged. Now the dts node is split. 
-> >> "starfive,jh7110-usb" just contain starfive wrapper layer dts configuration.
-> > 
-> > Okay, I must have misunderstood the conversation on the previous
-> > version. Sorry about that.
-> > 
-> >> > Otherwise, it looks like all the stuff from him and Rob have been sorted
-> >> > out, so other than $title this is
-> >> > Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-> > 
-> 
-> Hi Greg
-> Can this patch can be applied to Linux-USB-next tree? Since this patch is reviewed by Conor.
-> 
-> List Below is Conor's previous E-mail.
-> 
->    I think I missed this mail somehow. 5/7 had the binding for the driver
->    so probably that should've gone via the USB tree too?
->    Should apply on its own (no deps on the phy patches) & has dt-binding
->    maintainer reviews.
-> 
->    `b4 am -P 5 20230518112750.57924-6-minda.chen@starfivetech.com` if
->    that's your cup of tea.
+Hi Minda,
 
-Thanks, I missed that, now applied!
+kernel test robot noticed the following build errors:
 
-greg k-h
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on linus/master v6.4-rc7 next-20230619]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Minda-Chen/dt-bindings-phy-Add-StarFive-JH7110-PCIe-PHY/20230619-184756
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20230619094759.21013-5-minda.chen%40starfivetech.com
+patch subject: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
+config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/config)
+compiler: s390-linux-gcc (GCC) 12.3.0
+reproduce: (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202306192215.TvQco9m6-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "devm_platform_ioremap_resource" [drivers/phy/starfive/phy-jh7110-pcie.ko] undefined!
+ERROR: modpost: "devm_ioremap_resource" [drivers/dma/qcom/hdma.ko] undefined!
+ERROR: modpost: "devm_platform_ioremap_resource" [drivers/dma/fsl-edma.ko] undefined!
+ERROR: modpost: "devm_platform_ioremap_resource" [drivers/dma/idma64.ko] undefined!
+ERROR: modpost: "iounmap" [drivers/tty/ipwireless/ipwireless.ko] undefined!
+ERROR: modpost: "ioremap" [drivers/tty/ipwireless/ipwireless.ko] undefined!
+ERROR: modpost: "devm_platform_ioremap_resource" [drivers/char/xillybus/xillybus_of.ko] undefined!
+ERROR: modpost: "devm_memremap" [drivers/misc/open-dice.ko] undefined!
+ERROR: modpost: "devm_memunmap" [drivers/misc/open-dice.ko] undefined!
+ERROR: modpost: "iounmap" [drivers/net/ethernet/8390/pcnet_cs.ko] undefined!
+WARNING: modpost: suppressed 19 unresolved symbol warnings because there were too many)
+
+Kconfig warnings: (for reference only)
+   WARNING: unmet direct dependencies detected for USB_PHY
+   Depends on [n]: USB_SUPPORT [=n]
+   Selected by [m]:
+   - PHY_STARFIVE_JH7110_PCIE [=m]
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
