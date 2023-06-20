@@ -4,135 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 018B4EB64D8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jun 2023 13:51:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94F63EB64D8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jun 2023 15:29:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=G+m6/XwsrqRw+Ctk/XtndNkYs8hfZchhCcw4IgTiTkY=; b=2BTjp5u5fwz6uXKcGkg52pBw0M
-	Uk8508nrzb8bWSgXPiBwPgm44wKOBJCfKnONOrXyPzKUH9KyVByri8ETpr37de7WtrlkQRmgg4SII
-	/yNd6dv4C1dMuek94Kwdks2nQP1GfPtH61wM9+jMJuOcBTDal36MBFHzPPfxPtGR8aj2NaAfaUpWS
-	QIVM8lGbAqzn8B0CAKqdDOTX/XJptoZ9ndgpBgTnEYYVRjbFIBtqDsrazSSCNuES3G+epsLorvW3f
-	k6FFsgZHhuKiau7Pg3dOqqPf/RtRj8bD/iIVg/RDgN97o5+/c/aXZk9bRIbMItvqcuvWOSCI62aFK
-	DBqez7oQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5cLnsp7vhN+1FpN5F8K46CJX+dIEhY1tr1WN/331bT4=; b=PqJMPEwhes0OdZ
+	AVJwMiUpwdNdsVb9sCRRLLZpXh5sSLuK+34kWvwSrZzcU97ix1eIgdD0lOVcBqRCXHVNkSooMw20G
+	1xwKgnT7qTrxL+F+355XCFvT3v14CRbYuveUktHiRyrABVfWLEhO70cUm3bXV5zEc6Jh8SsA2Ix5k
+	/ZSkv5NB3BNwQgwmJ793stDJ2nnM1ksn/i1U3+iXWCe9ZG98O35N8C3yORehLrrCvxwoCI8FrcA7e
+	khMfW0ZNVGqXENFGvWoyhpwfYxPyJwOPEgIAkmKhWHrgYcT/I9sn20gxlJn0IWf0Ti4HiZxHp8Or3
+	OqKDYF9syPoH0ydkEtog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBblp-00BSlR-2C;
-	Tue, 20 Jun 2023 13:51:45 +0000
-Received: from mail-dm6nam10on20621.outbound.protection.outlook.com ([2a01:111:f400:7e88::621] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1qBdIO-00Bfuk-0r;
+	Tue, 20 Jun 2023 15:29:28 +0000
+Received: from mail-il1-f169.google.com ([209.85.166.169])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBbln-00BSjQ-1o
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Jun 2023 13:51:44 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=b+faWJ0gdeQfFaa5s1p7aKeU0hDmv0e5iVFr7/RplIcvs6kzCaFBCoBApAcSqFzRzc+rmlXy4xig9sFSldA2KmM065KlbKYEJ58LZhvnsCLJKBdBr9voKrXw6IpVJ2mrCSiSk5eOJWi6a4z284gaKyZ6pmrRxOZrnDZOiegMvjGui9wRwAhVjEKYrUXDd7V1lUOWbJgkLShuG3kypvVhB1/WzYYTE1wvT+jLVervmpZyl0q6ljxLd/dTlcl8rqUN1Z58iZuUoblrATspi1zMcllhaJBgpGGWywSkF0VXNt12Dz1VGWsDqvNhocDXxb3HcotGbuJtkhHe4W2dMz+g5w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pQ//wvzEhWeVzUeWpIxwrhQMzhRn0n8kifcvYP05n2g=;
- b=JCMLlxM4GEstYq6/vmz5jZYsNSyxQ++TdeHNXF14TEOymUMEylcH8sUscuJFKY89pqZ/M4Q3JsmEFVuDM+p0Pe5TZy3SDPpYEcXtiSKahrF4AQ8RTRDwDUCMnVz+Rua8FvK/SWrrt2vrBnVyy8NW+Q6fdzuzdz5ZoHSgBHc3Nj4F8UQkMZPLUk/902rhZZS302XSx+vJLnNtgWsYPq7FPTonbcAbisUTk1qTcjBO/R/Z+kHm0rrvuGsor9mofDQ36wI85gmO3wzPokjG8cu5hGslBpeUnEPWzyR2Hbng/kkU42W/lNUvUjPY8ny2XsHVivDyY3WZag1KSUsM5ynKag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pQ//wvzEhWeVzUeWpIxwrhQMzhRn0n8kifcvYP05n2g=;
- b=krsxcD17/T9QGLcA7Yk9hf2lS12z8bDEYsBb6n4qEqDur5xkSSl5QhL8w1cQidnED8Fn/6awx9qBNZ4q7GrKyMJZi41cGI5vDf91ipvSFJ9fBc6Ln3ZlNcnclHluSnps3/vkg9mFTPHG8lKHG4MuV/Y2R7EAJ46k++1Ntx99a9gQvQQGWVg/9d1pVxVhojHNk8QHi6Vhz1lcUkC+bRixXnRrgj2ne+mYohRe6mp1z72TxDhxdTBGdmbN7iTa3OpOE7v6IKNxg7v9txpd0La7xFbY16PgqQlHY12XDh+q6wR1OL9L2Qm5lnXusMjTdRjC5kTvA7wWH6619w/9y5fpew==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com (2603:10b6:5:35e::8) by
- LV3PR12MB9236.namprd12.prod.outlook.com (2603:10b6:408:1a5::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6500.37; Tue, 20 Jun
- 2023 13:51:38 +0000
-Received: from CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::21ef:9d59:5b2d:f1e8]) by CO6PR12MB5444.namprd12.prod.outlook.com
- ([fe80::21ef:9d59:5b2d:f1e8%4]) with mapi id 15.20.6500.036; Tue, 20 Jun 2023
- 13:51:38 +0000
-Message-ID: <638b51fe-da91-483d-9f84-147226fd895d@nvidia.com>
-Date: Tue, 20 Jun 2023 14:51:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH v3] phy: tegra: xusb: Clear the driver reference in
- usb-phy dev
-Content-Language: en-US
-To: Haotien Hsu <haotienh@nvidia.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Wayne Chang <waynec@nvidia.com>, EJ Hsu <ejh@nvidia.com>,
- JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-tegra@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>
-References: <20230609062932.3276509-1-haotienh@nvidia.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20230609062932.3276509-1-haotienh@nvidia.com>
-X-ClientProxiedBy: LO4P123CA0279.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:195::14) To CO6PR12MB5444.namprd12.prod.outlook.com
- (2603:10b6:5:35e::8)
+	id 1qBdIL-00Bftk-09;
+	Tue, 20 Jun 2023 15:29:26 +0000
+Received: by mail-il1-f169.google.com with SMTP id e9e14a558f8ab-3421aca52d7so15426675ab.0;
+        Tue, 20 Jun 2023 08:29:24 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1687274964; x=1689866964;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=aqJZkvuzvPgo2scZXFsGYob4H+PHCpMScUqNkfyiy4o=;
+        b=d5Xk9RWax/D/DFb6hc0x9Jo8kk1O0TVuvYprgG6YaXlLiZKiY2IKMdqfD49D+z/WqO
+         ZYPn04HNWM6HDRHaSRPxZnzj6NWaitgPAVIlGubmyLHDzZNeh91QKM7O5TdCs8LXOeAn
+         p2h920Eit3nTG1bs15xcgWpnuTzV/4Pk0FZL7zPka9IMquYxyRQrGJmleE8ZH6P6d0Yj
+         L1ztT9wIYeD5CqlI34f3WPYkJPrjatEmn9JQkumG2OwdZ4X9KTj+F8MgE1hz8JRudR+r
+         2wsoAJwkXzHUaEv+40WdXew/+K1JJ+mN6nQfj6krlzdelrCHYLJDfVAVIv8FUhkbZKpq
+         8uTw==
+X-Gm-Message-State: AC+VfDyyHrbsDgD9pRC4fNqYNJMwkWqcg7M/cpm+2EANrBxUgHD2x16Y
+	VHreHd3z+duvFNxgPX4UZg==
+X-Google-Smtp-Source: ACHHUZ5nSRRKkIdQG/Zz+onC/2Filko74KvoJC06NM12cPl40tsZXvJx7rIbZCzo7blL68IYeqs8FA==
+X-Received: by 2002:a05:6e02:14c:b0:33b:848:378b with SMTP id j12-20020a056e02014c00b0033b0848378bmr4106998ilr.8.1687274963697;
+        Tue, 20 Jun 2023 08:29:23 -0700 (PDT)
+Received: from robh_at_kernel.org ([64.188.179.250])
+        by smtp.gmail.com with ESMTPSA id p7-20020a0566380e8700b0042673fd54c0sm685365jas.134.2023.06.20.08.29.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 Jun 2023 08:29:22 -0700 (PDT)
+Received: (nullmailer pid 3628745 invoked by uid 1000);
+	Tue, 20 Jun 2023 15:29:21 -0000
+Date: Tue, 20 Jun 2023 09:29:21 -0600
+From: Rob Herring <robh@kernel.org>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org, jun.li@nxp.com
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: mxs-usb-phy: convert to DT
+ schema format
+Message-ID: <20230620152921.GA3626802-robh@kernel.org>
+References: <20230613083445.1129137-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO6PR12MB5444:EE_|LV3PR12MB9236:EE_
-X-MS-Office365-Filtering-Correlation-Id: 80f2befc-85b0-4bbf-16d3-08db719577ec
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: S8C2XVNzaq5n++HSMAN49lJMMpdHym3AVO5Ozkc5yusQfREVfONh6QEOy51pznqAqPve1tmN+1w4XhUxNHfy0uF6Yl8KQUp7fKmRds83P/kOULSh3Gj6bY7q7tpsTOf9l0a+qVd3HZDbNCIGrjHpUstYwtt38BseA/CFlV4HGuh0fJvMRYQ75LqRsYmh7ajbyeKp0LxCJDiMyEGCmh49s5RhAni2WolPLVnnTTZtRksMkSq+MElqqmHCXjpRk6rFecHexV2zEGx6lIeU/irBkYSkaLlGChNn+p4x0iBRgvClLYlrVcvmuDU49OOg1vfW4eoSoL1feeO4z6rksXUCltMxYHfhfUvn2sLxk5S3HbMQRf4Va2nLTEOJZOwASaStT4jJL9JmZ9zB3MVECkiaQwCSP2YqVBIcHS+2zEChIy2PCz8wIJFj7U13cSIfWOMqxAfEIdeNqAE5Lr0GAg7ZJo7Xb02cL4TcfYqcuxBP1qfCnwBe0STxbw5idmLS9YLDDG0DE+7RgLQoKa2sKlPTz/iIYdkdMTLOsBOfLDMD7UOZkcT1ycQHlL/2hcLERvCmfM/NeWXgZKezxkjVlCFH/lEwW3ZM9Cc14YXI+4eTiAubbF0xy9vQNSTVKEQhK+A4LwL2S3vpJOx4tfqdgJuFbw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR12MB5444.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(346002)(39860400002)(366004)(396003)(136003)(376002)(451199021)(478600001)(4326008)(54906003)(110136005)(26005)(6512007)(55236004)(36756003)(186003)(6506007)(53546011)(6486002)(6666004)(2906002)(8676002)(41300700001)(8936002)(66946007)(66556008)(66476007)(316002)(5660300002)(86362001)(31696002)(83380400001)(38100700002)(31686004)(2616005)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?cjQ1SW1jandzN3BrcTZCUWtoWXJVYmZaZ04vMFExNlI2NlJ2WStHN3RaQWVw?=
- =?utf-8?B?WnI0c3BLOGNrMFNNdTU2MzVRUHdpTjdiMkg1Q1lHL3F6dGsyY2RDaFp4cU04?=
- =?utf-8?B?VnZxMmZoY3RXV0xFdEVqYm5QdkROYjk4SnUrZnlBaWZVNFcyVUhwY29LNGJa?=
- =?utf-8?B?dVZFbUxhN0tJazVlZksrOGdkSG9sZEdqeEpMWXkxdklFbW5nV2dsbEY5ZUVw?=
- =?utf-8?B?Y1E3KzBVQy9wcStRMGtIdTQ1RzhuTGk4dTEyNXFGUFlOcEtPUDY0eldjeUhi?=
- =?utf-8?B?Vncwekc3ZE9xWk9hMEpXa1pJazFMTjM4MFlobWdOSCtqb2JSU1ljdDU0M0Js?=
- =?utf-8?B?QnAyRWF0bmZEYXVPbFp6Yjg3S2tWdnVkaUNGSHExS3RSeGJNa2YrRXBMOHhr?=
- =?utf-8?B?TEhScWFlM2VMY1BLUlFHajFiSGpZUUFTUk0zb2lyUkhvNlBqU2pSMW9OOG5B?=
- =?utf-8?B?dXFNM0R0R1U3cHh3dUV2ZEFoME45VUpjYjNXeG5MbEQxeWNsWUlDVTRWUmph?=
- =?utf-8?B?NlZGNXRWaHp4MVVhcWVueTkxSUxaY3pUMlFUR0lrZDhZQytUQ1ZkaGhEZVpJ?=
- =?utf-8?B?TUJhclJLZ0xyS0Q5cUY3VmtlRXVlUVFHSzlrNHp3TmM2TWtyU1VmaEc1b1JZ?=
- =?utf-8?B?RWpTZUlSM0t3byszR2NtWlI4SHZ6dlMxTHRtYzJvYkVtTGpMd2NzeHNpZUY4?=
- =?utf-8?B?VWNVR09ZK0cvdkRVMU8xZUpHOUExdmJIWVJOQzd6VkRKQm93cUVDYWVBaEsw?=
- =?utf-8?B?OVJFQ2xUbnNPNTV5ODVzN1lwUXBtQjI1aGVwOEhKRGgvWi81MG10dmgxWUVu?=
- =?utf-8?B?d0VrTTNiMFpMZXR4WDBoK0xtaUFOM1lQY3E0RWJCZ0xpM0ZRcG1LeW9oTlJV?=
- =?utf-8?B?SmcyZldNZi9CWEtadTQzRFM5WnI0cXJGOFAvbE04TGlZZzVPYzk0N0xJOUVE?=
- =?utf-8?B?Vm5zR1k5V21RQ2dBM0JRQTYza0Y2U043VUxSQkNHdnFTS2sxV1p2UXhnZmVN?=
- =?utf-8?B?RExsN1R1aU92T0gzamlsY0VYbnZreGxUL2Nmd0hNR3M1VElEaDRwcGFBOGhi?=
- =?utf-8?B?bXNlRVljUHFKTFhsOFVjSFAwU2RXdWIvbGJMZDd0Y2ZmWXg5dkxlZngzcGFh?=
- =?utf-8?B?Rm9KZys2T3VPemxycVFJaHVtZHhrbndnV1RIc3RzbzlVcXd5RVF5V1lseGFK?=
- =?utf-8?B?RFUwNmk3ckg2a3lTQ20ySkVBaFdlYTNWN2x6Rks1Q2U1aVpIcVI3Wld5b1Jv?=
- =?utf-8?B?YUQrWVJINjVmaXhyZjNsQTJEeW1Md3ZlVjdwTGN4M0FzQnFhT3dpNnBzRFBN?=
- =?utf-8?B?OXJLSkZNVU02c3NzdElJWWhiWjg3QmR5SkQ5Zm9NaVpCYnR3U0hldXhVVjM2?=
- =?utf-8?B?dFl5Z0Ryc1NqcW95NFFQSnR4R3ZINFpCWEJoV0lQMjlRV1MvY2xtRURmbE53?=
- =?utf-8?B?R2JWNGRKTHNIMTFzUytNZWplZGMrRnNjTXZRek9PbTVJc3F4L2xtcU9OODFC?=
- =?utf-8?B?UzhIclJTSk92TTZmQ2oyN0JtaGtNUVRiQmJkQU5FSWExd2d0WGhFeFk0V0Ey?=
- =?utf-8?B?RFpMZFNBaGcxbndPb3Qxa05tZm8zbHhrMUZHeXAyY2s1M2JVOTU5T2pRdFZj?=
- =?utf-8?B?TW1MZUhhek1ZeXpmVEYzK3hDZkViQWtWejg4VnRESzRqODRnRk9KNXpXdU5u?=
- =?utf-8?B?MFVwVE5DZVBrR2RiTDhCaC9JaENwbDJxNnVUSVRoRjlVVlVPZGZOMk03Qzhh?=
- =?utf-8?B?Z1N5dDJzSEp3VGF1SmZMejdzcHRoZTBlUkQ2R0F3bXdiRVUvd0NaaStlWCtF?=
- =?utf-8?B?OTFmTStkVTZqUi9PVitNbWNXMVEwczg1ZTMrS00zMGV2UkF5Q0VLUXpVdmdP?=
- =?utf-8?B?MmE2OFRhL0owV0Z3b3U5T0FGWkhtSW03dlkwTGpKa3lHTHNFQzhhSTVnRXA4?=
- =?utf-8?B?blNnMEdqRE9UYWo3VTVLQ0tuSXI4d1hzRWkrRU9wS3BKSGFKd3NrdDlMak44?=
- =?utf-8?B?VlM2dHd3S29WWGxEQlJGaXZ2blNINXNJRlMwcHNUMWFERkFkSW9pTEIzbGRU?=
- =?utf-8?B?RDJNM0laTjhBdXVJcjl6MXZKNFdiN0pURlBDZnNJT0xYcWZxMEViOWltUlN4?=
- =?utf-8?B?N2RxOWplMzlteUVHa051UXFTY3hHVGJRUGtGMnVKUFdud2ZNYTFTY1dmdzI4?=
- =?utf-8?B?S2c9PQ==?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80f2befc-85b0-4bbf-16d3-08db719577ec
-X-MS-Exchange-CrossTenant-AuthSource: CO6PR12MB5444.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2023 13:51:38.2113
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fcfEh0jLrDqqQlOKxaTmznuLLvqShIHX32S/ClqSUKyewxHs3jFjv/IqRnbMt1X5AMEnuhWGWNlpnnTNC6FqWw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV3PR12MB9236
+Content-Disposition: inline
+In-Reply-To: <20230613083445.1129137-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230620_065143_624673_6EEF7FB2 
-X-CRM114-Status: GOOD (  16.35  )
+X-CRM114-CacheID: sfid-20230620_082925_083426_9E862F83 
+X-CRM114-Status: GOOD (  24.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,58 +76,215 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-On 09/06/2023 07:29, Haotien Hsu wrote:
-> From: EJ Hsu <ejh@nvidia.com>
+On Tue, Jun 13, 2023 at 04:34:44PM +0800, Xu Yang wrote:
+> Convert the binding to DT schema format. Besides, this also add clocks,
+> '#phy-cells', phy-3p0-supply and power-domains properties which are not
+> contained in txt file due to txt file lack updates.
 > 
-> For the dual-role port, it will assign the phy dev to usb-phy dev and
-> use the port dev driver as the dev driver of usb-phy.
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 > 
-> When we try to destroy the port dev, it will destroy its dev driver
-> as well. But we did not remove the reference from usb-phy dev. This
-> might cause the use-after-free issue in KASAN.
-> 
-> Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-> Cc: stable@vger.kernel.org
-> 
-> Signed-off-by: EJ Hsu <ejh@nvidia.com>
-> Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
-> Acked-by: Thierry Reding <treding@nvidia.com>
-> Acked-by: Jon Hunter <jonathanh@nvidia.com>
 > ---
-> V1 -> V2: Remove extra movements to clarify the change
-> V2 -> V3: Update patch title
+> Changes in v2:
+>  - change filename to fsl,mxs-usbphy.yaml
+>  - add other optional properties
+>  - narrow fsl,anatop to imx6
+>  - use additionalProperties
+> Changes in v3:
+>  - fix indentation
+>  - add clocks property to example
+> Changes in v4:
+>  - remove [fsl,imx7ulp-usbphy, fsl,imx6ul-usbphy]
+>  - limit item of reg and interrupts to 1
+>  - sort enum items
+>  - modify commit message
 > ---
->   drivers/phy/tegra/xusb.c | 1 +
->   1 file changed, 1 insertion(+)
+>  .../bindings/phy/fsl,mxs-usbphy.yaml          | 125 ++++++++++++++++++
+>  .../devicetree/bindings/phy/mxs-usb-phy.txt   |  33 -----
+>  2 files changed, 125 insertions(+), 33 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+
+This should be applied by the PHY maintainers, but they weren't Cc'ed.
+
 > 
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index 78045bd6c214..26b66a668f3b 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -568,6 +568,7 @@ static void tegra_xusb_port_unregister(struct tegra_xusb_port *port)
->   		usb_role_switch_unregister(port->usb_role_sw);
->   		cancel_work_sync(&port->usb_phy_work);
->   		usb_remove_phy(&port->usb_phy);
-> +		port->usb_phy.dev->driver = NULL;
->   	}
->   
->   	if (port->ops->remove)
-
-
-OK to pick this up now?
-
-Thanks
-Jon
-
--- 
-nvpublic
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> new file mode 100644
+> index 000000000000..cc9f2bc7e6fb
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> @@ -0,0 +1,125 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,mxs-usbphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale MXS USB Phy Device
+> +
+> +maintainers:
+> +  - Xu Yang <xu.yang_2@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - enum:
+> +          - fsl,imx23-usbphy
+> +          - fsl,imx7ulp-usbphy
+> +          - fsl,vf610-usbphy
+> +      - items:
+> +          - enum:
+> +              - fsl,imx28-usbphy
+> +              - fsl,imx6ul-usbphy
+> +              - fsl,imx6sl-usbphy
+> +              - fsl,imx6sx-usbphy
+> +              - fsl,imx6q-usbphy
+> +          - const: fsl,imx23-usbphy
+> +      - items:
+> +          - const: fsl,imx6sll-usbphy
+> +          - const: fsl,imx6ul-usbphy
+> +          - const: fsl,imx23-usbphy
+> +      - items:
+> +          - const: fsl,imx8dxl-usbphy
+> +          - const: fsl,imx7ulp-usbphy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  '#phy-cells':
+> +    const: 0
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  fsl,anatop:
+> +    description:
+> +      phandle for anatop register, it is only for imx6 SoC series.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +
+> +  phy-3p0-supply:
+> +    description:
+> +      One of USB PHY's power supply. Can be used to keep a good signal
+> +      quality.
+> +
+> +  fsl,tx-cal-45-dn-ohms:
+> +    description:
+> +      Resistance (in ohms) of switchable high-speed trimming resistor
+> +      connected in parallel with the 45 ohm resistor that terminates
+> +      the DN output signal.
+> +    minimum: 35
+> +    maximum: 54
+> +    default: 45
+> +
+> +  fsl,tx-cal-45-dp-ohms:
+> +    description:
+> +      Resistance (in ohms) of switchable high-speed trimming resistor
+> +      connected in parallel with the 45 ohm resistor that terminates
+> +      the DP output signal.
+> +    minimum: 35
+> +    maximum: 54
+> +    default: 45
+> +
+> +  fsl,tx-d-cal:
+> +    description:
+> +      Current trimming value (as a percentage) of the 17.78 mA TX
+> +      reference current.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    minimum: 79
+> +    maximum: 119
+> +    default: 100
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          oneOf:
+> +            - enum:
+> +                - fsl,imx6q-usbphy
+> +                - fsl,imx6sl-usbphy
+> +                - fsl,imx6sx-usbphy
+> +                - fsl,imx6sll-usbphy
+> +                - fsl,vf610-usbphy
+> +            - items:
+> +                - const: fsl,imx6ul-usbphy
+> +                - const: fsl,imx23-usbphy
+> +    then:
+> +      required:
+> +        - fsl,anatop
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/imx6qdl-clock.h>
+> +
+> +    usbphy1: usb-phy@20c9000 {
+> +        compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
+> +        reg = <0x020c9000 0x1000>;
+> +        clocks = <&clks IMX6QDL_CLK_USBPHY1>;
+> +        interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+> +        fsl,anatop = <&anatop>;
+> +    };
+> +
+> +...
+> diff --git a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+> deleted file mode 100644
+> index 70c813b0755f..000000000000
+> --- a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+> +++ /dev/null
+> @@ -1,33 +0,0 @@
+> -* Freescale MXS USB Phy Device
+> -
+> -Required properties:
+> -- compatible: should contain:
+> -	* "fsl,imx23-usbphy" for imx23 and imx28
+> -	* "fsl,imx6q-usbphy" for imx6dq and imx6dl
+> -	* "fsl,imx6sl-usbphy" for imx6sl
+> -	* "fsl,vf610-usbphy" for Vybrid vf610
+> -	* "fsl,imx6sx-usbphy" for imx6sx
+> -	* "fsl,imx7ulp-usbphy" for imx7ulp
+> -	* "fsl,imx8dxl-usbphy" for imx8dxl
+> -  "fsl,imx23-usbphy" is still a fallback for other strings
+> -- reg: Should contain registers location and length
+> -- interrupts: Should contain phy interrupt
+> -- fsl,anatop: phandle for anatop register, it is only for imx6 SoC series
+> -
+> -Optional properties:
+> -- fsl,tx-cal-45-dn-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+> -  high-speed trimming resistor connected in parallel with the 45 ohm resistor
+> -  that terminates the DN output signal. Default: 45
+> -- fsl,tx-cal-45-dp-ohms: Integer [35-54]. Resistance (in ohms) of switchable
+> -  high-speed trimming resistor connected in parallel with the 45 ohm resistor
+> -  that terminates the DP output signal. Default: 45
+> -- fsl,tx-d-cal: Integer [79-119]. Current trimming value (as a percentage) of
+> -  the 17.78mA TX reference current. Default: 100
+> -
+> -Example:
+> -usbphy1: usb-phy@20c9000 {
+> -	compatible = "fsl,imx6q-usbphy", "fsl,imx23-usbphy";
+> -	reg = <0x020c9000 0x1000>;
+> -	interrupts = <0 44 0x04>;
+> -	fsl,anatop = <&anatop>;
+> -};
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
