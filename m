@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26DE5EB64D8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jun 2023 15:37:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4740EB64D8
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jun 2023 15:49:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sg9MeayO2T1p9/Sn8FMpNrJfCm2vIOq4m3xywH/GYxU=; b=0g/WO9qSQA7kpA
-	alq9feZaDpEZuYIOpkf+rfXQ3sLM5lCKF7tixVwSLfZ+/EznGbznnkGNf0tg0naxsOMOcwYEED3Xu
-	L8LM+JoeyHx0+P2BXXoLDQwuEfs6QqZ442eHSDLLBfmUOM4tbK67o6XqnKlouVU14VYsSQXfMXF3r
-	sU8DAIdoDze5fpGMXOHgmJjP2pY/BpWfAdn8thm8G6/+120/1v5ScDj2EFpK4qxSO+UBOrPhRWfWf
-	HjL5Ni99v+SKe9dc7lDOLWMiT86nTLsZv/+EI9nRsHgDKBcRmjpRXWR9IBshpubZiw6D9wtOG9uin
-	FjrqnwRiQ/lTclJll06g==;
+	List-Owner; bh=TGePTzk+NCajeeaLQ5KF2pOnHqTW8OcEU5fCdKxOBsg=; b=DvhvbIxd1/OPZx
+	K6aMln8cBOPvbsRinelpt/IC+Ue9sZeBOVV8uYua3LwUMkorCDKhtqAw0ZHDvcbLkefjGVcIAva36
+	hu4mke79IW5SIxNoK/V/0ZBdwcIntjPj+XHIHLA50FHH769U6jnjZpEaW7E5Fs4iQtnc92EtTG8/z
+	P9sWNG7/lvWYkp+OHbv/n58rXjHBBU/WgDkcquiF2kNTYDDsrm66bfGBUxUDQeo6NkfxW7CbizLbn
+	TOAEV9kYdyK/m7u/yyMn8LoUgnIQeJ++iXj+02kT4uIOfQYgSX5IHOkfaH7xXHBoGYeUHE59Hiqe2
+	0lm4ROKUB6MLd7AD37IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBdQY-00BguO-2l;
-	Tue, 20 Jun 2023 15:37:54 +0000
-Received: from mail-il1-f172.google.com ([209.85.166.172])
+	id 1qBdbN-00BiZ9-0g;
+	Tue, 20 Jun 2023 15:49:05 +0000
+Received: from mail-io1-f47.google.com ([209.85.166.47])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBdQV-00BgtV-13;
-	Tue, 20 Jun 2023 15:37:52 +0000
-Received: by mail-il1-f172.google.com with SMTP id e9e14a558f8ab-340bba768acso24075395ab.2;
-        Tue, 20 Jun 2023 08:37:48 -0700 (PDT)
+	id 1qBdbJ-00BiY7-2i;
+	Tue, 20 Jun 2023 15:49:03 +0000
+Received: by mail-io1-f47.google.com with SMTP id ca18e2360f4ac-77b00bb3fd6so164497539f.1;
+        Tue, 20 Jun 2023 08:49:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687275467; x=1689867467;
+        d=1e100.net; s=20221208; t=1687276140; x=1689868140;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=0sJbkvA8psBZvCbiZz79+0aLmkyZYgwDhRQ2jJ0L/Xc=;
-        b=AwMiWeU28Ca/FzrpZxEXCT4j3IqVXUghEpbuhmqtXWhryQmNAXzOv2OCq8gFKrwvg9
-         J5Xz1cgteQ2UZlWhxT9t5CqyOPQ1iM73uVjMjJh4u97r77HGmcT/U8j/jjCSivuBQqU/
-         6Fmms/3EylWln97To24P8fCnlRJ79epQnJoZldOjjmGqkQHd/zYMevJTCQyYgCqQPeYj
-         mN7L6ErWKqO8vc/Qfr8nkhAd8sdbFZDpAsATAKGjkLVRWoMYElzrCHJIVwizvQO/UQJB
-         5nadwVtZI/j4J2aGrQ66sn1sc1RSX+Hpowz+QxbuZIHaRCCcON9kuF+MO8UQB7XGZMPT
-         cKkA==
-X-Gm-Message-State: AC+VfDw5kDo1k2Wv0JoQaQxKEXd/cFfRn9KCpFUoqaclyQUzMk+ih/Ws
-	61rqRBb9kklr/alEHBRSQA==
-X-Google-Smtp-Source: ACHHUZ5u+D4bbGxsP6bC+gdajHPXjGwM+AGf0+Hh4eLKoobenWPCJtpJM8Pm4EeQsdQZBZHPQ2GHEg==
-X-Received: by 2002:a92:a30e:0:b0:33d:1735:fd79 with SMTP id a14-20020a92a30e000000b0033d1735fd79mr8830286ili.20.1687275467410;
-        Tue, 20 Jun 2023 08:37:47 -0700 (PDT)
+        bh=f+0ykOBJR6ph5fJ8NMKMPGXouH5kisW0kpvuVSufTKw=;
+        b=QveypkuJNF9zv0968v89VuI3kifvJPHu3co0SeqgWbqn/bfTNR/GKbxFao+ZKZb4QW
+         fLYvv9ppTUn30fIQPBRNun2pOXoggrwvWOh8S9ouYRZbVVA7nIbm9/K6RoWZh/ib45u3
+         64J1lwta8JnP4m6hgPL4J68StN2ZMfvltNpLalFMrbLhqQj2sRxoXn1mJIhRJ5WK9POn
+         S1b87sQVl9SlhOXhs4x7Q5t3+NN2/tR3ii0wijewxGBuh9cCggjUpfYzVkbHaGhztEsY
+         gZ0jkCnKju/nLbuc3Ac/o0MKsDqabKmj20AL0iamE1GUZnXE4MY2YEtrW2wsS8Jv9JeW
+         tlVw==
+X-Gm-Message-State: AC+VfDzJ3P0W63NKTw/Kh2AgIZKavxK5g/eBOVGopU2nM9nGfOGHhxtN
+	5apWXYYlvJ84DumE/YZ41xWgxGgvpQ==
+X-Google-Smtp-Source: ACHHUZ4JlCQgBFv4N8BMZuj7200KFd3rbLgtWgjlVsH/bI15MOlDE4V78j/2LXyWh0HIt2u6z6aoxQ==
+X-Received: by 2002:a05:6e02:927:b0:33c:2a80:3721 with SMTP id o7-20020a056e02092700b0033c2a803721mr7722596ilt.4.1687276139985;
+        Tue, 20 Jun 2023 08:48:59 -0700 (PDT)
 Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id n13-20020a92d9cd000000b0033b2a123254sm656797ilq.61.2023.06.20.08.37.44
+        by smtp.gmail.com with ESMTPSA id x19-20020a029713000000b004161fafff97sm701453jai.136.2023.06.20.08.48.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Jun 2023 08:37:46 -0700 (PDT)
-Received: (nullmailer pid 3641003 invoked by uid 1000);
-	Tue, 20 Jun 2023 15:37:43 -0000
-Date: Tue, 20 Jun 2023 09:37:43 -0600
+        Tue, 20 Jun 2023 08:48:59 -0700 (PDT)
+Received: (nullmailer pid 3655727 invoked by uid 1000);
+	Tue, 20 Jun 2023 15:48:56 -0000
+Date: Tue, 20 Jun 2023 09:48:56 -0600
 From: Rob Herring <robh@kernel.org>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, oliver.brown@nxp.com, Sandor.yu@nxp.com, linux-imx@nxp.com, kernel@pengutronix.de
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com
 Subject: Re: [PATCH v6 2/8] dt-bindings: display: bridge: Add Cadence
  MHDP8501 HDMI and DP
-Message-ID: <20230620153743.GA3637514-robh@kernel.org>
+Message-ID: <20230620154856.GB3637514-robh@kernel.org>
 References: <cover.1686729444.git.Sandor.yu@nxp.com>
  <8687f2221299b120e12f29fdccf264e120227bd7.1686729444.git.Sandor.yu@nxp.com>
- <3439354.PYKUYFuaPT@steina-w>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3439354.PYKUYFuaPT@steina-w>
+In-Reply-To: <8687f2221299b120e12f29fdccf264e120227bd7.1686729444.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230620_083751_390587_27B1D987 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20230620_084901_876583_D674F7CC 
+X-CRM114-Status: GOOD (  17.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,94 +82,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 16, 2023 at 11:31:43AM +0200, Alexander Stein wrote:
-> Hi Sandor,
-> 
-> Am Donnerstag, 15. Juni 2023, 03:38:12 CEST schrieb Sandor Yu:
-> > Add bindings for Cadence MHDP8501 DisplayPort and HDMI driver.
-> > 
-> > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> > ---
-> >  .../display/bridge/cdns,mhdp8501.yaml         | 105 ++++++++++++++++++
-> >  1 file changed, 105 insertions(+)
-> >  create mode 100644
-> > Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> > 
-> > diff --git
-> > a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> > b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml new
-> > file mode 100644
-> > index 000000000000..a54756815e6f
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> > @@ -0,0 +1,105 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Cadence MHDP8501 Displayport bridge
-> > +
-> > +maintainers:
-> > +  - Sandor Yu <Sandor.yu@nxp.com>
-> > +
-> > +description:
-> > +  The Cadence MHDP8501 Displayport/HDMI TX interface.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - cdns,mhdp8501-dp
-> > +      - cdns,mhdp8501-hdmi
-> > +      - fsl,imx8mq-mhdp8501-dp
-> > +      - fsl,imx8mq-mhdp8501-hdmi
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +    description: MHDP8501 DP/HDMI APB clock.
-> > +
-> > +  phys:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    items:
-> > +      - description: Hotplug cable plugin.
-> > +      - description: Hotplug cable plugout.
-> > +
-> > +  interrupt-names:
-> > +    items:
-> > +      - const: plug_in
-> > +      - const: plug_out
-> > +
-> > +  ports:
-> > +    $ref: /schemas/graph.yaml#/properties/ports
-> > +
-> > +    properties:
-> > +      port@0:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description:
-> > +          Input port from display controller output.
-> > +      port@1:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description:
-> > +          Output port to DP/HDMI connector.
-> > +
-> > +    required:
-> > +      - port@0
-> > +      - port@1
-> 
-> You mark these ports as required, but apparently the drivers do not use them, 
-> AFAICT. E.g. missing port@1 is not resulting in an error, at lease for HDMI 
-> one.
+On Thu, Jun 15, 2023 at 09:38:12AM +0800, Sandor Yu wrote:
+> Add bindings for Cadence MHDP8501 DisplayPort and HDMI driver.
 
-A connector node should be required whether a particular OS requires it 
-or not. The bindings without predate defining a connector node.
+Bindings are for h/w, not a driver.
 
-Rob
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+>  .../display/bridge/cdns,mhdp8501.yaml         | 105 ++++++++++++++++++
+>  1 file changed, 105 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> new file mode 100644
+> index 000000000000..a54756815e6f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> @@ -0,0 +1,105 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence MHDP8501 Displayport bridge
+> +
+> +maintainers:
+> +  - Sandor Yu <Sandor.yu@nxp.com>
+> +
+> +description:
+> +  The Cadence MHDP8501 Displayport/HDMI TX interface.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - cdns,mhdp8501-dp
+> +      - cdns,mhdp8501-hdmi
+> +      - fsl,imx8mq-mhdp8501-dp
+> +      - fsl,imx8mq-mhdp8501-hdmi
+
+Is DP vs. HDMI fixed for a particular SoC implementation or it's a board 
+level decision. In the latter case, the type of connector should 
+determine the mode, not compatible.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: MHDP8501 DP/HDMI APB clock.
+
+Seems odd there's no clock tied to the pixel/serdes clock.
+
+> +
+> +  phys:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Hotplug cable plugin.
+> +      - description: Hotplug cable plugout.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: plug_in
+> +      - const: plug_out
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Input port from display controller output.
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Output port to DP/HDMI connector.
+> +
+> +    required:
+> +      - port@0
+> +      - port@1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - interrupts
+> +  - interrupt-names
+> +  - phys
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8mq-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    mhdp_dp: dp-bridge@32c00000 {
+> +        compatible = "fsl,imx8mq-mhdp8501-dp";
+> +        reg = <0x32c00000 0x100000>;
+> +        interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names = "plug_in", "plug_out";
+> +        clocks = <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
+> +        phys = <&dp_phy>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +
+> +                mhdp_in: endpoint {
+> +                    remote-endpoint = <&dcss_out>;
+> +                };
+> +            };
+> +
+> +            port@1 {
+> +                reg = <1>;
+> +
+> +                mhdp_out: endpoint {
+> +                    remote-endpoint = <&dp_con>;
+> +                };
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
