@@ -4,82 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 673B4EB64D9
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jun 2023 14:45:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 425FAEB64D9
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jun 2023 01:17:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q7FQrDA8ZkUF8EVFkN/ZZ0S2nut63QHL3Ih3zSmz1Bw=; b=t9g6qZjP4ZJy1p
-	JWlPAlPcMIWpy6LT7jLYf2rHnPFcZ7cjv8+PWwf8F+dQtauAtLCmgRgvgQARvBlrbCgehoLQn3a7b
-	EKxzOvNnSfuVezHHd/MuB2pBWLeBkehu52bKjHta2CRvrBg3uVMxLVIVs7xT18on/m6IroZFojp52
-	pCDKqAcAfNaC6XaVxcSIal6gJaW7RmEzDqpDJJsPLn0bdTfVODUXjJoYRyQ4RhDb3xwI7M2Duy0ET
-	Z5mJEyRzPmkX0O7d1uqrx+EHA/06F48UTqnTQ/8g3/NMya3wn6kw/EcGh4FVtIMi11wECcWoyEffS
-	vthR7fhCLCRRDgdOGUYg==;
+	List-Owner; bh=j6PmXY/T2Vf7p26eucjQdSx1b574nCDbGeNkR9Scmm4=; b=D/hKw4w7XASRvs
+	JRWHIPCfYbCfof1OFFs8F+DK5HX+gGsBaETL1nqSMjdPcOCH8B5D5UmALdsBDSqX+eI4st1cMFB55
+	Q9L4Q9lWLF76j7sj3EuiIwCCvwzabrqMdrrEcp6XvdLsguqZnmgIzVMkFSt0bkMcaAAuFvy2B3zP7
+	uT4EKQcWxF8clRsikszCqIWZTYi7COQU8SfyTV2RQd40Mg7Mq/cacRSUaf142FwQfBaXESpKIdaq6
+	BSl9zswC6wwLdx9/QKCGD3+duQnJl2sHk4hAt95ISM1UWVkjck0022f2oSLv1BGDRviB5tTdj90sl
+	JGaMGFqlELwS9pHeMrBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBG8W-008fw1-31;
-	Mon, 19 Jun 2023 14:45:44 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1qBQ0G-009rph-2w;
+	Tue, 20 Jun 2023 01:17:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBG8U-008fuu-0i;
-	Mon, 19 Jun 2023 14:45:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1687185942; x=1718721942;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=yoEByqBkambGkCJiJIubqQfRE/V06XGkaD+JTvok5Kw=;
-  b=KX9YoiaNUO93e7UCxJTEjYriLR4jGiCmANktF8zceV0P9jzrxYH5iL2T
-   QhtCmB3cwo0h2GYOQ92FM2PBaZX4ZjAR1Zu+UkD2NO2P2t2db0slwTlry
-   oJkHMUVLtI/m1VCgI/We7hocxO64n6X7sknmH8qYSK1G0OE5+KP9TyhAR
-   BXgEAVLGJM948kyVj4erGoAxkqgOpBrOJRDpfnWRuv4V75lStzgq76Xw/
-   k8vMGsR7KdhoNLxrVgIsuJPTXLQ7Eo9oO1mn/J7PLlZt2rEkzhyQt0yN5
-   zBr486fyzWMxsa9MARPCXneUcZp6kOqdYTAgByLpAMqPXxsjYcsAiG/fS
-   w==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10746"; a="388725058"
-X-IronPort-AV: E=Sophos;i="6.00,254,1681196400"; 
-   d="scan'208";a="388725058"
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Jun 2023 07:45:37 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10746"; a="743478143"
-X-IronPort-AV: E=Sophos;i="6.00,254,1681196400"; 
-   d="scan'208";a="743478143"
-Received: from lkp-server01.sh.intel.com (HELO 783282924a45) ([10.239.97.150])
-  by orsmga008.jf.intel.com with ESMTP; 19 Jun 2023 07:45:33 -0700
-Received: from kbuild by 783282924a45 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1qBG8K-0004o6-25;
-	Mon, 19 Jun 2023 14:45:32 +0000
-Date: Mon, 19 Jun 2023 22:45:26 +0800
-From: kernel test robot <lkp@intel.com>
-To: Minda Chen <minda.chen@starfivetech.com>,
-	Emil Renner Berthing <emil.renner.berthing@canonical.com>,
-	Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Roger Quadros <rogerq@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Minda Chen <minda.chen@starfivetech.com>,
-	Mason Huo <mason.huo@starfivetech.com>
-Subject: Re: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
-Message-ID: <202306192215.TvQco9m6-lkp@intel.com>
-References: <20230619094759.21013-5-minda.chen@starfivetech.com>
+	id 1qBQ0E-009ro1-1X;
+	Tue, 20 Jun 2023 01:17:51 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B732560F79;
+	Tue, 20 Jun 2023 01:17:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8E8AC433C8;
+	Tue, 20 Jun 2023 01:17:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1687223867;
+	bh=JhZIMKUZdfUZG1G2LF/l44rtxC/mRDQxMAGxL8IUqvc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Dh3bgcsgx6qDhure1EUvQAns9alftceykHkXtqxvGfbodjpMqtPMmp98jFNhAOG1r
+	 1NDK1Vlh9h/96366cR9HLSV56f1OSv7AtkVF9pLFv13vIQfv71/hL2/K/eNt4buEIx
+	 J097jL1vOOAeKlcq+oVS0UBga6BidT18AZV2uIzjcJt9gyWjqMtXYmAXB+zbfJInVH
+	 co4pU5/FT/b3Q44fR4qPO3XDN/nPx2sdDHTv/tGj41xSPFSKgp1Y9vRxIeYEd3yyH5
+	 rgQ8YKDEMSQLrb0iaXF1UFhNa30I8saTcL0HLEgkZaX3H5GwuDyhV5O+aMO+1wCXWW
+	 9/02GYdE0TbJw==
+Message-ID: <3b7c6fee-4af3-5541-5c24-a290e3243164@kernel.org>
+Date: Tue, 20 Jun 2023 10:17:44 +0900
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230619094759.21013-5-minda.chen@starfivetech.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH v4 0/5] Add RK3588 SATA support
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Cc: Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+ Serge Semin <fancer.lancer@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-ide@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ kernel@collabora.com
+References: <20230612171337.74576-1-sebastian.reichel@collabora.com>
+Content-Language: en-US
+From: Damien Le Moal <dlemoal@kernel.org>
+Organization: Western Digital Research
+In-Reply-To: <20230612171337.74576-1-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230619_074542_270323_D50806EE 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20230619_181750_570800_49414598 
+X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,52 +85,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Minda,
+On 6/13/23 02:13, Sebastian Reichel wrote:
+> Hi,
+> 
+> This enables SATA support for RK3588.
 
-kernel test robot noticed the following build errors:
+Applied 1-3 to libata for-6.5 branch. Thanks !
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on linus/master v6.4-rc7 next-20230619]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Minda-Chen/dt-bindings-phy-Add-StarFive-JH7110-PCIe-PHY/20230619-184756
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20230619094759.21013-5-minda.chen%40starfivetech.com
-patch subject: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
-config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/config)
-compiler: s390-linux-gcc (GCC) 12.3.0
-reproduce: (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202306192215.TvQco9m6-lkp@intel.com/
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
->> ERROR: modpost: "devm_platform_ioremap_resource" [drivers/phy/starfive/phy-jh7110-pcie.ko] undefined!
-ERROR: modpost: "devm_ioremap_resource" [drivers/dma/qcom/hdma.ko] undefined!
-ERROR: modpost: "devm_platform_ioremap_resource" [drivers/dma/fsl-edma.ko] undefined!
-ERROR: modpost: "devm_platform_ioremap_resource" [drivers/dma/idma64.ko] undefined!
-ERROR: modpost: "iounmap" [drivers/tty/ipwireless/ipwireless.ko] undefined!
-ERROR: modpost: "ioremap" [drivers/tty/ipwireless/ipwireless.ko] undefined!
-ERROR: modpost: "devm_platform_ioremap_resource" [drivers/char/xillybus/xillybus_of.ko] undefined!
-ERROR: modpost: "devm_memremap" [drivers/misc/open-dice.ko] undefined!
-ERROR: modpost: "devm_memunmap" [drivers/misc/open-dice.ko] undefined!
-ERROR: modpost: "iounmap" [drivers/net/ethernet/8390/pcnet_cs.ko] undefined!
-WARNING: modpost: suppressed 19 unresolved symbol warnings because there were too many)
-
-Kconfig warnings: (for reference only)
-   WARNING: unmet direct dependencies detected for USB_PHY
-   Depends on [n]: USB_SUPPORT [=n]
-   Selected by [m]:
-   - PHY_STARFIVE_JH7110_PCIE [=m]
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Damien Le Moal
+Western Digital Research
+
 
 -- 
 linux-phy mailing list
