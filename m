@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6B2EB64DC
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 15:33:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD163EB64DD
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 15:33:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qO5vYpf1SQY3Gac9gMYzcoampmbAPh5rSfe2v3hz+1g=; b=uiwVGuiqcOg5mm
-	NTtq3NvaTw0XGFglk2zOAtd65p8OJr/zZptX16dIEZgfZC81p8vpNatu1Deb9itbxZn/WnUNNysp+
-	LvRPO8iQWRzdMS9Dx+KMvQR/Mj/YZDaYXpQugBCGvv9AMT7IOEhgyc6CuSMOUF3lhVv3r64oQiOjy
-	I1g5s87c2RqlGjpg78/d0xWgwurkj98zTrkd0SCGZ3ZjoiZZCxI51+c7Vqkm6n49kDtweRdOQhrnM
-	gzLdh7FiQ+Bj5ENRDuzWSJ1PILlg4EOOeD7tbyryod7iqpXReCmhGqgT3tvdnFKHbheSME6KN0y2i
-	GJn0zjVRHV53HmqK/5/A==;
+	List-Owner; bh=Xby6cqT/T3Xi16YwFzrvWEjJ+Xrkk9f35A930Y8cTcg=; b=aSv5VUDPgarncu
+	8SPFK0F3691xaweNOhGRtGexPp7v7huoRYIY+cAGAV3SDj7G7lv51EXPUD8ninwPqfsydG0ra+e44
+	ej53iN+Pyoupm83T9ZlPd1E3HOzS0pUP2yh6E1MOYWqlO0FA3/m3LSPMeFQHoY2R9R320dkiHEhEz
+	QKE+cc/lDd7DbBYeoNLDDZKwLyjNkRnBEjGX5Lwocs47d8xurNnI7NAoeOd9Iqb0YYVQ9EB/Z2yc9
+	0WCioCAempTqM9g/yh0yPNT3FkBaCq/7xsVgUw4A6u12/1ZjR5IUfMtRhR0fALwjklVTgHlueWQ4m
+	2YjGXYFkAaKCwRjbn7kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBzpl-00ExII-2b;
-	Wed, 21 Jun 2023 15:33:25 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1qBzpn-00ExJG-1W;
+	Wed, 21 Jun 2023 15:33:27 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBzpi-00ExF6-0q
+	id 1qBzpk-00ExGA-1Q
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jun 2023 15:33:24 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-4f76a0a19d4so8360690e87.2
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jun 2023 08:33:21 -0700 (PDT)
+	Wed, 21 Jun 2023 15:33:25 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-4f870247d6aso5406923e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 21 Jun 2023 08:33:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687361600; x=1689953600;
+        d=linaro.org; s=google; t=1687361602; x=1689953602;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=w6UGMmKiSJ87dVKJCq6xTOUGaCMzpqDueTLzydEjdu0=;
-        b=Mu+WVXKpIjJYcciQD/H1Dxv8o5yIljsuIe6f6yWaDh6uUZ6kBHySSKuRh4G2K9RXfP
-         SjbGXieD1oU/wepmQ/PT5dVE3zVrOmeBLGSZaw+MQRoQjpHn+c7+KqUX6LqgsTStMxRP
-         +CWdKhDZXPDKdYugi48QJ+rFcAzfiEqHMpxAlDwehKuZVpMBT0bNXtDUgFk73Weiun59
-         k0gcrpStMwnaW136isVu17W44mK1c+wjgT4A+QyRSkBHY7h0ltgVCdf6T+1Lt1c7Y4aS
-         wlm4/RJO7IFa6/dBj0SUerAsqCVddfewjBYSYAm19nEHQKeKT9cvHIKMtGQ8q5p0Afjj
-         OBYQ==
+        bh=MicCFkNBouLiXbSIH4JKKed61jEBtgAzBmipuLWTl/4=;
+        b=aVPaow9xhb3xYotbyBCYo5A5C7RiiRO3yZG+j5v40/WJe+geF1e/7xUCsze5BjeCGD
+         //VthO92/bjexjZIpNC/4HjssldnYZXmz6q7PwwoRY5ip3Lzbf4388LeRGnb8qoBCUUr
+         dyNRozhwmGqto7XlePF2MZRCmftZ3QW4r74Rb4ofOa9OMa8RQJK6mZnNq479wDJzZ1k0
+         trnx3t7MtuELbUFy+Hjfe5wzeqRWi8JymNOrgFLPCOI+nRX0Kk01rFudbx7cZdUlvSHX
+         58ZX03GpAtDR0eeFI1f4cx4x6ZNkH4axt2Suw0wvRUAGbz7R8XxcEqULbnNFysvsDgsN
+         LKhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687361600; x=1689953600;
+        d=1e100.net; s=20221208; t=1687361602; x=1689953602;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=w6UGMmKiSJ87dVKJCq6xTOUGaCMzpqDueTLzydEjdu0=;
-        b=DwEOvMgyniPIv7sMryrDV0VTHRFGMZbCj9SuY6I5S+UupxeUlpLCNtdJK90wTdWvAO
-         foZ44PxYBPovNxR2Kq9iJh+vn5w4aO4CQKf4c9hmyaWqNOQZxzv2rW+iycBViXFMG9pK
-         FYlN1QFIxFLt03Ruweyzbtjvjx8s2IxIsYr1LrjGJon4F5iTWBJhY2OaE7qbktx84dOj
-         MCVldSFxfiXH7qXCaxWORwxREM+a/4oRVlESRmOL9i26zh6qrXBUqX0CjbwYGaiDTn0B
-         K3eEjaRfqAXqwb5fw+7hDFr0AM3YJpqB26DYYd0CXZXvHTbBghqmT0+/T30njMiHX1S/
-         BfkA==
-X-Gm-Message-State: AC+VfDzf/Kuk8t3JBiTbsWUqVrZth9Us1gv/h0AYhT+9ctQQcOI5fFNp
-	hSthdKBc8SeMhtPrJWf8lhS909n1SLzQ3G8+H1E=
-X-Google-Smtp-Source: ACHHUZ4KHx0DukzCIDUFE6zXVA/3ThJ57bA2cCsVJEsayLh7CQFVlTtZ5qC+vP8JdvU55DdumL6/Kg==
-X-Received: by 2002:a19:4402:0:b0:4f9:5a61:194f with SMTP id r2-20020a194402000000b004f95a61194fmr1759483lfa.11.1687361600319;
-        Wed, 21 Jun 2023 08:33:20 -0700 (PDT)
+        bh=MicCFkNBouLiXbSIH4JKKed61jEBtgAzBmipuLWTl/4=;
+        b=i8bpT3cIKuC+CuuypfHrQ3e/eNQePVi8xzMM2/2V2ZD8tfAHmRMQNSKo5/AgARkrAn
+         +SxxJwCnm4hMKt9crBLYt0FL6qDs31aqtfoPf5znzB13jJB+lnK+9dyTdmaXoDKesrOs
+         HRnDn+7QMQD8nR8pTFH0E/TINsH55gnKe6LAYt+IQ+zbr5FpArlTcKRohjehStFcZMZk
+         IyW+mqbKZePi7p4ypQt2uv7/TZCl8gvXEzfWqXUyREePqHQ5rWxL8DqTX2sQ4U/vFojN
+         a+z/3e6SdcJjU/yA//jn2waGNAKnDgGXj6yQazjTIL22EGm5xSuT/uB2aOYuRcmZNAxe
+         HgQw==
+X-Gm-Message-State: AC+VfDwVwXWQO7nDZHkYxf7GIHq/8Pd8IUxN0G0ZMyiq4DndqGpWVfMn
+	+69aD+3zTyawPW6GcWSFZn3mGg==
+X-Google-Smtp-Source: ACHHUZ5Ay+e1qvAcNp8A1s2flxC/4+7psevy6GnCjLquxSCTm79PTFphiu8SNNSg70r7jqNkNsbSfQ==
+X-Received: by 2002:a05:6512:3110:b0:4f9:5682:3b54 with SMTP id n16-20020a056512311000b004f956823b54mr2440803lfb.28.1687361602115;
+        Wed, 21 Jun 2023 08:33:22 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id o3-20020a056512050300b004f8751285a5sm804888lfb.80.2023.06.21.08.33.19
+        by smtp.gmail.com with ESMTPSA id o3-20020a056512050300b004f8751285a5sm804888lfb.80.2023.06.21.08.33.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Jun 2023 08:33:19 -0700 (PDT)
+        Wed, 21 Jun 2023 08:33:21 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -73,16 +73,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-phy@lists.infradead.org,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	freedreno@lists.freedesktop.org
-Subject: [RESEND PATCH 2/7] phy: qcom: qmp-combo: reuse register layouts for more registers
-Date: Wed, 21 Jun 2023 18:33:12 +0300
-Message-Id: <20230621153317.1025914-3-dmitry.baryshkov@linaro.org>
+Subject: [RESEND PATCH 4/7] phy: qcom: qmp-combo: reuse register layouts for some more registers
+Date: Wed, 21 Jun 2023 18:33:14 +0300
+Message-Id: <20230621153317.1025914-5-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
 References: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_083322_299906_562872B2 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20230621_083324_481668_149D5B1C 
+X-CRM114-Status: GOOD (  10.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,307 +99,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Instead of passing additional registers to qmp_v456_configure_dp_phy(),
-reuse qphy_reg_layout and add those registers to register layout maps.
+Use register layout for TX_HIGHZ_DRVR_EN and TX_TRANSCEIVER_BIAS_EN
+registers. This will allow us to unify qmp_v[456]_configure_dp_phy()
+functions in the next commit.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 100 ++++++++++++++--------
- 1 file changed, 64 insertions(+), 36 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 34 ++++++++++++-------
+ .../qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h   |  2 ++
+ 2 files changed, 24 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 9d03b7b8e00c..5a0966e66cc1 100644
+index 2f95e29110df..d034b4f45bd3 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -106,6 +106,13 @@ enum qphy_reg_layout {
- 	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
- 	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
- 	QPHY_PCS_POWER_DOWN_CONTROL,
-+
-+	QPHY_COM_RESETSM_CNTRL,
-+	QPHY_COM_C_READY_STATUS,
-+	QPHY_COM_CMN_STATUS,
-+
-+	QPHY_DP_PHY_STATUS,
-+
+@@ -116,6 +116,8 @@ enum qphy_reg_layout {
+ 	QPHY_TX_TX_POL_INV,
+ 	QPHY_TX_TX_DRV_LVL,
+ 	QPHY_TX_TX_EMP_POST1_LVL,
++	QPHY_TX_HIGHZ_DRVR_EN,
++	QPHY_TX_TRANSCEIVER_BIAS_EN,
+ 
  	/* Keep last to ensure regs_layout arrays are properly initialized */
  	QPHY_LAYOUT_SIZE
- };
-@@ -117,9 +124,15 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V3_PCS_POWER_DOWN_CONTROL,
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V3_PCS_AUTONOMOUS_MODE_CTRL,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V3_PCS_LFPS_RXTERM_IRQ_CLEAR,
-+
-+	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V3_COM_RESETSM_CNTRL,
-+	[QPHY_COM_C_READY_STATUS]	= QSERDES_V3_COM_C_READY_STATUS,
-+	[QPHY_COM_CMN_STATUS]		= QSERDES_V3_COM_CMN_STATUS,
-+
-+	[QPHY_DP_PHY_STATUS]		= QSERDES_V3_DP_PHY_STATUS,
+@@ -138,6 +140,8 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V3_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V3_TX_TX_DRV_LVL,
+ 	[QPHY_TX_TX_EMP_POST1_LVL]	= QSERDES_V3_TX_TX_EMP_POST1_LVL,
++	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V3_TX_HIGHZ_DRVR_EN,
++	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V3_TX_TRANSCEIVER_BIAS_EN,
  };
  
--static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-+static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_SW_RESET]			= QPHY_V4_PCS_SW_RESET,
- 	[QPHY_START_CTRL]		= QPHY_V4_PCS_START_CONTROL,
- 	[QPHY_PCS_STATUS]		= QPHY_V4_PCS_PCS_STATUS1,
-@@ -128,6 +141,29 @@ static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	/* In PCS_USB */
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-+
-+	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V4_COM_RESETSM_CNTRL,
-+	[QPHY_COM_C_READY_STATUS]	= QSERDES_V4_COM_C_READY_STATUS,
-+	[QPHY_COM_CMN_STATUS]		= QSERDES_V4_COM_CMN_STATUS,
-+
-+	[QPHY_DP_PHY_STATUS]		= QSERDES_V4_DP_PHY_STATUS,
-+};
-+
-+static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-+	[QPHY_SW_RESET]			= QPHY_V5_PCS_SW_RESET,
-+	[QPHY_START_CTRL]		= QPHY_V5_PCS_START_CONTROL,
-+	[QPHY_PCS_STATUS]		= QPHY_V5_PCS_PCS_STATUS1,
-+	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V5_PCS_POWER_DOWN_CONTROL,
-+
-+	/* In PCS_USB */
-+	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-+	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-+
-+	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V6_COM_RESETSM_CNTRL,
-+	[QPHY_COM_C_READY_STATUS]	= QSERDES_V6_COM_C_READY_STATUS,
-+	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
-+
-+	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
+ static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+@@ -159,6 +163,8 @@ static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V4_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V4_TX_TX_DRV_LVL,
+ 	[QPHY_TX_TX_EMP_POST1_LVL]	= QSERDES_V4_TX_TX_EMP_POST1_LVL,
++	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V4_TX_HIGHZ_DRVR_EN,
++	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V4_TX_TRANSCEIVER_BIAS_EN,
+ };
+ 
+ static const unsigned int qmp_v5_5nm_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+@@ -180,6 +186,8 @@ static const unsigned int qmp_v5_5nm_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V5_5NM_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V5_5NM_TX_TX_DRV_LVL,
+ 	[QPHY_TX_TX_EMP_POST1_LVL]	= QSERDES_V5_5NM_TX_TX_EMP_POST1_LVL,
++	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V5_5NM_TX_HIGHZ_DRVR_EN,
++	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V5_5NM_TX_TRANSCEIVER_BIAS_EN,
+ };
+ 
+ static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+@@ -201,6 +209,8 @@ static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_TX_TX_DRV_LVL,
+ 	[QPHY_TX_TX_EMP_POST1_LVL]	= QSERDES_V6_TX_TX_EMP_POST1_LVL,
++	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V6_TX_HIGHZ_DRVR_EN,
++	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V6_TX_TRANSCEIVER_BIAS_EN,
  };
  
  static const struct qmp_phy_init_tbl qmp_v3_usb3_serdes_tbl[] = {
-@@ -1564,7 +1600,7 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
- 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
--	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.regs			= qmp_v45_usb3phy_regs_layout,
- 	.pcs_usb_offset		= 0x300,
+@@ -2346,10 +2356,10 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ 		drvr1_en = 0x10;
+ 	}
  
- 	.has_pwrdn_delay	= true,
-@@ -1612,7 +1648,7 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
- 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
--	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.regs			= qmp_v45_usb3phy_regs_layout,
- };
+-	writel(drvr0_en, qmp->dp_tx + QSERDES_V4_TX_HIGHZ_DRVR_EN);
+-	writel(bias0_en, qmp->dp_tx + QSERDES_V4_TX_TRANSCEIVER_BIAS_EN);
+-	writel(drvr1_en, qmp->dp_tx2 + QSERDES_V4_TX_HIGHZ_DRVR_EN);
+-	writel(bias1_en, qmp->dp_tx2 + QSERDES_V4_TX_TRANSCEIVER_BIAS_EN);
++	writel(drvr0_en, qmp->dp_tx + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias0_en, qmp->dp_tx + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
++	writel(drvr1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
  
- static const struct qmp_phy_cfg sm6350_usb3dpphy_cfg = {
-@@ -1702,7 +1738,7 @@ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
- 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
--	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.regs			= qmp_v45_usb3phy_regs_layout,
- 	.pcs_usb_offset		= 0x300,
- 
- 	.has_pwrdn_delay	= true,
-@@ -1752,7 +1788,7 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
- 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
--	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.regs			= qmp_v45_usb3phy_regs_layout,
- 
- 	.has_pwrdn_delay	= true,
- };
-@@ -1795,7 +1831,7 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
- 	.configure_dp_phy	= qmp_v6_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
--	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.regs			= qmp_v6_usb3phy_regs_layout,
- 	.clk_list		= qmp_v4_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
- 	.reset_list		= msm8996_usb3phy_reset_l,
-@@ -1994,6 +2030,7 @@ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
- static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	u32 phy_vco_div, status;
- 	unsigned long pixel_freq;
- 
-@@ -2034,9 +2071,9 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
- 	writel(0x01, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	writel(0x20, qmp->dp_serdes + QSERDES_V3_COM_RESETSM_CNTRL);
-+	writel(0x20, qmp->dp_serdes + cfg->regs[QPHY_COM_RESETSM_CNTRL]);
- 
--	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_V3_COM_C_READY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_C_READY_STATUS],
- 			status,
- 			((status & BIT(0)) > 0),
- 			500,
-@@ -2045,7 +2082,7 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
- 
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V3_DP_PHY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2056,7 +2093,7 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
+ 	writel(0x18, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
  	udelay(2000);
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+@@ -2406,10 +2416,10 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ 		drvr1_en = 0x10;
+ 	}
  
--	return readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V3_DP_PHY_STATUS,
-+	return readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2148,13 +2185,10 @@ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp)
- 			QSERDES_V4_TX_TX_EMP_POST1_LVL);
- }
+-	writel(drvr0_en, qmp->dp_tx + QSERDES_V5_5NM_TX_HIGHZ_DRVR_EN);
+-	writel(bias0_en, qmp->dp_tx + QSERDES_V5_5NM_TX_TRANSCEIVER_BIAS_EN);
+-	writel(drvr1_en, qmp->dp_tx2 + QSERDES_V5_5NM_TX_HIGHZ_DRVR_EN);
+-	writel(bias1_en, qmp->dp_tx2 + QSERDES_V5_5NM_TX_TRANSCEIVER_BIAS_EN);
++	writel(drvr0_en, qmp->dp_tx + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias0_en, qmp->dp_tx + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
++	writel(drvr1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
  
--static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
--				     unsigned int com_resetm_ctrl_reg,
--				     unsigned int com_c_ready_status_reg,
--				     unsigned int com_cmn_status_reg,
--				     unsigned int dp_phy_status_reg)
-+static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	u32 phy_vco_div, status;
- 	unsigned long pixel_freq;
- 
-@@ -2199,23 +2233,23 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
- 	writel(0x01, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	writel(0x20, qmp->dp_serdes + com_resetm_ctrl_reg);
-+	writel(0x20, qmp->dp_serdes + cfg->regs[QPHY_COM_RESETSM_CNTRL]);
- 
--	if (readl_poll_timeout(qmp->dp_serdes + com_c_ready_status_reg,
-+	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_C_READY_STATUS],
- 			status,
- 			((status & BIT(0)) > 0),
- 			500,
- 			10000))
- 		return -ETIMEDOUT;
- 
--	if (readl_poll_timeout(qmp->dp_serdes + com_cmn_status_reg,
-+	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_CMN_STATUS],
- 			status,
- 			((status & BIT(0)) > 0),
- 			500,
- 			10000))
- 		return -ETIMEDOUT;
- 
--	if (readl_poll_timeout(qmp->dp_serdes + com_cmn_status_reg,
-+	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_CMN_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2224,14 +2258,14 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
- 
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	if (readl_poll_timeout(qmp->dp_dp_phy + dp_phy_status_reg,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(0)) > 0),
- 			500,
- 			10000))
- 		return -ETIMEDOUT;
- 
--	if (readl_poll_timeout(qmp->dp_dp_phy + dp_phy_status_reg,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2243,16 +2277,14 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
- 
- static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
- {
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
- 	u32 status;
- 	int ret;
- 
--	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V4_COM_RESETSM_CNTRL,
--					QSERDES_V4_COM_C_READY_STATUS,
--					QSERDES_V4_COM_CMN_STATUS,
--					QSERDES_V4_DP_PHY_STATUS);
-+	ret = qmp_v456_configure_dp_phy(qmp);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -2287,7 +2319,7 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ 	writel(0x18, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
  	udelay(2000);
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+@@ -2464,10 +2474,10 @@ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
+ 		drvr1_en = 0x10;
+ 	}
  
--	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V4_DP_PHY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2308,16 +2340,14 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+-	writel(drvr0_en, qmp->dp_tx + QSERDES_V4_TX_HIGHZ_DRVR_EN);
+-	writel(bias0_en, qmp->dp_tx + QSERDES_V4_TX_TRANSCEIVER_BIAS_EN);
+-	writel(drvr1_en, qmp->dp_tx2 + QSERDES_V4_TX_HIGHZ_DRVR_EN);
+-	writel(bias1_en, qmp->dp_tx2 + QSERDES_V4_TX_TRANSCEIVER_BIAS_EN);
++	writel(drvr0_en, qmp->dp_tx + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias0_en, qmp->dp_tx + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
++	writel(drvr1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
++	writel(bias1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
  
- static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
- {
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
- 	u32 status;
- 	int ret;
- 
--	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V4_COM_RESETSM_CNTRL,
--					QSERDES_V4_COM_C_READY_STATUS,
--					QSERDES_V4_COM_CMN_STATUS,
--					QSERDES_V4_DP_PHY_STATUS);
-+	ret = qmp_v456_configure_dp_phy(qmp);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -2347,7 +2377,7 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ 	writel(0x18, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
  	udelay(2000);
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V4_DP_PHY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			status,
- 			((status & BIT(1)) > 0),
- 			500,
-@@ -2368,16 +2398,14 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
- 
- static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
- {
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
- 	u32 status;
- 	int ret;
- 
--	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V6_COM_RESETSM_CNTRL,
--					QSERDES_V6_COM_C_READY_STATUS,
--					QSERDES_V6_COM_CMN_STATUS,
--					QSERDES_V6_DP_PHY_STATUS);
-+	ret = qmp_v456_configure_dp_phy(qmp);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -2407,7 +2435,7 @@ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
- 	udelay(2000);
- 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V6_DP_PHY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
- 			       status,
- 			       ((status & BIT(1)) > 0),
- 			       500,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h
+index b4810c48dc20..8883e1de730e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h
+@@ -17,6 +17,8 @@
+ #define QSERDES_V6_TX_RES_CODE_LANE_RX				0x38
+ #define QSERDES_V6_TX_RES_CODE_LANE_OFFSET_TX			0x3c
+ #define QSERDES_V6_TX_RES_CODE_LANE_OFFSET_RX			0x40
++#define QSERDES_V6_TX_TRANSCEIVER_BIAS_EN			0x54
++#define QSERDES_V6_TX_HIGHZ_DRVR_EN				0x58
+ #define QSERDES_V6_TX_TX_POL_INV				0x5c
+ #define QSERDES_V6_TX_PARRATE_REC_DETECT_IDLE_EN		0x60
+ #define QSERDES_V6_TX_BIST_PATTERN7				0x7c
 -- 
 2.39.2
 
