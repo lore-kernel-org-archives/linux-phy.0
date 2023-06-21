@@ -4,81 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12F27C0015E
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:32:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5188FEB64DC
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:34:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tWEA5kAnkdRO5AcUWMoYb3gyGZ8szGpiToJcsVFnejQ=; b=lwHO67AGEvnK8+
-	Nmtqywjj0iAgR1aLu39rfb7cX0qpj1sVXr6kYXfGYoqYyxulmfVmhQsv7/zl12GK9EEArDdRxelnj
-	H758Zd7ao66FD2ZJJFI0UPNH/hBb0NsbYt9fRe7rLoJh3AV9SJoSVFMEKdXPBgbzNlAQKFjWXDFE1
-	qFT9trkE/INK0KrkBbKUakRch/66BbNamE+yYQuaCX0WQsSb9EohQpQBPFpHEG7LTLLigIpP797kV
-	zqnxmWzSwix8oJRWz/bxN2U5iK61JDDXK3Pg1abtiuA52bAoErT4hHWh6CV770e2sR8n0e+s4K7Pq
-	U8Q2DtL665mUMJeDRdUw==;
+	List-Owner; bh=olGrwH86/Sczz9TFcd3mFhn7k0P4mBkk0SrD9OqQx8I=; b=pJQHsF3NrHFsGC
+	qz+qFBdTl1BGKIGTFLU7PvnG/T5mgFtUV/6rlPgXMTQV0OxSN+ZbKPlwwtb+oYL6UVzQ4irWQIJ8e
+	IlXAazD1wDPk2624epWkB/P6UNo/Y0ubMAmGoRbECW/2RVEvjtUZTjq1BgdrWseDM5ogP79rXWeej
+	MytursnCGZU0/4pspvqjhX1kufY+Glwxg2Q/sIvX9LOlLaFEgF7O2LJAfiQzOXHk279Hrv8O0UKaa
+	hC2+ns+1AWu6JywhkfG7Uy1h6hqemmVJvvAlJFL+fvyhC1YzsoCoKNgEqnTbxtzHSJynP36lsEOIp
+	ya5q/5MhL2yXfPl1gzPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1h4-00FEaH-1o;
-	Wed, 21 Jun 2023 17:32:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qC1iv-00FEma-2n;
+	Wed, 21 Jun 2023 17:34:29 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1h2-00FEZk-02
+	id 1qC1it-00FEm9-2W
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jun 2023 17:32:33 +0000
+	Wed, 21 Jun 2023 17:34:28 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5ED9D615FF;
-	Wed, 21 Jun 2023 17:32:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F215EC433C8;
-	Wed, 21 Jun 2023 17:32:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 21AD261633;
+	Wed, 21 Jun 2023 17:34:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09BFDC433C8;
+	Wed, 21 Jun 2023 17:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687368750;
-	bh=VfqGpYEIglQTk51i33OR5r1TFrQwDJbPB0c/7MTgQXU=;
+	s=k20201202; t=1687368866;
+	bh=w+j4f0hYpVnXaVscO0mrsKi1Q9BR0HA6avy4G1LwDVE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lL5Wji/oNVr5PUKpng4sRLy9k9e/N1ftHA1H/u/QEfYMDF0txKa82VpDKcAWyENjq
-	 9nFIxmUQ7OBdkawD4EgQTkdU0NN4WpeZkzIjDP76oY4AVYMD2Ve/9hScaIytGN5BD2
-	 63jFjGe9ZIQBlCs2KzuYLE97Hv90ScP6yvHeyjp3lBHawrxbcIXXqzcaolcAHyUu20
-	 RvVg5VUVR7oWBlnMjagDmW4se5Ij8db88LJB5ugxm2M7iT2tlHntQB51Dw55hhjoIb
-	 69Yw7/LdTsDiPfDCzfXM2Ro0OAaZhHUdyOuQGIWEDkCugjRNycgeL8MQKN9AV3PIG2
-	 8yytwf9fE/QwA==
-Date: Wed, 21 Jun 2023 23:02:26 +0530
+	b=BmD950TE+eZ3JMUs23+Xmbcn1dt/hvs9VExg2PPUllZtuen9VHcm5u6G3ZJjftC2Q
+	 MBgOS9h7cy4A4VIZxKgqaK8uQFiAPTfZDnPpmvTev/7+tjLpLTwBzBiHoyugqvasVa
+	 HDasTrkAFVhFBD3MHXesnBzsskg4FMW27XXhOsayvSG7Qtq0S7H4dd1vSS4900UpmO
+	 e2BhfXDFmTiOS1iqv7ytPHv40uTY/tTZtmYMoh7FEo0H/Mxzbu5ejyAdL18RprWVWE
+	 eIvRmMU98dMAN3K6q++N3n1vxMFhGIBzNDvMp7KDCUS/DKLNSdMyXWBQm0L1X91Q5X
+	 BP/Sb2tz3jWog==
+Date: Wed, 21 Jun 2023 23:04:22 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Alexander Stein <alexander.stein@ew.tq-group.com>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
-	Alessandro Zummo <a.zummo@towertech.it>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
-	Mark Brown <broonie@kernel.org>, Dipen Patel <dipenp@nvidia.com>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Dilip Kota <eswara.kota@linux.intel.com>,
+	Conor Dooley <conor+dt@kernel.org>, Liu Ying <victor.liu@nxp.com>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org,
-	linux-rtc@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-spi@vger.kernel.org, timestamp@lists.linux.dev,
-	linux-watchdog@vger.kernel.org, Rob Herring <robh@kernel.org>,
-	Tony Lindgren <tony@atomide.com>,
-	Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH 1/7] dt-bindings: phy: intel,combo-phy: restrict node
- name suffixes
-Message-ID: <ZJM0Kh8+ZzfiFQlg@matsya>
-References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
- <20230530144851.92059-2-krzysztof.kozlowski@linaro.org>
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: Re: [PATCH v2 1/1] dt-bindings: phy: mixel,mipi-dsi-phy: Remove
+ assigned-clock* properties
+Message-ID: <ZJM0nh0/xP1n5D1z@matsya>
+References: <20230609071538.149712-1-alexander.stein@ew.tq-group.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230530144851.92059-2-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230609071538.149712-1-alexander.stein@ew.tq-group.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_103232_105993_7568AE83 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20230621_103427_856487_833A28AD 
+X-CRM114-Status: UNSURE (   6.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,11 +81,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30-05-23, 16:48, Krzysztof Kozlowski wrote:
-> Make the pattern matching node names a bit stricter to improve DTS
-> consistency.  The pattern is restricted to:
-> 1. Only one unit address or one -N suffix,
-> 2. -N suffixes to decimal numbers.
+On 09-06-23, 09:15, Alexander Stein wrote:
+> With dt-schema v2021.02 these properties are added by default. Some SoC
+> (e.g. imx8mq) configure more than just one clock using these properties.
 
 Applied, thanks
 
