@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D63ABEB64D7
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 15:33:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6B2EB64DC
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 15:33:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rkkSkxlOaYpbdlpmI4xrRqJs4SGtrtxUTitsGdLWJN8=; b=LVojX0oXpL2z0q
-	CL6zwU3flbNCMrRf5CTYWfF72uLP7Vh3CEhusXF2PgLhDXL/LCH1nEudNJZq4oXF3ll67trTOkFRq
-	xDK8HZUdoVleTZrldyYnP3zwqoockEb9okAXMTUYDTsYmpDYWT089b6/WUZDgIWb3GuCyZCkz8euc
-	PUYkzz+Tlv+F7X6SZRhZbthQl/fKPv1WUVIdEswKRd0vtuIsiw/6x4jshBvfk/Mosm9LYFcVSR89D
-	BPBOgWuXsFOdSOCRuUuA4Yqr0qVlDRHwVb5ah78YRxtEI/nlJoM7rmrARroRUi0aKY9ltMZp55nlw
-	hI3A8Ko2FF8mX2p54QTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qO5vYpf1SQY3Gac9gMYzcoampmbAPh5rSfe2v3hz+1g=; b=uiwVGuiqcOg5mm
+	NTtq3NvaTw0XGFglk2zOAtd65p8OJr/zZptX16dIEZgfZC81p8vpNatu1Deb9itbxZn/WnUNNysp+
+	LvRPO8iQWRzdMS9Dx+KMvQR/Mj/YZDaYXpQugBCGvv9AMT7IOEhgyc6CuSMOUF3lhVv3r64oQiOjy
+	I1g5s87c2RqlGjpg78/d0xWgwurkj98zTrkd0SCGZ3ZjoiZZCxI51+c7Vqkm6n49kDtweRdOQhrnM
+	gzLdh7FiQ+Bj5ENRDuzWSJ1PILlg4EOOeD7tbyryod7iqpXReCmhGqgT3tvdnFKHbheSME6KN0y2i
+	GJn0zjVRHV53HmqK/5/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBzpk-00ExGp-1M;
-	Wed, 21 Jun 2023 15:33:24 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1qBzpl-00ExII-2b;
+	Wed, 21 Jun 2023 15:33:25 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBzph-00ExEy-0Z
+	id 1qBzpi-00ExF6-0q
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jun 2023 15:33:22 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-4f64fb05a8aso8382707e87.0
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jun 2023 08:33:19 -0700 (PDT)
+	Wed, 21 Jun 2023 15:33:24 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-4f76a0a19d4so8360690e87.2
+        for <linux-phy@lists.infradead.org>; Wed, 21 Jun 2023 08:33:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687361598; x=1689953598;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=BH6finOK0NCUs0Gft2KgbaIOESt3pr5OWZYURCYeUXQ=;
-        b=U+nfwtRiLk3NGnsdw+gPwlh4SogYB81aLy1y21Sf/ysdNkMKtBGPq7A2XRaViuf0fN
-         fV+7aJpmELHv/bCWjqROah0saDjV/uCQZuswjf1sI71Nfo8uCM7eMfcLOHgnvddhV4LI
-         WRie7RS86YXr4eM82YQ678wSjVML9yE4iM/X6rOiICLJj44gM8gBlRiNcI8yaWKi1o5x
-         +WrlPRHanw3hE5RPucr2oukorA5XdvkamfVQZHxIipQIMHNonewF/M57dKc7wh1Ra0ZC
-         QyumOSBvhrVPghfg/Fmbd8xWdg8txWHLtsipQ0Ieq1MIRsYBypBIEdkmOUx2J7JoQ50L
-         m/bg==
+        d=linaro.org; s=google; t=1687361600; x=1689953600;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=w6UGMmKiSJ87dVKJCq6xTOUGaCMzpqDueTLzydEjdu0=;
+        b=Mu+WVXKpIjJYcciQD/H1Dxv8o5yIljsuIe6f6yWaDh6uUZ6kBHySSKuRh4G2K9RXfP
+         SjbGXieD1oU/wepmQ/PT5dVE3zVrOmeBLGSZaw+MQRoQjpHn+c7+KqUX6LqgsTStMxRP
+         +CWdKhDZXPDKdYugi48QJ+rFcAzfiEqHMpxAlDwehKuZVpMBT0bNXtDUgFk73Weiun59
+         k0gcrpStMwnaW136isVu17W44mK1c+wjgT4A+QyRSkBHY7h0ltgVCdf6T+1Lt1c7Y4aS
+         wlm4/RJO7IFa6/dBj0SUerAsqCVddfewjBYSYAm19nEHQKeKT9cvHIKMtGQ8q5p0Afjj
+         OBYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687361598; x=1689953598;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=BH6finOK0NCUs0Gft2KgbaIOESt3pr5OWZYURCYeUXQ=;
-        b=E8geaXs/gtOvxeaB3r3Rxgo9d5SmaBWDTWuO4n88NFJ1H7pB8nxsq0zoBW32FEXl9I
-         Xr9wr5y5hCvBEoFHhLS904CnZDzWSkzoH2PUBUttdrePh10PF7jm0qcqIiNViYyhG+KA
-         HvcRHuG4inFc79meop93JMiedyp3DkTPAwmmLC769Ijbj98yeTeIg85sgWheyoIQ0PCX
-         OqsSrscRUf2RrGF+s75yK/k/cUTp/zgblzGL2FgXhiYk8Mk85EQ8PHgVqWYLx2cOL80Z
-         qZAeKmuheeIw/FEiUBDmAlCnYJ/mybW6acH2CJinxJSbOBzh8c/Kxsv+5FO/t8NTClpU
-         yiUA==
-X-Gm-Message-State: AC+VfDxy+DjBKugeg+zFydjuVbFAcrFbX6kFWAAuvn6+oBJSBPajWDCY
-	xAxj0Pb4fH/fVnCx1YROKEYJqA==
-X-Google-Smtp-Source: ACHHUZ6JQKPQPArgKFqdZPPb7rjF7JBGHwVhYAEFB4DxBioynvcwfq3a5UuYnz7Ry8DAdKvyHJcQdw==
-X-Received: by 2002:a19:e34c:0:b0:4f8:4dbd:36fc with SMTP id c12-20020a19e34c000000b004f84dbd36fcmr9455311lfk.8.1687361598431;
-        Wed, 21 Jun 2023 08:33:18 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1687361600; x=1689953600;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=w6UGMmKiSJ87dVKJCq6xTOUGaCMzpqDueTLzydEjdu0=;
+        b=DwEOvMgyniPIv7sMryrDV0VTHRFGMZbCj9SuY6I5S+UupxeUlpLCNtdJK90wTdWvAO
+         foZ44PxYBPovNxR2Kq9iJh+vn5w4aO4CQKf4c9hmyaWqNOQZxzv2rW+iycBViXFMG9pK
+         FYlN1QFIxFLt03Ruweyzbtjvjx8s2IxIsYr1LrjGJon4F5iTWBJhY2OaE7qbktx84dOj
+         MCVldSFxfiXH7qXCaxWORwxREM+a/4oRVlESRmOL9i26zh6qrXBUqX0CjbwYGaiDTn0B
+         K3eEjaRfqAXqwb5fw+7hDFr0AM3YJpqB26DYYd0CXZXvHTbBghqmT0+/T30njMiHX1S/
+         BfkA==
+X-Gm-Message-State: AC+VfDzf/Kuk8t3JBiTbsWUqVrZth9Us1gv/h0AYhT+9ctQQcOI5fFNp
+	hSthdKBc8SeMhtPrJWf8lhS909n1SLzQ3G8+H1E=
+X-Google-Smtp-Source: ACHHUZ4KHx0DukzCIDUFE6zXVA/3ThJ57bA2cCsVJEsayLh7CQFVlTtZ5qC+vP8JdvU55DdumL6/Kg==
+X-Received: by 2002:a19:4402:0:b0:4f9:5a61:194f with SMTP id r2-20020a194402000000b004f95a61194fmr1759483lfa.11.1687361600319;
+        Wed, 21 Jun 2023 08:33:20 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id o3-20020a056512050300b004f8751285a5sm804888lfb.80.2023.06.21.08.33.17
+        by smtp.gmail.com with ESMTPSA id o3-20020a056512050300b004f8751285a5sm804888lfb.80.2023.06.21.08.33.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Jun 2023 08:33:17 -0700 (PDT)
+        Wed, 21 Jun 2023 08:33:19 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -72,15 +73,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-phy@lists.infradead.org,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	freedreno@lists.freedesktop.org
-Subject: [RESEND PATCH 0/7] phy: qcom: qmp-combo: rework register access
-Date: Wed, 21 Jun 2023 18:33:10 +0300
-Message-Id: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
+Subject: [RESEND PATCH 2/7] phy: qcom: qmp-combo: reuse register layouts for more registers
+Date: Wed, 21 Jun 2023 18:33:12 +0300
+Message-Id: <20230621153317.1025914-3-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
+References: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_083321_209682_27F2432F 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230621_083322_299906_562872B2 
+X-CRM114-Status: GOOD (  12.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,39 +99,307 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For some reason I used the wrong script to send this patchset, resend it
-including proper (linux-phy & maintainers) recipients.
+Instead of passing additional registers to qmp_v456_configure_dp_phy(),
+reuse qphy_reg_layout and add those registers to register layout maps.
 
-The patch at [1], which added another function just to have v4 vs v6
-register address difference prompted me to take a look at the combo PHY
-driver. We already have mechanism, register layout descriptions, for
-coping with register address differences, which I ignored while adding
-v4 support. It looks like nowadays this has exploded somehow, resulting
-inseveral almost-identicatical functions.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 100 ++++++++++++++--------
+ 1 file changed, 64 insertions(+), 36 deletions(-)
 
-Forcibly use regs layout for all version-specific registers used in DP
-PHY programming. As a result, this allows us to drop several very
-similar functions. And also while doing this cleanup I spotted a typo,
-which resulted in a patch 1, fixing bias0_en programming for sc8280 and
-sm8550 PHYs.
-
-[1] https://lore.kernel.org/linux-arm-msm/20230601-topic-sm8550-upstream-dp-phy-init-fix-v1-1-4e9da9f97991@linaro.org/
-
-
-Dmitry Baryshkov (7):
-  phy: qcom: qmp-combo: correct bias0_en programming
-  phy: qcom: qmp-combo: reuse register layouts for more registers
-  phy: qcom: qmp-combo: reuse register layouts for even more registers
-  phy: qcom: qmp-combo: reuse register layouts for some more registers
-  phy: qcom: qmp-combo: drop similar functions
-  phy: qcom: qmp-combo: drop qmp_v6_dp_aux_init()
-  phy: qcom: qmp-combo: extract common function to setup clocks
-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 408 +++++++-----------
- .../qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h   |   5 +
- drivers/phy/qualcomm/phy-qcom-qmp.h           |   2 +
- 3 files changed, 174 insertions(+), 241 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 9d03b7b8e00c..5a0966e66cc1 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -106,6 +106,13 @@ enum qphy_reg_layout {
+ 	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
+ 	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
+ 	QPHY_PCS_POWER_DOWN_CONTROL,
++
++	QPHY_COM_RESETSM_CNTRL,
++	QPHY_COM_C_READY_STATUS,
++	QPHY_COM_CMN_STATUS,
++
++	QPHY_DP_PHY_STATUS,
++
+ 	/* Keep last to ensure regs_layout arrays are properly initialized */
+ 	QPHY_LAYOUT_SIZE
+ };
+@@ -117,9 +124,15 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V3_PCS_POWER_DOWN_CONTROL,
+ 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V3_PCS_AUTONOMOUS_MODE_CTRL,
+ 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V3_PCS_LFPS_RXTERM_IRQ_CLEAR,
++
++	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V3_COM_RESETSM_CNTRL,
++	[QPHY_COM_C_READY_STATUS]	= QSERDES_V3_COM_C_READY_STATUS,
++	[QPHY_COM_CMN_STATUS]		= QSERDES_V3_COM_CMN_STATUS,
++
++	[QPHY_DP_PHY_STATUS]		= QSERDES_V3_DP_PHY_STATUS,
+ };
+ 
+-static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
++static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_SW_RESET]			= QPHY_V4_PCS_SW_RESET,
+ 	[QPHY_START_CTRL]		= QPHY_V4_PCS_START_CONTROL,
+ 	[QPHY_PCS_STATUS]		= QPHY_V4_PCS_PCS_STATUS1,
+@@ -128,6 +141,29 @@ static const unsigned int qmp_v4_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	/* In PCS_USB */
+ 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL,
+ 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
++
++	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V4_COM_RESETSM_CNTRL,
++	[QPHY_COM_C_READY_STATUS]	= QSERDES_V4_COM_C_READY_STATUS,
++	[QPHY_COM_CMN_STATUS]		= QSERDES_V4_COM_CMN_STATUS,
++
++	[QPHY_DP_PHY_STATUS]		= QSERDES_V4_DP_PHY_STATUS,
++};
++
++static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
++	[QPHY_SW_RESET]			= QPHY_V5_PCS_SW_RESET,
++	[QPHY_START_CTRL]		= QPHY_V5_PCS_START_CONTROL,
++	[QPHY_PCS_STATUS]		= QPHY_V5_PCS_PCS_STATUS1,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V5_PCS_POWER_DOWN_CONTROL,
++
++	/* In PCS_USB */
++	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL,
++	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
++
++	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V6_COM_RESETSM_CNTRL,
++	[QPHY_COM_C_READY_STATUS]	= QSERDES_V6_COM_C_READY_STATUS,
++	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
++
++	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
+ };
+ 
+ static const struct qmp_phy_init_tbl qmp_v3_usb3_serdes_tbl[] = {
+@@ -1564,7 +1600,7 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs			= qmp_v4_usb3phy_regs_layout,
++	.regs			= qmp_v45_usb3phy_regs_layout,
+ 	.pcs_usb_offset		= 0x300,
+ 
+ 	.has_pwrdn_delay	= true,
+@@ -1612,7 +1648,7 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs			= qmp_v4_usb3phy_regs_layout,
++	.regs			= qmp_v45_usb3phy_regs_layout,
+ };
+ 
+ static const struct qmp_phy_cfg sm6350_usb3dpphy_cfg = {
+@@ -1702,7 +1738,7 @@ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs			= qmp_v4_usb3phy_regs_layout,
++	.regs			= qmp_v45_usb3phy_regs_layout,
+ 	.pcs_usb_offset		= 0x300,
+ 
+ 	.has_pwrdn_delay	= true,
+@@ -1752,7 +1788,7 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs			= qmp_v4_usb3phy_regs_layout,
++	.regs			= qmp_v45_usb3phy_regs_layout,
+ 
+ 	.has_pwrdn_delay	= true,
+ };
+@@ -1795,7 +1831,7 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v6_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+-	.regs			= qmp_v4_usb3phy_regs_layout,
++	.regs			= qmp_v6_usb3phy_regs_layout,
+ 	.clk_list		= qmp_v4_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -1994,6 +2030,7 @@ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
+ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
+ {
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	u32 phy_vco_div, status;
+ 	unsigned long pixel_freq;
+ 
+@@ -2034,9 +2071,9 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
+ 	writel(0x01, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	writel(0x20, qmp->dp_serdes + QSERDES_V3_COM_RESETSM_CNTRL);
++	writel(0x20, qmp->dp_serdes + cfg->regs[QPHY_COM_RESETSM_CNTRL]);
+ 
+-	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_V3_COM_C_READY_STATUS,
++	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_C_READY_STATUS],
+ 			status,
+ 			((status & BIT(0)) > 0),
+ 			500,
+@@ -2045,7 +2082,7 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
+ 
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V3_DP_PHY_STATUS,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2056,7 +2093,7 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
+ 	udelay(2000);
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	return readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V3_DP_PHY_STATUS,
++	return readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2148,13 +2185,10 @@ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp)
+ 			QSERDES_V4_TX_TX_EMP_POST1_LVL);
+ }
+ 
+-static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
+-				     unsigned int com_resetm_ctrl_reg,
+-				     unsigned int com_c_ready_status_reg,
+-				     unsigned int com_cmn_status_reg,
+-				     unsigned int dp_phy_status_reg)
++static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
+ {
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	u32 phy_vco_div, status;
+ 	unsigned long pixel_freq;
+ 
+@@ -2199,23 +2233,23 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
+ 	writel(0x01, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	writel(0x20, qmp->dp_serdes + com_resetm_ctrl_reg);
++	writel(0x20, qmp->dp_serdes + cfg->regs[QPHY_COM_RESETSM_CNTRL]);
+ 
+-	if (readl_poll_timeout(qmp->dp_serdes + com_c_ready_status_reg,
++	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_C_READY_STATUS],
+ 			status,
+ 			((status & BIT(0)) > 0),
+ 			500,
+ 			10000))
+ 		return -ETIMEDOUT;
+ 
+-	if (readl_poll_timeout(qmp->dp_serdes + com_cmn_status_reg,
++	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_CMN_STATUS],
+ 			status,
+ 			((status & BIT(0)) > 0),
+ 			500,
+ 			10000))
+ 		return -ETIMEDOUT;
+ 
+-	if (readl_poll_timeout(qmp->dp_serdes + com_cmn_status_reg,
++	if (readl_poll_timeout(qmp->dp_serdes + cfg->regs[QPHY_COM_CMN_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2224,14 +2258,14 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
+ 
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + dp_phy_status_reg,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(0)) > 0),
+ 			500,
+ 			10000))
+ 		return -ETIMEDOUT;
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + dp_phy_status_reg,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2243,16 +2277,14 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp,
+ 
+ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ {
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+ 	u32 status;
+ 	int ret;
+ 
+-	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V4_COM_RESETSM_CNTRL,
+-					QSERDES_V4_COM_C_READY_STATUS,
+-					QSERDES_V4_COM_CMN_STATUS,
+-					QSERDES_V4_DP_PHY_STATUS);
++	ret = qmp_v456_configure_dp_phy(qmp);
+ 	if (ret < 0)
+ 		return ret;
+ 
+@@ -2287,7 +2319,7 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ 	udelay(2000);
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V4_DP_PHY_STATUS,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2308,16 +2340,14 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ 
+ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ {
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+ 	u32 status;
+ 	int ret;
+ 
+-	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V4_COM_RESETSM_CNTRL,
+-					QSERDES_V4_COM_C_READY_STATUS,
+-					QSERDES_V4_COM_CMN_STATUS,
+-					QSERDES_V4_DP_PHY_STATUS);
++	ret = qmp_v456_configure_dp_phy(qmp);
+ 	if (ret < 0)
+ 		return ret;
+ 
+@@ -2347,7 +2377,7 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ 	udelay(2000);
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V4_DP_PHY_STATUS,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			status,
+ 			((status & BIT(1)) > 0),
+ 			500,
+@@ -2368,16 +2398,14 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ 
+ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
+ {
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+ 	u32 status;
+ 	int ret;
+ 
+-	ret = qmp_v456_configure_dp_phy(qmp, QSERDES_V6_COM_RESETSM_CNTRL,
+-					QSERDES_V6_COM_C_READY_STATUS,
+-					QSERDES_V6_COM_CMN_STATUS,
+-					QSERDES_V6_DP_PHY_STATUS);
++	ret = qmp_v456_configure_dp_phy(qmp);
+ 	if (ret < 0)
+ 		return ret;
+ 
+@@ -2407,7 +2435,7 @@ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
+ 	udelay(2000);
+ 	writel(0x19, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
+ 
+-	if (readl_poll_timeout(qmp->dp_dp_phy + QSERDES_V6_DP_PHY_STATUS,
++	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
+ 			       status,
+ 			       ((status & BIT(1)) > 0),
+ 			       500,
 -- 
 2.39.2
 
