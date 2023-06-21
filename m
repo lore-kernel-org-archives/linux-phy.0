@@ -4,98 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0089EB64D8
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 10:13:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64321EB64D8
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 11:05:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b+tWNEg7JYDdZniB8RarijQXpx9+uDC9jyKgqdp/6vw=; b=PHa/Fs1bhsh89a
-	FgrgN6v3Qfy0Kt6S/RKXN9b7EIln+7gSYHWF8ysAIYec2+wtBx1helmG91hxYXDA764qAIYi8Paly
-	Q0EJQijvgQPLLDVotszvY0vQzREXRaO4kIrpgcAUywXG67rxOVFjR+BADbt6bYKb/I81A86fziS58
-	3BwWxfs1VNEz1DdLcYz7lvUhAfGyyImYijFSN6P+y+oF8eQMlmxCEiTJa7BBTGvqXTgMiNHFILHLX
-	gzlv9goCE0DIwyYuu4UayhmCKNP1RvUzTuGYm5klyy4V8AmZZr//BuLeo+3b4S+adLQYOyyne35Jg
-	0mWZFlkmG4JDPKvGh+kg==;
+	List-Owner; bh=jsje0w9C/5u0D032CpPqrTyQN4h2fDkuhDAyadGBbrg=; b=0KcJGgZTH0fM4J
+	Nv9mZ0nlAxct4gjUYeSG3qvhwfMfxF/B+aJ81bu/iphJ7vGnRhiVPQM3yTGScxaAi5Dyy+2O4gejL
+	CPeXghdInYkPgxxfSIeZSV4EsyQqa5yLR6wHfaA3TJT9ffnwGuEHKhBeVikgwKxkGPq1qb2kFBCrR
+	loWfDE0nD+5sgxb8EvRR1pHbavjuBifiGphrGwyqW9Y9j53x3Zly3woVUTjreN1dEcGCD+bNYX0Wx
+	2yxPw3HshPaLto+6zFEct7GB9nz2tJgHgn/NE0Dyx8Sn/UxbBKXRdZ8N/5P0LDcghqA1Wh4rgA4Ik
+	m/zjTiBAc7JFPr7aksIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBupq-00DzVU-0Z;
-	Wed, 21 Jun 2023 10:13:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qBveF-00EK1E-3C;
+	Wed, 21 Jun 2023 11:05:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBupR-00DzUH-1Z;
-	Wed, 21 Jun 2023 10:12:49 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35L99KPH029693;
-	Wed, 21 Jun 2023 10:12:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=gUmj21gH3bLd729QgzUszORR2zfcQYaMTPFMTdZi6aQ=;
- b=BTlTY3NqB9Z3X3tICIjVVlyJk0Tq8Uv5R/1XvxKpT+Ssv4yUMboTERpl5uoHVs0dgU9I
- qqO3ZSLN6vj/fYopLDTXAsWsN2Y7voKRI8YXfl4zsdxtEP1O+dNmOJHcKe7uDZJwEBV+
- ro1KOkl8deHF5YvtkGKNvC8vCmJJ91HguyJR1Ez3yU15N6r7n/in8S2TbJm9ROQciDbV
- Zhjt+l3G3BmLNQe+IIXRQTI7uyqnr3kJDfcZaX+pHEORgyUHvDwew0ruKmYcx6EMlhl2
- g3Z6WEtvieQadmxyXGXIbyOTtWePXpugfy8jUDMT8gxFzq8JXVRiUw72kIvNo8Ewo8bV ew== 
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rb7suu7px-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Jun 2023 10:12:29 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35LACS89011080
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Jun 2023 10:12:28 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Wed, 21 Jun 2023 03:12:19 -0700
-Date: Wed, 21 Jun 2023 15:42:15 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
-        <will@kernel.org>, <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <p.zabel@pengutronix.de>, <arnd@arndb.de>, <geert+renesas@glider.be>,
-        <neil.armstrong@linaro.org>, <nfraprado@collabora.com>,
-        <broonie@kernel.org>, <rafal@milecki.pl>, <quic_srichara@quicinc.com>,
-        <quic_varada@quicinc.org>, <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH 2/9] dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
-Message-ID: <20230621101214.GB3533@varda-linux.qualcomm.com>
+	id 1qBveC-00EJxl-0d;
+	Wed, 21 Jun 2023 11:05:13 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8E8B0614D8;
+	Wed, 21 Jun 2023 11:05:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3185AC433C9;
+	Wed, 21 Jun 2023 11:05:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1687345510;
+	bh=GHgj/yYOkuJYCVK8z0SzrAG70b1uyM3F4e+xXJRSXEo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=QPn8zfp681El9SKEFfEnYQ0FZtwI8UfabPdCuKI5efvZ9jEMIR1BiZukoqkEHZ0uY
+	 YOsp3CNwoIRiCKHfaS4m1OADTfqCXLtPhh/b8Bki+qw7HSkAEzxF2zuzLsJB1DoHId
+	 wq6rvsegVOEJFI9b0mmKQkgK8BGv9mozTOjDe8S8Yfr2mU/dzvcLo2BWkQlQjZVZsM
+	 b/cYLQHnuWyYadxipwQ/+Xi+fERgSrrVfajam126UVNmC363zCpcCimlTRyfSzT57l
+	 dj0gallYAIeutWfqKjLoSEj/izyDk55Mgkv7Gka3hv3jMuVjZrKjLbt8gIVv6UxjBf
+	 zib0PEAweqEYw==
+Date: Wed, 21 Jun 2023 16:35:06 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+	andersson@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	gregkh@linuxfoundation.org, catalin.marinas@arm.com,
+	will@kernel.org, mturquette@baylibre.com, sboyd@kernel.org,
+	p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
+	neil.armstrong@linaro.org, nfraprado@collabora.com,
+	broonie@kernel.org, rafal@milecki.pl, quic_srichara@quicinc.com,
+	quic_varada@quicinc.org, quic_wcheng@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-clk@vger.kernel.org
+Subject: Re: [PATCH 3/9] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Message-ID: <ZJLZYsla/ylQkVUB@matsya>
 References: <cover.1686126439.git.quic_varada@quicinc.com>
- <14f60578e2935c0844537eab162af3afa52ffe39.1686126439.git.quic_varada@quicinc.com>
- <98960024-7dbc-91a3-75de-90b529637916@linaro.org>
- <20230615052746.GB22186@varda-linux.qualcomm.com>
- <aca54f67-cc09-ff4f-93ca-6973d153db2c@linaro.org>
- <20230620093225.GA9966@varda-linux.qualcomm.com>
- <dd78b449-8ff8-108d-cc49-fbddbb660c76@linaro.org>
+ <6bb345c6a57ee27516764f36ba7d34fd1a719b87.1686126439.git.quic_varada@quicinc.com>
+ <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <dd78b449-8ff8-108d-cc49-fbddbb660c76@linaro.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Tzr6RSq6epP8dYrnQHwcDmS_aots0hgE
-X-Proofpoint-ORIG-GUID: Tzr6RSq6epP8dYrnQHwcDmS_aots0hgE
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-06-21_07,2023-06-16_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- impostorscore=0 priorityscore=1501 bulkscore=0 phishscore=0
- mlxlogscore=737 suspectscore=0 spamscore=0 mlxscore=0 adultscore=0
- clxscore=1015 lowpriorityscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2305260000 definitions=main-2306210086
+In-Reply-To: <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_031245_529742_F35121F5 
-X-CRM114-Status: GOOD (  18.01  )
+X-CRM114-CacheID: sfid-20230621_040512_328776_127C7F65 
+X-CRM114-Status: GOOD (  16.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,29 +87,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 21, 2023 at 10:43:38AM +0200, Krzysztof Kozlowski wrote:
-> On 20/06/2023 11:32, Varadarajan Narayanan wrote:
->
-> >
-> >> And then we have... existing bindings qcom,usb-hs-phy.yaml. Don't create
-> >> something similar with difference in the hyphen. Just use device
-> >> specific compatible thus device specific filename.
-> >
-> > qcom,usb-hs-phy.yaml seems to be for ULPI mode phy and the
-> > driver we are introducing is for UTMI. We would have to
-> > modify phy-qcom-usb-hs.c to accomodate M31. Will that be
-> > acceptable to phy-qcom-usb-hs.c owners/maintainers?
->
-> We don't talk about drivers here but bindings. Why would you need to
-> modify the driver when introducing new binding for different device?
+On 07-06-23, 13:54, Konrad Dybcio wrote:
+> 
+> 
+> On 7.06.2023 12:56, Varadarajan Narayanan wrote:
+> > Add the M31 USB2 phy driver
+> > 
+> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-m31.c | 360 ++++++++++++++++++++++++++++++++++++
+> >  1 file changed, 360 insertions(+)
+> >  create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+> > new file mode 100644
+> > index 0000000..d29a91e
+> > --- /dev/null
+> > +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+> > @@ -0,0 +1,360 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +/*
+> > + * Copyright (c) 2014-2016, 2020, The Linux Foundation. All rights reserved.
+> > + */
+> > +
+> > +#include <linux/module.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/err.h>
+> > +#include <linux/slab.h>
+> > +#include <linux/clk.h>
+> > +#include <linux/delay.h>
+> > +#include <linux/io.h>
+> > +#include <linux/of.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/usb/phy.h>
+> > +#include <linux/reset.h>
+> > +#include <linux/of_device.h>
+> Please sort these
+> 
+> > +
+> > +enum clk_reset_action {
+> > +	CLK_RESET_DEASSERT	= 0,
+> > +	CLK_RESET_ASSERT	= 1
+> > +};
+> > +
+> > +#define USB2PHY_PORT_POWERDOWN		0xA4
+> > +#define POWER_UP			BIT(0)
+> > +#define POWER_DOWN			0
+> > +
+> > +#define USB2PHY_PORT_UTMI_CTRL1	0x40
+> > +
+> > +#define USB2PHY_PORT_UTMI_CTRL2	0x44
+> > +#define UTMI_ULPI_SEL			BIT(7)
+> > +#define UTMI_TEST_MUX_SEL		BIT(6)
+> > +
+> > +#define HS_PHY_CTRL_REG			0x10
+> > +#define UTMI_OTG_VBUS_VALID             BIT(20)
+> > +#define SW_SESSVLD_SEL                  BIT(28)
+> > +
+> > +#define USB_PHY_CFG0			0x94
+> > +#define USB_PHY_UTMI_CTRL5		0x50
+> > +#define USB_PHY_FSEL_SEL		0xB8
+> > +#define USB_PHY_HS_PHY_CTRL_COMMON0	0x54
+> > +#define USB_PHY_REFCLK_CTRL		0xA0
+> > +#define USB_PHY_HS_PHY_CTRL2		0x64
+> > +#define USB_PHY_UTMI_CTRL0		0x3c
+> > +#define USB2PHY_USB_PHY_M31_XCFGI_1	0xBC
+> > +#define USB2PHY_USB_PHY_M31_XCFGI_4	0xC8
+> > +#define USB2PHY_USB_PHY_M31_XCFGI_5	0xCC
+> > +#define USB2PHY_USB_PHY_M31_XCFGI_11	0xE4
+> Could you sort them address-wise?
 
-Sorry. I misunderstood your feedback as "use the existing bindings".
+and lower case hex values as well please
 
-Will name the bindings file as qcom,ipq5332-usb-hsphy.yaml and post
-the next version.
-
-Thanks
-Varada
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
