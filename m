@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5188FEB64DC
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:34:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 915B2EB64D7
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:37:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=olGrwH86/Sczz9TFcd3mFhn7k0P4mBkk0SrD9OqQx8I=; b=pJQHsF3NrHFsGC
-	qz+qFBdTl1BGKIGTFLU7PvnG/T5mgFtUV/6rlPgXMTQV0OxSN+ZbKPlwwtb+oYL6UVzQ4irWQIJ8e
-	IlXAazD1wDPk2624epWkB/P6UNo/Y0ubMAmGoRbECW/2RVEvjtUZTjq1BgdrWseDM5ogP79rXWeej
-	MytursnCGZU0/4pspvqjhX1kufY+Glwxg2Q/sIvX9LOlLaFEgF7O2LJAfiQzOXHk279Hrv8O0UKaa
-	hC2+ns+1AWu6JywhkfG7Uy1h6hqemmVJvvAlJFL+fvyhC1YzsoCoKNgEqnTbxtzHSJynP36lsEOIp
-	ya5q/5MhL2yXfPl1gzPQ==;
+	List-Owner; bh=y49iZripIK6UVy5FH0cWVvQJLZEvZWfrwNLzFFmW6/U=; b=BIcKW4/115V52K
+	EK3VS51QZlM4bug8yHxN8Ta3+4ttgpnipComRrrYF6P2cU/FrB4KvNYnD5qhKNGJN+upxAZATbfAn
+	lRz3mqoozSSzeG7c54xuMaUTq4UHVey9N3JZZ8aS9JbBUd4D1JUlKSuzNXPAgZ8KhoxxsyP/kvXcI
+	UvQnSjsEpGxC7Z06hPqWGwYu2oMRBxNLqCyuEY6O4xrkZ3lBhUoQodLg3A5SqUlYf+iE01eKs6Hj1
+	bih0Cerk0lBbL8q2L6NJGVlWg3M1PR7As/x2J1Mk4KpQ6ftSVm7Mwkl7AJkKTeUBnGquaVAJXI9s7
+	zHE66HIv9uZaPXA3St/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1iv-00FEma-2n;
-	Wed, 21 Jun 2023 17:34:29 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qC1ls-00FFBZ-0U;
+	Wed, 21 Jun 2023 17:37:32 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1it-00FEm9-2W
+	id 1qC1lp-00FFAF-0w
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jun 2023 17:34:28 +0000
+	Wed, 21 Jun 2023 17:37:30 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 21AD261633;
-	Wed, 21 Jun 2023 17:34:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09BFDC433C8;
-	Wed, 21 Jun 2023 17:34:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 87D6961645;
+	Wed, 21 Jun 2023 17:37:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F7EFC433C0;
+	Wed, 21 Jun 2023 17:37:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687368866;
-	bh=w+j4f0hYpVnXaVscO0mrsKi1Q9BR0HA6avy4G1LwDVE=;
+	s=k20201202; t=1687369048;
+	bh=Ofow7TPhTby78fiLDgvFRr9YEMU8BzTuo+3QlFVgybo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BmD950TE+eZ3JMUs23+Xmbcn1dt/hvs9VExg2PPUllZtuen9VHcm5u6G3ZJjftC2Q
-	 MBgOS9h7cy4A4VIZxKgqaK8uQFiAPTfZDnPpmvTev/7+tjLpLTwBzBiHoyugqvasVa
-	 HDasTrkAFVhFBD3MHXesnBzsskg4FMW27XXhOsayvSG7Qtq0S7H4dd1vSS4900UpmO
-	 e2BhfXDFmTiOS1iqv7ytPHv40uTY/tTZtmYMoh7FEo0H/Mxzbu5ejyAdL18RprWVWE
-	 eIvRmMU98dMAN3K6q++N3n1vxMFhGIBzNDvMp7KDCUS/DKLNSdMyXWBQm0L1X91Q5X
-	 BP/Sb2tz3jWog==
-Date: Wed, 21 Jun 2023 23:04:22 +0530
+	b=lcSfXMrPdldMiaJQp2qajwo1CJIGRK0b0TT5+todi+ByYMIHp/+iz46WCmF/qHTWI
+	 xeLA/2Be/C0VpWNQC03aaSP66+R7uN1lEd70E0FgyZiC66F9S1Vnfv09rXlbgxTKLU
+	 rRuw3+V6HSOVfOwvv1mjk0gkcp6X3E4945HBE+GE7Wt/yaSOjea0qmJJq3XhMl2pNE
+	 9p4CDIaWAmGzfK+z6ChGnkxI23mNaBJyDTgF4Pe50tJ1KHE52Og6CTMW9RyFzisQEW
+	 eqbk6CdnsYIZTiPhUG9ZQJSZNyLCJxryfzW9Dx0V9SrvscZ13ATLxdTkDC1NCnnG9X
+	 vos3EDlyhA3/Q==
+Date: Wed, 21 Jun 2023 23:07:23 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, Liu Ying <victor.liu@nxp.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v2 1/1] dt-bindings: phy: mixel,mipi-dsi-phy: Remove
- assigned-clock* properties
-Message-ID: <ZJM0nh0/xP1n5D1z@matsya>
-References: <20230609071538.149712-1-alexander.stein@ew.tq-group.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Cc: jckuo@nvidia.com, kishon@kernel.org, thierry.reding@gmail.com,
+	jonathanh@nvidia.com, nkristam@nvidia.com,
+	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: tegra: xusb: check return value of devm_kzalloc()
+Message-ID: <ZJM1U9RPV4DUPgWp@matsya>
+References: <20230531073950.145339-1-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230609071538.149712-1-alexander.stein@ew.tq-group.com>
+In-Reply-To: <20230531073950.145339-1-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_103427_856487_833A28AD 
-X-CRM114-Status: UNSURE (   6.11  )
+X-CRM114-CacheID: sfid-20230621_103729_366617_A1FAD13D 
+X-CRM114-Status: UNSURE (   6.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,9 +78,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-06-23, 09:15, Alexander Stein wrote:
-> With dt-schema v2021.02 these properties are added by default. Some SoC
-> (e.g. imx8mq) configure more than just one clock using these properties.
+On 31-05-23, 10:39, Claudiu Beznea wrote:
+> devm_kzalloc() returns a pointer to dynamically allocated memory.
+> Pointer could be NULL in case allocation fails. Check pointer validity.
+> Identified with coccinelle (kmerr.cocci script).
 
 Applied, thanks
 
