@@ -4,63 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 915B2EB64D7
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:37:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 424D8EB64D7
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 17:39:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y49iZripIK6UVy5FH0cWVvQJLZEvZWfrwNLzFFmW6/U=; b=BIcKW4/115V52K
-	EK3VS51QZlM4bug8yHxN8Ta3+4ttgpnipComRrrYF6P2cU/FrB4KvNYnD5qhKNGJN+upxAZATbfAn
-	lRz3mqoozSSzeG7c54xuMaUTq4UHVey9N3JZZ8aS9JbBUd4D1JUlKSuzNXPAgZ8KhoxxsyP/kvXcI
-	UvQnSjsEpGxC7Z06hPqWGwYu2oMRBxNLqCyuEY6O4xrkZ3lBhUoQodLg3A5SqUlYf+iE01eKs6Hj1
-	bih0Cerk0lBbL8q2L6NJGVlWg3M1PR7As/x2J1Mk4KpQ6ftSVm7Mwkl7AJkKTeUBnGquaVAJXI9s7
-	zHE66HIv9uZaPXA3St/A==;
+	List-Owner; bh=F8+wD0Z/dPVEp8kPTroHAPmrPTI4PdSywvUp/A8sM6Q=; b=iJfchqn5Yq5j1v
+	pPQCAIXPwIRIrRsGFKn4JXzSdEuSKPc5ngngpSw9ruzv2FN4csrHvAImJ/P/VE2nNVL0kHwqTFL0X
+	ABsclj51s82zqmJjLu4N1OwU8ne6aEs7BKpKsVB84+R4f8fmk6LEofZlPr+2Sy28kjCtkzYqjwBEq
+	QbSzyYeEdks+GU7+IoybNg8YDe/2vs5koM/VlsfJ82XHupHti4Qdc+za+YMxA3qqnkOolZqVgPoCt
+	QSrXu79S/x1nhhevM+GsaXS+8eDpQ09ncut8fsAl4s9lrvHpupHx1T8BuxKQE9Co+x5SNX5k8Fsa4
+	8EoL2V5Yx9GMgn0FGRKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1ls-00FFBZ-0U;
-	Wed, 21 Jun 2023 17:37:32 +0000
+	id 1qC1nU-00FFSj-2z;
+	Wed, 21 Jun 2023 17:39:12 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qC1lp-00FFAF-0w
+	id 1qC1nS-00FFRe-37
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jun 2023 17:37:30 +0000
+	Wed, 21 Jun 2023 17:39:12 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 87D6961645;
-	Wed, 21 Jun 2023 17:37:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F7EFC433C0;
-	Wed, 21 Jun 2023 17:37:27 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 71882615F0;
+	Wed, 21 Jun 2023 17:39:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DB6FC433C0;
+	Wed, 21 Jun 2023 17:39:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687369048;
-	bh=Ofow7TPhTby78fiLDgvFRr9YEMU8BzTuo+3QlFVgybo=;
+	s=k20201202; t=1687369149;
+	bh=XzATrKBRqfI29gJm2bbNLUAzSyjyHq8SXaCsI8n8N94=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lcSfXMrPdldMiaJQp2qajwo1CJIGRK0b0TT5+todi+ByYMIHp/+iz46WCmF/qHTWI
-	 xeLA/2Be/C0VpWNQC03aaSP66+R7uN1lEd70E0FgyZiC66F9S1Vnfv09rXlbgxTKLU
-	 rRuw3+V6HSOVfOwvv1mjk0gkcp6X3E4945HBE+GE7Wt/yaSOjea0qmJJq3XhMl2pNE
-	 9p4CDIaWAmGzfK+z6ChGnkxI23mNaBJyDTgF4Pe50tJ1KHE52Og6CTMW9RyFzisQEW
-	 eqbk6CdnsYIZTiPhUG9ZQJSZNyLCJxryfzW9Dx0V9SrvscZ13ATLxdTkDC1NCnnG9X
-	 vos3EDlyhA3/Q==
-Date: Wed, 21 Jun 2023 23:07:23 +0530
+	b=hhs6UOnXah/SuVVEsfbiDT+iwMF9Wzi90aebzSJ66Jo1cMrkwGVOFd3I1XMp/HFLh
+	 8cPAQpZFolSPtP/hRFwR3T5YFbIxxkvo5+UH/UcMoNyt16e8Gr2aJVjBv1OVlYkMJ+
+	 4J38h/DbfH5qHfY44uTIJqOfhXjDqtfY5YwlSrE1A7st+35lxdi5ZbDG9ziNu8VmTA
+	 c7cDT4duhwTh6MzN3v29YBqZDRrllBMmiXdrg0NcMmGo+foHga1M57g6OSs8bXOBVw
+	 18w0uSEi+dY+tfrLfzYBP0MeSiZKdVicJgfjRLpA7lFGa//zri4tHxfQkz3P6IDSjz
+	 o1/TURbkre6Vw==
+Date: Wed, 21 Jun 2023 23:09:05 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Cc: jckuo@nvidia.com, kishon@kernel.org, thierry.reding@gmail.com,
-	jonathanh@nvidia.com, nkristam@nvidia.com,
-	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: tegra: xusb: check return value of devm_kzalloc()
-Message-ID: <ZJM1U9RPV4DUPgWp@matsya>
-References: <20230531073950.145339-1-claudiu.beznea@microchip.com>
+To: Marcin Wierzbicki <mawierzb@cisco.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Lars-Peter Clausen <lars@metafoo.de>,
+	Swapnil Jakhade <sjakhade@cadence.com>,
+	Roger Quadros <rogerq@kernel.org>,
+	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	xe-linux-external@cisco.com, danielwa@cisco.com, olicht@cisco.com,
+	Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+Subject: Re: [PATCH v3] phy: cadence: Sierra: Add single link SGMII register
+ configuration
+Message-ID: <ZJM1uQbXM7rciJ3l@matsya>
+References: <20230522172415.1668975-1-mawierzb@cisco.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230531073950.145339-1-claudiu.beznea@microchip.com>
+In-Reply-To: <20230522172415.1668975-1-mawierzb@cisco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_103729_366617_A1FAD13D 
-X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-CacheID: sfid-20230621_103911_038453_1C6B8397 
+X-CRM114-Status: UNSURE (   5.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,10 +83,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-05-23, 10:39, Claudiu Beznea wrote:
-> devm_kzalloc() returns a pointer to dynamically allocated memory.
-> Pointer could be NULL in case allocation fails. Check pointer validity.
-> Identified with coccinelle (kmerr.cocci script).
+On 22-05-23, 17:24, Marcin Wierzbicki wrote:
+> Add single link SGMII register configuration for no SSC for
+> cdns,sierra-phy-t0 compatibility string.
+> The configuration is based on Sierra Programmer's Guide and
+> validated in Cisco CrayAR SoC.
 
 Applied, thanks
 
