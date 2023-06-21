@@ -4,70 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FD46EB64D8
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 12:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76AB2EB64D8
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 15:33:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HO8piA7PXYyPpvWZOHRqtpK42FWms5KtaIcQ2xzGsEw=; b=vaT0wB5WtejHfI
-	o+mD6H5NquOsD/2kOlzOofiPXnpqF/5BD1bTmViX6WEuEYWxDYL2GQW7O/pmpNrAhz8AHLQX5NyzV
-	64K36q7fv0N0xyb55/To4kzJYFyv4pjqCeWyjfULuH6n3WB8MXsqZKwKOJmGJ/OijmT4cx0M05zLQ
-	Zmj3s7UTI9DBL4/Obiem6CH3mt5WyBhGJHfOCF0o1UWdLAjROkIy3RCDjp+Odh0MzYCt/NXA5GlB9
-	kGheDCXWC2A0EsMbh6RNdWHM4+vqiWSCEgdazlnNfP7+IbQOlYWN9ayslQf1wgcjohU97JJe6wH3a
-	3Ekt/q+F2IY+swUr8KZA==;
+	List-Owner; bh=1eglyur/qHhbTnh5YnEHrMBZsrLPqVpILwAModqSWY0=; b=KF5yvhlVwVeV7D
+	lsCZjENna2Il8lbUJlyPHQq+QODjzy0sDgdnjGvkz/GaaljOdAOgeRWq7PfhqRmMdetSdJCzh/3XI
+	DzDcXYlMWMKvExA//bb2xGZc73SGkHSAJeOkVZheCGkmPEZMj/zGvPCvZj0ww2riykYGW+sz4J1I6
+	u6BfXzGCA4F9kFkvmjOLJNU5DrltJ0EYRMzftLzY18NMMDbr7ncwy+X5keKnW4u1pA5JMRhFYb16D
+	dubl5riyW0sw48wNSO9Ki2wVuXmSx1yvSlnoNPWd1By/nYTKGqsrNCK79KKeBzygdx0+9JUoITgSE
+	nLUmrj+tMAiQmv6o/psA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBx6J-00EZWB-2i;
-	Wed, 21 Jun 2023 12:38:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qBzpk-00ExGg-0R;
+	Wed, 21 Jun 2023 15:33:24 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBx6G-00EZVK-1z;
-	Wed, 21 Jun 2023 12:38:17 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E247A614FB;
-	Wed, 21 Jun 2023 12:38:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C2D2C433C0;
-	Wed, 21 Jun 2023 12:38:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687351095;
-	bh=s/qdnTD5K4xkbOKaZkdTYFAnan/FfFnIlgUIS1J3gZk=;
-	h=Date:From:To:List-Id:Cc:Subject:References:In-Reply-To:From;
-	b=oPeyDH3gb9d62xkd6pbDeuAZlCx8pS9XnkfN0u7vl9NtHaMlnEaZu9NFzIesz6yrc
-	 2SKBAWAarBgHbXZqqXUsaPc8qT0Qbw4Kvi9+V9PfneLLPuz9ij06SUY9pRZ4Cdiw+t
-	 EcRbu0FovF1P1P42OthSoxKsilECkqxrBrFGPIgReyGxWrcHU6rO4w3M8OM4TeGChm
-	 j0Rc2nLMATsDQ8aY7wSGDTbFFzSDUzmKSoL62v5bw2kyT5Oth/jH+1Yje8CRvtj4UF
-	 UOP5Y3TeOz5Cm0Y3cAkQRy+4YhB4ECVbxThL8o8rLdbPQKa0RYJRyKBAKdFkMVTlG4
-	 d9xgUcUsRxoBg==
-Date: Wed, 21 Jun 2023 18:08:11 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Rudraksha Gupta <guptarud@gmail.com>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	id 1qBzph-00ExF0-0S
+	for linux-phy@lists.infradead.org;
+	Wed, 21 Jun 2023 15:33:22 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-4f875b267d9so4530857e87.1
+        for <linux-phy@lists.infradead.org>; Wed, 21 Jun 2023 08:33:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1687361599; x=1689953599;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=cinDdKc7qcFMBG/ILqluH58R0lxOnWl8AXgWQvYj7y8=;
+        b=b9Uw8PP6PLmB5enJ+YN/gAWstIZcK2d6cPFFyC+HnhzhIc4frOT4XfJBKmua/afreb
+         IDZChcMC5maApOrqooiLfSHE02o2EiXZesginJJzWeZeqlUHRrG7jR80XtE3AiI7VmtC
+         HZI4aSI1i9RimFa0fI3huEzlOcx4k5B7HTtBTVo8pPX928LSi/n+Gm7Ydzk80Bodg6W4
+         32pdtMhAkfrKubVOvWraqT0AGWi0lueXE5aqgqRb0pQK8xF4e/GBqKld5i8nFHpkZ3IK
+         GxJDe2d8G19zTxKfCBHCpquAI37gAW+/c5doRep6NLvS6/FgoagpIE5JH9jYpF4uYU7G
+         beAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1687361599; x=1689953599;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cinDdKc7qcFMBG/ILqluH58R0lxOnWl8AXgWQvYj7y8=;
+        b=B8g1enYwpfzJJd3Glfx18uPEIOCrlgYDqYvOWEcjEHjFR0RAT9Oz/+i7UxPO80okmA
+         55jvpcJxTkHpPDwFyF4XZeARGFRrwWsGKC2uqp7aNjb7zfWWtZ9xwINk10H4YPlDZgJF
+         yH/xL3uRq/wQUIbrmCAkVAjgXPAugUaLx1gcjGT29GO2I25CP1yZyfYG/YuSp9L3zC98
+         +mI6vcQ2WuiWP+feieHFHHl2Gy0Jb1JCzN5gdzggbdcCR8HonW82TnUViFALAndpJH2M
+         GUwRhfxw6rwcjJBjQPgTMnBTVN+TVI/cZFbjH7XykwtMxKr9llsrMdvv1FGtnm0xyenH
+         g6qg==
+X-Gm-Message-State: AC+VfDxEDRQgHXLQSWe7HyOIG4U2nHJttxGr9nuFR5SdWfd3sJCk4z0C
+	Kk9zb9upmTy0ER51o4tU0VDZMQ==
+X-Google-Smtp-Source: ACHHUZ4Swfo7lJHYU8UGgmXXrp9UT8Vv0+TqrSkf2YR9MicmmVjGVh7uzAoR2yPbD5YuFHbEZVPeCQ==
+X-Received: by 2002:a19:6d0c:0:b0:4f8:4245:ed57 with SMTP id i12-20020a196d0c000000b004f84245ed57mr10106450lfc.35.1687361599343;
+        Wed, 21 Jun 2023 08:33:19 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id o3-20020a056512050300b004f8751285a5sm804888lfb.80.2023.06.21.08.33.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 21 Jun 2023 08:33:18 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
-	soc@kernel.org, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v5 2/4] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
-Message-ID: <ZJLvM9aEsx13WjuR@matsya>
-References: <20230607050025.86636-1-guptarud@gmail.com>
- <20230607050025.86636-3-guptarud@gmail.com>
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	freedreno@lists.freedesktop.org
+Subject: [RESEND PATCH 1/7] phy: qcom: qmp-combo: correct bias0_en programming
+Date: Wed, 21 Jun 2023 18:33:11 +0300
+Message-Id: <20230621153317.1025914-2-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
+References: <20230621153317.1025914-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230607050025.86636-3-guptarud@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_053816_699616_3266AC36 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230621_083321_183657_13487881 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,13 +99,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-06-23, 01:00, Rudraksha Gupta wrote:
-> Adds qcom,usb-hs-phy-msm8960 compatible
+It seems the commit a2e927b0e50d ("phy: qcom-qmp-combo: Add sc8280xp
+USB/DP combo phys") contained a typo for selecting bias0_en values.
+First, bias0_en and bias1_en are expected to be symmetrical, and then
+the vendor driver also uses `flipped : 0x3E : 0x15` statement for
+bias0_en. Correct bias0_en programming to follow this.
 
-Applied, thanks
+Fixes: 49742e9edab3 ("phy: qcom-qmp-combo: Add support for SM8550")
+Fixes: a2e927b0e50d ("phy: qcom-qmp-combo: Add sc8280xp USB/DP combo phys")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index bebce8c591a3..9d03b7b8e00c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2322,7 +2322,7 @@ static int qmp_v5_configure_dp_phy(struct qmp_combo *qmp)
+ 		return ret;
+ 
+ 	if (dp_opts->lanes == 1) {
+-		bias0_en = reverse ? 0x3e : 0x1a;
++		bias0_en = reverse ? 0x3e : 0x15;
+ 		drvr0_en = reverse ? 0x13 : 0x10;
+ 		bias1_en = reverse ? 0x15 : 0x3e;
+ 		drvr1_en = reverse ? 0x10 : 0x13;
+@@ -2382,7 +2382,7 @@ static int qmp_v6_configure_dp_phy(struct qmp_combo *qmp)
+ 		return ret;
+ 
+ 	if (dp_opts->lanes == 1) {
+-		bias0_en = reverse ? 0x3e : 0x1a;
++		bias0_en = reverse ? 0x3e : 0x15;
+ 		drvr0_en = reverse ? 0x13 : 0x10;
+ 		bias1_en = reverse ? 0x15 : 0x3e;
+ 		drvr1_en = reverse ? 0x10 : 0x13;
 -- 
-~Vinod
+2.39.2
+
 
 -- 
 linux-phy mailing list
