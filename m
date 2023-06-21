@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64321EB64D8
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 11:05:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F4E2EB64D8
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 11:09:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jsje0w9C/5u0D032CpPqrTyQN4h2fDkuhDAyadGBbrg=; b=0KcJGgZTH0fM4J
-	Nv9mZ0nlAxct4gjUYeSG3qvhwfMfxF/B+aJ81bu/iphJ7vGnRhiVPQM3yTGScxaAi5Dyy+2O4gejL
-	CPeXghdInYkPgxxfSIeZSV4EsyQqa5yLR6wHfaA3TJT9ffnwGuEHKhBeVikgwKxkGPq1qb2kFBCrR
-	loWfDE0nD+5sgxb8EvRR1pHbavjuBifiGphrGwyqW9Y9j53x3Zly3woVUTjreN1dEcGCD+bNYX0Wx
-	2yxPw3HshPaLto+6zFEct7GB9nz2tJgHgn/NE0Dyx8Sn/UxbBKXRdZ8N/5P0LDcghqA1Wh4rgA4Ik
-	m/zjTiBAc7JFPr7aksIg==;
+	List-Owner; bh=YlJLmNlik6kX6rItaJfQoZtsGDxdBdaPNk9NS8Qsb+c=; b=omP/esPdQZpFz+
+	Wx47FrKDQf95KwMs/VfdJ4thBuvmo/enbqfFZ7qQiLFfjh00SB94Wiji/OUVxMpsEcjtJHjbKiP09
+	uKF/Ts6Pe004GG+huGaAczf4E9pEdGOjaQ+CuCdrxRrAGXhEKIW0/thrQQab5vxsl/c63TEP4zR9q
+	vLsXU9gexhe1176q7Al1lUjScS6FAWp6pi2VG9+SxjIaNh606zJi3MxxPRYUSihAQaTV8qepvgSAB
+	zw3ayzXP2uhFIgFdVQ6equPz5k+53sev0e94rzox3zpmUpA/9gA9AllMhGPO0LyrTXCehW3SahXcy
+	AeUap+nuavDKmfsSc03g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBveF-00EK1E-3C;
-	Wed, 21 Jun 2023 11:05:15 +0000
+	id 1qBvhs-00EKmA-0l;
+	Wed, 21 Jun 2023 11:09:00 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBveC-00EJxl-0d;
-	Wed, 21 Jun 2023 11:05:13 +0000
+	id 1qBvhp-00EKki-2J;
+	Wed, 21 Jun 2023 11:08:59 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 8E8B0614D8;
-	Wed, 21 Jun 2023 11:05:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3185AC433C9;
-	Wed, 21 Jun 2023 11:05:09 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4430C614FB;
+	Wed, 21 Jun 2023 11:08:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C31C7C433C8;
+	Wed, 21 Jun 2023 11:08:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687345510;
-	bh=GHgj/yYOkuJYCVK8z0SzrAG70b1uyM3F4e+xXJRSXEo=;
+	s=k20201202; t=1687345732;
+	bh=pDMlNd8ACfLvQmNU6tj/DpiQ1icRIIy6rldPkFKNQNY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=QPn8zfp681El9SKEFfEnYQ0FZtwI8UfabPdCuKI5efvZ9jEMIR1BiZukoqkEHZ0uY
-	 YOsp3CNwoIRiCKHfaS4m1OADTfqCXLtPhh/b8Bki+qw7HSkAEzxF2zuzLsJB1DoHId
-	 wq6rvsegVOEJFI9b0mmKQkgK8BGv9mozTOjDe8S8Yfr2mU/dzvcLo2BWkQlQjZVZsM
-	 b/cYLQHnuWyYadxipwQ/+Xi+fERgSrrVfajam126UVNmC363zCpcCimlTRyfSzT57l
-	 dj0gallYAIeutWfqKjLoSEj/izyDk55Mgkv7Gka3hv3jMuVjZrKjLbt8gIVv6UxjBf
-	 zib0PEAweqEYw==
-Date: Wed, 21 Jun 2023 16:35:06 +0530
+	b=nDaFj5hbkaoHpWVX2S1kRS79PjrjwDvtc3au5R9O09gR8LnTBUfvAscY33QWPoJLa
+	 yG1HfWL9Fzzwy7p48+VhvhQ3m3vY/tSdrFjR19RDbrGSRLUbfrsrnBLEmyseqKEyO1
+	 gkrRs4YuNMqo7H4GOqa4HnZb3vz2TwdAKEmMcqxaWSDspLJRNag+Pv4O8tFYXNagBf
+	 yZ/ijC3toU9H2EHmufaz74OxJ1I12W9ymtu9lPpf93uJvo2+OWdqG1f0PChBz6mY8c
+	 YIlp/CGFJF9HfHNIJrfqmxiI7j+jAqQwd7eP10mTPdLdPoZXMlKFjVMRkVJ6MJrp/y
+	 Vhhi+/RiEOIzA==
+Date: Wed, 21 Jun 2023 16:38:48 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
-	andersson@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	gregkh@linuxfoundation.org, catalin.marinas@arm.com,
-	will@kernel.org, mturquette@baylibre.com, sboyd@kernel.org,
-	p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
-	neil.armstrong@linaro.org, nfraprado@collabora.com,
-	broonie@kernel.org, rafal@milecki.pl, quic_srichara@quicinc.com,
-	quic_varada@quicinc.org, quic_wcheng@quicinc.com,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+To: Minda Chen <minda.chen@starfivetech.com>
+Cc: kernel test robot <lkp@intel.com>,
+	Emil Renner Berthing <emil.renner.berthing@canonical.com>,
+	Conor Dooley <conor@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Roger Quadros <rogerq@kernel.org>, oe-kbuild-all@lists.linux.dev,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-clk@vger.kernel.org
-Subject: Re: [PATCH 3/9] phy: qcom-m31: Introduce qcom,m31 USB phy driver
-Message-ID: <ZJLZYsla/ylQkVUB@matsya>
-References: <cover.1686126439.git.quic_varada@quicinc.com>
- <6bb345c6a57ee27516764f36ba7d34fd1a719b87.1686126439.git.quic_varada@quicinc.com>
- <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
+	linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Mason Huo <mason.huo@starfivetech.com>
+Subject: Re: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
+Message-ID: <ZJLaQB7UB56+/mtN@matsya>
+References: <20230619094759.21013-5-minda.chen@starfivetech.com>
+ <202306192215.TvQco9m6-lkp@intel.com>
+ <d4824941-85dd-d378-be5b-072907b1169d@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <416bef68-6df3-d5c4-2aed-ef1ae7c78d7b@linaro.org>
+In-Reply-To: <d4824941-85dd-d378-be5b-072907b1169d@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_040512_328776_127C7F65 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20230621_040857_797196_FDA46C67 
+X-CRM114-Status: GOOD (  16.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,77 +87,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-06-23, 13:54, Konrad Dybcio wrote:
+On 21-06-23, 17:29, Minda Chen wrote:
 > 
 > 
-> On 7.06.2023 12:56, Varadarajan Narayanan wrote:
-> > Add the M31 USB2 phy driver
+> On 2023/6/19 22:45, kernel test robot wrote:
+> > Hi Minda,
 > > 
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-m31.c | 360 ++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 360 insertions(+)
-> >  create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
+> > kernel test robot noticed the following build errors:
 > > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-> > new file mode 100644
-> > index 0000000..d29a91e
-> > --- /dev/null
-> > +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-> > @@ -0,0 +1,360 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * Copyright (c) 2014-2016, 2020, The Linux Foundation. All rights reserved.
-> > + */
-> > +
-> > +#include <linux/module.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/err.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/clk.h>
-> > +#include <linux/delay.h>
-> > +#include <linux/io.h>
-> > +#include <linux/of.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/usb/phy.h>
-> > +#include <linux/reset.h>
-> > +#include <linux/of_device.h>
-> Please sort these
-> 
-> > +
-> > +enum clk_reset_action {
-> > +	CLK_RESET_DEASSERT	= 0,
-> > +	CLK_RESET_ASSERT	= 1
-> > +};
-> > +
-> > +#define USB2PHY_PORT_POWERDOWN		0xA4
-> > +#define POWER_UP			BIT(0)
-> > +#define POWER_DOWN			0
-> > +
-> > +#define USB2PHY_PORT_UTMI_CTRL1	0x40
-> > +
-> > +#define USB2PHY_PORT_UTMI_CTRL2	0x44
-> > +#define UTMI_ULPI_SEL			BIT(7)
-> > +#define UTMI_TEST_MUX_SEL		BIT(6)
-> > +
-> > +#define HS_PHY_CTRL_REG			0x10
-> > +#define UTMI_OTG_VBUS_VALID             BIT(20)
-> > +#define SW_SESSVLD_SEL                  BIT(28)
-> > +
-> > +#define USB_PHY_CFG0			0x94
-> > +#define USB_PHY_UTMI_CTRL5		0x50
-> > +#define USB_PHY_FSEL_SEL		0xB8
-> > +#define USB_PHY_HS_PHY_CTRL_COMMON0	0x54
-> > +#define USB_PHY_REFCLK_CTRL		0xA0
-> > +#define USB_PHY_HS_PHY_CTRL2		0x64
-> > +#define USB_PHY_UTMI_CTRL0		0x3c
-> > +#define USB2PHY_USB_PHY_M31_XCFGI_1	0xBC
-> > +#define USB2PHY_USB_PHY_M31_XCFGI_4	0xC8
-> > +#define USB2PHY_USB_PHY_M31_XCFGI_5	0xCC
-> > +#define USB2PHY_USB_PHY_M31_XCFGI_11	0xE4
-> Could you sort them address-wise?
+> > [auto build test ERROR on robh/for-next]
+> > [also build test ERROR on linus/master v6.4-rc7 next-20230619]
+> > [If your patch is applied to the wrong git tree, kindly drop us a note.
+> > And when submitting patch, we suggest to use '--base' as documented in
+> > https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> > 
+> > url:    https://github.com/intel-lab-lkp/linux/commits/Minda-Chen/dt-bindings-phy-Add-StarFive-JH7110-PCIe-PHY/20230619-184756
+> > base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+> > patch link:    https://lore.kernel.org/r/20230619094759.21013-5-minda.chen%40starfivetech.com
+> > patch subject: [PATCH v7 4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
+> > config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/config)
+> > compiler: s390-linux-gcc (GCC) 12.3.0
+> > reproduce: (https://download.01.org/0day-ci/archive/20230619/202306192215.TvQco9m6-lkp@intel.com/reproduce)
+> > 
+> > If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> > the same patch/commit), kindly add following tags
+> > | Reported-by: kernel test robot <lkp@intel.com>
+> > | Closes: https://lore.kernel.org/oe-kbuild-all/202306192215.TvQco9m6-lkp@intel.com/
+> > 
+> > All errors (new ones prefixed by >>, old ones prefixed by <<):
+> > 
+> >>> ERROR: modpost: "devm_platform_ioremap_resource" [drivers/phy/starfive/phy-jh7110-pcie.ko] undefined!
+> I can not find this error. devm_platform_ioremap_resource is an exported symbol
 
-and lower case hex values as well please
+Use the config and compiler provided in the report to repro this
 
 -- 
 ~Vinod
