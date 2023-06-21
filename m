@@ -4,71 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2E4DEB64DC
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 11:12:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FC07EB64DC
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jun 2023 11:22:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0T2llmu/YGiblaetXqUOqzooUQj6yFtOmbJzUGRaENg=; b=LnYxoOXdX0Rs4E
-	BeRIDTw5HWyXqY2vRJFk2JTDxgkZmtA4iLqQbL0nP1f8ncQbKPTD7DfPM4DI2+tpFc76usp51KycK
-	v2VDgHo2FYZf1WuVFvNpW/TX6COgnKJGbzUhpCd8CY51nh6fOqNj/xdzQd5he4rDBdQJeDlN70nQJ
-	WP4oSdLdgoSEa3Ivd1DZrMNuiwMlKKWCxGg2LQz39bk7BXJWPn7IsYW+yQEv0MsZ94mtMcQ4O3Iip
-	mPnj0G4sPxeB07bqmdPeT4NqUwqGqx0fdMGf+fPbOMwg9aHfY1JhGccaCwcT0dqKGSIf7VQfYNob4
-	m9SH1QYKnbXr6tXUwm4A==;
+	List-Owner; bh=CGjBVN2L/cFv6GiLZ0iNDumcVR6wqf5QOQBltDKMXy4=; b=azimfQnFeDEfnx
+	IzjWRnZHsBD1efgX6M/ESwLjygZ5OYJezkH2pt3s3TCyvgwJ304TVOXTPI0Grj0EHHuU67U5PiaT6
+	OCiw3FEfOiTQGBxKp1S+O2MH35cCqZc4klhwtXS/adZQICIXubcWcbX/lfionGCFl068hsuAryIVP
+	VVJo8w1eEnrpDwPFuUn4S0WZd3ADqUIsArEBL1VKYmxJzEb0loqc4DYk2KvFUv+hrMmzREUrQURzT
+	+zF+KgBHlgtSIQCfb1nP/ykCMhWA87tb3DTPfidFKqhYHC530Ig9c6EoQ6OXdLuFJBiTD+TvWqCLE
+	JI+XJ0MwsvaDWEpgfobQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBvl4-00ELNi-1T;
-	Wed, 21 Jun 2023 11:12:18 +0000
+	id 1qBvul-00ENL6-2F;
+	Wed, 21 Jun 2023 11:22:19 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qBvl1-00ELMt-07;
-	Wed, 21 Jun 2023 11:12:16 +0000
+	id 1qBvui-00ENJY-0U;
+	Wed, 21 Jun 2023 11:22:17 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5A6C361506;
-	Wed, 21 Jun 2023 11:12:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0303EC433C0;
-	Wed, 21 Jun 2023 11:12:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5AD94614E7;
+	Wed, 21 Jun 2023 11:22:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04E0AC433C8;
+	Wed, 21 Jun 2023 11:22:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1687345933;
-	bh=hemcQkLtj8eWOKOF5ziGhqriVgYi/b1g7rj4VltgJCo=;
+	s=k20201202; t=1687346534;
+	bh=TPtp/wBNq5coEnbHykNNDWOE6xUuBP/0q5gXk4+rsY4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=oUqEMkZZyULF/pzRaSsITTNpCD4gR0JyXNpDI4McoFlgJ2Nz13WNKcEig6H2ml1/P
-	 kxdt74OU71d/nzwWs4Vm2xaaoc5NkVu30moVjVD7/pFETuTiboDiexS5/6X+CVCzSI
-	 S7MJsAkt0zmBZkRj93ApPwM9rG7BoWnXsDi4ULFcaxeI1TQ78nhbU0oSRIk41zkEAG
-	 4L3Tono77SSGEHVG+FMiZf1ZqKBsTDwe1UYB10PzrkBnHF2Eh928CZ3R3iYz9nHdSH
-	 yYniY4l9NE8LRSDiTXSZ7AfuTCQzwbk9zygg8KEbU7A/3h3jaq7qyGDG0ccfrmMFqA
-	 kzGkpw6Sm4Ygw==
-Date: Wed, 21 Jun 2023 16:42:09 +0530
+	b=nxTqnwdbXoT8DkVcRS4i4H0Ibozx37ElkVB/qSX6mTww6Ue9LAASeRLoHCJPWiE4F
+	 DNxBd13MEuaW4As7pvYV7xGqhVm5JL8+JpupyEkZ2VLP50wJn9e/yr+OWzaFEY//gh
+	 bhpskCHYr7NJd4fFHF0j80PDyCXcHsyYYiNCeo1qMyPBtmTiRJ1lnGuwli29CqAoIN
+	 yB1w7SKKGwV/zFjoMYjh2uY6uMY4CxrMes+ZVWb+gS8MhpXNjrmNIr+IE7855MRNpl
+	 o7j7deh9IrqJPaRQJX+WKE4zPsWhRtk5KxTyNKXDY1HITMpavOqouExopRIJdq0sL9
+	 UThAhgcivvEtw==
+Date: Wed, 21 Jun 2023 16:52:10 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>,
-	Conor Dooley <conor@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Roger Quadros <rogerq@kernel.org>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Mason Huo <mason.huo@starfivetech.com>
-Subject: Re: [PATCH v7 3/5] phy: starfive: Add JH7110 USB 2.0 PHY driver
-Message-ID: <ZJLbCbG9+XnGVjKb@matsya>
-References: <20230619094759.21013-1-minda.chen@starfivetech.com>
- <20230619094759.21013-4-minda.chen@starfivetech.com>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org,
+	robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com,
+	jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com,
+	daniel@ffwll.ch, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+	s.hauer@pengutronix.de, festevam@gmail.com,
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, kernel@pengutronix.de,
+	linux-imx@nxp.com, oliver.brown@nxp.com
+Subject: Re: [PATCH v6 4/8] phy: Add HDMI configuration options
+Message-ID: <ZJLdYlhnLVgK8J8r@matsya>
+References: <cover.1686729444.git.Sandor.yu@nxp.com>
+ <cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230619094759.21013-4-minda.chen@starfivetech.com>
+In-Reply-To: <cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230621_041215_178550_7B8E9216 
-X-CRM114-Status: GOOD (  31.37  )
+X-CRM114-CacheID: sfid-20230621_042216_271323_45336E1D 
+X-CRM114-Status: GOOD (  24.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,262 +83,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-06-23, 17:47, Minda Chen wrote:
-> Add Starfive JH7110 SoC USB 2.0 PHY driver support.
-> USB 2.0 PHY default connect to Cadence USB controller.
+On 15-06-23, 09:38, Sandor Yu wrote:
+> Allow HDMI PHYs to be configured through the generic
+> functions through a custom structure added to the generic union.
 > 
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-> Reviewed-by: Roger Quadros <rogerq@kernel.org>
+> The parameters added here are based on HDMI PHY
+> implementation practices.  The current set of parameters
+> should cover the potential users.
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
 > ---
->  MAINTAINERS                           |   6 ++
->  drivers/phy/Kconfig                   |   1 +
->  drivers/phy/Makefile                  |   1 +
->  drivers/phy/starfive/Kconfig          |  15 +++
->  drivers/phy/starfive/Makefile         |   2 +
->  drivers/phy/starfive/phy-jh7110-usb.c | 150 ++++++++++++++++++++++++++
->  6 files changed, 175 insertions(+)
->  create mode 100644 drivers/phy/starfive/Kconfig
->  create mode 100644 drivers/phy/starfive/Makefile
->  create mode 100644 drivers/phy/starfive/phy-jh7110-usb.c
+>  include/linux/phy/phy-hdmi.h | 38 ++++++++++++++++++++++++++++++++++++
+>  include/linux/phy/phy.h      |  7 ++++++-
+>  2 files changed, 44 insertions(+), 1 deletion(-)
+>  create mode 100644 include/linux/phy/phy-hdmi.h
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f794002a192e..d2ce89a8d31c 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -20174,6 +20174,12 @@ S:	Supported
->  F:	Documentation/devicetree/bindings/watchdog/starfive*
->  F:	drivers/watchdog/starfive-wdt.c
->  
-> +STARFIVE JH71X0 USB PHY DRIVER
-> +M:	Minda Chen <minda.chen@starfivetech.com>
-> +S:	Supported
-> +F:	Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-> +F:	drivers/phy/starfive/phy-jh7110-usb.c
-> +
->  STATIC BRANCH/CALL
->  M:	Peter Zijlstra <peterz@infradead.org>
->  M:	Josh Poimboeuf <jpoimboe@kernel.org>
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index f46e3148d286..0000149edbc4 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -91,6 +91,7 @@ source "drivers/phy/rockchip/Kconfig"
->  source "drivers/phy/samsung/Kconfig"
->  source "drivers/phy/socionext/Kconfig"
->  source "drivers/phy/st/Kconfig"
-> +source "drivers/phy/starfive/Kconfig"
->  source "drivers/phy/sunplus/Kconfig"
->  source "drivers/phy/tegra/Kconfig"
->  source "drivers/phy/ti/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index 54f312c10a40..fb3dc9de6111 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -31,6 +31,7 @@ obj-y					+= allwinner/	\
->  					   samsung/	\
->  					   socionext/	\
->  					   st/		\
-> +					   starfive/	\
->  					   sunplus/	\
->  					   tegra/	\
->  					   ti/		\
-> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+> diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
 > new file mode 100644
-> index 000000000000..2283feadfc76
+> index 000000000000..5765aa5bc175
 > --- /dev/null
-> +++ b/drivers/phy/starfive/Kconfig
-> @@ -0,0 +1,15 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for StarFive platforms
-> +#
-> +
-> +config PHY_STARFIVE_JH7110_USB
-> +	tristate "Starfive JH7110 USB 2.0 PHY support"
-> +	depends on USB_SUPPORT
-> +	select GENERIC_PHY
-> +	select USB_PHY
-> +	help
-> +	  Enable this to support the StarFive USB 2.0 PHY,
-> +	  used with the Cadence USB controller.
-> +	  If M is selected, the module will be called
-> +	  phy-jh7110-usb.ko.
-> diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
-> new file mode 100644
-> index 000000000000..52e9a09cc619
-> --- /dev/null
-> +++ b/drivers/phy/starfive/Makefile
-> @@ -0,0 +1,2 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)	+= phy-jh7110-usb.o
-> diff --git a/drivers/phy/starfive/phy-jh7110-usb.c b/drivers/phy/starfive/phy-jh7110-usb.c
-> new file mode 100644
-> index 000000000000..90d788423705
-> --- /dev/null
-> +++ b/drivers/phy/starfive/phy-jh7110-usb.c
-> @@ -0,0 +1,150 @@
-> +// SPDX-License-Identifier: GPL-2.0+
+> +++ b/include/linux/phy/phy-hdmi.h
+> @@ -0,0 +1,38 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
 > +/*
-> + * StarFive JH7110 USB 2.0 PHY driver
-> + *
-> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
-> + * Author: Minda Chen <minda.chen@starfivetech.com>
+> + * Copyright 2022 NXP
 > + */
 > +
-> +#include <linux/bits.h>
-> +#include <linux/clk.h>
-> +#include <linux/err.h>
-> +#include <linux/io.h>
-> +#include <linux/module.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/usb/of.h>
+> +#ifndef __PHY_HDMI_H_
+> +#define __PHY_HDMI_H_
 > +
-> +#define USB_125M_CLK_RATE		125000000
-> +#define USB_LS_KEEPALIVE_OFF		0x4
-> +#define USB_LS_KEEPALIVE_ENABLE		BIT(4)
-> +
-> +struct jh7110_usb2_phy {
-> +	struct phy *phy;
-> +	void __iomem *regs;
-> +	struct clk *usb_125m_clk;
-> +	struct clk *app_125m;
-> +	enum phy_mode mode;
+> +/**
+> + * Pixel Encoding as HDMI Specification
+> + * RGB, YUV422, YUV444:HDMI Specification 1.4a Section 6.5
+> + * YUV420: HDMI Specification 2.a Section 7.1
+> + */
+> +enum hdmi_phy_colorspace {
+> +	HDMI_PHY_COLORSPACE_RGB,        /* RGB 4:4:4 */
+> +	HDMI_PHY_COLORSPACE_YUV422,     /* YCbCr 4:2:2 */
+> +	HDMI_PHY_COLORSPACE_YUV444,     /* YCbCr 4:4:4 */
+> +	HDMI_PHY_COLORSPACE_YUV420,     /* YCbCr 4:2:0 */
+
+Better add this comments and above one as expected by kernel-doc for
+enum..
+
+> +	HDMI_PHY_COLORSPACE_RESERVED4,
+> +	HDMI_PHY_COLORSPACE_RESERVED5,
+> +	HDMI_PHY_COLORSPACE_RESERVED6,
 > +};
 > +
-> +static void jh7110_usb2_mode_set(struct jh7110_usb2_phy *phy)
-> +{
-> +	unsigned int val;
-> +
-> +	if (phy->mode != PHY_MODE_USB_HOST) {
-> +		/* Enable the LS speed keep-alive signal */
-> +		val = readl(phy->regs + USB_LS_KEEPALIVE_OFF);
-> +		val |= USB_LS_KEEPALIVE_ENABLE;
-> +		writel(val, phy->regs + USB_LS_KEEPALIVE_OFF);
-> +	}
-
-looks like this sets only for host, so why not call it
-jh7110_usb2_set_host_mode() rather than get confused about
-jh7110_usb2_mode_set/jh7110_usb2_phy_set_mode
-
-> +}
-> +
-> +static int jh7110_usb2_phy_set_mode(struct phy *_phy,
-> +				    enum phy_mode mode, int submode)
-> +{
-> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
-> +
-> +	switch (mode) {
-> +	case PHY_MODE_USB_HOST:
-> +	case PHY_MODE_USB_DEVICE:
-> +	case PHY_MODE_USB_OTG:
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (mode != phy->mode) {
-> +		dev_dbg(&_phy->dev, "Changing phy to %d\n", mode);
-> +		phy->mode = mode;
-> +		jh7110_usb2_mode_set(phy);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int jh7110_usb2_phy_init(struct phy *_phy)
-> +{
-> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
-> +	int ret;
-> +
-> +	ret = clk_set_rate(phy->usb_125m_clk, USB_125M_CLK_RATE);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(phy->app_125m);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return 0;
-> +}
-> +
-> +static int jh7110_usb2_phy_exit(struct phy *_phy)
-> +{
-> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
-> +
-> +	clk_disable_unprepare(phy->app_125m);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops jh7110_usb2_phy_ops = {
-> +	.init		= jh7110_usb2_phy_init,
-> +	.exit		= jh7110_usb2_phy_exit,
-> +	.set_mode	= jh7110_usb2_phy_set_mode,
-> +	.owner		= THIS_MODULE,
+> +/**
+> + * struct phy_configure_opts_hdmi - HDMI configuration set
+> + * @pixel_clk_rate:	Pixel clock of video modes in KHz.
+> + * @bpc: Maximum bits per color channel.
+> + * @color_space: Colorspace in enum hdmi_phy_colorspace.
+> + *
+> + * This structure is used to represent the configuration state of a HDMI phy.
+> + */
+> +struct phy_configure_opts_hdmi {
+> +	unsigned int pixel_clk_rate;
+> +	unsigned int bpc;
+> +	enum hdmi_phy_colorspace color_space;
 > +};
 > +
-> +static int jh7110_usb_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct jh7110_usb2_phy *phy;
-> +	struct device *dev = &pdev->dev;
-> +	struct phy_provider *phy_provider;
-> +
-> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-> +	if (!phy)
-> +		return -ENOMEM;
-> +
-> +	phy->usb_125m_clk = devm_clk_get(dev, "125m");
-> +	if (IS_ERR(phy->usb_125m_clk))
-> +		return dev_err_probe(dev, PTR_ERR(phy->usb_125m_clk),
-> +			"Failed to get 125m clock\n");
-> +
-> +	phy->app_125m = devm_clk_get(dev, "app_125m");
-> +	if (IS_ERR(phy->app_125m))
-> +		return dev_err_probe(dev, PTR_ERR(phy->app_125m),
-> +			"Failed to get app 125m clock\n");
-> +
-> +	phy->regs = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(phy->regs))
-> +		return dev_err_probe(dev, PTR_ERR(phy->regs),
-> +			"Failed to map phy base\n");
-> +
-> +	phy->phy = devm_phy_create(dev, NULL, &jh7110_usb2_phy_ops);
-> +	if (IS_ERR(phy->phy))
-> +		return dev_err_probe(dev, PTR_ERR(phy->phy),
-> +			"Failed to create phy\n");
-> +
-> +	phy_set_drvdata(phy->phy, phy);
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +static const struct of_device_id jh7110_usb_phy_of_match[] = {
-> +	{ .compatible = "starfive,jh7110-usb-phy" },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, jh7110_usb_phy_of_match);
-> +
-> +static struct platform_driver jh7110_usb_phy_driver = {
-> +	.probe	= jh7110_usb_phy_probe,
-> +	.driver = {
-> +		.of_match_table	= jh7110_usb_phy_of_match,
-> +		.name  = "jh7110-usb-phy",
-> +	}
-> +};
-> +module_platform_driver(jh7110_usb_phy_driver);
-
-A very light driver, only setting couple of things for hw. Can you
-explain how phy registers are configured, am sure there would be many
-more..? Do you rely on bootloader or some other entity for that?
-
-> +
-> +MODULE_DESCRIPTION("StarFive JH7110 USB 2.0 PHY driver");
-> +MODULE_AUTHOR("Minda Chen <minda.chen@starfivetech.com>");
-> +MODULE_LICENSE("GPL");
+> +#endif /* __PHY_HDMI_H_ */
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index 3a570bc59fc7..93d77d45b1d4 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -17,6 +17,7 @@
+>  #include <linux/regulator/consumer.h>
+>  
+>  #include <linux/phy/phy-dp.h>
+> +#include <linux/phy/phy-hdmi.h>
+>  #include <linux/phy/phy-lvds.h>
+>  #include <linux/phy/phy-mipi-dphy.h>
+>  
+> @@ -42,7 +43,8 @@ enum phy_mode {
+>  	PHY_MODE_MIPI_DPHY,
+>  	PHY_MODE_SATA,
+>  	PHY_MODE_LVDS,
+> -	PHY_MODE_DP
+> +	PHY_MODE_DP,
+> +	PHY_MODE_HDMI,
+>  };
+>  
+>  enum phy_media {
+> @@ -60,11 +62,14 @@ enum phy_media {
+>   *		the DisplayPort protocol.
+>   * @lvds:	Configuration set applicable for phys supporting
+>   *		the LVDS phy mode.
+> + * @hdmi:	Configuration set applicable for phys supporting
+> + *		the HDMI phy mode.
+>   */
+>  union phy_configure_opts {
+>  	struct phy_configure_opts_mipi_dphy	mipi_dphy;
+>  	struct phy_configure_opts_dp		dp;
+>  	struct phy_configure_opts_lvds		lvds;
+> +	struct phy_configure_opts_hdmi		hdmi;
+>  };
+>  
+>  /**
 > -- 
-> 2.17.1
+> 2.34.1
 
 -- 
 ~Vinod
