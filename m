@@ -4,94 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA3C9EB64D7
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jun 2023 05:45:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA057C001B0
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jun 2023 08:08:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p2g4UyMUe+W2fYgAxmVED2JeCkFy5kkbrVVgigyb0cw=; b=DPMc6mwlvsyAcj
-	E00s9gIeTwfa8eaDDQfkWJgbKEZZhQMPwbh1qp6VgQqjt+HIZmgT8P85V/3DHVl1IQtnO54KOyPta
-	7Y/SwH8+6GTPENxue9k5KFtOJGubMUNfJfIRQ/MQuKdw9oOmoUa3zLD/2A4LzvX0S16hAvAE7VqbS
-	kIMITHmcnveq2SHzBuWADjgF/A1YfIDmAqDhrZ2WGpionW5Zlt8bzLoWN+6dCLVaG9m/co1lUHnHz
-	TFPUECBhqBawhVkGlhCtIRZY10leR7SzXELvos9aZeJbnSazAIZRF9ukbqzBJHfV96B7ixlA8XgrB
-	3hbK8zngR8rsBvWKHaMQ==;
+	List-Owner; bh=wpBHzJ4FfYeKTdtKNUVmR+hI2Yg/Jgivxxe9cbLlV/c=; b=bK6QK1txtbR3Sq
+	fDKchoAZuaP9ZhUH4kWQTS+8kX+e1Cvq9gEkHSNQZlUbXywCatnlBZ/MWdDyB43sH563lqMnLfLVc
+	mmh7sJRmSnmG35j6e4R6mEukCfPs63sD/1qL6IlPGT7xcob+Izsf6o1vxVmwNxRzC3qKwCm0dva60
+	wZLe5mfBVDfGNMe6YNZi3eEDJ9BZpAjFc352R39bIlKgmmv+hN9hDlSyZWLLY0mQrvLAYwVQE2P7F
+	6OJgRpkHJM97XJMCrpfsQ2V47kZ/tgCPRUmIR67JlcQ3ViFJ1EsP/IBomHSj5CnuW3kkQafzPl7yf
+	EF3qqWKizXGpN0zuuiCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCZc9-002cus-1T;
-	Fri, 23 Jun 2023 05:45:45 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qCbqM-002sBH-0e;
+	Fri, 23 Jun 2023 08:08:34 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCZc6-002cts-21;
-	Fri, 23 Jun 2023 05:45:44 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 35N5KbxJ013113;
-	Fri, 23 Jun 2023 05:45:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=m0eZon9twmkZkc434FGAkX2VJzOfYrElusM5ziWPVSY=;
- b=g86zOIowtThYIcHa+a9e5SMYhYYGRs9VCGV2uIjiSC3Qyj+CyyZfcBLDiHRY/ar3/oXl
- 9UDanKdYuYc4+g53axKTZh3P62Rx/ZPBYX+ocdNzEGZucj9KMBI7tZIiHGilqTD7gxG9
- U56MwdDEtsysNWcmgdoTCsNCwZ+fmpQ6xj2fRaz/w8m1oWu4CKK0iGNSSfJdaxyRk5vE
- bZzVMGs8pF9Y6NzdfGyQknSH+Cp/a0KP9tqipo+JBnr7DcJbtz/dfI2CdCkKGCAn1Vsv
- jAu7zRNpzfkd570Xw7oAyQuntCMh3z+LMibBTVPgxcbJC7PCDHT+yVvP0fn36QaVBQne /Q== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rcurrgyfh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Jun 2023 05:45:22 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 35N5jLUl006922
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Jun 2023 05:45:21 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Thu, 22 Jun 2023 22:45:14 -0700
-Date: Fri, 23 Jun 2023 11:15:10 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Rob Herring <robh@kernel.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
-        <will@kernel.org>, <p.zabel@pengutronix.de>, <arnd@arndb.de>,
-        <geert+renesas@glider.be>, <neil.armstrong@linaro.org>,
-        <nfraprado@collabora.com>, <broonie@kernel.org>, <rafal@milecki.pl>,
-        <quic_srichara@quicinc.com>, <quic_varada@quicinc.org>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
+	id 1qCbqJ-002sAR-1c
+	for linux-phy@lists.infradead.org;
+	Fri, 23 Jun 2023 08:08:32 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-988f066f665so34907466b.2
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jun 2023 01:08:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1687507709; x=1690099709;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Mp20BGhs0XvV3lIs6JOjcLuOy8WK9QGNJZoe3Xf5rIg=;
+        b=ZuX9fp5CkoOW74bUtib5WMACzLBOIBzsjYDxwjXU9I9gGQqNRjKE38M5lnhJntWefh
+         iHTW1LRaKgQ2du1Jbi66pq4vcvKnBuNcsXRBMvdcBXCTOSZjIbsJNrtaBPuhZfN8ZDz3
+         LvklX67c+DTQe3DcZI8w+f6dM+bLJhR1bD+wBG7iFTYrtAkdYPKEIRnuLOYDnOBU7+tB
+         S/on9kE6OXNvIPDFffB5vFdiUtFs09S7bgv8obp4eCrdXakQ3CcPNXY19FK38f3LvBI0
+         b1nocMlVWGiU0I+dsTwIwrRd2TSy9YYhIEQNadlqrfOpu22Zm6Y84j9xnvABM1814kPb
+         3oJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1687507709; x=1690099709;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Mp20BGhs0XvV3lIs6JOjcLuOy8WK9QGNJZoe3Xf5rIg=;
+        b=Y760bw0TUIKHCG4OFqYzyKIL8AAtcQreOJQfnLzc6LXMQgQ9Hy0yyDKqsP/51c5Uf/
+         N/RAPnFArrl0HkKQS/xiH4lQtRRyZoD41DKFkSG+D8kxZ8PjIEprdC20XTDNn9UZIRvz
+         0TAy3IgP+kqNfszLKNSmgK28q4anqe/dEvXlPH0yser/ofocIwQxB+RRUXW5qx/nUOR6
+         CCMMXt1nBmEeu9lb1tpU9Ua0FYmQ8EyvhthuwIY7zaidV7SlMaLot6PB84lwL8OkOwEA
+         YEr3MQKeJ3cBNw09n8NTVgBAYo2WG+csyeEXZ32E2UNo4JS3UAmzNzwKzdIzbPCIwNyd
+         2VaQ==
+X-Gm-Message-State: AC+VfDw/fJlhQSz4Dgo9Que0Gpn/ALRuffDotoifpowTz9fo6ZMR65ah
+	jAyIlD36izqTzFzcKL/t6ytCnw==
+X-Google-Smtp-Source: ACHHUZ4bdgTVBJHUBS8Eb40jSpl9xmaCaFpPY+WUFySk47we5BeGwuNXlRZGzFalcblrjeyGrqaorA==
+X-Received: by 2002:a17:907:8a08:b0:987:ae30:4b8c with SMTP id sc8-20020a1709078a0800b00987ae304b8cmr16007348ejc.70.1687507709385;
+        Fri, 23 Jun 2023 01:08:29 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id r16-20020a1709062cd000b00982c5bc1e8asm5644025ejr.114.2023.06.23.01.08.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 23 Jun 2023 01:08:28 -0700 (PDT)
+Message-ID: <fffa4486-1f76-f7e3-2bc9-21dbe40a606e@linaro.org>
+Date: Fri, 23 Jun 2023 10:08:26 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
 Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
  phy
-Message-ID: <20230623054508.GA13261@varda-linux.qualcomm.com>
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>,
+ Rob Herring <robh@kernel.org>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+ vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
+ will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de,
+ geert+renesas@glider.be, neil.armstrong@linaro.org, nfraprado@collabora.com,
+ broonie@kernel.org, rafal@milecki.pl, quic_srichara@quicinc.com,
+ quic_varada@quicinc.org, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 References: <cover.1687414716.git.quic_varada@quicinc.com>
  <4f4136a91b24d3ad35fa12bd19fe14b83da9affe.1687414716.git.quic_varada@quicinc.com>
  <20230622144627.GA1672260-robh@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230622144627.GA1672260-robh@kernel.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 8CorgTQKjorILKJnvr3SkE_IEfgEMSoy
-X-Proofpoint-ORIG-GUID: 8CorgTQKjorILKJnvr3SkE_IEfgEMSoy
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-06-23_02,2023-06-22_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 malwarescore=0 mlxlogscore=999 suspectscore=0 spamscore=0
- adultscore=0 clxscore=1011 lowpriorityscore=0 phishscore=0 bulkscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2305260000 definitions=main-2306230052
+ <20230623054508.GA13261@varda-linux.qualcomm.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230623054508.GA13261@varda-linux.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230622_224542_691094_934FFAF0 
-X-CRM114-Status: GOOD (  25.44  )
+X-CRM114-CacheID: sfid-20230623_010831_559706_F32741FD 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,128 +108,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 22, 2023 at 08:46:27AM -0600, Rob Herring wrote:
-> On Thu, Jun 22, 2023 at 11:52:09AM +0530, Varadarajan Narayanan wrote:
-> > Document the M31 USB2 phy present in IPQ5332.
-> >
-> > Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> > v1:
-> > 	Rename qcom,m31.yaml -> qcom,ipq5332-usb-hsphy.yaml
-> > 	Drop default binding "m31,usb-hsphy"
-> > 	Add clock
-> > 	Remove 'oneOf' from compatible
-> > 	Remove 'qscratch' region from register space as it is not needed
-> > 	Remove reset-names
-> > 	Fix the example definition
-> > ---
-> >  .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       | 51 ++++++++++++++++++++++
-> >  1 file changed, 51 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> > new file mode 100644
-> > index 0000000..ab2e945
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> > @@ -0,0 +1,51 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: M31 (https://www.m31tech.com) USB PHY
->
-> Put the URL in 'description'.
+On 23/06/2023 07:45, Varadarajan Narayanan wrote:
+> 
+>>> +
+>>> +description:
+>>> +  USB M31 PHY found in Qualcomm IPQ5018, IPQ5332 SoCs.
+>>
+>> Where's the IPQ5018 compatible?
+> 
+> In the previous version had a default and IPQ5332 specific
+> compatible. IPQ5018 would have used the default compatible.
+> However, in the review was asked to drop the default compatible.
+> Hence planned to include ipq5018 compatible and post it in
+> separate patchset while enabling IPQ5018 USB. IPQ5018 init is
+> also diffferent from the init used here.
 
-Ok.
+Your previous patch did not have ipq5018 compatible. There was nothing
+indicating that some default means ipq5018...
 
-> > +
-> > +maintainers:
-> > +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> > +  - Varadarajan Narayanan <quic_varada@quicinc.org>
->
-> .org? It's .com everywhere else.
+Best regards,
+Krzysztof
 
-Ok.
-
-> > +
-> > +description:
-> > +  USB M31 PHY found in Qualcomm IPQ5018, IPQ5332 SoCs.
->
-> Where's the IPQ5018 compatible?
-
-In the previous version had a default and IPQ5332 specific
-compatible. IPQ5018 would have used the default compatible.
-However, in the review was asked to drop the default compatible.
-Hence planned to include ipq5018 compatible and post it in
-separate patchset while enabling IPQ5018 USB. IPQ5018 init is
-also diffferent from the init used here.
-
-> > +
-> > +properties:
-> > +  compatible:
-> > +    items:
-> > +      - enum:
-> > +          - qcom,ipq5332-usb-hsphy
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +
-> > +  clock-names:
-> > +    maxItems: 1
-> > +    contains:
->
-> 'contains' is not appropriate here. Drop.
->
-> > +      items:
-> > +        - const: cfg_ahb
->
-> Don't need both items list and maxItems. Really, you don't need
-> 'clock-names' at all because there is only 1 clock.
-
-Will drop 'clock-names'.
-
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-> > +    usbphy0: ipq5332-hsphy@7b000 {
->
-> Drop unused labels.
-
-Ok.
-
-> > +    	compatible = "qcom,ipq5332-usb-hsphy";
-> > +    	reg = <0x0007b000 0x12c>;
-> > +
-> > +    	clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
-> > +    	clock-names = "cfg_ahb";
-> > +
-> > +    	resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
->
-> Whitespace errors in here.
-
-Ok.
-
-Thanks
-Varada
-
-> > +    };
-> > +
-> > --
-> > 2.7.4
-> >
 
 -- 
 linux-phy mailing list
