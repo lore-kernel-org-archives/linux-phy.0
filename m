@@ -4,91 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72C4EEB64D7
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jun 2023 08:09:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 751F1C001B0
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jun 2023 08:13:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eoOScsmY0cu6ZImWrwNOyOTcxljz33jnBoYHA+S5+/Q=; b=K8S8H7lVnRhqZy
-	RLdHAIbM9axxgHkAX0FusKg4aNXXcbogmkroYnvGK7/TGwcqCluYeru9K9LsS1rZxvuNR1FwgIj3L
-	EoaYW6jsUCpvSUFpvh3kGjNdIZz2T6RxzeskKuMakFt6dVRyF1QHtVbFqFNcW+rLFJH7XeFaTEakC
-	F8E2oS2h7vT0UEqfujdUMAXUDbKvJF8x63EWPSfzyPieCzViahwZIHzlVEcU6Wg5eKbK4FTqtNtpU
-	obeL9S3jCVWsrPMD+YfHS+aJ9cjtrmysms7L7/bQKsqxqCa1xeGnGfNxJbMJz79ADDLHRl+Gb0tIo
-	98RyiOZVsLg3v93PyK3A==;
+	List-Owner; bh=v/PgRCp8WbrBWpwP2d3gzGvW8C8fnYDK3OUj4lSkWNs=; b=Q8n0qZRZj74/qy
+	Gaql5hBmpKobcdQ9edbyCQYMAre8QAOS7BR3YFu+pHEukivXnS0nEtshdCpst2RQae9QIzdCpknhl
+	ujDiqYHGosrmZU2nAZyYv2DTFsltD2y2zk61L5ojkLViOTturP+EVy4w0ftU5u1ugbLQ0vAoVTH3H
+	ejiUCsjpSTP26B1NcEH9wdAjDcO3snAFlaOFfWLVnRCCeOS4og28eoKlRFbZWA8l6uTxlsP5KjKt/
+	EfblEQFLMslpzA0mse5yC0gxsVI3knXI49f8ChQg0+PEhFu88IZJd6TIuiJds1PIHJ5Xl4/OJ25d5
+	Lx8lTFiInfqnx38lO0/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCbr1-002sHv-0J;
-	Fri, 23 Jun 2023 08:09:15 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1qCbv0-002tKG-0O;
+	Fri, 23 Jun 2023 08:13:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCbqy-002sDp-33
+	id 1qCbus-002tFN-0g
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Jun 2023 08:09:14 +0000
-Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-988a076a7d3so36612766b.3
-        for <linux-phy@lists.infradead.org>; Fri, 23 Jun 2023 01:08:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687507737; x=1690099737;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=61hnG3yUipEfgXuHCHhviz9DgCyYNvHGYoGPWJLkt/M=;
-        b=erVJdjwtwrJVStyE4E6L/LQ7dXXdbhaZpYTLFOPE5MP/FrFoqWsvDKNv1ZaVYZhBeY
-         8F0Ado+HM0ImBANx1Ix83OyqMUQUgfUILLke5lZaFPsZ0K+7ioCg1HIP9nyoTNqxHB3U
-         cbeHHcS0xow0A27FGCoHnzj0DthAj8z3Yt5hV8TOMgLTJ1bUWo2J1tyRE0BjeQJn8eLK
-         MziKEInTKThFdGKGiM81SC+3jYev2Dpg25Hn68yMzJZcrFtU0hwMCLyO/IHMgtE3Shb0
-         nMwho1uUPNvP6bdcWwHdQKUk/noVTXSwrlZyFogs0KXtyF+3G+16fCv2y9xvXhxUEpMd
-         Nrfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687507737; x=1690099737;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=61hnG3yUipEfgXuHCHhviz9DgCyYNvHGYoGPWJLkt/M=;
-        b=O4bC15RXvUnzygtU0gTcpCvNZKNHxzzZfG8nzJFRCvHXNSCYbk2d6NavDS41sta2zb
-         /OCW/NvibrFU/UMv5DRdUx8XEURroqFDRYVFxa0fztqtnb6TcMbsrQzWtmLIxLVhbajW
-         UG/2tYXWUgRcsbaiqDAuuv6AMobFGEefb2jHyVptWPGX//bguod7zhEHdjXhdDgZFtUi
-         kjP/+1Fn3CpSD/7tCLcYItfJSmE2d7A+z/TPgyMMWluQPWb6dFpifcH8EhiIW6kJq3rA
-         C9ip8GB374c+JBZEr9meHpXcs0WU+ug+uQyCQNCb7U7mM9s+OCBiXHzfS7CRfCl1lrMX
-         Xzlw==
-X-Gm-Message-State: AC+VfDxgLR5g2WhCcvWZ20TNw1sw1NyGvqUQ4InaPSbVoukkUskDTQ5j
-	WkdaHOuPVJx9eX4wkSTHjsLR6g==
-X-Google-Smtp-Source: ACHHUZ5fEluowmDvQcOv9Mfk479MA+dnDrPOx6btNBBr0J7FqLU5b9fcKOilyObJt2z9EU0JqRmjfg==
-X-Received: by 2002:a17:906:da84:b0:988:f307:aea7 with SMTP id xh4-20020a170906da8400b00988f307aea7mr11442363ejb.7.1687507736928;
-        Fri, 23 Jun 2023 01:08:56 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id d1-20020a1709064c4100b0096f7cf96525sm5747617ejw.146.2023.06.23.01.08.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Jun 2023 01:08:56 -0700 (PDT)
-Message-ID: <dd12208c-baec-8628-163f-828575bf10b1@linaro.org>
-Date: Fri, 23 Jun 2023 10:08:53 +0200
+	Fri, 23 Jun 2023 08:13:15 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B8D3061998;
+	Fri, 23 Jun 2023 08:13:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A0F8C433C9;
+	Fri, 23 Jun 2023 08:13:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1687507990;
+	bh=9JxMqqyX53j4px3htR8RO7J/bnVstG57275XnhWBd9s=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=hiBlnw9pkqPZ3+YmYAGElUvLxc7bhSkjL3kYGe1LtmlNKilx4vJOlFfEsTciCwdEY
+	 RvmR3fuxm3o54SnumVvId45XFJLFSxqDlMpb07zW3iplD4xYKXhZccm7uWfT3y8amp
+	 96YSR/zbENNQWsDDUrL6iIH8LpTudgU0IC4ea6EP/uT7gpkK4AGr6ZASD3JPZE833L
+	 6eHb8htT/T84p94lkT2Jzmos5yoGLF5u+hy2TWUw+0U/d9JTkAwwP2Xlqnjiw+k5Ru
+	 iaNb1uYjZ3jz0DhnyC9yTp5cQR3OEZf2Z2hrSGyXc0C4pLLQUnWNDqDuVC2TkKaNaE
+	 uYdg7esg3FmvQ==
+Message-ID: <237696b2-ebda-ab84-1b70-4f6a3e8344aa@kernel.org>
+Date: Fri, 23 Jun 2023 13:43:02 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
- phy
+ Thunderbird/102.11.0
+Subject: Re: [PATCH 0/2] PHY: Add support for single link USXGMII in Cadence
+ Torrent PHY driver
 Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
- will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de,
- geert+renesas@glider.be, neil.armstrong@linaro.org, nfraprado@collabora.com,
- broonie@kernel.org, rafal@milecki.pl, quic_srichara@quicinc.com,
- quic_varada@quicinc.org, quic_wcheng@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <cover.1687414716.git.quic_varada@quicinc.com>
- <4f4136a91b24d3ad35fa12bd19fe14b83da9affe.1687414716.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <4f4136a91b24d3ad35fa12bd19fe14b83da9affe.1687414716.git.quic_varada@quicinc.com>
+To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
+ kishon@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: mparab@cadence.com, s-vadapalli@ti.com
+References: <20230530143853.26571-1-sjakhade@cadence.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20230530143853.26571-1-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230623_010912_985329_349216B8 
-X-CRM114-Status: UNSURE (   6.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230623_011314_295822_ED356B38 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,27 +79,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/06/2023 08:22, Varadarajan Narayanan wrote:
-> Document the M31 USB2 phy present in IPQ5332.
+Hi Vinod,
+
+On 30/05/2023 20:08, Swapnil Jakhade wrote:
+> This patch series extends Torrent PHY driver functionality to support
+> single link USXGMII for 156.25MHz refclk.
+> It also implements key:value pair table for all settings instead
+> of a 3D matrix.
+> 
+> The changes have been validated on TI J721E and J7200 platforms.
+> 
+> Roger Quadros (1):
+>   phy: cadence-torrent: Use key:value pair table for all settings
+> 
+> Swapnil Jakhade (1):
+>   phy: cadence-torrent: Add single link USXGMII configuration for
+>     156.25MHz refclk
+> 
+>  drivers/phy/cadence/phy-cadence-torrent.c | 1732 ++++++++-------------
+>  1 file changed, 632 insertions(+), 1100 deletions(-)
 > 
 
-> +description:
-> +  USB M31 PHY found in Qualcomm IPQ5018, IPQ5332 SoCs.
-> +
-> +properties:
-> +  compatible:
-> +    items:
+Gentle reminder to pull this in -next. Thanks.
 
-Also drop items.
-
-> +      - enum:
-> +          - qcom,ipq5332-usb-hsphy
-> +
-
-
-Best regards,
-Krzysztof
-
+-- 
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
