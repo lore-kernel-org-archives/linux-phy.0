@@ -4,67 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44699EB64D7
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jun 2023 15:41:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58340EB64DD
+	for <linux-phy@archiver.kernel.org>; Sat, 24 Jun 2023 18:02:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3JGsDOzohu52PWdC/F7ijWqIGTWQPfSlyBmATJw0F3I=; b=SQi98dtQXHQfKz
-	VQQ76QhksyFlHnhw/yOkiYQKdhLfaITF+2ivk7ZnNmJyzjqQijUSOd9nmJdP2V/ZUZJlnZnmBgDCc
-	AJWI+dQ//hWZm2f20qwxXvHvcX7otuJdqlbxeMnB/dzLjKoO8bohLeAyRF2xEa/Mu3dH6G0YBF1KU
-	SojdhptApw5r/Z9bXBYm1ZH1qGSraDbw9HfXvP5Z/k6eyonsZK7lM2R34Lbyl25rtzY85FdSTlLRg
-	0Px9/CaP5DoVz5N0jbW0D9EdXX3LG90G+IMN0ddT84YAzboWq3R/+LCFkCXD32NZzEU61EBrtVD6N
-	V5Eijj/iGPwYp45NVcDQ==;
+	List-Owner; bh=p4ZLSjbQZVVCfHernl7SotSnxJLSNNXC06VSI0Q1YiU=; b=UoxAEJj4KWICz7
+	QgKWupHnqE8LhTj2wOMZbNrqaQ1+4IrCSmxCL/YNycjF787lnxHmXb7QmZA1vxRYLzRURWFcvEFUQ
+	pJSoLzQfdoApNaEQm3Z2ozZzTqOn/ZBxBdQX4HLxoy74VLCatTt0H3U2yg3t/tzrfJJMQCecvW4o0
+	WwAbkHXf5WFCmKpu7mNs9qEVvbSm3IosiUBq9P4lgO+nkaL3L+c54w8vtap0gCb9icHhcidMBsYgl
+	D4KOAgxRVj/E6hsXnpTBqvagwCFNJcUdMCkqa9hhH3s3X9rKjn/gyHwjv+c4SG2OTZdOX96OPlXKw
+	F3jKc2mXcQWw3+3o6zxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCiuj-003yRD-2r;
-	Fri, 23 Jun 2023 15:41:33 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1qD7aS-006LqA-2D;
+	Sat, 24 Jun 2023 18:02:16 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qCiuh-003yQJ-2i
+	id 1qD7aP-006LpF-2K
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Jun 2023 15:41:33 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1qCiuF-0005nd-N4; Fri, 23 Jun 2023 17:41:03 +0200
-Received: from mfe by ptx.hi.pengutronix.de with local (Exim 4.92)
-	(envelope-from <mfe@pengutronix.de>)
-	id 1qCiuE-0007FL-Eg; Fri, 23 Jun 2023 17:41:02 +0200
-Date: Fri, 23 Jun 2023 17:41:02 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Arnd Bergmann <arnd@kernel.org>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Hans Verkuil <hverkuil@xs4all.nl>,
-	Gerald Loacker <gerald.loacker@wolfvision.net>,
-	Bingbu Cao <bingbu.cao@intel.com>,
-	Mikhail Rudenko <mike.rudenko@gmail.com>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Vincent Shih <vincent.sunplus@gmail.com>,
-	Mark Brown <broonie@kernel.org>, linux-media@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH] media: tc358746: select CONFIG_GENERIC_PHY
-Message-ID: <20230623154102.gjyorfxpzvbnfa4y@pengutronix.de>
-References: <20230623152318.2276816-1-arnd@kernel.org>
+	Sat, 24 Jun 2023 18:02:15 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-4f96da99965so2260015e87.1
+        for <linux-phy@lists.infradead.org>; Sat, 24 Jun 2023 11:02:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1687629729; x=1690221729;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=b8aXK79fA9FR8gAtXzWQUHnQm80+lmfMQEsV5inLFFs=;
+        b=HWf9+bLfsRsQ5gE5EplC6PQgmM/X18AmoRfH1ZpiWsNARJZdODjeXjJL4WSLHnirjP
+         tUXHS7lRPy8UB4ot23yvWGA5rmp8sX0moTPJYFCAaT1xNZOy08gHKgEbmI+J2RH6IXKO
+         0Rw+CGF2tc0EY3SmtGu4Sc0HuSTGwooqfVDjZ8bJUPgDSyFGheq5PDJ7DbeiUIqng3Kj
+         i2OUAeajWNEQjbdn3X5/Nvw8MO1k6YY/ssyfjvAxzllzn5RQ4Ib09vPQMUlXCzCrbLEK
+         KuDnSjuKBWtnX6Xl3FoX95oj0KZ5AQhft7FdRDTs4kQ8cLzCevkMsmOZgguTqloef1Fg
+         VDzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1687629729; x=1690221729;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=b8aXK79fA9FR8gAtXzWQUHnQm80+lmfMQEsV5inLFFs=;
+        b=GiYeiuhtuN6NX//yOGIQJofWcfO+vB58iN6asZExbnfr8OJdJfdTwpDvOwYu1zVHMc
+         4CmR/yTdUXuXHtu/yEODvFu3JUuvaCHvqwrwhdJLDu6hyTe44alfV12VADVUc0/mpeVR
+         VdxhYzbWOy/gL9GwWe0usb+AY0pbhJhGUk/ZV48INd+thgBGlmbs10Z50/N9Zb//OyLE
+         XArdliW4MFOGFvJxY5uXuh/SMzMJZhhE7dxqSFLW3Av+pdSoeBYfSYJIHSX/4Bb5w0R6
+         +Th5K4pt+EMjVzKgm5uLt2FgdUZUC9gvulAoKQvAFfpmGMh8Bs8jcUNADtADcE3IFK6E
+         mozQ==
+X-Gm-Message-State: AC+VfDydT9EyXBF8DhI71tLSp9BKoobOvX6p5ajpmOk4l/4evk2zmx5I
+	DoixEe33PilYkylh3Xp9I9US9g==
+X-Google-Smtp-Source: ACHHUZ4AwY7UKYyZJUEu0YUv5C4sz9uG4mSL1/otAdmuKa0+0lafodbdvnsMQ8A0fkFvV5cdyGqgfw==
+X-Received: by 2002:a05:6512:3f05:b0:4fa:abe7:7c80 with SMTP id y5-20020a0565123f0500b004faabe77c80mr320140lfa.39.1687629729435;
+        Sat, 24 Jun 2023 11:02:09 -0700 (PDT)
+Received: from [10.10.15.130] ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id m25-20020ac24ad9000000b004fad16596fasm61996lfp.21.2023.06.24.11.02.07
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 24 Jun 2023 11:02:08 -0700 (PDT)
+Message-ID: <6f590bb6-7d17-3ae8-684d-2d4403d6ff55@linaro.org>
+Date: Sat, 24 Jun 2023 21:02:06 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230623152318.2276816-1-arnd@kernel.org>
-User-Agent: NeoMutt/20180716
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v6 4/8] phy: Add HDMI configuration options
+Content-Language: en-GB
+To: Sandor Yu <Sandor.yu@nxp.com>, andrzej.hajda@intel.com,
+ neil.armstrong@linaro.org, robert.foss@linaro.org,
+ Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+ jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com
+References: <cover.1686729444.git.Sandor.yu@nxp.com>
+ <cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230623_084131_880017_7419B648 
-X-CRM114-Status: GOOD (  20.28  )
+X-CRM114-CacheID: sfid-20230624_110213_804827_7DB77BD9 
+X-CRM114-Status: GOOD (  21.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,67 +97,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Arnd,
-
-thanks for the patch.
-
-On 23-06-23, Arnd Bergmann wrote:
-> From: Arnd Bergmann <arnd@arndb.de>
+On 15/06/2023 04:38, Sandor Yu wrote:
+> Allow HDMI PHYs to be configured through the generic
+> functions through a custom structure added to the generic union.
 > 
-> The tc358746 driver selects CONFIG_GENERIC_PHY_MIPI_DPHY and links to
-> that, but this fails when CONFIG_GENERIC_PHY is disabled, because Kbuild
-> then never enters the drivers/phy directory for building object files:
+> The parameters added here are based on HDMI PHY
+> implementation practices.  The current set of parameters
+> should cover the potential users.
 > 
-> ERROR: modpost: "phy_mipi_dphy_get_default_config_for_hsclk" [drivers/media/i2c/tc358746.ko] undefined!
-> 
-> Add an explicit 'select GENERIC_PHY' here to ensure that the directory
-> is entered, and add another dependency on that symbol so make it
-> more obvious what is going on if another driver has the same problem,
-> as this will produce a Kconfig warning.
-> 
-> Fixes: 80a21da360516 ("media: tc358746: add Toshiba TC358746 Parallel to CSI-2 bridge driver")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
-
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
 > ---
->  drivers/media/i2c/Kconfig | 1 +
->  drivers/phy/Kconfig       | 1 +
->  2 files changed, 2 insertions(+)
+>   include/linux/phy/phy-hdmi.h | 38 ++++++++++++++++++++++++++++++++++++
+>   include/linux/phy/phy.h      |  7 ++++++-
+>   2 files changed, 44 insertions(+), 1 deletion(-)
+>   create mode 100644 include/linux/phy/phy-hdmi.h
 > 
-> diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-> index cf675ac4b1326..226454b6a90dd 100644
-> --- a/drivers/media/i2c/Kconfig
-> +++ b/drivers/media/i2c/Kconfig
-> @@ -1305,6 +1305,7 @@ config VIDEO_TC358746
->  	select VIDEO_V4L2_SUBDEV_API
->  	select MEDIA_CONTROLLER
->  	select V4L2_FWNODE
-> +	select GENERIC_PHY
->  	select GENERIC_PHY_MIPI_DPHY
->  	select REGMAP_I2C
->  	help
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index f46e3148d286d..8dba9596408f2 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -18,6 +18,7 @@ config GENERIC_PHY
->  
->  config GENERIC_PHY_MIPI_DPHY
->  	bool
-> +	depends on GENERIC_PHY
->  	help
->  	  Generic MIPI D-PHY support.
->  
-> -- 
-> 2.39.2
-> 
-> 
+> diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
+> new file mode 100644
+> index 000000000000..5765aa5bc175
+> --- /dev/null
+> +++ b/include/linux/phy/phy-hdmi.h
+> @@ -0,0 +1,38 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright 2022 NXP
+> + */
+> +
+> +#ifndef __PHY_HDMI_H_
+> +#define __PHY_HDMI_H_
+> +
+> +/**
+> + * Pixel Encoding as HDMI Specification
+> + * RGB, YUV422, YUV444:HDMI Specification 1.4a Section 6.5
+> + * YUV420: HDMI Specification 2.a Section 7.1
+> + */
+> +enum hdmi_phy_colorspace {
+> +	HDMI_PHY_COLORSPACE_RGB,        /* RGB 4:4:4 */
+> +	HDMI_PHY_COLORSPACE_YUV422,     /* YCbCr 4:2:2 */
+> +	HDMI_PHY_COLORSPACE_YUV444,     /* YCbCr 4:4:4 */
+> +	HDMI_PHY_COLORSPACE_YUV420,     /* YCbCr 4:2:0 */
+> +	HDMI_PHY_COLORSPACE_RESERVED4,
+> +	HDMI_PHY_COLORSPACE_RESERVED5,
+> +	HDMI_PHY_COLORSPACE_RESERVED6,
+> +};
+
+This enum duplicates enum hdmi_colorspace from <linux/hdmi.h>
+HDMI 2.0 defines '7' to be IDO-defined.
+
+Would it be better to use that enum instead?
+
+> +
+> +/**
+> + * struct phy_configure_opts_hdmi - HDMI configuration set
+> + * @pixel_clk_rate:	Pixel clock of video modes in KHz.
+> + * @bpc: Maximum bits per color channel.
+> + * @color_space: Colorspace in enum hdmi_phy_colorspace.
+> + *
+> + * This structure is used to represent the configuration state of a HDMI phy.
+> + */
+> +struct phy_configure_opts_hdmi {
+> +	unsigned int pixel_clk_rate;
+> +	unsigned int bpc;
+> +	enum hdmi_phy_colorspace color_space;
+> +};
+> +
+> +#endif /* __PHY_HDMI_H_ */
+
+[skipped the rest]
+
+-- 
+With best wishes
+Dmitry
+
 
 -- 
 linux-phy mailing list
