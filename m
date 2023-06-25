@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 447E7C001B1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8836C001DD
 	for <linux-phy@archiver.kernel.org>; Sun, 25 Jun 2023 11:42:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=suDmroSYJnGkJmNQyyhYK0jhN7alwIYIVV6aMw9tfdM=; b=cqeO5Ftsgi9vco
-	q4tjVCH6LDyklYyEaB2jOEx6ETH83oiyGxO4fQCDahCOb//0O9ZKwX3kRc84R68ZDzkiNzCVDHnTa
-	ZGzcTh3J4wsiS0XlvJCYve9T0xqdzFyk0/ZezoKD1nqn9hnhB5bv43iuJFeTJEGFNnVhLS6wIwKbb
-	lBlPylANelJfhNgD8Dn+q56ONmuR5b5izCODrXctlGzGg8MyFBwzpD/4SbyAZ1MATbdtJSX1pj1xd
-	bks11XiOBEqYre+nSWbQ/miEshOVeDgdkv9o5PbkFdtlOAbagaLCzVBr5lRegDCYy5zZIdXB/Q158
-	RteLdxI4iAUBoB8BZsjA==;
+	List-Owner; bh=4g9yUlj3C9CZlxcf+ttR4X1jbBauNio1XAmvfws7/jE=; b=vF0WWmjl76/yIE
+	5F3IjIqq9jfq7I/5VfrjsOp6fmP4uSNbeLd2Z7oWAIkEkx/jN6BEIXrJbaHC6VwspGfjHMR7QlgQN
+	mDWpqVRVYOdMmvRkWH4tMHr7na4F2lnnYtnpOkX9b+lNNvV1wwlY56oXAJPe5mKJ9CG4goRelI6yz
+	wCjOFlqW1ij7S2Iuv4KtT2tcckgIZ+5MnbgXv2sG/ONrDkeF+UsYyzI8Ik/5kYwMo2lvr0OOumu9+
+	LCccJ76HqzMBlGSo4WEDjtr7mNeBYs5kFSPsVovpz8wZf2CvXJ4s79wjA0pShzFziPQvRHwBbvusy
+	cbw+EopSSLIl87VYnvsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDO8l-007wBM-30;
-	Sun, 25 Jun 2023 11:42:47 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1qDO8m-007wBs-1W;
+	Sun, 25 Jun 2023 11:42:48 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDO8d-007w2o-0l
+	id 1qDO8g-007w1O-3B
 	for linux-phy@lists.infradead.org;
 	Sun, 25 Jun 2023 11:42:44 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2b69e6cce7dso2940311fa.2
-        for <linux-phy@lists.infradead.org>; Sun, 25 Jun 2023 04:42:36 -0700 (PDT)
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-4f973035d60so2656187e87.3
+        for <linux-phy@lists.infradead.org>; Sun, 25 Jun 2023 04:42:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687693355; x=1690285355;
+        d=linaro.org; s=google; t=1687693351; x=1690285351;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=932oaPt6ojnBPy1wAaag4ZZtb2XDeptEQhNEoOdPrqw=;
-        b=H+ELCcN6A7C+cu4Gz+vqMW9K7rBpvzmK5ul5JS7ht9DpmHK7C+mto5e8wqo5kJtOiQ
-         GeGIZyDWj+btrMC88k67C6AegNdOjLXRDjq9SEjRTXwR960n2R8Z5FIZuo40uwsza4AE
-         3RqsMwuZTTgmmXwACUn0x7H0/UOYIz+y8wcGcecg4HGnwLvgGSeH7tcacEhMUoPxlkAb
-         8+ax9O2qk2TMTaJwXq8O3W3wcV/qtQLcwOvTzzo7rejGmd4QFErJW2zE/bc4toiHHsGc
-         QwrkaGE6Fhev1cBcL/RMA8wjwEmSri2u/b4pNu5dLvQJPguAxfEMGTUPONE2Uk9mv4hu
-         Xxzw==
+        bh=8sn8z574aHDaIUAuI0kB4BeZ8f9+C4yT5HRFlvneark=;
+        b=N4i8hbKp9JLJ7Hcn5m0dC+xMh8Petmn5eegQ1/6yt8GKKAQ8iTYfVKIQX7i/p1hZhO
+         B1OgHjyfFzsmDZtUgO1wINs2xE+2KB9pH5JxmHz6eF+mw4OK+Xymp+jJMrltjcCmoPob
+         yRmekZ2ZzUo0x0sAoPICZrcNFfh3VQa7AatW01uq7AzJM+vgXo35kAqM7N6U4LyfOsfz
+         jwKpTxvoB8rKJB60H3GZqakAev5xiRrEbatzO5MtZXsItftL26ZlcSvBgFQtNEDH8yJk
+         KfiVvrP9L+ntHTqXnHE179n+56wKUMogFcNBBvMhLL9A/rL9I7yZxtpLn3fN1DuLj+jY
+         K/GA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687693355; x=1690285355;
+        d=1e100.net; s=20221208; t=1687693351; x=1690285351;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=932oaPt6ojnBPy1wAaag4ZZtb2XDeptEQhNEoOdPrqw=;
-        b=d/qJYMENi1N9h6R5U7YqU0P/mNHhXdercFjuWTwfswj4jeT5L/LO1OgqFdGX9+nr3V
-         plZABv4RQNQBh/RoxW3mRPt5rFAMa1InxI0KkmCE/rD5n33kAlPV4zb2ZI+wcDJOAS8n
-         HPv1xbvIxa3EoYvyDWwIyGYN7QNuruudrjKcMlHuRx5FH/xfCqzNbLW5i5pQiGBizsvy
-         aZLQwAUS3brO/2BI+anEfuQ+jZn+UI4qiWrmnL8xScxKvAS3wRPI+ykDNbNIRtfBE5lg
-         F6EAQnjoYb3z3x9zH5bJLNm9uNTPrktA4x5o1RYsFm+rcNFW0pkGk5RukYFxfZuWIhkU
-         eOTA==
-X-Gm-Message-State: AC+VfDzWecd4kA2xkyBSqX6VfDuK1OV0B+UcSb+iCMnqXtDpoLRiITK4
-	nt7YCifd1ar16QDZ2Mi1l1W52Q==
-X-Google-Smtp-Source: ACHHUZ66VO3vu75MCGaSX6TG8BtoxYP+CJ4ISP2ve/ajONihYsP2NhV3L51wwDQmpF1JegHTbD084Q==
-X-Received: by 2002:a05:6512:554:b0:4f8:66db:8235 with SMTP id h20-20020a056512055400b004f866db8235mr12421534lfl.39.1687693355445;
-        Sun, 25 Jun 2023 04:42:35 -0700 (PDT)
+        bh=8sn8z574aHDaIUAuI0kB4BeZ8f9+C4yT5HRFlvneark=;
+        b=Sgs3gRTNWyXaqLCIumEVP/4klqNauqQTBoWm3aaPe6N6GK7iPi+xMbz6fM/VLMyNCA
+         gDc7lbwnxUR3Lj3JBfvP1v6kizX5GN7i3xjGccsblM5uErY/LSnxrChZL02618wqOZAc
+         h+U5D8Pzc7XpRZjs03tFBuKvUNf/UYdtYRYDW1yMzbLAz/a/CpXU2P3eqWOp699i1I3i
+         Rjl5kLtIfD79H9cAQSudfKlKSrPjV4A5KgtggsAOHkY9Q79FnG2+PiJ7+xYOtf1oG2xG
+         et3WHSW5vlwhOhOqxlghSv7nMpkiCGJNCbothbhpv7nObgXEXIK+L1uNLM0RkG9XfAVJ
+         1qag==
+X-Gm-Message-State: AC+VfDyGxohkLnoe3xi3qJ6oX5fYaZC193le33TPl2XUrG/+J/dm72LY
+	YbDyluif+QjZjri3M8tmQ3Du/Q==
+X-Google-Smtp-Source: ACHHUZ5uSrg00k+4Jeoniqdq+eKmv5SMkKvGBXZUIVFY2Z0vMlR3S+2poEP5u2Y66tfSof0mcBqGaA==
+X-Received: by 2002:a19:2d43:0:b0:4f8:5e49:c610 with SMTP id t3-20020a192d43000000b004f85e49c610mr12389972lft.35.1687693351436;
+        Sun, 25 Jun 2023 04:42:31 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id b23-20020ac25637000000b004f87893ce21sm637323lff.3.2023.06.25.04.42.34
+        by smtp.gmail.com with ESMTPSA id b23-20020ac25637000000b004f87893ce21sm637323lff.3.2023.06.25.04.42.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 25 Jun 2023 04:42:35 -0700 (PDT)
+        Sun, 25 Jun 2023 04:42:30 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Rob Clark <robdclark@gmail.com>,
 	Sean Paul <sean@poorly.run>,
@@ -79,16 +79,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	dri-devel@lists.freedesktop.org,
 	freedreno@lists.freedesktop.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v2 14/15] drm/msm/hdmi: switch to generic PHY subsystem
-Date: Sun, 25 Jun 2023 14:42:21 +0300
-Message-Id: <20230625114222.96689-15-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 09/15] drm/msm/hdmi: simplify extp clock handling
+Date: Sun, 25 Jun 2023 14:42:16 +0300
+Message-Id: <20230625114222.96689-10-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230625114222.96689-1-dmitry.baryshkov@linaro.org>
 References: <20230625114222.96689-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230625_044239_288319_25416206 
-X-CRM114-Status: GOOD (  20.76  )
+X-CRM114-CacheID: sfid-20230625_044243_056099_3E3C4C43 
+X-CRM114-Status: GOOD (  18.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,369 +105,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change the MSM HDMI driver to use generic PHY subsystem. Moving PHY
-drivers allows better code sharing with the rest of the PHY system.
+With the extp being the only "power" clock left, remove the surrounding
+loops and handle the extp clock directly.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/gpu/drm/msm/Makefile           |  6 ---
- drivers/gpu/drm/msm/hdmi/hdmi.c        | 58 +++------------------
- drivers/gpu/drm/msm/hdmi/hdmi.h        | 72 +-------------------------
- drivers/gpu/drm/msm/hdmi/hdmi_bridge.c | 58 +++++++++++++--------
- 4 files changed, 45 insertions(+), 149 deletions(-)
+ drivers/gpu/drm/msm/hdmi/hdmi.c        | 24 ++++---------------
+ drivers/gpu/drm/msm/hdmi/hdmi.h        |  6 +----
+ drivers/gpu/drm/msm/hdmi/hdmi_bridge.c | 33 ++++++++++----------------
+ 3 files changed, 18 insertions(+), 45 deletions(-)
 
-diff --git a/drivers/gpu/drm/msm/Makefile b/drivers/gpu/drm/msm/Makefile
-index 8d02d8c33069..908c79702864 100644
---- a/drivers/gpu/drm/msm/Makefile
-+++ b/drivers/gpu/drm/msm/Makefile
-@@ -23,12 +23,6 @@ msm-$(CONFIG_DRM_MSM_HDMI) += \
- 	hdmi/hdmi_bridge.o \
- 	hdmi/hdmi_hpd.o \
- 	hdmi/hdmi_i2c.o \
--	hdmi/hdmi_phy.o \
--	hdmi/hdmi_phy_8960.o \
--	hdmi/hdmi_phy_8996.o \
--	hdmi/hdmi_phy_8x60.o \
--	hdmi/hdmi_phy_8x74.o \
--	hdmi/hdmi_pll_8960.o \
- 
- msm-$(CONFIG_DRM_MSM_MDP4) += \
- 	disp/mdp4/mdp4_crtc.o \
 diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.c b/drivers/gpu/drm/msm/hdmi/hdmi.c
-index a2780aba6d3c..5c50ae57f107 100644
+index 0fc3df43aa70..a2780aba6d3c 100644
 --- a/drivers/gpu/drm/msm/hdmi/hdmi.c
 +++ b/drivers/gpu/drm/msm/hdmi/hdmi.c
-@@ -7,6 +7,7 @@
+@@ -248,13 +248,11 @@ static const struct hdmi_platform_config hdmi_tx_8960_config = {
+ };
  
- #include <linux/of_irq.h>
- #include <linux/of_gpio.h>
-+#include <linux/phy/phy.h>
+ static const char *pwr_reg_names_8x74[] = {"core-vdda", "core-vcc"};
+-static const char *pwr_clk_names_8x74[] = {"extp"};
+ static const char *hpd_clk_names_8x74[] = {"iface", "core", "mdp_core", "alt_iface"};
+ static unsigned long hpd_clk_freq_8x74[] = {0, 19200000, 0, 0};
  
- #include <drm/drm_bridge_connector.h>
- #include <drm/drm_of.h>
-@@ -72,44 +73,6 @@ static void msm_hdmi_destroy(struct hdmi *hdmi)
- 		msm_hdmi_i2c_destroy(hdmi->i2c);
- }
- 
--static void msm_hdmi_put_phy(struct hdmi *hdmi)
--{
--	if (hdmi->phy_dev) {
--		put_device(hdmi->phy_dev);
--		hdmi->phy = NULL;
--		hdmi->phy_dev = NULL;
--	}
--}
--
--static int msm_hdmi_get_phy(struct hdmi *hdmi)
--{
--	struct platform_device *pdev = hdmi->pdev;
--	struct platform_device *phy_pdev;
--	struct device_node *phy_node;
--
--	phy_node = of_parse_phandle(pdev->dev.of_node, "phys", 0);
--	if (!phy_node) {
--		DRM_DEV_ERROR(&pdev->dev, "cannot find phy device\n");
--		return -ENXIO;
--	}
--
--	phy_pdev = of_find_device_by_node(phy_node);
--	of_node_put(phy_node);
--
--	if (!phy_pdev)
--		return dev_err_probe(&pdev->dev, -EPROBE_DEFER, "phy driver is not ready\n");
--
--	hdmi->phy = platform_get_drvdata(phy_pdev);
--	if (!hdmi->phy) {
--		put_device(&phy_pdev->dev);
--		return dev_err_probe(&pdev->dev, -EPROBE_DEFER, "phy driver is not ready\n");
--	}
--
--	hdmi->phy_dev = &phy_pdev->dev;
--
--	return 0;
--}
--
- /* construct hdmi at bind/probe time, grab all the resources.  If
-  * we are to EPROBE_DEFER we want to do it here, rather than later
-  * at modeset_init() time
-@@ -510,37 +473,32 @@ static int msm_hdmi_dev_probe(struct platform_device *pdev)
- 	if (hdmi->hpd_gpiod)
- 		gpiod_set_consumer_name(hdmi->hpd_gpiod, "HDMI_HPD");
- 
--	ret = msm_hdmi_get_phy(hdmi);
--	if (ret) {
-+	hdmi->phy = devm_phy_get(&pdev->dev, NULL);
-+	if (IS_ERR(hdmi->phy)) {
- 		DRM_DEV_ERROR(&pdev->dev, "failed to get phy\n");
--		return ret;
-+		return PTR_ERR(hdmi->phy);
+ static const struct hdmi_platform_config hdmi_tx_8974_config = {
+ 		HDMI_CFG(pwr_reg, 8x74),
+-		HDMI_CFG(pwr_clk, 8x74),
+ 		HDMI_CFG(hpd_clk, 8x74),
+ 		.hpd_freq      = hpd_clk_freq_8x74,
+ };
+@@ -495,24 +493,10 @@ static int msm_hdmi_dev_probe(struct platform_device *pdev)
+ 		hdmi->hpd_clks[i] = clk;
  	}
  
- 	ret = devm_pm_runtime_enable(&pdev->dev);
- 	if (ret)
--		goto err_put_phy;
-+		goto err;
- 
- 	platform_set_drvdata(pdev, hdmi);
- 
- 	ret = component_add(&pdev->dev, &msm_hdmi_ops);
- 	if (ret)
--		goto err_put_phy;
-+		goto err;
- 
- 	return 0;
- 
--err_put_phy:
--	msm_hdmi_put_phy(hdmi);
-+err:
- 	return ret;
- }
- 
- static int msm_hdmi_dev_remove(struct platform_device *pdev)
- {
--	struct hdmi *hdmi = dev_get_drvdata(&pdev->dev);
+-	hdmi->pwr_clks = devm_kcalloc(&pdev->dev,
+-				      config->pwr_clk_cnt,
+-				      sizeof(hdmi->pwr_clks[0]),
+-				      GFP_KERNEL);
+-	if (!hdmi->pwr_clks)
+-		return -ENOMEM;
 -
- 	component_del(&pdev->dev, &msm_hdmi_ops);
- 
--	msm_hdmi_put_phy(hdmi);
+-	for (i = 0; i < config->pwr_clk_cnt; i++) {
+-		struct clk *clk;
 -
- 	return 0;
- }
+-		clk = msm_clk_get(pdev, config->pwr_clk_names[i]);
+-		if (IS_ERR(clk))
+-			return dev_err_probe(dev, PTR_ERR(clk),
+-					     "failed to get pwr clk: %s\n",
+-					     config->pwr_clk_names[i]);
+-
+-		hdmi->pwr_clks[i] = clk;
+-	}
++	hdmi->extp_clk = devm_clk_get_optional(&pdev->dev, "extp");
++	if (IS_ERR(hdmi->extp_clk))
++		return dev_err_probe(dev, PTR_ERR(hdmi->extp_clk),
++				     "failed to get extp clock\n");
  
-@@ -565,12 +523,10 @@ static struct platform_driver msm_hdmi_driver = {
- 
- void __init msm_hdmi_register(void)
- {
--	msm_hdmi_phy_driver_register();
- 	platform_driver_register(&msm_hdmi_driver);
- }
- 
- void __exit msm_hdmi_unregister(void)
- {
- 	platform_driver_unregister(&msm_hdmi_driver);
--	msm_hdmi_phy_driver_unregister();
- }
+ 	hdmi->hpd_gpiod = devm_gpiod_get_optional(&pdev->dev, "hpd", GPIOD_IN);
+ 	/* This will catch e.g. -EPROBE_DEFER */
 diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.h b/drivers/gpu/drm/msm/hdmi/hdmi.h
-index 46ae7ef9bc98..d68ac7aaf1f2 100644
+index e8dbee50637f..2d405da63bd0 100644
 --- a/drivers/gpu/drm/msm/hdmi/hdmi.h
 +++ b/drivers/gpu/drm/msm/hdmi/hdmi.h
-@@ -19,7 +19,6 @@
- #include "msm_drv.h"
- #include "hdmi.xml.h"
- 
--struct hdmi_phy;
- struct hdmi_platform_config;
- 
- struct hdmi_audio {
-@@ -56,8 +55,7 @@ struct hdmi {
+@@ -51,7 +51,7 @@ struct hdmi {
+ 	struct regulator_bulk_data *hpd_regs;
+ 	struct regulator_bulk_data *pwr_regs;
+ 	struct clk **hpd_clks;
+-	struct clk **pwr_clks;
++	struct clk *extp_clk;
  
  	struct gpio_desc *hpd_gpiod;
  
--	struct hdmi_phy *phy;
--	struct device *phy_dev;
-+	struct phy *phy;
+@@ -98,10 +98,6 @@ struct hdmi_platform_config {
+ 	const char **hpd_clk_names;
+ 	const long unsigned *hpd_freq;
+ 	int hpd_clk_cnt;
+-
+-	/* clks that need to be on for screen pwr (ie pixel clk): */
+-	const char **pwr_clk_names;
+-	int pwr_clk_cnt;
+ };
  
- 	struct i2c_adapter *i2c;
- 	struct drm_connector *connector;
-@@ -125,74 +123,6 @@ static inline u32 hdmi_qfprom_read(struct hdmi *hdmi, u32 reg)
- 	return msm_readl(hdmi->qfprom_mmio + reg);
- }
- 
--/*
-- * hdmi phy:
-- */
--
--enum hdmi_phy_type {
--	MSM_HDMI_PHY_8x60,
--	MSM_HDMI_PHY_8960,
--	MSM_HDMI_PHY_8x74,
--	MSM_HDMI_PHY_8996,
--	MSM_HDMI_PHY_MAX,
--};
--
--struct hdmi_phy_cfg {
--	enum hdmi_phy_type type;
--	void (*powerup)(struct hdmi_phy *phy, unsigned long int pixclock);
--	void (*powerdown)(struct hdmi_phy *phy);
--	const char * const *reg_names;
--	int num_regs;
--	const char * const *clk_names;
--	int num_clks;
--};
--
--extern const struct hdmi_phy_cfg msm_hdmi_phy_8x60_cfg;
--extern const struct hdmi_phy_cfg msm_hdmi_phy_8960_cfg;
--extern const struct hdmi_phy_cfg msm_hdmi_phy_8x74_cfg;
--extern const struct hdmi_phy_cfg msm_hdmi_phy_8996_cfg;
--
--struct hdmi_phy {
--	struct platform_device *pdev;
--	void __iomem *mmio;
--	struct hdmi_phy_cfg *cfg;
--	const struct hdmi_phy_funcs *funcs;
--	struct regulator_bulk_data *regs;
--	struct clk **clks;
--};
--
--static inline void hdmi_phy_write(struct hdmi_phy *phy, u32 reg, u32 data)
--{
--	msm_writel(data, phy->mmio + reg);
--}
--
--static inline u32 hdmi_phy_read(struct hdmi_phy *phy, u32 reg)
--{
--	return msm_readl(phy->mmio + reg);
--}
--
--int msm_hdmi_phy_resource_enable(struct hdmi_phy *phy);
--void msm_hdmi_phy_resource_disable(struct hdmi_phy *phy);
--void msm_hdmi_phy_powerup(struct hdmi_phy *phy, unsigned long int pixclock);
--void msm_hdmi_phy_powerdown(struct hdmi_phy *phy);
--void __init msm_hdmi_phy_driver_register(void);
--void __exit msm_hdmi_phy_driver_unregister(void);
--
--#ifdef CONFIG_COMMON_CLK
--int msm_hdmi_pll_8960_init(struct platform_device *pdev);
--int msm_hdmi_pll_8996_init(struct platform_device *pdev);
--#else
--static inline int msm_hdmi_pll_8960_init(struct platform_device *pdev)
--{
--	return -ENODEV;
--}
--
--static inline int msm_hdmi_pll_8996_init(struct platform_device *pdev)
--{
--	return -ENODEV;
--}
--#endif
--
- /*
-  * audio:
-  */
+ struct hdmi_bridge {
 diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c b/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
-index 1bbd76e595af..42aaaebbce00 100644
+index 9b1391d27ed3..62ce1455f974 100644
 --- a/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
 +++ b/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
-@@ -5,6 +5,7 @@
-  */
+@@ -25,7 +25,7 @@ static void msm_hdmi_power_on(struct drm_bridge *bridge)
+ 	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
+ 	struct hdmi *hdmi = hdmi_bridge->hdmi;
+ 	const struct hdmi_platform_config *config = hdmi->config;
+-	int i, ret;
++	int ret;
  
- #include <linux/delay.h>
-+#include <linux/phy/phy.h>
- #include <drm/drm_bridge_connector.h>
- #include <drm/drm_edid.h>
+ 	pm_runtime_get_sync(&hdmi->pdev->dev);
  
-@@ -32,17 +33,6 @@ static void msm_hdmi_power_on(struct drm_bridge *bridge)
- 	ret = regulator_bulk_enable(config->pwr_reg_cnt, hdmi->pwr_regs);
+@@ -33,21 +33,15 @@ static void msm_hdmi_power_on(struct drm_bridge *bridge)
  	if (ret)
  		DRM_DEV_ERROR(dev->dev, "failed to enable pwr regulator: %d\n", ret);
--
--	if (hdmi->extp_clk) {
--		DBG("pixclock: %lu", hdmi->pixclock);
--		ret = clk_set_rate(hdmi->extp_clk, hdmi->pixclock);
--		if (ret)
--			DRM_DEV_ERROR(dev->dev, "failed to set extp clk rate: %d\n", ret);
--
--		ret = clk_prepare_enable(hdmi->extp_clk);
--		if (ret)
--			DRM_DEV_ERROR(dev->dev, "failed to enable extp clk: %d\n", ret);
+ 
+-	if (config->pwr_clk_cnt > 0) {
++	if (hdmi->extp_clk) {
+ 		DBG("pixclock: %lu", hdmi->pixclock);
+-		ret = clk_set_rate(hdmi->pwr_clks[0], hdmi->pixclock);
+-		if (ret) {
+-			DRM_DEV_ERROR(dev->dev, "failed to set pixel clk: %s (%d)\n",
+-					config->pwr_clk_names[0], ret);
+-		}
 -	}
++		ret = clk_set_rate(hdmi->extp_clk, hdmi->pixclock);
++		if (ret)
++			DRM_DEV_ERROR(dev->dev, "failed to set extp clk rate: %d\n", ret);
+ 
+-	for (i = 0; i < config->pwr_clk_cnt; i++) {
+-		ret = clk_prepare_enable(hdmi->pwr_clks[i]);
+-		if (ret) {
+-			DRM_DEV_ERROR(dev->dev, "failed to enable pwr clk: %s (%d)\n",
+-					config->pwr_clk_names[i], ret);
+-		}
++		ret = clk_prepare_enable(hdmi->extp_clk);
++		if (ret)
++			DRM_DEV_ERROR(dev->dev, "failed to enable extp clk: %d\n", ret);
+ 	}
  }
  
- static void power_off(struct drm_bridge *bridge)
-@@ -58,9 +48,6 @@ static void power_off(struct drm_bridge *bridge)
+@@ -57,15 +51,15 @@ static void power_off(struct drm_bridge *bridge)
+ 	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
+ 	struct hdmi *hdmi = hdmi_bridge->hdmi;
+ 	const struct hdmi_platform_config *config = hdmi->config;
+-	int i, ret;
++	int ret;
+ 
+ 	/* TODO do we need to wait for final vblank somewhere before
+ 	 * cutting the clocks?
  	 */
  	mdelay(16 + 4);
  
--	if (hdmi->extp_clk)
--		clk_disable_unprepare(hdmi->extp_clk);
--
+-	for (i = 0; i < config->pwr_clk_cnt; i++)
+-		clk_disable_unprepare(hdmi->pwr_clks[i]);
++	if (hdmi->extp_clk)
++		clk_disable_unprepare(hdmi->extp_clk);
+ 
  	ret = regulator_bulk_disable(config->pwr_reg_cnt, hdmi->pwr_regs);
  	if (ret)
- 		DRM_DEV_ERROR(dev->dev, "failed to disable pwr regulator: %d\n", ret);
-@@ -131,14 +118,21 @@ static void msm_hdmi_config_avi_infoframe(struct hdmi *hdmi)
- static void msm_hdmi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
- 					      struct drm_bridge_state *old_bridge_state)
- {
-+	struct drm_atomic_state *state = old_bridge_state->base.state;
- 	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
- 	struct hdmi *hdmi = hdmi_bridge->hdmi;
--	struct hdmi_phy *phy = hdmi->phy;
-+	struct drm_connector *connector;
-+	union phy_configure_opts phy_opts;
-+	int ret;
- 
- 	DBG("power up");
- 
-+	connector = drm_atomic_get_new_connector_for_encoder(state, bridge->encoder);
-+	if (WARN_ON(!connector))
-+		return;
-+
- 	if (!hdmi->power_on) {
--		msm_hdmi_phy_resource_enable(phy);
-+		phy_init(hdmi->phy);
- 		msm_hdmi_power_on(bridge);
- 		hdmi->power_on = true;
- 	}
-@@ -149,9 +143,27 @@ static void msm_hdmi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
- 	}
- 
- 	if (hdmi->phy_power_on)
--		msm_hdmi_phy_powerdown(phy);
-+		phy_power_off(hdmi->phy);
-+
-+	phy_opts.hdmi.pixel_clk_rate = hdmi->pixclock / 1000;
-+	phy_opts.hdmi.bpc = connector->display_info.bpc;
-+	phy_opts.hdmi.color_space = HDMI_PHY_COLORSPACE_RGB;
-+	phy_configure(hdmi->phy, &phy_opts);
-+
-+	ret = phy_power_on(hdmi->phy);
-+	if (WARN_ON(ret))
-+		return;
-+
-+	if (hdmi->extp_clk) {
-+		ret = clk_set_rate(hdmi->extp_clk, hdmi->pixclock);
-+		if (ret)
-+			DRM_DEV_ERROR(bridge->dev->dev, "failed to set extp clk rate: %d\n", ret);
-+
-+		ret = clk_prepare_enable(hdmi->extp_clk);
-+		if (ret)
-+			DRM_DEV_ERROR(bridge->dev->dev, "failed to enable extp clk: %d\n", ret);
-+	}
- 
--	msm_hdmi_phy_powerup(phy, hdmi->pixclock);
- 	hdmi->phy_power_on = true;
- 
- 	msm_hdmi_set_mode(hdmi, true);
-@@ -165,7 +177,6 @@ static void msm_hdmi_bridge_atomic_post_disable(struct drm_bridge *bridge,
+@@ -270,7 +264,6 @@ static enum drm_mode_status msm_hdmi_bridge_mode_valid(struct drm_bridge *bridge
  {
  	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
  	struct hdmi *hdmi = hdmi_bridge->hdmi;
--	struct hdmi_phy *phy = hdmi->phy;
- 
- 	if (hdmi->hdcp_ctrl)
- 		msm_hdmi_hdcp_off(hdmi->hdcp_ctrl);
-@@ -173,7 +184,12 @@ static void msm_hdmi_bridge_atomic_post_disable(struct drm_bridge *bridge,
- 	DBG("power down");
- 	msm_hdmi_set_mode(hdmi, false);
- 
--	msm_hdmi_phy_powerdown(phy);
-+	if (hdmi->phy_power_on) {
-+		if (hdmi->extp_clk)
-+			clk_disable_unprepare(hdmi->extp_clk);
-+
-+		phy_power_off(hdmi->phy);
-+	}
- 	hdmi->phy_power_on = false;
- 
- 	if (hdmi->power_on) {
-@@ -181,7 +197,7 @@ static void msm_hdmi_bridge_atomic_post_disable(struct drm_bridge *bridge,
- 		hdmi->power_on = false;
- 		if (hdmi->hdmi_mode)
- 			msm_hdmi_audio_update(hdmi);
--		msm_hdmi_phy_resource_disable(phy);
-+		phy_exit(hdmi->phy);
- 	}
- }
+-	const struct hdmi_platform_config *config = hdmi->config;
+ 	struct msm_drm_private *priv = bridge->dev->dev_private;
+ 	struct msm_kms *kms = priv->kms;
+ 	long actual, requested;
+@@ -284,8 +277,8 @@ static enum drm_mode_status msm_hdmi_bridge_mode_valid(struct drm_bridge *bridge
+ 	if (kms->funcs->round_pixclk)
+ 		actual = kms->funcs->round_pixclk(kms,
+ 			requested, hdmi_bridge->hdmi->encoder);
+-	else if (config->pwr_clk_cnt > 0)
+-		actual = clk_round_rate(hdmi->pwr_clks[0], requested);
++	else if (hdmi->extp_clk)
++		actual = clk_round_rate(hdmi->extp_clk, requested);
+ 	else
+ 		actual = requested;
  
 -- 
 2.39.2
