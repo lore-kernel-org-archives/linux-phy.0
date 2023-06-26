@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 292EBEB64DC
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jun 2023 10:55:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05580EB64D7
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Jun 2023 11:21:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dkB32znSZVnetY1hDH5OK95nDlxVl/ywQJhVoe+M3kU=; b=Htc08PhPNEYl2h
-	a4/xtORqrj2LhdfdLtY8lU7jPdEXrYNV/c1Pphrr3fgc9zxE3DPhKmJhZb/ogiasrIejfDFU6Zw6M
-	3pvI2ofTSqsvPtGPVAXaHndROnuOiV36JqZ0YwVEQZy1KH2LECBgM8Sdn2XAiITwTLWcEKUicF6eD
-	sHbXn6sx9JfJhFD2xsMdetoizSXzffHdTMeguFv1RnAiQ7hnP9xc+dsHvalCaCh4HS/LgvFDxAlY1
-	fGaKass5yr/7/WzcEoMtyjGVaNt5e1ptyIQMIvUAfvcXbT1fOGPaGqBpp8q8sANMa3QROEWQkoyua
-	yESA7J66iPMsZagiUNBw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z1DSNzjMKMnwFmdeknf3bGCNuQB3qEVKcJESe25zU4I=; b=GlvJD0sp0LU0Tw
+	EiDl1HQZqhHHzvPOna6OKaoXkjFJ/QcSHHWjXrLlUy7ILvIB+2zwCFuc8AWMYYMk86LMCwQiYo9KE
+	kez/cEFQuxLMnZjjcQBhVqX0bgvouozYZO+OWm2ndQV9aFoZO1YNCVMWPYTqKU4up7j+uqfL3rDyZ
+	rsjUoveg6d1YJy5RiGudRTPVc8HEHx4V7dtDidqMlkRMVrgM+vWqPDqC6U1fj0z6Pcj9YTmekAR+D
+	/e2+QeiHesBHqODRjdmNyKBikWJOSfctPHzccxzD9qfZmuTCua9IYei4BEFmV4ulm334IVGwP84Ci
+	GnDRaclTekDhxmoujhkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDjt0-00A03E-1i;
-	Mon, 26 Jun 2023 10:55:58 +0000
-Received: from rcdn-iport-3.cisco.com ([173.37.86.74])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDjsw-00A01s-2T
-	for linux-phy@lists.infradead.org;
-	Mon, 26 Jun 2023 10:55:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=cisco.com; i=@cisco.com; l=9154; q=dns/txt; s=iport;
-  t=1687776954; x=1688986554;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=Jok1Iz5nXQsbUXyMJQ58YLr/WHMi5qND6uVNGD/RMig=;
-  b=YHvxW5rOcByh8dlxExphPUCkQU/lWD6LObNKhRwr/lj1CofQo2I/uRLg
-   PnVhz+sRFAJ9roW079Z6Nmksp9Y6Ui9b6r241sP09YztlPriAFMHBH5ws
-   kQpdZaA8ehvyK38zicXlBqJ8ed+YyAnlg0LqqspNtW5Y2K6OK8DaWBTZj
-   4=;
-X-IronPort-AV: E=Sophos;i="6.01,159,1684800000"; 
-   d="scan'208";a="78606347"
-Received: from rcdn-core-4.cisco.com ([173.37.93.155])
-  by rcdn-iport-3.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA; 26 Jun 2023 10:55:47 +0000
-Received: from sjc-ads-7449.cisco.com (sjc-ads-7449.cisco.com [10.30.220.234])
-	by rcdn-core-4.cisco.com (8.15.2/8.15.2) with ESMTPS id 35QAtkMb012982
-	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Mon, 26 Jun 2023 10:55:47 GMT
-Received: by sjc-ads-7449.cisco.com (Postfix, from userid 1777032)
-	id 46494CCD0B1; Mon, 26 Jun 2023 03:55:46 -0700 (PDT)
-From: Marcin Wierzbicki <mawierzb@cisco.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Lars-Peter Clausen <lars@metafoo.de>,
-        Swapnil Jakhade <sjakhade@cadence.com>,
-        Marcin Wierzbicki <mawierzb@cisco.com>,
-        =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Cc: xe-linux-external@cisco.com, danielwa@cisco.com, olicht@cisco.com,
-        Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Subject: [PATCH v4] phy: cadence: Sierra: Add single link SGMII register configuration
-Date: Mon, 26 Jun 2023 10:55:32 +0000
-Message-Id: <20230626105533.2999966-1-mawierzb@cisco.com>
-X-Mailer: git-send-email 2.28.0
+	id 1qDkHP-00A4Ck-1z;
+	Mon, 26 Jun 2023 11:21:11 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qDkHL-00A3ye-2V;
+	Mon, 26 Jun 2023 11:21:10 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id BAEBD24E046;
+	Mon, 26 Jun 2023 19:20:30 +0800 (CST)
+Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 26 Jun
+ 2023 19:20:30 +0800
+Received: from [192.168.125.127] (113.72.146.167) by EXMBX171.cuchost.com
+ (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 26 Jun
+ 2023 19:20:29 +0800
+Message-ID: <1c6036f2-bacf-2c2c-0649-6ad75ece9e06@starfivetech.com>
+Date: Mon, 26 Jun 2023 19:20:27 +0800
 MIME-Version: 1.0
-X-Auto-Response-Suppress: DR, OOF, AutoReply
-X-Outbound-SMTP-Client: 10.30.220.234, sjc-ads-7449.cisco.com
-X-Outbound-Node: rcdn-core-4.cisco.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH v7 3/5] phy: starfive: Add JH7110 USB 2.0 PHY driver
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>
+CC: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Conor Dooley
+	<conor@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Roger Quadros <rogerq@kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-riscv@lists.infradead.org>, "Paul
+ Walmsley" <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Mason Huo <mason.huo@starfivetech.com>
+References: <20230619094759.21013-1-minda.chen@starfivetech.com>
+ <20230619094759.21013-4-minda.chen@starfivetech.com>
+ <ZJLbCbG9+XnGVjKb@matsya>
+From: Minda Chen <minda.chen@starfivetech.com>
+In-Reply-To: <ZJLbCbG9+XnGVjKb@matsya>
+X-Originating-IP: [113.72.146.167]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX171.cuchost.com
+ (172.16.6.91)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230626_035554_994188_7D45EFDB 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230626_042108_301090_628C5C54 
+X-CRM114-Status: GOOD (  23.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,239 +81,268 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add single link SGMII register configuration for no SSC for
-cdns,sierra-phy-t0 compatibility string.
-The configuration is based on Sierra Programmer's Guide and
-validated in Cisco CrayAR SoC.
 
-Co-developed-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Signed-off-by: Marcin Wierzbicki <mawierzb@cisco.com>
----
-v4
-- moved TYPE_NONE under existing TYPE_SGMII entry,
-- v3: https://lore.kernel.org/all/20230522172415.1668975-1-mawierzb@cisco.com/
 
-v3
-- removed Change-Id from commit msg,
-- removed unnecessary new line,
-- renamed sgmii_cmn_vals to sgmii_pma_cmn_vals,
-- renamed sgmii_ln_vals to sgmii_pma_ln_vals.
-- v2: https://lore.kernel.org/lkml/20230508160142.2489365-1-mawierzb@cisco.com/T/#u
-
-v2
-- rebased version on top of commit 0cfa43ab46b5 ("phy: cadence: Sierra: Add PCIe + SGMII PHY multilink configuration")
-- v1: https://lore.kernel.org/lkml/20230419093008.195094-1-mawierzb@cisco.com/T/
-
-v1
-- initial version of single SGMII link support
-
-Regards,
-Marcin
----
----
- drivers/phy/cadence/phy-cadence-sierra.c | 98 ++++++++++++++++++++++++
- 1 file changed, 98 insertions(+)
-
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 13fcd3a65fe9..3c1f5ebe667b 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -30,23 +30,34 @@
- #define SIERRA_COMMON_CDB_OFFSET			0x0
- #define SIERRA_MACRO_ID_REG				0x0
- #define SIERRA_CMN_PLLLC_GEN_PREG			0x42
-+#define SIERRA_CMN_PLLLC_FBDIV_INT_MODE0_PREG		0x43
-+#define SIERRA_CMN_PLLLC_DCOCAL_CTRL_PREG		0x45
-+#define SIERRA_CMN_PLLLC_INIT_PREG			0x46
-+#define SIERRA_CMN_PLLLC_ITERTMR_PREG			0x47
- #define SIERRA_CMN_PLLLC_MODE_PREG			0x48
- #define SIERRA_CMN_PLLLC_LF_COEFF_MODE1_PREG		0x49
- #define SIERRA_CMN_PLLLC_LF_COEFF_MODE0_PREG		0x4A
- #define SIERRA_CMN_PLLLC_LOCK_CNTSTART_PREG		0x4B
-+#define SIERRA_CMN_PLLLC_LOCKSEARCH_PREG		0x4C
- #define SIERRA_CMN_PLLLC_CLK1_PREG			0x4D
-+#define SIERRA_CMN_PLLLC_CLK0_PREG			0x4E
- #define SIERRA_CMN_PLLLC_BWCAL_MODE1_PREG		0x4F
- #define SIERRA_CMN_PLLLC_BWCAL_MODE0_PREG		0x50
- #define SIERRA_CMN_PLLLC_DSMCORR_PREG			0x51
- #define SIERRA_CMN_PLLLC_SS_PREG			0x52
- #define SIERRA_CMN_PLLLC_SS_AMP_STEP_SIZE_PREG		0x53
- #define SIERRA_CMN_PLLLC_SSTWOPT_PREG			0x54
-+#define SIERRA_CMN_PLLCSM_PLLEN_TMR_PREG		0x5D
-+#define SIERRA_CMN_PLLCSM_PLLPRE_TMR_PREG		0x5E
- #define SIERRA_CMN_PLLLC_SS_TIME_STEPSIZE_MODE_PREG	0x62
- #define SIERRA_CMN_PLLLC_LOCK_DELAY_CTRL_PREG		0x63
-+#define SIERRA_SDOSCCAL_CLK_CNT_PREG			0x6E
- #define SIERRA_CMN_REFRCV_PREG				0x98
-+#define SIERRA_CMN_RESCAL_CTRLA_PREG			0xA0
- #define SIERRA_CMN_REFRCV1_PREG				0xB8
- #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
- #define SIERRA_CMN_PLLLC1_FBDIV_INT_PREG		0xC3
-+#define SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG		0xC5
- #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
- #define SIERRA_CMN_PLLLC1_CLK0_PREG			0xCE
- #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
-@@ -86,6 +97,7 @@
- #define SIERRA_DFE_BIASTRIM_PREG			0x04C
- #define SIERRA_DRVCTRL_ATTEN_PREG			0x06A
- #define SIERRA_DRVCTRL_BOOST_PREG			0x06F
-+#define SIERRA_LANE_TX_RECEIVER_DETECT_PREG		0x071
- #define SIERRA_TX_RCVDET_OVRD_PREG			0x072
- #define SIERRA_CLKPATHCTRL_TMR_PREG			0x081
- #define SIERRA_RX_CREQ_FLTR_A_MODE3_PREG		0x085
-@@ -101,6 +113,8 @@
- #define SIERRA_CREQ_SPARE_PREG				0x096
- #define SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG		0x097
- #define SIERRA_CTLELUT_CTRL_PREG			0x098
-+#define SIERRA_DEQ_BLK_TAU_CTRL1_PREG			0x0AC
-+#define SIERRA_DEQ_BLK_TAU_CTRL4_PREG			0x0AF
- #define SIERRA_DFE_ECMP_RATESEL_PREG			0x0C0
- #define SIERRA_DFE_SMP_RATESEL_PREG			0x0C1
- #define SIERRA_DEQ_PHALIGN_CTRL				0x0C4
-@@ -129,6 +143,9 @@
- #define SIERRA_DEQ_GLUT14				0x0F6
- #define SIERRA_DEQ_GLUT15				0x0F7
- #define SIERRA_DEQ_GLUT16				0x0F8
-+#define SIERRA_POSTPRECUR_EN_CEPH_CTRL_PREG		0x0F9
-+#define SIERRA_TAU_EN_CEPH2TO0_PREG			0x0FB
-+#define SIERRA_TAU_EN_CEPH5TO3_PREG			0x0FC
- #define SIERRA_DEQ_ALUT0				0x108
- #define SIERRA_DEQ_ALUT1				0x109
- #define SIERRA_DEQ_ALUT2				0x10A
-@@ -143,6 +160,7 @@
- #define SIERRA_DEQ_ALUT11				0x113
- #define SIERRA_DEQ_ALUT12				0x114
- #define SIERRA_DEQ_ALUT13				0x115
-+#define SIERRA_OEPH_EN_CTRL_PREG			0x124
- #define SIERRA_DEQ_DFETAP_CTRL_PREG			0x128
- #define SIERRA_DEQ_DFETAP0				0x129
- #define SIERRA_DEQ_DFETAP1				0x12B
-@@ -157,6 +175,7 @@
- #define SIERRA_DEQ_TAU_CTRL2_PREG			0x151
- #define SIERRA_DEQ_TAU_CTRL3_PREG			0x152
- #define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x158
-+#define SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG		0x159
- #define SIERRA_DEQ_PICTRL_PREG				0x161
- #define SIERRA_CPICAL_TMRVAL_MODE1_PREG			0x170
- #define SIERRA_CPICAL_TMRVAL_MODE0_PREG			0x171
-@@ -165,6 +184,7 @@
- #define SIERRA_CPI_RESBIAS_BIN_PREG			0x17E
- #define SIERRA_CPI_TRIM_PREG				0x17F
- #define SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG		0x183
-+#define SIERRA_CPICAL_RES_STARTCODE_MODE01_PREG		0x184
- #define SIERRA_EPI_CTRL_PREG				0x187
- #define SIERRA_LFPSDET_SUPPORT_PREG			0x188
- #define SIERRA_LFPSFILT_NS_PREG				0x18A
-@@ -176,6 +196,7 @@
- #define SIERRA_RXBUFFER_CTLECTRL_PREG			0x19E
- #define SIERRA_RXBUFFER_RCDFECTRL_PREG			0x19F
- #define SIERRA_RXBUFFER_DFECTRL_PREG			0x1A0
-+#define SIERRA_LN_SPARE_REG_PREG			0x1B0
- #define SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG		0x14F
- #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
-
-@@ -2401,6 +2422,77 @@ static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
- 	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
- };
-
-+/* SGMII PHY common configuration */
-+static const struct cdns_reg_pairs sgmii_pma_cmn_vals[] = {
-+	{0x0180, SIERRA_SDOSCCAL_CLK_CNT_PREG},
-+	{0x6000, SIERRA_CMN_REFRCV_PREG},
-+	{0x0031, SIERRA_CMN_RESCAL_CTRLA_PREG},
-+	{0x001C, SIERRA_CMN_PLLLC_FBDIV_INT_MODE0_PREG},
-+	{0x2106, SIERRA_CMN_PLLLC_LF_COEFF_MODE0_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC_LOCKSEARCH_PREG},
-+	{0x8103, SIERRA_CMN_PLLLC_CLK0_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC_BWCAL_MODE0_PREG},
-+	{0x0027, SIERRA_CMN_PLLCSM_PLLEN_TMR_PREG},
-+	{0x0062, SIERRA_CMN_PLLCSM_PLLPRE_TMR_PREG},
-+	{0x0800, SIERRA_CMN_PLLLC_SS_TIME_STEPSIZE_MODE_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC_INIT_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC_ITERTMR_PREG},
-+	{0x0020, SIERRA_CMN_PLLLC_LOCK_CNTSTART_PREG},
-+	{0x0013, SIERRA_CMN_PLLLC_DCOCAL_CTRL_PREG},
-+	{0x0013, SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG},
-+};
-+
-+static struct cdns_sierra_vals sgmii_cmn_vals = {
-+	.reg_pairs = sgmii_pma_cmn_vals,
-+	.num_regs = ARRAY_SIZE(sgmii_pma_cmn_vals),
-+};
-+
-+/* SGMII PHY lane configuration */
-+static const struct cdns_reg_pairs sgmii_ln_regs[] = {
-+	{0x691E, SIERRA_DET_STANDEC_D_PREG},
-+	{0x0FFE, SIERRA_PSC_RX_A0_PREG},
-+	{0x0104, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
-+	{0x0013, SIERRA_PLLCTRL_SUBRATE_PREG},
-+	{0x0106, SIERRA_PLLCTRL_GEN_D_PREG},
-+	{0x5234, SIERRA_PLLCTRL_CPGAIN_MODE_PREG},
-+	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
-+	{0x00AB, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
-+	{0x3C0E, SIERRA_CREQ_CCLKDET_MODE01_PREG},
-+	{0x3220, SIERRA_CREQ_FSMCLK_SEL_PREG},
-+	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
-+	{0x6320, SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG},
-+	{0x0000, SIERRA_CPI_OUTBUF_RATESEL_PREG},
-+	{0x15A2, SIERRA_LN_SPARE_REG_PREG},
-+	{0x7900, SIERRA_DEQ_BLK_TAU_CTRL1_PREG},
-+	{0x2202, SIERRA_DEQ_BLK_TAU_CTRL4_PREG},
-+	{0x2206, SIERRA_DEQ_TAU_CTRL2_PREG},
-+	{0x0005, SIERRA_LANE_TX_RECEIVER_DETECT_PREG},
-+	{0x8001, SIERRA_CREQ_SPARE_PREG},
-+	{0x0000, SIERRA_DEQ_CONCUR_CTRL1_PREG},
-+	{0xD004, SIERRA_DEQ_CONCUR_CTRL2_PREG},
-+	{0x0101, SIERRA_DEQ_GLUT9},
-+	{0x0101, SIERRA_DEQ_GLUT10},
-+	{0x0101, SIERRA_DEQ_GLUT11},
-+	{0x0101, SIERRA_DEQ_GLUT12},
-+	{0x0000, SIERRA_DEQ_GLUT13},
-+	{0x0000, SIERRA_DEQ_GLUT16},
-+	{0x0000, SIERRA_POSTPRECUR_EN_CEPH_CTRL_PREG},
-+	{0x0000, SIERRA_TAU_EN_CEPH2TO0_PREG},
-+	{0x0003, SIERRA_TAU_EN_CEPH5TO3_PREG},
-+	{0x0101, SIERRA_DEQ_ALUT8},
-+	{0x0101, SIERRA_DEQ_ALUT9},
-+	{0x0100, SIERRA_DEQ_ALUT10},
-+	{0x0000, SIERRA_OEPH_EN_CTRL_PREG},
-+	{0x5425, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x7458, SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG},
-+	{0x321F, SIERRA_CPICAL_RES_STARTCODE_MODE01_PREG},
-+};
-+
-+static struct cdns_sierra_vals sgmii_pma_ln_vals = {
-+	.reg_pairs = sgmii_ln_regs,
-+	.num_regs = ARRAY_SIZE(sgmii_ln_regs),
-+};
-+
- static const struct cdns_sierra_data cdns_map_sierra = {
- 	.id_value = SIERRA_MACRO_ID,
- 	.block_offset_shift = 0x2,
-@@ -2448,6 +2540,9 @@ static const struct cdns_sierra_data cdns_map_sierra = {
- 			},
- 		},
- 		[TYPE_SGMII] = {
-+			[TYPE_NONE] = {
-+				[NO_SSC] = &sgmii_cmn_vals,
-+			},
- 			[TYPE_PCIE] = {
- 				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
- 				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_cmn_vals,
-@@ -2486,6 +2581,9 @@ static const struct cdns_sierra_data cdns_map_sierra = {
- 			},
- 		},
- 		[TYPE_SGMII] = {
-+			[TYPE_NONE] = {
-+				[NO_SSC] = &sgmii_pma_ln_vals,
-+			},
- 			[TYPE_PCIE] = {
- 				[NO_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
- 				[EXTERNAL_SSC] = &sgmii_100_no_ssc_plllc1_opt3_ln_vals,
---
-2.28.0
-
+On 2023/6/21 19:12, Vinod Koul wrote:
+> On 19-06-23, 17:47, Minda Chen wrote:
+>> Add Starfive JH7110 SoC USB 2.0 PHY driver support.
+>> USB 2.0 PHY default connect to Cadence USB controller.
+>> 
+>> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
+>> Reviewed-by: Roger Quadros <rogerq@kernel.org>
+>> ---
+>>  MAINTAINERS                           |   6 ++
+>>  drivers/phy/Kconfig                   |   1 +
+>>  drivers/phy/Makefile                  |   1 +
+>>  drivers/phy/starfive/Kconfig          |  15 +++
+>>  drivers/phy/starfive/Makefile         |   2 +
+>>  drivers/phy/starfive/phy-jh7110-usb.c | 150 ++++++++++++++++++++++++++
+>>  6 files changed, 175 insertions(+)
+>>  create mode 100644 drivers/phy/starfive/Kconfig
+>>  create mode 100644 drivers/phy/starfive/Makefile
+>>  create mode 100644 drivers/phy/starfive/phy-jh7110-usb.c
+>> 
+>> diff --git a/MAINTAINERS b/MAINTAINERS
+>> index f794002a192e..d2ce89a8d31c 100644
+>> --- a/MAINTAINERS
+>> +++ b/MAINTAINERS
+>> @@ -20174,6 +20174,12 @@ S:	Supported
+>>  F:	Documentation/devicetree/bindings/watchdog/starfive*
+>>  F:	drivers/watchdog/starfive-wdt.c
+>>  
+>> +STARFIVE JH71X0 USB PHY DRIVER
+>> +M:	Minda Chen <minda.chen@starfivetech.com>
+>> +S:	Supported
+>> +F:	Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+>> +F:	drivers/phy/starfive/phy-jh7110-usb.c
+>> +
+>>  STATIC BRANCH/CALL
+>>  M:	Peter Zijlstra <peterz@infradead.org>
+>>  M:	Josh Poimboeuf <jpoimboe@kernel.org>
+>> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+>> index f46e3148d286..0000149edbc4 100644
+>> --- a/drivers/phy/Kconfig
+>> +++ b/drivers/phy/Kconfig
+>> @@ -91,6 +91,7 @@ source "drivers/phy/rockchip/Kconfig"
+>>  source "drivers/phy/samsung/Kconfig"
+>>  source "drivers/phy/socionext/Kconfig"
+>>  source "drivers/phy/st/Kconfig"
+>> +source "drivers/phy/starfive/Kconfig"
+>>  source "drivers/phy/sunplus/Kconfig"
+>>  source "drivers/phy/tegra/Kconfig"
+>>  source "drivers/phy/ti/Kconfig"
+>> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+>> index 54f312c10a40..fb3dc9de6111 100644
+>> --- a/drivers/phy/Makefile
+>> +++ b/drivers/phy/Makefile
+>> @@ -31,6 +31,7 @@ obj-y					+= allwinner/	\
+>>  					   samsung/	\
+>>  					   socionext/	\
+>>  					   st/		\
+>> +					   starfive/	\
+>>  					   sunplus/	\
+>>  					   tegra/	\
+>>  					   ti/		\
+>> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+>> new file mode 100644
+>> index 000000000000..2283feadfc76
+>> --- /dev/null
+>> +++ b/drivers/phy/starfive/Kconfig
+>> @@ -0,0 +1,15 @@
+>> +# SPDX-License-Identifier: GPL-2.0-only
+>> +#
+>> +# Phy drivers for StarFive platforms
+>> +#
+>> +
+>> +config PHY_STARFIVE_JH7110_USB
+>> +	tristate "Starfive JH7110 USB 2.0 PHY support"
+>> +	depends on USB_SUPPORT
+>> +	select GENERIC_PHY
+>> +	select USB_PHY
+>> +	help
+>> +	  Enable this to support the StarFive USB 2.0 PHY,
+>> +	  used with the Cadence USB controller.
+>> +	  If M is selected, the module will be called
+>> +	  phy-jh7110-usb.ko.
+>> diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+>> new file mode 100644
+>> index 000000000000..52e9a09cc619
+>> --- /dev/null
+>> +++ b/drivers/phy/starfive/Makefile
+>> @@ -0,0 +1,2 @@
+>> +# SPDX-License-Identifier: GPL-2.0
+>> +obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)	+= phy-jh7110-usb.o
+>> diff --git a/drivers/phy/starfive/phy-jh7110-usb.c b/drivers/phy/starfive/phy-jh7110-usb.c
+>> new file mode 100644
+>> index 000000000000..90d788423705
+>> --- /dev/null
+>> +++ b/drivers/phy/starfive/phy-jh7110-usb.c
+>> @@ -0,0 +1,150 @@
+>> +// SPDX-License-Identifier: GPL-2.0+
+>> +/*
+>> + * StarFive JH7110 USB 2.0 PHY driver
+>> + *
+>> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
+>> + * Author: Minda Chen <minda.chen@starfivetech.com>
+>> + */
+>> +
+>> +#include <linux/bits.h>
+>> +#include <linux/clk.h>
+>> +#include <linux/err.h>
+>> +#include <linux/io.h>
+>> +#include <linux/module.h>
+>> +#include <linux/phy/phy.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/usb/of.h>
+>> +
+>> +#define USB_125M_CLK_RATE		125000000
+>> +#define USB_LS_KEEPALIVE_OFF		0x4
+>> +#define USB_LS_KEEPALIVE_ENABLE		BIT(4)
+>> +
+>> +struct jh7110_usb2_phy {
+>> +	struct phy *phy;
+>> +	void __iomem *regs;
+>> +	struct clk *usb_125m_clk;
+>> +	struct clk *app_125m;
+>> +	enum phy_mode mode;
+>> +};
+>> +
+>> +static void jh7110_usb2_mode_set(struct jh7110_usb2_phy *phy)
+>> +{
+>> +	unsigned int val;
+>> +
+>> +	if (phy->mode != PHY_MODE_USB_HOST) {
+>> +		/* Enable the LS speed keep-alive signal */
+>> +		val = readl(phy->regs + USB_LS_KEEPALIVE_OFF);
+>> +		val |= USB_LS_KEEPALIVE_ENABLE;
+>> +		writel(val, phy->regs + USB_LS_KEEPALIVE_OFF);
+>> +	}
+> 
+> looks like this sets only for host, so why not call it
+> jh7110_usb2_set_host_mode() rather than get confused about
+> jh7110_usb2_mode_set/jh7110_usb2_phy_set_mode
+> 
+Thanks , It is only for host, I will change it.
+>> +}
+>> +
+>> +static int jh7110_usb2_phy_set_mode(struct phy *_phy,
+>> +				    enum phy_mode mode, int submode)
+>> +{
+>> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
+>> +
+>> +	switch (mode) {
+>> +	case PHY_MODE_USB_HOST:
+>> +	case PHY_MODE_USB_DEVICE:
+>> +	case PHY_MODE_USB_OTG:
+>> +		break;
+>> +	default:
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	if (mode != phy->mode) {
+>> +		dev_dbg(&_phy->dev, "Changing phy to %d\n", mode);
+>> +		phy->mode = mode;
+>> +		jh7110_usb2_mode_set(phy);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int jh7110_usb2_phy_init(struct phy *_phy)
+>> +{
+>> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
+>> +	int ret;
+>> +
+>> +	ret = clk_set_rate(phy->usb_125m_clk, USB_125M_CLK_RATE);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = clk_prepare_enable(phy->app_125m);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int jh7110_usb2_phy_exit(struct phy *_phy)
+>> +{
+>> +	struct jh7110_usb2_phy *phy = phy_get_drvdata(_phy);
+>> +
+>> +	clk_disable_unprepare(phy->app_125m);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct phy_ops jh7110_usb2_phy_ops = {
+>> +	.init		= jh7110_usb2_phy_init,
+>> +	.exit		= jh7110_usb2_phy_exit,
+>> +	.set_mode	= jh7110_usb2_phy_set_mode,
+>> +	.owner		= THIS_MODULE,
+>> +};
+>> +
+>> +static int jh7110_usb_phy_probe(struct platform_device *pdev)
+>> +{
+>> +	struct jh7110_usb2_phy *phy;
+>> +	struct device *dev = &pdev->dev;
+>> +	struct phy_provider *phy_provider;
+>> +
+>> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+>> +	if (!phy)
+>> +		return -ENOMEM;
+>> +
+>> +	phy->usb_125m_clk = devm_clk_get(dev, "125m");
+>> +	if (IS_ERR(phy->usb_125m_clk))
+>> +		return dev_err_probe(dev, PTR_ERR(phy->usb_125m_clk),
+>> +			"Failed to get 125m clock\n");
+>> +
+>> +	phy->app_125m = devm_clk_get(dev, "app_125m");
+>> +	if (IS_ERR(phy->app_125m))
+>> +		return dev_err_probe(dev, PTR_ERR(phy->app_125m),
+>> +			"Failed to get app 125m clock\n");
+>> +
+>> +	phy->regs = devm_platform_ioremap_resource(pdev, 0);
+>> +	if (IS_ERR(phy->regs))
+>> +		return dev_err_probe(dev, PTR_ERR(phy->regs),
+>> +			"Failed to map phy base\n");
+>> +
+>> +	phy->phy = devm_phy_create(dev, NULL, &jh7110_usb2_phy_ops);
+>> +	if (IS_ERR(phy->phy))
+>> +		return dev_err_probe(dev, PTR_ERR(phy->phy),
+>> +			"Failed to create phy\n");
+>> +
+>> +	phy_set_drvdata(phy->phy, phy);
+>> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+>> +
+>> +	return PTR_ERR_OR_ZERO(phy_provider);
+>> +}
+>> +
+>> +static const struct of_device_id jh7110_usb_phy_of_match[] = {
+>> +	{ .compatible = "starfive,jh7110-usb-phy" },
+>> +	{ /* sentinel */ },
+>> +};
+>> +MODULE_DEVICE_TABLE(of, jh7110_usb_phy_of_match);
+>> +
+>> +static struct platform_driver jh7110_usb_phy_driver = {
+>> +	.probe	= jh7110_usb_phy_probe,
+>> +	.driver = {
+>> +		.of_match_table	= jh7110_usb_phy_of_match,
+>> +		.name  = "jh7110-usb-phy",
+>> +	}
+>> +};
+>> +module_platform_driver(jh7110_usb_phy_driver);
+> 
+> A very light driver, only setting couple of things for hw. Can you
+> explain how phy registers are configured, am sure there would be many
+> more..? Do you rely on bootloader or some other entity for that?
+> 
+Phy Setting is set by reset. Because it is for StarFive JH7110 only. The same as PCIe PHY.
+>> +
+>> +MODULE_DESCRIPTION("StarFive JH7110 USB 2.0 PHY driver");
+>> +MODULE_AUTHOR("Minda Chen <minda.chen@starfivetech.com>");
+>> +MODULE_LICENSE("GPL");
+>> -- 
+>> 2.17.1
+> 
 
 -- 
 linux-phy mailing list
