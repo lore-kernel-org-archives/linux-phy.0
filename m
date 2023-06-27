@@ -4,88 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99985EB64DC
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jun 2023 12:06:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8470EB64DC
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jun 2023 08:28:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Subject:From:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HeuT24MAc+TRmbgdTl92W2xLyOtZi0nA+/MS+zWedqg=; b=NDh4rtXWYzagHw
-	c7mQkMF7U8Ah4HSX26yBOaBoi+5GCwIxQB+Ssb/k64RzAPcasLU3OZ5jZAEunRa4YBvtwBDlmh38D
-	mlsdZJV/7iZLXdOJ8vYto6UmOkoFThpXI0e/jUIOzf1a9OEtj6Z8l9/tuaibkKM8K1tz2LkWyHk9u
-	PT9yTixTS1EJ74QaLQaj3UhNn2etOciYxI4rO8d1WUH8OpYeBlsJkIrBsOEVchyTtRPFp7IjF2S/i
-	F2LGb0+xq24lqDoIda7JyNbpLVgo2siGAo683zWerL3hnlV1YiyXf+4ATLO4Lsa+8jzACPrFG/7s/
-	5N6AVly1HH+QOdC0Edzg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jBggm90zTRNxMlUDBJsHNX0By2+UfOLu6qBT5PbCPC0=; b=pI5VoD5iKfkzr3Wwo7Yy2kekEI
+	0M9sOly8pmKCONTZLqpkXCZ006vXcGphG17Jkxb7igFDNFhk0lo2LbPPx35vcqe55tBPQk6WeEa2Z
+	j2B873pru95eY9nunhzx7zrGdPhp1mQGb43apkapbXr2+u13wMFxFGgytT53ofygMrKvAr1G1oQxe
+	eN7sAynsw9Mh3FgUjRR7BTVy54uQ7n0yU9ooaVbJE4W3q+fd4AZ51pSxfxu/twUT8WGE7SO+Mm3mR
+	VaufhGJOikP70ft/+afoa43nhc0dBRTcwQRqz5funWtUeC3W5rDxSsYPsj564kHB0AgEnoyIodBXR
+	Z5ZdXOrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDkzX-00AAFp-09;
-	Mon, 26 Jun 2023 12:06:47 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1qE43b-00CZUH-1f;
+	Tue, 27 Jun 2023 08:28:15 +0000
+Received: from mail-oa1-x29.google.com ([2001:4860:4864:20::29])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qDkzS-00AAEq-0q
+	id 1qE43T-00CZQl-20
 	for linux-phy@lists.infradead.org;
-	Mon, 26 Jun 2023 12:06:45 +0000
-Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2b6a5fd1f46so6836991fa.1
-        for <linux-phy@lists.infradead.org>; Mon, 26 Jun 2023 05:06:41 -0700 (PDT)
+	Tue, 27 Jun 2023 08:28:12 +0000
+Received: by mail-oa1-x29.google.com with SMTP id 586e51a60fabf-1b0156a1c4bso1885854fac.1
+        for <linux-phy@lists.infradead.org>; Tue, 27 Jun 2023 01:28:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687781200; x=1690373200;
-        h=content-transfer-encoding:in-reply-to:subject:from:references:cc:to
-         :content-language:user-agent:mime-version:date:message-id:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=iFvDHdE+E4ebpoenEHV9zlHSfy8p8BTczqjB+kJdiLo=;
-        b=DSGuCTu1Dmfr6HAKsE9vi2AVSbNoNCbJ+FSKvglLf93pHrhYSH1rJLq2KtVowOe6NB
-         VegrgKyezlJSggar7La91Y3oy10q1WfzCj9DhdxR6n7XA86+Br4q4i+UZjUjabBENUCR
-         a3CvlKqsGoXGeSs8reSY7k/j+yphSVy+neIbuN9tSdHVLumFUs5qFbo9Y60QjmFhWokD
-         +Xg7aGMDrT64mY1fK3rBP/SXL4fhKh7zs9jK/AVhsErASdMgWBK4LHZCd2P5q53CZ1w1
-         BDVZvm7fLgZrdGVTldL7sCHhZ9zDzrJ/H/YbSPIGAvP8ue+0duS99u2ZoHQgyvWUDOkg
-         PMVA==
+        d=baylibre-com.20221208.gappssmtp.com; s=20221208; t=1687854486; x=1690446486;
+        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
+         :user-agent:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=8UWirjr+RVmyC+2T5ZDh5Y5kJsgze55ru0avbhANH70=;
+        b=qrtk1hJjE47T1BRXgie7qfGvFDDcztw5cuxNEU3ziLcraUPR6pND0oZedHsBBydY/d
+         BveO25QAkfqb6lfdzf/QKzq//r6jIED0P93W0jzCCiGT5jZx3L/KxMKXiXl6d9UUzeym
+         ZmorQlyO8mGrkTnBsPMPjeJ+qfIYl6KK3DKv37tqTEkXOW2vUEFtYYJuhxTHuGflcBdb
+         jFvvLXOOCxbk4wla8FeqEQZKkYhqRzudcJ+bHQvBmfcyMvM95Lo5RyNqMerM7cihUBDI
+         RarjWhTA8/McknRkPGduh0qSdVduY/Dfe7NK1AbrHlQQo16S3P4kky+KePggy1FJ7qwg
+         /lDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687781200; x=1690373200;
-        h=content-transfer-encoding:in-reply-to:subject:from:references:cc:to
-         :content-language:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iFvDHdE+E4ebpoenEHV9zlHSfy8p8BTczqjB+kJdiLo=;
-        b=YNWr6n7qXSw8uBL371dG77NAJaadO/MXPcQGC+r2NvlIwP+eCqOTvteu9XEDVfwxaa
-         UXwlknXRp2Cdz4fMTZQnMqDEd/fD7BmJVOQNi+TCbEw2yeLAC7Igji3Jyro9IsY478ZO
-         vFRWUac2qPYsYRhmzC9kDbcu9mPAaNAnm4fllpl+2nYM6VNkZ68HNPKBxJ4MB53M/Bhd
-         ZzQ6GyzdfZMlN7tTLR6IzNP12jmpundx+pOOtqxaFLzmOTHu1SyLSijkesBWDlyef4uW
-         OWujRjMdLxxdSO8skiZ9qk8GAIzM/SlLOBJMSY0OEcKs3dImbNImxpm9tPfSgPdy2WBZ
-         X60w==
-X-Gm-Message-State: AC+VfDxPOyqBLsARlouEC4jwAIAXpdOmO6250Csd1Uou3ShoCtMDP4Wt
-	jtOSoAgkFQYwWT8pMpxmI8GB0g==
-X-Google-Smtp-Source: ACHHUZ4oS5zejTHtP+Rs3l8FcwLkuHjFLyjkve0ESWA1mf5wmeIXXPp+UsFn0DruoeFLkiOTzGtaQw==
-X-Received: by 2002:a2e:8296:0:b0:2b5:a31d:499 with SMTP id y22-20020a2e8296000000b002b5a31d0499mr3914499ljg.52.1687781200164;
-        Mon, 26 Jun 2023 05:06:40 -0700 (PDT)
-Received: from [192.168.1.101] (abyk179.neoplus.adsl.tpnet.pl. [83.9.30.179])
-        by smtp.gmail.com with ESMTPSA id v23-20020a2e9617000000b002aeeda05382sm1194217ljh.29.2023.06.26.05.06.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 26 Jun 2023 05:06:39 -0700 (PDT)
-Message-ID: <1513ea17-2807-4f7c-30f2-6158b5f3e55e@linaro.org>
-Date: Mon, 26 Jun 2023 14:06:38 +0200
+        d=1e100.net; s=20221208; t=1687854486; x=1690446486;
+        h=cc:to:subject:message-id:date:mime-version:in-reply-to:references
+         :user-agent:from:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8UWirjr+RVmyC+2T5ZDh5Y5kJsgze55ru0avbhANH70=;
+        b=cgQXyDSLwOlX/C+dyNxOznW64EOQsd4mic103iDS+JpAsLMBhH+xg2IQHaTOOugRBR
+         DBtEujcnmOxTrfvzoxX1Z8JmOvmRzu47sc4Vkxv25f66bDtCkrf6zCwbAfwDcUycVIIG
+         FUUD1Bu5G0/0b4mMGpqwjPZhJxP/NSroKH2nAL/lFOKD5Go6pQrrJh6za1Xo3rgIQlfu
+         N6tLVJL6WHmJYNyl765aIpHhfZ49iHOnwyRsJar40wOrPOg0EF0j2/W+Y/iKsjz3XQLb
+         iddvxQy679HqJBMU4to2EAJblxBridNqbj9o3N0XNvX7gFBKmbYgIBOe8xk2gM38juTr
+         Kxvg==
+X-Gm-Message-State: AC+VfDxFZSr++6XcWyOjnDqfcayoX1TpDZkiCyQG+is50BOcEfReqWUa
+	1UDdFqcNfe1iH2wcmVYnFIwvq+xzbvteUlfDVBnP6g==
+X-Google-Smtp-Source: ACHHUZ6k7XRZlxhAzvKEiry3y3JVoBfNsVZtvPER+b8e1YBfDnhI5jsFOA9bJ1GHj2LLGOdPONdMyqAIEu37KfADLrk=
+X-Received: by 2002:a05:6870:ecac:b0:19e:fa1f:fc2f with SMTP id
+ eo44-20020a056870ecac00b0019efa1ffc2fmr28957159oab.38.1687854485754; Tue, 27
+ Jun 2023 01:28:05 -0700 (PDT)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 27 Jun 2023 01:28:04 -0700
+From: Guillaume Ranquet <granquet@baylibre.com>
+User-Agent: meli 0.7.2
+References: <20220919-v8-0-a84c80468fe9@baylibre.com> <20220919-v8-3-a84c80468fe9@baylibre.com>
+ <1224c3d3-f68a-ea33-6ed4-eb806eeb6e2b@linaro.org>
+In-Reply-To: <1224c3d3-f68a-ea33-6ed4-eb806eeb6e2b@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Marijn Suijten <marijn.suijten@somainline.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd
- <swboyd@chromium.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Bjorn Andersson <andersson@kernel.org>,
- linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org
-References: <20230625114222.96689-1-dmitry.baryshkov@linaro.org>
- <20230625114222.96689-3-dmitry.baryshkov@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Subject: Re: [PATCH v2 02/15] phy: qualcomm: add QMP HDMI PHY driver
-In-Reply-To: <20230625114222.96689-3-dmitry.baryshkov@linaro.org>
+Date: Tue, 27 Jun 2023 01:28:04 -0700
+Message-ID: <CABnWg9sAh7G+LbJ-Kt0xhvjHTZ8hATRJ+28VTfYKh=SfBHGw2Q@mail.gmail.com>
+Subject: Re: [PATCH v8 3/3] phy: mediatek: add support for phy-mtk-hdmi-mt8195
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Jitao shi <jitao.shi@mediatek.com>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@gmail.com>, 
+	Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>
+Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, mac.shen@mediatek.com, 
+	stuart.lee@mediatek.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230626_050642_332630_3497798F 
-X-CRM114-Status: GOOD (  26.24  )
+X-CRM114-CacheID: sfid-20230627_012807_685367_935C9033 
+X-CRM114-Status: GOOD (  17.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,770 +102,712 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25.06.2023 13:42, Dmitry Baryshkov wrote:
-> Port Qualcomm QMP HDMI PHY to the generic PHY framework. Split the
-> generic part and the msm8996 part. When adding support for msm8992/4 and
-> msm8998 (which also employ QMP for HDMI PHY), one will have to provide
-> the PLL programming part only.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
-[...]
+On Sat, 24 Jun 2023 20:04, Dmitry Baryshkov <dmitry.baryshkov@linaro.org> wrote:
+>On 16/02/2023 18:02, Guillaume Ranquet wrote:
+>> Add support for the mediatek hdmi phy on MT8195 SoC
+>>
+>> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+>> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+>> ---
+>>   drivers/phy/mediatek/Makefile              |   1 +
+>>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 495 +++++++++++++++++++++++++++++
+>>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h | 113 +++++++
+>>   drivers/phy/mediatek/phy-mtk-hdmi.c        |   3 +
+>>   drivers/phy/mediatek/phy-mtk-hdmi.h        |   2 +
+>>   5 files changed, 614 insertions(+)
+>>
+>> diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
+>> index fb1f8edaffa7..c9a50395533e 100644
+>> --- a/drivers/phy/mediatek/Makefile
+>> +++ b/drivers/phy/mediatek/Makefile
+>> @@ -12,6 +12,7 @@ obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
+>>   phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
+>>   phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt2701.o
+>>   phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt8173.o
+>> +phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt8195.o
+>>   obj-$(CONFIG_PHY_MTK_HDMI)		+= phy-mtk-hdmi-drv.o
+>>
+>>   phy-mtk-mipi-dsi-drv-y			:= phy-mtk-mipi-dsi.o
+>> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> new file mode 100644
+>> index 000000000000..abfc077fb0a8
+>> --- /dev/null
+>> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> @@ -0,0 +1,495 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (c) 2022 MediaTek Inc.
+>> + * Copyright (c) 2022 BayLibre, SAS
+>> + */
+>> +#include <linux/delay.h>
+>> +#include <linux/io.h>
+>> +#include <linux/mfd/syscon.h>
+>> +#include <linux/module.h>
+>> +#include <linux/phy/phy.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/types.h>
+>> +#include <linux/units.h>
+>> +#include <linux/nvmem-consumer.h>
+>> +
+>> +#include "phy-mtk-io.h"
+>> +#include "phy-mtk-hdmi.h"
+>> +#include "phy-mtk-hdmi-mt8195.h"
+>> +
+>> +static void mtk_hdmi_ana_fifo_en(struct mtk_hdmi_phy *hdmi_phy)
+>> +{
+>> +	/* make data fifo writable for hdmi2.0 */
+>> +	mtk_phy_set_bits(hdmi_phy->regs + HDMI_ANA_CTL, REG_ANA_HDMI20_FIFO_EN);
+>> +}
+>> +
+>> +static void
+>> +mtk_phy_tmds_clk_ratio(struct mtk_hdmi_phy *hdmi_phy, bool enable)
+>> +{
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_hdmi_ana_fifo_en(hdmi_phy);
+>> +
+>> +	/* HDMI 2.0 specification, 3.4Gbps <= TMDS Bit Rate <= 6G,
+>> +	 * clock bit ratio 1:40, under 3.4Gbps, clock bit ratio 1:10
+>> +	 */
+>> +	if (enable)
+>> +		mtk_phy_update_field(regs + HDMI20_CLK_CFG, REG_TXC_DIV, 3);
+>> +	else
+>> +		mtk_phy_clear_bits(regs + HDMI20_CLK_CFG, REG_TXC_DIV);
+>> +}
+>> +
+>> +static void mtk_hdmi_pll_sel_src(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_phy_clear_bits(regs + HDMI_CTL_3, REG_HDMITX_REF_XTAL_SEL);
+>> +	mtk_phy_clear_bits(regs + HDMI_CTL_3, REG_HDMITX_REF_RESPLL_SEL);
+>> +
+>> +	/* DA_HDMITX21_REF_CK for TXPLL input source */
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_10, RG_HDMITXPLL_REF_CK_SEL);
+>> +}
+>> +
+>> +static void mtk_hdmi_pll_perf(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_0, RG_HDMITXPLL_BP2);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_BC);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_IC, 0x1);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_BR, 0x2);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_IR, 0x2);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_BP);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_0, RG_HDMITXPLL_IBAND_FIX_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT14);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_HIKVCO);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_0, RG_HDMITXPLL_HREN, 0x1);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_0, RG_HDMITXPLL_LVR_SEL, 0x1);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT12_11);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_0, RG_HDMITXPLL_TCL_EN);
+>> +}
+>> +
+>> +static int mtk_hdmi_pll_set_hw(struct clk_hw *hw, u8 prediv,
+>> +			       u8 fbkdiv_high,
+>> +			       u32 fbkdiv_low,
+>> +			       u8 fbkdiv_hs3, u8 posdiv1,
+>> +			       u8 posdiv2, u8 txprediv,
+>> +			       u8 txposdiv,
+>> +			       u8 digital_div)
+>> +{
+>> +	u8 txposdiv_value;
+>> +	u8 div3_ctrl_value;
+>> +	u8 posdiv_vallue;
+>> +	u8 div_ctrl_value;
+>> +	u8 reserve_3_2_value;
+>> +	u8 prediv_value;
+>> +	u8 reserve13_value;
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_hdmi_pll_sel_src(hw);
+>> +
+>> +	mtk_hdmi_pll_perf(hw);
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_10, RG_HDMITX21_BIAS_PE_BG_VREF_SEL, 0x2);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_10, RG_HDMITX21_VREF_SEL);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_9, RG_HDMITX21_SLDO_VREF_SEL, 0x2);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_10, RG_HDMITX21_BIAS_PE_VREF_SELB);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_3, RG_HDMITX21_SLDOLPF_EN);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_6, RG_HDMITX21_INTR_CAL, 0x11);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_PWD);
+>> +
+>> +	/* TXPOSDIV */
+>> +	txposdiv_value = ilog2(txposdiv);
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_6, RG_HDMITX21_TX_POSDIV, txposdiv_value);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_TX_POSDIV_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_EN);
+>> +
+>> +	/* TXPREDIV */
+>> +	switch (txprediv) {
+>> +	case 2:
+>> +		div3_ctrl_value = 0x0;
+>> +		posdiv_vallue = 0x0;
+>> +		break;
+>> +	case 4:
+>> +		div3_ctrl_value = 0x0;
+>> +		posdiv_vallue = 0x1;
+>> +		break;
+>> +	case 6:
+>> +		div3_ctrl_value = 0x1;
+>> +		posdiv_vallue = 0x0;
+>> +		break;
+>> +	case 12:
+>> +		div3_ctrl_value = 0x1;
+>> +		posdiv_vallue = 0x1;
+>> +		break;
+>> +	default:
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_4, RG_HDMITXPLL_POSDIV_DIV3_CTRL, div3_ctrl_value);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_4, RG_HDMITXPLL_POSDIV, posdiv_vallue);
+>> +
+>> +	/* POSDIV1 */
+>> +	switch (posdiv1) {
+>> +	case 5:
+>> +		div_ctrl_value = 0x0;
+>> +		break;
+>> +	case 10:
+>> +		div_ctrl_value = 0x1;
+>> +		break;
+>> +	case 12:
+>> +		div_ctrl_value = 0x2;
+>> +		break;
+>> +	case 15:
+>> +		div_ctrl_value = 0x3;
+>> +		break;
+>> +	default:
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_4, RG_HDMITXPLL_DIV_CTRL, div_ctrl_value);
+>> +
+>> +	/* DE add new setting */
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT14);
+>> +
+>> +	/* POSDIV2 */
+>> +	switch (posdiv2) {
+>> +	case 1:
+>> +		reserve_3_2_value = 0x0;
+>> +		break;
+>> +	case 2:
+>> +		reserve_3_2_value = 0x1;
+>> +		break;
+>> +	case 4:
+>> +		reserve_3_2_value = 0x2;
+>> +		break;
+>> +	case 6:
+>> +		reserve_3_2_value = 0x3;
+>> +		break;
+>> +	default:
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT3_2, reserve_3_2_value);
+>> +
+>> +	/* DE add new setting */
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT1_0, 0x2);
+>> +
+>> +	/* PREDIV */
+>> +	prediv_value = ilog2(prediv);
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_4, RG_HDMITXPLL_PREDIV, prediv_value);
+>> +
+>> +	/* FBKDIV_HS3 */
+>> +	reserve13_value = ilog2(fbkdiv_hs3);
+>> +
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_1, RG_HDMITXPLL_RESERVE_BIT13, reserve13_value);
+>> +
+>> +	/* FBDIV */
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_4, RG_HDMITXPLL_FBKDIV_HIGH, fbkdiv_high);
+>> +	mtk_phy_update_field(regs + HDMI_1_PLL_CFG_3, RG_HDMITXPLL_FBKDIV_LOW, fbkdiv_low);
+>> +
+>> +	/* Digital DIVIDER */
+>> +	mtk_phy_clear_bits(regs + HDMI_CTL_3, REG_PIXEL_CLOCK_SEL);
+>> +
+>> +	if (digital_div == 1) {
+>> +		mtk_phy_clear_bits(regs + HDMI_CTL_3, REG_HDMITX_PIXEL_CLOCK);
+>> +	} else {
+>> +		mtk_phy_set_bits(regs + HDMI_CTL_3, REG_HDMITX_PIXEL_CLOCK);
+>> +		mtk_phy_update_field(regs + HDMI_CTL_3, REG_HDMITXPLL_DIV, digital_div - 1);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+>> +			     unsigned long rate, unsigned long parent_rate)
+>> +{
+>> +	u8 digital_div, txprediv, txposdiv, fbkdiv_high, posdiv1, posdiv2;
+>> +	u64 tmds_clk, pixel_clk, da_hdmitx21_ref_ck, ns_hdmipll_ck, pcw;
+>> +	u8 txpredivs[4] = { 2, 4, 6, 12 };
+>> +	u32 fbkdiv_low;
+>> +	int i, ret;
+>> +
+>> +	pixel_clk = rate;
+>> +	tmds_clk = pixel_clk;
+>> +
+>> +	if (tmds_clk < 25 * MEGA || tmds_clk > 594 * MEGA)
+>> +		return -EINVAL;
+>> +
+>> +	if (tmds_clk >= 340 * MEGA)
+>> +		hdmi_phy->tmds_over_340M = true;
+>> +	else
+>> +		hdmi_phy->tmds_over_340M = false;
+>> +
+>> +	/* in Hz */
+>> +	da_hdmitx21_ref_ck = 26 * MEGA;
+>> +
+>> +	/*  TXPOSDIV stage treatment:
+>> +	 *	0M  <  TMDS clk  < 54M		  /8
+>> +	 *	54M <= TMDS clk  < 148.35M    /4
+>> +	 *	148.35M <=TMDS clk < 296.7M   /2
+>> +	 *	296.7 <=TMDS clk <= 594M	  /1
+>> +	 */
+>> +	if (tmds_clk < 54 * MEGA)
+>> +		txposdiv = 8;
+>> +	else if (tmds_clk >= 54 * MEGA && tmds_clk < 148.35 * MEGA)
+>> +		txposdiv = 4;
+>> +	else if (tmds_clk >= 148.35 * MEGA && tmds_clk < 296.7 * MEGA)
+>> +		txposdiv = 2;
+>> +	else if (tmds_clk >= 296.7 * MEGA && tmds_clk <= 594 * MEGA)
+>> +		txposdiv = 1;
+>> +	else
+>> +		return -EINVAL;
+>> +
+>> +	/* calculate txprediv: can be 2, 4, 6, 12
+>> +	 * ICO clk = 5*TMDS_CLK*TXPOSDIV*TXPREDIV
+>> +	 * ICO clk constraint: 5G =< ICO clk <= 12G
+>> +	 */
+>> +	for (i = 0; i < ARRAY_SIZE(txpredivs); i++) {
+>> +		ns_hdmipll_ck = 5 * tmds_clk * txposdiv * txpredivs[i];
+>> +		if (ns_hdmipll_ck >= 5 * GIGA &&
+>> +		    ns_hdmipll_ck <= 1 * GIGA)
+>> +			break;
+>> +	}
+>> +	if (i == (ARRAY_SIZE(txpredivs) - 1) &&
+>> +	    (ns_hdmipll_ck < 5 * GIGA || ns_hdmipll_ck > 12 * GIGA)) {
+>> +		return -EINVAL;
+>> +	}
+>> +	if (i == ARRAY_SIZE(txpredivs))
+>> +		return -EINVAL;
+>> +
+>> +	txprediv = txpredivs[i];
+>> +
+>> +	/* PCW calculation: FBKDIV
+>> +	 * formula: pcw=(frequency_out*2^pcw_bit) / frequency_in / FBKDIV_HS3;
+>> +	 * RG_HDMITXPLL_FBKDIV[32:0]:
+>> +	 * [32,24] 9bit integer, [23,0]:24bit fraction
+>> +	 */
+>> +	pcw = div_u64(((u64)ns_hdmipll_ck) << PCW_DECIMAL_WIDTH,
+>> +		      da_hdmitx21_ref_ck / PLL_FBKDIV_HS3);
+>> +
+>> +	if (pcw > GENMASK_ULL(32, 0))
+>> +		return -EINVAL;
+>> +
+>> +	fbkdiv_high = FIELD_GET(GENMASK_ULL(63, 32), pcw);
+>> +	fbkdiv_low = FIELD_GET(GENMASK(31, 0), pcw);
+>> +
+>> +	/* posdiv1:
+>> +	 * posdiv1 stage treatment according to color_depth:
+>> +	 * 24bit -> posdiv1 /10, 30bit -> posdiv1 /12.5,
+>> +	 * 36bit -> posdiv1 /15, 48bit -> posdiv1 /10
+>> +	 */
+>> +	posdiv1 = 10;
+>> +	posdiv2 = 1;
+>> +
+>> +	/* Digital clk divider, max /32 */
+>> +	digital_div = div_u64((u64)ns_hdmipll_ck, posdiv1 / posdiv2 / pixel_clk);
+>> +	if (!(digital_div <= 32 && digital_div >= 1))
+>> +		return -EINVAL;
+>> +
+>> +	mtk_hdmi_pll_set_hw(hw, PLL_PREDIV, fbkdiv_high, fbkdiv_low,
+>> +			    PLL_FBKDIV_HS3, posdiv1, posdiv2, txprediv,
+>> +			    txposdiv, digital_div);
+>> +	if (ret)
+>> +		return -EINVAL;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int mtk_hdmi_pll_drv_setting(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +	u8 data_channel_bias, clk_channel_bias;
+>> +	u8 impedance, impedance_en;
+>> +	u32 tmds_clk;
+>> +	u32 pixel_clk = hdmi_phy->pll_rate;
+>> +
+>> +	tmds_clk = pixel_clk;
+>> +
+>> +	/* bias & impedance setting:
+>> +	 * 3G < data rate <= 6G: enable impedance 100ohm,
+>> +	 *      data channel bias 24mA, clock channel bias 20mA
+>> +	 * pixel clk >= HD,  74.175MHZ <= pixel clk <= 300MHZ:
+>> +	 *      enalbe impedance 100ohm
+>> +	 *      data channel 20mA, clock channel 16mA
+>> +	 * 27M =< pixel clk < 74.175: disable impedance
+>> +	 *      data channel & clock channel bias 10mA
+>> +	 */
+>> +
+>> +	/* 3G < data rate <= 6G, 300M < tmds rate <= 594M */
+>> +	if (tmds_clk > 300 * MEGA && tmds_clk <= 594 * MEGA) {
+>> +		data_channel_bias = 0x3c; /* 24mA */
+>> +		clk_channel_bias = 0x34; /* 20mA */
+>> +		impedance_en = 0xf;
+>> +		impedance = 0x36; /* 100ohm */
+>> +	} else if (pixel_clk >= 74.175 * MEGA && pixel_clk <= 300 * MEGA) {
+>> +		data_channel_bias = 0x34; /* 20mA */
+>> +		clk_channel_bias = 0x2c; /* 16mA */
+>> +		impedance_en = 0xf;
+>> +		impedance = 0x36; /* 100ohm */
+>> +	} else if (pixel_clk >= 27 * MEGA && pixel_clk < 74.175 * MEGA) {
+>> +		data_channel_bias = 0x14; /* 10mA */
+>> +		clk_channel_bias = 0x14; /* 10mA */
+>> +		impedance_en = 0x0;
+>> +		impedance = 0x0;
+>> +	} else {
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	/* bias */
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D0, data_channel_bias);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D1, data_channel_bias);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_1, RG_HDMITX21_DRV_IBIAS_D2, data_channel_bias);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_IBIAS_CLK, clk_channel_bias);
+>> +
+>> +	/* impedance */
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_IMP_EN, impedance_en);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D0_EN1, impedance);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D1_EN1, impedance);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_D2_EN1, impedance);
+>> +	mtk_phy_update_field(regs + HDMI_1_CFG_2, RG_HDMITX21_DRV_IMP_CLK_EN1, impedance);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int mtk_hdmi_pll_prepare(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_TX_POSDIV_EN);
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_0, RG_HDMITX21_SER_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_D0_DRV_OP_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_D1_DRV_OP_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_D2_DRV_OP_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_CK_DRV_OP_EN);
+>> +
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_D0_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_D1_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_D2_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_CK_EN);
+>> +
+>> +	mtk_hdmi_pll_drv_setting(hw);
+>> +
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_10, RG_HDMITX21_BG_PWD);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_BIAS_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_3, RG_HDMITX21_CKLDO_EN);
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_3, RG_HDMITX21_SLDO_EN);
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_4, DA_HDMITXPLL_PWR_ON);
+>> +	usleep_range(5, 10);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_4, DA_HDMITXPLL_ISO_EN);
+>> +	usleep_range(5, 10);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_PWD);
+>> +	usleep_range(30, 50);
+>> +	return 0;
+>> +}
+>> +
+>> +static void mtk_hdmi_pll_unprepare(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_CFG_10, RG_HDMITX21_BG_PWD);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_BIAS_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_3, RG_HDMITX21_CKLDO_EN);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_CFG_3, RG_HDMITX21_SLDO_EN);
+>> +
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_2, RG_HDMITXPLL_PWD);
+>> +	usleep_range(10, 20);
+>> +	mtk_phy_set_bits(regs + HDMI_1_PLL_CFG_4, DA_HDMITXPLL_ISO_EN);
+>> +	usleep_range(10, 20);
+>> +	mtk_phy_clear_bits(regs + HDMI_1_PLL_CFG_4, DA_HDMITXPLL_PWR_ON);
+>> +}
+>> +
+>> +static int mtk_hdmi_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+>> +				 unsigned long parent_rate)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +
+>> +	dev_dbg(hdmi_phy->dev, "%s: %lu Hz, parent: %lu Hz\n", __func__, rate,
+>> +		parent_rate);
+>> +
+>> +	return mtk_hdmi_pll_calc(hdmi_phy, hw, rate, parent_rate);
+>> +}
+>> +
+>> +static long mtk_hdmi_pll_round_rate(struct clk_hw *hw, unsigned long rate,
+>> +				    unsigned long *parent_rate)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +
+>> +	hdmi_phy->pll_rate = rate;
+>> +	return rate;
+>> +}
+>> +
+>> +static unsigned long mtk_hdmi_pll_recalc_rate(struct clk_hw *hw,
+>> +					      unsigned long parent_rate)
+>> +{
+>> +	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+>> +
+>> +	return hdmi_phy->pll_rate;
+>> +}
+>> +
+>> +static const struct clk_ops mtk_hdmi_pll_ops = {
+>> +	.prepare = mtk_hdmi_pll_prepare,
+>> +	.unprepare = mtk_hdmi_pll_unprepare,
+>> +	.set_rate = mtk_hdmi_pll_set_rate,
+>> +	.round_rate = mtk_hdmi_pll_round_rate,
+>> +	.recalc_rate = mtk_hdmi_pll_recalc_rate,
+>> +};
+>> +
+>> +static void vtx_signal_en(struct mtk_hdmi_phy *hdmi_phy, bool on)
+>> +{
+>> +	void __iomem *regs = hdmi_phy->regs;
+>> +
+>> +	if (on)
+>> +		mtk_phy_set_bits(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_EN);
+>> +	else
+>> +		mtk_phy_clear_bits(regs + HDMI_1_CFG_0, RG_HDMITX21_DRV_EN);
+>> +}
+>> +
+>> +static void mtk_hdmi_phy_enable_tmds(struct mtk_hdmi_phy *hdmi_phy)
+>> +{
+>> +	vtx_signal_en(hdmi_phy, true);
+>> +	usleep_range(100, 150);
+>> +}
+>> +
+>> +static void mtk_hdmi_phy_disable_tmds(struct mtk_hdmi_phy *hdmi_phy)
+>> +{
+>> +	vtx_signal_en(hdmi_phy, false);
+>> +}
+>> +
+>> +static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+>> +{
+>> +	struct phy_configure_opts_dp *dp_opts = &opts->dp;
+>
+>This makes HDMI PHY use DP configuration structure. I think it might be
+>better to use new struct defined at [1]
+>
+>[1]
+>https://lore.kernel.org/linux-phy/cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com/#t
+>
+>> +	struct mtk_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
+>> +	int ret;
+>> +
+>> +	ret = clk_set_rate(hdmi_phy->pll, dp_opts->link_rate);
+>
+>dp_opts->link_rate can take only several fixed values. Is this the case
+>for your HDMI PHY too?
+>
 
-> --- /dev/null
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c
-> @@ -0,0 +1,184 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2016, The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2023, Linaro Ltd.
-> + */
-> +
-> +#include <linux/of_device.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +
-> +#include "phy-qcom-qmp-hdmi.h"
-> +
-> +int qmp_hdmi_phy_init(struct phy *phy)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
-> +
-> +	return pm_runtime_resume_and_get(hdmi_phy->dev);
-> +}
-> +
-> +int qmp_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts)
-> +{
-> +        const struct phy_configure_opts_hdmi *hdmi_opts = &opts->hdmi;
-> +	struct qmp_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
-Misaligned
+Hi Dmitry,
+Thx for your input, this is definitively a better solution than to
+"hijack" the DP configuration struct.
 
-> +        int ret = 0;
-> +
-> +        memcpy(&hdmi_phy->hdmi_opts, hdmi_opts, sizeof(*hdmi_opts));
-> +
-> +        return ret;
-> +}
-> +
-> +int qmp_hdmi_phy_exit(struct phy *phy)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
-> +
-> +	pm_runtime_put_noidle(hdmi_phy->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused qmp_hdmi_runtime_resume(struct device *dev)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = dev_get_drvdata(dev);
-> +	int ret;
-> +
-> +	ret = regulator_bulk_enable(ARRAY_SIZE(hdmi_phy->supplies), hdmi_phy->supplies);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_bulk_prepare_enable(ARRAY_SIZE(hdmi_phy->clks), hdmi_phy->clks);
-> +	if (ret)
-> +		goto out_disable_supplies;
-> +
-> +	return 0;
-> +
-> +out_disable_supplies:
-> +	regulator_bulk_disable(ARRAY_SIZE(hdmi_phy->supplies), hdmi_phy->supplies);
-> +
-> +	return ret;
-> +}
-> +
-> +static int __maybe_unused qmp_hdmi_runtime_suspend(struct device *dev)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = dev_get_drvdata(dev);
-> +
-> +	clk_bulk_disable_unprepare(ARRAY_SIZE(hdmi_phy->clks), hdmi_phy->clks);
-> +	regulator_bulk_disable(ARRAY_SIZE(hdmi_phy->supplies), hdmi_phy->supplies);
-> +
-> +	return 0;
-> +}
-> +
-> +static int qmp_hdmi_probe(struct platform_device *pdev)
-> +{
-> +	struct clk_init_data init = {
-> +		.name = "hdmipll",
-> +		.parent_data = (const struct clk_parent_data[]) {
-> +			{ .fw_name = "xo", .name = "xo_board" },
-> +		},
-> +		.flags = CLK_GET_RATE_NOCACHE,
-> +		.num_parents = 1,
-> +	};
-> +	const struct qmp_hdmi_cfg *cfg = of_device_get_match_data(&pdev->dev);
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct qmp_hdmi_phy *hdmi_phy;
-> +	int ret, i;
-> +
-> +	hdmi_phy = devm_kzalloc(dev, sizeof(*hdmi_phy), GFP_KERNEL);
-> +	if (!hdmi_phy)
-> +		return -ENOMEM;
-> +
-> +	hdmi_phy->dev = dev;
-> +
-> +	hdmi_phy->serdes = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(hdmi_phy->serdes))
-> +		return PTR_ERR(hdmi_phy->serdes);
-> +
-> +	for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++) {
-> +		hdmi_phy->tx[i] = devm_platform_ioremap_resource(pdev, 1 + i);
-> +		if (IS_ERR(hdmi_phy->tx[i]))
-> +			return PTR_ERR(hdmi_phy->tx[i]);
-> +	}
-> +
-> +	hdmi_phy->phy_reg = devm_platform_ioremap_resource(pdev, 5);
-Please create an enum with all the reg indices
+I'm directly passing the 'drm_display_mode clock' to the configure
+callback, so I'm guessing that I'm not respecting the "allowed values"
+defined in phy-dp.h
 
-> +	if (IS_ERR(hdmi_phy->phy_reg))
-> +		return PTR_ERR(hdmi_phy->phy_reg);
-> +
-> +	hdmi_phy->clks[0].id = "iface";
-> +	hdmi_phy->clks[1].id = "ref";
-> +	ret = devm_clk_bulk_get(dev, ARRAY_SIZE(hdmi_phy->clks), hdmi_phy->clks);
-> +	if (ret)
-> +		return ret;
-> +
-> +	hdmi_phy->supplies[0].supply = "vddio";
-> +	hdmi_phy->supplies[0].init_load_uA = 100000;
-> +	hdmi_phy->supplies[1].supply = "vcca";
-> +	hdmi_phy->supplies[1].init_load_uA = 10000;
-> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(hdmi_phy->supplies), hdmi_phy->supplies);
-> +	if (ret)
-> +		return ret;
-> +
-> +	platform_set_drvdata(pdev, hdmi_phy);
-> +
-> +	ret = devm_pm_runtime_enable(&pdev->dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = pm_runtime_resume_and_get(&pdev->dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	init.ops = cfg->pll_ops;
-> +	hdmi_phy->pll_hw.init = &init;
-> +	ret = devm_clk_hw_register(hdmi_phy->dev, &hdmi_phy->pll_hw);
-> +	if (ret)
-> +		goto err;
-> +
-> +	ret = devm_of_clk_add_hw_provider(hdmi_phy->dev, of_clk_hw_simple_get, &hdmi_phy->pll_hw);
-> +	if (ret)
-> +		goto err;
-> +
-> +	hdmi_phy->phy = devm_phy_create(dev, pdev->dev.of_node, cfg->phy_ops);
-> +	if (IS_ERR(hdmi_phy->phy)) {
-> +		ret = PTR_ERR(hdmi_phy->phy);
-> +		goto err;
-> +	}
-> +
-> +	phy_set_drvdata(hdmi_phy->phy, hdmi_phy);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +	pm_runtime_put_noidle(&pdev->dev);
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +
-> +err:
-> +	pm_runtime_put_noidle(&pdev->dev);
-> +	return ret;
-> +}
-> +
-> +static const struct of_device_id qmp_hdmi_of_match_table[] = {
-> +	{
-> +		.compatible = "qcom,hdmi-phy-8996", .data = &qmp_hdmi_8996_cfg,
-> +	},
-{ .compatible ... },
-?
+Thx,
+Guillaume.
 
-> +	{ },
-> +};
-> +MODULE_DEVICE_TABLE(of, qmp_hdmi_of_match_table);
-> +
-> +DEFINE_RUNTIME_DEV_PM_OPS(qmp_hdmi_pm_ops,
-> +			  qmp_hdmi_runtime_suspend,
-> +			  qmp_hdmi_runtime_resume,
-> +			  NULL);
-> +
-> +static struct platform_driver qmp_hdmi_driver = {
-> +	.probe		= qmp_hdmi_probe,
-> +	.driver = {
-> +		.name	= "qcom-qmp-hdmi-phy",
-> +		.of_match_table = qmp_hdmi_of_match_table,
-> +		.pm     = &qmp_hdmi_pm_ops,
-> +	},
-> +};
-> +
-> +module_platform_driver(qmp_hdmi_driver);
-> +
-> +MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
-> +MODULE_DESCRIPTION("Qualcomm QMP HDMI PHY driver");
-> +MODULE_LICENSE("GPL");
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c
-> new file mode 100644
-> index 000000000000..27ffa70d0faa
-> --- /dev/null
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c
-> @@ -0,0 +1,441 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2016, The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2023, Linaro Ltd.
-> + */
-> +
-> +#include <linux/delay.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/phy/phy.h>
-> +
-> +#include "phy-qcom-qmp-hdmi.h"
-> +#include "phy-qcom-qmp-qserdes-com.h"
-> +#include "phy-qcom-qmp-qserdes-txrx.h"
-> +
-> +#define HDMI_VCO_MAX_FREQ			12000000000UL
-> +#define HDMI_VCO_MIN_FREQ			8000000000UL
-> +
-> +#define HDMI_PCLK_MAX_FREQ			600000000UL
-> +#define HDMI_PCLK_MIN_FREQ			25000000UL
-> +
-> +#define HDMI_HIGH_FREQ_BIT_CLK_THRESHOLD	3400000000UL
-> +#define HDMI_DIG_FREQ_BIT_CLK_THRESHOLD		1500000000UL
-> +#define HDMI_MID_FREQ_BIT_CLK_THRESHOLD		750000000UL
-> +#define HDMI_DEFAULT_REF_CLOCK			19200000
-> +#define HDMI_PLL_CMP_CNT			1024
-> +
-> +#define HDMI_PLL_POLL_MAX_READS			100
-> +#define HDMI_PLL_POLL_TIMEOUT_US		150
-> +
-> +#define REG_HDMI_8996_PHY_CFG					0x00000000
-> +#define REG_HDMI_8996_PHY_PD_CTL				0x00000004
-> +#define REG_HDMI_8996_PHY_MODE					0x00000008
-> +#define REG_HDMI_8996_PHY_MISR_CLEAR				0x0000000c
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_CFG0			0x00000010
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_CFG1			0x00000014
-> +#define REG_HDMI_8996_PHY_TX0_TX1_PRBS_SEED_BYTE0		0x00000018
-> +#define REG_HDMI_8996_PHY_TX0_TX1_PRBS_SEED_BYTE1		0x0000001c
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_PATTERN0			0x00000020
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_PATTERN1			0x00000024
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_CFG0			0x00000028
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_CFG1			0x0000002c
-> +#define REG_HDMI_8996_PHY_TX2_TX3_PRBS_SEED_BYTE0		0x00000030
-> +#define REG_HDMI_8996_PHY_TX2_TX3_PRBS_SEED_BYTE1		0x00000034
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_PATTERN0			0x00000038
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_PATTERN1			0x0000003c
-> +#define REG_HDMI_8996_PHY_DEBUG_BUS_SEL				0x00000040
-> +#define REG_HDMI_8996_PHY_TXCAL_CFG0				0x00000044
-> +#define REG_HDMI_8996_PHY_TXCAL_CFG1				0x00000048
-> +#define REG_HDMI_8996_PHY_TX0_TX1_LANE_CTL			0x0000004c
-> +#define REG_HDMI_8996_PHY_TX2_TX3_LANE_CTL			0x00000050
-> +#define REG_HDMI_8996_PHY_LANE_BIST_CONFIG			0x00000054
-> +#define REG_HDMI_8996_PHY_CLOCK					0x00000058
-> +#define REG_HDMI_8996_PHY_MISC1					0x0000005c
-> +#define REG_HDMI_8996_PHY_MISC2					0x00000060
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_STATUS0			0x00000064
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_STATUS1			0x00000068
-> +#define REG_HDMI_8996_PHY_TX0_TX1_BIST_STATUS2			0x0000006c
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_STATUS0			0x00000070
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_STATUS1			0x00000074
-> +#define REG_HDMI_8996_PHY_TX2_TX3_BIST_STATUS2			0x00000078
-> +#define REG_HDMI_8996_PHY_PRE_MISR_STATUS0			0x0000007c
-> +#define REG_HDMI_8996_PHY_PRE_MISR_STATUS1			0x00000080
-> +#define REG_HDMI_8996_PHY_PRE_MISR_STATUS2			0x00000084
-> +#define REG_HDMI_8996_PHY_PRE_MISR_STATUS3			0x00000088
-> +#define REG_HDMI_8996_PHY_POST_MISR_STATUS0			0x0000008c
-> +#define REG_HDMI_8996_PHY_POST_MISR_STATUS1			0x00000090
-> +#define REG_HDMI_8996_PHY_POST_MISR_STATUS2			0x00000094
-> +#define REG_HDMI_8996_PHY_POST_MISR_STATUS3			0x00000098
-> +#define REG_HDMI_8996_PHY_STATUS				0x0000009c
-> +#define REG_HDMI_8996_PHY_MISC3_STATUS				0x000000a0
-> +#define REG_HDMI_8996_PHY_MISC4_STATUS				0x000000a4
-> +#define REG_HDMI_8996_PHY_DEBUG_BUS0				0x000000a8
-> +#define REG_HDMI_8996_PHY_DEBUG_BUS1				0x000000ac
-> +#define REG_HDMI_8996_PHY_DEBUG_BUS2				0x000000b0
-> +#define REG_HDMI_8996_PHY_DEBUG_BUS3				0x000000b4
-> +#define REG_HDMI_8996_PHY_PHY_REVISION_ID0			0x000000b8
-> +#define REG_HDMI_8996_PHY_PHY_REVISION_ID1			0x000000bc
-> +#define REG_HDMI_8996_PHY_PHY_REVISION_ID2			0x000000c0
-> +#define REG_HDMI_8996_PHY_PHY_REVISION_ID3			0x000000c4
-> +
-> +struct qmp_hdmi_8996_post_divider {
-> +	u64 vco_freq;
-> +	int hsclk_divsel;
-> +	int vco_ratio;
-> +	int tx_band_sel;
-> +};
-> +
-> +static inline u32 qmp_hdmi_8996_pll_get_pll_cmp(u64 fdata, unsigned long ref_clk)
-> +{
-> +	u64 dividend = HDMI_PLL_CMP_CNT * fdata;
-HDMI_PLL_CMP_CNT should be ULL
-
-> +	u32 divisor = ref_clk * 10;
-> +	u32 rem;
-> +
-> +	rem = do_div(dividend, divisor);
-> +	if (rem > (divisor >> 1))
-> +		dividend++;
-> +
-> +	return dividend - 1;
-> +}
-> +
-> +static int qmp_hdmi_8996_pll_get_post_div(struct qmp_hdmi_8996_post_divider *pd, u64 bclk)
-> +{
-> +	int ratio[] = { 2, 3, 4, 5, 6, 9, 10, 12, 14, 15, 20, 21, 25, 28, 35 };
-> +	int hs_divsel[] = { 0, 4, 8, 12, 1, 5, 2, 9, 3, 13, 10, 7, 14, 11, 15 };
-> +	int tx_band_sel[] = { 0, 1, 2, 3 };
-> +	u64 vco_freq[60];
-60 -> ARRAY_SIZE() * ARRAY_SIZE()?
-
-> +	u64 vco, vco_optimal;
-> +	int half_rate_mode = 0;
-> +	int vco_optimal_index, vco_freq_index;
-> +	int i, j;
-Reverse-Christmas-tree?
-
-> +
-> +retry:
-> +	vco_optimal = HDMI_VCO_MAX_FREQ;
-> +	vco_optimal_index = -1;
-> +	vco_freq_index = 0;
-> +	for (i = 0; i < 15; i++) {
-> +		for (j = 0; j < 4; j++) {
-> +			u32 ratio_mult = ratio[i] << tx_band_sel[j];
-> +
-> +			vco = bclk >> half_rate_mode;
-> +			vco *= ratio_mult;
-> +			vco_freq[vco_freq_index++] = vco;
-> +		}
-> +	}
-> +
-> +	for (i = 0; i < 60; i++) {
-> +		u64 vco_tmp = vco_freq[i];
-> +
-> +		if ((vco_tmp >= HDMI_VCO_MIN_FREQ) &&
-> +		    (vco_tmp <= vco_optimal)) {
-> +			vco_optimal = vco_tmp;
-> +			vco_optimal_index = i;
-> +		}
-> +	}
-> +
-> +	if (vco_optimal_index == -1) {
-> +		if (!half_rate_mode) {
-> +			half_rate_mode = 1;
-> +			goto retry;
-> +		}
-> +
-> +		return -EINVAL;
-> +	}
-> +
-> +	pd->vco_freq = vco_optimal;
-> +	pd->tx_band_sel = tx_band_sel[vco_optimal_index % 4];
-> +	pd->vco_ratio = ratio[vco_optimal_index / 4];
-> +	pd->hsclk_divsel = hs_divsel[vco_optimal_index / 4];
-> +
-> +	return 0;
-> +}
-> +
-> +static int qmp_hdmi_8996_phy_set_rate(struct qmp_hdmi_phy *hdmi_phy)
-> +{
-> +	unsigned long parent_rate = HDMI_DEFAULT_REF_CLOCK;
-HDMI_DEFAULT_REF_CLOCK could be UL for completeness
-
-> +	unsigned long rate = hdmi_phy->hdmi_opts.pixel_clk_rate * 1000;
-> +	struct qmp_hdmi_8996_post_divider pd;
-> +	bool gen_ssc = false;
-> +	u64 bclk;
-> +	u64 dec_start;
-> +	u64 frac_start;
-> +	u64 fdata;
-> +	u32 pll_divisor;
-> +	u32 rem;
-> +	u32 integloop_gain;
-> +	u32 pll_cmp;
-> +	int i, ret;
-This list is very long, perhaps collapse some common-type var definitions
-
-> +
-> +	bclk = ((u64)rate) * 10;
-19.2 mil * 10 will not overflow u32
-
-> +	ret = qmp_hdmi_8996_pll_get_post_div(&pd, bclk);
-> +	if (ret) {
-> +		dev_err(hdmi_phy->dev, "PLL calculation failed\n");
-> +		return ret;
-> +	}
-> +
-> +	dec_start = pd.vco_freq;
-> +	pll_divisor = 4 * parent_rate;
-> +	do_div(dec_start, pll_divisor);
-> +
-> +	frac_start = pd.vco_freq * (1 << 20);
-> +
-> +	rem = do_div(frac_start, pll_divisor);
-> +	frac_start -= dec_start * (1 << 20);
-> +	if (rem > (pll_divisor >> 1))
-> +		frac_start++;
-> +
-> +	fdata = pd.vco_freq;
-> +	do_div(fdata, pd.vco_ratio);
-> +
-> +	pll_cmp = qmp_hdmi_8996_pll_get_pll_cmp(fdata, parent_rate);
-> +
-> +	/* Initially shut down PHY */
-> +	dev_dbg(hdmi_phy->dev, "Disabling PHY");
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_PD_CTL, 0x0);
-> +	udelay(500);
-usleep_range
-
-https://www.kernel.org/doc/Documentation/timers/timers-howto.txt
-
-> +
-> +	/* Power up sequence */
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_BG_CTRL, 0x04);
-> +
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_PD_CTL, 0x1);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_RESETSM_CNTRL, 0x20);
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_TX0_TX1_LANE_CTL, 0x0f);
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_TX2_TX3_LANE_CTL, 0x0f);
-> +
-> +	hdmi_tx_chan_write(hdmi_phy, 0, QSERDES_TX_LANE_MODE, 0x43);
-> +	hdmi_tx_chan_write(hdmi_phy, 2, QSERDES_TX_LANE_MODE, 0x43);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SYSCLK_BUF_ENABLE, 0x1e);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x07);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SYSCLK_EN_SEL, 0x37);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SYS_CLK_CTRL, 0x02);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_CLK_ENABLE1, 0x0e);
-> +
-> +	if (frac_start != 0 || gen_ssc) {
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_PLL_CCTRL_MODE0, 0x28);
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_PLL_RCTRL_MODE0, 0x16);
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_CP_CTRL_MODE0,
-> +			       11000000 / (parent_rate/ 20));
-> +		integloop_gain = (64 * parent_rate) / HDMI_DEFAULT_REF_CLOCK;
-do_div
-
-> +	} else {
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_PLL_CCTRL_MODE0, 0x01);
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_PLL_RCTRL_MODE0, 0x10);
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_CP_CTRL_MODE0, 0x23);
-> +		integloop_gain = (1022 * parent_rate) / (100 * 1000 * 1000);
-> +	}
-> +
-> +	/* Bypass VCO calibration */
-> +	if (bclk > HDMI_DIG_FREQ_BIT_CLK_THRESHOLD) {
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_SVS_MODE_CLK_SEL, 1);
-> +		integloop_gain <<= 1;
-> +	} else {
-> +		hdmi_pll_write(hdmi_phy, QSERDES_COM_SVS_MODE_CLK_SEL, 2);
-> +		integloop_gain <<= 2;
-> +	}
-> +
-> +	integloop_gain = min_t(u32, integloop_gain, 2046);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_BG_TRIM, 0x0f);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_PLL_IVCO, 0x0f);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_VCO_TUNE_CTRL, 0);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_BG_CTRL, 0x06);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_CLK_SELECT, 0x30);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_HSCLK_SEL, 0x20 | pd.hsclk_divsel);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_LOCK_CMP_EN, 0x0);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_DEC_START_MODE0, dec_start);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_DIV_FRAC_START1_MODE0,
-> +		       frac_start & 0xff);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_DIV_FRAC_START2_MODE0,
-> +		       (frac_start >> 8) & 0xff);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_DIV_FRAC_START3_MODE0,
-> +		       (frac_start >> 16) & 0xf);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_INTEGLOOP_GAIN0_MODE0,
-> +		       integloop_gain & 0xff);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_INTEGLOOP_GAIN1_MODE0,
-> +		       (integloop_gain >> 8) & 0xff);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_LOCK_CMP1_MODE0,
-> +		       pll_cmp & 0xff);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_LOCK_CMP2_MODE0,
-> +		       (pll_cmp >> 8) & 0xff);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_LOCK_CMP3_MODE0,
-> +		       (pll_cmp >> 16) & 0x3);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_VCO_TUNE_MAP, 0x00);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_CORE_CLK_EN, 0x2c);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_CORECLK_DIV, 5);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_CMN_CONFIG, 0x02);
-> +
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_RESCODE_DIV_NUM, 0x15);
-> +
-> +	/* TX lanes setup (TX 0/1/2/3) */
-> +	for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++) {
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_CLKBUF_ENABLE, 0x03);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_BAND, pd.tx_band_sel + 4);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_RESET_TSYNC_EN, 0x03);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_VMODE_CTRL1, 0x00);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_DRV_LVL_OFFSET, 0x00);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_RES_CODE_LANE_OFFSET, 0x00);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TRAN_DRVR_EMP_EN, 0x03);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_PARRATE_REC_DETECT_IDLE_EN, 0x40);
-> +		hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_HP_PD_ENABLES,
-is this a misspelt 'ENABLED'?
-
-> +				   i != 3 ? 0xc : 0x3);
-> +	}
-> +
-> +	if (bclk > HDMI_HIGH_FREQ_BIT_CLK_THRESHOLD) {
-> +		for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++) {
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_DRV_LVL,
-> +					   i != 3 ? 0x25 : 0x22);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_EMP_POST1_LVL,
-> +					   i != 3 ? 0x23 : 0x27);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_VMODE_CTRL2,
-> +					   i != 3 ? 0x0d : 0x00);
-> +		}
-> +	} else if (bclk > HDMI_MID_FREQ_BIT_CLK_THRESHOLD) {
-> +		for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++) {
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_DRV_LVL, 0x25);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_EMP_POST1_LVL, 0x23);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_VMODE_CTRL2,
-> +					   i != 3 ? 0x0d : 0x00);
-> +		}
-> +	} else {
-> +		for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++) {
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_DRV_LVL, 0x20);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_TX_EMP_POST1_LVL, 0x20);
-> +			hdmi_tx_chan_write(hdmi_phy, i, QSERDES_TX_VMODE_CTRL2, 0x0e);
-> +		}
-> +	}
-> +
-> +	if (bclk > HDMI_HIGH_FREQ_BIT_CLK_THRESHOLD)
-> +		hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_MODE, 0x10);
-> +	else
-> +		hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_MODE, 0x00);
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_PD_CTL, 0x1f);
-> +
-> +	return 0;
-> +}
-> +
-> +static int qmp_hdmi_8996_phy_power_on(struct phy *phy)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
-> +	u32 status;
-> +	int i, ret = 0;
-Reverse-Christmas-tree?
-
-> +
-> +	ret = qmp_hdmi_8996_phy_set_rate(hdmi_phy);
-> +	if (ret) {
-> +		dev_err(hdmi_phy->dev, "Setting pixel clock rate failed\n");
-> +		return ret;
-> +	}
-> +
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_CFG, 0x1);
-> +	udelay(100);
-usleep_range
-
-> +
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_CFG, 0x19);
-> +	udelay(100);
-usleep_range
-
-> +
-> +	ret = readl_poll_timeout(hdmi_phy->serdes + QSERDES_COM_C_READY_STATUS,
-> +				 status, status & BIT(0),
-> +				 HDMI_PLL_POLL_TIMEOUT_US,
-> +				 HDMI_PLL_POLL_MAX_READS * HDMI_PLL_POLL_TIMEOUT_US);
-> +
-> +	if (ret) {
-> +		dev_warn(hdmi_phy->dev, "HDMI PLL is not locked\n");
-> +		return ret;
-> +	}
-> +
-> +	for (i = 0; i < HDMI_NUM_TX_CHANNEL; i++)
-> +		hdmi_tx_chan_write(hdmi_phy, i,
-> +				   QSERDES_TX_HIGHZ_TRANSCEIVEREN_BIAS_DRVR_EN,
-> +				   0x6f);
-> +
-> +	/* Disable SSC */
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SSC_PER1, 0x0);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SSC_PER2, 0x0);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SSC_STEP_SIZE1, 0x0);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SSC_STEP_SIZE2, 0x0);
-> +	hdmi_pll_write(hdmi_phy, QSERDES_COM_SSC_EN_CENTER, 0x2);
-> +
-> +	ret = readl_poll_timeout(hdmi_phy->phy_reg + REG_HDMI_8996_PHY_STATUS,
-> +				 status, status & BIT(0),
-> +				 HDMI_PLL_POLL_TIMEOUT_US,
-> +				 HDMI_PLL_POLL_MAX_READS * HDMI_PLL_POLL_TIMEOUT_US);
-> +	if (ret) {
-> +		dev_warn(hdmi_phy->dev, "HDMI PLL is not locked\n");
-> +		return ret;
-> +	}
-> +
-> +	/* Restart the retiming buffer */
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_CFG, 0x18);
-> +	udelay(1);
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_CFG, 0x19);
-> +
-> +	return 0;
-> +}
-> +
-> +static int qmp_hdmi_8996_phy_power_off(struct phy *phy)
-> +{
-> +	struct qmp_hdmi_phy *hdmi_phy = phy_get_drvdata(phy);
-> +
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8996_PHY_CFG, 0x6);
-> +	usleep_range(100, 150);
-> +
-> +	return 0;
-> +}
-> +
-> +static long qmp_hdmi_8996_pll_round_rate(struct clk_hw *hw,
-> +				     unsigned long rate,
-> +				     unsigned long *parent_rate)
-> +{
-> +	return clamp(rate, HDMI_PCLK_MIN_FREQ, HDMI_PCLK_MAX_FREQ);
-> +}
-> +
-> +static unsigned long qmp_hdmi_8996_pll_recalc_rate(struct clk_hw *hw,
-> +					       unsigned long parent_rate)
-> +{
-> +	struct qmp_hdmi_phy *phy = hw_clk_to_pll(hw);
-> +	u32 cmp1, cmp2, cmp3, pll_cmp;
-> +
-> +	cmp1 = hdmi_pll_read(phy, QSERDES_COM_LOCK_CMP1_MODE0);
-> +	cmp2 = hdmi_pll_read(phy, QSERDES_COM_LOCK_CMP2_MODE0);
-> +	cmp3 = hdmi_pll_read(phy, QSERDES_COM_LOCK_CMP3_MODE0);
-> +
-> +	pll_cmp = cmp1 | (cmp2 << 8) | (cmp3 << 16);
-FIELD_PREP to avoid overflows if hw returns garbage?
-Or is it supposed to overflow by design?
-
-> +
-> +	return mult_frac(pll_cmp + 1, parent_rate, HDMI_PLL_CMP_CNT);
-> +}
-> +
-> +static int qmp_hdmi_8996_pll_is_enabled(struct clk_hw *hw)
-> +{
-> +	struct qmp_hdmi_phy *phy = hw_clk_to_pll(hw);
-> +	u32 status;
-> +	int pll_locked;
-Reverse-Christmas-tree?
-
-Konrad
-> +
-> +	status = hdmi_pll_read(phy, QSERDES_COM_C_READY_STATUS);
-> +	pll_locked = status & BIT(0);
-> +
-> +	return pll_locked;
-> +}
-> +
-> +static const struct clk_ops qmp_hdmi_8996_pll_ops = {
-> +	.recalc_rate = qmp_hdmi_8996_pll_recalc_rate,
-> +	.round_rate = qmp_hdmi_8996_pll_round_rate,
-> +	.is_enabled = qmp_hdmi_8996_pll_is_enabled,
-> +};
-> +
-> +static const struct phy_ops qmp_hdmi_8996_phy_ops = {
-> +	.init		= qmp_hdmi_phy_init,
-> +	.configure	= qmp_hdmi_phy_configure,
-> +	.power_on	= qmp_hdmi_8996_phy_power_on,
-> +	.power_off	= qmp_hdmi_8996_phy_power_off,
-> +	.exit		= qmp_hdmi_phy_exit,
-> +	.owner		= THIS_MODULE,
-> +};
-> +
-> +const struct qmp_hdmi_cfg qmp_hdmi_8996_cfg = {
-> +	.pll_ops = &qmp_hdmi_8996_pll_ops,
-> +	.phy_ops = &qmp_hdmi_8996_phy_ops,
-> +};
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h b/drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h
-> new file mode 100644
-> index 000000000000..25d307a8f287
-> --- /dev/null
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h
-> @@ -0,0 +1,75 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2016, The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2023, Linaro Ltd.
-> + */
-> +
-> +#ifndef PHY_QCOM_QMP_HDMI_H
-> +#define PHY_QCOM_QMP_HDMI_H
-> +
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <linux/phy/phy-hdmi.h>
-> +
-> +#define MAX_CLKS 2
-> +#define MAX_SUPPLIES 2
-> +
-> +#define HDMI_NUM_TX_CHANNEL 4
-> +
-> +struct qmp_hdmi_phy {
-> +	struct device *dev;
-> +	struct phy *phy;
-> +	void __iomem *serdes;
-> +	void __iomem *tx[HDMI_NUM_TX_CHANNEL];
-> +	void __iomem *phy_reg;
-> +
-> +	struct phy_configure_opts_hdmi hdmi_opts;
-> +
-> +	struct clk_hw pll_hw;
-> +	struct clk_bulk_data clks[MAX_CLKS];
-> +	struct regulator_bulk_data supplies[MAX_SUPPLIES];
-> +};
-> +
-> +struct qmp_hdmi_cfg {
-> +	const struct clk_ops *pll_ops;
-> +	const struct phy_ops *phy_ops;
-> +};
-> +
-> +#define hw_clk_to_pll(x) container_of(x, struct qmp_hdmi_phy, pll_hw)
-> +
-> +static inline void hdmi_phy_write(struct qmp_hdmi_phy *phy, int offset,
-> +				  u32 data)
-> +{
-> +	writel(data, phy->phy_reg + offset);
-> +}
-> +
-> +static inline u32 hdmi_phy_read(struct qmp_hdmi_phy *phy, int offset)
-> +{
-> +	return readl(phy->phy_reg + offset);
-> +}
-> +
-> +static inline void hdmi_pll_write(struct qmp_hdmi_phy *phy, int offset,
-> +				  u32 data)
-> +{
-> +	writel(data, phy->serdes + offset);
-> +}
-> +
-> +static inline u32 hdmi_pll_read(struct qmp_hdmi_phy *phy, int offset)
-> +{
-> +	return readl(phy->serdes + offset);
-> +}
-> +
-> +static inline void hdmi_tx_chan_write(struct qmp_hdmi_phy *phy, int channel,
-> +				      int offset, int data)
-> +{
-> +	writel(data, phy->tx[channel] + offset);
-> +}
-> +
-> +int qmp_hdmi_phy_init(struct phy *phy);
-> +int qmp_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opts);
-> +int qmp_hdmi_phy_exit(struct phy *phy);
-> +
-> +extern const struct qmp_hdmi_cfg qmp_hdmi_8996_cfg;
-> +
-> +#endif
+>> +
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	mtk_phy_tmds_clk_ratio(hdmi_phy, hdmi_phy->tmds_over_340M);
+>> +
+>> +	return ret;
+>> +}
+>> +
+>> +struct mtk_hdmi_phy_conf mtk_hdmi_phy_8195_conf = {
+>> +	.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_GATE,
+>> +	.hdmi_phy_clk_ops = &mtk_hdmi_pll_ops,
+>> +	.hdmi_phy_enable_tmds = mtk_hdmi_phy_enable_tmds,
+>> +	.hdmi_phy_disable_tmds = mtk_hdmi_phy_disable_tmds,
+>> +	.hdmi_phy_configure = mtk_hdmi_phy_configure,
+>> +};
+>> +
+>> +MODULE_AUTHOR("Can Zeng <can.zeng@mediatek.com>");
+>> +MODULE_DESCRIPTION("MediaTek MT8195 HDMI PHY Driver");
+>> +MODULE_LICENSE("GPL v2");
+>> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h
+>> new file mode 100644
+>> index 000000000000..22a68dc9550c
+>> --- /dev/null
+>> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h
+>> @@ -0,0 +1,113 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/*
+>> + * Copyright (c) 2022 MediaTek Inc.
+>> + * Copyright (c) 2022 BayLibre, SAS
+>> + */
+>> +
+>> +#ifndef _MTK_HDMI_PHY_8195_H
+>> +#define _MTK_HDMI_PHY_8195_H
+>> +
+>> +#include <linux/clk.h>
+>> +#include <linux/clk-provider.h>
+>> +#include <linux/types.h>
+>> +
+>> +#define PCW_DECIMAL_WIDTH 24
+>> +#define PLL_PREDIV 1
+>> +#define PLL_FBKDIV_HS3 1
+>> +
+>> +#define HDMI20_CLK_CFG 0x70
+>> +#define REG_TXC_DIV GENMASK(31, 30)
+>> +
+>> +#define HDMI_1_CFG_0 0x00
+>> +#define RG_HDMITX21_DRV_IBIAS_CLK GENMASK(10, 5)
+>> +#define RG_HDMITX21_DRV_IMP_EN GENMASK(23, 20)
+>> +#define RG_HDMITX21_DRV_EN GENMASK(27, 24)
+>> +#define RG_HDMITX21_SER_EN GENMASK(31, 28)
+>> +
+>> +#define HDMI_1_CFG_1 0x04
+>> +#define RG_HDMITX21_DRV_IBIAS_D0 GENMASK(19, 14)
+>> +#define RG_HDMITX21_DRV_IBIAS_D1 GENMASK(25, 20)
+>> +#define RG_HDMITX21_DRV_IBIAS_D2 GENMASK(31, 26)
+>> +
+>> +#define HDMI_1_CFG_10 0x40
+>> +#define RG_HDMITXPLL_REF_CK_SEL GENMASK(2, 1)
+>> +#define RG_HDMITX21_VREF_SEL BIT(4)
+>> +#define RG_HDMITX21_BIAS_PE_VREF_SELB BIT(10)
+>> +#define RG_HDMITX21_BIAS_PE_BG_VREF_SEL GENMASK(16, 15)
+>> +#define RG_HDMITX21_BG_PWD BIT(20)
+>> +
+>> +#define HDMI_1_CFG_2 0x08
+>> +#define RG_HDMITX21_DRV_IMP_D0_EN1 GENMASK(13, 8)
+>> +#define RG_HDMITX21_DRV_IMP_D1_EN1 GENMASK(19, 14)
+>> +#define RG_HDMITX21_DRV_IMP_D2_EN1 GENMASK(25, 20)
+>> +#define RG_HDMITX21_DRV_IMP_CLK_EN1 GENMASK(31, 26)
+>> +
+>> +#define HDMI_1_CFG_3 0x0c
+>> +#define RG_HDMITX21_CKLDO_EN BIT(3)
+>> +#define RG_HDMITX21_SLDOLPF_EN BIT(7)
+>> +#define RG_HDMITX21_SLDO_EN GENMASK(11, 8)
+>> +
+>> +#define HDMI_1_CFG_6 0x18
+>> +#define RG_HDMITX21_D2_DRV_OP_EN BIT(8)
+>> +#define RG_HDMITX21_D1_DRV_OP_EN BIT(9)
+>> +#define RG_HDMITX21_D0_DRV_OP_EN BIT(10)
+>> +#define RG_HDMITX21_CK_DRV_OP_EN BIT(11)
+>> +#define RG_HDMITX21_FRL_EN BIT(12)
+>> +#define RG_HDMITX21_FRL_CK_EN BIT(13)
+>> +#define RG_HDMITX21_FRL_D0_EN BIT(14)
+>> +#define RG_HDMITX21_FRL_D1_EN BIT(15)
+>> +#define RG_HDMITX21_FRL_D2_EN BIT(16)
+>> +#define RG_HDMITX21_INTR_CAL GENMASK(22, 18)
+>> +#define RG_HDMITX21_TX_POSDIV GENMASK(27, 26)
+>> +#define RG_HDMITX21_TX_POSDIV_EN BIT(28)
+>> +#define RG_HDMITX21_BIAS_EN BIT(29)
+>> +
+>> +#define HDMI_1_CFG_9 0x24
+>> +#define RG_HDMITX21_SLDO_VREF_SEL GENMASK(5, 4)
+>> +
+>> +#define HDMI_1_PLL_CFG_0 0x44
+>> +#define RG_HDMITXPLL_HREN GENMASK(13, 12)
+>> +#define RG_HDMITXPLL_IBAND_FIX_EN BIT(24)
+>> +#define RG_HDMITXPLL_LVR_SEL GENMASK(27, 26)
+>> +#define RG_HDMITXPLL_BP2 BIT(30)
+>> +#define RG_HDMITXPLL_TCL_EN BIT(31)
+>> +
+>> +#define HDMI_1_PLL_CFG_1 0x48
+>> +#define RG_HDMITXPLL_RESERVE_BIT1_0 GENMASK(1, 0)
+>> +#define RG_HDMITXPLL_RESERVE_BIT3_2 GENMASK(3, 2)
+>> +#define RG_HDMITXPLL_RESERVE_BIT12_11 GENMASK(12, 11)
+>> +#define RG_HDMITXPLL_RESERVE_BIT13 BIT(13)
+>> +#define RG_HDMITXPLL_RESERVE_BIT14 BIT(14)
+>> +
+>> +#define HDMI_1_PLL_CFG_2 0x4c
+>> +#define RG_HDMITXPLL_BC GENMASK(28, 27)
+>> +#define RG_HDMITXPLL_IC GENMASK(26, 22)
+>> +#define RG_HDMITXPLL_BR GENMASK(21, 19)
+>> +#define RG_HDMITXPLL_IR GENMASK(18, 14)
+>> +#define RG_HDMITXPLL_BP GENMASK(13, 10)
+>> +#define RG_HDMITXPLL_HIKVCO BIT(29)
+>> +#define RG_HDMITXPLL_PWD BIT(31)
+>> +
+>> +#define HDMI_1_PLL_CFG_3 0x50
+>> +#define RG_HDMITXPLL_FBKDIV_LOW GENMASK(31, 0)
+>> +
+>> +#define HDMI_1_PLL_CFG_4 0x54
+>> +#define DA_HDMITXPLL_ISO_EN BIT(1)
+>> +#define DA_HDMITXPLL_PWR_ON BIT(2)
+>> +#define RG_HDMITXPLL_POSDIV_DIV3_CTRL BIT(21)
+>> +#define RG_HDMITXPLL_POSDIV GENMASK(23, 22)
+>> +#define RG_HDMITXPLL_DIV_CTRL GENMASK(25, 24)
+>> +#define RG_HDMITXPLL_PREDIV GENMASK(29, 28)
+>> +#define RG_HDMITXPLL_FBKDIV_HIGH BIT(31)
+>> +
+>> +#define HDMI_ANA_CTL 0x7c
+>> +#define REG_ANA_HDMI20_FIFO_EN BIT(16)
+>> +
+>> +#define HDMI_CTL_3 0xcc
+>> +#define REG_HDMITXPLL_DIV GENMASK(4, 0)
+>> +#define REG_HDMITX_REF_XTAL_SEL BIT(7)
+>> +#define REG_HDMITX_REF_RESPLL_SEL BIT(9)
+>> +#define REG_PIXEL_CLOCK_SEL BIT(10)
+>> +#define REG_HDMITX_PIXEL_CLOCK BIT(23)
+>> +
+>> +#endif /* MTK_HDMI_PHY_8195_H */
+>> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+>> index 32f713301768..d2e824771f9d 100644
+>> --- a/drivers/phy/mediatek/phy-mtk-hdmi.c
+>> +++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+>> @@ -161,6 +161,9 @@ static const struct of_device_id mtk_hdmi_phy_match[] = {
+>>   	{ .compatible = "mediatek,mt8173-hdmi-phy",
+>>   	  .data = &mtk_hdmi_phy_8173_conf,
+>>   	},
+>> +	{ .compatible = "mediatek,mt8195-hdmi-phy",
+>> +	  .data = &mtk_hdmi_phy_8195_conf,
+>> +	},
+>>   	{},
+>>   };
+>>   MODULE_DEVICE_TABLE(of, mtk_hdmi_phy_match);
+>> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.h b/drivers/phy/mediatek/phy-mtk-hdmi.h
+>> index f5aac9d352d8..fc2ad6a0527f 100644
+>> --- a/drivers/phy/mediatek/phy-mtk-hdmi.h
+>> +++ b/drivers/phy/mediatek/phy-mtk-hdmi.h
+>> @@ -40,10 +40,12 @@ struct mtk_hdmi_phy {
+>>   	unsigned char drv_imp_d0;
+>>   	unsigned int ibias;
+>>   	unsigned int ibias_up;
+>> +	bool tmds_over_340M;
+>>   };
+>>
+>>   struct mtk_hdmi_phy *to_mtk_hdmi_phy(struct clk_hw *hw);
+>>
+>> +extern struct mtk_hdmi_phy_conf mtk_hdmi_phy_8195_conf;
+>>   extern struct mtk_hdmi_phy_conf mtk_hdmi_phy_8173_conf;
+>>   extern struct mtk_hdmi_phy_conf mtk_hdmi_phy_2701_conf;
+>>
+>>
+>
+>--
+>With best wishes
+>Dmitry
+>
 
 -- 
 linux-phy mailing list
