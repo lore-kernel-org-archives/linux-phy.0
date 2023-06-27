@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0331AEB64D9
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jun 2023 08:28:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BC7DEB64D9
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jun 2023 18:08:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aq7NbEtvJx2uR1Ed4MHAZgPRF83beIDJ4sTijkmo7II=; b=xkLnDYhmv9zWpF
-	NHoe1/yUPFpT4qmks1cQYzKdq4kMs/3KwcRHMITPv9wzmXpeC1XBFoYr5MgqgGTcxUmxk6/JP7g0d
-	q0PtnQRpcF2vMOU1hyzHrDx+REg6kdYErl8HcW31cz78EcKlsv7fmVJmPPEnktmRHVFaxQQvQJpO5
-	/Sj85LZbCBryqXhKX8o52Eaey2mwfE3i23mQe+6AdqF6TRWge8MsUh8Ri/F9tcaJFbLzgEs+Ra3SS
-	cidZLm4Jip3vtcx9fSFNMViS7BsxvxN2RW0nlfznS/FsQZAUVNupteybSYPjFeCydPTJcCt0IaGHF
-	M569BBubW4U+Fswh8RZQ==;
+	List-Owner; bh=kfwTkx3sX4eLsKvC6bulkRUvwAOvuVSGbyE+/Kxkefw=; b=239Qrjqz3vT4vG
+	phZ6mMlqfxSdUD2ylKcEwXKP7IeVMjXqsUZQoCo5IiIJ6w1LuacH49VeOXvPTuzCPcXVL17zNwWg9
+	lqPjyMUlru2pPlv7fYBzVgC3rsemA484xZUm84AUNEZULJPuY8fDIAZPLbTQtx1lJekqPhVc23KuS
+	O+ZCdb6FP04XtGF2v4JMP8ZS3IajILtpzt8xCG0+V0IczOVcdx3ShPRXlHYqnjNDcjR2tPIBbjxKb
+	U9tB9Rhx6QB4cpHl29qoAD97guwjQ+4c2UidfSS4GF4DQ1hQYg5iICndWmcXwNwK7vxRnxGEERevv
+	7LnG8kwxYs1Tw67bbAdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qE43p-00CZbo-28;
-	Tue, 27 Jun 2023 08:28:29 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1qED7V-00DnQt-2N;
+	Tue, 27 Jun 2023 18:08:53 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qE43n-00CZaa-0V
+	id 1qED7R-00DnQH-2u
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Jun 2023 08:28:28 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-3fa70ec8d17so46390445e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 27 Jun 2023 01:28:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1687854505; x=1690446505;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=yYisvyfd+rF4H58wJe4eQFLmEyiMEUswId3Wk9c1n3Y=;
-        b=wH7eTy9awNOzwL5utRtT3C5wEiMycWy0sEiaOMdHrzNDJto8y9YfPlQJSrQehR/IlK
-         r4uMh/ndv62GDY36Dge7xUrBV7ZozorvsfuGEDaXtYg+uRhfYrVZGtybNoSqh2Ln88CW
-         dTkqiZ3BaPG19VU6sLUAhdede4DquVamESgRPAZnQnd5kN6TCb3gp1JrdnovbKxeqcT6
-         ocoJ30rCOYa0E9o+yvzAlDAfTKlR69TaT8yRVPix6hXriXj/Yr4bDyNcMQDz8DUd9fbf
-         knmU51SJoZ7B3LGjK3Bi/WmXwMItT/h0C2Pbai4asAVNn294qfUP7mCQzsynsubWQoHg
-         u2Fg==
+	Tue, 27 Jun 2023 18:08:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1687889326;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=XIzaMLEoZseg15rsHJ94wr9W2L80SXyc2pmPqG7NjnU=;
+	b=cYFwqFj/aoddkPpdJT6PWc6XqMLInCjr02yY18as9mNeRJhVVC6jr4mzcZpQbLygMMhXvb
+	WKE/+P9RIQcMIUlwUfFo6iF6iPC/Bp9qda4PC1i+CqrceJdJQYyNrOmr6Td5SR7gXU/mCn
+	VEngakNQ7TGxo6+fVt/qFjGDkAd2kfE=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-584-lzZz6PjxP7mO2ewuBe2uqQ-1; Tue, 27 Jun 2023 14:08:45 -0400
+X-MC-Unique: lzZz6PjxP7mO2ewuBe2uqQ-1
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-765a1a97103so306572985a.1
+        for <linux-phy@lists.infradead.org>; Tue, 27 Jun 2023 11:08:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1687854505; x=1690446505;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=yYisvyfd+rF4H58wJe4eQFLmEyiMEUswId3Wk9c1n3Y=;
-        b=SPuhROOYLzaFL2kNkOcpk/c5qbhtwFlBpuS9T1ZjuA5om7cq+XOzGd49d8j93uMYC/
-         PEbZBXu14cB59kOkZRtB4H8+uIz9fXF7jPkkQF19ujGLcTMTYPmG5zAVGB40w+0lPMmK
-         JHnEa0FXiW0/tjJkBrCK4H94KUCoSL941HgwWoZHWtZ4SlJqmZjjh3D3Cp4eHsolYeKL
-         l7cMNgjdKs0nGLeoh5rFBesqD5wmQhcdrq6L1nQYByIl0ICIVFzbjoGyGBmH4uZuzhM5
-         NQ9sVTCTfoACC2hAPpDsaWj/mfSi6vltHfNHB8OgsNsQHRq9P0vxMJZ6SDJ+yQ2nWMYW
-         P+RA==
-X-Gm-Message-State: AC+VfDw7Kc9gjZEJJH7MXR3DZNmdWPdQHkQ64yc/Spm0xEC57WKSwULw
-	czzE4DN9NeKIRWB1a3e8z1BCRA==
-X-Google-Smtp-Source: ACHHUZ5nvEEEqnMcktYAI6is2hSR9HD1+QyfTyrqMOqlGkEkZjtq0427Hllsu2wMsfSR5lT62fh2lw==
-X-Received: by 2002:a7b:c5d7:0:b0:3f9:fd12:a8b0 with SMTP id n23-20020a7bc5d7000000b003f9fd12a8b0mr12919290wmk.20.1687854505552;
-        Tue, 27 Jun 2023 01:28:25 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id u6-20020a05600c210600b003fafe32c8f6sm3766671wml.10.2023.06.27.01.28.23
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 27 Jun 2023 01:28:25 -0700 (PDT)
-Message-ID: <5c384322-5321-f3c5-f0c5-0558c344eef5@linaro.org>
-Date: Tue, 27 Jun 2023 10:28:22 +0200
+        d=1e100.net; s=20221208; t=1687889324; x=1690481324;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=XIzaMLEoZseg15rsHJ94wr9W2L80SXyc2pmPqG7NjnU=;
+        b=P2Y9T5akMMAQflStCESUGuQK3456+u4LMv0r02xw/Vu3OGi8hEW2iYz2ul0OzFjwqk
+         7wP2o97hZGRWhNGa0tKcbuFMZpRuXxkF+0V2rb0qS80cf7fxurKC9EDxp4oevXsCfbv5
+         NLT8/eQnpZSSLtZ9taO8UmQ5kltlGQxlyKQjsGjrtMNjinhVWs7MAoM8zOG7FpNssmGx
+         qxR5ElHeS1nFeFyNRjjjmn0kVRU3j/QHWzfOuoMIN/u3QXvZfK0WVKR0j9B6j2onLBv+
+         VLoWmMai9A87uocbRh3WTQAV2gScglg6uYFQDxsjk+N64WSiRxWmZ/qNadXCFxM+BBMF
+         Bqhg==
+X-Gm-Message-State: AC+VfDzVgFzG35Ww3HNIuKBoZbXgXyKjgPKtWv6/U8IF6kHLROd4AXUq
+	fkAfIzur9WYPI3FTmBNiLBkFBp9AxGCpqwJVyCAUtot5AGI0kztjKKwPzYBeI4DZvd2LVaymOu0
+	kDZsAWQ63MRHk1xnYoEa1HFUIZe8e4cHrYQ==
+X-Received: by 2002:a05:620a:4087:b0:766:fbe6:ccbc with SMTP id f7-20020a05620a408700b00766fbe6ccbcmr5700130qko.29.1687889324172;
+        Tue, 27 Jun 2023 11:08:44 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7TDVN2FeMGh6qcSDmZy8YGLhDuYZ5iNM3siut168C5HboPBzGXzZVtnAVC+3BFKsCrtFSPcQ==
+X-Received: by 2002:a05:620a:4087:b0:766:fbe6:ccbc with SMTP id f7-20020a05620a408700b00766fbe6ccbcmr5700109qko.29.1687889323884;
+        Tue, 27 Jun 2023 11:08:43 -0700 (PDT)
+Received: from fedora ([107.171.218.122])
+        by smtp.gmail.com with ESMTPSA id u12-20020ae9c00c000000b0076264532630sm4141287qkk.121.2023.06.27.11.08.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 27 Jun 2023 11:08:43 -0700 (PDT)
+Date: Tue, 27 Jun 2023 14:08:41 -0400
+From: Adrien Thierry <athierry@redhat.com>
+To: Bjorn Andersson <andersson@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 2/3] phy: qcom-snps-femto-v2: add system sleep PM ops
+Message-ID: <ZJslqaHZqdizSGbc@fedora>
+References: <20230622194021.80892-1-athierry@redhat.com>
+ <20230622194021.80892-3-athierry@redhat.com>
+ <52qapxj7sdearduro3iiqqpekrltc5zviwgq3gz4j4lne6cp5b@phikpenjras3>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH v5 4/5] dt-bindings: phy: realtek: Add the doc about the
- Realtek SoC USB 2.0 PHY
-Content-Language: en-US
-To: Stanley Chang <stanley_chang@realtek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
- Douglas Anderson <dianders@chromium.org>,
- Bagas Sanjaya <bagasdotme@gmail.com>, Ray Chi <raychi@google.com>,
- Flavio Suligoi <f.suligoi@asem.it>, Matthias Kaehlcke <mka@chromium.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-References: <20230627082022.22902-1-stanley_chang@realtek.com>
- <20230627082022.22902-4-stanley_chang@realtek.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230627082022.22902-4-stanley_chang@realtek.com>
+In-Reply-To: <52qapxj7sdearduro3iiqqpekrltc5zviwgq3gz4j4lne6cp5b@phikpenjras3>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230627_012827_230338_F5211B7A 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20230627_110850_032775_38188DE3 
+X-CRM114-Status: GOOD (  33.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,56 +104,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/06/2023 10:20, Stanley Chang wrote:
-> Add the documentation explain the property about Realtek USB PHY driver.
+Hi Bjorn,
+
+On Thu, Jun 22, 2023 at 02:43:07PM -0700, Bjorn Andersson wrote:
+> On Thu, Jun 22, 2023 at 03:40:19PM -0400, Adrien Thierry wrote:
+> > The downstream driver [1] implements set_suspend(), which deals with
+> > both runtime and system sleep/resume. The upstream driver already has
+> > runtime PM ops, so add the system sleep PM ops as well, reusing the same
+> > code as the runtime PM ops.
+> > 
+> > [1] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c
+> > 
+> > Signed-off-by: Adrien Thierry <athierry@redhat.com>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 18 ++++++++++--------
+> >  1 file changed, 10 insertions(+), 8 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > index ce1d2f8b568a..378a5029f61e 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> > @@ -179,7 +179,7 @@ static inline void qcom_snps_hsphy_write_mask(void __iomem *base, u32 offset,
+> >  	readl_relaxed(base + offset);
+> >  }
+> >  
+> > -static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+> > +static int qcom_snps_hsphy_do_suspend(struct qcom_snps_hsphy *hsphy)
+> >  {
+> >  	dev_dbg(&hsphy->phy->dev, "Suspend QCOM SNPS PHY\n");
+> >  
+> > @@ -199,7 +199,7 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+> >  	return 0;
+> >  }
+> >  
+> > -static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+> > +static int qcom_snps_hsphy_do_resume(struct qcom_snps_hsphy *hsphy)
+> >  {
+> >  	int ret;
+> >  
+> > @@ -214,25 +214,25 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+> >  	return 0;
+> >  }
+> >  
+> > -static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
+> > +static int __maybe_unused qcom_snps_hsphy_suspend(struct device *dev)
+> >  {
+> >  	struct qcom_snps_hsphy *hsphy = dev_get_drvdata(dev);
+> >  
+> >  	if (!hsphy->phy_initialized)
+> >  		return 0;
+> >  
+> > -	qcom_snps_hsphy_suspend(hsphy);
+> > +	qcom_snps_hsphy_do_suspend(hsphy);
+> >  	return 0;
+> >  }
+> >  
+> > -static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
+> > +static int __maybe_unused qcom_snps_hsphy_resume(struct device *dev)
+> >  {
+> >  	struct qcom_snps_hsphy *hsphy = dev_get_drvdata(dev);
+> >  
+> >  	if (!hsphy->phy_initialized)
+> >  		return 0;
+> >  
+> > -	qcom_snps_hsphy_resume(hsphy);
+> > +	qcom_snps_hsphy_do_resume(hsphy);
+> >  	return 0;
+> >  }
+> >  
+> > @@ -518,8 +518,10 @@ static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
+> >  MODULE_DEVICE_TABLE(of, qcom_snps_hsphy_of_match_table);
+> >  
+> >  static const struct dev_pm_ops qcom_snps_hsphy_pm_ops = {
+> > -	SET_RUNTIME_PM_OPS(qcom_snps_hsphy_runtime_suspend,
+> > -			   qcom_snps_hsphy_runtime_resume, NULL)
+> > +	SET_RUNTIME_PM_OPS(qcom_snps_hsphy_suspend,
+> > +			   qcom_snps_hsphy_resume, NULL)
+> > +	SET_SYSTEM_SLEEP_PM_OPS(qcom_snps_hsphy_suspend,
+> > +				qcom_snps_hsphy_resume)
 > 
-> Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller. Added the driver to drive the USB 2.0 PHY transceivers.
+> Won't this cause issues if you system suspend the device while it's
+> already runtime suspended?
+>
+
+I'm not sure if it would cause issues, but after reflexion and discussion
+with Andrew, I think it's unnecessary to add system PM ops in the femto
+PHY driver. 
+
+In the dwc3 core, both system and runtime suspend end up calling
+dwc3_suspend_common(). From there, what happens depends on the USB mode
+and whether the controller is entering system or runtime suspend.
+
+HOST mode:
+  (1) system suspend on a non-wakeup controller
+
+  The [1] if branch is taken. dwc3_core_exit() is called, which ends up
+  calling phy_power_off() and phy_exit(). Those two functions decrease the
+  PM runtime count at some point, so they will trigger the PHY runtime sleep
+  (assuming the count is right).
+
+  (2) runtime suspend / system suspend on a wakeup controller  
+
+  The [1] branch is not taken. dwc3_suspend_common() calls
+  phy_pm_runtime_put_sync(dwc->usb2_generic_phy). Assuming the ref count is
+  right, the PHY runtime suspend op is called.
+
+DEVICE mode:
+
+  dwc3_core_exit() is called on both runtime and system sleep
+  unless the controller is already runtime suspended.
+
+OTG mode:
+  (1) system suspend : dwc3_core_exit() is called
+
+  (2) runtime suspend : do nothing
+
+With that in mind:
+
+1) Does the PHY need to implement system sleep callbacks? 
+
+dwc3 core system sleep callback will already runtime suspend the PHY, and
+also call phy_power_off() and phy_exit() for non-wakeup controllers. So,
+adding system PM ops to the femto PHY driver would be redundant.
+
+2) Should the ref_clk be disabled for runtime sleep / wakeup controller
+system sleep, or only for non-wakeup controller system sleep?
+
+I'm a little hesitant here. In my submission I'm disabling it in both, but
+looking at the downstream code you provided, it seems it's only disabled
+for system sleep. ref_clk is disabled by phy->set_suspend() [2] which IIUC
+is only called in the system sleep path through dwc3_core_exit() [3].
+Moreover, in host mode the upstream code seems to make a distinction
+between 1) runtime sleep / system sleep for wakeup controller, and 2)
+system sleep for non-wakeup controller where phy_power_off() and
+phy_exit() are only called in the latter. This suggests the PHY is not
+supposed to be in a fully powered-off state for runtime sleep and system
+sleep for wakeup controller. So, it's possible the ref_clk should be kept
+enabled in this case. What is your take on this? I could only disable
+ref_clk in the femto phy->exit() callback to keep ref_clk enabled during
+runtime sleep and make sure it's only disabled on system sleep for
+non-wakeup controller.
+
+Hoping I'm not missing anything here.
+
+Best,
+
+Adrien
+
+[1] https://elixir.bootlin.com/linux/latest/source/drivers/usb/dwc3/core.c#L1988
+[2] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c#L524
+[3] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/dwc3/core.c#L1915
+
+> Regards,
+> Bjorn
 > 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
-> ---
-> v4 to v5 change:
->     1. Add more examples.
-
-Not more examples. Just give one or two relevant examples.
-
->     2. Remove the compatible realtek,usb2phy.
->     3. Revise the descriptor of the property.
->     4. Add the default of the property.
-
-...
-
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    usb_port0_usb2phy: usb-phy@13214 {
-
-Drop also the labels.
-
-> +        compatible = "realtek,rtd1319d-usb2phy";
-> +        reg = <0x13214 0x4>, <0x28280 0x4>;
-> +        #phy-cells = <0>;
-> +        nvmem-cells = <&otp_usb_port0_dc_cal>, <&otp_usb_port0_dc_dis>;
-> +        nvmem-cell-names = "usb-dc-cal", "usb-dc-dis";
-> +
-> +        realtek,driving-level = <0xe>;
-
-Why keeping this example? I asked to grow it and instead there are two
-more. Just keep one describing as much as possible. Second is useful if
-you have there different properties.
-
-Your third is almost the same as second, so no need for it at all.
-
-Best regards,
-Krzysztof
+> >  };
+> >  
+> >  static void qcom_snps_hsphy_override_param_update_val(
+> > -- 
+> > 2.40.1
+> > 
 
 
 -- 
