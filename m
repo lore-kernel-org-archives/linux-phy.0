@@ -4,63 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF528EB64D9
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jun 2023 07:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21164EB64D9
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jun 2023 14:46:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gs2LqWnHYilfmuLxg4ciiWb+cuB3LfCTvj/mJzuoy6o=; b=uIKOMPAmNsnfQn
-	By3n8ilyJ/IJbDVtRZF8LWeSY/xsXZYJoG069RvkAZ6MX7tyGrmNcfFen8J158/8gsSymSP35O5MB
-	COFNxJDK8Hmjv3wOShpqCYFXrJIwZSTN262fW6E2UQaTWl/GFBnq3Rr5d23ZiPhjYvFxV78kq4rxb
-	qDBIWDhbiHwkWfpPvTZdYRbu0XSgjdG870GdzZnBUWTzP5L3d9zXlajOmzvOHGGp/o0wj41I+7f82
-	mKH0wdvbayybiuyoQvF9PE2+jqPvnjOaRM3bl1bsv3jQcnkhQ1MCmNY1JeCYQhf6DJBb0s3rviFSI
-	kCtRNJK+TNasiDYOu1Ag==;
+	List-Owner; bh=U2DF6FtEg6lR9xO4/WXF0Yd2sAhCQaSjMflLwrlnw7Y=; b=EmJM/fwnerSwEL
+	32sUX6LmGxRr8rlBG7a1H+71Wsw9RdRNSMIATkeKCApQjaT5MQxtMoAUSvO8Oazr/crNIKEgSBzhD
+	IBUqBo6nmVID3MzQZs7BZB76KHehz9XfJxekCDrdGAFMVqEBujBW9i6YCsRf6VmG/GOPIhkLWt+Zy
+	OV4NuenXAGCkJ8VaNog4n1HAp9bgGbPyJSlg3KuZBoJ6cLGC2TMAchhOmqBdfvik1zUqZBi5rjVFT
+	ao+Z03J19U1teXnhv1gvQzCBxWF41+SEKmZ/egYfmoqfibPm1W9bJZ9zI32WwLiJebwZkA8O3BwHL
+	iaU0xBLyJ6EMD9XFXu1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEmRo-000GZp-1V;
-	Thu, 29 Jun 2023 07:52:12 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEmRl-000G0T-2y;
-	Thu, 29 Jun 2023 07:52:11 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 5B76024E2D3;
-	Thu, 29 Jun 2023 15:51:18 +0800 (CST)
-Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 29 Jun
- 2023 15:51:18 +0800
-Received: from ubuntu.localdomain (183.27.97.206) by EXMBX171.cuchost.com
- (172.16.6.91) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Thu, 29 Jun
- 2023 15:51:17 +0800
-From: Minda Chen <minda.chen@starfivetech.com>
-To: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Conor Dooley
-	<conor@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
-	<kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Roger Quadros <rogerq@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-riscv@lists.infradead.org>, "Paul
- Walmsley" <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Minda Chen <minda.chen@starfivetech.com>,
-	Mason Huo <mason.huo@starfivetech.com>
-Subject: [PATCH v8 1/5] dt-bindings: phy: Add StarFive JH7110 USB PHY
-Date: Thu, 29 Jun 2023 15:51:11 +0800
-Message-ID: <20230629075115.11934-2-minda.chen@starfivetech.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230629075115.11934-1-minda.chen@starfivetech.com>
-References: <20230629075115.11934-1-minda.chen@starfivetech.com>
+	id 1qEsuj-001KeV-2U;
+	Thu, 29 Jun 2023 14:46:29 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qEsuf-001KdN-0c
+	for linux-phy@lists.infradead.org;
+	Thu, 29 Jun 2023 14:46:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1688049983;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=zDXFOarJFkvxNU7P1GHKG3noUeFa/ZYuvulMUbxlN1A=;
+	b=eXwI/4OYtZp5vKR5PCv3XtPt0bd4DjdcfXha2kLmeghDy0cy18iL/tZszxtGFO3ITWpYB6
+	dYy5jE75TNKL15bCqSk+mz0H9K48w61GYbKWNd71isU6isV5awB6ytDFIAdb7CnjDktTA8
+	y6CPCr3kDDakMekXQXKlQr52P5TssPM=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-128-ClYKkDvRMA60uMFpgrl7QQ-1; Thu, 29 Jun 2023 10:46:21 -0400
+X-MC-Unique: ClYKkDvRMA60uMFpgrl7QQ-1
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-635dba99f82so8715946d6.3
+        for <linux-phy@lists.infradead.org>; Thu, 29 Jun 2023 07:46:21 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1688049981; x=1690641981;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=zDXFOarJFkvxNU7P1GHKG3noUeFa/ZYuvulMUbxlN1A=;
+        b=URr7Rv+cAjjaS0RaW5F711w1ooAUGZoGMem3WZHQCxmZM5Y7fbeSFGNai9nlS6HzSx
+         kijQXBb8UalZAGk+b0OIxH/TSLyPMOdcg+BWJiJzhJTNjiQUzwgHovZlybNS6MVBay/u
+         pku162ipgYTaUVMdzr77JMzeIGPagfG4IIr7lrilIGzxPI6hF+4CGhXjnu+iBilHXGd9
+         +4xADF6ucST7kbD0kbzqCJHOiyFek7gsNaATdF0M7LCCxjW2R4NagmYM73BUIUJQaWaH
+         WgsMLoMJMxGiXaINCanlznfURALL5UiTqWAVqNzrkkusKrzkSp70GtOOG8W9wLqEzpj/
+         YfEg==
+X-Gm-Message-State: AC+VfDzo8exY9B4SKUGd3rKOzrK3HbVIsMH0CVUum3cqwcA6pCsH6caZ
+	x/z99CLtQo/Nf1SgcLnqrOCUxdHhwErwYArEP9UPbaTujLJ8yym2Tq8lwyzkJakvv+iUNlmfJb0
+	lpTnKBorRpZgu+jtkzOeS1PhFeg==
+X-Received: by 2002:a05:6214:2483:b0:635:dbb4:853e with SMTP id gi3-20020a056214248300b00635dbb4853emr15923412qvb.54.1688049981101;
+        Thu, 29 Jun 2023 07:46:21 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7CgQm3B3HQ8J0z+gAS6H/08cIkKpo/GCX/poZibomgLtQPS418bo46ORUPF/WAp8JuwB//QA==
+X-Received: by 2002:a05:6214:2483:b0:635:dbb4:853e with SMTP id gi3-20020a056214248300b00635dbb4853emr15923392qvb.54.1688049980886;
+        Thu, 29 Jun 2023 07:46:20 -0700 (PDT)
+Received: from fedora.redhat.com ([107.171.218.122])
+        by smtp.gmail.com with ESMTPSA id a17-20020a0ccdd1000000b005dd8b9345b4sm7055590qvn.76.2023.06.29.07.46.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 29 Jun 2023 07:46:20 -0700 (PDT)
+From: Adrien Thierry <athierry@redhat.com>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Adrien Thierry <athierry@redhat.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v4 1/3] phy: qcom-snps-femto-v2: keep cfg_ahb_clk enabled during runtime suspend
+Date: Thu, 29 Jun 2023 10:45:38 -0400
+Message-Id: <20230629144542.14906-2-athierry@redhat.com>
+X-Mailer: git-send-email 2.40.1
+In-Reply-To: <20230629144542.14906-1-athierry@redhat.com>
+References: <20230629144542.14906-1-athierry@redhat.com>
 MIME-Version: 1.0
-X-Originating-IP: [183.27.97.206]
-X-ClientProxiedBy: EXCAS063.cuchost.com (172.16.6.23) To EXMBX171.cuchost.com
- (172.16.6.91)
-X-YovoleRuleAgent: yovoleflag
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230629_005210_124103_D465E92C 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20230629_074625_322021_BD19B6B7 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,75 +105,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add StarFive JH7110 SoC USB 2.0 PHY dt-binding.
+In the dwc3 core, both system and runtime suspend end up calling
+dwc3_suspend_common(). From there, what happens for the PHYs depends on
+the USB mode and whether the controller is entering system or runtime
+suspend.
 
-Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-Reviewed-by: Hal Feng <hal.feng@starfivetech.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
+HOST mode:
+  (1) system suspend on a non-wakeup-capable controller
+
+  The [1] if branch is taken. dwc3_core_exit() is called, which ends up
+  calling phy_power_off() and phy_exit(). Those two functions decrease the
+  PM runtime count at some point, so they will trigger the PHY runtime
+  sleep (assuming the count is right).
+
+  (2) runtime suspend / system suspend on a wakeup-capable controller
+
+  The [1] branch is not taken. dwc3_suspend_common() calls
+  phy_pm_runtime_put_sync(). Assuming the ref count is right, the PHY
+  runtime suspend op is called.
+
+DEVICE mode:
+  dwc3_core_exit() is called on both runtime and system sleep
+  unless the controller is already runtime suspended.
+
+OTG mode:
+  (1) system suspend : dwc3_core_exit() is called
+
+  (2) runtime suspend : do nothing
+
+In host mode, the code seems to make a distinction between 1) runtime
+sleep / system sleep for wakeup-capable controller, and 2) system sleep
+for non-wakeup-capable controller, where phy_power_off() and phy_exit()
+are only called for the latter. This suggests the PHY is not supposed to
+be in a fully powered-off state for runtime sleep and system sleep for
+wakeup-capable controller.
+
+Moreover, downstream, cfg_ahb_clk only gets disabled for system suspend.
+The clocks are disabled by phy->set_suspend() [2] which is only called
+in the system sleep path through dwc3_core_exit() [3].
+
+With that in mind, don't disable the clocks during the femto PHY runtime
+suspend callback. The clocks will only be disabled during system suspend
+for non-wakeup-capable controllers, through dwc3_core_exit().
+
+[1] https://elixir.bootlin.com/linux/v6.4/source/drivers/usb/dwc3/core.c#L1988
+[2] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c#L524
+[3] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/dwc3/core.c#L1915
+
+Signed-off-by: Adrien Thierry <athierry@redhat.com>
 ---
- .../bindings/phy/starfive,jh7110-usb-phy.yaml | 50 +++++++++++++++++++
- 1 file changed, 50 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 9 ---------
+ 1 file changed, 9 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-new file mode 100644
-index 000000000000..269e9f9f12b6
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
-@@ -0,0 +1,50 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/starfive,jh7110-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: StarFive JH7110 USB 2.0 PHY
-+
-+maintainers:
-+  - Minda Chen <minda.chen@starfivetech.com>
-+
-+properties:
-+  compatible:
-+    const: starfive,jh7110-usb-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  clocks:
-+    items:
-+      - description: PHY 125m
-+      - description: app 125m
-+
-+  clock-names:
-+    items:
-+      - const: 125m
-+      - const: app_125m
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    phy@10200000 {
-+        compatible = "starfive,jh7110-usb-phy";
-+        reg = <0x10200000 0x10000>;
-+        clocks = <&syscrg 95>,
-+                 <&stgcrg 6>;
-+        clock-names = "125m", "app_125m";
-+        #phy-cells = <0>;
-+    };
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+index 6c237f3cc66d..3335480fc395 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+@@ -165,22 +165,13 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+ 					   0, USB2_AUTO_RESUME);
+ 	}
+ 
+-	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+ 	return 0;
+ }
+ 
+ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+ {
+-	int ret;
+-
+ 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
+ 
+-	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+-	if (ret) {
+-		dev_err(&hsphy->phy->dev, "failed to enable cfg ahb clock\n");
+-		return ret;
+-	}
+-
+ 	return 0;
+ }
+ 
 -- 
-2.17.1
+2.40.1
 
 
 -- 
