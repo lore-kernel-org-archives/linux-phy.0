@@ -4,91 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0E46EB64D9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01384C0015E
 	for <linux-phy@archiver.kernel.org>; Thu, 29 Jun 2023 14:46:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5hM0XtpmJGLlwA6b/ji45Wmg+VqPg+HhEC35xOtXWE=; b=HjTA/H1yqkGyqq
-	zoJpTdSPuW1hDMA9mEbp/6uQJlftItrBfAJ0et7HyZLyORI3c0RcsBBvbAB7c7qqbHrj21QsypaaT
-	1XIv9VpVICqH6QT/g+fOJgzeu297uEwz6dmRVqE5qs/eByyk8DCAOU8iE60Pql8z2+ZcFicEUkcrg
-	tNJym+yhMybv6YuG/bmeENOdN6gEh079PEN66YsKAw4o6KIZMZTNr/3Uow8AW0HsNpVLSJ29GYlVF
-	4/JHEkbb+WbxWHAK3Y63IXPjNlfikSyBZ3w+zA7ngy4+qAUPahh+mqzWPCbgRDWuXam06InfkcVzY
-	gDFYjWDkjXpLIzV9TSxw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/fm34mGUamDVsQW81lsVGS7Z6hs6Ra9iKVGfu1Wo5cg=; b=zBIAHJEh3LaY4m
+	tYzs7i4z7YOURNACLhuFl8C0gOC2+iUIdDDDPK+XrsYPOREe2fU29FdhKELs/dUSQRVhqhP6M++/m
+	sqMlwHNeBNeUSOucVPoaVN4cJ+WJB2gxNt4PmQxfabZGD3Dg2poN2zqs44ztm+doJKx71NDJakY2M
+	MZUPzmKywZ59w6fwyWtZsOz1qB0PB88yXSjX8wfg8dyGDr2bWOrUI2zKxMSlaZXW7sMoBRKK9YnxG
+	h0oSlJ5tOuEpaGK/bq5JGngrlzRvwp/2Mij/ZqvJQwOY6sZRImrroXPV7dAZLlxac85UO33ZjOLfL
+	ZMZPtV130C2+eaJt9ywg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEsum-001Kff-1F;
+	id 1qEsum-001Kfp-26;
 	Thu, 29 Jun 2023 14:46:32 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEsuh-001Kdw-2R
+	id 1qEsuk-001KdL-03
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Jun 2023 14:46:30 +0000
+	Thu, 29 Jun 2023 14:46:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1688049986;
+	s=mimecast20190719; t=1688049982;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=frkGVo4Jix0SxJdEp5WkIhYt82JsoR95HUu7QuiPKvU=;
-	b=NuoyCQ2Hyg7qxjMm0mpgsz439duvP3u/3rd+YOOGqwUedAgW92x5geai6DY8H2CjplykBC
-	tt3vK5taN+9V54in9wP0kZA0uBr0exLwW+QBXq2TfvMeVs//WUsray5YEapnXrZDp+UtY/
-	hWlb40NymGoElByCbrLafvrpa3ygxtE=
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=CNL+hnN23HboCzCP5TjwREUx1ktgKGnxEOC00C2eDE0=;
+	b=IA5rw8W6u3hgKLESIXikOMqPuX+CtcgCizpzh4p1blHiW252q2lDBikxizYSQBsWRbBV8O
+	tAWyYFk5QgS8xVExGTULkeK8ixZIe1YD5y0W6gwU/9kS6Z7I6fmKA88/ghJB5DawfDbXUT
+	3yxeJx1ZcAnPWizhF17ohom3qzkHoJI=
 Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
  [209.85.219.72]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-270-ZCeGcj8GPfaw4nzTe9Me0g-1; Thu, 29 Jun 2023 10:46:25 -0400
-X-MC-Unique: ZCeGcj8GPfaw4nzTe9Me0g-1
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-635e91e5537so8816466d6.2
-        for <linux-phy@lists.infradead.org>; Thu, 29 Jun 2023 07:46:25 -0700 (PDT)
+ us-mta-655-i9QbtnUZO2OmYib5w6OVYQ-1; Thu, 29 Jun 2023 10:46:19 -0400
+X-MC-Unique: i9QbtnUZO2OmYib5w6OVYQ-1
+Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-635e244d063so8683276d6.1
+        for <linux-phy@lists.infradead.org>; Thu, 29 Jun 2023 07:46:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688049985; x=1690641985;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=frkGVo4Jix0SxJdEp5WkIhYt82JsoR95HUu7QuiPKvU=;
-        b=dijGFhf/hdZWvjRfQyt4BTHp/M2Juy6TkDWePpL9mE7quaF1yDRaST8MfPGT0ottp/
-         xtiva6lPueFA52NfEykOYqa33MaQaO0ZyZ9hxA1/Qds/arYwA3fVvwybog26226AJPQj
-         +LOUpbfNhl0BXIiZeXzQPQgmXrprX9ZsZnAE7JWyilmWIpJXNBXs4T0xrDDfzHNZmADU
-         lFtax4Oyqqiy0wd63Wd6Jqs0xOFYF+KPFh6N6XFTperg1ON3EqjMpYq7uzy68n794MMd
-         AYW5iceIiNtgEIjLM7ykP7Hoh9VguPTLmY4/nlxURxhbbrU7N3l77w8Ajpq1KY+7qDd7
-         9mVA==
-X-Gm-Message-State: AC+VfDzswlX2NFRjYmaExE+wBrvgSzBmhgi6MwYfwnnNYclMQhnX+HYS
-	8QTw+8RjAZoFcxGW3/k/epaLCMfxtxZ4xhrr/19AwzgS0K5lbgllhMsgI99UMH3YCnxYQczeBF3
-	CoeT7ei2LDCfTgsNYxcb+e42EVQ==
-X-Received: by 2002:a05:6214:e4b:b0:631:ed13:b286 with SMTP id o11-20020a0562140e4b00b00631ed13b286mr33755938qvc.26.1688049985346;
-        Thu, 29 Jun 2023 07:46:25 -0700 (PDT)
-X-Google-Smtp-Source: ACHHUZ74djRCokcr0OekNQKJ/UsWDEjH1oj9tvMOrgNFcOaxaU9DKrR6QyWHwiiSm2lavDbeQFZTFg==
-X-Received: by 2002:a05:6214:e4b:b0:631:ed13:b286 with SMTP id o11-20020a0562140e4b00b00631ed13b286mr33755923qvc.26.1688049985118;
-        Thu, 29 Jun 2023 07:46:25 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1688049979; x=1690641979;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=CNL+hnN23HboCzCP5TjwREUx1ktgKGnxEOC00C2eDE0=;
+        b=We8+cLqhpPRdrHRPKvO6y6+JcoKkZR2AF3QVAsWOFv19WKe0y7ExOwOOVH4wrbzjEx
+         yGw+E/sRq1/7RPMY4zEoJ0XHHpGKh5T0m5/LCCQS+qvRtG9oT5twTvyJ9I4iSd51cRQI
+         hzrio9LMznW7r6cqOW/fv8V8b76BAtGLkwBqC8+UHCPi13WIFplFPahZl8XaygBJWVbT
+         133LypD9pcEZJ9ZEhfhjD41Cs4x+aiUfJ/lK+Tp+ROMaPvAr7ba9E1Esar5n0InDvgJW
+         2gMticyfvevc3O42laECvTPUyyOxec+HXSSnn7ZxiZrbZ/VwpI3deuwJWn2ZnZEF3wDA
+         Pwgw==
+X-Gm-Message-State: ABy/qLbBF/tPs4ri0EC5pVduYcpylsFWgpcbmkW4ay5NDJj03XcoSYNh
+	UrtVBob3InxdWEmq34j3WzZjpHYVJPuBsURPkxZ6h3m8D+Rg3ZsmxuKLuI6ZZ1aRmUDDC3HviNv
+	kzdKUCQeL+76sLPYzO2oOju4p2Q==
+X-Received: by 2002:a05:6214:29eb:b0:636:2169:4298 with SMTP id jv11-20020a05621429eb00b0063621694298mr2089042qvb.1.1688049979428;
+        Thu, 29 Jun 2023 07:46:19 -0700 (PDT)
+X-Google-Smtp-Source: APBJJlHM3fYxBjd3fdjmDJ0KQXKCOe9yHzW98ieDfK7Cgocpm7rc0LvYNrrxFwg9+YVkOrSgV5Mzqw==
+X-Received: by 2002:a05:6214:29eb:b0:636:2169:4298 with SMTP id jv11-20020a05621429eb00b0063621694298mr2089026qvb.1.1688049979165;
+        Thu, 29 Jun 2023 07:46:19 -0700 (PDT)
 Received: from fedora.redhat.com ([107.171.218.122])
-        by smtp.gmail.com with ESMTPSA id a17-20020a0ccdd1000000b005dd8b9345b4sm7055590qvn.76.2023.06.29.07.46.23
+        by smtp.gmail.com with ESMTPSA id a17-20020a0ccdd1000000b005dd8b9345b4sm7055590qvn.76.2023.06.29.07.46.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Jun 2023 07:46:24 -0700 (PDT)
+        Thu, 29 Jun 2023 07:46:18 -0700 (PDT)
 From: Adrien Thierry <athierry@redhat.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Manu Gautam <mgautam@codeaurora.org>,
+	Philipp Zabel <pza@pengutronix.de>,
+	Stephen Boyd <sboyd@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
+	Wesley Cheng <wcheng@codeaurora.org>
 Cc: Adrien Thierry <athierry@redhat.com>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v4 3/3] phy: qcom-snps-femto-v2: use qcom_snps_hsphy_suspend/resume error code
-Date: Thu, 29 Jun 2023 10:45:40 -0400
-Message-Id: <20230629144542.14906-4-athierry@redhat.com>
+Subject: [PATCH v4 0/3] Fixes for qcom-snps-femto-v2 PHY driver
+Date: Thu, 29 Jun 2023 10:45:37 -0400
+Message-Id: <20230629144542.14906-1-athierry@redhat.com>
 X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230629144542.14906-1-athierry@redhat.com>
-References: <20230629144542.14906-1-athierry@redhat.com>
 MIME-Version: 1.0
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230629_074627_864521_F3FD971E 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20230629_074630_128390_B739E12B 
+X-CRM114-Status: UNSURE (   7.19  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -106,38 +107,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The return value from qcom_snps_hsphy_suspend/resume is not used. Make
-sure qcom_snps_hsphy_runtime_suspend/resume return this value as well.
+This series contains a few fixes for the qcom-snps-femto-v2 driver, mostly
+clock-related.
 
-Signed-off-by: Adrien Thierry <athierry@redhat.com>
----
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+v3 -> v4
+- remove commit that added system sleep PM ops
+- add commit "phy: qcom-snps-femto-v2: keep cfg_ahb_clk enabled during
+  runtime suspend"
+- "phy: qcom-snps-femto-v2: properly enable ref clock"
+  - dropped "HACK:" comment (Bjorn Andersson)
+  - check for IS_ERR() for the optional cfg_ahb clock (Bjorn Andersson)
+  - don't print an error message in case clk_bulk_prepare() fails (Bjorn
+    Andersson)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index 6170f8fd118e..d0319bee01c0 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -214,8 +214,7 @@ static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
- 	if (!hsphy->phy_initialized)
- 		return 0;
- 
--	qcom_snps_hsphy_suspend(hsphy);
--	return 0;
-+	return qcom_snps_hsphy_suspend(hsphy);
- }
- 
- static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
-@@ -225,8 +224,7 @@ static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
- 	if (!hsphy->phy_initialized)
- 		return 0;
- 
--	qcom_snps_hsphy_resume(hsphy);
--	return 0;
-+	return qcom_snps_hsphy_resume(hsphy);
- }
- 
- static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
+v2 -> v3
+- "phy: qcom-snps-femto-v2: add system sleep PM ops" - add link to
+  downstream driver used as reference (Andrew Halaney)
+- add commit "phy: qcom-snps-femto-v2: use
+  qcom_snps_hsphy_do_suspend/resume error code" to make sure PM ops don't
+  always return 0 (Andrew Halaney)
+
+v1 -> v2
+- keep cfg_ahb clock and use clk_bulk API to handle both cfg_ahb and ref
+  clocks (Bjorn Andersson)
+- add system sleep PM callbacks (Bjorn Andersson)
+- add Link: and Fixes: tag (Andrew Halaney)
+
+Adrien Thierry (3):
+  phy: qcom-snps-femto-v2: keep cfg_ahb_clk enabled during runtime
+    suspend
+  phy: qcom-snps-femto-v2: properly enable ref clock
+  phy: qcom-snps-femto-v2: use qcom_snps_hsphy_suspend/resume error code
+
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 78 ++++++++++++-------
+ 1 file changed, 50 insertions(+), 28 deletions(-)
+
 -- 
 2.40.1
 
