@@ -4,68 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A18FEB64D7
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jun 2023 17:34:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2ADC2EB64DC
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Jun 2023 18:22:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2d9PnY5FVwg4jEcfoGc5gxYQ8+OpNKhw1h57KI6cs3k=; b=HgW2jcQZMzLbOe
-	sQtDdTPdyBdN7MJDNmgkZHJ90mtK8HmPEYDrt1rL76XsjSZMMIEhfSmZ5qCROE2n2vJpqu+o2+wTa
-	wfPdLfzCY4zdsymk4SBV69MW/FKStsWKN/BMauE245Np1xOzaQNugmGjmgM8gTUtyrg206S7Jx8Cq
-	1KQjmX2vwyJbjJNo2RyVfH6Ldomt5oMFzZZcIqC4NuudYwARs1Tdls//KFNDAFj6h3bmovqrq+16c
-	GKgh7ugFyp5OhrYKVpMzFnMPlygRV9NjYaf/KOQovOMysmZOHMq7slsm5pj7KrM3OMzNQEmrDAybC
-	FkrEDLmQt6PwnLDcl9mQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=soh2kNerWTe4NhdumXWXeY+RVD99FELyGP+UZRBkG4k=; b=Kx/DzdNNc8monsWvBjlCNKxhpQ
+	Q2EQNwSoMalnKfe0o0sAZI6kCqRs/u130nqwq51I1JtuwBq9a9gJRIonPZRkinAOSzeU0dFoAN3oH
+	bWAdguBlf7yXf+oVUnkpBAkul6O2fk+LJVgM3FAFORcujiPvQ8QQy4PRfFC59RxmZqj8jhaiZRYgZ
+	pMfxlcQ7baRqJMvh//HKTfNy6Cwc8hkH+Y9zaq2FMN3M2zU3BW7lIWtPZNfc1bb8k5U1dzHZWO2N6
+	j28agr0tla+zkhgugkrW02toRt+slm6/M8f9dUSpEiGI/6f65d1EGqZvWMAS0MLGX980JWr0JvmRw
+	j7Pthjqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qFI0x-004CAZ-2L;
-	Fri, 30 Jun 2023 17:34:35 +0000
-Received: from mail-il1-f181.google.com ([209.85.166.181])
+	id 1qFIkq-004IAM-2h;
+	Fri, 30 Jun 2023 18:22:00 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qFI0u-004C9t-0y
+	id 1qFIkm-004I9u-3B
 	for linux-phy@lists.infradead.org;
-	Fri, 30 Jun 2023 17:34:33 +0000
-Received: by mail-il1-f181.google.com with SMTP id e9e14a558f8ab-345ad94db0aso9010655ab.1
-        for <linux-phy@lists.infradead.org>; Fri, 30 Jun 2023 10:34:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688146471; x=1690738471;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LQ94kfdEfq9RrPFyhfJUVdunZkyBAVzDUoOb8tFiC9I=;
-        b=YNuXp7v4aN1tcS4Igze2AENgJilnh1+DJwnSc60RGO6y7Au/pv2b9To+oGaFDmoXiy
-         XnHvQ1Inpwph+hPVJld1/+jP4JFQaUtNq6rQ5zE43cZt4Ew39vnsLjDAkoPcBxSOZyEv
-         bG/NnbKuIwveOftcb/9RjLMICDDwDRhSIOLJ6STuC4F4Utm/C0k4gl8pCKvHLkS11wE1
-         MXLC+yFbkm5+sAC/kOi6TJgkqSd94kYokc/9PVvi6x9Xiuh5rnlZ9O2zFhYl8kaNAiOm
-         6gzaL9IbDow9zzV0alzxd0rXpO7kk9A67jxUHcKiRTZh5XO+wRq0o6Y+yPp/4z2bOm3s
-         idFA==
-X-Gm-Message-State: AC+VfDyMD8PYuXMTYiTl1xBkfz+vbyokBtZlT5/8Y95EcJuIVLCWWvmk
-	aXgxLZZJkLIQlSyeQCEDUQ==
-X-Google-Smtp-Source: ACHHUZ4EbUs4PS9q79isRP9O3xuyN3VlPHEnyRoBjVZ32PU31b0maNUtRwGNVSbiOr7AKyybiYfTVQ==
-X-Received: by 2002:a6b:a16:0:b0:783:694f:e791 with SMTP id z22-20020a6b0a16000000b00783694fe791mr3651652ioi.12.1688146471480;
-        Fri, 30 Jun 2023 10:34:31 -0700 (PDT)
-Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id i17-20020a02ca51000000b0042af069eeefsm1830983jal.50.2023.06.30.10.34.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 30 Jun 2023 10:34:30 -0700 (PDT)
-Received: (nullmailer pid 2074728 invoked by uid 1000);
-	Fri, 30 Jun 2023 17:34:28 -0000
-Date: Fri, 30 Jun 2023 11:34:28 -0600
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: linux-phy@lists.infradead.org, linux-rtc@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>, Oleksij Rempel <o.rempel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>, linux-watchdog@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>, Tony Lindgren <tony@atomide.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Dilip Kota <eswara.kota@linux.intel.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, timestamp@lists.linux.dev, Vinod Koul <vkoul@kernel.org>, alsa-devel@alsa-project.org, Alexandre Belloni <alexandre.belloni@bootlin.com>, Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck <wim@linux-watchdog.org>, Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>, Dipen Patel <dipenp@nvidia.com>, linux-pwm@vger.kernel.org
-Subject: Re: [PATCH 6/7] dt-bindings: timestamp: restrict node name suffixes
-Message-ID: <168814645706.2074491.15762386958786625732.robh@kernel.org>
-References: <20230530144851.92059-1-krzysztof.kozlowski@linaro.org>
- <20230530144851.92059-7-krzysztof.kozlowski@linaro.org>
+	Fri, 30 Jun 2023 18:21:58 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 431A0617D1;
+	Fri, 30 Jun 2023 18:21:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5D34C433C8;
+	Fri, 30 Jun 2023 18:21:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1688149315;
+	bh=sM46dcengp7YkqfFo0VJUNN08NUrJCfycUaS2/3Woo0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=odJQMvmZ0rqdXgLbMO87OefdaC4QW3lgA/RWvCb/rfwsahLGiH1t1dFswomLcQIru
+	 Z0hBWjgnZ4rt6sPNx3V8LxMtVy2Ea0AYR17S54qnwtCXCduR8Vzmj3bxKwY4gSOjLg
+	 YNB3P8zD9A7gOORxtd68UVGihekQbl0Qh1aZHXURJ6emhf1E/qigeW/mxttRgdfrea
+	 81V/O4GOJsty2zQALa/JSvuUCVsywnp+AlWB2/P0nJVbaXJDR4gbWY18dY+vQt7y31
+	 CWmuZQJZ2wMA7ugKXOyZTsgUClPKgyj4vM9CKlxoKsGdRtmB2cZWsHbayTW4kJZOqU
+	 tgUTP5fwxGz2Q==
+Date: Fri, 30 Jun 2023 19:21:49 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Stanley =?utf-8?B?Q2hhbmdb5piM6IKy5b63XQ==?= <stanley_chang@realtek.com>
+Cc: Rob Herring <robh@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Douglas Anderson <dianders@chromium.org>,
+	Matthias Kaehlcke <mka@chromium.org>,
+	Bagas Sanjaya <bagasdotme@gmail.com>,
+	Flavio Suligoi <f.suligoi@asem.it>, Ray Chi <raychi@google.com>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+Subject: Re: [PATCH v6 4/5] dt-bindings: phy: realtek: Add the doc about the
+ Realtek SoC USB 2.0 PHY
+Message-ID: <20230630-trowel-pleat-5312a869dda2@spud>
+References: <20230629054523.7519-1-stanley_chang@realtek.com>
+ <20230629054523.7519-4-stanley_chang@realtek.com>
+ <20230629164220.GA3146341-robh@kernel.org>
+ <f17378f003144f4ba50ec08e0ad38c0b@realtek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230530144851.92059-7-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <f17378f003144f4ba50ec08e0ad38c0b@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230630_103432_335431_92C8E8CC 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20230630_112157_130784_08F31D29 
+X-CRM114-Status: GOOD (  27.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,33 +86,150 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5545912301320100706=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 30 May 2023 16:48:50 +0200, Krzysztof Kozlowski wrote:
-> Make the pattern matching node names a bit stricter to improve DTS
-> consistency.  The pattern is restricted to -N suffixes to decimal
-> numbers.
-> 
-> Suggested-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> 
-> ---
-> 
-> Cc: Tony Lindgren <tony@atomide.com>
-> Cc: Oleksij Rempel <o.rempel@pengutronix.de>
-> ---
->  .../bindings/timestamp/hardware-timestamps-common.yaml          | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+--===============5545912301320100706==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="aEhlxy1fUgPMd5+/"
+Content-Disposition: inline
 
-Applied, thanks!
 
+--aEhlxy1fUgPMd5+/
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Jun 30, 2023 at 07:33:45AM +0000, Stanley Chang[=E6=98=8C=E8=82=B2=
+=E5=BE=B7] wrote:
+> Hi Rob,
+>=20
+> > On Thu, Jun 29, 2023 at 01:45:12PM +0800, Stanley Chang wrote:
+> > > Add the documentation explain the property about Realtek USB PHY driv=
+er.
+> >=20
+> > In the subject, drop "the doc about the". It's redundant. And perhaps a=
+dd 'DHC
+> > RTD SoC' if this isn't for *all* Realtek SoCs.
+> >=20
+> > > Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
+> > > controller. Added the driver to drive the USB 2.0 PHY transceivers.
+> >=20
+> > driver? This is a binding for the h/w.
+>=20
+> I mean, the driver is drivers/phy/realtek/phy-rtk-usb2.c
+> I will revise as
+>     dt-bindings: phy: realtek: Add the Realtek DHC RTD SoC USB 2.0 PHY
+>=20
+>     Add the documentation explain the property about Realtek USB PHY driv=
+er.
+>=20
+>     Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
+>     controller and uses phy-rtk-usb2 as driver for USB 2.0 PHY transceive=
+r..
+
+No, you should mention nothing to do with how a particular operating
+system chooses to structure its code here. Bindings describe hardware,
+and the commit message should reflect that.
+
+>=20
+> > > +$id: http://devicetree.org/schemas/phy/realtek,usb2phy.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Realtek DHC SoCs USB 2.0 PHY
+> > > +
+> > > +maintainers:
+> > > +  - Stanley Chang <stanley_chang@realtek.com>
+> > > +
+> > > +description:
+> >=20
+> > You need '|' if formatting (line breaks) are important.
+>=20
+> I think I need it. I will add it.
+>=20
+> > > +  realtek,inverse-hstx-sync-clock:
+> > > +    description:
+> > > +      For one of the phys of RTD1619b SoC, the synchronous clock of =
+the
+> > > +      high-speed tx must be inverted.
+> >=20
+> > "invert" assumes I know what non-inverted means. I do not. Better to st=
+ate in
+> > terms of active high, low, falling edge, rising edge, etc.
+>=20
+> Meaning, the clock must be reversed.
+
+Maybe that means something to Rob, but "reversed" doesn't seem any more
+meaningful than inverse. I agree that it should be described in terms of
+"active high" etc, as they have well understood meanings.
+
+> > > +    type: boolean
+> > > +
+> > > +  realtek,driving-level:
+> > > +    description:
+> > > +      Control the magnitude of High speed Dp/Dm output swing.
+> > > +      For a different board or port, the original magnitude maybe not
+> > meet
+> > > +      the specification. In this situation we can adjust the value t=
+o meet
+> > > +      the specification.
+> >=20
+> > What are the units?
+>=20
+> There is no unit. It is only a gain for adjusting the magnitude.
+
+Gain has units too.
+
+> > > +    $ref: /schemas/types.yaml#/definitions/uint32
+> > > +    default: 8
+> > > +    minimum: 0
+> > > +    maximum: 31
+> > > +
+> > > +  realtek,driving-compensate:
+> >=20
+> > compensate what?
+>=20
+> It is to compensate the driving level.
+
+Should it be called "driving-level-compensate" then?
+
+> In other word, to adjust the driving level.
+
+So, "realtek,driving-level" sets the gain and
+"realtek,driving-compensate" adjusts the driving level.
+By that logic, is this also a gain?
+
+Also this property is only for the RTD1315e? That should be
+described in/constrained by the binding itself, not in the text
+description alone IMO.
+
+
+--aEhlxy1fUgPMd5+/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZJ8dPQAKCRB4tDGHoIJi
+0lmUAP45sQ9AK7ogaqK+eH+Y4Gn7Emg+7aM7bHUQwQztSG0w/AD/ZtzuQIET/Qsw
+9vk5lYfiSF8wdLIPvZ1gQ5IVcpEEHAM=
+=Acbb
+-----END PGP SIGNATURE-----
+
+--aEhlxy1fUgPMd5+/--
+
+
+--===============5545912301320100706==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5545912301320100706==--
+
