@@ -4,69 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F65CEB64DC
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jun 2023 16:42:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AA1EEB64DA
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Jun 2023 09:31:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MG7ILij/c6lpN5/NHCdJqoOoMqjJFTOXUD7jVzZNOL8=; b=AkZhs5VzRR/SWI
-	MIbyZIwUbAb0MHumhwrPuy6ckw61wyVrMf0GXkuLqNcJ1E7WbfmiWQlvHMB9IynhelwxAFNMKlP/U
-	E6hfH9Yz7JG3LxxzOII1rBj9NDJQyR1yYHImR5xVuDT01oj4I1V2AVP8Dxf2ARxDOrfxgLrlXBAGt
-	uoRq/Qr2ehBfpdFIaijn1l4JqjaNaWW1ixaT9Y+biruf/Jlws8CZ2zf6VxSxW+b+YUFwgB0ascSg7
-	bHQfZU31UtqCZOdLZfakoOkkPeltqL1ziDt6dTsqNj1TAbzKPWwagUjSsxrKz0CrfUlkY4WymC6IR
-	wcorYjgZ+4k28eQl7pJw==;
+	List-Owner; bh=nemu605Ra055/2Lfi+iTrnsdE2AA2lOO+v+AmN3zuXI=; b=fERr6bf4OTZNHl
+	m/FmkPb9eVtTt6zs0oo32d2hk0T0mRGgSa4F6H8rCkIIxTvvCG0R6K8lY3BzLSyVjR23qvSHoFXfz
+	bf1MWu8jNtncXt+ocQqyJdapefYmzFAkvlopQtVWYUZPSsEH7+6oI6JatBjLSf6/DrtEUZpCwmqtZ
+	hgfMckut74yew18bznfiicAdXt1ZEicOcle3L5UMTAzDI9yUngKGBHeLbZS3PMJDjj2mU27lrzgzT
+	4anDi96YhciEU4G0OOpqUL7DgB7Xh3d913zIllTUcEp39XNZPfCjFhjQe9x/9gy/t6Mzxy0i/fDQM
+	+bwUxSWI740iy5xjmALg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEuiy-001YV6-05;
-	Thu, 29 Jun 2023 16:42:28 +0000
-Received: from mail-il1-f176.google.com ([209.85.166.176])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEuiv-001YUc-0e
+	id 1qFATk-003I9P-0T;
+	Fri, 30 Jun 2023 09:31:48 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qFATf-003I75-1E
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Jun 2023 16:42:27 +0000
-Received: by mail-il1-f176.google.com with SMTP id e9e14a558f8ab-345d3ec6b4bso3950315ab.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Jun 2023 09:42:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688056943; x=1690648943;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=TRWy3i6pbeNlRXNAD1TtP6TYXEvbi4bC2/D/Non/65w=;
-        b=Z9O69a861JKUyVJ+fN2W+gDP/lXrWu+VM4oMPFpCp3Xx0MTL06smTnH7q4jwHGDC4s
-         lPiy2r/twZlzGqM7XJ8vN8bBEnbZXjmJxOjBqpgvA4tOptRf/eWgkVBdIzln78JtPKIJ
-         5uhy2J31y0Oed+AenHMM9gibbt33ENhbjCZd2fJJlpMIY2Mm/Q0bRdQGzGrs3Ajbo4LK
-         og64rGvVFiCaapde5hoDdzL54wlZgjX1NrjWGtZmlEGM1Tlt4q9L2B9xcVPcpZQNWAg3
-         6qIOUUaIUnHyhGUTWMjbOlO2EJbd3kR0AXdGwFbVzI1pNE9KB81u+VhBJngvLJWnxgKz
-         XNpA==
-X-Gm-Message-State: AC+VfDx+IIM+Ah8lgLDHtObruLFi5tkWuQeHMzOLugYTNBQn5TK7ZAzU
-	PByk+FJ8onjgfgA6pVtjtA==
-X-Google-Smtp-Source: ACHHUZ7M99eTAmUw4XoU5ZkgjxBk1JtUJxqFkrmyUDW3gTIetju8FtlPY8j8oAevFgTFYsWNosN0qw==
-X-Received: by 2002:a92:d947:0:b0:345:6ce1:d255 with SMTP id l7-20020a92d947000000b003456ce1d255mr14874073ilq.1.1688056942890;
-        Thu, 29 Jun 2023 09:42:22 -0700 (PDT)
-Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id u10-20020a92da8a000000b00345b0111f91sm2512841iln.36.2023.06.29.09.42.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Jun 2023 09:42:22 -0700 (PDT)
-Received: (nullmailer pid 3167869 invoked by uid 1000);
-	Thu, 29 Jun 2023 16:42:20 -0000
-Date: Thu, 29 Jun 2023 10:42:20 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stanley Chang <stanley_chang@realtek.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>, Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>, Bagas Sanjaya <bagasdotme@gmail.com>, Flavio Suligoi <f.suligoi@asem.it>, Ray Chi <raychi@google.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v6 4/5] dt-bindings: phy: realtek: Add the doc about the
- Realtek SoC USB 2.0 PHY
-Message-ID: <20230629164220.GA3146341-robh@kernel.org>
-References: <20230629054523.7519-1-stanley_chang@realtek.com>
- <20230629054523.7519-4-stanley_chang@realtek.com>
+	Fri, 30 Jun 2023 09:31:46 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id B12618068;
+	Fri, 30 Jun 2023 17:30:59 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 30 Jun
+ 2023 17:30:59 +0800
+Received: from ubuntu.localdomain (183.27.97.206) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 30 Jun
+ 2023 17:30:59 +0800
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+CC: Jack Zhu <jack.zhu@starfivetech.com>, Changhuang Liang
+	<changhuang.liang@starfivetech.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v6 2/2] phy: starfive: Add mipi dphy rx support
+Date: Fri, 30 Jun 2023 02:30:56 -0700
+Message-ID: <20230630093056.46904-3-changhuang.liang@starfivetech.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230630093056.46904-1-changhuang.liang@starfivetech.com>
+References: <20230630093056.46904-1-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230629054523.7519-4-stanley_chang@realtek.com>
+X-Originating-IP: [183.27.97.206]
+X-ClientProxiedBy: EXCAS061.cuchost.com (172.16.6.21) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230629_094225_275609_AEB5DF85 
-X-CRM114-Status: GOOD (  31.81  )
+X-CRM114-CacheID: sfid-20230630_023143_816345_60C5A0B1 
+X-CRM114-Status: GOOD (  21.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,220 +76,330 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 29, 2023 at 01:45:12PM +0800, Stanley Chang wrote:
-> Add the documentation explain the property about Realtek USB PHY driver.
+Add mipi dphy rx support for the StarFive JH7110 SoC. It is used to
+transfer CSI camera data.
 
-In the subject, drop "the doc about the". It's redundant. And perhaps 
-add 'DHC RTD SoC' if this isn't for *all* Realtek SoCs.
+Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+---
+ MAINTAINERS                                 |   7 +
+ drivers/phy/Kconfig                         |   1 +
+ drivers/phy/Makefile                        |   1 +
+ drivers/phy/starfive/Kconfig                |  13 ++
+ drivers/phy/starfive/Makefile               |   2 +
+ drivers/phy/starfive/phy-starfive-dphy-rx.c | 230 ++++++++++++++++++++
+ 6 files changed, 254 insertions(+)
+ create mode 100644 drivers/phy/starfive/Kconfig
+ create mode 100644 drivers/phy/starfive/Makefile
+ create mode 100644 drivers/phy/starfive/phy-starfive-dphy-rx.c
 
-> Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller. Added the driver to drive the USB 2.0 PHY transceivers.
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 35e19594640d..2c58564ce5a0 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -20121,6 +20121,13 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/net/starfive,jh7110-dwmac.yaml
+ F:	drivers/net/ethernet/stmicro/stmmac/dwmac-starfive.c
+ 
++STARFIVE JH7110 DPHY RX DRIVER
++M:	Jack Zhu <jack.zhu@starfivetech.com>
++M:	Changhuang Liang <changhuang.liang@starfivetech.com>
++S:	Supported
++F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
++F:	drivers/phy/starfive/phy-starfive-dphy-rx.c
++
+ STARFIVE JH7110 MMC/SD/SDIO DRIVER
+ M:	William Qiu <william.qiu@starfivetech.com>
+ S:	Supported
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index f46e3148d286..0000149edbc4 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -91,6 +91,7 @@ source "drivers/phy/rockchip/Kconfig"
+ source "drivers/phy/samsung/Kconfig"
+ source "drivers/phy/socionext/Kconfig"
+ source "drivers/phy/st/Kconfig"
++source "drivers/phy/starfive/Kconfig"
+ source "drivers/phy/sunplus/Kconfig"
+ source "drivers/phy/tegra/Kconfig"
+ source "drivers/phy/ti/Kconfig"
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index 54f312c10a40..fb3dc9de6111 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -31,6 +31,7 @@ obj-y					+= allwinner/	\
+ 					   samsung/	\
+ 					   socionext/	\
+ 					   st/		\
++					   starfive/	\
+ 					   sunplus/	\
+ 					   tegra/	\
+ 					   ti/		\
+diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+new file mode 100644
+index 000000000000..f989b8ff8bcb
+--- /dev/null
++++ b/drivers/phy/starfive/Kconfig
+@@ -0,0 +1,13 @@
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Phy drivers for StarFive platforms
++#
++
++config PHY_STARFIVE_DPHY_RX
++	tristate "StarFive D-PHY RX Support"
++	select GENERIC_PHY
++	select GENERIC_PHY_MIPI_DPHY
++	help
++	  Choose this option if you have a StarFive D-PHY in your
++	  system. If M is selected, the module will be called
++	  phy-starfive-dphy-rx.
+diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+new file mode 100644
+index 000000000000..7ec576cb30ae
+--- /dev/null
++++ b/drivers/phy/starfive/Makefile
+@@ -0,0 +1,2 @@
++# SPDX-License-Identifier: GPL-2.0
++obj-$(CONFIG_PHY_STARFIVE_DPHY_RX)      += phy-starfive-dphy-rx.o
+diff --git a/drivers/phy/starfive/phy-starfive-dphy-rx.c b/drivers/phy/starfive/phy-starfive-dphy-rx.c
+new file mode 100644
+index 000000000000..7015fae6503c
+--- /dev/null
++++ b/drivers/phy/starfive/phy-starfive-dphy-rx.c
+@@ -0,0 +1,230 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * DPHY driver for the StarFive JH7110 SoC
++ *
++ * Copyright (C) 2023 StarFive Technology Co., Ltd.
++ */
++
++#include <linux/bitfield.h>
++#include <linux/bitops.h>
++#include <linux/clk.h>
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
++#include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
++#include <linux/reset.h>
++
++#define STF_DPHY_APBCFGSAIF_SYSCFG(x)		(x)
++
++#define STF_DPHY_ENABLE_CLK			BIT(6)
++#define STF_DPHY_ENABLE_CLK1			BIT(7)
++#define STF_DPHY_ENABLE_LAN0			BIT(8)
++#define STF_DPHY_ENABLE_LAN1			BIT(9)
++#define STF_DPHY_ENABLE_LAN2			BIT(10)
++#define STF_DPHY_ENABLE_LAN3			BIT(11)
++#define STF_DPHY_LANE_SWAP_CLK			GENMASK(22, 20)
++#define STF_DPHY_LANE_SWAP_CLK1			GENMASK(25, 23)
++#define STF_DPHY_LANE_SWAP_LAN0			GENMASK(28, 26)
++#define STF_DPHY_LANE_SWAP_LAN1			GENMASK(31, 29)
++
++#define STF_DPHY_LANE_SWAP_LAN2			GENMASK(2, 0)
++#define STF_DPHY_LANE_SWAP_LAN3			GENMASK(5, 3)
++#define STF_DPHY_PLL_CLK_SEL			GENMASK(21, 12)
++#define STF_DPHY_PRECOUNTER_IN_CLK		GENMASK(29, 22)
++
++#define STF_DPHY_PRECOUNTER_IN_CLK1		GENMASK(7, 0)
++#define STF_DPHY_PRECOUNTER_IN_LAN0		GENMASK(15, 8)
++#define STF_DPHY_PRECOUNTER_IN_LAN1		GENMASK(23, 16)
++#define STF_DPHY_PRECOUNTER_IN_LAN2		GENMASK(31, 24)
++
++#define STF_DPHY_PRECOUNTER_IN_LAN3		GENMASK(7, 0)
++#define STF_DPHY_RX_1C2C_SEL			BIT(8)
++
++#define STF_MAP_LANES_NUM			6
++
++struct regval {
++	u32 addr;
++	u32 val;
++};
++
++struct stf_dphy_info {
++	/**
++	 * @maps:
++	 *
++	 * Physical lanes and logic lanes mapping table.
++	 *
++	 * The default order is:
++	 * [clk lane0, data lane 0, data lane 1, data lane 2, date lane 3, clk lane 1]
++	 */
++	u8 maps[STF_MAP_LANES_NUM];
++};
++
++struct stf_dphy {
++	struct device *dev;
++	void __iomem *regs;
++	struct clk *cfg_clk;
++	struct clk *ref_clk;
++	struct clk *tx_clk;
++	struct reset_control *rstc;
++	struct regulator *mipi_0p9;
++	struct phy *phy;
++	const struct stf_dphy_info *info;
++};
++
++static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	const struct stf_dphy_info *info = dphy->info;
++
++	writel(FIELD_PREP(STF_DPHY_ENABLE_CLK, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_CLK1, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN0, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN1, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN2, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN3, 1) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK, info->maps[0]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK1, info->maps[5]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN0, info->maps[1]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN1, info->maps[2]),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(188));
++
++	writel(FIELD_PREP(STF_DPHY_LANE_SWAP_LAN2, info->maps[3]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN3, info->maps[4]) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK, 8),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(192));
++
++	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK1, 8) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN0, 7) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN1, 7) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN2, 7),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(196));
++
++	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN3, 7),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(200));
++
++	return 0;
++}
++
++static int stf_dphy_power_on(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	int ret;
++
++	ret = pm_runtime_resume_and_get(dphy->dev);
++	if (ret < 0)
++		return ret;
++
++	ret = regulator_enable(dphy->mipi_0p9);
++	if (ret) {
++		pm_runtime_put(dphy->dev);
++		return ret;
++	}
++
++	clk_set_rate(dphy->cfg_clk, 99000000);
++	clk_set_rate(dphy->ref_clk, 49500000);
++	clk_set_rate(dphy->tx_clk, 19800000);
++	reset_control_deassert(dphy->rstc);
++
++	return 0;
++}
++
++static int stf_dphy_power_off(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++
++	reset_control_assert(dphy->rstc);
++
++	regulator_disable(dphy->mipi_0p9);
++
++	pm_runtime_put_sync(dphy->dev);
++
++	return 0;
++}
++
++static const struct phy_ops stf_dphy_ops = {
++	.configure = stf_dphy_configure,
++	.power_on  = stf_dphy_power_on,
++	.power_off = stf_dphy_power_off,
++};
++
++static int stf_dphy_probe(struct platform_device *pdev)
++{
++	struct phy_provider *phy_provider;
++	struct stf_dphy *dphy;
++
++	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
++	if (!dphy)
++		return -ENOMEM;
++
++	dphy->info = of_device_get_match_data(&pdev->dev);
++
++	dev_set_drvdata(&pdev->dev, dphy);
++	dphy->dev = &pdev->dev;
++
++	dphy->regs = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(dphy->regs))
++		return PTR_ERR(dphy->regs);
++
++	dphy->cfg_clk = devm_clk_get(&pdev->dev, "cfg");
++	if (IS_ERR(dphy->cfg_clk))
++		return PTR_ERR(dphy->cfg_clk);
++
++	dphy->ref_clk = devm_clk_get(&pdev->dev, "ref");
++	if (IS_ERR(dphy->ref_clk))
++		return PTR_ERR(dphy->ref_clk);
++
++	dphy->tx_clk = devm_clk_get(&pdev->dev, "tx");
++	if (IS_ERR(dphy->tx_clk))
++		return PTR_ERR(dphy->tx_clk);
++
++	dphy->rstc = devm_reset_control_array_get_exclusive(&pdev->dev);
++	if (IS_ERR(dphy->rstc))
++		return PTR_ERR(dphy->rstc);
++
++	dphy->mipi_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
++	if (IS_ERR(dphy->mipi_0p9))
++		return PTR_ERR(dphy->mipi_0p9);
++
++	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
++	if (IS_ERR(dphy->phy)) {
++		dev_err(&pdev->dev, "Failed to create PHY\n");
++		return PTR_ERR(dphy->phy);
++	}
++
++	pm_runtime_enable(&pdev->dev);
++
++	phy_set_drvdata(dphy->phy, dphy);
++	phy_provider = devm_of_phy_provider_register(&pdev->dev,
++						     of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct stf_dphy_info starfive_dphy_info = {
++	.maps = {4, 0, 1, 2, 3, 5},
++};
++
++static const struct of_device_id stf_dphy_dt_ids[] = {
++	{
++		.compatible = "starfive,jh7110-dphy-rx",
++		.data = &starfive_dphy_info,
++	},
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
++
++static struct platform_driver stf_dphy_driver = {
++	.probe = stf_dphy_probe,
++	.driver = {
++		.name	= "starfive-dphy-rx",
++		.of_match_table = stf_dphy_dt_ids,
++	},
++};
++module_platform_driver(stf_dphy_driver);
++
++MODULE_AUTHOR("Jack Zhu <jack.zhu@starfivetech.com>");
++MODULE_AUTHOR("Changhuang Liang <changhuang.liang@starfivetech.com>");
++MODULE_DESCRIPTION("StarFive DPHY RX driver");
++MODULE_LICENSE("GPL");
+-- 
+2.25.1
 
-driver? This is a binding for the h/w.
-
-> 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
-> ---
-> v5 to v6 change:
->     Drop the redundant examples
->     Drop the label of example
-> v4 to v5 change:
->     1. Add more examples.
->     2. Remove the compatible realtek,usb2phy.
->     3. Revise the descriptor of the property.
->     4. Add the default of the property.
-> v3 to v4 change:
->     1. Remove the parameter and non hardware properties from dts.
->     2. Using the compatible data included the config and parameter
->        in driver.
-> v2 to v3 change:
->     1. Broken down into two patches, one for each of USB 2 & 3.
->     2. Add more description about Realtek RTD SoCs architecture.
->     3. Removed parameter v1 support for simplification.
->     4. Revised the compatible name for fallback compatible.
->     5. Remove some properties that can be set in the driver.
-> v1 to v2 change:
->     Add phy-cells for generic phy driver
-> ---
->  .../bindings/phy/realtek,usb2phy.yaml         | 153 ++++++++++++++++++
->  1 file changed, 153 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-> new file mode 100644
-> index 000000000000..773663bf5c62
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-> @@ -0,0 +1,153 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright 2023 Realtek Semiconductor Corporation
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/realtek,usb2phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Realtek DHC SoCs USB 2.0 PHY
-> +
-> +maintainers:
-> +  - Stanley Chang <stanley_chang@realtek.com>
-> +
-> +description:
-
-You need '|' if formatting (line breaks) are important.
-
-> +  Realtek USB 2.0 PHY support the digital home center (DHC) RTD series SoCs.
-> +  The USB 2.0 PHY driver is designed to support the XHCI controller. The SoCs
-> +  support multiple XHCI controllers. One PHY device node maps to one XHCI
-> +  controller.
-> +
-> +  RTD1295/RTD1619 SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY and map one USB 3.0 PHY on some
-> +  controllers.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +
-> +  RTD1395 SoCs USB
-> +  The USB architecture includes two XHCI controllers.
-> +  The controller#0 has one USB 2.0 PHY. The controller#1 includes two USB 2.0
-> +  PHY.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +                               |- phy#1
-> +
-> +  RTD1319/RTD1619b SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY and map one USB 3.0 PHY on controllers#2.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +
-> +  RTD1319d SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each xhci maps to one USB 2.0 PHY and map one USB 3.0 PHY on controllers#0.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +                    |- usb3phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +
-> +  RTD1312c/RTD1315e SoCs USB
-> +  The USB architecture includes three XHCI controllers.
-> +  Each XHCI maps to one USB 2.0 PHY.
-> +  XHCI controller#0 -- usb2phy -- phy#0
-> +  XHCI controller#1 -- usb2phy -- phy#0
-> +  XHCI controller#2 -- usb2phy -- phy#0
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - realtek,rtd1295-usb2phy
-> +      - realtek,rtd1312c-usb2phy
-> +      - realtek,rtd1315e-usb2phy
-> +      - realtek,rtd1319-usb2phy
-> +      - realtek,rtd1319d-usb2phy
-> +      - realtek,rtd1395-usb2phy
-> +      - realtek,rtd1395-usb2phy-2port
-> +      - realtek,rtd1619-usb2phy
-> +      - realtek,rtd1619b-usb2phy
-> +
-> +  reg:
-> +    items:
-> +      - description: PHY data registers
-> +      - description: PHY control registers
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  nvmem-cells:
-> +    maxItems: 2
-> +    description:
-> +      Phandles to nvmem cell that contains the trimming data.
-> +      If unspecified, default value is used.
-> +
-> +  nvmem-cell-names:
-> +    items:
-> +      - const: usb-dc-cal
-> +      - const: usb-dc-dis
-> +    description:
-> +      The following names, which correspond to each nvmem-cells.
-> +      usb-dc-cal is the driving level for each phy specified via efuse.
-> +      usb-dc-dis is the disconnection level for each phy specified via efuse.
-> +
-> +  realtek,inverse-hstx-sync-clock:
-> +    description:
-> +      For one of the phys of RTD1619b SoC, the synchronous clock of the
-> +      high-speed tx must be inverted.
-
-"invert" assumes I know what non-inverted means. I do not. Better to 
-state in terms of active high, low, falling edge, rising edge, etc.
-
-> +    type: boolean
-> +
-> +  realtek,driving-level:
-> +    description:
-> +      Control the magnitude of High speed Dp/Dm output swing.
-> +      For a different board or port, the original magnitude maybe not meet
-> +      the specification. In this situation we can adjust the value to meet
-> +      the specification.
-
-What are the units?
-
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    default: 8
-> +    minimum: 0
-> +    maximum: 31
-> +
-> +  realtek,driving-compensate:
-
-compensate what?
-
-> +    description:
-> +      For RTD1315e SoC, the driving level can be adjusted by reading the
-> +      efuse table. This property provides drive compensation.
-> +      If the magnitude of High speed Dp/Dm output swing still not meet the
-> +      specification, then we can set this value to meet the specification.
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    default: 0
-> +    minimum: -8
-> +    maximum: 8
-> +
-> +  realtek,disconnection-compensate:
-> +    description:
-> +      This adjusts the disconnection level compensation for the different
-> +      boards with different disconnection level.
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    default: 0
-> +    minimum: -8
-> +    maximum: 8
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    usb-phy@13214 {
-> +        compatible = "realtek,rtd1619b-usb2phy";
-> +        reg = <0x13214 0x4>, <0x28280 0x4>;
-> +        #phy-cells = <0>;
-> +        nvmem-cells = <&otp_usb_port0_dc_cal>, <&otp_usb_port0_dc_dis>;
-> +        nvmem-cell-names = "usb-dc-cal", "usb-dc-dis";
-> +
-> +        realtek,inverse-hstx-sync-clock;
-> +        realtek,driving-level = <0xa>;
-> +        realtek,driving-compensate = <(-1)>;
-> +        realtek,disconnection-compensate = <(-1)>;
-> +    };
-> -- 
-> 2.34.1
-> 
 
 -- 
 linux-phy mailing list
