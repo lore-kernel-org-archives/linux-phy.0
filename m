@@ -4,82 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AE6EC001DF
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Jul 2023 09:46:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05B00EB64DD
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Jul 2023 11:33:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r8iDV0zbTWx45g93nmwhAaRILLPrc1Hldny5bp1rgNs=; b=vn3fq2fPaArULC
-	/ifzwYWtxhPc+PJXmHo1md5Xet4RCMaW1tamz8gr3tJgjGcNgh6Rs7tlnqSAHY1a4+19L15ox2/uL
-	dWteWWM9f6K9AYL8LBgJwjY4ctpRAsyRynG0dcv1T5QPwwlrcTLslQSty0sFS9JsUowKJzoqa1aRg
-	GHMv08uBTQEnCG6+jQyxsDhNgF8V8bPhM/H/KT4Tztyn9HqphhSIDkPRmSMUow1MU77LYY+rhJTTP
-	HMhfiejNvfeYTvnycLFrVjR0r+1s6JSWZ2qHBAGF72B+RRDQPzWLtyaEbq1lJKYxBr+Q1RLZQps3X
-	dsdItYRYC13wljFkPl2A==;
+	List-Owner; bh=wW6aH3UFWYw8Y+7BX7DCeCtjREo0JeGH9P64t3/gtGU=; b=1zgnMo/mXldfrI
+	XLi1VcSX8V07aoSKeAJCNQo6gtwW75wja9LM32Ui219nlpyg+H+bnZD2b/7j5ZTXpQ8lP3zGxuR3M
+	3FboWA9FUUqRguFGnLe1pO4BYLI9+Ktils5LNbb4FQr7849qZayxfR31G1TFXHQVafeWH2erh/JY0
+	d2JOv4xeGEALukpUtiN84nq5i1r/WIxubjUCpwvh2LahTUAtDq1MKe2hV6DOeze611kKHwLHbiXK7
+	JM/cKk+0We0reHEBRlGK7//M5BLi/BCUn9hDkq3bbFMIDL27uUEKlbd6BTPboBmTZ/wARVOchTv9V
+	1WN6/ea4fF3uDIohEP4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGG8H-009zBh-0W;
-	Mon, 03 Jul 2023 09:46:09 +0000
-Received: from mail-ot1-x32a.google.com ([2607:f8b0:4864:20::32a])
+	id 1qGHnl-00ANNR-2B;
+	Mon, 03 Jul 2023 11:33:05 +0000
+Received: from frasgout.his.huawei.com ([185.176.79.56])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGG8B-009z6v-1y
-	for linux-phy@lists.infradead.org;
-	Mon, 03 Jul 2023 09:46:06 +0000
-Received: by mail-ot1-x32a.google.com with SMTP id 46e09a7af769-6b708b97418so3501920a34.3
-        for <linux-phy@lists.infradead.org>; Mon, 03 Jul 2023 02:46:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688377561; x=1690969561;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=TbmK849oZWBsIIXxzmxsrG4bxrPx0q2kPEKRNXqKLLA=;
-        b=FqaaBvfUvfBo3SBcsGzEMd1dvUZtm5NWEBpoBibAj65q9of6VirCq02/CPvzUE6J8M
-         Uhy5EVVpLr6ulJBY6fH/FRFZDHqELxw5AqluLllSTfRK8Ot+Y7fgK/B7fDdHTY0tDglk
-         aNBH29aK3CDBk7a+I6h5OtQDpqa2MgUlIAOY7TV32j+2bhe0Vnzs5nJl6906QtAMyUCT
-         GdDrC9klhyzRd3p1mIM0Q6JIf+MjdXHrTDOEwXZnZsJK+RVZA5+pBy+/iMeczLIiYMZL
-         T60ZrAExpo3e7Jl1THy4p7eU2ks0Ads/ozDYxk5B/CSAw2H6+lFHSWADkRkZd8aqZ38a
-         Dq/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688377561; x=1690969561;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=TbmK849oZWBsIIXxzmxsrG4bxrPx0q2kPEKRNXqKLLA=;
-        b=hN4RA6/PuDj7EN+2xG+mwDGmHbzXx870FeAMPAUgH+tKSgxjQYW3rPjI/Jts7SBac5
-         QuJgKsImcm/biojWuNuTVMdMTCoNIJVE3cNnXjJ7KWjV2AXCQwsJJzxwpApV9luF3QuZ
-         ZirZd5UHnCyuAy8Sgbn0HYQIdzXqOxL+DA1FAI76bBfaA3Uos1Gf4oETf8n1Vq58zvRC
-         6e4aGjrxULZs6mt7x0al8r1b6UXx+dlGBIF+hbHTorbjBMWa3QKO5MhfuBWU2EMVaxHv
-         N639ZcIQ9QXe8RlCpBeTs2x9YNkjNnc1kh4EzYgVxctcJfaz3xmp3KOYh4pR3naZ7I0G
-         uPTA==
-X-Gm-Message-State: AC+VfDwM+hmjM1IZblcBHk7Igu4InMW/ou2XhzSQ4Smh5z5ji5mY8lQh
-	uh07lNApxG1YTdUUi81qEmvwdGbKayZvaJFeW1OGdQ==
-X-Google-Smtp-Source: ACHHUZ7zcZZyp7iHEMoo1jOtwoGBPvK4/0F8HZmYDuVnyhpaegVixWOILIghS+RgeHmrQTN8C2D6HtJ1A50/NzsYIh8=
-X-Received: by 2002:a9d:6b19:0:b0:6b5:ee8f:73af with SMTP id
- g25-20020a9d6b19000000b006b5ee8f73afmr10267752otp.5.1688377561413; Mon, 03
- Jul 2023 02:46:01 -0700 (PDT)
-MIME-Version: 1.0
-References: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Mon, 3 Jul 2023 10:45:50 +0100
-Message-ID: <CAJ9a7ViDdBeom-pBEOEySN7e78GYjPkqSXvS9Has1aA-egQdLA@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: cleanup DTS example whitespaces
+	id 1qGHnf-00ANL8-1P;
+	Mon, 03 Jul 2023 11:33:02 +0000
+Received: from lhrpeml500005.china.huawei.com (unknown [172.18.147.201])
+	by frasgout.his.huawei.com (SkyGuard) with ESMTP id 4QvkJT5H3bz6J6rW;
+	Mon,  3 Jul 2023 19:31:05 +0800 (CST)
+Received: from localhost (10.34.206.101) by lhrpeml500005.china.huawei.com
+ (7.191.163.240) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Mon, 3 Jul
+ 2023 12:32:42 +0100
+Date: Mon, 3 Jul 2023 19:32:38 +0800
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Leo Yan <leo.yan@linaro.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-rockchip@lists.infradead.org, 
-	linux-iio@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-mtd@lists.infradead.org, 
-	linux-amlogic@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-remoteproc@vger.kernel.org, 
-	linux-usb@vger.kernel.org
+CC: Leo Yan <leo.yan@linaro.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+	<coresight@lists.linaro.org>, <linux-arm-kernel@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+	<freedreno@lists.freedesktop.org>, <linux-rockchip@lists.infradead.org>,
+	<linux-iio@vger.kernel.org>, <linux-media@vger.kernel.org>,
+	<linux-renesas-soc@vger.kernel.org>, <linux-mtd@lists.infradead.org>,
+	<linux-amlogic@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <linux-remoteproc@vger.kernel.org>,
+	<linux-usb@vger.kernel.org>
+Subject: Re: [PATCH] dt-bindings: cleanup DTS example whitespaces
+Message-ID: <20230703193238.00006d61@Huawei.com>
+In-Reply-To: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
+References: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 4.1.0 (GTK 3.24.33; x86_64-w64-mingw32)
+MIME-Version: 1.0
+X-Originating-IP: [10.34.206.101]
+X-ClientProxiedBy: lhrpeml100003.china.huawei.com (7.191.160.210) To
+ lhrpeml500005.china.huawei.com (7.191.163.240)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230703_024603_672417_810F4D2E 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20230703_043259_780639_00155A32 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,17 +77,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
-<krzysztof.kozlowski@linaro.org> wrote:
->
+On Sun,  2 Jul 2023 20:23:08 +0200
+Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org> wrote:
+
 > The DTS code coding style expects spaces around '=' sign.
->
+> 
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->
+> 
+For the IIO one.
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+
+Thanks for tidying these up.
+
+Jonathan
+
 > ---
->
+> 
 > Rob,
->
+> 
 > Maybe this could go via your tree? Rebased on your for-next:
 > v6.4-rc2-45-gf0ac35049606
 > ---
@@ -126,7 +114,7 @@ On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
 >  .../devicetree/bindings/usb/mediatek,mtu3.yaml |  2 +-
 >  .../devicetree/bindings/usb/ti,am62-usb.yaml   |  2 +-
 >  15 files changed, 30 insertions(+), 30 deletions(-)
->
+> 
 > diff --git a/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml b/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml
 > index 0c5b875cb654..d6c84b6e7fe6 100644
 > --- a/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml
@@ -134,14 +122,14 @@ On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
 > @@ -287,7 +287,7 @@ examples:
 >              arm,trig-in-sigs = <0 1>;
 >              arm,trig-in-types = <PE_DBGTRIGGER
->                                   PE_PMUIRQ>;
+>                                   PE_PMUIRQ>;  
 > -            arm,trig-out-sigs=<0 1 2 >;
 > +            arm,trig-out-sigs = <0 1 2 >;
 >              arm,trig-out-types = <PE_EDBGREQ
 >                                    PE_DBGRESTART
->                                    PE_CTIIRQ>;
+>                                    PE_CTIIRQ>;  
 > @@ -309,24 +309,24 @@ examples:
->
+>  
 >        trig-conns@0 {
 >          reg = <0>;
 > -        arm,trig-in-sigs=<0>;
@@ -154,7 +142,7 @@ On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
 > +        arm,trig-out-types = <GEN_HALTREQ>;
 >          arm,trig-conn-name = "sys_profiler";
 >        };
->
+>  
 >        trig-conns@1 {
 >          reg = <1>;
 > -        arm,trig-out-sigs=<2 3>;
@@ -163,7 +151,7 @@ On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
 > +        arm,trig-out-types = <GEN_HALTREQ GEN_RESTARTREQ>;
 >          arm,trig-conn-name = "watchdog";
 >        };
->
+>  
 >        trig-conns@2 {
 >          reg = <2>;
 > -        arm,trig-in-sigs=<1 6>;
@@ -173,12 +161,6 @@ On Sun, 2 Jul 2023 at 19:23, Krzysztof Kozlowski
 >          arm,trig-conn-name = "g_counter";
 >        };
 >      };
-
-for above CTI chagnes
-
-Acked-by: Mike Leach <mike.leach@linaro.org>
-
-
 > diff --git a/Documentation/devicetree/bindings/arm/keystone/ti,sci.yaml b/Documentation/devicetree/bindings/arm/keystone/ti,sci.yaml
 > index 91b96065f7df..86b59de7707e 100644
 > --- a/Documentation/devicetree/bindings/arm/keystone/ti,sci.yaml
@@ -204,18 +186,18 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 > +               <&secure_proxy_main 13>;
 >        reg-names = "debug_messages";
 >        reg = <0x44083000 0x1000>;
->
+>  
 > diff --git a/Documentation/devicetree/bindings/display/msm/gmu.yaml b/Documentation/devicetree/bindings/display/msm/gmu.yaml
 > index 029d72822d8b..65b02c7a1211 100644
 > --- a/Documentation/devicetree/bindings/display/msm/gmu.yaml
 > +++ b/Documentation/devicetree/bindings/display/msm/gmu.yaml
 > @@ -225,7 +225,7 @@ examples:
 >      #include <dt-bindings/interrupt-controller/arm-gic.h>
->
+>  
 >      gmu: gmu@506a000 {
 > -        compatible="qcom,adreno-gmu-630.2", "qcom,adreno-gmu";
 > +        compatible = "qcom,adreno-gmu-630.2", "qcom,adreno-gmu";
->
+>  
 >          reg = <0x506a000 0x30000>,
 >                <0xb280000 0x10000>,
 > diff --git a/Documentation/devicetree/bindings/display/panel/samsung,s6e8aa0.yaml b/Documentation/devicetree/bindings/display/panel/samsung,s6e8aa0.yaml
@@ -260,14 +242,14 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 > -        #address-cells= <1>;
 > +        #address-cells = <1>;
 >          #size-cells = <0>;
->
+>  
 >          adc@0 {
 > diff --git a/Documentation/devicetree/bindings/media/renesas,rzg2l-cru.yaml b/Documentation/devicetree/bindings/media/renesas,rzg2l-cru.yaml
 > index 7dde7967c886..1e72b8808d24 100644
 > --- a/Documentation/devicetree/bindings/media/renesas,rzg2l-cru.yaml
 > +++ b/Documentation/devicetree/bindings/media/renesas,rzg2l-cru.yaml
 > @@ -137,7 +137,7 @@ examples:
->
+>  
 >                  cru_parallel_in: endpoint@0 {
 >                      reg = <0>;
 > -                    remote-endpoint= <&ov5642>;
@@ -276,7 +258,7 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 >                      vsync-active = <1>;
 >                  };
 > @@ -150,7 +150,7 @@ examples:
->
+>  
 >                  cru_csi_in: endpoint@0 {
 >                      reg = <0>;
 > -                    remote-endpoint= <&csi_cru_in>;
@@ -289,7 +271,7 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 > --- a/Documentation/devicetree/bindings/media/renesas,vin.yaml
 > +++ b/Documentation/devicetree/bindings/media/renesas,vin.yaml
 > @@ -303,11 +303,11 @@ examples:
->
+>  
 >                              vin0csi20: endpoint@0 {
 >                                      reg = <0>;
 > -                                    remote-endpoint= <&csi20vin0>;
@@ -340,7 +322,7 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 > -        #size-cells=<2>;
 > +        #address-cells = <2>;
 > +        #size-cells = <2>;
->
+>  
 >          pmu@ff638000 {
 >              compatible = "amlogic,g12a-ddr-pmu";
 > diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
@@ -387,7 +369,7 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 > --- a/Documentation/devicetree/bindings/usb/ti,am62-usb.yaml
 > +++ b/Documentation/devicetree/bindings/usb/ti,am62-usb.yaml
 > @@ -92,7 +92,7 @@ examples:
->
+>  
 >          usb@31100000 {
 >            compatible = "snps,dwc3";
 > -          reg =<0x00 0x31100000 0x00 0x50000>;
@@ -395,21 +377,7 @@ Acked-by: Mike Leach <mike.leach@linaro.org>
 >            interrupts = <GIC_SPI 226 IRQ_TYPE_LEVEL_HIGH>, /* irq.0 */
 >                         <GIC_SPI 226 IRQ_TYPE_LEVEL_HIGH>; /* irq.0 */
 >            interrupt-names = "host", "peripheral";
-> --
-> 2.34.1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
-
-
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 -- 
 linux-phy mailing list
