@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F35C001E0
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Jul 2023 16:37:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3197C001DF
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Jul 2023 11:22:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Rdsr+Vdx7B6PrNZk33pEe4riSnECSvMHEPkkTyhpYhY=; b=DcWu0AzveLe7prdJeDviL6z+w5
-	lnThhQ4P4qwL+Rn4o0ztD//7TagEmmG8vPdH1yu9TWS3pDmfMxylMN5LqBi7j9afVxc3TmK++tRjs
-	Kpi5Y8BKNK8i5Qgd9aPzhi0TAb3w0GyRKB1Jflrl0b1/s3nzlo9i5zJPF+UjJSCwEsbsR+HhbIeBb
-	7xccNnzFQVIAXVN1Qd2pfKQ16cU3d4kinb0VNV3hvM79ZhiN/MU0uu5f1r0YaLyHY/fDV6TIFfZid
-	vGBds7+63LXMEBq8WG9G9wDAeJeHpdLs4SVAhawp5M8UY9fjH1DjrbO/dHTpFwxACTsEsa+nFsAuA
-	hyZXbwHA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jpy+1VfEAgE10etlXMooVvN+tzMJBuI2A19AQe7UA9M=; b=F0EjV6QyT3nUij
+	/QlBxvYIdkxVifPJ6UlmuHIfKsqigcDrAQTHpo31mNNuHChpRUMZveGkZ4JdsBKek7OwIG65hN6s+
+	WquQgpJfQfaxuy4wrniEk5jY+7B4on3mgC3fHdXYTAcNp+l1BRqaSux6aBr+oRqH2mn9OJHRPwld5
+	lQeH7zowFpj47iRCjbQfbLnqN2FvxYNlPaNZkifvni5BEoUygmvm4yWXyi010Ye18iumSNHoWmRhc
+	vyJ3Powp7aPprxAfFTEZj10V9F8B+IaHiSnVczg6cbvSczPM19IXhGT+dH5jT8Z5A0Y1ZJwe+AG/z
+	jFnDbhSuyzyphK562W7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGMYB-00B0zP-1h;
-	Mon, 03 Jul 2023 16:37:19 +0000
+	id 1qGe7A-00D71u-1g;
+	Tue, 04 Jul 2023 11:22:36 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGMY7-00B0xZ-0y;
-	Mon, 03 Jul 2023 16:37:16 +0000
+	id 1qGe74-00D6zW-2c;
+	Tue, 04 Jul 2023 11:22:32 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id C54D260FCD;
-	Mon,  3 Jul 2023 16:37:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D613C433C7;
-	Mon,  3 Jul 2023 16:37:10 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id AFD4B61193;
+	Tue,  4 Jul 2023 11:22:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9688BC433C9;
+	Tue,  4 Jul 2023 11:22:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1688402234;
-	bh=dQJizNDjV0On5jsPc5SMZQJc24JPH7DwKQhe7eOYpjQ=;
+	s=k20201202; t=1688469749;
+	bh=bWtf92i8/oO3zMlwR5SLYOrLYXhx27D67V8Iypmio+o=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OcWUi/sgVANfYuJYeddKHs4lsYxVTJ0o6uA/O/PPLLHo+0ak9l7GoaQht5MusPJYR
-	 qZkbgM5K6tXZVEA//tCW+sNb6e4XeUi75ZZGE+ckBKajEQWlaJr76mXD/ah6gyfjMp
-	 JNRc41GxrK8ctzMT632DFINJA7OPT+5EXV7NXe/JIwjF7iyFCgVgKaN0dH11AnrncN
-	 3uSKBoK7i7Hz4JGO7blvR7PiO/921+0tG89e3oUwKQctLMYQ+r5siGjNyG39h0/crT
-	 ll2x84Agc0UDDVR28uEGnFe2Q1NW1yqHbe5Hn+RzNUI8WUOHaPtwGP7JOkxRFObvWn
-	 k4lWRsdeMLtrA==
-Date: Mon, 3 Jul 2023 17:37:08 +0100
-From: Conor Dooley <conor@kernel.org>
+	b=rvywrCopXdg0XDl7CE9xtuwtEFzMRdFnLG5B6RMq/g6B8poPgGQYKuYTYBjDTrKo6
+	 v9FRy/OxlIpGaB4cCFoX5jMvHX4Wr+2MpZFyMVuUFZyrLAdavaYzj3BWquHzMkMNfO
+	 bpoOVkSkpgx3TDxSzYD0gbZTKBqVisLLyYQFePmyHaw6t9/AFj1wnNEIjQ2tUFn53w
+	 xEslso4o8h/nlnGoW4LrM8lxpyVELRWR57V6NSbDR3ZlV0YOwEBmHP0hP/qUYPh+Hh
+	 ZKBWoHvVOTc1pLMKNxrYL0lo4wH0bdTm1XMfQcws4vk+hw6d7u7g8cL1qy6hloVRLn
+	 RD5Ww+GgHPt7Q==
+Date: Tue, 4 Jul 2023 16:52:24 +0530
+From: Vinod Koul <vkoul@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Leo Yan <leo.yan@linaro.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
@@ -59,13 +59,14 @@ Cc: Leo Yan <leo.yan@linaro.org>,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
 	linux-remoteproc@vger.kernel.org, linux-usb@vger.kernel.org
 Subject: Re: [PATCH] dt-bindings: cleanup DTS example whitespaces
-Message-ID: <20230703-backwater-shrimp-83c4d7c85566@spud>
+Message-ID: <ZKQA8HxGavlwq550@matsya>
 References: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230703_093715_385685_EA9515F5 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20230704_042230_911303_D63B7AB7 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,56 +79,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3888637864660811913=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3888637864660811913==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="UiJVV06vbWBe/tbL"
-Content-Disposition: inline
-
-
---UiJVV06vbWBe/tbL
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sun, Jul 02, 2023 at 08:23:08PM +0200, Krzysztof Kozlowski wrote:
-> The DTS code coding style expects spaces around '=3D' sign.
->=20
+On 02-07-23, 20:23, Krzysztof Kozlowski wrote:
+> The DTS code coding style expects spaces around '=' sign.
+> 
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> 
+> ---
+> 
+> Rob,
+> 
+> Maybe this could go via your tree? Rebased on your for-next:
+> v6.4-rc2-45-gf0ac35049606
+> ---
+>  .../bindings/arm/arm,coresight-cti.yaml        | 18 +++++++++---------
+>  .../bindings/arm/keystone/ti,sci.yaml          |  8 ++++----
+>  .../devicetree/bindings/display/msm/gmu.yaml   |  2 +-
+>  .../display/panel/samsung,s6e8aa0.yaml         |  2 +-
+>  .../display/rockchip/rockchip-vop.yaml         |  4 ++--
+>  .../bindings/iio/adc/ti,adc108s102.yaml        |  2 +-
+>  .../bindings/media/renesas,rzg2l-cru.yaml      |  4 ++--
+>  .../devicetree/bindings/media/renesas,vin.yaml |  4 ++--
+>  .../devicetree/bindings/mtd/mtd-physmap.yaml   |  2 +-
+>  .../bindings/net/mediatek-dwmac.yaml           |  2 +-
+>  .../bindings/perf/amlogic,g12-ddr-pmu.yaml     |  4 ++--
+>  .../bindings/phy/mediatek,dsi-phy.yaml         |  2 +-
 
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
-Cheers,
-Conor.
-
---UiJVV06vbWBe/tbL
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZKL5MwAKCRB4tDGHoIJi
-0mVgAQDNt2fzUk6TeyhRtqxRzkVNpebNdDOvWcdu/bIrTUmphAD+MWZmleneV77V
-DMKAFWrQs6zsQ6eXYsq712V3/VRwiQg=
-=CDKn
------END PGP SIGNATURE-----
-
---UiJVV06vbWBe/tbL--
-
-
---===============3888637864660811913==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3888637864660811913==--
-
