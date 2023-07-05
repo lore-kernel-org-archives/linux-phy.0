@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AFCCEB64DD
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Jul 2023 09:16:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54BFAC0015E
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jul 2023 09:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
 	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p932mQdU4mjzT+/3oYXxh2Ovt1btDV+IyOw1Qm63PM0=; b=FDbX683vVwZ+to
-	eBJIY6zBSff1YovSvHHeKDnPvoIMsdu7SvSYT9qtPR9Sqh+659nmTzb1BkDLZXJExV3zYn7f1YMfR
-	P1x4MLgQYzCTCXKl6KO0FTwCqMPxCK8HFyBuo1o8IN30TtLUrj/JTbJlcN6xZu/xbWrk6MS/+RIvZ
-	GB1NScZn2yPj84EQRT8tdximRlLck6tki7CSbCTlcF/hOuaacrULhn3PXaHK2OqGG3IJhlk0pjFXs
-	k9EF0i60TQa9619OZABqx4n/x+6jd7+KnvizchyHTnZf0GDhyBvGl3xHYsW8fAHXNQwxxWjm2ZQjN
-	/5APpidFPItFwmBp0fbQ==;
+	List-Owner; bh=vCuducvz21nYIgzGXyO5G7sDu6QzJlMVz3gzCJbu+LI=; b=gE1O7xukdeu3aw
+	AaKvAz/adb91KFhnPGq/hddpYOwQW69LvKi6Z404yn4E3ZIZhP44u21h/465tpRxNRkVPmmQS1NlZ
+	/xJ/F5OqpvzvDMzZyKSU4bdClSvLINNZ7H6bXAsD/FxQyykhsTiBVvgG6mS+3lH6NpZ1+NajBSaLu
+	0AZIsUP0z7CynohvLyA6LKyGFQmnpF/d7VncczkOmrketbTXT3ZsdA8bQ/4+Q843fVD8K03/Rhw3m
+	8w/he6dIR3keKGGwIQIRdxt7K63tIpaLkmrUTcSznSKbxLs/bhjoVEWeUQylIZO1u0ENXkSkY79fD
+	sy520rgdxPfSa+7vAcrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGycq-00FKWD-2D;
-	Wed, 05 Jul 2023 09:16:40 +0000
-Received: from mail-io1-f52.google.com ([209.85.166.52])
+	id 1qGycs-00FKWY-01;
+	Wed, 05 Jul 2023 09:16:42 +0000
+Received: from mail-io1-f48.google.com ([209.85.166.48])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGyco-00FKSl-0u
+	id 1qGyco-00FKTf-1K
 	for linux-phy@lists.infradead.org;
 	Wed, 05 Jul 2023 09:16:39 +0000
-Received: by mail-io1-f52.google.com with SMTP id ca18e2360f4ac-78360b822abso252332839f.2
-        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 02:16:30 -0700 (PDT)
+Received: by mail-io1-f48.google.com with SMTP id ca18e2360f4ac-7835ffc53bfso10420839f.1
+        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 02:16:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688548590; x=1691140590;
+        d=1e100.net; s=20221208; t=1688548593; x=1691140593;
         h=date:subject:message-id:references:in-reply-to:cc:to:from
          :mime-version:content-transfer-encoding:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=zrxkvponYz4V5NTYWmXXqT0XM8M8zhkcRZKfUVdIvfo=;
-        b=Ll63NtRctCBbfmfoeGuRGZurCoxKzxUoo5aCIPG6VqcWiqdjnSoYg19i8D2Nb4XREf
-         7/OrYWQUNCY0XIY8/e1QZj5umZaE4KUlr3hpdrzAulmEmAqYgKMdCo/7vQ3zJCWAqHRF
-         3HpfL3KRVEwWXx/ZkHBwj/d3eUrDsDZrmiQIb/6BfG4LjJR298add2ae/oCfHbvVe2My
-         c7o7g9JfLlosenNUPLp7DcM6ROPJDIl84anYER9cIKUlkURsoG1+sairmxsMe7e77VAJ
-         i6uSC9yRahtX7Ca2TvDCHLTce5gr698LS0t5T4WSNTR5AuungPjgsOvtlStZAVb4vHn+
-         Pc7w==
-X-Gm-Message-State: AC+VfDzGhwX/msh4KfE8PRsUcU7CzhMssEUHIEz4JmR2WJ8fxkCUVjNc
-	sPHznSl1mNackJOqJRmSqA==
-X-Google-Smtp-Source: ACHHUZ7uV5drZripZphbrl8LDJeBSaflagI8Iu3OZ5ufCPyk2D1KK9nohHZs6UkU+btahidNzSfF3g==
-X-Received: by 2002:a5e:a911:0:b0:77e:3d2f:d1f4 with SMTP id c17-20020a5ea911000000b0077e3d2fd1f4mr15269163iod.15.1688548589990;
-        Wed, 05 Jul 2023 02:16:29 -0700 (PDT)
+        bh=lq04kjYiYY2D3X+Ef3fDnIElUg0AyuRuSsj7VlSyuoQ=;
+        b=Y4QRS7TnZaAh8krXb9NVcxMTcaaSy5/SZT/bbVR2hbrHyjM9DM8tFKVXoCVYh/4Ydp
+         x31G68k+cCrNVBRFHWnArWBAUL+yAFmfLyJgSRHzs3KJgubp6z5QldeCx24jwnlwRxeu
+         xn6qNHJXv+REFLGjNlfx0zsE4AtkQONCi/MSsP+EjBI14IHNEooJ09FYfkAZyxZSKON3
+         XgRWY5Cs24agW0V7Ph+vJYSekvczK+9wwieAijCOS8hZkFahxYep+X4iLAdIdVmaaCDd
+         Qu2gozHNPJmBpanpfs2KBmLih1RxIRaSzPQTkXo2ADoaDtATLjYeig7DdVC56uhmucYB
+         iQew==
+X-Gm-Message-State: ABy/qLZi/FZF0CaLM2YbqLw3IAI1jUSlRwuVLrkGa8afxd7RZJI6AK1w
+	8L/Pean5M3zBYwpbrVD58g==
+X-Google-Smtp-Source: APBJJlGE/605ujaMNU/z7n4PfFpdNXqgpH5xUQ/WO6pZbEYqJ7Qqw5V8pnQPxHsByRVJ6CADRgbktA==
+X-Received: by 2002:a6b:f314:0:b0:783:727a:8e15 with SMTP id m20-20020a6bf314000000b00783727a8e15mr1322122ioh.6.1688548592781;
+        Wed, 05 Jul 2023 02:16:32 -0700 (PDT)
 Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id e20-20020a02a514000000b0042b48e5da4bsm1717283jam.134.2023.07.05.02.16.27
+        by smtp.gmail.com with ESMTPSA id b20-20020a056602001400b007791e286fdbsm3863821ioa.21.2023.07.05.02.16.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Jul 2023 02:16:29 -0700 (PDT)
-Received: (nullmailer pid 4038325 invoked by uid 1000);
+        Wed, 05 Jul 2023 02:16:32 -0700 (PDT)
+Received: (nullmailer pid 4038328 invoked by uid 1000);
 	Wed, 05 Jul 2023 09:16:27 -0000
 MIME-Version: 1.0
 From: Rob Herring <robh@kernel.org>
 To: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-Cc: =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, agross@kernel.org, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, konrad.dybcio@linaro.org, linux-pci@vger.kernel.org, quic_nayiluri@quicinc.com, quic_shazhuss@quicinc.com, linux-phy@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>, quic_ramkri@quicinc.com, linux-arm-msm@vger.kernel.org, Lorenzo Pieralisi <lpieralisi@kernel.org>, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org, quic_nitegupt@quicinc.com, conor+dt@kernel.org, mani@kernel.org
-In-Reply-To: <1688545032-17748-2-git-send-email-quic_msarkar@quicinc.com>
+Cc: conor+dt@kernel.org, Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org, quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com, Kishon Vijay Abraham I <kishon@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>, linux-pci@vger.kernel.org, andersson@kernel.org, quic_shazhuss@quicinc.com, linux-arm-msm@vger.kernel.org, =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, agross@kernel.org, linux-phy@lists.infradead.org, mani@kernel.org, konrad.dybcio@linaro.org, Bjorn Helgaas <bhelgaas@google.com>, krzysztof.kozlowski+dt@linaro.org, quic_nitegupt@quicinc.com, devicetree@vger.kernel.org
+In-Reply-To: <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
 References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
- <1688545032-17748-2-git-send-email-quic_msarkar@quicinc.com>
-Message-Id: <168854858595.4038242.5895489616920935149.robh@kernel.org>
-Subject: Re: [PATCH v1 1/6] dt-bindings: PCI: qcom: Add sa8775p compatible
+ <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
+Message-Id: <168854858712.4038293.10826309392324391984.robh@kernel.org>
+Subject: Re: [PATCH v1 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP
+ PCIe PHY
 Date: Wed, 05 Jul 2023 03:16:27 -0600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230705_021638_322910_4B8DB0ED 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20230705_021638_452123_1DABC6E9 
+X-CRM114-Status: GOOD (  10.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,26 +83,34 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 05 Jul 2023 13:47:06 +0530, Mrinmay Sarkar wrote:
-> Add sa8775p platform to the binding.
+On Wed, 05 Jul 2023 13:47:07 +0530, Mrinmay Sarkar wrote:
+> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
+> for SA8775p platform.
 > 
 > Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 > ---
->  .../devicetree/bindings/pci/qcom,pcie.yaml    | 28 +++++++++++++++++++
->  1 file changed, 28 insertions(+)
+>  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
 > 
 
 My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
 on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
 yamllint warnings/errors:
-./Documentation/devicetree/bindings/pci/qcom,pcie.yaml:753:17: [warning] wrong indentation: expected 14 but found 16 (indentation)
 
 dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.example.dtb: phy@1c18000: clock-names:4: 'phy_aux' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.example.dtb: phy@1c18000: clock-names:5: 'pipe' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.example.dtb: phy@1c24000: clock-names:4: 'phy_aux' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.example.dtb: phy@1c24000: clock-names:5: 'pipe' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
 
 doc reference errors (make refcheckdocs):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/1688545032-17748-2-git-send-email-quic_msarkar@quicinc.com
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com
 
 The base for the series is generally the latest rc1. A different dependency
 should be noted in *this* patch.
