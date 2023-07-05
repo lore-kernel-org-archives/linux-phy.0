@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90C1DEB64DD
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Jul 2023 17:29:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8987DC001DE
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jul 2023 17:29:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ClDDTVCstwAQIHRHrjjlsAKcs4c15n6oZiBOPG+Ub+c=; b=JsPmqcTCX5Q+uj
-	rcVdUSIGtSf0Z6bgadec7vqK7F8DcJT3WjYoyroFlzBTa7SNC8NHE7IEVueOnuTJUSFYkcSKNK934
-	xoI0q1wpcPVb1/6DS+IP5XR/ASYymg23f5f9VcpnlmzUUxjHhASjhm5QivXOW1SAlZrdbo+IWQzrh
-	lhZnk8U0jeLSBwhIMu2apCKGMiV6F0AaUvv3pkUiLpJPhFejFobWYfTmyNPnSuQkUq++Laavv0rxD
-	BPWtko9xJH76Q8T3UpD0S5YS68RNW7u1l7+QAQceLmiTeSOxdfrmS7gIV4bBOIGdJKQ+vJmRaheOQ
-	oFoyWjemXvYV20DfHpWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L4oquAlxWHXo50XImS+dVMqSZi/onsira9sJZbN/qhQ=; b=pEWolk/66QfuFk
+	bT0JJrhaAaUp5hkvxy1ia4BwDJLDnqXdr2uToQw4oiNTzy9qmn9FZDPvCYQZ+jyQWk2gYFLbcXaPq
+	K277Tq8QOJzRToXXFNALf2zgdtsr0VZCZn9i7Z/i+uZVAXJYSGhCW4ghZoL+95QJSUvI4T4vfy57v
+	jWgbR5qCt+SYSmFG+FYHy/sOq1684s0LTKB2SglFyLT6+KLOaxJorXajW1xwwWVEh/r/BFHDlodV+
+	DGHwX3mT/7yKwVR9kO2i9+AgBvygBlrodYc3zZ6kliTxuMqcA2zTPDl/uVeGt0/YxDDexfbRXhyks
+	5dtFWk5EWhijMSnj2Tog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qH6JM-00Gbkr-0o;
-	Wed, 05 Jul 2023 17:29:04 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1qH6JO-00Gbls-0h;
+	Wed, 05 Jul 2023 17:29:06 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qH6JJ-00GbjK-21;
-	Wed, 05 Jul 2023 17:29:03 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 365FWsxt003059;
+	id 1qH6JL-00GbjO-1D;
+	Wed, 05 Jul 2023 17:29:05 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 365ELI4l007752;
 	Wed, 5 Jul 2023 19:28:32 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=selector1;
- bh=MIhovnbgvnMdNtHNxjg0wEK4d4BXCh9D4rqEom4bNLc=;
- b=O/EQFxcpOihBGN4SRp2i4E0s5PwExEVaYYg33yZifbN58K9wNb75zntBCBYIp8VzHAuL
- zIdKiETDjlsJsnfX6JYP3z5zxsommrO+m34V9Ip2dVf4weVqMjOB5/EVtgSVZ9uNovMi
- T2IZ1XXDOW6kPHcfw+R4EX/XtvrwuhZWClNKnmfY88jwMyj8HM7gOSdho01gDK3J6cUT
- 8WfZEsDQS/raoTmbzo+KGxiu7Cm1tNT1+epmyaLA41Feszf5s0z2I6bCeBKN1st7h/4M
- hkVzC2Sp7tM3vNaQ9fJKbVk4LqXMie3tTC8KirRfrbnonMIierq+tjMwPTssjQf/ntUs Gw== 
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=selector1;
+ bh=R+Z7Pl439e9+R/OYQcTq/KrptBdKV0UCpQ0mjty63sk=;
+ b=tlYJ8bAB1TUj0LwFVbPDnHnNsQsPEKDYc7RIdUFugmNIoLHfC9MaAgyosgyAvqii/B6R
+ 5qrcoTg3Q6k/I56I0OzVx2vgYM9cPbcocO8TE8ndfp4La2vhrI+bGU3jccxQdu7LWrdq
+ D6LgARFUY19H5DB81M8iSFUJVQN7j5WgUupSW271GTZo0D9jYqYEMi8hyi5mccSJlFQ8
+ Ykw4TM4uYhbwykn3MxO7MsXVFGtEITcCpk7yMWdHWZo41ha4KeIlnHVoRO8P1gM52J3u
+ oZvaUz6AtUMiOHaAFIhelP5FcJvRrCChR+aan2ciYmXxdwF3AdnR0PYOib6sbU07oiCK 4w== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3rn8c9t2d3-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3rna75h3xb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Wed, 05 Jul 2023 19:28:32 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 86C91100057;
-	Wed,  5 Jul 2023 19:28:30 +0200 (CEST)
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 084AA100060;
+	Wed,  5 Jul 2023 19:28:32 +0200 (CEST)
 Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1D30824C42F;
-	Wed,  5 Jul 2023 19:28:30 +0200 (CEST)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F0C3224C433;
+	Wed,  5 Jul 2023 19:28:31 +0200 (CEST)
 Received: from localhost (10.201.21.121) by SHFDAG1NODE1.st.com (10.75.129.69)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Wed, 5 Jul
- 2023 19:28:29 +0200
+ 2023 19:28:31 +0200
 From: Gatien Chevallier <gatien.chevallier@foss.st.com>
 To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
         <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
@@ -75,10 +75,12 @@ CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-usb@vger.kernel.org>,
         Gatien Chevallier
 	<gatien.chevallier@foss.st.com>
-Subject: [PATCH 00/10] Introduce STM32 Firewall framework
-Date: Wed, 5 Jul 2023 19:27:49 +0200
-Message-ID: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
+Subject: [PATCH 02/10] dt-bindings: bus: add device tree bindings for RIFSC
+Date: Wed, 5 Jul 2023 19:27:51 +0200
+Message-ID: <20230705172759.1610753-3-gatien.chevallier@foss.st.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
+References: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.201.21.121]
 X-ClientProxiedBy: SHFCAS1NODE1.st.com (10.75.129.72) To SHFDAG1NODE1.st.com
@@ -87,8 +89,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-05_09,2023-07-05_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230705_102901_970230_3DABDBEB 
-X-CRM114-Status: GOOD (  21.69  )
+X-CRM114-CacheID: sfid-20230705_102903_725560_29614835 
+X-CRM114-Status: GOOD (  18.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,131 +107,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce STM32 Firewall framework for STM32MP1x and STM32MP2x
-platforms. STM32MP1x(ETZPC) and STM32MP2x(RIFSC) Firewall controllers
-register to the framework to offer firewall services such as access
-granting.
+Document RIFSC (RIF security controller). RIFSC is a firewall controller
+composed of different kinds of hardware resources.
 
-This series of patches is a new approach on the previous STM32 system
-bus, history is available here:
-https://lore.kernel.org/lkml/20230127164040.1047583/
-
-The need for such framework arises from the fact that there are now
-multiple hardware firewalls implemented across multiple products.
-Drivers are shared between different products, using the same code.
-When it comes to firewalls, the purpose mostly stays the same: Protect
-hardware resources. But the implementation differs, and there are
-multiple types of firewalls: peripheral, memory, ... 
-
-Some hardware firewall controllers such as the RIFSC implemented on
-STM32MP2x platforms may require to take ownership of a resource before
-being able to use it, hence the requirement for firewall services to
-take/release the ownership of such resources.
-
-On the other hand, hardware firewall configurations are becoming
-more and more complex. These mecanisms prevent platform crashes
-or other firewall-related incoveniences by denying access to some
-resources.
-
-The stm32 firewall framework offers an API that is defined in
-firewall controllers drivers to best fit the specificity of each
-firewall.
-
-For every peripherals protected by either the ETZPC or the RIFSC, the
-firewall framework checks the firewall controlelr registers to see if
-the peripheral's access is granted to the Linux kernel. If not, the
-peripheral is configured as secure, the node is marked populated,
-so that the driver is not probed for that device.
-
-The firewall framework relies on the feature-domain-controller device
-tree bindings: https://lore.kernel.org/lkml/0c0a82bb-18ae-d057-562b.
-It is used by peripherals to reference a domain controller, in this
-case a firewall feature domain. The bus uses the ID referenced by
-the feature-domains property to know where to look in the firewall
-to get the security configuration for the peripheral. This allows
-a device tree description rather than a hardcoded peripheral table
-in the bus driver.
-
-The STM32 ETZPC device is responsible for filtering accesses based on
-security level, or co-processor isolation for any resource connected
-to it.
-
-The RIFSC is responsible for filtering accesses based on Compartment
-ID / security level / privilege level for any resource connected to
-it.
-
-STM32MP13/15/25 SoC device tree files are updated in this series to
-implement this mecanism.
-
-Oleksii Moisieiev (1):
-  dt-bindings: Document common device controller bindings
-
-Gatien Chevallier (9):
-  dt-bindings: bus: add device tree bindings for RIFSC
-  dt-bindings: bus: add device tree bindings for ETZPC
-  dt-bindings: treewide: add feature-domains description in binding
-    files
-  firewall: introduce stm32_firewall framework
-  bus: rifsc: introduce RIFSC firewall controller driver
-  arm64: dts: st: add RIFSC as a domain controller for STM32MP25x boards
-  bus: etzpc: introduce ETZPC firewall controller driver
-  ARM: dts: stm32: add ETZPC as a system bus for STM32MP15x boards
-  ARM: dts: stm32: add ETZPC as a system bus for STM32MP13x boards
-
- .../bindings/bus/st,stm32-etzpc.yaml          |   90 +
- .../bindings/bus/st,stm32-rifsc.yaml          |  101 +
- .../bindings/crypto/st,stm32-hash.yaml        |    4 +
- .../devicetree/bindings/dma/st,stm32-dma.yaml |    4 +
- .../bindings/dma/st,stm32-dmamux.yaml         |    4 +
- .../feature-domain-controller.yaml            |   84 +
- .../devicetree/bindings/i2c/st,stm32-i2c.yaml |    4 +
- .../bindings/iio/adc/st,stm32-adc.yaml        |    4 +
- .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml  |    4 +
- .../bindings/iio/dac/st,stm32-dac.yaml        |    4 +
- .../bindings/media/cec/st,stm32-cec.yaml      |    4 +
- .../bindings/media/st,stm32-dcmi.yaml         |    4 +
- .../memory-controllers/st,stm32-fmc2-ebi.yaml |    4 +
- .../bindings/mfd/st,stm32-lptimer.yaml        |    4 +
- .../bindings/mfd/st,stm32-timers.yaml         |    5 +
- .../devicetree/bindings/mmc/arm,pl18x.yaml    |    4 +
- .../devicetree/bindings/net/stm32-dwmac.yaml  |    4 +
- .../bindings/phy/phy-stm32-usbphyc.yaml       |    4 +
- .../bindings/regulator/st,stm32-vrefbuf.yaml  |    4 +
- .../devicetree/bindings/rng/st,stm32-rng.yaml |    4 +
- .../bindings/serial/st,stm32-uart.yaml        |    4 +
- .../bindings/sound/st,stm32-i2s.yaml          |    4 +
- .../bindings/sound/st,stm32-sai.yaml          |    4 +
- .../bindings/sound/st,stm32-spdifrx.yaml      |    4 +
- .../bindings/spi/st,stm32-qspi.yaml           |    4 +
- .../devicetree/bindings/spi/st,stm32-spi.yaml |    4 +
- .../devicetree/bindings/usb/dwc2.yaml         |    4 +
- MAINTAINERS                                   |    7 +
- arch/arm/boot/dts/st/stm32mp131.dtsi          | 1027 +++---
- arch/arm/boot/dts/st/stm32mp133.dtsi          |   51 +-
- arch/arm/boot/dts/st/stm32mp13xc.dtsi         |   19 +-
- arch/arm/boot/dts/st/stm32mp13xf.dtsi         |   19 +-
- arch/arm/boot/dts/st/stm32mp151.dtsi          | 2757 +++++++++--------
- arch/arm/boot/dts/st/stm32mp153.dtsi          |   52 +-
- arch/arm/boot/dts/st/stm32mp15xc.dtsi         |   19 +-
- arch/arm64/Kconfig.platforms                  |    1 +
- arch/arm64/boot/dts/st/stm32mp251.dtsi        |    5 +-
- drivers/bus/Kconfig                           |   10 +
- drivers/bus/Makefile                          |    1 +
- drivers/bus/stm32_etzpc.c                     |  137 +
- drivers/bus/stm32_firewall.c                  |  252 ++
- drivers/bus/stm32_firewall.h                  |   83 +
- drivers/bus/stm32_rifsc.c                     |  248 ++
- include/linux/bus/stm32_firewall_device.h     |  134 +
- 44 files changed, 3276 insertions(+), 1918 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+---
+ .../bindings/bus/st,stm32-rifsc.yaml          | 101 ++++++++++++++++++
+ 1 file changed, 101 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
- create mode 100644 Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
- create mode 100644 drivers/bus/stm32_etzpc.c
- create mode 100644 drivers/bus/stm32_firewall.c
- create mode 100644 drivers/bus/stm32_firewall.h
- create mode 100644 drivers/bus/stm32_rifsc.c
- create mode 100644 include/linux/bus/stm32_firewall_device.h
 
+diff --git a/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
+new file mode 100644
+index 000000000000..68d585ed369c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
+@@ -0,0 +1,101 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/st,stm32-rifsc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STM32 Resource isolation framework security controller bindings
++
++maintainers:
++  - Gatien Chevallier <gatien.chevallier@foss.st.com>
++
++description: |
++  Resource isolation framework (RIF) is a comprehensive set of hardware blocks
++  designed to enforce and manage isolation of STM32 hardware resources like
++  memory and peripherals.
++
++  The RIFSC (RIF security controller) is composed of three sets of registers,
++  each managing a specific set of hardware resources:
++    - RISC registers associated with RISUP logic (resource isolation device unit
++      for peripherals), assign all non-RIF aware peripherals to zero, one or
++      any security domains (secure, privilege, compartment).
++    - RIMC registers: associated with RIMU logic (resource isolation master
++      unit), assign all non RIF-aware bus master to one security domain by
++      setting secure, privileged and compartment information on the system bus.
++      Alternatively, the RISUP logic controlling the device port access to a
++      peripheral can assign target bus attributes to this peripheral master port
++      (supported attribute: CID).
++    - RISC registers associated with RISAL logic (resource isolation device unit
++      for address space - Lite version), assign address space subregions to one
++      security domains (secure, privilege, compartment).
++
++properties:
++  compatible:
++    const: st,stm32mp25-rifsc
++
++  reg:
++    maxItems: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 1
++
++  "#feature-domain-cells":
++    const: 1
++
++  ranges: true
++
++  feature-domain-controller: true
++
++patternProperties:
++  "^.*@[0-9a-f]+$":
++    description: Peripherals
++    type: object
++    properties:
++      feature-domains:
++        minItems: 1
++        maxItems: 2
++        description:
++          The first argument must always be a phandle that references to the
++          firewall controller of the peripheral. The second can contain the
++          platform specific firewall ID of the peripheral.
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - feature-domain-controller
++  - "#feature-domain-cells"
++  - ranges
++
++additionalProperties: false
++
++examples:
++  - |
++    // In this example, the usart2 device refers to rifsc as its domain
++    // controller.
++    // Access rights are verified before creating devices.
++
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    rifsc: rifsc-bus@42080000 {
++        compatible = "st,stm32mp25-rifsc";
++        reg = <0x42080000 0x1000>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        ranges;
++        feature-domain-controller;
++        #feature-domain-cells = <1>;
++
++        usart2: serial@400e0000 {
++            compatible = "st,stm32h7-uart";
++            reg = <0x400e0000 0x400>;
++            interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
++            clocks = <&ck_flexgen_08>;
++            feature-domains = <&rifsc 32>;
++            status = "disabled";
++        };
++    };
 -- 
 2.25.1
 
