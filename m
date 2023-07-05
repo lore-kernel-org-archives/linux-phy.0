@@ -4,81 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A6DCEB64DA
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Jul 2023 14:42:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70ED7C0015E
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jul 2023 08:17:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X6dbWB6bkxHxiToA/MqPs0e4E2FDZnx/FWGd7LGju1A=; b=hFj61PxAwt5kDb
-	eDHurPZWcILV80TgnFPOofTiNluybb74D28EG8Iofxcp/JcBKxFAmmIzG3V+g5pKiOQcAnwU3GjhX
-	WdJIvoTh4lTf43kAMN+DC/DUC1c833Usg+tg5iUp7PLEirwFJm+XdjI1XEvhngjeO+D4BZlEdmFrl
-	1oPZ02FFZWcVFedOMK8THp6JDi+XQHXASKETfMtOe+wrqr4q3JjDwvdE0R5H4hryGTk77V5kaxywH
-	UUzUT8uTyTkCY0PdC9ueUenrlrtfhaoDAO/xzl+nZMtU8INnsN75rOcLC+0kkYKZAkYVSGQ6oU0/Y
-	qMkivqdfUuMlPzOc714w==;
+	List-Owner; bh=33VWjMRO5z/CLmNgvNfuN9Z4KbJLOnbizQCytQhRIc0=; b=LKudrSv01yhHDI
+	0dvGDH4+tN1FSJkmOLcaQYyx06erchnpqvUmm/MwmB2qqtecxYmUqrTqHCzNG541rhEkLCFMT5CTG
+	UZTqEhf93Ip6HUFpNaCugwRTJABeUlwiuVYo9s8L960ZpqYtnROXS2CaHu3CjHGk1mxQnOL/4zEYt
+	4QRn/ywB/CfLTDw7UGag4JkoAD2DpLsj1T73zd/xoKmdkOpGAN2Vdl5hq1zsg8JKUqq6AQLamdnuy
+	s41mAAfUGGgQrA7UZKsZA3IWcYLSQr00BlEep8dzA775jtslWU368UkDZuJfUWS7fPY/UA/vxUkks
+	LlT6E7F73toDobjdvIfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGhEv-00DXXj-32;
-	Tue, 04 Jul 2023 14:42:49 +0000
-Received: from mail-vs1-xe2e.google.com ([2607:f8b0:4864:20::e2e])
+	id 1qGxhj-00FB9u-08;
+	Wed, 05 Jul 2023 08:17:39 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGhEq-00DXUn-0r;
-	Tue, 04 Jul 2023 14:42:45 +0000
-Received: by mail-vs1-xe2e.google.com with SMTP id ada2fe7eead31-440954dc5fcso1918297137.2;
-        Tue, 04 Jul 2023 07:42:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1688481762; x=1691073762;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=cxhjD7KY5JD674i+41mIILyrwvbeMopv+PbB7rT3+IE=;
-        b=qXoDuKf7tijC6nBenqA4HmNXCVz12f5ddVrWo/iBC08Xy5X/GCcU43sZ0mtpwstHzz
-         GGG4rED1L0Z3jHx0ObuuPnqTWgOV3lvgb0UgCTp0CeJLzQJEGAmTwNjVcNLWi2mplii/
-         gTzcErjfLOJvdkMr/rbh3rwy+y80EnZd7ymGi3sD7e4+hc0QpRfU1gEicpQvVZGtzAVf
-         6EUu76BBqp0jaLUX1ZJLF1j0K7hxvYq5PwkFk8Ccvmvlcutquq7I+RgTWyWu/YG1H3fa
-         w3VIu5zXhiZjEGvEfADAqF0uBRfL7T9poR368enlmGkLswEIk/idT17/IjIAC8boz7sh
-         McZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688481762; x=1691073762;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=cxhjD7KY5JD674i+41mIILyrwvbeMopv+PbB7rT3+IE=;
-        b=a1K/oGQEWqjqGRabAAEl36gK8HcfEcioPq3srygP69oCdyzDmssVZQxeQ2nxu/DE0U
-         uJQEsstJSkTrcmX3PCd0SbDAmKwY8BLlu6v6NIzwELw5DxHSkUI9lSPrEEeUHn6yBoMG
-         vZgnV4CYMxvpydIQ5rPemDin04ogFnoN4aFykee1DaCtz7GtGnlgP1lK1tDxJCM3K+Yd
-         BLHLl7pSU6Kh662fOegpvmV1cgkM22rvIP4uihvvcF7C1eS7xsYASz7D8hug8gik2U9y
-         QLNoR+uFiPOAO0/7ctUzIdknyrLM/tBQ833ZZBBg64ljaU8MTGDrf/iTGovGjBj1YGBr
-         RLcw==
-X-Gm-Message-State: ABy/qLZGGYWhav9508TRM5nSrSf1J0YfYemejoQCXHr69bENTN//fOjm
-	i8StU/RfjnwV/ZA7B+VnQUwofLyZAmxuNejLYbY=
-X-Google-Smtp-Source: APBJJlEzBfrRFFxw3waM7f1ipL7WWKBgZ8jQmyUjVtnbM0TCNsn4+zGfKdFXtaZmMtcuMEXY1XjZXuAM/dQift4uNtI=
-X-Received: by 2002:a67:f3d5:0:b0:443:7170:b048 with SMTP id
- j21-20020a67f3d5000000b004437170b048mr6639880vsn.27.1688481761915; Tue, 04
- Jul 2023 07:42:41 -0700 (PDT)
-MIME-Version: 1.0
-References: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230702182308.7583-1-krzysztof.kozlowski@linaro.org>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Tue, 4 Jul 2023 16:42:30 +0200
-Message-ID: <CAOiHx=kreUEnqssO7y_+UqAxsnXaLPbwBz8h3JRkdEq+pkdW2A@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: cleanup DTS example whitespaces
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Leo Yan <leo.yan@linaro.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-rockchip@lists.infradead.org, 
-	linux-iio@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-mtd@lists.infradead.org, 
-	linux-amlogic@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, linux-remoteproc@vger.kernel.org, 
-	linux-usb@vger.kernel.org
+	id 1qGxhg-00FB9K-3D
+	for linux-phy@lists.infradead.org;
+	Wed, 05 Jul 2023 08:17:38 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3657rSZa023285;
+	Wed, 5 Jul 2023 08:17:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=BZCOCbcf3tjCgT7VICbftvYbIBdhPLUkBBYxBXdIf6A=;
+ b=lPvok6Qt3WgcPf59HchHj/SxoZjtQFAQCVMzfzQKTiwsjhaZcE4ZgNsBTkST4pXvAuSM
+ Pf8medstFPdBZ8xpvwJetcfDx0VXqwlxROSAJB3FIEHFGQoU2qZaG4oAuDOa2Yxz4QL2
+ P5iZWkQVxmQbCyoU4+0j5iVSkFc4OxcDYWG1bYLrM8nI4eX7D7T+PCEJi43hkr0sLZ1I
+ IYTsfFdiw9g7PnTraood2vb+NR2jX5A7T/pLZCjUvILlkXNJo3CvHwgJKcuAtyc4ayyy
+ CCFsyfW8Cshp97yQHeX8ZnKItMlgqaIUHNWjSKo+NxgjVzggYV85Ng55dhlZgolePBk8 dw== 
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rmnw6h7tx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 05 Jul 2023 08:17:30 +0000
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3658HRZZ021547;
+	Wed, 5 Jul 2023 08:17:27 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3rjd7krn86-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Wed, 05 Jul 2023 08:17:27 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3658HQ7W021540;
+	Wed, 5 Jul 2023 08:17:26 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3658HQCe021539;
+	Wed, 05 Jul 2023 08:17:26 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
+	id BD350244; Wed,  5 Jul 2023 13:47:25 +0530 (+0530)
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+        conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+        Mrinmay Sarkar <quic_msarkar@quicinc.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org
+Subject: [PATCH v1 1/6] dt-bindings: PCI: qcom: Add sa8775p compatible
+Date: Wed,  5 Jul 2023 13:47:06 +0530
+Message-Id: <1688545032-17748-2-git-send-email-quic_msarkar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
+References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: sdJFXv1jqVOY6if6_Ak38XBmYaqWOU1n
+X-Proofpoint-ORIG-GUID: sdJFXv1jqVOY6if6_Ak38XBmYaqWOU1n
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-04_16,2023-07-04_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ spamscore=0 lowpriorityscore=0 mlxscore=0 phishscore=0 impostorscore=0
+ malwarescore=0 bulkscore=0 mlxlogscore=999 adultscore=0 suspectscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2305260000 definitions=main-2307050075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230704_074244_302940_CF9E67C7 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20230705_011737_038031_9DE7F599 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,57 +105,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 2 Jul 2023 at 20:24, Krzysztof Kozlowski
-<krzysztof.kozlowski@linaro.org> wrote:
->
-> The DTS code coding style expects spaces around '=' sign.
->
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->
-> ---
->
-> Rob,
->
-> Maybe this could go via your tree? Rebased on your for-next:
-> v6.4-rc2-45-gf0ac35049606
-> ---
->  .../bindings/arm/arm,coresight-cti.yaml        | 18 +++++++++---------
->  .../bindings/arm/keystone/ti,sci.yaml          |  8 ++++----
->  .../devicetree/bindings/display/msm/gmu.yaml   |  2 +-
->  .../display/panel/samsung,s6e8aa0.yaml         |  2 +-
->  .../display/rockchip/rockchip-vop.yaml         |  4 ++--
->  .../bindings/iio/adc/ti,adc108s102.yaml        |  2 +-
->  .../bindings/media/renesas,rzg2l-cru.yaml      |  4 ++--
->  .../devicetree/bindings/media/renesas,vin.yaml |  4 ++--
->  .../devicetree/bindings/mtd/mtd-physmap.yaml   |  2 +-
->  .../bindings/net/mediatek-dwmac.yaml           |  2 +-
->  .../bindings/perf/amlogic,g12-ddr-pmu.yaml     |  4 ++--
->  .../bindings/phy/mediatek,dsi-phy.yaml         |  2 +-
->  .../remoteproc/amlogic,meson-mx-ao-arc.yaml    |  2 +-
->  .../devicetree/bindings/usb/mediatek,mtu3.yaml |  2 +-
->  .../devicetree/bindings/usb/ti,am62-usb.yaml   |  2 +-
->  15 files changed, 30 insertions(+), 30 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml b/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml
-> index 0c5b875cb654..d6c84b6e7fe6 100644
-> --- a/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml
-> +++ b/Documentation/devicetree/bindings/arm/arm,coresight-cti.yaml
-> @@ -287,7 +287,7 @@ examples:
->              arm,trig-in-sigs = <0 1>;
->              arm,trig-in-types = <PE_DBGTRIGGER
->                                   PE_PMUIRQ>;
-> -            arm,trig-out-sigs=<0 1 2 >;
-> +            arm,trig-out-sigs = <0 1 2 >;
+Add sa8775p platform to the binding.
 
-There's a space before the closing > you could drop as well.
+Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+---
+ .../devicetree/bindings/pci/qcom,pcie.yaml    | 28 +++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-Best Regards,
-Jonas
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index 81971be4e554..2c79585a2d1e 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -40,6 +40,7 @@ properties:
+           - qcom,pcie-sm8450-pcie0
+           - qcom,pcie-sm8450-pcie1
+           - qcom,pcie-sm8550
++          - qcom,pcie-sa8775p
+       - items:
+           - const: qcom,pcie-msm8998
+           - const: qcom,pcie-msm8996
+@@ -220,6 +221,7 @@ allOf:
+               - qcom,pcie-sm8450-pcie0
+               - qcom,pcie-sm8450-pcie1
+               - qcom,pcie-sm8550
++              - qcom,pcie-sa8775p
+     then:
+       properties:
+         reg:
+@@ -743,6 +745,30 @@ allOf:
+           items:
+             - const: pci # PCIe core reset
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++                - qcom,pcie-sa8775p
++    then:
++      properties:
++        clocks:
++          minItems: 5
++          maxItems: 5
++        clock-names:
++          items:
++            - const: aux # Auxiliary clock
++            - const: cfg # Configuration clock
++            - const: bus_master # Master AXI clock
++            - const: bus_slave # Slave AXI clock
++            - const: slave_q2a # Slave Q2A clock
++        resets:
++          maxItems: 1
++        reset-names:
++          items:
++            - const: pci # PCIe core reset
++
+   - if:
+       properties:
+         compatible:
+@@ -750,6 +776,7 @@ allOf:
+             enum:
+               - qcom,pcie-sa8540p
+               - qcom,pcie-sc8280xp
++              - qcom,pcie-sa8775p
+     then:
+       required:
+         - interconnects
+@@ -854,6 +881,7 @@ allOf:
+               - qcom,pcie-ipq8074-gen3
+               - qcom,pcie-qcs404
+               - qcom,pcie-sa8540p
++              - qcom,pcie-sa8775p
+     then:
+       properties:
+         interrupts:
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
