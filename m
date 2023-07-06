@@ -4,92 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1033CC001B0
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 10:01:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88E7EC001DE
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 11:12:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u4GM9Wf2b+IDgDw6QnEJIM92oPZes23v9CVzPvBf50s=; b=UdqoyBTCUrRu+g
-	Be86ZCk0svWxTLQt4/bxesDHJFQjG3XZyKf0VrQcvuKgbZvp46RoTXB35iBI1o5rIP7vS6BhUtBOK
-	5zvsROSsm/nhp7auIAOZU0gdyNuUiVMVO/UGDxTtVAn9DZVQfBxJUzTu7HFUcPkAl67lQpzrxw44d
-	+tUM+2atHV0F9on6yEc3UHiuSLGJNi3oFziSHeKmfEvgOs1a5lxPHqtcKCyq8GON7YvY3hqf93/U3
-	wLAuj6U5rE8oFcoM5qYA9r7rcGW0QK+IMv/o1VHqZE+IloJvWPeG0bvSLUf+dPMpQoCIGMr8jTjJ/
-	DhdBzA9xvSJQmYORUp9w==;
+	List-Owner; bh=7MmB36tSWG+qGCesbQbMhuD6kTO4WDeyzpP/fpgqXiQ=; b=Tg8qUuVKBCCzP5
+	Xbqu7y2a8kBto6I8Fz3JgD77KarPclCJbAdlX7ONUO8KHwJlAEkCjtZtTtRLN4vkSyYp3OlaIEU9o
+	dfB8UGZlNBBms/HOASZ7Bt9XA6kupbRMOBA1soT4y3dkQmAdEF81JiHkUHkGeETWeKcD0TzoHBeXD
+	DJ0ubzuse7ras8SK67tI8jdHG/34vY88DQYsbpun7fXdrjFo3YmVRCbVy7ou+O2EXBn2R9CDcgZ4m
+	A0MAaOyqFdIZjbpBFfAXFCssVw6Bd4aMue677w24Cufw2ezVCvl86K/b7Fx7m+Q9WPBwPqyATnFSC
+	c2KGrbX5xvUG0IxWs3ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHLo3-0019QQ-2J;
-	Thu, 06 Jul 2023 10:01:47 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1qHMue-001S6n-02;
+	Thu, 06 Jul 2023 11:12:40 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHLo0-0019PD-2R
+	id 1qHMub-001S6G-1e
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jul 2023 10:01:46 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4faaaa476a9so636804e87.2
-        for <linux-phy@lists.infradead.org>; Thu, 06 Jul 2023 03:01:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688637702; x=1691229702;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=XT60ydGbek1AFjPkAEjevV8MYxSepx4EylzL/gQ0j8Q=;
-        b=teFm+rkwOF4Fscx6FU5McwhsHg+3oRElnEWE9vJpbTvsJ92FFxKspLKWyi3SnfdOyn
-         Q77e4UPLlwWG95SIw0plNmt/BGzuYK5MKz3mLAGUnODGEvu7xhULrbzoeA9eF/5cLAqs
-         LWvIGAVwI+C0wG5w0SruZQ7MavLr6QszRrzLlgAnKfnAzO1GP718EIK602Rjhm9D+tgC
-         I2pinO5tdVG7BX0tBYR+q/7Dbd9oEYQJ3QrAL6urFjqP+S05NzKckDgD9a0h1F8nSp7V
-         1vYaHT6kkSEFWuvPHAAkC/gGZLot4KOpth2/XZRS0YjWgGcWvOLXdX4c08n3eAEdFWVv
-         HNAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688637702; x=1691229702;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=XT60ydGbek1AFjPkAEjevV8MYxSepx4EylzL/gQ0j8Q=;
-        b=K3Y8vzsudQQ3PeJuAq72Vk4i3vsx7A8hSHN2PxJOluzdT+1ORQCVGVoENfMfFDct3g
-         rIDpfq3GeBxC/YG37LOkSSYYIkYT0AOsoU81Tmbczrb6c03Ogf5CV7pRBpZjQU1q4Gwp
-         0BbM+BuUrF24M/zqNLV2yE7FDTNSWVF2ck3oJKm1QaCo9Kk8OESZ/GNXoFG7C4TlwYoo
-         yWUBE+19Bj83UBb4mykWLc6fLqijzI3RPGgXMCTU+ij3dz/lYe+1F29YicAVGSia91yZ
-         eqFOQz66HjF8lsToe4Mre9kwIiOI+NIGpxqu9LxVcQAoJH2vOYwz/hwjd8I3ziMQcxYg
-         E6Hg==
-X-Gm-Message-State: ABy/qLYrFFCPGKf+NrgL9/uvQccDeXgP8NpR8DTgLBMVJnUSx1j3baFd
-	ZAq/jHaf7An+ml9YrXd9zTz1rg==
-X-Google-Smtp-Source: APBJJlHtbIbK40+kpbF5561nZK98zdUI+BAnFKMpIjZfYgqBtLSrABL4QxB7dMwedNHt3vfsOGhFsA==
-X-Received: by 2002:a19:2d4e:0:b0:4f8:7734:8dd0 with SMTP id t14-20020a192d4e000000b004f877348dd0mr1058895lft.2.1688637701624;
-        Thu, 06 Jul 2023 03:01:41 -0700 (PDT)
-Received: from [192.168.1.101] (abyj26.neoplus.adsl.tpnet.pl. [83.9.29.26])
-        by smtp.gmail.com with ESMTPSA id y2-20020ac255a2000000b004fb88fffd19sm188136lfg.146.2023.07.06.03.01.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Jul 2023 03:01:41 -0700 (PDT)
-Message-ID: <e31564e1-31cf-2cda-df6f-6210e6a1c1fc@linaro.org>
-Date: Thu, 6 Jul 2023 12:01:37 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH v1 5/6] arm64: dts: qcom: sa8775p: Add pcie0 and pcie1
- nodes
-Content-Language: en-US
-To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, mani@kernel.org
-Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
- quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
+	Thu, 06 Jul 2023 11:12:38 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B14CD61908;
+	Thu,  6 Jul 2023 11:12:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1DDADC433C7;
+	Thu,  6 Jul 2023 11:12:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1688641956;
+	bh=BOEale8M+9gWzJpHRuHXhPnvc4ZSy1w4GTYANy5u44s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=kMxNh/3WZijIVGdc5yewDH3XOYZUJwECrYRcBFuLMNQ6IMO+jdsuY6d6UiK1oWhZx
+	 vMdet9znENk+RtaQZfEztdHqN1uut3JpGzkFSI17xYpbcX9RGgw2PRiKI6uIpZzhiD
+	 bfXQOzUbhI3UcUlU/v5fz+mIBTxc1EsVRivVIoHifcmzkQOKhmmSOCFTWXj2rErFBW
+	 34/4SE/+Sre/Kam6uvCMHHDa4TYCH4ggFSZNAdXJGALxdDqTG1dYhsdXobgKbupeEz
+	 GOJ/uscUFvn5ndcc75HnJ4G3BMHCYZETHEzWtfVBiu1RYhJbcrzcigPlpj37ufzAWg
+	 PSSkAfs7Wg0PQ==
+Date: Thu, 6 Jul 2023 16:42:18 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
+	andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, konrad.dybcio@linaro.org,
+	quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+	quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v1 0/6] arm64: qcom: sa8775p: add support for PCIe
+Message-ID: <20230706111218.GA4808@thinkpad>
 References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
- <1688545032-17748-6-git-send-email-quic_msarkar@quicinc.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <1688545032-17748-6-git-send-email-quic_msarkar@quicinc.com>
+ <20230705084606.GF11854@thinkpad>
+ <a450e2e8-307d-49e9-d76d-de397b801a96@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a450e2e8-307d-49e9-d76d-de397b801a96@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230706_030144_816310_D97FD671 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230706_041237_614516_FDFE6F15 
+X-CRM114-Status: GOOD (  18.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,55 +84,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5.07.2023 10:17, Mrinmay Sarkar wrote:
-> Add pcie dtsi nodes for two controllers found on sa8775p platform.
-> 
-> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-> ---[...]
-
-> +	pcie1_phy: phy@1c14000 {
-> +		compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy";
-> +		reg = <0x0 0x1c14000 0x0 0x4000>;
-> +
-> +		clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
-> +			 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-> +			 <&gcc GCC_PCIE_CLKREF_EN>,
-> +			 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-> +			 <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-> +			 <&gcc GCC_PCIE_1_PIPE_CLK>,
-> +			 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>;
-> +
-> +		clock-names = "aux", "cfg_ahb", "ref", "rchng", "phy_aux",
-> +						"pipe", "pipediv2";
-> +
-> +		assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-> +		assigned-clock-rates = <100000000>;
-> +
-> +		power-domains = <&gcc PCIE_1_GDSC>;
-Please check if it's the correct power domain. I've heard that the PCIe PHY
-may be hooked up to something else but have no way of confirming myself.
-
-Konrad
-> +
-> +		resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-> +		reset-names = "phy";
-> +
-> +		#clock-cells = <0>;
-> +		clock-output-names = "pcie_1_pipe_clk";
-> +
-> +		#phy-cells = <0>;
-> +
-> +		status = "disabled";
-> +
-> +	};
->  };
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBKdWwgMDYsIDIwMjMgYXQgMDg6Mzk6NTRBTSArMDIwMCwgS3J6eXN6dG9mIEtvemxv
+d3NraSB3cm90ZToKPiBPbiAwNS8wNy8yMDIzIDEwOjQ2LCBNYW5pdmFubmFuIFNhZGhhc2l2YW0g
+d3JvdGU6Cj4gPiBPbiBXZWQsIEp1bCAwNSwgMjAyMyBhdCAwMTo0NzowNVBNICswNTMwLCBNcmlu
+bWF5IFNhcmthciB3cm90ZToKPiA+PiBVcGRhdGUgdGhlIHJlbGF2ZW50IERUIGJpbmRpbmdzIGZv
+ciBQQ0llLCBhZGQgbmV3IGNvbmZpZyB0byB0aGUgcGh5Cj4gPj4gZHJpdmVyIGFkZCBwY2llIGFu
+ZCBwaHkgbm9kZXMgdG8gdGhlIC5kdHNpIGZpbGUgYW5kIGVuYWJsZSB0aGVuIGluIAo+ID4+IGJv
+YXJkIC5kdHMgZmlsZSBmb3IgdGhlIHNhODc3NXAtcmlkZSBwbGF0Zm9ybS4KPiA+Pgo+ID4+IE1y
+aW5tYXkgU2Fya2FyICg2KToKPiA+PiAgIGR0LWJpbmRpbmdzOiBQQ0k6IHFjb206IEFkZCBzYTg3
+NzVwIGNvbXBhdGlibGUKPiA+PiAgIGR0LWJpbmRpbmdzOiBwaHk6IHFjb20scW1wOiBBZGQgc2E4
+Nzc1cCBRTVAgUENJZSBQSFkKPiA+PiAgIFBDSTogcWNvbTogQWRkIHN1cHBvcnQgZm9yIHNhODc3
+NXAgU29DCj4gPj4gICBwaHk6IHFjb20tcW1wLXBjaWU6IGFkZCBzdXBwb3J0IGZvciBzYTg3NzVw
+Cj4gPj4gICBhcm02NDogZHRzOiBxY29tOiBzYTg3NzVwOiBBZGQgcGNpZTAgYW5kIHBjaWUxIG5v
+ZGVzCj4gPj4gICBhcm02NDogZHRzOiBxY29tOiBzYTg3NzVwLXJpZGU6IGVuYWJsZSBwY2llIG5v
+ZGVzCj4gPiAKPiA+IFBsZWFzZSBub3RlIHRoYXQgdGhlIGR0cyBwYXRjaGVzIHNob3VsZCBjb21l
+IGJlZm9yZSBkcml2ZXIgcGF0Y2hlcy4KPiA+Cj4gCj4gV2h5PyBEVFMgaXMgYWx3YXlzIGluZGVw
+ZW5kZW50IHRodXMgdXN1YWxseSBwdXQgYXQgdGhlIGVuZCBvZiBwYXRjaHNldAo+IG9yIGJldHRl
+ciBzZXBhcmF0ZS4gSXQgaXMgdGhlIGZpcnN0IHRpbWUgSSBoZWFyIHRoYXQgRFRTIHNob3VsZCBi
+ZQo+IGJlZm9yZSBkcml2ZXIuCj4gCgpUaGlzIGlzIHdoYXQgSSB3YXMgc3VnZ2VzdGVkIGJ5IFJv
+YiBkdXJpbmcgbXkgaW5pdGlhbCBkYXlzIGFuZCBJJ3ZlIGJlZW4KZm9sbG93aW5nIHRoaXMgcGF0
+dGVybiBzaW5jZSB0aGVuLiBJZiB0aGF0J3Mgbm90IHRoZSBjYXNlLCBJIGhhdmUgbm8gaXNzdWVz
+LgoKLSBNYW5pCgo+IEJlc3QgcmVnYXJkcywKPiBLcnp5c3p0b2YKPiAKCi0tIArgrq7grqPgrr/g
+rrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
