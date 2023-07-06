@@ -4,76 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ED0AEB64DC
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 12:09:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CE7DEB64D9
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 12:13:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xhJW8Hu/A1nHNdRRPbBBx2GQwsHizJw++jorOYQDY3o=; b=xi4MILry6SY09g
-	LbN70+YYSpbKQBKU4SX1WQaU9XhtDvX9pq35p847EuRlah5iA/To+vNboBSgbjlzHu+0JjSbs6OPR
-	jFC+9qdgB+UvU4h60M3pLj/1S2QM9W6DiwXyf7lat6VTa5yceEsOUBWAMuScVw9UftIE2ze4qt6ys
-	JElkVCvemLgJeaGlmWMLdw4yAhNxPuRLOavinZchiZ6Lp7keIfO+Ud+ADmrvaVbRgQoUnnfFa2YU4
-	mbcwCOg9WE2hO9DJHn97IcCWxQp+fao4id/NL89ngaquAV/aN6/w4e/ppOqcDTuiZwZPnobgtN/u7
-	fu+Td5dszC+9ctkLpOlg==;
+	List-Owner; bh=SMk6jyROXOsYYxqtPnnvD8+B0JZUOFM4+Tv+T0KlkYo=; b=LzzjQfXBm0h+Cx
+	7t1mL5/WxEb1ZXYUgM4ZSqA4u0T9euRCcRNsVUMHulm5bdSt1WUS4LHnNgniT4CK3r9EBzIi+GlZQ
+	XPElwNuk9S+AqsmQy0DZAHanvBFpSBFKX+yH06ZufxMfF3AwXofJRtg6IDLpiFnZfdsh7WufR/Xq3
+	8EJvnXIKmdEgbsD5vFvqee3n+s4zkhCDSxcXCHfvrEGGi2UDAXaUgebWTXUrp2BMmCu2TJSe98PV5
+	tBB1klwcPoMKvLXutxcqOiT9tJlhfvzXKQu78xjju8hcXX9wQWAygaxpAuXRv0YPHZdezkgK4L+N0
+	yP0S1aPx5JHkIpd5s+gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHNnS-001ZHE-27;
-	Thu, 06 Jul 2023 12:09:18 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1qHNr4-001a7h-1y;
+	Thu, 06 Jul 2023 12:13:02 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHNnQ-001ZEZ-0u
+	id 1qHNr1-001a6H-2Q
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jul 2023 12:09:17 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-977e0fbd742so77647566b.2
-        for <linux-phy@lists.infradead.org>; Thu, 06 Jul 2023 05:09:13 -0700 (PDT)
+	Thu, 06 Jul 2023 12:13:01 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4fbc0314a7bso841744e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 06 Jul 2023 05:12:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688645352; x=1691237352;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=linaro.org; s=google; t=1688645574; x=1691237574;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=AD7SP5cEltC2P6iI+W24BH/0PK5a9j/yuLzGT21WDwE=;
-        b=i9Vs0AY9co0nozmt6kxY8w+r5S9aLFWdrpYPpACl24iKi92FdSL06JLGkD4sX/JO5l
-         9DOXPpCOuPivcnDRKzdI1ng4c0OIN+7XmWf00m95DrN8hgLXTVOk2lxToj+A/ZSwqTkh
-         YXRXaTn/NDxVruaFvAm/4c3yiAN7Gv41JUKpQ1iiGEve2OvVw3X8SuUIqDZO5KWPqWOi
-         B24q1P52iNdG5HHK+91w1vsvwSKIWzs+6GIyIwv9pXylC9HfPO/a2yF6G53euw+Zd5NI
-         T2G1PjYvIqTIHXI9zJx/taJUYddohNXrHM0DDPhvnobjMOdxGtUw8a6RuGB2rA0kzppV
-         FfTg==
+        bh=eCOVUK9V8z/x1Thad53qnFqqGUkU711ApVBne/oyWeY=;
+        b=sNFCebxbR41MtEhtSQUKMTqJjk7ECC7CPb3H7aCiGYe/Y+JdfxK1pDGIYQpdZF5BKQ
+         X6QYtXSpFIuXmnh/9WLxf0hnHh8EtGv9sq7aQckriFm8//PtnG8niveRRA/3eMxBhYf0
+         mTKKV7ZDSnnbz6dbUk+zJkJzCNAZkiHzQvT0xKHm6z4fSDs7W0vvS7YPb2udwUfmQGJW
+         7x190SWDu8mCU6CmXbgA9clKRHBGYtZg2BwyaLH/or4eMQ3Dqigsknc2ReTnRINB31iC
+         hBaqJkM7oT9eKIcJ8Ev5o9OLT8642YfXPLTneHl/aALsbroyM5kv0aZSyAZ7EZbMlojW
+         k09Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688645352; x=1691237352;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20221208; t=1688645574; x=1691237574;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=AD7SP5cEltC2P6iI+W24BH/0PK5a9j/yuLzGT21WDwE=;
-        b=J1Sp5q6VbRBu08kQM5EC4SnJ+hExau6ZEcO2NSk0B50An6jDeVmRkPwZQd/148VIJH
-         x2NXldVowVjMwK30WUy1jvqpfO3eZXKAEDdP/q7VgPrgm7R+JYcvXM6jan9QX7cOkI2h
-         wrICffl6zl2tqnU7JHkKT7rcOMgtLravlLHUbXLJ78G9NPuNoZgfwB0LQ81adkxaYGX6
-         6tL0vxvPXt+KcdXZrvWTB8dPfVWD0RLlNwe5mj4Xyf1H/m1Fgks7WBM1y7HQs0DyZ8xH
-         duAnQxP0jK4Z7mQaMan5OxA03mhVZvaimTjKowsGfxmfkDYa56fFDXdwgkELFMjkQXD8
-         Zg0g==
-X-Gm-Message-State: ABy/qLbNllAmTYXbzVfwTXKzDMutCOTt43RAeuYKbdoGzkU3kX5tp7nd
-	cwMtJBFUJRnOC+oUuVd/LxBLsA==
-X-Google-Smtp-Source: APBJJlEigXpf0qIEu3w7bh82NDf+I+AZ5IvWRIyMOVolQrW0lhHOOtLk1gTA6aU6jjVr7ttCRNEt3w==
-X-Received: by 2002:a17:906:196:b0:993:6b3c:fe06 with SMTP id 22-20020a170906019600b009936b3cfe06mr1175068ejb.25.1688645352276;
-        Thu, 06 Jul 2023 05:09:12 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id gh9-20020a170906e08900b0098e0a937a6asm734388ejb.69.2023.07.06.05.09.10
+        bh=eCOVUK9V8z/x1Thad53qnFqqGUkU711ApVBne/oyWeY=;
+        b=FZIJYKn1SxUmxgbscwU30yMJ2g6yu+P+jMJE9PxyTLfGPbu36DapB8lxmSLGyZXZGx
+         3TOdlw6lz5gI1gjkQkuKVItYaAicOVuvTexCFTq2zdJ82hs9zjyr/Cz17BvAa6y0AJqH
+         U+oT9cHy+Z2pmC7W08c1iYvva2FGIJJy8KevONCrilBB6vHgTeaNiIgr3qo4kMTr4xTL
+         /K380H9yyf7Nq6jzBz8iSzQFGvxdenTtq1MiUlN5w2nbT70HDKYai9+flO63d/mu6yeJ
+         VN7/4lg8yX0G1PERjVIojuFHTgsrOB9Lo/6zxBO7DAhKhWSCkdAAVd4P10XAk3d95upH
+         Ez8g==
+X-Gm-Message-State: ABy/qLYoHoHHoB8pHLlFBtQCsfUv5dYow5v4wqKlTs71kARQHm1Os7P3
+	WkOlwmuFAl6rPlozIPnRZxaqVg==
+X-Google-Smtp-Source: APBJJlGlb5wLmYtED5PMTrWEhdmg5Zph4EtRP/kgQEPFSN6KS+oRNR4Ei5uxAPG5QgIwUyis8yArfQ==
+X-Received: by 2002:a05:6512:3d0d:b0:4f9:7aee:8dc5 with SMTP id d13-20020a0565123d0d00b004f97aee8dc5mr1629293lfv.19.1688645573888;
+        Thu, 06 Jul 2023 05:12:53 -0700 (PDT)
+Received: from [192.168.1.101] (abyj26.neoplus.adsl.tpnet.pl. [83.9.29.26])
+        by smtp.gmail.com with ESMTPSA id k16-20020ac24570000000b004fb81fbeb33sm227379lfm.251.2023.07.06.05.12.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Jul 2023 05:09:11 -0700 (PDT)
-Message-ID: <878103c6-0dc3-164b-92ce-17ec4f87bff6@linaro.org>
-Date: Thu, 6 Jul 2023 14:09:09 +0200
+        Thu, 06 Jul 2023 05:12:53 -0700 (PDT)
+Message-ID: <9b93bbad-1299-2afb-eac1-218cf209b293@linaro.org>
+Date: Thu, 6 Jul 2023 14:12:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.12.0
 Subject: Re: [PATCH v1 0/6] arm64: qcom: sa8775p: add support for PCIe
-To: Manivannan Sadhasivam <mani@kernel.org>
+Content-Language: en-US
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>
 Cc: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, konrad.dybcio@linaro.org, quic_shazhuss@quicinc.com,
- quic_nitegupt@quicinc.com, quic_ramkri@quicinc.com,
- quic_nayiluri@quicinc.com, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ conor+dt@kernel.org, quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+ quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
  =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
  Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -84,13 +86,12 @@ References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
  <20230705084606.GF11854@thinkpad>
  <a450e2e8-307d-49e9-d76d-de397b801a96@linaro.org>
  <20230706111218.GA4808@thinkpad>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230706111218.GA4808@thinkpad>
+ <878103c6-0dc3-164b-92ce-17ec4f87bff6@linaro.org>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <878103c6-0dc3-164b-92ce-17ec4f87bff6@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230706_050916_340297_BEECFA1F 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230706_051259_830504_316E83FE 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,24 +108,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/07/2023 13:12, Manivannan Sadhasivam wrote:
->>> Please note that the dts patches should come before driver patches.
+On 6.07.2023 14:09, Krzysztof Kozlowski wrote:
+> On 06/07/2023 13:12, Manivannan Sadhasivam wrote:
+>>>> Please note that the dts patches should come before driver patches.
+>>>>
+>>>
+>>> Why? DTS is always independent thus usually put at the end of patchset
+>>> or better separate. It is the first time I hear that DTS should be
+>>> before driver.
 >>>
 >>
->> Why? DTS is always independent thus usually put at the end of patchset
->> or better separate. It is the first time I hear that DTS should be
->> before driver.
->>
+>> This is what I was suggested by Rob during my initial days and I've been
+>> following this pattern since then. If that's not the case, I have no issues.
 > 
-> This is what I was suggested by Rob during my initial days and I've been
-> following this pattern since then. If that's not the case, I have no issues.
+> I really doubt Rob ever suggested that. He probably suggested that
+> bindings must come before user, but not the DTS.
+Besides, the flow in this patchset is very logical from the Linux POV
 
-I really doubt Rob ever suggested that. He probably suggested that
-bindings must come before user, but not the DTS.
+1. describe the hardware in bindings
+2. implement the drivers, conforming to the description
+3. describe the hardware in the device tree to ensure the (now
+   existing) driver probes
 
-Best regards,
-Krzysztof
-
+Konrad
+> 
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-phy mailing list
