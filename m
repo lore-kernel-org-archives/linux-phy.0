@@ -4,99 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D65FBEB64DC
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 06:28:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CDA8EB64DC
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 06:35:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tybNLlDL18K5BnZRsQbXhYt66QWB4kXrlnrTXHOIaNY=; b=KIFsJPy7ODDu9s
-	BLF1Xv0a8wMN6ga95rMNB77Bb2E0WpAiF/LZmKmSzn8JKvzHFuEz4ZarFcW5VSSeHoZOOtLjTVjR7
-	bmjVDhHx0x+2WIHntE6sZgHarsudXIOgdKyKIjrWx7zu9LA3o/a5jmgl5qwbabP2s3PpTbICb2lYp
-	wM+2xWe8EG+UhMqwfz/J0MnCsEPgH7cqYzTEZUrzuixEZKVYswReiOqoM7bEqOVj09k6yg0vtNM6L
-	ancN3Thh/YHdz5vkP9WzJarvf154Rv2yxd4WxU2q5S1IfdXfrxJ8LfqEwMYhG2KcZOYwnr7L3HpZn
-	KOYa86rGco65jbOgaZvQ==;
+	List-Owner; bh=089Q+EImY2wwpm5YuPRXaQmZfX9vnOnEXVFLX6OGdM0=; b=UAZVED+lKvJipk
+	6nfpaMee6Uf4A0O+7Zx09mwzmSzhZvi04flkCtH/+EIOk9fRiN/aZIz3cYXA6+MtArWOje3qYpcRp
+	MDkLVy4O9seUm/A4X4araoIzu5zR4iKLB+BZSKnZ4rFU4mNrFxu5DwoO/hnBjzYfjIdAOCHGkAjTD
+	fD7K1JU0sPbWZAEUm9++3RLrGWTqaDFOe/jeuvBtYQn3EVnYjD56CpF7Po/BY5ljvNSJ079E5mjt5
+	OWVerwievZyZiXyPApAmBzX5B3CWJIiyz7zgA7QMEt2YMH1iwGBVVixjmQC2titqy7PcIZBy91bhk
+	iuoA0G0F3UQ7hjLdPCvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHITm-000dqU-1Z;
-	Thu, 06 Jul 2023 06:28:38 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1qHIaW-000f0C-0V;
+	Thu, 06 Jul 2023 06:35:36 +0000
+Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHITj-000doW-0Q
+	id 1qHIaU-000ezR-0d
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jul 2023 06:28:36 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-992acf67388so31787966b.1
-        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 23:28:31 -0700 (PDT)
+	Thu, 06 Jul 2023 06:35:35 +0000
+Received: by mail-ed1-x52c.google.com with SMTP id 4fb4d7f45d1cf-51e28b299adso518798a12.2
+        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 23:35:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688624911; x=1691216911;
+        d=linaro.org; s=google; t=1688625330; x=1691217330;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Pqu4vTxoeW2yTwRCEetSQZvh47NKMtjn0RrXMB1JAGg=;
-        b=dRSL6aukgIkfv+NlQasUhI0WW8PrgXzou5v2QVss3xqfKaQ4M1Yt2cin2pOZmhQd17
-         mLGsmRk6KQ96V2gbe6flKfOcIDP8C6aJ94MYdy2hTnRpIigR7o/uS07D4CETNP/87UAG
-         Te3mFVnmowcotJ+p+kvuGY85+Df/k9sYz1L9gl3LDrpMcUkuBaCO8WTequflxZTiDoTT
-         JMZMZqgL5RQtdtgjCToseEau/xKW62TMq6KzpDrpxszgG+HHnYaK/7KRjWMGum9WC1ss
-         tpYb7Y62RIr5F4RyB4vq3Q8QtCd9PUd2GSuCjupyh7ZdQj3zgjJEZ/rUnmhwmkQP56L0
-         GcnQ==
+        bh=/Fcrx7Yb80pNkp2uhYzBT6R9rq95NqVLKKCQ4kXAxd0=;
+        b=jmW5yDabP4Ok8Fr/e5sXXdC2reJet2oCtHDLIyzUXl3RZi/+e8lR3yq1hjaq2ucTd6
+         on95I68Rzc8dD/EKyjP0KklY7Mzf+7LFof+c8R/R4P1iBwS/IEDigfTtU7+0yAWpFV+A
+         ZlQN3IbSxQnLLVuFHLOkROx2k+m3HxVlKpkcu0yjxDkW/9K5JrmIhf/38vBuH3xOoTI9
+         2iZFd29zoiaETJfADJ0bPy8DqF3T2BLt32ioCIOUBatYqruMmT72VvI7KhDnRWlJ5Jno
+         3QnxCNTEXvQpck3Cf9H+87dBECpfJE876XuYTsTxjv5/waJ7PzZQp/1THCKWcW7EnsZS
+         vzcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688624911; x=1691216911;
+        d=1e100.net; s=20221208; t=1688625330; x=1691217330;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Pqu4vTxoeW2yTwRCEetSQZvh47NKMtjn0RrXMB1JAGg=;
-        b=Y1aikHhCI0sVgou2pO5J/B9xZ1NGRBXotxAC3fcSKiIvV/eys7Rg+98lteGZqG7XaV
-         l9DSO+qD+fNiSdChvEFHloUqHI0YUZsxpef/FFFKKDVcpfJMBIDgyDnZjxHVz3qazyYg
-         CFWCrTzHN1gHpFdjnUb7x9+h2jgGTyeF5j9sTQ7ePrmtOFWHej0xsfU4XiUVN3wx9p4N
-         6Tns8ZQnAGyuLj+5asSLa+r048nNpxb1tfWlJYtxM6CaLTT8GJe5xvtZfXUKr1Jebw7b
-         X0RYIqDpiVjTUTFdT1SBAsYS48DJYjiJgDEBsbz0WKnAFlO9bsp/BI56BHnPWtRdrXsQ
-         MKGw==
-X-Gm-Message-State: ABy/qLZyRlsWPEIx35dFKpNNAZBc935wjKr3M18OiLETZt8BciLpD3yn
-	ZHW6blHHTxbn+53Cti1l84UcRw==
-X-Google-Smtp-Source: APBJJlEu2RGF4uBuUPfkX4wlSxPa3Cu2L5C0YRWwOysyPz8/vFYVscoSMwhTBIDQpkpak+dxq034Sw==
-X-Received: by 2002:a17:906:10cf:b0:991:8328:50e3 with SMTP id v15-20020a17090610cf00b00991832850e3mr696668ejv.9.1688624910680;
-        Wed, 05 Jul 2023 23:28:30 -0700 (PDT)
+        bh=/Fcrx7Yb80pNkp2uhYzBT6R9rq95NqVLKKCQ4kXAxd0=;
+        b=WsY23X1iu8QoMNUANbIX1OHlQ5OgKH3BrWBK39/MoRraz8M8qeD/4hAVGkugvFf0Ce
+         9DVr6H6fUXaTWFtYjNjE0amgcDLewQUT9kPQTQOhq50JwasVNRa23ZOmkM0GcFc50RRS
+         Mi1L5IHWVH+cOh9ZFIzoKLDcDcn3uYStVnlWJzs1RpW9yC0mZnnnoOG64tDKDIY8zTRC
+         fmrj+3+vVefgqAbfXmRyDOIjGyYtGUPS+ffWH/FQCCmvg2H5z5CNnLVtFuNg9uUhXDX/
+         4c8KH972BrSl8STGTOJxAw+MTrHw9BFQk8UULTTmIBEUvlZ+frHYmKBfJl4WhaLQRpjB
+         L1yQ==
+X-Gm-Message-State: ABy/qLafLvM8wJh8yDHib+K9iB5/SEt88G18FDJgAJUiuY4ED09vPGb+
+	Y9Jbzkah7mYyzJQGQsBqnXoNRg==
+X-Google-Smtp-Source: APBJJlEwPvUUd4Sh/nUSdZr5t/lb9kULYOIyiN8QYiEi0U71/oBuWIa+ml3DArx10T5OowOhav02nA==
+X-Received: by 2002:a17:906:5358:b0:98e:886:f27f with SMTP id j24-20020a170906535800b0098e0886f27fmr786493ejo.20.1688625330457;
+        Wed, 05 Jul 2023 23:35:30 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id lf20-20020a170906ae5400b009920e9a3a73sm372590ejb.115.2023.07.05.23.28.26
+        by smtp.gmail.com with ESMTPSA id gf3-20020a170906e20300b00992665694f7sm383818ejb.107.2023.07.05.23.35.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 05 Jul 2023 23:28:30 -0700 (PDT)
-Message-ID: <e871ad32-dfa4-067d-4f2c-207ffd42aafd@linaro.org>
-Date: Thu, 6 Jul 2023 08:28:25 +0200
+        Wed, 05 Jul 2023 23:35:29 -0700 (PDT)
+Message-ID: <6203ab10-c9b2-3ea8-a18e-dfd2905ec83f@linaro.org>
+Date: Thu, 6 Jul 2023 08:35:25 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.12.0
-Subject: Re: [PATCH 02/10] dt-bindings: bus: add device tree bindings for
- RIFSC
+Subject: Re: [PATCH v1 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe
+ PHY
 Content-Language: en-US
-To: Gatien Chevallier <gatien.chevallier@foss.st.com>,
- Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
- herbert@gondor.apana.org.au, davem@davemloft.net, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- alexandre.torgue@foss.st.com, vkoul@kernel.org, jic23@kernel.org,
- olivier.moysan@foss.st.com, arnaud.pouliquen@foss.st.com,
- mchehab@kernel.org, fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
- ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
- pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
- will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
- richardcochran@gmail.com
-Cc: linux-crypto@vger.kernel.org, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-usb@vger.kernel.org
-References: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
- <20230705172759.1610753-3-gatien.chevallier@foss.st.com>
+To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+ quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
+ <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230705172759.1610753-3-gatien.chevallier@foss.st.com>
+In-Reply-To: <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230705_232835_182701_5BDFF7C3 
-X-CRM114-Status: GOOD (  23.38  )
+X-CRM114-CacheID: sfid-20230705_233534_305392_F483B311 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,142 +105,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/07/2023 19:27, Gatien Chevallier wrote:
-> Document RIFSC (RIF security controller). RIFSC is a firewall controller
-> composed of different kinds of hardware resources.
+On 05/07/2023 10:17, Mrinmay Sarkar wrote:
+> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
+> for SA8775p platform.
 > 
-> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
-
-A nit, subject: drop second/last, redundant "device tree bindings for".
-The "dt-bindings" prefix is already stating that these are bindings. 4
-words of your 6 word subject is meaningless...
-
+> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 > ---
->  .../bindings/bus/st,stm32-rifsc.yaml          | 101 ++++++++++++++++++
->  1 file changed, 101 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
+>  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
-> new file mode 100644
-> index 000000000000..68d585ed369c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/bus/st,stm32-rifsc.yaml
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index a0407fc79563..9309066bfcee 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -23,6 +23,8 @@ properties:
+>        - qcom,sm8350-qmp-gen3x1-pcie-phy
+>        - qcom,sm8550-qmp-gen3x2-pcie-phy
+>        - qcom,sm8550-qmp-gen4x2-pcie-phy
+> +      - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +      - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>  
+>    reg:
+>      minItems: 1
+> @@ -30,7 +32,7 @@ properties:
+>  
+>    clocks:
+>      minItems: 5
+> -    maxItems: 6
+> +    maxItems: 7
+>  
+>    clock-names:
+>      minItems: 5
+> @@ -39,6 +41,7 @@ properties:
+>        - const: cfg_ahb
+>        - const: ref
+>        - const: rchng
+> +      - const: phy_aux
 
-Filename like compatible, unless you know list of compatibles will
-grow... but then add them.
+Nope, you didn't test, did you? You cannot just add entries in the
+middle - you break all the boards.
 
-> @@ -0,0 +1,101 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/bus/st,stm32-rifsc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STM32 Resource isolation framework security controller bindings
+Plus, you clearly missed to update the if:else and all this won't work.
+Just test the bindings before sending them.
 
-Drop bindings
+>        - const: pipe
+>        - const: pipediv2
+>  
+> @@ -136,6 +139,20 @@ allOf:
+>          clock-names:
+>            minItems: 6
 
-> +
-> +maintainers:
-> +  - Gatien Chevallier <gatien.chevallier@foss.st.com>
-> +
-> +description: |
-> +  Resource isolation framework (RIF) is a comprehensive set of hardware blocks
-> +  designed to enforce and manage isolation of STM32 hardware resources like
-> +  memory and peripherals.
-> +
-> +  The RIFSC (RIF security controller) is composed of three sets of registers,
-> +  each managing a specific set of hardware resources:
-> +    - RISC registers associated with RISUP logic (resource isolation device unit
-> +      for peripherals), assign all non-RIF aware peripherals to zero, one or
-> +      any security domains (secure, privilege, compartment).
-> +    - RIMC registers: associated with RIMU logic (resource isolation master
-> +      unit), assign all non RIF-aware bus master to one security domain by
-> +      setting secure, privileged and compartment information on the system bus.
-> +      Alternatively, the RISUP logic controlling the device port access to a
-> +      peripheral can assign target bus attributes to this peripheral master port
-> +      (supported attribute: CID).
-> +    - RISC registers associated with RISAL logic (resource isolation device unit
-> +      for address space - Lite version), assign address space subregions to one
-> +      security domains (secure, privilege, compartment).
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32mp25-rifsc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#address-cells":
-> +    const: 1
-> +
-> +  "#size-cells":
-> +    const: 1
-> +
-> +  "#feature-domain-cells":
-> +    const: 1
-> +
-> +  ranges: true
-> +
-> +  feature-domain-controller: true
-> +
-> +patternProperties:
-> +  "^.*@[0-9a-f]+$":
-> +    description: Peripherals
-> +    type: object
-> +    properties:
-> +      feature-domains:
-> +        minItems: 1
-> +        maxItems: 2
-> +        description:
-> +          The first argument must always be a phandle that references to the
-> +          firewall controller of the peripheral. The second can contain the
-> +          platform specific firewall ID of the peripheral.
+This is not valid anymore.
 
-It does not make much sense to me to have hierarchy parent-child and via
-phandle at the same time. You express the similar relationship twice.
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 7
+> +        clock-names:
+> +          maxItems: 7
+
+Keep the same approach for clocks and clock-names. Not min here, max there.
 
 > +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +  - feature-domain-controller
-> +  - "#feature-domain-cells"
-> +  - ranges
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    // In this example, the usart2 device refers to rifsc as its domain
-> +    // controller.
-> +    // Access rights are verified before creating devices.
-> +
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    rifsc: rifsc-bus@42080000 {
-> +        compatible = "st,stm32mp25-rifsc";
-> +        reg = <0x42080000 0x1000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
-> +        feature-domain-controller;
-> +        #feature-domain-cells = <1>;
-> +
-> +        usart2: serial@400e0000 {
-> +            compatible = "st,stm32h7-uart";
-> +            reg = <0x400e0000 0x400>;
-> +            interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
-> +            clocks = <&ck_flexgen_08>;
-> +            feature-domains = <&rifsc 32>;
-> +            status = "disabled";
-
-No status in the examples.
-
-> +        };
-> +    };
+>    - if:
+>        properties:
+>          compatible:
 
 Best regards,
 Krzysztof
