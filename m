@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CDA8EB64DC
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 06:35:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C61AEB64D9
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jul 2023 06:38:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=089Q+EImY2wwpm5YuPRXaQmZfX9vnOnEXVFLX6OGdM0=; b=UAZVED+lKvJipk
-	6nfpaMee6Uf4A0O+7Zx09mwzmSzhZvi04flkCtH/+EIOk9fRiN/aZIz3cYXA6+MtArWOje3qYpcRp
-	MDkLVy4O9seUm/A4X4araoIzu5zR4iKLB+BZSKnZ4rFU4mNrFxu5DwoO/hnBjzYfjIdAOCHGkAjTD
-	fD7K1JU0sPbWZAEUm9++3RLrGWTqaDFOe/jeuvBtYQn3EVnYjD56CpF7Po/BY5ljvNSJ079E5mjt5
-	OWVerwievZyZiXyPApAmBzX5B3CWJIiyz7zgA7QMEt2YMH1iwGBVVixjmQC2titqy7PcIZBy91bhk
-	iuoA0G0F3UQ7hjLdPCvg==;
+	List-Owner; bh=mMzkLFo6hdntZjfh35CfZKTL/530JgZOmjIVClwd0lM=; b=L7xZOnvzrGW9K5
+	7inpEwyvD4/DshAEH1UIk8vTh2k2h2yDBAGu0GaFwovs/Ymvnxlb06tsSFs0QOTpMsmYiI1rfY3cF
+	UE/BG1NicChOkU5g27tzVFK0z2+EGCaPS6o6JMxG/po1P+STnJX1PV2kkq0FBc0XjMU1eU25303Nw
+	WkNGXsKprTWQBpLPrLAR6kNJ00T+2nzdsrAtDeHoGfv7wBnhzm4/9Toao0N3gu6giSf3TwI/nny5b
+	eNbfJ7bI7sFc69gMaDyvUH4kPHrEw7c/xUonm77sd+6RuYQfKyLomJNXztVOHNxivTXaA3QBqbNUv
+	FFvHe/YYwmWVu8n8wOTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHIaW-000f0C-0V;
-	Thu, 06 Jul 2023 06:35:36 +0000
-Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
+	id 1qHIdX-000fTB-0n;
+	Thu, 06 Jul 2023 06:38:43 +0000
+Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qHIaU-000ezR-0d
+	id 1qHIdR-000fQJ-34
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jul 2023 06:35:35 +0000
-Received: by mail-ed1-x52c.google.com with SMTP id 4fb4d7f45d1cf-51e28b299adso518798a12.2
-        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 23:35:31 -0700 (PDT)
+	Thu, 06 Jul 2023 06:38:39 +0000
+Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-991c786369cso37805766b.1
+        for <linux-phy@lists.infradead.org>; Wed, 05 Jul 2023 23:38:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688625330; x=1691217330;
+        d=linaro.org; s=google; t=1688625510; x=1691217510;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=/Fcrx7Yb80pNkp2uhYzBT6R9rq95NqVLKKCQ4kXAxd0=;
-        b=jmW5yDabP4Ok8Fr/e5sXXdC2reJet2oCtHDLIyzUXl3RZi/+e8lR3yq1hjaq2ucTd6
-         on95I68Rzc8dD/EKyjP0KklY7Mzf+7LFof+c8R/R4P1iBwS/IEDigfTtU7+0yAWpFV+A
-         ZlQN3IbSxQnLLVuFHLOkROx2k+m3HxVlKpkcu0yjxDkW/9K5JrmIhf/38vBuH3xOoTI9
-         2iZFd29zoiaETJfADJ0bPy8DqF3T2BLt32ioCIOUBatYqruMmT72VvI7KhDnRWlJ5Jno
-         3QnxCNTEXvQpck3Cf9H+87dBECpfJE876XuYTsTxjv5/waJ7PzZQp/1THCKWcW7EnsZS
-         vzcA==
+        bh=SzbDaaEINzDnrrek3iEpxYi20fNioqu6biTa2NhS4fM=;
+        b=injOkU3hL1jr16jkt15zpH4C98XjRlyqXP/5gdSh5opjm4kgxt5ZAmgiHuyttMjyZ/
+         9BOZopijMVK9aU5RzZ7LNcTb60k+mZS7DSaWtc5lNZrLWPMnjYgDG4SCofm4H2MP9WyL
+         P8gxsmzz8YGk4AKKinmgL1w3QTtAOXVrArmnVaQhqZBMfYz1m9UVrJOTqigc8YQsxx2E
+         ij6rTNP55i7lVjsZO+1MyqDgG3rtM2qibI9GxJSfDf8zZLsObPJBszBm3I4T1XJYRPxj
+         jTpYju0/9f4DN1joM4Di1jS5Y/2m5bwWCH3ZbhuQO5Vm3Ld+/BgfxS7IUut7TecoWJBr
+         P1zw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688625330; x=1691217330;
+        d=1e100.net; s=20221208; t=1688625510; x=1691217510;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=/Fcrx7Yb80pNkp2uhYzBT6R9rq95NqVLKKCQ4kXAxd0=;
-        b=WsY23X1iu8QoMNUANbIX1OHlQ5OgKH3BrWBK39/MoRraz8M8qeD/4hAVGkugvFf0Ce
-         9DVr6H6fUXaTWFtYjNjE0amgcDLewQUT9kPQTQOhq50JwasVNRa23ZOmkM0GcFc50RRS
-         Mi1L5IHWVH+cOh9ZFIzoKLDcDcn3uYStVnlWJzs1RpW9yC0mZnnnoOG64tDKDIY8zTRC
-         fmrj+3+vVefgqAbfXmRyDOIjGyYtGUPS+ffWH/FQCCmvg2H5z5CNnLVtFuNg9uUhXDX/
-         4c8KH972BrSl8STGTOJxAw+MTrHw9BFQk8UULTTmIBEUvlZ+frHYmKBfJl4WhaLQRpjB
-         L1yQ==
-X-Gm-Message-State: ABy/qLafLvM8wJh8yDHib+K9iB5/SEt88G18FDJgAJUiuY4ED09vPGb+
-	Y9Jbzkah7mYyzJQGQsBqnXoNRg==
-X-Google-Smtp-Source: APBJJlEwPvUUd4Sh/nUSdZr5t/lb9kULYOIyiN8QYiEi0U71/oBuWIa+ml3DArx10T5OowOhav02nA==
-X-Received: by 2002:a17:906:5358:b0:98e:886:f27f with SMTP id j24-20020a170906535800b0098e0886f27fmr786493ejo.20.1688625330457;
-        Wed, 05 Jul 2023 23:35:30 -0700 (PDT)
+        bh=SzbDaaEINzDnrrek3iEpxYi20fNioqu6biTa2NhS4fM=;
+        b=WHlsTh0tiiIEzYPyKF4nysxQ4BYryo0y7qium2boJxO1Aq9TXty5FrPgkytujRmxkr
+         jneYmRqoPViXA7dLdTHltCjNu6elX9CHLJNgWgww1anME8hTPezk0nELQdVnHxaHYlwQ
+         E8yKq+uAWvqPfix5eweeKSU+9NJaqtfJG0kH+v3YURhpXkxm8xTqfVcVJb/RpEws9kyM
+         mFhD9SnBb4Qnq03Ylk8jUgLRb75C8hGQD7nniFrWoydEfkkPIFXJxDZg100yy/KdUESj
+         2wOzEhBuCc4Ix/fuL6y+shUTMjfWY2+zH9F7c+boif9zG2u9jPa9tY+Vn8rIIh4aq4Pw
+         oSNA==
+X-Gm-Message-State: ABy/qLaINJkcRqKOki8CVTmiNryCerMHmsLWDiy3j0QZbNtJU1GTuCj5
+	59cLC54RTTWS9YWHtSANXgFcFA==
+X-Google-Smtp-Source: APBJJlHl+k5klXuLW1bGpjO5TxkRuvAL25oBwezF4bBVZb2+XKcQCS2Q+gcUHO2EUvAuj166Lj+l3w==
+X-Received: by 2002:a17:906:7a17:b0:991:f427:2fe8 with SMTP id d23-20020a1709067a1700b00991f4272fe8mr699401ejo.2.1688625509779;
+        Wed, 05 Jul 2023 23:38:29 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id gf3-20020a170906e20300b00992665694f7sm383818ejb.107.2023.07.05.23.35.26
+        by smtp.gmail.com with ESMTPSA id m9-20020a1709060d8900b00985bdb7dd5fsm381746eji.201.2023.07.05.23.38.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 05 Jul 2023 23:35:29 -0700 (PDT)
-Message-ID: <6203ab10-c9b2-3ea8-a18e-dfd2905ec83f@linaro.org>
-Date: Thu, 6 Jul 2023 08:35:25 +0200
+        Wed, 05 Jul 2023 23:38:29 -0700 (PDT)
+Message-ID: <59414ba3-dee2-33c1-0752-ec3fbc369b99@linaro.org>
+Date: Thu, 6 Jul 2023 08:38:25 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.12.0
-Subject: Re: [PATCH v1 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe
- PHY
+Subject: Re: [PATCH v1 5/6] arm64: dts: qcom: sa8775p: Add pcie0 and pcie1
+ nodes
 Content-Language: en-US
 To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -83,12 +83,12 @@ Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <1688545032-17748-1-git-send-email-quic_msarkar@quicinc.com>
- <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
+ <1688545032-17748-6-git-send-email-quic_msarkar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1688545032-17748-3-git-send-email-quic_msarkar@quicinc.com>
+In-Reply-To: <1688545032-17748-6-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230705_233534_305392_F483B311 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20230705_233837_994239_E0820C57 
+X-CRM114-Status: GOOD (  13.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,78 +106,240 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 05/07/2023 10:17, Mrinmay Sarkar wrote:
-> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
-> for SA8775p platform.
+> Add pcie dtsi nodes for two controllers found on sa8775p platform.
 > 
 > Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 > ---
->  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 19 ++++++++++++++++++-
->  1 file changed, 18 insertions(+), 1 deletion(-)
+>  arch/arm64/boot/dts/qcom/sa8775p.dtsi | 201 +++++++++++++++++++++++++-
+>  1 file changed, 199 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index a0407fc79563..9309066bfcee 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -23,6 +23,8 @@ properties:
->        - qcom,sm8350-qmp-gen3x1-pcie-phy
->        - qcom,sm8550-qmp-gen3x2-pcie-phy
->        - qcom,sm8550-qmp-gen4x2-pcie-phy
-> +      - qcom,sa8775p-qmp-gen4x2-pcie-phy
-> +      - qcom,sa8775p-qmp-gen4x4-pcie-phy
->  
->    reg:
->      minItems: 1
-> @@ -30,7 +32,7 @@ properties:
->  
->    clocks:
->      minItems: 5
-> -    maxItems: 6
-> +    maxItems: 7
->  
->    clock-names:
->      minItems: 5
-> @@ -39,6 +41,7 @@ properties:
->        - const: cfg_ahb
->        - const: ref
->        - const: rchng
-> +      - const: phy_aux
+> diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> index b130136acffe..88749cbaea8b 100644
+> --- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> @@ -481,8 +481,8 @@ gcc: clock-controller@100000 {
+>  				 <0>,
+>  				 <0>,
+>  				 <0>,
+> -				 <0>,
+> -				 <0>,
+> +				 <&pcie0_phy>,
+> +				 <&pcie1_phy>,
+>  				 <0>,
+>  				 <0>,
+>  				 <0>;
+> @@ -2315,4 +2315,201 @@ arch_timer: timer {
+>  			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
+>  			     <GIC_PPI 12 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
+>  	};
+> +
+> +	pcie0: pci@1c00000{
+> +		device_type = "pci";
+> +		compatible = "qcom,pcie-sa8775p";
+> +		reg = <0x0 0x01c00000 0x0 0x3000>,
+> +		      <0x0 0x40000000 0x0 0xf20>,
+> +		      <0x0 0x40000f20 0x0 0xa8>,
+> +		      <0x0 0x40001000 0x0 0x4000>,
+> +		      <0x0 0x40100000 0x0 0x100000>,
+> +		      <0x0 0x01c03000 0x0 0x1000>;
+> +		reg-names = "parf", "dbi", "elbi", "atu", "config", "mhi";
+> +
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		ranges = <0x01000000 0x0 0x40200000 0x0 0x40200000 0x0 0x100000>,
+> +			<0x02000000 0x0 0x40300000 0x0 0x40300000 0x0 0x1fd00000>;
+> +		bus-range = <0x00 0xff>;
+> +
+> +		linux,pci-domain = <0>;
+> +		num-lanes = <2>;
+> +
+> +		interrupts = <GIC_SPI 307 IRQ_TYPE_LEVEL_HIGH>;
+> +		interrupt-names = "msi";
+> +		#interrupt-cells = <1>;
+> +		interrupt-map-mask = <0 0 0 0x7>;
+> +		interrupt-map = <0 0 0 1 &intc GIC_SPI 434 IRQ_TYPE_LEVEL_HIGH>,
+> +			<0 0 0 2 &intc GIC_SPI 435 IRQ_TYPE_LEVEL_HIGH>,
+> +			<0 0 0 3 &intc GIC_SPI 438 IRQ_TYPE_LEVEL_HIGH>,
+> +			<0 0 0 4 &intc GIC_SPI 439 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
+> +			<&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+> +			<&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
+> +			<&gcc GCC_PCIE_0_SLV_AXI_CLK>,
+> +			<&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
+> +
+> +		clock-names = "aux",
+> +				"cfg",
+> +				"bus_master",
+> +				"bus_slave",
+> +				"slave_q2a";
+> +
+> +		assigned-clocks = <&gcc GCC_PCIE_0_AUX_CLK>;
+> +		assigned-clock-rates = <19200000>;
+> +
+> +		interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>;
+> +		interconnect-names = "pcie-mem";
+> +
+> +		resets = <&gcc GCC_PCIE_0_BCR>;
+> +		reset-names = "pci";
+> +		power-domains = <&gcc PCIE_0_GDSC>;
+> +
+> +		phys = <&pcie0_phy>;
+> +		phy-names = "pciephy";
+> +
+> +		iommus = <&pcie_smmu 0x0000 0x1>;
+> +		iommu-map = <0x0 &pcie_smmu 0x0000 0x1>,
+> +			<0x100 &pcie_smmu 0x0001 0x1>;
+> +
+> +		perst-gpios = <&tlmm 2 1>;
+> +		wake-gpios = <&tlmm 0 0>;
+> +
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pcie0_default_state>;
+> +
+> +		status = "disabled";
+> +	};
+> +
+> +	pcie0_phy: phy@1c04000 {
+> +		compatible = "qcom,sa8775p-qmp-gen4x2-pcie-phy";
+> +		reg = <0x0 0x1c04000 0x0 0x2000>;
+> +
+> +		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
+> +			 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+> +			 <&gcc GCC_PCIE_CLKREF_EN>,
+> +			 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
+> +			 <&gcc GCC_PCIE_0_PHY_AUX_CLK>,
+> +			 <&gcc GCC_PCIE_0_PIPE_CLK>,
+> +			 <&gcc GCC_PCIE_0_PIPEDIV2_CLK>;
+> +
+> +		clock-names = "aux", "cfg_ahb", "ref", "rchng", "phy_aux",
+> +						"pipe", "pipediv2";
+> +
+> +		assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
+> +		assigned-clock-rates = <100000000>;
+> +
+> +		power-domains = <&gcc PCIE_0_GDSC>;
+> +
+> +		resets = <&gcc GCC_PCIE_0_PHY_BCR>;
+> +		reset-names = "phy";
+> +
+> +		#clock-cells = <0>;
+> +		clock-output-names = "pcie_0_pipe_clk";
+> +
+> +		#phy-cells = <0>;
+> +
+> +		status = "disabled";
+> +	};
+> +
+> +	pcie1: pci@1c10000{
+> +		device_type = "pci";
 
-Nope, you didn't test, did you? You cannot just add entries in the
-middle - you break all the boards.
+compatible is always first property, then reg, then reg-names, then
+ranges. Always.
 
-Plus, you clearly missed to update the if:else and all this won't work.
-Just test the bindings before sending them.
+> +		compatible = "qcom,pcie-sa8775p";
+> +		reg = <0x0 0x01c10000 0x0 0x3000>,
+> +		      <0x0 0x60000000 0x0 0xf20>,
+> +		      <0x0 0x60000f20 0x0 0xa8>,
+> +		      <0x0 0x60001000 0x0 0x4000>,
+> +		      <0x0 0x60100000 0x0 0x100000>,
+> +		      <0x0 0x01c13000 0x0 0x1000>;
+> +		reg-names = "parf", "dbi", "elbi", "atu", "config", "mhi";
+> +
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		ranges = <0x01000000 0x0 0x60200000 0x0 0x60200000 0x0 0x100000>,
+> +			<0x02000000 0x0 0x60300000 0x0 0x60300000 0x0 0x1fd00000>;
+> +		bus-range = <0x00 0xff>;
+> +
+> +		linux,pci-domain = <1>;
+> +		num-lanes = <4>;
+> +
+> +		interrupts = <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>;
+> +		interrupt-names = "msi";
+> +		#interrupt-cells = <1>;
+> +		interrupt-map-mask = <0 0 0 0x7>;
+> +		interrupt-map = <0 0 0 1 &intc GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
+> +				<0 0 0 2 &intc GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>,
+> +				<0 0 0 3 &intc GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>,
+> +				<0 0 0 4 &intc GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +		clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
+> +			<&gcc GCC_PCIE_1_CFG_AHB_CLK>,
+> +			<&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
+> +			<&gcc GCC_PCIE_1_SLV_AXI_CLK>,
+> +			<&gcc GCC_PCIE_1_SLV_Q2A_AXI_CLK>;
+> +
+> +		clock-names = "aux",
+> +				"cfg",
+> +				"bus_master",
+> +				"bus_slave",
+> +				"slave_q2a";
+> +
+> +		assigned-clocks = <&gcc GCC_PCIE_1_AUX_CLK>;
+> +		assigned-clock-rates = <19200000>;
+> +
+> +		interconnects = <&pcie_anoc MASTER_PCIE_1 0 &mc_virt SLAVE_EBI1 0>;
+> +		interconnect-names = "pcie-mem";
+> +
+> +		resets = <&gcc GCC_PCIE_1_BCR>;
+> +		reset-names = "pci";
+> +		power-domains = <&gcc PCIE_1_GDSC>;
+> +
+> +		phys = <&pcie1_phy>;
+> +		phy-names = "pciephy";
+> +
+> +		iommus = <&pcie_smmu 0x0080 0x1>;
+> +		iommu-map = <0x0 &pcie_smmu 0x0080 0x1>,
+> +			<0x100 &pcie_smmu 0x0081 0x1>;
+> +
+> +		perst-gpios = <&tlmm 4 1>;
+> +		wake-gpios = <&tlmm 5 0>;
 
->        - const: pipe
->        - const: pipediv2
->  
-> @@ -136,6 +139,20 @@ allOf:
->          clock-names:
->            minItems: 6
-
-This is not valid anymore.
-
->  
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
-> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
-> +    then:
-> +      properties:
-> +        clocks:
-> +          minItems: 7
-> +        clock-names:
-> +          maxItems: 7
-
-Keep the same approach for clocks and clock-names. Not min here, max there.
+Use proper defines.
 
 > +
->    - if:
->        properties:
->          compatible:
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pcie1_default_state>;
+> +
+> +		status = "disabled";
+> +	};
+> +
+> +	pcie1_phy: phy@1c14000 {
+> +		compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy";
+> +		reg = <0x0 0x1c14000 0x0 0x4000>;
+> +
+> +		clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
+> +			 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
+> +			 <&gcc GCC_PCIE_CLKREF_EN>,
+> +			 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
+> +			 <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
+> +			 <&gcc GCC_PCIE_1_PIPE_CLK>,
+> +			 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>;
+> +
+> +		clock-names = "aux", "cfg_ahb", "ref", "rchng", "phy_aux",
+> +						"pipe", "pipediv2";
+> +
+> +		assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
+> +		assigned-clock-rates = <100000000>;
+> +
+> +		power-domains = <&gcc PCIE_1_GDSC>;
+> +
+> +		resets = <&gcc GCC_PCIE_1_PHY_BCR>;
+> +		reset-names = "phy";
+> +
+> +		#clock-cells = <0>;
+> +		clock-output-names = "pcie_1_pipe_clk";
+> +
+> +		#phy-cells = <0>;
+> +
+> +		status = "disabled";
+> +
+
+No stray blank lines.
+
+> +	};
+>  };
 
 Best regards,
 Krzysztof
