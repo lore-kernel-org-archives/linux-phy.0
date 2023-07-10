@@ -4,150 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02B3EEB64D9
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jul 2023 08:11:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CAB0EB64D9
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Jul 2023 08:23:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qDDQnZQ8S6T9Jxv51Q8VYccz3L7gxCn2PZxRrny7Mh8=; b=lkOPmmc9xo4jCR
-	ZqIlSjblh32Mr9Ad0gjGKBQKolVopJoEFwGXX4Hz3EJzDYGkHfm0YUMFiNxjYbeSYeqjCQd8pmYPm
-	Z4vw6nOAZ0HD9y/+4bKiU92532ZFGAURv6moSfv6uawiJrSefRr/3+eHslziwnNEyu+cs87YCsJ6O
-	IknwS5FsHz38fv97nRhyep/i/5NvFmZ/2IDSP4DIRi1HFQI8PET9BSO3iA2v2tHrR8gLi3TaopMWU
-	q9KB/gXIMPRkyEwIbbgqtOHxWXVeHXWvmCyLw5/bibszIQaKB+/XzMHgUDEDdMinE7VBiA/nEu0XS
-	4fTx5B4GMQxtglyy4Nmg==;
+	List-Owner; bh=uOzmvUpTle6EXVL3ibx6fddibZBOJVhoplEzlXi9Cgg=; b=0gNCEssLxtvKs7
+	IzYaA4Q62JL8ihfDvtvyj/ahufnAgPobvuyudK5fbk6eh7smG+1aaJihwbKlnJYJ/IlRMTk+j6VCR
+	N2O+ki1dvSqb8Q0+95OrqPkNZ5bvVKruaaIflp9hWoJFeRonMC+XQHFiFOlUOCl62Hejetnku9ZNd
+	kh64kfmDvAJy5EHJDDqML2Qd71VzVeqT/sQPvt3SQQ8+A0A3YBSmqvYbYLmrIe5NA+QKKLp0Us0Sh
+	Tf4IEx6q94mchm67GDYX4509UcXC6QcVTRhua6xtne7wmB8fUdX8n2s896FoB1P30z9ns9QStY0Sp
+	TXm/cacuVxycNYjU8uiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qIlzW-00Ao51-2G;
-	Mon, 10 Jul 2023 08:11:30 +0000
-Received: from mail-vi1eur05on20614.outbound.protection.outlook.com ([2a01:111:f400:7d00::614] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1qImAe-00Aphi-2T;
+	Mon, 10 Jul 2023 08:23:00 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qIlzT-00Ao2Q-1p;
-	Mon, 10 Jul 2023 08:11:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VqBXin4boCuuAqVkzqNeBqJps8Mqb1bztv5IDs9PtJO8d2Ay8nF2KqhuYulhLya+Vp4XPWBzz5IiiH04S2l7t6YPD4BdbVR/9CSl2wX6I61orz+G1BHMkxaTxA4F4IuaCMwKNh7SZ9abyXNPOAo4Wbht3Hlvq7wpqxShG5S5oO0x7CbXkA21WLoqdFkQm9JkfNW9/E7xBvgGa8xNf0+FoFYz8WCqfqjMsbqQ8VC44w9CdNCvr+zwQxKl+hRCt6tppjxFExED1YNX58kCB699ptPZGhVzupRNU0XCw64xU0fXN9SBNbmTISXFSslLjmxCCGYdiiSZEe+zIvU/8Zq+GA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=7p2MoUdL6xoISiQS0uemGvF3mXZYJvKmKFJAMaU98pU=;
- b=Zjbj/dg3+2VGiuhIdbWPqGTG4vVsP/Qp8RTgQCciFgC3HTRozJS8+HRTpWDwe6LXQoHfp2uCkP16E8UwjRTGb31v4AVOVNxYoKSAz2bd8OfuXRLkne/vLyVW8yyI5ofLWqmG+nbnzQvMa2xKV6mzVVq5NjO/2SoflAG7RPOb6mb23v+f6S1lU98RfP2tUSmAv7D58/LVsLrd7b9nk4Vp0Id6+PhjRPuVUlZUoLnJ4GzRcyWKbVvAkgstUBwLU75EvbESQ2h2CVKpGU9Tb8ObFyGsYTSwPZk/k+nH7q6ZPAsSBJnzJ8DgkMbkImPxQGoZBZiaschJqGSuS3DqGLa3lQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7p2MoUdL6xoISiQS0uemGvF3mXZYJvKmKFJAMaU98pU=;
- b=mqTCLh6wrxInODXiotj3VHMHaLHyQlqSQfvLraixEMy7vi2IElQupGgcv8ilWXbYdbIike89eFIsU4anPPP9Db8lwZOaPm3VoyKNdb63g6oasPZtw7Kq2rg5aQ6uVRtCmcBM1fg/QdIe5pDJjiLWVb9XQ/cWFmzZUj5/4fRYUvA=
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
- by DBBPR04MB7690.eurprd04.prod.outlook.com (2603:10a6:10:200::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6565.30; Mon, 10 Jul
- 2023 08:11:18 +0000
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::8af8:59df:c8ab:ff51]) by PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::8af8:59df:c8ab:ff51%5]) with mapi id 15.20.6565.028; Mon, 10 Jul 2023
- 08:11:18 +0000
-From: Sandor Yu <sandor.yu@nxp.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>,
-	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
-	"robert.foss@linaro.org" <robert.foss@linaro.org>,
-	"Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
-	"jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@gmail.com"
-	<jernej.skrabec@gmail.com>, "airlied@gmail.com" <airlied@gmail.com>,
-	"daniel@ffwll.ch" <daniel@ffwll.ch>, "robh+dt@kernel.org"
-	<robh+dt@kernel.org>, "krzysztof.kozlowski+dt@linaro.org"
-	<krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org"
-	<shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
-	"festevam@gmail.com" <festevam@gmail.com>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "dri-devel@lists.freedesktop.org"
-	<dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "kernel@pengutronix.de"
-	<kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, Oliver Brown
-	<oliver.brown@nxp.com>
-Subject: RE: [EXT] Re: [PATCH v6 4/8] phy: Add HDMI configuration options
-Thread-Topic: [EXT] Re: [PATCH v6 4/8] phy: Add HDMI configuration options
-Thread-Index: AQHZnyaWSldT+9YfOk2MiOGSER4/uq+aTasAgBhbjaCAAB0kAIAAAGFggAAFm4CAAADIEA==
-Date: Mon, 10 Jul 2023 08:11:18 +0000
-Message-ID: <PAXPR04MB94484B72902FDEB4858FE5ACF430A@PAXPR04MB9448.eurprd04.prod.outlook.com>
-References: <cover.1686729444.git.Sandor.yu@nxp.com>
- <cec469206a166c4b070fd7d7bbf89a8df656ccc6.1686729444.git.Sandor.yu@nxp.com>
- <6f590bb6-7d17-3ae8-684d-2d4403d6ff55@linaro.org>
- <PAXPR04MB9448598256524162A74F0311F430A@PAXPR04MB9448.eurprd04.prod.outlook.com>
- <8966feba-eef9-2ea3-dbec-13fc53232a6b@linaro.org>
- <PAXPR04MB9448480F2A0E0542942A661AF430A@PAXPR04MB9448.eurprd04.prod.outlook.com>
- <CAA8EJppbbeZB-pdPdg+gft+kS8Pzsxvqd9v6DsRNwTkL71XSJQ@mail.gmail.com>
-In-Reply-To: <CAA8EJppbbeZB-pdPdg+gft+kS8Pzsxvqd9v6DsRNwTkL71XSJQ@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PAXPR04MB9448:EE_|DBBPR04MB7690:EE_
-x-ms-office365-filtering-correlation-id: 3df8aff0-c008-41f2-4bb2-08db811d3d55
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: nSNm6RfIBmZCMdd+wQrZLDFm0D8ZrJrXamYtwSfdmB+CGWMafXJYbWATpQdJbHQQkwNVJmXiE2UoFB+GtqkjjBnnARmN+zOd2MJeRSPniqwQDsKLB4ligkPwPugKI79sE0nwuJyhIAdKR+QuQ+GAC+Py1wzCADAtQiOyttn9gdRL8GmlEQ9gc9L+9lFgxl7RCokFzWc44dApSNDbNb6JzkKnZeup9vjyB/mHYQRl1IX6ctHQKWvntaNLMgMo+8F0etevytsSckOI7CzZa5LlG0yIbYtlxxQ/PRJzYkabjozSUz9Qj+yRJVr5moU/OYSYj0O0ztwqtIsVgZUDmtgJ2C5KlLAVaD7bLQFi9Sv6EvsC90ZriWShgglGnj2bEJyI+u6+ILlNyfOBCpYwf9+SWtgYg2rcE6LroXy+MguaVKRuiOACv5Tq4QooYkzhzfdqSsd/6cIF8ZeIbTAn4zi2njw2j+5zGb6NSWj9zzOAB9QgigBcQI+T4fTkJBspDsPdVznQvZjrkCa0ZsXB0UNtZJldsptB83YYf7iXVFDGkWedN8QMTMzNGBmnfeiMqYMjoUtXux089QB53TnHa9gb0r7DkUWiDbscvTyUGek8sNi3e8gEkdgkp+skcLTHzf9b
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(366004)(39860400002)(136003)(376002)(346002)(396003)(451199021)(7696005)(478600001)(76116006)(54906003)(71200400001)(83380400001)(38070700005)(33656002)(86362001)(55016003)(2906002)(66946007)(186003)(6506007)(53546011)(9686003)(38100700002)(122000001)(64756008)(8676002)(6916009)(4326008)(66446008)(316002)(66556008)(66476007)(41300700001)(5660300002)(8936002)(7416002)(44832011)(52536014);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?WWg1ZlBWdXBzNHcyT2FkU0wreklNM25lRHFIWTJGdVFBM1ZQYUdqM21FbUho?=
- =?utf-8?B?WnQyanFxLzc2MTZrZFUyUVpMZ1VrV2pNZSs3Tk5oMjF1WTlsdzRQbzFBZmpz?=
- =?utf-8?B?NUd1YmhVSWJ5ZThwWU92M3BGS3Q2V05WR3AvbVgvQzNzTVBJRHpBNm5RV3Bw?=
- =?utf-8?B?Qm1sNGtGVDg0UFJTdjlHZzZEUXdnQ3VBWVRZSHNIcW1MUkxZYjk2RmNnWVUz?=
- =?utf-8?B?eHA3eXdhQTNoRkhMckNtQ2VjOXpCaFNBb3BGNXQ3NldqZ3FYeldQbFlQdEZu?=
- =?utf-8?B?QmJwZTlvbXdXVSt3MlowMkhQcnI2bER2eDlUM0tkTkZvcVVzRVZEalJRbnFi?=
- =?utf-8?B?TldIbjJVT09keEppVm0yTEJsYTZUNlkxeS8wRUY2d25SZGFvNXlaVkVYUjJI?=
- =?utf-8?B?Umo0V1ZSTWxabFpsa3dQcGdXK3REaUxwOTF5N2FkY21hWFE1dy8zQjhFTDFr?=
- =?utf-8?B?WkhEWGg2aWo0K1JrcUlETWVORE92dEhoRGlNeFpuczNUekR4V0wvS3gyT3ZG?=
- =?utf-8?B?MjBQaGdqWm1wV1JLL0FNbzRpaDhGN1hCVUhXZTE2UTZpaGdCYmdTWVNJV3hk?=
- =?utf-8?B?MlNMNkVKMjVtK0szTjJzbGt1ZW1pbWFIN3NCMVNzUmhTd2Z4dG9ibWtpeHND?=
- =?utf-8?B?MUpIMWZTN3dVWVM3WFVieEdRVTB4aVF4RGEzc2J0R0xJYm13U3dpWC9GanVY?=
- =?utf-8?B?YXY3cC9yNDQwcFVsbW42SUp1cGkxd1FuTGlIMHpoeVh3dkkvQ0c0OHQ0amwz?=
- =?utf-8?B?bUpGVTFIeUNZcnZlVnp4a1Q4aDdXZDRTMytOZ20yUENXVEJiai9hWlRVRmdk?=
- =?utf-8?B?SWczUVI1bXdDV3pxTk1CN0hZT2tMbXB3S2RnNXBwNGhBRzM4K201Z1RhKzlr?=
- =?utf-8?B?Rlc2SVRGUHRSazJkTlkyYTVMdmcrQzd2UGVVNVBHdXV1SU9KaUNJM2NEUFIr?=
- =?utf-8?B?MUZ2TituQlFZLzd2Ym8vTXU0R2VSQWd1NzhYMGtGelkrZDI4YW0zMm9ON1Q5?=
- =?utf-8?B?WklWVWh2VHpVUDFaOVpVbzlhM0xWYS9Wd2xCVGg1Vk5xanEzMW8xaVhiRTZI?=
- =?utf-8?B?RzQ5WU92YW9CZlpKSWJwTUQ1QjZOWkQ0bll5UVorOFVYLzBDU2xNdk04ZzA0?=
- =?utf-8?B?NU5nZTE2VFBHU1pwM0dOaGNUZTZ0bUhFVjhmSklwdXRiU1NrdWNKMUZKRklx?=
- =?utf-8?B?bjMvMnZ6bUluU2pacmVXbWVpdm1PUXFJUzFJMXduTTJNTXE0T1g5UEJqVzFB?=
- =?utf-8?B?bFdKdXp2WUVqUlFvNjJnSHh6ZVJhaGowbEhUMmNGMlBqd2FrZlI1WlM2Wjhu?=
- =?utf-8?B?TzJPd25YU2pvQlBrcXVOaFIyeHQ1MFRnWnVva0d1VDROcjRLemRwV3B4RjYx?=
- =?utf-8?B?c1BQTm92Y3puNzQ5N2NLZXF6MXBSMjZGbzE3TDFYVlc2ZnpUdytGc2JkenNV?=
- =?utf-8?B?dkxLbEJVdTg0a3dLeE0xL0xoWko3SUVYWWhKS0t5UnkrYVBBY0c5aFRSOWs0?=
- =?utf-8?B?ZmZndm9zR0VuWVRXMjZ6OXQrU29BTWljeW9HMWZ2NEZPK0pGTm9kMkFzWkhw?=
- =?utf-8?B?Q2FzSTZ1ZWYyVWFKMFY2OTZFU1FESUpZcEprcWZoOTNmYXdhd2J2NGN5Vmoz?=
- =?utf-8?B?K2RlUmcrSmF5RUU0VXNoWEpnZm5vdnlUcTF3OFR6OVNBZnFHMzBiSXIvbzVM?=
- =?utf-8?B?TlZCQW52dXRYT1R4QXd4c0dvaVpMaU5BK0IzNjdDeFpBZWVYUnJsRkdQMWhp?=
- =?utf-8?B?ekNVd1NWZjB0TDlRbitVTHEvdVRTSjhNUGIycXpGK0RSL2RyQWovbVdTUllZ?=
- =?utf-8?B?em8vS0lWMS9RYnF0UktrQXF0NTgyN001QUlienl0ODBCbjZZeVA0MFhqdmpN?=
- =?utf-8?B?L0EwdlZ1WXErZnJvdnErcDdhRWl3VlRhb0FkRkpmOWtPWUh5Uk8wRXh4enBj?=
- =?utf-8?B?T3pPRERQeDBnYjd3aVB0aWlEcjE5YUhvTkM3NVdEOTlqQjFyb0xXRHZkcVhw?=
- =?utf-8?B?MzJXY29CUlEyRUZGSHFoZ3B5TUNCVlRGRDdnekNoOE1yQVJFbVBOdnE4ZDBx?=
- =?utf-8?B?QU1pOWRES0JsRE1nZDlnZGVyOXhvMkdvQ0hHdz09?=
+	id 1qImAb-00Apgk-1E;
+	Mon, 10 Jul 2023 08:22:59 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36A8BaDe027592;
+	Mon, 10 Jul 2023 10:22:23 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=GE6zkKpI6t9uY6L4iGZvQGH0DZZlhk/alBlWR2MxhUs=;
+ b=G+4K12NnVLRH60fLRSLye1p6QMQOse6GHGYvmcXkLdfiDUaeFSQxdVHB8IuIaLl3hTIj
+ cNhrU2X+aizJuhnIEVZGZ3AtqalmKwy1lusGnOvoDtQS3WL/XPW52RrEXjNw6EgYgYRX
+ 7ykkxWK3XJLDKaZW3ywfdgnSJd28+A7BuIgG2xvGBzKbVSK1AorcTFJiX/vb2qrSUU7K
+ KbGigglmesbBjV7AwerCwSCze7W6exOddeiEWGNQenh3iQE5kIdzdont68RbEOAeqajB
+ dsS/sLb1eB5zRqc8iDpTZ5mswkIA4Czb8vK9LHM+wRn2Vrpy2YeSvgiltQE7LfmEfE58 LQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3rre8vr37g-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Jul 2023 10:22:23 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C00B010005A;
+	Mon, 10 Jul 2023 10:22:19 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 58FB521BF6A;
+	Mon, 10 Jul 2023 10:22:19 +0200 (CEST)
+Received: from [10.201.21.121] (10.201.21.121) by SHFDAG1NODE1.st.com
+ (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Mon, 10 Jul
+ 2023 10:22:18 +0200
+Message-ID: <fb72b4e4-d5c6-d9be-269d-29aff996001c@foss.st.com>
+Date: Mon, 10 Jul 2023 10:22:10 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3df8aff0-c008-41f2-4bb2-08db811d3d55
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jul 2023 08:11:18.5901
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: TDG4bCGnOQKODWRmbDAXNDSdp7KJhniaKzRAXSiiQ5ajQfvslBOpD/niD3mxUIkTrUH/Ry2UtEnKmY6xjDWG8g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7690
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH 04/10] dt-bindings: treewide: add feature-domains
+ description in binding files
+Content-Language: en-US
+To: Rob Herring <robh@kernel.org>
+CC: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>, <jic23@kernel.org>,
+        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
+        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
+        <andi.shyti@kernel.org>, <ulf.hansson@linaro.org>,
+        <edumazet@google.com>, <kuba@kernel.org>, <pabeni@redhat.com>,
+        <hugues.fruchet@foss.st.com>, <lee@kernel.org>, <will@kernel.org>,
+        <catalin.marinas@arm.com>, <arnd@kernel.org>,
+        <richardcochran@gmail.com>, <linux-crypto@vger.kernel.org>,
+        <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>
+References: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
+ <20230705172759.1610753-5-gatien.chevallier@foss.st.com>
+ <20230706145108.GA3858320-robh@kernel.org>
+ <0aaace47-1bb4-82c5-57a5-6f5d27eb4d45@foss.st.com>
+ <20230707152056.GA317056-robh@kernel.org>
+From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
+In-Reply-To: <20230707152056.GA317056-robh@kernel.org>
+X-Originating-IP: [10.201.21.121]
+X-ClientProxiedBy: SHFCAS1NODE1.st.com (10.75.129.72) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-10_05,2023-07-06_02,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230710_011127_771987_2065CE72 
-X-CRM114-Status: GOOD (  35.15  )
+X-CRM114-CacheID: sfid-20230710_012257_719122_BE7F6674 
+X-CRM114-Status: GOOD (  23.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,97 +108,111 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-DQo+IA0KPiANCj4gT24gTW9uLCAxMCBKdWwgMjAyMyBhdCAxMTowMSwgU2FuZG9yIFl1IDxzYW5k
-b3IueXVAbnhwLmNvbT4gd3JvdGU6DQo+ID4NCj4gPg0KPiA+DQo+ID4gPiAtLS0tLU9yaWdpbmFs
-IE1lc3NhZ2UtLS0tLQ0KPiA+ID4gRnJvbTogRG1pdHJ5IEJhcnlzaGtvdiA8ZG1pdHJ5LmJhcnlz
-aGtvdkBsaW5hcm8ub3JnPg0KPiA+ID4gU2VudDogMjAyM+W5tDfmnIgxMOaXpSAxNTo0NA0KPiA+
-ID4gVG86IFNhbmRvciBZdSA8c2FuZG9yLnl1QG54cC5jb20+OyBhbmRyemVqLmhhamRhQGludGVs
-LmNvbTsNCj4gPiA+IG5laWwuYXJtc3Ryb25nQGxpbmFyby5vcmc7IHJvYmVydC5mb3NzQGxpbmFy
-by5vcmc7DQo+ID4gPiBMYXVyZW50LnBpbmNoYXJ0QGlkZWFzb25ib2FyZC5jb207IGpvbmFzQGt3
-aWJvby5zZTsNCj4gPiA+IGplcm5lai5za3JhYmVjQGdtYWlsLmNvbTsgYWlybGllZEBnbWFpbC5j
-b207IGRhbmllbEBmZndsbC5jaDsNCj4gPiA+IHJvYmgrZHRAa2VybmVsLm9yZzsga3J6eXN6dG9m
-Lmtvemxvd3NraStkdEBsaW5hcm8ub3JnOw0KPiA+ID4gc2hhd25ndW9Aa2VybmVsLm9yZzsgcy5o
-YXVlckBwZW5ndXRyb25peC5kZTsgZmVzdGV2YW1AZ21haWwuY29tOw0KPiA+ID4gdmtvdWxAa2Vy
-bmVsLm9yZzsgZHJpLWRldmVsQGxpc3RzLmZyZWVkZXNrdG9wLm9yZzsNCj4gPiA+IGRldmljZXRy
-ZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7
-DQo+ID4gPiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOyBsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZw0KPiA+ID4gQ2M6IGtlcm5lbEBwZW5ndXRyb25peC5kZTsgZGwtbGludXgtaW14
-IDxsaW51eC1pbXhAbnhwLmNvbT47IE9saXZlcg0KPiA+ID4gQnJvd24gPG9saXZlci5icm93bkBu
-eHAuY29tPg0KPiA+ID4gU3ViamVjdDogUmU6IFtFWFRdIFJlOiBbUEFUQ0ggdjYgNC84XSBwaHk6
-IEFkZCBIRE1JIGNvbmZpZ3VyYXRpb24NCj4gPiA+IG9wdGlvbnMNCj4gPiA+DQo+ID4gPg0KPiA+
-ID4gT24gMTAvMDcvMjAyMyAxMDoyOCwgU2FuZG9yIFl1IHdyb3RlOg0KPiA+ID4gPiBIaSBEbWl0
-cnksDQo+ID4gPiA+DQo+ID4gPiA+IFRoYW5rcyBmb3IgeW91ciBjb21tZW50cywNCj4gPiA+ID4N
-Cj4gPiA+ID4+IEZyb206IERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRyeS5iYXJ5c2hrb3ZAbGluYXJv
-Lm9yZz4gT24NCj4gPiA+ID4+IDE1LzA2LzIwMjMgMDQ6MzgsIFNhbmRvciBZdSB3cm90ZToNCj4g
-PiA+ID4+PiBBbGxvdyBIRE1JIFBIWXMgdG8gYmUgY29uZmlndXJlZCB0aHJvdWdoIHRoZSBnZW5l
-cmljIGZ1bmN0aW9ucw0KPiA+ID4gPj4+IHRocm91Z2ggYSBjdXN0b20gc3RydWN0dXJlIGFkZGVk
-IHRvIHRoZSBnZW5lcmljIHVuaW9uLg0KPiA+ID4gPj4+DQo+ID4gPiA+Pj4gVGhlIHBhcmFtZXRl
-cnMgYWRkZWQgaGVyZSBhcmUgYmFzZWQgb24gSERNSSBQSFkgaW1wbGVtZW50YXRpb24NCj4gPiA+
-ID4+PiBwcmFjdGljZXMuICBUaGUgY3VycmVudCBzZXQgb2YgcGFyYW1ldGVycyBzaG91bGQgY292
-ZXIgdGhlDQo+ID4gPiA+Pj4gcG90ZW50aWFsIHVzZXJzLg0KPiA+ID4gPj4+DQo+ID4gPiA+Pj4g
-U2lnbmVkLW9mZi1ieTogU2FuZG9yIFl1IDxTYW5kb3IueXVAbnhwLmNvbT4NCj4gPiA+ID4+PiAt
-LS0NCj4gPiA+ID4+PiAgICBpbmNsdWRlL2xpbnV4L3BoeS9waHktaGRtaS5oIHwgMzgNCj4gPiA+
-ID4+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKw0KPiA+ID4gPj4+ICAgIGlu
-Y2x1ZGUvbGludXgvcGh5L3BoeS5oICAgICAgfCAgNyArKysrKystDQo+ID4gPiA+Pj4gICAgMiBm
-aWxlcyBjaGFuZ2VkLCA0NCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pDQo+ID4gPiA+Pj4g
-ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvcGh5L3BoeS1oZG1pLmgNCj4gPiA+
-ID4+Pg0KPiA+ID4gPj4+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3BoeS9waHktaGRtaS5o
-DQo+ID4gPiA+Pj4gYi9pbmNsdWRlL2xpbnV4L3BoeS9waHktaGRtaS5oIG5ldyBmaWxlIG1vZGUg
-MTAwNjQ0IGluZGV4DQo+ID4gPiA+Pj4gMDAwMDAwMDAwMDAwLi41NzY1YWE1YmMxNzUNCj4gPiA+
-ID4+PiAtLS0gL2Rldi9udWxsDQo+ID4gPiA+Pj4gKysrIGIvaW5jbHVkZS9saW51eC9waHkvcGh5
-LWhkbWkuaA0KPiA+ID4gPj4+IEBAIC0wLDAgKzEsMzggQEANCj4gPiA+ID4+PiArLyogU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAgKi8NCj4gPiA+ID4+PiArLyoNCj4gPiA+ID4+PiAr
-ICogQ29weXJpZ2h0IDIwMjIgTlhQDQo+ID4gPiA+Pj4gKyAqLw0KPiA+ID4gPj4+ICsNCj4gPiA+
-ID4+PiArI2lmbmRlZiBfX1BIWV9IRE1JX0hfDQo+ID4gPiA+Pj4gKyNkZWZpbmUgX19QSFlfSERN
-SV9IXw0KPiA+ID4gPj4+ICsNCj4gPiA+ID4+PiArLyoqDQo+ID4gPiA+Pj4gKyAqIFBpeGVsIEVu
-Y29kaW5nIGFzIEhETUkgU3BlY2lmaWNhdGlvbg0KPiA+ID4gPj4+ICsgKiBSR0IsIFlVVjQyMiwg
-WVVWNDQ0OkhETUkgU3BlY2lmaWNhdGlvbiAxLjRhIFNlY3Rpb24gNi41DQo+ID4gPiA+Pj4gKyAq
-IFlVVjQyMDogSERNSSBTcGVjaWZpY2F0aW9uIDIuYSBTZWN0aW9uIDcuMSAgKi8gZW51bQ0KPiA+
-ID4gPj4+ICtoZG1pX3BoeV9jb2xvcnNwYWNlIHsNCj4gPiA+ID4+PiArICAgICBIRE1JX1BIWV9D
-T0xPUlNQQUNFX1JHQiwgICAgICAgIC8qIFJHQiA0OjQ6NCAqLw0KPiA+ID4gPj4+ICsgICAgIEhE
-TUlfUEhZX0NPTE9SU1BBQ0VfWVVWNDIyLCAgICAgLyogWUNiQ3IgNDoyOjIgKi8NCj4gPiA+ID4+
-PiArICAgICBIRE1JX1BIWV9DT0xPUlNQQUNFX1lVVjQ0NCwgICAgIC8qIFlDYkNyIDQ6NDo0ICov
-DQo+ID4gPiA+Pj4gKyAgICAgSERNSV9QSFlfQ09MT1JTUEFDRV9ZVVY0MjAsICAgICAvKiBZQ2JD
-ciA0OjI6MCAqLw0KPiA+ID4gPj4+ICsgICAgIEhETUlfUEhZX0NPTE9SU1BBQ0VfUkVTRVJWRUQ0
-LA0KPiA+ID4gPj4+ICsgICAgIEhETUlfUEhZX0NPTE9SU1BBQ0VfUkVTRVJWRUQ1LA0KPiA+ID4g
-Pj4+ICsgICAgIEhETUlfUEhZX0NPTE9SU1BBQ0VfUkVTRVJWRUQ2LCB9Ow0KPiA+ID4gPj4NCj4g
-PiA+ID4+IFRoaXMgZW51bSBkdXBsaWNhdGVzIGVudW0gaGRtaV9jb2xvcnNwYWNlIGZyb20gPGxp
-bnV4L2hkbWkuaD4NCj4gPiA+ID4+IEhETUkNCj4gPiA+ID4+IDIuMCBkZWZpbmVzICc3JyB0byBi
-ZSBJRE8tZGVmaW5lZC4NCj4gPiA+ID4+DQo+ID4gPiA+PiBXb3VsZCBpdCBiZSBiZXR0ZXIgdG8g
-dXNlIHRoYXQgZW51bSBpbnN0ZWFkPw0KPiA+ID4gPiBBY2NlcHQuIEkgd2lsbCBjcmVhdGUgaGVh
-ZCBmaWxlIGhkbWlfY29sb3JzcGFjZS5oIHRvIHJldXNlIGVudW0NCj4gPiA+IGhkbWlfY29sb3Jz
-cGFjZSBpbiA8bGludXgvaGRtaS5oPi4NCj4gPiA+DQo+ID4gPiBFeGN1c2UgbWUsIGl0IHdhcyBz
-dXBwb3NlZCB0byBiZSBhIHF1ZXN0aW9uLg0KPiA+ID4NCj4gPiA+IERvIHlvdSBuZWVkIGFub3Ro
-ZXIgaGVhZGVyIGZpbGUgdG8gcmV1c2UgdGhpcyBlbnVtPw0KPiA+IEknbSBub3Qgc3VyZSBjb21t
-dW5pdHkgd2hldGhlciB3b3VsZCBhY2NlcHQgdGhlIHBhdGNoIHRoYXQgc2ltcGx5DQo+ID4gaW5j
-bHVkZSA8bGludXgvaGRtaS5oPiBpbiBwaHktaGRtaS5oIGJlY2F1c2UgdGhlcmUgYXJlIGxvdHMg
-b2Ygb3RoZXINCj4gZGVmaW5pdGlvbiBpbiA8bGludXgvaGRtaS5oPiB0aGF0IG5vdCBuZWVkIGJ5
-IHBoeS1oZG1pLmguDQo+ID4gSWYgdGhlIGFuc3dlciBpcyB5ZXMsIEkgaGFwcHkgdG8gZm9sbG93
-Lg0KPiANCj4gSW4gbXkgb3BpbmlvbiBpdCdzIGEgYmV0dGVyIGFsdGVybmF0aXZlIHRvIGNyZWF0
-aW5nIHlldCBhbm90aGVyIGhlYWRlci4NCk9LLCBJIHdpbGwgdHJ5IGluY2x1ZGUgPGxpbnV4L2hk
-bWkuaD4gaW4gcGh5LWhkbWkuaCBpbiB0aGUgbmV4dCB2ZXJzaW9uLg0KVGhhbmtzIGZvciB5b3Vy
-IGNvbW1lbnRzLg0KQixSDQpTYW5kb3INCj4gDQo+ID4NCj4gPiA+DQo+ID4gPiA+DQo+ID4gPiA+
-IEIuUg0KPiA+ID4gPiBTYW5kb3INCj4gPiA+ID4+DQo+ID4gPiA+Pj4gKw0KPiA+ID4gPj4+ICsv
-KioNCj4gPiA+ID4+PiArICogc3RydWN0IHBoeV9jb25maWd1cmVfb3B0c19oZG1pIC0gSERNSSBj
-b25maWd1cmF0aW9uIHNldA0KPiA+ID4gPj4+ICsgKiBAcGl4ZWxfY2xrX3JhdGU6ICBQaXhlbCBj
-bG9jayBvZiB2aWRlbyBtb2RlcyBpbiBLSHouDQo+ID4gPiA+Pj4gKyAqIEBicGM6IE1heGltdW0g
-Yml0cyBwZXIgY29sb3IgY2hhbm5lbC4NCj4gPiA+ID4+PiArICogQGNvbG9yX3NwYWNlOiBDb2xv
-cnNwYWNlIGluIGVudW0gaGRtaV9waHlfY29sb3JzcGFjZS4NCj4gPiA+ID4+PiArICoNCj4gPiA+
-ID4+PiArICogVGhpcyBzdHJ1Y3R1cmUgaXMgdXNlZCB0byByZXByZXNlbnQgdGhlIGNvbmZpZ3Vy
-YXRpb24gc3RhdGUNCj4gPiA+ID4+PiArb2YgYSBIRE1JDQo+ID4gPiBwaHkuDQo+ID4gPiA+Pj4g
-KyAqLw0KPiA+ID4gPj4+ICtzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX2hkbWkgew0KPiA+ID4g
-Pj4+ICsgICAgIHVuc2lnbmVkIGludCBwaXhlbF9jbGtfcmF0ZTsNCj4gPiA+ID4+PiArICAgICB1
-bnNpZ25lZCBpbnQgYnBjOw0KPiA+ID4gPj4+ICsgICAgIGVudW0gaGRtaV9waHlfY29sb3JzcGFj
-ZSBjb2xvcl9zcGFjZTsgfTsNCj4gPiA+ID4+PiArDQo+ID4gPiA+Pj4gKyNlbmRpZiAvKiBfX1BI
-WV9IRE1JX0hfICovDQo+ID4gPiA+Pg0KPiA+ID4gPj4gW3NraXBwZWQgdGhlIHJlc3RdDQo+ID4g
-PiA+Pg0KPiA+ID4gPj4gLS0NCj4gPiA+ID4+IFdpdGggYmVzdCB3aXNoZXMNCj4gPiA+ID4+IERt
-aXRyeQ0KPiA+ID4gPg0KPiA+ID4NCj4gPiA+IC0tDQo+ID4gPiBXaXRoIGJlc3Qgd2lzaGVzDQo+
-ID4gPiBEbWl0cnkNCj4gPg0KPiA+IEIuUg0KPiA+IFNhbmRvcg0KPiA+DQo+IA0KPiANCj4gLS0N
-Cj4gV2l0aCBiZXN0IHdpc2hlcw0KPiBEbWl0cnkNCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+
+On 7/7/23 17:20, Rob Herring wrote:
+> On Fri, Jul 07, 2023 at 02:28:28PM +0200, Gatien CHEVALLIER wrote:
+>> Hello Rob,
+>>
+>> On 7/6/23 16:51, Rob Herring wrote:
+>>> On Wed, Jul 05, 2023 at 07:27:53PM +0200, Gatien Chevallier wrote:
+>>>> feature-domains is an optional property that allows a peripheral to
+>>>> refer to one or more feature domain controller(s).
+>>>>
+>>>> Description of this property is added to all peripheral binding files of
+>>>> the peripheral under the STM32 firewall controllers. It allows an accurate
+>>>> representation of the hardware, where various peripherals are connected
+>>>> to this firewall bus. The firewall can then check the peripheral accesses
+>>>> before allowing it to probe.
+>>>>
+>>>> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+>>>> ---
+>>>>
+>>>> Disclaimer: Some error with dtbs_check will be observed as I've
+>>>> considered the property to be generic, as Rob asked
+>>>>
+>>>>    Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml  | 4 ++++
+>>>>    Documentation/devicetree/bindings/dma/st,stm32-dma.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml   | 4 ++++
+>>>>    Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 4 ++++
+>>>>    .../devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/iio/dac/st,stm32-dac.yaml  | 4 ++++
+>>>>    .../devicetree/bindings/media/cec/st,stm32-cec.yaml          | 4 ++++
+>>>>    Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml   | 4 ++++
+>>>>    .../bindings/memory-controllers/st,stm32-fmc2-ebi.yaml       | 4 ++++
+>>>>    Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml  | 4 ++++
+>>>>    Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml   | 5 +++++
+>>>>    Documentation/devicetree/bindings/mmc/arm,pl18x.yaml         | 4 ++++
+>>>>    Documentation/devicetree/bindings/net/stm32-dwmac.yaml       | 4 ++++
+>>>>    Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml | 4 ++++
+>>>>    .../devicetree/bindings/regulator/st,stm32-vrefbuf.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/rng/st,stm32-rng.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/serial/st,stm32-uart.yaml  | 4 ++++
+>>>>    Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml    | 4 ++++
+>>>>    Documentation/devicetree/bindings/sound/st,stm32-sai.yaml    | 4 ++++
+>>>>    .../devicetree/bindings/sound/st,stm32-spdifrx.yaml          | 4 ++++
+>>>>    Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml     | 4 ++++
+>>>>    Documentation/devicetree/bindings/spi/st,stm32-spi.yaml      | 4 ++++
+>>>>    Documentation/devicetree/bindings/usb/dwc2.yaml              | 4 ++++
+>>>>    24 files changed, 97 insertions(+)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
+>>>> index b767ec72a999..daf8dcaef627 100644
+>>>> --- a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
+>>>> +++ b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
+>>>> @@ -50,6 +50,10 @@ properties:
+>>>>      power-domains:
+>>>>        maxItems: 1
+>>>> +  feature-domains:
+>>>> +    minItems: 1
+>>>> +    maxItems: 3
+>>>
+>>> What are the 3 entries?
+>>>
+>>> Rob
+>>
+>> I thought I was benefiting from the description of the pattern-property in
+>> the RIFSC YAML file. But yes anyway, it seems like it needs some description
+>> here as the dependency does not appear in this file.
+> 
+> Humm, that should limit the maximum entries to 2, so 3 would never work
+> (if RIFSC is the parent).
+> 
+>> I picked 3 as a maxItems for our ST needs, I'll give it some more thought
+>> when coming back with something clearer.
+> 
+> I'd expect you have 1 entry for register bus and 1 entry for DMA bus if
+> there is one. It's block specific for how many entries, so the RIFSC
+> schema should not be setting that. You could possibly say that
+> 'feature-domains' is required for all the child nodes though.
+
+Ok, I will change to not specifying the number of entries in the
+RIFSC YAML file for V2.
+
+> 
+> Rob
+Some hardware blocks may have a firewall ID for their device part and
+another ID for their master part as well. In the end, the number of
+entries could very well vary between different platforms. And the YAML
+files are common to these platforms.
+
+This property could be used for "extra" arguments as well, that are not
+firewall IDs.
+
+What do you suggest between picking a high maxItems value that would
+(hopefully) cover all cases and not specifying maxItems at all? Or maybe
+another property dedicated to such arguments?
+
+Best regards,
+Gatien
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
