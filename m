@@ -4,99 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CAB0EB64D9
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jul 2023 08:23:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E470AEB64D9
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Jul 2023 14:38:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uOzmvUpTle6EXVL3ibx6fddibZBOJVhoplEzlXi9Cgg=; b=0gNCEssLxtvKs7
-	IzYaA4Q62JL8ihfDvtvyj/ahufnAgPobvuyudK5fbk6eh7smG+1aaJihwbKlnJYJ/IlRMTk+j6VCR
-	N2O+ki1dvSqb8Q0+95OrqPkNZ5bvVKruaaIflp9hWoJFeRonMC+XQHFiFOlUOCl62Hejetnku9ZNd
-	kh64kfmDvAJy5EHJDDqML2Qd71VzVeqT/sQPvt3SQQ8+A0A3YBSmqvYbYLmrIe5NA+QKKLp0Us0Sh
-	Tf4IEx6q94mchm67GDYX4509UcXC6QcVTRhua6xtne7wmB8fUdX8n2s896FoB1P30z9ns9QStY0Sp
-	TXm/cacuVxycNYjU8uiQ==;
+	List-Owner; bh=hsHpGxsqgFffy4rhXZCdM5XmVX/+ClZA5GUlYbu88jA=; b=Bc4paNR8kk5Yfr
+	2ezLDZRUqnv1Il9jQLetGNh3B/97X1W0aXmCkjo2UcxZHPM6y6FxvcUWnyN0g2dchK2Y0SrgU8emp
+	bOYdXK4LzimhboJ6cv0Lw0ilVgc5ekurdLnXN8qIOLF3V0oD765TqkPEZwn1JoaXtiWZ8NAyFrgEj
+	VS+FH+8wp4HHhbkzlvON2AJ2Cqq42bxh6otqHiERuciRBmKHUQteVb0j5Bv098asql5EUn/tkHG+u
+	z/aVy0tgAfQyEs3fJceDmw1I4ofkWHkLpGCJCIbmJVA8XBfQ/QVkTOvCDF0mv4g77VnZON9YYUjd2
+	TRTtdXWJxJ7kWxGn0UqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qImAe-00Aphi-2T;
-	Mon, 10 Jul 2023 08:23:00 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1qIs1y-00BuHT-1n;
+	Mon, 10 Jul 2023 14:38:26 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qImAb-00Apgk-1E;
-	Mon, 10 Jul 2023 08:22:59 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36A8BaDe027592;
-	Mon, 10 Jul 2023 10:22:23 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=GE6zkKpI6t9uY6L4iGZvQGH0DZZlhk/alBlWR2MxhUs=;
- b=G+4K12NnVLRH60fLRSLye1p6QMQOse6GHGYvmcXkLdfiDUaeFSQxdVHB8IuIaLl3hTIj
- cNhrU2X+aizJuhnIEVZGZ3AtqalmKwy1lusGnOvoDtQS3WL/XPW52RrEXjNw6EgYgYRX
- 7ykkxWK3XJLDKaZW3ywfdgnSJd28+A7BuIgG2xvGBzKbVSK1AorcTFJiX/vb2qrSUU7K
- KbGigglmesbBjV7AwerCwSCze7W6exOddeiEWGNQenh3iQE5kIdzdont68RbEOAeqajB
- dsS/sLb1eB5zRqc8iDpTZ5mswkIA4Czb8vK9LHM+wRn2Vrpy2YeSvgiltQE7LfmEfE58 LQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3rre8vr37g-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Jul 2023 10:22:23 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C00B010005A;
-	Mon, 10 Jul 2023 10:22:19 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 58FB521BF6A;
-	Mon, 10 Jul 2023 10:22:19 +0200 (CEST)
-Received: from [10.201.21.121] (10.201.21.121) by SHFDAG1NODE1.st.com
- (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Mon, 10 Jul
- 2023 10:22:18 +0200
-Message-ID: <fb72b4e4-d5c6-d9be-269d-29aff996001c@foss.st.com>
-Date: Mon, 10 Jul 2023 10:22:10 +0200
+	id 1qIs1u-00BuG6-10
+	for linux-phy@lists.infradead.org;
+	Mon, 10 Jul 2023 14:38:25 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 36AEcCfW064353;
+	Mon, 10 Jul 2023 09:38:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1688999892;
+	bh=+NyYiBIVfky5FyHiALbxif/2d8M8ji1PBrAZbcEWnkY=;
+	h=Date:Subject:To:CC:References:From:In-Reply-To;
+	b=E0wKacmcy7Mvj34IuYLm3FNU+/mijt0hVPjXqhzW6Anbp3aUSE95p+pJW4wqQFJkI
+	 +fd5/S+5WmgUVefv8szEb58hWZx+r+zti33+lMhZ7FFil15JiDP2QZI4TlweWTjIje
+	 06kU4u8UqwLjMfnkv1Bc8tMCiIcmKioJsV4F5c/s=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 36AEcC3W011931
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 10 Jul 2023 09:38:12 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 10
+ Jul 2023 09:38:12 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 10 Jul 2023 09:38:12 -0500
+Received: from [10.250.32.50] (ileaxei01-snat.itg.ti.com [10.180.69.5])
+	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 36AEcBeq042221;
+	Mon, 10 Jul 2023 09:38:12 -0500
+Message-ID: <693d7d42-b062-1e01-b920-e13c2d08ca6f@ti.com>
+Date: Mon, 10 Jul 2023 09:38:11 -0500
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.11.0
-Subject: Re: [PATCH 04/10] dt-bindings: treewide: add feature-domains
- description in binding files
+Subject: Re: [PATCH] phy: ti: gmii-sel: Allow parent to not be syscon node
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Roger Quadros <rogerq@kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20230515195922.617243-1-afd@ti.com>
+ <5ae4bd37-65ee-d6da-1ab6-c1018d9959ec@ti.com>
 Content-Language: en-US
-To: Rob Herring <robh@kernel.org>
-CC: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
-        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>, <jic23@kernel.org>,
-        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
-        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
-        <andi.shyti@kernel.org>, <ulf.hansson@linaro.org>,
-        <edumazet@google.com>, <kuba@kernel.org>, <pabeni@redhat.com>,
-        <hugues.fruchet@foss.st.com>, <lee@kernel.org>, <will@kernel.org>,
-        <catalin.marinas@arm.com>, <arnd@kernel.org>,
-        <richardcochran@gmail.com>, <linux-crypto@vger.kernel.org>,
-        <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
-        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
-        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
-        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-References: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
- <20230705172759.1610753-5-gatien.chevallier@foss.st.com>
- <20230706145108.GA3858320-robh@kernel.org>
- <0aaace47-1bb4-82c5-57a5-6f5d27eb4d45@foss.st.com>
- <20230707152056.GA317056-robh@kernel.org>
-From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
-In-Reply-To: <20230707152056.GA317056-robh@kernel.org>
-X-Originating-IP: [10.201.21.121]
-X-ClientProxiedBy: SHFCAS1NODE1.st.com (10.75.129.72) To SHFDAG1NODE1.st.com
- (10.75.129.69)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-10_05,2023-07-06_02,2023-05-22_02
+From: Andrew Davis <afd@ti.com>
+In-Reply-To: <5ae4bd37-65ee-d6da-1ab6-c1018d9959ec@ti.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230710_012257_719122_BE7F6674 
-X-CRM114-Status: GOOD (  23.48  )
+X-CRM114-CacheID: sfid-20230710_073824_124187_5169DC65 
+X-CRM114-Status: GOOD (  28.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,104 +87,71 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 5/15/23 11:05 PM, Siddharth Vadapalli wrote:
+> Andrew,
+> 
+> On 16/05/23 01:29, Andrew Davis wrote:
+>> If the parent node is not a syscon type, then fallback and check
+>> if we can get a regmap from our own node. This no longer forces
+>> us to make the parent of this node a syscon node when that might
+>> not be appropriate.
+> 
+> Could you please let me know in which cases it is appropriate versus in which
+> cases it isn't?
 
+Use of syscon nodes should be discouraged, in most cases they can and should be
+avoided. The only time we would need to have a syscon parent is when the register
+space contains multiple sub-devices with bit level interleaving.
 
-On 7/7/23 17:20, Rob Herring wrote:
-> On Fri, Jul 07, 2023 at 02:28:28PM +0200, Gatien CHEVALLIER wrote:
->> Hello Rob,
+Most devices should never need syscon, we overuse syscon due to driver like
+this that have no other option than to make the parent device a syscon node.
+
+> Is syscon_node_to_regmap() being retained for backward
+> compatibility until the device-tree nodes are cleaned up across all devices?
+> 
+
+Yes, the old way is left only for backwards compatibility.
+
 >>
->> On 7/6/23 16:51, Rob Herring wrote:
->>> On Wed, Jul 05, 2023 at 07:27:53PM +0200, Gatien Chevallier wrote:
->>>> feature-domains is an optional property that allows a peripheral to
->>>> refer to one or more feature domain controller(s).
->>>>
->>>> Description of this property is added to all peripheral binding files of
->>>> the peripheral under the STM32 firewall controllers. It allows an accurate
->>>> representation of the hardware, where various peripherals are connected
->>>> to this firewall bus. The firewall can then check the peripheral accesses
->>>> before allowing it to probe.
->>>>
->>>> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
->>>> ---
->>>>
->>>> Disclaimer: Some error with dtbs_check will be observed as I've
->>>> considered the property to be generic, as Rob asked
->>>>
->>>>    Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml  | 4 ++++
->>>>    Documentation/devicetree/bindings/dma/st,stm32-dma.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml   | 4 ++++
->>>>    Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 4 ++++
->>>>    .../devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/iio/dac/st,stm32-dac.yaml  | 4 ++++
->>>>    .../devicetree/bindings/media/cec/st,stm32-cec.yaml          | 4 ++++
->>>>    Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml   | 4 ++++
->>>>    .../bindings/memory-controllers/st,stm32-fmc2-ebi.yaml       | 4 ++++
->>>>    Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml  | 4 ++++
->>>>    Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml   | 5 +++++
->>>>    Documentation/devicetree/bindings/mmc/arm,pl18x.yaml         | 4 ++++
->>>>    Documentation/devicetree/bindings/net/stm32-dwmac.yaml       | 4 ++++
->>>>    Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml | 4 ++++
->>>>    .../devicetree/bindings/regulator/st,stm32-vrefbuf.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/rng/st,stm32-rng.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/serial/st,stm32-uart.yaml  | 4 ++++
->>>>    Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml    | 4 ++++
->>>>    Documentation/devicetree/bindings/sound/st,stm32-sai.yaml    | 4 ++++
->>>>    .../devicetree/bindings/sound/st,stm32-spdifrx.yaml          | 4 ++++
->>>>    Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml     | 4 ++++
->>>>    Documentation/devicetree/bindings/spi/st,stm32-spi.yaml      | 4 ++++
->>>>    Documentation/devicetree/bindings/usb/dwc2.yaml              | 4 ++++
->>>>    24 files changed, 97 insertions(+)
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
->>>> index b767ec72a999..daf8dcaef627 100644
->>>> --- a/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
->>>> +++ b/Documentation/devicetree/bindings/crypto/st,stm32-hash.yaml
->>>> @@ -50,6 +50,10 @@ properties:
->>>>      power-domains:
->>>>        maxItems: 1
->>>> +  feature-domains:
->>>> +    minItems: 1
->>>> +    maxItems: 3
->>>
->>> What are the 3 entries?
->>>
->>> Rob
+>> Signed-off-by: Andrew Davis <afd@ti.com>
+>> ---
+>>   drivers/phy/ti/phy-gmii-sel.c | 9 ++++++---
+>>   1 file changed, 6 insertions(+), 3 deletions(-)
 >>
->> I thought I was benefiting from the description of the pattern-property in
->> the RIFSC YAML file. But yes anyway, it seems like it needs some description
->> here as the dependency does not appear in this file.
+>> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+>> index 8c667819c39a..1e67ed9a5cf6 100644
+>> --- a/drivers/phy/ti/phy-gmii-sel.c
+>> +++ b/drivers/phy/ti/phy-gmii-sel.c
+>> @@ -435,9 +435,12 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+>>   
+>>   	priv->regmap = syscon_node_to_regmap(node->parent);
+>>   	if (IS_ERR(priv->regmap)) {
+>> -		ret = PTR_ERR(priv->regmap);
+>> -		dev_err(dev, "Failed to get syscon %d\n", ret);
+>> -		return ret;
+>> +		priv->regmap = device_node_to_regmap(node);
 > 
-> Humm, that should limit the maximum entries to 2, so 3 would never work
-> (if RIFSC is the parent).
+> If device_node_to_regmap() can always be used with the corresponding changes
+> made to the device-tree nodes, wouldn't it be better to use it directly instead
+> of using it as a fallback? (This is based on the assumption that
+> syscon_node_to_regmap() is only being retained until the device-tree nodes are
+> cleaned up to work with device_node_to_regmap()).
 > 
->> I picked 3 as a maxItems for our ST needs, I'll give it some more thought
->> when coming back with something clearer.
+
+Yes, that could work too. I was trying to make the minimal changes here, but
+if we feel it works better we can have the default be to check the self node first.
+
+Andrew
+
+>> +		if (IS_ERR(priv->regmap)) {
+>> +			ret = PTR_ERR(priv->regmap);
+>> +			dev_err(dev, "Failed to get syscon %d\n", ret);
+>> +			return ret;
+>> +		}
+>>   	}
+>>   
+>>   	ret = phy_gmii_sel_init_ports(priv);
 > 
-> I'd expect you have 1 entry for register bus and 1 entry for DMA bus if
-> there is one. It's block specific for how many entries, so the RIFSC
-> schema should not be setting that. You could possibly say that
-> 'feature-domains' is required for all the child nodes though.
-
-Ok, I will change to not specifying the number of entries in the
-RIFSC YAML file for V2.
-
-> 
-> Rob
-Some hardware blocks may have a firewall ID for their device part and
-another ID for their master part as well. In the end, the number of
-entries could very well vary between different platforms. And the YAML
-files are common to these platforms.
-
-This property could be used for "extra" arguments as well, that are not
-firewall IDs.
-
-What do you suggest between picking a high maxItems value that would
-(hopefully) cover all cases and not specifying maxItems at all? Or maybe
-another property dedicated to such arguments?
-
-Best regards,
-Gatien
 
 -- 
 linux-phy mailing list
