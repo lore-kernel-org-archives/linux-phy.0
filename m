@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0647C001DC
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 12:09:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D638EB64DD
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 12:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3S30pLJTeDFtyXwII+DT5Jl12ycaX8W6tzgTo8d7R1s=; b=0cGD2aCF70ufCC
-	98aC1xNVzVz8e7DPn/ix/3vJitEkxQAyAdYL1OfAieUKG9p99AjBZkVS+300DJtGQLNBAjukZwCZl
-	mJbVqAUXm8InZID86CZ1171/9Y58rr8r3xfLqSGEHGcnVqbgPOf3dfZ+wMXvjKa2GTPQ9ajSlmJME
-	EI82m6g29+nBBuSaJgyY8IUEuXSOYNmiiqw17tQFyH7REr5J8UQ+nP/qXgCwloqLXnURRTPzEax4i
-	Jy47pChEdvodu3tHtcppj99ANBryq8ZlNnmgFcGXRz8F/LEGRI3QCOtb4wRigFf1gNYX132OySLCT
-	7JB6KXEkX32Y7TnmBfGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L7ttZLGzPg2UuiJo7Vej2BXkon58Il7A6WCSql258wA=; b=xc4E256FnyGGfF
+	QlyU1E2D1pyF5/q7svzDu4gqtPr8nOZ8xgUJjjA68XLLH5tNSjgdptGQX9Pm/7E/rMkG7TsOkGlYT
+	KRw1W/91s4o2jFBfAENMTWhMxCONaut9yBcPK3McwSJPq8oLgJMu/6NQ3iwKQCrUq+6FvbBjo+IpE
+	SC6+yZ6kHME2mu41xBdIRgNfsf/NbtQ1cAQR7qdHTnDK93SOBtdrISyHNWjBs85nBqzPtxe4GN98U
+	JvruNDNjBq5AdIBO5bZqgMC/LAJ3oOqgEXngh7AarsJQ9FC+zbHG5XjG93iQvDI0YYp7jkU2zYtDM
+	gDy8IiG6uJpOdOAoWcFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJCBG-00Epmz-1W;
-	Tue, 11 Jul 2023 12:09:22 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1qJCBI-00EpoJ-2i;
+	Tue, 11 Jul 2023 12:09:24 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJCBE-00EplH-1G
+	id 1qJCBF-00EplR-1X
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Jul 2023 12:09:21 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-4f9fdb0ef35so9097672e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 05:09:18 -0700 (PDT)
+	Tue, 11 Jul 2023 12:09:23 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-4faaaa476a9so9076075e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 05:09:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689077357; x=1691669357;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=TeaN1f+ghedlkK+LVcPEZpCD/0S5oxq1YSE0F/H62AY=;
-        b=E1F6tAjkCMrumjeH93rBvrJrPz7T45uTi9GxiD84n4neP68QxZc6L5AS9lLhzz3iUW
-         ecH26oJXb4AaoSyF/pQKHFXugNf9FIRbTaES0z/je5PbxyHKqPKl7KD/cEBJA5us7dai
-         +oaqDhqapwRMzW/Tq3rRT8yTMm4U8uAzUo1kHqTJtf8C1hKBOjrKfjVvNM/5OaeoozRt
-         U6LzelNjWsEEZ3IcURmXoLBDWXxBHAZdxFbKG/IzZOCyrwacodbWFx4Tms6RLPoi3q/i
-         bYFqmVT6ekXz9Wu+Ur7QvPrYBi2HGcilxi2dfjXS4Xw/hH+RNWUEiowpavQDTCAecPe8
-         c86w==
+        d=linaro.org; s=google; t=1689077358; x=1691669358;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=arzL30+hBbUOM20bk4ZB/6VxoeYctCJ9hVqas1NvDpg=;
+        b=bsoY20Og15ONm81zKjVhy39Abte+H2vDLZ9X+Ek6Upe0kyI58Ag9YAikXWDeoEBNnk
+         d1WSfuFHjNDG4YoKQUA1QMOLb3INNsdhwndUZHe+8biJbKrSAkNCBPyjXWCzGWGhxn8C
+         4bVgT+8x+grMeUfcXQJlu8XubewJCLH1nB2DtCqjUJ7zUuh2pNLF94rEvT2aL5ctj3l7
+         oOEV57dAMkxQDyZxUBybN7rP1VUaEWYQta7qAXEhurpITWbSuPECSm+PMgEGHHi96bHP
+         2WoukAFEsApiHeKfe03/vM867Vs5cPYFN1BIXZ7ViTktG9yy9via/fplV9bJYNsYx/Ag
+         ED9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689077357; x=1691669357;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=TeaN1f+ghedlkK+LVcPEZpCD/0S5oxq1YSE0F/H62AY=;
-        b=h8hTrxMzvcnnq6nDLF1dDAiAmIcUXjFuHomL0n2SJ3YlkZtSfHwrCCMABslPR3Rejb
-         6Ub+aMmWDHVA0kkORN45QwpjpEc4oIRl6IOu+etYs00CTzBac5Oc6sZK9ybEhjrhPcS+
-         79I3wMaoHzuKWvuEISyW2A3QsMCRbSy6K5orhsHUemmzu1CvYZT3IK0ZtPqPjTEWjGuJ
-         1f2FwPEXOct9JePfW4o+W+PyIbqBsNJRhgLYQFjldXvg7gI0m1UjdCCT0fyLn02mEsmN
-         X6crw2Oi26K1PuV9VjGtelgKDcxlO9EqFJPWb+XxJMHculk1w8HitsXRYWlMUHgzO1qn
-         yeew==
-X-Gm-Message-State: ABy/qLYh7KXcsF2Ls9rQCEASN/zAfIZBVthuWvzuaqgUdHd1b7JjRCUk
-	JvcBSZizxwEDEHBu+3jDmxUH7Q==
-X-Google-Smtp-Source: APBJJlE7WeJ3yWB+z/BuECY6OnDLn2qChRgUx1dpuYqONRQUxUMqqHYI4XzjpfZFo2AMgDwTabTH0A==
-X-Received: by 2002:a19:5e51:0:b0:4fb:7618:bac7 with SMTP id z17-20020a195e51000000b004fb7618bac7mr11218680lfi.64.1689077357312;
-        Tue, 11 Jul 2023 05:09:17 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1689077358; x=1691669358;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=arzL30+hBbUOM20bk4ZB/6VxoeYctCJ9hVqas1NvDpg=;
+        b=J7dBdJ8s7vqG4KgtQMc2HuI2x1HPI9Wr5WPt33obr45hc+sg/j6kcK4ruykXqoMkgK
+         nZf0uVzjeTTHU1+F5cYAwk6ClJeKV9eENj31iNrWIR5Q5geDMKNTU4AdrH0Ownxyccz2
+         WtwNnsReGpwl6SyHvcoK+aml3fNJ8Jb5dOWzlz5fBNW2lpcX4x3y7dewHtUTHb9shFox
+         +3Dr1ZxCa3B0Ks7aOqbAR745WtnFKYT5zcbtgsNCgTs/TR29MJ0knSlkSLC1m+X0vag5
+         e8DKMyEI/ccmJDf4LDD0HLK/JqTAOmNT5+J1ybvdft1sNtKVV+nWxerR65TvEdg/NgUi
+         RM4A==
+X-Gm-Message-State: ABy/qLbF8LccoiKRY4D4ScVYVqaT+XmEsHKcrdUghtDPAYOyopat2LF6
+	oGN6JZuCmN842OkiH/3+PR5s0Q==
+X-Google-Smtp-Source: APBJJlEZuKqyBjj4DK+n5B7eU0dRxk/PG6DT2ABOE9ABXo0ksnmVMNtHBVv/+ErTJRXosetnfQC3Ow==
+X-Received: by 2002:a05:6512:10d4:b0:4fb:7592:cc7a with SMTP id k20-20020a05651210d400b004fb7592cc7amr13998891lfg.20.1689077358548;
+        Tue, 11 Jul 2023 05:09:18 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id h22-20020ac25976000000b004fbbd818568sm291447lfp.137.2023.07.11.05.09.16
+        by smtp.gmail.com with ESMTPSA id h22-20020ac25976000000b004fbbd818568sm291447lfp.137.2023.07.11.05.09.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 11 Jul 2023 05:09:16 -0700 (PDT)
+        Tue, 11 Jul 2023 05:09:18 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -74,15 +75,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v4 00/10] phy: qcom-qmp-combo: convert to newer style of bindings
-Date: Tue, 11 Jul 2023 15:09:06 +0300
-Message-Id: <20230711120916.4165894-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v4 02/10] phy: qcom-qmp-combo: simplify clock handling
+Date: Tue, 11 Jul 2023 15:09:08 +0300
+Message-Id: <20230711120916.4165894-3-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230711120916.4165894-1-dmitry.baryshkov@linaro.org>
+References: <20230711120916.4165894-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_050920_429190_9A2B0CE8 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230711_050921_513143_38129AA9 
+X-CRM114-Status: GOOD (  18.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,62 +101,260 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reviewing several patchsets for newer platforms made me understand that
-having two styles of QMP PHY bindings causes confusion. Despite binding
-documents having notes telling that old bindings should be used for
-older platforms, it is too easy to attempt adding new platform with
-older QMP PHY binding. Thus let's have just a single documented style of
-bindings.
+For the existing PHYs for new binding we are going to drop ref_clk_src
+clock and always use ref clock. Rather than introducing additional code
+to handle legacy vs current bindings (and clock names), use
+devm_clk_bulk_get_optional() when new bindings are used and
+devm_clk_bulk_get_all() when legacy bindings are in place.
 
-Changes since v3:
-- Rebased on top of phy/next
-- Squashed sm8150 changes from [1] (which were not picked up) with the
-  sm8150 patch from this patchset.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 67 ++++++++---------------
+ 1 file changed, 23 insertions(+), 44 deletions(-)
 
-Changes since v2:
- - Rebased on top of phy/next and updated [1]
-
-Changes since v1:
- - Split large patchset into smaller parts
- - Reworked sm8150 too (following changes in [1])
- - Unified bindings with the existing ones
-   - use shared list of clocks,
-   - added sc7180 as a first grade entry
-   - dropped useless descriptions
-   - removed ref_clk_src clock
-   - dropped second example
-
-[1] https://lore.kernel.org/linux-phy/20230521195420.12454-1-dmitry.baryshkov@linaro.org/
-
-Dmitry Baryshkov (10):
-  dt-bindings: phy: migrate combo QMP PHY bindings to
-    qcom,sc8280xp-qmp-usb43dp-phy.yaml
-  phy: qcom-qmp-combo: simplify clock handling
-  phy: qcom-qmp-combo: populate offsets for all combo PHYs
-  phy: qcom-qmp-combo: add qcom,sc7280-qmp-usb3-dp-phy compat entry
-  arm64: dts: qcom: sc7180: switch USB+DP QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sc7280: link usb3_phy_wrapper_gcc_usb30_pipe_clk
-  arm64: dts: qcom: sc7280: switch USB+DP QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sdm845: switch USB+DP QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sm8150: switch USB+DP QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sm8250: switch USB+DP QMP PHY to new style of
-    bindings
-
- .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      | 284 ------------------
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |  46 ++-
- arch/arm64/boot/dts/qcom/sc7180.dtsi          |  57 ++--
- arch/arm64/boot/dts/qcom/sc7280.dtsi          |  60 ++--
- arch/arm64/boot/dts/qcom/sdm845.dtsi          |  57 ++--
- arch/arm64/boot/dts/qcom/sm8150.dtsi          |  44 ++-
- arch/arm64/boot/dts/qcom/sm8250.dtsi          |  49 +--
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  79 +++--
- 8 files changed, 168 insertions(+), 508 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 36eb516f9170..3a98234eb16a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -1359,9 +1359,6 @@ struct qmp_phy_cfg {
+ 	int (*calibrate_dp_phy)(struct qmp_combo *qmp);
+ 	void (*dp_aux_init)(struct qmp_combo *qmp);
+ 
+-	/* clock ids to be requested */
+-	const char * const *clk_list;
+-	int num_clks;
+ 	/* resets to be requested */
+ 	const char * const *reset_list;
+ 	int num_resets;
+@@ -1403,6 +1400,7 @@ struct qmp_combo {
+ 
+ 	struct clk *pipe_clk;
+ 	struct clk_bulk_data *clks;
++	int num_clks;
+ 	struct reset_control_bulk_data *resets;
+ 	struct regulator_bulk_data *vregs;
+ 
+@@ -1463,19 +1461,10 @@ static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
+ }
+ 
+ /* list of clocks required by phy */
+-static const char * const qmp_v3_phy_clk_l[] = {
++static const char * const qmp_combo_phy_clk_l[] = {
+ 	"aux", "cfg_ahb", "ref", "com_aux",
+ };
+ 
+-static const char * const qmp_v4_phy_clk_l[] = {
+-	"aux", "ref", "com_aux",
+-};
+-
+-/* the primary usb3 phy on sm8250 doesn't have a ref clock */
+-static const char * const qmp_v4_sm8250_usbphy_clk_l[] = {
+-	"aux", "ref_clk_src", "com_aux"
+-};
+-
+ /* list of resets */
+ static const char * const msm8996_usb3phy_reset_l[] = {
+ 	"phy", "common",
+@@ -1549,8 +1538,6 @@ static const struct qmp_phy_cfg sc7180_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v3_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v3_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v3_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v3_phy_clk_l),
+ 	.reset_list		= sc7180_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(sc7180_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1594,8 +1581,6 @@ static const struct qmp_phy_cfg sdm845_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v3_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v3_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v3_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v3_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1641,8 +1626,6 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v4_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1689,8 +1672,6 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v4_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1734,8 +1715,6 @@ static const struct qmp_phy_cfg sm6350_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v3_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v3_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v4_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1779,8 +1758,6 @@ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v4_sm8250_usbphy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_sm8250_usbphy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1829,8 +1806,6 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+-	.clk_list		= qmp_v4_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -1879,8 +1854,6 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v6_usb3phy_regs_layout,
+-	.clk_list		= qmp_v4_phy_clk_l,
+-	.num_clks		= ARRAY_SIZE(qmp_v4_phy_clk_l),
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
+@@ -2433,7 +2406,7 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+ 		goto err_disable_regulators;
+ 	}
+ 
+-	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
++	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
+ 	if (ret)
+ 		goto err_assert_reset;
+ 
+@@ -2483,7 +2456,7 @@ static int qmp_combo_com_exit(struct qmp_combo *qmp, bool force)
+ 
+ 	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+ 
+-	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
++	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+ 
+ 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+ 
+@@ -2762,7 +2735,6 @@ static void qmp_combo_disable_autonomous_mode(struct qmp_combo *qmp)
+ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ {
+ 	struct qmp_combo *qmp = dev_get_drvdata(dev);
+-	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 
+ 	dev_vdbg(dev, "Suspending QMP phy, mode:%d\n", qmp->mode);
+ 
+@@ -2774,7 +2746,7 @@ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ 	qmp_combo_enable_autonomous_mode(qmp);
+ 
+ 	clk_disable_unprepare(qmp->pipe_clk);
+-	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
++	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+ 
+ 	return 0;
+ }
+@@ -2782,7 +2754,6 @@ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ static int __maybe_unused qmp_combo_runtime_resume(struct device *dev)
+ {
+ 	struct qmp_combo *qmp = dev_get_drvdata(dev);
+-	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	int ret = 0;
+ 
+ 	dev_vdbg(dev, "Resuming QMP phy, mode:%d\n", qmp->mode);
+@@ -2792,14 +2763,14 @@ static int __maybe_unused qmp_combo_runtime_resume(struct device *dev)
+ 		return 0;
+ 	}
+ 
+-	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
++	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
+ 	if (ret)
+ 		return ret;
+ 
+ 	ret = clk_prepare_enable(qmp->pipe_clk);
+ 	if (ret) {
+ 		dev_err(dev, "pipe_clk enable failed, err=%d\n", ret);
+-		clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
++		clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+ 		return ret;
+ 	}
+ 
+@@ -2870,9 +2841,8 @@ static int qmp_combo_reset_init(struct qmp_combo *qmp)
+ 
+ static int qmp_combo_clk_init(struct qmp_combo *qmp)
+ {
+-	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	struct device *dev = qmp->dev;
+-	int num = cfg->num_clks;
++	int num = ARRAY_SIZE(qmp_combo_phy_clk_l);
+ 	int i;
+ 
+ 	qmp->clks = devm_kcalloc(dev, num, sizeof(*qmp->clks), GFP_KERNEL);
+@@ -2880,9 +2850,11 @@ static int qmp_combo_clk_init(struct qmp_combo *qmp)
+ 		return -ENOMEM;
+ 
+ 	for (i = 0; i < num; i++)
+-		qmp->clks[i].id = cfg->clk_list[i];
++		qmp->clks[i].id = qmp_combo_phy_clk_l[i];
+ 
+-	return devm_clk_bulk_get(dev, num, qmp->clks);
++	qmp->num_clks = num;
++
++	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
+ }
+ 
+ static void phy_clk_release_provider(void *res)
+@@ -3088,6 +3060,12 @@ static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = devm_clk_bulk_get_all(qmp->dev, &qmp->clks);
++	if (ret < 0)
++		return ret;
++
++	qmp->num_clks = ret;
++
+ 	return 0;
+ }
+ 
+@@ -3357,6 +3335,7 @@ static int qmp_combo_parse_dt(struct qmp_combo *qmp)
+ 	const struct qmp_combo_offsets *offs = cfg->offsets;
+ 	struct device *dev = qmp->dev;
+ 	void __iomem *base;
++	int ret;
+ 
+ 	if (!offs)
+ 		return -EINVAL;
+@@ -3386,6 +3365,10 @@ static int qmp_combo_parse_dt(struct qmp_combo *qmp)
+ 	}
+ 	qmp->dp_dp_phy = base + offs->dp_dp_phy;
+ 
++	ret = qmp_combo_clk_init(qmp);
++	if (ret)
++		return ret;
++
+ 	qmp->pipe_clk = devm_clk_get(dev, "usb3_pipe");
+ 	if (IS_ERR(qmp->pipe_clk)) {
+ 		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
+@@ -3434,10 +3417,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 
+ 	mutex_init(&qmp->phy_mutex);
+ 
+-	ret = qmp_combo_clk_init(qmp);
+-	if (ret)
+-		return ret;
+-
+ 	ret = qmp_combo_reset_init(qmp);
+ 	if (ret)
+ 		return ret;
 -- 
 2.39.2
 
