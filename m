@@ -4,68 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBD29EB64DD
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 07:47:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A12DEB64DC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 08:52:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lA11Zm8BAukGUE8f/ep+vHmLOvyV2CBDvI5YlRxITp4=; b=Ms9dxWfFjKqNLI
-	ravJC/7o8K7mOd2Kp6/4CrbOqWH920KrWdSFu0e3sit/0szb+LmZ1sY0pFWLMmayDC1axmL4vb8xC
-	N+0v5He+FZLnyVH+ub3zCwN577eE7gbTBO1tv4vBfoGG8LiRi5EQY6wneTbSvZQrJbQvTzgWzh5HO
-	EQYmWeBVTlssgLEPBfKstkrIWyddXQxE8xGoRP2/yFeeNvb8OqXw4SiV/ns9Wso0qWIC1KaEYdQHI
-	CYEbOtSda7v5QmYZC5Uzybe1+l5NtlAmCJAeGse0qvHY1WG5xcqINLiSQ1b7p69x1FiStc+/wvE5b
-	TyBGqvu3oOb6dALdZNkg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kbS9wG/99pwECqpwRrQJFuI22GNjoYVGZyKmH5ZiNVc=; b=NOmYhnv4JhgHh2
+	axRxD+PyZ5fPMGLPDU8XhMyiSowVNCqQTUGTFpEwojboVSMGo8MORRQaRn8Y5b+D1GpNMPQShxV5j
+	rSifP02wItLctYRDTOQgyoiJ0X2Hd+x6zltma6KK1Oh05dVReb8T3v/aEtAD9f8s51FTKg1/EduLd
+	dMBVrWQhhaEEm1BRMCafzBp5LlLhj1EhVU5ynUZM6gwY2Dp8k7CFgHU95QnPU1btAmYRo6jZcohbM
+	az1XxREfuWNKuwXlhzhJsQ0VZ+JPX6Rpw0h7fc/Ys0A6/mpREKsLwxplVAoKSpQ6YHTyMafg8YNl6
+	n6pVDsXZwcoGuABTK8aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ85h-00E1mu-1p;
-	Tue, 11 Jul 2023 07:47:21 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qJ96S-00EApn-2N;
+	Tue, 11 Jul 2023 08:52:12 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ85f-00E1mV-0o
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Jul 2023 07:47:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B80D66134F;
-	Tue, 11 Jul 2023 07:47:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 963F8C433C7;
-	Tue, 11 Jul 2023 07:47:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689061638;
-	bh=OP40hzcD9aIJl6PAxgLW22+e1ssFnxcYrWBCFmU8cdI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=V7ouqfIuCuSheYK2UN0/IIK+hPzrUrDoCDTqWcy3tBl+Fp9Tiq82xyNjsDZxfL1ly
-	 +hqFwjdaMT7seZbX34HMcmtjQtALqXPdoR5uuLY4e+96I12F8h0NycpKvfu/qyJOTd
-	 ILubK8aWaTtg9G0AjZ/Su88xEDy/Sk7fVTgUijFbhknPtC1i5+XUOpUI4Qugmo6qMQ
-	 UKXBrpmO5R32XJMfyMp2AFKvPxz/OBHFYShxK47pLMfDJMWbekNT2Y5dLuARvNYA0u
-	 9NcJacfm5YCrmeplVu6UaOlKJzCW7HprIG5e+tGQcZ2U3fbe5ALLyrJ3Ir4ox13iFB
-	 I6Tp2i1FT9LUg==
-Date: Tue, 11 Jul 2023 13:17:13 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 0/5] phy: qcom-qmp-usb: split away legacy USB+DP code
-Message-ID: <ZK0JAW8VIYreQWzw@matsya>
-References: <20230531023415.1209301-1-dmitry.baryshkov@linaro.org>
- <168906148935.189433.9157580042783820391.b4-ty@kernel.org>
+	id 1qJ96Q-00EAoj-1Q;
+	Tue, 11 Jul 2023 08:52:11 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36B7txQJ001204;
+	Tue, 11 Jul 2023 08:51:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=psB2BOzZd/2zFLoy2RpG9Xw41+FGJJhB82wMlnilYAI=;
+ b=gdJyJurfyEIPnquqABRYsZhYpyvoXGG9waHi84t9gGvUo7H+++lYGamDfwPjIwMHgst8
+ EbHbzGDKOmqQDQFvpp5hO1eVn+xhFzDp77W7nRvKKRuJMqO2CPPDOGgbcF/WBEZPTRPq
+ BBxTM6bhLSiC/+e9gmtIUT1W4+Hyzrr9sdL9nrleUb9CgGTDgmvzjOyFJFDbNhfYBjJY
+ /BSVNPSR2xTKhweT8vFCGag9nj238rhvcs6w8PA8zFsbZVJqO3CMlkvAi+lmEW+FFKvQ
+ 02i0BC9uv/Ost2KIB7swkyxxiNBjcxJK8Rd/KoaPHSy8+WB7tfvUGyWmZT1biP56P1lX Eg== 
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rs1e40adt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Jul 2023 08:51:52 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36B8ppki011359
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Jul 2023 08:51:51 GMT
+Received: from varda-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.30; Tue, 11 Jul 2023 01:51:43 -0700
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
+        <will@kernel.org>, <p.zabel@pengutronix.de>, <arnd@arndb.de>,
+        <geert+renesas@glider.be>, <neil.armstrong@linaro.org>,
+        <nfraprado@collabora.com>, <broonie@kernel.org>, <rafal@milecki.pl>,
+        <quic_srichara@quicinc.com>, <quic_varada@quicinc.org>,
+        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>
+CC: Varadarajan Narayanan <quic_varada@quicinc.com>
+Subject: [PATCH v3 0/6] Enable IPQ5332 USB2
+Date: Tue, 11 Jul 2023 14:21:06 +0530
+Message-ID: <cover.1689065318.git.quic_varada@quicinc.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <168906148935.189433.9157580042783820391.b4-ty@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: sVW9l_olDRz5x77YAzA0dw9fStBRwpKk
+X-Proofpoint-ORIG-GUID: sVW9l_olDRz5x77YAzA0dw9fStBRwpKk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-11_04,2023-07-06_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 phishscore=0
+ malwarescore=0 priorityscore=1501 suspectscore=0 clxscore=1011
+ mlxlogscore=277 mlxscore=0 spamscore=0 lowpriorityscore=0 adultscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2305260000 definitions=main-2307110078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_004719_336645_89577665 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20230711_015210_508476_35FB3E7A 
+X-CRM114-Status: GOOD (  15.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,47 +102,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-07-23, 13:14, Vinod Koul wrote:
-> 
-> On Wed, 31 May 2023 05:34:10 +0300, Dmitry Baryshkov wrote:
-> > While working on the QMP binding cleanup, I noticed that USB QMP driver
-> > supports both simple USB PHYs (which should be updated) and USB-only
-> > part of USB+DP PHYs (which are largely legacy and don't need to be
-> > updated). To ease further cleanup perform a quick cleanup of the last
-> > remaining USB+DP PHY (on sm8150 platform) and split the legacy codepath
-> > from the USB QMP PHY driver.
-> > 
-> > [...]
-> 
-> Applied, thanks!
-> 
-> [1/5] dt-bindings: phy: qcom,sc7180-qmp-usb3-dp-phy: add sm8150 USB+DP PHY
->       commit: b484e246a21433daaabd8678347c96f8339bf818
-> [2/5] phy: qcom-qmp-combo: add support for the USB+DP PHY on SM8150 platform
->       commit: 4daee20877df04b96bc36752acdc41dfc581b34c
-> [3/5] arm64: dts: qcom: sm8150: turn first USB PHY into USB+DP PHY
->       (no commit info)
+This patch series adds the relevant phy and controller
+configurations for enabling USB2 on IPQ5332
 
-b4 messed up 3 is not picked up, rest are
+v3:
+	Fix bindings file based on review comments
 
-> [4/5] dt-bindings: phy: qcom,msm8996-qmp-usb3-phy: drop legacy bindings
->       commit: c30d437e92d20741a6db7ece024e15a0f5af6bcc
-> [5/5] phy: qcom-qmp-usb: split off the legacy USB+dp_com support
->       commit: 770025644d971229c86fb97796268b8363c2c70a
-> 
-> Best regards,
-> -- 
-> ~Vinod
-> 
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+v1:
+	Cleanup DTS
+	Combine driver, kconfig and makefile patches
+	Remove unused functions from M31 driver
+	Drop the clock driver changes
+
+Varadarajan Narayanan (6):
+  dt-bindings: usb: dwc3: Add IPQ5332 compatible
+  dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
+  phy: qcom-m31: Introduce qcom,m31 USB phy driver
+  arm64: dts: qcom: ipq5332: Add USB related nodes
+  arm64: dts: qcom: ipq5332: Enable USB
+  arm64: defconfig: Enable M31 USB phy driver
+
+ .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       |  49 ++++
+ .../devicetree/bindings/usb/qcom,dwc3.yaml         |   3 +
+ arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts        |  12 +
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi              |  54 +++++
+ arch/arm64/configs/defconfig                       |   1 +
+ drivers/phy/qualcomm/Kconfig                       |  11 +
+ drivers/phy/qualcomm/Makefile                      |   1 +
+ drivers/phy/qualcomm/phy-qcom-m31.c                | 256 +++++++++++++++++++++
+ 8 files changed, 387 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
 
 -- 
-~Vinod
+2.7.4
+
 
 -- 
 linux-phy mailing list
