@@ -4,69 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50D6AC001B0
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 07:37:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79F3EEB64DD
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 07:44:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQYaIaGJUGvEZrrJ1rKh4qBKOJ3AWm7g4ZkFcKEYKAI=; b=B+VI6fkqFZSSml
-	hfZadU1LevidfZH2eQb+/rRxwd19WNYn9W36SJFTredPz2GUi23p+OSLajHqh0SI/gqYoqN9maQSz
-	I8Yprt2hGhvcj5UX3O80YqNf5PUQZcRUbSl2z45jE8Iht+Bb/h8UXjopXplYHbLvMxYPzDC6IMMlD
-	XMQV16o5i1gam0h5ISCMyTJyyuGjWeK9L0I5jBOMRnKkcFBCrMUeUfvUMuaIsOb8oLRCqNEYW/50a
-	I37JNAZcRgX7ktCBN+stvCklX4UnWgyJIDhBMawT4nSYKHgemKbQfasif8qLRuHmWiW6tlwDBL7Tu
-	jXY8bM5FPMPMXCARoLGA==;
+	List-Owner; bh=wFetnVlJmLK9sPy5wp+gbINN2aDoWEeSm5KZplaN3ko=; b=m/j2ESqr0OjYax
+	MBsIO8eJB40+adFJ3tmZ920+ZJTB54PpZ5NsgWiQsqe6iA6kYzIrkxUqiUffh5EIgL44knQeywGSV
+	Z0Xb3MUcVwuNL7U+h0LlI4PWHdksdZDcnyCFrgDCEYUH1yoLv2QMf4ECcBdHp/wrpElJaTE058HlU
+	y+KpIsaP7I0S2xBmUgra1QlL1rc+c5iCzmONkc10xv0wKwW9b/XiEpE5amXbBsQJaIMsund29p/zT
+	6aOGtIv1pg5bbJSkiRwwVDMx/dv5YAzxKcus0aS+heuA+0VnL7yci75gmn1NoKGt8YjKT5q6ME4/g
+	k246TSUmWoQMwNq6C0wQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ7vn-00Dzxw-02;
-	Tue, 11 Jul 2023 07:37:07 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qJ83J-00E1HQ-0O;
+	Tue, 11 Jul 2023 07:44:53 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ7vj-00Dzvs-0e;
-	Tue, 11 Jul 2023 07:37:04 +0000
+	id 1qJ83G-00E1GL-0K;
+	Tue, 11 Jul 2023 07:44:51 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 81F9F61356;
-	Tue, 11 Jul 2023 07:37:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A4AFC433CB;
-	Tue, 11 Jul 2023 07:36:57 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9E0DA61355;
+	Tue, 11 Jul 2023 07:44:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D75AC433C7;
+	Tue, 11 Jul 2023 07:44:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689061021;
-	bh=sEqwyC3FyD2dOA4vxfiDWqxyPw9GpNWDE8xdL9GWS8k=;
+	s=k20201202; t=1689061489;
+	bh=fzY4SPbVj/3yMnNlQmbvE/VH/STLsTGDL1RF3su0iw8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=lzWAGfwJ3WXJRoJqVVRC2LoK90eGLluOqf9+gyAmFoLR3DayjC5FLLMNlkmHja7uM
-	 9ZWJOelSTbJ0ZKnwYTdNkmbkTLLjhX0dI5jitBr+OSxLtXmSaP2K/qmbBqpa3y2wOL
-	 E9mhSfXV5f6KBMr7h2H84hxLwTh1DiQ/WGJnMy4W+tmUGedpwSegYHWT40zNVlEuat
-	 j80R0N3i6MZHoe4xxgFAy/MOh0PWwg8D1ayd3F78ksjtKXKRgdWromIW+gsro99ms3
-	 aMcCDOGhjwRaCRcZnQorRHcgMDjYsvBm+tqOYy3phQUoHjTl2H9TmWUNP5d4TNcnzi
-	 xsA5R313fOuZQ==
+	b=dL/YYpOZ9353AWN3aGM5uiCHHyo2O5VyjJLKXU57FPFX5v3MWFK/WAb8fwV2AjSvd
+	 IjUp6tarta5Dx8u0pkN77TUTOmHiU9mhRpznRTDAwmkHkh+nIVkWeh5T947U37whiJ
+	 oJ9db9YSPFK96gEe++nlxvYUH2FGBk25wA7Bj9XhUJXEJdgQMcTwiQ3ueYIf7Onk3l
+	 xFkN8h9Dqxffr9ocpDgO9dpBgUGT7vvUjRahukl6fcjt/0kzxvqKDp9PWuSa0CfMkM
+	 AXl6lvzeonAnzQV5oBIHv9zHznTnz19FbX1+51+QuWyGAVAln5MJaK5D95JrLAIxRi
+	 RjdSYyORuDNEQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Guillaume Ranquet <granquet@baylibre.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20230529-hdmi_phy_fix-v1-1-bf65f53af533@baylibre.com>
-References: <20230529-hdmi_phy_fix-v1-1-bf65f53af533@baylibre.com>
-Subject: Re: [PATCH] phy: mediatek: hdmi: mt8195: fix prediv bad upper
- limit test
-Message-Id: <168906101764.188690.7974991611736783323.b4-ty@kernel.org>
-Date: Tue, 11 Jul 2023 13:06:57 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ kernel@collabora.com
+In-Reply-To: <20230522170324.61349-1-sebastian.reichel@collabora.com>
+References: <20230522170324.61349-1-sebastian.reichel@collabora.com>
+Subject: Re: [PATCH v3 0/7] phy-rockchip-inno-usb2: add RK3588 support
+Message-Id: <168906148486.189433.2848523710050580119.b4-ty@kernel.org>
+Date: Tue, 11 Jul 2023 13:14:44 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_003703_281658_C4D2F4D7 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230711_004450_179327_F112D0A8 
+X-CRM114-Status: GOOD (  13.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,18 +80,40 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 30 May 2023 10:43:07 +0200, Guillaume Ranquet wrote:
-> The pll prediv calculus searchs for the smallest prediv that gets
-> the ns_hdmipll_ck in the range of 5 GHz to 12 GHz.
+On Mon, 22 May 2023 19:03:17 +0200, Sebastian Reichel wrote:
+> This adds RK3588 to the Rockchip Inno USB2 PHY driver. The RK3588 has four of
+> them. Two are used for USB2 and two are used by USB3 controllers (for USB2
+> fallback mode). All of them can be used with this patchset.
 > 
-> A typo in the upper bound test was testing for 5Ghz to 1Ghz
+> Changes since PATCHv2:
+>  * https://lore.kernel.org/linux-phy/20230403202307.120562-1-sebastian.reichel@collabora.com/
+>  * Dropped patch adding the syscon compatible to the DT binding (applied by Heiko)
+>  * Collected Reviewed-by from Rob Herring for DT binding patch (DT binding)
+>  * Rebased to v6.4-rc1
+>  * Removed superfluous init found by Vinod Koul
+>  * Added one additional patch improving the error message for missing phy-config
+>  * Fixed address_cells=2 code to not break the PHY at offset 0. I didn't notice it with the
+>    previous versions, since that PHY is used for USB3 on Rockchip evaluation board and I
+>    only started working on that recently.
 > 
-> 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: mediatek: hdmi: mt8195: fix prediv bad upper limit test
-      commit: 059c78ebf1e94a825e27cc3ef8a9d77cef06827e
+[1/7] dt-bindings: phy: rockchip,inno-usb2phy: add rk3588
+      commit: 26720f89ee6878ef505812e852a3e914b7cbfe44
+[2/7] phy: phy-rockchip-inno-usb2: add rk3588 support
+      commit: 52b99b871eb79637342660b46c900642483d4412
+[3/7] phy: phy-rockchip-inno-usb2: add reset support
+      commit: 44d88aa9ae81c79ccc47ba4ef85aeda968bc4a50
+[4/7] phy: phy-rockchip-inno-usb2: add rk3588 phy tuning support
+      commit: 7d508a92e4588a59b909e235667d515051dd5955
+[5/7] phy: phy-rockchip-inno-usb2: simplify phy clock handling
+      commit: f4ca578b9803601074ab0d9e366b5fcda504e5a6
+[6/7] phy: phy-rockchip-inno-usb2: simplify getting match data
+      commit: 2e5ead8478e8e4a7b3d63a2001c2f0022b2f5e1b
+[7/7] phy: phy-rockchip-inno-usb2: improve error message
+      commit: e7254a4a7c444fa194440fa8dc73c7728e927162
 
 Best regards,
 -- 
