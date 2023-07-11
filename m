@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56B95EB64DD
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 09:03:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FA83EB64DC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 09:10:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7unHELb7RYip2CtcX8Zfa3JReEl4NWF9RdzF7q3qo0=; b=w1uz/R6olqZb3D
-	x6wf1ZK5rRcJ5dy0Muz2chiiRTEmlLqoqs4Drqz04sLqaHPLpIzrtSe+gRLlPE1uN5f/mXWHlZt4f
-	tDPMbkb0AkPMzQ9WGW50jXZnso0BMyVVA1ESTjcUiDX3tMWlFdqXulO1mbEgne6qFRBnYpolsoXYA
-	qNiXZzQ14ehJGdrzMTY0bihvwz5he9WFbG9BmbUZzG16GCcIpX5obFx0DRnT5zReqR7VGUukfcfoX
-	Vhi9Dvl/dxefOSBvO+dBlQEZ/szi3VjOuK7/EdfR99YOFdUHGnsesl3/qbbQ90630LVGvErhhy6CK
-	sJpmvLyBUQtA2SWI93Xg==;
+	List-Owner; bh=4v8FuQZ6NsHsBlPI7vHcExwQSYBUzoDvZLiBEn97les=; b=EBpAVQNicrHs94
+	Ve22S4jhpnMnzP3gnDiKF44//Y4pXBHXDfBR4z9j6qI9XuS5fxlv7lHgpP0E1sRqTCNRzJNaNb9yw
+	Iw96z2VJmt82A0WPwpwYUTb0kt0BdhL+E6hAl5Omu5winkYVI4U7OqL/ljhim4UHle67LgaJXRqX6
+	DQbPrOJ3Hqi+A19QmXFIQHGA0aM1Pj+ZeATJE0ScPTidjXsFADHEui8vfY0sDLslBV32rwbTAIXFP
+	Bvcw79DeAPiXKkWnqv6ZFUuYe260qY2EP34wD9UeKLnWfoIdKShb9pWf6WfG7ovcsa5XC/SIMawbb
+	FvBpAJOKRDkWaCK0d+5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ9Hg-00EDjf-02;
-	Tue, 11 Jul 2023 09:03:48 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1qJ9Nk-00EEsc-0P;
+	Tue, 11 Jul 2023 09:10:04 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ9Hc-00EDhM-0n
+	id 1qJ9Ng-00EEqs-35
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Jul 2023 09:03:47 +0000
-Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-51f7fb9a944so143307a12.3
-        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 02:03:42 -0700 (PDT)
+	Tue, 11 Jul 2023 09:10:02 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-51e429e1eabso5055785a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 02:10:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689066222; x=1691658222;
+        d=linaro.org; s=google; t=1689066599; x=1691658599;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=5Lw6Fio6MM8aQyHHH2Gtx5wACdysDo6ZPeKbdUxENhw=;
-        b=msiU/+xMcahUqIkdiyY5SaV0lh5WjlO2rQuLmPZ0badsW7i6rQ5pmTNlIcSdSDBaRG
-         hIugN9XVpR7Rr4jpls+Zi/5PkCozRv2TdIgnr1TEYWsYwPPxWdd5dzV1XhALVT/B7Q0B
-         OJNolJmF2/wfYbO0JDkyGwYOdP2RfQXyM7zbfDyNQsoObj4DT3jTXHsGRGZyquwnTFZl
-         TzWz5LFI6AFePlNH5xSuYsqZfHNtRJvJ2xqdDG3lhEe3mf3qBn9+PYWvrfKxSStXM43Z
-         eOA7Km+2/cV4INV3wzQPEMEUlwPOxw2AKAQR4LFh/nZF/51cI52tDXM5Zd3udfgw9/oF
-         v3eg==
+        bh=5N3hprEj7uW61mEh1PLDp0Q1DNyZBWQj8+LgzS5pZjk=;
+        b=QdhI+G0us/wRUovMvFBoDxaVrr1D2kXaqcFOBXBysRxpd9/JAOEvYC5Azqr/4bXd9C
+         2Hns9sOmPiD4OF4ZAWG1LwuKMKUkjRA0Ll+cNK2dllIWysa/kC8Zq26K20brokd/guzw
+         VCWzzegCT/1iBz6CQsJOYLA7/GFkZL48vBJ2ill9V8c7V6Dnr4E9Rnk0kHegTSzephkE
+         R9Wma9xNRMXHbvgPbr0KUVdppiNS7L2d5sQwDq6EiMS3vnraSDdi9vZ1fHqNdScshEGS
+         2VM/GigwG7m8/K4jgt7INO5MEcLppVpgoJIJ5wS/1RenxLJTtbvsW+/aJKy49RzdoVcx
+         Rdrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689066222; x=1691658222;
+        d=1e100.net; s=20221208; t=1689066599; x=1691658599;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=5Lw6Fio6MM8aQyHHH2Gtx5wACdysDo6ZPeKbdUxENhw=;
-        b=eUsCuBHGlDASETCGoSWXMGHS/AC8LhKwIY35r65ON5uBu2imxxZThULXCUFYdilBAA
-         LhM9uKlUzp4CbryaGkw3ushO6xLx2T2t7jcyb3T3zYcXkHJaOuhf0+VMvGOv7H7/EsUw
-         ylaQOkLjff5DQzB2ZcSZ26AKlizZCw0tOYUAqKsRb3QwS/qhf34OjK02ZhfW2wvchNBx
-         PG7PsI68ci9M279KnHVBbr3Vm/9cqHCj4KAAHe0NrUeRRruALJ+a1J1BZIBpORaefWKe
-         j4DsbPyAAdiE3zCE+NzLTGO3JURmulMHQSFQug0eHqGzBiNX3PuPvvPm826Wy4qNmdkX
-         45/w==
-X-Gm-Message-State: ABy/qLZ2SSPKvirbst9AHGqbHE00/1J8ziLWlkWIuvLNj4L6AtTQ3iSn
-	Tq6yQdNm5WqaihOk0+xBLQJbYA==
-X-Google-Smtp-Source: APBJJlGQrnIKzKa1cvH6yRytquR4/mHpXJkdOXwxN9nXW/rPbh62x2Xb+7Gbq7H7q618igwYKqIGew==
-X-Received: by 2002:aa7:ccd1:0:b0:51e:12b:b989 with SMTP id y17-20020aa7ccd1000000b0051e012bb989mr13728889edt.20.1689066221712;
-        Tue, 11 Jul 2023 02:03:41 -0700 (PDT)
+        bh=5N3hprEj7uW61mEh1PLDp0Q1DNyZBWQj8+LgzS5pZjk=;
+        b=P5CLHJKWk00mRyPrt/CHUgPKcQtivPjqLrGzp5JI1Re22A4sGKTwdqx04EGysWgEgt
+         PefYFf54fxZhe6PwGYV3MxPEfGiVCTq1tNTsmW9ep+c4V95kuiFtGtepnRlRmoz0sQXP
+         N1/y8ESaxpigBJnMpG7Zc3UC0aHeA/eCW18y2HDZrrGjbyBzby3Lti0xTYUcpKPOGRUW
+         agasdaqQLut+kVCiykWwkAo8m2Z1lBWQSgvGD6NStUU0DUVZRaPzNGHLEIewUWCc6xFd
+         Db4mby6Uw6AESrMdHUrtOzJkl4uu5QZo5rvGtI4K+NhccyuW/9vuakNx6ZZxgYxSnFVh
+         stMw==
+X-Gm-Message-State: ABy/qLYevgyeS7xP2Ckr8nMWWwcoTuu7s8FbzgRM6dBQxyynvA1u21Le
+	pAelgH9jNX2GPdMJJCt596e/m3MxC8yOlmHKdls=
+X-Google-Smtp-Source: APBJJlHuUznV9FamEEhrbhzUGIBPlyjuZX2GlDThZC5NIevHwpPGzwg6VUScC9DVii5Ol7Xa/ot7uw==
+X-Received: by 2002:a17:907:75db:b0:992:9a5e:3172 with SMTP id jl27-20020a17090775db00b009929a5e3172mr13467303ejc.59.1689066599181;
+        Tue, 11 Jul 2023 02:09:59 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.223.104])
-        by smtp.gmail.com with ESMTPSA id y19-20020aa7ccd3000000b0051dd4daf13fsm946680edt.30.2023.07.11.02.03.39
+        by smtp.gmail.com with ESMTPSA id w22-20020a170906131600b009927a49ba94sm868727ejb.169.2023.07.11.02.09.56
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Jul 2023 02:03:41 -0700 (PDT)
-Message-ID: <8e5a51cb-c726-1027-1f4c-7870b10bc706@linaro.org>
-Date: Tue, 11 Jul 2023 11:03:38 +0200
+        Tue, 11 Jul 2023 02:09:58 -0700 (PDT)
+Message-ID: <8d3aa7fe-69fd-d0c1-9a94-32c3c7b18ed5@linaro.org>
+Date: Tue, 11 Jul 2023 11:09:55 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH v3 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
- phy
+Subject: Re: [PATCH v3 3/6] phy: qcom-m31: Introduce qcom,m31 USB phy driver
 Content-Language: en-US
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
@@ -82,12 +81,12 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 References: <cover.1689065318.git.quic_varada@quicinc.com>
- <77fe66271044a18871e1dfb80bbb481617197d18.1689065318.git.quic_varada@quicinc.com>
+ <2489ac0b07c14e61bc471716e97237c385daec86.1689065318.git.quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <77fe66271044a18871e1dfb80bbb481617197d18.1689065318.git.quic_varada@quicinc.com>
+In-Reply-To: <2489ac0b07c14e61bc471716e97237c385daec86.1689065318.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_020344_281659_9DBF1641 
-X-CRM114-Status: GOOD (  15.74  )
+X-CRM114-CacheID: sfid-20230711_021001_012948_BA51977A 
+X-CRM114-Status: GOOD (  26.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,89 +104,145 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 11/07/2023 10:51, Varadarajan Narayanan wrote:
-> Document the M31 USB2 phy present in IPQ5332.
+> Add the M31 USB2 phy driver.
 > 
-> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
-> v3:
-> 	Incorporate review comments. Will bring in ipq5018 compatible
-> 	string while posting ipq5018 usb patchset.
-> 
 > v1:
-> 	Rename qcom,m31.yaml -> qcom,ipq5332-usb-hsphy.yaml
-> 	Drop default binding "m31,usb-hsphy"
+> 	Combine driver, makefile and kconfig into 1 patch
+> 	Remove 'qscratch' region and its usage. The controller driver takes care
+> 	of those settings
+> 	Use compatible/data to handle ipq5332 init
+> 	Drop the default case
+> 	Get resources by index instead of name as there is only one resource
 > 	Add clock
-> 	Remove 'oneOf' from compatible
-> 	Remove 'qscratch' region from register space as it is not needed
-> 	Remove reset-names
-> 	Fix the example definition
+> 	Fix review comments in the driver
 > ---
->  .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       | 49 ++++++++++++++++++++++
->  1 file changed, 49 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+>  drivers/phy/qualcomm/Kconfig        |  11 ++
+>  drivers/phy/qualcomm/Makefile       |   1 +
+>  drivers/phy/qualcomm/phy-qcom-m31.c | 256 ++++++++++++++++++++++++++++++++++++
+>  3 files changed, 268 insertions(+)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index 97ca595..76be191 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -197,3 +197,14 @@ config PHY_QCOM_SGMII_ETH
+>  	help
+>  	  Enable this to support the internal SerDes/SGMII PHY on various
+>  	  Qualcomm chipsets.
+> +
+> +config PHY_QCOM_M31_USB
+> +	tristate "Qualcomm M31 HS PHY driver support"
+> +	depends on (USB || USB_GADGET) && ARCH_QCOM
+> +	select USB_PHY
+> +	help
+> +	  Enable this to support M31 HS PHY transceivers on Qualcomm chips
+> +	  with DWC3 USB core. It handles PHY initialization, clock
+> +	  management required after resetting the hardware and power
+> +	  management. This driver is required even for peripheral only or
+> +	  host only mode configurations.
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index b030858..0b5dd66 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -22,3 +22,4 @@ obj-$(CONFIG_PHY_QCOM_USB_SS)		+= phy-qcom-usb-ss.o
+>  obj-$(CONFIG_PHY_QCOM_USB_SNPS_FEMTO_V2)+= phy-qcom-snps-femto-v2.o
+>  obj-$(CONFIG_PHY_QCOM_IPQ806X_USB)	+= phy-qcom-ipq806x-usb.o
+>  obj-$(CONFIG_PHY_QCOM_SGMII_ETH)	+= phy-qcom-sgmii-eth.o
+> +obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
 > new file mode 100644
-> index 0000000..2cfdd73
+> index 0000000..8700728
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> @@ -0,0 +1,49 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+> @@ -0,0 +1,256 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2014-2016, 2020, The Linux Foundation. All rights reserved.
+> + */
 > +
-> +title: M31 (https://www.m31tech.com) USB PHY
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +#include <linux/usb/of.h>
+> +#include <linux/usb/phy.h>
+> +
+> +enum clk_reset_action {
+> +	CLK_RESET_DEASSERT	= 0,
+> +	CLK_RESET_ASSERT	= 1
+> +};
 
-The URL should rather go to description, not the title. Title is like
-document title.
+Drop entire enum. I don't see it being used.
+
+...
 
 > +
-> +maintainers:
-> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> +  - Varadarajan Narayanan <quic_varada@quicinc.org>
+> +static int m31usb_phy_probe(struct platform_device *pdev)
+> +{
+> +	const struct m31_priv_data *data;
+> +	struct device *dev = &pdev->dev;
+> +	struct m31usb_phy *qphy;
+> +	int ret;
 > +
-> +description:
-> +  USB M31 PHY found in Qualcomm IPQ5018, IPQ5332 SoCs.
+> +	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
+> +	if (!qphy)
+> +		return -ENOMEM;
 > +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - qcom,ipq5332-usb-hsphy
+> +	qphy->phy.dev = dev;
 > +
-> +  reg:
-> +    maxItems: 1
+> +	qphy->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(qphy->base))
+> +		return PTR_ERR(qphy->base);
 > +
-> +  clocks:
-> +    maxItems: 1
+> +	qphy->phy_reset = devm_reset_control_get_exclusive_by_index(dev, 0);
+> +	if (IS_ERR(qphy->phy_reset))
+> +		return PTR_ERR(qphy->phy_reset);
 > +
-> +  clock-names:
-> +    maxItems: 1
+> +	qphy->cfg_ahb_clk = devm_clk_get(dev, "cfg_ahb");
 
-Drop
+How do you handle errors? I don't see it.
 
-> +    contains:
-
-Drop
-
-> +      items:
-> +        - const: cfg_ahb
+> +	platform_set_drvdata(pdev, qphy);
 > +
-> +  resets:
-> +    maxItems: 1
+> +	data = of_device_get_match_data(dev);
+> +	qphy->regs = data->regs;
+> +	qphy->ulpi_mode = data->ulpi_mode;
 > +
-> +additionalProperties: false
+> +	qphy->phy.label			= "m31-usb-phy";
+> +	qphy->phy.init			= m31usb_phy_init;
+> +	qphy->phy.shutdown		= m31usb_phy_shutdown;
+> +	qphy->phy.type			= USB_PHY_TYPE_USB2;
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-> +    usbphy0: ipq5332-hsphy@7b000 {
+> +	ret = usb_add_phy_dev(&qphy->phy);
+> +
+> +	return ret;
+> +}
+> +
+> +static void m31usb_phy_remove(struct platform_device *pdev)
+> +{
+> +	struct m31usb_phy *qphy = platform_get_drvdata(pdev);
+> +
+> +	usb_remove_phy(&qphy->phy);
+> +}
+> +
+> +struct m31_priv_data m31_ipq5332_data = {
 
-Node names should be generic. See also an explanation and list of
-examples (not exhaustive) in DT specification:
-https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
+static const
+
+> +	.ulpi_mode = false,
+> +	.regs = m31_ipq5332_regs,
+> +};
+
 
 Best regards,
 Krzysztof
