@@ -4,51 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A12DEB64DC
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 08:52:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A7BFEB64DC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 08:52:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kbS9wG/99pwECqpwRrQJFuI22GNjoYVGZyKmH5ZiNVc=; b=NOmYhnv4JhgHh2
-	axRxD+PyZ5fPMGLPDU8XhMyiSowVNCqQTUGTFpEwojboVSMGo8MORRQaRn8Y5b+D1GpNMPQShxV5j
-	rSifP02wItLctYRDTOQgyoiJ0X2Hd+x6zltma6KK1Oh05dVReb8T3v/aEtAD9f8s51FTKg1/EduLd
-	dMBVrWQhhaEEm1BRMCafzBp5LlLhj1EhVU5ynUZM6gwY2Dp8k7CFgHU95QnPU1btAmYRo6jZcohbM
-	az1XxREfuWNKuwXlhzhJsQ0VZ+JPX6Rpw0h7fc/Ys0A6/mpREKsLwxplVAoKSpQ6YHTyMafg8YNl6
-	n6pVDsXZwcoGuABTK8aQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FbyuGPLdPvbW+AZHle5oyliEkXUaRkDY6Uvna8l8mDU=; b=rVRokXQhqhLtbu
+	ZBVRf25ANgtONHmSetkL0ZoxsB14KR8jOVFWn24B0kWlFNR2/PNP0p4Xwj+tRj1OK+U3RL5UEm1kP
+	kviybz90+nQ6OcgSuIOm0XRedvTlw6OSgDq/AYk1px8p/T8RUcVBXL3H1Bu0QLGbBHb2DlXlvHX6F
+	0FpUyn7kczStQNbGn+brVph30NEWirt7rCD/M47RGShl77FTht+7apdvcb90uyoImlMi+FLwg72zW
+	5Oa3d0e+IqYawSV5Nv/Pl1C8RG0khYA00lo62RoKebKtzEZhUPW6OLN2XDPDGO5fvjEGohlppGaNu
+	rYzJTsf9Cz4A1SJlP0yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ96S-00EApn-2N;
-	Tue, 11 Jul 2023 08:52:12 +0000
+	id 1qJ96X-00EAsC-2E;
+	Tue, 11 Jul 2023 08:52:17 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ96Q-00EAoj-1Q;
-	Tue, 11 Jul 2023 08:52:11 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36B7txQJ001204;
-	Tue, 11 Jul 2023 08:51:52 GMT
+	id 1qJ96V-00EArG-2C;
+	Tue, 11 Jul 2023 08:52:16 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36B6Tk3f017499;
+	Tue, 11 Jul 2023 08:52:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=qcppdkim1;
- bh=psB2BOzZd/2zFLoy2RpG9Xw41+FGJJhB82wMlnilYAI=;
- b=gdJyJurfyEIPnquqABRYsZhYpyvoXGG9waHi84t9gGvUo7H+++lYGamDfwPjIwMHgst8
- EbHbzGDKOmqQDQFvpp5hO1eVn+xhFzDp77W7nRvKKRuJMqO2CPPDOGgbcF/WBEZPTRPq
- BBxTM6bhLSiC/+e9gmtIUT1W4+Hyzrr9sdL9nrleUb9CgGTDgmvzjOyFJFDbNhfYBjJY
- /BSVNPSR2xTKhweT8vFCGag9nj238rhvcs6w8PA8zFsbZVJqO3CMlkvAi+lmEW+FFKvQ
- 02i0BC9uv/Ost2KIB7swkyxxiNBjcxJK8Rd/KoaPHSy8+WB7tfvUGyWmZT1biP56P1lX Eg== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rs1e40adt-1
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=m5zDPMjDUmczsmZklZCWVRMSvrMknEgqEwD+AUmnzNI=;
+ b=JM/TgMCxqBKhu3CxWRe+3qHfAW88d2Aq5b6pVYS9V3OMXEuZkTSqh4N64oG9/qvLzAsp
+ Lb4U9oG2e+gyN7kXTkqZWDdbWzSlHhin7wvJY/fT7/K3XOgrS6mqBO1geG9xQN582UOQ
+ Q0UT36dwhCRE9QCOyzkXxH+THoeqjeWH55UUJsm+C/XxECuMAdxmvh3KQxA5KeelmWhY
+ /+cd+/iLpbK8ctik2sHXRB1DI3D56umz9Bs7Qwq0399aYePT1y/4SPLyQC5GShZvdcls
+ JMLUmPRlKZv2HmsmVkzScqHWCnGrw1BqGYZ/TUMzh5TX3JdZRTdYtNMzAU9i8slS+K8I mA== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rs174rb2k-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jul 2023 08:51:52 +0000
+	Tue, 11 Jul 2023 08:52:00 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36B8ppki011359
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36B8pxll009845
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jul 2023 08:51:51 GMT
+	Tue, 11 Jul 2023 08:51:59 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Tue, 11 Jul 2023 01:51:43 -0700
+ 15.2.1118.30; Tue, 11 Jul 2023 01:51:51 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -63,29 +64,31 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
         <linux-arm-kernel@lists.infradead.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v3 0/6] Enable IPQ5332 USB2
-Date: Tue, 11 Jul 2023 14:21:06 +0530
-Message-ID: <cover.1689065318.git.quic_varada@quicinc.com>
+Subject: [PATCH v3 1/6] dt-bindings: usb: dwc3: Add IPQ5332 compatible
+Date: Tue, 11 Jul 2023 14:21:07 +0530
+Message-ID: <c1173429e75b493a8290ac5af6fa566f7f9ebfb8.1689065318.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1689065318.git.quic_varada@quicinc.com>
+References: <cover.1689065318.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: sVW9l_olDRz5x77YAzA0dw9fStBRwpKk
-X-Proofpoint-ORIG-GUID: sVW9l_olDRz5x77YAzA0dw9fStBRwpKk
+X-Proofpoint-GUID: tZtZw9p1tOaVmjCBJ9JuPwl5x5SXsXgA
+X-Proofpoint-ORIG-GUID: tZtZw9p1tOaVmjCBJ9JuPwl5x5SXsXgA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-11_04,2023-07-06_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 phishscore=0
- malwarescore=0 priorityscore=1501 suspectscore=0 clxscore=1011
- mlxlogscore=277 mlxscore=0 spamscore=0 lowpriorityscore=0 adultscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2305260000 definitions=main-2307110078
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
+ lowpriorityscore=0 mlxlogscore=645 spamscore=0 malwarescore=0 bulkscore=0
+ priorityscore=1501 clxscore=1015 adultscore=0 phishscore=0 impostorscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2305260000
+ definitions=main-2307110078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_015210_508476_35FB3E7A 
-X-CRM114-Status: GOOD (  15.68  )
+X-CRM114-CacheID: sfid-20230711_015215_725553_F3EC4808 
+X-CRM114-Status: GOOD (  13.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,38 +105,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds the relevant phy and controller
-configurations for enabling USB2 on IPQ5332
+Document the IPQ5332 dwc3 compatible.
 
-v3:
-	Fix bindings file based on review comments
-
+Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+---
 v1:
-	Cleanup DTS
-	Combine driver, kconfig and makefile patches
-	Remove unused functions from M31 driver
-	Drop the clock driver changes
+	Add ipq5332 to interrupts sections
+---
+ Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Varadarajan Narayanan (6):
-  dt-bindings: usb: dwc3: Add IPQ5332 compatible
-  dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
-  phy: qcom-m31: Introduce qcom,m31 USB phy driver
-  arm64: dts: qcom: ipq5332: Add USB related nodes
-  arm64: dts: qcom: ipq5332: Enable USB
-  arm64: defconfig: Enable M31 USB phy driver
-
- .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       |  49 ++++
- .../devicetree/bindings/usb/qcom,dwc3.yaml         |   3 +
- arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts        |  12 +
- arch/arm64/boot/dts/qcom/ipq5332.dtsi              |  54 +++++
- arch/arm64/configs/defconfig                       |   1 +
- drivers/phy/qualcomm/Kconfig                       |  11 +
- drivers/phy/qualcomm/Makefile                      |   1 +
- drivers/phy/qualcomm/phy-qcom-m31.c                | 256 +++++++++++++++++++++
- 8 files changed, 387 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
- create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
-
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index ae24dac..9447b54 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -14,6 +14,7 @@ properties:
+     items:
+       - enum:
+           - qcom,ipq4019-dwc3
++          - qcom,ipq5332-dwc3
+           - qcom,ipq6018-dwc3
+           - qcom,ipq8064-dwc3
+           - qcom,ipq8074-dwc3
+@@ -246,6 +247,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,ipq5332-dwc3
+               - qcom,msm8994-dwc3
+               - qcom,qcs404-dwc3
+     then:
+@@ -410,6 +412,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,ipq5332-dwc3
+               - qcom,sdm660-dwc3
+     then:
+       properties:
 -- 
 2.7.4
 
