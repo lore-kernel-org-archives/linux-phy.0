@@ -4,74 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 818FEEB64D9
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jul 2023 14:45:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91CEDEB64DC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 04:48:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9bQRbugBjoctZA54U4qHlBHdeN0s/wx5e8+vpREwUCg=; b=zF8qWQxtpI3mZn
-	HPxkN9URVMH2SbPhYXveeHkiyO1+uu7MkCq8xAwvhpQC8x3ldhMv/ip6h+sXz+zLO5/+zmGxTvDqz
-	miS/nDe1Ukvt3L65ZeI7pcofzxjGuPCGMUcGec8PsOLYOwNWZiPmbthiHuOK/JkDuJy8d6FoO8jE6
-	vkL9MLBpzV2t/WG1q/OP9r8Rd7eZmS6yIvptk/my2U1a9obLBZvhFqrkapZ6w2swvTULA3l+0+OC5
-	hzPEYMF07MNwA0C+pkPUCY66Kzcldk6ek2E/eAFrffWZ6ElCWAJTcLBg9nPOckCPzuYn7POKGYkY5
-	3Y/Zad6N+aCjHccgE5QA==;
+	List-Owner; bh=hBwHjHAk3XGmdFrKv2kXY3Nw3lfZl50UH/joNiSZyT0=; b=ULFvBl2GEEbm/D
+	KM5zvWfxn2R5DBw6TKjhaQ7MVS0Q8IVosr2oQblLhxHUuIQROj7UhiMOTZ5bMhKPpKwDAiBlRyO3x
+	HwB5pll3FA13qE22asNKbTFUeYbjAYfxaXxVnOhyctKfOJ39nufoAPMlL64pahoIFtOn6Wf2rWy3O
+	a6M3u+botTUWvxZukvxXsQvOY/Ikx15vanSosFYTVkfS7XKzJzDLDH+rwrYGi2i5KncXMt4CJnetk
+	RywNjSi9amKYeBZqroVG9hUgR64ajA1FkFCQ7hfY8NUBHtBYFJPfuPOy3bbtGJV+YEOmTH624u2O5
+	8qF7MbGE/B/aFGWMQaGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qIs8v-00Bv5u-0U;
-	Mon, 10 Jul 2023 14:45:37 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1qJ5J4-00Dfjb-0I;
+	Tue, 11 Jul 2023 04:48:58 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qIs8t-00Bv5N-0o
+	id 1qJ5J1-00Dfj1-1G
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Jul 2023 14:45:36 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 36AEjV2s066492;
-	Mon, 10 Jul 2023 09:45:31 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1689000331;
-	bh=10128ZciQXGR8XCaEAHZNiZaXB9rJJgJ+eH+I2zdmRc=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=c8sophcCrBuII7b1Oae7Q1AYHsJiqNtRmtoVwK5xeoqIPFdzsrqK+FF32buntJo7H
-	 Fn1CGRiVaB55I2/sPE1CpfUbORZwr6SiWHkLY1NDzsPq5Eiw/9UIrU38z8MFQ2BLFC
-	 Gk/4CkccqtAGG6x3xKJY/V2rr741Pn+WlugD+N3Q=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 36AEjVQ0034374
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 10 Jul 2023 09:45:31 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 10
- Jul 2023 09:45:31 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Mon, 10 Jul 2023 09:45:31 -0500
-Received: from [10.250.32.50] (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 36AEjVpG048928;
-	Mon, 10 Jul 2023 09:45:31 -0500
-Message-ID: <0d28eb47-a564-2155-875b-5c8dc8aa806e@ti.com>
-Date: Mon, 10 Jul 2023 09:45:30 -0500
+	Tue, 11 Jul 2023 04:48:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A9F6161302;
+	Tue, 11 Jul 2023 04:48:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DC02C433C7;
+	Tue, 11 Jul 2023 04:48:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1689050934;
+	bh=syBSesJz4bQEud1x/w0OsK59AsM6Aw1rlTZhs2Zc3nY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Onprru4RGs8BGok5EVZZeLYazS2vYrBHePqsHz3Qf6DpoPCN3eYX7ABqqAjaaUNJc
+	 Ib5UuQIvmEmQkXITD1IWrGEjs6CxMBP9j1I+CpAifl4D15aIUYu46+tY8QTDWAqdbj
+	 8fXWWsMZy7+z1sPEhMsLzDpQI3ZVL69E4/1IY1uMHB44kq5vxt/JNSkOtc00NZbsoO
+	 LQJgQCDVJqjJ3+qqUqrqOHG5ujCNg1Tx28tycTGyi/t7JDdF0hUC9cPiG8htT57l4s
+	 xWEXsY9s4UdS5NKFXJIp/ENFkprVB+wHlVkAD+YwGkkiebskTdEnvcgi61lFJzRoKn
+	 LIY4PTuxcV5ZA==
+Date: Tue, 11 Jul 2023 10:18:49 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v3 01/10] dt-bindings: phy: migrate combo QMP PHY
+ bindings to qcom,sc8280xp-qmp-usb43dp-phy.yaml
+Message-ID: <ZKzfMZtaaaCb/U/u@matsya>
+References: <20230521202321.19778-1-dmitry.baryshkov@linaro.org>
+ <20230521202321.19778-2-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH] phy: ti: gmii-sel: Allow parent to not be syscon node
-Content-Language: en-US
-To: Roger Quadros <rogerq@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon
- Vijay Abraham I <kishon@kernel.org>,
-        Siddharth Vadapalli <s-vadapalli@ti.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20230515195922.617243-1-afd@ti.com>
- <3c7d7d0b-b859-8921-952c-870c9474969c@kernel.org>
-From: Andrew Davis <afd@ti.com>
-In-Reply-To: <3c7d7d0b-b859-8921-952c-870c9474969c@kernel.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20230521202321.19778-2-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230710_074535_378218_E7DC63DF 
-X-CRM114-Status: GOOD (  23.62  )
+X-CRM114-CacheID: sfid-20230710_214855_498539_E6AAE84A 
+X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,70 +80,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/16/23 1:33 PM, Roger Quadros wrote:
-> Hi Andrew,
-> 
-> On 15/05/2023 22:59, Andrew Davis wrote:
->> If the parent node is not a syscon type, then fallback and check
->> if we can get a regmap from our own node. This no longer forces
->> us to make the parent of this node a syscon node when that might
->> not be appropriate.
-> 
-> Trying to understand the motive for this and if it is better to
-> introduce a "syscon = <&syscon_node>" property instead which
-> makes it fool proof for all cases.
-> 
+On 21-05-23, 23:23, Dmitry Baryshkov wrote:
+> Migrate legacy bindings (described in qcom,sc7180-qmp-usb3-dp-phy.yaml)
+> to qcom,sc8280xp-qmp-usb43dp-phy.yaml. This removes a need to declare
+> the child PHY node or split resource regions.
 
-My motivation is to reduce our overuse of syscon nodes, IMHO syscon
-is almost always a broken design in DT and goes against the standard
-usage.
+Dmitry, this fails to apply for me. Can you rebase please
 
-Some drivers like this one force us to make the parent node a syscon
-device, even what that is not needed otherwise (the register space is
-standalone and the standard DT "reg" property can be used to describe
-the device register space).
-
-Using "syscon = <&syscon_node>" could be a useful option for devices
-when syscon is actually needed. But I think that should only be used
-when the whole node itself cannot be made a child of the syscon node,
-making it a child when we can is better for DT organization vs. having
-a bunch of top-level nodes that point around to their register spaces
-with phandles.
-
-Andrew
-
->>
->> Signed-off-by: Andrew Davis <afd@ti.com>
->> ---
->>   drivers/phy/ti/phy-gmii-sel.c | 9 ++++++---
->>   1 file changed, 6 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
->> index 8c667819c39a..1e67ed9a5cf6 100644
->> --- a/drivers/phy/ti/phy-gmii-sel.c
->> +++ b/drivers/phy/ti/phy-gmii-sel.c
->> @@ -435,9 +435,12 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
->>   
->>   	priv->regmap = syscon_node_to_regmap(node->parent);
->>   	if (IS_ERR(priv->regmap)) {
->> -		ret = PTR_ERR(priv->regmap);
->> -		dev_err(dev, "Failed to get syscon %d\n", ret);
->> -		return ret;
->> +		priv->regmap = device_node_to_regmap(node);
->> +		if (IS_ERR(priv->regmap)) {
->> +			ret = PTR_ERR(priv->regmap);
->> +			dev_err(dev, "Failed to get syscon %d\n", ret);
->> +			return ret;
->> +		}
->>   	}
->>   
->>   	ret = phy_gmii_sel_init_ports(priv);
-> 
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
