@@ -4,67 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADC23EB64DD
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 11:25:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0647C001DC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 12:09:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=siBWAzao0Q+O4oDYXdjENpVuuTvsWtZxBStWjjGIWNs=; b=ubrRASLR19zyjQ
-	quurH7InBcjI5+b2QwSo3L1s91QbaYvKgwzbXWKH27QBIOEuvJe9Lxeg9iBbOh9yHKwSYPUoaJiri
-	pun+ea58CeTu5/rseTBg+48+kilmN9lI8vXl/EZnhpy0C1Mql/gnqPIEUTn80Nz1NWsY967x7pPhL
-	pNJ+L1dY/9ND+bkNjvi+Xit3ZoSPJyrAoJ80m+6SJyjZda3BlQNT3QuDiPWRT91wFwfKLR/t9e2HO
-	kgFlKInnsZo6FsTa0E/4tfuuZ73Y9Ix1w4szACQy2T9LmAgh7Yo4RJmfUC0PR8HLgE+aIQlX+8jKZ
-	NGAnWR3F9lqfCFADMiBQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3S30pLJTeDFtyXwII+DT5Jl12ycaX8W6tzgTo8d7R1s=; b=0cGD2aCF70ufCC
+	98aC1xNVzVz8e7DPn/ix/3vJitEkxQAyAdYL1OfAieUKG9p99AjBZkVS+300DJtGQLNBAjukZwCZl
+	mJbVqAUXm8InZID86CZ1171/9Y58rr8r3xfLqSGEHGcnVqbgPOf3dfZ+wMXvjKa2GTPQ9ajSlmJME
+	EI82m6g29+nBBuSaJgyY8IUEuXSOYNmiiqw17tQFyH7REr5J8UQ+nP/qXgCwloqLXnURRTPzEax4i
+	Jy47pChEdvodu3tHtcppj99ANBryq8ZlNnmgFcGXRz8F/LEGRI3QCOtb4wRigFf1gNYX132OySLCT
+	7JB6KXEkX32Y7TnmBfGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJBV2-00ElDb-19;
-	Tue, 11 Jul 2023 11:25:44 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qJCBG-00Epmz-1W;
+	Tue, 11 Jul 2023 12:09:22 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJBUz-00ElCt-2R;
-	Tue, 11 Jul 2023 11:25:42 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 4312961479;
-	Tue, 11 Jul 2023 11:25:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 72ED6C433CC;
-	Tue, 11 Jul 2023 11:25:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689074740;
-	bh=ukUjCeCdruXdkiTh7KIF8MyySLBbuQHe+rPdQaoxZJU=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=boJsxhUixxmLnT7F5Q4u//Lh5Xwjgp2OMmp6SpFQH9y2pmO0FF36ai6geFE8vFM9m
-	 EbP3hWTRWiZ2F7a4HOIzC+9d4gQ1OMi+YODKPb+nPA6rRqGFEMrr14RYZH8nRDH25+
-	 hJYDxwPMvOHowM+hoUZJwONVC2QOpfVQT4oiHPzFch2muFek67IUbGyRUU3BB8zBA0
-	 ZU9ik4q8wvDZrX2jH9CxYasAoQosSGSwVEitAmFHwz/dRJW0vUliOlw0PAx5KqbPd1
-	 yaTOFFrRWzYWke90zp5FI6ngKsnzV03a65skVHO5oW9BnoFQePGJA9Sm1s8r55h1gR
-	 03xdWRsyWnb1Q==
-From: Vinod Koul <vkoul@kernel.org>
-To: Emil Renner Berthing <emil.renner.berthing@canonical.com>, 
- Conor Dooley <conor@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Roger Quadros <rogerq@kernel.org>, Minda Chen <minda.chen@starfivetech.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org, 
- Paul Walmsley <paul.walmsley@sifive.com>, 
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
- Mason Huo <mason.huo@starfivetech.com>
-In-Reply-To: <20230629075115.11934-1-minda.chen@starfivetech.com>
-References: <20230629075115.11934-1-minda.chen@starfivetech.com>
-Subject: Re: (subset) [PATCH v8 0/5] Add JH7110 USB PHY driver support
-Message-Id: <168907473599.198426.16779806941255747951.b4-ty@kernel.org>
-Date: Tue, 11 Jul 2023 16:55:35 +0530
+	id 1qJCBE-00EplH-1G
+	for linux-phy@lists.infradead.org;
+	Tue, 11 Jul 2023 12:09:21 +0000
+Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-4f9fdb0ef35so9097672e87.0
+        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 05:09:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1689077357; x=1691669357;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=TeaN1f+ghedlkK+LVcPEZpCD/0S5oxq1YSE0F/H62AY=;
+        b=E1F6tAjkCMrumjeH93rBvrJrPz7T45uTi9GxiD84n4neP68QxZc6L5AS9lLhzz3iUW
+         ecH26oJXb4AaoSyF/pQKHFXugNf9FIRbTaES0z/je5PbxyHKqPKl7KD/cEBJA5us7dai
+         +oaqDhqapwRMzW/Tq3rRT8yTMm4U8uAzUo1kHqTJtf8C1hKBOjrKfjVvNM/5OaeoozRt
+         U6LzelNjWsEEZ3IcURmXoLBDWXxBHAZdxFbKG/IzZOCyrwacodbWFx4Tms6RLPoi3q/i
+         bYFqmVT6ekXz9Wu+Ur7QvPrYBi2HGcilxi2dfjXS4Xw/hH+RNWUEiowpavQDTCAecPe8
+         c86w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1689077357; x=1691669357;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=TeaN1f+ghedlkK+LVcPEZpCD/0S5oxq1YSE0F/H62AY=;
+        b=h8hTrxMzvcnnq6nDLF1dDAiAmIcUXjFuHomL0n2SJ3YlkZtSfHwrCCMABslPR3Rejb
+         6Ub+aMmWDHVA0kkORN45QwpjpEc4oIRl6IOu+etYs00CTzBac5Oc6sZK9ybEhjrhPcS+
+         79I3wMaoHzuKWvuEISyW2A3QsMCRbSy6K5orhsHUemmzu1CvYZT3IK0ZtPqPjTEWjGuJ
+         1f2FwPEXOct9JePfW4o+W+PyIbqBsNJRhgLYQFjldXvg7gI0m1UjdCCT0fyLn02mEsmN
+         X6crw2Oi26K1PuV9VjGtelgKDcxlO9EqFJPWb+XxJMHculk1w8HitsXRYWlMUHgzO1qn
+         yeew==
+X-Gm-Message-State: ABy/qLYh7KXcsF2Ls9rQCEASN/zAfIZBVthuWvzuaqgUdHd1b7JjRCUk
+	JvcBSZizxwEDEHBu+3jDmxUH7Q==
+X-Google-Smtp-Source: APBJJlE7WeJ3yWB+z/BuECY6OnDLn2qChRgUx1dpuYqONRQUxUMqqHYI4XzjpfZFo2AMgDwTabTH0A==
+X-Received: by 2002:a19:5e51:0:b0:4fb:7618:bac7 with SMTP id z17-20020a195e51000000b004fb7618bac7mr11218680lfi.64.1689077357312;
+        Tue, 11 Jul 2023 05:09:17 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id h22-20020ac25976000000b004fbbd818568sm291447lfp.137.2023.07.11.05.09.16
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 11 Jul 2023 05:09:16 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	Johan Hovold <johan@kernel.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: [PATCH v4 00/10] phy: qcom-qmp-combo: convert to newer style of bindings
+Date: Tue, 11 Jul 2023 15:09:06 +0300
+Message-Id: <20230711120916.4165894-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-X-Mailer: b4 0.12.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_042541_834694_147C4B4C 
-X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-CacheID: sfid-20230711_050920_429190_9A2B0CE8 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,36 +99,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Reviewing several patchsets for newer platforms made me understand that
+having two styles of QMP PHY bindings causes confusion. Despite binding
+documents having notes telling that old bindings should be used for
+older platforms, it is too easy to attempt adding new platform with
+older QMP PHY binding. Thus let's have just a single documented style of
+bindings.
 
-On Thu, 29 Jun 2023 15:51:10 +0800, Minda Chen wrote:
-> This patchset adds USB and PCIe PHY for the StarFive JH7110 SoC.
-> The patch has been tested on the VisionFive 2 board.
-> 
-> This patchset is base on v6.4-rc6
-> 
-> patch 1 is usb phy dt-binding document.
-> patch 2 is Pcie PHY dt-binding document.
-> patch 3 is USB 2.0 PHY driver.
-> patch 4 is PCIe PHY driver.
-> patch 5 is PCIe PHY dts
-> 
-> [...]
+Changes since v3:
+- Rebased on top of phy/next
+- Squashed sm8150 changes from [1] (which were not picked up) with the
+  sm8150 patch from this patchset.
 
-Applied, thanks!
+Changes since v2:
+ - Rebased on top of phy/next and updated [1]
 
-[1/5] dt-bindings: phy: Add StarFive JH7110 USB PHY
-      commit: 6172141bf8ce6ec8f0b5d33533bf5a5646880e3c
-[2/5] dt-bindings: phy: Add StarFive JH7110 PCIe PHY
-      commit: 2b236fd4912141074a1cf34a7b3ef724d5bc8d8d
-[3/5] phy: starfive: Add JH7110 USB 2.0 PHY driver
-      commit: 7ac349186842972ee2b17413a0eee34231324eb1
-[4/5] phy: starfive: Add JH7110 PCIE 2.0 PHY driver
-      commit: 26cea0e28057d4ee440af4157f13a5312e3918b7
+Changes since v1:
+ - Split large patchset into smaller parts
+ - Reworked sm8150 too (following changes in [1])
+ - Unified bindings with the existing ones
+   - use shared list of clocks,
+   - added sc7180 as a first grade entry
+   - dropped useless descriptions
+   - removed ref_clk_src clock
+   - dropped second example
 
-Best regards,
+[1] https://lore.kernel.org/linux-phy/20230521195420.12454-1-dmitry.baryshkov@linaro.org/
+
+Dmitry Baryshkov (10):
+  dt-bindings: phy: migrate combo QMP PHY bindings to
+    qcom,sc8280xp-qmp-usb43dp-phy.yaml
+  phy: qcom-qmp-combo: simplify clock handling
+  phy: qcom-qmp-combo: populate offsets for all combo PHYs
+  phy: qcom-qmp-combo: add qcom,sc7280-qmp-usb3-dp-phy compat entry
+  arm64: dts: qcom: sc7180: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sc7280: link usb3_phy_wrapper_gcc_usb30_pipe_clk
+  arm64: dts: qcom: sc7280: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sdm845: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sm8150: switch USB+DP QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sm8250: switch USB+DP QMP PHY to new style of
+    bindings
+
+ .../phy/qcom,sc7180-qmp-usb3-dp-phy.yaml      | 284 ------------------
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    |  46 ++-
+ arch/arm64/boot/dts/qcom/sc7180.dtsi          |  57 ++--
+ arch/arm64/boot/dts/qcom/sc7280.dtsi          |  60 ++--
+ arch/arm64/boot/dts/qcom/sdm845.dtsi          |  57 ++--
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          |  44 ++-
+ arch/arm64/boot/dts/qcom/sm8250.dtsi          |  49 +--
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  79 +++--
+ 8 files changed, 168 insertions(+), 508 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,sc7180-qmp-usb3-dp-phy.yaml
+
 -- 
-~Vinod
-
+2.39.2
 
 
 -- 
