@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A054AC04A6A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52C0DEB64DC
 	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 14:52:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W8deRnby5Vmk79xUjbc/Qni3ogha2XmN3fUIN+uN5k8=; b=T8uuMoKurow92C
-	ZWKIG9WDHhxqgNSnKxvW8vt6rskRBaofkAUVm6k81eTZiZiC80tu46l7WoOh5dRXFlEuQo9t8BHoT
-	DIduMGIf0xYqWsLs7lYm1ztahpIoYrIN2QQlFFYphJXvHVM1dVPEILN9f5BdhDL9DR/D20wt8KS9G
-	gn//z7w+jGswNg1vYi5gM9tNpo3vqPCb2wAKKYz0icjkWUwsXslW5/CAq0z8PBkGQqvA6kofO7tTB
-	T8HxASGSBKIQLnw8Sa4RqO79oFOJjmH6vKySegFUx3N44GGjJzvTlpfolfxqaMt/yk0R89ceTCAEa
-	s6z0lLE/pjlVbUwnHPeg==;
+	List-Owner; bh=9w9kJpHwQQgLSNKU9HekM3wx5i5xz5BTAZBC43TZHbs=; b=XFCOuDajr9+cuW
+	8N6qfhzW2Y2wKiGz3OY6EUtDwZZKOLFrRq8fkiS2FGOkD6VjKjY15o2kEfVBE7aH+CQCjdbdyWk+i
+	n6GynEEskt7wOqhSm0BKyzmI0B5I7YOT8r54BJzFjp5rfoq9AjyLuFDrPkE9cmqXG05MofYxmzHqc
+	/8G7nFRPjqaDkQMNGLkie6uhEWr//+aiKihEv5TAFlTXOb2XFvg5WEw4in27j2FzYhmtsSTvKlLfp
+	utiI5fpl+E7Sb5WzjlEBNHaDLRjmhM6uvDRmxojRYPTVHuJXHygDw7yHq7Focfa6qvp/Loqinmk6f
+	JLqc1nfOjybiHT1maY4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJEik-00FBuQ-0f;
-	Tue, 11 Jul 2023 14:52:06 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1qJEij-00FBuD-31;
+	Tue, 11 Jul 2023 14:52:05 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJEif-00FBqz-2c
+	id 1qJEie-00FBq8-2L
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Jul 2023 14:52:03 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2b701e1ca63so92610741fa.1
-        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 07:52:01 -0700 (PDT)
+	Tue, 11 Jul 2023 14:52:02 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2b70404a5a0so91676171fa.2
+        for <linux-phy@lists.infradead.org>; Tue, 11 Jul 2023 07:52:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689087120; x=1691679120;
+        d=linaro.org; s=google; t=1689087119; x=1691679119;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=rGT5Q/iqZovw+ufKbmULu/XxjFgFyS18Dblh86WXpZw=;
-        b=bnZAPOjh4KWQuA3muMVkq2193L9NEomYMr2fVoC4SmLp9OQBj+skAwoehWp9Yc5zxP
-         1q0pCDWrYkK79vZeyJ87TxWKMOEcA/YsGxRd+b14VkquUZ0o6xdd9xVcrlAuiO3/cfq1
-         SLtLFLs0aqFNhwUIbOzXVGIqNFDDKmrL5lFTfUsWkUx5ozjRWxCEMcoTck9mQGv3QOgi
-         XE3TSvZszWGHAr+PJlX2yRrK74ucXpczTujkhoYsXQGQGvJi2DDVu5sXCL2dBHdxCRqS
-         8JkV6Ef4y1pIWMsCV2/ud3gMg+I4aPPSXXsqX3n21LVwisopuKVVqFXNl9Rjnt1q96SU
-         /OpQ==
+        bh=4TP85Sw52C7H7s8rcI4zy2XyYLS/5Z/UH1XDKXoCVO4=;
+        b=UsHxGAH/Iaq+RcqvBtK+sBkQDtT1XhL7x+ZYGpxawd2B4tMabt1ncRpi7uRF34RTT+
+         l3UMJ1gUpPdhU9iRJbMxjZAU/YEHLtJhk3GnKCkjognmo7DLCkRYx5t81pa8qprmYIDU
+         9CQ858StoM1Vo+0AoZq/+2VtCnh0Cf4UIxsESTBcFsP6zdgxguYusI9whXFXEeisF5EI
+         yLWpP2R2S1TWuX1DFW4iTfrZ8Ygr37CWRySuOmsq3ZSbBL3/cdIgzhL6h6TZAue/olQT
+         9XWpMGDl5D+O1gQA0jne0jDAIuiwXr66PqGEWDj2LCX+2oxMSetoCCWgbA72fMh0e6JV
+         TBDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689087120; x=1691679120;
+        d=1e100.net; s=20221208; t=1689087119; x=1691679119;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=rGT5Q/iqZovw+ufKbmULu/XxjFgFyS18Dblh86WXpZw=;
-        b=PXGPVQKFkNjwJNkTJ4b7anY7Mwx3hoqsskStHXSHSoPPfYhXzFB+0KbCx294T2WhcK
-         kDPncQCE4yZJlsiyPgnrTn63GnT6c673jVh2WHLCKxUKqpO7kqzpaYhYYTXNk0oaohqd
-         qVW5w48oUjRgrm0Yto8Ftx08kLYITJ81E4rjZJ9RD70R8qZHLG+08NgV+y/WO7EEai63
-         AakfLc3/Rwks0oLd6bl9bw8LBbQfdHcf6i8c0Lgtml+36mRogjDS115GET1d1YMXcpli
-         9+ztAd5MP3+aPHOZz9Yk10k0ujuIKB5j02K0uF5q4ZPZRpU1mjNhYmZ3pykdhwY+Dsau
-         EXWA==
-X-Gm-Message-State: ABy/qLZtyozteBy3MwJc4YzID6g1XYMcw6LUMn65JDt6C1+exi/GzIEy
-	cmwKK5Q453bHziCYFKlzwX81lw==
-X-Google-Smtp-Source: APBJJlHGlfCisEJ1r3067MlOB69M9JQb+0QyvAoAwg99bOLfS+cNVahEIFJwgihi5eVpkiuXxQ/z/A==
-X-Received: by 2002:a05:651c:d7:b0:2b5:95a8:4126 with SMTP id 23-20020a05651c00d700b002b595a84126mr12257705ljr.52.1689087120429;
-        Tue, 11 Jul 2023 07:52:00 -0700 (PDT)
+        bh=4TP85Sw52C7H7s8rcI4zy2XyYLS/5Z/UH1XDKXoCVO4=;
+        b=dgIxZ7ctcFlbmtfNEoWZF+KXoX+eNda4eHQbUcs/cjyFpg6KJQAvaX1e+AJfA1HVuF
+         tk2j73Opd3m7/mHwbt8P+SDBHg+dyCdX2h56YStM8ezkzDd1YMHfAialIJEHnBbZ23og
+         gtos1AEpsFUkH7h/ooO7mSvVOY5+uBHhHpa5XTiYVEaLJOGN25qyXW1m5VlTs1S/JBLP
+         qGDnd0WmcaUDgKZoYc8+KO19XJDcoxpygjMVTcwIVajyvM+Zhs9vqt1eUInV67Vw2Kga
+         5ZHPs/3oc9sqBIlg5XJYRXU47HyGPdyFoxSXm2AAlLIpAp1EG24IkF09pjSMzUeE8E1W
+         5kug==
+X-Gm-Message-State: ABy/qLYt0DJwOOKkDKtlpl2IFx2Mn2FTkZu+hjnxDOAwGFEXpCoAD3uD
+	8PjOl4J6uYIJT22iulafSGH48Q==
+X-Google-Smtp-Source: APBJJlHpl5PumBOs1mrv+4Zmv/il64KVeVC+wtC9GZma7JCd4jBp9YeEJ+i3cS14nOKaw25q7kNr2Q==
+X-Received: by 2002:a2e:7a06:0:b0:2b6:bd82:80b1 with SMTP id v6-20020a2e7a06000000b002b6bd8280b1mr14235518ljc.37.1689087119027;
+        Tue, 11 Jul 2023 07:51:59 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id a10-20020a2eb16a000000b002b6ee363337sm492454ljm.120.2023.07.11.07.51.59
+        by smtp.gmail.com with ESMTPSA id a10-20020a2eb16a000000b002b6ee363337sm492454ljm.120.2023.07.11.07.51.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 11 Jul 2023 07:52:00 -0700 (PDT)
+        Tue, 11 Jul 2023 07:51:58 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -75,16 +75,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v4 08/11] arm64: dts: qcom: sm8150: switch UFS QMP PHY to new style of bindings
-Date: Tue, 11 Jul 2023 17:51:50 +0300
-Message-Id: <20230711145153.4167820-9-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v4 06/11] arm64: dts: qcom: sm6115: switch UFS QMP PHY to new style of bindings
+Date: Tue, 11 Jul 2023 17:51:48 +0300
+Message-Id: <20230711145153.4167820-7-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230711145153.4167820-1-dmitry.baryshkov@linaro.org>
 References: <20230711145153.4167820-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_075201_856674_807909EF 
-X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-CacheID: sfid-20230711_075200_762809_E402A730 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,47 +108,43 @@ resource region, no per-PHY subnodes).
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8150.dtsi | 20 ++++++--------------
- 1 file changed, 6 insertions(+), 14 deletions(-)
+ arch/arm64/boot/dts/qcom/sm6115.dtsi | 17 +++++------------
+ 1 file changed, 5 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index 6ff7cdacd44d..4381527da3fb 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -2025,7 +2025,7 @@ ufs_mem_hc: ufshc@1d84000 {
- 			      <0 0x01d90000 0 0x8000>;
+diff --git a/arch/arm64/boot/dts/qcom/sm6115.dtsi b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+index 9f2c968e3ad7..0adbc827ee1b 100644
+--- a/arch/arm64/boot/dts/qcom/sm6115.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+@@ -983,7 +983,7 @@ ufs_mem_hc: ufs@4804000 {
+ 			reg = <0x0 0x04804000 0x0 0x3000>, <0x0 0x04810000 0x0 0x8000>;
  			reg-names = "std", "ice";
- 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 -			phys = <&ufs_mem_phy_lanes>;
 +			phys = <&ufs_mem_phy>;
  			phy-names = "ufsphy";
- 			lanes-per-direction = <2>;
+ 			lanes-per-direction = <1>;
  			#reset-cells = <1>;
-@@ -2070,10 +2070,8 @@ ufs_mem_hc: ufshc@1d84000 {
+@@ -1024,24 +1024,17 @@ ufs_mem_hc: ufs@4804000 {
  
- 		ufs_mem_phy: phy@1d87000 {
- 			compatible = "qcom,sm8150-qmp-ufs-phy";
--			reg = <0 0x01d87000 0 0x1c0>;
+ 		ufs_mem_phy: phy@4807000 {
+ 			compatible = "qcom,sm6115-qmp-ufs-phy";
+-			reg = <0x0 0x04807000 0x0 0x1c4>;
 -			#address-cells = <2>;
 -			#size-cells = <2>;
 -			ranges;
-+			reg = <0 0x01d87000 0 0x1000>;
-+
- 			clock-names = "ref",
- 				      "ref_aux";
- 			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>,
-@@ -2083,16 +2081,10 @@ ufs_mem_phy: phy@1d87000 {
++			reg = <0x0 0x04807000 0x0 0x1000>;
+ 
+ 			clocks = <&gcc GCC_UFS_CLKREF_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+ 			clock-names = "ref", "ref_aux";
  
  			resets = <&ufs_mem_hc 0>;
  			reset-names = "ufsphy";
 -			status = "disabled";
  
--			ufs_mem_phy_lanes: phy@1d87400 {
--				reg = <0 0x01d87400 0 0x16c>,
--				      <0 0x01d87600 0 0x200>,
--				      <0 0x01d87c00 0 0x200>,
--				      <0 0x01d87800 0 0x16c>,
--				      <0 0x01d87a00 0 0x200>;
+-			ufs_mem_phy_lanes: phy@4807400 {
+-				reg = <0x0 0x04807400 0x0 0x098>,
+-				      <0x0 0x04807600 0x0 0x130>,
+-				      <0x0 0x04807c00 0x0 0x16c>;
 -				#phy-cells = <0>;
 -			};
 +			#phy-cells = <0>;
@@ -156,7 +152,7 @@ index 6ff7cdacd44d..4381527da3fb 100644
 +			status = "disabled";
  		};
  
- 		cryptobam: dma-controller@1dc4000 {
+ 		gpi_dma0: dma-controller@4a00000 {
 -- 
 2.39.2
 
