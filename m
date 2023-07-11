@@ -4,50 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A106EB64DD
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 13:39:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D6E3EB64DD
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jul 2023 14:49:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WNm9qm+5vPB+ueTDk8zfSdfjcXtkvYXKSficQU5tYWE=; b=YKGrE5QnH1rcnd
-	g7a6SAtzKWxaOmoih2cy2ylVE0dix98WIBw8TVOXwCg2gBMRUr2oKHlLO2OSMemo6LFbEEoon0fIH
-	kLWn3KHtDoOMR6egdfinA31rt7UYgIgvF/kSLI8jA21AjsOGIs7hWTq9zkYtZhLHKFJmqg21+RbxJ
-	biumKSB5Zhqrtm31KRZSdT5RBkHfyePPlY6mC3BP/tVOkUjeJI3L3558HtVRWjuNyene9tXOfqW75
-	EWxQU7MJF7TgtO0voBPHs0rjWw6N2Mk1b1KFBUnyp3W1uNgoiKn4eXjJOoiyxm1agzsJ9+LbThSyY
-	4wBxicV94l7mDXC7usww==;
+	List-Owner; bh=B6zPnaEjk6ss5KO4vNOhdCAJdif+RaQVzACBjKhrPLw=; b=0hdFW2B0Gf8ykq
+	KBztavvoePfKHWVlUknO72HgGaS9tZcTsqAir0c0TmVdInTur3AS8r/ZIAVMCuaoaulYmLxNQUFn5
+	8gKgltFMW1457XG+s4I2LojYxaZx8VlpEGVtltoTAVXFzvNL95s8DFfunSAG/XiRjeAfH78/zq1tD
+	jZA754Nx5ti8u/I071fCG5/EupfNvcyHx8c9nv3iID+mXKd+Pykh8mCEk+7m7sNBTR+KY0wRiePG3
+	88lYdV5exPQwPZ31bFKLsGlLbzO3pedmpJJ5BEnMU77qRHv0WAgkNFpixNEhd5B52Zdu88RU5AM1n
+	T6bzz3dGkdQOTyv5aU+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJDaa-00F0Mv-2t;
-	Tue, 11 Jul 2023 13:39:36 +0000
+	id 1qJEfm-00FB97-0B;
+	Tue, 11 Jul 2023 14:49:02 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJDaY-00F0M1-07;
-	Tue, 11 Jul 2023 13:39:35 +0000
-Received: from i53875a50.versanet.de ([83.135.90.80] helo=phil.localnet)
+	id 1qJEfg-00FB5d-17;
+	Tue, 11 Jul 2023 14:48:57 +0000
+Received: from i53875a50.versanet.de ([83.135.90.80] helo=phil.lan)
 	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.94.2)
 	(envelope-from <heiko@sntech.de>)
-	id 1qJDaT-0008Kg-GE; Tue, 11 Jul 2023 15:39:29 +0200
+	id 1qJEfZ-0000LD-4F; Tue, 11 Jul 2023 16:48:49 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Yangtao Li <frank.li@vivo.com>
-Cc: Yangtao Li <frank.li@vivo.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/4] phy: rockchip: phy-rockchip-typec: Use
- devm_platform_get_and_ioremap_resource()
-Date: Tue, 11 Jul 2023 15:39:28 +0200
-Message-ID: <4152701.ElGaqSPkdT@phil>
-In-Reply-To: <20230705090126.26854-2-frank.li@vivo.com>
-References: <20230705090126.26854-1-frank.li@vivo.com>
- <20230705090126.26854-2-frank.li@vivo.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+	linux-ide@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com,
+	devicetree@vger.kernel.org,
+	Vinod Koul <vkoul@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Serge Semin <fancer.lancer@gmail.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>
+Subject: Re: (subset) [PATCH v4 0/5] Add RK3588 SATA support
+Date: Tue, 11 Jul 2023 16:48:45 +0200
+Message-Id: <168908688815.1964886.16094073283802293132.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230612171337.74576-1-sebastian.reichel@collabora.com>
+References: <20230612171337.74576-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_063934_076064_C1B4CABE 
-X-CRM114-Status: GOOD (  16.79  )
+X-CRM114-CacheID: sfid-20230711_074856_379528_A91001AD 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,49 +72,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Mittwoch, 5. Juli 2023, 11:01:24 CEST schrieb Yangtao Li:
-> Convert platform_get_resource(), devm_ioremap_resource() to a single
-> call to devm_platform_get_and_ioremap_resource(), as this is exactly
-> what this function does.
+On Mon, 12 Jun 2023 19:13:32 +0200, Sebastian Reichel wrote:
+> This enables SATA support for RK3588.
 > 
-> Signed-off-by: Yangtao Li <frank.li@vivo.com>
-
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-
-Though I guess we should check if the res variable can be removed
-too.
-
-devm_platform_get_and_ioremap_resource() checks for its "res"
-parameter to be not-NULL. So if nothing in the driver itself
-is using the actual resource, res could be removed and get
-replaced by "NULL" when calling devm_platform_get_and_ioremap_resource()
-
-
-Heiko
-
-> ---
->  drivers/phy/rockchip/phy-rockchip-typec.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
+> Changes since PATCHv3:
+>  * https://lore.kernel.org/all/20230608162238.50078-1-sebastian.reichel@collabora.com/
+>  * Add Reviewed-by from Serge and Krzysztof to patch 1
+>  * Update patch 2
+>    - Add maxItems to 'clocks' property; without specifying minItems it's
+>      implied to be the same
+>    - Keep allOf above the properties in snps,dwc-ahci.yaml
+>    - Add 'sata-port@0' to list of allowed properties
+>    - Replace sata-port pattern property, so that it disallows using any
+>      sata-port nodes besides @0 to override the pattern property from the
+>      common binding
+>  * Add Reviewed-by from Krzysztof to patch 3
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rockchip/phy-rockchip-typec.c
-> index 8b1667be4915..4efcb78b0ab1 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-typec.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-typec.c
-> @@ -1116,8 +1116,7 @@ static int rockchip_typec_phy_probe(struct platform_device *pdev)
->  		return -EINVAL;
->  	}
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	tcphy->base = devm_ioremap_resource(dev, res);
-> +	tcphy->base = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
->  	if (IS_ERR(tcphy->base))
->  		return PTR_ERR(tcphy->base);
->  
-> 
+> [...]
 
+Applied, thanks!
 
+[4/5] arm64: dts: rockchip: rk3588: add combo PHYs
+      commit: 6ebd55b3bba383e0523b0c014f17c97f3ce80708
+[5/5] arm64: dts: rockchip: rk3588: add SATA support
+      commit: 34d6c15d8e86256ef2456c604b1c8d8242720871
 
-
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
