@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91D83EB64DD
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 05:03:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC8FDEB64DA
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 09:33:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p2INAuacv2pWIJwE8KdI0t8GbRhwqPB9e4fj8iVU29o=; b=489o1l8Pmivf1n
-	hchRGaPfFCnQPROBs5Wq5Qox6um/52RmIK2GUc7HwVfJWwQqYsklSahzJtcC1PiZXh8Iij1jEUfx8
-	K2JeyoaPFQYzoh9hX+nb8+KajFSsZtRy/OLPb9YQmB3QWXvU8M/hDKmhrYjSN6tcDBLaZcwC2/i3P
-	SpWXl6eXZEcP8zBrCwTdr/DzOpIlAWWl7OpSo9VrfOXNS2o8DQEMot+ZJ3ppYoxi6xCbZCQDCGwxU
-	dHWuXnIeCU2IygVb6q0qRwAdWb7ls1iYQU5Aw384x7X120shy1c7B/D2umkkkaCOY2OGWwpbWUe7s
-	+Wii/Xg7RqMM8/2LPpdA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=rofCfKQLpy9P60UuVOUQYlaEBeiugFxGFthJvFinAo4=; b=NCXR6LmIule67OVGLDD+qkIr8d
+	S7bz8tglFg5N/CSGjAj6BQ6ZZFSHemjhO85TCPG/I7udoBlLHAzslhBUbq0yeC7x+O8wA6lpKnr3L
+	4iEBFZ+x9pjIoCaViMBxk2h03yVeUEBqr5qAy8h2XqFe+8+odml6lra/8jRS7D97JydTCWDaU+yUV
+	2seHZiqWwKLlWCcg9fBFOgnwWxz6JWoH7FeCHW5+K1AypYZFyqVHqCQT0MuOtXKGAoqBX/U4ElVy3
+	cB7f84mk54EWGQjEkrK0yqAVhz0RJCtGaIuHXqyOq2K5lrQzmqW0dcz0bR+eBgxD3XQdpW7YFtq4A
+	ZaQcJD7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJS0x-00GYX1-0j;
-	Wed, 12 Jul 2023 05:03:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qJWDk-00H3Ag-1b;
+	Wed, 12 Jul 2023 09:33:16 +0000
+Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJS0u-00GYVy-0J;
-	Wed, 12 Jul 2023 05:03:45 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 410DC616D8;
-	Wed, 12 Jul 2023 05:03:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66FB3C433C7;
-	Wed, 12 Jul 2023 05:03:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689138220;
-	bh=uqV6Um97XmlcNN/yUzLMTOP1cF0T1bI1RVjvshk7iMc=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=pxXw+soQaj2mQLxD2H6AFhyoPP0ATXGQAaalhfSyqvVBO9X9xtBfrPEXOiN4XovV5
-	 s0uswwLXghNDN7gi9CPvR/FMyQwZW/HxV6GjNWDybULzlxDrXremK0A7tWRstHqR9G
-	 9LT7Z+xQoS02MGs8VR8SshD20SmQyA8RgD9Vhpcqrd4CKGnxiS8bLXO41FiOus8GtR
-	 htKka98iZNQF4KelRCuI9j21/lCBqxcIYbisMgPUPxdSOXqCFbZg5a9M+7Nd2Pqi5j
-	 S40xZ/umSLlH+o3TLUmrnknK+81n9Xqcf0QjnOjP72idlXQpUMFE0sAqn3aun5adz2
-	 DMu3rV58oT/uQ==
-From: Vinod Koul <vkoul@kernel.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Michal Simek <michal.simek@amd.com>, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Sean Anderson <sean.anderson@seco.com>
-Cc: linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20230711194542.898230-1-sean.anderson@seco.com>
-References: <20230711194542.898230-1-sean.anderson@seco.com>
-Subject: Re: [PATCH] phy: zynqmp: Allow variation in refclk rate
-Message-Id: <168913821797.212309.17019092167663097914.b4-ty@kernel.org>
-Date: Wed, 12 Jul 2023 10:33:37 +0530
+	id 1qJWDh-00H39i-2Z
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Jul 2023 09:33:15 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:2b42:575f:41f:104f])
+	by andre.telenet-ops.be with bizsmtp
+	id L9Z82A00U4w94eT019Z8Ph; Wed, 12 Jul 2023 11:33:09 +0200
+Received: from geert (helo=localhost)
+	by ramsan.of.borg with local-esmtp (Exim 4.95)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1qJWDc-001Bva-DG;
+	Wed, 12 Jul 2023 11:33:08 +0200
+Date: Wed, 12 Jul 2023 11:33:08 +0200 (CEST)
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+To: Vinod Koul <vkoul@kernel.org>
+cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+    Konrad Dybcio <konrad.dybcio@linaro.org>, Yangtao Li <frank.li@vivo.com>, 
+    linux-arm-msm@vger.kernel.org, dmaengine@vger.kernel.org, 
+    linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 1/5] dmaengine: qcom: gpi: Use
+ devm_platform_get_and_ioremap_resource()
+In-Reply-To: <168909383153.208679.15343948792914219046.b4-ty@kernel.org>
+Message-ID: <c3373ebe-2f52-bed7-7f59-98e1268c9af2@linux-m68k.org>
+References: <20230705081856.13734-1-frank.li@vivo.com> <168909383153.208679.15343948792914219046.b4-ty@kernel.org>
 MIME-Version: 1.0
-X-Mailer: b4 0.12.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_220344_196775_1F794210 
-X-CRM114-Status: UNSURE (   6.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230712_023313_975995_EECB0AE5 
+X-CRM114-Status: GOOD (  15.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,29 +62,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+ 	Hi Vinod,
 
-On Tue, 11 Jul 2023 15:45:39 -0400, Sean Anderson wrote:
-> Due to limited available frequency ratios, the reference clock rate may
-> not be exactly the same as the required rate. Allow a small (100 ppm)
-> deviation.
-> 
-> 
+On Tue, 11 Jul 2023, Vinod Koul wrote:
+> On Wed, 05 Jul 2023 16:18:52 +0800, Yangtao Li wrote:
+>> Convert platform_get_resource(), devm_ioremap_resource() to a single
+>> call to devm_platform_get_and_ioremap_resource(), as this is exactly
+>> what this function does.
+>>
+>>
+>
+> Applied, thanks!
+>
+> [1/5] dmaengine: qcom: gpi: Use devm_platform_get_and_ioremap_resource()
+>      commit: d9313d9f1fbc14cae5147c5130bea54aa76ad65f
+> [2/5] dmaengine: qcom_hidma: Use devm_platform_get_and_ioremap_resource()
+>      commit: a189107deb574fd08018bbf2fe5cd86450a54b13
+> [3/5] dmaengine: qcom: hidma_mgmt: Use devm_platform_get_and_ioremap_resource()
+>      commit: fe6c2622473f3756a09bd6c42cffca6fbdce391c
+> [4/5] dmaengine: shdmac: Convert to devm_platform_ioremap_resource()
+>      commit: 0976421c5a339b1b1a89cfba4471a6de761130ed
+> [5/5] dmaengine: stm32-dma: Use devm_platform_get_and_ioremap_resource()
+>      commit: b402a7eeaa35aaa3300a4ba6bd5b381112ae183c
 
-Applied, thanks!
+I noticed all your new dmaengine[1] and phy[2] commits contain a
+"Message-ID:" tag.  Presumable you added a git hook for that?
 
-[1/1] phy: zynqmp: Allow variation in refclk rate
-      commit: ea64a79fa6aebf6900f6cba0d6dd9c141010fda8
+However, the standard way is to add a Link: tag pointing to lore
+instead, cfr. [3].
 
-Best regards,
--- 
-~Vinod
+Thanks!
 
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/vkoul/dmaengine.git/commit/?h=next
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/commit/?h=next
+[3] https://docs.kernel.org/maintainer/configure-git.html#creating-commit-links-to-lore-kernel-org
 
+Gr{oetje,eeting}s,
+
+ 						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+ 							    -- Linus Torvalds
 
 -- 
 linux-phy mailing list
