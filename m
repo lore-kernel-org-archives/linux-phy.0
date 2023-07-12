@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EADD4EB64DA
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 12:28:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F0D4EB64DA
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 19:43:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YCAx8a6CW0XMPNTcHN5miek2azM8ywSDqSFOv3P2Ht8=; b=um01LeYjGlwOZC22iYrJ44XFQY
-	93W2L5SLOWPSQX0zXXdgzrygY/7WWzQqWNRiXvFLjre3yj6YJze63vyh9hnFZw/XvjJ22Ml8glk5U
-	MxNxiE7ijcpsX6Tqg2qXo8bGmcw63fFLFIHpyU2gVJGp1l9isCeWQRvVW65p3T2wDCF+IYimJ8cL1
-	DwbWRBSm44rurHgpKgl6Vl8/0AHrFlqG9C0B1ydMizzpz8L2pS5QP6e+ldoxsR/dYN6fKrZYJM20Z
-	hMUv4YvMD+uwuBiBMGpXDT2ZdEean1RN2RqwuJBfiWNGp23nC637ikwtgVmA8wkB29YpoTUq5YMAr
-	tfX+3m5g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RZQKh70Gmvsx4aqBBHwULzVwojYQwkGT5cpOc3Rc44Q=; b=qC6SFCENW9STlJ
+	FJ4F+7+F8c5M9j+uBxtPklf3W+5p8Cjk878tY6A8tyEjbiT8MvwWPNaK/j4DjKuX2F+b5m/HCYdyO
+	T8EH0oqzAbMW4S7VpYeaEvq3lQPsPYt5Rjm2dh2nIfBOFcmsxHqX1Abi3rQKe4CP2oDjl2YUd+kXN
+	sOGFM1OGWhUyt2PpMq4rJvaCITiPvZ/WZuq3viRyf3C2E9znaq95zUNtmFv3pUwhSPRrT8aD8hZXF
+	4sz6h3B7/IOWzAvaOA9BTDUcXKmxvrd9pimH4LsCVN4Zx/jxMjXqE/GAfyEs1k78534ZrzzxpHg5M
+	HpCqqHbJbcmAEF1JIoSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJYxe-00HX2c-1r;
-	Wed, 12 Jul 2023 12:28:50 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1qJfke-0011MF-2k;
+	Wed, 12 Jul 2023 19:43:52 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJYxb-00HX16-0Z
+	id 1qJfkb-0011KF-2U
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Jul 2023 12:28:48 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2b70bfc8db5so96230441fa.2
-        for <linux-phy@lists.infradead.org>; Wed, 12 Jul 2023 05:28:45 -0700 (PDT)
+	Wed, 12 Jul 2023 19:43:51 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-51e362e4c61so8478290a12.0
+        for <linux-phy@lists.infradead.org>; Wed, 12 Jul 2023 12:43:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689164924; x=1691756924;
+        d=linaro.org; s=google; t=1689191025; x=1691783025;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=8tVaSPQ+w2G/CXnJTkiMl+cJCOUy3bqRCsdNi00/JW8=;
-        b=Pi/qBYjAwd4/ZfVUGFBdzDeaZwn0K0YWplH7i42dsFzyhqD20c17n8dWPBGUfptqnR
-         WtMDMj4me9MbQ2JKu/0gc3Bdd5vBnFnaOKeWIt1qfbmZ8zmLZmLOkh/f2CTvIk3GGWte
-         GtNtUxBvKALaXfZEY/d+7VtlvduQEonkAnvXZ46fHz1r9F0GB7AGRd/JmIjmh0vkQPt0
-         pvJM9wrXiYfzWDzsJY7v4ixYBEpbSWTYMQ+MnBh/Q62EtwgmhB+dna8T8ZIOukOPRQp0
-         VOVuWZIDAOD0ooouLsS5Zd/z7wQMdRlmCj0OmICRld73YIY11ZeLlIQzw/3kG4LJuvio
-         cT3g==
+        bh=/8+vjNobIMWMrzf0FKkwYNB3OzBHSpvmANZBPCBUHmE=;
+        b=pdfCW/mCYx8e/bNU5tSwbVHysL9r7MaYQ3GWxA3ZjoM8HBsBPEdG8Uzb7WHqaB88dj
+         qx8zPsQWxHc2xee5MeLdt8GB//cj2+1XYL02hnXd0Sz9rp5sK5FQPClYFKQeHO0INPNC
+         JbdBeVRyvb7URnTv6hL12GYaYV3T5oPc5j4zf+SC65dr/M+o54ZZneX4ykFFiaUlopZG
+         dakQgMgQ3TOxYpOB/UuRUkYGa2hp+LVjgiDScZAV7izpHUn5tpGaQoPID9fFYauGpfGy
+         XXAQyHwZfc5haFPJj9kAGX1WIWZuBUrvAda2gLByE5bLyH94eaYAaocOIFtfl7g6huIT
+         keVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689164924; x=1691756924;
+        d=1e100.net; s=20221208; t=1689191025; x=1691783025;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=8tVaSPQ+w2G/CXnJTkiMl+cJCOUy3bqRCsdNi00/JW8=;
-        b=cs05mEHmgZ9/hWlJCwy0HJ2o/GhU+NkPOFBmSS51ppg54fxWdOpQNXexQDTq9YqO9L
-         BP8IMxV/hNyQU7prvoxeM1woI6oKKSUypQY+W0pNe1Yzl/GXeQy8YhOMq/QDkYb457hk
-         2Pukm2rCB7NR8UgkKyHRN0Adom9iEK5DHREyFo/moiAWUK7PaibAa0cy6cfO2VODb8Qs
-         O3Umog77JD0VUGcnj30TmC/xIGC7iGx5PpZ86T1i3KS6OfQNEyS5h26gmRNHRsCUChnS
-         jcVtVcDUP4FlkbdJ3PCNnUUNRGqCAm1PsDZBOAQ8SDp/1W2g0GNjPs65ywzvaJM9jj2s
-         cFIA==
-X-Gm-Message-State: ABy/qLYvknJ6MpQFipvZUnXdsSN2FXMYT2QAO11MNZ7SmVdhg+XtvoaS
-	p3e8F4yYsQI+jYSu3kQIQlgHsg==
-X-Google-Smtp-Source: APBJJlG/LDGQeyoCiWq5ImaEz8bka+7iaet3wkQhYdvn6WDMMMOihWIpsZjkOjKq2phaTxUkfWPX/g==
-X-Received: by 2002:a2e:b04a:0:b0:2b6:d0fc:ee18 with SMTP id d10-20020a2eb04a000000b002b6d0fcee18mr13742589ljl.19.1689164924397;
-        Wed, 12 Jul 2023 05:28:44 -0700 (PDT)
-Received: from ?IPV6:2001:14ba:a0db:1f00::8a5? (dzdqv0yyyyyyyyyyybcwt-3.rev.dnainternet.fi. [2001:14ba:a0db:1f00::8a5])
-        by smtp.gmail.com with ESMTPSA id r7-20020a2e94c7000000b002b6fe751b6esm948263ljh.124.2023.07.12.05.28.43
+        bh=/8+vjNobIMWMrzf0FKkwYNB3OzBHSpvmANZBPCBUHmE=;
+        b=L5MCfiZcaW2ZdB2UyF1rcGbap30LU78eCVFmdOT3Bw7CEZy8T6Kb/ojjupUzmagzqt
+         4rEEFQJDcC3ieUfS7sjK5ATLEElJpXYC35ZSj0LdUGXr6cvoFZP9HZqMbH8aKkXXy8R/
+         8T6tU6IuCUDouFH3eUMo/qyTMEEb+QDDGLdvmFgmwxnvUaC+62Em39AuKP5KsGjWhir/
+         UiBMEB9bDubiEnUllnPSr77cWXa2iXyuZfz6G5a7eDffdMPD8t1uRNS2vvg3JbUxquJl
+         +55JmwztucGkFrKLQe2v98NJwhFg3GeZ1w1Su5Vq7uAs4IKNmaD77OvvMP4qpW7OKBYZ
+         OxWg==
+X-Gm-Message-State: ABy/qLaDTNTVCP4AXqlkQlga/A9o9fagdATlBkwhsX6EsTPk3kuGrSYK
+	nGE5D9gF152/NLHmQrMNeItbUQ==
+X-Google-Smtp-Source: APBJJlGYvDj0/4R+xQD2mNLvCqsxd9qJdifuFvM8ZCbtFnkv2PeqjmsrKw+1CBv3KCAf73/r+NieFg==
+X-Received: by 2002:aa7:d302:0:b0:51d:d1af:df15 with SMTP id p2-20020aa7d302000000b0051dd1afdf15mr21184971edq.23.1689191025310;
+        Wed, 12 Jul 2023 12:43:45 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.223.104])
+        by smtp.gmail.com with ESMTPSA id v6-20020aa7cd46000000b0051e3385a395sm3237965edw.3.2023.07.12.12.43.42
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 12 Jul 2023 05:28:44 -0700 (PDT)
-Message-ID: <0f98360a-6d88-9a8b-5d60-3d6120e0640f@linaro.org>
-Date: Wed, 12 Jul 2023 15:28:43 +0300
+        Wed, 12 Jul 2023 12:43:44 -0700 (PDT)
+Message-ID: <673c5cc4-fc93-ccba-ac32-6e97db34718d@linaro.org>
+Date: Wed, 12 Jul 2023 21:43:41 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH v4 4/6] arm64: dts: qcom: ipq5332: Add USB related nodes
-Content-Language: en-GB
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v4 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
+ phy
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
  kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
  conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
@@ -82,13 +82,13 @@ To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 References: <cover.1689160067.git.quic_varada@quicinc.com>
- <1f99805b6437aa8d6eaa4663e8d27b98ee595f00.1689160067.git.quic_varada@quicinc.com>
- <13555184-1708-befd-1f2c-5e6f7e04a6ce@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <13555184-1708-befd-1f2c-5e6f7e04a6ce@linaro.org>
+ <e3a6e5cf68d67637fa541f6dc690dbcabd5e3fec.1689160067.git.quic_varada@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <e3a6e5cf68d67637fa541f6dc690dbcabd5e3fec.1689160067.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230712_052847_213856_299750E5 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20230712_124349_815631_E82C1FD6 
+X-CRM114-Status: UNSURE (   6.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,69 +100,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/07/2023 15:04, Krzysztof Kozlowski wrote:
-> On 12/07/2023 13:38, Varadarajan Narayanan wrote:
->> Add USB phy and controller nodes.
->>
->> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
->> ---
->> v4:
->> 	Change node name
->> 	Remove blank line
->> 	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom qcom/ipq5332-rdp441.dtb' passed
->> v1:
->> 	Rename phy node
->> 	Change compatible from m31,ipq5332-usb-hsphy -> qcom,ipq5332-usb-hsphy
->> 	Remove 'qscratch' from phy node
->> 	Fix alignment and upper-case hex no.s
->> 	Add clock definition for the phy
->> 	Remove snps,ref-clock-period-ns as it is not used. dwc3_ref_clk_period()
->> 	in dwc3/core.c takes the frequency from ref clock and calculates fladj
->> 	as appropriate.
->> ---
->>   arch/arm64/boot/dts/qcom/ipq5332.dtsi | 53 +++++++++++++++++++++++++++++++++++
->>   1 file changed, 53 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> index 8bfc2db..8118356 100644
->> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> @@ -405,6 +405,59 @@
->>   				status = "disabled";
->>   			};
->>   		};
->> +
->> +		usbphy0: usb-phy@7b000 {
->> +			compatible = "qcom,ipq5332-usb-hsphy";
->> +			reg = <0x0007b000 0x12c>;
->> +
->> +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
->> +			clock-names = "cfg_ahb";
->> +
->> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
->> +
->> +			status = "disabled";
->> +		};
->> +
->> +		usb2: usb2@8a00000 {
+On 12/07/2023 13:38, Varadarajan Narayanan wrote:
+> Document the M31 USB2 phy present in IPQ5332.
 > 
-> So you responded to my comments, wait ten minutes and send v2? No need
-> to wait for my feedback, right?
-> 
-> No, it's not ok. This is "usb", not "usb2". Are you saying you have
-> second device with the same address?
+> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
 
-Just to emphasise, it's the node name `usb2', which is not fine. DT 
-label `usb2' is (hopefully) fine.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
--- 
-With best wishes
-Dmitry
+Best regards,
+Krzysztof
 
 
 -- 
