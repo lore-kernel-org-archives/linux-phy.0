@@ -4,68 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C04DEB64DA
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 05:02:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91D83EB64DD
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jul 2023 05:03:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1f3KUkfRWdTtWBAoPBDOIA4T4s6k9JRUyB5pkDkOtdY=; b=o4+KwH1lhNTd/Q
-	UQiM5zEQTll994jvJ26CGc0p0KyCSLGC4XENtX+xQg3Bn7CYT0vDy5sNgkngrzjhsEb8w5x/mn6pA
-	Im/7p7jkDrCx7NfCijtcRHVqIlSCNk3pq/VdCJb3J4dH6fHUOsAPBMq4sCgcDQ6XtOjTzrYurdXiR
-	Pgdfdz+Yam2KAZnQ9YIMwYEZ8zG2bHQGo1MmY7VZ80dF2VT1nC2zUI0hjnUvzNmMN6rCIkK5eWhxs
-	GT3hX7opr6wQWzLLwLrVtnmRwQVpndmkStqPszeh5qT3ezc6gpyE14QnJPsrlI/pXokut0jOFxLuP
-	hTXVwiAvRoeO0BscVazw==;
+	List-Owner; bh=p2INAuacv2pWIJwE8KdI0t8GbRhwqPB9e4fj8iVU29o=; b=489o1l8Pmivf1n
+	hchRGaPfFCnQPROBs5Wq5Qox6um/52RmIK2GUc7HwVfJWwQqYsklSahzJtcC1PiZXh8Iij1jEUfx8
+	K2JeyoaPFQYzoh9hX+nb8+KajFSsZtRy/OLPb9YQmB3QWXvU8M/hDKmhrYjSN6tcDBLaZcwC2/i3P
+	SpWXl6eXZEcP8zBrCwTdr/DzOpIlAWWl7OpSo9VrfOXNS2o8DQEMot+ZJ3ppYoxi6xCbZCQDCGwxU
+	dHWuXnIeCU2IygVb6q0qRwAdWb7ls1iYQU5Aw384x7X120shy1c7B/D2umkkkaCOY2OGWwpbWUe7s
+	+Wii/Xg7RqMM8/2LPpdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJRzJ-00GYP8-2K;
-	Wed, 12 Jul 2023 05:02:05 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qJS0x-00GYX1-0j;
+	Wed, 12 Jul 2023 05:03:47 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJRzG-00GYOe-34
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Jul 2023 05:02:04 +0000
+	id 1qJS0u-00GYVy-0J;
+	Wed, 12 Jul 2023 05:03:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7DBA1616DE;
-	Wed, 12 Jul 2023 05:02:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74047C433C8;
-	Wed, 12 Jul 2023 05:01:58 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 410DC616D8;
+	Wed, 12 Jul 2023 05:03:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66FB3C433C7;
+	Wed, 12 Jul 2023 05:03:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689138122;
-	bh=Ae7cOg5RkBIZRVxFbdZkfbrVtQR3X8p/Y+v1CZtKDMo=;
+	s=k20201202; t=1689138220;
+	bh=uqV6Um97XmlcNN/yUzLMTOP1cF0T1bI1RVjvshk7iMc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ouEdBMAz2UQ7tupTVCr4besFEDjtGFSzn11Jgf7Wx4mJmCrE+IOJ15fDlx5rwNDyD
-	 tuyiSVERxe4J953qGPMiyyhZ07rwR+Sln1XQ+OtdIYWrK6FIGLieHRYdyq/kfZ59UG
-	 1hNFQ5kbHe2OSSt2KKaZOfFPa4wLceSG1c7xjmWuuu/pClyg4LDXl7QlIJkuKiWayF
-	 EO66sZ8AwuQuQPLmao4InsPygW2EyiW2g5XaQjmCGudF0EHVpvjSMzThAJaOKXD/w1
-	 DvPlPODekTLrHTevG1PPgoHRaOXQlLw/eBFTbKhSYnWAOaGxKE0D2rLdKgGL2L6rbh
-	 JArRco+F+Xe+Q==
+	b=pxXw+soQaj2mQLxD2H6AFhyoPP0ATXGQAaalhfSyqvVBO9X9xtBfrPEXOiN4XovV5
+	 s0uswwLXghNDN7gi9CPvR/FMyQwZW/HxV6GjNWDybULzlxDrXremK0A7tWRstHqR9G
+	 9LT7Z+xQoS02MGs8VR8SshD20SmQyA8RgD9Vhpcqrd4CKGnxiS8bLXO41FiOus8GtR
+	 htKka98iZNQF4KelRCuI9j21/lCBqxcIYbisMgPUPxdSOXqCFbZg5a9M+7Nd2Pqi5j
+	 S40xZ/umSLlH+o3TLUmrnknK+81n9Xqcf0QjnOjP72idlXQpUMFE0sAqn3aun5adz2
+	 DMu3rV58oT/uQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, 
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Johan Hovold <johan@kernel.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org
-In-Reply-To: <20230711145153.4167820-1-dmitry.baryshkov@linaro.org>
-References: <20230711145153.4167820-1-dmitry.baryshkov@linaro.org>
-Subject: Re: (subset) [PATCH v4 00/11] phy: qcom-qmp-ufs: convert to newer
- style of bindings
-Message-Id: <168913811801.211971.544990626696177536.b4-ty@kernel.org>
-Date: Wed, 12 Jul 2023 10:31:58 +0530
+ Michal Simek <michal.simek@amd.com>, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, Sean Anderson <sean.anderson@seco.com>
+Cc: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20230711194542.898230-1-sean.anderson@seco.com>
+References: <20230711194542.898230-1-sean.anderson@seco.com>
+Subject: Re: [PATCH] phy: zynqmp: Allow variation in refclk rate
+Message-Id: <168913821797.212309.17019092167663097914.b4-ty@kernel.org>
+Date: Wed, 12 Jul 2023 10:33:37 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_220203_029326_0250E126 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20230711_220344_196775_1F794210 
+X-CRM114-Status: UNSURE (   6.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,22 +78,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 11 Jul 2023 17:51:42 +0300, Dmitry Baryshkov wrote:
-> Reviewing several patchsets for newer platforms made me understand that
-> having two styles of QMP PHY bindings causes confusion. Despite binding
-> documents having notes telling that old bindings should be used for
-> older platforms, it is too easy to attempt adding new platform with
-> older QMP PHY binding. Thus let's have just a single documented style of
-> bindings.
+On Tue, 11 Jul 2023 15:45:39 -0400, Sean Anderson wrote:
+> Due to limited available frequency ratios, the reference clock rate may
+> not be exactly the same as the required rate. Allow a small (100 ppm)
+> deviation.
 > 
-> [...]
+> 
 
 Applied, thanks!
 
-[01/11] dt-bindings: phy: migrate QMP UFS PHY bindings to qcom,sc8280xp-qmp-ufs-phy.yaml
-        commit: cd296e74242918f91bb86da0c67d8456338cbb16
-[02/11] phy: qcom-qmp-ufs: populate offsets configuration
-        commit: e2d9dbc01cb305af625c6db83c451645eef64470
+[1/1] phy: zynqmp: Allow variation in refclk rate
+      commit: ea64a79fa6aebf6900f6cba0d6dd9c141010fda8
 
 Best regards,
 -- 
