@@ -4,91 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33E45EB64DD
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jul 2023 11:37:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08866C001B0
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jul 2023 13:58:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WojT0j6QTZpzHBldqxtzQktAIBhdVtCSaP/9DX8qIFk=; b=Vv3VoDp55Q/NgO
-	O6jJNpO6TQlS2FYGm+PCbu9FAGfzkWaUHKk4znyBCN5fdNKLhWeTO9KF44iWdYsOitiyr11cCKzWI
-	cnmgzlPFn4hSguF7c2GKH9/uxpJyNNKby54GacN16TW2mSudsiu9VJDr8T+Kx/PLJ3v0pFmZJCTe9
-	f3YAdq/bO1t1S2KaB3RoGtYT3OiWftAymQdy5wB8ohWY21Vcujffr1867r5u8R/PFQTLKHrDXGwIN
-	YeggdAC9F2/FBL1LStX8DPfFMIu2i+DxkzCfETV+6LX/mtT1qepR3vX8+H5Cs5HioIUDy9vyyi45X
-	5VbWDj5TAPvSSgeaX1Mw==;
+	List-Owner; bh=ChDwGmnrVWpEylTwJ4LX1kYy+durz4/P4wWPSC5+SXU=; b=1X1WlFHtbMITKL
+	vRbK4b/8ov8oWNHFbPkN4uYjNqr7m4wIr/8ZGCwBPSRrC/S8JDg+JcN8MMWlVt51k/bHu6CJP4T5A
+	n+9M3hXdzyGwQPkJBMFBIaH49xLZdrfCJdsw4u1Eaj69o6t2sjrfuOCT8jY+rR6U/qorW9PJDoUFY
+	RUJPzuEXohNQ/XScqFPsw+4D4Zwc+4zOJpYeyQp1o9iKOnKbd/sCgxxyG0Fm2XDr/jWS6fMYE8gUV
+	g70eppy4FHVcCCXbp70fd615Xl6ZQCqELdt/2y5pcr16UAdkRjnNMZ6b5xCaoluukjKfyRsqN74Pc
+	LjzDmKHyw2dJpNOJEUEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJudm-0036HU-30;
-	Thu, 13 Jul 2023 11:37:46 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1qJwqK-003URS-2P;
+	Thu, 13 Jul 2023 13:58:52 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJudj-0036FR-2Y
-	for linux-phy@lists.infradead.org;
-	Thu, 13 Jul 2023 11:37:45 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-307d20548adso712885f8f.0
-        for <linux-phy@lists.infradead.org>; Thu, 13 Jul 2023 04:37:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689248260; x=1691840260;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=3afv1tSDU+ds9Iq1atb1848uSvv71WrQkCzCJYr8Bqs=;
-        b=tSq8h2z1jv2RYQQbrpUcMJPfWS6sp/lKir2DVDt9mM9qskZiWfnPgd7oSiNUBKfyYy
-         YLuRtG9KkSzbuQzOEkv1lcPTMPmGuwVvkAqjHV6Cdm90Jsyfu2yIjZGg/Rs+fokaK+kY
-         S7Zw/J4pHwJH3nArFvtTEpZSQZhlEfurqlTUlBu0s0LgWaxkVO4t5zBn/z9sAhQWS8du
-         6WcyHesVmsA4n5p4DeiywZmHk503oxOeIYWKIOorrmKgJ1NWQqiX7Z5jUyBIOfo+lrxQ
-         BW0ulKZ2Og58U4e+2oz3C04uWD/z6cngbW/nDFdk9myFW+DagCED0iSrAolVJqWRg6YQ
-         dQCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689248260; x=1691840260;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=3afv1tSDU+ds9Iq1atb1848uSvv71WrQkCzCJYr8Bqs=;
-        b=WgKAh86mZn8GfnsONMgMaibvcUMw5hd3oHKtjjaHr9efedTds4TPhPijriBfO6Nw27
-         eHUBfxJXo6DBXevR0Vm8jq4WxQboFhZILU8V14DKhL7eKD0BYJ6PY5L7B+zpjKQ5pEvy
-         GrLNPrXehZqKZoKFi0u1w4fBZfFaGjv9dqIIrVmwLAWNigUpRpjH5bcB90rPyQevhNue
-         ZX+AfyNznfuDHW9HL8Yq6X5vdlFK7u6fFQBaMGVMpxZUhGr2WqFnuZCi/P4m5uGiCqUe
-         +mbi8P0wXdGGys1bCuMPma6y6LsEPgBg+qr6CC8heL8yEo3T7H1+kLelgJOm/rXmCHve
-         Wd7Q==
-X-Gm-Message-State: ABy/qLbRJJrv9dhnFxu1D3t0HnW8rG3Ef9UqnSSe2aJwHTCqgmY8af/X
-	umvJZJzh42RJ852Cyi08TXEJ5A==
-X-Google-Smtp-Source: APBJJlGSdUl2/024KdAAcm1SL/4eEW6C1Ed46QDF+qd36ywSCEPwDoG8NweOZ+ffKG0UE87W0Lom6w==
-X-Received: by 2002:a05:6000:87:b0:314:449e:8536 with SMTP id m7-20020a056000008700b00314449e8536mr1287763wrx.10.1689248260130;
-        Thu, 13 Jul 2023 04:37:40 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.223.104])
-        by smtp.gmail.com with ESMTPSA id k2-20020a5d5182000000b003143aa0ca8asm7748394wrv.13.2023.07.13.04.37.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 13 Jul 2023 04:37:39 -0700 (PDT)
-Message-ID: <da502dd4-2718-ae9c-51c2-7c9da5c3208f@linaro.org>
-Date: Thu, 13 Jul 2023 13:37:36 +0200
+	id 1qJwqI-003UQf-0p;
+	Thu, 13 Jul 2023 13:58:52 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36DDG3DB009960;
+	Thu, 13 Jul 2023 15:58:16 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=jScQfB7dHrSC/WSmDV+VXYQZhrTRCDcVOleEzuAMkbE=;
+ b=SfPoPLnnS6bLH20C2mmzuSXgd6/LCZxaRC927PE4Mq989cPc8vsuiDIrNcox0JeecTgk
+ vPSy+TZQ0MWOr5EnYuFBdJ4IeZx8ly3L7dJBVxGjU8klO2sMHXDNayHV0IEhjmSJsuCp
+ iGud6dnNZMDNTsd/DkUniBS2IpTUNWOe4vjqh2vsQwrqhmWN8E7LzuSEP4zI2yQiwW3+
+ zBpv9EiLZwUwirVLGu0eG1qtyzqzjsy3ii1suiVs0vmb/OiOXk2oEMI3chtxRqniHYa3
+ X9F+QSqs4L8qMuMBivzwcYURTgZbAwRpZYfPZh60JsRQFYr2leCnOExEUKEI2GdCBMLi ZA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3rtedthy7f-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 13 Jul 2023 15:58:16 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4F4DC100056;
+	Thu, 13 Jul 2023 15:58:14 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E240A21A21E;
+	Thu, 13 Jul 2023 15:58:14 +0200 (CEST)
+Received: from [10.201.21.121] (10.201.21.121) by SHFDAG1NODE1.st.com
+ (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Thu, 13 Jul
+ 2023 15:58:12 +0200
+Message-ID: <ba409196-06a1-bf2b-3536-1e1420550ff4@foss.st.com>
+Date: Thu, 13 Jul 2023 15:58:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH v4 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
- phy
+Subject: Re: [PATCH 05/10] firewall: introduce stm32_firewall framework
 Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
- will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de,
- geert+renesas@glider.be, neil.armstrong@linaro.org, nfraprado@collabora.com,
- rafal@milecki.pl, quic_srichara@quicinc.com, quic_varada@quicinc.org,
- quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <cover.1689160067.git.quic_varada@quicinc.com>
- <e3a6e5cf68d67637fa541f6dc690dbcabd5e3fec.1689160067.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <e3a6e5cf68d67637fa541f6dc690dbcabd5e3fec.1689160067.git.quic_varada@quicinc.com>
+To: Rob Herring <robh@kernel.org>
+CC: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <alexandre.torgue@foss.st.com>, <vkoul@kernel.org>, <jic23@kernel.org>,
+        <olivier.moysan@foss.st.com>, <arnaud.pouliquen@foss.st.com>,
+        <mchehab@kernel.org>, <fabrice.gasnier@foss.st.com>,
+        <andi.shyti@kernel.org>, <ulf.hansson@linaro.org>,
+        <edumazet@google.com>, <kuba@kernel.org>, <pabeni@redhat.com>,
+        <hugues.fruchet@foss.st.com>, <lee@kernel.org>, <will@kernel.org>,
+        <catalin.marinas@arm.com>, <arnd@kernel.org>,
+        <richardcochran@gmail.com>, <linux-crypto@vger.kernel.org>,
+        <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, Peng Fan <peng.fan@oss.nxp.com>
+References: <20230705172759.1610753-1-gatien.chevallier@foss.st.com>
+ <20230705172759.1610753-6-gatien.chevallier@foss.st.com>
+ <20230706150906.GB3858320-robh@kernel.org>
+ <d13f935c-568b-3c0d-8e7d-006b7d4e7d50@foss.st.com>
+ <20230707150724.GA112541-robh@kernel.org>
+From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
+In-Reply-To: <20230707150724.GA112541-robh@kernel.org>
+X-Originating-IP: [10.201.21.121]
+X-ClientProxiedBy: SHFCAS1NODE1.st.com (10.75.129.72) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-13_05,2023-07-13_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230713_043743_828580_7DAA0F83 
-X-CRM114-Status: UNSURE (   7.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230713_065850_630950_70D27746 
+X-CRM114-Status: GOOD (  43.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,31 +107,175 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/07/2023 13:38, Varadarajan Narayanan wrote:
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> @@ -0,0 +1,48 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: M31 USB PHY
-> +
-> +maintainers:
-> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> +  - Varadarajan Narayanan <quic_varada@quicinc.org>
+Hello Rob,
 
-Still wrong email. You should also receive the bounces, didn't you?
+On 7/7/23 17:07, Rob Herring wrote:
+> On Fri, Jul 07, 2023 at 03:43:15PM +0200, Gatien CHEVALLIER wrote:
+>>
+>>
+>> On 7/6/23 17:09, Rob Herring wrote:
+>>> On Wed, Jul 05, 2023 at 07:27:54PM +0200, Gatien Chevallier wrote:
+>>>> Introduce a firewall framework that offers to firewall consumers different
+>>>> firewall services such as the ability to check their access rights against
+>>>> their firewall controller(s).
+>>>>
+>>>> The firewall framework offers a generic API that is defined in firewall
+>>>> controllers drivers to best fit the specificity of each firewall.
+>>>>
+>>>> There are various types of firewalls:
+>>>> -Peripheral firewalls that filter accesses to peripherals
+>>>> -Memory firewalls that filter accesses to memories or memory regions
+>>>> -Resource firewalls that filter accesses to internal resources such as
+>>>> reset and clock controllers
+>>>
+>>> How do resource firewalls work? Access to registers for some clocks in a
+>>> clock controller are disabled? Or something gates off clocks/resets to
+>>> a block?
+>>
+>> To take a practical example:
+>>
+>> A clock controller can be firewall-aware and have its own firewall registers
+>> to configure. To access a clock/reset that is handled this way, a device
+>> would need to check this "resource firewall". I thought that for these kinds
+>> of hardware blocks, having a common API would help.
+> 
+> We already have the concept of 'protected clocks' which are ones
+> controlled by secure mode which limits what Linux can do with them. I
+> think you should extend this mechanism if needed and use the existing
+> clock/reset APIs for managing resources.
+> 
+
+Ok, thank you for the input. I'll remove this type of firewall for V2 as
+I no longer have a use case.
+
+>>>
+>>> It might make more sense for "resource" accesses to be managed within
+>>> those resource APIs (i.e. the clock and reset frameworks) and leave this
+>>> framework to bus accesses.
+>>>
+>>
+>> Okay, I'll drop this for V2 if you find that the above explaination do not
+>> justify this.
+>>
+>>>> A firewall controller must be probed at arch_initcall level and register
+>>>> to the framework so that consumers can use their services.
+>>>
+>>> initcall ordering hacks should not be needed. We have both deferred
+>>> probe and fw_devlinks to avoid that problem.
+>>>
+>>
+>> Greg also doubts this.
+>>
+>> Drivers like reset/clock controllers drivers (core_initcall level) will have
+>> a dependency on the firewall controllers in order to initialize their
+>> resources. I was not sure how to manage these dependencies.
+>>
+>> Now, looking at init/main.c, I've realized that core_initcall() level comes
+>> before arch_initcall() level...
+>>
+>> If managed by fw_devlink, the feature-domains property should be supported
+>> as well I suppose? I'm not sure how to handle this properly. I'd welcome
+>> your suggestion.
+> 
+> DT parent/child child dependencies are already handled which might be
+> enough for you. Otherwise, adding a new provider/consumer binding is a
+> couple of lines to add the property names. See drivers/of/property.c.
+> 
+
+Ok, I'll try with a modification of drivers/of/property.c as the
+parent/child dependency won't be enough. Thanks for pointing this out.
+
+>>>> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+>>>> ---
+>>>>    MAINTAINERS                               |   5 +
+>>>>    arch/arm64/Kconfig.platforms              |   1 +
+>>>>    drivers/bus/Kconfig                       |  10 +
+>>>>    drivers/bus/Makefile                      |   1 +
+>>>>    drivers/bus/stm32_firewall.c              | 252 ++++++++++++++++++++++
+>>>>    drivers/bus/stm32_firewall.h              |  83 +++++++
+>>>
+>>> Why something stm32 specific? We know there are multiple platforms
+>>> wanting something in this area. Wasn't the last attempt common?
+>>>
+>>> For a common binding, I'm not eager to accept anything new with only 1
+>>> user.
+>>>
+>>
+>> Last attempt was common for the feature-domain bindings. The system-bus
+>> driver was ST-specific. I don't know if other platforms needs this kind
+>> of framework. Are you suggesting that this framework should be generic? Or
+>> that this framework should have a st-specific property?
+> 
+> Ah right, the posting for SCMI device permissions was the binding only.
+> The binding should be generic and support more than 1 user. That somewhat
+> implies a generic framework, but not necessarily.
+> 
+>> I've oriented this firewall framework to serve ST purpose. There may be a
+>> need for other platforms but I'm not sure that this framework serves them
+>> well. One can argue that it is quite minimalist and covers basic purposes of
+>> a hardware firewall but I would need more feedback from other vendors to
+>> submit it as a generic one.
+> 
+> We already know there are at least 2 users. Why would we make the 2nd
+> user refactor your driver into a common framework?
+> 
+> [...]
+> 
+
+If one thinks this framework is generic enough so it can be of use for
+them, so yes, I can submit it as a common framework. I'm not that sure
+Oleksii finds a use case with it. He seemed interested by the bindings.
+Maybe I'm wrong Oleksii?
+
+For V2, I'd rather submit it again as an ST-specific framework again to
+address the generic comments. This way, other people have time to
+manifest themselves.
+
+>>>> +int stm32_firewall_get_firewall(struct device_node *np,
+>>>> +				struct stm32_firewall *firewall)
+>>>> +{
+>>>> +	struct stm32_firewall_controller *ctrl;
+>>>> +	struct of_phandle_args args;
+>>>> +	u32 controller_phandle;
+>>>> +	bool match = false;
+>>>> +	size_t i;
+>>>> +	int err;
+>>>> +
+>>>> +	if (!firewall)
+>>>> +		return -EINVAL;
+>>>> +
+>>>> +	/* The controller phandle is always the first argument of the feature-domains property. */
+>>>> +	err = of_property_read_u32(np, "feature-domains", &controller_phandle);
+>>>
+>>> Why do you need to parse the property twice?
+>>>
+>>
+>> The first parsing is to have the first argument, which is the controller
+>> phandle. The second parsing is here to get the firewall arguments based on
+>> the number of arguments defined by #feature-domain-cells. Maybe using
+>> of_property_read_u32_array() would be better.
+> 
+> No. It's not a u32 array. It's a phandle+args property, so you should
+> only use phandle+args APIs.
+> 
+>> I did not want to close the
+>> door for supporting several feature domain controllers, hence multiple
+>> phandles. of_parse_phandle_with_args() seemed fine for this purpose but the
+>> phandle is parsed out.
+> 
+> There's an iterator for handling multiple phandle+args cases.
+> 
+> Rob
+
+Ok, will look into that for V2.
 
 Best regards,
-Krzysztof
-
+Gatien
 
 -- 
 linux-phy mailing list
