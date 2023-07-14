@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6DA5C0015E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 14:33:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D154EB64DC
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 14:34:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G0YkREJyorLX2nl7f5bFwZmD4log9xmsd15Bh9FUhBI=; b=lyr2xDQSyacXa3
-	27m0Z7kVJINWZy8bEHfoFvkndsNOjeMTZ/DL0/RwOFpTsfcELT6zesKNZ2g7gCMhHpQLqEdNjD6r8
-	mUBj76/zzSI9Z1stw41DN/dC8JgzBGfMfDaSj4rGTZHLIPZt2CKRtH/+Gy3RNOprxZEwBLMJ7iPO5
-	JNN7cnq4s9vmqfi3VcbgOP1L63y0+tfKhNa6gdCf8L8iOj23SgHzP9N+0GqavwaIApR7X9KGCNF9Z
-	LYRdOtPcRzI17WnhQMA/Ytn3LpT5uR5san/3aAmOw9I1xJ2bC7lMYIyd5uHCZuWTELG5E+TS7+2kE
-	jd/DXzb+TnK0P6iP+/Gw==;
+	List-Owner; bh=y4ERVjnZuXWdANo4t7YukpzP0yiuhKLU0AObCSjdtg8=; b=GbGdt3wRNygkO0
+	BssUpcsXjgPerWk7hsebJXF4bylQbZI2I/MBTqrtFZutczhYm3mztD/S/1GmjJ7KxfzkfCFbcfNFs
+	jD/jujl1g4fh0lKyV+N18KjuJptnSX5XnimugZp1wfL2UmNy0Tbw7dkHcLzT0zQZ6sFy811+9mQGF
+	CLCwTZm4lIdEcdQS+abgeuewfvCI14vyd4zT5PEg+sb4QN66oJlKyBg/fb249KdZUCLuYWbTl23hl
+	vLgtibT34wMp+LvKisFFkRA4a3C4UPItzLHDIZL/W5ABRSk7uE7bBULf+lqsLQB8aAxcea0BxeLCu
+	unbrKb0Y+OnNrrbGSqiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKJr4-006P2S-1U;
-	Fri, 14 Jul 2023 14:33:10 +0000
-Received: from mail-il1-f174.google.com ([209.85.166.174])
+	id 1qKJrv-006P9W-0Q;
+	Fri, 14 Jul 2023 14:34:03 +0000
+Received: from mail-il1-f176.google.com ([209.85.166.176])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKJr1-006P1W-19
+	id 1qKJrt-006P8t-04
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Jul 2023 14:33:08 +0000
-Received: by mail-il1-f174.google.com with SMTP id e9e14a558f8ab-3476c902f2aso8305595ab.3
-        for <linux-phy@lists.infradead.org>; Fri, 14 Jul 2023 07:33:05 -0700 (PDT)
+	Fri, 14 Jul 2023 14:34:02 +0000
+Received: by mail-il1-f176.google.com with SMTP id e9e14a558f8ab-34617b29276so7475335ab.0
+        for <linux-phy@lists.infradead.org>; Fri, 14 Jul 2023 07:33:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689345184; x=1691937184;
+        d=1e100.net; s=20221208; t=1689345238; x=1691937238;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=zf90yCWC/Qqdnr0SRBoZ5jMgO+4zIAgRXZgbEEN5z0k=;
-        b=W3Y6qq+DHgUGjUI7yW2TMzi0BqH3BWRdkUOKKTjBomeRPyPX+AkHgBhKfk3s+8z5fr
-         frn/5UfJ/F6KeZM2CzT7qTW4RddBx2oh65GxTW7Kozl+UcX8gGDMu9BoXyqUHU3XSgfW
-         SZNr9WLJ6Aopnr0w9r2+arH886tmEOvzRye3ro0zAv4er4IyT+1hKs71qSIe9faARKQG
-         rMFjPSNTAXe5cEqFtZuMQdbsfLFJ2krShNPETD8949iyPnT6UiYgfV14L8y7mVNiGag6
-         ds8Ske7+soNeBLDDS+A1GjviEZeeZfca+vJ/qKoN7hJ1xhjnWMT5XfUdIZcsV5DwdtQV
-         Yplg==
-X-Gm-Message-State: ABy/qLZux6mmmZip2szy+wQATm5N28M1NGMmbqWI3OKd0lD2DaiyeALo
-	BIJpIQzWBsnbg9IUYsIZaA==
-X-Google-Smtp-Source: APBJJlG+Si+Ds9hRccCS0//Wm2Kl1639AFJzVjLprZtZCtSIorBGRW0ShYQ8I+sjmJMhcxfg1FSiJQ==
-X-Received: by 2002:a92:1a52:0:b0:345:775f:1a2f with SMTP id z18-20020a921a52000000b00345775f1a2fmr4681914ill.14.1689345183884;
-        Fri, 14 Jul 2023 07:33:03 -0700 (PDT)
+        bh=zgiht/lCckduqQild9xWBFcr10Bz7Z0qNdMiS2Y+g2s=;
+        b=iZPmI8T1E1FR+Wu2l61muFLXFroVtSfJorPaQ5Iph0gwfTqPc05v+6kF8tcVPDUPzx
+         bCLAECX7RFyf/bsmyM2+NfTAsRw7ZuPYXrP+XMO3K2GAGVm0z2O0ZMTgQIZrGMyLZeRL
+         NjI9W5xNpbFE7pYiGLcPzudJ+npXl6Zbnw7u5fBKCkkQ/ETxkREzPPAeSZObsifjCuGu
+         0fjCq+ezM409po2w4AyvjEKNOFBvSF1HksoOCUVPzhIbKqiL48UJvY6Hi98pqsuxdJIE
+         U9dpze5VkoE8UaVqM9LCeuW71K4F9fsKB6ejeaIjhHvAG3gD9H6bqGo13gyk+V5VggW8
+         +izw==
+X-Gm-Message-State: ABy/qLYAJmi1BsHVFOcxrgPUnKpK4p6h7tSOdE3hxjypQVDJvDtR+1sa
+	FMslZtakIsPifSN9t6UCVg==
+X-Google-Smtp-Source: APBJJlHc87RGDE4ioh1yw30FaD7V2nkRtIdOKWEAEqqS4SeVwBEFRxF8hNU6UpuUILrr1/1c601qQw==
+X-Received: by 2002:a92:d083:0:b0:345:b4e0:35d3 with SMTP id h3-20020a92d083000000b00345b4e035d3mr1939585ilh.9.1689345238217;
+        Fri, 14 Jul 2023 07:33:58 -0700 (PDT)
 Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id f17-20020a056e0204d100b00345de23f6b6sm2759553ils.6.2023.07.14.07.33.01
+        by smtp.gmail.com with ESMTPSA id w17-20020a92c891000000b0034233fd80d3sm2788841ilo.22.2023.07.14.07.33.56
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Jul 2023 07:33:03 -0700 (PDT)
-Received: (nullmailer pid 3488768 invoked by uid 1000);
-	Fri, 14 Jul 2023 14:33:00 -0000
-Date: Fri, 14 Jul 2023 08:33:00 -0600
+        Fri, 14 Jul 2023 07:33:57 -0700 (PDT)
+Received: (nullmailer pid 3490019 invoked by uid 1000);
+	Fri, 14 Jul 2023 14:33:55 -0000
+Date: Fri, 14 Jul 2023 08:33:55 -0600
 From: Rob Herring <robh@kernel.org>
 To: Stanley Chang <stanley_chang@realtek.com>
-Cc: Rob Herring <robh+dt@kernel.org>, Ray Chi <raychi@google.com>, linux-usb@vger.kernel.org, devicetree@vger.kernel.org, Matthias Kaehlcke <mka@chromium.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>, Flavio Suligoi <f.suligoi@asem.it>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Alan Stern <stern@rowland.harvard.edu>, linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [PATCH v7 4/5] dt-bindings: phy: realtek: Add Realtek DHC RTD
- SoC USB 2.0 PHY
-Message-ID: <168934517988.3488706.6095305078054455561.robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Flavio Suligoi <f.suligoi@asem.it>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Roy Luo <royluo@google.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org, Matthias Kaehlcke <mka@chromium.org>, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>, Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Ray Chi <raychi@google.com>
+Subject: Re: [PATCH v7 5/5] dt-bindings: phy: realtek: Add Realtek DHC RTD
+ SoC USB 3.0 PHY
+Message-ID: <168934521641.3489578.4865141978582966306.robh@kernel.org>
 References: <20230707064725.25291-1-stanley_chang@realtek.com>
- <20230707064725.25291-4-stanley_chang@realtek.com>
+ <20230707064725.25291-5-stanley_chang@realtek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230707064725.25291-4-stanley_chang@realtek.com>
+In-Reply-To: <20230707064725.25291-5-stanley_chang@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230714_073307_397483_1CC74E00 
-X-CRM114-Status: GOOD (  15.40  )
+X-CRM114-CacheID: sfid-20230714_073401_086347_CA32E6DB 
+X-CRM114-Status: GOOD (  15.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,25 +84,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 07 Jul 2023 14:47:03 +0800, Stanley Chang wrote:
+On Fri, 07 Jul 2023 14:47:04 +0800, Stanley Chang wrote:
 > Document the USB PHY bindings for Realtek SoCs.
 > Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller and using USB 2.0 PHY transceiver.
+> controller and using USB 3.0 PHY transceiver.
 > 
 > Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
 > ---
 > v6 to v7 change:
->     1. Revise the commit message
->     2. Change the property name for realtek,driving-level-compensate
->     3. Add if/then schema for specific properties
+>     Revise the commit message.
 > v5 to v6 change:
->     Drop the redundant examples
->     Drop the label of example
+>     Drop the labels of example.
 > v4 to v5 change:
->     1. Add more examples.
->     2. Remove the compatible realtek,usb2phy.
->     3. Revise the descriptor of the property.
->     4. Add the default of the property.
+>     1. Remove the compatible realtek,usb3phy.
+>     2. Add the default of the property.
 > v3 to v4 change:
 >     1. Remove the parameter and non hardware properties from dts.
 >     2. Using the compatible data included the config and parameter
@@ -116,9 +111,9 @@ On Fri, 07 Jul 2023 14:47:03 +0800, Stanley Chang wrote:
 > v1 to v2 change:
 >     Add phy-cells for generic phy driver
 > ---
->  .../bindings/phy/realtek,usb2phy.yaml         | 175 ++++++++++++++++++
->  1 file changed, 175 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
+>  .../bindings/phy/realtek,usb3phy.yaml         | 107 ++++++++++++++++++
+>  1 file changed, 107 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/realtek,usb3phy.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
