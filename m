@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C3FDEB64DA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFF4BC001B0
 	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 05:09:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u75pYHDwmwCigp0sCMejiCpBSSNda0gG3oJRIroXOGA=; b=AlVqZGg16JsQ+/
-	srOFBn1nRsV1pr1lOjIZdq8ZeKYjhAr9CysF+o0k7i7aEnuFwwgn2LolxwIcVTL2XJE4MJB0p5Vyi
-	qr+0oVmF5ywLCSlowu1s6sIkv8697h7gNnjgtoUvz2SfPDcg/7tTsvLZ53Kf+6v7ppgk8UQWIVFOb
-	Khge721iWpBLE3uxTO0cB662raFvX77YAtumLNjc2KFVThIld7+ZU4dIphmLE3MKXc0Jw66Ttl4J0
-	gDIHCCP0E4tLtFF00GFw4L0Jts1YcQe0YJkCYTKq+BGAgs/LvE9M1y95LMVgVO3GPvedTGjhubCeb
-	RUA2HS3+FmU/y1Zc/mqg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hwQIOwJL8TLp7rzFoSRrPKxj/IjOz6/LE3l6RTCfi64=; b=sujsq7uOX0ofDY
+	oyYJJzApb1G1Z59KkObHmCCQOUaddiX4DvsZ2o8Vgg4x+JXAmZLlY9I8pgkZKT4xhRDSxxei4lVh8
+	pLvCPoSj5XSjmKE5/uzVogjpuDhPFhfF6pxn6V2DCtmGJ9eB34wudUhYrjNbv4o8Z0k2+iuFsgpAO
+	dZQBrfZXyfz5DIy38L2Ify8t/9IC/VVPhVK1wJnsuWn4J10W1sT+A3dplJCSj9v+ZqKuNYwa9VpJ8
+	7cI3mD0+z7jb+eiuxlXCLCnCikUa32JK8p8qNy52r5cwOSYKsSKrXXLuws/GcMptK4OwuszVkYkXq
+	UnpN0057Nz5HOn2+qDJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKB39-0052Em-0o;
+	id 1qKB39-0052Ev-1g;
 	Fri, 14 Jul 2023 05:09:03 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKB36-0052E9-20
+	id 1qKB36-0052E6-2A
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Jul 2023 05:09:01 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36E3IxNF029344;
-	Fri, 14 Jul 2023 05:08:52 GMT
+	Fri, 14 Jul 2023 05:09:02 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36E4oDBK017653;
+	Fri, 14 Jul 2023 05:08:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=Pl1sHQHZIOFEno721n5dvwxYsyeHLBK5VUEn0y23m9M=;
- b=hRfhhKJp25V7XRBL4vdTz5TxkcDvJ5mzE8dq70F60RSrlpTnrK8O9fvLb2t0oX/tv2Xp
- pzVFVPCehsF5K2ZrhbH3qtkktwlxENrmTkCyKXhwQ/k53IdsUEkK3IiziKQBg8Hyr9Lw
- qGinPIMLzMUPCzGxtnpiTbETsBRc2JoEXAZ3Z/AoWds4vuCef7AiaEN+5QL6mug+SggS
- BoHapFXcFpbh8qajrmoTMlv5P3LHSKyXbDqNYWb5jss9USHhnYcTjA5ax8fEi8eBin9Q
- FU8nuLmAnH6VkvoE3BOx8bAgp8TZCMOCERPdaMIDFkOnWadzFjjC3vsTmiyNUo45Ol29 3Q== 
+ subject : date : message-id; s=qcppdkim1;
+ bh=fKEU125LEYk6uyzj/27LeAvR32GMePTT+LCYf3kNxpM=;
+ b=oqbjvX37IbuWomOG8iHK9nuU3mjRivn6gY7dpnWsJrWP2yMlRX+3xo3HbMMcYKEZEwEZ
+ qem0o95fEuCVCgkwVyndmSh5IXGJNRY18fRd7ifRddotwh6AJB1+cep3yHFgRB4okTpI
+ U8QOhNzlBfk1lCcbI3Flsm/4oNdDStdZijRE7tPkljyognZL2UYsS/28zYOMXi9CAcZT
+ JpUtKCKLyRPl5qP0vzAgkrquSiB/2/BUpE55/R6kAUg8gCerBVlgV2GgM+ZiusSvgDmY
+ IrGHkxoQQj13LhhOe8Eg+X4chCJ826wg0rp91CRa2dhx9Be7B8sGNWbrjKNeJwDdqE6V iA== 
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rtpu90vnt-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rtpukrvrn-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 14 Jul 2023 05:08:52 +0000
+	Fri, 14 Jul 2023 05:08:49 +0000
 Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 36E58mqT001100;
-	Fri, 14 Jul 2023 05:08:48 GMT
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 36E58is9001053;
+	Fri, 14 Jul 2023 05:08:44 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3rq0vm576n-1
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3rq0vm5769-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Fri, 14 Jul 2023 05:08:48 +0000
+	Fri, 14 Jul 2023 05:08:44 +0000
 Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 36E58lOg001094;
-	Fri, 14 Jul 2023 05:08:47 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 36E58igh001046;
+	Fri, 14 Jul 2023 05:08:44 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 36E58lde001092;
-	Fri, 14 Jul 2023 05:08:47 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 36E58iHc001045;
+	Fri, 14 Jul 2023 05:08:44 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
-	id A4934333B; Fri, 14 Jul 2023 10:38:46 +0530 (+0530)
+	id 7E451333B; Fri, 14 Jul 2023 10:38:43 +0530 (+0530)
 From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
         conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
@@ -71,29 +71,27 @@ Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
         linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         linux-phy@lists.infradead.org
-Subject: [PATCH v2 1/6] dt-bindings: PCI: qcom: Add sa8775p compatible
-Date: Fri, 14 Jul 2023 10:38:33 +0530
-Message-Id: <1689311319-22054-2-git-send-email-quic_msarkar@quicinc.com>
+Subject: [PATCH v2 0/6] arm64: qcom: sa8775p: add support for PCIe
+Date: Fri, 14 Jul 2023 10:38:32 +0530
+Message-Id: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
-References: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: UyCNh2zoUetlhmrd51DUgFsIrNx8t_xk
-X-Proofpoint-ORIG-GUID: UyCNh2zoUetlhmrd51DUgFsIrNx8t_xk
+X-Proofpoint-ORIG-GUID: 1PHCZOoD56ClsDRvoQ1aGbAcLtx4oUpg
+X-Proofpoint-GUID: 1PHCZOoD56ClsDRvoQ1aGbAcLtx4oUpg
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-14_02,2023-07-13_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- priorityscore=1501 mlxlogscore=999 clxscore=1015 adultscore=0 spamscore=0
- impostorscore=0 lowpriorityscore=0 bulkscore=0 malwarescore=0 phishscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307140046
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
+ adultscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015 bulkscore=0
+ phishscore=0 suspectscore=0 mlxlogscore=796 priorityscore=1501 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
+ definitions=main-2307140046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230713_220900_797257_6AC14AC8 
-X-CRM114-Status: GOOD (  13.58  )
+X-CRM114-CacheID: sfid-20230713_220900_872163_2DDE8D14 
+X-CRM114-Status: GOOD (  16.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,74 +109,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add sa8775p platform to the binding.
+Update the relavent DT bindings for PCIe, add new config to the phy
+driver add pcie and phy nodes to the .dtsi file and enable then in
+board .dts file for the sa8775p-ride platform.
 
-Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
----
- .../devicetree/bindings/pci/qcom,pcie.yaml         | 28 ++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+v1 -> v2:
+- correct indentationand sort compatible in qcom,pcie binding
+- correct clock name entry and sort compatible in pcie-phy binding
+- sort compatible and change commit message in qcom pcie driver
+- change offset name, added tx2 and rx2 offsets and sort compatible
+  in qmp pcie phy driver
+- correct ranges property, added MSI, dma-coherent, cpu-pcie property
+  removed iommus property moved pinctrl and gpio property to board dts
+  and correct the allignment in pcie dtsi nodes
+- added pinctrl and gpio property in board dts
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-index 81971be4..eadba38 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-@@ -29,6 +29,7 @@ properties:
-           - qcom,pcie-msm8996
-           - qcom,pcie-qcs404
-           - qcom,pcie-sa8540p
-+          - qcom,pcie-sa8775p
-           - qcom,pcie-sc7280
-           - qcom,pcie-sc8180x
-           - qcom,pcie-sc8280xp
-@@ -211,6 +212,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,pcie-sa8775p
-               - qcom,pcie-sc7280
-               - qcom,pcie-sc8180x
-               - qcom,pcie-sc8280xp
-@@ -748,7 +750,32 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,pcie-sa8775p
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 5
-+          maxItems: 5
-+        clock-names:
-+          items:
-+            - const: aux # Auxiliary clock
-+            - const: cfg # Configuration clock
-+            - const: bus_master # Master AXI clock
-+            - const: bus_slave # Slave AXI clock
-+            - const: slave_q2a # Slave Q2A clock
-+        resets:
-+          maxItems: 1
-+        reset-names:
-+          items:
-+            - const: pci # PCIe core reset
-+
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-               - qcom,pcie-sa8540p
-+              - qcom,pcie-sa8775p
-               - qcom,pcie-sc8280xp
-     then:
-       required:
-@@ -790,6 +817,7 @@ allOf:
-           contains:
-             enum:
-               - qcom,pcie-msm8996
-+              - qcom,pcie-sa8775p
-               - qcom,pcie-sc7280
-               - qcom,pcie-sc8180x
-               - qcom,pcie-sdm845
+Mrinmay Sarkar (6):
+  dt-bindings: PCI: qcom: Add sa8775p compatible
+  dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY
+  PCI: qcom: Add support for sa8775p SoC
+  phy: qcom-qmp-pcie: add support for sa8775p
+  arm64: dts: qcom: sa8775p: Add pcie0 and pcie1 nodes
+  arm64: dts: qcom: sa8775p-ride: enable pcie nodes
+
+ .../devicetree/bindings/pci/qcom,pcie.yaml         |  28 ++
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |  19 +-
+ arch/arm64/boot/dts/qcom/sa8775p-ride.dts          |  80 +++++
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi              | 204 +++++++++++-
+ drivers/pci/controller/dwc/pcie-qcom.c             |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 341 +++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h |   1 +
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v5_20.h |   2 +
+ 8 files changed, 673 insertions(+), 3 deletions(-)
+
 -- 
 2.7.4
 
