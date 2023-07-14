@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D154EB64DC
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 14:34:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8474C001DC
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 14:45:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y4ERVjnZuXWdANo4t7YukpzP0yiuhKLU0AObCSjdtg8=; b=GbGdt3wRNygkO0
-	BssUpcsXjgPerWk7hsebJXF4bylQbZI2I/MBTqrtFZutczhYm3mztD/S/1GmjJ7KxfzkfCFbcfNFs
-	jD/jujl1g4fh0lKyV+N18KjuJptnSX5XnimugZp1wfL2UmNy0Tbw7dkHcLzT0zQZ6sFy811+9mQGF
-	CLCwTZm4lIdEcdQS+abgeuewfvCI14vyd4zT5PEg+sb4QN66oJlKyBg/fb249KdZUCLuYWbTl23hl
-	vLgtibT34wMp+LvKisFFkRA4a3C4UPItzLHDIZL/W5ABRSk7uE7bBULf+lqsLQB8aAxcea0BxeLCu
-	unbrKb0Y+OnNrrbGSqiw==;
+	List-Owner; bh=HAJgEWaU43xmCC4ark5kMT1rQIndceWwlxcafHiy1uM=; b=AJ2HSmQZkkc3kd
+	VqFECg+7pg8O26XGZzBMQK+sLGXQfXREflrJJoIT8im6DT0xZQ0V8UTuTplg0TuiKj5Irk72OvzPp
+	I6JA9UyOAxpNqKtCg1XBAKQCHrKUlevguCGY/Q0E0BsxP0dLIaPlBFaaPX4I5TITP4vSki2I6Zh83
+	hiRiGz0aVSInlmmoY1eGe4YJ9LzZENTpaBJZbuGPOAdXNCY8yBr/X6EtY/D1BT2pttrz+NnnW8Nsb
+	lT9dc1cBm88y35V23FRzwW90eiXzPP37PKGtdVo8WXOj2lgRfj1Zvx1ae1erJacOtfn0hNhHqeqky
+	cQjdsyBxpxOrL/8bWY8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKJrv-006P9W-0Q;
-	Fri, 14 Jul 2023 14:34:03 +0000
-Received: from mail-il1-f176.google.com ([209.85.166.176])
+	id 1qKK3H-006Qil-1B;
+	Fri, 14 Jul 2023 14:45:47 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKJrt-006P8t-04
+	id 1qKK3E-006QiF-1n
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Jul 2023 14:34:02 +0000
-Received: by mail-il1-f176.google.com with SMTP id e9e14a558f8ab-34617b29276so7475335ab.0
-        for <linux-phy@lists.infradead.org>; Fri, 14 Jul 2023 07:33:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689345238; x=1691937238;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=zgiht/lCckduqQild9xWBFcr10Bz7Z0qNdMiS2Y+g2s=;
-        b=iZPmI8T1E1FR+Wu2l61muFLXFroVtSfJorPaQ5Iph0gwfTqPc05v+6kF8tcVPDUPzx
-         bCLAECX7RFyf/bsmyM2+NfTAsRw7ZuPYXrP+XMO3K2GAGVm0z2O0ZMTgQIZrGMyLZeRL
-         NjI9W5xNpbFE7pYiGLcPzudJ+npXl6Zbnw7u5fBKCkkQ/ETxkREzPPAeSZObsifjCuGu
-         0fjCq+ezM409po2w4AyvjEKNOFBvSF1HksoOCUVPzhIbKqiL48UJvY6Hi98pqsuxdJIE
-         U9dpze5VkoE8UaVqM9LCeuW71K4F9fsKB6ejeaIjhHvAG3gD9H6bqGo13gyk+V5VggW8
-         +izw==
-X-Gm-Message-State: ABy/qLYAJmi1BsHVFOcxrgPUnKpK4p6h7tSOdE3hxjypQVDJvDtR+1sa
-	FMslZtakIsPifSN9t6UCVg==
-X-Google-Smtp-Source: APBJJlHc87RGDE4ioh1yw30FaD7V2nkRtIdOKWEAEqqS4SeVwBEFRxF8hNU6UpuUILrr1/1c601qQw==
-X-Received: by 2002:a92:d083:0:b0:345:b4e0:35d3 with SMTP id h3-20020a92d083000000b00345b4e035d3mr1939585ilh.9.1689345238217;
-        Fri, 14 Jul 2023 07:33:58 -0700 (PDT)
-Received: from robh_at_kernel.org ([64.188.179.250])
-        by smtp.gmail.com with ESMTPSA id w17-20020a92c891000000b0034233fd80d3sm2788841ilo.22.2023.07.14.07.33.56
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Jul 2023 07:33:57 -0700 (PDT)
-Received: (nullmailer pid 3490019 invoked by uid 1000);
-	Fri, 14 Jul 2023 14:33:55 -0000
-Date: Fri, 14 Jul 2023 08:33:55 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stanley Chang <stanley_chang@realtek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Flavio Suligoi <f.suligoi@asem.it>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Roy Luo <royluo@google.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org, Matthias Kaehlcke <mka@chromium.org>, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>, Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Ray Chi <raychi@google.com>
-Subject: Re: [PATCH v7 5/5] dt-bindings: phy: realtek: Add Realtek DHC RTD
- SoC USB 3.0 PHY
-Message-ID: <168934521641.3489578.4865141978582966306.robh@kernel.org>
-References: <20230707064725.25291-1-stanley_chang@realtek.com>
- <20230707064725.25291-5-stanley_chang@realtek.com>
+	Fri, 14 Jul 2023 14:45:45 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BFFA661D3D;
+	Fri, 14 Jul 2023 14:45:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51C58C433C7;
+	Fri, 14 Jul 2023 14:45:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1689345943;
+	bh=DGbd0VWtacVrAzm6zW6x+FrQbCSf5aCaCOwo48a615k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=BaU6WuOYZ0qIb0SGT+qZ7g+1HDR1xa6fwdGlCBrv+juQ3mUwbywqWoMw55ThCYVpE
+	 EgLRU7fZxJUGskYxdVBe27myjZt+7xXjarUSP51q9fu23KOJFuaTiq6mAoR48oe+Z9
+	 yS+Ty74blHdkrLGfbgHfhtHezDQlRDjlIL5B+B1Jt9xc7SHjHrUYe07gjg7fM3Phhy
+	 ut1FcAlTG7ooKHCYtXQiFSX/ZwlnvC2Lh4eKmJh1/hFSGeoxOrhthzUr6milR/nZDD
+	 uo7BtjbyFdhcn0kCK1q/om+8KnS7PDAszSQsyZ1u3bAvCWue6VCMEr7Hvi19Vz4Utf
+	 rmJcyL5hRbOwg==
+Date: Fri, 14 Jul 2023 20:15:38 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 2/2] phy: starfive: Add mipi dphy rx support
+Message-ID: <ZLFfkhnxZbRS7s9y@matsya>
+References: <20230630093056.46904-1-changhuang.liang@starfivetech.com>
+ <20230630093056.46904-3-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230707064725.25291-5-stanley_chang@realtek.com>
+In-Reply-To: <20230630093056.46904-3-changhuang.liang@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230714_073401_086347_CA32E6DB 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20230714_074544_659251_842BF7A7 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,41 +82,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 07 Jul 2023 14:47:04 +0800, Stanley Chang wrote:
-> Document the USB PHY bindings for Realtek SoCs.
-> Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller and using USB 3.0 PHY transceiver.
+On 30-06-23, 02:30, Changhuang Liang wrote:
+> Add mipi dphy rx support for the StarFive JH7110 SoC. It is used to
+> transfer CSI camera data.
 > 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
+> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
 > ---
-> v6 to v7 change:
->     Revise the commit message.
-> v5 to v6 change:
->     Drop the labels of example.
-> v4 to v5 change:
->     1. Remove the compatible realtek,usb3phy.
->     2. Add the default of the property.
-> v3 to v4 change:
->     1. Remove the parameter and non hardware properties from dts.
->     2. Using the compatible data included the config and parameter
->        in driver.
-> v2 to v3 change:
->     1. Broken down into two patches, one for each of USB 2 & 3.
->     2. Add more description about Realtek RTD SoCs architecture.
->     3. Removed parameter v1 support for simplification.
->     4. Revised the compatible name for fallback compatible.
->     5. Remove some properties that can be set in the driver.
-> v1 to v2 change:
->     Add phy-cells for generic phy driver
-> ---
->  .../bindings/phy/realtek,usb3phy.yaml         | 107 ++++++++++++++++++
->  1 file changed, 107 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/realtek,usb3phy.yaml
-> 
+>  MAINTAINERS                                 |   7 +
+>  drivers/phy/Kconfig                         |   1 +
+>  drivers/phy/Makefile                        |   1 +
+>  drivers/phy/starfive/Kconfig                |  13 ++
+>  drivers/phy/starfive/Makefile               |   2 +
+>  drivers/phy/starfive/phy-starfive-dphy-rx.c | 230 ++++++++++++++++++++
+>  6 files changed, 254 insertions(+)
+>  create mode 100644 drivers/phy/starfive/Kconfig
+>  create mode 100644 drivers/phy/starfive/Makefile
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+This need rebase as files exist now
 
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
