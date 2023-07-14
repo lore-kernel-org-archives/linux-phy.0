@@ -4,70 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 148E6C001B0
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jul 2023 20:10:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C3FDEB64DA
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jul 2023 05:09:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MGc/K28cyqSgvPkb8FqNQVoDPfKfJntAG7Y9GSIxfVo=; b=N1cceafqoHIP3l
-	uSxtwxHwH/D0CtLfBbPqC1VWT/MZlJjQ4lwOl7iE1rnJYA8mlHLb4CDjgQglXAdmCT2qO85zwAESO
-	DeOvI5PoZj1s4zzLQUTr1lTmhykD02L5u+PJNf5Pvkuh4AngqHnZ71th7ZgaD9OrLCD6S5Non2nMc
-	dEJeiUavIlkyueMmkaBD7+eFTviD5Jg/CSyLM2jUMdQhF4UlcZI74vTOAAvP31R0phKsmhCU2m8S9
-	euaPbajaW2U9JvNVmpgcoqBKqvrD/l8rbwgFPlpuuJDMvKUTcS02CLZfa3bxf0kXCv724ANrIwphh
-	VuHdHRRu9/Sn1Sspltww==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u75pYHDwmwCigp0sCMejiCpBSSNda0gG3oJRIroXOGA=; b=AlVqZGg16JsQ+/
+	srOFBn1nRsV1pr1lOjIZdq8ZeKYjhAr9CysF+o0k7i7aEnuFwwgn2LolxwIcVTL2XJE4MJB0p5Vyi
+	qr+0oVmF5ywLCSlowu1s6sIkv8697h7gNnjgtoUvz2SfPDcg/7tTsvLZ53Kf+6v7ppgk8UQWIVFOb
+	Khge721iWpBLE3uxTO0cB662raFvX77YAtumLNjc2KFVThIld7+ZU4dIphmLE3MKXc0Jw66Ttl4J0
+	gDIHCCP0E4tLtFF00GFw4L0Jts1YcQe0YJkCYTKq+BGAgs/LvE9M1y95LMVgVO3GPvedTGjhubCeb
+	RUA2HS3+FmU/y1Zc/mqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qK2dn-004HeO-2Y;
-	Thu, 13 Jul 2023 20:10:19 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1qKB39-0052Em-0o;
+	Fri, 14 Jul 2023 05:09:03 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qK2dl-004Hc2-0i
+	id 1qKB36-0052E9-20
 	for linux-phy@lists.infradead.org;
-	Thu, 13 Jul 2023 20:10:18 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 36DKA4sN038606;
-	Thu, 13 Jul 2023 15:10:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1689279004;
-	bh=mIwOozXXFg3KmTwudLxq5mLOys7noNt7A73QFukctPs=;
-	h=From:To:CC:Subject:Date;
-	b=CcW11lxdxpHw+7TBQif7FPJWeZE6Lc5pWYwdgj1k2jigz1JTaCYpnzMDizIAssUeN
-	 940bCK4qSdHDiQ2HjmBBTsRVGTGyATInwTPU3M2fcHdp/fEclCnGVtnDsleJpPomzc
-	 vv+4vLLyAwMqPGkgYXdJLLyfrej/t9Ws2LlK2YQU=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 36DKA4VX068397
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 13 Jul 2023 15:10:04 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 13
- Jul 2023 15:10:04 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Thu, 13 Jul 2023 15:10:03 -0500
-Received: from fllv0040.itg.ti.com (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 36DKA3Ou022042;
-	Thu, 13 Jul 2023 15:10:03 -0500
-From: Andrew Davis <afd@ti.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Siddharth Vadapalli <s-vadapalli@ti.com>,
-        Roger Quadros <rogerq@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        Andrew
- Davis <afd@ti.com>
-Subject: [PATCH v2] phy: ti: gmii-sel: Allow parent to not be syscon node
-Date: Thu, 13 Jul 2023 15:09:57 -0500
-Message-ID: <20230713200957.134480-1-afd@ti.com>
-X-Mailer: git-send-email 2.39.2
-MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+	Fri, 14 Jul 2023 05:09:01 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36E3IxNF029344;
+	Fri, 14 Jul 2023 05:08:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=Pl1sHQHZIOFEno721n5dvwxYsyeHLBK5VUEn0y23m9M=;
+ b=hRfhhKJp25V7XRBL4vdTz5TxkcDvJ5mzE8dq70F60RSrlpTnrK8O9fvLb2t0oX/tv2Xp
+ pzVFVPCehsF5K2ZrhbH3qtkktwlxENrmTkCyKXhwQ/k53IdsUEkK3IiziKQBg8Hyr9Lw
+ qGinPIMLzMUPCzGxtnpiTbETsBRc2JoEXAZ3Z/AoWds4vuCef7AiaEN+5QL6mug+SggS
+ BoHapFXcFpbh8qajrmoTMlv5P3LHSKyXbDqNYWb5jss9USHhnYcTjA5ax8fEi8eBin9Q
+ FU8nuLmAnH6VkvoE3BOx8bAgp8TZCMOCERPdaMIDFkOnWadzFjjC3vsTmiyNUo45Ol29 3Q== 
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rtpu90vnt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 14 Jul 2023 05:08:52 +0000
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 36E58mqT001100;
+	Fri, 14 Jul 2023 05:08:48 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3rq0vm576n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Fri, 14 Jul 2023 05:08:48 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 36E58lOg001094;
+	Fri, 14 Jul 2023 05:08:47 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 36E58lde001092;
+	Fri, 14 Jul 2023 05:08:47 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
+	id A4934333B; Fri, 14 Jul 2023 10:38:46 +0530 (+0530)
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+        conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+        dmitry.baryshkov@linaro.org, Mrinmay Sarkar <quic_msarkar@quicinc.com>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+        Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org
+Subject: [PATCH v2 1/6] dt-bindings: PCI: qcom: Add sa8775p compatible
+Date: Fri, 14 Jul 2023 10:38:33 +0530
+Message-Id: <1689311319-22054-2-git-send-email-quic_msarkar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
+References: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: UyCNh2zoUetlhmrd51DUgFsIrNx8t_xk
+X-Proofpoint-ORIG-GUID: UyCNh2zoUetlhmrd51DUgFsIrNx8t_xk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-14_02,2023-07-13_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ priorityscore=1501 mlxlogscore=999 clxscore=1015 adultscore=0 spamscore=0
+ impostorscore=0 lowpriorityscore=0 bulkscore=0 malwarescore=0 phishscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307140046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230713_131017_306772_98595D31 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20230713_220900_797257_6AC14AC8 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,47 +105,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-If the parent node is not a syscon type, then fallback and check
-if we can get a regmap from our own node. This no longer forces
-us to make the parent of this node a syscon node when that might
-not be appropriate.
+Add sa8775p platform to the binding.
 
-Signed-off-by: Andrew Davis <afd@ti.com>
+Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 ---
+ .../devicetree/bindings/pci/qcom,pcie.yaml         | 28 ++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-Changes from v1:
- - Rebased on v6.5-rc1
-
- drivers/phy/ti/phy-gmii-sel.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index 6286cf25a4264..555b323f45da1 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -465,9 +465,12 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 
- 	priv->regmap = syscon_node_to_regmap(node->parent);
- 	if (IS_ERR(priv->regmap)) {
--		ret = PTR_ERR(priv->regmap);
--		dev_err(dev, "Failed to get syscon %d\n", ret);
--		return ret;
-+		priv->regmap = device_node_to_regmap(node);
-+		if (IS_ERR(priv->regmap)) {
-+			ret = PTR_ERR(priv->regmap);
-+			dev_err(dev, "Failed to get syscon %d\n", ret);
-+			return ret;
-+		}
- 	}
- 
- 	ret = phy_gmii_sel_init_ports(priv);
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index 81971be4..eadba38 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -29,6 +29,7 @@ properties:
+           - qcom,pcie-msm8996
+           - qcom,pcie-qcs404
+           - qcom,pcie-sa8540p
++          - qcom,pcie-sa8775p
+           - qcom,pcie-sc7280
+           - qcom,pcie-sc8180x
+           - qcom,pcie-sc8280xp
+@@ -211,6 +212,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,pcie-sa8775p
+               - qcom,pcie-sc7280
+               - qcom,pcie-sc8180x
+               - qcom,pcie-sc8280xp
+@@ -748,7 +750,32 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,pcie-sa8775p
++    then:
++      properties:
++        clocks:
++          minItems: 5
++          maxItems: 5
++        clock-names:
++          items:
++            - const: aux # Auxiliary clock
++            - const: cfg # Configuration clock
++            - const: bus_master # Master AXI clock
++            - const: bus_slave # Slave AXI clock
++            - const: slave_q2a # Slave Q2A clock
++        resets:
++          maxItems: 1
++        reset-names:
++          items:
++            - const: pci # PCIe core reset
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
+               - qcom,pcie-sa8540p
++              - qcom,pcie-sa8775p
+               - qcom,pcie-sc8280xp
+     then:
+       required:
+@@ -790,6 +817,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,pcie-msm8996
++              - qcom,pcie-sa8775p
+               - qcom,pcie-sc7280
+               - qcom,pcie-sc8180x
+               - qcom,pcie-sdm845
 -- 
-2.39.2
+2.7.4
 
 
 -- 
