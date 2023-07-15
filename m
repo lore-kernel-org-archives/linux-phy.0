@@ -4,85 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59907C00528
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 16:45:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5783C04E69
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 21:43:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BjjykL5iZJcvdPn67cuhWMnBbSZSjykoh47tFsCe1WA=; b=BAckX1wbnofpoL
-	/FsQuIE148SEUyx4rNcDQ8W8FoSp3+uPd/nimGzvu7UCYxQLv2J9KGjW8EvfSgBF2guxSwEtr+LOi
-	FdJLL6WCzUz8Tgmeckg07VD4KB68oJgYf28dewokreGZNomG9OJiTd8bsvPIQaZGqeb0UiPlMMVf1
-	W5oAtCx+99RlDaRKFtQdWax+LUE0ladVPPxSf3cStMXrlbWCkw2BDAAyY7Llv1HB+w4MtitNz4nBh
-	MnEGwhGNE3KtozKugYHp7qptDsJV29onb0F2n7lwQhGK/xRzMcNa6AUzbgWMo/CicRoCq+wp0eAVT
-	dGJVALXGj9AX5LKCErsg==;
+	List-Owner; bh=t25yYmLakB9U1lzCehzROlBd6ZY4GhHxM0AUMfHFeZg=; b=EGbCcDyu4kSbVN
+	NVdygv39WT0YicXLI1zAlHSGmK/PWi1ZJ6e5ObGY45ap/zy9H5AAt+0VmrZ7YJ0yiT/e+thUYK+v6
+	xMjPoq8/1xehNGG/HHGP4vWDqkmHibeqZJL0cxuW7LHyD9spmK3WZltmb7DIlPImAqRg1NURle/ty
+	ia9GuaUnGnxiv3pKoiXctQTa4cUv3MrniBQT9/Io/02q9sLx8T7AjhiuW+tChB38ETxElRLdoNQV8
+	GRotbNUR6TxtJnqvCpeo4iPpbrOzcePa7YlgGWzWnlUXs3q50n0TVouJJTJ0YALgATlx1Bf3styZ1
+	1w+s2bp11DxO/xmN3t7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKiOe-009AHo-2a;
-	Sat, 15 Jul 2023 16:45:28 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1qKn2l-009XtL-0g;
+	Sat, 15 Jul 2023 21:43:11 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKiOb-009AGv-35;
-	Sat, 15 Jul 2023 16:45:27 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4f954d7309fso3699621e87.1;
-        Sat, 15 Jul 2023 09:45:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1689439523; x=1692031523;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=EwMjCMmgFy+bMl1QJUCT4Klvjl5MSrobMO0CXLv/rL0=;
-        b=AM1M8mOZjpDYu0Mp1emKj57echxJen7yUrTluBU8QOKNMDqGadR/nImML+xWrYKNKe
-         G79/7KJAvQUDuqK6pF1N9n0yABzg3LVUQVIF2sMWxqhG0EmIqGHjKn561KTeL4cf/o4j
-         EYXR0Y4Csgdrn4Z5U2Dt+CnsJ4NMU/cmk8FiKBOQ3leLXk45UY29qfZOPVeW7HZdSaQD
-         cLLnUpYU1E0lUbspouZDgJBp1BlWJ1Jw0pOp0vh1cVHi5HvaLlwjDYMZENAHf/bgoABS
-         GoI0f9BONy4Ud/ZnouQPndIj+XDuNI10kFVhByIC9+g6fa41P4DBMLSAFQBP3Nwbojm9
-         FwZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689439523; x=1692031523;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=EwMjCMmgFy+bMl1QJUCT4Klvjl5MSrobMO0CXLv/rL0=;
-        b=eKUmOzX5ubmnmiGKzUbpSay7EpuuhhILE4woqgpFpDlG3Pufi98l/0nTASadKCKekg
-         K2kB5a5ZyB9RG48gtkI87TVd+tQNqSLsLT5MfTn2XagrnWGZchdgOGECJvRXeZ5/v3Z5
-         wvAhIYT9ieDCe3LQfpdgFmKxIlIyjVd3+WPxCzkb+99H61Nkrah60QxzbhZ+SgFHp+kq
-         b+/RcQTn7ACvX7z7aAD1E+/sbOVG9jBLOVpBPyegIIHCUWgSuJV+WuZhwJlWUn1U6Nuz
-         1/4E1Rg9MZ7pR6mXW1YcKVvabW9S6NhCVxaenD5sUOmoY7S4o0+HUDjX2muFhtXZqlPm
-         VMMg==
-X-Gm-Message-State: ABy/qLZTnnKdAZ3ZqTMSjYXrks6y+0nrpkGa2Afc8QYwEPhk3o1FzpqL
-	Zj7yhkRPHRHxuO12tCbI8ng=
-X-Google-Smtp-Source: APBJJlGykHR1KvoejifoTKBZ04W1CPB9vcJDULQA1JDvD+8gffcDEF1Tbfbi2KwGO78902M25vRQEw==
-X-Received: by 2002:a05:6512:15a2:b0:4f9:5807:aba7 with SMTP id bp34-20020a05651215a200b004f95807aba7mr2155118lfb.27.1689439522939;
-        Sat, 15 Jul 2023 09:45:22 -0700 (PDT)
-Received: from mobilestation ([85.249.20.164])
-        by smtp.gmail.com with ESMTPSA id p17-20020a19f011000000b004fbb2080185sm1921535lfc.213.2023.07.15.09.45.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 15 Jul 2023 09:45:22 -0700 (PDT)
-Date: Sat, 15 Jul 2023 19:45:19 +0300
-From: Serge Semin <fancer.lancer@gmail.com>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Shawn Lin <shawn.lin@rock-chips.com>, 
-	Simon Xue <xxm@rock-chips.com>, John Clark <inindev@gmail.com>, Qu Wenruo <wqu@suse.com>, 
-	devicetree@vger.kernel.org, linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, kernel@collabora.com
-Subject: Re: [PATCH v1 2/2] arm64: dts: rockchip: rk3588: add PCIe3 support
-Message-ID: <ypdmpxzpl7plcxzlgyhtx7zmyx4u25y7enivu2om3n3rtm4eas@o4xpm2guoope>
-References: <20230714175331.112923-1-sebastian.reichel@collabora.com>
- <20230714175331.112923-3-sebastian.reichel@collabora.com>
+	id 1qKn2i-009XsB-1Y;
+	Sat, 15 Jul 2023 21:43:09 +0000
+Received: from i53875a6a.versanet.de ([83.135.90.106] helo=phil.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1qKn1b-00035T-PU; Sat, 15 Jul 2023 23:41:59 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Justin Chen <justin.chen@broadcom.com>, Al Cooper <alcooperx@gmail.com>,
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Yu Chen <chenyu56@huawei.com>,
+ Binghui Wang <wangbinghui@hisilicon.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Lubomir Rintel <lkundrak@v3.sk>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Wolfgang Grandegger <wg@grandegger.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>, Alban Bedel <albeu@free.fr>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Robert Marko <robert.marko@sartura.hr>, Luka Perkov <luka.perkov@sartura.hr>,
+ Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Vincent Shih <vincent.sunplus@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
+ Rob Herring <robh@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ netdev@vger.kernel.org, linux-usb@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-can@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-tegra@vger.kernel.org
+Subject: Re: [PATCH] phy: Explicitly include correct DT includes
+Date: Sat, 15 Jul 2023 23:41:56 +0200
+Message-ID: <4021989.Mh6RI2rZIc@phil>
+In-Reply-To: <20230714174841.4061919-1-robh@kernel.org>
+References: <20230714174841.4061919-1-robh@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230714175331.112923-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230715_094526_022569_9F0CAF60 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20230715_144308_520984_59D6F3C3 
+X-CRM114-Status: GOOD (  12.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,181 +104,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 14, 2023 at 07:53:31PM +0200, Sebastian Reichel wrote:
-> Add both PCIe3 controllers together with the shared PHY.
+Am Freitag, 14. Juli 2023, 19:48:35 CEST schrieb Rob Herring:
+> The DT of_device.h and of_platform.h date back to the separate
+> of_platform_bus_type before it as merged into the regular platform bus.
+> As part of that merge prepping Arm DT support 13 years ago, they
+> "temporarily" include each other. They also include platform_device.h
+> and of.h. As a result, there's a pretty much random mix of those include
+> files used throughout the tree. In order to detangle these headers and
+> replace the implicit includes with struct declarations, users need to
+> explicitly include the correct includes.
 > 
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
->  arch/arm64/boot/dts/rockchip/rk3588.dtsi | 128 +++++++++++++++++++++++
->  1 file changed, 128 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> index 4d66ca6c2e4c..af6f52afbaff 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> @@ -7,6 +7,11 @@
->  #include "rk3588-pinctrl.dtsi"
->  
->  / {
-> +	pcie30_phy_grf: syscon@fd5b8000 {
-> +		compatible = "rockchip,rk3588-pcie3-phy-grf", "syscon";
-> +		reg = <0x0 0xfd5b8000 0x0 0x10000>;
-> +	};
-> +
->  	pipe_phy1_grf: syscon@fd5c0000 {
->  		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
->  		reg = <0x0 0xfd5c0000 0x0 0x100>;
-> @@ -80,6 +85,116 @@ i2s10_8ch: i2s@fde00000 {
->  		status = "disabled";
->  	};
->  
-> +	pcie3x4: pcie@fe150000 {
-> +		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
-> +		#address-cells = <3>;
-> +		#size-cells = <2>;
-> +		bus-range = <0x00 0x0f>;
-> +		clocks = <&cru ACLK_PCIE_4L_MSTR>, <&cru ACLK_PCIE_4L_SLV>,
-> +			 <&cru ACLK_PCIE_4L_DBI>, <&cru PCLK_PCIE_4L>,
-> +			 <&cru CLK_PCIE_AUX0>, <&cru CLK_PCIE4L_PIPE>;
-> +		clock-names = "aclk_mst", "aclk_slv",
-> +			      "aclk_dbi", "pclk",
-> +			      "aux", "pipe";
-> +		device_type = "pci";
-> +		interrupts = <GIC_SPI 263 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 262 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 260 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 259 IRQ_TYPE_LEVEL_HIGH 0>;
-> +		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
-> +		#interrupt-cells = <1>;
-> +		interrupt-map-mask = <0 0 0 7>;
-> +		interrupt-map = <0 0 0 1 &pcie3x4_intc 0>,
-> +				<0 0 0 2 &pcie3x4_intc 1>,
-> +				<0 0 0 3 &pcie3x4_intc 2>,
-> +				<0 0 0 4 &pcie3x4_intc 3>;
-> +		linux,pci-domain = <0>;
 
-> +		num-ib-windows = <16>;
-> +		num-ob-windows = <16>;
-> +		num-viewport = <8>;
+>  drivers/phy/rockchip/phy-rockchip-dphy-rx0.c          | 1 -
+>  drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c      | 2 +-
+>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c         | 1 -
+>  drivers/phy/rockchip/phy-rockchip-naneng-combphy.c    | 3 ++-
+>  drivers/phy/rockchip/phy-rockchip-snps-pcie3.c        | 3 ++-
 
-These are marked as deprecated in the bindings and unused by the
-driver anyway. The DW PCIe core driver auto-detects a number of
-available iATU memory windows. So you can freely drop these
-properties.
+Acked-by: Heiko Stuebner <heiko@sntech.de>
 
-> +		max-link-speed = <3>;
-> +		msi-map = <0x0000 &its1 0x0000 0x1000>;
-> +		num-lanes = <4>;
-> +		phys = <&pcie30phy>;
-> +		phy-names = "pcie-phy";
-> +		power-domains = <&power RK3588_PD_PCIE>;
-> +		ranges = <0x01000000 0x0 0xf0100000 0x0 0xf0100000 0x0 0x00100000>,
-> +			 <0x02000000 0x0 0xf0200000 0x0 0xf0200000 0x0 0x00e00000>,
-> +			 <0x03000000 0x0 0x40000000 0x9 0x00000000 0x0 0x40000000>;
-> +		reg = <0xa 0x40000000 0x0 0x00400000>,
-> +		      <0x0 0xfe150000 0x0 0x00010000>,
-> +		      <0x0 0xf0000000 0x0 0x00100000>;
-> +		reg-names = "dbi", "apb", "config";
-> +		resets = <&cru SRST_PCIE0_POWER_UP>, <&cru SRST_P_PCIE0>;
-> +		reset-names = "pwr", "pipe";
-> +		rockchip,pipe-grf = <&php_grf>;
-> +		status = "disabled";
-> +
-> +		pcie3x4_intc: legacy-interrupt-controller {
-> +			interrupt-controller;
-> +			#address-cells = <0>;
-> +			#interrupt-cells = <1>;
-> +			interrupt-parent = <&gic>;
-> +			interrupts = <GIC_SPI 260 IRQ_TYPE_EDGE_RISING 0>;
-> +		};
-> +	};
-> +
-> +	pcie3x2: pcie@fe160000 {
-> +		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
-> +		#address-cells = <3>;
-> +		#size-cells = <2>;
-> +		bus-range = <0x10 0x1f>;
-> +		clocks = <&cru ACLK_PCIE_2L_MSTR>, <&cru ACLK_PCIE_2L_SLV>,
-> +			 <&cru ACLK_PCIE_2L_DBI>, <&cru PCLK_PCIE_2L>,
-> +			 <&cru CLK_PCIE_AUX1>, <&cru CLK_PCIE2L_PIPE>;
-> +		clock-names = "aclk_mst", "aclk_slv",
-> +			      "aclk_dbi", "pclk",
-> +			      "aux", "pipe";
-> +		device_type = "pci";
-> +		interrupts = <GIC_SPI 258 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 255 IRQ_TYPE_LEVEL_HIGH 0>,
-> +			     <GIC_SPI 254 IRQ_TYPE_LEVEL_HIGH 0>;
-> +		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
-> +		#interrupt-cells = <1>;
-> +		interrupt-map-mask = <0 0 0 7>;
-> +		interrupt-map = <0 0 0 1 &pcie3x2_intc 0>,
-> +				<0 0 0 2 &pcie3x2_intc 1>,
-> +				<0 0 0 3 &pcie3x2_intc 2>,
-> +				<0 0 0 4 &pcie3x2_intc 3>;
-> +		linux,pci-domain = <1>;
 
-> +		num-ib-windows = <16>;
-> +		num-ob-windows = <16>;
-> +		num-viewport = <8>;
 
-ditto
-
--Serge(y)
-
-> +		max-link-speed = <3>;
-> +		msi-map = <0x1000 &its1 0x1000 0x1000>;
-> +		num-lanes = <2>;
-> +		phys = <&pcie30phy>;
-> +		phy-names = "pcie-phy";
-> +		power-domains = <&power RK3588_PD_PCIE>;
-> +		ranges = <0x01000000 0x0 0xf1100000 0x0 0xf1100000 0x0 0x00100000>,
-> +			 <0x02000000 0x0 0xf1200000 0x0 0xf1200000 0x0 0x00e00000>,
-> +			 <0x03000000 0x0 0x40000000 0x9 0x40000000 0x0 0x40000000>;
-> +		reg = <0xa 0x40400000 0x0 0x00400000>,
-> +		      <0x0 0xfe160000 0x0 0x00010000>,
-> +		      <0x0 0xf1000000 0x0 0x00100000>;
-> +		reg-names = "dbi", "apb", "config";
-> +		resets = <&cru SRST_PCIE1_POWER_UP>, <&cru SRST_P_PCIE1>;
-> +		reset-names = "pwr", "pipe";
-> +		rockchip,pipe-grf = <&php_grf>;
-> +		status = "disabled";
-> +
-> +		pcie3x2_intc: legacy-interrupt-controller {
-> +			interrupt-controller;
-> +			#address-cells = <0>;
-> +			#interrupt-cells = <1>;
-> +			interrupt-parent = <&gic>;
-> +			interrupts = <GIC_SPI 255 IRQ_TYPE_EDGE_RISING 0>;
-> +		};
-> +	};
-> +
->  	pcie2x1l0: pcie@fe170000 {
->  		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
->  		#address-cells = <3>;
-> @@ -221,4 +336,17 @@ combphy1_ps: phy@fee10000 {
->  		rockchip,pipe-phy-grf = <&pipe_phy1_grf>;
->  		status = "disabled";
->  	};
-> +
-> +	pcie30phy: phy@fee80000 {
-> +		compatible = "rockchip,rk3588-pcie3-phy";
-> +		reg = <0x0 0xfee80000 0x0 0x20000>;
-> +		#phy-cells = <0>;
-> +		clocks = <&cru PCLK_PCIE_COMBO_PIPE_PHY>;
-> +		clock-names = "pclk";
-> +		resets = <&cru SRST_PCIE30_PHY>;
-> +		reset-names = "phy";
-> +		rockchip,pipe-grf = <&php_grf>;
-> +		rockchip,phy-grf = <&pcie30_phy_grf>;
-> +		status = "disabled";
-> +	};
->  };
-> -- 
-> 2.40.1
-> 
 
 -- 
 linux-phy mailing list
