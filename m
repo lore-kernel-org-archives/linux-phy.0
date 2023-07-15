@@ -4,76 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F83CC0015E
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 10:29:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7F0C00528
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 12:36:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Db8npBn/P3MiGAzY74stmNbAovHpgNqE05xuKvBQw5g=; b=32tG1O1jX7i7fFXuAGuCogAMFa
-	zmASyphwGR7qHGMxCbwWstJT8101vu4+nMtO6BE3uYHwOiati7ymU2GGd8CyRALoHZaMOSvFVB/YW
-	+u8WSP6vXt0fJjrilT7hglzRN+77yRwR5rF8867ZX2SeWCChrbxSPZcRtASjxdNMh9lDF7mk/GDjO
-	8HgVOiZDhZQ2UPCtRjnlO62/Z0hnoWPoWSMZnDvjeFNHtHdXOdWcT9fBxY00v6VJ06mLT6gCl7QMP
-	sFZZYeLTzb1+JaYgNJx4MTC8vX2PcJoggkvZM2LgEcOL7B+u1KdVTVyY6clZCVZXg/3A2c0RMd6M8
-	fGfkcgGg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y//5oHiyrrttcj7mVUS7zSXvdbgyy1QLAZaw+1JpTAg=; b=bdm0R7xaxQEoyI
+	Wino+XE4IwlJ5oB2VB9EQqoZHDsB1pCNqD1DAg9395AMexiDTuWR5YUj+afDLZ+pRyj3kgTut075p
+	r8Dnch9ZdqcDNzbGIxvR/UniSuOjzleub61M/0H0Gn84vnM3C66U3OWiJm9aZQlKBZj5bT+utcYI/
+	GR0BVDsSZFh8/Udn9YkUPWxD+rI0FIAMgvFGL6v/c4KC9Z/JofkLoKAyTpMQd1Y0EYcsRuOJnx30F
+	EQMFY1yiWdSR4etvSAQmcSrJAPKdMu3+Pg04L7vY8Udxcq094HxXI5lMHMA+abit8APv1fIIMkMvj
+	Uf9rOeICbpImaU2zzj2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKcXF-008N40-1t;
-	Sat, 15 Jul 2023 10:29:57 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qKeVf-008fQY-0d;
+	Sat, 15 Jul 2023 12:36:27 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKcXC-008N36-0q;
-	Sat, 15 Jul 2023 10:29:55 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E1A0760B06;
-	Sat, 15 Jul 2023 10:29:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9C87C433C8;
-	Sat, 15 Jul 2023 10:29:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689416991;
-	bh=CH/l+e3PeGDEEGxcizi8F/Qwtn5DnbYB9Arg2+4cEzU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BS7tNxA4PhjrLdLFPXcSc/hOWx2p+Q5Y3/gWbVbGoEL07TdkjGj7pPdGkdoLJPCU9
-	 efQ4LK9E+DgYJI+4rFb6XFartpO56lpPaf261HnpICqDHppIbdxZ1DKLDfZLg+4EIs
-	 tJFXn3VzSc/Sg3Swv0XdccXFce8PH5bHpjL38PopjMwrEYLvOioSb0n73CyOcxun93
-	 TatS8CrNJmxux8zpjpNLY6fZThxN8QFp6lvroh7NIllI4YCIPh3K1A8OBJ6GaeKA5J
-	 IbVtzrc7Se2vRdSYvKvZ1Y5sTuvuuLu61QuXVbiPt3WRRoy46fMHZpMYbT7Jd5b+Mr
-	 TEtLSTLgYihoA==
-Date: Sat, 15 Jul 2023 11:29:44 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Rob Herring <robh@kernel.org>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Simon Xue <xxm@rock-chips.com>, John Clark <inindev@gmail.com>,
-	Qu Wenruo <wqu@suse.com>, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, kernel@collabora.com
-Subject: Re: [PATCH v1 1/2] dt-bindings: phy: rockchip: add RK3588 PCIe v3 phy
-Message-ID: <20230715-rudder-unbent-ff7754bec4b4@spud>
-References: <20230714175331.112923-1-sebastian.reichel@collabora.com>
- <20230714175331.112923-2-sebastian.reichel@collabora.com>
+	id 1qKeVb-008fOr-39
+	for linux-phy@lists.infradead.org;
+	Sat, 15 Jul 2023 12:36:25 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-4fb77f21c63so4758266e87.2
+        for <linux-phy@lists.infradead.org>; Sat, 15 Jul 2023 05:36:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1689424581; x=1692016581;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=OQh1RqnYtSQG/u4OzhJ8MZUxL/+/aRY/L+fqZJTYF4g=;
+        b=nT4Bg8WYmt+w7liTUcMwOy0n7JPxVjemZTuHxAfPlX6sDs4qi9R91DYWZr0mE4q0Vt
+         XKolK/2BgsetcbJ2A3jICOptLBHtcJhc1aG5l35usGaC/pXzVaP+/09mPB9us7kGWddm
+         7mNqDG9wfwAblk5JuGqvqS+5H18tub6PCIWr+mqrPPixy46quXe5miq8Reowf52xKspA
+         jPiZPL9KMxvEQ9EtbEBSPOb8DMVZ4CUTwLG0ODV3xYlqSpNkI92Izfw0N7LgxOu8JzVW
+         CEcMwhk9gWv+Hy7GYoxMnSX8V4avbWdaAL2VwMMFEKdxRgtZfy+N9r8tneTpcShU5swS
+         Q0Dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1689424581; x=1692016581;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=OQh1RqnYtSQG/u4OzhJ8MZUxL/+/aRY/L+fqZJTYF4g=;
+        b=GslJ84309mNol4pCfCX1jT7RWqIw5OAmlxeXKB7hmF2yZS9ih+hYXenfDJ9W0qprII
+         spkqNvthdp40oj5EeWtpniCixwuVzKUOtNMdgoNn2PP6VDkvb3JozR3riAyINvRetpH/
+         nxrqlWljs1N2PGRXkEWrliz1WHxRUZyVkDflyDxbZ1wMQvkfxOr0iyNM+lOvfV/M0WSa
+         iVmVPVhaoHjsxl+tCDsvcYVM7LAveo9ypEOP2tBIwIJZnCixb3cTPqBEcP+U6orQwv22
+         Fg3JNqcZTn150tmZqTROqzzUZSHbLlIKgBmLt0Ufbtnn6hDPCYB/xAMYkCnS48B4/t4e
+         msUg==
+X-Gm-Message-State: ABy/qLZyx4fIHdGWzeK71iRH/isVd1Ty896xgFWkHCW/Yqm3HJFauILn
+	AeDbcNHR0P4DBVCJUCeSgEE5MA==
+X-Google-Smtp-Source: APBJJlGk2A5i2kVSs9kXxMPfC00oOdJikOH/eqNKi7gO/8COjEdmJWtOg99/mke4kY2DyOA1vU4+Dw==
+X-Received: by 2002:a2e:9159:0:b0:2b6:ece0:a3c1 with SMTP id q25-20020a2e9159000000b002b6ece0a3c1mr6016039ljg.35.1689424581496;
+        Sat, 15 Jul 2023 05:36:21 -0700 (PDT)
+Received: from [192.168.1.101] (abxi167.neoplus.adsl.tpnet.pl. [83.9.2.167])
+        by smtp.gmail.com with ESMTPSA id n17-20020a2e8791000000b002b6ca937d60sm2487484lji.8.2023.07.15.05.36.19
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 15 Jul 2023 05:36:20 -0700 (PDT)
+Message-ID: <cfafdde2-4ded-517f-7c69-a751e53984e3@linaro.org>
+Date: Sat, 15 Jul 2023 14:36:18 +0200
 MIME-Version: 1.0
-In-Reply-To: <20230714175331.112923-2-sebastian.reichel@collabora.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v4 4/6] arm64: dts: qcom: ipq5332: Add USB related nodes
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
+ p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
+ neil.armstrong@linaro.org, nfraprado@collabora.com, rafal@milecki.pl,
+ quic_srichara@quicinc.com, quic_varada@quicinc.org, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <cover.1689160067.git.quic_varada@quicinc.com>
+ <1f99805b6437aa8d6eaa4663e8d27b98ee595f00.1689160067.git.quic_varada@quicinc.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <1f99805b6437aa8d6eaa4663e8d27b98ee595f00.1689160067.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230715_032954_366533_C22749AE 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20230715_053624_016161_7C8A4A79 
+X-CRM114-Status: GOOD (  16.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,54 +97,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2234832460885438088=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 12.07.2023 13:38, Varadarajan Narayanan wrote:
+> Add USB phy and controller nodes.
+> 
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+> v4:
+> 	Change node name
+> 	Remove blank line
+> 	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom qcom/ipq5332-rdp441.dtb' passed
+DT_SCHEMA_FILES accepts yaml files
 
---===============2234832460885438088==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="A9wMCNuEv+mNAcmd"
-Content-Disposition: inline
-
-
---A9wMCNuEv+mNAcmd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, Jul 14, 2023 at 07:53:30PM +0200, Sebastian Reichel wrote:
-> When the RK3568 PCIe v3 PHY supported has been upstreamed, RK3588
-> support was included, but the DT binding does not reflect this.
-> This adds the missing bits.
-
-Thanks for rectifying that!
-
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
---A9wMCNuEv+mNAcmd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZLJ1GAAKCRB4tDGHoIJi
-0qC2AQDLhuOu8q2be4MO3J7WuzO0cCDIq88igm6teBgavhzglQD/S0kOknT+dRpF
-RgFKkdHBfEi2/D6JSy9HXCkHgpbkdAM=
-=cYpP
------END PGP SIGNATURE-----
-
---A9wMCNuEv+mNAcmd--
-
-
---===============2234832460885438088==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Konrad
+> v1:
+> 	Rename phy node
+> 	Change compatible from m31,ipq5332-usb-hsphy -> qcom,ipq5332-usb-hsphy
+> 	Remove 'qscratch' from phy node
+> 	Fix alignment and upper-case hex no.s
+> 	Add clock definition for the phy
+> 	Remove snps,ref-clock-period-ns as it is not used. dwc3_ref_clk_period()
+> 	in dwc3/core.c takes the frequency from ref clock and calculates fladj
+> 	as appropriate.
+> ---
+>  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 53 +++++++++++++++++++++++++++++++++++
+>  1 file changed, 53 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> index 8bfc2db..8118356 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> @@ -405,6 +405,59 @@
+>  				status = "disabled";
+>  			};
+>  		};
+> +
+> +		usbphy0: usb-phy@7b000 {
+> +			compatible = "qcom,ipq5332-usb-hsphy";
+> +			reg = <0x0007b000 0x12c>;
+> +
+> +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
+> +			clock-names = "cfg_ahb";
+> +
+> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> +
+> +			status = "disabled";
+> +		};
+> +
+> +		usb2: usb2@8a00000 {
+> +			compatible = "qcom,ipq5332-dwc3", "qcom,dwc3";
+> +			reg = <0x08af8800 0x400>;
+> +
+> +			interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "hs_phy_irq";
+> +
+> +			clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> +				 <&gcc GCC_SNOC_USB_CLK>,
+> +				 <&gcc GCC_USB0_SLEEP_CLK>,
+> +				 <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> +			clock-names = "core",
+> +				      "iface",
+> +				      "sleep",
+> +				      "mock_utmi";
+> +
+> +			resets = <&gcc GCC_USB_BCR>;
+> +
+> +			qcom,select-utmi-as-pipe-clk;
+> +
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +
+> +			status = "disabled";
+> +
+> +			usb2_0_dwc: usb@8a00000 {
+> +				compatible = "snps,dwc3";
+> +				reg = <0x08a00000 0xe000>;
+> +				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> +				clock-names = "ref";
+> +				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
+> +				usb-phy = <&usbphy0>;
+> +				tx-fifo-resize;
+> +				snps,is-utmi-l1-suspend;
+> +				snps,hird-threshold = /bits/ 8 <0x0>;
+> +				snps,dis_u2_susphy_quirk;
+> +				snps,dis_u3_susphy_quirk;
+> +			};
+> +		};
+>  	};
+>  
+>  	timer {
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2234832460885438088==--
-
