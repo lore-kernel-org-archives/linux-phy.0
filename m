@@ -4,88 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7F0C00528
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 12:36:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59907C00528
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Jul 2023 16:45:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y//5oHiyrrttcj7mVUS7zSXvdbgyy1QLAZaw+1JpTAg=; b=bdm0R7xaxQEoyI
-	Wino+XE4IwlJ5oB2VB9EQqoZHDsB1pCNqD1DAg9395AMexiDTuWR5YUj+afDLZ+pRyj3kgTut075p
-	r8Dnch9ZdqcDNzbGIxvR/UniSuOjzleub61M/0H0Gn84vnM3C66U3OWiJm9aZQlKBZj5bT+utcYI/
-	GR0BVDsSZFh8/Udn9YkUPWxD+rI0FIAMgvFGL6v/c4KC9Z/JofkLoKAyTpMQd1Y0EYcsRuOJnx30F
-	EQMFY1yiWdSR4etvSAQmcSrJAPKdMu3+Pg04L7vY8Udxcq094HxXI5lMHMA+abit8APv1fIIMkMvj
-	Uf9rOeICbpImaU2zzj2A==;
+	List-Owner; bh=BjjykL5iZJcvdPn67cuhWMnBbSZSjykoh47tFsCe1WA=; b=BAckX1wbnofpoL
+	/FsQuIE148SEUyx4rNcDQ8W8FoSp3+uPd/nimGzvu7UCYxQLv2J9KGjW8EvfSgBF2guxSwEtr+LOi
+	FdJLL6WCzUz8Tgmeckg07VD4KB68oJgYf28dewokreGZNomG9OJiTd8bsvPIQaZGqeb0UiPlMMVf1
+	W5oAtCx+99RlDaRKFtQdWax+LUE0ladVPPxSf3cStMXrlbWCkw2BDAAyY7Llv1HB+w4MtitNz4nBh
+	MnEGwhGNE3KtozKugYHp7qptDsJV29onb0F2n7lwQhGK/xRzMcNa6AUzbgWMo/CicRoCq+wp0eAVT
+	dGJVALXGj9AX5LKCErsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKeVf-008fQY-0d;
-	Sat, 15 Jul 2023 12:36:27 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1qKiOe-009AHo-2a;
+	Sat, 15 Jul 2023 16:45:28 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qKeVb-008fOr-39
-	for linux-phy@lists.infradead.org;
-	Sat, 15 Jul 2023 12:36:25 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-4fb77f21c63so4758266e87.2
-        for <linux-phy@lists.infradead.org>; Sat, 15 Jul 2023 05:36:23 -0700 (PDT)
+	id 1qKiOb-009AGv-35;
+	Sat, 15 Jul 2023 16:45:27 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4f954d7309fso3699621e87.1;
+        Sat, 15 Jul 2023 09:45:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689424581; x=1692016581;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=OQh1RqnYtSQG/u4OzhJ8MZUxL/+/aRY/L+fqZJTYF4g=;
-        b=nT4Bg8WYmt+w7liTUcMwOy0n7JPxVjemZTuHxAfPlX6sDs4qi9R91DYWZr0mE4q0Vt
-         XKolK/2BgsetcbJ2A3jICOptLBHtcJhc1aG5l35usGaC/pXzVaP+/09mPB9us7kGWddm
-         7mNqDG9wfwAblk5JuGqvqS+5H18tub6PCIWr+mqrPPixy46quXe5miq8Reowf52xKspA
-         jPiZPL9KMxvEQ9EtbEBSPOb8DMVZ4CUTwLG0ODV3xYlqSpNkI92Izfw0N7LgxOu8JzVW
-         CEcMwhk9gWv+Hy7GYoxMnSX8V4avbWdaAL2VwMMFEKdxRgtZfy+N9r8tneTpcShU5swS
-         Q0Dg==
+        d=gmail.com; s=20221208; t=1689439523; x=1692031523;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=EwMjCMmgFy+bMl1QJUCT4Klvjl5MSrobMO0CXLv/rL0=;
+        b=AM1M8mOZjpDYu0Mp1emKj57echxJen7yUrTluBU8QOKNMDqGadR/nImML+xWrYKNKe
+         G79/7KJAvQUDuqK6pF1N9n0yABzg3LVUQVIF2sMWxqhG0EmIqGHjKn561KTeL4cf/o4j
+         EYXR0Y4Csgdrn4Z5U2Dt+CnsJ4NMU/cmk8FiKBOQ3leLXk45UY29qfZOPVeW7HZdSaQD
+         cLLnUpYU1E0lUbspouZDgJBp1BlWJ1Jw0pOp0vh1cVHi5HvaLlwjDYMZENAHf/bgoABS
+         GoI0f9BONy4Ud/ZnouQPndIj+XDuNI10kFVhByIC9+g6fa41P4DBMLSAFQBP3Nwbojm9
+         FwZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689424581; x=1692016581;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=OQh1RqnYtSQG/u4OzhJ8MZUxL/+/aRY/L+fqZJTYF4g=;
-        b=GslJ84309mNol4pCfCX1jT7RWqIw5OAmlxeXKB7hmF2yZS9ih+hYXenfDJ9W0qprII
-         spkqNvthdp40oj5EeWtpniCixwuVzKUOtNMdgoNn2PP6VDkvb3JozR3riAyINvRetpH/
-         nxrqlWljs1N2PGRXkEWrliz1WHxRUZyVkDflyDxbZ1wMQvkfxOr0iyNM+lOvfV/M0WSa
-         iVmVPVhaoHjsxl+tCDsvcYVM7LAveo9ypEOP2tBIwIJZnCixb3cTPqBEcP+U6orQwv22
-         Fg3JNqcZTn150tmZqTROqzzUZSHbLlIKgBmLt0Ufbtnn6hDPCYB/xAMYkCnS48B4/t4e
-         msUg==
-X-Gm-Message-State: ABy/qLZyx4fIHdGWzeK71iRH/isVd1Ty896xgFWkHCW/Yqm3HJFauILn
-	AeDbcNHR0P4DBVCJUCeSgEE5MA==
-X-Google-Smtp-Source: APBJJlGk2A5i2kVSs9kXxMPfC00oOdJikOH/eqNKi7gO/8COjEdmJWtOg99/mke4kY2DyOA1vU4+Dw==
-X-Received: by 2002:a2e:9159:0:b0:2b6:ece0:a3c1 with SMTP id q25-20020a2e9159000000b002b6ece0a3c1mr6016039ljg.35.1689424581496;
-        Sat, 15 Jul 2023 05:36:21 -0700 (PDT)
-Received: from [192.168.1.101] (abxi167.neoplus.adsl.tpnet.pl. [83.9.2.167])
-        by smtp.gmail.com with ESMTPSA id n17-20020a2e8791000000b002b6ca937d60sm2487484lji.8.2023.07.15.05.36.19
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 15 Jul 2023 05:36:20 -0700 (PDT)
-Message-ID: <cfafdde2-4ded-517f-7c69-a751e53984e3@linaro.org>
-Date: Sat, 15 Jul 2023 14:36:18 +0200
+        d=1e100.net; s=20221208; t=1689439523; x=1692031523;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=EwMjCMmgFy+bMl1QJUCT4Klvjl5MSrobMO0CXLv/rL0=;
+        b=eKUmOzX5ubmnmiGKzUbpSay7EpuuhhILE4woqgpFpDlG3Pufi98l/0nTASadKCKekg
+         K2kB5a5ZyB9RG48gtkI87TVd+tQNqSLsLT5MfTn2XagrnWGZchdgOGECJvRXeZ5/v3Z5
+         wvAhIYT9ieDCe3LQfpdgFmKxIlIyjVd3+WPxCzkb+99H61Nkrah60QxzbhZ+SgFHp+kq
+         b+/RcQTn7ACvX7z7aAD1E+/sbOVG9jBLOVpBPyegIIHCUWgSuJV+WuZhwJlWUn1U6Nuz
+         1/4E1Rg9MZ7pR6mXW1YcKVvabW9S6NhCVxaenD5sUOmoY7S4o0+HUDjX2muFhtXZqlPm
+         VMMg==
+X-Gm-Message-State: ABy/qLZTnnKdAZ3ZqTMSjYXrks6y+0nrpkGa2Afc8QYwEPhk3o1FzpqL
+	Zj7yhkRPHRHxuO12tCbI8ng=
+X-Google-Smtp-Source: APBJJlGykHR1KvoejifoTKBZ04W1CPB9vcJDULQA1JDvD+8gffcDEF1Tbfbi2KwGO78902M25vRQEw==
+X-Received: by 2002:a05:6512:15a2:b0:4f9:5807:aba7 with SMTP id bp34-20020a05651215a200b004f95807aba7mr2155118lfb.27.1689439522939;
+        Sat, 15 Jul 2023 09:45:22 -0700 (PDT)
+Received: from mobilestation ([85.249.20.164])
+        by smtp.gmail.com with ESMTPSA id p17-20020a19f011000000b004fbb2080185sm1921535lfc.213.2023.07.15.09.45.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 15 Jul 2023 09:45:22 -0700 (PDT)
+Date: Sat, 15 Jul 2023 19:45:19 +0300
+From: Serge Semin <fancer.lancer@gmail.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Shawn Lin <shawn.lin@rock-chips.com>, 
+	Simon Xue <xxm@rock-chips.com>, John Clark <inindev@gmail.com>, Qu Wenruo <wqu@suse.com>, 
+	devicetree@vger.kernel.org, linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, kernel@collabora.com
+Subject: Re: [PATCH v1 2/2] arm64: dts: rockchip: rk3588: add PCIe3 support
+Message-ID: <ypdmpxzpl7plcxzlgyhtx7zmyx4u25y7enivu2om3n3rtm4eas@o4xpm2guoope>
+References: <20230714175331.112923-1-sebastian.reichel@collabora.com>
+ <20230714175331.112923-3-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH v4 4/6] arm64: dts: qcom: ipq5332: Add USB related nodes
-Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
- p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
- neil.armstrong@linaro.org, nfraprado@collabora.com, rafal@milecki.pl,
- quic_srichara@quicinc.com, quic_varada@quicinc.org, quic_wcheng@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <cover.1689160067.git.quic_varada@quicinc.com>
- <1f99805b6437aa8d6eaa4663e8d27b98ee595f00.1689160067.git.quic_varada@quicinc.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <1f99805b6437aa8d6eaa4663e8d27b98ee595f00.1689160067.git.quic_varada@quicinc.com>
+Content-Disposition: inline
+In-Reply-To: <20230714175331.112923-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230715_053624_016161_7C8A4A79 
-X-CRM114-Status: GOOD (  16.11  )
+X-CRM114-CacheID: sfid-20230715_094526_022569_9F0CAF60 
+X-CRM114-Status: GOOD (  16.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,95 +99,181 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12.07.2023 13:38, Varadarajan Narayanan wrote:
-> Add USB phy and controller nodes.
+On Fri, Jul 14, 2023 at 07:53:31PM +0200, Sebastian Reichel wrote:
+> Add both PCIe3 controllers together with the shared PHY.
 > 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
-> v4:
-> 	Change node name
-> 	Remove blank line
-> 	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom qcom/ipq5332-rdp441.dtb' passed
-DT_SCHEMA_FILES accepts yaml files
-
-Konrad
-> v1:
-> 	Rename phy node
-> 	Change compatible from m31,ipq5332-usb-hsphy -> qcom,ipq5332-usb-hsphy
-> 	Remove 'qscratch' from phy node
-> 	Fix alignment and upper-case hex no.s
-> 	Add clock definition for the phy
-> 	Remove snps,ref-clock-period-ns as it is not used. dwc3_ref_clk_period()
-> 	in dwc3/core.c takes the frequency from ref clock and calculates fladj
-> 	as appropriate.
-> ---
->  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 53 +++++++++++++++++++++++++++++++++++
->  1 file changed, 53 insertions(+)
+>  arch/arm64/boot/dts/rockchip/rk3588.dtsi | 128 +++++++++++++++++++++++
+>  1 file changed, 128 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> index 8bfc2db..8118356 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> @@ -405,6 +405,59 @@
->  				status = "disabled";
->  			};
->  		};
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+> index 4d66ca6c2e4c..af6f52afbaff 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+> @@ -7,6 +7,11 @@
+>  #include "rk3588-pinctrl.dtsi"
+>  
+>  / {
+> +	pcie30_phy_grf: syscon@fd5b8000 {
+> +		compatible = "rockchip,rk3588-pcie3-phy-grf", "syscon";
+> +		reg = <0x0 0xfd5b8000 0x0 0x10000>;
+> +	};
 > +
-> +		usbphy0: usb-phy@7b000 {
-> +			compatible = "qcom,ipq5332-usb-hsphy";
-> +			reg = <0x0007b000 0x12c>;
-> +
-> +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
-> +			clock-names = "cfg_ahb";
-> +
-> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
-> +
-> +			status = "disabled";
-> +		};
-> +
-> +		usb2: usb2@8a00000 {
-> +			compatible = "qcom,ipq5332-dwc3", "qcom,dwc3";
-> +			reg = <0x08af8800 0x400>;
-> +
-> +			interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "hs_phy_irq";
-> +
-> +			clocks = <&gcc GCC_USB0_MASTER_CLK>,
-> +				 <&gcc GCC_SNOC_USB_CLK>,
-> +				 <&gcc GCC_USB0_SLEEP_CLK>,
-> +				 <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> +			clock-names = "core",
-> +				      "iface",
-> +				      "sleep",
-> +				      "mock_utmi";
-> +
-> +			resets = <&gcc GCC_USB_BCR>;
-> +
-> +			qcom,select-utmi-as-pipe-clk;
-> +
-> +			#address-cells = <1>;
-> +			#size-cells = <1>;
-> +			ranges;
-> +
-> +			status = "disabled";
-> +
-> +			usb2_0_dwc: usb@8a00000 {
-> +				compatible = "snps,dwc3";
-> +				reg = <0x08a00000 0xe000>;
-> +				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
-> +				clock-names = "ref";
-> +				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
-> +				usb-phy = <&usbphy0>;
-> +				tx-fifo-resize;
-> +				snps,is-utmi-l1-suspend;
-> +				snps,hird-threshold = /bits/ 8 <0x0>;
-> +				snps,dis_u2_susphy_quirk;
-> +				snps,dis_u3_susphy_quirk;
-> +			};
-> +		};
+>  	pipe_phy1_grf: syscon@fd5c0000 {
+>  		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
+>  		reg = <0x0 0xfd5c0000 0x0 0x100>;
+> @@ -80,6 +85,116 @@ i2s10_8ch: i2s@fde00000 {
+>  		status = "disabled";
 >  	};
 >  
->  	timer {
+> +	pcie3x4: pcie@fe150000 {
+> +		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		bus-range = <0x00 0x0f>;
+> +		clocks = <&cru ACLK_PCIE_4L_MSTR>, <&cru ACLK_PCIE_4L_SLV>,
+> +			 <&cru ACLK_PCIE_4L_DBI>, <&cru PCLK_PCIE_4L>,
+> +			 <&cru CLK_PCIE_AUX0>, <&cru CLK_PCIE4L_PIPE>;
+> +		clock-names = "aclk_mst", "aclk_slv",
+> +			      "aclk_dbi", "pclk",
+> +			      "aux", "pipe";
+> +		device_type = "pci";
+> +		interrupts = <GIC_SPI 263 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 262 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 260 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 259 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
+> +		#interrupt-cells = <1>;
+> +		interrupt-map-mask = <0 0 0 7>;
+> +		interrupt-map = <0 0 0 1 &pcie3x4_intc 0>,
+> +				<0 0 0 2 &pcie3x4_intc 1>,
+> +				<0 0 0 3 &pcie3x4_intc 2>,
+> +				<0 0 0 4 &pcie3x4_intc 3>;
+> +		linux,pci-domain = <0>;
+
+> +		num-ib-windows = <16>;
+> +		num-ob-windows = <16>;
+> +		num-viewport = <8>;
+
+These are marked as deprecated in the bindings and unused by the
+driver anyway. The DW PCIe core driver auto-detects a number of
+available iATU memory windows. So you can freely drop these
+properties.
+
+> +		max-link-speed = <3>;
+> +		msi-map = <0x0000 &its1 0x0000 0x1000>;
+> +		num-lanes = <4>;
+> +		phys = <&pcie30phy>;
+> +		phy-names = "pcie-phy";
+> +		power-domains = <&power RK3588_PD_PCIE>;
+> +		ranges = <0x01000000 0x0 0xf0100000 0x0 0xf0100000 0x0 0x00100000>,
+> +			 <0x02000000 0x0 0xf0200000 0x0 0xf0200000 0x0 0x00e00000>,
+> +			 <0x03000000 0x0 0x40000000 0x9 0x00000000 0x0 0x40000000>;
+> +		reg = <0xa 0x40000000 0x0 0x00400000>,
+> +		      <0x0 0xfe150000 0x0 0x00010000>,
+> +		      <0x0 0xf0000000 0x0 0x00100000>;
+> +		reg-names = "dbi", "apb", "config";
+> +		resets = <&cru SRST_PCIE0_POWER_UP>, <&cru SRST_P_PCIE0>;
+> +		reset-names = "pwr", "pipe";
+> +		rockchip,pipe-grf = <&php_grf>;
+> +		status = "disabled";
+> +
+> +		pcie3x4_intc: legacy-interrupt-controller {
+> +			interrupt-controller;
+> +			#address-cells = <0>;
+> +			#interrupt-cells = <1>;
+> +			interrupt-parent = <&gic>;
+> +			interrupts = <GIC_SPI 260 IRQ_TYPE_EDGE_RISING 0>;
+> +		};
+> +	};
+> +
+> +	pcie3x2: pcie@fe160000 {
+> +		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		bus-range = <0x10 0x1f>;
+> +		clocks = <&cru ACLK_PCIE_2L_MSTR>, <&cru ACLK_PCIE_2L_SLV>,
+> +			 <&cru ACLK_PCIE_2L_DBI>, <&cru PCLK_PCIE_2L>,
+> +			 <&cru CLK_PCIE_AUX1>, <&cru CLK_PCIE2L_PIPE>;
+> +		clock-names = "aclk_mst", "aclk_slv",
+> +			      "aclk_dbi", "pclk",
+> +			      "aux", "pipe";
+> +		device_type = "pci";
+> +		interrupts = <GIC_SPI 258 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 255 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 254 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
+> +		#interrupt-cells = <1>;
+> +		interrupt-map-mask = <0 0 0 7>;
+> +		interrupt-map = <0 0 0 1 &pcie3x2_intc 0>,
+> +				<0 0 0 2 &pcie3x2_intc 1>,
+> +				<0 0 0 3 &pcie3x2_intc 2>,
+> +				<0 0 0 4 &pcie3x2_intc 3>;
+> +		linux,pci-domain = <1>;
+
+> +		num-ib-windows = <16>;
+> +		num-ob-windows = <16>;
+> +		num-viewport = <8>;
+
+ditto
+
+-Serge(y)
+
+> +		max-link-speed = <3>;
+> +		msi-map = <0x1000 &its1 0x1000 0x1000>;
+> +		num-lanes = <2>;
+> +		phys = <&pcie30phy>;
+> +		phy-names = "pcie-phy";
+> +		power-domains = <&power RK3588_PD_PCIE>;
+> +		ranges = <0x01000000 0x0 0xf1100000 0x0 0xf1100000 0x0 0x00100000>,
+> +			 <0x02000000 0x0 0xf1200000 0x0 0xf1200000 0x0 0x00e00000>,
+> +			 <0x03000000 0x0 0x40000000 0x9 0x40000000 0x0 0x40000000>;
+> +		reg = <0xa 0x40400000 0x0 0x00400000>,
+> +		      <0x0 0xfe160000 0x0 0x00010000>,
+> +		      <0x0 0xf1000000 0x0 0x00100000>;
+> +		reg-names = "dbi", "apb", "config";
+> +		resets = <&cru SRST_PCIE1_POWER_UP>, <&cru SRST_P_PCIE1>;
+> +		reset-names = "pwr", "pipe";
+> +		rockchip,pipe-grf = <&php_grf>;
+> +		status = "disabled";
+> +
+> +		pcie3x2_intc: legacy-interrupt-controller {
+> +			interrupt-controller;
+> +			#address-cells = <0>;
+> +			#interrupt-cells = <1>;
+> +			interrupt-parent = <&gic>;
+> +			interrupts = <GIC_SPI 255 IRQ_TYPE_EDGE_RISING 0>;
+> +		};
+> +	};
+> +
+>  	pcie2x1l0: pcie@fe170000 {
+>  		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
+>  		#address-cells = <3>;
+> @@ -221,4 +336,17 @@ combphy1_ps: phy@fee10000 {
+>  		rockchip,pipe-phy-grf = <&pipe_phy1_grf>;
+>  		status = "disabled";
+>  	};
+> +
+> +	pcie30phy: phy@fee80000 {
+> +		compatible = "rockchip,rk3588-pcie3-phy";
+> +		reg = <0x0 0xfee80000 0x0 0x20000>;
+> +		#phy-cells = <0>;
+> +		clocks = <&cru PCLK_PCIE_COMBO_PIPE_PHY>;
+> +		clock-names = "pclk";
+> +		resets = <&cru SRST_PCIE30_PHY>;
+> +		reset-names = "phy";
+> +		rockchip,pipe-grf = <&php_grf>;
+> +		rockchip,phy-grf = <&pcie30_phy_grf>;
+> +		status = "disabled";
+> +	};
+>  };
+> -- 
+> 2.40.1
+> 
 
 -- 
 linux-phy mailing list
