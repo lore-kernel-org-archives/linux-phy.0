@@ -4,114 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14E5BEB64DD
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Jul 2023 17:09:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB81EB64DD
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 02:07:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wCQTFli8nr+ir5yZ94FY/KHSp/4AVdMe9kn6Arh36VU=; b=J1YSnvkUre33kUuyVJFN4JK6A3
-	lBxaH+LXlmW0lwtzl54L8t06aEQXZtFZuRbhvAF1nGC7C+twXwvoZh6NjDMc13y/2VJHcEghCDhxp
-	3EZpXjCSFPHbQkcPLRZZQqe9pW5TrWNIdat+kIhrSeC7LCru2BVW+aSQVEupq0vTAOcPSVReG6Qmn
-	E//pxtCceI2CKu654Sd98/XgQZNvOGUQ9VD8q+kGcRiG4hxHBf4Llz4Lt+uSZRG7u8csfT9X1xsx5
-	7uqZxaRTrzYO/EG/R/ouWZSOuzIBAsB8gIsIWyGdVAP3j3kwqybvg5QwzVwznz5b4h7qsIfBHiZtw
-	D+75f+bg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VrH9hNwcVTPDh5GHreqkSNshBlTQT9uUmIAXTK4epL4=; b=G2JeT/Nt8J0n74
+	OBOqvuf7Afdqf9vFaCxBMsyBX3392SHneMJtRZa71J0FKPsGzJV37A4cm9uYk2o3yt6woYJb4Dz/h
+	Q0+5rX2dMl0o5AGOhYOVYJw6V5yy1q4ZtFpA8fCwoyKvHMAl/vLwWNOBFUiEz0plybg5D1CigVuEX
+	ciFPYhai/YDAcFxxgqoFxRn7Hz2muL54tmwjAJNowYlAhyRt4kCoVGeeSbcvqT4fp2veOItc6ZZPQ
+	adTSx8cQmfOM81+5vhXp75LI6u8s+lxE+whOSJNQJYnCprIqNx0f2o6vC7kyCz3Mr4xdcV0VvjZUF
+	xOYuqCAiPF58cRFaMyMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qL5F7-00DGe6-1c;
-	Sun, 16 Jul 2023 17:09:09 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qL5F3-00DGaL-1R
+	id 1qLDdy-000d3a-1z;
+	Mon, 17 Jul 2023 02:07:22 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qLDdt-000cmu-0a
 	for linux-phy@lists.infradead.org;
-	Sun, 16 Jul 2023 17:09:07 +0000
-Received: from moin.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::7b] helo=bjornoya.blackshift.org)
-	by metis.ext.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mkl@pengutronix.de>)
-	id 1qL5EK-0006nj-5v; Sun, 16 Jul 2023 19:08:20 +0200
-Received: from pengutronix.de (unknown [172.20.34.65])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	(Authenticated sender: mkl-all@blackshift.org)
-	by smtp.blackshift.org (Postfix) with ESMTPSA id D858F1F1E4D;
-	Sun, 16 Jul 2023 17:08:14 +0000 (UTC)
-Date: Sun, 16 Jul 2023 19:08:13 +0200
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Rob Herring <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Jerome Brunet <jbrunet@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Justin Chen <justin.chen@broadcom.com>,
-	Al Cooper <alcooperx@gmail.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Yu Chen <chenyu56@huawei.com>,
-	Binghui Wang <wangbinghui@hisilicon.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Lubomir Rintel <lkundrak@v3.sk>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Wolfgang Grandegger <wg@grandegger.com>,
-	Alban Bedel <albeu@free.fr>, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Robert Marko <robert.marko@sartura.hr>,
-	Luka Perkov <luka.perkov@sartura.hr>,
-	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
-	Masami Hiramatsu <mhiramat@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Vincent Shih <vincent.sunplus@gmail.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
-	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
-	netdev@vger.kernel.org, linux-usb@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	linux-can@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-tegra@vger.kernel.org
-Subject: Re: [PATCH] phy: Explicitly include correct DT includes
-Message-ID: <20230716-rippling-wafer-1c986e593fc5-mkl@pengutronix.de>
-References: <20230714174841.4061919-1-robh@kernel.org>
+	Mon, 17 Jul 2023 02:07:20 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id EE26624E2E0;
+	Mon, 17 Jul 2023 10:06:21 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 17 Jul
+ 2023 09:34:53 +0800
+Received: from [192.168.125.107] (113.72.147.86) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 17 Jul
+ 2023 09:34:52 +0800
+Message-ID: <ff879340-2371-6966-84fb-d59de1c15a0f@starfivetech.com>
+Date: Mon, 17 Jul 2023 09:34:50 +0800
 MIME-Version: 1.0
-In-Reply-To: <20230714174841.4061919-1-robh@kernel.org>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:b01:1d::7b
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v6 2/2] phy: starfive: Add mipi dphy rx support
+To: Vinod Koul <vkoul@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Jack Zhu <jack.zhu@starfivetech.com>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+References: <20230630093056.46904-1-changhuang.liang@starfivetech.com>
+ <20230630093056.46904-3-changhuang.liang@starfivetech.com>
+ <ZLFfkhnxZbRS7s9y@matsya>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <ZLFfkhnxZbRS7s9y@matsya>
+X-Originating-IP: [113.72.147.86]
+X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230716_100905_521810_45F474D3 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20230716_190717_504972_202E71B7 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,76 +76,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8953034283052238081=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8953034283052238081==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="nbfpe5avx7koqgt4"
-Content-Disposition: inline
 
+On 2023/7/14 22:45, Vinod Koul wrote:
+> On 30-06-23, 02:30, Changhuang Liang wrote:
+>> Add mipi dphy rx support for the StarFive JH7110 SoC. It is used to
+>> transfer CSI camera data.
+>>
+>> Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+>> ---
+>>  MAINTAINERS                                 |   7 +
+>>  drivers/phy/Kconfig                         |   1 +
+>>  drivers/phy/Makefile                        |   1 +
+>>  drivers/phy/starfive/Kconfig                |  13 ++
+>>  drivers/phy/starfive/Makefile               |   2 +
+>>  drivers/phy/starfive/phy-starfive-dphy-rx.c | 230 ++++++++++++++++++++
+>>  6 files changed, 254 insertions(+)
+>>  create mode 100644 drivers/phy/starfive/Kconfig
+>>  create mode 100644 drivers/phy/starfive/Makefile
+> 
+> This need rebase as files exist now
+> 
 
---nbfpe5avx7koqgt4
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+OK, I will rebase it.
 
-On 14.07.2023 11:48:35, Rob Herring wrote:
-> The DT of_device.h and of_platform.h date back to the separate
-> of_platform_bus_type before it as merged into the regular platform bus.
-> As part of that merge prepping Arm DT support 13 years ago, they
-> "temporarily" include each other. They also include platform_device.h
-> and of.h. As a result, there's a pretty much random mix of those include
-> files used throughout the tree. In order to detangle these headers and
-> replace the implicit includes with struct declarations, users need to
-> explicitly include the correct includes.
->=20
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  drivers/phy/phy-can-transceiver.c                     | 1 +
-
-Acked-by: Marc Kleine-Budde <mkl@pengutronix.de> # for drivers/phy/phy-can-=
-transceiver.c
-
-regards,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde          |
-Embedded Linux                   | https://www.pengutronix.de |
-Vertretung N=C3=BCrnberg              | Phone: +49-5121-206917-129 |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-9   |
-
---nbfpe5avx7koqgt4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEDs2BvajyNKlf9TJQvlAcSiqKBOgFAmS0I/oACgkQvlAcSiqK
-BOjjrwgArExbry3lxXJ0IU/QstoPtXDWo1kq+VrGdKo90TUKc6zRFxqvnUNRrjBk
-9aVhw60wUadmaqmq+5XBpVPES7N6/lzVGQxqKvMo90pMkksfG+isH43EGgJKSCGW
-50aecO37i/0V2xhrIoHdcChv/8G2ND7TCQRoREFPHZZAZCY8ounBXRoNZD0XmC8y
-SxL3qs9NG4rSdKSzQuXZ9tNqThZ5R+dU+jXGeBYK2/yhaiBr9bLokg9qS4ZA2Keh
-OIbgZeiYE8RrbwcPL1CrMYM/mY1MEyVqOTrWb6xzJZYYzJENZi11xoPi5nB+x2zP
-F5frwLP70qIiMDMihQLMvpd/SRkwEA==
-=Qdmr
------END PGP SIGNATURE-----
-
---nbfpe5avx7koqgt4--
-
-
---===============8953034283052238081==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Changhuang
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8953034283052238081==--
-
