@@ -4,91 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 003A5EB64DC
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 07:23:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60EE6EB64DC
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 07:25:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D9lZ/y/76+NIY78Q+gedLobBWyU0P1Sz5KhCngoEexI=; b=wU7XfZhYMkEIN/
-	8xJ7Q4SD2FDcJrf8GlGKrKIDI91liJ4VYaDHvXUG/uObdw4U/rIUVnPB0Vo54cQ94rfXi3k5bfgYW
-	lAdub50hc1YbroCDfPSoENvAtAA5f7icrhTpfifBiFhBHw/DeEm6cahIhWTlrtJc0+GGitJkmJuDL
-	rL0gYn9QZQPwUYlRRUiMhFdi0GFDGrEQ97gEk0lOshcR8hsTHwGwdf9aBssNBa401gC/C9/4FQ1Nj
-	/aJT+NJz8JDL3Z+kAZjK4AS+96J+n1Gz5MojgTyh/x7lbVg/xKydbhhwIVt/qLO38O8YWxNz9oQ4K
-	fWfT9jP9OF+0s4yvMxkQ==;
+	List-Owner; bh=UvZp94hxDlysyaWXCRXAUqVd5n9I4Z0by4PQ13QlplA=; b=SQOFAy9Oi0Twqd
+	pXnPBhUykqFvBdjj4Ssuivf+/B+xKalt6AtzEAyc3HABxrhLcwBfb0kOqqOtFhfZg/RADGLK2SmPU
+	6HtNAgFWyO9aK1dO1+s2jRVCDsGxAlarEEjCBnoAd+vwJ9gop0sat2eOA+XxK7waR2KW4/LEY1FHz
+	owGVmusfxSKHiwWe5i364YSq8N7Z7K15V+D1C4bj5sXs5r17pBtvqol50cRHulhXdbFkZqNVhPfke
+	dJhUlo54F0qo8FCZWtVlbvuDdaAt3SKupsFS3fAViCXGilxlDfbHf4voQ/ClsH+wPktoO49fVc7aB
+	6OQeJDJAYIM0eAkI7Kig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLIZW-003IeP-0U;
-	Mon, 17 Jul 2023 07:23:07 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1qLIbr-003J1J-1Y;
+	Mon, 17 Jul 2023 07:25:31 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLIZT-003Ict-0m
+	id 1qLIbh-003Iwc-1d
 	for linux-phy@lists.infradead.org;
-	Mon, 17 Jul 2023 07:23:04 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-9939fbb7191so859200666b.0
-        for <linux-phy@lists.infradead.org>; Mon, 17 Jul 2023 00:22:59 -0700 (PDT)
+	Mon, 17 Jul 2023 07:25:26 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-99313a34b2dso504372866b.1
+        for <linux-phy@lists.infradead.org>; Mon, 17 Jul 2023 00:25:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1689578578; x=1692170578;
+        d=linaro.org; s=google; t=1689578718; x=1692170718;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=eXlP1v4JTk4UUlDV9gDMep4PAb7EC7+xlKa8eOSv/7M=;
-        b=zQ6MmYV5cXxNM6W6B0gYcQ6w1UZyWe0xI+RV5oJrvm/zz56RpmxjJCk34+2iYuz4gU
-         Xdulo3ebNzZa/bqpUBDiaiM7oAcuavJvbN/Spyh21ivfjZY9EuClFilXLHOTlyGt+bcL
-         dFQ4HZzwRLMhe0ElaC5OyYKoxEzGFZhJFffMoQhRFNfEeepZFEZtfkv7Tn8YIpyTs5KO
-         MxFfbwyNcsMQUJwz/V6ggfe5Ja1n0KazYjd85aanB4QC05e3Hnc0I9CjzAzEc4jEDVZC
-         ONGy75QaY2zAloTWL8fGznepFMQgPKVmbBsj+CjQwMhR4Ac917aNKfq9ZQ2ujMkXWamE
-         v4bQ==
+        bh=Qs4HLlO4LlybLe7Ah8QKFBkS3q2XJN402rj3Q8OPMEk=;
+        b=xfIJggQILuXOIT+qRFvFEx7EeufNsrNzYjtck6y8JtPZ33lKP1JAe6KxnjHPBNRMhR
+         XQmYcAQgQaXXavpmqLlpWcgklGnAntEqbxpScnQwFMzlOyfXZLbOWa3qN8GfUAaTtx4O
+         bgsWVNRulYggbDsTqq/i3tbpPZroumqSEi8nZmiPPqK9XX0HRX0S6m8puHbJqhF7XkVQ
+         n6mA3T/rOamv1a1KNShWgJ5jEuRZJ4BxVd9wQ2Fs2goDUIyN1l8gRv3wFRD7ItBFUjrI
+         q0dJD+PvBT9YaeKX/8mU1tyolE70/LypiQRuG/mEas86+T1OApPOybLu0e4drrMYZdpz
+         vRrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689578578; x=1692170578;
+        d=1e100.net; s=20221208; t=1689578718; x=1692170718;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=eXlP1v4JTk4UUlDV9gDMep4PAb7EC7+xlKa8eOSv/7M=;
-        b=J6w4cGeVnE5qfFIYBVqXI7aU0mIrG1gii3OxDp8r/27eeP1BUK/cTPyjmNUAIxwK5H
-         dgswcwwwhQsYdhWYFaTGivstmjZoaUusaCGIMdNDxtB0Mo7wIYUEgZS5TkvTM6O3sd1a
-         5iT1ze+KH0AfAsW2FoBwISBa0kHNrzoxW/3wyahOfNKCBVU4SqjR/O/T6s9MdXBJopuP
-         HSFxmP7ff7lLUX0dLjUSV+mnCeiB+ykrCjSKjn6AxwLyd5L5NtEDsxJ7eWZX88Gbu8Qz
-         pqPZdTsQvVg6NChzMBx3PsrS4+QezEJu8J5zXivAOm9KKzkZN4un7cM3RW/Iayy4lM5z
-         7UxA==
-X-Gm-Message-State: ABy/qLYesf5gZOlCgSusC1RaHAtOKqg77RzfrvmAzyH8H3du6z57uhQ6
-	/TQ1p5dhsIRa76qLUmE3uiMBPQ==
-X-Google-Smtp-Source: APBJJlEcoz6WXD4iI09YndhO8+x1wDKKRnsWKBeCe0xmhQcsXEcH2WLxt/q50EyQEchb2dGtCVoxMg==
-X-Received: by 2002:a17:907:3f1b:b0:96f:9cea:a34d with SMTP id hq27-20020a1709073f1b00b0096f9ceaa34dmr10446302ejc.21.1689578578593;
-        Mon, 17 Jul 2023 00:22:58 -0700 (PDT)
+        bh=Qs4HLlO4LlybLe7Ah8QKFBkS3q2XJN402rj3Q8OPMEk=;
+        b=Medp5rmE3WFUUSNLCn5ClzdKO/SdTGKcJk6YmbQmFZJ4xdfYVLS3b3ZYewXW7A2SQP
+         UOJIjCfXyAmtQO/7w/SFlXecNCcmbrdPhlk3LXogMEHboRic/ngObgiWjgl731NIjPPz
+         1JKMfHQ8uggVNOEmMn0VEz6lM4smfS0KoDstZvgYwH5lc6AD5uOSunvPdF4v2rrwjOjG
+         aipLtFsGiP/jVKVBb5DuklIN+cidGgBTp1I/k1v0vVPbYUmHv3hLYSYlldkpw7SPqYDH
+         diM5ESw0Qi09MXp1jDlRa5/RDx9FzEDA7Chh33faiZ3cf4YOV75SfHllmH33cnNVRLhK
+         hKfw==
+X-Gm-Message-State: ABy/qLarVKyIJYeGe/9sCaRlERSaFfGf/HHXxtOmvk4A0XNVlEl9AhqB
+	FnZZZWgOotz71QjMz1OY29IlBw==
+X-Google-Smtp-Source: APBJJlFtMxvLm/eKNB8QByqh/kv+BMVjGXQbcUFa9xlTwZ0reAw5LaF5nWU9p8oXGxISfw4wO7C8Ng==
+X-Received: by 2002:a17:907:8f17:b0:98d:d26c:e142 with SMTP id wg23-20020a1709078f1700b0098dd26ce142mr9536118ejc.46.1689578717832;
+        Mon, 17 Jul 2023 00:25:17 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.223.104])
-        by smtp.gmail.com with ESMTPSA id va28-20020a17090711dc00b0099364d9f0e2sm8775550ejb.98.2023.07.17.00.22.56
+        by smtp.gmail.com with ESMTPSA id f21-20020a1709064dd500b0098951bb4dc3sm8770472ejw.184.2023.07.17.00.25.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 17 Jul 2023 00:22:58 -0700 (PDT)
-Message-ID: <56feece9-b5e2-c00a-b2f0-b706e4d19f71@linaro.org>
-Date: Mon, 17 Jul 2023 09:22:55 +0200
+        Mon, 17 Jul 2023 00:25:17 -0700 (PDT)
+Message-ID: <132e9514-7eb9-8915-6130-5bf656c1aaac@linaro.org>
+Date: Mon, 17 Jul 2023 09:25:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH v2 1/6] dt-bindings: PCI: qcom: Add sa8775p compatible
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe
+ PHY
 Content-Language: en-US
 To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
  conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
 Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
  quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
- dmitry.baryshkov@linaro.org, Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ dmitry.baryshkov@linaro.org, Lorenzo Pieralisi <lpieralisi@kernel.org>,
  =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
 References: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
- <1689311319-22054-2-git-send-email-quic_msarkar@quicinc.com>
+ <1689311319-22054-3-git-send-email-quic_msarkar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1689311319-22054-2-git-send-email-quic_msarkar@quicinc.com>
+In-Reply-To: <1689311319-22054-3-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230717_002303_487099_48DABCEA 
-X-CRM114-Status: UNSURE (   6.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230717_002524_229108_F59DA3EC 
+X-CRM114-Status: GOOD (  13.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,13 +106,67 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 14/07/2023 07:08, Mrinmay Sarkar wrote:
-> Add sa8775p platform to the binding.
+> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
+> for SA8775p platform.
 > 
 > Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 > ---
+>  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml      | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index a0407fc..ca55ed9 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -16,6 +16,8 @@ description:
+>  properties:
+>    compatible:
+>      enum:
+> +      - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +      - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>        - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>        - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>        - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> @@ -30,7 +32,7 @@ properties:
+>  
+>    clocks:
+>      minItems: 5
+> -    maxItems: 6
+> +    maxItems: 7
+>  
+>    clock-names:
+>      minItems: 5
+> @@ -41,6 +43,7 @@ properties:
+>        - const: rchng
+>        - const: pipe
+>        - const: pipediv2
+> +      - const: phy_aux
+>  
+>    power-domains:
+>      maxItems: 1
+> @@ -141,6 +144,20 @@ allOf:
+>          compatible:
+>            contains:
+>              enum:
+> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 7
+> +        clock-names:
+> +          minItems: 7
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
 
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+This probably works but is not obvious and easy to read. You have here
+if:then:else: block, so else applies to your variant. Change all these
+if clauses for clocks into separate clauses per matching variant
+(if:then: ... if:then:... if:then:...)
 
 Best regards,
 Krzysztof
