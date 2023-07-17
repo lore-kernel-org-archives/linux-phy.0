@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1191C001E0
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 09:32:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B803C001DE
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 09:34:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xDdHenjX86mGxkBGXQwAXNIT3qVJHPM88kQQUnB20oE=; b=pB9CN4gtxkZz8b
-	2S5eyd9mXIeMlwqssLQ+5jA5ku34/qNeXGL2vxMlNo5IGiPWdRYg5RqsOb0cxzw5xffKkynOynztL
-	zF/80yVA7nQ7IkD8oujl/Pw1CHRzK21Sz1TfZNLFD5pq5V9R9oVOEGSsbRMY6hZE+7FbmC3BpMv+b
-	Hj8PuenFME0b7wShSvFUYqAd5hZbKdQ3l3NyoZ6KnMZWV+x6Y+Og5vKn7GLZbKBTe1+KhbZZXtCkF
-	Y1eHJ4FYPnWSWRqZX2epEIk65fmUvjlytMzoy5m7+rveEwG8rTUMz/W3pqEJFo3t/NWnIx7GzQd3+
-	zB6SF742rlL1QZE2MkLw==;
+	List-Owner; bh=iLkRYIPn9BOg9XuvrarI1XaKQbiUPAt9NNWwq4Tsv9Y=; b=cY/Ze+8VHat5lf
+	7uHzoZolGjWjdMXXHXXudCjT5csVKK6Vz6/qnMv4qkV41LO7L7lZFiZMq4m2uQgBk+loKgk82RO+V
+	meMRk1o8ZjVcLIp+F8BCGyx8aJJ9WUhwi8mDDDTauSv1fTxIazgqO+3lUybQ/OtpCDv2JR5jdN7YA
+	gcxJpyFDghbUDqiDN6v6/SRZQCokPAPx0so1cLED+7cYHN0V72w4fAMgwvSIoiBBCGQMrZpu591GR
+	6fhqkuJeKmH7gLoHOouyxqirFqgwT7Lvx/rvP54LoDfvEwy46J4oeFcaOHg/pb7Ku6c1TvLAUsyFr
+	0pw53XVJadM6Z8+ALo/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLKag-003do2-1D;
-	Mon, 17 Jul 2023 09:32:26 +0000
+	id 1qLKcR-003e4Y-1y;
+	Mon, 17 Jul 2023 09:34:15 +0000
 Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLKaU-003dm1-2E;
-	Mon, 17 Jul 2023 09:32:24 +0000
+	id 1qLKcJ-003e27-20;
+	Mon, 17 Jul 2023 09:34:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
   d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1689586334; x=1721122334;
+  t=1689586447; x=1721122447;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=LFS6LLLj+IF5o3ypMHoQlPtEJ6gln3IM45y+5jIYUmM=;
-  b=fAWJmwkv4h1ioJnOafi8s4omw+wTc/0C5frqBVGUsD9BkDvZeaooMRW7
-   D65z1Vp/nBNdcp/psCh9RyopG06cAte1jpVzS9T2HjvOtdqKA3FHTGpx7
-   F6ivrnIo/6VnUkg7hRqPD/W3PidlRtjWRrfGpwCAxW4iK1bvONKeKmXWq
-   dLJONPr8HbNm1I+SYgIav2spDGD0krAew8MagPi83yypgQcJdK8d5VOvA
-   MZNdLwh1VWS5ZORwkWZP95PZcFspWJVSa17+z0HO129JZjKl7bbud0GcR
-   d1flBgI5KU2EwgXEbTHW45xE6gtDwPmIALSIaOuWtZZcsiBwU2FIiPRU0
-   w==;
+  bh=BnDi1Y/Ol8tHXQ0GG8c5ePKgynVue+N1yU6wXQeacEY=;
+  b=CCq00dybjFxqtd2c1elY9mvtl04S9s1o9Qe2g313+w+l1VZJyUinCHcD
+   lG8RIHGZ5iL4EB9TwqySTWZmi7WLCNGLUdB99WGNYKJH+aUHrS6dPIvYh
+   LNM9lvBXOJ7bzAUSlq5FJjIP2XvElxKJ9RJpoZUpQZ65HmBqCxS6UGrxH
+   ECKLS2U1igSh3WZz4ySkP4T6wm56RZK3HzMCkAteEIwtjXuepRl3aLn0Z
+   G48zkXVv752KwMG2Dxj31X1PBCHTsFpdcp/+qtzqfNYCzNNi11QWjAs2w
+   aCp0F70vXCxDWc0/ZGAlY6B4Exil0RLS6qRrmERcVMFidvOm3Ko1gX44b
+   Q==;
 X-IronPort-AV: E=Sophos;i="6.01,211,1684792800"; 
-   d="scan'208";a="31959527"
+   d="scan'208";a="31959594"
 Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 17 Jul 2023 11:32:12 +0200
+  by mx1.tq-group.com with ESMTP; 17 Jul 2023 11:34:05 +0200
 Received: from steina-w.localnet (unknown [10.123.53.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 5EA1A280078;
-	Mon, 17 Jul 2023 11:32:12 +0200 (CEST)
+	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 2A8D1280078;
+	Mon, 17 Jul 2023 11:34:05 +0200 (CEST)
 From: Alexander Stein <alexander.stein@ew.tq-group.com>
 To: andrzej.hajda@intel.com, neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Sandor Yu <Sandor.yu@nxp.com>
 Cc: kernel@pengutronix.de, linux-imx@nxp.com, Sandor.yu@nxp.com, oliver.brown@nxp.com, sam@ravnborg.org
-Subject: Re: [PATCH v7 0/7] Initial support Cadence MHDP8501(HDMI/DP) for i.MX8MQ
-Date: Mon, 17 Jul 2023 11:32:12 +0200
-Message-ID: <2690465.mvXUDI8C0e@steina-w>
+Subject: Re: [PATCH v7 3/7] dt-bindings: display: bridge: Add Cadence MHDP850
+Date: Mon, 17 Jul 2023 11:34:05 +0200
+Message-ID: <5693162.DvuYhMxLoT@steina-w>
 Organization: TQ-Systems GmbH
-In-Reply-To: <cover.1689580812.git.Sandor.yu@nxp.com>
-References: <cover.1689580812.git.Sandor.yu@nxp.com>
+In-Reply-To: <3646ea4d279838c78e00af1d746e3de34351b083.1689580812.git.Sandor.yu@nxp.com>
+References: <cover.1689580812.git.Sandor.yu@nxp.com> <3646ea4d279838c78e00af1d746e3de34351b083.1689580812.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230717_023215_416059_1D9D2140 
-X-CRM114-Status: GOOD (  25.16  )
+X-CRM114-CacheID: sfid-20230717_023407_972225_9F73C947 
+X-CRM114-Status: GOOD (  15.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,125 +73,169 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgU2FuZG9yLAoKQW0gTW9udGFnLCAxNy4gSnVsaSAyMDIzLCAxMDowMzo0NiBDRVNUIHNjaHJp
-ZWIgU2FuZG9yIFl1Ogo+IFRoZSBwYXRjaCBzZXQgaW5pdGlhbCBzdXBwb3J0IENhZGVuY2UgTUhE
-UDg1MDEoSERNSS9EUCkgRFJNIGJyaWRnZQo+IGRyaXZlcnMgYW5kIENhZGVuY2UgSERQLVRYIFBI
-WShIRE1JL0RQKSBkcml2ZXJzIGZvciBGcmVlc2NhbGUgaS5NWDhNUS4KPiAKPiBUaGUgcGF0Y2gg
-c2V0IGNvbXBvc2Ugb2YgRFJNIGJyaWRnZSBkcml2ZXJzIGFuZCBQSFkgZHJpdmVycy4KPiAKPiBC
-b3RoIG9mIHRoZW0gbmVlZCB0aGUgZm9sbG93ZWQgdHdvIHBhdGNoZXMgdG8gcGFzcyBidWlsZC4K
-PiAgIGRybTogYnJpZGdlOiBDYWRlbmNlOiBjb252ZXJ0IG1haWxib3ggZnVuY3Rpb25zIHRvIG1h
-Y3JvIGZ1bmN0aW9ucwo+ICAgcGh5OiBBZGQgSERNSSBjb25maWd1cmF0aW9uIG9wdGlvbnMKPiAK
-PiBEUk0gYnJpZGdlcyBkcml2ZXIgcGF0Y2hlczoKPiAgIGR0LWJpbmRpbmdzOiBkaXNwbGF5OiBi
-cmlkZ2U6IEFkZCBDYWRlbmNlIE1IRFA4NTAKPiAgIGRybTogYnJpZGdlOiBDYWRlbmNlOiBBZGQg
-TUhEUDg1MDEgRFAvSERNSSBkcml2ZXIKPiAKPiBQSFkgZHJpdmVyIHBhdGNoZXM6Cj4gICBkdC1i
-aW5kaW5nczogcGh5OiBBZGQgRnJlZXNjYWxlIGlNWDhNUSBEUCBhbmQgSERNSSBQSFkKPiAgIHBo
-eTogZnJlZXNjYWxlOiBBZGQgRGlzcGxheVBvcnQgUEhZIGRyaXZlciBmb3IgaS5NWDhNUQo+ICAg
-cGh5OiBmcmVlc2NhbGU6IEFkZCBIRE1JIFBIWSBkcml2ZXIgZm9yIGkuTVg4TVEKPiAKPiB2Ni0+
-djc6Cj4gTUhEUDg1MDEgSERNSS9EUDoKPiAtIENvbWJpbmUgSERNSSBhbmQgRFAgZHJpdmVyIGlu
-dG8gb25lIG1oZHA4NTAxIGRyaXZlci4KPiAgIFVzZSB0aGUgY29ubmVjdG9yIHR5cGUgdG8gbG9h
-ZCB0aGUgY29ycmVzcG9uZGluZyBmdW5jdGlvbnMuCj4gLSBSZW1vdmUgY29ubmVjdG9yIGluaXQg
-ZnVuY3Rpb25zLgo+IC0gQWRkIDxsaW51eC9oZG1pLmg+IGluIHBoeV9oZG1pLmggdG8gcmV1c2Ug
-4oCYZW51bSBoZG1pX2NvbG9yc3BhY2XigJkuCgpUaGFua3MgZm9yIHRoZSB1cGRhdGUuIFRoaXMg
-c3RpbGwgd29ya3MgYXMgYmVmb3JlIG9uIG15IFRRTWE4TXgvTUJhOE14IApwbGF0Zm9ybSB1c2lu
-ZyBIRE1JIG91dHB1dC4gSSBvbmx5IGhhZCB0byBhZGRyZXNzIHRoZSBjb21wYXRpYmxlIGZvciB0
-aGUgCmNvbWJpbmVkIGRyaXZlci4KClRlc3RlZC1ieTogQWxleGFuZGVyIFN0ZWluIDxhbGV4YW5k
-ZXIuc3RlaW5AZXcudHEtZ3JvdXAuY29tPgoKPiBIRE1JL0RQIFBIWToKPiAtIExvd2VyY2FzZSBo
-ZXggdmFsdWVzCj4gLSBGaXggcGFyYW1ldGVycyBpbmRlbnQgaXNzdWUgb24gc29tZSBmdW5jdGlv
-bnMKPiAtIFJlcGxhY2Ug4oCYdWRlbGF54oCZIHdpdGgg4oCYdXNsZWVwX3Jhbmdl4oCZCj4gCj4g
-djUtPnY2Ogo+IEhETUkvRFAgYnJpZGdlIGRyaXZlcgo+IC0gODUwMSBpcyB0aGUgcGFydCBudW1i
-ZXIgb2YgQ2FkZW5jZSBNSERQIG9uIGkuTVg4TVEuCj4gICBVc2UgTUhEUDg1MDEgdG8gbmFtZSBo
-ZG1pL2RwIGRyaXZlcnMgYW5kIGZpbGVzLgo+IC0gQWRkIGNvbXBhdGlibGUgImZzbCxpbXg4bXEt
-bWhkcDg1MDEtZHAiIGZvciBpLk1YOE1RIERQIGRyaXZlcgo+IC0gQWRkIGNvbXBhdGlibGUgImZz
-bCxpbXg4bXEtbWhkcDg1MDEtaGRtaSIgZm9yIGkuTVg4TVEgSERNSSBkcml2ZXIKPiAtIENvbWJp
-bmUgSERNSSBhbmQgRFAgZHQtYmluZGluZ3MgaW50byBvbmUgZmlsZSBjZG5zLG1oZHA4NTAxLnlh
-bWwKPiAtIEZpeCBIRE1JIHNjcmFtYmxpbmcgaXMgbm90IGVuYWJsZSBpc3N1ZSB3aGVuIGRyaXZl
-ciB3b3JraW5nIGluIDRLcDYwCj4gICBtb2RlLgo+IC0gQWRkIEhETUkvRFAgUEhZIEFQSSBtYWls
-Ym94IHByb3RlY3QuCj4gCj4gSERNSS9EUCBQSFkgZHJpdmVyOgo+IC0gUmVuYW1lIERQIGFuZCBI
-RE1JIFBIWSBmaWxlcyBhbmQgbW92ZSB0byBmb2xkZXIgcGh5L2ZyZWVzY2FsZS8KPiAtIFJlbW92
-ZSBwcm9wZXJ0aWVzIG51bV9sYW5lcyBhbmQgbGlua19yYXRlIGZyb20gRFAgUEhZIGRyaXZlci4K
-PiAtIENvbWJpbmUgSERNSSBhbmQgRFAgZHQtYmluZGluZ3MgaW50byBvbmUgZmlsZSBmc2wsaW14
-OG1xLWRwLWhkbWktcGh5LnlhbWwKPiAtIFVwZGF0ZSBjb21wYXRpYmxlIHN0cmluZyB0byAiZnNs
-LGlteDhtcS1kcC1waHkiLgo+IC0gVXBkYXRlIGNvbXBhdGlibGUgc3RyaW5nIHRvICJmc2wsaW14
-OG1xLWhkbWktcGh5Ii4KPiAKPiB2NC0+djU6Cj4gLSBEcm9wICJjbGsiIHN1ZmZpeCBpbiBjbG9j
-ayBuYW1lLgo+IC0gQWRkIG91dHB1dCBwb3J0IHByb3BlcnR5IGluIHRoZSBleGFtcGxlIG9mIGhk
-bWkvZHAuCj4gCj4gdjMtPnY0Ogo+IGR0LWJpbmRpbmdzOgo+IC0gQ29ycmVjdCBkdC1iaW5kaW5n
-cyBjb2Rpbmcgc3R5bGUgYW5kIGFkZHJlc3MgcmV2aWV3IGNvbW1lbnRzLgo+IC0gQWRkIGFwYl9j
-bGsgZGVzY3JpcHRpb24uCj4gLSBBZGQgb3V0cHV0IHBvcnQgZm9yIEhETUkvRFAgY29ubmVjdG9y
-Cj4gUEhZOgo+IC0gQWxwaGFiZXRpY2FsbHkgc29ydGVkIGluIEtjb25maWcgYW5kIE1ha2VmaWxl
-IGZvciBEUCBhbmQgSERNSSBQSFkKPiAtIFJlbW92ZSB1bnVzZWQgcmVnaXN0ZXJzIGRlZmluZSBm
-cm9tIEhETUkgYW5kIERQIFBIWSBkcml2ZXJzLgo+IC0gTW9yZSBkZXNjcmlwdGlvbiBpbiBwaHlf
-aGRtaS5oLgo+IC0gQWRkIGFwYl9jbGsgdG8gSERNSSBhbmQgRFAgcGh5IGRyaXZlci4KPiBIRE1J
-L0RQOgo+IC0gVXNlIGdldF91bmFsaWduZWRfbGUzMigpIHRvIHJlcGxhY2UgaGFyZGNvZGUgdHlw
-ZSBjb252ZXJzaW9uCj4gICBpbiBIRE1JIEFWSSBpbmZvZnJhbWUgZGF0YSBmaWxsIGZ1bmN0aW9u
-Lgo+IC0gQWRkIG1haWxib3ggbXV0ZXggbG9jayBpbiBIRE1JL0RQIGRyaXZlciBmb3IgcGh5IGZ1
-bmN0aW9ucwo+ICAgdG8gcmVzbG92ZSByYWNlIGNvbmRpdGlvbnMgYmV0d2VlbiBIRE1JL0RQIGFu
-ZCBQSFkgZHJpdmVycy4KPiAtIEFkZCBhcGJfY2xrIHRvIGJvdGggSERNSSBhbmQgRFAgZHJpdmVy
-Lgo+IC0gUmVuYW1lIHNvbWUgZnVuY3Rpb24gbmFtZXMgYW5kIGFkZCBwcmVmaXggd2l0aCAiY2Ru
-c19oZG1pL2NkbnNfZHAiLgo+IC0gUmVtb3ZlIGJwYyAxMiBhbmQgMTYgb3B0aW9uYWwgdGhhdCBu
-b3Qgc3VwcG9ydGVkLgo+IAo+IHYyLT52MzoKPiBBZGRyZXNzIGNvbW1lbnRzIGZvciBkdC1iaW5k
-aW5ncyBmaWxlcy4KPiAtIENvcnJlY3QgZHRzLWJpbmRpbmdzIGZpbGUgbmFtZXMKPiAgIFJlbmFt
-ZSBwaHktY2FkZW5jZS1oZHB0eC1kcC55YW1sIHRvIGNkbnMsbWhkcC1pbXg4bXEtZHAueWFtbAo+
-ICAgUmVuYW1lIHBoeS1jYWRlbmNlLWhkcHR4LWhkbWkueWFtbCB0byBjZG5zLG1oZHAtaW14OG1x
-LWhkbWkueWFtbAo+IC0gRHJvcCByZWR1bmRhbnQgd29yZHMgYW5kIGRlc2NyaXB0aW9ucy4KPiAt
-IENvcnJlY3QgaGRtaS9kcCBub2RlIG5hbWUuCj4gCj4gdjIgaXMgYSBjb21wbGV0ZWx5IGRpZmZl
-cmVudCB2ZXJzaW9uIGNvbXBhcmVkIHRvIHYxLgo+IFByZXZpb3VzIHYxIGNhbiBiZSBhdmFpbGFi
-bGUgaGVyZSBbMV0uCj4gCj4gdjEtPnYyOgo+IC0gUmV1c2UgQ2FkZW5jZSBtYWlsYm94IGFjY2Vz
-cyBmdW5jdGlvbnMgZnJvbSBtaGRwODU0NiBpbnN0ZWFkIG9mCj4gICByb2NrY2hpcCBEUC4KPiAt
-IE1haWxib3ggYWNjZXNzIGZ1bmN0aW9ucyBiZSBjb252ZXJ0IHRvIG1hcmNvIGZ1bmN0aW9ucwo+
-ICAgdGhhdCB3aWxsIGJlIHJlZmVyZW5jZWQgYnkgSERQLVRYIFBIWShIRE1JL0RQKSBkcml2ZXIg
-dG9vLgo+IC0gUGxhaW4gYnJpZGdlIGluc3RlYWQgb2YgY29tcG9uZW50IGRyaXZlci4KPiAtIFN0
-YW5kYWxvbmUgQ2FkZW5jZSBIRFAtVFggUEhZKEhETUkvRFApIGRyaXZlci4KPiAtIEF1ZGlvIGRy
-aXZlciBhcmUgcmVtb3ZlZCBmcm9tIHRoZSBwYXRjaCBzZXQsIGl0IHdpbGwgYmUgYWRkIGluIGFu
-b3RoZXIKPiAgIHBhdGNoIHNldCBsYXRlci4KPiAKPiBbMV0KPiBodHRwczovL3BhdGNod29yay5r
-ZXJuZWwub3JnL3Byb2plY3QvbGludXgtcm9ja2NoaXAvY292ZXIvY292ZXIuMTU5MDk4Mjg4MS4K
-PiBnaXQuU2FuZG9yLnl1QG54cC5jb20vCj4gCj4gU2FuZG9yIFl1ICg3KToKPiAgIGRybTogYnJp
-ZGdlOiBDYWRlbmNlOiBjb252ZXJ0IG1haWxib3ggZnVuY3Rpb25zIHRvIG1hY3JvIGZ1bmN0aW9u
-cwo+ICAgcGh5OiBBZGQgSERNSSBjb25maWd1cmF0aW9uIG9wdGlvbnMKPiAgIGR0LWJpbmRpbmdz
-OiBkaXNwbGF5OiBicmlkZ2U6IEFkZCBDYWRlbmNlIE1IRFA4NTAKPiAgIGRybTogYnJpZGdlOiBD
-YWRlbmNlOiBBZGQgTUhEUDg1MDEgRFAvSERNSSBkcml2ZXIKPiAgIGR0LWJpbmRpbmdzOiBwaHk6
-IEFkZCBGcmVlc2NhbGUgaU1YOE1RIERQIGFuZCBIRE1JIFBIWQo+ICAgcGh5OiBmcmVlc2NhbGU6
-IEFkZCBEaXNwbGF5UG9ydCBQSFkgZHJpdmVyIGZvciBpLk1YOE1RCj4gICBwaHk6IGZyZWVzY2Fs
-ZTogQWRkIEhETUkgUEhZIGRyaXZlciBmb3IgaS5NWDhNUQo+IAo+ICAuLi4vZGlzcGxheS9icmlk
-Z2UvY2RucyxtaGRwODUwMS55YW1sICAgICAgICAgfCAxMDUgKysKPiAgLi4uL2JpbmRpbmdzL3Bo
-eS9mc2wsaW14OG1xLWRwLWhkbWktcGh5LnlhbWwgIHwgIDUzICsKPiAgZHJpdmVycy9ncHUvZHJt
-L2JyaWRnZS9jYWRlbmNlL0tjb25maWcgICAgICAgIHwgIDE1ICsKPiAgZHJpdmVycy9ncHUvZHJt
-L2JyaWRnZS9jYWRlbmNlL01ha2VmaWxlICAgICAgIHwgICAyICsKPiAgLi4uL2RybS9icmlkZ2Uv
-Y2FkZW5jZS9jZG5zLW1oZHA4NTAxLWNvcmUuYyAgIHwgMzEzICsrKysrKwo+ICAuLi4vZHJtL2Jy
-aWRnZS9jYWRlbmNlL2NkbnMtbWhkcDg1MDEtY29yZS5oICAgfCA0MTAgKysrKysrKysKPiAgLi4u
-L2dwdS9kcm0vYnJpZGdlL2NhZGVuY2UvY2Rucy1taGRwODUwMS1kcC5jIHwgNzgwICsrKysrKysr
-KysrKysrKwo+ICAuLi4vZHJtL2JyaWRnZS9jYWRlbmNlL2NkbnMtbWhkcDg1MDEtaGRtaS5jICAg
-fCA2NzQgKysrKysrKysrKysrKwo+ICAuLi4vZHJtL2JyaWRnZS9jYWRlbmNlL2NkbnMtbWhkcDg1
-NDYtY29yZS5jICAgfCAxOTUgKy0tLQo+ICAuLi4vZHJtL2JyaWRnZS9jYWRlbmNlL2NkbnMtbWhk
-cDg1NDYtY29yZS5oICAgfCAgIDEgLQo+ICBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvS2NvbmZpZyAg
-ICAgICAgICAgICAgICAgfCAgMTggKwo+ICBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvTWFrZWZpbGUg
-ICAgICAgICAgICAgICAgfCAgIDIgKwo+ICBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1p
-bXg4bXEtZHAuYyAgICAgfCA2OTggKysrKysrKysrKysrKysKPiAgZHJpdmVycy9waHkvZnJlZXNj
-YWxlL3BoeS1mc2wtaW14OG1xLWhkbWkuYyAgIHwgOTA3ICsrKysrKysrKysrKysrKysrKwo+ICBp
-bmNsdWRlL2RybS9icmlkZ2UvY2Rucy1taGRwLW1haWxib3guaCAgICAgICAgfCAyNDAgKysrKysK
-PiAgaW5jbHVkZS9saW51eC9waHkvcGh5LWhkbWkuaCAgICAgICAgICAgICAgICAgIHwgIDI0ICsK
-PiAgaW5jbHVkZS9saW51eC9waHkvcGh5LmggICAgICAgICAgICAgICAgICAgICAgIHwgICA3ICst
-Cj4gIDE3IGZpbGVzIGNoYW5nZWQsIDQyNDggaW5zZXJ0aW9ucygrKSwgMTk2IGRlbGV0aW9ucygt
-KQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQKPiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvZGlzcGxheS9icmlkZ2UvY2RucyxtaGRwODUwMS55YW1sIGNyZWF0ZQo+IG1vZGUgMTAwNjQ0
-Cj4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9mc2wsaW14OG1xLWRwLWhk
-bWktcGh5LnlhbWwgY3JlYXRlCj4gbW9kZSAxMDA2NDQgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9j
-YWRlbmNlL2NkbnMtbWhkcDg1MDEtY29yZS5jIGNyZWF0ZSBtb2RlCj4gMTAwNjQ0IGRyaXZlcnMv
-Z3B1L2RybS9icmlkZ2UvY2FkZW5jZS9jZG5zLW1oZHA4NTAxLWNvcmUuaCBjcmVhdGUgbW9kZQo+
-IDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2NhZGVuY2UvY2Rucy1taGRwODUwMS1kcC5j
-IGNyZWF0ZSBtb2RlIDEwMDY0NAo+IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvY2FkZW5jZS9jZG5z
-LW1oZHA4NTAxLWhkbWkuYyBjcmVhdGUgbW9kZSAxMDA2NDQKPiBkcml2ZXJzL3BoeS9mcmVlc2Nh
-bGUvcGh5LWZzbC1pbXg4bXEtZHAuYwo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9waHkv
-ZnJlZXNjYWxlL3BoeS1mc2wtaW14OG1xLWhkbWkuYwo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5j
-bHVkZS9kcm0vYnJpZGdlL2NkbnMtbWhkcC1tYWlsYm94LmgKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0
-IGluY2x1ZGUvbGludXgvcGh5L3BoeS1oZG1pLmgKCgotLSAKVFEtU3lzdGVtcyBHbWJIIHwgTcO8
-aGxzdHJhw59lIDIsIEd1dCBEZWxsaW5nIHwgODIyMjkgU2VlZmVsZCwgR2VybWFueQpBbXRzZ2Vy
-aWNodCBNw7xuY2hlbiwgSFJCIDEwNTAxOApHZXNjaMOkZnRzZsO8aHJlcjogRGV0bGVmIFNjaG5l
-aWRlciwgUsO8ZGlnZXIgU3RhaGwsIFN0ZWZhbiBTY2huZWlkZXIKaHR0cDovL3d3dy50cS1ncm91
-cC5jb20vCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LXBoeQo=
+Am Montag, 17. Juli 2023, 10:03:49 CEST schrieb Sandor Yu:
+> ********************
+> Achtung externe E-Mail: =D6ffnen Sie Anh=E4nge und Links nur, wenn Sie wi=
+ssen,
+> dass diese aus einer sicheren Quelle stammen und sicher sind. Leiten Sie
+> die E-Mail im Zweifelsfall zur Pr=FCfung an den IT-Helpdesk weiter.
+> Attention external email: Open attachments and links only if you know that
+> they are from a secure source and are safe. In doubt forward the email to
+> the IT-Helpdesk to check it. ********************
+> =
+
+> Add bindings for Cadence MHDP8501 DisplayPort/HDMI bridge..
+> =
+
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+>  .../display/bridge/cdns,mhdp8501.yaml         | 105 ++++++++++++++++++
+>  1 file changed, 105 insertions(+)
+>  create mode 100644
+> Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> =
+
+> diff --git
+> a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml new
+> file mode 100644
+> index 000000000000..b983ee765f54
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> @@ -0,0 +1,105 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence MHDP8501 DP/HDMI bridge
+> +
+> +maintainers:
+> +  - Sandor Yu <Sandor.yu@nxp.com>
+> +
+> +description:
+> +  Cadence MHDP8501 DisplayPort/HDMI interface.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - cdns,mhdp8501
+> +      - fsl,imx8mq-mhdp8501
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: MHDP8501 DP/HDMI APB clock.
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description:
+> +      phandle to the DisplayPort or HDMI PHY
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Hotplug cable plugin.
+> +      - description: Hotplug cable plugout.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: plug_in
+> +      - const: plug_out
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Input port from display controller output.
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Output port to DisplayPort or HDMI connector.
+> +
+> +    required:
+> +      - port@0
+> +      - port@1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - interrupts
+> +  - interrupt-names
+> +  - phys
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8mq-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    mhdp_dp: dp-bridge@32c00000 {
+
+I'm not sure, but I would name this node just 'bridge', because it can be =
+
+either DP or HDMI depending on the connector. But DT folks will know better =
+
+than me.
+
+Best regards,
+Alexander
+
+> +        compatible =3D "fsl,imx8mq-mhdp8501";
+> +        reg =3D <0x32c00000 0x100000>;
+> +        interrupts =3D <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names =3D "plug_in", "plug_out";
+> +        clocks =3D <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
+> +        phys =3D <&dp_phy>;
+> +
+> +        ports {
+> +            #address-cells =3D <1>;
+> +            #size-cells =3D <0>;
+> +
+> +            port@0 {
+> +                reg =3D <0>;
+> +
+> +                mhdp_in: endpoint {
+> +                    remote-endpoint =3D <&dcss_out>;
+> +                };
+> +            };
+> +
+> +            port@1 {
+> +                reg =3D <1>;
+> +
+> +                mhdp_out: endpoint {
+> +                    remote-endpoint =3D <&dp_connector>;
+> +                };
+> +            };
+> +        };
+> +    };
+
+
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+
+
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
