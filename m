@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0110BC001DC
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 06:18:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46257C0015E
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 06:18:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NGOBEihK/jlZewjpXOad2p+B/XRzbA3GMAy3R0yV5G8=; b=aOjL4yFTbH/nRX
-	0kkeNDN+snPgDkmJdT8uUVyTRe2HbDiCC1NE3RU0DDLBjQKLS4+JU9PjhIKBHsaG8VVLOh4+pWIs7
-	dyriX8/zsnDpcBTP3AjEUf4fytTsgb1ZdqYFGilTE2WiUkOPpC0CUXm4nDq7pxgZsmhZO4urYe45C
-	/FVn53hpGJQT+f4Y2ksTp6Bch6978U9wxEFd7ZsWE2QGOdpNsPxlcEHGi6dXzZ5CK1va5LvcFP7Mu
-	pWgs/NqqT4RjcxP/b/UDbzuiaS7uiIS6RjpI/6c/o+WaHPyv3d/cPLP5pK990+/2RwwPxun1C2T0I
-	ZfOnGQx9S20kmr3H/Awg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=juHucpF3JbhEIRLT/F5j6t8+/fBSV7sC06q2CwqSQBk=; b=yWjPJAqk8B5QET
+	e3OUM0gQkweNiKtgS/10h8z+Mu8PYCPWcaMIWRc6SfHFEKJeFTLB/YqOBFQIOlOFg7OYsHJ2Zq7Bh
+	iI3XH8FYXSMGGtIWMSZaCCsh/YPvkDBc0Uc1yDyvgqR47LlmVGcCy+L89vwWhedxngyrVnS7JnSPS
+	HvWj9L94/YQi469+jNtk5lW6krEAj57VyBbEyHIRkT5oKNnptUSbi4iyEXJI4n+crVP4/SHH+3o4U
+	uc943MYfG+1TR9nlZCP5EGRSg2mqufhw+vkY6fnk+QVlX7fUPThYgcfxLPlXPw1iJOUm1Kvpm6iiQ
+	kJtRhfJ0bqGmimsQvICA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM0WT-005evQ-23;
-	Wed, 19 Jul 2023 06:18:53 +0000
+	id 1qM0WY-005ezf-3C;
+	Wed, 19 Jul 2023 06:18:58 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM0WR-005etx-1V
+	id 1qM0WX-005eyB-2B
 	for linux-phy@bombadil.infradead.org;
-	Wed, 19 Jul 2023 06:18:51 +0000
+	Wed, 19 Jul 2023 06:18:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=EyIpPC051jFakBKvFz2HdOcZMn9cukPLPLGU/wc7gao=; b=TX12W0CrUbVkwyjD5vBiXMKbF+
-	ixvcoFbHox2mTlKR/83tHkACD+qgb0lFkZGAFNuGEkkiOvEgMktjClXTbr9+bdyFUo97y0KTHUajC
-	DfefMkZDLD1XJM/cj3ZQL87ipCPM9L7ImCDL1fMz/RrOXsFxPtgYytRD6mHGVrpmT07suRqOPrgoi
-	58E3h5pAM5gpv4D5aCmPlV1Ft2xbRUIaPCr5nOzTBW3PFkpUEvDo5GbeUU/2YVZqc6GZ1i11CK3dr
-	HY2S4Xlzg1d1g9gmOvduNa7VUPJ7arMgjiWan2MGpu0t2WXdufWCqkfYqnBhLVP0V1T1YGAoGAXZ3
-	EcCQw4Qg==;
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=b0LltA1bzIP+LklC/AbBIBU+7NS4kLMBgdF2gbH9Yfc=; b=qVeDNJo65YSoFEf65RSBiGWaQu
+	E3RAzF11dE8G0LCcE/NTlts8cIWIFLh4Dqh/FgEDS6k/bSlpyVeql/LYPI7/prTtHYPnpXBavZJmf
+	EG93heI1LAKpl5HMDhcYzJMqYJP1APUAcT+2PUTdvYVJJManrOrCfTLmACFKVGr4VRO93vnhFR3NV
+	yxUbCtB2gb4M2f8RVmZMjZJtFuhl6ivwpOnFDvp8Y/Ao7qSpcxfT3uR0OHBqu3Cs2PiOVgP48lr54
+	fYBNE08CGC1eUYP/v7a2gQ3Y0xJ3/68xCRMVGlSZYDEPFMQzVBeyuP7/3Jlf866KH8x+nAwV8VSns
+	nzoHT0Jw==;
 Received: from ex01.ufhost.com ([61.152.239.75])
 	by desiato.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLeqA-00BFfO-33
+	id 1qLeqA-00BFfP-33
 	for linux-phy@lists.infradead.org;
 	Tue, 18 Jul 2023 07:09:50 +0000
 Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
 	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 3FC7124E2E7;
-	Tue, 18 Jul 2023 15:08:05 +0800 (CST)
+	by ex01.ufhost.com (Postfix) with ESMTP id 9B7D424E2D4;
+	Tue, 18 Jul 2023 15:08:06 +0800 (CST)
 Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
  (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 18 Jul
- 2023 15:08:05 +0800
+ 2023 15:08:06 +0800
 Received: from ubuntu.localdomain (113.72.147.86) by EXMBX062.cuchost.com
  (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 18 Jul
- 2023 15:08:04 +0800
+ 2023 15:08:05 +0800
 From: Changhuang Liang <changhuang.liang@starfivetech.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
@@ -62,18 +62,20 @@ CC: Minda Chen <minda.chen@starfivetech.com>, Jack Zhu
 	<jack.zhu@starfivetech.com>, Changhuang Liang
 	<changhuang.liang@starfivetech.com>, <linux-phy@lists.infradead.org>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v7 0/2] Add JH7110 MIPI DPHY RX support
-Date: Tue, 18 Jul 2023 00:08:01 -0700
-Message-ID: <20230718070803.16660-1-changhuang.liang@starfivetech.com>
+Subject: [PATCH v7 2/2] phy: starfive: Add mipi dphy rx support
+Date: Tue, 18 Jul 2023 00:08:03 -0700
+Message-ID: <20230718070803.16660-3-changhuang.liang@starfivetech.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230718070803.16660-1-changhuang.liang@starfivetech.com>
+References: <20230718070803.16660-1-changhuang.liang@starfivetech.com>
 MIME-Version: 1.0
 X-Originating-IP: [113.72.147.86]
 X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX062.cuchost.com
  (172.16.6.62)
 X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230718_080947_733818_5FC2E8B6 
-X-CRM114-Status: GOOD (  14.45  )
+X-CRM114-CacheID: sfid-20230718_080948_767090_796C3D01 
+X-CRM114-Status: GOOD (  21.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,156 +92,309 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
-It is used to transfer CSI camera data. The series has been tested on
-the VisionFive 2 board.
+Add mipi dphy rx support for the StarFive JH7110 SoC. It is used to
+transfer CSI camera data.
 
-This patchset should be applied after the patchset [1]:
-[1] https://lore.kernel.org/all/20230629075115.11934-1-minda.chen@starfivetech.com/
-
-changes since v6:
-- Rebased on tag v6.4-rc6.
-
-patch 2:
-- Changed file name to "phy_jh7110_dphy_rx.c" follow the existing file
-  naming rules.
-- Changed Kconfig&Makefile follow the existing file rules.
-- Add Author after Copyright follow the existing file rules.
-- Changed MODULE_DESCRIPTION follow the existing file rules.
-
-v6: https://lore.kernel.org/all/20230630093056.46904-1-changhuang.liang@starfivetech.com/
-
-changes since v5:
-- Rebased on tag v6.4.
-- Dropped patch 3. Because it depends on the submission of others, it will be
-  upstream separately later.
-
-patch 1:
-- Changed "pwrc_dphy" to "aon_syscon".
-- Updated title and description.
-
-patch 2:
-- Dropped unnecessary register operations.
-- Replaced "pm_runtime_get_sync" with "pm_runtime_resume_and_get".
-- Dropped the pm reference on "regulator_enable" error handle.
-
-v5: https://lore.kernel.org/all/20230529121503.3544-1-changhuang.liang@starfivetech.com/
-
-changes since v4:
-- Rebased on tag v6.4-rc2.
-
-patch 1:
-- Dropped "lane_maps" property.
-
-patch 2:
-- Added lane maps in compatible.
-
-patch 3:
-- Dropped "lane_maps" property.
-- Changed "pwrc_dphy" to "aon_syscon".
-
-v4: https://lore.kernel.org/all/20230412084540.295411-1-changhuang.liang@starfivetech.com/
-
-changes since v3:
-- Rebased on tag v6.3-rc4.
-
-patch 1 & patch 3:
-- Changed "starfive,aon-syscon" to "power-domains".
-- Added "lane_maps" property.
-
-patch 2:
-- Changed "STF_DPHY_APBCFGSAIF__SYSCFG(x)" to "STF_DPHY_APBCFGSAIF_SYSCFG(x)".
-- Merged phy_init into phy_power_on.
-- Merged phy_exit into phy_power_off.
-- Replaced syscon with power domain framework.
-- Parsed "lane_maps" property form device tree.
-- Dropped compatible private data.
-
-v3: https://lore.kernel.org/all/20230315100421.133428-1-changhuang.liang@starfivetech.com/
-
-changes since v2:
-- Rebased on tag v6.3-rc1.
-
-patch 1:
-- Changed the 'Starfive' to 'StarFive'.
-- Changed the "items" to "- items".
-- Add description to clocks.
-
-patch 2:
-- Changed the 'Starfive' to 'StarFive'.
-- Updated the driver order in MAINTAINERS.
-
-patch 3:
-- Changed the 'Starfive' to 'StarFive'.
-- Update clocks&resets macros follow patchset [1].
-
-v2: https://lore.kernel.org/all/20230223015952.201841-1-changhuang.liang@starfivetech.com/
-
-changes since v1:
-- Rebased on tag v6.2.
-- Dropped patch 1, it will be added by the patch [2].
-
-patch 1:
-- Changed the node name 'dphy' to 'phy'.
-- Changed the "starfive,aon-syscon" description.
-- Changed the MIPI DPHY RX IP description.
-- Add description to resets.
-- Update devicetree binding examples.
-
-patch 2:
-- Changed the commit message.
-
-patch 3:
-- Changed the commit message.
-- Changed the node name 'dphy' to 'phy'.
-- Sorted the node by address.
-
-v1: https://lore.kernel.org/all/20230210061713.6449-1-changhuang.liang@starfivetech.com/
-
-Changhuang Liang (2):
-  dt-bindings: phy: Add starfive,jh7110-dphy-rx
-  phy: starfive: Add mipi dphy rx support
-
- .../bindings/phy/starfive,jh7110-dphy-rx.yaml |  71 ++++++
- MAINTAINERS                                   |   7 +
- drivers/phy/starfive/Kconfig                  |   9 +
- drivers/phy/starfive/Makefile                 |   5 +-
- drivers/phy/starfive/phy-jh7110-dphy-rx.c     | 232 ++++++++++++++++++
- 5 files changed, 322 insertions(+), 2 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+Reviewed-by: Minda Chen <minda.chen@starfivetech.com>
+---
+ MAINTAINERS                               |   7 +
+ drivers/phy/starfive/Kconfig              |   9 +
+ drivers/phy/starfive/Makefile             |   5 +-
+ drivers/phy/starfive/phy-jh7110-dphy-rx.c | 232 ++++++++++++++++++++++
+ 4 files changed, 251 insertions(+), 2 deletions(-)
  create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-rx.c
 
-
-base-commit: 858fd168a95c5b9669aac8db6c14a9aeab446375
-prerequisite-patch-id: 6d585d462408a90a97b7cd7a4ee7fb9bdc287112
-prerequisite-patch-id: 977d4f883a696ea56d30f1b20348d33b7e8c9ded
-prerequisite-patch-id: bf7e042cedda9f58b9e80eab38b00819b58e3e03
-prerequisite-patch-id: 76078ca6536392595191170665115ff5cd836750
-prerequisite-patch-id: 0443acf52a2d14609502960d611207f2f715e146
-prerequisite-patch-id: 8c735dffc6d5388a35a76b16e914a2f9722ad979
-prerequisite-patch-id: 739028223ea0ab0a3a3b61df7ccb46b2c9d704ec
-prerequisite-patch-id: 36e69700dfc0375b950b0e23086ed3b722cb84a4
-prerequisite-patch-id: 2394fad7b98c991aeb1d7aa8768f85fb2d6e07bf
-prerequisite-patch-id: 81f7c65712c4901a7a178ddcd98ffc55f3b473ff
-prerequisite-patch-id: 05059f11b7b0e8dca6cf22782ff9e87bd5345a43
-prerequisite-patch-id: 0159f09bb0a1ff711a00ae17ef5b12662c9c7d3d
-prerequisite-patch-id: d5abfba63fc07ff97b5023911513c260bb7a53e1
-prerequisite-patch-id: 64f486550e39c1f43f9555546b3f4bcc6edaee8e
-prerequisite-patch-id: a387400b252f5064947ca98e860d6ff8537390d4
-prerequisite-patch-id: a814c677c77c672e643b7383e8ad4ff53863a086
-prerequisite-patch-id: 89f058e334644bad4414c7755cd7be2c9f193558
-prerequisite-patch-id: aa6a7673a9b7af88988f5f933b3d60d17b5401a4
-prerequisite-patch-id: 461e2e765ee974b050ed0cd8856cfcdbb21f7449
-prerequisite-patch-id: d3fc0bca48b546ffac829ccdddbd9244d4c6c3b8
-prerequisite-patch-id: ffe68ea172de27c31fa5e1c9834ad4bc817feb17
-prerequisite-patch-id: 7061318e4ce479b4164ccf5c0876e6ef12f97af5
-prerequisite-patch-id: fb0abb8eb7561829abef49d4ce85f6a88d2eac5b
-prerequisite-patch-id: 4590f1ab508e1de53f38e041f72acf6697b86e43
-prerequisite-patch-id: 8fbe91d635ccfb982dee0da2998806f427c3f728
-prerequisite-patch-id: a226d30947a80ffcd2e7b2bd9a5447f42e52dc90
-prerequisite-patch-id: 3af662de084917132f6908b314cb955716eff4e4
---
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 38927b9ce712..f849e8e3f765 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -20116,6 +20116,13 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/net/starfive,jh7110-dwmac.yaml
+ F:	drivers/net/ethernet/stmicro/stmmac/dwmac-starfive.c
+ 
++STARFIVE JH7110 DPHY RX DRIVER
++M:	Jack Zhu <jack.zhu@starfivetech.com>
++M:	Changhuang Liang <changhuang.liang@starfivetech.com>
++S:	Supported
++F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
++F:	drivers/phy/starfive/phy-starfive-dphy-rx.c
++
+ STARFIVE JH7110 MMC/SD/SDIO DRIVER
+ M:	William Qiu <william.qiu@starfivetech.com>
+ S:	Supported
+diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+index da9a98cdf7e3..a560533a674e 100644
+--- a/drivers/phy/starfive/Kconfig
++++ b/drivers/phy/starfive/Kconfig
+@@ -3,6 +3,15 @@
+ # Phy drivers for StarFive platforms
+ #
+ 
++config PHY_STARFIVE_JH7110_DPHY_RX
++	tristate "StarFive JH7110 D-PHY RX support"
++	select GENERIC_PHY
++	select GENERIC_PHY_MIPI_DPHY
++	help
++	  Choose this option if you have a StarFive D-PHY in your
++	  system. If M is selected, the module will be called
++	  phy-jh7110-dphy-rx.ko.
++
+ config PHY_STARFIVE_JH7110_PCIE
+ 	tristate "Starfive JH7110 PCIE 2.0/USB 3.0 PHY support"
+ 	depends on HAS_IOMEM
+diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+index 1c62d93e3280..b391018b7c47 100644
+--- a/drivers/phy/starfive/Makefile
++++ b/drivers/phy/starfive/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+-obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)	+= phy-jh7110-pcie.o
+-obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)	+= phy-jh7110-usb.o
++obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_RX)	+= phy-jh7110-dphy-rx.o
++obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)		+= phy-jh7110-pcie.o
++obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)		+= phy-jh7110-usb.o
+diff --git a/drivers/phy/starfive/phy-jh7110-dphy-rx.c b/drivers/phy/starfive/phy-jh7110-dphy-rx.c
+new file mode 100644
+index 000000000000..037a9e0263cd
+--- /dev/null
++++ b/drivers/phy/starfive/phy-jh7110-dphy-rx.c
+@@ -0,0 +1,232 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * StarFive JH7110 DPHY RX driver
++ *
++ * Copyright (C) 2023 StarFive Technology Co., Ltd.
++ * Author: Jack Zhu <jack.zhu@starfivetech.com>
++ * Author: Changhuang Liang <changhuang.liang@starfivetech.com>
++ */
++
++#include <linux/bitfield.h>
++#include <linux/bitops.h>
++#include <linux/clk.h>
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
++#include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
++#include <linux/reset.h>
++
++#define STF_DPHY_APBCFGSAIF_SYSCFG(x)		(x)
++
++#define STF_DPHY_ENABLE_CLK			BIT(6)
++#define STF_DPHY_ENABLE_CLK1			BIT(7)
++#define STF_DPHY_ENABLE_LAN0			BIT(8)
++#define STF_DPHY_ENABLE_LAN1			BIT(9)
++#define STF_DPHY_ENABLE_LAN2			BIT(10)
++#define STF_DPHY_ENABLE_LAN3			BIT(11)
++#define STF_DPHY_LANE_SWAP_CLK			GENMASK(22, 20)
++#define STF_DPHY_LANE_SWAP_CLK1			GENMASK(25, 23)
++#define STF_DPHY_LANE_SWAP_LAN0			GENMASK(28, 26)
++#define STF_DPHY_LANE_SWAP_LAN1			GENMASK(31, 29)
++
++#define STF_DPHY_LANE_SWAP_LAN2			GENMASK(2, 0)
++#define STF_DPHY_LANE_SWAP_LAN3			GENMASK(5, 3)
++#define STF_DPHY_PLL_CLK_SEL			GENMASK(21, 12)
++#define STF_DPHY_PRECOUNTER_IN_CLK		GENMASK(29, 22)
++
++#define STF_DPHY_PRECOUNTER_IN_CLK1		GENMASK(7, 0)
++#define STF_DPHY_PRECOUNTER_IN_LAN0		GENMASK(15, 8)
++#define STF_DPHY_PRECOUNTER_IN_LAN1		GENMASK(23, 16)
++#define STF_DPHY_PRECOUNTER_IN_LAN2		GENMASK(31, 24)
++
++#define STF_DPHY_PRECOUNTER_IN_LAN3		GENMASK(7, 0)
++#define STF_DPHY_RX_1C2C_SEL			BIT(8)
++
++#define STF_MAP_LANES_NUM			6
++
++struct regval {
++	u32 addr;
++	u32 val;
++};
++
++struct stf_dphy_info {
++	/**
++	 * @maps:
++	 *
++	 * Physical lanes and logic lanes mapping table.
++	 *
++	 * The default order is:
++	 * [clk lane0, data lane 0, data lane 1, data lane 2, date lane 3, clk lane 1]
++	 */
++	u8 maps[STF_MAP_LANES_NUM];
++};
++
++struct stf_dphy {
++	struct device *dev;
++	void __iomem *regs;
++	struct clk *cfg_clk;
++	struct clk *ref_clk;
++	struct clk *tx_clk;
++	struct reset_control *rstc;
++	struct regulator *mipi_0p9;
++	struct phy *phy;
++	const struct stf_dphy_info *info;
++};
++
++static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	const struct stf_dphy_info *info = dphy->info;
++
++	writel(FIELD_PREP(STF_DPHY_ENABLE_CLK, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_CLK1, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN0, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN1, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN2, 1) |
++	       FIELD_PREP(STF_DPHY_ENABLE_LAN3, 1) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK, info->maps[0]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_CLK1, info->maps[5]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN0, info->maps[1]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN1, info->maps[2]),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(188));
++
++	writel(FIELD_PREP(STF_DPHY_LANE_SWAP_LAN2, info->maps[3]) |
++	       FIELD_PREP(STF_DPHY_LANE_SWAP_LAN3, info->maps[4]) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK, 8),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(192));
++
++	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_CLK1, 8) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN0, 7) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN1, 7) |
++	       FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN2, 7),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(196));
++
++	writel(FIELD_PREP(STF_DPHY_PRECOUNTER_IN_LAN3, 7),
++	       dphy->regs + STF_DPHY_APBCFGSAIF_SYSCFG(200));
++
++	return 0;
++}
++
++static int stf_dphy_power_on(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	int ret;
++
++	ret = pm_runtime_resume_and_get(dphy->dev);
++	if (ret < 0)
++		return ret;
++
++	ret = regulator_enable(dphy->mipi_0p9);
++	if (ret) {
++		pm_runtime_put(dphy->dev);
++		return ret;
++	}
++
++	clk_set_rate(dphy->cfg_clk, 99000000);
++	clk_set_rate(dphy->ref_clk, 49500000);
++	clk_set_rate(dphy->tx_clk, 19800000);
++	reset_control_deassert(dphy->rstc);
++
++	return 0;
++}
++
++static int stf_dphy_power_off(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++
++	reset_control_assert(dphy->rstc);
++
++	regulator_disable(dphy->mipi_0p9);
++
++	pm_runtime_put_sync(dphy->dev);
++
++	return 0;
++}
++
++static const struct phy_ops stf_dphy_ops = {
++	.configure = stf_dphy_configure,
++	.power_on  = stf_dphy_power_on,
++	.power_off = stf_dphy_power_off,
++};
++
++static int stf_dphy_probe(struct platform_device *pdev)
++{
++	struct phy_provider *phy_provider;
++	struct stf_dphy *dphy;
++
++	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
++	if (!dphy)
++		return -ENOMEM;
++
++	dphy->info = of_device_get_match_data(&pdev->dev);
++
++	dev_set_drvdata(&pdev->dev, dphy);
++	dphy->dev = &pdev->dev;
++
++	dphy->regs = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(dphy->regs))
++		return PTR_ERR(dphy->regs);
++
++	dphy->cfg_clk = devm_clk_get(&pdev->dev, "cfg");
++	if (IS_ERR(dphy->cfg_clk))
++		return PTR_ERR(dphy->cfg_clk);
++
++	dphy->ref_clk = devm_clk_get(&pdev->dev, "ref");
++	if (IS_ERR(dphy->ref_clk))
++		return PTR_ERR(dphy->ref_clk);
++
++	dphy->tx_clk = devm_clk_get(&pdev->dev, "tx");
++	if (IS_ERR(dphy->tx_clk))
++		return PTR_ERR(dphy->tx_clk);
++
++	dphy->rstc = devm_reset_control_array_get_exclusive(&pdev->dev);
++	if (IS_ERR(dphy->rstc))
++		return PTR_ERR(dphy->rstc);
++
++	dphy->mipi_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
++	if (IS_ERR(dphy->mipi_0p9))
++		return PTR_ERR(dphy->mipi_0p9);
++
++	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
++	if (IS_ERR(dphy->phy)) {
++		dev_err(&pdev->dev, "Failed to create PHY\n");
++		return PTR_ERR(dphy->phy);
++	}
++
++	pm_runtime_enable(&pdev->dev);
++
++	phy_set_drvdata(dphy->phy, dphy);
++	phy_provider = devm_of_phy_provider_register(&pdev->dev,
++						     of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct stf_dphy_info starfive_dphy_info = {
++	.maps = {4, 0, 1, 2, 3, 5},
++};
++
++static const struct of_device_id stf_dphy_dt_ids[] = {
++	{
++		.compatible = "starfive,jh7110-dphy-rx",
++		.data = &starfive_dphy_info,
++	},
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
++
++static struct platform_driver stf_dphy_driver = {
++	.probe = stf_dphy_probe,
++	.driver = {
++		.name	= "starfive-dphy-rx",
++		.of_match_table = stf_dphy_dt_ids,
++	},
++};
++module_platform_driver(stf_dphy_driver);
++
++MODULE_AUTHOR("Jack Zhu <jack.zhu@starfivetech.com>");
++MODULE_AUTHOR("Changhuang Liang <changhuang.liang@starfivetech.com>");
++MODULE_DESCRIPTION("StarFive JH7110 DPHY RX driver");
++MODULE_LICENSE("GPL");
+-- 
 2.25.1
+
 
 -- 
 linux-phy mailing list
