@@ -4,49 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 957FBEB64DA
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 08:08:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB21FEB64DA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 08:16:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Ax635YAk5cZwS61+MPTAW1xUUpayCq+WgvwWYrsuks=; b=GZq5g3jMZ8/k/V
-	gN76C+oT6xnsiYDdOw20LHx0FNl/rUA9Qu2IW2p/lFrP6ebe0FUDRh/QN+GYD9tBT62kyjfJ1/EBX
-	COYCFnbOn8TsSt6PWPeCDQ5v0+3QKcW/95ErN7p50OFdUknkfP8HFFATvqFzrI32Q2K41kYX8lh2D
-	M3uQVxWuNEBLBYGDtw4Qt8k9/SQVIsTonkAOu/rqiyKLOq7rrSIEjpEfSaJpJSqdcBi/yxXJh3FtY
-	hGcPMnAg/KMPF46d3nlmJEY4J+YOKKIvX+7o8VFrpt+3oRJR+1zoTwhJ1CBeL+FY+ETChCNn7+3GT
-	e6/FIerV72SFbuc5J5pw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=w+xDU6h1zRjWNEjpmXGfBv2uCfH1uqYN2KlXrcZRWkU=; b=1rzRFzqoFbtuDomAEsc0baZQeH
+	/2UUqicdaRbdlXYBqwn4rTTfHePHaprKeMp/fLDPsJW1sweR+mbcV55Va/MmaHIMzySG7R2e1g2ia
+	Aly292me/wy+d22WudPUyi++FRa9vKAvjcFNbzRUFSUuTlcoHlCapJ1XkOukl1OWAPyNzgFFecM8d
+	wK7kee27vNsjWNFSfIVGce0wW+AAlLIVuG0ngTEuCgVmdyDlZKOOjqExa1J8pyMNAzcQPxWQ6dkft
+	b/kzcM68JhZPjsnkSOBGatg3O8PE1KOabCeKYVVJdfqUwNHImJrabZYzlDvE22WJcb1W9DNoju/dY
+	rbJIWt1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM2EL-006EGb-0t;
-	Wed, 19 Jul 2023 08:08:17 +0000
+	id 1qM2M3-006H1B-1G;
+	Wed, 19 Jul 2023 08:16:15 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM2EI-006EFY-2r;
-	Wed, 19 Jul 2023 08:08:14 +0000
+	id 1qM2M1-006Gzq-18;
+	Wed, 19 Jul 2023 08:16:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
 	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=5Dt0XbJphgWhfxscv+v0zuGvIhup8GAxvOTTyVEuEy0=; b=Uek0csm2YaE7Wqo8LX1NM1Uyls
-	q3Ta4eeDxMWpPFcBqwq0efFVC1DKJj6tBXJVAAgQ474nEuyft7aIqB/E7Q0k3lOXu8ks0X9pmKb/8
-	2pdAaBl4VC6mELJ6663SHkl5P1qAbytqWaSGrsPvZja9io0POhHHgv8dGKDZXpEeKL+LqgXffpqyh
-	oLtSaP4LZim1j5CuaQYB8yp+bE3+D8IxQ4RH+hiAI00XFqsMYBqU0uY1p4aCvYZa/aFxZiQdFq4G7
-	sC/7Bji6Ldj5dvckdqZ65AAM8Lhj/gCsBsybQNS/+p9rPsdNIqonZbSkmMipx7Hy43pvI5/g6k0Dj
-	jP8Ne16A==;
-Received: from dliviu.plus.com ([80.229.23.120] helo=smtp.dudau.co.uk)
-	by desiato.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLqWv-00BwTS-1V;
-	Tue, 18 Jul 2023 19:38:43 +0000
-Received: from mail.dudau.co.uk (bart.dudau.co.uk [192.168.14.2])
-	by smtp.dudau.co.uk (Postfix) with SMTP id 1735441A7003;
-	Tue, 18 Jul 2023 20:38:36 +0100 (BST)
-Received: by mail.dudau.co.uk (sSMTP sendmail emulation); Tue, 18 Jul 2023 20:38:36 +0100
-Date: Tue, 18 Jul 2023 20:38:36 +0100
-From: Liviu Dudau <liviu@dudau.co.uk>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
+	bh=crpYAHM+p4nLfGPEJI9h6zUBx8PTfRw/JqYWS3dfJmw=; b=BEJA3ODl1RMXBqU56Bu/pHszTm
+	q58qSoJCyaK3dZD2Duk/6pk/tSO65nmSMuQV6FJjt7EzQsPiGqKc2gN/vwjoBm9o0XVur+RVbwWpp
+	yH9UNAlfXDcj3PkOS8uaR/VMXW56vJV653ixFlTkW1gFUjLQibwJw6nUeXs90aSl6omH10X+7gHGs
+	Ghgqsp5B1jUNqrfErtEuIWl1AB+aiQIkljohGvba1+xoVHrX0tWFegHcysJWjnHlfwKjg8Lt7MAvX
+	nTQI7iUzihZCrmZS8irQoyRbHSCBAGojk4wFv61D79UrNjvc8BEsymf60+UZN75OlQFJLrbXxuAuH
+	S4k/lXYQ==;
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qLn93-00BkCt-2H;
+	Tue, 18 Jul 2023 16:01:52 +0000
+Received: from mercury (dyndsl-091-248-212-239.ewe-ip-backbone.de [91.248.212.239])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 06D716607029;
+	Tue, 18 Jul 2023 17:01:40 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1689696100;
+	bh=fjD/ofT/AJheOC0PpncIwEm97OhHZA/Z2aAcGGQekfE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=QgKIwJjTZLCYtJFI9C3oTjp3n/iC1v4sfaZySSF6luarFGrq212CEA63pyZN4Wv4w
+	 I9SYa9dQcjJfBCZSbae+1xeSgfb3V/Eo6CrPj5rv3RovFYVc9xJa18Iq8xboSoO/uX
+	 Ye1IpLqjlGbw5GA4KE2SgMCqCGLsCfRqDhFErHd9biSHPiz/NxzIRsxMr3OgOrtosv
+	 Ee9kTJptGs/bqm+oj806e66MWjpUt6u0QiaPfobNNYJd5lXFKjNG2MRRnE9odSH0uG
+	 x+QLk2GR9Q1M0YGcNg1GixOkLrl2bV1YJ9un0qyRUbK1FJFfef7sxMruE4vmApL/MN
+	 Uo0XN6rFUBzAA==
+Received: by mercury (Postfix, from userid 1000)
+	id 78BB510607FA; Tue, 18 Jul 2023 18:01:37 +0200 (CEST)
+Date: Tue, 18 Jul 2023 18:01:37 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Liviu Dudau <liviu@dudau.co.uk>
 Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
 	Jingoo Han <jingoohan1@gmail.com>,
 	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
@@ -66,17 +81,15 @@ Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
 	linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org, kernel@collabora.com
 Subject: Re: [PATCH v2 2/2] arm64: dts: rockchip: rk3588: add PCIe3 support
-Message-ID: <ZLbqPB5yP7Kn6FT6@bart.dudau.co.uk>
+Message-ID: <20230718160137.sfitnkl6gmyi75jx@mercury.elektranox.org>
 References: <20230717173512.65169-1-sebastian.reichel@collabora.com>
  <20230717173512.65169-3-sebastian.reichel@collabora.com>
  <ZLarQUvUK3v3m6Cg@bart.dudau.co.uk>
- <20230718160137.sfitnkl6gmyi75jx@mercury.elektranox.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230718160137.sfitnkl6gmyi75jx@mercury.elektranox.org>
+In-Reply-To: <ZLarQUvUK3v3m6Cg@bart.dudau.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230718_203841_861669_D09585E3 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20230718_170150_194622_733E744B 
+X-CRM114-Status: GOOD (  19.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,65 +101,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============9194988655026161227=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 18, 2023 at 06:01:37PM +0200, Sebastian Reichel wrote:
-> Hi Liviu,
-> 
-> On Tue, Jul 18, 2023 at 04:09:53PM +0100, Liviu Dudau wrote:
-> > On Mon, Jul 17, 2023 at 07:35:12PM +0200, Sebastian Reichel wrote:
-> > > Add both PCIe3 controllers together with the shared PHY.
-> > > 
-> > > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> > > ---
-> > >  arch/arm64/boot/dts/rockchip/rk3588.dtsi | 120 +++++++++++++++++++++++
-> > >  1 file changed, 120 insertions(+)
-> > > 
-> > > diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> > > index 88d702575db2..8f210f002fac 100644
-> > > --- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> > > +++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-> > > @@ -7,6 +7,11 @@
-> > >  #include "rk3588-pinctrl.dtsi"
-> > >  
-> > >  / {
-> > > +	pcie30_phy_grf: syscon@fd5b8000 {
-> > > +		compatible = "rockchip,rk3588-pcie3-phy-grf", "syscon";
-> > > +		reg = <0x0 0xfd5b8000 0x0 0x10000>;
-> > > +	};
-> > > +
-> > >  	pipe_phy1_grf: syscon@fd5c0000 {
-> > >  		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
-> > >  		reg = <0x0 0xfd5c0000 0x0 0x100>;
-> > 
-> > What tree is based this on? Even after applying your PCIe2 series I don't have the above
-> > node so the patch doesn't apply to mainline.
-> 
-> You are missing naneng-combphy support:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git/commit/?h=v6.6-armsoc/dts64&id=6ebd55b3bba383e0523b0c014f17c97f3ce80708
 
-Thanks! It looks like the PCIe2 commit that adds support to rk3588(s).dtsi
-files is also missing an #include <dt-bindings/phy/phy.h> for the PHY_TYPE_PCIE
-use, otherwise the DTS fail to compile.
-
-Best regards,
-Liviu
-
-> 
-> -- Sebastian
+--===============9194988655026161227==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="4xub73vban4yxnem"
+Content-Disposition: inline
 
 
+--4xub73vban4yxnem
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
--- 
-Everyone who uses computers frequently has had, from time to time,
-a mad desire to attack the precocious abacus with an axe.
-       	   	      	     	  -- John D. Clark, Ignition!
+Hi Liviu,
+
+On Tue, Jul 18, 2023 at 04:09:53PM +0100, Liviu Dudau wrote:
+> On Mon, Jul 17, 2023 at 07:35:12PM +0200, Sebastian Reichel wrote:
+> > Add both PCIe3 controllers together with the shared PHY.
+> >=20
+> > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> > ---
+> >  arch/arm64/boot/dts/rockchip/rk3588.dtsi | 120 +++++++++++++++++++++++
+> >  1 file changed, 120 insertions(+)
+> >=20
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot=
+/dts/rockchip/rk3588.dtsi
+> > index 88d702575db2..8f210f002fac 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+> > @@ -7,6 +7,11 @@
+> >  #include "rk3588-pinctrl.dtsi"
+> > =20
+> >  / {
+> > +	pcie30_phy_grf: syscon@fd5b8000 {
+> > +		compatible =3D "rockchip,rk3588-pcie3-phy-grf", "syscon";
+> > +		reg =3D <0x0 0xfd5b8000 0x0 0x10000>;
+> > +	};
+> > +
+> >  	pipe_phy1_grf: syscon@fd5c0000 {
+> >  		compatible =3D "rockchip,rk3588-pipe-phy-grf", "syscon";
+> >  		reg =3D <0x0 0xfd5c0000 0x0 0x100>;
+>=20
+> What tree is based this on? Even after applying your PCIe2 series I don't=
+ have the above
+> node so the patch doesn't apply to mainline.
+
+You are missing naneng-combphy support:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git/co=
+mmit/?h=3Dv6.6-armsoc/dts64&id=3D6ebd55b3bba383e0523b0c014f17c97f3ce80708
+
+-- Sebastian
+
+--4xub73vban4yxnem
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmS2t1IACgkQ2O7X88g7
++pqi5w/+MtPLKzu0zQdj3a5g9sZvB/lE1Ajhuqbg99UmDnDpcKnAmovt4GrDpl9D
+czMjsyIfV2yuvu3cb2quGMdn0oU61vE/Kbi5vnr9PWCWAeljpko+f45Qm9qR9GHb
++EWu4q5jtw5hsQrMLrGztOcKeM16eY/ArHFlwNtc2paHAS0AyAGDrJFsX31+3/b6
+rWGd2bdbeo+06VOcFjNO+eZPPb2ayUOzgPk8pvtUrUbHlE2pUj6XAAlvLHk7Cb/x
+yPkW9lw29OY/+acWnZTDBTCEGHfwHr8my8L3JN0K1ayMTFlDhDFWyxZCZH8iDweB
+Aiwmhnt7hR1GhY9590dIgOjt+GV3Qph1G2wVAaWV4KMEbBG6xf+X3IpOwC55nqDt
+W9/Z9wpb0OZye+JTIeap7L8tGPVP6SFjQdPf4fWt9D3O13EhgwHSOZLTCaq0oGXu
+Cp05ioeDHq9NU/NA6YrOa8YBC/i9FfheGwaRGcpKqMakhMxk9TNpMWqDQ00ASY+9
+33IgWjLXICSnrgogB0hXwrPwT7+loIBCbXNy8+U8F0IuICu0WCy6x0TlyDfJP+aM
+vAscSUpMqYRHVPSbfO5eOS+dUtnBOLimZt5GpRYHu0cjSisD1rAh+kzPAGpsAE6W
+sY9NKRcNxncmrDygY3nmTX6z7gVMVtPMXkBu19+KvRtq3y/o7U0=
+=hXOJ
+-----END PGP SIGNATURE-----
+
+--4xub73vban4yxnem--
+
+
+--===============9194988655026161227==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============9194988655026161227==--
+
