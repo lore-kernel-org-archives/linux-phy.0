@@ -4,87 +4,156 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76207C0015E
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 08:23:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6179EB64DA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 08:34:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2PD58sKVtu+B9gvJQ87d88d33i5oDf484kFQj6HYERs=; b=XDeL+OPXo4FOaQ
-	b+Qtg4iXSJQ21otfE8OIWZMxL2pSzFsrp3V1TJo4xjVqC1TDYS1jcQLDSsUrlLudvQLgFYh9DOWTV
-	GEl9zpmmm+7vaRUDzkKnGbMexIIATgZz68MMOXpvLUYyvkqzFRQAsaCEajokHkBG9nVCIjMpMI0WU
-	v9U35gL4/l5OmOQvwMvqlnXo0GXo8xUduNOvWWODO+v5p8s6bBmEO9BFrhsWFsrmu6ZDS2Gn4hTBN
-	eEQoLj+j7vtiDuTQYHxwLR+DfMJ1ynQnJFDre0YycSQUcFWe97SihS29tPnqT6p2/L0qVCbm34KMj
-	ExlTJ7nxyjaMTIDW5lDQ==;
+	List-Owner; bh=es/WG6QJq+2EvRGDsVwuQ8BQ/AypR12DZimb8a4p6XI=; b=odTasPEB/WZbEI
+	kb/uoTfjnU1aYagjypAyBRHjNQ6Z93mElQ3pebtrnhb0GB3MIJhlWcl9BN107pQVyHi4pVujxwQU2
+	w4gLlCmJ6bH4n343Uace9uIVUmu2+fzXjkexGKmQEbV/58Mt7xfmcz6++gRdAskPYzOQlG1ZJfsE2
+	2AHM9hOwDfeVhLe7007ZbhBsOPvD+wFLUpUvoYPUOQJhEubbUK5UARl/AWOHGCSF49Zehy3jrxf9P
+	zotnLulLlyxeIx2BznxaVBBqWN2G0AOMT6YLAJ34gEyc7tno7zAzjN5EHxVYuw77HjCZnQ7jsdl2O
+	BYGb6LF6rptCxgQ6TwOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM2Su-006JtD-0a;
-	Wed, 19 Jul 2023 08:23:20 +0000
+	id 1qM2eB-006OCS-24;
+	Wed, 19 Jul 2023 08:34:59 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM2Sq-006JrT-35;
-	Wed, 19 Jul 2023 08:23:16 +0000
+	id 1qM2e9-006O9q-32;
+	Wed, 19 Jul 2023 08:34:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:To:From:
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
+	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=R4cZUw8z7rxxyMTR+zpRQBBQrWjOnDtSx8bESrw4mPM=; b=WxZrf/cAOev9qgRZpYd4Xi4llM
-	Ch/BzdRyFE7xzlqGoqwzG3N3BTXylcwxHdHagT+3V56GfpT5K8DuwGgpCGWRkvXzhCW5BpBjNRPqR
-	JpSaN0jaIciUEJlPzzpM75KVgexYeaoc9HWoSk161kswvfqaf3mDjvHxdfODoIdE6lo9wHMhT6sMt
-	J98m+3gnG6LuGktxHdCj9SM0T84XhQPdT28N3/y1/0SyPzLgHzC3w9Z+6kYjf07ZysKB+pbNDj71w
-	ckCYLSvnzygz07XHEeg0pRj1j8JuPpasJco57FGGhXYIevqxRhC4rvi7mIukIsE9RXJMp8OY5T59f
-	FXdIfZRA==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	bh=ypY41TDW50csgsRuc3se4H10wf2yfTzQo1RlTYZIpJ0=; b=SCByVz+zubFTX4esA36TcEclET
+	j8O6sE8GLBYZCCLWvTRNefPxD+xHAnp5A9E6nZw/LtJHz0wm/7JjadYX+DqXLuicXVo4fsiZD9BmT
+	UmdWJAOmoNiu5joywPQ/ZCpoIIjuQtvMWrMuXnWoR932rPWkgwnFJdAAxwQOgqy18LSUYpcFKgLpT
+	JE58J0s9chrLX5kuRCZnbeSF7FRKHttLJugf00V123hKjQ1EwvkmrNJDkJ7EqtNj2S82itW/qDeDy
+	wb6vte5K9Fi/X9ELYoXSmf8YSR+lNVblxfBOFVWcJfVot5elYlKAgSeiylSoVDZTDCDZ5PAHo7vqm
+	3N94WBaA==;
+Received: from mail-vi1eur05on2061e.outbound.protection.outlook.com ([2a01:111:f400:7d00::61e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLe0g-00BDCb-2V;
-	Tue, 18 Jul 2023 06:16:36 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2D7A56144A;
-	Tue, 18 Jul 2023 06:15:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A470C433C8;
-	Tue, 18 Jul 2023 06:15:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1689660944;
-	bh=cUbtQFwtfNqfULDCUbv0nOM8BYXs2LTWrJLdZvxDQA8=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=KJMbAtyc6I4UHt7JFBVCvT14hZFxEuSn4EUlSOeJYjfmbE5T15HppBRoUbJax/Vtm
-	 869HTzQvKifHDgR2O6mXMZPwr9FNPI53GvIY3GS2y1ZXAk84W5q/JxvSiYhQPN6N/4
-	 2pdCEkamrgQOIO6ksvmJ1MVA4wNMZ+QvYssZwsUmSTEZCR6yiSJq7yut8GDT5tNhUZ
-	 hZsMUuT+RqvRZX4kJfQYgJn9iFHaasyZU3hPQPOsoVupT7pDyG2vOzZ7Vv9UMqPMBq
-	 /POpr7jpl0bocB0WIjrTURwiWpsuZMWyF/GB8IzpM7p8HpMfIDZSJ6on4t0eynysl6
-	 RRyyt8RJGyA1A==
-From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Jingoo Han <jingoohan1@gmail.com>, 
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Rob Herring <robh@kernel.org>, Serge Semin <fancer.lancer@gmail.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Shawn Lin <shawn.lin@rock-chips.com>, Simon Xue <xxm@rock-chips.com>, 
- John Clark <inindev@gmail.com>, Qu Wenruo <wqu@suse.com>, 
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- kernel@collabora.com
-In-Reply-To: <20230717173512.65169-1-sebastian.reichel@collabora.com>
-References: <20230717173512.65169-1-sebastian.reichel@collabora.com>
-Subject: Re: (subset) [PATCH v2 0/2] RK3588 PCIe3 support
-Message-Id: <168966093703.340315.14184672794247667224.b4-ty@kernel.org>
-Date: Tue, 18 Jul 2023 11:45:37 +0530
+	id 1qLx0l-00CUxK-0J;
+	Wed, 19 Jul 2023 02:33:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=e8wmIKQ0wGaZVehqz7m21EsyDCjWSX7HI/Z0YFGM6i8bDCVHa2u4+x/PYp7LrNyL4tuOZpYiif9kEs689gQt5iLKInXIIqrJjLjuQxEbk4qQJd/sy6oTWbZWxVBtMcvL+pK//acu6rrWllc1paMhYSEeojHfYIfowklapB+vxuCYSM1z5X4foXeQEq2IC7VJzh7Wd640Q34Ti21LcQ63eYCAzBCVl9spAxQ7FAnpyYWk/IQCVY89fV2/ylSPUcKuMNx3PeNh4dioJeCbxO/JP6swBXXTKTp9aaK98SbkDpw3JkQls30MYskw0ytf0bBgeUnnGx175YQCiVtyDG58YQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ypY41TDW50csgsRuc3se4H10wf2yfTzQo1RlTYZIpJ0=;
+ b=VbToUqq5ri00HXPehkRPFRTRQA/eYlWFqKd3MFcaHOgdtocFYEN85JcZRejrqjOeKxcmG9FQQmpTUhJ19DztbR9FlegtXG5CdOCuaGMQrXD2iBnGDi4/4u/6AoBSQSq2Wx20bN9xL/1dkwa7PZHeEcYbsNZKTra3fIvXeQNPawlEmrYP9hhCCrWVlYs9B0e5ULEZRQ+vpCSsMJf11H9jlcUzRbuAW5FfxcIMMz7YnZb+Hy74gLpGcTbOlzBgt4YOmdYcLqqBPfcSkXyyPAFeSV5F6oVRGkU9MVaJ5YziEkO93hdoHgCIDGb4Qh5nc8HjfpdlH7guGrs1HFEEb8+ulQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ypY41TDW50csgsRuc3se4H10wf2yfTzQo1RlTYZIpJ0=;
+ b=nKnU7POqtbBcZaXX+/LjoYek9WXPcBk5Vuh7Dic4FLF8Vk2pvnTvPJOpqhHpu+eWgiXL5mdeot7wiVxMcCeRZxk+8xW20nLC30DAmI8cmVPlVOgXqbCWrjb0ik9FqPfiY6JSsE+jKHYuxwznA36Pd9FqP2kHZAu6R/axqdFeTR0=
+Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
+ by DB9PR04MB9792.eurprd04.prod.outlook.com (2603:10a6:10:4c2::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6588.33; Wed, 19 Jul
+ 2023 02:32:41 +0000
+Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
+ ([fe80::3505:c499:96d4:1429]) by PAXPR04MB9448.eurprd04.prod.outlook.com
+ ([fe80::3505:c499:96d4:1429%4]) with mapi id 15.20.6588.031; Wed, 19 Jul 2023
+ 02:32:41 +0000
+From: Sandor Yu <sandor.yu@nxp.com>
+To: Rob Herring <robh@kernel.org>
+CC: Alexander Stein <alexander.stein@ew.tq-group.com>,
+	"andrzej.hajda@intel.com" <andrzej.hajda@intel.com>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
+	"Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
+	"jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@gmail.com"
+	<jernej.skrabec@gmail.com>, "airlied@gmail.com" <airlied@gmail.com>,
+	"daniel@ffwll.ch" <daniel@ffwll.ch>, "krzysztof.kozlowski+dt@linaro.org"
+	<krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org"
+	<shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+	"festevam@gmail.com" <festevam@gmail.com>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "dri-devel@lists.freedesktop.org"
+	<dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "ker nel@pengutronix.de"
+	<kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, Oliver Brown
+	<oliver.brown@nxp.com>, "sam@ravnborg.org" <sam@ravnborg.org>
+Subject: RE: [EXT] Re: [PATCH v7 3/7] dt-bindings: display: bridge: Add
+ Cadence MHDP850
+Thread-Topic: [EXT] Re: [PATCH v7 3/7] dt-bindings: display: bridge: Add
+ Cadence MHDP850
+Thread-Index: AQHZuIUePa/zOSPAXUe6/zQl/U27da+9sp2AgAERxRCAAVnyAIAAOPmw
+Date: Wed, 19 Jul 2023 02:32:41 +0000
+Message-ID: <PAXPR04MB9448A51496A99C6AE17BBD4EF439A@PAXPR04MB9448.eurprd04.prod.outlook.com>
+References: <cover.1689580812.git.Sandor.yu@nxp.com>
+ <3646ea4d279838c78e00af1d746e3de34351b083.1689580812.git.Sandor.yu@nxp.com>
+ <5693162.DvuYhMxLoT@steina-w>
+ <PAXPR04MB94483425E2BC17597B7E555AF438A@PAXPR04MB9448.eurprd04.prod.outlook.com>
+ <20230718223208.GA2112396-robh@kernel.org>
+In-Reply-To: <20230718223208.GA2112396-robh@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PAXPR04MB9448:EE_|DB9PR04MB9792:EE_
+x-ms-office365-filtering-correlation-id: fed99ed6-f9fd-4acc-f1aa-08db88006d47
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wt/nsq585kZo2OPjOaKCfUoLKRMrq6TNpTMlL5Kw+HBc9ZFYE/z9cg4txLUp3zx5RSl97HcuVU4VCWzuXjihHjisk7TyDYCJBBRoMgr8cEkT4LXv/CbiM8eK2EnvyBXi7F0jXJ/fcm+JheegK+FFGaTk0IfYzJboWqyruRoI/TmSNKz7IORG8xwfYVhvUClgjic4awvqTgaapXybyjAGRKGFnwHt5QAAJ5a3s3rvbMMUKBm4chG+U81s+NzixMQ+GjqKhYUBsb8GrKu5qCo+0aQrtyoLxQTH0yeWCFpFoALD1W6dXdCMBTwRzntpHPMhUBZJcIhx/6G8xDk4LLkDrVZv3Wgm841NXPF8ZRc+borpIBnayyWTlYUsLrDPMBhfj9IaWvz11Wb3GrwB70gbOtZdQpwV2lShJOU5fEx7CYURA28wD5JwErSi+0ylU2goDcYa74C0TZdShBbJpOVihx3qOdrVbtbhuk0tv3dZ4s6ggJGcAbgt8ORkGd00Bbn3SzgMs8utQExMfDUp+JNVhyeyRk3epGsDpo0zgsXQ+z84RxXxArSV2p3tHB1q8VXe/Gg5jhKD11K9DqtEJaNdlGBiRMcWadj9Kq02Yw8DctK9h1ZJyQclZJzBFlcunWlX
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(396003)(39860400002)(346002)(376002)(366004)(136003)(451199021)(86362001)(2906002)(7416002)(38070700005)(33656002)(44832011)(55016003)(83380400001)(186003)(26005)(66574015)(9686003)(6506007)(7696005)(122000001)(54906003)(316002)(66446008)(64756008)(66476007)(8936002)(66946007)(6916009)(66556008)(38100700002)(4326008)(5660300002)(478600001)(41300700001)(71200400001)(76116006)(52536014)(8676002);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?p4mvm7wGChyKb5X84ozOq0X7IvNX/n3udIBDnzt+H6DwpOT934FuOtZz/U?=
+ =?iso-8859-1?Q?1w8a7ayj4UcqsVZRm1hGrSZWwx0YRZP+JbHWpXL9tiNC4b1Lr6oAiMb8t9?=
+ =?iso-8859-1?Q?yu4IIiiCYib8vb2ulWCbfmXLh+uhzvaJqPWvd0LogbuG4pj9gm+Vdiibyt?=
+ =?iso-8859-1?Q?iIDC1OTPFiewzZK+dA7jo05KlS1OTsSpNs5zQhEqka6SPTBB11t8UYGIcI?=
+ =?iso-8859-1?Q?6R5AWGVB/4WsXlx+i/tiYqN24AIirVRcqBsm4HishreAaQL/+Y4nj1ivhl?=
+ =?iso-8859-1?Q?sEFynhFn1PjVLmwYwEKuMXbdMP68cob96AHppoGMVCdidjtySK3ILXujxp?=
+ =?iso-8859-1?Q?kvezBr379eKXdxc9vz0imXgmzCszeXAmjgv6A+xzTN1GlXpEulR6GPigju?=
+ =?iso-8859-1?Q?C73BBPfaogPeAl1dFEWEx8DoN6WuVpYBSiqGtS9ylfZ14Z0DheG/6TJv8N?=
+ =?iso-8859-1?Q?ZEwk+LvUJl7fbzvI5vyvK82RXBOQCpguUn6di4XtLsbvgblNsrJCQ7Mlo/?=
+ =?iso-8859-1?Q?QnaTGLuYAfHWDAHZ4/3dzMrM2D1zVV8/Sf3S2txcDyVB9ZqcwgTCeD3ZKB?=
+ =?iso-8859-1?Q?3eN+ES0YwReN6T7pdRQc23Luy/6XyCDNHXzYgzL0ann0PyTEQJxHnA+z4w?=
+ =?iso-8859-1?Q?18nW5XiLZfbuM+0d4SBudb3sxmbp5QSEscGDt8VYwLd3sjJyfHG565hKOP?=
+ =?iso-8859-1?Q?ARaPi0MXcwGThARhZJP6UPo1D6XXR8b2cKuYnN/ugwd08r4hzfnMjMVXwJ?=
+ =?iso-8859-1?Q?HuhEHTWDHIASPUZrlC9kDRXbo/Xzc327giELyvSJbKldlZX6mX+3kw+yUc?=
+ =?iso-8859-1?Q?jB+Od23xJyyNNYsBOGT1f6i18n1dxkxZtwLWeXNEAQZ2/vtxAf9/f5BRn9?=
+ =?iso-8859-1?Q?rD2eazY38JumbuhO19CZc7QWhLXo/erpdKEQsrFl2+1yUU2mLewpKEH9Aq?=
+ =?iso-8859-1?Q?Kknijgdl6PD00yXAlJM/HtWzSYpoV1QMy1oek2JVKdqVbTd2GBNDDiN+F4?=
+ =?iso-8859-1?Q?xGMb+B+YoruIv9EFeu+H9+9lHo+V/f7SwsRKy7WdzlqiLA6GWzkwnMXMFE?=
+ =?iso-8859-1?Q?VBiIe/fwvvIomFxQjiaJnnAvTLUbH1bIf73gZbPqJYW+KyFk+gxZZmQiqZ?=
+ =?iso-8859-1?Q?DeJZMwB2k8rAWnBG3TH8y1CcKj6F7E1dM6vO9JHK19QPgsU36/EclK+21W?=
+ =?iso-8859-1?Q?awwabmOAkG5jb37d0GUmYetvxsvO4vkJopTaekOaZf1ZBWVs5kl6QcDW2B?=
+ =?iso-8859-1?Q?2r5wemdwSxWzEtkYeqt33K0BVd5b6UW/4dCTTSUqk2hOGdR75Nqq1jjBMt?=
+ =?iso-8859-1?Q?BcdjPxfTlB6pQ7D4G/cce7xWsB1irurmyDVJx7wfLpfG9lsnzm/aL7B/mb?=
+ =?iso-8859-1?Q?qB2H+g1t28Bmya2m5Bk3ckZNJ8GH6hW9/Q0npO4MZ9QnxFe6xIe7SXUCXL?=
+ =?iso-8859-1?Q?juz2SUkJjP7IiBHo6Cezw3XM/IzLHLsQW/HTE9ZknaSdREzrjy8E+UjD2Q?=
+ =?iso-8859-1?Q?khns32z82LcNmXakOv6BDJOrtC+cn704Tgwoo+JiM5mdf8m7jw2l0gMaSy?=
+ =?iso-8859-1?Q?4RBSqUUorg/nNKqHsgO6UwPsvezWAMlPtYELZRWgcdGZaSzQA902REbgdI?=
+ =?iso-8859-1?Q?sOWwKW+2B45KM=3D?=
 MIME-Version: 1.0
-X-Mailer: b4 0.12.2
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fed99ed6-f9fd-4acc-f1aa-08db88006d47
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Jul 2023 02:32:41.7515
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: QkgfKA5CM1Ce6736farYPLCWokudPgobkmypjG0CwSavtCQfhJK7fEDGswbmLdq1Exl424pS5u04BvUNDQOu0g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9792
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230718_071635_172317_CB1B0F36 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20230719_033355_472789_FD698861 
+X-CRM114-Status: GOOD (  27.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,39 +165,201 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Rob,
 
-On Mon, 17 Jul 2023 19:35:10 +0200, Sebastian Reichel wrote:
-> This adds PCIe v3 support for RK3588. The series depends on the PCIe
-> v2 series [0], since the the same binding is used. It has been tested
-> on Rockchip EVB1 and Radxa Rock 5B.
-> 
-> Note, that the PCIe3 PHY driver is currently missing bifurcation
-> support for RK3588. Thus after this series only PCIe3x4 is usable
-> (in aggregated x4 mode) without adding support for the PHY's
-> "rockchip,pcie30-phymode" DT property, which allows configuring
-> how the lanes are distributed. Aggregated 3x4 mode seems to be the
-> most common configuration. Both EVB1 and Rock 5B use it, so I
-> cannot test anything else anyways.
-> 
-> [...]
+Thanks for your comment.
 
-Applied, thanks!
+> > Hi Alexander,
+> >
+> > Thanks for your comments,
+> >
+> > >
+> > > Am Montag, 17. Juli 2023, 10:03:49 CEST schrieb Sandor Yu:
+> > > > ********************
+> > > > Achtung externe E-Mail: =D6ffnen Sie Anh=E4nge und Links nur, wenn =
+Sie
+> > > > wissen, dass diese aus einer sicheren Quelle stammen und sicher sin=
+d.
+> > > > Leiten Sie die E-Mail im Zweifelsfall zur Pr=FCfung an den IT-Helpd=
+esk
+> weiter.
+> > > > Attention external email: Open attachments and links only if you
+> > > > know that they are from a secure source and are safe. In doubt
+> > > > forward the email to the IT-Helpdesk to check it.
+> > > > ********************
+> > > >
+> > > > Add bindings for Cadence MHDP8501 DisplayPort/HDMI bridge..
+> > > >
+> > > > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > > > ---
+> > > >  .../display/bridge/cdns,mhdp8501.yaml         | 105
+> > > ++++++++++++++++++
+> > > >  1 file changed, 105 insertions(+)  create mode 100644
+> > > >
+> Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yam
+> > > > l
+> > > >
+> > > > diff --git
+> > > > a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.y
+> > > > aml
+> > > > b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.y
+> > > > aml new file mode 100644 index 000000000000..b983ee765f54
+> > > > --- /dev/null
+> > > > +++
+> > > b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.y
+> > > > +++ aml
+> > > > @@ -0,0 +1,105 @@
+> > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause) %YAML 1.2
+> > > > +---
+> > > > +$id:
+> > > > +http://devi/
+> > > >
+> > >
+> +cetree.org%2Fschemas%2Fdisplay%2Fbridge%2Fcdns%2Cmhdp8501.yaml%
+> > > 23&dat
+> > > >
+> > >
+> +a=3D05%7C01%7CSandor.yu%40nxp.com%7C603a90f3f3c34d32a1e708db86a
+> > > 8f868%7C
+> > > >
+> > >
+> +686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C63825183250590544
+> > > 2%7CUnkno
+> > > >
+> > >
+> +wn%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1
+> > > haWwi
+> > > >
+> > >
+> +LCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=3DJnbufeZplo%2B6JGW4HaK
+> > > %2BLyC0MESK
+> > > > +GsV%2FtjfeXCXqK4U%3D&reserved=3D0
+> > > > +$schema:
+> > > > +http://devi/
+> > > >
+> > >
+> +cetree.org%2Fmeta-schemas%2Fcore.yaml%23&data=3D05%7C01%7CSandor.
+> > > yu%40n
+> > > >
+> > >
+> +xp.com%7C603a90f3f3c34d32a1e708db86a8f868%7C686ea1d3bc2b4c6fa9
+> > > 2cd99c5
+> > > >
+> > >
+> +c301635%7C0%7C0%7C638251832505905442%7CUnknown%7CTWFpbGZs
+> > > b3d8eyJWIjoi
+> > > >
+> > >
+> +MC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3
+> > > 000%7C%
+> > > >
+> > >
+> +7C%7C&sdata=3DrdOyjVz4gGnToVC40Rcfp%2Fk925yC%2F6xNwGbBAnOtcDQ
+> > > %3D&reserv
+> > > > +ed=3D0
+> > > > +
+> > > > +title: Cadence MHDP8501 DP/HDMI bridge
+> > > > +
+> > > > +maintainers:
+> > > > +  - Sandor Yu <Sandor.yu@nxp.com>
+> > > > +
+> > > > +description:
+> > > > +  Cadence MHDP8501 DisplayPort/HDMI interface.
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    enum:
+> > > > +      - cdns,mhdp8501
+> > > > +      - fsl,imx8mq-mhdp8501
+> > > > +
+> > > > +  reg:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  clocks:
+> > > > +    maxItems: 1
+> > > > +    description: MHDP8501 DP/HDMI APB clock.
+> > > > +
+> > > > +  phys:
+> > > > +    maxItems: 1
+> > > > +    description:
+> > > > +      phandle to the DisplayPort or HDMI PHY
+> > > > +
+> > > > +  interrupts:
+> > > > +    items:
+> > > > +      - description: Hotplug cable plugin.
+> > > > +      - description: Hotplug cable plugout.
+> > > > +
+> > > > +  interrupt-names:
+> > > > +    items:
+> > > > +      - const: plug_in
+> > > > +      - const: plug_out
+> > > > +
+> > > > +  ports:
+> > > > +    $ref: /schemas/graph.yaml#/properties/ports
+> > > > +
+> > > > +    properties:
+> > > > +      port@0:
+> > > > +        $ref: /schemas/graph.yaml#/properties/port
+> > > > +        description:
+> > > > +          Input port from display controller output.
+> > > > +      port@1:
+> > > > +        $ref: /schemas/graph.yaml#/properties/port
+> > > > +        description:
+> > > > +          Output port to DisplayPort or HDMI connector.
+> > > > +
+> > > > +    required:
+> > > > +      - port@0
+> > > > +      - port@1
+> > > > +
+> > > > +required:
+> > > > +  - compatible
+> > > > +  - reg
+> > > > +  - clocks
+> > > > +  - interrupts
+> > > > +  - interrupt-names
+> > > > +  - phys
+> > > > +  - ports
+> > > > +
+> > > > +additionalProperties: false
+> > > > +
+> > > > +examples:
+> > > > +  - |
+> > > > +    #include <dt-bindings/clock/imx8mq-clock.h>
+> > > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > > > +
+> > > > +    mhdp_dp: dp-bridge@32c00000 {
+> > >
+> > > I'm not sure, but I would name this node just 'bridge', because it
+> > > can be either DP or HDMI depending on the connector. But DT folks
+> > > will know better than me.
+> > This name should update too after DP and HDMI driver combined.
+> =
 
-[1/2] dt-bindings: phy: rockchip: add RK3588 PCIe v3 phy
-      commit: f66782cff479807ad7e98f0cf6a0c0babfe0159b
+> Has nothing to do with a driver.
+> =
 
-Best regards,
--- 
-~Vinod
+> > I will change to "mhdp: mhdp-bridge@32c00000" in the next version.
+> =
 
+> What is 'mhdp'? Doesn't sound generic. Use just 'bridge' or 'display-brid=
+ge'.
+> We don't have a standard name defined in the DT spec (there's 'hdmi', but
+> nothing that's protocol independent).
 
+OK, thanks, will change to "mhdp: display-bridge@32c00000".
+B.R
+Sandor
+> =
 
--- 
+> Rob
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
