@@ -4,82 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 421FDEB64DC
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jul 2023 17:35:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 135CCEB64DA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jul 2023 05:11:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=guL6U3bbNBJbyKS64SXtbt/vd76U8jxU89piNsB3z+k=; b=qekmKEBa2VjPyM
-	UEqMjUrxnd3EtSYeQDSJNhYC2BLctb1vpeu3qvp1nrrqESVRpepF+ihMoKBuFXfNpIPrRFlYaH7TR
-	dts3D+dAEuuAtuHBAMBPCYmr3Vcteqsz4JXSklJqjO+gFPHdUkZzejFxs+KSOSc35Y3+V25uXqeFo
-	mlGT+4tvrcJc0qWAn4DqGIp3he49MTYXusJJFHQAKEvId4fjeA4auaAoasmtEp/GngTLY+dj/SA9n
-	LNKWb1BtijxosqvXzxnCN/nU6wd3acyHzDj89F3d2f7GzDJC3dsZt838R9Qec4WOCG5o939igsFoF
-	QFgpT3Lspy9hgm2GXr9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=j6+JvHcqN9u0Ej2lmGgOs5PBl7+iMwQDVSaiadOZzI4=; b=jdQSmOsEAHCgtb
+	HPYqg+z3WGG7KF9PjtELJsaQpHLgHDKUZXlRvVwvo5uu4skgYgB8YRIcHuDuR6Odrr8JBV9ObKmNl
+	D+vT+ilYwDTh0fbKApOW4UdFDIbn5Ju6zhdKVCF3tD9i6LiCUdIeUHufqkdT8MLApUf8KOY+PqqeK
+	Z+mB7EeczKrYxPduCg67he7+u7cfgO2RwFzUkb7ilGjakjnUeVTUAqK7SwMlAIt19Tdhp7D2H9VvR
+	az/T+wMMFM1kkJno8M5XaAIHY71w4NH53xlqrrNhWWoie7ChwdCshkIzppIKtkbYv4kpTqUC4NIS2
+	xezAnrrqK2C0nt2dzNEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLS8K-004hPq-2M;
-	Mon, 17 Jul 2023 17:35:40 +0000
-Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
+	id 1qLzTY-005B2J-22;
+	Wed, 19 Jul 2023 05:11:48 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLS7x-004hHu-1o;
-	Mon, 17 Jul 2023 17:35:20 +0000
-Received: from jupiter.universe (dyndsl-091-248-189-171.ewe-ip-backbone.de [91.248.189.171])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by madras.collabora.co.uk (Postfix) with ESMTPSA id DB88E660297B;
-	Mon, 17 Jul 2023 18:35:15 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1689615316;
-	bh=8oFJad9r/GlAEavQIAU1wTEML33q2mHg++XmmQwX2kM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=DqGDoIY9y0wEE76avTYGCDjg2nvy3cTzIABdofTOtlqWP1xQHEbxkKh2SywY2DXdy
-	 I3c0Tyemq4nHkprM5BJmufjc7d5OCgmnE6mzpUL0oMEr0uFgbW/dfdgWj3gisyiJcD
-	 QuLNaYfxr79Hu9EvXE9Tf0PAySjLwpCq80Xn5Jiy7Kehe3xYDoNyPlzoy/69QH+aRB
-	 AHchTHWkCNtvtTzvR75r59HZfQhYwabEiABq8dqffMvk8iIt6vZ30m1/JRBk8t9bz7
-	 uN4OwQWin4TairUPZKBG/4MEqd698US7snTj8zu4++s/22NMqoIYN+VjDZ3tkrtkSV
-	 aHOgrRb5jMZiA==
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id D4FCD480C78; Mon, 17 Jul 2023 19:35:12 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Cc: Jingoo Han <jingoohan1@gmail.com>,
-	Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-	Rob Herring <robh@kernel.org>,
-	Serge Semin <fancer.lancer@gmail.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Simon Xue <xxm@rock-chips.com>,
-	John Clark <inindev@gmail.com>,
-	Qu Wenruo <wqu@suse.com>,
-	devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org,
+	id 1qLzTX-005B1l-0b
+	for linux-phy@bombadil.infradead.org;
+	Wed, 19 Jul 2023 05:11:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=RhEQzcWCoyu9DkXJQ7D7u5aHs46BM/T89PJ+iA90cg8=; b=IPRObxltwpgJPaVbSWL+JZS0Py
+	V4CzNNqt1dHtWALoDi2NAchekaGUK5+3Q7HtWCwRqYVusEL9aWvHZ3EnflrSN8/y/MXu+NdVHAabS
+	ud3Pw60SctEPjAPv28WlpyCuOSkGDvlrOyXrycWQdiPFcyRwrQ0rPlNZJ62h9hTNCe4wF1reahD0o
+	LUjErVvJdtuEOvZiu2BaSzyi6b5rcP8gYcPbbn23KktBrJSgO4PyqkplDhvBbxaapHHCg2m9gbl9b
+	1Ivrm7cv8YVjt8bHzamzRRPPnB0DR70O+zP8cm+/Ngz/5PDx5xcL0uss6SLYT54upeSEzUXFTZ0Qw
+	/GqWu+Xw==;
+Received: from out30-99.freemail.mail.aliyun.com ([115.124.30.99])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qLvBD-00CJyM-1C
+	for linux-phy@lists.infradead.org;
+	Wed, 19 Jul 2023 00:36:40 +0000
+X-Alimail-AntiSpam: AC=PASS;BC=-1|-1;BR=01201311R251e4;CH=green;DM=||false|;DS=||;FP=0|-1|-1|-1|0|-1|-1|-1;HT=ay29a033018046049;MF=yang.lee@linux.alibaba.com;NM=1;PH=DS;RN=10;SR=0;TI=SMTPD_---0VnjO7FX_1689726974;
+Received: from localhost(mailfrom:yang.lee@linux.alibaba.com fp:SMTPD_---0VnjO7FX_1689726974)
+          by smtp.aliyun-inc.com;
+          Wed, 19 Jul 2023 08:36:15 +0800
+From: Yang Li <yang.lee@linux.alibaba.com>
+To: jckuo@nvidia.com
+Cc: vkoul@kernel.org,
+	kishon@kernel.org,
+	thierry.reding@gmail.com,
+	jonathanh@nvidia.com,
+	linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: rk3588: add PCIe3 support
-Date: Mon, 17 Jul 2023 19:35:12 +0200
-Message-Id: <20230717173512.65169-3-sebastian.reichel@collabora.com>
-X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230717173512.65169-1-sebastian.reichel@collabora.com>
-References: <20230717173512.65169-1-sebastian.reichel@collabora.com>
+	Yang Li <yang.lee@linux.alibaba.com>,
+	Abaci Robot <abaci@linux.alibaba.com>
+Subject: [PATCH -next] phy: Remove duplicated include in xusb.c
+Date: Wed, 19 Jul 2023 08:36:14 +0800
+Message-Id: <20230719003614.5506-1-yang.lee@linux.alibaba.com>
+X-Mailer: git-send-email 2.20.1.7.g153144c
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230717_103517_883375_EE1DAA16 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20230719_013636_861740_86AA7323 
+X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,158 +82,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add both PCIe3 controllers together with the shared PHY.
+./drivers/phy/tegra/xusb.c: linux/platform_device.h is included more than once.
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Reported-by: Abaci Robot <abaci@linux.alibaba.com>
+Closes: https://bugzilla.openanolis.cn/show_bug.cgi?id=5930
+Signed-off-by: Yang Li <yang.lee@linux.alibaba.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3588.dtsi | 120 +++++++++++++++++++++++
- 1 file changed, 120 insertions(+)
+ drivers/phy/tegra/xusb.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-index 88d702575db2..8f210f002fac 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
-@@ -7,6 +7,11 @@
- #include "rk3588-pinctrl.dtsi"
- 
- / {
-+	pcie30_phy_grf: syscon@fd5b8000 {
-+		compatible = "rockchip,rk3588-pcie3-phy-grf", "syscon";
-+		reg = <0x0 0xfd5b8000 0x0 0x10000>;
-+	};
-+
- 	pipe_phy1_grf: syscon@fd5c0000 {
- 		compatible = "rockchip,rk3588-pipe-phy-grf", "syscon";
- 		reg = <0x0 0xfd5c0000 0x0 0x100>;
-@@ -80,6 +85,108 @@ i2s10_8ch: i2s@fde00000 {
- 		status = "disabled";
- 	};
- 
-+	pcie3x4: pcie@fe150000 {
-+		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
-+		#address-cells = <3>;
-+		#size-cells = <2>;
-+		bus-range = <0x00 0x0f>;
-+		clocks = <&cru ACLK_PCIE_4L_MSTR>, <&cru ACLK_PCIE_4L_SLV>,
-+			 <&cru ACLK_PCIE_4L_DBI>, <&cru PCLK_PCIE_4L>,
-+			 <&cru CLK_PCIE_AUX0>, <&cru CLK_PCIE4L_PIPE>;
-+		clock-names = "aclk_mst", "aclk_slv",
-+			      "aclk_dbi", "pclk",
-+			      "aux", "pipe";
-+		device_type = "pci";
-+		interrupts = <GIC_SPI 263 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 262 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 260 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 259 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
-+		#interrupt-cells = <1>;
-+		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map = <0 0 0 1 &pcie3x4_intc 0>,
-+				<0 0 0 2 &pcie3x4_intc 1>,
-+				<0 0 0 3 &pcie3x4_intc 2>,
-+				<0 0 0 4 &pcie3x4_intc 3>;
-+		linux,pci-domain = <0>;
-+		max-link-speed = <3>;
-+		msi-map = <0x0000 &its1 0x0000 0x1000>;
-+		num-lanes = <4>;
-+		phys = <&pcie30phy>;
-+		phy-names = "pcie-phy";
-+		power-domains = <&power RK3588_PD_PCIE>;
-+		ranges = <0x01000000 0x0 0xf0100000 0x0 0xf0100000 0x0 0x00100000>,
-+			 <0x02000000 0x0 0xf0200000 0x0 0xf0200000 0x0 0x00e00000>,
-+			 <0x03000000 0x0 0x40000000 0x9 0x00000000 0x0 0x40000000>;
-+		reg = <0xa 0x40000000 0x0 0x00400000>,
-+		      <0x0 0xfe150000 0x0 0x00010000>,
-+		      <0x0 0xf0000000 0x0 0x00100000>;
-+		reg-names = "dbi", "apb", "config";
-+		resets = <&cru SRST_PCIE0_POWER_UP>, <&cru SRST_P_PCIE0>;
-+		reset-names = "pwr", "pipe";
-+		status = "disabled";
-+
-+		pcie3x4_intc: legacy-interrupt-controller {
-+			interrupt-controller;
-+			#address-cells = <0>;
-+			#interrupt-cells = <1>;
-+			interrupt-parent = <&gic>;
-+			interrupts = <GIC_SPI 260 IRQ_TYPE_EDGE_RISING 0>;
-+		};
-+	};
-+
-+	pcie3x2: pcie@fe160000 {
-+		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
-+		#address-cells = <3>;
-+		#size-cells = <2>;
-+		bus-range = <0x10 0x1f>;
-+		clocks = <&cru ACLK_PCIE_2L_MSTR>, <&cru ACLK_PCIE_2L_SLV>,
-+			 <&cru ACLK_PCIE_2L_DBI>, <&cru PCLK_PCIE_2L>,
-+			 <&cru CLK_PCIE_AUX1>, <&cru CLK_PCIE2L_PIPE>;
-+		clock-names = "aclk_mst", "aclk_slv",
-+			      "aclk_dbi", "pclk",
-+			      "aux", "pipe";
-+		device_type = "pci";
-+		interrupts = <GIC_SPI 258 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 255 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 254 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "sys", "pmc", "msg", "legacy", "err";
-+		#interrupt-cells = <1>;
-+		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map = <0 0 0 1 &pcie3x2_intc 0>,
-+				<0 0 0 2 &pcie3x2_intc 1>,
-+				<0 0 0 3 &pcie3x2_intc 2>,
-+				<0 0 0 4 &pcie3x2_intc 3>;
-+		linux,pci-domain = <1>;
-+		max-link-speed = <3>;
-+		msi-map = <0x1000 &its1 0x1000 0x1000>;
-+		num-lanes = <2>;
-+		phys = <&pcie30phy>;
-+		phy-names = "pcie-phy";
-+		power-domains = <&power RK3588_PD_PCIE>;
-+		ranges = <0x01000000 0x0 0xf1100000 0x0 0xf1100000 0x0 0x00100000>,
-+			 <0x02000000 0x0 0xf1200000 0x0 0xf1200000 0x0 0x00e00000>,
-+			 <0x03000000 0x0 0x40000000 0x9 0x40000000 0x0 0x40000000>;
-+		reg = <0xa 0x40400000 0x0 0x00400000>,
-+		      <0x0 0xfe160000 0x0 0x00010000>,
-+		      <0x0 0xf1000000 0x0 0x00100000>;
-+		reg-names = "dbi", "apb", "config";
-+		resets = <&cru SRST_PCIE1_POWER_UP>, <&cru SRST_P_PCIE1>;
-+		reset-names = "pwr", "pipe";
-+		status = "disabled";
-+
-+		pcie3x2_intc: legacy-interrupt-controller {
-+			interrupt-controller;
-+			#address-cells = <0>;
-+			#interrupt-cells = <1>;
-+			interrupt-parent = <&gic>;
-+			interrupts = <GIC_SPI 255 IRQ_TYPE_EDGE_RISING 0>;
-+		};
-+	};
-+
- 	pcie2x1l0: pcie@fe170000 {
- 		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
- 		#address-cells = <3>;
-@@ -218,4 +325,17 @@ combphy1_ps: phy@fee10000 {
- 		rockchip,pipe-phy-grf = <&pipe_phy1_grf>;
- 		status = "disabled";
- 	};
-+
-+	pcie30phy: phy@fee80000 {
-+		compatible = "rockchip,rk3588-pcie3-phy";
-+		reg = <0x0 0xfee80000 0x0 0x20000>;
-+		#phy-cells = <0>;
-+		clocks = <&cru PCLK_PCIE_COMBO_PIPE_PHY>;
-+		clock-names = "pclk";
-+		resets = <&cru SRST_PCIE30_PHY>;
-+		reset-names = "phy";
-+		rockchip,pipe-grf = <&php_grf>;
-+		rockchip,phy-grf = <&pcie30_phy_grf>;
-+		status = "disabled";
-+	};
- };
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index ed30866e7647..142ebe0247cc 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -12,7 +12,6 @@
+ #include <linux/phy/phy.h>
+ #include <linux/phy/tegra/xusb.h>
+ #include <linux/platform_device.h>
+-#include <linux/platform_device.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/reset.h>
+ #include <linux/slab.h>
 -- 
-2.40.1
+2.20.1.7.g153144c
 
 
 -- 
