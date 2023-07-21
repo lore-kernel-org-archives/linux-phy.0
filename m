@@ -4,87 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94BA6C04A94
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Jul 2023 09:06:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD389EB64DC
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Jul 2023 11:03:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=naYBtNz+ggyPMPbIqWdhSBvELEjNUp64+y2NuuK+Ld8=; b=KAjWORhtulAKTM
-	Op2Z6AuxfKFYPLcv0H3EM8gLxnPSTY36gjY/0r9q+AqzFq5zRhEVpMOR0TKbOSFFGadMBW1a9HkW4
-	k6wn2RO440/JOzRLKu6mxT3b1YyQZdHdt0HRNkXKZeoX4DCFOa/bc11gh22FNhwL0IdXwdhzoo21k
-	rHzPJsTm8MpNzyqTR1svbK7EMV0hscDaAAGf4M0SZ7F42T/s8ZZEWR/NP9dxRcL0n+JxKoDnalqWP
-	4k8iWdbfPwhJEkKYI4zm+AFZb12MFCDDwZlMJWGPJ9iapOVLcH1IePWYUN/pLoQmz8qa5L/lxWY8e
-	TtSzAJBSS5ouOq6YD9CQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wl+3I9RULHPExw3KkmzfiK55c3Pq+tlw+OQDfKJ5/X8=; b=lOg8seNrYOHdMq
+	a1PQHgUf6wnEP+q1tBDjM2hgla1Bj6GK0sXDvychgrvoPE0pFIPpdZmk4HvrskVsXzM8fKHfwRWXd
+	Bgzc8e7wzX9zyAhVQK34mbZBWae2rvOzyF9KaEnsKjxKVkFrg3X3D6fehP3df1XJzTak2NMpi6ABA
+	3S7rPTPOiT1pv1wsD5nmbCLqNGAaJo2tf9ulwVH0rVNN2pwop28qlo2PmpGg5ARkI2uflESYl3KSj
+	AdbjDTdz6uaaUylWTTG9ghLmEnGKNsFwIs2lRb8AL2dXlQI2fGHhTlfCR2P1xh1td/Cj1Zd89CmLu
+	sEEHELTV88RQjSw/+/Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMm5l-00DTV9-0v;
-	Fri, 21 Jul 2023 09:06:29 +0000
-Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
+	id 1qMnvJ-00Ds0T-1p;
+	Fri, 21 Jul 2023 11:03:49 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMm5h-00DTSj-1z
+	id 1qMnvH-00DrzR-1e
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Jul 2023 09:06:27 +0000
-Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
-	by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36KLMVun001996;
-	Fri, 21 Jul 2023 09:06:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding;
- s=corp-2023-03-30; bh=YB3+L26ub9a+qZKv1httf41gShc8qMgp1o2GqmrvXwk=;
- b=lIQUlM5s4RByMw5LwdenicUoeV5Pivu1dSJrUYYzF3ZbHgYRIMp884wwwnJy09x6UlSx
- 8OAbACFNP5HYpmkp9eSA6+fPCTopbPqe4Ba7HjnIxf/Ka98ebFKhaLk3FSXOmulfFMyg
- uJofxcwK8MA5VV5vp4ep5uVDoP5QUUYMML2TzArQkp11O2knTHV0+9vWu7RqB7uRd5ul
- RJHONygHmw5uzZmQ9JqzQFXaduY7ma3SmwQPHPDJCb2xN6mP/BFeOQeQr+tnwMPfOIlI
- i5adqE1VLT+IGzPZrrlECNLzRu3oEysOa8ZpsPdtMmwHFX4AXuNkP28ydzlXuRMx0zWL Nw== 
-Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta01.appoci.oracle.com [130.35.100.223])
-	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3run773huq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 21 Jul 2023 09:06:05 +0000
-Received: from pps.filterd (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
-	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.19/8.17.1.19) with ESMTP id 36L84IH4000832;
-	Fri, 21 Jul 2023 09:06:04 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 3ruhw9snxx-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 21 Jul 2023 09:06:04 +0000
-Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 36L963fv036820;
-	Fri, 21 Jul 2023 09:06:03 GMT
-Received: from ca-dev112.us.oracle.com (ca-dev112.us.oracle.com [10.129.136.47])
-	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTP id 3ruhw9snvk-1;
-	Fri, 21 Jul 2023 09:06:03 +0000
-From: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Sergio Paracuellos <sergio.paracuellos@gmail.com>,
-        Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh@kernel.org>,
-        Marc Kleine-Budde <mkl@pengutronix.de>,
-        Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>,
-        David Yang <mmyangfl@gmail.com>, Shawn Guo <shawn.guo@linaro.org>,
-        Pengcheng Li <lpc.li@hisilicon.com>,
-        Jiancheng Xue <xuejiancheng@hisilicon.com>,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Cc: dan.carpenter@linaro.org, christophe.jaillet@wanadoo.fr,
-        julia.lawall@inria.fr, kernel-janitors@vger.kernel.org,
-        error27@gmail.com
-Subject: [PATCH] phy: hisilicon: Fix an out of bounds check in hisi_inno_phy_probe()
-Date: Fri, 21 Jul 2023 02:05:55 -0700
-Message-ID: <20230721090558.3588613-1-harshit.m.mogalapalli@oracle.com>
-X-Mailer: git-send-email 2.41.0
+	Fri, 21 Jul 2023 11:03:49 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36LB19tq012404;
+	Fri, 21 Jul 2023 11:03:32 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=uDtElLv/5bFBcI1FU53B4erF6OinAr+ovFJRi+ia4Ws=;
+ b=JSs52lgf4+vF0pK4o/TmVEIbM3x53mg86feQ7Zf/NHb020QEfUyWjlAlu3/q8hX6PLvX
+ vMZxWL9EQgHWgCewub5Mm51/uCeI9fVsde+qZqOCthvrZYKZZORnIPDklhwmbcMH/JX6
+ 8dPgmsdu6Fmadd+OwUKtqwcIP5q6me00Zc1eLMARbciYW77jIijr8jX9NZC0kxDLFcE1
+ cUtqAzaMK2sNzh3dib5nPjD0Z4bYn9wmIuLZyxaU23Rh7GLEc0qYwfIzC5YMxRQvu6AU
+ qEFusH8/m0bFgcezqLtCLiYdwWZEVkrMRl7EChMhKttAIoTn7VtomjlVUcjob/styD/M 1w== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ryrsb0057-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 21 Jul 2023 11:03:32 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36LB3UHU005977
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 21 Jul 2023 11:03:30 GMT
+Received: from [10.217.219.237] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Fri, 21 Jul
+ 2023 04:03:23 -0700
+Message-ID: <ca51b1dc-5805-5b01-01e0-a7dff535cb6c@quicinc.com>
+Date: Fri, 21 Jul 2023 16:33:20 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe
+ PHY
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, <agross@kernel.org>,
+        <andersson@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <conor+dt@kernel.org>, <konrad.dybcio@linaro.org>, <mani@kernel.org>
+CC: <quic_shazhuss@quicinc.com>, <quic_nitegupt@quicinc.com>,
+        <quic_ramkri@quicinc.com>, <quic_nayiluri@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+        Rob Herring
+	<robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        Vinod Koul
+	<vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+References: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
+ <1689311319-22054-3-git-send-email-quic_msarkar@quicinc.com>
+ <132e9514-7eb9-8915-6130-5bf656c1aaac@linaro.org>
+Content-Language: en-US
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+In-Reply-To: <132e9514-7eb9-8915-6130-5bf656c1aaac@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: KHLXyv7UinIewFxIhznIV_eqegdw9kAX
+X-Proofpoint-ORIG-GUID: KHLXyv7UinIewFxIhznIV_eqegdw9kAX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-21_05,2023-07-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 mlxlogscore=999
- suspectscore=0 phishscore=0 bulkscore=0 mlxscore=0 malwarescore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307210081
-X-Proofpoint-GUID: MsdSk9BPopQYkgz-7sX5dUtYzmn80bqo
-X-Proofpoint-ORIG-GUID: MsdSk9BPopQYkgz-7sX5dUtYzmn80bqo
+ definitions=2023-07-21_06,2023-07-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 impostorscore=0 mlxlogscore=999 suspectscore=0
+ spamscore=0 adultscore=0 mlxscore=0 bulkscore=0 clxscore=1011
+ malwarescore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2306200000 definitions=main-2307210099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230721_020625_658018_A35669E8 
-X-CRM114-Status: GOOD (  20.51  )
+X-CRM114-CacheID: sfid-20230721_040347_691262_8532DF4E 
+X-CRM114-Status: GOOD (  15.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,48 +109,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The size of array 'priv->ports[]' is INNO_PHY_PORT_NUM.
 
-In the for loop, 'i' is used as the index for array 'priv->ports[]'
-with a check (i > INNO_PHY_PORT_NUM) which indicates that
-INNO_PHY_PORT_NUM is allowed value for 'i' in the same loop.
+On 7/17/2023 12:55 PM, Krzysztof Kozlowski wrote:
+> On 14/07/2023 07:08, Mrinmay Sarkar wrote:
+>> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
+>> for SA8775p platform.
+>>
+>> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+>> ---
+>>   .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml      | 19 ++++++++++++++++++-
+>>   1 file changed, 18 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> index a0407fc..ca55ed9 100644
+>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> @@ -16,6 +16,8 @@ description:
+>>   properties:
+>>     compatible:
+>>       enum:
+>> +      - qcom,sa8775p-qmp-gen4x2-pcie-phy
+>> +      - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>>         - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>>         - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>>         - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+>> @@ -30,7 +32,7 @@ properties:
+>>   
+>>     clocks:
+>>       minItems: 5
+>> -    maxItems: 6
+>> +    maxItems: 7
+>>   
+>>     clock-names:
+>>       minItems: 5
+>> @@ -41,6 +43,7 @@ properties:
+>>         - const: rchng
+>>         - const: pipe
+>>         - const: pipediv2
+>> +      - const: phy_aux
+>>   
+>>     power-domains:
+>>       maxItems: 1
+>> @@ -141,6 +144,20 @@ allOf:
+>>           compatible:
+>>             contains:
+>>               enum:
+>> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+>> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          minItems: 7
+>> +        clock-names:
+>> +          minItems: 7
+>> +
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+> This probably works but is not obvious and easy to read. You have here
+> if:then:else: block, so else applies to your variant. Change all these
+> if clauses for clocks into separate clauses per matching variant
+> (if:then: ... if:then:... if:then:...)
+>
+> Best regards,
+> Krzysztof
 
-This > comparison needs to be changed to >=, otherwise it potentially leads
-to an out of bounds write on the next iteration through the loop
+My Bad here, This patch already applied we will take care this in next 
+patch set.
 
-Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
-Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-Signed-off-by: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
----
-This is purely based on static analysis, only compile tested.
+Thanks,
+Mrinmay
 
-Inspired based on a patch from Christophe Jaillet:
-https://lore.kernel.org/all/cd01cba1c7eda58bdabaae174c78c067325803d2.1689803636.git.christophe.jaillet@wanadoo.fr/
----
- drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-index 498afd81696b..c138cd4807d6 100644
---- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-+++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-@@ -185,7 +185,7 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
- 		phy_set_drvdata(phy, &priv->ports[i]);
- 		i++;
- 
--		if (i > INNO_PHY_PORT_NUM) {
-+		if (i >= INNO_PHY_PORT_NUM) {
- 			dev_warn(dev, "Support %d ports in maximum\n", i);
- 			of_node_put(child);
- 			break;
--- 
-2.39.3
-
+>
 
 -- 
 linux-phy mailing list
