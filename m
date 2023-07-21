@@ -4,90 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ACA1EB64DD
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Jul 2023 04:36:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94BA6C04A94
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Jul 2023 09:06:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJXNOZqEzvEVBvCdFeDvfA++dtN7glLPEGcZm8XSs38=; b=k01AePwZE28/La
-	Z09TQaFTxqM/ROR2n+i/+vZCVWSDdi/qg0tpbj/U1cI/n0Fc+eq9iWr1Y0Bspk3xGqsrseL2Y93yq
-	j7S/FXvyxvt+GuMgp8YbLV5eZw7Q+ox1Y7tW0PAnzw2CKEIYeTgnaxG+xamUhw9fhXjCaOx+Xci/Q
-	2nbjoaxQXucU3ahH6XIif7fnYCXJcm6VExDgkmP5W95h3zo/kE3Qt2Dgc046wN/twjVVncY1t6iqr
-	NJ+UtPSHpdNuTyNOOfngByheJuGWIex2JHeRXx5m5dk6p6+lVzbgGdjaBVfVwqt+ey97+czJiJBEC
-	idIkaLsM2IBwAR6XGUXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=naYBtNz+ggyPMPbIqWdhSBvELEjNUp64+y2NuuK+Ld8=; b=KAjWORhtulAKTM
+	Op2Z6AuxfKFYPLcv0H3EM8gLxnPSTY36gjY/0r9q+AqzFq5zRhEVpMOR0TKbOSFFGadMBW1a9HkW4
+	k6wn2RO440/JOzRLKu6mxT3b1YyQZdHdt0HRNkXKZeoX4DCFOa/bc11gh22FNhwL0IdXwdhzoo21k
+	rHzPJsTm8MpNzyqTR1svbK7EMV0hscDaAAGf4M0SZ7F42T/s8ZZEWR/NP9dxRcL0n+JxKoDnalqWP
+	4k8iWdbfPwhJEkKYI4zm+AFZb12MFCDDwZlMJWGPJ9iapOVLcH1IePWYUN/pLoQmz8qa5L/lxWY8e
+	TtSzAJBSS5ouOq6YD9CQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMhsn-00Cpoq-2P;
-	Fri, 21 Jul 2023 04:36:49 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qMm5l-00DTV9-0v;
+	Fri, 21 Jul 2023 09:06:29 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMhsk-00CpnZ-2t;
-	Fri, 21 Jul 2023 04:36:48 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36L3kD97002866;
-	Fri, 21 Jul 2023 04:36:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=l1y/UsCTAY05inK8sGX65oj93CvTM8Lbh5TpQaHqppA=;
- b=HZd5ZI9rdQ7owsxKnDOqqvfCbPNH0cT8OQJEDY3Sgt44rPDEtHRlWmCNLHuv1/yCJohL
- brO+nxdIcAWe75FVvGVV4cUF1nHjAnXc31E9L4ZzduEBJtmB/qyAof68fhh94JYfdk8g
- sUVPXZCSfyjfsX7GjBIZNGFbJdTlCnfP3j9miudr2dNr6Kube7zwIJOnPephzLWveDq6
- PZMxy6JMWOsdInXUtL0ER3cfvf1yVM7EsLbB1uvNxgDiwyAhebsBW2X+coVFDEF5HS0G
- j1MSJmZRWtkrtywAGaPXfG0vY42phMMB44+TjZlro9qpM/KCcaG4p/9ytiwOGBT2JZ8M Hw== 
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ry3y1j5m1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 04:36:32 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36L4aW4b012880
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 04:36:32 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Thu, 20 Jul 2023 21:36:24 -0700
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
-        <will@kernel.org>, <p.zabel@pengutronix.de>, <arnd@arndb.de>,
-        <geert+renesas@glider.be>, <neil.armstrong@linaro.org>,
-        <nfraprado@collabora.com>, <rafal@milecki.pl>,
-        <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>,
-        <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v5 6/6] arm64: defconfig: Enable M31 USB phy driver
-Date: Fri, 21 Jul 2023 10:05:31 +0530
-Message-ID: <75ecdc497d58ecb6d0cbb067c23fe72193de5493.1689913334.git.quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1689913334.git.quic_varada@quicinc.com>
-References: <cover.1689913334.git.quic_varada@quicinc.com>
+	id 1qMm5h-00DTSj-1z
+	for linux-phy@lists.infradead.org;
+	Fri, 21 Jul 2023 09:06:27 +0000
+Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36KLMVun001996;
+	Fri, 21 Jul 2023 09:06:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding;
+ s=corp-2023-03-30; bh=YB3+L26ub9a+qZKv1httf41gShc8qMgp1o2GqmrvXwk=;
+ b=lIQUlM5s4RByMw5LwdenicUoeV5Pivu1dSJrUYYzF3ZbHgYRIMp884wwwnJy09x6UlSx
+ 8OAbACFNP5HYpmkp9eSA6+fPCTopbPqe4Ba7HjnIxf/Ka98ebFKhaLk3FSXOmulfFMyg
+ uJofxcwK8MA5VV5vp4ep5uVDoP5QUUYMML2TzArQkp11O2knTHV0+9vWu7RqB7uRd5ul
+ RJHONygHmw5uzZmQ9JqzQFXaduY7ma3SmwQPHPDJCb2xN6mP/BFeOQeQr+tnwMPfOIlI
+ i5adqE1VLT+IGzPZrrlECNLzRu3oEysOa8ZpsPdtMmwHFX4AXuNkP28ydzlXuRMx0zWL Nw== 
+Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta01.appoci.oracle.com [130.35.100.223])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3run773huq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 21 Jul 2023 09:06:05 +0000
+Received: from pps.filterd (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.19/8.17.1.19) with ESMTP id 36L84IH4000832;
+	Fri, 21 Jul 2023 09:06:04 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 3ruhw9snxx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 21 Jul 2023 09:06:04 +0000
+Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 36L963fv036820;
+	Fri, 21 Jul 2023 09:06:03 GMT
+Received: from ca-dev112.us.oracle.com (ca-dev112.us.oracle.com [10.129.136.47])
+	by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTP id 3ruhw9snvk-1;
+	Fri, 21 Jul 2023 09:06:03 +0000
+From: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+        Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh@kernel.org>,
+        Marc Kleine-Budde <mkl@pengutronix.de>,
+        Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>,
+        David Yang <mmyangfl@gmail.com>, Shawn Guo <shawn.guo@linaro.org>,
+        Pengcheng Li <lpc.li@hisilicon.com>,
+        Jiancheng Xue <xuejiancheng@hisilicon.com>,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: dan.carpenter@linaro.org, christophe.jaillet@wanadoo.fr,
+        julia.lawall@inria.fr, kernel-janitors@vger.kernel.org,
+        error27@gmail.com
+Subject: [PATCH] phy: hisilicon: Fix an out of bounds check in hisi_inno_phy_probe()
+Date: Fri, 21 Jul 2023 02:05:55 -0700
+Message-ID: <20230721090558.3588613-1-harshit.m.mogalapalli@oracle.com>
+X-Mailer: git-send-email 2.41.0
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: -Dt6IeC_7PyzHzRS4NsMsBURV4GlRIWB
-X-Proofpoint-ORIG-GUID: -Dt6IeC_7PyzHzRS4NsMsBURV4GlRIWB
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-21_02,2023-07-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
- spamscore=0 priorityscore=1501 mlxlogscore=452 bulkscore=0 impostorscore=0
- phishscore=0 suspectscore=0 lowpriorityscore=0 malwarescore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307210041
+ definitions=2023-07-21_05,2023-07-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 mlxlogscore=999
+ suspectscore=0 phishscore=0 bulkscore=0 mlxscore=0 malwarescore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307210081
+X-Proofpoint-GUID: MsdSk9BPopQYkgz-7sX5dUtYzmn80bqo
+X-Proofpoint-ORIG-GUID: MsdSk9BPopQYkgz-7sX5dUtYzmn80bqo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230720_213646_942061_F700C48B 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20230721_020625_658018_A35669E8 
+X-CRM114-Status: GOOD (  20.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,30 +101,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable M31 USB phy driver present in IPQ5332.
+The size of array 'priv->ports[]' is INNO_PHY_PORT_NUM.
 
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
-v2:
-	Add full stop to commit log.
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+In the for loop, 'i' is used as the index for array 'priv->ports[]'
+with a check (i > INNO_PHY_PORT_NUM) which indicates that
+INNO_PHY_PORT_NUM is allowed value for 'i' in the same loop.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 6cbf6eb..e6d2012 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -1389,6 +1389,7 @@ CONFIG_PHY_QCOM_USB_SNPS_FEMTO_V2=m
- CONFIG_PHY_QCOM_USB_HS_28NM=m
- CONFIG_PHY_QCOM_USB_SS=m
- CONFIG_PHY_QCOM_SGMII_ETH=m
-+CONFIG_PHY_QCOM_M31_USB=m
- CONFIG_PHY_R8A779F0_ETHERNET_SERDES=y
- CONFIG_PHY_RCAR_GEN3_PCIE=y
- CONFIG_PHY_RCAR_GEN3_USB2=y
+This > comparison needs to be changed to >=, otherwise it potentially leads
+to an out of bounds write on the next iteration through the loop
+
+Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
+Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+Signed-off-by: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
+---
+This is purely based on static analysis, only compile tested.
+
+Inspired based on a patch from Christophe Jaillet:
+https://lore.kernel.org/all/cd01cba1c7eda58bdabaae174c78c067325803d2.1689803636.git.christophe.jaillet@wanadoo.fr/
+---
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+index 498afd81696b..c138cd4807d6 100644
+--- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
++++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+@@ -185,7 +185,7 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 		phy_set_drvdata(phy, &priv->ports[i]);
+ 		i++;
+ 
+-		if (i > INNO_PHY_PORT_NUM) {
++		if (i >= INNO_PHY_PORT_NUM) {
+ 			dev_warn(dev, "Support %d ports in maximum\n", i);
+ 			of_node_put(child);
+ 			break;
 -- 
-2.7.4
+2.39.3
 
 
 -- 
