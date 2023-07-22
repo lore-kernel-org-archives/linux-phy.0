@@ -4,80 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F9C7EB64DC
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Jul 2023 13:55:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85AADC0015E
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Jul 2023 04:59:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YJnDcVIRcD0mUWlFiOKenKPo4xdBcQUyR2uX5YVfRIQ=; b=nYA1tCW6wu6OVEEE2Nii/OQ0dI
-	nTvKDmFjcypuaI1/QGaMxZQ6pYZ2Q+rwaeRqmFD+lHESs1a6U/ArOr4I3so0KJ4eo+zjR5O7ZkxKJ
-	OxObGxMnfzRz60LN3Rj0LqAAGr8Bxi3VuGjcDU83Iu0xM6r1iewCygAUKmf8moufGgwt6kKkd1PwO
-	LY32gUBmR1eSykRaiRbMQ2SgmNMIRN5TVm3pohMBHIJwPdBOjIo7CracJIhfowSTtxLcWuzKb2S9/
-	GwE8ysb6ZxZO/aq6LB/bjvBr4ctm+tg4W6VVCRmpaAWOisn85DI9cze8W32Cfp9Ut/ku9ZWehYKbs
-	tcaxy+iQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uDR+p3OlBooUfvDEC81VNKvjhAY33Mzj3HGvKXnVtpc=; b=pKL/Qh76WrQQgh
+	x/3W3zWP3tRIF9J4D1PXogK0h0cjHEdbWDNO22dfZSb0EXmDsLN9ixm1/uPgaHpdE2RsmlQZU5ZPX
+	bBdC8pmJO9qDWd/wgC+T1Yd3CoRG4TK8TF5RQutkcq96W6zlnkQ39iLJYCceQpFEhIWZEjJfORXaY
+	2eKxtlkh6TDPp5ANhF1Aa6rk7shJHvMvrbYMLXebU1MA1h7TQJGG2OTGVhKpNd0tjPln31nwCpcHo
+	iLMtC7h0Efgg9fIx2CquZETcCNT8W0jdSKkjpR5E6iNJLp1EdWyzbkA1w645J4aIJp6j9rlzuCVW4
+	+8H6gh1gHf19HLKgbkCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMqbf-00ECje-2h;
-	Fri, 21 Jul 2023 13:55:43 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1qN4iT-00Fpuq-04;
+	Sat, 22 Jul 2023 04:59:41 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMqbc-00EChx-30
-	for linux-phy@lists.infradead.org;
-	Fri, 21 Jul 2023 13:55:42 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-992f6d7c7fbso315520266b.3
-        for <linux-phy@lists.infradead.org>; Fri, 21 Jul 2023 06:55:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1689947738; x=1690552538;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WUTml+j0BKcM+haAeIip69fhehsDqEFXRsZ2bgoeHNs=;
-        b=Z4SVq1N4Jb+zb+PMQ9MDYCPFL5uBWO5QOdXVfkLipaPjpJ7GjH3cn6h9O1MMQ994/U
-         QVS/wtFa2Zyn/JsTx36gX5MTFBUT6GA0O0YzjjVEDeFpNyMpRGezci3DsjRWBoKvNrua
-         y20KEkKqQpkMJFrZ+xjHT/wKZdgfXr6E7+5nr2ER7BdroAq6a64e8SzMkLcqKEdjUvRP
-         vT2xWw1C07MD1P06YCmnuby+TSJ8A5eA1Wdw7AIRM7hj9qa9luMTeYEw4wyajR/wAOIJ
-         Tg3E9LdNsMnt1V/QtdyOwbMXY2fitQUGsBKBy+wmxgkNnlRcJH0h68ZYDKnU8NeWk6lq
-         qsXA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1689947738; x=1690552538;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=WUTml+j0BKcM+haAeIip69fhehsDqEFXRsZ2bgoeHNs=;
-        b=KtgHpzuAUwKfk6+hpvv7pP5OKEHiZE2PXG8zv2mGQnoAyaNmD4WNUKiOJ6frPgd+fy
-         BlF/NOMhHcaWdLmUECXjQAV6M/fP/W3jvFgqYUSeiWjhTndotpUp28pru+z6Ajr0Zrb0
-         hwsJ6/gAPS80OGOc533WAhT8nXkAVwL5HJWCtNK+ZzkoikTllQCTw5UGPLoNRiX1MhjK
-         XrjuysPdOt3iM79hig2rRR23oDzBqtHD6u8ey9BfxFABewAqeCiI18ZlG8Z47L20yCXA
-         0SWWujVEbB51DugKTgDUcEuqDujMnRNG6Pjk4Lr0HdTtth2rDdMCcV5TLA8bDxoNEYbl
-         eTEw==
-X-Gm-Message-State: ABy/qLbF/xDFB2QYRZQ+pvCGX+BY+oEk0uvGEnJ374o9NEtXU9Xaha9B
-	W4plRKojw92BxCL2yztgr54=
-X-Google-Smtp-Source: APBJJlH12b3UgDv0tSheU2gyswihEDjvN9eEW2IOO0q9dK9Kc2Su63zlxtNb3lxNpVzJqyKhpLrlow==
-X-Received: by 2002:a17:906:7a01:b0:992:a0c7:8d2a with SMTP id d1-20020a1709067a0100b00992a0c78d2amr1828274ejo.54.1689947737589;
-        Fri, 21 Jul 2023 06:55:37 -0700 (PDT)
-Received: from orome (p200300e41f1bd600f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f1b:d600:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id k9-20020a1709062a4900b0098748422178sm2226858eje.56.2023.07.21.06.55.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Jul 2023 06:55:37 -0700 (PDT)
-Date: Fri, 21 Jul 2023 15:55:35 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Yang Li <yang.lee@linux.alibaba.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: jckuo@nvidia.com, jonathanh@nvidia.com, linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Abaci Robot <abaci@linux.alibaba.com>
-Subject: Re: [PATCH -next] phy: Remove duplicated include in xusb.c
-Message-ID: <ZLqOV-ShmOKcldcZ@orome>
-References: <20230719003614.5506-1-yang.lee@linux.alibaba.com>
+	id 1qN4iO-00Fpu4-2B;
+	Sat, 22 Jul 2023 04:59:39 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E779E609FA;
+	Sat, 22 Jul 2023 04:59:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99B39C433C8;
+	Sat, 22 Jul 2023 04:59:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1690001974;
+	bh=EHV4bgcQRdV/YIp0oL65NNwW+dO2Jxj6c/C6yHftVu8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=q3eXP2O8P2LKKwEYrfwam6jcv60A96NPXbi4DhQRu492eBq2sKkuApFUcQwzNWmvM
+	 j6rMp4viRJKQcIQAe09DYI4LIeJ6mIeKxDuOsgFJyCF14r/0U4XN3nbv/0ooya04Ar
+	 ZwBXBfYTs3wvnHMsy4Xz9YGftCPIyY+4PJgDMna2DqolKe9yPaB3ZmhztoVVyhj3PN
+	 M7d9tUeA+s/jbRpbukXHzQ50TeFXy43czN12FogoClJpnRi/UswgcqIPT9hjoXRcW8
+	 DUGGerSjkz53kP6jFyDkk2I2Lxzzi0bqSVC6UA/GrJnC1FsgcwctfJcZlOCqC1WeDu
+	 gTLcP4vxxSMiw==
+Date: Fri, 21 Jul 2023 22:02:51 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: agross@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
+	kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com, 
+	will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be, 
+	neil.armstrong@linaro.org, nfraprado@collabora.com, rafal@milecki.pl, 
+	quic_srichara@quicinc.com, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v5 3/6] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Message-ID: <upxbupvlpze2momyawza7pwemkhcxi7gsrddztezzmhjq6yfhq@kidlfxbotjtf>
+References: <cover.1689913334.git.quic_varada@quicinc.com>
+ <068a44b38a01740b06ea3646611c8dfdacf3f7b0.1689913334.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <20230719003614.5506-1-yang.lee@linux.alibaba.com>
-User-Agent: Mutt/2.2.10 (2023-03-25)
+Content-Disposition: inline
+In-Reply-To: <068a44b38a01740b06ea3646611c8dfdacf3f7b0.1689913334.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230721_065540_965708_628DFD01 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20230721_215937_472084_44F6F5E1 
+X-CRM114-Status: GOOD (  51.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,88 +76,458 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4943096035454330905=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, Jul 21, 2023 at 10:05:28AM +0530, Varadarajan Narayanan wrote:
+> Add the M31 USB2 phy driver.
 
---===============4943096035454330905==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="aiG/Z8uoJevjxZrs"
-Content-Disposition: inline
+Is it possible to extend this description a little bit? E.g. mention
+where this PHY is used.
 
-
---aiG/Z8uoJevjxZrs
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Jul 19, 2023 at 08:36:14AM +0800, Yang Li wrote:
-> ./drivers/phy/tegra/xusb.c: linux/platform_device.h is included more than=
- once.
->=20
-> Reported-by: Abaci Robot <abaci@linux.alibaba.com>
-> Closes: https://bugzilla.openanolis.cn/show_bug.cgi?id=3D5930
-> Signed-off-by: Yang Li <yang.lee@linux.alibaba.com>
+> 
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
->  drivers/phy/tegra/xusb.c | 1 -
->  1 file changed, 1 deletion(-)
+> v5:
+> 	Kconfig and Makefile:- place snippet according to sorted order
+> 	Use generic phy instead of usb-phy
+> 	Use ARRAY_SIZE for reg init instead of blank last entry
+> 	Fix copyright year
+> 
+> v4:
+> 	Remove unused enum
+> 	Error handling for devm_clk_get
+> v1:
+> 	Combine driver, makefile and kconfig into 1 patch
+> 	Remove 'qscratch' region and its usage. The controller driver takes care
+> 	of those settings
+> 	Use compatible/data to handle ipq5332 init
+> 	Drop the default case
+> 	Get resources by index instead of name as there is only one resource
+> 	Add clock
+> 	Fix review comments in the driver
+> ---
+>  drivers/phy/qualcomm/Kconfig        |  11 ++
+>  drivers/phy/qualcomm/Makefile       |   1 +
+>  drivers/phy/qualcomm/phy-qcom-m31.c | 264 ++++++++++++++++++++++++++++++++++++
+>  3 files changed, 276 insertions(+)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
+> 
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index ced6038..d638906 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -143,6 +143,17 @@ config PHY_QCOM_EUSB2_REPEATER
+>  	  PMICs. The repeater is paired with a Synopsys eUSB2 Phy
+>  	  on Qualcomm SOCs.
+>  
+> +config PHY_QCOM_M31_USB
+> +	tristate "Qualcomm M31 HS PHY driver support"
+> +	depends on (USB || USB_GADGET) && ARCH_QCOM
 
-It's typical to list the maintainers on the "To:" line to increase the
-chances of them noticing. This is obviously correct, so:
+The USB part seems reasonable, but it's not clear to me why you depend
+on USB_GADGET. And this is the only option in this directory that
+depends on it's consumer subsystem...
 
-Acked-by: Thierry Reding <treding@nvidia.com>
+It is reasonable help the user not choose the driver if ARCH_QCOM is
+disabled, but most other options in this file allow compilation during
+COMPILE_TEST. This provides additional build coverage, so perhaps you
+could adopt this as well?
 
->=20
-> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-> index ed30866e7647..142ebe0247cc 100644
-> --- a/drivers/phy/tegra/xusb.c
-> +++ b/drivers/phy/tegra/xusb.c
-> @@ -12,7 +12,6 @@
->  #include <linux/phy/phy.h>
->  #include <linux/phy/tegra/xusb.h>
->  #include <linux/platform_device.h>
-> -#include <linux/platform_device.h>
->  #include <linux/regulator/consumer.h>
->  #include <linux/reset.h>
->  #include <linux/slab.h>
-> --=20
-> 2.20.1.7.g153144c
->=20
+> +	select USB_PHY
 
---aiG/Z8uoJevjxZrs
-Content-Type: application/pgp-signature; name="signature.asc"
+USB_PHY is for drivers in drivers/usb/phy, but you're using the generic
+PHY framework. Is this really needed, or just a remnant from downstream?
 
------BEGIN PGP SIGNATURE-----
+You should however select GENERIC_PHY, like all other options in this
+file.
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmS6jlUACgkQ3SOs138+
-s6EFLw//dG+cVN7R6it4gQ+baHeWZRJwGmi2xEyeqmjVhZ+9c99KL63rmtIhsL7x
-b1+Qz3xit8FltZdDIYd+CJrW//1cxzvtt0KKHTMg2+91D2DZVpC7DRIl8Nj/2L46
-q04tHomOlrQ1vxzOvKJSxKVTai9Xk2lABp2Tz4EtP7An42s4mKUYxF68nXVxESkN
-w6F4uf8xVhkqbvcPmcnms8sQeIs5C+DCx1wUIWF8ucKcF+PcOTs2xFftgeoivpdv
-s9OgAzvGg6+KSDp2Ngx8iIoDHZWMFoFMqi01fOvnzXtj2gxcFzIts/E4NCKG/yJz
-dZfSYlDAQ6/WmG+KHgqXVMMe/4u4FYIJI8KiLEtNvQjAH+lc9NxvhimBEMRoY2LY
-PjpCxYfNWCzxuY1Dzckb1UB0671gRsDDkcH09pJeiOumV2cKWuSErLMDbOzEVeT9
-gr9tzQ24D6Vzwdyu6zKzzKpFfIzrNAyW1FwrVtx+XsXsOJbNe62o2IXCTqXEUFf6
-rDRwPsDGYw7gPkGigoFokOzaU8pXIPSkGh1GaCOFwwzPY2eXR4PMC88xoJu4lYds
-7nTOHYURaPsA0YEW96iZAYQdPeAUXqze8ZI3hdWJrv6KX1idVacy+sKDcRVDo3ty
-w7nV2GydZ5JTeuVjiXHgjjYLp0FRQF6H2azbIGma7obEJaCfMQI=
-=fsKZ
------END PGP SIGNATURE-----
+> +	help
+> +	  Enable this to support M31 HS PHY transceivers on Qualcomm chips
+> +	  with DWC3 USB core. It handles PHY initialization, clock
+> +	  management required after resetting the hardware and power
+> +	  management. This driver is required even for peripheral only or
+> +	  host only mode configurations.
+> +
+>  config PHY_QCOM_USB_HS
+>  	tristate "Qualcomm USB HS PHY module"
+>  	depends on USB_ULPI_BUS
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index df94581..ffd609a 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -4,6 +4,7 @@ obj-$(CONFIG_PHY_QCOM_APQ8064_SATA)	+= phy-qcom-apq8064-sata.o
+>  obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
+>  obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
+>  obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
+> +obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
+>  obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
+>  
+>  obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+> new file mode 100644
+> index 0000000..4627425
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+> @@ -0,0 +1,264 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2014-2016, 2020-2023, The Linux Foundation. All rights reserved.
 
---aiG/Z8uoJevjxZrs--
+Please fix this.
 
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
 
---===============4943096035454330905==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Rob Herring has posted a bunch of patches lately removing uses of
+of_device.h, so please don't introduce a new one.
+
+of.h and of_platform.h are to be used instead.
+
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +#include <linux/usb/of.h>
+> +#include <linux/usb/phy.h>
+
+I don't think you need the last two, in a generic phy driver.
+
+> +
+> +#define USB2PHY_PORT_UTMI_CTRL1		0x40
+> +
+> +#define USB2PHY_PORT_UTMI_CTRL2		0x44
+> + #define UTMI_ULPI_SEL			BIT(7)
+> + #define UTMI_TEST_MUX_SEL		BIT(6)
+> +
+> +#define HS_PHY_CTRL_REG			0x10
+> + #define UTMI_OTG_VBUS_VALID		BIT(20)
+> + #define SW_SESSVLD_SEL			BIT(28)
+> +
+> +#define USB_PHY_UTMI_CTRL0		0x3c
+> +
+> +#define USB_PHY_UTMI_CTRL5		0x50
+> + #define POR_EN				BIT(1)
+> +
+> +#define USB_PHY_HS_PHY_CTRL_COMMON0	0x54
+> + #define COMMONONN			BIT(7)
+> + #define FSEL				BIT(4)
+> + #define RETENABLEN			BIT(3)
+> + #define FREQ_24MHZ			(GENMASK(6, 6) | GENMASK(4, 4))
+> +
+> +#define USB_PHY_HS_PHY_CTRL2		0x64
+> + #define USB2_SUSPEND_N_SEL		BIT(3)
+> + #define USB2_SUSPEND_N			BIT(2)
+> + #define USB2_UTMI_CLK_EN		BIT(1)
+> +
+> +#define USB_PHY_CFG0			0x94
+> + #define UTMI_PHY_OVERRIDE_EN		BIT(1)
+> +
+> +#define USB_PHY_REFCLK_CTRL		0xa0
+> + #define CLKCORE			BIT(1)
+> +
+> +#define USB2PHY_PORT_POWERDOWN		0xa4
+> + #define POWER_UP			BIT(0)
+> + #define POWER_DOWN			0
+> +
+> +#define USB_PHY_FSEL_SEL		0xb8
+> + #define FREQ_SEL			BIT(0)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_1	0xbc
+> + #define USB2_0_TX_ENABLE		BIT(2)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_4	0xc8
+> + #define HSTX_SLEW_RATE_565PS		GENMASK(1, 0)
+> + #define PLL_CHARGING_PUMP_CURRENT_35UA	GENMASK(4, 3)
+> + #define ODT_VALUE_38_02_OHM		GENMASK(7, 6)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_5	0xcc
+> + #define ODT_VALUE_45_02_OHM		BIT(2)
+> + #define HSTX_PRE_EMPHASIS_LEVEL_0_55MA	BIT(0)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_11	0xe4
+> + #define XCFG_COARSE_TUNE_NUM		BIT(1)
+> + #define XCFG_FINE_TUNE_NUM		BIT(3)
+> +
+> +struct m31_phy_regs {
+> +	u32 off;
+> +	u32 val;
+> +	u32 delay;
+> +};
+> +
+> +struct m31_priv_data {
+> +	bool				ulpi_mode;
+> +	const struct m31_phy_regs	*regs;
+> +	const int			nregs;
+
+Doesn't hurt to spell out that this is an unsigned int, and you don't
+need the const on the nregs.
+
+> +};
+> +
+> +#define M31_REG(__o, __v, __d)	\
+> +	{ .off = __o, .val = __v, .delay = __d }
+
+This macro doesn't add any value.
+
+Compare:
+	M31_REG(USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0),
+with:
+	{ USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0 },
+
+> +
+> +struct m31_phy_regs m31_ipq5332_regs[] = {
+> +	M31_REG(USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0),
+> +	M31_REG(USB_PHY_UTMI_CTRL5, POR_EN, 15),
+> +	M31_REG(USB_PHY_FSEL_SEL, FREQ_SEL, 0),
+> +	M31_REG(USB_PHY_HS_PHY_CTRL_COMMON0,
+> +		COMMONONN | FREQ_24MHZ | RETENABLEN, 0),
+
+The guideline is to keep under 80 characters, but if it improves
+readability you may use up to 100. So this line can be unwrapped.
+
+> +	M31_REG(USB_PHY_UTMI_CTRL5, POR_EN, 0),
+> +	M31_REG(USB_PHY_HS_PHY_CTRL2,
+> +		USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0),
+
+This one as well.
+
+> +	M31_REG(USB2PHY_USB_PHY_M31_XCFGI_11,
+> +		XCFG_COARSE_TUNE_NUM  | XCFG_FINE_TUNE_NUM, 0),
+> +	M31_REG(USB2PHY_USB_PHY_M31_XCFGI_4,
+> +		HSTX_SLEW_RATE_565PS | PLL_CHARGING_PUMP_CURRENT_35UA |
+> +		ODT_VALUE_38_02_OHM, 0),
+> +	M31_REG(USB2PHY_USB_PHY_M31_XCFGI_1, USB2_0_TX_ENABLE, 0),
+> +	M31_REG(USB2PHY_USB_PHY_M31_XCFGI_5,
+> +		ODT_VALUE_45_02_OHM | HSTX_PRE_EMPHASIS_LEVEL_0_55MA, 4),
+
+And this one, if you drop the M32_REG macro.
+
+> +	M31_REG(USB_PHY_UTMI_CTRL5, 0x0, 0),
+> +	M31_REG(USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0),
+> +};
+> +
+> +struct m31usb_phy {
+> +	struct phy			*phy;
+> +	void __iomem			*base;
+> +	const struct m31_phy_regs	*regs;
+> +	int				nregs;
+> +
+> +	struct clk			*cfg_ahb_clk;
+
+If you only have one clock, you can name it "clk" without causing
+confusion.
+
+> +	struct reset_control		*phy_reset;
+
+Same here, if there's only one reset, then "reset" is a sufficient name.
+
+> +
+> +	bool				cable_connected;
+
+Unused
+
+> +	bool				suspended;
+
+Unused, are you missing/omitting some relevant code here?
+
+> +	bool				ulpi_mode;
+> +};
+> +
+> +static void m31usb_phy_enable_clock(struct m31usb_phy *qphy)
+
+It wouldn't hurt to just move this code into m31usb_phy_init().
+
+> +{
+> +	const struct m31_phy_regs *regs = qphy->regs;
+> +	int i;
+> +
+> +	for (i = 0; i < qphy->nregs; i++) {
+> +		writel(regs[i].val, qphy->base + regs[i].off);
+> +		if (regs[i].delay)
+> +			udelay(regs[i].delay);
+> +	}
+> +}
+> +
+> +static int m31usb_phy_init(struct phy *phy)
+> +{
+> +	int ret;
+> +	struct m31usb_phy *qphy = phy_get_drvdata(phy);
+> +
+> +	ret = clk_prepare_enable(qphy->cfg_ahb_clk);
+> +	if (ret) {
+> +		dev_err(&phy->dev, "failed to enable cfg ahb clock, %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/* Perform phy reset */
+> +	reset_control_assert(qphy->phy_reset);
+> +	udelay(5);
+> +	reset_control_deassert(qphy->phy_reset);
+> +
+> +	/* configure for ULPI mode if requested */
+> +	if (qphy->ulpi_mode)
+> +		writel(0x0, qphy->base + USB2PHY_PORT_UTMI_CTRL2);
+> +
+> +	/* Enable the PHY */
+> +	writel(POWER_UP, qphy->base + USB2PHY_PORT_POWERDOWN);
+> +
+> +	/* Make sure above write completed */
+
+That's not what wmb() does. It ensures that any writes prior to this
+line is completed before any writes after this.
+
+But m31usb_phy_enable_clock() is using writel(), which does the same
+already.
+
+If you really need the previous writes to have completed (get through
+the write buffer etc), then you need to readl() the same register back.
+But I see no reason for that.
+
+> +	wmb();
+
+So I think this should go.
+
+> +
+> +	/* Turn on phy ref clock */
+> +	m31usb_phy_enable_clock(qphy);
+> +
+> +	return 0;
+> +}
+> +
+> +static int m31usb_phy_shutdown(struct phy *phy)
+> +{
+> +	struct m31usb_phy *qphy = phy_get_drvdata(phy);
+> +
+> +	/* Disable the PHY */
+> +	writel_relaxed(POWER_DOWN, qphy->base + USB2PHY_PORT_POWERDOWN);
+> +	/* Make sure above write completed */
+> +	wmb();
+
+Same as above.
+
+Although here you would assume that clk_disable_unprepare() uses
+writel() and doesn't overtake your power-down write, but that sounds
+like reasonable assumptions to make.
+
+> +
+> +	clk_disable_unprepare(qphy->cfg_ahb_clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops m31usb_phy_gen_ops = {
+> +	.power_on	= m31usb_phy_init,
+> +	.power_off	= m31usb_phy_shutdown,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static int m31usb_phy_probe(struct platform_device *pdev)
+> +{
+> +	const struct m31_priv_data *data;
+> +	struct device *dev = &pdev->dev;
+> +	struct m31usb_phy *qphy;
+> +	struct phy_provider *phy_provider;
+> +	int ret;
+
+Please sort these in descending length order (reverse xmas tree).
+
+> +
+> +	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
+> +	if (!qphy)
+> +		return -ENOMEM;
+> +
+> +	qphy->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(qphy->base))
+> +		return PTR_ERR(qphy->base);
+> +
+> +	qphy->phy_reset = devm_reset_control_get_exclusive_by_index(dev, 0);
+> +	if (IS_ERR(qphy->phy_reset))
+> +		return PTR_ERR(qphy->phy_reset);
+> +
+> +	qphy->cfg_ahb_clk = devm_clk_get(dev, "cfg_ahb");
+
+If you only have one clock, then omitting clock-names and do
+devm_clk_get(dev, NULL) works well.
+
+> +	if (IS_ERR(qphy->cfg_ahb_clk)) {
+> +		ret = PTR_ERR(qphy->cfg_ahb_clk);
+> +		dev_err(dev, "failed to get cfg_ahb clock, %d\n", ret);
+> +		return ret;
+
+Replace these tree lines with:
+
+return dev_err_probe(dev, PTR_ERR(qphy->cfg_ahb_clk), "failed to get cfg_ahb_clk\n");
+
+> +	}
+> +
+> +	platform_set_drvdata(pdev, qphy);
+
+There are no platform_get_drvdata() calls in this driver, so you can
+omit this.
+
+> +
+> +	data = of_device_get_match_data(dev);
+> +	qphy->regs		= data->regs;
+> +	qphy->nregs		= data->nregs;
+> +	qphy->ulpi_mode		= data->ulpi_mode;
+> +
+> +	qphy->phy = devm_phy_create(dev, NULL, &m31usb_phy_gen_ops);
+> +	if (IS_ERR(qphy->phy)) {
+> +		ret = PTR_ERR(qphy->phy);
+> +		dev_err(dev, "failed to create phy, %d\n", ret);
+> +		qphy->phy = NULL;
+
+qphy is inaccessible, and freed after the next line, no need to clear
+this.
+
+> +		return ret;
+> +	}
+> +
+> +	dev_set_drvdata(dev, qphy);
+
+This is exactly he same as platform_set_drvdata() above, so per the same
+logic you can drop this as well.
+
+> +	phy_set_drvdata(qphy->phy, qphy);
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +	if (!IS_ERR(phy_provider))
+> +		dev_info(dev, "Registered M31 USB phy\n");
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct m31_priv_data m31_ipq5332_data = {
+> +	.ulpi_mode = false,
+> +	.regs = m31_ipq5332_regs,
+> +	.nregs = ARRAY_SIZE(m31_ipq5332_regs),
+> +};
+> +
+> +static const struct of_device_id m31usb_phy_id_table[] = {
+> +	{ .compatible = "qcom,ipq5332-usb-hsphy", .data = &m31_ipq5332_data },
+> +	{ },
+> +};
+> +MODULE_DEVICE_TABLE(of, m31usb_phy_id_table);
+> +
+> +static struct platform_driver m31usb_phy_driver = {
+> +	.probe		= m31usb_phy_probe,
+
+Please drop the indentation in these.
+
+Regards,
+Bjorn
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4943096035454330905==--
-
