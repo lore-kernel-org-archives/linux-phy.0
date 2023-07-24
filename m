@@ -4,68 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2606EC001DE
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Jul 2023 05:07:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1E23EB64DD
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Jul 2023 05:50:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bb7H3xQalgEl7hKikN9VQAj67EP/EH9aAozEG8bPvwg=; b=cumcyPt/yrJdFx
-	RlaXyCQMINSuTxJj6bwTTtC3EcesjTm7YMK5Inqrx10j/L94dSDAPJJmMtuIgpyB5OPmagIpBuWYC
-	+f3svMie0sOf7346gRGbblaW8/dKtPzUO8L+bEh7j+j65xuGItGmYGcZ7cZ/u4W6zkAzMyDut6C8I
-	F412mnya9x/sTJP0Yyc4KqjlINxqVfAPHsqZNlp+bIUN+MLbhw/kz6z4cw2xjUnCO6RJuXD6wE2Zi
-	3aC1cN+S0yYwURfAvps1376auu8KjPuWXW3Lr2ZQPdg0zP1f0bwokE2dU1E726GXwCR9pW2JlqbIu
-	HEGILz5Hu6CSQR8YvPfQ==;
+	List-Owner; bh=4ikeIPI2WuZKyiFtFmMlSRLvWsaJCD5fAtfORMJWnUw=; b=T/cp4VA46lqMD6
+	HVDdoQbSYiv0JnUBo+z/19RJsJKhgHvFKfiRA2zyvHaUAo4qH/bysACsH4M8RKDFG+cLcmEQt1sKB
+	Lq6PT0b4+bTf+ENPXgLImqL44fn373rONZN0MJ75clD6h0/yvHAlPTfxuxJW7dyTuxZ2SFk5uG5Ns
+	yPUrRkL9PBX1RIDpsAaZtoLtDzJCV4LV2htJdRmvk/K5LfVpfw2c+Thw51RaIC886OLOU8Xa3Ussg
+	OThHpZX8lRZMWvAFL4tKFC7uKNaW1GFWeohRwPRXijTT6f+0RzkxpX/EhVP+mzxoKQJqrWgHXzqCr
+	Q+Kr3nbzDYc8hvrqGTkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qN4qH-00Fqdv-2n;
-	Sat, 22 Jul 2023 05:07:45 +0000
+	id 1qNoSa-002st6-07;
+	Mon, 24 Jul 2023 05:50:20 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qN4qD-00Fqcs-1U;
-	Sat, 22 Jul 2023 05:07:44 +0000
+	id 1qNoST-002ssZ-2X
+	for linux-phy@lists.infradead.org;
+	Mon, 24 Jul 2023 05:50:15 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BCFCC60AAD;
-	Sat, 22 Jul 2023 05:07:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 64F81C433C8;
-	Sat, 22 Jul 2023 05:07:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1690002460;
-	bh=ZSwAqBOUrBH+BHctzz0gDWSROt9O1H9rtT9Kib0tkKA=;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D9F1160E8E;
+	Mon, 24 Jul 2023 05:50:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BFDF1C433C7;
+	Mon, 24 Jul 2023 05:50:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1690177812;
+	bh=bFLNepPhPHCswQ9ft0pcj3E1XJXFCkjGVMeXp3+zrvY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fRNr4chWIau0nM6c7WDUGQlGk8sSRTBBssHYUAvDFdjLKFJEBwuUdzJIPxudDMBu2
-	 sQQHLIXQCWfXh9mlGUmszF2UA4//K86xJRhqqA5N44mNxksEKI9MlJL/NUlE869h5F
-	 vmgNcmUMc02AN2zgzs4MtdoeRbib0E1Nt16F9T9Nw1eF8fuloiSfCAAG4QE+4aUxjx
-	 jCRyRdoonzDrDTVnkHGOmK7j9+rMMB69vQdnCOqyJpFIols3zftJMrlMM6pbb1PDDE
-	 IEJ7raxZPncjPozCLmbR83sJExqLJzKb6Co8hGGyB971EhRl5MvgieEdfh/QugObkE
-	 w9GnmnGGR3u+w==
-Date: Fri, 21 Jul 2023 22:10:57 -0700
-From: Bjorn Andersson <andersson@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: agross@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
-	kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com, 
-	will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be, 
-	neil.armstrong@linaro.org, nfraprado@collabora.com, rafal@milecki.pl, 
-	quic_srichara@quicinc.com, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v5 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
- phy
-Message-ID: <ymbcafqqhc6hgrfhpef4byehvfyjzovs5zeprmj343erdv5ti5@tj2iunu6whvi>
-References: <cover.1689913334.git.quic_varada@quicinc.com>
- <131eb1694229436919ac88bb9920fb54d6808388.1689913334.git.quic_varada@quicinc.com>
+	b=BmwbpFPGParIZG7W1TUUE0yYYPD2FBLWu3ib2mFJqFva1McRElxdJv4LGNGcZf3/+
+	 YhS0qaQ3Fk7I10AJK0ox0MKRkUYab2sdAGsLZ4zyDj+YFl8VsUHszf1jnmGx1XBavt
+	 sL38/5lGbOXFVPHwuCIXa5zjFasgyrfUcpH4iNco=
+Date: Mon, 24 Jul 2023 07:50:09 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Stanley Chang <stanley_chang@realtek.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alan Stern <stern@rowland.harvard.edu>, Roy Luo <royluo@google.com>,
+	Matthias Kaehlcke <mka@chromium.org>,
+	Douglas Anderson <dianders@chromium.org>,
+	Flavio Suligoi <f.suligoi@asem.it>, Ray Chi <raychi@google.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v7 1/5] usb: phy: add usb phy notify port status API
+Message-ID: <2023072452-jasmine-palm-7b73@gregkh>
+References: <20230707064725.25291-1-stanley_chang@realtek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <131eb1694229436919ac88bb9920fb54d6808388.1689913334.git.quic_varada@quicinc.com>
+In-Reply-To: <20230707064725.25291-1-stanley_chang@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230721_220742_901324_DE7A858D 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20230723_225013_919439_BEE69FA9 
+X-CRM114-Status: GOOD (  27.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,89 +81,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 21, 2023 at 10:05:27AM +0530, Varadarajan Narayanan wrote:
-> Document the M31 USB2 phy present in IPQ5332.
+On Fri, Jul 07, 2023 at 02:47:00PM +0800, Stanley Chang wrote:
+> In Realtek SoC, the parameter of usb phy is designed to can dynamic
+> tuning base on port status. Therefore, add a notify callback of phy
+> driver when usb port status change.
 > 
-> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-
-As Sricharan is the first one to certify the patch's origin, it seems
-likely that he's the author. Please add a Co-developed-by: Sricharan.
-
-[..]
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> new file mode 100644
-> index 0000000..e0b282b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
-> @@ -0,0 +1,51 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: M31 USB PHY
-> +
-> +maintainers:
-> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> +  - Varadarajan Narayanan <quic_varada@quicinc.com>
-> +
-> +description:
-> +  USB M31 PHY (https://www.m31tech.com) found in Qualcomm
-> +  IPQ5018, IPQ5332 SoCs.
-> +
-> +properties:
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  compatible:
-> +    enum:
-
-const?
-
-> +      - qcom,ipq5332-usb-hsphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: cfg_ahb
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-> +    usbphy0: usb-phy@7b000 {
-
-usb@
-
-And you don't need to give the node a label in the example.
-
-> +        compatible = "qcom,ipq5332-usb-hsphy";
-> +        reg = <0x0007b000 0x12c>;
-> +
-> +        clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
-> +        clock-names = "cfg_ahb";
-> +
-
-No #phy-cells?
-
-Regards,
-Bjorn
-
-> +        resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
-> +    };
-> -- 
-> 2.7.4
+> The Realtek phy driver is designed to dynamically adjust disconnection
+> level and calibrate phy parameters. When the device connected bit changes
+> and when the disconnected bit changes, do port status change notification:
 > 
+> Check if portstatus is USB_PORT_STAT_CONNECTION and portchange is
+> USB_PORT_STAT_C_CONNECTION.
+> 1. The device is connected, the driver lowers the disconnection level and
+>    calibrates the phy parameters.
+> 2. The device disconnects, the driver increases the disconnect level and
+>    calibrates the phy parameters.
+> 
+> When controller to notify connect that device is already ready. If we
+> adjust the disconnection level in notify_connect, the disconnect may have
+> been triggered at this stage. So we need to change that as early as
+> possible. Therefore, we add an api to notify phy the port status changes.
+
+How do you know that the disconnect will not have already been triggered
+at this point, when the status changes?
+
+
+> 
+> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
+> ---
+> v6 to v7 change:
+>     No change
+> v5 to v6 change:
+>     No change
+> v4 to v5 change:
+>     No change
+> v3 to v4 change:
+>     Fix the warning for checkpatch with strict.
+> v2 to v3 change:
+>     Add more comments about the reason for adding this api
+> v1 to v2 change:
+>     No change
+> ---
+>  drivers/usb/core/hub.c  | 13 +++++++++++++
+>  include/linux/usb/phy.h | 13 +++++++++++++
+>  2 files changed, 26 insertions(+)
+> 
+> diff --git a/drivers/usb/core/hub.c b/drivers/usb/core/hub.c
+> index a739403a9e45..8433ff89dea6 100644
+> --- a/drivers/usb/core/hub.c
+> +++ b/drivers/usb/core/hub.c
+> @@ -614,6 +614,19 @@ static int hub_ext_port_status(struct usb_hub *hub, int port1, int type,
+>  		ret = 0;
+>  	}
+>  	mutex_unlock(&hub->status_mutex);
+> +
+> +	if (!ret) {
+> +		struct usb_device *hdev = hub->hdev;
+> +
+> +		if (hdev && !hdev->parent) {
+
+Why the check for no parent?  Please document that here in a comment.
+
+> +			struct usb_hcd *hcd = bus_to_hcd(hdev->bus);
+> +
+> +			if (hcd->usb_phy)
+> +				usb_phy_notify_port_status(hcd->usb_phy,
+> +							   port1 - 1, *status, *change);
+> +		}
+> +	}
+> +
+
+This is safe to notify with the hub mutex unlocked?  Again, a comment
+would be helpful to future people explaining why that is so.
+
+thanks,
+
+greg k-h
 
 -- 
 linux-phy mailing list
