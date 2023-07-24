@@ -4,67 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B71AAC001DF
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Jul 2023 10:56:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19802C04A94
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Jul 2023 10:56:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m3EMksuREQdgSMkPdx/JvBWP9SfW9fBeE0u8O4ucbfg=; b=HCuQo28MQ+lEMu
-	Dwq+6Fo3Z9z0t2PhUBs2ZR8QRjNs5ZGWLEt3WOV/0QveFzJzFJed7si0Ad+oHF6mrLVmd8JmIPE5L
-	U/kzF9NNX3eAVOcJCxQHz3mydIW4GEHxFEaeLDCQUKDOJNwGtYwLTZLqTglt+enxmLwE+8zP6EAfA
-	25khGPFCbGbaIMnC7zsu9868vHORVMZU1Id2IsBRO6Db9S5eJIEVE+atN7Omr75t5lBOHK1UsNpTL
-	tFRkeHrwV1qUB9WxLa5FOZDw6JXZdy062maa+yrSbU3u6xBBTdcD3g/jFXvtYmGH78rHBMqV5n8f/
-	74zsm8rdmV10BEMMFxGQ==;
+	List-Owner; bh=5BJPghv3Syhvc4IBicosHqvG3SzlsbHtslg0K4mjLns=; b=dKCl+EhuRWvIbT
+	HvsWOjbu4YRFVVYlQ2aEgPd69Eq1MmQIcCHv6S2GaZDejAknk98WlvVrDejaAuK6bFhUNiF3p+MjK
+	6dmCnqfg2mU1m3Tz1R8rBCPUIuFnigXkEW753jiIC1sn1HNBrSuMnogGBLseN/TuZAvpy8z24unO5
+	SjjViMuMzm8uQ47mEpHsYjFY5TLF6re607te0B/3jxd6tmQoO/lW9yW2MlOBOxOyK9AWvdTPG9Un7
+	o509bKbW6hk6wpbaJF7K4iVXUMjfYgNXysq8+roQa/OFDWMhi5BKU209Iqf0VWftk72yRuaAlnL6k
+	up8kNEh7G6JMcwlMrjbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qNtEW-003uq6-1V;
-	Mon, 24 Jul 2023 10:56:08 +0000
+	id 1qNtEY-003urm-2c;
+	Mon, 24 Jul 2023 10:56:10 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qNtET-003uo9-1n
+	id 1qNtEW-003upv-1Y
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Jul 2023 10:56:06 +0000
+	Mon, 24 Jul 2023 10:56:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0816361092;
-	Mon, 24 Jul 2023 10:56:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51E88C433CC;
-	Mon, 24 Jul 2023 10:56:01 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id F2F9C6108D;
+	Mon, 24 Jul 2023 10:56:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 08952C433D9;
+	Mon, 24 Jul 2023 10:56:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1690196164;
-	bh=fmxnvoejdFZOpBQwVOto+Rn/EHV8CKg6qU0x1MUF2xM=;
+	s=k20201202; t=1690196167;
+	bh=EoRhPCwOhIgNGtTWNhayTE1OcOkV4Jof8HdiNSSHfPc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=EZnVcVivr/FPKlzIEyof3xHDAFfW1CbOTVmMEFbTeCL+apzC/e8ez2TqyHjNRfyEE
-	 j5rqL9caI/ujW654SwJu62g+oF1e9h6tvr6zcQhWaxYXWwi6nqB/7x/6VcP1WE00+U
-	 jUWq2tGHhTCSFNc5GOUEOSqnw0d/QGjOKuCA0QF1s8Y1xolvNUUGs5gMj9O7B+CLJ2
-	 bxNHpXmvrOJ7uEgTazU+7PtSbder2jP96zDxcdG0dwOUAwz/3frHxEmBO4znSMpyQY
-	 xjzTI7n2Hx2+S7q22BVSsTaGfWJHyDvRUAxnQD/SE799dalaqhBR+JfF7iGU1Z1u2N
-	 G+OGRbtdi8N4Q==
+	b=ngSQXJ7x44/0jmVK4kzF4Z/QSelxB/d+6mgKtdcMzfRWIgBw+6JLZzZ2nF1bWTaoY
+	 YpmgxPo1PRjjbf+a+oDrRU2Q3JmxUcArnNQNVSMoBMIxepwLno/UDvF/weOHSAJL6F
+	 CBDtBW/OQUseLrRv35YDzxLUN2W8HMdOm5/5Kig1vYDG4+CyYeNO86vQPGkic+6/hy
+	 hEaBsVNAQLrVJfP8gGQHPwlCAMjShTyO5ZSEEB+42dfptJgKJbj/5ouFSzmRS8a46M
+	 p0wFXTjmBmksjHSo4N9RxSGj8QLiZtwJQSuO1iaLV46lg4VvXBA77h+xnHILw5Jmzh
+	 WjIm18P0zL29A==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Roger Quadros <rogerq@kernel.org>, 
- Changhuang Liang <changhuang.liang@starfivetech.com>
-Cc: Minda Chen <minda.chen@starfivetech.com>, 
- Jack Zhu <jack.zhu@starfivetech.com>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20230718070803.16660-1-changhuang.liang@starfivetech.com>
-References: <20230718070803.16660-1-changhuang.liang@starfivetech.com>
-Subject: Re: [PATCH v7 0/2] Add JH7110 MIPI DPHY RX support
-Message-Id: <169019616097.466601.2000211184274688881.b4-ty@kernel.org>
-Date: Mon, 24 Jul 2023 16:26:00 +0530
+To: jckuo@nvidia.com, Yang Li <yang.lee@linux.alibaba.com>
+Cc: kishon@kernel.org, thierry.reding@gmail.com, jonathanh@nvidia.com, 
+ linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Abaci Robot <abaci@linux.alibaba.com>
+In-Reply-To: <20230719003614.5506-1-yang.lee@linux.alibaba.com>
+References: <20230719003614.5506-1-yang.lee@linux.alibaba.com>
+Subject: Re: [PATCH -next] phy: Remove duplicated include in xusb.c
+Message-Id: <169019616467.466601.4012488093184234530.b4-ty@kernel.org>
+Date: Mon, 24 Jul 2023 16:26:04 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230724_035605_635513_D7013A0D 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20230724_035608_561519_84BF8BF1 
+X-CRM114-Status: UNSURE (   5.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,22 +78,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 18 Jul 2023 00:08:01 -0700, Changhuang Liang wrote:
-> This patchset adds mipi dphy rx driver for the StarFive JH7110 SoC.
-> It is used to transfer CSI camera data. The series has been tested on
-> the VisionFive 2 board.
+On Wed, 19 Jul 2023 08:36:14 +0800, Yang Li wrote:
+> ./drivers/phy/tegra/xusb.c: linux/platform_device.h is included more than once.
 > 
-> This patchset should be applied after the patchset [1]:
-> [1] https://lore.kernel.org/all/20230629075115.11934-1-minda.chen@starfivetech.com/
 > 
-> [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Add starfive,jh7110-dphy-rx
-      commit: ae07a9a865a4eb30223c21eae70ddb189da6ee9a
-[2/2] phy: starfive: Add mipi dphy rx support
-      commit: f8aa660841bca12aed51c967ed9bdaf1d97996ed
+[1/1] phy: Remove duplicated include in xusb.c
+      commit: f5a8ecef3c6b840673d08342045c3014d674555f
 
 Best regards,
 -- 
