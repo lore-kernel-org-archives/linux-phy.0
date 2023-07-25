@@ -4,60 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26B35C00528
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 06:45:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C397C04A6A
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 07:34:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7mggS0SoaCebSlMjzGzfW0HUL+nSdiq6Zm0VqjLJNhA=; b=GtzDs+3bD514RH
-	WMHeD/AbINiNPTrlQ8zwIS2tNqeaFiiOIuFB0IDauiZT4DyWjTFNK/448a07GihrvR2W7GVpLEe8V
-	lHbYhyH65BXKZVeZaeUtPDgIHZJwcgZKvaqCufUcgphXk3EH/U87DJP3Ap3JhJkpEK3l8CrOTU6QO
-	vOQja5KUW75gPfxWsMlOdmjnEIjGR9v+unKZDxeSU93wUxjh2MiLUJ3ZC+17mPOZwvd66GQEL9pu+
-	9pRFYCh/e2+mvkY5RGvHRwIhF/XTHlHmhD6nQuvAhwN2uGNPk/qkCj4dwnOqVoQoa9dgoaIpzC0qK
-	v4EIcAYM7qSmTGH8x4nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=65QlfTKTddP62m3C/tN8tvMMrZ5icg6QsfthhabXRw4=; b=zP+FfyRAFa3iwWuXeypLGJXXFY
+	SivUyjzQJlqYX/c0+lK5wtKCb31Jac872uTj/qvbIz8Q7E45V3X3UJWoys4cB/f36VqQvcwrxAG4s
+	zGV1zW36pfn1v1omU16OiFxkS8sqPzZtScb2AMa5NuymK9n1CfO5pTsA5rGqNHTRqOhc9IZTrbFJH
+	7HMXKxCJDqKLiutE1APz+la5u/StpTjxf3x/XCUoPLZYEvuqGvgI2vXOlSOrtS+jh9QmUA5ouMF8Y
+	cGRCepOQD97alL2pN36VKZS8ynb7Fl7uD2bDNZ70orO9ohyCmVsXlUjl1odNZPJJOnhLV0GiPoXIt
+	ooXINpDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOBnP-006S4X-2S;
-	Tue, 25 Jul 2023 06:45:23 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOBnK-006S1R-1q
+	id 1qOCYt-006cPA-3C;
+	Tue, 25 Jul 2023 07:34:27 +0000
+Received: from mail-db5eur01on072c.outbound.protection.outlook.com ([2a01:111:f400:fe02::72c] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qOCYr-006cLb-1Q
 	for linux-phy@lists.infradead.org;
-	Tue, 25 Jul 2023 06:45:21 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id AA88324DBC0;
-	Tue, 25 Jul 2023 14:44:51 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Jul
- 2023 14:44:51 +0800
-Received: from [192.168.125.107] (183.27.99.135) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 25 Jul
- 2023 14:44:50 +0800
-Message-ID: <b466b004-e5f2-7494-2fa5-3d27e9339118@starfivetech.com>
-Date: Tue, 25 Jul 2023 14:44:50 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+	Tue, 25 Jul 2023 07:34:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=i1d5JPOGmOvlfc9hpLhiC2FmubnqMHhESC7SeID5XKzT596l812tjZ29r80GC9jxsFPFY5HHsd/VnKkSvG4dCg7RLa1/LrntucepSQMX9kKlCWMCe/1JYu7zrmnufv/Gt9Cd4t7JZMqUNGAqr3SZ6YQmrZFTbBZkbQWiHXjrudFfsxy6homTgiRRPxNgbFnsQCZ5IKYq/v7jelBYOLnxWB7qVLnPk0zAdD+9mFmoGvwt9Br5bIrQE8EabpyAw561lyz+fq86CACQvKV5hY4VD+mUguUAgQPrn6yu3OQIFIv8nMTJ+6Vsmwt0PEKwggruDxgAFYOKgArox+H+SXFIiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=zZIfNYGL+cX8KBXuQ5OHTKwZ/O5hdpdOPCeJEGU0H40=;
+ b=CHagmK2yYz2ZkwMbjsZt09krCFG70X4XplgsUrjExWqLp9B+wU7lUN7fai/tA4HJn6AWnfbwDkZNx+pwyj0NjvjAVBKS/pwZUIHD0ghF7OUNV4CtMYcIhNNy6zpaRROVakfnBg3KgH38W5i4kIKzlg6eQiSRiN2oHjep7B2AU+X3RQV13jIHyOchFkQpWArtuAAX5keJ7RuNG24PhUudhInil86D0UcXJYX+4EIfHjlbLZ+KU2OfcgtmvoNSo9+IFi+4eWtysfvftz/rxwsyZV16drs2VEkVMDCj721Ses9a1TwdRdpAdwQrf78vyWWRDl0NL9W1Sf7/SFVzXSo9yg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
+ dkim=pass header.d=kontron.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
+ s=selector2-mysnt-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zZIfNYGL+cX8KBXuQ5OHTKwZ/O5hdpdOPCeJEGU0H40=;
+ b=jvJia5qTSxmwpCkWkCJC1bELqnAwjDjEl2S3eQfnUrCSLMFW80ySJoNB328lHoTqvfpF+RhwE1vhJefgjiwgZIFgCtu/mDriinsdCDpxk2y4bAv089AMGzk/YXl/PQTw/I3p+phIkJY5VReNvSuu8yjnyNnPDTtD1OsONIpaSCE=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=kontron.de;
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
+ by PAXPR10MB5383.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:284::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6609.33; Tue, 25 Jul
+ 2023 07:34:20 +0000
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::95ae:6cb:e93:cce0]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::95ae:6cb:e93:cce0%6]) with mapi id 15.20.6609.032; Tue, 25 Jul 2023
+ 07:34:20 +0000
+Message-ID: <2605b7f2-b776-3759-5619-9c4c08d6129a@kontron.de>
+Date: Tue, 25 Jul 2023 09:34:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH v2] phy: starfive: make phys depend on HAS_IOMEM
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-CC: <linux-phy@lists.infradead.org>, Minda Chen <minda.chen@starfivetech.com>,
-	Roger Quadros <rogerq@kernel.org>, kernel test robot <lkp@intel.com>
-References: <20230725063856.482696-1-vkoul@kernel.org>
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230725063856.482696-1-vkoul@kernel.org>
-X-Originating-IP: [183.27.99.135]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
+Subject: Re: [PATCH v2 2/2] phy: freescale: add Samsung HDMI PHY
+Content-Language: en-US, de-DE
+To: Lucas Stach <l.stach@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, patchwork-lst@pengutronix.de,
+ Inki Dae <inki.dae@samsung.com>, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Sandor Yu <Sandor.yu@nxp.com>
+References: <20221215201100.2897501-1-l.stach@pengutronix.de>
+ <20221215201100.2897501-2-l.stach@pengutronix.de>
+From: Frieder Schrempf <frieder.schrempf@kontron.de>
+In-Reply-To: <20221215201100.2897501-2-l.stach@pengutronix.de>
+X-ClientProxiedBy: AM0PR02CA0174.eurprd02.prod.outlook.com
+ (2603:10a6:20b:28e::11) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:102:263::10)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|PAXPR10MB5383:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9191c2f8-8cb4-44f1-81c3-08db8ce18f4e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: Y24bkIoTbed2+Q+bh7zkZWGcVKZ+8cJeSYjOhajs61rZMAuqXnCWPCA2RYIAaBYAJ/tpjuKUxSsfXNW8rve27uvNyj2fyii54Ju8tyWrhLGmprmLVcMDXmvHji7CVUXAF+q8RUgwFt2A6wSMHsb7Kh9/yIupO7el6/ydfN9/aiUMelDRhbCQq2DjoJWwnyYtZ7ZJYuiJhR5i/MTVHlQoRtQPA1yuwxV62ESmdWJ1w0LQcBP8MMSr/wAHmny/qS1Fw/lZYUz7f/B8UsnmnxZuk2E3jEIUefyl0X1nPcGVtyhDWDOobY8hjKS+DTJ921C19lxsueQco2m7hRBmzXbiyqsFJG5e+0mGIGqONlhS1+LeKSUxMK8wChlIfkvbsmPp8GN5m6ywsEUfDOg9SM2eolSJLaR07WCJoHsiClOcQkjwTX7zB3gmM73AIk9R3ziIMzfpfi5xJOoZMg59V6eW3LQOghSpDJNld/XCQG66lb736bN2+buDUh4DRBSP1xB3rJEH/kYI9wrZkJAR/tzX+pbTHkcct6MHMNVCSTA+tJfM3/gl1GBWwu+LBaeVMZElPHRktKF3y7+rgzLUoISb2FR4+6LaKd/W3VD3fpbtYJaAjL1MoiU6SXBezIENNd9ZzSkp5fkgJ0Dq8cvxCKr6zQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230028)(4636009)(396003)(376002)(346002)(366004)(39860400002)(136003)(451199021)(31686004)(36756003)(31696002)(86362001)(4744005)(2906002)(44832011)(7416002)(186003)(53546011)(6506007)(26005)(6666004)(38100700002)(6486002)(6512007)(54906003)(478600001)(110136005)(4326008)(8936002)(8676002)(66946007)(66476007)(66556008)(2616005)(316002)(41300700001)(5660300002)(43740500002)(45980500001);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?NlZYYnBodmdpOHAvcHNaU1NKWlpaUlhOUHFNQU12RllKSUVwWk1xaEo0U0Mw?=
+ =?utf-8?B?MXhTNkdDNkdGd1g1cEErRGhQQlRPbWpOVDNpQ3NjaXk1Wk05WlkxYzk2RGFr?=
+ =?utf-8?B?NElXUkxCSU44QzEzY2wxT1pobUphOTNvZDNneDZxTExrdTQwR1ZvVHNEYWxh?=
+ =?utf-8?B?ZUdrSmZtbzFEbkhXM3krOEdmNmdNdjZjTHNWUGlCeW5EVjJ1cTJWVzNjamVR?=
+ =?utf-8?B?UnJUa29hRWdKM3AxNEg1UmF0R2lnc1NvS0pCSjdOOUhBTVJqNWNnbVd5NzFM?=
+ =?utf-8?B?aXpLS0hXZ281Q2p4d3JTUkw4a0hOdTdQUW9ZZlJJdmtaMmdjb1dLNkNwcldn?=
+ =?utf-8?B?aXpYZUVMTzkvMmtxb2grb1JBQzJVbVZ4QWJsY2RuOWwrTVBaRko0clZRMGlu?=
+ =?utf-8?B?UjljWmhJUlJLdm02Z3NwdFRYTHYxSVcvcDRtV09wT2N1SFlaV2FIQk5SS1hV?=
+ =?utf-8?B?aHJyNmd0ZnpQeldMdVRhMjYzM2pIK2IyUGdYSlBSb3NIRFpZeTVjZ2hhTjBJ?=
+ =?utf-8?B?R0l3MUllcjVmRjNRNkd6bTM0azN1UGtnamc4T1cyWkhCV1JjQW9uMTZRb2hT?=
+ =?utf-8?B?M2tUYjMrYWlOQkVYWVZmR3BReDZhNFVURGV1UG5ZZmpxOEhnUEdNbndQa0Zw?=
+ =?utf-8?B?cUxwenB6eVYrbWRFbHIrbmtMVVV0ZEpEbXU4S0xKbmtXeXp4NXVYSVllYjgy?=
+ =?utf-8?B?VnhhKzJtcStKak9kbVFPRFJJUnhLalRHVHhmWmY4NGtNTDNZZVg2czEzM2Z6?=
+ =?utf-8?B?VHdkL0tSMjZHRlFWeHZXOEE5S0dZT1dCTVJ4L1VWdWkyV0FjZ2hyUDZEZTRM?=
+ =?utf-8?B?dzd0UDNwTzE0S1kwdG0xUzJPaUljRVZzdnpOZjlsUlhIQ2ZyOXg4a05aTGRi?=
+ =?utf-8?B?M0ZETUgvT2VoeUlod2tXN3hZNTl0L2h3K0h6NUtCZkNQSk1sb2ltS0hTU1Vt?=
+ =?utf-8?B?QVR4NUEzRi9tNWthWStXWGo2dTVLT3dMYTVadVRwK0Q0L3dMR1lGMGRhdzNn?=
+ =?utf-8?B?cThMc05IZVlDaFVCdDFqaXBLOEhkblVLQUNlcHBOazY5UmgyZ3ROZ1pqRCtB?=
+ =?utf-8?B?bXUzeWxXQnc1aU9lcGRIZzZzNmhkOGVvSUo4Z3pPamtSM3hvV3hSMnhmS1E3?=
+ =?utf-8?B?VnVRVkEzb2dtbWlKRHFMZEJVOGtIVWlHZEszZ0dJYUowbVd2dXBveWhnMWwy?=
+ =?utf-8?B?WHhoZ3Q0SVZ3M0pRUXVQVTNRcGwzeUwveS94WW9DczJWZGQ0ZEpRTllDaGNJ?=
+ =?utf-8?B?YzhnbTdxRnYzY2tjQ20weGhQOC80VnpkSlhqeUlnQ2ZReUZESkRySEhvY3lt?=
+ =?utf-8?B?Sng2VDlDL3lsWDRuWW9neTU3YTNMNUF1TFJnZU1UQU4xWmt6clVRRWgxa09N?=
+ =?utf-8?B?ZTNJa0cxcE1ZNDFMYTZ1b1ZveFNYeDhGcy9MSEI1S1NlL1RFeTB0TUJPSllV?=
+ =?utf-8?B?NE9qWkZrNnlwMVBsK3hHT2xvTGpWRWMyZmN5MXVTT1VYT1JOU0JMOGRpR0hZ?=
+ =?utf-8?B?YjNGalZ1MnRaOU90ek1XbjQ3TkJnT1MrZis4SWRrb1FYL3FicGFhcStLQmNy?=
+ =?utf-8?B?dWs4SEFJU29RQ0c1ZTIrSnc0Y084ZmdtUk1RM1hobjlNVUhBa2tKL3BPcXMv?=
+ =?utf-8?B?Q1d5MGtuVUl5OGxMdit0ZjdINWRUVUdXRzFsK3lCQmhQVnlkRDFBWUE1SmRm?=
+ =?utf-8?B?UU14U2YrVUk3R0F1RFNuRTU5T3laSWV4OU40ZGhiR281czNpZldlaVZFWHZp?=
+ =?utf-8?B?UXF6Z3ZNdUxpdE1OR0w5dGpQTFdVbkl6d3NsWmxoSitCNGdJRktnOGoxRjJK?=
+ =?utf-8?B?bkkxMklSZXIyZEM4TkF5WTI0K0ZtS3JMRlNORzB5RE9lbzZJNDVWZlZIV2pa?=
+ =?utf-8?B?djYvMlpreW9mZDZLU21zS2wrNFMrblBUZXh1RDQvdGtHUjlwUUNlNTBPV0sw?=
+ =?utf-8?B?UjNpV250RTNHNUN4U1E1OTdDZUw0U2FodmYxZnVMSU5UTzZ3aTU3a1JtNWxF?=
+ =?utf-8?B?NklKZXJjb0E3UTdXV0JqL0JxZ2I5ODdtalRtZWE4eTJ1dmhzWXZRNXUxakhu?=
+ =?utf-8?B?L2VMVWRLQ0Y2NllaV29nZWNMRlR6RHFpT1RwVDR0T2FaSUtpeFRvMGM2TW1l?=
+ =?utf-8?B?SXl3cXNScTdmNVNjektUaVN4aUxsM0NxNHFkM0lLTVZxNUN1MkkxWm4xeFhy?=
+ =?utf-8?B?UkE9PQ==?=
+X-OriginatorOrg: kontron.de
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9191c2f8-8cb4-44f1-81c3-08db8ce18f4e
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Jul 2023 07:34:20.4564
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: jO49e/erFS/ES6yqQ+9+Yh6mGHw6uJYo27XB06I1fACwzYCgeEuuaSvkzJ4DFnkGaIZlv/oqj4k2ta7C0Ifg2AWa2uzUM7MhnfRDkk5iDg0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR10MB5383
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230724_234518_785691_91BCC9A0 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20230725_003425_486904_9BB60C2A 
+X-CRM114-Status: UNSURE (   8.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,36 +153,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/7/25 14:38, Vinod Koul wrote:
-> the startfive phy drivers use devm_platform_ioremap_resource() which on
-> some archs (s390) is not present. So make the drivers depend on HAS_IOMEM
+On 15.12.22 21:11, Lucas Stach wrote:
+> This adds the driver for the Samsung HDMI PHY found on the
+> i.MX8MP SoC. Based on downstream implementation from
+> Sandor Yu <Sandor.yu@nxp.com>.
 > 
-> Fixes: f8aa660841bc ("phy: starfive: Add mipi dphy rx support")
-> Reported-by: kernel test robot <lkp@intel.com>
-> Closes: https://lore.kernel.org/oe-kbuild-all/202307250509.oeudxG28-lkp@intel.com/
-> Signed-off-by: Vinod Koul <vkoul@kernel.org>
+> Co-developed-by: Marco Felsch <m.felsch@pengutronix.de>
+> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+> Tested-by: Richard Leitner <richard.leitner@skidata.com>
 
-Reviewed-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+I tested this on our Kontron BL i.MX8MP board. Feel free to add:
 
-> ---
->  drivers/phy/starfive/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
-> index a560533a674e..0508f9b123e0 100644
-> --- a/drivers/phy/starfive/Kconfig
-> +++ b/drivers/phy/starfive/Kconfig
-> @@ -5,6 +5,7 @@
->  
->  config PHY_STARFIVE_JH7110_DPHY_RX
->  	tristate "StarFive JH7110 D-PHY RX support"
-> +	depends on HAS_IOMEM
->  	select GENERIC_PHY
->  	select GENERIC_PHY_MIPI_DPHY
->  	help
+Tested-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 
+Lucas, any chance that you can revive this series and bring it over the
+finish line?
 
 -- 
 linux-phy mailing list
