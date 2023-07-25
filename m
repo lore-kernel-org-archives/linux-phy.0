@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 640CBC00528
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 16:43:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3340EC04FE1
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 16:43:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fcsEsyT7jcSncpXOVbvEYxDTdzpkJ9E/BuISpBEvRZU=; b=DGFHEGCssM42Yq
-	oVRg/H5SnsVDfjTv0jckCUDUmMQ9ZcDqL0YdcctYq9HZOWy+7y3xSVRQkavKKh8Z1i0bF+t4si/g5
-	uAzx9hfIbs01MtHmz34rbIU0cOjQTKhqUgwKAHijGjRrWbgOWZ9G6N+ghUR+l+5i7zY2jRYEPfuTL
-	3txDaLbZmWqdV2ThrTMc9p9rT2lQVft+dkH5V26HBOp5FzHHFcCb9xwUgKRHSFo7+5LI9qbJ+FJfY
-	eZ7Xzot1GfryJqvuBo3ghZEtBvOJNZIlsiCxm+EBNsGVUXFBKlkRnT1c2I2eGUarytAjd1VrhbyFP
-	r5J0BSSyw6VyDoJhfC4w==;
+	List-Owner; bh=pZRsa1OwKhSnswzPBTutVAZSnKGyCT6FCmxOfTL+S3k=; b=iS0hBBQ6UjPfrQ
+	RKYYVKkpuzA8Z9nbPy/o3EHA3EVYVaQIfE8qGwusSlvxEpUR1q3YPdfc/ERiTeZ365xfhYROWILmQ
+	bz5jVxxrzud9mx5/+YrNUy5XqFk7X/ZQKEvBEcO41VkuRIvABc+ns/4C/MOyqqnG+ILeOjgU3Ea2f
+	5PBMtTY3VMLMjDQcSeKxYqd4brIetkxfdNInQOaw6amMujExHFw5tw77yZ3gPNtWZu6K2K3D1wHlx
+	6V9V/unv7wmOofvpyGH/XRngZEmBsetO9XDMACEPMNl8ErgmdsEV3+V2Wee2VL7TigcJ+nE2PBuhX
+	jEU8Y5+jw/nWcgxHed7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOL84-0083qd-0P;
+	id 1qOL84-0083rP-2w;
 	Tue, 25 Jul 2023 16:43:20 +0000
 Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOL7r-0083ke-2E;
-	Tue, 25 Jul 2023 16:43:11 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PEUv6A017157;
-	Tue, 25 Jul 2023 18:42:42 +0200
+	id 1qOL7w-0083nl-1j;
+	Tue, 25 Jul 2023 16:43:14 +0000
+Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PELblK027164;
+	Tue, 25 Jul 2023 18:42:43 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=selector1;
- bh=tz0ap2mvWmUHTG5tNYMmmONNZ99pGcKpx1iifr8Mfvk=;
- b=E4CtrzoCVLlH8gNPE9JVxgc+fYqWCVzGXFxMa6WsZHr2EZ9un3SY1t5IV0hZmCLH2LXC
- 6NHkqtezL8dTTLOTnL+SP20ScCP8dSsI+2lnKLnOqqA9GtnDakulT5/hWh40ZBYGimJu
- g7y8Xehur+Fr+/lcdhyRnbuHxmKkoxoNtCRs8zVjL+xuEx1W5CuPG892cWUTcKPJ9qE7
- KxhHDkYfSaDZ34gKqg01NPhZUpNh7eq60Wuwe92nfpRwSPGmhoFCTTAA7fmilEvX+Qfg
- fE9iNn1MOEqVUupKxqbkbHHRLRLGv3P+UPlRh2LevG048NDBi04hyCgpYs9MLHcmxqbA yQ== 
+ bh=h0YyLUqvRFQIY5qvOKn4ibgHT6lUEDiJN/sMHtwa7nY=;
+ b=YyiQBSUdd9S4DJlCtBHxFXpORIBrij9JIfWgWHlUiHPnVotjB5ijyRF7ojdNrc5yr8Ry
+ ZRXtKib7Nw1YA55qT7d3ZrAF6u5yeUlGKeGCAD39/902LT/rkpfiOjiuM527EV09n7YF
+ 3bLH2JJbneY1TdDHfLtlxSRrWcrmMspY+G7IW3v2RtHydyr8JK7cOjX0yY7x3K6xVzZT
+ OnwGAFTPdDMAzDJKVl+/HOWPXUAUu6rJyQ9i9RmvYyp9nUHT+Hhv8GDnEYlA9yH9+LMw
+ qm8umQ88NF6btuIs7YsShc+DUTdffPCUUUFnury4KI0eEo1gcUl4nFf7KKQ6tIlgDPQc ug== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3s2cabj9ur-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3s2g3a0rk1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 18:42:42 +0200
+	Tue, 25 Jul 2023 18:42:43 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3C071100049;
-	Tue, 25 Jul 2023 18:42:41 +0200 (CEST)
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7D24E10004D;
+	Tue, 25 Jul 2023 18:42:42 +0200 (CEST)
 Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0A1D226DDDD;
-	Tue, 25 Jul 2023 18:42:41 +0200 (CEST)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 73559257AB5;
+	Tue, 25 Jul 2023 18:42:42 +0200 (CEST)
 Received: from localhost (10.201.21.121) by SHFDAG1NODE1.st.com (10.75.129.69)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Tue, 25 Jul
- 2023 18:42:40 +0200
+ 2023 18:42:42 +0200
 From: Gatien Chevallier <gatien.chevallier@foss.st.com>
 To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
         <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
@@ -73,10 +73,11 @@ CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
         <linux-usb@vger.kernel.org>,
-        Oleksii Moisieiev <oleksii_moisieiev@epam.com>
-Subject: [IGNORE][PATCH v2 01/11] dt-bindings: Document common device controller bindings
-Date: Tue, 25 Jul 2023 18:40:54 +0200
-Message-ID: <20230725164104.273965-2-gatien.chevallier@foss.st.com>
+        Gatien Chevallier
+	<gatien.chevallier@foss.st.com>
+Subject: [PATCH v2 03/11] dt-bindings: bus: document ETZPC
+Date: Tue, 25 Jul 2023 18:40:56 +0200
+Message-ID: <20230725164104.273965-4-gatien.chevallier@foss.st.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230725164104.273965-1-gatien.chevallier@foss.st.com>
 References: <20230725164104.273965-1-gatien.chevallier@foss.st.com>
@@ -88,8 +89,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-25_08,2023-07-25_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_094308_051290_F13C4AB4 
-X-CRM114-Status: GOOD (  22.40  )
+X-CRM114-CacheID: sfid-20230725_094312_893713_623E8E28 
+X-CRM114-Status: GOOD (  18.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,108 +107,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Oleksii Moisieiev <Oleksii_Moisieiev@epam.com>
+Document ETZPC (Extended TrustZone protection controller). ETZPC is a
+firewall controller.
 
-Introducing of the common device controller bindings for the controller
-provider and consumer devices. Those bindings are intended to allow
-divided system on chip into muliple domains, that can be used to
-configure hardware permissions.
-
-Signed-off-by: Oleksii Moisieiev <oleksii_moisieiev@epam.com>
+Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
 ---
- .../feature-domain-controller.yaml            | 84 +++++++++++++++++++
- 1 file changed, 84 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
 
-diff --git a/Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml b/Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
+Changes in V2: 
+	- Corrected errors highlighted by Rob's robot
+	- No longer define the maxItems for the "feature-domains"
+	  property
+	- Fix example (node name, status)
+	- Declare "feature-domain-names" as an optional
+	  property for child nodes
+	- Fix description of "feature-domains" property
+	- Reorder the properties so it matches RIFSC
+	- Add missing "feature-domain-controller" property
+
+ .../bindings/bus/st,stm32-etzpc.yaml          | 96 +++++++++++++++++++
+ 1 file changed, 96 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+
+diff --git a/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
 new file mode 100644
-index 000000000000..90a7c38c833c
+index 000000000000..ef5979c0d6f2
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
-@@ -0,0 +1,84 @@
++++ b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+@@ -0,0 +1,96 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/feature-controllers/feature-domain-controller.yaml#
++$id: http://devicetree.org/schemas/bus/st,stm32-etzpc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Generic Domain Controller bindings
++title: STM32 Extended TrustZone protection controller
++
++description: |
++  The ETZPC configures TrustZone security in a SoC having bus masters and
++  devices with programmable-security attributes (securable resources).
 +
 +maintainers:
-+  - Oleksii Moisieiev <oleksii_moisieiev@epam.com>
-+
-+description: |+
-+  Common Feature Domains Controller bindings properties
-+
-+  Domain controllers allow to divided system on chip into multiple feature
-+  domains that can be used to select by who hardware blocks could be accessed.
-+  A feature domain could be a cluster of CPUs (or coprocessors), a range of
-+  addresses or a group of hardware blocks.
-+
-+  This device tree bindings can be used to bind feature domain consumer devices
-+  with their feature domains provided by feature-domains controllers.
-+  Feature omain controller provider can be represened by any node in the
-+  device tree and can provide one or more configuration parameters, needed to
-+  control parameters of the consumer device. A consumer node can refer to the
-+  provider by phandle and a set of phandle arguments, specified by
-+  '#feature-domain-cells' property in the device controller provider node.
-+
-+  Device controllers are typically used to set the permissions of the hardware
-+  block. The contents of the feature-domains configuration properties are
-+  defined by the binding for the individual feature-domains controller device.
-+
-+  Each node can be a consumer for the several providers. The first
-+  configuration of 'feature-domains' or the one named 'default' is applied
-+  before probing the device itself.
-+
-+# always select the core schema
-+select: true
++  - Gatien Chevallier <gatien.chevallier@foss.st.com>
 +
 +properties:
-+  '#feature-domain-cells':
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      Number of cells in a feature-domains controller specifier;
-+      Can be any value as specified by device tree binding documentation
-+      of a particular provider.
++  compatible:
++    contains:
++      const: st,stm32-etzpc
 +
-+  feature-domain-controller:
-+    description:
-+      Indicates that the node is feature-domain-controller provider.
++  reg:
++    maxItems: 1
 +
-+  feature-domain-names:
-+    $ref: '/schemas/types.yaml#/definitions/string-array'
-+    description:
-+      A list of feature-domains names, sorted in the same order as
-+      feature-domains entries. Consumer drivers will use feature-domain-names
-+      to match with existing feature-domains entries.
++  "#address-cells":
++    const: 1
 +
-+  feature-domains:
-+    $ref: "/schemas/types.yaml#/definitions/phandle-array"
-+    description:
-+      A list of feature-domains controller specifiers, as defined by the
-+      bindings of the feature-domain-controller provider.
++  "#size-cells":
++    const: 1
 +
-+additionalProperties: true
++  ranges: true
++
++  "#feature-domain-cells":
++    const: 1
++
++  feature-domain-controller: true
++
++patternProperties:
++  "^.*@[0-9a-f]+$":
++    description: Peripherals
++    type: object
++    properties:
++      feature-domains:
++        minItems: 1
++        description:
++          The phandle of the firewall controller of the peripheral and the
++          platform-specific firewall ID of the peripheral.
++
++      feature-domain-names:
++        minItems: 1
++
++    required:
++      - feature-domains
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - feature-domain-controller
++  - "#feature-domain-cells"
++  - ranges
++
++additionalProperties: false
 +
 +examples:
 +  - |
-+    ctrl0: ctrl@100 {
-+        feature-domain-controller;
-+        reg = <0x100 0x10>;
-+        #feature-domain-cells = <2>;
-+    };
++    // In this example, the usart2 device refers to rifsc as its domain
++    // controller.
++    // Access rights are verified before creating devices.
 +
-+    ctrl1: ctrl@110 {
-+        feature-domain-controller;
-+        reg = <0x110 0x10>;
-+        #feature-domain-cells = <3>;
-+    };
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/stm32mp13-clks.h>
++    #include <dt-bindings/reset/stm32mp13-resets.h>
 +
-+    foo@0 {
-+        reg = <0x0 0x1>;
-+        feature-domains = <&ctrl0 1 2>, <&ctrl1 3 4 5>;
-+        feature-domain-names = "default", "unbind";
++    etzpc: bus@5c007000 {
++        compatible = "st,stm32-etzpc";
++        reg = <0x5c007000 0x400>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        feature-domain-controller;
++        #feature-domain-cells = <1>;
++        ranges;
++
++        usart2: serial@4c001000 {
++            compatible = "st,stm32h7-uart";
++            reg = <0x4c001000 0x400>;
++            interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
++            clocks = <&rcc USART2_K>;
++            resets = <&rcc USART2_R>;
++            wakeup-source;
++            dmas = <&dmamux1 43 0x400 0x5>,
++                    <&dmamux1 44 0x400 0x1>;
++            dma-names = "rx", "tx";
++            feature-domains = <&etzpc 17>;
++        };
 +    };
 -- 
 2.35.3
