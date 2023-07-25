@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3340EC04FE1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9348C04FE2
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 16:43:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZRsa1OwKhSnswzPBTutVAZSnKGyCT6FCmxOfTL+S3k=; b=iS0hBBQ6UjPfrQ
-	RKYYVKkpuzA8Z9nbPy/o3EHA3EVYVaQIfE8qGwusSlvxEpUR1q3YPdfc/ERiTeZ365xfhYROWILmQ
-	bz5jVxxrzud9mx5/+YrNUy5XqFk7X/ZQKEvBEcO41VkuRIvABc+ns/4C/MOyqqnG+ILeOjgU3Ea2f
-	5PBMtTY3VMLMjDQcSeKxYqd4brIetkxfdNInQOaw6amMujExHFw5tw77yZ3gPNtWZu6K2K3D1wHlx
-	6V9V/unv7wmOofvpyGH/XRngZEmBsetO9XDMACEPMNl8ErgmdsEV3+V2Wee2VL7TigcJ+nE2PBuhX
-	jEU8Y5+jw/nWcgxHed7g==;
+	List-Owner; bh=ZfWPMRZ6Ampd5a1zI3Amh5YsF71kKLkYnV72q23AGCc=; b=v/NtDH/vUEoy5F
+	IRgS7ax1Hb80NEuRg8sHOKcuYU6b5Udehl4NsZbQwINEJzXY4cCVBE54zXfkNNHjGCbwXKIzjn2rD
+	7WyI+/MdRqJlXYNgnEfIrRQR6gNRw3GScz09G7QHYKJpOqzQXInH7nVKvNEzFjsX2tzZwkjAcgtBj
+	1q1Ge4QyPGgWDX7g1DJIqaaH3iTZp47a2dOAjgcpkjW12sT4qSDeBhwlyzqGcuFhUvjaL9yORcR/8
+	lBxR2Ck0I0bUVIRnkmkwCnFf/nbEbtKSGo0hiBMMRKZ5piiW9mxIv+GXf3Uw/KIFDUK5zqTC9o54A
+	WJ7YcpiTDtrbbR6fZpBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOL84-0083rP-2w;
-	Tue, 25 Jul 2023 16:43:20 +0000
+	id 1qOL85-0083rw-26;
+	Tue, 25 Jul 2023 16:43:21 +0000
 Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOL7w-0083nl-1j;
-	Tue, 25 Jul 2023 16:43:14 +0000
+	id 1qOL7w-0083nz-31;
+	Tue, 25 Jul 2023 16:43:15 +0000
 Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PELblK027164;
-	Tue, 25 Jul 2023 18:42:43 +0200
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PELblJ027164;
+	Tue, 25 Jul 2023 18:42:42 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=selector1;
- bh=h0YyLUqvRFQIY5qvOKn4ibgHT6lUEDiJN/sMHtwa7nY=;
- b=YyiQBSUdd9S4DJlCtBHxFXpORIBrij9JIfWgWHlUiHPnVotjB5ijyRF7ojdNrc5yr8Ry
- ZRXtKib7Nw1YA55qT7d3ZrAF6u5yeUlGKeGCAD39/902LT/rkpfiOjiuM527EV09n7YF
- 3bLH2JJbneY1TdDHfLtlxSRrWcrmMspY+G7IW3v2RtHydyr8JK7cOjX0yY7x3K6xVzZT
- OnwGAFTPdDMAzDJKVl+/HOWPXUAUu6rJyQ9i9RmvYyp9nUHT+Hhv8GDnEYlA9yH9+LMw
- qm8umQ88NF6btuIs7YsShc+DUTdffPCUUUFnury4KI0eEo1gcUl4nFf7KKQ6tIlgDPQc ug== 
+ bh=I45pB3cNw6l4Xcm6iYiUyclnyr+tZB7GHR7hwjNrzmQ=;
+ b=Hy6/YoTSaKRPAAa6+jndUuB6Av2yjyjGqB8BrGNGYiYfvpxx65hNRBo0CwHcZszaJRmc
+ Bsep7SCnLwdpvfHMjdlkwOw0sFLP2gB2WtBnv58a+7OFNMkhNvayBuepv519PyAA6ZRo
+ GFY2XGnABEOrux3ZMn+Nb4pxu4k+83aDIUS5oRjUHlUk9NrAc0TpNMkvBagpao+3ZK5e
+ mX0TCMQO0hCkYT9ao/XJJdQ8V3qAeOpv5mgOtOjEb9m0HzmOWSdIOOV0/mma6+5RS+GN
+ TreFLIa/E0iQ8dG8vO/6cmz95yQBXBc+4hqxcxy6OfCDzqDx0sxJr+B4yykuoQxx71fr Lw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3s2g3a0rk1-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3s2g3a0rjy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 18:42:43 +0200
+	Tue, 25 Jul 2023 18:42:42 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7D24E10004D;
-	Tue, 25 Jul 2023 18:42:42 +0200 (CEST)
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C36F010002A;
+	Tue, 25 Jul 2023 18:42:41 +0200 (CEST)
 Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 73559257AB5;
-	Tue, 25 Jul 2023 18:42:42 +0200 (CEST)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B5D402721C4;
+	Tue, 25 Jul 2023 18:42:41 +0200 (CEST)
 Received: from localhost (10.201.21.121) by SHFDAG1NODE1.st.com (10.75.129.69)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Tue, 25 Jul
- 2023 18:42:42 +0200
+ 2023 18:42:41 +0200
 From: Gatien Chevallier <gatien.chevallier@foss.st.com>
 To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
         <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
@@ -75,9 +75,9 @@ CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-usb@vger.kernel.org>,
         Gatien Chevallier
 	<gatien.chevallier@foss.st.com>
-Subject: [PATCH v2 03/11] dt-bindings: bus: document ETZPC
-Date: Tue, 25 Jul 2023 18:40:56 +0200
-Message-ID: <20230725164104.273965-4-gatien.chevallier@foss.st.com>
+Subject: [PATCH v2 02/11] dt-bindings: bus: document RIFSC
+Date: Tue, 25 Jul 2023 18:40:55 +0200
+Message-ID: <20230725164104.273965-3-gatien.chevallier@foss.st.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230725164104.273965-1-gatien.chevallier@foss.st.com>
 References: <20230725164104.273965-1-gatien.chevallier@foss.st.com>
@@ -89,8 +89,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-25_08,2023-07-25_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_094312_893713_623E8E28 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20230725_094313_294446_C1460D0B 
+X-CRM114-Status: GOOD (  19.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,8 +107,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document ETZPC (Extended TrustZone protection controller). ETZPC is a
-firewall controller.
+Document RIFSC (RIF security controller). RIFSC is a firewall controller
+composed of different kinds of hardware resources.
 
 Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
 ---
@@ -121,38 +121,52 @@ Changes in V2:
 	- Declare "feature-domain-names" as an optional
 	  property for child nodes
 	- Fix description of "feature-domains" property
-	- Reorder the properties so it matches RIFSC
-	- Add missing "feature-domain-controller" property
 
- .../bindings/bus/st,stm32-etzpc.yaml          | 96 +++++++++++++++++++
- 1 file changed, 96 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+ .../bindings/bus/st,stm32mp25-rifsc.yaml      | 105 ++++++++++++++++++
+ 1 file changed, 105 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
 
-diff --git a/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+diff --git a/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml b/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
 new file mode 100644
-index 000000000000..ef5979c0d6f2
+index 000000000000..7aeb38296616
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
-@@ -0,0 +1,96 @@
++++ b/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
+@@ -0,0 +1,105 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/bus/st,stm32-etzpc.yaml#
++$id: http://devicetree.org/schemas/bus/st,stm32mp25-rifsc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: STM32 Extended TrustZone protection controller
-+
-+description: |
-+  The ETZPC configures TrustZone security in a SoC having bus masters and
-+  devices with programmable-security attributes (securable resources).
++title: STM32 Resource isolation framework security controller
 +
 +maintainers:
 +  - Gatien Chevallier <gatien.chevallier@foss.st.com>
 +
++description: |
++  Resource isolation framework (RIF) is a comprehensive set of hardware blocks
++  designed to enforce and manage isolation of STM32 hardware resources like
++  memory and peripherals.
++
++  The RIFSC (RIF security controller) is composed of three sets of registers,
++  each managing a specific set of hardware resources:
++    - RISC registers associated with RISUP logic (resource isolation device unit
++      for peripherals), assign all non-RIF aware peripherals to zero, one or
++      any security domains (secure, privilege, compartment).
++    - RIMC registers: associated with RIMU logic (resource isolation master
++      unit), assign all non RIF-aware bus master to one security domain by
++      setting secure, privileged and compartment information on the system bus.
++      Alternatively, the RISUP logic controlling the device port access to a
++      peripheral can assign target bus attributes to this peripheral master port
++      (supported attribute: CID).
++    - RISC registers associated with RISAL logic (resource isolation device unit
++      for address space - Lite version), assign address space subregions to one
++      security domains (secure, privilege, compartment).
++
 +properties:
 +  compatible:
 +    contains:
-+      const: st,stm32-etzpc
++      const: st,stm32mp25-rifsc
 +
 +  reg:
 +    maxItems: 1
@@ -205,29 +219,22 @@ index 000000000000..ef5979c0d6f2
 +    // Access rights are verified before creating devices.
 +
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp13-clks.h>
-+    #include <dt-bindings/reset/stm32mp13-resets.h>
 +
-+    etzpc: bus@5c007000 {
-+        compatible = "st,stm32-etzpc";
-+        reg = <0x5c007000 0x400>;
++    rifsc: bus@42080000 {
++        compatible = "st,stm32mp25-rifsc";
++        reg = <0x42080000 0x1000>;
 +        #address-cells = <1>;
 +        #size-cells = <1>;
 +        feature-domain-controller;
 +        #feature-domain-cells = <1>;
 +        ranges;
 +
-+        usart2: serial@4c001000 {
-+            compatible = "st,stm32h7-uart";
-+            reg = <0x4c001000 0x400>;
-+            interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
-+            clocks = <&rcc USART2_K>;
-+            resets = <&rcc USART2_R>;
-+            wakeup-source;
-+            dmas = <&dmamux1 43 0x400 0x5>,
-+                    <&dmamux1 44 0x400 0x1>;
-+            dma-names = "rx", "tx";
-+            feature-domains = <&etzpc 17>;
++        usart2: serial@400e0000 {
++              compatible = "st,stm32h7-uart";
++              reg = <0x400e0000 0x400>;
++              interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
++              clocks = <&ck_flexgen_08>;
++              feature-domains = <&rifsc 32>;
 +        };
 +    };
 -- 
