@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2441EC0015E
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Jul 2023 18:07:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BCFAC0015E
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 01:31:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LHlFy6NGqd2z0TTZCRYdCbxn25kI5bmE+QAyQBWW+AQ=; b=a21Q+143XylNqd
-	iOTklanGWSI5hJEwhFgWSAllo/YP3ZXXKWXcPrD5K00oYsiE4UHzXWt7fj49gSGoTyLIjBGv8SltB
-	6YFkt5vlx7qBmNzPIcoEuw61HH2hVWsbH10Q23vzUvT7ofN1NWYhtdaVfWR64MD3/6wb0oY4Yljk+
-	BZyXE1seMCCkwVEb+d/ex+dc3FZiDXeIxZhhWjSNFop8w5Vt21+bwUAT9JdACBcZloaUBA4k+mO/5
-	TLh3JMWTCnmnYa90q69XTqJXhHR+mMDRBEGYFt5WFaDMskP+9t/bFB3VrYoFZ2dc1MEAhaFoAesg7
-	sbhKbxwLCupxRjg120VQ==;
+	List-Owner; bh=ZWt2EREdwm3kLUDwMGhuq4GCFT0QX8ThyufsNJVHxro=; b=aYRs+/NbOqpgF2
+	sYeftLCSIUaOS/8Q5ZMNHvjU5de7ODTSgO7ZmZ7KSy0cbpqQZ2Qb4BGKl8gchC6zFOoMlModLPgQp
+	4DGmhvshUGS4zqVcTPZa25SUs+1ysr2dT9Sr+flf8a0tcC9jMn/TPn7rSF+R0QiFeyuoDpKTGMnYg
+	grxrvqJ8SNEtxMfn0pQN/7JDdJhB+R4JUAOk6pcBk5MSUL6TpWqCjOsK91ZIX6vrTmSlsh1YfbnBh
+	DaJHUjElWJvEfR5YmqBL6DSyjayONYo8BFWRR7rwd2NWVPXx/6g3g44VXnA9eUGSA1mZoP9HB1lsn
+	bTRLOcSWoSngVE9Cs+Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOMRA-008EVX-2n;
-	Tue, 25 Jul 2023 18:07:08 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOMR8-008EUY-1F;
-	Tue, 25 Jul 2023 18:07:07 +0000
-Received: from [185.230.175.137] (helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1qOMR0-00067u-HF; Tue, 25 Jul 2023 20:06:58 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Qu Wenruo <wqu@suse.com>,
- Rob Herring <robh@kernel.org>,
- Krzysztof =?utf-8?B?V2lsY3p5xYRza2k=?= <kw@linux.com>,
- Simon Xue <xxm@rock-chips.com>, linux-kernel@vger.kernel.org,
- Lorenzo Pieralisi <lpieralisi@kernel.org>, devicetree@vger.kernel.org,
- Jingoo Han <jingoohan1@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>, linux-pci@vger.kernel.org,
- John Clark <inindev@gmail.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Serge Semin <fancer.lancer@gmail.com>, kernel@collabora.com,
- Vinod Koul <vkoul@kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Conor Dooley <conor+dt@kernel.org>
-Subject: Re: (subset) [PATCH v2 0/2] RK3588 PCIe3 support
-Date: Tue, 25 Jul 2023 20:06:56 +0200
-Message-ID: <6404573.MHq7AAxBmi@phil>
-In-Reply-To: <20230724192223.5jnu5wgrzmmjz5z5@mercury.elektranox.org>
-References: <20230717173512.65169-1-sebastian.reichel@collabora.com>
- <169022594803.2911118.12432442062352790360.b4-ty@sntech.de>
- <20230724192223.5jnu5wgrzmmjz5z5@mercury.elektranox.org>
+	id 1qOTNL-008r6c-1U;
+	Wed, 26 Jul 2023 01:31:39 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qOTNH-008r5s-2D
+	for linux-phy@lists.infradead.org;
+	Wed, 26 Jul 2023 01:31:38 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id 8D27124E207;
+	Wed, 26 Jul 2023 09:31:01 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Jul
+ 2023 09:31:01 +0800
+Received: from [192.168.125.107] (183.27.99.135) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Jul
+ 2023 09:31:00 +0800
+Message-ID: <cbc5b6e6-c706-b251-9a8e-0eecbc9871a8@starfivetech.com>
+Date: Wed, 26 Jul 2023 09:30:59 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH] phy: starfive: StarFive PHYs should depend on
+ ARCH_STARFIVE
+To: Geert Uytterhoeven <geert+renesas@glider.be>, Vinod Koul
+	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Minda Chen
+	<minda.chen@starfivetech.com>, Roger Quadros <rogerq@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <12097f6107a18e2f7cfb80f47ac7b27808e062c4.1690300076.git.geert+renesas@glider.be>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <12097f6107a18e2f7cfb80f47ac7b27808e062c4.1690300076.git.geert+renesas@glider.be>
+X-Originating-IP: [183.27.99.135]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_110706_422372_4C801C64 
-X-CRM114-Status: GOOD (  20.70  )
+X-CRM114-CacheID: sfid-20230725_183135_907168_119F7919 
+X-CRM114-Status: GOOD (  11.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,45 +76,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, 24. Juli 2023, 21:22:23 CEST schrieb Sebastian Reichel:
-> Hi Heiko,
+
+
+On 2023/7/25 23:49, Geert Uytterhoeven wrote:
+> The various StarFive PHYs are only present on StarFive SoCs.  Hence add
+> a dependency on ARCH_STARFIVE, to prevent asking the user about these
+> drivers when configuring a kernel without StarFive SoC support.
 > 
-> On Mon, Jul 24, 2023 at 09:12:35PM +0200, Heiko Stuebner wrote:
-> > On Mon, 17 Jul 2023 19:35:10 +0200, Sebastian Reichel wrote:
-> > > This adds PCIe v3 support for RK3588. The series depends on the PCIe
-> > > v2 series [0], since the the same binding is used. It has been tested
-> > > on Rockchip EVB1 and Radxa Rock 5B.
-> > > 
-> > > Note, that the PCIe3 PHY driver is currently missing bifurcation
-> > > support for RK3588. Thus after this series only PCIe3x4 is usable
-> > > (in aggregated x4 mode) without adding support for the PHY's
-> > > "rockchip,pcie30-phymode" DT property, which allows configuring
-> > > how the lanes are distributed. Aggregated 3x4 mode seems to be the
-> > > most common configuration. Both EVB1 and Rock 5B use it, so I
-> > > cannot test anything else anyways.
-> > > 
-> > > [...]
-> > 
-> > Applied, thanks!
-> > 
-> > [2/2] arm64: dts: rockchip: rk3588: add PCIe3 support
-> >       commit: 0acf4fa7f187cd7e3dad93f1ee14e9509687621e
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+>  drivers/phy/starfive/Kconfig | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
-> Applying this without the PCIe 2 series being applied introduces
-> warnings for the RK3588 dtbs_check, as mentioned in the second
-> setence of the text you quoted :)
-> 
-> (FWIW RK356x already has the same warnings, though)
+> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+> index a560533a674ee0a5..4457b3872aa146a4 100644
+> --- a/drivers/phy/starfive/Kconfig
+> +++ b/drivers/phy/starfive/Kconfig
+> @@ -3,6 +3,8 @@
+>  # Phy drivers for StarFive platforms
+>  #
+>  
+> +if ARCH_STARFIVE || COMPILE_TEST
+> +
+>  config PHY_STARFIVE_JH7110_DPHY_RX
+>  	tristate "StarFive JH7110 D-PHY RX support"
+>  	select GENERIC_PHY
+> @@ -31,3 +33,5 @@ config PHY_STARFIVE_JH7110_USB
+>  	  used with the Cadence USB controller.
+>  	  If M is selected, the module will be called
+>  	  phy-jh7110-usb.ko.
+> +
+> +endif # ARCH_STARFIVE || COMPILE_TEST
 
-darn, I didn't do a full binding check, only a "compiles" check
-after applying. We're at rc3 now, so I would hope that the pcie2
-binding changes get applied soon'ish so I can then also pick up the
-dts change from there.
+For dphy rx parts:
 
+Acked-by: Changhuang Liang <changhuang.liang@starfivetech.com>
 
-Heiko
-
-
+Thanks,
+Changhuang
 
 -- 
 linux-phy mailing list
