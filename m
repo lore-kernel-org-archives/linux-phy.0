@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BCFAC0015E
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 01:31:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73B20C001DC
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 05:21:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZWt2EREdwm3kLUDwMGhuq4GCFT0QX8ThyufsNJVHxro=; b=aYRs+/NbOqpgF2
-	sYeftLCSIUaOS/8Q5ZMNHvjU5de7ODTSgO7ZmZ7KSy0cbpqQZ2Qb4BGKl8gchC6zFOoMlModLPgQp
-	4DGmhvshUGS4zqVcTPZa25SUs+1ysr2dT9Sr+flf8a0tcC9jMn/TPn7rSF+R0QiFeyuoDpKTGMnYg
-	grxrvqJ8SNEtxMfn0pQN/7JDdJhB+R4JUAOk6pcBk5MSUL6TpWqCjOsK91ZIX6vrTmSlsh1YfbnBh
-	DaJHUjElWJvEfR5YmqBL6DSyjayONYo8BFWRR7rwd2NWVPXx/6g3g44VXnA9eUGSA1mZoP9HB1lsn
-	bTRLOcSWoSngVE9Cs+Ag==;
+	List-Owner; bh=UnhVTx050MbTUEkcS4DzqYCJrWXv/euj7ZQTrh92TyQ=; b=vQSjlVjw55f2Yc
+	glBKnu3utZ3L4RRMqI6wBf3AOCDuO4Rb8KNW/YbjZTiL6oI1WDBbE2IpnREDbSLd0liiuV/BduvQy
+	jIDX9KryJfUuRQQ/qQ569IRKjg1ev9HBFMxk3wCKM8hAzsXUqGO2dztfdGoPFB7MwlK1EV5QNyjsh
+	UeRzUMjguikjKm2j/2PMs9d0AGIPsQ/e+uyAN1owK0Mv0nr2ZTrB1Y7v21njmEmywyAB29oIHvzKm
+	0wt9IAAzY1/T1eWjs3Xw+p1317tjA4Kco7XxpzyORk9wEf39BsTYbhkcpKXXa0XiPGx/xz3+pwHBb
+	pS7CjEVoVhzh4VftnH1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOTNL-008r6c-1U;
-	Wed, 26 Jul 2023 01:31:39 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOTNH-008r5s-2D
-	for linux-phy@lists.infradead.org;
-	Wed, 26 Jul 2023 01:31:38 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 8D27124E207;
-	Wed, 26 Jul 2023 09:31:01 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Jul
- 2023 09:31:01 +0800
-Received: from [192.168.125.107] (183.27.99.135) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 26 Jul
- 2023 09:31:00 +0800
-Message-ID: <cbc5b6e6-c706-b251-9a8e-0eecbc9871a8@starfivetech.com>
-Date: Wed, 26 Jul 2023 09:30:59 +0800
+	id 1qOWxT-009BpZ-0Z;
+	Wed, 26 Jul 2023 05:21:11 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qOWxQ-009Boh-1Q;
+	Wed, 26 Jul 2023 05:21:09 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 942876117C;
+	Wed, 26 Jul 2023 05:21:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41C01C433C8;
+	Wed, 26 Jul 2023 05:21:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1690348863;
+	bh=9tnFNXSUclTx4dPB0bkbDkhLdl1cycMtiJarM2UDCjk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PwhIh2FjWWwVq2ZmmSrooXgU9udbde9AdEXaTQL7q/KeRv0vBxc5yR40M0fLMWBUQ
+	 gDYQMR1ERmqSttiVW/bAWwH7n/wWpsibIRaAVff9gH5+YD0XuSysCoprKJN71U9NzR
+	 Jz7LBOEP3NQM5OF+jjkExaGL0qmrNlQDhOh0S01G0kzOthEToE+YOzY/UaWSt7Rodb
+	 gax5LVfKNepZyQg2BuYnZENwOoCPd1sDkznREmi1lWRXm6nHUBn3A8PAHVGGD4HjPo
+	 qd9RVxF0BHttnFgQqce4w1sh23ZTxqmrglKMFQW3MAxVoMkjokEMJaSudU5hNmsb0F
+	 Rrbs13QNkwyaA==
+Date: Tue, 25 Jul 2023 22:24:15 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Cc: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org, 
+	konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, gregkh@linuxfoundation.org, 
+	catalin.marinas@arm.com, will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de, 
+	geert+renesas@glider.be, neil.armstrong@linaro.org, nfraprado@collabora.com, 
+	rafal@milecki.pl, quic_srichara@quicinc.com, quic_wcheng@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v5 2/6] dt-bindings: phy: qcom,m31: Document qcom,m31 USB
+ phy
+Message-ID: <cst3d76ong32lzcatxlcr5gbakmh3grm5tehvd36wrdza5ozd5@gfl4ysu7hdo6>
+References: <cover.1689913334.git.quic_varada@quicinc.com>
+ <131eb1694229436919ac88bb9920fb54d6808388.1689913334.git.quic_varada@quicinc.com>
+ <ymbcafqqhc6hgrfhpef4byehvfyjzovs5zeprmj343erdv5ti5@tj2iunu6whvi>
+ <20230724160136.GA3619408-robh@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH] phy: starfive: StarFive PHYs should depend on
- ARCH_STARFIVE
-To: Geert Uytterhoeven <geert+renesas@glider.be>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Minda Chen
-	<minda.chen@starfivetech.com>, Roger Quadros <rogerq@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <12097f6107a18e2f7cfb80f47ac7b27808e062c4.1690300076.git.geert+renesas@glider.be>
-Content-Language: en-US
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <12097f6107a18e2f7cfb80f47ac7b27808e062c4.1690300076.git.geert+renesas@glider.be>
-X-Originating-IP: [183.27.99.135]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
+Content-Disposition: inline
+In-Reply-To: <20230724160136.GA3619408-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_183135_907168_119F7919 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20230725_222108_544677_6F5AFEB0 
+X-CRM114-Status: GOOD (  10.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,44 +84,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2023/7/25 23:49, Geert Uytterhoeven wrote:
-> The various StarFive PHYs are only present on StarFive SoCs.  Hence add
-> a dependency on ARCH_STARFIVE, to prevent asking the user about these
-> drivers when configuring a kernel without StarFive SoC support.
+On Mon, Jul 24, 2023 at 10:01:36AM -0600, Rob Herring wrote:
+> On Fri, Jul 21, 2023 at 10:10:57PM -0700, Bjorn Andersson wrote:
+> > On Fri, Jul 21, 2023 at 10:05:27AM +0530, Varadarajan Narayanan wrote:
+> > [..]
+> > > diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+[..]
+> > > +examples:
+> > > +  - |
+> > > +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
+> > > +    usbphy0: usb-phy@7b000 {
+> > 
+> > usb@
 > 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
->  drivers/phy/starfive/Kconfig | 4 ++++
->  1 file changed, 4 insertions(+)
+> You mean phy@? But 'usb2-phy' is accepted too.
 > 
-> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
-> index a560533a674ee0a5..4457b3872aa146a4 100644
-> --- a/drivers/phy/starfive/Kconfig
-> +++ b/drivers/phy/starfive/Kconfig
-> @@ -3,6 +3,8 @@
->  # Phy drivers for StarFive platforms
->  #
->  
-> +if ARCH_STARFIVE || COMPILE_TEST
-> +
->  config PHY_STARFIVE_JH7110_DPHY_RX
->  	tristate "StarFive JH7110 D-PHY RX support"
->  	select GENERIC_PHY
-> @@ -31,3 +33,5 @@ config PHY_STARFIVE_JH7110_USB
->  	  used with the Cadence USB controller.
->  	  If M is selected, the module will be called
->  	  phy-jh7110-usb.ko.
-> +
-> +endif # ARCH_STARFIVE || COMPILE_TEST
 
-For dphy rx parts:
-
-Acked-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+Yes, had the controller in mind, sorry about that.
 
 Thanks,
-Changhuang
+Bjorn
 
 -- 
 linux-phy mailing list
