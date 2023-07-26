@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88672C001DF
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 11:32:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93A60C001B0
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 12:13:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
 	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HLbnIsAMcUnKWfhTALI8hBfG1YGhAJ1te7BB9+naqY8=; b=JHdQl/dFLQEd+i
-	kVNSDa5YQYb0CTMW22uV4FspnIT/dMcAhM2SVcX17+TRE51yQa/sCMGerlt20YY3+/S1/fGeoUiG8
-	0QPsQx7URZnoTC4xumXyx1rwda3adWc0by0OBk8uZ3hR9afxpObtU2nSiK81zvZa2iQgdvEOHhJVX
-	Pqoi1jKBIXOCB4sC3vJdATwFd6VAFSUN81KaqrxHb136KhA1z0wkQmcLC65qqfqXHfzsxg3cDPs14
-	4xUiRZ0o6Exb7l5QovLw/ccygyecwXw/yldRAIqUKjuFVVuLH4/8fDoSwFhzP0H63nHj7IkYbY6Yh
-	cddIjXEzX0fQ0QdmD0SQ==;
+	List-Owner; bh=i1gNBoVXMiFI5kiY4rf3nHbZkvcqWMg/oaV+NLGwnjo=; b=M8uV00sbAmRSHH
+	VI7IyYqQ4R7BzMZHRUZ4OlQjX28rl+pzfTrEDZ6qXdVeFFOigiavI5LLQqRFhg+ujJlfrhKS3Ck9b
+	XM26tXN+ggDGQsslJld4G9fBBwF9taw9VGTP1fUn/rB6/inFpjqKpZA1wrnz6Fuf6yNqlqn6B7c32
+	p/8hjdNiTbw16vU0GLo5zVvudKKU5ZzuM/KsgywM0bFU1IFUA8gHHOdQ3T4DzPmImpOFlOQgwYYo4
+	0DCohC64nx5CWrmOkhgx4QOhV0rR9/W+Rcuuti2P9KavpTLjvtRgnxRAL9wdopqVoiNGjLBYBtGT1
+	Apj+sIpC0+GEtstYzl9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOcl8-00AARA-0Z;
-	Wed, 26 Jul 2023 11:32:50 +0000
+	id 1qOdO3-00AIuT-11;
+	Wed, 26 Jul 2023 12:13:03 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOcl5-00AAPp-0Q;
-	Wed, 26 Jul 2023 11:32:48 +0000
+	id 1qOdNz-00AItQ-2A;
+	Wed, 26 Jul 2023 12:13:01 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6EAA361AA8;
-	Wed, 26 Jul 2023 11:32:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA78AC433C8;
-	Wed, 26 Jul 2023 11:32:42 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 27D8661A66;
+	Wed, 26 Jul 2023 12:12:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 73356C433C8;
+	Wed, 26 Jul 2023 12:12:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1690371165;
-	bh=wq+kGX1o6azl/+AxJe/umF5svvBwne/PrZi7iuI++k0=;
+	s=k20201202; t=1690373578;
+	bh=Ke8AONnAOWupVgvu9a1rrtccA5xWjVMePJQxM8Ht3Kc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=e1hankn3CHxOhV5V7dL9xTWosq9z/AofiRirVkpOjA5iGzdOg2AqeCG/lPXcfSVuf
-	 NLnHQ8xPlaS3pRI4KBAejMqJ/9BDmbpTNDdG4GGoJApzH9gUqgXlIXbAJMEuxctoIS
-	 6TH+ublhNs4PXHTBz9tII/L0d5YdsiwqMQhhqqyOL6xfDC/m1t8m7XHlDAvW7/JeUA
-	 Y7CJxKafOQrVbAqZyxMgeC6wgPtZF0Yp2f6Jx/Gi404YrKPKekJc1fm+VKNqhl8zF4
-	 44iwHUskx7tCXskhYbfbD94aM0do3HAm8eFIcjFR2ae6oW991MwijW+S7cmTHLlyov
-	 Y/YMdbOcLz5Dg==
-Received: (nullmailer pid 1021823 invoked by uid 1000);
-	Wed, 26 Jul 2023 11:32:41 -0000
+	b=gYrqFr8wvj2MJmmwmwf8M6I8rekTV9+bxmW2rqLD55Qm7Z/X+3fqo2oPfopkxdlCi
+	 n241AQBCMxM7eFrih3i3Sbv5AKj0bq28ozziIAExFd7E/RXMMNS1aKn+yJARtnBmU4
+	 FfN14X79faCpLGre6x+vnvwoxjIsG/L/ooLw+V13rcjVx7tIPmq/1O2zG9aawBpzTf
+	 uhcvPI4MEqZ0fNFaHRBAISQWggi8tN88wV4MzFoUqwVN0pOsQ3BgyiTak4/MrtL+0t
+	 6GpQd+/9rUTZVGi45edSMIe9j4qSBoulHPW7gK71wysfs2CSJoMHtELswVidt7IBP2
+	 x+DypAIC/tqTg==
+Received: (nullmailer pid 1182938 invoked by uid 1000);
+	Wed, 26 Jul 2023 12:12:54 -0000
 MIME-Version: 1.0
 From: Rob Herring <robh@kernel.org>
 To: Gatien Chevallier <gatien.chevallier@foss.st.com>
-Cc: olivier.moysan@foss.st.com, lee@kernel.org, netdev@vger.kernel.org, linux-crypto@vger.kernel.org, linux-iio@vger.kernel.org, will@kernel.org, Frank Rowand <frowand.list@gmail.com>, linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org, andi.shyti@kernel.org, vkoul@kernel.org, linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org, ulf.hansson@linaro.org, richardcochran@gmail.com, catalin.marinas@arm.com, conor+dt@kernel.org, edumazet@google.com, gregkh@linuxfoundation.org, alsa-devel@alsa-project.org, fabrice.gasnier@foss.st.com, linux-spi@vger.kernel.org, davem@davemloft.net, mchehab@kernel.org, pabeni@redhat.com, herbert@gondor.apana.org.au, devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, robh+dt@kernel.org, alexandre.torgue@foss.st.com, hugues.fruchet@foss.st.com, krzysztof.kozlowski+dt@linaro.org, jic23@kernel.org, linux-serial@vger.kernel.org, linux-usb@vger.kernel.org, Oleksii_Moisieiev@epam.com, linux-i2c@vger.kernel.org, kuba@kernel.org,
-  linux-phy@lists.infradead.org, dmaengine@vger.kernel.org, arnaud.pouliquen@foss.st.com, arnd@kernel.org
-In-Reply-To: <20230726090129.233316-1-gatien.chevallier@foss.st.com>
+Cc: linux-mmc@vger.kernel.org, gregkh@linuxfoundation.org, lee@kernel.org, catalin.marinas@arm.com, jic23@kernel.org, hugues.fruchet@foss.st.com, richardcochran@gmail.com, will@kernel.org, arnd@kernel.org, davem@davemloft.net, Oleksii Moisieiev <oleksii_moisieiev@epam.com>, Frank Rowand <frowand.list@gmail.com>, Oleksii_Moisieiev@epam.com, linux-phy@lists.infradead.org, linux-crypto@vger.kernel.org, kuba@kernel.org, linux-spi@vger.kernel.org, linux-usb@vger.kernel.org, vkoul@kernel.org, linux-arm-kernel@lists.infradead.org, edumazet@google.com, devicetree@vger.kernel.org, linux-iio@vger.kernel.org, alsa-devel@alsa-project.org, linux-stm32@st-md-mailman.stormreply.com, herbert@gondor.apana.org.au, linux-i2c@vger.kernel.org, alexandre.torgue@foss.st.com, mchehab@kernel.org, robh+dt@kernel.org, linux-kernel@vger.kernel.org, ulf.hansson@linaro.org, netdev@vger.kernel.org, andi.shyti@kernel.org, olivier.moysan@foss.st.com, linux-serial@vger.kernel.org, pabeni@redhat.com, arnaud.pouliquen@
+ foss.st.com, dmaengine@vger.kernel.org, krzysztof.kozlowski+dt@linaro.org, linux-media@vger.kernel.org, conor+dt@kernel.org, fabrice.gasnier@foss.st.com
+In-Reply-To: <20230726083810.232100-2-gatien.chevallier@foss.st.com>
 References: <20230726083810.232100-1-gatien.chevallier@foss.st.com>
- <20230726090129.233316-1-gatien.chevallier@foss.st.com>
-Message-Id: <169037116156.1021724.12937477325696165938.robh@kernel.org>
-Subject: Re: [PATCH v3 04/11] dt-bindings: bus: document ETZPC
-Date: Wed, 26 Jul 2023 05:32:41 -0600
+ <20230726083810.232100-2-gatien.chevallier@foss.st.com>
+Message-Id: <169037357425.1182922.8121576517266921442.robh@kernel.org>
+Subject: Re: [IGNORE][PATCH v3 01/11] dt-bindings: Document common device
+ controller bindings
+Date: Wed, 26 Jul 2023 06:12:54 -0600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230726_043247_253691_DF04F0E6 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20230726_051259_811045_A558D35B 
+X-CRM114-Status: GOOD (  14.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,27 +78,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 26 Jul 2023 11:01:22 +0200, Gatien Chevallier wrote:
-> Document ETZPC (Extended TrustZone protection controller). ETZPC is a
-> firewall controller.
+On Wed, 26 Jul 2023 10:38:00 +0200, Gatien Chevallier wrote:
+> From: Oleksii Moisieiev <Oleksii_Moisieiev@epam.com>
 > 
-> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+> Introducing of the common device controller bindings for the controller
+> provider and consumer devices. Those bindings are intended to allow
+> divided system on chip into muliple domains, that can be used to
+> configure hardware permissions.
+> 
+> Signed-off-by: Oleksii Moisieiev <oleksii_moisieiev@epam.com>
 > ---
-> 
-> Changes in V2:
-> 	- Corrected errors highlighted by Rob's robot
-> 	- No longer define the maxItems for the "feature-domains"
-> 	  property
-> 	- Fix example (node name, status)
-> 	- Declare "feature-domain-names" as an optional
-> 	  property for child nodes
-> 	- Fix description of "feature-domains" property
-> 	- Reorder the properties so it matches RIFSC
-> 	- Add missing "feature-domain-controller" property
-> 
->  .../bindings/bus/st,stm32-etzpc.yaml          | 96 +++++++++++++++++++
->  1 file changed, 96 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+>  .../feature-domain-controller.yaml            | 84 +++++++++++++++++++
+>  1 file changed, 84 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml
 > 
 
 My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
@@ -106,12 +99,13 @@ on your patch (DT_CHECKER_FLAGS is new in v5.13):
 yamllint warnings/errors:
 
 dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/bus/st,stm32-etzpc.example.dtb: serial@4c001000: Unevaluated properties are not allowed ('feature-domains' was unexpected)
-	from schema $id: http://devicetree.org/schemas/serial/st,stm32-uart.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/feature-controllers/feature-domain-controller.yaml: title: 'Generic Domain Controller bindings' should not be valid under {'pattern': '([Bb]inding| [Ss]chema)'}
+	hint: Everything is a binding/schema, no need to say it. Describe what hardware the binding is for.
+	from schema $id: http://devicetree.org/meta-schemas/core.yaml#
 
 doc reference errors (make refcheckdocs):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230726090129.233316-1-gatien.chevallier@foss.st.com
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230726083810.232100-2-gatien.chevallier@foss.st.com
 
 The base for the series is generally the latest rc1. A different dependency
 should be noted in *this* patch.
