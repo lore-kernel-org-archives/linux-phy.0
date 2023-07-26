@@ -4,139 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFE36C001DC
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 08:14:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BB32C0015E
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 08:38:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oqMtw/iIp58dNPF4knsRmw6iBDPs6UcQ3KN1HN93lyc=; b=yNU3LWD0I0C+zj9LJY1wS6Ny9z
-	0yveyMYjPLDA1OkbGycRO3KTloUPRrHbkTCoEF9pmSNlV4DGTuGO22XvJmYFVRvyyGa8iCDDrO3IY
-	4MsJS900JlMcZ56/mbwO1FsTQIaBoYHJsRBetutF8ukwMgcxjZUfxAqG6R+9GRCdqZbWrkIorpgDc
-	nQfPx/Bsyb7XzUNHqKvZEoM4EZ/RW5jvvBcPG2Pn+BTXu9ptFNsOK8kaEiA2fXgQDJ7iqCSgQqRYm
-	pwB2i6OYxdXeYylXoCUMd3rmubC+NexHQmed1jCvwqbJXcCpueUSrQZi0M5JiaDM/O5psHKjsr7tv
-	dASDdT3A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iaDdvsJgyB+dPeiQlp2iOYcCpEvD4ba6dIdNR0giGL8=; b=nxvDHtnWzgCljb
+	aIgefr+b24Zpeqonxcc/EbfdfJdrVq3xVgKVK9uOXihvjZ3YHvLZJLZdgdWDboL6EDnt54hLJ4sHV
+	mAiYaFJUAXlEamkXDn33l/R+09u/o/a44e9snalt8n5aa4kN1YWi+VSF6T5dy3+IZvbkpLUwnqDyj
+	6LCNl7MZctMwJ1QiNst3h9eCExPp3LhPuk25ObluDH27Vgzgg6UB8khecLOw4rRl3UeGkizoPiztP
+	koZ4gM2SLu6YpxN29bungaxJZi7u+Il9etnHHwiAv1Na2o10Tv6dWtVlqB1h5MaHEyio+9yqIpvf2
+	IHgwsoaEt3r3zUQy7LsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOZel-009Yf7-1i;
-	Wed, 26 Jul 2023 08:14:03 +0000
-Received: from mail-am6eur05on20612.outbound.protection.outlook.com ([2a01:111:f400:7e1b::612] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1qOa2o-009bJY-2h;
+	Wed, 26 Jul 2023 08:38:54 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOZej-009YeN-1x
-	for linux-phy@lists.infradead.org;
-	Wed, 26 Jul 2023 08:14:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QFBjADjDL65U+xTpfvH84ibdvnWC5EJyKHERbEXN1rCT3N4IkRQ1BFHeGE/a/mSO7DAp/Enn0zfUhdLbPF5K4KJSqHLwvLKx02KpvVqU4QnKXz2Q6RNpTI7CG6jNReZX/lSWlNgEsM3lx7J8E9Wo/FMPFgCLtoDW+fTJSdng+cSLQyMi5TqNppOYtEL0pZ8Sd22OK6tXPWScEWbJQRZ1krWt1JdqViWVme3nkFSyqd5e+OINzOp2kmwW3nkNfxrRR8XNHv/GdC/fXnQYk+37CojVqgJNRFHpYJcsrsaTm85EClXxX2VgZ9Qr0wShgiBGIEWlAjF8jWX92BRD49mBcw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=yyf1W4teB0Q/JCspmM4/dBe5RhUAizA+5P6ldJfiXYM=;
- b=dsnhy2IpEZg8/YtvrJVRExzAdEbLqHsBZp9hSaG2xGIFxeY7Id5nxPWd4migXxVSlZiXC3iTBY9y+j8j52tXW5fUo2bNkwbdFBHTKzyo7d4UD/1X4yHYX4BAP8CNItgUCMHy6Vth0K9xTJ5Khqht+zw5NedNb8hAoxTRr4RoCz3Mv5htJoQcCKPnJhQq6eg67xo1CQqiLwgrlMnIX3lJrkdJdfzDjh8+FR1b6rPFlmNIKywmdvYCrvA9yt2XDuOvQEoENK9fp/446GuMG2UqKkhNUu2OA9H+1vFV8OIexSskZI2DVft1X0y6JxSogLEeGEKHxe+F85NJcQQfG6hbtA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=suse.com; dmarc=pass action=none header.from=suse.com;
- dkim=pass header.d=suse.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yyf1W4teB0Q/JCspmM4/dBe5RhUAizA+5P6ldJfiXYM=;
- b=WE/+j5ug3d9lPBN03ZiGHSMQFt8Ed1PG9qvRFsuxDmJFtEa4/VThGBX4PQKpI8MqsWJw6Sbi1vzrk3oYwZJc51bmXcSn/yWXK47uCl1iWoalQvVKfrnCN8yM42pO1C9HCtvbhRkOxlmwP8UV5sgQuKre/ljHFhiYpwn4qW3vypy4d82liqTvho5UPEjomRHgpXsZ4DHPUv6X6BrJFcUazLl7VmK4j+vLkMVEims/f3xzjXiic6mZH4h3gX3r9AWrP/4is8SamSY7FSK4H7RPBBfkop/WFyYvqFtjlBHpMyI/3VfhS/d9sMBVIsp8CBW7uyWPUVQPIyM0f7LSx0TrmA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=suse.com;
-Received: from VI1PR04MB7104.eurprd04.prod.outlook.com (2603:10a6:800:126::9)
- by DB8PR04MB6777.eurprd04.prod.outlook.com (2603:10a6:10:11f::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6631.29; Wed, 26 Jul
- 2023 08:13:56 +0000
-Received: from VI1PR04MB7104.eurprd04.prod.outlook.com
- ([fe80::7ef4:97ef:66d5:f5b3]) by VI1PR04MB7104.eurprd04.prod.outlook.com
- ([fe80::7ef4:97ef:66d5:f5b3%2]) with mapi id 15.20.6609.032; Wed, 26 Jul 2023
- 08:13:56 +0000
-Message-ID: <a11f0ec8-7eaa-aa3e-8b86-555e5dbe6e3e@suse.com>
-Date: Wed, 26 Jul 2023 10:13:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH v9 2/5] phy: realtek: usb: Add driver for the Realtek SoC
- USB 2.0 PHY
-To: Stanley Chang <stanley_chang@realtek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
- Flavio Suligoi <f.suligoi@asem.it>, Roy Luo <royluo@google.com>,
- Bagas Sanjaya <bagasdotme@gmail.com>, Ray Chi <raychi@google.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-References: <20230725033318.8361-1-stanley_chang@realtek.com>
- <20230725033318.8361-2-stanley_chang@realtek.com>
-Content-Language: en-US
-From: Oliver Neukum <oneukum@suse.com>
-In-Reply-To: <20230725033318.8361-2-stanley_chang@realtek.com>
-X-ClientProxiedBy: FR2P281CA0118.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:9d::10) To VI1PR04MB7104.eurprd04.prod.outlook.com
- (2603:10a6:800:126::9)
+	id 1qOa2k-009bHM-31;
+	Wed, 26 Jul 2023 08:38:53 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36Q7Va8P008022;
+	Wed, 26 Jul 2023 10:38:20 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=selector1;
+ bh=+UNuTiEun7FhBdsfcJqf/qnk8DNj8pRVH/wzdvv/e68=;
+ b=4VfijQiCAGoIOVR4ZEre3LMsXnWRT82xkx0GxR88KgvWtydYfRHzk3VwCG8qfEs+8Mef
+ LAVqksmTmDX5eXE9s2qw+5O/YZoeDAg5nATTvkFKboek0hhOsTfhRp1RjeI5vTy7h/rQ
+ Npfbnh0T3S4IRS6z/XNmIUC+wHg+swW23KDUkUip7W1XfNjkcT3GcLAI70SzQTBpMx0X
+ NmGOsAWOUwu8MQyju/HT5F/E3cvjXgJf0O1azw/oAEoQa3v1Z/CYofFMx8ZdNaL+ElFk
+ J9vRJM8Pi/y/bbd3rqTsyftgnLy5auJFA6dUQ4Jwt+N0DCCU0s5XFBVrnNzKlelGCXn4 OA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3s2y640hfq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 26 Jul 2023 10:38:20 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 798DB10002A;
+	Wed, 26 Jul 2023 10:38:19 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6D95720FA38;
+	Wed, 26 Jul 2023 10:38:19 +0200 (CEST)
+Received: from localhost (10.201.21.121) by SHFDAG1NODE1.st.com (10.75.129.69)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.21; Wed, 26 Jul
+ 2023 10:38:19 +0200
+From: Gatien Chevallier <gatien.chevallier@foss.st.com>
+To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <conor+dt@kernel.org>, <alexandre.torgue@foss.st.com>,
+        <vkoul@kernel.org>, <jic23@kernel.org>, <olivier.moysan@foss.st.com>,
+        <arnaud.pouliquen@foss.st.com>, <mchehab@kernel.org>,
+        <fabrice.gasnier@foss.st.com>, <andi.shyti@kernel.org>,
+        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>, <hugues.fruchet@foss.st.com>, <lee@kernel.org>,
+        <will@kernel.org>, <catalin.marinas@arm.com>, <arnd@kernel.org>,
+        <richardcochran@gmail.com>, Frank Rowand <frowand.list@gmail.com>
+CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>,
+        Gatien Chevallier
+	<gatien.chevallier@foss.st.com>
+Subject: [PATCH v3 03/11] dt-bindings: bus: document RIFSC
+Date: Wed, 26 Jul 2023 10:38:02 +0200
+Message-ID: <20230726083810.232100-4-gatien.chevallier@foss.st.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20230726083810.232100-1-gatien.chevallier@foss.st.com>
+References: <20230726083810.232100-1-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VI1PR04MB7104:EE_|DB8PR04MB6777:EE_
-X-MS-Office365-Filtering-Correlation-Id: 566a16c2-8558-4519-04f0-08db8db041c2
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: RC7cd0QvVULxXyrCB/HXQuhBuU5N0bbXXnKK/1wwM3hmnNidxOPc28JQiAkWHR/jI4SWFpVrOy0tTldgtEnr/0j2UOI7r8/DUROtNPSizPdVCTUBRdsLcIOe/ImFTcFMVVPAqF2AMjYUzbj60oz851juF9IivQxPGXZHY9U877uy7lIMIAYAZXVnKOsuq3Y4yc5/ykHXuLR8bSXNr6LLwd4h24+RAODmnIVoulA7TPlmx4PymlkmG9ZR3ecSupG63tPX7Gyd7HI9hSLJaWOBJLjxGXEYGjk6+1ZjH7ZesDgnkfyi2gSMvVUjs6TBw+ygigxyTh9jJucAjzOsiDzzv0alqMPU+bN74snKhqDKnQ3bkky4zarHIOxdKVaTqaF3H5RgxDM5xnNPluWD/QQ1OI6qmYuhhiYjTOL5IqyiWJG/jBMLKW307sB7Ouu3z6F67oKSQhsvwdy2onjh1yCKwO6bZR4Ir8RzDapZfjUTL1DK+kaP7W7D2n9Wm3hBzh7QSQK9rQed8YrzF5M3xbc489GmFrwInfilFj0m988jhXKdYPbX3IkhTWlE16VKRudM0Ky49Kk6VB1K0BaijHBduU379eipWqgldYgDRpQ6sEgWnTM7pFjbad2ngKZ+X5i5YBG3I/rYq7HNJzo4g+oUCw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB7104.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(396003)(39860400002)(376002)(136003)(346002)(366004)(451199021)(6666004)(6486002)(478600001)(53546011)(6506007)(6512007)(4326008)(110136005)(54906003)(66476007)(66556008)(66946007)(186003)(2616005)(38100700002)(31686004)(7416002)(8676002)(8936002)(5660300002)(2906002)(4744005)(316002)(41300700001)(86362001)(31696002)(36756003)(45980500001)(43740500002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VmxiOHFucWVjWVZjZGVIc3kvOFhKL0N3S1g4N3ErdktMN0tuOHJGVXNDL3Jz?=
- =?utf-8?B?Q0M2VHVOTXpDTlFrbWtUQWlUQU1WZ1pQQjk1WDRBZWMwRlAvZ2RBcll2UEhG?=
- =?utf-8?B?K3VISWhwSjJvSklVaU1uaXVFR2RmNWZWWkhuSW9vQURLNGxvMzRCR3Q1SGVD?=
- =?utf-8?B?czlmdm9UZURIWlIzYTdZbFJVZTZteEpQaFd0T3pUcEJjNUhnOEpGMmd5Z2U2?=
- =?utf-8?B?M2JmNjBhL200SlpDTHlNOUVBcDd5NWpoN0pIOHRCNkFyK21VTzlxVVpsb1lR?=
- =?utf-8?B?cnpzVDRzUnpmS2ZxbTR0bFJGbFo3eUg5UnBZSDcvcStSamhpUTNkNTl5YjNv?=
- =?utf-8?B?V1FBZWY4VEsvUU9zeVk5Yld4cTkxTDRRNDZkQlN2WmUxS3Z0S2pkMzFPK1RJ?=
- =?utf-8?B?cXlsWElrdkRuTFEwS0RDTmVqdDdycHVucjBaSmxHK09LZis4cmhVTm5BMlc3?=
- =?utf-8?B?MjM3d1h2RDBCOEMvdjVBSGpRWlRHNGRGSG9yM092ajlFK2RlbWlYbEpwSXcr?=
- =?utf-8?B?NDVFc0FydWMrT0VVMzI3V1BJelltRmJCY3poSWthODdHa2ptRWczckZFTWVw?=
- =?utf-8?B?bS9IVlAyT0dDTnFHNFEvQU5NUHgwMzd5bHVDYWhzalJDUiszT1V2VWpzZE5L?=
- =?utf-8?B?WVRmdDYrZmVDYTM1MHhSV1M5bzN4Z2NIWWNXeUV1NW5GUjlzWEl1V3BDVjBz?=
- =?utf-8?B?MURtZFhYRUZ1K01UVi9sazhyaGRCdVhBUDNiYWpWcFA2NkRMV2hmWTNyc1NR?=
- =?utf-8?B?NlNBM3JuVGcvTWNId1NZL2cyVE9kNnYyMUFoTlI2UTcvaFpURFZpT25JNGVC?=
- =?utf-8?B?dkhVcnN5OVNXSEduRzRTWXh4Zy9NS0VqYUFIdDNoS1E5M2RYbVdYTWVvMEN5?=
- =?utf-8?B?aUJRMjM2UjZsaGN5NHlFdmlkK0NuNnRwdE04RmdiSkgxbndIMVlGR011TFFn?=
- =?utf-8?B?TkRWc3pVS2VBR3Y4bFNuR2lERll5MkwvS05RU3VHNmd0cFBIZnhwUlM1RVRn?=
- =?utf-8?B?SXBNMWFZaTFyODdUNXk4OUFSNFd3ZmxhU0hkWm9ZdlJua080d05IZWNDMk5G?=
- =?utf-8?B?aEJLaThFcG10YUNkSzFkK1I1Z3gzb3hCOEl4akI4K3loRXJRMEkvRXpSZWNM?=
- =?utf-8?B?MkNLYzBycGZ0WElWQjJySmxsUkRQd3lQeGpDRWFpNHZJWHBIQTFIdzgrWW5P?=
- =?utf-8?B?bGVSWEEwbzRWTXVKYWRlNUl4ZDFRMUhMQ3YwSC9EWHIvMTd0U3hZRkJJT3ZB?=
- =?utf-8?B?Wm8xSjZuMUZsdzZ3dlZSdnZJOU9kczJYZkFRWitubGwzOVlycGs1cHZGaWQx?=
- =?utf-8?B?REFma1BuNDZCS2tQSjlrOGU1b1IwNnIzZ2FNRURMSk56RTljNWtmS0JvVjM2?=
- =?utf-8?B?dzJLOWtJOTRTTDc1M0hlWTNSWDVxQy9nUVVNNlg4WE1aaWZtaFBYcVRGSTNo?=
- =?utf-8?B?SkpTMHIyYStsOWVJSngyTkgvdmZBNHMyUGRsZEh6SEJIVG1hVmpTaFlLWmI4?=
- =?utf-8?B?RHBsSU5GNUJJayszQTlJdVJjbUl6SWVTLzkyWWFaUDhHemdKblJ2S3MyK04r?=
- =?utf-8?B?L0ZDd3BKS01OS1RkZWMrcCt0b1ZrYTUxS1ZSclpFUElBNWZEckRFWGlQQUEy?=
- =?utf-8?B?a3VSbyt1TEdWQ3NoQ1k4VTNSOWlQQm5uaDNSUkY1N2lSZlpFZ0ZyY3gvVlBi?=
- =?utf-8?B?cWdWb0RPbCtGbGVZcWE2R0xBREJLclByOVhwcXV2RXNIcGc2RWo3ZUJ6QkJQ?=
- =?utf-8?B?QUtnaWlLT0lRdUtEUVZNTk9wRW9Mc0traUF5blB6Wkc4d3M2VlltdlpEMmdW?=
- =?utf-8?B?VFhWN1J1R25idEFWVldaYThSbzRRTHJLa0JSOFhxQXlsdTJ5YmljUmkrYTVU?=
- =?utf-8?B?WHJ0SWhCNlU1Z2hNY0FWbVFINVlramZseEU3SlpsL0xGMjY5c2lVYncvbjJN?=
- =?utf-8?B?RzV2Z2NtWUprSVMyMFoxeXVrYXFDaGZoUkg4c2lqaW5DNDJ4a0Z5M0NVdWpw?=
- =?utf-8?B?OSs3OURBUFlhZXRZSHJUS0hPVVRQNHA5YXBTWWFFUUtDaWt5LzBNVTkyNmdV?=
- =?utf-8?B?V1BhcTBuQXZ6eU1la0ZFcHMzS0l2TlBUY2NXTThhS2U1ZHVXU0xOZ0dNSExl?=
- =?utf-8?B?S042cFdBU1VaaFZTVStRM2s3cU1oRUhLUGdCVnVONEl4NE4vNHBiMysyL0Z1?=
- =?utf-8?Q?7VMDhDEW1QN4T3Y5hysj6nc=3D?=
-X-OriginatorOrg: suse.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 566a16c2-8558-4519-04f0-08db8db041c2
-X-MS-Exchange-CrossTenant-AuthSource: VI1PR04MB7104.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Jul 2023 08:13:56.2397
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: f7a17af6-1c5c-4a36-aa8b-f5be247aa4ba
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: nKG3vH1llCuTwD43/9rYPK2RIjPRlIn9Zw3kmWe7MusPHkZfmC6cmyuxKowyVBs0IcUeE9/JLiVGO1SLesXDvA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6777
+X-Originating-IP: [10.201.21.121]
+X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-26_01,2023-07-25_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230726_011401_681448_2B78B8F7 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20230726_013851_309998_30F71305 
+X-CRM114-Status: GOOD (  19.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,48 +102,143 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Document RIFSC (RIF security controller). RIFSC is a firewall controller
+composed of different kinds of hardware resources.
 
-Hi,
+Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+---
 
-On 25.07.23 05:31, Stanley Chang wrote:
-> +static int get_phy_data_by_efuse(struct rtk_phy *rtk_phy,
-> +				 struct phy_parameter *phy_parameter, int index)
-> +{
-> +	struct phy_cfg *phy_cfg = rtk_phy->phy_cfg;
-> +	u8 value = 0;
-> +	struct nvmem_cell *cell;
-> +	struct soc_device_attribute rtk_soc_groot[] = {
-> +		    { .family = "Realtek Groot",},
-> +		    { /* empty */ } };
-> +
-> +	if (!phy_cfg->check_efuse)
-> +		goto out;
-> +
-> +	/* Read efuse for usb dc cal */
-> +	cell = nvmem_cell_get(rtk_phy->dev, "usb-dc-cal");
-> +	if (IS_ERR(cell)) {
-> +		dev_dbg(rtk_phy->dev, "%s no usb-dc-cal: %ld\n",
-> +			__func__, PTR_ERR(cell));
-> +	} else {
-> +		unsigned char *buf;
-> +		size_t buf_size;
-> +
-> +		buf = nvmem_cell_read(cell, &buf_size);
-> +		value = buf[0] & phy_cfg->dc_driving_mask;
-> +
-> +		kfree(buf);
-> +		nvmem_cell_put(cell);
+Changes in V2: 
+	- Corrected errors highlighted by Rob's robot
+	- No longer define the maxItems for the "feature-domains"
+	  property
+	- Fix example (node name, status)
+	- Declare "feature-domain-names" as an optional
+	  property for child nodes
+	- Fix description of "feature-domains" property
 
-nvmem_cell_read() can take NULL as the second argument.
-You are throwing away buf_size anyway.
+ .../bindings/bus/st,stm32mp25-rifsc.yaml      | 105 ++++++++++++++++++
+ 1 file changed, 105 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
 
-	Regards
-		Oliver
+diff --git a/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml b/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
+new file mode 100644
+index 000000000000..7aeb38296616
+--- /dev/null
++++ b/Documentation/devicetree/bindings/bus/st,stm32mp25-rifsc.yaml
+@@ -0,0 +1,105 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/st,stm32mp25-rifsc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STM32 Resource isolation framework security controller
++
++maintainers:
++  - Gatien Chevallier <gatien.chevallier@foss.st.com>
++
++description: |
++  Resource isolation framework (RIF) is a comprehensive set of hardware blocks
++  designed to enforce and manage isolation of STM32 hardware resources like
++  memory and peripherals.
++
++  The RIFSC (RIF security controller) is composed of three sets of registers,
++  each managing a specific set of hardware resources:
++    - RISC registers associated with RISUP logic (resource isolation device unit
++      for peripherals), assign all non-RIF aware peripherals to zero, one or
++      any security domains (secure, privilege, compartment).
++    - RIMC registers: associated with RIMU logic (resource isolation master
++      unit), assign all non RIF-aware bus master to one security domain by
++      setting secure, privileged and compartment information on the system bus.
++      Alternatively, the RISUP logic controlling the device port access to a
++      peripheral can assign target bus attributes to this peripheral master port
++      (supported attribute: CID).
++    - RISC registers associated with RISAL logic (resource isolation device unit
++      for address space - Lite version), assign address space subregions to one
++      security domains (secure, privilege, compartment).
++
++properties:
++  compatible:
++    contains:
++      const: st,stm32mp25-rifsc
++
++  reg:
++    maxItems: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 1
++
++  ranges: true
++
++  "#feature-domain-cells":
++    const: 1
++
++  feature-domain-controller: true
++
++patternProperties:
++  "^.*@[0-9a-f]+$":
++    description: Peripherals
++    type: object
++    properties:
++      feature-domains:
++        minItems: 1
++        description:
++          The phandle of the firewall controller of the peripheral and the
++          platform-specific firewall ID of the peripheral.
++
++      feature-domain-names:
++        minItems: 1
++
++    required:
++      - feature-domains
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - feature-domain-controller
++  - "#feature-domain-cells"
++  - ranges
++
++additionalProperties: false
++
++examples:
++  - |
++    // In this example, the usart2 device refers to rifsc as its domain
++    // controller.
++    // Access rights are verified before creating devices.
++
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    rifsc: bus@42080000 {
++        compatible = "st,stm32mp25-rifsc";
++        reg = <0x42080000 0x1000>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        feature-domain-controller;
++        #feature-domain-cells = <1>;
++        ranges;
++
++        usart2: serial@400e0000 {
++              compatible = "st,stm32h7-uart";
++              reg = <0x400e0000 0x400>;
++              interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
++              clocks = <&ck_flexgen_08>;
++              feature-domains = <&rifsc 32>;
++        };
++    };
+-- 
+2.25.1
 
 
 -- 
