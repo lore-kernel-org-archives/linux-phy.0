@@ -4,64 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E796C0015E
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jul 2023 17:05:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1F45EB64DD
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jul 2023 06:34:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JmczxAIir5tEqwiQpaVuxd0UrcbSclEM0TPD+7V/Eos=; b=bl8A2K331xM/Om
-	9tl9aZsoXrh/DRUJkgANtYzfyLDsJ/sBcUgvWBenaI/iOj2FkYM7jByT1wvbD0CIX8SZrhB8yBrPo
-	THAo+T/7q6Pl0VQNl8KZxiA1UQnvoJdhwo4H8M00mqk38DPspDHEN7Kqg/i4ivyX8z+9lCeQFIRn2
-	TPI2W9A45y+3WTbe3vZiFY3J69IAS5PS88wj/ZrxJUR/x2QZBbsev/IIC9/3Ciq9VRWKvNnTgeqYw
-	zhs9BnkUd9T7nUGafD1eqJ1AGKMXfM4QiXx74oDfaBKwpye530R51FS8Js1ehkcvRi6jNLOgBxn78
-	wJ5DmtnMPl+nouXSbvvg==;
+	List-Owner; bh=slm7m6rgqhK3DFXmHCr3izOM8v96ZSzpij/4Dn/dero=; b=Cy/9Eu0QLp0Lsu
+	aiQk9xhcwfcd8cylpnuN3K7iFSCAh14phghUAOOFcc0G5f4QelsTNow8bEnqAE/C6dqCnOcR3ESDq
+	5GWRqUsyIU88nwHnYre/Un/AB3+ioAyx2fej0zv7EY6ADXObheYyJudkyfD2gAMY/l1C1Mftbrae3
+	DSHDuqgyezcIsQJknU/eoH9v+oJ9YadrvT1UHTulZipxuxNT8zpgKXGar/8Xyvgm0BJ8ckDq3n9pz
+	ye+G0cdBpqs9LGjt8XddN8wtOC7BdkE3CjQC4ZP3PZdw0ZgMI4QcORwDf0giUR24Y4AsEcKI05oCg
+	csaQHWvyn7vVKu3Hl8hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOhxJ-00B6dp-2X;
-	Wed, 26 Jul 2023 17:05:45 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qOua2-00CKEs-0m;
+	Thu, 27 Jul 2023 06:34:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOhxG-00B6cu-2M
-	for linux-phy@lists.infradead.org;
-	Wed, 26 Jul 2023 17:05:43 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BBCA861BF2;
-	Wed, 26 Jul 2023 17:05:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A3C5C433C8;
-	Wed, 26 Jul 2023 17:05:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1690391139;
-	bh=1T+xS9yXDltmwI7i44gQg/MaNV4L9JrE8kjtjqY+lhA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dPdAkVzqpd4c6bpl0eY79hMpcvW13A9RkqhO2Ims2UIQioPwOiEP3xTDm674VskRR
-	 lPVabjecOi0tz3+sETm9gJJjshM4cERN96QeQlzFy0qbqYolR5NwSWiBklOWdKeBXF
-	 MnPtGu3RPjrkbTY9bIPnSwnJ0Y+yNp0P3KqWlsGm8B4smkMsPSFpacNv4bf2xYQQlI
-	 +sRIq1V9t8srj0E6FqHP3PMJmsP4MNgFXKXoWvPJb14PMakSt8SW6apgQJu3L05DyP
-	 iLotFZ8y3C7Wj5SWhykIejcX+1N3cPnmnwsZGNUaQuyXMQcde36hhaq+xkn38ip0R9
-	 GxZdHitdPL8lg==
-Received: (nullmailer pid 1591499 invoked by uid 1000);
-	Wed, 26 Jul 2023 17:05:37 -0000
-Date: Wed, 26 Jul 2023 11:05:37 -0600
-From: Rob Herring <robh@kernel.org>
-To: Swapnil Jakhade <sjakhade@cadence.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, mparab@cadence.com, rogerq@kernel.org, s-vadapalli@ti.com
-Subject: Re: [PATCH 1/5] dt-bindings: phy: cadence-torrent: Add second
- optional input reference clock
-Message-ID: <20230726170537.GA1587239-robh@kernel.org>
-References: <20230724150002.5645-1-sjakhade@cadence.com>
- <20230724150002.5645-2-sjakhade@cadence.com>
+	id 1qOuZz-00CKEJ-1B;
+	Thu, 27 Jul 2023 06:34:33 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36R6NhUd024373;
+	Thu, 27 Jul 2023 06:34:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=bsUnDI7pA8LGTHAUDCxQCqBAV0GAhXmMp34k3un9vjk=;
+ b=mtioPtJYYfYqu9WL88slGkYh9AHOHcM3uOCLSZ6X3+xXqkigi7PAKEjeG8BHIlldqMDU
+ zz8syHjW/8nx3/OTlp3yZDPYEKs+VQMJt6wKYVUM41R57hZzTMmrNMGzQnc2ljJmEpQA
+ HHrCrQ3dgfV4g4XZmz4nkN1s86hCuc1Jv6aq9zheW2Ik2z0FpwevbvP43FsfWZcE6sRz
+ FPTbRo80x2Ey7G6yOefbaOexnSgdzQZln0aPr8uFO9JnWfaYUtNsvbP98gkczYfQwwnG
+ Gbnun67IQ823ddKQ5f3ppMe91ZCMxkY5xYIGaxQYGqATcOPGSsHGd0NSidrbjCTWTz0F 8g== 
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s3105a5cn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 27 Jul 2023 06:34:05 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36R6Y3kr009520
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 27 Jul 2023 06:34:03 GMT
+Received: from varda-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.30; Wed, 26 Jul 2023 23:33:56 -0700
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <catalin.marinas@arm.com>, <will@kernel.org>, <p.zabel@pengutronix.de>,
+        <arnd@arndb.de>, <geert+renesas@glider.be>,
+        <neil.armstrong@linaro.org>, <nfraprado@collabora.com>,
+        <rafal@milecki.pl>, <john.garry@huawei.com>, <peng.fan@nxp.com>,
+        <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH v6 1/5] dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
+Date: Thu, 27 Jul 2023 12:03:14 +0530
+Message-ID: <f88d5add717e90e136a701f39fe80d00f1052692.1690439352.git.quic_varada@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1690439352.git.quic_varada@quicinc.com>
+References: <cover.1690439352.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230724150002.5645-2-sjakhade@cadence.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: AY7fw6iA4EAIEvXv4iWlv10Krzi56ass
+X-Proofpoint-GUID: AY7fw6iA4EAIEvXv4iWlv10Krzi56ass
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-26_08,2023-07-26_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 clxscore=1011
+ impostorscore=0 mlxscore=0 priorityscore=1501 adultscore=0
+ lowpriorityscore=0 bulkscore=0 malwarescore=0 mlxlogscore=999
+ suspectscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2306200000 definitions=main-2307270058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230726_100542_813427_990BD468 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20230726_233431_527997_3A29061E 
+X-CRM114-Status: GOOD (  18.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,62 +103,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 24, 2023 at 04:59:58PM +0200, Swapnil Jakhade wrote:
-> Torrent(SD0801) PHY supports two input reference clocks. Update bindings
-> to support dual reference clock multilink configurations.
-> 
-> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-> ---
->  .../bindings/phy/phy-cadence-torrent.yaml     | 23 +++++++++++++------
->  1 file changed, 16 insertions(+), 7 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-> index dfb31314face..ddb86ee0cebf 100644
-> --- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-> +++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-> @@ -33,16 +33,25 @@ properties:
->  
->    clocks:
->      minItems: 1
-> -    maxItems: 2
-> +    maxItems: 3
->      description:
-> -      PHY reference clock for 1 item. Must contain an entry in clock-names.
-> -      Optional Parent to enable output reference clock.
-> +      PHY input reference clocks (refclk & refclk1).
-> +      Optional Parent to enable output reference clock (phy_en_refclk).
->  
->    clock-names:
-> -    minItems: 1
-> -    items:
-> -      - const: refclk
-> -      - const: phy_en_refclk
-> +    oneOf:
-> +      - items:
-> +          - const: refclk
-> +      - items:
-> +          - const: refclk
-> +          - const: phy_en_refclk
-> +      - items:
-> +          - const: refclk
-> +          - const: refclk1
-> +      - items:
-> +          - const: refclk
-> +          - const: refclk1
-> +          - const: phy_en_refclk
+Document the M31 USB2 phy present in IPQ5332.
 
-Can be simplified to:
+Co-developed-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+---
+v6:
+	Add 'Co-developed-by: Sricharan'
+	Add 'const' to compatible, vdd-supply
+	Remove label and use usb2-phy for nodename in the example
+v5:
+	Add '#phy-cells', to be able to use generic phy
+	Remove 'Reviewed-by: Krzysztof Kozlowski' due to above change
+v4:
+	Move M31 URL to description
+	Remove maxItems and relevant content from clock-names
+	Change node name to generic name
+	'make dt_binding_check DT_SCHEMA_FILES=qcom' passed
+v3:
+	Incorporate review comments. Will bring in ipq5018 compatible
+	string while posting ipq5018 usb patchset.
 
-minItems: 1
-items:
-  - const: refclk
-  - enum: [ refclk1, phy_en_refclk ]
-  - const: phy_en_refclk
+v1:
+	Rename qcom,m31.yaml -> qcom,ipq5332-usb-hsphy.yaml
+	Drop default binding "m31,usb-hsphy"
+	Add clock
+	Remove 'oneOf' from compatible
+	Remove 'qscratch' region from register space as it is not needed
+	Remove reset-names
+	Fix the example definition
+---
+ .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       | 59 ++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
 
-*-names already requires each entry to be unique, so you don't have to 
-worry about that case.
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+new file mode 100644
+index 0000000..97ad905
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+@@ -0,0 +1,59 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: M31 USB PHY
++
++maintainers:
++  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
++  - Varadarajan Narayanan <quic_varada@quicinc.com>
++
++description:
++  USB M31 PHY (https://www.m31tech.com) found in Qualcomm
++  IPQ5018, IPQ5332 SoCs.
++
++properties:
++  "#phy-cells":
++    const: 0
++
++  compatible:
++    items:
++      - const: qcom,ipq5332-usb-hsphy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    items:
++      - const: cfg_ahb
++
++  resets:
++    maxItems: 1
++
++  vdd-supply:
++    description:
++      Phandle to 5V regulator supply to PHY digital circuit.
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
++    usb2-phy@7b000 {
++        compatible = "qcom,ipq5332-usb-hsphy";
++        reg = <0x0007b000 0x12c>;
++
++        clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
++        clock-names = "cfg_ahb";
++
++        #phy-cells = <0>;
++
++        resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
++
++        vdd-supply = <&regulator_fixed_5p0>;
++    };
+-- 
+2.7.4
 
-Rob
 
 -- 
 linux-phy mailing list
