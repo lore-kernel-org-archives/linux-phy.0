@@ -4,61 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BA3DEB64DD
-	for <linux-phy@archiver.kernel.org>; Sun, 30 Jul 2023 07:58:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F9A3C04FE0
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 07:19:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K0d8OKF2aEQTPr3/qYSnLCMNUkLCR4LZORRosniiw5A=; b=U4mbEf4ddED1Uk
-	/l1aHH7zqH92OL993T4gnCqH6onMp3gqlQ2pld5dng3Sh2HSMRtURqLcRi4yY2T9HjHeLimRgiV+v
-	3ZBAq1RZpuU55ARkSq/GNmjVK9ZHDhw+BCQ4FKP9GquRkrsp8YPmws01z1uqlutubAJn6xEsjiH5U
-	IeM5+2R8tuxsvw0c0BPGG6svcQfTWwJIeYU/fkmfh9/p+qij9UoeDqolc1HNuZ0Jfnlyb/G/+vm2b
-	2/wO0PQ4jCNCRCyXlGmlyYRKznV5gRKmSvFRyk8pZmYjk/pxp27cwN51zBEFFWj8pCRWA5dj8ntnV
-	XS58y6D0DWNzmifp9WUA==;
+	List-Owner; bh=R+WYDID/gXtrAZ3V3JhMPYvp2i+GfCGTT7TYRrPUmmU=; b=YSBINbRG14IAq0
+	v8n7jJUCPZYPKE9t77W0fi477sWv4/JNj5sPjSeuFQPFxxrXeVpYancdRv13ZUv4HNFDqQMBu6Pan
+	YJdLOKjMAgQiGYg6tCT61Wr/s2XHFGB3DfSZls1UpBpmQ6G1783lJqlktXO+6Ybb4kSI2hGoVDB5Y
+	BS1uvZHm2kJsJMTUTcuO3/Q9jGoiFzJwrFREzDhDQsXBamXyYWWVbmvs1uENJ9sT+oj+GhUdZ0f73
+	vFuonMfDxlxS3d4/vJ2ceqZMRkpRP/NRr8FAhyISrymT+yoeUsoaUNmN+LS82d5r2U2HGYs+jdeKm
+	W3YfxfQsMc2fhiCdABPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQ1Jc-00ARSW-1m;
-	Sun, 30 Jul 2023 07:58:12 +0000
-Received: from [192.55.52.120] (helo=mgamail.intel.com)
+	id 1qQNBo-00EIUd-2w;
+	Mon, 31 Jul 2023 07:19:36 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQ1JY-00AR8Y-2z
+	id 1qQNBm-00EISX-1E
 	for linux-phy@lists.infradead.org;
-	Sun, 30 Jul 2023 07:58:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1690703888; x=1722239888;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=CsE/bgTXsqeAgc6gQpCkw5uM2Xjfz/zItOnPDuAhOpM=;
-  b=T6yvLLASCLTZRqCEmHRgITao7BJ5KhiJe1UwUczq4rohiFtvM2p39iQz
-   RVxTGXyelkEk6DP3FFustzMXEIu/uNYf9cTEWbhagzB70fTK21zXARTZQ
-   URL7I8dsvmhhGBgXdZKaE8ZI51zLytnMDQ5pvxCcPw5s39Ad0ni/lta4s
-   AirYj47CnO+FSc1H9Ux7NKBu2FG4VhuhAly4KBzdPHRVbODu4zxieuXGP
-   fK++5WpQtGeiHt3/9iPhONCdq9jUj2SYWvH/2lXgxsuJlRPlji0nRob3C
-   E0glphv+57a0eRELkC5JAzgxBalih/dDd9vSuV3UR+tldzChUX7JHMA9r
-   Q==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10786"; a="367709346"
-X-IronPort-AV: E=Sophos;i="6.01,242,1684825200"; 
-   d="scan'208";a="367709346"
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
-  by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jul 2023 00:57:43 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10786"; a="731235875"
-X-IronPort-AV: E=Sophos;i="6.01,242,1684825200"; 
-   d="scan'208";a="731235875"
-Received: from lkp-server02.sh.intel.com (HELO 953e8cd98f7d) ([10.239.97.151])
-  by fmsmga007.fm.intel.com with ESMTP; 30 Jul 2023 00:57:39 -0700
-Received: from kbuild by 953e8cd98f7d with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1qQ1J4-0004Vf-2G;
-	Sun, 30 Jul 2023 07:57:38 +0000
-Date: Sun, 30 Jul 2023 15:57:29 +0800
-From: kernel test robot <lkp@intel.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Mon, 31 Jul 2023 07:19:35 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2b9c907bc68so51062171fa.2
+        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 00:19:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1690787972; x=1691392772;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=dfgKbMW+x9AHpw9eC2456EAcCy2iAxOuN5PlUY6oNWk=;
+        b=l4iaQ+twptsMVbXBB38l6uGQG4OAeOoEol/kaHlgvR9ISYbExTvG9xuf7WkD9PhdKj
+         ydF/CHYhKRWz9SNimrKKrBCgpjIV0qqb7q75VqoJwFVDpRuFweGNXrx9uHVZnbfIOSYj
+         yFhJa9g1G2PvzQkbqASIVfOoato7vw1w9beted/1SACASKJbO28ppgXeX4cBGPJMZvz7
+         HVkt3Yu77FDrNe75ee/A/Rd5oM5/O/Xa+PJehUoYWUekZJknOTJWqLyMtNDuK3LPvHYl
+         IInVkOLqS5D3ZP3H+ZZkRilyNyIJC5CPJ4NHPLwXtG7T1jMQaCSUHuw6YqKzu8DysN4s
+         XJMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1690787972; x=1691392772;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=dfgKbMW+x9AHpw9eC2456EAcCy2iAxOuN5PlUY6oNWk=;
+        b=hFd3j15K+QF4ksK3c/Ii+AnQFOSs7wRpCH0xrKGGP/H6VtdayB//BYObr/eUlWRCZ4
+         AY3lsxkSTE1p1M6eg4VEP/uFoZFocP+nJuaUlUrZFZjeUlT03GUV7slMj7pqjmjylAQA
+         gzEs8mDTo8ghWXMYncfYOEHhogdnSzMeqOZvBFnH1Z4IeaLXUCQFxQpDIwi4P/UA8wLM
+         QKbAqgDdASUug4a5+fRaDTGy/vGGI1ZzFWMEi3IjJ85NUDpX+Co3RctBTgOWHV0PStYV
+         7yA+LWbsNkG6eFZWK+KpXuNDdGJ0owMP0weP2ZHK+pcC+CbRm7wyOvnyF1r/SEYdciTf
+         XvdQ==
+X-Gm-Message-State: ABy/qLbdrfbZila3Q/GBi3sfJH7y6k2ASi0SEIEr2oddSCan/HOliW0i
+	o4RujtRUB9IraD4nZWl2w5nyJA==
+X-Google-Smtp-Source: APBJJlFzn/rp0yy3rmh5fwmH36YiG++PHR2gx1scqdoM0MuImlsD8U/jIFyXPs5pwcR2FwTFFC2PAg==
+X-Received: by 2002:a2e:9444:0:b0:2b9:bbf5:7c6 with SMTP id o4-20020a2e9444000000b002b9bbf507c6mr5625171ljh.43.1690787972599;
+        Mon, 31 Jul 2023 00:19:32 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id c4-20020a2ea1c4000000b002b71c128ea0sm2413267ljm.117.2023.07.31.00.19.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 31 Jul 2023 00:19:32 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
 	Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
@@ -67,18 +73,21 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH 2/3] phy: qcom: qmp-combo: switch to DRM_SIMPLE_BRIDGE
-Message-ID: <202307301515.iHNSmHFk-lkp@intel.com>
-References: <20230729204307.268587-3-dmitry.baryshkov@linaro.org>
+Cc: dri-devel@lists.freedesktop.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	freedreno@lists.freedesktop.org
+Subject: [PATCH v2 1/3] drm/display: add transparent bridge helper
+Date: Mon, 31 Jul 2023 10:19:28 +0300
+Message-Id: <20230731071930.3928150-2-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230731071930.3928150-1-dmitry.baryshkov@linaro.org>
+References: <20230731071930.3928150-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230729204307.268587-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230730_005808_987735_78503AB8 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20230731_001934_421243_6574EE4B 
+X-CRM114-Status: GOOD (  19.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,137 +104,208 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Define a helper for creating simple transparent bridges which serve the
+only purpose of linking devices into the bridge chain up to the last
+bridge representing the connector. This is especially useful for
+DP/USB-C bridge chains, which can span across several devices, but do
+not require any additional functionality from the intermediate bridges.
 
-kernel test robot noticed the following build errors:
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/gpu/drm/display/Kconfig             |   9 ++
+ drivers/gpu/drm/display/Makefile            |   2 +
+ drivers/gpu/drm/display/drm_simple_bridge.c | 125 ++++++++++++++++++++
+ include/drm/display/drm_simple_bridge.h     |  19 +++
+ 4 files changed, 155 insertions(+)
+ create mode 100644 drivers/gpu/drm/display/drm_simple_bridge.c
+ create mode 100644 include/drm/display/drm_simple_bridge.h
 
-[auto build test ERROR on drm-misc/drm-misc-next]
-[also build test ERROR on usb/usb-testing usb/usb-next usb/usb-linus drm-intel/for-linux-next-fixes drm-tip/drm-tip linus/master v6.5-rc3 next-20230728]
-[cannot apply to drm-intel/for-linux-next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Dmitry-Baryshkov/drm-display-add-transparent-bridge-helper/20230730-044510
-base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
-patch link:    https://lore.kernel.org/r/20230729204307.268587-3-dmitry.baryshkov%40linaro.org
-patch subject: [PATCH 2/3] phy: qcom: qmp-combo: switch to DRM_SIMPLE_BRIDGE
-config: powerpc-allmodconfig (https://download.01.org/0day-ci/archive/20230730/202307301515.iHNSmHFk-lkp@intel.com/config)
-compiler: powerpc-linux-gcc (GCC) 12.3.0
-reproduce: (https://download.01.org/0day-ci/archive/20230730/202307301515.iHNSmHFk-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202307301515.iHNSmHFk-lkp@intel.com/
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_rr.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_wrr.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_lc.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_wlc.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_fo.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_ovf.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_lblc.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_lblcr.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_dh.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_sh.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_sed.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_nq.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_twos.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_ftp.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/netfilter/ipvs/ip_vs_pe_sip.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/netfilter/nf_defrag_ipv4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/netfilter/nf_reject_ipv4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/netfilter/iptable_nat.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/netfilter/iptable_raw.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/ip_tunnel.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/ipip.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/ip_gre.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/udp_tunnel.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/ip_vti.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/ah4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/esp4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/xfrm4_tunnel.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/tunnel4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/inet_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/tcp_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/udp_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv4/raw_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/xfrm/xfrm_algo.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/xfrm/xfrm_user.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/unix/unix_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/netfilter/ip6table_raw.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/netfilter/ip6table_nat.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/netfilter/nf_defrag_ipv6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/netfilter/nf_reject_ipv6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/ah6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/esp6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/xfrm6_tunnel.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/tunnel6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/mip6.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/sit.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ipv6/ip6_udp_tunnel.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_ar9331.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_brcm.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_dsa.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_gswip.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_hellcreek.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_ksz.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_lan9303.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_mtk.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_none.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_ocelot.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_ocelot_8021q.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_qca.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_rtl4_a.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_rtl8_4.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_rzn1_a5psw.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_sja1105.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_trailer.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/dsa/tag_xrs700x.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/8021q/8021q.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/xdp/xsk_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/mptcp/mptcp_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/mptcp/mptcp_crypto_test.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/mptcp/mptcp_token_test.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/packet/af_packet.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/packet/af_packet_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/key/af_key.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/netfilter/nf_conntrack_bridge.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/netfilter/ebtables.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/netfilter/ebtable_broute.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/netfilter/ebtable_filter.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/netfilter/ebtable_nat.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/bridge/bridge.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/sunrpc/sunrpc.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/sunrpc/auth_gss/auth_rpcgss.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/sunrpc/auth_gss/rpcsec_gss_krb5.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/kcm/kcm.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/atm/atm.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/atm/lec.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/atm/mpoa.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/sctp/sctp_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/tipc/diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/smc/smc_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/caif/caif.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/caif/chnl_net.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/caif/caif_socket.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/caif/caif_usb.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/6lowpan/6lowpan.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ieee802154/6lowpan/ieee802154_6lowpan.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/ieee802154/ieee802154_socket.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/nfc/nci/nci.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/nfc/nci/nci_spi.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/nfc/nfc_digital.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/vmw_vsock/vsock_diag.o
-WARNING: modpost: missing MODULE_DESCRIPTION() in net/hsr/hsr.o
->> ERROR: modpost: "drm_simple_bridge_register" [drivers/phy/qualcomm/phy-qcom-qmp-combo.ko] undefined!
-
+diff --git a/drivers/gpu/drm/display/Kconfig b/drivers/gpu/drm/display/Kconfig
+index 09712b88a5b8..a6132984b9e3 100644
+--- a/drivers/gpu/drm/display/Kconfig
++++ b/drivers/gpu/drm/display/Kconfig
+@@ -49,3 +49,12 @@ config DRM_DP_CEC
+ 
+ 	  Note: not all adapters support this feature, and even for those
+ 	  that do support this they often do not hook up the CEC pin.
++
++config DRM_SIMPLE_BRIDGE
++	tristate
++	depends on DRM
++	select AUXILIARY_BUS
++	select DRM_PANEL_BRIDGE
++	help
++	  Simple transparent bridge that is used by several drivers to build
++	  bridges chain.
+diff --git a/drivers/gpu/drm/display/Makefile b/drivers/gpu/drm/display/Makefile
+index 17ac4a1006a8..6e2b0d7f24b3 100644
+--- a/drivers/gpu/drm/display/Makefile
++++ b/drivers/gpu/drm/display/Makefile
+@@ -16,3 +16,5 @@ drm_display_helper-$(CONFIG_DRM_DP_AUX_CHARDEV) += drm_dp_aux_dev.o
+ drm_display_helper-$(CONFIG_DRM_DP_CEC) += drm_dp_cec.o
+ 
+ obj-$(CONFIG_DRM_DISPLAY_HELPER) += drm_display_helper.o
++
++obj-$(CONFIG_DRM_SIMPLE_BRIDGE) += drm_simple_bridge.o
+diff --git a/drivers/gpu/drm/display/drm_simple_bridge.c b/drivers/gpu/drm/display/drm_simple_bridge.c
+new file mode 100644
+index 000000000000..94cdd927b708
+--- /dev/null
++++ b/drivers/gpu/drm/display/drm_simple_bridge.c
+@@ -0,0 +1,125 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2023 Linaro Ltd.
++ *
++ * Author: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
++ */
++#include <linux/auxiliary_bus.h>
++#include <linux/module.h>
++
++#include <drm/drm_bridge.h>
++#include <drm/display/drm_simple_bridge.h>
++
++static DEFINE_IDA(simple_bridge_ida);
++
++static void drm_simple_bridge_release(struct device *dev)
++{
++	struct auxiliary_device *adev = to_auxiliary_dev(dev);
++
++	kfree(adev);
++}
++
++static void drm_simple_bridge_unregister_adev(void *_adev)
++{
++	struct auxiliary_device *adev = _adev;
++
++	auxiliary_device_delete(adev);
++	auxiliary_device_uninit(adev);
++}
++
++int drm_simple_bridge_register(struct device *parent)
++{
++	struct auxiliary_device *adev;
++	int ret;
++
++	adev = kzalloc(sizeof(*adev), GFP_KERNEL);
++	if (!adev)
++		return -ENOMEM;
++
++	ret = ida_alloc(&simple_bridge_ida, GFP_KERNEL);
++	if (ret < 0)
++		return ret;
++
++	adev->id = ret;
++	adev->name = "simple_bridge";
++	adev->dev.parent = parent;
++	adev->dev.of_node = parent->of_node;
++	adev->dev.release = drm_simple_bridge_release;
++
++	ret = auxiliary_device_init(adev);
++	if (ret) {
++		kfree(adev);
++		return ret;
++	}
++
++	ret = auxiliary_device_add(adev);
++	if (ret) {
++		auxiliary_device_uninit(adev);
++		return ret;
++	}
++
++	return devm_add_action_or_reset(parent, drm_simple_bridge_unregister_adev, adev);
++}
++EXPORT_SYMBOL_GPL(drm_simple_bridge_register);
++
++struct drm_simple_bridge_data {
++	struct drm_bridge bridge;
++	struct drm_bridge *next_bridge;
++	struct device *dev;
++};
++
++static int drm_simple_bridge_attach(struct drm_bridge *bridge,
++				    enum drm_bridge_attach_flags flags)
++{
++	struct drm_simple_bridge_data *data;
++
++	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
++		return -EINVAL;
++
++	data = container_of(bridge, struct drm_simple_bridge_data, bridge);
++
++	return drm_bridge_attach(bridge->encoder, data->next_bridge, bridge,
++				 DRM_BRIDGE_ATTACH_NO_CONNECTOR);
++}
++
++static const struct drm_bridge_funcs drm_simple_bridge_funcs = {
++	.attach	= drm_simple_bridge_attach,
++};
++
++static int drm_simple_bridge_probe(struct auxiliary_device *auxdev,
++				   const struct auxiliary_device_id *id)
++{
++	struct drm_simple_bridge_data *data;
++
++	data = devm_kzalloc(&auxdev->dev, sizeof(*data), GFP_KERNEL);
++	if (!data)
++		return -ENOMEM;
++
++	data->dev = &auxdev->dev;
++	data->next_bridge = devm_drm_of_get_bridge(&auxdev->dev, auxdev->dev.of_node, 0, 0);
++	if (IS_ERR(data->next_bridge))
++		return dev_err_probe(&auxdev->dev, PTR_ERR(data->next_bridge),
++				     "failed to acquire drm_bridge\n");
++
++	data->bridge.funcs = &drm_simple_bridge_funcs;
++	data->bridge.of_node = data->dev->of_node;
++
++	return devm_drm_bridge_add(data->dev, &data->bridge);
++}
++
++static const struct auxiliary_device_id drm_simple_bridge_table[] = {
++	{ .name = KBUILD_MODNAME ".simple_bridge" },
++	{},
++};
++MODULE_DEVICE_TABLE(auxiliary, drm_simple_bridge_table);
++
++struct auxiliary_driver drm_simple_bridge_drv = {
++	.name = "simple_bridge",
++	.id_table = drm_simple_bridge_table,
++	.probe = drm_simple_bridge_probe,
++};
++module_auxiliary_driver(drm_simple_bridge_drv);
++
++MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
++MODULE_DESCRIPTION("DRM simple bridge helper");
++MODULE_LICENSE("GPL");
+diff --git a/include/drm/display/drm_simple_bridge.h b/include/drm/display/drm_simple_bridge.h
+new file mode 100644
+index 000000000000..3da8e1fb1137
+--- /dev/null
++++ b/include/drm/display/drm_simple_bridge.h
+@@ -0,0 +1,19 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2023 Linaro Ltd.
++ *
++ * Author: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
++ */
++#ifndef DRM_SIMPLE_BRIDGE_H
++#define DRM_SIMPLE_BRIDGE_H
++
++#if IS_ENABLED(CONFIG_DRM_SIMPLE_BRIDGE)
++int drm_simple_bridge_register(struct device *parent);
++#else
++static inline int drm_simple_bridge_register(struct device *parent)
++{
++	return 0;
++}
++#endif
++
++#endif
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.39.2
+
 
 -- 
 linux-phy mailing list
