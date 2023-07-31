@@ -4,75 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E944DC001DC
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 07:23:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C05D9C001DE
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 09:52:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EJGOjYye5yVznIpkPyTua+ofo1Yri4Hq+/4ngtqLSik=; b=N/8PZcxTpM5ee2
-	8iGV1yw0WplsehjUEpWwOZo8iUS/t/JX2ZIzwmRGQEG2EGd5/G74Rk5RNmUhYCa5a+vwvpMk0d/8k
-	ZlwSRHAi84w8sG/9dQTmFBrt/YU5HYmXMt5s6X0ja94GimWssvX4mVbQEYUzNA64wpnxQFd5xfhu+
-	zsRGPeD71TnWPjdYTtNBOFoWSv5i+Y3UZ3OFqY9PNpT8gNstINNj8EB4fHhIgJOizGI1JQ+Xy7+Tz
-	iyKpxSDJP8Hy8AWZukkeUc+rcSkOD+2EDCFyfoljwHHiWwL1inXYQeg7Sit3oscWyLc1G1r//F+6R
-	CQEzw94GgHN3ihAaQXGg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n36PkmxPFf0/xbR7/YS6jm7f+XJ/AMblEvGOMfpgOhA=; b=Q9g/OTS5jILLz1
+	kycq6RRt7FEsYQAGPtdHKl8RLCBEI8Xwp1hXKFTEhUTvZ+NVdkGMIqY2j76+u4YQDOiSZjVr0T6rw
+	NH97dkRGRFpChBL/p7DZluM9W0lWg1FRl8EYbKkIIWJ0ZqVZf+X5cFWSo3P2Z5D0QBvdrRmkHCE3b
+	xFXnrK9qV/CBFmDaIrd7lnMNku7cydHuzYHFrR5VylzqDIbcONQR7cZAgg9r1sfDzHxAU29GT9gWO
+	y/e39aT03g/3QXogmIdaPaQANLBHpZbwIqR+jUQqNcS8h9kXLFGeZxGCZOkpyA0iIi0faw6MeYBxo
+	qC3tl8GJspz7XO3Mwg3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQNFy-00EJ7e-25;
-	Mon, 31 Jul 2023 07:23:54 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1qQPZz-00Eq4y-1f;
+	Mon, 31 Jul 2023 09:52:43 +0000
+Received: from [192.55.52.136] (helo=mgamail.intel.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQNFv-00EJ6V-3C
+	id 1qQPZw-00Eq2v-1s
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Jul 2023 07:23:53 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-3fbc59de009so38513245e9.3
-        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 00:23:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1690788229; x=1691393029;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=325AZRv6eYo267W5HIiTf7rBPJMK+iI8T739L0ciJ94=;
-        b=cjFDLLZoIX+Gequ7lIyeKgRIE5Nk47W1/EvTLusDeiZiPVwUSY5RPZtNzZA6yHPlgC
-         DbLpvZzpC14XuhOwoQCHJ0tHwHdDZOkM4T57C/zX4Jjs9IWQfv6mnRocwHnI9o1FT4Pm
-         nIeBWMtrEd6CEMVa5jRK142lzCIWRQCG3BnCCbseG5zKx7wnSHAxwxc5APP/zDykSJFv
-         6Dcml8Z3KjqhYCLL9+KI6iWf2LSQgSjHUgBXzGa+PqO2f3mi+6ZkvFD6uk5jeV8ky6q8
-         +q9/nEFeSzfnzxoE+9t3i/nzQLnSaaCBte5zaSbiuwfRDI+EXjMrnD461+C9rsDLCSaj
-         Lofg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1690788229; x=1691393029;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=325AZRv6eYo267W5HIiTf7rBPJMK+iI8T739L0ciJ94=;
-        b=iWbUPtOqu1StNELCsnSg2y4PpPWao06NdOzku1tpvCnnrKqda87AIPhkB03sXKTFDM
-         27FheB3p6DpT2vxTyM4uKphmS1uJDSqkur6vzEKUqElRlRRSv9LNV36UIbmkwMNCmsdT
-         Ry5EP08MnQFcH8cGsmYQs/FhbY10BhAI/g/L80e0j4/DHJmmanFTJmwYYoqZ14zGoKBB
-         OBERIfKY96xaiDvbfFajRosPBd9/lnHVhjI+Xygug8DvoOFNIlJfbk2SHJv4n37Rk++U
-         vdx2plYLM+QkoRj7qroOcuTew1IckFTm5uR2m6BErD5GW/978QOWNE+RSkwskhW+xiTh
-         oSYw==
-X-Gm-Message-State: ABy/qLZ2yVl3v9rolJGAdzclPBpUo/q3Pa7DzD8A7iyMaiTw1tJqfYoI
-	/rpwaxukeyOE6mQLeNgKCCAhKw==
-X-Google-Smtp-Source: APBJJlHLVunYzCLGD2CSuHD4UiN9IXp3QUhm5bD/skILBTCasWJqje49ji3zwzO68omCzd4+6RHHhA==
-X-Received: by 2002:a1c:7214:0:b0:3fc:3f31:422f with SMTP id n20-20020a1c7214000000b003fc3f31422fmr6044322wmc.3.1690788228946;
-        Mon, 31 Jul 2023 00:23:48 -0700 (PDT)
-Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id g9-20020a05600c308900b003fe15c466f3sm5674911wmn.0.2023.07.31.00.23.48
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Jul 2023 00:23:48 -0700 (PDT)
-Date: Fri, 28 Jul 2023 14:04:02 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: stanley_chang@realtek.com
-Cc: linux-phy@lists.infradead.org
-Subject: [bug report] phy: realtek: usb: Add driver for the Realtek SoC USB
- 2.0 PHY
-Message-ID: <707bcae8-3178-4247-a272-50e8b8d3e5a2@moroto.mountain>
+	Mon, 31 Jul 2023 09:52:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1690797160; x=1722333160;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=PAoEQuTB+M6/Mb3C/VaAtLqfjQYPblPsfV7KVnusHG0=;
+  b=lNGu8Rfa2pGQI/R49sbNZ4zDhM8FcTM0Qgrs3KIcyDurM1dAq44LegKs
+   2TeraeovGTHg35aVLSzjK+yfx8BlSC91kJD5rZh1OK7tS9P3zy/SonVKj
+   4EPV2qqNBdCPKBvkKn+yQBN8obtD6AGblnTDcinzhdKGXzp3pHulkALpM
+   fDam6yw7PQAb9OcqevpZ1EwWVUlktWq5yhcS4G2NO1/tL8Ed/GURnZrfr
+   KJss88qLEq1uBfTysWMWeFuDxrL2Jnp1lClGW9IwxAmt77U9TiAlDIsD1
+   BAz04bKQz1tsKiRpceP3esNmT2IMRGW+RiR0lSETtszzJLaG0vyQlbUv1
+   Q==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10787"; a="348573369"
+X-IronPort-AV: E=Sophos;i="6.01,244,1684825200"; 
+   d="scan'208";a="348573369"
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+  by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Jul 2023 02:52:36 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10787"; a="902059850"
+X-IronPort-AV: E=Sophos;i="6.01,244,1684825200"; 
+   d="scan'208";a="902059850"
+Received: from lkp-server02.sh.intel.com (HELO 953e8cd98f7d) ([10.239.97.151])
+  by orsmga005.jf.intel.com with ESMTP; 31 Jul 2023 02:52:32 -0700
+Received: from kbuild by 953e8cd98f7d with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1qQPZn-00053G-25;
+	Mon, 31 Jul 2023 09:52:31 +0000
+Date: Mon, 31 Jul 2023 17:51:35 +0800
+From: kernel test robot <lkp@intel.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+	freedreno@lists.freedesktop.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 3/3] usb: typec: nb7vpq904m: switch to
+ DRM_SIMPLE_BRIDGE
+Message-ID: <202307311724.2bAqJu6o-lkp@intel.com>
+References: <20230731071930.3928150-4-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20230731071930.3928150-4-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_002352_028255_B1A9207B 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230731_025240_629743_65C4A9A6 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,65 +96,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Stanley Chang,
+Hi Dmitry,
 
-The patch 134e6d25f6bd: "phy: realtek: usb: Add driver for the
-Realtek SoC USB 2.0 PHY" from Jul 25, 2023 (linux-next), leads to the
-following Smatch static checker warning:
+kernel test robot noticed the following build errors:
 
-drivers/phy/realtek/phy-rtk-usb2.c:901 get_phy_data_by_efuse()
-error: 'buf' dereferencing possible ERR_PTR()
+[auto build test ERROR on drm-misc/drm-misc-next]
+[also build test ERROR on usb/usb-testing usb/usb-next usb/usb-linus drm-intel/for-linux-next-fixes drm-tip/drm-tip linus/master v6.5-rc4 next-20230731]
+[cannot apply to drm-intel/for-linux-next]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-drivers/phy/realtek/phy-rtk-usb3.c:460
-get_phy_data_by_efuse() error: 'buf' dereferencing possible ERR_PTR()
+url:    https://github.com/intel-lab-lkp/linux/commits/Dmitry-Baryshkov/drm-display-add-transparent-bridge-helper/20230731-152746
+base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
+patch link:    https://lore.kernel.org/r/20230731071930.3928150-4-dmitry.baryshkov%40linaro.org
+patch subject: [PATCH v2 3/3] usb: typec: nb7vpq904m: switch to DRM_SIMPLE_BRIDGE
+config: xtensa-randconfig-r004-20230731 (https://download.01.org/0day-ci/archive/20230731/202307311724.2bAqJu6o-lkp@intel.com/config)
+compiler: xtensa-linux-gcc (GCC) 12.3.0
+reproduce: (https://download.01.org/0day-ci/archive/20230731/202307311724.2bAqJu6o-lkp@intel.com/reproduce)
 
-drivers/phy/realtek/phy-rtk-usb2.c
-    878 static int get_phy_data_by_efuse(struct rtk_phy *rtk_phy,
-    879                                  struct phy_parameter *phy_parameter, int index)
-    880 {
-    881         struct phy_cfg *phy_cfg = rtk_phy->phy_cfg;
-    882         u8 value = 0;
-    883         struct nvmem_cell *cell;
-    884         struct soc_device_attribute rtk_soc_groot[] = {
-    885                     { .family = "Realtek Groot",},
-    886                     { /* empty */ } };
-    887 
-    888         if (!phy_cfg->check_efuse)
-    889                 goto out;
-    890 
-    891         /* Read efuse for usb dc cal */
-    892         cell = nvmem_cell_get(rtk_phy->dev, "usb-dc-cal");
-    893         if (IS_ERR(cell)) {
-    894                 dev_dbg(rtk_phy->dev, "%s no usb-dc-cal: %ld\n",
-    895                         __func__, PTR_ERR(cell));
-    896         } else {
-    897                 unsigned char *buf;
-    898                 size_t buf_size;
-    899 
-    900                 buf = nvmem_cell_read(cell, &buf_size);
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202307311724.2bAqJu6o-lkp@intel.com/
 
-nvmem_cell_read() can fail.
+All errors (new ones prefixed by >>):
 
-Sometimes, it's okay ot ignore errors, like if your reads from PCI start
-failing, then there is nothing we can do as a kernel.  The user needs to
-buy new hardware.  We need the serenity to ignore the things we cannot
-fix.
+   drivers/gpu/drm/display/drm_simple_bridge.c: In function 'drm_simple_bridge_probe':
+>> drivers/gpu/drm/display/drm_simple_bridge.c:105:21: error: 'struct drm_bridge' has no member named 'of_node'
+     105 |         data->bridge.of_node = data->dev->of_node;
+         |                     ^
 
-But here the allocation can fail.  So that needs to be checked and
-handled correctly.
 
---> 901                 value = buf[0] & phy_cfg->dc_driving_mask;
-                                ^^^^^^
-warning
+vim +105 drivers/gpu/drm/display/drm_simple_bridge.c
 
-    902 
-    903                 kfree(buf);
-    904                 nvmem_cell_put(cell);
-    905         }
-    906 
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   88  
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   89  static int drm_simple_bridge_probe(struct auxiliary_device *auxdev,
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   90  				   const struct auxiliary_device_id *id)
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   91  {
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   92  	struct drm_simple_bridge_data *data;
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   93  
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   94  	data = devm_kzalloc(&auxdev->dev, sizeof(*data), GFP_KERNEL);
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   95  	if (!data)
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   96  		return -ENOMEM;
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   97  
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   98  	data->dev = &auxdev->dev;
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   99  	data->next_bridge = devm_drm_of_get_bridge(&auxdev->dev, auxdev->dev.of_node, 0, 0);
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  100  	if (IS_ERR(data->next_bridge))
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  101  		return dev_err_probe(&auxdev->dev, PTR_ERR(data->next_bridge),
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  102  				     "failed to acquire drm_bridge\n");
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  103  
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  104  	data->bridge.funcs = &drm_simple_bridge_funcs;
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31 @105  	data->bridge.of_node = data->dev->of_node;
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  106  
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  107  	return devm_drm_bridge_add(data->dev, &data->bridge);
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  108  }
+1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  109  
 
-regards,
-dan carpenter
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
