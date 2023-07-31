@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E26F4C001DC
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 12:56:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF101C00528
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 19:21:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=orgtN8+fcPoV0aYhhMmngarTQi9IvfZPIOk9nvtSQLM=; b=q3pC6Qy4LnP4xE
-	MSaRp4OL2qcRIbSC9CH1MlLCvlRG7SZf+p9UlUZa7jngTVz3t2LRXtusI+XRPOlYnuqSSvD0US6ch
-	TXci6zf5OQ2IWNd7yEsKa7wwYQkCSvDz/I9NXkuzOoRw2T/wPmALdbaMIyY5goB9YaiphwBpYpKcH
-	LXBc1RUUhil+J97bTmH4Eilz1T0jAUrrMMNyhdVjqu4AtcojcT7mFpKufDEGyPrkAlZj6pfqvIUJi
-	wuWNKUFBnUOFuI6mneE3d5ftH2CN0Wj86pI+KUCyDxqKHsH4RvRtdmPL9JF6hQZJ4KKhgQUIQKU8m
-	Zi3aLWkZOZ0wGZlXl/+w==;
+	List-Owner; bh=iJ0XF7GJNGyhtC53jwwx1jnRg10Th2lYTo50GIXxwms=; b=KfyYZ11d2UWWy8
+	6sONGo2x8ROQaaTAuTmDF2scKLQzTXk0mmmMlko+cw3n/cibK7O31H4t4fqqVNfmKrvnS7DUxlG1i
+	5hDh8RTCtJKdTebvW9uK9p/YvBlMPIirBRw3TL0HfiAobROUs33POAXO7o+x7wQTqwcjNf3dKRGr+
+	E0K/llA630dpVOqa9dowXKqcY21UteG+J9kPoXGPuwEpNtOu5C7UijPKmwe/x84QRjerKpZMCXFYY
+	Obd0Trm+xXzPsnQzknuYQt3uT6JQhm6Si9iFDci2RClETPE7za46DbMaax1lceDwEzESqIVNfoTy2
+	s85sEtIiRdYRLkwEyvDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQSRh-00Fcub-22;
-	Mon, 31 Jul 2023 12:56:21 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1qQYSS-00H6n5-1G;
+	Mon, 31 Jul 2023 19:21:32 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQSRe-00Fctz-1C
+	id 1qQYSP-00H6mL-2f
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Jul 2023 12:56:19 +0000
-Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2b9e6cc93d8so16892781fa.0
-        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 05:56:15 -0700 (PDT)
+	Mon, 31 Jul 2023 19:21:31 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-4fe27849e6aso3690314e87.1
+        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 12:21:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1690808174; x=1691412974;
+        d=linaro.org; s=google; t=1690831288; x=1691436088;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Yeab3hRKzRRNGLOjMXr0iXoy2HNqWyAcv3g5XRkaUmM=;
-        b=pxZOTtW/wJ3qBELi3L6zMYnyYqpX14bJwKXnWi1AUnupEKgjkyxnfzdpX4yid2cSJm
-         0FFV9izrYUGoj/4s7QKh4XEvFnb0wxXJZydDLeeqP7JYTuCqI+5pDbZrDhXxU6YWIJ2s
-         x85iUL841tZ5Dns1b+254LTYMq8DotwmNGJufiWHUyfypj5yQI3tai5q51XbTi/hfV4p
-         zKciUGXQlO305xBMmZQUpsZIK95jOekRck8HKTpoBtaE4q6sYaouSIq+tg9alGFyVsbe
-         r1BmNQhMov5Wa6agEMLWFIoc+TO6evOWMRfILEHGXGDXQEqfOpGY1E3Fgt0SkTOf+j3f
-         Wx4Q==
+        bh=u3cpx9y286QZ8BgwC7urTNONFjOP9T8Enk3jLPXhzF4=;
+        b=aZOvjK8w0EVdbnm/FU4q1BzmSlPvkD2ujGOHB4zYUSuJczaTEzRhaqCeuAMMUDlwgg
+         dDnKLOnZ95oZmVXFiM/WZyW5FqlYjJLmSdgIPfSaE3i3e15CA+/Spj5gIbTM+FHLkBha
+         7TkuCLDZIHMN0Xe9YDMPlUOJ1gEq0uZBxVANYdVvSIJlL75eP4xSbCdSURq6CVsNeQsn
+         pPoFJF23wx4e3HvzYLR730XD9EEoL32IzirhxdSnTyP6r+voJKRGfPaPUu/SVu1P+nyB
+         PiReMUqy1JtGwYnWNmG8OgszK2CVHq76+vjA+9CSUQBhJNJc2AvLcYlyI1I7HBQIqr8q
+         7XQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1690808174; x=1691412974;
+        d=1e100.net; s=20221208; t=1690831288; x=1691436088;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Yeab3hRKzRRNGLOjMXr0iXoy2HNqWyAcv3g5XRkaUmM=;
-        b=VI/RaXFTn55tt2dmfs0ATwniqvxqqMMnlEHZwYdTYUO+Vr6T3FPWVIv5qGb57e6dZI
-         DWbD/Jwz11kgT1TMtQfsbcxS9UIu6NUjn0fvp1vXWX2gJ9hTM90zAMy2FuyaQ8V8oLq6
-         zPxpk2DJW4wVa83T5gPZdfuH+yVl+7DFF+TxL22p9nxPcKCjcNz/AKPq3DPCd1BxFm3y
-         j+X3srLcQeQ3S+iIsqk3MDO/kVz3FclbOXNfE5RgLf+mS5V9UH1A57TkzXIw+LZil6Tz
-         bkmYA06SJUVc/26+6eOEpw1Num+8i3oO1s9rgtHyfVTOZDGFgIkurTz8p7bQkowEkPR/
-         cKHA==
-X-Gm-Message-State: ABy/qLY5B7BRpt4uZ1kufKj/0zXeMRpDYyl1R4kIPzrPp5dJTWRaL06X
-	EruP6ceghRvn0kYwNhKyN3m9yQ==
-X-Google-Smtp-Source: APBJJlG10segcU6p/qJGd016zmMQaAHHVpQz++etRMwLMJMUqFSZVVo6vmk4Y1G2m4DjAhALKekhnA==
-X-Received: by 2002:a2e:9f0a:0:b0:2b9:b693:c906 with SMTP id u10-20020a2e9f0a000000b002b9b693c906mr5477784ljk.27.1690808174464;
-        Mon, 31 Jul 2023 05:56:14 -0700 (PDT)
+        bh=u3cpx9y286QZ8BgwC7urTNONFjOP9T8Enk3jLPXhzF4=;
+        b=W4+hxJ3N6HRRZgcomen573FEl09p/TtRsfOIv/oFaM4tfzkin+ykJfAF15DPoyEKbS
+         HenxpRgf6KRp/Gh1YbiniFu2zRrThBTb+wrFrjtFM+cDpBAklEAQM1HM7oj9+pjQhDpY
+         OiBuISvbt9lCWmjGl7hJDKdYvL1qtYea8MwIittsoOjx3tOUJm2bQOyWW/qyX6w/H4zy
+         4Za/17r3iKXe5ne83X6TWP7IU3vQ+IXWUTDEsHI1iqHzb7n2lx2AlcARmBKxkf6g1g5o
+         yFoqSnP51EAJwNOjiuk76cfCRFU+9eWYswCt3unTqCvkR915Tm3Dnkeb726BRx2LbitN
+         nTTw==
+X-Gm-Message-State: ABy/qLafZTfi1yeTLu/uXF6uaCmpOdGi4A2xXXfMSBJLPASqJNvpOs4b
+	O152156FhQewiJnjfe0IDJ4qLdyQ8NW4nP04KybI0w==
+X-Google-Smtp-Source: APBJJlHIgkm0eePC229k1nnW+GljEiu9tlEMK0AoLIEee85NKPgLtdz2nW3wOAMkX9Uppp0jRllugw==
+X-Received: by 2002:a2e:3806:0:b0:2b6:decf:5cbd with SMTP id f6-20020a2e3806000000b002b6decf5cbdmr597035lja.36.1690831287802;
+        Mon, 31 Jul 2023 12:21:27 -0700 (PDT)
 Received: from [192.168.1.101] (abyk53.neoplus.adsl.tpnet.pl. [83.9.30.53])
-        by smtp.gmail.com with ESMTPSA id f9-20020a2ea0c9000000b002b6dba16f28sm2560545ljm.127.2023.07.31.05.56.13
+        by smtp.gmail.com with ESMTPSA id h4-20020a2eb0e4000000b002b6ee99fff2sm2699202ljl.34.2023.07.31.12.21.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 31 Jul 2023 05:56:14 -0700 (PDT)
-Message-ID: <1e6029e3-9e4f-c0f0-201c-627e2c748111@linaro.org>
-Date: Mon, 31 Jul 2023 14:56:12 +0200
+        Mon, 31 Jul 2023 12:21:27 -0700 (PDT)
+Message-ID: <6883c9e1-fd16-c0a0-7c7c-dc92df5b209b@linaro.org>
+Date: Mon, 31 Jul 2023 21:21:25 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 02/13] phy: qcom-qmp-pcie: simplify clock handling
+Subject: Re: [PATCH v2 04/13] arm64: dts: qcom: ipq6018: switch PCIe QMP PHY
+ to new style of bindings
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -78,7 +79,7 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>, Johan Hovold <johan@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org
 References: <20230731105759.3997549-1-dmitry.baryshkov@linaro.org>
- <20230731105759.3997549-3-dmitry.baryshkov@linaro.org>
+ <20230731105759.3997549-5-dmitry.baryshkov@linaro.org>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -115,10 +116,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20230731105759.3997549-3-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230731105759.3997549-5-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_055618_416834_41C4F9D7 
-X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-CacheID: sfid-20230731_122129_876652_5094EF34 
+X-CRM114-Status: UNSURE (   6.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -137,19 +138,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31.07.2023 12:57, Dmitry Baryshkov wrote:
-> For some of existing PHYs for new binding we are going to change refgen
-> to more correct "rchng". Rather than introducing additional code
-> to handle legacy vs current bindings (and clock names), use
-> devm_clk_bulk_get_optional().
+> Change the PCIe QMP PHY to use newer style of QMP PHY bindings (single
+> resource region, no per-PHY subnodes).
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
-Nice!
-
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
 Konrad
-
 
 -- 
 linux-phy mailing list
