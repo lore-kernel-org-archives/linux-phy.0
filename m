@@ -4,82 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61FDCC001E0
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 11:00:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71FDAC001DF
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 11:00:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YB/qJgcM4uPWpFahI9FGvYtNxILySL52tOpWwvbjA/I=; b=KlZncWs2QPDRDP
-	oEc4m+WNsK8BDwFzJcHWsWpkR+876YlN1c5soht0V6+GJLVaOJBaVaoqM6+olKlIuWixWoSNeu1yP
-	0KgFdpcGiqdsbpNouZATrOAw+G7sul1mwkM2Cpr8MgMXfkfDYGpqBnJQKJq3BG+RGHLueS01r0JcL
-	v/fPx2nWRukujjSAs722oER+UdvJFPLGOIlz3YFSXMrWNoYOm6SHZpAHVapyfvYz3id14iCOauiXd
-	MU85kujvASXJwi2YnOlDIsKoCJTHvIQUnyYrb22o8sNNb8wlz2EkRmOLU+yr0QV5Te6X/KpHIOnmN
-	l4duSkT4unxlsT0xeBTQ==;
+	List-Owner; bh=z7YhnglXys4hxroeIbQdVetiO4Uzy+w+Hjhuko7QEAY=; b=OVHVNssrjILOYr
+	9d8KBqdxaBXKh8tHEJOfnKYP3vHJksWLXPzNBSZCwwvagH4fTdmNcKUMj67xNX4mj5qqAf48Zt+mn
+	wbt/FZIAhHWhFbFNRlOt0KP7us1vn9LyZ2GCFF8jKXBbO68OEk+ByOlV6vg8VPtSd6mYTGAg+CIJT
+	4r1wOAC6SGyk84pbqnK5KsE6MAeoo7WNSdGruxnkiVfxZvcAiS4awJo++zHlscwJe8HLyrHBEyk9/
+	3R9cpsPUEx2jDJJAFBWxa3RULZ+bz1nsobK8tBzN2qNTdhJM33PXjW8eG+fULcHv2vGXnSjX18CXe
+	K3l/qrTvqrfgktHFCzmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQQdt-00FELC-0Q;
-	Mon, 31 Jul 2023 11:00:49 +0000
-Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
+	id 1qQQdu-00FEMO-07;
+	Mon, 31 Jul 2023 11:00:50 +0000
+Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQQdg-00FE4A-1z
+	id 1qQQdh-00FE3R-0z
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Jul 2023 11:00:37 +0000
-Received: by mail-pl1-x633.google.com with SMTP id d9443c01a7336-1bb2468257fso24630405ad.0
-        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 04:00:36 -0700 (PDT)
+	Mon, 31 Jul 2023 11:00:39 +0000
+Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-1b8b4749013so34499675ad.2
+        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 04:00:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=edgeble-ai.20221208.gappssmtp.com; s=20221208; t=1690801236; x=1691406036;
+        d=edgeble-ai.20221208.gappssmtp.com; s=20221208; t=1690801233; x=1691406033;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=I4uEnTNjW7DC6At6I+F7keaZ1pWy4tIkVTdNrvB8BNw=;
-        b=zV5gw6C3xyA/WHxEsCIcVSPSLZWxTUzxsvhoThbjMeA1V4LD2UrrY9V8R5USR+s5Jc
-         eVgo/HjWgSmCF7T0VNrh/FpRR6WHj3GmKAmgLw/yYwZRzw3Wwjl3FdvCkRAOUZ2Lkb+e
-         dZYEKTD06y5JtYqlBaf8Y/OmWc7Pim3oLRkEUekPlt/WAU03odGpk3r+MtOsSkxPus6e
-         G0biZD7M8pEDsmphD1c8eUFyF+bpepq0Pqjq5IVFB6QvYVi/dXncEgkdqTR8wAYv8XGV
-         UdQqGiT+XRsl1GSXWQcX+vyRJHgeJL8Ghgr/cqGSIn2xa3u0HqbogvBZSELfGPZQDVZn
-         hUkg==
+        bh=1jP0HLi5iSHOi8Z3s8AoTEtv1xUnfOh/1w4uA8oZ1C8=;
+        b=2FgELMPX0iC03w8yv5a+jHnW+r6p/iK8CdEQAmkhGrzD3gBhPxC169nCe+ztk/F1PP
+         nFvxDdvhJj6n2aqLEXqpK0dzEH83J/QLG9fvkzPlLPhDpBd4telbjN/jbBkGOpnIYb8a
+         3il0dYWJtbA9A1zTiTp4KSJeYHuiiQcYgHEh5Kg8HmkfWjFayBnUcs8MyLM0zFSkrIPX
+         ArWnQ7sqJ55Am3XRLQ3U5uhqbu9B96mckKbM+DceMLRQcInXzYmnnl0RLw+7Huf6+hHQ
+         PKz1GGcsuTJziSe7huWsSjAidbMa5HWBgXLgoPEQ+vyU323EmyWMMru+ZSHMVlzMNafz
+         QYyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1690801236; x=1691406036;
+        d=1e100.net; s=20221208; t=1690801233; x=1691406033;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=I4uEnTNjW7DC6At6I+F7keaZ1pWy4tIkVTdNrvB8BNw=;
-        b=CNjh8TjyK530hC+8SLZyzJD+oSmLqftxHhKSOetNvF+pikRZn8Ss6EAuG/wOphjQnd
-         nEU8uoYWhLEORDuvdXGEqipSF5zHngimytf7/JucgknVsR8LkV5lkRFvVFMPZOR36d27
-         4faTrQTs+x9KKEZvq/eiUN+kOQJB4GRIqfYuTah2iQ8XVVE+I4+KSiAwVtvXyOl24l5K
-         mowcAbFktUgwK8i++iNDNO4c3ZyZ9R7+XafnJIkAhyJj/i59jxTVsQPJgzJYP1u8hJpp
-         L4bKtFcjIr7E7uq3soL4sDt00oWwimRVa4rITpWUJp/ICyvHkSyatNM0DEVdDtDzZSH3
-         +pTA==
-X-Gm-Message-State: ABy/qLasIoT8m+WqCPcR4gCGo+VwY8fPJ4nBCBBv0/9D634Cn0NfKVSm
-	jSMuGSOc8dZenafHHyvjJ9zXXg==
-X-Google-Smtp-Source: APBJJlGh2CjJmtS8ElOHin6W05yAAXDLyJnsJQ7MGRvk40VznbrPl4qQ2XBb59SJp+Yy+eV2039zJQ==
-X-Received: by 2002:a17:902:e88f:b0:1b8:b433:7fa with SMTP id w15-20020a170902e88f00b001b8b43307famr9743171plg.13.1690801236080;
-        Mon, 31 Jul 2023 04:00:36 -0700 (PDT)
+        bh=1jP0HLi5iSHOi8Z3s8AoTEtv1xUnfOh/1w4uA8oZ1C8=;
+        b=QJDGY1ijaTlt4d7kzrQKsgAav73DdX1WimV390N9BN31V2fsvPVzBhXa2+YZLWxIFy
+         x8uSwsAUWrj5BjMkYd/s7Mfr0KGczC5IYSOSrjxAcBCZasDPui4w6KDQeoTnwYOcVg6g
+         zQ+O/JeaGpcxQ9RfP2un/xqUGyuSTGUmA4jruR1WQ4jWqV5gYW4VDVQysCNKH91jfi5n
+         UZJsIUSTlRxKfU+1udQ6kVYViLqkzzu0RS9om+O3TI6nsx3KxQRCMhBwGiRWWCFQYd/1
+         Mcj2B3GXuF9Rj91fUcydYQIqBCcp4WG5IbP7BcQvyahdsWvkopfzWu9hJ2P7JyQkgx3s
+         MNug==
+X-Gm-Message-State: ABy/qLbdRLVvWko/17msWi892wQGYzi+Yz8s9xif/Mnm7xdlj6E1Xx9C
+	lZ3uPvrpNS5Kt8yH1R6OKe9RCKZaLJcDBIuU0Tkcaw==
+X-Google-Smtp-Source: APBJJlF1fW/kkMkTA9HRVUtJsncJ2wrXby1awhzYBA08MEkd3zOioa9tGcY2NYeekLTXVVpQp1heaA==
+X-Received: by 2002:a17:902:820c:b0:1b8:4b87:20dc with SMTP id x12-20020a170902820c00b001b84b8720dcmr9063249pln.37.1690801232812;
+        Mon, 31 Jul 2023 04:00:32 -0700 (PDT)
 Received: from localhost.localdomain ([49.205.243.15])
-        by smtp.gmail.com with ESMTPSA id t14-20020a1709028c8e00b001b1a2c14a4asm8281096plo.38.2023.07.31.04.00.33
+        by smtp.gmail.com with ESMTPSA id t14-20020a1709028c8e00b001b1a2c14a4asm8281096plo.38.2023.07.31.04.00.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Jul 2023 04:00:35 -0700 (PDT)
+        Mon, 31 Jul 2023 04:00:32 -0700 (PDT)
 From: Jagan Teki <jagan@edgeble.ai>
 To: Heiko Stuebner <heiko@sntech.de>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org
 Cc: Jagan Teki <jagan@edgeble.ai>,
 	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [PATCH 04/14] phy: rockchip: inno-dsidphy: Add rv1126 support
-Date: Mon, 31 Jul 2023 16:30:02 +0530
-Message-Id: <20230731110012.2913742-5-jagan@edgeble.ai>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: [PATCH 03/14] dt-bindings: phy: rockchip-inno-dsidphy: Document rv1126
+Date: Mon, 31 Jul 2023 16:30:01 +0530
+Message-Id: <20230731110012.2913742-4-jagan@edgeble.ai>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20230731110012.2913742-1-jagan@edgeble.ai>
 References: <20230731110012.2913742-1-jagan@edgeble.ai>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_040036_653989_1E6C3944 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20230731_040037_346411_3E2AB76E 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,34 +101,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for Rockchip RV1126 DSI-DPHY.
-
-The existing 2.5GHz phy timing table added for RK3568 is working
-as it is for RV1126 as well.
+Document a compatible string for the rv1126 dsi-dphy.
 
 Signed-off-by: Jagan Teki <jagan@edgeble.ai>
 ---
 Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
 Cc: Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Conor Dooley <conor+dt@kernel.org>
 
- drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c | 3 +++
- 1 file changed, 3 insertions(+)
+ .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml          | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-index c879ec69bfd6..6405943a2676 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-@@ -770,6 +770,9 @@ static const struct of_device_id inno_dsidphy_of_match[] = {
- 	}, {
- 		.compatible = "rockchip,rk3568-dsi-dphy",
- 		.data = &max_2_5ghz_video_phy_plat_data,
-+	}, {
-+		.compatible = "rockchip,rv1126-dsi-dphy",
-+		.data = &max_2_5ghz_video_phy_plat_data,
- 	},
- 	{}
- };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
+index 5c35e5ceec0b..46e64fa293d5 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
+@@ -19,6 +19,7 @@ properties:
+       - rockchip,rk3128-dsi-dphy
+       - rockchip,rk3368-dsi-dphy
+       - rockchip,rk3568-dsi-dphy
++      - rockchip,rv1126-dsi-dphy
+ 
+   reg:
+     maxItems: 1
 -- 
 2.25.1
 
