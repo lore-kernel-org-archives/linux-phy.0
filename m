@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEDEDC05051
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 07:19:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ED52C0729B
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 07:19:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=z9AsJuBObtlaKS6N2bryrFPOZCzyOz2OtbjjOLGzey8=; b=19stnpCXF3xuGv
-	QLAH+7HL57KViTCyDHbgQPhpUFRiZoCmbIwIYbb7fHJpdQIEueF3QR/xo0GdLL2LMcrKm6d/IwR1k
-	TdszuC+qro4Mh54Jrw8jBmve7XFJkPEoUzWaCHizNxWxaHW854CHFFSwMSc3osYLCuBXfx6ptSiQr
-	/3JXtkC1aqVMdb1P6pV0+aSpUlTAcFVWpXVshZ45OPieSyieHHmJXvvpH1de6+7K004owaqVWgMww
-	SJ8UAkAKQfo8EmYpLwlHQtJ6QITKWeimfmPWYrYxgNjtC+gc6O0BAs4DvwUIPwWanUl5q433G5dGO
-	Obf5MFxFm6YZI8L51nOg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wTCTdP4L+9LGBWDdHe9Ms55SZ7bPN9AghMc5XT7A1Xk=; b=Z9iAU7esClqmJ1
+	qRN15X2Fw+7bfQdD3pT2O+OH4LH/NpXWJI2KbtF0F6RowoovjZuIuN2qsD/z/RgFjOC3q0xTJvu37
+	50X5wPLxSAYyL39yURpgwRO4dDO1gjlWhuZV6plIsg4y4fxFCJGh8L7M5x/DZgnB+sVZ4Ej1/S5g/
+	uc/Gpe/Fb48kRfQoRm4lQE8q0FiCUNaIT+W3o4qsdMOBtMJZytA4GMH5ceoBcSOr8wsRq19tf3WYf
+	sGo6x4IrBNBw7YpePL0PqoLRP/6+qeUxAEaY/kwZMOio35v4YpRAX/BlORfP/PihXN9b34ZJTE5+d
+	L0MjBRuo8n/gOoy0kKiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQNBr-00EIWw-1m;
-	Mon, 31 Jul 2023 07:19:39 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1qQNBs-00EIXs-2G;
+	Mon, 31 Jul 2023 07:19:40 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQNBn-00EISF-07
+	id 1qQNBp-00EIT5-1O
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Jul 2023 07:19:36 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2b9ba3d6157so60508601fa.3
-        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 00:19:33 -0700 (PDT)
+	Mon, 31 Jul 2023 07:19:38 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2b703a0453fso61025071fa.3
+        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 00:19:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1690787972; x=1691392772;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=HDhfU2FoK8aIJGXr0hUVQrh/P1Qtr8xU+ls50+YP7vQ=;
-        b=pKUFzvIbDXE4qehMCnW185ujZVoxzM64vjsTHYaa8ZifxCwJAiCOV4K51poAf0woPb
-         muInJ8nf1Af/KfLwxvGlbcAUyoJOZ0qV8NBPaysp7o5K37pth4xxejw2Pg0iBvQYW4JE
-         mZzqjyezpf6KybQarU40lVrLbZwaPufKxzExD2aL3F+CsesXxcNMl05REvmtpK25WGrG
-         TpdhGXnGeN2HSZR+t8j5Trb59cIfT8YhhM1LT41WTyvF+1QwUcNWCsxOKLZ2MKbSy4Yg
-         zdsTSFzD5Xp5hRP3u5GdBIPYiUtm+oUlJptM/AqhbnMiqCNFoAZ/G8n4mCJ9Jhgr4qIw
-         CHAQ==
+        d=linaro.org; s=google; t=1690787974; x=1691392774;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=aArr+Z0OOAMh7dLqu6+G5gaqEsgGaXff5br4Ze76jN4=;
+        b=QVfPUkFINU++0UtYQJu+LcaKoI23bnJHqonbs2+f9RPgXDiPa2zZCxyyDWMiOK8XgS
+         eV3HuY1x2nwBsf/f4MyS7RR/aX5eQivolz3unvkSfM6vN6eQhkaDpIo3nJoGzU3rq9BY
+         IAsS2den+Mma8f35wxGnjHUsh+XyUGhKEux0QNLCU8WuHyyto4x9dcxQ6HqqjSLMVjJ+
+         w+SPpUpfYROjzjMpsfoyOml3VkL2CN0SnejVxK1uZrMNQWpTi3Eg7IHyPF70Xcqm7qjo
+         6sokl3IVWRLwc7dPuowSPknTT6N6q0wE/ju/beFOVOUvxdGZuhwKm9yUVvEoe7juBWY8
+         gKnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1690787972; x=1691392772;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=HDhfU2FoK8aIJGXr0hUVQrh/P1Qtr8xU+ls50+YP7vQ=;
-        b=ZZM7JJH7Qvw5oAVUWANuNhS9n8+rKkflu3Z98ttRrvY8GzrM/lu9/25C7HMlmwN2f9
-         7nzESSXUCvo91ExNEHcOeH4t84IyfcDFT6r0OUnEn/apLGqN1mvSvnqlqDWEH7wBExpa
-         AiVHnpkf3ZUO8GW6EhcDuDmUP4OkjT1JPaj1X/kEkJahQU8l4fLpsGrhTaVCtNXSGNOR
-         2gAb0LTBqQ3qXOMPQnIkrkRjJrfTueAmdh1DTGwVOky/P3LyxQ+THHGitFv1kVrXZ/Xx
-         JHLuXvA8MPtCBHFvpRZIULStV2byY5YMdo8ENkvmmX1u1Ic1KJLfuC89AzRKXHquXMrT
-         dfLw==
-X-Gm-Message-State: ABy/qLYrFGEBDlGHGkHolpACLMQH7nBpEmCQp46vAxw6gE6QGR6V3TdS
-	TZxNLpOfMjesk0KEOUTUE9blYw==
-X-Google-Smtp-Source: APBJJlEFmmxgVpsb4VKdX/OmDgm7CzXZk2Cy1ts84q1OxjZfrnZW6wz1kgkFsMhlbMY/DhcQwIQTHA==
-X-Received: by 2002:a2e:8ed0:0:b0:2b9:4b2e:5420 with SMTP id e16-20020a2e8ed0000000b002b94b2e5420mr5467379ljl.52.1690787971721;
-        Mon, 31 Jul 2023 00:19:31 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1690787974; x=1691392774;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=aArr+Z0OOAMh7dLqu6+G5gaqEsgGaXff5br4Ze76jN4=;
+        b=JlV49UsDplTWqXrJZgNF9c+mGxyyxSaEPYZcdMbLUXD6UQb9n/FQ2+Nx7+UtuYmOjE
+         GKir8x7cNUNm4Q4OX+Bk+oTJAkvrZAmx+JCPvin4NVI7w7BdPYL9X/ob6YlQHY3Cu3gU
+         rttr9WPP8KixXIKTyI7aF7VR39CAd1bD+zP1L1Kou2Rb6141W+Y7TV01AtjPOJW/y5Io
+         3FAO8sqCqAeK06OaMeEgAVP/dBAG91YNVagz03Or7am/ZnmF1mfRN91PV8Zx+4i7NQcL
+         jdfKmutfCcG8yStTU7lZarsk9nUymI65sTjW0k7lb2Y4X5jht4E7omJigPSV3t6nmzlZ
+         dqbA==
+X-Gm-Message-State: ABy/qLbOIIE3raXlvRruvsigQjV/Y1CDZSNyyZfHIe9HCWZTPgMMACuL
+	xQbmFzAK/yMXeUq4S1QKUvJa6A==
+X-Google-Smtp-Source: APBJJlHIL09yD+cpaKj4AkcHas75MqVJTUzMeOhlJXyOtc3pfudP9xHd2NG0vOKt1b+I26sAEFyLGg==
+X-Received: by 2002:a2e:9d96:0:b0:2b9:e6a0:5c3a with SMTP id c22-20020a2e9d96000000b002b9e6a05c3amr1494502ljj.48.1690787974573;
+        Mon, 31 Jul 2023 00:19:34 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id c4-20020a2ea1c4000000b002b71c128ea0sm2413267ljm.117.2023.07.31.00.19.30
+        by smtp.gmail.com with ESMTPSA id c4-20020a2ea1c4000000b002b71c128ea0sm2413267ljm.117.2023.07.31.00.19.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 31 Jul 2023 00:19:31 -0700 (PDT)
+        Mon, 31 Jul 2023 00:19:34 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: David Airlie <airlied@gmail.com>,
 	Daniel Vetter <daniel@ffwll.ch>,
@@ -77,14 +78,16 @@ Cc: dri-devel@lists.freedesktop.org,
 	linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
 	freedreno@lists.freedesktop.org
-Subject: [PATCH v2 0/3] drm/display: simplify support for transparent DRM bridges
-Date: Mon, 31 Jul 2023 10:19:27 +0300
-Message-Id: <20230731071930.3928150-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 3/3] usb: typec: nb7vpq904m: switch to DRM_SIMPLE_BRIDGE
+Date: Mon, 31 Jul 2023 10:19:30 +0300
+Message-Id: <20230731071930.3928150-4-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230731071930.3928150-1-dmitry.baryshkov@linaro.org>
+References: <20230731071930.3928150-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_001935_075552_08FA67DB 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20230731_001937_481339_38B0224D 
+X-CRM114-Status: GOOD (  14.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,51 +104,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Supporting DP/USB-C can result in a chain of several transparent
-bridges (PHY, redrivers, mux, etc). This results in drivers having
-similar boilerplate code for such bridges.
+Switch to using the new DRM_SIMPLE_BRIDGE helper to create the
+transparent DRM bridge device instead of handcoding corresponding
+functionality.
 
-Next, these drivers are susceptible to -EPROBE_DEFER loops: the next
-bridge can either be probed from the bridge->attach callback, when it is
-too late to return -EPROBE_DEFER, or from the probe() callback, when the
-next bridge might not yet be available, because it depends on the
-resources provided by the probing device.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/usb/typec/mux/Kconfig      |  2 +-
+ drivers/usb/typec/mux/nb7vpq904m.c | 44 ++----------------------------
+ 2 files changed, 3 insertions(+), 43 deletions(-)
 
-Last, but not least, this results in the the internal knowledge of DRM
-subsystem slowly diffusing into other subsystems, like PHY or USB/TYPEC.
-
-To solve all these issues, define a separate DRM helper, which creates
-separate aux device just for the bridge. During probe such aux device
-doesn't result in the EPROBE_DEFER loops. Instead it allows the device
-drivers to probe properly, according to the actual resource
-dependencies. The bridge auxdevs are then probed when the next bridge
-becomes available, sparing drivers from drm_bridge_attach() returning
--EPROBE_DEFER.
-
-Proposed merge strategy: immutable branch with the drm commit, which is
-then merged into PHY and USB subsystems together with the corresponding
-patch.
-
-Changes since v1:
- - Added EXPORT_SYMBOL_GPL / MODULE_LICENSE / etc. to drm_simple_bridge
-
-Dmitry Baryshkov (3):
-  drm/display: add transparent bridge helper
-  phy: qcom: qmp-combo: switch to DRM_SIMPLE_BRIDGE
-  usb: typec: nb7vpq904m: switch to DRM_SIMPLE_BRIDGE
-
- drivers/gpu/drm/display/Kconfig             |   9 ++
- drivers/gpu/drm/display/Makefile            |   2 +
- drivers/gpu/drm/display/drm_simple_bridge.c | 125 ++++++++++++++++++++
- drivers/phy/qualcomm/Kconfig                |   2 +-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c   |  44 +------
- drivers/usb/typec/mux/Kconfig               |   2 +-
- drivers/usb/typec/mux/nb7vpq904m.c          |  44 +------
- include/drm/display/drm_simple_bridge.h     |  19 +++
- 8 files changed, 161 insertions(+), 86 deletions(-)
- create mode 100644 drivers/gpu/drm/display/drm_simple_bridge.c
- create mode 100644 include/drm/display/drm_simple_bridge.h
-
+diff --git a/drivers/usb/typec/mux/Kconfig b/drivers/usb/typec/mux/Kconfig
+index 784b9d8107e9..350a7ffce67e 100644
+--- a/drivers/usb/typec/mux/Kconfig
++++ b/drivers/usb/typec/mux/Kconfig
+@@ -39,7 +39,7 @@ config TYPEC_MUX_NB7VPQ904M
+ 	tristate "On Semiconductor NB7VPQ904M Type-C redriver driver"
+ 	depends on I2C
+ 	depends on DRM || DRM=n
+-	select DRM_PANEL_BRIDGE if DRM
++	select DRM_SIMPLE_BRIDGE if DRM
+ 	select REGMAP_I2C
+ 	help
+ 	  Say Y or M if your system has a On Semiconductor NB7VPQ904M Type-C
+diff --git a/drivers/usb/typec/mux/nb7vpq904m.c b/drivers/usb/typec/mux/nb7vpq904m.c
+index 9360b65e8b06..c89a956412ea 100644
+--- a/drivers/usb/typec/mux/nb7vpq904m.c
++++ b/drivers/usb/typec/mux/nb7vpq904m.c
+@@ -11,7 +11,7 @@
+ #include <linux/regmap.h>
+ #include <linux/bitfield.h>
+ #include <linux/of_graph.h>
+-#include <drm/drm_bridge.h>
++#include <drm/display/drm_simple_bridge.h>
+ #include <linux/usb/typec_dp.h>
+ #include <linux/usb/typec_mux.h>
+ #include <linux/usb/typec_retimer.h>
+@@ -70,8 +70,6 @@ struct nb7vpq904m {
+ 	bool swap_data_lanes;
+ 	struct typec_switch *typec_switch;
+ 
+-	struct drm_bridge bridge;
+-
+ 	struct mutex lock; /* protect non-concurrent retimer & switch */
+ 
+ 	enum typec_orientation orientation;
+@@ -297,44 +295,6 @@ static int nb7vpq904m_retimer_set(struct typec_retimer *retimer, struct typec_re
+ 	return ret;
+ }
+ 
+-#if IS_ENABLED(CONFIG_OF) && IS_ENABLED(CONFIG_DRM_PANEL_BRIDGE)
+-static int nb7vpq904m_bridge_attach(struct drm_bridge *bridge,
+-				    enum drm_bridge_attach_flags flags)
+-{
+-	struct nb7vpq904m *nb7 = container_of(bridge, struct nb7vpq904m, bridge);
+-	struct drm_bridge *next_bridge;
+-
+-	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
+-		return -EINVAL;
+-
+-	next_bridge = devm_drm_of_get_bridge(&nb7->client->dev, nb7->client->dev.of_node, 0, 0);
+-	if (IS_ERR(next_bridge)) {
+-		dev_err(&nb7->client->dev, "failed to acquire drm_bridge: %pe\n", next_bridge);
+-		return PTR_ERR(next_bridge);
+-	}
+-
+-	return drm_bridge_attach(bridge->encoder, next_bridge, bridge,
+-				 DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+-}
+-
+-static const struct drm_bridge_funcs nb7vpq904m_bridge_funcs = {
+-	.attach	= nb7vpq904m_bridge_attach,
+-};
+-
+-static int nb7vpq904m_register_bridge(struct nb7vpq904m *nb7)
+-{
+-	nb7->bridge.funcs = &nb7vpq904m_bridge_funcs;
+-	nb7->bridge.of_node = nb7->client->dev.of_node;
+-
+-	return devm_drm_bridge_add(&nb7->client->dev, &nb7->bridge);
+-}
+-#else
+-static int nb7vpq904m_register_bridge(struct nb7vpq904m *nb7)
+-{
+-	return 0;
+-}
+-#endif
+-
+ static const struct regmap_config nb7_regmap = {
+ 	.max_register = 0x1f,
+ 	.reg_bits = 8,
+@@ -461,7 +421,7 @@ static int nb7vpq904m_probe(struct i2c_client *client)
+ 
+ 	gpiod_set_value(nb7->enable_gpio, 1);
+ 
+-	ret = nb7vpq904m_register_bridge(nb7);
++	ret = drm_simple_bridge_register(dev);
+ 	if (ret)
+ 		return ret;
+ 
 -- 
 2.39.2
 
