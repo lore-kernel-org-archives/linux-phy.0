@@ -4,82 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C05D9C001DE
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 09:52:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E69C001DC
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 10:58:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n36PkmxPFf0/xbR7/YS6jm7f+XJ/AMblEvGOMfpgOhA=; b=Q9g/OTS5jILLz1
-	kycq6RRt7FEsYQAGPtdHKl8RLCBEI8Xwp1hXKFTEhUTvZ+NVdkGMIqY2j76+u4YQDOiSZjVr0T6rw
-	NH97dkRGRFpChBL/p7DZluM9W0lWg1FRl8EYbKkIIWJ0ZqVZf+X5cFWSo3P2Z5D0QBvdrRmkHCE3b
-	xFXnrK9qV/CBFmDaIrd7lnMNku7cydHuzYHFrR5VylzqDIbcONQR7cZAgg9r1sfDzHxAU29GT9gWO
-	y/e39aT03g/3QXogmIdaPaQANLBHpZbwIqR+jUQqNcS8h9kXLFGeZxGCZOkpyA0iIi0faw6MeYBxo
-	qC3tl8GJspz7XO3Mwg3w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UjHHYl0nEcziZHJTxGFhA4KG7JrvKAK3MR2v3B9GqNM=; b=EFdyHpJmlBYh49
+	JKPrU6Ae2+Wig/8bZ1wv+H7PHPiuTaBiNrppPR+a7ZRtWt1f5oJk6bF8kPKXNi0EPXS4FvB0ugAWM
+	fPcSCDCDpoSLucyl6F+DuZgB61//lRN36yYFP3fRO86gaUeLMPaRjxzs+vi3Cik8sc6MK2FKISe3Q
+	T/qsDYE3PJ1I4mrnZNA7v2mr4NV+Dj0bcfN/5zAvFxxr8ndV4xWc/1Y2cV5jXhiG1XElOdm31PShI
+	BgDvdwaut/cce6OuRhSq/DzQY+Y01oOL2KiuE3czu9gi3Y81StzpIOFjmc5eEiWIb/ckHcwWyu0jJ
+	O0ojZDWFMVY+vKogY9GA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQPZz-00Eq4y-1f;
-	Mon, 31 Jul 2023 09:52:43 +0000
-Received: from [192.55.52.136] (helo=mgamail.intel.com)
+	id 1qQQbH-00FCUx-04;
+	Mon, 31 Jul 2023 10:58:07 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQPZw-00Eq2v-1s
+	id 1qQQbE-00FCQq-38
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Jul 2023 09:52:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1690797160; x=1722333160;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=PAoEQuTB+M6/Mb3C/VaAtLqfjQYPblPsfV7KVnusHG0=;
-  b=lNGu8Rfa2pGQI/R49sbNZ4zDhM8FcTM0Qgrs3KIcyDurM1dAq44LegKs
-   2TeraeovGTHg35aVLSzjK+yfx8BlSC91kJD5rZh1OK7tS9P3zy/SonVKj
-   4EPV2qqNBdCPKBvkKn+yQBN8obtD6AGblnTDcinzhdKGXzp3pHulkALpM
-   fDam6yw7PQAb9OcqevpZ1EwWVUlktWq5yhcS4G2NO1/tL8Ed/GURnZrfr
-   KJss88qLEq1uBfTysWMWeFuDxrL2Jnp1lClGW9IwxAmt77U9TiAlDIsD1
-   BAz04bKQz1tsKiRpceP3esNmT2IMRGW+RiR0lSETtszzJLaG0vyQlbUv1
-   Q==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10787"; a="348573369"
-X-IronPort-AV: E=Sophos;i="6.01,244,1684825200"; 
-   d="scan'208";a="348573369"
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
-  by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Jul 2023 02:52:36 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10787"; a="902059850"
-X-IronPort-AV: E=Sophos;i="6.01,244,1684825200"; 
-   d="scan'208";a="902059850"
-Received: from lkp-server02.sh.intel.com (HELO 953e8cd98f7d) ([10.239.97.151])
-  by orsmga005.jf.intel.com with ESMTP; 31 Jul 2023 02:52:32 -0700
-Received: from kbuild by 953e8cd98f7d with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1qQPZn-00053G-25;
-	Mon, 31 Jul 2023 09:52:31 +0000
-Date: Mon, 31 Jul 2023 17:51:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Andy Gross <agross@kernel.org>,
+	Mon, 31 Jul 2023 10:58:06 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-4fe0fe622c3so6610974e87.2
+        for <linux-phy@lists.infradead.org>; Mon, 31 Jul 2023 03:58:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1690801081; x=1691405881;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=MkWLzVZvkVwc4kbg9O6IOFav3DjG7Q36badDvS2EiRA=;
+        b=tHUCt0i9d3oi9Rb38U3RCWJIYllh/bEHGj+2OI9WiPfYxe/HNoToWx6m9pNE8JFtuq
+         6vqiHe0uE9dYzHp8S5SmF81bZ5FLPnp/NZkM+h8rywKJl1+BHFAA48395+2+hUH1fqX+
+         kD2mWbs0ZU6R1A1EX2a1Gf2XPgLL8hXUE7y2/Xq/N2PY7M82+yIqcSJiTUerrqhG4ont
+         o69ZtevxJApR0jBEUOELzoCZMeLC/c8n53+eNvWcfk3us4SliaF6HqN3sFkSCrWvGigJ
+         rqdXMOMgJAXSVW+F2wu9twAXRM07MkvHvvJT170ChPZ3cIV+HJfISpe395Z/RzffXeYe
+         HSPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1690801081; x=1691405881;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MkWLzVZvkVwc4kbg9O6IOFav3DjG7Q36badDvS2EiRA=;
+        b=PiCbXhHbqkqtg362C9CO6NIthA9SjK6gSZiF3jTpBfBmkucOeqVoCrRyfwHXvT+R+7
+         6xxwHbWiWwmQEW2Z33JYc3ZkgUsA3e68r11TG2l5ON62YMDC16NYfguxR0oo46GgZVMu
+         RP8+M1QFaw2bvGBdZv8ASs/ljeKXHwQW2PY0F3DJxWREphQ2+HNcR/NnSsmWbUPDjNy2
+         Y5YSaURUgOI7xbH+YanfP5ie4h6mw6HL8DnCeT6mNwNQN1OJSVczsJeJKgXLWNkfPPhn
+         m2+GyyjiDYRuAYAzrNxv71HZ9nJWwyADlkrKTlvuRkVKngmEZDQZ+igwakorvH8R2U2h
+         IEtQ==
+X-Gm-Message-State: ABy/qLbbcN+G69Jl/MYGdjOVSO1Dyj9GoAx/YkLbJOpBjzrQCipSI0eA
+	KnrKDH8xh9iq738L9vs1977wzw==
+X-Google-Smtp-Source: APBJJlHixnbIxwRPCZ8VCoGR+kynEHwVm2GhExWQRQpj7EBGGmHNZro5l3hl1viEJEghiMjSP90U+w==
+X-Received: by 2002:a05:6512:45b:b0:4fb:94fd:6465 with SMTP id y27-20020a056512045b00b004fb94fd6465mr5167030lfk.15.1690801080801;
+        Mon, 31 Jul 2023 03:58:00 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id c19-20020ac24153000000b004fb9fe34c27sm2025497lfi.92.2023.07.31.03.58.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 31 Jul 2023 03:58:00 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	freedreno@lists.freedesktop.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v2 3/3] usb: typec: nb7vpq904m: switch to
- DRM_SIMPLE_BRIDGE
-Message-ID: <202307311724.2bAqJu6o-lkp@intel.com>
-References: <20230731071930.3928150-4-dmitry.baryshkov@linaro.org>
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	Johan Hovold <johan@kernel.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: [PATCH v2 00/13] phy: qcom-qmp-pcie: convert to newer style of bindings
+Date: Mon, 31 Jul 2023 13:57:46 +0300
+Message-Id: <20230731105759.3997549-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230731071930.3928150-4-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_025240_629743_65C4A9A6 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20230731_035805_082288_1C066DD7 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,66 +100,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Reviewing several patchsets for newer platforms made it clear that
+having two styles of QMP PHY bindings causes confusion. Despite binding
+documents having notes telling that old bindings should be used for
+older platforms, it is too easy to attempt adding new platform with
+older QMP PHY binding. Thus let's have just a single documented style of
+bindings.
 
-kernel test robot noticed the following build errors:
+Proposed merge strategy: immutable branch with binding and PHY patches,
+which can also be merged into Bjorn's dts-for-6.6
 
-[auto build test ERROR on drm-misc/drm-misc-next]
-[also build test ERROR on usb/usb-testing usb/usb-next usb/usb-linus drm-intel/for-linux-next-fixes drm-tip/drm-tip linus/master v6.5-rc4 next-20230731]
-[cannot apply to drm-intel/for-linux-next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Changes since v1:
+ - Split large patchset into smaller parts
+ - Rebased on phy/next
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Dmitry-Baryshkov/drm-display-add-transparent-bridge-helper/20230731-152746
-base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
-patch link:    https://lore.kernel.org/r/20230731071930.3928150-4-dmitry.baryshkov%40linaro.org
-patch subject: [PATCH v2 3/3] usb: typec: nb7vpq904m: switch to DRM_SIMPLE_BRIDGE
-config: xtensa-randconfig-r004-20230731 (https://download.01.org/0day-ci/archive/20230731/202307311724.2bAqJu6o-lkp@intel.com/config)
-compiler: xtensa-linux-gcc (GCC) 12.3.0
-reproduce: (https://download.01.org/0day-ci/archive/20230731/202307311724.2bAqJu6o-lkp@intel.com/reproduce)
+Dmitry Baryshkov (13):
+  dt-bindings: phy: migrate QMP PCIe PHY bindings to
+    qcom,sc8280xp-qmp-pcie-phy.yaml
+  phy: qcom-qmp-pcie: simplify clock handling
+  phy: qcom-qmp-pcie: populate offsets configuration
+  arm64: dts: qcom: ipq6018: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: ipq8074: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: msm8998: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sc7280: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sc8180x: switch PCIe QMP PHY to new style of
+    bindings
+  arm64: dts: qcom: sdm845: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8150: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8250: switch PCIe QMP PHY to new style of bindings
+  arm64: dts: qcom: sm8450: switch PCIe QMP PHY to new style of bindings
+  ARM: dts: qcom-sdx55: switch PCIe QMP PHY to new style of bindings
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202307311724.2bAqJu6o-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/gpu/drm/display/drm_simple_bridge.c: In function 'drm_simple_bridge_probe':
->> drivers/gpu/drm/display/drm_simple_bridge.c:105:21: error: 'struct drm_bridge' has no member named 'of_node'
-     105 |         data->bridge.of_node = data->dev->of_node;
-         |                     ^
-
-
-vim +105 drivers/gpu/drm/display/drm_simple_bridge.c
-
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   88  
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   89  static int drm_simple_bridge_probe(struct auxiliary_device *auxdev,
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   90  				   const struct auxiliary_device_id *id)
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   91  {
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   92  	struct drm_simple_bridge_data *data;
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   93  
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   94  	data = devm_kzalloc(&auxdev->dev, sizeof(*data), GFP_KERNEL);
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   95  	if (!data)
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   96  		return -ENOMEM;
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   97  
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   98  	data->dev = &auxdev->dev;
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31   99  	data->next_bridge = devm_drm_of_get_bridge(&auxdev->dev, auxdev->dev.of_node, 0, 0);
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  100  	if (IS_ERR(data->next_bridge))
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  101  		return dev_err_probe(&auxdev->dev, PTR_ERR(data->next_bridge),
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  102  				     "failed to acquire drm_bridge\n");
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  103  
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  104  	data->bridge.funcs = &drm_simple_bridge_funcs;
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31 @105  	data->bridge.of_node = data->dev->of_node;
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  106  
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  107  	return devm_drm_bridge_add(data->dev, &data->bridge);
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  108  }
-1b4ddd588d7e97 Dmitry Baryshkov 2023-07-31  109  
+ .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 278 +++---------------
+ .../phy/qcom,msm8998-qmp-pcie-phy.yaml        |  97 ++++++
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  34 ++-
+ arch/arm/boot/dts/qcom/qcom-sdx55.dtsi        |  31 +-
+ arch/arm64/boot/dts/qcom/ipq6018.dtsi         |  32 +-
+ arch/arm64/boot/dts/qcom/ipq8074.dtsi         |  63 ++--
+ arch/arm64/boot/dts/qcom/msm8998.dtsi         |  30 +-
+ arch/arm64/boot/dts/qcom/sc7280.dtsi          |  36 +--
+ arch/arm64/boot/dts/qcom/sc8180x.dtsi         | 140 ++++-----
+ arch/arm64/boot/dts/qcom/sdm845.dtsi          |  71 ++---
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          |  70 ++---
+ arch/arm64/boot/dts/qcom/sm8250.dtsi          | 112 +++----
+ arch/arm64/boot/dts/qcom/sm8450.dtsi          |  82 +++---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 162 +++++-----
+ 14 files changed, 520 insertions(+), 718 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-pcie-phy.yaml
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.39.2
+
 
 -- 
 linux-phy mailing list
