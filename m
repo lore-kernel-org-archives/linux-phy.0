@@ -4,63 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87030C04A94
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Aug 2023 01:22:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1226EB64DD
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Aug 2023 04:58:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mNPw/cvIcaTBQULTq7zNYiJBpoSmgg6PPqRSt886zvg=; b=4cdSQs6V/CShhP
-	BzBL6LOyqE6KGUerdM6eCLD3KNKjh+a61RpqADqmXErQzjlsPzioszea/O2bgDFutemd6PKbG/Adl
-	TyoRVz/lPscfaxAx8ACgR8T8STlL6wE73YkMKFoq3ZwUSVTxPkHaDmUyVkhkVztIknATjU1lUJhyk
-	iDR2Ndshd5F+a4X7PTZKRDv2LLrRapqd6PT9ZoMOWp9gN7A8mxHJT8LxfC5nM70A+m8vQyxa5t4iB
-	18Po/6FJaTQtWSi6/MfgkOX2JRulWmlop+gOKL+TATSsjmFL1IqUxlODzt59NQyabqkdO3es/XdkZ
-	Vq5xMiMAWGZj2z0kb/Tg==;
+	List-Owner; bh=cYHVtFDV0qlHG3p7+HoE+h+DSIoQzfSddMxk8hUmVqo=; b=0oxx/kEmpMBvz4
+	Vxk1fwvVNtCTADtrXb9Wq4Ge8GK7nyFhUNs7XHVncbLB0q7EtlQn+i2/g800jWM0VaDoiOOCmPid4
+	dMit+8Ge8C4B08CjJDAIudeImGqcPmKlh4BZjLRW0DuePQSIeQDLBlgPBg50hjuX6SAJSfqIIXwk8
+	p9jYAv8XBu/IE0i8oKxK8YOdzKoDqdbdEXpqDukbdnYGr72gwhG+E17GhWBKJmV3Z+4C8fpCackx8
+	FZ36u6QVG/Gc0S3q8BvdlHtI3CkSMh7u1At1//5vLybJgzUGbO43CICjOZb2rY7prCcU8oCpLPZSd
+	WET7U4AJqPUTjjilyZPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQe5k-0008FD-0J;
-	Tue, 01 Aug 2023 01:22:28 +0000
-Received: from fd01.gateway.ufhost.com ([61.152.239.71])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQe5g-0008BI-1D
+	id 1qQhSz-000Mmd-1l;
+	Tue, 01 Aug 2023 04:58:41 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qQhSv-000Mlj-2w
 	for linux-phy@lists.infradead.org;
-	Tue, 01 Aug 2023 01:22:27 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 7EE917FD3;
-	Tue,  1 Aug 2023 09:21:37 +0800 (CST)
-Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 1 Aug
- 2023 09:21:37 +0800
-Received: from [192.168.125.107] (183.27.98.54) by EXMBX062.cuchost.com
- (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 1 Aug
- 2023 09:21:36 +0800
-Message-ID: <c03886ed-f39e-09c4-6435-7a0e63341da7@starfivetech.com>
-Date: Tue, 1 Aug 2023 09:21:35 +0800
+	Tue, 01 Aug 2023 04:58:40 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3711fvgV012636;
+	Tue, 1 Aug 2023 04:58:30 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=KZxbaDO7QuMFAxblJFKDY2rmUCa1JzWd9myMgUGIk38=;
+ b=B5SiWdzYNVNwLOXeBOrmelu/6YBhoa9szETVNitnX72H1o0dVsTlgqypn9EEyxOyf5Gn
+ yygL7kszE2g+WadPhdxwoq2CGWTDGP4aRpZUjuWn2C6z65cFqheTYljN4F785f0v2LQ6
+ E0AlMEUpEojFAihm0bcCPWMjQL/z4UD42kvEuP7nM32I8tf5N0iLQJ0aqhAzPxnWZySQ
+ izctGn02d2Uyvtlvo1ZAIIOrfB6Z66MVzlZBeOgzkC+GHq4iAnHM5xDcSbiV/YqFpdpW
+ JlweTBsCRwHNXitF8FUNMDWVPJ1olk9MY1VSHUHZdHggpANfSB4AeAiyCZCfng+DQMv4 sQ== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s6fak9far-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 01 Aug 2023 04:58:29 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3714wS8t010784
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 1 Aug 2023 04:58:28 GMT
+Received: from [10.217.219.237] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Mon, 31 Jul
+ 2023 21:58:22 -0700
+Message-ID: <5481d9ca-4ba0-2545-131b-4a80669061c3@quicinc.com>
+Date: Tue, 1 Aug 2023 10:28:18 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH] MAINTAINERS: correct file entry in STARFIVE JH7110 DPHY
- RX DRIVER
-To: Lukas Bulwahn <lukas.bulwahn@gmail.com>, Jack Zhu
-	<jack.zhu@starfivetech.com>, Minda Chen <minda.chen@starfivetech.com>, "Vinod
- Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	<linux-phy@lists.infradead.org>
-CC: <kernel-janitors@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-References: <20230731114856.14401-1-lukas.bulwahn@gmail.com>
+ Thunderbird/102.12.0
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe
+ PHY
+To: Andrew Halaney <ahalaney@redhat.com>
+CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, <agross@kernel.org>,
+        <andersson@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <conor+dt@kernel.org>, <konrad.dybcio@linaro.org>, <mani@kernel.org>,
+        <quic_shazhuss@quicinc.com>, <quic_nitegupt@quicinc.com>,
+        <quic_ramkri@quicinc.com>, <quic_nayiluri@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+        Rob Herring
+	<robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        Vinod Koul
+	<vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+References: <1689311319-22054-1-git-send-email-quic_msarkar@quicinc.com>
+ <1689311319-22054-3-git-send-email-quic_msarkar@quicinc.com>
+ <132e9514-7eb9-8915-6130-5bf656c1aaac@linaro.org>
+ <ca51b1dc-5805-5b01-01e0-a7dff535cb6c@quicinc.com>
+ <y7tuvgc7r4o6jhe7hhyqxaksalld4zn5ou53ywdkwfrp2y773v@z3nvbgd2i6lz>
 Content-Language: en-US
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-In-Reply-To: <20230731114856.14401-1-lukas.bulwahn@gmail.com>
-X-Originating-IP: [183.27.98.54]
-X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
- (172.16.6.62)
-X-YovoleRuleAgent: yovoleflag
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+In-Reply-To: <y7tuvgc7r4o6jhe7hhyqxaksalld4zn5ou53ywdkwfrp2y773v@z3nvbgd2i6lz>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 0kT6QFnbvNxd5NXSxvMwm7KtVb1BwWqB
+X-Proofpoint-GUID: 0kT6QFnbvNxd5NXSxvMwm7KtVb1BwWqB
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-08-01_01,2023-07-31_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ suspectscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0 bulkscore=0
+ phishscore=0 malwarescore=0 spamscore=0 clxscore=1011 impostorscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308010045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_182224_613769_FC89DEA1 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20230731_215837_963832_6EFD021A 
+X-CRM114-Status: GOOD (  22.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,47 +112,159 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
+On 7/25/2023 11:21 PM, Andrew Halaney wrote:
+> On Fri, Jul 21, 2023 at 04:33:20PM +0530, Mrinmay Sarkar wrote:
+>> On 7/17/2023 12:55 PM, Krzysztof Kozlowski wrote:
+>>> On 14/07/2023 07:08, Mrinmay Sarkar wrote:
+>>>> Add devicetree YAML binding for Qualcomm QMP PCIe PHY
+>>>> for SA8775p platform.
+>>>>
+>>>> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+>>>> ---
+>>>>    .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml      | 19 ++++++++++++++++++-
+>>>>    1 file changed, 18 insertions(+), 1 deletion(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>>>> index a0407fc..ca55ed9 100644
+>>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>>>> @@ -16,6 +16,8 @@ description:
+>>>>    properties:
+>>>>      compatible:
+>>>>        enum:
+>>>> +      - qcom,sa8775p-qmp-gen4x2-pcie-phy
+>>>> +      - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>>>>          - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>>>>          - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>>>>          - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+>>>> @@ -30,7 +32,7 @@ properties:
+>>>>      clocks:
+>>>>        minItems: 5
+>>>> -    maxItems: 6
+>>>> +    maxItems: 7
+>>>>      clock-names:
+>>>>        minItems: 5
+>>>> @@ -41,6 +43,7 @@ properties:
+>>>>          - const: rchng
+>>>>          - const: pipe
+>>>>          - const: pipediv2
+>>>> +      - const: phy_aux
+>>>>      power-domains:
+>>>>        maxItems: 1
+>>>> @@ -141,6 +144,20 @@ allOf:
+>>>>            compatible:
+>>>>              contains:
+>>>>                enum:
+>>>> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+>>>> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>>>> +    then:
+>>>> +      properties:
+>>>> +        clocks:
+>>>> +          minItems: 7
+>>>> +        clock-names:
+>>>> +          minItems: 7
+>>>> +
+>>>> +  - if:
+>>>> +      properties:
+>>>> +        compatible:
+>>>> +          contains:
+>>>> +            enum:
+>>> This probably works but is not obvious and easy to read. You have here
+>>> if:then:else: block, so else applies to your variant. Change all these
+>>> if clauses for clocks into separate clauses per matching variant
+>>> (if:then: ... if:then:... if:then:...)
+> As far as I can tell, this actually doesn't work :(
+>
+>>> Best regards,
+>>> Krzysztof
+>> My Bad here, This patch already applied we will take care this in next patch
+>> set.
+>>
+>> Thanks,
+>> Mrinmay
+>>
+> Mrinmay, do you plan on spinning what Krzysztof suggested? I grabbed
+> linux-next today and ran into this (looks like clocks, clock-names in
+> binding is broken and looks like we're either missing the required
+> power-domain in the dts or it isn't actually required):
+>
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] % git diff
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] % ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CHECK_DTBS=1 DT_SCHEMA_FILES=phy/qcom,sc8280xp-qmp-pcie-phy.yaml qcom/sa8775p-ride.dtb
+>        UPD     include/config/kernel.release
+>        LINT    Documentation/devicetree/bindings
+>        CHKDT   Documentation/devicetree/bindings/processed-schema.json
+>        SCHEMA  Documentation/devicetree/bindings/processed-schema.json
+>      /home/ahalaney/git/linux-next/Documentation/devicetree/bindings/power/qcom,kpss-acc-v2.yaml: ignoring, error parsing file
+>        DTC_CHK arch/arm64/boot/dts/qcom/sa8775p-ride.dtb
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c04000: 'power-domains' is a required property
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c04000: clocks: [[31, 66], [31, 68], [31, 94], [31, 72], [31, 74], [31, 77], [31, 70]] is too long
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c04000: clock-names: ['aux', 'cfg_ahb', 'ref', 'rchng', 'pipe', 'pipediv2', 'phy_aux'] is too long
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c14000: 'power-domains' is a required property
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c14000: clocks: [[31, 80], [31, 82], [31, 94], [31, 86], [31, 88], [31, 91], [31, 84]] is too long
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      /home/ahalaney/git/linux-next/arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: phy@1c14000: clock-names: ['aux', 'cfg_ahb', 'ref', 'rchng', 'pipe', 'pipediv2', 'phy_aux'] is too long
+>          from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+>      ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CHECK_DTBS=1    7.65s user 0.52s system 99% cpu 8.231 total
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] %
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] %
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] %
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] % # Total hack just to show our issues in current binding
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] % git diff
+>      diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>      index ca55ed9d74ac..5476cf2422da 100644
+>      --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>      +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>      @@ -87,7 +87,6 @@ required:
+>         - reg
+>         - clocks
+>         - clock-names
+>      -  - power-domains
+>         - resets
+>         - reset-names
+>         - vdda-phy-supply
+>      @@ -132,12 +131,6 @@ allOf:
+>                 maxItems: 5
+>               clock-names:
+>                 maxItems: 5
+>      -    else:
+>      -      properties:
+>      -        clocks:
+>      -          minItems: 6
+>      -        clock-names:
+>      -          minItems: 6
+>       
+>         - if:
+>             properties:
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] % ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CHECK_DTBS=1 DT_SCHEMA_FILES=phy/qcom,sc8280xp-qmp-pcie-phy.yaml qcom/sa8775p-ride.dtb
+>        UPD     include/config/kernel.release
+>        LINT    Documentation/devicetree/bindings
+>        CHKDT   Documentation/devicetree/bindings/processed-schema.json
+>        SCHEMA  Documentation/devicetree/bindings/processed-schema.json
+>      /home/ahalaney/git/linux-next/Documentation/devicetree/bindings/power/qcom,kpss-acc-v2.yaml: ignoring, error parsing file
+>        DTC_CHK arch/arm64/boot/dts/qcom/sa8775p-ride.dtb
+>      ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CHECK_DTBS=1    7.58s user 0.87s system 98% cpu 8.618 total
+>      (dtb-checker) ahalaney@fedora ~/git/linux-next (git)-[tags/next-20230724] %
+>
+>
+> Thanks,
+> Andrew
 
-On 2023/7/31 19:48, Lukas Bulwahn wrote:
-> Commit f8aa660841bc ("phy: starfive: Add mipi dphy rx support") adds the
-> MAINTAINERS section STARFIVE JH7110 DPHY RX DRIVER referring to
-> 'phy-starfive-dphy-rx.c', but the file actually added in this commit is
-> named 'phy-jh7110-dphy-rx.c'.
-> 
-> Correct the file entry in STARFIVE JH7110 DPHY RX DRIVER.
-> 
-> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-
-Thank you for your correcting.
-
-Reviewed-by: Changhuang Liang <changhuang.liang@starfivetech.com>
+Hi Andrew,
+Yes, as I mentioned earlier we have plan to send the fixes for this.
 
 Thanks,
-Changhuang
+Mrinmay
 
-> ---
->  MAINTAINERS | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 733bcfa0209a..003b0461641a 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -20345,7 +20345,7 @@ M:	Jack Zhu <jack.zhu@starfivetech.com>
->  M:	Changhuang Liang <changhuang.liang@starfivetech.com>
->  S:	Supported
->  F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
-> -F:	drivers/phy/starfive/phy-starfive-dphy-rx.c
-> +F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
->  
->  STARFIVE JH7110 MMC/SD/SDIO DRIVER
->  M:	William Qiu <william.qiu@starfivetech.com>
 
 -- 
 linux-phy mailing list
