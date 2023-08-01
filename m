@@ -4,48 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD756C001DE
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jul 2023 20:49:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87030C04A94
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Aug 2023 01:22:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6zXgQLujy+pGrJyaNZ7QRUadwsMlLDXI2YiMqksrWe4=; b=M2uO6nH3P3yXwd
-	/qVoDWfNVno+ElhYv6rmXQU+CR+20GgqbIOX1kR43KYvaGM2ampM+u+o55z0zB9h6zxlfNe+b8Qdh
-	ceFc2ZW7VUDgncs84+OZEXrUPBlidE47mytfBURFOKwUDfdvSAJ2FCVeBsuxs7MJmcVH6KS0oQMhO
-	Xrxf2RjE+2jJAb/6YhmjuihzqeHy70ukwxt3+fiKOEf48A/TcLPQtnGzuY/VcoFKF0IbzSFzTSC4c
-	eosxgEsBdIuexOrxEB7kB1cWR8s9kJjil6mc1yHj/yha2ctWUN7tJtDIug95GUikwoQlRsfmcSV3B
-	YzCEnNI6onVOjQZu/fow==;
+	List-Owner; bh=mNPw/cvIcaTBQULTq7zNYiJBpoSmgg6PPqRSt886zvg=; b=4cdSQs6V/CShhP
+	BzBL6LOyqE6KGUerdM6eCLD3KNKjh+a61RpqADqmXErQzjlsPzioszea/O2bgDFutemd6PKbG/Adl
+	TyoRVz/lPscfaxAx8ACgR8T8STlL6wE73YkMKFoq3ZwUSVTxPkHaDmUyVkhkVztIknATjU1lUJhyk
+	iDR2Ndshd5F+a4X7PTZKRDv2LLrRapqd6PT9ZoMOWp9gN7A8mxHJT8LxfC5nM70A+m8vQyxa5t4iB
+	18Po/6FJaTQtWSi6/MfgkOX2JRulWmlop+gOKL+TATSsjmFL1IqUxlODzt59NQyabqkdO3es/XdkZ
+	Vq5xMiMAWGZj2z0kb/Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQZq2-00HKBL-21;
-	Mon, 31 Jul 2023 20:49:58 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qQZpz-00HKA1-0p;
-	Mon, 31 Jul 2023 20:49:56 +0000
-Received: from i53875aa8.versanet.de ([83.135.90.168] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1qQZpx-0008VE-VJ; Mon, 31 Jul 2023 22:49:54 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- Jagan Teki <jagan@edgeble.ai>
-Cc: Jagan Teki <jagan@edgeble.ai>, linux-phy@lists.infradead.org,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [PATCH 04/14] phy: rockchip: inno-dsidphy: Add rv1126 support
-Date: Mon, 31 Jul 2023 22:49:53 +0200
-Message-ID: <2294411.ElGaqSPkdT@diego>
-In-Reply-To: <20230731110012.2913742-5-jagan@edgeble.ai>
-References: <20230731110012.2913742-1-jagan@edgeble.ai>
- <20230731110012.2913742-5-jagan@edgeble.ai>
+	id 1qQe5k-0008FD-0J;
+	Tue, 01 Aug 2023 01:22:28 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qQe5g-0008BI-1D
+	for linux-phy@lists.infradead.org;
+	Tue, 01 Aug 2023 01:22:27 +0000
+Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 7EE917FD3;
+	Tue,  1 Aug 2023 09:21:37 +0800 (CST)
+Received: from EXMBX062.cuchost.com (172.16.6.62) by EXMBX165.cuchost.com
+ (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 1 Aug
+ 2023 09:21:37 +0800
+Received: from [192.168.125.107] (183.27.98.54) by EXMBX062.cuchost.com
+ (172.16.6.62) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Tue, 1 Aug
+ 2023 09:21:36 +0800
+Message-ID: <c03886ed-f39e-09c4-6435-7a0e63341da7@starfivetech.com>
+Date: Tue, 1 Aug 2023 09:21:35 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH] MAINTAINERS: correct file entry in STARFIVE JH7110 DPHY
+ RX DRIVER
+To: Lukas Bulwahn <lukas.bulwahn@gmail.com>, Jack Zhu
+	<jack.zhu@starfivetech.com>, Minda Chen <minda.chen@starfivetech.com>, "Vinod
+ Koul" <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	<linux-phy@lists.infradead.org>
+CC: <kernel-janitors@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+References: <20230731114856.14401-1-lukas.bulwahn@gmail.com>
+Content-Language: en-US
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+In-Reply-To: <20230731114856.14401-1-lukas.bulwahn@gmail.com>
+X-Originating-IP: [183.27.98.54]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX062.cuchost.com
+ (172.16.6.62)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230731_134955_295261_7E2DE574 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20230731_182224_613769_FC89DEA1 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,17 +77,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, 31. Juli 2023, 13:00:02 CEST schrieb Jagan Teki:
-> Add support for Rockchip RV1126 DSI-DPHY.
+
+
+On 2023/7/31 19:48, Lukas Bulwahn wrote:
+> Commit f8aa660841bc ("phy: starfive: Add mipi dphy rx support") adds the
+> MAINTAINERS section STARFIVE JH7110 DPHY RX DRIVER referring to
+> 'phy-starfive-dphy-rx.c', but the file actually added in this commit is
+> named 'phy-jh7110-dphy-rx.c'.
 > 
-> The existing 2.5GHz phy timing table added for RK3568 is working
-> as it is for RV1126 as well.
+> Correct the file entry in STARFIVE JH7110 DPHY RX DRIVER.
 > 
-> Signed-off-by: Jagan Teki <jagan@edgeble.ai>
+> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Thank you for your correcting.
 
+Reviewed-by: Changhuang Liang <changhuang.liang@starfivetech.com>
 
+Thanks,
+Changhuang
+
+> ---
+>  MAINTAINERS | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 733bcfa0209a..003b0461641a 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -20345,7 +20345,7 @@ M:	Jack Zhu <jack.zhu@starfivetech.com>
+>  M:	Changhuang Liang <changhuang.liang@starfivetech.com>
+>  S:	Supported
+>  F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+> -F:	drivers/phy/starfive/phy-starfive-dphy-rx.c
+> +F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
+>  
+>  STARFIVE JH7110 MMC/SD/SDIO DRIVER
+>  M:	William Qiu <william.qiu@starfivetech.com>
 
 -- 
 linux-phy mailing list
