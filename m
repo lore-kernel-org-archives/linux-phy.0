@@ -4,82 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D84FDC001DE
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Aug 2023 12:31:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E96D7C001DF
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Aug 2023 12:18:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=syEi5Kzu4DKAWRHKI2kPrsdgEbCnjSTdLEqW65kX0A0=; b=D53VW/W+UB8lB6
-	aYCZvKYBrf29h9BhVfPpUUvYEb1ksrZpbdeWQrLY2eBPx9VoYRYkOdzTAkkez4N3rVEJRRqrlg5pw
-	xK41kVoaooEIuNBoVbwdVgEwn/z0J6Vn+G7geQMifCyR/ISpgrybWWJ8OD7k2Jx2uHSt6rJGOLYsx
-	SstbfNxIHZQrCoH5RRCGCgGZUs7m7kEHOCgo3II4WF2BCQslC6FU2fcTUT4+A8ArBB0qYg+4/+3Dd
-	ydEHPDVKCoUri9c5uvq//zdgBsTWx9tDBAEep6ESjK86ROVE0sWpHhwJLCOvEPqSNVajmCTaYS8Dw
-	XsqPJ2Mgali7u0fJhKiw==;
+	List-Owner; bh=6gGjn4rc8C6YwxEJU07OeZdDepFU2sgQ9dNflCpi+yU=; b=CL9VNuHM242Bzz
+	LdT7LwhxK/xiTHefAacz6MJJy/4Fispk+39UkC5uajVFxvQwDgLe6rse7ptdzFYxgs2nZ6Tn0GDTb
+	UYtScbzsWBco44NXl2jLWQgfFp6idA2Eb9oSQgIpq7JW815y/Wke9HCJPNLhqt1j3L5jiKNFaQRCt
+	YowoAox3eqRa+Vde+/54U/T1hosKb/2VAQt5nFt+7bq2CqaKEK8UDq1pZixpK7PwvHovQO50rOGAr
+	m2yaVcHL8dHmGQ/+RqfD5B5CiNNpaj8kQAqJYHZSi5Y6nL0fDlvlXDz4gH0T658CPbGyiGaWhNBZY
+	QK4usX8uMawCYedhz/3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qScuq-00FPNR-39;
-	Sun, 06 Aug 2023 12:31:25 +0000
-Received: from mgamail.intel.com ([134.134.136.31])
+	id 1qSzC5-00HB5t-1o;
+	Mon, 07 Aug 2023 12:18:41 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qScun-00FPMI-37
+	id 1qSzC2-00HB2r-1E
 	for linux-phy@lists.infradead.org;
-	Sun, 06 Aug 2023 12:31:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1691325081; x=1722861081;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=WG+jMRSs1giuugV7/S2AhBZlclIgxIwrnVuxY1rUKxk=;
-  b=PxzI3Z6ZWHUrDn67x7Am/Dj/yjvJG6bJZshcZzE5tOlWa1YDkfjOojN3
-   AbtWK5ixGXZC5ar8SvhHJl50wsGf+WkNnloABuk3CVXwjHKize+rTrEH5
-   Blw6iPUREJpGdRpv1wjRIR5nYA8ezFfgiP9l8KlGGkgLjdzUyRmltQend
-   4BEClJZ8wE6vZ1pYccEfKa4sQw+LnlxLxTDJoMa04eR5U4H8YT7p5MLzM
-   YcPyAg7ghprPfdofjJhOcPW05Fqwz2QSTI++udFi90VTHr8BV4brN4kVF
-   wk+/BX2pk02RS3aOYEy3zcgE1OmzdhRQQfXUqp16fIkhTuM8RF6Gi9aum
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10794"; a="434222197"
-X-IronPort-AV: E=Sophos;i="6.01,259,1684825200"; 
-   d="scan'208";a="434222197"
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
-  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Aug 2023 05:31:15 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10794"; a="760144574"
-X-IronPort-AV: E=Sophos;i="6.01,259,1684825200"; 
-   d="scan'208";a="760144574"
-Received: from lkp-server01.sh.intel.com (HELO d1ccc7e87e8f) ([10.239.97.150])
-  by orsmga008.jf.intel.com with ESMTP; 06 Aug 2023 05:31:11 -0700
-Received: from kbuild by d1ccc7e87e8f with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1qScub-0004Df-34;
-	Sun, 06 Aug 2023 12:31:09 +0000
-Date: Sun, 6 Aug 2023 20:30:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	freedreno@lists.freedesktop.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v3 1/3] drm/display: add transparent bridge helper
-Message-ID: <202308062017.iKU92hML-lkp@intel.com>
-References: <20230802011845.4176631-2-dmitry.baryshkov@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230802011845.4176631-2-dmitry.baryshkov@linaro.org>
+	Mon, 07 Aug 2023 12:18:39 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 377CDXfp028121;
+	Mon, 7 Aug 2023 12:18:30 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=eFxUCvH8EU21Zz7uktuMmRveUg+ZKrw/iykE8bEffxE=;
+ b=WKHEwkclHSEApcIOUp/Cg/Y47oQcpPh/I0iTF6ZEoPd17TsDlY2MTlX4yNd0TX8oDmZs
+ u/uBvajDyLqzFjb7keMjEe9kzeGVzGBcIJmC+mpw1hTAqyYFrKjcaOgqU0YZzwOzmvIs
+ LAIaNUKiIk1Ki8lQRHzBjGrdQz0ocgd2FGq9eX3l4FHahFpqgSv/e70RNrWAFLM2cHis
+ z0pHQr8xLtYkdHJBDIPK48LjVI8GQoZV6GNwOCxYqCGpLV7RVoCa87qb21QP1hsh37Ln
+ 8sAHOZrHKqtDq5oLx12MqkQ1l2L9APxxw1luI5g8DDOxE/XanikRv9en7GXKGsEkqCgO Tw== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s9drrkg55-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 07 Aug 2023 12:18:30 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 377CIRsx027949;
+	Mon, 7 Aug 2023 12:18:27 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3s9fgk7kk1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Mon, 07 Aug 2023 12:18:27 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 377CIQsk027932;
+	Mon, 7 Aug 2023 12:18:26 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 377CIQxw027926;
+	Mon, 07 Aug 2023 12:18:26 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
+	id 258631B64; Mon,  7 Aug 2023 17:48:26 +0530 (+0530)
+From: Rohit Agarwal <quic_rohiagar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+        abel.vesa@linaro.org
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        quic_pkondeti@quicinc.com, Rohit Agarwal <quic_rohiagar@quicinc.com>
+Subject: [PATCH v2 1/9] dt-bindings: phy: qcom,snps-eusb2-repeater: Add compatible for PM7550BA
+Date: Mon,  7 Aug 2023 17:48:10 +0530
+Message-Id: <1691410698-25180-2-git-send-email-quic_rohiagar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1691410698-25180-1-git-send-email-quic_rohiagar@quicinc.com>
+References: <1691410698-25180-1-git-send-email-quic_rohiagar@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: iGOi9sY-nOKc1Ac1Vw8ZXzVwWbzsZ3zz
+X-Proofpoint-GUID: iGOi9sY-nOKc1Ac1Vw8ZXzVwWbzsZ3zz
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-08-07_12,2023-08-03_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
+ phishscore=0 mlxlogscore=885 adultscore=0 spamscore=0 clxscore=1011
+ bulkscore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308070112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230806_053122_044432_EA512FDC 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230807_051838_558672_275C90A8 
+X-CRM114-Status: GOOD (  13.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,40 +99,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Add a dt-bindings compatible string for the Qualcomm's PM7550BA PMIC.
 
-kernel test robot noticed the following build warnings:
+Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
+---
+ .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml          | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-[auto build test WARNING on drm-misc/drm-misc-next]
-[also build test WARNING on usb/usb-testing usb/usb-next usb/usb-linus drm-intel/for-linux-next drm-intel/for-linux-next-fixes drm-tip/drm-tip linus/master v6.5-rc4 next-20230804]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Dmitry-Baryshkov/drm-display-add-transparent-bridge-helper/20230802-091932
-base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
-patch link:    https://lore.kernel.org/r/20230802011845.4176631-2-dmitry.baryshkov%40linaro.org
-patch subject: [PATCH v3 1/3] drm/display: add transparent bridge helper
-config: i386-randconfig-r072-20230806 (https://download.01.org/0day-ci/archive/20230806/202308062017.iKU92hML-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
-reproduce: (https://download.01.org/0day-ci/archive/20230806/202308062017.iKU92hML-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202308062017.iKU92hML-lkp@intel.com/
-
-sparse warnings: (new ones prefixed by >>)
->> drivers/gpu/drm/display/drm_simple_bridge.c:118:25: sparse: sparse: symbol 'drm_simple_bridge_drv' was not declared. Should it be static?
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+index 083fda5..029569d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+@@ -15,7 +15,12 @@ description:
+ 
+ properties:
+   compatible:
+-    const: qcom,pm8550b-eusb2-repeater
++    oneOf:
++      - items:
++          - enum:
++              - qcom,pm7550ba-eusb2-repeater
++          - const: qcom,pm8550b-eusb2-repeater
++      - const: qcom,pm8550b-eusb2-repeater
+ 
+   reg:
+     maxItems: 1
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.7.4
+
 
 -- 
 linux-phy mailing list
