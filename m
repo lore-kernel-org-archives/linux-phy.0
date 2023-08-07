@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C16C9C04A94
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B5C5C001DB
 	for <linux-phy@archiver.kernel.org>; Mon,  7 Aug 2023 12:18:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,51 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ep8sGn2HbFpptupF+079nT6lRhFGdlJpJXsRl7S92g=; b=p/uLiDNpNRSR9h
-	CKXN0UeUcyovTALNKq4GnC7MiTHUPR7dXPNi4vdAVZY3JTgBTE6DXRHUdTRCFjzsjFzxAI7RQr+NG
-	XH2n3puNLX6pnG1xVjnEg1dlR7jm/5QODm9TUsow3nx+m63Rb4gKOijbifYX1mVoZgLAkBk6MQMaq
-	rhCCirglKg2hSE35Nez+BMMIpV+HlL7OfbWcazqt4pin69eLphvzZ9ghE/T6kN0t8cazDNeVtJTWk
-	zXdJaZ5xA9xYZnm5oc9CoetcIJYEO4IasPvWAM3TYwM7G4s8xU+jOgoMStB4rba9hh74vbhFlWzZc
-	ZPTDN3dR5CVnvQOnWAJQ==;
+	List-Owner; bh=/V12Ggsyfyzq+bVi0FkbfK8bn+1mN0jwbrJPiLlUKq8=; b=oNYq4T4hp0VDV/
+	HUFtNpy/N1j/+bKMTuAYDtZJdITQ33puQ+umvDa36Q2TFjSlOdgorP7PTbMAy9PwLDmJuh2pTwdWL
+	ji2foMEEDTkyCLN8poGzY395SmmC7dgTeKctDUfrLDs8/m/4vODl1WrnCZqAX5Mnow5BvG9KjWT1v
+	D4G5EVQsFqNDB79LmKqEAMf2Gzd6LYqwC63pBDu4MUFq7HE+gBF0ZPtDpTa+q/+J9JXzYDekMP/dk
+	hxK/2G3P6jMlmO1hVeYGBWpdXHAAfuPXCYImLxrYR4LRv4/nJjTBQHTT4n2NEm9/sz2/U46mxlwTH
+	BPJfjBSNv8pGAnhMwTRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qSzC6-00HB6z-1c;
-	Mon, 07 Aug 2023 12:18:42 +0000
+	id 1qSzC5-00HB6E-2u;
+	Mon, 07 Aug 2023 12:18:41 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qSzC2-00HB2u-1M
+	id 1qSzC2-00HB2x-1I
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Aug 2023 12:18:40 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3778Zwuc013711;
+	Mon, 07 Aug 2023 12:18:39 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3779SuPN016378;
 	Mon, 7 Aug 2023 12:18:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=HlB0HnHXh3xggqZ3z4OMzwJkbe1DysruF6BTkCRFqMM=;
- b=llRpBGlMFzkneCMswa+AWlpULpQXRI4vMoWNMAB4Y8CdeNg3Ocjkg1BWOY6Idcwxg6f0
- 9rsx/KUQlWAfN083nAnCTlYwv4n0TzNTEvP0WbucVyxaO7lOkanG8DWQhUSulDIvp4sC
- +e5l61gYkIpPZQjUOyBejv/Qzedh11ZqkeJHM5/u4lZFE60qww2IOyVjdlCLe/HoYO1N
- n9R/wIx9fIF6AX1nTdkl9li+G5JIyrg9ccsCBWQl8ZB2Aq3O9WcHV6Q9qk1SYd2jeX8e
- psatIdrV4PKfQbXUWa37DbSJTw32ICASmdY9s1vqG2TeJclM6rQDJjQn1XlEH+s0H2q9 XQ== 
+ bh=gItqIJAhTAd77ZUSt2tHmbzWAUrLfL72TDdLDPaW35I=;
+ b=d5Lx/y2UDSI+aZyoFZwgqnyQaJTzhGY4wKSkF1A5zh+5ijKE9jYeJuURMmOzhgNOK8o/
+ knQNBL0LxiSejQHkshHZBl2mJ/4bymt5gdf6q0mCPHzDwCVfDNhq0Xas9sPu29avmwYU
+ LXzp9kkt89HgRPRfw0hFWUoZndOpc69ULVo3KQXmbkgHeiA0c1Lq6qZXTTVUAGUNIJ5W
+ BIrQ3adbmla4kjbTeadAwp4pFNos+JG1QtqGV4lAQDAKhfPlXaJ7XCuxfXowvSXouaqj
+ +nO6vpcd8F8YtqDNgTUouCO9YKZY9uIgdua+qsPAYzogUZGdAfcpTi9Z8tol6aEakUwM YA== 
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3saw0r8jvm-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sawbg8gy5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 07 Aug 2023 12:18:31 +0000
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 377CIR6E027983;
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 377CISNT028010;
 	Mon, 7 Aug 2023 12:18:28 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3s9fgk7kkg-1
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3s9fgk7kkr-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
 	Mon, 07 Aug 2023 12:18:28 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 377CIRPj027968;
-	Mon, 7 Aug 2023 12:18:27 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 377CISjE027996;
+	Mon, 7 Aug 2023 12:18:28 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 377CIRAv027948;
-	Mon, 07 Aug 2023 12:18:27 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 377CIS31027992;
+	Mon, 07 Aug 2023 12:18:28 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
-	id E1FB41B5B; Mon,  7 Aug 2023 17:48:26 +0530 (+0530)
+	id 751BF1BA1; Mon,  7 Aug 2023 17:48:27 +0530 (+0530)
 From: Rohit Agarwal <quic_rohiagar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
         vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
@@ -65,9 +65,9 @@ To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
         quic_pkondeti@quicinc.com, Rohit Agarwal <quic_rohiagar@quicinc.com>
-Subject: [PATCH v2 4/9] arm64: dts: qcom: Add pm7550ba PMIC dtsi
-Date: Mon,  7 Aug 2023 17:48:13 +0530
-Message-Id: <1691410698-25180-5-git-send-email-quic_rohiagar@quicinc.com>
+Subject: [PATCH v2 6/9] ARM: dts: qcom: sdx65-mtp: Update the pmic used in sdx65
+Date: Mon,  7 Aug 2023 17:48:15 +0530
+Message-Id: <1691410698-25180-7-git-send-email-quic_rohiagar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1691410698-25180-1-git-send-email-quic_rohiagar@quicinc.com>
 References: <1691410698-25180-1-git-send-email-quic_rohiagar@quicinc.com>
@@ -75,19 +75,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 3aWzex0TktElgpyDgjgufkaAjDOK1YLY
-X-Proofpoint-ORIG-GUID: 3aWzex0TktElgpyDgjgufkaAjDOK1YLY
+X-Proofpoint-ORIG-GUID: Le2aEdNkPDKhq4-asdAeWRGwexftGSyC
+X-Proofpoint-GUID: Le2aEdNkPDKhq4-asdAeWRGwexftGSyC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-08-07_12,2023-08-03_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
- phishscore=0 adultscore=0 impostorscore=0 mlxlogscore=568 clxscore=1015
- spamscore=0 lowpriorityscore=0 priorityscore=1501 mlxscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308070113
+ definitions=2023-08-07_11,2023-08-03_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=675
+ impostorscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0 phishscore=0
+ mlxscore=0 priorityscore=1501 malwarescore=0 adultscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
+ definitions=main-2308070112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230807_051838_574843_400654BB 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20230807_051838_559143_2B13353F 
+X-CRM114-Status: GOOD (  15.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,90 +105,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add dtsi for pm7550ba PMIC found in Qualcomm platforms.
+Update the pmic used in sdx65 platform to pm7250b.
 
+Fixes: 26380f298b2b (ARM: dts: qcom: sdx65-mtp: Add pmk8350b and pm8150b pmic)
 Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
 ---
- arch/arm64/boot/dts/qcom/pm7550ba.dtsi | 70 ++++++++++++++++++++++++++++++++++
- 1 file changed, 70 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/pm7550ba.dtsi
+ arch/arm/boot/dts/qcom/qcom-sdx65-mtp.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/pm7550ba.dtsi b/arch/arm64/boot/dts/qcom/pm7550ba.dtsi
-new file mode 100644
-index 0000000..a970b5b
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/pm7550ba.dtsi
-@@ -0,0 +1,70 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/spmi/spmi.h>
-+
-+/ {
-+	thermal-zones {
-+		pm7550ba-thermal {
-+			polling-delay-passive = <100>;
-+			polling-delay = <0>;
-+
-+			thermal-sensors = <&pm7550ba_temp>;
-+
-+			trips {
-+				trip0 {
-+					temperature = <95000>;
-+					hysteresis = <0>;
-+					type = "passive";
-+				};
-+
-+				trip1 {
-+					temperature = <115000>;
-+					hysteresis = <0>;
-+					type = "hot";
-+				};
-+
-+				trip2 {
-+					temperature = <145000>;
-+					hysteresis = <0>;
-+					type = "critical";
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&spmi_bus {
-+	pm7550ba: pmic@7 {
-+		compatible = "qcom,pm7550ba", "qcom,spmi-pmic";
-+		reg = <7 SPMI_USID>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		pm7550ba_temp_alarm: temp-alarm@a00 {
-+			compatible = "qcom,spmi-temp-alarm";
-+			reg = <0xa00>;
-+			interrupts = <0x7 0xa 0x0 IRQ_TYPE_EDGE_BOTH>;
-+			#thermal-sensor-cells = <0>;
-+		};
-+
-+		pm7550ba_gpios: gpio@8800 {
-+			compatible = "qcom,pm7550ba-gpio", "qcom,spmi-gpio";
-+			reg = <0x8800>;
-+			gpio-controller;
-+			gpio-ranges = <&pm7550ba_gpios 0 0 8>;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+		};
-+
-+		pm7550ba_eusb2_repeater: phy@fd00 {
-+			compatible = "qcom,pm7550ba-eusb2-repeater", "qcom,pm8550b-eusb2-repeater";
-+			reg = <0xfd00>;
-+			#phy-cells = <0>;
-+		};
-+	};
-+};
+diff --git a/arch/arm/boot/dts/qcom/qcom-sdx65-mtp.dts b/arch/arm/boot/dts/qcom/qcom-sdx65-mtp.dts
+index 02d8d6e..fcf1c51 100644
+--- a/arch/arm/boot/dts/qcom/qcom-sdx65-mtp.dts
++++ b/arch/arm/boot/dts/qcom/qcom-sdx65-mtp.dts
+@@ -7,7 +7,7 @@
+ #include "qcom-sdx65.dtsi"
+ #include <dt-bindings/regulator/qcom,rpmh-regulator.h>
+ #include <arm64/qcom/pmk8350.dtsi>
+-#include <arm64/qcom/pm8150b.dtsi>
++#include <arm64/qcom/pm7250b.dtsi>
+ #include "qcom-pmx65.dtsi"
+ 
+ / {
 -- 
 2.7.4
 
