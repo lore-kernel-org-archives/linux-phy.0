@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5A5FC001DB
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Aug 2023 13:43:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C151EC001DB
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Aug 2023 13:44:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WeRFC7ajcsp+Ip83jtBlsSATnj9mq/JiK7I/hFuJ0Sk=; b=n5hRkRcTc0ILPP
-	Ai2V5/kN/Ydbkn+7ouUn41giKkvSJSqQcNuhMlHvWWe5gPEQ4pYwgXPWBPi2JTogRAiXVM0tMLGKu
-	YQot/rZIeReW+tl1jYQSQ42EoQUtsy8bamE1mfRx/92+ZVEvU6feZkY8pxZn/KLztW1y0tq9sqGPZ
-	CK2CffWi74qjoxfZT63tt8vHSVQHd+/nzDY5665AaRUMpJ4MJePsRjE+SFOeNCyoU9atLW5KUPDo9
-	SOB1DzmL1a332OdOjN3UBGN0Ep6sn04EaCuhxjNfDtdd3hHT9qjkrA+5yLuavHycPcWclE81bKmfP
-	3c0SoKJnzm4Kol9yYqtA==;
+	List-Owner; bh=8FGl/wl4mTenZp7yxqOjP0OQnRRrs8ssZ1jJsZZ3NS0=; b=CfMngq7Ky4a+Dl
+	FRQ5zFc8MWDyOomvVSBi5vVRJLv1OkUxO4bJq0n8G//u9pWRens1jTAZpP05+xO4HhzLyo2pBjXyY
+	HGHufRNzfWrZgaNjw+zCjRu85L88vvqITpteyn419gFrVYXMhdGrPTr6QlXRcpAKZ0OTQGHii58PN
+	Lx9G4qxpzDcdXVtn6fQt+J9P59K7HjLXQ1LIKGIDfqV9ApfchwlE6PMvOj+QFvcbkxV2pd+FxMfSt
+	JDxK+rfaBoysmf6dc6L+3vn4mbmQ1pGkeXXq/GyZ0PoNC/gvd2pckoAdQ5EWr2b3ajG+uM8Jwfp4z
+	1nOakGOaTtFQQsRUbvtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qT0WI-00HRCq-1I;
-	Mon, 07 Aug 2023 13:43:38 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1qT0Wm-00HRG1-1S;
+	Mon, 07 Aug 2023 13:44:08 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qT0WF-00HRAd-2H
+	id 1qT0Wj-00HREy-36
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Aug 2023 13:43:36 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-4fe11652b64so7018631e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 07 Aug 2023 06:43:30 -0700 (PDT)
+	Mon, 07 Aug 2023 13:44:07 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-4fe1b00fce2so7072154e87.3
+        for <linux-phy@lists.infradead.org>; Mon, 07 Aug 2023 06:44:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1691415809; x=1692020609;
+        d=linaro.org; s=google; t=1691415843; x=1692020643;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=2Q98lyuvE1I3w5lq0DAIUXX2CZJx1fl6gZyp/DMqbeQ=;
-        b=CyoDk109aZXA8aBA8hfWMowusRvXZzY/ImX3+qHHTOMbzAzE49mZgZDSfG50l03skb
-         dLXYpOxAKHb9pQ1iZAfyTwPtiB7uTRotiJs23gw+q64tQQy9xLsyvhSy7CfmVlsKHSNr
-         OUUeu4zBqYvu2wwTgKkmAR490Ev1aL5j0JOhp7zlLMRxU0idr9+LrPXMFWTqqSHhe2Zw
-         HdIe5KeRqY9QoAnHQextvX7J7YvDtudYGaxMxGTc4+gs5hD5FDfmkUOJQRjqDzACGRV/
-         AGr97vmbBVhPZojatsaWNOJPcrLKN9nTix5mddOAUUmURVQ2NAeM4b9RalmKO5nDv5nd
-         9zSA==
+        bh=xJgkbDr/FFbsyvavq8tPPpOUZnTU1lAlO34H/EOo+xY=;
+        b=bW0yz6olO+YNQGugfuan087rO6lIK8VWzcUF/RZDuuy6WVyTzg1NJMg5csvdQ3Tdau
+         iFJIgpWuCb1JmUBiH9K8lfH7POTSrQf5sInNGfi0qDZALZFcmd8pVMrPvGwLJcfpuQnR
+         CchZ2xr8mSc98mfH2IusIDw0w9I1h6X+zp7S7XsqIqmaH9KTn2AcoqI4/FWUpPZ5qirE
+         d5GcoauBhmLARkFBt4a+3pgSkn+ipQcDfg9pON0kzA880GpSKBdy2WWw4ivjDYSJ4bx1
+         FqT6Zn/dEerPaRGC4v/jU1/yipIukieDkDI+vXkezSVjMqy5XFJuu/dC5hZmsOHlFnir
+         8JRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1691415809; x=1692020609;
+        d=1e100.net; s=20221208; t=1691415843; x=1692020643;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=2Q98lyuvE1I3w5lq0DAIUXX2CZJx1fl6gZyp/DMqbeQ=;
-        b=ISeRXLQPlkAzVtSJBcRfoAX0VQAhTcjzXzdLAufR7ei9zSNU5cVFGGND8ScNljg++J
-         fXIb2/gycE/5YS8CPZ3LKWlHXCzX7eaPhsd0LLUKeZgfYhlSyEe0QhxesOSovmt4HRXC
-         2J4XRVZ4Xe80AJJLl4HTYVCVdFsYRYFCBNVpGp+DKUKDN6L/bQ0VKdhSAdhqUsgyKzQU
-         Vlq/0Sw1KLG3ErAklizYTGzuXMEAkdFKCjlC5IkHf6xYDV5C5w7FU3Frvrh9LkWbW8Ld
-         LXEz5lYDH9FKYrNDdIbbsvXGPhuAcAPVy1YgPcq7yUflAP+2hNiKNCPEyQUAvMgTqrPD
-         1caA==
-X-Gm-Message-State: AOJu0Yy3G1ZmGY7ncXgJdIEMoFTF7d29f8OM7ogdfXWSJlrvTQ9O5ueH
-	7zTYT5kupHRCw5LIKjal7bl+DA==
-X-Google-Smtp-Source: AGHT+IE/7f5hb2IxLkMQD7JsUfoacy5RSJu8uKCkUYCCSZNBbP/zTp5xQiIdCsY1/2XzwTF2aovqSw==
-X-Received: by 2002:a05:6512:313b:b0:4fe:28f6:d542 with SMTP id p27-20020a056512313b00b004fe28f6d542mr5453873lfd.13.1691415809419;
-        Mon, 07 Aug 2023 06:43:29 -0700 (PDT)
+        bh=xJgkbDr/FFbsyvavq8tPPpOUZnTU1lAlO34H/EOo+xY=;
+        b=VH9Kr1vX75pd1zpJaEKKVE1toqcYMae0HNYof7tDpErxSQgxfrrEIIX8010ZB/ERY6
+         XOgqV7bzpacSZ1+AQGr2ixl7BWTY34UtUij/QxzUfrtg2M9clyfiwqRzhrowUUtdfiM4
+         jySkSccZYjRgoiNjvmYXuib9LKbDmcSiGvf0ImgZITuqUNE4hP1wb9rJIWnunHOHt9Ox
+         EwGxDTxtNMxL4jY+5SWtBez0XTwafWEHNMETmfFUpwXJSKWKaxyIGI006IPmmdlwozcz
+         FWc0E080tnjXYGT7ZGWMClZi6pXiKPh6UNyluALb3Aq5GxAqmReICwE2TBLBLr7dvo5v
+         rOew==
+X-Gm-Message-State: AOJu0YyqIxP2uBk0A0vzRiKZU1WxURhK/z/X0IiXPO4Ou8eS0iwZ54DT
+	Lpwi9gBK7e59vr6s7IjIKYLcvA==
+X-Google-Smtp-Source: AGHT+IFJAecrw6Y41B22tuMQ43DNko5rwd1RrXRcqO7aEcw+a2HGSChTz7CXL25Q7cDvvIybygB3gA==
+X-Received: by 2002:a19:d619:0:b0:4fe:347d:7c4b with SMTP id n25-20020a19d619000000b004fe347d7c4bmr5290817lfg.7.1691415843253;
+        Mon, 07 Aug 2023 06:44:03 -0700 (PDT)
 Received: from [192.168.1.101] (abxi185.neoplus.adsl.tpnet.pl. [83.9.2.185])
-        by smtp.gmail.com with ESMTPSA id r6-20020a19ac46000000b004fe3a2e3952sm1511134lfc.100.2023.08.07.06.43.28
+        by smtp.gmail.com with ESMTPSA id r6-20020a19ac46000000b004fe3a2e3952sm1511134lfc.100.2023.08.07.06.44.01
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 07 Aug 2023 06:43:28 -0700 (PDT)
-Message-ID: <d3f5651b-ecbc-4836-9f53-6d71e6b16072@linaro.org>
-Date: Mon, 7 Aug 2023 15:43:28 +0200
+        Mon, 07 Aug 2023 06:44:02 -0700 (PDT)
+Message-ID: <335de972-22de-47ed-9445-97db4efce9d2@linaro.org>
+Date: Mon, 7 Aug 2023 15:44:01 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RESEND v2 8/9] arm64: dts: qcom: sdx75: Add rpmhpd node
+Subject: Re: [PATCH RESEND v2 9/9] arm64: dts: qcom: sdx75-idp: Add regulator
+ nodes
 Content-Language: en-US
 To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
@@ -75,7 +76,7 @@ To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <1691415534-31820-1-git-send-email-quic_rohiagar@quicinc.com>
- <1691415534-31820-9-git-send-email-quic_rohiagar@quicinc.com>
+ <1691415534-31820-10-git-send-email-quic_rohiagar@quicinc.com>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -112,10 +113,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <1691415534-31820-9-git-send-email-quic_rohiagar@quicinc.com>
+In-Reply-To: <1691415534-31820-10-git-send-email-quic_rohiagar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230807_064335_753118_8B20919C 
-X-CRM114-Status: UNSURE (   5.06  )
+X-CRM114-CacheID: sfid-20230807_064406_022028_3336F875 
+X-CRM114-Status: UNSURE (   4.89  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,7 +135,7 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 7.08.2023 15:38, Rohit Agarwal wrote:
-> Add rpmhpd node and opps for this node to the SDX75 dts.
+> Add all the regulators along with labels found on SDX75 IDP.
 > 
 > Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
 > ---
