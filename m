@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9718FC001B0
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Aug 2023 08:33:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BDE8C04A94
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Aug 2023 08:33:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NIKaLMIqqfv8aNttvHoQib0t3hLGJrQznV1PdzhRDns=; b=Wgyc55wIE9JONh
-	3b+/J7LzkuROoxEaownojY+2Agk5GzhXJ403h6/hsG2RVuv0VWkQ5r98Yw2wp9fqOY00/UJ/jOoFd
-	KyyERQEo46EiYlPz099TujzXGr7MwOLGrhQNLCas+DYtyoUH1xV9lkd5FUOHR29c1yb+yy2i7NFkA
-	itKnK6k1iatTDEBGD85L7bzPcjPYkM7WULnpvEQAZzI6V6cleWvyhHzSDrkI/+sxmstB7tCfcXAEf
-	LlBg/CQV6KULor/zh6x3G9aVF0C1KKScm2UvjxrsHjnbICdTw7nnnFsgAy8t/gyJGQ6GqbnVwtpFv
-	0nkXaJyVYALqjJ/rzFYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fdrJsIZznEvuVv6LTeJbFQSgb/6HCWz7aLM1PlQ2Jic=; b=zYnRB29U/THY1t
+	QglkvPHd0rX2k3FjFNPyEUV/8URGKrNUcuN/E/VZQ2ny5NeYdLbKHdpeF1lb9YBDFFKFRAi48sb32
+	XyOmAdoch9OK53a3VIqCfdpzB8AZzgHPdUhTAtZCGfdSYFPhgoIDxHy0GzUyRlL8oRlHI0salENqU
+	JL7qtSn+AfKHA3lsyKwVStWR8wSlbEqOkiJ5LSaEpI0yI1H0b4TvbBK0D87fYbLBpAAMNID9iJ8EL
+	gya0eLizOJEiSsJi7QqbFYEs57oNZzt9NaNEHymaFMaZMLf7E51hHY/PCjB3c01PGI7j0tFAaM51M
+	HOhWyK8l/ohAnM28MJXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTI9w-0022VP-12;
-	Tue, 08 Aug 2023 08:33:44 +0000
+	id 1qTI9y-0022W8-0c;
+	Tue, 08 Aug 2023 08:33:46 +0000
 Received: from mail-vi1eur05on20629.outbound.protection.outlook.com ([2a01:111:f400:7d00::629] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTI9s-0022Tj-18;
-	Tue, 08 Aug 2023 08:33:42 +0000
+	id 1qTI9u-0022Tj-1c;
+	Tue, 08 Aug 2023 08:33:44 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JVvAEmxvs/GwqV1kZYRc5zgiN1ofk6LRAfb98y+vBoJikbnTuUNBnre3FiK4j0DtSt5lfqMmxCxUuXSMJvKHggyrwfSHSqyYPBroHmYv2DqgmZRdgZDqW9kRamA7QWV3Ai8KO3MA2Drwr7s+1FL+WJXdRGPUjusP2DzPeiFgkIwD9aM2OryZR6Agg4I/lUXHJWmhV2VzO3IXryu3vyFWBCBBDDadoTbFEFzTK2xTvhGN+KgtZZxHyuljDWN3K9FDfBvIHjKpir1bERqoip7emHX/3+zTdrA8umPHWG15TEpfA8ER63Ry1gvdppxXzXLVWj/aSb1KmdU27ulL5uTNRA==
+ b=iJJ98+15Zdp9N8BeNjzMO5+cg48Z5FQr15qiaHM9A+l8+BXkxtVGz0Pni87dtJbNTAovl0jONXm6P/glnQZ6PSj+q/QBD8+OKyULDW7PyRjAKrODsaTxQM1ohO/Lh640bNB8W9g/Fi3jVnuL4bmAPWeM1XeZENShR4TYBINn0Wb/N49S/EiHTVAHuMapFXee22gZ2J5t8OHLNnEZABQETMvN6/9mfPOeMTGPaWxn5UZW/zvAXyUNTJDzriH8ZLrxj1UAySY4qaHxPyPLO18rW2lYZRh3JFugbTafmOqrwZ3SewlQufta7I7d9Brg2m1xhnkzWLS9maiaQKehUnHOpA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=LCFG0r+e9Tx7/xVcb9WiIrWpJRRmz2xsrP5p0FANTC0=;
- b=Db1u6z4/MS/E4VvO7jg9Awr6KHFx19rAOJzOo5pAe4kcIVtw7qVmywMzrU3e3QNaGllTju90IDut2cwXkKui7+w6Y/Pcdt8uanfHtVWGsF4ttbA4GcLVTIBoTQYZQhPoWXT3xJtwrYKcv3pzhWCZxxIuoylbiXzNr2aYvi9kAwfBeYq924zaiTNrzDrMlUvBhdc3NdEn38cPEDZSerSSVCPFCS9hHH3rxuQiIlaE9QKhacvmJZ/DUZAHl7f8XlrQrVqW30rhZ1vOosUWGGjMPyIzp2aLHwxXazNxWTZxFmsZpImPddhgezdXhmHD3RH4XO4EQcMjNhUMX3klvxyvgg==
+ bh=ijwdeyLNa08NSnsUKg5AfgNvRzY4Cu80iQJCRRRMXtk=;
+ b=Yw+jSDcQRvB+OYJn5WlJkv8EczI/RWAZ4p80gupv3bF9zB2vXKqRrUDBLvAUeAoh4Hxcxjm7mQzGXmSIOFVsfMTCY0DgBLfdCl5FIv1HuLh6RKQSN7mR42eqv1/CHweVA0p0TDX9xEXfQM1uIF9H8CTtRga3AcIhTy7DRkJE9rl19FcPLqnn65mNck4JA3hOd0NUdukYMHCWu8FVGsPK8PeC4vb6pyh2nc54En9i/fRSmP5A2HtmTSo1ZKY5nkLlP05Ar8pyhCb6V3xAx1wtFzNKJVic/C4krKE99O3+7/1ncZlEMYG5d4HYJabekH/TVs1vutgQAOqhQ4yGQ19whA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LCFG0r+e9Tx7/xVcb9WiIrWpJRRmz2xsrP5p0FANTC0=;
- b=jqbdNEctknnVldl20L/q62I9TB/k9iQJ5Oa/5fqw3+JlhB6IF6S8KZ6aU/43QjNAay4TCr9nnhmdivaAPv/HKwl3sgKltHGogH/nIQxz4rjYI0dadQPwFuw4kntgkBqmo3WSDwRJ9p22HsXvnWEByJ84QBnOIJu3IETCplIYHNc=
+ bh=ijwdeyLNa08NSnsUKg5AfgNvRzY4Cu80iQJCRRRMXtk=;
+ b=jHHBGKHs93JgIz6D26rza8m1WkN/5oiRvXXJWAk3KT8H5yqHas57qd3RcCEdK4EKkWRpxhi+pMhsvBl9BPV4ucuEAtPuDwychtEn2o8H+wVdjZCfkbrtAH3NyZq2/gbEKiyEeNNPE75IJtwKY+f6h4CbXPufjtS+aPE2MRclA3Q=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
  by VE1PR04MB7296.eurprd04.prod.outlook.com (2603:10a6:800:1aa::13) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6652.26; Tue, 8 Aug
- 2023 08:33:32 +0000
+ 2023 08:33:38 +0000
 Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
  ([fe80::3505:c499:96d4:1429]) by PAXPR04MB9448.eurprd04.prod.outlook.com
  ([fe80::3505:c499:96d4:1429%4]) with mapi id 15.20.6652.026; Tue, 8 Aug 2023
- 08:33:31 +0000
+ 08:33:38 +0000
 From: Sandor Yu <Sandor.yu@nxp.com>
 To: andrzej.hajda@intel.com,
 	neil.armstrong@linaro.org,
@@ -76,73 +76,66 @@ Cc: kernel@pengutronix.de,
 	oliver.brown@nxp.com,
 	alexander.stein@ew.tq-group.com,
 	sam@ravnborg.org
-Subject: [PATCH v8 0/7] Initial support Cadence MHDP8501(HDMI/DP) for i.MX8MQ
-Date: Tue,  8 Aug 2023 16:32:36 +0800
-Message-Id: <20230808083243.3113192-1-Sandor.yu@nxp.com>
+Subject: [PATCH v8 1/7] drm: bridge: Cadence: convert mailbox functions to macro functions
+Date: Tue,  8 Aug 2023 16:32:37 +0800
+Message-Id: <20230808083243.3113192-2-Sandor.yu@nxp.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20230808083243.3113192-1-Sandor.yu@nxp.com>
+References: <20230808083243.3113192-1-Sandor.yu@nxp.com>
 X-ClientProxiedBy: SI1PR02CA0010.apcprd02.prod.outlook.com
  (2603:1096:4:1f7::17) To PAXPR04MB9448.eurprd04.prod.outlook.com
  (2603:10a6:102:2b1::21)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|VE1PR04MB7296:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3201602f-854b-45b4-59bb-08db97ea25dd
+X-MS-Office365-Filtering-Correlation-Id: 3d441f7a-a141-4585-2047-08db97ea29e3
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: joXUA5LvnF66+TEv9jDjBAAPKsTsn+Vc5Dsbba3QjtOzTb4KN4j9rVYblCO4zyih9duW+LyNJnvTeJI4qLleUQxlnCEJAWMNqWfYMhfFquazomjTpHhm/t+R94HQS+WvAdt3OMManjkzHAMxSB95KknKiIj36VezyCh96ibuMLaSuzl0Izkn8kLL5sbKSbmm4iG8wxVytD9UNjKdGg2hWNO1xFch366q+CWocV5Qe1dDFpFD00OM4RBBjhfERRBz0M5CqLXRB48YSeFW1d+g//lnVp18IyntrZrCHsnpvICu1j8F1w5yJy+zSSOGDrCAn+slRGk5W9AEDG6uvtXOJtbgYRY9bh2ufBTCW1GkzPzeUNJ2XqzQJG0HGmUI1KCdCaWK0akfakfdAbg00GXApzf4PSJCKnXQe/FB/rAAglYzIxsdSTjuaKjSYoyMnbPt/9HpYt/etRrk9sJy7Z9kgFKGFzpyIO8vxb7e1ddSEqqrtIbrB3iFKVL2h2SYvryuGwHgpSxAMh+pcM3d3BHy4kxKqbpLcWjZPaWKhMyqJRIjFBzxqLOvWmk8vMHDdV7wXE4p6TRA8cjPEPj5zQN5hHc59+dAThvRLgreVWWp/0qjK0P9M6HaqjSla19d2VnD
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(136003)(396003)(376002)(39860400002)(366004)(346002)(451199021)(1800799003)(186006)(83380400001)(36756003)(2906002)(5660300002)(2616005)(38100700002)(52116002)(38350700002)(6486002)(66476007)(66556008)(921005)(66946007)(966005)(6512007)(4326008)(316002)(41300700001)(86362001)(8676002)(26005)(7416002)(1076003)(8936002)(6506007)(478600001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: pkLE7ZRspfOPpxZLGczaDqmOCW/7q7/ZzPSDszSnhl0AUekgdh6niUVvR8tO8XpyUdcmGZDOktr6cpqR5PMtDwz04A/xJx3c92YduqTx2oZg1AZ+bIir07LsJWe8MbPNqEkchnf3IIMoreEofkON1RVgwAWZi8+uQeRJV0Z024ZmMD+OH5n3ksWd6iVs45YyUQceAt87KfTK4/Uf+JAwg9UYBnS+BVKhrG0OVzeLERlpzyeYuU3/le21hW8fEWC6a6ZFr0MXnnOZjA7SPVRFkLDxav0/5hAI2iMVXBUjBDWgo89kEcUqBjIDlUBG3mVcP9oHUhzVAHAMlLMu+qh6In+WnqbrOtgkxJFhkztgBxXSPft/xdUcNRvf6miT3q55BmZed1pxNRl0dMl9l2FyYCAYr34MJjej8Rp8Y3+2XWwFvLosIv8Hv9hE4YI7R9thppH8TCgyzaVnLTmnmK49oLPfUj0ZwyuCbcsNfttRY6q8gpbOiXAqe0jod0T97rHWADsTw9tJ22XJS+tB+fydilQjR8BK63+BvXpKaVnmsbqLBNTsW3bO32yP9lDpy05jdCG9m8ra1pw0ow0ITE8qJiJBJSZsEIMOZnHZdMioqs1aKowh/913vtuBi0guFi96
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(136003)(396003)(376002)(39860400002)(366004)(346002)(451199021)(1800799003)(186006)(83380400001)(36756003)(2906002)(5660300002)(2616005)(30864003)(15650500001)(38100700002)(52116002)(38350700002)(6486002)(66476007)(66556008)(921005)(66946007)(6512007)(4326008)(316002)(41300700001)(86362001)(8676002)(26005)(7416002)(1076003)(8936002)(6506007)(478600001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?czVzT3U0cEIyM3UvTzVtSmg2SlRhODhJdlNaeCtPOW1zZ1BXK2Z5SFFaUlVq?=
- =?utf-8?B?WllrMGJHQTQ0Y3hmYlVGN003NGZQZVFTTjRxQS9UMHZtOEJnTnF4c2xBWjZJ?=
- =?utf-8?B?YlFnVWY1dGdZTFZZWmxKcFJKcWJMYmRxL0ZudStKME82UW41bnJWeGV6dFdR?=
- =?utf-8?B?VHVYODlIOWV4THZNZ0dBRzUxUTZPL0NNTXRqam1IeG9kZ21sa3A5QjR2Z21l?=
- =?utf-8?B?MDB1Q1d5QTZ5NHdjVWRBTzMzNVdiY1JjblNFZmtMRHp4bHljN1dWYmJ3QnQx?=
- =?utf-8?B?SThFcG56Wk0wVjE0NXZoc244aTE3am5jSVlJQWJLT2ZyL29IRFVadUxQU2tv?=
- =?utf-8?B?REpWVzJHdVh3ZmdYV21Xb0JaRkZMS0NRVlVBcFZoZi9LZ2hDQ1k1aDlSUHhL?=
- =?utf-8?B?dUlKUDkzdjhpVEhOVS9WbFZ0OXkzRUFkdXRQZUtRRkFNTUdETUNwS0NhSVZ0?=
- =?utf-8?B?TS9KQ1ozZW5QYS9vckw2bzVkZjh1SjYvUktDTjVBbnh2NkIvTmVuVVN2RDY2?=
- =?utf-8?B?L1FIeXpRMzVJdzloalpXU2QrVkUxRURXaFdkazhRVUZkWnRvNUFrQTYrenBC?=
- =?utf-8?B?cG9aM2hhZU5aUExNZTFNd3czZjc0dVZHcHJHL3lJQWpsa044TUlKWk5paXJ1?=
- =?utf-8?B?L3ZxUi96YzVOQTk2RXF6QTBEVGNqd0NCS0xSb2NITnhadTB1dWFJcFpQc2g4?=
- =?utf-8?B?M1dpSTFNWkUza2JyVDlaV0k1WWFibnRGUFpHNEdrR0FkS3RCWGFYRng2RlVV?=
- =?utf-8?B?WGNpZ1ZxSVF6amZyTFRHc1hQM3paRENOS1dMaXRhRzFCNWIrSUtLb1JFWC9G?=
- =?utf-8?B?ODZodlFuVXpOUUZZb0dDRWdUZTRkdDc4RkZJQldKSjlkQk8rT3hudThOYzFk?=
- =?utf-8?B?Uk1pdUlRYUk1bU80M2ZUNDYvQW9naVQyZy96dDNaRW1TK2dkbkJiQ0tsSHVO?=
- =?utf-8?B?SEtXc2tWWEJRUkdqMkFZVE9MMGJVYzdSSFVzZ0RIQWRocHpzcmhJOWowZ0tG?=
- =?utf-8?B?dWlnTmlHMHpJVm9OM1dVQllXUnYrRno5dzJKNFRLYkNxOWVnOFVNdjArMlNL?=
- =?utf-8?B?MW5JZDR6alJ3YUVXZC9lVWhKbzRDMDJEZkVaVS85OFdOVndkbnkyNzJZdnBU?=
- =?utf-8?B?V2ZYV0FpM2JNZFR1WEt4eGRNbEt1aS96dms5TnNvcjk4MnB0Qlg0SVJlUUxh?=
- =?utf-8?B?R3B4VGk0QTMzWEF0Zm0rM0V1cVNWODVsQmpKdUNJZEJ6SjdOb3J2NkNKWDIx?=
- =?utf-8?B?d1FoNEM1ald2WmgvRjNMSll6bjI0eFpzZ3Y1M1ZkbUhzdmJuSndJblB2cGg0?=
- =?utf-8?B?UEg0YmtJUjN3Q1NjZ2lBYk8rVEdvcWUvYXArR1kvayswZkVhYWxuT2M1VWZO?=
- =?utf-8?B?SlZJc3pkY2ZqandFUktRWWd4Rjh6VGN0R1BTRU9jYUxXQmNEQ0lZTmFJUnJF?=
- =?utf-8?B?TUl1dkNXRXVhbWZ6YkFMQnNYcUZoS1o4blRpNG5ZNkMvRUwvMlAvL1VYTDJJ?=
- =?utf-8?B?ZHdCZG1zNXI1eEh1a3JPWmZDdHpxTlBsUU1yeWRRM3ZjVTgrM2JpRC9aMk95?=
- =?utf-8?B?S2FBWHdwTGNyNlp0OWV2WU53WTJ5aGh4MDhhTlBJaXRBU2I2M1N1clgxVFhW?=
- =?utf-8?B?L2hGRXV5RGNNakJxU1hTaFlpb1JyVDk1MHQzTzV1TlAvVUdPTklIQVhkQ3dW?=
- =?utf-8?B?em8rRHZsU3hjZEN6QThTcEdUdWNubSticm9ZU3FmbUFwZEkwYXFWc05RU1JD?=
- =?utf-8?B?eEQwQ0pERGNhNVZCVm9aZ09oN0FXN0tQTmNOS2FjVDd2N291eHBLbUtkdzVJ?=
- =?utf-8?B?MUVuZnlIRmw5TWdKMUVjZE9nYjZTQy9taVl2eVNiUDNlVWkwelQ1eTYyYkZU?=
- =?utf-8?B?eXZCUVQ0R1M4eklFT3V6R0V3RzFqMEJtVEdnOXp1MEtTcVVFTlpXN0FqS1hK?=
- =?utf-8?B?UkZSa25qbGpWSi9QZnFjSm5objJwcDFyOTdaNEpUNXFFcUhROWVkelJwZnB2?=
- =?utf-8?B?YkhPTE56SEJ2ZVpSN1FVVHRnZHJUZmdpR3RaT09MaURVUDgzWGY0NW5nSmwz?=
- =?utf-8?B?MlZqNzFJdythZUdpZUFITmw3aGxrcG9RTVFRN1Q0KzFPK0IvT25oL3RrbzhR?=
- =?utf-8?Q?qwdGXEDn4yn9hN3nsh285dams?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ypEshae1EHEVoLqndjt/f55A+ps+ki9J+vE97iPwc3xj4q+MtG3x4TRZPmvg?=
+ =?us-ascii?Q?e82RpRXC/JjG+Zy2qlz73uv5YTscnkrZexOyMpkVZ2bPZL9Vsp9n9M80wAAr?=
+ =?us-ascii?Q?7VPDQ/AVwYyhsqyt+EtZA9wUWsi+cSrLCeGXei2US3uIU2ZevrCpqyZFhKjw?=
+ =?us-ascii?Q?BBUmdPWJa8A0+q8SE1n3HIdBfZSuG8Yc5u6aGLUqB6UgjYdoK3LL6HhJ/KT/?=
+ =?us-ascii?Q?w3VAqxDSZw1DOHztUyjpOGq4p3eUbSe8AkmwC35ak8tUrmFgO9na94/QSXCA?=
+ =?us-ascii?Q?Kt458P3dSmcyD0/bAVErgh5fW5LKpZHJA4iWYNd6YE+6FD0cz4huV9BX6g8W?=
+ =?us-ascii?Q?v3P2toAdie15LBrUrtn7C2DbPI8ZdrVS9n8pzecXQ2Pdzmi25XHQUWmhK1gZ?=
+ =?us-ascii?Q?6u4Vta6EmE1dxsYtcjLz0XR5w0RMhRHm2L3KiDBAPLRiDJSTdy4iVgvi7+VT?=
+ =?us-ascii?Q?qCQukN7h4eytewAT8sFqKFviOsxr8yors+tJW3k7rJKx7B8iMatXpC2xIguK?=
+ =?us-ascii?Q?XihLsgTz6dWQg3L5VdjhTMTBNC/fR+8JIo3Q01erjnXqSFP3PhcPExMYyUni?=
+ =?us-ascii?Q?Ov+isIJY2U7SDaGfaKecKobQNeaaTjy1VNhsgzg5xbGEVOVeatx6goe4g5uj?=
+ =?us-ascii?Q?hII7euyUfCBOSIXgK9dcsoI/6Wr9NL9aBO5paNcLy0Fc5g9bVLnv9w77t+vF?=
+ =?us-ascii?Q?Xde+X/XjRWmsskSGBHkQGaXt8Hm3qUlgTC3i+x1tP7IqiTe0Fqkgy9hv7/pX?=
+ =?us-ascii?Q?YEn6oTTqw4XgEKkrguwNyjY2e+Mz2QxaOjvxn1TtlAwMYiliEb54M3NPf/ni?=
+ =?us-ascii?Q?3diAs0md3S0jFBJe71WRp0JNGHqpE/do+uu0JXCarJ6EYDSOg5q2YpKjYZ1H?=
+ =?us-ascii?Q?yenKuUFOydjfIEb+fndGS+Qoh0n/U5RVA92hlyEfiuLJWCQ4M5JJzej/lqpQ?=
+ =?us-ascii?Q?/9q7h8ZheICcojcZ3mSEXXiH/yj4Rs/Fl3hApOAHQC2WxwCrs/lE3sWwnIXx?=
+ =?us-ascii?Q?6yZAIKTcG4zcmfedwGY1ZeoC6L3je4UyApGoT5uGKL/MGK7epLj9GXuBb9oe?=
+ =?us-ascii?Q?BANUpy+Q+tcFAhLVRMtK00743Gd0m2fulYXLu3kmasZtxRwMft60ancBMRya?=
+ =?us-ascii?Q?HGhUNTaVIIGyzKJU3xjnlaNdWL1T8i5ngmk7vD/qbNqbsdoDUEQkLvdgeAcs?=
+ =?us-ascii?Q?jzm2Q7kPG5aGDVRdOekaVAk0U6utVwrlUp018faqzmlKbs5ArBCxBNUNqiu+?=
+ =?us-ascii?Q?M3x9mB7xzYajPiNH14uXzeevofeDaKtLeOOLKRy7amdGaWdu7TWM8tLX3qov?=
+ =?us-ascii?Q?PvdfP+GyiEjLpbmOJznEkXUlH1z2kSh1xcyHSeaA95Wd1gKs/nYOuMfn1P5H?=
+ =?us-ascii?Q?MDRY9rK9su9dy1tK/4k5i7Sk3zaOSAaYULUJ+mlceS2Tm4R3S5W9bvIZGywf?=
+ =?us-ascii?Q?wnxl4VM5KDoP2mCfSrXfB1Kf0nPAmFilt1E3IxOKy1jYfCAQkSzJrshiDQb+?=
+ =?us-ascii?Q?inBBOXrDCVSDoRyHCfkyGyYjnA0iGprLhot/YgbRmrtscDkGPf70WLrJdXra?=
+ =?us-ascii?Q?MQNoNOJdP5aT8CjJZ7AGkIkNrWq8t8tJYqyt4h10?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3201602f-854b-45b4-59bb-08db97ea25dd
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3d441f7a-a141-4585-2047-08db97ea29e3
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Aug 2023 08:33:31.8692
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Aug 2023 08:33:38.6527
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 8dlDYfWc9igraLM83oYw5IW/moqyQsFMAdGvtrlLvAxShukGIDF81pNtsdms91+8nRLxS1XlT3wDSfN0n8Ly2A==
+X-MS-Exchange-CrossTenant-UserPrincipalName: ny6IV4ggq+h5jT+hhq2RRZ3vkOBVGx9Q+zdE9zbfVFw6jbBT+6IjFpL6m8/+f7hha/yiTLRos5rczgV1mZ0BiA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7296
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230808_013340_411166_EBE0DA71 
-X-CRM114-Status: GOOD (  17.27  )
+X-CRM114-CacheID: sfid-20230808_013342_544985_4C012B1E 
+X-CRM114-Status: GOOD (  20.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,117 +147,500 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIHBhdGNoIHNldCBpbml0aWFsIHN1cHBvcnQgQ2FkZW5jZSBNSERQODUwMShIRE1JL0RQKSBE
-Uk0gYnJpZGdlCmRyaXZlcnMgYW5kIENhZGVuY2UgSERQLVRYIFBIWShIRE1JL0RQKSBkcml2ZXJz
-IGZvciBGcmVlc2NhbGUgaS5NWDhNUS4KClRoZSBwYXRjaCBzZXQgY29tcG9zZSBvZiBEUk0gYnJp
-ZGdlIGRyaXZlcnMgYW5kIFBIWSBkcml2ZXJzLgoKQm90aCBvZiB0aGVtIG5lZWQgdGhlIGZvbGxv
-d2VkIHR3byBwYXRjaGVzIHRvIHBhc3MgYnVpbGQuCiAgZHJtOiBicmlkZ2U6IENhZGVuY2U6IGNv
-bnZlcnQgbWFpbGJveCBmdW5jdGlvbnMgdG8gbWFjcm8gZnVuY3Rpb25zCiAgcGh5OiBBZGQgSERN
-SSBjb25maWd1cmF0aW9uIG9wdGlvbnMKCkRSTSBicmlkZ2VzIGRyaXZlciBwYXRjaGVzOgogIGR0
-LWJpbmRpbmdzOiBkaXNwbGF5OiBicmlkZ2U6IEFkZCBDYWRlbmNlIE1IRFA4NTAKICBkcm06IGJy
-aWRnZTogQ2FkZW5jZTogQWRkIE1IRFA4NTAxIERQL0hETUkgZHJpdmVyCgpQSFkgZHJpdmVyIHBh
-dGNoZXM6CiAgZHQtYmluZGluZ3M6IHBoeTogQWRkIEZyZWVzY2FsZSBpTVg4TVEgRFAgYW5kIEhE
-TUkgUEhZCiAgcGh5OiBmcmVlc2NhbGU6IEFkZCBEaXNwbGF5UG9ydCBQSFkgZHJpdmVyIGZvciBp
-Lk1YOE1RCiAgcGh5OiBmcmVlc2NhbGU6IEFkZCBIRE1JIFBIWSBkcml2ZXIgZm9yIGkuTVg4TVEK
-CnY3LT52ODoKTUhEUDg1MDEgSERNSS9EUDoKLSBDb3JyZWN0IERUIG5vZGUgbmFtZSB0byAiZGlz
-cGxheS1icmlkZ2UiLgotIFJlbW92ZSAiY2RucyxtaGRwODUwMSIgZnJvbSBtaGRwODUwMSBkdC1i
-aW5kaW5nIGRvYy4KCkhETUkvRFAgUEhZOgotIEludHJvZHVjZWQgZnVuY3Rpb25zIGB3YWl0X2Zv
-cl9hY2tgIGFuZCBgd2FpdF9mb3JfYWNrX2NsZWFyYCB0byBoYW5kbGUKICB3YWl0aW5nIHdpdGgg
-YWNrbm93bGVkZ21lbnQgYml0cyBzZXQgYW5kIGNsZWFyZWQgcmVzcGVjdGl2ZWx5LgotIFVzZSBG
-SUVMRF9QUkUoKSB0byBzZXQgYml0ZmllbGRzIGZvciBib3RoIEhETUkgYW5kIERQIFBIWS4KCnY2
-LT52NzoKTUhEUDg1MDEgSERNSS9EUDoKLSBDb21iaW5lIEhETUkgYW5kIERQIGRyaXZlciBpbnRv
-IG9uZSBtaGRwODUwMSBkcml2ZXIuCiAgVXNlIHRoZSBjb25uZWN0b3IgdHlwZSB0byBsb2FkIHRo
-ZSBjb3JyZXNwb25kaW5nIGZ1bmN0aW9ucy4KLSBSZW1vdmUgY29ubmVjdG9yIGluaXQgZnVuY3Rp
-b25zLgotIEFkZCA8bGludXgvaGRtaS5oPiBpbiBwaHlfaGRtaS5oIHRvIHJldXNlIOKAmGVudW0g
-aGRtaV9jb2xvcnNwYWNl4oCZLgoKSERNSS9EUCBQSFk6Ci0gTG93ZXJjYXNlIGhleCB2YWx1ZXMK
-LSBGaXggcGFyYW1ldGVycyBpbmRlbnQgaXNzdWUgb24gc29tZSBmdW5jdGlvbnMKLSBSZXBsYWNl
-IOKAmHVkZWxheeKAmSB3aXRoIOKAmHVzbGVlcF9yYW5nZeKAmQoKdjUtPnY2OgpIRE1JL0RQIGJy
-aWRnZSBkcml2ZXIKLSA4NTAxIGlzIHRoZSBwYXJ0IG51bWJlciBvZiBDYWRlbmNlIE1IRFAgb24g
-aS5NWDhNUS4KICBVc2UgTUhEUDg1MDEgdG8gbmFtZSBoZG1pL2RwIGRyaXZlcnMgYW5kIGZpbGVz
-LiAKLSBBZGQgY29tcGF0aWJsZSAiZnNsLGlteDhtcS1taGRwODUwMS1kcCIgZm9yIGkuTVg4TVEg
-RFAgZHJpdmVyCi0gQWRkIGNvbXBhdGlibGUgImZzbCxpbXg4bXEtbWhkcDg1MDEtaGRtaSIgZm9y
-IGkuTVg4TVEgSERNSSBkcml2ZXIKLSBDb21iaW5lIEhETUkgYW5kIERQIGR0LWJpbmRpbmdzIGlu
-dG8gb25lIGZpbGUgY2RucyxtaGRwODUwMS55YW1sCi0gRml4IEhETUkgc2NyYW1ibGluZyBpcyBu
-b3QgZW5hYmxlIGlzc3VlIHdoZW4gZHJpdmVyIHdvcmtpbmcgaW4gNEtwNjAKICBtb2RlLgotIEFk
-ZCBIRE1JL0RQIFBIWSBBUEkgbWFpbGJveCBwcm90ZWN0LgoKSERNSS9EUCBQSFkgZHJpdmVyOgot
-IFJlbmFtZSBEUCBhbmQgSERNSSBQSFkgZmlsZXMgYW5kIG1vdmUgdG8gZm9sZGVyIHBoeS9mcmVl
-c2NhbGUvCi0gUmVtb3ZlIHByb3BlcnRpZXMgbnVtX2xhbmVzIGFuZCBsaW5rX3JhdGUgZnJvbSBE
-UCBQSFkgZHJpdmVyLgotIENvbWJpbmUgSERNSSBhbmQgRFAgZHQtYmluZGluZ3MgaW50byBvbmUg
-ZmlsZSBmc2wsaW14OG1xLWRwLWhkbWktcGh5LnlhbWwKLSBVcGRhdGUgY29tcGF0aWJsZSBzdHJp
-bmcgdG8gImZzbCxpbXg4bXEtZHAtcGh5Ii4KLSBVcGRhdGUgY29tcGF0aWJsZSBzdHJpbmcgdG8g
-ImZzbCxpbXg4bXEtaGRtaS1waHkiLgoKdjQtPnY1OgotIERyb3AgImNsayIgc3VmZml4IGluIGNs
-b2NrIG5hbWUuCi0gQWRkIG91dHB1dCBwb3J0IHByb3BlcnR5IGluIHRoZSBleGFtcGxlIG9mIGhk
-bWkvZHAuCgp2My0+djQ6CmR0LWJpbmRpbmdzOgotIENvcnJlY3QgZHQtYmluZGluZ3MgY29kaW5n
-IHN0eWxlIGFuZCBhZGRyZXNzIHJldmlldyBjb21tZW50cy4KLSBBZGQgYXBiX2NsayBkZXNjcmlw
-dGlvbi4KLSBBZGQgb3V0cHV0IHBvcnQgZm9yIEhETUkvRFAgY29ubmVjdG9yClBIWToKLSBBbHBo
-YWJldGljYWxseSBzb3J0ZWQgaW4gS2NvbmZpZyBhbmQgTWFrZWZpbGUgZm9yIERQIGFuZCBIRE1J
-IFBIWQotIFJlbW92ZSB1bnVzZWQgcmVnaXN0ZXJzIGRlZmluZSBmcm9tIEhETUkgYW5kIERQIFBI
-WSBkcml2ZXJzLgotIE1vcmUgZGVzY3JpcHRpb24gaW4gcGh5X2hkbWkuaC4KLSBBZGQgYXBiX2Ns
-ayB0byBIRE1JIGFuZCBEUCBwaHkgZHJpdmVyLgpIRE1JL0RQOgotIFVzZSBnZXRfdW5hbGlnbmVk
-X2xlMzIoKSB0byByZXBsYWNlIGhhcmRjb2RlIHR5cGUgY29udmVyc2lvbgogIGluIEhETUkgQVZJ
-IGluZm9mcmFtZSBkYXRhIGZpbGwgZnVuY3Rpb24uCi0gQWRkIG1haWxib3ggbXV0ZXggbG9jayBp
-biBIRE1JL0RQIGRyaXZlciBmb3IgcGh5IGZ1bmN0aW9ucwogIHRvIHJlc2xvdmUgcmFjZSBjb25k
-aXRpb25zIGJldHdlZW4gSERNSS9EUCBhbmQgUEhZIGRyaXZlcnMuCi0gQWRkIGFwYl9jbGsgdG8g
-Ym90aCBIRE1JIGFuZCBEUCBkcml2ZXIuCi0gUmVuYW1lIHNvbWUgZnVuY3Rpb24gbmFtZXMgYW5k
-IGFkZCBwcmVmaXggd2l0aCAiY2Ruc19oZG1pL2NkbnNfZHAiLgotIFJlbW92ZSBicGMgMTIgYW5k
-IDE2IG9wdGlvbmFsIHRoYXQgbm90IHN1cHBvcnRlZC4KCnYyLT52MzoKQWRkcmVzcyBjb21tZW50
-cyBmb3IgZHQtYmluZGluZ3MgZmlsZXMuCi0gQ29ycmVjdCBkdHMtYmluZGluZ3MgZmlsZSBuYW1l
-cyAKICBSZW5hbWUgcGh5LWNhZGVuY2UtaGRwdHgtZHAueWFtbCB0byBjZG5zLG1oZHAtaW14OG1x
-LWRwLnlhbWwKICBSZW5hbWUgcGh5LWNhZGVuY2UtaGRwdHgtaGRtaS55YW1sIHRvIGNkbnMsbWhk
-cC1pbXg4bXEtaGRtaS55YW1sCi0gRHJvcCByZWR1bmRhbnQgd29yZHMgYW5kIGRlc2NyaXB0aW9u
-cy4KLSBDb3JyZWN0IGhkbWkvZHAgbm9kZSBuYW1lLgoKdjIgaXMgYSBjb21wbGV0ZWx5IGRpZmZl
-cmVudCB2ZXJzaW9uIGNvbXBhcmVkIHRvIHYxLgpQcmV2aW91cyB2MSBjYW4gYmUgYXZhaWxhYmxl
-IGhlcmUgWzFdLgoKdjEtPnYyOgotIFJldXNlIENhZGVuY2UgbWFpbGJveCBhY2Nlc3MgZnVuY3Rp
-b25zIGZyb20gbWhkcDg1NDYgaW5zdGVhZCBvZgogIHJvY2tjaGlwIERQLgotIE1haWxib3ggYWNj
-ZXNzIGZ1bmN0aW9ucyBiZSBjb252ZXJ0IHRvIG1hcmNvIGZ1bmN0aW9ucwogIHRoYXQgd2lsbCBi
-ZSByZWZlcmVuY2VkIGJ5IEhEUC1UWCBQSFkoSERNSS9EUCkgZHJpdmVyIHRvby4KLSBQbGFpbiBi
-cmlkZ2UgaW5zdGVhZCBvZiBjb21wb25lbnQgZHJpdmVyLgotIFN0YW5kYWxvbmUgQ2FkZW5jZSBI
-RFAtVFggUEhZKEhETUkvRFApIGRyaXZlci4KLSBBdWRpbyBkcml2ZXIgYXJlIHJlbW92ZWQgZnJv
-bSB0aGUgcGF0Y2ggc2V0LCBpdCB3aWxsIGJlIGFkZCBpbiBhbm90aGVyCiAgcGF0Y2ggc2V0IGxh
-dGVyLgoKWzFdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcHJvamVjdC9saW51eC1yb2Nr
-Y2hpcC9jb3Zlci9jb3Zlci4xNTkwOTgyODgxLmdpdC5TYW5kb3IueXVAbnhwLmNvbS8KClNhbmRv
-ciBZdSAoNyk6CiAgZHJtOiBicmlkZ2U6IENhZGVuY2U6IGNvbnZlcnQgbWFpbGJveCBmdW5jdGlv
-bnMgdG8gbWFjcm8gZnVuY3Rpb25zCiAgcGh5OiBBZGQgSERNSSBjb25maWd1cmF0aW9uIG9wdGlv
-bnMKICBkdC1iaW5kaW5nczogZGlzcGxheTogYnJpZGdlOiBBZGQgQ2FkZW5jZSBNSERQODUwCiAg
-ZHJtOiBicmlkZ2U6IENhZGVuY2U6IEFkZCBNSERQODUwMSBEUC9IRE1JIGRyaXZlcgogIGR0LWJp
-bmRpbmdzOiBwaHk6IEFkZCBGcmVlc2NhbGUgaU1YOE1RIERQIGFuZCBIRE1JIFBIWQogIHBoeTog
-ZnJlZXNjYWxlOiBBZGQgRGlzcGxheVBvcnQgUEhZIGRyaXZlciBmb3IgaS5NWDhNUQogIHBoeTog
-ZnJlZXNjYWxlOiBBZGQgSERNSSBQSFkgZHJpdmVyIGZvciBpLk1YOE1RCgogLi4uL2Rpc3BsYXkv
-YnJpZGdlL2NkbnMsbWhkcDg1MDEueWFtbCAgICAgICAgIHwgMTA0ICsrCiAuLi4vYmluZGluZ3Mv
-cGh5L2ZzbCxpbXg4bXEtZHAtaGRtaS1waHkueWFtbCAgfCAgNTMgKwogZHJpdmVycy9ncHUvZHJt
-L2JyaWRnZS9jYWRlbmNlL0tjb25maWcgICAgICAgIHwgIDE1ICsKIGRyaXZlcnMvZ3B1L2RybS9i
-cmlkZ2UvY2FkZW5jZS9NYWtlZmlsZSAgICAgICB8ICAgMiArCiAuLi4vZHJtL2JyaWRnZS9jYWRl
-bmNlL2NkbnMtbWhkcDg1MDEtY29yZS5jICAgfCAzMTMgKysrKysrCiAuLi4vZHJtL2JyaWRnZS9j
-YWRlbmNlL2NkbnMtbWhkcDg1MDEtY29yZS5oICAgfCA0MTAgKysrKysrKysKIC4uLi9ncHUvZHJt
-L2JyaWRnZS9jYWRlbmNlL2NkbnMtbWhkcDg1MDEtZHAuYyB8IDc4MCArKysrKysrKysrKysrKwog
-Li4uL2RybS9icmlkZ2UvY2FkZW5jZS9jZG5zLW1oZHA4NTAxLWhkbWkuYyAgIHwgNjc0ICsrKysr
-KysrKysrKwogLi4uL2RybS9icmlkZ2UvY2FkZW5jZS9jZG5zLW1oZHA4NTQ2LWNvcmUuYyAgIHwg
-MTk1ICstLS0KIC4uLi9kcm0vYnJpZGdlL2NhZGVuY2UvY2Rucy1taGRwODU0Ni1jb3JlLmggICB8
-ICAgMSAtCiBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvS2NvbmZpZyAgICAgICAgICAgICAgICAgfCAg
-MTggKwogZHJpdmVycy9waHkvZnJlZXNjYWxlL01ha2VmaWxlICAgICAgICAgICAgICAgIHwgICAy
-ICsKIGRyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtcS1kcC5jICAgICB8IDcxNCAr
-KysrKysrKysrKysrCiBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bXEtaGRtaS5j
-ICAgfCA5NTUgKysrKysrKysrKysrKysrKysrCiBpbmNsdWRlL2RybS9icmlkZ2UvY2Rucy1taGRw
-LW1haWxib3guaCAgICAgICAgfCAyNDAgKysrKysKIGluY2x1ZGUvbGludXgvcGh5L3BoeS1oZG1p
-LmggICAgICAgICAgICAgICAgICB8ICAyNCArCiBpbmNsdWRlL2xpbnV4L3BoeS9waHkuaCAgICAg
-ICAgICAgICAgICAgICAgICAgfCAgIDcgKy0KIDE3IGZpbGVzIGNoYW5nZWQsIDQzMTEgaW5zZXJ0
-aW9ucygrKSwgMTk2IGRlbGV0aW9ucygtKQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L2JyaWRnZS9jZG5zLG1oZHA4NTAxLnlhbWwK
-IGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5
-L2ZzbCxpbXg4bXEtZHAtaGRtaS1waHkueWFtbAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMv
-Z3B1L2RybS9icmlkZ2UvY2FkZW5jZS9jZG5zLW1oZHA4NTAxLWNvcmUuYwogY3JlYXRlIG1vZGUg
-MTAwNjQ0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvY2FkZW5jZS9jZG5zLW1oZHA4NTAxLWNvcmUu
-aAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvY2FkZW5jZS9jZG5z
-LW1oZHA4NTAxLWRwLmMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdl
-L2NhZGVuY2UvY2Rucy1taGRwODUwMS1oZG1pLmMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJz
-L3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bXEtZHAuYwogY3JlYXRlIG1vZGUgMTAwNjQ0IGRy
-aXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtcS1oZG1pLmMKIGNyZWF0ZSBtb2RlIDEw
-MDY0NCBpbmNsdWRlL2RybS9icmlkZ2UvY2Rucy1taGRwLW1haWxib3guaAogY3JlYXRlIG1vZGUg
-MTAwNjQ0IGluY2x1ZGUvbGludXgvcGh5L3BoeS1oZG1pLmgKCi0tIAoyLjM0LjEKCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+MHDP8546 mailbox access functions will be share to other mhdp driver
+and Cadence HDP-TX HDMI/DP PHY drivers.
+Move those functions to head file include/drm/bridge/cdns-mhdp-mailbox.h
+and convert them to macro functions.
+
+Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+---
+ .../drm/bridge/cadence/cdns-mhdp8546-core.c   | 195 +-------------
+ .../drm/bridge/cadence/cdns-mhdp8546-core.h   |   1 -
+ include/drm/bridge/cdns-mhdp-mailbox.h        | 240 ++++++++++++++++++
+ 3 files changed, 241 insertions(+), 195 deletions(-)
+ create mode 100644 include/drm/bridge/cdns-mhdp-mailbox.h
+
+diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+index f6822dfa3805..ddd3c633c7bf 100644
+--- a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
++++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+@@ -36,6 +36,7 @@
+ #include <linux/slab.h>
+ #include <linux/wait.h>
+ 
++#include <drm/bridge/cdns-mhdp-mailbox.h>
+ #include <drm/display/drm_dp_helper.h>
+ #include <drm/display/drm_hdcp_helper.h>
+ #include <drm/drm_atomic.h>
+@@ -54,200 +55,6 @@
+ #include "cdns-mhdp8546-hdcp.h"
+ #include "cdns-mhdp8546-j721e.h"
+ 
+-static int cdns_mhdp_mailbox_read(struct cdns_mhdp_device *mhdp)
+-{
+-	int ret, empty;
+-
+-	WARN_ON(!mutex_is_locked(&mhdp->mbox_mutex));
+-
+-	ret = readx_poll_timeout(readl, mhdp->regs + CDNS_MAILBOX_EMPTY,
+-				 empty, !empty, MAILBOX_RETRY_US,
+-				 MAILBOX_TIMEOUT_US);
+-	if (ret < 0)
+-		return ret;
+-
+-	return readl(mhdp->regs + CDNS_MAILBOX_RX_DATA) & 0xff;
+-}
+-
+-static int cdns_mhdp_mailbox_write(struct cdns_mhdp_device *mhdp, u8 val)
+-{
+-	int ret, full;
+-
+-	WARN_ON(!mutex_is_locked(&mhdp->mbox_mutex));
+-
+-	ret = readx_poll_timeout(readl, mhdp->regs + CDNS_MAILBOX_FULL,
+-				 full, !full, MAILBOX_RETRY_US,
+-				 MAILBOX_TIMEOUT_US);
+-	if (ret < 0)
+-		return ret;
+-
+-	writel(val, mhdp->regs + CDNS_MAILBOX_TX_DATA);
+-
+-	return 0;
+-}
+-
+-static int cdns_mhdp_mailbox_recv_header(struct cdns_mhdp_device *mhdp,
+-					 u8 module_id, u8 opcode,
+-					 u16 req_size)
+-{
+-	u32 mbox_size, i;
+-	u8 header[4];
+-	int ret;
+-
+-	/* read the header of the message */
+-	for (i = 0; i < sizeof(header); i++) {
+-		ret = cdns_mhdp_mailbox_read(mhdp);
+-		if (ret < 0)
+-			return ret;
+-
+-		header[i] = ret;
+-	}
+-
+-	mbox_size = get_unaligned_be16(header + 2);
+-
+-	if (opcode != header[0] || module_id != header[1] ||
+-	    req_size != mbox_size) {
+-		/*
+-		 * If the message in mailbox is not what we want, we need to
+-		 * clear the mailbox by reading its contents.
+-		 */
+-		for (i = 0; i < mbox_size; i++)
+-			if (cdns_mhdp_mailbox_read(mhdp) < 0)
+-				break;
+-
+-		return -EINVAL;
+-	}
+-
+-	return 0;
+-}
+-
+-static int cdns_mhdp_mailbox_recv_data(struct cdns_mhdp_device *mhdp,
+-				       u8 *buff, u16 buff_size)
+-{
+-	u32 i;
+-	int ret;
+-
+-	for (i = 0; i < buff_size; i++) {
+-		ret = cdns_mhdp_mailbox_read(mhdp);
+-		if (ret < 0)
+-			return ret;
+-
+-		buff[i] = ret;
+-	}
+-
+-	return 0;
+-}
+-
+-static int cdns_mhdp_mailbox_send(struct cdns_mhdp_device *mhdp, u8 module_id,
+-				  u8 opcode, u16 size, u8 *message)
+-{
+-	u8 header[4];
+-	int ret, i;
+-
+-	header[0] = opcode;
+-	header[1] = module_id;
+-	put_unaligned_be16(size, header + 2);
+-
+-	for (i = 0; i < sizeof(header); i++) {
+-		ret = cdns_mhdp_mailbox_write(mhdp, header[i]);
+-		if (ret)
+-			return ret;
+-	}
+-
+-	for (i = 0; i < size; i++) {
+-		ret = cdns_mhdp_mailbox_write(mhdp, message[i]);
+-		if (ret)
+-			return ret;
+-	}
+-
+-	return 0;
+-}
+-
+-static
+-int cdns_mhdp_reg_read(struct cdns_mhdp_device *mhdp, u32 addr, u32 *value)
+-{
+-	u8 msg[4], resp[8];
+-	int ret;
+-
+-	put_unaligned_be32(addr, msg);
+-
+-	mutex_lock(&mhdp->mbox_mutex);
+-
+-	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_GENERAL,
+-				     GENERAL_REGISTER_READ,
+-				     sizeof(msg), msg);
+-	if (ret)
+-		goto out;
+-
+-	ret = cdns_mhdp_mailbox_recv_header(mhdp, MB_MODULE_ID_GENERAL,
+-					    GENERAL_REGISTER_READ,
+-					    sizeof(resp));
+-	if (ret)
+-		goto out;
+-
+-	ret = cdns_mhdp_mailbox_recv_data(mhdp, resp, sizeof(resp));
+-	if (ret)
+-		goto out;
+-
+-	/* Returned address value should be the same as requested */
+-	if (memcmp(msg, resp, sizeof(msg))) {
+-		ret = -EINVAL;
+-		goto out;
+-	}
+-
+-	*value = get_unaligned_be32(resp + 4);
+-
+-out:
+-	mutex_unlock(&mhdp->mbox_mutex);
+-	if (ret) {
+-		dev_err(mhdp->dev, "Failed to read register\n");
+-		*value = 0;
+-	}
+-
+-	return ret;
+-}
+-
+-static
+-int cdns_mhdp_reg_write(struct cdns_mhdp_device *mhdp, u16 addr, u32 val)
+-{
+-	u8 msg[6];
+-	int ret;
+-
+-	put_unaligned_be16(addr, msg);
+-	put_unaligned_be32(val, msg + 2);
+-
+-	mutex_lock(&mhdp->mbox_mutex);
+-
+-	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_DP_TX,
+-				     DPTX_WRITE_REGISTER, sizeof(msg), msg);
+-
+-	mutex_unlock(&mhdp->mbox_mutex);
+-
+-	return ret;
+-}
+-
+-static
+-int cdns_mhdp_reg_write_bit(struct cdns_mhdp_device *mhdp, u16 addr,
+-			    u8 start_bit, u8 bits_no, u32 val)
+-{
+-	u8 field[8];
+-	int ret;
+-
+-	put_unaligned_be16(addr, field);
+-	field[2] = start_bit;
+-	field[3] = bits_no;
+-	put_unaligned_be32(val, field + 4);
+-
+-	mutex_lock(&mhdp->mbox_mutex);
+-
+-	ret = cdns_mhdp_mailbox_send(mhdp, MB_MODULE_ID_DP_TX,
+-				     DPTX_WRITE_FIELD, sizeof(field), field);
+-
+-	mutex_unlock(&mhdp->mbox_mutex);
+-
+-	return ret;
+-}
+-
+ static
+ int cdns_mhdp_dpcd_read(struct cdns_mhdp_device *mhdp,
+ 			u32 addr, u8 *data, u16 len)
+diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
+index bedddd510d17..10c878bf0e63 100644
+--- a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
++++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.h
+@@ -212,7 +212,6 @@ struct phy;
+ #define MB_MODULE_ID_HDCP_TX			0x07
+ #define MB_MODULE_ID_HDCP_RX			0x08
+ #define MB_MODULE_ID_HDCP_GENERAL		0x09
+-#define MB_MODULE_ID_GENERAL			0x0a
+ 
+ /* firmware and opcodes */
+ #define FW_NAME					"cadence/mhdp8546.bin"
+diff --git a/include/drm/bridge/cdns-mhdp-mailbox.h b/include/drm/bridge/cdns-mhdp-mailbox.h
+new file mode 100644
+index 000000000000..9f551bf956a1
+--- /dev/null
++++ b/include/drm/bridge/cdns-mhdp-mailbox.h
+@@ -0,0 +1,240 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Cadence MHDP Firmware Access API function by Malibox.
++ *
++ * Copyright (C) 2022 NXP Semiconductor, Inc.
++ *
++ */
++#ifndef CDNS_MHDP_MAILBOX_H
++#define CDNS_MHDP_MAILBOX_H
++
++#include <asm/unaligned.h>
++#include <linux/iopoll.h>
++
++/* mailbox regs offset */
++#define CDNS_MAILBOX_FULL		0x00008
++#define CDNS_MAILBOX_EMPTY		0x0000c
++#define CDNS_MAILBOX_TX_DATA		0x00010
++#define CDNS_MAILBOX_RX_DATA		0x00014
++
++#define MAILBOX_RETRY_US		1000
++#define MAILBOX_TIMEOUT_US		2000000
++
++/* Module ID Code */
++#define MB_MODULE_ID_GENERAL		0x0A
++#define MB_MODULE_ID_DP_TX		0x01
++
++/* General Commands */
++#define GENERAL_REGISTER_WRITE		0x05
++#define GENERAL_REGISTER_READ		0x07
++
++/* DP TX Command */
++#define DPTX_WRITE_FIELD		0x08
++
++/* MHDP Firmware access functions by Mailbox */
++#define cdns_mhdp_mailbox_read(_mhdp) \
++({ \
++	int ret, empty, val; \
++\
++	WARN_ON(!mutex_is_locked(&(_mhdp)->mbox_mutex)); \
++\
++	do {  \
++		ret = readx_poll_timeout(readl, (_mhdp)->regs + CDNS_MAILBOX_EMPTY,  \
++					 empty, !empty, MAILBOX_RETRY_US,  \
++					 MAILBOX_TIMEOUT_US);  \
++		if (ret < 0)  \
++			break;  \
++\
++		val = readl((_mhdp)->regs + CDNS_MAILBOX_RX_DATA) & 0xff; \
++	} while (0);  \
++\
++	(ret < 0) ? ret : val;  \
++})
++
++#define cdns_mhdp_mailbox_write(_mhdp, _val) \
++({ \
++	int ret, full;  \
++\
++	WARN_ON(!mutex_is_locked(&(_mhdp)->mbox_mutex)); \
++\
++	do {  \
++		ret = readx_poll_timeout(readl, (_mhdp)->regs + CDNS_MAILBOX_FULL,  \
++					 full, !full, MAILBOX_RETRY_US,  \
++					 MAILBOX_TIMEOUT_US);  \
++		if (ret < 0)  \
++			break;  \
++\
++		writel((_val), (_mhdp)->regs + CDNS_MAILBOX_TX_DATA); \
++	} while (0);  \
++\
++	ret; \
++})
++
++#define  cdns_mhdp_mailbox_recv_header(_mhdp, _module_id, _opcode, _req_size) \
++({  \
++	u32 mbox_size, i;  \
++	u8 header[4];  \
++	int ret;  \
++\
++	do {  \
++		/* read the header of the message */ \
++		for (i = 0; i < sizeof(header); i++) {  \
++			ret = cdns_mhdp_mailbox_read(_mhdp);  \
++			if (ret < 0)  \
++				break;  \
++\
++			header[i] = ret;  \
++		}  \
++\
++		mbox_size = get_unaligned_be16(header + 2);  \
++\
++		if ((_opcode) != header[0] || (_module_id) != header[1] ||  \
++		    (_req_size) != mbox_size) {  \
++			/* If the message in mailbox is not what we want, we need to
++			 * clear the mailbox by reading its contents. */  \
++			for (i = 0; i < mbox_size; i++)   \
++				if (cdns_mhdp_mailbox_read(_mhdp) < 0)  \
++					break;  \
++\
++			ret = -EINVAL;  \
++		}  \
++\
++		ret = 0; \
++\
++	} while (0);  \
++\
++	ret;  \
++})
++
++#define cdns_mhdp_mailbox_recv_data(_mhdp, _buff, _buff_size)  \
++({  \
++	u32 i;  \
++	int ret;  \
++\
++	do {  \
++		for (i = 0; i < (_buff_size); i++) {  \
++			ret = cdns_mhdp_mailbox_read(_mhdp);  \
++			if (ret < 0)  \
++				break;  \
++\
++			((u8 *)_buff)[i] = ret;  \
++		}  \
++\
++		ret = 0;  \
++\
++	} while (0);  \
++\
++	ret; \
++})
++
++#define cdns_mhdp_mailbox_send(_mhdp, _module_id, _opcode, _size, _message)  \
++({  \
++	u8 header[4];  \
++	int ret, i;  \
++\
++	header[0] = _opcode;  \
++	header[1] = _module_id;  \
++	put_unaligned_be16(_size, header + 2);  \
++\
++	do {  \
++		for (i = 0; i < sizeof(header); i++) {  \
++			ret = cdns_mhdp_mailbox_write(_mhdp, header[i]);  \
++			if (ret < 0)  \
++				break;  \
++		}  \
++\
++		for (i = 0; i < _size; i++) {  \
++			ret = cdns_mhdp_mailbox_write(_mhdp, ((u8 *)_message)[i]);  \
++			if (ret < 0)  \
++				break;;  \
++		}  \
++		ret = 0;  \
++	} while (0);  \
++\
++	ret;  \
++})
++
++#define cdns_mhdp_reg_read(_mhdp, _addr, _value)  \
++({  \
++	u8 msg[4], resp[8];  \
++	int ret;  \
++\
++	put_unaligned_be32(_addr, msg);  \
++\
++	mutex_lock(&(_mhdp)->mbox_mutex);  \
++\
++	do {  \
++		ret = cdns_mhdp_mailbox_send(_mhdp, MB_MODULE_ID_GENERAL,  \
++					     GENERAL_REGISTER_READ,  \
++					     sizeof(msg), msg);  \
++		if (ret < 0)  \
++			break;  \
++\
++		ret = cdns_mhdp_mailbox_recv_header(_mhdp, MB_MODULE_ID_GENERAL,  \
++						    GENERAL_REGISTER_READ,  \
++						    sizeof(resp));  \
++		if (ret < 0)  \
++			break;  \
++\
++		ret = cdns_mhdp_mailbox_recv_data(_mhdp, resp, sizeof(resp));  \
++		if (ret < 0)  \
++			break;  \
++\
++		/* Returned address value should be the same as requested */  \
++		if (memcmp(msg, resp, sizeof(msg))) {  \
++			ret = -EINVAL;  \
++			break;  \
++		}  \
++\
++		*((u32 *)_value) = get_unaligned_be32(resp + 4);  \
++			ret = 0;  \
++	} while (0);  \
++\
++	mutex_unlock(&(_mhdp)->mbox_mutex);  \
++	if (ret < 0) {  \
++		dev_err((_mhdp)->dev, "Failed to read register\n");  \
++		*((u32 *)_value) = 0;  \
++	}  \
++\
++	ret;  \
++})
++
++#define cdns_mhdp_reg_write(_mhdp, _addr, _val)  \
++({  \
++	u8 msg[8];  \
++	int ret;  \
++\
++	put_unaligned_be32(_addr, msg);  \
++	put_unaligned_be32(_val, msg + 4);  \
++\
++	mutex_lock(&(_mhdp)->mbox_mutex);  \
++\
++	ret = cdns_mhdp_mailbox_send(_mhdp, MB_MODULE_ID_GENERAL,  \
++				      GENERAL_REGISTER_WRITE, sizeof(msg), msg);  \
++\
++	mutex_unlock(&(_mhdp)->mbox_mutex);  \
++\
++	ret;  \
++})
++
++#define cdns_mhdp_reg_write_bit(_mhdp, _addr, _start_bit, _bits_no, _val) \
++({  \
++	u8 field[8];  \
++	int ret;  \
++\
++	put_unaligned_be16(_addr, field);  \
++	field[2] = _start_bit;  \
++	field[3] = _bits_no;  \
++	put_unaligned_be32(_val, field + 4);  \
++\
++	mutex_lock(&(_mhdp)->mbox_mutex);  \
++\
++	ret = cdns_mhdp_mailbox_send((_mhdp), MB_MODULE_ID_DP_TX, \
++				     DPTX_WRITE_FIELD, sizeof(field), field);  \
++\
++	mutex_unlock(&(_mhdp)->mbox_mutex);  \
++\
++	ret; \
++})
++
++#endif
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
