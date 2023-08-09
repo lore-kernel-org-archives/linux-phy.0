@@ -4,89 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19789C04A94
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Aug 2023 07:58:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44268C001B0
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Aug 2023 23:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=YoLDmgRm4Thbnq491Xw6tycEse1I0DL9212yT+TI41w=; b=hs04P2xPyAyF0z
-	I8McqCFT7m8QcMaKxVv9Uz++Lm06/yS8mOw4kpMQsiaS90eloa5huwYA4zi4nFjqVm0R7UHl42OjU
-	beDLPd3IQHUblAjLUE1OxKbjKQgpexm8clbroP+sgoBmixC27FYoWnblcrFlVf1fAWzZfUKetXXFH
-	PIAohPAI4PUFZYTSElTsgdDVp8TaGURcYixBG0yi/9rQAk5970ot4gVGi05BQD1vabcWlc8E449we
-	/mi+kd2bXxePLOfbUMGe1XHKAipiRaAKC3QILjw4jD0zXfcv2NXvTeVyXsod0NPWE6QB77y4akm7Y
-	OorYaLVEKHaCuFD9T9+w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pdDYrsPR5CF/AnIu5rINn5to0gfTk2r5XxYr0W/3bN4=; b=h7V/cdBbvdIWbB
+	MznPeAClFTxdbn4Cs8vrJCOeXvlsM9mDnMH6Z40rnhWr1VMvfuLpyEOQH0SaInbitH19r1d6sUQxa
+	S54mJvtLBC5jlVUurbCRmYKaiteuyin+rQovIYCLZ6Dvr6eARXuofBWuYACgffH2DhDYAfFQYAwxA
+	hbRdtpkay+KbS/2Q0gYi4v5Ktvr1MPvLvrAseVsSAWfJnovzwv2gDtyGKmHxvM9S4KNwljVxZ8CUy
+	0X7EwC5lRDJeZ08YhixHJPPRrH8ARUZfzDaleAadLAbmP/RHVTFOfBe7zU1p+j566MUsaZN0Eh6PS
+	sOvYnV9IJbUWjt93Dvug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTe5b-004JV5-2K;
-	Wed, 09 Aug 2023 07:58:43 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1qTsE3-00625W-36;
+	Wed, 09 Aug 2023 23:04:23 +0000
+Received: from [2001:4d48:ad52:32c8:5054:ff:fe00:142] (helo=pandora.armlinux.org.uk)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTe5X-004JUP-2s
+	id 1qTsE0-00624r-0i
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Aug 2023 07:58:41 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-3fe501e0b4cso31240895e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 09 Aug 2023 00:58:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1691567917; x=1692172717;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=ZMK/MF4QoWmTRy/7r0rvm+M3cYZZiIVGcbwV1xMbPtA=;
-        b=Vc8dhEQ337HqN7x0eJ4phDB03/f2AB2NN5lkvQCHkvLd/y/o1qMKmve35y1fmkXnXj
-         6XCOWfZ7W+iBw3WdwemShbMpzo8oJieUXB+gC2lWNvEDwQUdMjEYlSBIO8ElbkEi4yYS
-         /3QMcjzkMS0z0v6FiVnVRVgyGp1bABtgpk0w6YHK9sqMNZ8oeFq21hnd4y2ALjEeeuvG
-         fGsN9vHSFOPPE8hjRAiAd2wFRiSXxvlpEYC/vBqhsE3CWM4ImAqIFD8oLK8x2UTFcxc6
-         FfMMSxwVsNLY7rnIlSbXJiZqiKXEFl1RnlBwnXKKgeMtPVYpqanYqRJLTcNzWV+i+PUd
-         efrQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1691567917; x=1692172717;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ZMK/MF4QoWmTRy/7r0rvm+M3cYZZiIVGcbwV1xMbPtA=;
-        b=JibBzJNDZJmwpPbBITVBzj8fyXBfVRXWWsK9SMSGGhb7MfNBl7fJL1dH+T6cxEzNWO
-         K/vOwu4IugHwbPXHXWap6/6zMW96v3ZYP2H2peXOcCyg9+RRWCU7jyUJvoWMiuej4h8J
-         FRC+0KV8ZFl9egx5YuIMWxL18N9QDDL6zwX/WEOAHthe17tc0rBiEW1C7+QfQKn+v4+q
-         6sZohURyUu8PrkqwGtqx+WTCiDHJT0SvjBE3HOKT8vjp9+XjfcD8BhqT7xEDwYQa1Bn2
-         5AXRbkFRs1R3/w3mqxfPzpPh+nsuIxzHa2TtYoTIwrqxmSoTQ0rdIxYaVwsOnEHbCnnz
-         dwDg==
-X-Gm-Message-State: AOJu0Yz4qpabmLwykqZg6miVOEPgRo1MAVc3RUoEQJPXEX6nCWFXpQV8
-	00q12mL+8Tsxml1T/kktVw6ouw==
-X-Google-Smtp-Source: AGHT+IH6Gfg0Ox1ijcaH3Yo/doK/gmTY3rCMIO8FuqulZi8laqcGMrnU8wQH8fU1K7v2TXfqSmiz6Q==
-X-Received: by 2002:a05:600c:205a:b0:3fb:d1db:5454 with SMTP id p26-20020a05600c205a00b003fbd1db5454mr1563638wmg.35.1691567917371;
-        Wed, 09 Aug 2023 00:58:37 -0700 (PDT)
-Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id q12-20020a7bce8c000000b003fe26244858sm1136784wmj.46.2023.08.09.00.58.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Aug 2023 00:58:36 -0700 (PDT)
-Date: Wed, 9 Aug 2023 10:58:34 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
+	Wed, 09 Aug 2023 23:04:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=0aTsFpaTqvr4ux06we+sMFc0Xxyk06OKa+L2Dw/ae7c=; b=kloDa30aaLvpJmOhk0KZoUs8OY
+	m2d65xgKpsEqBnqXxKtAF534hBd79+EhkDPOCsHcxaW8vHTcsWdIGsRwuKelzURDqraAIcg2Ge1mS
+	ZOSltO84hTwNqQM4XERu1SnboQvjkUAiPE+kgdnOwnDuPB1y1Nlrd/3zgWG/sHp2T9HeOH3dttYLI
+	EphaOadQ7ZQZjj6f5nOPHOuQorg9ay8CStkp0P8eVQtGEg9yJFCf3pBNq0SqbxYcL94027fKxU6nK
+	eUV8lXWrq2IIUJ54TT/EgEc8BIZfPM2imje/CazGwxREZ9jiyfqKS/mkCSMVL/CcoBLhzoOz0cgel
+	bzgB9S1A==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44626)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1qTsDk-00037q-0U;
+	Thu, 10 Aug 2023 00:04:05 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1qTsDh-00018o-CO; Thu, 10 Aug 2023 00:04:01 +0100
+Date: Thu, 10 Aug 2023 00:04:01 +0100
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Jakub Kicinski <kuba@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-usb@vger.kernel.org, freedreno@lists.freedesktop.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v3 1/3] drm/display: add transparent bridge helper
-Message-ID: <79f07f7d-1de0-4a48-961e-30b6789e3b6b@kadam.mountain>
+	linux-phy@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+	Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>,
+	nicolas.ferre@microchip.com, claudiu.beznea@microchip.com,
+	davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
+	robert.hancock@calian.com, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org, git@amd.com
+Subject: Re: [PATCH net] net: macb: In ZynqMP resume always configure PS GTR
+ for non-wakeup source
+Message-ID: <ZNQbYQ3zuGI3MbK0@shell.armlinux.org.uk>
+References: <1691414091-2260697-1-git-send-email-radhey.shyam.pandey@amd.com>
+ <20230809154121.673ec04b@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230802011845.4176631-2-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230809154121.673ec04b@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230809_005839_949648_04F83D96 
-X-CRM114-Status: UNSURE (   9.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230809_160420_562266_C5A1C702 
+X-CRM114-Status: GOOD (  23.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,77 +86,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+On Wed, Aug 09, 2023 at 03:41:21PM -0700, Jakub Kicinski wrote:
+> On Mon, 7 Aug 2023 18:44:51 +0530 Radhey Shyam Pandey wrote:
+> > On Zynq UltraScale+ MPSoC ubuntu platform when systemctl issues suspend,
+> > network manager bring down the interface and goes into suspend. When it
+> > wakes up it again enables the interface.
+> > 
+> > This leads to xilinx-psgtr "PLL lock timeout" on interface bringup, as
+> > the power management controller power down the entire FPD (including
+> > SERDES) if none of the FPD devices are in use and serdes is not
+> > initialized on resume.
+> > 
+> > $ sudo rtcwake -m no -s 120 -v
+> > $ sudo systemctl suspend  <this does ifconfig eth1 down>
+> > $ ifconfig eth1 up
+> > xilinx-psgtr fd400000.phy: lane 0 (type 10, protocol 5): PLL lock timeout
+> > phy phy-fd400000.phy.0: phy poweron failed --> -110
+> > 
+> > macb driver is called in this way:
+> > 1. macb_close: Stop network interface. In this function, it
+> >    reset MACB IP and disables PHY and network interface.
+> > 
+> > 2. macb_suspend: It is called in kernel suspend flow. But because
+> >    network interface has been disabled(netif_running(ndev) is
+> >    false), it does nothing and returns directly;
+> > 
+> > 3. System goes into suspend state. Some time later, system is
+> >    waken up by RTC wakeup device;
+> > 
+> > 4. macb_resume: It does nothing because network interface has
+> >    been disabled;
+> > 
+> > 5. macb_open: It is called to enable network interface again. ethernet
+> >    interface is initialized in this API but serdes which is power-off
+> >    by PMUFW during FPD-off suspend is not initialized again and so
+> >    we hit GT PLL lock issue on open.
+> > 
+> > To resolve this PLL timeout issue always do PS GTR initialization
+> > when ethernet device is configured as non-wakeup source.
+> > 
+> > Fixes: f22bd29ba19a ("net: macb: Fix ZynqMP SGMII non-wakeup source resume failure")
+> > Fixes: 8b73fa3ae02b ("net: macb: Added ZynqMP-specific initialization")
+> > Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+> 
+> Could be more of a PHY than MAC question. Adding remaining PHY
+> maintainers to CC.
 
-kernel test robot noticed the following build warnings:
+This is not ethernet PHY stuff (drivers/net/phy), it's serdes PHY
+(drivers/phy). Their requirements vary a lot.
 
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Given the above description...
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Dmitry-Baryshkov/drm-display-add-transparent-bridge-helper/20230802-091932
-base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
-patch link:    https://lore.kernel.org/r/20230802011845.4176631-2-dmitry.baryshkov%40linaro.org
-patch subject: [PATCH v3 1/3] drm/display: add transparent bridge helper
-config: x86_64-randconfig-m001-20230808 (https://download.01.org/0day-ci/archive/20230809/202308090559.RMlH2Dl6-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
-reproduce: (https://download.01.org/0day-ci/archive/20230809/202308090559.RMlH2Dl6-lkp@intel.com/reproduce)
+In (1), phy_power_off() gets called. If this is actually done by
+the serdes PHY driver, then the clocks from the serdes PHY stop.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202308090559.RMlH2Dl6-lkp@intel.com/
+Whether the PHY is re-initialised or not during the suspend/resume
+should not affect it - we haven't asked for it to be powered up
+again.
 
-smatch warnings:
-drivers/gpu/drm/display/drm_simple_bridge.c:41 drm_simple_bridge_register() warn: possible memory leak of 'adev'
+So in (5), I assume that the problem occurs because macb_init_hw()
+is called before phy_power_on()... but what do I know... with these
+randomly generated abbreviations that are designed to exclude people
+from understanding what is going on which seem to be common in the
+computing world. FPD? GT? Shrug, utterly meaningless.
 
-vim +/adev +41 drivers/gpu/drm/display/drm_simple_bridge.c
-
-abf701043719cd Dmitry Baryshkov 2023-08-02  30  int drm_simple_bridge_register(struct device *parent)
-abf701043719cd Dmitry Baryshkov 2023-08-02  31  {
-abf701043719cd Dmitry Baryshkov 2023-08-02  32  	struct auxiliary_device *adev;
-abf701043719cd Dmitry Baryshkov 2023-08-02  33  	int ret;
-abf701043719cd Dmitry Baryshkov 2023-08-02  34  
-abf701043719cd Dmitry Baryshkov 2023-08-02  35  	adev = kzalloc(sizeof(*adev), GFP_KERNEL);
-abf701043719cd Dmitry Baryshkov 2023-08-02  36  	if (!adev)
-abf701043719cd Dmitry Baryshkov 2023-08-02  37  		return -ENOMEM;
-abf701043719cd Dmitry Baryshkov 2023-08-02  38  
-abf701043719cd Dmitry Baryshkov 2023-08-02  39  	ret = ida_alloc(&simple_bridge_ida, GFP_KERNEL);
-abf701043719cd Dmitry Baryshkov 2023-08-02  40  	if (ret < 0)
-abf701043719cd Dmitry Baryshkov 2023-08-02 @41  		return ret;
-
-kfree(adev);
-
-abf701043719cd Dmitry Baryshkov 2023-08-02  42  
-abf701043719cd Dmitry Baryshkov 2023-08-02  43  	adev->id = ret;
-abf701043719cd Dmitry Baryshkov 2023-08-02  44  	adev->name = "simple_bridge";
-abf701043719cd Dmitry Baryshkov 2023-08-02  45  	adev->dev.parent = parent;
-abf701043719cd Dmitry Baryshkov 2023-08-02  46  	adev->dev.of_node = parent->of_node;
-abf701043719cd Dmitry Baryshkov 2023-08-02  47  	adev->dev.release = drm_simple_bridge_release;
-abf701043719cd Dmitry Baryshkov 2023-08-02  48  
-abf701043719cd Dmitry Baryshkov 2023-08-02  49  	ret = auxiliary_device_init(adev);
-abf701043719cd Dmitry Baryshkov 2023-08-02  50  	if (ret) {
-abf701043719cd Dmitry Baryshkov 2023-08-02  51  		kfree(adev);
-
-This needs to ida_free(&simple_bridge_ida, adev->id) as well.  There is
-a smatch check for this (check_unwind.c) but I guess I plan to re-write
-it a bit before I turn that on.
-
-abf701043719cd Dmitry Baryshkov 2023-08-02  52  		return ret;
-abf701043719cd Dmitry Baryshkov 2023-08-02  53  	}
-abf701043719cd Dmitry Baryshkov 2023-08-02  54  
-abf701043719cd Dmitry Baryshkov 2023-08-02  55  	ret = auxiliary_device_add(adev);
-abf701043719cd Dmitry Baryshkov 2023-08-02  56  	if (ret) {
-abf701043719cd Dmitry Baryshkov 2023-08-02  57  		auxiliary_device_uninit(adev);
-abf701043719cd Dmitry Baryshkov 2023-08-02  58  		return ret;
-abf701043719cd Dmitry Baryshkov 2023-08-02  59  	}
-abf701043719cd Dmitry Baryshkov 2023-08-02  60  
-abf701043719cd Dmitry Baryshkov 2023-08-02  61  	return devm_add_action_or_reset(parent, drm_simple_bridge_unregister_adev, adev);
-abf701043719cd Dmitry Baryshkov 2023-08-02  62  }
+However, surely phy_init() while the PHY is supposed to be powered
+off should fail? Don't know, this is outside of my area of knowledge.
+Adding generic phy maintainers and list...
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
