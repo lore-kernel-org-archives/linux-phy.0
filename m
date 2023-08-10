@@ -4,83 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88DBAC001B0
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Aug 2023 11:20:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F2C0C001B0
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Aug 2023 13:01:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jtALTjof1F/h+0y4/R9pm+LHueQoE+mkFKJG5CyrT9I=; b=TaJPDyjLkTf21V
-	F3u9YoNfTqXKaMlVB68CzCfVjwLS6auipvZB4Js+Qdq0WMUy5aojSyOpcQoktb7GHa+6NTiapfpDg
-	vmZHznd44rsUF2EcB2PnDgOjHNi99aMOzJUW62+NMGN8X8tKVnkVlsMsSoL6sp85OykOxP1kvPVmr
-	0XXpHqRcQQWEj/+85vepeOVLQFwpCpTdOMnmRD1bDOH4UjaCgIyyYWGro4ag/Fsn1BtG9OOaTLfx0
-	D4/8iySt5Rg9/Pw8Mn/e1M0tGW47z0G6f+XPW94rQ8Q6fS3TxHrQGqdIF5QDqt58C8bL8+h145slD
-	fThNncoAAw1osDkWgTOg==;
+	List-Owner; bh=8UcEyCpsBbf4oIUpX/eIvfNBTCCge3rdij9IpUpEkm8=; b=4pxqk8gkbhj/3d
+	4NuB/UfVHW/ULYIXm74zJuU9U0o6eZC2zFHqz1CpOt3TkQ7bO+rtgDLWQwwukWUJ2aYMQzkBIeZpG
+	vewiSX7E5cAPzIUBFqRaESBpqfOlx7Bj52Wj05zNihonbH3MFqXe6YCj/DGHMwpiHohBPoh64Va+q
+	zmqvhCvvJ+83uxs6USR/qlHCsUT5GlXTRTdFx4TxWqSYhr72exz0hmQhqhE9y5xPxl0qwv1+8/e4X
+	hL4XUYfAiCuQIggCqFV1uBYOhIOKHLSOv+LSSLRWp7Mn/V+QTteY10AiZ6+UdB14loj23byIwOvYq
+	WQVjl5X1f7r+XPoDeauA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU3iB-007PNG-0t;
-	Thu, 10 Aug 2023 11:20:15 +0000
-Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
+	id 1qU5Hm-007ftB-13;
+	Thu, 10 Aug 2023 13:01:06 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU3i2-007PHy-16
+	id 1qU5Hh-007fr1-0a
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Aug 2023 11:20:07 +0000
-Received: by mail-ed1-x52c.google.com with SMTP id 4fb4d7f45d1cf-523ba00a581so42747a12.2
-        for <linux-phy@lists.infradead.org>; Thu, 10 Aug 2023 04:20:05 -0700 (PDT)
+	Thu, 10 Aug 2023 13:01:05 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2b9cd6a554cso13169661fa.3
+        for <linux-phy@lists.infradead.org>; Thu, 10 Aug 2023 06:00:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1691666405; x=1692271205;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rjRrPL3giyS12WpTx8mH1BV4cSs+Hb0fY60hyKCefvc=;
-        b=DdSvEMf1eAnZGQZ/9FRALSlwt2iOxo0rsPe/51k5UmLZFZkfvRKyxDesDZJPtx1B3z
-         gAoXq9TPVCrsGvLbpZa6pmuYaR01wFBmwLR2ywQLYx1qCsv8skIzEhY5Ly0yUz3A0eeL
-         zFlow1dIoZehUAqK2IJJ0sjuHxFJJj9leFHGxKifnkNt8erRcth+VTHV2vmk2VVqFLhO
-         t/SGdaHkoPTjgPmH39xSqQ2ToQHaEwjh06L/E001KoaKbeEx6DiwCJzd3YPQ06AZj+lN
-         Fp0dy/7H2ZjikrjL7K9+BCrDi03SGanWkYhVRohDYS3DqPAJuQpHqtowUkPZdScryF6j
-         svVw==
+        d=linaro.org; s=google; t=1691672456; x=1692277256;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=eqaq2qh+s+LndcnV3vQwifPWzpMoy4YKSrxCHAVgNTM=;
+        b=LtJxCDHcud+FCX7JX/xsiIqAayB9O8LCNdsWksT4hTu/LT9PCaaugwwkKxkWTrmG0t
+         /EJVnECdK3JIHGkMeywGDr8Z9MnfNAd7Cf6ELzhJzu9QvhzHmj4tC0X5s4CXsALAru0h
+         8pObSCG/L9PM4DBlzfbsNLyAW3ENqnGhooqSdfCUfwZoc8LUan0pWi9uppgn2emhA8SJ
+         4PWKPQtcomB9avni5FY1iDjADQKi6WpMA7FLrfHHZzRqYsUdfx/1fJP+11cdHrZ/OPag
+         q6tzaBYVPSwH9GrPvan0Lf62kpKiL9IS0/dXvn9AKAslVMaT+m3Rgx57yN5zJ87kC0ow
+         vwgw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1691666405; x=1692271205;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rjRrPL3giyS12WpTx8mH1BV4cSs+Hb0fY60hyKCefvc=;
-        b=jXppAeVYot7uvnVD6LlozUVHknjzyOnnu767gzGTyPEUEFxE5JS+Gj9gTwfek0gAxT
-         u13wTukFuOw96biKKUTTwynhSWl7xQKbPWI5e1wT4mhdCik8eZLQ17rUHlF/aTaICQm5
-         baXOtaYRN9dtwVLK2mk/Rm9Dtr9BV4hlH1N/AQgRHMjOWOvxdPOdxNZYJ9pFhQHAM8KU
-         zI1qgh9ChKgOpoIBYX+ESnW9akfWXTmf6nP1L9OlTUZo/IoslE+Xxu6iACAbkG85Z3+/
-         k1UhUyyJwYOEaZscvd5iimShp4VYmnokuawSzhy9pYr2AdTx8zdJbYGK6O9Jb2ixQwRk
-         sWhQ==
-X-Gm-Message-State: AOJu0YwiVSxQy2RrCVjm1FzO33Z3Kvc1YATZoRjL2v+JU1UovH1I6j5c
-	iJg6BjxwF1s3mW+b+oEFoRANDQ==
-X-Google-Smtp-Source: AGHT+IF958xthNASZUnlwJzqA0yJJGOR4I6Ld0t/wpSlG0seA0JNDjX1vM/bUIDiHFnWWkwvzjn0mQ==
-X-Received: by 2002:a05:6402:1343:b0:522:28fa:3009 with SMTP id y3-20020a056402134300b0052228fa3009mr1646737edw.13.1691666404836;
-        Thu, 10 Aug 2023 04:20:04 -0700 (PDT)
-Received: from krzk-bin.. ([178.197.222.113])
-        by smtp.gmail.com with ESMTPSA id l10-20020aa7d94a000000b0051a2d2f82fdsm672190eds.6.2023.08.10.04.20.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 10 Aug 2023 04:20:04 -0700 (PDT)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Lubomir Rintel <lkundrak@v3.sk>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Cc: Andi Shyti <andi.shyti@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 4/4] phy: marvell pxa-usb: fix Wvoid-pointer-to-enum-cast warning
-Date: Thu, 10 Aug 2023 13:19:58 +0200
-Message-Id: <20230810111958.205705-4-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230810111958.205705-1-krzysztof.kozlowski@linaro.org>
-References: <20230810111958.205705-1-krzysztof.kozlowski@linaro.org>
+        d=1e100.net; s=20221208; t=1691672456; x=1692277256;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=eqaq2qh+s+LndcnV3vQwifPWzpMoy4YKSrxCHAVgNTM=;
+        b=XA/kU4kuLfT/OT4pBJ5KeTgibjB4doErfWvVuVGBpXULb9u1+rlfE1mLZGinw2KVmi
+         Wl0X7I6XpQ+FaNI0T4T+Xy2DikhBLXjZrixn4dVXdX9IjZQWOvC8VrMLf+i4cFTGt2Br
+         6H0dpHA+8O/+SiBPTCtJFQ4X+QbbU4ykxKBfIYh4T30oaIyizye6fXPrEwRL0d/zWHy7
+         abIh01KkBKIIh9EuYrb9gpZWCHExzb0VscUVjzOwOcsibg/ZGCJgWM+b9gOa3csRRLPj
+         SeTaw+5b7lRVnNgL02d2Bv/UmDYnilgai55u4eUybA9Dv52N6uCulHHLDEwrh4a9LTnb
+         vWJQ==
+X-Gm-Message-State: AOJu0YwX2jlcA4HJsXF/7B4RlOmHOks6hzHPC+EXUPsJFLak2Q1+y/qa
+	CRih4VysJUILP8LqvmPCK7FIxQ==
+X-Google-Smtp-Source: AGHT+IHVGeEHAhNupz7Y8GGIUNrg0/gXepcebg5L4eteUR6BJZyZB003DRwhW9l41F/KAzXUKNOosg==
+X-Received: by 2002:a2e:9997:0:b0:2b6:e283:32cb with SMTP id w23-20020a2e9997000000b002b6e28332cbmr2003663lji.23.1691672456229;
+        Thu, 10 Aug 2023 06:00:56 -0700 (PDT)
+Received: from [192.168.1.101] (abxi185.neoplus.adsl.tpnet.pl. [83.9.2.185])
+        by smtp.gmail.com with ESMTPSA id n12-20020a2e720c000000b002b9fdfdab75sm354562ljc.12.2023.08.10.06.00.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 10 Aug 2023 06:00:55 -0700 (PDT)
+Message-ID: <19d47ac3-ca9f-4181-b3ed-e2bba473dda8@linaro.org>
+Date: Thu, 10 Aug 2023 15:00:54 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 2/5] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Content-Language: en-US
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ catalin.marinas@arm.com, will@kernel.org, p.zabel@pengutronix.de,
+ arnd@arndb.de, geert+renesas@glider.be, nfraprado@collabora.com,
+ rafal@milecki.pl, peng.fan@nxp.com, quic_srichara@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+References: <cover.1691660905.git.quic_varada@quicinc.com>
+ <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230810_042006_392650_C9199069 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20230810_060101_219171_BAB7BE65 
+X-CRM114-Status: UNSURE (   5.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,32 +136,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-'version' is an enum, thus cast of pointer on 64-bit compile test with
-W=1 causes:
+On 10.08.2023 11:56, Varadarajan Narayanan wrote:
+> Add the M31 USB2 phy driver.
+> 
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+[...]
 
-  phy-pxa-usb.c:299:26: error: cast to smaller integer type 'enum pxa_usb_phy_version' from 'const void *' [-Werror,-Wvoid-pointer-to-enum-cast]
+> + #define FSEL				BIT(4)
+> + #define RETENABLEN			BIT(3)
+> + #define FREQ_24MHZ			(GENMASK(6, 6) | GENMASK(4, 4))
+GENMASK(x, x) is BIT(x)
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- drivers/phy/marvell/phy-pxa-usb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/marvell/phy-pxa-usb.c b/drivers/phy/marvell/phy-pxa-usb.c
-index ffe889893ff4..6c98eb9608e9 100644
---- a/drivers/phy/marvell/phy-pxa-usb.c
-+++ b/drivers/phy/marvell/phy-pxa-usb.c
-@@ -296,7 +296,7 @@ static int pxa_usb_phy_probe(struct platform_device *pdev)
- 
- 	of_id = of_match_node(pxa_usb_phy_of_match, dev->of_node);
- 	if (of_id)
--		pxa_usb_phy->version = (enum pxa_usb_phy_version)of_id->data;
-+		pxa_usb_phy->version = (uintptr_t)of_id->data;
- 	else
- 		pxa_usb_phy->version = PXA_USB_PHY_MMP2;
- 
--- 
-2.34.1
-
+Konrad
 
 -- 
 linux-phy mailing list
