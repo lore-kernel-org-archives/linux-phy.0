@@ -4,72 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44268C001B0
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Aug 2023 23:04:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B6F7C001B0
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Aug 2023 09:13:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pdDYrsPR5CF/AnIu5rINn5to0gfTk2r5XxYr0W/3bN4=; b=h7V/cdBbvdIWbB
-	MznPeAClFTxdbn4Cs8vrJCOeXvlsM9mDnMH6Z40rnhWr1VMvfuLpyEOQH0SaInbitH19r1d6sUQxa
-	S54mJvtLBC5jlVUurbCRmYKaiteuyin+rQovIYCLZ6Dvr6eARXuofBWuYACgffH2DhDYAfFQYAwxA
-	hbRdtpkay+KbS/2Q0gYi4v5Ktvr1MPvLvrAseVsSAWfJnovzwv2gDtyGKmHxvM9S4KNwljVxZ8CUy
-	0X7EwC5lRDJeZ08YhixHJPPRrH8ARUZfzDaleAadLAbmP/RHVTFOfBe7zU1p+j566MUsaZN0Eh6PS
-	sOvYnV9IJbUWjt93Dvug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2AM5UHkSoJcFk/330UhlvApkenCzcy8ZrA28yKsYDgg=; b=UOya+v/Clrx1Qk
+	0Sp1/aC8dbjdPGNxrWpn+7+/luT+bVEYrw9ZKxAqpoDOknezmR7LC/zjGqmx2OYyKymcvu6ZzUEd4
+	WE8Lw1msOgXED3nq65Q7eHRUBPVkKMLySuiYBc59+tMgCWf9yGhzL93KhWfKbR0a1Jefdd/1wh8sQ
+	0oKSRrD2Hn8ylr4KsYAAwGPbs4Le6/Iz4ST/50uxk46WEP5TTBV+rz6NMq94wRTut29OtqcNk+INs
+	BA2T3tUesbKbN/fbyUYdDN/KppFf3zq2G3rOrPVv5uOFc+U2CzWSJ9EqW0m1xDqGsl4i2pja4K0KF
+	7e44OSNUknJEyb2J+XEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTsE3-00625W-36;
-	Wed, 09 Aug 2023 23:04:23 +0000
-Received: from [2001:4d48:ad52:32c8:5054:ff:fe00:142] (helo=pandora.armlinux.org.uk)
+	id 1qU1jL-006x5c-2z;
+	Thu, 10 Aug 2023 09:13:19 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTsE0-00624r-0i
+	id 1qU1jI-006x2L-0z
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Aug 2023 23:04:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=0aTsFpaTqvr4ux06we+sMFc0Xxyk06OKa+L2Dw/ae7c=; b=kloDa30aaLvpJmOhk0KZoUs8OY
-	m2d65xgKpsEqBnqXxKtAF534hBd79+EhkDPOCsHcxaW8vHTcsWdIGsRwuKelzURDqraAIcg2Ge1mS
-	ZOSltO84hTwNqQM4XERu1SnboQvjkUAiPE+kgdnOwnDuPB1y1Nlrd/3zgWG/sHp2T9HeOH3dttYLI
-	EphaOadQ7ZQZjj6f5nOPHOuQorg9ay8CStkp0P8eVQtGEg9yJFCf3pBNq0SqbxYcL94027fKxU6nK
-	eUV8lXWrq2IIUJ54TT/EgEc8BIZfPM2imje/CazGwxREZ9jiyfqKS/mkCSMVL/CcoBLhzoOz0cgel
-	bzgB9S1A==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44626)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1qTsDk-00037q-0U;
-	Thu, 10 Aug 2023 00:04:05 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1qTsDh-00018o-CO; Thu, 10 Aug 2023 00:04:01 +0100
-Date: Thu, 10 Aug 2023 00:04:01 +0100
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Jakub Kicinski <kuba@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Thu, 10 Aug 2023 09:13:18 +0000
+Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-99bf1f632b8so105074266b.1
+        for <linux-phy@lists.infradead.org>; Thu, 10 Aug 2023 02:13:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1691658794; x=1692263594;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=cXtGVjQOMnic1+0ei+lZLPytdxhtK171VprnemCbHig=;
+        b=cg6oXYkJ1EEcITsyqXe57SyZm+KYFc6S4rQMLzpAexMoHNj1gI81VjfWpuPjP/g354
+         siPiscVUA3VXZRWgdQIOU4GjMK/+ABhuv+iQUGV4pBud5d+EPmOPRHgUytm9aatVj5Zh
+         vmkh2tYOfHzKer69WVpJP3FJOu84r0N4p2F+dxRLUsSEDKX64g3vlZzeFQcieD25rfG5
+         +FNjSnjV4Mr5X5+/3CRgXL5D7gxcGs14XhKLkBDyIR7G/JBUgONESsS/KokXoeBpUap3
+         p7WaXyos7ZoPK2w35GJJP7l0tPM4S8c8Kl6cK6bh0XSIHFyylS3Lt/FhK40yg2Zq4+W/
+         pryw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1691658794; x=1692263594;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=cXtGVjQOMnic1+0ei+lZLPytdxhtK171VprnemCbHig=;
+        b=fuUCeyTsr8vyGTb7rj+wjlZolBnivNGrNeXPqI+qzbIYz/SiU2BuBQqaWZ/h6HP+yx
+         VXhxBHDz/jsphOQ8oo2/N9kFIL0R7seI8vVvv2Y2KoPpANdw/PrQq8QeQf9P6HqTXRKt
+         NkHXQeYLMldzUcZCArMER0IhE2HbYCJR9YBLBOILV+tNqfBmPvhATRgPPNE5A4FhRwE1
+         fcWtz+Xho6S296WkV54nLX1lRmlY4r6Arj45klPMzl3bF0fR7LcfyYWVRaoddiXLvRxw
+         MYaoL/Hg9vACGU/QvhBpBBeMaX+KcKLaHLzcqswXqrMCDvFRrewFAVSCTn275OnZvCWl
+         fdIg==
+X-Gm-Message-State: AOJu0YxV9TpAgushNq2XzLUZqqCGThRjWVkIYiWVz+q4TgWhpfv2lyG9
+	UjEqLa/fAbViTrIwX/cUQpIz6g==
+X-Google-Smtp-Source: AGHT+IFGeEvXqMvDY3+sQ3I/t8okkCSs/dqOrA9AWjerSX9C5S3HbS/ruj8SGoKA/0hkHxQUZ30KEQ==
+X-Received: by 2002:a17:906:18d:b0:97d:ee82:920a with SMTP id 13-20020a170906018d00b0097dee82920amr1723205ejb.74.1691658794233;
+        Thu, 10 Aug 2023 02:13:14 -0700 (PDT)
+Received: from krzk-bin.. ([178.197.222.113])
+        by smtp.gmail.com with ESMTPSA id o16-20020a170906861000b0099bd5d28dc4sm643984ejx.195.2023.08.10.02.13.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Aug 2023 02:13:13 -0700 (PDT)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org
-Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
-	Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>,
-	nicolas.ferre@microchip.com, claudiu.beznea@microchip.com,
-	davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
-	robert.hancock@calian.com, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org, git@amd.com
-Subject: Re: [PATCH net] net: macb: In ZynqMP resume always configure PS GTR
- for non-wakeup source
-Message-ID: <ZNQbYQ3zuGI3MbK0@shell.armlinux.org.uk>
-References: <1691414091-2260697-1-git-send-email-radhey.shyam.pandey@amd.com>
- <20230809154121.673ec04b@kernel.org>
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Jerome Brunet <jbrunet@baylibre.com>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-amlogic@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Andi Shyti <andi.shyti@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH net-next] phy: amlogic: meson-g12a-usb2: fix Wvoid-pointer-to-enum-cast warning
+Date: Thu, 10 Aug 2023 11:13:10 +0200
+Message-Id: <20230810091310.70231-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230809154121.673ec04b@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230809_160420_562266_C5A1C702 
-X-CRM114-Status: GOOD (  23.42  )
+X-CRM114-CacheID: sfid-20230810_021316_360428_F3D44CD4 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,77 +98,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 09, 2023 at 03:41:21PM -0700, Jakub Kicinski wrote:
-> On Mon, 7 Aug 2023 18:44:51 +0530 Radhey Shyam Pandey wrote:
-> > On Zynq UltraScale+ MPSoC ubuntu platform when systemctl issues suspend,
-> > network manager bring down the interface and goes into suspend. When it
-> > wakes up it again enables the interface.
-> > 
-> > This leads to xilinx-psgtr "PLL lock timeout" on interface bringup, as
-> > the power management controller power down the entire FPD (including
-> > SERDES) if none of the FPD devices are in use and serdes is not
-> > initialized on resume.
-> > 
-> > $ sudo rtcwake -m no -s 120 -v
-> > $ sudo systemctl suspend  <this does ifconfig eth1 down>
-> > $ ifconfig eth1 up
-> > xilinx-psgtr fd400000.phy: lane 0 (type 10, protocol 5): PLL lock timeout
-> > phy phy-fd400000.phy.0: phy poweron failed --> -110
-> > 
-> > macb driver is called in this way:
-> > 1. macb_close: Stop network interface. In this function, it
-> >    reset MACB IP and disables PHY and network interface.
-> > 
-> > 2. macb_suspend: It is called in kernel suspend flow. But because
-> >    network interface has been disabled(netif_running(ndev) is
-> >    false), it does nothing and returns directly;
-> > 
-> > 3. System goes into suspend state. Some time later, system is
-> >    waken up by RTC wakeup device;
-> > 
-> > 4. macb_resume: It does nothing because network interface has
-> >    been disabled;
-> > 
-> > 5. macb_open: It is called to enable network interface again. ethernet
-> >    interface is initialized in this API but serdes which is power-off
-> >    by PMUFW during FPD-off suspend is not initialized again and so
-> >    we hit GT PLL lock issue on open.
-> > 
-> > To resolve this PLL timeout issue always do PS GTR initialization
-> > when ethernet device is configured as non-wakeup source.
-> > 
-> > Fixes: f22bd29ba19a ("net: macb: Fix ZynqMP SGMII non-wakeup source resume failure")
-> > Fixes: 8b73fa3ae02b ("net: macb: Added ZynqMP-specific initialization")
-> > Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
-> 
-> Could be more of a PHY than MAC question. Adding remaining PHY
-> maintainers to CC.
+'soc_id' is an enum, thus cast of pointer on 64-bit compile test with
+W=1 causes:
 
-This is not ethernet PHY stuff (drivers/net/phy), it's serdes PHY
-(drivers/phy). Their requirements vary a lot.
+  phy-meson-g12a-usb2.c:322:17: error: cast to smaller integer type 'enum meson_soc_id' from 'const void *' [-Werror,-Wvoid-pointer-to-enum-cast]
 
-Given the above description...
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ drivers/phy/amlogic/phy-meson-g12a-usb2.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-In (1), phy_power_off() gets called. If this is actually done by
-the serdes PHY driver, then the clocks from the serdes PHY stop.
-
-Whether the PHY is re-initialised or not during the suspend/resume
-should not affect it - we haven't asked for it to be powered up
-again.
-
-So in (5), I assume that the problem occurs because macb_init_hw()
-is called before phy_power_on()... but what do I know... with these
-randomly generated abbreviations that are designed to exclude people
-from understanding what is going on which seem to be common in the
-computing world. FPD? GT? Shrug, utterly meaningless.
-
-However, surely phy_init() while the PHY is supposed to be powered
-off should fail? Don't know, this is outside of my area of knowledge.
-Adding generic phy maintainers and list...
-
+diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
+index a628c59e5cf0..0e0b5c00b676 100644
+--- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
++++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
+@@ -319,7 +319,7 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
+ 	if (IS_ERR(base))
+ 		return PTR_ERR(base);
+ 
+-	priv->soc_id = (enum meson_soc_id)of_device_get_match_data(&pdev->dev);
++	priv->soc_id = (uintptr_t)of_device_get_match_data(&pdev->dev);
+ 
+ 	priv->regmap = devm_regmap_init_mmio(dev, base,
+ 					     &phy_meson_g12a_usb2_regmap_conf);
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+2.34.1
+
 
 -- 
 linux-phy mailing list
