@@ -4,51 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 652D5C001B0
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Aug 2023 09:56:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4178CC04A94
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Aug 2023 09:56:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MWNa4pN+uvz98gV0HmUWUw17xJdbAZvrg89iCkPdgpc=; b=loZXVK3hzvgDqp
-	hkh41gquXeBFux6DjHScwl5KqOpqF+tzn8NLhOGAzFiE2miKuVd5kCYk5b5K2OpIc3bU8rjN48Px+
-	VbI+aTAwsVXrAA3xdIZrwWQodwksUSDnrC1SJmZfrsQOJJh7ULh1TyGEnJhiVDeWje+ypvM02kSH4
-	HMdnW8FCnolKsXwJk8vymHqJrjMZbzf1VG5bniDA+8IxlxOkr5Jj+py7DGQ3IWHr54YziW/s/K3aZ
-	jzQpzVgeXPj6aDy49IlAWUbTABcxMeIj5rV1q4LUZgqJQlXmW6TMmwNtGPgaiPi1jGoDWWQSjtGPs
-	rJlrFGAUlaB6mwVeFiGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=96wR9oOSBX9zUW6iUuVAw/Q8mFo0io5wGLSd4VcOEZ0=; b=O9lUGehy1lfB9P
+	V78DpYULSUTOiYXv/rPfWqPmXgeBYjVUJBPcepCsreEaEo5aNOFhezFCgZlkCdL8FZgetVla76TXn
+	ESnOUUBuNjucDvzNf3jrxuq6Na0SEnChmcA/VLgG4Kvyj8QbEe4uQdkNS5Bi1aw9x+rojKlsd27ad
+	brulWHNQJHTt1iPiVfybjsQB7sZYj91R6vm5D1rJw5fGsEgfwPbQUBJ0k/3Gr9nQorqc3NNGkjaJ7
+	keaE+E1uXRVEvcW2s24G5Ola6X4aqtJwxgztGog5RcR12KgMod20GZTlEd36saqI9e23LQ5NVg3ZK
+	on4Zs0ofi8PrFmO97i+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU2PU-0072AB-0T;
+	id 1qU2PU-0072As-36;
 	Thu, 10 Aug 2023 09:56:52 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU2PR-00728Z-35;
+	id 1qU2PR-00728Y-31;
 	Thu, 10 Aug 2023 09:56:51 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37A8PXZf002388;
-	Thu, 10 Aug 2023 09:56:24 GMT
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37A9hqC2030429;
+	Thu, 10 Aug 2023 09:56:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
- : date : message-id : mime-version : content-type; s=qcppdkim1;
- bh=T504CEXobX7cLJoBT1x/oPv6mp5b0CIe5FhMiZBrn9I=;
- b=guAFmPQBdFLBInXHF/MZI4nqCFQU6zr9wJgso11NMJwEw8jIh7hUKsUNoDpy2mu6FJl+
- ThEqOUqphLTWS6htauSEoKWdSlbva8u99ojxi8SZ72VJceIQtS7RJODnnU3kw3LHpnlZ
- K5NUCNotYkt/28TUn/w9WB8VD3Q5xvjzSY/ggR4iIC3BR7dIvc97+ZOM0IGeeiOc3frN
- o7LoJGyE6xnHE2StycU5+bRGfNCwssmYlhJG2AhDftpL+CkmvOt16yoQRmzDkEo8PgNj
- OSgUngsdgDMEk6Pu76CGgF8sbFhfTN0PoRuTb+KkGI8WKOZDy2cP5AdshgOXWMLF/zxI iw== 
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sch7cs9gd-1
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=stx5aJw+TjH6vEiDdJAveILMm05cAf8rbZ1FVfNqA1c=;
+ b=k3EEc6Wb0mM/VaIPq93292ov9spKBEiklRUyYpxY3P3RiY5SDRLfKh1qg8zu61sTUc7C
+ 8mYaIN1d9EuQKHqJTf9HSQapSoEoOIRJ//edSHP55iRUXgbdGRJv2rMz5xmTjyXygtub
+ EE/YpUp3ZFdap7iaxCIanJx0iwZkdlQFeaKssvMMKhWd6SpgS6GUbUedn1nDMdO50PK6
+ tLl/C9aM8EbFfDR1gpr+NjxmroQLh4TCwdnUL2M1p426QvPxODajkoPpnrD4MCGTJ0EH
+ mrwC3bJ4t5DBAbwvcu9Vl7OwvHReDYbjDePczK3yiYHzT//nS6xbJ0A8OSWSAo/CaCC1 5Q== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3scsurrggj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 10 Aug 2023 09:56:24 +0000
+	Thu, 10 Aug 2023 09:56:30 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37A9uN1Y001050
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37A9uUCO029846
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 10 Aug 2023 09:56:23 GMT
+	Thu, 10 Aug 2023 09:56:30 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Thu, 10 Aug 2023 02:56:17 -0700
+ 15.2.1118.30; Thu, 10 Aug 2023 02:56:23 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -59,29 +60,31 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <quic_varada@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
         <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v7 0/5] Enable IPQ5332 USB2
-Date: Thu, 10 Aug 2023 15:26:03 +0530
-Message-ID: <cover.1691660905.git.quic_varada@quicinc.com>
+Subject: [PATCH v7 1/5] dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
+Date: Thu, 10 Aug 2023 15:26:04 +0530
+Message-ID: <0d42f556ab28123b2b508521a0c79c7597b8b0fd.1691660905.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1691660905.git.quic_varada@quicinc.com>
+References: <cover.1691660905.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: JpypQuw8zJSP04fc9kxsWuykN-6Qg1YE
-X-Proofpoint-GUID: JpypQuw8zJSP04fc9kxsWuykN-6Qg1YE
+X-Proofpoint-ORIG-GUID: OqFjZX3V8m9m_WeS9qXeDYp9EefWxa9z
+X-Proofpoint-GUID: OqFjZX3V8m9m_WeS9qXeDYp9EefWxa9z
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-08-10_09,2023-08-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
- priorityscore=1501 lowpriorityscore=0 suspectscore=0 impostorscore=0
- mlxlogscore=344 mlxscore=0 adultscore=0 malwarescore=0 clxscore=1011
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ malwarescore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
+ spamscore=0 adultscore=0 clxscore=1015 mlxlogscore=999 phishscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2306200000 definitions=main-2308100085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230810_025649_997588_D2314BC9 
-X-CRM114-Status: GOOD (  16.45  )
+X-CRM114-CacheID: sfid-20230810_025649_992849_2EE9ACE6 
+X-CRM114-Status: GOOD (  18.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,66 +101,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds the relevant phy and controller
-configurations for enabling USB2 on IPQ5332
+Document the M31 USB2 phy present in IPQ5332.
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Co-developed-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+---
 v7:
-	Binding:-
-		Move 'compatible' to be the first entry
-		In the example have 'usb-phy' instead of 'usb2-phy'
-		Add 'Reviewed-by: Krzysztof Kozlowski'
+	Move 'compatible' to be the first entry
+	In the example have 'usb-phy' instead of 'usb2-phy'
+	Add 'Reviewed-by: Krzysztof Kozlowski'
+	'make dt_binding_check DT_SCHEMA_FILES=qcom,ipq5332-usb-hsphy.yaml' passed
+	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom,ipq5332-usb-hsphy.yaml dtbs_check' passed
 v6:
-	Binding and dts:-
-		Dropped the qcom,dwc3.yaml patch as it has been picked up for linux-next
-		Add const to compatible, vdd-supply
-		Move nodes per register address
-	Driver:-
-		Add vdd-supply
-		Cleanup error paths in probe with dev_err_probe
+	Add 'Co-developed-by: Sricharan'
+	Add 'const' to compatible, vdd-supply
+	Remove label and use usb2-phy for nodename in the example
 v5:
-	Binding and dts:-
-		Fix email id
-		Removed 'Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>'
-		as had to change bindings file to be able to use generic phy instead of
-		usb-phy
-
-	Driver:-
-		Remove unused definition
-		Use generic phy instead of usb-phy
+	Add '#phy-cells', to be able to use generic phy
+	Remove 'Reviewed-by: Krzysztof Kozlowski' due to above change
 v4:
-	Binding and dts:-
-		Change node name (bindings & dts)
-	Driver:-
-		Remove unused enum
-		static const for '.data'
-		Error handling for devm_clk_get
+	Move M31 URL to description
+	Remove maxItems and relevant content from clock-names
+	Change node name to generic name
+	'make dt_binding_check DT_SCHEMA_FILES=qcom' passed
 v3:
-	Fix bindings file based on review comments
+	Incorporate review comments. Will bring in ipq5018 compatible
+	string while posting ipq5018 usb patchset.
 
 v1:
-	Cleanup DTS
-	Combine driver, kconfig and makefile patches
-	Remove unused functions from M31 driver
-	Drop the clock driver changes
-
-Varadarajan Narayanan (5):
-  dt-bindings: phy: qcom,m31: Document qcom,m31 USB phy
-  phy: qcom-m31: Introduce qcom,m31 USB phy driver
-  arm64: dts: qcom: ipq5332: Add USB related nodes
-  arm64: dts: qcom: ipq5332: Enable USB
-  arm64: defconfig: Enable M31 USB phy driver
-
- .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       |  59 +++++
- arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts        |  23 ++
- arch/arm64/boot/dts/qcom/ipq5332.dtsi              |  55 +++++
- arch/arm64/configs/defconfig                       |   1 +
- drivers/phy/qualcomm/Kconfig                       |  11 +
- drivers/phy/qualcomm/Makefile                      |   1 +
- drivers/phy/qualcomm/phy-qcom-m31.c                | 248 +++++++++++++++++++++
- 7 files changed, 398 insertions(+)
+	Rename qcom,m31.yaml -> qcom,ipq5332-usb-hsphy.yaml
+	Drop default binding "m31,usb-hsphy"
+	Add clock
+	Remove 'oneOf' from compatible
+	Remove 'qscratch' region from register space as it is not needed
+	Remove reset-names
+	Fix the example definition
+---
+ .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml       | 59 ++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
- create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
 
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+new file mode 100644
+index 0000000..2671a04
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-hsphy.yaml
+@@ -0,0 +1,59 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-hsphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: M31 USB PHY
++
++maintainers:
++  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
++  - Varadarajan Narayanan <quic_varada@quicinc.com>
++
++description:
++  USB M31 PHY (https://www.m31tech.com) found in Qualcomm
++  IPQ5018, IPQ5332 SoCs.
++
++properties:
++  compatible:
++    items:
++      - const: qcom,ipq5332-usb-hsphy
++
++  "#phy-cells":
++    const: 0
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    items:
++      - const: cfg_ahb
++
++  resets:
++    maxItems: 1
++
++  vdd-supply:
++    description:
++      Phandle to 5V regulator supply to PHY digital circuit.
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
++    usb-phy@7b000 {
++        compatible = "qcom,ipq5332-usb-hsphy";
++        reg = <0x0007b000 0x12c>;
++
++        clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
++        clock-names = "cfg_ahb";
++
++        #phy-cells = <0>;
++
++        resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
++
++        vdd-supply = <&regulator_fixed_5p0>;
++    };
 -- 
 2.7.4
 
