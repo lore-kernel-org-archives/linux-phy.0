@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05C37EB64DD
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Aug 2023 08:21:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78A4AEB64DD
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Aug 2023 08:30:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgKbsgxYirkaywBf6WEnP02V/0ivr02rm38g//zDJ34=; b=oSejJxmJEGhpOX
-	TfSAmIjT8IGWesabzVnoVwlsN0/6Gbev1WYpl+DGTqdPjVUhDecPhPCYyyHH8HVIOLxE6QvoLWM1Y
-	C8HPNUdVKEdaUhVnq0nqUsRJKd3Za+JmysE4QFKnnLvCJmnUcjtayPbKh0ijYPn9OH6wA8R4b4LnZ
-	AHitbIvshFSHMewRoLiBjhxPdDy3CmpWC8HoYjiNvmwZWn0x/yU2EnNvBgLN+WqDpMz2sky+MCbdc
-	68RKWCQtcjTPTi1NloFeNe+1iIXzsfliOx1QLY7IS4/R51YWFzKuaMbGQSp47GMpz4XpaNMnbGTAk
-	/cgs90ALJlArQATVNePQ==;
+	List-Owner; bh=BFY5u5oL/lC7hrrL5gVY0LQcGpgfe3Qb4rAU9EEb2ow=; b=kIr+g7SX17WsIj
+	RR+s50TuHzeNwWHyOro4nYg6ofJEKuSBTOsCqr/gYybld+Z6rDXkj8n4YeGGrjWUqrElsIUMfJRAc
+	LYaTTS21KBVj3FovrqQzfVyKfb+WEyap+eptTL/FUXnKKO+aCyzvj/4FH3sdoaNErGrK/eFcG+KPh
+	oM3CeTWwvayw204r55eMLrvJi0LaZo1Gs/Ft9PIFpVzMOi6yokci2EV24AtOuVQ2Sb+EGQWq+jHVh
+	9/z5XAaW7LQLLZzcUpHj+THlU14GzUBU+CfpdSZv861+Sk078sJzy9zZ+h8ofIsBbr9Qauq/cxTwb
+	Dk6i22DJzBVGcrW2eoSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUNOJ-009qCY-2J;
-	Fri, 11 Aug 2023 08:21:03 +0000
+	id 1qUNXC-009qyh-0L;
+	Fri, 11 Aug 2023 08:30:14 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUNOH-009qBl-0E;
-	Fri, 11 Aug 2023 08:21:02 +0000
+	id 1qUNX7-009qxg-2T;
+	Fri, 11 Aug 2023 08:30:11 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E3A1161D1E;
-	Fri, 11 Aug 2023 08:20:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D462C433C7;
-	Fri, 11 Aug 2023 08:20:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8C37C6692B;
+	Fri, 11 Aug 2023 08:30:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 84E58C433C7;
+	Fri, 11 Aug 2023 08:30:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691742055;
-	bh=gKOt2r2zZpriDKuP1ZDJHQnF5ZRf/VSoPvScgdxNPl0=;
+	s=k20201202; t=1691742607;
+	bh=QG1JzZuJTECYwp7R4BRf0CRHWs01VbWDHrTcKyBM/v4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=svRmhdgz6wmvxhCq9kJ2PwgFauMjS42KRjJEcCOzPsyInD8Za8HFOppBwnMY/Ymjb
-	 L0Y+l+bUzHmyJ7UxFQWeuaYexO2VhnH8zgfgExBum8q+dj0Oc/PB/zLeWSsqvpRm8i
-	 RAL5k2kdRt17bX2/l3rQ/FnVUmPFS5VQC+PrZUuuHcmp9dQ3P8fesMa0PonIsQsdqA
-	 RVgTx+qDbjtszv/YQnXYL5R1QzHocIycQMeq5SPGc+t8OxSvlK7BxPJC8kpvnTcaxL
-	 z5ydYDpe7/8hgE+/rm0L6RVsxAffSxuQYYIexJ7Gk38Bt0eM4XXesXKT6gdOze9QYG
-	 5ob9vERZNNC/w==
-Date: Fri, 11 Aug 2023 09:20:52 +0100
+	b=cOHf8vY+pmZaHtzr+QdDFrchih2d4CS/UR1EzOJ2aBsdj0ru5n1YsyuqX8m1JvWhx
+	 28HcHMhRBgL39RfsGIR9GnfwMIbZUsmdDixJ2SfMGIlBM7ca8y01f9NonzL3TdehWV
+	 5kDT+DFAqoY6DRwGwHibrdEWij5UYemXp79ori9qTiFLoZci75HU6cuVEZRjE1u+fi
+	 VTljokMRKwjHAplfR3A3C6LQ8wCJFXU1rQVe135Yi3l1R65mElUGbv/51/f7v6Slpn
+	 xKCbVhZaH21G+QfOxuZebKFu17YFe6zqZK1xDhFRUOuwvGl9WaDDITAObT+DRgOovE
+	 yKr9+YQSJWcJQ==
+Date: Fri, 11 Aug 2023 09:30:05 +0100
 From: Vinod Koul <vkoul@kernel.org>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	NXP Linux Team <linux-imx@nxp.com>, linux-phy@lists.infradead.org,
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	catalin.marinas@arm.com, will@kernel.org, p.zabel@pengutronix.de,
+	arnd@arndb.de, geert+renesas@glider.be, nfraprado@collabora.com,
+	rafal@milecki.pl, peng.fan@nxp.com, quic_srichara@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 1/1] phy: fsl-imx8mq-usb: add dev_err_probe if getting
- vbus failed
-Message-ID: <ZNXvZOv3q9eViDeW@matsya>
-References: <20230801084807.87160-1-alexander.stein@ew.tq-group.com>
+Subject: Re: [PATCH v7 2/5] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Message-ID: <ZNXxja5HvVOtgliL@matsya>
+References: <cover.1691660905.git.quic_varada@quicinc.com>
+ <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230801084807.87160-1-alexander.stein@ew.tq-group.com>
+In-Reply-To: <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230811_012101_260838_2E9594BA 
-X-CRM114-Status: GOOD (  17.57  )
+X-CRM114-CacheID: sfid-20230811_013009_976381_7C35B799 
+X-CRM114-Status: GOOD (  28.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,37 +82,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-08-23, 10:48, Alexander Stein wrote:
-> This adds an error message if getting vbus failed for some reason,
-> -EPROBE_DEFER is handled appropriately as well and adds a nice
-> information to debugfs.
-
-Fails to apply on phy/next
-
+On 10-08-23, 15:26, Varadarajan Narayanan wrote:
+> Add the M31 USB2 phy driver.
 > 
-> Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> v6:
+> 	Kconfig:Add COMPILE_TEST and remove USB_GADGET from 'depends'
+> 		Change 'selects' USB_PHY -> GENERIC_PHY
+> 	Driver:	Use correct headers
+> 		const int -> unsigned int for 'nregs' in private data
+> 		Use generic names for clk, phy in m31 phy structure
+> 		Init register details directly instead of using macro
+> 		Use dev_err_probe in the error paths of driver probe
+> v5:
+> 	Kconfig and Makefile:- place snippet according to sorted order
+> 	Use generic phy instead of usb-phy
+> 	Use ARRAY_SIZE for reg init instead of blank last entry
+> 	Fix copyright year
 > 
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index c1a57541fbb3..3af007b8e77f 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -399,7 +399,7 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
->  	if (PTR_ERR(imx_phy->vbus) == -ENODEV)
->  		imx_phy->vbus = NULL;
->  	else if (IS_ERR(imx_phy->vbus))
-> -		return PTR_ERR(imx_phy->vbus);
-> +		return dev_err_probe(dev, PTR_ERR(imx_phy->vbus), "failed to get vbus\n");
+> v4:
+> 	Remove unused enum
+> 	Error handling for devm_clk_get
+> v1:
+> 	Combine driver, makefile and kconfig into 1 patch
+> 	Remove 'qscratch' region and its usage. The controller driver takes care
+> 	of those settings
+> 	Use compatible/data to handle ipq5332 init
+> 	Drop the default case
+> 	Get resources by index instead of name as there is only one resource
+> 	Add clock
+> 	Fix review comments in the driver
+> ---
+>  drivers/phy/qualcomm/Kconfig        |  11 ++
+>  drivers/phy/qualcomm/Makefile       |   1 +
+>  drivers/phy/qualcomm/phy-qcom-m31.c | 248 ++++++++++++++++++++++++++++++++++++
+>  3 files changed, 260 insertions(+)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-m31.c
+> 
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index ced6038..d891058 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -143,6 +143,17 @@ config PHY_QCOM_EUSB2_REPEATER
+>  	  PMICs. The repeater is paired with a Synopsys eUSB2 Phy
+>  	  on Qualcomm SOCs.
 >  
->  	phy_set_drvdata(imx_phy->phy, imx_phy);
+> +config PHY_QCOM_M31_USB
+> +	tristate "Qualcomm M31 HS PHY driver support"
+> +	depends on USB && (ARCH_QCOM || COMPILE_TEST)
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support M31 HS PHY transceivers on Qualcomm chips
+> +	  with DWC3 USB core. It handles PHY initialization, clock
+> +	  management required after resetting the hardware and power
+> +	  management. This driver is required even for peripheral only or
+> +	  host only mode configurations.
+> +
+>  config PHY_QCOM_USB_HS
+>  	tristate "Qualcomm USB HS PHY module"
+>  	depends on USB_ULPI_BUS
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index df94581..ffd609a 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -4,6 +4,7 @@ obj-$(CONFIG_PHY_QCOM_APQ8064_SATA)	+= phy-qcom-apq8064-sata.o
+>  obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
+>  obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
+>  obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
+> +obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
+>  obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
 >  
-> -- 
-> 2.34.1
+>  obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+> new file mode 100644
+> index 0000000..d6a8d06
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+> @@ -0,0 +1,248 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2014-2023, The Linux Foundation. All rights reserved.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/of.h>
+
+do you need both headers..?
+
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +
+> +#define USB2PHY_PORT_UTMI_CTRL1		0x40
+> +
+> +#define USB2PHY_PORT_UTMI_CTRL2		0x44
+> + #define UTMI_ULPI_SEL			BIT(7)
+> + #define UTMI_TEST_MUX_SEL		BIT(6)
+> +
+> +#define HS_PHY_CTRL_REG			0x10
+> + #define UTMI_OTG_VBUS_VALID		BIT(20)
+> + #define SW_SESSVLD_SEL			BIT(28)
+> +
+> +#define USB_PHY_UTMI_CTRL0		0x3c
+> +
+> +#define USB_PHY_UTMI_CTRL5		0x50
+> + #define POR_EN				BIT(1)
+> +
+> +#define USB_PHY_HS_PHY_CTRL_COMMON0	0x54
+> + #define COMMONONN			BIT(7)
+> + #define FSEL				BIT(4)
+> + #define RETENABLEN			BIT(3)
+> + #define FREQ_24MHZ			(GENMASK(6, 6) | GENMASK(4, 4))
+
+why not use bit :-)
+
+> +
+> +#define USB_PHY_HS_PHY_CTRL2		0x64
+> + #define USB2_SUSPEND_N_SEL		BIT(3)
+> + #define USB2_SUSPEND_N			BIT(2)
+> + #define USB2_UTMI_CLK_EN		BIT(1)
+> +
+> +#define USB_PHY_CFG0			0x94
+> + #define UTMI_PHY_OVERRIDE_EN		BIT(1)
+> +
+> +#define USB_PHY_REFCLK_CTRL		0xa0
+> + #define CLKCORE			BIT(1)
+> +
+> +#define USB2PHY_PORT_POWERDOWN		0xa4
+> + #define POWER_UP			BIT(0)
+> + #define POWER_DOWN			0
+> +
+> +#define USB_PHY_FSEL_SEL		0xb8
+> + #define FREQ_SEL			BIT(0)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_1	0xbc
+> + #define USB2_0_TX_ENABLE		BIT(2)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_4	0xc8
+> + #define HSTX_SLEW_RATE_565PS		GENMASK(1, 0)
+> + #define PLL_CHARGING_PUMP_CURRENT_35UA	GENMASK(4, 3)
+> + #define ODT_VALUE_38_02_OHM		GENMASK(7, 6)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_5	0xcc
+> + #define ODT_VALUE_45_02_OHM		BIT(2)
+> + #define HSTX_PRE_EMPHASIS_LEVEL_0_55MA	BIT(0)
+> +
+> +#define USB2PHY_USB_PHY_M31_XCFGI_11	0xe4
+> + #define XCFG_COARSE_TUNE_NUM		BIT(1)
+> + #define XCFG_FINE_TUNE_NUM		BIT(3)
+> +
+> +struct m31_phy_regs {
+> +	u32 off;
+> +	u32 val;
+> +	u32 delay;
+> +};
+> +
+> +struct m31_priv_data {
+> +	bool				ulpi_mode;
+> +	const struct m31_phy_regs	*regs;
+> +	unsigned int			nregs;
+> +};
+> +
+> +struct m31_phy_regs m31_ipq5332_regs[] = {
+> +	{ USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0 },
+> +	{ USB_PHY_UTMI_CTRL5, POR_EN, 15 },
+> +	{ USB_PHY_FSEL_SEL, FREQ_SEL, 0 },
+> +	{ USB_PHY_HS_PHY_CTRL_COMMON0, COMMONONN | FREQ_24MHZ | RETENABLEN, 0 },
+> +	{ USB_PHY_UTMI_CTRL5, POR_EN, 0 },
+> +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
+> +	{ USB2PHY_USB_PHY_M31_XCFGI_11, XCFG_COARSE_TUNE_NUM  | XCFG_FINE_TUNE_NUM, 0 },
+> +	{ USB2PHY_USB_PHY_M31_XCFGI_4, HSTX_SLEW_RATE_565PS | PLL_CHARGING_PUMP_CURRENT_35UA |
+> +				       ODT_VALUE_38_02_OHM, 0 },
+> +	{ USB2PHY_USB_PHY_M31_XCFGI_1, USB2_0_TX_ENABLE, 0 },
+> +	{ USB2PHY_USB_PHY_M31_XCFGI_5, ODT_VALUE_45_02_OHM | HSTX_PRE_EMPHASIS_LEVEL_0_55MA, 4 },
+> +	{ USB_PHY_UTMI_CTRL5, 0x0, 0 },
+> +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
+
+More readable way to code
+                USB_PHY_CFG0,
+                UTMI_PHY_OVERRIDE_EN,
+                0
+
+and so on, makes a better read and check for errors, one line for off,
+one for val and one for delay
 
 -- 
-~Vinod
+`~Vinod
 
 -- 
 linux-phy mailing list
