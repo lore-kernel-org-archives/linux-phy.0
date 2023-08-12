@@ -4,63 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B12BC41513
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Aug 2023 19:27:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8897C04A6A
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Aug 2023 14:09:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5E6iJwQ7SYxoV8RpNp9fOf6EzVyhjnESgEX+a0wOa00=; b=fqUbEXhyAutZCp
-	dyRXhWogGxy8+CSpA8LKhoxUPkVdrznkRInqbtuGAR4Q+ckrSoCI4hlXQQ5u/29vz6r8SqSp+r93X
-	/orxj69zUiM1bcrkfLsszG5Icg9MLQScR/twmCUEgeK8RMytcZ3EZVdjXZJwi/nLqxR3pk3VrTHm0
-	LJDdgI+po7AtXlkcpeYN5Sw7LfmoFJh3yCmrQJXp2rorQhx8HuBRh+3phcS8RDlllcMugVU65sUlD
-	Tz2R27BYJrn2Yy8HaDq+8V4COSZDRJue5acQRSUJV/QGjEOvhcEbyVACwYqcSfc0Wcw0ZE2JJQnzt
-	Odb+6V1Yk1zA/EJlwfuw==;
+	List-Owner; bh=5xbQBDDvP4pv02Lxl2HdOmaOd48vdz/QbbVacJvNpQo=; b=nI4YoJsts8czjI
+	MnuYlOEeyXn7Ro2XEQX+2EtroSNW+gxOLtGjCtExtYJb4X84sDT3vETEM/PiWSmQXhdRllvQ4Bk5f
+	5NSoGIM7SMHUB/ofdQlTBwHMkz+iPuQ6BcMsbUw6FJXpKw/kgmxZCCsOAxFzDNGvw5weyIWXHL45l
+	a9ngkhdBuRhZHDmaT28y5yFmKwBGn5yeJ0gaHq4EWVaypamDuyv35LdcaCTU/WUtH/eonvMQksMxG
+	RcAidLvxHkw1DW6Bg46Bb80eDiyQmy5k3ssXvBpHGYv4EVYM9otPCeiOPs6OPF1Voju/d72FaTnYu
+	VNKIb+4KPwaOvwcFjEig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUXnd-00BSfj-2i;
-	Fri, 11 Aug 2023 19:27:53 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qUpJ2-00DX2Q-0W;
+	Sat, 12 Aug 2023 14:09:28 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUXna-00BSem-0e
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Aug 2023 19:27:52 +0000
+	id 1qUpIy-00DX1F-1B;
+	Sat, 12 Aug 2023 14:09:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id A450E6794E;
-	Fri, 11 Aug 2023 19:27:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A385C433C8;
-	Fri, 11 Aug 2023 19:27:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1C21962474;
+	Sat, 12 Aug 2023 14:09:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CEB08C433C8;
+	Sat, 12 Aug 2023 14:09:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691782069;
-	bh=DobAbm1IHae1StSaGpB4TPZBLLSgCPyIvioYYdeqsmU=;
+	s=k20201202; t=1691849362;
+	bh=z+m4uxf5uQXSYdBR7XRst5uEUqfj5OU0THhKy2Pgzw0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VpwXSIe7nulyV9vgDfTveSjjWq2qTS0ZtuZ/N1hA2TEiXx0bAPBWvKm6At3Iy4PVC
-	 WnmhTBqNo6ittuaRwmcBriqG8eUTPMng2xDoYwYKO17NCphwFLHVjlU67HvoQufPJy
-	 OxYYpCHj1bNQWT2eFZBu1Nq0pDY00uI+snsKZHhQWGKbcHxzPmUBSSClXjMj/82ubN
-	 CUOjckWF+rNK16TEOXNeZxngfxM6UrA1ocymhZlo6qDLpeusQFekt1eKzfD6Kiegyh
-	 n7+0oIhDqc6GxhASIj150LhCeu6ALNk6Du4F2EDLJl/ElPM6PcY0g+MN53v67+rQQE
-	 6EqmuqNfAmu2Q==
-Received: (nullmailer pid 3990588 invoked by uid 1000);
-	Fri, 11 Aug 2023 19:27:47 -0000
-Date: Fri, 11 Aug 2023 13:27:47 -0600
-From: Rob Herring <robh@kernel.org>
-To: Raphael Gallais-Pou <rgallaispou@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Patrice Chotard <patrice.chotard@foss.st.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, =?iso-8859-1?Q?Rapha=EBl?= Gallais-Pou <raphael.gallais.pou@gmail.com>
-Subject: Re: [PATCH] dt-bindings: phy: st: convert phy-stih407-usb to DT
- schema
-Message-ID: <20230811192747.GA3978164-robh@kernel.org>
-References: <20230801205510.15713-1-rgallaispou@gmail.com>
+	b=NRcuuSwRkCingBsl/vsEZbgeFFYLrf1y+jccW0/5Yc5HDj+1VoVAME8JmLoRwatmv
+	 cq9vWxL4zAE9ZVUJLta84Dvv5Inw/EfKSi/yAs63VyBxmpmvFYbATcUsu77nljsk2A
+	 aA3VJilGgMOpA/ket7dhpg569WOR9pO165Aa92NCsdjCCxPdIgZY5ieRy7nbUuFLnh
+	 5IcBP4Gl/p7TKLadf1jSNE+GDBp+0bp0kFtLguMP/b1EWW/an8byu12FnBRohiFL9c
+	 uRJrWRUhrLp3tNfyj4R8So0k0XxPic0tJx3E0PAmnu0wkeyaegTrtitZo78/ruaSpI
+	 fW6TnxXPQeEnQ==
+Date: Sat, 12 Aug 2023 16:09:12 +0200
+From: Simon Horman <horms@kernel.org>
+To: Gatien Chevallier <gatien.chevallier@foss.st.com>
+Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
+	herbert@gondor.apana.org.au, davem@davemloft.net,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
+	jic23@kernel.org, olivier.moysan@foss.st.com,
+	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
+	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
+	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
+	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
+	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
+	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v4 05/11] firewall: introduce stm32_firewall framework
+Message-ID: <ZNeSiFQGdOXbR+2S@vergenet.net>
+References: <20230811100731.108145-1-gatien.chevallier@foss.st.com>
+ <20230811100731.108145-6-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230801205510.15713-1-rgallaispou@gmail.com>
+In-Reply-To: <20230811100731.108145-6-gatien.chevallier@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230811_122750_641421_82315AA6 
-X-CRM114-Status: GOOD (  22.14  )
+X-CRM114-CacheID: sfid-20230812_070924_515361_AB385848 
+X-CRM114-Status: GOOD (  29.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,165 +89,202 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Aug 01, 2023 at 10:55:10PM +0200, Raphael Gallais-Pou wrote:
-> From: Rapha=EBl Gallais-Pou <raphael.gallais.pou@gmail.com>
-> =
+On Fri, Aug 11, 2023 at 12:07:25PM +0200, Gatien Chevallier wrote:
 
-> Convert the st,stih407-usb2-phy binding to DT schema format.
-> =
+...
 
-> Signed-off-by: Rapha=EBl Gallais-Pou <raphael.gallais.pou@gmail.com>
-> ---
->  .../bindings/phy/phy-stih407-usb.txt          | 24 -------
->  .../bindings/phy/st,stih407-usb2-phy.yaml     | 63 +++++++++++++++++++
->  2 files changed, 63 insertions(+), 24 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/phy-stih407-usb=
-.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/st,stih407-usb2=
--phy.yaml
-> =
-
-> diff --git a/Documentation/devicetree/bindings/phy/phy-stih407-usb.txt b/=
-Documentation/devicetree/bindings/phy/phy-stih407-usb.txt
-> deleted file mode 100644
-> index 35f03df00130..000000000000
-> --- a/Documentation/devicetree/bindings/phy/phy-stih407-usb.txt
-> +++ /dev/null
-> @@ -1,24 +0,0 @@
-> -ST STiH407 USB PHY controller
-> -
-> -This file documents the dt bindings for the usb picoPHY driver which is =
-the PHY for both USB2 and USB3
-> -host controllers (when controlling usb2/1.1 devices) available on STiH40=
-7 SoC family from STMicroelectronics.
-> -
-> -Required properties:
-> -- compatible		: should be "st,stih407-usb2-phy"
-> -- st,syscfg		: phandle of sysconfig bank plus integer array containing p=
-hyparam and phyctrl register offsets
-> -- resets		: list of phandle and reset specifier pairs. There should be t=
-wo entries, one
-> -			  for the whole phy and one for the port
-> -- reset-names		: list of reset signal names. Should be "global" and "por=
-t"
-> -See: Documentation/devicetree/bindings/reset/st,stih407-powerdown.yaml
-> -See: Documentation/devicetree/bindings/reset/reset.txt
-> -
-> -Example:
-> -
-> -usb2_picophy0: usbpicophy@f8 {
-> -	compatible	=3D "st,stih407-usb2-phy";
-> -	#phy-cells	=3D <0>;
-> -	st,syscfg	=3D <&syscfg_core 0x100 0xf4>;
-> -	resets		=3D <&softreset STIH407_PICOPHY_SOFTRESET>,
-> -			  <&picophyreset STIH407_PICOPHY0_RESET>;
-> -	reset-names	=3D "global", "port";
-> -};
-> diff --git a/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.ya=
-ml b/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml
+> diff --git a/drivers/bus/stm32_firewall.c b/drivers/bus/stm32_firewall.c
 > new file mode 100644
-> index 000000000000..1f66ceddbf81
+> index 000000000000..900f3b052a66
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml
-> @@ -0,0 +1,63 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/st,stih407-usb2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +++ b/drivers/bus/stm32_firewall.c
+> @@ -0,0 +1,293 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
+> + */
 > +
-> +title: STMicroelectronics STiH407 USB PHY controller
+> +#include <linux/bitfield.h>
+> +#include <linux/bits.h>
+> +#include <linux/bus/stm32_firewall_device.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/init.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/types.h>
+> +#include <linux/slab.h>
 > +
-> +maintainers:
-> +  - Patrice Chotard <patrice.chotard@foss.st.com>
+> +#include "stm32_firewall.h"
 > +
-> +description:
-> +  The USB picoPHY driver is the PHY for both USB2 and USB3 host controll=
-ers
-> +  (when controlling usb2/1.1 devices) available on STiH407 SoC family fr=
-om
-> +  STMicroelectronics.
+> +/* Corresponds to STM32_FIREWALL_MAX_EXTRA_ARGS + firewall ID */
+> +#define STM32_FIREWALL_MAX_ARGS		(STM32_FIREWALL_MAX_EXTRA_ARGS + 1)
 > +
-> +properties:
-> +  compatible:
-> +    const: st,stih407-usb2-phy
+> +static LIST_HEAD(firewall_controller_list);
+> +static DEFINE_MUTEX(firewall_controller_list_lock);
 > +
-> +  st,syscfg:
-> +    description: Phandle to the syscfg bank
-> +    $ref: "/schemas/types.yaml#/definitions/uint32-array"
-
-Drop quotes
-
-The correct type is 'phandle-array' which is really a matrix, so you =
-
-need:
-
-items:
-  - items: =
-
-      - description: ...
-      - description: ...
-      - description: ...
-
-> +    items:
-> +      - description: phandle to syscfg
-> +      - description: phyparam register offset
-> +      - description: phyctrl register offset
+> +/* Firewall device API */
+> +int stm32_firewall_get_firewall(struct device_node *np, struct stm32_firewall *firewall,
+> +				unsigned int nb_firewall)
+> +{
+> +	struct stm32_firewall_controller *ctrl;
+> +	struct of_phandle_iterator it;
+> +	unsigned int i, j = 0;
+> +	int err;
 > +
-> +  resets:
-> +    items:
-> +      - description: Phandle and reset specifier pair for the whole phy.
-> +      - description: Phandle and reset specifier pair for the port.
+> +	if (!firewall || !nb_firewall)
+> +		return -EINVAL;
 > +
-> +  reset-names:
-> +    description: List of reset signal names.
-> +    items:
-> +      - const: "global"
-> +      - const: "port"
+> +	/* Parse property with phandle parsed out */
+> +	of_for_each_phandle(&it, err, np, "feature-domains", "#feature-domain-cells", 0) {
+> +		struct of_phandle_args provider_args;
+> +		struct device_node *provider = it.node;
+> +		const char *fw_entry;
+> +		bool match = false;
+> +
+> +		if (err) {
+> +			pr_err("Unable to get feature-domains property for node %s\n, err: %d",
+> +			       np->full_name, err);
+> +			of_node_put(provider);
+> +			return err;
+> +		}
+> +
+> +		if (j > nb_firewall) {
+> +			pr_err("Too many firewall controllers");
+> +			of_node_put(provider);
+> +			return -EINVAL;
+> +		}
+> +
+> +		provider_args.args_count = of_phandle_iterator_args(&it, provider_args.args,
+> +								    STM32_FIREWALL_MAX_ARGS);
+> +
+> +		/* Check if the parsed phandle corresponds to a registered firewall controller */
+> +		mutex_lock(&firewall_controller_list_lock);
+> +		list_for_each_entry(ctrl, &firewall_controller_list, entry) {
+> +			if (ctrl->dev->of_node->phandle == it.phandle) {
+> +				match = true;
+> +				firewall[j].firewall_ctrl = ctrl;
+> +				break;
+> +			}
+> +		}
+> +		mutex_unlock(&firewall_controller_list_lock);
+> +
+> +		if (!match) {
+> +			firewall[j].firewall_ctrl = NULL;
+> +			pr_err("No firewall controller registered for %s\n", np->full_name);
+> +			of_node_put(provider);
+> +			return -ENODEV;
+> +		}
+> +
+> +		err = of_property_read_string_index(np, "feature-domain-names", j, &fw_entry);
+> +		if (err == 0)
+> +			firewall[j].entry = fw_entry;
+> +
+> +		/* Handle the case when there are no arguments given along with the phandle */
+> +		if (provider_args.args_count < 0 ||
+> +		    provider_args.args_count > STM32_FIREWALL_MAX_ARGS) {
+> +			of_node_put(provider);
+> +			return -EINVAL;
+> +		} else if (provider_args.args_count == 0) {
+> +			firewall[j].extra_args_size = 0;
+> +			firewall[j].firewall_id = U32_MAX;
+> +			j++;
+> +			continue;
+> +		}
+> +
+> +		/* The firewall ID is always the first argument */
+> +		firewall[j].firewall_id = provider_args.args[0];
+> +
+> +		/* Extra args start at the third argument */
+> +		for (i = 0; i < provider_args.args_count; i++)
+> +			firewall[j].extra_args[i] = provider_args.args[i + 1];
 
-Drop quotes
+Hi Gatien,
+
+Above it is checked that the maximum value of provider_args.args_count is
+STM32_FIREWALL_MAX_ARGS.
+So here the maximum value of i is STM32_FIREWALL_MAX_ARGS - 1.
+
+STM32_FIREWALL_MAX_ARGS is defined as STM32_FIREWALL_MAX_EXTRA_ARGS + 1
+And STM32_FIREWALL_MAX_EXTRA_ARGS is defined as 5.
+So the maximum value of i is (5 + 1 - 1) = 5.
+
+firewall[j] is of type struct stm32_firewall.
+And its args field has STM32_FIREWALL_MAX_EXTRA_ARGS (5) elements.
+Thus the maximum valid index is (5 - 1) = 4.
+
+But the line above may access index 5.
+
+Flagged by Smatch.
 
 > +
-> +  "#phy-cells":
-> +    const: 0
+> +		/* Remove the firewall ID arg that is not an extra argument */
+> +		firewall[j].extra_args_size = provider_args.args_count - 1;
 > +
-> +required:
-> +  - compatible
-> +  - st,syscfg
-> +  - resets
-> +  - reset-names
-> +  - "#phy-cells"
+> +		j++;
+> +	}
 > +
-> +additionalProperties: false
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(stm32_firewall_get_firewall);
+
+...
+
+> diff --git a/include/linux/bus/stm32_firewall_device.h b/include/linux/bus/stm32_firewall_device.h
+> new file mode 100644
+> index 000000000000..7b4450a8ec15
+> --- /dev/null
+> +++ b/include/linux/bus/stm32_firewall_device.h
+> @@ -0,0 +1,141 @@
+> +/* SPDX-License-Identifier: GPL-2.0-only */
+> +/*
+> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
+> + */
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/reset/stih407-resets.h>
-> +    usb2_picophy0: usbpicophy {
-> +    	compatible	=3D "st,stih407-usb2-phy";
-> +    	#phy-cells	=3D <0>;
-> +    	st,syscfg	=3D <&syscfg_core 0x100 0xf4>;
-> +    	resets		=3D <&softreset STIH407_PICOPHY_SOFTRESET>,
-> +    			  <&picophyreset STIH407_PICOPHY0_RESET>;
-> +    	reset-names	=3D "global", "port";
+> +#ifndef STM32_FIREWALL_DEVICE_H
+> +#define STM32_FIREWALL_DEVICE_H
+> +
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/types.h>
+> +
+> +#define STM32_FIREWALL_MAX_EXTRA_ARGS		5
+> +
+> +/* Opaque reference to stm32_firewall_controller */
+> +struct stm32_firewall_controller;
+> +
+> +/**
+> + * struct stm32_firewall - Information on a device's firewall. Each device can have more than one
+> + *			   firewall.
+> + *
+> + * @firewall_ctrl:		Pointer referencing a firewall controller of the device. It is
+> + *				opaque so a device cannot manipulate the controller's ops or access
+> + *				the controller's data
+> + * @extra_args:			Extra arguments that are implementation dependent
+> + * @entry:			Name of the firewall entry
+> + * @extra_args_size:		Number of extra arguments
+> + * @firewall_id:		Firewall ID associated the device for this firewall controller
+> + */
+> +struct stm32_firewall {
+> +	struct stm32_firewall_controller *firewall_ctrl;
+> +	u32 extra_args[STM32_FIREWALL_MAX_EXTRA_ARGS];
+> +	const char *entry;
+> +	size_t extra_args_size;
+> +	u32 firewall_id;
+> +};
 
-Mixed spaces and tabs.
+...
 
-> +    };
-> +...
-> -- =
-
-> 2.41.0
-> =
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
