@@ -4,80 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8897C04A6A
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Aug 2023 14:09:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9223EC04FDF
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Aug 2023 15:49:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xbQBDDvP4pv02Lxl2HdOmaOd48vdz/QbbVacJvNpQo=; b=nI4YoJsts8czjI
-	MnuYlOEeyXn7Ro2XEQX+2EtroSNW+gxOLtGjCtExtYJb4X84sDT3vETEM/PiWSmQXhdRllvQ4Bk5f
-	5NSoGIM7SMHUB/ofdQlTBwHMkz+iPuQ6BcMsbUw6FJXpKw/kgmxZCCsOAxFzDNGvw5weyIWXHL45l
-	a9ngkhdBuRhZHDmaT28y5yFmKwBGn5yeJ0gaHq4EWVaypamDuyv35LdcaCTU/WUtH/eonvMQksMxG
-	RcAidLvxHkw1DW6Bg46Bb80eDiyQmy5k3ssXvBpHGYv4EVYM9otPCeiOPs6OPF1Voju/d72FaTnYu
-	VNKIb+4KPwaOvwcFjEig==;
+	List-Owner; bh=tAkonpPEVompd52YnLbkq5kyL7xpz0M0eLENvnVcyB4=; b=Glxtkqweo60Pmz
+	UhyTPLRZtcpm4eyMqlL2AVR9RqOjqOXIB0OprLPM0quQoDTwNc/ju1KJAIdhhrlFu5WZSDrMBOo5N
+	/k6/B7Lsrw47iFNx6z/rhwaLDWbYjlG/CU9J+caRj4EWis+nhu4ARwNEo5J9SiHph4f43MDxxU9CA
+	+wiRQKVTLRXavXIEq2uUs7NCpP2sG4+6oZdsqK0tmxnHF9hMtVclaJABtaT4GfDn1z61zXQcPPnFl
+	ovaVHV6sAplInn0+I7yTcj0f5e7YPrcg33TIaEGmZwEuu5WBVeH/67DA0WXwpz3qlRQZG7S3cqekf
+	7z0wga2VWbdXy6RZNhbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUpJ2-00DX2Q-0W;
-	Sat, 12 Aug 2023 14:09:28 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qVDLb-00FMih-30;
+	Sun, 13 Aug 2023 15:49:43 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUpIy-00DX1F-1B;
-	Sat, 12 Aug 2023 14:09:26 +0000
+	id 1qVDLY-00FMhQ-1g
+	for linux-phy@lists.infradead.org;
+	Sun, 13 Aug 2023 15:49:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1C21962474;
-	Sat, 12 Aug 2023 14:09:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CEB08C433C8;
-	Sat, 12 Aug 2023 14:09:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 3F1F56309E;
+	Sun, 13 Aug 2023 15:49:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 964C5C433CA;
+	Sun, 13 Aug 2023 15:49:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691849362;
-	bh=z+m4uxf5uQXSYdBR7XRst5uEUqfj5OU0THhKy2Pgzw0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NRcuuSwRkCingBsl/vsEZbgeFFYLrf1y+jccW0/5Yc5HDj+1VoVAME8JmLoRwatmv
-	 cq9vWxL4zAE9ZVUJLta84Dvv5Inw/EfKSi/yAs63VyBxmpmvFYbATcUsu77nljsk2A
-	 aA3VJilGgMOpA/ket7dhpg569WOR9pO165Aa92NCsdjCCxPdIgZY5ieRy7nbUuFLnh
-	 5IcBP4Gl/p7TKLadf1jSNE+GDBp+0bp0kFtLguMP/b1EWW/an8byu12FnBRohiFL9c
-	 uRJrWRUhrLp3tNfyj4R8So0k0XxPic0tJx3E0PAmnu0wkeyaegTrtitZo78/ruaSpI
-	 fW6TnxXPQeEnQ==
-Date: Sat, 12 Aug 2023 16:09:12 +0200
-From: Simon Horman <horms@kernel.org>
-To: Gatien Chevallier <gatien.chevallier@foss.st.com>
-Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
-	herbert@gondor.apana.org.au, davem@davemloft.net,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
-	jic23@kernel.org, olivier.moysan@foss.st.com,
-	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
-	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
-	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
-	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
-	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
-	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
-	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
-	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v4 05/11] firewall: introduce stm32_firewall framework
-Message-ID: <ZNeSiFQGdOXbR+2S@vergenet.net>
-References: <20230811100731.108145-1-gatien.chevallier@foss.st.com>
- <20230811100731.108145-6-gatien.chevallier@foss.st.com>
+	s=k20201202; t=1691941778;
+	bh=0Ou6Loj81pG8f/0du1T0D4rBXcBBgFyKIYwscWLgxfE=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=CCDcYt86lc+mKx7S3RgEKwLghuBEe07On5ViwBJ3c7zIeRzsxlgUKxLc3AfsVCEwp
+	 xQ06ygvaiACqkWmhlErjn94+gOTNFBYaw/+qhl/mgB8dAoJ7QIdNJZcgbWT80zKR1w
+	 jvmlg/VQ0/7lbfD7522hSlnCMdkk+/KSDDCFZ/FAmmh5oEpu2riUd9oCgnT3X1jhbL
+	 XpQennkWiVJQK5xJls0nk/ZNrxLJJayh3MSl8zcR4BzQ56Gc37cTkYRSL8Dz/CO1Sz
+	 CEeqOvSeb4Zy5OHNZwceEypblcQP79uL7NYwvI7we2JObxIVFKRvb2miPdo5gZ2NzV
+	 lzkaZFQ43gJMw==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Adrien Thierry <athierry@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Sasha Levin <sashal@kernel.org>,
+	agross@kernel.org,
+	andersson@kernel.org,
+	konrad.dybcio@linaro.org,
+	kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.4 02/54] phy: qcom-snps-femto-v2: keep cfg_ahb_clk enabled during runtime suspend
+Date: Sun, 13 Aug 2023 11:48:41 -0400
+Message-Id: <20230813154934.1067569-2-sashal@kernel.org>
+X-Mailer: git-send-email 2.40.1
+In-Reply-To: <20230813154934.1067569-1-sashal@kernel.org>
+References: <20230813154934.1067569-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230811100731.108145-6-gatien.chevallier@foss.st.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.4.10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230812_070924_515361_AB385848 
-X-CRM114-Status: GOOD (  29.81  )
+X-CRM114-CacheID: sfid-20230813_084940_673581_8A9B11B5 
+X-CRM114-Status: GOOD (  15.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,195 +86,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 11, 2023 at 12:07:25PM +0200, Gatien Chevallier wrote:
+From: Adrien Thierry <athierry@redhat.com>
 
-...
+[ Upstream commit 45d89a344eb46db9dce851c28e14f5e3c635c251 ]
 
-> diff --git a/drivers/bus/stm32_firewall.c b/drivers/bus/stm32_firewall.c
-> new file mode 100644
-> index 000000000000..900f3b052a66
-> --- /dev/null
-> +++ b/drivers/bus/stm32_firewall.c
-> @@ -0,0 +1,293 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
-> + */
-> +
-> +#include <linux/bitfield.h>
-> +#include <linux/bits.h>
-> +#include <linux/bus/stm32_firewall_device.h>
-> +#include <linux/device.h>
-> +#include <linux/err.h>
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/types.h>
-> +#include <linux/slab.h>
-> +
-> +#include "stm32_firewall.h"
-> +
-> +/* Corresponds to STM32_FIREWALL_MAX_EXTRA_ARGS + firewall ID */
-> +#define STM32_FIREWALL_MAX_ARGS		(STM32_FIREWALL_MAX_EXTRA_ARGS + 1)
-> +
-> +static LIST_HEAD(firewall_controller_list);
-> +static DEFINE_MUTEX(firewall_controller_list_lock);
-> +
-> +/* Firewall device API */
-> +int stm32_firewall_get_firewall(struct device_node *np, struct stm32_firewall *firewall,
-> +				unsigned int nb_firewall)
-> +{
-> +	struct stm32_firewall_controller *ctrl;
-> +	struct of_phandle_iterator it;
-> +	unsigned int i, j = 0;
-> +	int err;
-> +
-> +	if (!firewall || !nb_firewall)
-> +		return -EINVAL;
-> +
-> +	/* Parse property with phandle parsed out */
-> +	of_for_each_phandle(&it, err, np, "feature-domains", "#feature-domain-cells", 0) {
-> +		struct of_phandle_args provider_args;
-> +		struct device_node *provider = it.node;
-> +		const char *fw_entry;
-> +		bool match = false;
-> +
-> +		if (err) {
-> +			pr_err("Unable to get feature-domains property for node %s\n, err: %d",
-> +			       np->full_name, err);
-> +			of_node_put(provider);
-> +			return err;
-> +		}
-> +
-> +		if (j > nb_firewall) {
-> +			pr_err("Too many firewall controllers");
-> +			of_node_put(provider);
-> +			return -EINVAL;
-> +		}
-> +
-> +		provider_args.args_count = of_phandle_iterator_args(&it, provider_args.args,
-> +								    STM32_FIREWALL_MAX_ARGS);
-> +
-> +		/* Check if the parsed phandle corresponds to a registered firewall controller */
-> +		mutex_lock(&firewall_controller_list_lock);
-> +		list_for_each_entry(ctrl, &firewall_controller_list, entry) {
-> +			if (ctrl->dev->of_node->phandle == it.phandle) {
-> +				match = true;
-> +				firewall[j].firewall_ctrl = ctrl;
-> +				break;
-> +			}
-> +		}
-> +		mutex_unlock(&firewall_controller_list_lock);
-> +
-> +		if (!match) {
-> +			firewall[j].firewall_ctrl = NULL;
-> +			pr_err("No firewall controller registered for %s\n", np->full_name);
-> +			of_node_put(provider);
-> +			return -ENODEV;
-> +		}
-> +
-> +		err = of_property_read_string_index(np, "feature-domain-names", j, &fw_entry);
-> +		if (err == 0)
-> +			firewall[j].entry = fw_entry;
-> +
-> +		/* Handle the case when there are no arguments given along with the phandle */
-> +		if (provider_args.args_count < 0 ||
-> +		    provider_args.args_count > STM32_FIREWALL_MAX_ARGS) {
-> +			of_node_put(provider);
-> +			return -EINVAL;
-> +		} else if (provider_args.args_count == 0) {
-> +			firewall[j].extra_args_size = 0;
-> +			firewall[j].firewall_id = U32_MAX;
-> +			j++;
-> +			continue;
-> +		}
-> +
-> +		/* The firewall ID is always the first argument */
-> +		firewall[j].firewall_id = provider_args.args[0];
-> +
-> +		/* Extra args start at the third argument */
-> +		for (i = 0; i < provider_args.args_count; i++)
-> +			firewall[j].extra_args[i] = provider_args.args[i + 1];
+In the dwc3 core, both system and runtime suspend end up calling
+dwc3_suspend_common(). From there, what happens for the PHYs depends on
+the USB mode and whether the controller is entering system or runtime
+suspend.
 
-Hi Gatien,
+HOST mode:
+  (1) system suspend on a non-wakeup-capable controller
 
-Above it is checked that the maximum value of provider_args.args_count is
-STM32_FIREWALL_MAX_ARGS.
-So here the maximum value of i is STM32_FIREWALL_MAX_ARGS - 1.
+  The [1] if branch is taken. dwc3_core_exit() is called, which ends up
+  calling phy_power_off() and phy_exit(). Those two functions decrease the
+  PM runtime count at some point, so they will trigger the PHY runtime
+  sleep (assuming the count is right).
 
-STM32_FIREWALL_MAX_ARGS is defined as STM32_FIREWALL_MAX_EXTRA_ARGS + 1
-And STM32_FIREWALL_MAX_EXTRA_ARGS is defined as 5.
-So the maximum value of i is (5 + 1 - 1) = 5.
+  (2) runtime suspend / system suspend on a wakeup-capable controller
 
-firewall[j] is of type struct stm32_firewall.
-And its args field has STM32_FIREWALL_MAX_EXTRA_ARGS (5) elements.
-Thus the maximum valid index is (5 - 1) = 4.
+  The [1] branch is not taken. dwc3_suspend_common() calls
+  phy_pm_runtime_put_sync(). Assuming the ref count is right, the PHY
+  runtime suspend op is called.
 
-But the line above may access index 5.
+DEVICE mode:
+  dwc3_core_exit() is called on both runtime and system sleep
+  unless the controller is already runtime suspended.
 
-Flagged by Smatch.
+OTG mode:
+  (1) system suspend : dwc3_core_exit() is called
 
-> +
-> +		/* Remove the firewall ID arg that is not an extra argument */
-> +		firewall[j].extra_args_size = provider_args.args_count - 1;
-> +
-> +		j++;
-> +	}
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(stm32_firewall_get_firewall);
+  (2) runtime suspend : do nothing
 
-...
+In host mode, the code seems to make a distinction between 1) runtime
+sleep / system sleep for wakeup-capable controller, and 2) system sleep
+for non-wakeup-capable controller, where phy_power_off() and phy_exit()
+are only called for the latter. This suggests the PHY is not supposed to
+be in a fully powered-off state for runtime sleep and system sleep for
+wakeup-capable controller.
 
-> diff --git a/include/linux/bus/stm32_firewall_device.h b/include/linux/bus/stm32_firewall_device.h
-> new file mode 100644
-> index 000000000000..7b4450a8ec15
-> --- /dev/null
-> +++ b/include/linux/bus/stm32_firewall_device.h
-> @@ -0,0 +1,141 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
-> + */
-> +
-> +#ifndef STM32_FIREWALL_DEVICE_H
-> +#define STM32_FIREWALL_DEVICE_H
-> +
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/types.h>
-> +
-> +#define STM32_FIREWALL_MAX_EXTRA_ARGS		5
-> +
-> +/* Opaque reference to stm32_firewall_controller */
-> +struct stm32_firewall_controller;
-> +
-> +/**
-> + * struct stm32_firewall - Information on a device's firewall. Each device can have more than one
-> + *			   firewall.
-> + *
-> + * @firewall_ctrl:		Pointer referencing a firewall controller of the device. It is
-> + *				opaque so a device cannot manipulate the controller's ops or access
-> + *				the controller's data
-> + * @extra_args:			Extra arguments that are implementation dependent
-> + * @entry:			Name of the firewall entry
-> + * @extra_args_size:		Number of extra arguments
-> + * @firewall_id:		Firewall ID associated the device for this firewall controller
-> + */
-> +struct stm32_firewall {
-> +	struct stm32_firewall_controller *firewall_ctrl;
-> +	u32 extra_args[STM32_FIREWALL_MAX_EXTRA_ARGS];
-> +	const char *entry;
-> +	size_t extra_args_size;
-> +	u32 firewall_id;
-> +};
+Moreover, downstream, cfg_ahb_clk only gets disabled for system suspend.
+The clocks are disabled by phy->set_suspend() [2] which is only called
+in the system sleep path through dwc3_core_exit() [3].
 
-...
+With that in mind, don't disable the clocks during the femto PHY runtime
+suspend callback. The clocks will only be disabled during system suspend
+for non-wakeup-capable controllers, through dwc3_core_exit().
+
+[1] https://elixir.bootlin.com/linux/v6.4/source/drivers/usb/dwc3/core.c#L1988
+[2] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c#L524
+[3] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/dwc3/core.c#L1915
+
+Signed-off-by: Adrien Thierry <athierry@redhat.com>
+Link: https://lore.kernel.org/r/20230629144542.14906-2-athierry@redhat.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+index 6c237f3cc66db..3335480fc395a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+@@ -165,22 +165,13 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+ 					   0, USB2_AUTO_RESUME);
+ 	}
+ 
+-	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+ 	return 0;
+ }
+ 
+ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+ {
+-	int ret;
+-
+ 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
+ 
+-	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+-	if (ret) {
+-		dev_err(&hsphy->phy->dev, "failed to enable cfg ahb clock\n");
+-		return ret;
+-	}
+-
+ 	return 0;
+ }
+ 
+-- 
+2.40.1
+
 
 -- 
 linux-phy mailing list
