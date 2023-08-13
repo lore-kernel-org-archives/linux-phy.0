@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60636C001DB
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Aug 2023 16:06:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 581A8C04A94
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Aug 2023 16:09:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OIVg6tmkd4E+vVxMadwAiiBJCk9zXKdLcsYnx4mavy0=; b=UQkMslaWIzfQav
-	D91WUORPDC4E2WsQ2sYo+84m83jeP6z2oPvh/5YC6p1KiwEMcXOXw6ttZQHQtBUNy3yaCjTgb7qAo
-	GlubbbgijruqEOgdCsH1epMHUZGfgDgKtlm0zzwtM0YYFEcL2XO3gjgPyEMTyFhTYBBT6qEnG1aHI
-	f0sAIr+8TjLxWnFE84FkUytrs8aKWV/G89e/aowIR0oHHgC5tH7gSkigZTfcP3+ijyLl8vc+RaVRV
-	qNcR+qTTfqN9ZAKfNoaG4cVbboVYw9hfxwPVD/OoX7cWJghyGcbZLywdRh3hV+05TIib87secNbKU
-	wg2EEGkSPpj0Dm3LzMEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=imb5grGRHNsm05zuRV8zOEXR2YyW0I8LMYtc0c5WtsI=; b=n3yDAigCuDLQUZ
+	1Fuv5mGhifrkjVr10w8CM0ZxpRWjgKNclKu/fL4eLkY3ZCEo96JnDXDMBiBEXt75ZelYz4oJdFmc/
+	bx6ERbjAZF42rTfmkNosQT7Bj4n7RV/R3XNgyFMoV1D4OC1eywMlnhvLbVLi+NYlh/WMHnd0Vift1
+	4eV35BanuqnhsaoGQ2XjL3wBGI0y6J1NTMefCGCorgRvd7mkWBHitm0IjXBXk+JOQMrBdfeuVfgFR
+	sSvgwbmmDPjrk8bj0RiIIgNI5MLK8K8qYMbVqB6VHL+kE+s4aF3ylokywIuO9BxALG5pcm1r/5N1v
+	uaFstLH9hE4RuTC7BKJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVDbg-00FPFz-0M;
-	Sun, 13 Aug 2023 16:06:20 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qVDf0-00FPgB-0I;
+	Sun, 13 Aug 2023 16:09:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVDbd-00FPEm-1F
+	id 1qVDex-00FPf9-1Y
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Aug 2023 16:06:18 +0000
+	Sun, 13 Aug 2023 16:09:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id A643363836;
-	Sun, 13 Aug 2023 16:06:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 287D0C433C7;
-	Sun, 13 Aug 2023 16:06:13 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id EC9DD63A5A;
+	Sun, 13 Aug 2023 16:09:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58661C433C8;
+	Sun, 13 Aug 2023 16:09:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691942776;
-	bh=MAbDjF2njdOYNg9tRPhy20/cP3ibwHDePgjiAVqI1xA=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=NGMcwE1LEEYdNXGrupdVZNRcBCxh/27SysaxlAgfq4W3yE0V9MnvtrJgLREtYxwSJ
-	 RddA77M2TZwu+k9GB00dP8KE9KYcU2kXn9ZwY4YWBqXeopiTDhVyL6WgtwBuw2x3fb
-	 7TZ7ZO1JQjyYI/CFXeyHy4y/P+FVqGBc+6Az8RBrMXlw1wczNbh53NY9UkY2pUAYd+
-	 k5yyjh1pEuHRNVGlgCYrAwQCydMa67BCaZ1uqz5tfF1XtkAnKXf8RzFUhM7zmoqSyt
-	 hbBTwaDRrJzz2ad6ZP5J0KzE5k8KByF0jIa3g6Wfinz0hT/5X28fnj4ozMb/Afjx+6
-	 4yTrNRE7364lQ==
+	s=k20201202; t=1691942982;
+	bh=BcDOaovPxSnKATfyJYAWa6+oBcykzejHLHK73vkPAqM=;
+	h=From:To:Cc:Subject:Date:From;
+	b=dlIJgiyG7hxsWRfcSZsPm8kNhnGmg4TEPJPuwAVIjpQ/UWMC+9soRZpaqJZnWZix5
+	 3EQA+JQN85NLlGjfE/YvxjL7Lmnz1z+wI5PNOkuBgHPJhUcn4MPxIRodFJm6C9+qhr
+	 QeaZxvYPkxahKhfDXGryOrFBq//V7Th0EK/+cL1JEYl1XE+SX0ccihAsN0zfv2saTD
+	 Tf+8oMhrN/xv43ZsH0mipCjazlA04pz6TcesOWQpE+rcLLOwS5Qifdpor6MUi01Vnk
+	 T7jy7QqFMdCbX1yAlf4R4iXmbPijlZlXS81zVwQewunMHJitsM8n+e58S/wfpToI0n
+	 HIxdi/kkQLA3w==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -57,20 +57,17 @@ Cc: Adrien Thierry <athierry@redhat.com>,
 	kishon@kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 5.15 02/31] phy: qcom-snps-femto-v2: use qcom_snps_hsphy_suspend/resume error code
-Date: Sun, 13 Aug 2023 12:05:35 -0400
-Message-Id: <20230813160605.1080385-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.10 01/25] phy: qcom-snps-femto-v2: keep cfg_ahb_clk enabled during runtime suspend
+Date: Sun, 13 Aug 2023 12:09:12 -0400
+Message-Id: <20230813160936.1082758-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230813160605.1080385-1-sashal@kernel.org>
-References: <20230813160605.1080385-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 5.15.126
+X-stable-base: Linux 5.10.190
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230813_090617_468898_D432B8F0 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230813_090943_606982_71C4E33B 
+X-CRM114-Status: GOOD (  14.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,43 +86,90 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Adrien Thierry <athierry@redhat.com>
 
-[ Upstream commit 8932089b566c24ea19b57e37704c492678de1420 ]
+[ Upstream commit 45d89a344eb46db9dce851c28e14f5e3c635c251 ]
 
-The return value from qcom_snps_hsphy_suspend/resume is not used. Make
-sure qcom_snps_hsphy_runtime_suspend/resume return this value as well.
+In the dwc3 core, both system and runtime suspend end up calling
+dwc3_suspend_common(). From there, what happens for the PHYs depends on
+the USB mode and whether the controller is entering system or runtime
+suspend.
+
+HOST mode:
+  (1) system suspend on a non-wakeup-capable controller
+
+  The [1] if branch is taken. dwc3_core_exit() is called, which ends up
+  calling phy_power_off() and phy_exit(). Those two functions decrease the
+  PM runtime count at some point, so they will trigger the PHY runtime
+  sleep (assuming the count is right).
+
+  (2) runtime suspend / system suspend on a wakeup-capable controller
+
+  The [1] branch is not taken. dwc3_suspend_common() calls
+  phy_pm_runtime_put_sync(). Assuming the ref count is right, the PHY
+  runtime suspend op is called.
+
+DEVICE mode:
+  dwc3_core_exit() is called on both runtime and system sleep
+  unless the controller is already runtime suspended.
+
+OTG mode:
+  (1) system suspend : dwc3_core_exit() is called
+
+  (2) runtime suspend : do nothing
+
+In host mode, the code seems to make a distinction between 1) runtime
+sleep / system sleep for wakeup-capable controller, and 2) system sleep
+for non-wakeup-capable controller, where phy_power_off() and phy_exit()
+are only called for the latter. This suggests the PHY is not supposed to
+be in a fully powered-off state for runtime sleep and system sleep for
+wakeup-capable controller.
+
+Moreover, downstream, cfg_ahb_clk only gets disabled for system suspend.
+The clocks are disabled by phy->set_suspend() [2] which is only called
+in the system sleep path through dwc3_core_exit() [3].
+
+With that in mind, don't disable the clocks during the femto PHY runtime
+suspend callback. The clocks will only be disabled during system suspend
+for non-wakeup-capable controllers, through dwc3_core_exit().
+
+[1] https://elixir.bootlin.com/linux/v6.4/source/drivers/usb/dwc3/core.c#L1988
+[2] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/phy/phy-msm-snps-hs.c#L524
+[3] https://git.codelinaro.org/clo/la/kernel/msm-5.4/-/blob/LV.AU.1.2.1.r2-05300-gen3meta.0/drivers/usb/dwc3/core.c#L1915
 
 Signed-off-by: Adrien Thierry <athierry@redhat.com>
-Link: https://lore.kernel.org/r/20230629144542.14906-4-athierry@redhat.com
+Link: https://lore.kernel.org/r/20230629144542.14906-2-athierry@redhat.com
 Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 9 ---------
+ 1 file changed, 9 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index a107f98c662d5..68c21c08a0397 100644
+index 7e61202aa234e..a107f98c662d5 100644
 --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
 +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -139,8 +139,7 @@ static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
- 	if (!hsphy->phy_initialized)
- 		return 0;
+@@ -122,22 +122,13 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+ 					   0, USB2_AUTO_RESUME);
+ 	}
  
--	qcom_snps_hsphy_suspend(hsphy);
--	return 0;
-+	return qcom_snps_hsphy_suspend(hsphy);
+-	clk_disable_unprepare(hsphy->cfg_ahb_clk);
+ 	return 0;
  }
  
- static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
-@@ -150,8 +149,7 @@ static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
- 	if (!hsphy->phy_initialized)
- 		return 0;
+ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+ {
+-	int ret;
+-
+ 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
  
--	qcom_snps_hsphy_resume(hsphy);
--	return 0;
-+	return qcom_snps_hsphy_resume(hsphy);
+-	ret = clk_prepare_enable(hsphy->cfg_ahb_clk);
+-	if (ret) {
+-		dev_err(&hsphy->phy->dev, "failed to enable cfg ahb clock\n");
+-		return ret;
+-	}
+-
+ 	return 0;
  }
  
- static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
 -- 
 2.40.1
 
