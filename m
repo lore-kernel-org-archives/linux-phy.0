@@ -4,105 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FE16C001DB
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 13:45:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2437C001B0
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 16:19:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=19CsEosy49EZ1c6PYlhQpCpCACPyE9gL9sdSni5Phfw=; b=FftNI9dVTUFAGVT2pP6ihhoWup
-	1YB075xgYjy+4hVcRh9DQ5y6l/ZKWXyAMvF7h7EAwJ5hPtVjpE3DS2EWBNiTplMmS+aqluUtl5UYG
-	qEYh9IsVChzrfvvajsd3i0LixSO1E+2cReQup0DR9vB04GU3qajPfaRJf6cFQOSWsFF7NKT7IlJ3N
-	+DfGT0lUI3srwdkrcERNbkb89YUbG2bpasbt+j9izTVHJnS+k6uCwTrTBxzNUOv4V/ZAfo3r1g/Ei
-	ZA8wznw3budrhFVlVtP09jdZawmT/5WmG2Pamcez7nlkPqY9IYgWrDe+ZB9R9ksKikV5Eky+LbTZy
-	UNE1WynA==;
+	bh=5wO6vhIqSxRZCVDtkrr5SfX19Iv8FMoewwua+mYbPBk=; b=v7yETH6FWoqJoXQZKThgX9Hbvs
+	K/VajYVSWnecHYZhCvRBFfPqKbVaCCqwPxCvYLc2F3sZg7DTLJFKs6vPQRs0FoA5fTGWpvVYucpa6
+	y94y7NSo0WIGDZ+UUuhTVeujoJDcAfLAafel0S6NlKFEdgII9LdzmSGjZTTfLlZl3+xfOCdVW1vn7
+	znnI3m7gz7isb/0l3/9zINza1xn9Wq4C8LPn/QGWDxp3dw1qrZ/gkI4Tw5shr3WYjAxafZRJXhmzs
+	2MIGW6Hw1SLo9t5iq4fRowWaPIUX7EtV0qFBy/c4b0d/fGZCZnPWlsFhITPoUzMaou6UBYDjqwmvd
+	68HZ5HOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVXtE-00HCEA-0k;
-	Mon, 14 Aug 2023 13:45:48 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qVaHg-00HXjq-1f;
+	Mon, 14 Aug 2023 16:19:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVXtB-00HCCy-0n;
-	Mon, 14 Aug 2023 13:45:46 +0000
+	id 1qVaHc-00HXix-30;
+	Mon, 14 Aug 2023 16:19:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B642E615B0;
-	Mon, 14 Aug 2023 13:45:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 918D8C433C8;
-	Mon, 14 Aug 2023 13:45:43 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6AE846406B;
+	Mon, 14 Aug 2023 16:19:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C6FFC433C7;
+	Mon, 14 Aug 2023 16:19:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692020744;
-	bh=3GWUGU3sn/mG21fzGuyMqh51zJlW4hGxN9JOTvBoYEc=;
+	s=k20201202; t=1692029947;
+	bh=1HXaR1YqLupXBHwp85bkyMqldMzywffwekLUEAu17lQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YqD2U0V2tuxKZqxWonJYrqzUtF4LVqwXLZtE4B/8QCGUXmjMdi5/Vy3RG8+ny68FW
-	 9ZLD41a9bVbdV5626Qbkc/m8Uff5zw0x3RRPyGBxZkf5FqceOXnFOniggixG/FtXs6
-	 GTb8FSPkQ/TjyNtQqcbkB8/Vs87Sb3YosijuXHfP248tR4OnTyh9h+Rw6iqoHSK2Cq
-	 LVLf9nAXZ6pYHSUxJccABK8IUTTPy7LQ2PxZLrKJqjt8lQhVMxPWYnPt5631xOPHoH
-	 vnppiFo25hGzBQ89EK/NfqwgiG7yy+nKN3EVUWjBwbz9h4gWtTs1H/GF89huUiwnVw
-	 KHfaLNQ7ni+YQ==
-Date: Mon, 14 Aug 2023 15:45:41 +0200
-From: Wolfram Sang <wsa@kernel.org>
-To: Gatien Chevallier <gatien.chevallier@foss.st.com>
-Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
-	herbert@gondor.apana.org.au, davem@davemloft.net,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
-	jic23@kernel.org, olivier.moysan@foss.st.com,
-	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
-	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
-	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
-	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
-	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
-	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
-	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
-	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Jonathan Cameron <Jonathan.Cameron@huawei.com>
-Subject: Re: [PATCH v4 02/11] dt-bindings: treewide: add feature-domains
- description
-Message-ID: <ZNowBaT2nLj4jEm3@shikoro>
-Mail-Followup-To: Wolfram Sang <wsa@kernel.org>,
-	Gatien Chevallier <gatien.chevallier@foss.st.com>,
-	Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
-	herbert@gondor.apana.org.au, davem@davemloft.net,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
-	jic23@kernel.org, olivier.moysan@foss.st.com,
-	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
-	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
-	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
-	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
-	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
-	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
-	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
-	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
-	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Jonathan Cameron <Jonathan.Cameron@huawei.com>
-References: <20230811100731.108145-1-gatien.chevallier@foss.st.com>
- <20230811100731.108145-3-gatien.chevallier@foss.st.com>
+	b=ZQpOKl/8SHJMA4ovCGZI5y3v9Q2m5JuInPWTmDYCAFpKJo66441o5sowDMYYJV23v
+	 PurzGhRTt6wWzVnit+s4Q7vQ6Sm/flka8NxVydQo+Bxi1E0/WcKEmbKxuubgQpP1HF
+	 7pMboXgBFOPLezf+don9/x/Gt863YXBzOg79jbJzZXhXhd8btAf62gQBVDbJR4YojW
+	 xCBdXZIFJaeG1etr3MgbT4zHjxhv1EMeUVp5nhnOATFf7fTh/mpyaLEaGbnvMNbYmZ
+	 lYtGLoXh4N+taPt424ET5oKphQfFdG93LBakDyyDUBan3LsAZqhmGPQfr08iC/geQ2
+	 kMiJJodjH+M7Q==
+Date: Mon, 14 Aug 2023 17:19:01 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Eugen Hristev <eugen.hristev@collabora.com>
+Cc: linux-mediatek@lists.infradead.org, chunfeng.yun@mediatek.com,
+	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
+	sam.shih@mediatek.com, jieyy.yang@mediatek.com,
+	frank-w@public-files.de, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, chris.obbard@collabora.com,
+	kernel@collabora.com
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek,tphy: allow simple
+ nodename pattern
+Message-ID: <20230814-isolating-faceless-72835873207e@spud>
+References: <20230814093931.9298-1-eugen.hristev@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20230811100731.108145-3-gatien.chevallier@foss.st.com>
+In-Reply-To: <20230814093931.9298-1-eugen.hristev@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230814_064545_368811_2573A045 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20230814_091909_058830_AE0DD1CB 
+X-CRM114-Status: GOOD (  21.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,63 +76,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4703428197167967504=="
+Content-Type: multipart/mixed; boundary="===============6149068344443549257=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4703428197167967504==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="W69stkuq3CQIl/r9"
+--===============6149068344443549257==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="g/mf8JY5atzBFUNd"
 Content-Disposition: inline
 
 
---W69stkuq3CQIl/r9
+--g/mf8JY5atzBFUNd
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Aug 11, 2023 at 12:07:22PM +0200, Gatien Chevallier wrote:
-> feature-domains is an optional property that allows a peripheral to
-> refer to one or more feature domain controller(s).
+On Mon, Aug 14, 2023 at 12:39:30PM +0300, Eugen Hristev wrote:
+> The pattern for the nodename only allows t-phy@... , however, for the case
+> when the t-phy has no `reg` and only `ranges` (basically when the t-phy
+> is just a parent node), dtc will throw this warning:
 >=20
-> Description of this property is added to all peripheral binding files of
-> the peripheral under the STM32 firewall controllers. It allows an accurate
-> representation of the hardware, where various peripherals are connected
-> to this firewall bus. The firewall can then check the peripheral accesses
-> before allowing it to probe.
+> Warning (unit_address_vs_reg): /t-phy@1a243000: node has a unit name, but=
+ no reg or ranges property
 >=20
-> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
-> Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> For a node like this:
+>=20
+> 	sata_phy: t-phy@1a243000 {
+> 		ranges;
+>=20
+> 		sata_port: sata-phy@1a243000 {
+> 			reg =3D <0 0x1a243000 0 0x0100>;
+> 		};
+> 	};
+>=20
+> it is normal that the parent node 't-phy' would be without any address, a=
+s in:
+>=20
+> 	sata_phy: t-phy {
+> 		ranges;
+>=20
+> 		sata_port: sata-phy@1a243000 {
+> 			reg =3D <0 0x1a243000 0 0x0100>;
+> 		};
+> 	};
+>=20
+> because being just a holder it does not have its own reg.
+>=20
+> However the binding does not allow such a name for the t-phy, so with this
+> patch, making the `@[0-9a-f]+` part optional, such node is possible.
+>=20
+> Signed-off-by: Eugen Hristev <eugen.hristev@collabora.com>
 
-Acked-by: Wolfram Sang <wsa@kernel.org> # for I2C (once the rest is accepte=
-d)
+This seems reasonable to me, perhaps the lads will scream.
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
+Thanks,
+Conor.
 
---W69stkuq3CQIl/r9
+> ---
+> Changes in v2:
+> - none
+>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/D=
+ocumentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index 230a17f24966..2bb91542e984 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -64,7 +64,7 @@ description: |
+> =20
+>  properties:
+>    $nodename:
+> -    pattern: "^t-phy@[0-9a-f]+$"
+> +    pattern: "^t-phy(@[0-9a-f]+)?$"
+> =20
+>    compatible:
+>      oneOf:
+> --=20
+> 2.34.1
+>=20
+
+--g/mf8JY5atzBFUNd
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmTaMAUACgkQFA3kzBSg
-KbaUdQ//dzd+zVw4+lLQfMm5N9CAHnO3jRuJqiYQmp/rDIgsZY8CClGeuNYuiFGQ
-sJAlf9Vh2aH2qFbq7TJkPelVMPe97mgjxKZDJjrpGUe6CTcLGpK4P5dx0bQmxrDV
-X9wg54/VUPmf92H5LDELCgEQBUpxE2M9kMMYXubSN+gyCYDo+RZFOw+aOfRcqKkT
-jyWMjSPQsNYTIn/u+DiQidjJYYW3Y1NwiUufKoBCbTUDkmUkBsIAkqq5dYf1he96
-cDBjQz4aQzw8q9mITHh1GI3MX5AGpxJc8XmUwD2PwcshkDb57FJkTElHQIhKJW2R
-+BPM4dGmzfvtj6G7+/7/E0CWVymbxnEkOVK46qPYw00tD2C7Khm0kRLEbwEcenS3
-SlXgrYoVcGf73cxfYrShbSvV32GuQZ9onZxIbgdFMjtiCO7E2WKqPUkNt1hDecEf
-WoMbKLXvmxdcRjmmkRJRBGeUwKThDjHDvfYtURQ3+31TVkqxLDLoHE8gF78pL3yw
-LW4HQwfekpHvSObQssYoMM2mJrM7yidifx+OCmWywsvmYM3MlJklqapPTI+IVwdm
-CxMb+ZhS+C8HJfNS/5Q7AY4N4Qav0cG8Kdk2xTS2hBurkQ87PGjXdpkKPRIG6/wD
-02vyuQVUcnLNDqAwXkEORXxqaidoTN/suDmNhiHszczHfBZ/X0o=
-=VsN7
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZNpT9QAKCRB4tDGHoIJi
+0jU2AP9qah5UHtzzFaDMKPLx4YhxWLbBsHowrT9XMVj560Z2twD9FGmBUyZvKKW2
+UNhseLnLrkSED1LMAEZNSFekdLZpGgk=
+=dvtZ
 -----END PGP SIGNATURE-----
 
---W69stkuq3CQIl/r9--
+--g/mf8JY5atzBFUNd--
 
 
---===============4703428197167967504==
+--===============6149068344443549257==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -181,5 +183,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4703428197167967504==--
+--===============6149068344443549257==--
 
