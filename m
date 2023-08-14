@@ -4,90 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C91FEB64DD
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 08:35:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAD8CEB64DD
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 09:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DbGzS6f2o5+5ysMVuP8BKuK2+E03VL/oQxUDK9D8gwk=; b=urqAXVyS/du+iH
-	5CgB0VUcDvB/cICcSgjizKh9YOzjnelYFhTci/zCl+EFgbXazNooW54qsHvBuTuVphiCwTWLwDkV/
-	EL0I+kkG9iNpGnnwiKvXLgSXRWaTpgbez+B2qkEVXKs3JcO8kJlf3j634kqejdtXouHA09ce0kaHF
-	P++huZydq+hMlIfDSHO+ENe0qc0SWs2UXDo9IefFgb+7Mn5rHSnH383iXMkq0bF1GDM1qEtn/RiQ+
-	xB4ieGXOoI9rt8Kv+p2qRsfaLmPZzHKuhx92n3sch67YxJ2IYMS5kySOHV1O3oMxVRWAcHW4zItuV
-	nkXdEvAsZ3Dcu+o0MLqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9AhaVIytBgVRZOZ5oQfYRwvPDAW6lJ4XpKd0sj1L1a0=; b=s5EIyg4aRkGbIP
+	RzqtStYh4yvShv1wRMsNwW3bF9PI5n291/0+konKf47U6MfAq6Xcrb7Pww4L3wWmSjRbtiV5ud60N
+	RiirivCkKDHAJtwCV1tLKz/vlB2yXbfb0EHNnMOPxsII2KM5CsuZsQqtzN3GSVh5HVhqBMoavJZAm
+	4Tw4U/rUcL3vLrCbhW4f+RN/0pN6s/C6v+eOkZLAwhtdWgAw0I3c055A/j6jdTYgvdrQ7QG6GyPkN
+	72uDOVgtV4zFvPjFoR+jNIQ2SrvlJ2ghesiNn5PV8MlNSiChapPT3n0AmmWl/nnJcs7XmwRlUrSDs
+	1e/GzWHAcKkWKyFV7rxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVT34-00GXZs-0S;
-	Mon, 14 Aug 2023 08:35:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qVU36-00GdWL-28;
+	Mon, 14 Aug 2023 09:39:44 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVT2z-00GXYa-0F;
-	Mon, 14 Aug 2023 08:35:37 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37E8Dlfo014154;
-	Mon, 14 Aug 2023 08:35:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=qwGYKRRRJZy7n3umlavxW3NBP3HkUrUEnBJxfTTq5Mc=;
- b=eqmEe3xSGlfUQFPs7o1HW5VsB2Jmd37g/ylM8wjaj/W6Hh+ArlJ3pluPLlPZvIff9TKl
- vOOKTDpbVoRY6QvuGw48f1qltR+1e1ZKvo0TDRfW+l6dBmf20FcUnEt3fezYacfTxTnj
- GfaWaMTMvGvge9ccpN+kOuFz8hyImqaO26OeGLESlC1+4gJOIxDzgYlyCaBFnoD3ktgv
- CRtZKkMS4xkb5UaKfYa2QZ8lTgVMXImElPXBCVffyPxcW7VpT3tGILIFPxNZjBVBFvJx
- QrjPvMg7a5gSH3M+2sxxuEXdlKQs5jG7CdRNZG04iRktnjEjhRlg9a+/Wq+oDmo/T+9l 1A== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sffxt83k3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Aug 2023 08:35:15 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37E8ZEjU000903
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Aug 2023 08:35:14 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Mon, 14 Aug 2023 01:35:07 -0700
-Date: Mon, 14 Aug 2023 14:05:04 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <catalin.marinas@arm.com>, <will@kernel.org>, <p.zabel@pengutronix.de>,
-        <arnd@arndb.de>, <geert+renesas@glider.be>, <nfraprado@collabora.com>,
-        <rafal@milecki.pl>, <peng.fan@nxp.com>, <quic_srichara@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v7 2/5] phy: qcom-m31: Introduce qcom,m31 USB phy driver
-Message-ID: <20230814083503.GA3490@varda-linux.qualcomm.com>
-References: <cover.1691660905.git.quic_varada@quicinc.com>
- <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
- <ZNXxja5HvVOtgliL@matsya>
+	id 1qVU33-00GdUd-1v;
+	Mon, 14 Aug 2023 09:39:42 +0000
+Received: from eugen-station.. (unknown [86.127.70.132])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: ehristev)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 0C34966071A3;
+	Mon, 14 Aug 2023 10:39:37 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1692005979;
+	bh=ReQu8PlNQ3B+RBTqaF0mmwCVGrAXcC7wZ1rVXE/sQWg=;
+	h=From:To:Cc:Subject:Date:From;
+	b=M8Ca4aLb3WE+Q4DJJJQ067zA0ycljgRWSx763eFg5TmROuoK9lASVtpzn5vnV1MJ6
+	 rJurNQBtBBAz+RnSBs9tVLUNP15VWi5RoR4++7wTkZ+L9rdgNmjmBG8yo1lhGsAZV5
+	 iWPU1pRwpvnBPFpNTEV+UQY1BNxGjC/6DarevfEqEXuBboIg4Z8syGF9jMb/VMkigj
+	 FAfBuV1Iq63HpHktATW1U0t2KT7GkNdnia9/8uHgHw8PI4VEvbQu/pZVzAqATpfsrR
+	 yx7UQ5F9u9pZe3egS2YZEylFdiOd+t+fDCe/k+qazHnNPRCq4Vin1X1oNWkFz19lkU
+	 dVHxDJCX3vvlQ==
+From: Eugen Hristev <eugen.hristev@collabora.com>
+To: linux-mediatek@lists.infradead.org
+Cc: chunfeng.yun@mediatek.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	sam.shih@mediatek.com,
+	jieyy.yang@mediatek.com,
+	frank-w@public-files.de,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	chris.obbard@collabora.com,
+	kernel@collabora.com,
+	Eugen Hristev <eugen.hristev@collabora.com>
+Subject: [PATCH v2 1/2] dt-bindings: phy: mediatek,tphy: allow simple nodename pattern
+Date: Mon, 14 Aug 2023 12:39:30 +0300
+Message-Id: <20230814093931.9298-1-eugen.hristev@collabora.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZNXxja5HvVOtgliL@matsya>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: DZ06qSZka_sIK-LlSDnwfR2sZa7D37gN
-X-Proofpoint-GUID: DZ06qSZka_sIK-LlSDnwfR2sZa7D37gN
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-08-14_03,2023-08-10_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=899 spamscore=0
- malwarescore=0 clxscore=1015 suspectscore=0 adultscore=0 bulkscore=0
- mlxscore=0 priorityscore=1501 impostorscore=0 lowpriorityscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308140079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230814_013533_116053_8684F8B9 
-X-CRM114-Status: GOOD (  17.01  )
+X-CRM114-CacheID: sfid-20230814_023941_788634_BBC48C2D 
+X-CRM114-Status: GOOD (  11.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,59 +87,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 11, 2023 at 09:30:05AM +0100, Vinod Koul wrote:
-> On 10-08-23, 15:26, Varadarajan Narayanan wrote:
-> > Add the M31 USB2 phy driver.
->	.
->	.
->	.
-> > +#include <linux/kernel.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of_platform.h>
-> > +#include <linux/of.h>
->
-> do you need both headers..?
->
->	.
->	.
->	.
-> > + #define FREQ_24MHZ			(GENMASK(6, 6) | GENMASK(4, 4))
->
-> why not use bit :-)
->	.
->	.
->	.
-> > +struct m31_phy_regs m31_ipq5332_regs[] = {
-> > +	{ USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0 },
-> > +	{ USB_PHY_UTMI_CTRL5, POR_EN, 15 },
-> > +	{ USB_PHY_FSEL_SEL, FREQ_SEL, 0 },
-> > +	{ USB_PHY_HS_PHY_CTRL_COMMON0, COMMONONN | FREQ_24MHZ | RETENABLEN, 0 },
-> > +	{ USB_PHY_UTMI_CTRL5, POR_EN, 0 },
-> > +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
-> > +	{ USB2PHY_USB_PHY_M31_XCFGI_11, XCFG_COARSE_TUNE_NUM  | XCFG_FINE_TUNE_NUM, 0 },
-> > +	{ USB2PHY_USB_PHY_M31_XCFGI_4, HSTX_SLEW_RATE_565PS | PLL_CHARGING_PUMP_CURRENT_35UA |
-> > +				       ODT_VALUE_38_02_OHM, 0 },
-> > +	{ USB2PHY_USB_PHY_M31_XCFGI_1, USB2_0_TX_ENABLE, 0 },
-> > +	{ USB2PHY_USB_PHY_M31_XCFGI_5, ODT_VALUE_45_02_OHM | HSTX_PRE_EMPHASIS_LEVEL_0_55MA, 4 },
-> > +	{ USB_PHY_UTMI_CTRL5, 0x0, 0 },
-> > +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
->
-> More readable way to code
->                 USB_PHY_CFG0,
->                 UTMI_PHY_OVERRIDE_EN,
->                 0
->
-> and so on, makes a better read and check for errors, one line for off,
-> one for val and one for delay
->
-> --
-> `~Vinod
+The pattern for the nodename only allows t-phy@... , however, for the case
+when the t-phy has no `reg` and only `ranges` (basically when the t-phy
+is just a parent node), dtc will throw this warning:
 
-Have posted a new version addressing these (and Konrad's and Bjorn's) issues.
-Please review.
+Warning (unit_address_vs_reg): /t-phy@1a243000: node has a unit name, but no reg or ranges property
 
-Thanks
-Varada
+For a node like this:
+
+	sata_phy: t-phy@1a243000 {
+		ranges;
+
+		sata_port: sata-phy@1a243000 {
+			reg = <0 0x1a243000 0 0x0100>;
+		};
+	};
+
+it is normal that the parent node 't-phy' would be without any address, as in:
+
+	sata_phy: t-phy {
+		ranges;
+
+		sata_port: sata-phy@1a243000 {
+			reg = <0 0x1a243000 0 0x0100>;
+		};
+	};
+
+because being just a holder it does not have its own reg.
+
+However the binding does not allow such a name for the t-phy, so with this
+patch, making the `@[0-9a-f]+` part optional, such node is possible.
+
+Signed-off-by: Eugen Hristev <eugen.hristev@collabora.com>
+---
+Changes in v2:
+- none
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index 230a17f24966..2bb91542e984 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -64,7 +64,7 @@ description: |
+ 
+ properties:
+   $nodename:
+-    pattern: "^t-phy@[0-9a-f]+$"
++    pattern: "^t-phy(@[0-9a-f]+)?$"
+ 
+   compatible:
+     oneOf:
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
