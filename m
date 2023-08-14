@@ -4,87 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24F52C001B0
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 10:05:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FE16C001DB
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 13:45:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zu5EDqxs0ojcN2ZtTp12OvJq9l/W97+eCKQJCx7Blfw=; b=DTWu0gfRA/CXn+
-	R1BQsocYDV36PIUvfky+9VhfeIsSaDwcyU7paA36F7OCjiVBqu2di1Q/iIh9gB2ttNTSyNS4UzKOU
-	qcsDOupjQOhMusZmyl/I0SgqmqHXS9c1dlQclOJikzME30Ld/ZAzDbdGx0je/qdy/HF0dAHunPKcZ
-	IFChobgLtGVMgDcdkZz1+s1275R2kcyREP8ac7RlymJ+7p56/L7HlPNbZZJzReDijFi/I9oIr2wwe
-	freTRWmaUek2zr9vljrad+T8cABjtqQkQdhfAP+rTAtNlWd08Ux+uDIpTWTdNXz4PzFmY0ToP65Me
-	xrT4IvSkwu3b9/lkLxIg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=19CsEosy49EZ1c6PYlhQpCpCACPyE9gL9sdSni5Phfw=; b=FftNI9dVTUFAGVT2pP6ihhoWup
+	1YB075xgYjy+4hVcRh9DQ5y6l/ZKWXyAMvF7h7EAwJ5hPtVjpE3DS2EWBNiTplMmS+aqluUtl5UYG
+	qEYh9IsVChzrfvvajsd3i0LixSO1E+2cReQup0DR9vB04GU3qajPfaRJf6cFQOSWsFF7NKT7IlJ3N
+	+DfGT0lUI3srwdkrcERNbkb89YUbG2bpasbt+j9izTVHJnS+k6uCwTrTBxzNUOv4V/ZAfo3r1g/Ei
+	ZA8wznw3budrhFVlVtP09jdZawmT/5WmG2Pamcez7nlkPqY9IYgWrDe+ZB9R9ksKikV5Eky+LbTZy
+	UNE1WynA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVURa-00GfqV-2q;
-	Mon, 14 Aug 2023 10:05:02 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1qVXtE-00HCEA-0k;
+	Mon, 14 Aug 2023 13:45:48 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVURW-00Gfo3-0Q
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Aug 2023 10:05:00 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-99357737980so550657366b.2
-        for <linux-phy@lists.infradead.org>; Mon, 14 Aug 2023 03:04:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692007496; x=1692612296;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=J1Rc8nsD2ma3VBPVMcl4UyoPSVzGHKJ4CtGcabWqpTw=;
-        b=nou4Cl1VoVcvl4ENiZZo8eV/gFxjXiX3xN/8B8yOL+X04lAgCBOIZT2WSkxTaGCxK3
-         7Yc8q/nN0dOvKIMVTPnmhgd5h/EV85uGtprln6ypFYSQUIO8YfcTCdQnREWzyIE1OAHw
-         kGvye/lpfo3yWcvofsAO/XLOzaG4wfzKO8voq15fQ8s9LZhs0b2Cvmbg5kK68OypZm/P
-         wMvRuADlnLl6siSEa74QUMg4MHl06L4+TDvrCrBbsdFZ4RmSYrGkneGl3IM1mK9PFaQI
-         hnNdW+mhdB+93VOz5dMGPob0JYuRBCpLQ9WzP9MpT+Jv+98GliX5rhWxhJ0CRu/6P7QB
-         6k+g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692007496; x=1692612296;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=J1Rc8nsD2ma3VBPVMcl4UyoPSVzGHKJ4CtGcabWqpTw=;
-        b=a/gFbF3+AZUjjaB40tUvNVMHu9AJhU4IGHOin6e0ZxilruCfCjBufHV3wuDuKlPJGJ
-         f+MNu/LfMVIAajmrLkfmpGYQfWBd5ribOb1RoNByf3W4x1esPLcI2zP03xEMTe9wsFUG
-         3Js0UW5kBaPvd3PW/ws8a4QYTQRRmoskFeZ6XBym8YYdutjPS/zPt4aEs/iRFwj9/sEN
-         t6DlhEGs1+jnjNlc68Yn0LzgTRHBHquHOcEPsrFWiNftpy8BcImLTd0EEkumjlJH0t74
-         CQACSBP+k8bmGDSZSkWkoznKCm/A9fT3MugcWtfVX/A7oWYCbLx/IxZtWbTmf0XYff6/
-         zdDg==
-X-Gm-Message-State: AOJu0YxjxsqaP6qEr3PbbyPe76L9OjcPutzLYp3IjqVdNSGBmI0eVvmY
-	u81kuBDbZJNrlvu4ejlAgY5Dnw==
-X-Google-Smtp-Source: AGHT+IG9TosK1slJfmyat8CD4+xcZshg2eMOd341aynBzaPj563ez339VfZMnOaM56aXf25DWuXM5Q==
-X-Received: by 2002:a17:906:3d32:b0:992:9005:5ed5 with SMTP id l18-20020a1709063d3200b0099290055ed5mr7365657ejf.32.1692007495896;
-        Mon, 14 Aug 2023 03:04:55 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.214.188])
-        by smtp.gmail.com with ESMTPSA id pj18-20020a170906d79200b009932337747esm5482230ejb.86.2023.08.14.03.04.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Aug 2023 03:04:55 -0700 (PDT)
-Message-ID: <90da3361-6b11-7a1c-a845-af33ba03a686@linaro.org>
-Date: Mon, 14 Aug 2023 12:04:51 +0200
+	id 1qVXtB-00HCCy-0n;
+	Mon, 14 Aug 2023 13:45:46 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id B642E615B0;
+	Mon, 14 Aug 2023 13:45:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 918D8C433C8;
+	Mon, 14 Aug 2023 13:45:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1692020744;
+	bh=3GWUGU3sn/mG21fzGuyMqh51zJlW4hGxN9JOTvBoYEc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=YqD2U0V2tuxKZqxWonJYrqzUtF4LVqwXLZtE4B/8QCGUXmjMdi5/Vy3RG8+ny68FW
+	 9ZLD41a9bVbdV5626Qbkc/m8Uff5zw0x3RRPyGBxZkf5FqceOXnFOniggixG/FtXs6
+	 GTb8FSPkQ/TjyNtQqcbkB8/Vs87Sb3YosijuXHfP248tR4OnTyh9h+Rw6iqoHSK2Cq
+	 LVLf9nAXZ6pYHSUxJccABK8IUTTPy7LQ2PxZLrKJqjt8lQhVMxPWYnPt5631xOPHoH
+	 vnppiFo25hGzBQ89EK/NfqwgiG7yy+nKN3EVUWjBwbz9h4gWtTs1H/GF89huUiwnVw
+	 KHfaLNQ7ni+YQ==
+Date: Mon, 14 Aug 2023 15:45:41 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Gatien Chevallier <gatien.chevallier@foss.st.com>
+Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
+	herbert@gondor.apana.org.au, davem@davemloft.net,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
+	jic23@kernel.org, olivier.moysan@foss.st.com,
+	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
+	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
+	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
+	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
+	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
+	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Subject: Re: [PATCH v4 02/11] dt-bindings: treewide: add feature-domains
+ description
+Message-ID: <ZNowBaT2nLj4jEm3@shikoro>
+Mail-Followup-To: Wolfram Sang <wsa@kernel.org>,
+	Gatien Chevallier <gatien.chevallier@foss.st.com>,
+	Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
+	herbert@gondor.apana.org.au, davem@davemloft.net,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
+	jic23@kernel.org, olivier.moysan@foss.st.com,
+	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
+	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
+	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
+	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
+	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
+	peng.fan@oss.nxp.com, linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>
+References: <20230811100731.108145-1-gatien.chevallier@foss.st.com>
+ <20230811100731.108145-3-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH v7 2/5] phy: qcom-m31: Introduce qcom,m31 USB phy driver
-Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, catalin.marinas@arm.com, will@kernel.org,
- p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
- nfraprado@collabora.com, rafal@milecki.pl, peng.fan@nxp.com,
- quic_srichara@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <cover.1691660905.git.quic_varada@quicinc.com>
- <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
+In-Reply-To: <20230811100731.108145-3-gatien.chevallier@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230814_030458_170806_AAF0244E 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20230814_064545_368811_2573A045 
+X-CRM114-Status: GOOD (  12.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,77 +114,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4703428197167967504=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/08/2023 11:56, Varadarajan Narayanan wrote:
-> Add the M31 USB2 phy driver.
-> 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
 
-...
+--===============4703428197167967504==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="W69stkuq3CQIl/r9"
+Content-Disposition: inline
 
-> +static int m31usb_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	const struct m31_priv_data *data;
-> +	struct device *dev = &pdev->dev;
-> +	struct m31usb_phy *qphy;
-> +
-> +	qphy = devm_kzalloc(dev, sizeof(*qphy), GFP_KERNEL);
-> +	if (!qphy)
-> +		return -ENOMEM;
-> +
-> +	qphy->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(qphy->base))
-> +		return PTR_ERR(qphy->base);
-> +
-> +	qphy->reset = devm_reset_control_get_exclusive_by_index(dev, 0);
-> +	if (IS_ERR(qphy->reset))
-> +		return PTR_ERR(qphy->reset);
-> +
-> +	qphy->clk = devm_clk_get(dev, NULL);
-> +	if (IS_ERR(qphy->clk))
-> +		return dev_err_probe(dev, PTR_ERR(qphy->clk),
-> +						"failed to get clk\n");
 
-This looks misaligned.
+--W69stkuq3CQIl/r9
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> +
-> +	data = of_device_get_match_data(dev);
-> +	qphy->regs		= data->regs;
-> +	qphy->nregs		= data->nregs;
-> +	qphy->ulpi_mode		= data->ulpi_mode;
-> +
-> +	qphy->phy = devm_phy_create(dev, NULL, &m31usb_phy_gen_ops);
-> +	if (IS_ERR(qphy->phy))
-> +		return dev_err_probe(dev, PTR_ERR(qphy->phy),
-> +						"failed to create phy\n");
+On Fri, Aug 11, 2023 at 12:07:22PM +0200, Gatien Chevallier wrote:
+> feature-domains is an optional property that allows a peripheral to
+> refer to one or more feature domain controller(s).
+>=20
+> Description of this property is added to all peripheral binding files of
+> the peripheral under the STM32 firewall controllers. It allows an accurate
+> representation of the hardware, where various peripherals are connected
+> to this firewall bus. The firewall can then check the peripheral accesses
+> before allowing it to probe.
+>=20
+> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+> Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
-Ditto... and in other places.
+Acked-by: Wolfram Sang <wsa@kernel.org> # for I2C (once the rest is accepte=
+d)
 
-> +
-> +	qphy->vreg = devm_regulator_get(dev, "vdda-phy");
-> +	if (IS_ERR(qphy->vreg))
-> +		return dev_err_probe(dev, PTR_ERR(qphy->phy),
-> +						"failed to get vreg\n");
-> +
-> +	phy_set_drvdata(qphy->phy, qphy);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +	if (!IS_ERR(phy_provider))
-> +		dev_info(dev, "Registered M31 USB phy\n");
 
-Drop simple success messages. Kernel has other means to do it.
+--W69stkuq3CQIl/r9
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Best regards,
-Krzysztof
+-----BEGIN PGP SIGNATURE-----
 
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmTaMAUACgkQFA3kzBSg
+KbaUdQ//dzd+zVw4+lLQfMm5N9CAHnO3jRuJqiYQmp/rDIgsZY8CClGeuNYuiFGQ
+sJAlf9Vh2aH2qFbq7TJkPelVMPe97mgjxKZDJjrpGUe6CTcLGpK4P5dx0bQmxrDV
+X9wg54/VUPmf92H5LDELCgEQBUpxE2M9kMMYXubSN+gyCYDo+RZFOw+aOfRcqKkT
+jyWMjSPQsNYTIn/u+DiQidjJYYW3Y1NwiUufKoBCbTUDkmUkBsIAkqq5dYf1he96
+cDBjQz4aQzw8q9mITHh1GI3MX5AGpxJc8XmUwD2PwcshkDb57FJkTElHQIhKJW2R
++BPM4dGmzfvtj6G7+/7/E0CWVymbxnEkOVK46qPYw00tD2C7Khm0kRLEbwEcenS3
+SlXgrYoVcGf73cxfYrShbSvV32GuQZ9onZxIbgdFMjtiCO7E2WKqPUkNt1hDecEf
+WoMbKLXvmxdcRjmmkRJRBGeUwKThDjHDvfYtURQ3+31TVkqxLDLoHE8gF78pL3yw
+LW4HQwfekpHvSObQssYoMM2mJrM7yidifx+OCmWywsvmYM3MlJklqapPTI+IVwdm
+CxMb+ZhS+C8HJfNS/5Q7AY4N4Qav0cG8Kdk2xTS2hBurkQ87PGjXdpkKPRIG6/wD
+02vyuQVUcnLNDqAwXkEORXxqaidoTN/suDmNhiHszczHfBZ/X0o=
+=VsN7
+-----END PGP SIGNATURE-----
+
+--W69stkuq3CQIl/r9--
+
+
+--===============4703428197167967504==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4703428197167967504==--
+
