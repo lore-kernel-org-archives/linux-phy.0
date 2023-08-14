@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8DD7C001DB
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 08:09:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C91FEB64DD
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 08:35:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDMyMn/ynlLSGiEkjmn8Eq4yd04RBQLka1sQjcLnIU4=; b=VtgOFoM+Pm4WSw
-	a4LOG3lj1qrwJC4Xg+aK4JzPXFvzvIPJKIfwI+7a9IC4ZEl5QEiTbw6sznpzhK4Jr+j3/gJvkY3ul
-	XNkKSTdx9kAdXQHpD5vPsR/rPPPUFedl1HxUNOJtyh+UdJJwqLCS33wswL6nY+y36wEsM2I3hg0Lv
-	uLEeCSfI5QbMbaEReZSTWbCp6tkHCZpn1zUUqDIzt54kbdCs/Fkdo+HnWU1kQAswvvDO3TAof7Koc
-	1mMT8W1Vxfca/ejVB2fncy8YdHvyBC2eM2PcHP3AG++iOILmaZIR643mcIvOk8Qx4XueVK7CzWHAP
-	Azw2p4/C8jNim9YC/YdQ==;
+	List-Owner; bh=DbGzS6f2o5+5ysMVuP8BKuK2+E03VL/oQxUDK9D8gwk=; b=urqAXVyS/du+iH
+	5CgB0VUcDvB/cICcSgjizKh9YOzjnelYFhTci/zCl+EFgbXazNooW54qsHvBuTuVphiCwTWLwDkV/
+	EL0I+kkG9iNpGnnwiKvXLgSXRWaTpgbez+B2qkEVXKs3JcO8kJlf3j634kqejdtXouHA09ce0kaHF
+	P++huZydq+hMlIfDSHO+ENe0qc0SWs2UXDo9IefFgb+7Mn5rHSnH383iXMkq0bF1GDM1qEtn/RiQ+
+	xB4ieGXOoI9rt8Kv+p2qRsfaLmPZzHKuhx92n3sch67YxJ2IYMS5kySOHV1O3oMxVRWAcHW4zItuV
+	nkXdEvAsZ3Dcu+o0MLqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVSdO-00GSBU-1K;
-	Mon, 14 Aug 2023 08:09:06 +0000
+	id 1qVT34-00GXZs-0S;
+	Mon, 14 Aug 2023 08:35:38 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVSdG-00GS7W-06;
-	Mon, 14 Aug 2023 08:08:59 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37E4hZF2029227;
-	Mon, 14 Aug 2023 08:08:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=i62uhHykeo0dVzCMO8QhNLNMVqEDeRoKE1YJQDPMeQk=;
- b=FkhD/N5JPpakiEd2dHzPgNwrjnt8C6cuMa3Dmv/GC5qx6VXPCPSxag9zScPvjEqqD1uP
- U8spUrhsdLZ1Z2eQIvLwt6CzT8Xu+Z3hxTYIatp8zzuuLgM7VARKh4U7yi3qDsNqcXuZ
- Hv0U+f7iu5R8PJvUA+AEPXW4kF9rPcdPKzUwxW6xJJ3qTIvJftJbvTUZLw9DQwRBWMCQ
- JUMkz40C8bBCCtSzCQSmhliFO1wbJzuE7lz3fx5kgiJaG85FihnWizgVIoV7AArq1keU
- HrJGTbUI3RgtIHdxZj6/iKcYQ1JZXPHp4ZtZLs0l4RK8OH3G5CdEV6q7WluZqJDoqgAL HA== 
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3se3hsu8n2-1
+	id 1qVT2z-00GXYa-0F;
+	Mon, 14 Aug 2023 08:35:37 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37E8Dlfo014154;
+	Mon, 14 Aug 2023 08:35:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
+ cc : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=qcppdkim1; bh=qwGYKRRRJZy7n3umlavxW3NBP3HkUrUEnBJxfTTq5Mc=;
+ b=eqmEe3xSGlfUQFPs7o1HW5VsB2Jmd37g/ylM8wjaj/W6Hh+ArlJ3pluPLlPZvIff9TKl
+ vOOKTDpbVoRY6QvuGw48f1qltR+1e1ZKvo0TDRfW+l6dBmf20FcUnEt3fezYacfTxTnj
+ GfaWaMTMvGvge9ccpN+kOuFz8hyImqaO26OeGLESlC1+4gJOIxDzgYlyCaBFnoD3ktgv
+ CRtZKkMS4xkb5UaKfYa2QZ8lTgVMXImElPXBCVffyPxcW7VpT3tGILIFPxNZjBVBFvJx
+ QrjPvMg7a5gSH3M+2sxxuEXdlKQs5jG7CdRNZG04iRktnjEjhRlg9a+/Wq+oDmo/T+9l 1A== 
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sffxt83k3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Aug 2023 08:08:44 +0000
+	Mon, 14 Aug 2023 08:35:15 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37E88ht3007630
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37E8ZEjU000903
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Aug 2023 08:08:43 GMT
+	Mon, 14 Aug 2023 08:35:14 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Mon, 14 Aug 2023 01:08:37 -0700
+ 15.2.1118.30; Mon, 14 Aug 2023 01:35:07 -0700
+Date: Mon, 14 Aug 2023 14:05:04 +0530
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+To: Vinod Koul <vkoul@kernel.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
         <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
         <catalin.marinas@arm.com>, <will@kernel.org>, <p.zabel@pengutronix.de>,
         <arnd@arndb.de>, <geert+renesas@glider.be>, <nfraprado@collabora.com>,
         <rafal@milecki.pl>, <peng.fan@nxp.com>, <quic_srichara@quicinc.com>,
-        <quic_varada@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v8 5/5] arm64: defconfig: Enable M31 USB phy driver
-Date: Mon, 14 Aug 2023 13:36:05 +0530
-Message-ID: <1a44fe9f325db7fce71eba204555048c13881043.1691999761.git.quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1691999761.git.quic_varada@quicinc.com>
-References: <cover.1691999761.git.quic_varada@quicinc.com>
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH v7 2/5] phy: qcom-m31: Introduce qcom,m31 USB phy driver
+Message-ID: <20230814083503.GA3490@varda-linux.qualcomm.com>
+References: <cover.1691660905.git.quic_varada@quicinc.com>
+ <b17b55b2ff2277bb9bfa99acdb2f98ed420dfb6e.1691660905.git.quic_varada@quicinc.com>
+ <ZNXxja5HvVOtgliL@matsya>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <ZNXxja5HvVOtgliL@matsya>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: fmLH_Eogjoe_M32I5ad_N1Jh2Wr-kAzy
-X-Proofpoint-ORIG-GUID: fmLH_Eogjoe_M32I5ad_N1Jh2Wr-kAzy
+X-Proofpoint-ORIG-GUID: DZ06qSZka_sIK-LlSDnwfR2sZa7D37gN
+X-Proofpoint-GUID: DZ06qSZka_sIK-LlSDnwfR2sZa7D37gN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-08-14_03,2023-08-10_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
- suspectscore=0 adultscore=0 spamscore=0 malwarescore=0 bulkscore=0
- lowpriorityscore=0 priorityscore=1501 mlxlogscore=565 clxscore=1015
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308140074
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=899 spamscore=0
+ malwarescore=0 clxscore=1015 suspectscore=0 adultscore=0 bulkscore=0
+ mlxscore=0 priorityscore=1501 impostorscore=0 lowpriorityscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308140079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230814_010858_078687_72DB2E48 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20230814_013533_116053_8684F8B9 
+X-CRM114-Status: GOOD (  17.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,31 +104,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable M31 USB phy driver present in IPQ5332.
+On Fri, Aug 11, 2023 at 09:30:05AM +0100, Vinod Koul wrote:
+> On 10-08-23, 15:26, Varadarajan Narayanan wrote:
+> > Add the M31 USB2 phy driver.
+>	.
+>	.
+>	.
+> > +#include <linux/kernel.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of_platform.h>
+> > +#include <linux/of.h>
+>
+> do you need both headers..?
+>
+>	.
+>	.
+>	.
+> > + #define FREQ_24MHZ			(GENMASK(6, 6) | GENMASK(4, 4))
+>
+> why not use bit :-)
+>	.
+>	.
+>	.
+> > +struct m31_phy_regs m31_ipq5332_regs[] = {
+> > +	{ USB_PHY_CFG0, UTMI_PHY_OVERRIDE_EN, 0 },
+> > +	{ USB_PHY_UTMI_CTRL5, POR_EN, 15 },
+> > +	{ USB_PHY_FSEL_SEL, FREQ_SEL, 0 },
+> > +	{ USB_PHY_HS_PHY_CTRL_COMMON0, COMMONONN | FREQ_24MHZ | RETENABLEN, 0 },
+> > +	{ USB_PHY_UTMI_CTRL5, POR_EN, 0 },
+> > +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
+> > +	{ USB2PHY_USB_PHY_M31_XCFGI_11, XCFG_COARSE_TUNE_NUM  | XCFG_FINE_TUNE_NUM, 0 },
+> > +	{ USB2PHY_USB_PHY_M31_XCFGI_4, HSTX_SLEW_RATE_565PS | PLL_CHARGING_PUMP_CURRENT_35UA |
+> > +				       ODT_VALUE_38_02_OHM, 0 },
+> > +	{ USB2PHY_USB_PHY_M31_XCFGI_1, USB2_0_TX_ENABLE, 0 },
+> > +	{ USB2PHY_USB_PHY_M31_XCFGI_5, ODT_VALUE_45_02_OHM | HSTX_PRE_EMPHASIS_LEVEL_0_55MA, 4 },
+> > +	{ USB_PHY_UTMI_CTRL5, 0x0, 0 },
+> > +	{ USB_PHY_HS_PHY_CTRL2, USB2_SUSPEND_N | USB2_UTMI_CLK_EN, 0 },
+>
+> More readable way to code
+>                 USB_PHY_CFG0,
+>                 UTMI_PHY_OVERRIDE_EN,
+>                 0
+>
+> and so on, makes a better read and check for errors, one line for off,
+> one for val and one for delay
+>
+> --
+> `~Vinod
 
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
-v2:
-	Add full stop to commit log.
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Have posted a new version addressing these (and Konrad's and Bjorn's) issues.
+Please review.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index bf13d5c..04daaac 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -1416,6 +1416,7 @@ CONFIG_PHY_QCOM_USB_SNPS_FEMTO_V2=m
- CONFIG_PHY_QCOM_USB_HS_28NM=m
- CONFIG_PHY_QCOM_USB_SS=m
- CONFIG_PHY_QCOM_SGMII_ETH=m
-+CONFIG_PHY_QCOM_M31_USB=m
- CONFIG_PHY_R8A779F0_ETHERNET_SERDES=y
- CONFIG_PHY_RCAR_GEN3_PCIE=y
- CONFIG_PHY_RCAR_GEN3_USB2=y
--- 
-2.7.4
-
+Thanks
+Varada
 
 -- 
 linux-phy mailing list
