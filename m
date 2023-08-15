@@ -4,57 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A159C001B0
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Aug 2023 15:28:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3809CC001B0
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Aug 2023 16:29:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ksygEAwqR5saI7CWRPtlc7HABz1a8RmAfVdIWI9cPcg=; b=QVmjlBmn870SOf
-	b8H+2sXhrEXnyez/bvosvQzm6hVsZSzIsG5RR50im1JHBApWcfcRaVZ+sEGujxu4HNcUmwbjVJaMG
-	RMW9QzIRmkOXDt8n4nb6/AxJrRRgnFEAzBKK7OkZlvGjY7D4Bx2OMqZ0DXqoVf9bPLotRjzwif/jG
-	vJZqVLdCZE2oVjdQRyPIRIk+KilorGtxg2oIxUUFKgkoU+34OPCWSCJD9XVuKakZeDwM9vgBF6wVf
-	tXKzQJ9BmZF5+FJwFiV6SQw9jM59DSUjhUDmMeZH8sL67TPgQqnTGt8At8JTd9FdS1QMui1jcHpa4
-	cBN6wvZl9qkjOSM6/VJw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3WfqGglIL+vD9Q56y58mFNt9yYWuGbpX3xTJToTBEf0=; b=XxkoL9Lkl4WF0D
+	2zmF0iG/hFW2aw1xWl0Y10H4vo3IqkailvYS+M3m3SZd+VQ9NejgIwrcXe4KFSHEQWPxet00+AlZJ
+	hX76q3O5KhUGcqB8rFFubAl3ROItmYfuuEBUkV3G6xm+0xwveBM1C3zH0CCabCBsvSiWJeqMybgxw
+	XssQbrQPrULmpMxUuV4bgg3OXgcneO84GakA0HOo82D997g8A7JBObpMszFiRltLYDOipl1tJBl3M
+	GMvmDlxRRwY4sEhnqZjDSENVWqQeyKhgROtuqvqeESuntrXboH5V2Ae93PPv/vY6cgz16Hzvoy6MB
+	d4kzuIBpBVUq6YLUx1AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVvyO-001rW2-0m;
-	Tue, 15 Aug 2023 15:28:44 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1qVwvI-001yuo-2j;
+	Tue, 15 Aug 2023 16:29:36 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVvy8-001rGu-2F
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Aug 2023 15:28:31 +0000
-Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:5d0c:f209:12a7:4ce5])
-	by laurent.telenet-ops.be with bizsmtp
-	id ZrUF2A00845ualL01rUFq5; Tue, 15 Aug 2023 17:28:16 +0200
-Received: from rox.of.borg ([192.168.97.57])
-	by ramsan.of.borg with esmtp (Exim 4.95)
-	(envelope-from <geert@linux-m68k.org>)
-	id 1qVvxo-000j7s-Sp;
-	Tue, 15 Aug 2023 17:28:15 +0200
-Received: from geert by rox.of.borg with local (Exim 4.95)
-	(envelope-from <geert@linux-m68k.org>)
-	id 1qVvxv-005ckC-6V;
-	Tue, 15 Aug 2023 17:28:15 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Stanley Chang <stanley_chang@realtek.com>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] phy: realtek: Realtek PHYs should depend on ARCH_REALTEK
-Date: Tue, 15 Aug 2023 17:28:13 +0200
-Message-Id: <2892527cac9af6fa8f5e7b8daeffd7d4351fde68.1692113167.git.geert+renesas@glider.be>
-X-Mailer: git-send-email 2.34.1
+	id 1qVwvF-001yta-1n;
+	Tue, 15 Aug 2023 16:29:34 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D66D065D7B;
+	Tue, 15 Aug 2023 16:29:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0AC7C433C7;
+	Tue, 15 Aug 2023 16:29:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1692116972;
+	bh=LKI52qu5YBizA18cb57HmGDQiAUsDp91kpcEQdHzraY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=pV5EzQcDpmN2hdz2XjMFQMAphqVL2zzdv/qIL8DZYuPbtPTdPMc72F/gi7w86tv8Q
+	 jf07zRDlDhkfbwoV21soHOLdzXzVYsSTFiLNXgLkDGTiVQFIIKDb5lD2OpeGZeBdzS
+	 r2wfohf0Z7hyWmWVzsPsuYypPWkTbcA43UyrN6D36no99ytFld9qJ6q7OmOVPUe5uT
+	 wVmEDC/xKRzg1xOQeGcZdi7E7c/POjRuBm3gWz8K0Z2/HvVumZZjbz9jgolLU5FzOk
+	 foLSXuBN6mC7oaZ6Kqw1jpWwPqfcykE+S6Nuu5aFtIOKqbXHbkfHb6Z1foL2JJ8kKu
+	 UR3tKD29USwsw==
+Date: Tue, 15 Aug 2023 09:32:16 -0700
+From: Bjorn Andersson <andersson@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: agross@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
+	kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	conor+dt@kernel.org, catalin.marinas@arm.com, will@kernel.org, p.zabel@pengutronix.de, 
+	arnd@arndb.de, geert+renesas@glider.be, nfraprado@collabora.com, 
+	rafal@milecki.pl, peng.fan@nxp.com, quic_srichara@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v8 2/5] phy: qcom: Introduce M31 USB PHY driver
+Message-ID: <jkkamkixp7u2js7lvr3thfb4nbslevbymksvbfudblpci7wr32@jxmjl64y6yl7>
+References: <cover.1691999761.git.quic_varada@quicinc.com>
+ <c8821bb0124a54cc774a2ff7b9c40df28eb7711e.1691999761.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <c8821bb0124a54cc774a2ff7b9c40df28eb7711e.1691999761.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230815_082828_876293_1A135357 
-X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-CacheID: sfid-20230815_092933_636247_D1AE05BF 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -72,39 +81,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Realtek SoC USB2 and USB3 PHY Transceivers are only present on
-Realtek Digital Home Center (DHC) RTD series SoCs.  Hence add a
-dependency on ARCH_REALTEK, to prevent asking the user about these
-drivers when configuring a kernel without Realtek SoC support.
+On Mon, Aug 14, 2023 at 01:36:02PM +0530, Varadarajan Narayanan wrote:
+> Add the M31 USB2 phy driver for the USB M31 PHY
+> (https://www.m31tech.com) found in Qualcomm IPQ5018, IPQ5332
+> SoCs.
+> 
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- drivers/phy/realtek/Kconfig | 5 +++++
- 1 file changed, 5 insertions(+)
+Thanks, this looks good to me now.
 
-diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
-index 650e20ed69af41d2..75ac7e7c31aec6f2 100644
---- a/drivers/phy/realtek/Kconfig
-+++ b/drivers/phy/realtek/Kconfig
-@@ -2,6 +2,9 @@
- #
- # Phy drivers for Realtek platforms
- #
-+
-+if ARCH_REALTEK || COMPILE_TEST
-+
- config PHY_RTK_RTD_USB2PHY
- 	tristate "Realtek RTD USB2 PHY Transceiver Driver"
- 	depends on USB_SUPPORT
-@@ -25,3 +28,5 @@ config PHY_RTK_RTD_USB3PHY
- 	  The DHC (digital home center) RTD series SoCs used the Synopsys
- 	  DWC3 USB IP. This driver will do the PHY initialization
- 	  of the parameters.
-+
-+endif # ARCH_REALTEK || COMPILE_TEST
--- 
-2.34.1
+Reviewed-by: Bjorn Andersson <andersson@kernel.org>
 
+Regards,
+Bjorn
 
 -- 
 linux-phy mailing list
