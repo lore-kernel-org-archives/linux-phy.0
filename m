@@ -4,67 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2437C001B0
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Aug 2023 16:19:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A159C001B0
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Aug 2023 15:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5wO6vhIqSxRZCVDtkrr5SfX19Iv8FMoewwua+mYbPBk=; b=v7yETH6FWoqJoXQZKThgX9Hbvs
-	K/VajYVSWnecHYZhCvRBFfPqKbVaCCqwPxCvYLc2F3sZg7DTLJFKs6vPQRs0FoA5fTGWpvVYucpa6
-	y94y7NSo0WIGDZ+UUuhTVeujoJDcAfLAafel0S6NlKFEdgII9LdzmSGjZTTfLlZl3+xfOCdVW1vn7
-	znnI3m7gz7isb/0l3/9zINza1xn9Wq4C8LPn/QGWDxp3dw1qrZ/gkI4Tw5shr3WYjAxafZRJXhmzs
-	2MIGW6Hw1SLo9t5iq4fRowWaPIUX7EtV0qFBy/c4b0d/fGZCZnPWlsFhITPoUzMaou6UBYDjqwmvd
-	68HZ5HOA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ksygEAwqR5saI7CWRPtlc7HABz1a8RmAfVdIWI9cPcg=; b=QVmjlBmn870SOf
+	b8H+2sXhrEXnyez/bvosvQzm6hVsZSzIsG5RR50im1JHBApWcfcRaVZ+sEGujxu4HNcUmwbjVJaMG
+	RMW9QzIRmkOXDt8n4nb6/AxJrRRgnFEAzBKK7OkZlvGjY7D4Bx2OMqZ0DXqoVf9bPLotRjzwif/jG
+	vJZqVLdCZE2oVjdQRyPIRIk+KilorGtxg2oIxUUFKgkoU+34OPCWSCJD9XVuKakZeDwM9vgBF6wVf
+	tXKzQJ9BmZF5+FJwFiV6SQw9jM59DSUjhUDmMeZH8sL67TPgQqnTGt8At8JTd9FdS1QMui1jcHpa4
+	cBN6wvZl9qkjOSM6/VJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVaHg-00HXjq-1f;
-	Mon, 14 Aug 2023 16:19:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qVvyO-001rW2-0m;
+	Tue, 15 Aug 2023 15:28:44 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qVaHc-00HXix-30;
-	Mon, 14 Aug 2023 16:19:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6AE846406B;
-	Mon, 14 Aug 2023 16:19:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C6FFC433C7;
-	Mon, 14 Aug 2023 16:19:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692029947;
-	bh=1HXaR1YqLupXBHwp85bkyMqldMzywffwekLUEAu17lQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ZQpOKl/8SHJMA4ovCGZI5y3v9Q2m5JuInPWTmDYCAFpKJo66441o5sowDMYYJV23v
-	 PurzGhRTt6wWzVnit+s4Q7vQ6Sm/flka8NxVydQo+Bxi1E0/WcKEmbKxuubgQpP1HF
-	 7pMboXgBFOPLezf+don9/x/Gt863YXBzOg79jbJzZXhXhd8btAf62gQBVDbJR4YojW
-	 xCBdXZIFJaeG1etr3MgbT4zHjxhv1EMeUVp5nhnOATFf7fTh/mpyaLEaGbnvMNbYmZ
-	 lYtGLoXh4N+taPt424ET5oKphQfFdG93LBakDyyDUBan3LsAZqhmGPQfr08iC/geQ2
-	 kMiJJodjH+M7Q==
-Date: Mon, 14 Aug 2023 17:19:01 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Eugen Hristev <eugen.hristev@collabora.com>
-Cc: linux-mediatek@lists.infradead.org, chunfeng.yun@mediatek.com,
-	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
-	sam.shih@mediatek.com, jieyy.yang@mediatek.com,
-	frank-w@public-files.de, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, chris.obbard@collabora.com,
-	kernel@collabora.com
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek,tphy: allow simple
- nodename pattern
-Message-ID: <20230814-isolating-faceless-72835873207e@spud>
-References: <20230814093931.9298-1-eugen.hristev@collabora.com>
+	id 1qVvy8-001rGu-2F
+	for linux-phy@lists.infradead.org;
+	Tue, 15 Aug 2023 15:28:31 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:5d0c:f209:12a7:4ce5])
+	by laurent.telenet-ops.be with bizsmtp
+	id ZrUF2A00845ualL01rUFq5; Tue, 15 Aug 2023 17:28:16 +0200
+Received: from rox.of.borg ([192.168.97.57])
+	by ramsan.of.borg with esmtp (Exim 4.95)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1qVvxo-000j7s-Sp;
+	Tue, 15 Aug 2023 17:28:15 +0200
+Received: from geert by rox.of.borg with local (Exim 4.95)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1qVvxv-005ckC-6V;
+	Tue, 15 Aug 2023 17:28:15 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Stanley Chang <stanley_chang@realtek.com>
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH] phy: realtek: Realtek PHYs should depend on ARCH_REALTEK
+Date: Tue, 15 Aug 2023 17:28:13 +0200
+Message-Id: <2892527cac9af6fa8f5e7b8daeffd7d4351fde68.1692113167.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-In-Reply-To: <20230814093931.9298-1-eugen.hristev@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230814_091909_058830_AE0DD1CB 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20230815_082828_876293_1A135357 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,112 +67,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6149068344443549257=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The Realtek SoC USB2 and USB3 PHY Transceivers are only present on
+Realtek Digital Home Center (DHC) RTD series SoCs.  Hence add a
+dependency on ARCH_REALTEK, to prevent asking the user about these
+drivers when configuring a kernel without Realtek SoC support.
 
---===============6149068344443549257==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="g/mf8JY5atzBFUNd"
-Content-Disposition: inline
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ drivers/phy/realtek/Kconfig | 5 +++++
+ 1 file changed, 5 insertions(+)
 
+diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
+index 650e20ed69af41d2..75ac7e7c31aec6f2 100644
+--- a/drivers/phy/realtek/Kconfig
++++ b/drivers/phy/realtek/Kconfig
+@@ -2,6 +2,9 @@
+ #
+ # Phy drivers for Realtek platforms
+ #
++
++if ARCH_REALTEK || COMPILE_TEST
++
+ config PHY_RTK_RTD_USB2PHY
+ 	tristate "Realtek RTD USB2 PHY Transceiver Driver"
+ 	depends on USB_SUPPORT
+@@ -25,3 +28,5 @@ config PHY_RTK_RTD_USB3PHY
+ 	  The DHC (digital home center) RTD series SoCs used the Synopsys
+ 	  DWC3 USB IP. This driver will do the PHY initialization
+ 	  of the parameters.
++
++endif # ARCH_REALTEK || COMPILE_TEST
+-- 
+2.34.1
 
---g/mf8JY5atzBFUNd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Aug 14, 2023 at 12:39:30PM +0300, Eugen Hristev wrote:
-> The pattern for the nodename only allows t-phy@... , however, for the case
-> when the t-phy has no `reg` and only `ranges` (basically when the t-phy
-> is just a parent node), dtc will throw this warning:
->=20
-> Warning (unit_address_vs_reg): /t-phy@1a243000: node has a unit name, but=
- no reg or ranges property
->=20
-> For a node like this:
->=20
-> 	sata_phy: t-phy@1a243000 {
-> 		ranges;
->=20
-> 		sata_port: sata-phy@1a243000 {
-> 			reg =3D <0 0x1a243000 0 0x0100>;
-> 		};
-> 	};
->=20
-> it is normal that the parent node 't-phy' would be without any address, a=
-s in:
->=20
-> 	sata_phy: t-phy {
-> 		ranges;
->=20
-> 		sata_port: sata-phy@1a243000 {
-> 			reg =3D <0 0x1a243000 0 0x0100>;
-> 		};
-> 	};
->=20
-> because being just a holder it does not have its own reg.
->=20
-> However the binding does not allow such a name for the t-phy, so with this
-> patch, making the `@[0-9a-f]+` part optional, such node is possible.
->=20
-> Signed-off-by: Eugen Hristev <eugen.hristev@collabora.com>
-
-This seems reasonable to me, perhaps the lads will scream.
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-
-Thanks,
-Conor.
-
-> ---
-> Changes in v2:
-> - none
->  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/D=
-ocumentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> index 230a17f24966..2bb91542e984 100644
-> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> @@ -64,7 +64,7 @@ description: |
-> =20
->  properties:
->    $nodename:
-> -    pattern: "^t-phy@[0-9a-f]+$"
-> +    pattern: "^t-phy(@[0-9a-f]+)?$"
-> =20
->    compatible:
->      oneOf:
-> --=20
-> 2.34.1
->=20
-
---g/mf8JY5atzBFUNd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZNpT9QAKCRB4tDGHoIJi
-0jU2AP9qah5UHtzzFaDMKPLx4YhxWLbBsHowrT9XMVj560Z2twD9FGmBUyZvKKW2
-UNhseLnLrkSED1LMAEZNSFekdLZpGgk=
-=dvtZ
------END PGP SIGNATURE-----
-
---g/mf8JY5atzBFUNd--
-
-
---===============6149068344443549257==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6149068344443549257==--
-
