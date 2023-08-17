@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11D54C30633
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:07:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61EBAC30638
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:07:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CIUjJz5X6YmwGYl6Y60LBuGO6z6FXymx6vfdnK6xy4=; b=x1MCayfKvE9LNh
-	wHasFqiQsiLOfVYw1Dhp6wARxqhQealngbxPdzAg2NwDX4nz05KvF/g1/Xax7LzFRuE4sGs1sVV0K
-	oWMNS2VcYpVKVdmBGrzlGGtIPigeJE68Xw8vyl7489MCZcuP9qx8f/yA6LP/Kt1BS0nEPDPnJb52b
-	lZG0a1UjN1f2DiCz8FmnSQ/rj0wFASTPqbt/7nYgW9M0lk3XnkozRgTD12bsHLqP3NRX1X9Kosd7s
-	il7MgXS0YA22H++xG5PlWiWtzChfkrQ+TIfGqi2EY/Vui88m8MQzv07tN3zF0znf3uCNl26lFok4w
-	UiWFtWfoDsdtWBWO43/w==;
+	List-Owner; bh=V5d+F+GcAZqdRuMErIrbL4ZKJ0evHE5Q0vCVwjLk+So=; b=tTUkmNZM98ZgvF
+	bbmgDCEgrFgeKdUzUpHlZQjtm8H85l3HrAf/pNdx12L1/WBnISWf+xrmCSn1E/CyOlZrHdVWxj9BU
+	S4oOTPzffPyqlcEftZ5Sd2DZU1xefhuOvhwXj7qQk0lGXarGBtSRS5oBSBHKagVJSO3ffvIF3E4Gt
+	ANLUweXzwbIXHpK74YIOVlO5NMFEZ5wm8B1L3CgfxldSin64KMn/lanK7rE6WRSUni771jD4ZhkRy
+	xyMalznxIieGT9647ZagRY+VmU/3Ov/CTlVs+haSOFI5Kw5FDWHtz848/OoVdhPXVaGr6BmdfJN+s
+	sqJw//d0A8ugIhEIb3Vg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWeaf-006dh3-2T;
-	Thu, 17 Aug 2023 15:07:13 +0000
+	id 1qWeah-006dhu-0K;
+	Thu, 17 Aug 2023 15:07:15 +0000
 Received: from mail-db8eur05on2060b.outbound.protection.outlook.com ([2a01:111:f400:7e1a::60b] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWeac-006deG-32
+	id 1qWeae-006deG-33
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Aug 2023 15:07:12 +0000
+	Thu, 17 Aug 2023 15:07:14 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DuAn7Z5k3N+SFy630s3FdWQEPNOuB9/TxCRYOm7va+54BpTW39XzoCXesHg3jvacnx5eD8kJAkQKuiuT0t23A3vM2Y8JA7zhRx8rYe0tvEXa63OmOska9Q5118kt6oZMjpO8i071tpipKqfi3CJZ+CY+Ce1K3sWg12hykjkjB02yxDLpqEZ9PNUN2Ij4UKggAVeGe6MvEHIWevHsBmalQLs4tcodoP6jtrBTCsip/Rkh8cGe16Wghjcby87r1WhBUt+tDTdxJYRLap/bcjySIND+Wq4XlrmFRZ1Nlb/Srb0LMzhgsOJ2gJny2l2MkqGYiSTBMnzlt+6M67zZelvM7Q==
+ b=YF3MjuW3rRsmiVFfwjLKIUupHeVZjhzS+QnRi29fYfh/zihOFeT0fq9abLyXlRZ50lZEJN1x/MmbshOy+VHU9GyeH0mXQoiMO1V3XbU3ur0UzqXM3CiQDbZelLjRSOf2V6/lY516BWnsdmpvfEDLQJ09KRTBzvBd9JKAMMKwZ3Povt8ArzYLbvLyen8SpxSfbDk/ssJL8xL8bwD8QLVcOYWE27pcc+Jy/MrvEVCbEsGUV6Sl5/iHlxvRxwXlKw3U+4T8NuIMrC1TkhistrVteFrSvTY6jeWbdWXdkoNt/hLJlCdZdFp4lJjOavekrDBRwKaOInrp71m5nNvU7xVNhg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bUIQl1HEDGGbIBVkR3je1gD+kRiyoXmAxMUQgb9O/QM=;
- b=fZjN582XAiynSELAaSaEIPtH6ToRfYDdlLYm8prnbc0JFTTDO7xvsiwIWe9pojQwZ8cqDjKfUpjGAC/8ahGl+zeRrNYa20yZLb88AbGCmub5cisvoCC7UWv2P2nCCdqm65tgm3U7tgTpcrVihJMmoEjKGEW2zUV+j7oL3nVz/bVMhb+DlKxJ8pg6zfkMXWVa8s0yAXqGu9g9vt9t1K+Zv+rvmydW6cCoQi6ER2DQZotdEZ1e94YNx38AUVku9Kw5nURZ6zI8UAUOjUcsYSySomVWLCdToCaZQAgBhuta2SOzsBY9wwYT6m9GWQg5K30T6nwj6gJZLODHjOAJhH/gWw==
+ bh=p7ImfiEnvrOdShACecPKky6yj2SGCUD0V+OnjaenyPM=;
+ b=kyR39mBvHZjCQ6l5mQxI9YxqHelIl5R098IwwLVdbs4xOzRvs6thgsPxsySRNnD8R3xE3i576fy4tBjGR/4Umem6olCB9GW6XvPBj3jKhBf8ssHrggvQXv4LR5H92rA4fgvFmTkTkbCZtteF7/k30alIcOTS3kqaCJcXChO4HbbyoqagOVM/Yp5wpwatgr12nX1YYPuMqgrkCO+2u/l6iKHCQclHsP7VD5E8j8kNldRKVbf0wMTM6+G+kpEJpMtkJ03EMdyQsFjA7y/qvq04t1u7gsi6uGO8pPs9CEIkWNvVH+nzcIVMyEfA2so7GBMwBYtJSdvOYvQiZKLk+LQhDQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bUIQl1HEDGGbIBVkR3je1gD+kRiyoXmAxMUQgb9O/QM=;
- b=B1FYcm4wdwtPXwUUUVtenitnuCK4FCqpneRe2k7vXdvVDw2WFCJX3kzq7Bol6cISnPEOfd74kJPk0j7vu1qlUPz+sqCwyxqPOw/6WA4tFmNBcPYUP46QBQNwmAQmOS9C+M5kixMAlKR0b4OCwH2BaFL8W/XClybZ5FY5S39P4jc=
+ bh=p7ImfiEnvrOdShACecPKky6yj2SGCUD0V+OnjaenyPM=;
+ b=ZnJ8f+aHNdPZn2OcGrTqtVyyz+F8w1g7BS9qoqldVSjifYGv3edGGmmZ3OlYGXTuUGQn9FmUSP6L6g5inl67iWPB1BvNpSKuwAeGvG1I85yNGXwbKsPxQbzC3aASSVaMIgzqPNJfhnEArdZ0tof4PIn4AqW1Cy/xadTmKl9V+ms=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
  by PAXPR04MB9469.eurprd04.prod.outlook.com (2603:10a6:102:2b4::12) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6678.29; Thu, 17 Aug
- 2023 15:07:00 +0000
+ 2023 15:07:03 +0000
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6678.031; Thu, 17 Aug 2023
- 15:07:00 +0000
+ 15:07:03 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: netdev@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -72,9 +72,9 @@ Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH net-next 3/8] phy: xgkr: add configuration interface for copper backplane Ethernet PHYs
-Date: Thu, 17 Aug 2023 18:06:39 +0300
-Message-Id: <20230817150644.3605105-4-vladimir.oltean@nxp.com>
+Subject: [RFC PATCH net-next 5/8] net: phy: balance calls to ->suspend() and ->resume()
+Date: Thu, 17 Aug 2023 18:06:41 +0300
+Message-Id: <20230817150644.3605105-6-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
 References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
@@ -84,56 +84,56 @@ X-ClientProxiedBy: AM0PR02CA0137.eurprd02.prod.outlook.com
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAXPR04MB9469:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6422474e-6aae-486d-6e48-08db9f339b6b
+X-MS-Office365-Filtering-Correlation-Id: 29b0a30f-6ae3-4060-1b46-08db9f339d03
 X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: /e9CEaOMzYZkfHs4Tmm93zliZRfjXzx9FXOyKDuy0l8LcakWgH1vx9VFkYk1E7xmVN5H300yW5+kkbKKJiUxIO06Cm2Qx2Mnj90NOIeFQqytJhkb5/rVMRss1qLVVYJQrkvp85FlA76tIdRCyVV5jQE0k5dFmrg9i5HVn5D3Vb1khlKn2MLzZ2+TMWXnVmoEWhAOcZZoVMev2JM9FqMsjfZ63LTF5/pNqAn4iy1RIrvh6892UTnOZngVrxDt+EjkQJIPWcib7+/mj16e5Ep8cvbzYBPdBI3IrqwKshzPVJvkKPUP5VoCUFt3S9+NfDnNaO+uomGJ/bnQNT9IdwnTIxkmFZ+02CR3t0veMu34nCzqCgZ+boj9igx//9qbS0bWV5Gz188/UTNhr4ivf22pQxYrHUtsRz1fb0OdyqufXmJVi7roxctQ5P81lMKjHr50eIt3A8MFcnTvsXcu95ZGLazeZUsXGOE40xlKW0/o0dg++OZvA/Oub7opqJ46aCiZq1u5/H/qWfNFF0FdtDjxJLv6Id2wD4QxG6HReprGVEFWXWR4bNOR7uJPwsISj/K/hHA6/+68ucIcn6b9j2thbwfbDve6J2HZ5amxcfhcaVcm9BlLqHSXHKmq+CR6a6N5
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(2906002)(83380400001)(66899024)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: F4/WLngJ5kQl9EJWIPzYKIfdzA4YeEXS5vh+KGimr3WRYrSuW4AFYYjySygxSLH9vpXcgQRdDywdtsmT70mM5xJ2e+JYAXSL2ufOR38QaITsBR6eFw7U91YBnHpqNdABqqZpCpKeIfvg5HpnDtbI5Pn57wn7aOHTfZMV/S7bFonoVKwDcHPq8v1ibyzV+1D8q8Y0GGXVAWn4ddnUlEjborRVhSi7JEn0hwDBmDg9yW21dIX0rwLlgt1N/kwGM4m+oYqM4h+jhiopQBET/jOdFxBmiFGOpl4YyemFRpLrVu7TB7ntaYeWVXT46bnLc6TqviYZqgwoJIYgVN4MGfiyktD5BgNaTlCrYdp5e9dvGRvWtP1MpUg9Qf7levuJudXfSRJ2llb3C3AfyEHXrYauew1eLUf9ay9OhlJIcEL0ulPlbk/pcVnkYal3zXqpyQk6lberwzTiyycagrkh7n5ay9t3JnZDLrjEndRaaVOyMhxDBx2qjb5uWNfLiMmCynOckvykbZYSGoDGhVzalC/ZnDdqx9WteornifJCwQPVQGD4AYRlFlf6ORdz9/KQP6VkXFYirbtO1WEVw6rpMsRk207e/F+ifpbiy2azJP1EH0iBdRPlzOUG3SSaKMk9bxwi
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(15650500001)(2906002)(83380400001)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?GYJq0N6DTqR18eS6E4g/09VmJoVa1AKYTjELMeAJ8TYWVSFUh3gSxOt1+jrs?=
- =?us-ascii?Q?xAkBKuDUXkwiVHmW+khTTJmUtb2TM12/Y2EnRKU1v9uwKbLU/wGS6x55U2bY?=
- =?us-ascii?Q?pFOPhelTYEtM+zrhwVGG4odOndO4MfL7uxN7AHQ1nNvmBC5a6Updi1EBcp0e?=
- =?us-ascii?Q?azENH6a5+AZ5p16n3VetNSYKc+/rfztXhQACMSZvBf/l/lbc+s8E3wzctxIf?=
- =?us-ascii?Q?6pHMFMzZ4G+HfJ/y0dgkcq5RuQctTM5pIMNUfLFoSXRFjXDISe3LS0lmBJck?=
- =?us-ascii?Q?xmhWWKDB0EMqkIewpN/P5t83v/s5jzM1u4ub/GhOdTIQI3pbJAuJ/76DGbVX?=
- =?us-ascii?Q?2OSqgk1yUg/PqT4BCttFVBMet9nU98pf4+e3/KNK3l/xrzvWVXzOc3VrCw4h?=
- =?us-ascii?Q?E3k9cpgXDPcoYLD7aae1NCAVAJE07LDwzD09PlJ/n8G5dsWR+EWcQW8oPkAz?=
- =?us-ascii?Q?ktE5jMUQukz0tbxnpwCkPxAIelGU1gSfK9bBjWASUy5Qm6scybcrY2otpvIP?=
- =?us-ascii?Q?97kI5EQSdFh3EBGNdNaGD7mvcm0E+XkHTbd/MCdVSdNTeYa+Mjjk+dJQsg4U?=
- =?us-ascii?Q?tEwmos23TeUtZMottMOUYeZ/K4Eq/U+qqda3+frhJq2RbzVwklUflNfQxu2T?=
- =?us-ascii?Q?4kzIwAju6rhdJF1k/up6UzinumfjNgpVbTqOlUCSwKqQb7kHlPF3Du06CH61?=
- =?us-ascii?Q?JWtc1zZ74LgxICwdj88GImCvRd/+kx18BjS0HMHWvW3TzXnMHGu6ytR9NIuZ?=
- =?us-ascii?Q?orD9ntKc2k0sMaddxyq6ZWoBAo0pHWoTDT1IYulHNiL+sVJsBQZwA5oc4qrF?=
- =?us-ascii?Q?qackDuI11gSW6Cc0jJHi+ZyXj8DlMcTtKo0Cb6cGTVuCMH5g3Tkppj0O/Tma?=
- =?us-ascii?Q?5p2nNrILeJwC0pFaACobRSezdENSvlBAofCYlQhD8qnYlWGoFW+eHarI22Cq?=
- =?us-ascii?Q?B8pv1UbbOtJ23g6m5jMz1dSs/0HPhUHC+7B9m3MB8Q41d+jLNXtAOSmslSLu?=
- =?us-ascii?Q?Hj/phB0nCUn8BP5/AUJNlcBTPrHwTwhRLJ+04Ex9w4y+YaISq+DGD9ZX0+VT?=
- =?us-ascii?Q?4GzBf9aKLIQSF60m7QiCNcW7KE7ZL0IgpQU6KIByB/iwYOUikATwtBC9IZRy?=
- =?us-ascii?Q?R5Fb8dkngafsmlnEJPxJjMcwmMkcLar4dCCbkJwL8TAsBbOMk5ZFCBjOfCff?=
- =?us-ascii?Q?1Rz7nLuBTA1yDwMNc0A5YOlpE1cifhCYDQLkjlQodOYIfG2hE33FxqAZouYW?=
- =?us-ascii?Q?fAdNHM+1ujC6/3msCLumv0IOBxNQUPs8bS0KpRjqgUP5aBKBsGdyrICly/b/?=
- =?us-ascii?Q?T8kR7QYOsvPxl/6i9mOeCHCNo+3f1rmkRPf7imJr5d77TwajPjcStBGb+Y97?=
- =?us-ascii?Q?BCIp/reQFIzs+LX3AEwfTrcXoaBJJRuSjQwUb81WgD2MdcunJtzPmMDuzYQA?=
- =?us-ascii?Q?soOiw9b3A9UPP3oNIKcuf1DYdT8ttWm4thTL+ClQk/6HqJGWy5HLzmZRRE7h?=
- =?us-ascii?Q?hI6suxT9u5j2XpvaxSqcnwiz9oSlEt9uy66fIk93LE9iQzE6l4RWimgG64Mx?=
- =?us-ascii?Q?gOI5zNjJUZpu6kpKcn5t8l2dTw1cKwrKmYswtsVARlro3cDtcplSbU+wDLzt?=
- =?us-ascii?Q?xQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?I7fHMBh98sjb5aWPTH2XHflAZZC2ANmJ1ZRu34ywESbPya3hyZVvPkdJPob0?=
+ =?us-ascii?Q?tHoOvGKR4uNEEC5eWyZ2/2nCOQqFMKcidydBSa1WOd2m4XbsyPzHpMEoRts8?=
+ =?us-ascii?Q?KeaUpTTPVq2uxNKHC1iZx9b6d2tozDztEyp+TZ+XZoskv9Ua3PqSdkGvOLAR?=
+ =?us-ascii?Q?yaJ2TdQadWShcTqDhLnHhCxLpPuqbLVvVA7pUdlxz7ru5k5ddK/No8tqG+4t?=
+ =?us-ascii?Q?BTKxwcphR1R1AB8qOK3UeD8VWMIVFHx6PP0wjE2Q0SaCxTM8P/lYMgP6Shtt?=
+ =?us-ascii?Q?9bZ8ipDcPslI9eOvut00XeALkHN39C/TMTBvpIFVQ4jYUSCVgiPG1UuSrOj+?=
+ =?us-ascii?Q?pK/ad9MqT/fNzjCiAQdndqhILjYiQnMXFFqLd9Q4OejcXUF+A2Alub5gdtW0?=
+ =?us-ascii?Q?JyIOmK6jao9KOaPImL/uyORxmj6MF5JG9rSQp2691hC54SjA/SdEZCArotNE?=
+ =?us-ascii?Q?s9HdCXHo9YJ5Qv0+LKZvjhN9lrRsS/Zei1hn4JmgEmvrUBmbL/o4qRM2AoM1?=
+ =?us-ascii?Q?bsP7zfdAEKoPXK6/LE5+d952pAY0lZTKQHE+htQmcqJAOyYzGvMflkVH32EV?=
+ =?us-ascii?Q?cx9cK+SiXNFdNhb8R+dCiKw43AWfm4IWmfwv4kVS1R8/WiVYAyYaIJiVnvaK?=
+ =?us-ascii?Q?Lu+oFMktJRKKs1hrLBHnQNzQ47BhwooaeZnCuEAOj30zR3WCRutjNx4rPiAt?=
+ =?us-ascii?Q?b4Dcea/FYleIDIzfTUY50AN1bKJYNmb6c7M31NgR7vzoWjzivKQbga7Fu/5/?=
+ =?us-ascii?Q?P96WCBEwe/qKM5XXxYf9gHzUHQqTNKu5Ktf+eW4d995UxKfqePG4Luyj7wcx?=
+ =?us-ascii?Q?9062uFD3q//rYgTQ9E8lon1oSvvaJY+Mfwv4D79mZhV3YkyV7GwDhm5BfEOT?=
+ =?us-ascii?Q?NM5r9qSLSx724Z1WhQX03WP33jc1haHbYIBpsKo30bvnygGNin25SbbqpE4F?=
+ =?us-ascii?Q?pJi9fg6esm8z01Hv52Is3sNDW+ckhWbrC6WtUaGaScrD6KBnRHbhAJK9+fCZ?=
+ =?us-ascii?Q?AJAw0UMc8sZe7esTPOUIPz18Cs4OXC3xhaabqXc+qRSn8Nycvp/LkiUEo/mz?=
+ =?us-ascii?Q?+d3eikp+tIxFbMTHaWTpVEYZK/lWhGcZPP0O60vcR8QBUpI9cSXk0cO8qrDA?=
+ =?us-ascii?Q?U9xDOC8ak4K7a2IiOvoXaCQiRoGi2Jk+KiBhbj5yJaF7RSt4/cp7Ngy3uScS?=
+ =?us-ascii?Q?GeLieFimZPzHv3PZLVj4O7cnYt4l3GFFyrHxwSyZY5dbnczaEwQp/2tm1/mg?=
+ =?us-ascii?Q?XTavL5RyT98GZ9qPchUJovkC95nd38NfalvTMKaYbcVRLaxjjowytS+56XlD?=
+ =?us-ascii?Q?EFLUya0gX/iyfi3cRZRi55PX+3v9JP+ZV6Hup6tuo71tm7eIICRY8SU0G0S3?=
+ =?us-ascii?Q?/pzQcRLkd4k7tbGEnyTjiqxFSIoRj5SXDNTXsGurNAnzc+Faw/YkJITO/wV5?=
+ =?us-ascii?Q?6SoWkNmB5cXMCTFGx17zgu7gIQvjEo9aOef0pBEr3oV55zyAy23icCVPJLpz?=
+ =?us-ascii?Q?9oufXjbEewV6lPWK346XfWzDNA46s97zjY+uATgzo8w0X7QNshxMd7jg75Br?=
+ =?us-ascii?Q?WP3iiKXZIBScuT2LywUw4MRwIaNx9tAGh3Qd5gMfdYSBdaieSfKN+/BCdu1n?=
+ =?us-ascii?Q?Nw=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6422474e-6aae-486d-6e48-08db9f339b6b
+X-MS-Exchange-CrossTenant-Network-Message-Id: 29b0a30f-6ae3-4060-1b46-08db9f339d03
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:07:00.5095
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:07:03.1574
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: DynSEa7MX++75CKUqv3EWMAenL8h9GP3lIWygOkb0y0LJfn5AsfrxFU2ImqK4Jnu7RxGhvrgW4owVHglK1X8/w==
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ww0wmgaac0f4dbWMOEZ10UfjgLSYHEzylfLYuzZTAlK+DH2ylIerfhbaziQnG5ZP06+fQY0wktkHQXJPTBN1kQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9469
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_080710_982563_59D9E773 
-X-CRM114-Status: GOOD (  22.06  )
+X-CRM114-CacheID: sfid-20230817_080712_988710_E2BBD7AD 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,230 +150,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In Layerscape and QorIQ SoCs, compliance with the backplane Ethernet
-protocol is bolted on top of the SerDes lanes using an external IP core,
-that is modeled as an Ethernet PHY. This means that dynamic tuning of
-the electrical equalization parameters of the link needs to be
-communicated with the consumer of the generic PHY.
-
-Create a small layer of glue API between a networking PHY (dealing with
-the AN/LT logic for backplanes) and a generic PHY by extending the
-phy_configure() API with a new struct phy_configure_opts_xgkr.
-
-There are 2 directions of interest. In the "local TX training", the
-generic PHY consumer gets requests over the wire from the link partner
-regarding changes we should make to our TX equalization. In the "remote
-TX training" direction, the generic PHY is the producer of requests,
-based on its RX status, and the generic PHY consumer polls for these
-requests until we are happy. Each request is also sent (externally to
-the generic PHY layer) to the link partner board, for it to adjust its
-TX equalization.
+Some future PHY drivers will need to do balanced stuff in these methods,
+like phy_power_off() and phy_power_on(). Currently ->resume() is called
+twice during initialization, leading to phy_power_off() not actually
+doing anything during ->suspend() because the refcount in the generic
+PHY core remains elevated.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
- include/linux/phy/phy-xgkr.h | 165 +++++++++++++++++++++++++++++++++++
- include/linux/phy/phy.h      |   4 +
- 2 files changed, 169 insertions(+)
- create mode 100644 include/linux/phy/phy-xgkr.h
+ drivers/net/phy/phy_device.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/phy/phy-xgkr.h b/include/linux/phy/phy-xgkr.h
-new file mode 100644
-index 000000000000..8accfb1002a0
---- /dev/null
-+++ b/include/linux/phy/phy-xgkr.h
-@@ -0,0 +1,165 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2023 NXP
-+ */
-+
-+#ifndef __PHY_XGKR_H_
-+#define __PHY_XGKR_H_
-+
-+struct phy;
-+
-+enum coef_status {
-+	COEF_STAT_NOT_UPDATED = 0,
-+	COEF_STAT_UPDATED = 1,
-+	COEF_STAT_MIN = 2,
-+	COEF_STAT_MAX = 3,
-+};
-+
-+enum coef_update {
-+	COEF_UPD_HOLD = 0,
-+	COEF_UPD_INC = 1,
-+	COEF_UPD_DEC = 2,
-+};
-+
-+struct c72_coef_update {
-+	enum coef_update com1;
-+	enum coef_update coz;
-+	enum coef_update cop1;
-+	bool preset;
-+	bool init;
-+};
-+
-+struct c72_coef_status {
-+	enum coef_status com1;
-+	enum coef_status coz;
-+	enum coef_status cop1;
-+};
-+
-+enum xgkr_phy_configure_type {
-+	XGKR_CONFIGURE_LOCAL_TX,
-+	XGKR_CONFIGURE_REMOTE_TX,
-+	XGKR_CONFIGURE_LT_DONE,
-+};
-+
-+/* Adjust PHY TX equalization in response to a C72 coefficient
-+ * update request from the link partner
-+ */
-+struct xgkr_phy_configure_local_tx {
-+	/* input to PHY */
-+	struct c72_coef_update update;
-+	/* output from PHY */
-+	struct c72_coef_status status;
-+};
-+
-+/* Query the PHY RX quality in order to compute a C72 coefficient update
-+ * request to the link partner to improve that. Optional callback to see
-+ * how the link partner reacted to the update request (which is echoed back
-+ * unmodified). The coefficient status is only valid if there was no error
-+ * during its propagation.
-+ */
-+struct xgkr_phy_configure_remote_tx {
-+	/* output from PHY */
-+	bool rx_ready;
-+	struct c72_coef_update update;
-+	/* input to PHY */
-+	void (*cb)(void *cb_priv, int err, struct c72_coef_update update,
-+		   struct c72_coef_status status);
-+	void *cb_priv;
-+};
-+
-+/**
-+ * struct phy_configure_opts_xgkr - 10GBase-KR configuration
-+ *
-+ * This structure is used to represent the configuration state of a
-+ * 10GBase-KR Ethernet Copper Backplane PHY.
-+ */
-+struct phy_configure_opts_xgkr {
-+	enum xgkr_phy_configure_type type;
-+	union {
-+		struct xgkr_phy_configure_local_tx local_tx;
-+		struct xgkr_phy_configure_remote_tx remote_tx;
-+	};
-+};
-+
-+/* Some helpers */
-+static inline enum coef_update coef_update_opposite(enum coef_update update)
-+{
-+	switch (update) {
-+	case COEF_UPD_INC:
-+		return COEF_UPD_DEC;
-+	case COEF_UPD_DEC:
-+		return COEF_UPD_INC;
-+	default:
-+		return COEF_UPD_HOLD;
-+	}
-+}
-+
-+static inline void coef_update_clamp(enum coef_update *update,
-+				     enum coef_status status)
-+{
-+	if (*update == COEF_UPD_INC && status == COEF_STAT_MAX)
-+		*update = COEF_UPD_HOLD;
-+	if (*update == COEF_UPD_DEC && status == COEF_STAT_MIN)
-+		*update = COEF_UPD_HOLD;
-+}
-+
-+static inline bool coef_update_is_all_hold(const struct c72_coef_update *update)
-+{
-+	return update->coz == COEF_UPD_HOLD &&
-+	       update->com1 == COEF_UPD_HOLD &&
-+	       update->cop1 == COEF_UPD_HOLD;
-+}
-+
-+#define C72_COEF_UPDATE_BUFSIZ 64
-+#define C72_COEF_STATUS_BUFSIZ 64
-+
-+static inline const char *coef_update_to_string(enum coef_update coef)
-+{
-+	switch (coef) {
-+	case COEF_UPD_HOLD:
-+		return "HOLD";
-+	case COEF_UPD_INC:
-+		return "INC";
-+	case COEF_UPD_DEC:
-+		return "DEC";
-+	default:
-+		return "unknown";
-+	}
-+}
-+
-+static inline const char *coef_status_to_string(enum coef_status coef)
-+{
-+	switch (coef) {
-+	case COEF_STAT_NOT_UPDATED:
-+		return "NOT_UPDATED";
-+	case COEF_STAT_UPDATED:
-+		return "UPDATED";
-+	case COEF_STAT_MIN:
-+		return "MIN";
-+	case COEF_STAT_MAX:
-+		return "MAX";
-+	default:
-+		return "unknown";
-+	}
-+}
-+
-+static void inline c72_coef_update_print(const struct c72_coef_update *update,
-+					 char buf[C72_COEF_UPDATE_BUFSIZ])
-+{
-+	sprintf(buf, "INIT %d, PRESET %d, C(-1) %s, C(0) %s, C(+1) %s",
-+		update->init, update->preset,
-+		coef_update_to_string(update->com1),
-+		coef_update_to_string(update->coz),
-+		coef_update_to_string(update->cop1));
-+}
-+
-+static inline void c72_coef_status_print(const struct c72_coef_status *status,
-+					 char buf[C72_COEF_STATUS_BUFSIZ])
-+{
-+	sprintf(buf, "C(-1) %s, C(0) %s, C(+1) %s",
-+		coef_status_to_string(status->com1),
-+		coef_status_to_string(status->coz),
-+		coef_status_to_string(status->cop1));
-+}
-+
-+#endif /* __PHY_XGKR_H_ */
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 7e10761303fc..8ef7de7d2a90 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -19,6 +19,7 @@
- #include <linux/phy/phy-dp.h>
- #include <linux/phy/phy-lvds.h>
- #include <linux/phy/phy-mipi-dphy.h>
-+#include <linux/phy/phy-xgkr.h>
+diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
+index 17cb3e07216a..9cb5aa04b2b5 100644
+--- a/drivers/net/phy/phy_device.c
++++ b/drivers/net/phy/phy_device.c
+@@ -1882,7 +1882,7 @@ int __phy_resume(struct phy_device *phydev)
  
- struct phy;
+ 	lockdep_assert_held(&phydev->lock);
  
-@@ -61,11 +62,14 @@ enum phy_media {
-  *		the DisplayPort protocol.
-  * @lvds:	Configuration set applicable for phys supporting
-  *		the LVDS phy mode.
-+ * @xgkr:	Configuration set applicable for phys supporting
-+ *		the 10GBase-KR phy mode.
-  */
- union phy_configure_opts {
- 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
- 	struct phy_configure_opts_dp		dp;
- 	struct phy_configure_opts_lvds		lvds;
-+	struct phy_configure_opts_xgkr		xgkr;
- };
+-	if (!phydrv || !phydrv->resume)
++	if (!phydrv || !phydrv->resume || !phydev->suspended)
+ 		return 0;
  
- /**
+ 	ret = phydrv->resume(phydev);
+@@ -3275,6 +3275,8 @@ static int phy_probe(struct device *dev)
+ 	if (phydrv->flags & PHY_IS_INTERNAL)
+ 		phydev->is_internal = true;
+ 
++	phydev->suspended = true;
++
+ 	/* Deassert the reset signal */
+ 	phy_device_reset(phydev, 0);
+ 
 -- 
 2.34.1
 
