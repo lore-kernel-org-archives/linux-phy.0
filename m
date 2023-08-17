@@ -4,95 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9867C3062E
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 14:55:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73D27C30633
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:07:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n4IiTAivx2SmitfVcoiKNhfp+ojPU7tPb8+1zGGXn/g=; b=aIx7Zcr2suVvlV
-	QFlMQfxI1XT7UEEwSxKDnK56q8SHCS3TF+11po/fBFOsjnMujj8UjaRrzusZy5qhO1nh5ii9laphu
-	PaUGeJJ/2bsMWFKpa646IVrNqnQ3yKwxpyjajaBkc2VGXoZ/bIIRBixmImgftHK8Z+Q96hMA0WnQX
-	VsLeoR7R0Vu7GX7f9zJvRJZVLUsWuRW4ZcPJRuEn3IcXdCegdd0U6ycHLY6lfp7XtOlYAqH2kzyyb
-	xJ720xaDcK0QJI4cq8JCOKzZdZYo+uMDBG03L6E95zWTMoaUvhyE1XO7fQe0drJ7T8QVtmpcnQ41A
-	VJdeaEVv4BCZqYJWarPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=s06Fj7J62TTLZJCKRC+Tc0bkbZkLMS99d7KytQ0w0+0=; b=2KC5Abi0XeAJQM
+	s9nUQWS4+nAuj+iMjgz5oDcue+Ai5PfQvNRCSf2+aGOr+Jx8Cy9/m0wNdKsiFQnSxO9ohBCv1cMgs
+	tYwWgXvckHQt8ukbQ+8oZWC02w/r78V3RaqByUp+KAGY/W2CCt1uAGCV6UC8tT8UzqH81dWjACEUx
+	Vh7ucsHeUx0dR5CUcO4jbDh/DT7cUk8LH7oNommHQHnwAvSF4f9tIMAUARe37qExo7guj+qq5j8xO
+	RnzNqsYZ/7gBv8F45Ol9ee3CN3ZEHYqXMSKA2bYnOuChZGQaxN1ODJlzpRNv5+LCyJliZ/McfuG1E
+	2j9u40M1Jl5lQK8LPgoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWePG-006bo3-1R;
-	Thu, 17 Aug 2023 14:55:26 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1qWeac-006df1-0A;
+	Thu, 17 Aug 2023 15:07:10 +0000
+Received: from mail-db8eur05on2060b.outbound.protection.outlook.com ([2a01:111:f400:7e1a::60b] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWePC-006bl5-31
+	id 1qWeaZ-006deG-06
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Aug 2023 14:55:25 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2b9d07a8d84so124554851fa.3
-        for <linux-phy@lists.infradead.org>; Thu, 17 Aug 2023 07:55:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692284119; x=1692888919;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=2vhTfY3zK1nVXfsOliBavlrx/Dt9Fzo1Rikffhx9+p0=;
-        b=AmgUV4Z9qwiBpLYMHbQtoMUbk/VRKBrLCzBeqsCTpNFaOySDPctPDbEipM+jBzXuOE
-         wYEU2rO2sFW70QtO3OlrnVBYykgFq8/U5BA8qDqFo90BbJYQKiNkscfT+B52DipPvBAU
-         14EtUEtbUUPnJeDSuUwEqfM/ygpU93BifgFtUNEHm4FsZeJpGLoyZsjT6m+I88u71EtW
-         DtRbP5punFYmSqy1dhwseQOmHoY1c2U8LeDkiQXghbsUSQs+kxytQd6M7Ua1nd5xEDPt
-         PM48x4525S1MqeIKgq7Go/Mow0v7ptZRRXlWhN3t6uSFD0tuY+JFc/T5gLhbfCGtghb9
-         ITcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692284119; x=1692888919;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=2vhTfY3zK1nVXfsOliBavlrx/Dt9Fzo1Rikffhx9+p0=;
-        b=ZDF/oMjSB+0vNXfvVh5KAFTQeJ/LMoqKLetReu1eRd+tu9l5Olg8LBWOX5bWtKeTkp
-         FrMK02if8vfxQh3ESdt102X2x0b9mK+whnVpXZ6mReL11OLMFrQynONiZGokWe7eTv3M
-         9qLGbJ0C1lv+XAYjtmpObk1Aeht40N4qrswqsn1Y6s3jEgcBUqSL3fxqcBTJTXvw3KdF
-         QeCdjGp9aLg4sFep42OWLKBiv5Xkp+3sc78+ktBkfOaoGZ4XLABLxKu3LtbH0AtJ7sOJ
-         /UI8rpYbc9IADAlOkSn/e7GukhsaBUk3R2XXtOtRKADgFhpPOuhRjKtBeosKOeKcchyn
-         Z2kA==
-X-Gm-Message-State: AOJu0YyvkMVwE8a7Zo2prW5+C1I/Ak0+94oyj+ncoeFbp1TAO4gPMavZ
-	0TfKk8PgZE/ilRxQivUqFvuXig==
-X-Google-Smtp-Source: AGHT+IHkRzzSXWRQP0qaL0WJk3ZsyEZedw9qJr5xyOynBevDyNI6fYm9ZYWFW789J3N+rmZtzKahyw==
-X-Received: by 2002:a2e:7c0f:0:b0:2b6:fa71:5bae with SMTP id x15-20020a2e7c0f000000b002b6fa715baemr4485793ljc.12.1692284118896;
-        Thu, 17 Aug 2023 07:55:18 -0700 (PDT)
-Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id z13-20020a2e350d000000b002b9e5fe86dasm4082728ljz.81.2023.08.17.07.55.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Aug 2023 07:55:18 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: David Airlie <airlied@gmail.com>,
-	Daniel Vetter <daniel@ffwll.ch>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Thu, 17 Aug 2023 15:07:09 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HzWzzSONZL0MaEmSDIH5Cl8aEbgwsx6rqRugM1v2e9heSsxpTAusfK5U6OM1khYMH1eDjOFDpuzYdk0ZcpbDEmkl3WE3ryu27c8xadh4wY+zAXoTJQaEmhHo3xfT+wdpz8kNIBWm/wqfgjupWxw8L8uLsFpMp/06x5htZKOmwSD3Jr9Yzsaxuouy0z4V4tVHJvVUgaybgeCE+lYOVpCckKzNb9ebtnr5Y9VLw5acgqs+GVgnRX1U8+MiPstUJyUUTh2jLrPWZnDSKf4MKsZBGTA5h/vaV4LHdtYQKJvIX5X13DKY0mJMMY62wvvLuaCdpy+v5XGTYeVzG7Ib+e4JZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UeRasjUOC0jOPhEMv1SmtPUBGl2kUlI2lAccRTDXIeA=;
+ b=bUIyxwPEDtY48ljX0SMUn6Q4efEtkFzmWjo7eVMwqEGs9+c5RjxQyAvKNOABqQr0yLCBf0pRR9gHTl9vhkXfpysBxcBGCmjJlzRJdZPCr67aOM/ZxJstZM955LEthJXfQZWRt31MkUhcrWd2gTI302ziktCQ6zcc9LkDoGSgzo48Edo4bHnUdOsNJeU2CBZ148WpYzI6XK+UyYBGG4pqIMyRGkISuVYTt8cK2v044MwyFt41Xny8zV5TA8k5p3hWSr/K2Law9gn4WpY1yTSlBY1flNvkFd7FihAENm6e0F9hC4zuN5dUbmwZSclUfeQMwyZEdHC5/DMg4/sjl0V7Vw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UeRasjUOC0jOPhEMv1SmtPUBGl2kUlI2lAccRTDXIeA=;
+ b=WR5iFc2Vj5ihO98/WwV1OBZPGI/qwp8/q6K8fFws+0r/MTDiUfnVl0VF476Z5Wyjd0zOkrCeW1IZI795R4ZjALmPQdvnPC5YYQJxiKK2ZK5LuEKRWqizumDqMboHN2Kn1iQ9VA25RVhA+vrFaSou8MMx09j9VE1lkLZg4Gb029o=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
+ by PAXPR04MB9469.eurprd04.prod.outlook.com (2603:10a6:102:2b4::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6678.29; Thu, 17 Aug
+ 2023 15:06:56 +0000
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6678.031; Thu, 17 Aug 2023
+ 15:06:56 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: netdev@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Camelia Groza <camelia.groza@nxp.com>,
+	Li Yang <leoyang.li@nxp.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: dri-devel@lists.freedesktop.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	freedreno@lists.freedesktop.org
-Subject: [PATCH v4 1/3] drm/bridge: add transparent bridge helper
-Date: Thu, 17 Aug 2023 17:55:14 +0300
-Message-Id: <20230817145516.5924-2-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230817145516.5924-1-dmitry.baryshkov@linaro.org>
-References: <20230817145516.5924-1-dmitry.baryshkov@linaro.org>
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: [RFC PATCH net-next 0/8] Add C72/C73 copper backplane support for LX2160
+Date: Thu, 17 Aug 2023 18:06:36 +0300
+Message-Id: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AM0PR02CA0137.eurprd02.prod.outlook.com
+ (2603:10a6:20b:28c::34) To AM0PR04MB6452.eurprd04.prod.outlook.com
+ (2603:10a6:208:16d::21)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAXPR04MB9469:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9970c896-5126-4c63-5af8-08db9f3398c6
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: V/1k1geKfKuKUS00F8nloABf/BEp9CLrwUZ2rU2CqAxTb1rUSgvuxLiaZMU75fDzd9d9E5F91RNR2x8LJ+3TkR0DWSjCC1zDvh7Nk2R6lG4debNNkEMSozQmDEqp2SUtOOsaLScpxUgC6+hZ3KhO6gtSwLDt79HPfoH34Q+FhfbGtBxFxnv60EoUsXN/gm4Yj5yRtZRLCrlMonXUitkGp+WhFAHuG+Z9dE0QPpLGnRcLBN2pExx8dhDm8HTMftC5kxTAuUDd5N8TR5pXK75e0R4KhviTMYmlV9xnBQ6TXRXg2xp92vUPvrq8kpVWS992ABtArXyiVGajmazylI9+67Df0TYi/ZuG2m+JH0eJRQGRTDpAoqIAT+8BQCEhMwJBbENqngMRfN9Fha4catA2CgBFiwtXMP8EQZytHTcg1N5PhdkhWMzer0+HLXIyT5TD0MVqPxloKezUdIpoQG9zZlBBTWRkYneSuJa5Znl5I+K5Y/89bhC8Yiyu8HMVoStYOVxaPCtdxwiipkB+TtLBEau/qxt3qxQFq10kYxe0ypPM2G95+pEmaKRLLW805x+2DgymD17wVthJxZPAU3qXhbF+3H5cjCjw3WANZOkwFKE=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(2906002)(83380400001)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(966005)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6BgxYsmOykrLJ/jOdpQvIKawyvS8o9NpSysBcOMrLYfxc0bVnnnHHrh7/jOJ?=
+ =?us-ascii?Q?FhPdUp3wuoMBcBz5bOqHeChGceDuGpioPm7OTf9d2hRNbVetsn9mka5WNaEK?=
+ =?us-ascii?Q?zhgLyZixlc9KqIaHEzrh6kGBVn39gua/fWc7R1sm+px+pRY8hoK48GUb0FS4?=
+ =?us-ascii?Q?ye5ns37NQXpwg9OQFJsuIJc+Y696cBZKdOkwE4zg91qI5kpotHyk6eCkSbma?=
+ =?us-ascii?Q?qTlTvXN5zygT8j1HDO8zhkrKElo5DT4LC6HAbbo3Xkzqkeew+BzV0CZGo83V?=
+ =?us-ascii?Q?5LRdV6NybhN+YcD4K2IYH5EmjONGKt7bkMsu3ymioArGeTkDyW4Eu00blbbb?=
+ =?us-ascii?Q?SXKAwxMW5/oT3EROIUwPL1ijjT5As3+vr3OMneJ4S8ALC3IMyd0QXoXJiGz+?=
+ =?us-ascii?Q?v+h+7wi7uhg73+WMa6F5SczHdOACD+FxGZuMbb+HeaURbyQlgBXQHp78Bqv/?=
+ =?us-ascii?Q?CVl0plXSJRHfAlIU3ZjT3wVD9GfNIHVF+5w6tRI1ldMO2zPwW7TYXE6HTbtG?=
+ =?us-ascii?Q?tSMwWATOmd6oyaojG56QiR6eeP0H/n677ktEir0ZPDbWn+7WOhy6QS2gcwbT?=
+ =?us-ascii?Q?b53OzDL95V7WfFOclgAb3sfu+MSAFuBQAH9UhEDkWqC6LE1ZhrkdqMvMKqGr?=
+ =?us-ascii?Q?m7A8VsNMmdHSEMui/PJZ2o5Ua5j+O2vGXJdroA6khr4+n5eymGgRbx1N979w?=
+ =?us-ascii?Q?TeZr8POBe6x2A5FGI4N2YmHCOApoSMa3mDl1Wn2YdmXNrXjBT9/QKgf1ZPLm?=
+ =?us-ascii?Q?/+5J2ykbTvzXY+0bkF191OzS9EFa19fMsZPPERo262zH9RdaUPmcvwIP/pxJ?=
+ =?us-ascii?Q?ejVlbtobaQuYMKylqxNIYgrPf0nvEquqR46efBW9m7JCg5//FOEEzT52m/4T?=
+ =?us-ascii?Q?KpiFSY1B/U0nflnGCkLOTjvAlNsmnb6ArWpcbnkduV6rBi7wjBY3jOluA3Wa?=
+ =?us-ascii?Q?JFmqM7wszWN891WNjLMrf9XnSexZvIDV0BRW09B5gfKXbYk6CxVFSWlZZpJI?=
+ =?us-ascii?Q?vRrySdSuTwJ/NbD5ugF/kkPULaRDX6Vq9AEd2s9Jy6J7oW2nA8nQzD53adCv?=
+ =?us-ascii?Q?v6jKU1pQ6L0B3Z0O6p6M6W3jYv4NGFBtkE7mnsZYVAjyeABk6SgVVdCWqr//?=
+ =?us-ascii?Q?WS7+XmZ8+ne5duCmVkMyl3TNNl2V4VhtxXcAdckSZlvaVzaENPtdh7ZSarLp?=
+ =?us-ascii?Q?ztglzPj7A14t0Xz2kfuYdNRWhkHs7xAQW0hyzuBzIbg/MM3Ru9d28bJMaf9o?=
+ =?us-ascii?Q?p3PdGcAWg2ve5EP6vXRH9k8lZV5wxGz0OI//ezY3a1FIk2DPRLpQqz3/1EEn?=
+ =?us-ascii?Q?5beWl95j/Z+rAY7Xoxd2juca5rNyE1C0gC4QzDILxZq0H9Z2QstVfVmEx98B?=
+ =?us-ascii?Q?HtKzsjb0YsMRXbXeclMfjPMtFG7LJ8jpHEnfJDygx7T8WfahJBI1SKF+SYZy?=
+ =?us-ascii?Q?o5T6B6R/xZ/pJJGG58vBb0Uxqc85BZfVljRBlonKbgZQrvBYCa8AAnRS40Z+?=
+ =?us-ascii?Q?VuXIsS1nz4OWaXmEVf/RLmwNoPeFKBQgcjxKWT3IeJ7XDeeB2CrTNyWZYL6f?=
+ =?us-ascii?Q?A9d4kuHPbJ0DrOTaaHVVN/34JA7xYSKLhxT8DgAheQV+RQqJ5Wcy5kJfOti8?=
+ =?us-ascii?Q?rA=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9970c896-5126-4c63-5af8-08db9f3398c6
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:06:56.1657
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: rPf6NDESaYFfh8An2Q3L8hfyOlcgwvRE/SrEZimDKukp6mH7Hfgdt+Ove4YpH+SU0lDSoOg3dMNX3s3vRVZHiA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9469
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_075522_975522_A4C0523D 
-X-CRM114-Status: GOOD (  19.14  )
+X-CRM114-CacheID: sfid-20230817_080707_274988_8A3D7106 
+X-CRM114-Status: GOOD (  31.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,217 +148,162 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Define a helper for creating simple transparent bridges which serve the
-only purpose of linking devices into the bridge chain up to the last
-bridge representing the connector. This is especially useful for
-DP/USB-C bridge chains, which can span across several devices, but do
-not require any additional functionality from the intermediate bridges.
+THIS PATCH SET DOES NOT WORK, AND IT ISN'T INTENDED TO WORK.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/gpu/drm/bridge/Kconfig      |   9 ++
- drivers/gpu/drm/bridge/Makefile     |   1 +
- drivers/gpu/drm/bridge/aux-bridge.c | 132 ++++++++++++++++++++++++++++
- include/drm/bridge/aux-bridge.h     |  19 ++++
- 4 files changed, 161 insertions(+)
- create mode 100644 drivers/gpu/drm/bridge/aux-bridge.c
- create mode 100644 include/drm/bridge/aux-bridge.h
+I've been tasked with maintaining the copper backplane support on
+Layerscape SoCs. There was a previous attempt to upstream that, which is
+located here:
+https://lore.kernel.org/lkml/1587732391-3374-1-git-send-email-florinel.iordache@nxp.com/
 
-diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-index 44a660a4bdbf..80e5d9f722e4 100644
---- a/drivers/gpu/drm/bridge/Kconfig
-+++ b/drivers/gpu/drm/bridge/Kconfig
-@@ -12,6 +12,15 @@ config DRM_PANEL_BRIDGE
- 	help
- 	  DRM bridge wrapper of DRM panels
- 
-+config DRM_AUX_BRIDGE
-+	tristate
-+	depends on DRM_BRIDGE && OF
-+	select AUXILIARY_BUS
-+	select DRM_PANEL_BRIDGE
-+	help
-+	  Simple transparent bridge that is used by several non-DRM drivers to
-+	  build bridges chain.
-+
- menu "Display Interface Bridges"
- 	depends on DRM && DRM_BRIDGE
- 
-diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
-index 2b892b7ed59e..918e3bfff079 100644
---- a/drivers/gpu/drm/bridge/Makefile
-+++ b/drivers/gpu/drm/bridge/Makefile
-@@ -1,4 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
- obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
- obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
- obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
-diff --git a/drivers/gpu/drm/bridge/aux-bridge.c b/drivers/gpu/drm/bridge/aux-bridge.c
-new file mode 100644
-index 000000000000..13fe794592f2
---- /dev/null
-+++ b/drivers/gpu/drm/bridge/aux-bridge.c
-@@ -0,0 +1,132 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2023 Linaro Ltd.
-+ *
-+ * Author: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-+ */
-+#include <linux/auxiliary_bus.h>
-+#include <linux/module.h>
-+
-+#include <drm/drm_bridge.h>
-+#include <drm/bridge/aux-bridge.h>
-+
-+static DEFINE_IDA(aux_bridge_ida);
-+
-+static void drm_aux_bridge_release(struct device *dev)
-+{
-+	struct auxiliary_device *adev = to_auxiliary_dev(dev);
-+
-+	ida_free(&aux_bridge_ida, adev->id);
-+
-+	kfree(adev);
-+}
-+
-+static void drm_aux_bridge_unregister_adev(void *_adev)
-+{
-+	struct auxiliary_device *adev = _adev;
-+
-+	auxiliary_device_delete(adev);
-+	auxiliary_device_uninit(adev);
-+}
-+
-+int drm_aux_bridge_register(struct device *parent)
-+{
-+	struct auxiliary_device *adev;
-+	int ret;
-+
-+	adev = kzalloc(sizeof(*adev), GFP_KERNEL);
-+	if (!adev)
-+		return -ENOMEM;
-+
-+	ret = ida_alloc(&aux_bridge_ida, GFP_KERNEL);
-+	if (ret < 0) {
-+		kfree(adev);
-+		return ret;
-+	}
-+
-+	adev->id = ret;
-+	adev->name = "aux_bridge";
-+	adev->dev.parent = parent;
-+#ifdef CONFIG_OF
-+	adev->dev.of_node = parent->of_node;
-+#endif
-+	adev->dev.release = drm_aux_bridge_release;
-+
-+	ret = auxiliary_device_init(adev);
-+	if (ret) {
-+		ida_free(&aux_bridge_ida, adev->id);
-+		kfree(adev);
-+		return ret;
-+	}
-+
-+	ret = auxiliary_device_add(adev);
-+	if (ret) {
-+		auxiliary_device_uninit(adev);
-+		return ret;
-+	}
-+
-+	return devm_add_action_or_reset(parent, drm_aux_bridge_unregister_adev, adev);
-+}
-+EXPORT_SYMBOL_GPL(drm_aux_bridge_register);
-+
-+struct drm_aux_bridge_data {
-+	struct drm_bridge bridge;
-+	struct drm_bridge *next_bridge;
-+	struct device *dev;
-+};
-+
-+static int drm_aux_bridge_attach(struct drm_bridge *bridge,
-+				    enum drm_bridge_attach_flags flags)
-+{
-+	struct drm_aux_bridge_data *data;
-+
-+	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR))
-+		return -EINVAL;
-+
-+	data = container_of(bridge, struct drm_aux_bridge_data, bridge);
-+
-+	return drm_bridge_attach(bridge->encoder, data->next_bridge, bridge,
-+				 DRM_BRIDGE_ATTACH_NO_CONNECTOR);
-+}
-+
-+static const struct drm_bridge_funcs drm_aux_bridge_funcs = {
-+	.attach	= drm_aux_bridge_attach,
-+};
-+
-+static int drm_aux_bridge_probe(struct auxiliary_device *auxdev,
-+				   const struct auxiliary_device_id *id)
-+{
-+	struct drm_aux_bridge_data *data;
-+
-+	data = devm_kzalloc(&auxdev->dev, sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->dev = &auxdev->dev;
-+	data->next_bridge = devm_drm_of_get_bridge(&auxdev->dev, auxdev->dev.of_node, 0, 0);
-+	if (IS_ERR(data->next_bridge))
-+		return dev_err_probe(&auxdev->dev, PTR_ERR(data->next_bridge),
-+				     "failed to acquire drm_bridge\n");
-+
-+	data->bridge.funcs = &drm_aux_bridge_funcs;
-+	data->bridge.of_node = data->dev->of_node;
-+
-+	return devm_drm_bridge_add(data->dev, &data->bridge);
-+}
-+
-+static const struct auxiliary_device_id drm_aux_bridge_table[] = {
-+	{ .name = KBUILD_MODNAME ".aux_bridge" },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(auxiliary, drm_aux_bridge_table);
-+
-+static struct auxiliary_driver drm_aux_bridge_drv = {
-+	.name = "aux_bridge",
-+	.id_table = drm_aux_bridge_table,
-+	.probe = drm_aux_bridge_probe,
-+};
-+module_auxiliary_driver(drm_aux_bridge_drv);
-+
-+MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
-+MODULE_DESCRIPTION("DRM transparent bridge");
-+MODULE_LICENSE("GPL");
-diff --git a/include/drm/bridge/aux-bridge.h b/include/drm/bridge/aux-bridge.h
-new file mode 100644
-index 000000000000..441ab3f0e920
---- /dev/null
-+++ b/include/drm/bridge/aux-bridge.h
-@@ -0,0 +1,19 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2023 Linaro Ltd.
-+ *
-+ * Author: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-+ */
-+#ifndef DRM_AUX_BRIDGE_H
-+#define DRM_AUX_BRIDGE_H
-+
-+#if IS_ENABLED(CONFIG_DRM_AUX_BRIDGE)
-+int drm_aux_bridge_register(struct device *parent);
-+#else
-+static inline int drm_aux_bridge_register(struct device *parent)
-+{
-+	return 0;
-+}
-+#endif
-+
-+#endif
+Nonetheless, I am presenting here a complete rewrite based on my
+understanding. The quality of implementation is not great, and there are
+probably bugs which I've yet to identify. The reason for this RFC is to
+collect feedback for the overall design from networking PHY and generic
+PHY maintainers.
+
+The newly proposed generic PHY API has the mtip_backplane.c driver as a
+user (a consumer), but its actual hardware implementation (which should
+go in drivers/phy/freescale/phy-fsl-lynx-28g.c), is not included in this
+patch set. That would just have just uselessly distracted the reviewers'
+attention. This is why the patch set, as posted, does not work.
+
+I recommend reviewing from the bottom up - dt-bindings first, those give
+an overall picture of the AN/LT block and its integration in the SoC.
+
+Future work consists of:
+
+- supporting multi-lane link modes
+
+- advertising more than a single link mode, and performing dynamic
+  SerDes protocol switching towards that link mode. Strictly speaking,
+  the hardware was intended to be used with a single link mode advertised
+  over C73 (the link mode pre-configured through the RCW - Reset
+  Configuration Word), and that is quite apparent in its design. With
+  some inventive workarounds which I've yet to try out, it might be
+  possible to circumvent the design limitations and advertise any link
+  mode that the SerDes PLLs can sustain. This is in an exploratory stage
+  and in the end it might not come to fruition, but I've identified some
+  aspects which require forethought in the driver's design.
+
+Both these features hit a wall given the current driver design, which is
+"how do we access the AN/LT block's registers?".
+
+The hardware designers were inconsistent in the way that they've
+integrated this AN/LT blocks for 1G/10G ports, vs how they did it for
+25G/40G/50G/100G ports. There is always one single AN/LT block per
+SerDes lane, but for 1G/10G modes, hardware design wanted to make it
+appear as if the AN/LT is part of the PCS. So it inherently responds to
+the same MDIO address as the PCS. Whereas in the >25G modes, it responds
+to an MDIO address defined by a different control register, and that
+address is also different from the PCS' MDIO address.
+
+In the current dt-bindings, I am requesting DT writers to put a
+phy-handle towards the MDIO address of the AN/LT block (which depends on
+a lot of things, see the dt-bindings document for details).
+
+As opposed to regular ports where the PCS and SerDes PHY are controlled
+by the MAC driver (drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c),
+with backplane, those same components are controlled by the
+mtip_backplane.c driver. The backplane AN/LT driver has a pcs-handle
+towards the PCS, and it treats it as a raw MDIO device when polling for
+link status.
+
+This gets obviously problematic when switching SerDes protocols, because
+the location of the backplane AN/LT block changes on the MDIO bus with
+the new SerDes protocol, and what's in the device tree becomes invalid
+(the phydev->mdio.addr would need to be updated). It's the same AN/LT
+block, and after a SerDes protocol change it has been reset, but it moved.
+
+The SerDes control registers for the MDIO addresses of the PCS and AN/LT blocks:
+- SGMIInCR1[MDEV_PORT]
+- SXGMIInCR1[MDEV_PORT]
+- ANLTnCR1[MDEV_PORT]
+- E25GnCR1[MDEV_PORT]
+- E40GnCR1[MDEV_PORT]
+- E50GnCR1[MDEV_PORT]
+- E100GnCR1[MDEV_PORT]
+
+are in premise all configurable, but it's an open question to me as to
+how Linux should configure them. Currently, we treat all those addresses
+as read-only and populate the device trees based on their default values.
+
+There's an additional (related) problem for 1000base-KX. The lane starts
+up at power-on reset in 1000base-X mode (non-backplane) and this means
+that the PCS which responds to MDIO commands is the one used for
+SGMII/1000Base-X by drivers/net/pcs/pcs-lynx.c. That responds to C22
+MDIO commands. The PCS for 1000Base-KX is different, and it responds to
+C45 MDIO commands. It also incorporates the AN/LT block at this C45 MDIO
+address. In the current mtip_backplane.c driver design, the lane switches
+to backplane mode (thus enabling the respective PCS) once the link mode
+was resolved to 1000base-KX through C73 autoneg, using phy_set_mode_ext().
+But that is too late with 1000base-KX, since the AN/LT block won't
+respond to C45 transactions either, if the port isn't pre-configured for
+1000base-KX. So C73 autoneg won't work to begin with... Somebody needs
+to pre-configure the SerDes lane for backplane mode, so that the
+mtip_backplane.c driver can probe, but it's not clear who and based on
+what.
+
+Finally, I reckon that in the end, the PCS should be driven using a
+struct phylink_pcs, by the lynx_pcs driver, and not as an mdio_device
+using raw accesses by the mtip_backplane.c. In premise, this AN/LT IP
+core can be integrated, to my knowledge, with any PCS and any SerDes,
+so that should be also possible in the driver design. Yet, there's a
+problem: in the 1G/10G modes, there would be 2 drivers for the same
+mdio_device: one for the PCS and the other for the AN/LT block (PHY).
+True, they are at different MMDs, but bindings multiple Linux drivers to
+mdio_devices per MMD is not a thing, I guess?
+
+Interrupt support is also missing, and that's very far away on my TODO
+list. AFAIU, PCS/ANLT interrupts are routed by the SoC to the attached
+MAC's IEVENT register, which isn't enabled as an interrupt source on any
+Layerscape platform yet. I've structured the code using an irqpoll
+thread for now, so it is more-or-less just as event-driven as an IRQ
+based driver would be.
+
+As a side note, I have analyzed the feedback previously given to Florinel,
+especially the one from Russell:
+https://lore.kernel.org/lkml/20200425105210.GZ25745@shell.armlinux.org.uk/
+
+"This uses phylib, which is a problem ..."
+
+and I still haven't changed that here. Without going into a wall of text
+explanation, I'm not fully convinced that phylib isn't, in fact, the
+best place for a backplane AN/LT driver to live. At least in the initial
+implementation shown here, I'm not sure that going straight for a
+phylink implementation of the AN/LT block would have solved any of the
+problems that I described above.
+
+Vladimir Oltean (8):
+  phy: introduce the phy_check_cdr_lock() function
+  phy: introduce the PHY_MODE_ETHERNET_PHY mode for phy_set_mode_ext()
+  phy: xgkr: add configuration interface for copper backplane Ethernet
+    PHYs
+  net: phy: add C73 base page helpers
+  net: phy: balance calls to ->suspend() and ->resume()
+  net: phy: initialize phydev->master_slave_set to
+    MASTER_SLAVE_CFG_UNKNOWN
+  net: phy: mtip_backplane: add driver for MoreThanIP backplane AN/LT
+    core
+  dt-bindings: net: fsl,backplane-anlt: new binding document
+
+ .../devicetree/bindings/net/ethernet-phy.yaml |    8 +
+ .../bindings/net/fsl,backplane-anlt.yaml      |  238 +++
+ drivers/net/mii.c                             |   34 +-
+ drivers/net/phy/Kconfig                       |    7 +
+ drivers/net/phy/Makefile                      |    1 +
+ drivers/net/phy/mtip_backplane.c              | 1735 +++++++++++++++++
+ drivers/net/phy/phy_device.c                  |    5 +-
+ drivers/phy/phy-core.c                        |   18 +
+ include/linux/mii.h                           |  105 +
+ include/linux/phy/phy-xgkr.h                  |  165 ++
+ include/linux/phy/phy.h                       |   27 +
+ 11 files changed, 2341 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/fsl,backplane-anlt.yaml
+ create mode 100644 drivers/net/phy/mtip_backplane.c
+ create mode 100644 include/linux/phy/phy-xgkr.h
+
 -- 
-2.39.2
+2.34.1
 
 
 -- 
