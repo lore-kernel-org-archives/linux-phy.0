@@ -4,136 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EFFCC3064E
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:22:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39D33C64E78
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 20:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dj92HuGC3qIOJ+kSFElgR2BDdCGFjvYys+d+qJgtQ4c=; b=vOBiHH66QrWZNk
-	FP6hMLTdecH+VN8JtgSaJBCL2x07Tvuw2TmelRHElGejLSVdLRX3Qq3rPmHg+YeZ34MOZ1jl7aqab
-	2wENE5+1PZD0qjFnbDuhthQec2/wj0Jj1XDbpWaWnTZa/bX6JMNqgiLgdVLlWix4m4Sxl5ii38KWb
-	XFLqX85JLdW2974GFwQHEOgsphhTuKTmrLr6C0EqK7CtWk+8nmm+DlHiK9Sfs8XDnIN7K/CVaGokM
-	oFqfW37FXg6sF1oSq5t4+K7NgTraxeVK6mPvOSIJ+LXWzvAFGB+X9XyfJL0ZQV642LkY4RunYQbys
-	snjryreSIDdlFi7dBioQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z4I5Mat0HW7fGNjRUzLII7fEo70hKWIj1YptUjrXbkQ=; b=qzELs1jz99uztt
+	FbMKwjGsuQTuDFMIiTwvQnwrkWGGOE0uOyVUsigBT6ZvOd9l1WrVZUnZTP0DMqGrKYkgfSErdmQPH
+	fvJMEeA5Lym4P5VUGcDHezklwMwrt3TsJQI24vK1z2wny+8UXkwEMGDYnzSPFJXP6/mT9kPtpuTyi
+	0WGP+bdKCgE73ZRGWqZhYcIDI5y8KxJsrlGsRUkPhxB+v3fgsO+iOBdESA1FERXMbqZ0u5aFDCy7i
+	q5Z3vD5I4aOXZQpeIBFCLLGZF1z3TYCvLFhifCtP6yvASe8bkpUzcO5yQK4IjIWlH8OmNGWNAT+/v
+	SvnU6SCAIOROmpcHJ6lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWepS-006fvy-0y;
-	Thu, 17 Aug 2023 15:22:30 +0000
-Received: from mail-vi1eur02on20608.outbound.protection.outlook.com ([2a01:111:f400:fe16::608] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
+	id 1qWjdh-0076m0-34;
+	Thu, 17 Aug 2023 20:30:41 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWepO-006fuq-36
+	id 1qWjde-0076hw-1J
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Aug 2023 15:22:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OGlzW37DRm1mk31Y6u73RcN8kWtktpOwZtQV3zuog93/vNUbolrmagqTtWhYwkcnFlDpxFC5mLf0ODq3DQg10hLtz6L/mT4njAT5O7g2oeksq2MuwXFMoXHybacFld+I9okL67rE64VCpdEdc7eEWD1+oPZfvLiRGQg5XKMGNNIAjKLrfJT1oGmQaN3/PqaQmUYuaEaEJ/+/+vu3stfiNB6H9CmMDfr7QcRNGQTjnB/4D7b1dopJzoO4BVoJH/RKtXASYqfFQYlzZlqeYcfRm9srzgSWKspjvZSbHDMjZy4buWtMNjKt5iSU965SCk0XR+iQKgTkx2sOQcajIHjndg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EtMXMXTrvmhJf6JiAf6KWMq0iskweAUwgb17gMNT1Wo=;
- b=VdEQsVaneZPQ4Me3oZhMcj3vr8hZK90Aol+PwMXAoOk09IEk6R66hZRN6O/2uTJieGxIUhf1ByDZ8ShQnuoZoXtitj6kVKQGlLzglRWCE88EVrcNdVnZ+BUITAxDWqppEKCUaIpXXSjHpCLRqz7Yfi2Ys2vqun11tVakQKnlJeRmhPTZiGXXEt4sQVydOdP6s6K4SEpPc4PnLn1NItEoeg8Atbr5WM5COQpmJe/hOHCLKuc6I3QgTUWSGeE0GIeEvr+GTMErQG1TEQgj8DIiL0r1xLAvqpOUxwrPdQU3gdBlLDrmhPiSiHcBy2uTVwPpPTtxWXpXFywZz1WcYdHekA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EtMXMXTrvmhJf6JiAf6KWMq0iskweAUwgb17gMNT1Wo=;
- b=AwL6HdCZyPoFOkfDWrDNbQK5USynBY+/jQPx1jIcXiyH8omeyfDAEAE+ARNA5M0oaXTpEIKONwML8NPyefcROhMkPcnrAGy1C24dlzOpEDGpykF1ylK4F1rI2lZR0uXqZG3lQs/xctcjGDLGbCqIROp5G+57nSJfnOiWCXgxdjg=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by PAXPR04MB9469.eurprd04.prod.outlook.com (2603:10a6:102:2b4::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6678.29; Thu, 17 Aug
- 2023 15:07:01 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6678.031; Thu, 17 Aug 2023
- 15:07:01 +0000
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: netdev@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
+	Thu, 17 Aug 2023 20:30:40 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-1bdc243d62bso1702805ad.3
+        for <linux-phy@lists.infradead.org>; Thu, 17 Aug 2023 13:30:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google; t=1692304224; x=1692909024;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=ePLHPBs2lEPLiyOyP2Z9O6mDkyFMIeuRe9yuhA2Bzms=;
+        b=WiakFm7lv/iBJ0k2jjoGfNVzfEcmVwelvqtpsJmVNOOwUPj6YvJxJyatustjy8W1W4
+         nM5X2DEQ/A7UdvLN0DtseUcjeCvy7/W36yL2/9hmC94vn/2gDhYQkc8us3Uq0Ox9s0wa
+         ryUbd7OJJBvNkVKUPjkmhYz4O0WHiGY6G2KSM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692304224; x=1692909024;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ePLHPBs2lEPLiyOyP2Z9O6mDkyFMIeuRe9yuhA2Bzms=;
+        b=MIeTnWbYNIvDWgXkRFcM4662DkblRJBJzq1lcEiN8WCmpLsJJSaV9n1camWMAd1mnV
+         z8b8ymRZ3T+2uYVa8utC18896mn8WnmvClNuK3UnXCl8vyK65XsLwy9YrEK7xzXxTqnT
+         T/JU3PTHjxV4RDCw4VMurqdec1t4lLpK7b6x3I0AhjGUkF1QFFdNdxikRLyErk9MGKzP
+         HTLmG2yGsIT5S0LzWGCHQWsX/mPxdabSlvcS6bm2TN8Dm6QUvQQYuBLHwOm2tBCpmAPh
+         pK+4hm8+r0reNSFg1RWW4eqs+1m6rFp+FSe+9LxgWOKB/Z63U4agiJdZnil0EUtAnGtp
+         PGDQ==
+X-Gm-Message-State: AOJu0Yz0Sh/KkXMpuro+R15/e729ksBV71QmeXEtOPZ2cWwWcACmBpjG
+	qMZVgyLy+0IyFUHHf0pB2SfHDA==
+X-Google-Smtp-Source: AGHT+IG/++lebuPXOTGcWVkGR0Azo7GoArTEfqeEPnjd7zxuUflMdqVFSy0P4ogm05eSsJZ7pUaJ1g==
+X-Received: by 2002:a17:902:f690:b0:1bd:ea88:7b93 with SMTP id l16-20020a170902f69000b001bdea887b93mr494923plg.54.1692304224308;
+        Thu, 17 Aug 2023 13:30:24 -0700 (PDT)
+Received: from www.outflux.net (198-0-35-241-static.hfc.comcastbusiness.net. [198.0.35.241])
+        by smtp.gmail.com with ESMTPSA id a16-20020a170902b59000b001bba3650448sm171152pls.258.2023.08.17.13.30.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 17 Aug 2023 13:30:23 -0700 (PDT)
+From: Kees Cook <keescook@chromium.org>
+To: Michael Turquette <mturquette@baylibre.com>
+Cc: Kees Cook <keescook@chromium.org>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Joel Stanley <joel@jms.id.au>,
+	Andrew Jeffery <andrew@aj.id.au>,
+	Taichi Sugaya <sugaya.taichi@socionext.com>,
+	Takao Orito <orito.takao@socionext.com>,
+	Qin Jian <qinjian@cqplus1.com>,
 	Andrew Lunn <andrew@lunn.ch>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Camelia Groza <camelia.groza@nxp.com>,
-	Li Yang <leoyang.li@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Gregory Clement <gregory.clement@bootlin.com>,
+	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Samuel Holland <samuel@sholland.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH net-next 4/8] net: phy: add C73 base page helpers
-Date: Thu, 17 Aug 2023 18:06:40 +0300
-Message-Id: <20230817150644.3605105-5-vladimir.oltean@nxp.com>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-aspeed@lists.ozlabs.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	dri-devel@lists.freedesktop.org,
+	linux-sunxi@lists.linux.dev,
+	linux-phy@lists.infradead.org,
+	Nathan Chancellor <nathan@kernel.org>,
+	Nick Desaulniers <ndesaulniers@google.com>,
+	Tom Rix <trix@redhat.com>,
+	linux-kernel@vger.kernel.org,
+	llvm@lists.linux.dev,
+	linux-hardening@vger.kernel.org
+Subject: [PATCH] clk: Annotate struct clk_hw_onecell_data with __counted_by
+Date: Thu, 17 Aug 2023 13:30:22 -0700
+Message-Id: <20230817203019.never.795-kees@kernel.org>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
-References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AM0PR02CA0137.eurprd02.prod.outlook.com
- (2603:10a6:20b:28c::34) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAXPR04MB9469:EE_
-X-MS-Office365-Filtering-Correlation-Id: 920dcccf-b08d-452f-d83f-08db9f339c3a
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: SQ9XT3CNbI+1XxVx+E2Iex+ZXv7XoG+8cieweE4WWhYnY+zk5oirLryABVyVgqvhENnU4XL1Zs8FrZuy+dnAVYJKBkDBJES2wWlZlyX4smxI/U2NnTFt+V8YBIS8IPsw0toeykHOZqytx7meVPBqqPCG+o4mHLghR6NWQ8oTxbFfT6Ix6ENsdikSCwCYxM0PXFZbHDivwYdiDjrkgXwkhlSOAt8GrgsAm0fblnBy2B9cRLbsKPljQlAp4DVR922FjxiXmNnO8v3kfj6G08hZWxOSAbvdQyW+KVUZiwjpQXYnS7hgj6WsWjqhoF9M/Ohwp+lqWk5UDSYHGDPdeqwMOOxVNOaKLPt4KQ0oA9/Rb8DQt8X4kITClo0nPKwozDJPwttHMSOcm6+pfAPCtNs036StOGczmpax/Uf/jDmx056gSWTlLop9fF3lIn9RfbI/CeDk0v1cQQ9cX57qs8Xon++1KnC2Qdv5pUQmJ+pqUqLxBMexC3c17zj5zgiGsPLdItWJ8bXHWESj5uUurwrycNHNy6Zdjkr2aiRvPTe+YcnRDp7wEVYSQEDKo0+aSx4nxuZmDNyccgG9LQwM9Z7zU9H7UzR1NbRCjsRYlb6wkTCUQ/Opb1CeVAPD51A9lLxe
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(19627235002)(2906002)(83380400001)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?EZLuUbsvYePfYwXStt+YF2VHNKmaRAaFlNre0kPHn0/V7WlkQKFRlOxidXSV?=
- =?us-ascii?Q?fvCsjK6uPZbZYhlF1GgNsQb3T7vtc37mwRrolSt2mXopN6x8rahSCoGTx+2i?=
- =?us-ascii?Q?GhNhPTLMkGfm0pw2oLb2i77FfgWVAZDPfFeeOKDW5Ot0mLl3UdQqN3+GZaal?=
- =?us-ascii?Q?F7yrRa87CUQoIKHwtBv57z1UzPGdZ5JVvqCFRsmSfdvRx9cSHkJ6HNa2mHhR?=
- =?us-ascii?Q?rqR0nx0UYMOvmUGy+leB3OuhnNJ4on+88tm6BuBcVg+C0mJXk/9+l9ntfUJz?=
- =?us-ascii?Q?7fA1UriVcH47WsJdQlnVPvuBzep0tkaq8VJefP108gC7sAKbGcQvD3ZYauFS?=
- =?us-ascii?Q?xZQCdAmHBVv6Zh5ek/vg79kayxhvKSWixq3A0LdwyIS6LDbXw6QcY/jcSb6z?=
- =?us-ascii?Q?svoM6ofbAA0X1EbyDHbTLgrLLFkB5PMPZCKk07Pq8toTsvL9BjnhjGVAkZjp?=
- =?us-ascii?Q?wN5tt1fzwM4BetfwEr2oOOrTnHPm72R+D5hRMm9+wOW3tKcb1Wt+66JK55qw?=
- =?us-ascii?Q?/Q1Mv/5bgIjNYYl2fNiyCcwVcBatQ6CBqEljHuYRth98oylmhAoVNw1PQJXx?=
- =?us-ascii?Q?NkBt0o8WvtJrCy0SswHtoO/3xCNLOujBep2xfGrDXJC7FHgYBHUryBRflWZT?=
- =?us-ascii?Q?7UxaUOQCaqbQc558UVw2BsrkfH+q2jkGbHqDtFeNLUZOcU2L379OelMIbAEj?=
- =?us-ascii?Q?bqGKmzyxUwyFXJeByHtcJPmO0NCObowEtzcRtdzPyaJeZag221Bj2EBmhoVl?=
- =?us-ascii?Q?yK51n5q1PCn5pTl/tdc4PIx5Y9DpxPV4tFjprrLQA5q88XinciTbR/Tg5esA?=
- =?us-ascii?Q?r2Qj0qz9RXwzXZRbAHg1D9BwD9XNYpBmoT0jFK/0AxBUOdRUEkANKHNF4zFN?=
- =?us-ascii?Q?eM1sOG2QgzF6sBILHulTjXEMekB+7Pu8gKQTpzihzQ5UolBIHiDkxzmuRwL4?=
- =?us-ascii?Q?N6SY6FlF0ViodmlHJCBWxP88XPXx+1hS6kfIO0gzMwU/0M3PlCsCCu+857Nf?=
- =?us-ascii?Q?GQrBdxRNSTvZYDwTgbZXovelTs38qNTAVIe4Oj7UtWY9xd3KyjyykV3vGkyM?=
- =?us-ascii?Q?2oOcqdEZ1ck1Ql6hmS3i4eZCXljHR7oApWYcQT5o0WSqJTZqQNuABNqKDbbI?=
- =?us-ascii?Q?vdUTFmDgaPjUYNM5P+M8dbJXNCBcxeIufrsCBJ8ODg0r7Fkj2mRv/YlXHQ8l?=
- =?us-ascii?Q?k9YzDrD3SwwFJFxEvFtxg1GH8NswiwufhhkH7D5YvM6DkV5PFY82KxdY2/ap?=
- =?us-ascii?Q?URZ93SaFcotc2ZyJ3D9lAXW/w/7nSE95KspTE1lrxLRA96oi29A/Ka+UoWRY?=
- =?us-ascii?Q?HJYgEZn/h2WrMNKsBAiycCuP0K0NM95qyU0AkxtLYy3ciu7ZfRR1rOnYfnUM?=
- =?us-ascii?Q?dx/RWDl6TNWhuDp716Jgo0Q375eq6/zmU75uC7+vWH/zWpH3QB+eAQPYif4d?=
- =?us-ascii?Q?KDLg2r6SVnt87cECFyFz6ZV0bYOjciF/ebt0N6ywtavEhnxJtFxeVv/DgjaY?=
- =?us-ascii?Q?s9zySjfWAsp9cO8FrDK1RUDkeYa6uRCe8pKSIrS1IqDPpzA0FOktcJlqECr1?=
- =?us-ascii?Q?2NfjubIi8FKJ9PzYoIpP+8Ht2dsUVGriyn+7RVlJHq4HqxpA26v7kfOB9DMm?=
- =?us-ascii?Q?UA=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 920dcccf-b08d-452f-d83f-08db9f339c3a
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:07:01.7853
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kwzkWoFgNnAB1TFSlIsGI8O8E+tsqnObNNYvMTL9AMYwU0JAdlgrv+cdnzU2e9oWdRSuxMEspkRSZX/khPAMdQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9469
+X-Developer-Signature: v=1; a=openpgp-sha256; l=10606; i=keescook@chromium.org;
+ h=from:subject:message-id; bh=XUDNIGZF7Cd68CTXufwLImFXIviJ7LfwFBJnpkVIkok=;
+ b=owEBbQKS/ZANAwAKAYly9N/cbcAmAcsmYgBk3oNejG7VEW35Oqe+PrP8iCTNz+BEJ+r64JJBG
+ RsN4/THccSJAjMEAAEKAB0WIQSlw/aPIp3WD3I+bhOJcvTf3G3AJgUCZN6DXgAKCRCJcvTf3G3A
+ JrEMD/wPRcgmMjNftw5pFqX1WtITK2MAuEViYU/iF0Fz0vJi3Z80H2azQxbicH8pYfj0Qv7KuNn
+ rRz4ulbGlAtkKsQjYNKOWUMJyOPZmnyH8Q+8xsNfW7q/MtnrXk9MQMnE+VCJL91OqH8Ghg3zXqw
+ 2w+SotPIguqWZmywVOxJ+rz/8eBf012S2qRY7LxKxw5y43BXAdVRceODtMkDqAIqB/ntxxO50vi
+ PcQnm5RbALCVpuzwECUu7SRdZkBhhFs0FOzlC1B4abLQEqvvJwpwkEcgk1YegYjaHyW6FpEJbIb
+ 4yfQN7GC6B5GWhxC0raUN1jsaOGNbFKE8UxTAaM1g1VbhxQCrSIzlI/CYnhaND4Ex7gt5acCI4u
+ not7RfxJ4ONgGz0Z7FFAEv44JFXoYNGw5fHcPlYLrfA4ksmx3W3D23C+h7UDGzIBZN5c4KMJVqx
+ aYcPJwEG1bexh0FJkZNEWDmayP73tyVuDU9SSXjCx9K14nlfR5M1ppLy6wWIKAAI50lc9xA8kAb
+ cGOpHFnIViAhVU6lKiX7zVzQFNY7GM+Xem0jYIC659r6rKlagRfwOFwNkhGbXvE59UaROAtCy33
+ ioDMK0F0OpKpqrd0yL06uYQkHzh9JhxRZh9KrYHhfIRpxerV3ZSmV9uIGaoi2qTSQyPS5a4rQ8D
+ h+iSVr MCum3DnJA==
+X-Developer-Key: i=keescook@chromium.org; a=openpgp; fpr=A5C3F68F229DD60F723E6E138972F4DFDC6DC026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_082227_159308_ED1091DB 
-X-CRM114-Status: GOOD (  15.77  )
+X-CRM114-CacheID: sfid-20230817_133038_454197_6E308EA1 
+X-CRM114-Status: GOOD (  19.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,200 +137,278 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-IEEE 802.3 clause 73 defines auto-negotiation for backplanes and copper
-cable assemblies. This is a medium type (link mode) just like Ethernet
-over twisted pairs (BASE-T / BASE-TX) and over two wires for automotive
-(BASE-T1) for which the PHY library currently contains support.
+Prepare for the coming implementation by GCC and Clang of the __counted_by
+attribute. Flexible array members annotated with __counted_by can have
+their accesses bounds-checked at run-time checking via CONFIG_UBSAN_BOUNDS
+(for array indexing) and CONFIG_FORTIFY_SOURCE (for strcpy/memcpy-family
+functions).
 
-As a minimal framework for backplane PHY drivers, introduce a set of
-helpers that parse and interpret the base pages that are exchanged by
-PHYs during the clause 73 negotiation.
+As found with Coccinelle[1], add __counted_by for struct clk_hw_onecell_data.
+Additionally, since the element count member must be set before accessing
+the annotated flexible array member, move its initialization earlier.
 
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+[1] https://github.com/kees/kernel-tools/blob/trunk/coccinelle/examples/counted_by.cocci
+
+Cc: Michael Turquette <mturquette@baylibre.com>
+Cc: Stephen Boyd <sboyd@kernel.org>
+Cc: Joel Stanley <joel@jms.id.au>
+Cc: Andrew Jeffery <andrew@aj.id.au>
+Cc: Taichi Sugaya <sugaya.taichi@socionext.com>
+Cc: Takao Orito <orito.takao@socionext.com>
+Cc: Qin Jian <qinjian@cqplus1.com>
+Cc: Andrew Lunn <andrew@lunn.ch>
+Cc: Gregory Clement <gregory.clement@bootlin.com>
+Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Andy Gross <agross@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>
+Cc: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: Maxime Ripard <mripard@kernel.org>
+Cc: Chen-Yu Tsai <wens@csie.org>
+Cc: Jernej Skrabec <jernej.skrabec@gmail.com>
+Cc: David Airlie <airlied@gmail.com>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Cc: Samuel Holland <samuel@sholland.org>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-clk@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-aspeed@lists.ozlabs.org
+Cc: linux-arm-msm@vger.kernel.org
+Cc: linux-mediatek@lists.infradead.org
+Cc: dri-devel@lists.freedesktop.org
+Cc: linux-sunxi@lists.linux.dev
+Cc: linux-phy@lists.infradead.org
+Signed-off-by: Kees Cook <keescook@chromium.org>
 ---
- drivers/net/mii.c   |  34 +++++++++++++-
- include/linux/mii.h | 105 ++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 138 insertions(+), 1 deletion(-)
+ drivers/clk/clk-aspeed.c                    | 3 +--
+ drivers/clk/clk-ast2600.c                   | 2 +-
+ drivers/clk/clk-gemini.c                    | 2 +-
+ drivers/clk/clk-milbeaut.c                  | 3 +--
+ drivers/clk/clk-sp7021.c                    | 3 +--
+ drivers/clk/mvebu/cp110-system-controller.c | 2 +-
+ drivers/clk/qcom/clk-cpu-8996.c             | 2 +-
+ drivers/clk/ralink/clk-mt7621.c             | 3 +--
+ drivers/gpu/drm/sun4i/sun8i_tcon_top.c      | 3 +--
+ drivers/phy/qualcomm/phy-qcom-edp.c         | 2 +-
+ include/linux/clk-provider.h                | 2 +-
+ 11 files changed, 11 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/net/mii.c b/drivers/net/mii.c
-index 22680f47385d..c8a1df5d52a9 100644
---- a/drivers/net/mii.c
-+++ b/drivers/net/mii.c
-@@ -648,6 +648,38 @@ int generic_mii_ioctl(struct mii_if_info *mii_if,
- 	return rc;
- }
+diff --git a/drivers/clk/clk-aspeed.c b/drivers/clk/clk-aspeed.c
+index 284710adaef5..ff84191d0fe8 100644
+--- a/drivers/clk/clk-aspeed.c
++++ b/drivers/clk/clk-aspeed.c
+@@ -701,6 +701,7 @@ static void __init aspeed_cc_init(struct device_node *np)
+ 				  GFP_KERNEL);
+ 	if (!aspeed_clk_data)
+ 		return;
++	aspeed_clk_data->num = ASPEED_NUM_CLKS;
  
-+static const enum ethtool_link_mode_bit_indices c73_linkmodes[] = {
-+	ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT,
-+	/* ETHTOOL_LINK_MODE_100000baseKP4_Full_BIT not supported */
-+	/* ETHTOOL_LINK_MODE_100000baseCR10_Full_BIT not supported */
-+	ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseCR_Full_BIT,
-+	/* ETHTOOL_LINK_MODE_25000baseKRS_Full_BIT not supported */
-+	/* ETHTOOL_LINK_MODE_25000baseCRS_Full_BIT not supported */
-+	ETHTOOL_LINK_MODE_10000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT,
-+	ETHTOOL_LINK_MODE_1000baseKX_Full_BIT,
-+};
-+
-+int
-+linkmode_c73_priority_resolution(const unsigned long *modes,
-+				 enum ethtool_link_mode_bit_indices *resolved)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(c73_linkmodes); i++) {
-+		if (linkmode_test_bit(c73_linkmodes[i], modes)) {
-+			*resolved = c73_linkmodes[i];
-+			return 0;
-+		}
-+	}
-+
-+	return -ENOPROTOOPT;
-+}
-+
- MODULE_AUTHOR ("Jeff Garzik <jgarzik@pobox.com>");
- MODULE_DESCRIPTION ("MII hardware support library");
- MODULE_LICENSE("GPL");
-@@ -662,4 +694,4 @@ EXPORT_SYMBOL(mii_check_link);
- EXPORT_SYMBOL(mii_check_media);
- EXPORT_SYMBOL(mii_check_gmii_support);
- EXPORT_SYMBOL(generic_mii_ioctl);
+ 	/*
+ 	 * This way all clocks fetched before the platform device probes,
+@@ -732,8 +733,6 @@ static void __init aspeed_cc_init(struct device_node *np)
+ 		aspeed_ast2500_cc(map);
+ 	else
+ 		pr_err("unknown platform, failed to add clocks\n");
 -
-+EXPORT_SYMBOL(linkmode_c73_priority_resolution);
-diff --git a/include/linux/mii.h b/include/linux/mii.h
-index d5a959ce4877..4b141e9acd08 100644
---- a/include/linux/mii.h
-+++ b/include/linux/mii.h
-@@ -13,6 +13,36 @@
- #include <linux/linkmode.h>
- #include <uapi/linux/mii.h>
+-	aspeed_clk_data->num = ASPEED_NUM_CLKS;
+ 	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, aspeed_clk_data);
+ 	if (ret)
+ 		pr_err("failed to add DT provider: %d\n", ret);
+diff --git a/drivers/clk/clk-ast2600.c b/drivers/clk/clk-ast2600.c
+index f9e27f95a967..909c3137c428 100644
+--- a/drivers/clk/clk-ast2600.c
++++ b/drivers/clk/clk-ast2600.c
+@@ -839,6 +839,7 @@ static void __init aspeed_g6_cc_init(struct device_node *np)
+ 				      ASPEED_G6_NUM_CLKS), GFP_KERNEL);
+ 	if (!aspeed_g6_clk_data)
+ 		return;
++	aspeed_g6_clk_data->num = ASPEED_G6_NUM_CLKS;
  
-+/* 802.3-2018 clause 73.6 Link codeword encoding */
-+#define C73_BASE_PAGE_SELECTOR(x)		((x) & GENMASK(4, 0))
-+#define C73_BASE_PAGE_ECHOED_NONCE(x)		(((x) << 5) & GENMASK(9, 5))
-+#define C73_BASE_PAGE_ECHOED_NONCE_X(x)		(((x) & GENMASK(9, 5)) >> 5)
-+#define C73_BASE_PAGE_ECHOED_NONCE_MSK		GENMASK(9, 5)
-+#define C73_BASE_PAGE_PAUSE			BIT(10)
-+#define C73_BASE_PAGE_ASM_DIR			BIT(11)
-+#define C73_BASE_PAGE_RF			BIT(13)
-+#define C73_BASE_PAGE_ACK			BIT(14)
-+#define C73_BASE_PAGE_NP			BIT(15)
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE(x)	(((x) << 16) & GENMASK(20, 16))
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE_X(x)	(((x) & GENMASK(20, 16)) >> 16)
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE_MSK	GENMASK(20, 16)
-+#define C73_BASE_PAGE_A(x)			BIT(21 + (x))
-+#define C73_BASE_PAGE_TECH_ABL_1000BASEKX	C73_BASE_PAGE_A(0)
-+#define C73_BASE_PAGE_TECH_ABL_10GBASEKX4	C73_BASE_PAGE_A(1)
-+#define C73_BASE_PAGE_TECH_ABL_10GBASEKR	C73_BASE_PAGE_A(2)
-+#define C73_BASE_PAGE_TECH_ABL_40GBASEKR4	C73_BASE_PAGE_A(3)
-+#define C73_BASE_PAGE_TECH_ABL_40GBASECR4	C73_BASE_PAGE_A(4)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASECR10	C73_BASE_PAGE_A(5)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASEKP4	C73_BASE_PAGE_A(6)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASEKR4	C73_BASE_PAGE_A(7)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASECR4	C73_BASE_PAGE_A(8)
-+#define C73_BASE_PAGE_TECH_ABL_25GBASEKRS	C73_BASE_PAGE_A(9)
-+#define C73_BASE_PAGE_TECH_ABL_25GBASEKR	C73_BASE_PAGE_A(10)
-+#define C73_BASE_PAGE_25G_RS_FEC_REQ		BIT_ULL(44)
-+#define C73_BASE_PAGE_25G_BASER_FEC_REQ		BIT_ULL(45)
-+#define C73_BASE_PAGE_10G_BASER_FEC_ABL		BIT_ULL(46)
-+#define C73_BASE_PAGE_10G_BASER_FEC_REQ		BIT_ULL(47)
-+
- struct ethtool_cmd;
+ 	/*
+ 	 * This way all clocks fetched before the platform device probes,
+@@ -860,7 +861,6 @@ static void __init aspeed_g6_cc_init(struct device_node *np)
+ 	}
  
- struct mii_if_info {
-@@ -47,6 +77,10 @@ extern int generic_mii_ioctl(struct mii_if_info *mii_if,
- 			     struct mii_ioctl_data *mii_data, int cmd,
- 			     unsigned int *duplex_changed);
+ 	aspeed_g6_cc(map);
+-	aspeed_g6_clk_data->num = ASPEED_G6_NUM_CLKS;
+ 	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, aspeed_g6_clk_data);
+ 	if (ret)
+ 		pr_err("failed to add DT provider: %d\n", ret);
+diff --git a/drivers/clk/clk-gemini.c b/drivers/clk/clk-gemini.c
+index a23fa6d47ef1..2572d15aadd0 100644
+--- a/drivers/clk/clk-gemini.c
++++ b/drivers/clk/clk-gemini.c
+@@ -404,6 +404,7 @@ static void __init gemini_cc_init(struct device_node *np)
+ 				  GFP_KERNEL);
+ 	if (!gemini_clk_data)
+ 		return;
++	gemini_clk_data->num = GEMINI_NUM_CLKS;
  
-+extern int
-+linkmode_c73_priority_resolution(const unsigned long *modes,
-+				 enum ethtool_link_mode_bit_indices *resolved);
-+
+ 	/*
+ 	 * This way all clock fetched before the platform device probes,
+@@ -457,7 +458,6 @@ static void __init gemini_cc_init(struct device_node *np)
+ 	gemini_clk_data->hws[GEMINI_CLK_APB] = hw;
  
- static inline struct mii_ioctl_data *if_mii(struct ifreq *rq)
- {
-@@ -506,6 +540,77 @@ static inline u16 linkmode_adv_to_mii_adv_x(const unsigned long *linkmodes,
- 	return adv;
+ 	/* Register the clocks to be accessed by the device tree */
+-	gemini_clk_data->num = GEMINI_NUM_CLKS;
+ 	of_clk_add_hw_provider(np, of_clk_hw_onecell_get, gemini_clk_data);
+ }
+ CLK_OF_DECLARE_DRIVER(gemini_cc, "cortina,gemini-syscon", gemini_cc_init);
+diff --git a/drivers/clk/clk-milbeaut.c b/drivers/clk/clk-milbeaut.c
+index 050fd4fb588f..18c20aff45f7 100644
+--- a/drivers/clk/clk-milbeaut.c
++++ b/drivers/clk/clk-milbeaut.c
+@@ -618,6 +618,7 @@ static void __init m10v_cc_init(struct device_node *np)
+ 
+ 	if (!m10v_clk_data)
+ 		return;
++	m10v_clk_data->num = M10V_NUM_CLKS;
+ 
+ 	base = of_iomap(np, 0);
+ 	if (!base) {
+@@ -654,8 +655,6 @@ static void __init m10v_cc_init(struct device_node *np)
+ 					base + CLKSEL(1), 0, 3, 0, rclk_table,
+ 					&m10v_crglock, NULL);
+ 	m10v_clk_data->hws[M10V_RCLK_ID] = hw;
+-
+-	m10v_clk_data->num = M10V_NUM_CLKS;
+ 	of_clk_add_hw_provider(np, of_clk_hw_onecell_get, m10v_clk_data);
+ }
+ CLK_OF_DECLARE_DRIVER(m10v_cc, "socionext,milbeaut-m10v-ccu", m10v_cc_init);
+diff --git a/drivers/clk/clk-sp7021.c b/drivers/clk/clk-sp7021.c
+index 11d22043ddd7..01d3c4c7b0b2 100644
+--- a/drivers/clk/clk-sp7021.c
++++ b/drivers/clk/clk-sp7021.c
+@@ -621,6 +621,7 @@ static int sp7021_clk_probe(struct platform_device *pdev)
+ 				GFP_KERNEL);
+ 	if (!clk_data)
+ 		return -ENOMEM;
++	clk_data->num = CLK_MAX;
+ 
+ 	hws = clk_data->hws;
+ 	pd_ext.index = 0;
+@@ -688,8 +689,6 @@ static int sp7021_clk_probe(struct platform_device *pdev)
+ 			return PTR_ERR(hws[i]);
+ 	}
+ 
+-	clk_data->num = CLK_MAX;
+-
+ 	return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get, clk_data);
  }
  
-+static inline u64 linkmode_adv_to_c73_base_page(const unsigned long *advertising)
-+{
-+	u64 result = 0;
-+
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseKX_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_1000BASEKX;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_10GBASEKX4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_10000baseKR_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_10GBASEKR;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_40GBASEKR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_40GBASECR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_100GBASEKR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_100GBASECR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_25GBASEKR;
-+
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT, advertising))
-+		result |= C73_BASE_PAGE_PAUSE;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, advertising))
-+		result |= C73_BASE_PAGE_ASM_DIR;
-+
-+	return result;
-+}
-+
-+static inline void mii_c73_mod_linkmode_lpa_t(unsigned long *advertising,
-+					      u64 base_page)
-+{
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_1000baseKX_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_1000BASEKX);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_10GBASEKX4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_10000baseKR_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_10GBASEKR);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_40GBASEKR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_40GBASECR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_100GBASEKR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_100GBASECR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_25000baseKR_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_25GBASEKR);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_Pause_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_PAUSE);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_ASM_DIR);
-+}
-+
- /**
-  * mii_advertise_flowctrl - get flow control advertisement flags
-  * @cap: Flow control capabilities (FLOW_CTRL_RX, FLOW_CTRL_TX or both)
+diff --git a/drivers/clk/mvebu/cp110-system-controller.c b/drivers/clk/mvebu/cp110-system-controller.c
+index 84c8900542e4..03c59bf22106 100644
+--- a/drivers/clk/mvebu/cp110-system-controller.c
++++ b/drivers/clk/mvebu/cp110-system-controller.c
+@@ -240,9 +240,9 @@ static int cp110_syscon_common_probe(struct platform_device *pdev,
+ 				      GFP_KERNEL);
+ 	if (!cp110_clk_data)
+ 		return -ENOMEM;
++	cp110_clk_data->num = CP110_CLK_NUM;
+ 
+ 	cp110_clks = cp110_clk_data->hws;
+-	cp110_clk_data->num = CP110_CLK_NUM;
+ 
+ 	/* Register the PLL0 which is the root of the hw tree */
+ 	pll0_name = ap_cp_unique_name(dev, syscon_node, "pll0");
+diff --git a/drivers/clk/qcom/clk-cpu-8996.c b/drivers/clk/qcom/clk-cpu-8996.c
+index 592c7c3cdeb7..72689448a653 100644
+--- a/drivers/clk/qcom/clk-cpu-8996.c
++++ b/drivers/clk/qcom/clk-cpu-8996.c
+@@ -590,6 +590,7 @@ static int qcom_cpu_clk_msm8996_driver_probe(struct platform_device *pdev)
+ 	data = devm_kzalloc(dev, struct_size(data, hws, 2), GFP_KERNEL);
+ 	if (!data)
+ 		return -ENOMEM;
++	data->num = 2;
+ 
+ 	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base))
+@@ -605,7 +606,6 @@ static int qcom_cpu_clk_msm8996_driver_probe(struct platform_device *pdev)
+ 
+ 	data->hws[0] = &pwrcl_pmux.clkr.hw;
+ 	data->hws[1] = &perfcl_pmux.clkr.hw;
+-	data->num = 2;
+ 
+ 	return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get, data);
+ }
+diff --git a/drivers/clk/ralink/clk-mt7621.c b/drivers/clk/ralink/clk-mt7621.c
+index d95a33293b0a..92d14350c4b3 100644
+--- a/drivers/clk/ralink/clk-mt7621.c
++++ b/drivers/clk/ralink/clk-mt7621.c
+@@ -521,6 +521,7 @@ static int mt7621_clk_probe(struct platform_device *pdev)
+ 				GFP_KERNEL);
+ 	if (!clk_data)
+ 		return -ENOMEM;
++	clk_data->num = count;
+ 
+ 	for (i = 0; i < ARRAY_SIZE(mt7621_clks_base); i++)
+ 		clk_data->hws[i] = mt7621_clk_early[i];
+@@ -537,8 +538,6 @@ static int mt7621_clk_probe(struct platform_device *pdev)
+ 		goto unreg_clk_fixed;
+ 	}
+ 
+-	clk_data->num = count;
+-
+ 	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get, clk_data);
+ 	if (ret) {
+ 		dev_err(dev, "Couldn't add clk hw provider\n");
+diff --git a/drivers/gpu/drm/sun4i/sun8i_tcon_top.c b/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
+index 6f076cf4b403..a1ca3916f42b 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
++++ b/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
+@@ -141,6 +141,7 @@ static int sun8i_tcon_top_bind(struct device *dev, struct device *master,
+ 				GFP_KERNEL);
+ 	if (!clk_data)
+ 		return -ENOMEM;
++	clk_data->num = CLK_NUM;
+ 	tcon_top->clk_data = clk_data;
+ 
+ 	spin_lock_init(&tcon_top->reg_lock);
+@@ -213,8 +214,6 @@ static int sun8i_tcon_top_bind(struct device *dev, struct device *master,
+ 			goto err_unregister_gates;
+ 		}
+ 
+-	clk_data->num = CLK_NUM;
+-
+ 	ret = of_clk_add_hw_provider(dev->of_node, of_clk_hw_onecell_get,
+ 				     clk_data);
+ 	if (ret)
+diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+index e0e722b9be31..8e5078304646 100644
+--- a/drivers/phy/qualcomm/phy-qcom-edp.c
++++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+@@ -744,6 +744,7 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
+ 	data = devm_kzalloc(edp->dev, struct_size(data, hws, 2), GFP_KERNEL);
+ 	if (!data)
+ 		return -ENOMEM;
++	data->num = 2;
+ 
+ 	snprintf(name, sizeof(name), "%s::link_clk", dev_name(edp->dev));
+ 	init.ops = &qcom_edp_dp_link_clk_ops;
+@@ -763,7 +764,6 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
+ 
+ 	data->hws[0] = &edp->dp_link_hw;
+ 	data->hws[1] = &edp->dp_pixel_hw;
+-	data->num = 2;
+ 
+ 	return devm_of_clk_add_hw_provider(edp->dev, of_clk_hw_onecell_get, data);
+ }
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index 0f0cd01906b4..ec32ec58c59f 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -1379,7 +1379,7 @@ struct clk_onecell_data {
+ 
+ struct clk_hw_onecell_data {
+ 	unsigned int num;
+-	struct clk_hw *hws[];
++	struct clk_hw *hws[] __counted_by(num);
+ };
+ 
+ #define CLK_OF_DECLARE(name, compat, fn) \
 -- 
 2.34.1
 
