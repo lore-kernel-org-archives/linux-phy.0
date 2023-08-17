@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF4FAC30633
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:07:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0A5DC3064E
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Aug 2023 15:21:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rk9HthqF0uySybDWRU6KOhSUoFvP7oKX4kA6C8uq+Go=; b=Nt9w44Fo7ccCbN
-	BLPWb70QxWhcMvA6FMtXkypFZXtAtnIzpT0WWrpbF0fL5+/oo+FQjqXJXW3kTGnbpMDkN/WtUVLxT
-	exsLZe3p9H3ys6aZfv2A2dDz9ReqSrHFDM3R4aVG4ClDy+34DYawi+C6vGS85ul/KmSX0WiKuO51H
-	+eQ1amBt7DD0QnpVKDPei6qRXwYtJeJUYlaVNTUfCMm5kDG/if/8BbR59JKEsF9RjGlTNDo80OUCN
-	J5jjOV1Tx/EGs/eIxYLHFjcd23Mb1gLCWXO5TIRFCmv+Cu/pE3lMKm/CuIPrSXC0kId3qbDTaUKbc
-	pKNfjbfr/EG7kpTC6Vpg==;
+	List-Owner; bh=6WilAbshLkh/rkYkTV/uCE9HgadsyyRL+5Fm+mOgGlk=; b=j/kEbd5Ak/K06n
+	EpTkkbUw4uYGN82BJYHigSbsvy2k7f+TW3WIU5wj5T4zQoPp980Vg4D5yyZ8labNY7LMpxj/DLGTz
+	zbAiLLsFwtBkE3X498tGIXut7xKIdKWTZe5gHp5bQtHBLGWzSfz9yJBbsnFcp029tRRI2yhY2fdrZ
+	djuwCrvhILlzeZXfv9Zx/mXrZ9ZbL2T6te4Tn9t05gelzrJ9yaxLXKIocK3W3f7O4BgqD2nWF+tAl
+	Uo5zTPrlcc5Pzh82WVNMUINUpNGVoGyraxpuXInD3ncc0TWRom1TKSaaccSIwkRrFKDrtRpeAMLFV
+	T8Zub8uGUsxllPvEWtOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWeam-006djV-1m;
-	Thu, 17 Aug 2023 15:07:20 +0000
-Received: from mail-db8eur05on2060b.outbound.protection.outlook.com ([2a01:111:f400:7e1a::60b] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1qWeod-006fnv-1m;
+	Thu, 17 Aug 2023 15:21:39 +0000
+Received: from mail-vi1eur02on20602.outbound.protection.outlook.com ([2a01:111:f400:fe16::602] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWeag-006deG-1g
+	id 1qWeob-006fme-1Y
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Aug 2023 15:07:19 +0000
+	Thu, 17 Aug 2023 15:21:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jkZbkok5KYHsrcPdtQlIGY9scCy31I+87Y6Z6+3AtdHaxGOgkymB8T5dCthQVJxOVeVOUPzJfzCigIGpGOISWw35OTN7szuIeItlB0v5QGLr2TF+N+J5sI983Gd0fWl/Ald6lL/CVHi1k1swO0Ie+uvRyvpGk3CVMEp9laQoLMQ0hO2ymPB6wYE4omBsPtaWb2XUfyNjaO4auCbyk/ibJgmDqfCZZvBxG9NVR2+D46IfUxlc5VvYDoB/0ZQZ6HDDQIW94kLRyNAbtqjpg5IFhYz/qGJVzsfQb4sdFrGwd6KVhK2bIafFTZaAcI90FrrQCi9HgNUcOL5SNDriYBSc6g==
+ b=X6pnwHU+jzwV9QuFDk5wfzxTd7HeElT5PHPXe+1Q7k0rSnce/XppeSC4SEUEaZrdMW5OsTGF07RWgJDsgyFZ1MV7Twa0easrMgP/lQ4RRAoVuEmy0H5sMJFBPMD6fN7DumNyA192uEQ69Ay60c4PuRRMpDLFVauRECQwQM/wMWl3o2bvFr7PNBSk4FRFTUHlFCQZFq7lomelzf4O4x5OhRW44NcYxY+OGECIvyP0WYcCq05uA+YFuX9ZbK6aljEEzY61vsrTml/krrXoBuGRKzF8hh+hnqOmatHXSbc+K7IE0nbIJUUS1f6y8BEZqvbhj+tmKoGx5j5BY8M9DaBv0w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=l7hiYn9zdPeacyv1Dyu9OY2s+zDT1YjIron7AHN1qWE=;
- b=NeUQgrZs0g0QUuDZjB5ZmLI3AkrUj3dCjt39t9uKLj2zCBGblEdFnt8xtpzNOqn52AjzQ4QRfZVKzTlTyigfUo13hrekbGtTSWpHZ/GVQjAqAADLRaRzHP8HB0cxdFUE1bcyTFmZ0nAAhYBCDsHz+Wdn2wl5YPso2pgG9DqEniz4yjZRar5sFHBBgVlmQROjkA80L6MWg9glgoZkLBq+Lp8Uu0+Rck5VM34Ug377J5UjP4BugMa3vdtv0THRyyRMHQ5SUPrg53gUgKieq4PZDTRWwE++csWDevIo/zw6DF1MRm7D+U4A1QirizU3lpHDQTrrw1JqaBPiCiQqaGomtQ==
+ bh=dzeaazmO4RhbOXcSM+9AWmeLsoZ/JxIS2ypqjczS5SQ=;
+ b=FdO5a1CMlcHVaIYxNVk27PHRa0jChyddcbH3MM1ZkxKVBjBQ3Ji4ZNF5HIiSQRzhvs6wOJP4Y+5DRSrzfpk6sHvZiWskeEiAho5R3yRl4RsEOohTOsmYhg1wkZLDrXktZZeF54qIirH5YkOq+uzyMEOBYtg3srxM96gsFGWDHAYAqfFJQj09cZ9waxiJaMW0fpuA2b+q+bskMQDGWtU8kCd4/l0a74se6WNWCpDW4th6s6gOFkV/k4/4F0DP9uw0MiorAiOfV/klTaISQ8tGmuXE0BB5kIzsxmsvslcBJij+rb9EtiPqvpB0OMjK5ABpztP9BNsFu5nTt94ylQa2zA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=l7hiYn9zdPeacyv1Dyu9OY2s+zDT1YjIron7AHN1qWE=;
- b=bjCvZra2FC/z9mtSdP3dUri1UeS9SPe20O2WHodxTowuGfGTou6TP1/92HqO2mVVPQJkh16CSJXKaEzqtTztNAtqG6/bwR2jDI597pYDSVhFRZh+D1p3Dh9SqTUWcWiOXfBOTkZIpMqw3uP8hmF/pIWlDTsZzMouZ680yA6GUik=
+ bh=dzeaazmO4RhbOXcSM+9AWmeLsoZ/JxIS2ypqjczS5SQ=;
+ b=Pz6vB1vcYxk3KyOrqC4KxUwAmHybM2rCVvNq4R7QFsvJg9AQPRP8F4Cm51KFscf/53evMS3Ihm8bIJJYrHFKFRF34TRhcTU/XMAHj7jhekCs+wZiqHyd8lmYVqathcTYFZ9MJ0ZC2UizkOleMr+gaJZ7fTz0tAK9cfarQ6KfevU=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
  by PAXPR04MB9469.eurprd04.prod.outlook.com (2603:10a6:102:2b4::12) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6678.29; Thu, 17 Aug
- 2023 15:07:06 +0000
+ 2023 15:06:57 +0000
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6678.031; Thu, 17 Aug 2023
- 15:07:06 +0000
+ 15:06:57 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: netdev@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -72,9 +72,9 @@ Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH net-next 7/8] net: phy: mtip_backplane: add driver for MoreThanIP backplane AN/LT core
-Date: Thu, 17 Aug 2023 18:06:43 +0300
-Message-Id: <20230817150644.3605105-8-vladimir.oltean@nxp.com>
+Subject: [RFC PATCH net-next 1/8] phy: introduce the phy_check_cdr_lock() function
+Date: Thu, 17 Aug 2023 18:06:37 +0300
+Message-Id: <20230817150644.3605105-2-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
 References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
@@ -84,56 +84,56 @@ X-ClientProxiedBy: AM0PR02CA0137.eurprd02.prod.outlook.com
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAXPR04MB9469:EE_
-X-MS-Office365-Filtering-Correlation-Id: 227c2c88-4eec-4cd3-2a89-08db9f339e9d
+X-MS-Office365-Filtering-Correlation-Id: 155bde4c-f547-4ced-9c2d-08db9f3399ad
 X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: gmcd1mwkLgtgo8d7LNe73SV0H1ATuxvGG+A+wZA2tYCYKznycoVOGf9emNcDYMFkt1Q0VAPePcIINK7TlAvpANRm6mHt724Q2SESwLrQj3Nsve6+rEZgeQyNb+/aBVxCixAmLlxvLwmYMJxmHp9f3GM8yJOjWKe3iSkbYr9uP27u3FhIcS/XF8LIbUOQ04jrcqCZBglYbz250VhzHMsOuk9Nj8lxMjmuCs8l/2ebIOSE3e+JTIeanUkUo0DnWSUkWUqc8ptUo00Jc9iHIagBORPTclsWJ6kssLt/M6g3ob8x4402xDw7VFTA13ROdE/ACioaJLXjIieLVn71HV9I1q75NmJo43GLW3RY1y6EWAUIfYsmc5ValwyJhdUxBBnHhl+VKqqJ3QOQCK4i0/3ZCLKvmlDVw9Pla9s6EhonkgeCXkBWyYnRtBsEPlmwtRCoLP/ZZ8EP7hCcINI1dOvoR6cUFVrlIdMVj03cIp+tlDPSBFQVzE7L881p2sh91E77S6d48pHEtiofjGCgt7bWmp6IyWxQwv94AHsWF9mvZy5vmhHcbHmVpUDoovLt/tJbk1UPIZ9gO2EezsQ0TQa/eH146xZvXW354F+Z0oXnZIbou/CR9hNetdUsyinvI1z8
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(30864003)(2906002)(83380400001)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002)(579004);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: nzi5GZ5fzUDiweGM7T4DHlUC4ElMxLQ5VkCFPzMdRhassJAaWPXdD+7OoqdhX5bDfrCx62ndeiqUCSTC1hiwyWVzhz2SBFnHrAmuSZH6AhBd+CfhADblDSVhIzsA6ltYNwYtRYWROhsGvpiW/jD3Vj380jWHZJAUu/efb88AfFjQl0LU/mfQoxlSNq3DXDuz5LbJK6x7eFJUgIKasL80bnGRN0gs50ddcOp3Z32PowFjroRy/3A2wvJb4c+sQpGJbfFefJBLkxBcNoVSDK7dRFlvOZnWdem+uIOIvRXk3bZvBOQzV+iQ+ZMaJl183xWHv+Vw69IAqOpEU2DRQHmfUhIT2YvKRxHDjwPtrOVIAfXk6jpVmA/dd78BSU9NXjiyDiuebUIotkQj+dDUhjpLV331Ga8/ra9GuW/YXHYj1TQrnXXlW9ChWy06dXvGR6oYRcFwyaVcaITVVoTBn8zbghKM+qfwsfAwgUXs9tS3ioRzdm6AGsrahsKhAN3C/90uuavQwThuifa0hfG5pp3pcSv2E4npK3rqMQmOICMwhREwHe4xPefacxA62HCJ5DE7mx9hY+OYfYh+rn2uSy4yooVYRRw5H7cUB6IRAbqdu1xVhSCgGdcA32mog6iUr4Ot
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(376002)(136003)(346002)(39860400002)(396003)(186009)(451199024)(1800799009)(2906002)(83380400001)(26005)(86362001)(7416002)(478600001)(6506007)(36756003)(6666004)(2616005)(1076003)(6486002)(6512007)(52116002)(44832011)(5660300002)(41300700001)(316002)(54906003)(66946007)(66476007)(66556008)(4326008)(8676002)(8936002)(38350700002)(38100700002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vMaT5G+ToZqUfQqoznhLWEP0Xj+xXmyUcYHqjObV3DnmeNlzWUcQvU1R5yN6?=
- =?us-ascii?Q?Ltbjr0kbTdQuMYp3Bk481KMy+GII+iFtvnI9HIBGuwRPOti7WfXRGoa83Pq8?=
- =?us-ascii?Q?nPMZDMIaNXv/CQi63RCmQNkOJLZ2C1BwTTehXGAMaMzjt3e+NCwUcPOlU3m/?=
- =?us-ascii?Q?v2HRE3msvyIh7YrnBsph++h0fX6kbX3AkKu+yEi2MCL7/52FVRjuOFOov+Pu?=
- =?us-ascii?Q?NDz3ceacGUHuseCkpgmtQmy3lHl4k7JTYZaw1Vk5Xii9zQt67EPVXTpw10Qp?=
- =?us-ascii?Q?NbX5jigM4RtQO0mU2JvDymLCC3oa/H/CnI5Bjoqu6/g+EzmnYhRs08DHHWiP?=
- =?us-ascii?Q?R7kHh2aN+XDQoupYfZ8W+SjoxJcHhYRBpBzPNOkmctUbtQtS7QKUSJSB7tHH?=
- =?us-ascii?Q?zNHn6B28kk4CzrQ+jAgJITM8LDAzGsED0l6I6T2srqcezvsOsId5LGzTnubu?=
- =?us-ascii?Q?G0608YSp5L4Svdu2i9CoIs4RaYgEiC/X4IcMUiKeB3Ax8dj6DOF51fup1xiR?=
- =?us-ascii?Q?t7uWK3cjx5wGwEKpRx/8k8G3X8LSQO5gS+lAXXaVEkKg6oLX0LdETCT52KVx?=
- =?us-ascii?Q?RBdmTxNsD/T9GBo+W+6DrXymoqKhBh/OeEyVOVP2aSw4adAne+KQ4Bzdk1Ea?=
- =?us-ascii?Q?hdr8E40p20+MRtfK1TCpn1qPi+dOdtfIJd52hNIDCwp20vOPvsbagkgvNbvh?=
- =?us-ascii?Q?S96eQDD853nT+WE5lhfRtCbr9ID74nhMqCy3XtliaYntn2lh3HIWvvItveT4?=
- =?us-ascii?Q?JJArkziw+FTer1+CGQnpb6AG1zB1Ayp482m0I7+RnKnLNeO7+y8mfMdBXRIw?=
- =?us-ascii?Q?bL+1iJza9J37tavffZDyubPGqZSiFzn9byTsnWnPQPWtSjSBNbpe2naWgxMG?=
- =?us-ascii?Q?9Jp7lmx+a+TiIz8sb27YU77O5Z3BmeoFPLl4nQxmGCvkQZd2wK+Jp9+UkoWE?=
- =?us-ascii?Q?o20kdOdJwJ+43Qeu6oGp1LkcqsqUEspbHxjymPHISDkt1PeTV6NFtVA8qcHg?=
- =?us-ascii?Q?e0SDlKACU4xl50/W5eEBZT89BbuW6hMxkuBNFULW47Z/VaGnx2jTsG8c1YNR?=
- =?us-ascii?Q?6uIIA2MYMy1C2gpg+aRIVnYGmAwiai/80teG1dBTcczIYiCiMFdMxqJalcR2?=
- =?us-ascii?Q?sddlib3PAdSxaDvk10nM/TtHj2NX/d00FD108D09ez6wmIJUraKP7GqkuSnQ?=
- =?us-ascii?Q?Yxcq1PF7dK4QjO+4+BA7k/hUkLwhGrxlFjJl0ofk5Vxmf+LAE4UADn9fl8MF?=
- =?us-ascii?Q?np3cltw97BulWnifZx6Iria1FA+DJrM0hQKlEN2QRL93wdwL/j7b9AL7wH6+?=
- =?us-ascii?Q?YqHwIuabqaeYdKgP5Rx8cUnMmlpvS+QQfEt7KnGFmtvJtbrnVdAcWS9gaWMH?=
- =?us-ascii?Q?INHF7EAT/agnhBfjFZjggI+tltYK3KdMnITlxC1x1TdRNUCNq1ImQnluEuwh?=
- =?us-ascii?Q?EBe9hjeMp6aKLOkC8ojAAwu4u3m0H4NYnvGfmgbs6LasNS0TfEEhHtTzVnU6?=
- =?us-ascii?Q?GxtacuMxwR8+bnomi/gSNXY9YayBY86wJhxkKvusvX04j0/y6FTvW8WIfLLB?=
- =?us-ascii?Q?S3r0djWIKmJTDop7urX4deLB/HjCAhOPTuWsg5pIKsa1BWh7UjXZ///bLPUh?=
- =?us-ascii?Q?4w=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zL/3Avk6HrR4XsjTUFwpO6Yg3LT+cR9fv70kmvUvW1K8++/CaxjxhjvvIByE?=
+ =?us-ascii?Q?kUomD14ggrbpxIatH2vR4cQj+01J8Gk8VbQtNWz1ZrrBX5nnmLue/JoSpXhc?=
+ =?us-ascii?Q?9yowwmWSE9HI22hXuafhcZZ8ZBsYtHEIsq3P3nMssaL6Ow0Je58Av/9WdHQS?=
+ =?us-ascii?Q?cKuZ5b/9xPLoRldMjxWWHzIGKK5E+YFL1+k8QPCDZbM3KzDUvjG5Ss9+deMv?=
+ =?us-ascii?Q?YezE/t41JzkX2ZukM/0CcgVZEWQJi8NWaB/CVMqwy3uaHZPHvsfWb2ZHY1e+?=
+ =?us-ascii?Q?8m07IkUU0nOcOesl+mK7r+n5zYFYnNSBq9yZIy3Ql7bQuml78j0Fksb6xNA/?=
+ =?us-ascii?Q?LDnYUdmb4qxnYwhQfzme/6ikU+hXyz1Zv/E2a4wqT99Sn89a68j6vR6e9a1F?=
+ =?us-ascii?Q?ZTnYya4Ef8hsKrTFEhWI1hxOw9q+r8j4VsTCgbsQWhHRBWcVwpbe7aE6PfYM?=
+ =?us-ascii?Q?PhPLzgI71P8RB/jPLzDmO1lTh/+CmmvWTXRGxCsaxGteKMnmr4u5G1zJZ/gW?=
+ =?us-ascii?Q?YiPnCXs6meI/RHWy88IaDCJEyhT20e9fxuTOokpD8w3CrYOC+pSSOO3+i4Dz?=
+ =?us-ascii?Q?Nqqx4zO60xH8/kDDWJToVcBjNIaDOfX+VKrfewjvU43vwIH1p8CX4UlG8G6W?=
+ =?us-ascii?Q?AmHz+t+WcaGZzitvP3/qhdm0qxNsN16H9cZGlML/PvtZRP2gLtD1DDKga5Ip?=
+ =?us-ascii?Q?Ot/pneBsy5b5RNIrXVPu+Lt6tiBV2oZmf5UC81B+F3mqfEtQ5fYRG3EL9zEy?=
+ =?us-ascii?Q?BKfg1DbZK1+g560KzTi0Ek7h+CwzCo1pGuYmPlyzGN+XTTJsqdSYSJGHO8Bq?=
+ =?us-ascii?Q?fgK5YCDjtOJwOwEtGxCjmZlSi+KwlByPsEsKacxTTJiCtAOdAE2u4Fx04de3?=
+ =?us-ascii?Q?ATruSxQVQ3WsXalzzgqfU7y0ga4+J8zgckyUvJcKh8cIBYuqmOhAywmQmfq/?=
+ =?us-ascii?Q?UIVmOEpksXtrD6Tf1MO0v6tmMhrAWWkfI2VyIJEmaXwKps1semOy+Q2LhJtj?=
+ =?us-ascii?Q?xDrOu7epF9fYyTwK5EzRqBtuUhxIgG4NYtVEgL8GibJimkKNV8+q4JYlah+8?=
+ =?us-ascii?Q?r5rBE7pfPksYWUrIX1fLWklJ7Jlv+fc26dxYNJ7jePVthVJkK/lZ2YYsZvMo?=
+ =?us-ascii?Q?AMdRfPYr1rsX55hR9qQ/kSSBVUkZsYWbN4lVssK5hMsag08ct0l0g6oayS5j?=
+ =?us-ascii?Q?5ttA8htpg71xYfPI/+tGpYCdwwDcZfVmikIl8SvNa+095hYdmGbYFckL5yZU?=
+ =?us-ascii?Q?M8k3TVfM2zgTHPwL3Mo825o+MitAEez5ll/Z28Ubf1DMCfzwaML4XdsZQO7U?=
+ =?us-ascii?Q?WLu1oEP6iLC1tr8UzzhtPg7MidvnJjK+e5Ql3k0x447BI/g4TI7cNOxNzuL5?=
+ =?us-ascii?Q?3dGuGMLUsPq0H9KRiL2jJtWzEkQdj+6/lPvCN8+Hddbvx/+uDErMeRX2WAQG?=
+ =?us-ascii?Q?/ozRA9LCwuvzfDfBzPoSzsLCAbKoEKB8ezywSkgDDY7gtq9CD3Sbc7YvdES1?=
+ =?us-ascii?Q?sUyoBTvcYcmXL2cORixpCzFwQDHS+5eGaRC0hDj3xbjd+ax6SW7KiMWAiB+Z?=
+ =?us-ascii?Q?Gg3jr5/3xQKM7GpHMwISA3LhWLtgUxBNxxvtdSSGb0Um058/7Wm5dJaWj9/d?=
+ =?us-ascii?Q?9A=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 227c2c88-4eec-4cd3-2a89-08db9f339e9d
+X-MS-Exchange-CrossTenant-Network-Message-Id: 155bde4c-f547-4ced-9c2d-08db9f3399ad
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:07:05.9412
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2023 15:06:57.7414
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ztxD0vPUITQ6xxuzxWZKqPzy3TkNknSLZMzUHd2YTQdv3HYK3Zd0P5Gw2QKd9DPIzrXPmjXcVD+24ywtxg+42w==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 4JvdF87rxmn0F9Qc2/O1iLlnwFFYFUSQ/ogPWupGdolUfses8WhNLCOy8IZVEYFdhB91FRPqQ0woJeOAmSCjBQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9469
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_080714_593189_D0E8FF50 
-X-CRM114-Status: GOOD (  21.92  )
+X-CRM114-CacheID: sfid-20230817_082137_524996_B09CA14C 
+X-CRM114-Status: GOOD (  15.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,1808 +150,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For each networking SerDes lane on certain Layerscape SoCs, there is a
-block, based on an IP core from MoreThanIP, which optionally handles
-IEEE 802.3 clause 73 and clause 72, i.e. backplane auto-negotiation and
-link training.
+Some modules, like the MTIP AN/LT block used as a copper backplane PHY
+driver, need this extra information from the SerDes PHY as another
+source of "link up" information.
 
-The hardware integration between the SerDes lane and this AN/LT block is
-rather weak. For this reason, there is no automatic link training
-performed in hardware, but rather, software needs to implement a custom,
-SerDes-specific link training algorithm and use the AN/LT registers to
-communicate it with the link partner. This driver is an inapt attempt to
-do just that.
+Namely, at 25Gbps, the PCS does not have a MDIO_CTRL1_LPOWER bit
+implemented in its MDIO_MMD_PCS:MDIO_CTRL1 register, so a phy_suspend()
+procedure will not power down the link, and will not cause a link drop
+event on the link partner.
 
-Since the MTIP AN/LT block may be, in premise, integrated in non-NXP
-SoCs as well, the networking PHY driver implementation is as generic as
-possible.
-
-Initial support is present only for the LX2160A SoC and the single-lane
-link modes (10G, 25G). For this SoC, the register map of the IP block
-was a bit mangled, and we don't have any PHY ID. I didn't want to invent
-one, so this driver probes on a specific compatible string, plus the
-secondary "ethernet-phy-ieee802.3-c45" which makes the PHY library
-recognize it as a clause 45 PHY and not an mdio_device.
+By implementing the networking phy_suspend() as phy_power_off() in the
+SerDes and introducing phy_check_cdr_lock() as a link indication, we are
+able to detect that condition and signal it to upper layers of the
+network stack.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
- drivers/net/phy/Kconfig          |    7 +
- drivers/net/phy/Makefile         |    1 +
- drivers/net/phy/mtip_backplane.c | 1735 ++++++++++++++++++++++++++++++
- 3 files changed, 1743 insertions(+)
- create mode 100644 drivers/net/phy/mtip_backplane.c
+ drivers/phy/phy-core.c  | 18 ++++++++++++++++++
+ include/linux/phy/phy.h | 22 ++++++++++++++++++++++
+ 2 files changed, 40 insertions(+)
 
-diff --git a/drivers/net/phy/Kconfig b/drivers/net/phy/Kconfig
-index 107880d13d21..536ce9f118c5 100644
---- a/drivers/net/phy/Kconfig
-+++ b/drivers/net/phy/Kconfig
-@@ -290,6 +290,13 @@ config MOTORCOMM_PHY
- 	  Enables support for Motorcomm network PHYs.
- 	  Currently supports YT85xx Gigabit Ethernet PHYs.
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 96a0b1e111f3..e611ebe993c7 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -553,6 +553,24 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ }
+ EXPORT_SYMBOL_GPL(phy_validate);
  
-+config MTIP_BACKPLANE_PHY
-+	tristate "MoreThanIP copper backplane PHYs"
-+	help
-+	  Enable support for the MoreThanIP copper backplane Auto-Negotiation
-+	  and Link Training blocks, as implemented on the QorIQ and Layerscape
-+	  SoCs.
++int phy_check_cdr_lock(struct phy *phy, bool *cdr_locked)
++{
++	int ret;
 +
- config NATIONAL_PHY
- 	tristate "National Semiconductor PHYs"
- 	help
-diff --git a/drivers/net/phy/Makefile b/drivers/net/phy/Makefile
-index c945ed9bd14b..06ef4b59e223 100644
---- a/drivers/net/phy/Makefile
-+++ b/drivers/net/phy/Makefile
-@@ -81,6 +81,7 @@ obj-$(CONFIG_MICROCHIP_T1_PHY)	+= microchip_t1.o
- obj-$(CONFIG_MICROCHIP_T1S_PHY) += microchip_t1s.o
- obj-$(CONFIG_MICROSEMI_PHY)	+= mscc/
- obj-$(CONFIG_MOTORCOMM_PHY)	+= motorcomm.o
-+obj-$(CONFIG_MTIP_BACKPLANE_PHY) += mtip_backplane.o
- obj-$(CONFIG_NATIONAL_PHY)	+= national.o
- obj-$(CONFIG_NCN26000_PHY)	+= ncn26000.o
- obj-$(CONFIG_NXP_C45_TJA11XX_PHY)	+= nxp-c45-tja11xx.o
-diff --git a/drivers/net/phy/mtip_backplane.c b/drivers/net/phy/mtip_backplane.c
-new file mode 100644
-index 000000000000..09eeaff653aa
---- /dev/null
-+++ b/drivers/net/phy/mtip_backplane.c
-@@ -0,0 +1,1735 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Driver for MoreThanIP copper backplane AN/LT (Auto-Negotiation and
-+ * Link Training) core
-+ *
-+ * Copyright 2023 NXP
-+ */
++	if (!phy)
++		return -EINVAL;
 +
-+#include <linux/kernel.h>
-+#include <linux/mii.h>
-+#include <linux/module.h>
-+#include <linux/of_mdio.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
-+#include <linux/clk.h>
++	if (!phy->ops->check_cdr_lock)
++		return -EOPNOTSUPP;
 +
-+#define BP_ETH_STAT_ALWAYS_1		BIT(0)
-+#define BP_ETH_STAT_1GKX		BIT(1)
-+#define BP_ETH_STAT_10GKX4		BIT(2)
-+#define BP_ETH_STAT_10GKR		BIT(3)
-+#define BP_ETH_STAT_FC_FEC		BIT(4)
-+#define BP_ETH_STAT_40GKR4		BIT(5)
-+#define BP_ETH_STAT_40GCR4		BIT(6)
-+#define BP_ETH_STAT_RS_FEC		BIT(7)
-+#define BP_ETH_STAT_100GCR10		BIT(8)
-+#define BP_ETH_STAT_100GKP4		BIT(9)
-+#define BP_ETH_STAT_100GKR4		BIT(10)
-+#define BP_ETH_STAT_100GCR4		BIT(11)
-+#define BP_ETH_STAT_25GKRS		BIT(12)
-+#define BP_ETH_STAT_25GKR		BIT(13)
++	mutex_lock(&phy->mutex);
++	ret = phy->ops->check_cdr_lock(phy, cdr_locked);
++	mutex_unlock(&phy->mutex);
 +
-+#define BP_ETH_STAT_PARALLEL_DETECT	(BP_ETH_STAT_ALWAYS_1 | \
-+					 BP_ETH_STAT_1GKX | \
-+					 BP_ETH_STAT_10GKX4)
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_check_cdr_lock);
 +
-+#define LT_CTRL_RESTART_TRAINING	BIT(0)
-+#define LT_CTRL_TRAINING_ENABLE		BIT(1)
+ /**
+  * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+  * @np: device_node for which to get the phy
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index f6d607ef0e80..456d21c67e4f 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -122,6 +122,19 @@ struct phy_ops {
+ 			    union phy_configure_opts *opts);
+ 	int	(*reset)(struct phy *phy);
+ 	int	(*calibrate)(struct phy *phy);
 +
-+#define LT_STAT_RX_STATUS		BIT(0)
-+#define LT_STAT_FRAME_LOCK		BIT(1)
-+#define LT_STAT_IN_PROGRESS		BIT(2)
-+#define LT_STAT_FAIL			BIT(3)
-+#define LT_STAT_SIGNAL_DETECT		BIT(15)
-+
-+#define LT_COM1_MASK			GENMASK(1, 0)
-+#define LT_COZ_MASK			GENMASK(3, 2)
-+#define LT_COP1_MASK			GENMASK(5, 4)
-+#define LT_COM1(x)			((x) & LT_COM1_MASK)
-+#define LT_COM1_X(x)			((x) & LT_COM1_MASK)
-+#define LT_COZ(x)			(((x) << 2) & LT_COZ_MASK)
-+#define LT_COZ_X(x)			(((x) & LT_COZ_MASK) >> 2)
-+#define LT_COP1(x)			(((x) << 4) & LT_COP1_MASK)
-+#define LT_COP1_X(x)			(((x) & LT_COP1_MASK) >> 4)
-+
-+#define LT_COEF_STAT_MASK		(LT_COM1_MASK | LT_COZ_MASK | LT_COP1_MASK)
-+#define LT_COEF_STAT_ALL_NOT_UPDATED(x)	(((x) & LT_COEF_STAT_MASK) == 0)
-+#define LT_COEF_STAT_ANY_UPDATED(x)	(((x) & LT_COEF_STAT_MASK) != 0)
-+
-+#define LT_COEF_UPD_MASK		(LT_COM1_MASK | LT_COZ_MASK | LT_COP1_MASK)
-+#define LT_COEF_UPD_ALL_HOLD		(LT_COM1(COEF_UPD_HOLD) | \
-+					LT_COZ(COEF_UPD_HOLD) | \
-+					LT_COP1(COEF_UPD_HOLD))
-+
-+#define LT_COEF_UPD_ANYTHING(x)		((x) != 0)
-+#define LT_COEF_UPD_NOTHING(x)		((x) == 0)
-+
-+#define LT_COEF_UPD_INIT		BIT(12)
-+#define LT_COEF_UPD_PRESET		BIT(13)
-+
-+#define LT_COEF_STAT_RX_READY		BIT(15)
-+
-+#define C73_ADV_0(x)			(u16)((x) & GENMASK(15, 0))
-+#define C73_ADV_1(x)			(u16)(((x) & GENMASK(31, 16)) >> 16)
-+#define C73_ADV_2(x)			(u16)(((x) & GENMASK_ULL(47, 32)) >> 32)
-+
-+#define IRQPOLL_INTERVAL		(HZ / 4)
-+
-+#define MTIP_CDR_SLEEP_US		100
-+#define MTIP_CDR_TIMEOUT_US		100000
-+
-+#define MTIP_LT_RESTART_SLEEP_US	10
-+#define MTIP_LT_RESTART_TIMEOUT_US	100
-+
-+#define MTIP_FRAME_LOCK_SLEEP_US	10
-+#define MTIP_FRAME_LOCK_TIMEOUT_US	100
-+
-+#define MTIP_RESET_SLEEP_US		100
-+#define MTIP_RESET_TIMEOUT_US		100000
-+
-+#define MTIP_BP_ETH_STAT_SLEEP_US	10
-+#define MTIP_BP_ETH_STAT_TIMEOUT_US	100
-+
-+#define MTIP_COEF_STAT_SLEEP_US		10
-+#define MTIP_COEF_STAT_TIMEOUT_US	500000
-+
-+#define MTIP_AN_TIMEOUT_MS		10000
-+
-+enum mtip_an_reg {
-+	AN_CTRL,
-+	AN_STAT,
-+	AN_ADV_0,
-+	AN_ADV_1,
-+	AN_ADV_2,
-+	AN_LPA_0,
-+	AN_LPA_1,
-+	AN_LPA_2,
-+	AN_MS_CNT,
-+	AN_ADV_XNP_0,
-+	AN_ADV_XNP_1,
-+	AN_ADV_XNP_2,
-+	AN_LPA_XNP_0,
-+	AN_LPA_XNP_1,
-+	AN_LPA_XNP_2,
-+	AN_BP_ETH_STAT,
-+};
-+
-+enum mtip_lt_reg {
-+	LT_CTRL,
-+	LT_STAT,
-+	LT_LP_COEF,
-+	LT_LP_STAT,
-+	LT_LD_COEF,
-+	LT_LD_STAT,
-+	LT_TRAIN_PATTERN,
-+	LT_RX_PATTERN,
-+	LT_RX_PATTERN_ERR,
-+	LT_RX_PATTERN_BEGIN,
-+};
-+
-+struct mtip_irqpoll {
-+	struct phy_device *phydev;
-+	struct mutex lock;
-+	struct delayed_work work;
-+	u16 old_an_stat;
-+	u16 old_pcs_stat;
-+	bool link;
-+	bool link_ack;
-+	bool cdr_locked;
-+};
-+
-+struct mtip_lt_work {
-+	struct phy_device *phydev;
-+	struct kthread_work work;
-+};
-+
-+struct mtip_backplane {
-+	struct phy *serdes;
-+	struct mdio_device *pcs;
-+	const u16 *an_regs;
-+	const u16 *lt_regs;
-+	int lt_mmd;
-+	enum ethtool_link_mode_bit_indices link_mode;
-+	bool link_mode_resolved;
-+	unsigned long last_an_restart;
-+	struct mtip_irqpoll irqpoll;
-+	struct kthread_worker *local_tx_lt_worker;
-+	struct kthread_worker *remote_tx_lt_worker;
-+	/* Serialized by an_restart_lock */
-+	bool an_restart_pending;
-+	bool an_enabled;
-+	/* Used for orderly shutdown of LT threads. Modified without any
-+	 * locking. Set to true only by the irqpoll thread, set to false
-+	 * by irqpoll and by the LT threads.
++	/**
++	 * @check_cdr_lock:
++	 *
++	 * Optional.
++	 *
++	 * Check that the CDR (Clock and Data Recovery) logic has locked onto
++	 * bit transitions in the RX stream.
++	 *
++	 * Returns: 0 if the operation was successful, negative error code
++	 * otherwise.
 +	 */
-+	bool lt_enabled;
-+	bool local_tx_lt_done;
-+	bool remote_tx_lt_done;
-+	/* Serialize concurrent attempts from the local TX and remote TX
-+	 * kthreads to finalize their side of the link training
-+	 */
-+	struct mutex lt_lock;
-+	struct mutex an_restart_lock;
-+};
-+
-+#define phydev_to_irqpoll(phydev)	\
-+	(&((struct mtip_backplane *)(phydev)->priv)->irqpoll)
-+
-+/* Auto-Negotiation Control and Status Registers are on page 0: 0x0 */
-+static const u16 mtip_lx2160a_an_regs[] = {
-+	[AN_CTRL] = 0,
-+	[AN_STAT] = 1,
-+	[AN_ADV_0] = 2,
-+	[AN_ADV_1] = 3,
-+	[AN_ADV_2] = 4,
-+	[AN_LPA_0] = 5,
-+	[AN_LPA_1] = 6,
-+	[AN_LPA_2] = 7,
-+	[AN_MS_CNT] = 8,
-+	[AN_ADV_XNP_0] = 9,
-+	[AN_ADV_XNP_1] = 10,
-+	[AN_ADV_XNP_2] = 11,
-+	[AN_LPA_XNP_0] = 12,
-+	[AN_LPA_XNP_1] = 13,
-+	[AN_LPA_XNP_2] = 14,
-+	[AN_BP_ETH_STAT] = 15,
-+};
-+
-+/* Link Training Control and Status Registers are on page 1: 256 = 0x100 */
-+static const u16 mtip_lx2160a_lt_regs[] = {
-+	[LT_CTRL] = 0x100,
-+	[LT_STAT] = 0x101,
-+	[LT_LP_COEF] = 0x102,
-+	[LT_LP_STAT] = 0x103,
-+	[LT_LD_COEF] = 0x104,
-+	[LT_LD_STAT] = 0x105,
-+	[LT_TRAIN_PATTERN] = 0x108,
-+	[LT_RX_PATTERN] = 0x109,
-+	[LT_RX_PATTERN_ERR] =  0x10a,
-+	[LT_RX_PATTERN_BEGIN] = 0x10b,
-+};
-+
-+static const enum ethtool_link_mode_bit_indices mtip_backplane_link_modes[] = {
-+	ETHTOOL_LINK_MODE_10000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+};
-+
-+static const char *
-+ethtool_link_mode_str(enum ethtool_link_mode_bit_indices link_mode)
++	int	(*check_cdr_lock)(struct phy *phy, bool *cdr_locked);
+ 	void	(*release)(struct phy *phy);
+ 	struct module *owner;
+ };
+@@ -236,6 +249,7 @@ int phy_set_speed(struct phy *phy, int speed);
+ int phy_configure(struct phy *phy, union phy_configure_opts *opts);
+ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ 		 union phy_configure_opts *opts);
++int phy_check_cdr_lock(struct phy *phy, bool *cdr_locked);
+ 
+ static inline enum phy_mode phy_get_mode(struct phy *phy)
+ {
+@@ -414,6 +428,14 @@ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ 	return -ENOSYS;
+ }
+ 
++static inline int phy_check_cdr_lock(struct phy *phy, bool *cdr_locked)
 +{
-+	switch (link_mode) {
-+	case ETHTOOL_LINK_MODE_1000baseKX_Full_BIT:
-+		return "1000base-KX";
-+	case ETHTOOL_LINK_MODE_10000baseKR_Full_BIT:
-+		return "10Gbase-KR";
-+	case ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT:
-+		return "40Gbase-KR4";
-+	case ETHTOOL_LINK_MODE_25000baseKR_Full_BIT:
-+		return "25Gbase-KR";
-+	case ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT:
-+		return "100Gbase-KR4";
-+	default:
-+		return "unknown";
-+	}
-+}
-+
-+static bool
-+link_mode_needs_training(enum ethtool_link_mode_bit_indices link_mode)
-+{
-+	if (link_mode == ETHTOOL_LINK_MODE_1000baseKX_Full_BIT)
-+		return false;
-+
-+	return true;
-+}
-+
-+static int mtip_read_an(struct phy_device *phydev, enum mtip_an_reg reg)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_read_mmd(phydev, MDIO_MMD_AN, priv->an_regs[reg]);
-+}
-+
-+static int mtip_write_an(struct phy_device *phydev, enum mtip_an_reg reg,
-+			 u16 val)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_write_mmd(phydev, MDIO_MMD_AN, priv->an_regs[reg], val);
-+}
-+
-+static int mtip_modify_an(struct phy_device *phydev, enum mtip_an_reg reg,
-+			  u16 mask, u16 set)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_modify_mmd(phydev, MDIO_MMD_AN, priv->an_regs[reg],
-+			      mask, set);
-+}
-+
-+static int mtip_read_lt(struct phy_device *phydev, enum mtip_lt_reg reg)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_read_mmd(phydev, priv->lt_mmd, priv->lt_regs[reg]);
-+}
-+
-+static int mtip_write_lt(struct phy_device *phydev, enum mtip_lt_reg reg,
-+			 u16 val)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_write_mmd(phydev, priv->lt_mmd, priv->lt_regs[reg], val);
-+}
-+
-+static int mtip_modify_lt(struct phy_device *phydev, enum mtip_lt_reg reg,
-+			  u16 mask, u16 set)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	return phy_modify_mmd(phydev, priv->lt_mmd, priv->lt_regs[reg],
-+			      mask, set);
-+}
-+
-+static int mtip_read_pcs(struct phy_device *phydev, int reg)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	struct mdio_device *pcs = priv->pcs;
-+
-+	return mdiodev_c45_read(pcs, MDIO_MMD_PCS, reg);
-+}
-+
-+static int mtip_modify_pcs(struct phy_device *phydev, int reg, u16 mask,
-+			   u16 set)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	struct mdio_device *pcs = priv->pcs;
-+
-+	return mdiodev_c45_modify(pcs, MDIO_MMD_PCS, reg, mask, set);
-+}
-+
-+static int mtip_reset_an(struct phy_device *phydev)
-+{
-+	int err, val;
-+
-+	err = mtip_modify_an(phydev, AN_CTRL, MDIO_CTRL1_RESET,
-+			     MDIO_CTRL1_RESET);
-+	if (err < 0)
-+		return err;
-+
-+	err = read_poll_timeout(mtip_read_an, val,
-+				val < 0 || !(val & MDIO_CTRL1_RESET),
-+				MTIP_RESET_SLEEP_US, MTIP_RESET_TIMEOUT_US,
-+				false, phydev, AN_CTRL);
-+
-+	return (val < 0) ? val : err;
-+}
-+
-+static int mtip_reset_pcs(struct phy_device *phydev)
-+{
-+	int err, val;
-+
-+	err = mtip_modify_pcs(phydev, MDIO_CTRL1, MDIO_CTRL1_RESET,
-+			      MDIO_CTRL1_RESET);
-+	if (err < 0)
-+		return err;
-+
-+	err = read_poll_timeout(mtip_read_pcs, val,
-+				val < 0 || !(val & MDIO_CTRL1_RESET),
-+				MTIP_RESET_SLEEP_US, MTIP_RESET_TIMEOUT_US,
-+				false, phydev, MDIO_CTRL1);
-+
-+	return (val < 0) ? val : err;
-+}
-+
-+static int mtip_wait_for_cdr_lock(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	bool cdr_locked;
-+	int err, val;
-+
-+	err = read_poll_timeout(phy_check_cdr_lock, val,
-+				val < 0 || cdr_locked,
-+				MTIP_CDR_SLEEP_US, MTIP_CDR_TIMEOUT_US,
-+				false, priv->serdes, &cdr_locked);
-+
-+	return (val < 0) ? val : err;
-+}
-+
-+static int mtip_lx2160a_get_features(struct phy_device *phydev)
-+{
-+	const enum ethtool_link_mode_bit_indices *link_modes;
-+	struct mtip_backplane *priv = phydev->priv;
-+	int i, err;
-+
-+	linkmode_set_bit(ETHTOOL_LINK_MODE_Autoneg_BIT, phydev->supported);
-+	linkmode_set_bit(ETHTOOL_LINK_MODE_Backplane_BIT, phydev->supported);
-+	linkmode_set_bit(ETHTOOL_LINK_MODE_Pause_BIT, phydev->supported);
-+	linkmode_set_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, phydev->supported);
-+
-+	link_modes = mtip_backplane_link_modes;
-+
-+	/* Ask the SerDes driver what link modes are supported,
-+	 * based on the current PLL configuration.
-+	 */
-+	for (i = 0; i < ARRAY_SIZE(mtip_backplane_link_modes); i++) {
-+		err = phy_validate(priv->serdes, PHY_MODE_ETHERNET_PHY,
-+				   link_modes[i], NULL);
-+		if (err)
-+			continue;
-+
-+		linkmode_set_bit(link_modes[i], phydev->supported);
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtip_lt_frame_lock(struct phy_device *phydev)
-+{
-+	int err, val;
-+
-+	err = read_poll_timeout(mtip_read_lt, val,
-+				val < 0 || (val & LT_STAT_FRAME_LOCK),
-+				MTIP_FRAME_LOCK_SLEEP_US, MTIP_FRAME_LOCK_TIMEOUT_US,
-+				false, phydev, LT_CTRL);
-+
-+	return (val < 0) ? val : err;
-+}
-+
-+static int mtip_restart_lt(struct phy_device *phydev, bool enable)
-+{
-+	u16 mask = LT_CTRL_RESTART_TRAINING | LT_CTRL_TRAINING_ENABLE;
-+	u16 set = LT_CTRL_RESTART_TRAINING;
-+	int err, val;
-+
-+	if (enable)
-+		set |= LT_CTRL_TRAINING_ENABLE;
-+
-+	err = mtip_modify_lt(phydev, LT_CTRL, mask, set);
-+	if (err < 0)
-+		return err;
-+
-+	err = read_poll_timeout(mtip_read_lt, val,
-+				val < 0 || !(val & LT_CTRL_RESTART_TRAINING),
-+				MTIP_LT_RESTART_SLEEP_US, MTIP_LT_RESTART_TIMEOUT_US,
-+				false, phydev, LT_CTRL);
-+
-+	return (val < 0) ? val : err;
-+}
-+
-+/* Enable the lane datapath by disconnecting it from the AN/LT block
-+ * and connecting it to the PCS. This is called both from the irqpoll thread,
-+ * as well as from the last link training kthread to finish.
-+ */
-+static int mtip_finish_lt(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = mtip_restart_lt(phydev, false);
-+	if (err) {
-+		phydev_err(phydev, "Failed to disable link training: %pe\n",
-+			   ERR_PTR(err));
-+		return err;
-+	}
-+
-+	/* Subsequent attempts to disable LT will time out, so stop them */
-+	WRITE_ONCE(priv->lt_enabled, false);
-+
-+	return 0;
-+}
-+
-+static int mtip_stop_lt(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	kthread_flush_worker(priv->remote_tx_lt_worker);
-+	kthread_flush_worker(priv->local_tx_lt_worker);
-+
-+	err = mtip_finish_lt(phydev);
-+	if (err)
-+		return err;
-+
-+	phydev_dbg(phydev, "Link training disabled\n");
-+
-+	return 0;
-+}
-+
-+static int mtip_reset_lt(struct phy_device *phydev)
-+{
-+	int err;
-+
-+	/* Don't allow AN to complete without training */
-+	err = mtip_modify_lt(phydev, LT_STAT, LT_STAT_RX_STATUS, 0);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_write_lt(phydev, LT_LD_COEF, 0);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_write_lt(phydev, LT_LD_STAT, 0);
-+	if (err < 0)
-+		return err;
-+
-+	return 0;
-+}
-+
-+/* Reset state when detecting that the previously determined link mode
-+ * is no longer valid
-+ */
-+static int mtip_state_reset(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	priv->link_mode_resolved = false;
-+
-+	if (READ_ONCE(priv->lt_enabled)) {
-+		err = mtip_stop_lt(phydev);
-+		if (err)
-+			return err;
-+	}
-+
-+	err = mtip_reset_lt(phydev);
-+	if (err < 0)
-+		return err;
-+
-+	return 0;
-+}
-+
-+/* Make sure we don't act on old event bits from previous runs when
-+ * we restart autoneg.
-+ */
-+static int mtip_unlatch_an_stat(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	int val;
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	val = mtip_read_an(phydev, AN_STAT);
-+	if (val < 0)
-+		return val;
-+
-+	/* Discard the current AN status, it will become invalid soon */
-+	irqpoll->old_an_stat = 0;
-+
-+	return 0;
-+}
-+
-+/* Suppress a "PCS link dropped, restarting autoneg" event when initiating
-+ * an autoneg restart locally.
-+ */
-+static int mtip_unlatch_pcs_stat(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+
-+	irqpoll->old_pcs_stat = 0;
-+
-+	return 0;
-+}
-+
-+static int mtip_read_adv(struct phy_device *phydev, u64 *base_page)
-+{
-+	int val;
-+
-+	val = mtip_read_an(phydev, AN_ADV_0);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page = (u64)val;
-+
-+	val = mtip_read_an(phydev, AN_ADV_1);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page |= (u64)val << 16;
-+
-+	val = mtip_read_an(phydev, AN_ADV_2);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page |= (u64)val << 32;
-+
-+	return 0;
-+}
-+
-+static int mtip_write_adv(struct phy_device *phydev, u64 base_page)
-+{
-+	int val;
-+
-+	val = mtip_write_an(phydev, AN_ADV_0, C73_ADV_0(base_page));
-+	if (val < 0)
-+		return val;
-+
-+	val = mtip_write_an(phydev, AN_ADV_1, C73_ADV_1(base_page));
-+	if (val < 0)
-+		return val;
-+
-+	val = mtip_write_an(phydev, AN_ADV_2, C73_ADV_2(base_page));
-+	if (val < 0)
-+		return val;
-+
-+	return 0;
-+}
-+
-+static int mtip_read_lpa(struct phy_device *phydev, u64 *base_page)
-+{
-+	int val;
-+
-+	val = mtip_read_an(phydev, AN_LPA_0);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page = (u64)val;
-+
-+	val = mtip_read_an(phydev, AN_LPA_1);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page |= (u64)val << 16;
-+
-+	val = mtip_read_an(phydev, AN_LPA_2);
-+	if (val < 0)
-+		return val;
-+
-+	*base_page |= (u64)val << 32;
-+
-+	return 0;
-+}
-+
-+static int mtip_config_an_adv(struct phy_device *phydev)
-+{
-+	u64 base_page = linkmode_adv_to_c73_base_page(phydev->advertising);
-+	u8 nonce;
-+
-+	/* The transmitted nonce must not be equal with the one transmitted by
-+	 * the link partner, otherwise AN will not complete (nonce_match=true).
-+	 * With purely randomly generated nonces, that is always a chance
-+	 * though. 98.2.1.2.3 Transmitted Nonce Field gives a way for
-+	 * management to avoid that.
-+	 */
-+	get_random_bytes(&nonce, sizeof(nonce));
-+
-+	switch (phydev->master_slave_set) {
-+	case MASTER_SLAVE_CFG_MASTER_PREFERRED:
-+	case MASTER_SLAVE_CFG_MASTER_FORCE:
-+		nonce |= BIT(4);
-+		break;
-+	case MASTER_SLAVE_CFG_SLAVE_PREFERRED:
-+	case MASTER_SLAVE_CFG_SLAVE_FORCE:
-+		nonce &= ~BIT(4);
-+		break;
-+	}
-+
-+	base_page |= C73_BASE_PAGE_TRANSMITTED_NONCE(nonce);
-+	/* According to Annex 28A, set Selector to "IEEE 802.3" */
-+	base_page |= C73_BASE_PAGE_SELECTOR(1);
-+	/* C73_BASE_PAGE_ACK and C73_BASE_PAGE_ECHOED_NONCE seem to have
-+	 * a life of their own, regardless of what we set them to.
-+	 */
-+
-+	return mtip_write_adv(phydev, base_page);
-+}
-+
-+static int mtip_an_restart(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = mtip_state_reset(phydev);
-+	if (err)
-+		return err;
-+
-+	/* Make sure AN is temporarily disabled, so that we can safely
-+	 * unlatch the previous status without losing real events
-+	 */
-+	err = mtip_reset_an(phydev);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_unlatch_an_stat(phydev);
-+	if (err)
-+		return err;
-+
-+	err = mtip_unlatch_pcs_stat(phydev);
-+	if (err)
-+		return err;
-+
-+	err = mtip_config_an_adv(phydev);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_modify_an(phydev, AN_CTRL,
-+			     MDIO_AN_CTRL1_ENABLE | MDIO_AN_CTRL1_RESTART,
-+			     MDIO_AN_CTRL1_ENABLE | MDIO_AN_CTRL1_RESTART);
-+	if (err < 0)
-+		return err;
-+
-+	priv->last_an_restart = jiffies;
-+	priv->an_restart_pending = false;
-+
-+	return 0;
-+}
-+
-+/* The reason for deferral is that the irqpoll thread waits for the LT kthreads
-+ * to finish with irqpoll->lock held, and AN restart also requires holding the
-+ * irqpoll->lock. So the kthreads cannot directly restart autoneg without
-+ * deadlocking with the irqpoll thread, they must signal to the irqpoll thread
-+ * to do so.
-+ */
-+static void mtip_an_restart_from_lt(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	mutex_lock(&priv->an_restart_lock);
-+	priv->an_restart_pending = true;
-+	mutex_unlock(&priv->an_restart_lock);
-+}
-+
-+static int mtip_finalize_lt(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	union phy_configure_opts opts = {
-+		.xgkr = {
-+			.type = XGKR_CONFIGURE_LT_DONE,
-+		},
-+	};
-+	int err, val;
-+
-+	lockdep_assert_held(&priv->lt_lock);
-+
-+	if (!priv->local_tx_lt_done || !priv->remote_tx_lt_done)
++	if (!phy)
 +		return 0;
 +
-+	/* Let the local state machine know we're done */
-+	err = mtip_modify_lt(phydev, LT_STAT, LT_STAT_RX_STATUS,
-+			     LT_STAT_RX_STATUS);
-+	if (err < 0) {
-+		phydev_err(phydev, "Failed to update LT_STAT: %pe\n",
-+			   ERR_PTR(err));
-+		return err;
-+	}
-+
-+	err = mtip_finish_lt(phydev);
-+	if (err)
-+		return err;
-+
-+	val = mtip_read_lt(phydev, LT_STAT);
-+	if (val < 0)
-+		return val;
-+
-+	if (!(val & LT_STAT_SIGNAL_DETECT) || (val & LT_STAT_FAIL)) {
-+		phydev_err(phydev,
-+			   "Link training did not succeed: LT_STAT = 0x%x\n",
-+			   val);
-+		return -ENETDOWN;
-+	}
-+
-+	return phy_configure(priv->serdes, &opts);
++	return -ENOSYS;
 +}
 +
-+static int mtip_tx_c72_coef_update(struct phy_device *phydev,
-+				   const struct c72_coef_update *upd,
-+				   struct c72_coef_status *stat)
-+{
-+	char upd_buf[C72_COEF_UPDATE_BUFSIZ], stat_buf[C72_COEF_STATUS_BUFSIZ];
-+	int err, val;
-+	u16 ld_coef;
-+
-+	c72_coef_update_print(upd, upd_buf);
-+
-+	err = read_poll_timeout(mtip_read_lt, val,
-+				val < 0 || LT_COEF_STAT_ALL_NOT_UPDATED(val),
-+				MTIP_COEF_STAT_SLEEP_US, MTIP_COEF_STAT_TIMEOUT_US,
-+				false, phydev, LT_LP_STAT);
-+	if (val < 0)
-+		return val;
-+	if (err) {
-+		phydev_err(phydev,
-+			   "LP did not set coefficient status to NOT_UPDATED, couldn't send %s; LP_STAT = 0x%x\n",
-+			   upd_buf, val);
-+		return err;
-+	}
-+
-+	ld_coef = LT_COM1(upd->com1) | LT_COZ(upd->coz) | LT_COP1(upd->cop1);
-+	if (upd->init)
-+		ld_coef |= LT_COEF_UPD_INIT;
-+	if (upd->preset)
-+		ld_coef |= LT_COEF_UPD_PRESET;
-+
-+	err = mtip_write_lt(phydev, LT_LD_COEF, ld_coef);
-+	if (err < 0)
-+		return err;
-+
-+	err = read_poll_timeout(mtip_read_lt, val,
-+				val < 0 || LT_COEF_STAT_ANY_UPDATED(val),
-+				MTIP_COEF_STAT_SLEEP_US, MTIP_COEF_STAT_TIMEOUT_US,
-+				false, phydev, LT_LP_STAT);
-+	if (val < 0)
-+		return val;
-+	if (err) {
-+		phydev_err(phydev,
-+			   "LP did not update coefficient status for %s; LP_STAT = 0x%x\n",
-+			   upd_buf, val);
-+		return err;
-+	}
-+
-+	stat->com1 = LT_COM1_X(val);
-+	stat->coz = LT_COZ_X(val);
-+	stat->cop1 = LT_COP1_X(val);
-+	c72_coef_status_print(stat, stat_buf);
-+
-+	ld_coef = LT_COM1(COEF_UPD_HOLD) | LT_COZ(COEF_UPD_HOLD) |
-+		  LT_COP1(COEF_UPD_HOLD);
-+	err = mtip_write_lt(phydev, LT_LD_COEF, ld_coef);
-+	if (err < 0)
-+		return err;
-+
-+	phydev_dbg(phydev, "Sent update: %s, got status: %s\n",
-+		   upd_buf, stat_buf);
-+
-+	return 0;
-+}
-+
-+static int mtip_c72_process_request(struct phy_device *phydev,
-+				    const struct c72_coef_update *upd,
-+				    struct c72_coef_status *stat)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	union phy_configure_opts opts = {
-+		.xgkr = {
-+			.type = XGKR_CONFIGURE_LOCAL_TX,
-+			.local_tx = {
-+				.update = *upd,
-+			},
-+		},
-+	};
-+	int err;
-+
-+	err = phy_configure(priv->serdes, &opts);
-+	if (err)
-+		return err;
-+
-+	*stat = opts.xgkr.local_tx.status;
-+
-+	return 0;
-+}
-+
-+static int mtip_read_lt_lp_coef_if_not_ready(struct phy_device *phydev,
-+					     bool *rx_ready)
-+{
-+	int val;
-+
-+	val = mtip_read_lt(phydev, LT_LP_STAT);
-+	if (val < 0)
-+		return val;
-+
-+	*rx_ready = !!(val & LT_COEF_STAT_RX_READY);
-+	if (*rx_ready)
-+		return 0;
-+
-+	return mtip_read_lt(phydev, LT_LP_COEF);
-+}
-+
-+static int mtip_rx_c72_coef_update(struct phy_device *phydev,
-+				   struct c72_coef_update *upd,
-+				   bool *rx_ready)
-+{
-+	char upd_buf[C72_COEF_UPDATE_BUFSIZ], stat_buf[C72_COEF_STATUS_BUFSIZ];
-+	struct c72_coef_status stat = {};
-+	int err, val;
-+
-+	err = read_poll_timeout(mtip_read_lt_lp_coef_if_not_ready,
-+				val, val < 0 || *rx_ready || LT_COEF_UPD_ANYTHING(val),
-+				MTIP_COEF_STAT_SLEEP_US, MTIP_COEF_STAT_TIMEOUT_US,
-+				false, phydev, rx_ready);
-+	if (val < 0)
-+		return val;
-+	if (*rx_ready) {
-+		phydev_dbg(phydev, "LP says its RX is ready\n");
-+		return 0;
-+	}
-+	if (err) {
-+		phydev_err(phydev,
-+			   "LP did not request coefficient updates; LP_COEF = 0x%x\n",
-+			   val);
-+		return err;
-+	}
-+
-+	upd->com1 = LT_COM1_X(val);
-+	upd->coz = LT_COZ_X(val);
-+	upd->cop1 = LT_COP1_X(val);
-+	upd->init = !!(val & LT_COEF_UPD_INIT);
-+	upd->preset = !!(val & LT_COEF_UPD_PRESET);
-+	c72_coef_update_print(upd, upd_buf);
-+
-+	if ((upd->com1 || upd->coz || upd->cop1) + upd->init + upd->preset > 1) {
-+		phydev_warn(phydev, "Ignoring illegal request: %s (LP_COEF = 0x%x)\n",
-+			    upd_buf, val);
-+		return 0;
-+	}
-+
-+	err = mtip_c72_process_request(phydev, upd, &stat);
-+	if (err)
-+		return err;
-+
-+	c72_coef_status_print(&stat, stat_buf);
-+	phydev_dbg(phydev, "Received update: %s, responded with status: %s\n",
-+		   upd_buf, stat_buf);
-+
-+	err = mtip_modify_lt(phydev, LT_LD_STAT, LT_COEF_STAT_MASK,
-+			     LT_COM1(stat.com1) | LT_COZ(stat.coz) |
-+			     LT_COP1(stat.cop1));
-+	if (err < 0)
-+		return err;
-+
-+	err = read_poll_timeout(mtip_read_lt, val,
-+				val < 0 || LT_COEF_UPD_NOTHING(val),
-+				MTIP_COEF_STAT_SLEEP_US, MTIP_COEF_STAT_TIMEOUT_US,
-+				false, phydev, LT_LP_COEF);
-+	if (val < 0)
-+		return val;
-+	if (err) {
-+		phydev_err(phydev, "LP did not revert to HOLD; LP_COEF = 0x%x\n",
-+			   val);
-+		return err;
-+	}
-+
-+	err = mtip_modify_lt(phydev, LT_LD_STAT, LT_COEF_STAT_MASK,
-+			     LT_COM1(COEF_STAT_NOT_UPDATED) |
-+			     LT_COZ(COEF_STAT_NOT_UPDATED) |
-+			     LT_COP1(COEF_STAT_NOT_UPDATED));
-+	if (err < 0)
-+		return err;
-+
-+	return 0;
-+}
-+
-+static int mtip_local_tx_lt_done(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	mutex_lock(&priv->lt_lock);
-+
-+	priv->local_tx_lt_done = true;
-+
-+	err = mtip_finalize_lt(phydev);
-+
-+	mutex_unlock(&priv->lt_lock);
-+
-+	return err;
-+}
-+
-+static int mtip_remote_tx_lt_done(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	mutex_lock(&priv->lt_lock);
-+
-+	priv->remote_tx_lt_done = true;
-+
-+	err = mtip_finalize_lt(phydev);
-+
-+	mutex_unlock(&priv->lt_lock);
-+
-+	return err;
-+}
-+
-+/* This is our hardware-based 500 ms timer for the link training */
-+static bool mtip_lt_in_progress(struct phy_device *phydev)
-+{
-+	int val;
-+
-+	val = mtip_read_lt(phydev, LT_STAT);
-+	if (val < 0)
-+		return false;
-+
-+	return !!(val & LT_STAT_IN_PROGRESS);
-+}
-+
-+/* Make adjustments to the local TX according to link partner requests,
-+ * so that its RX improves
-+ */
-+static void mtip_local_tx_lt_work(struct kthread_work *work)
-+{
-+	struct mtip_lt_work *lt_work = container_of(work, struct mtip_lt_work,
-+						    work);
-+	struct phy_device *phydev = lt_work->phydev;
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = mtip_lt_frame_lock(phydev);
-+	if (err) {
-+		phydev_err(phydev,
-+			   "Failed to acquire training frame delineation: %pe\n",
-+			   ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	while (READ_ONCE(priv->lt_enabled)) {
-+		struct c72_coef_update upd = {};
-+		bool rx_ready;
-+
-+		if (!mtip_lt_in_progress(phydev)) {
-+			phydev_err(phydev, "Local TX LT timed out\n");
-+			break;
-+		}
-+
-+		err = mtip_rx_c72_coef_update(phydev, &upd, &rx_ready);
-+		if (err)
-+			goto out;
-+
-+		if (rx_ready) {
-+			err = mtip_local_tx_lt_done(phydev);
-+			if (err) {
-+				phydev_err(phydev, "Failed to finalize local LT: %pe\n",
-+					   ERR_PTR(err));
-+				goto out;
-+			}
-+			break;
-+		}
-+	}
-+
-+out:
-+	if (err && READ_ONCE(priv->lt_enabled))
-+		mtip_an_restart_from_lt(phydev);
-+
-+	kfree(lt_work);
-+}
-+
-+/* Train the link partner TX, so that the local RX quality improves */
-+static void mtip_remote_tx_lt_work(struct kthread_work *work)
-+{
-+	struct mtip_lt_work *lt_work = container_of(work, struct mtip_lt_work,
-+						    work);
-+	struct phy_device *phydev = lt_work->phydev;
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = mtip_lt_frame_lock(phydev);
-+	if (err) {
-+		phydev_err(phydev,
-+			   "Failed to acquire training frame delineation: %pe\n",
-+			   ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	while (true) {
-+		struct c72_coef_status status = {};
-+		union phy_configure_opts opts = {
-+			.xgkr = {
-+				.type = XGKR_CONFIGURE_REMOTE_TX,
-+			},
-+		};
-+
-+		if (!READ_ONCE(priv->lt_enabled))
-+			goto out;
-+
-+		if (!mtip_lt_in_progress(phydev)) {
-+			phydev_err(phydev, "Remote TX LT timed out\n");
-+			goto out;
-+		}
-+
-+		err = phy_configure(priv->serdes, &opts);
-+		if (err) {
-+			phydev_err(phydev,
-+				   "Failed to get remote TX training request from SerDes: %pe\n",
-+				   ERR_PTR(err));
-+			goto out;
-+		}
-+
-+		if (opts.xgkr.remote_tx.rx_ready)
-+			break;
-+
-+		err = mtip_tx_c72_coef_update(phydev, &opts.xgkr.remote_tx.update,
-+					      &status);
-+		if (opts.xgkr.remote_tx.cb)
-+			opts.xgkr.remote_tx.cb(opts.xgkr.remote_tx.cb_priv, err,
-+					       opts.xgkr.remote_tx.update,
-+					       status);
-+		if (err)
-+			goto out;
-+	}
-+
-+	/* Let the link partner know we're done */
-+	err = mtip_modify_lt(phydev, LT_LD_STAT, LT_COEF_STAT_RX_READY,
-+			     LT_COEF_STAT_RX_READY);
-+	if (err < 0) {
-+		phydev_err(phydev, "Failed to update LT_LD_STAT: %pe\n",
-+			   ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	err = mtip_remote_tx_lt_done(phydev);
-+	if (err) {
-+		phydev_err(phydev, "Failed to finalize remote LT: %pe\n",
-+			   ERR_PTR(err));
-+		goto out;
-+	}
-+
-+out:
-+	if (err && READ_ONCE(priv->lt_enabled))
-+		mtip_an_restart_from_lt(phydev);
-+
-+	kfree(lt_work);
-+}
-+
-+static int mtip_start_lt(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	struct mtip_backplane *priv = phydev->priv;
-+	struct mtip_lt_work *remote_tx_lt_work;
-+	struct mtip_lt_work *local_tx_lt_work;
-+	int err;
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	local_tx_lt_work = kzalloc(sizeof(*local_tx_lt_work), GFP_KERNEL);
-+	if (!local_tx_lt_work) {
-+		err = -ENOMEM;
-+		goto out;
-+	}
-+
-+	remote_tx_lt_work = kzalloc(sizeof(*remote_tx_lt_work), GFP_KERNEL);
-+	if (!remote_tx_lt_work) {
-+		err = -ENOMEM;
-+		goto out_free_local_tx_lt;
-+	}
-+
-+	err = mtip_reset_lt(phydev);
-+	if (err)
-+		goto out_free_remote_tx_lt;
-+
-+	err = mtip_restart_lt(phydev, true);
-+	if (err)
-+		goto out_free_remote_tx_lt;
-+
-+	priv->local_tx_lt_done = false;
-+	priv->remote_tx_lt_done = false;
-+	WRITE_ONCE(priv->lt_enabled, true);
-+
-+	local_tx_lt_work->phydev = phydev;
-+	kthread_init_work(&local_tx_lt_work->work, mtip_local_tx_lt_work);
-+	kthread_queue_work(priv->local_tx_lt_worker, &local_tx_lt_work->work);
-+
-+	remote_tx_lt_work->phydev = phydev;
-+	kthread_init_work(&remote_tx_lt_work->work, mtip_remote_tx_lt_work);
-+	kthread_queue_work(priv->remote_tx_lt_worker, &remote_tx_lt_work->work);
-+
-+	phydev_dbg(phydev, "Link training enabled\n");
-+
-+	return 0;
-+
-+out_free_remote_tx_lt:
-+	kfree(remote_tx_lt_work);
-+out_free_local_tx_lt:
-+	kfree(local_tx_lt_work);
-+out:
-+	return err;
-+}
-+
-+static void mtip_update_link_latch(struct phy_device *phydev,
-+				   bool cdr_locked, bool phy_los,
-+				   bool an_complete, bool pcs_lstat)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	/* Update irqpoll->link if true, or if false
-+	 * and mtip_read_status() saw that already.
-+	 */
-+	if (irqpoll->link || irqpoll->link_ack) {
-+		irqpoll->link = phy_los && cdr_locked && an_complete && pcs_lstat;
-+		irqpoll->link_ack = false;
-+	}
-+
-+	phydev_dbg(phydev, "PCS link%s: %d, PHY LOS: %d, CDR locked: %d, AN complete: %d\n",
-+		   priv->link_mode_resolved ? "" : " (ignored)",
-+		   pcs_lstat, phy_los, cdr_locked, an_complete);
-+}
-+
-+static bool mtip_cached_an_complete(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	return !!(irqpoll->old_an_stat & MDIO_AN_STAT1_COMPLETE);
-+}
-+
-+static bool mtip_read_link_unlatch(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	bool old_link = irqpoll->link;
-+
-+	lockdep_assert_held(&irqpoll->lock);
-+
-+	/* A change to the link status may have occurred while a link
-+	 * loss was latched, so update it again after reading it
-+	 */
-+	irqpoll->link = !!(irqpoll->old_an_stat & MDIO_STAT1_LSTATUS) &&
-+			!!(irqpoll->old_an_stat & MDIO_AN_STAT1_COMPLETE) &&
-+			!!(irqpoll->old_pcs_stat & MDIO_STAT1_LSTATUS) &&
-+			irqpoll->cdr_locked;
-+	irqpoll->link_ack = true;
-+
-+	return old_link;
-+}
-+
-+static u16 mtip_expected_bp_eth_stat(enum ethtool_link_mode_bit_indices link_mode)
-+{
-+	switch (link_mode) {
-+	case ETHTOOL_LINK_MODE_1000baseKX_Full_BIT:
-+		return BP_ETH_STAT_ALWAYS_1 | BP_ETH_STAT_1GKX;
-+	case ETHTOOL_LINK_MODE_10000baseKR_Full_BIT:
-+		return BP_ETH_STAT_ALWAYS_1 | BP_ETH_STAT_10GKR;
-+	case ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT:
-+		return BP_ETH_STAT_ALWAYS_1 | BP_ETH_STAT_40GKR4;
-+	case ETHTOOL_LINK_MODE_25000baseKR_Full_BIT:
-+		return BP_ETH_STAT_ALWAYS_1 | BP_ETH_STAT_25GKR;
-+	case ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT:
-+		return BP_ETH_STAT_ALWAYS_1 | BP_ETH_STAT_100GKR4;
-+	default:
-+		return 0;
-+	}
-+}
-+
-+static int mtip_wait_bp_eth_stat(struct phy_device *phydev,
-+				 enum ethtool_link_mode_bit_indices link_mode)
-+{
-+	u16 expected = mtip_expected_bp_eth_stat(link_mode);
-+	int err, val;
-+
-+	err = read_poll_timeout(mtip_read_an, val,
-+				val < 0 || val == expected,
-+				MTIP_BP_ETH_STAT_SLEEP_US,
-+				MTIP_BP_ETH_STAT_TIMEOUT_US,
-+				false, phydev, AN_BP_ETH_STAT);
-+	if (val < 0)
-+		return val;
-+
-+	if (err) {
-+		phydev_warn(phydev,
-+			    "BP_ETH_STAT did not become 0x%x to indicate resolved link mode %s, instead it shows 0x%x%s\n",
-+			    expected, ethtool_link_mode_str(link_mode), val,
-+			    val == BP_ETH_STAT_PARALLEL_DETECT ? " (parallel detection)" : "");
-+		/* It seems less consequential to ignore the error
-+		 * than to restart autoneg...
-+		 */
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtip_c73_page_received(struct phy_device *phydev, bool *restart_an)
-+{
-+	__ETHTOOL_DECLARE_LINK_MODE_MASK(lp_advertising);
-+	__ETHTOOL_DECLARE_LINK_MODE_MASK(advertising);
-+	enum ethtool_link_mode_bit_indices resolved;
-+	struct mtip_backplane *priv = phydev->priv;
-+	__ETHTOOL_DECLARE_LINK_MODE_MASK(common);
-+	u64 base_page, lpa;
-+	int err;
-+
-+	err = mtip_state_reset(phydev);
-+	if (err)
-+		return err;
-+
-+	err = mtip_read_adv(phydev, &base_page);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_read_lpa(phydev, &lpa);
-+	if (err < 0)
-+		return err;
-+
-+	if (lpa & C73_BASE_PAGE_NP)
-+		phydev_warn(phydev, "Next Page exchange not implemented!\n");
-+
-+	mii_c73_mod_linkmode_lpa_t(advertising, base_page);
-+	mii_c73_mod_linkmode_lpa_t(lp_advertising, lpa);
-+	linkmode_and(common, advertising, lp_advertising);
-+
-+	err = linkmode_c73_priority_resolution(common, &resolved);
-+	if (err) {
-+		phydev_dbg(phydev, "C73 page received, no common link mode\n");
-+		return 0;
-+	}
-+
-+	err = mtip_wait_bp_eth_stat(phydev, resolved);
-+	if (err) {
-+		*restart_an = true;
-+		return 0;
-+	}
-+
-+	phydev_dbg(phydev,
-+		   "C73 page received, LD %04x:%04x:%04x, LP %04x:%04x:%04x, resolved link mode %s\n",
-+		   C73_ADV_2(base_page), C73_ADV_1(base_page), C73_ADV_0(base_page),
-+		   C73_ADV_2(lpa), C73_ADV_1(lpa), C73_ADV_0(lpa),
-+		   ethtool_link_mode_str(resolved));
-+
-+	err = phy_set_mode_ext(priv->serdes, PHY_MODE_ETHERNET_PHY, resolved);
-+	if (err) {
-+		phydev_err(phydev, "phy_set_mode_ext(%s) returned %pe\n",
-+			   ethtool_link_mode_str(resolved), ERR_PTR(err));
-+		return err;
-+	}
-+
-+	err = mtip_wait_for_cdr_lock(phydev);
-+	if (err)
-+		phydev_warn(phydev, "Failed to reacquire CDR lock after protocol change: %pe\n",
-+			    ERR_PTR(err));
-+
-+	if (link_mode_needs_training(resolved)) {
-+		err = mtip_start_lt(phydev);
-+		if (err)
-+			return err;
-+	} else {
-+		/* Allow the datapath to come up without link training */
-+		err = mtip_modify_lt(phydev, LT_STAT, LT_STAT_RX_STATUS,
-+				     LT_STAT_RX_STATUS);
-+		if (err < 0)
-+			return err;
-+	}
-+
-+	priv->link_mode = resolved;
-+	priv->link_mode_resolved = true;
-+
-+	return 0;
-+}
-+
-+static void mtip_c73_remote_fault(struct phy_device *phydev, bool fault)
-+{
-+	phydev_err(phydev, "Remote fault: %d\n", fault);
-+}
-+
-+static void mtip_irqpoll_work(struct work_struct *work)
-+{
-+	struct mtip_irqpoll *irqpoll = container_of(work, struct mtip_irqpoll, work.work);
-+	struct phy_device *phydev = irqpoll->phydev;
-+	struct mtip_backplane *priv = phydev->priv;
-+	bool restart_an = false;
-+	int val, err = 0;
-+	int pcs_stat = 0;
-+	bool cdr_locked;
-+
-+	/* Check for AN restart requests from the link training kthreads */
-+	mutex_lock(&priv->an_restart_lock);
-+	if (priv->an_restart_pending) {
-+		restart_an = true;
-+		priv->an_restart_pending = false;
-+	}
-+	mutex_unlock(&priv->an_restart_lock);
-+
-+	/* Then enter the irqpoll logic per se
-+	 * (PCS MDIO_STAT1, AN/LT MDIO_STAT1 and CDR lock)
-+	 */
-+	mutex_lock(&irqpoll->lock);
-+
-+	err = phy_check_cdr_lock(priv->serdes, &cdr_locked);
-+	if (err)
-+		goto out_unlock;
-+
-+	if (priv->link_mode_resolved) {
-+		pcs_stat = mtip_read_pcs(phydev, MDIO_STAT1);
-+		if (pcs_stat < 0) {
-+			err = pcs_stat;
-+			goto out_unlock;
-+		}
-+	}
-+
-+	val = mtip_read_an(phydev, AN_STAT);
-+	if (val < 0) {
-+		err = val;
-+		goto out_unlock;
-+	}
-+
-+	if ((irqpoll->cdr_locked != cdr_locked) ||
-+	    ((irqpoll->old_an_stat ^ val) & (MDIO_STAT1_LSTATUS |
-+					     MDIO_AN_STAT1_COMPLETE)) ||
-+	    ((irqpoll->old_pcs_stat ^ pcs_stat) & MDIO_STAT1_LSTATUS)) {
-+		mtip_update_link_latch(phydev, cdr_locked,
-+				       !!(val & MDIO_STAT1_LSTATUS),
-+				       !!(val & MDIO_AN_STAT1_COMPLETE),
-+				       !!(pcs_stat & MDIO_STAT1_LSTATUS));
-+	}
-+
-+	/* The manual says that this bit is latched high, but experimentation
-+	 * shows that reads will not unlatch it while link training is in
-+	 * progress; only reading it after link training has completed will.
-+	 * Only act upon bit transitions, to avoid processing a false "page
-+	 * received" event during link training.
-+	 */
-+	if (((irqpoll->old_an_stat ^ val) & MDIO_AN_STAT1_PAGE) &&
-+	    (val & MDIO_AN_STAT1_PAGE)) {
-+		err = mtip_c73_page_received(phydev, &restart_an);
-+		if (err)
-+			goto out_unlock;
-+	}
-+
-+	if ((irqpoll->old_an_stat ^ val) & MDIO_AN_STAT1_RFAULT)
-+		mtip_c73_remote_fault(phydev, val & MDIO_AN_STAT1_RFAULT);
-+
-+	/* Checks that result in AN restart should go at the end */
-+
-+	/* Make sure the lane goes back into DME page exchange mode
-+	 * after a link drop
-+	 */
-+	if (priv->link_mode_resolved &&
-+	    (irqpoll->old_pcs_stat & MDIO_STAT1_LSTATUS) &&
-+	    !(pcs_stat & MDIO_STAT1_LSTATUS)) {
-+		phydev_dbg(phydev, "PCS link dropped, restarting autoneg\n");
-+		restart_an = true;
-+	}
-+
-+	/* Paranoid workaround for undetermined issue */
-+	if (!priv->link_mode_resolved && (val & MDIO_AN_STAT1_COMPLETE) &&
-+	    priv->an_enabled && time_after(jiffies, priv->last_an_restart +
-+					   msecs_to_jiffies(MTIP_AN_TIMEOUT_MS))) {
-+		phydev_err(phydev,
-+			   "Hardware says AN has completed, but we never saw a base page, and that's bogus\n");
-+		restart_an = true;
-+	}
-+
-+	if (restart_an) {
-+		err = mtip_an_restart(phydev);
-+		if (err)
-+			goto out_unlock;
-+
-+		/* don't overwrite what was set by mtip_unlatch_an_stat() */
-+		goto ignore_an_and_pcs_stat;
-+	}
-+
-+	irqpoll->old_an_stat = val;
-+	irqpoll->old_pcs_stat = pcs_stat;
-+ignore_an_and_pcs_stat:
-+	irqpoll->cdr_locked = cdr_locked;
-+
-+out_unlock:
-+	mutex_unlock(&irqpoll->lock);
-+
-+	if (err) {
-+		phy_error(phydev);
-+		return;
-+	}
-+
-+	schedule_delayed_work(&irqpoll->work, IRQPOLL_INTERVAL);
-+}
-+
-+static int mtip_parse_dt(struct phy_device *phydev)
-+{
-+	struct device_node *dn = phydev->mdio.dev.of_node;
-+	struct mtip_backplane *priv = phydev->priv;
-+	struct device_node *pcs_node;
-+
-+	priv->serdes = of_phy_get(dn, NULL);
-+	if (IS_ERR(priv->serdes))
-+		return PTR_ERR(priv->serdes);
-+
-+	pcs_node = of_parse_phandle(dn, "pcs-handle", 0);
-+	if (pcs_node) {
-+		if (!of_device_is_available(pcs_node)) {
-+			phydev_err(phydev, "pcs-handle node not available\n");
-+			of_node_put(pcs_node);
-+			return -ENODEV;
-+		}
-+
-+		priv->pcs = of_mdio_find_device(pcs_node);
-+		of_node_put(pcs_node);
-+		if (!priv->pcs) {
-+			phydev_err(phydev, "missing PCS device\n");
-+			return -EPROBE_DEFER;
-+		}
-+	} else {
-+		priv->pcs = &phydev->mdio;
-+	}
-+
-+	return 0;
-+}
-+
-+static bool mtip_is_lx2160a(struct phy_device *phydev)
-+{
-+	return of_device_is_compatible(phydev->mdio.dev.of_node,
-+				       "fsl,lx2160a-backplane-anlt");
-+}
-+
-+static int mtip_lx2160a_match_phy_device(struct phy_device *phydev)
-+{
-+	return mtip_is_lx2160a(phydev);
-+}
-+
-+static void mtip_irqpoll_init(struct phy_device *phydev,
-+			      struct mtip_irqpoll *irqpoll)
-+{
-+	mutex_init(&irqpoll->lock);
-+	INIT_DELAYED_WORK(&irqpoll->work, mtip_irqpoll_work);
-+	irqpoll->phydev = phydev;
-+}
-+
-+static void mtip_start_irqpoll(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+
-+	schedule_delayed_work(&irqpoll->work, 0);
-+}
-+
-+static void mtip_stop_irqpoll(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+
-+	cancel_delayed_work_sync(&irqpoll->work);
-+}
-+
-+static int mtip_probe(struct phy_device *phydev)
-+{
-+	struct device *dev = &phydev->mdio.dev;
-+	struct mtip_backplane *priv;
-+	int err;
-+
-+	priv = kzalloc(sizeof(*priv), GFP_KERNEL);
-+	if (!priv) {
-+		err = -ENOMEM;
-+		goto out;
-+	}
-+
-+	phydev->port = PORT_DA;
-+
-+	if (mtip_is_lx2160a(phydev)) {
-+		priv->an_regs = mtip_lx2160a_an_regs;
-+		priv->lt_regs = mtip_lx2160a_lt_regs;
-+		priv->lt_mmd = MDIO_MMD_AN;
-+	} /* else TODO */
-+
-+	mtip_irqpoll_init(phydev, &priv->irqpoll);
-+	mutex_init(&priv->an_restart_lock);
-+	mutex_init(&priv->lt_lock);
-+	phydev->priv = priv;
-+
-+	priv->local_tx_lt_worker = kthread_create_worker(0, "%s_local_tx_lt",
-+							 dev_name(dev));
-+	if (IS_ERR(priv->local_tx_lt_worker)) {
-+		err = PTR_ERR(priv->local_tx_lt_worker);
-+		goto out_free_priv;
-+	}
-+
-+	priv->remote_tx_lt_worker = kthread_create_worker(0, "%s_remote_tx_lt",
-+							  dev_name(dev));
-+	if (IS_ERR(priv->remote_tx_lt_worker)) {
-+		err = PTR_ERR(priv->remote_tx_lt_worker);
-+		goto out_destroy_local_tx_lt;
-+	}
-+
-+	err = mtip_parse_dt(phydev);
-+	if (err)
-+		goto out_destroy_remote_tx_lt;
-+
-+	err = phy_init(priv->serdes);
-+	if (err) {
-+		phydev_err(phydev, "Failed to initialize SerDes: %pe\n",
-+			   ERR_PTR(err));
-+		goto out_put_phy;
-+	}
-+
-+	mtip_start_irqpoll(phydev);
-+
-+	return 0;
-+
-+out_put_phy:
-+	of_phy_put(priv->serdes);
-+out_destroy_remote_tx_lt:
-+	kthread_destroy_worker(priv->remote_tx_lt_worker);
-+out_destroy_local_tx_lt:
-+	kthread_destroy_worker(priv->local_tx_lt_worker);
-+out_free_priv:
-+	kfree(priv);
-+out:
-+	return err;
-+}
-+
-+static void mtip_remove(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+
-+	mtip_stop_irqpoll(phydev);
-+	phy_exit(priv->serdes);
-+	of_phy_put(priv->serdes);
-+	kthread_destroy_worker(priv->remote_tx_lt_worker);
-+	kthread_destroy_worker(priv->local_tx_lt_worker);
-+	kfree(priv);
-+}
-+
-+static int mtip_config_aneg(struct phy_device *phydev)
-+{
-+	u16 mask = MDIO_AN_CTRL1_ENABLE | MDIO_AN_CTRL1_RESTART;
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	mutex_lock(&irqpoll->lock);
-+
-+	/* We support anything */
-+	phydev->master_slave_get = phydev->master_slave_set;
-+
-+	/* Only allow advertising what this PHY supports. The device tree
-+	 * property "max-speed" may further limit the speed and thus the
-+	 * link modes. Similar to genphy_config_advert().
-+	 */
-+	linkmode_and(phydev->advertising, phydev->advertising,
-+		     phydev->supported);
-+
-+	if (phydev->autoneg == AUTONEG_ENABLE) {
-+		err = mtip_an_restart(phydev);
-+		if (err)
-+			goto out_unlock;
-+
-+		priv->an_enabled = true;
-+	} else {
-+		err = mtip_modify_an(phydev, AN_CTRL, mask, 0);
-+		if (err < 0)
-+			goto out_unlock;
-+
-+		priv->an_enabled = false;
-+	}
-+
-+out_unlock:
-+	mutex_unlock(&irqpoll->lock);
-+
-+	return err;
-+}
-+
-+static int mtip_resolve_aneg_linkmode(struct phy_device *phydev)
-+{
-+	u64 base_page;
-+	int err;
-+
-+	linkmode_zero(phydev->lp_advertising);
-+
-+	err = mtip_read_lpa(phydev, &base_page);
-+	if (err)
-+		return err;
-+
-+	mii_c73_mod_linkmode_lpa_t(phydev->lp_advertising, base_page);
-+	phy_resolve_aneg_linkmode(phydev);
-+
-+	return 0;
-+}
-+
-+static int mtip_read_status(struct phy_device *phydev)
-+{
-+	struct mtip_irqpoll *irqpoll = phydev_to_irqpoll(phydev);
-+	u64 base_page;
-+	int err = 0;
-+
-+	mutex_lock(&irqpoll->lock);
-+
-+	err = mtip_read_adv(phydev, &base_page);
-+	if (err)
-+		goto out_unlock;
-+
-+	if (C73_BASE_PAGE_TRANSMITTED_NONCE_X(base_page) & BIT(4))
-+		phydev->master_slave_state = MASTER_SLAVE_STATE_MASTER;
-+	else
-+		phydev->master_slave_state = MASTER_SLAVE_STATE_SLAVE;
-+
-+	phydev->speed = SPEED_UNKNOWN;
-+	phydev->duplex = DUPLEX_UNKNOWN;
-+	phydev->pause = 0;
-+	phydev->asym_pause = 0;
-+
-+	phydev->link = mtip_read_link_unlatch(phydev);
-+	if (!phydev->link)
-+		goto out_unlock;
-+
-+	if (phydev->autoneg == AUTONEG_ENABLE) {
-+		phydev->autoneg_complete = mtip_cached_an_complete(phydev);
-+
-+		if (phydev->autoneg_complete)
-+			err = mtip_resolve_aneg_linkmode(phydev);
-+	}
-+
-+out_unlock:
-+	mutex_unlock(&irqpoll->lock);
-+
-+	return err;
-+}
-+
-+static int mtip_suspend(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = phy_power_off(priv->serdes);
-+	if (err) {
-+		phydev_err(phydev, "Failed to power off SerDes: %pe\n",
-+			   ERR_PTR(err));
-+		return err;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtip_resume(struct phy_device *phydev)
-+{
-+	struct mtip_backplane *priv = phydev->priv;
-+	int err;
-+
-+	err = phy_power_on(priv->serdes);
-+	if (err) {
-+		phydev_err(phydev, "Failed to power on SerDes: %pe\n",
-+			   ERR_PTR(err));
-+		return err;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtip_config_init(struct phy_device *phydev)
-+{
-+	int err;
-+
-+	err = mtip_reset_an(phydev);
-+	if (err < 0)
-+		return err;
-+
-+	err = mtip_reset_pcs(phydev);
-+	if (err < 0)
-+		return err;
-+
-+	return 0;
-+}
-+
-+static struct phy_driver mtip_backplane_driver[] = {
-+	{
-+		.match_phy_device	= mtip_lx2160a_match_phy_device,
-+		.flags			= PHY_IS_INTERNAL,
-+		.name			= "MTIP AN/LT",
-+		.probe			= mtip_probe,
-+		.remove			= mtip_remove,
-+		.get_features		= mtip_lx2160a_get_features,
-+		.suspend		= mtip_suspend,
-+		.resume			= mtip_resume,
-+		.config_aneg		= mtip_config_aneg,
-+		.read_status		= mtip_read_status,
-+		.config_init		= mtip_config_init,
-+	},
-+};
-+
-+static const struct of_device_id __maybe_unused mtip_backplane_of_match[] = {
-+	{ .compatible = "fsl,lx2160a-backplane-anlt" },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, mtip_backplane_of_match);
-+
-+module_phy_driver(mtip_backplane_driver);
-+
-+MODULE_AUTHOR("Vladimir Oltean <vladimir.oltean@nxp.com>");
-+MODULE_DESCRIPTION("MTIP Backplane PHY driver");
-+MODULE_LICENSE("GPL");
+ static inline int phy_get_bus_width(struct phy *phy)
+ {
+ 	return -ENOSYS;
 -- 
 2.34.1
 
