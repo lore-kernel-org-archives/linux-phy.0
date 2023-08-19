@@ -4,92 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A08EE49A8
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Aug 2023 08:36:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20B0FEE49A5
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Aug 2023 11:52:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1n+fhbzuFEuA8bokRwUFK7VUYU/POF2+Rqize3K1Ttc=; b=zkmHxnS/iOlUXb
-	hzUZLYiyAz0am/b6Cz8nGGF0NN+RYIej0FVM3iuVC1aLojgRhtlYwS1D295wa+Cc9LTvfShoUS81E
-	xHRZg2+JDWuArKXhc/bMPGnkFB88PmiNzlFgFmoyXyEU65ki2kWWcbbHfmGgVOTnFzZOAuUUu/1Pd
-	CX71dGZma7TSh1ZTPpOGryYFksLWigteHy+zCRQWwRIh+2/bIVPxF8ZTANlI6AS3owXhebZxU7oTh
-	olo8rb7fpuNJBtrZmYwwHDmhl8mYODe/fD8On4Z34VMD3P6mPadntaVkVAR/x4X5pwkf3WKJTbNEb
-	BUGRfgsdyBV/cAAwqm4Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BVRbcPjyl+TnI2zBvzJckbkQlwlST9Vtk9L9L3nJF7o=; b=MfZeL8T8x2Mm6b
+	s+Fwg1KVBLLxjLNQuMNus/aBve5xUUKMbI+Bh8thOC43Vz1reqTVy9ggvDeRBS1VyuBM5FS8mEoCx
+	QYar2N4C4+1gB5vpajgJoKtRWSbc+sj6WwHXkRPTyZ1hHPP7S8IxPKS2HuXdEPccfpro3YmiEdFG1
+	GWLbatpMqV45r3LtMm7CsIC7izErVin2M0t58ML2HYXmqMpQ+kqUdxl1rujN/2qqZldHKTyrefmhD
+	MffZkNnKPYNq09wGO2Qrkca8oXCrvcOCXTUc3YQtKxWztTFtc+H7ErI+yObO6nTaf/ozY0Dp/XoiV
+	8+SI+IJZalehibQki3YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXHRR-00AaDr-2p;
-	Sat, 19 Aug 2023 08:36:17 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1qXKVR-00AsEp-2V;
+	Sat, 19 Aug 2023 11:52:37 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXHRO-00AaDB-2r
+	id 1qXKVP-00AsDM-1l
 	for linux-phy@lists.infradead.org;
-	Sat, 19 Aug 2023 08:36:16 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-525bd0b2b48so2156299a12.0
-        for <linux-phy@lists.infradead.org>; Sat, 19 Aug 2023 01:36:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692434173; x=1693038973;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=BDBtWmYqzi/9lap98sdHnoiAOUS5fWqLSgUpQ5yHcg8=;
-        b=V+9qdLiaFCVpY1Tkm+g3WJCnO8uHFCMIGwQrtu3UbD/XWMAsOhz0XSUdYqsC9f3xSE
-         qLC4uFsqBGXKf/cLmfRoLDBqXoQ5awd0UZc4+YyYGFvj8ce6fD69eRijb4NmqXPmK3mz
-         vgWA6Fsv4Qr1M83ci+w1hbCaDBeN+lcxxZ+u6hUXrLDgCIqKWchmy/ofXBjPtPbvJb9t
-         jKwzsf3PRcK6zMTAF5newTIktNR9RHokbZLYjDoMai0U1GFa/oNyhApEhjuBvU/VSqM5
-         3f7J6iHvizfaI2a7fBkxYlWR1v9Xamid89TTJuFX+Z1ptW9IWUE4hmEZb9SXR3smKB4w
-         Rh7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692434173; x=1693038973;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=BDBtWmYqzi/9lap98sdHnoiAOUS5fWqLSgUpQ5yHcg8=;
-        b=B7m/yzdCn20ICiKTrwvJdqkPssEaU24+wA5BzbUAKpPaHPpAwV2WIta4nq8o0z6jEO
-         g1rhm9OTV6wuiEcopa7YdN9Ay4Sb/IV3v11/0MBUnjPIsz+kbrpTIrPF0JS1dG8rmVA0
-         ig/o5RcPzuyJVePr1lPO+zuolIBRuFOYZYv+Jb1z9QEZ00vKzr5OlXQsICC7jTevEBX1
-         41W8uRnKKlSmh8ov1LJascHeQ2wH7TwpXz06Wu/4tB9FpyEQsuD2VKiyAUkUdanizH+1
-         4D1VAIhoiaFFIyh+3O1SanKARTIVh9jPgdA1HUFURDO6Lid6qYYGulvKvvJ3mAXDGgNG
-         wzLA==
-X-Gm-Message-State: AOJu0YzGUJNmEDEH3MElSWa4B9LEHaWa8SO+vZer9vA0qEz4e+CarN0i
-	+CMevdHZU/wV9GXXjiSo845n/w==
-X-Google-Smtp-Source: AGHT+IG9aSDFMBTYcEsiQxovHMkUD1SuVY1yIm8Qi0ivlYlrZ6iAac9z2z70JTra3Ik1+KkdydzjMw==
-X-Received: by 2002:a17:906:ef90:b0:99b:f3f3:e412 with SMTP id ze16-20020a170906ef9000b0099bf3f3e412mr936414ejb.52.1692434172926;
-        Sat, 19 Aug 2023 01:36:12 -0700 (PDT)
-Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id c6-20020a170906170600b0099e05fb8f95sm2319361eje.137.2023.08.19.01.36.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 19 Aug 2023 01:36:12 -0700 (PDT)
-Message-ID: <de962afe-719b-01cd-b9ee-1868c7da9105@linaro.org>
-Date: Sat, 19 Aug 2023 10:36:10 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH 8/8] arm64: dts: exynos: Enable USB support on E850-96
- board
-Content-Language: en-US
-To: Sam Protsenko <semen.protsenko@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: JaeHun Jung <jh0801.jung@samsung.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Marc Kleine-Budde
- <mkl@pengutronix.de>, Heiko Stuebner <heiko@sntech.de>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-References: <20230819031731.22618-1-semen.protsenko@linaro.org>
- <20230819031731.22618-9-semen.protsenko@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230819031731.22618-9-semen.protsenko@linaro.org>
+	Sat, 19 Aug 2023 11:52:36 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37JBqT7B027316;
+	Sat, 19 Aug 2023 11:52:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id; s=qcppdkim1;
+ bh=1pCp/9JG/z/JZVXi97z7gosuH4C0kGyQuydaqAd62Oo=;
+ b=MdFdnQmco3deQCqaPGJMP0KTsAJLqIu/Op/qZCddoQpk0JhbDjPPW8Ki/aDsTdrbqikv
+ Vkr7yLz5gvy4NcWZ/nQzH8WhWp9kJtBBGhVbnMnzeaqYCZ8sJ88yxxeXqrCNarAd189C
+ 2O0V7bmvkUydZ2GT4Gfv1lV4DUCRIwUiWYtdSMnwPTlK1BakAQI0IHCw6VaoqvdlkKC/
+ fOCHS9zYPKIj1BgmmwCyzvypIQfp1uC4CDX54cRnBoiVE/WuRdudkz56KW5M5UXk3XKz
+ cIc/1KBgIz2Qfo/13AOFR4Pl7MGhFlpBL1uv/oNA9qRLA9Q04RUkS6PjusIxqtmVsSuq Kw== 
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sjmregjvp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 19 Aug 2023 11:52:29 +0000
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 37JBqQue014047;
+	Sat, 19 Aug 2023 11:52:26 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3sjptk9pvt-1;
+	Sat, 19 Aug 2023 11:52:26 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 37JBqQTm014041;
+	Sat, 19 Aug 2023 11:52:26 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 37JBqPmW014039;
+	Sat, 19 Aug 2023 11:52:26 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 399DA601034; Sat, 19 Aug 2023 17:22:25 +0530 (+0530)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+        Nitin Rawat <quic_nitirawa@quicinc.com>
+Subject: [PATCH V2 0/2] Add Phy Configuration support for SC7280
+Date: Sat, 19 Aug 2023 17:22:21 +0530
+Message-Id: <20230819115223.9479-1-quic_nitirawa@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: zuOAx2yDUIEre9msHi9winFo-UCY2oFn
+X-Proofpoint-ORIG-GUID: zuOAx2yDUIEre9msHi9winFo-UCY2oFn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-19_12,2023-08-18_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ mlxscore=0 lowpriorityscore=0 impostorscore=0 mlxlogscore=857
+ malwarescore=0 adultscore=0 bulkscore=0 clxscore=1011 spamscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308190113
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230819_013614_961147_7217CFCF 
-X-CRM114-Status: GOOD (  21.31  )
+X-CRM114-CacheID: sfid-20230819_045235_722297_913756F7 
+X-CRM114-Status: GOOD (  10.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,58 +95,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/08/2023 05:17, Sam Protsenko wrote:
-> The E850-96 board has a micro-USB socket and two USB 2.0 host sockets.
-> The USB role (host or peripheral) is selected automatically depending on
-> micro-USB cable attachment state:
->   - micro-USB cable is attached: USB device role
->   - micro-USB cable is detached: USB host role
-> 
-> USB can't act simultaneously as a device and a host, because Exynos850
-> SoC has only one USB controller and there are no external USB
-> controllers on the E850-96 board. So the USB switch chip (specifically
-> TS3USB221A) connects SoC USB lines either to micro-USB connector or to
-> USB hub chip (LAN9514), w.r.t. micro-USB cable attachment state.
-> 
-> When USB works in the host role, Ethernet capability becomes available
-> too, as LAN9514 chip (providing USB hub) also enables Ethernet PHY and
-> Ethernet MAC.
-> 
-> Dynamic role switching is done in gpio-usb-b-connector, using current
-> micro-USB VBUS line level as a trigger:
->   - VBUS=high: SoC USB lines are wired to micro-USB socket
->   - VBUS=low: SoC USB lines are wired to USB hub chip
-> 
-> In order to make USB host functional when the board is booted with
-> micro-USB cable disconnected, role-switch-default-mode = "host" is used.
-> 
-> One can look at E850-96 board schematics [1] to figure out how exactly
-> all related USB hardware connections and lines reflect into
-> corresponding device tree definitions.
-> 
-> As PMIC regulators are not implemented yet, we rely on USB LDOs being
-> already enabled in the bootloader, and a dummy regulator is provided to
-> "usbdrd" vdd nodes for now.
-> 
-> [1] https://www.96boards.org/documentation/consumer/e850-96b/hardware-docs/
-> 
-> Signed-off-by: Sam Protsenko <semen.protsenko@linaro.org>
-> ---
->  .../boot/dts/exynos/exynos850-e850-96.dts     | 58 +++++++++++++++++++
->  1 file changed, 58 insertions(+)
-> 
+This patch adds Phy configuration support for Qualcomm SC7280 SOC.
 
-This looks good. Please split the DTS patches from the patchset, so they
-won't be applied by Greg. Anyway, I finished pulling for this cycle, so
-this will have to wait till v6.6-rc1.
+Changes from V1:
+- Addressed dmitry's comment to align sc7280 register arrays in sorted order
+- Addressed konrad & vinod's comment to align phy compatible in sorted order
 
-Best regards,
-Krzysztof
+Nitin Rawat (2):
+  dt-bindings: phy: Add QMP UFS PHY comptible for SC7280
+  phy: qcom-qmp-ufs: Add Phy Configuration support for SC7280
+
+ .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |   2 +
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 142 ++++++++++++++++++
+ 2 files changed, 144 insertions(+)
+
+--
+2.17.1
 
 
 -- 
