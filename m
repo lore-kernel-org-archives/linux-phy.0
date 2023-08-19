@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D379CEE4981
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Aug 2023 07:11:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B4EEE4981
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Aug 2023 07:12:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NlpRMxZmCKaqcPZzAjq4g9rVmJZWEQaAGpdQDHOw5gA=; b=00KoLfMub50XGG
-	9A9yJFP6W7pdRHwigOE20nqD1mC1m14h9eWOEHBY6dO77oTCmTC+b5IcQ8Nb++ruPrCNBI+3VJUYZ
-	aFU7MmEvOEWAs6bj3T8UvZnRTBcsmk7JRXMfwXrmIK6myIGXsa04v/58ZDZqqKEUzwY22y/I6wa9A
-	HF3dFCgR8TAz9AwV8RqYB1sNEhAKUlgG+Nf14zxob9PLHcKSFXwupjnPyHJrVrL6ydZIbG0y3po3e
-	hgKHXMvH77ua4YfyYpurzjwAmAZunsWnFQFR0TS8b4i+VCrokLr7f42HW91JHY10huwcbTqpFL1a3
-	bbTrROqdGsf+PAn1n4fg==;
+	List-Owner; bh=t0ZmypmheJOpZPf31p0KZxnxL23AQRrS5OXi/in9qao=; b=Ik1Z8LXjAD/axb
+	MsKzjY5OknycM0iIfUGRA5j1s9E7g2kJENv4RSrjlyaRI3E1zj8IHeGkQxP/xVqhhK+J11bFR7NRe
+	Fbw6ZPXbddSO35CFN7/2wh4v3xC8oK6MBq5a5wwQ5U+2tWIXh+DOsCgkjmrtE882aKZxTAsby+OlA
+	d//JT2lwCYmNaJx6/XnwHv5nfDSdH/hTP+sCDtDWQDmUgj6zyqXLE4X3mJuF9kAEwL1C0ywmHZN1V
+	MAkmya9mrWCIB1BBAEYJOXpqBQ+7jN3pj5LuRgfGtbhrB6iclvziZ3NiHKqcpVSnBMgKBRAYe7iUR
+	7dcMtmgu0whholAvREIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXG7U-00AWY8-1p;
-	Sat, 19 Aug 2023 07:11:36 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1qXG8B-00AWe9-23;
+	Sat, 19 Aug 2023 07:12:19 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXG7R-00AWWY-0c
+	id 1qXG89-00AWc3-0N
 	for linux-phy@lists.infradead.org;
-	Sat, 19 Aug 2023 07:11:34 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-5298e43bb67so2155044a12.1
-        for <linux-phy@lists.infradead.org>; Sat, 19 Aug 2023 00:11:30 -0700 (PDT)
+	Sat, 19 Aug 2023 07:12:18 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-99bfcf4c814so209907666b.0
+        for <linux-phy@lists.infradead.org>; Sat, 19 Aug 2023 00:12:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692429089; x=1693033889;
+        d=linaro.org; s=google; t=1692429132; x=1693033932;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=L279B4ZpoigR6vHbrScae5IfezCXD2o2gXc9I6TXPuk=;
-        b=N3drhHWFU6Vq+CKRLcgT/87SrOFaM8PrFb/Kfyz6B/W59AVcQe/DMmy5HsQRfMTiMh
-         haWxFzMiAv66fhDKZL1+VURclCDrofaUMRs012XglMSD92oRDe8g1oDUnwluBaMqmCCy
-         tWZR2VGzNEqom0k/MEBwcUqCK1fJan7QSW6Sh8bG2OQHFyNXR6iHuLlCKTAWD0fjgLKl
-         9E7hwUCQDVWHzwbSrKzGCk4gzowqmIypwmyuvVhi9UpKtessM8Rsic4NpfXfqrb8nAT9
-         gqYMBDKsETYxIyaCesccq9nvfSMB9ZSd3yYiQbFyKJnjZaZX4KG9Alu9/1/Q0kV9r8xu
-         7B6A==
+        bh=cQY6WnQ/m8u0RegAANKfIYUYTzgv1vRq3DZ3ly5dbAc=;
+        b=hoyQJLUnCFxiJgpShvNrpr7ON1krFRmjhH8yBjPrQYeXnhfCwvq2ihXqH+8ZSQ2W88
+         oBp8WyPcfHljYOXM9Vq5iLSDOwh+nhDgCpw7X4uzIHP9oVcUA/INZ7KyT/iHNRu83mAO
+         q/WnbV71o4ipAcMtOS0SLibL2o11CXsFbU84tQfUZZkdNXqlXKJC+q+o/aPIbL7bD/UA
+         fAkdqoa0j/21HfqIUA0W8byKEJLYSLPclr2Kfv8GvX/3PWooQv2y+3g40CETnE/pF4rw
+         rTfidFQRMws5BZD3pwnI2rsIAmjtmfvp9JOBNNi/EPpIazWLX7ebZ5k0KdJvR7rBHVuq
+         6lVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692429089; x=1693033889;
+        d=1e100.net; s=20221208; t=1692429132; x=1693033932;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=L279B4ZpoigR6vHbrScae5IfezCXD2o2gXc9I6TXPuk=;
-        b=dWHc1jUEkxUl4ITpu2+k1xbMCIWbbAUxmI2DgtyxpPJlUo8fbUY90jlABQmR+7g6eo
-         rvae2IMiy4WfOU8f3c7jOV21W9EMNkn0aOe4OIl8nM6NYT6KwTRjYuMvX+Mp/vn+Jznt
-         SUyXGVXI4LoN5xsgpZlxWmuFjMLR1gPaMQlHV+Jp9dhExIJbKDqPYYGXl1XJ1BaROMmP
-         t1wydu6dDuSfuTDKyexhdhETHyNCxUhw9p2ENNXnPPGAPkFIC+Gsm6Krdft0Ubwmqb3t
-         yFqflL9w4duulXn8QOCzkQ+YehxcbKDNHh5cVawXTeB1XS13ldt1lVsCLN4yjaFrU6z8
-         PCgA==
-X-Gm-Message-State: AOJu0YzSPNkDtNsPSD63h3msk7JsXL4GVBI2KNATYoSfQ6PNKXW46+B6
-	qss1vLWrcDGXWGe00I1cOoqbUw==
-X-Google-Smtp-Source: AGHT+IGqOS5AH3MWBcYtFWY/J77pXTNwjuPPZpEImn1yI/aUFNbalu8BEnsJclgaLdEDyTc1Rc8Exg==
-X-Received: by 2002:a05:6402:268e:b0:522:b723:11bd with SMTP id w14-20020a056402268e00b00522b72311bdmr1475371edd.4.1692429089703;
-        Sat, 19 Aug 2023 00:11:29 -0700 (PDT)
+        bh=cQY6WnQ/m8u0RegAANKfIYUYTzgv1vRq3DZ3ly5dbAc=;
+        b=i0agclqxCzAXn4OCv9oo7BjWx8jBXRH4zkpfaRK+rSEXUDmWoAXRv8O0Zm6fa2AXyC
+         RNnwwH7p/2YNPJr5EKaS4YVjc4rQkelczV0Nex5kGn34j0USIUnvJhh5SuzWvO8USkGp
+         zQGbDYkxOVLveIzTQgEwi6RG95QKt7hDCF4IR7WS6mLkcc7Ri3QCb7orw7Q/R4xGHyEb
+         Hj4BZcOQyU3KXI9B7a8FIPpa9BQFfn2AlIgYJMRzjQhlX89Oe7QC3s1Rzxqv2dfHzXdD
+         iNU/tLhpgSxJlucXYJ8TCUC/nqt53mo3YfZULidtfT+vLP6SceVzA+0uTdyiRU2l3vJH
+         jCKg==
+X-Gm-Message-State: AOJu0YyQMT/Difb/1rmMqkMa6NI10MpIbcB7funzMFbpf0LURNgaIa0/
+	SamJe784C16Vl4aH0lVId6izQw==
+X-Google-Smtp-Source: AGHT+IHv0mbSafuvoUEE4REyPQRXbufTH55ANzGowPiFzcq9TWfOp9MryxUZZwsD+f0+37Z6YamLuQ==
+X-Received: by 2002:a17:906:1dd:b0:9a0:9558:82a3 with SMTP id 29-20020a17090601dd00b009a0955882a3mr1137510ejj.58.1692429132476;
+        Sat, 19 Aug 2023 00:12:12 -0700 (PDT)
 Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id j21-20020aa7ca55000000b0052596c88941sm2051723edt.39.2023.08.19.00.11.28
+        by smtp.gmail.com with ESMTPSA id rp6-20020a170906d96600b0098e2eaec395sm2195304ejb.130.2023.08.19.00.12.11
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 19 Aug 2023 00:11:29 -0700 (PDT)
-Message-ID: <714d87ec-e662-4da6-5efa-6d9cc2d6e845@linaro.org>
-Date: Sat, 19 Aug 2023 09:11:27 +0200
+        Sat, 19 Aug 2023 00:12:11 -0700 (PDT)
+Message-ID: <2ba0ef30-3023-9184-db61-d5d5a64d02ca@linaro.org>
+Date: Sat, 19 Aug 2023 09:12:10 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.14.0
-Subject: Re: [PATCH 3/8] usb: dwc3: exynos: Add support for Exynos850 variant
+Subject: Re: [PATCH 4/8] phy: exynos5-usbdrd: Make it possible to pass custom
+ phy ops
 Content-Language: en-US
 To: Sam Protsenko <semen.protsenko@linaro.org>,
  Rob Herring <robh+dt@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>
@@ -83,12 +84,12 @@ Cc: JaeHun Jung <jh0801.jung@samsung.com>,
  linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 References: <20230819031731.22618-1-semen.protsenko@linaro.org>
- <20230819031731.22618-4-semen.protsenko@linaro.org>
+ <20230819031731.22618-5-semen.protsenko@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230819031731.22618-4-semen.protsenko@linaro.org>
+In-Reply-To: <20230819031731.22618-5-semen.protsenko@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230819_001133_230269_B3A5CDFB 
-X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-CacheID: sfid-20230819_001217_153697_0CC0B503 
+X-CRM114-Status: UNSURE (   9.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,15 +108,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 19/08/2023 05:17, Sam Protsenko wrote:
-> Add Exynos850 compatible string and associated driver data. Only two
-> clocks are needed for this SoC:
->   - bus_early: bus clock needed for registers access
->   - ref: USB 2.0 DRD reference clock (50 MHz)
+> Provide a way to use different PHY ops for different chips. Right now
+> all chips are using exynos5_usbdrd_phy_ops, but it won't always be the
+> case. For example, Exynos850 has very different USB PHY block, so there
+> will be another PHY ops implementation for that chip.
 > 
-> Signed-off-by: Sam Protsenko <semen.protsenko@linaro.org>
-> ---
->  drivers/usb/dwc3/dwc3-exynos.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
+> No functional change.
+> 
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
