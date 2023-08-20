@@ -4,63 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42145EE49A5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2B0CEE49AB
 	for <linux-phy@archiver.kernel.org>; Sun, 20 Aug 2023 15:30:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uSNoVhwYCNsyTJK563/2plWL0THhgs4hBp78NkSqo+w=; b=0hA2As2HnDvanD
-	obth++FA2enf4+b8dvfrf2aPDdlf3wjGcAwGU9AfZVzch1GU7QPgWvfXZY8kLrAMil1wbxHEGmu7S
-	8mSB1rMf7YXZ8C1FVVW6mU9qlIjoD42+eFAPslj+l35KZrA81RJ2MSpbW8bQRxKsJSYBuv4XyDK9P
-	NdnGGqIh0SYJZGshlqswiivLtdLN7tuICVLrj66PYY0GstBpOx/VlDF9SXFlrVU1P/YrU/kEpnlAG
-	afPLnxDF1bVMPgQA90TuSClBZ5rBpJZk9LGNXb49jSDPhHluFCpDJ9oTeRM9QKJpkAwTKnQnDuK0o
-	1YgXsa/c98ZfixQ8B6Wg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I3PNXXGussDvz0gKEd87S6EMvjdmLlDeJ/rnVJCw/qo=; b=p8lT3n857uWFtg
+	yxgsXw4RXAniXYIxWt2OD3bJ5+xaFr5dwANVtymnzDU8i4RVyoVTAwA2IVUcBmVZdOH1HciN8bkHg
+	AYpdOiilSRJfWCeHLrBYZvE1+2lAnnuSFaNhyR47X48EU2+uYUU1bX3vqHIL7tRHo6iZKaKVQXc9X
+	UrUpqPzqDyJqCY6thTOblr48ZBMkPT8gi3tfPXZ8gg+rbR53KhtKMr+GtSognaww/da+19jjtTu0C
+	3KNyC1OwzbWkD5kmBxpo7Rf6OeStmH/OX1FB/7/7Obwu2B3XZ7K5q7tAkdU+7JTW8IUnW8qMfA5TK
+	e/As19ljMTymvrFmPwvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXkNW-00C6im-1L;
-	Sun, 20 Aug 2023 15:30:10 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1qXkNX-00C6jM-1a;
+	Sun, 20 Aug 2023 15:30:11 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIH-00C198-02
+	id 1qXjIN-00C1As-1L
+	for linux-phy@bombadil.infradead.org;
+	Sun, 20 Aug 2023 14:20:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=pUMR3LqJcxqZxpTo1E2SP3COlMrchmG5hYlUxy2vLhI=; b=UQEeVjhqMHJAZzIEdI70/I0NEf
+	XC3xbinkl+BtTfg6DxpVWyI43Veb/NzcmAlvKKIWWH+KOVsxfF7PnTTugr6NRToIpvbzGVT/N7u6V
+	5Mk7Hv46FxZWKc06qAGVlKeLI7ijNcy9KVQr7uQ+eEvwBwj66Rt4GhuOENBPe2u1g27ZElDF4hMwX
+	HOLgzmjMvHI/5pz48uza2aVXs1KlSz7J7eM/zYSym4I11PNRbxUnP6tzv7ov0TSkIyKaN0UENa+17
+	FK1cou6iugn2xfATNZuUyy+OKvEoSTjruI/ve4jJbjAXkeZZENvbm49W3JstfOfIBm3LlBf9tlkFR
+	3ra42S9w==;
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qXjII-000Xqc-0c
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Aug 2023 14:20:42 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2bba6fc4339so39510511fa.2
-        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:39 -0700 (PDT)
+	Sun, 20 Aug 2023 14:20:46 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2b9b9f0387dso37340281fa.0
+        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692541238; x=1693146038;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=9ZErwlA4SFN8xfjVsMunxZG98CnjarXI1zZZ0seeqKw=;
-        b=OP1L0IY4u4/WD+sJmJ9BJ2SexgWSc5MU+6CEIbY2hCohje3zO5DwsCoMUi4rB00D8b
-         bMRLP2FvPJpbPFaOo8Eo/dYfs6Khz3zp97MPbRf9OLzVIUMeaxQYnrd/nzVxjfJD132g
-         2NvjP1dZIuLrTLpsLJtm1f965b60mkuOLokov5EOScPRNL6XLDv1jQPMg2CvYxd7JeFc
-         M/yqJdIeJ13Vu+v3/u0KttYPUHnnY5VOM5ciawSJRdcKh8mGesM/ef5EKIfGMgyHAYkt
-         TsvgQpjeDGvrefIBXWNQYd/giK3QPgvd9G1RBuyo82v/kx6S0BPe8HXGlzwruQ0TPNQy
-         jvMg==
+        d=linaro.org; s=google; t=1692541240; x=1693146040;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=pUMR3LqJcxqZxpTo1E2SP3COlMrchmG5hYlUxy2vLhI=;
+        b=qnumYkRMy5qjqNn91jKN25UnEPXHQG3fjXMmnvRFnsHQL1bGXU6j0EK7O5R3lhiRxs
+         +TrrnufeDtMXTb4guljQcN7TwJ9iTTn+MccPtvrKDvrbq7hoOpo9tCLiRb5IlBV8bTIw
+         eYWLqrBmqH+NXhipTNcpTc/QVy490kl7BPrLHm/fXzYNCCHNr1rYfero1f+PF76Bnz/x
+         UkSVUp5KrChTwAH1vVtUQB6fq2M8DIbZbDmaDo3iVZadmU5JE2eHAzQpqYX/zxoiDeOE
+         tRVCSWX0QUv/FauB9T4l21HhHrH4z2+D7xHdIK8lM+E11CD1XJuBk34eef99ZIikquRh
+         23Bw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692541238; x=1693146038;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=9ZErwlA4SFN8xfjVsMunxZG98CnjarXI1zZZ0seeqKw=;
-        b=BB06cwHggEDLpLKWVq02osi25xv2gaaT70KX2ACJ0dcIiJFjnG4dKgjdbZWJzC8X/H
-         ynOVsqh+dEqmSsTRsNf/auEk6xrSMxtwFl/JgWkyufZ2PIX/I1PoIXEyEoxpe9HyNLa5
-         QiLjn9XsyKgaOOm+cufRcaNpVZttEGfOJvxELK0N5JC7+AITeh2bEP8cnUv4LtBGm64T
-         m4jorLRQC7l3rx291KkWNzHhLDXsaPF3w5s4wfH21ixh/PbJZj1hMQiBlUkHNCVbfJ4j
-         EKT1l3Ixec0lutw2WkOnEqqD670vCmPAoK1DVYky/h8Esss0nXoFi5Lvnwi8RL7TZiKn
-         lMhg==
-X-Gm-Message-State: AOJu0YzpSqAo/IGkgYgvy1Ss6ilv9TfWy0z8NaM9ZOj4FleoLJHvnrqz
-	mCN8oEyCyjN8O+ToBYhKasg/cg==
-X-Google-Smtp-Source: AGHT+IElG4nucCOvM5CCM85FbztFMgI5vXiqPZG+KdMHS7Y0CEAAzQvGn8ISivtd3uAGP7DWhCP9Wg==
-X-Received: by 2002:a2e:9dcd:0:b0:2b6:e105:6174 with SMTP id x13-20020a2e9dcd000000b002b6e1056174mr2971711ljj.47.1692541237207;
-        Sun, 20 Aug 2023 07:20:37 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1692541240; x=1693146040;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=pUMR3LqJcxqZxpTo1E2SP3COlMrchmG5hYlUxy2vLhI=;
+        b=Ekacto7diOFTFwMjKoR5jee9cdZ0vgOAX4NEgV9jwsWw4IjIN45zp8qC/Bv8o+4+0Y
+         RDU7OUebCNwe1D/sxbMJDfqNk3uvxYq53Lh44E8r+nZnCA93WiP8CcSsAI31Plvj3o6q
+         RUmkdkEmhukcJNp4Hgk67zOXEPm+9/vMfhywQiAdtbPgZV2MVptOEtZ/3nWK7v+4f5hl
+         sO2IaH7BDMSsm2Jk1QF6nqaT3uYLx4m0HksGhpTe1C7YDA6E4rzkFX1Bj22a1xb7zUia
+         tZ1SErpbG87d9UwQYvuoThU+hV+Eg0/k9tA5q7B4KaIrMQbnjNcNxbiH9Rgw/kvEsogX
+         thvw==
+X-Gm-Message-State: AOJu0YwofKZqO2eQvpYOaBAK+2KSWL6qYntycCl6cv8oN//SI//WuoqW
+	L3cSDcVStcC+nOy6tkk3m84fDw==
+X-Google-Smtp-Source: AGHT+IH9SBm8UHcwiZJ6hZkUq5f62BcCkWHDyWeTvgtXUbCl1CrVzCB/6GmGPVuFaN4xnmAlUYFBAw==
+X-Received: by 2002:a2e:7019:0:b0:2b9:acad:b4b8 with SMTP id l25-20020a2e7019000000b002b9acadb4b8mr2948261ljc.52.1692541240124;
+        Sun, 20 Aug 2023 07:20:40 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.36
+        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Aug 2023 07:20:36 -0700 (PDT)
+        Sun, 20 Aug 2023 07:20:39 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -74,15 +90,18 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	Johan Hovold <johan@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: [PATCH v3 00/18] phy: qcom-qmp-pcie: convert to newer style of bindings
-Date: Sun, 20 Aug 2023 17:20:17 +0300
-Message-Id: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
+	devicetree@vger.kernel.org,
+	Mrinmay Sarkar <quic_msarkar@quicinc.com>
+Subject: [PATCH v3 03/18] phy: qcom-qmp-pcie: drop ln_shrd from v5_20 config
+Date: Sun, 20 Aug 2023 17:20:20 +0300
+Message-Id: <20230820142035.89903-4-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
+References: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230820_072041_055203_E2E94785 
-X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-CacheID: sfid-20230820_152042_307751_68C819CC 
+X-CRM114-Status: UNSURE (   9.74  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,72 +119,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reviewing several patchsets for newer platforms made it clear that
-having two styles of QMP PHY bindings causes confusion. Despite binding
-documents having notes telling that old bindings should be used for
-older platforms, it is too easy to attempt adding new platform with
-older QMP PHY binding. Thus let's have just a single documented style of
-bindings.
+There is no shared lane config for v5.20 PHYs, it is only present on
+SM8550 gen4x2.
 
-Proposed merge strategy: immutable branch with binding and PHY patches,
-which can also be merged into Bjorn's dts-for-6.7
+Fixes: a05b6d5135ec ("phy: qcom-qmp-pcie: add support for sa8775p")
+Cc: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-Changes since v2:
- - Split away patches for sm8150 PHYs. Add missing driver bits to enable
-   PCIe PHY support on sm8150 (were submitted by Bhupesh in May 2022,
-   only DT bits were merged)
- - Fixed v5.20 offsets merged earlier. Fixed merge conflict due to their
-   addition
- - Fixed clocks / clock-names alignment in ipq8074.dtsi / sc7280.dtsi
-   (Konrad)
- - Fixed PHY DT names and resource address for sc8180x (Konrad)
-
-Changes since v1:
- - Split large patchset into smaller parts
- - Rebased on phy/next
-
-Dmitry Baryshkov (18):
-  dt-bindings: phy: migrate QMP PCIe PHY bindings to
-    qcom,sc8280xp-qmp-pcie-phy.yaml
-  dt-bindings: phy: qcom,qmp-pcie: describe SM8150 PCIe PHYs
-  phy: qcom-qmp-pcie: drop ln_shrd from v5_20 config
-  phy: qcom-qmp-pcie: keep offset tables sorted
-  phy: qcom-qmp-pcie: simplify clock handling
-  phy: qcom-qmp-pcie: populate offsets configuration
-  phy: qcom-qmp-pcie: support SM8150 PCIe QMP PHYs
-  arm64: dts: qcom: ipq6018: switch PCIe QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: ipq8074: switch PCIe QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: msm8998: switch PCIe QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sc7280: switch PCIe QMP PHY to new style of bindings
-  arm64: dts: qcom: sc8180x: switch PCIe QMP PHY to new style of
-    bindings
-  arm64: dts: qcom: sdm845: switch PCIe QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8150: add ref clock to PCIe PHYs
-  arm64: dts: qcom: sm8150: switch PCIe QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8250: switch PCIe QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8450: switch PCIe QMP PHY to new style of bindings
-  ARM: dts: qcom-sdx55: switch PCIe QMP PHY to new style of bindings
-
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 278 +++---------------
- .../phy/qcom,msm8998-qmp-pcie-phy.yaml        |  97 ++++++
- .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  36 ++-
- arch/arm/boot/dts/qcom/qcom-sdx55.dtsi        |  31 +-
- arch/arm64/boot/dts/qcom/ipq6018.dtsi         |  32 +-
- arch/arm64/boot/dts/qcom/ipq8074.dtsi         |  67 ++---
- arch/arm64/boot/dts/qcom/msm8998.dtsi         |  30 +-
- arch/arm64/boot/dts/qcom/sc7280.dtsi          |  40 +--
- arch/arm64/boot/dts/qcom/sc8180x.dtsi         | 148 ++++------
- arch/arm64/boot/dts/qcom/sdm845.dtsi          |  71 ++---
- arch/arm64/boot/dts/qcom/sm8150.dtsi          |  70 ++---
- arch/arm64/boot/dts/qcom/sm8250.dtsi          | 112 +++----
- arch/arm64/boot/dts/qcom/sm8450.dtsi          |  82 +++---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 177 ++++++-----
- 14 files changed, 537 insertions(+), 734 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-pcie-phy.yaml
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index e15ea113b2db..373f959e439d 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2342,7 +2342,6 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5_20 = {
+ 	.rx		= 0x0200,
+ 	.tx2		= 0x0800,
+ 	.rx2		= 0x0a00,
+-	.ln_shrd	= 0x0e00,
+ };
+ 
+ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5_30 = {
 -- 
 2.39.2
 
