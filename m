@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17DC6EE49A6
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Aug 2023 14:21:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DF28EE4993
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Aug 2023 15:30:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZkU7Sowj7MkHZgU4QOIomGerJ7lnnjYHSERB3v8nFRY=; b=P4G3DuxSX61UuR
-	RTon7541El1cVhPnG0yU6qUTu8bqoZKpZKS+c5D7TVXDGkIdS6xKeWFHKx3iTgEPbJGXx0XE/OLWu
-	ck+STdFe/p8q2bfzNgvfEFok/Rt6NvgGDoOSD6V+RMMuaGSpzNegwFJeoQBmvYmO8EBvwOY1m/whr
-	Ii1REz1+KEaDNoo993I7PEPfLv/sncmtg8iJuOf0Jf9f4MlsfAWK3xmIMihSQvXj3q4bHidU+b1Pj
-	LGh3Z2+uMORQS24mWD3mR0kim+vb7Rw2XmavWGxzNrhmgUvEvJ+8g7ElevcQZckyxY65Tm7ZEDOn9
-	5oLaqy7xIKJiamuvEpvg==;
+	List-Owner; bh=DDk6lsSUBO5hr6e1JwZPocECytjsiMKWPCd/qM7Kl8I=; b=VqurhvDB0pokHB
+	m6uoCdGE3CfLxXjyKcxGM/bTvhUv4wRsmwXDUwffi2rsm03J3dmaxIEOqMHf4nYvCuyE90FjFE1zK
+	MehT0KL228jj3j1hKXeO3GA7NjLjSr8JHTItx5O0eb6nWOisw1P2GfkY4I7MkO6QT/XC3L3vugiOJ
+	QXXsWCQeL4mrLQgi2SBpPO1cjgmXdKoSEYoVMCL5sZlLntP9Mma6G+/kRdytXLTpixpf6PaM+h/vM
+	x34e232UCLOL+AdKaLPnF9f6gxwXCCA6HoM0XHaFMcA0fPGtzSLOKQ6EiPeu9S5/BZncDPnyli97I
+	8xPqLBY0i0YvUttelMeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIs-00C1J0-2a;
-	Sun, 20 Aug 2023 14:21:18 +0000
+	id 1qXkNW-00C6is-2B;
+	Sun, 20 Aug 2023 15:30:10 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIr-00C1I4-01
+	id 1qXjIL-00C1AM-0z
 	for linux-phy@bombadil.infradead.org;
-	Sun, 20 Aug 2023 14:21:17 +0000
+	Sun, 20 Aug 2023 14:20:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=6VSzMxgMAWTElzLoHLjSvLy7x/Zb4YMgFCggjZbwbLc=; b=HR1q6Kw8UcE0S5dvFy6bHDZb8N
-	3MOTB3knACn1u2pogZ95vnJwIwUqH8nEFK4DTSuaGnG5fJzfLHNPAwC27v3qnRumyPDmxh73irvgf
-	cyAH8/dGptRkz4iYgffj4CZ2mrOYv9Q455SjJ3ue4PxCvT8uwGjD7wSAio/68S4+RBkVmfNxFzsMJ
-	qpWvlX3Swx3nKvabOm7IQlbHlU/wJ2OdEnFNF6b7NXQbZ+lQD0cFIQ2LHPWIarLkbki8WR/qNwb+Z
-	0zmcryjwX+l+4tvtboPNaeNrkBnyXbezlfw1iYIz+LltcdN3y/CrHFg7tXIl/Rqy6PFsDu0Ht+4g5
-	MsJ52sKg==;
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	bh=4488m6ufnvtM6zRq68XhiwvCa3j4jdkHB6b+QarVIdU=; b=SZiMmychDPeYDthh3wI/V/YQjD
+	dEBw312Z2h6ivy6j8k0GI8BZX/xKCgA1mF1DT1eIjg/eG7fOQHNnnJdozIaTh8qH1+ep5M72i6GOm
+	lZVl1scup7QqPsM3blsiQJdnZmRXfURy7WUQHg7k7Ym6b8/0iF8NSjg01P9a1IaU1OEBWDYdzDG3f
+	ZoFwCevszPIFn4kDjmbHpIhO6/Ywx8fWW5G7MVpykoS9PgL5o87iHfL/TP/aWSUAnALWv6YSmfPMC
+	YhSDi6FtbbmGYwWa03VJFlkx+34l/tAIb/TEcW33tVnnPKl6bQBKtXoifL1w3uN1WazSsHi8Aesai
+	jcrzsMng==;
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIL-000Xrm-30
+	id 1qXjIH-000Xqa-12
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Aug 2023 14:21:15 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-2bbac8ec902so39999651fa.1
-        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:45 -0700 (PDT)
+	Sun, 20 Aug 2023 14:20:43 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-4ff93a7f230so2882040e87.1
+        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692541244; x=1693146044;
+        d=linaro.org; s=google; t=1692541239; x=1693146039;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6VSzMxgMAWTElzLoHLjSvLy7x/Zb4YMgFCggjZbwbLc=;
-        b=xtC5sjpAjdIXtd3Op4dTQiks1lfhVXalkNvVA+BCOfgGJ7Z9om4hBt1cAH1op52k5a
-         SnqJejgCCfEmGIfT/ruoC+iZ80Mc7uAgAQA7Su9T8cqSQ95yq02DkrNdC66I/AqvsjHr
-         kTbQUWohJkQqHTYAMfAkrWFwQmgLUQ0Tiv0AabZt0lBIIBxBrU3yZevQ62fW7wvLniTp
-         t7UFRUKAIGgAjcAMVjbe8aNkS04y7WUSrG81HExkpfTtinhQsrv9NYUaWrYpmWSQ7R1a
-         NmqnoYVGj+irsrx4tOB2MjSMBKbbOAcOIBrjulR5ZbH2zGsrG/+cFgAqlBRz2wnI41xg
-         3fKA==
+        bh=4488m6ufnvtM6zRq68XhiwvCa3j4jdkHB6b+QarVIdU=;
+        b=py+8OFRfNn+Ad+h3h6owoGpJSDcn4RvSVa4NG0LkY8I5UY5/ZNz5ZT+AmuZrLsT2xq
+         DJcuyqmIkMSaat8prbWCpTCVIezIcXPCD477tW8jO+ms0IaaNmjwSQfazMdY2R0uobY8
+         gwOJ8HpbxHz6LnDDiHInxo2b34HqFdpuQT6b0jlyf4Nb+JHB5Y1HTkAFcSPxjKblHdp1
+         ERPcu0VWOCbaLMMu9b+LtdcGb0N6JM8GPOmgwnutawFIdvYU+kN6dR+0r7pAl1rfP61Y
+         qKHhza7XqpSO57PF0KuvdNTDOc06NIpMua8VxMOrGhkO0DhwmStB6BQvPaMC55cAArrK
+         9JSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692541244; x=1693146044;
+        d=1e100.net; s=20221208; t=1692541239; x=1693146039;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=6VSzMxgMAWTElzLoHLjSvLy7x/Zb4YMgFCggjZbwbLc=;
-        b=jw4UaHl+pQsg4ScucrkKmMqTIfJSaa06PMRoUMLNbITQ/qH93o8bUL+/ZEBF/kB0NO
-         cu1EXeM3eUMwAbaAyhbxpxc6fUsGSjDNyKCO7dqLA6lntD1pjWJgY6NXALmE+L5Cx/1b
-         XclEPQKrvHZi1EQFf81XUEPgnV/yXgi0aNQ/P3X0ibUD9JXEk67lzBdFR8a4uvU57U4p
-         egT1P4nLEz31Ew8oCqS2AmXT2ArFTN/Le3D5Gd4JjK/Q2Bc774S8Hd2UaRt74S6zKV8l
-         zAj0a9IEA/ww4ggoiaNW00yAc8WK+NJLRFLCDFlTr79321xNJMWIXEBMZ+g5epGIS3xg
-         WqTQ==
-X-Gm-Message-State: AOJu0YzDYT0Rv8VgMxllegWkjbzER8fEqilebqGO3Z7liPvEQ7XdfOAp
-	utZjuR/KDwJ6hcCJ29b6nWbpWQ==
-X-Google-Smtp-Source: AGHT+IHrH7RBK2mYgF8w9abBzh44qYXAa+h0IaK23qfpv+eScUIr4kfwArfpu6QWhdOBrliMhlqzyw==
-X-Received: by 2002:a2e:8e90:0:b0:2b7:344c:a039 with SMTP id z16-20020a2e8e90000000b002b7344ca039mr3103859ljk.33.1692541244100;
-        Sun, 20 Aug 2023 07:20:44 -0700 (PDT)
+        bh=4488m6ufnvtM6zRq68XhiwvCa3j4jdkHB6b+QarVIdU=;
+        b=AtUkkaWIGWngdl6ACDbKXxPOTs5jjaFMbC0BIADIowRZnv50vrbwmU3J+80MaRB9R1
+         E+7GmxozMImmw9Uz6nY+0c4uAn5j8jJkJcaz9QBHLEhEQAdTMcJCTWwd4xDEiVYkHa5P
+         ScFpFaKNEo2iXnWvLUqFNA9+Z7jySusm36SGYwJfCnF2oC5tnDVCFJPsSloMlnb6IAdz
+         kBOuEwdJAHS7onnLhj/sHK/3u/0rDqAHmdvKM/8tNwqrd2qPSn5nWq4R80iCmJalwAux
+         E83l+vfoJBwP4Lg2cLYRIbFhOPN1yg1GoZdZPg1ddLp3+h73rXTADN88r8iC1GE++fGS
+         S3Ww==
+X-Gm-Message-State: AOJu0YxCQCiSC1/KYGhEf9fgGkGMhkMH2rMJ0mB9Fj/l2zLWkqR7CkYw
+	xhAINV3hV7iXIwi60UDUVLno+Q==
+X-Google-Smtp-Source: AGHT+IEx6VzILDtjRdmPOG+verwboLyFzC4EI4/m0ODbpxUdRrKZKtHDg3l4yHhmoqB63xPrWHO0Yg==
+X-Received: by 2002:a05:6512:3ba4:b0:4fd:f0b7:d1f8 with SMTP id g36-20020a0565123ba400b004fdf0b7d1f8mr1437444lfv.23.1692541239176;
+        Sun, 20 Aug 2023 07:20:39 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.43
+        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Aug 2023 07:20:43 -0700 (PDT)
+        Sun, 20 Aug 2023 07:20:38 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -91,16 +91,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 08/18] arm64: dts: qcom: ipq6018: switch PCIe QMP PHY to new style of bindings
-Date: Sun, 20 Aug 2023 17:20:25 +0300
-Message-Id: <20230820142035.89903-9-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 02/18] dt-bindings: phy: qcom,qmp-pcie: describe SM8150 PCIe PHYs
+Date: Sun, 20 Aug 2023 17:20:19 +0300
+Message-Id: <20230820142035.89903-3-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
 References: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230820_152046_062339_DABA508E 
-X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-CacheID: sfid-20230820_152041_480365_EAFA990E 
+X-CRM114-Status: UNSURE (   7.66  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,73 +118,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change the PCIe QMP PHY to use newer style of QMP PHY bindings (single
-resource region, no per-PHY subnodes).
+Descrbie two PCIe PHYs found on the Qualcomm SM8150 platform, single
+lane and two lanes Gen3 PHYs.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/ipq6018.dtsi | 32 ++++++++++-----------------
- 1 file changed, 12 insertions(+), 20 deletions(-)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq6018.dtsi b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-index 47b8b1d6730a..3c8a2f4e26a3 100644
---- a/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-@@ -278,33 +278,25 @@ qusb_phy_0: qusb@79000 {
- 
- 		pcie_phy: phy@84000 {
- 			compatible = "qcom,ipq6018-qmp-pcie-phy";
--			reg = <0x0 0x00084000 0x0 0x1bc>; /* Serdes PLL */
-+			reg = <0x0 0x00084000 0x0 0x1000>;
- 			status = "disabled";
--			#address-cells = <2>;
--			#size-cells = <2>;
--			ranges;
- 
- 			clocks = <&gcc GCC_PCIE0_AUX_CLK>,
--				<&gcc GCC_PCIE0_AHB_CLK>;
--			clock-names = "aux", "cfg_ahb";
-+				<&gcc GCC_PCIE0_AHB_CLK>,
-+				<&gcc GCC_PCIE0_PIPE_CLK>;
-+			clock-names = "aux",
-+				      "cfg_ahb",
-+				      "pipe";
-+
-+			clock-output-names = "gcc_pcie0_pipe_clk_src";
-+			#clock-cells = <0>;
-+
-+			#phy-cells = <0>;
- 
- 			resets = <&gcc GCC_PCIE0_PHY_BCR>,
- 				<&gcc GCC_PCIE0PHY_PHY_BCR>;
- 			reset-names = "phy",
- 				      "common";
--
--			pcie_phy0: phy@84200 {
--				reg = <0x0 0x00084200 0x0 0x16c>, /* Serdes Tx */
--				      <0x0 0x00084400 0x0 0x200>, /* Serdes Rx */
--				      <0x0 0x00084800 0x0 0x1f0>, /* PCS: Lane0, COM, PCIE */
--				      <0x0 0x00084c00 0x0 0xf4>; /* pcs_misc */
--				#phy-cells = <0>;
--
--				clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
--				clock-names = "pipe0";
--				clock-output-names = "gcc_pcie0_pipe_clk_src";
--				#clock-cells = <0>;
--			};
- 		};
- 
- 		mdio: mdio@90000 {
-@@ -756,7 +748,7 @@ pcie0: pci@20000000 {
- 			#address-cells = <3>;
- 			#size-cells = <2>;
- 
--			phys = <&pcie_phy0>;
-+			phys = <&pcie_phy>;
- 			phy-names = "pciephy";
- 
- 			ranges = <0x81000000 0x0 0x00000000 0x0 0x20200000 0x0 0x10000>,
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 82e30e75a2ee..2c3d6553a7ba 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -26,6 +26,8 @@ properties:
+       - qcom,sdm845-qmp-pcie-phy
+       - qcom,sdx55-qmp-pcie-phy
+       - qcom,sdx65-qmp-gen4x2-pcie-phy
++      - qcom,sm8150-qmp-gen3x1-pcie-phy
++      - qcom,sm8150-qmp-gen3x2-pcie-phy
+       - qcom,sm8250-qmp-gen3x1-pcie-phy
+       - qcom,sm8250-qmp-gen3x2-pcie-phy
+       - qcom,sm8250-qmp-modem-pcie-phy
+@@ -135,6 +137,8 @@ allOf:
+               - qcom,sdm845-qhp-pcie-phy
+               - qcom,sdm845-qmp-pcie-phy
+               - qcom,sdx55-qmp-pcie-phy
++              - qcom,sm8150-qmp-gen3x1-pcie-phy
++              - qcom,sm8150-qmp-gen3x2-pcie-phy
+               - qcom,sm8250-qmp-gen3x1-pcie-phy
+               - qcom,sm8250-qmp-gen3x2-pcie-phy
+               - qcom,sm8250-qmp-modem-pcie-phy
 -- 
 2.39.2
 
