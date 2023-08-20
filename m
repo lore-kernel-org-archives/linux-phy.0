@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B327EE49A4
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Aug 2023 14:21:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FD75EE49A4
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Aug 2023 14:21:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WTubmCljyK6Fkn4MOtpZsAOVG26ZRLDvIGD8CIa1R4=; b=B6iGpsDf1PSy3B
-	dOJQ0+xvsnM/Qh6uJFxO3twZOH61bwK2vIGcBN6aNjY3p2Qmx+exFr4xK56Zod5aEpenrrQkMGQ5z
-	Vjji3Mp/oe5K7xcVEWuFaw4xKc5yxTUb5lrTEu1PmP524/IoXByYhGVzoJ2NDlNcVAzwsxqrncVCx
-	1zovYWIShtSvPha7ph/v6mfitI6WU8N6j+afqsKcnmS/meOg/Xgtq+0e+Omzy22PHog2EVVFezTol
-	7owRuQvLaSm62IgMcfRnF9v+PrARWiVFoI4HiAjz/HmH81UGTKYebPUwQtl3Qr4gYE43CjcWZqunf
-	DliUWsb+zabuxyLs0jkg==;
+	List-Owner; bh=V5fup5CO8+ETQA4mfOtkksS0OwI+A+lqrmsi+CUZ4tg=; b=GOg8mSMgI53wYT
+	JxQ6UT7UxGaAHRH1PH4R8EhhxfLy34C2RbrM5FoEjEFLOHItJCpwWhaU+iZ4RVgKn5bBzzMmErF72
+	3uubeVrAUe2Y4BLW2oJFyVuKgSZk1IgwLw8fPz70JIJtsYOzzp0X284inbxADvKIVH/aTZ7t7kUM5
+	ApKW9TqEbZ2GKLr2spCZ6Ou2OeEp96chhuPG9iiZ5ZhY9e1s5XNhbiWg1yA7g7kiBlBeF71W1dpDh
+	p0cg/iy4MVPonIoWqGxIOqXwhd1rrU5MydhMJGx0BFQ3i6eCC8xnNpJ1tNmLvxlvaCS4neF4+2Ty8
+	Z6TS1DPIXsk1S9myMcvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIb-00C1FT-18;
-	Sun, 20 Aug 2023 14:21:01 +0000
+	id 1qXjIs-00C1IZ-0l;
+	Sun, 20 Aug 2023 14:21:18 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIZ-00C1Eq-19
+	id 1qXjIq-00C1I0-34
 	for linux-phy@bombadil.infradead.org;
-	Sun, 20 Aug 2023 14:20:59 +0000
+	Sun, 20 Aug 2023 14:21:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=WTzmy+i5j1WPiK6tLfXa64W5xhtIy/e4EjLahPo6DXU=; b=aWQ2chitGqpoDLApTNl0I7n6KW
-	sVwVY41aLj41NnC/0303tve6FjLD3zsHN2hLZfMiwY7J5nhtaEq8PO6yWZQHDvcEu0sRsTJ1zxbJd
-	TuJTehH8CsCpI8r5fvqamvSrMBhz5uQibbg0yabcJvoyqyYvxFLdShQVrx2lV7ORVhBxc+d9EIS3/
-	CXGRyY3g46FAE7OnYretS8qiMbN1A2Pk0+Ohd0CvUjEXjWqOtHg/o0XzAAXAxKXMkrkSFn4cKAxNZ
-	hC1xsVMLX4WV8ePBmih7t331n9/k6N2J+OnzYC0VbYh+n2yYtoV18lbTNgR5v6FG6DJNVPEz0jhpn
-	fxx8thrQ==;
+	bh=Xaz/Z2gROgUqdCrbEqE7kf2HF6hn0xEJoeMLqJ3bPE4=; b=dZxacnU2DA0gUcE4MVASJopSG4
+	GWceLU1rdz33mHuY7fkDUxyEx8d5NwcS/vUyrOPdiX3vuLwoc2oZvp/jT3e6IgX/nLnNq/apcpq0a
+	/bLB/0fSD4Yx6xrDCFNrnyBvTr1psxTusP1AglO9ZnxRCPJrh5UcWmM30gMM7tTbsm2ccWukbhsJ7
+	9Yjm5pvsAIwDBkXHfeVbeOahdgco4JguGtI3+4WAa9C7iQQajgudSRDLNZsNESufV+J+FAmanACvZ
+	X0kqnmwe5MrSuiFdQar0l/sPQebhJsIi0dQv32DgdsNzIcYEELfVljjtiOMlYhI1Dc9Y0jM3uI4XM
+	zpXKjf6A==;
 Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
 	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXjIT-000Xtl-35
+	id 1qXjII-000Xr2-1x
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Aug 2023 14:20:58 +0000
-Received: by mail-lj1-x229.google.com with SMTP id 38308e7fff4ca-2b9b5ee9c5aso39893141fa.1
-        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:53 -0700 (PDT)
+	Sun, 20 Aug 2023 14:21:15 +0000
+Received: by mail-lj1-x229.google.com with SMTP id 38308e7fff4ca-2b703a0453fso42931131fa.3
+        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 07:20:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692541252; x=1693146052;
+        d=linaro.org; s=google; t=1692541241; x=1693146041;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=WTzmy+i5j1WPiK6tLfXa64W5xhtIy/e4EjLahPo6DXU=;
-        b=sBaUljN0X/xwDygPsg+nO/6V4c9rxPSX5D/qhqsfD/bYKAksDA3Qmz6+3DEiA8Zpas
-         kYf0SovzxwpPG7y03/jKV8a6Z1ETfGf7g1zMNL1u2cJbyh1oubKxd3HNlLhUe/DbcTi3
-         Dqrs97r7QxEg/B+8TphnEdc5lZ1mQChaq361wpJWNnoBWfor+Di4szJ6zJ78b7M0U+CH
-         rAUYYYFTUTZ+4r5wkgII/kvXn8vavhACnHfa1/9IJuV+SF1VnZV07GzeCJc0Ff6Xu+Wl
-         GjVpTQ9e7/mHE4aP2jxJ4VofbE9o19rOh1rwQq6SeMOIccvuIwdPnFxz2zdoImVYFjRk
-         QLqg==
+        bh=Xaz/Z2gROgUqdCrbEqE7kf2HF6hn0xEJoeMLqJ3bPE4=;
+        b=ZZsXwtszIOND0lf3DmKyw1O8R5HC8fh3ZyTcg+3uAHgZpzPr/m1WfGFDeub0yPt5Y3
+         H1ZMlxF4bsDI72TNwH+mPF+wR2f6rF1Aqicuc/9p792F7uE2I/bK1G8jDlLXmtvQ2rxP
+         Wtbc41mIDBzGh4mNPcfwCoVkKXjnJtz2p3fRQ5MMQE9vCyLFOFna2QPDVmDUf3dlkRZE
+         Ziof1Gw88Sk479MArNTWBrt6MUnnQBY7XOLg4Y8LbZfEvy5Zqnc6IbnWFbQTNrUj+Yjd
+         NI8ej4DQxLMyJaajz7SMrpicovHNNjWmfkzfr6LjQrUxhYX24iyXY3P8tgPdGfkfmzBJ
+         WM7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692541252; x=1693146052;
+        d=1e100.net; s=20221208; t=1692541241; x=1693146041;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=WTzmy+i5j1WPiK6tLfXa64W5xhtIy/e4EjLahPo6DXU=;
-        b=KV/eO901ujxpMgNpqqvtv3bmJ2vesyiHZGJHPDpc2lpeWNFmYZLAnYsUu2m9HlmmNF
-         ftTyxT0n6yfyk9LPkgfBr3u34Rd9JN+E2Ulml4wXTLaP5e33X2mUeG+a8S7TdJ3bnTAB
-         QGw23aZPGNPIFBUAMJltjKe6/7IUTyaGxLc5LIJa2szRi+1/GT7nT0bxP306PWSRgOGK
-         iqlHPFEwyjM+F1DdnstMClRrwkTX3Vz6zm1SPczR/sUMhMwH8oGG9pHWJlXbrEqYmeKo
-         adODr2taiw2fkk8MlIosUeBnaPKZfsf4BwIUkByZk44DK9MAC7KoIQDQNLWg6Cz+DoH8
-         DqcA==
-X-Gm-Message-State: AOJu0Yw8U92NlzydccNWwrNDDfyyGP0g6JjwEeUNv5vDLWKzF+qZFxmb
-	D7Sq+3eH1PUF3zEJUxP51q6VnA==
-X-Google-Smtp-Source: AGHT+IFERULUQVtB8IKnpBuIWGg2sDN51gu3aFEy2DKA3mxevPHuxbPl0Bp5I84SsZ1djo+7jpFmfQ==
-X-Received: by 2002:a2e:9185:0:b0:2bc:bb46:4fc7 with SMTP id f5-20020a2e9185000000b002bcbb464fc7mr652384ljg.24.1692541252729;
-        Sun, 20 Aug 2023 07:20:52 -0700 (PDT)
+        bh=Xaz/Z2gROgUqdCrbEqE7kf2HF6hn0xEJoeMLqJ3bPE4=;
+        b=lXx8tfgj1seSDhBPcEUZXM/qy2a8jp6u1gSXa6yawezqriK6oKftEYnjyx/Vbc6CIl
+         yi4JRfrD93tJIR1C19M8A43UBHvJctN2WGcVEO67XMImX0fYTsmUPSZTwuOjlO4QFJXb
+         YDtNKAM3Mh+Gu0JqTFheqSVB8RKryDvdJXAX0/Mf+KLMLub9rEsevSLIa7gR8ifz8ujv
+         cUvT9GzBPUH7tYyQ+Cne7u+NpaJl974rTzWBfbP76VQuV1s5DJCMTSLnyCceAiPdoVe2
+         2oICkkYzJB76vWdxfty1LrWm8oOFs4wycqCgfXgGcig+Zx4yuFUh0sRKVyD8ctwtTsz4
+         KhSA==
+X-Gm-Message-State: AOJu0Ywvu8hd2KJTVIuMfGltz/9cCjFgzTQ2cQZwT0vECqqq8FvE7yrv
+	F5J05rSGn9CMiW3L5SmrxyDbcw==
+X-Google-Smtp-Source: AGHT+IH9U5D+XGWeGrx7lfxxHLGL8yPvLKJS7Cr9a8UqUWnqXSy0Aw/utFw/0B/57QB/xdSWn6gx2A==
+X-Received: by 2002:a2e:a310:0:b0:2b7:3656:c594 with SMTP id l16-20020a2ea310000000b002b73656c594mr3345023lje.3.1692541240850;
+        Sun, 20 Aug 2023 07:20:40 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.51
+        by smtp.gmail.com with ESMTPSA id n9-20020a2e7209000000b002b9e501a6acsm1706222ljc.3.2023.08.20.07.20.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Aug 2023 07:20:52 -0700 (PDT)
+        Sun, 20 Aug 2023 07:20:40 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -91,17 +91,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 18/18] ARM: dts: qcom-sdx55: switch PCIe QMP PHY to new style of bindings
-Date: Sun, 20 Aug 2023 17:20:35 +0300
-Message-Id: <20230820142035.89903-19-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 04/18] phy: qcom-qmp-pcie: keep offset tables sorted
+Date: Sun, 20 Aug 2023 17:20:21 +0300
+Message-Id: <20230820142035.89903-5-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
 References: <20230820142035.89903-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230820_152054_065285_01495313 
-X-CRM114-Status: UNSURE (   9.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230820_152042_667739_3DCD7499 
+X-CRM114-Status: GOOD (  10.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,87 +117,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change the PCIe QMP PHY to use newer style of QMP PHY bindings (single
-resource region, no per-PHY subnodes).
+In order to simplify adding new PHY configurations, keep register
+offset structs sorted by the version.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+Fixes: a05b6d5135ec ("phy: qcom-qmp-pcie: add support for sa8775p")
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm/boot/dts/qcom/qcom-sdx55.dtsi | 31 ++++++++++----------------
- 1 file changed, 12 insertions(+), 19 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm/boot/dts/qcom/qcom-sdx55.dtsi b/arch/arm/boot/dts/qcom/qcom-sdx55.dtsi
-index 55ce87b75253..4b0039ccd0da 100644
---- a/arch/arm/boot/dts/qcom/qcom-sdx55.dtsi
-+++ b/arch/arm/boot/dts/qcom/qcom-sdx55.dtsi
-@@ -379,7 +379,7 @@ pcie_rc: pcie@1c00000 {
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 373f959e439d..cdee109c398d 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2323,17 +2323,6 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5 = {
+ 	.rx2		= 0x1800,
+ };
  
- 			power-domains = <&gcc PCIE_GDSC>;
- 
--			phys = <&pcie_lane>;
-+			phys = <&pcie_phy>;
- 			phy-names = "pciephy";
- 
- 			status = "disabled";
-@@ -428,7 +428,7 @@ pcie_ep: pcie-ep@1c00000 {
- 			resets = <&gcc GCC_PCIE_BCR>;
- 			reset-names = "core";
- 			power-domains = <&gcc PCIE_GDSC>;
--			phys = <&pcie_lane>;
-+			phys = <&pcie_phy>;
- 			phy-names = "pciephy";
- 			max-link-speed = <3>;
- 			num-lanes = <2>;
-@@ -438,18 +438,25 @@ pcie_ep: pcie-ep@1c00000 {
- 
- 		pcie_phy: phy@1c07000 {
- 			compatible = "qcom,sdx55-qmp-pcie-phy";
--			reg = <0x01c07000 0x1c4>;
-+			reg = <0x01c07000 0x2000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
- 			clocks = <&gcc GCC_PCIE_AUX_PHY_CLK_SRC>,
- 				 <&gcc GCC_PCIE_CFG_AHB_CLK>,
- 				 <&gcc GCC_PCIE_0_CLKREF_CLK>,
--				 <&gcc GCC_PCIE_RCHNG_PHY_CLK>;
-+				 <&gcc GCC_PCIE_RCHNG_PHY_CLK>,
-+				 <&gcc GCC_PCIE_PIPE_CLK>;
- 			clock-names = "aux",
- 				      "cfg_ahb",
- 				      "ref",
--				      "refgen";
-+				      "refgen",
-+				      "pipe";
-+
-+			clock-output-names = "pcie_pipe_clk";
-+			#clock-cells = <0>;
-+
-+			#phy-cells = <0>;
- 
- 			resets = <&gcc GCC_PCIE_PHY_BCR>;
- 			reset-names = "phy";
-@@ -458,20 +465,6 @@ pcie_phy: phy@1c07000 {
- 			assigned-clock-rates = <100000000>;
- 
- 			status = "disabled";
+-static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_20 = {
+-	.serdes		= 0x1000,
+-	.pcs		= 0x1200,
+-	.pcs_misc	= 0x1400,
+-	.tx		= 0x0000,
+-	.rx		= 0x0200,
+-	.tx2		= 0x0800,
+-	.rx2		= 0x0a00,
+-	.ln_shrd	= 0x0e00,
+-};
 -
--			pcie_lane: lanes@1c06000 {
--				reg = <0x01c06000 0x104>, /* tx0 */
--				      <0x01c06200 0x328>, /* rx0 */
--				      <0x01c07200 0x1e8>, /* pcs */
--				      <0x01c06800 0x104>, /* tx1 */
--				      <0x01c06a00 0x328>, /* rx1 */
--				      <0x01c07600 0x800>; /* pcs_misc */
--				clocks = <&gcc GCC_PCIE_PIPE_CLK>;
--				clock-names = "pipe0";
--
--				#phy-cells = <0>;
--				clock-output-names = "pcie_pipe_clk";
--			};
- 		};
+ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5_20 = {
+ 	.serdes		= 0x1000,
+ 	.pcs		= 0x1200,
+@@ -2354,6 +2343,17 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5_30 = {
+ 	.rx2		= 0x3a00,
+ };
  
- 		ipa: ipa@1e40000 {
++static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_20 = {
++	.serdes		= 0x1000,
++	.pcs		= 0x1200,
++	.pcs_misc	= 0x1400,
++	.tx		= 0x0000,
++	.rx		= 0x0200,
++	.tx2		= 0x0800,
++	.rx2		= 0x0a00,
++	.ln_shrd	= 0x0e00,
++};
++
+ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
 -- 
 2.39.2
 
