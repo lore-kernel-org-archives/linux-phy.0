@@ -4,144 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 483F8EE49A0
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 20:13:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E2C9EE49A6
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 20:20:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKsQIwlsK17wt65/uyiPOBgmqqmTO6DAmyF5HkQgsXY=; b=F2k6O9LcNy4BrO
-	N0bev1UkABuheXnl8WSftqIalXDHJWpSaRpBdbB8jHZLnCcWvQNNwXTE86vOgUu655X+EvZBDBHjb
-	Fn3U5oB8LrsXUFpUiDVrITfmwuXlBSfMFsnAMnA5NaTykb51SO9DqkqrRoTv84a2yJEu2bn/JfFJI
-	unX+bkMgZS5rPNC/ZnrvhTAXFdbbT2jf//vzw+9SWxmZ3rKV/NYRTke8SegQ0HmzOilX9r5sGjkfT
-	ngcUdsbkdCKZwNuLQyDdN5N7ksrBxX6WM5hHM1wyvjOicOnk0UqtPsCIzrxrXp3gf2VOrs3JsjLbd
-	PatfaiyQbCSLJSTS7VOQ==;
+	List-Owner; bh=K3cSL0EwcED9LB9lJM0LJzs+8r7t58wf/GpHPgzPa7k=; b=eEdj7PHVi7ipv/
+	mD8GEq8KefNVyFmmfVtN448G7NrEvAF0PP2IIe/rCxl1LUgi6NH/vy/3jo1tsctPvQUzQor08wcjy
+	M2mrk+FpOXKWmVzE9q8WqH1YQC3lyQ0VO7kvPLRd1qaQdKce/K+w2edbhwwwTJRThhtR0J8iK6WHo
+	vpKcsclMmm+MJzQBfjOMWOZkXCdFuSigHbQNkAG9edhSI0bjNUEJxxw7X3kvLjxhzArZCrkbSm5PT
+	K0UEZmsPMU/P7tMwOrIUQE96pATSoeRGViU3stLzai3B6N3KQC2Zh+cekI46J6YATCbrF0h8e2xWp
+	IayQ+0au9qdXFQbXvW8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYBHG-00EdrP-2z;
-	Mon, 21 Aug 2023 20:13:30 +0000
-Received: from mail-he1eur04on0603.outbound.protection.outlook.com ([2a01:111:f400:fe0d::603] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1qYBOM-00EeL4-22;
+	Mon, 21 Aug 2023 20:20:50 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYBHD-00Edqe-0p;
-	Mon, 21 Aug 2023 20:13:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CbNz5YEedylV/dAjvzcDf+lesfJfwQyFHifk0Ed6VglTMTqy7i6mjjqsGlKBSYrlwd4Mig5peuFAPBIZ1KlHPlINcVfllpvVSGjU9Qaq0lI6wcPSra7mtwJwNhbCXiZ4TMea4aM4toyCX3C4+lmZ3xP642YZnrXPssv12F870HmcsCYBRrnZXuXwcJybXocw1UcQdxyT1dffeegEAJH6l0PMcVonEEojgkO7IiDZlAV8v9ZWMeRrJDdbXESIeZ+EMYRynZ0cKrn4uuDuSo6yowW5d67Q5ifoe015vHY5IH5nb97ivL/7iqTwNvmot/Fvs1eVRI9yrciSJLvt2yxLeg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3Uw2dqzeVz3mOz3X5TWJk+1gvqybhGGEkQvrrY8vXHk=;
- b=Q6YbmuzweNKMNqE6GEEGc3D7m7l1Ts5ZmsCRzUB0KMIF5am1/i7f4OXxRLcEbRc3MpiSOqkD8SxJ/6cY49j/vGd2gE4XURsTmY4IaplU27n2u8Apj+C5syrs/FI5TAyIta/sJU93OmEpqokljSkAqfRqNhhGnQv79pVNOD2J232zZp3Ud8A4eLOdZBOv9FI03KzPQezfvXcvJqA+n8866P49c3DpU6JOfVaWmr4qpxl25k7wn5Y16Ml/FwjQHPWGfzlQ/DeQttxE7rUI9R72xHEUSYR7mKQAJe236IVe1pAUA3mLmk6HLZ4ksQ4v+9l4B/c8e0wefV+ZYh0mOPH9sQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3Uw2dqzeVz3mOz3X5TWJk+1gvqybhGGEkQvrrY8vXHk=;
- b=ru0g7N0ZFuudho4dvhNNZ9B5VmEr6yKkrxxYArDLfQPN0nm2hXQMcAS6iwVW/QENtZZ8xOl+w9kqhZL9knJTT0hHC1QYskqM8YTPTPaMRPoZZL7DavslnxhKov8UFvrMJA2GYuyorVOk6eR1akxLuBbX7tA3aM90pdeGYg5IT8Q=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by PAXPR04MB8173.eurprd04.prod.outlook.com (2603:10a6:102:1ca::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20; Mon, 21 Aug
- 2023 19:58:28 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
- 19:58:28 +0000
-Date: Mon, 21 Aug 2023 22:58:23 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Sean Anderson <sean.anderson@seco.com>
-Cc: Ioana Ciornei <ioana.ciornei@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+	id 1qYBOK-00EeKe-1Y
+	for linux-phy@lists.infradead.org;
+	Mon, 21 Aug 2023 20:20:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=8QFnkeTZWnnDd5JVWGSZY/oaBHKW6HVkQkmP0X/QEgA=; b=V1UQnhEYSo+85Eyyky7CxcENTu
+	j7Ums60rmSNmLigbsdUMWqBXCwBhUCDXZP8E5yD+C075L9VxdlOOX6LRbUzhsGn0LSbZJQiAl17pG
+	DT/kwGbdg4buXKPtG8wdLYrHvbP8xysUCoq8o9di8hB0ZFjf354hlalEX2Go218IAGyU=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1qYBOF-004ioP-I9; Mon, 21 Aug 2023 22:20:43 +0200
+Date: Mon, 21 Aug 2023 22:20:43 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Rob Herring <robh@kernel.org>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
+	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Florian Fainelli <f.fainelli@gmail.com>,
 	Madalin Bucur <madalin.bucur@nxp.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
-	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
-	Jonas Gorski <jonas.gorski@gmail.com>,
-	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
-Message-ID: <20230821195823.ns55h3livxgol7fp@skbuf>
-References: <20230612163353.dwouatvqbuo6h4ea@skbuf>
- <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
- <20230613142754.wr5njtjo4tbloqwu@skbuf>
- <20230811150826.urp2hzl3tahesrjx@skbuf>
- <26623d0c-8a5a-614b-7df7-69214aaec524@seco.com>
- <20230811163637.bs7a46juasjgnmf4@skbuf>
- <20230821124952.mraqqp7pxlo56gkh@skbuf>
- <a2e3fcad-9857-f1b3-8ada-efb2013a4bf5@seco.com>
- <20230821181349.hls6pukp5d6rc5av@LXL00007.wbi.nxp.com>
- <73d59dd2-88f0-3c1a-0de2-de2e050cba5a@seco.com>
-Content-Disposition: inline
-In-Reply-To: <73d59dd2-88f0-3c1a-0de2-de2e050cba5a@seco.com>
-X-ClientProxiedBy: AM0PR06CA0108.eurprd06.prod.outlook.com
- (2603:10a6:208:fa::49) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
+	Conor Dooley <conor@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [RFC PATCH net-next 8/8] dt-bindings: net: fsl,backplane-anlt:
+ new binding document
+Message-ID: <e3afb3d5-6efe-46de-81ca-7f0163c4b04d@lunn.ch>
+References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
+ <20230817150644.3605105-9-vladimir.oltean@nxp.com>
+ <20230821195840.GA2181626-robh@kernel.org>
+ <20230821201146.hudnk5v2zugz726p@skbuf>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAXPR04MB8173:EE_
-X-MS-Office365-Filtering-Correlation-Id: 11a6bbbd-784b-4ed9-98f1-08dba280fc52
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: y1xxVW3z5kJ7ohSZmxlKkJZt7qj4mTZxmBSaxQZnxISI8z+5IN17b224EA4hH9NmiJBPuFaMR3I2FfkPWNqxU6N+2Z0JKCopw3u3lkI5LLYeogScZJwHoF6iWsqdkgoNfZab+m21h0DCVgfrqkzlwkzSVQHDN1GUIydj34okQ17Ixo+GefeZIfyDJDc/bZ+oWLl8WUsaH1UZ3sTI1huL4fboDKw1Z/SZqoOJ9OQWA00q1B5csOWjfl2RMJiGrmdyHQosu8yi8QjQhlgnHmYJiF4N5i2rjDHSFCINYZ+QeDaZn7TflXicTtvocUWGlpc6sD+fWtHeXK0sP9MPU0d02Dj08sDXGY8yLCDdv6PTsKN0sAUB9U76aFVM/hGoTc2hdmEM1XBdnej/eros+rbkXoQerT2sA0nPydig9/VcUPs66owUSQ3gmk/pFYN8hkXZTguAdhAMgHbSBbHfzIHBq7isgyoxENZRRtIfsVBCs51fEYWq0mL0XcYsHyDH6kNsPWHAJ+Ykvym2y7Rv4HqvbrEB+09xc2j7iwKDY2AC80w=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(366004)(376002)(396003)(136003)(39860400002)(346002)(186009)(1800799009)(451199024)(1076003)(26005)(9686003)(6512007)(66899024)(86362001)(38100700002)(83380400001)(33716001)(41300700001)(316002)(8936002)(8676002)(66946007)(6916009)(66476007)(54906003)(66556008)(2906002)(44832011)(5660300002)(4326008)(7416002)(6666004)(6486002)(6506007)(966005)(478600001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?PXXVgPOj0v1x3m2uWPaunKNURW5jaRA+dutMJteJzhFPjkJrUR6cHKQGgvD0?=
- =?us-ascii?Q?f6YLa5qzDAeydEJb6IwV3UinVcDJ6M2FinDWK9PHMzDCy0fSfhdPtJXH1sRd?=
- =?us-ascii?Q?EJjUQO/o5P4yx3skSDrZivpPXrfC1hCIxwARaU9mriAeD1Iu0J4j1Yioda4E?=
- =?us-ascii?Q?G9QpXkzHpDPVKQg2vLFPbotVw2osACQ42xpv0ajWId3T/ibG93+3xSYQ8FTI?=
- =?us-ascii?Q?TwRg6Xudw3agOx7leEe4ISZjrE8jCJpJAzUGAf2S/vHildh4xs+L6kHnZ9R/?=
- =?us-ascii?Q?nw6iSQey24d9QKTbxQK0PEKa7pTgdLWN+F1Np/K9UHc1b2Drv3vVQ2T5IUdv?=
- =?us-ascii?Q?3/mO10PjnuRYWhI4AP/p6wicNq5FUK3xHh+3nb8NX67AUu2hqU1PQeHHPcfG?=
- =?us-ascii?Q?rqAgxgjhGeR0fS1j6e9VtgEEQnoD96lio3A1nvjiEYrxN1xjIuvb6ek4JQtb?=
- =?us-ascii?Q?LeSxQA0fHo7ZToAH46fClcUe9w/4oDZGXpHCl+C1JfWv4i13EvgYtB/L4NO+?=
- =?us-ascii?Q?sQZ7RlFGuwHJr3ZQadgJSzrfapfAnFYtXpGfahOVk6bbRwYVyE3LWXNQHU1P?=
- =?us-ascii?Q?x2QguDcrNN23UIQ+FTJOFGddKcaIUVdFO8dv3CIGowsL9jdOI6qWJP/DKg3V?=
- =?us-ascii?Q?jPi/qvBAENoubges2GyD3FeK20cb6qUHt7IczMnXsuX9KhI6cW93eJTxpkEQ?=
- =?us-ascii?Q?u/J0H1JJZB+/6llaCdRtcF+jPg9z+Qwtw1qeqN0CDbEdHeoICmEq62qjUmpk?=
- =?us-ascii?Q?m5v2W/mYFYyLJp8IWoHVMjQSeH7KdcGL8894ixoSkxG8O8T8Q00pznCSNna7?=
- =?us-ascii?Q?Iuvw+AKTFeMsg0GZG0dBMUnaG0iDsG3u03onIR1/Bq+J9fFIC1XLnUmFAtlw?=
- =?us-ascii?Q?FTzHRbL4ODHxbqxX2hQ5hNkrjNk5RMA1kCgs4Vw96pWBwB0Y7WVPOKX2BB26?=
- =?us-ascii?Q?J7ftV2ca9VL/L4zS/gyuLIB6sZAnKyy5BrD8o77MEsIdA2r/550dPniZB5Se?=
- =?us-ascii?Q?UVomiV/1Dtp9UKDvVn143szZT8mlFoEdOUDIcJxmWOuMRxl5xNjSG7bmarQT?=
- =?us-ascii?Q?1fmEnvXwsHbwnR7xA6+vmTVI7Ha4cEvxwTTZmgCygFZx7Tik8uPHGXRLwSXQ?=
- =?us-ascii?Q?wCxDGQWkfLWU7CD9oSX1kJsQrZdHLj42a844Zq8j1laL/BW9Tqa5xwm1Q/7c?=
- =?us-ascii?Q?EcLq8caD0TxHJf4fqHzfQdGTiZkwxMeYdsVDyQF4dvc7xqMXIAilFbgVlXnM?=
- =?us-ascii?Q?VQhyZ2pNox+/1KVjSJKszTXua7SaXE6C39L4zgWbNfn1x2FiDYcXJTDGkr/Z?=
- =?us-ascii?Q?62+ZyuKfjn0TBHcVzz6mC+cYbScjKvh3h+/ooLxG/ft7NU+q1BXUCYlpomST?=
- =?us-ascii?Q?ygzg/g6/35oKn+ZgiERI+TCbni5mZ21eX09qRLnGCjlZ6pK55i2nIH4LfUK1?=
- =?us-ascii?Q?KwUp8QNIREGf9jUUwwvs/9fClsllCIf++rcM61OQfX3Q2qPEAIsVrMnSuQBm?=
- =?us-ascii?Q?1aC3v5pAj9T0Y8ufC0+ZI5Tw3CfG/wy9LIsVDnBGozBzHdpsr5rY+LL3JQdW?=
- =?us-ascii?Q?zVxqmHLutUxFJzhgVSH6a+sJ9kxXC3FIq+AOz28G/lKbEJUcfnZHlc7Q1yLx?=
- =?us-ascii?Q?3g=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 11a6bbbd-784b-4ed9-98f1-08dba280fc52
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 19:58:27.7888
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9dbcWDFzHB+CsIrdjgF5uvkQWBEYcGDwncaG2Y7ijQsZ+WvxGjsM/EMYwPgD4dfgtAI8+A3JQ6j9zBCNNPCqcQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8173
+Content-Disposition: inline
+In-Reply-To: <20230821201146.hudnk5v2zugz726p@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_131327_300957_4C4DDE34 
-X-CRM114-Status: GOOD (  16.31  )
+X-CRM114-CacheID: sfid-20230821_132048_540972_58FB423D 
+X-CRM114-Status: GOOD (  11.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,35 +85,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 21, 2023 at 02:46:53PM -0400, Sean Anderson wrote:
-> After further review, it seems the reason 28g can get away without this
-> is because there's a one-to-one mapping between protocol controllers and
-> lanes. Unfortunately, that regularity is not present for 10g.
+> > >        - items:
+> > >            - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
+> > >            - const: ethernet-phy-ieee802.3-c45
+> > > +      - items:
+> > > +          - const: fsl,lx2160a-backplane-anlt
+> > > +          - const: ethernet-phy-ieee802.3-c45
+> > 
+> > What's the benefit of having ethernet-phy-ieee802.3-c45? Will it work if 
+> > the OS only understands that and not fsl,lx2160a-backplane-anlt?
 > 
-> --Sean
+> No. The "is_c45" bool won't get set correctly in fwnode_mdiobus_register_phy().
+> 
+> 	is_c45 = fwnode_device_is_compatible(child, "ethernet-phy-ieee802.3-c45");
+> 
+> With that bool set incorrectly, the MDIO protocol cannot access the device's
+> registers.
+> 
+> > > +        description:
+> > > +          Some C45 PHYs have no PHY ID in the standard location, and there is
+> > > +          also no PHY ID allocated for them to fake. They are identified by the
+> > > +          primary compatible string, plus the secondary one to distinguish them
+> > > +          from a raw MDIO device.
 
-There are some things I saw in your phy-fsl-lynx-10g.c driver and device
-tree bindings that I don't understand (the concept of lane groups), and
-I'm not sure if they're related with what you're saying here, so if you
-could elaborate a bit more (ideally with an example) on the one-to-one
-mapping and the specific problems it causes, it would be great.
+Could you fake ID registers? Is this on any arbitrary MDIO bus, or an
+internal bus with its own MDIO driver which could trap reads to the ID
+registers and return well known values?
 
-I may be off with my understanding of the regularity you are talking about,
-but the LX2160 (and Lynx 28G block) also has multi-lane protocols like 40G,
-100G, assuming that's what you are talking about. I haven't started yet
-working on those for the mtip_backplane driver, but I'm not currently
-seeing a problem with the architecture where a phy_device represents a
-single lane that's part of a multi-lane port, and not an entire group.
-
-In my imagination, there are 2 cases:
-- all 4 lanes are managed by the single dpaa2-mac consumer (which has 4
-  phandles, and iterates over them with a "for" loop)
-- each of the 4 lanes is managed by the respective backplane AN/LT core,
-  and thus, there's one phandle to each lane
-
-I sketched some dt-bindings for the second case here, so I guess it must
-be the first scenario that's somehow problematic?
-https://patchwork.kernel.org/project/netdevbpf/patch/20230817150644.3605105-9-vladimir.oltean@nxp.com/
+	Andrew
 
 -- 
 linux-phy mailing list
