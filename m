@@ -4,145 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81F8EE4996
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 12:50:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75A5AEE4996
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 17:31:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jF6+7b4SBR/XgjcMhxis07me+DZ7/+u6QGtaiXiPOO0=; b=DxgK2kcVQrkeC7
-	HIv32EKu6d42WLvS3Pe3o8jblqQFCNULX6sDkCQspxIcfChs09N4WsBG3A5RcE5sDRwT6OX5EPsnn
-	xdIkC1+sVD4coO8/RZfsaYSFzHhdqAXFQPFKaU6RjGCBGU3O3JIsy2Ce2CuHUwU50MKd4Fw25yFbg
-	+DcUym1c6Uc9if3dPesAGoIXa7kl8OvK86gun9NP4f4ETKCE4JmUybSHN1iE1+iKwPZbPz6zwLnFO
-	bX6zbBCIk7+xXKYvVZgTfUTHX3/THSVqupz/sUtdvfZ+hYptzAVoMOQLEAd0d+lt93nTBnfGKTs79
-	5K4WEq8zuj6x0wfsurEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=n+CFeYaHd3/j4wqWymnf4BJnPo+89+KL+4kj/tyMEB0=; b=WehEzbDNmxbd9My6LA2zi7jEVL
+	KQ2x1M4Os1/Hnm6l69zVXwzJ4yWIPLiLTMFhV2KlqYs4RGk0m4t0QUTCkbM6AkBJqJ+LEgRbq/D9C
+	kNscRwEQWU7msCS4iIrfY3vB8Nm3dg+3vSBiubtudtevAkUK6Hz/IUE6e99YZzulcGGudKnYRbFNy
+	u5fu9xEe6Y65t8LIl+4MmdMVGLdPx3OYQxm8TEWMvfRLFURY42VjZcYuAhUx8JQV3YMcpYb9426c8
+	srUq71b0Y5FJxZiDHlUrF9i8kBO9jU5pK1qHUWqK07rpUclHrFr/j15iUzQEiRyocw5uOKl+hNL++
+	vgAmCuSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qY4MA-00E1vg-1o;
-	Mon, 21 Aug 2023 12:50:06 +0000
-Received: from mail-db3eur04on061e.outbound.protection.outlook.com ([2a01:111:f400:fe0c::61e] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1qY8kE-00ERWA-0a;
+	Mon, 21 Aug 2023 17:31:14 +0000
+Received: from mail-dbaeur03hn2239.outbound.protection.outlook.com ([52.100.14.239] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qY4M6-00E1uU-2S;
-	Mon, 21 Aug 2023 12:50:04 +0000
+	id 1qY8k8-00ERUQ-05
+	for linux-phy@lists.infradead.org;
+	Mon, 21 Aug 2023 17:31:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ucgSqP7EpSzw+b77mygvC9Ki6b91GIwBUxZC3Y0l9no=;
+ b=WXPDJkmFZqVdt+aFTvYK86gYKbaAJrZ9NtKKpE/ipI4levd5uof+XCA/CiDt8osNRH7EbrOY3wRdFe0ExBp8appbvZz9mBgMSL/qORi0177rkXdet6uiYX839WaiEP8bgVC+nXAB1NU3ufwZUbxPKQhIESm1IoexZqnclUkFLjp/U2z2/6Qhh1lFp13/9T6T76aRfwIZUQ74kDJYmhmVN5zDMwmFWsn0ZXa4vgRAq0+xUHQreYGwYrynytXTHSBvRI19k1v3bl49clNeMd+iSomLkeS51JYysBCwH4Z7g4YSshvsYG9+hcUWnvrE3aRfzC5nV/HM3ytafdVVT56m6Q==
+Received: from DB7PR05CA0065.eurprd05.prod.outlook.com (2603:10a6:10:2e::42)
+ by PAVPR03MB9162.eurprd03.prod.outlook.com (2603:10a6:102:326::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20; Mon, 21 Aug
+ 2023 17:30:55 +0000
+Received: from DB8EUR05FT027.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:10:2e:cafe::7b) by DB7PR05CA0065.outlook.office365.com
+ (2603:10a6:10:2e::42) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20 via Frontend
+ Transport; Mon, 21 Aug 2023 17:30:55 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.85)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.85 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.85; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.85) by
+ DB8EUR05FT027.mail.protection.outlook.com (10.233.239.192) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6723.15 via Frontend Transport; Mon, 21 Aug 2023 17:30:55 +0000
+Received: from outmta (unknown [192.168.82.132])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id E77E320080096;
+	Mon, 21 Aug 2023 17:30:54 +0000 (UTC)
+Received: from EUR01-HE1-obe.outbound.protection.outlook.com (unknown [104.47.0.54])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id 1F0592008006E;
+	Mon, 21 Aug 2023 17:30:54 +0000 (UTC)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BeCdMNx7FHNLc5Wn/ole7owsspyTeCy3sqlyiQ4GLfhhcV+L5mV/rOm+OtkxveyzSjYDFElzIUtlac/dla2V+3R1q41GIcw1TWRRPswn26DHft/AhSYSAL+cY24fkngD8VSi3/0FijrPS0u2TR6SSFCsjcaKTIQq3qbeXWIBV0zJcsuMemEPPuwwMhuU1lmbYx1rCx1v3PKHLZIvXNrvjCC2Yl+lRvatjpE1o+WNRnhaFN4HdW1GWuisxhJJdvPsZljFX+V7cu1MTFrJVHi2PaVmWjsoZzSjNm8jT1d2SJzaf08cyHuFlIxerOXEfP8XCFXFS08vFvwvn4nek0gB2Q==
+ b=Kjn4boEGH7PPWecrG3rssHwspcQYWWtVRCaiJPPRjDrGwZxEg4d7MtGzjuyym4VT+8q/Y7HqJnxWKIxR5w3nI9H4rPzMmQ1rdOMiHx0CaHQjmvpw3+CrLZtLi69EildrlWD24a4hp9vAW+zoHOK7p+CE8xVTx5OYejBTefh15OcYRjD4I7mC8xqL9SEbU0tCosAXsF2Yo0ysMvPYe3uhfDA6yQd1vLZcapY7jf4wUad+WEXsUkXsSqno7Vbh+dBQ/fYb2VXDmMrdD9aG3OROA+dntPUqGHnto3BdvtH07EmAtAXmb0f/EF1R7x1IbxU+UyOPOqoNN6g11TIR1v70ZA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Zs6s55fVitXrQYIu+Oy3xSV/pAgy+l5kuucvbv3wTx0=;
- b=WSS8MBUfBTl1WhXoXYIVIhGlYRcM3i9Ps33BST8Jovb6uxT94K8Xvsc8sY7qXoeSvi+AxtjwXGRf9kf+BO/RCwtwFVmoHQUcMFS6oaw9zq6bKwJ+GupgokEPFEkds2EVzj3barfXNCHXayu0da0i1D4SxossQhLQJmLC8DXHTyZoRLbPrds94EHbKAT7npih2BUiAPuKZQmgvjSgup/vqah1vnSmh6Ov4vQxmLcivpUaP01rXditKpa1O0xCWjXV5lrxID2bJZR26aY0qEOU6VjvbzhRDjqDpYCMikaP/b8Lt+qnnUrsQkDZ+mhZtN1hP2LEJRS8DIt9+adY2sAP+w==
+ bh=ucgSqP7EpSzw+b77mygvC9Ki6b91GIwBUxZC3Y0l9no=;
+ b=D3Vp/scJg0gw3gDcy1QrYIij/oVVdJ8/dvDKwSq0epVMfSOxOJT2Utc2N/DUo+N98jn5PoXBYR+y02DEST6UNizNzpX3Vg5WUp2KE3Bs0vP0V2Gv2ZauDQ6n1vDM/jEOexX9aAO+jACCFshKRlvwFxxQdspWMjTDpss1l/YYkTKqE0MZifAyZBnDzn9hIJnHGd2iZaQhH90FqnEGTFTqTkVqV70mHAVB+2egj2NC/pIphDjdSntC7Ym6tZTymveEMa1pn/DIiXZx+2nLrdgR6MkszvT/SwdhkjY63mxJnuFw71y6kNycljVR79+PtjsBjJWedngFW46nrg2XurxCng==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Zs6s55fVitXrQYIu+Oy3xSV/pAgy+l5kuucvbv3wTx0=;
- b=gyzTM8W5dEW43RU/v/3zKPzoTr8TWE3A5ziL5jzUANSuQlpEQQBauJU3sL719YRQc7eZUXxwxEM2dGihwfbEEGSXNLJvV8HuVVaxbWMb8B3ERQoeS595TTfdGmGokawdzvcp3U8DWvjxq7ycpqHzwAA3LU697lrxkdRNLnlPypw=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by DU0PR04MB9672.eurprd04.prod.outlook.com (2603:10a6:10:31d::12) with
+ bh=ucgSqP7EpSzw+b77mygvC9Ki6b91GIwBUxZC3Y0l9no=;
+ b=WXPDJkmFZqVdt+aFTvYK86gYKbaAJrZ9NtKKpE/ipI4levd5uof+XCA/CiDt8osNRH7EbrOY3wRdFe0ExBp8appbvZz9mBgMSL/qORi0177rkXdet6uiYX839WaiEP8bgVC+nXAB1NU3ufwZUbxPKQhIESm1IoexZqnclUkFLjp/U2z2/6Qhh1lFp13/9T6T76aRfwIZUQ74kDJYmhmVN5zDMwmFWsn0ZXa4vgRAq0+xUHQreYGwYrynytXTHSBvRI19k1v3bl49clNeMd+iSomLkeS51JYysBCwH4Z7g4YSshvsYG9+hcUWnvrE3aRfzC5nV/HM3ytafdVVT56m6Q==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by PAWPR03MB9834.eurprd03.prod.outlook.com (2603:10a6:102:2ef::12) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20; Mon, 21 Aug
- 2023 12:49:57 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
- 12:49:57 +0000
-Date: Mon, 21 Aug 2023 15:49:52 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Sean Anderson <sean.anderson@seco.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Camelia Alexandra Groza <camelia.groza@nxp.com>,
-	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
-	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
-	Jonas Gorski <jonas.gorski@gmail.com>,
-	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
-Message-ID: <20230821124952.mraqqp7pxlo56gkh@skbuf>
-References: <20230522150010.q5zndfwcuvrb6pg2@skbuf>
- <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
- <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
- <c702e2b6-cb0f-4ac9-86fe-a220284d45aa@seco.com>
- <20230612163353.dwouatvqbuo6h4ea@skbuf>
- <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
- <20230613142754.wr5njtjo4tbloqwu@skbuf>
- <20230811150826.urp2hzl3tahesrjx@skbuf>
- <26623d0c-8a5a-614b-7df7-69214aaec524@seco.com>
- <20230811163637.bs7a46juasjgnmf4@skbuf>
-Content-Disposition: inline
-In-Reply-To: <20230811163637.bs7a46juasjgnmf4@skbuf>
-X-ClientProxiedBy: VI1PR09CA0181.eurprd09.prod.outlook.com
- (2603:10a6:800:120::35) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
+ 2023 17:30:51 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::21bd:6579:b3d1:e5f7]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::21bd:6579:b3d1:e5f7%5]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
+ 17:30:51 +0000
+Message-ID: <2c8cb48c-5b0f-5712-8c50-ea285df829ec@seco.com>
+Date: Mon, 21 Aug 2023 13:30:46 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.1
+Subject: Re: [RFC PATCH net-next 2/8] phy: introduce the PHY_MODE_ETHERNET_PHY
+ mode for phy_set_mode_ext()
+Content-Language: en-US
+To: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+ Heiner Kallweit <hkallweit1@gmail.com>, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Ioana Ciornei
+ <ioana.ciornei@nxp.com>, Camelia Groza <camelia.groza@nxp.com>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor@kernel.org>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
+ <20230817150644.3605105-3-vladimir.oltean@nxp.com>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230817150644.3605105-3-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: BL1PR13CA0202.namprd13.prod.outlook.com
+ (2603:10b6:208:2be::27) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DU0PR04MB9672:EE_
-X-MS-Office365-Filtering-Correlation-Id: d96696c9-0319-4667-6165-08dba2451f54
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|PAWPR03MB9834:EE_|DB8EUR05FT027:EE_|PAVPR03MB9162:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1f862e21-cf8a-48b4-29e5-08dba26c5fea
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: 5tH459ACNF1boyE62JID2K50DAaP9/xMflDQFYBn1vI3llW/VqMohHlEwA79RW5dIV3Li6VsJvAC24GBk+XwjYMd8Ry7scBg5NoyKYDEvFv49qUaCR9Cwpg+89n9a9t7CHyqif+uEv5K9dtniG2se2i+UCRQ7rN1xPJBQeB6UwIQ8eL8GCK3OlZk1Xs/GzpwsNBpd3Z24CXTf/FXoLQ1uxROUaKklzhreSkZFchsE9i0NzQdUBYFY1WxKOPbPntMgq1/4rj6hVqvaY+z00bCnMBRH+NXvj0u4cy9ah3zT9htDvnYzwDoB6QiK4046f6gF8nF4dQPZA94Br869c/fIcOPzlXcZmDsh1ZUaOMxM0Pz3FcTGlSyOwoOqdoJ8b8XUb04nicWaeKK6xU8oZx19zKuEUgJs6oHQvxRGf5iMe/AcWjouj/0z2OWKuEbDBlvBoUWeHgNYXMCKCYXpgkduvWkiEGTo1yWNyBkgqxhMbnmCgQJIkUPwbeJAYWeWCs0k4plqb6iXpRVBCAokIQW/YtQUEk/rAXkdmIyo6CsOqD/neM+/AZXEqvaRBGwqZ29bcbb+TTrEOJY+nwOc89Euq/NP5YU/2PnxlE3nSU7TolXZuebuV/3SZNXvDePUW0KnwRYaFHFufM48QuXnhxOFkG8LW+k/+wtHGYGZVlmel7zbopijLWk2aGqM+AOdXc9
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(39850400004)(366004)(376002)(396003)(136003)(346002)(186009)(1800799009)(451199024)(2616005)(26005)(6512007)(38350700002)(86362001)(38100700002)(31696002)(36756003)(83380400001)(41300700001)(316002)(8936002)(8676002)(31686004)(66946007)(66476007)(54906003)(66556008)(2906002)(44832011)(5660300002)(4326008)(7416002)(6666004)(6486002)(6506007)(52116002)(53546011)(478600001)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWPR03MB9834
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB8EUR05FT027.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: cc1cf05c-b59f-4231-135f-08dba26c5d9a
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: NfGcKxWJpQQG9Jxzs+whd2/MEllUZt4Q1hWO1EO1aVGVzdCQSkcFYI8xkxrEgKEW5cvBVBymToeby2sVVQ1BTBgncz7AZD9gpl51T+KZ7i2R+KtD8LK8PgAgAkSu1qNmLMAhHmTKR6OlYN0tNhAbXAPb3Qs+yPd+X0C/szPOgS5hMoUuGaHw2//e7oyjxS1NMAHZJLCCV3iaDoTj7WUKQ/WpYEvGfxctbBpzoZWIe7uaPDSEST2rAKjAfYeIlhCpeN3bbam2WGXiSlDxCNlcz4DcnZpyHt5O35G4+e6U6oISaar3Hg+V79fF8YjI/oMIOGwvqY2wMlGUVBhUrwoHMETLz8njREN3z3d+ZNf6IMGz59ymtbZlxtoUZgPseNM8+gfIbp5d5vM05spOQjhsEjG1B7WRCdmxUIqxxyf7cBSkMe2KJ6elVAqIpR0rexbQlD90TLrXrutu2OhrsAevtPTHB/JzmlMPNcKWmmWDlJvr7JdFMLo1c1GbKgpyqwlTqPEu7qJS5MbrCQwe2zyFFJ1gWo2+p0uONayDKcv/tRL3eBogRXJXT60ELZXxSv+e
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(346002)(376002)(366004)(136003)(396003)(39860400002)(451199024)(186009)(1800799009)(1076003)(6666004)(6512007)(6486002)(9686003)(26005)(6506007)(83380400001)(33716001)(7416002)(8936002)(5660300002)(44832011)(8676002)(4326008)(2906002)(54906003)(478600001)(41300700001)(316002)(66556008)(66476007)(6916009)(66946007)(38100700002)(86362001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zKGNHHPXOuVPgpijVwf0Jwq8gfAYeWmKPsXDUIuwNtRm2D39l0oSG64+Am3d?=
- =?us-ascii?Q?VVadqAAKmhxfG8yHoK5/8JwijafdSBSZRFobsFrrTSHEdC4xfNMBxQY0bxHJ?=
- =?us-ascii?Q?RdmVTTJwdN8gtyrh95LqFab8R7Ybx2FwAIQXBmp79r1YlBQlb7ZWNB2EGPAJ?=
- =?us-ascii?Q?enbWkPN1vVH+yxbYUnFGMnVBSCGQLkswvgOzpKKPiPJNGOCA3lQUYxfBCoJG?=
- =?us-ascii?Q?yOPUkO3h9dICCluy872p62/xeRHmQRObjJoh6L36FCamdnS0KrJoV4uIJCgV?=
- =?us-ascii?Q?X26qPKF1z0E6yNqaCRCa/uw40PN03OD8bd2+AcOm29Jj4ShSX0HqLOlxg6xx?=
- =?us-ascii?Q?5GIzoLjOWa/ZEGVB7iDL5/94NWSpFULZjwiIPhFEr5/s4uvU0N9BFDxXjfLK?=
- =?us-ascii?Q?JdrU/q8LR8/lpJGhd/0L7Mqqq4mRM1sLMN9gj+18BiU2loQ9lzwotd8BZ+MN?=
- =?us-ascii?Q?6kpxG4bFZ44k/v54++bHkWmXQqfha3jDsM4DkCGZJ6O345piXWRBf7CylNDI?=
- =?us-ascii?Q?OtRTY1N77bY49evaD7GgrgqbRzM8PKwVdOdXL5G+sC62Uin39S1tMTg5IHP7?=
- =?us-ascii?Q?tn0wF3NLj7lUHqL6OQY679OeCUEhAA/ttm7qttkk0+HM1xljRJDzne25PptB?=
- =?us-ascii?Q?N7mgmpLSuvQU38zILVUGL9cry+Qnbbzogr1iY9SErD3i3PryxuzIxNhduytb?=
- =?us-ascii?Q?mQOxRy9ocTryDDH9Fip8TdSns+g95cvHdZu9BPYtoKAHrbJfvANyKWIEmt80?=
- =?us-ascii?Q?Kia/kH8vbqHMhvtmVZkN+QheZzw2UawSbGQi4ZI0I8lyoZ3cgCSFmCPKpjUN?=
- =?us-ascii?Q?TmCVGjU+luK1lOZs3rcJUm8q0ZOjL3yd5TwT+TVlcE6etitD9PHDykmRKGBi?=
- =?us-ascii?Q?U87DhVfQBtAF+IwZG4/msqSY7u2ttwE9RDXUwAfd9ARK3R9x44jCALPeoNLR?=
- =?us-ascii?Q?bypD7HiX8bwajcgYp/GTpALzwP71qzO3ws4+GMGL6kynlJaBqkNfe3frF21Q?=
- =?us-ascii?Q?XQ6WOutZtZnSMsnhqEnSxrgreLsNKT/sQZ4IPgi/7vewVVMwadNdVzI0K5cI?=
- =?us-ascii?Q?9V50wMhSksRD0V+AKxjLRMKNKPSB+gFVe2skG4oQHJXxv2R7BBrMUUfANQnu?=
- =?us-ascii?Q?mMOFguJD3458xkfKrNPLPt1PzuBCGXR7eBPLs9hm2TacJO/rGwa57PJ9Xo7W?=
- =?us-ascii?Q?KGL3ybrrVHavI8ntmhW1XGQhdu5M7lZr+wk3TdE/B7iq573Erxq2Wtj26i+5?=
- =?us-ascii?Q?a25GvNvqPNBGmt/awXtjkRLWyzm6NcK7FIBgwXciD57qO8NQKPHnrY0da6CS?=
- =?us-ascii?Q?vZl3KQqnecXKIWuGD1W7RZLAuFn5o/+cTCOcHZ5M/dEXZ0+WthhAOZbKj7t+?=
- =?us-ascii?Q?sMBF8w+8NMjvonpZ1d13MpHoiREXbVEhb3KjqItpBtYEdCUovMUKC0g9YOU7?=
- =?us-ascii?Q?CTv6vUf3CrhAh114F5uP2v84z5wy8cpPVLM1Pn+Mf3eVyT1A8iZqmh9MmQh8?=
- =?us-ascii?Q?6eWAvf0lCM1ATjzk/DGcOxBmiaqaLDuWkVEUn4cMRvFAqAng6RDHjVaCVKyW?=
- =?us-ascii?Q?vXphqSN6eJnPazfZqU9I4RvvmlhJJ3WyBJ9MYd6/0T3j1+U3BH22HWzmo/4J?=
- =?us-ascii?Q?yw=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d96696c9-0319-4667-6165-08dba2451f54
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 12:49:56.9682
+X-Microsoft-Antispam-Message-Info: f5afmQQTpC233ygYmJl6wxd6EkiDH72XBbSWQceDHHv3yzaumfJCpsgqJXTauOH74ofZsnyiDC4DozISt8LDclNpfx7D6gpuZlIsut3kHtxEHo2v3lL6P2mSh9MfAAGh/1+bRYtNX8D1Y/2PG9BclTxECGI/D0aeTgOPTydrFCPgaBkK+0vDjXQj8br+o6b7cvAflge+ITUEK3OCw5vJxZl0DB3qLWLxxmLQ8WbmJ7Vy2A6P58gtTjHDa4Tx9AUK8Ep5uCOYA6hoVOacBCbtJIbAHKl8LEkAtWSCffO6HeGM6m5CC9pwnOvZq0Z2Ekt3u+4PS3zABCwhs9uHLESyWZkbvmIrgKBHFkCAEfDiwYcJHBy7yz5BPB7OZPkL44SelA/OCm5jhPmE7y28qGwbqtXuxSIymRfSXT/eGB1NgrTcufaDRGXuvORLE7f8SXD7oLkv7CC8juHUNEzpXIJj9SOf2h58DOEsnZD7HCnOgn247ADitcnyOXbBXl+1ypWoGoU+U5LPr60OkLxjjxcTnWE/W4DR7jKUskjJYipnxC2sJb5iJI73j6TYkXJlhUxqPG098wHDzsSWAzpEZo6q3HoC49gnw5scCl2BlPj08CSdJqI1WoLLK2s4dsc0XKFJVsLs7ly3b/U/Z9Iu7xr9L9flq1tSzOoT7Ex1uA4mYwd5UmWCdL2HrbrkZappn4KQYWXZTGmmrz91TsqspiNJcADt2Vj5s+I4xHTz/oy6LqVUd82ySmwTXT25mAtyRfj/f8ILJFg50PqbWsyGb+unpjgEwLNI7d2rfzXZJIt0ZaYsY1cYrj38KVUsYNnnZaoo5/xRUNicBAuzND5Wmry9kQ==
+X-Forefront-Antispam-Report: CIP:20.160.56.85;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230031)(396003)(39850400004)(346002)(376002)(136003)(1800799009)(451199024)(82310400011)(5400799018)(186009)(40470700004)(36840700001)(46966006)(54906003)(70206006)(2906002)(4326008)(44832011)(8676002)(41300700001)(8936002)(316002)(70586007)(478600001)(53546011)(5660300002)(7416002)(6666004)(6486002)(6506007)(31686004)(6512007)(2616005)(336012)(26005)(83380400001)(40460700003)(47076005)(31696002)(36860700001)(34070700002)(356005)(86362001)(7596003)(7636003)(82740400003)(36756003)(40480700001)(43740500002)(12100799039);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 17:30:55.1625
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Xv9vHEnH1Pe9CI2ar/lCrnDp5+UoAI/PW2hyvwAQPm6cyCPL0CjllBuYHIGH8/Pr7zmPuan4fx28kAS/hkWSQg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9672
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1f862e21-cf8a-48b4-29e5-08dba26c5fea
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.85];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: DB8EUR05FT027.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAVPR03MB9162
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_055002_887727_281DE6E1 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20230821_103108_068066_74833205 
+X-CRM114-Status: GOOD (  22.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,32 +156,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Sean,
-
-On Fri, Aug 11, 2023 at 07:36:37PM +0300, Vladimir Oltean wrote:
-> Let me explain that approach, because your mention of "swapping out the
-> bootloaders" makes it appear as if you are not visualising what I am
-> proposing.
+On 8/17/23 11:06, Vladimir Oltean wrote:
+> As opposed to PHY_MODE_ETHERNET which takes a phy_interface_t as is
+> expected to be used by an Ethernet MAC driver, PHY_MODE_ETHERNET takes
+> an enum ethtool_link_mode_bit_indices and expects to be used by an
+> Ethernet PHY driver.
 > 
-> The Lynx SerDes family has 2 PLLs, and more lanes (4 or 8). Each lane
-> uses one PLL or the other, to derive its protocol frequency. Through the
-> RCW, you provision the 2 PLL frequencies that may be used by the lanes
-> at runtime.
-> 
-> The Lynx 28G SerDes driver reads the PLL frequencies in
-> lynx_28g_pll_read_configuration(), and determines the interface modes
-> supportable by each PLL (this is used by phylink). But it never changes
-> those PLL frequencies, since that operation is practically impossible in
-> the general sense (PLLs are shared by multiple lanes, so changing a PLL
-> frequency disrupts all lanes that use it).
+> It is true that the phy_interface_t type also contains definitions for
+> PHY_INTERFACE_MODE_10GKR and PHY_INTERFACE_MODE_1000BASEKX, but those
+> were deemed to be mistakes, and shouldn't be used going forward, when
+> 10GBase-KR and 1GBase-KX are really link modes. Thus, I believe that the
+> distinction is necessary, rather than hacking more improper PHY modes.
 
-Is my high-level feedback clear and actionable to you? I am suggesting
-to keep the look and feel the same between the lynx-10g and lynx-28g
-drivers, and to not use "fsl,type" protocols listed in the device tree
-as the immutable source of information for populating mode->protos, but
-instead the current PLL frequency configuration. So this implies that I
-am requesting that the dt-bindings should not contain a listing of the
-supported protocols.
+10GBase-KR and 1000Base-KX are both electrically (e.g. link mode) and
+functionally (e.g. phy mode) different from 10GBase-R and 1000Base-X due
+to differing autonegotiation. So the phy modes are still relevant, and
+should still be used to ensure the correct form of autonegotiation is
+selected.
+
+That said, I do agree that from the phy's (serdes's) point of view,
+there are only electrical differences between these modes.
+
+However, I'm not sure we need to have a separate mode here. I think this
+would only be necessary if there were electrically-incompatible modes
+which shared the same signalling. E.g. if 802.3 decided that they wanted
+a "long range backplane ethernet" or somesuch with different
+drive/equalization requirements from 1000BASE-KX et al. but with the
+same signalling. Otherwise, we can infer the link mode from the phy
+mode.
+
+--Sean
+
+> In particular to the Lynx SerDes, it can be used (as the PMA/PMD layer)
+> in conjunction with a separate backplane AN/LT block to form a
+> full-fledged copper backplane Ethernet PHY. The configuration of the
+> lanes is relatively similar to what is done for a typical MAC-to-PHY
+> link, except that we allow tuning the electrical equalization parameters
+> of the link (support for which will come as a separate change).
+> 
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+>  include/linux/phy/phy.h | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index 456d21c67e4f..7e10761303fc 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -39,6 +39,7 @@ enum phy_mode {
+>  	PHY_MODE_UFS_HS_B,
+>  	PHY_MODE_PCIE,
+>  	PHY_MODE_ETHERNET,
+> +	PHY_MODE_ETHERNET_PHY,
+>  	PHY_MODE_MIPI_DPHY,
+>  	PHY_MODE_SATA,
+>  	PHY_MODE_LVDS,
 
 -- 
 linux-phy mailing list
