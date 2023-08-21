@@ -4,138 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E37EEE4996
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 20:34:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4211EE49A0
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 21:07:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K63WnewnZe2UnGm7FpDK2qvADVgTK0/YZArGcK6Wuu0=; b=BOXbkpb7fgfmMD
-	IOyww0rsdn9D9ssbaOpl7pFXMXJR2mhH/aa/RurgQxh/VR182+wFleqDCwdsq4cKUYijhnND76Pt3
-	jOZiYN/kUV/JnxmTgcJZ9GOsH8rj6jlGe+GgY2vxEg4evy1yZ5FM+zbAk4Ecxx4l7TWQZkV8KwH4G
-	xXdJHKBPCvJWhj5lmnL2I8Y+zLt30OmQspi/YFJRsmNK06q/e64hPgtvG0UjQAbbAGbJw+1pyIJVU
-	v/+/FBwBQ2mWi5nVnB60KXtvuptq9iG47SUbHhgFXcMFNSzriCoUAfrIEirl5EIRjHGi4bGTqRmno
-	7dlhuOoNu54BOh5DxDww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5WuMKOOl1HocM/Ls1D3Gklc3TnEsHh2eYVWAE1X1clE=; b=NNiDXzxAPSR7jPlfnK3svrwtuT
+	UR/xs+OM25eixydyJzbwR+IZRdeZJjxR8633Q0wyf8i6fsONFXLPowtzrngF3Un57lKQYgGqZ5vMZ
+	PzuS/eWvGZ8AFu+RrxVpk9LDehxK+VjARSvHR8d9Uk5gQN+158WRQiaLT6dFffJl+I2Hniblo7Flr
+	Qqdh204shaZCsjbNg1Or48JESfDacgcQB7D4KrbIoCbHbswLVELr7aQTofRPKYeE8GR89oO5fNIrB
+	H3F70I0HXiK46EvxIM7w6dolUJERYxAHDsVO3IXwTxDeitSjgCXYA+4rMg5iqoZ6JvgTD+ESgm8fZ
+	IAZLbpBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYBbq-00Ef5K-0h;
-	Mon, 21 Aug 2023 20:34:46 +0000
-Received: from mail-dbaeur03on20622.outbound.protection.outlook.com ([2a01:111:f400:fe1a::622] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
+	id 1qYC7K-00EhHq-0L;
+	Mon, 21 Aug 2023 21:07:18 +0000
+Received: from mail-vi1eur05hn2236.outbound.protection.outlook.com ([52.100.175.236] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYBbn-00Ef4U-0x
-	for linux-phy@lists.infradead.org;
-	Mon, 21 Aug 2023 20:34:44 +0000
+	id 1qYC7G-00EhGl-1e;
+	Mon, 21 Aug 2023 21:07:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=r2nW6n8FYgTGaB2czyyuAu7bopoCC/YjzwHJjRjpZd4=;
+ b=Kz310p7qAXhAHSDRYeBTO/HHLUAW4SfPEMi5ND7XHNH5K9loY/NXdsW/1D9No1n+3LFBS9Hlp9WUu9Mx7z/igTf7fV4r3siwePN+hZPscHuSqqWM48MCA0isDbncDkxS4+risjb/ey4UemEZGIa7jdg81DlwbED6Cx02ysO+QSIUjnok+sYkmufcyMC6rIu/C4+lBqo8hlmisowOD9j+bu7yomR7Vu4PQTBmJ8peYVFfXBkZk+vmjckFNJzafBdCeachP2B4AlKzCTmXKWfvoGyjgzjffBM1F5eXJBUGCwtD7cfT/eMcF/7k/xaIjiFY2se1EMoFcWqf7PUtZspomg==
+Received: from AS9PR05CA0007.eurprd05.prod.outlook.com (2603:10a6:20b:488::27)
+ by DB3PR0302MB9207.eurprd03.prod.outlook.com (2603:10a6:10:436::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.24; Mon, 21 Aug
+ 2023 21:07:05 +0000
+Received: from AM6EUR05FT053.eop-eur05.prod.protection.outlook.com
+ (2603:10a6:20b:488:cafe::13) by AS9PR05CA0007.outlook.office365.com
+ (2603:10a6:20b:488::27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20 via Frontend
+ Transport; Mon, 21 Aug 2023 21:07:05 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.160.56.84)
+ smtp.mailfrom=seco.com; dkim=pass (signature was verified)
+ header.d=seco.com;dmarc=pass action=none header.from=seco.com;
+Received-SPF: Pass (protection.outlook.com: domain of seco.com designates
+ 20.160.56.84 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.160.56.84; helo=inpost-eu.tmcas.trendmicro.com; pr=C
+Received: from inpost-eu.tmcas.trendmicro.com (20.160.56.84) by
+ AM6EUR05FT053.mail.protection.outlook.com (10.233.240.62) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6723.15 via Frontend Transport; Mon, 21 Aug 2023 21:07:03 +0000
+Received: from outmta (unknown [192.168.82.135])
+	by inpost-eu.tmcas.trendmicro.com (Trend Micro CAS) with ESMTP id 6CB0A20080096;
+	Mon, 21 Aug 2023 21:07:03 +0000 (UTC)
+Received: from EUR04-DB3-obe.outbound.protection.outlook.com (unknown [104.47.12.51])
+	by repre.tmcas.trendmicro.com (Trend Micro CAS) with ESMTPS id E9CBF2008006E;
+	Mon, 21 Aug 2023 21:06:53 +0000 (UTC)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=E9pmw4UnkBdb1advpTg1pR2C9qSKol7O0p66z99FbqFbzPMdBCAZDFch0Ug1tElEpCHcbr+QVaU5WZsyvZdtIoaZJGQ9FhEPC9wSqzLaDo+ZKKqphnq5p4n0hh/+YXSdtgMlMvF9xYcdTVrwFCBqK7B9r1NWvnnIn7tmEoB1SpaQwWkyCruuBeiSYZGfqFV2HxiZ4Q1R4/q7fUvBig/Wu2cXx4vGMvU9TxtI5Z6vp0dzoyhmPrRF3a+k19eL3iI/zuF0JbndI2V6X5WMNG7/zNmGMZNqM0tLrFFpH8s4kUWeNHOKCeex9gaRZxCxALAShnBQVKnE2Q6G4JS0AtUltg==
+ b=Hm9tWjHG6vY0sYw/uduSE00Vj/KGm3gesl5jU0rLqRmKt9ctM4V3OvCJ8MqMUiv/Li2d43LvAlLrXMG2OD6xLdrcpu1Y578TalGtvkvn8ns4cB7X+uO3CpzY0ga946sBAFBsV/dMyNrOTC+FlyZokNTNWeWqjQhX+5gz1ofpsULVgWgMsG/Kz963n5/zaNpylWkkZw5P2a1gMUydjfgb8BliiYshGJyH9aKynGSs6tahvXVhyYbXaJBAKVMjXuEIY/F4kOVeMOfgjIM2NnNBr0dOWHzl6f++3XcRPsujXLZgZLk4CPEm/hcv9CFdRB89P8hFDe1lji7gppRKrVzXiw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=daK2MCjD8+Mj684cejidTMz8nggFkzdQn4Ly45xejto=;
- b=jse4qiTuA8K1pdE7iv0UEuMkbeOcYUs91rDzZTZfjNFu+RpIsYvTHyR9uzesZN0SFS7eNruZlHx33+RAFJmV9hiarVOMXIErafIr86gRn7nbySo1SCrD31OJcUVu7p0HmZUQzAMBjb1boxtIkb1Dfv6j9XMfHOYuiyazJL+otEkQBXcCQ54W/nObKtYCkwfg6Z8Y4uiEYrKlO85ErdWGvg1G6219TrbWMnhAzF4+1cRU45XrPThvxTMixtjk9YE4lOGtaae09+FZ6p7o5a6uFU7z2sX/KvL+IAOjBeRVlv7Kf5Be7xgkiNMcR2DseLT2TbNMp+Vhaqk15VfrxLYfuA==
+ bh=r2nW6n8FYgTGaB2czyyuAu7bopoCC/YjzwHJjRjpZd4=;
+ b=LSWivH3285Ogt9DAD5Y3HdKIXEAvf3PqyoHEhbKkcZAxk7umqCOFoJ7GakV7+yi2vDKUIyigEiQrdKGpoghV/x3QHy9alIWc66oIS9+qCoS8f2yNK8HNDgU8ij3uqvAVAk2OVXPKa0PO30+qOALCATeWVxM3JVefCx+P7ICo0tjzWHTYkpowuns7eur7NaOkCFDFPj+4vketN6YEEMrqam1QwPMJ98GKkZRlxbrefMeQb4tY8B9gRCA+isBG/G6iOHQ+hxzsIQvm2/nCKa0ricUVapWfPB7P7yHwvGCX4QojXyKV7oczX6qEWAuKGARB81+T5OvQYN91MxD/h29DZQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
+ dkim=pass header.d=seco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=daK2MCjD8+Mj684cejidTMz8nggFkzdQn4Ly45xejto=;
- b=Sz/c8PBCCtK2aazWbjoLp9IbbJj1oasbWDcY+TzaCxVrybfEBorSElOSI+qW6XOQYU5R5az7s9JOedDnmGSARouXIaZZG5caJOujHkBTwsxgvXf6yv1cSQqLUbLp3qQHY9b8OtOo/tshuNZvp7jf1coPCxxxbXOdvdhLuuwaYGk=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by PA4PR04MB9318.eurprd04.prod.outlook.com (2603:10a6:102:2a5::10) with
+ bh=r2nW6n8FYgTGaB2czyyuAu7bopoCC/YjzwHJjRjpZd4=;
+ b=Kz310p7qAXhAHSDRYeBTO/HHLUAW4SfPEMi5ND7XHNH5K9loY/NXdsW/1D9No1n+3LFBS9Hlp9WUu9Mx7z/igTf7fV4r3siwePN+hZPscHuSqqWM48MCA0isDbncDkxS4+risjb/ey4UemEZGIa7jdg81DlwbED6Cx02ysO+QSIUjnok+sYkmufcyMC6rIu/C4+lBqo8hlmisowOD9j+bu7yomR7Vu4PQTBmJ8peYVFfXBkZk+vmjckFNJzafBdCeachP2B4AlKzCTmXKWfvoGyjgzjffBM1F5eXJBUGCwtD7cfT/eMcF/7k/xaIjiFY2se1EMoFcWqf7PUtZspomg==
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=seco.com;
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com (2603:10a6:10:3dd::13)
+ by AM9PR03MB6819.eurprd03.prod.outlook.com (2603:10a6:20b:2d9::23) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20; Mon, 21 Aug
- 2023 20:34:37 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
- 20:34:37 +0000
-Date: Mon, 21 Aug 2023 23:34:33 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Cc: Rob Herring <robh@kernel.org>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH net-next 8/8] dt-bindings: net: fsl,backplane-anlt:
- new binding document
-Message-ID: <20230821203433.ysulh2bixfypbhsk@skbuf>
-References: <20230817150644.3605105-1-vladimir.oltean@nxp.com>
- <20230817150644.3605105-9-vladimir.oltean@nxp.com>
- <20230821195840.GA2181626-robh@kernel.org>
- <20230821201146.hudnk5v2zugz726p@skbuf>
- <e3afb3d5-6efe-46de-81ca-7f0163c4b04d@lunn.ch>
-Content-Disposition: inline
-In-Reply-To: <e3afb3d5-6efe-46de-81ca-7f0163c4b04d@lunn.ch>
-X-ClientProxiedBy: AS4PR10CA0025.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d8::14) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.24; Mon, 21 Aug
+ 2023 21:06:51 +0000
+Received: from DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::21bd:6579:b3d1:e5f7]) by DB9PR03MB8847.eurprd03.prod.outlook.com
+ ([fe80::21bd:6579:b3d1:e5f7%5]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
+ 21:06:51 +0000
+Message-ID: <a66c9abf-5351-62b6-5573-cae38e6768e2@seco.com>
+Date: Mon, 21 Aug 2023 17:06:46 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.1
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Content-Language: en-US
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Ioana Ciornei <ioana.ciornei@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Camelia Alexandra Groza <camelia.groza@nxp.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+ Bagas Sanjaya <bagasdotme@gmail.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, =?UTF-8?B?RmVybuKUnMOtbmRleiBSb2phcw==?=
+ <noltari@gmail.com>, Jonas Gorski <jonas.gorski@gmail.com>,
+ Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Shawn Guo
+ <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-gpio@vger.kernel.org
+References: <20230612163353.dwouatvqbuo6h4ea@skbuf>
+ <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
+ <20230613142754.wr5njtjo4tbloqwu@skbuf>
+ <20230811150826.urp2hzl3tahesrjx@skbuf>
+ <26623d0c-8a5a-614b-7df7-69214aaec524@seco.com>
+ <20230811163637.bs7a46juasjgnmf4@skbuf>
+ <20230821124952.mraqqp7pxlo56gkh@skbuf>
+ <a2e3fcad-9857-f1b3-8ada-efb2013a4bf5@seco.com>
+ <20230821181349.hls6pukp5d6rc5av@LXL00007.wbi.nxp.com>
+ <73d59dd2-88f0-3c1a-0de2-de2e050cba5a@seco.com>
+ <20230821195823.ns55h3livxgol7fp@skbuf>
+From: Sean Anderson <sean.anderson@seco.com>
+In-Reply-To: <20230821195823.ns55h3livxgol7fp@skbuf>
+X-ClientProxiedBy: BLAPR03CA0127.namprd03.prod.outlook.com
+ (2603:10b6:208:32e::12) To DB9PR03MB8847.eurprd03.prod.outlook.com
+ (2603:10a6:10:3dd::13)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PA4PR04MB9318:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6cd31f9f-5f20-471a-50aa-08dba286097c
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-TrafficTypeDiagnostic: DB9PR03MB8847:EE_|AM9PR03MB6819:EE_|AM6EUR05FT053:EE_|DB3PR0302MB9207:EE_
+X-MS-Office365-Filtering-Correlation-Id: b4fcb59c-1682-4da4-1c6d-08dba28a91ce
+X-TrendMicro-CAS-OUT-LOOP-IDENTIFIER: 656f966764b7fb185830381c646b41a1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: fiEzCXRKn520O4ko1UVQ7syguPx20Sfe24hSvnkPX5RqC8+ynzBsf1pcTMEKYyLDmcMoUiCKRSCARQUKonJRI2FftQN8n84yl+FnJm7k0/RzhzayBFHASEcyAcnF0v1u0LGhrfwiIqae9ZaXBK74ayRM5ZuImtxblwsi+prDANx2SG/1iItMv4ZYFRR4cJ10HhCgt8khgtzBzkAvAOHKgL475/tCfaK/KaXoDB5EbNUf9ujTSad81e0EKE1nErG37sgfA3dwVWeOA/KkEJCg/ujBsq0bzFIy5g0RKDSUWbZiSA2NNW4MmdjPmoJvKFPVR5zLPBS9BdXNniexneiM2x1uUz01FhXrFcBJaWzznA/E152RWEZgWDY7Q6QEsoChcVsjEJZrWTSCo728/FUYDlNwaWkVZ410vfXko+0v0ogjFuS3BJ2yXo2Woxic4cNR9zOD4oqBPUMZ1k+YTXSqPqnR1Fp9XPnB8oDKDlf2AxE9Maqc/O/DGtiKW+KnNe2l9JrljaJy086d7HEBxoFpOaWC3Qwmi20GEROKWqKCBMeWRL4hTZr85PumLYO5mv5P3Q38bPUfW0ZXqmC18fFMdKjKhl3nxwPfFNunxxB+d+LYC1Hh2ipVYpcitGI0NiXWB6zBTx5EsUaf2MunbcdiqvSLWzaoj90qMAm4Kj/mbbM=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR03MB8847.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(376002)(136003)(39850400004)(346002)(366004)(186009)(1800799009)(451199024)(54906003)(6916009)(66476007)(66556008)(316002)(66946007)(6512007)(66899024)(8676002)(8936002)(2616005)(4326008)(36756003)(41300700001)(966005)(478600001)(6666004)(38100700002)(38350700002)(53546011)(52116002)(6506007)(6486002)(83380400001)(2906002)(7416002)(86362001)(31686004)(31696002)(44832011)(5660300002)(26005)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR03MB6819
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM6EUR05FT053.eop-eur05.prod.protection.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: df68f686-9e76-4d87-a038-08dba28a8a33
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: oS4nStR7vayb5qkS1v3t7EbNxWAWksO2nJFTVoVRPhDLn+H6tJoY1K0X2a2ecLryeNwry9jbl1LhP606M7zXEOlsSTPq/VVnlzpRWIxjOyhVrY2tKLM3eDIwPhFBTPigy9CXXvuUvYvUWRfugtyHA/rO8qdlh546C0ufv3vSURhhAN5nZX8gOIlQihFzK76DqD9u15a6ky/aGz/OQ2AIH+c2YnzcTMMaN4AQdV3ZOoRdSOYFjP1K57i+qQXX9Yxf8dSIwnNpR1OJhZh0b1UPV4/GkrUeZQjfPCXshok2IhAoMvuqAXMzJUgIQnw5RBrPGz6CW6+sljJNIm8ukeM9SiP/GZUaOeBlNt52O+vYnbDEWNyK8zQMzfcAsKXKVKekj4xtQ3B5Iw616L1a7f2w3O30bF0oxBiOOXbLsOF3g3Mca5WJ6jXwwxtJSHctysZ/AKuXCYxBJpBfVWJ6Zhvknh3Eqg8phx5VE2pS+VAyH0qvzc1P1hJQI8x6WpTEG/Z+w3xu/lscEeVZp0rIIS7CFzJryUGiHs7o0K8V3dIYa087ijP55/9o0FAfZWXvJelJ
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(39860400002)(376002)(366004)(396003)(136003)(346002)(451199024)(1800799009)(186009)(86362001)(44832011)(5660300002)(41300700001)(66556008)(66476007)(316002)(2906002)(66946007)(6916009)(54906003)(7416002)(8676002)(478600001)(4326008)(8936002)(6666004)(6486002)(9686003)(6506007)(38100700002)(6512007)(26005)(33716001)(1076003)(83380400001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?F6isAOJYnmif7rfx2wf/sVGPdiilavJMQMexaU+d5mdxYa8KR7voSczKL73A?=
- =?us-ascii?Q?sUNCazMh/awdvlzA2vkWC0wk/LREhvbnb81YuC/RCaHfGFozOJuTcoA3ikV7?=
- =?us-ascii?Q?4fGIIeKCDAVz6Wy50vmvSxiufnyEl1+99QAfgDX3XyHNr+Jxao0U96KCvEty?=
- =?us-ascii?Q?TmDjC3rklTIK+S4Iasq8RwQzlqnUA6lF26N9dz8zRvdeWuB0Qhh6skk13FkC?=
- =?us-ascii?Q?7V2wvR+MJigdkyhdYlfh2VGuc/Y6HsDUG4mMyAaa887pmvecw9ct+ZauavRE?=
- =?us-ascii?Q?6nemEXMT2TH4Rjobkvam73y7cVzRHIKZNyYnJyF0Fz4CAU6fLqxS8ZIcriuA?=
- =?us-ascii?Q?ZB778DHnGdsg0UBBKhh9S41XPzoDoJLxsK3kFqnzMjo/Q7mkbi+B1Cx/11wL?=
- =?us-ascii?Q?5vKrEjD0SaPi/Vwc8stS/mkNvgsw+DBw10oQmzBcOnfAf2XeN4PIoMzP8T8/?=
- =?us-ascii?Q?WioQvrTVWQ4UNYJ2x37VMee56RrzVjBK/U97vOgP/pry/Bfvy5WUQeBKF9fn?=
- =?us-ascii?Q?3LNW8/PWdOEJuvcerWGxCs3dVYXO9U2jLfeG/k2HWkOSOl0LvJidLxiXHlZ0?=
- =?us-ascii?Q?zMOXgMriHMXeAipjKUSFuPUV/i0h7Ei4C6SeGifgr5wDuaCwG1dEe1cvbA5J?=
- =?us-ascii?Q?LiukmEfqwS4ITJMgafRHmkwNL9KoTKZ7+R7GE/yMpaKYQeb4gTceM6htbFHC?=
- =?us-ascii?Q?tow7T7ZFXlJHy+CfHSOnlMVCLg3+PR2/7c0ShHd8HuXkF9sD9Ufxhmfibmef?=
- =?us-ascii?Q?5ujmwY5Fok309j+5uTEHYbYl2A1Z24oy25HlSbjEziVF1MFLQB2lO3iy6QCf?=
- =?us-ascii?Q?6eNT7qHdGt1hU8IGKjRpOqFWkDw8kn3Q3bUohZRC8mNlSBBGeZoYWmu3Rr9z?=
- =?us-ascii?Q?0eyNcklDEoGBnbABuSMgvf8hpkv8ZWX0UIBl4bzFlKRxI4hDXh8HOpvT167X?=
- =?us-ascii?Q?OcNPxMm4pmf4FLEbDv+AO2cnHv2ZwXJBlPtD/kKPBEiIM3cGqdk+6/RSsK9e?=
- =?us-ascii?Q?l4ASvnKVGOq2YbV2FznE+Xguu3dRol7QQW9KEPdOCa2rK0SAmqWivvBP5Tw4?=
- =?us-ascii?Q?GQAoBGLTCBK1yd2DADEsxbqwzVM+SyyXzl66FNcxfDgS9kg2qLV8lMb8EsRn?=
- =?us-ascii?Q?EXeEVmOVO58ORq7BsZYrdOUKZoc2Uv1fFzp4xRhkK2Fyz3mW1GXsqkg8oq+0?=
- =?us-ascii?Q?iNFi8jfI97SdHWhAKkrp4/e/NZAjkyWFwahlfJtyOdcSmFl9MTMDmKpAbstQ?=
- =?us-ascii?Q?NPDkdCETm2Xtt30rE/nf02lmwy09I7XE1ItH4RKTytbDLTbprOAW9pJRV4rt?=
- =?us-ascii?Q?V7S4zBGfPAK42C1rUy9BG8tOyUeqyoGzkIgbrrQNaWAKabAenmbWFuFNLXtE?=
- =?us-ascii?Q?nHUSL5ZnKJd7szYt0xgAEPGvsu990PXcYTO6kDrLfNorGjKoTaHIqrVJLWmv?=
- =?us-ascii?Q?enGyrRCEsAkWJGDaEX8qsFL7eYTTXgYg34I/3xwuzWeY5tufauj2aOy9s821?=
- =?us-ascii?Q?mVCfOiOMQ78Vssx1rBP+tCaFnQylubIk09IHZ/AfPO24zxDY1/ZNhyq87x/z?=
- =?us-ascii?Q?ZmbSKR8URvzc9//jfVMBAzeRmj3Kdub2bzh7VuuuzXPvGD5z+Z3icR9y5BTz?=
- =?us-ascii?Q?Nw=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6cd31f9f-5f20-471a-50aa-08dba286097c
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 20:34:37.3668
+X-Microsoft-Antispam-Message-Info: rwU0hfXF19WBRbQzDDsZeQOOiDRThf3dJQV7sFOF8MOVSPi9SZompW4mjYnpnox2+FmBXWsIfUDrpQkuBQ+A01brlqdrfkb9maQA3S7rSFnKTVtioDhsv8+LwJFay320w5aL0CGS9YIEZ+lWqKitBqY9iJbF95qYAJFzExO/DNnXfgWA2PfQitElXttnsun+xAJB1DUMzcoN4/hSg/Seg2ba/Syq3rxN8dOtQIgy9RABS891s61aJZf9YXmHPwekbJKNnf1hsSPvDyDPZM2HUDFh3ybx30w2bkHuULamYMag/GP9qu4HbBUHVG4SmmvOrt/mNgkHWkXrm+DM6PAFW85wUaFXJGuH9XtJwINSSaC17LI09h1Ca61JjxACnrE/Xgk7gJM7M8qw9B+3YrsLL1buoISKsVigZPNcP6LUW4mcRRM12G3NRGlmBQQS7pLFkHuau4HKPa1nrCjMGwFho1Fv2rOV5XLtaaXAUA1PICotXunoonaYekKpWEplsKxTR5TYDAX9jxCDFhWGFDh4TLgvtSQ/nC1SqH60Wa3+mc61u70QtrIgZWOcokjkvaXGDBdV2vfY/9XMnaqLXYnjZdB//tyjm3dxurKDu+Dn47mGlX5m/DXsQb5vPr9JCbPS9hPVwXzRB99TmPvcMSbhmoJn+8PUrKcrfrCVl6NHryodjquYF8NT/NLL6Xu9ia8aWD884+lphdy+ACsKF5KA8yvXHXnoOObX5H5aGVZ2vBxLaDYtQfQTJ5N5UM9rG8HYX9rDnwUxtfG6/eVFOAKCJI9N4yDMT6gu1/PdrZWsCc4=
+X-Forefront-Antispam-Report: CIP:20.160.56.84;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:inpost-eu.tmcas.trendmicro.com;PTR:inpost-eu.tmcas.trendmicro.com;CAT:NONE;SFS:(13230031)(346002)(136003)(376002)(396003)(39850400004)(82310400011)(451199024)(5400799018)(1800799009)(186009)(46966006)(36840700001)(2906002)(7416002)(53546011)(6486002)(40480700001)(6506007)(83380400001)(5660300002)(44832011)(336012)(26005)(86362001)(31686004)(36860700001)(31696002)(47076005)(8676002)(34070700002)(2616005)(8936002)(4326008)(70206006)(316002)(6512007)(6916009)(54906003)(70586007)(66899024)(966005)(478600001)(356005)(82740400003)(7596003)(6666004)(36756003)(41300700001)(7636003)(43740500002)(12100799039);DIR:OUT;SFP:1501;
+X-OriginatorOrg: seco.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 21:07:03.7979
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: SHHUC4NpFcXjF9Fc9vj5y/C9NnOzCHGYBipzq5mL2Vh1ESqY5gjgQGJ7SpTQV2KaUHqzbQLnRlzwXZ9x9vgYEw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9318
+X-MS-Exchange-CrossTenant-Network-Message-Id: b4fcb59c-1682-4da4-1c6d-08dba28a91ce
+X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=bebe97c3-6438-442e-ade3-ff17aa50e733;Ip=[20.160.56.84];Helo=[inpost-eu.tmcas.trendmicro.com]
+X-MS-Exchange-CrossTenant-AuthSource: AM6EUR05FT053.eop-eur05.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0302MB9207
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_133443_340189_0B7E93E0 
-X-CRM114-Status: GOOD (  21.42  )
+X-CRM114-CacheID: sfid-20230821_140714_714034_410562AE 
+X-CRM114-Status: GOOD (  29.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,71 +166,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 21, 2023 at 10:20:43PM +0200, Andrew Lunn wrote:
-> > > >        - items:
-> > > >            - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
-> > > >            - const: ethernet-phy-ieee802.3-c45
-> > > > +      - items:
-> > > > +          - const: fsl,lx2160a-backplane-anlt
-> > > > +          - const: ethernet-phy-ieee802.3-c45
-> > > 
-> > > What's the benefit of having ethernet-phy-ieee802.3-c45? Will it work if 
-> > > the OS only understands that and not fsl,lx2160a-backplane-anlt?
-> > 
-> > No. The "is_c45" bool won't get set correctly in fwnode_mdiobus_register_phy().
-> > 
-> > 	is_c45 = fwnode_device_is_compatible(child, "ethernet-phy-ieee802.3-c45");
-> > 
-> > With that bool set incorrectly, the MDIO protocol cannot access the device's
-> > registers.
-> > 
-> > > > +        description:
-> > > > +          Some C45 PHYs have no PHY ID in the standard location, and there is
-> > > > +          also no PHY ID allocated for them to fake. They are identified by the
-> > > > +          primary compatible string, plus the secondary one to distinguish them
-> > > > +          from a raw MDIO device.
+On 8/21/23 15:58, Vladimir Oltean wrote:
+> On Mon, Aug 21, 2023 at 02:46:53PM -0400, Sean Anderson wrote:
+>> After further review, it seems the reason 28g can get away without this
+>> is because there's a one-to-one mapping between protocol controllers and
+>> lanes. Unfortunately, that regularity is not present for 10g.
+>> 
+>> --Sean
 > 
-> Could you fake ID registers? Is this on any arbitrary MDIO bus, or an
-> internal bus with its own MDIO driver which could trap reads to the ID
-> registers and return well known values?
-> 
-> 	Andrew
+> There are some things I saw in your phy-fsl-lynx-10g.c driver and device
+> tree bindings that I don't understand (the concept of lane groups)
 
-The MDIO bus is not arbitrary, the integration choice with this register
-layout is specific to the LX2160A SoC, and it's an internal PHY there.
+Each lane group corresponds to a phy device (struct phy). For protocols
+like PCIe or XAUI which can use multiple lanes, this lets the driver
+coordinate configuring all lanes at once in the correct order.
 
-But, there's already something else at those MDIO registers (where the
-standard PHY ID location is), in the MMD that the AN/LT block responds to.
-And that would be:
+> and
+> I'm not sure if they're related with what you're saying here, so if you
+> could elaborate a bit more (ideally with an example) on the one-to-one
+> mapping and the specific problems it causes, it would be great.
 
-/* Auto-Negotiation Control and Status Registers are on page 0: 0x0 */
-static const u16 mtip_lx2160a_an_regs[] = {
-	[AN_CTRL] = 0,
-	[AN_STAT] = 1,
-	[AN_ADV_0] = 2, // overlaps with MII_PHYSID1
-	[AN_ADV_1] = 3, // overlaps with MII_PHYSID2
-	[AN_ADV_2] = 4,
-	[AN_LPA_0] = 5, // overlaps with MDIO_DEVS1
-	[AN_LPA_1] = 6, // overlaps with MDIO_DEVS2
-	[AN_LPA_2] = 7,
-	[AN_MS_CNT] = 8,
-	[AN_ADV_XNP_0] = 9,
-	[AN_ADV_XNP_1] = 10,
-	[AN_ADV_XNP_2] = 11,
-	[AN_LPA_XNP_0] = 12,
-	[AN_LPA_XNP_1] = 13,
-	[AN_LPA_XNP_2] = 14,
-	[AN_BP_ETH_STAT] = 15,
-};
+For e.g. the LS2088A, SerDes1 lanes H-A use SG1-8 and XFI1-8. SerDes2
+lanes A-H use SG9-16 and XFI9-16. Each lane has its own controller, and
+the mapping is 1-to-1. In the PCCRs, each controller uses the same
+value, and is mapped in a regular way. So you can go directly from the
+lane number to the right value to mask in the PCCR, with a very simple
+translation scheme.
 
-The AN advertisement registers are kinda important to the operation of
-the driver, so I wouldn't want to mask them with fake PHY ID values
-reported by the MDIO controller.
+For e.g. the LS1046A, SerDes1 lane D uses XFI.9 (aka XFIA) and lane C
+uses XFI.10 (aka XFIB). This is the opposite of how SerDes1 lanes A-D
+use SGMII.9, .10, .5, and .6 (aka SGMIIA-D).
 
-The other option would be to somehow make the mtip_backplane driver
-remap (and thus, standardize) its own register space as phy_read_mmd()
-and phy_write_mmd() see it, but it's not clear at all how that would
-be done, or if it was done before / would be useful generally.
+For e.g. the T4240, SerDes1 lanes A-H use sg1.5, .6, .10, .9, .1, .2,
+.3, .4 (aka SGMII E, F, H, G, A, B, C, D).
+
+For e.g. the B4860, SerDes lanes A uses sgmii1 or sgmii5 and B uses
+sgmii2 or sgmii6. The MAC selected is determined based on the value
+programmed into PCCR2.
+
+While I appreciate that your hardware engineers did a better job for
+28g, many 10g serdes arbitrarily map lanes to protocol controllers.
+I think the mapping is too irregular to tame, and it is better to say
+"if you want this configuration, program this value".
+
+> I may be off with my understanding of the regularity you are talking about,
+> but the LX2160 (and Lynx 28G block) also has multi-lane protocols like 40G,
+> 100G, assuming that's what you are talking about. I haven't started yet
+> working on those for the mtip_backplane driver, but I'm not currently
+> seeing a problem with the architecture where a phy_device represents a
+> single lane that's part of a multi-lane port, and not an entire group.
+
+Resetting one lane in a group will reset the rest, which could confuse
+the driver. Additionally, treating the lanes as one phy lets us set the
+reset direction and first lane bits correctly.
+
+> In my imagination, there are 2 cases:
+> - all 4 lanes are managed by the single dpaa2-mac consumer (which has 4
+>   phandles, and iterates over them with a "for" loop)
+> - each of the 4 lanes is managed by the respective backplane AN/LT core,
+>   and thus, there's one phandle to each lane
+
+By doing the grouping in the driver, we also simplify the consumer
+implementation. The MAC can always use a single phy, without worrying
+about the actual number of lanes. This matches the hardware, since the
+MAC is going to talk XGMII (or whatever) to the protocol controller
+anyway.
+
+I think it will be a lot easier to add multi-lane support with this
+method because it gives the driver more information about what's going
+on. The driver can control the whole configuration/reset process and the
+timing.
+
+> I sketched some dt-bindings for the second case here, so I guess it must
+> be the first scenario that's somehow problematic?
+> https://cas5-0-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fpatchwork.kernel.org%2fproject%2fnetdevbpf%2fpatch%2f20230817150644.3605105%2d9%2dvladimir.oltean%40nxp.com%2f&umid=9e644233-009e-4197-a266-5d9a85eb1148&auth=d807158c60b7d2502abde8a2fc01f40662980862-cc1d5330d84af8fa40745b165a44849db50f8a67
+
+Yes, no issues with the second case.
+
+--Sean
 
 -- 
 linux-phy mailing list
