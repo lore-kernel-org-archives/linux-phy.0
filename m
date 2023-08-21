@@ -4,88 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55C71EE49A0
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 06:17:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81F8EE4996
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Aug 2023 12:50:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QZQF1yYNfvBjp9xOAR5TpG1j9HrWhWhWbcZcP0+9IBQ=; b=LbdXvIp5SPRdWF
-	MPD07Y0Ys+YuhOLweyyoZy9am0zyvpZ9dMNnWQae0pvHuw+KnKhqGnxXVb+yEVfnSS5Xoa6G4xVg7
-	4zehfkBlEcL5d/23HcJwUlSIxhAdNGHWCl9CYPLH8uGmE8hZU7gPDYJoh9eWpAVNZcDH4B8FctTik
-	r/27tyhyyBZC5noYh7FHclOAB+B3dDuKq66bBgQ8IPDo3Nx3lLAbO8xI10UGUtQynnapReM954FR6
-	aDDB17O0R71ux2l8+8KifwjnQWNFyg5OIXEopuyEWFFNFyvOTknfdRimKeje6jOggkO13Q//a2+9U
-	ZsnV5kRNa8usdMett7iQ==;
+	List-Owner; bh=jF6+7b4SBR/XgjcMhxis07me+DZ7/+u6QGtaiXiPOO0=; b=DxgK2kcVQrkeC7
+	HIv32EKu6d42WLvS3Pe3o8jblqQFCNULX6sDkCQspxIcfChs09N4WsBG3A5RcE5sDRwT6OX5EPsnn
+	xdIkC1+sVD4coO8/RZfsaYSFzHhdqAXFQPFKaU6RjGCBGU3O3JIsy2Ce2CuHUwU50MKd4Fw25yFbg
+	+DcUym1c6Uc9if3dPesAGoIXa7kl8OvK86gun9NP4f4ETKCE4JmUybSHN1iE1+iKwPZbPz6zwLnFO
+	bX6zbBCIk7+xXKYvVZgTfUTHX3/THSVqupz/sUtdvfZ+hYptzAVoMOQLEAd0d+lt93nTBnfGKTs79
+	5K4WEq8zuj6x0wfsurEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXyDw-00DF3a-0A;
-	Mon, 21 Aug 2023 06:17:12 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qY4MA-00E1vg-1o;
+	Mon, 21 Aug 2023 12:50:06 +0000
+Received: from mail-db3eur04on061e.outbound.protection.outlook.com ([2a01:111:f400:fe0c::61e] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qXyDt-00DF1e-15
-	for linux-phy@lists.infradead.org;
-	Mon, 21 Aug 2023 06:17:10 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-99c3d3c3db9so386320666b.3
-        for <linux-phy@lists.infradead.org>; Sun, 20 Aug 2023 23:16:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692598612; x=1693203412;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=v2DHyxVTCML6SgQFmf5PrsWXwq96mK2/2B8sy/Z+uk8=;
-        b=C2TLrPHZmARwktMNeniUL0KRM2S0lGuotVl5NAtWMyV2lPtA9ulYwCm28+Lxg6mW7t
-         tc6Xh4ksk/vbqObq6ch/Ati18gnFFMzH14RIALu5McnjYOL3qjUG7c47tp4baaNcT4BL
-         20Zd0s2s1Z93Dcc68qNYv4RppsTuk09AO95KsqlZlgE8tJlvaFZ7KXchNUznWT0Sr75F
-         eA2IuDL7SIfGtYAM3bcWEFF1h5jaN0f1667Dz9iZs6EabBS/DKe+aaLd/Z0BJgkmG4mY
-         g4s+pe9fn+iAwCU8Y0FEBxn2DvK6lYUMowp+k4luRedN2Kq9xhi+yCW2wpzI7K+GlMvG
-         w2dQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692598612; x=1693203412;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=v2DHyxVTCML6SgQFmf5PrsWXwq96mK2/2B8sy/Z+uk8=;
-        b=kN3QY5fjQwwqIRESsLqPl9mswWr8cpmnm78a6RBY30Ad0TDWZKklL2sVDaMPWiWjyY
-         XFBPJZ6Z5MqEq7pH7tuvW9G+0syrvmkn1JpB+77vbpc/99a/bP71brWczX/j0iTgahHk
-         U8gCngGK463ttHw9w8XOX1IugiF2ZYKaZdo19Q+LMsPfodTmjAe6HIn0OozTJ0hoJzop
-         m1IlwaAV9NbaJwbdZ8PnOChslVm01PFU1RAwLreA3auwkvUVAKH6YB+KU1IVvtXThkAy
-         Qe9b12Hism82APZj8agXSxYK3W2Q6gvM0VDGcFcPblD5f7Gu4HM8C3fnzseNukaKpVzl
-         w5ww==
-X-Gm-Message-State: AOJu0YyY2umNC6hhY2EiaPgAn8HwFgQtu+97NPo1J8tA3WRwFBZfaPtK
-	oOoK9ZhilnwSpIKM/LRSVRjjyw==
-X-Google-Smtp-Source: AGHT+IEOgpV7Sr7hyl2V7Utgz/9q0+j+gDRYIgrp8qYMaflN3noIyg4RZtchBkGl08PCwFfZja/qyA==
-X-Received: by 2002:a17:906:3caa:b0:99d:f7f3:5218 with SMTP id b10-20020a1709063caa00b0099df7f35218mr4050827ejh.25.1692598612112;
-        Sun, 20 Aug 2023 23:16:52 -0700 (PDT)
-Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id um6-20020a170906cf8600b0098d2f703408sm5966631ejb.118.2023.08.20.23.16.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 20 Aug 2023 23:16:51 -0700 (PDT)
-Message-ID: <09b4909d-686d-3e3d-f4c5-12e5cba3dd19@linaro.org>
-Date: Mon, 21 Aug 2023 08:16:50 +0200
+	id 1qY4M6-00E1uU-2S;
+	Mon, 21 Aug 2023 12:50:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BeCdMNx7FHNLc5Wn/ole7owsspyTeCy3sqlyiQ4GLfhhcV+L5mV/rOm+OtkxveyzSjYDFElzIUtlac/dla2V+3R1q41GIcw1TWRRPswn26DHft/AhSYSAL+cY24fkngD8VSi3/0FijrPS0u2TR6SSFCsjcaKTIQq3qbeXWIBV0zJcsuMemEPPuwwMhuU1lmbYx1rCx1v3PKHLZIvXNrvjCC2Yl+lRvatjpE1o+WNRnhaFN4HdW1GWuisxhJJdvPsZljFX+V7cu1MTFrJVHi2PaVmWjsoZzSjNm8jT1d2SJzaf08cyHuFlIxerOXEfP8XCFXFS08vFvwvn4nek0gB2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Zs6s55fVitXrQYIu+Oy3xSV/pAgy+l5kuucvbv3wTx0=;
+ b=WSS8MBUfBTl1WhXoXYIVIhGlYRcM3i9Ps33BST8Jovb6uxT94K8Xvsc8sY7qXoeSvi+AxtjwXGRf9kf+BO/RCwtwFVmoHQUcMFS6oaw9zq6bKwJ+GupgokEPFEkds2EVzj3barfXNCHXayu0da0i1D4SxossQhLQJmLC8DXHTyZoRLbPrds94EHbKAT7npih2BUiAPuKZQmgvjSgup/vqah1vnSmh6Ov4vQxmLcivpUaP01rXditKpa1O0xCWjXV5lrxID2bJZR26aY0qEOU6VjvbzhRDjqDpYCMikaP/b8Lt+qnnUrsQkDZ+mhZtN1hP2LEJRS8DIt9+adY2sAP+w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Zs6s55fVitXrQYIu+Oy3xSV/pAgy+l5kuucvbv3wTx0=;
+ b=gyzTM8W5dEW43RU/v/3zKPzoTr8TWE3A5ziL5jzUANSuQlpEQQBauJU3sL719YRQc7eZUXxwxEM2dGihwfbEEGSXNLJvV8HuVVaxbWMb8B3ERQoeS595TTfdGmGokawdzvcp3U8DWvjxq7ycpqHzwAA3LU697lrxkdRNLnlPypw=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
+ by DU0PR04MB9672.eurprd04.prod.outlook.com (2603:10a6:10:31d::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.20; Mon, 21 Aug
+ 2023 12:49:57 +0000
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::d4ed:20a0:8c0a:d9cf]) by AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::d4ed:20a0:8c0a:d9cf%7]) with mapi id 15.20.6699.022; Mon, 21 Aug 2023
+ 12:49:57 +0000
+Date: Mon, 21 Aug 2023 15:49:52 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
+	Jonas Gorski <jonas.gorski@gmail.com>,
+	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Message-ID: <20230821124952.mraqqp7pxlo56gkh@skbuf>
+References: <20230522150010.q5zndfwcuvrb6pg2@skbuf>
+ <22a28a6f-2c84-a6b1-bb57-a269af34c993@seco.com>
+ <20230610222123.mzmfjx7zfw4nh2lo@skbuf>
+ <c702e2b6-cb0f-4ac9-86fe-a220284d45aa@seco.com>
+ <20230612163353.dwouatvqbuo6h4ea@skbuf>
+ <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
+ <20230613142754.wr5njtjo4tbloqwu@skbuf>
+ <20230811150826.urp2hzl3tahesrjx@skbuf>
+ <26623d0c-8a5a-614b-7df7-69214aaec524@seco.com>
+ <20230811163637.bs7a46juasjgnmf4@skbuf>
+Content-Disposition: inline
+In-Reply-To: <20230811163637.bs7a46juasjgnmf4@skbuf>
+X-ClientProxiedBy: VI1PR09CA0181.eurprd09.prod.outlook.com
+ (2603:10a6:800:120::35) To AM0PR04MB6452.eurprd04.prod.outlook.com
+ (2603:10a6:208:16d::21)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH v2 01/16] dt-bindings: phy: migrate QMP USB PHY bindings
- to qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Johan Hovold <johan@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20230821002535.585660-1-dmitry.baryshkov@linaro.org>
- <20230821002535.585660-2-dmitry.baryshkov@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230821002535.585660-2-dmitry.baryshkov@linaro.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DU0PR04MB9672:EE_
+X-MS-Office365-Filtering-Correlation-Id: d96696c9-0319-4667-6165-08dba2451f54
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: NfGcKxWJpQQG9Jxzs+whd2/MEllUZt4Q1hWO1EO1aVGVzdCQSkcFYI8xkxrEgKEW5cvBVBymToeby2sVVQ1BTBgncz7AZD9gpl51T+KZ7i2R+KtD8LK8PgAgAkSu1qNmLMAhHmTKR6OlYN0tNhAbXAPb3Qs+yPd+X0C/szPOgS5hMoUuGaHw2//e7oyjxS1NMAHZJLCCV3iaDoTj7WUKQ/WpYEvGfxctbBpzoZWIe7uaPDSEST2rAKjAfYeIlhCpeN3bbam2WGXiSlDxCNlcz4DcnZpyHt5O35G4+e6U6oISaar3Hg+V79fF8YjI/oMIOGwvqY2wMlGUVBhUrwoHMETLz8njREN3z3d+ZNf6IMGz59ymtbZlxtoUZgPseNM8+gfIbp5d5vM05spOQjhsEjG1B7WRCdmxUIqxxyf7cBSkMe2KJ6elVAqIpR0rexbQlD90TLrXrutu2OhrsAevtPTHB/JzmlMPNcKWmmWDlJvr7JdFMLo1c1GbKgpyqwlTqPEu7qJS5MbrCQwe2zyFFJ1gWo2+p0uONayDKcv/tRL3eBogRXJXT60ELZXxSv+e
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(346002)(376002)(366004)(136003)(396003)(39860400002)(451199024)(186009)(1800799009)(1076003)(6666004)(6512007)(6486002)(9686003)(26005)(6506007)(83380400001)(33716001)(7416002)(8936002)(5660300002)(44832011)(8676002)(4326008)(2906002)(54906003)(478600001)(41300700001)(316002)(66556008)(66476007)(6916009)(66946007)(38100700002)(86362001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zKGNHHPXOuVPgpijVwf0Jwq8gfAYeWmKPsXDUIuwNtRm2D39l0oSG64+Am3d?=
+ =?us-ascii?Q?VVadqAAKmhxfG8yHoK5/8JwijafdSBSZRFobsFrrTSHEdC4xfNMBxQY0bxHJ?=
+ =?us-ascii?Q?RdmVTTJwdN8gtyrh95LqFab8R7Ybx2FwAIQXBmp79r1YlBQlb7ZWNB2EGPAJ?=
+ =?us-ascii?Q?enbWkPN1vVH+yxbYUnFGMnVBSCGQLkswvgOzpKKPiPJNGOCA3lQUYxfBCoJG?=
+ =?us-ascii?Q?yOPUkO3h9dICCluy872p62/xeRHmQRObjJoh6L36FCamdnS0KrJoV4uIJCgV?=
+ =?us-ascii?Q?X26qPKF1z0E6yNqaCRCa/uw40PN03OD8bd2+AcOm29Jj4ShSX0HqLOlxg6xx?=
+ =?us-ascii?Q?5GIzoLjOWa/ZEGVB7iDL5/94NWSpFULZjwiIPhFEr5/s4uvU0N9BFDxXjfLK?=
+ =?us-ascii?Q?JdrU/q8LR8/lpJGhd/0L7Mqqq4mRM1sLMN9gj+18BiU2loQ9lzwotd8BZ+MN?=
+ =?us-ascii?Q?6kpxG4bFZ44k/v54++bHkWmXQqfha3jDsM4DkCGZJ6O345piXWRBf7CylNDI?=
+ =?us-ascii?Q?OtRTY1N77bY49evaD7GgrgqbRzM8PKwVdOdXL5G+sC62Uin39S1tMTg5IHP7?=
+ =?us-ascii?Q?tn0wF3NLj7lUHqL6OQY679OeCUEhAA/ttm7qttkk0+HM1xljRJDzne25PptB?=
+ =?us-ascii?Q?N7mgmpLSuvQU38zILVUGL9cry+Qnbbzogr1iY9SErD3i3PryxuzIxNhduytb?=
+ =?us-ascii?Q?mQOxRy9ocTryDDH9Fip8TdSns+g95cvHdZu9BPYtoKAHrbJfvANyKWIEmt80?=
+ =?us-ascii?Q?Kia/kH8vbqHMhvtmVZkN+QheZzw2UawSbGQi4ZI0I8lyoZ3cgCSFmCPKpjUN?=
+ =?us-ascii?Q?TmCVGjU+luK1lOZs3rcJUm8q0ZOjL3yd5TwT+TVlcE6etitD9PHDykmRKGBi?=
+ =?us-ascii?Q?U87DhVfQBtAF+IwZG4/msqSY7u2ttwE9RDXUwAfd9ARK3R9x44jCALPeoNLR?=
+ =?us-ascii?Q?bypD7HiX8bwajcgYp/GTpALzwP71qzO3ws4+GMGL6kynlJaBqkNfe3frF21Q?=
+ =?us-ascii?Q?XQ6WOutZtZnSMsnhqEnSxrgreLsNKT/sQZ4IPgi/7vewVVMwadNdVzI0K5cI?=
+ =?us-ascii?Q?9V50wMhSksRD0V+AKxjLRMKNKPSB+gFVe2skG4oQHJXxv2R7BBrMUUfANQnu?=
+ =?us-ascii?Q?mMOFguJD3458xkfKrNPLPt1PzuBCGXR7eBPLs9hm2TacJO/rGwa57PJ9Xo7W?=
+ =?us-ascii?Q?KGL3ybrrVHavI8ntmhW1XGQhdu5M7lZr+wk3TdE/B7iq573Erxq2Wtj26i+5?=
+ =?us-ascii?Q?a25GvNvqPNBGmt/awXtjkRLWyzm6NcK7FIBgwXciD57qO8NQKPHnrY0da6CS?=
+ =?us-ascii?Q?vZl3KQqnecXKIWuGD1W7RZLAuFn5o/+cTCOcHZ5M/dEXZ0+WthhAOZbKj7t+?=
+ =?us-ascii?Q?sMBF8w+8NMjvonpZ1d13MpHoiREXbVEhb3KjqItpBtYEdCUovMUKC0g9YOU7?=
+ =?us-ascii?Q?CTv6vUf3CrhAh114F5uP2v84z5wy8cpPVLM1Pn+Mf3eVyT1A8iZqmh9MmQh8?=
+ =?us-ascii?Q?6eWAvf0lCM1ATjzk/DGcOxBmiaqaLDuWkVEUn4cMRvFAqAng6RDHjVaCVKyW?=
+ =?us-ascii?Q?vXphqSN6eJnPazfZqU9I4RvvmlhJJ3WyBJ9MYd6/0T3j1+U3BH22HWzmo/4J?=
+ =?us-ascii?Q?yw=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d96696c9-0319-4667-6165-08dba2451f54
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2023 12:49:56.9682
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Xv9vHEnH1Pe9CI2ar/lCrnDp5+UoAI/PW2hyvwAQPm6cyCPL0CjllBuYHIGH8/Pr7zmPuan4fx28kAS/hkWSQg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9672
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230820_231709_397386_C94B87C4 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20230821_055002_887727_281DE6E1 
+X-CRM114-Status: GOOD (  15.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,58 +159,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/08/2023 02:25, Dmitry Baryshkov wrote:
-> Migrate legacy bindings (described in qcom,msm8996-qmp-usb3-phy.yaml)
-> to qcom,sc8280xp-qmp-usb3-uni-phy.yaml. This removes a need to declare
-> the child PHY node or split resource regions.
+Hi Sean,
+
+On Fri, Aug 11, 2023 at 07:36:37PM +0300, Vladimir Oltean wrote:
+> Let me explain that approach, because your mention of "swapping out the
+> bootloaders" makes it appear as if you are not visualising what I am
+> proposing.
 > 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> The Lynx SerDes family has 2 PLLs, and more lanes (4 or 8). Each lane
+> uses one PLL or the other, to derive its protocol frequency. Through the
+> RCW, you provision the 2 PLL frequencies that may be used by the lanes
+> at runtime.
+> 
+> The Lynx 28G SerDes driver reads the PLL frequencies in
+> lynx_28g_pll_read_configuration(), and determines the interface modes
+> supportable by each PLL (this is used by phylink). But it never changes
+> those PLL frequencies, since that operation is practically impossible in
+> the general sense (PLLs are shared by multiple lanes, so changing a PLL
+> frequency disrupts all lanes that use it).
 
-
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> index f99fbbcd68fb..60cbcf3c19b3 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> @@ -16,20 +16,33 @@ description:
->  properties:
->    compatible:
->      enum:
-> +      - qcom,ipq6018-qmp-usb3-phy
-> +      - qcom,ipq8074-qmp-usb3-phy
->        - qcom,ipq9574-qmp-usb3-phy
-> +      - qcom,msm8996-qmp-usb3-phy
-> +      - qcom,msm8998-qmp-usb3-phy
->        - qcom,qcm2290-qmp-usb3-phy
->        - qcom,sa8775p-qmp-usb3-uni-phy
->        - qcom,sc8280xp-qmp-usb3-uni-phy
-> +      - qcom,sdm845-qmp-usb3-uni-phy
-> +      - qcom,sdx55-qmp-usb3-uni-phy
-> +      - qcom,sdx65-qmp-usb3-uni-phy
->        - qcom,sm6115-qmp-usb3-phy
-> +      - qcom,sm8150-qmp-usb3-uni-phy
-> +      - qcom,sm8250-qmp-usb3-uni-phy
-> +      - qcom,sm8350-qmp-usb3-uni-phy
-> +
->  
-
-Just one blank line
-
->    reg:
->      maxItems: 1
->  
->    clocks:
-> -    maxItems: 4
-> +    minItems: 4
-> +    maxItems: 5
-
-The clocks become now variable, so you need to constrain the number in
-allOf:if:then per each variant. At least one if: cases lack such
-constrains (qcom,ipq9574-qmp-usb3-phy, if I am looking at correct revision)
-
-
-Best regards,
-Krzysztof
-
+Is my high-level feedback clear and actionable to you? I am suggesting
+to keep the look and feel the same between the lynx-10g and lynx-28g
+drivers, and to not use "fsl,type" protocols listed in the device tree
+as the immutable source of information for populating mode->protos, but
+instead the current PLL frequency configuration. So this implies that I
+am requesting that the dt-bindings should not contain a listing of the
+supported protocols.
 
 -- 
 linux-phy mailing list
