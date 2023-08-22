@@ -4,72 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7D62EE49AA
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 14:29:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E39F2EE49AC
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 14:55:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ARbvsdqtBxBUW21GTnxWnJ32eXEd/K97uhjeDXjgl0g=; b=xMwRnfyb0DqyxB
-	iYW4yX1v8kfj+qcHcYAIaL58Dn/0FPrpvWPJeVw69KFrIxrWWLJOmCh11D1plmwev/n/q6Uzd3O3p
-	sKIPwvs/FAWXDdr4UKEqrUmW6OHWz8WkjcBnm1PwVSdDkkiSg5fBJLVI1HQQLsmm7ZHzYuDyXTG1A
-	Nd1ID6ZkcWIjk41vhp7wiC8lBXMqwI9Jf8WBagdxes/6bC7SckfuDusru6AAExjWXhnH5cIkcK17O
-	Clc4V3kXXgLjGCDnkoP7a305Rcl1Q6wreDNilDh1EHb8/IB1/TsWjDIGcQFIm1eqCRpVOXqTdnPlY
-	A1HIJa7sUEraQzPnKOBw==;
+	List-Owner; bh=LISE9LFM13sFz6zYVWSEowTfPb9C5Qj6OQEPTFHlrVs=; b=2G7dk9D6qv2iNf
+	QJsapbCSZ17as84iOttUxF3Z8Xj0OGad9IVDgrsD2V/N8PX9TjDqm8q0SAQWjbWsXnF8SrZF/5Xk2
+	kD3rK78nYeH2XywwwXYsg3nbAv4foQPqjZ/fA6++mZEVYaz6Jh0oKViMAt6b2p3JJLIgRScgiMWpa
+	eka9Lx0XlrLIOcVyTnYQ2/g8RTO5YJgcZXF0sHV/AjdFFz449ZNtIJVZks7cHu8Tse51Nt0a8baI6
+	guVkKemYFqLlUlRFKdtf5tLyBbwR6QNlr/Ol3zXQnUoB5FOxsIuHgiAwNKIhooU+1RKH+P8ZCgoo/
+	Y6S7bR7SMbV5F6m/kgZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYSNq-00GD4l-1T;
-	Tue, 22 Aug 2023 14:29:26 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qYSn2-00GGac-1q;
+	Tue, 22 Aug 2023 14:55:28 +0000
+Received: from mail-vi1eur04on061a.outbound.protection.outlook.com ([2a01:111:f400:fe0e::61a] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYSNo-00GD3x-0o;
-	Tue, 22 Aug 2023 14:29:25 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9CD7C61E4C;
-	Tue, 22 Aug 2023 14:29:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F0AFC433C7;
-	Tue, 22 Aug 2023 14:29:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692714563;
-	bh=h5zyHpspl7dpKFk5tUBL2QsxCFhjvr9+cr25M5nKD9I=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=QxDU/uzDRlUYUbPhQBOBBNOe4RoQYo8maLbY92IV4a6WbbFzfjJM3cYl8Hat8g73g
-	 UmLCKlH0Kj/LyGcVQxXij4V3tz7tyT0FE+4/NiyJMLdMSKDCNee03y6trxBULGjTR+
-	 J1waOCWynNSHUvA8yfdXUyw1NhYHFZE9Gvf9rcMd7AB+ZG4lkHOhuvhIFKlSkTHH/L
-	 288bzbEype+o7jC7njo66bN46BOSpFsunj+ruMCsMkFCqp26n6bZkaefKfpb6+0Tjm
-	 SKXazm5R8YWyoXBqFSteLX2rh90hRe+hBPiORU39cnqt/Jo5njkzBWaXbT4F2ejRUN
-	 XqimrAsFVA1/w==
-From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Rob Herring <robh+dt@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Sam Protsenko <semen.protsenko@linaro.org>
-Cc: JaeHun Jung <jh0801.jung@samsung.com>, 
- Marek Szyprowski <m.szyprowski@samsung.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Marc Kleine-Budde <mkl@pengutronix.de>, Heiko Stuebner <heiko@sntech.de>, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-In-Reply-To: <20230819031731.22618-1-semen.protsenko@linaro.org>
-References: <20230819031731.22618-1-semen.protsenko@linaro.org>
-Subject: Re: (subset) [PATCH 0/8] arm64: exynos: Enable USB for E850-96
- board
-Message-Id: <169271455700.280543.8632429647448619127.b4-ty@kernel.org>
-Date: Tue, 22 Aug 2023 19:59:17 +0530
+	id 1qYSmz-00GGY1-0g;
+	Tue, 22 Aug 2023 14:55:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nVuo8A24PCw6Rl38JfcYoVJJCAVBmgTBDkr08WfryThY2wu8r8JEyLynZf6+eS/RqPoRzXy3Xgnq3nIld7trJFG4ll/vUpxMieyYxktbvUEh+dc2voIQoWjrbHI84iYv1uZ6uKpZydVm2Sq9m9WNUxJOk6UDf4vAkYq8fu5/7GQhjj9NZtH1iSmO2D1nbLuLiDYtkFkx9VPRGd5EjnchOltDoswkmx0sBZTQIGpafImZ/6TPZd+Nrrex0qD1YKBk22s95mJdH5gG1rxJu8FN7NHKOvaO8oaYjxSjF69+QlvAwdacBNwUd4a7EHH6ACMpD0ai/RHikeYpllCVziWZAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=aVqB6QIr0Oy194tvuxVk0WB6vOoANW0evRTgIrd85a4=;
+ b=mhbgSoGKr9LK5Js4stcpv6o0sB3NyE9SAWOCNjrQ+MaTfgWZhJ49UvoJPQSBiWYpCXCcSk/hSq0N7NaaoM0LHP4hyH0d2sWR+XVe0GyRccXqF1AtG+rz6ko5s5rz4K1FHCakuHkATx0+lYXO9xwQ1i1GYlDA0INDQM0gaPoEGEeR8PoyNdARCACx0YrPcB4dCy2z2Q5VStDIHGyTUZMmfWichYj6p+CXFEA4AkEaQmKQ8uGt8Sr3Uq6l3NJgkNt0UUndRulFLddwBEvs0AqFZfdPFXcyZoEo8QNZt/hSX9X7b6zw+/EBZs97IfBOa5+EPLNSZPEvwGKJ6USAdfZI9Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aVqB6QIr0Oy194tvuxVk0WB6vOoANW0evRTgIrd85a4=;
+ b=PY0VteW8P8i6pRQbtFxcHy+DsToKlbwsl1JlDUWqUzemwNunANhS1uGVdAvzWFo0l2TKYVWGyUVnDhZ4OeEmr9wui62FDfJCtrbjL5Zi2KbqYQ73DjKyYwALVBSbRM08DCtmM6cvh7DLgWB+wjwZONj5Msp3IbquIqVO3CvHXlk=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from GV1PR04MB9070.eurprd04.prod.outlook.com (2603:10a6:150:21::14)
+ by AS8PR04MB8547.eurprd04.prod.outlook.com (2603:10a6:20b:422::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.24; Tue, 22 Aug
+ 2023 14:55:18 +0000
+Received: from GV1PR04MB9070.eurprd04.prod.outlook.com
+ ([fe80::fd28:f7a2:1bc1:53a0]) by GV1PR04MB9070.eurprd04.prod.outlook.com
+ ([fe80::fd28:f7a2:1bc1:53a0%6]) with mapi id 15.20.6699.022; Tue, 22 Aug 2023
+ 14:55:17 +0000
+Date: Tue, 22 Aug 2023 17:55:12 +0300
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Camelia Alexandra Groza <camelia.groza@nxp.com>,
+	devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+	linuxppc-dev@lists.ozlabs.org, Bagas Sanjaya <bagasdotme@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	=?utf-8?B?RmVybuKUnMOtbmRleg==?= Rojas <noltari@gmail.com>,
+	Jonas Gorski <jonas.gorski@gmail.com>,
+	Jonathan Corbet <corbet@lwn.net>, Li Yang <leoyang.li@nxp.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	linux-clk@vger.kernel.org, linux-doc@vger.kernel.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v14 00/15] phy: Add support for Lynx 10G SerDes
+Message-ID: <20230822145512.pc6qd4ovvnw4y3en@LXL00007.wbi.nxp.com>
+References: <20230612163353.dwouatvqbuo6h4ea@skbuf>
+ <1dd01fe2-08a8-ec2f-1184-a58b2f55ba85@seco.com>
+ <20230613142754.wr5njtjo4tbloqwu@skbuf>
+ <20230811150826.urp2hzl3tahesrjx@skbuf>
+ <26623d0c-8a5a-614b-7df7-69214aaec524@seco.com>
+ <20230811163637.bs7a46juasjgnmf4@skbuf>
+ <20230821124952.mraqqp7pxlo56gkh@skbuf>
+ <a2e3fcad-9857-f1b3-8ada-efb2013a4bf5@seco.com>
+ <20230821181349.hls6pukp5d6rc5av@LXL00007.wbi.nxp.com>
+ <73d59dd2-88f0-3c1a-0de2-de2e050cba5a@seco.com>
+Content-Disposition: inline
+In-Reply-To: <73d59dd2-88f0-3c1a-0de2-de2e050cba5a@seco.com>
+X-ClientProxiedBy: VI1P194CA0051.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:803:3c::40) To GV1PR04MB9070.eurprd04.prod.outlook.com
+ (2603:10a6:150:21::14)
 MIME-Version: 1.0
-X-Mailer: b4 0.12.3
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV1PR04MB9070:EE_|AS8PR04MB8547:EE_
+X-MS-Office365-Filtering-Correlation-Id: 54584efa-0dff-41a4-178c-08dba31fcca5
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: QUz2pvSPJ8nkLvCZguMDVEOIoeZzTzgoBR5iaEi4y3K7Lkx7K95UJCVSXj2kDGkoYDTJ2f9zG+hbQeCaGj5NOAHu7qu2RKjtQfQ9GGwhwc1dtepTA31yvVc7rhakulyIIHytzVpOhb6PdCrNYimjHGiOzfPOtUut77kT0LOGOrLlEs8CiNF0fA4hSll1lbCVI4JsqYBW0cklqn4/KHZtAgeA8kl6FwmbbnQwZCW7R7u8/pLv87RCqbtB5wpLBeWEFsdhA6Okof/SHNenUFVQ7xtJr9jme3gEniC2PTGXEy1BbS8CWFe8OeestrVoMCH84CPyT1iHZeTDz4ygkPw9jtWn2MjwYBLXdFlZM3q3CoaTTc1Bggo4ZnBRBYm2zo2kWVbRvbI0xHq2bVXw01nC/3rW4zdwVVgAhEwlqfnrtQRoTeYkdyT7HmRrrhVgJRE66jM6m1Lu7kes4WqLtBLWSoi1ZEy7F+Bitn2KxND6EdMehmr9EFE48WNNvyKrPXp0JjIoR1fpsxWOzudZcNJzWthz2WSdQ2iylA156pTQvX4=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV1PR04MB9070.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(136003)(376002)(39860400002)(346002)(366004)(1800799009)(186009)(451199024)(54906003)(6916009)(66476007)(66556008)(6512007)(316002)(66946007)(8676002)(8936002)(4326008)(966005)(41300700001)(1076003)(478600001)(6666004)(38100700002)(6486002)(53546011)(6506007)(83380400001)(2906002)(7416002)(86362001)(44832011)(5660300002)(26005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vlzlZgil1aNwyhrB2b9V7gLe81GcMP+g9pCLRPZ45Xnfocn3RsogTp8fxyTD?=
+ =?us-ascii?Q?YxMTsbsxJ3pqzRhBQZHj7SEJAhvwZtJMbFq2y8NLBhrMLuyxyQ9mdvYqcsxv?=
+ =?us-ascii?Q?qVyVCwDAFz27Dd2Db7fAm579tm0beU9OFU52DZsScMHk2782rf5jOxIaragT?=
+ =?us-ascii?Q?VPLRLbC+/Iy8rNc2CrkUU/mZLRz7lnBKVHDrJdzX6FKRcJ1NCrByvJAv5fwG?=
+ =?us-ascii?Q?JCed244xDNWFgGD4AFwYATpcoNlHn7tLOEkZsCcrzlIdzFQj9rgsSJemHXNt?=
+ =?us-ascii?Q?eDQH4OTD6U7/jeo3ICIDk8UT1mDEUp8XUueKvftc/PP0ZOrgLH35KRSrKCZ/?=
+ =?us-ascii?Q?ZLidJxUUgmEnkRPSuCsvSzhTTf1g/rYNVvW2oW9RNhWomF5BlOYI4ISQuCwh?=
+ =?us-ascii?Q?XwasCL4d9nBM3hshyvMzrRpYjagzkkpd13hw1HfvU356JWamcXg/+PAmb5B4?=
+ =?us-ascii?Q?xDddnl9FztLX2rUDVzOu6df7bY7dQJ1wXf/Vjb7keu/Dpr8uddyx1hwZ0Hcj?=
+ =?us-ascii?Q?Kk6luiW3z2QDQpH3LWP7kVCM3hmn2pCh+z0O4cHoEihSHLwL2uCfhYai7LzD?=
+ =?us-ascii?Q?J9pQJAJtOCUhzf52LhOHdpBr0ndq580QgATZ5FD+L5J5KaUf9+Dm1ludgiZ2?=
+ =?us-ascii?Q?Anib4qwtT6AKeBErRseM/u9LInMbfMY7U2RUMtKkmh4RTN9p2pKOr3Zek8KT?=
+ =?us-ascii?Q?vsV/kqpqsfEQJWPcjNLlDfTiSS2GM9z4CJK5kNoYAeHy0tYsA/lprFxn4Ey3?=
+ =?us-ascii?Q?1SY/5u7TcRazNb3FRcvv91KZwdFlPsAEZsiGduet4wnOSmJvqPk8n8QBbLbD?=
+ =?us-ascii?Q?BKPgJj0bbp0w23N0p6mzEdMfNR/gRLfxshSEttcXn3pjSmMIipc/zjND0ULu?=
+ =?us-ascii?Q?DvkMOyRJV8dDNJRPRqG0ozgx1gA2S9OzObZvmRsMEjHH+TTTva21AjQe6Bux?=
+ =?us-ascii?Q?QgRsl7nIOeIbxj846ftgfapYWM3FqdbSwanC2VwpPm3mRQbXILf4i8NZ+xI8?=
+ =?us-ascii?Q?yVpn8vp0XTxHfMIbPCBGrLmh0eKnFRV4TczGMdWg31dmxUIol2Z88XP2rzhj?=
+ =?us-ascii?Q?glGfPRNBwqMnELnbAhmapJe/BnyaWglz9uumS9Yc+Aqlc9aLXFhestEeR3HP?=
+ =?us-ascii?Q?QvISoPyxOIMh+r4T/aA9Oprd9T/4QvWH1WB2I+pEd3VYEvG9AVkOes0zzmAg?=
+ =?us-ascii?Q?kB7Kdj7ZMvzzhq89LWdgFne9GbyyRZDfyYgqlDY0oup4ql4ZWLhNrx/APaRx?=
+ =?us-ascii?Q?ZUYhxFwFv8Kk8k3OgYglu3w6jWMnEy3S0A0SP5Ikkx5JhiN2kQ/rQaizoDDf?=
+ =?us-ascii?Q?afFTYpCc35xraFLwKg5gJPJVhlHiHwb7MmMflI2mqKXZwsxATS3d12DzQmue?=
+ =?us-ascii?Q?JYlDk6PWPv0jndkPaSyscrz20g8k0SJoii1SK6XR1BJN3Buocp63v4IBTzK1?=
+ =?us-ascii?Q?G4ABpaJuCHKO+J20isE2w7ofmSYwnplA8XWz5R6oNnM0Anl60P7jN9v9MQdd?=
+ =?us-ascii?Q?sNMsCV9Q30+UqUsYG8S71vcnSBBkhcRPBz0LlgNh5oJ0n5v6pzfvLvubGTVl?=
+ =?us-ascii?Q?wyG5Nv5iBK5/5rcAVZFFbqeLLkz0eGLTXiQnbjRR?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 54584efa-0dff-41a4-178c-08dba31fcca5
+X-MS-Exchange-CrossTenant-AuthSource: GV1PR04MB9070.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Aug 2023 14:55:17.8808
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: mPR8Y+BRCl4En17NB8tef9OvHdiTZUoVrcnhtbZSfX/b5+0fJnQ9IUKwFKlcijgoxe/yC83jwCh7EOvXkE3NjA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8547
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_072924_331447_C9A47C88 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20230822_075525_257004_F68EE286 
+X-CRM114-Status: GOOD (  33.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,41 +158,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Mon, Aug 21, 2023 at 02:46:53PM -0400, Sean Anderson wrote:
+> On 8/21/23 14:13, Ioana Ciornei wrote:
+> > On Mon, Aug 21, 2023 at 01:45:44PM -0400, Sean Anderson wrote:
+> >> Well, we have two pieces of information we need
+> >> 
+> >> - What values do we need to program in the PCCRs to select a particular
+> >>   mode? This includes whether to e.g. set the KX bits.
+> >> - Implied by the above, what protocols are supported on which lanes?
+> >>   This is not strictly necessary, but will certainly solve a lot of
+> >>   headscratching.
+> >> 
+> >> This information varies between different socs, and different serdes on
+> >> the same socs. We can't really look at the RCW or the clocks and figure
+> >> out what we need to program. So what are our options?
+> >> 
+> >> - We can have a separate compatible for each serdes on each SoC (e.g.
+> >>   "fsl,lynx-10g-a"). This was rejected by the devicetree maintainers.
 
-On Fri, 18 Aug 2023 22:17:23 -0500, Sam Protsenko wrote:
-> This patch series enables USB gadget, USB host and Ethernet support for
-> E850-96 board. The most major change was done in USB PHY driver, as the
-> register layout of PHY block in Exynos850 is very different from
-> Exynos5 one.
+I previously took this statement at face value and didn't further
+investigate. After a bit of digging through the first versions of this
+patch set it's evident that you left out a big piece of information.
+
+The devicetree maintainers have indeed rejected compatible strings of
+the "fsl,<soc-name>-serdes-<instance>" form but they also suggested to
+move the numbering to a property instead:
+
+https://lore.kernel.org/all/db9d9455-37af-1616-8f7f-3d752e7930f1@linaro.org/
+
+But instead of doing that, you chose to move all the different details
+that vary between SerDes blocks/SoCs from the driver to the DTS. I don't
+see that this was done in response to explicit feedback.
+
+> >> - We can have one compatible for each SoC, and determine the serdes
+> >>   based on the address. I would like to avoid this...
+> > 
+> > To me this really seems like a straightforward approach.
 > 
-> Sam Protsenko (8):
->   dt-bindings: usb: samsung,exynos-dwc3: Add Exynos850 support
->   dt-bindings: phy: samsung,usb3-drd-phy: Add Exynos850 support
->   usb: dwc3: exynos: Add support for Exynos850 variant
->   phy: exynos5-usbdrd: Make it possible to pass custom phy ops
->   phy: exynos5-usbdrd: Add 26MHz ref clk support
->   phy: exynos5-usbdrd: Add Exynos850 support
->   arm64: dts: exynos: Enable USB in Exynos850
->   arm64: dts: exynos: Enable USB support on E850-96 board
+> Indeed it would be straightforward, but what's the point of having a
+> devicetree in the first place then? We could just go back to being a
+> (non-dt) platform device.
 > 
-> [...]
 
-Applied, thanks!
+I am confused why you are now so adamant to have these details into the
+DTS. Your first approach was to put them into the driver, not the DTS:
 
-[2/8] dt-bindings: phy: samsung,usb3-drd-phy: Add Exynos850 support
-      commit: 0b76bdce32300a626dc796f656c085a786c5dab1
-[4/8] phy: exynos5-usbdrd: Make it possible to pass custom phy ops
-      commit: 6b34ec66e7e7351b9a0a1eba8f57eb46ddeabf1e
-[5/8] phy: exynos5-usbdrd: Add 26MHz ref clk support
-      commit: 255ec3879dd4d585799fd8d8a94a335eaf84d2ec
-[6/8] phy: exynos5-usbdrd: Add Exynos850 support
-      commit: 691525074db97d9b684dd1457fd8dc9842a36615
+https://lore.kernel.org/netdev/20220628221404.1444200-5-sean.anderson@seco.com/
 
-Best regards,
--- 
-~Vinod
+And this approach could still work now and get accepted by the device
+tree maintainers. The only change that would be needed is to add a
+property like "fsl,serdes-block-id = <1>".
 
+> >> - We can stick all the details which vary between serdes/socs into the
+> >>   device tree. This is very flexible, since supporting new SoCs is
+> >>   mostly a matter of adding a new compatible and writing a new
+> >>   devicetree. On the other hand, if you have a bug in your devicetree,
+> >>   it's not easy to fix it in the kernel.
+> >> - Just don't support protocol switching. The 28G driver does this, which
+> >>   is why it only has one compatible. However, supporting protocol
+> >>   switching is a core goal of this driver, so dropping support is not an
+> >>   option.
+> >> 
 
+Ioana
 
 -- 
 linux-phy mailing list
