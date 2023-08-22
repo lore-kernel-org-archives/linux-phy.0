@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1BA0EE4996
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 11:39:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24FA7EE4996
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 11:41:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MVaNECpXowS4g4PADd6C4D9WSS/ShhvwqGzWlNxhgB8=; b=nCpP6i2FlasrGK
-	UU0lRKT4irCmFxqZhXy82yxIptzxq2el5kY3Il7lewDCjU03U7Fn1vVDOuGtZJ4jf0zWsKBZhSpgf
-	5Af8ohOixkmorUzciDio7+XDi5nF0hKtA0YtWy9mceKcabitVsX644s52bFQOCzKa7BDHI8RS9qi9
-	2hPTGLrmnMWIft3GQsKoOry0J48fCfUIUqKGtk+OLJNcCQ8wsXox4d07OuF7vk4hVYiWhuGtHKXSR
-	OnWVSQ42HmMEftFijjyL9qV8zGJyHUaIqJTKe4rAH2Nu17VP/IBk9ZWRtVdDHa9PDLVNXOBJMHOCO
-	A1AB3che85zZFgIEL+IQ==;
+	List-Owner; bh=5WenAlp2vlS1/K8YOMJYGI79aOqHwyGejOltlznKC0Q=; b=T7RqCga/983zcA
+	zJFKbZ7JxdcdfqtDaj6tRZAbtDpeJ1CeA2yVn7N0++CYHRJa2kc9Ly9KWL3XzAM/NzS8wdC/X7NOe
+	//Q3WuEod7jVG3D9ksESxIfRd2xMWcQ0rjGCA+vfo6M+VP71x/uK8u/enHWzg8UYYfgIXFqB/udcA
+	orUWKh36j3LJFSuQB2O+Hfvxx9oLexhWBBF3070OsUJ2c2q6KaZlhIN9mdbRez9Nco5u9HISSq9G/
+	bQQhMESHsidZ6+2zYSq8IS+LbMe14y7zkbZ7cda/ng3BmMkNp7jVXA84yYcW1PJQzeO7amb4G8CSw
+	bQoPEuRH4NZJB00L4GxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPj2-00FqE0-2G;
-	Tue, 22 Aug 2023 11:39:08 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1qYPkt-00FqMV-2i;
+	Tue, 22 Aug 2023 11:41:03 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPiy-00FqDH-2s
+	id 1qYPkr-00FqLL-0A
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Aug 2023 11:39:07 +0000
-Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-529fb2c6583so3458310a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 22 Aug 2023 04:39:04 -0700 (PDT)
+	Tue, 22 Aug 2023 11:41:02 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-99c1f6f3884so569482066b.0
+        for <linux-phy@lists.infradead.org>; Tue, 22 Aug 2023 04:41:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692704343; x=1693309143;
+        d=linaro.org; s=google; t=1692704459; x=1693309259;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=swtdZ6iWxZkwX4JLChr/7mfm4cT7UFQIrvk9nhlFwu8=;
-        b=TPmTNZHvxiq7S1kpFeok1VPQ7IF3mZnrnz07IcXRQMymJ9KyKC3bkhhgxd5wKrUO5j
-         F4c4ASZ7V98gFFbWL8F7KvzG3Xtfa+njT55ft2MDw4jqwAzfN2uLgOuDgm2pa+Xs4pPd
-         MkGua9VAMKgXX5L7KKu6ZW/M7xoM3RlBBC6rF5inMHUWfB8xUFYHloeKugcUybmNSM4K
-         v1mdqpFpT7aLeqMR7MhB0/l8v4CRQZidm+f5g0KV0v3g/x5ZvfOcG38LMP7sMD3JuQrQ
-         M6NGmQ19pKFj5xrpfmKmj9lSPDe2iPjngWjXpgsi3ZkD8S8qoxpcI6K4jyMDrqrtCl7z
-         AoFA==
+        bh=nBng5C2dnihMAm7NsUCEA4IxSsW7kmSlLCvvdXqyKNI=;
+        b=Q9/KNEeiK1MnW/VpATo99XcdowbhPp1AoE+rEsQfauE0G9EUxkPiRs/Z7io/aB2ZNs
+         APR80hjLD2cGmMtZq3xh0yB1DsXvXE3eHNJ0XF+6PaPBRlC3BmveI+7lXrc6m66spXFv
+         Ogt51Tu5IlZF47vZMKJKOyohUEx2LE98zqgksVPWIqowxjabI2Fz06lUbhHsGSqr9caz
+         4oPISz+3/dAhhRDwFGBQK7KeL0XmZMUoMAqu5go0bzeiLceH+NK0XIo9r2Sm8b6bUAvE
+         nOHlDE2m4qSX475Qz4mKaelnviavdnNjxQ2vnCGem6N1Nv1mPssJJGp/hbccyRgNTUP0
+         j5/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692704343; x=1693309143;
+        d=1e100.net; s=20221208; t=1692704459; x=1693309259;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=swtdZ6iWxZkwX4JLChr/7mfm4cT7UFQIrvk9nhlFwu8=;
-        b=EanecOSWc0ZDK3xGW3OEvRBjLiFiq6GnL8CEB29jDH+QiuDIJm8GiVboKD4Q7oiYyF
-         3o2MjwhxXyoWrsEXEKPizxmzbLLlxyGdxl8G8lenCteeCn3yUGRLsobk91kiBTdyApBN
-         TeW1v4ACdslQvRTZ0I5Qt9S0ti3+s/F2dIbzujHA2xk5C3O/5zlOEyS78zTI3fMmVecP
-         GyosEoS/mjULi1zZj4V7IiDnjVDWhYzCB48NwKul7eOVXXKWFlrhIIXzeEJQHXQVt4I4
-         YOj56Pf40l2x6frDms78rGd+HaPobdrQcVsW+Vmmb1jr5tAxcxiNecmmxrxz9U6N2GXP
-         mjPA==
-X-Gm-Message-State: AOJu0YzlhAQV+f5lkdG0Ws0bmzBcz7jlVLlDpaOzpQLwVlLj0iVmOs8R
-	AYXAIuMb0ek7vh3CfGl6B9TXKg==
-X-Google-Smtp-Source: AGHT+IHUjfXRdbb5xkWxvSmHYtiXNjA44zx5N05SQQus1ESIq5Ng+XMglFSU3mnkglNjVtBmwz7itg==
-X-Received: by 2002:a17:907:78d0:b0:98e:1c4b:10bb with SMTP id kv16-20020a17090778d000b0098e1c4b10bbmr7236522ejc.35.1692704342896;
-        Tue, 22 Aug 2023 04:39:02 -0700 (PDT)
+        bh=nBng5C2dnihMAm7NsUCEA4IxSsW7kmSlLCvvdXqyKNI=;
+        b=ff6doH6AJr0lYZ1U27O8Q2GWxjyGdpMfODteZZwzBSu7Dz1G2GQ2m0HEImZOLnOEJL
+         hHoKNr25NFOARlFZc67KsYemorMreTkt6fm1Kw9C34BggL6HHkssq6VAXBFm8UoKspUf
+         UVQZKu9qRoNMa/thXQOBLa5nfA7oMfexawc/WE6btgpj1Ufw+rw0RUdymx93zHufqJvP
+         YSf5E4N9qN4VRl/MEgkHUX7Pd7fMk/1XQbT7vgvTnpvY9fSrXPJzqgTufNUi3JtUAAT1
+         R306DXT7Bknm8GNX9nelM519CPSz+mKKGR7Mv/ckmyCquzxpbFI5r192Vfk9IZQ+j7tv
+         aZdQ==
+X-Gm-Message-State: AOJu0YxdSV37SavHu5tfYNkDE/tj0UlEaAyJD9UdHBN9UunUoW1tnOz7
+	EF3OSHWsO/ffcjA+2+5I14jG3w==
+X-Google-Smtp-Source: AGHT+IFG3rO+15qihlKOOHB8w6sqz7+J7b3+hnWU015v6n8UbWpjoVH0nhN0Oq7y6bAU+O32z7s7Iw==
+X-Received: by 2002:a17:907:2722:b0:99e:16eb:32d2 with SMTP id d2-20020a170907272200b0099e16eb32d2mr6455999ejl.62.1692704459221;
+        Tue, 22 Aug 2023 04:40:59 -0700 (PDT)
 Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id y6-20020a170906070600b0099cadcf13cesm8051872ejb.66.2023.08.22.04.39.01
+        by smtp.gmail.com with ESMTPSA id jp23-20020a170906f75700b00989828a42e8sm7987229ejb.154.2023.08.22.04.40.57
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Aug 2023 04:39:02 -0700 (PDT)
-Message-ID: <c534e39f-f8dc-b9eb-ef27-3ace29192cfc@linaro.org>
-Date: Tue, 22 Aug 2023 13:39:01 +0200
+        Tue, 22 Aug 2023 04:40:58 -0700 (PDT)
+Message-ID: <8792cced-62bc-d887-8b14-05f967f7f4ed@linaro.org>
+Date: Tue, 22 Aug 2023 13:40:57 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.14.0
-Subject: Re: [PATCH v9 3/4] arm64: dts: qcom: ipq5332: Enable USB
+Subject: Re: [PATCH v9 2/4] arm64: dts: qcom: ipq5332: Add USB related nodes
 Content-Language: en-US
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, robh+dt@kernel.org,
@@ -79,12 +79,12 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org
 References: <cover.1692699472.git.quic_varada@quicinc.com>
- <27d6303008be83131048ddf2ecef91cec9519ee2.1692699472.git.quic_varada@quicinc.com>
+ <556ee6c73a4235f52d071d98a344792daeadd228.1692699472.git.quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <27d6303008be83131048ddf2ecef91cec9519ee2.1692699472.git.quic_varada@quicinc.com>
+In-Reply-To: <556ee6c73a4235f52d071d98a344792daeadd228.1692699472.git.quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_043904_950514_30AD9A23 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20230822_044101_092300_00BC53CD 
+X-CRM114-Status: GOOD (  19.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,34 +102,78 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 22/08/2023 12:29, Varadarajan Narayanan wrote:
-> Enable USB2 in host mode.
+> Add USB phy and controller nodes.
 > 
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
 > v9:
-> 	regulator_fixed_5p0: s0500 -> regulator_fixed_5p0: regulator_s0500
+> 	usb2@8a00000 -> usb@8a00000
 > 	"make ARCH=arm64 -j 16 CHECK_DTBS=y DT_SCHEMA_FILES=qcom,ipq5332-usb-hsphy.yaml dtbs_check" passed
-> v6:
-> 	Add vdd-supply and corresponding regulator
-> v1:
-> 	Enable usb-phy node
-> ---
->  arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts b/arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts
-> index f96b0c8..53696f4 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts
-> +++ b/arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts
-> @@ -12,6 +12,15 @@
->  / {
->  	model = "Qualcomm Technologies, Inc. IPQ5332 MI01.6";
->  	compatible = "qcom,ipq5332-ap-mi01.6", "qcom,ipq5332";
-> +
-> +	regulator_fixed_5p0: regulator_s0500 {
 
-No underscores in node names. If you look at any source code, you will
-notice lack of them.
+I asked about W=1.
+
+
+> v6:
+> 	Remove clock names
+> 	Move the nodes to address sorted location
+> v5:
+> 	Use generic phy instead of usb-phy
+> 	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom dtbs_check' passed
+> 	'DT_CHECKER_FLAGS='-v -m' DT_SCHEMA_FILES=qcom dt_binding_check' passed
+> v4:
+> 	Change node name
+> 	Remove blank line
+> 	'make CHECK_DTBS=y DT_SCHEMA_FILES=qcom qcom/ipq5332-rdp441.dtb' passed
+> v1:
+> 	Rename phy node
+> 	Change compatible from m31,ipq5332-usb-hsphy -> qcom,ipq5332-usb-hsphy
+> 	Remove 'qscratch' from phy node
+> 	Fix alignment and upper-case hex no.s
+> 	Add clock definition for the phy
+> 	Remove snps,ref-clock-period-ns as it is not used. dwc3_ref_clk_period()
+> 	in dwc3/core.c takes the frequency from ref clock and calculates fladj
+> 	as appropriate.
+> ---
+>  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 55 +++++++++++++++++++++++++++++++++++
+>  1 file changed, 55 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> index 8bfc2db..e6baf69 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> @@ -145,6 +145,19 @@
+>  		#size-cells = <1>;
+>  		ranges = <0 0 0 0xffffffff>;
+>  
+> +		usbphy0: phy@7b000 {
+> +			compatible = "qcom,ipq5332-usb-hsphy";
+> +			reg = <0x0007b000 0x12c>;
+> +
+> +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
+> +
+> +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> +
+> +			#phy-cells = <0>;
+> +
+> +			status = "disabled";
+> +		};
+> +
+>  		qfprom: efuse@a4000 {
+>  			compatible = "qcom,ipq5332-qfprom", "qcom,qfprom";
+>  			reg = <0x000a4000 0x721>;
+> @@ -290,6 +303,48 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		usb: usb@8a00000 {
+> +			compatible = "qcom,ipq5332-dwc3", "qcom,dwc3";
+> +			reg = <0x08af8800 0x400>;
+
+Still wrong address. I pointed it last time. Please fix it instead of
+just sending the same. If you do not agree, keep discussing. I could
+have make a mistake, but ignoring error and not responding is not the way.
+
+
 
 Best regards,
 Krzysztof
