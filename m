@@ -4,88 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77296EE4996
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 11:47:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0970DEE49AA
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Aug 2023 12:36:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oi7WOiLAizHTnmMjAw5Mflupdr6PD2n+UaucV0e+F+Y=; b=sOAMeaeWHADvaN
-	N1zo3fCiiKKPUgT23KyXzDWry56cTydeFcpqoITj5biMvDJICPHbMPlaO75Mg+Opq2AbpSExg3arA
-	6iuevpW9R8jiOYlSx2tQGeFY6s+scgns51gwSl9TrrWXviO57wnrGgUNg8KCqNwrBsVO/ffl2wFoM
-	oS8KuzfYlR5JXv86Xv5Qr/vbDFqiNzIIJkEN0z/BNY9NPvAeUfOwitKOhGsKZDg5FVP7411BQanQK
-	l+8283vHxyxnAy3yBL2ascbPgP/L1YphduEB6ujidUBdxcBdz67e4AtV3DpcEtdTR0OEBY2IQJLUG
-	w0oXn4b2IGREI66q1hCw==;
+	List-Owner; bh=0QPhn7Gbh1CXINmTBCNieAv17yZvbfCmAmTMOSnFk34=; b=nWADyA0RgWi97C
+	ABjsyzBONwVdCNG+Uz+HunGf6v7nJ2uPGS0jWgDyT1C1sbDd5Z02mIYl8dEV00eridt/O617qqGj7
+	pwNpviOpO+zepduzIR5p2fcl/Z0zqjqnQU4Nw+x9a9vF96ERS68OklXVD0ec9NGR+aHX+VZ9eWdHj
+	0SB/1DYLGGw4wgHF493nOkeeOABwiUPUMm4+tDOmwy8Dc1cWFppOKs5WCPjuBMShpbJwAriUZMWB7
+	zXvDIktsDYChglYtmI8cSgrolVWLnrQU2vFaChAAcSy6YwWSkaNugN8Yw5xLslzsI9ggbwHj32A5d
+	sV6vs3yr5kV87yhw9SyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPr1-00FqwA-0W;
-	Tue, 22 Aug 2023 11:47:23 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1qYQcY-00Fugg-2I;
+	Tue, 22 Aug 2023 12:36:30 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPqy-00FquG-2h
+	id 1qYQcW-00FugF-01
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Aug 2023 11:47:21 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-991c786369cso582999666b.1
-        for <linux-phy@lists.infradead.org>; Tue, 22 Aug 2023 04:47:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692704837; x=1693309637;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=55bIwn2d7j3dnR0hLojkzpFkh9GKaVLHWENI/qttC+Y=;
-        b=BaZ1u4I0kXduhaoSIIgRXCfnZP1vXeZq9wbxNFNAC2d0I05kZX2pEC1g59msCdZyZy
-         h3+pQkTCydm8ugvPeM+VmZ1VJxp2Rm8XAI5hlBlc0mBeEdgqePZoEfEAb/tpIWHihoEM
-         LDIszR8GMnxgFI8O9A9Cd3MaMi/ilwIMhazYclGZ5pjvPG1MoJ/royNiItorFt6yJ2qq
-         z0FvWmAJH14Yzx5sROk/MIaLviwTTGvtLrpbHLT4yc3mO7HBW6uHatlme4s8IQz5xOIv
-         3G+UT5+qR+T6EVehsGHi/ChOEEthkyH4GL5+SUWs5azWv9NshGFXL4Ba+m8tdkqbTLeg
-         EebA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692704837; x=1693309637;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=55bIwn2d7j3dnR0hLojkzpFkh9GKaVLHWENI/qttC+Y=;
-        b=aDRD6k5499SQZ1KfEMVK4drOrljY6V4hGZJMs59bG/m+i0iVdKsBHzbPEOi2uQ5exX
-         coMRchRnNf108oDEMUe4MP09VQ9iWQmrnypWsr6arM7Nik/CPvrRTL2hP+nsUluOFkQT
-         NBynVs0gBOROoGGHucHYjt/Wnmjzt6c1sffSPjeDja4q71XstvXFbOjYRTb81wOgINde
-         Lc6kZBWJSldq00RSBQ/Ji9MMOOIkXBHedHBsBSePmEZkJ4adu2YCQs0uU/aHQTdWc/VM
-         eUZgFxnM9xFeu4T3JDC5z5biLKvEvEn6rabJ1XiF9TQPxCJIwWcl25jYrEdz7OH6q/bh
-         NFEw==
-X-Gm-Message-State: AOJu0YybxYzFX74bfy/H59Q67UIq0fCiV8ubJaQf1M3e5NpY8LPRBPNc
-	Uwcl11yTLV2sI9NTIQ8WX4j12w==
-X-Google-Smtp-Source: AGHT+IHF5Zi2ypBZqCfcQok6ofhRkICDoU4oIEgfBDJunkp2sXwdHtuMYbfri0HDGcQg6FYtYGJaqQ==
-X-Received: by 2002:a17:906:109e:b0:99b:4956:e4df with SMTP id u30-20020a170906109e00b0099b4956e4dfmr7858232eju.11.1692704837137;
-        Tue, 22 Aug 2023 04:47:17 -0700 (PDT)
-Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id ja24-20020a170907989800b00992b8d56f3asm8097682ejc.105.2023.08.22.04.47.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Aug 2023 04:47:16 -0700 (PDT)
-Message-ID: <bd24990a-9cc4-533a-0443-9e91e3b61a71@linaro.org>
-Date: Tue, 22 Aug 2023 13:47:15 +0200
+	Tue, 22 Aug 2023 12:36:29 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E86AB61047;
+	Tue, 22 Aug 2023 12:36:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACC8CC433C8;
+	Tue, 22 Aug 2023 12:36:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1692707786;
+	bh=fVkVptFFwKny9qQLoNX+rni3VwORsf2OzsmrJPMQR8s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=nHQURDprwfXLrElFhPraTkx7IlZHghXQFkoTmRGn+R39Hi6Fm5aA7j5J+LeVRpizU
+	 KSohzQrTi5p1aQ+KDoiwox9nWGm9RTSvdLwvPBsqKBjSqgTsJvgXVusUBCjnbl6yLP
+	 kl74zLu09r1Gc0Q4mftleY9r1+g48FLZvkXBJwMw=
+Date: Tue, 22 Aug 2023 14:36:23 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	dri-devel@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+	freedreno@lists.freedesktop.org
+Subject: Re: [PATCH v4 3/3] usb: typec: nb7vpq904m: switch to DRM_AUX_BRIDGE
+Message-ID: <2023082209-vitamins-unharmed-53ab@gregkh>
+References: <20230817145516.5924-1-dmitry.baryshkov@linaro.org>
+ <20230817145516.5924-4-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH v9 1/4] phy: qcom: m31: Fix indentation issues
-Content-Language: en-US
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- catalin.marinas@arm.com, will@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, arnd@arndb.de, geert+renesas@glider.be,
- nfraprado@collabora.com, rafal@milecki.pl, peng.fan@nxp.com,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org
-References: <cover.1692699472.git.quic_varada@quicinc.com>
- <6d1638daf9b0616816fdecb529df86a394db7942.1692699472.git.quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <6d1638daf9b0616816fdecb529df86a394db7942.1692699472.git.quic_varada@quicinc.com>
+Content-Disposition: inline
+In-Reply-To: <20230817145516.5924-4-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_044720_871743_0AA22EEA 
-X-CRM114-Status: UNSURE (   6.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230822_053628_087606_740327DB 
+X-CRM114-Status: GOOD (  11.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,20 +87,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/08/2023 12:29, Varadarajan Narayanan wrote:
-> * Fix indentation
-> * Drop simple success messages
+On Thu, Aug 17, 2023 at 05:55:16PM +0300, Dmitry Baryshkov wrote:
+> Switch to using the new DRM_AUX_BRIDGE helper to create the
+> transparent DRM bridge device instead of handcoding corresponding
+> functionality.
 > 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
-> v9:
-> 	Fix line break alignment
+>  drivers/usb/typec/mux/Kconfig      |  2 +-
+>  drivers/usb/typec/mux/nb7vpq904m.c | 44 ++----------------------------
+>  2 files changed, 3 insertions(+), 43 deletions(-)
 
-I wished we run checkpatch before sending patches, not after :/
+Just take this through the drm tree:
 
-Best regards,
-Krzysztof
-
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 -- 
 linux-phy mailing list
