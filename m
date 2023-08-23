@@ -4,86 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F20EEE49AF
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Aug 2023 06:43:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1F09EE49A0
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Aug 2023 09:18:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SH2OpmFNEPjeLgJYpmtmI4km4AdksAT9NcTwGhpLkrY=; b=Ku1w8eNoCxnzOX
-	xl9qdNklbH6I/MXRXhF2PqNqnEu5NDoi0XvfsffbR+R2GWgelHljGpUcAMC8nG5Y5W2ztW88JD1oS
-	V4UtjeBag9Qxm1ktmbcJZ8Gv75FokRmTFGu6+abZzg3JbkyJTKOg09GqNLtmPz+MMp5M8lG2cXUJL
-	petkYJDkY4HQlJKX17N/PpwEwWD9X7ROAfrn6bwjcz5DUV87KGKsID6R3hi1l7akfwEjHA5aSthLI
-	pr4gb349joJS0ihQAuyauBzwBTig5UkhbbTp1LY9cscREGyF7mNrM6TnomWDBSZEKM6qW4Q3MXIhK
-	7LLhIIrg/n8KfeAA6M2g==;
+	List-Owner; bh=rwFS0yXhcKpkNJ9CoS1h3M5e9SzkSuiN5bE4eRbnbjs=; b=A3eff/Ujt3SdPR
+	OxwflQ6bCMwoQGjPpMup5ObRUctC4QHRgvDdpp/KbnAy2UL6RPJkeL8zunEHN+V2mkAS6RvLQmrQI
+	XrUhuxie+GVtiZSebwMH1NHmG39akodHPtw/WVH1mmXkEn4NJ5Ns2xu0JyVW16KY9fxb9AvXvj1WJ
+	eLDWENK3AnTL7SDSH8Q0S4n5VQreRmKY6pl/PyL+FcrSJKi5joLwzD1Uq5iz+xBpW5smYs7NEQowy
+	vXQRF1d2lu7WCJeoImilFyk9BbuMR6V1xuTx5KUpWt6JGW62Q6lT+8r6ulOVGud9LbyP8fOT12C+5
+	5v4G7TP5N0lmOW5hmA7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYha9-00HPGL-0M;
-	Wed, 23 Aug 2023 06:43:09 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1qYk0I-0002rB-2E;
+	Wed, 23 Aug 2023 09:18:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYha6-00HPFu-1B
+	id 1qYk0E-0002po-2U
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Aug 2023 06:43:08 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-52164adea19so6754401a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 22 Aug 2023 23:43:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692772982; x=1693377782;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Yjfdfn7zDJ3oY0yqLMbQnYLs8oP53jkHaZtBrJK4aZY=;
-        b=clCAQ43e2P1ecZ/RHHwnOjy23p2CWLCMPRZuubOPgwmfugY+Qmp5MKuwSoMbTz8xeg
-         R/tYKnKSkT1NNACwkOA8cWkpFr2HO6OipzVezx4x3EeKiMH8rOuK0gVB8ZVSbR4bAGBM
-         IWr35nhxyLLDxQr8njIZDpxPWgOTkFXLzmYeEAqoykZ76QgVCF5uU1wPS9nzTZwr3ftu
-         pcYfSVUeRMIFfR/+1AKYG/Sq1OC/0WxCg8zjeXw3cxYKf09e/8a4SzPLE2dK/fNkeZEh
-         QMYtD49xfo3ohWOgndKx2b8aPc/ChtmeFf7vWsJBLat3kaKcy0n/KYZsVIZpugzbhW0y
-         aEBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692772982; x=1693377782;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Yjfdfn7zDJ3oY0yqLMbQnYLs8oP53jkHaZtBrJK4aZY=;
-        b=hY1Mike64P2eq2V4hStCNpwxnoEszBKeMCx5ad5K48TuVYxKEVzd1Em8jkzRl+dHc+
-         ClV1uLBX16EtjIRrTxLe2dMfP90wT5dXAivfpjdPRErPWj9TR+ILDhoYAmfS52vmpR7C
-         e+Ma9Bi9Qd1vyRImaJ3qB7mNNBlqp7zorZS0PpNLZi0sME5KjFhRdwlWhhWntVi8XGYg
-         Dki7l/XgvT8D+cKJcxSnCub0t0B/gW/iH/B0t1oWM/PN1UQnZN2xlmzk29kJqs9/QhNK
-         R/E9tlM6R1NOBBQLCUSh+sr7drwC9kN9AC5fgPqlfWkKS7d6FjTIpe7k/MILStSpMCzC
-         G2IA==
-X-Gm-Message-State: AOJu0Yz+HtqCCLjMAVZSBFvrQCWiut3UwpGcwriPEKpbioCDKOLNxy86
-	A6QznmXnLS9FCJUd0Jk14ubN3Q==
-X-Google-Smtp-Source: AGHT+IENUkqAb+iFYYvNG2ra9eusUsjreUWka/VKl+pIiILy/fuSTu/KFS+CCx0yjOSRt0Zs+4d98w==
-X-Received: by 2002:a05:6402:2025:b0:521:ae63:ee63 with SMTP id ay5-20020a056402202500b00521ae63ee63mr9587307edb.16.1692772982441;
-        Tue, 22 Aug 2023 23:43:02 -0700 (PDT)
-Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id bo20-20020a0564020b3400b0052569cb790bsm8874713edb.89.2023.08.22.23.43.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Aug 2023 23:43:01 -0700 (PDT)
-Message-ID: <88ebbb45-7407-f30a-94ca-f4947e887d01@linaro.org>
-Date: Wed, 23 Aug 2023 08:43:00 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH v2] dt-bindings: phy: st: convert phy-stih407-usb to DT
- schema
-Content-Language: en-US
-To: Raphael Gallais-Pou <rgallaispou@gmail.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Patrice Chotard <patrice.chotard@foss.st.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20230822204321.54716-1-rgallaispou@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230822204321.54716-1-rgallaispou@gmail.com>
+	Wed, 23 Aug 2023 09:18:17 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37N8H0lo000423;
+	Wed, 23 Aug 2023 09:18:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=FfIoPDI/BVSgoM1L3UK9pwpNunmdkyV+R7jGXcOfKoo=;
+ b=PXSi0ec6GIhm34tGIgCy0bL0HfljUoEURewwXSZo8E4VmDuLofNVbP2ZYOn+PpiCoCbo
+ 5owtAgcU02aeUMkCTT499T7r9EalnPc66uoCSA2SKtZXHj1WusoFQsBSDHZ1IrLywEE9
+ JhyTtHo7v+QUD6i5xsyEgFuXYTWEjLt9r4hHpvXoj4cfGfcxOuV7dJN44i3JsugoBMXw
+ gSZI+DZkwXCtAIOSIy7jnaS8JtmFlJ/xPfLxl7D0aOiFqh/o/K1YXeF7tDLJ2CvS1W+W
+ zGOSYhFFfwpHm1QlQIpGsh3rJbrLV3QtKvD0bfKeCFpbVTwgYgMLDCnKRNqDgsw1/wNU NA== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sn2be1kpp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Aug 2023 09:18:06 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 37N9I3d2018356;
+	Wed, 23 Aug 2023 09:18:03 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3sjptkpxtm-1;
+	Wed, 23 Aug 2023 09:18:03 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 37N9I3Qj018350;
+	Wed, 23 Aug 2023 09:18:03 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 37N9I2Sk018349;
+	Wed, 23 Aug 2023 09:18:03 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 58CF65000AA; Wed, 23 Aug 2023 14:48:02 +0530 (+0530)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+        Nitin Rawat <quic_nitirawa@quicinc.com>,
+        Manish Pandey <quic_mapa@quicinc.com>
+Subject: [PATCH V3 2/2] phy: qcom-qmp-ufs: Add Phy Configuration support for SC7280
+Date: Wed, 23 Aug 2023 14:47:57 +0530
+Message-Id: <20230823091757.31311-3-quic_nitirawa@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20230823091757.31311-1-quic_nitirawa@quicinc.com>
+References: <20230823091757.31311-1-quic_nitirawa@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: TyIjKyv0qcYtaJe63ZtBQey5qHGVNocQ
+X-Proofpoint-ORIG-GUID: TyIjKyv0qcYtaJe63ZtBQey5qHGVNocQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-23_06,2023-08-22_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ adultscore=0 spamscore=0 mlxscore=0 priorityscore=1501 phishscore=0
+ mlxlogscore=829 bulkscore=0 clxscore=1015 impostorscore=0 malwarescore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2308230084
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_234306_414394_344FB64A 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20230823_021814_816623_4B642371 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,85 +98,190 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/08/2023 22:43, Raphael Gallais-Pou wrote:
-> Convert the st,stih407-usb2-phy binding to DT schema format.
-> 
-> Signed-off-by: Raphael Gallais-Pou <rgallaispou@gmail.com>
-> ---
+Add SC7280 specific register layout and table configs.
 
-Thank you for your patch. There is something to discuss/improve. Minor
-change needed at the end. While at it, few more nits (which I would skip
-if not that change).
+Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 142 ++++++++++++++++++++++++
+ 1 file changed, 142 insertions(+)
 
-> Changes in v2:
->   * Removed quotes surrounding $ref
->   * Removed quotes surrounding const properties
->   * Changed 'st,syscfg' $ref value to phandle-array
->   * Changed authorship to my oss email addressThank you for your patch. There is something to discuss/improve.
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 3927eba8e468..514fa14df634 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -177,6 +177,111 @@ static const struct qmp_phy_init_tbl msm8996_ufsphy_rx[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2, 0x0E),
+ };
 
-Nit: Drop "driver" and any other driver references. Instead, focus on
-device.
++static const struct qmp_phy_init_tbl sc7280_ufsphy_tx[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_1_DIVIDER_BAND0_1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_2_DIVIDER_BAND0_1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_3_DIVIDER_BAND0_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_PWM_GEAR_4_DIVIDER_BAND0_1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0x35),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_TRAN_DRVR_EMP_EN, 0x0c),
++};
++
++static const struct qmp_phy_init_tbl sc7280_ufsphy_rx[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_LVL, 0x24),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_BAND, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FASTLOCK_FO_GAIN, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CONTROLS, 0xf1),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FASTLOCK_COUNT_LOW, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CTRL2, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_GAIN, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_TERM_BW, 0x1b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x1d),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_MEASURE_TIME, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0xc0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x6d),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0x6d),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xed),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x3c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0xe0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH3, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0xb1),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_LOW, 0xe0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH2, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH3, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH4, 0xb1),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DCC_CTRL1, 0x0c),
++};
++
++static const struct qmp_phy_init_tbl sc7280_ufsphy_pcs[] = {
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2, 0x6d),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0a),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL, 0x02),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_DEBUG_BUS_CLKSEL, 0x1f),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_RX_MIN_HIBERN8_TIME, 0xff),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_PLL_CNTL, 0x03),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB, 0x16),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB, 0xd8),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND, 0xaa),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND, 0x06),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x03),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x03),
++};
++
++static const struct qmp_phy_init_tbl sc7280_ufsphy_hs_g4_rx[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_LVL, 0x24),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x1e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_BAND, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FASTLOCK_FO_GAIN, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x5a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CONTROLS, 0xf1),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FASTLOCK_COUNT_LOW, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CTRL2, 0x81),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_GAIN, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_TERM_BW, 0x6f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x09),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_MEASURE_TIME, 0x20),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x2c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0x6d),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0x6d),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xed),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH3, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0x3c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_LOW, 0xe0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH2, 0xc8),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH3, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH4, 0xb1),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DCC_CTRL1, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_GM_CAL, 0x0f),
++};
++
+ static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
+ 	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x14),
+@@ -888,6 +993,40 @@ static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
+ 	.regs			= ufsphy_v5_regs_layout,
+ };
 
++static const struct qmp_phy_cfg sc7280_ufsphy_cfg = {
++	.lanes                  = 2,
++
++	.offsets                = &qmp_ufs_offsets,
++
++	.tbls = {
++		.serdes         = sm8150_ufsphy_serdes,
++		.serdes_num     = ARRAY_SIZE(sm8150_ufsphy_serdes),
++		.tx             = sc7280_ufsphy_tx,
++		.tx_num         = ARRAY_SIZE(sc7280_ufsphy_tx),
++		.rx             = sc7280_ufsphy_rx,
++		.rx_num         = ARRAY_SIZE(sc7280_ufsphy_rx),
++		.pcs            = sc7280_ufsphy_pcs,
++		.pcs_num        = ARRAY_SIZE(sc7280_ufsphy_pcs),
++	},
++	.tbls_hs_b = {
++		.serdes         = sm8150_ufsphy_hs_b_serdes,
++		.serdes_num     = ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
++	},
++	.tbls_hs_g4 = {
++		.tx             = sm8250_ufsphy_hs_g4_tx,
++		.tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
++		.rx             = sc7280_ufsphy_hs_g4_rx,
++		.rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
++		.pcs            = sm8150_ufsphy_hs_g4_pcs,
++		.pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
++	},
++	.clk_list               = sm8450_ufs_phy_clk_l,
++	.num_clks               = ARRAY_SIZE(sm8450_ufs_phy_clk_l),
++	.vreg_list              = qmp_phy_vreg_l,
++	.num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs                   = ufsphy_v4_regs_layout,
++};
++
+ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
+ 	.lanes			= 2,
 
-> +  (when controlling usb2/1.1 devices) available on STiH407 SoC family from
-> +  STMicroelectronics.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stih407-usb2-phy
-> +
-> +  st,syscfg:
-> +    description: Phandle to the syscfg bank
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    items:
-> +      - items:
-> +          - description: phandle to syscfg
-> +          - description: phyparam register offset
-> +          - description: phyctrl register offset
-> +
-> +  resets:
-> +    items:
-> +      - description: Phandle and reset specifier pair for the whole phy.
-> +      - description: Phandle and reset specifier pair for the port.
-> +
-> +  reset-names:
-> +    description: List of reset signal names.
-
-Nit: drop description, it is obvious.
-
-> +    items:
-> +      - const: global
-> +      - const: port
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - st,syscfg
-> +  - resets
-> +  - reset-names
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/reset/stih407-resets.h>
-> +    usb2_picophy0: usbpicophy {
-
-Drop unused label, and make node name as: usb-phy or phy
-
-https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
-
-
-Best regards,
-Krzysztof
+@@ -1648,6 +1787,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sa8775p-qmp-ufs-phy",
+ 		.data = &sa8775p_ufsphy_cfg,
++	}, {
++		.compatible = "qcom,sc7280-qmp-ufs-phy",
++		.data = &sc7280_ufsphy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sc8180x-qmp-ufs-phy",
+ 		.data = &sm8150_ufsphy_cfg,
+--
+2.17.1
 
 
 -- 
