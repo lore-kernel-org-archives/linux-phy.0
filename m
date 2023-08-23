@@ -4,81 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3C6AEE4993
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Aug 2023 13:23:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 139B7EE4993
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Aug 2023 13:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h9lrcDU2pMhAtZw5itnGTqy1sQup4BOesyqF+1PT0Zs=; b=NA+rlAtoQblsdB
-	XIW3arzEYtRQTpiTdH1pdkmAUSPaBsDak1ryLptwz72VDkS2dZ300uzV80/wAb1zzqlRdlZwDqvdL
-	SdOqiof1s29YAzLp/FdnhBzMAFwACZ28sK/dOibZfLsx7BLtC7pPg1xFz0ebgKp7tXVUJRwKzvndx
-	Ss3bSQxjfesfgiNH6gUaEnZlikYyijfEbrJBSQlz1THVOHfb9N3UZogUkNDxkweQUFVRuzC1DWpoh
-	gdgKtf3wDvhJK7TIWaIdgVMa+Ajr475bVvvKsN5LyT5X3XKDRIQZ0EHm+vk5UcuDZp8UwRx3Yj04C
-	ZDz8ZqS5qHq9t9nuBPIA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6Sq1xNp2lIh1UrlKG+icQKV7vMkO16w5WGsYlCtkrBQ=; b=pvgJmRM/hq3b5m
+	pMioSrY1NpzaOZqXvX6OSJvDI4b246BSiHD2UJEe+MXtkxNtEf//kW9SPgReGFOcnrNOH41McSok+
+	izmjX9OCCcjzN+MSQKeb2ucVKAqyCIR8M+6IIShjGzKRKM34gKqzjK02jVmfiyJ+Xc4pxcohNQl9D
+	dfWotu/QF9u05y2eygvgNj+k9cdHB4fMmCviOzXxx6PrSLGBBcj8zt3oOmtnGQWuqMSWV4J9OztEV
+	gJzE+h5JLu0ENQuuO73+diQ2OoTYle61uwIdXm4wf3ExEt05GREF60kJRMYddbz2FmnVEM7iDOa0b
+	ubo0Ep+J8nGqlMheZZCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYnp9-000fsq-23;
-	Wed, 23 Aug 2023 13:23:03 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1qYntG-000gCn-2W;
+	Wed, 23 Aug 2023 13:27:18 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYnp6-000fs4-0a
+	id 1qYntD-000gBd-32
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Aug 2023 13:23:02 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-31aeef88a55so3389616f8f.2
-        for <linux-phy@lists.infradead.org>; Wed, 23 Aug 2023 06:22:49 -0700 (PDT)
+	Wed, 23 Aug 2023 13:27:17 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2bcc4347d2dso41921291fa.0
+        for <linux-phy@lists.infradead.org>; Wed, 23 Aug 2023 06:27:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1692796968; x=1693401768;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Pzn+5bTpnSMNwUuNyyowNMIJDQZpkAi+7c7mgKTYoME=;
-        b=r6cn6rzIz0BUUjfTlEntcGmnQ1emT1LcuHfH0giUjqFalgnkFVgfmPmYn4JnZIGvGd
-         8vq36GiD1N7HPhbhCHGX/Vxtvs65nKwerH03TLGgA3Jh5i1/nmPkBqtxZiXkbYi8oD6w
-         K1UDpRQ5E5lLyAgjOBLJlKxACcWjaQUsQW2UVrjreVK0Idl3G7ovSzSNA8ZESvKUFo0M
-         ecZOdNlHkEQ4Ydi6elupAad5t7dKX48Z6n1ZhtAKWKVyVA57ib5L1rjRAO57N1NXxj7E
-         p7WSuw7k1/I+LKkLYV9HyAAmeIPbanf8mZR+mwtRVA4R9Ttdiuz3m5nwzUIsTQZjLgj4
-         FRTw==
+        d=linaro.org; s=google; t=1692797234; x=1693402034;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=3VJEkZrJi5COn4keidfPLKaEGFF5PW7AzdVSvDuyuJI=;
+        b=ZJq6O8NwVH9wEHjdNic66KhMyku21pwRqFIIVgrNZILStZl0eS4UdH+TLV0LTiByQB
+         Wv6jymiZABqRy/EveXxIl34BzKKe2fKVUdDKqIle8QJ1ASuNtyvcAChy3OtY9y+MghSv
+         MDjG9vlhmpWUV+jCORResHDPVegdeHzFxcj+cVouqKFIdJ5QsQElyPmg0/EVldUaumRm
+         nFndfFUjG3tb1pRovm4iuSF3Sll8HuIjOvD91nK9WEyVh49+gI6+ZfWIuR/DmEesBxMV
+         HGS8GIrvWkbCazhK3V9fTHGp/IWXsggNk+Cgt2APq02/kDHRbe03dhSz4BNQAdWgYJBA
+         W+3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692796968; x=1693401768;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Pzn+5bTpnSMNwUuNyyowNMIJDQZpkAi+7c7mgKTYoME=;
-        b=LL/i0LcoW+x1Oqb1byAjw5un6O9UgC+fWmuqvAkSANnE4X0CxwZTVqNvNQ8j2iAf9B
-         P1w5cx2HsiIu8ezMzyiWElrH7PVF0ZJxtE6ipSxV21DV2BYL2t1ykJthD4cY+Xfw+xFQ
-         k++bkdLbPGhdRf+bg0+pnpuvD0mqBH/n1B+8NwPpVx9Znf3g/Cq5COIAo47NXtzXwm0m
-         jTAaHE5euBdbqN7R1cSKNfN0x1zc+dcm1xnmb357zbrI3bB3S5yJnIh85xx8wH7QICZ3
-         3NtPlWD7JK2Gk2QK4kBofYtSRszrTQt+boiUuKis7yL5lavbnPKkXp2e02NNJLtMyp+R
-         AuEA==
-X-Gm-Message-State: AOJu0YzgQxlbV9doJT9KLUhg9duCpBPRcVo2MRLU1naiyV5YcDGtoT/d
-	yviI9/bIGUIogHOSo2uEMSM=
-X-Google-Smtp-Source: AGHT+IE1gUkkpuMyRPjYkQSA46YH3/bOWjgb5ixYadB1u37Wfo9A/dssTd2q0MBm9JbD7/LteuPZ8g==
-X-Received: by 2002:a5d:4573:0:b0:315:ad1a:5abc with SMTP id a19-20020a5d4573000000b00315ad1a5abcmr9228900wrc.5.1692796967751;
-        Wed, 23 Aug 2023 06:22:47 -0700 (PDT)
-Received: from localhost ([37.174.115.23])
-        by smtp.gmail.com with ESMTPSA id p6-20020a5d68c6000000b00317f70240afsm19353163wrw.27.2023.08.23.06.22.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 23 Aug 2023 06:22:47 -0700 (PDT)
-From: Raphael Gallais-Pou <rgallaispou@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v3] dt-bindings: phy: st: convert phy-stih407-usb to DT schema
-Date: Wed, 23 Aug 2023 15:22:24 +0200
-Message-ID: <20230823132224.111326-1-rgallaispou@gmail.com>
-X-Mailer: git-send-email 2.41.0
+        d=1e100.net; s=20221208; t=1692797234; x=1693402034;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=3VJEkZrJi5COn4keidfPLKaEGFF5PW7AzdVSvDuyuJI=;
+        b=gUInloeguX8UOOFCi0byUn7rKUM4XAtmvWFmwc/UHjLzMzN6ktSjWLDxSpOOOsRVjl
+         fvA1ZoAjEsPAt55kAYKJwhsMYI1LcNbh/flqCGDOlFxlpEXN1bDrzpkGyoY3RMkpBR25
+         EyUKUYVtlrEWqHeS/1KPUsfJmQcJmx66iUbTRTT870GhLQbFT7Huud+5WcA30c3i8kBj
+         830NlN58dcL/zATY3bpebPT0ZWpAjiu+iacHKYYOL6L7mDkc6ABLwXweM4hdVIMNZnU4
+         ukVeP6awpZZLyTkr/fgc92pIk1QutMHKhj//+0PEWdgsOigV0h/qffbBOPk8e+8sJ6pC
+         bcgQ==
+X-Gm-Message-State: AOJu0YzpkmSUm0xCuQLhcs+1hkRih3wysTyoIcBpox38TgTcWAL1Odxu
+	FHONM0B5ZfYYFE6exGtpJKQpVoToPDhIoSuWJKc=
+X-Google-Smtp-Source: AGHT+IEyOSfb5mYMIn2e/As1tn/ZMWk9CBmGlem/rppvRjqD0BZ3/751rmNUo0rWrD5ggdc2F1o/AQ==
+X-Received: by 2002:a2e:6e07:0:b0:2bb:b626:5044 with SMTP id j7-20020a2e6e07000000b002bbb6265044mr8877530ljc.6.1692797233698;
+        Wed, 23 Aug 2023 06:27:13 -0700 (PDT)
+Received: from [192.168.0.22] ([77.252.47.198])
+        by smtp.gmail.com with ESMTPSA id d11-20020a17090694cb00b009934b1eb577sm9718403ejy.77.2023.08.23.06.27.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 23 Aug 2023 06:27:13 -0700 (PDT)
+Message-ID: <a3b1f9ce-bedf-bc1f-d641-8cb7ca3a5de0@linaro.org>
+Date: Wed, 23 Aug 2023 15:27:11 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH v3] dt-bindings: phy: st: convert phy-stih407-usb to DT
+ schema
+To: Raphael Gallais-Pou <rgallaispou@gmail.com>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Patrice Chotard <patrice.chotard@foss.st.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20230823132224.111326-1-rgallaispou@gmail.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230823132224.111326-1-rgallaispou@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230823_062300_245035_EA77900E 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20230823_062716_024995_992D08E0 
+X-CRM114-Status: GOOD (  11.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,128 +100,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the st,stih407-usb2-phy binding to DT schema format.
+On 23/08/2023 15:22, Raphael Gallais-Pou wrote:
+> Convert the st,stih407-usb2-phy binding to DT schema format.
+> 
+> Signed-off-by: Raphael Gallais-Pou <rgallaispou@gmail.com>
+> ---
+> Changes in v2:
 
-Signed-off-by: Raphael Gallais-Pou <rgallaispou@gmail.com>
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+
 ---
-Changes in v2:
-  * Removed quotes surrounding $ref
-  * Removed quotes surrounding const properties
-  * Changed 'st,syscfg' $ref value to phandle-array
-  * Changed authorship to my oss email address
 
-Changes in v3:
-  * Remove driver references
-  * Dropped obvious description
-  * Dropped label and set simpler node name
----
- .../bindings/phy/phy-stih407-usb.txt          | 24 -------
- .../bindings/phy/st,stih407-usb2-phy.yaml     | 63 +++++++++++++++++++
- 2 files changed, 63 insertions(+), 24 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-stih407-usb.txt
- create mode 100644 Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml
+This is an automated instruction, just in case, because many review tags
+are being ignored. If you know the process, you can skip it (please do
+not feel offended by me posting it here - no bad intentions intended).
+If you do not know the process, here is a short explanation:
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-stih407-usb.txt b/Documentation/devicetree/bindings/phy/phy-stih407-usb.txt
-deleted file mode 100644
-index 35f03df00130..000000000000
---- a/Documentation/devicetree/bindings/phy/phy-stih407-usb.txt
-+++ /dev/null
-@@ -1,24 +0,0 @@
--ST STiH407 USB PHY controller
--
--This file documents the dt bindings for the usb picoPHY driver which is the PHY for both USB2 and USB3
--host controllers (when controlling usb2/1.1 devices) available on STiH407 SoC family from STMicroelectronics.
--
--Required properties:
--- compatible		: should be "st,stih407-usb2-phy"
--- st,syscfg		: phandle of sysconfig bank plus integer array containing phyparam and phyctrl register offsets
--- resets		: list of phandle and reset specifier pairs. There should be two entries, one
--			  for the whole phy and one for the port
--- reset-names		: list of reset signal names. Should be "global" and "port"
--See: Documentation/devicetree/bindings/reset/st,stih407-powerdown.yaml
--See: Documentation/devicetree/bindings/reset/reset.txt
--
--Example:
--
--usb2_picophy0: usbpicophy@f8 {
--	compatible	= "st,stih407-usb2-phy";
--	#phy-cells	= <0>;
--	st,syscfg	= <&syscfg_core 0x100 0xf4>;
--	resets		= <&softreset STIH407_PICOPHY_SOFTRESET>,
--			  <&picophyreset STIH407_PICOPHY0_RESET>;
--	reset-names	= "global", "port";
--};
-diff --git a/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml
-new file mode 100644
-index 000000000000..e45cdd98aab2
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/st,stih407-usb2-phy.yaml
-@@ -0,0 +1,63 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/st,stih407-usb2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STiH407 USB PHY controller
-+
-+maintainers:
-+  - Patrice Chotard <patrice.chotard@foss.st.com>
-+
-+description:
-+  The USB picoPHY device is the PHY for both USB2 and USB3 host controllers
-+  (when controlling usb2/1.1 devices) available on STiH407 SoC family from
-+  STMicroelectronics.
-+
-+properties:
-+  compatible:
-+    const: st,stih407-usb2-phy
-+
-+  st,syscfg:
-+    description: Phandle to the syscfg bank
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    items:
-+      - items:
-+          - description: phandle to syscfg
-+          - description: phyparam register offset
-+          - description: phyctrl register offset
-+
-+  resets:
-+    items:
-+      - description: Phandle and reset specifier pair for the whole phy.
-+      - description: Phandle and reset specifier pair for the port.
-+
-+  reset-names:
-+    items:
-+      - const: global
-+      - const: port
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - st,syscfg
-+  - resets
-+  - reset-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/reset/stih407-resets.h>
-+    usb-phy {
-+        compatible = "st,stih407-usb2-phy";
-+        #phy-cells = <0>;
-+        st,syscfg = <&syscfg_core 0x100 0xf4>;
-+        resets = <&softreset STIH407_PICOPHY_SOFTRESET>,
-+                 <&picophyreset STIH407_PICOPHY0_RESET>;
-+        reset-names = "global", "port";
-+    };
-+...
--- 
-2.41.0
+Please add Acked-by/Reviewed-by/Tested-by tags when posting new
+versions, under or above your Signed-off-by tag. Tag is "received", when
+provided in a message replied to you on the mailing list. Tools like b4
+can help here. However, there's no need to repost patches *only* to add
+the tags. The upstream maintainer will do that for tags received on the
+version they apply.
+
+https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
+
+Best regards,
+Krzysztof
 
 
 -- 
