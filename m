@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99AC2C27C40
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 21:20:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 101BAEE49A6
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 21:20:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UCqcHlVWkjf1gPr8NpWkP6Neo5Ri+cV0nMArF68zxqY=; b=Nc2frYlRYs1cTq
-	89IuiJqZPgoS/8yLCyXiwcyf9lsqBCu0uTOCfvmRs2LdyjS0FYoIf73dJKQNVeE2x8XbSxLXl/xMT
-	O5XTlf+9gt94jSfqrp1vAjEHO7tqaTC/uy9SLopq8fbbz+1GzJoyoQ6o5fOA857jTNhQEsjfBdIsP
-	sKqU2TQCmTxf7Qgg4c8GEgEEWQ2u7nqq79jJSq+mI0A/i7cmAAkbncxQ6BbjJz8RmA5JzXELDzYfP
-	iC5+eGFdYpb81/kj0TbzazNtzDc1QAq09DO1YkTjHCRoH0sbu0iAj+0JJZfplVGnbNUShK/Jrj33+
-	0Qvh3EXWIOsP/lNl9L6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/hd3fd8+CvJWlqu4ZNJxT4uR3DPPq+F5TyHvraAXtDU=; b=Qr42mXoGOsJu6h
+	QzRlt+bP+ouwrocuE5OOr+db2IVNGO2WD+sX4uTUuZ4hZUHEPgJ+mpOGQfqi46Dv819Y5CfJWaQ/U
+	nWPIJzA/XwMRLTo7ZX5ZJvkttrQEOy1i0lS6kaE9nq6yaBjnmlfnpZCEuveMSvLd9lRcTsfB7jMh2
+	6kDHmLXexLLarwRjVc0YxbHV0LOGXYa1ThKnEkwn81ZB7JYchxZRv1b3Uk7N6ukFK9raPUwoXgBF6
+	IYDP9O/M3Z3dhmMV9z4YuIYdXy2R4E6BvLL5mlb3fqF70h9rTGeTXqpP8e7nWf5IHursxBbZ9czI0
+	FhL6snc/973XxrDpnyYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZHkH-003omS-07;
-	Thu, 24 Aug 2023 21:20:01 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1qZHkK-003orW-2N;
+	Thu, 24 Aug 2023 21:20:04 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZHkD-003ojf-1s
+	id 1qZHkH-003okr-10
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Aug 2023 21:19:59 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-4fe27849e6aso372929e87.1
-        for <linux-phy@lists.infradead.org>; Thu, 24 Aug 2023 14:19:55 -0700 (PDT)
+	Thu, 24 Aug 2023 21:20:03 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-50091b91a83so351872e87.3
+        for <linux-phy@lists.infradead.org>; Thu, 24 Aug 2023 14:19:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692911994; x=1693516794;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=aTzbpQhifk1BKKUlbC708++llGqrCxcRyQyiVjC0krk=;
-        b=uucc4Bg5IErKfIdTfyGLsCoMRNTQNRw/na+HgrouDIySI0Hd1nuMYGgVT80Wug9G5B
-         qgCD910RwbxM88mjD6gtmtpLgS5SiTG8scBiUmcpyam5Drvz1m/vQy6gHRLCrATjqoFg
-         C6BA/Wa+e+U3qSvgGxvZhXZ9iHH3XiDSxvuF0Hs7EFHC01PxnI2U48JRO+/H/tyupuPW
-         dgi3oNLcuozqS8SX75R9s05JSp8qtjbHcFDQPYjzmvkRyHcSUzawM1bc2bzrjJwmagKH
-         NmduGrXGpCBiGxRkb/15YFfC4V2ay+y4Bg9fMnq/vMaUL6V8coGyjMzTppCpeIaPaHZ3
-         cCxg==
+        d=linaro.org; s=google; t=1692911998; x=1693516798;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Mp3OxMlQ5f/3XEucj+vCtx08B1iilIkI8HF7qdGL8lY=;
+        b=WMBR48fEAtiuOFYSaAKrg4lOQzMbcPMvh+ryvhJwfZ4uZTZdNM0rVvoS1cIA4hyEzG
+         VdZWINIra6uL44IR7Qc2lAj5Gmkc2f9zT5CkOWzAcKyFW3WNtABjwbsf/LmGvG/JVq9w
+         4AvbBSXX0yMWQAn/xNUkecOLsApdGquNJ20+q/07/NXyD7OGxyw8uUCMQgHKU6AFjP8P
+         vadmUQ4nt3s8EaKA//L/0njnc0pKYoVLSdszEU868p4rhU/2te5Z+SlWV4iw8pV0+VcW
+         GL7Fz/UAFtojRpuGGHwiL3KEXmER7VykqJHuCPvihXmbVZ2XABICrEhxF8kOZ3p9YbSM
+         TjKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692911994; x=1693516794;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=aTzbpQhifk1BKKUlbC708++llGqrCxcRyQyiVjC0krk=;
-        b=Ko22cU5bsXH9PkqODvzgW7dV2BaLOTbkd4dGs3WNIQd09sdEgnlCBuTWVMx1ZfqEdP
-         p5otqcfuFncOqCjNK1uPgMFbcEjmSfgriIRnTqFUXZCsTd7yMsKns+J/34xMaDKbGtJi
-         tf6TMwcEo+ABsJcC8siGyijItqo7oyo1wwFhIhjIVaXNAJBYs/P7ClchCrjt53EigxNl
-         vypm0RYrkv7oOToWRjGd5zlIJvb9b98yNgS/nYY9tSp480gOmEd+AKCPTFo9bNXle2oU
-         kK6qtDTOZBcsmqV6ml0brT2X3Rdr2tlSDJ4Ij44Qt/dBGqQ2OzvCKJpDML3lykadp9NL
-         SsUQ==
-X-Gm-Message-State: AOJu0YwbUtA0OhknAiF9TheMXkUrcQapbFrrrSuQO8hyH7eFHraFbJrv
-	CHw3IGUD/f9DA1Pb1m3EN/GVgg==
-X-Google-Smtp-Source: AGHT+IHn0Ik6Nnr229/0R2nkLFvuJscxkIzG6VVS7EQljGN8KogWCOdH4ntHGcm/mZ4IWy+bdkftHw==
-X-Received: by 2002:a05:6512:1310:b0:500:96dd:f95b with SMTP id x16-20020a056512131000b0050096ddf95bmr4582608lfu.59.1692911994250;
-        Thu, 24 Aug 2023 14:19:54 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1692911998; x=1693516798;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Mp3OxMlQ5f/3XEucj+vCtx08B1iilIkI8HF7qdGL8lY=;
+        b=f35L4ZRYya1p+AHV+TkM/iUJYjYq3EDYXEf1D+qtOeBlK9GBdbWMRcnhtlJBuCZwOZ
+         yyXeYjfkOw9CKia4Ggd6Wy8wlV5owCLqu9I0zAXu9V3sxqOxrG8spclW/1uCEd1tnntj
+         UXbYzNOAhJ2tS7puIc4czR0kya4h4tONQAhhiXHjPVJ9jVEDCtIH6nV+9krKeMnQyWD+
+         9BMwynz8fSmOppladWlEJHZhBqh4HGfuMyiRUNj5YuOFmrsjhFFMVtNFdBzLrOMrQVgu
+         guaylbqIQDmY0iXxl56H3Xg9+V7O0c74ybmNMjUT5NP2T49VfxG2flH1RX7FQXzpcDzK
+         h2iw==
+X-Gm-Message-State: AOJu0YydLqG06M7WVG9rhsEKJH3Nr5mcTrCUycXQhH9tetaBQxFjtuos
+	ITzAFmehMGToa1pSVAP3Ai4+NA==
+X-Google-Smtp-Source: AGHT+IHyH9FMI2+xgQbIvbU7paqUhcBUhQrFf+ntRdkpX+dNWu28gijxu2GMP5ehPe1DYBin4RC8gQ==
+X-Received: by 2002:ac2:4557:0:b0:4fd:fef8:7a81 with SMTP id j23-20020ac24557000000b004fdfef87a81mr10715275lfm.55.1692911998388;
+        Thu, 24 Aug 2023 14:19:58 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id j29-20020a056512029d00b004fe4ab686b4sm17690lfp.167.2023.08.24.14.19.53
+        by smtp.gmail.com with ESMTPSA id j29-20020a056512029d00b004fe4ab686b4sm17690lfp.167.2023.08.24.14.19.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 24 Aug 2023 14:19:53 -0700 (PDT)
+        Thu, 24 Aug 2023 14:19:57 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -75,14 +76,16 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 00/16] phy: qcom-qmp-usb: convert to newer style of bindings
-Date: Fri, 25 Aug 2023 00:19:36 +0300
-Message-Id: <20230824211952.1397699-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 05/16] phy: qcom-qmp: move PCS MISC V4 registers to separate header
+Date: Fri, 25 Aug 2023 00:19:41 +0300
+Message-Id: <20230824211952.1397699-6-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230824211952.1397699-1-dmitry.baryshkov@linaro.org>
+References: <20230824211952.1397699-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230824_141957_626795_0860EB24 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20230824_142001_469537_E25C93DC 
+X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,65 +102,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reviewing several patchsets for newer platforms made it clear that
-having two styles of QMP PHY bindings causes confusion. Despite binding
-documents having notes telling that old bindings should be used for
-older platforms, it is too easy to attempt adding new platform with
-older QMP PHY binding. Thus let's have just a single documented style of
-bindings.
+Move PCS MISC V4 registers to the separate header.
 
-Proposed merge strategy: immutable branch with binding and PHY patches,
-which can also be merged into Bjorn's dts-for-6.7
-
-Changes since v2:
- - Added maxItems to qcom,ipq9574-qmp-usb3-phy / clocks so that the
-   clocks array size is always properly constrained (Krzysztof)
- - Dropped rogue PCIe PHY chunk from msm8998 patch.
-
-Changes since v1:
- - Split large patchset into smaller parts
- - Rebased on phy/next
- - Reworked bindings to follow the common standard rather than blindly
-   moving the PHY contents.
-
-Dmitry Baryshkov (16):
-  dt-bindings: phy: migrate QMP USB PHY bindings to
-    qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-  phy: qcom-qmp-usb: simplify clock handling
-  phy: qcom-qmp-usb: rework reset handling
-  phy: qcom-qmp-usb: make QPHY_PCS_MISC_CLAMP_ENABLE access conditional
-  phy: qcom-qmp: move PCS MISC V4 registers to separate header
-  phy: qcom-qmp-usb: populate offsets configuration
-  arm64: dts: qcom: ipq6018: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: ipq8074: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: msm8996: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: msm8998: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: sdm845: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8150: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8250: switch USB QMP PHY to new style of bindings
-  arm64: dts: qcom: sm8350: switch USB QMP PHY to new style of bindings
-  ARM: dts: qcom-sdx55: switch USB QMP PHY to new style of bindings
-  ARM: dts: qcom-sdx65: switch USB QMP PHY to new style of bindings
-
- .../phy/qcom,msm8996-qmp-usb3-phy.yaml        | 287 ------------------
- .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |  55 +++-
- arch/arm/boot/dts/qcom/qcom-sdx55.dtsi        |  41 ++-
- arch/arm/boot/dts/qcom/qcom-sdx65.dtsi        |  35 +--
- arch/arm64/boot/dts/qcom/ipq6018.dtsi         |  35 +--
- arch/arm64/boot/dts/qcom/ipq8074.dtsi         |  76 ++---
- arch/arm64/boot/dts/qcom/msm8996.dtsi         |  40 ++-
- arch/arm64/boot/dts/qcom/msm8998.dtsi         |  35 +--
- arch/arm64/boot/dts/qcom/sdm845.dtsi          |  39 ++-
- arch/arm64/boot/dts/qcom/sm8150.dtsi          |  39 +--
- arch/arm64/boot/dts/qcom/sm8250.dtsi          |  38 +--
- arch/arm64/boot/dts/qcom/sm8350.dtsi          |  39 +--
- .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h   |  17 ++
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 225 +++++++-------
- drivers/phy/qualcomm/phy-qcom-qmp.h           |   8 -
- 15 files changed, 352 insertions(+), 657 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-usb3-phy.yaml
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h | 17 +++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c         |  1 +
+ drivers/phy/qualcomm/phy-qcom-qmp.h             |  8 --------
+ 3 files changed, 18 insertions(+), 8 deletions(-)
  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h
+new file mode 100644
+index 000000000000..e256a089f228
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v4.h
+@@ -0,0 +1,17 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_MISC_V4_H_
++#define QCOM_PHY_QMP_PCS_MISC_V4_H_
++
++/* Only for QMP V4 PHY - PCS_MISC registers */
++#define QPHY_V4_PCS_MISC_TYPEC_CTRL			0x00
++#define QPHY_V4_PCS_MISC_TYPEC_PWRDN_CTRL		0x04
++#define QPHY_V4_PCS_MISC_PCS_MISC_CONFIG1		0x08
++#define QPHY_V4_PCS_MISC_CLAMP_ENABLE			0x0c
++#define QPHY_V4_PCS_MISC_TYPEC_STATUS			0x10
++#define QPHY_V4_PCS_MISC_PLACEHOLDER_STATUS		0x14
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 411cf0ae148d..42a1a3f00759 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -21,6 +21,7 @@
+ 
+ #include "phy-qcom-qmp.h"
+ #include "phy-qcom-qmp-pcs-misc-v3.h"
++#include "phy-qcom-qmp-pcs-misc-v4.h"
+ #include "phy-qcom-qmp-pcs-usb-v4.h"
+ #include "phy-qcom-qmp-pcs-usb-v5.h"
+ 
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index 32d897684755..71f063f4a56e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -126,14 +126,6 @@
+ #define QSERDES_V4_DP_PHY_AUX_INTERRUPT_STATUS		0x0d8
+ #define QSERDES_V4_DP_PHY_STATUS			0x0dc
+ 
+-/* Only for QMP V4 PHY - PCS_MISC registers */
+-#define QPHY_V4_PCS_MISC_TYPEC_CTRL			0x00
+-#define QPHY_V4_PCS_MISC_TYPEC_PWRDN_CTRL		0x04
+-#define QPHY_V4_PCS_MISC_PCS_MISC_CONFIG1		0x08
+-#define QPHY_V4_PCS_MISC_CLAMP_ENABLE			0x0c
+-#define QPHY_V4_PCS_MISC_TYPEC_STATUS			0x10
+-#define QPHY_V4_PCS_MISC_PLACEHOLDER_STATUS		0x14
+-
+ #define QSERDES_V5_DP_PHY_STATUS			0x0dc
+ 
+ /* Only for QMP V6 PHY - DP PHY registers */
 -- 
 2.39.2
 
