@@ -4,83 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F3BAC6FA8F
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 11:34:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 875C8C3DA6F
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 19:32:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FoserzYX9GVqCN0uAzZRpqXoQjN2dGObCm4AHTT5PSk=; b=wgITkrTX27VPp8
-	HDR4pTmEtnSgBPeUXFEAEAf5Zjd9xCoLycoTQpMYCOFIrw/Z0VtTviSeAP/WSlfyNdpVQNRd7Oi/2
-	Mn16305qVkjHqlz1BK1c3uC61ZVC+S3v2CtGc18iiC8XzpKq9/ch1dmZJ+OfIg6gF3e0AOOHGLshH
-	UPwVZRwG49W8zJuC69QaqLviOM+7hLrqHtBauIMWubT9KBMftZr0Yhwf3YFvHChtIs/41MIob9O2/
-	3cDwHhCySlBrET7+2LMSrxR9wYFqZHAGd6Razb0AqxlLPgwW3pV4gU+1qV7dWlBnaJ4mF4cXXawtS
-	zniz6Ucx5KNl7R4XdtFA==;
+	List-Owner; bh=LSENiMwK8t2jy0UTg46OVwhwIEQbrQdofMACFs2uGWI=; b=eDjc/XR5z6XZAq
+	wLuDCnElXy+wFPu7yUSlX0VM8quWax6cpB383MKNQDvWXy46ZfLSGqgohRQISfofvZeiDg4agr8sH
+	wCap67iP2cuNCFon5ecZRKZ2PNrdPspXoz0OEQ7ztR4OGETy88hhXZ40MP2eXh7E4BI02l8vhkDgl
+	XwYSmrucHvqG4ZLOLYvREaa09sxuTXRZO3qS1xW2AmwDstsOj0sChNQtAnrWAltxMqX3lcBC8Zqaj
+	JObUldQ8F2mN2o/ioT+NTbtHRLvQA/XWr9iELr4DJoeVPoLVQNdeiCeC/BaqXdjg43PAOhKTfiRvL
+	JRLguslhw7gbZA3UQaYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZ8bE-002ysN-0k;
-	Thu, 24 Aug 2023 11:34:04 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1qZG4E-003fji-0S;
+	Thu, 24 Aug 2023 19:32:30 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZ8bB-002yrW-2o
+	id 1qZG4A-003fj4-2B
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Aug 2023 11:34:03 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37O9wqlb029932;
-	Thu, 24 Aug 2023 11:33:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=qcppdkim1; bh=6UDhM9s3fnBshMjolhFp56Wl7D/Y9UTV7Pku1zfaLPY=;
- b=K3/cLCJG63X/7BfBTNLBkhJFlWcNtliwHLGF0QRsdKl1udV/6INRQsjLYkN1pMVozg91
- Lz58YkJXT0qC6ELDds3TA04RBdaF/CHniE7j5C+YKa8oiF4JLvOpoKm7plKtfQbuXJjX
- cWYLHUjkHdahjJWVDCsHBeJnnu+/dYeMFELQufpFm5WT5uL6h2DutyJa9WGYu2ZYT1nu
- yyfwbpETkmVKQz09AGy4F/H/u/BoH51mmnIKuByQIfmSmgynt27N+8KsFVqizK0mTihx
- PZd0wxb7JGLCEyEXLRD7Z4huRY0BBbfYkvjqL63T44CQLTIgT9CbSFsK4Cz4VixnKhkP kA== 
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sp4sbr6cp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 24 Aug 2023 11:33:50 +0000
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37OBXnfP003572
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 24 Aug 2023 11:33:49 GMT
-Received: from varda-linux.qualcomm.com (10.80.80.8) by
- nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Thu, 24 Aug 2023 04:33:47 -0700
-Date: Thu, 24 Aug 2023 17:03:43 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Yang Yingliang <yangyingliang@huawei.com>
-CC: <linux-phy@lists.infradead.org>, <linux-arm-msm@vger.kernel.org>,
-        <andersson@kernel.org>, <vkoul@kernel.org>
-Subject: Re: [PATCH -next] phy: qcom: phy-qcom-m31: change m31_ipq5332_regs
- to static
-Message-ID: <20230824113342.GC15057@varda-linux.qualcomm.com>
-References: <20230824092356.1154839-1-yangyingliang@huawei.com>
+	Thu, 24 Aug 2023 19:32:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1692905541;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=aGc9cpVc07Jrpa4m+ZlC2Dqf1SWjc2bcrlw26RbiYEM=;
+	b=Isi7ktw2fF9feVmLTrmSlkEzWYVqmgsrlqfHy6ynr1sMRQshZmgw5nZdlDboaDpuP/uKjM
+	aibOUdem5n8cO50amhNS+J7Ajb+DVgoANLU+AG3xJNs4eFmW59jdZqHin8ki2Z9R53RGqZ
+	s4l0cvSRLCIELE+SD5pARFhBM1R2S8o=
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com
+ [209.85.160.199]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-215-I4IOOxxFNnuepG_aK_1ruw-1; Thu, 24 Aug 2023 15:32:19 -0400
+X-MC-Unique: I4IOOxxFNnuepG_aK_1ruw-1
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4108b83c5d9so1365351cf.1
+        for <linux-phy@lists.infradead.org>; Thu, 24 Aug 2023 12:32:19 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692905539; x=1693510339;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=aGc9cpVc07Jrpa4m+ZlC2Dqf1SWjc2bcrlw26RbiYEM=;
+        b=T5+b+QD33DeeHnT3GqYEbTmHBBKpUfgt9AT2xJfgvdvYByywhvXGwCwIZ2Zrjgfb7C
+         1zNjMWTmBzIWtr3qRFMI6rxng4wOEdhPPYGNdIW+XNfKF+szsnK+fIpWka9Ycy+C9EbZ
+         Ngcf08fzHoCwCcRIb97EVXgvRaNv2D2os6e44WZITRjEWOHDQzwZk8pTQ61ymKxewewl
+         vnJoqvI/LGhKXBj7RzSXKPaAl5L/3CMtfOwyu8N5CvztTpz8cYJCDl+GgCnh8D6Dl7cA
+         3RkP11YJklgeD4QFHs9IbdYRzDhYUFSZVeijOML9u3U4q2uob1DcQHbhewlEHdmVyUeE
+         uAyQ==
+X-Gm-Message-State: AOJu0YxJJqT/q/q6BNVGjiR3KfQRGfr9vo9TT0TVxb1Ont+NByIkAJXU
+	WLAYwL96VSS+z4haPipOH6Z5B5OhXoY1fJJSmwuW88fsDeVOQoiELhxX1TWG8XXjxu7Jjsa2Sxj
+	jEi4F8NXllOH4zcSSB9CKMLsWdA==
+X-Received: by 2002:a05:622a:1487:b0:40c:58a1:cb40 with SMTP id t7-20020a05622a148700b0040c58a1cb40mr20548256qtx.15.1692905539169;
+        Thu, 24 Aug 2023 12:32:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGdST5BuBuTrnazY9AWTggT5EsX33ppFmfU4jEDIDGm4YECxH/HVy+4/5VKL35ToB2UzdKC0g==
+X-Received: by 2002:a05:622a:1487:b0:40c:58a1:cb40 with SMTP id t7-20020a05622a148700b0040c58a1cb40mr20548241qtx.15.1692905538934;
+        Thu, 24 Aug 2023 12:32:18 -0700 (PDT)
+Received: from fedora ([107.171.218.122])
+        by smtp.gmail.com with ESMTPSA id w25-20020ac84d19000000b0040f200feb4fsm42063qtv.80.2023.08.24.12.32.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 24 Aug 2023 12:32:18 -0700 (PDT)
+Date: Thu, 24 Aug 2023 15:32:16 -0400
+From: Adrien Thierry <athierry@redhat.com>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Shazad Hussain <quic_shazhuss@quicinc.com>,
+	Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH 0/2] phy: qcom-qmp-usb: fix initialization of PCS_USB
+Message-ID: <ZOewQCtdAv8LYhww@fedora>
+References: <20230823171208.18382-1-athierry@redhat.com>
+ <bd0c9cba-41e2-b449-f383-9970d00cb723@linaro.org>
 MIME-Version: 1.0
+In-Reply-To: <bd0c9cba-41e2-b449-f383-9970d00cb723@linaro.org>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
-In-Reply-To: <20230824092356.1154839-1-yangyingliang@huawei.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 60qWOQ2dMIdS5RX6utxAlPgvy2hVv6-y
-X-Proofpoint-GUID: 60qWOQ2dMIdS5RX6utxAlPgvy2hVv6-y
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-24_07,2023-08-24_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 malwarescore=0
- adultscore=0 mlxlogscore=999 impostorscore=0 priorityscore=1501
- suspectscore=0 bulkscore=0 clxscore=1015 mlxscore=0 spamscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2308240093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230824_043402_022084_1FDADA56 
-X-CRM114-Status: GOOD (  20.05  )
+X-CRM114-CacheID: sfid-20230824_123226_878454_61E14D9C 
+X-CRM114-Status: GOOD (  17.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,37 +105,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 24, 2023 at 05:23:56PM +0800, Yang Yingliang wrote:
-> m31_ipq5332_regs is only used in phy-qcom-m31.c now, change
-> it to static.
->
-> Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
+Hi Bryan,
+
+On Thu, Aug 24, 2023 at 10:15:32AM +0100, Bryan O'Donoghue wrote:
+> On 23/08/2023 18:12, Adrien Thierry wrote:
+> > This series attempts at making sure PCS_USB registers are properly
+> > initialized. Please note I don't have access to the qmp phy datasheet and
+> > only reasoned from the code, so I appreciate a double check to make sure
+> > I'm not messing with the registers.
+> > 
+> > Adrien Thierry (2):
+> >    phy: qcom-qmp-usb: initialize PCS_USB registers
+> >    phy: qcom-qmp-usb: split PCS_USB init table for sc8280xp and sa8775p
+> > 
+> >   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 22 +++++++++++++++++-----
+> >   1 file changed, 17 insertions(+), 5 deletions(-)
+> > 
+> 
+> How is this series tested ? What are the before/after results/effects ?
+> 
+
+I tested this series on the sa8775p. AFAICT there's no noticeable change
+before/after the patch series: lsusb and dmesg output are the same. USB is
+still working properly. I don't know what those PCS_USB registers do
+exactly on the qmp PHY and I don't have access to docs, so it's hard for
+me to tell the impact of them being initialized vs not.
+
 > ---
->  drivers/phy/qualcomm/phy-qcom-m31.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-> index 99d570f4142a..014278e5428c 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-m31.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-> @@ -82,7 +82,7 @@ struct m31_priv_data {
->  	unsigned int			nregs;
->  };
->
-> -struct m31_phy_regs m31_ipq5332_regs[] = {
-> +static struct m31_phy_regs m31_ipq5332_regs[] = {
->  	{
->  		USB_PHY_CFG0,
->  		UTMI_PHY_OVERRIDE_EN,
+> bod
 
-Reviewed-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+Best,
+Adrien
 
-Thanks
-Varada
-
-> --
-> 2.25.1
->
 
 -- 
 linux-phy mailing list
