@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3578EE49A5
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 21:20:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E059C27C40
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Aug 2023 21:20:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgdZOoSwF+dZ4myIqSQN2idY9l3LQd9oGJ5feIcmbXM=; b=Ad/enBZLhGwFps
-	uE86peLZLd7LXmEZOQ+hYR5buAX4Fqk7PIkKABpemBS3UIBuxygrJ6+ewK2dipjUtNlUajctRAWGt
-	GTRdVThBomrFKnaAWbqPhsWTliwoxrcoOfYQEdRMEQPGTglXH4S7+19NKuSHE6MeaN0SEAhj69XY5
-	cMCqVsf3KegyN7DS1KLZAajMh/9WH0RUrueYbB/jF8hZevsWGDvDPU/1G98Y3/Vn6x29qH1NyIN18
-	B2KXrKOH65DBwxwV8rS+YS9aD3qMs9RXxek41Px3KlW+WKjFhTCJbgbeX0eeB08DcaDYFkvVPVoRS
-	xZJmttBZNLOWjywW7Dxw==;
+	List-Owner; bh=25p/VUcJwRkBqCzfD8y871FopRfCMyrZmfudOLWsdtU=; b=hsoFUoKtfVtBa6
+	ciXtMYaIgTGzFKuI+fz1cQnjY7qwGrrNO4xk73xIoZiruO9jWb3FG6CFp14nZpiXCxw2YCue5lpyC
+	N7xAA2BQyyI0DIc6ds1Zv1wShUnMVpFSbH0uwshi5bj3Ng8maPtN8dXLKjFUfr2lnbf9IWph+qVN0
+	xg5ZYZSGlYZ/yySdO0IqXT1j/QKRQw7nYuhaGSPgRoWUQuBRcxW4mdwsPuQBAr0xW1meUBeNmEuXR
+	NYpjusW3MQonJP1WAijKUOpY8YIdTgRgK2VywiLd+BvM+72AEjLuw9FyHeX1oGEhgC7Yv2a5sIV/e
+	cT4bERaxHdw9Euwn6peA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZHkL-003orv-05;
-	Thu, 24 Aug 2023 21:20:05 +0000
+	id 1qZHkN-003otw-0E;
+	Thu, 24 Aug 2023 21:20:07 +0000
 Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZHkG-003ojo-2k
+	id 1qZHkI-003on0-0D
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Aug 2023 21:20:03 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-50091b91a83so351845e87.3
-        for <linux-phy@lists.infradead.org>; Thu, 24 Aug 2023 14:19:58 -0700 (PDT)
+	Thu, 24 Aug 2023 21:20:05 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-5007f3d3235so360401e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 24 Aug 2023 14:20:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692911997; x=1693516797;
+        d=linaro.org; s=google; t=1692912000; x=1693516800;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=U70UpewjmCnbT8KiMd545bdbi+bVcnHm968V6y9dNR4=;
-        b=Om2m8MpS7wK1gIYT6mVBoWKV8nHWxNnyVtt+2GHs8m/3qee3tDF8WgEI6nRHJlR8+D
-         cx8d6mXY1l9+eghcOaBrXvi5pVYJo+vAj4m8gwJs04BV1Y4fYqQ1aO9yvfq/htUfVbmD
-         Lj6fWBcEx0Zz3LdRVl2bws8i0SzPB+xdMgqVwqihORFqO4Megs3N5NlQNNlTkrCs7VbI
-         62gDCpcBc+8qQhPCGjNh/l6UfyMGrj/xcoXWjbzBZ/5S0DwntVnE/JgrkzxwE7kuNAzq
-         dxQ1T6pkC4Y9YMu419m0GU3lIl+o0wQ8aSLF26Stxb2p3F1NgF6wsxhFNkAvs+Udpch9
-         zboQ==
+        bh=o4/HaBQdmop51bI5KAdwerODTyagveuUw1HWmRGvWSw=;
+        b=xGg3ECOhpPNdOxz+2WJe/XFKW15owi51pUWdjauluWt0m6O6If2OQzZ5TfZ3eBdtiX
+         Ap5eVyDHZv5SLatgVnX2yAOuatH5nJbGPbHLTc0nGziP+ygkWxtM0zJZrX7VtX1IV0o2
+         smqVUKKqD/7tgSZfUxKdqP4lBRpv6Sv6ymEIjOwHHgVGOUDLz6OL4q8mAH9+lJBWvnKp
+         Uye+2wFu3LsVIdYpPhNmiiI2E2SfYsFAPOTiLQ1gL3pxqO3/2yAAy2LydqF1po/ACp7O
+         AxPs3qzK+XEd96NWPHEmA0dEUUqKvo9kiBDhBYaMybwRGUyAT9hlYDGlflpgBfRvFe2F
+         lhBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692911997; x=1693516797;
+        d=1e100.net; s=20221208; t=1692912000; x=1693516800;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=U70UpewjmCnbT8KiMd545bdbi+bVcnHm968V6y9dNR4=;
-        b=gp25NelZX35iKxoDPWaOcOMCoarDfM/yQXtXqt71lAMODFieuafkrL1sDt721wg4Iy
-         EgVByBuKyhj5e+/JKUT3UflwNsrZtgBf8EzkBizdJPJX+z6Izc38rwaNjk2amTzDYZPl
-         V5zDY7eUovLEJ1sDLo0NKrOq267AN+R1ov8uPPbOEm7zEg4CHnhXvB0BinxJbPhIpxYL
-         DAGbDZrzsTbY4E+6MilnBp+pcCzYGMyixz8+WGW13NQapT+kV4pkLkLG880ZdY4Gn0Nf
-         FHm3p72J7xRWOArf91/PhjFtRdG/XR6thmj3EBbDvntM08PievAXzHMh9hiQG2wZ2zA0
-         0w+A==
-X-Gm-Message-State: AOJu0Yz0dtgesMbG+FB1OzRnjiKL6cM7OhV7CL+h518bYQcL7SJkeFio
-	r/6xN1YkQFv9zCVm6G9n/C7csw==
-X-Google-Smtp-Source: AGHT+IEpQ29oihcuQay8r/AKFPHgjuVL1GNvmXM4bl3oA8V3xEtzsnmjJw3L18xrJ7pgUYxRgE2E6g==
-X-Received: by 2002:a05:6512:2208:b0:4fd:fc3d:cce7 with SMTP id h8-20020a056512220800b004fdfc3dcce7mr15006124lfu.44.1692911996783;
-        Thu, 24 Aug 2023 14:19:56 -0700 (PDT)
+        bh=o4/HaBQdmop51bI5KAdwerODTyagveuUw1HWmRGvWSw=;
+        b=kTMC1gUZeH63pkteneB8Z66SZ7mar9P5yLH5RdvfFoAyA+H4ByJ0pCQ2mUNOHu7Dwd
+         7aWPjcBm68tWr+Gr/aMOO47/QZK2ORG6YSHs1RyoiX3guZ0P9sPvUB5+2EGb/kfVekvh
+         Amom3V/W52GgPVPQuSIpiDMoL9iZcB7fv1+zujkJh//zfidxzEbZDLWatu+HqubYXqVo
+         +QiPASDgm9gh89uUoGK9gKFKgksOT1hDayo4Q1tXwFXak7e9zmH2y/1OuFzugDvjgGsp
+         3cxCgeovDC90PltD+nEYRyfeQ6iwM0gVaRpExb//Xvl+hnCbq3C3QsBpVV8Yx6xZ6jRt
+         +wKw==
+X-Gm-Message-State: AOJu0Yx3dWCO/pQB0DG5Yz0yyjvwsQ4k9RkVIPafD4ERnRRWTd2HzZmD
+	H1eQF07JFCDbsNzjzjuIM1tQDg==
+X-Google-Smtp-Source: AGHT+IEwIdj5aiNTBoZCRdVHgEIMB5N+PRsu2Y+JbGrKxRF8A7/Y6IEdkffhPxxvBMPSQp6+twXqWg==
+X-Received: by 2002:a05:6512:ad2:b0:4fe:4f8:8e75 with SMTP id n18-20020a0565120ad200b004fe04f88e75mr14330790lfu.68.1692912000739;
+        Thu, 24 Aug 2023 14:20:00 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id j29-20020a056512029d00b004fe4ab686b4sm17690lfp.167.2023.08.24.14.19.56
+        by smtp.gmail.com with ESMTPSA id j29-20020a056512029d00b004fe4ab686b4sm17690lfp.167.2023.08.24.14.20.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 24 Aug 2023 14:19:56 -0700 (PDT)
+        Thu, 24 Aug 2023 14:20:00 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -76,16 +76,17 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 03/16] phy: qcom-qmp-usb: rework reset handling
-Date: Fri, 25 Aug 2023 00:19:39 +0300
-Message-Id: <20230824211952.1397699-4-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 08/16] arm64: dts: qcom: ipq8074: switch USB QMP PHY to new style of bindings
+Date: Fri, 25 Aug 2023 00:19:44 +0300
+Message-Id: <20230824211952.1397699-9-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230824211952.1397699-1-dmitry.baryshkov@linaro.org>
 References: <20230824211952.1397699-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230824_142000_906836_7C0A91D1 
-X-CRM114-Status: GOOD (  15.70  )
+X-CRM114-CacheID: sfid-20230824_142002_287681_ABF3E269 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,270 +103,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-All legacy bindings of USB PHYs use "phy", "common" resets, while newer
-style bindings use "phy", "phy_phy" resets. In preparation for
-converting existing legacy PHY bindings to use newer scheme, drop reset
-lists from configuration struture and reference reset lists directly.
+Change the USB QMP PHY to use newer style of QMP PHY bindings (single
+resource region, no per-PHY subnodes).
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 71 +++++++++----------------
- 1 file changed, 26 insertions(+), 45 deletions(-)
+ arch/arm64/boot/dts/qcom/ipq8074.dtsi | 76 +++++++++++----------------
+ 1 file changed, 32 insertions(+), 44 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 626cf4bf396b..8f43de20fb8c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1172,9 +1172,6 @@ struct qmp_phy_cfg {
- 	const struct qmp_phy_init_tbl *pcs_usb_tbl;
- 	int pcs_usb_tbl_num;
+diff --git a/arch/arm64/boot/dts/qcom/ipq8074.dtsi b/arch/arm64/boot/dts/qcom/ipq8074.dtsi
+index 3350804a2f62..e113f5eec8e6 100644
+--- a/arch/arm64/boot/dts/qcom/ipq8074.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq8074.dtsi
+@@ -125,32 +125,26 @@ soc: soc@0 {
  
--	/* resets to be requested */
--	const char * const *reset_list;
--	int num_resets;
- 	/* regulators to be requested */
- 	const char * const *vreg_list;
- 	int num_vregs;
-@@ -1206,6 +1203,7 @@ struct qmp_usb {
- 	struct clk *pipe_clk;
- 	struct clk_bulk_data *clks;
- 	int num_clks;
-+	int num_resets;
- 	struct reset_control_bulk_data *resets;
- 	struct regulator_bulk_data *vregs;
+ 		ssphy_1: phy@58000 {
+ 			compatible = "qcom,ipq8074-qmp-usb3-phy";
+-			reg = <0x00058000 0x1c4>;
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			ranges;
++			reg = <0x00058000 0x1000>;
  
-@@ -1246,11 +1244,11 @@ static const char * const qmp_usb_phy_clk_l[] = {
- };
+ 			clocks = <&gcc GCC_USB1_AUX_CLK>,
+-				<&gcc GCC_USB1_PHY_CFG_AHB_CLK>,
+-				<&xo>;
+-			clock-names = "aux", "cfg_ahb", "ref";
++				 <&xo>,
++				 <&gcc GCC_USB1_PHY_CFG_AHB_CLK>,
++				 <&gcc GCC_USB1_PIPE_CLK>;
++			clock-names = "aux",
++				      "ref",
++				      "cfg_ahb",
++				      "pipe";
++			clock-output-names = "usb3phy_1_cc_pipe_clk";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
  
- /* list of resets */
--static const char * const msm8996_usb3phy_reset_l[] = {
-+static const char * const usb3phy_legacy_reset_l[] = {
- 	"phy", "common",
- };
+ 			resets = <&gcc GCC_USB1_PHY_BCR>,
+-				<&gcc GCC_USB3PHY_1_PHY_BCR>;
+-			reset-names = "phy","common";
+-			status = "disabled";
++				 <&gcc GCC_USB3PHY_1_PHY_BCR>;
++			reset-names = "phy",
++				      "phy_phy";
  
--static const char * const qcm2290_usb3phy_reset_l[] = {
-+static const char * const usb3phy_reset_l[] = {
- 	"phy_phy", "phy",
- };
+-			usb1_ssphy: phy@58200 {
+-				reg = <0x00058200 0x130>,     /* Tx */
+-				      <0x00058400 0x200>,     /* Rx */
+-				      <0x00058800 0x1f8>,     /* PCS */
+-				      <0x00058600 0x044>;     /* PCS misc */
+-				#phy-cells = <0>;
+-				#clock-cells = <0>;
+-				clocks = <&gcc GCC_USB1_PIPE_CLK>;
+-				clock-names = "pipe0";
+-				clock-output-names = "usb3phy_1_cc_pipe_clk";
+-			};
++			status = "disabled";
+ 		};
  
-@@ -1296,8 +1294,6 @@ static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(ipq8074_usb3_rx_tbl),
- 	.pcs_tbl		= ipq8074_usb3_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(ipq8074_usb3_pcs_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v3_usb3phy_regs_layout,
-@@ -1316,8 +1312,6 @@ static const struct qmp_phy_cfg ipq9574_usb3phy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(ipq9574_usb3_rx_tbl),
- 	.pcs_tbl		= ipq9574_usb3_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(ipq9574_usb3_pcs_tbl),
--	.reset_list		= qcm2290_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v3_usb3phy_regs_layout,
-@@ -1334,8 +1328,6 @@ static const struct qmp_phy_cfg msm8996_usb3phy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(msm8996_usb3_rx_tbl),
- 	.pcs_tbl		= msm8996_usb3_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(msm8996_usb3_pcs_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v2_usb3phy_regs_layout,
-@@ -1354,8 +1346,6 @@ static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_rx_tbl),
- 	.pcs_tbl		= sa8775p_usb3_uniphy_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(sa8775p_usb3_uniphy_pcs_tbl),
--	.reset_list		= qcm2290_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v5_usb3phy_regs_layout,
-@@ -1374,8 +1364,6 @@ static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_rx_tbl),
- 	.pcs_tbl		= sc8280xp_usb3_uniphy_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_pcs_tbl),
--	.reset_list		= qcm2290_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v5_usb3phy_regs_layout,
-@@ -1392,8 +1380,6 @@ static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(qmp_v3_usb3_uniphy_rx_tbl),
- 	.pcs_tbl		= qmp_v3_usb3_uniphy_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(qmp_v3_usb3_uniphy_pcs_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v3_usb3phy_regs_layout,
-@@ -1412,8 +1398,6 @@ static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
- 	.rx_tbl_num             = ARRAY_SIZE(msm8998_usb3_rx_tbl),
- 	.pcs_tbl                = msm8998_usb3_pcs_tbl,
- 	.pcs_tbl_num            = ARRAY_SIZE(msm8998_usb3_pcs_tbl),
--	.reset_list             = msm8996_usb3phy_reset_l,
--	.num_resets             = ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list              = qmp_phy_vreg_l,
- 	.num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs                   = qmp_v3_usb3phy_regs_layout,
-@@ -1432,8 +1416,6 @@ static const struct qmp_phy_cfg sm8150_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8150_usb3_uniphy_pcs_tbl),
- 	.pcs_usb_tbl		= sm8150_usb3_uniphy_pcs_usb_tbl,
- 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8150_usb3_uniphy_pcs_usb_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v4_usb3phy_regs_layout,
-@@ -1455,8 +1437,6 @@ static const struct qmp_phy_cfg sm8250_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8250_usb3_uniphy_pcs_tbl),
- 	.pcs_usb_tbl		= sm8250_usb3_uniphy_pcs_usb_tbl,
- 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8250_usb3_uniphy_pcs_usb_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v4_usb3phy_regs_layout,
-@@ -1478,8 +1458,6 @@ static const struct qmp_phy_cfg sdx55_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8250_usb3_uniphy_pcs_tbl),
- 	.pcs_usb_tbl		= sm8250_usb3_uniphy_pcs_usb_tbl,
- 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8250_usb3_uniphy_pcs_usb_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v4_usb3phy_regs_layout,
-@@ -1501,8 +1479,6 @@ static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8350_usb3_uniphy_pcs_tbl),
- 	.pcs_usb_tbl		= sm8350_usb3_uniphy_pcs_usb_tbl,
- 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8350_usb3_uniphy_pcs_usb_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v5_usb3phy_regs_layout,
-@@ -1524,8 +1500,6 @@ static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
- 	.pcs_tbl_num		= ARRAY_SIZE(sm8350_usb3_uniphy_pcs_tbl),
- 	.pcs_usb_tbl		= sm8350_usb3_uniphy_pcs_usb_tbl,
- 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8350_usb3_uniphy_pcs_usb_tbl),
--	.reset_list		= msm8996_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v5_usb3phy_regs_layout,
-@@ -1547,8 +1521,6 @@ static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
- 	.rx_tbl_num		= ARRAY_SIZE(qcm2290_usb3_rx_tbl),
- 	.pcs_tbl		= qcm2290_usb3_pcs_tbl,
- 	.pcs_tbl_num		= ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
--	.reset_list		= qcm2290_usb3phy_reset_l,
--	.num_resets		= ARRAY_SIZE(qcm2290_usb3phy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- 	.regs			= qmp_v3_usb3phy_regs_layout,
-@@ -1605,13 +1577,13 @@ static int qmp_usb_init(struct phy *phy)
- 		return ret;
- 	}
+ 		qusb_phy_1: phy@59000 {
+@@ -168,32 +162,26 @@ qusb_phy_1: phy@59000 {
  
--	ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+	ret = reset_control_bulk_assert(qmp->num_resets, qmp->resets);
- 	if (ret) {
- 		dev_err(qmp->dev, "reset assert failed\n");
- 		goto err_disable_regulators;
- 	}
+ 		ssphy_0: phy@78000 {
+ 			compatible = "qcom,ipq8074-qmp-usb3-phy";
+-			reg = <0x00078000 0x1c4>;
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			ranges;
++			reg = <0x00078000 0x1000>;
  
--	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
-+	ret = reset_control_bulk_deassert(qmp->num_resets, qmp->resets);
- 	if (ret) {
- 		dev_err(qmp->dev, "reset deassert failed\n");
- 		goto err_disable_regulators;
-@@ -1626,7 +1598,7 @@ static int qmp_usb_init(struct phy *phy)
- 	return 0;
+ 			clocks = <&gcc GCC_USB0_AUX_CLK>,
+-				<&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+-				<&xo>;
+-			clock-names = "aux", "cfg_ahb", "ref";
++				 <&xo>,
++				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
++				 <&gcc GCC_USB0_PIPE_CLK>;
++			clock-names = "aux",
++				      "ref",
++				      "cfg_ahb",
++				      "pipe";
++			clock-output-names = "usb3phy_0_cc_pipe_clk";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
  
- err_assert_reset:
--	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+	reset_control_bulk_assert(qmp->num_resets, qmp->resets);
- err_disable_regulators:
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+ 			resets = <&gcc GCC_USB0_PHY_BCR>,
+-				<&gcc GCC_USB3PHY_0_PHY_BCR>;
+-			reset-names = "phy","common";
+-			status = "disabled";
++				 <&gcc GCC_USB3PHY_0_PHY_BCR>;
++			reset-names = "phy",
++				      "phy_phy";
  
-@@ -1638,7 +1610,7 @@ static int qmp_usb_exit(struct phy *phy)
- 	struct qmp_usb *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+-			usb0_ssphy: phy@78200 {
+-				reg = <0x00078200 0x130>,     /* Tx */
+-				      <0x00078400 0x200>,     /* Rx */
+-				      <0x00078800 0x1f8>,     /* PCS */
+-				      <0x00078600 0x044>;     /* PCS misc */
+-				#phy-cells = <0>;
+-				#clock-cells = <0>;
+-				clocks = <&gcc GCC_USB0_PIPE_CLK>;
+-				clock-names = "pipe0";
+-				clock-output-names = "usb3phy_0_cc_pipe_clk";
+-			};
++			status = "disabled";
+ 		};
  
--	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+	reset_control_bulk_assert(qmp->num_resets, qmp->resets);
- 
- 	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
- 
-@@ -1880,22 +1852,25 @@ static int qmp_usb_vreg_init(struct qmp_usb *qmp)
- 	return devm_regulator_bulk_get(dev, num, qmp->vregs);
- }
- 
--static int qmp_usb_reset_init(struct qmp_usb *qmp)
-+static int qmp_usb_reset_init(struct qmp_usb *qmp,
-+			      const char *const *reset_list,
-+			      int num_resets)
- {
--	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	struct device *dev = qmp->dev;
- 	int i;
- 	int ret;
- 
--	qmp->resets = devm_kcalloc(dev, cfg->num_resets,
-+	qmp->resets = devm_kcalloc(dev, num_resets,
- 				   sizeof(*qmp->resets), GFP_KERNEL);
- 	if (!qmp->resets)
- 		return -ENOMEM;
- 
--	for (i = 0; i < cfg->num_resets; i++)
--		qmp->resets[i].id = cfg->reset_list[i];
-+	for (i = 0; i < num_resets; i++)
-+		qmp->resets[i].id = reset_list[i];
-+
-+	qmp->num_resets = num_resets;
- 
--	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets, qmp->resets);
-+	ret = devm_reset_control_bulk_get_exclusive(dev, num_resets, qmp->resets);
- 	if (ret)
- 		return dev_err_probe(dev, ret, "failed to get resets\n");
- 
-@@ -2064,6 +2039,11 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 
- 	qmp->num_clks = ret;
- 
-+	ret = qmp_usb_reset_init(qmp, usb3phy_legacy_reset_l,
-+				 ARRAY_SIZE(usb3phy_legacy_reset_l));
-+	if (ret)
-+		return ret;
-+
- 	return 0;
- }
- 
-@@ -2105,6 +2085,11 @@ static int qmp_usb_parse_dt(struct qmp_usb *qmp)
- 				     "failed to get pipe clock\n");
- 	}
- 
-+	ret = qmp_usb_reset_init(qmp, usb3phy_reset_l,
-+				 ARRAY_SIZE(usb3phy_reset_l));
-+	if (ret)
-+		return ret;
-+
- 	return 0;
- }
- 
-@@ -2126,10 +2111,6 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	if (!qmp->cfg)
- 		return -EINVAL;
- 
--	ret = qmp_usb_reset_init(qmp);
--	if (ret)
--		return ret;
--
- 	ret = qmp_usb_vreg_init(qmp);
- 	if (ret)
- 		return ret;
+ 		qusb_phy_0: phy@79000 {
+@@ -628,7 +616,7 @@ dwc_0: usb@8a00000 {
+ 				compatible = "snps,dwc3";
+ 				reg = <0x8a00000 0xcd00>;
+ 				interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+-				phys = <&qusb_phy_0>, <&usb0_ssphy>;
++				phys = <&qusb_phy_0>, <&ssphy_0>;
+ 				phy-names = "usb2-phy", "usb3-phy";
+ 				snps,is-utmi-l1-suspend;
+ 				snps,hird-threshold = /bits/ 8 <0x0>;
+@@ -670,7 +658,7 @@ dwc_1: usb@8c00000 {
+ 				compatible = "snps,dwc3";
+ 				reg = <0x8c00000 0xcd00>;
+ 				interrupts = <GIC_SPI 99 IRQ_TYPE_LEVEL_HIGH>;
+-				phys = <&qusb_phy_1>, <&usb1_ssphy>;
++				phys = <&qusb_phy_1>, <&ssphy_1>;
+ 				phy-names = "usb2-phy", "usb3-phy";
+ 				snps,is-utmi-l1-suspend;
+ 				snps,hird-threshold = /bits/ 8 <0x0>;
 -- 
 2.39.2
 
