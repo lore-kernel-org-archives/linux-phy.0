@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99276C3DA66
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 09:36:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26C11C7EE2C
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 09:36:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sW42JKdSzYbdM2dz1pfMGTYQ3vEVcZtBf33pNF4K/wA=; b=U07xV+aXIcyUrA
-	D6hOrxm2qRK3EHJ8a3KPVErKchvzVgK46MRRxALm9eLl9AzR3l4H058hg6m1S3b35CGRADIVQskIj
-	xFe8xp+ilztgaLYRErjKaNFBlVlfmNU2w0Di71hzlJHBoNlcXNmXR0DOYoU4ksO8Iw7h2ufQCMsjT
-	tUvWYtMgdcGUXoLf/6euynivydpUfGESojNmtcOYbXqRXHjfuW523sTX/Of6YUFW5n9nslD3a9xhl
-	K5DcoeXiwKntSZ6V+2cjBQAE/CPx0nyojAlLnY+d8iIlVjZn2hIkjXHYwSwg7qoyqnvfgdRjBV6hQ
-	qi6V9zYglKGrJtudbhuQ==;
+	List-Owner; bh=4Gz5MC30Hl8gWnfOB/BQZ6qv1xknR2dwfawC3YxRrsw=; b=DFp+ACF4JqsITC
+	6WYk4G9DC0AKwrrfVYAtRjV9MTH7dNCYKoy+nXfgEQosUf+0VDE1FLubb9UsgG3fd/cehhHyhMgr4
+	4NvN44MVXoW72AGVBYO/9FLlLwA7kNjl4wRAxZ53nfIl9fg5nRSOvgUMHnICE8FwLlXrcNcaMXmpP
+	qao+IqAQyDJ+nQNgpV5Oovc1+NjPXbJ1ZTgMTOzt6DV3+qIq+VJGotaK8GTSGtgp0e8xu/rj1vciw
+	HZV9a0EZI9Xt6TiWMwM/ge4Yq7xxAlZ7gdEmghiFSyiDW0AwcnIKTJWKcKrYAjD1dKreuKWDiPKdH
+	a0UJIj5QTpypmkpzRq9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZTFI-004kYk-0W;
+	id 1qZTFI-004kZ0-2A;
 	Fri, 25 Aug 2023 09:36:48 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZTF8-004kVr-1A
+	id 1qZTFB-004kX1-2V
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Aug 2023 09:36:39 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37P8SU2h031515;
-	Fri, 25 Aug 2023 09:36:34 GMT
+	Fri, 25 Aug 2023 09:36:43 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37P5vPK1018212;
+	Fri, 25 Aug 2023 09:36:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=nue2U5L1tj5a9kq0e6WM2XsCEX/yNvGELlOjaZjsFO0=;
- b=esblytu47o1e+k0HSSmOG3HEWQJNGAIYw6m9LMDXiBaGOZms8EvbD/Y0NJ7nkgzH1CT3
- H3OZkH0Gd1D1iXW+kjug/H3IXoy2CMHXJjAZlWXlH1JIwb8x1yyBr0Ix2edy06wqgHbt
- qeordp29yBk+Y7Tnkj7I6yCu7F5U/Bu2ectAYIC54kND+kTDodq30r4F7lvCJtOBklzQ
- saEjlqgk6RHBOK6kzU/XsrZdpU6YZFpm54Dl/E2cSgTs+dZqbzpifA1I/pnszRtYLf/9
- vQLwMifk5FCCXY4L3lQxqPcNLRgXjoqyIh47oHVDs5y5t6KzSofE7S0WkWo6PwNZjGaB gg== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3spmrhgk9m-1
+ bh=8QRI9JfkPtnp900Bmve82SKp4eUqEyNcOFYcqHcONh4=;
+ b=a0YVW+wK44daUeS5zIswj5q0i/R9XmBPMy5zBsQ8f6UwUR8iCOHWznP3IinnG70s3VGK
+ 2xtZ7J7aauBNhNldL9Hzrg0mm9kzlEya9DEHy8pvaDW01KVFWdmcxu8tR2zn78eJFEGa
+ QFai/qsynQ0Q72CHcJLFM4yrFx6BUqOGB0XSzu3ucgV5NX+ENMa7TSRK21zLJ1awaHl1
+ nrLibBCeoMCBefS3qxYHvVmbDkOt4maVuzET72EYcXt0+zt9rj1Yali31haCc8PgQPjS
+ YofnN7Eigd6HZ3M+HobovtVlYTKnqvvJ1AZtup/LRaJCCXigZb4S7KrYqFndY5JiwV1x vg== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3spmn1rmah-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Aug 2023 09:36:34 +0000
+	Fri, 25 Aug 2023 09:36:35 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37P9aNnn008353
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37P9aYoL001969
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Aug 2023 09:36:23 GMT
+	Fri, 25 Aug 2023 09:36:34 GMT
 Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Fri, 25 Aug 2023 02:36:18 -0700
+ 15.2.1118.36; Fri, 25 Aug 2023 02:36:29 -0700
 From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -60,10 +60,12 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>
-CC: Nitheesh Sekar <quic_nsekar@quicinc.com>
-Subject: [PATCH 3/5] phy: qcom-m31: Add compatible, phy init sequence for IPQ5018
-Date: Fri, 25 Aug 2023 15:05:29 +0530
-Message-ID: <20230825093531.7399-4-quic_nsekar@quicinc.com>
+CC: Nitheesh Sekar <quic_nsekar@quicinc.com>,
+        Amandeep Singh
+	<quic_amansing@quicinc.com>
+Subject: [PATCH 5/5] arm64: dts: qcom: ipq5018: Enable USB
+Date: Fri, 25 Aug 2023 15:05:31 +0530
+Message-ID: <20230825093531.7399-6-quic_nsekar@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20230825093531.7399-1-quic_nsekar@quicinc.com>
 References: <20230825093531.7399-1-quic_nsekar@quicinc.com>
@@ -73,19 +75,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: pdKw_F4uJoItcVKgzgFGlIy5GU1FbBWN
-X-Proofpoint-ORIG-GUID: pdKw_F4uJoItcVKgzgFGlIy5GU1FbBWN
+X-Proofpoint-ORIG-GUID: qfHIHUB6PX1KzjBrsnCN71xoLJaK5KPx
+X-Proofpoint-GUID: qfHIHUB6PX1KzjBrsnCN71xoLJaK5KPx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
  definitions=2023-08-25_07,2023-08-24_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- priorityscore=1501 phishscore=0 clxscore=1015 bulkscore=0 spamscore=0
- mlxscore=0 lowpriorityscore=0 adultscore=0 suspectscore=0 malwarescore=0
- mlxlogscore=798 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1015 spamscore=0 impostorscore=0 priorityscore=1501
+ malwarescore=0 suspectscore=0 mlxlogscore=466 phishscore=0 bulkscore=0
+ mlxscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2308100000 definitions=main-2308250082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230825_023638_532001_C5575D91 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20230825_023641_833015_0BF99DB7 
+X-CRM114-Status: GOOD (  14.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,99 +104,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds the phy init sequence for IPQ5018 chipset
-and the compatible string needed.
+Enable USB2 in host mode.
 
+Co-developed-by: Amandeep Singh <quic_amansing@quicinc.com>
+Signed-off-by: Amandeep Singh <quic_amansing@quicinc.com>
 Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-m31.c | 60 +++++++++++++++++++++++++++++
- 1 file changed, 60 insertions(+)
+ arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-index ed08072ca032..81b72ebde305 100644
---- a/drivers/phy/qualcomm/phy-qcom-m31.c
-+++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-@@ -82,6 +82,59 @@ struct m31_priv_data {
- 	unsigned int			nregs;
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+index e636a1cb9b77..cdf5e22ec54e 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
++++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+@@ -70,3 +70,15 @@
+ &xo_board_clk {
+ 	clock-frequency = <24000000>;
  };
- 
-+struct m31_phy_regs m31_ipq5018_regs[] = {
-+	{
-+		USB_PHY_CFG0,
-+		UTMI_PHY_OVERRIDE_EN,
-+		0
-+	},
-+	{
-+		USB_PHY_UTMI_CTRL5,
-+		POR_EN,
-+		15
-+	},
-+	{
-+		USB_PHY_FSEL_SEL,
-+		FREQ_SEL,
-+		0
-+	},
-+	{
-+		USB_PHY_HS_PHY_CTRL_COMMON0,
-+		COMMONONN | FSEL | RETENABLEN,
-+		0
-+	},
-+	{
-+		USB_PHY_REFCLK_CTRL,
-+		CLKCORE,
-+		0
-+	},
-+	{
-+		USB_PHY_UTMI_CTRL5,
-+		POR_EN,
-+		0
-+	},
-+	{
-+		USB_PHY_HS_PHY_CTRL2,
-+		USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN,
-+		0
-+	},
-+	{
-+		USB_PHY_UTMI_CTRL5,
-+		0x0,
-+		0
-+	},
-+	{
-+		USB_PHY_HS_PHY_CTRL2,
-+		USB2_SUSPEND_N | USB2_UTMI_CLK_EN,
-+		0
-+	},
-+	{
-+		USB_PHY_CFG0,
-+		0x0,
-+		0
-+	},
++
++&usbphy0 {
++	status = "okay";
 +};
 +
- struct m31_phy_regs m31_ipq5332_regs[] = {
- 	{
- 		USB_PHY_CFG0,
-@@ -268,6 +321,12 @@ static int m31usb_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
-+static const struct m31_priv_data m31_ipq5018_data = {
-+	.ulpi_mode = false,
-+	.regs = m31_ipq5018_regs,
-+	.nregs = ARRAY_SIZE(m31_ipq5018_regs),
++&usb {
++	status = "okay";
 +};
 +
- static const struct m31_priv_data m31_ipq5332_data = {
- 	.ulpi_mode = false,
- 	.regs = m31_ipq5332_regs,
-@@ -275,6 +334,7 @@ static const struct m31_priv_data m31_ipq5332_data = {
- };
- 
- static const struct of_device_id m31usb_phy_id_table[] = {
-+	{ .compatible = "qcom,ipq5018-usb-hsphy", .data = &m31_ipq5018_data },
- 	{ .compatible = "qcom,ipq5332-usb-hsphy", .data = &m31_ipq5332_data },
- 	{ },
- };
++&usb2_0_dwc {
++	dr_mode = "host";
++};
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
