@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0D2AC3DA6F
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 10:36:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 299B2C71133
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 10:37:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KZihqUMsKrnYF9MF1iwUrOCtC9LLhs8lpCTJ12S7m3o=; b=W6UEgF/q1Ul5ct
-	xHA/4vlOe6HwJCbKVA8bzc+21cYym0fWtHY2B2zGcuLRfBkobvrNRbLTM7tHJsPXTIqL+VWoSJRdo
-	NJHLO8GAgZyJQ3Kg2+fpTfuPNrpnUT+1xPFnv9iF6/uesCHIyE/mj7L2xd1Hkks2FWiLGTRhrLRgU
-	qv2hpW7N+YIGZmLJR28PT5S87pO0sLPY4BuAO3aWxCiQNM2GBW6SMw/gv7Z0GGpfDIBr6YknWVjVj
-	5IaVkfX9givrpXIOH43iWTXYB1WToQo9KSqK30m9EpNLYRFFmqiwQHXS56mqG87Xlt4lrGj17srNc
-	FkyFRWqc+t4gUgg6bKfQ==;
+	List-Owner; bh=D9K0VNy5vqrhuBKji/6QG7Rk9Wk9uTaJ34Prc5qhd/c=; b=2bnm+FyLv1Hvbi
+	0gTZOqMMnrLxhipHu++Wgh+K0JbLhqE081kT1+qNEe4uzjyQeIbMrnDHe7leIgYV+S/zNCgvP0SBJ
+	ZyAXcDVI/TgRy2oygGujKfbRwTY/Yvsbu/rCa6Xd0Lg2WXVW/tjHOVxyfBgwjkV4iQipRiAlUv30/
+	w7xy0O7mOy6MMVtVtuR7gkGLlgzqaXpvmC6j1UP9arqNFADR9V3tQsTGvmEcaCBjaMRQ7bPp3azrR
+	NPnJ+Vx5NNRpDusFGwVR/qqF3W4XQT/m3dKACqlyhb+2e3JAQndgIKnsAyGITfO/en9l1bRQcGkqK
+	dENVF07MfL8Qi6oJTXdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZUB3-004pX0-0u;
-	Fri, 25 Aug 2023 10:36:29 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1qZUCR-004pfm-2k;
+	Fri, 25 Aug 2023 10:37:55 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZUAz-004pWf-2j
+	id 1qZUCQ-004pfF-06
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Aug 2023 10:36:27 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-52889bc61b6so1211481a12.0
-        for <linux-phy@lists.infradead.org>; Fri, 25 Aug 2023 03:36:21 -0700 (PDT)
+	Fri, 25 Aug 2023 10:37:55 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-9a2185bd83cso93523166b.0
+        for <linux-phy@lists.infradead.org>; Fri, 25 Aug 2023 03:37:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1692959780; x=1693564580;
+        d=linaro.org; s=google; t=1692959868; x=1693564668;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=HnnnISbb0TpSgVVoJ28XkZwpDRboyHLlXiKPbTL7hTM=;
-        b=gQr0rDQubo0vt+T3kQEfvxXbYnO3u4tqp0eSB/24hKCYPMIhgi9Hj5Mc5o8DTuoKVf
-         Urn+u3CN7WT7D+x3JqxgcJxsq6VUhd8IZ6i/bbi1ORWxyfGqXDJP27OwvAnAkXKM6CLc
-         aobuvdLeKwHlI6wP1tagEijCFNxgEl4iNvzPhTb2V5dyCIBPMAZeeHW5Qxd2BXOEr1pL
-         NDZDobQQt5Bf6x+ZRZnagleF8aMj5TO3XUe/T5foDC6Vua0mNlX5BM4BNxDQlgHawnCR
-         EhmYsTRzCqAPo3JCtgoe6H1BV0W2o+kPDZZQkHZluFEvXNKuXgEDMOEo+7QZ7O4UWt5F
-         RXxw==
+        bh=D/icMYJmMi2L15W4uUrSEH8FD47/NFImhAmKCvK4bdo=;
+        b=TAzvHyvdUdcvqCo8cdCRlYdM5cuCX0l+ZNQuzlLUdA3aNEPLdFW23Ag5niJlpWJbqb
+         qwdbnWSsi6sfO/z5+AkzRTUiBBr5YZ7Eb5ge3BH8B6CsZOO6Jib/pzXJmwWNsjiCgI/+
+         0Ro+8JohCvklHnTu2Q9O6iF/X4Xte878jP8D/wdoEOTuJD4Kqze6lkOlGgtxXlgssePr
+         9M0/pUVr5cEDTukrlhDsPO2IigeMpmDAe5ESLb2dNnXhN5d1u8gq/f7iAnMRQhjigel3
+         kG8iAn6tuggt4B02VdQtwCtSgqQXBUjiDVt6ovPzfyWbNNKbo3E6jqypYnOHHU21lpzD
+         TjAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692959780; x=1693564580;
+        d=1e100.net; s=20221208; t=1692959868; x=1693564668;
         h=content-transfer-encoding:in-reply-to:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=HnnnISbb0TpSgVVoJ28XkZwpDRboyHLlXiKPbTL7hTM=;
-        b=cbtKE8iwamN0zronmOp/9gmWZok83eRjoG9UxIQNsjnBL2NvKwKClm2a7HjdxcF4RF
-         tJcISLXW5Gt0yh7R3VPER4eMrfixvwr+0krMYtnAS8zm/gSPtVexs9TEsblOeQ/+Cy8j
-         rvXtBbxVHLB4DapTLnuvS+MQsL+aoU+VpDO94xbWB0x0ke32RFGhmzIsI79mq2dZp0AW
-         MvhYt7w8J9I0U1Ilx5c9ZG8hQwjIVDiXEVqu6lVoejzzpSqMD0ytzr+jiTb+YwjI0uOa
-         DY0lf4n9UsaY6iIMk8CNqngG07GTijO7Q1/bXTZg844nL6ayh7pv+XbTNKFxt0bcjgUk
-         03Dw==
-X-Gm-Message-State: AOJu0YwLsHm1YDgpRx6clZQ0fyy3WiaJiLYbe6KQuNUnQsO6uq+lbMPh
-	wGEs4AK/gDptjXE0ejuZcZtZQTJFJbFPhFwstTQ=
-X-Google-Smtp-Source: AGHT+IEBSo8fqbVupT4baEDRXyQBUSAT9CmB5VJ/QCzRSBh/BQZlcPS9Pv24c3T722NR4Kf3psq9dw==
-X-Received: by 2002:a05:6402:658:b0:52a:1d54:2530 with SMTP id u24-20020a056402065800b0052a1d542530mr7509242edx.27.1692959780184;
-        Fri, 25 Aug 2023 03:36:20 -0700 (PDT)
+        bh=D/icMYJmMi2L15W4uUrSEH8FD47/NFImhAmKCvK4bdo=;
+        b=NmrmmHaJ7e2ZWnAs4RsnifwvfHu/fz+NMswkWNsQbP8+lthxQ5l9sI9vzI0A/68ptU
+         n2gy8vQYUwMo13pWy57x9TF9wVgES/QliBUiY4cqg1bYw4x0admi/IBXOxQyoMDkxgGb
+         e2iuD1NRsC0TKDXW4lv3/oq3pReKlwLcTCFy/EDDALWZFjcdU5aTVv5IGFQCnRbuMY70
+         +TC9iOW/cj8a0Gqc7wZqYUJa3KGInuQGxMpFJlYL3QkV4IGt2sdJKOekJzPyMPlNbqpT
+         RPbY7rICulKqL4lr69acewe5MlA4tWgOUVTMU3Tbb6yQZ/cbWB5hBeM9X51BeWk4/8Qk
+         kW0w==
+X-Gm-Message-State: AOJu0YwKeY+Ktg8wZws/m7JacZj8C1yYEfZsHDfj4I2nmrnBi8ku0J31
+	1WHpnkxbLf2j0WHRUWxmCbuTgQ==
+X-Google-Smtp-Source: AGHT+IEKZISkdoI13Phz3FVeQUPDC2cLcqdNLr/eNlx1Js35MIHxmbeXSDuxAfaQAE8WJZno/i4YHw==
+X-Received: by 2002:a17:906:2009:b0:994:54ff:10f6 with SMTP id 9-20020a170906200900b0099454ff10f6mr13630107ejo.30.1692959868327;
+        Fri, 25 Aug 2023 03:37:48 -0700 (PDT)
 Received: from [192.168.0.22] ([77.252.47.198])
-        by smtp.gmail.com with ESMTPSA id m15-20020a50ef0f000000b005254b41f507sm867671eds.32.2023.08.25.03.36.18
+        by smtp.gmail.com with ESMTPSA id pk18-20020a170906d7b200b00997e00e78e6sm815961ejb.112.2023.08.25.03.37.46
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 25 Aug 2023 03:36:19 -0700 (PDT)
-Message-ID: <24113913-7756-6d9b-70a2-aeeed9ecf4e7@linaro.org>
-Date: Fri, 25 Aug 2023 12:36:18 +0200
+        Fri, 25 Aug 2023 03:37:47 -0700 (PDT)
+Message-ID: <3e4e03b6-380c-ce61-dd93-30669e6f9b5c@linaro.org>
+Date: Fri, 25 Aug 2023 12:37:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.14.0
-Subject: Re: [PATCH 1/5] dt-bindings: phy: qcom,m31: Add IPQ5018 compatible
+Subject: Re: [PATCH 2/5] dt-bindings: usb: dwc3: Add IPQ5018 compatible
 Content-Language: en-US
 To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
@@ -78,12 +78,12 @@ To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-usb@vger.kernel.org
 References: <20230825093531.7399-1-quic_nsekar@quicinc.com>
- <20230825093531.7399-2-quic_nsekar@quicinc.com>
+ <20230825093531.7399-3-quic_nsekar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230825093531.7399-2-quic_nsekar@quicinc.com>
+In-Reply-To: <20230825093531.7399-3-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230825_033625_932386_E617C2A9 
-X-CRM114-Status: UNSURE (   6.35  )
+X-CRM114-CacheID: sfid-20230825_033754_074352_07D95F65 
+X-CRM114-Status: UNSURE (   5.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,10 +102,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 25/08/2023 11:35, Nitheesh Sekar wrote:
-> IPQ5332 qcom,m31 phy driver can support IPQ5018.
+> Document the IPQ5018 dwc3 compatible.
 > 
 > Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> ---
+
+Split the series per subsystem. You are making applying process
+unnecessarily more cumbersome for the maintainers and as result - delay
+your patchset without any single reason.
+
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
