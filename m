@@ -4,90 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26C11C7EE2C
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 09:36:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0D2AC3DA6F
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Aug 2023 10:36:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Gz5MC30Hl8gWnfOB/BQZ6qv1xknR2dwfawC3YxRrsw=; b=DFp+ACF4JqsITC
-	6WYk4G9DC0AKwrrfVYAtRjV9MTH7dNCYKoy+nXfgEQosUf+0VDE1FLubb9UsgG3fd/cehhHyhMgr4
-	4NvN44MVXoW72AGVBYO/9FLlLwA7kNjl4wRAxZ53nfIl9fg5nRSOvgUMHnICE8FwLlXrcNcaMXmpP
-	qao+IqAQyDJ+nQNgpV5Oovc1+NjPXbJ1ZTgMTOzt6DV3+qIq+VJGotaK8GTSGtgp0e8xu/rj1vciw
-	HZV9a0EZI9Xt6TiWMwM/ge4Yq7xxAlZ7gdEmghiFSyiDW0AwcnIKTJWKcKrYAjD1dKreuKWDiPKdH
-	a0UJIj5QTpypmkpzRq9g==;
+	List-Owner; bh=KZihqUMsKrnYF9MF1iwUrOCtC9LLhs8lpCTJ12S7m3o=; b=W6UEgF/q1Ul5ct
+	xHA/4vlOe6HwJCbKVA8bzc+21cYym0fWtHY2B2zGcuLRfBkobvrNRbLTM7tHJsPXTIqL+VWoSJRdo
+	NJHLO8GAgZyJQ3Kg2+fpTfuPNrpnUT+1xPFnv9iF6/uesCHIyE/mj7L2xd1Hkks2FWiLGTRhrLRgU
+	qv2hpW7N+YIGZmLJR28PT5S87pO0sLPY4BuAO3aWxCiQNM2GBW6SMw/gv7Z0GGpfDIBr6YknWVjVj
+	5IaVkfX9givrpXIOH43iWTXYB1WToQo9KSqK30m9EpNLYRFFmqiwQHXS56mqG87Xlt4lrGj17srNc
+	FkyFRWqc+t4gUgg6bKfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZTFI-004kZ0-2A;
-	Fri, 25 Aug 2023 09:36:48 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qZUB3-004pX0-0u;
+	Fri, 25 Aug 2023 10:36:29 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZTFB-004kX1-2V
+	id 1qZUAz-004pWf-2j
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Aug 2023 09:36:43 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37P5vPK1018212;
-	Fri, 25 Aug 2023 09:36:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=8QRI9JfkPtnp900Bmve82SKp4eUqEyNcOFYcqHcONh4=;
- b=a0YVW+wK44daUeS5zIswj5q0i/R9XmBPMy5zBsQ8f6UwUR8iCOHWznP3IinnG70s3VGK
- 2xtZ7J7aauBNhNldL9Hzrg0mm9kzlEya9DEHy8pvaDW01KVFWdmcxu8tR2zn78eJFEGa
- QFai/qsynQ0Q72CHcJLFM4yrFx6BUqOGB0XSzu3ucgV5NX+ENMa7TSRK21zLJ1awaHl1
- nrLibBCeoMCBefS3qxYHvVmbDkOt4maVuzET72EYcXt0+zt9rj1Yali31haCc8PgQPjS
- YofnN7Eigd6HZ3M+HobovtVlYTKnqvvJ1AZtup/LRaJCCXigZb4S7KrYqFndY5JiwV1x vg== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3spmn1rmah-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Aug 2023 09:36:35 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37P9aYoL001969
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Aug 2023 09:36:34 GMT
-Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Fri, 25 Aug 2023 02:36:29 -0700
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <quic_srichara@quicinc.com>,
-        <quic_varada@quicinc.com>, <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-CC: Nitheesh Sekar <quic_nsekar@quicinc.com>,
-        Amandeep Singh
-	<quic_amansing@quicinc.com>
-Subject: [PATCH 5/5] arm64: dts: qcom: ipq5018: Enable USB
-Date: Fri, 25 Aug 2023 15:05:31 +0530
-Message-ID: <20230825093531.7399-6-quic_nsekar@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230825093531.7399-1-quic_nsekar@quicinc.com>
-References: <20230825093531.7399-1-quic_nsekar@quicinc.com>
+	Fri, 25 Aug 2023 10:36:27 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-52889bc61b6so1211481a12.0
+        for <linux-phy@lists.infradead.org>; Fri, 25 Aug 2023 03:36:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1692959780; x=1693564580;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=HnnnISbb0TpSgVVoJ28XkZwpDRboyHLlXiKPbTL7hTM=;
+        b=gQr0rDQubo0vt+T3kQEfvxXbYnO3u4tqp0eSB/24hKCYPMIhgi9Hj5Mc5o8DTuoKVf
+         Urn+u3CN7WT7D+x3JqxgcJxsq6VUhd8IZ6i/bbi1ORWxyfGqXDJP27OwvAnAkXKM6CLc
+         aobuvdLeKwHlI6wP1tagEijCFNxgEl4iNvzPhTb2V5dyCIBPMAZeeHW5Qxd2BXOEr1pL
+         NDZDobQQt5Bf6x+ZRZnagleF8aMj5TO3XUe/T5foDC6Vua0mNlX5BM4BNxDQlgHawnCR
+         EhmYsTRzCqAPo3JCtgoe6H1BV0W2o+kPDZZQkHZluFEvXNKuXgEDMOEo+7QZ7O4UWt5F
+         RXxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692959780; x=1693564580;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=HnnnISbb0TpSgVVoJ28XkZwpDRboyHLlXiKPbTL7hTM=;
+        b=cbtKE8iwamN0zronmOp/9gmWZok83eRjoG9UxIQNsjnBL2NvKwKClm2a7HjdxcF4RF
+         tJcISLXW5Gt0yh7R3VPER4eMrfixvwr+0krMYtnAS8zm/gSPtVexs9TEsblOeQ/+Cy8j
+         rvXtBbxVHLB4DapTLnuvS+MQsL+aoU+VpDO94xbWB0x0ke32RFGhmzIsI79mq2dZp0AW
+         MvhYt7w8J9I0U1Ilx5c9ZG8hQwjIVDiXEVqu6lVoejzzpSqMD0ytzr+jiTb+YwjI0uOa
+         DY0lf4n9UsaY6iIMk8CNqngG07GTijO7Q1/bXTZg844nL6ayh7pv+XbTNKFxt0bcjgUk
+         03Dw==
+X-Gm-Message-State: AOJu0YwLsHm1YDgpRx6clZQ0fyy3WiaJiLYbe6KQuNUnQsO6uq+lbMPh
+	wGEs4AK/gDptjXE0ejuZcZtZQTJFJbFPhFwstTQ=
+X-Google-Smtp-Source: AGHT+IEBSo8fqbVupT4baEDRXyQBUSAT9CmB5VJ/QCzRSBh/BQZlcPS9Pv24c3T722NR4Kf3psq9dw==
+X-Received: by 2002:a05:6402:658:b0:52a:1d54:2530 with SMTP id u24-20020a056402065800b0052a1d542530mr7509242edx.27.1692959780184;
+        Fri, 25 Aug 2023 03:36:20 -0700 (PDT)
+Received: from [192.168.0.22] ([77.252.47.198])
+        by smtp.gmail.com with ESMTPSA id m15-20020a50ef0f000000b005254b41f507sm867671eds.32.2023.08.25.03.36.18
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 25 Aug 2023 03:36:19 -0700 (PDT)
+Message-ID: <24113913-7756-6d9b-70a2-aeeed9ecf4e7@linaro.org>
+Date: Fri, 25 Aug 2023 12:36:18 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: qfHIHUB6PX1KzjBrsnCN71xoLJaK5KPx
-X-Proofpoint-GUID: qfHIHUB6PX1KzjBrsnCN71xoLJaK5KPx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-25_07,2023-08-24_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- clxscore=1015 spamscore=0 impostorscore=0 priorityscore=1501
- malwarescore=0 suspectscore=0 mlxlogscore=466 phishscore=0 bulkscore=0
- mlxscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2308250082
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH 1/5] dt-bindings: phy: qcom,m31: Add IPQ5018 compatible
+Content-Language: en-US
+To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, quic_srichara@quicinc.com,
+ quic_varada@quicinc.com, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20230825093531.7399-1-quic_nsekar@quicinc.com>
+ <20230825093531.7399-2-quic_nsekar@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230825093531.7399-2-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230825_023641_833015_0BF99DB7 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20230825_033625_932386_E617C2A9 
+X-CRM114-Status: UNSURE (   6.35  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,38 +101,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable USB2 in host mode.
+On 25/08/2023 11:35, Nitheesh Sekar wrote:
+> IPQ5332 qcom,m31 phy driver can support IPQ5018.
+> 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> ---
 
-Co-developed-by: Amandeep Singh <quic_amansing@quicinc.com>
-Signed-off-by: Amandeep Singh <quic_amansing@quicinc.com>
-Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
----
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-index e636a1cb9b77..cdf5e22ec54e 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-@@ -70,3 +70,15 @@
- &xo_board_clk {
- 	clock-frequency = <24000000>;
- };
-+
-+&usbphy0 {
-+	status = "okay";
-+};
-+
-+&usb {
-+	status = "okay";
-+};
-+
-+&usb2_0_dwc {
-+	dr_mode = "host";
-+};
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
+Best regards,
+Krzysztof
 
 
 -- 
