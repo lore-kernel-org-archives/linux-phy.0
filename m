@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5418C6FA8F
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:18:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD9A6C83F14
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:18:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4pJzqfzH7fUDDfjbNOBoywo4m7FUxOvGNMU2e4VbcIs=; b=ndQ/naZZNYoXVb
-	RMU9ciV0V9m3AG3Ol5n9qBqPHUtgQP00rX4voBWzVy/oRztdAtIlbj8n83e3N1MExkF7GHZlGtGPc
-	NdQCy0t+sgSsqlq/DBAB/U3y9tuCOYhWkAIHS14PW96rOcNlnHQhdEsSCw5oL+o3I0gVh+UJCZBc1
-	tyylNlYYFe8iTCQ/yclpp2Iw7Gomo4yTejmA3L/d0yssJhQL2YVh7dHE91AVLN36LS4JUUT2X6F3x
-	kTCDu1MH0wJ3xq/4Ysh1Q1uGm0vpTmVop4sqp6grz3fI9OzGHafCRccsCFP1p+hEpc8JS3E8KoMIU
-	6n0F6WuheZG/o2BRSUgQ==;
+	List-Owner; bh=CIwZkuZDadwWVj7UiRYlsiDif7nLmYTf4zWxhZ7ta3c=; b=Vvta7ocOR72Kgp
+	4+65Cus9PFRXm9g/VY+PiKS8UT4PvX3iNIkEL/Wdb5nM3P1oLj9nzEYfOEQ4Luo3q5nY0rqOVus9P
+	I9XfI/U7ICzlKoNUNePhVrwEeQmouzOkr8IDn8/uvQdticTbAurKHpQNURihQ68yvHdlu/RmxwdOI
+	4UluhkRlxURUon+Ljl7X6MB1WmNytzTXe9D03CGFgeFaw9Fg14L0etNINzr9YDrEj9r7H7cIx/Xg4
+	5yuaMY2EEBP3+hS3Ad6hBM8zvQ4D8x1a11l2xcc85robb63hnL77tn+JDN05cuPx70LZhWDvNuIXg
+	R1JIs4QACcsO78WHul9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2M1-00Bw2I-1U;
-	Tue, 29 Aug 2023 17:18:13 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1qb2M2-00Bw3z-2H;
+	Tue, 29 Aug 2023 17:18:14 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2LR-00BvNx-1J;
+	id 1qb2LR-00BvNT-1r;
 	Tue, 29 Aug 2023 17:17:38 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-99bdcade7fbso601508966b.1;
-        Tue, 29 Aug 2023 10:17:37 -0700 (PDT)
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-99bfcf4c814so607587866b.0;
+        Tue, 29 Aug 2023 10:17:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1693329456; x=1693934256;
+        d=gmail.com; s=20221208; t=1693329455; x=1693934255;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=0OQ0uMxvObgSXiZXc7XOlyouI6S5o18+qbYKi7xXiJU=;
-        b=s6TtVUA4v+M9p7voV9EqzvUO+K5WnHhoucMfikXrOctuv0npQViR9s2C9ZYl8QZg3C
-         ha9NhlM5TlfZrKtOKhpdHZuZsg6tAfKrWJUjSQ0TzuuO9FJQK++7NdyOLroBXGGnWFI1
-         r3HCGu0t7PYsICfeek6yu93Oic3IKLo3RLzu0aEoV/jip2b+Q/gs2wdc5nvo1NIY/WTq
-         5M1n6EdqA3HneC+0V4wldGuWurwlrST09o5836u/s61IX3BEGDbeZj9iMssE8vLrN8tF
-         nc1i8u/7WNu8cTuShuhNVGz7xRw3j8scGML0r67kSDE2DNOGjY4nUEdUcuisLn+oEiyv
-         v/sA==
+        bh=QBQAx86WvaOm9XdYlFOZiKDZLABoSR2aNslGbzHlpgw=;
+        b=YjhSA4kQm+ny80r016Dc472pNmS42pS1nmBOqM6oVPhNBKNJlGfLb1VzG6ozVtCF6x
+         Mlyk33197iTKYGWOJtecIgwjpqlPxkQGfI/pRAOpXj485zDfiV/PQZgJDdgUDsifpH6W
+         LVPXNmebt4tPML8gXvgpBgcI6wjLHgTdw+3WflobmCdqdL1TbtTLMeahRuWF8LxtlATr
+         IKqdPLOqNzQALqccixO4n4ZLiVXScDyHxok1Foj+nS8E2ValnPtuN4jUWiEOK7qKTwIW
+         2H4UL/qePX62A4CF+Z9Lw3aAxUzhqpesyFt7Q4G+715YvpCqNSDPku8LQs0jlfjZU5Cx
+         fEwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693329456; x=1693934256;
+        d=1e100.net; s=20221208; t=1693329455; x=1693934255;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=0OQ0uMxvObgSXiZXc7XOlyouI6S5o18+qbYKi7xXiJU=;
-        b=AhTT+sxyf3JPQcpIMhTe7baxSBsTjRip89xWKX2mRAqud/MbMJFVesrI+umfCe9yNP
-         leoMgmbUlwHmW6JHntLVqNE6C0yukfEAMqViikDeraEbIQXb2+2QYxeSaFQNX/vKRb6V
-         cI1Mx0HI/Rq6EYl/lHK3fDIIl3tyoJjNLFhnSLUSOu9J9rQ5wXjjWrhJreHkpV0O+dGT
-         FDCFQ8HLWh7o89AmdeY1GMSHGKlVQdRs+kfODh/AXyFGZ7zudJjAJT2RZwaJMkgt8zyZ
-         LsR1RMmTjBOctRr7tx8ccNlHS//GZdBflXVq25rEuE6IjNN3tL8VE3DjxdkagNX5U7Wd
-         Nz/g==
-X-Gm-Message-State: AOJu0YymOVhsONJGbEWbpOW9QodaZyw2aVS45LkNZmV2VJENuRYrdDHe
-	0U+GFXUxmAEU4qWAp/ah+g==
-X-Google-Smtp-Source: AGHT+IH0+bHTepjEA8hR54kf7EM9Nb5uT+O5JhoqwdO0nyAn5FMjZRDBmEfIMY/Ri8mcEWEggh+wbA==
-X-Received: by 2002:a17:906:76d2:b0:9a1:7919:d3d5 with SMTP id q18-20020a17090676d200b009a17919d3d5mr21742168ejn.43.1693329456174;
-        Tue, 29 Aug 2023 10:17:36 -0700 (PDT)
-Received: from U4.lan ([2001:9e8:b958:3410:8e0c:ed68:cd6c:7cb8])
-        by smtp.gmail.com with ESMTPSA id a21-20020a1709062b1500b00993cc1242d4sm6115834ejg.151.2023.08.29.10.17.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        bh=QBQAx86WvaOm9XdYlFOZiKDZLABoSR2aNslGbzHlpgw=;
+        b=C/M5Yi/8+vZzDsT6utu3Lr4OE/8JDELXi16Rzsi0cfFrI/OSsV0HMmha2jeWZ1g9fg
+         YLmKQdxDPKVjWUBfmH9v7Kd+PkQPfHdJeK+br0n3qZzlh9CzewWhKxH8CITtzHjv4oDE
+         GjS5ZXieuP/IGsiBDpnmew8HPYrEviJ/pSJkRwx6a9pabE0kyLn3hyoRUKPmn4l6unj1
+         LItAy0RxBpooI/srLe/hZXYC07txNBbRmigUOXZSoHZYCX8He3vUsaJLz3yo4xmT5qeq
+         QVUl2YOlNAcZpBNnV7VXXe0f+uYUAiPrBYI6BtdsghVww1FMtz5SIrlbhaMod2AvTAys
+         0i4g==
+X-Gm-Message-State: AOJu0YzVVmWsNqMK7y+8P6EE/+x6UJnUfNqW4hDQ/65A03/Mq6zEcWoS
+	FfVK63sssJoO8auP9S56cQ==
+X-Google-Smtp-Source: AGHT+IGriq1g6SBECfoMzn6NHKe8g9e4THTgJ8Zp6YWeIKJEJrAB+LeVhbZzVDvMc9306PK2d3bxNw==
+X-Received: by 2002:a17:906:150:b0:9a1:d7cd:602d with SMTP id 16-20020a170906015000b009a1d7cd602dmr14195595ejh.45.1693329455250;
         Tue, 29 Aug 2023 10:17:35 -0700 (PDT)
+Received: from U4.lan ([2001:9e8:b958:3410:8e0c:ed68:cd6c:7cb8])
+        by smtp.gmail.com with ESMTPSA id a21-20020a1709062b1500b00993cc1242d4sm6115834ejg.151.2023.08.29.10.17.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 29 Aug 2023 10:17:34 -0700 (PDT)
 From: Alex Bee <knaerzche@gmail.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -86,16 +86,16 @@ Cc: Elaine Zhang <zhangqing@rock-chips.com>,
 	linux-clk@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Alex Bee <knaerzche@gmail.com>
-Subject: [PATCH 12/31] ARM: dts: rockchip: Add missing quirk for RK3128's dma engine
-Date: Tue, 29 Aug 2023 19:16:28 +0200
-Message-ID: <20230829171647.187787-13-knaerzche@gmail.com>
+Subject: [PATCH 11/31] ARM: dts: rockchip: Add missing arm timer interrupt for RK3128
+Date: Tue, 29 Aug 2023 19:16:27 +0200
+Message-ID: <20230829171647.187787-12-knaerzche@gmail.com>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20230829171647.187787-1-knaerzche@gmail.com>
 References: <20230829171647.187787-1-knaerzche@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_101737_454595_4F456236 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20230829_101737_625762_07772DD4 
+X-CRM114-Status: GOOD (  11.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,28 +112,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Like most other Rockchip ARM SoCs, the PL330 needs the
-arm,pl330-periph-burst quirk in order to work as expected.
-Add it.
+The Cortex-A7 timer has 4 interrupts.
+Add the mssing one.
 
 Fixes: a0201bff6259 ("ARM: dts: rockchip: add rk3128 soc dtsi")
 Signed-off-by: Alex Bee <knaerzche@gmail.com>
 ---
- arch/arm/boot/dts/rockchip/rk3128.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/rockchip/rk3128.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/rockchip/rk3128.dtsi b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-index bf55d4575311..9125bf22e971 100644
+index 2e345097b9bd..bf55d4575311 100644
 --- a/arch/arm/boot/dts/rockchip/rk3128.dtsi
 +++ b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-@@ -459,6 +459,7 @@ pdma: dma-controller@20078000 {
- 		interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
- 			     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
- 		arm,pl330-broken-no-flushp;
-+		arm,pl330-periph-burst;
- 		clocks = <&cru ACLK_DMAC>;
- 		clock-names = "apb_pclk";
- 		#dma-cells = <1>;
+@@ -64,7 +64,8 @@ timer {
+ 		compatible = "arm,armv7-timer";
+ 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
+ 			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
+-			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
++			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
++			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+ 		arm,cpu-registers-not-fw-configured;
+ 		clock-frequency = <24000000>;
+ 	};
 -- 
 2.42.0
 
