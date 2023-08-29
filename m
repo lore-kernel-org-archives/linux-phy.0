@@ -4,63 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 378F9C83F12
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 16:16:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3510CC71153
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 16:54:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yp9f0xk/SP0hKpsQ0BVOCUtSQ2GB5cmaE7wXPdopu5Y=; b=R7Uzj08XGN9UbA
-	vM4uMUA6P4bz6VpxcNSYfrjSVpQypowwT361m5rCX3YKrMOq2IV5WaiM0etGC47wndMfmtqk7mF1I
-	BbFxvR3456R3+nV7dKAUnAlwYDpWnNBzgwLB9gnnhOJi9+O9czKVPkgJPHKBqKEvex7IzO9K+nRhl
-	wR8hDgmZ9lc8EWRmJB38VcWyOp1auVhUQRjdx/vYAQC7JEH52cTTKgFLnKj9tLp3f5QEYvLpCMNNV
-	Y767zsItdeBuN4+IW1s7vwjZhdPm8+hnAijlzRsP2kALInchEufQhNqnYTX5Ek86PmdllYsHHcwmW
-	nr2P210wczDyKqgSzvtg==;
+	List-Owner; bh=3fPxzi0WXoIigT9PDIT+4kBukzoFaoU+wNyg3OKNneM=; b=o3KPApQoH8nLXY
+	bnmphhPZtlmvu1OhXIZnd+m96bFsQ2DIvewqh5YUsPSN7JPJXfy9oWC9Ob1eQ0ax9uPVO3ftTYvve
+	r0l5ii1DwFpMLBlTsGFkFuLSGf3CBxT8dcIJOzN9SG0d4xNSrLdOs0vKpEYh2KO2AJc08NXZTmteu
+	OdJ9ZEdPMO5JkPtx5S9cIHhPbuo6Og0CGNQncJy5ISPbNN3UQg2I+odux21SgE8cMFvV0Zj0TjNIx
+	OHdIPNLDrwGhiR429ZjK+R4+OBW/qTsOTRrLTmbgemvhKeuIO3rYcQggUrg54nBttdKCxg6KTaPEw
+	nOVm8ZbKxZPicn/kc5cg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb1OX-00BqFu-2j;
-	Tue, 29 Aug 2023 16:16:45 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1qb1ya-00Bsz7-2v;
+	Tue, 29 Aug 2023 16:54:00 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb1OU-00BqFU-2i;
-	Tue, 29 Aug 2023 16:16:44 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 5376161FE4;
-	Tue, 29 Aug 2023 16:16:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FE50C433C7;
-	Tue, 29 Aug 2023 16:16:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1693325801;
-	bh=qAojA2STHyfw0Fv9cHDM+ZJ3rFLmT5D9fyY8FeUxJ08=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=I1no0gQjl1B6jZ4lW88cFiYSW4ij6Dfpt7EoNo/2wnPIFmGfD7Dr4i7QabpuL5JE2
-	 HK1QMHfJCe+tR/aNwLCvlUj/EW4+ogvseulBGIKJx0sycNBoonYXNDZBkNA6RfVL68
-	 DwvcokkvKG2Wqbq1Z5gtW+MhfRRJ7GPM5wdiSe+2ufbebdJ4u7nXGR4GyYrEogNpTD
-	 UKNaRsuiUZBTSoqupAKGxoYn0i0pa0A8nMPOWP9IJV9sm3hXTKqA2lTx2zH7l8wStP
-	 PSjO670jTsszBrqiVS46aerX+RK1umsfFU/KZOms/RaGw1OSbenZbboetJ4lF1WvKh
-	 dtuoBI/xAo4jw==
-Received: (nullmailer pid 2279862 invoked by uid 1000);
-	Tue, 29 Aug 2023 16:16:38 -0000
-Date: Tue, 29 Aug 2023 11:16:38 -0500
-From: Rob Herring <robh@kernel.org>
-To: Praveenkumar I <quic_ipkumar@quicinc.com>
-Cc: robert.marko@sartura.hr, luka.perkov@sartura.hr, agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be, nfraprado@collabora.com, rafal@milecki.pl, peng.fan@nxp.com, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, quic_varada@quicinc.com
-Subject: Re: [PATCH 4/9] dt-bindings: phy: qcom,uniphy: Add ipq5332 USB3 SS
- UNIPHY
-Message-ID: <20230829161638.GA2274047-robh@kernel.org>
-References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
- <20230829135818.2219438-5-quic_ipkumar@quicinc.com>
+	id 1qb1yX-00BsyT-2e
+	for linux-phy@lists.infradead.org;
+	Tue, 29 Aug 2023 16:53:59 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-52a069edca6so6426385a12.3
+        for <linux-phy@lists.infradead.org>; Tue, 29 Aug 2023 09:53:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1693328034; x=1693932834;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ACmQAc0Os4N98Z3d3R/oIFedpQZZYFrbAteEg6HsG0U=;
+        b=I/a0kp/X+qSLU+PdEBr24kCAVtAqmcmI7BCas6WtO3JCDrAbuQynu6E54l+oTgHKmK
+         c9eA+7wqka6EVKEbwNbG4+Eqrp6RkjNGXq9irM4PWeJLwjx2Dmmu7j5EJj9/FiGvCX+E
+         eJ8UJdQZX7URDGf0zr+99AJigTImTySx0pabeADIk6hAtTjCqlEejLjIJjwl9LnhW+MK
+         6vvbpsTmdKZKkypszJJQ3eLuoGNchTYAOIek7jVanMZN8GCYPKbq7WAsYyadiilTApNg
+         QifliMykN14crqmecnBJeWWOA8mvMzoN7EbyarrOlFh2tM6SUoF1oVtk6FgUd+p7Prv8
+         YC+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1693328034; x=1693932834;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ACmQAc0Os4N98Z3d3R/oIFedpQZZYFrbAteEg6HsG0U=;
+        b=Dy/+QTakpnsQK+y71dOUQfiEdKQqejAQ3DsA2dgrD3mYhCi8aBmoMG4u9dNrgmUgji
+         y5wgcQ1p6nJPNJl0HgnqQUfYmXCogMuE7ln9WWiLgCOt5y50hz89dI1vW8dFAcw4RwRb
+         g+1R6tzt7yul0n7jMKrT91DsAa0J2Q3ybq9ebiRoouFCTA/SAbXJ/RTcLIALMbpJ5I/2
+         UqxsaSaJ8pobVXsN4ryBRy8OWgb9UkDq72nEYsRBJve5dn0gSS70xr8rgULdYoyTCKRf
+         oId0QuxgRKLchWIwcnsCGnQvVorrRek+gnLUNH64rbdRWhlB23hmCv2DmbKc56pBDIFw
+         YB7w==
+X-Gm-Message-State: AOJu0YzIEMkPeRb+AqC2MrDPHvrZl7xb8r0CbQfKMbNQn6D+gJYHbMRj
+	UoCjiFoz2Zi6Ir2hOZf7rL8jBw==
+X-Google-Smtp-Source: AGHT+IFj6qY9ZGIZ7zhLjscs5t/l6tiV+o0WMRw/Smkie7Au+T0++diSeuW+C9be47Z4c2Gxfc/m6g==
+X-Received: by 2002:aa7:d9cb:0:b0:51e:309:2e11 with SMTP id v11-20020aa7d9cb000000b0051e03092e11mr23265767eds.36.1693328033755;
+        Tue, 29 Aug 2023 09:53:53 -0700 (PDT)
+Received: from [192.168.0.22] ([77.252.47.196])
+        by smtp.gmail.com with ESMTPSA id bf8-20020a0564021a4800b00529fb5fd3b9sm5830878edb.80.2023.08.29.09.53.51
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 29 Aug 2023 09:53:53 -0700 (PDT)
+Message-ID: <ae477c6d-b5a5-929f-0a36-3c0d2484add5@linaro.org>
+Date: Tue, 29 Aug 2023 18:53:51 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230829135818.2219438-5-quic_ipkumar@quicinc.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH 1/9] dt-bindings: phy: qcom,uniphy: Rename ipq4019 usb PHY
+ to UNIPHY
+Content-Language: en-US
+To: Praveenkumar I <quic_ipkumar@quicinc.com>, robert.marko@sartura.hr,
+ luka.perkov@sartura.hr, agross@kernel.org, andersson@kernel.org,
+ konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
+ p.zabel@pengutronix.de, arnd@arndb.de, geert+renesas@glider.be,
+ nfraprado@collabora.com, rafal@milecki.pl, peng.fan@nxp.com,
+ quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Cc: quic_varada@quicinc.com
+References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
+ <20230829135818.2219438-2-quic_ipkumar@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20230829135818.2219438-2-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_091642_966549_39C1A833 
-X-CRM114-Status: GOOD (  19.47  )
+X-CRM114-CacheID: sfid-20230829_095357_857041_4BD2613E 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,179 +106,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Aug 29, 2023 at 07:28:13PM +0530, Praveenkumar I wrote:
-> Add ipq5332 USB3 SS UNIPHY support.
-> 
-> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-> ---
->  .../devicetree/bindings/phy/qcom,uniphy.yaml  | 117 +++++++++++++++++-
->  1 file changed, 114 insertions(+), 3 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> index cbe2cc820009..17ba661b3d9b 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> @@ -19,21 +19,53 @@ properties:
->      enum:
->        - qcom,usb-ss-ipq4019-phy
->        - qcom,usb-hs-ipq4019-phy
-> +      - qcom,ipq5332-usb-ssphy
->  
->    reg:
->      maxItems: 1
->  
-> +  reg-names:
-> +    items:
-> +      - const: phy_base
-> +
-> +  clocks:
-> +    maxItems: 3
-> +
-> +  clock-names:
-> +    maxItems: 3
-> +
-> +  "#clock-cells":
-> +    const: 0
-> +
->    resets:
-> +    minItems: 1
->      maxItems: 2
->  
->    reset-names:
-> -    items:
-> -      - const: por_rst
-> -      - const: srif_rst
+On 29/08/2023 15:58, Praveenkumar I wrote:
+> UNIPHY / Combo PHY used on various qualcomm SoC's are very similar to
+> ipq4019 PHY. Hence renaming this dt-binding to uniphy dt-binding and
+> can be used for other qualcomm SoCs which are having similar UNIPHY.
 
-No need to remove this and duplicate the names multiple times. Just add 
-'minItems: 1' here and then the if/then schemas only need either 
-minItems or maxItems.
+That's not the reason to rename it. Keep the old name.
 
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  clock-output-names:
-> +    maxItems: 1
->  
->    "#phy-cells":
->      const: 0
->  
-> +  qcom,phy-mux-sel:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    description:
-> +      PHY Mux Selection for used to select which interface is going to use the
-> +      combo PHY.
-> +    items:
-> +      - items:
-> +          - description: phandle to TCSR syscon region
-> +          - description: offset to the PHY Mux selection register
-> +          - description: value to write on the PHY Mux selection register
-> +
-> +  vdd-supply:
-> +    description:
-> +      Phandle to 5V regulator supply to PHY digital circuit.
-> +
->  required:
->    - compatible
->    - reg
-> @@ -41,6 +73,68 @@ required:
->    - reset-names
->    - "#phy-cells"
->  
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,ipq5332-usb-ssphy
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 3
-> +        clock-names:
-> +          items:
-> +            - const: pipe
-> +            - const: phy_cfg_ahb
-> +            - const: phy_ahb
+Best regards,
+Krzysztof
 
-How do the other variants work without any clocks? Magic?
-
-Define the names in the top level and then just set the number of items 
-or disallow the property in the if/then schemas.
-
-> +
-> +        "#clock-cells":
-> +          const: 0
-> +
-> +        clock-output-names:
-> +          maxItems: 1
-> +
-> +        resets:
-> +          maxItems: 1
-> +        reset-names:
-> +          items:
-> +            - const: por_rst
-> +
-> +        vdda-supply:
-> +          description:
-> +            Phandle to 5V regulator supply to PHY digital circuit.
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,usb-ss-ipq4019-phy
-> +    then:
-> +      properties:
-> +        resets:
-> +          maxItems: 1
-> +        reset-names:
-> +          items:
-> +            - const: por_rst
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,usb-hs-ipq4019-phy
-> +    then:
-> +      properties:
-> +        resets:
-> +          maxItems: 2
-> +        reset-names:
-> +          items:
-> +            - const: por_rst
-> +            - const: srif_rst
-> +
->  additionalProperties: false
->  
->  examples:
-> @@ -55,3 +149,20 @@ examples:
->                 <&gcc USB2_HSPHY_S_ARES>;
->        reset-names = "por_rst", "srif_rst";
->      };
-> +
-> +  - |
-> +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-> +
-> +    ssuniphy@4b0000 {
-> +      #phy-cells = <0>;
-> +      #clock-cells = <0>;
-> +      compatible = "qcom,ipq5332-usb-ssphy";
-> +      reg = <0x4b0000 0x800>;
-> +      clocks = <&gcc GCC_USB0_PIPE_CLK>,
-> +               <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> +               <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
-> +      clock-names = "pipe", "phy_cfg_ahb", "phy_ahb";
-> +
-> +      resets = <&gcc GCC_USB0_PHY_BCR>;
-> +      reset-names = "por_rst";
-> +    };
-> -- 
-> 2.34.1
-> 
 
 -- 
 linux-phy mailing list
