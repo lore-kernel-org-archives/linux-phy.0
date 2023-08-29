@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65566C83F14
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:17:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D37C4C83F12
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:17:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfv4xsT7H9sNWRl7R4UVDV2i0Mex1kJ8fJ2ECxfq0BY=; b=OXiVCD1lhEajNV
-	rpCNmZ5PO/LpF62Odpb7Ptn9oqKHY0y9C/vVDVZQjQzwyRK1UDMyyZ5XBf9UjjtCXlvsNLFjjvqM1
-	S1VeZi8bCAc67cs18mMO0rZQP9LurzITRtIjoRCA0zv2DxsC3su2HKMXhbkHStyR67ZfY783rMv2H
-	eQ041fFYN4wgoq+SUXoF/00qA1FpkuPcz7Qxq8Nv9PzP4+f5o5L9qmB4Owl4uX+pRm4JXnDxD0nv6
-	8FegfhnrYbaOQaIUowV5i8ugTOTsSs5vPVjhCeR0r/2KSLcYnt8XmunmLKJaSeVHhfNI+sNJioKYx
-	Zp9UHGurpGzBILfw+27A==;
+	List-Owner; bh=hP6Vp/Fzb0zQy9R+L0xQE4wMrvBrBtH01r7DiGBh+hM=; b=pGN3VNOUlgmNhU
+	/iGoeP/NvNWx+CBJTfcN57pEhuMqvzSpCOX7ReDddaZ9sBBBa9cUdbFtQ7IKNavc0ONLr1W1hA1Zu
+	9Q/xF1E2xzSmzVAqlsnqvUQyJBNySuyqNrV4iFOOx5IWJ5ov9IW0GgwmjbdDyWyegyVhQFnID+/ja
+	pBoPYIHKNbiyVZorvDNMlnSvT+5K4dHzHkLhdpjpFnA7ES8wq5yYSzpLHeCkhhIgsTSBLEDD3OahQ
+	nHvrMQ+ZKfS1QOlxP/u6UDn+eGaeuYeYH5A3Ek9i1Po9rrwUZZDbmbpnrq7Ydy03GI9q7Yno2z95g
+	kaiKLylgvKa5dmFvb8eQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2LZ-00BvWo-2o;
-	Tue, 29 Aug 2023 17:17:45 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1qb2Lc-00Bvaa-35;
+	Tue, 29 Aug 2023 17:17:48 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2LI-00BvGs-37;
-	Tue, 29 Aug 2023 17:17:30 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-9a2185bd83cso612956066b.0;
-        Tue, 29 Aug 2023 10:17:28 -0700 (PDT)
+	id 1qb2LK-00BvHq-0F;
+	Tue, 29 Aug 2023 17:17:31 +0000
+Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-986d8332f50so603792266b.0;
+        Tue, 29 Aug 2023 10:17:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1693329447; x=1693934247;
+        d=gmail.com; s=20221208; t=1693329448; x=1693934248;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=xwaGmtZUPA/dwS41wMl1NXhL27pNtpsYsBs+oXIwgzU=;
-        b=HWwZSJR7G5j/UlzgJ/xk2k5cG0brSXt+VPqGoGnypzwtKwlkY10UxvRwUP+LqtPTLb
-         /gSA3sT/uvZwI16Ta7YRBOgqw315u4p38rJzQ1ARmo41k3TgI5bh9Q+2NYWq20txZ46j
-         mNrmVV6dQrvyn3tWzsy85kHN3SA9rjmJySwAlKu+cRXAnYBTfZTXyqHEjmUpfORjofM2
-         bJvoWqHaoFrHmL+gIQClU6YikQJUwBQraSsVNwP9bLl8qVZCVa4J9tBF0LJedLPNFf6s
-         3CAeOwU/qcU9eUyUvDzocAqVbWYEyQIbo35bgDFKUnm1gqcDXkeTQQdfzncZ+h/VFzdM
-         S3EQ==
+        bh=Rlz17GtutNw1PX6avQfyxd2FJLVbt0FbIToHal1G+vU=;
+        b=UIFYLrNe0gh2pAwnM5MUnuNxEI2N+C+hDeO1RoxlyGw+Dv05W/dM9XAythdMCRIY6K
+         Z9nxj4tt6ACJ68ny5AJEt3T2+Td3iRnGFXuDpEEGOKu1ZCi0/xj3r9ftMwbIkD3G91Uu
+         U+ldak5sol1qkR+3XD7+yUG1TLmaye0xeGMRwwNqpywQVNXSCXTHRVBbLJQJvccZ/LA9
+         LfsLtbCwvE6VCGJqblgyPJH3fqOZ+8kAGnBFIBXvtLQwOoeNKDHvfHDNfwl+3UeJYtEU
+         h2pnzMnciPjnl0iSQaYBcpSKtOHjUkwuAJ9DiY+9OzRXC+sMbSIofwBZCO86tFcfg3tY
+         qkyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693329447; x=1693934247;
+        d=1e100.net; s=20221208; t=1693329448; x=1693934248;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=xwaGmtZUPA/dwS41wMl1NXhL27pNtpsYsBs+oXIwgzU=;
-        b=X6+0+ukmcWq641DQ7iZPloXe804o98DJu1g/Dw+y7fp89TNEI2vPoRd614sQ078ksU
-         fMYhKPJJUmI6F8PeBK7G86mC4QzLMnkPTD+bBD+YJu9Khlaft4ZQvZkNHnKcPd6n4nJe
-         r9iYj25oX4RCTsMktZ6vspLCVyqkUZrwWfZH+kKd4Z1msQYstc2bk90qZDRdoR/A1A7H
-         tE9Ky8FjxxdwtFJsqjnpWz7uoSn3WYIaXdsyTYyVgCm49yN5EzrG8d/3ID31w1BknbLe
-         Dz/OK4l1y43X5dI/3t0rgVpQUGgSnoRL6nQP3wcR+YA3vYYA8iVAcUDNIQ9gGEkWBAfb
-         QskA==
-X-Gm-Message-State: AOJu0Yx9jL0ob4OFuCG10OwzPqI2pmsMQZmBcxe2MTDMboAhC2wO9R1M
-	l5FcskhC5gXJNXpFXCJR1Q==
-X-Google-Smtp-Source: AGHT+IHgDpcosA9S74bQEeR2hEnEpLMTHmHxkazGsrlnCTREbmknY2DDkcIyWAd5FuMN90wtDYQDVw==
-X-Received: by 2002:a17:906:3195:b0:9a5:d657:47e8 with SMTP id 21-20020a170906319500b009a5d65747e8mr1405316ejy.52.1693329447156;
-        Tue, 29 Aug 2023 10:17:27 -0700 (PDT)
+        bh=Rlz17GtutNw1PX6avQfyxd2FJLVbt0FbIToHal1G+vU=;
+        b=DwMTtpKtkKKzrYW9TZ6zancbVv62CAZcBapRV5fjbgZFHyu+Cf6N5AY4ysNZ116rHs
+         MGw0GsuyJS6/iEF0bia/GnH75FNRrEAtYyhoO11EwuE9357dvPzRfZYm1YuhSyF3kshz
+         59GECK5XQwIAE547Z0xPQUaXvL31LjPHoRIKlyGzPjPWQuQLZERsE9+PHnkKvS0tH/hQ
+         ecx5Sq6cwQG+fWfrDScbtV8q95qSo+D+0DDg3rXYLu7Uvm3XfyWT5YVYJvsguyhdbqy9
+         /lAueT6egrxqZR0GHakmS5qTh4lwg/+pymxe9C3U6hG2/S/tr7HHrei5nWNltNk3YB4c
+         OhJw==
+X-Gm-Message-State: AOJu0YwYYxHwBzISUmQ5c8XE9qLxjXB3f/3MPKkHC7oFbNhrQrq5nGYq
+	N60AMWFbuOtSrb5jnsSvAA==
+X-Google-Smtp-Source: AGHT+IFFkEkxU6fLi6B7Qfna18QFEfdVNppGwFK63NpwdhfSCbGPZ5uGzoW6mAq0vfuONXZvjcBGNA==
+X-Received: by 2002:a17:906:8462:b0:9a5:81cf:57b5 with SMTP id hx2-20020a170906846200b009a581cf57b5mr8395816ejc.2.1693329448163;
+        Tue, 29 Aug 2023 10:17:28 -0700 (PDT)
 Received: from U4.lan ([2001:9e8:b958:3410:8e0c:ed68:cd6c:7cb8])
-        by smtp.gmail.com with ESMTPSA id a21-20020a1709062b1500b00993cc1242d4sm6115834ejg.151.2023.08.29.10.17.26
+        by smtp.gmail.com with ESMTPSA id a21-20020a1709062b1500b00993cc1242d4sm6115834ejg.151.2023.08.29.10.17.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 29 Aug 2023 10:17:26 -0700 (PDT)
+        Tue, 29 Aug 2023 10:17:27 -0700 (PDT)
 From: Alex Bee <knaerzche@gmail.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -86,16 +86,16 @@ Cc: Elaine Zhang <zhangqing@rock-chips.com>,
 	linux-clk@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Alex Bee <knaerzche@gmail.com>
-Subject: [PATCH 03/31] dt-bindings: ASoC: rockchip: Add compatible for RK3128 spdif
-Date: Tue, 29 Aug 2023 19:16:19 +0200
-Message-ID: <20230829171647.187787-4-knaerzche@gmail.com>
+Subject: [PATCH 04/31] dt-bindings: arm: rockchip: Add Geniatech XPI-3128
+Date: Tue, 29 Aug 2023 19:16:20 +0200
+Message-ID: <20230829171647.187787-5-knaerzche@gmail.com>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20230829171647.187787-1-knaerzche@gmail.com>
 References: <20230829171647.187787-1-knaerzche@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_101729_010578_F35B42AD 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20230829_101730_119118_D147F8F1 
+X-CRM114-Status: GOOD (  10.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,25 +112,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add compatible for RK3128's S/PDIF.
+Add Geniatech XPI-3128, a RK3128 based single board computer.
 
 Signed-off-by: Alex Bee <knaerzche@gmail.com>
 ---
- Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-index 4f51b2fa82db..c3c989ef2a2c 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -26,6 +26,7 @@ properties:
-       - const: rockchip,rk3568-spdif
-       - items:
-           - enum:
-+              - rockchip,rk3128-spdif
-               - rockchip,rk3188-spdif
-               - rockchip,rk3288-spdif
-               - rockchip,rk3308-spdif
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index ecdb72a519cb..e4c1af691b7a 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -227,6 +227,11 @@ properties:
+           - const: geekbuying,geekbox
+           - const: rockchip,rk3368
+ 
++      - description: Geniatech XPI-3128
++        items:
++          - const: geniatech,xpi-3128
++          - const: rockchip,rk3128
++
+       - description: Google Bob (Asus Chromebook Flip C101PA)
+         items:
+           - const: google,bob-rev13
 -- 
 2.42.0
 
