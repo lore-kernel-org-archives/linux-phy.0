@@ -4,93 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C58D8C71153
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 18:36:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4733C83F12
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 18:46:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JisJ5etvg2xcXblq3XCXnRuALBvOuNuMWIcjE4emVF0=; b=FRAAiuiV0Ei+3V
-	yNwSdkQGTAm2l1CAyLC2trAll/hifSkV46EnalNLMaDGo6B2ooR46xpzhMZdgQ8GWQqYJdpj0vkKK
-	Ux87k76smBhRztHsiiE4bNzCyz2zFaFFsewqpAvyauL6lCETIoxusw4+DVC03X/m0wjVFxURj4QOb
-	RU67dMolQXjsDZfKueN0bVAf8keGlnh6uDKAsHe7tYRge/8vs2c89wMlbG/k8rlCCUQ2Jmj9TAeWY
-	ee2JCEVE9yml26HZTox2LbCyOGFNcKISERsYElgl5q7DD9L5vHr/d2G7aZUni243XngWAelnoLGLB
-	wTp2No2GU2dIyzTvhvrQ==;
+	List-Owner; bh=O2rl5rqpE9Uouhn0Ye0R8ClhHejF27m+6LNmngIAV+0=; b=phq3T1dHCs1tyS
+	RzNGJoWJEDXlN8R9s/4M63gT3/6Uj09NX/BXL2sVb/NTFQqoKy4bT8BN0MuWESuIuhwVA9aKGHA+T
+	GbpwUz0oAImbIhes8q57q5E7TX5no8GQqlyT/QJ9sqMr+EdmtSQo7z+Y1jTuUUkTc8FZfdS7kKfQS
+	sftP8bWzGQyL4TyMcpGxvp/Z8kL9zKX1i3j/JMycUDkpy+OlRs94apBz6ZiyEBZBOMAt2AB9Gu+sm
+	RuxJ8YlBqkNeAQklZ/L9K0MPBoUcfJlFBkVzzHS+SoAkMP4lIlz3i/hAdOhp27nBn8LP7PnYqiuiK
+	DFsMsPwFE0enLM3I3hLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb3Zp-00C3b2-1c;
-	Tue, 29 Aug 2023 18:36:33 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1qb3jZ-00C4Qr-1W;
+	Tue, 29 Aug 2023 18:46:37 +0000
+Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb3Zm-00C3a4-1q;
-	Tue, 29 Aug 2023 18:36:31 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-50087d47d4dso7612503e87.1;
-        Tue, 29 Aug 2023 11:36:28 -0700 (PDT)
+	id 1qb3jW-00C4Pd-2J
+	for linux-phy@lists.infradead.org;
+	Tue, 29 Aug 2023 18:46:36 +0000
+Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-d7b91422da8so440854276.2
+        for <linux-phy@lists.infradead.org>; Tue, 29 Aug 2023 11:46:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1693334187; x=1693938987;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=d7WlyYzqen5MI4P1iAbKBmvgwbKop0nGPA7AULKnw6o=;
-        b=M7jKN5n3mbxOj6lToXlIBhPfrGvC6yd0H/btRqbTG5GN77QQEHXEnWUgB/u9h37HEM
-         aQ3Yh0h+zDVLmyJK1+FIDzgTteH8rmbZviHp/ff61hTQgrTcyy0nUiodskPcy/wcBh5n
-         NIuaedyS4vgw2lhchhMUJW5L3lUOqkq8ajWK5jlq3m2SAdam1bwzA4e90x5TL4aZpkSM
-         YWobFR2JHrACTFmlppIlFi7ZjN29jj0Mal8JFRUSPqudgAs54EYml17nc/0bF0TlJu6K
-         124Lf8rCO4uKn9XVkhJWCryQagTVCb81ZFN8UFsc7Vzw1IrjJXssjEykqsPrreIM0fBF
-         8CXA==
+        d=linaro.org; s=google; t=1693334791; x=1693939591;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=6+ED0KXs67DGrmo6iXaWzPAJQDmbnXsYGdJFbasrMdI=;
+        b=ClWjzcAfjYvtZ8nl+s7yeWbc+hc5FJFSCfsmTr8wmd/zVGplocRb++tAmdLjdsc9zc
+         nfs6Ak/RS7XX2cggg/o75ialkDJwSUmqpoE0jlMeh3HrLPdu5cp3G0lkpB0XGMYE3XOC
+         s5Z3wGgOcqeZVH4rZ4Z18ix/VHAoHldddAp34xZc28soOqMULHblq4fl9sVDsgxIZLN1
+         UQWTMxiRjLNSy54jTnOGWiDCUivs75yf4KiJWzQlLbqvLyuPzW4fmCFix5ea17knoMq4
+         7Ov+viFXw9Qeb7kfTlBZ45jKJGGg1ngVZixWXIuhHigS6SN/T5lzODHIBbHBip0x5fcC
+         2OJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693334187; x=1693938987;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=d7WlyYzqen5MI4P1iAbKBmvgwbKop0nGPA7AULKnw6o=;
-        b=lKT9QSHWrSAgZDa4Jg34xvwn8fyGSRCgquSnI3nl+XKRixKuaGepXeYTSpU7EFYJVH
-         5Yrdnm2ej0TiD+3ha8Sek+Zbc7ZBCHpFf/9KJ8MdpgJdXJRBIVU7ZMmRpaPj4X9idn2+
-         jwpHDv/P2HvjUNOHEE3lnuKVqeDdUe1CLFc9/0mCdOPDSoDtTldCHqJyX6OHFBcH3c5p
-         qQ0o1lKQK8Rk/OZl1XeRWhrdAduhuSmZ2xlT7WyYSJtdXS68S5BGQXqgVbzOwAqW++nD
-         2gCtCb5ZM+zwjDhFPyIcaVB4dn3AD1veP4CfSiMydTDFQI6QqeOsHp26DJK0lFCEqYSq
-         jlQA==
-X-Gm-Message-State: AOJu0YwdjruZLLwRRfj+AqtM5Jpi8ncMJ8pwGypkegFMQq2ZhAvMTlXS
-	NHb69uzqE3AJj8pdtY0kJg==
-X-Google-Smtp-Source: AGHT+IEjZeDr07xYkGFW1xI0KR3jmlLbN0sEkoa4/s1YsvQ7klaZ7CTwLESdDc6wxza92JGAV/2Zkg==
-X-Received: by 2002:a05:6512:282c:b0:4ff:8f29:4411 with SMTP id cf44-20020a056512282c00b004ff8f294411mr23976106lfb.9.1693334186618;
-        Tue, 29 Aug 2023 11:36:26 -0700 (PDT)
-Received: from ?IPV6:2001:9e8:b958:3410:8e0c:ed68:cd6c:7cb8? ([2001:9e8:b958:3410:8e0c:ed68:cd6c:7cb8])
-        by smtp.gmail.com with ESMTPSA id p22-20020a05640210d600b00525683f9b2fsm5961948edu.5.2023.08.29.11.36.24
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 29 Aug 2023 11:36:25 -0700 (PDT)
-Message-ID: <9954d57c-d864-0215-2efc-67440ce86563@gmail.com>
-Date: Tue, 29 Aug 2023 20:36:24 +0200
+        d=1e100.net; s=20221208; t=1693334791; x=1693939591;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=6+ED0KXs67DGrmo6iXaWzPAJQDmbnXsYGdJFbasrMdI=;
+        b=MwTnkvW2OR6Y6ykJzuwiGeOeqeSeOSVEA7BDaBSu1k2cv/SkXSzrpFREJYDpLHFrxl
+         EdhPxj0x2gmMFaiILd2qD/605TDweehvPh8wqPSors3gJxEOssRArFXhz/ue9n05vCUk
+         Ahvem98kBMy9ihsK8anx448kaZxRS5kYPsfTLOHUt5ReDmbd5FlaaZeccspA/97qZZK3
+         GbIdhYsWZyimTahNlECLdJfLBHeYXALZ5ToMWBFAMz5KXCXux2CdJq3ngw3ifTjksXSh
+         gMKAf1qiT2p0H+zbk6eWadTQFbsY4uvziv4iDiyWXN/4UM/rhuqnaT/5mj7D7aqP0TfS
+         Co9Q==
+X-Gm-Message-State: AOJu0YzN/Aik64Ffpt3SFwP6ss6B1GBQTEbS+JbW1aLlGfk/4In+sPRa
+	mDwW2uq+1nhqKIi44MpzO4HRzEhNBDriHKutnvzb9w==
+X-Google-Smtp-Source: AGHT+IF7Q+2ONedva5BlExE5dN6mOQYTGK+793vpj6L4wQkNIymKBXWY+28Y72O3M02h08fxfWekTJ3xhcGsPQoR0RA=
+X-Received: by 2002:a25:d10a:0:b0:d62:b91b:10e3 with SMTP id
+ i10-20020a25d10a000000b00d62b91b10e3mr30257956ybg.48.1693334791365; Tue, 29
+ Aug 2023 11:46:31 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH 05/31] clk: rockchip: rk3128: Fix aclk_peri_src parent
-Content-Language: en-US
+References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
+ <20230829135818.2219438-5-quic_ipkumar@quicinc.com> <169331975886.2142011.7345682428392154402.robh@kernel.org>
+ <17e2413b-6d06-a113-e35b-30cc078a6e83@linaro.org>
+In-Reply-To: <17e2413b-6d06-a113-e35b-30cc078a6e83@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 29 Aug 2023 21:46:20 +0300
+Message-ID: <CAA8EJppNGs0UVhBJq_+RFt8pALEk0tEoKfUo1AxzbSu82A5_HA@mail.gmail.com>
+Subject: Re: [PATCH 4/9] dt-bindings: phy: qcom,uniphy: Add ipq5332 USB3 SS UNIPHY
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Lee Jones <lee@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@gmail.com>, Conor Dooley <conor+dt@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Elaine Zhang <zhangqing@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, alsa-devel@alsa-project.org,
- linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
- Finley Xiao <finley.xiao@rock-chips.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>
-References: <20230829171647.187787-1-knaerzche@gmail.com>
- <20230829171647.187787-6-knaerzche@gmail.com>
- <dc2f32d3-001c-746f-6dc5-58a2a6a4a8e6@linaro.org>
-From: Alex Bee <knaerzche@gmail.com>
-In-Reply-To: <dc2f32d3-001c-746f-6dc5-58a2a6a4a8e6@linaro.org>
+Cc: Rob Herring <robh@kernel.org>, Praveenkumar I <quic_ipkumar@quicinc.com>, 
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	kishon@kernel.org, robert.marko@sartura.hr, robh+dt@kernel.org, 
+	geert+renesas@glider.be, peng.fan@nxp.com, konrad.dybcio@linaro.org, 
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, will@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, quic_varada@quicinc.com, 
+	vkoul@kernel.org, nfraprado@collabora.com, krzysztof.kozlowski+dt@linaro.org, 
+	linux-arm-kernel@lists.infradead.org, quic_wcheng@quicinc.com, 
+	rafal@milecki.pl, gregkh@linuxfoundation.org, luka.perkov@sartura.hr, 
+	andersson@kernel.org, arnd@arndb.de, linux-usb@vger.kernel.org, 
+	agross@kernel.org, catalin.marinas@arm.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_113630_630462_2CDC8517 
-X-CRM114-Status: GOOD (  14.65  )
+X-CRM114-CacheID: sfid-20230829_114634_769276_E2E759A3 
+X-CRM114-Status: GOOD (  15.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,47 +93,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-thanks for your quick feedback.
-
-You're right: This series mixes up too many things. I'll split up and 
-re-send.
-
-(And fix my typos, indeed)
-
-Best Regards,
-
-Alex
-
-Am 29.08.23 um 19:40 schrieb Krzysztof Kozlowski:
-> On 29/08/2023 19:16, Alex Bee wrote:
->> From: Finley Xiao <finley.xiao@rock-chips.com>
->>
->> According to the TRM there are no specific cpll_peri, gpll_div2_peri or
->> gpll_div3_peri gates, but a single clk_peri_src gate and the peri mux
->> directly connects to the plls respectivly the pll divider clocks.
->> Fix this by creating a single gated composite.
->>
->> Also rename all occurrences of "aclk_peri_src*" to clk_peri_src, since it
->> is the parent for both peri aclks and hclks and that also matches the
->> naming in the TRM.
->>
->> Fixes: f6022e88faca ("clk: rockchip: add clock controller for rk3128")
->> Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
->> [renamed aclk_peri_src -> clk_peri_src and added commit message]
->> Signed-off-by: Alex Bee <knaerzche@gmail.com>
-> Please send fixes as separate patchset. Don't mix it with other work and
-> definitely it should not be in the middle of the patchset.
+On Tue, 29 Aug 2023 at 20:09, Krzysztof Kozlowski
+<krzysztof.kozlowski@linaro.org> wrote:
 >
-> Best regards,
-> Krzysztof
+> On 29/08/2023 16:35, Rob Herring wrote:
+> >
+> > On Tue, 29 Aug 2023 19:28:13 +0530, Praveenkumar I wrote:
+> >> Add ipq5332 USB3 SS UNIPHY support.
+> >>
+> >> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> >> ---
+> >>  .../devicetree/bindings/phy/qcom,uniphy.yaml  | 117 +++++++++++++++++-
+> >>  1 file changed, 114 insertions(+), 3 deletions(-)
+> >>
+> >
+> > My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+> > on your patch (DT_CHECKER_FLAGS is new in v5.13):
+> >
+> > yamllint warnings/errors:
+> >
+> > dtschema/dtc warnings/errors:
+> > In file included from Documentation/devicetree/bindings/phy/qcom,uniphy.example.dts:45:
+> > ./scripts/dtc/include-prefixes/dt-bindings/clock/qcom,ipq5332-gcc.h:19: warning: "GCC_BLSP1_AHB_CLK" redefined
+> >    19 | #define GCC_BLSP1_AHB_CLK                               10
+> >       |
 >
+> So the only patch which actually needed dependency information did not
+> have it. All other patches have something, even defconfig (!). Confusing.
+
+Much simpler. This patch adds a second example to the schema. Both
+examples include something-gcc.h. As both examples end up in the same
+example.dts file, second include conflicts with the first one.
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
