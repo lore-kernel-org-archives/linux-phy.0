@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46A9DC71153
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 13:59:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0205CC83F12
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 13:59:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9oJrOhqdRSn5OYMa79g/d/LXEF0Gd0aHOKHPXok+LEA=; b=k/JOId9kroGhjh
-	Zb9/yo000npdjDybR6soUldfgCsgw6EMV9EqHa7LaMAd7RcCXq1uNpLmPoUZQ8rQQR/iQZb2l/16t
-	eurQKtlUIynb3utuRKyrxDBp0GpAgOJ6AVjnADkPZxJ0ldBDUastvyPoJt+0SAkFDM7rFqgQb1AAJ
-	lrsWXPHQ+PKYVuurdF8ZUE+ybahSph40su7Z1wnLyTi0h5IB/y2iUbRNr1vUVNT1HShgU91GTp+bU
-	+h4AvASIZUocR2kHrC4oWvtdQ99BE+hT7bnCaNwX3Ecot36x+OhpzNehFmdEu8P2Gk+jnKZ4Lero3
-	5F0eCfU72kEhOpVGGd4A==;
+	List-Owner; bh=3F4HV9l0D56sJwPtv9HTAbdq3DWdKcVS7qvYQpDsnEY=; b=JtuFgT6hFx8fmg
+	TB3FvN+x6zkzF6CpKRiMhp81Nh5u4njXl/VMOMqVfl5/juysEyeSy0cCDQUnGyClGRHLc+JzjEu24
+	0flotHJFt61MpfvlRKcGzsrAx6UHJ+45rzvjFEAdZw3K/v4HNypTkV0jRkQAwPUJMHFvor0k9pItD
+	KTmM8ZE4kjq12SSOCE7ffj4pKXZdZ2R7TxVIKye9kmufLTX9v8yJO1RSkA5ncAd3Olna1BABRCZeC
+	m9JBlgtO4NghJSBVEihgslZaBJLW4wR8eCBtezjyrBWHPYE4DwOWuqlYyvYvmgWRwsJKTXom+EEll
+	1AuVJwdrGB94Uz7sHfHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qazFg-00BehM-3D;
-	Tue, 29 Aug 2023 13:59:28 +0000
+	id 1qazFq-00Beke-2J;
+	Tue, 29 Aug 2023 13:59:38 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qazFX-00Beev-39;
-	Tue, 29 Aug 2023 13:59:21 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37TDo1DQ010097;
-	Tue, 29 Aug 2023 13:59:09 GMT
+	id 1qazFm-00BejQ-3B;
+	Tue, 29 Aug 2023 13:59:36 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37TDt3V4017227;
+	Tue, 29 Aug 2023 13:59:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=kIlejBzYsF/A84csXRL0l0tfSiqE/VUEexcW3bCS9js=;
- b=VA9RiYRRdoIsMF1Agjsi3tWHli9mzvpSm7IaenTodNUXs39208BbvrOEN1xLIpLHWwZM
- c+MIq8+PdHxTDrH+TW8ZYnEli0TJHdI2/iHqVDiN8LZAl6jPDmY82kxQ+J6BjeewC+kM
- s+PYQhAd9T3zUT9RAH6clXaQjkVUSwVFcLNjWUVon1OtShyoeA2gYWjNofuqkPRc/waq
- /UMcAvjxqNkk6NNgp9XRXUkcRWQP+JQpTKh0ILHhcafRhURrvxoojwdEzjTNSXViOsp4
- o4eFY2zeVd3Ymz5OPKexQBAvzIFzcBCj8Xz7Av6B4c+JmykMtRwnBNtnRuxjiQIcOX5w TQ== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ss6j89ea6-1
+ bh=y6wybITfLp8N6qZP6fHdYc3e5N+CfybJmZ2ChqBW95U=;
+ b=dvo1B5oeKj0bGVXsQ0hzCCXUdi94HQ9CQcWO28bn1Wi5WJ2lDGUCR6VpD4H1SwHL+6KL
+ KAHt5vglROjuOza4PGu8hFNGUly5XTB5wptMMwBQnAqaZNbt0Bi5ui028+zCazdxTR16
+ vU4ychhHG9qhLhCd9Fste4m+1huJUnbBffBWF2o9gXtUhn+eBwS4sWv1/znTrFzk3h4w
+ mEZXqBBsSnMj9iEkWq4ANsfkBdepJvmSiNq/r3plvJHoaAo7KOBhWUIMfbMTYa7QGBbK
+ G2nPrdguTccOnQ3ZDi6HFQdWWgQx+6jmvJ3KKWNCYqiloyP4E8MKYhLfVLHc0uyoitLM cQ== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ss4wq1k42-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Aug 2023 13:59:09 +0000
+	Tue, 29 Aug 2023 13:59:24 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37TDx7Sf002142
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37TDxNpc012896
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Aug 2023 13:59:07 GMT
+	Tue, 29 Aug 2023 13:59:23 GMT
 Received: from hu-ipkumar-blr.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Tue, 29 Aug 2023 06:59:00 -0700
+ 15.2.1118.30; Tue, 29 Aug 2023 06:59:15 -0700
 From: Praveenkumar I <quic_ipkumar@quicinc.com>
 To: <robert.marko@sartura.hr>, <luka.perkov@sartura.hr>,
         <quic_ipkumar@quicinc.com>, <agross@kernel.org>,
@@ -64,9 +64,9 @@ To: <robert.marko@sartura.hr>, <luka.perkov@sartura.hr>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
 CC: <quic_varada@quicinc.com>
-Subject: [PATCH 4/9] dt-bindings: phy: qcom,uniphy: Add ipq5332 USB3 SS UNIPHY
-Date: Tue, 29 Aug 2023 19:28:13 +0530
-Message-ID: <20230829135818.2219438-5-quic_ipkumar@quicinc.com>
+Subject: [PATCH 6/9] arm64: dts: qcom: ipq5332: Add USB3 related nodes
+Date: Tue, 29 Aug 2023 19:28:15 +0530
+Message-ID: <20230829135818.2219438-7-quic_ipkumar@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
 References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
@@ -76,19 +76,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 0kxMqG8lnk9vjZcGmfl46xnO_KmeIYHo
-X-Proofpoint-GUID: 0kxMqG8lnk9vjZcGmfl46xnO_KmeIYHo
+X-Proofpoint-GUID: fORLaNHKvHPum4cU0q-40t0N3SbHoqCE
+X-Proofpoint-ORIG-GUID: fORLaNHKvHPum4cU0q-40t0N3SbHoqCE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-29_10,2023-08-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- impostorscore=0 priorityscore=1501 suspectscore=0 mlxlogscore=999
- lowpriorityscore=0 phishscore=0 malwarescore=0 spamscore=0 clxscore=1015
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ definitions=2023-08-29_11,2023-08-29_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1015
+ spamscore=0 malwarescore=0 priorityscore=1501 mlxscore=0 adultscore=0
+ mlxlogscore=872 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2308100000 definitions=main-2308290120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_065920_131791_88DE31CE 
-X-CRM114-Status: GOOD (  16.13  )
+X-CRM114-CacheID: sfid-20230829_065935_139894_814691C7 
+X-CRM114-Status: GOOD (  17.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,164 +105,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add ipq5332 USB3 SS UNIPHY support.
+Add SS UNIPHY and update controller node for USB3.
 
 Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 ---
- .../devicetree/bindings/phy/qcom,uniphy.yaml  | 117 +++++++++++++++++-
- 1 file changed, 114 insertions(+), 3 deletions(-)
+This patch depends on the below series which adds support for USB2 in
+IPQ5332
+https://lore.kernel.org/all/cover.1692699472.git.quic_varada@quicinc.com/
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-index cbe2cc820009..17ba661b3d9b 100644
---- a/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-@@ -19,21 +19,53 @@ properties:
-     enum:
-       - qcom,usb-ss-ipq4019-phy
-       - qcom,usb-hs-ipq4019-phy
-+      - qcom,ipq5332-usb-ssphy
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi | 39 ++++++++++++++++++++++-----
+ 1 file changed, 32 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+index e6baf694488c..7fbe6c9f4784 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+@@ -158,6 +158,27 @@ usbphy0: phy@7b000 {
+ 			status = "disabled";
+ 		};
  
-   reg:
-     maxItems: 1
++		ssuniphy0: ssuniphy@4b0000 {
++			compatible = "qcom,ipq5332-usb-ssphy";
++			reg = <0x4b0000 0x800>;
++			clocks = <&gcc GCC_USB0_PIPE_CLK>,
++				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
++				 <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
++
++			#clock-cells = <0>;
++			clock-output-names = "usb_pcie_wrapper_pipe_clk";
++
++			clock-names = "pipe",
++				      "phy_cfg_ahb",
++				      "phy_ahb";
++
++			resets =  <&gcc GCC_USB0_PHY_BCR>;
++			reset-names = "por_rst";
++			#phy-cells = <0>;
++			qcom,phy-mux-sel = <&tcsr 0x10540 0x1>;
++			status = "disabled";
++		};
++
+ 		qfprom: efuse@a4000 {
+ 			compatible = "qcom,ipq5332-qfprom", "qcom,qfprom";
+ 			reg = <0x000a4000 0x721>;
+@@ -313,30 +334,34 @@ usb: usb@8a00000 {
+ 			clocks = <&gcc GCC_USB0_MASTER_CLK>,
+ 				 <&gcc GCC_SNOC_USB_CLK>,
+ 				 <&gcc GCC_USB0_SLEEP_CLK>,
+-				 <&gcc GCC_USB0_MOCK_UTMI_CLK>;
++				 <&gcc GCC_USB0_MOCK_UTMI_CLK>,
++				 <&gcc GCC_USB0_AUX_CLK>,
++				 <&gcc GCC_USB0_LFPS_CLK>;
++
+ 			clock-names = "core",
+ 				      "iface",
+ 				      "sleep",
+-				      "mock_utmi";
++				      "mock_utmi",
++				      "aux",
++				      "lfps";
  
-+  reg-names:
-+    items:
-+      - const: phy_base
-+
-+  clocks:
-+    maxItems: 3
-+
-+  clock-names:
-+    maxItems: 3
-+
-+  "#clock-cells":
-+    const: 0
-+
-   resets:
-+    minItems: 1
-     maxItems: 2
+ 			resets = <&gcc GCC_USB_BCR>;
  
-   reset-names:
--    items:
--      - const: por_rst
--      - const: srif_rst
-+    minItems: 1
-+    maxItems: 2
-+
-+  clock-output-names:
-+    maxItems: 1
+-			qcom,select-utmi-as-pipe-clk;
+-
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges;
  
-   "#phy-cells":
-     const: 0
+ 			status = "disabled";
  
-+  qcom,phy-mux-sel:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    description:
-+      PHY Mux Selection for used to select which interface is going to use the
-+      combo PHY.
-+    items:
-+      - items:
-+          - description: phandle to TCSR syscon region
-+          - description: offset to the PHY Mux selection register
-+          - description: value to write on the PHY Mux selection register
+-			usb2_0_dwc: usb@8a00000 {
++			usb3_0_dwc: usb@8a00000 {
+ 				compatible = "snps,dwc3";
+ 				reg = <0x08a00000 0xe000>;
+ 				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+ 				clock-names = "ref";
+ 				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
+-				phy-names = "usb2-phy";
+-				phys = <&usbphy0>;
++				phy-names = "usb2-phy", "usb3-phy";
++				phys = <&usbphy0>, <&ssuniphy0>;
 +
-+  vdd-supply:
-+    description:
-+      Phandle to 5V regulator supply to PHY digital circuit.
-+
- required:
-   - compatible
-   - reg
-@@ -41,6 +73,68 @@ required:
-   - reset-names
-   - "#phy-cells"
- 
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,ipq5332-usb-ssphy
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 3
-+        clock-names:
-+          items:
-+            - const: pipe
-+            - const: phy_cfg_ahb
-+            - const: phy_ahb
-+
-+        "#clock-cells":
-+          const: 0
-+
-+        clock-output-names:
-+          maxItems: 1
-+
-+        resets:
-+          maxItems: 1
-+        reset-names:
-+          items:
-+            - const: por_rst
-+
-+        vdda-supply:
-+          description:
-+            Phandle to 5V regulator supply to PHY digital circuit.
-+
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,usb-ss-ipq4019-phy
-+    then:
-+      properties:
-+        resets:
-+          maxItems: 1
-+        reset-names:
-+          items:
-+            - const: por_rst
-+
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,usb-hs-ipq4019-phy
-+    then:
-+      properties:
-+        resets:
-+          maxItems: 2
-+        reset-names:
-+          items:
-+            - const: por_rst
-+            - const: srif_rst
-+
- additionalProperties: false
- 
- examples:
-@@ -55,3 +149,20 @@ examples:
-                <&gcc USB2_HSPHY_S_ARES>;
-       reset-names = "por_rst", "srif_rst";
-     };
-+
-+  - |
-+    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-+
-+    ssuniphy@4b0000 {
-+      #phy-cells = <0>;
-+      #clock-cells = <0>;
-+      compatible = "qcom,ipq5332-usb-ssphy";
-+      reg = <0x4b0000 0x800>;
-+      clocks = <&gcc GCC_USB0_PIPE_CLK>,
-+               <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-+               <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
-+      clock-names = "pipe", "phy_cfg_ahb", "phy_ahb";
-+
-+      resets = <&gcc GCC_USB0_PHY_BCR>;
-+      reset-names = "por_rst";
-+    };
+ 				tx-fifo-resize;
+ 				snps,is-utmi-l1-suspend;
+ 				snps,hird-threshold = /bits/ 8 <0x0>;
 -- 
 2.34.1
 
