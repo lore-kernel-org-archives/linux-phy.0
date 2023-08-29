@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7850AC83F14
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:24:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D651C83F12
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Aug 2023 17:25:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3b6EGQkdwWp9upZQSAFo+OAq09Rc3sZkvsr9LhTICk=; b=xbBbaOAqwy5xQy
-	PwJUozsIi53xZRWzHOtnots5Ca5vYynj/lwIWcYWV3TE8iWFmTnJ4bIUXCFfFM8Bq7byr5NQaM00L
-	gg1nx+XaIdiQCTn8nd7v5Hsu9RQer1533vU2/sjGnW3AFSeftIDoG/147bpIOszxSztZFIjUJkDis
-	raqeOhARIrh6hY5M1f4otna46c8VR6xE72qlA8aiekI9AHUGmnhv03Cqzgobws9Cwxgc7TcS5Bu65
-	s/y6/t3+qz4jBZetG4reHMFi+mKjE+fAujl+Q7HK1Fy8hdVPfViqw/rXBENwIuBtv8S8PNeURzfhV
-	x+7aowSn72xSLj3/Xjjw==;
+	List-Owner; bh=QGI3LGZ65r9IFV4vw7o0/m0t47fxlga8nUM+YLan0/8=; b=2mO9uvagS4JLTl
+	Wq5MmbW5K2WEj7nfvY19uz0ZnVpBwjZpZfrm74MYxTviDhEgWn1AnYBZIvQF6KaeNBhnpYQyxBWfX
+	oasuQcZWFDvTt2Ggs5Y5uQod9RnH+gmI1Khf5h07E6HEKtepgEzJEIT00DuJy6/lgAUX0uVCgE5o/
+	wkejlQTc0uDGDqtiUwVLyXTXSDfqLjX84eOtmpAScKscKtJF6n3yeGOFiIwJfaIeAgsENGPr8G43Y
+	JuTFsGwNmm8JovPIaCeouCng/sambojMOsKp0Fifglpnl6nTmMjx7agwIi80qidCh53Pa4h95l4n1
+	vSxC3BQuh79Exiqd4FWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2S5-00Bz8p-0i;
-	Tue, 29 Aug 2023 17:24:29 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1qb2T6-00BzJP-2c;
+	Tue, 29 Aug 2023 17:25:32 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qb2S1-00Bz74-2Q
+	id 1qb2T2-00BzGc-2F
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Aug 2023 17:24:27 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-997c4107d62so602244866b.0
-        for <linux-phy@lists.infradead.org>; Tue, 29 Aug 2023 10:24:25 -0700 (PDT)
+	Tue, 29 Aug 2023 17:25:31 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-51e28cac164so62011a12.1
+        for <linux-phy@lists.infradead.org>; Tue, 29 Aug 2023 10:25:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1693329864; x=1693934664;
+        d=linaro.org; s=google; t=1693329926; x=1693934726; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=lwYxLCmq4WNewekZRDSH3zyJGGPJlZo2Lv6o2KdH/x4=;
-        b=XR/x7QreIC9a3vw0Fm8SBKNI34BtJGrwGND3E56garHi/QNkLSQw4vKa7pSvrQyZgR
-         6XjRTbwimbqxMQ48SvZI3SklfZW6A8sMVSaiEf1mqEy9ANYBIFrn6R7zoySFzESBYAUV
-         QCELFjd+xWi4UmBJjNWRD4vjlwCek5R/7SOs3TJevBENMj2odwf+tGnuuEOML9nJxusf
-         WCWi9STezp4UP1rjM6w0bubynUs0dJkTpQIIhEgqvp6DrtssTg4dIZ1tCPPbe1FIL/QJ
-         orrc5VqwiQxgr/gjwAV/tqVz91+lwyJmO4UbNlnWLMYFRBiE0qLQDPv0xj2h3tzgkMI4
-         +QWg==
+        bh=AOsSOchRRigf+GMT70wdUDRGXijaBiL95u8f9cme2Mo=;
+        b=CUejCbYIeBC4sUKctyaGbT0YAsGIBO5ELCJv0ulyJ97v0J3A/58jrSAoJHZyYogVHY
+         T/CJMJcw489Vj1GQqjWHAT51Jxw+QlySys8n09aWsx6FwC9klxeI04HWx/xFaYPgS+F9
+         voPEjl0SfsRBDQqQTuJwImlJ5Sx3bKaRaMNLOmhgnwSFaJEdGPeyPQo0lHJsfTf7ISxp
+         UIQHuN6hxbeqoXixkiszdvmGR8nCh2YvmRAZOnitI2VpAE5P3TjBaAK+2GyJ3o5mqRXg
+         x87FvrfaJTkwXYZjjRWU8mUE0B90u9VMeuuvhv9+p1Exn9XLDdX7w3cL/K+qcT0nimxD
+         iY7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693329864; x=1693934664;
+        d=1e100.net; s=20221208; t=1693329926; x=1693934726;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=lwYxLCmq4WNewekZRDSH3zyJGGPJlZo2Lv6o2KdH/x4=;
-        b=IwcalBG1lSGe6XCSXF0vYnIXhwTwyerBfRrS/OtfB4C+HD/GGnfWVVuPs2Z14pFGBX
-         Zws7atOIYSPaEvXhsei6VDsN3IUIzCjlIoNCWrBOtlRrMEhuTtuBDu1/NG1JuqKiaONd
-         ueSI8FwvM5P7B1ym4PjKLERwfgDF4k5oG+VefgZwTRqZm9mf0dmxgDmqiFlgv9+GC5eV
-         m0sBVQDny5o53Q0Eo3AghJDMc6prw5myt5CSeyW42Ctf32H9+2OM9AnyTtmbETWBMWkM
-         0KrI79fEppjq72uDl5ClQU46pDp/t+WMidddoEO+Cfbfj0A0u7/dN2kKnrZ4l1cZVQCB
-         FLoA==
-X-Gm-Message-State: AOJu0YwEBBsy7J0jkRZ91hjX2jv1EooYzo+C6OXm2XP1fQFihBkV9QH7
-	Ho2hzZUI+kxHp3wtyXq0GVCuRA==
-X-Google-Smtp-Source: AGHT+IEM0PsjzjMAivcpu6BoCzHNvy2N09Jh9i35jA0fAreHjTJNVGm2qi/an6qJc1fpcsGWEgWCZA==
-X-Received: by 2002:a17:906:5346:b0:9a2:1ce5:1243 with SMTP id j6-20020a170906534600b009a21ce51243mr12610741ejo.60.1693329864004;
-        Tue, 29 Aug 2023 10:24:24 -0700 (PDT)
+        bh=AOsSOchRRigf+GMT70wdUDRGXijaBiL95u8f9cme2Mo=;
+        b=ZXHp19r6S+UhW7JGMrkfO6BaDSj8s937uf8EAviRJXW0QZ902EtfCZUbhLLR4jSxRf
+         d31br5N90S6svni6/Pfr1pnObd1X4t8O0srFDOsJqYUY1ywdEsTQHn9CtLrgyp+fPNHK
+         WWK8qQE4UBMwQgY8jiCZ49X5eKq+8Lv8wZZB1NVuS1UkmHVGFvzr3h4TGtAD2P7ryyPA
+         LvnmFnpQ0tKItDl7c1rUoRe8NkxkKTxuLFs33YS1D51pMS8a6tCN7Jpxk+Gb2/0FGGNA
+         f0vUyASv7QP4hU2eRQztMfOybZWg6MNFYr8vU/ZCUaBZnw611a8lo5hazpw6Djq/JqRA
+         r/wA==
+X-Gm-Message-State: AOJu0Yww0azmSda+L9l5rhPCYQx9sNn4fWEgAdN/PYzsUqJxbpcFosa0
+	csBCRHEJyAtm+K2q7ZTDbuSlbg==
+X-Google-Smtp-Source: AGHT+IF3yG8pM/1QQYR3cM78PgXLt47SF3cJUeeTGTYGaG5gDIhDp0rbhT11KNATVil2Mt43nb0AVg==
+X-Received: by 2002:a17:907:6d0d:b0:9a5:7b9a:f32f with SMTP id sa13-20020a1709076d0d00b009a57b9af32fmr3582562ejc.1.1693329926489;
+        Tue, 29 Aug 2023 10:25:26 -0700 (PDT)
 Received: from [192.168.0.22] ([77.252.47.196])
-        by smtp.gmail.com with ESMTPSA id rh22-20020a17090720f600b0099bc80d5575sm6132481ejb.200.2023.08.29.10.24.22
+        by smtp.gmail.com with ESMTPSA id v17-20020a17090606d100b0098669cc16b2sm6103226ejb.83.2023.08.29.10.25.25
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 29 Aug 2023 10:24:23 -0700 (PDT)
-Message-ID: <89955853-c38a-cabc-e5dd-8582487b8fc9@linaro.org>
-Date: Tue, 29 Aug 2023 19:24:21 +0200
+        Tue, 29 Aug 2023 10:25:26 -0700 (PDT)
+Message-ID: <771e116c-7e0d-d238-d35a-c5e9a44ce571@linaro.org>
+Date: Tue, 29 Aug 2023 19:25:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.14.0
-Subject: Re: [PATCH 15/31] ARM: dts: rockchip: Split RK3128 devictree for
- RK312x SoC family
+Subject: Re: [PATCH 16/31] ARM: dts: rockchip: Add SRAM node for RK312x
 Content-Language: en-US
 To: Alex Bee <knaerzche@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
  Rob Herring <robh+dt@kernel.org>,
@@ -86,12 +85,12 @@ Cc: Elaine Zhang <zhangqing@rock-chips.com>, Johan Jonker
  alsa-devel@alsa-project.org, linux-clk@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <20230829171647.187787-1-knaerzche@gmail.com>
- <20230829171647.187787-16-knaerzche@gmail.com>
+ <20230829171647.187787-17-knaerzche@gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230829171647.187787-16-knaerzche@gmail.com>
+In-Reply-To: <20230829171647.187787-17-knaerzche@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_102425_799878_AB3BF248 
-X-CRM114-Status: GOOD (  23.24  )
+X-CRM114-CacheID: sfid-20230829_102528_729445_A27AEC6A 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,109 +108,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/08/2023 19:16, Alex Bee wrote:
-> Currently there is only a SoC devicetree for RK3128 although RK312x
-> SoC family consits of (at least) RK3126(C) and RK3128.
-> 
-> This splits up the currently existing rk3128.dtsi in rk312x.dtsi which
-> contains the common definitions for both SoCs and rk3128.dtsi, rk3126.dtsi
-> respectivly.
-
-typos here and before
-
-> 
-> The differentiation between rk3126/rk3128 is already taken into account
-> in the clock driver and they have their own compatibles.
-> uart0 and i2c3 exist only in rk3128 SoC, thus they are moved to the new
-> rk3128.dtsi.
+> RK312x SoCs have 8KB of SRAM.
+> Add the respective device tree node for it.
 > 
 > Signed-off-by: Alex Bee <knaerzche@gmail.com>
 > ---
->  arch/arm/boot/dts/rockchip/rk3126.dtsi |   9 +
->  arch/arm/boot/dts/rockchip/rk3128.dtsi | 894 +------------------------
->  arch/arm/boot/dts/rockchip/rk312x.dtsi | 893 ++++++++++++++++++++++++
 
-Please generate your patches with proper -M/-B/-C arguments to detect
-the rename/copy.
-
->  3 files changed, 909 insertions(+), 887 deletions(-)
->  create mode 100644 arch/arm/boot/dts/rockchip/rk3126.dtsi
->  create mode 100644 arch/arm/boot/dts/rockchip/rk312x.dtsi
-> 
-> diff --git a/arch/arm/boot/dts/rockchip/rk3126.dtsi b/arch/arm/boot/dts/rockchip/rk3126.dtsi
-> new file mode 100644
-> index 000000000000..7345bd95d29d
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/rockchip/rk3126.dtsi
-> @@ -0,0 +1,9 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +
-> +/dts-v1/;
-> +
-> +#include "rk312x.dtsi"
-> +
-> +/ {
-> +	compatible = "rockchip,rk3126";
-> +};
-> diff --git a/arch/arm/boot/dts/rockchip/rk3128.dtsi b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-> index f3f0788195d2..4c5c9728179e 100644
-> --- a/arch/arm/boot/dts/rockchip/rk3128.dtsi
-> +++ b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-> @@ -1,360 +1,11 @@
-> -// SPDX-License-Identifier: GPL-2.0+
-> -/*
-> - * (C) Copyright 2017 Rockchip Electronics Co., Ltd
-> - */
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-
-This looks like relicensing, so without proper diff (see comment before)
-it is a no-go.
-
->  
-> -#include <dt-bindings/clock/rk3128-cru.h>
-> -#include <dt-bindings/gpio/gpio.h>
-> -#include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
-> -#include <dt-bindings/pinctrl/rockchip.h>
-> +/dts-v1/;
-> +
-> +#include "rk312x.dtsi"
->  
->  / {
->  	compatible = "rockchip,rk3128";
-> -	interrupt-parent = <&gic>;
-> -	#address-cells = <1>;
-> -	#size-cells = <1>;
-> -
-> -	arm-pmu {
-> -		compatible = "arm,cortex-a7-pmu";
-> -		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
-> -		interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
-> -	};
-> -
-> -	cpus {
-> -		#address-cells = <1>;
-> -		#size-cells = <0>;
-> -
-> -		cpu0: cpu@f00 {
-> -			device_type = "cpu";
-> -			compatible = "arm,cortex-a7";
-> -			reg = <0xf00>;
-> -			clock-latency = <40000>;
-> -			clocks = <&cru ARMCLK>;
-> -			operating-points = <
-> -				/* KHz    uV */
-> -				 816000 1000000
-> -			>;
-> -			#cooling-cells = <2>; /* min followed by max */
-> -		};
-
-All this patch is absolutely unreadable and unreviewable. Sorry, use the
-tools to make review possible.
-
-
+This really does not depend on your MFD, GPU nor ASoC changes. Keep
+independent work for different subsystems separate.
 
 Best regards,
 Krzysztof
