@@ -4,86 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3ECEC6FA8F
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 13:39:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D60FAC83F15
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 19:43:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Puc14QYAAwfA5tE5COslZOi0xj/fQD0c3nFNgGR52iM=; b=mAmn6kXs09gyQw
-	1U23djdx1XenVQzK6aN7u3UQEkFjyElpGiMkUlcedyPkQHTCOzCW2MUQbzhafjwbod0iCKvr7N7At
-	FL+w3VjI78VgL0I1W+UoqUlufPwFcdB8NFBpZ5uZhkeUuezqV2Hpyn3ck8zol1orGITW+0suwaRbp
-	QICJX0wK2rC7+SjtTPi18dyEWMmzdm4WX/gpjcCEq/mK+3jO1xMlpH5ychhXtTKR5YMLzhZtR9MeQ
-	GlUz3M4wIVFZxrnZREj8vDDSJ30rIFKifWt8OEcrWldkPQvhRSDRmCJ1Y1ojPRnJF9KeYrrXrVZjv
-	9qEd7rlF6u2/zpeSgArw==;
+	List-Owner; bh=beeQVYVk9ZqZl9UXz4w8Z5+oBuDUHNGMB2ZJfrTK9vo=; b=mFyC5K2aE0Sasd
+	Q11cT4PxJRc570kWu25+0JlQKUrRnt7kNKYbnSNrfNxOVlLYfCMcaBIEo9CdOCWFkkeGXamUBfVWM
+	V/sNRo5KkboXDnrn1GFdcxYLi1dGyTbC9niD3CEv698hXks4gfBluzYTEr2z10PxWf5ZTJM5Ck+qA
+	9x3bPbUzTiX4vvCOsp8p0UgIXi6TcHaI+6+NmJzaoJadcnu/ovYvXqlOuo+pQu/4pw+xO6fJ6PxBF
+	u25R4mkZY0HXzhtEsWlqWh3DAjJToCHJcSPU2ktR162yPooPEzDC1lL5Q/bww7omY4HEzzMIGk0eT
+	q8P1i7X8UrnWXEpHIEzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbLQ8-00DavZ-1e;
-	Wed, 30 Aug 2023 13:39:44 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1qbR6T-00E4eF-1c;
+	Wed, 30 Aug 2023 19:43:49 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbLQ6-00DauT-00;
-	Wed, 30 Aug 2023 13:39:43 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-40078c4855fso52421815e9.3;
-        Wed, 30 Aug 2023 06:39:40 -0700 (PDT)
+	id 1qbR6Q-00E4dv-2P
+	for linux-phy@lists.infradead.org;
+	Wed, 30 Aug 2023 19:43:48 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-5921a962adfso1923317b3.1
+        for <linux-phy@lists.infradead.org>; Wed, 30 Aug 2023 12:43:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20221208; t=1693402779; x=1694007579; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=pL4AHGqRwUAH2UbRxdk/07qkcSparuw8rJPg7HDVZLk=;
-        b=K06o9T5UXLsJaL7dPOh+4XLbpqPMa/beBxjZY6GWklkw3mGDaC8bjhT2E+GHDSbWkS
-         +uI95cVQ1YBJl5/npSXGJPjS98rhqHHkWvnpB1DJCosOPaL3m5N9OD4Yw6PGjwGobzAy
-         qvrAFs619Bt2IPghYRZzJAfJUiZoHZaq6HtTmhdl1aQhLSZVQpWB5TVPqIpZb33RKPg8
-         2jY4PhcMw6ti/pnztpTVSsY3fGmxgKIcOQjghxrPeBS/nywaivmJtex66/wfpg62slo1
-         hBaK51PvaVpkujU/wpwPPIz4OEZEcqj3yoH1wI9iC8+9OC0UDGVh18+ZRD3Sw80+vd6B
-         CLEg==
+        d=linaro.org; s=google; t=1693424624; x=1694029424; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=VJiEYvthVUOcpYJPy9yFGFD2aO5cf2VHnVMOssUOmRg=;
+        b=yE0QfRlfoM5WT9XSFXoBc0JfFHD6LZxUUaPgBCimUQD1HmMdZeS1yUpapAV7MKG7ue
+         pPVPFcUBGCPFfnmGcbLe0nWgSTiSWK3+4D+1ssdHqho4Q+Zn2FwEYNI4RF6P8OslWdOo
+         Jt8GjxArNNrn6yEfTqKq8HFpV1LYPb6tBmyctSylFr3OpEyg7Upfqc6GifqOZ8qdPWNV
+         Yusud0h3ykwmNWKcVMByAupyl1E42Ibm0XBrj9coejFXST0jJhDNknwaJdb5Tw4xC9fk
+         KMSQTh5Jz9YbFqoPDRkqIi+gSnuPLwq8oVYQ4UtedYqwJUhEtko5vcBBfZ7fLp+k2aoT
+         EIjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693402779; x=1694007579;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=pL4AHGqRwUAH2UbRxdk/07qkcSparuw8rJPg7HDVZLk=;
-        b=JazShL+YKUGWKduucs9lSMw6JiYesp7NCfeDDBQUshQvTXGcczRTrX99lMBOydll+l
-         2PP5kCN60Di7WTVpWa0BAKkoYUr5JuZ9U7V/7jloCpOL75G27MBjoC5NZE0cXLoWCkl8
-         CkoMrMIyb0UvjeWwQKQpP2GQgZZfq5/+mLlSfof/lO0L6yiy2kpP88796IBDCyFAd68g
-         AreDtppqrK7PctQ4CFI/2LglEvtPfug5K9LJvS+EMtGj+PnZtwoKSYHpzRsHj2mvcy/h
-         6wV7CrdxJXxUena2jpMXRAi6ahjWxDPacHoBhbHLVVCdD8EuLymQVhVxHtH8EtJq5blc
-         7/2w==
-X-Gm-Message-State: AOJu0YyTtuH2VOkmiveMaxrX885NdxCKxyo9YNskV3VlD9nFqs3198Tt
-	iPcX2YydTarfwTkytAKR6Q==
-X-Google-Smtp-Source: AGHT+IFmTJWYc2nF+k9N43mdYv3DixoSSezT3uaOMI8tivzPwvZJqspYDXCwnJy0/2KKR2+BqsD65w==
-X-Received: by 2002:a1c:7307:0:b0:3fc:9e:eead with SMTP id d7-20020a1c7307000000b003fc009eeeadmr1931954wmb.20.1693402779110;
-        Wed, 30 Aug 2023 06:39:39 -0700 (PDT)
-Received: from U4.lan ([2001:9e8:b963:7410:17bb:6f65:50d0:b82b])
-        by smtp.gmail.com with ESMTPSA id x14-20020a05600c2a4e00b003fed70fb09dsm2326343wme.26.2023.08.30.06.39.38
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 30 Aug 2023 06:39:38 -0700 (PDT)
-From: Alex Bee <knaerzche@gmail.com>
-To: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Alex Bee <knaerzche@gmail.com>
-Subject: [PATCH v2 5/5] ARM: dts: rockchip: Make usbphy the parent of SCLK_USB480M for RK3128
-Date: Wed, 30 Aug 2023 15:36:29 +0200
-Message-ID: <20230830133623.83075-12-knaerzche@gmail.com>
-X-Mailer: git-send-email 2.42.0
-In-Reply-To: <20230830133623.83075-2-knaerzche@gmail.com>
-References: <20230830133623.83075-2-knaerzche@gmail.com>
+        d=1e100.net; s=20221208; t=1693424624; x=1694029424;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=VJiEYvthVUOcpYJPy9yFGFD2aO5cf2VHnVMOssUOmRg=;
+        b=lpeOc1k6XWI9u5MZcxx27g0Q5fSbyuhybyeHFd9VsInRL5yAZU0csZgj5OBv9seuVK
+         igtnX49KNIy+0NmssbFxRTGkcBUJdHWa/hmzKvIiC7jFSmWshzig4QMK4P+OX90+ePQd
+         PsRFjFsMY+8m7xeLy4VfHysBV0NUeVRKZ/+evCW1OJBndJEcGqGJ1PnA6nwLIyHoet7g
+         EbA4snxSh2EfS0zaFtyA4aigOsHYa6VkDiaIIKcK+qeAid3oeXwY4DGTbl8WwRZJvtVg
+         9RK7dRPxuIvxpTEdIwzp/WqJqiHRIQXcQWEETdT6y7FwLi2z4bCry8nrZlO+gZOTEd6+
+         3QyQ==
+X-Gm-Message-State: AOJu0YwZJP0aXlzAj8rUujoqZx+Y42LLaHDT7tvJ9a40js/kLrZke/bO
+	w2nfTGswnSA9LdR7kx26+/yy3aQCSJKx3z1E+0ivcQ==
+X-Google-Smtp-Source: AGHT+IE2iDDTjFTVDoB3gZ4fX5lg6uyzcQRItrwWgsQ3B9T43cbbiyZMI0KSJ+aavpFonXZjy3iNu1t/WvVG3AWOXxc=
+X-Received: by 2002:a05:6902:18cd:b0:d78:48b0:21d2 with SMTP id
+ ck13-20020a05690218cd00b00d7848b021d2mr3630806ybb.3.1693424624644; Wed, 30
+ Aug 2023 12:43:44 -0700 (PDT)
 MIME-Version: 1.0
+References: <20230830111722.19380-1-quic_nsekar@quicinc.com> <20230830111722.19380-4-quic_nsekar@quicinc.com>
+In-Reply-To: <20230830111722.19380-4-quic_nsekar@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 30 Aug 2023 22:43:33 +0300
+Message-ID: <CAA8EJpr3SnEXRENAgzdemANnYWvwM7Z-xyZYe335O45Jps91kg@mail.gmail.com>
+Subject: Re: [PATCH V2 3/4] arm64: dts: qcom: ipq5018: Add USB related nodes
+To: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
+	gregkh@linuxfoundation.org, quic_srichara@quicinc.com, 
+	quic_varada@quicinc.com, quic_wcheng@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org, Amandeep Singh <quic_amansing@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230830_063942_038059_DB9DB094 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20230830_124346_812746_14353008 
+X-CRM114-Status: GOOD (  17.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,47 +93,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Without setting the parent for SCLK_USB480M the clock will use xin24m as
-it's default parent.
-While this is generally not an issue for the usb blocks to work, it becomes
-an issue for RK3128 since SCLK_USB480M can be a parent for other HW blocks
-(GPU, VPU, VIO). They never will choose this clock as their parent, because
-it currently always runs at OSC frequency.
+On Wed, 30 Aug 2023 at 21:30, Nitheesh Sekar <quic_nsekar@quicinc.com> wrote:
+>
+> Add USB phy and controller nodes.
+>
+> Co-developed-by: Amandeep Singh <quic_amansing@quicinc.com>
+> Signed-off-by: Amandeep Singh <quic_amansing@quicinc.com>
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> ---
+> V2:
+>         Fix ordering of the USB related nodes and use
+>         generic node names.
+> ---
+>  arch/arm64/boot/dts/qcom/ipq5018.dtsi | 54 +++++++++++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+> index 9f13d2dcdfd5..917e4a2d8e64 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+> @@ -93,6 +93,19 @@
+>                 #size-cells = <1>;
+>                 ranges = <0 0 0 0xffffffff>;
+>
+> +               usbphy0: phy@5b000 {
+> +                       compatible = "qcom,ipq5018-usb-hsphy";
+> +                       reg = <0x0005b000 0x120>;
+> +
+> +                       clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
+> +
+> +                       resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> +
+> +                       #phy-cells = <0>;
+> +
+> +                       status = "disabled";
+> +               };
+> +
+>                 tlmm: pinctrl@1000000 {
+>                         compatible = "qcom,ipq5018-tlmm";
+>                         reg = <0x01000000 0x300000>;
+> @@ -155,6 +168,47 @@
+>                         status = "disabled";
+>                 };
+>
+> +               usb: usb@8af8800 {
+> +                       compatible = "qcom,ipq5018-dwc3", "qcom,dwc3";
+> +                       reg = <0x08af8800 0x400>;
+> +
+> +                       interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
+> +                       interrupt-names = "hs_phy_irq";
+> +
+> +                       clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> +                                <&gcc GCC_SYS_NOC_USB0_AXI_CLK>,
+> +                                <&gcc GCC_USB0_SLEEP_CLK>,
+> +                                <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> +                       clock-names = "core",
+> +                                     "iface",
+> +                                     "sleep",
+> +                                     "mock_utmi";
+> +
+> +                       resets = <&gcc GCC_USB0_BCR>;
+> +
+> +                       qcom,select-utmi-as-pipe-clk;
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges;
+> +
+> +                       status = "disabled";
+> +
+> +                       usb2_0_dwc: usb@8a00000 {
 
-This sets usb480m_phy as SCLK_USB480M's parent, which now runs and outputs
-the expected frequency of 480 MHz and the other blocks can choose
-SCLK_USB480M as their parent if needed.
+As we have seen from the next patchset, this host supports USB 3.0.
+Can you please drop the 2_0 part of the label?
 
-Signed-off-by: Alex Bee <knaerzche@gmail.com>
----
- arch/arm/boot/dts/rockchip/rk3128.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+> +                               compatible = "snps,dwc3";
+> +                               reg = <0x08a00000 0xe000>;
+> +                               clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> +                               clock-names = "ref";
+> +                               interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+> +                               phy-names = "usb2-phy";
+> +                               phys = <&usbphy0>;
+> +                               tx-fifo-resize;
+> +                               snps,is-utmi-l1-suspend;
+> +                               snps,hird-threshold = /bits/ 8 <0x0>;
+> +                               snps,dis_u2_susphy_quirk;
+> +                               snps,dis_u3_susphy_quirk;
+> +                       };
+> +               };
+> +
+>                 intc: interrupt-controller@b000000 {
+>                         compatible = "qcom,msm-qgic2";
+>                         reg = <0x0b000000 0x1000>,  /* GICD */
+> --
+> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
+>
 
-diff --git a/arch/arm/boot/dts/rockchip/rk3128.dtsi b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-index 119e89fef2a2..5590af6f42ad 100644
---- a/arch/arm/boot/dts/rockchip/rk3128.dtsi
-+++ b/arch/arm/boot/dts/rockchip/rk3128.dtsi
-@@ -113,6 +113,8 @@ usb_host_ehci: usb@101c0000 {
- 		reg = <0x101c0000 0x20000>;
- 		interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_HOST2>;
-+		assigned-clocks = <&cru SCLK_USB480M>;
-+		assigned-clock-parents = <&usb2phy>;
- 		phys = <&usb2phy_host>;
- 		phy-names = "usb";
- 		status = "disabled";
-@@ -123,6 +125,8 @@ usb_host_ohci: usb@101e0000 {
- 		reg = <0x101e0000 0x20000>;
- 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_HOST2>;
-+		assigned-clocks = <&cru SCLK_USB480M>;
-+		assigned-clock-parents = <&usb2phy>;
- 		phys = <&usb2phy_host>;
- 		phy-names = "usb";
- 		status = "disabled";
+
 -- 
-2.42.0
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
