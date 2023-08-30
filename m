@@ -4,90 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB5EBC83F01
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 11:18:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB71DC83F14
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 12:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UBHz/Y8+KH974oQikjRaogmr8ZUnSpvNMjY6Z22g6WM=; b=UmgLaB/+adsEkR
-	gnrcVnL9aulmidYJZdgWf/xOdQpwlj9bHZWTx1/rhetrBk5eqXW0WHkwbQX2soWY5nduM0rod81Ft
-	752l0TuagarY1cZUCnNUTK7Tl+5dHuXtNdLACKF6Tjg7iQNYnimaCGPJ54LCMT863SqJufPbMbL4h
-	lRsVQDRQCTctFtZxM3zrXnj0e1KEOiEY8XEuSMV7MHeo4vPHaXr0Sv+XpsvVveBcqtgVtLhk/Mda6
-	0EdwmKDb63ge4031WzLbHS6uZ8SjuhKDtdlwVMcgRmd+iONwp7lT5k9uXEaEwrF9kmSUw2yrKvqS+
-	bdDEtRQYfTn8ddzmK5kQ==;
+	List-Owner; bh=4EIeIsAp03h2I9R3m0fAxqMyRjkAYtDra/Zo/Lv1EzQ=; b=LmuN5PFwcsZ5Uj
+	SiBVau2crwW5YDWsvMy3YNflg20O3vmKMZdBt6nF+XYsLaXj+nSTJylgIg3UoFCIH32NN0a/GQnBt
+	N3aryJSJsyJDCq5n1VmOyGcfL2VXD0ScqxkAi99V7dbqBhzG1ydgMbmqsI1iNmm+ILuXpOzq2wLOw
+	HwuLLmG9dMSoJseUIkdL7CxOsfNdFfaBbLk+v3DerBoHqFcSChXDqHKLKi5CM5fn28WvBTOLKeTJg
+	RBTWvsI20Va8cbYGOBiqtECkdgcsC+7SljDRWOAaPw+fbrqgqPhjDTFf0yNrk2ikHyGOhNzWMCWom
+	PKQqh8/uajkRXgcGcDMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbJDI-00DNIt-1Z;
-	Wed, 30 Aug 2023 11:18:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qbKRx-00DUKn-1M;
+	Wed, 30 Aug 2023 12:37:33 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbJDG-00DNIM-0F
+	id 1qbKRu-00DUKL-2g
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Aug 2023 11:18:19 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37U9uCw1011135;
-	Wed, 30 Aug 2023 11:18:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=e7z5YtFaGNibUWif2AGBJC31Qg774tsEpc9J6mO2uiA=;
- b=nIvkcErb6+k8PNSC4Eocsy40/DEXXF1JzOV23wHlrB8cJvZ38WBzXrfL7SB7luUCm7gO
- YotqX4NqC9j70kxr/2kan9RKluaWRxkigndRUdXna/FKXlyZTVbAY1zXeYThaVXM4ekj
- MVDJjGzT3GgrMbL8JRdUnXXiuSuNe/XWEhybX+FMYXLyk2tQ1IheMPSxvP22/uRAUJ2I
- PFeYtndrCNFlxfOP5ylOeTA58aJJIEEWGfv2KYtoUvNvQLInu5tiDuTSwSkIUToRtlLl
- dll5spOytHIxfmwJVrJ0FfKUGX5LEFIiP2lzIy857V1JUW0WQ0nFYZ8Z/aluIc98t5GY 9w== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3st0tare55-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Aug 2023 11:18:11 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37UBI9qL006894
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Aug 2023 11:18:09 GMT
-Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Wed, 30 Aug 2023 04:18:03 -0700
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <quic_srichara@quicinc.com>,
-        <quic_varada@quicinc.com>, <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>
-CC: Nitheesh Sekar <quic_nsekar@quicinc.com>,
-        Amandeep Singh
-	<quic_amansing@quicinc.com>
-Subject: [PATCH V2 4/4] arm64: dts: qcom: ipq5018: Enable USB
-Date: Wed, 30 Aug 2023 16:47:22 +0530
-Message-ID: <20230830111722.19380-5-quic_nsekar@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230830111722.19380-1-quic_nsekar@quicinc.com>
-References: <20230830111722.19380-1-quic_nsekar@quicinc.com>
+	Wed, 30 Aug 2023 12:37:32 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-500c6ff99acso979534e87.1
+        for <linux-phy@lists.infradead.org>; Wed, 30 Aug 2023 05:37:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1693399047; x=1694003847; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=I58sq5xTxwCx/GyljuH0Q6KBHvrDLZQ7PUXbI0PsH2Y=;
+        b=BgOc2SysPg9Ke+eC2iI56GpjpVf7rVaI+baYhz9IP21kufoC6Dpk9eDNjKJRd5oy/6
+         eLHyIhMKIbY2Gxbv2wxL5XASRnux2BwC39c/vbJ5p3ZOhtq7WVLtNFNcNr+yXrFmgAU3
+         hxXFcIYzdQhUdQ1yTD/y5hPCFhd6xhywr9p0ZfHL0AjGB3Bq6Mjz1zFSPRymNlTgH30+
+         dW7ilaAM6XDnC0Poe+PdyjpmMJPAUiL4tniR6dsJVagwChCCayNKSWQYjG50sWv/uyLH
+         wFIMnxC/c/7d2FGVWlk/MeoRlqUDjhjz7LhXQEg0zogRtkSa8HXkzXMCHqjKs8LA9WcY
+         3y1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1693399047; x=1694003847;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=I58sq5xTxwCx/GyljuH0Q6KBHvrDLZQ7PUXbI0PsH2Y=;
+        b=Mc9Cgqm+KDDjfYc7BWDonE4bj5UQPZi9qi4YtHg1r5ZhOqKQx4HFnIB69YotXcFD3Q
+         2maKnxfP2LfXovFaEx1VB2A5QPxl3vMLI+HsUsM2jfR3J1Ljf+fBIjDkhr/CZ7X2qv3o
+         PRxugvbFXCt5Oc+dNszm09XbGM0jixLm69pUVBaWjwv0+tPEyVmtT1PtJlBlRi5nAyzH
+         cdcis/x+EhTPzQoRQ5XYcY1HcjcJrdep7qxUR21hAmY5wKmj5X0B/drp/k32iFpspGMw
+         rOPLeSCh7KzjUSd/DWzXhN7v5uJmEWGSord2iHq1zI2rqYPcz7nZte+b40E6nPiII/Q8
+         ClTA==
+X-Gm-Message-State: AOJu0YzrXI+cakCnrJEsBRbg0VogkaElvAHKOP4pVa95P8OVrV6zj3b0
+	jqNJyVWsXRC1zYXQvMSj2CK9eA==
+X-Google-Smtp-Source: AGHT+IEp+gLK73xWw+QqO6fWJI74gXK+me05R7lOQ0QCXV4Bjz00bLArMSjq6XgfqF7mOJb8+dQrzQ==
+X-Received: by 2002:a05:6512:402a:b0:4fb:7624:85a5 with SMTP id br42-20020a056512402a00b004fb762485a5mr872461lfb.0.1693399046844;
+        Wed, 30 Aug 2023 05:37:26 -0700 (PDT)
+Received: from [192.168.1.101] (abyl195.neoplus.adsl.tpnet.pl. [83.9.31.195])
+        by smtp.gmail.com with ESMTPSA id cf5-20020a056512280500b00500b3157ec8sm1772351lfb.163.2023.08.30.05.37.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 30 Aug 2023 05:37:26 -0700 (PDT)
+Message-ID: <49310ff8-80ea-447d-a63e-a181afade189@linaro.org>
+Date: Wed, 30 Aug 2023 14:37:24 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JuMAQh-x4OJPlcYYs15NdbZwhq6GBX5H
-X-Proofpoint-ORIG-GUID: JuMAQh-x4OJPlcYYs15NdbZwhq6GBX5H
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-29_16,2023-08-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
- spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501
- lowpriorityscore=0 impostorscore=0 malwarescore=0 mlxlogscore=538
- adultscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2308300105
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V2 2/4] phy: qcom-m31: Add compatible, phy init sequence
+ for IPQ5018
+Content-Language: en-US
+To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ gregkh@linuxfoundation.org, quic_srichara@quicinc.com,
+ quic_varada@quicinc.com, quic_wcheng@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20230830111722.19380-1-quic_nsekar@quicinc.com>
+ <20230830111722.19380-3-quic_nsekar@quicinc.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <20230830111722.19380-3-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230830_041818_117680_CDAABD35 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20230830_053730_934605_CAADB1B8 
+X-CRM114-Status: GOOD (  10.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,45 +135,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable USB2 in host mode.
+On 30.08.2023 13:17, Nitheesh Sekar wrote:
+> Add phy init sequence and compatible string for IPQ5018
+> chipset.
+> 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> ---
+> V2:
+> 	Updated the commit message.
+> ---
+>  drivers/phy/qualcomm/phy-qcom-m31.c | 60 +++++++++++++++++++++++++++++
+>  1 file changed, 60 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+> index ed08072ca032..81b72ebde305 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-m31.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+> @@ -82,6 +82,59 @@ struct m31_priv_data {
+>  	unsigned int			nregs;
+>  };
+>  
+> +struct m31_phy_regs m31_ipq5018_regs[] = {
+static const?
 
-Co-developed-by: Amandeep Singh <quic_amansing@quicinc.com>
-Signed-off-by: Amandeep Singh <quic_amansing@quicinc.com>
-Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
----
-V2:
-	Sort and reorder USB related nodes.
----
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-index e636a1cb9b77..3eb3a98e3e12 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-@@ -67,6 +67,18 @@
- 	};
- };
- 
-+&usbphy0 {
-+	status = "okay";
-+};
-+
-+&usb {
-+	status = "okay";
-+};
-+
-+&usb2_0_dwc {
-+	dr_mode = "host";
-+};
-+
- &xo_board_clk {
- 	clock-frequency = <24000000>;
- };
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
-
+Konrad
 
 -- 
 linux-phy mailing list
