@@ -4,121 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB71DC83F14
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 12:37:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95A16C6FA8F
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Aug 2023 13:36:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4EIeIsAp03h2I9R3m0fAxqMyRjkAYtDra/Zo/Lv1EzQ=; b=LmuN5PFwcsZ5Uj
-	SiBVau2crwW5YDWsvMy3YNflg20O3vmKMZdBt6nF+XYsLaXj+nSTJylgIg3UoFCIH32NN0a/GQnBt
-	N3aryJSJsyJDCq5n1VmOyGcfL2VXD0ScqxkAi99V7dbqBhzG1ydgMbmqsI1iNmm+ILuXpOzq2wLOw
-	HwuLLmG9dMSoJseUIkdL7CxOsfNdFfaBbLk+v3DerBoHqFcSChXDqHKLKi5CM5fn28WvBTOLKeTJg
-	RBTWvsI20Va8cbYGOBiqtECkdgcsC+7SljDRWOAaPw+fbrqgqPhjDTFf0yNrk2ikHyGOhNzWMCWom
-	PKQqh8/uajkRXgcGcDMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yfVQXRJHxMoVxkyqFkbnzUbb4Kk1GAFXv5frGqwDPTM=; b=LXUt8dJyuDjWD9
+	baom/qk1vO1RJDWQ/dUKTSLQJLGXOg6IHmSor4cPsWv8smzRwcbJVqbnCQtNnS7yyoqASO0j9pzyq
+	EufjNh9nZZnkME+CuZQVSNdG0FKnq2XawPAlBNbT2HMyerU4Yq7NP3y8RkDDsvlX9z4gnsnnSs/d2
+	ecfW4urRJT0q7W9wErWgVzKH4t6NKTzHLHLyLp5iT+OTBleHhrrdDdemnthleOBmNehLkFFSwtQQL
+	dvqU13DhN9vNvaOSODkhOjq7hofQIoBKqfw56XXYpzf+IvcBE6FD1pQipzK/CZCg8TadZyCErejME
+	ylfrlCdibuMDEFdxBPlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbKRx-00DUKn-1M;
-	Wed, 30 Aug 2023 12:37:33 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1qbLNT-00DaLG-0P;
+	Wed, 30 Aug 2023 13:36:59 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbKRu-00DUKL-2g
-	for linux-phy@lists.infradead.org;
-	Wed, 30 Aug 2023 12:37:32 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-500c6ff99acso979534e87.1
-        for <linux-phy@lists.infradead.org>; Wed, 30 Aug 2023 05:37:28 -0700 (PDT)
+	id 1qbLNO-00DaKg-2z;
+	Wed, 30 Aug 2023 13:36:56 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-3fbd33a57b6so50629385e9.2;
+        Wed, 30 Aug 2023 06:36:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1693399047; x=1694003847; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=I58sq5xTxwCx/GyljuH0Q6KBHvrDLZQ7PUXbI0PsH2Y=;
-        b=BgOc2SysPg9Ke+eC2iI56GpjpVf7rVaI+baYhz9IP21kufoC6Dpk9eDNjKJRd5oy/6
-         eLHyIhMKIbY2Gxbv2wxL5XASRnux2BwC39c/vbJ5p3ZOhtq7WVLtNFNcNr+yXrFmgAU3
-         hxXFcIYzdQhUdQ1yTD/y5hPCFhd6xhywr9p0ZfHL0AjGB3Bq6Mjz1zFSPRymNlTgH30+
-         dW7ilaAM6XDnC0Poe+PdyjpmMJPAUiL4tniR6dsJVagwChCCayNKSWQYjG50sWv/uyLH
-         wFIMnxC/c/7d2FGVWlk/MeoRlqUDjhjz7LhXQEg0zogRtkSa8HXkzXMCHqjKs8LA9WcY
-         3y1Q==
+        d=gmail.com; s=20221208; t=1693402612; x=1694007412; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=/+yYt261pz+/xgkSEVEKFRDXXydq1rLbWs9CkNiRFcE=;
+        b=HuMWV0+Cl7guXzd5pI/Fcvz32PI+2dwylIekWXAvNOkA15TLL9jogM7XClF3xYpF2w
+         2CxOrHp7eWwhEkBEV+lcwuWBF372cofaZgxzAUVzgtV7YnzocL7QNHjTS0Uzcz3ouS6A
+         +2+GNUV8Uf9Pofm+YoAiWl4XWzWzaH/l/636otPmac+DeoRAV5ZwQqx3QuxRMNM4LBG6
+         1ZpkmupSUMOIEd0mXfoVGgqK05IqqOQcdUkwq9wSmpkUn6yYGpDJYQoyo2Sgn4kjwlDQ
+         l6CuKedRM95uvxQIGXeZKtky7ppbt0nbf1kXFPi3Mw/flCxmXWtmeO6uSAtRg/Z+NUe+
+         zS2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693399047; x=1694003847;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=I58sq5xTxwCx/GyljuH0Q6KBHvrDLZQ7PUXbI0PsH2Y=;
-        b=Mc9Cgqm+KDDjfYc7BWDonE4bj5UQPZi9qi4YtHg1r5ZhOqKQx4HFnIB69YotXcFD3Q
-         2maKnxfP2LfXovFaEx1VB2A5QPxl3vMLI+HsUsM2jfR3J1Ljf+fBIjDkhr/CZ7X2qv3o
-         PRxugvbFXCt5Oc+dNszm09XbGM0jixLm69pUVBaWjwv0+tPEyVmtT1PtJlBlRi5nAyzH
-         cdcis/x+EhTPzQoRQ5XYcY1HcjcJrdep7qxUR21hAmY5wKmj5X0B/drp/k32iFpspGMw
-         rOPLeSCh7KzjUSd/DWzXhN7v5uJmEWGSord2iHq1zI2rqYPcz7nZte+b40E6nPiII/Q8
-         ClTA==
-X-Gm-Message-State: AOJu0YzrXI+cakCnrJEsBRbg0VogkaElvAHKOP4pVa95P8OVrV6zj3b0
-	jqNJyVWsXRC1zYXQvMSj2CK9eA==
-X-Google-Smtp-Source: AGHT+IEp+gLK73xWw+QqO6fWJI74gXK+me05R7lOQ0QCXV4Bjz00bLArMSjq6XgfqF7mOJb8+dQrzQ==
-X-Received: by 2002:a05:6512:402a:b0:4fb:7624:85a5 with SMTP id br42-20020a056512402a00b004fb762485a5mr872461lfb.0.1693399046844;
-        Wed, 30 Aug 2023 05:37:26 -0700 (PDT)
-Received: from [192.168.1.101] (abyl195.neoplus.adsl.tpnet.pl. [83.9.31.195])
-        by smtp.gmail.com with ESMTPSA id cf5-20020a056512280500b00500b3157ec8sm1772351lfb.163.2023.08.30.05.37.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 30 Aug 2023 05:37:26 -0700 (PDT)
-Message-ID: <49310ff8-80ea-447d-a63e-a181afade189@linaro.org>
-Date: Wed, 30 Aug 2023 14:37:24 +0200
+        d=1e100.net; s=20221208; t=1693402612; x=1694007412;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=/+yYt261pz+/xgkSEVEKFRDXXydq1rLbWs9CkNiRFcE=;
+        b=XNhCosndD0UcbPUiUGrJdUd1MWIwFOQ04LfhQ8+/lEMjIK+RW30QgITxMLu1enx+C8
+         bEwTxeZVq3jQc2V+vVTrzSxUqp7yaWPwiN5+9v+GMhAEWDkLzmNWOzATNjfGpTQOzbSb
+         nmr5aDmag0z9UxQoBXq9lRggPks9vHdMG5M4KmJjf4QOQlbpvU+K1xoeoHgsLYStqMlM
+         W4rhtd4xRfQyJVH7xGeLb3poaUfrFK1imY24IjOJ+LX+PBkFpP8Y9moUz07gH70HsjOO
+         dDyDqAiBdNI6jOYqq/JpwwfRelvRQpAOE1Xm0GrQ/W1waY7CCsdbu+Zvq0lDSaGs0g11
+         AF7A==
+X-Gm-Message-State: AOJu0YzLLJgtvpDVm1B9/qKIZ0XVFwNrRv5C6QdStYs1XkyLSBrDhY2N
+	5eHdFFsJ7cCjmZZ6o9r/eQ==
+X-Google-Smtp-Source: AGHT+IFHs2vmbKqXRIV/i344l7tlR+MJQTafcUypRW0zFptWbaKo0LC9bhGXq9FZrklPdlc/NpOn9Q==
+X-Received: by 2002:a1c:7710:0:b0:401:bf87:989c with SMTP id t16-20020a1c7710000000b00401bf87989cmr1985691wmi.34.1693402611534;
+        Wed, 30 Aug 2023 06:36:51 -0700 (PDT)
+Received: from U4.lan ([2001:9e8:b963:7410:17bb:6f65:50d0:b82b])
+        by smtp.gmail.com with ESMTPSA id x14-20020a05600c2a4e00b003fed70fb09dsm2326343wme.26.2023.08.30.06.36.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 30 Aug 2023 06:36:51 -0700 (PDT)
+From: Alex Bee <knaerzche@gmail.com>
+To: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Alex Bee <knaerzche@gmail.com>
+Subject: [PATCH v2 0/5] Add USB support for RK3128
+Date: Wed, 30 Aug 2023 15:36:19 +0200
+Message-ID: <20230830133623.83075-2-knaerzche@gmail.com>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V2 2/4] phy: qcom-m31: Add compatible, phy init sequence
- for IPQ5018
-Content-Language: en-US
-To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- gregkh@linuxfoundation.org, quic_srichara@quicinc.com,
- quic_varada@quicinc.com, quic_wcheng@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org
-References: <20230830111722.19380-1-quic_nsekar@quicinc.com>
- <20230830111722.19380-3-quic_nsekar@quicinc.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230830111722.19380-3-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230830_053730_934605_CAADB1B8 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20230830_063654_988970_CF982507 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,30 +97,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30.08.2023 13:17, Nitheesh Sekar wrote:
-> Add phy init sequence and compatible string for IPQ5018
-> chipset.
-> 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> ---
-> V2:
-> 	Updated the commit message.
-> ---
->  drivers/phy/qualcomm/phy-qcom-m31.c | 60 +++++++++++++++++++++++++++++
->  1 file changed, 60 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-> index ed08072ca032..81b72ebde305 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-m31.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-> @@ -82,6 +82,59 @@ struct m31_priv_data {
->  	unsigned int			nregs;
->  };
->  
-> +struct m31_phy_regs m31_ipq5018_regs[] = {
-static const?
+While interestingly the dt-binding for the Innosilicon usb phy found in
+RK3128 SoC exists already and it is exposed in the SoC DT, it has never
+been added to the driver.
+This patch-set adds support for this early version of the phy and does
+some DT-fixups in order to make the 2-port host/otg phy and the respective
+controllers work.
 
-Konrad
+Please see commit messages of the individual patches for details.
+
+These patches have been part of the pretty huge RK3128 bring-up/fix-up
+series [0] which I've splitted-up now, as suggested.
+
+[0] https://lore.kernel.org/linux-rockchip/20230829171647.187787-1-knaerzche@gmail.com
+
+Alex Bee (5):
+  phy: rockchip-inno-usb2: Split ID interrupt phy registers
+  phy: phy-rockchip-inno-usb2: Add RK3128 support
+  ARM: dts: rockchip: Add USB host clocks for RK3128
+  ARM: dts: rockchip: Add dwc2 otg fifo siztes for RK3128
+  ARM: dts: rockchip: Make usbphy the parent of SCLK_USB480M for RK3128
+
+ arch/arm/boot/dts/rockchip/rk3128.dtsi        |   9 ++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 147 ++++++++++++++----
+ 2 files changed, 127 insertions(+), 29 deletions(-)
+
+-- 
+2.42.0
+
 
 -- 
 linux-phy mailing list
