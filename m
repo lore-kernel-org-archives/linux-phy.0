@@ -4,85 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9361DC83F10
-	for <linux-phy@archiver.kernel.org>; Thu, 31 Aug 2023 12:34:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCBC2C83F01
+	for <linux-phy@archiver.kernel.org>; Thu, 31 Aug 2023 12:51:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l7rAFz3Jl24Hn9mx58a46WeUoiGmseLH9sTRnbiRNjU=; b=1Wb1yarkRbUXko
-	7PnV+4nAMglDkyS5UYhRFK+8jT40RCghL9tZWo56NIlibyuo6mNFOLRTDSwiHCF76XvDwdMrVzAOR
-	iGgluHEWViTF4rH1IClhghCe7Ifg2kud7FFgtUhwDuC91XAuuqnrLgOnXaMs1i7uIoVPRF0sLOpxS
-	VgSQBquYoiimMIAlEOh3/x0fmfRWtl3zwtHwQrkXexdDWAnRNFYMsq3+fDDqifbEJOzt5XhWUlSqM
-	nCyuaxx66hbPTVdpzboXM9K7+j4VnKdoAmUFCUgzEEV6yRBVLS3/Ha0xXuEHIpuFYRTWszd9fS+Lp
-	zAAmmGe147n96wjwlUHA==;
+	List-Owner; bh=iKBYtwMlAu9CX+Pw2DraNDIUccaEqGTRtYtoJROvS4Y=; b=vRV05FvbMqKG5Y
+	HX6q2oiSckZ/gSmu8XuzzLvKc58Zj9VmAdgcR5s5o0yanYokFdZ7QYjS8mZKW598Mf+R598HAHB9L
+	BTGc2bCS4CgGPdrom8aI4Quw1kjhrCYGuPrWYyk8JtbEZ2Yba+28Xahz67ij2xHdomAG5STUZalJR
+	I0KSD+fI69ewlVZxG2/mJueqx+iUzEdkkf9IGDPZw9AxN9/i6YcY3mMd2c4dWK4uv/JO1v3/7Je/k
+	S8QidGs8+/2zOVWWxyPf5DSZAGKclLkkITnHCDFBFzUDFgDLhfMFWt4inFyJqUDwgU+WpzCTsaSK2
+	xxdQdeIeUtIkf/bjAz2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbgsQ-00FHy2-0h;
-	Thu, 31 Aug 2023 12:34:22 +0000
-Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
+	id 1qbh8w-00FJHO-12;
+	Thu, 31 Aug 2023 12:51:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbgsM-00FHvf-0S
-	for linux-phy@lists.infradead.org;
-	Thu, 31 Aug 2023 12:34:20 +0000
-Received: by mail-yb1-xb2f.google.com with SMTP id 3f1490d57ef6-d7820f9449bso555059276.1
-        for <linux-phy@lists.infradead.org>; Thu, 31 Aug 2023 05:34:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1693485256; x=1694090056; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=C40f3DUoPo3gJsTKxhxSJrYNVhaMXcBmegCE2EfQH5A=;
-        b=jhwk73zXDUHgF8t/Zljj6HH/6q5jRVoI0NmudtOBF4Rt0L2H3gkbtV7EYdSuyRVjlH
-         v+MeMOAQZ0vRhpemHUwnAkpan9lR3qsRVKtKdn5BX/YubpYftrrrC8xQtozG63XO0MIt
-         O/kJ4zpveqArPAu03FILwrLVv27w+3Y7OcxnFtArtgDcE8fi38BAWhUIpKMziUy3DDR0
-         WQHcQyCKZA1ngiEd5k9yluNEt4U4ealJF1XOYsiIu0asDGp456z57n7gRx9YbiZxKZTz
-         EyrtMEibsm4w0AJfDL8sLKou6kJCAE0vy9efjHyxsoyn+GwDl843B6vaQJggKG6dq1lD
-         ERvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693485256; x=1694090056;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=C40f3DUoPo3gJsTKxhxSJrYNVhaMXcBmegCE2EfQH5A=;
-        b=bSlKUJId8c0wWmBs1LYwY/35jf/ibyA0FpcL7I/OQ0vI5GBmb9+SS389PEsQYBrreg
-         ZYZGbd2olq+lhxT3GfcCnScmaWXQoMKmO9Vc51f8x8pw88ETwON49EIlOwNKYn0gAnRs
-         BrdJGyC+q7FUsu0fwSRrObNkrVU1cndMPfNPaBaNYtbbt5tSjNX+zodcXkhrcz4XtiLt
-         sjDZHjvVIYM/IkUQciUsEqfdRbKnKytwOWzrFkIe6F4C1xb2holhiNGRugN/xKzdXOpr
-         Arw1VW+ivhhj+5a231xoxM+eJZ+uynnZ3sz6XvIQRDgAV4oBTRYFjo8u56PAMvsEAND3
-         POKQ==
-X-Gm-Message-State: AOJu0Ywi81ABMFzghm+KkZf4zRdDvgqJzU13ArcvuwciTjaDAuyNMuGy
-	+Gl7ZGIIznHasrEALtFENNeANzH3pUXOOS6whdSDtw==
-X-Google-Smtp-Source: AGHT+IGNzttzOCm+rkPjq+eGj1cyifmZPjni+dDxUsvO/jegctR83ayV/AWgvekHFloDQPa7nhRiUyF46+koWaPL9UM=
-X-Received: by 2002:a25:b323:0:b0:d7a:d716:233c with SMTP id
- l35-20020a25b323000000b00d7ad716233cmr5124847ybj.41.1693485256548; Thu, 31
- Aug 2023 05:34:16 -0700 (PDT)
+	id 1qbh8s-00FJGA-14;
+	Thu, 31 Aug 2023 12:51:24 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37VAuBrw002980;
+	Thu, 31 Aug 2023 12:50:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=CyDKngw7AJLG5s8qNp7PT2cES7mIUxD9uyDeFb/Prwg=;
+ b=TOCmCnljmv6wQmfnlZtAFKYxXxwhX6NQSqbdTT0Xdcdie7+tEwpNBRVi6qyAz9C6Odx1
+ RALuE2LWon4e5jsJBBagfTmGj+oNmuSsv0Nv2UCdxhBh4MJyDlKuujBDCIIIXU6ORv3T
+ BquKy9T0NCLiW+Fnei4J3a54Iff6lhf9Cws0k3qsI+PpLcDaP2LU9x8iad8SGVGx7VfX
+ o5ffDrZRpHo9hWInNkCw4GqTTpSkWgVvP9huVfPis1OD4wKU/FHeOIGe18rt3XkE5eS3
+ c+245i+sR+5DFs82qvEm58hZGNngHfunBWQ6tAAUjrJKMMNubGOJAWuCkvr5xIK8BTcL jg== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3stku28um6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 31 Aug 2023 12:50:58 +0000
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37VCouVH025260
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 31 Aug 2023 12:50:56 GMT
+Received: from [10.201.3.91] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Thu, 31 Aug
+ 2023 05:50:47 -0700
+Message-ID: <da4d6f20-650b-44e0-a319-2a1c8db65a2f@quicinc.com>
+Date: Thu, 31 Aug 2023 18:20:44 +0530
 MIME-Version: 1.0
-References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
- <20230829135818.2219438-2-quic_ipkumar@quicinc.com> <CAA8EJpqA-poJ9=XKJa2s=yZUGbBbgOqgiDC-q9skJzBqLux84g@mail.gmail.com>
- <73879012-581d-47fb-b741-577c90b31dfb@quicinc.com> <CAA8EJpr3PJtvyYKRPqT=hO4sUd4oOjTvOjD3kOqffbjzHdByAw@mail.gmail.com>
- <4e9a43c5-43ec-4a07-9053-366a517f5c54@quicinc.com>
-In-Reply-To: <4e9a43c5-43ec-4a07-9053-366a517f5c54@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 31 Aug 2023 15:34:05 +0300
-Message-ID: <CAA8EJpofAM4deqg1H_WSh2uJavTEXQC5x=26P1FLAUgJcT7yOg@mail.gmail.com>
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/9] dt-bindings: phy: qcom,uniphy: Rename ipq4019 usb PHY
  to UNIPHY
-To: Praveenkumar I <quic_ipkumar@quicinc.com>
-Cc: robert.marko@sartura.hr, luka.perkov@sartura.hr, agross@kernel.org, 
-	andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
-	kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com, 
-	will@kernel.org, p.zabel@pengutronix.de, arnd@arndb.de, 
-	geert+renesas@glider.be, nfraprado@collabora.com, rafal@milecki.pl, 
-	peng.fan@nxp.com, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, quic_varada@quicinc.com
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <robert.marko@sartura.hr>, <luka.perkov@sartura.hr>, <agross@kernel.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
+        <will@kernel.org>, <p.zabel@pengutronix.de>, <arnd@arndb.de>,
+        <geert+renesas@glider.be>, <nfraprado@collabora.com>,
+        <rafal@milecki.pl>, <peng.fan@nxp.com>, <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <quic_varada@quicinc.com>
+References: <20230829135818.2219438-1-quic_ipkumar@quicinc.com>
+ <20230829135818.2219438-2-quic_ipkumar@quicinc.com>
+ <CAA8EJpqA-poJ9=XKJa2s=yZUGbBbgOqgiDC-q9skJzBqLux84g@mail.gmail.com>
+ <73879012-581d-47fb-b741-577c90b31dfb@quicinc.com>
+ <CAA8EJpr3PJtvyYKRPqT=hO4sUd4oOjTvOjD3kOqffbjzHdByAw@mail.gmail.com>
+ <4e9a43c5-43ec-4a07-9053-366a517f5c54@quicinc.com>
+ <CAA8EJpofAM4deqg1H_WSh2uJavTEXQC5x=26P1FLAUgJcT7yOg@mail.gmail.com>
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
+In-Reply-To: <CAA8EJpofAM4deqg1H_WSh2uJavTEXQC5x=26P1FLAUgJcT7yOg@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: qLGZKs3xMkP265zERQ66jxIxoB6pX4Ze
+X-Proofpoint-ORIG-GUID: qLGZKs3xMkP265zERQ66jxIxoB6pX4Ze
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-31_11,2023-08-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
+ lowpriorityscore=0 mlxscore=0 malwarescore=0 spamscore=0 phishscore=0
+ bulkscore=0 priorityscore=1501 adultscore=0 suspectscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2308310114
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230831_053418_181311_3B3DB983 
-X-CRM114-Status: GOOD (  22.10  )
+X-CRM114-CacheID: sfid-20230831_055122_486342_E9978E49 
+X-CRM114-Status: GOOD (  19.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,93 +108,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 31 Aug 2023 at 15:30, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+
+On 8/31/2023 6:04 PM, Dmitry Baryshkov wrote:
+> On Thu, 31 Aug 2023 at 15:30, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+>>
+>> On 8/31/2023 5:47 PM, Dmitry Baryshkov wrote:
+>>> On Thu, 31 Aug 2023 at 14:54, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+>>>> On 8/29/2023 7:49 PM, Dmitry Baryshkov wrote:
+>>>>> On Tue, 29 Aug 2023 at 16:59, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+>>>>>> UNIPHY / Combo PHY used on various qualcomm SoC's are very similar to
+>>>>>> ipq4019 PHY. Hence renaming this dt-binding to uniphy dt-binding and
+>>>>>> can be used for other qualcomm SoCs which are having similar UNIPHY.
+>>>>>>
+>>>>>> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+>>>>>> ---
+>>>>>>     .../phy/{qcom-usb-ipq4019-phy.yaml => qcom,uniphy.yaml}  | 9 +++++++--
+>>>>>>     1 file changed, 7 insertions(+), 2 deletions(-)
+>>>>>>     rename Documentation/devicetree/bindings/phy/{qcom-usb-ipq4019-phy.yaml => qcom,uniphy.yaml} (78%)
+>>>>>>
+>>>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
+>>>>>> similarity index 78%
+>>>>>> rename from Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml
+>>>>>> rename to Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
+>>>>>> index 09c614952fea..cbe2cc820009 100644
+>>>>>> --- a/Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml
+>>>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
+>>>>>> @@ -1,13 +1,18 @@
+>>>>>>     # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>>>>>>     %YAML 1.2
+>>>>>>     ---
+>>>>>> -$id: http://devicetree.org/schemas/phy/qcom-usb-ipq4019-phy.yaml#
+>>>>>> +$id: http://devicetree.org/schemas/phy/qcom,uniphy.yaml#
+>>>>>>     $schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>>>>
+>>>>>> -title: Qualcom IPQ40xx Dakota HS/SS USB PHY
+>>>>>> +title: Qualcomm UNIPHY
+>>>>> We know that UNIPHY was a common design / IP block used for APQ8064
+>>>>> SATA and MSM8974 DSI and HDMI PHYs. Is this the same design, or was
+>>>>> the name reused by the Qualcomm for some other PHYs?
+>>>>> Several latest generations have USB QMP PHYs which are called 'uni-phy'.
+>>>> This PHY is build on top of QCA Uniphy 22ull. A combo PHY used between
+>>>> USB Gen3 / PCIe Gen3 controller.
+>>>> It is different from USB QMP PHYs.
+>>> So we have now three different items called Qualcomm uniphy. Could you
+>>> please add some distinctive name?
+>> There is one more target called IPQ5018 which is also having similar USB
+>> PHY built on top of
+>> Uniphy 28nm LP. That also can leverage this upcoming IPQ5332 USB PHY
+>> driver. Considering that,
+>> given a common name 'uniphy'.
+> Just to verify, do we mean the same thing, when speaking about the
+> 28nm LP UNIPHY?
+> I was referencing the apq8064 SATA and msm8974 HDMI / DSI PHYs. See [1] and [2].
+>
+> [1] https://patchwork.freedesktop.org/patch/544131/?series=118210&rev=2
+> [2] https://patchwork.freedesktop.org/patch/544125/?series=118210&rev=2
+No, this seems different from the PHY used on IPQ5018 / IPQ5332. PHY in 
+QualcommIPQ
+targets requires minimal SW configuration for the bring up.
+>> - Praveenkumar
+>>>> - Praveenkumar
+>>>>>>     maintainers:
+>>>>>>       - Robert Marko <robert.marko@sartura.hr>
+>>>>>> +  - Praveenkumar I <quic_ipkumar@quicinc.com>
+>>>>>> +
+>>>>>> +description:
+>>>>>> +  UNIPHY / COMBO PHY supports physical layer functionality for USB and PCIe on
+>>>>>> +  Qualcomm chipsets.
+>>>>>>
+>>>>>>     properties:
+>>>>>>       compatible:
+>>>>>> --
+>>>>>> 2.34.1
+>>>>>>
+>>>
 >
 >
-> On 8/31/2023 5:47 PM, Dmitry Baryshkov wrote:
-> > On Thu, 31 Aug 2023 at 14:54, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
-> >>
-> >> On 8/29/2023 7:49 PM, Dmitry Baryshkov wrote:
-> >>> On Tue, 29 Aug 2023 at 16:59, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
-> >>>> UNIPHY / Combo PHY used on various qualcomm SoC's are very similar to
-> >>>> ipq4019 PHY. Hence renaming this dt-binding to uniphy dt-binding and
-> >>>> can be used for other qualcomm SoCs which are having similar UNIPHY.
-> >>>>
-> >>>> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-> >>>> ---
-> >>>>    .../phy/{qcom-usb-ipq4019-phy.yaml => qcom,uniphy.yaml}  | 9 +++++++--
-> >>>>    1 file changed, 7 insertions(+), 2 deletions(-)
-> >>>>    rename Documentation/devicetree/bindings/phy/{qcom-usb-ipq4019-phy.yaml => qcom,uniphy.yaml} (78%)
-> >>>>
-> >>>> diff --git a/Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> >>>> similarity index 78%
-> >>>> rename from Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml
-> >>>> rename to Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> >>>> index 09c614952fea..cbe2cc820009 100644
-> >>>> --- a/Documentation/devicetree/bindings/phy/qcom-usb-ipq4019-phy.yaml
-> >>>> +++ b/Documentation/devicetree/bindings/phy/qcom,uniphy.yaml
-> >>>> @@ -1,13 +1,18 @@
-> >>>>    # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> >>>>    %YAML 1.2
-> >>>>    ---
-> >>>> -$id: http://devicetree.org/schemas/phy/qcom-usb-ipq4019-phy.yaml#
-> >>>> +$id: http://devicetree.org/schemas/phy/qcom,uniphy.yaml#
-> >>>>    $schema: http://devicetree.org/meta-schemas/core.yaml#
-> >>>>
-> >>>> -title: Qualcom IPQ40xx Dakota HS/SS USB PHY
-> >>>> +title: Qualcomm UNIPHY
-> >>> We know that UNIPHY was a common design / IP block used for APQ8064
-> >>> SATA and MSM8974 DSI and HDMI PHYs. Is this the same design, or was
-> >>> the name reused by the Qualcomm for some other PHYs?
-> >>> Several latest generations have USB QMP PHYs which are called 'uni-phy'.
-> >> This PHY is build on top of QCA Uniphy 22ull. A combo PHY used between
-> >> USB Gen3 / PCIe Gen3 controller.
-> >> It is different from USB QMP PHYs.
-> > So we have now three different items called Qualcomm uniphy. Could you
-> > please add some distinctive name?
-> There is one more target called IPQ5018 which is also having similar USB
-> PHY built on top of
-> Uniphy 28nm LP. That also can leverage this upcoming IPQ5332 USB PHY
-> driver. Considering that,
-> given a common name 'uniphy'.
-
-Just to verify, do we mean the same thing, when speaking about the
-28nm LP UNIPHY?
-I was referencing the apq8064 SATA and msm8974 HDMI / DSI PHYs. See [1] and [2].
-
-[1] https://patchwork.freedesktop.org/patch/544131/?series=118210&rev=2
-[2] https://patchwork.freedesktop.org/patch/544125/?series=118210&rev=2
-
->
-> - Praveenkumar
-> >
-> >> - Praveenkumar
-> >>>>    maintainers:
-> >>>>      - Robert Marko <robert.marko@sartura.hr>
-> >>>> +  - Praveenkumar I <quic_ipkumar@quicinc.com>
-> >>>> +
-> >>>> +description:
-> >>>> +  UNIPHY / COMBO PHY supports physical layer functionality for USB and PCIe on
-> >>>> +  Qualcomm chipsets.
-> >>>>
-> >>>>    properties:
-> >>>>      compatible:
-> >>>> --
-> >>>> 2.34.1
-> >>>>
-> >
-> >
-
-
-
--- 
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
