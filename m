@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB24DC83F33
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81C6DC83F32
 	for <linux-phy@archiver.kernel.org>; Thu, 31 Aug 2023 09:18:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TzO3Q+iV4tjYFxU3AVt1E6ia7YpynPho5FxJbhOtBIQ=; b=G9vIlGRLs/MAU5
-	lCD3NOfELGDuVazgR8jVI/VFuitpW3SKwRrjdd3x7W1JyEiU0NK2W9uw1YAOlSq89QKUDb4dGB4AV
-	sW17UCGbAd/ida8dyu82/+6Vb+eFU4Dw8EfkXAeMZmQaJnHP6vla3k9HeeCn5fmrDDdSBBFnbxzQG
-	m7FNwyrZVDZ/17o8CKrjJwvmB/vbOTr/gjZqQpUTIJMHHAnviAIPJBd2mBKCBscopS1APfEjXJjHD
-	INRu0A+sd/A/h/by21KaVcdDlvowYvN5XG+bgYz45ep3do+PT+oKdBzIV0nnRdrXwBlayg2ltkCKi
-	wQwXaf2jiQkSmKHXAmSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=14iGv6okIO4raO0c5rxiDOOd10N93Duwm1Z7y8NqwX0=; b=R8MZgsPrMCTrlv
+	9y8B463nXtz0cpAE/NF2iGpoO1C2pfcclqbzQHqGTQznt5HRm7Zre6A9qJz3GcUZkmgH8P8L5LZgL
+	1RbAfvqQhgSmjIFACnYINfd1e8l+nVm6YKeH3qdwr3UDt4bJTq0D0qo2uAT0QwnKuhO2ZA+00WkA+
+	oAPieRAzV1dUZ0WNm2HJ62P9+C7jGoA6sDdn41cQNSaFrMv29olS3awntFiQhqnB+Uyvx+SAa8I6j
+	NuhtLIXQUCx6e+9I/flFFopUlqUQLmCJtN05ljK1yJ+K0L8PUn9YcsG08mvF4tujbp9ItC/4phNlp
+	QfUnhzAydSZIvC5Jhq8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbdp0-00EwJX-1N;
+	id 1qbdp0-00EwJ6-0R;
 	Thu, 31 Aug 2023 09:18:38 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbdow-00EwHY-0D;
+	id 1qbdow-00EwHX-0A;
 	Thu, 31 Aug 2023 09:18:35 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37V9Ft0O020218;
-	Thu, 31 Aug 2023 09:18:09 GMT
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37V9FB8R019774;
+	Thu, 31 Aug 2023 09:18:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=LlEki8F0NnPcIql9obpKktwrPs2NgZ/CeDVbNeP7brg=;
- b=C624ocv+4A53d06TIFfrQrqJJTs4lwdhlYxp8VvEzjDSJqECa1MCyp1ilkVe6IiaAiY+
- X2Sg4+MoSfBH4W8eEu5/I+GkBmCAyYkHUre2WrH2av/pKfMPCriS6yc9/j3q4MhNc59S
- 9dATmDcl60ZYoHSZf+nw2LE4SHI1seE63Ddm861+aHPbts8v1sb+nOQ2lY86rU4A/mGp
- oV64XbzhBQSzMKvMuQpDSWyMieD9ZhBePQggbYn12O+mVnTR9/0oCupcn2MB6GmslJOD
- Fq0NQ3mW+bhFgdyPXytXGIkVWZ7ZyzioQe6YoFI5hY0Db1PP1aI5l88z048Z3I1H2oNw BA== 
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=DhHobCxLEkV5FWZ0NaqM4hKdOLVEZC4wYjzajgUIplk=;
+ b=KUNJLxEmi+XlS5dQxss2My1vqrPr1+QDgRtWr2bH6FbldhMeJxCsKyde/Abf0P3On3AB
+ 38b6SOIVjUxGz5TSqwvWA1o+nY4P9op+1iUteHbHwCu3r46LIdCHFl4UHBvGAzYLC0Wb
+ ohc8B1hN8A0bRTrndiXyXDnMWuJqwN4Fjv7API9uneSnE+l8dY8gb8tmmoiGmtSHPq1X
+ pE96qt9xPhXILUEpbmfT5tPUHym3VtbYkiDPHjh/OxvpgBGAVJMxI7kPVl38JfMvNUw2
+ Jb8vUY3PkKmVGuCCo/+MGcm2ngTVNkqd9AkWeV+mQ1i/M8bjT6efWB7U+mUKSCKZHacS vg== 
 Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3st0tatsse-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3st0tatss8-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 31 Aug 2023 09:18:08 +0000
+	Thu, 31 Aug 2023 09:18:03 +0000
 Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37V9I8SL030945
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37V9I2X8030791
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 31 Aug 2023 09:18:08 GMT
+	Thu, 31 Aug 2023 09:18:02 GMT
 Received: from varda-linux.qualcomm.com (10.80.80.8) by
  nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Thu, 31 Aug 2023 02:18:01 -0700
+ 15.2.1118.36; Thu, 31 Aug 2023 02:17:55 -0700
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
@@ -61,31 +60,29 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
         <linux-phy@lists.infradead.org>
 CC: Varadarajan Narayanan <quic_varada@quicinc.com>
-Subject: [PATCH v12 1/4] phy: qcom: m31: Fix indentation issues
-Date: Thu, 31 Aug 2023 14:47:43 +0530
-Message-ID: <7ca6fa68ba33742fcf65147c038c1102cc4901b4.1693468292.git.quic_varada@quicinc.com>
+Subject: [PATCH v12 0/4] Enable IPQ5332 USB2
+Date: Thu, 31 Aug 2023 14:47:42 +0530
+Message-ID: <cover.1693468292.git.quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1693468292.git.quic_varada@quicinc.com>
-References: <cover.1693468292.git.quic_varada@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: qLZLllIvehwdvTXxJ9_VC64N9-KXeEDi
-X-Proofpoint-ORIG-GUID: qLZLllIvehwdvTXxJ9_VC64N9-KXeEDi
+X-Proofpoint-GUID: 7Fc4qYBgYd0FPTHqcR8mlRHIg7NVlUnX
+X-Proofpoint-ORIG-GUID: 7Fc4qYBgYd0FPTHqcR8mlRHIg7NVlUnX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
  definitions=2023-08-31_07,2023-08-29_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
  spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501
- lowpriorityscore=0 impostorscore=0 malwarescore=0 mlxlogscore=999
+ lowpriorityscore=0 impostorscore=0 malwarescore=0 mlxlogscore=471
  adultscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2308100000 definitions=main-2308310083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230831_021834_120750_CEFA20FE 
-X-CRM114-Status: GOOD (  18.77  )
+X-CRM114-CacheID: sfid-20230831_021834_119440_333B4E98 
+X-CRM114-Status: GOOD (  16.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,82 +99,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix incorrect indentation
+This patch series adds the relevant phy and controller
+DT configurations for enabling USB2 on IPQ5332
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
-v11:	Rebased to accomodate https://lore.kernel.org/linux-arm-msm/20230824091345.1072650-1-yangyingliang@huawei.com/
+v12:
+	DTS:	usb2_0_dwc -> usb_dwc
+v11:
+	Driver: Rebased to accommodate https://lore.kernel.org/linux-arm-msm/20230824091345.1072650-1-yangyingliang@huawei.com/
+	DTS:	Sort nodes in alphanumeric order
 v10:
-	Restore register success print per Dmitry's comment
+	Driver: Restore register success print per Dmitry's comment
+	DTS:	usb@8a00000 -> usb@8af8800
+		regulator_s0500 -> regulator-s0500
 v9:
-	Fix line break alignment
-	Remove register success print
-	v8 version of the driver has been picked up for merge.
-	(https://lore.kernel.org/linux-arm-msm/169226613917.81413.1200008047604336868.b4-ty@kernel.org/)
+	Driver: Since the driver code has been picked up for merge,
+		(https://lore.kernel.org/linux-arm-msm/169226613917.81413.1200008047604336868.b4-ty@kernel.org/)
+		adding the coding style fixes alone in this patch.
+
+		Fix line break alignment
+		Remove register success print
+	DTS:	usb2@8a00000 -> usb@8a00000
+		regulator_fixed_5p0: s0500 -> regulator_fixed_5p0: regulator
 v8:
-	Change commit subject and message per review comments
-	Don't include of_platform.h
-	Change struct init coding style
-	GENMASK -> BIT for one define
+	Driver:-
+		Change commit subject and message per review comments
+		Don't include of_platform.h
+		Change struct initialization coding style
+		GENMASK -> BIT for one of the defines
+v7:
+	Binding:-
+		Move 'compatible' to be the first entry
+		In the example have 'usb-phy' instead of 'usb2-phy'
+		Add 'Reviewed-by: Krzysztof Kozlowski'
 v6:
-	Kconfig:Add COMPILE_TEST and remove USB_GADGET from 'depends'
-		Change 'selects' USB_PHY -> GENERIC_PHY
-	Driver:	Use correct headers
-		const int -> unsigned int for 'nregs' in private data
-		Use generic names for clk, phy in m31 phy structure
-		Init register details directly instead of using macro
-		Use dev_err_probe in the error paths of driver probe
+	Binding and dts:-
+		Dropped the qcom,dwc3.yaml patch as it has been picked up for linux-next
+		Add const to compatible, vdd-supply
+		Move nodes per register address
+	Driver:-
+		Add vdd-supply
+		Cleanup error paths in probe with dev_err_probe
 v5:
-	Kconfig and Makefile:- place snippet according to sorted order
-	Use generic phy instead of usb-phy
-	Use ARRAY_SIZE for reg init instead of blank last entry
-	Fix copyright year
+	Binding and dts:-
+		Fix email id
+		Removed 'Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>'
+		as had to change bindings file to be able to use generic phy instead of
+		usb-phy
 
+	Driver:-
+		Remove unused definition
+		Use generic phy instead of usb-phy
 v4:
-	Remove unused enum
-	Error handling for devm_clk_get
-v1:
-	Combine driver, makefile and kconfig into 1 patch
-	Remove 'qscratch' region and its usage. The controller driver takes care
-	of those settings
-	Use compatible/data to handle ipq5332 init
-	Drop the default case
-	Get resources by index instead of name as there is only one resource
-	Add clock
-	Fix review comments in the driver
----
- drivers/phy/qualcomm/phy-qcom-m31.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+	Binding and dts:-
+		Change node name (bindings & dts)
+	Driver:-
+		Remove unused enum
+		static const for '.data'
+		Error handling for devm_clk_get
+v3:
+	Fix bindings file based on review comments
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-index 014278e..1875fe3 100644
---- a/drivers/phy/qualcomm/phy-qcom-m31.c
-+++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-@@ -242,7 +242,7 @@ static int m31usb_phy_probe(struct platform_device *pdev)
- 	qphy->clk = devm_clk_get(dev, NULL);
- 	if (IS_ERR(qphy->clk))
- 		return dev_err_probe(dev, PTR_ERR(qphy->clk),
--						"failed to get clk\n");
-+				     "failed to get clk\n");
- 
- 	data = of_device_get_match_data(dev);
- 	qphy->regs		= data->regs;
-@@ -252,12 +252,12 @@ static int m31usb_phy_probe(struct platform_device *pdev)
- 	qphy->phy = devm_phy_create(dev, NULL, &m31usb_phy_gen_ops);
- 	if (IS_ERR(qphy->phy))
- 		return dev_err_probe(dev, PTR_ERR(qphy->phy),
--						"failed to create phy\n");
-+				     "failed to create phy\n");
- 
- 	qphy->vreg = devm_regulator_get(dev, "vdda-phy");
- 	if (IS_ERR(qphy->vreg))
- 		return dev_err_probe(dev, PTR_ERR(qphy->vreg),
--						"failed to get vreg\n");
-+				     "failed to get vreg\n");
- 
- 	phy_set_drvdata(qphy->phy, qphy);
- 
+v1:
+	Cleanup DTS
+	Combine driver, kconfig and makefile patches
+	Remove unused functions from M31 driver
+	Drop the clock driver changes
+
+Varadarajan Narayanan (4):
+  phy: qcom: m31: Fix indentation issues
+  arm64: dts: qcom: ipq5332: Add USB related nodes
+  arm64: dts: qcom: ipq5332: Enable USB
+  arm64: defconfig: Enable M31 USB phy driver
+
+ arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts | 23 ++++++++++++
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi       | 55 +++++++++++++++++++++++++++++
+ arch/arm64/configs/defconfig                |  1 +
+ drivers/phy/qualcomm/phy-qcom-m31.c         |  6 ++--
+ 4 files changed, 82 insertions(+), 3 deletions(-)
+
 -- 
 2.7.4
 
