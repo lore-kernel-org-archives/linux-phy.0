@@ -4,60 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA880CA0FE1
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Sep 2023 08:26:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E24BCA0FE1
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Sep 2023 09:27:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w3L+dkmXaEEkG7VqVzsMUAxXrWYUZhOonnbXBt5XbEE=; b=1E0uHiUh1sZTkP
-	T0YoYxuqJvHIEoMcT9/+ZAeQZY9jz4mIiDvPb5o4ZSjocZd3C3x1p92/LBT7ST8MbwuGJfQFv3HTD
-	UtRZWTk7SDRctO4wO2KQOKkr8SH/FIi14L2TvWHfVtYhFkuuStbpYgzpcU7Q9cqBkdP+bnGfr6+Wj
-	F9p+jvoY7ZC1W0dBHspdQvdenSfruP6xQR7V/NdJLZEgSvlVQWXVk/8heIwCasybkThfnCXjlcnCG
-	OQlBX7HGjbYTjRp5q0YxP2IHBuHTtfzUkjLo+4iiIDIzllapCQY61x0ilvWCOvNQYFXw+jcn2tP9X
-	Q5SzOhzpUFaaPeQMouVw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RY1oq5IKbQI5Da8THV3WULisPlQNecD5NdeHXJS0q+c=; b=UUs0O6+zrqmP9j
+	ins4ZfCgMU0TQFstQqmyDpBBzYzKPOM8yrmMKUUdptXX3L3iV5UQCONO4g9/kSaqR4medm+e3c9eW
+	6sk3z6XE4LObvBbm+eE7g2lmmgWnOVKt/UghgWR7G/SZOEK5pzm7h1G++x/6ZH6wqKV3avPhxRAH+
+	RT2ybn6Yshtpfg7EZX5guKFdVr4yaBBzILRlQkhrn2gBFEEOfqMGWsi8GM2KJEAmKGL6mwSwjSDOn
+	YdDrlwTpXSSiDTDgFNFj+5uNjRUndZbMeAak9+vwHbMArkE/e+ieB0qnTeUGDl542hjzH03X6cW1r
+	CRk7g/vFY1q4BZJjuxFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbzTq-00Gghh-0T;
-	Fri, 01 Sep 2023 08:26:14 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1qc0R0-00Gk4e-14;
+	Fri, 01 Sep 2023 09:27:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbzTm-00GghA-0N
+	id 1qc0Qx-00Gk2J-05
 	for linux-phy@lists.infradead.org;
-	Fri, 01 Sep 2023 08:26:12 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 77A29CE2378;
-	Fri,  1 Sep 2023 08:26:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3897AC433C7;
-	Fri,  1 Sep 2023 08:26:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1693556762;
-	bh=CXiP13N7qsjHmYG49BhvmegJlZFdEbfqzjcHoBVG/KM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Cphk2iMTRb8mkXLWzcxuhYJadImxAq1AfdvBLCwEbXsFauMSaJSmPVRkPYSz5bY3h
-	 IbgDJEfj9a2RZhAXP5mSKos2FJCSJO72T3FSt1xA9gq1yh3EnV7pN1q6j7RSbTME9s
-	 sa5B/zp5D7pjeEPpGCtoeOfFsiLMUXfymA2YQ+Kw=
-Date: Fri, 1 Sep 2023 10:25:54 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Jinjie Ruan <ruanjinjie@huawei.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Stanley Chang <stanley_chang@realtek.com>
-Subject: Re: [PATCH -next v2] phy: realtek: usb: Drop unnecessary error check
- for debugfs_create_dir()
-Message-ID: <2023090143-semifinal-espionage-4926@gregkh>
-References: <20230901075231.1368947-1-ruanjinjie@huawei.com>
+	Fri, 01 Sep 2023 09:27:20 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3815m105016623;
+	Fri, 1 Sep 2023 09:27:08 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=Zg2MWfqN7Pcfm2hQ4pZceklCJaXO378OfpNJX9rJTTI=;
+ b=oRNEoXPA/x9YMgfW0ZWsamuu6y9OeC2lnlBQ0frWAQ3qcxbAVd11sve+V45Pk3eHaAFY
+ RWwBxqZ4B8zRsMBHdYMNQ7LG3qE66Z2tMyF5RJRI6RbTNRD23TK85lNQVGq0V7MpIWDJ
+ yf9slpVylvSDfhGPJDwqPIMSYN4y7MGV724NxDzmhqt8SLHyAOgE7SNy31dZFzoMREgx
+ 57K2DsEcb3lcst0JXtLelWrx0UpFDtor2bggR7wBstIPTnTN+Ev24WK0d1cIlIW2iYD9
+ BPcI/vl6IEQP6ZbfKGDQU4120f4Ikk/IFOPWhJVcXUv7E/Z+IKF7wl2qjMNHNT0Sm6Xy 4Q== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3stpy9bbtj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 01 Sep 2023 09:27:07 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3819R73W012793
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 1 Sep 2023 09:27:07 GMT
+Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Fri, 1 Sep 2023 02:27:01 -0700
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <quic_srichara@quicinc.com>,
+        <quic_varada@quicinc.com>, <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>
+CC: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Subject: [PATCH V3 0/4] Enable IPQ5018 USB2 support
+Date: Fri, 1 Sep 2023 14:56:41 +0530
+Message-ID: <20230901092645.20522-1-quic_nsekar@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230901075231.1368947-1-ruanjinjie@huawei.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: B-nw8qZPApb2xiHqbgwGj_Qm_vzJAiB3
+X-Proofpoint-GUID: B-nw8qZPApb2xiHqbgwGj_Qm_vzJAiB3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-01_07,2023-08-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 spamscore=0 impostorscore=0 suspectscore=0 adultscore=0
+ mlxlogscore=526 clxscore=1015 malwarescore=0 phishscore=0 bulkscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309010088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230901_012610_364296_9D5E3AEF 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20230901_022719_098726_5F10AC25 
+X-CRM114-Status: GOOD (  15.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,23 +99,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 01, 2023 at 03:52:31PM +0800, Jinjie Ruan wrote:
-> Both debugfs_create_dir() and debugfs_create_file() return ERR_PTR
-> and never return NULL.
-> 
-> As Greg suggested, this patch removes the error checking for
-> debugfs_create_dir in phy-rtk-usb2.c and phy-rtk-usb3.c. This is because
-> the DebugFS kernel API is developed in a way that the caller can safely
-> ignore the errors that occur during the creation of DebugFS nodes. The
-> debugfs APIs have a IS_ERR() judge in start_creating() which can handle it
-> gracefully. So these checks are unnecessary.
-> 
-> Fixes: 134e6d25f6bd ("phy: realtek: usb: Add driver for the Realtek SoC USB 2.0 PHY")
-> Fixes: adda6e82a7de ("phy: realtek: usb: Add driver for the Realtek SoC USB 3.0 PHY")
-> Signed-off-by: Jinjie Ruan <ruanjinjie@huawei.com>
-> Suggested-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+This patch series adds the relevant phy and controller
+DT configurations for enabling USB2 host mode support
+on IPQ5018.
 
-Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Tested with a USB Mass storage device.
+
+Depends on:
+Link: https://lore.kernel.org/linux-arm-msm/20230831030503.17100-1-quic_nsekar@quicinc.com/
+
+[V3]:
+	Incorporated review comments with respect to
+	naming USB related device tree nodes,
+	dropped the 0 dealy inits and added the static const
+	type for m31_ipq5018_regs.
+	Sorted nodes in	board specific device tree file.
+
+[V2]:
+	Incorporated review comments regarding splitting the
+	series as per subsytem, device tree naming conventions
+	and ordereing of the nodes.
+
+Nitheesh Sekar (4):
+  dt-bindings: phy: qcom,m31: Add IPQ5018 compatible
+  phy: qcom-m31: Add compatible, phy init sequence for IPQ5018
+  arm64: dts: qcom: ipq5018: Add USB related nodes
+  arm64: dts: qcom: ipq5018: Enable USB
+
+ .../bindings/phy/qcom,ipq5332-usb-hsphy.yaml  |  4 +-
+ .../arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 12 +++++
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi         | 54 +++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-m31.c           | 49 +++++++++++++++++
+ 4 files changed, 118 insertions(+), 1 deletion(-)
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
+
 
 -- 
 linux-phy mailing list
