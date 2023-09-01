@@ -4,53 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01611CA0FE1
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Sep 2023 07:52:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA880CA0FE1
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Sep 2023 08:26:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s1a/WRhY5LpM8QvRjeLa+tgxIbmjeV4Y9G9VSH1SrAk=; b=WVKXYzGnbZ1iZJ
-	NkSo7j4o/g8mhVX9QTqXAbSXeefrZlNWgOOvSZ7y26nZqfx5xQoxbu1SrtVWbzLaaLCo1+yjlNpR9
-	AY+AMpRvbDucswrFSEYvN0OwmtL+xIqw/M5cwuvZS3YzqpQe0RCgfAd2xZviBS7fnFwgt2oEE1iQn
-	HfK7MBaWUHCbQsDmZMaGIhtSZAxe0lHGftx81Xphc68XpN5LuQy6nfV5wqTEExH6+YOBOo7pcqzXB
-	9gY62UeoFTZNaz99Prol9wyh47+bQgJekyq4QnOHLbkMVLUD/PilQNXdB+6Qz7CJ7IDScfp0rvXrO
-	kbcZ3tcZF+W6k2fFfh/w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w3L+dkmXaEEkG7VqVzsMUAxXrWYUZhOonnbXBt5XbEE=; b=1E0uHiUh1sZTkP
+	T0YoYxuqJvHIEoMcT9/+ZAeQZY9jz4mIiDvPb5o4ZSjocZd3C3x1p92/LBT7ST8MbwuGJfQFv3HTD
+	UtRZWTk7SDRctO4wO2KQOKkr8SH/FIi14L2TvWHfVtYhFkuuStbpYgzpcU7Q9cqBkdP+bnGfr6+Wj
+	F9p+jvoY7ZC1W0dBHspdQvdenSfruP6xQR7V/NdJLZEgSvlVQWXVk/8heIwCasybkThfnCXjlcnCG
+	OQlBX7HGjbYTjRp5q0YxP2IHBuHTtfzUkjLo+4iiIDIzllapCQY61x0ilvWCOvNQYFXw+jcn2tP9X
+	Q5SzOhzpUFaaPeQMouVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbyxb-00GdDT-1E;
-	Fri, 01 Sep 2023 07:52:55 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1qbzTq-00Gghh-0T;
+	Fri, 01 Sep 2023 08:26:14 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbyxX-00GdCj-30
+	id 1qbzTm-00GghA-0N
 	for linux-phy@lists.infradead.org;
-	Fri, 01 Sep 2023 07:52:54 +0000
-Received: from kwepemi500008.china.huawei.com (unknown [172.30.72.55])
-	by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4RcVZr6QhjzrSHk;
-	Fri,  1 Sep 2023 15:51:00 +0800 (CST)
-Received: from huawei.com (10.90.53.73) by kwepemi500008.china.huawei.com
- (7.221.188.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.31; Fri, 1 Sep
- 2023 15:52:42 +0800
-From: Jinjie Ruan <ruanjinjie@huawei.com>
-To: <linux-phy@lists.infradead.org>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>, Stanley Chang <stanley_chang@realtek.com>
-CC: <ruanjinjie@huawei.com>
-Subject: [PATCH -next v2] phy: realtek: usb: Drop unnecessary error check for debugfs_create_dir()
-Date: Fri, 1 Sep 2023 15:52:31 +0800
-Message-ID: <20230901075231.1368947-1-ruanjinjie@huawei.com>
-X-Mailer: git-send-email 2.34.1
+	Fri, 01 Sep 2023 08:26:12 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id 77A29CE2378;
+	Fri,  1 Sep 2023 08:26:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3897AC433C7;
+	Fri,  1 Sep 2023 08:26:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1693556762;
+	bh=CXiP13N7qsjHmYG49BhvmegJlZFdEbfqzjcHoBVG/KM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Cphk2iMTRb8mkXLWzcxuhYJadImxAq1AfdvBLCwEbXsFauMSaJSmPVRkPYSz5bY3h
+	 IbgDJEfj9a2RZhAXP5mSKos2FJCSJO72T3FSt1xA9gq1yh3EnV7pN1q6j7RSbTME9s
+	 sa5B/zp5D7pjeEPpGCtoeOfFsiLMUXfymA2YQ+Kw=
+Date: Fri, 1 Sep 2023 10:25:54 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Jinjie Ruan <ruanjinjie@huawei.com>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Stanley Chang <stanley_chang@realtek.com>
+Subject: Re: [PATCH -next v2] phy: realtek: usb: Drop unnecessary error check
+ for debugfs_create_dir()
+Message-ID: <2023090143-semifinal-espionage-4926@gregkh>
+References: <20230901075231.1368947-1-ruanjinjie@huawei.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.90.53.73]
-X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
- kwepemi500008.china.huawei.com (7.221.188.139)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20230901075231.1368947-1-ruanjinjie@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230901_005252_162410_CECE2DA4 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20230901_012610_364296_9D5E3AEF 
+X-CRM114-Status: GOOD (  11.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,80 +74,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Both debugfs_create_dir() and debugfs_create_file() return ERR_PTR
-and never return NULL.
+On Fri, Sep 01, 2023 at 03:52:31PM +0800, Jinjie Ruan wrote:
+> Both debugfs_create_dir() and debugfs_create_file() return ERR_PTR
+> and never return NULL.
+> 
+> As Greg suggested, this patch removes the error checking for
+> debugfs_create_dir in phy-rtk-usb2.c and phy-rtk-usb3.c. This is because
+> the DebugFS kernel API is developed in a way that the caller can safely
+> ignore the errors that occur during the creation of DebugFS nodes. The
+> debugfs APIs have a IS_ERR() judge in start_creating() which can handle it
+> gracefully. So these checks are unnecessary.
+> 
+> Fixes: 134e6d25f6bd ("phy: realtek: usb: Add driver for the Realtek SoC USB 2.0 PHY")
+> Fixes: adda6e82a7de ("phy: realtek: usb: Add driver for the Realtek SoC USB 3.0 PHY")
+> Signed-off-by: Jinjie Ruan <ruanjinjie@huawei.com>
+> Suggested-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-As Greg suggested, this patch removes the error checking for
-debugfs_create_dir in phy-rtk-usb2.c and phy-rtk-usb3.c. This is because
-the DebugFS kernel API is developed in a way that the caller can safely
-ignore the errors that occur during the creation of DebugFS nodes. The
-debugfs APIs have a IS_ERR() judge in start_creating() which can handle it
-gracefully. So these checks are unnecessary.
-
-Fixes: 134e6d25f6bd ("phy: realtek: usb: Add driver for the Realtek SoC USB 2.0 PHY")
-Fixes: adda6e82a7de ("phy: realtek: usb: Add driver for the Realtek SoC USB 3.0 PHY")
-Signed-off-by: Jinjie Ruan <ruanjinjie@huawei.com>
-Suggested-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
-v2:
-- Remove the err check instead of using IS_ERR to replace NULL check.
-- Update the commit message and title.
----
- drivers/phy/realtek/phy-rtk-usb2.c | 10 ++--------
- drivers/phy/realtek/phy-rtk-usb3.c | 10 ++--------
- 2 files changed, 4 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
-index 5e7ee060b404..aedc78bd37f7 100644
---- a/drivers/phy/realtek/phy-rtk-usb2.c
-+++ b/drivers/phy/realtek/phy-rtk-usb2.c
-@@ -853,17 +853,11 @@ static inline void create_debug_files(struct rtk_phy *rtk_phy)
- 
- 	rtk_phy->debug_dir = debugfs_create_dir(dev_name(rtk_phy->dev),
- 						phy_debug_root);
--	if (!rtk_phy->debug_dir)
--		return;
- 
--	if (!debugfs_create_file("parameter", 0444, rtk_phy->debug_dir, rtk_phy,
--				 &rtk_usb2_parameter_fops))
--		goto file_error;
-+	debugfs_create_file("parameter", 0444, rtk_phy->debug_dir, rtk_phy,
-+			    &rtk_usb2_parameter_fops);
- 
- 	return;
--
--file_error:
--	debugfs_remove_recursive(rtk_phy->debug_dir);
- }
- 
- static inline void remove_debug_files(struct rtk_phy *rtk_phy)
-diff --git a/drivers/phy/realtek/phy-rtk-usb3.c b/drivers/phy/realtek/phy-rtk-usb3.c
-index 7881f908aade..dfb3122f3f11 100644
---- a/drivers/phy/realtek/phy-rtk-usb3.c
-+++ b/drivers/phy/realtek/phy-rtk-usb3.c
-@@ -416,17 +416,11 @@ static inline void create_debug_files(struct rtk_phy *rtk_phy)
- 		return;
- 
- 	rtk_phy->debug_dir = debugfs_create_dir(dev_name(rtk_phy->dev), phy_debug_root);
--	if (!rtk_phy->debug_dir)
--		return;
- 
--	if (!debugfs_create_file("parameter", 0444, rtk_phy->debug_dir, rtk_phy,
--				 &rtk_usb3_parameter_fops))
--		goto file_error;
-+	debugfs_create_file("parameter", 0444, rtk_phy->debug_dir, rtk_phy,
-+			    &rtk_usb3_parameter_fops);
- 
- 	return;
--
--file_error:
--	debugfs_remove_recursive(rtk_phy->debug_dir);
- }
- 
- static inline void remove_debug_files(struct rtk_phy *rtk_phy)
--- 
-2.34.1
-
+Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 -- 
 linux-phy mailing list
