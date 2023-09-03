@@ -4,66 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C584C83F2C
-	for <linux-phy@archiver.kernel.org>; Sun,  3 Sep 2023 10:11:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFCAC88CB2
+	for <linux-phy@archiver.kernel.org>; Sun,  3 Sep 2023 21:02:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CArQXAC5FXNONmdAbQi2PGMOKXwB2v7L4BqjUrdrf/s=; b=LIpg92xN9ZdlVN
-	8226cDqcC1bgn+Zi1PupYxg1leyK8gGwAs8OPpPxUjISSioKy9bfZN9P6cnKV9UUQG2P/vG6+o2cE
-	wtJQCSovffj+4u6T3NGMuNZUN+IyA1DUAK7w9dqxw0r5brz6d+dS8wn3nOTTD/FNmTf27dbCgUOaB
-	bqx2XL3K3yxNkyBG6hMat4SiiC7Eak7Z9++vXAOmLz/oY3HkXsZlAKTlHQGEbaPybkoDwhfEGVrst
-	qXmPwCrtD0fLrUbIKJlove1+kiUHw2XSHdcWZeJ8qGtE54BKqBHlGZWO/KjQqr32+AhOmQIOzDQw2
-	2I3a5Ck7UqktwVDCAS1Q==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5s0Lb5WdGvpRnCvjHjFeuKJoTurR9HNTR/1DIy/LXoI=; b=G+5Do4hoDlSt5H
+	7M4aXUc9Uhirvz8Qgb8yK7v5psFqjMBYptr1yfnSRWirZ+hEQG3hZSYmBzQZwibnbPQG03GQzYCxd
+	KKf3u+T1df5TFCAewGuy12ub8The2+C5z0sZxxg1KOCXsA94P8AWeTF9SFL/CGhoEXLElz7X6tTyb
+	pnEluHhcf5l4GZQnLy8sP4wnaGx8MyHs8USdUpbRvD9ayydbgMAlPZRYGbZB7xs6azldxu675JYzb
+	sIF7YD0ZxBPJuov/MCLZYJQ73Ezp+tGNPsx+wTjxSR6H6kfuU8UU+AbSivkvLqHl4OTzGXb70RLAA
+	gMHLm1JsMsNMUeLtuMrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qck4o-002JLs-32;
-	Sun, 03 Sep 2023 10:11:30 +0000
-Received: from smtp-28.smtpout.orange.fr ([80.12.242.28] helo=smtp.smtpout.orange.fr)
+	id 1qcuEv-002vLG-07;
+	Sun, 03 Sep 2023 21:02:37 +0000
+Received: from mail-yb1-xb33.google.com ([2607:f8b0:4864:20::b33])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qck4j-002JKG-2X
+	id 1qcuEr-002vKc-2B
 	for linux-phy@lists.infradead.org;
-	Sun, 03 Sep 2023 10:11:28 +0000
-Received: from pop-os.home ([86.243.2.178])
-	by smtp.orange.fr with ESMTPA
-	id ck4Sq0Dlhv5KTck4SqU8l5; Sun, 03 Sep 2023 12:11:16 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1693735876;
-	bh=pYSxdLERm6FegRN8OPQImJFFHzRLF2IYwebwjAKvv44=;
-	h=From:To:Cc:Subject:Date;
-	b=lU56k2SraqBFtjnPVVg8n3TRO2AETyZ8PZ4ZsOtXQ9jlEQ7NzBjETYeyloHBTlseE
-	 Kw1Q1aUFASROqv/CNJxZY4qi8A5BWp+GNcxWhqrNJXqLZASE1EfBe/7QSYUvaFVsz/
-	 jpAsIzyUJyCjmHrTJPjkqKgtG6F/F2TylX+QybouB+H9eAn0aiP6PbzqcpLE7SFDB+
-	 AgbHF0w9TmvoL3oEioO3Kaks6KPCK3Pjd/OEcmG82JMhxHo4zn1W5Qb2muC6FXOVQ9
-	 3w/FZx2yotk3MON9BzBkmLucNWX2oO/+aqs0XoIDWv2mKix7Qcca2ATgO9rHC2KgrB
-	 ueXdOyY9nKaYw==
-X-ME-Helo: pop-os.home
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sun, 03 Sep 2023 12:11:16 +0200
-X-ME-IP: 86.243.2.178
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
-Cc: linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org,
-	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev
-Subject: [PATCH] phy: sun4i-usb: Fix a W=1 compilation failure
-Date: Sun,  3 Sep 2023 12:11:06 +0200
-Message-Id: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.34.1
+	Sun, 03 Sep 2023 21:02:35 +0000
+Received: by mail-yb1-xb33.google.com with SMTP id 3f1490d57ef6-d7830c5b20aso1139581276.0
+        for <linux-phy@lists.infradead.org>; Sun, 03 Sep 2023 14:02:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1693774950; x=1694379750; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=wyrVivbOL8H2+2oy0DBeynxfE8rpivKsaojvi9l90MQ=;
+        b=BwkDppITC7XZIdu+BZovMW7X48i7MozeBZVAfF7VleYQed5EdgM3uf9eI7mzvPcwpY
+         1sRMvq0TzSRFS+CJN4zMKTaL1Q2AaPc4ocPZl9HLwnHOOntZtdE5WcZV0w1XGkYGOjyF
+         Zr/aAAuMjFEDTo5xeACo1F4woD4Ul2tZm3OqByARIV7xMRBPXBEjggfGb8I8ag7coTcs
+         kKo23DUW3FmlsGXZbk4dhirzhXTJVdAz/58DHyzxyGMkE8ph7oYPVAGzAgOTq5YW7+Ti
+         CNHUN4kLADn/YizoWV6bUloGFTtAyKMEGy50oaGSBtiZUe4jQ2mo4BG5YvGvL+yQEkkG
+         Oezg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1693774950; x=1694379750;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=wyrVivbOL8H2+2oy0DBeynxfE8rpivKsaojvi9l90MQ=;
+        b=Le3cy9fZYiOmLj7i3Pp/l9hJ8L7G/CB/mIQgi75CuTQ2vFI1yEWzTaRaOL+a0eGo5g
+         s70AkJ2y5dohoF4ZVRL7Hjn5WFdp+HeWFspt/ktvhrhFbwc+e3v5tR6j0hiw3+yH0Iml
+         iU7F+e0O61qgwMCOAQv56XTWhxddvus6VcpVJxF41fXiHaSoLvzq/flfiJWXPoVVTqaA
+         lsAJAKw3DGfSQ+qBxtRRVrgLjIhegTMJWlxYhJq+Pt6826xf4Ar3RlyCAPqSjPuJOpnJ
+         Xj9Wun7tXWUh8jk1sNmGSUHXzF9h+gnTVX34hObARaXs9VbTG4di9eEt4gbiylZuKLRZ
+         skCQ==
+X-Gm-Message-State: AOJu0Yz46RqZ1a9zbWoNKQ9DqC/Ic5j0Iix1Qu7eltOIW3Kr6DA6IDRX
+	nbMiTVl610Fba/OsE6oox2oOtKEj3Dj70QCVDlZjng==
+X-Google-Smtp-Source: AGHT+IEIksLV6i1JQnXxmFBaEbAx0vYPQzKu+YxnPk5mSfeHKOjrFxxCLATBwQ5f3mGZqO72LEeDFc4Kwock6sj7f10=
+X-Received: by 2002:a25:d20e:0:b0:d74:6cb3:bb77 with SMTP id
+ j14-20020a25d20e000000b00d746cb3bb77mr10416043ybg.28.1693774950042; Sun, 03
+ Sep 2023 14:02:30 -0700 (PDT)
 MIME-Version: 1.0
+References: <20230817145516.5924-1-dmitry.baryshkov@linaro.org> <20230822141735.GA14396@pendragon.ideasonboard.com>
+In-Reply-To: <20230822141735.GA14396@pendragon.ideasonboard.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 4 Sep 2023 00:02:18 +0300
+Message-ID: <CAA8EJpp_FYOKHziHOWF6E1RTkHEJ8oXXH90EDmJbLG1UDO1ofA@mail.gmail.com>
+Subject: Re: [PATCH v4 0/3] drm: simplify support for transparent DRM bridges
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Andy Gross <agross@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dri-devel@lists.freedesktop.org, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-usb@vger.kernel.org, freedreno@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230903_031126_279876_6B7CEBDD 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20230903_140233_765463_2BED465C 
+X-CRM114-Status: GOOD (  31.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,38 +90,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-V2l0aCBnY2MgMTIuMy4wLCB3aGVuIHRoaXMgZmlsZSBpcyBidWlsdCwgd2UgZ2V0IGVycm9ycyBz
-dWNoIGFzOgoKZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYzogSW4gZnVuY3Rp
-b24g4oCYc3VuNGlfdXNiX3BoeV9wcm9iZeKAmToKZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1z
-dW40aS11c2IuYzo3OTA6NTI6IGVycm9yOiDigJhfdmJ1c+KAmSBkaXJlY3RpdmUgb3V0cHV0IG1h
-eSBiZSB0cnVuY2F0ZWQgd3JpdGluZyA1IGJ5dGVzIGludG8gYSByZWdpb24gb2Ygc2l6ZSBiZXR3
-ZWVuIDIgYW5kIDEyIFstV2Vycm9yPWZvcm1hdC10cnVuY2F0aW9uPV0KICA3OTAgfCAgICAgICAg
-ICAgICAgICAgc25wcmludGYobmFtZSwgc2l6ZW9mKG5hbWUpLCAidXNiJWRfdmJ1cyIsIGkpOwog
-ICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IF5+fn5+CmRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmM6NzkwOjE3OiBub3Rl
-OiDigJhzbnByaW50ZuKAmSBvdXRwdXQgYmV0d2VlbiAxMCBhbmQgMjAgYnl0ZXMgaW50byBhIGRl
-c3RpbmF0aW9uIG9mIHNpemUgMTYKICA3OTAgfCAgICAgICAgICAgICAgICAgc25wcmludGYobmFt
-ZSwgc2l6ZW9mKG5hbWUpLCAidXNiJWRfdmJ1cyIsIGkpOwogICAgICB8ICAgICAgICAgICAgICAg
-ICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4KCkJlY2F1c2Ug
-b2YgdGhlIHBvc3NpYmxlIHZhbHVlIG9mICdpJywgdGhpcyBjYW4ndCBiZSBhbiBpc3N1ZSBpbiBy
-ZWFsIHdvcmxkCmFwcGxpY2F0aW9uLCBidXQgaW4gb3JkZXIgdG8gaGF2ZSAibWFrZSBXPTEiIHdv
-cmsgY29ycmVjdGx5LCBnaXZlIG1vcmUKc3BhY2UgZm9yICduYW1lJy4KClNpZ25lZC1vZmYtYnk6
-IENocmlzdG9waGUgSkFJTExFVCA8Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI+Ci0tLQog
-ZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYyB8IDIgKy0KIDEgZmlsZSBjaGFu
-Z2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMgYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5
-LXN1bjRpLXVzYi5jCmluZGV4IGVjNTUxNDY0ZGQ0Zi4uZTUzYTlhOTMxN2JjIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jCisrKyBiL2RyaXZlcnMvcGh5
-L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMKQEAgLTc4Miw3ICs3ODIsNyBAQCBzdGF0aWMgaW50
-IHN1bjRpX3VzYl9waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAogCWZv
-ciAoaSA9IDA7IGkgPCBkYXRhLT5jZmctPm51bV9waHlzOyBpKyspIHsKIAkJc3RydWN0IHN1bjRp
-X3VzYl9waHkgKnBoeSA9IGRhdGEtPnBoeXMgKyBpOwotCQljaGFyIG5hbWVbMTZdOworCQljaGFy
-IG5hbWVbMzJdOwogCiAJCWlmIChkYXRhLT5jZmctPm1pc3NpbmdfcGh5cyAmIEJJVChpKSkKIAkJ
-CWNvbnRpbnVlOwotLSAKMi4zNC4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, 22 Aug 2023 at 17:17, Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+>
+> Hi Dmitry,
+>
+> Thank you for the patches.
+>
+> On Thu, Aug 17, 2023 at 05:55:13PM +0300, Dmitry Baryshkov wrote:
+> > Supporting DP/USB-C can result in a chain of several transparent
+> > bridges (PHY, redrivers, mux, etc). This results in drivers having
+> > similar boilerplate code for such bridges.
+>
+> What do you mean by transparent bridge here ? Bridges are a DRM concept,
+> and as far as I can tell, a PHY isn't a bridge. Why does it need to be
+> handled as one, especially if it's completely transparent ?
+>
+> > Next, these drivers are susceptible to -EPROBE_DEFER loops: the next
+> > bridge can either be probed from the bridge->attach callback, when it is
+> > too late to return -EPROBE_DEFER, or from the probe() callback, when the
+> > next bridge might not yet be available, because it depends on the
+> > resources provided by the probing device.
+>
+> Can't device links help avoiding defer probing in those cases ?
+
+It looks like both Neil and I missed this question.
+
+Two items wrt devlinks. First, I view them as a helper. So if one
+disables the devlinks enforcement, he'd still get a deferral loop.
+
+Second, in this case we can not enforce devlinks (or return
+-EPROBE_DEFER from the probe() function) because the next bridge is
+not yet available when the main driver probes. Unfortunately bridges
+are allocated in the opposite order. So, using AUX devices helps us to
+break it. Because first typec mux/retimer/switch/etc devices probe (in
+the direction from the typec source to the typec port). Then DRM
+bridge devices are probed starting from the end of the chain
+(connector) to the DP source (root DP bridge/controller).
+
+>
+> > Last, but not least, this results in the the internal knowledge of DRM
+> > subsystem slowly diffusing into other subsystems, like PHY or USB/TYPEC.
+>
+> Why so ? The PHY subsystem should provide a PHY, without considering
+> what subsystem it will be used by. This patch series seems to me to
+> actually create this DRM dependency in other subsystems, which I don't
+> think is a very good idea. Resources should be registered in their own
+> subsystem with the appropriate API, not in a way that is tied to a
+> particular consumer.
+>
+> > To solve all these issues, define a separate DRM helper, which creates
+> > separate aux device just for the bridge. During probe such aux device
+> > doesn't result in the EPROBE_DEFER loops. Instead it allows the device
+> > drivers to probe properly, according to the actual resource
+> > dependencies. The bridge auxdevs are then probed when the next bridge
+> > becomes available, sparing drivers from drm_bridge_attach() returning
+> > -EPROBE_DEFER.
+>
+> I'm not thrilled :-( Let's discuss the questions above first.
+
+Laurent, please excuse me for the ping. Any further response from your side?
+I'd like to send the next iteration of this patchset.
+
+> > Proposed merge strategy: immutable branch with the drm commit, which is
+> > then merged into PHY and USB subsystems together with the corresponding
+> > patch.
+
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
