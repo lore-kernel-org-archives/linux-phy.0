@@ -4,53 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09158C83F2C
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Sep 2023 00:00:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D3DEC83F2C
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Sep 2023 05:12:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WktUu/vh6n+X6/j8HPsdevB5ftf5igpYl0RCJtuoIxI=; b=Vt5m3KqjdCdfwT
-	1D7Cqnuyswq9EnQs4KaXBIWwMryAzs+ziUzDVb1n2TNrRRJ7z6Tqf9zk31+mdo1p1jbC4SLuWk3bO
-	FENuWNzuIkRUHQOAYooDJDZRonNtJdAgGYanqqNEHnxu44o1fIamMqF5SVBOWWvBIr8ln0pAgs4en
-	6x5Bz83J+5a13DzOLhHt12M/kbApxIU2sXq3gjNnpnqZ6vzOrRsfk7D5faStFbanrFmiHVMBjJKsC
-	G06D3N5GoVPqUEHkNXIcgkB7VNqZaV0/2vB4C7eBKv0MpTfSVfmFsbKKfoO18AOXawb5F2fo71eb0
-	+obxPVB0ntIwQXxrGcsA==;
+	List-Owner; bh=ddhwl+W1rzutPxpdbPlD8v09CRm32mxmvTK0gdCMnE8=; b=fiS3x8dEd9KIw4
+	e8Xh+swS1vJ/dEIC38zn8ghk7W1hG8i+ei8NAaOTK+NM0+q1TEtUv/67vmW8FizxMnBHkpzHtNte4
+	rvvfxoVFLvJxWbaeKVNWohQARwaxOPEhBjp7x3dyH1H0YFg2Stq/c69im60YIpTseq8fMxpZq7pDd
+	YHKZHxh3FNUrBGL1tWbgxqJfHuVp0/LgcKWIjuSDsDryP+6KyVF78GiDekuyH3E3nYurhrUiHyLTQ
+	h0lwLSfLuoFkg0+OUKvQN0YCLn8singRjQLLcbdbvLqgvyiSJvbp1lzDhwozyhI6JFLGqSIaQweTC
+	7bOnyxl+erbTQS+UbprA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qcx0q-00336t-21;
-	Mon, 04 Sep 2023 00:00:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qcx0l-00335O-2h;
-	Mon, 04 Sep 2023 00:00:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF8CE165C;
-	Sun,  3 Sep 2023 17:00:43 -0700 (PDT)
-Received: from slackpad.lan (unknown [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 072F13F766;
-	Sun,  3 Sep 2023 17:00:03 -0700 (PDT)
-Date: Mon, 4 Sep 2023 00:58:55 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec
- <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
- linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH] phy: sun4i-usb: Fix a W=1 compilation failure
-Message-ID: <20230904005855.658819b3@slackpad.lan>
-In-Reply-To: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
-References: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
-Organization: Arm Ltd.
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.31; x86_64-slackware-linux-gnu)
+	id 1qd1tS-003LYe-03;
+	Mon, 04 Sep 2023 05:12:58 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qd1tO-003LWx-2x
+	for linux-phy@lists.infradead.org;
+	Mon, 04 Sep 2023 05:12:56 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3844pvkw022759;
+	Mon, 4 Sep 2023 05:12:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=AwpqZ/W8iw3FSJjd3QS+6Vz0gbo9KyXxE+gvDSiDrY8=;
+ b=nZUcNduliXjejSvKOJS4n2KOwWSd9OUrddm4ATe+dJa7OeGc+5fkRpBdepuh6pIbpev9
+ 68+TvRRrIp79J7mJ6mMlRKQqzTazFESbHT/OAJh29lOQfL94po/Jik2pBd7zXNDDkluD
+ dl74TOU4+Uf1W5eNRiNx+V2p2EBxO5JEYYefUdGkshVQsJnCFcv60ONAzQebHC93G7C9
+ lc+4pYk/WHbJuW0imEqor3agDlifR2Yyv2omJD2vOqsn2P1eThiZOcT+maiu5IZROwry
+ ghtZqo+osP5p28F/kDSIGMCt+qZ0GrZAnRaxvlMMEoxUbdtmSYJIt88w/4NMKD/MHckc Dg== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3suvcram4t-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 04 Sep 2023 05:12:40 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3845CcWn020480
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 4 Sep 2023 05:12:38 GMT
+Received: from [10.201.200.63] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Sun, 3 Sep
+ 2023 22:12:33 -0700
+Message-ID: <6593b9d1-2632-f6da-b0c7-162b31bdca55@quicinc.com>
+Date: Mon, 4 Sep 2023 10:42:24 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH V3 2/4] phy: qcom-m31: Add compatible, phy init sequence
+ for IPQ5018
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <quic_srichara@quicinc.com>,
+        <quic_varada@quicinc.com>, <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>
+References: <20230901092645.20522-1-quic_nsekar@quicinc.com>
+ <20230901092645.20522-3-quic_nsekar@quicinc.com>
+ <CAA8EJppej++gbrWrRU9EFBntjzck4-9xbgS_sCPBfcxEofUo3Q@mail.gmail.com>
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+In-Reply-To: <CAA8EJppej++gbrWrRU9EFBntjzck4-9xbgS_sCPBfcxEofUo3Q@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: fzLlHxhe568XBH9bgIi7f3DpMcdkZvAq
+X-Proofpoint-ORIG-GUID: fzLlHxhe568XBH9bgIi7f3DpMcdkZvAq
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-04_02,2023-08-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
+ priorityscore=1501 mlxlogscore=967 impostorscore=0 suspectscore=0
+ lowpriorityscore=0 mlxscore=0 spamscore=0 clxscore=1015 adultscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309040045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230903_170011_948791_C9DB920F 
-X-CRM114-Status: GOOD (  19.43  )
+X-CRM114-CacheID: sfid-20230903_221255_099541_17C54A4B 
+X-CRM114-Status: GOOD (  22.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,49 +102,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU3VuLCAgMyBTZXAgMjAyMyAxMjoxMTowNiArMDIwMApDaHJpc3RvcGhlIEpBSUxMRVQgPGNo
-cmlzdG9waGUuamFpbGxldEB3YW5hZG9vLmZyPiB3cm90ZToKCj4gV2l0aCBnY2MgMTIuMy4wLCB3
-aGVuIHRoaXMgZmlsZSBpcyBidWlsdCwgd2UgZ2V0IGVycm9ycyBzdWNoIGFzOgo+IAo+IGRyaXZl
-cnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmM6IEluIGZ1bmN0aW9uIOKAmHN1bjRpX3Vz
-Yl9waHlfcHJvYmXigJk6Cj4gZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYzo3
-OTA6NTI6IGVycm9yOiDigJhfdmJ1c+KAmSBkaXJlY3RpdmUgb3V0cHV0IG1heSBiZSB0cnVuY2F0
-ZWQgd3JpdGluZyA1IGJ5dGVzIGludG8gYSByZWdpb24gb2Ygc2l6ZSBiZXR3ZWVuIDIgYW5kIDEy
-IFstV2Vycm9yPWZvcm1hdC10cnVuY2F0aW9uPV0KPiAgIDc5MCB8ICAgICAgICAgICAgICAgICBz
-bnByaW50ZihuYW1lLCBzaXplb2YobmFtZSksICJ1c2IlZF92YnVzIiwgaSk7Cj4gICAgICAgfCAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBefn5+fgo+
-IGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmM6NzkwOjE3OiBub3RlOiDigJhz
-bnByaW50ZuKAmSBvdXRwdXQgYmV0d2VlbiAxMCBhbmQgMjAgYnl0ZXMgaW50byBhIGRlc3RpbmF0
-aW9uIG9mIHNpemUgMTYKPiAgIDc5MCB8ICAgICAgICAgICAgICAgICBzbnByaW50ZihuYW1lLCBz
-aXplb2YobmFtZSksICJ1c2IlZF92YnVzIiwgaSk7Cj4gICAgICAgfCAgICAgICAgICAgICAgICAg
-Xn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+Cj4gCj4gQmVjYXVz
-ZSBvZiB0aGUgcG9zc2libGUgdmFsdWUgb2YgJ2knLCB0aGlzIGNhbid0IGJlIGFuIGlzc3VlIGlu
-IHJlYWwgd29ybGQKCldvdWxkIHVzaW5nICJ1OCBpOyIgaGVscD8gQWZ0ZXIgYWxsIGN1cnJlbnRs
-eSB0aGVyZSBhcmUgb25seSA0IFBIWXMKbWF4LCBhbmQgaW4gZ2VuZXJhbCB0aGlzIGlzbid0IGV4
-cGVjdGVkIHRvIGJlIG1vcmUgdGhhbiBhICJoYW5kZnVsIiwgc28KOCBiaXRzIHNob3VsZCBiZSBw
-bGVudHkuIEFuIHVuc2lnbmVkIGlzIGJldHRlciBhbnl3YXkuCkl0IGxlYXZlcyBhIGJpdCBvZiBh
-IGJpdHRlciB0YXN0ZSwgdGhvdWdoLCBhcyB3ZSBzaG91bGRuJ3QgZG8gdGhpcyBraW5kCnR5cGUg
-dHdlYWtpbmcsIGVzcGVjaWFsbHkgbm90IHRvIHdvcmsgYXJvdW5kIHRoZSBjb21waWxlciB0cnlp
-bmcgdG8gYmUKY2xldmVyLCBidXQgdGhlbiBub3Qgc2VlaW5nIHRoZSB3aG9sZSBwaWN0dXJlICh0
-aGF0ICJpIiBpcyBib3VuZGVkIGJ5CmNvbXBpbGUgdGltZSBjb25zdGFudHMgbm90IGV4Y2VlZGlu
-ZyAiNCIpLgoKQ2hlZXJzLApBbmRyZQoKPiBhcHBsaWNhdGlvbiwgYnV0IGluIG9yZGVyIHRvIGhh
-dmUgIm1ha2UgVz0xIiB3b3JrIGNvcnJlY3RseSwgZ2l2ZSBtb3JlCj4gc3BhY2UgZm9yICduYW1l
-Jy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBDaHJpc3RvcGhlIEpBSUxMRVQgPGNocmlzdG9waGUuamFp
-bGxldEB3YW5hZG9vLmZyPgo+IC0tLQo+ICBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRp
-LXVzYi5jIHwgMiArLQo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRp
-b24oLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11
-c2IuYyBiL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMKPiBpbmRleCBlYzU1
-MTQ2NGRkNGYuLmU1M2E5YTkzMTdiYyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9hbGx3aW5u
-ZXIvcGh5LXN1bjRpLXVzYi5jCj4gKysrIGIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40
-aS11c2IuYwo+IEBAIC03ODIsNyArNzgyLDcgQEAgc3RhdGljIGludCBzdW40aV91c2JfcGh5X3By
-b2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAo+ICAJZm9yIChpID0gMDsgaSA8
-IGRhdGEtPmNmZy0+bnVtX3BoeXM7IGkrKykgewo+ICAJCXN0cnVjdCBzdW40aV91c2JfcGh5ICpw
-aHkgPSBkYXRhLT5waHlzICsgaTsKPiAtCQljaGFyIG5hbWVbMTZdOwo+ICsJCWNoYXIgbmFtZVsz
-Ml07Cj4gIAo+ICAJCWlmIChkYXRhLT5jZmctPm1pc3NpbmdfcGh5cyAmIEJJVChpKSkKPiAgCQkJ
-Y29udGludWU7CgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+
+On 9/2/2023 3:20 AM, Dmitry Baryshkov wrote:
+> On Fri, 1 Sept 2023 at 12:27, Nitheesh Sekar <quic_nsekar@quicinc.com> wrote:
+>> Add phy init sequence and compatible string for IPQ5018
+>> chipset.
+>>
+>> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+>> ---
+>> V3:
+>>          Dropped 0 delay inits.
+>>          Added static const type for m31_ipq5018_regs.
+>> V2:
+>>          Updated the commit message.
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-m31.c | 49 +++++++++++++++++++++++++++++
+>>   1 file changed, 49 insertions(+)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> index ed08072ca032..ceee38695d7d 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-m31.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> @@ -82,6 +82,48 @@ struct m31_priv_data {
+>>          unsigned int                    nregs;
+>>   };
+>>
+>> +static const struct m31_phy_regs m31_ipq5018_regs[] = {
+>> +       {
+> C99 initializers, please?
+Sorry. Missed it. Will update and post a new patchset.
+>
+>> +               USB_PHY_CFG0,
+>> +               UTMI_PHY_OVERRIDE_EN
+>> +       },
+>> +       {
+>> +               USB_PHY_UTMI_CTRL5,
+>> +               POR_EN,
+>> +               15
+>> +       },
+>> +       {
+>> +               USB_PHY_FSEL_SEL,
+>> +               FREQ_SEL
+>> +       },
+>> +       {
+>> +               USB_PHY_HS_PHY_CTRL_COMMON0,
+>> +               COMMONONN | FSEL | RETENABLEN
+>> +       },
+>> +       {
+>> +               USB_PHY_REFCLK_CTRL,
+>> +               CLKCORE
+>> +       },
+>> +       {
+>> +               USB_PHY_UTMI_CTRL5,
+>> +               POR_EN
+>> +       },
+>> +       {
+>> +               USB_PHY_HS_PHY_CTRL2,
+>> +               USB2_SUSPEND_N_SEL | USB2_SUSPEND_N | USB2_UTMI_CLK_EN
+>> +       },
+>> +       {
+>> +               USB_PHY_UTMI_CTRL5
+>> +       },
+>> +       {
+>> +               USB_PHY_HS_PHY_CTRL2,
+>> +               USB2_SUSPEND_N | USB2_UTMI_CLK_EN
+>> +       },
+>> +       {
+>> +               USB_PHY_CFG0
+> What is the value written? While it didn't make sense to write 0
+> delays, it is sensible to write 0 register values here.
+Value to be written is 0. I will update this.
+>
+>> +       },
+>> +};
+>> +
+>>   struct m31_phy_regs m31_ipq5332_regs[] = {
+>>          {
+>>                  USB_PHY_CFG0,
+>> @@ -268,6 +310,12 @@ static int m31usb_phy_probe(struct platform_device *pdev)
+>>          return PTR_ERR_OR_ZERO(phy_provider);
+>>   }
+>>
+>> +static const struct m31_priv_data m31_ipq5018_data = {
+>> +       .ulpi_mode = false,
+>> +       .regs = m31_ipq5018_regs,
+>> +       .nregs = ARRAY_SIZE(m31_ipq5018_regs),
+>> +};
+>> +
+>>   static const struct m31_priv_data m31_ipq5332_data = {
+>>          .ulpi_mode = false,
+>>          .regs = m31_ipq5332_regs,
+>> @@ -275,6 +323,7 @@ static const struct m31_priv_data m31_ipq5332_data = {
+>>   };
+>>
+>>   static const struct of_device_id m31usb_phy_id_table[] = {
+>> +       { .compatible = "qcom,ipq5018-usb-hsphy", .data = &m31_ipq5018_data },
+>>          { .compatible = "qcom,ipq5332-usb-hsphy", .data = &m31_ipq5332_data },
+>>          { },
+>>   };
+>> --
+>> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+>> a Linux Foundation Collaborative Project
+>>
+>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
