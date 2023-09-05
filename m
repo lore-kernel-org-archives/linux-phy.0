@@ -4,59 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42D8DC83F33
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 10:23:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D2B4C83F2C
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 10:30:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yGJyVc04Whw5jDPkD360gn63lwLVUrDg9B5z9htbo5w=; b=LvK6ElwB0CO4B1
-	qsz9l2zAwr6jJDEOfdXLCJMCBh8ouuRDOwSll9+SwPOzdGHeLp1lq9DtXYYi7yS1Y95GoM9tzrt9x
-	kXp72hlVTi66AdLXh7+F9+HRsyr/dRDwIvGfYifk/a17BarV0cBRBmTPTLpMqgRVbQK2jEHvha3Vi
-	SJFNMARxmgcWhz6RkRGvWFFX2ok4kkybXPe/KWJwIOuielQTSzvxd/7gqjbQyBbHDyDLQd4xBPMHO
-	Xmx8CoMMSrIhm6zs3nJrSOHOYqkHoBvggT3ewZETMLNgl+TMrW+qIiEUECJ9tCVRfYvsEf8rT/rLq
-	PCfvkdCuB9ibKb6TXvRg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=31FW0j1xth7i6GU9h+yVUVJQuC+65ePwglG8bFw0N2I=; b=0ahWouNvLk1YTc
+	qa8wOE9Ulq32LNfzrl++LxkwnEgRGw7nYGkS7h94KakVia1DGUiaS4OjX331NmiiZg/knQ2Nx5X5i
+	o4llZiUTUq1l9yzQnMymnQH6xyfq2FBkTg0adgV7UV45pFUc5af01VN/dlt8T1DOgT56Ajblu4MYt
+	4i7ou0oFV2dhS/MhVLpy7H/iiYadGXd3EWM8zOZnlhJikyAm9XbMT72fCVPKnvUYCKcrdNsHeVxvO
+	KlTt6+9CXFzx8ySXLeQxiQpuBl3Q9c3rLTlosyKwguV9jyZ6zS4alZqa8NMahrfA206a3neEodIta
+	A4T+Gg6SIJU+0VjAdTIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdTDQ-005ikd-3B;
-	Tue, 05 Sep 2023 10:23:24 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1qdTKj-005mzS-2A;
+	Tue, 05 Sep 2023 10:30:57 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdTDN-005igS-15
+	id 1qdTKg-005mui-29
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Sep 2023 10:23:23 +0000
-Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=[IPv6:::1])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <l.stach@pengutronix.de>)
-	id 1qdTDC-0003Fr-7M; Tue, 05 Sep 2023 12:23:10 +0200
-Message-ID: <a04d38095bb7d904f01b6ea60f1cb77971a9314f.camel@pengutronix.de>
-Subject: Re: [PATCH v2 2/2] phy: freescale: add Samsung HDMI PHY
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>,  Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Pengutronix Kernel Team
- <kernel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- patchwork-lst@pengutronix.de, Inki Dae <inki.dae@samsung.com>, Seung-Woo
- Kim <sw0312.kim@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
- Sandor Yu <Sandor.yu@nxp.com>
-Date: Tue, 05 Sep 2023 12:23:08 +0200
-In-Reply-To: <Y8Ga1BTaqoTMRA0I@matsya>
-References: <20221215201100.2897501-1-l.stach@pengutronix.de>
-	 <20221215201100.2897501-2-l.stach@pengutronix.de> <Y8Ga1BTaqoTMRA0I@matsya>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+	Tue, 05 Sep 2023 10:30:56 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3859EVfI010513;
+	Tue, 5 Sep 2023 10:30:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id; s=qcppdkim1;
+ bh=TpfFJN53W+ViGIa50jhbAyPdNZv9znLM1xPZ+sjUNCk=;
+ b=HwC2ysD+Vno8TF7HoUYRN3i1ZjeQ1/tMmUKLDzY3RoV3eb53PENZVouMflLRUEALOe3A
+ Pi5Prm0e6VQ6MZZOQtuzWw7r9vo/IyDiUvTRm+/xipP0QQqYcv1GtcYEi+fvPD/b4Ypm
+ 7rZr6Rm5NHoQDrvV8kyYgRGsm+kUrydekK+2nYv103nGGltInN2zfrjXIIJ9iZVQ8fEQ
+ PDlId4Sp0X/wGqYDb8pdhTlWcACIRpqo0cfIO8bdc5TsNb3zai/cmo1ze48WOj/Cf0mB
+ wPkGV8rnFm7poKTMkdwp6XsPitN7dtybVcvjpw5i6iVzP6lnRs7WwPqysh+2odj4L0Nd xg== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sww32rm8e-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 05 Sep 2023 10:30:44 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 385AUeEm018085;
+	Tue, 5 Sep 2023 10:30:40 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3sux4km16c-1;
+	Tue, 05 Sep 2023 10:30:40 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 385AUePT018073;
+	Tue, 5 Sep 2023 10:30:40 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 385AUdSZ018069;
+	Tue, 05 Sep 2023 10:30:40 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
+	id 2B7451D0C; Tue,  5 Sep 2023 16:00:39 +0530 (+0530)
+From: Rohit Agarwal <quic_rohiagar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+        gregkh@linuxfoundation.org, abel.vesa@linaro.org,
+        quic_wcheng@quicinc.com
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-usb@vger.kernel.org, kernel@quicinc.com,
+        Rohit Agarwal <quic_rohiagar@quicinc.com>
+Subject: [PATCH v2 0/5] Add USB Support on Qualcomm's SDX75 Platform
+Date: Tue,  5 Sep 2023 16:00:33 +0530
+Message-Id: <1693909838-6682-1-git-send-email-quic_rohiagar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: zDlUmFKepkqD6TWCL_xcXNI5qJXA0fz7
+X-Proofpoint-GUID: zDlUmFKepkqD6TWCL_xcXNI5qJXA0fz7
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-05_08,2023-08-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ clxscore=1015 suspectscore=0 adultscore=0 lowpriorityscore=0 bulkscore=0
+ mlxlogscore=556 mlxscore=0 priorityscore=1501 spamscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2309050093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_032321_549529_C703EBB4 
-X-CRM114-Status: GOOD (  33.52  )
+X-CRM114-CacheID: sfid-20230905_033054_874305_015E3D09 
+X-CRM114-Status: GOOD (  13.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,280 +98,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hi,
 
-Am Freitag, dem 13.01.2023 um 23:24 +0530 schrieb Vinod Koul:
-> On 15-12-22, 21:11, Lucas Stach wrote:
-> > This adds the driver for the Samsung HDMI PHY found on the
-> > i.MX8MP SoC. Based on downstream implementation from
-> > Sandor Yu <Sandor.yu@nxp.com>.
-> > 
-> > Co-developed-by: Marco Felsch <m.felsch@pengutronix.de>
-> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> > ---
-> > v2: use DEFINE_RUNTIME_DEV_PM_OPS
-> > ---
-> >  drivers/phy/freescale/Kconfig                |   6 +
-> >  drivers/phy/freescale/Makefile               |   1 +
-> >  drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 694 +++++++++++++++++++
-> >  3 files changed, 701 insertions(+)
-> >  create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > 
-> > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-> > index 853958fb2c06..5c2b73042dfc 100644
-> > --- a/drivers/phy/freescale/Kconfig
-> > +++ b/drivers/phy/freescale/Kconfig
-> > @@ -35,6 +35,12 @@ config PHY_FSL_IMX8M_PCIE
-> >  	  Enable this to add support for the PCIE PHY as found on
-> >  	  i.MX8M family of SOCs.
-> >  
-> > +config PHY_FSL_SAMSUNG_HDMI_PHY
-> > +	tristate "Samsung HDMI PHY support"
-> > +	depends on OF && HAS_IOMEM
-> > +	help
-> > +	  Enable this to add support for the Samsung HDMI PHY in i.MX8MP.
-> > +
-> >  endif
-> >  
-> >  config PHY_FSL_LYNX_28G
-> 
-> this new should come after this one...
-> 
-> > diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
-> > index cedb328bc4d2..c4386bfdb853 100644
-> > --- a/drivers/phy/freescale/Makefile
-> > +++ b/drivers/phy/freescale/Makefile
-> > @@ -4,3 +4,4 @@ obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
-> >  obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
-> >  obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
-> >  obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
-> > +obj-$(CONFIG_PHY_FSL_SAMSUNG_HDMI_PHY)	+= phy-fsl-samsung-hdmi.o
-> > diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > new file mode 100644
-> > index 000000000000..185244dcb810
-> > --- /dev/null
-> > +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > @@ -0,0 +1,694 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * Copyright 2020 NXP
-> > + * Copyright 2022 Pengutronix, Lucas Stach <kernel@pengutronix.de>
-> > + */
-> > +
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/clk.h>
-> > +#include <linux/delay.h>
-> > +#include <linux/io.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/of.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/pm_runtime.h>
-> > +
-> > +#define PHY_REG_00		0x00
-> > +#define PHY_REG_01		0x04
-> > +#define PHY_REG_02		0x08
-> > +#define PHY_REG_08		0x20
-> > +#define PHY_REG_09		0x24
-> > +#define PHY_REG_10		0x28
-> > +#define PHY_REG_11		0x2c
-> 
-> No names for regs?
+Changes in v2:
+ - Dropped the new dt schema introduced in v1 for sdx75 usb3 phy
+   and reusing the bindings.
+ - Rephrased the commit message of patch 3/5
+ - Removed stray lines from the patch 5/5
 
-Unfortunately yes. While the reference manual documents the bitfields
-in the regs, it doesn't give them any descriptive names, but just those
-consecutive numbers. I don't think it would be a good idea to deviate
-from the reference manual here.
+This series adds support of USB3 PHY support for Qualcomm's SDX75 Platform.
 
-> 
-> > +
-> > +#define PHY_REG_12		0x30
-> > +#define  REG12_FLD_CK_DIV(x)	(((x) & 0x3) << 4)
-> 
-> GENMASK() pls
+Thanks,
+Rohit.
 
-Okay.
+Rohit Agarwal (5):
+  dt-bindings: phy: qcom,snps-eusb2-phy: Add compatible for SDX75
+  dt-bindings: phy: qcom,qmp-usb: Add SDX75 USB3 PHY
+  dt-bindings: usb: qcom,dwc3: Fix SDX65 clocks
+  dt-bindings: usb: dwc3: Add SDX75 compatible
+  phy: qcom-qmp-usb: Add Qualcomm SDX75 USB3 PHY support
 
-> 
-> > +#define  REG12_TMDS_CLK		0x0
-> > +#define  REG12_TMDS_CLK_DIV2	0x1
-> > +#define  REG12_TMDS_CLK_DIV4	0x2
-> > +#define  REG12_TMDS_CLK_DIV8	0x3
-> > +
-> > +#define PHY_REG_13		0x34
-> > +#define  REG13_FLD_TG_CODE_LOW(x) (x & 0xff)
-> > +
-> > +#define PHY_REG_14		0x38
-> > +#define  REG14_FLD_TOL(x)	((x & 0xf) << 4)
-> > +#define  REG14_FLD_RP_CODE(x)	((x & 0x3) << 1)
-> > +#define  REG14_FLD_TG_CODE_HIGH(x) ((x >> 8) & 0x1)
-> 
-> FIELD_GET|PREP please
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |  40 +++++-
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml          |   7 +-
+ .../devicetree/bindings/usb/qcom,dwc3.yaml         |   4 +
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 158 +++++++++++++++++++++
+ 4 files changed, 205 insertions(+), 4 deletions(-)
 
-Okay.
-> 
-> > +
-> > +#define PHY_REG_15		0x3c
-> > +#define PHY_REG_16		0x40
-> > +#define PHY_REG_17		0x44
-> > +#define PHY_REG_18		0x48
-> > +#define PHY_REG_19		0x4c
-> > +#define PHY_REG_20		0x50
-> > +
-> > +#define PHY_REG_21		0x54
-> > +#define  REG21_SEL_TX_CK_INV	BIT(7)
-> > +#define  REG21_PMS_S(x)		(x & 0xf)
-> > +
-> > +#define PHY_REG_22		0x58
-> > +#define PHY_REG_23		0x5c
-> > +#define PHY_REG_24		0x60
-> > +#define PHY_REG_25		0x64
-> > +#define PHY_REG_26		0x68
-> > +#define PHY_REG_27		0x6c
-> > +#define PHY_REG_28		0x70
-> > +#define PHY_REG_29		0x74
-> > +#define PHY_REG_30		0x78
-> > +#define PHY_REG_31		0x7c
-> > +#define PHY_REG_32		0x80
-> > +
-> > +#define PHY_REG_33		0x84
-> > +#define  REG33_MODE_SET_DONE	BIT(7)
-> > +#define  REG33_FIX_DA		BIT(1)
-> > +
-> > +#define PHY_REG_34		0x88
-> > +#define  REG34_PHY_READY	BIT(7)
-> > +#define  REG34_PLL_LOCK		BIT(6)
-> > +#define  REG34_PHY_CLK_READY	BIT(5)
-> > +
-> > +#define PHY_REG_35		0x8c
-> > +#define PHY_REG_36		0x90
-> > +#define PHY_REG_37		0x94
-> > +#define PHY_REG_38		0x98
-> > +#define PHY_REG_39		0x9c
-> > +#define PHY_REG_40		0xa0
-> > +#define PHY_REG_41		0xa4
-> > +#define PHY_REG_42		0xa8
-> > +#define PHY_REG_43		0xac
-> > +#define PHY_REG_44		0xb0
-> > +#define PHY_REG_45		0xb4
-> > +#define PHY_REG_46		0xb8
-> > +#define PHY_REG_47		0xbc
-> > +
-> > +#define PHY_PLL_DIV_REGS_NUM 6
-> > +
-> > +struct phy_config {
-> > +	u32	pixclk;
-> > +	u8	pll_div_regs[PHY_PLL_DIV_REGS_NUM];
-> > +};
-> > +
-> > +const struct phy_config phy_pll_cfg[] = {
-> > +	{
-> > +		.pixclk = 22250000,
-> > +		.pll_div_regs = { 0x4B, 0xF1, 0x89, 0x88, 0x80, 0x40 },
-> 
-> small case for hex numbers pls
+-- 
+2.7.4
 
-Ack.
-
-> 
-> > +	}, {
-> > +		.pixclk = 23750000,
-> > +		.pll_div_regs = { 0x50, 0xF1, 0x86, 0x85, 0x80, 0x40 },
-> > +	},{
-> > 
-[...]
-> > +		.pixclk = 288000000,
-> > +		.pll_div_regs = { 0x78, 0x10, 0x00, 0x00, 0x80, 0x00 },
-> > +	}, {
-> > +		.pixclk = 297000000,
-> > +		.pll_div_regs = { 0x7B, 0x15, 0x84, 0x03, 0x90, 0x45 },
-> > +	},
-> 
-> lots of magic numbers!
-
-Yes. Those are mostly tuning values for the PLL and I don't know if
-there is any computational way to come up with those numbers, so we're
-just using the values validated in downstream.
-
-> 
-> > +};
-> > +
-> > +struct reg_settings {
-> > +	u8 reg;
-> > +	u8 val;
-> > +};
-> > +
-> > +const struct reg_settings common_phy_cfg[] = {
-> > +	{ PHY_REG_00, 0x00 }, { PHY_REG_01, 0xD1 },
-> > +	{ PHY_REG_08, 0x4f }, { PHY_REG_09, 0x30 },
-> > +	{ PHY_REG_10, 0x33 }, { PHY_REG_11, 0x65 },
-> > +	/* REG12 pixclk specific */
-> > +	/* REG13 pixclk specific */
-> > +	/* REG14 pixclk specific */
-> > +	{ PHY_REG_15, 0x80 }, { PHY_REG_16, 0x6C },
-> > +	{ PHY_REG_17, 0xF2 }, { PHY_REG_18, 0x67 },
-> > +	{ PHY_REG_19, 0x00 }, { PHY_REG_20, 0x10 },
-> > +	/* REG21 pixclk specific */
-> > +	{ PHY_REG_22, 0x30 }, { PHY_REG_23, 0x32 },
-> > +	{ PHY_REG_24, 0x60 }, { PHY_REG_25, 0x8F },
-> > +	{ PHY_REG_26, 0x00 }, { PHY_REG_27, 0x00 },
-> > +	{ PHY_REG_28, 0x08 }, { PHY_REG_29, 0x00 },
-> > +	{ PHY_REG_30, 0x00 }, { PHY_REG_31, 0x00 },
-> > +	{ PHY_REG_32, 0x00 }, { PHY_REG_33, 0x80 },
-> > +	{ PHY_REG_34, 0x00 }, { PHY_REG_35, 0x00 },
-> > +	{ PHY_REG_36, 0x00 }, { PHY_REG_37, 0x00 },
-> > +	{ PHY_REG_38, 0x00 }, { PHY_REG_39, 0x00 },
-> > +	{ PHY_REG_40, 0x00 }, { PHY_REG_41, 0xE0 },
-> > +	{ PHY_REG_42, 0x83 }, { PHY_REG_43, 0x0F },
-> > +	{ PHY_REG_44, 0x3E }, { PHY_REG_45, 0xF8 },
-> > +	{ PHY_REG_46, 0x00 }, { PHY_REG_47, 0x00 }
-> > +};
-> > +
-> > +struct fsl_samsung_hdmi_phy {
-> > +	struct device *dev;
-> > +	void __iomem *regs;
-> > +	struct clk *apbclk;
-> > +	struct clk *refclk;
-> > +
-> > +	/* clk provider */
-> > +	struct clk_hw hw;
-> > +	const struct phy_config *cur_cfg;
-> > +};
-> > +
-> > +static inline struct fsl_samsung_hdmi_phy *
-> > +to_fsl_samsung_hdmi_phy(struct clk_hw *hw)
-> > +{
-> > +	return container_of(hw, struct fsl_samsung_hdmi_phy, hw);
-> > +}
-> > +
-> > +static void
-> > +fsl_samsung_hdmi_phy_configure_pixclk(struct fsl_samsung_hdmi_phy *phy,
-> > +				      const struct phy_config *cfg)
-> > +{
-> > +	u8 div;
-> > +
-> > +	switch (cfg->pixclk) {
-> > +	case  22250000 ...  33750000:	div = 0xf; break;
-> > +	case  35000000 ...  40000000:	div = 0xb; break;
-> > +	case  43200000 ...  47500000:	div = 0x9; break;
-> > +	case  50349650 ...  63500000:	div = 0x7; break;
-> > +	case  67500000 ...  90000000:	div = 0x5; break;
-> > +	case  94000000 ... 148500000:	div = 0x3; break;
-> > +	case 154000000 ... 297000000:	div = 0x1; break;
-> 
-> lets do proper linux style please
-
-Do you mean moving the statements to separate lines?
-
-Regards,
-Lucas
 
 -- 
 linux-phy mailing list
