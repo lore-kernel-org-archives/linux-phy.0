@@ -4,55 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B7EAC83F2C
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 09:46:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42D8DC83F33
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 10:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8I3IT6gkOINweMqXBAbP4SxzlMIoUrDLvUhz4YLEAdY=; b=OhTxsQDxrnJN7G
-	MuCyweU+XKMeFEv2J1NHHJDp2ic3nXF7my/GfrEvTRyq/s2itep225KxiplzX5LtfbfE5mNf23MmK
-	8BxDIFU0YbO6wjunm7zvxhlN1O8bo6YLZQGqjrDih2eYm/0IetSdAtFXYW/AfUbGugJ6n8PUe8152
-	oB9LCBsrIiJM0BVq3fhQY4MTtJngmdcGe7N1wYa1cOmG5npSBRnoxQ2CcVtYDJYFazphbH7YwTvnE
-	2BmZOyjFbl1+nLWvGpETuXdtdEh78B4FPVwrzi5ykTe6HSuH8SJJWFc9c8kKAIOQhExugaPivASNV
-	gqsUqYoQTDMZPyOPH4ig==;
+	List-Owner; bh=yGJyVc04Whw5jDPkD360gn63lwLVUrDg9B5z9htbo5w=; b=LvK6ElwB0CO4B1
+	qsz9l2zAwr6jJDEOfdXLCJMCBh8ouuRDOwSll9+SwPOzdGHeLp1lq9DtXYYi7yS1Y95GoM9tzrt9x
+	kXp72hlVTi66AdLXh7+F9+HRsyr/dRDwIvGfYifk/a17BarV0cBRBmTPTLpMqgRVbQK2jEHvha3Vi
+	SJFNMARxmgcWhz6RkRGvWFFX2ok4kkybXPe/KWJwIOuielQTSzvxd/7gqjbQyBbHDyDLQd4xBPMHO
+	Xmx8CoMMSrIhm6zs3nJrSOHOYqkHoBvggT3ewZETMLNgl+TMrW+qIiEUECJ9tCVRfYvsEf8rT/rLq
+	PCfvkdCuB9ibKb6TXvRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdSdb-005dmy-24;
-	Tue, 05 Sep 2023 09:46:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdSdX-005dmQ-2A;
-	Tue, 05 Sep 2023 09:46:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 160B211FB;
-	Tue,  5 Sep 2023 02:46:50 -0700 (PDT)
-Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8FD53F793;
-	Tue,  5 Sep 2023 02:46:10 -0700 (PDT)
-Date: Tue, 5 Sep 2023 10:46:08 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec
- <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
- linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH] phy: sun4i-usb: Fix a W=1 compilation failure
-Message-ID: <20230905104608.74490e60@donnerap.manchester.arm.com>
-In-Reply-To: <858ca657-3845-f65e-b9d8-9d7700e4a069@wanadoo.fr>
-References: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
-	<20230904005855.658819b3@slackpad.lan>
-	<858ca657-3845-f65e-b9d8-9d7700e4a069@wanadoo.fr>
-Organization: ARM
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1qdTDQ-005ikd-3B;
+	Tue, 05 Sep 2023 10:23:24 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qdTDN-005igS-15
+	for linux-phy@lists.infradead.org;
+	Tue, 05 Sep 2023 10:23:23 +0000
+Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=[IPv6:::1])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <l.stach@pengutronix.de>)
+	id 1qdTDC-0003Fr-7M; Tue, 05 Sep 2023 12:23:10 +0200
+Message-ID: <a04d38095bb7d904f01b6ea60f1cb77971a9314f.camel@pengutronix.de>
+Subject: Re: [PATCH v2 2/2] phy: freescale: add Samsung HDMI PHY
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>,  Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Pengutronix Kernel Team
+ <kernel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ patchwork-lst@pengutronix.de, Inki Dae <inki.dae@samsung.com>, Seung-Woo
+ Kim <sw0312.kim@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
+ Sandor Yu <Sandor.yu@nxp.com>
+Date: Tue, 05 Sep 2023 12:23:08 +0200
+In-Reply-To: <Y8Ga1BTaqoTMRA0I@matsya>
+References: <20221215201100.2897501-1-l.stach@pengutronix.de>
+	 <20221215201100.2897501-2-l.stach@pengutronix.de> <Y8Ga1BTaqoTMRA0I@matsya>
+User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_024619_807323_EE362E88 
-X-CRM114-Status: GOOD (  30.47  )
+X-CRM114-CacheID: sfid-20230905_032321_549529_C703EBB4 
+X-CRM114-Status: GOOD (  33.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,69 +68,282 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCA0IFNlcCAyMDIzIDE5OjU3OjMzICswMjAwCkNocmlzdG9waGUgSkFJTExFVCA8Y2hy
-aXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI+IHdyb3RlOgoKSGksCgo+IExlIDA0LzA5LzIwMjMg
-w6AgMDE6NTgsIEFuZHJlIFByenl3YXJhIGEgw6ljcml0wqA6Cj4gPiBPbiBTdW4sICAzIFNlcCAy
-MDIzIDEyOjExOjA2ICswMjAwCj4gPiBDaHJpc3RvcGhlIEpBSUxMRVQgPGNocmlzdG9waGUuamFp
-bGxldEB3YW5hZG9vLmZyPiB3cm90ZToKPiA+ICAgCj4gPj4gV2l0aCBnY2MgMTIuMy4wLCB3aGVu
-IHRoaXMgZmlsZSBpcyBidWlsdCwgd2UgZ2V0IGVycm9ycyBzdWNoIGFzOgo+ID4+Cj4gPj4gZHJp
-dmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYzogSW4gZnVuY3Rpb24g4oCYc3VuNGlf
-dXNiX3BoeV9wcm9iZeKAmToKPiA+PiBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVz
-Yi5jOjc5MDo1MjogZXJyb3I6IOKAmF92YnVz4oCZIGRpcmVjdGl2ZSBvdXRwdXQgbWF5IGJlIHRy
-dW5jYXRlZCB3cml0aW5nIDUgYnl0ZXMgaW50byBhIHJlZ2lvbiBvZiBzaXplIGJldHdlZW4gMiBh
-bmQgMTIgWy1XZXJyb3I9Zm9ybWF0LXRydW5jYXRpb249XQo+ID4+ICAgIDc5MCB8ICAgICAgICAg
-ICAgICAgICBzbnByaW50ZihuYW1lLCBzaXplb2YobmFtZSksICJ1c2IlZF92YnVzIiwgaSk7Cj4g
-Pj4gICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgXn5+fn4KPiA+PiBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jOjc5
-MDoxNzogbm90ZTog4oCYc25wcmludGbigJkgb3V0cHV0IGJldHdlZW4gMTAgYW5kIDIwIGJ5dGVz
-IGludG8gYSBkZXN0aW5hdGlvbiBvZiBzaXplIDE2Cj4gPj4gICAgNzkwIHwgICAgICAgICAgICAg
-ICAgIHNucHJpbnRmKG5hbWUsIHNpemVvZihuYW1lKSwgInVzYiVkX3ZidXMiLCBpKTsKPiA+PiAg
-ICAgICAgfCAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+Cj4gPj4KPiA+PiBCZWNhdXNlIG9mIHRoZSBwb3NzaWJsZSB2YWx1ZSBvZiAn
-aScsIHRoaXMgY2FuJ3QgYmUgYW4gaXNzdWUgaW4gcmVhbCB3b3JsZCAgCj4gPiAKPiA+IFdvdWxk
-IHVzaW5nICJ1OCBpOyIgaGVscD8gQWZ0ZXIgYWxsIGN1cnJlbnRseSB0aGVyZSBhcmUgb25seSA0
-IFBIWXMKPiA+IG1heCwgYW5kIGluIGdlbmVyYWwgdGhpcyBpc24ndCBleHBlY3RlZCB0byBiZSBt
-b3JlIHRoYW4gYSAiaGFuZGZ1bCIsIHNvCj4gPiA4IGJpdHMgc2hvdWxkIGJlIHBsZW50eS4gQW4g
-dW5zaWduZWQgaXMgYmV0dGVyIGFueXdheS4KPiA+IEl0IGxlYXZlcyBhIGJpdCBvZiBhIGJpdHRl
-ciB0YXN0ZSwgdGhvdWdoLCBhcyB3ZSBzaG91bGRuJ3QgZG8gdGhpcyBraW5kCj4gPiB0eXBlIHR3
-ZWFraW5nLCBlc3BlY2lhbGx5IG5vdCB0byB3b3JrIGFyb3VuZCB0aGUgY29tcGlsZXIgdHJ5aW5n
-IHRvIGJlCj4gPiBjbGV2ZXIsIGJ1dCB0aGVuIG5vdCBzZWVpbmcgdGhlIHdob2xlIHBpY3R1cmUg
-KHRoYXQgImkiIGlzIGJvdW5kZWQgYnkKPiA+IGNvbXBpbGUgdGltZSBjb25zdGFudHMgbm90IGV4
-Y2VlZGluZyAiNCIpLiAgCj4gCj4gZGF0YS0+Y2ZnLT5udW1fcGh5cyBpcyBhbHNvIGFuIGludCwg
-YW5kIGhhdmluZyAnaScgYXMgYW4gY2hhciBpcyByZWFsbHkgCj4gdW51c3VhbC4KClNvICdpJyBp
-cyBqdXN0IHVzZWQgYXMgdGhlIHBoeSBpbmRleCBpcyB0aGlzIGxvb3AsIG5vdGhpbmcgZWxzZSBp
-biB0aGUKZnVuY3Rpb24gdXNlcyB0aGF0LiBTbyB3ZSBjb3VsZCBqdXN0IHJlbmFtZSBpdCB0byAi
-aWR4IiBvciBldmVuICJwaHlfaWR4IiwKdGhlbiB0aGUgdTggbWlnaHQgbG9vayBsZXNzIG9kZD8K
-Cj4gU28sIGlmIGNoYW5naW5nIHRoZSBzaXplIG9mIG5hbWUgKG9ubHkgdG8gd2FzdGUgc29tZSBz
-dGFjayBpbiBvcmRlciB0byAKPiBzaWxlbmNlIGEgY29tcGlsZXIgd2FybmluZykgaXMgbm90IGFj
-Y2VwdGFibGUsIEkgdGhpbmsgdGhhdCB0aGUgYmVzdCBpcyAKPiB0byBsZWF2ZSB0aGluZ3MgYXMt
-aXMuCgpCdXQgdGhhdCdzIG5vdCByZWFsbHkgYW4gb3B0aW9uLCBpcyBpdD8gU2luY2Ugd2Ugbm9y
-bWFsbHkgZG9uJ3QgdG9sZXJhdGUKd2FybmluZ3M/CgpBbmQgSSBhbSBub3QgYWdhaW5zdCBpbmNy
-ZWFzaW5nIHRoZSBzaXplLCB0aGF0J3MgcHJvYmFibHkgaW5kZWVkIHRoZQpzaW1wbGVzdCBzb2x1
-dGlvbiwgYW5kIGdpdmVuIHRoYXQgaXQncyBpbmRlZWQgb24gdGhlIHN0YWNrIHNob3VsZG4ndAph
-ZmZlY3QgbXVjaCBlbHNlLiBJIGp1c3Qgd2FudGVkIHRvIHN1Z2dlc3QgYW4gYWx0ZXJuYXRpdmUs
-IHNpbmNlIHRoZQppbmNyZWFzZWQgYnVmZmVyIHNpemUgaXMgbm90IG5lY2Vzc2FyeS4KCkNoZWVy
-cywKQW5kcmUKCj4gPiAKPiA+IENoZWVycywKPiA+IEFuZHJlCj4gPiAgIAo+ID4+IGFwcGxpY2F0
-aW9uLCBidXQgaW4gb3JkZXIgdG8gaGF2ZSAibWFrZSBXPTEiIHdvcmsgY29ycmVjdGx5LCBnaXZl
-IG1vcmUKPiA+PiBzcGFjZSBmb3IgJ25hbWUnLgo+ID4+Cj4gPj4gU2lnbmVkLW9mZi1ieTogQ2hy
-aXN0b3BoZSBKQUlMTEVUIDxjaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5mcj4KPiA+PiAtLS0K
-PiA+PiAgIGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMgfCAyICstCj4gPj4g
-ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPiA+Pgo+ID4+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jIGIvZHJp
-dmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+ID4+IGluZGV4IGVjNTUxNDY0ZGQ0
-Zi4uZTUzYTlhOTMxN2JjIDEwMDY0NAo+ID4+IC0tLSBhL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9w
-aHktc3VuNGktdXNiLmMKPiA+PiArKysgYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRp
-LXVzYi5jCj4gPj4gQEAgLTc4Miw3ICs3ODIsNyBAQCBzdGF0aWMgaW50IHN1bjRpX3VzYl9waHlf
-cHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+PiAgIAo+ID4+ICAgCWZvciAo
-aSA9IDA7IGkgPCBkYXRhLT5jZmctPm51bV9waHlzOyBpKyspIHsKPiA+PiAgIAkJc3RydWN0IHN1
-bjRpX3VzYl9waHkgKnBoeSA9IGRhdGEtPnBoeXMgKyBpOwo+ID4+IC0JCWNoYXIgbmFtZVsxNl07
-Cj4gPj4gKwkJY2hhciBuYW1lWzMyXTsKPiA+PiAgIAo+ID4+ICAgCQlpZiAoZGF0YS0+Y2ZnLT5t
-aXNzaW5nX3BoeXMgJiBCSVQoaSkpCj4gPj4gICAJCQljb250aW51ZTsgIAo+ID4gCj4gPiAgIAo+
-IAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+Hi Vinod,
+
+Am Freitag, dem 13.01.2023 um 23:24 +0530 schrieb Vinod Koul:
+> On 15-12-22, 21:11, Lucas Stach wrote:
+> > This adds the driver for the Samsung HDMI PHY found on the
+> > i.MX8MP SoC. Based on downstream implementation from
+> > Sandor Yu <Sandor.yu@nxp.com>.
+> > 
+> > Co-developed-by: Marco Felsch <m.felsch@pengutronix.de>
+> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> > ---
+> > v2: use DEFINE_RUNTIME_DEV_PM_OPS
+> > ---
+> >  drivers/phy/freescale/Kconfig                |   6 +
+> >  drivers/phy/freescale/Makefile               |   1 +
+> >  drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 694 +++++++++++++++++++
+> >  3 files changed, 701 insertions(+)
+> >  create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> > 
+> > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
+> > index 853958fb2c06..5c2b73042dfc 100644
+> > --- a/drivers/phy/freescale/Kconfig
+> > +++ b/drivers/phy/freescale/Kconfig
+> > @@ -35,6 +35,12 @@ config PHY_FSL_IMX8M_PCIE
+> >  	  Enable this to add support for the PCIE PHY as found on
+> >  	  i.MX8M family of SOCs.
+> >  
+> > +config PHY_FSL_SAMSUNG_HDMI_PHY
+> > +	tristate "Samsung HDMI PHY support"
+> > +	depends on OF && HAS_IOMEM
+> > +	help
+> > +	  Enable this to add support for the Samsung HDMI PHY in i.MX8MP.
+> > +
+> >  endif
+> >  
+> >  config PHY_FSL_LYNX_28G
+> 
+> this new should come after this one...
+> 
+> > diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
+> > index cedb328bc4d2..c4386bfdb853 100644
+> > --- a/drivers/phy/freescale/Makefile
+> > +++ b/drivers/phy/freescale/Makefile
+> > @@ -4,3 +4,4 @@ obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
+> >  obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
+> >  obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
+> >  obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
+> > +obj-$(CONFIG_PHY_FSL_SAMSUNG_HDMI_PHY)	+= phy-fsl-samsung-hdmi.o
+> > diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> > new file mode 100644
+> > index 000000000000..185244dcb810
+> > --- /dev/null
+> > +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> > @@ -0,0 +1,694 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +/*
+> > + * Copyright 2020 NXP
+> > + * Copyright 2022 Pengutronix, Lucas Stach <kernel@pengutronix.de>
+> > + */
+> > +
+> > +#include <linux/clk-provider.h>
+> > +#include <linux/clk.h>
+> > +#include <linux/delay.h>
+> > +#include <linux/io.h>
+> > +#include <linux/iopoll.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of_device.h>
+> > +#include <linux/of.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/pm_runtime.h>
+> > +
+> > +#define PHY_REG_00		0x00
+> > +#define PHY_REG_01		0x04
+> > +#define PHY_REG_02		0x08
+> > +#define PHY_REG_08		0x20
+> > +#define PHY_REG_09		0x24
+> > +#define PHY_REG_10		0x28
+> > +#define PHY_REG_11		0x2c
+> 
+> No names for regs?
+
+Unfortunately yes. While the reference manual documents the bitfields
+in the regs, it doesn't give them any descriptive names, but just those
+consecutive numbers. I don't think it would be a good idea to deviate
+from the reference manual here.
+
+> 
+> > +
+> > +#define PHY_REG_12		0x30
+> > +#define  REG12_FLD_CK_DIV(x)	(((x) & 0x3) << 4)
+> 
+> GENMASK() pls
+
+Okay.
+
+> 
+> > +#define  REG12_TMDS_CLK		0x0
+> > +#define  REG12_TMDS_CLK_DIV2	0x1
+> > +#define  REG12_TMDS_CLK_DIV4	0x2
+> > +#define  REG12_TMDS_CLK_DIV8	0x3
+> > +
+> > +#define PHY_REG_13		0x34
+> > +#define  REG13_FLD_TG_CODE_LOW(x) (x & 0xff)
+> > +
+> > +#define PHY_REG_14		0x38
+> > +#define  REG14_FLD_TOL(x)	((x & 0xf) << 4)
+> > +#define  REG14_FLD_RP_CODE(x)	((x & 0x3) << 1)
+> > +#define  REG14_FLD_TG_CODE_HIGH(x) ((x >> 8) & 0x1)
+> 
+> FIELD_GET|PREP please
+
+Okay.
+> 
+> > +
+> > +#define PHY_REG_15		0x3c
+> > +#define PHY_REG_16		0x40
+> > +#define PHY_REG_17		0x44
+> > +#define PHY_REG_18		0x48
+> > +#define PHY_REG_19		0x4c
+> > +#define PHY_REG_20		0x50
+> > +
+> > +#define PHY_REG_21		0x54
+> > +#define  REG21_SEL_TX_CK_INV	BIT(7)
+> > +#define  REG21_PMS_S(x)		(x & 0xf)
+> > +
+> > +#define PHY_REG_22		0x58
+> > +#define PHY_REG_23		0x5c
+> > +#define PHY_REG_24		0x60
+> > +#define PHY_REG_25		0x64
+> > +#define PHY_REG_26		0x68
+> > +#define PHY_REG_27		0x6c
+> > +#define PHY_REG_28		0x70
+> > +#define PHY_REG_29		0x74
+> > +#define PHY_REG_30		0x78
+> > +#define PHY_REG_31		0x7c
+> > +#define PHY_REG_32		0x80
+> > +
+> > +#define PHY_REG_33		0x84
+> > +#define  REG33_MODE_SET_DONE	BIT(7)
+> > +#define  REG33_FIX_DA		BIT(1)
+> > +
+> > +#define PHY_REG_34		0x88
+> > +#define  REG34_PHY_READY	BIT(7)
+> > +#define  REG34_PLL_LOCK		BIT(6)
+> > +#define  REG34_PHY_CLK_READY	BIT(5)
+> > +
+> > +#define PHY_REG_35		0x8c
+> > +#define PHY_REG_36		0x90
+> > +#define PHY_REG_37		0x94
+> > +#define PHY_REG_38		0x98
+> > +#define PHY_REG_39		0x9c
+> > +#define PHY_REG_40		0xa0
+> > +#define PHY_REG_41		0xa4
+> > +#define PHY_REG_42		0xa8
+> > +#define PHY_REG_43		0xac
+> > +#define PHY_REG_44		0xb0
+> > +#define PHY_REG_45		0xb4
+> > +#define PHY_REG_46		0xb8
+> > +#define PHY_REG_47		0xbc
+> > +
+> > +#define PHY_PLL_DIV_REGS_NUM 6
+> > +
+> > +struct phy_config {
+> > +	u32	pixclk;
+> > +	u8	pll_div_regs[PHY_PLL_DIV_REGS_NUM];
+> > +};
+> > +
+> > +const struct phy_config phy_pll_cfg[] = {
+> > +	{
+> > +		.pixclk = 22250000,
+> > +		.pll_div_regs = { 0x4B, 0xF1, 0x89, 0x88, 0x80, 0x40 },
+> 
+> small case for hex numbers pls
+
+Ack.
+
+> 
+> > +	}, {
+> > +		.pixclk = 23750000,
+> > +		.pll_div_regs = { 0x50, 0xF1, 0x86, 0x85, 0x80, 0x40 },
+> > +	},{
+> > 
+[...]
+> > +		.pixclk = 288000000,
+> > +		.pll_div_regs = { 0x78, 0x10, 0x00, 0x00, 0x80, 0x00 },
+> > +	}, {
+> > +		.pixclk = 297000000,
+> > +		.pll_div_regs = { 0x7B, 0x15, 0x84, 0x03, 0x90, 0x45 },
+> > +	},
+> 
+> lots of magic numbers!
+
+Yes. Those are mostly tuning values for the PLL and I don't know if
+there is any computational way to come up with those numbers, so we're
+just using the values validated in downstream.
+
+> 
+> > +};
+> > +
+> > +struct reg_settings {
+> > +	u8 reg;
+> > +	u8 val;
+> > +};
+> > +
+> > +const struct reg_settings common_phy_cfg[] = {
+> > +	{ PHY_REG_00, 0x00 }, { PHY_REG_01, 0xD1 },
+> > +	{ PHY_REG_08, 0x4f }, { PHY_REG_09, 0x30 },
+> > +	{ PHY_REG_10, 0x33 }, { PHY_REG_11, 0x65 },
+> > +	/* REG12 pixclk specific */
+> > +	/* REG13 pixclk specific */
+> > +	/* REG14 pixclk specific */
+> > +	{ PHY_REG_15, 0x80 }, { PHY_REG_16, 0x6C },
+> > +	{ PHY_REG_17, 0xF2 }, { PHY_REG_18, 0x67 },
+> > +	{ PHY_REG_19, 0x00 }, { PHY_REG_20, 0x10 },
+> > +	/* REG21 pixclk specific */
+> > +	{ PHY_REG_22, 0x30 }, { PHY_REG_23, 0x32 },
+> > +	{ PHY_REG_24, 0x60 }, { PHY_REG_25, 0x8F },
+> > +	{ PHY_REG_26, 0x00 }, { PHY_REG_27, 0x00 },
+> > +	{ PHY_REG_28, 0x08 }, { PHY_REG_29, 0x00 },
+> > +	{ PHY_REG_30, 0x00 }, { PHY_REG_31, 0x00 },
+> > +	{ PHY_REG_32, 0x00 }, { PHY_REG_33, 0x80 },
+> > +	{ PHY_REG_34, 0x00 }, { PHY_REG_35, 0x00 },
+> > +	{ PHY_REG_36, 0x00 }, { PHY_REG_37, 0x00 },
+> > +	{ PHY_REG_38, 0x00 }, { PHY_REG_39, 0x00 },
+> > +	{ PHY_REG_40, 0x00 }, { PHY_REG_41, 0xE0 },
+> > +	{ PHY_REG_42, 0x83 }, { PHY_REG_43, 0x0F },
+> > +	{ PHY_REG_44, 0x3E }, { PHY_REG_45, 0xF8 },
+> > +	{ PHY_REG_46, 0x00 }, { PHY_REG_47, 0x00 }
+> > +};
+> > +
+> > +struct fsl_samsung_hdmi_phy {
+> > +	struct device *dev;
+> > +	void __iomem *regs;
+> > +	struct clk *apbclk;
+> > +	struct clk *refclk;
+> > +
+> > +	/* clk provider */
+> > +	struct clk_hw hw;
+> > +	const struct phy_config *cur_cfg;
+> > +};
+> > +
+> > +static inline struct fsl_samsung_hdmi_phy *
+> > +to_fsl_samsung_hdmi_phy(struct clk_hw *hw)
+> > +{
+> > +	return container_of(hw, struct fsl_samsung_hdmi_phy, hw);
+> > +}
+> > +
+> > +static void
+> > +fsl_samsung_hdmi_phy_configure_pixclk(struct fsl_samsung_hdmi_phy *phy,
+> > +				      const struct phy_config *cfg)
+> > +{
+> > +	u8 div;
+> > +
+> > +	switch (cfg->pixclk) {
+> > +	case  22250000 ...  33750000:	div = 0xf; break;
+> > +	case  35000000 ...  40000000:	div = 0xb; break;
+> > +	case  43200000 ...  47500000:	div = 0x9; break;
+> > +	case  50349650 ...  63500000:	div = 0x7; break;
+> > +	case  67500000 ...  90000000:	div = 0x5; break;
+> > +	case  94000000 ... 148500000:	div = 0x3; break;
+> > +	case 154000000 ... 297000000:	div = 0x1; break;
+> 
+> lets do proper linux style please
+
+Do you mean moving the statements to separate lines?
+
+Regards,
+Lucas
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
