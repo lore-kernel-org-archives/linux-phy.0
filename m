@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CF4DCA0FF8
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 10:30:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF8CCA0FF3
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 10:30:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2ulZZEWXoLRIuswcebQHoen9VDOTLDIac8dwiW9F7Sk=; b=Ha7s6N6CY3nbZ1
-	LIqqNVxuA343SAde2KDABRfmNlzw25l1gWoayfoe7qx+e06f2FFqSfRODVJjlb2cSc4GoMSl1xCm/
-	u3c5Ax/6fM1Cka1NpNTM6Tf6qjx+Zsvx7l4dscL6fz0PV3BbsLiR93iDyHON2y9HGj50A26dM8do+
-	bVxoX+LafkPiusqbQIsTbqvT3eNkqAb7TvCaZ+ozM+y0tXc7u7nWMHwKdi56M+IW4NhwLZArXOIbP
-	hJ8bmn5zINz8WGjdpjbqmkgXb3yHc7UyF7Pqu9QsBJBtMZzDk6wOmlxaPR0jZtXGgy91fBa7fzf6M
-	r9WTqkYmDVj4ke4d3xgQ==;
+	List-Owner; bh=4Ba6hGhE/ns6WsfQRL2gJacvPxUSJOmLUKvzQAX74QY=; b=YwlCez7vJIzGrP
+	WFGRdusz7fkx6xwneYZVhRh9lgoFxVlJy+bmF3E/8jkha99nMsP3izVoGbU2Z6MELJV7pNcvpgyyK
+	tIULfNUt2EO4B+ICZQwfJML06FlOyocgBFP5mVXJvx5LQLtyYT61Uwr3IMtmvucnGoPpB9ZG3MM6W
+	8+ooUjVoq9UGNxhYOm+eqK8DsBiYpW1tgPpgIDoLX7WxKCj1FfBccnkUurXBZyUwkgrtKfdFmF8Ym
+	GvpPn+XUPbWA5I/OuV0obmW7nqLjAzDhmmmZyHbTLyDNQMl+SkGvX69aTmvv/S78WYxITaHuFU7LJ
+	CSqGzY9/gJtOQM/SM9lA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdTKk-005n1N-2q;
+	id 1qdTKk-005n0b-0p;
 	Tue, 05 Sep 2023 10:30:58 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdTKg-005mtc-29
+	id 1qdTKg-005mtT-29
 	for linux-phy@lists.infradead.org;
 	Tue, 05 Sep 2023 10:30:57 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3859Et2L003539;
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3859GuGc011892;
 	Tue, 5 Sep 2023 10:30:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=O8bqNDEzfpH4NqWhYgOAWCtFxsoIdnw/itMSNQBs1MA=;
- b=U2JtNMQ5rhOhWY0gIPrFTDtbBb2BtidO91HuZg3Mfsc1Jm6HZzYQGvJoar368pd+Eamq
- QkezLURMW6z8+5s7OydejY0MocFOU8A+FffkOfTsqyO4YhnM7e18KURbMhgOnxsPAtnm
- nQoZykbyjYoZkBna/QcaLD/TPT7CKqWiJ5gxYWuV/pbPekBhEQYPCPHIFFxF2oJiRHff
- 6MKLvNKm5rv8RtO6Esnk4cX2LcAm+x90h0CNeW+wBthVGt6lu6N5MJlU715h/PnUsm0j
- T/drzFTXGi5n09Hl9teRXtWHvBqhyZJ2Zcev2hl3StI7gIN8naiuG4QEqcKelS5LK1sa +g== 
+ bh=SQF5C2NJfh/co1MCDc5C0RAmx2CmQWbDHC3NvPPqHGc=;
+ b=QE1tTHz68xn492X2wOz+q74BSgMoquIU/f/3J0UEO7+h4URBeSH5bS4PzOEskKq/epGO
+ +m5i7KXxa6TQa6txxCwG5riwCb354NyU1oJ+5lnVB7CLQU62KRwwAHie3AnrCoAk2xIq
+ VzlPEwjTaDdFF6F3sui7s4vANpsCKABF3AhhGxNl4Jdny5RkX0k8346vBvAlC+KVEbsp
+ HmMuHevvuZoBwGj4UvTjZzDHjGCFuH58U+y1g8lVpQzDgB9mbx1n8yOz9lfjCG7i9Opi
+ QRDlKdIQpTGk1f44MPSFlgUOf/MJDZd3lD3hnC9bWEcjcq1R4JPsp/iSSOKn77VKodz1 Vw== 
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3swpr6h333-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sx0t7r7k1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Tue, 05 Sep 2023 10:30:44 +0000
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 385AUfSd018120;
-	Tue, 5 Sep 2023 10:30:41 GMT
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 385AUehk018088;
+	Tue, 5 Sep 2023 10:30:40 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3sux4km16w-1;
-	Tue, 05 Sep 2023 10:30:41 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3sux4km16f-1;
+	Tue, 05 Sep 2023 10:30:40 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 385AUeYL018076;
-	Tue, 5 Sep 2023 10:30:41 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 385AUeYJ018076;
+	Tue, 5 Sep 2023 10:30:40 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 385AUeMn018101;
-	Tue, 05 Sep 2023 10:30:41 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 385AUdoe018072;
+	Tue, 05 Sep 2023 10:30:40 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
-	id 344F41D24; Tue,  5 Sep 2023 16:00:40 +0530 (+0530)
+	id 868F21D1B; Tue,  5 Sep 2023 16:00:39 +0530 (+0530)
 From: Rohit Agarwal <quic_rohiagar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
         vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
@@ -66,9 +66,9 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         linux-usb@vger.kernel.org, kernel@quicinc.com,
         Rohit Agarwal <quic_rohiagar@quicinc.com>
-Subject: [PATCH v2 3/5] dt-bindings: usb: qcom,dwc3: Fix SDX65 clocks
-Date: Tue,  5 Sep 2023 16:00:36 +0530
-Message-Id: <1693909838-6682-4-git-send-email-quic_rohiagar@quicinc.com>
+Subject: [PATCH v2 1/5] dt-bindings: phy: qcom,snps-eusb2-phy: Add compatible for SDX75
+Date: Tue,  5 Sep 2023 16:00:34 +0530
+Message-Id: <1693909838-6682-2-git-send-email-quic_rohiagar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1693909838-6682-1-git-send-email-quic_rohiagar@quicinc.com>
 References: <1693909838-6682-1-git-send-email-quic_rohiagar@quicinc.com>
@@ -76,19 +76,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 6HxTXBILnhRdRUf1wkKBBwYCM8dVakWF
-X-Proofpoint-GUID: 6HxTXBILnhRdRUf1wkKBBwYCM8dVakWF
+X-Proofpoint-GUID: fciXxZn2Zdpyg3v-OwE2HCwmBMMRfxT_
+X-Proofpoint-ORIG-GUID: fciXxZn2Zdpyg3v-OwE2HCwmBMMRfxT_
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
  definitions=2023-09-05_08,2023-08-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
- lowpriorityscore=0 malwarescore=0 suspectscore=0 bulkscore=0
- impostorscore=0 mlxlogscore=564 clxscore=1015 adultscore=0
- priorityscore=1501 mlxscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2308100000 definitions=main-2309050093
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 priorityscore=1501
+ bulkscore=0 phishscore=0 malwarescore=0 suspectscore=0 adultscore=0
+ clxscore=1015 impostorscore=0 mlxlogscore=771 lowpriorityscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309050093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_033054_881841_8652048F 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20230905_033054_874308_F197F5E9 
+X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,25 +106,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SDX65 has 5 clocks so mention in the bindings.
+Add a dt-bindings compatible string for the SDX75 SoC that
+uses Synopsis eUSB2 PHY.
 
 Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index 6759105..018117b 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -180,6 +180,7 @@ allOf:
-               - qcom,sdm670-dwc3
-               - qcom,sdm845-dwc3
-               - qcom,sdx55-dwc3
-+              - qcom,sdx65-dwc3
-               - qcom,sm6350-dwc3
-     then:
-       properties:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+index c53bab1..c958286 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+@@ -14,7 +14,12 @@ description:
+ 
+ properties:
+   compatible:
+-    const: qcom,sm8550-snps-eusb2-phy
++    oneOf:
++      - items:
++          - enum:
++              - qcom,sdx75-snps-eusb2-phy
++          - const: qcom,sm8550-snps-eusb2-phy
++      - const: qcom,sm8550-snps-eusb2-phy
+ 
+   reg:
+     maxItems: 1
 -- 
 2.7.4
 
