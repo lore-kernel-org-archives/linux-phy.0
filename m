@@ -4,55 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1922C83F2C
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 14:13:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F08E5C83F2C
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 16:38:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IBWqgr01VwwP/VRSw9tEGS5nBut5hF2eRPOAwYHsWNs=; b=j2bIcSl8iqdI1W
-	z7ULoggqypAulpmFuLgmDp9m6SBJK7yYDZ/FJd9sEr+N30PjVTST+gpxRwhqrtj9mHGW/cDKn6Rfp
-	t5YWQfZYiXcFn9+UTgSj5z95N9p8VA6QoYZkw2dxgJbMikGPSkdRj1hBCNR9Mwf4SIgZVLDjrkoua
-	KOD9BOBMmjQpTt0BDsZOA/bTPHi34rsWc9h/7kZClmGFcZ0NxX2dZcp7FnHAHJuE6+26fv3yvKpwW
-	+TdBhSW5AOAHFzY4+8hMvt1pgo+SddbX0bWbeYGcqr7jV6ZZf3FX4bK5wN3ahXGbd8V6teLtsLcWv
-	ZkAfi4etJucKG04zFdTg==;
+	List-Owner; bh=rY7e42a7kVWuqdWbDQM7Lr8OoUC6/1+dVkkyAmtbcmo=; b=Q0Kwizv2OxWldR
+	WlOVzkhAuITg2bjLLdgxGi0FUQszFcWi0Q6nyODr0nzkn93npVyu2V4G3efieyMj8Sa5r571qcPY8
+	PYt0ftlpP23yngFoLW6CTIGgyQl1JEBKra3vnbtI2jJRTuek5g/2En/DuNI0lXT33AoMU4UY4IsMi
+	RuZsMHPSx2MRZsyaqk8d5Prszt4QCHlDH1qy8b9sFLCDD+My7dPMsYafs5I7adVnB/9OSrFT6Rtwn
+	sYmUs/Eq5x0XmNak7eNV6HuvglykjDSZVW1zhcpWuCIzCYsR+Qa+ihTt/YOGyf8GFs2t+sysCGPYf
+	33GhH/1ppiZ2N0OzLYlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdWno-0069En-22;
-	Tue, 05 Sep 2023 14:13:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdWnl-0069Dq-18;
-	Tue, 05 Sep 2023 14:13:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 91547143D;
-	Tue,  5 Sep 2023 07:13:43 -0700 (PDT)
-Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E63A23F67D;
-	Tue,  5 Sep 2023 07:13:03 -0700 (PDT)
-Date: Tue, 5 Sep 2023 15:13:01 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Dan Carpenter <dan.carpenter@linaro.org>
-Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Chen-Yu
- Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel
- Holland <samuel@sholland.org>, linux-kernel@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
-Subject: Re: [PATCH] phy: sun4i-usb: Fix a W=1 compilation failure
-Message-ID: <20230905151301.591fa238@donnerap.manchester.arm.com>
-In-Reply-To: <e1a5eea0-33a0-4a58-912a-9548d249ea5d@kadam.mountain>
-References: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
-	<20230904005855.658819b3@slackpad.lan>
-	<e1a5eea0-33a0-4a58-912a-9548d249ea5d@kadam.mountain>
-Organization: ARM
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1qdZ4Q-006Ndx-2F;
+	Tue, 05 Sep 2023 16:38:30 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qdZ4N-006NdJ-1l
+	for linux-phy@lists.infradead.org;
+	Tue, 05 Sep 2023 16:38:28 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id BA483CE1260;
+	Tue,  5 Sep 2023 16:38:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7C59C433C8;
+	Tue,  5 Sep 2023 16:38:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1693931904;
+	bh=j0OeAERZBXx25b1hoC5tIs/7DWLipKf6KPeTFzeNQqM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=n2wjmcDbgPR3HVXF7xu8JC0qwJ7SOArNWbVujiPhOCLzDFlEFdYpQ/BDI0hiXEg9E
+	 mP0uivQRa7BmpqmWaCpmIwc8wPSMRMZEnbnT53FnkYIQ094Yy9mhepJxqFXqY3Zb16
+	 r6jaRvKXlYDDIgKNk4wD8uT1f95MLjWxKuDmmv7w0AOvIs+fXMJA2yy6o48O1EfhaO
+	 MVMZ9d7dykmQkpeHt0sVqJycBmmkm481DcrkOfa+NYOcSpNwrv1Hxgmw38dSn4tgYe
+	 MWD0+wQNRrLkn0B6ljWWY8TkJalLqRjL60tfyCzEzc9GbkaklxcmoGrIlYlrAV4oTW
+	 u+fvGoaSrinNQ==
+Received: (nullmailer pid 3505213 invoked by uid 1000);
+	Tue, 05 Sep 2023 16:38:21 -0000
+Date: Tue, 5 Sep 2023 11:38:21 -0500
+From: Rob Herring <robh@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>, Marijn Suijten <marijn.suijten@somainline.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ magic tuning overrides
+Message-ID: <20230905163821.GA3500273-robh@kernel.org>
+References: <20230830-topic-eusb2_override-v1-0-ab23825385a8@linaro.org>
+ <20230830-topic-eusb2_override-v1-1-ab23825385a8@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230830-topic-eusb2_override-v1-1-ab23825385a8@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_071309_506044_A54981BA 
-X-CRM114-Status: GOOD (  25.01  )
+X-CRM114-CacheID: sfid-20230905_093827_766417_20668FDA 
+X-CRM114-Status: GOOD (  17.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,59 +73,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCA1IFNlcCAyMDIzIDEzOjMyOjA4ICswMzAwCkRhbiBDYXJwZW50ZXIgPGRhbi5jYXJw
-ZW50ZXJAbGluYXJvLm9yZz4gd3JvdGU6CgpIaSwKCj4gT24gTW9uLCBTZXAgMDQsIDIwMjMgYXQg
-MTI6NTg6NTVBTSArMDEwMCwgQW5kcmUgUHJ6eXdhcmEgd3JvdGU6Cj4gPiBPbiBTdW4sICAzIFNl
-cCAyMDIzIDEyOjExOjA2ICswMjAwCj4gPiBDaHJpc3RvcGhlIEpBSUxMRVQgPGNocmlzdG9waGUu
-amFpbGxldEB3YW5hZG9vLmZyPiB3cm90ZToKPiA+ICAgCj4gPiA+IFdpdGggZ2NjIDEyLjMuMCwg
-d2hlbiB0aGlzIGZpbGUgaXMgYnVpbHQsIHdlIGdldCBlcnJvcnMgc3VjaCBhczoKPiA+ID4gCj4g
-PiA+IGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmM6IEluIGZ1bmN0aW9uIOKA
-mHN1bjRpX3VzYl9waHlfcHJvYmXigJk6Cj4gPiA+IGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHkt
-c3VuNGktdXNiLmM6NzkwOjUyOiBlcnJvcjog4oCYX3ZidXPigJkgZGlyZWN0aXZlIG91dHB1dCBt
-YXkgYmUgdHJ1bmNhdGVkIHdyaXRpbmcgNSBieXRlcyBpbnRvIGEgcmVnaW9uIG9mIHNpemUgYmV0
-d2VlbiAyIGFuZCAxMiBbLVdlcnJvcj1mb3JtYXQtdHJ1bmNhdGlvbj1dCj4gPiA+ICAgNzkwIHwg
-ICAgICAgICAgICAgICAgIHNucHJpbnRmKG5hbWUsIHNpemVvZihuYW1lKSwgInVzYiVkX3ZidXMi
-LCBpKTsKPiA+ID4gICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICBefn5+fgo+ID4gPiBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRp
-LXVzYi5jOjc5MDoxNzogbm90ZTog4oCYc25wcmludGbigJkgb3V0cHV0IGJldHdlZW4gMTAgYW5k
-IDIwIGJ5dGVzIGludG8gYSBkZXN0aW5hdGlvbiBvZiBzaXplIDE2Cj4gPiA+ICAgNzkwIHwgICAg
-ICAgICAgICAgICAgIHNucHJpbnRmKG5hbWUsIHNpemVvZihuYW1lKSwgInVzYiVkX3ZidXMiLCBp
-KTsKPiA+ID4gICAgICAgfCAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+Cj4gPiA+IAo+ID4gPiBCZWNhdXNlIG9mIHRoZSBwb3NzaWJs
-ZSB2YWx1ZSBvZiAnaScsIHRoaXMgY2FuJ3QgYmUgYW4gaXNzdWUgaW4gcmVhbCB3b3JsZCAgCj4g
-PiAKPiA+IFdvdWxkIHVzaW5nICJ1OCBpOyIgaGVscD8gQWZ0ZXIgYWxsIGN1cnJlbnRseSB0aGVy
-ZSBhcmUgb25seSA0IFBIWXMKPiA+IG1heCwgYW5kIGluIGdlbmVyYWwgdGhpcyBpc24ndCBleHBl
-Y3RlZCB0byBiZSBtb3JlIHRoYW4gYSAiaGFuZGZ1bCIsIHNvCj4gPiA4IGJpdHMgc2hvdWxkIGJl
-IHBsZW50eS4gQW4gdW5zaWduZWQgaXMgYmV0dGVyIGFueXdheS4gIAo+IAo+IEdlbmVyYWxseSB1
-bnNpZ25lZCB0eXBlcyBhcmUgdHJpY2tpZXIgYW5kIGNhdXNlIGJ1Z3MuICBJJ3ZlIGJsb2dnZWQK
-PiBhYm91dCB0aGlzIGJlZm9yZS4gIFRoZSB0aXRsZSBpcyBhIHByb2JhYmx5IG1vcmUgbmVnYXRp
-dmUgdGhhbiBpdCBzaG91bGQKPiBoYXZlIGJlZW4uCj4gCj4gaHR0cHM6Ly9zdGF0aWN0aGlua2lu
-Zy53b3JkcHJlc3MuY29tLzIwMjIvMDYvMDEvdW5zaWduZWQtaW50LWktaXMtc3R1cGlkLwo+IAo+
-IE15IGJsb2cgbWVudGlvbnMgdTggaS4gIEkgd291bGQgc2F5IGF2b2lkIHRoYXQgdW5sZXNzIGZv
-cmNlZCBieSBhbiBBUEkuCgpGYWlyIGVub3VnaCwgdGhlIHJlYXNvbiBJIHN1Z2dlc3RlZCB1OCB3
-YXMgdG8gYWxsb3cgdXMgdXNpbmcgIiV1IiBpbiB0aGUKc25wcmludGYsIHNvIGFueSBzdGF0aWMg
-Y2hlY2tlciB3b3VsZCBub3QgdHJ5IHRvIGFjY291bnQgZm9yIGEgcG90ZW50aWFsCictJyBjaGFy
-YWN0ZXIuIEJlY2F1c2Ugbm90IGRvaW5nIHNvIHdvdWxkIHNwb2lsIHRoYXQgYXBwcm9hY2ggZm9y
-IHRoZQoidXNiJWRfaHNpY18xMk0iIHN0cmluZyBmdXJ0aGVyIGRvd24uCgo+ID4gSXQgbGVhdmVz
-IGEgYml0IG9mIGEgYml0dGVyIHRhc3RlLCB0aG91Z2gsIGFzIHdlIHNob3VsZG4ndCBkbyB0aGlz
-IGtpbmQKPiA+IHR5cGUgdHdlYWtpbmcsIGVzcGVjaWFsbHkgbm90IHRvIHdvcmsgYXJvdW5kIHRo
-ZSBjb21waWxlciB0cnlpbmcgdG8gYmUKPiA+IGNsZXZlciwgYnV0IHRoZW4gbm90IHNlZWluZyB0
-aGUgd2hvbGUgcGljdHVyZSAodGhhdCAiaSIgaXMgYm91bmRlZCBieQo+ID4gY29tcGlsZSB0aW1l
-IGNvbnN0YW50cyBub3QgZXhjZWVkaW5nICI0IikuICAKPiAKPiBZZWFoLiAgVGhlcmUgaXMgYWx3
-YXlzIHRoZSBvcHRpb24gb2YganVzdCBpZ25vcmluZyB0aGUgc3RhdGljIGNoZWNrZXIKPiB3aGVu
-IGl0IHRlbGxzIHlvdSB0byB3cml0ZSBiYWQgY29kZS4KCkFncmVlZCBvbiB0aGF0LCB0aG91Z2gg
-SSBmaW5kIHRob3NlIGRpYWdub3N0aWNzIHVzZWZ1bCwgYW5kIGp1c3QgaWdub3JpbmcKb3IgbWFz
-a2luZyB0aGVtIG1pZ2h0IGNvbWUgYmFjayBhbmQgaGF1bnQgdXMgbGF0ZXIuCgpTbyBJIHN0aWxs
-IHRoaW5rIHdlIHNob3VsZCBmaXggdGhpcywgb25lIHdheSBvciB0aGUgb3RoZXIuCgpCdXQgSSBm
-ZWVsIHRoaXMgZ29lcyBxdWl0ZSBmYXIgaW50byBiaWtlc2hlZGRpbmcgdGVycml0b3J5LCBzbyB3
-ZSBzaG91bGQKcHJvYmFibHkganVzdCBnbyB3aXRoIG5hbWVbMzJdLgoKQ2hlZXJzLApBbmRyZS4K
-Cj4gWW91IGRvbid0IGhhdmUgdG8gZXZlbiBsb29rIGF0IHRoZSAqd2hvbGUqIHBpY3R1cmUgdG8g
-a25vdyB0aGF0IEdDQyBpcwo+IHdyb25nLiAgVGhlIEJJVChpKSB3b3VsZCBvdmVyZmxvdyBpZiBp
-IGlzIG1vcmUgdGhhbiAzMS4KPiAKPiByZWdhcmRzLAo+IGRhbiBjYXJwZW50ZXIKPiAKCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, Aug 30, 2023 at 04:40:15AM +0200, Konrad Dybcio wrote:
+> The EUSB2 repeater requires some alterations to its init sequence,
+> depending on board design.
+> 
+> Add support for making the necessary changes to that sequence to make USB
+> functional on SM8550-based Xperia 1 V.
+> 
+> They all have lackluster description due to lack of information.
+> 
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+> ---
+>  .../bindings/phy/qcom,snps-eusb2-repeater.yaml      | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> index 029569d5fcf3..83fd6f936bf9 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> @@ -32,6 +32,27 @@ properties:
+>  
+>    vdd3-supply: true
+>  
+> +  qcom,tune-hsdisc-value:
+
+Is '-value' redundant?
+
+'-thres' or '-threshold' would be more descriptive.
+
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: High-Speed disconnect threshold
+> +    minimum: 0
+> +    maximum: 7
+> +    default: 0
+> +
+> +  qcom,tune-iusb2-value:
+
+-amplitude?
+
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: High-Speed trasmit amplitude
+> +    minimum: 0
+> +    maximum: 15
+> +    default: 8
+> +
+> +  qcom,tune-usb2-preem-value:
+
+We have 'hs', 'iusb2', and 'usb2'. Can you be consistent?
+
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: TX pre-emphasis tuning
+> +    minimum: 0
+> +    maximum: 7
+> +    default: 5
+> +
+>  required:
+>    - compatible
+>    - reg
+> 
+> -- 
+> 2.42.0
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
