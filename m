@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3468EEE14D4
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Sep 2023 18:42:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DFABEE14D0
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Sep 2023 19:14:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zwJ0EOCWmKRc9gH5xiPRLHsVTkDSVouS+CJXyuTJiE8=; b=EtkOIbc1SJpH+9
-	H64Lw+2MeUi5YeBS+oMNhCu91heYZ5mMSj0DFanvNC1ZH7/mGXevi5ERX4olixbhXUHzCnJF/tC3M
-	qgHE2n+gzZ8tMjE7BmgLuGU8HYUof+zfCdYawK+1xoReiuZOdIBc70LXZC1s78JqZUTxkqgtPUTA8
-	Xt1HdGCnVWD3o3SfXCR9fnJ02LU6LywiypcH9L6aOs1Gp9QFWpbBxe0iCWhxvRfUGRX5cbDqTknlJ
-	18Zh4w/MHvUz1m+opgXK04vQSBvUY+dJwSSBtxcAkpmVv7aKKOR7UfWFcZ9ottAlJU/IcC2zzpmcj
-	DqIz2J/dv9Fovy3Uqipg==;
+	List-Owner; bh=RMoi4h/htBgrJXiOktEB5x7s1BpnbgvAGpZ0YCJVF5s=; b=u29Y+2oWtDiIl/
+	qTEjUZ/+w+vkDFsnpX/7Sva+8pTTztiTdNDTcyJkae8ZdKhVINQdauoF4qtjpl/fSNw/VbXbs/m6u
+	A3/Ue3bf/u6LW37S0SL9+vp/HAvapaSU06fp7+83ALWSDDp7au7FjOuo++iK8yYaCf0arQNdcWfPc
+	nRWwYHNN9by+xSTRJ+I3IzKko7heI4JZlgvsMK2t9PQDn9WDWu03yXVDeYb67MpFWVcDsCnkp0hGb
+	dhTqTGiBOgDf+a/7YX21RgJigJIrNJvV+k+i8RG6Qw2kpgd75BL9Kq9RAKUL8vgfDrrFk2QRrnXIB
+	OSWYgOTtRLeRHlF3vP6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdxU2-00AjCU-2d;
-	Wed, 06 Sep 2023 18:42:34 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1qdxzJ-00Am0h-2S;
+	Wed, 06 Sep 2023 19:14:53 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdxTw-00AjAD-0k
-	for linux-phy@lists.infradead.org;
-	Wed, 06 Sep 2023 18:42:33 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <l.stach@pengutronix.de>)
-	id 1qdxTh-0005wI-Ba; Wed, 06 Sep 2023 20:42:13 +0200
-Received: from [2a0a:edc0:0:1101:1d::28] (helo=dude02.red.stw.pengutronix.de)
-	by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
-	(envelope-from <l.stach@pengutronix.de>)
-	id 1qdxTf-004U7G-Gz; Wed, 06 Sep 2023 20:42:11 +0200
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	patchwork-lst@pengutronix.de,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Richard Leitner <richard.leitner@skidata.com>
-Subject: [PATCH v3 2/2] phy: freescale: add Samsung HDMI PHY
-Date: Wed,  6 Sep 2023 20:42:11 +0200
-Message-Id: <20230906184211.1857585-2-l.stach@pengutronix.de>
-X-Mailer: git-send-email 2.39.2
+	id 1qdxzG-00Am04-11;
+	Wed, 06 Sep 2023 19:14:51 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id F083ECE1730;
+	Wed,  6 Sep 2023 19:14:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 294B5C433C7;
+	Wed,  6 Sep 2023 19:14:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1694027685;
+	bh=cvWljlbGuz9htPd1kRagzV1CLuk4G4aC/a8YJLwHfek=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=Vd/4UN5S8rx+FxnQ8NBHwQ7683Z6AMcS5b2DEiAMjl6pYnLnmVxpUoEiLq4ynkC19
+	 bPxyz6fiibeOkQ/x8tq50dIA3snDqN0+jJMAl9nPAGHsprRtrXKtyTdRPVaHRZio+e
+	 BFZkCHy088xACsuW7W17yTLu5S9dG93P3y5alTUWvm0hwVS1NNZ0GuvNeyOOFo8Lst
+	 5//3igiQDqIOQPwDu25TpfoxpIaAESzqAtJ+rZ3BntRrUCD3ZuNUy8goseXWsyrB/2
+	 Hnc8erbcRHNYcmAI/p6OmAT7cFG7y1nK8HXo+xxwxyrlyFoAESwE+E3dkaW3NaIdjj
+	 qpUEBkGcx1d9Q==
+Received: (nullmailer pid 163960 invoked by uid 1000);
+	Wed, 06 Sep 2023 19:14:42 -0000
+MIME-Version: 1.0
+From: Rob Herring <robh@kernel.org>
+To: Lucas Stach <l.stach@pengutronix.de>
+Cc: Vinod Koul <vkoul@kernel.org>, linux-arm-kernel@lists.infradead.org, patchwork-lst@pengutronix.de, Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>, linux-phy@lists.infradead.org, Luca Ceresoli <luca.ceresoli@bootlin.com>, devicetree@vger.kernel.org, Richard Leitner <richard.leitner@skidata.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Pengutronix Kernel Team <kernel@pengutronix.de>
 In-Reply-To: <20230906184211.1857585-1-l.stach@pengutronix.de>
 References: <20230906184211.1857585-1-l.stach@pengutronix.de>
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Message-Id: <169402768295.163944.9865349368413012631.robh@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add binding for the i.MX8MP
+ HDMI PHY
+Date: Wed, 06 Sep 2023 14:14:42 -0500
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230906_114228_650669_AE50BE4B 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20230906_121450_537465_8E5FBCEA 
+X-CRM114-Status: GOOD (  14.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,780 +75,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This adds the driver for the Samsung HDMI PHY found on the
-i.MX8MP SoC. Based on downstream implementation from
-Sandor Yu <Sandor.yu@nxp.com>.
 
-Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com> (v2)
-Tested-by: Richard Leitner <richard.leitner@skidata.com> (v2)
-Co-developed-by: Marco Felsch <m.felsch@pengutronix.de>
-Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
----
-v3:
-- use GENMASK/FIELD_PREP
-- lowercase hex values
-- correct coding style
-v2:
-- use DEFINE_RUNTIME_DEV_PM_OPS
----
- drivers/phy/freescale/Kconfig                |   6 +
- drivers/phy/freescale/Makefile               |   1 +
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 717 +++++++++++++++++++
- 3 files changed, 724 insertions(+)
- create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+On Wed, 06 Sep 2023 20:42:10 +0200, Lucas Stach wrote:
+> Add a DT binding for the HDMI PHY found on the i.MX8MP SoC.
+> 
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+> v2:
+> - drop minItems from clocks
+> - add description
+> ---
+>  .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     | 66 +++++++++++++++++++
+>  1 file changed, 66 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
+> 
 
-diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-index 853958fb2c06..5c2b73042dfc 100644
---- a/drivers/phy/freescale/Kconfig
-+++ b/drivers/phy/freescale/Kconfig
-@@ -35,6 +35,12 @@ config PHY_FSL_IMX8M_PCIE
- 	  Enable this to add support for the PCIE PHY as found on
- 	  i.MX8M family of SOCs.
- 
-+config PHY_FSL_SAMSUNG_HDMI_PHY
-+	tristate "Samsung HDMI PHY support"
-+	depends on OF && HAS_IOMEM
-+	help
-+	  Enable this to add support for the Samsung HDMI PHY in i.MX8MP.
-+
- endif
- 
- config PHY_FSL_LYNX_28G
-diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
-index cedb328bc4d2..c4386bfdb853 100644
---- a/drivers/phy/freescale/Makefile
-+++ b/drivers/phy/freescale/Makefile
-@@ -4,3 +4,4 @@ obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
- obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
- obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
- obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
-+obj-$(CONFIG_PHY_FSL_SAMSUNG_HDMI_PHY)	+= phy-fsl-samsung-hdmi.o
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-new file mode 100644
-index 000000000000..ce712cfefd62
---- /dev/null
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -0,0 +1,717 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2020 NXP
-+ * Copyright 2022 Pengutronix, Lucas Stach <kernel@pengutronix.de>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/clk-provider.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+
-+#define PHY_REG_00		0x00
-+#define PHY_REG_01		0x04
-+#define PHY_REG_02		0x08
-+#define PHY_REG_08		0x20
-+#define PHY_REG_09		0x24
-+#define PHY_REG_10		0x28
-+#define PHY_REG_11		0x2c
-+
-+#define PHY_REG_12		0x30
-+#define  REG12_CK_DIV_MASK	GENMASK(5, 4)
-+
-+#define PHY_REG_13		0x34
-+#define  REG13_TG_CODE_LOW_MASK	GENMASK(7, 0)
-+
-+#define PHY_REG_14		0x38
-+#define  REG14_TOL_MASK		GENMASK(7, 4)
-+#define  REG14_RP_CODE_MASK	GENMASK(2, 1)
-+#define  REG14_TG_CODE_HIGH_MASK	GENMASK(0, 0)
-+
-+#define PHY_REG_15		0x3c
-+#define PHY_REG_16		0x40
-+#define PHY_REG_17		0x44
-+#define PHY_REG_18		0x48
-+#define PHY_REG_19		0x4c
-+#define PHY_REG_20		0x50
-+
-+#define PHY_REG_21		0x54
-+#define  REG21_SEL_TX_CK_INV	BIT(7)
-+#define  REG21_PMS_S_MASK	GENMASK(3, 0)
-+
-+#define PHY_REG_22		0x58
-+#define PHY_REG_23		0x5c
-+#define PHY_REG_24		0x60
-+#define PHY_REG_25		0x64
-+#define PHY_REG_26		0x68
-+#define PHY_REG_27		0x6c
-+#define PHY_REG_28		0x70
-+#define PHY_REG_29		0x74
-+#define PHY_REG_30		0x78
-+#define PHY_REG_31		0x7c
-+#define PHY_REG_32		0x80
-+
-+#define PHY_REG_33		0x84
-+#define  REG33_MODE_SET_DONE	BIT(7)
-+#define  REG33_FIX_DA		BIT(1)
-+
-+#define PHY_REG_34		0x88
-+#define  REG34_PHY_READY	BIT(7)
-+#define  REG34_PLL_LOCK		BIT(6)
-+#define  REG34_PHY_CLK_READY	BIT(5)
-+
-+#define PHY_REG_35		0x8c
-+#define PHY_REG_36		0x90
-+#define PHY_REG_37		0x94
-+#define PHY_REG_38		0x98
-+#define PHY_REG_39		0x9c
-+#define PHY_REG_40		0xa0
-+#define PHY_REG_41		0xa4
-+#define PHY_REG_42		0xa8
-+#define PHY_REG_43		0xac
-+#define PHY_REG_44		0xb0
-+#define PHY_REG_45		0xb4
-+#define PHY_REG_46		0xb8
-+#define PHY_REG_47		0xbc
-+
-+#define PHY_PLL_DIV_REGS_NUM 6
-+
-+struct phy_config {
-+	u32	pixclk;
-+	u8	pll_div_regs[PHY_PLL_DIV_REGS_NUM];
-+};
-+
-+const struct phy_config phy_pll_cfg[] = {
-+	{
-+		.pixclk = 22250000,
-+		.pll_div_regs = { 0x4b, 0xf1, 0x89, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 23750000,
-+		.pll_div_regs = { 0x50, 0xf1, 0x86, 0x85, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 24000000,
-+		.pll_div_regs = { 0x50, 0xf0, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 24024000,
-+		.pll_div_regs = { 0x50, 0xf1, 0x99, 0x02, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 25175000,
-+		.pll_div_regs = { 0x54, 0xfc, 0xcc, 0x91, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 25200000,
-+		.pll_div_regs = { 0x54, 0xf0, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 26750000,
-+		.pll_div_regs = { 0x5a, 0xf2, 0x89, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 27000000,
-+		.pll_div_regs = { 0x5a, 0xf0, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 27027000,
-+		.pll_div_regs = { 0x5a, 0xf2, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 29500000,
-+		.pll_div_regs = { 0x62, 0xf4, 0x95, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 30750000,
-+		.pll_div_regs = { 0x66, 0xf4, 0x82, 0x01, 0x88, 0x45 },
-+	}, {
-+		.pixclk = 30888000,
-+		.pll_div_regs = { 0x66, 0xf4, 0x99, 0x18, 0x88, 0x45 },
-+	}, {
-+		.pixclk = 33750000,
-+		.pll_div_regs = { 0x70, 0xf4, 0x82, 0x01, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 35000000,
-+		.pll_div_regs = { 0x58, 0xb8, 0x8b, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 36000000,
-+		.pll_div_regs = { 0x5a, 0xb0, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 36036000,
-+		.pll_div_regs = { 0x5a, 0xb2, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 40000000,
-+		.pll_div_regs = { 0x64, 0xb0, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 43200000,
-+		.pll_div_regs = { 0x5a, 0x90, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 43243200,
-+		.pll_div_regs = { 0x5a, 0x92, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 44500000,
-+		.pll_div_regs = { 0x5c, 0x92, 0x98, 0x11, 0x84, 0x41 },
-+	}, {
-+		.pixclk = 47000000,
-+		.pll_div_regs = { 0x62, 0x94, 0x95, 0x82, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 47500000,
-+		.pll_div_regs = { 0x63, 0x96, 0xa1, 0x82, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 50349650,
-+		.pll_div_regs = { 0x54, 0x7c, 0xc3, 0x8f, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 50400000,
-+		.pll_div_regs = { 0x54, 0x70, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 53250000,
-+		.pll_div_regs = { 0x58, 0x72, 0x84, 0x03, 0x82, 0x41 },
-+	}, {
-+		.pixclk = 53500000,
-+		.pll_div_regs = { 0x5a, 0x72, 0x89, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 54000000,
-+		.pll_div_regs = { 0x5a, 0x70, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 54054000,
-+		.pll_div_regs = { 0x5a, 0x72, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 59000000,
-+		.pll_div_regs = { 0x62, 0x74, 0x95, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 59340659,
-+		.pll_div_regs = { 0x62, 0x74, 0xdb, 0x52, 0x88, 0x47 },
-+	}, {
-+		.pixclk = 59400000,
-+		.pll_div_regs = { 0x63, 0x70, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 61500000,
-+		.pll_div_regs = { 0x66, 0x74, 0x82, 0x01, 0x88, 0x45 },
-+	}, {
-+		.pixclk = 63500000,
-+		.pll_div_regs = { 0x69, 0x74, 0x89, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 67500000,
-+		.pll_div_regs = { 0x54, 0x52, 0x87, 0x03, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 70000000,
-+		.pll_div_regs = { 0x58, 0x58, 0x8b, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 72000000,
-+		.pll_div_regs = { 0x5a, 0x50, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 72072000,
-+		.pll_div_regs = { 0x5a, 0x52, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 74176000,
-+		.pll_div_regs = { 0x5d, 0x58, 0xdb, 0xA2, 0x88, 0x41 },
-+	}, {
-+		.pixclk = 74250000,
-+		.pll_div_regs = { 0x5c, 0x52, 0x90, 0x0d, 0x84, 0x41 },
-+	}, {
-+		.pixclk = 78500000,
-+		.pll_div_regs = { 0x62, 0x54, 0x87, 0x01, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 80000000,
-+		.pll_div_regs = { 0x64, 0x50, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 82000000,
-+		.pll_div_regs = { 0x66, 0x54, 0x82, 0x01, 0x88, 0x45 },
-+	}, {
-+		.pixclk = 82500000,
-+		.pll_div_regs = { 0x67, 0x54, 0x88, 0x01, 0x90, 0x49 },
-+	}, {
-+		.pixclk = 89000000,
-+		.pll_div_regs = { 0x70, 0x54, 0x84, 0x83, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 90000000,
-+		.pll_div_regs = { 0x70, 0x54, 0x82, 0x01, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 94000000,
-+		.pll_div_regs = { 0x4e, 0x32, 0xa7, 0x10, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 95000000,
-+		.pll_div_regs = { 0x50, 0x31, 0x86, 0x85, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 98901099,
-+		.pll_div_regs = { 0x52, 0x3a, 0xdb, 0x4c, 0x88, 0x47 },
-+	}, {
-+		.pixclk = 99000000,
-+		.pll_div_regs = { 0x52, 0x32, 0x82, 0x01, 0x88, 0x47 },
-+	}, {
-+		.pixclk = 100699300,
-+		.pll_div_regs = { 0x54, 0x3c, 0xc3, 0x8f, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 100800000,
-+		.pll_div_regs = { 0x54, 0x30, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 102500000,
-+		.pll_div_regs = { 0x55, 0x32, 0x8c, 0x05, 0x90, 0x4b },
-+	}, {
-+		.pixclk = 104750000,
-+		.pll_div_regs = { 0x57, 0x32, 0x98, 0x07, 0x90, 0x49 },
-+	}, {
-+		.pixclk = 106500000,
-+		.pll_div_regs = { 0x58, 0x32, 0x84, 0x03, 0x82, 0x41 },
-+	}, {
-+		.pixclk = 107000000,
-+		.pll_div_regs = { 0x5a, 0x32, 0x89, 0x88, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 108000000,
-+		.pll_div_regs = { 0x5a, 0x30, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 108108000,
-+		.pll_div_regs = { 0x5a, 0x32, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 118000000,
-+		.pll_div_regs = { 0x62, 0x34, 0x95, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 118800000,
-+		.pll_div_regs = { 0x63, 0x30, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 123000000,
-+		.pll_div_regs = { 0x66, 0x34, 0x82, 0x01, 0x88, 0x45 },
-+	}, {
-+		.pixclk = 127000000,
-+		.pll_div_regs = { 0x69, 0x34, 0x89, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 135000000,
-+		.pll_div_regs = { 0x70, 0x34, 0x82, 0x01, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 135580000,
-+		.pll_div_regs = { 0x71, 0x39, 0xe9, 0x82, 0x9c, 0x5b },
-+	}, {
-+		.pixclk = 137520000,
-+		.pll_div_regs = { 0x72, 0x38, 0x99, 0x10, 0x85, 0x41 },
-+	}, {
-+		.pixclk = 138750000,
-+		.pll_div_regs = { 0x73, 0x35, 0x88, 0x05, 0x90, 0x4d },
-+	}, {
-+		.pixclk = 140000000,
-+		.pll_div_regs = { 0x75, 0x36, 0xa7, 0x90, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 144000000,
-+		.pll_div_regs = { 0x78, 0x30, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 148352000,
-+		.pll_div_regs = { 0x7b, 0x35, 0xdb, 0x39, 0x90, 0x45 },
-+	}, {
-+		.pixclk = 148500000,
-+		.pll_div_regs = { 0x7b, 0x35, 0x84, 0x03, 0x90, 0x45 },
-+	}, {
-+		.pixclk = 154000000,
-+		.pll_div_regs = { 0x40, 0x18, 0x83, 0x01, 0x00, 0x40 },
-+	}, {
-+		.pixclk = 157000000,
-+		.pll_div_regs = { 0x41, 0x11, 0xa7, 0x14, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 160000000,
-+		.pll_div_regs = { 0x42, 0x12, 0xa1, 0x20, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 162000000,
-+		.pll_div_regs = { 0x43, 0x18, 0x8b, 0x08, 0x96, 0x55 },
-+	}, {
-+		.pixclk = 164000000,
-+		.pll_div_regs = { 0x45, 0x11, 0x83, 0x82, 0x90, 0x4b },
-+	}, {
-+		.pixclk = 165000000,
-+		.pll_div_regs = { 0x45, 0x11, 0x84, 0x81, 0x90, 0x4b },
-+	}, {
-+		.pixclk = 180000000,
-+		.pll_div_regs = { 0x4b, 0x10, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 185625000,
-+		.pll_div_regs = { 0x4e, 0x12, 0x9a, 0x95, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 188000000,
-+		.pll_div_regs = { 0x4e, 0x12, 0xa7, 0x10, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 198000000,
-+		.pll_div_regs = { 0x52, 0x12, 0x82, 0x01, 0x88, 0x47 },
-+	}, {
-+		.pixclk = 205000000,
-+		.pll_div_regs = { 0x55, 0x12, 0x8c, 0x05, 0x90, 0x4b },
-+	}, {
-+		.pixclk = 209500000,
-+		.pll_div_regs = { 0x57, 0x12, 0x98, 0x07, 0x90, 0x49 },
-+	}, {
-+		.pixclk = 213000000,
-+		.pll_div_regs = { 0x58, 0x12, 0x84, 0x03, 0x82, 0x41 },
-+	}, {
-+		.pixclk = 216000000,
-+		.pll_div_regs = { 0x5a, 0x10, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 216216000,
-+		.pll_div_regs = { 0x5a, 0x12, 0xfd, 0x0c, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 237600000,
-+		.pll_div_regs = { 0x63, 0x10, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 254000000,
-+		.pll_div_regs = { 0x69, 0x14, 0x89, 0x08, 0x80, 0x40 },
-+	}, {
-+		.pixclk = 277500000,
-+		.pll_div_regs = { 0x73, 0x15, 0x88, 0x05, 0x90, 0x4d },
-+	}, {
-+		.pixclk = 288000000,
-+		.pll_div_regs = { 0x78, 0x10, 0x00, 0x00, 0x80, 0x00 },
-+	}, {
-+		.pixclk = 297000000,
-+		.pll_div_regs = { 0x7b, 0x15, 0x84, 0x03, 0x90, 0x45 },
-+	},
-+};
-+
-+struct reg_settings {
-+	u8 reg;
-+	u8 val;
-+};
-+
-+const struct reg_settings common_phy_cfg[] = {
-+	{ PHY_REG_00, 0x00 }, { PHY_REG_01, 0xd1 },
-+	{ PHY_REG_08, 0x4f }, { PHY_REG_09, 0x30 },
-+	{ PHY_REG_10, 0x33 }, { PHY_REG_11, 0x65 },
-+	/* REG12 pixclk specific */
-+	/* REG13 pixclk specific */
-+	/* REG14 pixclk specific */
-+	{ PHY_REG_15, 0x80 }, { PHY_REG_16, 0x6c },
-+	{ PHY_REG_17, 0xf2 }, { PHY_REG_18, 0x67 },
-+	{ PHY_REG_19, 0x00 }, { PHY_REG_20, 0x10 },
-+	/* REG21 pixclk specific */
-+	{ PHY_REG_22, 0x30 }, { PHY_REG_23, 0x32 },
-+	{ PHY_REG_24, 0x60 }, { PHY_REG_25, 0x8f },
-+	{ PHY_REG_26, 0x00 }, { PHY_REG_27, 0x00 },
-+	{ PHY_REG_28, 0x08 }, { PHY_REG_29, 0x00 },
-+	{ PHY_REG_30, 0x00 }, { PHY_REG_31, 0x00 },
-+	{ PHY_REG_32, 0x00 }, { PHY_REG_33, 0x80 },
-+	{ PHY_REG_34, 0x00 }, { PHY_REG_35, 0x00 },
-+	{ PHY_REG_36, 0x00 }, { PHY_REG_37, 0x00 },
-+	{ PHY_REG_38, 0x00 }, { PHY_REG_39, 0x00 },
-+	{ PHY_REG_40, 0x00 }, { PHY_REG_41, 0xe0 },
-+	{ PHY_REG_42, 0x83 }, { PHY_REG_43, 0x0f },
-+	{ PHY_REG_44, 0x3E }, { PHY_REG_45, 0xf8 },
-+	{ PHY_REG_46, 0x00 }, { PHY_REG_47, 0x00 }
-+};
-+
-+struct fsl_samsung_hdmi_phy {
-+	struct device *dev;
-+	void __iomem *regs;
-+	struct clk *apbclk;
-+	struct clk *refclk;
-+
-+	/* clk provider */
-+	struct clk_hw hw;
-+	const struct phy_config *cur_cfg;
-+};
-+
-+static inline struct fsl_samsung_hdmi_phy *
-+to_fsl_samsung_hdmi_phy(struct clk_hw *hw)
-+{
-+	return container_of(hw, struct fsl_samsung_hdmi_phy, hw);
-+}
-+
-+static void
-+fsl_samsung_hdmi_phy_configure_pixclk(struct fsl_samsung_hdmi_phy *phy,
-+				      const struct phy_config *cfg)
-+{
-+	u8 div;
-+
-+	switch (cfg->pixclk) {
-+	case  22250000 ...  33750000:
-+		div = 0xf;
-+		break;
-+	case  35000000 ...  40000000:
-+		div = 0xb;
-+		break;
-+	case  43200000 ...  47500000:
-+		div = 0x9;
-+		break;
-+	case  50349650 ...  63500000:
-+		div = 0x7;
-+		break;
-+	case  67500000 ...  90000000:
-+		div = 0x5;
-+		break;
-+	case  94000000 ... 148500000:
-+		div = 0x3;
-+		break;
-+	case 154000000 ... 297000000:
-+		div = 0x1;
-+		break;
-+	}
-+
-+	writeb(REG21_SEL_TX_CK_INV | FIELD_PREP(REG21_PMS_S_MASK, div),
-+	       phy->regs + PHY_REG_21);
-+}
-+
-+static void
-+fsl_samsung_hdmi_phy_configure_pll_lock_det(struct fsl_samsung_hdmi_phy *phy,
-+					    const struct phy_config *cfg)
-+{
-+	u32 pclk = cfg->pixclk;
-+	u32 fld_tg_code;
-+	u32 pclk_khz;
-+	u8 div;
-+
-+	switch (cfg->pixclk) {
-+	case  22250000 ...  47500000:
-+		div = 1;
-+		break;
-+	case  50349650 ...  99000000:
-+		div = 2;
-+		break;
-+	case 100699300 ... 198000000:
-+		div = 4;
-+		break;
-+	case 205000000 ... 297000000:
-+		div = 8;
-+		break;
-+	}
-+
-+	writeb(FIELD_PREP(REG12_CK_DIV_MASK, ilog2(div)), phy->regs + PHY_REG_12);
-+
-+	/*
-+	 * Calculation for the frequency lock detector target code (fld_tg_code)
-+	 * is based on reference manual register description of PHY_REG13
-+	 * (13.10.3.1.14.2):
-+	 *   1st) Calculate int_pllclk which is determinded by FLD_CK_DIV
-+	 *   2nd) Increase resolution to avoid rounding issues
-+	 *   3th) Do the div (256 / Freq. of int_pllclk) * 24
-+	 *   4th) Reduce the resolution and always round up since the NXP
-+	 *        settings rounding up always too. TODO: Check if that is
-+	 *        correct.
-+	 */
-+	pclk /= div;
-+	pclk_khz = pclk / 1000;
-+	fld_tg_code = 256 * 1000 * 1000 / pclk_khz * 24;
-+	fld_tg_code = DIV_ROUND_UP(fld_tg_code, 1000);
-+
-+	/* FLD_TOL and FLD_RP_CODE taken from downstream driver */
-+	writeb(FIELD_PREP(REG13_TG_CODE_LOW_MASK, fld_tg_code),
-+	       phy->regs + PHY_REG_13);
-+	writeb(FIELD_PREP(REG14_TOL_MASK, 2) |
-+	       FIELD_PREP(REG14_RP_CODE_MASK, 2) |
-+	       FIELD_PREP(REG14_TG_CODE_HIGH_MASK, fld_tg_code >> 8),
-+	       phy->regs + PHY_REG_14);
-+}
-+
-+static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
-+					  const struct phy_config *cfg)
-+{
-+	int i, ret;
-+	u8 val;
-+
-+	/* HDMI PHY init */
-+	writeb(REG33_FIX_DA, phy->regs + PHY_REG_33);
-+
-+	/* common PHY registers */
-+	for (i = 0; i < ARRAY_SIZE(common_phy_cfg); i++)
-+		writeb(common_phy_cfg[i].val, phy->regs + common_phy_cfg[i].reg);
-+
-+	/* set individual PLL registers PHY_REG2 ... PHY_REG7 */
-+	for (i = 0; i < PHY_PLL_DIV_REGS_NUM; i++)
-+		writeb(cfg->pll_div_regs[i], phy->regs + PHY_REG_02 + i * 4);
-+
-+	fsl_samsung_hdmi_phy_configure_pixclk(phy, cfg);
-+	fsl_samsung_hdmi_phy_configure_pll_lock_det(phy, cfg);
-+
-+	writeb(REG33_FIX_DA | REG33_MODE_SET_DONE, phy->regs + PHY_REG_33);
-+
-+	ret = readb_poll_timeout(phy->regs + PHY_REG_34, val,
-+				 val & REG34_PLL_LOCK, 50, 20000);
-+	if (ret)
-+		dev_err(phy->dev, "PLL failed to lock\n");
-+
-+	return ret;
-+}
-+
-+static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
-+					 unsigned long parent_rate)
-+{
-+	struct fsl_samsung_hdmi_phy *phy = to_fsl_samsung_hdmi_phy(hw);
-+
-+	if (!phy->cur_cfg)
-+		return 74250000;
-+
-+	return phy->cur_cfg->pixclk;
-+}
-+
-+static long phy_clk_round_rate(struct clk_hw *hw,
-+			       unsigned long rate, unsigned long *parent_rate)
-+{
-+	int i;
-+
-+	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
-+		if (phy_pll_cfg[i].pixclk <= rate)
-+			return phy_pll_cfg[i].pixclk;
-+
-+	return -EINVAL;
-+}
-+
-+static int phy_clk_set_rate(struct clk_hw *hw,
-+			    unsigned long rate, unsigned long parent_rate)
-+{
-+	struct fsl_samsung_hdmi_phy *phy = to_fsl_samsung_hdmi_phy(hw);
-+	int i;
-+
-+	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
-+		if (phy_pll_cfg[i].pixclk <= rate)
-+			break;
-+
-+	if (i < 0)
-+		return -EINVAL;
-+
-+	phy->cur_cfg = &phy_pll_cfg[i];
-+
-+	return fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
-+}
-+
-+static const struct clk_ops phy_clk_ops = {
-+	.recalc_rate = phy_clk_recalc_rate,
-+	.round_rate = phy_clk_round_rate,
-+	.set_rate = phy_clk_set_rate,
-+};
-+
-+static int phy_clk_register(struct fsl_samsung_hdmi_phy *phy)
-+{
-+	struct device *dev = phy->dev;
-+	struct device_node *np = dev->of_node;
-+	struct clk_init_data init;
-+	const char *parent_name;
-+	struct clk *phyclk;
-+	int ret;
-+
-+	parent_name = __clk_get_name(phy->refclk);
-+
-+	init.parent_names = &parent_name;
-+	init.num_parents = 1;
-+	init.flags = 0;
-+	init.name = "hdmi_pclk";
-+	init.ops = &phy_clk_ops;
-+
-+	phy->hw.init = &init;
-+
-+	phyclk = devm_clk_register(dev, &phy->hw);
-+	if (IS_ERR(phyclk))
-+		return dev_err_probe(dev, PTR_ERR(phyclk),
-+				     "failed to register clock\n");
-+
-+	ret = of_clk_add_provider(np, of_clk_src_simple_get, phyclk);
-+	if (ret)
-+		return dev_err_probe(dev, ret,
-+				     "failed to register clock provider\n");
-+
-+	return 0;
-+}
-+
-+static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
-+{
-+	struct fsl_samsung_hdmi_phy *phy;
-+	int ret;
-+
-+	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
-+	if (!phy)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, phy);
-+	phy->dev = &pdev->dev;
-+
-+	phy->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(phy->regs))
-+		return PTR_ERR(phy->regs);
-+
-+	phy->apbclk = devm_clk_get(phy->dev, "apb");
-+	if (IS_ERR(phy->apbclk))
-+		return dev_err_probe(phy->dev, PTR_ERR(phy->apbclk),
-+				     "failed to get apb clk\n");
-+
-+	phy->refclk = devm_clk_get(phy->dev, "ref");
-+	if (IS_ERR(phy->refclk))
-+		return dev_err_probe(phy->dev, PTR_ERR(phy->refclk),
-+				     "failed to get ref clk\n");
-+
-+	ret = clk_prepare_enable(phy->apbclk);
-+	if (ret) {
-+		dev_err(phy->dev, "failed to enable apbclk\n");
-+		return ret;
-+	}
-+
-+	pm_runtime_get_noresume(phy->dev);
-+	pm_runtime_set_active(phy->dev);
-+	pm_runtime_enable(phy->dev);
-+
-+	ret = phy_clk_register(phy);
-+	if (ret) {
-+		dev_err(&pdev->dev, "register clk failed\n");
-+		goto register_clk_failed;
-+	}
-+
-+	pm_runtime_put(phy->dev);
-+
-+	return 0;
-+
-+register_clk_failed:
-+	clk_disable_unprepare(phy->apbclk);
-+
-+	return ret;
-+}
-+
-+static int fsl_samsung_hdmi_phy_remove(struct platform_device *pdev)
-+{
-+	of_clk_del_provider(pdev->dev.of_node);
-+
-+	return 0;
-+}
-+
-+static int fsl_samsung_hdmi_phy_suspend(struct device *dev)
-+{
-+	struct fsl_samsung_hdmi_phy *phy = dev_get_drvdata(dev);
-+
-+	clk_disable_unprepare(phy->apbclk);
-+
-+	return 0;
-+}
-+
-+static int fsl_samsung_hdmi_phy_resume(struct device *dev)
-+{
-+	struct fsl_samsung_hdmi_phy *phy = dev_get_drvdata(dev);
-+	int ret = 0;
-+
-+	ret = clk_prepare_enable(phy->apbclk);
-+	if (ret) {
-+		dev_err(phy->dev, "failed to enable apbclk\n");
-+		return ret;
-+	}
-+
-+	if (phy->cur_cfg)
-+		ret = fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
-+
-+	return ret;
-+
-+}
-+
-+static DEFINE_RUNTIME_DEV_PM_OPS(fsl_samsung_hdmi_phy_pm_ops,
-+				 fsl_samsung_hdmi_phy_suspend,
-+				 fsl_samsung_hdmi_phy_resume, NULL);
-+
-+static const struct of_device_id fsl_samsung_hdmi_phy_of_match[] = {
-+	{
-+		.compatible = "fsl,imx8mp-hdmi-phy",
-+	}, {
-+		/* sentinel */
-+	}
-+};
-+MODULE_DEVICE_TABLE(of, fsl_samsung_hdmi_phy_of_match);
-+
-+static struct platform_driver fsl_samsung_hdmi_phy_driver = {
-+	.probe  = fsl_samsung_hdmi_phy_probe,
-+	.remove = fsl_samsung_hdmi_phy_remove,
-+	.driver = {
-+		.name = "fsl-samsung-hdmi-phy",
-+		.of_match_table = fsl_samsung_hdmi_phy_of_match,
-+		.pm = pm_ptr(&fsl_samsung_hdmi_phy_pm_ops),
-+	},
-+};
-+module_platform_driver(fsl_samsung_hdmi_phy_driver);
-+
-+MODULE_AUTHOR("Sandor Yu <Sandor.yu@nxp.com>");
-+MODULE_DESCRIPTION("SAMSUNG HDMI 2.0 Transmitter PHY Driver");
-+MODULE_LICENSE("GPL");
--- 
-2.39.2
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml: title: 'Freescale i.MX8MP HDMI PHY binding' should not be valid under {'pattern': '([Bb]inding| [Ss]chema)'}
+	hint: Everything is a binding/schema, no need to say it. Describe what hardware the binding is for.
+	from schema $id: http://devicetree.org/meta-schemas/base.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230906184211.1857585-1-l.stach@pengutronix.de
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
