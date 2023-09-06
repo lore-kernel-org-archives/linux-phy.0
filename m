@@ -4,122 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7FE9EB8FAF
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Sep 2023 07:28:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1231DEB8FAD
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Sep 2023 07:58:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vGz/Rw7maqdVGwfytAvAKhvWikbJ3/VvCDnGdIVY/Y8=; b=gKFgczN6671Z93
-	iHBkUE7LxDxYz/CxcbX5WLGndmmExdhKzF/ni+k7y9dK1rP14rGYBD1Mp67gKt0dgZqVr6HZYcBza
-	zHO8UwqTPUugZQnsVfibe32r/pO/C7VHrYOrbCrr1QI0r98KJ5AHlifoyQyXxLPepaczOvjkdyUkQ
-	sJ0jhThE5LGxGWXiC9l4Kf4a7/Zyuv278xxDXU4TsfbYQAa9HGJeRiPtwOHLLFZMeNSxkqHB4DMCr
-	M5rttraiUbZaGU62K1gK7E3fZQNCSRJ4XuT+3+AAg33hkDM5AhK/R5yWPr0vKiPSx3WLv9toorpOB
-	ZAnqOk84V5pbkz5qBGqw==;
+	List-Owner; bh=FBRmB6RqiuOWvmBp8cCNI7SYPetZsmMx7OhekT7xSpA=; b=FWVeNhNjvklZzZ
+	fRQrLzWwciIjWPwdZKhQXeZdCiv5h+pjV4oQM+zkCKsRPIgAoOnFD3CDdt0idhdShUnVcm9cBgzbi
+	3dewEO+vROOzZ+Qlm0TpKz/N6VhsMiMMALEQgjvD4JoeMZbX75uoz2zhoxF4BbJemdFdEqFaElyFz
+	ktRsJMZYGWRrRejZP6bRYDD7WGXQoiphfgPQLnoWX1b3N9HGFaugLENps9d9M7FPZQPbgpjPoxV0o
+	AC5TXUBCqs8Flyulb6FmA45rJKgwQpdhPRmuXJNkKJV7GINhAejyoTsMKPFVdMb3FVl9Ouzo2sVxu
+	WKDmWKS2KwQKSctPqHPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdmxZ-007V5Q-1f;
-	Wed, 06 Sep 2023 07:28:21 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1qdnQm-007bSf-0t;
+	Wed, 06 Sep 2023 07:58:32 +0000
+Received: from mail-lj1-f180.google.com ([209.85.208.180])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdmxX-007V3F-1u
+	id 1qdnQj-007bR1-1K
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Sep 2023 07:28:20 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-99bed101b70so501102666b.3
-        for <linux-phy@lists.infradead.org>; Wed, 06 Sep 2023 00:28:16 -0700 (PDT)
+	Wed, 06 Sep 2023 07:58:30 +0000
+Received: by mail-lj1-f180.google.com with SMTP id 38308e7fff4ca-2bcc187e0b5so53337641fa.1
+        for <linux-phy@lists.infradead.org>; Wed, 06 Sep 2023 00:58:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1693985295; x=1694590095; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=zqwk42h/BlKX2LsT6UvwnsUuC24eIDeLQPg8FqsYzu0=;
-        b=epSp41OpOGbI17k5FtUp1zkmaCUZUT1uKSiUTxuIQaRxGuuOKlYMLfNtZqk7ZmAxST
-         z13S3ClDAfnV9n++bt8w9fMG57QPv+n2MXvhayu1BTweZTYLWIuwKYXA87vmlsE93oa3
-         M8XCGz3/PRjsVP9LYcwMN+TRS+dIMN3wrcsUX8aBKrCbIDPPw3hzGRY4tAsnfHGeEnSX
-         r2lFE9cozvzOSayccJT6LZ54f5Va+/XFTiBJOLQ2NbSGPQiWsrE0/VzvUl4S9/+AXa7e
-         uJHx38TOpTUP2ncK/LI7IN0TJO4bLghuzpHabS3EsfLFBU4WiFDmIK052qIYskGpTFtt
-         wpgA==
+        d=linaro.org; s=google; t=1693987107; x=1694591907; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=1WFoCDHQcZPwZJQSbyTUB9Jk4X6fahGU3WH6smo7VI4=;
+        b=LYvEMzDxRfn/KFt3L4SLG4xKz05FA0vHs7uxch3aBU4Y40v1Cd/ex8JjHrQHXdJZ4A
+         wUdVAQ6XF1O3PB1p6TfSnpxuZez2uspEawJg6o1/8fh7NXK4w1lOGJR/CCUvDGCSYg3I
+         a9WFlaVWMXq8cortzblNEj8PM5JBm/YkHhkAxscrJVfdr0r640ucXMoDbGmRBItKNL+e
+         VXDcmZY8/U8K+OhjSex883SO++gjYj7QpWt4rJmTU2+etKt0b0SVTtz1HfU3wyPMcv9L
+         XLBSQSutrE267n/K/4MYmE1bdj1bNjLLDVdzReo7E8uKEwsSWGWf6rRFitSmOWXFR+hk
+         jHJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693985295; x=1694590095;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=zqwk42h/BlKX2LsT6UvwnsUuC24eIDeLQPg8FqsYzu0=;
-        b=U427Ktcu9Dy8VGAJv+h/fM/ZE3DpnfgNm2Nq3YgUot9Bvit/TrakeJ4SCbBRT2dMWn
-         Pf36MotA4aIE5WO0H+NCrFAvobxC8HN1wm68OxqEr5MXD2MmStQ+Ieytqcf/IifEu2k4
-         uNUZ2TDA1MWkUIkxErYGpVqSB0pOiDq3UD7lEKSle6sQ1itH1zh3AeXjR8jQW8UXx/qq
-         4cVKqK5diE5h0sTRd+yRF/5JtroP9XILEuVF0kFNon1LUNdP4ki9YH+OlstskdQO7GrD
-         VC186M8HF7cT9r3EbIT+rN/dCCQB1JJBPwQB2dxTf08VjBUA6ncRPfnXLSn4ecFoMUjJ
-         HSQA==
-X-Gm-Message-State: AOJu0Yy15TArQa2sFx/gLA8bIOveWioKeMbJvlOkx6I9bwZ4z39t8qzE
-	ZWmzY+ssOpvQXr0HmF7hySwHZw==
-X-Google-Smtp-Source: AGHT+IHDuDDnNXenFKxKy/6354sLozj9niWUIRxDaM9QPfc6o+XHQQk7J8bBvisdOAXsCSeTZ0a6+g==
-X-Received: by 2002:a17:906:8469:b0:99b:627b:e96d with SMTP id hx9-20020a170906846900b0099b627be96dmr1536471ejc.44.1693985295400;
-        Wed, 06 Sep 2023 00:28:15 -0700 (PDT)
-Received: from [192.168.37.236] (178235177204.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.204])
-        by smtp.gmail.com with ESMTPSA id w22-20020a170906131600b0099d9b50d786sm8638988ejb.199.2023.09.06.00.28.14
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 Sep 2023 00:28:14 -0700 (PDT)
-Message-ID: <4a6238f0-5c91-4fd9-9e02-38766778e2a4@linaro.org>
-Date: Wed, 6 Sep 2023 09:28:13 +0200
+        d=1e100.net; s=20221208; t=1693987107; x=1694591907;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=1WFoCDHQcZPwZJQSbyTUB9Jk4X6fahGU3WH6smo7VI4=;
+        b=K9KlcnYKCx+1iQAOMzjLtleB+iNvZLWclA6jk8YhcERtdRdqMU+SYBBJBBBcEPCWHF
+         D5LfmlmL2Hbeixttl3l8KH8wIKsrYn6gz0h9fz7BUpZXE84E+C6uCxhJreFo2MCYhYBP
+         PojXW7yGede6ZQ9W0pVr4uxsSW4fAE7ITNvqse/h63ZaHxIDkJh4pYaRQO9B/RHsQIvf
+         ySQ+9TcUtBL+2BuL7OTyGn9ITVwfW+BLD4hOoRJC44ItNUbmHZS1nk60WtdC4rOC7rH/
+         ArUe3Peoqh+je1Pui2b+eDW4BP/+/VLa/YFVVKOCXO3RAEcM/ABqckKx/2yd0KoELhnt
+         007w==
+X-Gm-Message-State: AOJu0YxBdeqArwpF4v/C4nkInfl1wiPdZkWM7tUqPxd2vzu7jsCF3oGT
+	PctkPIyyv5tydUtmCZ+FgzOvSw==
+X-Google-Smtp-Source: AGHT+IEMl8lnqRYkPl1R/oMJzHcJPuViCYtk0DbOVDNkuOPYrjXPOXu0cqH+CU/Q3TU6YkxJCcZ1VA==
+X-Received: by 2002:a05:651c:c2:b0:2bd:ddf:8aa9 with SMTP id 2-20020a05651c00c200b002bd0ddf8aa9mr1603122ljr.24.1693987107059;
+        Wed, 06 Sep 2023 00:58:27 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id z10-20020a2e7e0a000000b002b9ec22d9fasm3268324ljc.29.2023.09.06.00.58.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 06 Sep 2023 00:58:26 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Abel Vesa <abel.vesa@linaro.org>
+Subject: [PATCH 3/4] phy: qcom-qmp-usb: move PCS v6 register to the proper header
+Date: Wed,  6 Sep 2023 10:58:22 +0300
+Message-Id: <20230906075823.7957-4-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230906075823.7957-1-dmitry.baryshkov@linaro.org>
+References: <20230906075823.7957-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Add magic
- tuning overrides
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20230830-topic-eusb2_override-v1-0-ab23825385a8@linaro.org>
- <20230830-topic-eusb2_override-v1-1-ab23825385a8@linaro.org>
- <20230905163821.GA3500273-robh@kernel.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230905163821.GA3500273-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230906_002819_628376_E6BDE5D7 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20230906_005829_500562_87D3AAD5 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,67 +99,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5.09.2023 18:38, Rob Herring wrote:
-> On Wed, Aug 30, 2023 at 04:40:15AM +0200, Konrad Dybcio wrote:
->> The EUSB2 repeater requires some alterations to its init sequence,
->> depending on board design.
->>
->> Add support for making the necessary changes to that sequence to make USB
->> functional on SM8550-based Xperia 1 V.
->>
->> They all have lackluster description due to lack of information.
->>
->> Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
->> ---
->>  .../bindings/phy/qcom,snps-eusb2-repeater.yaml      | 21 +++++++++++++++++++++
->>  1 file changed, 21 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->> index 029569d5fcf3..83fd6f936bf9 100644
->> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->> @@ -32,6 +32,27 @@ properties:
->>  
->>    vdd3-supply: true
->>  
->> +  qcom,tune-hsdisc-value:
-> 
-> Is '-value' redundant?
-> 
-> '-thres' or '-threshold' would be more descriptive.
-All these names are essentially qcom,register-name-value
+The commit 39bbf82d8c2b ("phy: qcom-qmp: pcs-usb: Add v6 register
+offsets") incorrectly added plain PCS registers to the PCS_USB header.
+Move them to a proper location.
 
-But I do see your point, it probably makes sense to make it
-more human-readable.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h | 15 ---------------
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h     | 15 +++++++++++++--
+ 2 files changed, 13 insertions(+), 17 deletions(-)
 
-> 
->> +    $ref: /schemas/types.yaml#/definitions/uint8
->> +    description: High-Speed disconnect threshold
->> +    minimum: 0
->> +    maximum: 7
->> +    default: 0
->> +
->> +  qcom,tune-iusb2-value:
-> 
-> -amplitude?
-ack
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
+index 4fbef4eea7b5..7c16af0b1cc3 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
+@@ -7,21 +7,6 @@
+ #define QCOM_PHY_QMP_PCS_USB_V6_H_
+ 
+ /* Only for QMP V6 PHY - USB3 have different offsets than V5 */
+-#define QPHY_V6_PCS_LOCK_DETECT_CONFIG1			0xc4
+-#define QPHY_V6_PCS_LOCK_DETECT_CONFIG2			0xc8
+-#define QPHY_V6_PCS_LOCK_DETECT_CONFIG3			0xcc
+-#define QPHY_V6_PCS_LOCK_DETECT_CONFIG6			0xd8
+-#define QPHY_V6_PCS_REFGEN_REQ_CONFIG1			0xdc
+-#define QPHY_V6_PCS_RX_SIGDET_LVL			0x188
+-#define QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_L		0x190
+-#define QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_H		0x194
+-#define QPHY_V6_PCS_CDR_RESET_TIME			0x1b0
+-#define QPHY_V6_PCS_ALIGN_DETECT_CONFIG1		0x1c0
+-#define QPHY_V6_PCS_ALIGN_DETECT_CONFIG2		0x1c4
+-#define QPHY_V6_PCS_PCS_TX_RX_CONFIG			0x1d0
+-#define QPHY_V6_PCS_EQ_CONFIG1				0x1dc
+-#define QPHY_V6_PCS_EQ_CONFIG5				0x1ec
+-
+ #define QPHY_V6_PCS_USB3_POWER_STATE_CONFIG1		0x00
+ #define QPHY_V6_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x18
+ #define QPHY_V6_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x3c
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
+index 18c4a3abe590..c95d3fabd108 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
+@@ -7,10 +7,21 @@
+ #define QCOM_PHY_QMP_PCS_V6_H_
+ 
+ /* Only for QMP V6 PHY - USB/PCIe PCS registers */
+-#define QPHY_V6_PCS_REFGEN_REQ_CONFIG1		0xdc
++#define QPHY_V6_PCS_LOCK_DETECT_CONFIG1		0x0c4
++#define QPHY_V6_PCS_LOCK_DETECT_CONFIG2		0x0c8
++#define QPHY_V6_PCS_LOCK_DETECT_CONFIG3		0x0cc
++#define QPHY_V6_PCS_LOCK_DETECT_CONFIG6		0x0d8
++#define QPHY_V6_PCS_REFGEN_REQ_CONFIG1		0x0dc
+ #define QPHY_V6_PCS_RX_SIGDET_LVL		0x188
++#define QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_L	0x190
++#define QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_H	0x194
+ #define QPHY_V6_PCS_RATE_SLEW_CNTRL1		0x198
+-#define QPHY_V6_PCS_EQ_CONFIG2			0x1e0
++#define QPHY_V6_PCS_CDR_RESET_TIME		0x1b0
++#define QPHY_V6_PCS_ALIGN_DETECT_CONFIG1	0x1c0
++#define QPHY_V6_PCS_ALIGN_DETECT_CONFIG2	0x1c4
+ #define QPHY_V6_PCS_PCS_TX_RX_CONFIG		0x1d0
++#define QPHY_V6_PCS_EQ_CONFIG1			0x1dc
++#define QPHY_V6_PCS_EQ_CONFIG2			0x1e0
++#define QPHY_V6_PCS_EQ_CONFIG5			0x1ec
+ 
+ #endif
+-- 
+2.39.2
 
-> 
->> +    $ref: /schemas/types.yaml#/definitions/uint8
->> +    description: High-Speed trasmit amplitude
-transmit*
-
->> +    minimum: 0
->> +    maximum: 15
->> +    default: 8
->> +
->> +  qcom,tune-usb2-preem-value:
-> 
-> We have 'hs', 'iusb2', and 'usb2'. Can you be consistent?
-Again, this is taken from register names. I can use 'usb2'
-everywhere if you wish.
-
-Konrad
 
 -- 
 linux-phy mailing list
