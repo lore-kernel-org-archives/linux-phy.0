@@ -4,86 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1022CA100E
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Sep 2023 20:38:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A8E1EB8FA5
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Sep 2023 05:10:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wf47ZhxArhRhJ0QUkfHANEFN8wuk+K6/pqoYWrCgoCs=; b=sX26pNVpS5QFzj
-	ftlF1gazTN1scPtvO3I6HP2AIK+k3WIWVFLAtJ3AVtgYuqJaD6YRCuJ17HvfGlfF1wGECB2O4qO/y
-	gJfhmrNG9xPt5/EY46rf/drW1aDgHqQk4gG6ZSU39X+g9pbVY95DwANbWiWfx9aKTLXlz4DXGVPrA
-	shvMcdlFGFTo7kerQoBEIZ9QxSc4A2aYSfDMLlOofJive/IdfzGsllnUv0c3UTNm6P1LaKG+uIZO9
-	RA2Srpntnj7HgP2ABexRKrfod/VXXaG70ou42WMNGEr2unuljAa8mXADFlCVIz44xrnVSlb+GCXQH
-	IH1v7PIDd3NlD+kUF4Jg==;
+	List-Owner; bh=IlvyWzPwaBh1KdjXyGu/qyQ/iYmr4RuTZ5XwO/GymEM=; b=yj5xJlmHLozUJS
+	QV83IKGEh5fK+02HB+VHUt5x2MNGxHYYzy/j5ssLZQznGjAHEduNPF6uh6Tygip8lJDelDdbrHNaC
+	LlUeV6wVqSBsZScmq9IFimCoyYLuPd3Wu8eAfqYgebYyrZL8/KAQusGEBsFzbQXKPFfcaucVALEtc
+	BC8Qg2kO/Wo8LT6L8a/ALVALIqrwmcONLnr2dTy/e0Y/Qw7OG2CBC9j4M+i870Jpu1Fsrk62bFcLd
+	Fp/baorNNdZd1odkZilYb5lWDugxDD3O2LRfiyVYcB2O9D809CUyC5dXERdVnlCYzziAiT6XUHFp1
+	R78J8oXRXZ5Z0TyIWkxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdcp7-006hUT-0l;
-	Tue, 05 Sep 2023 20:38:57 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qdkob-007HGu-1t;
+	Wed, 06 Sep 2023 05:10:57 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdcp3-006hTt-2h
+	id 1qdkoZ-007HFV-06
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Sep 2023 20:38:55 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9a5e1812378so459724466b.2
-        for <linux-phy@lists.infradead.org>; Tue, 05 Sep 2023 13:38:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1693946332; x=1694551132; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=qISIWFWT+90Xd6ZFQOF4flQ0s4igN8yW6IgB7edRboU=;
-        b=W0vhzA/X385CJecJqrc1fff1Za2oyUzYW4HmuPC7Ii3jyAKd4QATuJDnZu10vO/9hP
-         mMroJqLZSd9Z5LWHqGRaOpJU7pw9TSu/f1a42g3Daq3Tvg7MjUvUtfFBxnt+MeoKMR1K
-         50YWwM3sm0fbKKnomH+LZFJU4WR/qwRfkrNDxoECsaBjqo1c4LU9GR9HYZmHm+r8Pu5g
-         EZySvEWJ5gAcCJw8t+H9fWl4Y5y/o9LV2fnoowCdJpgoLM+ix1XcFHTG9ePIKgTL8jCf
-         DOYNAu+1nXGqEF70gCXf6q3h6YJYW0fTk/x7vYJqa3sQbRtzGLBbYwEaoHG4+BzsydhA
-         cksA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1693946332; x=1694551132;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=qISIWFWT+90Xd6ZFQOF4flQ0s4igN8yW6IgB7edRboU=;
-        b=OuDtwfW3IkWOfYOntr0Ohl6zajS2PVj3LF+dkoWf77POb+Vk7vYCae9QyRKCLLB4z2
-         LgnKCQS6FFSik+XKsDvTYuU9YSO1CvnYlmhtdHzH/RugS3daCVG/s68eYu9SD14pJ64L
-         f758TFXfxUjApg/DNP+x118WYSJc9GF/yYTDwqO983PpP/NWOqyKgVJbUIOoK60Uu67P
-         k9I5BvrneS7p106XnTsMzsBrYyY2mp320gCLnf8KiPivsFqzUqufmfU9eQzsRR/zUGaV
-         k7IQo8aN4fBxMzbckMUcNDuAGpMz3g3fLL5AiQsWrEWv6noezVgONE2Kd262Ya02k/Cz
-         sQyA==
-X-Gm-Message-State: AOJu0YzVuk1EfKQgSQfPVdDeT5Wyv82r6/JHjZcdg8FlYvyqSsu/5rHA
-	tBmMlnHJopi6TDCXdp939a38yg==
-X-Google-Smtp-Source: AGHT+IEwOKhjqGOu2h/QRhHr/SAOH0IQAohqcX26Y4rMgNvLsbCvrMoYVYHzeWdQFLWTxxzvuqgoEQ==
-X-Received: by 2002:a17:906:5a70:b0:9a1:c370:1aef with SMTP id my48-20020a1709065a7000b009a1c3701aefmr695845ejc.55.1693946332043;
-        Tue, 05 Sep 2023 13:38:52 -0700 (PDT)
-Received: from [10.10.15.130] ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id x10-20020a1709064a8a00b009937e7c4e54sm8001110eju.39.2023.09.05.13.38.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Sep 2023 13:38:51 -0700 (PDT)
-Message-ID: <8aefd8f9-cfe9-4011-a24b-ebb13d28faa0@linaro.org>
-Date: Tue, 5 Sep 2023 23:38:50 +0300
+	Wed, 06 Sep 2023 05:10:56 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38656b6m023650;
+	Wed, 6 Sep 2023 05:10:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=06kt8lU5x8NTGtXA1hKL+fDrhbSDkk4y2ysFAVVjJJs=;
+ b=mA8zgeFeGxSoyhWqNYTBV0mT/sat79+ZzTqktc4kCB5pbSauLkelgyy1kN6tw6ZJnKnd
+ 2cCUS4G7xXIn9Yyl36cuTXzNyfE7hmE3n2+azwlqA2IQVnuZwnjfdkUcwpSLMNHXOuqT
+ yq+hX+zJ1CM9h1dBcUuQuTxyCqHeT+6dzvZHn7Lcci8C1BOBlri4KKMrWGYcPGpT4bxZ
+ 2HlltC65l8UDDKol5eu9u+K9mB80wthsb2UKFLOGLjRKf1JGZxSWuneZ5t7QuU+HUPtM
+ HM5LdXY4AkjIPyfVqg+EdHMrKz7HYX7wF8xS5av99iyMfuXyuQcQLUB3l55x3Z8uegvL gg== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sww32tt0p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 06 Sep 2023 05:10:43 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3865AgFW000975
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 6 Sep 2023 05:10:42 GMT
+Received: from [10.214.66.58] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 5 Sep
+ 2023 22:10:34 -0700
+Message-ID: <cde5be37-26a1-3efc-17f4-d58b87a9b99d@quicinc.com>
+Date: Wed, 6 Sep 2023 10:40:31 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] phy: qcom-qmp-usb: Add Qualcomm SDX75 USB3 PHY
- support
-Content-Language: en-GB
-To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
- conor+dt@kernel.org, gregkh@linuxfoundation.org, abel.vesa@linaro.org,
- quic_wcheng@quicinc.com
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, kernel@quicinc.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.6.0
+Subject: Re: [PATCH v2 3/5] dt-bindings: usb: qcom,dwc3: Fix SDX65 clocks
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, <agross@kernel.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <abel.vesa@linaro.org>,
+        <quic_wcheng@quicinc.com>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <kernel@quicinc.com>
 References: <1693909838-6682-1-git-send-email-quic_rohiagar@quicinc.com>
- <1693909838-6682-6-git-send-email-quic_rohiagar@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <1693909838-6682-6-git-send-email-quic_rohiagar@quicinc.com>
+ <1693909838-6682-4-git-send-email-quic_rohiagar@quicinc.com>
+ <35475122-cc40-486d-90a7-09be53588219@linaro.org>
+From: Rohit Agarwal <quic_rohiagar@quicinc.com>
+In-Reply-To: <35475122-cc40-486d-90a7-09be53588219@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: uKWCAu0GXn7YnzIm0Xf9JtbCNihwD-2D
+X-Proofpoint-GUID: uKWCAu0GXn7YnzIm0Xf9JtbCNihwD-2D
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-05_13,2023-09-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ clxscore=1015 suspectscore=0 adultscore=0 lowpriorityscore=0 bulkscore=0
+ mlxlogscore=637 mlxscore=0 priorityscore=1501 spamscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2309060046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_133853_881726_8D8B3CCB 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20230905_221055_203183_805E87C2 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,95 +101,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/09/2023 13:30, Rohit Agarwal wrote:
-> Add support for USB3 QMP PHY found in SDX75 platform.
-> 
-> Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
-> ---
->   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 158 ++++++++++++++++++++++++++++++++
->   1 file changed, 158 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> index 0130bb8..57b8b5b 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> @@ -23,6 +23,7 @@
->   #include "phy-qcom-qmp-pcs-misc-v3.h"
->   #include "phy-qcom-qmp-pcs-usb-v4.h"
->   #include "phy-qcom-qmp-pcs-usb-v5.h"
-> +#include "phy-qcom-qmp-pcs-usb-v6.h"
->   
->   /* QPHY_SW_RESET bit */
->   #define SW_RESET				BIT(0)
-> @@ -858,6 +859,134 @@ static const struct qmp_phy_init_tbl sdx65_usb3_uniphy_rx_tbl[] = {
-
-[skipped the tables]
-
-> @@ -1556,6 +1685,32 @@ static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
->   	.has_pwrdn_delay	= true,
->   };
->   
-> +static const struct qmp_phy_cfg sdx75_usb3_uniphy_cfg = {
-> +	.lanes			= 1,
-> +	.offsets		= &qmp_usb_offsets_v5,
-
-v6?
-
-> +
-> +	.serdes_tbl		= sdx75_usb3_uniphy_serdes_tbl,
-> +	.serdes_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_serdes_tbl),
-> +	.tx_tbl			= sdx75_usb3_uniphy_tx_tbl,
-> +	.tx_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_tx_tbl),
-> +	.rx_tbl			= sdx75_usb3_uniphy_rx_tbl,
-> +	.rx_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_rx_tbl),
-> +	.pcs_tbl		= sdx75_usb3_uniphy_pcs_tbl,
-> +	.pcs_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_pcs_tbl),
-> +	.pcs_usb_tbl		= sdx75_usb3_uniphy_pcs_usb_tbl,
-> +	.pcs_usb_tbl_num	= ARRAY_SIZE(sdx75_usb3_uniphy_pcs_usb_tbl),
-> +	.clk_list		= qmp_v4_sdx55_usbphy_clk_l,
-> +	.num_clks		= ARRAY_SIZE(qmp_v4_sdx55_usbphy_clk_l),
-> +	.reset_list		= msm8996_usb3phy_reset_l,
-> +	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
-
-Clocks and resets are gone in 
-https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
-
-> +	.vreg_list		= qmp_phy_vreg_l,
-> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> +	.regs			= qmp_v5_usb3phy_regs_layout,
-
-This must be v6, if the rest of the PHY is using v6 register names.
-
-> +	.pcs_usb_offset		= 0x1000,
-> +
-> +	.has_pwrdn_delay	= true,
-> +};
-> +
->   static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
->   	.lanes			= 1,
->   
-> @@ -2256,6 +2411,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
->   		.compatible = "qcom,sdx65-qmp-usb3-uni-phy",
->   		.data = &sdx65_usb3_uniphy_cfg,
->   	}, {
-> +		.compatible = "qcom,sdx75-qmp-usb3-uni-phy",
-> +		.data = &sdx75_usb3_uniphy_cfg,
-> +	}, {
->   		.compatible = "qcom,sm6115-qmp-usb3-phy",
->   		.data = &qcm2290_usb3phy_cfg,
->   	}, {
-
--- 
-With best wishes
-Dmitry
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDkvNi8yMDIzIDI6MDUgQU0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gMDUvMDkv
+MjAyMyAxMzozMCwgUm9oaXQgQWdhcndhbCB3cm90ZToKPj4gU0RYNjUgaGFzIDUgY2xvY2tzIHNv
+IG1lbnRpb24gaW4gdGhlIGJpbmRpbmdzLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBSb2hpdCBBZ2Fy
+d2FsIDxxdWljX3JvaGlhZ2FyQHF1aWNpbmMuY29tPgo+Cj4gRml4ZXMgdGFnPwpBY2suCj4KPj4g
+LS0tCj4+IMKgIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2IvcWNvbSxkd2Mz
+LnlhbWwgfCAxICsKPj4gwqAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCj4+Cj4+IGRp
+ZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3Fjb20sZHdj
+My55YW1sIAo+PiBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2IvcWNvbSxk
+d2MzLnlhbWwKPj4gaW5kZXggNjc1OTEwNS4uMDE4MTE3YiAxMDA2NDQKPj4gLS0tIGEvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9xY29tLGR3YzMueWFtbAo+PiArKysgYi9E
+b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3Fjb20sZHdjMy55YW1sCj4+IEBA
+IC0xODAsNiArMTgwLDcgQEAgYWxsT2Y6Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCAtIHFjb20sc2RtNjcwLWR3YzMKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0g
+cWNvbSxzZG04NDUtZHdjMwo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLSBxY29t
+LHNkeDU1LWR3YzMKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gcWNvbSxzZHg2NS1k
+d2MzCj4KPiBJcyBpbmRlbnQgY29ycmVjdCBoZXJlPwo+CkkgZG91YmxlIGNoZWtlZCB0aGUgcGF0
+Y2ggYW5kIGRpZG50IGZpbmQgdGhlIGluZGVudGF0aW9uIHdyb25nLiBOb3QgCnN1cmUsIGluIHlv
+dXIgcmVwbHkgaXQgc2VlbXMgd3JvbmcgYnV0IHRoZSBvcmlnaW5hbCBwYXRjaCBoYXMgY29ycmVj
+dCAKaW5kZW50LgoKClRoYW5rcywKUm9oaXQKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIC0gcWNvbSxzbTYzNTAtZHdjMwo+PiDCoMKgwqDCoMKgIHRoZW46Cj4+IMKgwqDCoMKgwqDC
+oMKgIHByb3BlcnRpZXM6Cj4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
