@@ -4,57 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20A32EC873D
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Sep 2023 16:26:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCDC5EC8759
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Sep 2023 21:27:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i50qmAmUOfJKlVpyjo8FSp8WAZR9VQkaBKHE6XvXA+4=; b=esAU7Sjucdn1n8
-	wIe7PMXherMThhOLXdR4S0XDrFPsJWy1RFsvEc461XjoLDigGeiDCiYJQnHYYyRp+d8BsBFQU+Luv
-	k5sgOMWY1nXNI6taUdOV+yQtMPI0LCJaQfYbuJ68G16GzxMADzgFae80Wg3jQFNaoNWoDSmzqll/l
-	HINBe/hkjWngFEmtccCq0VOe3iETdW/XyD/Hg+cog0+4Wqck6VgnKTcuKw7qjtstpgz6bnUllIRBI
-	7A3m8ZB4D2XlqodEkiKAeFtFnAu9u3y6fdm7T9j7udXBK4LjIjnOv1u8e7sTygNdG4F5Hf0pVajY7
-	m1VQSn0irEQndUSpXS9g==;
+	List-Owner; bh=gBe56cWIt9/BxR+cRz0FmhPiXAxGFK+evbl78+ccTj4=; b=0MxcFeu27Z6iIh
+	8nBdw/lAnrrTroxkprMrFHpgOc9nlx9R6fStwz2eH7zTTsfvtKw7vY2351vhRGq9kc0KZsRHRf5CI
+	+m8zmxUJaaj44/miIiLm0rH7Fh1W0MbLgxu3tj9qu/GozNYN72XDpKJH/naUyiA61kL6wLr/3ZNlF
+	w+QJpKRDSPOba14AOeiAFojMFG8Z7Y4BhRkGhMFjtCvZIsSLvBWfEOpb7kKgF0EXXEoDzStRo8dVa
+	4qzJKvP9KNCINVdSrYQaPWW7EWTjhS1IU0Dn+pAT+sei6uxohhtaAGz3W36P/PR+pGf6p4chKc0Qe
+	mBfOEGUuIZXl98lmlIFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeHpj-00COPB-2g;
-	Thu, 07 Sep 2023 16:26:19 +0000
-Received: from msg-2.mailo.com ([213.182.54.12])
+	id 1qeMXQ-00Chh3-0r;
+	Thu, 07 Sep 2023 21:27:44 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeHpg-00COOa-1B
+	id 1qeMXN-00ChgN-0S
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Sep 2023 16:26:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=mailo.com; s=mailo;
-	t=1694103821; bh=rN2Zq4b3EuC0uY7j+MUE8qKAQBrPT6xyGhddo62KEEA=;
-	h=X-EA-Auth:Message-ID:Subject:From:To:Cc:Date:In-Reply-To:
-	 References:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=U8nwCIGig0tFL29XqULcbHPY4ooKqeSPkI+lIeibUV5M9MkXVLUs8zhQp3bsmZIiD
-	 sPzN8ruDFqKxS85OwFBO8AeY05YbilPu7Ozridg4Y4giUJBHteGdgXLqsWYHic44Hp
-	 vp/QExeK3biUoT3QzWJufG6nwmLzDxjURArdF3ek=
-Received: by b221-1.in.mailobj.net [192.168.90.21] with ESMTP
-	via ip-20.mailobj.net [213.182.54.20]
-	Thu,  7 Sep 2023 18:23:41 +0200 (CEST)
-X-EA-Auth: RBUbaykLBe8Q96TuxMBWA4Zfhb0paO1yYYk+67AjwHkKsuWotcI7btTwTtSCbKtPh+t2rZgnLFqDvQUZiNf3MholC1zv/S8Q
-Message-ID: <053077e761ecaeb44b76f5865e100d588101461b.camel@mailo.com>
-Subject: Re: [PATCH] phy: qcom-m31: Fix error code in probe()
-From: Deepak R Varma <drv@mailo.com>
-To: Dan Carpenter <dan.carpenter@linaro.org>, Varadarajan Narayanan
-	 <quic_varada@quicinc.com>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, kernel-janitors@vger.kernel.org
-Date: Thu, 07 Sep 2023 21:53:36 +0530
-In-Reply-To: <7926c8e6-630e-4d7a-b0b2-d29b3c8b2c09@moroto.mountain>
-References: <7926c8e6-630e-4d7a-b0b2-d29b3c8b2c09@moroto.mountain>
-User-Agent: Evolution 3.46.4-2 
+	Thu, 07 Sep 2023 21:27:42 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id C64B161361;
+	Thu,  7 Sep 2023 21:27:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BF2AC433C7;
+	Thu,  7 Sep 2023 21:27:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1694122054;
+	bh=O/6cIs2Ruc5dkl3OS6KHvoBZCyyLV6ge8DRQtLmAAVA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=bY1lntSR7bxjdtutj/e0exs9quDBntr+MhIcCdpO/1NDOspi6lCJSJYctPy4CtdpA
+	 JDzvdFOdpSco72sJo9sHe7DE1PGFGGaweK0cYmGsHI3/1yEtSVz4eGnZYedLndjLM0
+	 nswPUzNhrLCTIxR5/AQM80SzC1tAR4MqVH9HLsBDIsj/aD8t0bnKkdEwobCJYWJwGt
+	 YJDi//Zrtk9z5yTLJIwd3ES0nzb0/6BsafopEQBYC0UcQJxTT7eFMVayHz/TbxdTLV
+	 bZi2kEtSBG5pD2uQQYmy3rEeQh5Hjv8BlDlEnstUSNBawPBCfEoAi3boHjLqLOWJ+n
+	 a2hJnSfcFOW8g==
+Date: Thu, 7 Sep 2023 14:27:33 -0700
+From: Vinod Koul <vkoul@kernel.org>
+To: Lucas Stach <l.stach@pengutronix.de>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	NXP Linux Team <linux-imx@nxp.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, patchwork-lst@pengutronix.de,
+	Inki Dae <inki.dae@samsung.com>,
+	Seung-Woo Kim <sw0312.kim@samsung.com>,
+	Kyungmin Park <kyungmin.park@samsung.com>,
+	Sandor Yu <Sandor.yu@nxp.com>
+Subject: Re: [PATCH v2 2/2] phy: freescale: add Samsung HDMI PHY
+Message-ID: <ZPpARWs94i1fZzB0@matsya>
+References: <20221215201100.2897501-1-l.stach@pengutronix.de>
+ <20221215201100.2897501-2-l.stach@pengutronix.de>
+ <Y8Ga1BTaqoTMRA0I@matsya>
+ <a04d38095bb7d904f01b6ea60f1cb77971a9314f.camel@pengutronix.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a04d38095bb7d904f01b6ea60f1cb77971a9314f.camel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230907_092616_837475_BB9227E0 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20230907_142741_287506_FD270EF1 
+X-CRM114-Status: GOOD (  15.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,38 +81,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCAyMDIzLTA5LTA3IGF0IDEyOjU0ICswMzAwLCBEYW4gQ2FycGVudGVyIHdyb3RlOgo+
-IFRoaXMgYWNjaWRlbnRhbGx5IHJldHVybnMgdGhlIHdyb25nIHZhcmlhYmxlLsKgIEl0IHNob3Vs
-ZCBiZSAicXBoeS0KPiA+dnJlZyIKPiBpbnN0ZWFkIG9mICJxcGh5LT5waHkiLgoKSGkgRGFuLApK
-dXN0IGN1cmlvdXM6IEhvdyBkaWQgeW91IGZpbmQgdGhpcz8gVmlzdWFsIGNhdGNoIG9yIFN0YXRp
-YyBBbmFseXplcj8KClRoYW5rcywKLi9kcnYKCj4gCj4gRml4ZXM6IDA4ZTQ5YWY1MDcwMSAoInBo
-eTogcWNvbTogSW50cm9kdWNlIE0zMSBVU0IgUEhZIGRyaXZlciIpCj4gU2lnbmVkLW9mZi1ieTog
-RGFuIENhcnBlbnRlciA8ZGFuLmNhcnBlbnRlckBsaW5hcm8ub3JnPgo+IC0tLQo+IFdoZW4gd2Un
-cmUgYWRkaW5nIG5ldyBkcml2ZXJzIHRoZW4gd2Ugc2hvdWxkIHVzZSB0aGUgbmV3IGRyaXZlcgo+
-IHByZWZpeCBpbnN0ZWFkIG9mIHRoZSBzdWJzeXN0ZW0gcHJlZml4LsKgIEZvciBleGFtcGxlOgo+
-IAo+IMKgQmFkOiBbUEFUQ0hdIHBoeTogcWNvbTogSW50cm9kdWNlIE0zMSBVU0IgUEhZIGRyaXZl
-cgo+IEdvb2Q6IFtQQVRDSF0gcGh5OiBxY29tLW0zMTogSW50cm9kdWNlIE0zMSBVU0IgUEhZIGRy
-aXZlcgo+IAo+IFRoYXQgd2F5IGl0J3Mgb2J2aW91cyB0byB0aGUgZmlyc3QgcGVyc29uIHdobyBz
-ZW5kcyBhIGJ1Z2ZpeAo+IHdoYXQgdGhlIGRyaXZlciBwcmVmaXggaXMuCj4gCj4gwqBkcml2ZXJz
-L3BoeS9xdWFsY29tbS9waHktcWNvbS1tMzEuYyB8IDIgKy0KPiDCoDEgZmlsZSBjaGFuZ2VkLCAx
-IGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
-eS9xdWFsY29tbS9waHktcWNvbS1tMzEuYwo+IGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
-b20tbTMxLmMKPiBpbmRleCBlZDA4MDcyY2EwMzIuLjk5ZDU3MGY0MTQyYSAxMDA2NDQKPiAtLS0g
-YS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1tMzEuYwo+ICsrKyBiL2RyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLW0zMS5jCj4gQEAgLTI1Niw3ICsyNTYsNyBAQCBzdGF0aWMgaW50
-IG0zMXVzYl9waHlfcHJvYmUoc3RydWN0Cj4gcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+IMKgCj4g
-wqDCoMKgwqDCoMKgwqDCoHFwaHktPnZyZWcgPSBkZXZtX3JlZ3VsYXRvcl9nZXQoZGV2LCAidmRk
-YS1waHkiKTsKPiDCoMKgwqDCoMKgwqDCoMKgaWYgKElTX0VSUihxcGh5LT52cmVnKSkKPiAtwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCBQVFJf
-RVJSKHFwaHktPnBoeSksCj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoHJldHVybiBk
-ZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihxcGh5LT52cmVnKSwKPiDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAiZmFpbGVkIHRvIGdldAo+IHZyZWdcbiIpOwo+IMKgCj4g
-wqDCoMKgwqDCoMKgwqDCoHBoeV9zZXRfZHJ2ZGF0YShxcGh5LT5waHksIHFwaHkpOwoKCgoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 05-09-23, 12:23, Lucas Stach wrote:
+
+> > lots of magic numbers!
+> 
+> Yes. Those are mostly tuning values for the PLL and I don't know if
+> there is any computational way to come up with those numbers, so we're
+> just using the values validated in downstream.
+
+ok
+
+> 
+> > 
+> > > +};
+> > > +
+> > > +struct reg_settings {
+> > > +	u8 reg;
+> > > +	u8 val;
+> > > +};
+> > > +
+> > > +const struct reg_settings common_phy_cfg[] = {
+> > > +	{ PHY_REG_00, 0x00 }, { PHY_REG_01, 0xD1 },
+> > > +	{ PHY_REG_08, 0x4f }, { PHY_REG_09, 0x30 },
+> > > +	{ PHY_REG_10, 0x33 }, { PHY_REG_11, 0x65 },
+> > > +	/* REG12 pixclk specific */
+> > > +	/* REG13 pixclk specific */
+> > > +	/* REG14 pixclk specific */
+> > > +	{ PHY_REG_15, 0x80 }, { PHY_REG_16, 0x6C },
+> > > +	{ PHY_REG_17, 0xF2 }, { PHY_REG_18, 0x67 },
+> > > +	{ PHY_REG_19, 0x00 }, { PHY_REG_20, 0x10 },
+> > > +	/* REG21 pixclk specific */
+> > > +	{ PHY_REG_22, 0x30 }, { PHY_REG_23, 0x32 },
+> > > +	{ PHY_REG_24, 0x60 }, { PHY_REG_25, 0x8F },
+> > > +	{ PHY_REG_26, 0x00 }, { PHY_REG_27, 0x00 },
+> > > +	{ PHY_REG_28, 0x08 }, { PHY_REG_29, 0x00 },
+> > > +	{ PHY_REG_30, 0x00 }, { PHY_REG_31, 0x00 },
+> > > +	{ PHY_REG_32, 0x00 }, { PHY_REG_33, 0x80 },
+> > > +	{ PHY_REG_34, 0x00 }, { PHY_REG_35, 0x00 },
+> > > +	{ PHY_REG_36, 0x00 }, { PHY_REG_37, 0x00 },
+> > > +	{ PHY_REG_38, 0x00 }, { PHY_REG_39, 0x00 },
+> > > +	{ PHY_REG_40, 0x00 }, { PHY_REG_41, 0xE0 },
+> > > +	{ PHY_REG_42, 0x83 }, { PHY_REG_43, 0x0F },
+> > > +	{ PHY_REG_44, 0x3E }, { PHY_REG_45, 0xF8 },
+> > > +	{ PHY_REG_46, 0x00 }, { PHY_REG_47, 0x00 }
+> > > +};
+> > > +
+> > > +struct fsl_samsung_hdmi_phy {
+> > > +	struct device *dev;
+> > > +	void __iomem *regs;
+> > > +	struct clk *apbclk;
+> > > +	struct clk *refclk;
+> > > +
+> > > +	/* clk provider */
+> > > +	struct clk_hw hw;
+> > > +	const struct phy_config *cur_cfg;
+> > > +};
+> > > +
+> > > +static inline struct fsl_samsung_hdmi_phy *
+> > > +to_fsl_samsung_hdmi_phy(struct clk_hw *hw)
+> > > +{
+> > > +	return container_of(hw, struct fsl_samsung_hdmi_phy, hw);
+> > > +}
+> > > +
+> > > +static void
+> > > +fsl_samsung_hdmi_phy_configure_pixclk(struct fsl_samsung_hdmi_phy *phy,
+> > > +				      const struct phy_config *cfg)
+> > > +{
+> > > +	u8 div;
+> > > +
+> > > +	switch (cfg->pixclk) {
+> > > +	case  22250000 ...  33750000:	div = 0xf; break;
+> > > +	case  35000000 ...  40000000:	div = 0xb; break;
+> > > +	case  43200000 ...  47500000:	div = 0x9; break;
+> > > +	case  50349650 ...  63500000:	div = 0x7; break;
+> > > +	case  67500000 ...  90000000:	div = 0x5; break;
+> > > +	case  94000000 ... 148500000:	div = 0x3; break;
+> > > +	case 154000000 ... 297000000:	div = 0x1; break;
+> > 
+> > lets do proper linux style please
+> 
+> Do you mean moving the statements to separate lines?
+
+Yes pls. Also check with scripts/checkpatch.pl --strict
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
