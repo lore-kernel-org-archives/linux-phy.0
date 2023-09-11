@@ -4,118 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED900EEB580
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Sep 2023 20:42:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89506EEB580
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Sep 2023 20:42:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=feC/PvdsLyA5YJ+B4Q6etJWjAYE3kjUPaejbMZTX4oY=; b=IjhnycnW/v3msj
-	5Ip0R6lFOBOrDZqJi3kEfSokLJwYwNq5NV8dxS7sw/wdmX/Q7vWaGX9qpYaAD+xYje7IUPmhY+U0Q
-	Itt8DeHgjJItOmO8V/UK5KNuJXZUo0uYxEUDJpQDtd8yt0IEprbnCPS01V9Dxi3TzS1osJdsFng+n
-	4zt9LKE6XVVCswJ3K6yQHpRy8W9dl7Los8Qh/O7Ysfk+ZBL0NbUyi0g8Wjmk6L5YOrLMaO3/fzVa/
-	Rm/s1h6yUbIhVMK0jMc2lKCyj2wQ78Q2PefMWdW/L2ysElKS0jSfkavT+o+BrHzMdZ0WScb3tWjZ2
-	sY0XkXMbasOmCJdknHYQ==;
+	List-Owner; bh=8EKDevgOfQ4qvPi72YHUEFEhZLhrJIsfPpuoR9hLngI=; b=hjU5Zd7WErX3j4
+	vGkYFVtbtrcp/Znz1NnSgBZC7pF4dPNir4I3j2kJ3yCY3abWssAjEbLWzVdCGBg7Y/Xe8m1kFrr5R
+	zAyTkVTgXkpHQFquQ4m9vqXq8JGe6e2F7XHlN6XZML8seFUSGzfsD2oHGTvGnyBQ2aYMMSaiZabbD
+	vvTBKLYN5w6bLD8jDO7rchE54gb95lobhftVRdQ3RE5BjejwI14/HKQE8Oux8YK2VU56CqQZpb43t
+	LvZFhv4i0LI2Ag2wVZOGvagAeXBv1/Y7MbL9dK9UM05nPKu0h0bXwvbmT3LRMa/tFeXjp1qEucf3P
+	2ZoLWStL3NvK+X/6L3XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qfnjc-001IRG-2C;
-	Mon, 11 Sep 2023 20:42:16 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1qfnjp-001ISf-0w;
+	Mon, 11 Sep 2023 20:42:29 +0000
+Received: from mail-yb1-xb2b.google.com ([2607:f8b0:4864:20::b2b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qfnjZ-001IQY-2y
+	id 1qfnjm-001ISG-19
 	for linux-phy@lists.infradead.org;
-	Mon, 11 Sep 2023 20:42:15 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-98377c5d53eso614991766b.0
-        for <linux-phy@lists.infradead.org>; Mon, 11 Sep 2023 13:42:11 -0700 (PDT)
+	Mon, 11 Sep 2023 20:42:27 +0000
+Received: by mail-yb1-xb2b.google.com with SMTP id 3f1490d57ef6-d77ad095f13so4117510276.2
+        for <linux-phy@lists.infradead.org>; Mon, 11 Sep 2023 13:42:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1694464930; x=1695069730; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=CZmsWVmzssZSS7Enxujm2pqxlRsGUeBP8aEo18daoV0=;
-        b=SJa0qgykyfarySYzh6ETcUIhxH1dKpumVRhGNashF5jKusMZ9o2YTJHHa9oBw+qBsK
-         AtbSHE3vvjDI6nam0a5FfmMPbjhbhZQvjIZ843FjtpafWgwu6H6Jc3GpcaDBh7JWgmeA
-         GrvTIoJwjnW55XmYECwOMm+LMSuAaPaP4HWzU29MhLEovrBnr3aKq3eVnf3N5g8JlPbJ
-         vGM4QuzY3ZfdPrYrJ3Sta1fWq+kpTWtSojPrajgbTR6AkmGoFxK/71dw8VgJBhMuhvD/
-         gfmEhvXvsIwlDbw2lGpZSyF2pr5sTMS/jFtg/8EVINIGsihS0vUmowtYPNef4sO6U+Yf
-         vYIw==
+        d=linaro.org; s=google; t=1694464943; x=1695069743; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=JEIA/8aud3vgSnOzW2FtgQVjHmTcuWpn5RfnhreW1sU=;
+        b=obocl3+IPZcNKfsn2nyEGJ1GZm0FEKq1Qp4Jp+HwZk8sXZfOe7lag3TuAMAwzAKLSG
+         +C8XG0TVNQBhpHv4pFGjLetPsm57wy8DpBdCTVphHsEKSMSsucc9KV8RLCHB5AwWZA32
+         q6kcZsboqMPa0umSUTN0Nu3s3YHXEPttQbbESEXpPjxxO7ck7zPOm2zn4+iRdRuoZ7OI
+         wRBGZ+rCL5tb8ov+sLPG0Z3sGktI98VHHMbpFSnscrx1mZTtrowQJl+3lv1opQRzbhET
+         Yk0fSaqNsrkB0zKqpjdrGf0XJjK1FUpQadFymxUhjHCEbWDKoQ080e0I3ts8vj8hUlcq
+         Vp6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1694464930; x=1695069730;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=CZmsWVmzssZSS7Enxujm2pqxlRsGUeBP8aEo18daoV0=;
-        b=mbvRgLa5u2hKiDZtXKgKs5hK6mDLdq1UeuL/n2nNivPGxRCFma5lZ4e5yV1wtsHeEC
-         pqERaaq+YdgVtOGtvfA8vdzfWfT1LEJ+IQVVvRyu74dLKBRwBSw1pIv3I+5JUA7QZSiZ
-         OnkTHu/8nONxIaxXyX0LaWrtRFxmbVKrzQj4p/6NM3z28G/1fmSmYpRh1aK7fsr5S7Ft
-         j5HN+ZvaFiWZvwdFJuPMDZQS/eCvUGubwz7iWwC7o2YYPX6OkTC15rqeitnCjVH4R8r3
-         64agIvcKfK9gFnQ6d6YyEO2x3++o+YJMqqx46T1KkcMXMsOvc+fIbMrOiwB/t4yEuZMg
-         kfhg==
-X-Gm-Message-State: AOJu0YzdenSBQQS1GvzfvvqytIUmjuNuMncQgI7KXq0N9yjSJfADtENv
-	bWXMRioK7SRO8AsR+6f0g7tZ4g==
-X-Google-Smtp-Source: AGHT+IGuhF6cF3DCdQxsV/K2WqmvjjW0LEJWvnPBE0wgBq/nIblAuwGsCBt1PqRr6EvS7T7VQq+8Xg==
-X-Received: by 2002:a17:907:b0a:b0:9a6:4fe0:4552 with SMTP id h10-20020a1709070b0a00b009a64fe04552mr8323291ejl.46.1694464930195;
-        Mon, 11 Sep 2023 13:42:10 -0700 (PDT)
-Received: from [192.168.37.232] (178235177248.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.248])
-        by smtp.gmail.com with ESMTPSA id i10-20020a170906114a00b00992076f4a01sm5815272eja.190.2023.09.11.13.42.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 11 Sep 2023 13:42:09 -0700 (PDT)
-Message-ID: <2e78c237-d321-4b85-96d5-0568f1a46601@linaro.org>
-Date: Mon, 11 Sep 2023 22:42:08 +0200
+        d=1e100.net; s=20230601; t=1694464943; x=1695069743;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JEIA/8aud3vgSnOzW2FtgQVjHmTcuWpn5RfnhreW1sU=;
+        b=Y02ejX8LgA8KpxatmCAg/7fCALufGPbWZkOP5qIQRH6KTy6OFGxuKD3hl21HgepnNE
+         mYVs9GH43HxjQb4gxfv+YULN3sjZWqEv71Xa050Eur7PjDykShwiAN7nvoApoFQuiBC+
+         BeeXxPE+Mx0JNFYI//5fLVZbCunQy+Xb1HwVXh/TsPKYId3HGPWYqlNqcVqlRaVfBRoC
+         JEo6DyEapKWqggGx9+HUgSjuKVjmFuEaJGoA/C+yDQI5QQQTda5ZtDZe3/u9TLqfKlqh
+         TzG7zUqKAqY9GOlYNjai2Y7TuoBPHMoUBMUWvLoivMWMh48+T1tqQxMTk60Yi2Z4t4Ag
+         Bybw==
+X-Gm-Message-State: AOJu0YySRnnuGMkr0pg22j/auoRabXtvMPiqgCcn5YjEGdG/SA/ib8DF
+	7EjgUc4h0fSyZgqXl6oAdk34QgfypTc6WfMR+XhVmA==
+X-Google-Smtp-Source: AGHT+IHKTl+Tk7v4VRWc2+pmMGmLTBvoSAN0x/s8olCSqdjoFR/fodulyY5AUr959b9GdfN+mlpf7C7gQvu8KAWzGCg=
+X-Received: by 2002:a25:d85:0:b0:bf2:b00c:f09 with SMTP id 127-20020a250d85000000b00bf2b00c0f09mr9895098ybn.40.1694464943168;
+ Mon, 11 Sep 2023 13:42:23 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/3] phy: qcom-qmp-combo: use v6 registers in v6 regs
- layout
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20230911203842.778411-1-dmitry.baryshkov@linaro.org>
- <20230911203842.778411-4-dmitry.baryshkov@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230911203842.778411-4-dmitry.baryshkov@linaro.org>
+References: <20230829-topic-8550_usbphy-v3-0-34ec434194c5@linaro.org>
+In-Reply-To: <20230829-topic-8550_usbphy-v3-0-34ec434194c5@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 11 Sep 2023 23:42:11 +0300
+Message-ID: <CAA8EJprLTBMqTRJ9-qrYVaUf1D+YCw9Ndq55LUMiYfUTF7CuJQ@mail.gmail.com>
+Subject: Re: [PATCH v3 0/2] 8550 USB QMPPHY fixups
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Abel Vesa <abel.vesa@linaro.org>, 
+	Johan Hovold <johan+linaro@kernel.org>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, Adrien Thierry <athierry@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230911_134213_966096_8C744AFD 
-X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-CacheID: sfid-20230911_134226_413221_7DEC6F1F 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -133,17 +90,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11.09.2023 22:38, Dmitry Baryshkov wrote:
-> Make sure that we use only v6 registers in qmp_v6_usb3phy_regs_layout.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+On Mon, 11 Sept 2023 at 23:07, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
+>
+> Inspired by [1] I went over the 8550 QMPPHY init sequences and found
+> some inconsistencies. This series attempts to fix them.
+>
+> [1] https://lore.kernel.org/linux-arm-msm/20230828152353.16529-1-athierry@redhat.com/
+>
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 > ---
-[...]
+> Changes in v3:
+> - v2 except it now compiles (missed .c change)
+> - Link to v2: https://lore.kernel.org/r/20230829-topic-8550_usbphy-v2-0-a72f43311d19@linaro.org
 
->  /* Only for QMP V6 PHY - USB3 have different offsets than V5 */
-This comment becomes invalid
+Thanks, this looks good now!
 
-Konrad
+>
+> Changes in v2:
+> - Pick up tags
+> - "Q6" -> "V6"
+> - Link to v1: https://lore.kernel.org/r/20230829-topic-8550_usbphy-v1-0-599ddbfa094a@linaro.org
+
+
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
