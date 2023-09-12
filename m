@@ -4,116 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06E45CA0EC3
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Sep 2023 11:48:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23AA9CA0EEB
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Sep 2023 15:00:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CV1PeZ/dPSXg/OLH7HFnV8dQNqf7sfLbWV5DnhvjGxU=; b=Np5uM+07lPJoiU
-	nWdLS8g8t5iYD80md5FP7PdykvtgFtXmr/msyjuXn5HwsNMvUI3SeSLKwycyAgm6bgwOOMQ1KyWC0
-	pblExUGYNDlvxLcfCme5E3boYxciCMuhXYnz8Ol5XHIfdXVaOFqmM+jqtp0k+MFuLVcupiDoX5gwJ
-	VSKX9ELPKlmA9ISOnVm5J70vmOSynyJIr3spVnxKlvFwKhlEyfqYkJiKAQu2aGowYYzsdaut9J2Tt
-	6mMSujufYnb9g9hF+yRnn56gO3mqLjYK12vexenpiyL1ACq1GQzXvc58sJufMn6hkrTDzd/5gWhhp
-	Nwi3yGkhn8nE5LZp54Zg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=PmCry+s0ewWQ8oteP6tkTvaY1mEDGUv0Xl5MA0zaTuw=; b=O5/TZnsIOGh+DSDch6HHXLReYA
+	ChcoD6muQTkqts0/WXy1gJ3extXTSm2U+/FVaCQIvsKnmiRMEYPwO2LaLq7zLVOGYWIGQHk8qoD1S
+	z+w1J2gLnbZP5QxgTLA9zoQpBxJZ7SvRVgoXgqbuZ0ssOcVx9vjeZydtWyIfRqADzaud2ME5FEcz3
+	kMx63lZc5rkoHCbxeUY/ZxiRIQUoS9nevNtljF8OaWL0N/LdZ7WYL/NyK75RyTa38PrriAKEfMHAe
+	y/oCYlZS9mFyiA7mW4eGd/Y4rDJ32s6iMle7W/hmsv/fc845WfNGpjXKQp6vSQKM4Ho1j1kXmR3rg
+	3UrmiX7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qg1sv-003Fdy-2G;
-	Tue, 12 Sep 2023 11:48:49 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1qg4sU-003gYP-2U;
+	Tue, 12 Sep 2023 15:00:34 +0000
+Received: from madras.collabora.co.uk ([46.235.227.172])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qg1sr-003Fc4-1L
+	id 1qg4sL-003gW2-25
 	for linux-phy@lists.infradead.org;
-	Tue, 12 Sep 2023 11:48:47 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-500b66f8b27so9542458e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 12 Sep 2023 04:48:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1694519321; x=1695124121; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=f5xi+W9wNttXDsAffskUe3yb7VMYVEpG0K45ei+urrQ=;
-        b=QrY9DBP8YPKknmhGqTHQ+JJdJhxR3uAAgwsC3hVtUWktnn1Iszg6Y84Hf49nxhw8s5
-         OMeiQewXn1LQy41g7DHrB7DnBVXekcqzuemXSjnm7/sg0x0Tr7FbkladDIaJBIE6/do5
-         RVw3gjjzSnBfms2WMjrqFw6BGrp5rMnYvb1mz5W/04QHfWYHN6IPmbE62RgbcBrm69Z1
-         CYjnuOefDIyU1VO8aG86XgHBXAKp1ozBq7MOfPaqfIqRxQ2sG4+XMyetFWV7umb9n1pB
-         Ys52KDsTLTpwAo0s6okkLjokP2c3YoadCCd8VPJW446EimgNP+enesqRGi6rZiXTh8QC
-         FvTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1694519321; x=1695124121;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=f5xi+W9wNttXDsAffskUe3yb7VMYVEpG0K45ei+urrQ=;
-        b=QF0QSRSoPIk80jrminW0QPjMN6ePNHfREceJkRcL48/wHT8GR2ewkQF20uQDJtMj5N
-         5HaO3OarmEaRd1EwLDZpoSwDlCh36E5klon+MQ9Txl2X3Ss3el7APRHTkV4ADIgzm68X
-         4gvNpyhskRQ0Byh1hYeN43ki7oI5+7adCfk8L4szQ/19UNRnY5CbDamXfz6/bcFPOn/i
-         cAfHEksQJNtoZBLsA0SdI/9adSPF5uXIPFHCRRTX9T2ahAckwbY7TAWxmn6OFfn4Lt3O
-         pqgulz57UyE0UcEpEL3wjmak3zU4nmT1IgyM3EeteeaUWZtCUx9R8HSZNhpLh9XQsgvd
-         7pjw==
-X-Gm-Message-State: AOJu0YyAS3Ft9jEJ1gV+uGUJpQIXyhua8F2Bgg4ZBYopZ1Q1FA0WTfDr
-	KnUTzNX4PPutNvYVGoGAKNJaAsN+9qJn6cW2wsCetA==
-X-Google-Smtp-Source: AGHT+IH3WSEIOeopsmU9pzLml+mVZUSW5VFsA80Qjmig2wBWbc8T5X6+2EPoYGdhq36CiL7GvcjVAg==
-X-Received: by 2002:a05:6512:3b86:b0:500:bc14:3e06 with SMTP id g6-20020a0565123b8600b00500bc143e06mr11816978lfv.44.1694519321641;
-        Tue, 12 Sep 2023 04:48:41 -0700 (PDT)
-Received: from [192.168.37.232] (178235177248.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.248])
-        by smtp.gmail.com with ESMTPSA id l15-20020aa7d94f000000b0052338f5b2a4sm5814539eds.86.2023.09.12.04.48.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 12 Sep 2023 04:48:41 -0700 (PDT)
-Message-ID: <675063b7-cac5-4b08-9853-84d7ce16a09e@linaro.org>
-Date: Tue, 12 Sep 2023 13:48:40 +0200
+	Tue, 12 Sep 2023 15:00:30 +0000
+Received: from mercury (dyndsl-091-248-213-163.ewe-ip-backbone.de [91.248.213.163])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id F22B7660731E;
+	Tue, 12 Sep 2023 16:00:23 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1694530824;
+	bh=fje6Ynqztyij110coND7hcc/ZRlT2ku6Tj6+9hxgAnU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=YNzvmUgUA8hIh6CD1wElzbY49RXgtZmmY9z7DVbL61loNwtqq3XvmUkzfFnLGNPG5
+	 NTfaBEq3YvAFepQ3/rvKR4prlmzHYt8SAtfYanQo+rhNhuKZAMtCzBNpFvBn10nfb0
+	 56ZJXejcyMf2Cx+5kec3IeRTFHt80wDTVKlBc6oPYG0Vy3+xOAdjwmIyXRreFbbGN7
+	 k2nUVX7MMg3HFyI1qqKZ3p5kA4GrgpPDH9ik+IypLZkkEkMGz03cmjb30/OfoflLzy
+	 By9I2zfpI2OC4c4xAxlBpwduFINwrb0tGwsMeeGb5sKTfrkYdPZlyE+1VB/97VEDoX
+	 TY0hQRZh2EjSg==
+Received: by mercury (Postfix, from userid 1000)
+	id 25B5E1060929; Tue, 12 Sep 2023 17:00:22 +0200 (CEST)
+Date: Tue, 12 Sep 2023 17:00:22 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Tony Lindgren <tony@atomide.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
+	Merlijn Wajer <merlijn@wizzup.org>,
+	Miaoqian Lin <linmq006@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+	linux-phy@lists.infradead.org,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH 2/3] phy: mapphone-mdm6600: Fix runtime PM for remove
+Message-ID: <20230912150022.ctkctrgbo3cdxyvh@mercury.elektranox.org>
+References: <20230911035501.36706-1-tony@atomide.com>
+ <20230911035501.36706-2-tony@atomide.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qualcomm: Fix typos in comments
-Content-Language: en-US
-To: Bo Liu <liubo03@inspur.com>, agross@kernel.org, andersson@kernel.org,
- vkoul@kernel.org, kishon@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20230912114646.8452-1-liubo03@inspur.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230912114646.8452-1-liubo03@inspur.com>
+In-Reply-To: <20230911035501.36706-2-tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230912_044845_486937_94301C1B 
-X-CRM114-Status: UNSURE (   5.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230912_080028_478202_3194AB9F 
+X-CRM114-Status: GOOD (  17.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,21 +76,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6710503744979502930=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12.09.2023 13:46, Bo Liu wrote:
-> Fix typo in the description of the 'succesfully'.
-> 
-> Signed-off-by: Bo Liu <liubo03@inspur.com>
-> ---
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
-Konrad
+--===============6710503744979502930==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="jxaxgjvsone6qrt4"
+Content-Disposition: inline
+
+
+--jxaxgjvsone6qrt4
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Mon, Sep 11, 2023 at 06:54:56AM +0300, Tony Lindgren wrote:
+> Otherwise we will get an underflow on remove.
+>=20
+> Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+> Cc: Merlijn Wajer <merlijn@wizzup.org>
+> Cc: Pavel Machek <pavel@ucw.cz>
+> Cc: Sebastian Reichel <sre@kernel.org>
+> Fixes: f7f50b2a7b05 ("phy: mapphone-mdm6600: Add runtime PM support for n=
+_gsm on USB suspend")
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+>  drivers/phy/motorola/phy-mapphone-mdm6600.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+>=20
+> diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/mo=
+torola/phy-mapphone-mdm6600.c
+> --- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
+> +++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+> @@ -640,6 +640,11 @@ static void phy_mdm6600_remove(struct platform_devic=
+e *pdev)
+>  {
+>  	struct phy_mdm6600 *ddata =3D platform_get_drvdata(pdev);
+>  	struct gpio_desc *reset_gpio =3D ddata->ctrl_gpios[PHY_MDM6600_RESET];
+> +	int error;
+> +
+> +	error =3D pm_runtime_resume_and_get(ddata->dev);
+> +	if (error)
+> +		return;
+
+Isn't this just about the use counters, i.e.
+pm_runtime_get_noresume(); should be enough?
+
+-- Sebastian
+
+>  	pm_runtime_dont_use_autosuspend(ddata->dev);
+>  	pm_runtime_put_sync(ddata->dev);
+> --=20
+> 2.42.0
+
+--jxaxgjvsone6qrt4
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmUAfPwACgkQ2O7X88g7
++po/BRAAoovzn0MHU1DI3+sWu57cH9IjoGgcUcHk3Wu/0eMURdXS9QsCYvTkUhPq
+RPrKR/iH9L+W3kJFr9FR5xuYhyDB6NndNdlh4ZlmhXQIajThSwBBMzpilXMravGO
+y0fktloyoWejaFwpaKG7nkn9nKt/kzu7ohIuS5YgRS3Y1WSnv9sb48Js5F2ZVkPP
+J8eqE4IyNIhzT8ysfo3JMq/O7vCuc838DqIoHQYlXbB2Oc2MGa5yRyTbmN9z1wjg
+tZHf3ZUQNVE+QvNR+pkTHQsDjMMmQsaC1qwjNSSBMtRuos6NOu+GZVGiK3tU1OJT
+1umvPSmUbZ5i/JaPnJI1g2FuL+JdnjHhf6pAOG+vvbffciquNB+SBEYzGOX4lCt+
+aORt6E5/zYWErXorUzh0qVPPBrys1N3Pn40WJzIHowTpJTWqVWOISToS10ncyNUX
+ljwMMvDXUq2cKk37pBG2bsRXP8MEeaDIxyMgbXA8krg6c/i5SnZe9LzMt+mfjIYK
+gymnDRgARt90APYCtJFyTd5tP5V1jpEk74t0UHDHi1JnPmjVMa/jUdPUunXqVxy9
+hkMaXqt+u5lkVK5cUUClnXPfQIndgF5kWXuimD+6PCrwCy/HW/OwdABCtX+sEmcs
+vOlsM+/qknnpSHZ0Tql6E98JV8e6BoK4S/TrMYxjxeKc6zPLhy8=
+=2n+o
+-----END PGP SIGNATURE-----
+
+--jxaxgjvsone6qrt4--
+
+
+--===============6710503744979502930==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6710503744979502930==--
+
