@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25C7FCA5534
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Sep 2023 09:54:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48F4ECA5531
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Sep 2023 09:54:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GBfdljhOsPO1dE2JwlfW671YMURQu9At0oW3FMfdHxY=; b=xdpEvGI7ZeVz0i
-	bOl8TEErx+SAOFH3T48Mg2go7kzwlna4MTmzDw4mWRMsnxQwRQsBWmshEX54V1czHhwmT2pGWcrMu
-	AY737v/3Y+tCcM8QRLq0B2nt5gFoccP8Xtp3TBPtwH+wFK016JaFYrnVbJYoC1SvvIVGohMgubzlF
-	xIxoP6eaGD+7dF60uk8O4g2FsGsfaj55ev0Cyrym9hmSIJPffq4Vjj5X+o74GRIi21mdtv9Tz+n/j
-	xA3ExoTOkpGQVcWaTm2ZKGBKfnNiwuH/0DEqAqi8f8rYWiOBq2uMooR1fEXChpk4Spk1TJ+M7yP8u
-	QdXUJChwgwNC0FlHa5cw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2O7Wa9CGKYKv9GKkcRaiLbKzKRvBUcOQsUkKWTFeDoA=; b=N4VLZd87PmP+nK
+	xQS3QttZ/Mpzyigmbj8BcikcqyPeElGLrxFtiCRgsVJkqGcqr7fYP7WeIeWW1yr/5CNb6TpoaXTzZ
+	hm8/udkA5aaJkU5gKjngmz8ZrfIpnUmSxKGJrEKwBXhLZYJb2Y9VcbOKcCNvWyliwR85ytFb4Cm2X
+	O6q2UiHBfX6xPEsKIdFv0WlulSapY7NTeGYLpBvu8em5mhXnzPXV5ifVCdF6TPRNtuUNcLDnl5A/j
+	U9xrFhehDemgXMyaNOJxLpaIQe3zA1BRCiYzfhQJn0Fj2sl6xMStrRvc1wTcipC2Hp5ZIoZekMGfK
+	AprhzMgfC/Y9b7JkNg9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgMZO-005M0T-1z;
-	Wed, 13 Sep 2023 09:54:02 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1qgMZP-005M13-3D;
+	Wed, 13 Sep 2023 09:54:04 +0000
+Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgMZM-005LzS-1M
+	id 1qgMZN-005Lzq-1x
 	for linux-phy@lists.infradead.org;
-	Wed, 13 Sep 2023 09:54:01 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-9936b3d0286so870985366b.0
-        for <linux-phy@lists.infradead.org>; Wed, 13 Sep 2023 02:53:59 -0700 (PDT)
+	Wed, 13 Sep 2023 09:54:02 +0000
+Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2b703a0453fso113613971fa.3
+        for <linux-phy@lists.infradead.org>; Wed, 13 Sep 2023 02:54:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1694598838; x=1695203638; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=fad1rR7O92f8MbM+uIDjcw5AGbZOnibqZ09Elwwq4ek=;
-        b=BgnM7/tBfAvrQsJyRBQagSn+ZEH1XdAOWJX0bBWMJXLd2Hwl08tKu9ttrbcStmpzIT
-         8u9sMs6dmWwioy8kiB9dneG6VNOhMuQntIKuK+SItSO3NMElPSa1YLHf3xRjyDE7rS3o
-         NIVAVnvF2dZbou1/JDyHw8q91KO3OWtLMLVnwKeBU823iuYYiK+uftlrgrH0fhZtcqnh
-         +75bxglrHoL5hcaNKDHT87MVlCrKVmLbSPG2o0nzs2JBI1Ekez0HUc8ZUT9Gh0F6vdYF
-         2LGN6Uh8gtViUzwk9ZYU0qd27/4H4L/hKakvkUswC8jHl9D6DAY/SV+UBgFXcVKPOdSP
-         wl3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1694598838; x=1695203638;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1694598839; x=1695203639; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=fad1rR7O92f8MbM+uIDjcw5AGbZOnibqZ09Elwwq4ek=;
-        b=oRQAtSKE5sSpHkkqY/YCC55ZgMSoj2G3GcdfRRyHO0u3KzZgF5E/EHVio28Emf3N9C
-         ekE2FGq1ZxtLhGbdFPdubzvUcmqQW1DRnht/102mD+IU4qJEt+w9ICllI/kvMeXgVBLm
-         ZVR16RFagr0wKFKLQDhQbL9mMOn5gKbmNhpza9Mf5B5xnnlSBt1BwuxquIQ6pCJnIFzG
-         rnkETRTxCj5/Q277IMxS4WwcUt/by54Q6a/ofEEI8ITOFKq07R3J6hRmp6ouzmE50txC
-         +VhAzEIEiKm1EvO5uXZiOYZBxrTzRZfTjAvVEMw/gJQFU4LI6u5d/09Q+KbaxZ6PpPjd
-         w8VQ==
-X-Gm-Message-State: AOJu0YwnfDfeqIivFtWojyaPnyQBpyqfalwIEwP0jgGE06hofmBiQmt1
-	p2kJJ/VHaeDurpMen4QOo+wsrA==
-X-Google-Smtp-Source: AGHT+IGnGtXQchEs2Ii+OMSkJplLM+jTdktXjIslZBx2soTdmdINHLx0PipggsOaf3dRDQU6Re+rfg==
-X-Received: by 2002:a17:906:315a:b0:99b:e5c3:2e45 with SMTP id e26-20020a170906315a00b0099be5c32e45mr1481772eje.28.1694598838102;
-        Wed, 13 Sep 2023 02:53:58 -0700 (PDT)
+        bh=bGEWNaFOSGbgLmGphSZoYFcO8R5kpnOWxma4oPpmrkM=;
+        b=Q1c2KMuRf1JF40a6X6eanNCSWyvjDjjOiGeM5bsM0T8ggen1mIkXKJBLxLNDCowfDJ
+         tN522rLM7BNCdbDgNJk3s+sMBlL7TnTSTv+c5qLmryiFRqL0tLq81FDcpsD6dwoypADp
+         +s3nrRzFzd642PcAo/O4IoPh+lpsWeDFUj6r4nVqAUUC+tSmRDdQPI7QHmO1zbWQRWyI
+         yoL5Y4atLjkltnvozoj1m1qN0URzg/EMpSQoMo5hGeJaZM3XUYezJs26E8LXBFl6RLMY
+         nbcNAk7p/4+YZcHIlaRY0Ec4WUtjppgAvJdsyByT6c+trVob3hToj/3UGg2QM8RIN3wX
+         Kryw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1694598839; x=1695203639;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=bGEWNaFOSGbgLmGphSZoYFcO8R5kpnOWxma4oPpmrkM=;
+        b=f6S8n/oxkejF4JwdZgPA2oWfRfbv9yRIEoO4M9c53tDJkE1KNTY5hFPIOAUOLX9/fY
+         II5A6hBAuZyUoMUEF51v7T6osQ3JVWxGnC7AEWrwkYyXkWdndcj3YJ61eh6MHBd9Oq+H
+         CpIO2Uh9+74qe44livcg05QHK3oKlz0vTjy8xyQz1DMywFqtAMgAdDyfamHzAx49yVwd
+         L0wxCZ9AvEHCMjcBL3k9ds9VJXY2OoXXDxFantX2pyleB6Q58Mw2gA6arJqzXJToLbce
+         uM54SCNS9EOEJsQAAVPH3dzdyU3sVhn9OlAj5Q6j5Sg69b82EhV+MMc0z6mWav8XcIom
+         49iA==
+X-Gm-Message-State: AOJu0YxgpXuNSiRke4GUuUsULluoocjBlUcjzWIQmlbttkMHQxNemE2d
+	Tu6l6GpbfOwnkWuN2PdhO+Eztg==
+X-Google-Smtp-Source: AGHT+IGRBzDoV6q1Yg7xSUFIzw7/wQfW9voe7rkKcePRlezQHiH+2VWYtd85objRfoUB5jzbALjOiQ==
+X-Received: by 2002:a2e:9806:0:b0:2b9:e6a0:5c3a with SMTP id a6-20020a2e9806000000b002b9e6a05c3amr1705981ljj.48.1694598839540;
+        Wed, 13 Sep 2023 02:53:59 -0700 (PDT)
 Received: from [10.167.154.1] (178235177106.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.106])
-        by smtp.gmail.com with ESMTPSA id l21-20020a170906939500b00985ed2f1584sm8092669ejx.187.2023.09.13.02.53.55
+        by smtp.gmail.com with ESMTPSA id l21-20020a170906939500b00985ed2f1584sm8092669ejx.187.2023.09.13.02.53.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 13 Sep 2023 02:53:57 -0700 (PDT)
+        Wed, 13 Sep 2023 02:53:59 -0700 (PDT)
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Subject: [PATCH v2 0/4] EUSB2 repeater init sequence override
-Date: Wed, 13 Sep 2023 11:53:22 +0200
-Message-Id: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
+Date: Wed, 13 Sep 2023 11:53:23 +0200
+Subject: [PATCH v2 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ magic tuning overrides
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAJOGAWUC/4WNQQqDMBAAv1JybkpMqqQ99R9FyiauuiCJbDS0i
- H9v6gd6nIFhNpGQCZO4nzbBmClRDAX0+ST8CGFASV1hoZU2yhollziTl7gmp18xIzN1KAGaput
- vHpprJUrqIKF0DMGPJQ7rNBU5M/b0Pl7PtvBIaYn8Oda5+tk/l1xJJcFpY3VtbA32MVEAjpfIg
- 2j3ff8C0hIX/M4AAAA=
+Message-Id: <20230830-topic-eusb2_override-v2-1-7d8c893d93f6@linaro.org>
+References: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
+In-Reply-To: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
 To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
  Rob Herring <robh+dt@kernel.org>, 
@@ -80,16 +80,16 @@ Cc: Marijn Suijten <marijn.suijten@somainline.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1694598835; l=1192;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1694598835; l=1475;
  i=konrad.dybcio@linaro.org; s=20230215; h=from:subject:message-id;
- bh=QZkLavErYAckHPtysRiIt6y82qlIstwn9hPWxIXGKnk=;
- b=H7+WiwYdLnKaEO7l/O93t4KHu1fBwQsdrs/2pnS29hKZFdQNJp5Rh7y9E99j1+dFPXAR9Itkq
- 99FGy8WHI22AEhxFhXSenjlO7+mivRXWZ1G6vU7ghafVhKptQEZRRxW
+ bh=+WkmKOaL4o5Pf6bG2lB645yeG0HwBKcy91tPmktunQA=;
+ b=Ma2LEKDh/8hk+rsvOx7vD/eD/ZV5DGMbX+SL8VQxrsc3O3sKPGbAoG7NjjqSM31BPA4Bth27J
+ GG9ZG6Qx8DuD2gA7zYTmHwQrUqRI6EMbl/lzO269iELzs75JLwQRn/9
 X-Developer-Key: i=konrad.dybcio@linaro.org; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230913_025400_463058_34FEC12D 
-X-CRM114-Status: UNSURE (   6.64  )
+X-CRM114-CacheID: sfid-20230913_025401_640539_C3DBF72B 
+X-CRM114-Status: UNSURE (   8.35  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,34 +107,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The EUSB2 repeater goes through a tuning sequence as part of its
-initialization. This series ensures the tuning is "clean" and can be
-overridden for devices that need it.
+The EUSB2 repeater requires some alterations to its init sequence,
+depending on board design.
+
+Add support for making the necessary changes to that sequence to make USB
+functional on SM8550-based Xperia 1 V.
+
+They all have lackluster description due to lack of information.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 ---
-Changes in v2:
-- Change register names to something more human readable in bindings (RobH)
-- Make "Zero out untouched tuning regs" actually do what it says
-- Link to v1: https://lore.kernel.org/r/20230830-topic-eusb2_override-v1-0-ab23825385a8@linaro.org
+ .../bindings/phy/qcom,snps-eusb2-repeater.yaml      | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
----
-Konrad Dybcio (4):
-      dt-bindings: phy: qcom,snps-eusb2-repeater: Add magic tuning overrides
-      phy: qualcomm: phy-qcom-eusb2-repeater: Use regmap_fields
-      phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs
-      phy: qualcomm: phy-qcom-eusb2-repeater: Add tuning overrides
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+index 029569d5fcf3..24c733c10e0e 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+@@ -32,6 +32,27 @@ properties:
+ 
+   vdd3-supply: true
+ 
++  qcom,tune-usb2-disc-thres:
++    $ref: /schemas/types.yaml#/definitions/uint8
++    description: High-Speed disconnect threshold
++    minimum: 0
++    maximum: 7
++    default: 0
++
++  qcom,tune-usb2-amplitude:
++    $ref: /schemas/types.yaml#/definitions/uint8
++    description: High-Speed trasmit amplitude
++    minimum: 0
++    maximum: 15
++    default: 8
++
++  qcom,tune-usb2-preem:
++    $ref: /schemas/types.yaml#/definitions/uint8
++    description: High-Speed TX pre-emphasis tuning
++    minimum: 0
++    maximum: 7
++    default: 5
++
+ required:
+   - compatible
+   - reg
 
- .../bindings/phy/qcom,snps-eusb2-repeater.yaml     |  21 +++
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c     | 146 ++++++++++++++++-----
- 2 files changed, 132 insertions(+), 35 deletions(-)
----
-base-commit: 3c13c772fc233a10342c8e1605ff0855dfdf0c89
-change-id: 20230830-topic-eusb2_override-aa66df9ca641
-
-Best regards,
 -- 
-Konrad Dybcio <konrad.dybcio@linaro.org>
+2.42.0
 
 
 -- 
