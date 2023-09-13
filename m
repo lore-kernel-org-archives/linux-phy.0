@@ -4,92 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BC25CA553B
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Sep 2023 09:54:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95631EDEC5F
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Sep 2023 14:09:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kkhN00E0+bmNegaKTxmtO6pq1LbxLWokD6Nu0TSpwfE=; b=4IePuDGUxzOdPL
-	aMVq6TduooW9d+ycrFbsgo7tJpGs5cgVcclrOoUZZbGpzzNLNu07gc332wEbWEqywg4bFuZM1fKqi
-	+jOkJY8J3vkVadFy2a+n64D+nTCcMuIcJ3Suahc0FYQrhhaHObqPxNhVWQKH5SunBwrfKy4Vr6lba
-	w5Ykn320fqkjltgIBRLyRJodQrmAU9N9/n2mmMGuw2jVz1Asrz3LZ+7iLc3wJ3DTzox08cohgBe69
-	rrA7P0wMrT8uCm8WFBrCVv7orA337CWjuMIcFYP0o0KBn7yqUOKqe4CsXjD7cqpHnvLJ32TPLuEcP
-	pCOUxpEZ5wQKEs11iZJg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ccnlNy/Q/cg9C/wE/+jI1AxdPLVSFOZ+w3pKGyx9cME=; b=ISCGHCzOC7InyA2Hm8Ogn+mWvK
+	ZW1xg8zI/AzO3bbIpErg7Rdz092rrxs0Qr5nU6ohj+TVzRwEkOQdwoIR/ceygSW3GK9MYRiZGBhhP
+	ISOOVVOXKHx0CsLeoRW2/0HN1mmL+qi7kCw4Ah9Gu38Ws9ieADhCLpCOtyXxExvqxTGiRzLxPHneR
+	8SrmcZLUVlHja6P2p9VhdG5OpXTfzfwmFI2+pXv4oJsgLUNFOGQyELArPZqSHa9xW3rpEgrDifCOA
+	h8eFdqPebhU/b6zptCGkGFWc6inXYTO/W/134brW93hnYF0qXw/ZtjaK/+ct3sEUDMGIk3VYJpS3b
+	Xrlm/JOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgMZV-005M34-0F;
-	Wed, 13 Sep 2023 09:54:09 +0000
-Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
+	id 1qgQYv-0065ss-0V;
+	Wed, 13 Sep 2023 14:09:49 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgMZS-005M1G-0a
+	id 1qgQYs-0065s4-1u
 	for linux-phy@lists.infradead.org;
-	Wed, 13 Sep 2023 09:54:07 +0000
-Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-9ad8bf9bfabso203884666b.3
-        for <linux-phy@lists.infradead.org>; Wed, 13 Sep 2023 02:54:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1694598844; x=1695203644; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=y61vDLY2d3z1XABw8fo4c9R1eNGV9j8r0ag87ujCd/s=;
-        b=Ag6UdKSA6m91aO6Gj4IcnnfwFiB/X95Ng8vSaw4p+TjE2ZF5jZeeXz9vK4zZI091S4
-         s/l7InoW3zVlnk2w4Ox2bdCjqhY4Jn9XcoAhGWhIi8Bjmn16LszNW5wY+slxMnV5qjqB
-         LKtMASvRN7wh06DHAuKm/0FlWRJQD59AraFLF6q7xMoPcuoj8EW+05GeQaVm78tIgXXC
-         GdKAcjXTPltU7xZ3EwCAMy0vtjoLfQC0GvuGvfO6mXenkT/OZNsASedYR6L4gaTDHiVw
-         /uZhR1EuTzzoiOKJmwiz0uCZ2hs7PVPmYHuk/ku9eFzJi/elRpG4Yar9bK2IAA7Guj4h
-         Mnhg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1694598844; x=1695203644;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=y61vDLY2d3z1XABw8fo4c9R1eNGV9j8r0ag87ujCd/s=;
-        b=W5Jh6RGA0WjrMS+PiZ9qRg5jzwvKKmSpRis81FHPiqjqCIOCgYylJIPP4rORTXx5Q8
-         ADzdrP/3Bac6TsHiy1HymjjFC+GMezt++cGXml6I3RUAa1ZLVLXUoI2l7B4z3VFx94ej
-         EXub/vkJq3Nmzjh9nh7x6bPbf6ByiXkWH7yCqeS2e/Ny/lHC2N0+kl3yYhYOmf5k0hsx
-         itbaFJtJXP716Nw/oY2gWlCRSDsR+tHR1+lIPkePlgMOzc/nJnztJabdFp6ABRSCgA8q
-         hWJ46xf/BC4fT6sl+1sjBlivXjMmrYrK7iVymfsxQ/X49CNzzmp8qJ7c5bPxCOvX6ADd
-         D5qA==
-X-Gm-Message-State: AOJu0YzcW9xfntvQEEzqGKh8OCiW38TwxavnLp6knFLSKRuSmZX4QQ7D
-	CjMcnqsssDdRl2thu2dk9QeLpw==
-X-Google-Smtp-Source: AGHT+IFq5xptVCdrvn1Iw7ewtXMqSOxhBecllLxs5hb0dwAim5rm5D+Auq3O1vfHh7PKHxaom5Tmng==
-X-Received: by 2002:a17:906:319a:b0:9a1:c00e:60c5 with SMTP id 26-20020a170906319a00b009a1c00e60c5mr1459575ejy.48.1694598844117;
-        Wed, 13 Sep 2023 02:54:04 -0700 (PDT)
-Received: from [10.167.154.1] (178235177106.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.106])
-        by smtp.gmail.com with ESMTPSA id l21-20020a170906939500b00985ed2f1584sm8092669ejx.187.2023.09.13.02.54.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 13 Sep 2023 02:54:03 -0700 (PDT)
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Date: Wed, 13 Sep 2023 11:53:26 +0200
-Subject: [PATCH v2 4/4] phy: qualcomm: phy-qcom-eusb2-repeater: Add tuning
- overrides
+	Wed, 13 Sep 2023 14:09:48 +0000
+Received: from mercury (dyndsl-091-248-208-175.ewe-ip-backbone.de [91.248.208.175])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id 5DF29660733E;
+	Wed, 13 Sep 2023 15:09:41 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1694614181;
+	bh=3m3HxH6CwdEDu3ZXWCb/3mr/9NqGHqmAJrqZ4cAFGco=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=onMBuGFb3H+9oLdtUwS8hRnZi8aCqi0eh+8J3g1npqf5ylPVzryddGIrXD3X01rDT
+	 3TIfoVDA/EXh4KEtzfY/WH+2rfBJicTeNWqEIdgIdWD2L65RNeK2g2QB4NNyk/S8ir
+	 WEhs+qbE3crP5sZhKgoo0npMDhSQzS74fv/OwJzx6kpzzj5VgSj6HWAXuqJyeVBF+5
+	 LpggN90cdbRA29ZbkN2HpLqCwDGqLo7NAtvFJcssYbpU/xw66SoEbPMNr7X4dC6SN4
+	 YDbUcbBkU3b9QQFnrffe5L71YhJUgDhxVxNGOvWrsY/N3LWqK7FXdgQH7Sb2GCFOK5
+	 F6VW8q2AdkQdA==
+Received: by mercury (Postfix, from userid 1000)
+	id C52EC106098A; Wed, 13 Sep 2023 16:09:38 +0200 (CEST)
+Date: Wed, 13 Sep 2023 16:09:38 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Tony Lindgren <tony@atomide.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
+	Merlijn Wajer <merlijn@wizzup.org>,
+	Miaoqian Lin <linmq006@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+	linux-phy@lists.infradead.org,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v2 2/3] phy: mapphone-mdm6600: Fix runtime PM for remove
+Message-ID: <20230913140938.c5jmmjg32vxfjk5s@mercury.elektranox.org>
+References: <20230913060433.48373-1-tony@atomide.com>
+ <20230913060433.48373-2-tony@atomide.com>
 MIME-Version: 1.0
-Message-Id: <20230830-topic-eusb2_override-v2-4-7d8c893d93f6@linaro.org>
-References: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
-In-Reply-To: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
-Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@linaro.org>
-X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1694598835; l=1798;
- i=konrad.dybcio@linaro.org; s=20230215; h=from:subject:message-id;
- bh=vlWt+/crcyxMQdUhFQmb4WOVKaBs0wbkNDm3+xQ+iBc=;
- b=rj7SzS4MbUgXjzqv55kbUGwKD8esrMRttXxGkS+rICUBd8qFKbouTxfru32W5y6X7a00cfv4x
- 32ZjJI8ZlwwBxD5Fbcx78qPt7e2le1FLdTFvkRx6e79+TsMPkhHqPYH
-X-Developer-Key: i=konrad.dybcio@linaro.org; a=ed25519;
- pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
+In-Reply-To: <20230913060433.48373-2-tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230913_025406_224187_86279CD2 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20230913_070946_833775_9549A4B2 
+X-CRM114-Status: GOOD (  17.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,62 +76,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5601373680097709752=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There are devices in the wild, like the Sony Xperia 1 V that *require*
-different tuning than the base design for USB to work.
 
-Add support for overriding the necessary tuning values.
+--===============5601373680097709752==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="hprv6k7zp2yqoiyn"
+Content-Disposition: inline
 
-Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-index d4fb85c20eb0..a623f092b11f 100644
---- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-+++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-@@ -142,7 +142,9 @@ static int eusb2_repeater_init(struct phy *phy)
- {
- 	struct reg_field *regfields = eusb2_repeater_tune_reg_fields;
- 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
--	const u32 *init_tbl = rptr->cfg->init_tbl;
-+	struct device_node *np = rptr->dev->of_node;
-+	u32 init_tbl[F_NUM_TUNE_FIELDS] = { 0 };
-+	u8 override;
- 	u32 val;
- 	int ret;
- 	int i;
-@@ -163,6 +165,19 @@ static int eusb2_repeater_init(struct phy *phy)
- 			regmap_field_update_bits(rptr->regs[i], mask, 0);
- 		}
- 	}
-+	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
-+
-+	if (!of_property_read_u8(np, "qcom,tune-usb2-amplitude", &override))
-+		init_tbl[F_TUNE_IUSB2] = override;
-+
-+	if (!of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &override))
-+		init_tbl[F_TUNE_HSDISC] = override;
-+
-+	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &override))
-+		init_tbl[F_TUNE_USB2_PREEM] = override;
-+
-+	for (i = 0; i < F_NUM_TUNE_FIELDS; i++)
-+		regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
- 
- 	ret = regmap_field_read_poll_timeout(rptr->regs[F_RPTR_STATUS],
- 					     val, val & RPTR_OK, 10, 5);
+--hprv6k7zp2yqoiyn
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
--- 
-2.42.0
+Hi,
 
+On Wed, Sep 13, 2023 at 09:04:28AM +0300, Tony Lindgren wrote:
+> Otherwise we will get an underflow on remove.
+>=20
+> Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+> Cc: Merlijn Wajer <merlijn@wizzup.org>
+> Cc: Pavel Machek <pavel@ucw.cz>
+> Cc: Sebastian Reichel <sre@kernel.org>
+> Fixes: f7f50b2a7b05 ("phy: mapphone-mdm6600: Add runtime PM support for n=
+_gsm on USB suspend")
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+-- Sebastian
+
+>=20
+> Changes since v1:
+>=20
+> - Using pm_runtime_get_noresume() is enough on remove as suggested by
+>   Sebastian
+>=20
+> ---
+>  drivers/phy/motorola/phy-mapphone-mdm6600.c | 1 +
+>  1 file changed, 1 insertion(+)
+>=20
+> diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/mo=
+torola/phy-mapphone-mdm6600.c
+> --- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
+> +++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+> @@ -641,6 +641,7 @@ static void phy_mdm6600_remove(struct platform_device=
+ *pdev)
+>  	struct phy_mdm6600 *ddata =3D platform_get_drvdata(pdev);
+>  	struct gpio_desc *reset_gpio =3D ddata->ctrl_gpios[PHY_MDM6600_RESET];
+> =20
+> +	pm_runtime_get_noresume(ddata->dev);
+>  	pm_runtime_dont_use_autosuspend(ddata->dev);
+>  	pm_runtime_put_sync(ddata->dev);
+>  	pm_runtime_disable(ddata->dev);
+> --=20
+> 2.42.0
+
+--hprv6k7zp2yqoiyn
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmUBwpUACgkQ2O7X88g7
++pqjnw/+J7JEjSvN/apri3TBo6H5dxgJ2BOkIbSeBh6VY4B1nmWc2VhIaVdI+rKx
+6V5b5/DMiuZUhaJVztjCPMHUOlz/ds8Iz48vooQZMTRxmQqHgDAdtQj1VrhEOAfE
+1S68o4oaIKcJT6hAJGzzyqgUEunN7uVAZUnKAPxcg44umeznA38FGNzxIsc6ppc9
+ew2D6VgR5hg3x9z+ndnwCa0bukKMOdFkeOQmlHq3P8bfCaevNUKjIg4qaNj46BcC
+u6gog9bXrdU1e4NodJHi1kSsPabodN3pNk6V5cYFW6ub1xqExBZZGIYBJFgBOWUd
+Mgfj5AaDLEeBusPChcHV+qUFLhnKVlN9KGvFOl8DuMnp0Rihz+bokZf1J42kuWR9
+TwWCFTPQCm/71tfQGyMFlXjutkCBV7F+m21Pga4PdWSO//w+IJJY367T/70Jn5Sg
+aXEDSpyg7T36NmL+qsa5jrD/BI3i2vMI6AsilsA81T7/17BpQ9jHc1/yO+WnBmFs
+r4X1NQfl+Yl1RLztxUD8mWsOBRU7rBTYAsyVZHN7F6lxJACVG58Nm5ACHvavRfwr
+MWTiThD5ITxTx0/6v/4yo5Kz8+8hA1G5nSD29MRRqhEEOsmtEpfjYCzr4OkDkS1R
+Tl1pNgTaHcpbWooWRFvXrpLqecl6RHbrSV7ipLeXHoAbayDj/54=
+=3Mor
+-----END PGP SIGNATURE-----
+
+--hprv6k7zp2yqoiyn--
+
+
+--===============5601373680097709752==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5601373680097709752==--
+
