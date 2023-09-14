@@ -4,80 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11869EDE993
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Sep 2023 12:29:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95689EEAA53
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Sep 2023 14:48:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JKWXqLlqIz8IdDwxuuQih/mQJ8ivktynvm37cSf0KDg=; b=yEsj/iV7p9rF9H
-	rZ8IkdFNqXMOcNehcsxwAfPBhY2ArT69NxDfvRxUb1GSVyRC6mzptTJmsJZUQdmB/tu1p4FFaTASi
-	OWHD3JNB9g/suimKo/pfPM+Jc45Suk7LfLqhJn7ELmHLm7xLulfS75y4HwTRw0j8FkzifG73bXVXf
-	/CRNvAbB1Mo7wVgjHTwO0PKyn+JknbNTo6Pw5ea0DKwclqWoMzZrsrhWUdecom6KqPJrhBYpsmBmy
-	BeNrlZJd/geAJ5rh//WD9hHOTWtm7StC3bTv4Un6BU/sLOzWREFU1uGcB2FWFd/Pdj3Ik2i3QLyXB
-	Z/3WHN/AGLwfAcG1Lo8A==;
+	List-Owner; bh=EEpEMg7JHhvVFzA3CwgIIqlFfC9zr9zNFmxuJ2sOAjs=; b=PIQTy7jYtUf4Zu
+	+NJJe9jJxDD6UHZh1AohiiUa/jZpcs6yfvXak07qd5kL+W7aHK+7z6xvazzSUijPTwDPiP3xZderV
+	SUsuKslT8bTej/TcDek3fvLqAvCRLrh6p1F77AX7ebJZd4sZN6a1jAvJSQ5EpGZj+wCfBXIqt/t5s
+	XSsj9kKPwTuwTKsaTRZYdW/nsd1Mg9Cdr8L4IeCV5K1DaaA0GnFEeiZR59E6EKbanLEKTf9fGktPT
+	M9R0pHepcOGN5ap0kEdVwFZuHDLaIE27dsesQBIfHnQVhU8x6o2BdGQ2gyZJ36DwaSTmPlXsfo5Kh
+	OKpJwbY6QGiwHgH0D2OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qglTE-008KZK-2U;
-	Thu, 14 Sep 2023 12:29:20 +0000
-Received: from mail-yb1-xb31.google.com ([2607:f8b0:4864:20::b31])
+	id 1qgndg-008gIP-14;
+	Thu, 14 Sep 2023 14:48:16 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qglTC-008KYI-1E
+	id 1qgndd-008gFv-0i
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Sep 2023 12:29:19 +0000
-Received: by mail-yb1-xb31.google.com with SMTP id 3f1490d57ef6-d7820f9449bso950283276.1
-        for <linux-phy@lists.infradead.org>; Thu, 14 Sep 2023 05:29:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1694694550; x=1695299350; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=MtLDd3fxzJ2qWrurLeB9pHYuc3+Ev2d1hMk3Oahu1Wo=;
-        b=V2DKpn67av6TngowH67799hrJspDvRL4oxF0bVEQYApjLOnYCNaZY59ijI01PaENYb
-         lzE/eWB3HVVt1mF5DSo7Gjog1A95J3Eny4GK1tgNYWtM0JfLFo+eKlOU1i20ZhK5HVze
-         s/WFheRwtliYtj6KDry8c5mCNjny8LGEXSGLrqf4B6egFJq4o31O2yYIABB9rZaySkKi
-         rAYGrHl3nx3PBaDKAvZ/WrveP+UqpN2jK6Ucw5eCFGEVgus07tDq++3mYV5GwO1uOVWh
-         oS38wtL/3H5NzVRu4wjz5YWjvxnSvfb9qbghl5PxNDbiDa1aNH0VgS9o07L60P1nc8pv
-         jsZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1694694550; x=1695299350;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=MtLDd3fxzJ2qWrurLeB9pHYuc3+Ev2d1hMk3Oahu1Wo=;
-        b=NPHiMGK1QqDjMl0n+nXknhD0MmnvjOp+W73CLDQiq3VG/dRIDFE3tH1gpV2bzUqi/x
-         plj4cbbZ0+UKJB51XjSe3DYm13eng0HuJL98DdGYOV+/1rnvAiFu675a/oF+mUa5WUl0
-         +DJCjb3iWrXqgoD9zcCkWIPovodSUOhvyj5M6TOZbPAHZXYEoX4x2F9rWirUHST06yDC
-         6rW1cQmXiItY65MV+oHhYn2CG4GAkEznXufcofCozRGKp1MrRTFgdPMyprpjK8JSd7Ph
-         R5YgAg35TS/Q5twpm0FIaZrbT0G/5Oi+pg4gNXC/CzqcRttDCdUh9tUFnwETzVkl4LP8
-         tO3w==
-X-Gm-Message-State: AOJu0YwU8TCclSbQawWPpsOGsogE/6hAL4o7QWwzVRCGAMsIespQyPtf
-	xKvQITJmL75QHPPwn3qG3KGGJNUdhOLQE3JXysRoYg==
-X-Google-Smtp-Source: AGHT+IFKzxsuOJHD2I2G9JidYU6beywYTq4S1b179IHAIq/bnk1xXw7mkm/fBLJ/vc1OHT+Dq/2wiGVPBeOWWrBBbDg=
-X-Received: by 2002:a25:40d:0:b0:d7b:3917:4609 with SMTP id
- 13-20020a25040d000000b00d7b39174609mr4683812ybe.19.1694694550698; Thu, 14 Sep
- 2023 05:29:10 -0700 (PDT)
+	Thu, 14 Sep 2023 14:48:14 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id C887ECE2674;
+	Thu, 14 Sep 2023 14:48:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FDCBC433C9;
+	Thu, 14 Sep 2023 14:48:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1694702889;
+	bh=y75UZV7IrEfaRshsSKNFVB5QqnbIpnAX2/2OZFpAm1I=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ZO9RHGVbtpfHNXzviqAu345MBTfgs3Mj0JvziDHVFd6VP7DHN8BXPZl8fQlMTSUv3
+	 VdGNxQLmXJceXc5QounrVyFFRQFSIQt8Y3AxrVvQm2hN+5/PncJhz7SQavQkdtpW+6
+	 ZbKUY3ZNT8Z6U+MhhNxxxkgbdsWLlLI3nWA/KKU2tCrX4DNJzNi8mg/QeqEm2SeI+Q
+	 6TNPDoWo87fv4nYUjLQ7A/aq6IYGNwR/ziTksXiOcjMmSjU/pwaopBjq00MGFWLLm4
+	 Z09dOwpHXjB/rdY5QPnW1uHMkb63BLy6GJTyjEOhSuwYl675BCY2+w0Tqc7yFtXuOu
+	 p/lP27OPtGgww==
+Received: (nullmailer pid 1271313 invoked by uid 1000);
+	Thu, 14 Sep 2023 14:48:07 -0000
+Date: Thu, 14 Sep 2023 09:48:07 -0500
+From: Rob Herring <robh@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>, Marijn Suijten <marijn.suijten@somainline.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ magic tuning overrides
+Message-ID: <20230914144807.GA1267899-robh@kernel.org>
+References: <20230830-topic-eusb2_override-v2-0-7d8c893d93f6@linaro.org>
+ <20230830-topic-eusb2_override-v2-1-7d8c893d93f6@linaro.org>
 MIME-Version: 1.0
-References: <1694411968-14413-1-git-send-email-quic_cang@quicinc.com> <1694411968-14413-5-git-send-email-quic_cang@quicinc.com>
-In-Reply-To: <1694411968-14413-5-git-send-email-quic_cang@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 14 Sep 2023 15:28:59 +0300
-Message-ID: <CAA8EJpoWnXeJKPB04kJW6Qo7ifAnt1u2ZSiq+W2HWOez=hi5gA@mail.gmail.com>
-Subject: Re: [PATCH 4/6] phy: qualcomm: phy-qcom-qmp-ufs: Move data structs
- and setting tables to header
-To: Can Guo <quic_cang@quicinc.com>
-Cc: mani@kernel.org, quic_nguyenb@quicinc.com, quic_nitirawa@quicinc.com, 
-	martin.petersen@oracle.com, linux-scsi@vger.kernel.org, 
-	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	open list <linux-kernel@vger.kernel.org>, 
-	"open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
+Content-Disposition: inline
+In-Reply-To: <20230830-topic-eusb2_override-v2-1-7d8c893d93f6@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230914_052918_419448_8BF4BEEE 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20230914_074813_466662_243A5754 
+X-CRM114-Status: GOOD (  16.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,30 +78,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 11 Sept 2023 at 09:01, Can Guo <quic_cang@quicinc.com> wrote:
->
-> To make the code more readable, move the data structs and PHY settting
-> tables to a header file, namely the phy-qcom-qmp-ufs.h.
->
-> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+On Wed, Sep 13, 2023 at 11:53:23AM +0200, Konrad Dybcio wrote:
+> The EUSB2 repeater requires some alterations to its init sequence,
+> depending on board design.
+> 
+> Add support for making the necessary changes to that sequence to make USB
+> functional on SM8550-based Xperia 1 V.
+> 
+> They all have lackluster description due to lack of information.
+> 
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 802 +------------------------------
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.h | 805 ++++++++++++++++++++++++++++++++
->  2 files changed, 806 insertions(+), 801 deletions(-)
->  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-ufs.h
+>  .../bindings/phy/qcom,snps-eusb2-repeater.yaml      | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> index 029569d5fcf3..24c733c10e0e 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> @@ -32,6 +32,27 @@ properties:
+>  
+>    vdd3-supply: true
+>  
+> +  qcom,tune-usb2-disc-thres:
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: High-Speed disconnect threshold
+> +    minimum: 0
+> +    maximum: 7
+> +    default: 0
+> +
+> +  qcom,tune-usb2-amplitude:
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: High-Speed trasmit amplitude
+> +    minimum: 0
+> +    maximum: 15
+> +    default: 8
+> +
+> +  qcom,tune-usb2-preem:
+> +    $ref: /schemas/types.yaml#/definitions/uint8
+> +    description: High-Speed TX pre-emphasis tuning
+> +    minimum: 0
+> +    maximum: 7
+> +    default: 5
 
-Is there any reason to do so? Other than just moving stuff around, it
-doesn't give us anything. This header will not be shared with any
-other driver. Just moving data tables to the header (ugh, static data
-in the header) doesn't make code more readable.
+For what it is worth, the mediatek,tphy.yaml binding has the same 
+properties...
 
-If you really would like to clean up the QMP drivers, please consider
-splitting _common_ parts. But at this point I highly doubt that it is
-possible in a useful way.
-
--- 
-With best wishes
-Dmitry
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
