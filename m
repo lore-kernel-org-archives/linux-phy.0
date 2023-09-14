@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 648EAEEAA77
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Sep 2023 21:16:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC22EEEAA77
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Sep 2023 21:16:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6hFGZPwFP5b3Go+tVt2q887WMeKRSbfbRHjk1xzddZM=; b=AQLw12aTSM+Z5U
-	e2qDsgySekrpF9OFXNYNgd7XNSxijvIsT5n1UfLJUQ6jyAYB5BZGoLbByTogOrs25QyJucw9rpu3W
-	5nHXVIvEegQnZTzUJLjD2dSCjY1cjtPApGcGBS3fcx3wEBZ0hGC6GDpGgyabChJ4+QBNfyxyifqIF
-	zDOLpxROTxRU8YTLYkBy+mM86U5lenlBHTQ8QdZuFD6/wMAKlywTwKcylfDMTjRAw5/2jl6BDC6bI
-	M1oLoKDUyDQnIhIcyMam6ClPQYrD9SS2CkPzyhygIkeqHXIWGn4hL2yr0c2sBofQbzqGaARtxlVgt
-	JwqmTc2Pq1mkVBMm0oXA==;
+	List-Owner; bh=71VyFuF3Qmk2x53iO3SB6SCyeNEGOXTTtj+Y8qEBw6g=; b=0E8+px00vYNQc9
+	q0QU8m1rnSrW7Jx1xm+nkXcd6qsGDEiQowvyxsmQPkBjbruAh3Wbjdnrx7jqgVrpJsEIuUi1HQayx
+	Pye8sn7zS2v6xJ6l/d0rWu233Tz0OT9kMYgj46owOmPtxZfBwOqddeBSMwUBahwyAivE9m1/i2APM
+	abbXcsAUHGvp+O0t51jdhAtUibZzHSD/rSEre4D9jAzMN2slgweBtvv0846tKRNYVkJRX4KmGXcXj
+	80mqIrd9kMKs5udyeRuQHvELl6YEh8RzqmOrKCMl61nDo1m5xVSFwlnLb8rhlfZu6hgsApNL9TUJa
+	KDH/JKF2wO680IqQtLgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgthD-009IdB-0P;
-	Thu, 14 Sep 2023 21:16:19 +0000
-Received: from relay9-d.mail.gandi.net ([2001:4b98:dc4:8::229])
+	id 1qgthN-009Ifh-0q;
+	Thu, 14 Sep 2023 21:16:29 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgth9-009IcJ-2i;
-	Thu, 14 Sep 2023 21:16:17 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id B4981FF803;
-	Thu, 14 Sep 2023 21:16:07 +0000 (UTC)
+	id 1qgthE-009Ice-08;
+	Thu, 14 Sep 2023 21:16:21 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id B7B9F20003;
+	Thu, 14 Sep 2023 21:16:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1694726169;
+	t=1694726175;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=QfHE7Gy8icrSvGsTMlEV38zZ/z1OUPzjNqGfkRIIxr8=;
-	b=jhodw+HFc8WoRUsJCam8bcN36VprOZAAK3tj8P1awGAj7ay5iRO5VsGz6YGrR/pGkYWJfF
-	p8YTlMZ1UycuI17niKtxYPlH9Zyh/hsZ8F8TzUFeNrVOkKW6k91S83GOPWxinoB24NkEv2
-	Gvhhpz5c6JxTdmADlzJBX0MQ/B7z2JY2/tXeiOMam2urXKhZwMpPNgtaFnoGP5kYksv1TZ
-	n4YfSI83N/xDyyXc9+Okkf5Fgi2e9DKm7xmqaijHyKhsj6zX5Z56AV6fy66vAb/y+aZhS3
-	bFZEzE2wkHSDiRdEK3ATnL0Zyr/qS3JPJkagnoC53MiGzCVOhwiYxbnnY9JL+Q==
-Date: Thu, 14 Sep 2023 23:16:06 +0200
+	bh=J2uByTSc6ef2wK15Maeotg/rSPIQ8wdVeYHF0MmEwJ8=;
+	b=ER65GMMSKPyr6+QvCoJU06vqzBVSGGkY0KbyPJ/2OanGNONbd+JcMb3bpegvJY2Qy/7G8w
+	w/jWn/U4WB9q3++/Hsb4hUmiULOZTsWGNC1RcPQvxTyl5AtkmD58/SOxhrFrxiZqYPstU6
+	mLUqYYJnOdCEFEJhuu3wOg98GftsQzOKHZrQT+hmMTcdveRV2q6DAW9rbm0YWKEZ4bcN0E
+	/SCJQFNraGGeZ5Uu+ik+F5a0NVwol3T1eeuH+NK39v8trS2M78Slntk5cU1JFQSCHUw7Xq
+	60TEcebW9ilV30MsUIRP6MwhpV9wdxk3Yue7bHRYuwaLzC2ELAyYuMICYUn/Ow==
+Date: Thu, 14 Sep 2023 23:16:10 +0200
 From: Luca Ceresoli <luca.ceresoli@bootlin.com>
 To: Lucas Stach <l.stach@pengutronix.de>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
@@ -48,20 +48,19 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, patchwork-lst@pengutronix.de, Richard
- Leitner <richard.leitner@skidata.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add binding for the i.MX8MP
- HDMI PHY
-Message-ID: <20230914231606.714982be@booty>
-In-Reply-To: <20230906184211.1857585-1-l.stach@pengutronix.de>
+ Leitner <richard.leitner@skidata.com>, Sandor Yu <Sandor.yu@nxp.com>
+Subject: Re: [PATCH v3 2/2] phy: freescale: add Samsung HDMI PHY
+Message-ID: <20230914231610.2c339f7e@booty>
+In-Reply-To: <20230906184211.1857585-2-l.stach@pengutronix.de>
 References: <20230906184211.1857585-1-l.stach@pengutronix.de>
+	<20230906184211.1857585-2-l.stach@pengutronix.de>
 Organization: Bootlin
 X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-GND-Sasl: luca.ceresoli@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230914_141616_200651_7FE4CD7F 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230914_141620_216947_862E072D 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,17 +79,56 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Lucas,
 
-On Wed,  6 Sep 2023 20:42:10 +0200
+[+Cc: Sandor]
+
+On Wed,  6 Sep 2023 20:42:11 +0200
 Lucas Stach <l.stach@pengutronix.de> wrote:
 
-> Add a DT binding for the HDMI PHY found on the i.MX8MP SoC.
+> This adds the driver for the Samsung HDMI PHY found on the
+> i.MX8MP SoC. Based on downstream implementation from
+> Sandor Yu <Sandor.yu@nxp.com>.
 > 
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com> (v2)
 
-Thanks for resending this series!
+Also for v3:
+[On custom board based on MSC SM2S-IMX8PLUS SMARC module]
+Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
 
-Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+I have a few notes however, see below.
+
+> +#define PHY_REG_14		0x38
+> +#define  REG14_TOL_MASK		GENMASK(7, 4)
+> +#define  REG14_RP_CODE_MASK	GENMASK(2, 1)
+
+According to the latest reference manual currently available on the NXP
+website (Rev. 1, 06/2021), this should be GENMASK(3, 1). This is
+somewhat nitpicking as the only possible value documented is 2. But
+let's continue...
+
+> +#define PHY_REG_33		0x84
+> +#define  REG33_MODE_SET_DONE	BIT(7)
+> +#define  REG33_FIX_DA		BIT(1)
+
+Here the reference manual is very different:
+
+MODE_SET_DONE BIT(4)
+TX_INV2       BIT(3)
+TX_INV1       BIT(2)
+TX_INV0       BIT(1)
+MON_RXD       BIT(0)
+bits 7-5 are reserved
+
+...which is strange: in the code you are always writing 0 in bit 4,
+which according to the docs means MODE_SET_DONE is always "Assert
+forced global reset". Thus I guess your definitions come from the
+downstream driver which, as it sadly happens, is more authoritative
+than the docs. :-/
+
+Sandor, can you confirm this, or provide any clarifications?
+
+Otherwise LGTM.
+
+Luca
 
 -- 
 Luca Ceresoli, Bootlin
