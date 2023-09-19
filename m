@@ -4,79 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFB22CD5BCD
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Sep 2023 15:12:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB185CE79A8
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Sep 2023 22:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gMio/rCiXFyTI9kgPZS7V8kWPAdFxa/6EsIYM2kLNyc=; b=OP0z1gd/ZLDLJD
-	a36HEPCBfGKmwpgiuRNKOhJnlUU52VanuSXpPsbH0MW7t6waj5KPsTN61X9Jd6KW+Ipb9w8O4MpYe
-	FLnVYwNpdFQlpt2a0BxPECJjeyPf35ldFWQVzWX1x7NcQvUumffA9wPC4fQApGITSXDF53IP9UYm4
-	QtPrHwXr7R8mbknYEFVqI7fRRPs3fcMwRPawE7e6RzEYDF2AmbO3dsvyJL85BFO0VojYno6iWlmuc
-	5lDpITchbt73nQSkv4vaBnKFqzgAudibF1VtPK7tMvOzPxhMCnAXWPB6M3YbLnawjxtecOgGSpGrF
-	agkE7u4Qrnhpnt5/nUaQ==;
+	List-Owner; bh=IHkikoAch74ErjAI/X9SHTMSHLRNKUr3sZ/IoIPUtm0=; b=IxvKZHbbXSbQ/e
+	/7E2/GYxzcT+REdLZvQalfJohjLWMtZ8+5Zl58qjk5bH3mOpg9aqEZOzZo49KQWoeY8B79QZn7eHs
+	GGjxzDsz+S/7IVk0JiHU/l0O+VWlb+/sH7ekQp0/nkpjsQMmsM1dXchKEHWBs67FmdSSn29w8wH9X
+	/Gn+HQZE+HEVUUFQ8hrtvJn1TFZk+0ZZXGkurp9ckxEJRfn8XmUJxnH4uxlosAA3g5KMXSiUgDiu2
+	4qrAHMj2v51U4qafcFvUufN95T5b7OLXU+n0lUtn9rNz0hXqPL7UprPtECFTzCV5WLMy4t/wDgCj3
+	kEiPdAs8G/ppMmycNz5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qicP7-000jtl-24;
-	Tue, 19 Sep 2023 15:12:45 +0000
-Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
+	id 1qijEs-001NST-1e;
+	Tue, 19 Sep 2023 22:30:38 +0000
+Received: from mail-yw1-x112b.google.com ([2607:f8b0:4864:20::112b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qicP5-000jsl-1I
+	id 1qijEo-001NRF-2x
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Sep 2023 15:12:44 +0000
-Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-d7ecdb99b7aso5544355276.3
-        for <linux-phy@lists.infradead.org>; Tue, 19 Sep 2023 08:12:42 -0700 (PDT)
+	Tue, 19 Sep 2023 22:30:36 +0000
+Received: by mail-yw1-x112b.google.com with SMTP id 00721157ae682-59e8d963adbso31488657b3.0
+        for <linux-phy@lists.infradead.org>; Tue, 19 Sep 2023 15:30:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1695136362; x=1695741162; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1695162632; x=1695767432; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=RwBFLBCefbsy21c4npTbAU6eApQw+jfQJ+Mmxu8RhRA=;
-        b=xSTUK57zxG41HBgylFYIoK5xWxembTsS8U6lCYkX8YEub7phf6ER+UXxRgx8oEEAv6
-         Q/segtFEM9YXgKrY3BriuSUDARGzgZTb/n1AKVEbnV0c5ayUN0NafOIDwDqGE+7MmUPB
-         ooOuOAAOXw3U641wgaEI3y+oOcBoVZMzTM7LszsiGXF1l3wx2VTXnTotVNaNYjlGNeKG
-         ciJ3Lxi1S1X1fYPdMm9Zz9cT25vjwkz/X8cicPyY1gSz6kksAtjM7gt1n1jO2jwvl9+H
-         FlhZeIEASTfQ767ka8fHOWLaRlacMHasV3NygSYtdOhv6/nqj72MeJMbj3XbHKVqnt7P
-         E2bA==
+        bh=ZWE12E4GSEQPScLBBOQ9P6hDatI6KkLL6gqpAgFkrJo=;
+        b=ybEA7rc83m2kBoxiRJrdKWgbJGF5d+q1U15nmDpikzg4KoyqNDnxD9U3JV88cQ3luA
+         eAebTO41q4NxkU4FmyvjRPUZIcyfxPPLgDvt+YPW3M3rDkUFldIDDA71sm0Be2fXiC3s
+         q3tmMLi8pf2Z6KZ2aJyrjUmpwyX6qjz2+FugfuDm2QU2Zp3oISUHCFRtz8u29hforCrs
+         p2aheb+obqBQb4QquEE4JfL/v2mWrbeMqKirknSnXvP14td2lFRewcgfIRSi2cKICd2x
+         dH9AY/jo9esNP1cxMfSM4Te6FUZCPgrUnP0fVuUMoDd+B9Db029Hf+ttpDBbHuhVKwlp
+         PiHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1695136362; x=1695741162;
+        d=1e100.net; s=20230601; t=1695162632; x=1695767432;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=RwBFLBCefbsy21c4npTbAU6eApQw+jfQJ+Mmxu8RhRA=;
-        b=OGk1G+Uq1rDKKNY3fEuVE2L59FOiek0sa9VYjHP7P4a+IowJ8weqdtiulUYSm0ch5+
-         I5HUMTzSs09U2mfcBFwOJC7mDyoeqZAURRgg9vjSrCSvC3qrbJVbt6rfwlpJ5UgdRBtN
-         ITQ3tM56HgybzsvnFfh3dWEOjNHL5mGUQEBd2Q0C9f2wJDKQpuS5yT/7f11y8CZrVfYp
-         9AAOTVAWf+VqG7n2cJcyqMBwk9V6aLy4kVIJIcOm/ERGKflHxtnOu3qHHjRJM35i+wEQ
-         +m/LHmDHT9ddsw05PF6hgqJcPZCsGSmFHrAZo7i0eN8TfaYonUHg/h4DYE4nKdnkcKOd
-         RIvA==
-X-Gm-Message-State: AOJu0Yx4O/oC83ZWLv1EGqcvwRV7wrX7Yds6K3nuAfb2H9Oq9PG1ncPT
-	U5cMlMoXeWhoBedUuYYpEN8V/HszibQNjxzSnb4qyw==
-X-Google-Smtp-Source: AGHT+IGSY0KfKzL/8laxx9lvgeIq6kZxzBsZt5dq8iJrSTHyFpS5ghMNwzig2inkSJFiqO0qXFR1oOfDMzboG7t3tJc=
-X-Received: by 2002:a5b:c48:0:b0:d81:cb92:337c with SMTP id
- d8-20020a5b0c48000000b00d81cb92337cmr10601197ybr.54.1695136361868; Tue, 19
- Sep 2023 08:12:41 -0700 (PDT)
+        bh=ZWE12E4GSEQPScLBBOQ9P6hDatI6KkLL6gqpAgFkrJo=;
+        b=uHkAaHaJJZvdQz6hdXKFDVBvrLhOgteGpGScI+s4FK7nDYzGu3yOuCxSeUS62vfXnn
+         cUo+MLy3ERvjflNgUk52moKOfNW5vKbxakdDk8iJpk/RovoveDbwP5jIUmEdTplTALlq
+         KFzHNsxFqgR8Pk9FYL+prrIkWaVKNlYq6azUyq+E6XefaEP9kuXMSWLfIG/UX3VYA3fP
+         UH5ZEFKmZlBVCYa/NGhZrniseFxEmp/tVl4c3TciHpKoAA8if5PCn+N8iNqQAEaNvSW6
+         beU/mmJ4DiNxBv2RKhp6lV+LDOKMoEZC5J+lMWywhfFI2t0LGzvj01GceO7SnpCrDhud
+         mPmQ==
+X-Gm-Message-State: AOJu0YwBnSGO94zbekgJdIJwo0U+BR16Us6HQZ/ln7vFAh2nEjbzHN1I
+	zLGx9Sd8qC1236VCmtjDSVES0CeMlvOmresJFSO+bw==
+X-Google-Smtp-Source: AGHT+IEV8SVk5WgId3f74CGiOEcj5v/vf1O/cO2KcQDyXtlP/RbqH7RmWLEiFf0qFc30CL2l7x/95xY4aKHQ9wEx8sQ=
+X-Received: by 2002:a0d:d88e:0:b0:58f:96d8:e7ad with SMTP id
+ a136-20020a0dd88e000000b0058f96d8e7admr899833ywe.18.1695162632620; Tue, 19
+ Sep 2023 15:30:32 -0700 (PDT)
 MIME-Version: 1.0
-References: <20230918205037.25658-1-quic_nitirawa@quicinc.com> <20230918205037.25658-3-quic_nitirawa@quicinc.com>
-In-Reply-To: <20230918205037.25658-3-quic_nitirawa@quicinc.com>
+References: <1694411968-14413-1-git-send-email-quic_cang@quicinc.com>
+ <1694411968-14413-5-git-send-email-quic_cang@quicinc.com> <CAA8EJpoWnXeJKPB04kJW6Qo7ifAnt1u2ZSiq+W2HWOez=hi5gA@mail.gmail.com>
+ <20230919121524.GD4732@thinkpad>
+In-Reply-To: <20230919121524.GD4732@thinkpad>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 19 Sep 2023 18:12:30 +0300
-Message-ID: <CAA8EJprAxUhipHS1+BRRVo8o6gubNRJk12msMgOraDjFBo8rVQ@mail.gmail.com>
-Subject: Re: [PATCH V4 2/2] phy: qcom-qmp-ufs: Add Phy Configuration support
- for SC7280
-To: Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
-	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
-	Manish Pandey <quic_mapa@quicinc.com>
+Date: Wed, 20 Sep 2023 01:30:21 +0300
+Message-ID: <CAA8EJpoqRBxS7HJrFdRAvv677hKJw+d_K+fN_4ABDrj+68r28w@mail.gmail.com>
+Subject: Re: [PATCH 4/6] phy: qualcomm: phy-qcom-qmp-ufs: Move data structs
+ and setting tables to header
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Can Guo <quic_cang@quicinc.com>, quic_nguyenb@quicinc.com, 
+	quic_nitirawa@quicinc.com, martin.petersen@oracle.com, 
+	linux-scsi@vger.kernel.org, Andy Gross <agross@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, open list <linux-kernel@vger.kernel.org>, 
+	"open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230919_081243_443519_069FE204 
-X-CRM114-Status: UNSURE (   6.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230919_153034_968221_6B051960 
+X-CRM114-Status: GOOD (  25.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,15 +96,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 18 Sept 2023 at 23:51, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
+On Tue, 19 Sept 2023 at 15:15, Manivannan Sadhasivam <mani@kernel.org> wrote:
 >
-> Add SC7280 specific register layout and table configs.
+> On Thu, Sep 14, 2023 at 03:28:59PM +0300, Dmitry Baryshkov wrote:
+> > On Mon, 11 Sept 2023 at 09:01, Can Guo <quic_cang@quicinc.com> wrote:
+> > >
+> > > To make the code more readable, move the data structs and PHY settting
+> > > tables to a header file, namely the phy-qcom-qmp-ufs.h.
+> > >
+> > > Signed-off-by: Can Guo <quic_cang@quicinc.com>
+> > > ---
+> > >  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 802 +------------------------------
+> > >  drivers/phy/qualcomm/phy-qcom-qmp-ufs.h | 805 ++++++++++++++++++++++++++++++++
+> > >  2 files changed, 806 insertions(+), 801 deletions(-)
+> > >  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-ufs.h
+> >
+> > Is there any reason to do so? Other than just moving stuff around, it
+> > doesn't give us anything. This header will not be shared with any
+> > other driver. Just moving data tables to the header (ugh, static data
+> > in the header) doesn't make code more readable.
+> >
 >
-> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
-> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+> I think the motive here is to move the static tables to one file and have the
+> rest of the code in another. Because, the static tables itself occupy 1.2k LoC
+> now and it is going to grow. So let's keep them in a single file to avoid mixing
+> it with rest of the driver code.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+My 2c is that this is mostly useless. The headers are for sharing, not
+for moving the data out of the .c files. Not to mention that the
+driver code comes after the tables.
+I'd really suggest starting such a move with separating common parts
+of all the QMP drivers.
+
+>
+> - Mani
+>
+> > If you really would like to clean up the QMP drivers, please consider
+> > splitting _common_ parts. But at this point I highly doubt that it is
+> > possible in a useful way.
+
 
 -- 
 With best wishes
