@@ -4,73 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E690CD5BA6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Sep 2023 12:15:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFB22CD5BCD
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Sep 2023 15:12:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2tLDp4ZNFv9rjxH3R/pEcG28SWAadN4hHhrh19mggIQ=; b=q0x0+8YLaTslUs
-	mS7OIjJSaxLg0oDptOZXDWVUBOvLln40E3r61qyI3RK2rKfZCDVHqEgrPKhdkSx1S18mSIyzgOr8m
-	Z2mgwRY6k7hvH3u1+eFzw9vM2M3IHrsWcl3wAu7SYdgI4qhPUDWmTpmC0zzEDDisTU3UAPnoUvrok
-	MDt+gUIAav1SivaKwJB+YrJfcYzcP4mKYUi/hAhl1Q2JLhO2JU0C2UGBfylWeJt8HNC1vzS0+XkpQ
-	/p1T6aH3vfvA7Fb+TQ3KsdTw4H9XZZrXQo6TvKsmAKkpJYHYjPmf9d9bDgtpXA5A3X//H/JQ5M2bd
-	wKm7jwyF2w//F44z5nkA==;
+	List-Owner; bh=gMio/rCiXFyTI9kgPZS7V8kWPAdFxa/6EsIYM2kLNyc=; b=OP0z1gd/ZLDLJD
+	a36HEPCBfGKmwpgiuRNKOhJnlUU52VanuSXpPsbH0MW7t6waj5KPsTN61X9Jd6KW+Ipb9w8O4MpYe
+	FLnVYwNpdFQlpt2a0BxPECJjeyPf35ldFWQVzWX1x7NcQvUumffA9wPC4fQApGITSXDF53IP9UYm4
+	QtPrHwXr7R8mbknYEFVqI7fRRPs3fcMwRPawE7e6RzEYDF2AmbO3dsvyJL85BFO0VojYno6iWlmuc
+	5lDpITchbt73nQSkv4vaBnKFqzgAudibF1VtPK7tMvOzPxhMCnAXWPB6M3YbLnawjxtecOgGSpGrF
+	agkE7u4Qrnhpnt5/nUaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qiZdg-000NrG-0i;
-	Tue, 19 Sep 2023 12:15:36 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1qicP7-000jtl-24;
+	Tue, 19 Sep 2023 15:12:45 +0000
+Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qiZdd-000NqM-2q
+	id 1qicP5-000jsl-1I
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Sep 2023 12:15:35 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 4B594B81128;
-	Tue, 19 Sep 2023 12:15:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96AB2C433C7;
-	Tue, 19 Sep 2023 12:15:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695125731;
-	bh=xvCx7ZWNm6jnB4edU9vEvToGC6Z5Sc/hEVmL8SgiqZU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HZseuY35WtH77s0q6NFTQCnN8iQjLfnq+vTD+TAUlrk1wwvuAA+DFYeeWDHg+Fvv2
-	 2p6iwRJRenvbl6ao3MJAEqtuyGay6DGmaLxjZg6b1l2VHtsnzUtBHtes7Oij33Zb77
-	 ZfFX+F1k6Mf3stSs08AxTMhP+Go1OwBLN5x1+1uwlvf/2EhbrGuYo3QXWoHcFjP2Gw
-	 ZyDw0apc9XL/oqWyk+cv6tI5vgjRRTRkDU87aT5x4nGDyfPua3g5WTFmVoZeyMe+LT
-	 5Nt4CcQC2lHyCUj1KsDJGxI7CwdjierL8EemVsHwQ7gRYVYCp+RKS6T+xspknKRDa9
-	 bZAI19Hco5l0g==
-Date: Tue, 19 Sep 2023 14:15:24 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Can Guo <quic_cang@quicinc.com>, quic_nguyenb@quicinc.com,
-	quic_nitirawa@quicinc.com, martin.petersen@oracle.com,
-	linux-scsi@vger.kernel.org, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	open list <linux-kernel@vger.kernel.org>,
-	"open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>,
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH 4/6] phy: qualcomm: phy-qcom-qmp-ufs: Move data structs
- and setting tables to header
-Message-ID: <20230919121524.GD4732@thinkpad>
-References: <1694411968-14413-1-git-send-email-quic_cang@quicinc.com>
- <1694411968-14413-5-git-send-email-quic_cang@quicinc.com>
- <CAA8EJpoWnXeJKPB04kJW6Qo7ifAnt1u2ZSiq+W2HWOez=hi5gA@mail.gmail.com>
+	Tue, 19 Sep 2023 15:12:44 +0000
+Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-d7ecdb99b7aso5544355276.3
+        for <linux-phy@lists.infradead.org>; Tue, 19 Sep 2023 08:12:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1695136362; x=1695741162; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=RwBFLBCefbsy21c4npTbAU6eApQw+jfQJ+Mmxu8RhRA=;
+        b=xSTUK57zxG41HBgylFYIoK5xWxembTsS8U6lCYkX8YEub7phf6ER+UXxRgx8oEEAv6
+         Q/segtFEM9YXgKrY3BriuSUDARGzgZTb/n1AKVEbnV0c5ayUN0NafOIDwDqGE+7MmUPB
+         ooOuOAAOXw3U641wgaEI3y+oOcBoVZMzTM7LszsiGXF1l3wx2VTXnTotVNaNYjlGNeKG
+         ciJ3Lxi1S1X1fYPdMm9Zz9cT25vjwkz/X8cicPyY1gSz6kksAtjM7gt1n1jO2jwvl9+H
+         FlhZeIEASTfQ767ka8fHOWLaRlacMHasV3NygSYtdOhv6/nqj72MeJMbj3XbHKVqnt7P
+         E2bA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1695136362; x=1695741162;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=RwBFLBCefbsy21c4npTbAU6eApQw+jfQJ+Mmxu8RhRA=;
+        b=OGk1G+Uq1rDKKNY3fEuVE2L59FOiek0sa9VYjHP7P4a+IowJ8weqdtiulUYSm0ch5+
+         I5HUMTzSs09U2mfcBFwOJC7mDyoeqZAURRgg9vjSrCSvC3qrbJVbt6rfwlpJ5UgdRBtN
+         ITQ3tM56HgybzsvnFfh3dWEOjNHL5mGUQEBd2Q0C9f2wJDKQpuS5yT/7f11y8CZrVfYp
+         9AAOTVAWf+VqG7n2cJcyqMBwk9V6aLy4kVIJIcOm/ERGKflHxtnOu3qHHjRJM35i+wEQ
+         +m/LHmDHT9ddsw05PF6hgqJcPZCsGSmFHrAZo7i0eN8TfaYonUHg/h4DYE4nKdnkcKOd
+         RIvA==
+X-Gm-Message-State: AOJu0Yx4O/oC83ZWLv1EGqcvwRV7wrX7Yds6K3nuAfb2H9Oq9PG1ncPT
+	U5cMlMoXeWhoBedUuYYpEN8V/HszibQNjxzSnb4qyw==
+X-Google-Smtp-Source: AGHT+IGSY0KfKzL/8laxx9lvgeIq6kZxzBsZt5dq8iJrSTHyFpS5ghMNwzig2inkSJFiqO0qXFR1oOfDMzboG7t3tJc=
+X-Received: by 2002:a5b:c48:0:b0:d81:cb92:337c with SMTP id
+ d8-20020a5b0c48000000b00d81cb92337cmr10601197ybr.54.1695136361868; Tue, 19
+ Sep 2023 08:12:41 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJpoWnXeJKPB04kJW6Qo7ifAnt1u2ZSiq+W2HWOez=hi5gA@mail.gmail.com>
+References: <20230918205037.25658-1-quic_nitirawa@quicinc.com> <20230918205037.25658-3-quic_nitirawa@quicinc.com>
+In-Reply-To: <20230918205037.25658-3-quic_nitirawa@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 19 Sep 2023 18:12:30 +0300
+Message-ID: <CAA8EJprAxUhipHS1+BRRVo8o6gubNRJk12msMgOraDjFBo8rVQ@mail.gmail.com>
+Subject: Re: [PATCH V4 2/2] phy: qcom-qmp-ufs: Add Phy Configuration support
+ for SC7280
+To: Nitin Rawat <quic_nitirawa@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+	Manish Pandey <quic_mapa@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230919_051534_069337_C0E28159 
-X-CRM114-Status: GOOD (  21.80  )
+X-CRM114-CacheID: sfid-20230919_081243_443519_069FE204 
+X-CRM114-Status: UNSURE (   6.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,36 +88,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBTZXAgMTQsIDIwMjMgYXQgMDM6Mjg6NTlQTSArMDMwMCwgRG1pdHJ5IEJhcnlzaGtv
-diB3cm90ZToKPiBPbiBNb24sIDExIFNlcHQgMjAyMyBhdCAwOTowMSwgQ2FuIEd1byA8cXVpY19j
-YW5nQHF1aWNpbmMuY29tPiB3cm90ZToKPiA+Cj4gPiBUbyBtYWtlIHRoZSBjb2RlIG1vcmUgcmVh
-ZGFibGUsIG1vdmUgdGhlIGRhdGEgc3RydWN0cyBhbmQgUEhZIHNldHR0aW5nCj4gPiB0YWJsZXMg
-dG8gYSBoZWFkZXIgZmlsZSwgbmFtZWx5IHRoZSBwaHktcWNvbS1xbXAtdWZzLmguCj4gPgo+ID4g
-U2lnbmVkLW9mZi1ieTogQ2FuIEd1byA8cXVpY19jYW5nQHF1aWNpbmMuY29tPgo+ID4gLS0tCj4g
-PiAgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIHwgODAyICstLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiA+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNv
-bS1xbXAtdWZzLmggfCA4MDUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiA+ICAy
-IGZpbGVzIGNoYW5nZWQsIDgwNiBpbnNlcnRpb25zKCspLCA4MDEgZGVsZXRpb25zKC0pCj4gPiAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC11ZnMu
-aAo+IAo+IElzIHRoZXJlIGFueSByZWFzb24gdG8gZG8gc28/IE90aGVyIHRoYW4ganVzdCBtb3Zp
-bmcgc3R1ZmYgYXJvdW5kLCBpdAo+IGRvZXNuJ3QgZ2l2ZSB1cyBhbnl0aGluZy4gVGhpcyBoZWFk
-ZXIgd2lsbCBub3QgYmUgc2hhcmVkIHdpdGggYW55Cj4gb3RoZXIgZHJpdmVyLiBKdXN0IG1vdmlu
-ZyBkYXRhIHRhYmxlcyB0byB0aGUgaGVhZGVyICh1Z2gsIHN0YXRpYyBkYXRhCj4gaW4gdGhlIGhl
-YWRlcikgZG9lc24ndCBtYWtlIGNvZGUgbW9yZSByZWFkYWJsZS4KPiAKCkkgdGhpbmsgdGhlIG1v
-dGl2ZSBoZXJlIGlzIHRvIG1vdmUgdGhlIHN0YXRpYyB0YWJsZXMgdG8gb25lIGZpbGUgYW5kIGhh
-dmUgdGhlCnJlc3Qgb2YgdGhlIGNvZGUgaW4gYW5vdGhlci4gQmVjYXVzZSwgdGhlIHN0YXRpYyB0
-YWJsZXMgaXRzZWxmIG9jY3VweSAxLjJrIExvQwpub3cgYW5kIGl0IGlzIGdvaW5nIHRvIGdyb3cu
-IFNvIGxldCdzIGtlZXAgdGhlbSBpbiBhIHNpbmdsZSBmaWxlIHRvIGF2b2lkIG1peGluZwppdCB3
-aXRoIHJlc3Qgb2YgdGhlIGRyaXZlciBjb2RlLgoKLSBNYW5pCgo+IElmIHlvdSByZWFsbHkgd291
-bGQgbGlrZSB0byBjbGVhbiB1cCB0aGUgUU1QIGRyaXZlcnMsIHBsZWFzZSBjb25zaWRlcgo+IHNw
-bGl0dGluZyBfY29tbW9uXyBwYXJ0cy4gQnV0IGF0IHRoaXMgcG9pbnQgSSBoaWdobHkgZG91YnQg
-dGhhdCBpdCBpcwo+IHBvc3NpYmxlIGluIGEgdXNlZnVsIHdheS4KPiAKPiAtLSAKPiBXaXRoIGJl
-c3Qgd2lzaGVzCj4gRG1pdHJ5CgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCu
-pOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtcGh5Cg==
+On Mon, 18 Sept 2023 at 23:51, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
+>
+> Add SC7280 specific register layout and table configs.
+>
+> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
