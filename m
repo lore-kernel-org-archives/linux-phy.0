@@ -4,96 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90689CE79D1
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Sep 2023 13:55:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49023CE79D7
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Sep 2023 14:24:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l4/SSSGmj68UoxPpQ4qMubj6uJnO/h7EliO8vG3N3sk=; b=UbdonAnCcKK5WH
-	ePmk0w+1kGiUzwMadrdJz+Ou0JZiD7BnNgHxrFYb1thXhGkz73Yutipqb8Mw1ldoHUm6Ab64I+ztb
-	UlPNICr4dejot+V9o9dCW9I4t9iKY9ffTNAbgSdRIgjloqnGUpIyKjle3w4RQZ/Ie0rnu00awRifg
-	BqWhNHgnUgkbIl3zAlewUmHLlAT+TIi3/pylBTxBcJ/iXgzeNaTOnHSapYFChK4SuteqpCQx3kdwc
-	OIWs68EOfgt9A0V2ZcK2AYoxSbSgA86AAN7rTCPgXT/mJE4DorlXOeHYjLTURzK5Z40w/CwPPWbtL
-	HrG7Z6dKm0MeKeArqW4g==;
+	List-Owner; bh=UHCfoqhsxTQsyBMuvD3Gm4QZ5tqVANuzcVpwBNs3MDY=; b=FnnIV1TMHJ8qRE
+	eS3zd0YUx5BNZKMnmm7W4CpJKJIctDKLlXq+hP8G4Z0bVDhxGGDbdOLBcVnPMkLZirVIisBVUyqKQ
+	jqc6frzXn+F7vcq8u55Iw9NLXgwBEchZzN8N0OnucVqa3oJIU0x1WiFvhGt7b8soODfg9ORq/vJOg
+	OEGR0bP1w/AzvKgHjLweF2s1v9vIs1ATalRluLujFsw4f7d0QQueuiT5CCFSZnvAVzXKEijXVH8So
+	eghiREixMekdVFfpZCDWPZXKIX4j3B9eozEIe3bOTb9FaoiVm0D70uCh55MCkSQbCvlJfRCroYG5f
+	pS9DehhVlgCUICgQWs8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qixgD-003FM3-0W;
-	Wed, 20 Sep 2023 13:55:49 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qiy84-003JZt-37;
+	Wed, 20 Sep 2023 14:24:36 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qixg9-003FJo-2c
+	id 1qiy81-003JYc-1U
 	for linux-phy@lists.infradead.org;
-	Wed, 20 Sep 2023 13:55:47 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38KAgktW024808;
-	Wed, 20 Sep 2023 13:55:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=7I6/6X+gKlwGgDCS5f88atWdI570d7IklQfY3taOiIk=;
- b=T0bIlDFUZJ6LSvPemKyAxWYokXDvyWR1I25/QN8mBmbne+3n15N+lYmA/zBzuTBJ2erT
- IvrwAIi0Enrw4FJCyUV8G9MxCNOMGTsYuEZMtmcYUMLZhPfYGNdfwNywlpglaVprpOll
- rJoDf1EXvTRH8Xupxk1fXp/tcNpgKufqtc0FKSGcobiT3Qja4QYkLS24m1dNYSIVQInS
- aRblqjNK9mxYSEoyBlRcwxMGgs0axFK4friFXjugLHAgFkqt6OxP0SlI7OV6q6wB0smF
- zSNWlBBH7lyyzaEweKi8w+O8MnwxriV6/IQ9jnduJYpyvNoparBe4dldCCBhwwRUrWLU 1Q== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t7qj91c6e-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 20 Sep 2023 13:55:31 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 38KDtLHS008201;
-	Wed, 20 Sep 2023 13:55:27 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3t55ekk8pj-1;
-	Wed, 20 Sep 2023 13:55:27 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 38KDtRlG008275;
-	Wed, 20 Sep 2023 13:55:27 GMT
-Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 38KDtRJw008274;
-	Wed, 20 Sep 2023 13:55:27 +0000
-Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
-	id B1D824070; Wed, 20 Sep 2023 19:25:26 +0530 (+0530)
-From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-        conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+	Wed, 20 Sep 2023 14:24:35 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-9adc75f6f09so769157766b.0
+        for <linux-phy@lists.infradead.org>; Wed, 20 Sep 2023 07:24:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1695219871; x=1695824671; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=CNbD5JZlT85L92cZjusJkHp4jtK/JZ5bz82Z9IIMDbo=;
+        b=EFYM/xSKMpT7JtVy3Bs4jwFGElrZ5AfJb9F4rUhdlr8+CAWcQBbUB/kgPoF9WgojPp
+         vBRbV5ufvKjcZsaLOjAhVUGAzT+QwtSoUPTlqNt847SFavWqCtqf1FMHXKH0He40IIiT
+         hwEYxp1iqNpzsW3S1LcueZpXH9rxDmuDCGyg/jfboobjiaFahEGFIn+zKiLr8+36qxXH
+         /x2VgxJS7p3nepjfc30WwBMC8kkF5kCzKiXbRv9wwhj7C4Pq+69E2lKVMMhDrKW0+Swy
+         EgAmrJzmiCkjCzRcZr6xN3beGCcDaCwJu75N0kCrTGZ7dEx1cH7K7hwNHOy3049ie41B
+         OnWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1695219871; x=1695824671;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=CNbD5JZlT85L92cZjusJkHp4jtK/JZ5bz82Z9IIMDbo=;
+        b=XkP+pBuK+7jiXNSuxSwrBkzAZGrKRCJwbrTS61J+EMOp4vRdViiZfXg7s7QI0hw/vg
+         ytKs9nq/6UAIMgNUlXSRUcd55yV5n+Ydx2KIwA1CLVfoMbRQcvZ3QVfGxZmHXll0+Azf
+         3WkVGdRgc3vst1oB/QEaDNI6LtfgWhc6KnyBDcw9J5CD2VvkRwRpBx/0klsR4+i6nM/e
+         izGsd5WPmSGnJi1AjaPzj4JeN44BU2nIAX1N6PMfBRxZUDRVh9l0TJsX+BZJSSbH1eVR
+         BdzP+UPzcYVwVMps1cSGiG6xkIwKN8a0VWK8I7NiLXvYGWH6yevqYnBeSKBQzkN9ENLL
+         +feQ==
+X-Gm-Message-State: AOJu0YxssCH5ucy17CTeoY0AG4jrAGhx+Hnrpz2+/0TUPQoAGTP90H65
+	Guphm39Avq7rO1QODwnlEHLyWQ==
+X-Google-Smtp-Source: AGHT+IEWeR4ibVo/0lBYIQnbCIzA4Q1ZL7a5w7fDqs/tLyxpyOxPFsZtH1PIFFFFdedlS+oRgvhRMw==
+X-Received: by 2002:a17:906:225b:b0:9ae:541e:7310 with SMTP id 27-20020a170906225b00b009ae541e7310mr477368ejr.33.1695219871576;
+        Wed, 20 Sep 2023 07:24:31 -0700 (PDT)
+Received: from [172.20.86.172] (static-212-193-78-212.thenetworkfactory.nl. [212.78.193.212])
+        by smtp.gmail.com with ESMTPSA id lg13-20020a170906f88d00b009ad88839665sm9435005ejb.70.2023.09.20.07.24.30
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 20 Sep 2023 07:24:31 -0700 (PDT)
+Message-ID: <4b20d3bb-d2d2-0864-013f-104e26ae558c@linaro.org>
+Date: Wed, 20 Sep 2023 16:24:30 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v1 2/5] PCI: qcom-ep: Add support for SA8775P SoC
+Content-Language: en-US
+To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, mani@kernel.org
 Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
-        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        quic_parass@quicinc.com, Mrinmay Sarkar <quic_msarkar@quicinc.com>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
-        linux-phy@lists.infradead.org
-Subject: [PATCH v1 5/5] arm64: dts: qcom: sa8775p: Add ep pcie0 controller node
-Date: Wed, 20 Sep 2023 19:25:12 +0530
-Message-Id: <1695218113-31198-6-git-send-email-quic_msarkar@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
+ quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+ quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+ quic_parass@quicinc.com, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, linux-pci@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
+ linux-phy@lists.infradead.org
 References: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: oc5f-7IEcVUKLvC9h-YblYiocHEUt79t
-X-Proofpoint-ORIG-GUID: oc5f-7IEcVUKLvC9h-YblYiocHEUt79t
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-20_05,2023-09-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- priorityscore=1501 impostorscore=0 suspectscore=0 mlxlogscore=999
- mlxscore=0 phishscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
- malwarescore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309200114
+ <1695218113-31198-3-git-send-email-quic_msarkar@quicinc.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <1695218113-31198-3-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230920_065545_998805_B0A5FF22 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20230920_072433_509542_99F72E0B 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,76 +102,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add ep pcie dtsi node for pcie0 controller found on sa8775p platform.
 
-Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
----
- arch/arm64/boot/dts/qcom/sa8775p.dtsi | 45 +++++++++++++++++++++++++++++++++++
- 1 file changed, 45 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-index 9f4f58e8..5571131 100644
---- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-@@ -2600,4 +2600,49 @@
- 
- 		status = "disabled";
- 	};
-+
-+	pcie0_ep: pcie-ep@1c00000 {
-+		compatible = "qcom,sa8775p-pcie-ep";
-+		reg = <0x0 0x01c00000 0x0 0x3000>,
-+		      <0x0 0x40000000 0x0 0xf20>,
-+		      <0x0 0x40000f20 0x0 0xa8>,
-+		      <0x0 0x40001000 0x0 0x4000>,
-+		      <0x0 0x40200000 0x0 0x100000>,
-+		      <0x0 0x01c03000 0x0 0x1000>,
-+		      <0x0 0x40005000 0x0 0x2000>;
-+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
-+			    "mmio", "dma";
-+
-+		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+			<&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+			<&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
-+
-+		clock-names = "aux",
-+			      "cfg",
-+			      "bus_master",
-+			      "bus_slave",
-+			      "slave_q2a";
-+
-+		interrupts = <GIC_SPI 306 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 630 IRQ_TYPE_LEVEL_HIGH>;
-+
-+		interrupt-names = "global", "doorbell", "dma";
-+
-+		interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
-+				<&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_PCIE_0 0>;
-+		interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+		resets = <&gcc GCC_PCIE_0_BCR>;
-+		reset-names = "core";
-+		power-domains = <&gcc PCIE_0_GDSC>;
-+		phys = <&pcie0_phy>;
-+		phy-names = "pciephy";
-+		max-link-speed = <3>;
-+		num-lanes = <2>;
-+
-+		status = "disabled";
-+	};
- };
--- 
-2.7.4
+On 9/20/23 15:55, Mrinmay Sarkar wrote:
+> Add support for SA8775P SoC to the Qualcomm PCIe Endpoint Controller
+> driver.
+> 
+> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+> ---
+This compatible does not bring anything new to the table
+on its own. Please create a fallback compatible, document it
+in the bindings and use that. See [1] and [2] for example.
 
+Konrad
+
+[1] 
+https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml?h=next-20230920
+
+[2] 
+https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/arch/arm64/boot/dts/qcom/pm7550ba.dtsi?h=next-20230920#n65
 
 -- 
 linux-phy mailing list
