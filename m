@@ -4,75 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0531E706FF
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Sep 2023 09:48:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1783E70708
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Sep 2023 10:21:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fA8v5mAr/E00t8lUl6rFdqw1M25wUi2JeEq1DfXBZvE=; b=Q/kQGhDsTwQ9C4
-	BLmZwvfjEg1q8s/wIJSxg1jnIxSH7QL36G3tyFFZV0pXrLu1dLN4DzeVc5p4Gps7IO7QO4wQR3+dI
-	Ps1wma+orqq/AISpje6BnSOvwEhiS4fL6olbLnHvyjlCrUOAzKBCVM4aVTe94r+JC09ptjgtl+uGo
-	uZzgSe2RxqtWNMrjRYK9oIRl8ksPm+IcbMfTem5NOBZQdi5oX1Judgw5ang0nD9yAP/SmMVrPvZG7
-	D9pA0eyTFrDc89lf43vZ7xB+UhtYtcWH+qWsigUBJ66Hdz8/mu9uuuzXycWvJtb9M07zhT1uxpNoY
-	tStWImidxtLIFYs1QNYA==;
+	List-Owner; bh=jmBpZgWIMk/HXeYranzLsr38FFoQGcFNlUrPpdTelNg=; b=Xc5Ph7hdrWkD01
+	C9f6pLJdpoS7amPXhxe/YDmEI4fDkvCM2E2BQxzSHe0eOODuM0gvNfl+GQ447vZabd9/djsGeihRk
+	Ud0HWNSSvhuAcoC9E9SVN/hEyBQfuapvquLHBIWe6KE/yUB45Fzm9HFIxduBsQZbuDKrPedY8FlAT
+	yBoDHP3fLStOj4pOn/PdkuVQy/z7QUz8UV9679dyd0pHy6iLnvMuUrqRrQsNYgHLiHV2+TkZCRCnI
+	Cg5TKe7V7bBfOBWCecckh6b9M+4I1uhn3mZlPygRuC5SboYg4KLgEzucJLpYHf83VC4jrPl3QmLbV
+	jNxhYDuZDV/3MGFCcMHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjGId-005dNb-14;
-	Thu, 21 Sep 2023 09:48:43 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1qjGoj-005hOA-1S;
+	Thu, 21 Sep 2023 10:21:53 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjGIa-005dN4-2o
+	id 1qjGoh-005hMc-0u
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Sep 2023 09:48:42 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 93796CE219A;
-	Thu, 21 Sep 2023 09:48:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0BD34C32783;
-	Thu, 21 Sep 2023 09:48:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695289713;
-	bh=J91xLLYh3063mIz8vTCj0EDjswezy2qXl2KyxMg3RQI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fU057suNKQbihbsVL2RWa98mU6/opeEGInjY7XwbSg83INDcPahdBga23HxJVedq6
-	 1940hb8sDpd52ueZhRszkTZGjQTbKIVk45BC9C0Oiz4+XQSj4k7iZwPlFgY6B2Wg71
-	 6JhA70Ulb3ae4S/VLNazQq97Bv4IvAJzX9bqjQOi1hIRY5/L7HK1mo1T1fQCWIJ9Q7
-	 bpSlWHVeppCYURvyle4n7VWHn7jZX31tJIU3/sR3VXwGM7f3BNWLdsH7FZUP8jb/4D
-	 qYASDzCHLGqEop9vHSeG6kbvvHySj4zYKY2VnfAkaBRhm/eQwBHOejreG5Xor6mwtI
-	 UUo9yEKkxigmA==
-Date: Thu, 21 Sep 2023 11:48:23 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	konrad.dybcio@linaro.org, quic_shazhuss@quicinc.com,
-	quic_nitegupt@quicinc.com, quic_ramkri@quicinc.com,
-	quic_nayiluri@quicinc.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v1 5/5] arm64: dts: qcom: sa8775p: Add ep pcie0
- controller node
-Message-ID: <20230921094823.GE2891@thinkpad>
-References: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
- <1695218113-31198-6-git-send-email-quic_msarkar@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1695218113-31198-6-git-send-email-quic_msarkar@quicinc.com>
+	Thu, 21 Sep 2023 10:21:52 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38L9IKlk017017;
+	Thu, 21 Sep 2023 10:21:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references; s=qcppdkim1;
+ bh=kIXT93jtSG7Dcf7+1ZpE4PRl3rCSTipTWKODSpQmGGY=;
+ b=Fo2ecvcQg1S55+3w/uUe1NX0oDGtN9S47sC8fx3m6SqLkD0KvinzDAklwHFX8BEqMQnk
+ cYalGIAtJUStvIl8RS5JcEV+h5RReqP5/OT9Fj69/wUxLRW7l+C8d5cE5Y3OfFCk7wYf
+ 4FPkfN/HvylQGxtKPvR0SOgZ9ssMjWtB61Kx8uQP0nRm6wVpgMIx1K8++8E9Ao+AnnFJ
+ 0GeTZFnj8hDY8DjWz6vnZQw/5mv/lMRgKGAqLr9Pf5FJQ1F9FGa8xQnpkX50a1aoVBtF
+ +q3X2zB+YAh7MxBi2ZeNLIxc19oqlkleVmNqB5uSwAIPhQ+XHYu7mqJhYY3GQ7AcXNRK 3Q== 
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t8hb8gc7f-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 21 Sep 2023 10:21:41 +0000
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 38LALcWF023145;
+	Thu, 21 Sep 2023 10:21:38 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3t55ekq7p6-1;
+	Thu, 21 Sep 2023 10:21:38 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 38LALcHT023148;
+	Thu, 21 Sep 2023 10:21:38 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 38LALb61023116;
+	Thu, 21 Sep 2023 10:21:38 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
+	id D39551E4D; Thu, 21 Sep 2023 15:51:36 +0530 (+0530)
+From: Rohit Agarwal <quic_rohiagar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
+        vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+        gregkh@linuxfoundation.org, abel.vesa@linaro.org,
+        quic_wcheng@quicinc.com, dmitry.baryshkov@linaro.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-usb@vger.kernel.org, kernel@quicinc.com,
+        Rohit Agarwal <quic_rohiagar@quicinc.com>
+Subject: [PATCH v3 3/5] dt-bindings: usb: qcom,dwc3: Fix SDX65 clocks
+Date: Thu, 21 Sep 2023 15:51:30 +0530
+Message-Id: <1695291692-18850-4-git-send-email-quic_rohiagar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1695291692-18850-1-git-send-email-quic_rohiagar@quicinc.com>
+References: <1695291692-18850-1-git-send-email-quic_rohiagar@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: efJRcUpAxL4l9QtAofmGWvoUwq_1-yKN
+X-Proofpoint-GUID: efJRcUpAxL4l9QtAofmGWvoUwq_1-yKN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-21_07,2023-09-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
+ bulkscore=0 lowpriorityscore=0 mlxlogscore=724 impostorscore=0
+ phishscore=0 priorityscore=1501 clxscore=1015 adultscore=0 malwarescore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309210090
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230921_024841_258161_732AFDB0 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20230921_032151_325710_473E2FBE 
+X-CRM114-Status: GOOD (  12.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,51 +100,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBTZXAgMjAsIDIwMjMgYXQgMDc6MjU6MTJQTSArMDUzMCwgTXJpbm1heSBTYXJrYXIg
-d3JvdGU6Cj4gQWRkIGVwIHBjaWUgZHRzaSBub2RlIGZvciBwY2llMCBjb250cm9sbGVyIGZvdW5k
-IG9uIHNhODc3NXAgcGxhdGZvcm0uCj4gCgpJdCB3b3VsZCBiZSBnb29kIHRvIGFkZCBtb3JlIGlu
-Zm8gaW4gdGhlIGNvbW1pdCBtZXNzYWdlLCBsaWtlIFBDSWUgR2VuLCBsYW5lCmluZm8sIElQIHJl
-dmlzaW9uIGV0Yy4uLgoKPiBTaWduZWQtb2ZmLWJ5OiBNcmlubWF5IFNhcmthciA8cXVpY19tc2Fy
-a2FyQHF1aWNpbmMuY29tPgo+IC0tLQo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2E4Nzc1
-cC5kdHNpIHwgNDUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgMSBmaWxl
-IGNoYW5nZWQsIDQ1IGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9i
-b290L2R0cy9xY29tL3NhODc3NXAuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9zYTg3
-NzVwLmR0c2kKPiBpbmRleCA5ZjRmNThlOC4uNTU3MTEzMSAxMDA2NDQKPiAtLS0gYS9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL3Fjb20vc2E4Nzc1cC5kdHNpCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0
-cy9xY29tL3NhODc3NXAuZHRzaQo+IEBAIC0yNjAwLDQgKzI2MDAsNDkgQEAKPiAgCj4gIAkJc3Rh
-dHVzID0gImRpc2FibGVkIjsKPiAgCX07Cj4gKwo+ICsJcGNpZTBfZXA6IHBjaWUtZXBAMWMwMDAw
-MCB7Cj4gKwkJY29tcGF0aWJsZSA9ICJxY29tLHNhODc3NXAtcGNpZS1lcCI7Cj4gKwkJcmVnID0g
-PDB4MCAweDAxYzAwMDAwIDB4MCAweDMwMDA+LAo+ICsJCSAgICAgIDwweDAgMHg0MDAwMDAwMCAw
-eDAgMHhmMjA+LAo+ICsJCSAgICAgIDwweDAgMHg0MDAwMGYyMCAweDAgMHhhOD4sCj4gKwkJICAg
-ICAgPDB4MCAweDQwMDAxMDAwIDB4MCAweDQwMDA+LAo+ICsJCSAgICAgIDwweDAgMHg0MDIwMDAw
-MCAweDAgMHgxMDAwMDA+LAo+ICsJCSAgICAgIDwweDAgMHgwMWMwMzAwMCAweDAgMHgxMDAwPiwK
-PiArCQkgICAgICA8MHgwIDB4NDAwMDUwMDAgMHgwIDB4MjAwMD47Cj4gKwkJcmVnLW5hbWVzID0g
-InBhcmYiLCAiZGJpIiwgImVsYmkiLCAiYXR1IiwgImFkZHJfc3BhY2UiLAo+ICsJCQkgICAgIm1t
-aW8iLCAiZG1hIjsKPiArCj4gKwkJY2xvY2tzID0gPCZnY2MgR0NDX1BDSUVfMF9BVVhfQ0xLPiwK
-PiArCQkJPCZnY2MgR0NDX1BDSUVfMF9DRkdfQUhCX0NMSz4sCj4gKwkJCTwmZ2NjIEdDQ19QQ0lF
-XzBfTVNUUl9BWElfQ0xLPiwKPiArCQkJPCZnY2MgR0NDX1BDSUVfMF9TTFZfQVhJX0NMSz4sCj4g
-KwkJCTwmZ2NjIEdDQ19QQ0lFXzBfU0xWX1EyQV9BWElfQ0xLPjsKPiArCj4gKwkJY2xvY2stbmFt
-ZXMgPSAiYXV4IiwKPiArCQkJICAgICAgImNmZyIsCj4gKwkJCSAgICAgICJidXNfbWFzdGVyIiwK
-PiArCQkJICAgICAgImJ1c19zbGF2ZSIsCj4gKwkJCSAgICAgICJzbGF2ZV9xMmEiOwo+ICsKPiAr
-CQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMzA2IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkg
-ICAgIDxHSUNfU1BJIDE0NyBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiArCQkJICAgICA8R0lDX1NQ
-SSA2MzAgSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gKwo+ICsJCWludGVycnVwdC1uYW1lcyA9ICJn
-bG9iYWwiLCAiZG9vcmJlbGwiLCAiZG1hIjsKPiArCj4gKwkJaW50ZXJjb25uZWN0cyA9IDwmcGNp
-ZV9hbm9jIE1BU1RFUl9QQ0lFXzAgMCAmbWNfdmlydCBTTEFWRV9FQkkxIDA+LAo+ICsJCQkJPCZn
-ZW1fbm9jIE1BU1RFUl9BUFBTU19QUk9DIDAgJmNvbmZpZ19ub2MgU0xBVkVfUENJRV8wIDA+Owo+
-ICsJCWludGVyY29ubmVjdC1uYW1lcyA9ICJwY2llLW1lbSIsICJjcHUtcGNpZSI7Cj4gKwoKRG9u
-J3QgeW91IG5lZWQgaW9tbXUgcHJvcGVydHk/Cgo+ICsJCXJlc2V0cyA9IDwmZ2NjIEdDQ19QQ0lF
-XzBfQkNSPjsKPiArCQlyZXNldC1uYW1lcyA9ICJjb3JlIjsKPiArCQlwb3dlci1kb21haW5zID0g
-PCZnY2MgUENJRV8wX0dEU0M+Owo+ICsJCXBoeXMgPSA8JnBjaWUwX3BoeT47Cj4gKwkJcGh5LW5h
-bWVzID0gInBjaWVwaHkiOwo+ICsJCW1heC1saW5rLXNwZWVkID0gPDM+OwoKR2VuIDM/Cgo+ICsJ
-CW51bS1sYW5lcyA9IDwyPjsKCk9ubHkgMiBsYW5lcz8gT3IgdGhlIG90aGVyIG9uZSBoYXMgNCBs
-YW5lcz8KCi0gTWFuaQoKPiArCj4gKwkJc3RhdHVzID0gImRpc2FibGVkIjsKPiArCX07Cj4gIH07
-Cj4gLS0gCj4gMi43LjQKPiAKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k
-4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+SDX65 has 5 clocks so mention in the bindings.
+
+Fixes: 16946a60715c ("dt-bindings: usb: qcom,dwc3: fix clock matching")
+Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
+ Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index 6759105..018117b 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -180,6 +180,7 @@ allOf:
+               - qcom,sdm670-dwc3
+               - qcom,sdm845-dwc3
+               - qcom,sdx55-dwc3
++              - qcom,sdx65-dwc3
+               - qcom,sm6350-dwc3
+     then:
+       properties:
+-- 
+2.7.4
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
