@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B909EE71081
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Sep 2023 14:29:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E36ABE7107F
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Sep 2023 14:29:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WsizPzPCYSxVbqTzywH7KyLggFLhwMzy17K9zl4lHoo=; b=0hrnZ+Bx7vGMvs
-	7FVf8lg3k9faesn6Eh9Kjq8OQWSqqqc8IREJmkSFLvzAQxkPUkUqNWrYPudU7C5HRCK78Ygek26PY
-	nW/uMq0RP5sOO0d/c1eXD8T0lNfzHLQ4iFYfD+Nns3C92GIk3A9i77HVyOBfaujiN8YTuACBkGUPB
-	MOuMU3T52MJbqWQMhC+vZUq6/j3Ss5/60R08V3dMAU/NfvseJEitytmM1TlF06/HSyksw/eRrcxjg
-	0yotsTb1mb5IoVqSEQbQ+q4eoetgUnLaznOnS7NMrS4YCNEhd7D2nPg9LfuXR/UR1WT/7q1dwMtde
-	RUpJ3GsvteLwnIuyzUNQ==;
+	List-Owner; bh=Av6bJEWtub0w7Rl8Q1imZAJeMVSoTZCFrBoVMXVNBVM=; b=Ute5uizOXlUyVu
+	w/466YmUzRuv4S0NhqfXoenp0I4kCLohlBqU8eD0ma9g9DxqWDX0AX3NoN60/DIdxtx/fgsNzZSeW
+	hHh+aXXN8TcZYNBxtLSIaGnU4FXKsvsYy+N9e+HWl21hPQhtG8SSn0q1wyxWwQM5gODIlv0nAbJID
+	V5LZXb84NXQw9DzyNltDETk5oPg5cTnlSmfI9onm1CnTTjR2+MUaZK/v5Mi2C3U0R512S8BMzaaec
+	9I5zQhXDFvLB1H1qYL968mv7ElBGlrwIU6zymlzjaMKVR87F773GnCxlQ879CD0uIBF0eVjFkRm15
+	Uqpx263DnjQ9y503/Mlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjKgT-006H70-1Z;
-	Thu, 21 Sep 2023 14:29:37 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qjKgh-006HEj-1y;
+	Thu, 21 Sep 2023 14:29:51 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjKgP-006H3k-16;
-	Thu, 21 Sep 2023 14:29:34 +0000
+	id 1qjKgW-006H96-34
+	for linux-phy@lists.infradead.org;
+	Thu, 21 Sep 2023 14:29:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BCF74609E9;
-	Thu, 21 Sep 2023 14:29:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4AF82C4E76A;
-	Thu, 21 Sep 2023 14:29:27 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 85948B820D2;
+	Thu, 21 Sep 2023 14:29:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63ACEC4E76B;
+	Thu, 21 Sep 2023 14:29:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695306572;
-	bh=+i068JrUC9snrrF/aptxkD1gDc/gyHcWbhpnMhJEpI8=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=KowGEjiCcgXvUWCBv0lqUoM9lhoukicU5tova2ahPaP7PLVe9Ad0a2ovAQFWB03/W
-	 Qfdg0KP/xrlWZu7OyKWgpb4zb0BwlR27vpfJxMd3eAoTHcslw7asAfx66vU7ceWNTP
-	 7TGS7pOLJbeqXxJjDeXOjVF6yWxUmkir5a2BOprqMnXwkdSdhaMTfmR2VY298pF0wy
-	 DpjVD/GpJtWZepTope+ERXAAhaLhLD5VimnE0dvxjzpjF0F9J3YnOAkJdNZ4Gla+Vs
-	 +9XhUhduxagNJ7xqTqIPeiQZ9YVU2amorBBoH+Luhs9K94JhPfT7eTxcXgqet13ixO
-	 d5WX8llkEEoyQ==
+	s=k20201202; t=1695306579;
+	bh=9tvStd1eYmAawVVbsDie2tHpFeVMdoFAdNDNydF7QGQ=;
+	h=From:To:In-Reply-To:References:Subject:Date:From;
+	b=auje0uEUE+m+3g2jH1IuoGo/I0FUvd82445GiTAR/DKsQo1/fasU4p9KGyhJGfrFE
+	 pWAi6ckAxzjwY/scpaEirq/9D+9BiIXEpXPSV4RSIhq3vcGMRisVhxOTnbhjDHlBrQ
+	 qg+MR3Bx/jF9jhdb4hxEybOki6fx/onS1eehXeqGiirYCUigvmYfO3k+hYQcRO8tWv
+	 NzId44tjuUKuIQNYd6obQzKHjfF/c5i2rtyGP+7B8B3agztfFTTUeWw2YpWinEIAvH
+	 sfCxjqdAzU+d1HsF52XCeRJUxfho9A+PBQuBYcKrSkN8U7P4A1oBVf9E8n8B6n2Tqh
+	 qhGQhWOoZLTfA==
 From: Vinod Koul <vkoul@kernel.org>
-To: andrzej.hajda@intel.com, neil.armstrong@linaro.org, 
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, 
- jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, 
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, 
- s.hauer@pengutronix.de, festevam@gmail.com, dri-devel@lists.freedesktop.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- Sandor Yu <Sandor.yu@nxp.com>
-Cc: kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
- alexander.stein@ew.tq-group.com, sam@ravnborg.org
-In-Reply-To: <cover.1694047629.git.Sandor.yu@nxp.com>
-References: <cover.1694047629.git.Sandor.yu@nxp.com>
-Subject: Re: (subset) [PATCH v9 0/7] Initial support Cadence
- MHDP8501(HDMI/DP) for i.MX8MQ
-Message-Id: <169530656692.106263.15400414640520611543.b4-ty@kernel.org>
-Date: Thu, 21 Sep 2023 16:29:26 +0200
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, quic_srichara@quicinc.com, 
+ quic_varada@quicinc.com, quic_wcheng@quicinc.com, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, Nitheesh Sekar <quic_nsekar@quicinc.com>
+In-Reply-To: <20230904063635.24975-1-quic_nsekar@quicinc.com>
+References: <20230904063635.24975-1-quic_nsekar@quicinc.com>
+Subject: Re: (subset) [PATCH V4 0/4] Enable IPQ5018 USB2 support
+Message-Id: <169530657502.106263.11564908217674550453.b4-ty@kernel.org>
+Date: Thu, 21 Sep 2023 16:29:35 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230921_072933_422614_AA2DA593 
-X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-CacheID: sfid-20230921_072941_159910_1B2ED2BF 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,26 +81,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 07 Sep 2023 09:05:27 +0800, Sandor Yu wrote:
-> The patch set initial support Cadence MHDP8501(HDMI/DP) DRM bridge
-> drivers and Cadence HDP-TX PHY(HDMI/DP) drivers for Freescale i.MX8MQ.
+On Mon, 04 Sep 2023 12:06:31 +0530, Nitheesh Sekar wrote:
+> This patch series adds the relevant phy and controller
+> DT configurations for enabling USB2 host mode support
+> on IPQ5018.
 > 
-> The patch set compose of DRM bridge drivers and PHY drivers.
+> Tested with a USB Mass storage device.
 > 
-> Both of them need the followed two patches to pass build.
->   drm: bridge: Cadence: convert mailbox functions to macro functions
->   phy: Add HDMI configuration options
+> Depends on:
+> Link: https://lore.kernel.org/linux-arm-msm/20230831030503.17100-1-quic_nsekar@quicinc.com/
 > 
 > [...]
 
 Applied, thanks!
 
-[2/7] phy: Add HDMI configuration options
-      commit: 7f90516edb5cbfa4108b92bb83cbc8ef35a4cccd
-[6/7] phy: freescale: Add DisplayPort PHY driver for i.MX8MQ
-      commit: a2717f1d7c64660679441c407b96103abb7c4a8c
-[7/7] phy: freescale: Add HDMI PHY driver for i.MX8MQ
-      commit: 8e36091a94d2d28e8dccb9bfda081b2e42e951ae
+[1/4] dt-bindings: phy: qcom,m31: Add IPQ5018 compatible
+      commit: 76bf09e08667f21bc3d1a8857f542c1ee54d9667
+[2/4] phy: qcom-m31: Add compatible, phy init sequence for IPQ5018
+      commit: 241da15bd783fd2ae3b2f16817d802102590aa0d
 
 Best regards,
 -- 
