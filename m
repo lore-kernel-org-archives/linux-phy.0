@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3257E7D0CC
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Sep 2023 05:12:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19C92E7D0CD
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Sep 2023 05:12:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X7aFdiGStjTfyz5L2VPmRAi+kDeQTBc0EbebJcfjPhc=; b=KHz0Z+Rx/j+AFG
-	6AACMwtFODmaZttqHR2xGniFHiunFxMoMg/XeitTo+XJvpglQo7YYTKqL5WI0dj1IDWngBqdhHqUW
-	wzc/17DBr5s1o2ia+h+h5p/bI+cwFNOHMzC8CwcMnHXkZNKZPhltkmqPuEXLHrdOrLe74fnNRSAo/
-	hWKtg0iOMAFHgxXWUEvh91EOY5ekvlngZMuX4jAhmCJt6rF8RHvdhdA9WZJDdfHb3HwCrjet6aR8f
-	ep5AEyFfLwxYRxlWNzhg3rSYv6CJdcif90ax+X/MNg/SSBdZwkzKt62NhMM/YbHxqdOrr/CDoGvYC
-	d/NAE577WI9Pelc/NLNQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qXiBTNmlKu5I4jEOYD2PPnWPrLogimdr7FdMPNXCdek=; b=X93gXa7/2dae9g
+	LyjeLkTggwoeLZf9SSEc1X5zJsO/oDIAOfdbZA1YNdzSjo/Wzpl23wOn/7KHkBj79HELpKAIBXZSw
+	ou7nT5b6ibXbF/P2VjChX+zw1zSTzrChlipDaqgWD6xPmscpYTfk7lEr7q54C15ez2JgtlQ6w8D3i
+	37RfeZ3IGkZPsBS6V4bC0iZuwUtLDDb4GQf6RhitiqTZ3celA5V9zrTxvGaX9CgcN+ympuiob04qr
+	A4v8e90Yj7BdzaQTcpj6jOff26118xmv9RiGR8eSt2RjNJJrz3o1h2Lcnn252NnWHpcOtKyhyd07h
+	U5HXueOhswgW8FZFeYZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjYSm-007tKD-1c;
+	id 1qjYSm-007tKP-2U;
 	Fri, 22 Sep 2023 05:12:24 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjYSh-007tGA-34
+	id 1qjYSi-007tGU-0j
 	for linux-phy@lists.infradead.org;
 	Fri, 22 Sep 2023 05:12:22 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38M4datl014966;
-	Fri, 22 Sep 2023 05:12:13 GMT
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38M4rFrQ025749;
+	Fri, 22 Sep 2023 05:12:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=vt4HQkzBRhpNc52cASEe6rG3/9p26Oq4MI20JoPy4ZY=;
- b=kZTfmkduYH/YAy7XtPFUygwCjkGkZFMIQaVV1BVeJV+yflCATP86ztGUvOPXvbxw3drz
- sNOsxsMiQhMmbSY0RmJ1yX9Q8fVvWGNVj/Mhy2aCZ+49NFxTk3g2HZk9mU/ctXq23r+j
- mwVUXbwSRnIb6tuQa0RwYGAOj3hBfUukd8WPLbtqj2QzDdh22zheRJijS/DwnsAFxuSx
- xXtm1J22h4Px2lqgt22l6WXsGDPki1/0uhyCyf+fyiWcvfPEydX7ef0a2p7o63QDbPee
- NghBwXtt5ViGnTxoatSoSQw+YZI/rguncCpHrtA3yBv5Vd5zxBsSr/s4HZmKehED7jqs NQ== 
+ subject : date : message-id; s=qcppdkim1;
+ bh=FauZzeskmT8dla8YmBfB87sjHW1LlsqtON8HT6+hUOU=;
+ b=LmlUO2TDeZdFo7Pqdfzwuua04t7uROBFHrokIxVGSaeL0zIjw4BQIrjsZWfU57Cj8bjx
+ CIM160MkB+rK/OBOq5Ze2tYBumiyahEO02g1AeWVBnwsE5IPYLx6Yi+qOBG8wpqLmMWN
+ ywGBbcCxICQFls4Y06NxxGVnEXNgoMqiUNH5VYQvIsnU1lf757r4ZmkGERtenu/nh6x1
+ mqvKo7y0CNcwSntdqisAEHe4F0sVrtKa0oSltaO9Q3LgD79cT6g9WD+aup4ZHg8QzZsU
+ NYi7j+OovmaXgzCjOkQDJR5mWeaXDMOFTJ7VecWY7YzJVgtV1JKHjBTI71w00dCdB2Id ow== 
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t8um1rxbx-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t8u5n11aq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Fri, 22 Sep 2023 05:12:12 +0000
 Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 38M5C8RT018677;
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 38M5C8TB018629;
 	Fri, 22 Sep 2023 05:12:08 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3t55em90v3-1;
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3t55em90uk-1;
 	Fri, 22 Sep 2023 05:12:08 +0000
 Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 38M57PMe012555;
-	Fri, 22 Sep 2023 05:12:08 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 38M5C7qR018615;
+	Fri, 22 Sep 2023 05:12:07 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.213.106.138])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 38M5C8J7018646;
-	Fri, 22 Sep 2023 05:12:08 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 38M5C7F8018613;
+	Fri, 22 Sep 2023 05:12:07 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3970568)
-	id D8F781E4B; Fri, 22 Sep 2023 10:42:07 +0530 (+0530)
+	id C5A911E16; Fri, 22 Sep 2023 10:42:06 +0530 (+0530)
 From: Rohit Agarwal <quic_rohiagar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
         vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
@@ -66,29 +66,27 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         linux-usb@vger.kernel.org, kernel@quicinc.com,
         Rohit Agarwal <quic_rohiagar@quicinc.com>
-Subject: [PATCH v4 4/5] dt-bindings: usb: dwc3: Add SDX75 compatible
-Date: Fri, 22 Sep 2023 10:42:04 +0530
-Message-Id: <1695359525-4548-5-git-send-email-quic_rohiagar@quicinc.com>
+Subject: [PATCH v4 0/5] Add USB Support on Qualcomm's SDX75 Platform
+Date: Fri, 22 Sep 2023 10:42:00 +0530
+Message-Id: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
-References: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: z0p45zdMSpIjFKpBoZ3A03RbU3dbemqD
-X-Proofpoint-GUID: z0p45zdMSpIjFKpBoZ3A03RbU3dbemqD
+X-Proofpoint-ORIG-GUID: Tg-8ZDXyCxKYIW2qgD9EO-H1jvH_uSV-
+X-Proofpoint-GUID: Tg-8ZDXyCxKYIW2qgD9EO-H1jvH_uSV-
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-09-22_03,2023-09-21_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- mlxlogscore=567 spamscore=0 priorityscore=1501 bulkscore=0 phishscore=0
- impostorscore=0 lowpriorityscore=0 clxscore=1015 adultscore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2309180000
- definitions=main-2309220045
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=699
+ priorityscore=1501 malwarescore=0 spamscore=0 bulkscore=0 impostorscore=0
+ lowpriorityscore=0 mlxscore=0 clxscore=1015 adultscore=0 phishscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2309220045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230921_221219_991480_317F4F02 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20230921_221220_264302_019F3A7F 
+X-CRM114-Status: GOOD (  14.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,42 +104,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the SDX75 dwc3 compatible.
+Hi,
 
-Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+Changes in v4:
+ - Replaced the v5 offsets with v6 offsets as per Dmitry's suggestion in patch 5/5.
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index 018117b..d78b721 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -34,6 +34,7 @@ properties:
-           - qcom,sdm845-dwc3
-           - qcom,sdx55-dwc3
-           - qcom,sdx65-dwc3
-+          - qcom,sdx75-dwc3
-           - qcom,sm4250-dwc3
-           - qcom,sm6115-dwc3
-           - qcom,sm6125-dwc3
-@@ -181,6 +182,7 @@ allOf:
-               - qcom,sdm845-dwc3
-               - qcom,sdx55-dwc3
-               - qcom,sdx65-dwc3
-+              - qcom,sdx75-dwc3
-               - qcom,sm6350-dwc3
-     then:
-       properties:
-@@ -364,6 +366,7 @@ allOf:
-               - qcom,sdm845-dwc3
-               - qcom,sdx55-dwc3
-               - qcom,sdx65-dwc3
-+              - qcom,sdx75-dwc3
-               - qcom,sm4250-dwc3
-               - qcom,sm6125-dwc3
-               - qcom,sm6350-dwc3
+Changes in v3:
+ - Removed the unnecessary change introduced in v2 of patch 2/5
+ - Added Fixes tag in patch 3/5
+ - Rebased patch 5/5 on Dmitry's cleanup patches.
+   https://lore.kernel.org/all/20230911203842.778411-1-dmitry.baryshkov@linaro.org/
+   https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
+
+Changes in v2:
+ - Dropped the new dt schema introduced in v1 for sdx75 usb3 phy
+   and reusing the bindings.
+ - Rephrased the commit message of patch 3/5
+ - Removed stray lines from the patch 5/5
+
+This series adds support of USB3 PHY support for Qualcomm's SDX75 Platform.
+
+Thanks,
+Rohit.
+
+
+Rohit Agarwal (5):
+  dt-bindings: phy: qcom,snps-eusb2-phy: Add compatible for SDX75
+  dt-bindings: phy: qcom,qmp-usb: Add SDX75 USB3 PHY
+  dt-bindings: usb: qcom,dwc3: Fix SDX65 clocks
+  dt-bindings: usb: dwc3: Add SDX75 compatible
+  phy: qcom-qmp-usb: Add Qualcomm SDX75 USB3 PHY support
+
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |   2 +
+ .../bindings/phy/qcom,snps-eusb2-phy.yaml          |   7 +-
+ .../devicetree/bindings/usb/qcom,dwc3.yaml         |   4 +
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 173 +++++++++++++++++++++
+ 4 files changed, 185 insertions(+), 1 deletion(-)
+
 -- 
 2.7.4
 
