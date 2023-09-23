@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFE37CE7A89
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Sep 2023 13:49:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E5BFCE7A8B
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Sep 2023 13:49:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cs1nlNlwASYdstlNY6tAvfas0B5r0A8+NUToMWQpnOQ=; b=Fm+hYkKv3mFP+/
-	ZmKDU7ABZGCcly64CCmgbAMHw1BLgHknHYh6m49x56BhDiusarST0Aszv5lkigLzS67yqodTQSeOu
-	Dxb398abzA9OJnkggpeQTHmy0nMUGow3pbD8I7vHCiy0fZRthL0QNsjU1DdolS3BNYnpDCRow6e/A
-	igFLVrPYGN+63zGIve8MZKwJfbw24WEInPWWt1IYusNXjU7rq5q0SHeTwnou8cJhrPDkPgu5xQ569
-	zt5s53YH4Z4djD4bwQq0xiInOk7QN8GEK1I+br80fUzfeTmEczIWyyLy1FUQRD9RC7b0SrM+1eYYU
-	fCYTX8wlw8siVjqJryDw==;
+	List-Owner; bh=8SYzLcbLtosS7zm+Ud8eUszTYV4c1ihKmGzgUP9OYqY=; b=OWjQgsKIxI9okL
+	5Cb/rco3F3z1gO3L5ICEwJp8gs0GQ4M7l2jJ58YKLfQ+mReDcOfg9TpUr7y36eX+5shaDExa29YKQ
+	1OqvklQpUA1Tei3ApWYID/IzgOxrH0YXkvjXAMtRf2jfjSkEvMtkuhbVuhIvENmK+wa9FfcQk5ATB
+	up+XoCj9xrl8QYTYR4/JyzESrMC2IQAaFF2L8fCPfhw604QUIdjZyxRWWr/2YM2NYioEewD4X7nRg
+	xdUGa9tpKAs3kYOgFwRvKkfz+1MRaG/y7gMi5ZHbh6BG2gialxGMQt/zzY8rnqCFc61mCw/xvrLTZ
+	1B01m9UgNPnoh+Rv3SOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk30u-00B35V-1j;
+	id 1qk30u-00B369-2r;
 	Sat, 23 Sep 2023 13:49:40 +0000
-Received: from mail-vi1eur05on2061e.outbound.protection.outlook.com ([2a01:111:f400:7d00::61e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+Received: from mail-vi1eur05on20609.outbound.protection.outlook.com ([2a01:111:f400:7d00::609] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk30q-00B31M-0d
+	id 1qk30r-00B30p-00
 	for linux-phy@lists.infradead.org;
-	Sat, 23 Sep 2023 13:49:38 +0000
+	Sat, 23 Sep 2023 13:49:39 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Au9RnhxRxuYrNIecqSBFLUj6un40ZVTzD6CVNIvdl8gIgdmAX7uE4BkVd/i6hpdHkEb/pwnaIrYMRddQwm6LVhjXvOXdi1v5/QLSAIshsLLRkno/jD2xFSXmTQv74c962aZLuKlSflM1NDESEmxK89uQPx4ovFppp7nUv9B+GsfKkoQkBLKeypKlyBEMa2/s/yPpjCzHT3WJ4m5Y4J6LR0SI2YYTnwN5CSObbwSfP85N80pe9Nj19J2pV09BnZ/3uh9SnVn5AdczOJ+6DAi7ftdOCcyPgKqaGOSdZcx2j2j4e5S/2DH/MS2kNqsqSK0Pcq2nruVfT6Q83/5FzIp5bg==
+ b=AsHr3Ik7ivl3eleh7H7tG64dEtjfkVGp8jAioHV51A7Qm5RNe2mvs+nY80M+awxSvZMDOzN83OYHLp6k+SDDE+88hV8Ac6UejS6vDUkjmLcrbz+xxmf8RoOEQYYl4yc0zSQ6vWsJm9SoTeWHavxx2IiPdzxfAy30frpKYHHV5UVWtMKfnR7pteYKtTdJj9S7SEXEfDAbEmg2a3e6w0LcuxZB0JyY+51mamhU71odLOwiTvupuROTTuO9pIV7M6Ibi3rf15Nw6pdG+F5SW9PNyMTYXB4I5fez12jEt0truVq2akY9u8WnZbuaRvFGSVUTFL7HISN7sfqgAD6TlXP+jw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wiSwOhxch5ounlXMEbCvqxtOsgRamFp18/3AewOcUXA=;
- b=jVxSe+N0UCsjP3d7Z2RoyvGa2eKDXADp00/P7rUwM/1oszctZjWQ6ecrcN0V6b9e9lCwMWNvxTXxMxpj7U9pnLWIDjZOQYUKHR5+u+dTLniW6DsAPttc0bo9Hzq3Ddn1T4xQBxf5rqGlA875gnR1+8RjAQLuroutq731t+d+77WY/jDl0MD37D+H1hFp4sX6Pjq/ypJ8nIMG+gsi0gQm2vo/sPW23JGQjh1uYPwUEyBpubwvrmMhuvajn3+xCcUVZSG+JYfYmfX9Pf1nKnfgUTixZr2XByWDN98vvIO+lu5C8MTWLRiTQ4RvmDkn8oxcm58COTuRRViVXLOKivad1w==
+ bh=WHG+pQCdNNfl/A3ljPjF0GmP2TBdr2IG6AJruGaKh/Y=;
+ b=byY7Rl9DQLQ5hp7qQg/Tr9VlAJ6Mf0YGkpus+JTuTtJRR13Oke2XCZ+9DO6T5lVtdaJafzme/cy77SFqnKVRX7zL/L/mObZRyxKwBi0gXmsHaflWSfqMCvea5cvg9mgAzIYMHGQzYpRZ+vAxiVtYmetUh6wgMbUSdtQP86ZzeVGrM69OfNzxprvEqjmpCcgrt9NEHHYBnIraR2DHe7ruzVDos+72wwJ5lSufWVpW8FobCD4kiJiTfnl/A6JI07PKSeOkwjNUuskmhsukBwdrjXQSCxFiU8eLNnTS8p2PprA4iMYSSc/QpFocRsbqLpiJy6z/inBMbIoGAp1j+uJeBA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wiSwOhxch5ounlXMEbCvqxtOsgRamFp18/3AewOcUXA=;
- b=JhEPZf7Das5BUGkWfbynAJTgZhUJ9d9HWzK2ichSRyCosV/kMk8oTQ+xCQDHkk34DOHGNjRjaM5P9oVoM8H63rc2JKOnjZGQe3yFcenj2CsdlRUNUEeMkUYWMRwdeCxfxeuTnfuYIzDAhB/eYZgr/pvPCsfI0/O6hTQqTwSxmh8=
+ bh=WHG+pQCdNNfl/A3ljPjF0GmP2TBdr2IG6AJruGaKh/Y=;
+ b=f+izn+7kTag5NBYWtUV500CQcutfympl8lTx8qr7LlhM/GrpkC9ZZyBn0M8Wup9LgWwRevmZr7DDEI9QOrYcX1EGbcAdS2WkKPUAAT9pE3vllRVRNg7YrsDgj43Z825PvU9D4A7nlar0tDDlIQBsisT64cF2OEI6j4eOqkmRF0Q=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by AS1PR04MB9454.eurprd04.prod.outlook.com (2603:10a6:20b:4d9::9) with
+ by DB9PR04MB8396.eurprd04.prod.outlook.com (2603:10a6:10:24a::16) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.21; Sat, 23 Sep
- 2023 13:49:29 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.25; Sat, 23 Sep
+ 2023 13:49:26 +0000
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454]) by AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454%3]) with mapi id 15.20.6813.024; Sat, 23 Sep 2023
- 13:49:29 +0000
+ 13:49:25 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: netdev@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -72,9 +72,9 @@ Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH v2 net-next 06/15] net: mii: add C73 base page helpers
-Date: Sat, 23 Sep 2023 16:48:55 +0300
-Message-Id: <20230923134904.3627402-7-vladimir.oltean@nxp.com>
+Subject: [RFC PATCH v2 net-next 03/15] phy: ethernet: add configuration interface for copper backplane Ethernet PHYs
+Date: Sat, 23 Sep 2023 16:48:52 +0300
+Message-Id: <20230923134904.3627402-4-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
 References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
@@ -83,57 +83,57 @@ X-ClientProxiedBy: FR3P281CA0165.DEUP281.PROD.OUTLOOK.COM
  (2603:10a6:208:16d::21)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|AS1PR04MB9454:EE_
-X-MS-Office365-Filtering-Correlation-Id: c7d5a709-02a0-460a-b97e-08dbbc3be887
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DB9PR04MB8396:EE_
+X-MS-Office365-Filtering-Correlation-Id: eb6892f6-915b-45db-eeaf-08dbbc3be64d
 X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: LJS9s+jRz96uWRHhHlQ5AkbU2skR4FyOMT0jbK4Cr71VyvnP3zJwZy11Up5brgwnC6wXaEYw1lJq4cbjbNl9z2ysmrL1vkyfldaQXKnoqnfcyu7VNhXCql9uESma1Q0JoLvFRCR4lOysbGgR7wYGGYmvv+1AtjMiY4tiJjRBmTVXsByMj1rneSon32KPm7LX1ythSl/5v74pfEdIefGvnwKVJ0TmuTQLphmK84PhSDPslcBQEwVif/dXvDqg3PgVBuSZGpP3FONIz9jKLYwRbjN1OTZ7UGlWeQAxjpHiBT6gDqp7cvfJxtAky4MRVoXIvbIQ2lvS6kvBE7JuqQ+WLX3xjr4qvhQ2M4j7E6Zau/L4gLy13WvPGVTqZb0G4YCG5aUzlaM6vUB++TMFf0xuoAlKw2S/E2fuWeRr3S9jdbfiznaX6R5tiGTGEKoOkadpx4BeVWqwd9rHx7rZXe8PPMOCzj/mk/9Bl4wKfii9u2K1vsO+nV0sKmBD85GpLm+kploAbpAvUShqTmFMk2x7J2MlhNaC8VakIWQ+DmU9uewQiALf1dbARUbOHojozVo2a3aiHmMwcL9aqAhomeLgzxmxCabEp60WOQ73vXVzjSk=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(346002)(39860400002)(136003)(396003)(376002)(230922051799003)(1800799009)(451199024)(186009)(66556008)(52116002)(2616005)(6506007)(6512007)(316002)(5660300002)(19627235002)(66946007)(38350700002)(6666004)(478600001)(1076003)(66476007)(26005)(44832011)(2906002)(4326008)(36756003)(41300700001)(7416002)(54906003)(38100700002)(6486002)(8936002)(86362001)(8676002)(966005)(83380400001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: pC1L43cZAOIlx5oY9W7tXG7B59cgZGfUQ28ByZqiWX4+qY43ug4my8YsduvTcGMqZMbAIUIvIPrXX8t/fwoe+8xttr0Pa/3R+CkAp+4MD9rdlxpuz2LDhgfU8TTiG2Nfss90NQl4kHdeEtZvV6HWId2+NTnGjJEUyM6H8dVpv3WCOYPNrojvu54mpE1bTeDmbvEXgqlLt0yudnn90/PSyy5/UPZl8GSbgACcerpMkULGpvkrTqlHBYFYzSCm+Wzsn7AkpPFhez5Krs3q2VbMd6+imhpSRsbF4z/GX9DhjgodC10IC7u/uHsCfW2QUWmoj5VEY5yIbSO0+ZmmQvkFTP1rdhLrnK4J6WTeKHSL8mpB+UWnpUSlkzXXIAb2yDGET8UQHp9LGI8u1r3lotu0u2j0EyM2VPfsaY1XnLsCUEdyBZ6Q3/fzXgHAXPUHQsZT4vTG7lQfZ1en+kLfn8n8K+XgUetWMQOCimrPA0bp6elvOWW4XIgbpLzUuEGaw5AO3C/jwy5hh34mVAGB9CkFP1YNmWI17qChC1//U0vua7TcYmk0idw1sGBKyO87WKIupCslt6qNwYNeO2Dj4dlVhSKVxujk/UcOaOCs2sImaVDZYjurGa9xgvQgah/J6+11
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(39860400002)(346002)(376002)(136003)(396003)(230922051799003)(186009)(1800799009)(451199024)(6512007)(66899024)(52116002)(6506007)(6486002)(6666004)(83380400001)(86362001)(38350700002)(38100700002)(36756003)(1076003)(2616005)(26005)(2906002)(41300700001)(316002)(7416002)(30864003)(44832011)(54906003)(66946007)(66476007)(66556008)(478600001)(8936002)(4326008)(8676002)(5660300002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TLBAfG097hRsAi69qRxiC9GK1rSZPMBPYRPG0bzDqmjQOKTvNpz2/l8d4gOr?=
- =?us-ascii?Q?INs/+JofosOiwMQm2k1syuBOAHR5T/Wfi1BpDwuRv6R5E5anUnI9QcZ/GjO3?=
- =?us-ascii?Q?y9K/gjWEJ5FEM69wh2GdYO2Oq5TyJmuAdlQlqu3O9jnxvkprB9eWm74BJ8lt?=
- =?us-ascii?Q?+2UKqzGF2KbEMxQn6lj7e3QGaAkEUaFCJbk1uKfwaunaDh52VZIfB0okRqv9?=
- =?us-ascii?Q?Gsc4v+7qECVnjac2EiJbmawCcrV2VmP5K8BODNyVfBtfRXGwtBEbfFORcNRj?=
- =?us-ascii?Q?qED60BIIL6d0C9AwNUckvE/zw6WTz56JYpOagZCFPqXUTCbNF5ByucWA6KyO?=
- =?us-ascii?Q?Rlu3VRLzOCFd5xgWLpoAQ+64c0/kXwY09Xck10iZvpfDlFciKHBOdQAj52qO?=
- =?us-ascii?Q?NjZXLkB8W+jhQoZuBdH9fzX/C9mmRULIb8fMYGYlPMrZ6JmiRLx5HS7HFLSC?=
- =?us-ascii?Q?jELhS3BNLQR632Eu2Yi0u9vFQn8cFeTydqszVWxaotLcFK2N83XtKswuL/vK?=
- =?us-ascii?Q?vS/HlUYGozhK3xmArGmWrWHYLgOelgIBeSm9X4VG6e8+XpyPX7lOhSWDQ6m2?=
- =?us-ascii?Q?KZGMuPaVRK7v5pLu2Yu981kWscQsjDm6w9RVPbjfoS2Tbs7t7hXHiUmcL8WV?=
- =?us-ascii?Q?V2Qh8SPhTFiSYWQ4fpmP3a6N3XX50CAHfrZPMs1dpsJCFZuQxLHdZl2dVlyn?=
- =?us-ascii?Q?gnw64le4BBiTmHfPEJr4nL+/xxIBmY0ayztXasKa21sESg+eye1Lb8UszEmz?=
- =?us-ascii?Q?btUEavKqxouDXiouYl7Gytgfe1qq4f2U6WpyBoc7qZoukNkoE3VBPsqdCNrQ?=
- =?us-ascii?Q?IKJBO9QNyQPVe7X52hqDt78KHjbKJKTs8AmKSBqyb6K4qFp+bf4toAknjIQV?=
- =?us-ascii?Q?13YgfRpuVMTG/Z8gwsXxB8uDZFEfxY52rZAHyqVwDY5Qb1fzDy/hgR/wd1WL?=
- =?us-ascii?Q?5CL4mfudIiPhtvqK5wu2Rxi7IwzyoYuySNM2pHy5TlXJ2cl690Fq4wuZ+K9c?=
- =?us-ascii?Q?/DKQqElMYY3jiRWfyvnevf+ywmvk5ejv5GIF7qeuW9P9mGAGHoq6G4gCYL7p?=
- =?us-ascii?Q?LesKzQryB6YfCSkkPK74A5ot4FBfUQOLUUyyD3Suu5prR/EX6draJfokLR9S?=
- =?us-ascii?Q?PhcQEOgvTMrvB631WcuQjAFXXv9/kwylplD7HElVcmO+q5Ilb1ejGi3SCeF5?=
- =?us-ascii?Q?WH3TlXbCkHBM7hYibEczR/UsTW0vRlMdtciToPLT4+GMTEmdJ7piOfD3Pd/u?=
- =?us-ascii?Q?kstWJwzGcQ4rdMCL1IrdgPfj2tNI4lzcqolkBVA2kKN4um+J0Byl7D0DF2EA?=
- =?us-ascii?Q?tb9C1rRMNlEoJvT+PBk6NuR3BGAnJcjwZ+C4dX1x06p5iyp3xVZOlLYSOm/C?=
- =?us-ascii?Q?kjlOaKYES3j3YMXNNaktqHfRbWch3cXSz5qGeUIf2dEw1S2MXF1Ukj9B7iPx?=
- =?us-ascii?Q?e+IEKomHNXqiBz1YBvT+JvDIkuz1Ika1HZGbvlrjLCKofACZDbHhY3hjApoI?=
- =?us-ascii?Q?cpF1LKdWsoPWSrc5rCsVB88MGlOAMf3J8xfiUmEXi7l8rjbk1lEldkK/mCsj?=
- =?us-ascii?Q?3zuVT3W0LN5T56mMHMeGHQEjLDlW9tI773bVxpzUPo1Dh3DAVqkgZMLd08+W?=
- =?us-ascii?Q?rQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?IserxLF4z9Ufnhp0kCYLKGilhS7QenzkjtZpTRe7l1g/BiDSuteFqIUpZ09D?=
+ =?us-ascii?Q?9vqnps7/L7arSzU71EGghX1AkW7nJtv75nH4/MrUKthGtYdQKVTjnkCkhw7i?=
+ =?us-ascii?Q?rzRhv81O0/Wq0Xt3hr8yfJquUCbBAHBUs/lbgJc9lItZjDmr4iPAQ10weNWW?=
+ =?us-ascii?Q?4JSmpAi628Xvq4R6vQD1/iEvU51SpJTqFrjqqM6mBpdIjloND7uV/eaQ0b5m?=
+ =?us-ascii?Q?eheDLrtuZWAG+jl3RXpI9IlvOFM3yDOJp2JEU+BQD+ijnfGiL8gzS1BX7Po0?=
+ =?us-ascii?Q?Op1n1EAUZqLnisNwoaSofkXe/3lNr0YxHaxizXQwC72Hqag0YKch5MPDwjlj?=
+ =?us-ascii?Q?8QeHeO/2USQnGJf7fWtg/7egNyFfKZzTmdVPRf9AnT6Pz5pbc5DDZESLwqwl?=
+ =?us-ascii?Q?S+W8Rpvb/kb/o8OZfOU52GAFiU0KV0I+zevtFWMzAuJ/b3pNecUDpOx7P1mw?=
+ =?us-ascii?Q?Zb3LZjQO5M2zOZRcF26SAT7EMDk0uOnVYbbVzqJj9fpqrcskrEOqI0cMZmNZ?=
+ =?us-ascii?Q?LXa3k5OoNyKDqUuRsljuzdPRL9wyB6P+1dqx097tTPyj4+DuvxzbpKwTJvVj?=
+ =?us-ascii?Q?D0JFycAic29XfmYmcPd/W98PoA1STewGOia/87IWO8fWLvLmi7XUWlmapB3b?=
+ =?us-ascii?Q?TRzPCodoECjylYwUVwWPZukWe1Vydbqzx02kkzMHerixC61c+wCqzWjr/GSu?=
+ =?us-ascii?Q?pQznX4jYSznO02o1cUWQv5qqruRywdFdCyQMchWayA7nmTpNsAbfYfjR1E+Z?=
+ =?us-ascii?Q?4OPdUCchVw7FaCCD6j4PHZjtHyY6heCHZy4L85f38gIvh+U2kWVUvkDWi54D?=
+ =?us-ascii?Q?3VEzSFYSnlaAkZmYqQQDPFqVMlEbd14o+TZEz6vl4DbcvwH8EGrxl2MmJrdT?=
+ =?us-ascii?Q?gC66eouOf5wYZkiwQXjafJq7b/v/YAjLidNwj0xhkrWWGugr36LRjujLJSnr?=
+ =?us-ascii?Q?tpFoVu4sWQ+IUpDXIHXO2bOXiWLqw4qUp4OE3cpOwNQpNdRQvdR6nDYIu/jG?=
+ =?us-ascii?Q?PtU3QOw8x+GoMcQLSZXjigBczOEsTA7IsE0S+pKqXPWTc7tn+1ujC0iWwHkX?=
+ =?us-ascii?Q?eG3CyV25ofIA+E+h0iM+fD598wqzt3prHT8tzsPri/K74+09Wtswj5PuWYKa?=
+ =?us-ascii?Q?NZyFvW2cSzOOCK6w0FCH6jCZx0rWELEaBX/vDnru2M9CLPjHqqTLOUwRDrXS?=
+ =?us-ascii?Q?fcMdIgIsvZrHQShdzBx7N94vzks02TsP6KKW/ERe8kQE4Ha/8/JR5L4NuBBd?=
+ =?us-ascii?Q?M8Ga6i0SHvedTP5VMW0Jy2weUfbrQvWku3fakVXwDK6kx431uEWETEZ+FYrU?=
+ =?us-ascii?Q?2uut6DJt17zmPMi5KnKJoJFv/Hk6IvDGqWdnpbrN+M0eLw5Em3fgcHXPBB1W?=
+ =?us-ascii?Q?LU32viMjGMw1qduBMG55govCtWHkfm4tS7QatPsy4M8dFWj+uIvrdr1Aztgk?=
+ =?us-ascii?Q?/BIPplvVm9Cp6lp0dFbHvEHiVXZ4QSHhV7YW0uZMZG6nL6Nry81BYFyhJm70?=
+ =?us-ascii?Q?M9g9AZ4VoCtXt7ejM3A+kS1VpO2E+sujiOkFqWkZr5zIMnpRYe7uzDn1k6EY?=
+ =?us-ascii?Q?U+ClvD0PifN1OzkL9xgyg94nuz4gixDC6jC970wf6t8SXcpqlU8drhaJShKy?=
+ =?us-ascii?Q?kQ=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c7d5a709-02a0-460a-b97e-08dbbc3be887
+X-MS-Exchange-CrossTenant-Network-Message-Id: eb6892f6-915b-45db-eeaf-08dbbc3be64d
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:29.4801
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:25.8017
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9pCHcofvo0X7wWpx6M7TJjLdSv/hCghxVxSXQLXtgMjHHfWQuuVQkx0Md/oKAVBGXIRMqhb7HSVoBqahVAUbdA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9454
+X-MS-Exchange-CrossTenant-UserPrincipalName: e4t5Zuti3q7G9Gp5Y14+XoeYDV42+2ZtB+sh7yVR92+6Yj/jn7VyQoArEj3a5oQMQxVLKa10GykecDrUsyv14w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8396
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230923_064936_397501_8C6D2902 
-X-CRM114-Status: GOOD (  19.91  )
+X-CRM114-CacheID: sfid-20230923_064937_053316_070E076C 
+X-CRM114-Status: GOOD (  25.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,221 +150,366 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-IEEE 802.3 clause 73 defines auto-negotiation for backplanes and copper
-cable assemblies. This is a medium type (link mode) just like Ethernet
-over twisted pairs (BASE-T / BASE-TX) and over two wires for automotive
-(BASE-T1) for which the PHY library currently contains support.
+In Layerscape and QorIQ SoCs, compliance with the backplane Ethernet
+protocol is bolted on top of the SerDes lanes using an external IP core,
+that is modeled as an Ethernet PHY. This means that dynamic tuning of
+the electrical equalization parameters of the link needs to be
+communicated with the consumer of the generic PHY.
 
-As a minimal framework for backplane PHY drivers, introduce a set of
-helpers that parse and interpret the base pages that are exchanged by
-PHYs during the clause 73 negotiation.
+Create a small layer of glue API between a networking PHY (dealing with
+the AN/LT logic for backplanes) and a generic PHY by extending the
+phy_configure() API with a new struct phy_configure_opts_ethernet.
 
-The placement in the "legacy" mii code is perhaps not the best, but I
-tried to put them somewhere accessible by phylib, phylink and non-phylib
-drivers. Note that phylink also has its own phylink_resolve_c73() which
-is more or less similar in purpose, but:
+There are 2 directions of interest. In the "local TX training", the
+generic PHY consumer gets requests over the wire from the link partner
+regarding changes we should make to our TX equalization. In the "remote
+TX training" direction, the generic PHY is the producer of requests,
+based on its RX status, and the generic PHY consumer polls for these
+requests until we are happy. Each request is also sent (externally to
+the generic PHY layer) to the link partner board, for it to adjust its
+TX equalization.
 
-- it requires constructing a struct phylink_link_state which is deeply
-  embedded with the phylink API and that may not be desirable for
-  drivers
+struct phy_configure_opts_ethernet is valid when phy_set_mode_ext() has
+been called with PHY_MODE_ETHERNET or PHY_MODE_ETHTOOL, same as with
+other union phy_configure_opts types.
 
-- the presence of some link modes in phylink's own
-  phylink_c73_priority_resolution[] is "interesting", like
-  ETHTOOL_LINK_MODE_2500baseX_Full_BIT, which is not a backplane mode
-  negotiable through C73 at all. That comes from the xpcs driver which
-  may have a non-standard C73 autoneg, and this makes it difficult for
-  me to e.g. refactor phylink_resolve_c73() to use the more generic
-  linkmode_c73_priority_resolution(). Also see the attached link where I
-  had previously pointed this out.
-
-Link: https://lore.kernel.org/netdev/20230516090009.ssq3uedjl53kzsjr@skbuf/
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
-v1->v2: add 25GBase-KR-S and 25GBase-CR-S
+v1->v2:
+- rename "xgkr" to "ethernet" in phy_configure_opts_ethernet, to match
+  other modes like PHY_MODE_LVDS and phy_configure_opts_lvds.
+- add kerneldocs
 
- drivers/net/mii.c   |  34 +++++++++++++-
- include/linux/mii.h | 105 ++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 138 insertions(+), 1 deletion(-)
+ include/linux/phy/phy-ethernet.h | 292 +++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h          |   4 +
+ 2 files changed, 296 insertions(+)
+ create mode 100644 include/linux/phy/phy-ethernet.h
 
-diff --git a/drivers/net/mii.c b/drivers/net/mii.c
-index 22680f47385d..03e8b0877600 100644
---- a/drivers/net/mii.c
-+++ b/drivers/net/mii.c
-@@ -648,6 +648,38 @@ int generic_mii_ioctl(struct mii_if_info *mii_if,
- 	return rc;
- }
- 
-+static const enum ethtool_link_mode_bit_indices c73_linkmodes[] = {
-+	ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT,
-+	/* ETHTOOL_LINK_MODE_100000baseKP4_Full_BIT not supported */
-+	/* ETHTOOL_LINK_MODE_100000baseCR10_Full_BIT not supported */
-+	ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseCR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseKR_S_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseCR_S_Full_BIT,
-+	ETHTOOL_LINK_MODE_10000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT,
-+	ETHTOOL_LINK_MODE_1000baseKX_Full_BIT,
+diff --git a/include/linux/phy/phy-ethernet.h b/include/linux/phy/phy-ethernet.h
+new file mode 100644
+index 000000000000..5260e132de21
+--- /dev/null
++++ b/include/linux/phy/phy-ethernet.h
+@@ -0,0 +1,292 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright 2023 NXP
++ */
++
++#ifndef __PHY_ETHERNET_H_
++#define __PHY_ETHERNET_H_
++
++struct phy;
++
++/**
++ * enum coef_status - Status report field of one TX equalization tap
++ *		      (coefficient), according to IEEE 802.3-2018 clause
++ *		      72.6.10.2.4.5 Coefficient (k) status
++ *
++ * @COEF_STAT_NOT_UPDATED: The default state for a given tap is not_updated.
++ *			   An increment or decrement request will only be acted
++ *			   upon when the state of the tap is not_updated.
++ * @COEF_STAT_UPDATED: The tap transitions to this state after it has
++ *		       successfully responded to an update request different
++ *		       from HOLD.
++ * @COEF_STAT_MIN: The tap transitions to this state when it has received a DEC
++ *		   request, but it has already reached its minimum limit and it
++ *		   cannot fulfill the request.
++ * @COEF_STAT_MAX: The tap transitions to this state when it has received an
++ *		   INC request, but it has already reached its maximum limit
++ *		   and it cannot fulfill the request.
++ *
++ * After any non-HOLD update request which results in an update of the
++ * coefficient status, the update request must return to the HOLD state.
++ * Then, the status field returns to NOT_UPDATED and the process can repeat.
++ */
++enum coef_status {
++	COEF_STAT_NOT_UPDATED = 0,
++	COEF_STAT_UPDATED = 1,
++	COEF_STAT_MIN = 2,
++	COEF_STAT_MAX = 3,
 +};
 +
-+int
-+linkmode_c73_priority_resolution(const unsigned long *modes,
-+				 enum ethtool_link_mode_bit_indices *resolved)
-+{
-+	int i;
++/**
++ * enum coef_update - Requested update field of one TX equalization tap
++ *		      (coefficient), according to IEEE 802.3-2018 clause
++ *		      72.6.10.2.3.3 Coefficient (k) update
++ *
++ * @COEF_UPD_HOLD: The default state for a given tap is hold, which corresponds
++ *		   to no change in the coefficient.
++ * @COEF_UPD_INC: Request the link partner to increase the equalization of the
++ *		  given tap by one step, which implies a change to the waveform
++ *		  voltages within the limits defined in IEEE 802.3-2018 Table
++ *		  72-7 "Transmitter output waveform requirements related to
++ *		  coefficient update"
++ * @COEF_UPD_DEC: See @COEF_UPD_DEC
++ *
++ * Coefficient increment/decrement shall not be sent in combination with
++ * initialize or preset.
++ */
++enum coef_update {
++	COEF_UPD_HOLD = 0,
++	COEF_UPD_INC = 1,
++	COEF_UPD_DEC = 2,
++};
 +
-+	for (i = 0; i < ARRAY_SIZE(c73_linkmodes); i++) {
-+		if (linkmode_test_bit(c73_linkmodes[i], modes)) {
-+			*resolved = c73_linkmodes[i];
-+			return 0;
-+		}
++/**
++ * struct c72_coef_update - C72 coefficient request
++ *
++ * @com1:	corresponds to "Coefficient (-1) update" ("minus 1")
++ * @coz:	corresponds to "Coefficient (0) update" ("zero")
++ * @cop1:	corresponds to "Coefficient (+1) update" ("plus 1")
++ * @preset:	when set, preset coefficients are requested
++ * @init:	when set, coefficient initialization is requested
++ *
++ * This is the input structure for a local TX link training step, and is based
++ * on the definitions from IEEE 802.3-2018 clause 72.6.10.2.3 "Coefficient
++ * update field". It carries correction information from the local receiver
++ * to the link partner transmit equalizer. The structure consists of preset
++ * controls, initialization controls, and coefficient updates for three
++ * transmit equalizer taps.
++ */
++struct c72_coef_update {
++	enum coef_update com1;
++	enum coef_update coz;
++	enum coef_update cop1;
++	bool preset;
++	bool init;
++};
++
++/**
++ * struct c72_coef_status - response to C72 coefficient request
++ *
++ * @com1:	corresponds to "Coefficient (-1) status" ("minus 1")
++ * @coz:	corresponds to "Coefficient (0) status" ("zero")
++ * @cop1:	corresponds to "Coefficient (+1) status" ("plus 1")
++ *
++ * This is the output structure for a local TX link training step, and is based
++ * on the definitions from IEEE 802.3-2018 clause 72.6.10.2.4 "Status report
++ * field". The "Receiver ready" (bit 15 as defined by IEEE) of the status
++ * report is deliberately not part of this structure, since it is logically
++ * part of the remote TX link training procedure, and is decoupled from the
++ * local TX link training.
++ */
++struct c72_coef_status {
++	enum coef_status com1;
++	enum coef_status coz;
++	enum coef_status cop1;
++};
++
++/**
++ * enum ethernet_phy_configure_type - Configuration types for an Ethernet phy
++ *
++ * @C72_LOCAL_TX: Execute a C72 link training step for the local transmitter.
++ * @C72_REMOTE_TX: Execute a C72 link training step for the remote transmitter.
++ * @C72_LT_DONE: Finalize C72 link training.
++ *
++ * The @C72_LOCAL_TX, @C72_REMOTE_TX and @C72_LT_DONE types apply to Ethernet
++ * phys supporting media types with the IEEE 802.3 clause 72: 10GBase-KR,
++ * 40GBase-KR etc.
++ */
++enum ethernet_phy_configure_type {
++	C72_LOCAL_TX,
++	C72_REMOTE_TX,
++	C72_LT_DONE,
++};
++
++/**
++ * struct c72_phy_configure_local_tx - configuration set for C72 local TX
++ *				       link training
++ * @update:	input structure containing a C72 coefficient update request
++ *		from the link partner.
++ * @status:	output structure containing the response of the local PHY to
++ *		the given update request
++ *
++ * Adjust the TX equalization of the local PHY in response to a C72 coefficient
++ * update request from the link partner. Used when @ethernet_phy_configure_type
++ * is set to @C72_LOCAL_TX.
++ */
++struct c72_phy_configure_local_tx {
++	struct c72_coef_update update;
++	struct c72_coef_status status;
++};
++
++/**
++ * struct c72_phy_configure_remote_tx - configuration set for C72 remote TX
++ *					link training
++ *
++ * @rx_ready:	output boolean set by phy when it does not need any transmitter
++ *		adjustments from the link partner
++ * @update:	output structure containing a request to the link partner
++ *		transmitter, based on information from the local receiver
++ * @cb:		optional callback to see how the link partner reacted to the
++ *		update request (which is echoed back unmodified). The
++ *		coefficient status is only valid if there was no error
++ *		during its propagation.
++ * @cb_priv:	private structure for the callback @cb.
++ *
++ * Query the phy RX quality in order to compute a C72 coefficient update
++ * request to the link partner to improve that. The phy consumer is responsible
++ * for taking the computed request and transmitting it to the link partner, and
++ * then calling the optional phy callback before making any other query.
++ *
++ * Used when @ethernet_phy_configure_type is set to @C72_REMOTE_TX.
++ *
++ * WARNING: the phy implementation may be stateful, i.e. the number of previous
++ * requests and their received status may modify the phy's state and it might
++ * influence the next computed request.
++ */
++struct c72_phy_configure_remote_tx {
++	bool rx_ready;
++	struct c72_coef_update update;
++	void (*cb)(void *cb_priv, int err, struct c72_coef_update update,
++		   struct c72_coef_status status);
++	void *cb_priv;
++};
++
++/**
++ * struct phy_configure_opts_ethernet - Ethernet PHY configuration set
++ *
++ * This structure is used to represent the configuration state of an Ethernet
++ * PHY (of various media types).
++ */
++struct phy_configure_opts_ethernet {
++	enum ethernet_phy_configure_type type;
++	union {
++		struct c72_phy_configure_local_tx local_tx;
++		struct c72_phy_configure_remote_tx remote_tx;
++	};
++};
++
++/**
++ * coef_update_opposite - return the opposite of one C72 coefficient update
++ *			  request
++ *
++ * @update:	original coefficient update
++ *
++ * Helper to transform the update request of one equalization tap into a
++ * request of the same tap in the opposite direction. May be used by C72
++ * phy remote TX link training algorithms.
++ */
++static inline enum coef_update coef_update_opposite(enum coef_update update)
++{
++	switch (update) {
++	case COEF_UPD_INC:
++		return COEF_UPD_DEC;
++	case COEF_UPD_DEC:
++		return COEF_UPD_INC;
++	default:
++		return COEF_UPD_HOLD;
 +	}
-+
-+	return -ENOPROTOOPT;
 +}
 +
- MODULE_AUTHOR ("Jeff Garzik <jgarzik@pobox.com>");
- MODULE_DESCRIPTION ("MII hardware support library");
- MODULE_LICENSE("GPL");
-@@ -662,4 +694,4 @@ EXPORT_SYMBOL(mii_check_link);
- EXPORT_SYMBOL(mii_check_media);
- EXPORT_SYMBOL(mii_check_gmii_support);
- EXPORT_SYMBOL(generic_mii_ioctl);
--
-+EXPORT_SYMBOL(linkmode_c73_priority_resolution);
-diff --git a/include/linux/mii.h b/include/linux/mii.h
-index d5a959ce4877..4b141e9acd08 100644
---- a/include/linux/mii.h
-+++ b/include/linux/mii.h
-@@ -13,6 +13,36 @@
- #include <linux/linkmode.h>
- #include <uapi/linux/mii.h>
- 
-+/* 802.3-2018 clause 73.6 Link codeword encoding */
-+#define C73_BASE_PAGE_SELECTOR(x)		((x) & GENMASK(4, 0))
-+#define C73_BASE_PAGE_ECHOED_NONCE(x)		(((x) << 5) & GENMASK(9, 5))
-+#define C73_BASE_PAGE_ECHOED_NONCE_X(x)		(((x) & GENMASK(9, 5)) >> 5)
-+#define C73_BASE_PAGE_ECHOED_NONCE_MSK		GENMASK(9, 5)
-+#define C73_BASE_PAGE_PAUSE			BIT(10)
-+#define C73_BASE_PAGE_ASM_DIR			BIT(11)
-+#define C73_BASE_PAGE_RF			BIT(13)
-+#define C73_BASE_PAGE_ACK			BIT(14)
-+#define C73_BASE_PAGE_NP			BIT(15)
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE(x)	(((x) << 16) & GENMASK(20, 16))
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE_X(x)	(((x) & GENMASK(20, 16)) >> 16)
-+#define C73_BASE_PAGE_TRANSMITTED_NONCE_MSK	GENMASK(20, 16)
-+#define C73_BASE_PAGE_A(x)			BIT(21 + (x))
-+#define C73_BASE_PAGE_TECH_ABL_1000BASEKX	C73_BASE_PAGE_A(0)
-+#define C73_BASE_PAGE_TECH_ABL_10GBASEKX4	C73_BASE_PAGE_A(1)
-+#define C73_BASE_PAGE_TECH_ABL_10GBASEKR	C73_BASE_PAGE_A(2)
-+#define C73_BASE_PAGE_TECH_ABL_40GBASEKR4	C73_BASE_PAGE_A(3)
-+#define C73_BASE_PAGE_TECH_ABL_40GBASECR4	C73_BASE_PAGE_A(4)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASECR10	C73_BASE_PAGE_A(5)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASEKP4	C73_BASE_PAGE_A(6)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASEKR4	C73_BASE_PAGE_A(7)
-+#define C73_BASE_PAGE_TECH_ABL_100GBASECR4	C73_BASE_PAGE_A(8)
-+#define C73_BASE_PAGE_TECH_ABL_25GBASEKRS	C73_BASE_PAGE_A(9)
-+#define C73_BASE_PAGE_TECH_ABL_25GBASEKR	C73_BASE_PAGE_A(10)
-+#define C73_BASE_PAGE_25G_RS_FEC_REQ		BIT_ULL(44)
-+#define C73_BASE_PAGE_25G_BASER_FEC_REQ		BIT_ULL(45)
-+#define C73_BASE_PAGE_10G_BASER_FEC_ABL		BIT_ULL(46)
-+#define C73_BASE_PAGE_10G_BASER_FEC_REQ		BIT_ULL(47)
-+
- struct ethtool_cmd;
- 
- struct mii_if_info {
-@@ -47,6 +77,10 @@ extern int generic_mii_ioctl(struct mii_if_info *mii_if,
- 			     struct mii_ioctl_data *mii_data, int cmd,
- 			     unsigned int *duplex_changed);
- 
-+extern int
-+linkmode_c73_priority_resolution(const unsigned long *modes,
-+				 enum ethtool_link_mode_bit_indices *resolved);
-+
- 
- static inline struct mii_ioctl_data *if_mii(struct ifreq *rq)
- {
-@@ -506,6 +540,77 @@ static inline u16 linkmode_adv_to_mii_adv_x(const unsigned long *linkmodes,
- 	return adv;
- }
- 
-+static inline u64 linkmode_adv_to_c73_base_page(const unsigned long *advertising)
++/**
++ * coef_update_clamp - clamp one C72 coefficient update request
++ *
++ * @update:	pointer to coefficient update
++ * @status:	response from link partner to a previous update request to the
++ *		same tap, based on which we are clamping this one
++ *
++ * Helper which may be used by C72 phy remote TX link training algorithms to
++ * clamp coefficient updates for a tap. When the link partner responded with
++ * MAX or MIN to a previous update request for the same tap, future requests
++ * are likely to result in the same response, so just transform them into HOLD,
++ * which represents the lack of an update request.
++ */
++static inline void coef_update_clamp(enum coef_update *update,
++				     enum coef_status status)
 +{
-+	u64 result = 0;
-+
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseKX_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_1000BASEKX;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_10GBASEKX4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_10000baseKR_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_10GBASEKR;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_40GBASEKR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_40GBASECR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_100GBASEKR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_100GBASECR4;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+			      advertising))
-+		result |= C73_BASE_PAGE_TECH_ABL_25GBASEKR;
-+
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT, advertising))
-+		result |= C73_BASE_PAGE_PAUSE;
-+	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, advertising))
-+		result |= C73_BASE_PAGE_ASM_DIR;
-+
-+	return result;
++	if (*update == COEF_UPD_INC && status == COEF_STAT_MAX)
++		*update = COEF_UPD_HOLD;
++	if (*update == COEF_UPD_DEC && status == COEF_STAT_MIN)
++		*update = COEF_UPD_HOLD;
 +}
 +
-+static inline void mii_c73_mod_linkmode_lpa_t(unsigned long *advertising,
-+					      u64 base_page)
++/* Other helpers */
++static inline bool coef_update_is_all_hold(const struct c72_coef_update *update)
 +{
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_1000baseKX_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_1000BASEKX);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_10000baseKX4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_10GBASEKX4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_10000baseKR_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_10GBASEKR);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_40GBASEKR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_40GBASECR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_100GBASEKR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_100GBASECR4);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_25000baseKR_Full_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_TECH_ABL_25GBASEKR);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_Pause_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_PAUSE);
-+
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, advertising,
-+			 base_page & C73_BASE_PAGE_ASM_DIR);
++	return update->coz == COEF_UPD_HOLD &&
++	       update->com1 == COEF_UPD_HOLD &&
++	       update->cop1 == COEF_UPD_HOLD;
 +}
 +
++#define C72_COEF_UPDATE_BUFSIZ 64
++#define C72_COEF_STATUS_BUFSIZ 64
++
++static inline const char *coef_update_to_string(enum coef_update coef)
++{
++	switch (coef) {
++	case COEF_UPD_HOLD:
++		return "HOLD";
++	case COEF_UPD_INC:
++		return "INC";
++	case COEF_UPD_DEC:
++		return "DEC";
++	default:
++		return "unknown";
++	}
++}
++
++static inline const char *coef_status_to_string(enum coef_status coef)
++{
++	switch (coef) {
++	case COEF_STAT_NOT_UPDATED:
++		return "NOT_UPDATED";
++	case COEF_STAT_UPDATED:
++		return "UPDATED";
++	case COEF_STAT_MIN:
++		return "MIN";
++	case COEF_STAT_MAX:
++		return "MAX";
++	default:
++		return "unknown";
++	}
++}
++
++static void inline c72_coef_update_print(const struct c72_coef_update *update,
++					 char buf[C72_COEF_UPDATE_BUFSIZ])
++{
++	sprintf(buf, "INIT %d, PRESET %d, C(-1) %s, C(0) %s, C(+1) %s",
++		update->init, update->preset,
++		coef_update_to_string(update->com1),
++		coef_update_to_string(update->coz),
++		coef_update_to_string(update->cop1));
++}
++
++static inline void c72_coef_status_print(const struct c72_coef_status *status,
++					 char buf[C72_COEF_STATUS_BUFSIZ])
++{
++	sprintf(buf, "C(-1) %s, C(0) %s, C(+1) %s",
++		coef_status_to_string(status->com1),
++		coef_status_to_string(status->coz),
++		coef_status_to_string(status->cop1));
++}
++
++#endif /* __PHY_ETHERNET_H_ */
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index 72ef4afcda81..f1f03fa66943 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -17,6 +17,7 @@
+ #include <linux/regulator/consumer.h>
+ 
+ #include <linux/phy/phy-dp.h>
++#include <linux/phy/phy-ethernet.h>
+ #include <linux/phy/phy-lvds.h>
+ #include <linux/phy/phy-mipi-dphy.h>
+ 
+@@ -84,11 +85,14 @@ union phy_status_opts {
+  *		the DisplayPort protocol.
+  * @lvds:	Configuration set applicable for phys supporting
+  *		the LVDS phy mode.
++ * @ethernet:	Configuration set applicable for phys supporting
++ *		the ethernet and ethtool phy mode.
+  */
+ union phy_configure_opts {
+ 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
+ 	struct phy_configure_opts_dp		dp;
+ 	struct phy_configure_opts_lvds		lvds;
++	struct phy_configure_opts_ethernet	ethernet;
+ };
+ 
  /**
-  * mii_advertise_flowctrl - get flow control advertisement flags
-  * @cap: Flow control capabilities (FLOW_CTRL_RX, FLOW_CTRL_TX or both)
 -- 
 2.34.1
 
