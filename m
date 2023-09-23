@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46894CE7A8C
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Sep 2023 13:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3219CE7A89
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Sep 2023 13:49:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ko6wMAWDdFuex65ERMv9RGFvlWSa8K2EMrWoIVp9v0=; b=ugJoXDxx4p82te
-	g96i8H3cxGLXn7T8cyKyEtmmfaEXXJ26vXYg6ZVGUPJCneufaYuzQZIrN7nHySPfLkwd4HP/+1Z+3
-	GzD+E9KVK1t3Zj8ccgNA+Jk+epxCDDoZCldl6M4g3Zo9wEFkqRFm0ZUwmXv3APjH9Upa56U/XmYZ/
-	MDVnVCUeaagN8tB+RCHV5iIEoutb/8kK207qyam1hRLXLQEfxNvnEew+uHJn6zdtxjlxqFAL8Jif/
-	pvnIhlpNCr2m2epmExmfkaW2j7+Ef5yb+NX2FfbpeTqlCGHN/L4kdTCmahpmIftnm0SAoKjx5ZpVP
-	qTUEBfx0UvZNBsWADr4g==;
+	List-Owner; bh=AMWdgNNN4rKfYQtI8w4/vuh7DU38V8pr6EFQPBpchHU=; b=u/lMEuKXzRG9CA
+	XvNmXSuPGJVxHV/4bIuT7aZsWoZx93IMCALQ/LuUAZcUftj/2PBbIsxGnzbPeqbHj78/nYYMAxB1/
+	yzMdmX8IP5bCspZ0xJ3tn+5QCtcyDtjuaMYPLJgCRR5nRbUt1AS9w0iwKcNl/Y3VYI2BvakT4Q4/9
+	lKTvGuMR/CahvhIu3TQEakC7Twl/bSutUvN78EuJ5yYVWeUMAcPB93a7jVgX1gk7JTRXSK0f9xWdV
+	wgTIgRNVA+DQa6N4Pd5YvvrId5utE/4VFA5VZunbUIxtlJDGNmNvjnbysOYDT3+VdJLf/e8pNT2LH
+	w1C3GBpW9Rhx7YHk4m9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk30q-00B334-2R;
+	id 1qk30q-00B32q-1R;
 	Sat, 23 Sep 2023 13:49:36 +0000
-Received: from mail-vi1eur05on2061e.outbound.protection.outlook.com ([2a01:111:f400:7d00::61e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+Received: from mail-vi1eur05on20609.outbound.protection.outlook.com ([2a01:111:f400:7d00::609] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk30o-00B31M-1C
+	id 1qk30n-00B30p-0z
 	for linux-phy@lists.infradead.org;
-	Sat, 23 Sep 2023 13:49:35 +0000
+	Sat, 23 Sep 2023 13:49:34 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GdbFsbOjx7DB6aazzpGNBagMAWV2z6aQ/1FwX3kTBMnE1K9ifS6vB0SureYgTeLj170NVCYTtgGsdI2Mo1KmRUPL0ckICjsr6O9a+FUY3v+cwKRdTDrNRQLxlHJHg9Rw6l1XFjTlwoVa14oe2PJPEgoQ7HMaJ0Dc0MtbMQXXpkSbQ0VH5aNl9KJnkIrecmZKaaRcrWxzZ3Y/k6I3YYZR/5FcA2vEPSZh7hnJJ+7X1ev1ooZB/veM3ALbHu+8jozf7eAPI88GEA/JXv0/PVhVJW+pjt6vohPIQ50JRtJs27QdS48KWINoaHAZQ8vSQu5kf3IYjsR1KzVTZmkNLfm0mA==
+ b=L60m+OlNp3pU5OL2U0FAFLCArE3K5ykdGIYhofDJtS56vhmIsIkan2tUeKuznGTah2OEETFLIE/3KL4INUxI1RGQJdH8M3JKJrcuSlnr2JUGmYyicMahiLzzU1hNv+Kv6yQ5KGguLbRHe8eoG9tZCsW1rrNx5HsqCB2sZ79UQ+s4HIVeI/D54Mv0CkcVr3nTil/6nkBs6rc1+EHwNsMJ86rQATrkcJ2Pht7v7mB5uqMrTr+f6RuHPc38fM3OZqQ4fRmlXXaKJCWurCKBP2JPtx3HTU3eLysys4Tu2FQ+5VcQnIs0qFXc7ni6kOamhgrnVnOv1xn+HdCuBtsCC705LQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5vY9X0usskXKpLQcnQGAHoEgjxFUewnZMRLemH6ly+w=;
- b=hrgXd+Qa8MUOuOSJKoSncjWUYp4kojlbJ+VDgGZHIq9LMVUUjWgUcjZNKT+Izi2XjeRo6CfLpKkUxALQWbpYsFnztNwTOoXd1xfCqvunVf4yQ1yGah6hcN1TmsAiJObj8LYWQhKTFJubZaf23ddglmI6jF+TRgKMlDGr8Q6a/3u30av4UMy5i+OlelFxDuZDArVD1Q0j45K6vF0exj8PfzqFZ26U8RlKh4EvPQy13GTbVXRKZqChlb5m1UZjO03bOX6HJqnqwmgJrFwjcD48v2crvkAxIfL4ykuqCDcmdevaoAygqN7sc61K/SZiWcZn0+Q6hz4LT2Y+RIcS4K90NA==
+ bh=+moDXYg7ec3f5CMV+vQmkzpE+tgU/T4ad+voqfJCMHw=;
+ b=OBw9KzjVpuboTHDUjMQygm7ECL1YLrt7oL2h9KyBOVbxkbrHqeIZtTudgVkJaKx99ljcPD2J9Qu7ePruT+lMC2jODTDyi7WPkgT4xTWhhnkXbL9/kbugM6tBv//ejN7HfBdTI1g3JeG9TaaYX1L+eRmg0lr+ARfq7OhzzsBHMZE24jLOplg2AcWLUmm/awXD/w5CoDdmPuxlHZTIqFdvYaiMhYIBaQzETAZmgsGXZkRYDFhBQB+70xKc5NDB6DwGxpC3nKkpSIilhPPeCECsZxsBUmjtaX61a3LDORcJQasCi8cjFwZSZqyLsedJekQWk9kPYSuUHE6ZVx8VKG83pg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5vY9X0usskXKpLQcnQGAHoEgjxFUewnZMRLemH6ly+w=;
- b=qB5wW8SqQfQONuS4pStOTgYnb2yym+fg0nD4Z0wENrjp9k85U41RQZX97FSbnel2ceCIwP0ND+WiGo4qw+cI4bGdZdCN7y7a2Wic3sZZujKeecx+jvoL++mpKLYucTDRuYmDKBgaLS9EKXyMmtzMXv2ltnJDHV5LpDD4gdmAdBE=
+ bh=+moDXYg7ec3f5CMV+vQmkzpE+tgU/T4ad+voqfJCMHw=;
+ b=Y8wDkgSRvRPAQcnGXCNU/rpBbj9dGrxnpP4luVSFYZA8eRtVkim8tIlsJN9FznvgQXdRUjFoUpk1n+QMzfyL3OBdVucG8hHGN3c84UbHDCC4yOVi7BbGj2fJNiHFcD4tGYU2l6DwtsmbV6ox9LUGopPoC1I2SakDh7AexLoFbAc=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by AS1PR04MB9454.eurprd04.prod.outlook.com (2603:10a6:20b:4d9::9) with
+ by DB9PR04MB8396.eurprd04.prod.outlook.com (2603:10a6:10:24a::16) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.21; Sat, 23 Sep
- 2023 13:49:27 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.25; Sat, 23 Sep
+ 2023 13:49:23 +0000
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454]) by AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454%3]) with mapi id 15.20.6813.024; Sat, 23 Sep 2023
- 13:49:27 +0000
+ 13:49:23 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: netdev@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -72,9 +72,9 @@ Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH v2 net-next 04/15] phy: allow querying the address of protocol converters through phy_get_status()
-Date: Sat, 23 Sep 2023 16:48:53 +0300
-Message-Id: <20230923134904.3627402-5-vladimir.oltean@nxp.com>
+Subject: [RFC PATCH v2 net-next 01/15] phy: introduce phy_get_status() and use it to report CDR lock
+Date: Sat, 23 Sep 2023 16:48:50 +0300
+Message-Id: <20230923134904.3627402-2-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
 References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
@@ -83,57 +83,57 @@ X-ClientProxiedBy: FR3P281CA0165.DEUP281.PROD.OUTLOOK.COM
  (2603:10a6:208:16d::21)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|AS1PR04MB9454:EE_
-X-MS-Office365-Filtering-Correlation-Id: 11e97d8b-fd6a-40fa-a83f-08dbbc3be70c
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|DB9PR04MB8396:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1a30e01f-fbdd-4dbb-3fbd-08dbbc3be4d5
 X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: iWNzmBY2sZVJJGtTFhZNJcuT1yXmrnFcEdTzjX5pi7YXQDqhLMxp3E9LfAK2FYco1San/qxnCxdHV9+0uufPlpdrribo7LjIUJAUl9kbRyIUkDxgGWSKHJbzMJVOabEDf4jzrPraghu1vcyFHTjQP0KnBUX8JM9a+D4VFAVuVVuXnbn8iIaJ2SDG5RUwR6Yjeih/hzHGPIzvm50+eMgfXgdSZJVXbcMIJoBRTtzQoopLikD1p5bwFKVmqsRfb135ufM30g0sKLIx9lSVH6YRA7qb3B53/lxEPv8WCvuLCc+hP11voaTw1V7F4rLgjreMXGdbz5M9WHkdKCe45py5PRtAVYLQimNDz2pGCRPMp3NPQUMe8xPWcuAwAuKzRDHvjIoxfkxbPLI2lUo1UTMJIH4VaAEAuPLWncf5PsHH4ujGUQyC66Pd7igXUVrap5TxsT1e+NEltRsdV7fg6bAe6/FZoSy9TYL5diilzhW/0g0s2j98quVkjZzDDEonRCBeBVnZtFJ//y66m5XGoE0/ljixnotv/tzSZ2qpHQc+w6cG1+AZWRTlN43eyhE/fBNd+qxTDj7awRFBohfHiEPCtGtAMkFwIgwV3oPUyog0BKJgFGFMeCtM+nKGcKzjs6e8
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(346002)(39860400002)(136003)(396003)(376002)(230922051799003)(1800799009)(451199024)(186009)(66556008)(52116002)(2616005)(6506007)(6512007)(316002)(5660300002)(66946007)(38350700002)(6666004)(478600001)(1076003)(66476007)(26005)(44832011)(2906002)(4326008)(36756003)(41300700001)(7416002)(54906003)(38100700002)(6486002)(8936002)(86362001)(8676002)(83380400001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 6EoJlGk6DYpyl7hzWVTIZJemEiPR+yIkzT+V2dKsEljcg54Sdvfeb0/TEwTY2GL6JMoVpf2VThiwJjB/mtlWUphrscePo4+NV8+ovVq31u4qBmB9fnz8UYbrfLY5vJH65TukWerTneSyO7kE7mz+8Y39z/Yap6osaVVzEGwOc3HNGmy4gH/c+KBXFOQUfMjcu9kixeTxGvo/RN2Cmv0AUuhwpIjAN9lzZf6zXYRkvK3nTKMtl2pZQmd8m5X3Ff3pal4Y3jWf7nrOTFeqofzxbw3104t678NDTBRTB1Jjo0Phpl4QOmE8EWld0R4GsxkWtZ3ShTM5scexVjT8Vr1V1BnAxio5bzczMpRYCPYkQ6OmCfMbDyfdShnYwUYac1Tk+7uJwhd4awznIZhCwkO/qP4gJ/lumvKxDf1jkxNjfgxdL7SdaCQz+yfjx3LvDGP7+/rdWofQeQasWeVmNnvl5rJKRMJbbQgoYS2LaDnU8ERikPr9VAOohQAxLReXPuJFFv9RPi7ZCLpA76zVe8k21R9pbh2iWA4b8aHk5QcjKLBr4DMAgT9ABZBbqbt4R2w+7QdDRBJToOQwiRUaoAkpPSHFI3sPGR8w9egW2anJtJECPAguHct47RM6XeufLabP
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(39860400002)(346002)(376002)(136003)(396003)(230922051799003)(186009)(1800799009)(451199024)(6512007)(52116002)(6506007)(6486002)(6666004)(83380400001)(86362001)(38350700002)(38100700002)(36756003)(1076003)(2616005)(26005)(2906002)(41300700001)(316002)(7416002)(44832011)(54906003)(66946007)(66476007)(66556008)(478600001)(8936002)(4326008)(8676002)(5660300002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?GVUfj2vFfBEu+jR/WPmo37tC/4h9xX/OtLEfmF7RUKydKH23VDbZL1agbVQI?=
- =?us-ascii?Q?SFv3HeGCiAe8IZPc72woJCBdrlaNe0pK3SeL9kLbGUTPd2sHrO/SO/dmqUNs?=
- =?us-ascii?Q?JM6rdlVZmyxlICloThQLnh3f88PkGydroTuks4opjL6qbJlH8mBpJwgO33U8?=
- =?us-ascii?Q?AGEv2oZERvdZOM2EQ69rbRpjfyiSbSNjm4HuVxtDGtHqKnH2WpBqlXc/ovYG?=
- =?us-ascii?Q?7M0oY6sqz8LmPpg89sik3rt7158b9HO7Jt2mdprV4E0SdvmKn7HzNFOit0fc?=
- =?us-ascii?Q?U14KbAioMEVjyTm4U8n1oZrDPmLUbGYjir6F1AlNBqgjhrJya6i1GZKRpVgi?=
- =?us-ascii?Q?MfgXUfTJRdDgDxnsutb/FmJpeiaLETbXrBJZ43ToEgmEW0nHmUqQT9mFZaRm?=
- =?us-ascii?Q?dXk2dB69ICs76LSFISe38JnjgfA5LtI7DjCzXhJXiQ/4w7qJOw60TCG7F4ig?=
- =?us-ascii?Q?ghLSGIExsZWq6W0dbz3j1z3bOIpdhgOwsWV92QPcWj0niO6kig4v9uc6TU4m?=
- =?us-ascii?Q?zPmM79IuGxjvD0YMieQJRi50ccTlAv634UjxFRjc3lJVXjimqGjqjy19RKHv?=
- =?us-ascii?Q?66o5rmGHhSVox/Uh1HBtm3D7hQBpPXHj8mObEi2GeRqpInLCuSCjCK6PbXHI?=
- =?us-ascii?Q?8DiIxLYDndY1SI08dLuIryRIZrzo+ZfEH2/zkZ7JCwXq6MP/7Cqh/ckMAsxB?=
- =?us-ascii?Q?fnhjrzFmBjItjcRysO+kmdwlbau7J442GVzSwhH2YnsPRcaaoPDbcZogxZdB?=
- =?us-ascii?Q?XZhzuXc+m31O+mfo6iJc7HUbxNhtNzW4EWKvqWrPE4qnSkC3zHPO++ff37Wg?=
- =?us-ascii?Q?r8Mt3v1uuILCCknFAPyaT6dENH5d2H17a2Nyh7OCfVDSnRRqs7CJfytVv8C5?=
- =?us-ascii?Q?a2vxrOP0WrUY3M8rSVwfECbaDBK6fKi/U4eXOwpVY5HQoVO5eoVYkZ3zBpba?=
- =?us-ascii?Q?EtuJd29gts/v+eydZDfJ3Jfpp6OcBKeZxFXADVqtCWCsjrzIoDS7vRx2q5n1?=
- =?us-ascii?Q?x+anSJYwiOzpPpvX1pSmIrlOTgR2S/sUIed3ap9ESM8aDZzenbcgzq8KrfC5?=
- =?us-ascii?Q?g0A5tjDVd9qI5fBkgINMUmVWxkydnW7UdhSnubIwCodsYuqEw1TqCf4yvQ5d?=
- =?us-ascii?Q?1YAjjsAM5aXtBxgZHj2+lcNkCoilXZDyWiN4rlgFZYyVzMB8PVjIAL8izuOA?=
- =?us-ascii?Q?4DQUajpCTDcIaP8qirEtwyJ8p2CJ2IGsLl7e7dGhV2Y6yMST7kj+Sl6kWAJO?=
- =?us-ascii?Q?CLLu8vo9JThxERg3VrrqEjZl4CToP6pIJB4Rz9oDDWe5Tl1ZN2NnHt7cijvc?=
- =?us-ascii?Q?MMm5P21xvqWQEOk1rQ7RXE2HkK6pynVoTpVaKUXd6dJKoM8rrWm03iYlcBZg?=
- =?us-ascii?Q?ivRVAOWbxcmud4Wd+A58O/TMB8I1HXlCwrIYv+JvzyAsbU5vj5iVSOVRIvAD?=
- =?us-ascii?Q?jZg2MeGyDTg2vdnHDSvfZLrsWJlBcPkRiOby/VAKR0ftBrLf2K0NgmLaMJ1A?=
- =?us-ascii?Q?zRYOyv5f3NIa+dY9otLXRSB6A0NrVOAkEVOq7OwAvwBYr2Y/DdbkOOnVpmZ0?=
- =?us-ascii?Q?nO+F7YAcLUteBm/FCEVNss6I7AXzsE8dywJ1ryQQ91MgtUPJm+nLUadbWc6b?=
- =?us-ascii?Q?pQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?MlN8gH3d0n+lxcUvoj7TDzXiHuXWKInTOxMxz894gR66IkbWVCNr2T3D+ztR?=
+ =?us-ascii?Q?JCYmzil+VONgC9w4BlUcnsgKCmUL+LOpNhQaOIC9Oh+zvdTUPRrI6tSPnRm7?=
+ =?us-ascii?Q?/unGw2k9Io1jOYX2ppUqvXSJgq1EmvXE+Bj6SHEDSjUtyS6bWFqErsELYSzk?=
+ =?us-ascii?Q?HE1zdlH8OhM0JtT1O9M76sDeleOMgG7ULrNvrOSncd82FSZzgAHkKK7EsPS1?=
+ =?us-ascii?Q?tU1uEp7NVEmAWeWsrjfEV7bPVKWfkS0JNsRZjOl9HlHl3Xq/yysnmuI7ZWFb?=
+ =?us-ascii?Q?tSe/6LQW3G7Jm2ntLfah1MhYKVl3Zzyqtq4J0kP7M0GxHTqN2/kn8iE380AI?=
+ =?us-ascii?Q?UjbfX5AZlRjQcFg2ER8f1WBXKbGWtLN8OkFD9S1xPjYgHwanLKZKaXJ2MRFk?=
+ =?us-ascii?Q?Lag+WXhTYWjMQcKrpf5zuQsX4A+tiXkAI6ut3mjQiSkc0OSlUTy4aWJsYNMT?=
+ =?us-ascii?Q?ROLW7PsZy9nPzvL8JZNHdQk69F5/KJ9Mvqev1Kpqdg1OMG27UKZM/96APe4h?=
+ =?us-ascii?Q?jZOZbtqWOXlX6Umu79m5jvjE2rsStuJxwNTbRAUousGWf0C3F+HVMl1G+OTz?=
+ =?us-ascii?Q?M0Yz9HglCJMGtF8hcUaBioXiDVRxf5qHqBVNiTvf9R8T4PW3cENTB9fyGyC+?=
+ =?us-ascii?Q?rheASeq4t+ONKehoQBeLC2+R9CaN4+jtxS8tJM1WfYXL2fiZwNaC09mEgXXU?=
+ =?us-ascii?Q?+qBFHk7SOISr3YdL0h0YK6Br8dhbSW2LifcOqYH3kd5YiVkJtZSxWHp9MU9n?=
+ =?us-ascii?Q?hpNNFuArz1bRuq8hwUZyni4C+87ZmHTLf/YAg/zujsbk1MrMV6i9/6zixbO3?=
+ =?us-ascii?Q?2m0dfDfOYJVfUCnvUd/FzqslW/bxTQhYO2IQBiyU6xfaOIoekXPh0Cpm4vgm?=
+ =?us-ascii?Q?sWInaxqxL/uyxOFT2nrQ6OQKwqRwhcf8YQXwF9bs3ROtZGQy9pNuhOqftUvp?=
+ =?us-ascii?Q?I/UpdnWxaKmHzqql7vh29SJMsV35oE3z+vqsEqFmG9lAr23dkYIcHEb2sIsm?=
+ =?us-ascii?Q?MI9xdAtXsDg3V5loPlqOb1Wri8FivYA9B8OMsb6XtYIArzJx8SwISTpNR4RY?=
+ =?us-ascii?Q?f5HFvjpogSsdvFRc/459AoeNGTIP7dZr8osBszOdTB5L1qbtPVJfXVQOjAUq?=
+ =?us-ascii?Q?ya0xYmbW5jNNH7rfsweoRg39g9SXamifPh2D+JarTaP3NojLba16HZoEnMQh?=
+ =?us-ascii?Q?Sa2QSeDVLw9BbUswk0UcDEUCbNoLSMejcXc18qTF+hOnvcBOn1JvAnlm0/Dr?=
+ =?us-ascii?Q?oqGJeY3ljlNi0aWomaWmRRvakny1cafmI8zNxSMx91C4Rf8hk37DW7+1RzaI?=
+ =?us-ascii?Q?lrkf6VcoXwbyAMt5UrYgn3txi2xwD14NMQGtS4g3a4BfwDOKky5OIvmuX61I?=
+ =?us-ascii?Q?5fEjBADL/5JuTWZRAdWSxv7SKmoFUMoVhqsFMIB1tdaQDlfALHDBVEaS7D5o?=
+ =?us-ascii?Q?tX9QwfIH4Jbbc+6PkDNntDI2DNNfnekP3jPO6xI6byN+Pqzjopjl3GwtU8Pc?=
+ =?us-ascii?Q?uF7khgRuwTTQt96Xct0BSnokcUx54kiRezow1eHVzCukZG9DER95wUST/prs?=
+ =?us-ascii?Q?ZEzZHm0ylxXYPXi4IH5ViisRTIu6X6s5OeertsVgVKLCur9DeBgbTcXPR4Ck?=
+ =?us-ascii?Q?XQ=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 11e97d8b-fd6a-40fa-a83f-08dbbc3be70c
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a30e01f-fbdd-4dbb-3fbd-08dbbc3be4d5
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:26.9984
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:23.2797
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: l+B8SSMcfwA6PPASudIaOCjpU9rmfGhOihqkByKF/YDkaYIyPyAwwGqbBFrt8wSnBQYmdwc+ISHDyYiav9KCmw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9454
+X-MS-Exchange-CrossTenant-UserPrincipalName: W+bvc7lu8SUQM6Mnw3bZlimFdqmRifYc89RonsBBaO2/RMr7190jVX56gOVFr3Nv1MZ86qNNM3ZxvOOcmUjsGg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8396
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230923_064934_413056_D7708D8F 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20230923_064933_351027_71ED18DB 
+X-CRM114-Status: GOOD (  22.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,96 +150,167 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The bit stream handled by a SerDes lane needs protocol converters to be
-usable for Ethernet. On Freescale/NXP SoCs, those protocol converters
-are located on the internal MDIO buses of the Ethernet MACs that need
-them.
+Some modules, like the MTIP AN/LT block used as a copper backplane PHY
+driver, need this extra information from the SerDes PHY as another
+source of "link up" information.
 
-The location on that MDIO bus, on these SoCs, is not fixed, but given by
-some control registers of the SerDes block itself.
+Namely, the 25GBase-R PCS does not have a MDIO_CTRL1_LPOWER bit
+implemented in its MDIO_MMD_PCS:MDIO_CTRL1 register. That bit is
+typically set from phy_suspend() or phylink_pcs_disable() implementations,
+and that is supposed to cause a link drop event on the link partner.
+But here it does not happen.
 
-Because no one modifies those addresses from the power-on default, so
-far we've relied on hardcoding the default values in the device trees,
-resulting in something like this:
+By implementing the networking phylink_pcs_disable() as phy_power_off(),
+we are able to actually power down the lane in a way that is visible to
+the remote end. Where it is visible is the CDR lock, so we introduce
+PHY_STATUS_TYPE_CDR_LOCK as an extra link indication, we are able to
+detect that condition and signal it to upper layers of the network
+stack.
 
-		pcs_mdio1: mdio@8c07000 {
-			compatible = "fsl,fman-memac-mdio";
-
-			pcs1: ethernet-phy@0 {
-				reg = <0>;
-			};
-		};
-
-where the "reg" of "pcs1" can actually be retrieved from "serdes_1".
-
-That was for the PCS. For AN/LT blocks, that can also be done, but the
-MAC to PCS to AN/LT block mapping is non-trivial and extremely easy to
-get wrong, which will confuse and frustrate any device tree writers.
-
-The proposal is to take advantage of the fact that these protocol
-converters *are* discoverable, and to side-step that entire device tree
-mapping issue by not putting them in the device tree at all. So, one of
-the consumers of the SerDes PHY uses the phy_get_status() API to figure
-out the address on the MDIO bus, it also has a reference to the MDIO bus
-=> it can create the mdio_device in a non OF-based manner.
+A more high-level and generic phy_get_status() operation was chosen
+instead of the more specific phy_get_cdr_lock() alternative, because I
+saw this as being more in the spirit of the generic PHY API.
+Also, phy_get_status() is more extensible and reusable for other
+purposes as well.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
-v1->v2: patch is new
+v1->v2: reimplement phy_check_cdr_lock() as something more generic
 
- include/linux/phy/phy.h | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ drivers/phy/phy-core.c  | 31 ++++++++++++++++++++++++++
+ include/linux/phy/phy.h | 49 +++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 80 insertions(+)
 
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 96a0b1e111f3..3b7e04a59a00 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -553,6 +553,37 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ }
+ EXPORT_SYMBOL_GPL(phy_validate);
+ 
++/**
++ * phy_get_status() - Query various parameters of a PHY
++ * @phy: the phy returned by phy_get()
++ * @type: type of the status being queried
++ * @opts: pointer to union of status structures, determined by type
++ *
++ * phy_init() must have been called on the phy. The status is relative to the
++ * current phy mode, that can be changed using phy_set_mode(). Not all status
++ * types may be relevant to all phy modes.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int phy_get_status(struct phy *phy, enum phy_status_type type,
++		   union phy_status_opts *opts)
++{
++	int ret;
++
++	if (!phy)
++		return -EINVAL;
++
++	if (!phy->ops->get_status)
++		return -EOPNOTSUPP;
++
++	mutex_lock(&phy->mutex);
++	ret = phy->ops->get_status(phy, type, opts);
++	mutex_unlock(&phy->mutex);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_get_status);
++
+ /**
+  * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+  * @np: device_node for which to get the phy
 diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index f1f03fa66943..ee721067517b 100644
+index f6d607ef0e80..6be348f1fa0e 100644
 --- a/include/linux/phy/phy.h
 +++ b/include/linux/phy/phy.h
-@@ -56,6 +56,33 @@ enum phy_media {
- enum phy_status_type {
- 	/* Valid for PHY_MODE_ETHERNET and PHY_MODE_ETHTOOL */
- 	PHY_STATUS_CDR_LOCK,
-+	PHY_STATUS_PCVT_ADDR,
+@@ -51,6 +51,29 @@ enum phy_media {
+ 	PHY_MEDIA_DAC,
+ };
+ 
++enum phy_status_type {
++	/* Valid for PHY_MODE_ETHERNET */
++	PHY_STATUS_CDR_LOCK,
 +};
 +
-+/* enum phy_pcvt_type - PHY protocol converter type
-+ *
-+ * @PHY_PCVT_ETHERNET_PCS: Ethernet Physical Coding Sublayer, top-most layer of
-+ *			   an Ethernet PHY. Connects through MII to the MAC,
-+ *			   and handles link status detection and the conversion
-+ *			   of MII signals to link-specific code words (8b/10b,
-+ *			   64b/66b etc).
-+ * @PHY_PCVT_ETHERNET_ANLT: Ethernet Auto-Negotiation and Link Training,
-+ *			    bottom-most layer of an Ethernet PHY, beneath the
-+ *			    PMA and PMD. Its activity is only visible on the
-+ *			    physical medium, and it is responsible for
-+ *			    selecting the most adequate PCS/PMA/PMD set that
-+ *			    can operate on that medium.
++/* If the CDR (Clock and Data Recovery) block is able to lock onto the RX bit
++ * stream, it means that the stream contains valid bit transitions for the
++ * configured protocol. This indicates that a link partner is physically
++ * present and powered on.
 + */
-+enum phy_pcvt_type {
-+	PHY_PCVT_ETHERNET_PCS,
-+	PHY_PCVT_ETHERNET_ANLT,
++struct phy_status_opts_cdr {
++	bool cdr_locked;
 +};
 +
-+struct phy_status_opts_pcvt {
-+	enum phy_pcvt_type type;
-+	union {
-+		unsigned int mdio;
-+	} addr;
- };
- 
- /* If the CDR (Clock and Data Recovery) block is able to lock onto the RX bit
-@@ -71,9 +98,11 @@ struct phy_status_opts_cdr {
-  * union phy_status_opts - Opaque generic phy status
-  *
-  * @cdr:	Configuration set applicable for PHY_STATUS_CDR_LOCK.
-+ * @pcvt:	Configuration set applicable for PHY_STATUS_PCVT_ADDR.
-  */
- union phy_status_opts {
- 	struct phy_status_opts_cdr		cdr;
-+	struct phy_status_opts_pcvt		pcvt;
- };
- 
++/**
++ * union phy_status_opts - Opaque generic phy status
++ *
++ * @cdr:	Configuration set applicable for PHY_STATUS_CDR_LOCK.
++ */
++union phy_status_opts {
++	struct phy_status_opts_cdr		cdr;
++};
++
  /**
+  * union phy_configure_opts - Opaque generic phy configuration
+  *
+@@ -78,6 +101,7 @@ union phy_configure_opts {
+  * @set_speed: set the speed of the phy (optional)
+  * @reset: resetting the phy
+  * @calibrate: calibrate the phy
++ * @get_status: get the mode-specific status of the phy
+  * @release: ops to be performed while the consumer relinquishes the PHY
+  * @owner: the module owner containing the ops
+  */
+@@ -122,6 +146,20 @@ struct phy_ops {
+ 			    union phy_configure_opts *opts);
+ 	int	(*reset)(struct phy *phy);
+ 	int	(*calibrate)(struct phy *phy);
++
++	/**
++	 * @get_status:
++	 *
++	 * Optional.
++	 *
++	 * Used to query the mode-specific status of the phy. Must have no side
++	 * effects.
++	 *
++	 * Returns: 0 if the operation was successful, negative error code
++	 * otherwise.
++	 */
++	int	(*get_status)(struct phy *phy, enum phy_status_type type,
++			      union phy_status_opts *opts);
+ 	void	(*release)(struct phy *phy);
+ 	struct module *owner;
+ };
+@@ -236,6 +274,8 @@ int phy_set_speed(struct phy *phy, int speed);
+ int phy_configure(struct phy *phy, union phy_configure_opts *opts);
+ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ 		 union phy_configure_opts *opts);
++int phy_get_status(struct phy *phy, enum phy_status_type type,
++		   union phy_status_opts *opts);
+ 
+ static inline enum phy_mode phy_get_mode(struct phy *phy)
+ {
+@@ -414,6 +454,15 @@ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ 	return -ENOSYS;
+ }
+ 
++static inline int phy_get_status(struct phy *phy, enum phy_status_type type,
++				 union phy_status_opts *opts)
++{
++	if (!phy)
++		return 0;
++
++	return -ENOSYS;
++}
++
+ static inline int phy_get_bus_width(struct phy *phy)
+ {
+ 	return -ENOSYS;
 -- 
 2.34.1
 
