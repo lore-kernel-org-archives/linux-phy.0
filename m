@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 963C0CE7A89
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8107CE7A8B
 	for <linux-phy@archiver.kernel.org>; Sat, 23 Sep 2023 13:49:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bR58pL/k4+/KQmXHfUGPrP9QdMAS+/cw8D5qLZym66I=; b=yXLrOzfOUwlqcu
-	LibxkGVREIkrftKjzbUxgyIrNyiyPOVHIgcSnMAgPmAUmjxrk23MR0NRwqo4UJKI7Gu4iTjzgEnjQ
-	qBE6qO3DDJrT4Umn7Re5Rj05z+AhcnHFkpWgEVjY75DTtu6WJBShbnIkzy2xTkmtNjAjOcCsIX/as
-	pw0qRhyXzU5nuhFDrYJl2bM7x2VqChyy9Rdf+9sGunWBGfL+hOSHHT9Eu3BGkZZHDhBjQ5A/JPJl7
-	Spe/MB8Fmm8PyFUTW1RNolF0CWhJTLV5PWxhXRfNJO4sz5sNd5VfiWIKjM7QFHfgbFnRrhIeEMXsn
-	oUZjWvzLyCVheu191wUw==;
+	List-Owner; bh=mGylBRviFQgJiwCJgnx7p3v7KMTu9DTNWrkwiztrqQ8=; b=x2okFqYbodYO1E
+	mgTt2aLDgtYMV1u4YMzybRgJpOefpihZj0Q/DyiYLnohqoYkJ+mhJDbFv6XlmSvH4o97uIbd2vjoO
+	9aDKJzqZqsmbOLw043sJElVuy99rvz3xjpv/aWAr0JjeQfCuiZoSPzOtjI/FpdqnEm+/F6bx0vhcE
+	+i99bwfl3QZeBvvnR5ATmWoLwepKOrIGa4Q4k+BLbLK//qh8Zpg2T7kQvyrSV+5Zlahtp6rkQ574w
+	kXSU0Dt/yWFwYNSHVNZ+oEUKq0gnR+Ih03sch0Sd4EP7rKogvs4LvRksMlL91LJ3deagn63RefOEz
+	4AJ7GVm0o/OmNdhDsM4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk313-00B3E7-0i;
+	id 1qk313-00B3EP-1j;
 	Sat, 23 Sep 2023 13:49:49 +0000
-Received: from mail-vi1eur05on2061d.outbound.protection.outlook.com ([2a01:111:f400:7d00::61d] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+Received: from mail-vi1eur05on2061e.outbound.protection.outlook.com ([2a01:111:f400:7d00::61e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qk30y-00B33X-2i
+	id 1qk310-00B31M-2F
 	for linux-phy@lists.infradead.org;
-	Sat, 23 Sep 2023 13:49:47 +0000
+	Sat, 23 Sep 2023 13:49:48 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=U4slrmptnyOpoMjQzXDldX/4MMGFXuJ0WsuyUM637HiTtK6LHKP1cA3tG6etXzYKodmOZLuiVMt8jZu3TJNAq/PtG8p2h7N88KHKf8HupNxe7CzkvAWk/9xWUcw9QG5kJFamZ/WNpFiEfK83IA0PUII4nudodCJBMKHj2qT+TtdwXJs2btJqCIcv4m/0UTSQz8W2JhiuFBBAKSLpSn/0W9bSFbs9xfhovta2MQPARWvEg5IgvJqBHZcb7PpO/WSlS/DBb5jJTugMAp5cPYQZrNsJrERTHfhmPVjrkQtYL02Y6wFV8SDxBDXuXb2mCwElB0P0CKPEhs50p9/wxZo8nw==
+ b=ni9bxzrNJrhDkfYC6+t/nReANzgz7lmGWKK37eT8/0eqf4XkBeUicH8YyXfKt+y3yn31ECp83AK0dj//++jID4yJGHF0b6ACVO1Na91uMO1SGF+paWZWUK0lSapsRnAcmdHpeWMq8BKIlLrPloWUVhVKuqyrU0PKopGsiIInqBRNVND1hG4x4oveH2ikyfT4x7Uaq4iwYaGSMfuwxAEPBfFD7JEdfetIiwyQ5oI2NQEJTTGwrxIJNCUSWLNU7HiRgj+ikuUvSQkJpWuikSBpbvncovePfYFa4QFG32aEyc7qNRdtcTZ5SQ73KW901Xx3oZcSFsZV7740nbmBfE8sIw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=jKuluqSsGlv2qiqVeGNa2wDmuMo83UB53CrdOlVVZ3c=;
- b=E10VyLE10ViBLiMcCSYuqjHFzMlro03t1Xwl2RhgmMLbDFYhqtfnkpgTWCH9YwhpcyeBStTG6jFbrnlDHVUgqNYQ6bNa2U6KDKOzDKWHC5zsl9lUJy3ce0VbkpxXVlH7z61x1WzmPr82XpSHczhIbVPqb6e3JePV4hFdY29zcEjSfY33tUCL+5BI5jfWP8k4c0Hr+VZ39fmbChQ92OHDiXzQaFf7zunG/Pdo7iHxyBnlPu+egeavgi7Dpn0eRSg23Bf+ynYEvc4l+j04/TT7WTLBzI/tdDTrBtsF2fYPvb2945pl2q2ZuApn1c1BVDnImPvOWNmC6MQakgjYkjCC8w==
+ bh=AsPLlrLnEi/DL0vDxMpT7yQn5nNjqHycisJ0DsF6O/Y=;
+ b=WwxDEGf9mon4O0EjzNDmZ8Yv4RRcLe7XXPucokm93R3CfZk72wbYaJW15N9ZtSdlHUfle+swxd7AGSJ5b1adtShByCuE2kniZm5CyGQIfO1cY6yQFYos91g4VaKz6J43T/a8AeHRuDBXSRzNA+2saKLsX6vVPDvTb/zbWTQgN6hnn4/21/UVbhNuyUnaD22bP+CdJkZIktv9geELcD47fAxNrdxaY7r/kYUzCx7g2wEi7ubnBxphsAhVoxs84azhCcAfC5EMVMWvXqhTbb6gPxteQh4ejA/3exs04zuv2rWsS9aY67NR627S6lQCXC/TDDJCWjlVjcLYuYqDFmAi8g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jKuluqSsGlv2qiqVeGNa2wDmuMo83UB53CrdOlVVZ3c=;
- b=GmHZ9ZhKYQzYIm/DwMf5hK11Zbh/1ju0uPuMcjkDz3rr9pyniJgudIpbVlE//BZFtiRMtfuLPKUXZJpY7xekco1SSKXeIhn/HPxC/u6aMh5VUXaKUpf/OG3zy8+NXNxKYfaWHgnJbo850J4+5DAOYIli4nY+QbijhfGa8H/64Cg=
+ bh=AsPLlrLnEi/DL0vDxMpT7yQn5nNjqHycisJ0DsF6O/Y=;
+ b=nTypnb0fJPlqwvhLGymrjMZY2r5+0IbI6NMM2f0jU8mR9jRAEAyVw8tfcuOy+oR3UwEW2f2NwO6iwGeD32TksE0hHwrxXsfECoZLJ4wABMDOqO60dDyHVQBQx+VtM8FAF6ezI9ys29M+hNxo0UmbbYVTbmWln2Je5G4wXx78aEA=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
  by AS1PR04MB9454.eurprd04.prod.outlook.com (2603:10a6:20b:4d9::9) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.21; Sat, 23 Sep
- 2023 13:49:38 +0000
+ 2023 13:49:40 +0000
 Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454]) by AM0PR04MB6452.eurprd04.prod.outlook.com
  ([fe80::568a:57ee:35b5:e454%3]) with mapi id 15.20.6813.024; Sat, 23 Sep 2023
- 13:49:37 +0000
+ 13:49:40 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: netdev@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -72,9 +72,9 @@ Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: [RFC PATCH v2 net-next 13/15] dt-bindings: lynx-pcs: add properties for backplane mode
-Date: Sat, 23 Sep 2023 16:49:02 +0300
-Message-Id: <20230923134904.3627402-14-vladimir.oltean@nxp.com>
+Subject: [RFC PATCH v2 net-next 15/15] net: pcs: lynx: use MTIP AN/LT block for copper backplanes
+Date: Sat, 23 Sep 2023 16:49:04 +0300
+Message-Id: <20230923134904.3627402-16-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
 References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
@@ -84,56 +84,56 @@ X-ClientProxiedBy: FR3P281CA0165.DEUP281.PROD.OUTLOOK.COM
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|AS1PR04MB9454:EE_
-X-MS-Office365-Filtering-Correlation-Id: e134f390-c707-42cc-1f27-08dbbc3bed8f
+X-MS-Office365-Filtering-Correlation-Id: 460eb46b-a7ee-49a9-69e9-08dbbc3bef24
 X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: SSS2CIchjtTc4bsEg9hPBu+j6DMWxXSgDfV1/HCVWzC9bV67lMlzC5FloBcHxF2CO4Ybtz0j3YxSOJfMhVwvoOZCsxU2X/P626fJp9Nx7Ef3LUDD/4bcb4p3d3tO7lZu8j/d0LdCiiP9oOqnMkzvJQOQbnq0khtM8P844/6SOb12aEJbx815p0cHwRBEB+/vQofy8n3/YCpl2JzYoIVcz1T21Kdh+rffb1hiLvX0ggPoDa1yOthA53XT9rQg25X7WnD8zVNMA/V3ZH3zWuJWYSYtfAiRGnsDNP9koV+PHV3i4yF4RbHUf24UgKF4G5GOc0rZK7Ib+tKHfmNjQMjKCclyH1/xSnc8S/ERjAxFhkQVapua/4xU8rD276ubO+KFFpKujUzATdWSezH83TjMgYV8XolcHdEGPn9G8CUQbohwAtgNc2Waof/N/okkLyBFPwXSgHZ8CIlqzQmqlFZFjGpNWlaDRGuVlB5pz4iKMGztHmcJRcT2BHPmsJZotrDXtXTeJRxZ3dxsac7kZLmiTshJn7DniixyU14n1NendBMlRZQxJ2MpWecHKoojeQENebQcUvvjhJdb/V28wQ7pjKXEr9/1V0FeIIXFX9DYocRtW7XwdnCLNAOrN7FoZKA0
+X-Microsoft-Antispam-Message-Info: PwTKE0k6ZRHcRwGh365N5UKFWpIIIDb9WB3IPSKNU3U1lStmmLbLwWRozsFecGLbkvBhIO9YR4CwIjpgKIyQD0GN7y3pzNibYn3VngCpXFu160h/b3wVX8H7fZnP6YgwDkkZGiUymVAaEijYIBjdWzLbibblCo+wEiQS1+Kg5c2Jl8fOJ32dG1HzQoSDP1hHnbNra4SEocEolq6/uw0xWn9D75s2g0DCfMpiwU4CckedIiZ0k46HU77HZwv8NVrPY3uyMh0STcYTf/38yFo5Uv0Vtmt6Pj7LcEbropfbf6i/t+CamlkmM0hFmt32j7DYSMDyj7NR8Umkf81atOWZJTrHjzd+KyzdPXna/x29BxUFSWCiYwyU2P5dDjxgRn0Qhbt3vdVNdFLvhX61TXRZeeZVsHaQrCPfw2+asa+6engORTzFdFjQnNgttg8QWX9EnW+5yz6p/mMT9/sWAViIiFeTXCG2bgRHYypu14riqogHpihesCOL7uAQS8AcawtL4sZvkls4+1KTXhbHOxnEi59oiYLuGqpjqkgwukv8bl6k4sU/lROOzuSniL7BHCrymXO+NyB+PDm4PfZE8rrpb873X3SW6ABRfu99w9qaJ/dV1Tla5LojdhSf7CfxxhOm
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(346002)(39860400002)(136003)(396003)(376002)(230922051799003)(1800799009)(451199024)(186009)(66556008)(52116002)(2616005)(6506007)(6512007)(316002)(5660300002)(66946007)(38350700002)(6666004)(478600001)(1076003)(66476007)(26005)(44832011)(2906002)(4326008)(36756003)(41300700001)(7416002)(54906003)(38100700002)(6486002)(8936002)(86362001)(8676002)(83380400001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?n3i9mO7TWwLSbaP7T64TxWT/uNIVNDHyIrJvU2/lEzGJBRgbWlE2BNN+nQyy?=
- =?us-ascii?Q?8dgIb6jgk6nLSpr/McQx8SWYYE3jtJNAQNKJy/buMLTTaN1TuVuSMJJY2FPX?=
- =?us-ascii?Q?bGAiXLgn3GSB0O5aGL3SOcjaQJAGU4lzyokqqfMToUk1iSbtXfnSdCcdgmUu?=
- =?us-ascii?Q?cLF+3z5bWel0I+B3KZDmRZ4Ajrv9nZfDg0wWwqQ40gmi1uEHGpjNVcfQbVfo?=
- =?us-ascii?Q?FftUpmhY+kKGcgZBHe/eQU1KdC5uaX/HTud02I1zcRAbvo6T9vo72bdBth7P?=
- =?us-ascii?Q?AmkrieEK4P3BQeA0/vX9kk8kv4RFeqwFCjDgC+uSXJLMhfkoOML5XZrwg7VY?=
- =?us-ascii?Q?ba2sgrt/rFwVwyc9+7fiqz3hpkBVPqWdHQHr5FntsbzWDHYhpqOVp2iT1c6j?=
- =?us-ascii?Q?u4CDk75EO/PmvgyFROtYeu35tlay6fyMy+04toFABU96J/xXlpgD//z/KToT?=
- =?us-ascii?Q?kDcOlD1yumEoR9c3I0Bax0cc5bijF40ln5Pq/1zT/udtMistTdO9mSui/P6e?=
- =?us-ascii?Q?DKNRne6+IoSLJAoHdZoVbrMQwKbFUtw2OXtRYZjKxInbuJdI0JQVAIjAPUw3?=
- =?us-ascii?Q?d6+oXxDlwAVJ2SRf4OAm3D8RvAP0sLW+iH1GZUEvWlxf9xpf4Ja6URhXiD8X?=
- =?us-ascii?Q?wEGOM/oADksdK1FxgYuqtan+U+zYANDRiTmPh8aaZP6sbgJUzmMtkO2eQu81?=
- =?us-ascii?Q?BrQiiMAQLqT8xI/qPd063/BU/xHGULp/LYDkBpA7rbbNXeGLgNT5NRjivdSR?=
- =?us-ascii?Q?oWzxbAX27YOZlu9I7I6AHlqkDBvRAvYPnMc+Izsry5mzkBnt9Kzj5DiqEEkG?=
- =?us-ascii?Q?pnB6qhv1UdynyJkwsho8/sElWaRVEodGuLN+MIJVuuJiTkSI9yCd89e37108?=
- =?us-ascii?Q?946xU5qSFu/8plGndTqBNKRllNB/1DuKsatRQjSYxGczPwiTizgqbTAOPlPl?=
- =?us-ascii?Q?Z3CgXj3MFBvg5ehBp8iGedO40zai7E8KfzcMG6ltRKBa2cDHbq141YD0Sj1n?=
- =?us-ascii?Q?rCB2dvMEk1nElu5e8iXtflZJ/rQ9NkI1IsabI25xE5XTeEAuQx+YPAl8oomu?=
- =?us-ascii?Q?ags3d8RtY5gt7w5jH4vHQ5K3IZyiEfToylgxFFsdFa+HStjy0zz3MXGE7rpR?=
- =?us-ascii?Q?sdUcdvlwvbTJVMSxMCnrd1BaV33w+PHL9nDjI3j7h09AxRQjHeXbIVgCLW1r?=
- =?us-ascii?Q?CH0cHXtBfdCKt4dbD1AKSmBns3PZ2IRJvvchmX+0wB1qq/3rEOSP7gMJiPWb?=
- =?us-ascii?Q?Tg2K0KeCJYCMI68z170zycBgemkzoumNbh43bVl2Bpt8tUEFfpcZq+dQzNQZ?=
- =?us-ascii?Q?+n41c3BNKYfrlYZ22NC0Fkjywdj5FJb/XbqwlcaD6hRZ4m9DXDqgp+jxpSj6?=
- =?us-ascii?Q?oydglYLE9msXaiGJb3XO22G81WOj7JDfZqLcx70X0EJOcO9NIO5Xf91lMy7I?=
- =?us-ascii?Q?aS3q4JYKQeUeHfzF0KFsgCM82QMw66ox9ku5mtCDwkCHP08SSKXnoX1qsXq+?=
- =?us-ascii?Q?QGwIRkmFZnKTdRDk3ReEv7zgtLeOhEAg8QCC22gc5jkHKKMxGJ9UQfUwlR/n?=
- =?us-ascii?Q?Cxc0pyROUhvNqfzbe+zJ65pGydq433HcZWWrr1NNyJn/kkmTRmNxoUPqqLkg?=
- =?us-ascii?Q?XQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?c0eMDlAhN2Xj3R4Hc0lEzjhXo/bR99xJ+wzYQaq+dku3eQZMCbwY/enzhTL2?=
+ =?us-ascii?Q?FMBch8VdBtpuHCe8bU/tCHUZ1SIOe9qCvJFfSbZnTlWoNfIpc2sTKwpgnAAg?=
+ =?us-ascii?Q?FvOWF6zKCM+JYH9lc3b8QZy/Pzr+hprxxAW5M0Y0x4h8u61HiSb9JbNwYBmG?=
+ =?us-ascii?Q?KrNYh/ze8sQM6YGYvG5mTb1D6qhcb7fw4dbkC5CcyG2Ug//QTRg2KrzwwBJM?=
+ =?us-ascii?Q?0SsQ3N3ViyPVkzLawDUV0Uwvb89fb2IFhibKDtce+na6shPgUGVqferbx3CQ?=
+ =?us-ascii?Q?I4ZBDu8HCDBzZWyEAQBjaEzKythlX/3iQdft2D1JeNkZYVsYIDgpoG7OpL3C?=
+ =?us-ascii?Q?LzR2pR2o/EGsVZVYy2reiV74XqvcOWy9DrvVad/HR2cG0y3qRjmh/e3UvFTl?=
+ =?us-ascii?Q?LN9KA+Z6p1oYKvlv7HYnz5rDlmJcmG2MK/84EGLvGW2bniTl6n7Rapv5HUzj?=
+ =?us-ascii?Q?kvawbNW5gkZ43wve92ju4iT1uHVK2XWbja+CyWpLon/APeZJrzA0N6ETqNel?=
+ =?us-ascii?Q?udB7qN4WmmR7J67KFHWkvloBlTmgi38138T31IBE82BN9U+3kW/YdD4E2fpe?=
+ =?us-ascii?Q?8bgXvu8T3f7o8td1wwtyOvW93vquz4ko4XQRH+b6M+UY3MrD5U45njDh1owc?=
+ =?us-ascii?Q?Xjh2D+P2jrXtjlzend5FZfGGhZc4tJUtfmTEyXPxi9PhJqejdonP7H5pafDR?=
+ =?us-ascii?Q?nMizxFmr+bdDKuion7Dx2A8j/YnYRIA0sC241ihkPvf9S0OTa652W38qAYBS?=
+ =?us-ascii?Q?uripA6NNGzXgcEybYAtyOoD72tVwE8Sey7TChvv3fN+kH9vMzR4+zeOBKp+v?=
+ =?us-ascii?Q?n0gFUgq+MvdgnqUNmDVkhH93ZTveN6PGh8UclJu2w+zTR1qFgR8CGMSUI9ca?=
+ =?us-ascii?Q?7yPSZ9XmgT+AYiut6YEETAJkJs0jZ3rkCvGvmMf7zFIPk4QwsWwP1wOGWirZ?=
+ =?us-ascii?Q?e09txMtOVoVwz1/oA1ziOfLVkUUv+VCUw+TANGameHizxk6C+lQjtQEN2uJ2?=
+ =?us-ascii?Q?J+tyFIbePBHdJOPR18kPNznGh8gXn2rriO5uRWB4xekn1PFa/p9tWlk8NDUj?=
+ =?us-ascii?Q?ms0JN9CKo7WjhOYUbrdKNmTck4Qmwf6HvaIA0108NOZiCn7roVarecZrRADt?=
+ =?us-ascii?Q?yw1jKHXT/UKN4qfDNlMB7pLbag0ekWEy3hNdXHRAZcnvtFqAUkKPMgnWzUmQ?=
+ =?us-ascii?Q?mvur9D/hLD6E5D8UO9c5YCaKqIwo1WZ4ts8zqWy8xj0xyRcLks7QCtc4AUFD?=
+ =?us-ascii?Q?L/v7fXqFQ3P20uvISb4Nygl0T1QXfPU1cPnhyew7n2QbMNpq4KmockANwZdd?=
+ =?us-ascii?Q?szStA7aPS2VIXmQIso05ycv77xqsfL1vPVjFclNsH0gQthJTbB7b/wYdL6le?=
+ =?us-ascii?Q?uSYs7MwdRzuisWaTyxzO6RoUWaA5EC9idwb/NuNeld88BWAQSq3uIlLWw8a5?=
+ =?us-ascii?Q?e3yFdPGA6PrK8yoWuqXTt1yyIRLvjfQyv3cFFFmIkznjtXF5cXsVLYI46QWd?=
+ =?us-ascii?Q?2zWhVBaTzKKFoKpRY3S6KZCrOFn7kVhyeCIgjkFhB33t4N8BCFJGAtNfaoCy?=
+ =?us-ascii?Q?8VnvBWplRTaHucRjWIqftGmh8uC40hLx1cmUidWtjBCigjNyyEVnovyc0BU+?=
+ =?us-ascii?Q?WQ=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e134f390-c707-42cc-1f27-08dbbc3bed8f
+X-MS-Exchange-CrossTenant-Network-Message-Id: 460eb46b-a7ee-49a9-69e9-08dbbc3bef24
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:37.9078
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2023 13:49:40.5633
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UxaszYWSVU2ol8Cq02t1IM8sNXAt1sDO2MlaFIRxgkB44K0kwVGaFs/zy6psE+U1d4er/GUWwpD1K3XRVbS2jQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: rMIqtdpsKG2bR6a2VejghxXFaTzd7qflHqZpZqj+qjTFsDgR12XJzZ8Jewed8rofypDvu8j10A9JV7G2K54dVQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9454
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230923_064944_893307_AECCE75A 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20230923_064946_760779_B5C47C67 
+X-CRM114-Status: GOOD (  21.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,54 +150,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When the Lynx PCS is deployed on a copper backplane link, it must be
-prepared to handle clause 73 autoneg and clause 72 link training, which
-it can do using a dedicated AN/LT block. The latter doesn't need to be
-described in the device tree, because it is discoverable from the SerDes
-lanes.
-
-The media type that is deployed on the link is not discoverable though,
-so the introduction of a fsl,backplane-mode boolean property appears
-necessary to determine whether the AN/LT block should be employed, or
-left bypassed.
+If the fsl,backplane-mode device tree property is present, then the Lynx
+PCS makes use of the AN/LT block to advertise the supported backplane
+link modes using clause 73 autoneg.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
-v1->v2: patch is new
+v1->v2: code is new
 
- .../devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+ drivers/net/pcs/Kconfig    |   1 +
+ drivers/net/pcs/pcs-lynx.c | 135 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 136 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml b/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-index fbedf696c555..40fbcd80ee2a 100644
---- a/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-+++ b/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-@@ -16,11 +16,24 @@ description: |
+diff --git a/drivers/net/pcs/Kconfig b/drivers/net/pcs/Kconfig
+index 24a033e93bdd..be561c465b4a 100644
+--- a/drivers/net/pcs/Kconfig
++++ b/drivers/net/pcs/Kconfig
+@@ -13,6 +13,7 @@ config MTIP_BACKPLANE_PHY
+ 	  SoCs.
  
- properties:
-   compatible:
--    const: fsl,lynx-pcs
-+    enum:
-+      - fsl,lx2160a-lynx-pcs
-+      - fsl,lynx-pcs
+ config PCS_XPCS
++	depends on MTIP_BACKPLANE_PHY || MTIP_BACKPLANE_PHY=n
+ 	tristate
+ 	select PHYLINK
+ 	help
+diff --git a/drivers/net/pcs/pcs-lynx.c b/drivers/net/pcs/pcs-lynx.c
+index dc3962b2aa6b..1352f08edcf3 100644
+--- a/drivers/net/pcs/pcs-lynx.c
++++ b/drivers/net/pcs/pcs-lynx.c
+@@ -4,10 +4,14 @@
+  */
  
-   reg:
-     maxItems: 1
+ #include <linux/mdio.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
+ #include <linux/phylink.h>
+ #include <linux/pcs-lynx.h>
+ #include <linux/property.h>
  
-+  phys:
-+    maxItems: 4
-+    description:
-+      phandle for the SerDes lanes that act as PMA/PMD layer when the PCS is
-+      part of a copper backplane PHY.
++#include "mtip_backplane.h"
 +
-+  fsl,backplane-mode:
-+    $ref: /schemas/types.yaml#/definitions/flag
-+    description:
-+      Indicates that the PCS is deployed over a copper backplane link.
+ #define SGMII_CLOCK_PERIOD_NS		8 /* PCS is clocked at 125 MHz */
+ #define LINK_TIMER_VAL(ns)		((u32)((ns) / SGMII_CLOCK_PERIOD_NS))
+ 
+@@ -20,9 +24,15 @@
+ #define IF_MODE_SPEED_MSK		GENMASK(3, 2)
+ #define IF_MODE_HALF_DUPLEX		BIT(4)
+ 
++#define PRIMARY_LANE			0
++#define MAX_NUM_LANES			4
 +
- required:
-   - compatible
-   - reg
+ struct lynx_pcs {
+ 	struct phylink_pcs pcs;
+ 	struct mdio_device *mdio;
++	struct mtip_backplane *anlt[MAX_NUM_LANES];
++	int num_lanes;
++	bool backplane_mode;
+ };
+ 
+ enum sgmii_speed {
+@@ -100,6 +110,9 @@ static void lynx_pcs_get_state(struct phylink_pcs *pcs,
+ 	case PHY_INTERFACE_MODE_10GBASER:
+ 		phylink_mii_c45_pcs_get_state(lynx->mdio, state);
+ 		break;
++	case PHY_INTERFACE_MODE_INTERNAL:
++		mtip_backplane_get_state(lynx->anlt[PRIMARY_LANE], state);
++		break;
+ 	default:
+ 		break;
+ 	}
+@@ -168,6 +181,17 @@ static int lynx_pcs_config_usxgmii(struct mdio_device *pcs,
+ 				 ADVERTISE_SGMII | ADVERTISE_LPACK);
+ }
+ 
++static int lynx_pcs_config_backplane(struct phylink_pcs *pcs,
++				     unsigned int neg_mode,
++				     const unsigned long *advertising)
++{
++	bool autoneg = neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED;
++	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
++
++	return mtip_backplane_config_aneg(lynx->anlt[PRIMARY_LANE], autoneg,
++					  advertising);
++}
++
+ static int lynx_pcs_config(struct phylink_pcs *pcs, unsigned int neg_mode,
+ 			   phy_interface_t ifmode,
+ 			   const unsigned long *advertising, bool permit)
+@@ -193,6 +217,8 @@ static int lynx_pcs_config(struct phylink_pcs *pcs, unsigned int neg_mode,
+ 	case PHY_INTERFACE_MODE_10GBASER:
+ 		/* Nothing to do here for 10GBASER */
+ 		break;
++	case PHY_INTERFACE_MODE_INTERNAL:
++		return lynx_pcs_config_backplane(pcs, neg_mode, advertising);
+ 	default:
+ 		return -EOPNOTSUPP;
+ 	}
+@@ -204,6 +230,9 @@ static void lynx_pcs_an_restart(struct phylink_pcs *pcs)
+ {
+ 	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
+ 
++	if (lynx->backplane_mode)
++		return mtip_backplane_an_restart(lynx->anlt[PRIMARY_LANE]);
++
+ 	phylink_mii_c22_pcs_an_restart(lynx->mdio);
+ }
+ 
+@@ -306,16 +335,111 @@ static void lynx_pcs_link_up(struct phylink_pcs *pcs, unsigned int neg_mode,
+ 	}
+ }
+ 
++static int lynx_pcs_validate(struct phylink_pcs *pcs, unsigned long *supported,
++			     const struct phylink_link_state *state)
++{
++	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
++
++	if (state->interface != PHY_INTERFACE_MODE_INTERNAL)
++		return 0;
++
++	return mtip_backplane_validate(lynx->anlt[PRIMARY_LANE], supported);
++}
++
++static int lynx_pcs_enable(struct phylink_pcs *pcs)
++{
++	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
++	int err;
++
++	if (lynx->backplane_mode) {
++		err = mtip_backplane_resume(lynx->anlt[PRIMARY_LANE]);
++		if (err)
++			return err;
++	}
++
++	return 0;
++}
++
++static void lynx_pcs_disable(struct phylink_pcs *pcs)
++{
++	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
++
++	if (lynx->backplane_mode)
++		mtip_backplane_suspend(lynx->anlt[PRIMARY_LANE]);
++}
++
+ static const struct phylink_pcs_ops lynx_pcs_phylink_ops = {
+ 	.pcs_get_state = lynx_pcs_get_state,
+ 	.pcs_config = lynx_pcs_config,
+ 	.pcs_an_restart = lynx_pcs_an_restart,
+ 	.pcs_link_up = lynx_pcs_link_up,
++	.pcs_validate = lynx_pcs_validate,
++	.pcs_enable = lynx_pcs_enable,
++	.pcs_disable = lynx_pcs_disable,
+ };
+ 
++static int lynx_pcs_parse_fwnode(struct lynx_pcs *lynx)
++{
++	struct fwnode_handle *node = lynx->mdio->dev.fwnode;
++	enum mtip_model model = MTIP_MODEL_AUTODETECT;
++	struct device_node *np = to_of_node(node);
++	struct mdio_device *mdio = lynx->mdio;
++	struct device *dev = &mdio->dev;
++	struct phy *phy;
++	int i, err;
++
++	if (!node)
++		return 0;
++
++	lynx->backplane_mode = fwnode_property_present(node, "fsl,backplane-mode");
++	if (!lynx->backplane_mode)
++		return 0;
++
++	if (fwnode_device_is_compatible(node, "fsl,lx2160a-lynx-pcs"))
++		model = MTIP_MODEL_LX2160A;
++
++	lynx->num_lanes = of_count_phandle_with_args(np, "phys", "#phy-cells");
++	if (lynx->num_lanes < 0)
++		return lynx->num_lanes;
++
++	if (WARN_ON(lynx->num_lanes > MAX_NUM_LANES))
++		return -EINVAL;
++
++	for (i = 0; i < lynx->num_lanes; i++) {
++		phy = devm_of_phy_get_by_index(dev, np, i);
++		if (IS_ERR(phy))
++			return dev_err_probe(dev, PTR_ERR(phy),
++					     "Failed to get SerDes PHY %d\n", i);
++
++		lynx->anlt[i] = mtip_backplane_create(mdio, phy, model);
++		if (IS_ERR(lynx->anlt[i])) {
++			err = PTR_ERR(lynx->anlt[i]);
++
++			while (i-- > 0)
++				mtip_backplane_destroy(lynx->anlt[i]);
++
++			return err;
++		}
++	}
++
++	for (i = 1; i < lynx->num_lanes; i++) {
++		err = mtip_backplane_add_subordinate(lynx->anlt[PRIMARY_LANE],
++						     lynx->anlt[i]);
++		if (WARN_ON(err)) {
++			/* Too many SerDes lanes in the device tree? */
++			for (i = 0; i < lynx->num_lanes; i++)
++				mtip_backplane_destroy(lynx->anlt[i]);
++			return err;
++		}
++	}
++
++	return 0;
++}
++
+ static struct phylink_pcs *lynx_pcs_create(struct mdio_device *mdio)
+ {
+ 	struct lynx_pcs *lynx;
++	int err;
+ 
+ 	lynx = kzalloc(sizeof(*lynx), GFP_KERNEL);
+ 	if (!lynx)
+@@ -327,6 +451,12 @@ static struct phylink_pcs *lynx_pcs_create(struct mdio_device *mdio)
+ 	lynx->pcs.neg_mode = true;
+ 	lynx->pcs.poll = true;
+ 
++	err = lynx_pcs_parse_fwnode(lynx);
++	if (err) {
++		kfree(lynx);
++		return ERR_PTR(err);
++	}
++
+ 	return lynx_to_phylink_pcs(lynx);
+ }
+ 
+@@ -392,6 +522,11 @@ EXPORT_SYMBOL_GPL(lynx_pcs_create_fwnode);
+ void lynx_pcs_destroy(struct phylink_pcs *pcs)
+ {
+ 	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
++	int i;
++
++	if (lynx->backplane_mode)
++		for (i = 0; i < lynx->num_lanes; i++)
++			mtip_backplane_destroy(lynx->anlt[i]);
+ 
+ 	mdio_device_put(lynx->mdio);
+ 	kfree(lynx);
 -- 
 2.34.1
 
