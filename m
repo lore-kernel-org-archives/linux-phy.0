@@ -4,92 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A350ECE7A8A
-	for <linux-phy@archiver.kernel.org>; Sun, 24 Sep 2023 11:49:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B01B4CE7A8A
+	for <linux-phy@archiver.kernel.org>; Sun, 24 Sep 2023 20:01:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SKN5RdtZha7LFK1bMGQxruV+efofApY1V7NSzUimhxE=; b=q1l7i9qxhXvGWl
-	ACeHue0Wlt3+/uxHID2LRONzsVRdyc81Bt2YAkYx0vzuhT8Y7T7okGgr5+jVDDkjB+hyNsYyI3M19
-	KP6G3dNrOuP6/UPqCF9biQAL0TKi4YJMvFY14jZ6r6R8RKso7RIUGkE8Qnki3QMo0jSTbRNJyEWao
-	CDdByOwYuLtss79iLHDgK6QGEspf5U3rkrI/Px8pxu+ierU3Z8K9OR9tJGAXH8KcdJpQ8oW9j8XzY
-	ezPCljSTioS2HKt86clJEmF5O/7xGnTv6Ld5AGKIO93839MkPg9EUWMoq4nJ/gf9d6YKrEyC4MmUM
-	xicbF/jIYgsk2brA4hfg==;
+	List-Owner; bh=dGjPS4x0cwtK4dfxYYYbDaHhKxJ61eIVULlvPSKuyCM=; b=RZZZllDIZ3Lg+o
+	vqypWF7GTAI/k7tDiiD31m1Y1YN2kjWXcE1Xxt9Ci4uDh1IAg3/xiCSLRJcyrea89DUiOCQO5OHla
+	TQ/LGk4ILUnSOMn5d6cLscbJ2aV+shIgg20RGb+gp2/8iRjR1fyu+n0ZvPYHrcUeUfTsYcaXGBW6x
+	Q1jcWzu5uzmTYtFSLoLHA/BIBRjWmWVY4X4hVyJr5iE6l9vkZECtOuMYD6fhaj6q/fHW7VSuGKqsq
+	rwiJvAMGYYnOa4tNKDKvBAyC7qV15JuEOnxsgEjxhw8fxh/OmH4HzNS5kjRu5rWTCH0SuWQYsG49i
+	QlcWqEoy9GHHIuNlHr8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qkNcD-00CEGj-0D;
-	Sun, 24 Sep 2023 11:49:33 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1qkVIR-00Cl07-0X;
+	Sun, 24 Sep 2023 20:01:39 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qkNc9-00CEG5-37
-	for linux-phy@lists.infradead.org;
-	Sun, 24 Sep 2023 11:49:31 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-99bdeae1d0aso570702866b.1
-        for <linux-phy@lists.infradead.org>; Sun, 24 Sep 2023 04:49:28 -0700 (PDT)
+	id 1qkVIN-00Ckye-29;
+	Sun, 24 Sep 2023 20:01:37 +0000
+Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2bfea381255so85964571fa.3;
+        Sun, 24 Sep 2023 13:01:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1695556167; x=1696160967; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ZKXfDq8RFlFcunVG3b5trMiuX2cCUltogo9A0LQGHcA=;
-        b=JLvfpcMtFsagmc67Y9duPAtte4eBUSRVCsCf8O47R2yCtcZLptElqZOFqtGguMl2SE
-         y/Ix7n5LKbkMCVAYo7+eFSiF1r1UP1ySB/p59VJ2VGBDo1FDrtCb4Eko39yjENR6+3f3
-         0vmpnrY5pKFpAYq7uSBFcvKS1rkQ/6sphpRTUX1pt4lWZpfa/xmccjpee0rWgfY9ikR6
-         OKq9TnD/4XI3ot40ioUhQxAHSpsVGIkhygPrmStp0qjrDdH0i3ixtmN5Z/s9hl7D4kLj
-         nLUnijoOAw1AFb3QXT+kNIX6tTbV5AZjU+uo05hwvIJUC2Jc+eyUuC4X2aK46A4Wriuj
-         C3WA==
+        d=gmail.com; s=20230601; t=1695585688; x=1696190488; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=r/sEzFSU1WeZTVMeaZJF4z8FtiU96nb3S95OQlSjSS0=;
+        b=XuZJer674GfISHScFDq2av0/47ljewVYpWN9HJfyJOaRP9vtKSjdC9HXUDrxWHn2P1
+         Hyfa+kNcrAYFv/gHUNr13l0V+JaT7eWVhbkqyc07o1tN+R2F5hrbMY5bAnGW/bSqVv2M
+         SIq858GxyjmQWXuuKnDTm/4nPhVFdaxG+gqlNPRdaIBLjFJHn64w4CW7OHvIMSoFQvaZ
+         oNho+yl7+ZZlD/gRmV5NEgOWrasKRRiL8xONsWjrNT1lcrKedEhjeYXRqhJawh4FcaES
+         6/x7kU2xHRla6y5ZQKYzN92vpH13b5r3LAUZfnzN+l9o6BWj80DFmWrDsLQ7jk3URggg
+         Pivw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1695556167; x=1696160967;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ZKXfDq8RFlFcunVG3b5trMiuX2cCUltogo9A0LQGHcA=;
-        b=ZIRRc5z5DMAHg2mFNYvWYUnuL2IavlcTvwbW6Tk9mmcaiBSLBSp8YE3Ma1kidG4wt4
-         XLCSkzTmnLKB+adn2MJsPm/HXLsO48wKqjtyGg/vqYSN/VY409lovbLMBZJJL7oWQvyA
-         oSN4tgXiqVkyC0y9lhPdeBOdO/CQDgVQWAdK4t+Ev+vaSgUpYqIEjpnomBspnvC4EkUS
-         C9jFRcdZivvlCxEizEZJAlX6UM7lqanqHPNeOxSITQ+m+x1m7SC3OqiGJB7WD/U3d5KU
-         TdYHHscLS+h1DVx9k8CNrX51UCIPb8ulxYJ02tWc8owIFGuC/yoSy4bDYFzU4ygF38Mt
-         HSxg==
-X-Gm-Message-State: AOJu0YxkXYQ5m4Kp0JItLL7YfK83xy904DLzPBanmDL7ldHG5gXmiAFB
-	6ljayZU7Gp/mzwhLQ0K1uXl36A==
-X-Google-Smtp-Source: AGHT+IGRDfzFX7/VhW6vnjWtBmP/4Q5fGl/SoCKR8YZ7vonDBL5MEoAeEy+D528vIctCDF4NIT56GQ==
-X-Received: by 2002:a17:906:101a:b0:9ad:f143:e554 with SMTP id 26-20020a170906101a00b009adf143e554mr3628124ejm.30.1695556167561;
-        Sun, 24 Sep 2023 04:49:27 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.100])
-        by smtp.gmail.com with ESMTPSA id a19-20020a170906275300b0099290e2c163sm4899657ejd.204.2023.09.24.04.49.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 24 Sep 2023 04:49:26 -0700 (PDT)
-Message-ID: <c31577ee-9d81-212b-42a6-e72a648f9276@linaro.org>
-Date: Sun, 24 Sep 2023 13:49:24 +0200
+        d=1e100.net; s=20230601; t=1695585688; x=1696190488;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=r/sEzFSU1WeZTVMeaZJF4z8FtiU96nb3S95OQlSjSS0=;
+        b=OYYrIbeWyv9+XUySVVQGJSb/3K1xEAI8PNRnw+1TkjCvH6iN41t71PyRXKggfw4ssw
+         IHjzL4GjDTWU6Zyo8X3w5wITsAY8VRvVIr0Ei4AXgSVV6578YJqSh1WD2//TYkG6Y5zG
+         CryRRk7bI4BN+rsOQG7ZwoZ7zWxz4FQBmE25fd1KG1q18bcv5WEkAkaEqH9X1FJxf/gd
+         zZ8rD8O3dGyWZ5f9vsfTjluRuDkwJw1ng92mVVDW1e8eyzyuAx1lrjEBHB7bm3vKCCVm
+         74n3cWeMfxKlsDopotDgLDUevuvWXdQXSkTHDRUYkOXLXn1KHAluwlQV1X19I5TPAEy4
+         b6lg==
+X-Gm-Message-State: AOJu0YwjtIaF2yY2yf/Z6nF0hD2JLIqdl9MNasLztTaLjdNyY7dao443
+	yW9CC1HN9VTxMmojjpIJWFs0Sg+mFXv7Frb5
+X-Google-Smtp-Source: AGHT+IHXra175J8cJCP1mYtvO6y1HC5Qd13x962DSEgj/v3iYxK9Qz6wXvUiRAobb0w7iX71A52zWA==
+X-Received: by 2002:a2e:b78f:0:b0:2bf:cf44:dde5 with SMTP id n15-20020a2eb78f000000b002bfcf44dde5mr4102294ljo.30.1695585688175;
+        Sun, 24 Sep 2023 13:01:28 -0700 (PDT)
+Received: from jernej-laptop.localnet (82-149-12-148.dynamic.telemach.net. [82.149.12.148])
+        by smtp.gmail.com with ESMTPSA id l15-20020a1709067d4f00b009920a690cd9sm5340296ejp.59.2023.09.24.13.01.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 24 Sep 2023 13:01:27 -0700 (PDT)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Cc: linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev
+Subject: Re: [PATCH] phy: sun4i-usb: Fix a W=1 compilation failure
+Date: Sun, 24 Sep 2023 22:01:26 +0200
+Message-ID: <3520089.iIbC2pHGDl@jernej-laptop>
+In-Reply-To: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
+References: <0bc81612171baaa6d5dff58c8e009debc03e1ba8.1693735840.git.christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [RFC PATCH v2 net-next 13/15] dt-bindings: lynx-pcs: add
- properties for backplane mode
-Content-Language: en-US
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
- Heiner Kallweit <hkallweit1@gmail.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Madalin Bucur <madalin.bucur@nxp.com>, Ioana Ciornei
- <ioana.ciornei@nxp.com>, Camelia Groza <camelia.groza@nxp.com>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor@kernel.org>, Sean Anderson <sean.anderson@seco.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-14-vladimir.oltean@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230923134904.3627402-14-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230924_044930_031729_4FFC0743 
-X-CRM114-Status: GOOD (  21.61  )
+X-CRM114-CacheID: sfid-20230924_130135_711150_F5467F11 
+X-CRM114-Status: GOOD (  16.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,66 +89,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/09/2023 15:49, Vladimir Oltean wrote:
-> When the Lynx PCS is deployed on a copper backplane link, it must be
-> prepared to handle clause 73 autoneg and clause 72 link training, which
-> it can do using a dedicated AN/LT block. The latter doesn't need to be
-> described in the device tree, because it is discoverable from the SerDes
-> lanes.
-> 
-> The media type that is deployed on the link is not discoverable though,
-> so the introduction of a fsl,backplane-mode boolean property appears
-> necessary to determine whether the AN/LT block should be employed, or
-> left bypassed.
-> 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> ---
-> v1->v2: patch is new
-> 
->  .../devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml | 15 ++++++++++++++-
->  1 file changed, 14 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml b/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-> index fbedf696c555..40fbcd80ee2a 100644
-> --- a/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-> +++ b/Documentation/devicetree/bindings/net/pcs/fsl,lynx-pcs.yaml
-> @@ -16,11 +16,24 @@ description: |
->  
->  properties:
->    compatible:
-> -    const: fsl,lynx-pcs
-> +    enum:
-> +      - fsl,lx2160a-lynx-pcs
-> +      - fsl,lynx-pcs
->  
->    reg:
->      maxItems: 1
->  
-> +  phys:
-> +    maxItems: 4
-> +    description:
-> +      phandle for the SerDes lanes that act as PMA/PMD layer when the PCS is
-> +      part of a copper backplane PHY.
-> +
-> +  fsl,backplane-mode:
-> +    $ref: /schemas/types.yaml#/definitions/flag
-> +    description:
-> +      Indicates that the PCS is deployed over a copper backplane link.
-> +
-
-Please extend also existing example. If these do not apply to lynx-pcs,
-then they should be disallowed in allOf:if:then.
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RG5lIG5lZGVsamEsIDAzLiBzZXB0ZW1iZXIgMjAyMyBvYiAxMjoxMTowNiBDRVNUIGplIENocmlz
+dG9waGUgSkFJTExFVCBuYXBpc2FsKGEpOgo+IFdpdGggZ2NjIDEyLjMuMCwgd2hlbiB0aGlzIGZp
+bGUgaXMgYnVpbHQsIHdlIGdldCBlcnJvcnMgc3VjaCBhczoKPiAKPiBkcml2ZXJzL3BoeS9hbGx3
+aW5uZXIvcGh5LXN1bjRpLXVzYi5jOiBJbiBmdW5jdGlvbiDigJhzdW40aV91c2JfcGh5X3Byb2Jl
+4oCZOgo+IGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmM6NzkwOjUyOiBlcnJv
+cjog4oCYX3ZidXPigJkgZGlyZWN0aXZlIG91dHB1dCBtYXkgYmUgdHJ1bmNhdGVkIHdyaXRpbmcg
+NSBieXRlcyBpbnRvIGEgcmVnaW9uIG9mIHNpemUgYmV0d2VlbiAyIGFuZCAxMiBbLVdlcnJvcj1m
+b3JtYXQtdHJ1bmNhdGlvbj1dCj4gICA3OTAgfCAgICAgICAgICAgICAgICAgc25wcmludGYobmFt
+ZSwgc2l6ZW9mKG5hbWUpLCAidXNiJWRfdmJ1cyIsIGkpOwo+ICAgICAgIHwgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn4KPiBkcml2ZXJzL3Bo
+eS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jOjc5MDoxNzogbm90ZTog4oCYc25wcmludGbigJkg
+b3V0cHV0IGJldHdlZW4gMTAgYW5kIDIwIGJ5dGVzIGludG8gYSBkZXN0aW5hdGlvbiBvZiBzaXpl
+IDE2Cj4gICA3OTAgfCAgICAgICAgICAgICAgICAgc25wcmludGYobmFtZSwgc2l6ZW9mKG5hbWUp
+LCAidXNiJWRfdmJ1cyIsIGkpOwo+ICAgICAgIHwgICAgICAgICAgICAgICAgIF5+fn5+fn5+fn5+
+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgo+IAo+IEJlY2F1c2Ugb2YgdGhlIHBv
+c3NpYmxlIHZhbHVlIG9mICdpJywgdGhpcyBjYW4ndCBiZSBhbiBpc3N1ZSBpbiByZWFsIHdvcmxk
+Cj4gYXBwbGljYXRpb24sIGJ1dCBpbiBvcmRlciB0byBoYXZlICJtYWtlIFc9MSIgd29yayBjb3Jy
+ZWN0bHksIGdpdmUgbW9yZQo+IHNwYWNlIGZvciAnbmFtZScuCj4gCj4gU2lnbmVkLW9mZi1ieTog
+Q2hyaXN0b3BoZSBKQUlMTEVUIDxjaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5mcj4KCkFja2Vk
+LWJ5OiBKZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAZ21haWwuY29tPgoKQmVzdCByZWdh
+cmRzLApKZXJuZWoKCj4gLS0tCj4gIGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNi
+LmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigt
+KQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5j
+IGIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+IGluZGV4IGVjNTUxNDY0
+ZGQ0Zi4uZTUzYTlhOTMxN2JjIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9w
+aHktc3VuNGktdXNiLmMKPiArKysgYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVz
+Yi5jCj4gQEAgLTc4Miw3ICs3ODIsNyBAQCBzdGF0aWMgaW50IHN1bjRpX3VzYl9waHlfcHJvYmUo
+c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCj4gIAlmb3IgKGkgPSAwOyBpIDwgZGF0
+YS0+Y2ZnLT5udW1fcGh5czsgaSsrKSB7Cj4gIAkJc3RydWN0IHN1bjRpX3VzYl9waHkgKnBoeSA9
+IGRhdGEtPnBoeXMgKyBpOwo+IC0JCWNoYXIgbmFtZVsxNl07Cj4gKwkJY2hhciBuYW1lWzMyXTsK
+PiAgCj4gIAkJaWYgKGRhdGEtPmNmZy0+bWlzc2luZ19waHlzICYgQklUKGkpKQo+ICAJCQljb250
+aW51ZTsKPiAKCgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1waHkK
