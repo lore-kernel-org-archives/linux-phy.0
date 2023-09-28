@@ -4,124 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0545E732C7
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 12:18:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2219CE732D0
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 13:36:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52SPepf4jZJdtBa/rte+im2j/WxRk4NsEBPyxlS+E4k=; b=D9o8oZhpp4Za6/
-	Do+oKxMR8Zmn670p2fxQ+GLMDl+CN21v288/3AuNunvTp3LvjGk9a5nHm9Xhs/rk7GCJ1izrn3uS3
-	H30CWErP88njhS6AZeLjpyCoSMN/Dd5x7/NlQYC6CrULX5TcQhVLsiLXEC5AOVnSjycAULYKvZApq
-	ICL6m6Wg/a9/eCVWT+5d0M8bK2MojdSOH8V+WFWxf3N+JP1wO5n3smV2yNPcJiaUz9cEDUYaPB+YX
-	rvx1pBUnZk8QSUPTPyLBBxzRoRLJuiFVXZwyeyD0sTtc+W2OcnlimoRLAWKj7bs30KJQO04Yc2dyE
-	l+Onq1ZHTSGFMc365wtg==;
+	List-Owner; bh=W3Evgzq65h6yMBcHsI+JaleaJlsUuNIS8QZhNHL6spw=; b=OX9Tj5bcXNLpZA
+	kGnIdVImAIxLWm31PjRSzK5npdcaNGOyCDPr+ZiCLMbq5Nt+tS90AUTN4My+ZQFXc0/4wc2Vved1x
+	tcgusdBoe0304goABg0rpxI1hsjQOlRmBA4GoFBYuh7N1UjyJUyr5HYC2uKyimfkSGN3rN2KV6uKM
+	5fnzovBYFlN8FthCZ3bWa1AJWnUgPejclK204nH6Ar4Ry1ZalqtTSrObh15b/6RtsqvS+f7af7/1L
+	NpmT8pdxoPvH9fJCF8iJVIW4tshCeH0VMtWYhP7qCK74UBHtdNsOgzuJuP+AJSY1l2E24Y5aeWdwT
+	rxnKrJeFsycNu64ZWkBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlpyI-003et5-1P;
-	Thu, 28 Sep 2023 12:18:22 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qlrCA-004Pmb-2C;
+	Thu, 28 Sep 2023 13:36:46 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlpyD-003eaa-0R
+	id 1qlrC6-004Pi4-0f
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Sep 2023 12:18:20 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9ada2e6e75fso1726755066b.2
-        for <linux-phy@lists.infradead.org>; Thu, 28 Sep 2023 05:17:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1695903474; x=1696508274; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=znfPGieE8dPei/VfBg/KjsI/MM6FzB61gFrznkV3gNA=;
-        b=l5C+ied20Lga9ow+sFzuq/tMfy2olTzrt5oaoFnyjdCA9jHpxP+mV2M4ZymfBV63FS
-         FF+NnFG6s0yY9jFrZ+SplKba71vORsnfoEvUQr1t522hkA87mde3/2BCnhFvly4Ovf6J
-         H+D9kKPPJDM8RLjiyen9tlRE4d/fNT9yjt15YHjFYUWWvLw5jgJE187AVvuKOaTCcI8P
-         TzVHGEpRdYnVIdCS0ZG7x2ZnLQhB6FnnNjA+mto/d2cv4qXjICdXta+DiKTj2GXlSQyV
-         aBsiDLWsQW21TO6YEjptiiHmzJOTmeL3SGgshvVogT280bbqUUADIUnpRfr8N3YEa7hp
-         N+iQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1695903474; x=1696508274;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=znfPGieE8dPei/VfBg/KjsI/MM6FzB61gFrznkV3gNA=;
-        b=Tp6cxVbZAhw80s6VL0aM0+2Z61ot3kxheO1GhVoTXzcSMvri0XzrLw+ZRkbdY3yZfG
-         wbyCYdLWo+CD+mBEGvf5Rn/gWZbCdwkmgKTmswQU2IvmXSFv0OdtQNuhK8pP9aX1zqSp
-         PG2JYs/lGcoal8nRzugXKrEUZgVJbAQUuMWD4ul0nC/V+9ei8AI7XTuHvw5eiYEI4Vmg
-         wN9+8kyx56rtTv5inZ9qLZ5Vmc7FueEhZrM3+xdbw7P4JX9nO7cDkZzXd6USfnMMerkR
-         M/4xniXsdtwc5t7BC9fTMox+k1bOni650oCPna/J+ob3JDGa+jtF42c+2dqWaD2g4RLb
-         jrLQ==
-X-Gm-Message-State: AOJu0YxiMLtzBSbAvga2kQYqEDgTHNuP2mXG8lUURVzxx6A3TwD2f1H8
-	WFtTekx+y0XDnpfRpD5i5Mv98g==
-X-Google-Smtp-Source: AGHT+IEe4HFAbbyxyxZUKZ92nQPvvIIDu2Hm7ptnYFyScmyeL2DRA5e1UEd7k2BVQ305MvEHRrAr4Q==
-X-Received: by 2002:a17:906:6a19:b0:9a9:eef6:434a with SMTP id qw25-20020a1709066a1900b009a9eef6434amr1148525ejc.36.1695903474434;
-        Thu, 28 Sep 2023 05:17:54 -0700 (PDT)
-Received: from [192.168.33.189] (178235177217.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.217])
-        by smtp.gmail.com with ESMTPSA id t11-20020a1709066bcb00b009a0955a7ad0sm10838086ejs.128.2023.09.28.05.17.52
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 28 Sep 2023 05:17:54 -0700 (PDT)
-Message-ID: <989bce8a-1047-4b7a-977b-6c725679d6a9@linaro.org>
-Date: Thu, 28 Sep 2023 14:17:51 +0200
+	Thu, 28 Sep 2023 13:36:45 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id 7107EB81C53;
+	Thu, 28 Sep 2023 13:36:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29908C433C9;
+	Thu, 28 Sep 2023 13:36:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1695908199;
+	bh=buWFvyKvzLE7yL9fD5WstGeTidrhh5FjGgosGmcwWnE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=lRZGCX4uM6nkWatFx7vCXHkNlUNWjWo3yiUsyXT5+Lkn/x8HZJejO0I56+C12vAKX
+	 mJorU9/7Rn6Ix0Ka5F16XmmPqoZp9ssId88f4t8jGBd5LG3pi3bYUgRYoyrjq/dSho
+	 uY2qKIzOuhL41R7wpANqI/+vSXk08AD6BuvSdqIKwzx773+Z4U6NnerejQug+Kw1lB
+	 xByiAv/JNY1zsOIEfRX7SVieCdeeCAn5w8+m5gTLdMzUCJT55WBUK+tOSakelTU7FJ
+	 hgJuQcyIknhUrLOVHIfPUJ1dER7tKcRDGcTRvSbJiQ8GoVB5/Bm2tgTPp5vxcQ1ghX
+	 AMYeIKxgZBZ3A==
+Date: Thu, 28 Sep 2023 15:36:29 +0200
+From: Simon Horman <horms@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [RFC PATCH v2 net-next 03/15] phy: ethernet: add configuration
+ interface for copper backplane Ethernet PHYs
+Message-ID: <20230928133629.GM24230@kernel.org>
+References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
+ <20230923134904.3627402-4-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 01/15] phy: Add HDMI configuration options
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Marijn Suijten <marijn.suijten@somainline.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd
- <swboyd@chromium.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Bjorn Andersson <andersson@kernel.org>,
- linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org,
- Sandor Yu <Sandor.yu@nxp.com>
-References: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
- <20230928111630.1217419-2-dmitry.baryshkov@linaro.org>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230928111630.1217419-2-dmitry.baryshkov@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20230923134904.3627402-4-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_051817_211780_F58D531E 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20230928_063642_528347_18F0042B 
+X-CRM114-Status: GOOD (  18.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,30 +88,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28.09.2023 13:16, Dmitry Baryshkov wrote:
-> From: Sandor Yu <Sandor.yu@nxp.com>
+On Sat, Sep 23, 2023 at 04:48:52PM +0300, Vladimir Oltean wrote:
+> In Layerscape and QorIQ SoCs, compliance with the backplane Ethernet
+> protocol is bolted on top of the SerDes lanes using an external IP core,
+> that is modeled as an Ethernet PHY. This means that dynamic tuning of
+> the electrical equalization parameters of the link needs to be
+> communicated with the consumer of the generic PHY.
 > 
-> Allow HDMI PHYs to be configured through the generic
-> functions through a custom structure added to the generic union.
+> Create a small layer of glue API between a networking PHY (dealing with
+> the AN/LT logic for backplanes) and a generic PHY by extending the
+> phy_configure() API with a new struct phy_configure_opts_ethernet.
 > 
-> The parameters added here are based on HDMI PHY
-> implementation practices.  The current set of parameters
-> should cover the potential users.
+> There are 2 directions of interest. In the "local TX training", the
+> generic PHY consumer gets requests over the wire from the link partner
+> regarding changes we should make to our TX equalization. In the "remote
+> TX training" direction, the generic PHY is the producer of requests,
+> based on its RX status, and the generic PHY consumer polls for these
+> requests until we are happy. Each request is also sent (externally to
+> the generic PHY layer) to the link partner board, for it to adjust its
+> TX equalization.
 > 
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
-[...]
+> struct phy_configure_opts_ethernet is valid when phy_set_mode_ext() has
+> been called with PHY_MODE_ETHERNET or PHY_MODE_ETHTOOL, same as with
+> other union phy_configure_opts types.
+> 
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 
-> + * struct phy_configure_opts_hdmi - HDMI configuration set
-> + * @pixel_clk_rate: Pixel clock of video modes in KHz.
-> + * @bpc: Maximum bits per color channel.
-> + * @color_space: Colorspace in enum hdmi_colorspace.
+...
+
+> +/**
+> + * struct phy_configure_opts_ethernet - Ethernet PHY configuration set
+
+nit: please include documentation of the structure members - type,
+local_tx, and remote_tx - here.
+
 > + *
-> + * This structure is used to represent the configuration state of a HDMI phy.
-an HDMI
+> + * This structure is used to represent the configuration state of an Ethernet
+> + * PHY (of various media types).
+> + */
+> +struct phy_configure_opts_ethernet {
+> +	enum ethernet_phy_configure_type type;
+> +	union {
+> +		struct c72_phy_configure_local_tx local_tx;
+> +		struct c72_phy_configure_remote_tx remote_tx;
+> +	};
+> +};
 
-Konrad
+...
 
 -- 
 linux-phy mailing list
