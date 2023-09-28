@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2219CE732D0
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 13:36:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38416E732D0
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 13:38:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W3Evgzq65h6yMBcHsI+JaleaJlsUuNIS8QZhNHL6spw=; b=OX9Tj5bcXNLpZA
-	kGnIdVImAIxLWm31PjRSzK5npdcaNGOyCDPr+ZiCLMbq5Nt+tS90AUTN4My+ZQFXc0/4wc2Vved1x
-	tcgusdBoe0304goABg0rpxI1hsjQOlRmBA4GoFBYuh7N1UjyJUyr5HYC2uKyimfkSGN3rN2KV6uKM
-	5fnzovBYFlN8FthCZ3bWa1AJWnUgPejclK204nH6Ar4Ry1ZalqtTSrObh15b/6RtsqvS+f7af7/1L
-	NpmT8pdxoPvH9fJCF8iJVIW4tshCeH0VMtWYhP7qCK74UBHtdNsOgzuJuP+AJSY1l2E24Y5aeWdwT
-	rxnKrJeFsycNu64ZWkBA==;
+	List-Owner; bh=hdaXzcjgldx5smtCKUVsM1JzXOwtTYlSZsVpPyTmCmo=; b=AsVBDPbIkR7URA
+	PZU5+bHxw8F/q6RS5by4oE3EKvyPHnR/8/uHLwB4x2Be5q7+o4otMQz6M+o4HTq4i5zI9UzvTfn51
+	jdVpriMp5X7fYr9PkohdxTNjlfakZuATSabVeAOLDD8ukkXBdHFvlt8kbfEMpTNEk65IQlTdFfO6p
+	37xoSb2X1GGq9lq1jbuG3fAI+c/oy8X/cPNAObiWNJ6RT1a91o2dUMDpRfROn9AjTKCCy81w4/aOP
+	P/fFCjQQ34nl7qDNLEyFmiC4s3f8Tsf8/LeikDQSIQu3Ro9lAkDqq6VMRs1evMiAIK8lOtxWD0zfd
+	N8gviVRaNBClXGIX59jA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlrCA-004Pmb-2C;
-	Thu, 28 Sep 2023 13:36:46 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1qlrDt-004Qn9-2z;
+	Thu, 28 Sep 2023 13:38:33 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlrC6-004Pi4-0f
+	id 1qlrDp-004Qj2-0w
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Sep 2023 13:36:45 +0000
+	Thu, 28 Sep 2023 13:38:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 7107EB81C53;
-	Thu, 28 Sep 2023 13:36:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29908C433C9;
-	Thu, 28 Sep 2023 13:36:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id C4C9F61C5A;
+	Thu, 28 Sep 2023 13:38:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8C1FC433C8;
+	Thu, 28 Sep 2023 13:38:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695908199;
-	bh=buWFvyKvzLE7yL9fD5WstGeTidrhh5FjGgosGmcwWnE=;
+	s=k20201202; t=1695908308;
+	bh=g8ZXaIN93ZfxE2Ei93hCloVx+lzo8p+xJHZE3EoTyxw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lRZGCX4uM6nkWatFx7vCXHkNlUNWjWo3yiUsyXT5+Lkn/x8HZJejO0I56+C12vAKX
-	 mJorU9/7Rn6Ix0Ka5F16XmmPqoZp9ssId88f4t8jGBd5LG3pi3bYUgRYoyrjq/dSho
-	 uY2qKIzOuhL41R7wpANqI/+vSXk08AD6BuvSdqIKwzx773+Z4U6NnerejQug+Kw1lB
-	 xByiAv/JNY1zsOIEfRX7SVieCdeeCAn5w8+m5gTLdMzUCJT55WBUK+tOSakelTU7FJ
-	 hgJuQcyIknhUrLOVHIfPUJ1dER7tKcRDGcTRvSbJiQ8GoVB5/Bm2tgTPp5vxcQ1ghX
-	 AMYeIKxgZBZ3A==
-Date: Thu, 28 Sep 2023 15:36:29 +0200
+	b=EeY+yq0WZRpbvxIHDdodVZpavSilaGC0SGuJCGzimdgcDrwyAnwfIjvG4EmzVMy9p
+	 z1EMiBqgmcKaiWq/o0am3uM67cTFY2oALRIcaP5s3SKfjEtFzoxfTZBnprkCQkeIW0
+	 9XtS45BVAUaqF+GEI5YlLptRXEVSBHmvxSgZ0qEbAkaraft+IrUoYFvSqqycC5Zpiq
+	 WkLg+aGILOrpJclpz5YkV1NxrcOqD0ilEOd4QMQWal4Qnt4XvuGM4V5U4+7Nj7zpsT
+	 hR0Kctvufbs3vRS1oanzoQWtQYAp3k5YTFhbBRQcwgjNu9SmmLJK3CxHz8vfeTzewt
+	 X4kJ3LY5lDi5w==
+Date: Thu, 28 Sep 2023 15:38:13 +0200
 From: Simon Horman <horms@kernel.org>
 To: Vladimir Oltean <vladimir.oltean@nxp.com>
 Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
@@ -61,17 +61,18 @@ Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH v2 net-next 03/15] phy: ethernet: add configuration
- interface for copper backplane Ethernet PHYs
-Message-ID: <20230928133629.GM24230@kernel.org>
+Subject: Re: [RFC PATCH v2 net-next 07/15] net: phylink: centralize
+ phy_interface_mode_is_8023z() && phylink_autoneg_inband() checks
+Message-ID: <20230928133813.GN24230@kernel.org>
 References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-4-vladimir.oltean@nxp.com>
+ <20230923134904.3627402-8-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230923134904.3627402-4-vladimir.oltean@nxp.com>
+In-Reply-To: <20230923134904.3627402-8-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_063642_528347_18F0042B 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20230928_063829_376551_F7614167 
+X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,51 +89,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 23, 2023 at 04:48:52PM +0300, Vladimir Oltean wrote:
-> In Layerscape and QorIQ SoCs, compliance with the backplane Ethernet
-> protocol is bolted on top of the SerDes lanes using an external IP core,
-> that is modeled as an Ethernet PHY. This means that dynamic tuning of
-> the electrical equalization parameters of the link needs to be
-> communicated with the consumer of the generic PHY.
-> 
-> Create a small layer of glue API between a networking PHY (dealing with
-> the AN/LT logic for backplanes) and a generic PHY by extending the
-> phy_configure() API with a new struct phy_configure_opts_ethernet.
-> 
-> There are 2 directions of interest. In the "local TX training", the
-> generic PHY consumer gets requests over the wire from the link partner
-> regarding changes we should make to our TX equalization. In the "remote
-> TX training" direction, the generic PHY is the producer of requests,
-> based on its RX status, and the generic PHY consumer polls for these
-> requests until we are happy. Each request is also sent (externally to
-> the generic PHY layer) to the link partner board, for it to adjust its
-> TX equalization.
-> 
-> struct phy_configure_opts_ethernet is valid when phy_set_mode_ext() has
-> been called with PHY_MODE_ETHERNET or PHY_MODE_ETHTOOL, same as with
-> other union phy_configure_opts types.
-> 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+On Sat, Sep 23, 2023 at 04:48:56PM +0300, Vladimir Oltean wrote:
+> In a future change, we will extend the PHY interface modes for which
+> phylink allows the PCS to handle autoneg. Group the existing occurences
 
-...
-
-> +/**
-> + * struct phy_configure_opts_ethernet - Ethernet PHY configuration set
-
-nit: please include documentation of the structure members - type,
-local_tx, and remote_tx - here.
-
-> + *
-> + * This structure is used to represent the configuration state of an Ethernet
-> + * PHY (of various media types).
-> + */
-> +struct phy_configure_opts_ethernet {
-> +	enum ethernet_phy_configure_type type;
-> +	union {
-> +		struct c72_phy_configure_local_tx local_tx;
-> +		struct c72_phy_configure_remote_tx remote_tx;
-> +	};
-> +};
+nit: occurrences
 
 ...
 
