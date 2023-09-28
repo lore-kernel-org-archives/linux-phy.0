@@ -4,83 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7205CE7B1F
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 10:54:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DAA7E732C4
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 11:16:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yRXsS8VnCCbCDEx5bRXKUsA/iMy4c5sgkxxMJkARs3I=; b=drCnhf1UcCG6cr
-	7qgbpJQDlVNL6pFlr3nFQGDM5vIOuap0Mr4+h8/GWekKDqekOEE/gZAkod6aV4txRXqNLj9QUA4Qn
-	GUaAPLGVTT/o1jSK99UrQ/K9ZWlbSXpKEjSzQb4HjgbpcihfM2ERFhnKMT+7b1jNl532G7INtvk4a
-	iMTR9zjmDoNcpFQ+CJ47J2RS9vSAGWmVtlV4uRe1ek+f+pHdbNfMceKmTA9vcbRYHlfqdQp7f/Fu1
-	Ksi1zixmMRyaNWoCe0vICUMGmPHTWikbEVdlZnyIRSN6q45eLxj0Ocx0KRd6Yw2HmnAfjHPK+alLS
-	49uLN9UZS+JCtwG6SWDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L/VNNKx1tGJHJWMbrsMu7w+JFqUZc4MVo1EmA6Sa6q0=; b=OmfXWEyAvR+twp
+	UqLNAXt+pXUmJRvZJ8QWXnWV9lxUtDk2iV1rR2MXNkGkiroR/giboXjE2PFi3SnWFbkPBQEjSef3e
+	1CQF29WGW/dmtwyI+o7XIe3+k9Ez9ijprc1WKjlRjhhGdLYzCxtKFMQ4nMl73IFi00cFc1Zi6/as1
+	QWdZ6WBSCNbfg5PExVO2vDHqgOO7JLL/9C42BMGz/UeeFHhO29IyF4GX/Plk4TgLbBt5ZEKISoJha
+	0rTSsj5GnbcppHUy11IN179/x714s/vc0VwtiWcuvPedeoIwMl61gZVIkDM0gBpLCqg/6X02bXI93
+	ssQ2WJJImPfRNfKpioPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlofZ-002ylT-08;
-	Thu, 28 Sep 2023 10:54:57 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1qlp0X-0038Qu-0y;
+	Thu, 28 Sep 2023 11:16:37 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlofV-002ygt-04
+	id 1qlp0T-0038Ob-2U
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Sep 2023 10:54:55 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2b9c907bc68so212716001fa.2
-        for <linux-phy@lists.infradead.org>; Thu, 28 Sep 2023 03:54:50 -0700 (PDT)
+	Thu, 28 Sep 2023 11:16:35 +0000
+Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-5048156976cso4645198e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 28 Sep 2023 04:16:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1695898489; x=1696503289; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=yl70rxw6j+gH7QmFj4s1C1nJkm733ZrDJmrxt04NnVU=;
-        b=mjSCzipj20Wopq4QCatLmbRDmvqDYRckHlACaNrNE4ggpwZIJCAWu+ZWp75NJGKoNK
-         siDECjB2M+GQEYbaZzYPFiAuDqXvz44C1A/43/utW3YlFuQnYLfc8hj2RVq0WfPbEU1H
-         lC4QAYumDfn7jjaA1uBjxZPLPa5nvV640LGgsT/J/8qTyQbsNCWaBt6jwAjl1gky1OQL
-         rGdRVtYSb7UbV0LJIRhiotn4X2UZsWCQ/nMhFGSKssUOc3jA9LZavJy8fz2CAqrwd2vR
-         9j0gBXA3W3oHR+NOw0Y6ltkLyHt54LHtUQw/icjK5UXCpQSrSLQ0rVpyL9A+O1S9FMD0
-         5zqQ==
+        d=linaro.org; s=google; t=1695899791; x=1696504591; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=xfjzMYGKRcXefgtoWm3YdeqDuz+ynlx3ahQEYUJ7hGE=;
+        b=bIffJye/+D92Sl8ViPY2GofeJOKXgmtkmBn3nyS2Y0n7PIwvDKH2ZDFpWDltR8stTp
+         xeAjZKaRiGYAs+Gks+q2ossxd2OxGwYfn7hilRG1l+/XcpvwxLNwmFU/9BMblOfHShfI
+         gSMsB6HNXOgN3nBWEorxgXr8lRS6UL+qxj8vJ4V5Mg7y+FO6fWy4mToR5hAbJwNpm//M
+         6r16BjT4AWU9gtdRYa5ZPWDKQdeWNth3mxROkS//NqnCnZoVg0bAOvNQIXQqXqayDjOq
+         puPelKgBJ2vBlTSLOhDnPgEbWonIM1VZZJBB8o7P+22XP3XZR6N23p+Q3Z/2rU/zlR3+
+         ga5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1695898489; x=1696503289;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=yl70rxw6j+gH7QmFj4s1C1nJkm733ZrDJmrxt04NnVU=;
-        b=UNHLuS6ApZnAou2usHZ7TOGRBTNNtbPK6/Zv1kIPYSBDOYCu1f9C4IpmRb5bM1akMC
-         NVyc8gol58EGP+54mGkskVdXm7u7i4DkZwEcLdoFbzOr2/3XuQh7a8mV9Pdo2ugfUw5S
-         cMSqq31d/6p8Czd/jsp930Gm0vF4mSljAWrpc4oArOPiodM/jMjtPtxhZm0V07JYDnpr
-         oTw6JHLnBE4rnIQAIfERQ6ANgCawgeDjLBlB29EX1q3IjRUjZ/iQNrwIyxGXCO8rg2i8
-         G7Jf/81aamdZGAUiy5bByrC8Oy0X+/tWxfzEQJqmoKl+JaOxgacmz9NwsOSEmGRF4tj4
-         KjxQ==
-X-Gm-Message-State: AOJu0YyRfH11BcJ8wCN4wvoVzInMj1A7KZiQFW7Hatx+b2VEkjd+k06c
-	iVbwiKv+mXN/LxlZ/UGSu3GKBg==
-X-Google-Smtp-Source: AGHT+IEe3OpvGijOc8+MNS8f/nUTPwRNbTZVVVZGpeIkTR6E4ETUdgnxYtGQFi2GRBcwpCWVtoD3uA==
-X-Received: by 2002:a2e:3a05:0:b0:2bc:b815:d64d with SMTP id h5-20020a2e3a05000000b002bcb815d64dmr948022lja.30.1695898488952;
-        Thu, 28 Sep 2023 03:54:48 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1695899791; x=1696504591;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xfjzMYGKRcXefgtoWm3YdeqDuz+ynlx3ahQEYUJ7hGE=;
+        b=ZvxHvGVy1fTku/H6+oGY0apZgnVmNbPzOQbjNqxSgZaM1vg7NQ2W3BywORLyysF435
+         l/F4A+1ZwtUZAcAO0lpTtlWRiFvX+FVuOi+7k6CgZwuxcDVQJq4DF0xfXwWb8n36vQWp
+         pvFPviZf4alwSzPSecL/eGZPuhvV9qPTDSEGy1FGivLsh9ncjqx2Yx50iRBPpgB5g317
+         2L3c08DL3jsSHZjbPT2MWOrYDnoGAcMs/xHtGMfSLHvHWapZxthpBZvdocK/xuG1LD3c
+         cmRw1YhI5+yz1YqnwHmzad1LwOFc5kTK0aa9VjU0u2aPuoc2PXVJXZ2/8GQed4kFXzRW
+         NYBA==
+X-Gm-Message-State: AOJu0YxnzcqQF51lAIpkW8x5k3a/2aGV7Pn74qeQzxCtAoPPWOlXCipm
+	vyxFhvRfNaE8B1wkDwYdwHfE+w==
+X-Google-Smtp-Source: AGHT+IFr9L7bAhBwAUOHZefNcwby9mlsY0cuDdJajWMQoylsh247Y8Hh7skR/x+U6DtxV1husNY3qg==
+X-Received: by 2002:a05:6512:6c8:b0:503:a82:b379 with SMTP id u8-20020a05651206c800b005030a82b379mr952499lff.12.1695899791034;
+        Thu, 28 Sep 2023 04:16:31 -0700 (PDT)
 Received: from umbar.unikie.fi ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id y24-20020a2e9d58000000b002b47a15a2eesm3551455ljj.45.2023.09.28.03.54.48
+        by smtp.gmail.com with ESMTPSA id j18-20020ac253b2000000b004fb738796casm3086623lfh.40.2023.09.28.04.16.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 28 Sep 2023 03:54:48 -0700 (PDT)
+        Thu, 28 Sep 2023 04:16:30 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+To: Rob Clark <robdclark@gmail.com>,
+	Sean Paul <sean@poorly.run>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	Stephen Boyd <swboyd@chromium.org>,
+	David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	linux-arm-msm@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v3 3/3] phy: qcom-qmp-combo: use v6 registers in v6 regs layout
-Date: Thu, 28 Sep 2023 13:54:45 +0300
-Message-Id: <20230928105445.1210861-4-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v3 00/15] drm/msm/hdmi & phy: use generic PHY framework
+Date: Thu, 28 Sep 2023 14:16:14 +0300
+Message-Id: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230928105445.1210861-1-dmitry.baryshkov@linaro.org>
-References: <20230928105445.1210861-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_035453_101648_D2CF81CF 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20230928_041633_840560_54CE4160 
+X-CRM114-Status: GOOD (  17.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,70 +102,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Make sure that we use only v6 registers in qmp_v6_usb3phy_regs_layout.
+The MSM HDMI PHYs have been using the ad-hoc approach / API instead of
+using the generic API framework. Move all the PHYs to
+drivers/phy/qualcomm and rework them to use generic PHY framework. This
+way all the QMP-related code is kept close. Also in future this will
+allow us to use a common set of functions to setup msm8974 HDMI PHY,
+28nm DSI PHY and apq8964 SATA PHY (which all use UNI PLL internally).
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c      | 12 ++++++------
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h |  3 ++-
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h     |  4 ++++
- 3 files changed, 12 insertions(+), 7 deletions(-)
+This also causes some design changes. Currently on msm8996 the HDMI PLL
+implements clock's set_rate(), while other HDMI PHY drivers used the
+ad-hoc PHY API for setting the PLL rate (this includes in-tree msm8960
+driver and posted, but not merged, msm8974 driver). This might result in
+the PLL being set to one rate, while the rest of the PHY being tuned to
+work at another rate. Adopt the latter idea and always use
+phy_configure() to tune the PHY and set the PLL rate.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 02d22595f747..9c87845c78ec 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -194,14 +194,14 @@ static const unsigned int qmp_v5_5nm_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- };
- 
- static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
--	[QPHY_SW_RESET]			= QPHY_V5_PCS_SW_RESET,
--	[QPHY_START_CTRL]		= QPHY_V5_PCS_START_CONTROL,
--	[QPHY_PCS_STATUS]		= QPHY_V5_PCS_PCS_STATUS1,
--	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V5_PCS_POWER_DOWN_CONTROL,
-+	[QPHY_SW_RESET]			= QPHY_V6_PCS_SW_RESET,
-+	[QPHY_START_CTRL]		= QPHY_V6_PCS_START_CONTROL,
-+	[QPHY_PCS_STATUS]		= QPHY_V6_PCS_PCS_STATUS1,
-+	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_PCS_POWER_DOWN_CONTROL,
- 
- 	/* In PCS_USB */
--	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL,
--	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-+	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-+	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
- 
- 	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V6_COM_RESETSM_CNTRL,
- 	[QPHY_COM_C_READY_STATUS]	= QSERDES_V6_COM_C_READY_STATUS,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
-index 7c16af0b1cc3..df670143feb1 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h
-@@ -6,8 +6,9 @@
- #ifndef QCOM_PHY_QMP_PCS_USB_V6_H_
- #define QCOM_PHY_QMP_PCS_USB_V6_H_
- 
--/* Only for QMP V6 PHY - USB3 have different offsets than V5 */
- #define QPHY_V6_PCS_USB3_POWER_STATE_CONFIG1		0x00
-+#define QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x08
-+#define QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x14
- #define QPHY_V6_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x18
- #define QPHY_V6_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x3c
- #define QPHY_V6_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x40
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
-index 47cedb860fef..08299d2b78f0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h
-@@ -7,6 +7,10 @@
- #define QCOM_PHY_QMP_PCS_V6_H_
- 
- /* Only for QMP V6 PHY - USB/PCIe PCS registers */
-+#define QPHY_V6_PCS_SW_RESET			0x000
-+#define QPHY_V6_PCS_PCS_STATUS1			0x014
-+#define QPHY_V6_PCS_POWER_DOWN_CONTROL		0x040
-+#define QPHY_V6_PCS_START_CONTROL		0x044
- #define QPHY_V6_PCS_POWER_STATE_CONFIG1		0x090
- #define QPHY_V6_PCS_LOCK_DETECT_CONFIG1		0x0c4
- #define QPHY_V6_PCS_LOCK_DETECT_CONFIG2		0x0c8
+Merge strategy: unsure. I'd probably prefer for this to be merged
+through the drm/msm tree. Also, this patchset first adds new drivers,
+then drops old ones, which might be not optimal. I might rework this to
+squash add and drop patches into a single commit.
+
+Changes since v2:
+- Rebased on top of linux-next, solving conflicts
+- Updated Sandor's HDMI PHY patch to the version from v9
+
+Changes since v1:
+- Changed msm8960 / apq8064 to calculate register data instead of using
+  fixed tables. This extends the list of supported modes.
+  (Implementation is based on mdss-hdmi-pll-28lpm.c from msm-4.14).
+
+- Fixed the reprogramming of PLL rate on apq8064.
+
+- Merged all non-QMP HDMI PHY drivers into a common PHY_QCOM_HDMI
+  driver (suggested by Rob Clark)
+
+Dmitry Baryshkov (14):
+  phy: qualcomm: add QMP HDMI PHY driver
+  phy: qcom: apq8064-sata: extract UNI PLL register defines
+  phy: qcom-uniphy: add more registers from display PHYs
+  phy: qualcomm: add legacy HDMI PHY driver
+  phy: qualcomm: add MSM8974 HDMI PHY support
+  phy: qualcomm: add MSM8x60 HDMI PHY support
+  drm/msm/hdmi: move the alt_iface clock to the hpd list
+  drm/msm/hdmi: simplify extp clock handling
+  drm/msm/hdmi: correct indentation of HDMI bridge functions
+  drm/msm/hdmi: switch to atomic_pre_enable/post_disable
+  drm/msm/hdmi: set infoframes on all pre_enable calls
+  drm/msm/hdmi: pair msm_hdmi_phy_powerup with msm_hdmi_phy_powerdown
+  drm/msm/hdmi: switch to generic PHY subsystem
+  drm/msm/hdmi: drop old HDMI PHY code
+
+Sandor Yu (1):
+  phy: Add HDMI configuration options
+
+ drivers/gpu/drm/msm/Makefile                  |   6 -
+ drivers/gpu/drm/msm/hdmi/hdmi.c               |  88 +-
+ drivers/gpu/drm/msm/hdmi/hdmi.h               |  79 +-
+ drivers/gpu/drm/msm/hdmi/hdmi_bridge.c        | 108 ++-
+ drivers/gpu/drm/msm/hdmi/hdmi_phy.c           | 216 -----
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8960.c      |  51 --
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c      | 765 ------------------
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8x60.c      | 141 ----
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8x74.c      |  44 -
+ drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.c      | 458 -----------
+ drivers/phy/qualcomm/Kconfig                  |  21 +
+ drivers/phy/qualcomm/Makefile                 |  13 +
+ drivers/phy/qualcomm/phy-qcom-apq8064-sata.c  |  23 +-
+ drivers/phy/qualcomm/phy-qcom-hdmi-28hpm.c    | 327 ++++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-28lpm.c    | 439 ++++++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-45nm.c     | 184 +++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.c   | 211 +++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.h   |  81 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c | 184 +++++
+ .../phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c  | 441 ++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h      |  75 ++
+ drivers/phy/qualcomm/phy-qcom-uniphy.h        |  65 ++
+ include/linux/phy/phy-hdmi.h                  |  24 +
+ include/linux/phy/phy.h                       |   7 +-
+ 24 files changed, 2153 insertions(+), 1898 deletions(-)
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_phy.c
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_phy_8960.c
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_phy_8x60.c
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_phy_8x74.c
+ delete mode 100644 drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-hdmi-28hpm.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-hdmi-28lpm.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-hdmi-45nm.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy.h
+ create mode 100644 include/linux/phy/phy-hdmi.h
+
 -- 
 2.39.2
 
