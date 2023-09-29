@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28C93E71D35
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 13:30:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D31B4E71D35
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 13:32:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Kh16p8czsRgK8YZ+roKllTF4Vj34BJXZyOT7qEKMJE=; b=3lllU9DrAPNonu
-	xmEpLx+m5nGu+E+9IfKH2Pc0LQIn4nS81zh9hEFIbFZMEmmojyRMPd0Nzi5wIUOulkOE6myKolfF5
-	bzZWf+GHGEbsl4ruzDC5g34Fs+CHEeDABWhSl4XEE+KWDRcio7hkhrXpp7u+t7q8nLaIZyUohAbFB
-	NFu8L1XqkBfegHURBKYA6YApb7zYePY4AAhEXT7fEuGYRc+vS32RA7Obcc9GzbK498F79OUPDAkFi
-	hrplECtI9rmcl/YNrbaRgrHnt1R5BYwmixOZHK0jNNeQHraxhCVhZcorrdbFwE2KiT4RDi6Qc1fgz
-	TJigNIxnIISlMpi2/pzQ==;
+	List-Owner; bh=x/3x0DIBTVDJGUj0HxKsC/D2Y/RMg6sL0NXvPpoIDoE=; b=LGfMe6wPdfqPKD
+	EQB4M5qUCzKHvd8jXf/S9w/9E44UkSd2tD1JLS5oQflKt/7wJ/L5rwvRMrpObgdULSYf1QlRzFee8
+	Xwr1tad55/kVBX1yhxRIA8Rq37aJ8KSE5i3n0Lc5wEPwOwyN3xoU/D86jS5BXAyKqUWXO3qSMMtVR
+	kAMWdJOGl4W3Q0bd4Q4WhzGj/e1SfyvTLXoiU5QabcAwD1T7MnwyhBA7MrW22X45yhyBw3UUe1FgC
+	X2pUGJVJ73yNKBeQn8fNViYS5rL49NhEk3eZETvkvVQ46qtcK0k+Vub43AIHoZpcqh/sHD6QnNm1S
+	fB+XYdj4b5eriBa56VKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmDZu-007y4o-2q;
-	Fri, 29 Sep 2023 13:30:46 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1qmDbB-007yEe-1s;
+	Fri, 29 Sep 2023 13:32:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmDZr-007y3y-3A;
-	Fri, 29 Sep 2023 13:30:45 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38TChDP0014922;
-	Fri, 29 Sep 2023 13:30:30 GMT
+	id 1qmDb7-007yED-2P;
+	Fri, 29 Sep 2023 13:32:03 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38TAgi7p001220;
+	Fri, 29 Sep 2023 13:31:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=rq6yxyFdTOuB7xAYdzQxJoBRTl12pxZCBJrKD+DcNdY=;
- b=nm9QbwKIKRdTg86NcY3bxclxR6E7Pqh1hEoGn7rCbS8LoMij3bckOC6jXmV3i7gRPNyw
- x0FOUMNmA5iBVRXzH9Oa539cRlz9PUucNZRaGvILDmBCDx7SUM0+S3Yo4/MowvpxodkZ
- p9Aptxk4pH6IWyhVgF2bsWWxov7lLoLfJ4XWZF4Yv8RL0TlRUf8BuEpX2s7mC+gJDnLy
- FiBiNwXebCBi8AD9Bcpm1jQqrDkBwSVzzdbtPNbIidapzBTE8sEJ3OegQBfeCsh0YjzX
- +9upPp1NCQnaRGjKq3p2FRGFnhP1W06Cm6EAchRLTIY0UXJDLxveYjMnLPCv2lIAoDP+ zw== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tdhru1g2u-1
+ bh=4psosez0s6ShH4sT2NTMtK8L6V23Vo6YOejUjTs9phE=;
+ b=PlDgoFITUbExyWTxlGnHb6CyvS9seUbgi/qUVJTUxHm0KQzTdtfgGEdU6CQcWCrzcfl3
+ +fsS2rdfd6zyOyUdu7o8RN+gntlmGPUfBPnfpeMuLtOvG18ZHKQ8VqH6RYIt85OHql9Z
+ 2g6i80d9GN/OuYU1eozDp1eooIgjRcA+a6t45aGzBieB+DbavvjvZrKOSXar5fcnTEgg
+ IEMQ4HcSEbDfGnigzr2TYFmtUVi3xPh92itOb62ukwf8kdVMMoCvhIen6A6OMn0MHeyJ
+ o1dC0dZ9hSpkm0atwUq5HlsIaurWSz1g7S6EDdREHw5lvEgcHvCw99mdIShVtbMVo+/A 5A== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tdfbrsxdp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Sep 2023 13:30:29 +0000
+	Fri, 29 Sep 2023 13:31:41 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38TDUSXH032382
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38TDVek8026335
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Sep 2023 13:30:28 GMT
+	Fri, 29 Sep 2023 13:31:40 GMT
 Received: from [10.216.51.141] (10.80.80.8) by nalasex01c.na.qualcomm.com
  (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Fri, 29 Sep
- 2023 06:30:18 -0700
-Message-ID: <cc7a80f7-399e-40ca-ab29-9df3da70412d@quicinc.com>
-Date: Fri, 29 Sep 2023 19:00:14 +0530
+ 2023 06:31:30 -0700
+Message-ID: <3f89e0b7-189e-4cf7-bec5-b03c903c46b5@quicinc.com>
+Date: Fri, 29 Sep 2023 19:01:30 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/8] arm64: dts: qcom: ipq5332: Add USB Super-Speed PHY
- node
+Subject: Re: [PATCH 6/8] arm64: dts: qcom: ipq5332: Add Super-Speed UNIPHY in
+ USB node
 Content-Language: en-US
 To: Konrad Dybcio <konrad.dybcio@linaro.org>, <agross@kernel.org>,
         <andersson@kernel.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
@@ -72,28 +72,28 @@ To: Konrad Dybcio <konrad.dybcio@linaro.org>, <agross@kernel.org>,
 CC: <quic_kathirav@quicinc.com>, <quic_nsekar@quicinc.com>,
         <quic_srichara@quicinc.com>
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
- <9e5ad332-2c04-4024-8321-3a9c66586b64@linaro.org>
+ <20230929084209.3033093-7-quic_ipkumar@quicinc.com>
+ <618992fe-4c76-42ef-af47-ee66f74c5bb6@linaro.org>
 From: Praveenkumar I <quic_ipkumar@quicinc.com>
-In-Reply-To: <9e5ad332-2c04-4024-8321-3a9c66586b64@linaro.org>
+In-Reply-To: <618992fe-4c76-42ef-af47-ee66f74c5bb6@linaro.org>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: kiprBqOw9GhCKVnOHvCO_KCwiO93qGmz
-X-Proofpoint-GUID: kiprBqOw9GhCKVnOHvCO_KCwiO93qGmz
+X-Proofpoint-ORIG-GUID: aQMf_Wmi_iMyp-ktWcW02lb7x-KBLhiL
+X-Proofpoint-GUID: aQMf_Wmi_iMyp-ktWcW02lb7x-KBLhiL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-09-29_11,2023-09-28_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 lowpriorityscore=0 suspectscore=0 mlxscore=0
- mlxlogscore=520 impostorscore=0 spamscore=0 bulkscore=0 adultscore=0
- clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2309290115
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ malwarescore=0 impostorscore=0 mlxscore=0 suspectscore=0
+ priorityscore=1501 lowpriorityscore=0 mlxlogscore=451 adultscore=0
+ clxscore=1015 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2309290116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230929_063044_135123_AE19E002 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20230929_063201_787385_EE5D5D77 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,41 +112,17 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 9/29/2023 6:26 PM, Konrad Dybcio wrote:
+On 9/29/2023 6:44 PM, Konrad Dybcio wrote:
 > On 29.09.2023 10:42, Praveenkumar I wrote:
->> Add USB Super-Speed UNIPHY node and populate the phandle on
->> gcc node for the parent clock map.
+>> Add UNIPHY node in USB to support Super-speed. As the SS PHY has
+>> pipe clock, removed "qcom,select-utmi-as-pipe-clk" flag.
 >>
 >> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 >> ---
->>   arch/arm64/boot/dts/qcom/ipq5332.dtsi | 25 ++++++++++++++++++++++++-
->>   1 file changed, 24 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> index d3fef2f80a81..b08ffd8c094e 100644
->> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
->> @@ -158,6 +158,29 @@ usbphy0: phy@7b000 {
->>   			status = "disabled";
->>   		};
->>   
->> +		usbphy1: phy@4b0000 {
->> +			compatible = "qcom,ipq5332-usb-uniphy";
->> +			reg = <0x4b0000 0x800>;
-> Please pad the address part to 8 hex digits with leading zeroes.
-Sure, will add.
->
->> +
->> +			clocks = <&gcc GCC_PCIE3X1_PHY_AHB_CLK>,
->> +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
->> +				 <&gcc GCC_USB0_PIPE_CLK>;
->> +			clock-names = "ahb",
->> +				      "cfg_ahb",
->> +				      "pipe";
->> +
->> +			resets =  <&gcc GCC_USB0_PHY_BCR>;
-> Looks like there's a double space after '='
-Sure, will remove the extra space.
+> Patches 6 and 7 should be swapped, otherwise you may get no
+> USB with this commit. Incremental patches must not break
+> functionality, unless it is truly inevitable.
+Understood. Will swap the 6 and 7 patches in the update.
 
 --
 Thanks,
