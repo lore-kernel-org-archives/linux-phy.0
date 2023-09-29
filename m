@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A57F9E71D21
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 12:56:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BAD1E71D2D
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 13:14:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2yLuE1jihYimWnXcgSNVbF8h6HoWpMr8Hfv8nwittb8=; b=RqQ8f3RmWiqGza
-	fzoqDg41r8pAb4pctIYtdH2I7elzaPsAZyVeOzSMc5L3R8y7C5ApgT/om3ooqP03I7drmdPryMhQi
-	iv5QpgDU2Fso254piAkT6DYFqeVgivOR7gsstYCmjyzWI4FDnGYiWOpYq9XUDLFOQcaeqtsdu6tb1
-	+PxOoJAnUa//zFpISbbA+ZkYW9RlgWKg5gi3hLhoSU7S3rldB3JSvODua641GFnSaK4iuS573i6kn
-	FbISDYDy//fVRLuc+3YHcufgRVdT9SBfMb3NgYoEXEiKcbaaISAxifRW1Lt38hrOhp9OeCza6e2eI
-	wKDCCOQkRNV7fY66NvBA==;
+	List-Owner; bh=YoiG5uW//sxyXvNuRVTOBXRwpkDiqGwIQOmMVrIaU6E=; b=z5OOxRKR0EB3hy
+	8cZSI8CxaX/WBzIzdB3bqH5RvkpGUcm6/bcreWTqKs/05Kr0Bao1PZVnF+pE9QUwx/V92eo1HEwGw
+	vVAkga8slTUuxbcqYg5WjAj528cxMIXlbKDj+wtnSAsmUE6BaEHrAO57PKWXgl/247tXtiQluGa7B
+	AEeZNnopTyrLfFYx2a+ciUuTCUmHcULUYpJqIxNgd3y+eO76U2XtE2KQ3SK1hOaGeIEfMmO7Jv4GE
+	Fy+GbPojcOLxp9oH4Ve7gI66cGs2YdbOVh4dT3NooCK4869HQTpcUFTcYi7KWB2+YMuKYR2a9R0Cf
+	9hgB73XYFS3PxGOA1/IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmD2q-007v0y-1D;
-	Fri, 29 Sep 2023 12:56:36 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qmDKN-007wYi-2e;
+	Fri, 29 Sep 2023 13:14:43 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmD2n-007uzV-0F
+	id 1qmDKL-007wXx-10
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Sep 2023 12:56:34 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9b281a2aa94so1279382666b.2
-        for <linux-phy@lists.infradead.org>; Fri, 29 Sep 2023 05:56:30 -0700 (PDT)
+	Fri, 29 Sep 2023 13:14:42 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-98377c5d53eso1813796866b.0
+        for <linux-phy@lists.infradead.org>; Fri, 29 Sep 2023 06:14:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1695992189; x=1696596989; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1695993280; x=1696598080; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=o0O2iHOSU6V8QBcjMfQhVcZbNkje+8n8sZpqQP6ki2o=;
-        b=MMCp0qjpGuezZX6bDUMSno3l9Q7ZN90qUQs9WFG4HZrKpnRhdqhkuDZENydFZ6e3Zx
-         vIJHDhQyUVbNEwyhVIOpQy0NoGdXS2gAu81fClnrzBmZW5SlW37ZfuwuZme0N0Ncsodh
-         QYIUSwl5N7oZoC6CktagCCHEnnpgvX0TRBYj4E486ARGBgpTKny8PzCwc1bXf4iw43Js
-         DLtBrycCRdPDF4xiTbSg5AAEBDaFKZI1mVsnhyuIrw8OpG2PvwmD9+MOaXE6xdVtGBQs
-         Bigu6hqTIt+OyDPk2ihY9rpRg9o3UOO7+rtNCL+MOjC6J96QOR8nxWTNaLE+qHUdAJH0
-         bU5w==
+        bh=6hm8M8P0E044zsXKxzjnzQHb9jlx7F15tmg44YiTQE4=;
+        b=Jyt7nAlhsPIX8r8WQsE6iw2TAGBi3pwDE+h4P08nztUUZCAUrllDz+HCPL3K0yHzkZ
+         ci9gxcIPUaEjZ/4b3IT59U6sdl/O72migERXo3RB+Xkw0CSyHs9dtroAf1erOX+zrRmR
+         BYDLR1rdg8QPooU1ufSx82RB60d3w3SIcDcFzWJ88NbD6qX/zlJePdJzdQixl8vgC+zy
+         KESXFG8Tn2ttjZoLOvHAjESL/po+Zpu+hr4Zm/LPXBfLrMsYJuQarVWexrgqwV73pFAS
+         EPURAOac5Zx7jqeEaMMpBubwsPvisIo5UinmZmLAQkEg0EBuCFla5/G6BwGg2zzbiq0O
+         i04w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1695992189; x=1696596989;
+        d=1e100.net; s=20230601; t=1695993280; x=1696598080;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=o0O2iHOSU6V8QBcjMfQhVcZbNkje+8n8sZpqQP6ki2o=;
-        b=qpvAnAgbUXUUOXxEYK1kgvTEJ+os2DybsJXraBcBIkx0k7XeHc7L4ejGORXIJxTWwu
-         X+rJbmnXgek0nAHq5ZPXIFfBcWPq+HROU5MvurUjFTQ21PsUY1zRZlw81zab9nzyp60+
-         LVF27eEoMWITMV7gpod9VVjzahS/uMQhrHlh0SQ5D7kgCP3n2LgNNd+cESIj/2jf9TVl
-         OOUTV+lNm9ZypRva645Zlv/bs3VwEjx9ELAMaUx63xgS1ib4Wyf7fz7vqTSFvvqUDFKT
-         yi4Z/DzEMD6sR+7zfekQiPhlsBlO/7keQ/hcr56wN7fyZkzaDF85y8wvdOKM6586lzRg
-         t8Nw==
-X-Gm-Message-State: AOJu0Ywrjtff1pT/+ogGyuRdCZlPe5Goge9uR8qVRZstvqUrmSmslboP
-	waaRCO/HeoCfGirll/qOSHcLCA==
-X-Google-Smtp-Source: AGHT+IHJ+1khKqYJgtx/TnRmZpfflJN1BDfF2euEg3cfsBufY9K4aOGjhkXxyT6TleFCuZml4id7GQ==
-X-Received: by 2002:a17:906:783:b0:9ae:5fe1:ef00 with SMTP id l3-20020a170906078300b009ae5fe1ef00mr3371589ejc.45.1695992189069;
-        Fri, 29 Sep 2023 05:56:29 -0700 (PDT)
+        bh=6hm8M8P0E044zsXKxzjnzQHb9jlx7F15tmg44YiTQE4=;
+        b=OSw2a7G9qZLzeDnRRFocU1sztoP3EqsgjMbUKJu0jW5G8AbC26w3o6CO+UBy2/IElO
+         FEXnzGhFMi2UU2WEzoH89Ge1olR/KQf5iiASTyDvO9FUWDIFEeX0xU3OD1Bb4mnRf7Gl
+         EAvO7MwvodekSZt9jWzp7Y1Weu85Pnk9FFTZHGAycPrbSkZ8pzZnTx/ZPPM26eWLVb1Z
+         rPG1tiijtlPWe/fZcNH1TUzs+u2w7uq6XAe2ucwIYuQ2iR3HrPX7yfr4qOi2TwukCmIn
+         QOcEXq3P93vVQQPRGnOngkd/RChcULPnwEE/PcZjjeRJU4GBQJkDx4GWJt9Ia7eXPvsf
+         /78Q==
+X-Gm-Message-State: AOJu0Yz/UxSH9uLFP3YzFammDVvGYERdMEo7nYNvu/s00DBgRuNoc2wO
+	6R/m4Msq1mucN+AgjH4zIY6miw==
+X-Google-Smtp-Source: AGHT+IFaIr967H1qvXJ1+Ob/sEixHAE4zeLZGWkN/0aZsxP/QyOHMrbD2cXfX4HadkUjPIshupFt/w==
+X-Received: by 2002:a17:906:101a:b0:9b2:babb:5fe9 with SMTP id 26-20020a170906101a00b009b2babb5fe9mr3831539ejm.23.1695993279692;
+        Fri, 29 Sep 2023 06:14:39 -0700 (PDT)
 Received: from [192.168.33.189] (178235177217.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.217])
-        by smtp.gmail.com with ESMTPSA id k15-20020a1709062a4f00b009ad8084e08asm12328286eje.0.2023.09.29.05.56.26
+        by smtp.gmail.com with ESMTPSA id k22-20020a170906129600b009aa292a2df2sm12352258ejb.217.2023.09.29.06.14.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 29 Sep 2023 05:56:28 -0700 (PDT)
-Message-ID: <9e5ad332-2c04-4024-8321-3a9c66586b64@linaro.org>
-Date: Fri, 29 Sep 2023 14:56:25 +0200
+        Fri, 29 Sep 2023 06:14:39 -0700 (PDT)
+Message-ID: <618992fe-4c76-42ef-af47-ee66f74c5bb6@linaro.org>
+Date: Fri, 29 Sep 2023 15:14:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/8] arm64: dts: qcom: ipq5332: Add USB Super-Speed PHY
- node
+Subject: Re: [PATCH 6/8] arm64: dts: qcom: ipq5332: Add Super-Speed UNIPHY in
+ USB node
 Content-Language: en-US
 To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, vkoul@kernel.org, kishon@kernel.org,
@@ -82,7 +82,7 @@ To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
 Cc: quic_kathirav@quicinc.com, quic_nsekar@quicinc.com,
  quic_srichara@quicinc.com
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-7-quic_ipkumar@quicinc.com>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -119,10 +119,11 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
+In-Reply-To: <20230929084209.3033093-7-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230929_055633_116497_C5588637 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20230929_061441_401662_5D7CDF07 
+X-CRM114-Status: UNSURE (   6.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,37 +141,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29.09.2023 10:42, Praveenkumar I wrote:
-> Add USB Super-Speed UNIPHY node and populate the phandle on
-> gcc node for the parent clock map.
+> Add UNIPHY node in USB to support Super-speed. As the SS PHY has
+> pipe clock, removed "qcom,select-utmi-as-pipe-clk" flag.
 > 
 > Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > ---
->  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 25 ++++++++++++++++++++++++-
->  1 file changed, 24 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> index d3fef2f80a81..b08ffd8c094e 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> @@ -158,6 +158,29 @@ usbphy0: phy@7b000 {
->  			status = "disabled";
->  		};
->  
-> +		usbphy1: phy@4b0000 {
-> +			compatible = "qcom,ipq5332-usb-uniphy";
-> +			reg = <0x4b0000 0x800>;
-Please pad the address part to 8 hex digits with leading zeroes.
-
-> +
-> +			clocks = <&gcc GCC_PCIE3X1_PHY_AHB_CLK>,
-> +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> +				 <&gcc GCC_USB0_PIPE_CLK>;
-> +			clock-names = "ahb",
-> +				      "cfg_ahb",
-> +				      "pipe";
-> +
-> +			resets =  <&gcc GCC_USB0_PHY_BCR>;
-Looks like there's a double space after '='
+Patches 6 and 7 should be swapped, otherwise you may get no
+USB with this commit. Incremental patches must not break
+functionality, unless it is truly inevitable.
 
 Konrad
 
