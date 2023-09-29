@@ -4,74 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05B23CE7B1E
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Sep 2023 19:07:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A244E743F9
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 08:42:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVQOJOWDysuBMoSIGecqknt6KfpjS/EhL4H0ciBmJ98=; b=XYu6SOHSNfW6dS
-	1Afk1juUN2U9kY97PcwUQXW3WVS5aCL2OvS1CBaDpjSlZmojm+qUNhKzAgpwLmFGRwzhTfg+eqN19
-	rOyETT/xeo+xO5xsxPJfg8+ryJg58YWY5VF9n00Ua9WDj+u/cVIqWCNXZvCl+os+U7iZOCvywn86/
-	CRgpEOuYZI+VIUMWwbVSKtgrevTmUXBVnG5hCOsXrdlZdMcKoNk33KNdVNoeUy3iNU5lOyHx7qpeW
-	Y8bt9pEtwgbb22fOECyWo9appm5S6RlTffjS7cV8hv51LSguG3hSdMFTfg1jCGxrTelkRHTFdfMLs
-	CdUyyyYn71k1sTeMtIrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OFNwrIMIziAZko7xmq7AXAUuIk64OgQrYkvRiG+0A98=; b=CH3tkT7IVYYJw7
+	e5aWwSrn3gbbyh98fiGxeJCNUmFMCMQgq/qoMyOgvfjkBGQmtLm8L8Za29LZAWsFchDY8CceblPIf
+	CEwCft/PhDJaaYYC2bgTjW9Fz2KXiX40sOqiSq2/wcNHX6SFKMxLnoXUuyYAbRzUD1DhihRVtFQTr
+	RZV7xMsFESSPIBtHTF5M2kluOTKuenjHZx3hwaGaodXXJBDPN3nXLpAVxPC+0vjOVv6/WMp01bgUB
+	qsNIqKEB4/KhvA6bdBQiLbp2gCbbQPzR5+RYVMuUMlJEyvwNFkFi5p4BqcA41gAseSZl027JIxrUK
+	oXTqC6rbiq0BPI1Y3WWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlwLs-006Ye1-26;
-	Thu, 28 Sep 2023 19:07:08 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1qm95L-007OH2-2U;
+	Fri, 29 Sep 2023 08:42:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlwLo-006Yca-0j
-	for linux-phy@lists.infradead.org;
-	Thu, 28 Sep 2023 19:07:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 70AA2CE1AAB;
-	Thu, 28 Sep 2023 19:07:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D88F5C433C7;
-	Thu, 28 Sep 2023 19:06:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695928021;
-	bh=h2mLoXWXVYbN/GQUNVZLyj+AYwIemw9Pknt/ZTBSAtY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lLGzXOq2aAtYKG/F6iMP7gKCBmkSnjG2JKjrrQ9ac0EPmzbdeR0vAmbZ0z9gLBxwg
-	 /y6cWE7fN7+U0ULhn+k4lVPa74I1608uALI4irvkXq1d6wpcaB8jpmlKHy5VxIM1yN
-	 AvLTC2cnoOGdbgCTAwDFFvpBIRUoH9fssv7nfzzgx6OOheMdmwoQwM0hoThdXRXbfv
-	 Nee1UCyFQtrsdxqrnxEuPtr7h6VZfPea2SOzXynmWppp2FIl+1nAdZWvwpvtWjtawl
-	 k/H5S/NDSrEEXannR7tjrevGChbO+tYsTiKDFB+L+ddc6BORcOqk679oLQIWDdSpKw
-	 JcWsWUR/30reQ==
-Date: Thu, 28 Sep 2023 21:06:54 +0200
-From: Simon Horman <horms@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH v2 net-next 14/15] net: pcs: mtip_backplane: add
- driver for MoreThanIP backplane AN/LT core
-Message-ID: <20230928190654.GP24230@kernel.org>
-References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-15-vladimir.oltean@nxp.com>
+	id 1qm95H-007OFU-2v;
+	Fri, 29 Sep 2023 08:42:53 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38T8ePCd020771;
+	Fri, 29 Sep 2023 08:42:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=uSMLX75mWCZNaKWjpTPvmVN0X1WE4yDzVcF62/BNJ4Q=;
+ b=IwDDx3NANBUvWYjZ9poDz5ulec1XKS8AOT368aVE+ccbfcI4TfFe1tvqyGBkkoP7rWOe
+ +XWy2ia7PKZ8pLYkeFUVa/U7h/fusomXKoX2whDKcaohT3cCGPUgf/mvyNLTbv5DJqyL
+ xmOHrU9Bsz3Yb7xu2lrBqdCnhZW56xHYRHVh7dEjTBW2VQjhM9q/x/gYY0/Ubs3rWV+p
+ fZ2gVsHIBfIPtWMg6/i2hMTTJJdzFj/zil8h/5E/y1S1F6lqOziBBXO+pnWVm1Iln5BG
+ +h7G6nZxsq/UZ+gxvPct6YKDDfswTcEp1SIA5NI0/dqzCItJ+UEU3Z8OjlH2vjeJpPpE lQ== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3td24uaw07-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Sep 2023 08:42:34 +0000
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38T8gXpJ026997
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Sep 2023 08:42:33 GMT
+Received: from hu-ipkumar-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.30; Fri, 29 Sep 2023 01:42:23 -0700
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
+        <will@kernel.org>, <p.zabel@pengutronix.de>, <geert+renesas@glider.be>,
+        <arnd@arndb.de>, <neil.armstrong@linaro.org>,
+        <nfraprado@collabora.com>, <u-kumar1@ti.com>, <peng.fan@nxp.com>,
+        <quic_wcheng@quicinc.com>, <quic_varada@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+CC: <quic_kathirav@quicinc.com>, <quic_nsekar@quicinc.com>,
+        <quic_srichara@quicinc.com>
+Subject: [PATCH 0/8] Enable USB3 for Qualcomm IPQ5332
+Date: Fri, 29 Sep 2023 14:12:01 +0530
+Message-ID: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230923134904.3627402-15-vladimir.oltean@nxp.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: zCnb6Lekb27uVrJ1pV3Nm1Ks_1SeRTRe
+X-Proofpoint-ORIG-GUID: zCnb6Lekb27uVrJ1pV3Nm1Ks_1SeRTRe
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-09-29_07,2023-09-28_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=15 clxscore=1011 malwarescore=0
+ suspectscore=0 impostorscore=0 lowpriorityscore=0 spamscore=15
+ priorityscore=1501 mlxscore=15 mlxlogscore=77 adultscore=0 bulkscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2309290074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_120704_632054_99405866 
-X-CRM114-Status: GOOD (  17.30  )
+X-CRM114-CacheID: sfid-20230929_014252_083420_BFCBF7F4 
+X-CRM114-Status: GOOD (  15.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,139 +103,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 23, 2023 at 04:49:03PM +0300, Vladimir Oltean wrote:
+Patch series adds Qualcomm 22ull Super-Speed USB UNIPHY driver
+support present in Qualcomm IPQ5332 SoC which is required to
+enable the USB3. This PHY is interfaced with SNPS DWC3 USB and
+SNPS DWC PCIe. Either one of the interface can use it via the
+mux selection present in the TCSR register. Current patch series
+adds the support for UNIPHY with DWC3 USB.
 
-...
+Discards the first patch series as adding a new driver.
+https://lore.kernel.org/all/20230829135818.2219438-1-quic_ipkumar@quicinc.com/
 
-> +static int mtip_rx_c72_coef_update(struct mtip_backplane *priv,
-> +				   struct c72_coef_update *upd,
-> +				   bool *rx_ready)
-> +{
-> +	char upd_buf[C72_COEF_UPDATE_BUFSIZ], stat_buf[C72_COEF_STATUS_BUFSIZ];
-> +	struct device *dev = &priv->mdiodev->dev;
-> +	struct c72_coef_status stat = {};
-> +	int err, val;
-> +
-> +	err = read_poll_timeout(mtip_read_lt_lp_coef_if_not_ready,
-> +				val, val < 0 || *rx_ready || LT_COEF_UPD_ANYTHING(val),
-> +				MTIP_COEF_STAT_SLEEP_US, MTIP_COEF_STAT_TIMEOUT_US,
-> +				false, priv, rx_ready);
-> +	if (val < 0)
-> +		return val;
-> +	if (*rx_ready) {
-> +		if (!priv->any_request_received)
-> +			dev_warn(dev,
-> +				 "LP says its RX is ready, but there was no coefficient request (LP_STAT = 0x%x, LD_STAT = 0x%x)\n",
-> +				 mtip_read_lt(priv, LT_LP_STAT),
-> +				 mtip_read_lt(priv, LT_LD_STAT));
-> +		else
-> +			dev_dbg(dev, "LP says its RX is ready\n");
-> +		return 0;
-> +	}
-> +	if (err) {
-> +		dev_err(dev,
-> +			"LP did not request coefficient updates; LP_COEF = 0x%x\n",
-> +			val);
-> +		return err;
-> +	}
-> +
-> +	upd->com1 = LT_COM1_X(val);
-> +	upd->coz = LT_COZ_X(val);
-> +	upd->cop1 = LT_COP1_X(val);
-> +	upd->init = !!(val & LT_COEF_UPD_INIT);
-> +	upd->preset = !!(val & LT_COEF_UPD_PRESET);
-> +	
 
-Hi Vladimir,
+Praveenkumar I (8):
+  dt-bindings: phy: qcom,uniphy-usb: Document qcom,uniphy-usb phy
+  phy: qcom: Introduce Super-Speed USB UNIPHY driver
+  arm64: dts: qcom: ipq5332: Add USB Super-Speed PHY node
+  dt-bindings: usb: dwc3: Add clocks on Qualcomm IPQ5332
+  arm64: dts: qcom: ipq5332: Add clocks for USB Super-Speed
+  arm64: dts: qcom: ipq5332: Add Super-Speed UNIPHY in USB node
+  arm64: dts: qcom: ipq5332: Enable USB Super-Speed PHY
+  arm64: defconfig: Enable qcom USB UNIPHY driver
 
-I'm unsure if this can actually happen.
-But if the while loop runs zero times then err is used uninitialised here.
+ .../bindings/phy/qcom,ipq5332-usb-uniphy.yaml |  83 +++++
+ .../devicetree/bindings/usb/qcom,dwc3.yaml    |  20 +-
+ arch/arm64/boot/dts/qcom/ipq5332-rdp468.dts   |   6 +
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi         |  40 ++-
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/phy/qualcomm/Kconfig                  |  11 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ drivers/phy/qualcomm/phy-qcom-uniphy-usb.c    | 322 ++++++++++++++++++
+ 8 files changed, 476 insertions(+), 8 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
 
-As flagged by Smatch.
+-- 
+2.34.1
 
-> +		mtip_an_restart_from_lt(priv);
-> +
-> +	kfree(lt_work);
-> +}
-> +
-> +/* Train the link partner TX, so that the local RX quality improves */
-> +static void mtip_remote_tx_lt_work(struct kthread_work *work)
-> +{
-> +	struct mtip_lt_work *lt_work = container_of(work, struct mtip_lt_work,
-> +						    work);
-> +	struct mtip_backplane *priv = lt_work->priv;
-> +	struct device *dev = &priv->mdiodev->dev;
-> +	int err;
-> +
-> +	while (true) {
-> +		struct c72_coef_status status = {};
-> +		union phy_configure_opts opts = {
-> +			.ethernet = {
-> +				.type = C72_REMOTE_TX,
-> +			},
-> +		};
-> +
-> +		if (READ_ONCE(priv->lt_stop_request))
-> +			goto out;
-
-Likewise, I'm unsure if this can happen.
-But if the condition above is met on the first iteration of
-the loop then the out label will use err without it being initialised.
-
-Also flagged by Smatch.
-
-> +
-> +		err = mtip_lt_in_progress(priv);
-> +		if (err) {
-> +			dev_err(dev, "Remote TX LT failed: %pe\n", ERR_PTR(err));
-> +			goto out;
-> +		}
-> +
-> +		err = phy_configure(priv->serdes, &opts);
-> +		if (err) {
-> +			dev_err(dev,
-> +				"Failed to get remote TX training request from SerDes: %pe\n",
-> +				ERR_PTR(err));
-> +			goto out;
-> +		}
-> +
-> +		if (opts.ethernet.remote_tx.rx_ready)
-> +			break;
-> +
-> +		err = mtip_tx_c72_coef_update(priv, &opts.ethernet.remote_tx.update,
-> +					      &status);
-> +		if (opts.ethernet.remote_tx.cb)
-> +			opts.ethernet.remote_tx.cb(opts.ethernet.remote_tx.cb_priv,
-> +						   err, opts.ethernet.remote_tx.update,
-> +						   status);
-> +		if (err)
-> +			goto out;
-> +	}
-> +
-> +	/* Let the link partner know we're done */
-> +	err = mtip_modify_lt(priv, LT_LD_STAT, LT_COEF_STAT_RX_READY,
-> +			     LT_COEF_STAT_RX_READY);
-> +	if (err < 0) {
-> +		dev_err(dev, "Failed to update LT_LD_STAT: %pe\n",
-> +			ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +	err = mtip_remote_tx_lt_done(priv);
-> +	if (err) {
-> +		dev_err(dev, "Failed to finalize remote LT: %pe\n",
-> +			ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +out:
-> +	if (err && !READ_ONCE(priv->lt_stop_request))
-> +		mtip_an_restart_from_lt(priv);
-> +
-> +	kfree(lt_work);
-> +}
-
-...
 
 -- 
 linux-phy mailing list
