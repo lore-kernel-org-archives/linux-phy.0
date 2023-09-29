@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FE7BE743F9
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 08:43:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75431E743F9
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 08:43:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lKgsiFBC2huqv9fXKXsl6C7o0NP0xwL3KlFyhhlFQpA=; b=2yTG3qDrrSzR5s
-	PBF3AJKUF4bebbaYufkkYYAyKgDW51cl+TjRnPelnilF03PuNvZyc0Q3D1RqL5WQmYuD4Idysu9lL
-	YqlPQfytvbujKXmEOz+oJkwFtbzA9M0U1uvqfij/V6cGyRzI6kE1NAI8YHHhIdttbAcFwptpkrIha
-	5yiQGpz+FzdrodvlWAu1b3boRV5GhBK2IQ9b9SQ+S5tHNBGzONIze2cMDGV30Cg3JNd8bIiGm9fyG
-	OAZKmSqEK6icQkGtWEOjcSXr0oEj8f73kXQ/rKqTT3I9SVwgbhQgulQ/qio5jnVppKstsLj9i/d3T
-	vmrIT9Dga0gU6nwkhU6A==;
+	List-Owner; bh=eIU93YoeU9TRsepcpRU7OIuig6+OgWBlnuKfYYe0gk0=; b=W3/oF/aq8L/3YY
+	QhhYX9yTzYvpasfIotR3hqFJELsisfGQrTxkQPKpYe4mwlM/6uIk7Gqfx0Xj8uS573imIPIC3EP7i
+	ezQb6lnomZvK+22Tmnxf/J+wNJ7I5frTR7ozLlxWGEwB84495IELDFzLaudmrIrkR0aFo1UAecgu2
+	5/om6ffj+Du99NU15MlMvAxnOyxOIx6O6qLFMRqEJj+VYLL38IjpQe2O8UnhjDOL7vYbglupb7Fgb
+	u9pAM6aCIx1QC5NFC8fShe0OlnNEYOn8q6Brb91xGDqE0Qsgk0ucXKbKhXMTlM2bmMmgUhN8LMyg0
+	XKiqqRwjO9oiX3rJTeew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qm95l-007OPv-03;
-	Fri, 29 Sep 2023 08:43:21 +0000
+	id 1qm95y-007OWG-04;
+	Fri, 29 Sep 2023 08:43:34 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qm95j-007OOL-01;
-	Fri, 29 Sep 2023 08:43:20 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38T7Urv3027510;
-	Fri, 29 Sep 2023 08:43:03 GMT
+	id 1qm95s-007OTS-2U;
+	Fri, 29 Sep 2023 08:43:31 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38T6xeB7003083;
+	Fri, 29 Sep 2023 08:43:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=nB0FggN8J+ivI3SuN9O6qu/MgW9HIfMXTdvR1pgz8BQ=;
- b=jkyZv/WcnQ6FbHJOs+UjTSd7MFQHW9oem+4HfoNr327tF7kSQPuBCvPgVyviZnIymvHS
- DSF5X9CWWS9zmi4IcfWoZxZewvjXLmH68o3IeOOp5t4tgpZw7moQHCj9siMKzjb9Oi1q
- /lUFOf5W6Q+NH7LtohBBlgdyhMi9+TQPKX4B2sob73J/bcan4N3QTqq0V4d1Ifgb5+dy
- fj3WBOyG46QS1DUhmvg7Wf5qKCLc6C49v3fY0nKgcc2dh7JuVByCAf73wB4llhKKbFDr
- tEPsVSAscCNEVi3gGPi0dumr+OAmq3kcXMJ8cmUKDKpfxhCSE6JHDPgXM/wEZZMs3edJ Ew== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tdqmv8d9b-1
+ bh=bjvskR0dMl3MN6jJkPzBP88qL9AVOezaPO2jraQbkIs=;
+ b=NjhDv9YBJV2d6JBO/GjVlbPATrzPgMYIDEMFichiizSyaSkWgXtQMoj81+ND/4u4OZ6P
+ N5KCI0ccNIPv2IiAPU5etbBJ1xstNclrIs9BbSaMpAp7aZE45n0uOHy6q4HH9sBWTfB0
+ Ku6efzQg1/o2aYxg+PcFnGxs6yYvBd44fZO1mD9tlCESif+oXF78Q+tGdWNYpOeyJvo/
+ QXeCVxSVIT7r+Bf3BqfuqYIFydYignmoQM7VcMkP17RRNv62qafSIoA0Ppsj0rAhiqlE
+ WhxCAAAexkjYs2mp6fPaUFGcG+tAzufjkivUQ1AFnb9Y0E+n8zDC3T/UDbB6aPd1cDGg vQ== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tct5gv3g4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Sep 2023 08:43:02 +0000
+	Fri, 29 Sep 2023 08:43:12 +0000
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38T8h2cC027673
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38T8hBKK001088
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Sep 2023 08:43:02 GMT
+	Fri, 29 Sep 2023 08:43:11 GMT
 Received: from hu-ipkumar-blr.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Fri, 29 Sep 2023 01:42:52 -0700
+ 15.2.1118.30; Fri, 29 Sep 2023 01:43:02 -0700
 From: Praveenkumar I <quic_ipkumar@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
@@ -64,9 +64,9 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
 CC: <quic_kathirav@quicinc.com>, <quic_nsekar@quicinc.com>,
         <quic_srichara@quicinc.com>
-Subject: [PATCH 3/8] arm64: dts: qcom: ipq5332: Add USB Super-Speed PHY node
-Date: Fri, 29 Sep 2023 14:12:04 +0530
-Message-ID: <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
+Subject: [PATCH 4/8] dt-bindings: usb: dwc3: Add clocks on Qualcomm IPQ5332
+Date: Fri, 29 Sep 2023 14:12:05 +0530
+Message-ID: <20230929084209.3033093-5-quic_ipkumar@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
@@ -76,19 +76,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 8jRScBPWSqRMlnJCF3T2QGnUlZKIeR1P
-X-Proofpoint-ORIG-GUID: 8jRScBPWSqRMlnJCF3T2QGnUlZKIeR1P
+X-Proofpoint-ORIG-GUID: 8tH2XLhxZZGsd95aT5c88-YoBwfrUzlG
+X-Proofpoint-GUID: 8tH2XLhxZZGsd95aT5c88-YoBwfrUzlG
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-09-29_07,2023-09-28_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=519 spamscore=0
- bulkscore=0 mlxscore=0 priorityscore=1501 suspectscore=0 malwarescore=0
- impostorscore=0 clxscore=1015 adultscore=0 phishscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2309180000
- definitions=main-2309290074
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 mlxlogscore=742 impostorscore=0 phishscore=0 adultscore=0
+ suspectscore=0 priorityscore=1501 mlxscore=0 bulkscore=0 clxscore=1015
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2309290074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230929_014319_049765_AFC84E1E 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20230929_014328_829273_22C82EBB 
+X-CRM114-Status: GOOD (  14.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,57 +105,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB Super-Speed UNIPHY node and populate the phandle on
-gcc node for the parent clock map.
+Add aux and lfps clocks in Qualcomm IPQ5332. These clocks are required
+for USB Super-Speed support.
 
 Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 ---
- arch/arm64/boot/dts/qcom/ipq5332.dtsi | 25 ++++++++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/usb/qcom,dwc3.yaml    | 20 ++++++++++++++++++-
+ 1 file changed, 19 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-index d3fef2f80a81..b08ffd8c094e 100644
---- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-@@ -158,6 +158,29 @@ usbphy0: phy@7b000 {
- 			status = "disabled";
- 		};
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index 67591057f234..18af2887b984 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -149,6 +149,25 @@ allOf:
+             - const: sleep
+             - const: mock_utmi
  
-+		usbphy1: phy@4b0000 {
-+			compatible = "qcom,ipq5332-usb-uniphy";
-+			reg = <0x4b0000 0x800>;
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq5332-dwc3
++    then:
++      properties:
++        clocks:
++          maxItems: 6
++        clock-names:
++          items:
++            - const: core
++            - const: iface
++            - const: sleep
++            - const: mock_utmi
++            - const: aux
++            - const: lfps
 +
-+			clocks = <&gcc GCC_PCIE3X1_PHY_AHB_CLK>,
-+				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-+				 <&gcc GCC_USB0_PIPE_CLK>;
-+			clock-names = "ahb",
-+				      "cfg_ahb",
-+				      "pipe";
-+
-+			resets =  <&gcc GCC_USB0_PHY_BCR>;
-+
-+			#clock-cells = <0>;
-+			clock-output-names = "usb0_pipe_clk_src";
-+
-+			qcom,phy-usb-mux-sel = <&tcsr 0x10540>;
-+
-+			#phy-cells = <0>;
-+
-+			status = "disabled";
-+		};
-+
- 		qfprom: efuse@a4000 {
- 			compatible = "qcom,ipq5332-qfprom", "qcom,qfprom";
- 			reg = <0x000a4000 0x721>;
-@@ -200,7 +223,7 @@ gcc: clock-controller@1800000 {
- 				 <&sleep_clk>,
- 				 <0>,
- 				 <0>,
--				 <0>;
-+				 <&usbphy1>;
- 		};
- 
- 		tcsr_mutex: hwlock@1905000 {
+   - if:
+       properties:
+         compatible:
+@@ -238,7 +257,6 @@ allOf:
+         compatible:
+           contains:
+             enum:
+-              - qcom,ipq5332-dwc3
+               - qcom,msm8994-dwc3
+               - qcom,qcs404-dwc3
+     then:
 -- 
 2.34.1
 
