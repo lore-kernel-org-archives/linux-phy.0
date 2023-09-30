@@ -4,73 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DB8BE728CA
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Sep 2023 16:23:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB30FE77377
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 14:57:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6/a49WksG0MvibeNJqqKz9mRLbqj6nqJJBeXQeh498I=; b=Erv5PevmL3QbiH
-	Cf+qciXM7j6qpVHF2Yv07QmpQnstVseJ/1vrpEAJkcxT0k6bzhfk+D3JiUzMlHhtkeMKuZDzwoP1k
-	8LoDoQppTCZNKUwdNmsCfilOznBVsKHNmWar+Vg0kEIaWgl9RC6Axy5AYlBtCUtWy2OO8i7U91Hxi
-	AXq1wuvBvP2VxFPQb/NbB+W7KRv2R2hEwpPd8Av/SquTU7jjUBRVIeKFo2lAiXfBhRPtrth9PAGuu
-	qxd/3oQYCQaoW2ukZrqsQ8sIHOiI3MZ/y56BpPiaXn2rVLfa0u8inCeEWUtPlgNCiuAv+KOff/A9u
-	LJDCW5gxFxwImbQ0OQYg==;
+	List-Owner; bh=hN1M3OthdK7I6Ki7m4knqhaByaSlgYkw9K01u1T3Zko=; b=2/E7UQGPSD4AdX
+	clcPEuccVmx2fIhLrbLuY4dsBS6QmXshGvfdWn4WhG3EwUBQQ3mNGg/SOgov25Kbl47m2ZzAj3T+A
+	dMhmw+ixXDRtPzRaErHxDMaoQeyXo6boxABbfr17TByRBGlB5cWj7Jba8EWKjCaQakB5pGYMaQYvu
+	z9hhN/6uMiGeqO52aPJ+TgtinB9xLUIZVBkrgJ+xat/b1ejoVEm1XtEB05TqQim7Q1ChmtwiFhvvH
+	39eWGgDfa4zBfh1Bwy0lwKGrD3Jd3q+AZPgVhirsf6YXAT2NFiChyOR56XO89wCHvJMIYdqkj3Ui2
+	7zf+CqODyabS7z37XUQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmGH4-008HvW-33;
-	Fri, 29 Sep 2023 16:23:30 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qmbPE-009i5m-0i;
+	Sat, 30 Sep 2023 14:57:20 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmGH2-008Hue-1k
+	id 1qmbPA-009i4o-1a
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Sep 2023 16:23:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1CEBD61E50;
-	Fri, 29 Sep 2023 16:23:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 449B5C433C7;
-	Fri, 29 Sep 2023 16:23:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696004606;
-	bh=vdHsFS1qwouM+3ZESdMWBKhRRi64cXjRGOWqnTWm4nE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HiKXhd8fVklhkUvZLY/7nVB9NKzzeU+CKrADgeA2VwJVUpuWHiHGUV7uVaUcd3oQz
-	 VRjklVMCsTZ0MT4mgBsdx42amXJ993diG7iv3JZKM78vHl3G2s/muANlcfbmZSBXvv
-	 vsVntbyTdWfsJSiGresmpLIY2AnnnG0HDr6BKSlMzhqGMisPBMOsKdII/RVMX8HzQ1
-	 NmZ7E/PLEudfKlQjsGJROfj/RndTmFX1aaT+jV5ewhGa529PLNG8uBCVeyIlm+MXQW
-	 SPqgJwnCWE+JkFjHlVMZEcQYG+e+JwVWSoLmglreLJJsvVt1fm3WIVrmtafI3V5gYv
-	 iMV8gsUxh6Low==
-Date: Fri, 29 Sep 2023 21:53:22 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH v2 net-next 04/15] phy: allow querying the address of
- protocol converters through phy_get_status()
-Message-ID: <ZRb5+h4TnGRKl3/6@matsya>
-References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-5-vladimir.oltean@nxp.com>
+	Sat, 30 Sep 2023 14:57:18 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9a9cd066db5so2145202866b.0
+        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 07:57:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1696085835; x=1696690635; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=1xh7JD7J8zpmGRPBgU/lLHiIQCHWK0v040WJUddWCQA=;
+        b=UEZZGKR5enWejNk3vUXEFSxkINiSD7NP0oipayHFCT4lJq4LzNUgM/Xpdo6/IVUAGG
+         guX4rNJkX4M6x/uHLVZCh6heQ9Mr89CmymR78TD3iR8z+YGK2Uqq2SR9YuFLtpnKDna9
+         lkGZ8EbGT8Av4E9l04KXS/W8sA/0PdRpbcU3NvVJbFazW6M3diLqhr6kWJ58VPL+pe9s
+         mdzZCOAdhVgW5XPZCsK4M0ey2kvw2odTK5WhnK98rwLMEgzqso4sv0hlOAfxZY0Yy7RG
+         D3CUSawKcrhOsWaSeGjxwzRW6eDSPtluczOMV5nh+EOF7GIomLkbp6SDmG7M3Z8M+3kX
+         yEmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1696085835; x=1696690635;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1xh7JD7J8zpmGRPBgU/lLHiIQCHWK0v040WJUddWCQA=;
+        b=izMOub3MtzXFp4M0m+VynZxpQBxx3mbmT8j1HFxNnqTaAY2O2IHr66XWmXHBfSe8ii
+         GkhocEWPCiojrhX5UhmFHJStaJ+GPN4SHok71mME9QUAM3vIsRVUfIs7DJd9QNXKlhL1
+         KhSYfEvw5v8G4Hn1OOfHRnWCN2FKU6fT8JUYhTpxBWc/bxpwd4cAoapwkiURAXpyoAn+
+         oxJCuoY8MUQ/oSpQnPvjS/p3s9ISf/yyOEsSmuMaWmu3jD780byDU+nWREokq2ezqHYt
+         UsHEw0e/If77PUcZyqSw/F+KRMCn8mWyfgztDJHIVQugWZhRqOr3vNu0o1KoAidKs6/5
+         RYNQ==
+X-Gm-Message-State: AOJu0Yx5kK7A0exKPS/KTAUHYz7L64k+KyMETWq0NtCceKmr84gbXcsk
+	hdSMamQO9hkH2nza8Ik4KhfEZw==
+X-Google-Smtp-Source: AGHT+IGRIH3Pk0SH9A3fSEOxR16gLz5OwppYbC+heMMfgY+NPG+WVK/6RbqEX7fo2vBgcDyqkutC+Q==
+X-Received: by 2002:a17:906:8e:b0:9a1:e994:3440 with SMTP id 14-20020a170906008e00b009a1e9943440mr5206701ejc.4.1696085834699;
+        Sat, 30 Sep 2023 07:57:14 -0700 (PDT)
+Received: from [192.168.8.76] ([88.154.47.206])
+        by smtp.gmail.com with ESMTPSA id qk7-20020a1709077f8700b009b2b4385db7sm5662953ejc.92.2023.09.30.07.57.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 30 Sep 2023 07:57:14 -0700 (PDT)
+Message-ID: <d1536449-d80b-4ee7-a3d8-ab68a67be986@linaro.org>
+Date: Sat, 30 Sep 2023 16:56:59 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230923134904.3627402-5-vladimir.oltean@nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/8] dt-bindings: phy: qcom,uniphy-usb: Document
+ qcom,uniphy-usb phy
+Content-Language: en-US
+To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
+ will@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
+ arnd@arndb.de, neil.armstrong@linaro.org, nfraprado@collabora.com,
+ u-kumar1@ti.com, peng.fan@nxp.com, quic_wcheng@quicinc.com,
+ quic_varada@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Cc: quic_kathirav@quicinc.com, quic_nsekar@quicinc.com,
+ quic_srichara@quicinc.com
+References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-2-quic_ipkumar@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20230929084209.3033093-2-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230929_092328_691047_980CB27C 
-X-CRM114-Status: GOOD (  30.59  )
+X-CRM114-CacheID: sfid-20230930_075716_538370_BFD2D767 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,107 +149,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-09-23, 16:48, Vladimir Oltean wrote:
-> The bit stream handled by a SerDes lane needs protocol converters to be
-> usable for Ethernet. On Freescale/NXP SoCs, those protocol converters
-> are located on the internal MDIO buses of the Ethernet MACs that need
-> them.
+On 29/09/2023 10:42, Praveenkumar I wrote:
+> Document the Qualcomm USB3 22ull UNIPHY present in IPQ5332.
 > 
-> The location on that MDIO bus, on these SoCs, is not fixed, but given by
-> some control registers of the SerDes block itself.
-> 
-> Because no one modifies those addresses from the power-on default, so
-> far we've relied on hardcoding the default values in the device trees,
-> resulting in something like this:
-> 
-> 		pcs_mdio1: mdio@8c07000 {
-> 			compatible = "fsl,fman-memac-mdio";
-> 
-> 			pcs1: ethernet-phy@0 {
-> 				reg = <0>;
-> 			};
-> 		};
-> 
-> where the "reg" of "pcs1" can actually be retrieved from "serdes_1".
-> 
-> That was for the PCS. For AN/LT blocks, that can also be done, but the
-> MAC to PCS to AN/LT block mapping is non-trivial and extremely easy to
-> get wrong, which will confuse and frustrate any device tree writers.
-> 
-> The proposal is to take advantage of the fact that these protocol
-> converters *are* discoverable, and to side-step that entire device tree
-> mapping issue by not putting them in the device tree at all. So, one of
-> the consumers of the SerDes PHY uses the phy_get_status() API to figure
-> out the address on the MDIO bus, it also has a reference to the MDIO bus
-> => it can create the mdio_device in a non OF-based manner.
-> 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > ---
-> v1->v2: patch is new
+>  .../bindings/phy/qcom,ipq5332-usb-uniphy.yaml | 83 +++++++++++++++++++
+>  1 file changed, 83 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
+
+Filename should match compatible.
+
 > 
->  include/linux/phy/phy.h | 29 +++++++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index f1f03fa66943..ee721067517b 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -56,6 +56,33 @@ enum phy_media {
->  enum phy_status_type {
->  	/* Valid for PHY_MODE_ETHERNET and PHY_MODE_ETHTOOL */
->  	PHY_STATUS_CDR_LOCK,
-> +	PHY_STATUS_PCVT_ADDR,
-> +};
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
+> new file mode 100644
+> index 000000000000..90434cee9cdd
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
+> @@ -0,0 +1,83 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-uniphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +/* enum phy_pcvt_type - PHY protocol converter type
-
-It is not a generic protocol converter but an ethernet phy protocol
-converter, so i guess we should add that here (we are generic phy and
-not ethernet phy here!
-
-> + *
-> + * @PHY_PCVT_ETHERNET_PCS: Ethernet Physical Coding Sublayer, top-most layer of
-> + *			   an Ethernet PHY. Connects through MII to the MAC,
-> + *			   and handles link status detection and the conversion
-> + *			   of MII signals to link-specific code words (8b/10b,
-> + *			   64b/66b etc).
-> + * @PHY_PCVT_ETHERNET_ANLT: Ethernet Auto-Negotiation and Link Training,
-> + *			    bottom-most layer of an Ethernet PHY, beneath the
-> + *			    PMA and PMD. Its activity is only visible on the
-> + *			    physical medium, and it is responsible for
-> + *			    selecting the most adequate PCS/PMA/PMD set that
-> + *			    can operate on that medium.
-> + */
-> +enum phy_pcvt_type {
-> +	PHY_PCVT_ETHERNET_PCS,
-> +	PHY_PCVT_ETHERNET_ANLT,
-> +};
+> +title: Qualcomm USB Super-Speed UNIPHY
 > +
-> +struct phy_status_opts_pcvt {
-> +	enum phy_pcvt_type type;
-> +	union {
-> +		unsigned int mdio;
-> +	} addr;
->  };
->  
->  /* If the CDR (Clock and Data Recovery) block is able to lock onto the RX bit
-> @@ -71,9 +98,11 @@ struct phy_status_opts_cdr {
->   * union phy_status_opts - Opaque generic phy status
->   *
->   * @cdr:	Configuration set applicable for PHY_STATUS_CDR_LOCK.
-> + * @pcvt:	Configuration set applicable for PHY_STATUS_PCVT_ADDR.
->   */
->  union phy_status_opts {
->  	struct phy_status_opts_cdr		cdr;
-> +	struct phy_status_opts_pcvt		pcvt;
->  };
->  
->  /**
-> -- 
-> 2.34.1
+> +maintainers:
+> +  - Praveenkumar I <quic_ipkumar@quicinc.com>
+> +  - Varadarajan Narayanan <quic_varada@quicinc.com>
+> +
+> +description:
+> +  USB Super-Speed UNIPHY found in Qualcomm IPQ5332, IPQ5018 SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    items:
 
--- 
-~Vinod
+Drop items, not needed.
+
+> +      - const: qcom,ipq5332-usb-ssphy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 3
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ahb
+> +      - const: cfg_ahb
+> +      - const: pipe
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  vdd-supply:
+> +    description:
+> +      Phandle to 5V regulator supply to PHY digital circuit.
+> +
+> +  qcom,phy-usb-mux-sel:
+> +    description: PHY Mux Selection for USB
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    items:
+> +      - items:
+> +          - description: phandle of TCSR syscon
+> +          - description: offset of PHY Mux selection register
+> +
+> +  "#clock-cells":
+> +    const: 0
+> +
+> +  clock-output-names:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+
+You miss required: block.
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
