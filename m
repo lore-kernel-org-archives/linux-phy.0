@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4073E77376
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 14:59:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1503DE7737E
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 17:18:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:From:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lUXZ8o2ugI8eAkN2BWCcp3LZq7Zt2SKSeuXvqqflplY=; b=hpP1sZtFbKdELb
-	gk0VXnkbuC4CHyPNxoIXVvYH23ldu7J31rXPNfEEXPp/ypaJzI8NV89r5IdqxVMWEJ9blOpxruYoP
-	xRzGG33gVGWziliTW7fkjajyu5f2ZteAsgV7Tp5P2tVdErYD7JJh5aRMthC/EKPgobwO8Ol5j4v9s
-	AtuO61osuhIw/UIC6VXwaYtgzJUqKSvbGLboKTtTajHtlBICXXz/eZmqOnfuB/lUygyjuUP28z2/A
-	08cdsqD7nJxD3yZwt2p4+bp/PdR6G4/RlvdoTRZc2K/VbH4iOZprLulTjL/a0sGHmi7XB74nx0RzB
-	YmUlYnbX2cagluLigbpg==;
+	List-Owner; bh=rclbMJORIsQPisCH3uXblTS0nyqaDRJZvQgZ77MSxhk=; b=NS/6hp1I0Cj6+N
+	aX9Q9wW3Xh6WrAGTHV9CHu4L+2Tn/x136Uau8kQpDhW4GhZZKDuilbaGtV+wxY0yg7PoLhuYMb5DI
+	WUzRnW/oPrH54DWiWVxkfIeAhr8UnqkHgFywPuF5gcmyINY5AB3A7UC2KvC6l9kR1DIKJXP93OOY2
+	i06vP6ScZnYsqPvVOF5Smu7HSkouBefld2IT3lEDglUoSXIIza1NIEnQjif03BbQjiZXn+QGiHhPL
+	EtvwZsf04a2zIiS+Skjk758W7aP59+dz3gJCrSsdpPNS7uEeEDOGpiQn1qqLDQa9UjNQYKO+iXLuP
+	2TmLLM7I9DE5Gkpj4Ltg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmbR6-009iHo-1c;
-	Sat, 30 Sep 2023 14:59:16 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1qmdbn-009uah-20;
+	Sat, 30 Sep 2023 17:18:27 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmbR4-009iH3-1D
+	id 1qmdbk-009uZS-1c
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Sep 2023 14:59:15 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-99c1c66876aso2082926466b.2
-        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 07:59:12 -0700 (PDT)
+	Sat, 30 Sep 2023 17:18:26 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2bff936e10fso20731511fa.1
+        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 10:18:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696085951; x=1696690751; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=E9B2kQ3iq7p4VksKg+DkVqKQqg7HQD9C40iD0MzBios=;
-        b=RIkzDG7TmBKvj6NML+VkHkAMJF93OUODN92ja12v81v1P0eGQBsX8JAxbR5/PdhGe8
-         miRUVoGVqR6xcPeSt5g4GkTxezyLbqKJaet6Z/GGnYLtA1dS2FRUE+xwJMnTZR6udFqx
-         vT0UJjaQPwDlwyURfJ5GyKhBlhV5fi2yC0G+zlD8Yk+4iLPAj02wsjoErPLVNPZcOQtd
-         yt0H7aTZQ06PrlpcRQ/EUxIRyO0fLawjGdIqOLLh7jn9Jdo6yaKNZaLhAHQuyQzGh+aG
-         lamLenlw52O4p9nMl1zA4l8sau21kI8ZZ7cXNQm1lTGinkI4L03GGEPx0jm8ptWbXEFa
-         Q61g==
+        d=linaro.org; s=google; t=1696094298; x=1696699098; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:subject:from:user-agent:mime-version:date:message-id:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=VXfdPVhXPJrGGZ4SN+RAQ5z0z6qtec7h5xg/0e9zUX4=;
+        b=iSUNVYrUxeSh7rHAJJe6Jb7UMWGVWfb5a2aw50anNsUOPDZKwiRuQHHAumfVbmrUmx
+         Vr3o3h7BPl3OvYZbzlTUn5/t/MSvAqxrMMYnQvSWW606+k1kJpV2LqyBEemHNKRABjK+
+         dmxRTBUvwydEZGkwfCBFDDsfkAhpA50xHQcSfjaQU1Ve74SgwSY10XjTYpBeSNWXVYbe
+         pnncwBkA9Z9D2HnzKeN075n44GGmLclG75AZyLlcIaf6afEr68iluG+rutog1S+NBkjW
+         rjt1sF2Ndm4jlbNh4ruCPe+htYDboqoXIA9b0hu2Rnk9AEv/ttNQ2ZSo1r8n+XcRC5hS
+         dtHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696085951; x=1696690751;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1696094298; x=1696699098;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:subject:from:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=E9B2kQ3iq7p4VksKg+DkVqKQqg7HQD9C40iD0MzBios=;
-        b=uD9aL9/OxsfR4kqhd66r7vDaLslygFn96+aq7j0VttLRwSevDOiVT5EegxONRo5BPz
-         GWLOlYyg8EXc+XWevtp225uGr7ibuO9tkSjQjNuSUHAx9IsFftQ3ahrkH/tlQJRBVLRR
-         lH7q8BBn3LT9OGbb7SNPi2XoxeU7cBZfVhYlOui9h30UzB9gDNVV52qmnX7ktWk7pRSg
-         wIIoNDba1RrHtgjUA1mBZC48BabK7Zur1TWSZgLtCXY2ORGMexwsnQDg8MrWjqDgVhGB
-         QcDK5i2+qp/i15RUyGCC7GUkOVT0ZmWh6DrNzkxs5VLQwM+3e3aCJ2Db4+1oUMNsMjEd
-         XsmA==
-X-Gm-Message-State: AOJu0YxzsVmAi0tPsfDLTqVpWXYnoUuO5N5dyiKXcjqzugovW93duOD+
-	Mw0AL4SvMl2/YIf3SAmheqSvXQ==
-X-Google-Smtp-Source: AGHT+IH8axa7dnIe/xIWnpxdeRWUiiB26wu/xYmyDnj8UsBBSyQfBUqmeJcpXQ3QelVnDtcM41ngvg==
-X-Received: by 2002:a17:906:8a7a:b0:9ae:3d75:4c83 with SMTP id hy26-20020a1709068a7a00b009ae3d754c83mr6332082ejc.0.1696085951513;
-        Sat, 30 Sep 2023 07:59:11 -0700 (PDT)
-Received: from [192.168.8.76] ([88.154.47.206])
-        by smtp.gmail.com with ESMTPSA id qk7-20020a1709077f8700b009b2b4385db7sm5662953ejc.92.2023.09.30.07.59.00
+        bh=VXfdPVhXPJrGGZ4SN+RAQ5z0z6qtec7h5xg/0e9zUX4=;
+        b=T/sQhuCDoeMR1yFqbzz6fz0BnxcfuX8uJCqR1zM/byKEu69VdDDVf1Hn63y29aVNI5
+         bXUvYeyjZF2bgUgSEuZ47lDhdXNeAPxt3dGKRbnKehDxpOC/74AtetVFwjJcPuMSgyQq
+         goW2dP0KfUZ1E2Ln2R5qm7zHunp0TOthABXBnft1exXGV8i70V86/FUbRtJH1H+8b5qI
+         g3/nt3K9Q6WW+dSac9YR2bsvxhE31r/htqX1xdSE0RUMjVKbOjFe08n0AC9VH2BuhjsM
+         oU3Bk03WC+80aSbLyuJbCe1t6bgc8P9aqfhqquHGELgeag2nUvs4/bhN7wwkUONVeotM
+         2Q6g==
+X-Gm-Message-State: AOJu0YyR9ASPLNNIUmrYov/nWXhs+MzoxvCoLZSTsRkSkEav5GJDYht5
+	ksMLjunS8sDEkbg4c5Z3kKcPjQ==
+X-Google-Smtp-Source: AGHT+IFWLkpDIo4Dku+cy+qiAqnOoVI4CaVT5rs6kOyCwZ9kX/+NFB+D68536r0XlqGG5i74rTiNGw==
+X-Received: by 2002:a05:6512:2242:b0:503:1ca2:7673 with SMTP id i2-20020a056512224200b005031ca27673mr5828809lfu.14.1696094298169;
+        Sat, 30 Sep 2023 10:18:18 -0700 (PDT)
+Received: from [192.168.246.189] (85-76-150-213-nat.elisa-mobile.fi. [85.76.150.213])
+        by smtp.gmail.com with ESMTPSA id ep30-20020a056512485e00b00500cede2786sm3985491lfb.65.2023.09.30.10.18.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 30 Sep 2023 07:59:11 -0700 (PDT)
-Message-ID: <99fa3e43-2202-44d4-ae45-0b47568a5758@linaro.org>
-Date: Sat, 30 Sep 2023 16:59:00 +0200
+        Sat, 30 Sep 2023 10:18:17 -0700 (PDT)
+Message-ID: <412492d1-fcc9-481c-9d28-b208a644ba1d@linaro.org>
+Date: Sat, 30 Sep 2023 20:18:13 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 8/8] arm64: defconfig: Enable qcom USB UNIPHY driver
-Content-Language: en-US
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: Re: [PATCH 2/8] phy: qcom: Introduce Super-Speed USB UNIPHY driver
 To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
  kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -82,57 +82,12 @@ To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
 Cc: quic_kathirav@quicinc.com, quic_nsekar@quicinc.com,
  quic_srichara@quicinc.com
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-9-quic_ipkumar@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20230929084209.3033093-9-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-3-quic_ipkumar@quicinc.com>
+Content-Language: en-GB
+In-Reply-To: <20230929084209.3033093-3-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230930_075914_419621_98DDBE4E 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230930_101824_614540_1ACF264E 
+X-CRM114-Status: GOOD (  37.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,39 +99,434 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/09/2023 10:42, Praveenkumar I wrote:
-> Enable USB UNIPHY driver present in Qualcomm IPQ5332.
+On 29/09/2023 11:42, Praveenkumar I wrote:
+> Adds Qualcomm 22ull Super-Speed USB UNIPHY driver support which
+> is present in Qualcomm IPQ5332 SoC. This PHY is interfaced with
+> SNPS DWC3 USB and SNPS DWC PCIe. Either one of the interface
+> can use the it and selection is done via mux present in TCSR
+> register. This driver selects the PHY for DWC3 USB and handles
+> the reset, clocks and regulator.
 > 
 > Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > ---
+>   drivers/phy/qualcomm/Kconfig               |  11 +
+>   drivers/phy/qualcomm/Makefile              |   1 +
+>   drivers/phy/qualcomm/phy-qcom-uniphy-usb.c | 322 +++++++++++++++++++++
+>   3 files changed, 334 insertions(+)
+>   create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> 
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index d891058b7c39..7257c8455c53 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -154,6 +154,17 @@ config PHY_QCOM_M31_USB
+>   	  management. This driver is required even for peripheral only or
+>   	  host only mode configurations.
+>   
+> +config PHY_QCOM_UNIPHY_USB
+> +	tristate "Qualcomm USB Super-Speed UNIPHY driver"
 
+Can we please have more specific driver name? As I wrote earlier, there 
+are two other (different) kinds of Qualcomm UNI PHY devices:
+- DSI / HDMI UNIPHY on apq8064 / msm8974 / msm8960 (?)
+- USB QMP UNI PHY drivers
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Adding a driver called UNIPHY, which is not related to those two kinds 
+sounds pretty confusing to me.
 
+> +	depends on USB && (ARCH_QCOM || COMPILE_TEST)
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the Qualcomm USB Super-Speed UNIPHY transceiver
+> +	  with DWC3 USB core. It handles PHY initialization, clock
+> +	  management required after resetting the hardware and power
+> +	  management. This driver is required even for peripheral only or
+> +	  host only mode configurations.
+> +
+>   config PHY_QCOM_USB_HS
+>   	tristate "Qualcomm USB HS PHY module"
+>   	depends on USB_ULPI_BUS
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index ffd609ac6233..c3e0112a7a70 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -17,6 +17,7 @@ obj-$(CONFIG_PHY_QCOM_QMP_USB_LEGACY)	+= phy-qcom-qmp-usb-legacy.o
+>   obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
+>   obj-$(CONFIG_PHY_QCOM_SNPS_EUSB2)	+= phy-qcom-snps-eusb2.o
+>   obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)	+= phy-qcom-eusb2-repeater.o
+> +obj-$(CONFIG_PHY_QCOM_UNIPHY_USB)	+= phy-qcom-uniphy-usb.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c b/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> new file mode 100644
+> index 000000000000..fdfc9c225995
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
 
----
+So, is it a USB PHY or UNI PHY (where I would expect that it handles USB 
+and PCIe?)
 
-This is an automated instruction, just in case, because many review tags
-are being ignored. If you know the process, you can skip it (please do
-not feel offended by me posting it here - no bad intentions intended).
-If you do not know the process, here is a short explanation:
+> @@ -0,0 +1,322 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2023, Qualcomm Innovation Center, Inc. All rights reserved.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/regulator/consumer.h>
+> +#include <linux/reset.h>
+> +
+> +#define PCIE_USB_COMBO_PHY_CFG_MISC1		0x214
+> +#define PCIE_USB_COMBO_PHY_CFG_RX_AFE_2		0x7C4
+> +#define PCIE_USB_COMBO_PHY_CFG_RX_DLF_DEMUX_2	0x7E8
+> +
+> +/* TCSR_USB_MUX_SEL regiter bits */
+> +#define TCSR_USB_MUX_SEL				BIT(0)
+> +
+> +struct phy_init_tbl {
+> +	unsigned int offset;
+> +	unsigned int val;
+> +};
+> +
+> +#define PHY_INIT_CFG(o, v)		\
+> +	{				\
+> +		.offset = o,		\
+> +		.val = v,		\
+> +	}
+> +
+> +static const struct phy_init_tbl ipq5332_usb_uniphy_init_tbl[] = {
+> +	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_RX_AFE_2, 0x1076),
+> +	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_RX_DLF_DEMUX_2, 0x3142),
+> +	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_MISC1, 0x3),
+> +};
 
-Please add Acked-by/Reviewed-by/Tested-by tags when posting new
-versions, under or above your Signed-off-by tag. Tag is "received", when
-provided in a message replied to you on the mailing list. Tools like b4
-can help here. However, there's no need to repost patches *only* to add
-the tags. The upstream maintainer will do that for tags received on the
-version they apply.
+We already have this issue in QMP drivers. Could you please move data 
+definitions to come after all struct definitions?
 
-https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
+> +
+> +struct uniphy_cfg {
+> +	const struct phy_init_tbl *init_seq;
+> +	int num_init_seq;
+> +};
+> +
+> +struct uniphy_usb {
+> +	struct device		*dev;
+> +	const struct uniphy_cfg	*cfg;
+> +	struct phy		*phy;
+> +	void __iomem		*base;
+> +	struct clk_bulk_data	*clks;
+> +	unsigned int		num_clks;
+> +	struct reset_control	*reset;
+> +	struct regulator	*vreg;
+> +	struct clk_fixed_rate	pipe_clk_fixed;
+> +	struct regmap		*tcsr;
+> +	unsigned int		usb_mux_offset;
+> +};
+> +
+> +static const struct uniphy_cfg ipq5332_usb_uniphy_cfg = {
+> +	.init_seq	= ipq5332_usb_uniphy_init_tbl,
+> +	.num_init_seq	= ARRAY_SIZE(ipq5332_usb_uniphy_init_tbl),
+> +};
+> +
+> +static int uniphy_usb_mux_enable(struct uniphy_usb *uniphy, bool enable)
+> +{
+> +	struct device *dev = uniphy->dev;
+> +	unsigned int val;
+> +	int ret;
+> +
+> +	if (!uniphy->tcsr)
+> +		return -EINVAL;
+> +
+> +	ret = regmap_read(uniphy->tcsr, uniphy->usb_mux_offset, &val);
+> +	if (ret) {
+> +		dev_err(dev, "Mux read failed: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	val = enable ? (val | TCSR_USB_MUX_SEL) : (val & ~TCSR_USB_MUX_SEL);
+> +	ret = regmap_write(uniphy->tcsr, uniphy->usb_mux_offset, val);
 
-Best regards,
-Krzysztof
+regmap_update_bits()
+
+> +	if (ret) {
+> +		dev_err(dev, "Mux write failed: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int uniphy_usb_init(struct phy *phy)
+> +{
+> +	struct uniphy_usb *uniphy = phy_get_drvdata(phy);
+> +	const struct uniphy_cfg *cfg = uniphy->cfg;
+> +	const struct phy_init_tbl *tbl = cfg->init_seq;
+> +	void __iomem *base = uniphy->base;
+> +	struct device *dev = uniphy->dev;
+> +	int i, ret;
+> +
+> +	ret = regulator_enable(uniphy->vreg);
+> +	if (ret) {
+> +		dev_err(dev, "failed to enable regulator, %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/* Perform phy reset */
+> +	reset_control_assert(uniphy->reset);
+> +	usleep_range(1, 5);
+> +	reset_control_deassert(uniphy->reset);
+
+Error checkig, please.
+
+> +
+> +	ret = uniphy_usb_mux_enable(uniphy, true);
+> +	if (ret < 0)
+> +		goto err_assert_reset;
+> +
+> +	ret = clk_bulk_prepare_enable(uniphy->num_clks, uniphy->clks);
+> +	if (ret) {
+> +		dev_err(dev, "failed to enable clocks: %d\n", ret);
+> +		goto err_assert_reset;
+> +	}
+> +
+> +	/* phy autoload delay */
+> +	usleep_range(35, 40);
+> +
+> +	for (i = 0; i < cfg->num_init_seq; i++)
+> +		writel(tbl[i].val, base + tbl[i].offset);
+> +
+> +	return 0;
+> +
+> +err_assert_reset:
+> +	/* Assert phy reset */
+> +	reset_control_assert(uniphy->reset);
+> +
+> +	return ret;
+> +}
+> +
+> +static int uniphy_usb_shutdown(struct phy *phy)
+> +{
+> +	struct uniphy_usb *uniphy = phy_get_drvdata(phy);
+> +
+> +	clk_bulk_disable_unprepare(uniphy->num_clks, uniphy->clks);
+> +
+> +	uniphy_usb_mux_enable(uniphy, false);
+> +
+> +	/* Assert phy reset */
+> +	reset_control_assert(uniphy->reset);
+> +
+> +	regulator_disable(uniphy->vreg);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops uniphy_usb_ops = {
+> +	.power_on	= uniphy_usb_init,
+> +	.power_off	= uniphy_usb_shutdown,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static int qcom_uniphy_usb_mux_init(struct uniphy_usb *uniphy)
+
+Inline this function please.
+
+> +{
+> +	struct device *dev = uniphy->dev;
+> +	int ret;
+> +
+> +	uniphy->tcsr = syscon_regmap_lookup_by_phandle_args(dev->of_node, "qcom,phy-usb-mux-sel",
+> +							    1, &uniphy->usb_mux_offset);
+> +	if (IS_ERR(uniphy->tcsr)) {
+> +		ret = PTR_ERR(uniphy->tcsr);
+> +		uniphy->tcsr = NULL;
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int qcom_uniphy_usb_clk_init(struct uniphy_usb *uniphy)
+
+Inline
+
+> +{
+> +	struct device *dev = uniphy->dev;
+> +	int ret;
+> +
+> +	ret = devm_clk_bulk_get_all(dev, &uniphy->clks);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	uniphy->num_clks = ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static void phy_clk_release_provider(void *res)
+> +{
+> +	of_clk_del_provider(res);
+> +}
+> +
+> +/*
+> + * Register a fixed rate pipe clock.
+> + *
+> + * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
+> + * controls it. The <s>_pipe_clk coming out of the GCC is requested
+> + * by the PHY driver for its operations.
+> + * We register the <s>_pipe_clksrc here. The gcc driver takes care
+> + * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
+> + * Below picture shows this relationship.
+> + *
+> + *         +---------------+
+> + *         |   PHY block   |<<---------------------------------------+
+> + *         |               |                                         |
+> + *         |   +-------+   |                   +-----+               |
+> + *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
+> + *    clk  |   +-------+   |                   +-----+
+> + *         +---------------+
+> + */
+> +static int phy_pipe_clk_register(struct uniphy_usb *uniphy, struct device_node *np)
+> +{
+> +	struct clk_fixed_rate *fixed = &uniphy->pipe_clk_fixed;
+> +	struct device *dev = uniphy->dev;
+> +	struct clk_init_data init = { };
+> +	int ret;
+> +
+> +	ret = of_property_read_string(np, "clock-output-names", &init.name);
+> +	if (ret) {
+> +		dev_err(dev, "%pOFn: No clock-output-names\n", np);
+> +		return ret;
+> +	}
+> +
+> +	init.ops = &clk_fixed_rate_ops;
+> +
+> +	fixed->fixed_rate = 250000000;
+> +	fixed->hw.init = &init;
+> +
+> +	ret = devm_clk_hw_register(dev, &fixed->hw);
+
+devm_clk_hw_register_fixed_rate()
+
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return devm_add_action_or_reset(dev, phy_clk_release_provider, np);
+
+devm_of_clk_add_hw_provider().
+
+> +}
+> +
+> +static int qcom_uniphy_usb_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct phy_provider *phy_provider;
+> +	struct uniphy_usb *uniphy;
+> +	struct device_node *np;
+> +	int ret;
+> +
+> +	uniphy = devm_kzalloc(dev, sizeof(*uniphy), GFP_KERNEL);
+> +	if (!uniphy)
+> +		return -ENOMEM;
+> +
+> +	uniphy->dev = dev;
+> +
+> +	uniphy->cfg = of_device_get_match_data(dev);
+> +	if (!uniphy->cfg)
+> +		return -EINVAL;
+> +
+> +	uniphy->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(uniphy->base))
+> +		return PTR_ERR(uniphy->base);
+> +
+> +	ret = qcom_uniphy_usb_clk_init(uniphy);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to get clock\n");
+> +
+> +	ret = qcom_uniphy_usb_mux_init(uniphy);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to get USB mux\n");
+> +
+> +	uniphy->reset = devm_reset_control_get_exclusive_by_index(dev, 0);
+> +	if (IS_ERR(uniphy->reset))
+> +		return dev_err_probe(dev, PTR_ERR(uniphy->reset), "failed to get reset\n");
+> +
+> +	uniphy->vreg = devm_regulator_get_exclusive(dev, "vdd");
+
+Why do you need the exclusive control here?
+
+> +	if (IS_ERR(uniphy->vreg))
+> +		return dev_err_probe(dev, PTR_ERR(uniphy->phy), "failed to get vreg\n");
+> +
+> +	np = of_node_get(dev->of_node);
+
+No need to get/put it, just use dev->of_node directly.
+
+> +	ret = phy_pipe_clk_register(uniphy, np);
+> +	if (ret) {
+> +		dev_err_probe(dev, ret, "failed to register pipe clk\n");
+> +		goto err;
+> +	}
+> +
+> +	uniphy->phy = devm_phy_create(dev, NULL, &uniphy_usb_ops);
+> +	if (IS_ERR(uniphy->phy)) {
+> +		ret = PTR_ERR(uniphy->phy);
+> +		dev_err_probe(dev, ret, "failed to create PHY\n");
+> +		goto err;
+> +	}
+> +
+> +	phy_set_drvdata(uniphy->phy, uniphy);
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +
+> +	ret = PTR_ERR_OR_ZERO(phy_provider);
+> +
+> +err:
+> +	of_node_put(np);
+> +	return ret;
+> +}
+> +
+> +static const struct of_device_id qcom_uniphy_usb_of_match[] = {
+> +	{ .compatible = "qcom,ipq5332-usb-uniphy", .data = &ipq5332_usb_uniphy_cfg},
+> +	{ },
+> +};
+> +MODULE_DEVICE_TABLE(of, qcom_uniphy_usb_of_match);
+> +
+> +static struct platform_driver qcom_uniphy_usb_driver = {
+> +	.probe	= qcom_uniphy_usb_probe,
+> +	.driver = {
+> +		.of_match_table	= qcom_uniphy_usb_of_match,
+> +		.name  = "qcom,uniphy-usb",
+> +	}
+> +};
+> +module_platform_driver(qcom_uniphy_usb_driver);
+> +
+> +MODULE_DESCRIPTION("Qualcomm Super-Speed USB UNIPHY driver");
+> +MODULE_LICENSE("GPL");
+
+-- 
+With best wishes
+Dmitry
 
 
 -- 
