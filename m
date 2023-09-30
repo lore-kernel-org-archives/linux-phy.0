@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB30FE77377
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 14:57:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F567E77363
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 14:58:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hN1M3OthdK7I6Ki7m4knqhaByaSlgYkw9K01u1T3Zko=; b=2/E7UQGPSD4AdX
-	clcPEuccVmx2fIhLrbLuY4dsBS6QmXshGvfdWn4WhG3EwUBQQ3mNGg/SOgov25Kbl47m2ZzAj3T+A
-	dMhmw+ixXDRtPzRaErHxDMaoQeyXo6boxABbfr17TByRBGlB5cWj7Jba8EWKjCaQakB5pGYMaQYvu
-	z9hhN/6uMiGeqO52aPJ+TgtinB9xLUIZVBkrgJ+xat/b1ejoVEm1XtEB05TqQim7Q1ChmtwiFhvvH
-	39eWGgDfa4zBfh1Bwy0lwKGrD3Jd3q+AZPgVhirsf6YXAT2NFiChyOR56XO89wCHvJMIYdqkj3Ui2
-	7zf+CqODyabS7z37XUQw==;
+	List-Owner; bh=biR2IgwruXe1C8A9G51o3DnvdZ92AURNhLn9P7p5ToY=; b=twwvClzRUl+JN6
+	+QDiMNsqAd/Z/xOEp4dxTHhYJmmez5eA9pUs/Z1HV5RqiM9tgZo6yfZj0vBahnC+syhpClRzjP6jH
+	GiRws1xHJx35iqvbxjZX8gkYl5DU0PkZRwjS2LuzUzcDEthwv4K1iak7CjkhNEZe+5RGAGocT9soW
+	hkSW5P1sK9P+s4LP+CuiLILWkc6NhX+Wyk3qrecdXEMeL9Xjh03KpknUw43X93p15Iuz0FzZuD6i7
+	BrhLxXmFcjQn64Ue3NblBbVojGyM9A8mA4TOajiLGZpbnj2VL8mAKg90m7UnoqTecWSozwisrjfmz
+	pkwQ5VKjnuL9QvE3aSiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmbPE-009i5m-0i;
-	Sat, 30 Sep 2023 14:57:20 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qmbQQ-009iCa-0N;
+	Sat, 30 Sep 2023 14:58:34 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmbPA-009i4o-1a
+	id 1qmbQN-009iBX-1s
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Sep 2023 14:57:18 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9a9cd066db5so2145202866b.0
-        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 07:57:15 -0700 (PDT)
+	Sat, 30 Sep 2023 14:58:32 +0000
+Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-5346b64f17aso10944226a12.2
+        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 07:58:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696085835; x=1696690635; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1696085910; x=1696690710; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=1xh7JD7J8zpmGRPBgU/lLHiIQCHWK0v040WJUddWCQA=;
-        b=UEZZGKR5enWejNk3vUXEFSxkINiSD7NP0oipayHFCT4lJq4LzNUgM/Xpdo6/IVUAGG
-         guX4rNJkX4M6x/uHLVZCh6heQ9Mr89CmymR78TD3iR8z+YGK2Uqq2SR9YuFLtpnKDna9
-         lkGZ8EbGT8Av4E9l04KXS/W8sA/0PdRpbcU3NvVJbFazW6M3diLqhr6kWJ58VPL+pe9s
-         mdzZCOAdhVgW5XPZCsK4M0ey2kvw2odTK5WhnK98rwLMEgzqso4sv0hlOAfxZY0Yy7RG
-         D3CUSawKcrhOsWaSeGjxwzRW6eDSPtluczOMV5nh+EOF7GIomLkbp6SDmG7M3Z8M+3kX
-         yEmA==
+        bh=XhRNLpTtFuwflO9fICmWPN+t7DhTdGCrswb6CHsVjHM=;
+        b=OR5dvm6ljeXJDbRPtgqniP+WtSaMEscsDfgRRMDz5WAs7UqF6ZqAUBttV7MvFi7so0
+         Qmf/7MQ79vmxNEJeyEK8RYc673AEoPJG79uhusQs2yhxR4EjVdCybBl0rRlri2i3w16N
+         KRHK15hD93khw/zv/AqsCfYHfen84ODlAf2WfMjMMBsq99Xy9Qj/V0BAaJlaaoQfNS9j
+         KPEAaeavaWXw4wuVbYCb0rDhAkvXzrWWtomQif6JHpGgVdNYWbQS5+2KokzwR9jtvVg9
+         qvTlG3xz2Ol00/GVGwhvYkqCtD+hoZfQYF8xToo/OUPyclDc7gFZ5ujepUxl15X6WTab
+         aZOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696085835; x=1696690635;
+        d=1e100.net; s=20230601; t=1696085910; x=1696690710;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1xh7JD7J8zpmGRPBgU/lLHiIQCHWK0v040WJUddWCQA=;
-        b=izMOub3MtzXFp4M0m+VynZxpQBxx3mbmT8j1HFxNnqTaAY2O2IHr66XWmXHBfSe8ii
-         GkhocEWPCiojrhX5UhmFHJStaJ+GPN4SHok71mME9QUAM3vIsRVUfIs7DJd9QNXKlhL1
-         KhSYfEvw5v8G4Hn1OOfHRnWCN2FKU6fT8JUYhTpxBWc/bxpwd4cAoapwkiURAXpyoAn+
-         oxJCuoY8MUQ/oSpQnPvjS/p3s9ISf/yyOEsSmuMaWmu3jD780byDU+nWREokq2ezqHYt
-         UsHEw0e/If77PUcZyqSw/F+KRMCn8mWyfgztDJHIVQugWZhRqOr3vNu0o1KoAidKs6/5
-         RYNQ==
-X-Gm-Message-State: AOJu0Yx5kK7A0exKPS/KTAUHYz7L64k+KyMETWq0NtCceKmr84gbXcsk
-	hdSMamQO9hkH2nza8Ik4KhfEZw==
-X-Google-Smtp-Source: AGHT+IGRIH3Pk0SH9A3fSEOxR16gLz5OwppYbC+heMMfgY+NPG+WVK/6RbqEX7fo2vBgcDyqkutC+Q==
-X-Received: by 2002:a17:906:8e:b0:9a1:e994:3440 with SMTP id 14-20020a170906008e00b009a1e9943440mr5206701ejc.4.1696085834699;
-        Sat, 30 Sep 2023 07:57:14 -0700 (PDT)
+        bh=XhRNLpTtFuwflO9fICmWPN+t7DhTdGCrswb6CHsVjHM=;
+        b=TUUufz0pcoGsJ+NHkD4u3LaWKitqGp2nhVRB7HaWJOQlfK0v5CGPP5h54DqCb5OXfp
+         /8uG4GfEyenfhmissrR838+5aJ+P3gZMvARtPbo5GO8jAgo1JEy8Wy2wpvHEjA9UXuwn
+         /XbJUu4bkkUOaubr4W2sAo5WQxPSuX0vjGcY1LP5Im1C8m0rAuhJ2f7N+s6GS/+cNMvK
+         /o8Vk0jDmCk2GR8iEP/frOM2uaRs84ykOsvUfw6yvXbMJPw5eiKtPxyDeh5VpD15Tddh
+         kpiAYCbvGTdzYylixoTna/gn+M4u48vZZxJAmJhQRIEi9GaCRQ7skOBT/K90nJ0BUHcs
+         yl5w==
+X-Gm-Message-State: AOJu0YybARIirHYpbhALmyKAtf2UHCUWaxSyMOnSXw5EjfoB2f+cVGFt
+	64SM5wT+wPUEeyoj3gcdXPUJrQ==
+X-Google-Smtp-Source: AGHT+IGgy0NCDnxbJzLbMBSjHYuDIDJMISktLeNJAlYutBLBnGDy3EWZDQErpt0F7vKRkY6o3CqJxA==
+X-Received: by 2002:a17:906:3045:b0:9ae:3f7a:f777 with SMTP id d5-20020a170906304500b009ae3f7af777mr6597015ejd.9.1696085909774;
+        Sat, 30 Sep 2023 07:58:29 -0700 (PDT)
 Received: from [192.168.8.76] ([88.154.47.206])
-        by smtp.gmail.com with ESMTPSA id qk7-20020a1709077f8700b009b2b4385db7sm5662953ejc.92.2023.09.30.07.57.02
+        by smtp.gmail.com with ESMTPSA id qk7-20020a1709077f8700b009b2b4385db7sm5662953ejc.92.2023.09.30.07.58.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 30 Sep 2023 07:57:14 -0700 (PDT)
-Message-ID: <d1536449-d80b-4ee7-a3d8-ab68a67be986@linaro.org>
-Date: Sat, 30 Sep 2023 16:56:59 +0200
+        Sat, 30 Sep 2023 07:58:29 -0700 (PDT)
+Message-ID: <854412b9-4993-45a4-b935-037b3b6b9666@linaro.org>
+Date: Sat, 30 Sep 2023 16:58:19 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/8] dt-bindings: phy: qcom,uniphy-usb: Document
- qcom,uniphy-usb phy
+Subject: Re: [PATCH 4/8] dt-bindings: usb: dwc3: Add clocks on Qualcomm
+ IPQ5332
 Content-Language: en-US
 To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
@@ -83,7 +83,7 @@ To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
 Cc: quic_kathirav@quicinc.com, quic_nsekar@quicinc.com,
  quic_srichara@quicinc.com
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-2-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-5-quic_ipkumar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -129,10 +129,11 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20230929084209.3033093-2-quic_ipkumar@quicinc.com>
+In-Reply-To: <20230929084209.3033093-5-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230930_075716_538370_BFD2D767 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20230930_075831_623773_D30E1E53 
+X-CRM114-Status: UNSURE (   5.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,83 +151,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/09/2023 10:42, Praveenkumar I wrote:
-> Document the Qualcomm USB3 22ull UNIPHY present in IPQ5332.
+> Add aux and lfps clocks in Qualcomm IPQ5332. These clocks are required
+> for USB Super-Speed support.
 > 
 > Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > ---
->  .../bindings/phy/qcom,ipq5332-usb-uniphy.yaml | 83 +++++++++++++++++++
->  1 file changed, 83 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
 
-Filename should match compatible.
 
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
-> new file mode 100644
-> index 000000000000..90434cee9cdd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-usb-uniphy.yaml
-> @@ -0,0 +1,83 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-usb-uniphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm USB Super-Speed UNIPHY
-> +
-> +maintainers:
-> +  - Praveenkumar I <quic_ipkumar@quicinc.com>
-> +  - Varadarajan Narayanan <quic_varada@quicinc.com>
-> +
-> +description:
-> +  USB Super-Speed UNIPHY found in Qualcomm IPQ5332, IPQ5018 SoCs.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-
-Drop items, not needed.
-
-> +      - const: qcom,ipq5332-usb-ssphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 3
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ahb
-> +      - const: cfg_ahb
-> +      - const: pipe
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  vdd-supply:
-> +    description:
-> +      Phandle to 5V regulator supply to PHY digital circuit.
-> +
-> +  qcom,phy-usb-mux-sel:
-> +    description: PHY Mux Selection for USB
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    items:
-> +      - items:
-> +          - description: phandle of TCSR syscon
-> +          - description: offset of PHY Mux selection register
-> +
-> +  "#clock-cells":
-> +    const: 0
-> +
-> +  clock-output-names:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-
-You miss required: block.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
