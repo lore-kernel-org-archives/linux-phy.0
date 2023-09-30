@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1562E728E1
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 18:31:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98F37E71D55
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Sep 2023 18:31:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19SfJFh5zdjrFQ6puj1VNmBJzrFmTlDQlftobeBricI=; b=sON/HTuYqwJY7t
-	oMNFDU/WLmfzN/+BpBAtzE2wwCTtYbbuDAE9LmtzoA8kslwHdM1EYjXYE2Z8gSt4yMz9K8SLwOUiA
-	gefzmSz/LZ0U3fOYyh+uU2x1oTzKIySZhGbwJ+7xWAM1CYhCppxrEv3+5Z5bMVIM2q0fn1q2S8+U9
-	cN3k+GVQpOXZ1xKBHboo2mSNBSW5O/LrHWm/o/i+7RWun9gDr8R4C8Qi7gWoIWMTlmFtsWq5voYw+
-	OincGBpVmLZrY6+U2zWTXn2r1we6qYiWTx1/BDXaNh+uNMMaQWsDMoezQ1ZDRWzwVPxBVgEbayDm8
-	+BP0nwEdfrsfyQTYSkYw==;
+	List-Owner; bh=M8C18OOQ8NNzFcqAe3cYJ89/cuZ6d9kkRLPIK1H5sUI=; b=dWq9Klam2QpXIa
+	HDWZspxigUXzExfUNlTsOU77NyCoa3ufDjbgMd7W+HZQUnIjb7O5nqdtlLFejaaFtWV9GqgH8VTTY
+	yKmcbN5M9M41Jin7VaH0YouMpbkp5hvtl8DVkB3NmnEYIjar5r/mHNewK5zkbjXBDXZmDpYDMnO+p
+	b7Sbzmofc2Ma3e6vX6BAQyo5HWkH/dK/twso3tAElNmHKeKhSIpMotQPmovJymQ1KLxM+Bi522hCl
+	KXK7l3/4qDYj89oLA+IULkAdWFlcLh1G5PziUF5VZx5m8lqFUMm6Up2czqTRGcxQhpDnC4m1u4EkZ
+	260YOYHG/Mf7o00FsGoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmekF-00A1Xe-1q;
-	Sat, 30 Sep 2023 18:31:15 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1qmekG-00A1Y4-15;
+	Sat, 30 Sep 2023 18:31:16 +0000
+Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qmdfx-009vC2-14
+	id 1qmdhD-009vSC-0n
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Sep 2023 17:22:47 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-50573e85ee0so1193934e87.3
-        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 10:22:42 -0700 (PDT)
+	Sat, 30 Sep 2023 17:24:04 +0000
+Received: by mail-lj1-x232.google.com with SMTP id 38308e7fff4ca-2bffd6c1460so229457711fa.3
+        for <linux-phy@lists.infradead.org>; Sat, 30 Sep 2023 10:23:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696094561; x=1696699361; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1696094638; x=1696699438; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=JWtx9dHqmbOflZi0fnqEVpNoq1UTPPJzLzExwXGV3SI=;
-        b=AKOf9NyONZ3+QDrYp4jEHmOCmzebnG4EYLXEkvMAMBsNsAANoEKB+C1kA+g+i96qWo
-         iXWRAJzGYPN52uuUtcqN+mTduUJ13NzpRvmu8IvWTiSRsL5gWDnPIcOWZ4Lv/K5UN+Ng
-         Wf9eBOC5fW9NDzH/yBnjuKOksJ1RXOrVALNuP+yYTtXwVtFspdhMaqXwi3j2FS8V7PGl
-         G4Zla0s7iw4LsNrpkTvkDPamK+b0VP5N9/K/8Xd8TOfYqVOcHZwoM8WX0prDO9rX5QZa
-         j6vDwDaZTUsngQpf+5E4JEeW+ge3/oYOa+ekk2WcPetQmhT9Pl+cI52XkzvjsQIzMtg7
-         /y/g==
+        bh=MzpkS5WtBC86fJGuXY0GbjQIu9QUBdjEhDwmlgi2Kew=;
+        b=wNDeaMNEEzczsjnpfeRNuEIybLhgE4jcLiShaixYXERkx6U7Fp4qcieqaAY34O1Ppo
+         s9tqQdZRT7mae7CrqkqN9neihTIjpgMEFWZeD7sPy2zwGZwzL6Yc2WhaVc0dkOIqoJQL
+         m5Lx5zvJqhwpgxaU73n/Vmz/ko0DdfDENK7KexUEPkVFNjQfpidGnWL13WaMkMkjC/nU
+         T3LRwEoYOaBmKCb0I4xbxgiZ0J0U2WIsu8TKNtZcsxDfGubZHldRz8vRo4NCAJ8T1YU2
+         S5zE7J/NkljPrOovry9NRYf2J+k2mcEl3CKW2sDEuaucaxDReFNc6n3mdwZjKHVuTjsB
+         u9iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696094561; x=1696699361;
+        d=1e100.net; s=20230601; t=1696094638; x=1696699438;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=JWtx9dHqmbOflZi0fnqEVpNoq1UTPPJzLzExwXGV3SI=;
-        b=di4Citzh/m4vSR3l5YdRyRSyRp7fPkZR15658V/r/TaIJYslMEQL+jPwPc6mBZWEdc
-         ftgomJ6eo9314mf1ZMW8gwjs37wUfyF5ifQAWLGuK03ebYVhC4yEVkAMTg6wa48IUMXi
-         OQf1OP9F+HyVQMBYzbifEMe9VuA27t0d13e1nzdw7Wa5umjsIHy4Au+oyOR6RxiIml8Y
-         gXWoEN4eCGYDexd+1XyB1AC7tlDzMctr5Qrdyyi231ZM4PBvBbIBVp+3r/rnSOgU6LCB
-         VUUbcX6B7AYLMjG5umpy+aeaA2FDbBuraIEjBs8EDhohm14amP2x6m6b3pJiNI8XhKj8
-         2BYw==
-X-Gm-Message-State: AOJu0YwTII1rIkfklSIecJ4VTzTtXoZ4re8nwMLPRtEaW4NEkmdOFblz
-	xT/SqXqb1MW+MgEIvBWpjIzcqA==
-X-Google-Smtp-Source: AGHT+IFmPULHC/lTZvEAMtHRivlmdkecp21az20I0qHWTzyMMavZ5xJfz8FMnJKA5soibKeUp+nyEg==
-X-Received: by 2002:a05:6512:3a8c:b0:502:cc8d:f20a with SMTP id q12-20020a0565123a8c00b00502cc8df20amr7139739lfu.27.1696094561376;
-        Sat, 30 Sep 2023 10:22:41 -0700 (PDT)
+        bh=MzpkS5WtBC86fJGuXY0GbjQIu9QUBdjEhDwmlgi2Kew=;
+        b=egNZ/K2ZoiJ7mihDAlXWoS3FDlbN3VJdFLoxCvhWoobV9LFbr42fcSfsPvBnYQ8eIQ
+         jq7IiaKTDPma+hR9fi2tdfbdActklsxMH2nvM0g09IvHaGIcc/AMBOnmrV/vktaB7ggx
+         hrNxSDuY2WFvs8WYHfdCsfB+/ApZwfp9/ro76//5EgMCo1nAWW4KA8N7EpwUGaQnPz8K
+         ScCTchs54UamC8PDTB7vgAay9aZzSDlucy/Z+aFcA7ltezS4oB2nIkzGEAf53aX4UUcX
+         AxfG3r1/tPIRGzxqID894cGObtN7J3NpqMsja04N0g8iLurpM0GOV4YRsttQsQXLp3QZ
+         nSFg==
+X-Gm-Message-State: AOJu0YxaA1t21nC9CD3OrlBOIsLxU7jWSUXVCRzQx+96HUZZYLjgUmFA
+	AlJ0NGZn2HfTxsz7GRZ+I9BNqw==
+X-Google-Smtp-Source: AGHT+IGvXNt7OngCsZTWxJNJE2rVMCZJDaC/Er1JEElLoCfYx28zdY6xhS+zm33ksmi5HfdxncMRiw==
+X-Received: by 2002:a05:6512:10d0:b0:503:293a:dc1b with SMTP id k16-20020a05651210d000b00503293adc1bmr7471121lfg.30.1696094638327;
+        Sat, 30 Sep 2023 10:23:58 -0700 (PDT)
 Received: from [192.168.246.189] (85-76-98-178-nat.elisa-mobile.fi. [85.76.98.178])
-        by smtp.gmail.com with ESMTPSA id z8-20020ac25de8000000b00500ba43a43asm3994414lfq.86.2023.09.30.10.22.37
+        by smtp.gmail.com with ESMTPSA id z8-20020ac25de8000000b00500ba43a43asm3994414lfq.86.2023.09.30.10.23.54
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 30 Sep 2023 10:22:40 -0700 (PDT)
-Message-ID: <5bf11343-6ab4-43a8-b12d-f2b072ce388a@linaro.org>
-Date: Sat, 30 Sep 2023 20:22:36 +0300
+        Sat, 30 Sep 2023 10:23:57 -0700 (PDT)
+Message-ID: <c0abfa16-92f3-41e6-afb2-e542131ae67b@linaro.org>
+Date: Sat, 30 Sep 2023 20:23:54 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/8] arm64: dts: qcom: ipq5332: Add USB Super-Speed PHY
- node
+Subject: Re: [PATCH 4/8] dt-bindings: usb: dwc3: Add clocks on Qualcomm
+ IPQ5332
 Content-Language: en-GB
 To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
@@ -83,12 +83,12 @@ To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
 Cc: quic_kathirav@quicinc.com, quic_nsekar@quicinc.com,
  quic_srichara@quicinc.com
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-5-quic_ipkumar@quicinc.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20230929084209.3033093-4-quic_ipkumar@quicinc.com>
+In-Reply-To: <20230929084209.3033093-5-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230930_102245_403206_6B53C4CC 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20230930_102403_287840_A1C96E1F 
+X-CRM114-Status: GOOD (  12.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,65 +106,55 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/09/2023 11:42, Praveenkumar I wrote:
-> Add USB Super-Speed UNIPHY node and populate the phandle on
-> gcc node for the parent clock map.
+> Add aux and lfps clocks in Qualcomm IPQ5332. These clocks are required
+> for USB Super-Speed support.
 > 
 > Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > ---
->   arch/arm64/boot/dts/qcom/ipq5332.dtsi | 25 ++++++++++++++++++++++++-
->   1 file changed, 24 insertions(+), 1 deletion(-)
+>   .../devicetree/bindings/usb/qcom,dwc3.yaml    | 20 ++++++++++++++++++-
+>   1 file changed, 19 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> index d3fef2f80a81..b08ffd8c094e 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
-> @@ -158,6 +158,29 @@ usbphy0: phy@7b000 {
->   			status = "disabled";
->   		};
+> diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> index 67591057f234..18af2887b984 100644
+> --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> @@ -149,6 +149,25 @@ allOf:
+>               - const: sleep
+>               - const: mock_utmi
 >   
-> +		usbphy1: phy@4b0000 {
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,ipq5332-dwc3
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 6
+> +        clock-names:
+> +          items:
+> +            - const: core
+> +            - const: iface
+> +            - const: sleep
+> +            - const: mock_utmi
+> +            - const: aux
+> +            - const: lfps
 
-Are there other USB PHYs on this platform?
-
-> +			compatible = "qcom,ipq5332-usb-uniphy";
-> +			reg = <0x4b0000 0x800>;
-> +
-> +			clocks = <&gcc GCC_PCIE3X1_PHY_AHB_CLK>,
-> +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-> +				 <&gcc GCC_USB0_PIPE_CLK>;
-> +			clock-names = "ahb",
-> +				      "cfg_ahb",
-> +				      "pipe";
-> +
-> +			resets =  <&gcc GCC_USB0_PHY_BCR>;
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "usb0_pipe_clk_src";
-
-I'm not sure, what is the best approach her. For QMP USB and PCIe PHYs 
-we had to use fixed names historically. On the other hand for QMP DP 
-clocks we are fine with the generated names. I'd prefer the latter case.
+Could you please also describe the lfps clock in the top-level clocks entry?
 
 > +
-> +			qcom,phy-usb-mux-sel = <&tcsr 0x10540>;
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
->   		qfprom: efuse@a4000 {
->   			compatible = "qcom,ipq5332-qfprom", "qcom,qfprom";
->   			reg = <0x000a4000 0x721>;
-> @@ -200,7 +223,7 @@ gcc: clock-controller@1800000 {
->   				 <&sleep_clk>,
->   				 <0>,
->   				 <0>,
-> -				 <0>;
-> +				 <&usbphy1>;
->   		};
->   
->   		tcsr_mutex: hwlock@1905000 {
+>     - if:
+>         properties:
+>           compatible:
+> @@ -238,7 +257,6 @@ allOf:
+>           compatible:
+>             contains:
+>               enum:
+> -              - qcom,ipq5332-dwc3
+>                 - qcom,msm8994-dwc3
+>                 - qcom,qcs404-dwc3
+>       then:
 
 -- 
 With best wishes
