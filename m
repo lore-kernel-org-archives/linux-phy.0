@@ -4,99 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A46DBE784AF
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Oct 2023 09:10:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4793E7849A
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Oct 2023 09:51:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kAbdMq4jqP8vdRymXsu4GoUniYLNuJzHXWEneGLrD8M=; b=B+PXzihytxnoZL
-	/zgRbhX0gRg7qDTAfmEdZSGJiUZHl9tJr8vSTrfwssNRxirH3a6fAQznawUViofWOdsskJnUqjUnV
-	Og+tAc4uIzkB7/QvBa+mOlzndy+8A6JoIhzBc4eIqqROfzMLuo10SyhN4DTdqZoUJ7slrt7Ep29EK
-	cxYqWiJVNCiXMs3BdSLjJcgmOMwJw+W1gjhvLPDXCYFBqlq//98qikHduvqj7Aos6EoQoPbByG+ux
-	c7AqNYT+LEtjogAypZbNe14EXJhGAsGpbdWlhf08WUCeL/3fGQ5H+uCj4/3FFYglr3An+eF9pfu77
-	ScXGnw5X6Na0zYOEaXXA==;
+	List-Owner; bh=aiM5T3DKNeScK6QW+kyoJD46jAvkGfdB9VoqhzatgRw=; b=24Yy3OMfR3EISS
+	cEXuVoFJ9F71sMbP8+W7+mahyACICORaSeQffHHSvADI5Tvbg7BGosbf5aAP35zO8/7m+XWZiiLdf
+	eCSqLbUrTk+5IJcMB8C2i+rsjOfYSuWEEauY/fVeStvwPVULE9Dr8Ms9268bACmfSkPwZTIJRyhCB
+	XhCh6W/OuUweS15pbhopkt+bRQaR3rL/q2VCPS4Hi04+8lsMrZmftBuqtOpI6WL+BJjdBbl1EjDYC
+	LEbyBl/0lsNvNkODJWLbbR9+oVa+8l7rMU/MoPoNd4D4oJCvDroTkxwvKh3mgUH5+Rli/br1vN4GW
+	PUr0U56GhplA+uNm6/mA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnEx0-00CCzJ-14;
-	Mon, 02 Oct 2023 09:10:50 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1qnFaH-00CGjd-1D;
+	Mon, 02 Oct 2023 09:51:25 +0000
+Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnEwx-00CCyB-12;
-	Mon, 02 Oct 2023 09:10:49 +0000
-Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 3928E3qR022118;
-	Mon, 2 Oct 2023 11:10:14 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	selector1; bh=E01OcOCHWhP/6+N5KY2PJxe8Vqf5B2GZBRHXsK7b/ZI=; b=aA
-	egtRg/HZV5z61BlbQRmw/xhKB5/NOvXNbEABAWfThJ4zPTHndz302pa5QVjGM+sM
-	3J8B5ueo8i4iRhw3Pi7HwaWlrkqWsy58TBUitGYwlxhFctZH+p7nxHxKyjmiDHP0
-	gunyUnqWwhUVh8dpDShiYuX54yeB8rEzvnWdNJYWKBCqzgkrTC+zGteyX1b5Pb5j
-	Rf6xRjDsxe+C3FBAdS36hxq9MRrXNisC3EZbZEbT4TzCJ6MY1lbLR6cryXr1bkaw
-	d59gty15vIlgDcfiUoAb0YziosPbln43LGmK99GlHY0DfgQb6OF9EUVre9tgoPIq
-	Z+Sxdr7e5cMYwyIcmVVA==
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3tew80bymt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 02 Oct 2023 11:10:14 +0200 (MEST)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B9C5F100059;
-	Mon,  2 Oct 2023 11:10:12 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6252F211F22;
-	Mon,  2 Oct 2023 11:10:12 +0200 (CEST)
-Received: from [10.201.20.32] (10.201.20.32) by SHFDAG1NODE1.st.com
- (10.75.129.69) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Mon, 2 Oct
- 2023 11:10:10 +0200
-Message-ID: <f3dbcd84-1320-9efb-f715-71b6bb4c7bdb@foss.st.com>
-Date: Mon, 2 Oct 2023 11:10:05 +0200
+	id 1qnFaE-00CGjH-2F
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Oct 2023 09:51:24 +0000
+Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2c135cf2459so239694291fa.0
+        for <linux-phy@lists.infradead.org>; Mon, 02 Oct 2023 02:51:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1696240279; x=1696845079; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=JLs1VktsLlk8jSlnRreaZgQ/QeUwdA55Dkd4Kqx1630=;
+        b=xAH8KD45XTuf04R/Yl86qGn2K2Y15dUvStfW3F2MbzTSiHI2ei6TbDV/HpqfUXxFNq
+         h3qS5MZV2v/ebjaZrF4w1yAr0YOkZ1Rv48bGrU7/mfhHJEy81DX4UTkcGBWJeeZt/s9W
+         AH38bugsPwyj/ijpiIvZa0DKdfasqQhhQ1aFtOXN0uwdpyRfVr4zDivAmwnO1wtFYzWv
+         DfVwtNaTk2L9s/bUV61f3P8Ra6ukOh8PspQ2etlFO1EVrzZWDFYrRJ8X0Hdw5N9bWDgr
+         J8tzzC2XbwDq5mxhZP3hUhi6TWUCTYDnq0Nb0obLepNw7OtYTlhblOYkXGt7qyKVAKwQ
+         1IuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1696240279; x=1696845079;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=JLs1VktsLlk8jSlnRreaZgQ/QeUwdA55Dkd4Kqx1630=;
+        b=qM4963SKbcM0JuLDyGgKSQMv93TARb/0UnzKWa+cStZtqNDLIl49SpBZJtxFDzPPht
+         y5slNXkC0eu84drhP/xGUDvgLGJ3oFJJ9Q1FMgs158jS5g8x416nZMQniS42j5kEUGJA
+         WaUlpfmkV2hx1/6ZkZOZ4QmOaceKIZgT75FrWPzIO6m1crb6FDE8mMCG7xo31Lau9TgA
+         o7JvSc8qgcxLTnY2QGIUp6SvggyXuEBYir3bwqF6PqCC+bgbQgq5frx/tN8vDt6EJ90C
+         GiBtWmTxcXij0CHvJ0qWmubWIwx9NOP+ByShB8aPHUwHgaBS5hC0ZQOEMblE1tJArNtq
+         MHaA==
+X-Gm-Message-State: AOJu0Yz2Mx6Ayq3vj8e89K6AQeuxJ7K+7Q+eNs8LGQbmV1uwLEkC/bSH
+	nt7CPFUfycIOWrriy7h1zznc8g==
+X-Google-Smtp-Source: AGHT+IFOVOzVdjRKpbSkAlo6qh4MyGHDzKp2cGIoMm270v1GTGrFuVJwWEg8an2N9lHrz99nrbSpnw==
+X-Received: by 2002:a05:6512:23a4:b0:500:c765:bbe with SMTP id c36-20020a05651223a400b00500c7650bbemr11447285lfv.0.1696240279333;
+        Mon, 02 Oct 2023 02:51:19 -0700 (PDT)
+Received: from [172.30.204.164] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
+        by smtp.gmail.com with ESMTPSA id a16-20020a056512021000b0050315aa36fbsm4685416lfo.282.2023.10.02.02.51.18
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 02 Oct 2023 02:51:18 -0700 (PDT)
+Message-ID: <5f3c8a66-aba3-cef0-8df9-f897487f1098@linaro.org>
+Date: Mon, 2 Oct 2023 11:51:17 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101
  Thunderbird/102.15.1
-Subject: Re: [PATCH v5 01/11] dt-bindings: document generic access controller
-To: Rob Herring <robh@kernel.org>
-CC: <arnd@kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-mmc@vger.kernel.org>, <dmaengine@vger.kernel.org>,
-        <robh+dt@kernel.org>, <jic23@kernel.org>, <davem@davemloft.net>,
-        <kuba@kernel.org>, <pabeni@redhat.com>, <linux-spi@vger.kernel.org>,
-        <linux-i2c@vger.kernel.org>, <olivier.moysan@foss.st.com>,
-        <linux-media@vger.kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        Oleksii
- Moisieiev <oleksii_moisieiev@epam.com>, <edumazet@google.com>,
-        <linux-stm32@st-md-mailman.stormreply.com>, <ulf.hansson@linaro.org>,
-        <richardcochran@gmail.com>, <will@kernel.org>,
-        <linux-crypto@vger.kernel.org>, <netdev@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <arnaud.pouliquen@foss.st.com>,
-        <linux-serial@vger.kernel.org>, <alexandre.torgue@foss.st.com>,
-        Frank Rowand
-	<frowand.list@gmail.com>, <andi.shyti@kernel.org>,
-        <linux-usb@vger.kernel.org>, <peng.fan@oss.nxp.com>, <lee@kernel.org>,
-        <fabrice.gasnier@foss.st.com>, <conor+dt@kernel.org>,
-        <herbert@gondor.apana.org.au>, <linux-arm-kernel@lists.infradead.org>,
-        <catalin.marinas@arm.com>, <al.sa-devel@alsa-project.org>,
-        <hugues.fruchet@foss.st.com>, <devicetree@vger.kernel.org>,
-        <linux-iio@vger.kernel.org>, <mchehab@kernel.org>, <vkoul@kernel.org>,
-        <gregkh@linuxfoundation.org>
-References: <20230929142852.578394-1-gatien.chevallier@foss.st.com>
- <20230929142852.578394-2-gatien.chevallier@foss.st.com>
- <169600172184.3601218.2121908606358610119.robh@kernel.org>
+Subject: Re: [PATCH 4/5] phy: qcom: edp: Introduce support for DisplayPort
 Content-Language: en-US
-From: Gatien CHEVALLIER <gatien.chevallier@foss.st.com>
-In-Reply-To: <169600172184.3601218.2121908606358610119.robh@kernel.org>
-X-Originating-IP: [10.201.20.32]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE1.st.com
- (10.75.129.69)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-02_03,2023-09-28_03,2023-05-22_02
+To: Johan Hovold <johan@kernel.org>,
+ Bjorn Andersson <quic_bjorande@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>, quic_jesszhan@quicinc.com
+References: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
+ <20220810040745.3582985-5-bjorn.andersson@linaro.org>
+ <ZRqIHSetajQf7Um1@hovoldconsulting.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <ZRqIHSetajQf7Um1@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231002_021047_743858_C6E66B73 
-X-CRM114-Status: GOOD (  24.40  )
+X-CRM114-CacheID: sfid-20231002_025122_736334_C1BCE74D 
+X-CRM114-Status: GOOD (  20.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,116 +102,71 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 9/29/23 17:35, Rob Herring wrote:
-> 
-> On Fri, 29 Sep 2023 16:28:42 +0200, Gatien Chevallier wrote:
->> From: Oleksii Moisieiev <Oleksii_Moisieiev@epam.com>
+On 10/2/23 11:06, Johan Hovold wrote:
+> On Tue, Aug 09, 2022 at 09:07:44PM -0700, Bjorn Andersson wrote:
+>> The eDP phy can be used to drive either eDP or DP output, with some
+>> minor variations in some of the configuration and seemingly a need for
+>> implementing swing and pre_emphasis calibration.
 >>
->> Introducing of the generic access controller bindings for the
->> access controller provider and consumer devices. Those bindings are
->> intended to allow a better handling of accesses to resources in a
->> hardware architecture supporting several compartments.
+>> Introduce a config object, indicating if the phy is operating in eDP or
+>> DP mode and swing/pre-emphasis calibration to support this.
 >>
->> This patch is based on [1]. It is integrated in this patchset as it
->> provides a use-case for it.
->>
->> Diffs with [1]:
->> 	- Rename feature-domain* properties to access-control* to narrow
->> 	  down the scope of the binding
->> 	- YAML errors and typos corrected.
->> 	- Example updated
->> 	- Some rephrasing in the binding description
->>
->> [1]: https://lore.kernel.org/lkml/0c0a82bb-18ae-d057-562b
->>
->> Signed-off-by: Oleksii Moisieiev <oleksii_moisieiev@epam.com>
->> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
->>
+>> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 >> ---
->> Changes in V5:
->> 	- Diffs with [1]
->> 	- Discarded the [IGNORE] tag as the patch is now part of the
->> 	  patchset
+>>   drivers/phy/qualcomm/phy-qcom-edp.c | 80 +++++++++++++++++++++++++++--
+>>   1 file changed, 76 insertions(+), 4 deletions(-)
 >>
->>   .../access-controllers/access-controller.yaml | 90 +++++++++++++++++++
->>   1 file changed, 90 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/access-controllers/access-controller.yaml
->>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+>> index 32614fb838b5..301ac422d2fe 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+>> @@ -70,8 +70,19 @@
+>>   
+>>   #define TXn_TRAN_DRVR_EMP_EN                    0x0078
+>>   
+>> +struct qcom_edp_cfg {
+>> +	bool is_dp;
+>> +
+>> +	/* DP PHY swing and pre_emphasis tables */
+>> +	const u8 (*swing_hbr_rbr)[4][4];
+>> +	const u8 (*swing_hbr3_hbr2)[4][4];
+>> +	const u8 (*pre_emphasis_hbr_rbr)[4][4];
+>> +	const u8 (*pre_emphasis_hbr3_hbr2)[4][4];
+>> +};
+>   
+>>   static int qcom_edp_configure_ssc(const struct qcom_edp *edp)
+>> @@ -315,7 +381,9 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp)
+>>   static int qcom_edp_phy_power_on(struct phy *phy)
+>>   {
+>>   	const struct qcom_edp *edp = phy_get_drvdata(phy);
+>> +	const struct qcom_edp_cfg *cfg = edp->cfg;
+>>   	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+>> +	u8 ldo_config;
+>>   	int timeout;
+>>   	int ret;
+>>   	u32 val;
+>> @@ -332,8 +400,11 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+>>   	if (timeout)
+>>   		return timeout;
+>>   
+>> -	writel(0x01, edp->tx0 + TXn_LDO_CONFIG);
+>> -	writel(0x01, edp->tx1 + TXn_LDO_CONFIG);
+>> +
+>> +	ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
+>> +
+>> +	writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
+>> +	writel(ldo_config, edp->tx1 + TXn_LDO_CONFIG);
 > 
-> My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-> on your patch (DT_CHECKER_FLAGS is new in v5.13):
+> When reviewing a patch from Konrad which will start using the eDP
+> configuration on the X13s, I noticed that this patch inverted these bits
+> for older SoCs (e.g. sc7280 and sc8180xp). They used to be set to 1,
+> but after this patch they will be set to 0.
 > 
-> yamllint warnings/errors:
-> 
-> dtschema/dtc warnings/errors:
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/access-controllers/access-controller.yaml: access-control-provider: missing type definition
-> 
-> doc reference errors (make refcheckdocs):
-> 
-> See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20230929142852.578394-2-gatien.chevallier@foss.st.com
-> 
-> The base for the series is generally the latest rc1. A different dependency
-> should be noted in *this* patch.
-> 
-> If you already ran 'make dt_binding_check' and didn't see the above
-> error(s), then make sure 'yamllint' is installed and dt-schema is up to
-> date:
-> 
-> pip3 install dtschema --upgrade
-> 
-> Please check and re-submit after running the above command yourself. Note
-> that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-> your schema. However, it must be unset to test all examples with your schema.
-> 
+> Was that intentional even if it was never mentioned in the commit
+> message? Or was it a mistake that should be fixed?
++Abhinav, Jessica
 
-Hi Rob,
-
-Running:
-1- make dt_binding_check | grep access-control
-2- make dt_binding_check 
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/access-controllers/access-controller.yaml
-from Krzysztof's slideset
-
-with
-
-pip3 show dtschema
-Name: dtschema
-Version: 2023.9
-
-and
-
-pip3 show yamllint
-Name: yamllint
-Version: 1.32.0
-
-I don't see any of the errors reported by the robot. I have to clone
-your repository to reproduce it.
-
-Should I resubmit with a clean dt-check using the latest dtschema?
-
-***********
-However, I get:
-warning: ignoring duplicate '$id' value 
-'http://devicetree.org/schemas/reserved-memory/framebuffer.yaml#
-warning: ignoring duplicate '$id' value 
-'http://devicetree.org/schemas/reserved-memory/memory-region.yaml#
-warning: ignoring duplicate '$id' value 
-'http://devicetree.org/schemas/reserved-memory/shared-dma-pool.yaml#
-warning: ignoring duplicate '$id' value 
-'http://devicetree.org/schemas/reserved-memory/reserved-memory.yaml
-
-Above warnings disappears when switching to:
-pip3 show dtschema
-Name: dtschema
-Version: 2023.7
-
-The above YAMLs seem to be duplicated in dtschema's latest version.
-I guess it's a synchro that needs to be done since:
-https://lore.kernel.org/all/20230830231758.2561402-2-sjg@chromium.org/
-***********
-
-Best regards,
-Gatien
+Konrad
 
 -- 
 linux-phy mailing list
