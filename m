@@ -4,86 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4793E7849A
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Oct 2023 09:51:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DB60E784AF
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Oct 2023 10:09:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aiM5T3DKNeScK6QW+kyoJD46jAvkGfdB9VoqhzatgRw=; b=24Yy3OMfR3EISS
-	cEXuVoFJ9F71sMbP8+W7+mahyACICORaSeQffHHSvADI5Tvbg7BGosbf5aAP35zO8/7m+XWZiiLdf
-	eCSqLbUrTk+5IJcMB8C2i+rsjOfYSuWEEauY/fVeStvwPVULE9Dr8Ms9268bACmfSkPwZTIJRyhCB
-	XhCh6W/OuUweS15pbhopkt+bRQaR3rL/q2VCPS4Hi04+8lsMrZmftBuqtOpI6WL+BJjdBbl1EjDYC
-	LEbyBl/0lsNvNkODJWLbbR9+oVa+8l7rMU/MoPoNd4D4oJCvDroTkxwvKh3mgUH5+Rli/br1vN4GW
-	PUr0U56GhplA+uNm6/mA==;
+	List-Owner; bh=PP7whjADwqUSzwjHyg7xgyHxCDuTWCTe6EoxF24s5cU=; b=hRFUk0Z4fxPul7
+	Ep3PA9QgZ3AeBGzHfwFaH2NU1opoGNTG9eoAvMO6QKALi+6smo6Hu5BFHFJBWKQU2IrFVlfuJ2x4f
+	ZGBK7BjIfiZMIqwnHMrNSftOjBQuW/kxdf6bNsDkgE6M1XkeSyUbMYDfs537IB5Mfc/bD5/62J5oF
+	bt14edz5KVO5BLKSErwCy8c1scJob9YAsC2OLgPTE+1hExMDx9b39rWvB/YG4+qjI8r/KXlpXe/54
+	tR+8XSA6j/AsTcZk7KKZB/ob0Za7lExJw5XGnbjjWhlcMldxzOEnBxvVOIxmG+9kBc654ZMhvBmO9
+	nw9ks9le0nSLU5Y1paCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnFaH-00CGjd-1D;
-	Mon, 02 Oct 2023 09:51:25 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1qnFs9-00CI1j-0c;
+	Mon, 02 Oct 2023 10:09:53 +0000
+Received: from mail-he1eur04on0602.outbound.protection.outlook.com ([2a01:111:f400:fe0d::602] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnFaE-00CGjH-2F
+	id 1qnFs6-00CI0U-1v
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Oct 2023 09:51:24 +0000
-Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2c135cf2459so239694291fa.0
-        for <linux-phy@lists.infradead.org>; Mon, 02 Oct 2023 02:51:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696240279; x=1696845079; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=JLs1VktsLlk8jSlnRreaZgQ/QeUwdA55Dkd4Kqx1630=;
-        b=xAH8KD45XTuf04R/Yl86qGn2K2Y15dUvStfW3F2MbzTSiHI2ei6TbDV/HpqfUXxFNq
-         h3qS5MZV2v/ebjaZrF4w1yAr0YOkZ1Rv48bGrU7/mfhHJEy81DX4UTkcGBWJeeZt/s9W
-         AH38bugsPwyj/ijpiIvZa0DKdfasqQhhQ1aFtOXN0uwdpyRfVr4zDivAmwnO1wtFYzWv
-         DfVwtNaTk2L9s/bUV61f3P8Ra6ukOh8PspQ2etlFO1EVrzZWDFYrRJ8X0Hdw5N9bWDgr
-         J8tzzC2XbwDq5mxhZP3hUhi6TWUCTYDnq0Nb0obLepNw7OtYTlhblOYkXGt7qyKVAKwQ
-         1IuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696240279; x=1696845079;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=JLs1VktsLlk8jSlnRreaZgQ/QeUwdA55Dkd4Kqx1630=;
-        b=qM4963SKbcM0JuLDyGgKSQMv93TARb/0UnzKWa+cStZtqNDLIl49SpBZJtxFDzPPht
-         y5slNXkC0eu84drhP/xGUDvgLGJ3oFJJ9Q1FMgs158jS5g8x416nZMQniS42j5kEUGJA
-         WaUlpfmkV2hx1/6ZkZOZ4QmOaceKIZgT75FrWPzIO6m1crb6FDE8mMCG7xo31Lau9TgA
-         o7JvSc8qgcxLTnY2QGIUp6SvggyXuEBYir3bwqF6PqCC+bgbQgq5frx/tN8vDt6EJ90C
-         GiBtWmTxcXij0CHvJ0qWmubWIwx9NOP+ByShB8aPHUwHgaBS5hC0ZQOEMblE1tJArNtq
-         MHaA==
-X-Gm-Message-State: AOJu0Yz2Mx6Ayq3vj8e89K6AQeuxJ7K+7Q+eNs8LGQbmV1uwLEkC/bSH
-	nt7CPFUfycIOWrriy7h1zznc8g==
-X-Google-Smtp-Source: AGHT+IFOVOzVdjRKpbSkAlo6qh4MyGHDzKp2cGIoMm270v1GTGrFuVJwWEg8an2N9lHrz99nrbSpnw==
-X-Received: by 2002:a05:6512:23a4:b0:500:c765:bbe with SMTP id c36-20020a05651223a400b00500c7650bbemr11447285lfv.0.1696240279333;
-        Mon, 02 Oct 2023 02:51:19 -0700 (PDT)
-Received: from [172.30.204.164] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
-        by smtp.gmail.com with ESMTPSA id a16-20020a056512021000b0050315aa36fbsm4685416lfo.282.2023.10.02.02.51.18
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Oct 2023 02:51:18 -0700 (PDT)
-Message-ID: <5f3c8a66-aba3-cef0-8df9-f897487f1098@linaro.org>
-Date: Mon, 2 Oct 2023 11:51:17 +0200
+	Mon, 02 Oct 2023 10:09:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jpSDNMFwP2xJN5TCVvM/vqCeUn7mSoCyf5/MZGz59eF5nnyoJxt2jKUu3eTzhsWKrFSgJfavRbWI3pn5BZ0vzgiPU5pYbMoQKTmBT/h7CaNsNVKXNLbC6oXXq/gWRUHp/3sxOiEqMVMqkGIaaaIkN8hva6vqPaFBPw9rh6YmqfJVhfh33u2hGEoRFtrgKIB3sSWaSpqtPhujwkJsO1Gj7QCO4lAB3iTiDqVkR6DBiYz6AXrzE2f8PDkK3i9WTqIWFk5hxsyNg6T+l5Mzxkph6fC5zUFnH3WemyDQwgUiElz8J0isldCxvBTSAE9Asj0cW+VXqap/SVZ8ErTIjDasaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=e+XK65wn8Ct1iugIrxOEP2P7FvjWb6GFCjLLVDFvjLo=;
+ b=XA0oMZ33fD2LxpyfWN5HL5dvKntBaASg08L80lPYfMSabffWQYaBPj90ys+YTHv/XDdV3ZpoCRhqlbkZSgfxqVC7j6fmE8jNkgT1iVZIa4Ns6h0gVRN99bkCJJS6Vf7/L8NVM7jtX0IDfuMsmPrg6Csz12X/YhXev1WZMvniBHxX7zN5EJTX2THu86UQd1I2F5zMAoy/VUxluu+jzGELBRcdPqG40TgOuzH0tmtV0BD0iPkjw8lQS8IPrOOEcGMlQpTPxzSUu15Vc3ZPzA7TzSVP/a4obCZh3dgwoYaf6xPrFRYEafDHd9JURievQEj7yvsfNqCuF2/HkngHivwomg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=e+XK65wn8Ct1iugIrxOEP2P7FvjWb6GFCjLLVDFvjLo=;
+ b=OV0P1ln4p5+bUqazwky5+pGBAJ8dZvuX9/NPyei54CwUZa+olBCjSB0obq8c7UrewzBLqxGNCvd0pwlKAcRO5eeBOSQNCpKys5+aRmTV2O/jIK+shyFaHs8JTur3lmLZfWZud95D2YZ8EphqgzXhnxNrIu7WOKO6xCP8tnJnTQ8=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
+ by AS8PR04MB8514.eurprd04.prod.outlook.com (2603:10a6:20b:341::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6838.30; Mon, 2 Oct
+ 2023 10:09:42 +0000
+Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::568a:57ee:35b5:e454]) by AM0PR04MB6452.eurprd04.prod.outlook.com
+ ([fe80::568a:57ee:35b5:e454%3]) with mapi id 15.20.6838.024; Mon, 2 Oct 2023
+ 10:09:42 +0000
+Date: Mon, 2 Oct 2023 13:09:37 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	"Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [RFC PATCH v2 net-next 04/15] phy: allow querying the address of
+ protocol converters through phy_get_status()
+Message-ID: <20231002100937.7t2skx2kzscid574@skbuf>
+References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
+ <20230923134904.3627402-5-vladimir.oltean@nxp.com>
+ <ZRb5+h4TnGRKl3/6@matsya>
+Content-Disposition: inline
+In-Reply-To: <ZRb5+h4TnGRKl3/6@matsya>
+X-ClientProxiedBy: VI1P195CA0056.EURP195.PROD.OUTLOOK.COM
+ (2603:10a6:802:5a::45) To AM0PR04MB6452.eurprd04.prod.outlook.com
+ (2603:10a6:208:16d::21)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH 4/5] phy: qcom: edp: Introduce support for DisplayPort
-Content-Language: en-US
-To: Johan Hovold <johan@kernel.org>,
- Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Abhinav Kumar <quic_abhinavk@quicinc.com>, quic_jesszhan@quicinc.com
-References: <20220810040745.3582985-1-bjorn.andersson@linaro.org>
- <20220810040745.3582985-5-bjorn.andersson@linaro.org>
- <ZRqIHSetajQf7Um1@hovoldconsulting.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <ZRqIHSetajQf7Um1@hovoldconsulting.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|AS8PR04MB8514:EE_
+X-MS-Office365-Filtering-Correlation-Id: a0d7d69d-e211-4490-9608-08dbc32fb1b3
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: XCwqaFZpdA0730PvaO6ZdvdkEOHq8HSBHIu4gCircO1du44vQVAaAIWOSyYlhExaDN+0KbJj/PkKr6Jnjq5xEry9+6C8QY5quelGxUc81v2kqWj5+QzW5rGelyvF8Sl9pQ9/yj1c8r0vSrvTFDo1Nu2Zlyy8qDvlzwQXuR5BILCU9oH/KAOb9ZJy8fcVoXLxLOlDQIxnZ4tjVMy8cmoYuShb9cXgKo2OCXSb5jXYS0pJD1KN5NesqaAoelbkhHD7W/if9zZ6G1u2PF41eOY3wnEQdGH4Ws1d3DGMacV3b/SYa475zaEMeQ4KV99fyWQJAH02YrLHa817DWXRkyaWcsYAdgHmhMeVwh5zQ+Xu8e6YqcJd6Gn1gOfvQjO0Mv9Pbp8gifx470pa0fkFNYq+gKvUjLTF84BtJz3H+Hdchlk3X+zoKvBExYtWyIke1hzMN0rhBklZnm0T0mGufx1wN/a9DgS74Tq4yqjNmdiNehaiBuiZmIhWpgaIZWBonS96yeUfjrV5UdLpzZNZaFn4GHQKYCgUBzhMIQNEnTkdHkY0Qxhno/87h7kqQ6IBHPcu
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(39860400002)(366004)(376002)(396003)(346002)(136003)(230922051799003)(64100799003)(1800799009)(186009)(451199024)(33716001)(86362001)(38100700002)(6486002)(6512007)(6506007)(4326008)(44832011)(7416002)(6666004)(8676002)(8936002)(9686003)(53546011)(83380400001)(1076003)(26005)(2906002)(66946007)(66556008)(66476007)(316002)(54906003)(6916009)(5660300002)(478600001)(41300700001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?FNr4Q7fH9D8m2enWWRJAf9b16uLwi2zSZSNllsi6pRQfH6tyksvEdEiCjI9E?=
+ =?us-ascii?Q?KEojtg1PME+MpiKi7PexgfHWrVkXPV73/NL8ohOy/Tj21JIGHPtijO/Hx8+B?=
+ =?us-ascii?Q?DIO2ennOj1AsbyiEkPLyoSr/4S+Pz+XS3NGV+ov91cZCkrcqz8O2aH8d6hZV?=
+ =?us-ascii?Q?L1TdaUr3gYOXUTWgphsZWIjUGjDaZa4KyRl7dmYQEADyzyt8dEGcoGZ54zVv?=
+ =?us-ascii?Q?aCpAgfssc7IvPV/jPsG9W2k7Z9jDskMcXlq+SKi70fpmP/80tjYmdgLvhGjp?=
+ =?us-ascii?Q?9qRwW8X7+vzLr9Icq6BEwByAlakzbMlHrVZ2CQHS6rt4R8CmXxEoJSNWJg+C?=
+ =?us-ascii?Q?+cfnEiKTsmx0pnIlG/Tgmhh3YbpIc+lQEoRdlmId5WrussMIUzwoiemcC34G?=
+ =?us-ascii?Q?+zqWeRwv/Ewp0Hz+PGelVcfnwfN9/GzByBHUmywN5NB46H+Dn0VfrSWNkJFt?=
+ =?us-ascii?Q?G6Iv3VOL4VMR0zoQ1JUtsfn7sYjaYgEFg0LOWMRmm1j5FqNU7CpQV9t9oHnf?=
+ =?us-ascii?Q?dyH59zQhsnZUdxfX4vEAC2lXTRUzlJEN8yjsm25NS/7FTNH2f00XplFRcrs1?=
+ =?us-ascii?Q?/dNmNSpP9fB7z72dxStOUARqNfmkfCwJud9xX6DhB956oWCRE6cm9XCIAfEZ?=
+ =?us-ascii?Q?+MlEZ/kMsPysld8fuz7i5gcr6ron0RHjx0qt5Fi89RWtLzk3lDVD/eTtKP29?=
+ =?us-ascii?Q?ECY+6+xSrckP8fHljzLxM7RvRNkdmkL7ZOrvHSOjuHKcXCPaGhW9IpUMGSzc?=
+ =?us-ascii?Q?M18q6AxOhZ+d2tG8S08F1zZVjnpZvrQ+srZ3fn5SbsIUqDSgJUh1Wy7vVT2Q?=
+ =?us-ascii?Q?s29NqkPBwZTKnwCCOXxkuLK+5zq8OYmh++zorMOgl+mGWVscDSSowcivFy9k?=
+ =?us-ascii?Q?HawOZKaOsZvIgig1zv91+7DkIlQgRnPnV52HrU+GrBW2VMZKihr2hv7yt7Br?=
+ =?us-ascii?Q?Mx++/bG+FxGerIIriJTOS+fsUqwhgsaSSUE60bCZHz6dMMlUmzRvAmYyJQnc?=
+ =?us-ascii?Q?oHxCs71fsJziQtLSNuYMB7tCSmhv9PKP4OY0zais6o15jrzX6/sNizeKHY7D?=
+ =?us-ascii?Q?WkiAaEEkvOrV/di6wZFvc02IfXYlaJy1u0uwnRtQiLIxfPbIBFI+fv+q8fZX?=
+ =?us-ascii?Q?qI3dvn7/fUTZEG0bpWlwtg3tPYr4I5GUEkgQPehxBptep44UUd8A4yrYnY1U?=
+ =?us-ascii?Q?CuzgxvcUb8xCjBE0sh8OtAO1QQLqqaGo2PCviSoQ1h+vaeJQesVT1+YON5fL?=
+ =?us-ascii?Q?joF3WhU9B6eG/0EI1jaXnn2rqyM7H76sEclR0Mg7euezm0sxHcnd5TDhpZXR?=
+ =?us-ascii?Q?n6Ro8/dJhunQ1jmNx8B7VAXvA10oQTIcYwGuNoR7Yb9dx0271dQUy8gcmH8U?=
+ =?us-ascii?Q?kE6UXf6w3zE15hp2iyOg0+9bSxLz2ItT0cbNuIybl5Whn5HdVkU5Gup7VIME?=
+ =?us-ascii?Q?68XkT/p+35tnZuGmCCXvnQNK4CylmqvzivfJ4oEm71SbbyIvZ8dX+Knu7KAx?=
+ =?us-ascii?Q?ard9vJqGzXV15Xc/qleOyPdsqTCEnbEFSqsfRYHuJnTcyvSWeMBOipr/V1Dd?=
+ =?us-ascii?Q?uc5c4dnYbCP5DeDsXBgARFCCHrPb4mQ1d4/BCiPr4q6Qxyrwc5Opl9Iglopw?=
+ =?us-ascii?Q?jw=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a0d7d69d-e211-4490-9608-08dbc32fb1b3
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Oct 2023 10:09:41.9440
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: yFx43psC8fhFCf0Tq3sueMo84GvbeXgTJS8HQCDykWdSV5q42Q+O8shqdyDkYrFs6yLGL1xaeKfvGiZLSo9fGQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8514
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231002_025122_736334_C1BCE74D 
-X-CRM114-Status: GOOD (  20.32  )
+X-CRM114-CacheID: sfid-20231002_030950_661753_3EF965E9 
+X-CRM114-Status: GOOD (  36.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,78 +145,121 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Vinod,
 
-
-On 10/2/23 11:06, Johan Hovold wrote:
-> On Tue, Aug 09, 2022 at 09:07:44PM -0700, Bjorn Andersson wrote:
->> The eDP phy can be used to drive either eDP or DP output, with some
->> minor variations in some of the configuration and seemingly a need for
->> implementing swing and pre_emphasis calibration.
->>
->> Introduce a config object, indicating if the phy is operating in eDP or
->> DP mode and swing/pre-emphasis calibration to support this.
->>
->> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
->> ---
->>   drivers/phy/qualcomm/phy-qcom-edp.c | 80 +++++++++++++++++++++++++++--
->>   1 file changed, 76 insertions(+), 4 deletions(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
->> index 32614fb838b5..301ac422d2fe 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
->> @@ -70,8 +70,19 @@
->>   
->>   #define TXn_TRAN_DRVR_EMP_EN                    0x0078
->>   
->> +struct qcom_edp_cfg {
->> +	bool is_dp;
->> +
->> +	/* DP PHY swing and pre_emphasis tables */
->> +	const u8 (*swing_hbr_rbr)[4][4];
->> +	const u8 (*swing_hbr3_hbr2)[4][4];
->> +	const u8 (*pre_emphasis_hbr_rbr)[4][4];
->> +	const u8 (*pre_emphasis_hbr3_hbr2)[4][4];
->> +};
->   
->>   static int qcom_edp_configure_ssc(const struct qcom_edp *edp)
->> @@ -315,7 +381,9 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp)
->>   static int qcom_edp_phy_power_on(struct phy *phy)
->>   {
->>   	const struct qcom_edp *edp = phy_get_drvdata(phy);
->> +	const struct qcom_edp_cfg *cfg = edp->cfg;
->>   	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
->> +	u8 ldo_config;
->>   	int timeout;
->>   	int ret;
->>   	u32 val;
->> @@ -332,8 +400,11 @@ static int qcom_edp_phy_power_on(struct phy *phy)
->>   	if (timeout)
->>   		return timeout;
->>   
->> -	writel(0x01, edp->tx0 + TXn_LDO_CONFIG);
->> -	writel(0x01, edp->tx1 + TXn_LDO_CONFIG);
->> +
->> +	ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
->> +
->> +	writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
->> +	writel(ldo_config, edp->tx1 + TXn_LDO_CONFIG);
+On Fri, Sep 29, 2023 at 09:53:22PM +0530, Vinod Koul wrote:
+> On 23-09-23, 16:48, Vladimir Oltean wrote:
+> > The bit stream handled by a SerDes lane needs protocol converters to be
+> > usable for Ethernet. On Freescale/NXP SoCs, those protocol converters
+> > are located on the internal MDIO buses of the Ethernet MACs that need
+> > them.
+> > 
+> > The location on that MDIO bus, on these SoCs, is not fixed, but given by
+> > some control registers of the SerDes block itself.
+> > 
+> > Because no one modifies those addresses from the power-on default, so
+> > far we've relied on hardcoding the default values in the device trees,
+> > resulting in something like this:
+> > 
+> > 		pcs_mdio1: mdio@8c07000 {
+> > 			compatible = "fsl,fman-memac-mdio";
+> > 
+> > 			pcs1: ethernet-phy@0 {
+> > 				reg = <0>;
+> > 			};
+> > 		};
+> > 
+> > where the "reg" of "pcs1" can actually be retrieved from "serdes_1".
+> > 
+> > That was for the PCS. For AN/LT blocks, that can also be done, but the
+> > MAC to PCS to AN/LT block mapping is non-trivial and extremely easy to
+> > get wrong, which will confuse and frustrate any device tree writers.
+> > 
+> > The proposal is to take advantage of the fact that these protocol
+> > converters *are* discoverable, and to side-step that entire device tree
+> > mapping issue by not putting them in the device tree at all. So, one of
+> > the consumers of the SerDes PHY uses the phy_get_status() API to figure
+> > out the address on the MDIO bus, it also has a reference to the MDIO bus
+> > => it can create the mdio_device in a non OF-based manner.
+> > 
+> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> > ---
+> > v1->v2: patch is new
+> > 
+> >  include/linux/phy/phy.h | 29 +++++++++++++++++++++++++++++
+> >  1 file changed, 29 insertions(+)
+> > 
+> > diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> > index f1f03fa66943..ee721067517b 100644
+> > --- a/include/linux/phy/phy.h
+> > +++ b/include/linux/phy/phy.h
+> > @@ -56,6 +56,33 @@ enum phy_media {
+> >  enum phy_status_type {
+> >  	/* Valid for PHY_MODE_ETHERNET and PHY_MODE_ETHTOOL */
+> >  	PHY_STATUS_CDR_LOCK,
+> > +	PHY_STATUS_PCVT_ADDR,
+> > +};
+> > +
+> > +/* enum phy_pcvt_type - PHY protocol converter type
 > 
-> When reviewing a patch from Konrad which will start using the eDP
-> configuration on the X13s, I noticed that this patch inverted these bits
-> for older SoCs (e.g. sc7280 and sc8180xp). They used to be set to 1,
-> but after this patch they will be set to 0.
-> 
-> Was that intentional even if it was never mentioned in the commit
-> message? Or was it a mistake that should be fixed?
-+Abhinav, Jessica
+> It is not a generic protocol converter but an ethernet phy protocol
+> converter, so i guess we should add that here (we are generic phy and
+> not ethernet phy here!
 
-Konrad
+Can you please show, using a diff, what modification you would like to see?
+In my mind, enum phy_pcvt_type could also contain non-Ethernet protocol
+converter types, and so, I didn't want to add "ethernet_" in it.
+The "ETHERNET_" prefix will be part of the individual enum values that
+are applicable to Ethernet.
+
+> > + *
+> > + * @PHY_PCVT_ETHERNET_PCS: Ethernet Physical Coding Sublayer, top-most layer of
+> > + *			   an Ethernet PHY. Connects through MII to the MAC,
+> > + *			   and handles link status detection and the conversion
+> > + *			   of MII signals to link-specific code words (8b/10b,
+> > + *			   64b/66b etc).
+> > + * @PHY_PCVT_ETHERNET_ANLT: Ethernet Auto-Negotiation and Link Training,
+> > + *			    bottom-most layer of an Ethernet PHY, beneath the
+> > + *			    PMA and PMD. Its activity is only visible on the
+> > + *			    physical medium, and it is responsible for
+> > + *			    selecting the most adequate PCS/PMA/PMD set that
+> > + *			    can operate on that medium.
+> > + */
+> > +enum phy_pcvt_type {
+> > +	PHY_PCVT_ETHERNET_PCS,
+> > +	PHY_PCVT_ETHERNET_ANLT,
+> > +};
+> > +
+> > +struct phy_status_opts_pcvt {
+> > +	enum phy_pcvt_type type;
+> > +	union {
+> > +		unsigned int mdio;
+> > +	} addr;
+> >  };
+> >  
+> >  /* If the CDR (Clock and Data Recovery) block is able to lock onto the RX bit
+> > @@ -71,9 +98,11 @@ struct phy_status_opts_cdr {
+> >   * union phy_status_opts - Opaque generic phy status
+> >   *
+> >   * @cdr:	Configuration set applicable for PHY_STATUS_CDR_LOCK.
+> > + * @pcvt:	Configuration set applicable for PHY_STATUS_PCVT_ADDR.
+> >   */
+> >  union phy_status_opts {
+> >  	struct phy_status_opts_cdr		cdr;
+> > +	struct phy_status_opts_pcvt		pcvt;
+> >  };
+> >  
+> >  /**
+> > -- 
+> > 2.34.1
+> 
+> -- 
+> ~Vinod
 
 -- 
 linux-phy mailing list
