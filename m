@@ -4,88 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D2D1E75426
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 12:10:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 467F6E75459
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 13:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Agjl9yuO5xCxurvl5ptpdYkmCVjkyR1pv4PQQXxT3ZQ=; b=OZ6E4oLUqdQIJM
-	MZuEPjgc2toIhSkmkA2JjllsbhSpkugy0w35z/+OPxn+ExpOGDamtq16UKslGM/c6yXR/7/NGT5mU
-	3hLY6e7+xwmd/a9tLquUR03DzGPQRzLysI/LGdCexk4sE6uq1WPLU8X8Re/NtL2rypHcCnzxDFtyD
-	CXiXGutMgQfgtszthUFk9DLUKYhralyfCZs9wjdZE6cLNZGN+3Nsn0hhLluC9Ho0e8bwkpKJ6i5VV
-	LbEXy7hVJ1YRlz/oEMicbX8iLixz8+NEhzZ77Kfbk+gkOcm+aENvZJydR7N55JuKG+0mVfOzFdAsI
-	KT1yQWIPg2dQWSBGt/4A==;
+	List-Owner; bh=i88Diok4yyxQYKrkeILf8v1LKNpEI+Sxbdy4XEwk0XA=; b=M1hZwxmIHZLk4c
+	LP2+PhLqKmn8MeH84dBqzjvLiIPiG5UJdxkZPi272weBZL1EBtVRyRs76+01wfu0Ueg1MRNxLJ4pd
+	yLIE5TqvCjaAlH0bhcsWLKirVGjeLvzvhN4LNRXmDuxWmJFa7bajK8tX89IB3M8z+8zyS7b8zVaqY
+	ZToNXCce2szeryi0Ibl5/ipmuX3ux3kIA4Lby7LW1biJANILv3AZV3Zc2kDuax0LY75K2UeAUdaja
+	ohi/1+DXZAd9ILOJYEwXs0HBkEmUWXcnVPHZfPuyMvuNZXpN7rUw9qSwsURaz1tR3GFgp9bo1mJO9
+	xwDHlVsaT1wSCDNgxgiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qneEA-00EaaC-2h;
-	Tue, 03 Oct 2023 12:10:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qnfEf-00Egsf-39;
+	Tue, 03 Oct 2023 13:14:49 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qneE4-00EaXQ-2t
+	id 1qnfEc-00Egs2-08
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Oct 2023 12:10:12 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 393AjI7w014947;
-	Tue, 3 Oct 2023 12:09:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=Xb0TW84ggVQbz/JKcpZ6dj6owbb8/W8zYkCPSr5z4co=;
- b=JYy1e2osUBMA+SrtZIXPNNxcC9D4kMuctKcBij8j/EG/g2jlnPrOgUn0X5yLUO+dGuXi
- aR1ogKffroQZW45LEP5MJnTa5nDkEaHuoTJViDe8KUSPh1s99XC9IuY7RsIYiqcJxXoX
- 4K7woOwg/gROXxh0vBn6qH5O58B6rSllV25Ql83IRlwy9HQEQjYRRwszpKHD48MLclSy
- k014V3ga5RYP3EYZUZnSc4FB/2IQogLSrAQN3FL5Cg+Cec8Z87pPu7IjtaNUHKSLih6U
- tKQ/Mfc3pK1bRrtG2mUvDYbUSFbUSy9DVuDBkkcJn/Hs++XRIoeziXO3LuwTGXo692d0 rQ== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tg1v3a47v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Oct 2023 12:09:52 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393C9o1h017427
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Oct 2023 12:09:50 GMT
-Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Tue, 3 Oct 2023 05:09:43 -0700
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
-        <conor+dt@kernel.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <mani@kernel.org>, <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
-        <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>,
-        <quic_ipkumar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH 5/6] arm64: dts: qcom: ipq5018: Add PCIe related nodes
-Date: Tue, 3 Oct 2023 17:38:45 +0530
-Message-ID: <20231003120846.28626-6-quic_nsekar@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20231003120846.28626-1-quic_nsekar@quicinc.com>
-References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+	Tue, 03 Oct 2023 13:14:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ZBWxmjNd8vCby7186bpocAw7l6dn7FqP/N8fvvIhwNQ=; b=ZbZ5sNuyOVjEKuk2Kc6owm9Oi+
+	CVbKdlROVMemxNuPYLOm079PCNAxkqdn4FkkzHPaSiU9q0vd2xEwwJTLyUjb7sxEkJ9v6Se+YR+mO
+	hyMHF6d2oMlZaBrzFAiWx0N5ARTRfQipZyGr28fZWLkAQfYIy1bRiOaRD2/jWOamKQD5/W8Rodx1t
+	EZXxuHLGJBUvOFkHWeqIOCy45AXwGibkSc0bqIy27Um1+1UC0vQzlqX6CSDkf9vPyCSvEZPDhz9WV
+	cui5XvDfIapsKVW+mDOebBgACDtLVTHwl3AlSmnPOOB/5KoWZS3z7Y3ZT3iGso8tvkovDyikqzr49
+	EwUqFH0Q==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:38818)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1qnfEW-0001l1-2j;
+	Tue, 03 Oct 2023 14:14:40 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1qnfEX-0007v4-3o; Tue, 03 Oct 2023 14:14:41 +0100
+Date: Tue, 3 Oct 2023 14:14:41 +0100
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Florian Fainelli <f.fainelli@gmail.com>,
+	Madalin Bucur <madalin.bucur@nxp.com>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor@kernel.org>,
+	Sean Anderson <sean.anderson@seco.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [RFC PATCH v2 net-next 15/15] net: pcs: lynx: use MTIP AN/LT
+ block for copper backplanes
+Message-ID: <ZRwTwd18xWczDnur@shell.armlinux.org.uk>
+References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
+ <20230923134904.3627402-16-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: nMID8XLOgUG7Tc_Lx3A8QxvvrAaYxW_u
-X-Proofpoint-ORIG-GUID: nMID8XLOgUG7Tc_Lx3A8QxvvrAaYxW_u
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-03_08,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- phishscore=0 mlxscore=0 mlxlogscore=999 suspectscore=0 bulkscore=0
- clxscore=1015 spamscore=0 impostorscore=0 priorityscore=1501 adultscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310030088
+Content-Disposition: inline
+In-Reply-To: <20230923134904.3627402-16-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_051008_944326_0C099F2B 
-X-CRM114-Status: GOOD (  15.93  )
+X-CRM114-CacheID: sfid-20231003_061446_075353_7177C7E2 
+X-CRM114-Status: GOOD (  22.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,235 +93,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add phy and controller nodes for PCIe_x2 and PCIe_x1.
-PCIe_x2 is 2-lane Gen2 and PCIe_x1 is 1-lane Gen2.
+On Sat, Sep 23, 2023 at 04:49:04PM +0300, Vladimir Oltean wrote:
+> +static int lynx_pcs_parse_fwnode(struct lynx_pcs *lynx)
+> +{
+> +	struct fwnode_handle *node = lynx->mdio->dev.fwnode;
+> +	enum mtip_model model = MTIP_MODEL_AUTODETECT;
+> +	struct device_node *np = to_of_node(node);
+> +	struct mdio_device *mdio = lynx->mdio;
+> +	struct device *dev = &mdio->dev;
+> +	struct phy *phy;
+> +	int i, err;
+> +
+> +	if (!node)
+> +		return 0;
+> +
+> +	lynx->backplane_mode = fwnode_property_present(node, "fsl,backplane-mode");
+> +	if (!lynx->backplane_mode)
+> +		return 0;
+> +
+> +	if (fwnode_device_is_compatible(node, "fsl,lx2160a-lynx-pcs"))
+> +		model = MTIP_MODEL_LX2160A;
+> +
+> +	lynx->num_lanes = of_count_phandle_with_args(np, "phys", "#phy-cells");
+> +	if (lynx->num_lanes < 0)
+> +		return lynx->num_lanes;
 
-Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
----
- arch/arm64/boot/dts/qcom/ipq5018.dtsi | 186 +++++++++++++++++++++++++-
- 1 file changed, 184 insertions(+), 2 deletions(-)
+Is it possible for ->num_lanes to be zero at this point? If that is
+possible, then ->anlt[PRIMARY_LANE] will be NULL but ->backplane_mode
+will be set, so won't that cause the mtip_* calls above to pass a
+NULL pointer into those functions? Is that safe? Should we trap that
+case here?
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-index 38ffdc3cbdcd..0818fdd1e693 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/clock/qcom,gcc-ipq5018.h>
- #include <dt-bindings/reset/qcom,gcc-ipq5018.h>
-+#include <dt-bindings/gpio/gpio.h>
- 
- / {
- 	interrupt-parent = <&intc>;
-@@ -94,6 +95,38 @@
- 		#size-cells = <1>;
- 		ranges = <0 0 0 0xffffffff>;
- 
-+		pcie_x1phy: phy@7e000{
-+			compatible = "qcom,ipq5018-uniphy-pcie-gen2x1";
-+			reg = <0x0007e000 0x800>;
-+			#phy-cells = <0>;
-+			#clock-cells = <0>;
-+			clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
-+			clock-names = "pipe_clk";
-+			clock-output-names = "pcie1_pipe_clk";
-+			assigned-clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
-+			assigned-clock-rates = <125000000>;
-+			resets = <&gcc GCC_PCIE1_PHY_BCR>,
-+				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
-+			reset-names = "phy", "phy_phy";
-+			status = "disabled";
-+		};
-+
-+		pcie_x2phy: phy@86000{
-+			compatible = "qcom,ipq5018-uniphy-pcie-gen2x2";
-+			reg = <0x00086000 0x800>;
-+			#phy-cells = <0>;
-+			#clock-cells = <0>;
-+			clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
-+			clock-names = "pipe_clk";
-+			clock-output-names = "pcie0_pipe_clk";
-+			assigned-clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
-+			assigned-clock-rates = <125000000>;
-+			resets = <&gcc GCC_PCIE0_PHY_BCR>,
-+				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
-+			reset-names = "phy", "phy_phy";
-+			status = "disabled";
-+		};
-+
- 		tlmm: pinctrl@1000000 {
- 			compatible = "qcom,ipq5018-tlmm";
- 			reg = <0x01000000 0x300000>;
-@@ -117,8 +150,8 @@
- 			reg = <0x01800000 0x80000>;
- 			clocks = <&xo_board_clk>,
- 				 <&sleep_clk>,
--				 <0>,
--				 <0>,
-+				 <&pcie_x2phy>,
-+				 <&pcie_x1phy>,
- 				 <0>,
- 				 <0>,
- 				 <0>,
-@@ -246,6 +279,155 @@
- 				status = "disabled";
- 			};
- 		};
-+
-+		pcie_x1: pci@80000000 {
-+			compatible = "qcom,pcie-ipq5018";
-+			reg =  <0x80000000 0xf1d
-+				0x80000F20 0xa8
-+				0x80001000 0x1000
-+				0x78000 0x3000
-+				0x80100000 0x1000>;
-+			reg-names = "dbi", "elbi", "atu", "parf", "config";
-+			device_type = "pci";
-+			linux,pci-domain = <0>;
-+			bus-range = <0x00 0xff>;
-+			num-lanes = <1>;
-+			max-link-speed = <2>;
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+
-+			phys = <&pcie_x1phy>;
-+			phy-names ="pciephy";
-+
-+			ranges = <0x81000000 0 0x80200000 0x80200000
-+				  0 0x00100000   /* downstream I/O */
-+				  0x82000000 0 0x80300000 0x80300000
-+				  0 0x10000000>; /* non-prefetchable memory */
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 142
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-+					<0 0 0 2 &intc 0 143
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-+					<0 0 0 3 &intc 0 144
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-+					<0 0 0 4 &intc 0 145
-+					 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+
-+			interrupts = <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "global_irq";
-+
-+			clocks = <&gcc GCC_SYS_NOC_PCIE1_AXI_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_M_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_S_CLK>,
-+				 <&gcc GCC_PCIE1_AHB_CLK>,
-+				 <&gcc GCC_PCIE1_AUX_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_S_BRIDGE_CLK>;
-+
-+			clock-names = "iface",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "aux",
-+				      "axi_bridge";
-+
-+			resets = <&gcc GCC_PCIE1_PIPE_ARES>,
-+				 <&gcc GCC_PCIE1_SLEEP_ARES>,
-+				 <&gcc GCC_PCIE1_CORE_STICKY_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_MASTER_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_SLAVE_ARES>,
-+				 <&gcc GCC_PCIE1_AHB_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_MASTER_STICKY_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_SLAVE_STICKY_ARES>;
-+
-+			reset-names = "pipe",
-+				      "sleep",
-+				      "sticky",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "axi_m_sticky",
-+				      "axi_s_sticky";
-+
-+			msi-map = <0x0 &v2m0 0x0 0xff8>;
-+			status = "disabled";
-+		};
-+
-+		pcie_x2: pci@a0000000 {
-+			compatible = "qcom,pcie-ipq5018";
-+			reg =  <0xa0000000 0xf1d
-+				0xa0000F20 0xa8
-+				0xa0001000 0x1000
-+				0x80000 0x3000
-+				0xa0100000 0x1000>;
-+			reg-names = "dbi", "elbi", "atu", "parf", "config";
-+			device_type = "pci";
-+			linux,pci-domain = <1>;
-+			bus-range = <0x00 0xff>;
-+			num-lanes = <2>;
-+			max-link-speed = <2>;
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+
-+			phys = <&pcie_x2phy>;
-+			phy-names ="pciephy";
-+
-+			ranges = <0x81000000 0 0xa0200000 0xa0200000
-+				  0 0x00100000   /* downstream I/O */
-+				  0x82000000 0 0xa0300000 0xa0300000
-+				  0 0x10000000>; /* non-prefetchable memory */
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 75
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
-+					<0 0 0 2 &intc 0 78
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
-+					<0 0 0 3 &intc 0 79
-+					 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
-+					<0 0 0 4 &intc 0 83
-+					 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+
-+			interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "global_irq";
-+
-+			clocks = <&gcc GCC_SYS_NOC_PCIE0_AXI_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_M_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_S_CLK>,
-+				 <&gcc GCC_PCIE0_AHB_CLK>,
-+				 <&gcc GCC_PCIE0_AUX_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_S_BRIDGE_CLK>;
-+
-+			clock-names = "iface",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "aux",
-+				      "axi_bridge";
-+
-+			resets = <&gcc GCC_PCIE0_PIPE_ARES>,
-+				 <&gcc GCC_PCIE0_SLEEP_ARES>,
-+				 <&gcc GCC_PCIE0_CORE_STICKY_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_MASTER_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_SLAVE_ARES>,
-+				 <&gcc GCC_PCIE0_AHB_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_MASTER_STICKY_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_SLAVE_STICKY_ARES>;
-+
-+			reset-names = "pipe",
-+				      "sleep",
-+				      "sticky",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "axi_m_sticky",
-+				      "axi_s_sticky";
-+
-+			msi-map = <0x0 &v2m0 0x0 0xff8>;
-+			status = "disabled";
-+		};
-+
- 	};
- 
- 	timer {
+If that's correct, then I don't see any point in storing
+->backplane_mode, since we can then use ->num_lanes > PRIMARY_LANE
+or similar instead.
+
+> +
+> +	if (WARN_ON(lynx->num_lanes > MAX_NUM_LANES))
+> +		return -EINVAL;
+
+Do we need to use WARN_ON() here, or would it be better to print a short
+error-level message?
+
+> +
+> +	for (i = 0; i < lynx->num_lanes; i++) {
+> +		phy = devm_of_phy_get_by_index(dev, np, i);
+> +		if (IS_ERR(phy))
+> +			return dev_err_probe(dev, PTR_ERR(phy),
+> +					     "Failed to get SerDes PHY %d\n", i);
+> +
+> +		lynx->anlt[i] = mtip_backplane_create(mdio, phy, model);
+> +		if (IS_ERR(lynx->anlt[i])) {
+> +			err = PTR_ERR(lynx->anlt[i]);
+> +
+> +			while (i-- > 0)
+> +				mtip_backplane_destroy(lynx->anlt[i]);
+> +
+> +			return err;
+> +		}
+> +	}
+> +
+> +	for (i = 1; i < lynx->num_lanes; i++) {
+> +		err = mtip_backplane_add_subordinate(lynx->anlt[PRIMARY_LANE],
+> +						     lynx->anlt[i]);
+> +		if (WARN_ON(err)) {
+
+Again, does this need to be a backtrace-producing WARN_ON()?
+
+> +			/* Too many SerDes lanes in the device tree? */
+> +			for (i = 0; i < lynx->num_lanes; i++)
+> +				mtip_backplane_destroy(lynx->anlt[i]);
+> +			return err;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static struct phylink_pcs *lynx_pcs_create(struct mdio_device *mdio)
+>  {
+>  	struct lynx_pcs *lynx;
+> +	int err;
+>  
+>  	lynx = kzalloc(sizeof(*lynx), GFP_KERNEL);
+>  	if (!lynx)
+> @@ -327,6 +451,12 @@ static struct phylink_pcs *lynx_pcs_create(struct mdio_device *mdio)
+>  	lynx->pcs.neg_mode = true;
+>  	lynx->pcs.poll = true;
+>  
+> +	err = lynx_pcs_parse_fwnode(lynx);
+> +	if (err) {
+> +		kfree(lynx);
+> +		return ERR_PTR(err);
+> +	}
+> +
+>  	return lynx_to_phylink_pcs(lynx);
+>  }
+>  
+> @@ -392,6 +522,11 @@ EXPORT_SYMBOL_GPL(lynx_pcs_create_fwnode);
+>  void lynx_pcs_destroy(struct phylink_pcs *pcs)
+>  {
+>  	struct lynx_pcs *lynx = phylink_pcs_to_lynx(pcs);
+> +	int i;
+> +
+> +	if (lynx->backplane_mode)
+> +		for (i = 0; i < lynx->num_lanes; i++)
+> +			mtip_backplane_destroy(lynx->anlt[i]);
+
+Won't ->num_lanes only be non-zero when ->backplane_mode is set, so
+isn't the test for ->backplane_mode redundant here?
+
+>  
+>  	mdio_device_put(lynx->mdio);
+>  	kfree(lynx);
+> -- 
+> 2.34.1
+> 
+> 
+
 -- 
-2.17.1
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
