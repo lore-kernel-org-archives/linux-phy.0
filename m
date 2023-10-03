@@ -4,80 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 383FEE7544F
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 11:31:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45ADFE7544F
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 12:09:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5lDZE2x3JX/ruCgOkNCFGKz8SicnacZDDYLcaHNLiH4=; b=zxUiR3Vam+te0C
-	X4HEdlcXKKXSWt/51UQEHa05inPvLcwOVzGWxytsDJc7+7kAWda+zY+tS8LD81O6sa5joFWqGgKdn
-	JSkX1ihzY2PjjvClVrAbBiYtsGLFfYkZBwmH8s8zv4WmljAh4TodHiqOZCI7OF+A6hwfXf2O2Dkwk
-	EtE8eTCRdQ/d9mIgenPxlqMvWXzTv1cGi+l2NPk1Dwt4013EaF4IHMgg+kQAK34L80yx0YaEs5Ow1
-	UshQ33wRnnzfWSr06652d9gi9+C4Mg32pUUjysduNrQ6a+x0yqruwD/vBYPiBawWWVJcErqsidjEA
-	jpak2SupA0tj/Ivdgt1Q==;
+	List-Owner; bh=TVS+1m+Bnw6CEc173J50cPEhfvrctbtddMS6e3mmjHc=; b=lWj70tSbXOMYeg
+	hz/Lbl976qagNN7OhOYLzKR2Qe27obvwTI6M3aAFb7TBH2I8I5zwJKs1/twHtXjJ+1or7H81RKGsc
+	mZwc06ylap0Chb7kW1tCCkdn0Xwydz1TqrAGM/G+8e6gYi2gWO1i8yocWYRmCgboX4+YgfACN/KSZ
+	ngO00KusJTRTkyMcFT//n5XOLl6LN6XGpfPa3N3fush6qKXAaybCFSe9z7MRy1vYrxuBJQ+R02h03
+	bzkdLs//3un5IE/XQunanst7j4Ju5tzz1WiGAn82my49HA7tRg3/gLQitAcsg4ux/LmyLmU1eBZyA
+	u8FSPXe4596aeYCv+fFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qndd1-00EXe3-2y;
-	Tue, 03 Oct 2023 11:31:51 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1qneDV-00EaPu-00;
+	Tue, 03 Oct 2023 12:09:33 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qndcz-00EXdY-0D
+	id 1qneDS-00EaPT-1R
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Oct 2023 11:31:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=734NRbey6LNjF6R5LmBVtB+1cSnVkKre8lbeKBodetI=; b=PDYW7AztC1pHCw3wGKmtfkTHpB
-	qj19+US3uAB2HwkhlhO86L6h02RzPk0PWcq3io2UnD+bjI+0shQgSJzlZxRcYXZsJz+7LDqoRnIPl
-	7dCNP23mJCMiKLcAPolrhJ1wR+QcNpKGyncU/Z2s04bMIc+awnwq0CE7P9RnIALNASEH7Yty2cSlL
-	EB558/UW88bbx/d8MIQTArGbwcT5EM1AKJf/wgFlEX+VhdGysJAdnksI/DRclkRWhcu3urr0AExgo
-	MsHQ4Cc4RUaS+uyEJWzBYw63aMX6swqd5tLrnSE7Jg558ST27F4PyDUnwFhmpQkPIMhvGZgM8oWYI
-	yfl3fh1g==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57792)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1qndcw-0001cu-03;
-	Tue, 03 Oct 2023 12:31:46 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1qndcx-0007qY-0s; Tue, 03 Oct 2023 12:31:47 +0100
-Date: Tue, 3 Oct 2023 12:31:46 +0100
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Florian Fainelli <f.fainelli@gmail.com>,
-	Madalin Bucur <madalin.bucur@nxp.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Camelia Groza <camelia.groza@nxp.com>, Li Yang <leoyang.li@nxp.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor@kernel.org>,
-	Sean Anderson <sean.anderson@seco.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH v2 net-next 11/15] net: phylink: support the
- 25GBase-KR-S and 25GBase-CR-S link modes too
-Message-ID: <ZRv7oicdAgyzZYPi@shell.armlinux.org.uk>
-References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-12-vladimir.oltean@nxp.com>
+	Tue, 03 Oct 2023 12:09:32 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 393Bpc3Q028840;
+	Tue, 3 Oct 2023 12:09:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=G/4MBPeLY200xZ+Yh371H2bTPqxcF6fXuaPEQTWK+Zo=;
+ b=ApSnC89QsgGKgSSy4ffFDyWAcVWeqhmZ/6gQNc8tSKcVm1MX+KohP0myQllKHApqDexG
+ ummOVsEscZKoopvD+mLmmCCcTfJFmVXWOJ/+Ud0gDSC3imBy+mf97y5xS8mStH+n2K4B
+ kcWV1PS5F5dkrqDDmiHlVQ75dub3g55kalGtnx2Mw98gOB6O/3mlSmVlQy92nGFEHG+c
+ c56Vu7QLDXskV0PjtmQufYfk9ufXZJpOFMRD99QxfAFcDvB+WX5JE019gLKV+IRisfZ+
+ sJvxtPtUQbIVtrpjtEDcwzAVoapx+9wLcnsuIWglX3JWwWkj3fX6XJsG7ZZasrWRGmE1 IA== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tg77es8qn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 03 Oct 2023 12:09:21 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393C9KcR009523
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 3 Oct 2023 12:09:20 GMT
+Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Tue, 3 Oct 2023 05:09:12 -0700
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
+        <conor+dt@kernel.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
+        <mani@kernel.org>, <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
+        <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>,
+        <quic_ipkumar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Subject: [PATCH 1/6] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
+Date: Tue, 3 Oct 2023 17:38:41 +0530
+Message-ID: <20231003120846.28626-2-quic_nsekar@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230923134904.3627402-12-vladimir.oltean@nxp.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: bM1SnIuXePsfXGmQOGhIaIHDyPWzzQZ1
+X-Proofpoint-GUID: bM1SnIuXePsfXGmQOGhIaIHDyPWzzQZ1
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-03_08,2023-10-02_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 impostorscore=0
+ mlxscore=0 bulkscore=0 clxscore=1015 malwarescore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 mlxlogscore=999 phishscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310030087
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_043149_107614_8D85FF3A 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231003_050930_621841_22AAC2F9 
+X-CRM114-Status: GOOD (  15.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,18 +102,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 23, 2023 at 04:49:00PM +0300, Vladimir Oltean wrote:
-> Treat the newly introduced subsets of 25GBase-KR and 25GBase-CR the same
-> way as the fully-featured link modes. The difference only consists in
-> RS-FEC support.
+Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5018.
 
-As mentioned in the patch adding these new linkmodes, I wonder whether
-this should be part of that patch. Is there a reason to keep it
-separate?
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+---
+ .../bindings/phy/qcom,uniphy-pcie-28lp.yaml   | 77 +++++++++++++++++++
+ 1 file changed, 77 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
 
+diff --git a/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+new file mode 100644
+index 000000000000..6b2574f9532e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+@@ -0,0 +1,77 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,uniphy-pcie-28lp.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm UNIPHY PCIe 28LP PHY driver
++
++maintainers:
++  - Nitheesh Sekar <quic_nsekar@quicinc.com>
++  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
++
++properties:
++  compatible:
++    enum:
++      - qcom,ipq5018-uniphy-pcie-gen2x1
++      - qcom,ipq5018-uniphy-pcie-gen2x2
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    items:
++      - const: pipe_clk
++
++  resets:
++    maxItems: 2
++
++  reset-names:
++    items:
++      - const: phy
++      - const: phy_phy
++
++  "#phy-cells":
++    const: 0
++
++  "#clock-cells":
++    const: 0
++
++  clock-output-names:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - resets
++  - reset-names
++  - clocks
++  - clock-names
++  - "#phy-cells"
++  - "#clock-cells"
++  - clock-output-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-ipq5018.h>
++    #include <dt-bindings/reset/qcom,gcc-ipq5018.h>
++
++    phy@86000 {
++        compatible = "qcom,ipq5018-uniphy-pcie-gen2x2";
++        reg = <0x86000 0x800>;
++        #phy-cells = <0>;
++        #clock-cells = <0>;
++        clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
++        clock-names = "pipe_clk";
++        clock-output-names = "pcie0_pipe_clk";
++        assigned-clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
++        assigned-clock-rates = <125000000>;
++        resets = <&gcc GCC_PCIE0_PHY_BCR>,
++                 <&gcc GCC_PCIE0PHY_PHY_BCR>;
++        reset-names = "phy", "phy_phy";
++    };
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+2.17.1
+
 
 -- 
 linux-phy mailing list
