@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1308FE7544A
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 11:20:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9C69E75450
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 11:28:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ix784owJPcOE74IsbpHXsajc2tygfet0WaKsPCAFO0U=; b=ZmObnRN0OG51OX
-	lTD42i3n2mkrNJo7bMuIj4IrlskGcDpYROGcVQhIbU+pyJ+Q4Kuyqb0U34cjaHT5rAhfK7LHNbW5T
-	mnZZancqjLJOjoP0zOnZNx76JDCfGwwNDQ1TkNg2Wup/34H00w9hVGhsMjOq9DhRjiIDz7yfVxo5H
-	ef6aGLA+DjFDtPnSHy+elnxGPcF2t5C3fPodgKg+eJqZHWc8Gayf07pmPkye1vEiySiKbbhYGKMt3
-	cZcQ5MStUpBulsGI5v6dxmRz/SzeZop8x4Zlpy6F+vYhnTsc7RL7K4cmykOuqYVgiPSsSsirpyPsp
-	6zkGE5fVcHDBWUU8PInQ==;
+	List-Owner; bh=z++ezjysbNRqeT14mdkKNNc482nlicu6pcGMNiUB1q0=; b=ECRy4FjKSgH6iL
+	Ix+SeOmCQAPvKg+JAZZk9YOQvD8T6RA8DiRawW9nGFp8cLvXq/g/078a7MgZ7vtaKpwcOdrkl1/8e
+	NCi/IWCt64wGV+fS0L1cipZLCs9PxWNpSgEJ5QeGgwOhF8fkrdWduYHj1AZEFEZA9ir7VTkci8dGp
+	1Z68hPuC9gbmgDMdkbV50nZzHloze8Q2qxMaqQFaz7v8FjjPu8xxbyCLvunrHC/f0QaukYwFcNdro
+	8gYr7vhyamu7v4t+IJIS/N2QK573/xFU8Aus655sz0yG4D87Rj3xRAFrxeBtWAWQXkDb7ibI5YBOI
+	85/8iObnWzs56Fty+fNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qndRb-00EWcd-2a;
-	Tue, 03 Oct 2023 11:20:03 +0000
+	id 1qndZL-00EXAp-1k;
+	Tue, 03 Oct 2023 11:28:03 +0000
 Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qndRY-00EWac-1P
+	id 1qndZJ-00EXAN-08
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Oct 2023 11:20:02 +0000
+	Tue, 03 Oct 2023 11:28:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
 	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=3WQtsnIMGU3EZC75/U7lh4It7npmOBkHEQvs4xM/XDs=; b=aavn7HoNfrpw9SVa81FqPKDf4a
-	rkJiu/tRdgeUXh/cuL2QtIkZcKvjWiTqq6en38DvV2HNkpAykI5bBM0o2MrVZg2wlYpofS28FmgFO
-	MxVyVfaulb+pQ/XkcZwVzIBHI7sWOr+S885g77Cxh/MOzpB+lEDpPqmX/YiUyh8FcMJddBxgR83cB
-	jFKMebHrdXPTpyhZT7C+36PB3yMyeM9zL424iBQNgW2PtEkfOdGL42Q3WlHXKSMZWauNr/EQtqkd0
-	p27nqbQEV3fORj6PVCRrtAlbayUFDamfgr9F2RtFvthe1dzG6Sxq5DmxuxShJQrCvW3kQs3G2bUfa
-	TAdgqKSg==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:47706)
+	bh=tK8pzkcsxIaL3oiwk6+iWM2JEPMsTxZXWPkeUbBVdRk=; b=nofYjpUbyQd0PTxPAjDablBAUV
+	kF9bPAbgGYPHQaHk13Ek8xwnG/fs4mx+dyWyCEcvDv87s7wipvXC+2+uFrdswoSCOFaGrLd+QFHrU
+	do+E8ZSsR4/rxwPLj99FNyQP5wC/YNRQPnKwnbQcz82mlbF67W80bRVzdYCpuQrIdTNLbiroFgj7p
+	kM80hUhUY/67hjSqkOBZmBgoOdLhetxIgGhcIw0jZkcMyqHd2rxc7J8qp3riwa5kKH3x0DmOAmFCC
+	aBsOF0hpnhZwCT+G/WDT1V1oq9oXJkmn1jK5mEPClpOY63wVijsIQljA5Zy09ujZVV42NhVAISEZ5
+	kGs/6WpQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:51456)
 	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <linux@armlinux.org.uk>)
-	id 1qndRO-0001ak-2X;
-	Tue, 03 Oct 2023 12:19:50 +0100
+	id 1qndZD-0001bn-2k;
+	Tue, 03 Oct 2023 12:27:56 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
 	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1qndRP-0007px-9b; Tue, 03 Oct 2023 12:19:51 +0100
-Date: Tue, 3 Oct 2023 12:19:51 +0100
+	id 1qndZE-0007q8-7J; Tue, 03 Oct 2023 12:27:56 +0100
+Date: Tue, 3 Oct 2023 12:27:56 +0100
 From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Vladimir Oltean <vladimir.oltean@nxp.com>
 Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
@@ -66,17 +66,17 @@ Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [RFC PATCH v2 net-next 05/15] net: add 25GBase-KR-S and
- 25GBase-CR-S to ethtool link mode UAPI
-Message-ID: <ZRv4162uJ9pUVpR6@shell.armlinux.org.uk>
+Subject: Re: [RFC PATCH v2 net-next 07/15] net: phylink: centralize
+ phy_interface_mode_is_8023z() && phylink_autoneg_inband() checks
+Message-ID: <ZRv6vNJhvVI9/1RX@shell.armlinux.org.uk>
 References: <20230923134904.3627402-1-vladimir.oltean@nxp.com>
- <20230923134904.3627402-6-vladimir.oltean@nxp.com>
+ <20230923134904.3627402-8-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230923134904.3627402-6-vladimir.oltean@nxp.com>
+In-Reply-To: <20230923134904.3627402-8-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_042000_473928_812C2F72 
-X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-CacheID: sfid-20231003_042801_084390_6ABBAC74 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,20 +94,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 23, 2023 at 04:48:54PM +0300, Vladimir Oltean wrote:
-> diff --git a/include/uapi/linux/ethtool.h b/include/uapi/linux/ethtool.h
-> index f7fba0dc87e5..421eb57fb6e9 100644
-> --- a/include/uapi/linux/ethtool.h
-> +++ b/include/uapi/linux/ethtool.h
-> @@ -1787,6 +1787,8 @@ enum ethtool_link_mode_bit_indices {
->  	ETHTOOL_LINK_MODE_10baseT1S_Full_BIT		 = 99,
->  	ETHTOOL_LINK_MODE_10baseT1S_Half_BIT		 = 100,
->  	ETHTOOL_LINK_MODE_10baseT1S_P2MP_Half_BIT	 = 101,
-> +	ETHTOOL_LINK_MODE_25000baseCR_S_Full_BIT	 = 102,
-> +	ETHTOOL_LINK_MODE_25000baseKR_S_Full_BIT	 = 103,
+On Sat, Sep 23, 2023 at 04:48:56PM +0300, Vladimir Oltean wrote:
+> In a future change, we will extend the PHY interface modes for which
+> phylink allows the PCS to handle autoneg. Group the existing occurences
+> into a common phylink_pcs_handles_an().
 
-Should these also be add to phylink_caps_to_linkmodes()'s MAC_25000FD
-conditional block?
+I don't see anything wrong with this change, despite my comments on the
+next patch. However, including INTERNAL in this may cause problems with
+DSA. I think maybe these two patches need to be tested on DSA setups
+that make use of INTERNAL.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
