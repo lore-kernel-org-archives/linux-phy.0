@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FFEE7544F
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 12:09:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A8BE7544F
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 12:10:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2VM6keX/D7B1GnwMuVTMx/0CA4h9p9hShQshwlowYbk=; b=GAeUZTQ8+5dUn9
-	T52AjDkxaGhzIdJG6sB24SkEZ7Fi+3CGM5tvh3+WjUCXR3BGiVpNBw/bRkaLCDKePgixZEarAerRw
-	5457majMyKUV7+Z+cQUKx1FvzICa93LfFms0JURIBLIs/XzuP7GhHAt40TPJTHuw796tIKZiPtHWv
-	UDABKFqKcUuA+hQRv7v/osaU2gYazMVmjvEA/2WGkdI1AepahawpZXqoiL44G5ui8/gk8dIuiMSOK
-	bpSRnzW/DHPMD17biJXQ42Px03szCkcdy/D9GyW+Y7JLSaS3ZhgQ5idRpe/WsSfDIsyswcoSagnbE
-	Ry43UPyesbVGeL+uDl1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YNp2AkflWOvi9SicFgncImfc/ljemXC4n8AvH5jdzzU=; b=Lq0tuT5hO/DK0L
+	Rc0nLNPoe2/vatOULLtlwnW5TNO0or2PpeA25tE92J7RB1VVdfSQjmLEOBLkveO9IdCWlwsXEWChh
+	1RILTm6DKqXiN4ddonN6DRqrMvpgS/fJUHzNGxA+8LM4x+rK1Qi9GA171ISjey+43BxaKa1lmgJWb
+	KWuCATbIhPyYX3HeEmBKmkXBXyvaXAmwLbA3V1Vs5MF3wt0JFP2RW+2C+EMCAV6EVt/n22xXf1aDY
+	jhLYi/PF5t3Z41Au3Uq0tmH4h6M7DhYh7g/aW4GVt22kDVglc5eQBKBaGP7AeA65HXC0ixfm1JgDz
+	2nzxe3+Lgnp70t7LMZFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qneDu-00EaUN-1l;
-	Tue, 03 Oct 2023 12:09:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1qneDy-00EaVg-33;
+	Tue, 03 Oct 2023 12:10:02 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qneDr-00EaNu-2e
+	id 1qneDu-00EaTs-33
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Oct 2023 12:09:57 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39372KJ0004142;
-	Tue, 3 Oct 2023 12:09:15 GMT
+	Tue, 03 Oct 2023 12:10:01 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 393BLPQ4023875;
+	Tue, 3 Oct 2023 12:09:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : subject
- : date : message-id : mime-version : content-type; s=qcppdkim1;
- bh=MBmuLVJ5qof0Fy+YtKzcWq7CgW3rViLRkagA6sXYRR8=;
- b=d5OO1Ysy47Cjkk5bYf3gAIe90InraCI2GklfHm/Tt3dg15DR1jF5QvEcDlHaMoW3hgmn
- Ja1Y3blsUlLFSTPi+jJtnzorW77sVz3GiOnTxBEM+irGD/ss1ZESC3Dkk0iBJGjpsT88
- qIDJXQ4MrPlSn9FDdvLSsEgA5yvOOLh/deaGKmkVsbiHyq1iDNMcxNAkLp6Rhem+p267
- tqgkYJC0+zVLtDBISS6JLePTzkVSSYpBCrATsbqxEvEvr7x1kSaU7Otnd+UvMTEfpiPo
- nec3q9b6I7L2N42n8+NxCc0sMNQd+Ivrvdy163DN6Zv8TtmQabUfXETLW+8+JJye+jBj 6g== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tec2enxdq-1
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=uGwKDcCkyHFY/Ii1s9gC+AfH8qdc8/hi1icRi+L+W1Y=;
+ b=mRMJj/a4yY2//gbYeixI1BYH96GA1aUvjFg0v8J5WeiLgP4Q3LwVzvk39HDwEViuG/jl
+ aoQWwUXSfzAqEkiV6IlKTnqraOz3gFNenw78SNqF2/cxkRVZQkzVb3F1XU7zhCJGW8qf
+ GzFP8UwlZ19jX7sesH1abyeLCzMzL++++GTrCJvm9BYTx956RW0YWYoNlb2Vyttv3aAi
+ kRnThMl3Vq4TixA0zRJGFB+CFxj9nu2OTcup23YxxlSOokTHNXh0uDSUbS1XgRaSTaky
+ dyTY6aMRDXoKtKQ1OCTGrKDdsQZYGLnYFCStP/b9JvD5iblozdAAEOOYNz6TZPHtoFNY Sg== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tg98rh62r-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Oct 2023 12:09:14 +0000
+	Tue, 03 Oct 2023 12:09:41 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393C9ChU028004
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393C9RDs010827
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Oct 2023 12:09:12 GMT
+	Tue, 3 Oct 2023 12:09:27 GMT
 Received: from nsekar-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Tue, 3 Oct 2023 05:09:05 -0700
+ 15.2.1118.36; Tue, 3 Oct 2023 05:09:20 -0700
 From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
@@ -60,29 +61,31 @@ To: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
         <quic_ipkumar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
         <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH 0/6] Enable IPQ5018 PCI support
-Date: Tue, 3 Oct 2023 17:38:40 +0530
-Message-ID: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+Subject: [PATCH 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
+Date: Tue, 3 Oct 2023 17:38:42 +0530
+Message-ID: <20231003120846.28626-3-quic_nsekar@quicinc.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: XPjrhI3_Zud6qJ43SLbt2XB6YprnP2GG
-X-Proofpoint-ORIG-GUID: XPjrhI3_Zud6qJ43SLbt2XB6YprnP2GG
+X-Proofpoint-ORIG-GUID: tIAslTKj3QGneJXJ2ctwAuWJqot6MTyU
+X-Proofpoint-GUID: tIAslTKj3QGneJXJ2ctwAuWJqot6MTyU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-03_08,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
- adultscore=0 priorityscore=1501 malwarescore=0 suspectscore=0
- mlxlogscore=538 spamscore=0 bulkscore=0 clxscore=1011 lowpriorityscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310030087
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ suspectscore=0 bulkscore=0 adultscore=0 impostorscore=0 lowpriorityscore=0
+ clxscore=1015 spamscore=0 mlxscore=0 malwarescore=0 phishscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310030088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_050955_979577_B8D9C529 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20231003_050959_004189_E2E7723E 
+X-CRM114-Status: GOOD (  13.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,30 +102,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds the relevant phy and controller
-DT configurations for enabling PCI gen2 support
-on IPQ5018.
+Add support for the PCIe controller on the Qualcomm
+IPQ5108 SoC to the bindings.
 
-Nitheesh Sekar (6):
-  dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
-  dt-bindings: PCI: qcom: Add IPQ5108 SoC
-  phy: qcom: Introduce PCIe UNIPHY 28LP driver
-  PCI: qcom: Add support for IPQ5018
-  arm64: dts: qcom: ipq5018: Add PCIe related nodes
-  arm64: dts: qcom: ipq5018: Enable PCIe
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+---
+ .../devicetree/bindings/pci/qcom,pcie.yaml    | 36 +++++++++++++++++++
+ 1 file changed, 36 insertions(+)
 
- .../devicetree/bindings/pci/qcom,pcie.yaml    |  36 ++
- .../bindings/phy/qcom,uniphy-pcie-28lp.yaml   |  77 ++++
- .../arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts |   9 +
- arch/arm64/boot/dts/qcom/ipq5018.dtsi         | 186 +++++++++-
- drivers/pci/controller/dwc/pcie-qcom.c        |  22 +-
- drivers/phy/qualcomm/Kconfig                  |  12 +
- drivers/phy/qualcomm/Makefile                 |   1 +
- .../phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c  | 336 ++++++++++++++++++
- 8 files changed, 663 insertions(+), 16 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
- create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index eadba38171e1..72e24094ec7e 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -21,6 +21,7 @@ properties:
+           - qcom,pcie-apq8064
+           - qcom,pcie-apq8084
+           - qcom,pcie-ipq4019
++          - qcom,pcie-ipq5018
+           - qcom,pcie-ipq6018
+           - qcom,pcie-ipq8064
+           - qcom,pcie-ipq8064-v2
+@@ -170,6 +171,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,pcie-ipq5018
+               - qcom,pcie-ipq6018
+               - qcom,pcie-ipq8074-gen3
+     then:
+@@ -332,6 +334,39 @@ allOf:
+             - const: ahb # AHB reset
+             - const: phy_ahb # PHY AHB reset
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,pcie-ipq5018
++    then:
++      properties:
++        clocks:
++          minItems: 6
++          maxItems: 6
++        clock-names:
++          items:
++            - const: iface # PCIe to SysNOC BIU clock
++            - const: axi_m # AXI Master clock
++            - const: axi_s # AXI Slave clock
++            - const: ahb # AHB clock
++            - const: aux # Auxiliary clock
++            - const: axi_bridge # AXI bridge clock
++        resets:
++          minItems: 8
++          maxItems: 8
++        reset-names:
++          items:
++            - const: pipe # PIPE reset
++            - const: sleep # Sleep reset
++            - const: sticky # Core sticky reset
++            - const: axi_m # AXI master reset
++            - const: axi_s # AXI slave reset
++            - const: ahb # AHB reset
++            - const: axi_m_sticky # AXI master sticky reset
++            - const: axi_s_sticky # AXI slave sticky reset
++
+   - if:
+       properties:
+         compatible:
+@@ -790,6 +825,7 @@ allOf:
+               enum:
+                 - qcom,pcie-apq8064
+                 - qcom,pcie-ipq4019
++                - qcom,pcie-ipq5018
+                 - qcom,pcie-ipq8064
+                 - qcom,pcie-ipq8064v2
+                 - qcom,pcie-ipq8074
 -- 
 2.17.1
 
