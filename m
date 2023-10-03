@@ -4,96 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B16D6E7AD57
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 14:46:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 555BEE7AD58
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Oct 2023 14:55:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=97DvvJqeNNe7NCn3KFv3ExTWvbz1Z8EoXP5JJgPcmpQ=; b=roMiclqXOwb0rp
-	6gfJ1ZF5dYbbCnreVPi9AAf0BwORIquWOdTcGxrRTvS+ciSm9TFXmjxePQNbukCG87pi8+duZiB7h
-	Jh6FdSHVJQkRCxOcMrLluaK2m6SPuFQYmPXjTFe6wKsIZSk5dmUkVnREYkgQrOM9QfhvEEidHUSxH
-	HywnxrxpaCwHCSeGZJQc7sApRNlXmn2XIqfaVjuoP73QTfi+uZgBln1I5RJywtAyjOBm/9umSXG6a
-	XfN/i8nE1U8HEFp/0+/GT+4t9t+JN3GJiUZOvLJ4DwaQ5A0Jgb3xByQvQL2TdNEl61M5AahUYx47Z
-	Y1HBDUiNqKErRFerHcpg==;
+	List-Owner; bh=75nDUUg6HY1Ne6N4nY8bVc4/0hWcGBwRCkxbu4Bj0rM=; b=mbMV9WMHdUM5nT
+	HO3VCGrecPUeBVak/xPOijXtv4MqOJ/nDPrnOFJTf8k9ip/TcHOGA4qlqW8nsrhaHNahnJwB/1ho7
+	4EY1CaDSl3jmWMOcm3PUn/7US4rkrcpNoljE4tqeqQU+JTfJM9wG0bP+xgvAQDe1ZA/CvJv+y0jnA
+	2p68J3y3wds0vJfeK6jgYZHV6E0Yl9OA/fw8SLu4xjaML1M96FzdUL2n9cAsHBotOLnPeC5LrAd9A
+	43/6Fd6/aaXX1HMNWTO8+Z8gCjvuxC7aqCUc2bFx1iyyRLyoY++ZvHuLbo8RAidSRQr8HmMuDZPRw
+	lSt5e79hM6EE5QNnhpaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qngfk-00Ep6Y-1N;
-	Tue, 03 Oct 2023 14:46:52 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1qngnd-00Eplx-39;
+	Tue, 03 Oct 2023 14:55:01 +0000
+Received: from mail-yw1-x1134.google.com ([2607:f8b0:4864:20::1134])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qngfg-00Ep68-24;
-	Tue, 03 Oct 2023 14:46:50 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 393EHIIV026514;
-	Tue, 3 Oct 2023 14:46:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=tfLOe0VjA/rPVml+32m2VjdMp1XlyYfrkQaY6Acrs8o=;
- b=RVZapUYXEprjyDsX0sZsebjBBO2JFOD0ZR/rmGI17mArmJCawd3irDq4c/VCS5sccvWO
- vVhsJzFFcp6uMQMqUhmiqdFvpFiYoHjc0DlRhoFy+SDyGHzTY2PAskhoKTPnfxkhrC0u
- iEj/layxNpAvP5IVDYMzVDccW0YDB8THLVfhUeLrug65TJxfydijqUap0Cib0FXCwx4q
- ce90TLMT9/eLD3ppYeDrmUu0Xl6tEP+/HJUg2D6tW4Y21Wh7XD5k5mJAaSO61vOiY3AO
- REI8fmUuiAC3FgOnNQoM44rygQXYRv+pKTuG7MO60ecwRhzFGeSSLRAMCVPh7is0fPvI dQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3teb0se8us-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Oct 2023 14:46:36 +0000
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393EkA4O032041
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Oct 2023 14:46:10 GMT
-Received: from [10.216.32.208] (10.80.80.8) by nalasex01c.na.qualcomm.com
- (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Tue, 3 Oct
- 2023 07:46:00 -0700
-Message-ID: <8eaec03f-40c1-4285-9b86-c39bda251c61@quicinc.com>
-Date: Tue, 3 Oct 2023 20:15:56 +0530
+	id 1qngnZ-00Epks-1V
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Oct 2023 14:55:00 +0000
+Received: by mail-yw1-x1134.google.com with SMTP id 00721157ae682-5a1d0fee86aso12304107b3.2
+        for <linux-phy@lists.infradead.org>; Tue, 03 Oct 2023 07:54:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1696344894; x=1696949694; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ssiq5+nUb5tk+njmXyusvMPmk3vvCvKa/6ALKcbA4us=;
+        b=KuCHYIEK9J8oKeyPaRdmJVK49AD2DJe1S6eB6TayZFSwEAVO2Yisv1g6ngInxH8YjH
+         V4m2Qbz6HM2+rSDvsAe3qQnu/xSfzHs6S+ATGZ7vL2X7f8tSikimeyqbZjX8I6PfxLzc
+         9RCk/xJU6zCm4efo9mtrTpNnXc7cYYQU3V3F9V4LJAY7A2QVO+4AKbjkuF2fYWCyMlhl
+         J33Ih9Ihp/4e0rfOG2GMshsr6RFFMcE3gXUQ+ILLH3RB11Jqkm/GGfZ9UgK8JlRJX+S9
+         Fh6A9el4oNSlLSEtfIWCvrrxv2iK2ZfOD8HbCirayVk6u9VRX46XofhIVUE3CsgIsVC7
+         kY9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1696344894; x=1696949694;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Ssiq5+nUb5tk+njmXyusvMPmk3vvCvKa/6ALKcbA4us=;
+        b=uOcthCs15yxg3HAUwfJlrnb9jDdA9a/9Jpz/bsZLqGgzFaitvlgtE//N4PkMnyE2j2
+         NX8dhC9BO7HT2LK8GuTVh0VbTCyrg9/J2LtlvpCsUtAQ7b6u9yS9lYNanKWat4i+H6yQ
+         aOougTtLTZJJPOweSaXCmOnr1bMCvT2drDBtIfSDlv6XHlnvb4G4uegojQg9Qd1DuEOS
+         KPtmL5WH/ZZra4PsvOmKnPPr/4+l01lUV6kAU3cGCw/i/CkQ3eSffjiXcNjv7NwTXz/v
+         nJ1EIrGPIGOGUZ7RSHDmMnrhycFK7wFIcmClyjRHG7hO3yq8rVz4BGv6jRUE/J+ICC60
+         9/yg==
+X-Gm-Message-State: AOJu0Yy8Robq74bIv88BTZNsK8OgL3uwcoUIodbWvrbKF5b37fTiEpiD
+	DY+/v8UGkrrYkRYB+kmD5BgwohwIjTkgM1yQp1Diww==
+X-Google-Smtp-Source: AGHT+IE7Tm0+TOjAqbRf3K+J648pOlmhjcx6LMgVgwylE1FTXpvtTVrh5k3zwCUdGOKzzHN3/AU/Q/UGpVey3g+73X8=
+X-Received: by 2002:a81:65d6:0:b0:589:f41c:bc63 with SMTP id
+ z205-20020a8165d6000000b00589f41cbc63mr13912123ywb.39.1696344894263; Tue, 03
+ Oct 2023 07:54:54 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 5/8] arm64: dts: qcom: ipq5332: Add clocks for USB
- Super-Speed
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <catalin.marinas@arm.com>,
-        <will@kernel.org>, <p.zabel@pengutronix.de>, <geert+renesas@glider.be>,
-        <arnd@arndb.de>, <neil.armstrong@linaro.org>,
-        <nfraprado@collabora.com>, <u-kumar1@ti.com>, <peng.fan@nxp.com>,
-        <quic_wcheng@quicinc.com>, <quic_varada@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-CC: <quic_kathirav@quicinc.com>, <quic_nsekar@quicinc.com>,
-        <quic_srichara@quicinc.com>
 References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
- <20230929084209.3033093-6-quic_ipkumar@quicinc.com>
- <356a4f97-a483-4202-a6da-b48351d9b209@linaro.org>
-From: Praveenkumar I <quic_ipkumar@quicinc.com>
-In-Reply-To: <356a4f97-a483-4202-a6da-b48351d9b209@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: a85uTrtq1TBPcd8x4djM9PzJ3ohD8rPG
-X-Proofpoint-ORIG-GUID: a85uTrtq1TBPcd8x4djM9PzJ3ohD8rPG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-03_11,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=768
- impostorscore=0 bulkscore=0 suspectscore=0 adultscore=0 mlxscore=0
- clxscore=1015 phishscore=0 malwarescore=0 lowpriorityscore=0 spamscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310030109
+ <20230929084209.3033093-3-quic_ipkumar@quicinc.com> <412492d1-fcc9-481c-9d28-b208a644ba1d@linaro.org>
+ <7975c638-29cf-45ce-9d76-b8a93d750eb7@quicinc.com>
+In-Reply-To: <7975c638-29cf-45ce-9d76-b8a93d750eb7@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 3 Oct 2023 17:54:42 +0300
+Message-ID: <CAA8EJprhQz_Tj0Bhv6zhGa7h37Ug-Fp6Tof9tNscTFyZzkbJvw@mail.gmail.com>
+Subject: Re: [PATCH 2/8] phy: qcom: Introduce Super-Speed USB UNIPHY driver
+To: Praveenkumar I <quic_ipkumar@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+	vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
+	gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org, 
+	p.zabel@pengutronix.de, geert+renesas@glider.be, arnd@arndb.de, 
+	neil.armstrong@linaro.org, nfraprado@collabora.com, u-kumar1@ti.com, 
+	peng.fan@nxp.com, quic_wcheng@quicinc.com, quic_varada@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	quic_kathirav@quicinc.com, quic_nsekar@quicinc.com, quic_srichara@quicinc.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_074648_816515_9F76562A 
-X-CRM114-Status: GOOD (  17.89  )
+X-CRM114-CacheID: sfid-20231003_075457_530887_96305F80 
+X-CRM114-Status: GOOD (  30.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,45 +93,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiA5LzMwLzIwMjMgMTA6NTUgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gMjkv
-MDkvMjAyMyAxMTo0MiwgUHJhdmVlbmt1bWFyIEkgd3JvdGU6Cj4+IEFkZCBhdXggYW5kIGxmcHMg
-Y2xvY2tzIGluIFVTQiBub2RlIGZvciBTdXBlci1TcGVlZCBzdXBwb3J0Lgo+Pgo+PiBTaWduZWQt
-b2ZmLWJ5OiBQcmF2ZWVua3VtYXIgSSA8cXVpY19pcGt1bWFyQHF1aWNpbmMuY29tPgo+PiAtLS0K
-Pj4gwqAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUzMzIuZHRzaSB8IDkgKysrKysrKy0t
-Cj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4+
-Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxNTMzMi5kdHNpIAo+
-PiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9pcHE1MzMyLmR0c2kKPj4gaW5kZXggYjA4ZmZk
-OGMwOTRlLi4xODEzYjlmYTRiYjUgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-cWNvbS9pcHE1MzMyLmR0c2kKPj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUz
-MzIuZHRzaQo+PiBAQCAtMzM2LDExICszMzYsMTYgQEAgdXNiOiB1c2JAOGFmODgwMCB7Cj4+IMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNsb2NrcyA9IDwmZ2NjIEdDQ19VU0IwX01BU1RFUl9D
-TEs+LAo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPCZnY2MgR0NDX1NO
-T0NfVVNCX0NMSz4sCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8Jmdj
-YyBHQ0NfVVNCMF9TTEVFUF9DTEs+LAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgPCZnY2MgR0NDX1VTQjBfTU9DS19VVE1JX0NMSz47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCA8JmdjYyBHQ0NfVVNCMF9NT0NLX1VUTUlfQ0xLPiwKPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDwmZ2NjIEdDQ19VU0IwX0FVWF9DTEs+LAo+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPCZnY2MgR0NDX1VTQjBfTEZQU19DTEs+Owo+
-Cj4gVGhpcyBsb29rcyBsaWtlIGEgc3RyYW5nZSBjaGFuZ2UuIFVzdWFsbHkgdGhlIERUQiBpcyBj
-b25zaWRlcmVkIHRvIGJlIAo+IHRoZSBBQkksIHNvIG9sZGVyIERUQnMgc2hvdWxkIGNvbnRpbnVl
-IHRvIHdvcmsgd2l0aCBuZXdlciBrZXJuZWxzLiBJcyAKPiB0aGVyZSBhIHJlYXNvbiB3aHkgdGhl
-IEFVWCBhbmQgTEZQUyBjbG9ja3Mgd2VyZSBub3QgYSBwYXJ0IG9mIHRoZSAKPiBvcmlnaW5hbCBz
-dWJtaXNzaW9uPwpUaGlzIEFVWCBhbmQgTEZQUyBjbG9ja3MgYXJlIHJlcXVpcmVkIG9ubHkgd2hl
-biBVU0IgY29udHJvbGxlciB1c2VzIHRoZSAKVU5JUEhZIGFuZCB3b3JrcyBpbiAzLjAuIE9yaWdp
-bmFsIGNoYW5nZSBhZGRlZCAyLjAgc3VwcG9ydCBhbmQgdXNlZCBtMzEtcGh5Lgo+Cj4+ICsKPj4g
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2stbmFtZXMgPSAiY29yZSIsCj4+IMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgImlmYWNlIiwKPj4gwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAic2xlZXAiLAo+PiAt
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJtb2NrX3V0bWkiOwo+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJtb2NrX3V0bWki
-LAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJhdXgiLAo+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJsZnBzIjsKPj4g
-wqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVzZXRzID0gPCZnY2MgR0NDX1VTQl9CQ1I+
-Owo+Ci0tClRoYW5rcywKUHJhdmVlbmt1bWFyCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Tue, 3 Oct 2023 at 17:22, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+>
+>
+>
+> On 9/30/2023 10:48 PM, Dmitry Baryshkov wrote:
+> > On 29/09/2023 11:42, Praveenkumar I wrote:
+> >> Adds Qualcomm 22ull Super-Speed USB UNIPHY driver support which
+> >> is present in Qualcomm IPQ5332 SoC. This PHY is interfaced with
+> >> SNPS DWC3 USB and SNPS DWC PCIe. Either one of the interface
+> >> can use the it and selection is done via mux present in TCSR
+> >> register. This driver selects the PHY for DWC3 USB and handles
+> >> the reset, clocks and regulator.
+> >>
+> >> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> >> ---
+> >>   drivers/phy/qualcomm/Kconfig               |  11 +
+> >>   drivers/phy/qualcomm/Makefile              |   1 +
+> >>   drivers/phy/qualcomm/phy-qcom-uniphy-usb.c | 322 +++++++++++++++++++++
+> >>   3 files changed, 334 insertions(+)
+> >>   create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> >>
+> >> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> >> index d891058b7c39..7257c8455c53 100644
+> >> --- a/drivers/phy/qualcomm/Kconfig
+> >> +++ b/drivers/phy/qualcomm/Kconfig
+> >> @@ -154,6 +154,17 @@ config PHY_QCOM_M31_USB
+> >>         management. This driver is required even for peripheral only or
+> >>         host only mode configurations.
+> >>   +config PHY_QCOM_UNIPHY_USB
+> >> +    tristate "Qualcomm USB Super-Speed UNIPHY driver"
+> >
+> > Can we please have more specific driver name? As I wrote earlier,
+> > there are two other (different) kinds of Qualcomm UNI PHY devices:
+> > - DSI / HDMI UNIPHY on apq8064 / msm8974 / msm8960 (?)
+> > - USB QMP UNI PHY drivers
+> >
+> > Adding a driver called UNIPHY, which is not related to those two kinds
+> > sounds pretty confusing to me.
+> This UNIPHY is different from above mentioned ones. This a custom
+> version for 22nm on Qualcomm IPQ5332.
+> Can we name the driver as phy-qcom-uniphy-usb-ss-22ull.c /
+> phy-qcom-usb-ss-22ull.c ?
+
+usb-ss-22ull sounds better. Or maybe usb-ipq-ss
+
+> >
+> >> +    depends on USB && (ARCH_QCOM || COMPILE_TEST)
+> >> +    select GENERIC_PHY
+> >> +    help
+> >> +      Enable this to support the Qualcomm USB Super-Speed UNIPHY
+> >> transceiver
+> >> +      with DWC3 USB core. It handles PHY initialization, clock
+> >> +      management required after resetting the hardware and power
+> >> +      management. This driver is required even for peripheral only or
+> >> +      host only mode configurations.
+> >> +
+> >>   config PHY_QCOM_USB_HS
+> >>       tristate "Qualcomm USB HS PHY module"
+> >>       depends on USB_ULPI_BUS
+> >> diff --git a/drivers/phy/qualcomm/Makefile
+> >> b/drivers/phy/qualcomm/Makefile
+> >> index ffd609ac6233..c3e0112a7a70 100644
+> >> --- a/drivers/phy/qualcomm/Makefile
+> >> +++ b/drivers/phy/qualcomm/Makefile
+> >> @@ -17,6 +17,7 @@ obj-$(CONFIG_PHY_QCOM_QMP_USB_LEGACY)    +=
+> >> phy-qcom-qmp-usb-legacy.o
+> >>   obj-$(CONFIG_PHY_QCOM_QUSB2)        += phy-qcom-qusb2.o
+> >>   obj-$(CONFIG_PHY_QCOM_SNPS_EUSB2)    += phy-qcom-snps-eusb2.o
+> >>   obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)    += phy-qcom-eusb2-repeater.o
+> >> +obj-$(CONFIG_PHY_QCOM_UNIPHY_USB)    += phy-qcom-uniphy-usb.o
+> >>   obj-$(CONFIG_PHY_QCOM_USB_HS)         += phy-qcom-usb-hs.o
+> >>   obj-$(CONFIG_PHY_QCOM_USB_HSIC)     += phy-qcom-usb-hsic.o
+> >>   obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)    += phy-qcom-usb-hs-28nm.o
+> >> diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> >> b/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> >> new file mode 100644
+> >> index 000000000000..fdfc9c225995
+> >> --- /dev/null
+> >> +++ b/drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+> >
+> > So, is it a USB PHY or UNI PHY (where I would expect that it handles
+> > USB and PCIe?)
+> It is a USB PHY and the PHY name is UNIPHY. Added the usb in the file
+> name to differentiate it.
+> >
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
