@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B65C9E8FDCC
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 06:58:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ACBBE8FDD3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 06:59:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iblep6C4m/36hkgTAY4CLIhVoFQsRT0QpmWxsHB2wtI=; b=xlmwsQ2Pr/P6hR
-	x+WC6OCkrfnbIoWhFpFlLKai3HuKUW3qyRZNBKiptW5Kq6f/egVyOI0ZZ2Y5TJiQghRUKIsqzA/r+
-	u7ZFbvxsHEzwcMwAQiPgPBIRFwxnEqs8cnSPcE0JA4jbyHwHHz+lrpUTKY4uFdYxG8fD49PZw+qFn
-	s9R7MCRvIoEOX+Ru9sxpPJKRJaKF6wg4DFocqxuiLmltzfSsbIrXfEEJqElC8BuK9vRyPajFk5EGH
-	FvVgdDRiKPugdIKyF+rS0LR2M+bazFvLM1s1gBcY9/NYqkjVTDX0yK/TVKiRFwkLFez/qH/K3nnwH
-	pwO3ETwS72MAydfrfbPA==;
+	List-Owner; bh=kNzcvBBxCeaQX8b3tN2xxRRy5MZtvv5lIwY0uttKIr4=; b=W23KbPc8HMV9ZH
+	3d5ER+/uC9JM7wnLRdp9zkSyUvsfVRECzwsbmMAqy+TDEYjtNRYz/slQfIdxglbcvSng8p37wNnqH
+	ifspM5lpNpsz69fQqP3Vsa33WAMh0xbaO/0Up570UWRUmwONhgEUYppnqpyxNqY73fuj3Fr8mXQPx
+	k9t7OyuWddNkXECCSTcKj3sKI5MiUKtpWiOdIZbNmff2WK7nXw+WhAfUj8usf3LRwaIimT2MtAC4c
+	U11WAjPTKOxMnooIP7SwP8aKugi0kOir9YqAiW2NqKltD1q46+YErFWfybWoROt5mqYO8CafCWSzk
+	OLRi3hVaFxeuEO5EpkcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnvpc-00GVUV-0l;
-	Wed, 04 Oct 2023 06:58:04 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1qnvrJ-00GVo8-0k;
+	Wed, 04 Oct 2023 06:59:49 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnvpY-00GVSQ-39
+	id 1qnvrG-00GVmy-1m
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Oct 2023 06:58:02 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-99de884ad25so313837866b.3
-        for <linux-phy@lists.infradead.org>; Tue, 03 Oct 2023 23:57:56 -0700 (PDT)
+	Wed, 04 Oct 2023 06:59:47 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-5334f9a56f6so3052760a12.3
+        for <linux-phy@lists.infradead.org>; Tue, 03 Oct 2023 23:59:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696402675; x=1697007475; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1696402784; x=1697007584; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=CF4RDfNCn+9e+cjFufKsFSZHZrUim5RqQgYIMHa5ioI=;
-        b=EaVUDQg9PpNzPf6XANhNsjqySrhEe1jWJb+baLp4x3rGNlJ1P30rpuCgtIplBboi6+
-         i/Zs7UerWbFeIGXZdVhhQAsFaT0NI0SwMfsXvFkQoVM6Tkg95gfm3gDGRiDwQAmVfC7s
-         O08Mm7yDx/5o3pGebjyHkiZUzuyFa5UF4N/l+S/50PfAQsHPSB7BK5FfT01GVo+jtlXa
-         sv0u3omQBpbt2q+j6YzEeLnjtGJDEYeL+Ot4ScZDQ23yNuBZUkxvBFGBWg8C5Bekqa4M
-         3jIqfTLdkC5s3C86CoEQSWHNEFtfEKCg4nOQcVfjZBrvr9DbhHJiYAPTNbfXNM6xD7ml
-         r5Vg==
+        bh=thrSc5rKrJp9MHTbS/L/Xu/dKYxXxvLXx/M6k3LPsYU=;
+        b=Z8F1ENzekdhSY1fwoAg/acBQltC6GK0o402p7nFegrUeA0aFm5sTaO0l2jMqhpCeGc
+         qtcG4j53HzUd0f0Ae3Y5TMzFbNOiuVZ3oDvFy2U15Y65z3tXJFjvfKT7J7LmULcufiyb
+         1WR3AMtBxLlBKtrXRgg3kGgg5Puz9JNhf7qTNXVq2Tiqnr07y+V15hyrS8PKmt10Be/V
+         GsVE7KRrLF+aLHRJhEBeJL4dHmJYKMyfMcKI/iADk0UUbIKXcNKGrvM9qD0SG3gn46KY
+         X6hiPV7PYP5fjgISPevEgFJIrvbt2hDHX73q/4xpBWMFk0TLfP3bHUXB+vhw/bOSTk51
+         0Lvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696402675; x=1697007475;
+        d=1e100.net; s=20230601; t=1696402784; x=1697007584;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=CF4RDfNCn+9e+cjFufKsFSZHZrUim5RqQgYIMHa5ioI=;
-        b=YBB0uPW2wEdMspFJHL90CVfdhc7kxqK3iW47+/WCg9B1kU7V7bIQSCo1aBUacwuPp4
-         6QX2wdcXdsptxZaGsrlue43j+AJMFcxqU2kf6Di+z6/629PhGr++JnD761+gq/R+RIXU
-         krmdvAxj4Oo9rlvuwiUWMEr8EF3pUSYcgppUaN0wDjygkZWoLv5jlrleXBvgT6iBMPiH
-         BwLJMX64AlOD2Q9UcD8A1Wn4mhi9Uo0P8QpLhAIMw3+OMWrvOVSbgygDcAtSHuyQtUGw
-         U0ZCB2atXlLduEYyidy6L6oSBVRm+tzrb+vZZ2mEDYXDe6c5K0xo7xpyKsognCmyuiUi
-         O2Ww==
-X-Gm-Message-State: AOJu0YzKIDTOmKzYiEhKIWZNKMp1V5reddhL1TYrhOEnNW9XpEqmIeS2
-	QMrRO38S88HvbCXsUlNmwgEqaw==
-X-Google-Smtp-Source: AGHT+IGvPWefRX5GARibwaZdS5nMYXVCAuJNaKgUnSAc3Se8Io0NhobmVCEIi+yTOToBHoWkjTTInw==
-X-Received: by 2002:a17:906:6a19:b0:9a5:a0c6:9e8e with SMTP id qw25-20020a1709066a1900b009a5a0c69e8emr1576297ejc.31.1696402675070;
-        Tue, 03 Oct 2023 23:57:55 -0700 (PDT)
+        bh=thrSc5rKrJp9MHTbS/L/Xu/dKYxXxvLXx/M6k3LPsYU=;
+        b=HlSY3heDmMbL1eBlMQ4GdUUzB21UsAz+MgvSLIGM7fKvELbNWfXN24lLwjm6Z4MvDk
+         yUEL9MG8vpujcA0v/S+OvoNMUiFMjkxiTwvuULkZuTPi1JIJpVq4ieoK/DomCH7a6OUZ
+         jjCkt/dPBrdS1Oi7SM1wN+wQ1CLmork+ZoElAl4ojmsxOjNGV0jt3xgMbxaJ0Th700MZ
+         wWoiEvcYB8wdD6Z1zb8YXPUDLrUXiJwqs8iRtmUEwbvs5SpK1QLfx3fW3ptMbG3jNBXx
+         dE8zDvFmVqHlEOdGLlyY6srWv0bDFYRd8wcNw5nQHQw/Yj2NqP+em6KQOs0EqqcvqJI2
+         jLZA==
+X-Gm-Message-State: AOJu0YyZt9mY4LOV3qbt3TK+jrld11NT7O5bfDdLD1qcbI/yXxTZS7c2
+	pVSvxMjrAV5fJ6i5vN1ME+i05Q==
+X-Google-Smtp-Source: AGHT+IGfIY0O71410pxZ9HzYqgSmZTnCmsDyWFAtPGIDwsnSL1OkI/mbzdGJH0K5EVZ3WLZsVuTAgQ==
+X-Received: by 2002:a17:907:75cf:b0:9a1:b144:30f0 with SMTP id jl15-20020a17090775cf00b009a1b14430f0mr1070360ejc.53.1696402783629;
+        Tue, 03 Oct 2023 23:59:43 -0700 (PDT)
 Received: from [192.168.1.197] (5-157-101-10.dyn.eolo.it. [5.157.101.10])
-        by smtp.gmail.com with ESMTPSA id b25-20020a170906195900b0099cc3c7ace2sm2274362eje.140.2023.10.03.23.57.53
+        by smtp.gmail.com with ESMTPSA id j11-20020a170906410b00b00982a92a849asm2239079ejk.91.2023.10.03.23.59.41
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 03 Oct 2023 23:57:54 -0700 (PDT)
-Message-ID: <4bc021c1-0198-41a4-aa73-bf0cf0c0420a@linaro.org>
-Date: Wed, 4 Oct 2023 08:57:52 +0200
+        Tue, 03 Oct 2023 23:59:43 -0700 (PDT)
+Message-ID: <b56d9d8f-c893-46b9-9f1c-bdcd50c63209@linaro.org>
+Date: Wed, 4 Oct 2023 08:59:41 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
- uniphy
+Subject: Re: [PATCH 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
 Content-Language: en-US
 To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, lpieralisi@kernel.org,
@@ -79,7 +78,7 @@ To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-2-quic_nsekar@quicinc.com>
+ <20231003120846.28626-3-quic_nsekar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -125,10 +124,11 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231003120846.28626-2-quic_nsekar@quicinc.com>
+In-Reply-To: <20231003120846.28626-3-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_235801_021560_28B041E6 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20231003_235946_598022_3DF73A9E 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,81 +146,28 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 03/10/2023 14:08, Nitheesh Sekar wrote:
-> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5018.
+> Add support for the PCIe controller on the Qualcomm
+> IPQ5108 SoC to the bindings.
 > 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-
-Thank you for your patch. There is something to discuss/improve.
 
 
-> ---
->  .../bindings/phy/qcom,uniphy-pcie-28lp.yaml   | 77 +++++++++++++++++++
->  1 file changed, 77 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
-> new file mode 100644
-> index 000000000000..6b2574f9532e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Filename should match compatibles and they do not use 28lp.
+---
 
-> @@ -0,0 +1,77 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,uniphy-pcie-28lp.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm UNIPHY PCIe 28LP PHY driver
+This is an automated instruction, just in case, because many review tags
+are being ignored. If you know the process, you can skip it (please do
+not feel offended by me posting it here - no bad intentions intended).
+If you do not know the process, here is a short explanation:
 
-Driver as Linux driver? Drop. Describe the hardware instead.
+Please add Acked-by/Reviewed-by/Tested-by tags when posting new
+versions, under or above your Signed-off-by tag. Tag is "received", when
+provided in a message replied to you on the mailing list. Tools like b4
+can help here. However, there's no need to repost patches *only* to add
+the tags. The upstream maintainer will do that for tags received on the
+version they apply.
 
-> +
-> +maintainers:
-> +  - Nitheesh Sekar <quic_nsekar@quicinc.com>
-> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - qcom,ipq5018-uniphy-pcie-gen2x1
-> +      - qcom,ipq5018-uniphy-pcie-gen2x2
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pipe_clk
-
-Drop _clk... or even drop entire clock-names. Not needed for one entry.
-
-> +
-> +  resets:
-> +    maxItems: 2
-> +
-> +  reset-names:
-> +    items:
-> +      - const: phy
-> +      - const: phy_phy
-
-These are absolutely terrible names. If you have third one, it would be
-"phy_phy_phy"? Drop or provide something useful.
-
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  "#clock-cells":
-> +    const: 0
-> +
-> +  clock-output-names:
-> +    maxItems: 1
+https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
 
 Best regards,
 Krzysztof
