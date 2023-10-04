@@ -4,69 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ACBBE8FDD3
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 06:59:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65E9BE8FDDB
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 09:15:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kNzcvBBxCeaQX8b3tN2xxRRy5MZtvv5lIwY0uttKIr4=; b=W23KbPc8HMV9ZH
-	3d5ER+/uC9JM7wnLRdp9zkSyUvsfVRECzwsbmMAqy+TDEYjtNRYz/slQfIdxglbcvSng8p37wNnqH
-	ifspM5lpNpsz69fQqP3Vsa33WAMh0xbaO/0Up570UWRUmwONhgEUYppnqpyxNqY73fuj3Fr8mXQPx
-	k9t7OyuWddNkXECCSTcKj3sKI5MiUKtpWiOdIZbNmff2WK7nXw+WhAfUj8usf3LRwaIimT2MtAC4c
-	U11WAjPTKOxMnooIP7SwP8aKugi0kOir9YqAiW2NqKltD1q46+YErFWfybWoROt5mqYO8CafCWSzk
-	OLRi3hVaFxeuEO5EpkcQ==;
+	List-Owner; bh=e1LBfGKwFVVasxQjPkw0AlZ1/uTfrnv6DRVJig0PjYs=; b=gHaW+msEyxPxCy
+	uKrkiO8GlmKseWtrL/Fgq2I9/vI99q7a+zavo6ikT9LhkXrVeeUoPGE1dcdL2eWMPhSqpo0vyEtIK
+	yN+iCIZZagjUReY0fHiHELGmcYSfZPs1QiQqIyhiTiRdNahO618hW6nH3auoV8l6Pe+o1CMD63M9k
+	9SJmYoyytSSjvLip8YeaqZEUE1wOrEFbu4VdNxJ7Z/e1CKxZVqGo9ITGcQe/8Yt3wqMXwWfuReOWT
+	tsXI+WNEAkAYQzc+svVa47aXyNzaTuUzdR1grSS8as9cDQeL43DBl8fFgYSZn70QLhbAkVsX2zu0A
+	bVJ3ISj9wF4EjP938jfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnvrJ-00GVo8-0k;
-	Wed, 04 Oct 2023 06:59:49 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1qnxyg-00H0yK-0Q;
+	Wed, 04 Oct 2023 09:15:34 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnvrG-00GVmy-1m
+	id 1qnx1A-00GlhN-1O
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Oct 2023 06:59:47 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-5334f9a56f6so3052760a12.3
-        for <linux-phy@lists.infradead.org>; Tue, 03 Oct 2023 23:59:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696402784; x=1697007584; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=thrSc5rKrJp9MHTbS/L/Xu/dKYxXxvLXx/M6k3LPsYU=;
-        b=Z8F1ENzekdhSY1fwoAg/acBQltC6GK0o402p7nFegrUeA0aFm5sTaO0l2jMqhpCeGc
-         qtcG4j53HzUd0f0Ae3Y5TMzFbNOiuVZ3oDvFy2U15Y65z3tXJFjvfKT7J7LmULcufiyb
-         1WR3AMtBxLlBKtrXRgg3kGgg5Puz9JNhf7qTNXVq2Tiqnr07y+V15hyrS8PKmt10Be/V
-         GsVE7KRrLF+aLHRJhEBeJL4dHmJYKMyfMcKI/iADk0UUbIKXcNKGrvM9qD0SG3gn46KY
-         X6hiPV7PYP5fjgISPevEgFJIrvbt2hDHX73q/4xpBWMFk0TLfP3bHUXB+vhw/bOSTk51
-         0Lvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696402784; x=1697007584;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=thrSc5rKrJp9MHTbS/L/Xu/dKYxXxvLXx/M6k3LPsYU=;
-        b=HlSY3heDmMbL1eBlMQ4GdUUzB21UsAz+MgvSLIGM7fKvELbNWfXN24lLwjm6Z4MvDk
-         yUEL9MG8vpujcA0v/S+OvoNMUiFMjkxiTwvuULkZuTPi1JIJpVq4ieoK/DomCH7a6OUZ
-         jjCkt/dPBrdS1Oi7SM1wN+wQ1CLmork+ZoElAl4ojmsxOjNGV0jt3xgMbxaJ0Th700MZ
-         wWoiEvcYB8wdD6Z1zb8YXPUDLrUXiJwqs8iRtmUEwbvs5SpK1QLfx3fW3ptMbG3jNBXx
-         dE8zDvFmVqHlEOdGLlyY6srWv0bDFYRd8wcNw5nQHQw/Yj2NqP+em6KQOs0EqqcvqJI2
-         jLZA==
-X-Gm-Message-State: AOJu0YyZt9mY4LOV3qbt3TK+jrld11NT7O5bfDdLD1qcbI/yXxTZS7c2
-	pVSvxMjrAV5fJ6i5vN1ME+i05Q==
-X-Google-Smtp-Source: AGHT+IGfIY0O71410pxZ9HzYqgSmZTnCmsDyWFAtPGIDwsnSL1OkI/mbzdGJH0K5EVZ3WLZsVuTAgQ==
-X-Received: by 2002:a17:907:75cf:b0:9a1:b144:30f0 with SMTP id jl15-20020a17090775cf00b009a1b14430f0mr1070360ejc.53.1696402783629;
-        Tue, 03 Oct 2023 23:59:43 -0700 (PDT)
-Received: from [192.168.1.197] (5-157-101-10.dyn.eolo.it. [5.157.101.10])
-        by smtp.gmail.com with ESMTPSA id j11-20020a170906410b00b00982a92a849asm2239079ejk.91.2023.10.03.23.59.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 03 Oct 2023 23:59:43 -0700 (PDT)
-Message-ID: <b56d9d8f-c893-46b9-9f1c-bdcd50c63209@linaro.org>
-Date: Wed, 4 Oct 2023 08:59:41 +0200
+	Wed, 04 Oct 2023 08:14:07 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1F894614AE;
+	Wed,  4 Oct 2023 08:14:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8CD46C433C7;
+	Wed,  4 Oct 2023 08:13:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1696407242;
+	bh=UPqOSLYhH7npzWNNSeA82XKeFXdrUVJstVbJYeo2EaA=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=uYuHGwrE5OxB82TgQSr5LMX4noPjfoLvkxmKL8OrfQkG+7N5uXHIZtAhHMPnlbV5B
+	 Fx0MgdGd1Vj94JYaFk7zvtk0c1Z7S/N9Zokz0DEqxn7v0LexXaZvSkGZXqOsq0zUOg
+	 GvBJTpTYyfoOcD6aj1gt2ECThArU3Au5y9TcxJ2tyOgO8Drw9QgZqg3crNTAdWEE28
+	 eqLYE0WyskczES/GsoIPjPknXtBIQgoxM9dcv8kNzTxYAHNen7iSjwFykpgf2z3GWU
+	 c1npePM7PD+txXmFftPA0e3vXTMa05KfkXpt3Ib31Ys2cwOqSNWlmI4xPDQKmkel7n
+	 RuTIGY+SvY8Ow==
+Message-ID: <959363c6-9ecb-4e5f-960d-65dd23b74ce2@kernel.org>
+Date: Wed, 4 Oct 2023 10:13:52 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
+Subject: Re: [PATCH 3/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
 Content-Language: en-US
 To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, lpieralisi@kernel.org,
@@ -78,9 +58,9 @@ To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-3-quic_nsekar@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ <20231003120846.28626-4-quic_nsekar@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
  JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
@@ -90,45 +70,43 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
  vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
  Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231003120846.28626-3-quic_nsekar@quicinc.com>
+ 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 fv0=
+In-Reply-To: <20231003120846.28626-4-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_235946_598022_3DF73A9E 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231004_011404_575276_B650DB36 
+X-CRM114-Status: GOOD (  13.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,28 +124,81 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 03/10/2023 14:08, Nitheesh Sekar wrote:
-> Add support for the PCIe controller on the Qualcomm
-> IPQ5108 SoC to the bindings.
+> Add Qualcomm PCIe UNIPHY 28LP driver support present
+> in Qualcomm IPQ5018 SoC and the phy init sequence.
 > 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> ---
+
+...
+
+> +static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct qcom_uniphy_pcie *phy;
+> +	int ret;
+> +	struct phy *generic_phy;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = of_node_get(dev->of_node);
+> +
+> +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	platform_set_drvdata(pdev, phy);
+> +	phy->dev = &pdev->dev;
+> +
+> +	phy->data = of_device_get_match_data(dev);
+> +	if (!phy->data)
+> +		return -EINVAL;
+> +
+> +	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
+> +	if (ret < 0) {
+> +		dev_err(&pdev->dev, "failed to get resources: %d\n", ret);
+> +		return ret;
+
+Syntax is:
+return dev_err_probe()
 
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> +	}
+> +
+> +	ret = phy_pipe_clk_register(phy, np);
+> +	if (ret)
+> +		dev_err(&pdev->dev, "failed to register phy pipe clk\n");
+> +
+> +	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
+> +	if (IS_ERR(generic_phy))
+> +		return PTR_ERR(generic_phy);
+> +
+> +	phy_set_drvdata(generic_phy, phy);
+> +	phy_provider = devm_of_phy_provider_register(phy->dev,
+> +						     of_phy_simple_xlate);
+> +	if (IS_ERR(phy_provider))
+> +		return PTR_ERR(phy_provider);
+> +
+> +	return 0;
+> +}
+> +
+> +static struct platform_driver qcom_uniphy_pcie_driver = {
+> +	.probe		= qcom_uniphy_pcie_probe,
+> +	.driver		= {
+> +		.name	= "qcom-uniphy-pcie",
+> +		.owner	= THIS_MODULE,
 
----
+Run coccinelle/coccicheck.
 
-This is an automated instruction, just in case, because many review tags
-are being ignored. If you know the process, you can skip it (please do
-not feel offended by me posting it here - no bad intentions intended).
-If you do not know the process, here is a short explanation:
+> +		.of_match_table = qcom_uniphy_pcie_id_table,
+> +	},
+> +};
+> +
+> +module_platform_driver(qcom_uniphy_pcie_driver);
+> +
+> +MODULE_ALIAS("platform:qcom-uniphy-pcie");
 
-Please add Acked-by/Reviewed-by/Tested-by tags when posting new
-versions, under or above your Signed-off-by tag. Tag is "received", when
-provided in a message replied to you on the mailing list. Tools like b4
-can help here. However, there's no need to repost patches *only* to add
-the tags. The upstream maintainer will do that for tags received on the
-version they apply.
+You should not need MODULE_ALIAS() in normal cases. If you need it,
+usually it means your device ID table is wrong.
 
-https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
 
 Best regards,
 Krzysztof
