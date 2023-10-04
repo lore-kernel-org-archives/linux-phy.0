@@ -4,125 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 004B3E7B5EE
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 11:17:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 079C3E7C4E2
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Oct 2023 17:28:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t6ifv5Fd6omqhSgBOK9sZCO+DhfSkI/Ny4izS6ijszU=; b=YsDrqcNc50eB12
-	9w55qSV7b9xNKfO47qY9sT8w/6CyxEZkTcJ7LLciQ1xxT/mxhxFo0lpcKrvZLMYBg7YMbi1nmv+M7
-	ti37rUDAxj0CrUJ1L8+14atyhjhm11RLfo14kPyingFzNsl/E7qrPsNEHW0lhDZQMxWaDcGIYq49s
-	auCuo/I3ln7CKya1AXSI6pnb5BnP0NIOgn591q6w2+nyaQr5Vlpupse6GxFkiml+uUY0E9Zp4XyFY
-	6+KMEWfqwx4bq30lquSvjJA1PvKEH2/rZLRCK/jsEXXl7FsDTCfvKQM1fMEIv+P7sSnlqSQH+7hpP
-	GTQa1eG5jbGxE6bmoKyg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wDeUNIs4Om7YZfF6RNehR1G6E7Rye493xbgpykXzwik=; b=QCEs4CLvW3elZxHO1mtjE2eeFk
+	/fGBPVgsdo1b/PxijtWUi7uNsgCDvTIQgy235jVSWFs3+pYtbC03r1BR+A9LL96+wNkedfpBHMT1n
+	I9PrXux6/FwRbytWXvLLHlH55XoQA9gDgHXsPQ2qosf3nL7NZ0J28xdQsqK1XTJs8Y9JkEX+JVZn+
+	9CPim4nTC0zmQFXCUVKkPElOKnqQ1lyAkEtC9noqnxrz6GB47WDEa6DMW+V4Unnxr2G//kcZ2a4QP
+	IHMMMPmW2qUwR7w9vsRZLaF4Jh+Qq3JTT6aXijCXihiMJO00yTNpHRbqc144c0xD2u2kZVnI4EHHs
+	wir/UUpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnzsr-00HSnQ-2C;
-	Wed, 04 Oct 2023 11:17:41 +0000
-Received: from mail-vi1eur05on20610.outbound.protection.outlook.com ([2a01:111:f400:7d00::610] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1qo5fH-000b0C-2D;
+	Wed, 04 Oct 2023 17:28:03 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnzsn-00HSiV-1E
+	id 1qo5fE-000ayz-0K
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Oct 2023 11:17:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=K/BohecXWzD877Bc1yhXEzizt6UMX7BIYl331jZHWfXkLTpb2cvpqga77jRtG98pqP3sSX6BNTt6plJYYr3rinKCXfqHF5Q3VlyXqrLMWNy9FxEa6GBKZMfb8p6yOzTRV0zWqj0wir3UvFrwmsMXwgmHZl/C7FbkiWJVQ4XUWb5Xh4RtqKtpauvHFaUZH7Nqlkarze9eKOhWyNLaSO3gdudOJq9lIckq/k8swWbxEWYqyHVqOYTJ8DAy2R4gj5dOwYTP2RXWr7N6NJPSip7Fi53JqD2HX8CuGFSfsfs95BoDpNV4HCgthVWLuAldoUBDPeu77L//KzcTfBx588zQnA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xUhszzw6Eg8/yiEvcOL9JdV3piTNEWQts4rWeH5019c=;
- b=dnD0idSYElkKUzPIv8OBZZQF1hASYR9+s4ijm2mg7rGxPxjbUT0Z1cct996eVRWgrrTKnp/iLNwaS3VAn7HHWD9pvUjHKX5uzwHozosvrt6roXO1/FPny+Qs9tPjpthUTdfQtVqCrkOmTE69rjQwxq4LUnEHmg9bInHnkBSfZIQOu8ytcYC2J1jdv0l7bXDgJAMxVeXItn+JVLEcOGPHkyQoJWKbH5/YhDsq+Th3L5NPTdJc9hVOH24/cJpi/VpIq8XRB+Hy5P6L26h8TcPgUqJcFAoeE9ap/OcVDzc/j9l0iKx10ejcTa/Wk5Vy9NQz0Ybuq/61XiNs9AWsGYiz0g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xUhszzw6Eg8/yiEvcOL9JdV3piTNEWQts4rWeH5019c=;
- b=nUP9aLESNyCFYv5bKxl06OuOfqScGfGvcl6FwrMflXf4b+qaqFgaMiSdQ4BvfgqqJXxDjIpt8i0b+L9Fg3HWjJB/pTIIf/e4COTdK+wZ/2vKRsr1hVeLCvGEz300NPCMsGZC3aSiZ22TvbBCMgMrNJI0zjF1vkI+ldfDK9bAyZ4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com (2603:10a6:208:16d::21)
- by PAWPR04MB9911.eurprd04.prod.outlook.com (2603:10a6:102:38b::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6813.36; Wed, 4 Oct
- 2023 11:17:23 +0000
-Received: from AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::568a:57ee:35b5:e454]) by AM0PR04MB6452.eurprd04.prod.outlook.com
- ([fe80::568a:57ee:35b5:e454%3]) with mapi id 15.20.6838.024; Wed, 4 Oct 2023
- 11:17:22 +0000
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH net 1/3] phy: lynx-28g: cancel the CDR check work item on the remove path
-Date: Wed,  4 Oct 2023 14:17:06 +0300
-Message-Id: <20231004111708.3598832-2-vladimir.oltean@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20231004111708.3598832-1-vladimir.oltean@nxp.com>
-References: <20231004111708.3598832-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AM0PR02CA0119.eurprd02.prod.outlook.com
- (2603:10a6:20b:28c::16) To AM0PR04MB6452.eurprd04.prod.outlook.com
- (2603:10a6:208:16d::21)
+	Wed, 04 Oct 2023 17:28:02 +0000
+Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-99c3d3c3db9so10945066b.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Oct 2023 10:27:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1696440477; x=1697045277; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=EsMX9IBFw4KgDI0eQ/LM4jZAEEAU2sAB7Cpb6RK7TbE=;
+        b=PTn+Nw6uoP3cNxf+HLsT31lebTUhnIoDpAZv804r8nBSt9pOUxq68+n7HS8j5rxPHZ
+         0dTaPqFgaBPh9EGd4ORi2ajDUljQrBVQpUMMRKcO6zLdXZUi5zhCH/iGfKItOYA6Y1O+
+         Vs//JQqeoMPTqk0oozLgqU1FB0HMuz+tRtWksO2B/v2tsAfzGCaAbm2YTqlT4q2Y3V3C
+         CCOZ1rKCUpFB13RB99IUhMC/XHQJ/s9ganpzXU+QrayoLlOJ8R7/ymFLwrIzyW40nvex
+         J/v5ipU8chmfxgmK8DPZPD7lAOpDNjxQUAnC8DVay9fhjWLU9gm5SKJH0sE82Es8PzKA
+         LJQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1696440477; x=1697045277;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=EsMX9IBFw4KgDI0eQ/LM4jZAEEAU2sAB7Cpb6RK7TbE=;
+        b=N2/NFieu3oYaI0X4fTFK2jWhKT1bncYRVs2bZr2g5fRWLpTYsaJ1l/cKEA10W2VHbw
+         gsGhELr2tCOHa08nSqBRo738B8Bi3377R7AZiCbcM6tetHjphr8m7XUBt22lWQpigp77
+         lWUMX/Dt84DEt7MSDF0pQaJruqiNTz5Qq7z6pAOUP2LCd5saRt3MegVobDVBW+wRr3aS
+         +iR+oovnr/dipmrBtbr5sY4dxEAN6xosSappdA4XH3F1hwQMhziwGqGgZ6qjYXQwxz2s
+         jBJ4QxSX6/lg30/ZJVKiX3ufj9yrBzqxZ9yZypKY6TsqkbsO3ZEXb2RbhRqKJOg2qd1F
+         LqFg==
+X-Gm-Message-State: AOJu0YyK6NAsLSkML/KvemPdxRSpg6/qazjuq4bdNHR+ujSXI4leAs64
+	qaOJGGxpzWfHdmBd4grTWCc=
+X-Google-Smtp-Source: AGHT+IFEFkjlfQG7xX2bTBIMiWf6ngQGjUKpZP8xK/2H/0CKSmPQk10YFu3Cqq8RyuqMBscl5VFMIg==
+X-Received: by 2002:a17:906:7389:b0:9ae:406c:3420 with SMTP id f9-20020a170906738900b009ae406c3420mr2351151ejl.30.1696440477236;
+        Wed, 04 Oct 2023 10:27:57 -0700 (PDT)
+Received: from [192.168.3.32] (cpezg-94-253-131-161-cbl.xnet.hr. [94.253.131.161])
+        by smtp.gmail.com with ESMTPSA id uz5-20020a170907118500b0099cce6f7d50sm3123328ejb.64.2023.10.04.10.27.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Oct 2023 10:27:56 -0700 (PDT)
+Message-ID: <32389b66-48f3-8ee8-e2f1-1613feed3cc7@gmail.com>
+Date: Wed, 4 Oct 2023 19:27:54 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6452:EE_|PAWPR04MB9911:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7cbe6c47-8158-4e8e-b311-08dbc4cb7b3e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: RFts6I4np5M/FYzNxzRVgKNPyeqms3AZpb+JUL6az0yjK/gPxZNX9zHnsusvWEDmgYLwoh+5D9b8i6rinqZFf8pNeics1FSp5CkAUqYf2Dtng29ictLRVlcqbG4sZTQSx5n/FgntcyZzRvUHvBrhjDM4/aHp4dUKV8a3cUpxFw6TFtLtI9zQh7NtLdduxX8K9jBlo7FbevEtoUHvZmJdSyn5PYRST/pPr0kHXNH8So21S26qLXZyFsEj3sHBk8cdyCjxuW8/XwPY0BxMHcQ82iSAn9D6a9gf66qysZKusFOz6RGTIR7gIwXNtEHY0DvHpLfFC2wwkOV0E6PbEuGZzV0N1fYFXwcKdn6UorjEb8rWYk4gdizCL3X+2SXYI91AFoUFS4iVUIhEBffbQ3pd6qDCgXZI7L0Vxg0viWR5opzFLv1NvV0hVm5YBMUraECXmSdQgU386xDMM11ZMiasr13IieKLb8mUELhvau1APZ+r5OKbe8bzgS/hTEpvIxvKTtbI5QMgJC8xREY3p7xX2d3XTKXJLfIQR+/PhJop4qeCOoV7B1aBpZpmsEW1cKNM4qJ9yUcQH6xXFIQ1BZL5KjpCxbZppsSbhC0IPNKz8JA3WBr6U1kmNXtRgOIaRFWC
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376002)(346002)(39860400002)(396003)(136003)(366004)(230922051799003)(186009)(1800799009)(451199024)(64100799003)(316002)(66556008)(66476007)(54906003)(66946007)(2616005)(1076003)(26005)(6512007)(52116002)(6666004)(38350700002)(38100700002)(86362001)(36756003)(478600001)(6486002)(6506007)(2906002)(41300700001)(8676002)(8936002)(44832011)(4326008)(5660300002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?iRWMAiaLYadNca8S5A/VqBGrsHLHCBy8h/JeF9sF/iL2sJBwcWpzSHzs03OR?=
- =?us-ascii?Q?4Rw9qix2JIkWdxGuA6kl764KyBPlr9ljS6Ojg0X7W8n0ZVVEZXmk9MNGqCrV?=
- =?us-ascii?Q?UnXy4KRO55lbkqbrSRUTWtsHdeiQuzgh5c5by32PfaJ8GmasKon69u4wSZaJ?=
- =?us-ascii?Q?cASjgYU1uEiurMwiK+uLSTsSVU5/W4kWG/l+DZuoKCZin8oKmG421PNLRLi3?=
- =?us-ascii?Q?qhDwjZy+Wt03MYn4PYPvWont17ZcFoOT7+kA/0ydMA/Z3A4pF/InIsISst0x?=
- =?us-ascii?Q?0H+32TnsQYnplJvDUJJgmXdjh62ZE+EjXzthYUz9BH8a59CmrWNKA6Rs5r/P?=
- =?us-ascii?Q?TNvpe69ZCwKX9cv3bTrB8lNG40jFNq3+dbJTmIct5UAx+w7LsA91gkq6yOJh?=
- =?us-ascii?Q?D74PocVYRahV96S7uCQjTOg/d5fOh9tv0xmGc1D45FnO6OgSEb/wRxao6Rue?=
- =?us-ascii?Q?Qx6sMeKFXmxJMqW+HjFH3X2IqZLpodOZXeoHwugZi8G2G7IS8GBi1VnRcsmX?=
- =?us-ascii?Q?v5vj/LchbvhLMUJ7WVmc1x0oq1/1tSWGADYNINi+5Ktf9TnLFEt5l5SNmkX1?=
- =?us-ascii?Q?pHEiWksem6PZeTdJmG7ZD4uy/CiM5awGl4jyw8qlS4u5vCPrPL+061yppl0d?=
- =?us-ascii?Q?ydxTulxTjK9yfD6ZPheOaO+JRvwQ1pkuq8dFmyrMG2VYwlcv17GHqoPVGmJF?=
- =?us-ascii?Q?VXP+Coim8NY+Rgc/sLLoa/meVo94Dd8hwPB2/amThcjtUJwd0rD7Ip3NujiB?=
- =?us-ascii?Q?gcTEpD3UpJKNPL1WpFyFMAddxWJQrhbfsEwMPe7fNfR8bAKxvvFFT5+rx/KS?=
- =?us-ascii?Q?2jY93ueDCbxEJ2G6kuwrJLJkcK+yfhYqQ+5NohH06SI/0coqeKtx1ovdT43Z?=
- =?us-ascii?Q?lReR4wZFvXqm5/NOxZegJkv6eVhIc3cxfjsIYGRg+HX4Q/9JBRPKnGjPlv0n?=
- =?us-ascii?Q?6fRe/0YThlPIu1LbcupaPJZBPwET7ZxtBIuUoV9OZ+sAl+VFrXRgyXru/D5Q?=
- =?us-ascii?Q?4Rj55TP3vTqvO5vRfd6CR/Apzp33SLCFomgYpLlXEtbaNNd4NjuaHmKFlF83?=
- =?us-ascii?Q?M+0RaomIhWV9Bq3RNbesucgFfGqiYTQl1RnTIZFWWxYmqFsrXOnWw3IuOwtv?=
- =?us-ascii?Q?oOpc32WJ2CuhX5OMF1MKxDt0mPjK23nVXOlf3Vdr+nM0aW0AvbWa5E5p0nTA?=
- =?us-ascii?Q?JjZ24Zx0hB82giThhLBcPx4Feepu3W7jRyaUWJgQNUf8KQ+ABGZrTvWYu4XX?=
- =?us-ascii?Q?hpNZXexsg1dQgad2EM8WblCARHtK6awQE33dKeRrVD7Zcg5BW+5c6Oj0el1Z?=
- =?us-ascii?Q?tA4+0z+QDLWXdAmfKeTZ6mhtFSIohOp0KrexpKH/r7+N8POL6LP3pL7hlD3V?=
- =?us-ascii?Q?tYekV+GImTQvOd+aa1XdAStOlgfUrj2RDwomsh8mjooe6/lEcdfdNU2oHTBQ?=
- =?us-ascii?Q?HPTbqWZXMxbsFJyJHc+5pglv7ozY/5B7VQAI84X7WRA7qF+0SyAVM4exDrm3?=
- =?us-ascii?Q?Z62I8pQun8CF1kZWFKXlEVBn9SQad3/EPkn+ZPQ576nAvsKQeFKPOLmEnvMo?=
- =?us-ascii?Q?4zkr2jcxS2Eookc5aScO/ZXiKJ3XushEeDj2LpGfF71hatj9yjGO17QfXMgH?=
- =?us-ascii?Q?5A=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7cbe6c47-8158-4e8e-b311-08dbc4cb7b3e
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6452.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Oct 2023 11:17:22.9544
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5qPGDykns/ZwvDUzJ/t6RQLDe3pM4sBfSQ8vuHMuyoZfrvJmDaHyCqe/tYvEkhzO0SoVUVPJC0ZaXIGlYEDDPQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWPR04MB9911
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 3/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
+To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, lpieralisi@kernel.org,
+ kw@linux.com, robh@kernel.org, bhelgaas@google.com,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, mani@kernel.org, p.zabel@pengutronix.de,
+ quic_srichara@quicinc.com, quic_varada@quicinc.com,
+ quic_ipkumar@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+ <20231003120846.28626-4-quic_nsekar@quicinc.com>
+Content-Language: en-US
+From: Robert Marko <robimarko@gmail.com>
+In-Reply-To: <20231003120846.28626-4-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231004_041737_434178_44930BB3 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20231004_102800_153220_5462DB01 
+X-CRM114-Status: GOOD (  36.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,54 +96,410 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
 
-The blamed commit added the CDR check work item but didn't cancel it on
-the remove path. Fix this by adding a remove function which takes care
-of it.
+On 03. 10. 2023. 14:08, Nitheesh Sekar wrote:
+> Add Qualcomm PCIe UNIPHY 28LP driver support present
+> in Qualcomm IPQ5018 SoC and the phy init sequence.
+>
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> ---
+>   drivers/phy/qualcomm/Kconfig                  |  12 +
+>   drivers/phy/qualcomm/Makefile                 |   1 +
+>   .../phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c  | 336 ++++++++++++++++++
+>   3 files changed, 349 insertions(+)
+>   create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+>
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index d891058b7c39..b7d37cd98f02 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -154,6 +154,18 @@ config PHY_QCOM_M31_USB
+>   	  management. This driver is required even for peripheral only or
+>   	  host only mode configurations.
+>   
+> +config PHY_QCOM_UNIPHY_PCIE_28LP
+> +	bool "PCIE UNIPHY 28LP PHY driver"
+> +	depends on ARCH_QCOM
+> +	depends on HAS_IOMEM
+> +	depends on OF
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the PCIe UNIPHY 28LP phy transceiver that
+> +	  is used with PCIe controllers on Qualcomm IPQ5018 chips. It
+> +	  handles PHY initialization, clock management required after
+> +	  resetting the hardware and power management.
+> +
+>   config PHY_QCOM_USB_HS
+>   	tristate "Qualcomm USB HS PHY module"
+>   	depends on USB_ULPI_BUS
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index ffd609ac6233..31105cd17bc9 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -17,6 +17,7 @@ obj-$(CONFIG_PHY_QCOM_QMP_USB_LEGACY)	+= phy-qcom-qmp-usb-legacy.o
+>   obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
+>   obj-$(CONFIG_PHY_QCOM_SNPS_EUSB2)	+= phy-qcom-snps-eusb2.o
+>   obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)	+= phy-qcom-eusb2-repeater.o
+> +obj-$(CONFIG_PHY_QCOM_UNIPHY_PCIE_28LP)	+= phy-qcom-uniphy-pcie-28lp.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
+>   obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> new file mode 100644
+> index 000000000000..5ef6ae7276cf
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> @@ -0,0 +1,336 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2023, The Linux Foundation. All rights reserved.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/reset.h>
+> +#include <linux/of_device.h>
+> +#include <linux/delay.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/regmap.h>
+> +
+> +#define PIPE_CLK_DELAY_MIN_US			5000
+> +#define PIPE_CLK_DELAY_MAX_US			5100
+> +#define CDR_CTRL_REG_1		0x80
+> +#define CDR_CTRL_REG_2		0x84
+> +#define CDR_CTRL_REG_3		0x88
+> +#define CDR_CTRL_REG_4		0x8C
+> +#define CDR_CTRL_REG_5		0x90
+> +#define CDR_CTRL_REG_6		0x94
+> +#define CDR_CTRL_REG_7		0x98
+> +#define SSCG_CTRL_REG_1		0x9c
+> +#define SSCG_CTRL_REG_2		0xa0
+> +#define SSCG_CTRL_REG_3		0xa4
+> +#define SSCG_CTRL_REG_4		0xa8
+> +#define SSCG_CTRL_REG_5		0xac
+> +#define SSCG_CTRL_REG_6		0xb0
+> +#define PCS_INTERNAL_CONTROL_2	0x2d8
+> +
+> +#define PHY_MODE_FIXED		0x1
+> +
+> +enum qcom_uniphy_pcie_type {
+> +	PHY_TYPE_PCIE = 1,
+> +	PHY_TYPE_PCIE_GEN2,
+> +	PHY_TYPE_PCIE_GEN3,
+> +};
+> +
+> +struct uniphy_regs {
+> +	unsigned int offset;
+> +	unsigned int val;
+> +};
+> +
+> +struct uniphy_pcie_data {
+> +	int lanes;
+> +	/* 2nd lane offset */
+> +	int lane_offset;
+> +	unsigned int phy_type;
+> +	const struct uniphy_regs *init_seq;
+> +	unsigned int init_seq_num;
+> +};
+> +
+> +struct qcom_uniphy_pcie {
+> +	struct phy phy;
+> +	struct device *dev;
+> +	const struct uniphy_pcie_data *data;
+> +	struct clk_bulk_data *clks;
+> +	int num_clks;
+> +	struct reset_control *resets;
+> +	void __iomem *base;
+> +};
+> +
+> +#define	phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
+> +
+> +static const struct uniphy_regs ipq5018_regs[] = {
+> +	{
+> +		.offset = SSCG_CTRL_REG_4,
+> +		.val = 0x1cb9,
+> +	},
+> +	{
+> +		.offset = SSCG_CTRL_REG_5,
+> +		.val = 0x023a,
+> +	},
+> +	{
+> +		.offset = SSCG_CTRL_REG_3,
+> +		.val = 0xd360,
+> +	},
+> +	{
+> +		.offset = SSCG_CTRL_REG_1,
+> +		.val = 0x1,
+> +	},
+> +	{
+> +		.offset = SSCG_CTRL_REG_2,
+> +		.val = 0xeb,
+> +	},
+> +	{
+> +		.offset = CDR_CTRL_REG_4,
+> +		.val = 0x3f9,
+> +	},
+> +	{
+> +		.offset = CDR_CTRL_REG_5,
+> +		.val = 0x1c9,
+> +	},
+> +	{
+> +		.offset = CDR_CTRL_REG_2,
+> +		.val = 0x419,
+> +	},
+> +	{
+> +		.offset = CDR_CTRL_REG_1,
+> +		.val = 0x200,
+> +	},
+> +	{
+> +		.offset = PCS_INTERNAL_CONTROL_2,
+> +		.val = 0xf101,
+> +	},
+> +};
+> +
+> +static const struct uniphy_pcie_data ipq5018_2x2_data = {
+> +	.lanes		= 2,
+> +	.lane_offset	= 0x800,
+> +	.phy_type	= PHY_TYPE_PCIE_GEN2,
+> +	.init_seq	= ipq5018_regs,
+> +	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
+> +};
+> +
+> +static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
+> +{
+> +	const struct uniphy_pcie_data *data = phy->data;
+> +	const struct uniphy_regs *init_seq;
+> +	void __iomem *base = phy->base;
+> +	int lane = 0;
+> +	int i;
+> +
+> +	while (lane != data->lanes) {
+> +		init_seq = data->init_seq;
+> +
+> +		for (i = 0; i < data->init_seq_num; i++, init_seq++)
+> +			writel(init_seq->val, base + init_seq->offset);
+> +
+> +		if (data->lanes == 2)
+> +			base = base + data->lane_offset;
+> +
+> +		lane++;
+> +	}
+> +}
+> +
+> +static int qcom_uniphy_pcie_power_off(struct phy *x)
+> +{
+> +	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
+> +
+> +	reset_control_assert(phy->resets);
+> +
+> +	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
+> +
+> +	return 0;
+> +}
+> +
+> +static int qcom_uniphy_pcie_power_on(struct phy *x)
+> +{
+> +	int ret;
+> +	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
+> +
+> +	ret = reset_control_assert(phy->resets);
+> +	if (ret) {
+> +		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/*
+> +	 * Delay periods before and after reset deassert are working values
+> +	 * from downstream Codeaurora kernel
+> +	 */
+> +	usleep_range(100, 150);
+> +
+> +	ret = reset_control_deassert(phy->resets);
+> +	if (ret) {
+> +		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	usleep_range(PIPE_CLK_DELAY_MIN_US, PIPE_CLK_DELAY_MAX_US);
+> +
+> +	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
+> +	if (ret) {
+> +		dev_err(phy->dev, "clk prepare and enable failed %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	usleep_range(30, 50);
+> +
+> +	qcom_uniphy_pcie_init(phy);
+> +	return 0;
+> +}
+> +
+> +static int qcom_uniphy_pcie_get_resources(struct platform_device *pdev,
+> +					  struct qcom_uniphy_pcie *phy)
+> +{
+> +	struct resource *res;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	phy->base = devm_ioremap_resource(phy->dev, res);
+> +	if (IS_ERR(phy->base)) {
+> +		dev_err(phy->dev, "cannot get phy registers\n");
+> +		return PTR_ERR(phy->base);
+> +	}
+> +
+> +	phy->num_clks = devm_clk_bulk_get_all(phy->dev, &phy->clks);
+> +	if (phy->num_clks < 0)
+> +		return phy->num_clks;
+> +
+> +	phy->resets = devm_reset_control_array_get_exclusive(phy->dev);
+> +	if (IS_ERR(phy->resets))
+> +		return PTR_ERR(phy->resets);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Register a fixed rate pipe clock.
+> + *
+> + * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
+> + * controls it. The <s>_pipe_clk coming out of the GCC is requested
+> + * by the PHY driver for its operations.
+> + * We register the <s>_pipe_clksrc here. The gcc driver takes care
+> + * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
+> + * Below picture shows this relationship.
+> + *
+> + *         +---------------+
+> + *         |   PHY block   |<<---------------------------------------+
+> + *         |               |                                         |
+> + *         |   +-------+   |                   +-----+               |
+> + *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
+> + *    clk  |   +-------+   |                   +-----+
+> + *         +---------------+
+> + */
+> +static int phy_pipe_clk_register(struct qcom_uniphy_pcie  *phy,
+> +				 struct device_node *np)
+> +{
+> +	struct clk_fixed_rate *fixed;
+> +	struct clk_init_data init = { };
+> +	int ret;
+> +
+> +	ret = of_property_read_string(np, "clock-output-names", &init.name);
+> +	if (ret) {
+> +		dev_err(phy->dev, "%pOFn: No clock-output-names\n", np);
+> +		return ret;
+> +	}
+> +
+> +	fixed = devm_kzalloc(phy->dev, sizeof(*fixed), GFP_KERNEL);
+> +	if (!fixed)
+> +		return -ENOMEM;
+> +
+> +	init.ops = &clk_fixed_rate_ops;
+> +	fixed->fixed_rate = 125000000;
+> +	fixed->hw.init = &init;
+> +
+> +	ret = devm_clk_hw_register(phy->dev, &fixed->hw);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = devm_of_clk_add_hw_provider(phy->dev, of_clk_hw_simple_get,
+> +					  &fixed->hw);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id qcom_uniphy_pcie_id_table[] = {
+> +	{
+> +		.compatible = "qcom,ipq5018-uniphy-pcie-gen2x2",
+> +		.data = &ipq5018_2x2_data,
 
-Fixes: 8f73b37cf3fb ("phy: add support for the Layerscape SerDes 28G")
-Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
- drivers/phy/freescale/phy-fsl-lynx-28g.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Hi, did you also forget the single lane PHY?
+As you have the "qcom,ipq5018-uniphy-pcie-gen2x1" compatible used later 
+in the DTS
+but its not implemented in the driver at all.
 
-diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-index 4f036c77284e..c6323669f119 100644
---- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
-+++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-@@ -604,6 +604,14 @@ static int lynx_28g_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(provider);
- }
- 
-+static void lynx_28g_remove(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct lynx_28g_priv *priv = dev_get_drvdata(dev);
-+
-+	cancel_delayed_work_sync(&priv->cdr_check);
-+}
-+
- static const struct of_device_id lynx_28g_of_match_table[] = {
- 	{ .compatible = "fsl,lynx-28g" },
- 	{ },
-@@ -612,6 +620,7 @@ MODULE_DEVICE_TABLE(of, lynx_28g_of_match_table);
- 
- static struct platform_driver lynx_28g_driver = {
- 	.probe	= lynx_28g_probe,
-+	.remove_new = lynx_28g_remove,
- 	.driver	= {
- 		.name = "lynx-28g",
- 		.of_match_table = lynx_28g_of_match_table,
--- 
-2.34.1
+Regards,
+Robert
 
+> +	},
+> +	{ /* Sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_id_table);
+> +
+> +static const struct phy_ops pcie_ops = {
+> +	.power_on	= qcom_uniphy_pcie_power_on,
+> +	.power_off	= qcom_uniphy_pcie_power_off,
+> +	.owner          = THIS_MODULE,
+> +};
+> +
+> +static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct qcom_uniphy_pcie *phy;
+> +	int ret;
+> +	struct phy *generic_phy;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = of_node_get(dev->of_node);
+> +
+> +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	platform_set_drvdata(pdev, phy);
+> +	phy->dev = &pdev->dev;
+> +
+> +	phy->data = of_device_get_match_data(dev);
+> +	if (!phy->data)
+> +		return -EINVAL;
+> +
+> +	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
+> +	if (ret < 0) {
+> +		dev_err(&pdev->dev, "failed to get resources: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = phy_pipe_clk_register(phy, np);
+> +	if (ret)
+> +		dev_err(&pdev->dev, "failed to register phy pipe clk\n");
+> +
+> +	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
+> +	if (IS_ERR(generic_phy))
+> +		return PTR_ERR(generic_phy);
+> +
+> +	phy_set_drvdata(generic_phy, phy);
+> +	phy_provider = devm_of_phy_provider_register(phy->dev,
+> +						     of_phy_simple_xlate);
+> +	if (IS_ERR(phy_provider))
+> +		return PTR_ERR(phy_provider);
+> +
+> +	return 0;
+> +}
+> +
+> +static struct platform_driver qcom_uniphy_pcie_driver = {
+> +	.probe		= qcom_uniphy_pcie_probe,
+> +	.driver		= {
+> +		.name	= "qcom-uniphy-pcie",
+> +		.owner	= THIS_MODULE,
+> +		.of_match_table = qcom_uniphy_pcie_id_table,
+> +	},
+> +};
+> +
+> +module_platform_driver(qcom_uniphy_pcie_driver);
+> +
+> +MODULE_ALIAS("platform:qcom-uniphy-pcie");
+> +MODULE_LICENSE("Dual BSD/GPL");
+> +MODULE_DESCRIPTION("PCIE QCOM UNIPHY driver");
 
 -- 
 linux-phy mailing list
