@@ -4,92 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0948E936ED
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Oct 2023 02:55:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE50FE7C4F4
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Oct 2023 07:21:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2L/dv/prGTrt0h2i4qJKiGiD2SV4DPhcJbJSegvLAf8=; b=ycc5/V20UcukxYxpec330fX+SF
-	cN4CLkHcoK2lae41ljoKjnuRc0hY/PdVZUhNBP3SLtIrDltPTy026Nf4CtAPGTzNJqMKw9hkt875y
-	Dht3H0riMsXPmzNLhoJJG3W4yHvVv2j4bC2D0L/NRH4X0/5HKNwJGI9fCmy7LN/7i2AHZOUzfbjyc
-	N6LIamlu0J1cKQRbWaB/hgCMXG0V684kJDf0HzNdUKYHUL5dhKLLLb6Z03KJso0BZfQBAUZR/gTAF
-	hQ8rq8fqtlJ+tZRy3MB+AdDzF/E11dQASNHxVBomhLs1PxDtN2Yykb9ettxpVOcADS8W6cD1uIayR
-	bay1Iliw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L9EuWjL4WjFpYskOuyRMCVARqiG5npD0vLDNQbFRxBI=; b=wbimfjclGzNnxQ
+	ZdCwrt1r8w87r6DOKXxS6ExCXkkmqCj4N+1HJq4J4mdx7OpGvNnSGZ/2lnUVJEGIRlqKLEGD+KJWv
+	cBG/9Da4KXJBOa6Xqpn0yviBXN6fi+HeLbazyDgsOyVKbbD5riF7/obsGKk+oTn9EMCkMAXCSiIEq
+	5tqpjAgx/RgAI4a0HstuUMmY8gHobKYmwLSoPcRKitDh2oTF3sNWAqCxYgLPS8I6B/iNpiMVWFBZD
+	0fGN0f3Tym9yqqwvWKUFr/s349mMRSfUDcXIFgetasWewh7SX5UQeZZGS4iELlEHSf+ZmSqt2GV7X
+	4nbqMnDuasywFHpc3vvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoEWn-001Gdc-2P;
-	Thu, 05 Oct 2023 02:55:53 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qoIg1-001aSB-1z;
+	Thu, 05 Oct 2023 07:21:41 +0000
+Received: from out203-205-221-221.mail.qq.com ([203.205.221.221])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoEWj-001Gcj-2u
+	id 1qoIfx-001aP9-2P
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Oct 2023 02:55:51 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3950USmP008677;
-	Thu, 5 Oct 2023 02:55:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=ElSHwRJ9bjoNy4OmLXfQXMRmjlO+jpIuvVPPdPSmrrA=;
- b=lRm5Rg76uYFwjjhY6mbmHF3CH1Trn3MI3Bg7OHwRX8YDAaECPDXFNttyPISfSuRI2h3Z
- jzNk0BlyFs3hZftXfk/j7icx26hvoHdDvgJbDGUFhomtj4JE6RQRZ+6m4UVeEa3kkVN5
- pb3Zn643uCPGfwjOPyGaAZl3z90rYaBBtstYWZ++Hxc1e9OHoY4PlC2AEreuwvMY2XRP
- EFB6qldeJpnevRwyT07Tgns5gb4JS3JNAonJOtaLvUu5xdH1uRrldL2AofuZwizd6mBS
- +jpBvlJaunIZ2pTqXDjW0bXnuYMtVlDRuhnxiDHO+D5QCUlZgRi+SzS0Z+ChjCS/y7F4 xw== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3thj6gg9q0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Oct 2023 02:55:35 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3952tYxZ009310
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 5 Oct 2023 02:55:34 GMT
-Received: from [10.50.3.48] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 4 Oct
- 2023 19:55:27 -0700
-Message-ID: <b7e1d4f1-9ab4-41ac-9116-7a25186e14cb@quicinc.com>
-Date: Thu, 5 Oct 2023 08:25:24 +0530
+	Thu, 05 Oct 2023 07:21:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
+	s=s201512; t=1696490474;
+	bh=mEz3qN1zMsh5aAl/Ud3iyqDBpz/bpXnFb0XD+VFRL10=;
+	h=From:To:Cc:Subject:Date;
+	b=ZVTfwORQL0TEi3/fZieipp3dSUgNQBpeSJgMseOD/U7DODuQkV1Lz6jMF4yjULI9H
+	 7vwFthwXsfUcuNkvq/mElAc0ku3rapU1kTOJagFwtqsgEqgrWU4Qss14XkeRKyiSHP
+	 lfym1HDDfLT1ojE9LI0wKE3n2TIHSiMTVZww/VcY=
+Received: from KernelDevBox.byted.org ([180.184.51.134])
+	by newxmesmtplogicsvrszb1-0.qq.com (NewEsmtp) with SMTP
+	id 54B928D2; Thu, 05 Oct 2023 15:21:11 +0800
+X-QQ-mid: xmsmtpt1696490471t0on7jxki
+Message-ID: <tencent_7BAC04DF4D5AEDCA160A9883078BC23DEA06@qq.com>
+X-QQ-XMAILINFO: NQR8mRxMnur9pP6PuEmg0r5eft/0qO3h0e5aWLJK8cL0DUkZoH4FEOxba32rcD
+	 fTWCuv2nNvZl+gL9m50ygpW2A31i5UepUhEKpIqVkkn0RStjAb6tLM1tD+KF5eEnhULmhY0Z43yP
+	 Gf45Xvol8w2SDsJADwXKMBnts2A5+Bzv9s0Q4p8fuMsG0ej61h4XUbMmHxJGGjS6BF0aUsLtAoCs
+	 e4FMedZZts0GQuqU+XZHSS5mI/j9PmU35hlwWBOPklGpwudllMHbPLpTgpzUXKcyIfZMyopJyxOI
+	 ZMdObHXR/lRFscgN6TgYtwmC7HKbhn8BnCX5IySRvCP7Mprpg7JSAQ8cytLnEwzX09Srnb8tjgAe
+	 g9wywKIpwSWjtFBcWOcwQfJEKbCfDN+ySlSfHdNUE4HHsRq0u+eoqQWjecwBn5h0/QGn7nCvpYZI
+	 9NXnpsrkoWHywXVTOQyWht0ZyL4RVN/Az3HLZ1yKfdFpZDVcTrqjwsMULnh8CuOStEHn2teiww2C
+	 PGeJAEcT9CL9oogpCpM2v1yGqZNXNKMLV0looakd12Vp675faxVDoMwPXQA45fLa3CMipxjU1qfi
+	 jQm//DtGdgMt2WwkYkCCK4j4cS3/V4iI8L6+Je2ghuANZ6ZljpWmBGuZWU1B+IZJxZ5tb6vUoMpm
+	 w5rpDBbKlKLUp+RnU6qng5gxmDqfGlKJzyNo0qHuwTkHbEMvK/uBUpqlv7Nv4SA4DLGzYiF6LduL
+	 rSwqjYnRW3hG8sMJTFcM3jIHeg+1hVQiyXcVXI5G6Nz1rUSFzaxETmznhV5e18C09eAIgCZvt5MF
+	 kPJh5Mk6oHYulaEH93j8+318YoSQL6p5LcBJ/lMRyocdq/qydgfDW2b9WCqtznwTJU2E9KUmHb7h
+	 iQzrELsOiUwkHeroBhRE954I5uQZc02zZeVV7NPK3hIogu1rKGX1AP3VeDd+CaDhks3gujkOKvDU
+	 b4Mg0NeBf2lbcDBASZOe/KJCdUcd35R5cUnNUajcFkCBHiCCzF+KXXScKROO8wG5KRiW6Fkk25n0
+	 DGKmzYzCTobPe5dD9YZOS93INcAwQM+634XBBllQ==
+X-QQ-XMRINFO: Nq+8W0+stu50PRdwbJxPCL0=
+From: Zhang Shurong <zhang_shurong@foxmail.com>
+To: vkoul@kernel.org
+Cc: kishon@kernel.org,
+	robh@kernel.org,
+	u.kleine-koenig@pengutronix.de,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Zhang Shurong <zhang_shurong@foxmail.com>
+Subject: [PATCH] phy: phy-twl4030-usb: Fix PM disable depth imbalance in twl4030_usb_probe
+Date: Thu,  5 Oct 2023 15:21:09 +0800
+X-OQ-MSGID: <20231005072109.1664387-1-zhang_shurong@foxmail.com>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzk@kernel.org>, <agross@kernel.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzysztof.kozlowski+dt@linaro.org>,
-        <conor+dt@kernel.org>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <mani@kernel.org>, <p.zabel@pengutronix.de>,
-        <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>,
-        <quic_ipkumar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-4-quic_nsekar@quicinc.com>
- <959363c6-9ecb-4e5f-960d-65dd23b74ce2@kernel.org>
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-In-Reply-To: <959363c6-9ecb-4e5f-960d-65dd23b74ce2@kernel.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: jX0MbaXgmzp8ahUBw58-8kFMeb6bCizG
-X-Proofpoint-ORIG-GUID: jX0MbaXgmzp8ahUBw58-8kFMeb6bCizG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-04_13,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
- lowpriorityscore=0 suspectscore=0 spamscore=0 malwarescore=0 adultscore=0
- priorityscore=1501 clxscore=1011 mlxlogscore=649 impostorscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310050023
+phy: twl4030-usb: Fix unbalanced pm_runtime_enable on module reloadFrom 645c8475b9f9578a2a0dbe7213e8d7775fc52336 Mon Sep 17 00:00:00 2001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231004_195549_951584_3D4631F7 
-X-CRM114-Status: GOOD (  18.85  )
+X-CRM114-CacheID: sfid-20231005_002138_116987_539CF367 
+X-CRM114-Status: GOOD (  10.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,90 +83,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The pm_runtime_enable function increases the power disable depth,
+which means that we must perform a matching decrement on the error
+handling path to maintain balance within the given context.
+Additionally, we need to address the same issue for pm_runtime_get_sync.
+We fix this by invoking pm_runtime_disable and pm_runtime_put_sync
+when error returns.
 
-On 10/4/2023 1:43 PM, Krzysztof Kozlowski wrote:
-> On 03/10/2023 14:08, Nitheesh Sekar wrote:
->> Add Qualcomm PCIe UNIPHY 28LP driver support present
->> in Qualcomm IPQ5018 SoC and the phy init sequence.
->>
->> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
->> ---
-> ...
->
->> +static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
->> +{
->> +	struct qcom_uniphy_pcie *phy;
->> +	int ret;
->> +	struct phy *generic_phy;
->> +	struct phy_provider *phy_provider;
->> +	struct device *dev = &pdev->dev;
->> +	struct device_node *np = of_node_get(dev->of_node);
->> +
->> +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
->> +	if (!phy)
->> +		return -ENOMEM;
->> +
->> +	platform_set_drvdata(pdev, phy);
->> +	phy->dev = &pdev->dev;
->> +
->> +	phy->data = of_device_get_match_data(dev);
->> +	if (!phy->data)
->> +		return -EINVAL;
->> +
->> +	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
->> +	if (ret < 0) {
->> +		dev_err(&pdev->dev, "failed to get resources: %d\n", ret);
->> +		return ret;
-> Syntax is:
-> return dev_err_probe()
-Sure. will update it and take care of this in future.
->
->
->> +	}
->> +
->> +	ret = phy_pipe_clk_register(phy, np);
->> +	if (ret)
->> +		dev_err(&pdev->dev, "failed to register phy pipe clk\n");
->> +
->> +	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
->> +	if (IS_ERR(generic_phy))
->> +		return PTR_ERR(generic_phy);
->> +
->> +	phy_set_drvdata(generic_phy, phy);
->> +	phy_provider = devm_of_phy_provider_register(phy->dev,
->> +						     of_phy_simple_xlate);
->> +	if (IS_ERR(phy_provider))
->> +		return PTR_ERR(phy_provider);
->> +
->> +	return 0;
->> +}
->> +
->> +static struct platform_driver qcom_uniphy_pcie_driver = {
->> +	.probe		= qcom_uniphy_pcie_probe,
->> +	.driver		= {
->> +		.name	= "qcom-uniphy-pcie",
->> +		.owner	= THIS_MODULE,
-> Run coccinelle/coccicheck.
-Sure. Will do it.
->
->> +		.of_match_table = qcom_uniphy_pcie_id_table,
->> +	},
->> +};
->> +
->> +module_platform_driver(qcom_uniphy_pcie_driver);
->> +
->> +MODULE_ALIAS("platform:qcom-uniphy-pcie");
-> You should not need MODULE_ALIAS() in normal cases. If you need it,
-> usually it means your device ID table is wrong.
-Ok. Will remove it.
+Fixes: 96be39ab34b7 ("usb: phy: twl4030-usb: Fix regressions to runtime PM on omaps")
+Fixes: 58a66dba1bea ("phy: twl4030-usb: Fix unbalanced pm_runtime_enable on module reload")
+Signed-off-by: Zhang Shurong <zhang_shurong@foxmail.com>
+---
+ drivers/phy/ti/phy-twl4030-usb.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-Thanks,
-Nitheesh
+diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
+index 6b265992d988..537562645009 100644
+--- a/drivers/phy/ti/phy-twl4030-usb.c
++++ b/drivers/phy/ti/phy-twl4030-usb.c
+@@ -773,19 +773,25 @@ static int twl4030_usb_probe(struct platform_device *pdev)
+ 	if (status < 0) {
+ 		dev_dbg(&pdev->dev, "can't get IRQ %d, err %d\n",
+ 			twl->irq, status);
+-		return status;
++		err = status;
++		goto err_put_rpm;
+ 	}
+ 
+ 	if (pdata)
+ 		err = phy_create_lookup(phy, "usb", "musb-hdrc.0");
+ 	if (err)
+-		return err;
++		goto err_put_rpm;
+ 
+ 	pm_runtime_mark_last_busy(&pdev->dev);
+ 	pm_runtime_put_autosuspend(twl->dev);
+ 
+ 	dev_info(&pdev->dev, "Initialized TWL4030 USB module\n");
+ 	return 0;
++
++err_put_rpm:
++	pm_runtime_put_sync(twl->dev);
++	pm_runtime_disable(twl->dev);
++	return err;
+ }
+ 
+ static void twl4030_usb_remove(struct platform_device *pdev)
+-- 
+2.30.2
+
 
 -- 
 linux-phy mailing list
