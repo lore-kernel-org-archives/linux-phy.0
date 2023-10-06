@@ -4,101 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0D21E92FFE
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Oct 2023 10:55:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C69DE9413B
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Oct 2023 23:58:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FMGYF6xswxGjA6CsNdhlbA0tE08LFZz4Xj/1X0m+6nM=; b=jrXniVCtyNFNtg
-	dUBKhFb30ce1q85tLAdkkZ7mEUxtDFu3c1llgh3MAVlU/F6W2hGL8rUuS+Ly2fKT6iqKUVXhFLxCR
-	kJDSZIgbo1I1fmuYWAnVWk8ARyeGOIujajW/wNjZGtDImmCgzbMKlnSFMoX+1/Yu+ccI4CZVCRwoW
-	whIqXujXMZrpBTh35yMBLBrEdDEBjQfECCUMrywDtFUTOSlJRdajYP6PW9ErlKSS1dtz6gKwhRQni
-	oOa2g2+7f9NZyJP5nV4/2kjkAULMyqRJES5pbvooG52UJpjywhGcnwCuIiG+33PmaDuYphPk5NOuO
-	m2YxOfaW14nmrMLRXwpg==;
+	List-Owner; bh=Hd6EZwOzuI4Tn6l/cRKvVw0XFnBv0tmWCzB1k4MLjvU=; b=v10RsbrePstJ3t
+	AJRM22A48c3hiNMEHTIOyQsQAxXViM2OGfdifYdBvdmrIvk4jBREhEE3pPch8MMc8GhYmqwBQjIzE
+	6aK09GzZ+/1bDdAEDf8J727Bx/8RDivjqLXObd1P62P7cGhF7sJvSZUmEY80/GFFl1wwdB/qHHsu1
+	/ADnsHx4bjqT2p6oQygIlbiKSuCTF7uzqC8N22Dw5UmLRrPb6HDXbHJOkO2hO33KVc1+C+pnupmDj
+	QbzJUbnHd7Oxr44Jnq478vRd5tx4Tu2cbfisG6Ta740sGjfPy7UDcj/8e3eAe1zrcY9NM0Z3hvWFB
+	cfo/to6NklHQlJhuUYvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoiUj-005eEU-1n;
-	Fri, 06 Oct 2023 10:55:45 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qouhp-006g3d-2i;
+	Fri, 06 Oct 2023 23:58:05 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoiUe-005eE2-02
+	id 1qouhm-006g2x-2L
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Oct 2023 10:55:41 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3969brZF000871;
-	Fri, 6 Oct 2023 10:55:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=16WOAwcA//F2X32qWbJ0h5M8hDxQBzrHlKiLEKtagog=;
- b=YGtYwH+dCXSTCb2WZIehATyp3Cw4AM95fmjA8UxvHNexAq0pnUCVZUKSnjVNspKor2Vg
- 15e0F2BptnB+FZyESSQ52stIPHOiazavjs/YZxLl0APjjh/VU7mIeSg5l47pVNFAfSTm
- kO4ebQVQP0c5UsCqjmT8srbz8tWkjB+8x5GCoQubnAsHk3PgnGHvX9Sf98KJigTQAexN
- LPt4Fu+2dMaw2Y+0ceKMK3deUMPlqcYo3SilnTU3LxCSKfoI6b4YBWzdhNuqGMUeOCzO
- 48zgNsJmtH50KXo030AWYcc4faIjphOCPNHwY29PTl3CFT+JofHmIGXJ1gQDhemLEBqY ng== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tj0fphyp9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 06 Oct 2023 10:55:18 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 396AtHK3032401
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 6 Oct 2023 10:55:17 GMT
-Received: from [10.217.217.202] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Fri, 6 Oct
- 2023 03:55:10 -0700
-Message-ID: <28bf111f-b965-4d38-884b-bc3a0b68a6cc@quicinc.com>
-Date: Fri, 6 Oct 2023 16:24:59 +0530
+	Fri, 06 Oct 2023 23:58:04 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-5042bfb4fe9so3319696e87.1
+        for <linux-phy@lists.infradead.org>; Fri, 06 Oct 2023 16:58:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1696636679; x=1697241479; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=QYPUh/Q1TeqvQIJLjORqLOAktxS2uLnBNCEX1Cyn064=;
+        b=PG04iqsI3y5Nqu/zsRuGXqlhcAmeUnb2o3Zl+QAZuiSnjpjVuQtT/R4QIDn2zNGP81
+         0HMRqPyj5vuS3LEMMWyoQRXKRFeV12SuFZxa8vdUyEDi+Qm4qSQL5F9jqqLvyTyDcD1R
+         sn3wuYsA0R3y0ce9h6icgipqYIArCaunwMLFy3N/FnkuNpx5lMw4+0OrFLaN0ypceHIG
+         37j7nYHO1VhfgAJlfJwlSry4MtsjufG9DTRe7ThJjeFGtmMj11Ai8r4igEkWriEYaU4l
+         6mi8q+soWHCoF4HXzn6/VtK0UuRgnCiWIikYxAHsi1vPyX3CsEKdO7HYOE6KZk8XygMc
+         UB+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1696636679; x=1697241479;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=QYPUh/Q1TeqvQIJLjORqLOAktxS2uLnBNCEX1Cyn064=;
+        b=sydRufbK8/yY09pQEY53qv4w6lNoRgT6nqu50NCPFmlcxeK/Mz1W4JhnwQESXE6Ex6
+         cBj1NoAnpV4qvSEHOI8jWR8wHBvjaDlz1CPhJa3glEDN1gGYU5DdDTAplcDvRCi+NymJ
+         ciBkwSn0txUNfIf9+V25o7+W1ZNzFuFriCbLLDS1em2OZqux8xuALbyCYvKPEk0zuPi2
+         dqbmPqQhs5vyWmDUNdLMifyzB0sMTRIvuSvngLg2x3r2dKLcd0kvHM/D4V94oDMmzIDL
+         E93R5xmdr7CHBehuSPdHNFg5oDXL026suj5GQeFQhsK80nLgP1wF2XNJtzg46VpK8Yrs
+         XXxg==
+X-Gm-Message-State: AOJu0Yx6NiBsGRWqCqQGjFWx34eKGpSuqXuM7zMVK7LhxujWEHbOfs9c
+	yMPkXvFhfP7qx8z1kEZbRZuKLQ==
+X-Google-Smtp-Source: AGHT+IHOhwlTfxO0gtbu5R3YxSSzux1ir1D0+XV9LoycquxOEKv33Uk9S1akXB8MDf7rtMqWeM4CXg==
+X-Received: by 2002:a05:6512:39c8:b0:4f8:7513:8cac with SMTP id k8-20020a05651239c800b004f875138cacmr11087219lfu.48.1696636679204;
+        Fri, 06 Oct 2023 16:57:59 -0700 (PDT)
+Received: from [192.168.200.173] (178235177147.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.147])
+        by smtp.gmail.com with ESMTPSA id w21-20020a19c515000000b00502e0ea7174sm479791lfe.186.2023.10.06.16.57.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 06 Oct 2023 16:57:58 -0700 (PDT)
+Message-ID: <0007b5ff-34d4-44c0-80bd-8277d5842c01@linaro.org>
+Date: Sat, 7 Oct 2023 01:57:55 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 1/5] dt-bindings: PCI: qcom-ep: Add support for SA8775P
- SoC
-To: Rob Herring <robh@kernel.org>, Mrinmay Sarkar <quic_msarkar@quicinc.com>
-CC: <agross@kernel.org>, <andersson@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <konrad.dybcio@linaro.org>, <mani@kernel.org>,
-        <quic_nitegupt@quicinc.com>, <quic_ramkri@quicinc.com>,
-        <quic_nayiluri@quicinc.com>, <quic_krichai@quicinc.com>,
-        <quic_vbadigan@quicinc.com>, <quic_parass@quicinc.com>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        "Lorenzo
- Pieralisi" <lpieralisi@kernel.org>,
-        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
-	<kw@linux.com>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Vinod Koul
-	<vkoul@kernel.org>, <linux-pci@vger.kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <mhi@lists.linux.dev>,
-        <linux-phy@lists.infradead.org>
-References: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
- <1695218113-31198-2-git-send-email-quic_msarkar@quicinc.com>
- <20230921183850.GA762694-robh@kernel.org>
+Subject: Re: [PATCH 2/8] phy: qcom: Introduce Super-Speed USB UNIPHY driver
 Content-Language: en-US
-From: Shazad Hussain <quic_shazhuss@quicinc.com>
-In-Reply-To: <20230921183850.GA762694-robh@kernel.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: XJETY3Fy8CUSuy_YoKF88CqC2RiHzOzy
-X-Proofpoint-GUID: XJETY3Fy8CUSuy_YoKF88CqC2RiHzOzy
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-06_08,2023-10-06_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
- priorityscore=1501 impostorscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 adultscore=0 mlxscore=0 mlxlogscore=934 phishscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310060080
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Praveenkumar I <quic_ipkumar@quicinc.com>
+Cc: agross@kernel.org, andersson@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, catalin.marinas@arm.com,
+ will@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
+ arnd@arndb.de, neil.armstrong@linaro.org, nfraprado@collabora.com,
+ u-kumar1@ti.com, peng.fan@nxp.com, quic_wcheng@quicinc.com,
+ quic_varada@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, quic_kathirav@quicinc.com,
+ quic_nsekar@quicinc.com, quic_srichara@quicinc.com
+References: <20230929084209.3033093-1-quic_ipkumar@quicinc.com>
+ <20230929084209.3033093-3-quic_ipkumar@quicinc.com>
+ <412492d1-fcc9-481c-9d28-b208a644ba1d@linaro.org>
+ <7975c638-29cf-45ce-9d76-b8a93d750eb7@quicinc.com>
+ <CAA8EJprhQz_Tj0Bhv6zhGa7h37Ug-Fp6Tof9tNscTFyZzkbJvw@mail.gmail.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <CAA8EJprhQz_Tj0Bhv6zhGa7h37Ug-Fp6Tof9tNscTFyZzkbJvw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231006_035540_083286_AD352CCB 
-X-CRM114-Status: GOOD (  17.00  )
+X-CRM114-CacheID: sfid-20231006_165802_770802_A96F325D 
+X-CRM114-Status: GOOD (  15.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,76 +137,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 9/22/2023 12:08 AM, Rob Herring wrote:
-> On Wed, Sep 20, 2023 at 07:25:08PM +0530, Mrinmay Sarkar wrote:
->> Add devicetree bindings support for SA8775P SoC.
->> Define reg and interrupt per platform.
+On 3.10.2023 16:54, Dmitry Baryshkov wrote:
+> On Tue, 3 Oct 2023 at 17:22, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
 >>
->> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
->> ---
->>   .../devicetree/bindings/pci/qcom,pcie-ep.yaml      | 130 +++++++++++++++++----
->>   1 file changed, 108 insertions(+), 22 deletions(-)
 >>
->> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
->> index a223ce0..e860e8f 100644
->> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
->> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
->> @@ -13,6 +13,7 @@ properties:
->>     compatible:
->>       oneOf:
->>         - enum:
->> +          - qcom,sa8775p-pcie-ep
->>             - qcom,sdx55-pcie-ep
->>             - qcom,sm8450-pcie-ep
->>         - items:
->> @@ -20,29 +21,19 @@ properties:
->>             - const: qcom,sdx55-pcie-ep
->>   
->>     reg:
->> -    items:
->> -      - description: Qualcomm-specific PARF configuration registers
->> -      - description: DesignWare PCIe registers
->> -      - description: External local bus interface registers
->> -      - description: Address Translation Unit (ATU) registers
->> -      - description: Memory region used to map remote RC address space
->> -      - description: BAR memory region
->> +    minItems: 6
->> +    maxItems: 7
->>   
->>     reg-names:
->> -    items:
->> -      - const: parf
->> -      - const: dbi
->> -      - const: elbi
->> -      - const: atu
->> -      - const: addr_space
->> -      - const: mmio
->> +    minItems: 6
->> +    maxItems: 7
+>>
+>> On 9/30/2023 10:48 PM, Dmitry Baryshkov wrote:
+>>> On 29/09/2023 11:42, Praveenkumar I wrote:
+>>>> Adds Qualcomm 22ull Super-Speed USB UNIPHY driver support which
+>>>> is present in Qualcomm IPQ5332 SoC. This PHY is interfaced with
+>>>> SNPS DWC3 USB and SNPS DWC PCIe. Either one of the interface
+>>>> can use the it and selection is done via mux present in TCSR
+>>>> register. This driver selects the PHY for DWC3 USB and handles
+>>>> the reset, clocks and regulator.
+>>>>
+>>>> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+>>>> ---
+>>>>   drivers/phy/qualcomm/Kconfig               |  11 +
+>>>>   drivers/phy/qualcomm/Makefile              |   1 +
+>>>>   drivers/phy/qualcomm/phy-qcom-uniphy-usb.c | 322 +++++++++++++++++++++
+>>>>   3 files changed, 334 insertions(+)
+>>>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-usb.c
+>>>>
+>>>> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+>>>> index d891058b7c39..7257c8455c53 100644
+>>>> --- a/drivers/phy/qualcomm/Kconfig
+>>>> +++ b/drivers/phy/qualcomm/Kconfig
+>>>> @@ -154,6 +154,17 @@ config PHY_QCOM_M31_USB
+>>>>         management. This driver is required even for peripheral only or
+>>>>         host only mode configurations.
+>>>>   +config PHY_QCOM_UNIPHY_USB
+>>>> +    tristate "Qualcomm USB Super-Speed UNIPHY driver"
+>>>
+>>> Can we please have more specific driver name? As I wrote earlier,
+>>> there are two other (different) kinds of Qualcomm UNI PHY devices:
+>>> - DSI / HDMI UNIPHY on apq8064 / msm8974 / msm8960 (?)
+>>> - USB QMP UNI PHY drivers
+>>>
+>>> Adding a driver called UNIPHY, which is not related to those two kinds
+>>> sounds pretty confusing to me.
+>> This UNIPHY is different from above mentioned ones. This a custom
+>> version for 22nm on Qualcomm IPQ5332.
+>> Can we name the driver as phy-qcom-uniphy-usb-ss-22ull.c /
+>> phy-qcom-usb-ss-22ull.c ?
 > 
-> Don't move these into if/then schemas. Then we are duplicating the
-> names, and there is no reason to keep them aligned for new compatibles.
-> 
-> Rob
+> usb-ss-22ull sounds better. Or maybe usb-ipq-ss
+usb-ipq-ss is as safe as usb-msm-ss
 
-Hi Rob,
-As we have one extra reg property (dma) required for sa8775p-pcie-ep,
-isn't it expected to be moved in if/then as per number of regs
-required. Anyways we would have duplication of some properties for new
-compatibles where the member numbers differs for a property.
+We can not rely on the hardware never ever changing down the
+product line :D
 
-Are you suggesting to add the extra reg property (dma) in the existing 
-reg and reg-names list, and add minItems/maxItems for all compatibles 
-present in this file ?
-
--Shazad
+Konrad
 
 -- 
 linux-phy mailing list
