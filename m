@@ -4,63 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44A76E92FFB
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Oct 2023 10:10:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0D21E92FFE
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Oct 2023 10:55:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
-	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f1RhR82wWiI6Ticctx/nmqpzXf7lCGJ7fjESBJD3kcA=; b=ko4hCM6oNABdeK
-	VhoTskhmK9sl05H8cVhmfaMH0AwZaieHBjPdy6Ebko7pHhVlQ9f0FccCubvxEW/QvjaeU780vQt2p
-	8R+sKTIe2nrjPFFc3mc1bvHoy801yphnxzTymA7ddjJ6jMP4vVS1jVcjf52TxebQufqOT5cDpu6VP
-	e+4I4ca3FM2/RsdPN635Bqx1kFF3nJcst2e3MeD9ygZS3g1+ymKNE3kvLtkbtlyZqFqYGLq41mc52
-	6nO/eYP5eCOhwJMdsez2hgJARQbg++GoNiYcVvEHCpO5o35r0w5oNE2qQfXnOWKcQDjMzWHcVRpsp
-	0or69LLQYbSaBfBkwROg==;
+	List-Owner; bh=FMGYF6xswxGjA6CsNdhlbA0tE08LFZz4Xj/1X0m+6nM=; b=jrXniVCtyNFNtg
+	dUBKhFb30ce1q85tLAdkkZ7mEUxtDFu3c1llgh3MAVlU/F6W2hGL8rUuS+Ly2fKT6iqKUVXhFLxCR
+	kJDSZIgbo1I1fmuYWAnVWk8ARyeGOIujajW/wNjZGtDImmCgzbMKlnSFMoX+1/Yu+ccI4CZVCRwoW
+	whIqXujXMZrpBTh35yMBLBrEdDEBjQfECCUMrywDtFUTOSlJRdajYP6PW9ErlKSS1dtz6gKwhRQni
+	oOa2g2+7f9NZyJP5nV4/2kjkAULMyqRJES5pbvooG52UJpjywhGcnwCuIiG+33PmaDuYphPk5NOuO
+	m2YxOfaW14nmrMLRXwpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qohn6-005Sny-02;
-	Fri, 06 Oct 2023 10:10:40 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qoiUj-005eEU-1n;
+	Fri, 06 Oct 2023 10:55:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qohn3-005Sn4-0a
+	id 1qoiUe-005eE2-02
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Oct 2023 10:10:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id E75C661CFB;
-	Fri,  6 Oct 2023 10:10:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 19889C433C9;
-	Fri,  6 Oct 2023 10:10:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696587026;
-	bh=TyMA7QWGzHqpaOo8yRqAooHEF0/hM+J1QpQ1B6n7uP0=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=npO1I9xdhKl1rbvIEs7thvNZLqBhEreQi31ZWB8hbWycZfTGXLSqBY3wKTszi2EeH
-	 NhshrnUj7JSUCM0L+mP8u3aHDH1af955xsVBTOoTOgP+sbwCXAjxfwwH+ydl0N/wr0
-	 iTEEeHuWvpD4bPdukXyQD0kOepHD1VXBE0dfX1l1EUSSQ34MjHBlpUwmEspbIp4YGD
-	 7ke8r9Gjz29GygfhqzMa4UZK3DZjZgySdXHZyRQFWSj/1qC36u5RmrJMWVOG1sLsU+
-	 ezfdNwwgPTxFqHUr98uA548CpQ/LsPgkksuKLBbmrLQJDJ4qWMM/tZjO6mTjgu2PqM
-	 mSF53uDcTOW6g==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id F1EF9E11F50;
-	Fri,  6 Oct 2023 10:10:25 +0000 (UTC)
+	Fri, 06 Oct 2023 10:55:41 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3969brZF000871;
+	Fri, 6 Oct 2023 10:55:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=16WOAwcA//F2X32qWbJ0h5M8hDxQBzrHlKiLEKtagog=;
+ b=YGtYwH+dCXSTCb2WZIehATyp3Cw4AM95fmjA8UxvHNexAq0pnUCVZUKSnjVNspKor2Vg
+ 15e0F2BptnB+FZyESSQ52stIPHOiazavjs/YZxLl0APjjh/VU7mIeSg5l47pVNFAfSTm
+ kO4ebQVQP0c5UsCqjmT8srbz8tWkjB+8x5GCoQubnAsHk3PgnGHvX9Sf98KJigTQAexN
+ LPt4Fu+2dMaw2Y+0ceKMK3deUMPlqcYo3SilnTU3LxCSKfoI6b4YBWzdhNuqGMUeOCzO
+ 48zgNsJmtH50KXo030AWYcc4faIjphOCPNHwY29PTl3CFT+JofHmIGXJ1gQDhemLEBqY ng== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tj0fphyp9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 06 Oct 2023 10:55:18 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 396AtHK3032401
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 6 Oct 2023 10:55:17 GMT
+Received: from [10.217.217.202] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Fri, 6 Oct
+ 2023 03:55:10 -0700
+Message-ID: <28bf111f-b965-4d38-884b-bc3a0b68a6cc@quicinc.com>
+Date: Fri, 6 Oct 2023 16:24:59 +0530
 MIME-Version: 1.0
-Subject: Re: [PATCH net 0/3] Fixes for lynx-28g PHY driver
-From: patchwork-bot+netdevbpf@kernel.org
-Message-Id: <169658702598.26383.13479730802203078272.git-patchwork-notify@kernel.org>
-Date: Fri, 06 Oct 2023 10:10:25 +0000
-References: <20231004111708.3598832-1-vladimir.oltean@nxp.com>
-In-Reply-To: <20231004111708.3598832-1-vladimir.oltean@nxp.com>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- davem@davemloft.net, kuba@kernel.org, pabeni@redhat.com,
- ioana.ciornei@nxp.com, vkoul@kernel.org, kishon@kernel.org,
- linux-kernel@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1 1/5] dt-bindings: PCI: qcom-ep: Add support for SA8775P
+ SoC
+To: Rob Herring <robh@kernel.org>, Mrinmay Sarkar <quic_msarkar@quicinc.com>
+CC: <agross@kernel.org>, <andersson@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <konrad.dybcio@linaro.org>, <mani@kernel.org>,
+        <quic_nitegupt@quicinc.com>, <quic_ramkri@quicinc.com>,
+        <quic_nayiluri@quicinc.com>, <quic_krichai@quicinc.com>,
+        <quic_vbadigan@quicinc.com>, <quic_parass@quicinc.com>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        "Lorenzo
+ Pieralisi" <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+	<kw@linux.com>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Vinod Koul
+	<vkoul@kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <mhi@lists.linux.dev>,
+        <linux-phy@lists.infradead.org>
+References: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
+ <1695218113-31198-2-git-send-email-quic_msarkar@quicinc.com>
+ <20230921183850.GA762694-robh@kernel.org>
+Content-Language: en-US
+From: Shazad Hussain <quic_shazhuss@quicinc.com>
+In-Reply-To: <20230921183850.GA762694-robh@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: XJETY3Fy8CUSuy_YoKF88CqC2RiHzOzy
+X-Proofpoint-GUID: XJETY3Fy8CUSuy_YoKF88CqC2RiHzOzy
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-06_08,2023-10-06_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ priorityscore=1501 impostorscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 adultscore=0 mlxscore=0 mlxlogscore=934 phishscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310060080
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231006_031037_278339_681EDF9C 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231006_035540_083286_AD352CCB 
+X-CRM114-Status: GOOD (  17.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,41 +110,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello:
 
-This series was applied to netdev/net.git (main)
-by David S. Miller <davem@davemloft.net>:
 
-On Wed,  4 Oct 2023 14:17:05 +0300 you wrote:
-> This series fixes some issues in the Lynx 28G SerDes driver, namely an
-> oops when unloading the module, a race between the periodic workqueue
-> and the PHY API, and a race between phy_set_mode_ext() calls on multiple
-> lanes on the same SerDes.
+On 9/22/2023 12:08 AM, Rob Herring wrote:
+> On Wed, Sep 20, 2023 at 07:25:08PM +0530, Mrinmay Sarkar wrote:
+>> Add devicetree bindings support for SA8775P SoC.
+>> Define reg and interrupt per platform.
+>>
+>> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+>> ---
+>>   .../devicetree/bindings/pci/qcom,pcie-ep.yaml      | 130 +++++++++++++++++----
+>>   1 file changed, 108 insertions(+), 22 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+>> index a223ce0..e860e8f 100644
+>> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+>> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+>> @@ -13,6 +13,7 @@ properties:
+>>     compatible:
+>>       oneOf:
+>>         - enum:
+>> +          - qcom,sa8775p-pcie-ep
+>>             - qcom,sdx55-pcie-ep
+>>             - qcom,sm8450-pcie-ep
+>>         - items:
+>> @@ -20,29 +21,19 @@ properties:
+>>             - const: qcom,sdx55-pcie-ep
+>>   
+>>     reg:
+>> -    items:
+>> -      - description: Qualcomm-specific PARF configuration registers
+>> -      - description: DesignWare PCIe registers
+>> -      - description: External local bus interface registers
+>> -      - description: Address Translation Unit (ATU) registers
+>> -      - description: Memory region used to map remote RC address space
+>> -      - description: BAR memory region
+>> +    minItems: 6
+>> +    maxItems: 7
+>>   
+>>     reg-names:
+>> -    items:
+>> -      - const: parf
+>> -      - const: dbi
+>> -      - const: elbi
+>> -      - const: atu
+>> -      - const: addr_space
+>> -      - const: mmio
+>> +    minItems: 6
+>> +    maxItems: 7
 > 
-> Ioana Ciornei (1):
->   phy: lynx-28g: cancel the CDR check work item on the remove path
+> Don't move these into if/then schemas. Then we are duplicating the
+> names, and there is no reason to keep them aligned for new compatibles.
 > 
-> [...]
+> Rob
 
-Here is the summary with links:
-  - [net,1/3] phy: lynx-28g: cancel the CDR check work item on the remove path
-    https://git.kernel.org/netdev/net/c/f200bab3756f
-  - [net,2/3] phy: lynx-28g: lock PHY while performing CDR lock workaround
-    https://git.kernel.org/netdev/net/c/0ac87fe54a17
-  - [net,3/3] phy: lynx-28g: serialize concurrent phy_set_mode_ext() calls to shared registers
-    https://git.kernel.org/netdev/net/c/139ad1143151
+Hi Rob,
+As we have one extra reg property (dma) required for sa8775p-pcie-ep,
+isn't it expected to be moved in if/then as per number of regs
+required. Anyways we would have duplication of some properties for new
+compatibles where the member numbers differs for a property.
 
-You are awesome, thank you!
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
+Are you suggesting to add the extra reg property (dma) in the existing 
+reg and reg-names list, and add minItems/maxItems for all compatibles 
+present in this file ?
 
-
+-Shazad
 
 -- 
 linux-phy mailing list
