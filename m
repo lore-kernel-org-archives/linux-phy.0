@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AAEDE94139
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Oct 2023 00:25:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AD88E9413C
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Oct 2023 00:27:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b1As473xiwnYXR4ZYcPcDxOP+6BUv2w6Zr82dOVoAPo=; b=ngFyFsjbedsOPI
-	M6zJCmFvwEkvli60PWxPEn4l03iQuNKuAqmVRbXjypK+C438qaTVKwG1Zme/2rcYl2iTvIlvMe9/F
-	+bOHzQrdJCSVnIn3UHTB6vpoqlhBz7oMWcybiY8Nt9IBq8bLyEXxA9tirltder8HJI2L1+OjFgtkK
-	634L6Fak1V8rtkUN9lYUhtJI64F2zLI1O32NLNHazncyohnxZpCZg3xycCQYOAajmo4nBQC5M0LJj
-	UJQitUc5zbIb4dlG574bUxt8l24wz5TnVq9b4QEYXiQ1XEqdwcywUXTIsGiNAhiGMEyFakEPMAWzf
-	zUGFGfNYt24SHS2QuGwQ==;
+	List-Owner; bh=ENgIpUdasVUVrZ811NABqfmRCrs69+1VIGAETqiX078=; b=IhbtV7z7aMtEgA
+	vOElVHtxRbGEMXazCh41QICJJ7W4mpCWIDeou/ccVeZE9xu7I7eRKikyD537PY0NUAmj5OLSP2npy
+	M51idOsbg9xaO9bVD4iCaTX3OBab3ZwrLyxLyllCedSreoWGMvxfpypsEeaZ/zLUEa0+eV2BByu/V
+	yREwI11Jk9I5ZXcSeDcnEqjNWyi0QRYHne0tctQzQXpHQK9ftSwYW0mGwJDsiTlQpj1Wo9adRv1jS
+	ykPMsB5SvazJrvbSgGKIwSj15T4CFHYPdIiBhULmjGvh1HnMu90399hxkcZsavpxYNjnRvzUMwCfz
+	QaH2hhaVeGLnh7wnJsXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qov8Z-006hbb-2g;
-	Sat, 07 Oct 2023 00:25:43 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1qovAF-006hgh-2h;
+	Sat, 07 Oct 2023 00:27:27 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qov8W-006haf-2l
+	id 1qovAD-006hfz-1G
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Oct 2023 00:25:42 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2c3c661f1a8so12175941fa.0
-        for <linux-phy@lists.infradead.org>; Fri, 06 Oct 2023 17:25:36 -0700 (PDT)
+	Sat, 07 Oct 2023 00:27:26 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-50481a0eee7so4678054e87.0
+        for <linux-phy@lists.infradead.org>; Fri, 06 Oct 2023 17:27:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696638335; x=1697243135; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1696638440; x=1697243240; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=WpRLrgCkogJnOQeDSxOWTaQXWFu0n6LSuhwjIbXl4Dg=;
-        b=d+9tmXmJVAlukF9rovoUBnp5URDaHgIk2bOvPNBG7iH+863kd/tOP7DtZmg97tRXGG
-         Asw1CBnOk/t1Dm4wzibFJyEzA+VtUP0+mbN9+rLJcf9bSwuuJow55lP0i1EhH2PXRJxd
-         U63X6Z6495PzyOjnqQt3sP+BoVih44lz5BxPEFL1Is/6ty7TDu6ebYtlA0ZjBR2J+mJN
-         quPT/9nZdD7BCK/RPNkmdXGvlYxJ0speEakhL0dLlcmBj2u/wNEI5mGshnWetfpzE/9Q
-         yKi8S0C9m4XwFVh6Ma8jfLf9oX3sXbj1JPpv1lY51tvp37nS8FXOD28liNODIxoAE7nu
-         R0Ag==
+        bh=Oog0K2bgSzTGEjhivaMNxr6iwDGl914nrwoOT/UHnOs=;
+        b=WhDKRGNNQYWlG+VeL5Cj4meYjuzjYxZPgb9UVJahdP/of9FZUw9GTFYdDvziJ6N6AZ
+         qO7ade1LT3w6NK1qa5pbyGPdUjBMitx1YS/FZ8KdMKLd5K7uZeyOPRnS4AV03aXbaDcn
+         MlYYRv8OJ1FVeVe1xCdwvzOjOWct5uh3SOONoCISOofpJB5h5pk2s/WTfUgwx9/ANuNX
+         gEUPPdfv2zvKG2GxfuvUOvMWggpKYdgg6GSmbtjhLRbpIZtxMpoFGTVxZHpY32FY6nhS
+         STKAFEVsczy3pS1AsYulitRHTdavJib04Ijla58Q7Oqy7egNXT++FawKzEyuu3Z3g9wG
+         aYGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696638335; x=1697243135;
+        d=1e100.net; s=20230601; t=1696638440; x=1697243240;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WpRLrgCkogJnOQeDSxOWTaQXWFu0n6LSuhwjIbXl4Dg=;
-        b=u1Q/IHz55V/SotaEcuTcGDCvOIQWfKx7whYRGucI6BtT4hl86GNN+2KyoHuO66cP5I
-         cB/VLNnt7eRM51pO/Iyl0O73YrCRx21I5OX8q5wNr2w0gO/57UxFv5JdTwnDTg03R7+H
-         kzcZYtz77yQ3gao3lCnKqM7FTvgXd1lJxJr65cTvcRiGgEKTwXnJDUBLuFyEE0csX/6B
-         YiLkjLKkEeXTvKaYIk9UWDZXHnSIDKt7ChJmBfwdEsfL0zEnwcmFTwwY/Ssuf8WsdzuS
-         v0NasUM9gwR7iovpGTE7/aWJRbUPonocRnYgkzrHqk9qBgD48AiWozJP8bkVJyBJOYxv
-         djTg==
-X-Gm-Message-State: AOJu0YwOsjfwp/MQK3wtAQstlbfhEk+j+g0Ekcxvm5cmYRbVMwFgiK0R
-	z5oAvLGMxcOe8fkW7GmKqi0Fj2tIEyg4Mk3547g=
-X-Google-Smtp-Source: AGHT+IHCOIS0v55XWXNrxUE/JZh8wD4IyW0TFEJayt8WRillwe6P5vxbqNzcFrvOkfoExfHdUla+Gw==
-X-Received: by 2002:a2e:a281:0:b0:2bf:7905:12c3 with SMTP id k1-20020a2ea281000000b002bf790512c3mr6929264lja.40.1696638334926;
-        Fri, 06 Oct 2023 17:25:34 -0700 (PDT)
+        bh=Oog0K2bgSzTGEjhivaMNxr6iwDGl914nrwoOT/UHnOs=;
+        b=qWGNY6dOm6a48T5PvnJ6mmoKZY7Pvt33pE7RDlrCoO2ef1KsQFfk04mMz02Zey/AQG
+         2VW+CGWT0/orHfgVVAJoHHPWx8CmxfgYGvIp+wCrhkelvrrhKIMSd7gOVa1F1jXxdvC7
+         +35mnLasJchfOw4mxGGiHp4LwdWh+jUUNEmEQnJWdMixU+E91rkEn+oGO4C99O66K4J3
+         ew4dV0oMn2mB6tHS4njH+GOfuh3rZPUH+EUyVybKiFGZrBq9XEHdTsek/GwQKe0I57d/
+         JOGDuCpWNNY/+qcTQlpXzzY4HgCDswclw8x8Bl6bWAjFwR5uxnIvCwxXhfSczHdIjHEY
+         0gmQ==
+X-Gm-Message-State: AOJu0YzfBDQWxv/4YCwwhLDfnilOOufY0GhuGYqH4Hg5RpApB3Bdgfxw
+	G5WETqcJot8Zlkjoe6D5oXbz0Q==
+X-Google-Smtp-Source: AGHT+IFtzpDnhWYYOkUnZp+FvUJho+CNakCfaZUKceUAufQa5szkxE9roVrKeEOUvHl9rS6D8CzsZQ==
+X-Received: by 2002:a05:6512:1588:b0:502:9672:48b8 with SMTP id bp8-20020a056512158800b00502967248b8mr4572653lfb.5.1696638440485;
+        Fri, 06 Oct 2023 17:27:20 -0700 (PDT)
 Received: from [192.168.200.173] (178235177147.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.147])
-        by smtp.gmail.com with ESMTPSA id e17-20020a2e8ed1000000b002c128e45245sm992168ljl.23.2023.10.06.17.25.33
+        by smtp.gmail.com with ESMTPSA id d2-20020ac24c82000000b005008b8dd56csm488778lfl.44.2023.10.06.17.27.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Oct 2023 17:25:34 -0700 (PDT)
-Message-ID: <123f7c9a-587c-410f-a3fe-545f10bd3d09@linaro.org>
-Date: Sat, 7 Oct 2023 02:25:32 +0200
+        Fri, 06 Oct 2023 17:27:20 -0700 (PDT)
+Message-ID: <54ed2500-1d06-4f36-b2c5-418b878e9de4@linaro.org>
+Date: Sat, 7 Oct 2023 02:27:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
+Subject: Re: [PATCH 6/6] arm64: dts: qcom: ipq5018: Enable PCIe
 Content-Language: en-US
 To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
@@ -77,7 +77,7 @@ To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-3-quic_nsekar@quicinc.com>
+ <20231003120846.28626-7-quic_nsekar@quicinc.com>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -114,11 +114,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20231003120846.28626-3-quic_nsekar@quicinc.com>
+In-Reply-To: <20231003120846.28626-7-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231006_172540_948471_FD571BE2 
-X-CRM114-Status: UNSURE (   6.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231006_172725_477627_53A073C5 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,28 +135,27 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 3.10.2023 14:08, Nitheesh Sekar wrote:
-> Add support for the PCIe controller on the Qualcomm
-> IPQ5108 SoC to the bindings.
+> Enable the PCIe controller and PHY nodes for RDP 432-c2.
 > 
 > Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > ---
-[...]
+>  arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+> index e636a1cb9b77..be7d92700517 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+> +++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+> @@ -28,6 +28,15 @@
+>  	status = "okay";
+>  };
+>  
+> +&pcie_x2 {
+> +	status = "ok";
+"okay" is preferred
 
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,pcie-ipq5018
-> +    then:
-> +      properties:
-> +        clocks:
-> +          minItems: 6
-> +          maxItems: 6
-> +        clock-names:
-> +          items:
-> +            - const: iface # PCIe to SysNOC BIU clock
-What's a BIU?
+It's also preferred to keep status as the last property within
+a node.
 
 Konrad
 
