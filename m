@@ -4,120 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AD88E9413C
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Oct 2023 00:27:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 470C7E95A6A
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Oct 2023 14:01:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ENgIpUdasVUVrZ811NABqfmRCrs69+1VIGAETqiX078=; b=IhbtV7z7aMtEgA
-	vOElVHtxRbGEMXazCh41QICJJ7W4mpCWIDeou/ccVeZE9xu7I7eRKikyD537PY0NUAmj5OLSP2npy
-	M51idOsbg9xaO9bVD4iCaTX3OBab3ZwrLyxLyllCedSreoWGMvxfpypsEeaZ/zLUEa0+eV2BByu/V
-	yREwI11Jk9I5ZXcSeDcnEqjNWyi0QRYHne0tctQzQXpHQK9ftSwYW0mGwJDsiTlQpj1Wo9adRv1jS
-	ykPMsB5SvazJrvbSgGKIwSj15T4CFHYPdIiBhULmjGvh1HnMu90399hxkcZsavpxYNjnRvzUMwCfz
-	QaH2hhaVeGLnh7wnJsXQ==;
+	List-Owner; bh=I/v0jB17OsQNQkirtZvLbueTngTIOu7OI5REtdB36kI=; b=UdPgHfOjPNVxLf
+	57H8fFk13eePPGVGDdnlJTCH7dPPluLjF2GMhvM3NAHpClFZnKSHzwXicXTUaC/xKKt9OdKLzTHUX
+	OCscXfiiisQ9F7e+x/Qa37+0pCziDMAjWnFpRjx5MJHCrRtETsTFHIu3pw20vkuRHwz5dX2xdY+uD
+	arkohcXt2S3ARhZSAQqahZ58abRr5EvL0Y1DvqmefmWBU8f200HpusGGB8Vt4uBhMZ3xyB8q8zrN5
+	cBC4y4eKhuabEgVFBjS3yBwCYHdxTW/SibJSWFOlMBKJC7qY9vsRJv62OZE3qLQAANt27n9N7tD6D
+	tPQWVrOZJKywWY7zB0eQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qovAF-006hgh-2h;
-	Sat, 07 Oct 2023 00:27:27 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1qp7rc-007chT-2J;
+	Sat, 07 Oct 2023 14:01:04 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qovAD-006hfz-1G
+	id 1qp7rZ-007cfs-39
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Oct 2023 00:27:26 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-50481a0eee7so4678054e87.0
-        for <linux-phy@lists.infradead.org>; Fri, 06 Oct 2023 17:27:21 -0700 (PDT)
+	Sat, 07 Oct 2023 14:01:03 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-406650da82bso27725765e9.3
+        for <linux-phy@lists.infradead.org>; Sat, 07 Oct 2023 07:01:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696638440; x=1697243240; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Oog0K2bgSzTGEjhivaMNxr6iwDGl914nrwoOT/UHnOs=;
-        b=WhDKRGNNQYWlG+VeL5Cj4meYjuzjYxZPgb9UVJahdP/of9FZUw9GTFYdDvziJ6N6AZ
-         qO7ade1LT3w6NK1qa5pbyGPdUjBMitx1YS/FZ8KdMKLd5K7uZeyOPRnS4AV03aXbaDcn
-         MlYYRv8OJ1FVeVe1xCdwvzOjOWct5uh3SOONoCISOofpJB5h5pk2s/WTfUgwx9/ANuNX
-         gEUPPdfv2zvKG2GxfuvUOvMWggpKYdgg6GSmbtjhLRbpIZtxMpoFGTVxZHpY32FY6nhS
-         STKAFEVsczy3pS1AsYulitRHTdavJib04Ijla58Q7Oqy7egNXT++FawKzEyuu3Z3g9wG
-         aYGQ==
+        d=gmail.com; s=20230601; t=1696687259; x=1697292059; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=VGOiBnjw4/x0MkXFgDDiE4Fk7/tgt630it5dnumIjlY=;
+        b=nIu23NXo4bDX61Zo29QRLLEAy12pHhkLnEzloY+pnxsBUDew0gJwtmnBeancuigS9w
+         WsL22CZ82FPfEAYp9U3XrmOX3WPNUAN7iJ72VcZCwGTWwu7xr59Fjo0wu4Fsr+Q1lNch
+         PZfmK5z9oLMQ7azJ3un2kO8W5RmeKrmWDKLYogl9dnJEuIZHClpWX5gzUvmsYtONWNyu
+         S6RFkTdi98QeFQvUZFNtaTJipPmUHShyAi+mx7nYUhjw2zIo7/EsiLZ6PWj5YkjOKd6R
+         OzmsqoCxEoSYy8H8R5bSd+kiVFJGS983PGHCI6d2vi4RHCcts6s+SMS17b7i3AwBNuZZ
+         ZQ+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696638440; x=1697243240;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Oog0K2bgSzTGEjhivaMNxr6iwDGl914nrwoOT/UHnOs=;
-        b=qWGNY6dOm6a48T5PvnJ6mmoKZY7Pvt33pE7RDlrCoO2ef1KsQFfk04mMz02Zey/AQG
-         2VW+CGWT0/orHfgVVAJoHHPWx8CmxfgYGvIp+wCrhkelvrrhKIMSd7gOVa1F1jXxdvC7
-         +35mnLasJchfOw4mxGGiHp4LwdWh+jUUNEmEQnJWdMixU+E91rkEn+oGO4C99O66K4J3
-         ew4dV0oMn2mB6tHS4njH+GOfuh3rZPUH+EUyVybKiFGZrBq9XEHdTsek/GwQKe0I57d/
-         JOGDuCpWNNY/+qcTQlpXzzY4HgCDswclw8x8Bl6bWAjFwR5uxnIvCwxXhfSczHdIjHEY
-         0gmQ==
-X-Gm-Message-State: AOJu0YzfBDQWxv/4YCwwhLDfnilOOufY0GhuGYqH4Hg5RpApB3Bdgfxw
-	G5WETqcJot8Zlkjoe6D5oXbz0Q==
-X-Google-Smtp-Source: AGHT+IFtzpDnhWYYOkUnZp+FvUJho+CNakCfaZUKceUAufQa5szkxE9roVrKeEOUvHl9rS6D8CzsZQ==
-X-Received: by 2002:a05:6512:1588:b0:502:9672:48b8 with SMTP id bp8-20020a056512158800b00502967248b8mr4572653lfb.5.1696638440485;
-        Fri, 06 Oct 2023 17:27:20 -0700 (PDT)
-Received: from [192.168.200.173] (178235177147.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.147])
-        by smtp.gmail.com with ESMTPSA id d2-20020ac24c82000000b005008b8dd56csm488778lfl.44.2023.10.06.17.27.17
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Oct 2023 17:27:20 -0700 (PDT)
-Message-ID: <54ed2500-1d06-4f36-b2c5-418b878e9de4@linaro.org>
-Date: Sat, 7 Oct 2023 02:27:17 +0200
+        d=1e100.net; s=20230601; t=1696687259; x=1697292059;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=VGOiBnjw4/x0MkXFgDDiE4Fk7/tgt630it5dnumIjlY=;
+        b=Vkrj9srEbKNnG0F1YXytOlWDHSi/CR+8w3WrW9AAtWGSQbbypXbeb7DskfNvOpGxNK
+         FCp9CIWp12rwsdvqn5mwbcxmAllQGiQvqP45swBpC6/NEcVZt/l+ZYjLHa7lGm1n5uwa
+         lobCl1fKJbhnI5P44C8WH2VokZSImSXRvwrUp4GBrXjAah5mtqwYXe3n5GMJ+WmWRCiO
+         dEgn8N+ZWUnWlDmJpGg0s731TwUe0o0/yPpB5YFdeipbO5f1ZOVG9Po6AHWscwz1JHLM
+         Hn1anE53Gy3mPHod04sBgoHfUbDOnCKumO2HkPnJAgGXQV9QFdSLkQoU18tK+C53Ab50
+         u8qg==
+X-Gm-Message-State: AOJu0YzNwBul4RjjmT3NtAa2ObZSVbUYAsZIRkLJG8e9x9wsaZTqxuK/
+	INFzMllWUMoF6/+W13U3un0=
+X-Google-Smtp-Source: AGHT+IFUlOCstpFBtle9vJcHnRwKqht1Ydvm5Cr8wkCt/VplSUpVI+3bXftOtvU7hIWIsuDALe/TQg==
+X-Received: by 2002:a05:600c:b49:b0:406:7232:1431 with SMTP id k9-20020a05600c0b4900b0040672321431mr10355053wmr.33.1696687259174;
+        Sat, 07 Oct 2023 07:00:59 -0700 (PDT)
+Received: from david-ryuzu.fritz.box ([77.22.112.104])
+        by smtp.googlemail.com with ESMTPSA id q8-20020a05600000c800b0032415213a6fsm4332043wrx.87.2023.10.07.07.00.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 07 Oct 2023 07:00:58 -0700 (PDT)
+From: David Wronek <davidwronek@gmail.com>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Joe Mason <buddyjojo06@outlook.com>
+Cc: cros-qcom-dts-watchers@chromium.org,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org,
+	hexdump0815@googlemail.com,
+	~postmarketos/upstreaming@lists.sr.ht,
+	phone-devel@vger.kernel.org,
+	David Wronek <davidwronek@gmail.com>
+Subject: [PATCH 1/7] dt-bindings: ufs: qcom: Add SC7180 compatible string
+Date: Sat,  7 Oct 2023 15:58:25 +0200
+Message-ID: <20231007140053.1731245-2-davidwronek@gmail.com>
+X-Mailer: git-send-email 2.42.0
+In-Reply-To: <20231007140053.1731245-1-davidwronek@gmail.com>
+References: <20231007140053.1731245-1-davidwronek@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 6/6] arm64: dts: qcom: ipq5018: Enable PCIe
-Content-Language: en-US
-To: Nitheesh Sekar <quic_nsekar@quicinc.com>, agross@kernel.org,
- andersson@kernel.org, lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
- bhelgaas@google.com, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
- p.zabel@pengutronix.de, quic_srichara@quicinc.com, quic_varada@quicinc.com,
- quic_ipkumar@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-7-quic_nsekar@quicinc.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20231003120846.28626-7-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231006_172725_477627_53A073C5 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20231007_070102_015985_CD2277EA 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,30 +113,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3.10.2023 14:08, Nitheesh Sekar wrote:
-> Enable the PCIe controller and PHY nodes for RDP 432-c2.
-> 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> ---
->  arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-> index e636a1cb9b77..be7d92700517 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-> +++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-> @@ -28,6 +28,15 @@
->  	status = "okay";
->  };
->  
-> +&pcie_x2 {
-> +	status = "ok";
-"okay" is preferred
+Document the compatible for the UFS found on SC7180.
 
-It's also preferred to keep status as the last property within
-a node.
+Signed-off-by: David Wronek <davidwronek@gmail.com>
+---
+ Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Konrad
+diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+index 462ead5a1cec..f99a933cc217 100644
+--- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
++++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+@@ -27,6 +27,7 @@ properties:
+           - qcom,msm8996-ufshc
+           - qcom,msm8998-ufshc
+           - qcom,sa8775p-ufshc
++          - qcom,sc7180-ufshc
+           - qcom,sc8280xp-ufshc
+           - qcom,sdm845-ufshc
+           - qcom,sm6115-ufshc
+@@ -210,6 +211,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,sc7180-ufshc
+               - qcom,sm6115-ufshc
+     then:
+       properties:
+-- 
+2.42.0
+
 
 -- 
 linux-phy mailing list
