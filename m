@@ -4,56 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BD57CD6117
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 17:32:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59659CD6115
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 17:32:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WyFUOaQE63w7uGkZ/KT5nPOIR1q1y7NnAfiNr9Z3fbs=; b=viUcCOUuTWTDSP
-	BX1zTNrX9aQmFOMc14KoMIdI0q6TcxFdfaJofwyENX4BmZ+6GThKc0b3dcf2k0bZsrE7sm3c4yvig
-	c/szEJtA7goWc/TF6sghS1DBYUdbhf9bvZfjau/zjgIBzi5Af4Y3282InsyUXv5lo3LtVLD0Q/j+D
-	QUGrumhiB6dahwZx/UFYJB1Gf1yZFVwWhDB+AEzn4B6d7Md9jRH9WMb895AjXhsBElaTcjTL2CdIR
-	cxwGDNyekDory66uR6iVxvVtoXaSeHmrmryTwcaFURrjtP563t4xXALcAIjWI750aoRzsG+2D3e5K
-	bmfFfBfuj4c5itT0yEMQ==;
+	List-Owner; bh=txH6ztHOhNCYWr24mT3maxXWcJjxL0x0ZkX6sNSCK3Q=; b=1SfHdGkKRTVH/T
+	zbx6Hfq605jzxjCDnmkW+4kJmUHAihAG5Z0EkOxtBwWx0MzQYuDfRLGWAEN+Parg4Ac8c2ZmVTsEN
+	uDOkJzmR0ryyOsmhuTGSlSbusJeK4U6JlbmDXNLhFoJBDcteFQDMAJJmDmJa2m+x9cYm/XFi8cTH7
+	IsO4cnL2whxd+gZYnP/Srj0PjiI/7InvjXo/BAC9KiG+xxfvAbF6MCMrses4S/YITPcp4NnA17aWX
+	4BAALr1M/xvAL3oQlHiq2i1Vso6VMTz9ohpT/nP1ri1FG2My0cuq0YpDSIzCReQ/laJlzaRQytQyd
+	AstigdGqIjaujp/kUmTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpu7W-00BIoz-0o;
-	Mon, 09 Oct 2023 17:32:42 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qpu7Z-00BIqk-0F;
+	Mon, 09 Oct 2023 17:32:45 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpu7R-00BIml-35;
-	Mon, 09 Oct 2023 17:32:40 +0000
+	id 1qpu7V-00BIns-1i
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Oct 2023 17:32:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7648861253;
-	Mon,  9 Oct 2023 17:32:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DB33C433C7;
-	Mon,  9 Oct 2023 17:32:36 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id B72CDCE1821;
+	Mon,  9 Oct 2023 17:32:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F3A3C433C9;
+	Mon,  9 Oct 2023 17:32:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696872757;
-	bh=A8WM7jgGtt3glq+HqYBadr3EppHcnVR5hi6lvtrs9G8=;
+	s=k20201202; t=1696872759;
+	bh=gNwIGig1RSpviawIcA3WM9ILVF/QqJCL1en6+KHTE78=;
 	h=From:To:Cc:Subject:Date:From;
-	b=ddJPLzjwg59PGkgs87hBJgB8I/8jC39C77x85AqWBNgoeCdCwBtKqlzRQ0kib4jC/
-	 U8WMWx2G4eUusX9LR1neN+gIwf1nlgnsae//7lHX5b37x+963napX7xMZYg3p+GfKJ
-	 OnmNPN+TVLVu1l/Gp9ptPHCIBl5Nneah5GOJoUxE4pzJLJKmBsaZ/SLAwTXm1XIODc
-	 SffgcNunl7ih5nz9XW2qTFquErqnWIEC6+eOt6Iyzgqa/sbkVeMvs6Pa9xDqmjwRP+
-	 Y3VqzOZhUeoNATzomDUKK5KYxB7zO5A7htLD86d3Mk63fElJaZis+43JDNlkUJaWCn
-	 RDgLRQoa8t2yQ==
-Received: (nullmailer pid 2528549 invoked by uid 1000);
-	Mon, 09 Oct 2023 17:32:35 -0000
+	b=C+aP2wa/68Yy8CjZntp0Q0tnb5pcxVGOrJrld6QUY7WarUV3b0yXih6VioBHvCHyS
+	 zIzVCbqg68T+EdVee5j4po9oA4MNb0UTnZmpG4vW1BO2a4XyS90Al/ErZQg9muAUnZ
+	 e2o83e7cmHzU2OKK2m1pUwRfflklRxXCQbg1ix8DnFkEbc9cD4DuHYTdOA4jY0HtxN
+	 JCwJ3tYq6rVHz+HwArAV0NmVhhCGPgZuCO75DUSqrbRtihZTLRn+3+5X3ZQ+QrpFtr
+	 jJWysBRc+Pxbz7pWeUoHc/NMP6oqcV5JckqEunF6lnJWP4AfxV6slPZ6Wut3xdPqWK
+	 2PRZEu+gVZCJg==
+Received: (nullmailer pid 2529337 invoked by uid 1000);
+	Mon, 09 Oct 2023 17:32:37 -0000
 From: Rob Herring <robh@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-Subject: [PATCH] phy: Use device_get_match_data()
-Date: Mon,  9 Oct 2023 12:29:10 -0500
-Message-ID: <20231009172923.2457844-15-robh@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: Drop unnecessary of_match_device() calls
+Date: Mon,  9 Oct 2023 12:29:11 -0500
+Message-ID: <20231009172923.2457844-16-robh@kernel.org>
 X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231009_103238_084391_75ADA55F 
-X-CRM114-Status: GOOD (  15.54  )
+X-CRM114-CacheID: sfid-20231009_103241_915131_BCDC302D 
+X-CRM114-Status: GOOD (  13.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,325 +71,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use preferred device_get_match_data() instead of of_match_device() to
-get the driver match data. With this, adjust the includes to explicitly
-include the correct headers.
+If probe is reached, we've already matched the device and in the case of
+DT matching, the struct device_node pointer will be set. Therefore, there
+is no need to call of_match_device() in probe.
 
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/phy/broadcom/phy-bcm-ns-usb3.c   |  9 +++------
- drivers/phy/marvell/phy-berlin-usb.c     |  7 +++----
- drivers/phy/ralink/phy-ralink-usb.c      | 10 +++-------
- drivers/phy/rockchip/phy-rockchip-pcie.c | 11 ++++-------
- drivers/phy/rockchip/phy-rockchip-usb.c  | 10 +++-------
- drivers/phy/ti/phy-omap-control.c        |  9 ++-------
- drivers/phy/ti/phy-omap-usb2.c           | 11 ++++-------
- drivers/phy/ti/phy-ti-pipe3.c            | 14 ++++----------
- 8 files changed, 26 insertions(+), 55 deletions(-)
+ drivers/phy/motorola/phy-cpcap-usb.c |  7 -------
+ drivers/phy/ti/phy-dm816x-usb.c      | 11 +----------
+ 2 files changed, 1 insertion(+), 17 deletions(-)
 
-diff --git a/drivers/phy/broadcom/phy-bcm-ns-usb3.c b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
-index 69584b685edb..2c8b1b7dda5b 100644
---- a/drivers/phy/broadcom/phy-bcm-ns-usb3.c
-+++ b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
-@@ -16,10 +16,11 @@
- #include <linux/iopoll.h>
- #include <linux/mdio.h>
- #include <linux/module.h>
-+#include <linux/of.h>
- #include <linux/of_address.h>
--#include <linux/of_platform.h>
- #include <linux/platform_device.h>
- #include <linux/phy/phy.h>
-+#include <linux/property.h>
- #include <linux/slab.h>
- 
- #define BCM_NS_USB3_PHY_BASE_ADDR_REG	0x1f
-@@ -189,7 +190,6 @@ static int bcm_ns_usb3_mdio_phy_write(struct bcm_ns_usb3 *usb3, u16 reg,
- static int bcm_ns_usb3_mdio_probe(struct mdio_device *mdiodev)
- {
- 	struct device *dev = &mdiodev->dev;
--	const struct of_device_id *of_id;
- 	struct phy_provider *phy_provider;
- 	struct device_node *syscon_np;
- 	struct bcm_ns_usb3 *usb3;
-@@ -203,10 +203,7 @@ static int bcm_ns_usb3_mdio_probe(struct mdio_device *mdiodev)
- 	usb3->dev = dev;
- 	usb3->mdiodev = mdiodev;
- 
--	of_id = of_match_device(bcm_ns_usb3_id_table, dev);
--	if (!of_id)
--		return -EINVAL;
--	usb3->family = (uintptr_t)of_id->data;
-+	usb3->family = (enum bcm_ns_family)device_get_match_data(dev);
- 
- 	syscon_np = of_parse_phandle(dev->of_node, "usb3-dmp-syscon", 0);
- 	err = of_address_to_resource(syscon_np, 0, &res);
-diff --git a/drivers/phy/marvell/phy-berlin-usb.c b/drivers/phy/marvell/phy-berlin-usb.c
-index 78ef6ae72a9a..f26bf630da2c 100644
---- a/drivers/phy/marvell/phy-berlin-usb.c
-+++ b/drivers/phy/marvell/phy-berlin-usb.c
-@@ -8,9 +8,10 @@
- 
+diff --git a/drivers/phy/motorola/phy-cpcap-usb.c b/drivers/phy/motorola/phy-cpcap-usb.c
+index 74333e814221..7bbf729a7c90 100644
+--- a/drivers/phy/motorola/phy-cpcap-usb.c
++++ b/drivers/phy/motorola/phy-cpcap-usb.c
+@@ -15,7 +15,6 @@
  #include <linux/io.h>
  #include <linux/module.h>
--#include <linux/of_device.h>
-+#include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/property.h>
- #include <linux/reset.h>
- 
- #define USB_PHY_PLL		0x04
-@@ -162,8 +163,6 @@ MODULE_DEVICE_TABLE(of, phy_berlin_usb_of_match);
- 
- static int phy_berlin_usb_probe(struct platform_device *pdev)
- {
--	const struct of_device_id *match =
--		of_match_device(phy_berlin_usb_of_match, &pdev->dev);
- 	struct phy_berlin_usb_priv *priv;
- 	struct phy *phy;
- 	struct phy_provider *phy_provider;
-@@ -180,7 +179,7 @@ static int phy_berlin_usb_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->rst_ctrl))
- 		return PTR_ERR(priv->rst_ctrl);
- 
--	priv->pll_divider = *((u32 *)match->data);
-+	priv->pll_divider = *((u32 *)device_get_match_data(&pdev->dev));
- 
- 	phy = devm_phy_create(&pdev->dev, NULL, &phy_berlin_usb_ops);
- 	if (IS_ERR(phy)) {
-diff --git a/drivers/phy/ralink/phy-ralink-usb.c b/drivers/phy/ralink/phy-ralink-usb.c
-index 2bd8ad2e76ed..41bce5290e92 100644
---- a/drivers/phy/ralink/phy-ralink-usb.c
-+++ b/drivers/phy/ralink/phy-ralink-usb.c
-@@ -13,9 +13,10 @@
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/mutex.h>
--#include <linux/of_platform.h>
-+#include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <linux/reset.h>
- 
-@@ -171,18 +172,13 @@ static int ralink_usb_phy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
--	const struct of_device_id *match;
- 	struct ralink_usb_phy *phy;
- 
--	match = of_match_device(ralink_usb_phy_of_match, &pdev->dev);
--	if (!match)
--		return -ENODEV;
--
- 	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
- 	if (!phy)
- 		return -ENOMEM;
- 
--	phy->clk = (uintptr_t)match->data;
-+	phy->clk = (uintptr_t)device_get_match_data(&pdev->dev);
- 	phy->base = NULL;
- 
- 	phy->sysctl = syscon_regmap_lookup_by_phandle(dev->of_node, "ralink,sysctl");
-diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-index 8234b83fdd88..1bbd6be2a584 100644
---- a/drivers/phy/rockchip/phy-rockchip-pcie.c
-+++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-@@ -12,10 +12,9 @@
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
  #include <linux/of.h>
--#include <linux/of_address.h>
 -#include <linux/of_platform.h>
- #include <linux/phy/phy.h>
+ #include <linux/iio/consumer.h>
+ #include <linux/pinctrl/consumer.h>
  #include <linux/platform_device.h>
-+#include <linux/property.h>
- #include <linux/regmap.h>
- #include <linux/reset.h>
- 
-@@ -63,7 +62,7 @@ struct rockchip_pcie_data {
- };
- 
- struct rockchip_pcie_phy {
--	struct rockchip_pcie_data *phy_data;
-+	const struct rockchip_pcie_data *phy_data;
- 	struct regmap *reg_base;
- 	struct phy_pcie_instance {
- 		struct phy *phy;
-@@ -350,7 +349,6 @@ static int rockchip_pcie_phy_probe(struct platform_device *pdev)
- 	struct rockchip_pcie_phy *rk_phy;
+@@ -612,14 +611,8 @@ static int cpcap_usb_phy_probe(struct platform_device *pdev)
+ 	struct phy *generic_phy;
  	struct phy_provider *phy_provider;
- 	struct regmap *grf;
+ 	struct usb_otg *otg;
 -	const struct of_device_id *of_id;
- 	int i;
- 	u32 phy_num;
+ 	int error;
  
-@@ -364,11 +362,10 @@ static int rockchip_pcie_phy_probe(struct platform_device *pdev)
- 	if (!rk_phy)
- 		return -ENOMEM;
- 
--	of_id = of_match_device(rockchip_pcie_phy_dt_ids, &pdev->dev);
--	if (!of_id)
-+	rk_phy->phy_data = device_get_match_data(&pdev->dev);
-+	if (!rk_phy->phy_data)
- 		return -EINVAL;
- 
--	rk_phy->phy_data = (struct rockchip_pcie_data *)of_id->data;
- 	rk_phy->reg_base = grf;
- 
- 	mutex_init(&rk_phy->pcie_mutex);
-diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
-index 8454285977eb..666a896c8f0a 100644
---- a/drivers/phy/rockchip/phy-rockchip-usb.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usb.c
-@@ -13,10 +13,9 @@
- #include <linux/module.h>
- #include <linux/mutex.h>
- #include <linux/of.h>
--#include <linux/of_address.h>
--#include <linux/of_platform.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/property.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/regmap.h>
-@@ -458,7 +457,6 @@ static int rockchip_usb_phy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct rockchip_usb_phy_base *phy_base;
- 	struct phy_provider *phy_provider;
--	const struct of_device_id *match;
- 	struct device_node *child;
- 	int err;
- 
-@@ -466,14 +464,12 @@ static int rockchip_usb_phy_probe(struct platform_device *pdev)
- 	if (!phy_base)
- 		return -ENOMEM;
- 
--	match = of_match_device(dev->driver->of_match_table, dev);
--	if (!match || !match->data) {
-+	phy_base->pdata = device_get_match_data(dev);
-+	if (!phy_base->pdata) {
- 		dev_err(dev, "missing phy data\n");
- 		return -EINVAL;
- 	}
- 
--	phy_base->pdata = match->data;
--
- 	phy_base->dev = dev;
- 	phy_base->reg_base = ERR_PTR(-ENODEV);
- 	if (dev->parent && dev->parent->of_node)
-diff --git a/drivers/phy/ti/phy-omap-control.c b/drivers/phy/ti/phy-omap-control.c
-index 76c5595f0859..2fdb8f4241c7 100644
---- a/drivers/phy/ti/phy-omap-control.c
-+++ b/drivers/phy/ti/phy-omap-control.c
-@@ -8,9 +8,9 @@
- 
- #include <linux/module.h>
- #include <linux/platform_device.h>
-+#include <linux/property.h>
- #include <linux/slab.h>
- #include <linux/of.h>
--#include <linux/of_device.h>
- #include <linux/err.h>
- #include <linux/io.h>
- #include <linux/clk.h>
-@@ -268,20 +268,15 @@ MODULE_DEVICE_TABLE(of, omap_control_phy_id_table);
- 
- static int omap_control_phy_probe(struct platform_device *pdev)
- {
--	const struct of_device_id *of_id;
- 	struct omap_control_phy *control_phy;
- 
--	of_id = of_match_device(omap_control_phy_id_table, &pdev->dev);
+-	of_id = of_match_device(of_match_ptr(cpcap_usb_phy_id_table),
+-				&pdev->dev);
 -	if (!of_id)
 -		return -EINVAL;
 -
- 	control_phy = devm_kzalloc(&pdev->dev, sizeof(*control_phy),
- 		GFP_KERNEL);
- 	if (!control_phy)
+ 	ddata = devm_kzalloc(&pdev->dev, sizeof(*ddata), GFP_KERNEL);
+ 	if (!ddata)
  		return -ENOMEM;
- 
- 	control_phy->dev = &pdev->dev;
--	control_phy->type = *(enum omap_control_phy_type *)of_id->data;
-+	control_phy->type = *(enum omap_control_phy_type *)device_get_match_data(&pdev->dev);
- 
- 	if (control_phy->type == OMAP_CTRL_TYPE_OTGHS) {
- 		control_phy->otghs_control =
-diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-index 762d3de8b3c5..dd2913ac0fa2 100644
---- a/drivers/phy/ti/phy-omap-usb2.c
-+++ b/drivers/phy/ti/phy-omap-usb2.c
-@@ -19,6 +19,7 @@
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
+diff --git a/drivers/phy/ti/phy-dm816x-usb.c b/drivers/phy/ti/phy-dm816x-usb.c
+index db153a55f4e1..d5ae972a31fb 100644
+--- a/drivers/phy/ti/phy-dm816x-usb.c
++++ b/drivers/phy/ti/phy-dm816x-usb.c
+@@ -13,7 +13,6 @@
  #include <linux/pm_runtime.h>
-+#include <linux/property.h>
- #include <linux/regmap.h>
- #include <linux/slab.h>
- #include <linux/sys_soc.h>
-@@ -371,16 +372,12 @@ static int omap_usb2_probe(struct platform_device *pdev)
- 	struct device_node *node = pdev->dev.of_node;
- 	struct device_node *control_node;
- 	struct platform_device *control_pdev;
+ #include <linux/delay.h>
+ #include <linux/phy/phy.h>
+-#include <linux/of_platform.h>
+ 
+ #include <linux/mfd/syscon.h>
+ 
+@@ -161,7 +160,6 @@ static UNIVERSAL_DEV_PM_OPS(dm816x_usb_phy_pm_ops,
+ 			    dm816x_usb_phy_runtime_resume,
+ 			    NULL);
+ 
+-#ifdef CONFIG_OF
+ static const struct of_device_id dm816x_usb_phy_id_table[] = {
+ 	{
+ 		.compatible = "ti,dm8168-usb-phy",
+@@ -169,7 +167,6 @@ static const struct of_device_id dm816x_usb_phy_id_table[] = {
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, dm816x_usb_phy_id_table);
+-#endif
+ 
+ static int dm816x_usb_phy_probe(struct platform_device *pdev)
+ {
+@@ -178,14 +175,8 @@ static int dm816x_usb_phy_probe(struct platform_device *pdev)
+ 	struct phy *generic_phy;
+ 	struct phy_provider *phy_provider;
+ 	struct usb_otg *otg;
 -	const struct of_device_id *of_id;
--	struct usb_phy_data *phy_data;
-+	const struct usb_phy_data *phy_data;
+ 	int error;
  
--	of_id = of_match_device(omap_usb2_id_table, &pdev->dev);
--
+-	of_id = of_match_device(of_match_ptr(dm816x_usb_phy_id_table),
+-				&pdev->dev);
 -	if (!of_id)
-+	phy_data = device_get_match_data(&pdev->dev);
-+	if (!phy_data)
- 		return -EINVAL;
- 
--	phy_data = (struct usb_phy_data *)of_id->data;
+-		return -EINVAL;
 -
  	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
  	if (!phy)
  		return -ENOMEM;
-diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index 507e1552db5e..874c1a25ce36 100644
---- a/drivers/phy/ti/phy-ti-pipe3.c
-+++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -8,6 +8,7 @@
+@@ -272,7 +263,7 @@ static struct platform_driver dm816x_usb_phy_driver = {
+ 	.driver		= {
+ 		.name	= "dm816x-usb-phy",
+ 		.pm	= &dm816x_usb_phy_pm_ops,
+-		.of_match_table = of_match_ptr(dm816x_usb_phy_id_table),
++		.of_match_table = dm816x_usb_phy_id_table,
+ 	},
+ };
  
- #include <linux/module.h>
- #include <linux/platform_device.h>
-+#include <linux/property.h>
- #include <linux/slab.h>
- #include <linux/phy/phy.h>
- #include <linux/of.h>
-@@ -778,23 +779,16 @@ static int ti_pipe3_probe(struct platform_device *pdev)
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
- 	int ret;
--	const struct of_device_id *match;
--	struct pipe3_data *data;
-+	const struct pipe3_data *data;
- 
- 	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
- 	if (!phy)
- 		return -ENOMEM;
- 
--	match = of_match_device(ti_pipe3_id_table, dev);
--	if (!match)
-+	data = device_get_match_data(dev);
-+	if (!data)
- 		return -EINVAL;
- 
--	data = (struct pipe3_data *)match->data;
--	if (!data) {
--		dev_err(dev, "no driver data\n");
--		return -EINVAL;
--	}
--
- 	phy->dev = dev;
- 	phy->mode = data->mode;
- 	phy->dpll_map = data->dpll_map;
 -- 
 2.42.0
 
