@@ -4,136 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 754C6E95A91
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 08:45:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DBABE95A91
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 09:11:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mEKCBZ6XqSefdM1LT+hPvmoaIj48ZiWjKcSVWwnoZiE=; b=CbqXfHkyAcH//N
-	REUCO9XrM1FJih2Vq43UBbch5LXJ4sweUxg9oPoO4JUHmH3Ne5n1CNiNB+PuJz6/V6RTivcCxIAru
-	Di6MLBPr/nE5SRO7n3XW1e6G7jTUL/RsTlyL1pdicRzbpCcqR7hfRd310EFgZk+EaHO/afc6TS3U0
-	mCFkhbQk0/fjgEOKq9Llpnze0TslY8B4uRFN4WYPlT/NNYn2jzeciOxHJu1I/DBFL7QF5WmCO01LC
-	Ou9V7/axnVxb5GHJoowrAmeVQ5bSiRE4z0d5FmB6buqBejcbvbjXwG2dBW+VILuiCwfURyIIjorJ7
-	6wZ/XeesIrSpNoMXzkIA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CFlDc064URXIyIXQCoNX7M2cYgOUuEWKM4DBBEXSHh8=; b=eI5clTweWdI4t49CIerMIfWeJ+
+	8tQNbPysrMkV5TE+yY9CqsK4tLEiEtxMtczZnnnqU/XTcRYoYr6n0OwJ36Y4SyM35pV9UQT5LdCNB
+	lqwtu1StgHbuSeNV6J9NJ6VRgRrjqC4Lc3Sn+2ZG7F9EKT5CkC7aGwbDAt+VLw7+VyJ9GuO5mBBq2
+	rkDPz+7AO6mQuhHeohAHEh83wyWe1vgcEBTPecDonLWwBxv5aNf3u7T0P6Z1QPqPH6mCiF/LKQyNT
+	5/XcL2ZZslutAUj0U5RHXwQzIXa5rrS8EsOVrZnbWYO3N8xsYcq+LCnmaOg656Ct0q2ZmEe3eCoAA
+	AcTwGtVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qplt9-00A0KY-0d;
-	Mon, 09 Oct 2023 08:45:19 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1qpmIH-00A3wG-07;
+	Mon, 09 Oct 2023 09:11:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qplt4-00A0Il-0b
+	id 1qpmID-00A3vr-2w
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Oct 2023 08:45:17 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-50444e756deso5661705e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 09 Oct 2023 01:45:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696841109; x=1697445909; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=hio2Q7ruJtd9dJ3amfJnjZI8mttjUkWIdKdUR2giezU=;
-        b=rDjRkRd8+vjrVn3M/RT8wyu3LM49wxpRNPPKnx62cQ8qHLPlYvp2x5DsAzVXS8hUbG
-         AII2UZF7msu8irl0VtWF60Hrq+Bsg8HKnVXiJE15fA5RRm2UvjmZMrkeUUbGfXvXJ/lh
-         idiBKbDto5XMfVarN7nUKFTXuB6wyt6bXf9y+yL7NA3EzLkNGeS9AJiC32N0m8wAcM4K
-         DA4LBsZN0yYQ0oLei4jcdA2/E03UmwOmdt4oljfpR/ZKAoAeW3rAXZ7Pds3rnIunpi/Q
-         bh4pXKWaK3ZDbNYtYsHJx/Lk2VjxLv3eTXgDg0L9d/4DxQq0QGegL0C7BH1vhHuUfwKe
-         sGag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696841109; x=1697445909;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=hio2Q7ruJtd9dJ3amfJnjZI8mttjUkWIdKdUR2giezU=;
-        b=T5YquFNdWzSsjZvqxd6BQhIQJ3FaHoUl5C8Nbx51PCRh3BRsBK4wfGqoJMw7e8tQSx
-         IkzCLYd1XyxhFYKN2ppybtuTZkcL2x8uggD2ZUUCo00nQSKFgEVrrT3FdzVLRR0pzNF5
-         1jQxcj4opSSpskYGfHg3gZnujzUitm3WsNbj7Re1fGO99taD8KIffVPIeS2osChjR1Rj
-         rtS22gIcenCOFNGC7MQ6uNcQEQ/qYhrrmeweNCYN+PpD5EnlY4xnwEN+xiPz70nXKV94
-         +h9t+WdCY8W0Pw8UEvPHCWeATPON2cNY5uEch88Ydcc/Ny/tMg1cLXd0Ws6qWwXshuQ4
-         UAvQ==
-X-Gm-Message-State: AOJu0YzgBebhZFKEii4sjy0GO1XyzkLs5pczD7wPjzofFOLSHdaQNX8C
-	k06nJETsXs+Z+VcFQCcb/xp6vA==
-X-Google-Smtp-Source: AGHT+IGLgimHmcENifu9G6bykshZbJeMrs+Zk+piIrvaWgi8lFY1p++C4bX64JPWZBt/0RCIjNtLHg==
-X-Received: by 2002:a05:6512:3488:b0:4fd:fd97:a77b with SMTP id v8-20020a056512348800b004fdfd97a77bmr10494729lfr.50.1696841109333;
-        Mon, 09 Oct 2023 01:45:09 -0700 (PDT)
-Received: from [192.168.1.197] (5-157-101-10.dyn.eolo.it. [5.157.101.10])
-        by smtp.gmail.com with ESMTPSA id f19-20020a1c6a13000000b00402d34ea099sm12740930wmc.29.2023.10.09.01.45.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 09 Oct 2023 01:45:08 -0700 (PDT)
-Message-ID: <1483d2e0-b25b-401e-86ba-6fa8094db01f@linaro.org>
-Date: Mon, 9 Oct 2023 10:45:06 +0200
+	Mon, 09 Oct 2023 09:11:15 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3997OKF5008529;
+	Mon, 9 Oct 2023 09:10:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=0VWgAV3APZKwq53MzqWBPU0ZhngVBzXdgqSQn7ZYvfU=;
+ b=PO83jcsRCy6ZL3OHrdP7/2twqSIQJbFp90vMKbwukPuXF6eSuUmZsAvPC4Lnowza63GT
+ L/4l8KjeYmKf3uMEydI1XV4VnuizM3i98Z5S42tZTyKrML9eSsQl+vMXAYSMw6uDbe8B
+ t5WXNb4JUHYiBYvKA6SPzCXdVlrwpDL6O+jAKgAcI2wx3LlrsP6YB9B5bFAUEUMD6YYw
+ jccoBuGJFQ8MCSI5BTzmOu3DK6gOyRDyidjleg1P/nwLoBBz0E9VtOu32MN2/XsuVM0c
+ IwbKlF6BbYoEWsnIRBg6btIEYOU318h5+YCPq1UeiTHeZd4/xV6E5ewTW/HSccGacF/A hQ== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tkh4d9yku-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 09 Oct 2023 09:10:59 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3999AvP5023167
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 9 Oct 2023 09:10:57 GMT
+Received: from [10.201.200.63] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Mon, 9 Oct
+ 2023 02:10:51 -0700
+Message-ID: <bce3dd3e-4eb2-4916-86a4-f0554007f9d0@quicinc.com>
+Date: Mon, 9 Oct 2023 14:40:47 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/7] dt-bindings: arm: qcom: Add Xiaomi Redmi Note 9S
+Subject: Re: [PATCH 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
 Content-Language: en-US
-To: David Wronek <davidwronek@gmail.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
- Bart Van Assche <bvanassche@acm.org>, Joe Mason <buddyjojo06@outlook.com>
-Cc: cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- hexdump0815@googlemail.com, ~postmarketos/upstreaming@lists.sr.ht,
- phone-devel@vger.kernel.org
-References: <20231007140053.1731245-1-davidwronek@gmail.com>
- <20231007140053.1731245-4-davidwronek@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231007140053.1731245-4-davidwronek@gmail.com>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>, <agross@kernel.org>,
+        <andersson@kernel.org>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <robh@kernel.org>, <bhelgaas@google.com>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mani@kernel.org>,
+        <p.zabel@pengutronix.de>, <quic_srichara@quicinc.com>,
+        <quic_varada@quicinc.com>, <quic_ipkumar@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
+ <20231003120846.28626-3-quic_nsekar@quicinc.com>
+ <123f7c9a-587c-410f-a3fe-545f10bd3d09@linaro.org>
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+In-Reply-To: <123f7c9a-587c-410f-a3fe-545f10bd3d09@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: WHlvOO7ui5HEWE6AN5iPjTkTuiVquzbN
+X-Proofpoint-ORIG-GUID: WHlvOO7ui5HEWE6AN5iPjTkTuiVquzbN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-09_07,2023-10-06_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 phishscore=0
+ spamscore=0 clxscore=1015 adultscore=0 impostorscore=0 mlxlogscore=628
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310090076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231009_014514_227467_28BEA5C5 
-X-CRM114-Status: UNSURE (   5.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231009_021113_949984_5F729C72 
+X-CRM114-Status: GOOD (  11.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,20 +101,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/10/2023 15:58, David Wronek wrote:
-> Document the Xiaomi Redmi Note 9S (curtana) smartphone, which is based
-> on the Qualcomm SM7125 SoC.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+On 10/7/2023 5:55 AM, Konrad Dybcio wrote:
+> On 3.10.2023 14:08, Nitheesh Sekar wrote:
+>> Add support for the PCIe controller on the Qualcomm
+>> IPQ5108 SoC to the bindings.
+>>
+>> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+>> ---
+> [...]
+>
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,pcie-ipq5018
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          minItems: 6
+>> +          maxItems: 6
+>> +        clock-names:
+>> +          items:
+>> +            - const: iface # PCIe to SysNOC BIU clock
+> What's a BIU?
+>
+> Konrad
+It is Bus Interface Unit.
 
-Best regards,
-Krzysztof
-
+Thanks,
+Nitheesh
 
 -- 
 linux-phy mailing list
