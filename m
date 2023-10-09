@@ -4,66 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09712CD6115
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 17:18:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BD57CD6117
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 17:32:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AJhp4pJRK6oTXSN+FyGJjklnJIPdBjA01Cl0RckMD1w=; b=cfIgeX9ruhcyzu
-	f5eP0SAdrJ/O2zmuiyH8cruLToqNcMwB+YjQC65a++NcaEQarRJcVAlGhl2JfoCEhXebba7a+BIWL
-	cCAZ6WxDOL3pbkG9NKImW44T/jrl0TfRvxN9ZyXVkT1rPP5GgFPiyaseamDBaDxq+uUM1yD7qYWKJ
-	MsN4rShNOMpCg9rcjEEWAHIUsQnEFaJUQbju8oizfHoL5t1nxcGqDxvf3iRvAjwnzrvLtf/uTGSOX
-	Yma5ttGUTyvat2YM/3tjzJFHwySYCzNKXDeDENmjLLz0w5qL15lJVUkBaWD/rPwrArkHImCd5X/Ii
-	gcFcq12ApV2yrtXkQeSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WyFUOaQE63w7uGkZ/KT5nPOIR1q1y7NnAfiNr9Z3fbs=; b=viUcCOUuTWTDSP
+	BX1zTNrX9aQmFOMc14KoMIdI0q6TcxFdfaJofwyENX4BmZ+6GThKc0b3dcf2k0bZsrE7sm3c4yvig
+	c/szEJtA7goWc/TF6sghS1DBYUdbhf9bvZfjau/zjgIBzi5Af4Y3282InsyUXv5lo3LtVLD0Q/j+D
+	QUGrumhiB6dahwZx/UFYJB1Gf1yZFVwWhDB+AEzn4B6d7Md9jRH9WMb895AjXhsBElaTcjTL2CdIR
+	cxwGDNyekDory66uR6iVxvVtoXaSeHmrmryTwcaFURrjtP563t4xXALcAIjWI750aoRzsG+2D3e5K
+	bmfFfBfuj4c5itT0yEMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpttH-00BGoT-2A;
-	Mon, 09 Oct 2023 17:17:59 +0000
+	id 1qpu7W-00BIoz-0o;
+	Mon, 09 Oct 2023 17:32:42 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpttE-00BGn0-26
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Oct 2023 17:17:58 +0000
+	id 1qpu7R-00BIml-35;
+	Mon, 09 Oct 2023 17:32:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 506D76124E;
-	Mon,  9 Oct 2023 17:17:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A225AC433C7;
-	Mon,  9 Oct 2023 17:17:45 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7648861253;
+	Mon,  9 Oct 2023 17:32:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DB33C433C7;
+	Mon,  9 Oct 2023 17:32:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696871873;
-	bh=I2CqfpW+7rJT51XxTDy4/99F+BBs6j5la8HhfMmDYG0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dILau7xpGTyhEqgp1wj91xacT0IEjGgVwMlraH9WRIJa8rLhzW5iopRZwm1cerz9+
-	 u8uDxM9uEMUnK2RNu41kVIZQ4K83W9t5kk4Suj5XTJ/cGIqsEYutpLz2LMjO96itnn
-	 caVyuKiCIkSdeoG77zH7Yc2cDkpbbJM2Jcu4TGHuWG5GrsqHTVQdcgf9SwoQI6WCvb
-	 JGH7ERC4oTRX5n1b2ROfr2Y6gNELPI2cLwS/3WVdGPL2SY+Hmo7t//PUSXEcLmh2/Z
-	 dhtiIpPp8pRJNYeTUQ4yys4ydDkd3UeTSMC4SZcF4tbou52tixH+oMHvOH0RYwG9bx
-	 TBwVYeVDig70w==
-Date: Mon, 9 Oct 2023 22:47:35 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Nitheesh Sekar <quic_nsekar@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-	lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
-	bhelgaas@google.com, krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	mani@kernel.org, p.zabel@pengutronix.de, quic_srichara@quicinc.com,
-	quic_varada@quicinc.com, quic_ipkumar@quicinc.com,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 5/6] arm64: dts: qcom: ipq5018: Add PCIe related nodes
-Message-ID: <20231009171735.GB31623@thinkpad>
-References: <20231003120846.28626-1-quic_nsekar@quicinc.com>
- <20231003120846.28626-6-quic_nsekar@quicinc.com>
+	s=k20201202; t=1696872757;
+	bh=A8WM7jgGtt3glq+HqYBadr3EppHcnVR5hi6lvtrs9G8=;
+	h=From:To:Cc:Subject:Date:From;
+	b=ddJPLzjwg59PGkgs87hBJgB8I/8jC39C77x85AqWBNgoeCdCwBtKqlzRQ0kib4jC/
+	 U8WMWx2G4eUusX9LR1neN+gIwf1nlgnsae//7lHX5b37x+963napX7xMZYg3p+GfKJ
+	 OnmNPN+TVLVu1l/Gp9ptPHCIBl5Nneah5GOJoUxE4pzJLJKmBsaZ/SLAwTXm1XIODc
+	 SffgcNunl7ih5nz9XW2qTFquErqnWIEC6+eOt6Iyzgqa/sbkVeMvs6Pa9xDqmjwRP+
+	 Y3VqzOZhUeoNATzomDUKK5KYxB7zO5A7htLD86d3Mk63fElJaZis+43JDNlkUJaWCn
+	 RDgLRQoa8t2yQ==
+Received: (nullmailer pid 2528549 invoked by uid 1000);
+	Mon, 09 Oct 2023 17:32:35 -0000
+From: Rob Herring <robh@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Subject: [PATCH] phy: Use device_get_match_data()
+Date: Mon,  9 Oct 2023 12:29:10 -0500
+Message-ID: <20231009172923.2457844-15-robh@kernel.org>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231003120846.28626-6-quic_nsekar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231009_101756_796891_F51E88D8 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20231009_103238_084391_75ADA55F 
+X-CRM114-Status: GOOD (  15.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,134 +65,335 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBPY3QgMDMsIDIwMjMgYXQgMDU6Mzg6NDVQTSArMDUzMCwgTml0aGVlc2ggU2VrYXIg
-d3JvdGU6Cj4gQWRkIHBoeSBhbmQgY29udHJvbGxlciBub2RlcyBmb3IgUENJZV94MiBhbmQgUENJ
-ZV94MS4KPiBQQ0llX3gyIGlzIDItbGFuZSBHZW4yIGFuZCBQQ0llX3gxIGlzIDEtbGFuZSBHZW4y
-Lgo+IAo+IFNpZ25lZC1vZmYtYnk6IE5pdGhlZXNoIFNla2FyIDxxdWljX25zZWthckBxdWljaW5j
-LmNvbT4KPiAtLS0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUwMTguZHRzaSB8IDE4
-NiArKysrKysrKysrKysrKysrKysrKysrKysrLQo+ICAxIGZpbGUgY2hhbmdlZCwgMTg0IGluc2Vy
-dGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9v
-dC9kdHMvcWNvbS9pcHE1MDE4LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxNTAx
-OC5kdHNpCj4gaW5kZXggMzhmZmRjM2NiZGNkLi4wODE4ZmRkMWU2OTMgMTAwNjQ0Cj4gLS0tIGEv
-YXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUwMTguZHRzaQo+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcWNvbS9pcHE1MDE4LmR0c2kKPiBAQCAtOCw2ICs4LDcgQEAKPiAgI2luY2x1ZGUg
-PGR0LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2FybS1naWMuaD4KPiAgI2luY2x1ZGUg
-PGR0LWJpbmRpbmdzL2Nsb2NrL3Fjb20sZ2NjLWlwcTUwMTguaD4KPiAgI2luY2x1ZGUgPGR0LWJp
-bmRpbmdzL3Jlc2V0L3Fjb20sZ2NjLWlwcTUwMTguaD4KPiArI2luY2x1ZGUgPGR0LWJpbmRpbmdz
-L2dwaW8vZ3Bpby5oPgo+ICAKPiAgLyB7Cj4gIAlpbnRlcnJ1cHQtcGFyZW50ID0gPCZpbnRjPjsK
-PiBAQCAtOTQsNiArOTUsMzggQEAKPiAgCQkjc2l6ZS1jZWxscyA9IDwxPjsKPiAgCQlyYW5nZXMg
-PSA8MCAwIDAgMHhmZmZmZmZmZj47Cj4gIAo+ICsJCXBjaWVfeDFwaHk6IHBoeUA3ZTAwMHsKPiAr
-CQkJY29tcGF0aWJsZSA9ICJxY29tLGlwcTUwMTgtdW5pcGh5LXBjaWUtZ2VuMngxIjsKPiArCQkJ
-cmVnID0gPDB4MDAwN2UwMDAgMHg4MDA+Owo+ICsJCQkjcGh5LWNlbGxzID0gPDA+Owo+ICsJCQkj
-Y2xvY2stY2VsbHMgPSA8MD47Cj4gKwkJCWNsb2NrcyA9IDwmZ2NjIEdDQ19QQ0lFMV9QSVBFX0NM
-Sz47Cj4gKwkJCWNsb2NrLW5hbWVzID0gInBpcGVfY2xrIjsKPiArCQkJY2xvY2stb3V0cHV0LW5h
-bWVzID0gInBjaWUxX3BpcGVfY2xrIjsKPiArCQkJYXNzaWduZWQtY2xvY2tzID0gPCZnY2MgR0ND
-X1BDSUUxX1BJUEVfQ0xLPjsKPiArCQkJYXNzaWduZWQtY2xvY2stcmF0ZXMgPSA8MTI1MDAwMDAw
-PjsKPiArCQkJcmVzZXRzID0gPCZnY2MgR0NDX1BDSUUxX1BIWV9CQ1I+LAo+ICsJCQkJIDwmZ2Nj
-IEdDQ19QQ0lFMVBIWV9QSFlfQkNSPjsKPiArCQkJcmVzZXQtbmFtZXMgPSAicGh5IiwgInBoeV9w
-aHkiOwo+ICsJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICsJCX07Cj4gKwo+ICsJCXBjaWVfeDJw
-aHk6IHBoeUA4NjAwMHsKPiArCQkJY29tcGF0aWJsZSA9ICJxY29tLGlwcTUwMTgtdW5pcGh5LXBj
-aWUtZ2VuMngyIjsKPiArCQkJcmVnID0gPDB4MDAwODYwMDAgMHg4MDA+Owo+ICsJCQkjcGh5LWNl
-bGxzID0gPDA+Owo+ICsJCQkjY2xvY2stY2VsbHMgPSA8MD47Cj4gKwkJCWNsb2NrcyA9IDwmZ2Nj
-IEdDQ19QQ0lFMF9QSVBFX0NMSz47Cj4gKwkJCWNsb2NrLW5hbWVzID0gInBpcGVfY2xrIjsKPiAr
-CQkJY2xvY2stb3V0cHV0LW5hbWVzID0gInBjaWUwX3BpcGVfY2xrIjsKPiArCQkJYXNzaWduZWQt
-Y2xvY2tzID0gPCZnY2MgR0NDX1BDSUUwX1BJUEVfQ0xLPjsKPiArCQkJYXNzaWduZWQtY2xvY2st
-cmF0ZXMgPSA8MTI1MDAwMDAwPjsKPiArCQkJcmVzZXRzID0gPCZnY2MgR0NDX1BDSUUwX1BIWV9C
-Q1I+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMFBIWV9QSFlfQkNSPjsKPiArCQkJcmVzZXQtbmFt
-ZXMgPSAicGh5IiwgInBoeV9waHkiOwo+ICsJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICsJCX07
-Cj4gKwo+ICAJCXRsbW06IHBpbmN0cmxAMTAwMDAwMCB7Cj4gIAkJCWNvbXBhdGlibGUgPSAicWNv
-bSxpcHE1MDE4LXRsbW0iOwo+ICAJCQlyZWcgPSA8MHgwMTAwMDAwMCAweDMwMDAwMD47Cj4gQEAg
-LTExNyw4ICsxNTAsOCBAQAo+ICAJCQlyZWcgPSA8MHgwMTgwMDAwMCAweDgwMDAwPjsKPiAgCQkJ
-Y2xvY2tzID0gPCZ4b19ib2FyZF9jbGs+LAo+ICAJCQkJIDwmc2xlZXBfY2xrPiwKPiAtCQkJCSA8
-MD4sCj4gLQkJCQkgPDA+LAo+ICsJCQkJIDwmcGNpZV94MnBoeT4sCj4gKwkJCQkgPCZwY2llX3gx
-cGh5PiwKPiAgCQkJCSA8MD4sCj4gIAkJCQkgPDA+LAo+ICAJCQkJIDwwPiwKPiBAQCAtMjQ2LDYg
-KzI3OSwxNTUgQEAKPiAgCQkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gIAkJCX07Cj4gIAkJfTsK
-PiArCj4gKwkJcGNpZV94MTogcGNpQDgwMDAwMDAwIHsKPiArCQkJY29tcGF0aWJsZSA9ICJxY29t
-LHBjaWUtaXBxNTAxOCI7Cj4gKwkJCXJlZyA9ICA8MHg4MDAwMDAwMCAweGYxZAo+ICsJCQkJMHg4
-MDAwMEYyMCAweGE4Cj4gKwkJCQkweDgwMDAxMDAwIDB4MTAwMAo+ICsJCQkJMHg3ODAwMCAweDMw
-MDAKPiArCQkJCTB4ODAxMDAwMDAgMHgxMDAwPjsKPiArCQkJcmVnLW5hbWVzID0gImRiaSIsICJl
-bGJpIiwgImF0dSIsICJwYXJmIiwgImNvbmZpZyI7Cj4gKwkJCWRldmljZV90eXBlID0gInBjaSI7
-Cj4gKwkJCWxpbnV4LHBjaS1kb21haW4gPSA8MD47Cj4gKwkJCWJ1cy1yYW5nZSA9IDwweDAwIDB4
-ZmY+Owo+ICsJCQludW0tbGFuZXMgPSA8MT47Cj4gKwkJCW1heC1saW5rLXNwZWVkID0gPDI+Owo+
-ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKPiArCQkJI3NpemUtY2VsbHMgPSA8Mj47Cj4gKwo+
-ICsJCQlwaHlzID0gPCZwY2llX3gxcGh5PjsKPiArCQkJcGh5LW5hbWVzID0icGNpZXBoeSI7Cj4g
-Kwo+ICsJCQlyYW5nZXMgPSA8MHg4MTAwMDAwMCAwIDB4ODAyMDAwMDAgMHg4MDIwMDAwMAoKV2h5
-IGRvIHlvdSBuZWVkICJyZWxvY2F0YWJsZSIgZmxhZz8gU2FtZSBxdWVzdGlvbiBmb3Igb3RoZXIg
-cmFuZ2UgYWxzby4KCj4gKwkJCQkgIDAgMHgwMDEwMDAwMCAgIC8qIGRvd25zdHJlYW0gSS9PICov
-Cj4gKwkJCQkgIDB4ODIwMDAwMDAgMCAweDgwMzAwMDAwIDB4ODAzMDAwMDAKPiArCQkJCSAgMCAw
-eDEwMDAwMDAwPjsgLyogbm9uLXByZWZldGNoYWJsZSBtZW1vcnkgKi8KPiArCgpEb24ndCB5b3Ug
-bmVlZCAiZG1hLWNvaGVyZW50IiB0byBzcGVjaWZ5IHRoZSBkZXZpY2VzIGFzIGNhY2hlIGNvaGVy
-ZW50PyBJIGFzc3VtZQphbGwgdGhlIHJlY2VudCBQQ0llIGdlbmVyYXRpb25zIGFyZSBjYWNoZSBj
-b2hlcmVudC4KCi0gTWFuaQoKPiArCQkJI2ludGVycnVwdC1jZWxscyA9IDwxPjsKPiArCQkJaW50
-ZXJydXB0LW1hcC1tYXNrID0gPDAgMCAwIDB4Nz47Cj4gKwkJCWludGVycnVwdC1tYXAgPSA8MCAw
-IDAgMSAmaW50YyAwIDE0Mgo+ICsJCQkJCSBJUlFfVFlQRV9MRVZFTF9ISUdIPiwgLyogaW50X2Eg
-Ki8KPiArCQkJCQk8MCAwIDAgMiAmaW50YyAwIDE0Mwo+ICsJCQkJCSBJUlFfVFlQRV9MRVZFTF9I
-SUdIPiwgLyogaW50X2IgKi8KPiArCQkJCQk8MCAwIDAgMyAmaW50YyAwIDE0NAo+ICsJCQkJCSBJ
-UlFfVFlQRV9MRVZFTF9ISUdIPiwgLyogaW50X2MgKi8KPiArCQkJCQk8MCAwIDAgNCAmaW50YyAw
-IDE0NQo+ICsJCQkJCSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsgLyogaW50X2QgKi8KPiArCj4gKwkJ
-CWludGVycnVwdHMgPSA8R0lDX1NQSSAxMTkgSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gKwkJCWlu
-dGVycnVwdC1uYW1lcyA9ICJnbG9iYWxfaXJxIjsKPiArCj4gKwkJCWNsb2NrcyA9IDwmZ2NjIEdD
-Q19TWVNfTk9DX1BDSUUxX0FYSV9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfTV9D
-TEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU19DTEs+LAo+ICsJCQkJIDwmZ2NjIEdD
-Q19QQ0lFMV9BSEJfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfQVVYX0NMSz4sCj4gKwkJ
-CQkgPCZnY2MgR0NDX1BDSUUxX0FYSV9TX0JSSURHRV9DTEs+Owo+ICsKPiArCQkJY2xvY2stbmFt
-ZXMgPSAiaWZhY2UiLAo+ICsJCQkJICAgICAgImF4aV9tIiwKPiArCQkJCSAgICAgICJheGlfcyIs
-Cj4gKwkJCQkgICAgICAiYWhiIiwKPiArCQkJCSAgICAgICJhdXgiLAo+ICsJCQkJICAgICAgImF4
-aV9icmlkZ2UiOwo+ICsKPiArCQkJcmVzZXRzID0gPCZnY2MgR0NDX1BDSUUxX1BJUEVfQVJFUz4s
-Cj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX1NMRUVQX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19Q
-Q0lFMV9DT1JFX1NUSUNLWV9BUkVTPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfQVhJX01BU1RF
-Ul9BUkVTPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfQVhJX1NMQVZFX0FSRVM+LAo+ICsJCQkJ
-IDwmZ2NjIEdDQ19QQ0lFMV9BSEJfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX0FYSV9N
-QVNURVJfU1RJQ0tZX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU0xBVkVfU1RJ
-Q0tZX0FSRVM+Owo+ICsKPiArCQkJcmVzZXQtbmFtZXMgPSAicGlwZSIsCj4gKwkJCQkgICAgICAi
-c2xlZXAiLAo+ICsJCQkJICAgICAgInN0aWNreSIsCj4gKwkJCQkgICAgICAiYXhpX20iLAo+ICsJ
-CQkJICAgICAgImF4aV9zIiwKPiArCQkJCSAgICAgICJhaGIiLAo+ICsJCQkJICAgICAgImF4aV9t
-X3N0aWNreSIsCj4gKwkJCQkgICAgICAiYXhpX3Nfc3RpY2t5IjsKPiArCj4gKwkJCW1zaS1tYXAg
-PSA8MHgwICZ2Mm0wIDB4MCAweGZmOD47Cj4gKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gKwkJ
-fTsKPiArCj4gKwkJcGNpZV94MjogcGNpQGEwMDAwMDAwIHsKPiArCQkJY29tcGF0aWJsZSA9ICJx
-Y29tLHBjaWUtaXBxNTAxOCI7Cj4gKwkJCXJlZyA9ICA8MHhhMDAwMDAwMCAweGYxZAo+ICsJCQkJ
-MHhhMDAwMEYyMCAweGE4Cj4gKwkJCQkweGEwMDAxMDAwIDB4MTAwMAo+ICsJCQkJMHg4MDAwMCAw
-eDMwMDAKPiArCQkJCTB4YTAxMDAwMDAgMHgxMDAwPjsKPiArCQkJcmVnLW5hbWVzID0gImRiaSIs
-ICJlbGJpIiwgImF0dSIsICJwYXJmIiwgImNvbmZpZyI7Cj4gKwkJCWRldmljZV90eXBlID0gInBj
-aSI7Cj4gKwkJCWxpbnV4LHBjaS1kb21haW4gPSA8MT47Cj4gKwkJCWJ1cy1yYW5nZSA9IDwweDAw
-IDB4ZmY+Owo+ICsJCQludW0tbGFuZXMgPSA8Mj47Cj4gKwkJCW1heC1saW5rLXNwZWVkID0gPDI+
-Owo+ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKPiArCQkJI3NpemUtY2VsbHMgPSA8Mj47Cj4g
-Kwo+ICsJCQlwaHlzID0gPCZwY2llX3gycGh5PjsKPiArCQkJcGh5LW5hbWVzID0icGNpZXBoeSI7
-Cj4gKwo+ICsJCQlyYW5nZXMgPSA8MHg4MTAwMDAwMCAwIDB4YTAyMDAwMDAgMHhhMDIwMDAwMAo+
-ICsJCQkJICAwIDB4MDAxMDAwMDAgICAvKiBkb3duc3RyZWFtIEkvTyAqLwo+ICsJCQkJICAweDgy
-MDAwMDAwIDAgMHhhMDMwMDAwMCAweGEwMzAwMDAwCj4gKwkJCQkgIDAgMHgxMDAwMDAwMD47IC8q
-IG5vbi1wcmVmZXRjaGFibGUgbWVtb3J5ICovCj4gKwo+ICsJCQkjaW50ZXJydXB0LWNlbGxzID0g
-PDE+Owo+ICsJCQlpbnRlcnJ1cHQtbWFwLW1hc2sgPSA8MCAwIDAgMHg3PjsKPiArCQkJaW50ZXJy
-dXB0LW1hcCA9IDwwIDAgMCAxICZpbnRjIDAgNzUKPiArCQkJCQkgSVJRX1RZUEVfTEVWRUxfSElH
-SD4sIC8qIGludF9hICovCj4gKwkJCQkJPDAgMCAwIDIgJmludGMgMCA3OAo+ICsJCQkJCSBJUlFf
-VFlQRV9MRVZFTF9ISUdIPiwgLyogaW50X2IgKi8KPiArCQkJCQk8MCAwIDAgMyAmaW50YyAwIDc5
-Cj4gKwkJCQkJIElSUV9UWVBFX0xFVkVMX0hJR0g+LCAvKiBpbnRfYyAqLwo+ICsJCQkJCTwwIDAg
-MCA0ICZpbnRjIDAgODMKPiArCQkJCQkgSVJRX1RZUEVfTEVWRUxfSElHSD47IC8qIGludF9kICov
-Cj4gKwo+ICsJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgNTEgSVJRX1RZUEVfTEVWRUxfSElHSD47
-Cj4gKwkJCWludGVycnVwdC1uYW1lcyA9ICJnbG9iYWxfaXJxIjsKPiArCj4gKwkJCWNsb2NrcyA9
-IDwmZ2NjIEdDQ19TWVNfTk9DX1BDSUUwX0FYSV9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lF
-MF9BWElfTV9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMF9BWElfU19DTEs+LAo+ICsJCQkJ
-IDwmZ2NjIEdDQ19QQ0lFMF9BSEJfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTBfQVVYX0NM
-Sz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUwX0FYSV9TX0JSSURHRV9DTEs+Owo+ICsKPiArCQkJ
-Y2xvY2stbmFtZXMgPSAiaWZhY2UiLAo+ICsJCQkJICAgICAgImF4aV9tIiwKPiArCQkJCSAgICAg
-ICJheGlfcyIsCj4gKwkJCQkgICAgICAiYWhiIiwKPiArCQkJCSAgICAgICJhdXgiLAo+ICsJCQkJ
-ICAgICAgImF4aV9icmlkZ2UiOwo+ICsKPiArCQkJcmVzZXRzID0gPCZnY2MgR0NDX1BDSUUwX1BJ
-UEVfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUwX1NMRUVQX0FSRVM+LAo+ICsJCQkJIDwm
-Z2NjIEdDQ19QQ0lFMF9DT1JFX1NUSUNLWV9BUkVTPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTBf
-QVhJX01BU1RFUl9BUkVTPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTBfQVhJX1NMQVZFX0FSRVM+
-LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMF9BSEJfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BD
-SUUwX0FYSV9NQVNURVJfU1RJQ0tZX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMF9BWElf
-U0xBVkVfU1RJQ0tZX0FSRVM+Owo+ICsKPiArCQkJcmVzZXQtbmFtZXMgPSAicGlwZSIsCj4gKwkJ
-CQkgICAgICAic2xlZXAiLAo+ICsJCQkJICAgICAgInN0aWNreSIsCj4gKwkJCQkgICAgICAiYXhp
-X20iLAo+ICsJCQkJICAgICAgImF4aV9zIiwKPiArCQkJCSAgICAgICJhaGIiLAo+ICsJCQkJICAg
-ICAgImF4aV9tX3N0aWNreSIsCj4gKwkJCQkgICAgICAiYXhpX3Nfc3RpY2t5IjsKPiArCj4gKwkJ
-CW1zaS1tYXAgPSA8MHgwICZ2Mm0wIDB4MCAweGZmOD47Cj4gKwkJCXN0YXR1cyA9ICJkaXNhYmxl
-ZCI7Cj4gKwkJfTsKPiArCj4gIAl9Owo+ICAKPiAgCXRpbWVyIHsKPiAtLSAKPiAyLjE3LjEKPiAK
-Ci0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+N
-CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Use preferred device_get_match_data() instead of of_match_device() to
+get the driver match data. With this, adjust the includes to explicitly
+include the correct headers.
+
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ drivers/phy/broadcom/phy-bcm-ns-usb3.c   |  9 +++------
+ drivers/phy/marvell/phy-berlin-usb.c     |  7 +++----
+ drivers/phy/ralink/phy-ralink-usb.c      | 10 +++-------
+ drivers/phy/rockchip/phy-rockchip-pcie.c | 11 ++++-------
+ drivers/phy/rockchip/phy-rockchip-usb.c  | 10 +++-------
+ drivers/phy/ti/phy-omap-control.c        |  9 ++-------
+ drivers/phy/ti/phy-omap-usb2.c           | 11 ++++-------
+ drivers/phy/ti/phy-ti-pipe3.c            | 14 ++++----------
+ 8 files changed, 26 insertions(+), 55 deletions(-)
+
+diff --git a/drivers/phy/broadcom/phy-bcm-ns-usb3.c b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
+index 69584b685edb..2c8b1b7dda5b 100644
+--- a/drivers/phy/broadcom/phy-bcm-ns-usb3.c
++++ b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
+@@ -16,10 +16,11 @@
+ #include <linux/iopoll.h>
+ #include <linux/mdio.h>
+ #include <linux/module.h>
++#include <linux/of.h>
+ #include <linux/of_address.h>
+-#include <linux/of_platform.h>
+ #include <linux/platform_device.h>
+ #include <linux/phy/phy.h>
++#include <linux/property.h>
+ #include <linux/slab.h>
+ 
+ #define BCM_NS_USB3_PHY_BASE_ADDR_REG	0x1f
+@@ -189,7 +190,6 @@ static int bcm_ns_usb3_mdio_phy_write(struct bcm_ns_usb3 *usb3, u16 reg,
+ static int bcm_ns_usb3_mdio_probe(struct mdio_device *mdiodev)
+ {
+ 	struct device *dev = &mdiodev->dev;
+-	const struct of_device_id *of_id;
+ 	struct phy_provider *phy_provider;
+ 	struct device_node *syscon_np;
+ 	struct bcm_ns_usb3 *usb3;
+@@ -203,10 +203,7 @@ static int bcm_ns_usb3_mdio_probe(struct mdio_device *mdiodev)
+ 	usb3->dev = dev;
+ 	usb3->mdiodev = mdiodev;
+ 
+-	of_id = of_match_device(bcm_ns_usb3_id_table, dev);
+-	if (!of_id)
+-		return -EINVAL;
+-	usb3->family = (uintptr_t)of_id->data;
++	usb3->family = (enum bcm_ns_family)device_get_match_data(dev);
+ 
+ 	syscon_np = of_parse_phandle(dev->of_node, "usb3-dmp-syscon", 0);
+ 	err = of_address_to_resource(syscon_np, 0, &res);
+diff --git a/drivers/phy/marvell/phy-berlin-usb.c b/drivers/phy/marvell/phy-berlin-usb.c
+index 78ef6ae72a9a..f26bf630da2c 100644
+--- a/drivers/phy/marvell/phy-berlin-usb.c
++++ b/drivers/phy/marvell/phy-berlin-usb.c
+@@ -8,9 +8,10 @@
+ 
+ #include <linux/io.h>
+ #include <linux/module.h>
+-#include <linux/of_device.h>
++#include <linux/of.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/reset.h>
+ 
+ #define USB_PHY_PLL		0x04
+@@ -162,8 +163,6 @@ MODULE_DEVICE_TABLE(of, phy_berlin_usb_of_match);
+ 
+ static int phy_berlin_usb_probe(struct platform_device *pdev)
+ {
+-	const struct of_device_id *match =
+-		of_match_device(phy_berlin_usb_of_match, &pdev->dev);
+ 	struct phy_berlin_usb_priv *priv;
+ 	struct phy *phy;
+ 	struct phy_provider *phy_provider;
+@@ -180,7 +179,7 @@ static int phy_berlin_usb_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->rst_ctrl))
+ 		return PTR_ERR(priv->rst_ctrl);
+ 
+-	priv->pll_divider = *((u32 *)match->data);
++	priv->pll_divider = *((u32 *)device_get_match_data(&pdev->dev));
+ 
+ 	phy = devm_phy_create(&pdev->dev, NULL, &phy_berlin_usb_ops);
+ 	if (IS_ERR(phy)) {
+diff --git a/drivers/phy/ralink/phy-ralink-usb.c b/drivers/phy/ralink/phy-ralink-usb.c
+index 2bd8ad2e76ed..41bce5290e92 100644
+--- a/drivers/phy/ralink/phy-ralink-usb.c
++++ b/drivers/phy/ralink/phy-ralink-usb.c
+@@ -13,9 +13,10 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/mutex.h>
+-#include <linux/of_platform.h>
++#include <linux/of.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
+ 
+@@ -171,18 +172,13 @@ static int ralink_usb_phy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
+-	const struct of_device_id *match;
+ 	struct ralink_usb_phy *phy;
+ 
+-	match = of_match_device(ralink_usb_phy_of_match, &pdev->dev);
+-	if (!match)
+-		return -ENODEV;
+-
+ 	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+ 	if (!phy)
+ 		return -ENOMEM;
+ 
+-	phy->clk = (uintptr_t)match->data;
++	phy->clk = (uintptr_t)device_get_match_data(&pdev->dev);
+ 	phy->base = NULL;
+ 
+ 	phy->sysctl = syscon_regmap_lookup_by_phandle(dev->of_node, "ralink,sysctl");
+diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
+index 8234b83fdd88..1bbd6be2a584 100644
+--- a/drivers/phy/rockchip/phy-rockchip-pcie.c
++++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
+@@ -12,10 +12,9 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+-#include <linux/of_address.h>
+-#include <linux/of_platform.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
+ 
+@@ -63,7 +62,7 @@ struct rockchip_pcie_data {
+ };
+ 
+ struct rockchip_pcie_phy {
+-	struct rockchip_pcie_data *phy_data;
++	const struct rockchip_pcie_data *phy_data;
+ 	struct regmap *reg_base;
+ 	struct phy_pcie_instance {
+ 		struct phy *phy;
+@@ -350,7 +349,6 @@ static int rockchip_pcie_phy_probe(struct platform_device *pdev)
+ 	struct rockchip_pcie_phy *rk_phy;
+ 	struct phy_provider *phy_provider;
+ 	struct regmap *grf;
+-	const struct of_device_id *of_id;
+ 	int i;
+ 	u32 phy_num;
+ 
+@@ -364,11 +362,10 @@ static int rockchip_pcie_phy_probe(struct platform_device *pdev)
+ 	if (!rk_phy)
+ 		return -ENOMEM;
+ 
+-	of_id = of_match_device(rockchip_pcie_phy_dt_ids, &pdev->dev);
+-	if (!of_id)
++	rk_phy->phy_data = device_get_match_data(&pdev->dev);
++	if (!rk_phy->phy_data)
+ 		return -EINVAL;
+ 
+-	rk_phy->phy_data = (struct rockchip_pcie_data *)of_id->data;
+ 	rk_phy->reg_base = grf;
+ 
+ 	mutex_init(&rk_phy->pcie_mutex);
+diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
+index 8454285977eb..666a896c8f0a 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usb.c
++++ b/drivers/phy/rockchip/phy-rockchip-usb.c
+@@ -13,10 +13,9 @@
+ #include <linux/module.h>
+ #include <linux/mutex.h>
+ #include <linux/of.h>
+-#include <linux/of_address.h>
+-#include <linux/of_platform.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/reset.h>
+ #include <linux/regmap.h>
+@@ -458,7 +457,6 @@ static int rockchip_usb_phy_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct rockchip_usb_phy_base *phy_base;
+ 	struct phy_provider *phy_provider;
+-	const struct of_device_id *match;
+ 	struct device_node *child;
+ 	int err;
+ 
+@@ -466,14 +464,12 @@ static int rockchip_usb_phy_probe(struct platform_device *pdev)
+ 	if (!phy_base)
+ 		return -ENOMEM;
+ 
+-	match = of_match_device(dev->driver->of_match_table, dev);
+-	if (!match || !match->data) {
++	phy_base->pdata = device_get_match_data(dev);
++	if (!phy_base->pdata) {
+ 		dev_err(dev, "missing phy data\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	phy_base->pdata = match->data;
+-
+ 	phy_base->dev = dev;
+ 	phy_base->reg_base = ERR_PTR(-ENODEV);
+ 	if (dev->parent && dev->parent->of_node)
+diff --git a/drivers/phy/ti/phy-omap-control.c b/drivers/phy/ti/phy-omap-control.c
+index 76c5595f0859..2fdb8f4241c7 100644
+--- a/drivers/phy/ti/phy-omap-control.c
++++ b/drivers/phy/ti/phy-omap-control.c
+@@ -8,9 +8,9 @@
+ 
+ #include <linux/module.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/slab.h>
+ #include <linux/of.h>
+-#include <linux/of_device.h>
+ #include <linux/err.h>
+ #include <linux/io.h>
+ #include <linux/clk.h>
+@@ -268,20 +268,15 @@ MODULE_DEVICE_TABLE(of, omap_control_phy_id_table);
+ 
+ static int omap_control_phy_probe(struct platform_device *pdev)
+ {
+-	const struct of_device_id *of_id;
+ 	struct omap_control_phy *control_phy;
+ 
+-	of_id = of_match_device(omap_control_phy_id_table, &pdev->dev);
+-	if (!of_id)
+-		return -EINVAL;
+-
+ 	control_phy = devm_kzalloc(&pdev->dev, sizeof(*control_phy),
+ 		GFP_KERNEL);
+ 	if (!control_phy)
+ 		return -ENOMEM;
+ 
+ 	control_phy->dev = &pdev->dev;
+-	control_phy->type = *(enum omap_control_phy_type *)of_id->data;
++	control_phy->type = *(enum omap_control_phy_type *)device_get_match_data(&pdev->dev);
+ 
+ 	if (control_phy->type == OMAP_CTRL_TYPE_OTGHS) {
+ 		control_phy->otghs_control =
+diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
+index 762d3de8b3c5..dd2913ac0fa2 100644
+--- a/drivers/phy/ti/phy-omap-usb2.c
++++ b/drivers/phy/ti/phy-omap-usb2.c
+@@ -19,6 +19,7 @@
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
++#include <linux/property.h>
+ #include <linux/regmap.h>
+ #include <linux/slab.h>
+ #include <linux/sys_soc.h>
+@@ -371,16 +372,12 @@ static int omap_usb2_probe(struct platform_device *pdev)
+ 	struct device_node *node = pdev->dev.of_node;
+ 	struct device_node *control_node;
+ 	struct platform_device *control_pdev;
+-	const struct of_device_id *of_id;
+-	struct usb_phy_data *phy_data;
++	const struct usb_phy_data *phy_data;
+ 
+-	of_id = of_match_device(omap_usb2_id_table, &pdev->dev);
+-
+-	if (!of_id)
++	phy_data = device_get_match_data(&pdev->dev);
++	if (!phy_data)
+ 		return -EINVAL;
+ 
+-	phy_data = (struct usb_phy_data *)of_id->data;
+-
+ 	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
+ 	if (!phy)
+ 		return -ENOMEM;
+diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
+index 507e1552db5e..874c1a25ce36 100644
+--- a/drivers/phy/ti/phy-ti-pipe3.c
++++ b/drivers/phy/ti/phy-ti-pipe3.c
+@@ -8,6 +8,7 @@
+ 
+ #include <linux/module.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/slab.h>
+ #include <linux/phy/phy.h>
+ #include <linux/of.h>
+@@ -778,23 +779,16 @@ static int ti_pipe3_probe(struct platform_device *pdev)
+ 	struct phy_provider *phy_provider;
+ 	struct device *dev = &pdev->dev;
+ 	int ret;
+-	const struct of_device_id *match;
+-	struct pipe3_data *data;
++	const struct pipe3_data *data;
+ 
+ 	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+ 	if (!phy)
+ 		return -ENOMEM;
+ 
+-	match = of_match_device(ti_pipe3_id_table, dev);
+-	if (!match)
++	data = device_get_match_data(dev);
++	if (!data)
+ 		return -EINVAL;
+ 
+-	data = (struct pipe3_data *)match->data;
+-	if (!data) {
+-		dev_err(dev, "no driver data\n");
+-		return -EINVAL;
+-	}
+-
+ 	phy->dev = dev;
+ 	phy->mode = data->mode;
+ 	phy->dpll_map = data->dpll_map;
+-- 
+2.42.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
