@@ -4,91 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBDA0CD6137
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Oct 2023 21:16:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A18ECCD80CA
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Oct 2023 12:59:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1O1pYdtsZXjwovPr7ph0NpFWj+aLPxrbdEsqzeSW9NE=; b=XWfU3yEkl9MzS1
-	R47GkgJy1rakVgfeYmGjm/5IMcM/1J1lmmZ5Od38TkpLM0ywqJOPaLod6kmaB+8Ra5oLz9jVvoj+p
-	2SFFlJd0b1AMMziYAID3LlawWjZSAgMTZXr0VuiJ5et8F20X+e8M+aeO4VRtqPuUtsaQJQTu899ff
-	BY4p2C+LkqEJP6MTDMF6BIVp+aANzwXeepwxAVy03o+idba91N1xWcBi/2SvwU3CqrhQqkN7YhaxG
-	m04gJDCGyiWHJW9edubXg6shqD01Jd632g3Iz0hor3TzFHAXZM5BnKx47V7d5eT+Qy/1F2t0RogZh
-	+Ca+v3NQES6loTucCQvg==;
+	List-Owner; bh=vfOq2W9BORhkrbzfpUUov2DrxyTAL210V7VR8qXKx1c=; b=tTIgWH5QKhEdZI
+	s59/8G3aaDKEhuChCKtAux3uMwldTiYRdMvru6yTbEDH3W4Gp8nZWvkAqe9yONnCkanCTdWZrEBPv
+	0TD8uaEl/L/4vZlEb418t+5WhOPky5xUy+kCQ+2jqOdN5+Ywgz2VZYVqLa8jsQmhoUmkiHiCKMI96
+	Oatbh63hmzbpsZ7Ds7UkebRFn+qASUT8HkAF2X9ljNJ9+ocg/G5fehr12Gh+1Zc2btaAk1HnKxzj6
+	X3/k3MUa9DjB7GC/d0QguOIElI/0MZ6wybLausMJmjtz/n+ESlk2fJ8LYCU4RGk7WSdPp2Cd7SqR+
+	TSdBc00J9l3CHsh3hd0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpxbm-00BdQy-1V;
-	Mon, 09 Oct 2023 21:16:10 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1qqCKX-00DO0V-2v;
+	Tue, 10 Oct 2023 12:59:21 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qpxbj-00BdQY-1b
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Oct 2023 21:16:08 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-2c131ddfeb8so56718121fa.3
-        for <linux-phy@lists.infradead.org>; Mon, 09 Oct 2023 14:16:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1696886164; x=1697490964; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=1QJllRkKfyLXLeIPvgYtOO8kIRJqQX9SQuociu6Txv4=;
-        b=xmdXiIlQ1wAncj10Peh8iGGG+e0JL8rW8oAX7wABB2HO4gF5wmbE5iufiN27Pl4soC
-         dViJDtVH/u+Qc53V7XIoncCceOO8upmyef/sjq3VoLRTpgNwfBbdS4utMjVziNjpoc3n
-         dsMZx+DQydSO/0oUX6UvjC2KGClBb+lGgRZO/rXzW1HZJWevy6IYlWNBRIE7QcCh7nTk
-         rZybpQMEBAMHg3SkJ9wYwohCxBUIH8yrzF63raC5PP40XQsAmSIKlt2MCLzQYFkZHwKQ
-         1CqSvqIAT2gyjKWZavtAv8SWbug2j/coY999/FHrBblFORj5c4rmfS3RHILUmIPHM1Pb
-         jASg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696886164; x=1697490964;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1QJllRkKfyLXLeIPvgYtOO8kIRJqQX9SQuociu6Txv4=;
-        b=mL859wWtO6ZwSsUS/bwv81DsL6IpgL0e18eNLmLJtzeR+PKkVA5uAfzBi26A23iqRr
-         GQLcjfI58+nG4G8ZGNA7PO9F2LQK9XoacG6BOc96miUJE2NG+gLlfb7qOXjqso9P/ttt
-         nDkczgWIIC/iDUVhm+FUwfuMETalGJ0WHV6xse8H1TDPeVbqPlcLgADX4u0zw5V2/g9c
-         42zXdODh1nizBOSnHTSLPQ0nVgcL538Mk1X7WeXEoeIsU4o9Z0hHgaunVVvEsEO0ZVQT
-         Dr26O+tGL9t5v3cCrBPtaFp2nb5QqF8Bbnb0jefC1uoCoDsRdKqs/2mwYcW+iGVuMhMc
-         Du1g==
-X-Gm-Message-State: AOJu0YyZm6RhYNsFtyjv3odT/EOZ0YFvJI1VLtP9S386C2O9Ya5ehxYB
-	H3XOL7HzFKl02ZzK7M5QgNK84Q==
-X-Google-Smtp-Source: AGHT+IFI+Nis6dD7nYVGj7SaBgIGgfknIUViG8EGepXxTPbJSHP5l8mwxp1h9hfC4Uz41QB9vPjQjQ==
-X-Received: by 2002:a2e:9794:0:b0:2b9:e1dd:5756 with SMTP id y20-20020a2e9794000000b002b9e1dd5756mr14413302lji.45.1696886164263;
-        Mon, 09 Oct 2023 14:16:04 -0700 (PDT)
-Received: from [172.30.204.90] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
-        by smtp.gmail.com with ESMTPSA id n10-20020a2e86ca000000b002c029a4b681sm2175771ljj.15.2023.10.09.14.16.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 09 Oct 2023 14:16:03 -0700 (PDT)
-Message-ID: <c72cb819-ffdb-4f6a-8567-3f5bf3368a05@linaro.org>
-Date: Mon, 9 Oct 2023 23:16:02 +0200
+	id 1qqCKU-00DNyd-39;
+	Tue, 10 Oct 2023 12:59:21 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 39A8XFEj012493;
+	Tue, 10 Oct 2023 14:58:50 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	selector1; bh=pRaHro0Cx77mAnyA1b4ha7ivIMmgkx+PPwasbOVpgNk=; b=aP
+	Uum6UMTy22Gms/T55cBpJ9KqYp8A+MW+OciqhTiewGdmquPbs/9Ivh/cdMnyRIIu
+	DHLv4VPW/rDIS7ZiwgQyJI5lVuokhEfqyLv31IEqcnTwCu/wOjNzogTsv0L4i+U1
+	r674LbOp8cFgIyBfCduoKPYWWwO4jRocfFoaGLwiyHhSpu8WHes5rn+FOqMrfuUG
+	AoUqkn2SCcOKDD3z7Y1m12l2iAE2Jbqu/kwFaUfDJnuviEqNiY0PbkWm2vnijhN/
+	90qv+85u1rts8bmdycNajbh5U/eeBZZGSzQkVoNwaD93xNVhHT2blj5lqB/5IeHa
+	/OPkSweYkqaCH48h3+mw==
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3tkhjga1xf-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 10 Oct 2023 14:58:50 +0200 (MEST)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E771210005A;
+	Tue, 10 Oct 2023 14:58:48 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D75DE231505;
+	Tue, 10 Oct 2023 14:58:48 +0200 (CEST)
+Received: from localhost (10.201.20.32) by SHFDAG1NODE1.st.com (10.75.129.69)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Tue, 10 Oct
+ 2023 14:58:48 +0200
+From: Gatien Chevallier <gatien.chevallier@foss.st.com>
+To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <conor+dt@kernel.org>, <alexandre.torgue@foss.st.com>,
+        <vkoul@kernel.org>, <jic23@kernel.org>, <olivier.moysan@foss.st.com>,
+        <arnaud.pouliquen@foss.st.com>, <mchehab@kernel.org>,
+        <fabrice.gasnier@foss.st.com>, <andi.shyti@kernel.org>,
+        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>, <hugues.fruchet@foss.st.com>, <lee@kernel.org>,
+        <will@kernel.org>, <catalin.marinas@arm.com>, <arnd@kernel.org>,
+        <richardcochran@gmail.com>, Frank Rowand <frowand.list@gmail.com>,
+        <peng.fan@oss.nxp.com>
+CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
+        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
+        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>,
+        Oleksii Moisieiev <oleksii_moisieiev@epam.com>,
+        Gatien Chevallier <gatien.chevallier@foss.st.com>
+Subject: [PATCH v6 01/11] dt-bindings: document generic access controllers
+Date: Tue, 10 Oct 2023 14:57:09 +0200
+Message-ID: <20231010125719.784627-2-gatien.chevallier@foss.st.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20231010125719.784627-1-gatien.chevallier@foss.st.com>
+References: <20231010125719.784627-1-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/7] arm64: dts: qcom: Add support for Xiaomi Redmi Note
- 9S
-Content-Language: en-US
-To: David Wronek <davidwronek@gmail.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
- Bart Van Assche <bvanassche@acm.org>, Joe Mason <buddyjojo06@outlook.com>
-Cc: cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- hexdump0815@googlemail.com, ~postmarketos/upstreaming@lists.sr.ht,
- phone-devel@vger.kernel.org
-References: <20231007140053.1731245-1-davidwronek@gmail.com>
- <20231007140053.1731245-8-davidwronek@gmail.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20231007140053.1731245-8-davidwronek@gmail.com>
+X-Originating-IP: [10.201.20.32]
+X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE1.st.com
+ (10.75.129.69)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-10_08,2023-10-10_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231009_141607_555324_3BEE64C3 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20231010_055919_565162_0473A478 
+X-CRM114-Status: GOOD (  20.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,50 +104,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Oleksii Moisieiev <Oleksii_Moisieiev@epam.com>
 
+Introducing of the generic access controllers bindings for the
+access controller provider and consumer devices. Those bindings are
+intended to allow a better handling of accesses to resources in a
+hardware architecture supporting several compartments.
 
-On 10/7/23 15:58, David Wronek wrote:
-> From: Joe Mason <buddyjojo06@outlook.com>
-> 
-> Add a device tree for the Xiaomi Redmi Note 9S (curtana) phone, based on
-> sm7125-xiaomi-common.dtsi.
-> 
-> Signed-off-by: Joe Mason <buddyjojo06@outlook.com>
-> Signed-off-by: David Wronek <davidwronek@gmail.com>
-> ---
->   arch/arm64/boot/dts/qcom/Makefile                |  1 +
->   .../boot/dts/qcom/sm7125-xiaomi-curtana.dts      | 16 ++++++++++++++++
->   2 files changed, 17 insertions(+)
->   create mode 100644 arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-> index d6cb840b7050..57974fb0c580 100644
-> --- a/arch/arm64/boot/dts/qcom/Makefile
-> +++ b/arch/arm64/boot/dts/qcom/Makefile
-> @@ -207,6 +207,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
-> +dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-curtana.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-joyeuse.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= sm8150-hdk.dtb
-> diff --git a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-> new file mode 100644
-> index 000000000000..12f517a8492c
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-> @@ -0,0 +1,16 @@
-> +// SPDX-License-Identifier: GPL-2.0
-I have no idea if you can just include a bunch of bsd3 source and slap 
-gpl2 atop your changes.. Somebody else could probably chime in
+This patch is based on [1]. It is integrated in this patchset as it
+provides a use-case for it.
 
-Konrad
+Diffs with [1]:
+	- Rename feature-domain* properties to access-control* to narrow
+	  down the scope of the binding
+	- YAML errors and typos corrected.
+	- Example updated
+	- Some rephrasing in the binding description
+
+[1]: https://lore.kernel.org/lkml/0c0a82bb-18ae-d057-562b
+
+Signed-off-by: Oleksii Moisieiev <oleksii_moisieiev@epam.com>
+Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+---
+
+Changes in V6:
+	- Renamed access-controller to access-controllers
+	- Example updated
+	- Removal of access-control-provider property
+
+Changes in V5:
+	- Diffs with [1]
+	- Discarded the [IGNORE] tag as the patch is now part of the
+	  patchset
+
+ .../access-controllers.yaml                   | 84 +++++++++++++++++++
+ 1 file changed, 84 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/access-controllers/access-controllers.yaml
+
+diff --git a/Documentation/devicetree/bindings/access-controllers/access-controllers.yaml b/Documentation/devicetree/bindings/access-controllers/access-controllers.yaml
+new file mode 100644
+index 000000000000..99e2865f0e46
+--- /dev/null
++++ b/Documentation/devicetree/bindings/access-controllers/access-controllers.yaml
+@@ -0,0 +1,84 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/access-controllers/access-controllers.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Generic Domain Access Controllers
++
++maintainers:
++  - Oleksii Moisieiev <oleksii_moisieiev@epam.com>
++
++description: |+
++  Common access controllers properties
++
++  Access controllers are in charge of stating which of the hardware blocks under
++  their responsibility (their domain) can be accesssed by which compartment. A
++  compartment can be a cluster of CPUs (or coprocessors), a range of addresses
++  or a group of hardware blocks. An access controller's domain is the set of
++  resources covered by the access controller.
++
++  This device tree binding can be used to bind devices to their access
++  controller provided by access-controllers property. In this case, the device
++  is a consumer and the access controller is the provider.
++
++  An access controller can be represented by any node in the device tree and
++  can provide one or more configuration parameters, needed to control parameters
++  of the consumer device. A consumer node can refer to the provider by phandle
++  and a set of phandle arguments, specified by '#access-controller-cells'
++  property in the access controller node.
++
++  Access controllers are typically used to set/read the permissions of a
++  hardware block and grant access to it. Any of which depends on the access
++  controller. The capabilities of each access controller are defined by the
++  binding of the access controller device.
++
++  Each node can be a consumer for the several access controllers.
++
++# always select the core schema
++select: true
++
++properties:
++  "#access-controller-cells":
++    description:
++      Number of cells in an access-controllers specifier;
++      Can be any value as specified by device tree binding documentation
++      of a particular provider. The node is an access controller.
++
++  access-controller-names:
++    $ref: /schemas/types.yaml#/definitions/string-array
++    description:
++      A list of access-controllers names, sorted in the same order as
++      access-controllers entries. Consumer drivers will use
++      access-controller-names to match with existing access-controllers entries.
++
++  access-controllers:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description:
++      A list of access controller specifiers, as defined by the
++      bindings of the access-controllers provider.
++
++additionalProperties: true
++
++examples:
++  - |
++    clock_controller: access-controllers@50000 {
++        reg = <0x50000 0x400>;
++        #access-controller-cells = <2>;
++    };
++
++    bus_controller: bus@60000 {
++        reg = <0x60000 0x10000>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        ranges;
++        #access-controller-cells = <3>;
++
++        uart4: serial@60100 {
++            reg = <0x60100 0x400>;
++            clocks = <&clk_serial>;
++            access-controllers = <&clock_controller 1 2>,
++                                 <&bus_controller 1 3 5>;
++            access-controller-names = "clock", "bus";
++        };
++    };
+-- 
+2.35.3
+
 
 -- 
 linux-phy mailing list
