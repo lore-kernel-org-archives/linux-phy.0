@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B52BCD6E5C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7D84CD6E5E
 	for <linux-phy@archiver.kernel.org>; Wed, 11 Oct 2023 11:19:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,51 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jIBaOoFaw1mbci8ulUDlwWTXXBZyi92XBzzNGddMmho=; b=durWjZaipF+BhY
-	kJMSGpP5RI2czzjxsz4GejiYjQr5kHamUQWqDOdIrLpA7xKlfrir/8Xub2jnjahbb5EZwdcN4gkoP
-	t8HJWyigcufYnsJzAmcthRUl6Q7l5cSNPwKtrWMVF4I9lXi/9t/vHy3wLWZKCOCV1Cp5qLtPAc3dB
-	VLY7pbbU/Ul0E+5tiZEERBSX7R/Dyu8tTIfKXvfCDYq/LxxeFCMcYxmlTKQmIKLFSaU1onBEg5cDq
-	NTgm64+0tztk4OhIqrYXDGRIBwo0vWX3Dw6nj+U9WMkV1hQlPmHnfmg+I/z4WMNDVwL/WM3ZQB5pi
-	inX6Ly/5D4iLq+mb6U6A==;
+	List-Owner; bh=oINdbSCHfiDIacqrQotRnGcz2LAvCKQwmZX8ykEfMfQ=; b=eML1JIfx7ruYtA
+	+rZIb169Vo2AZi6j75qq3fYaumpGnUhfuflpOneOxuzIutqlb6GV3l09PWDybJPS+2kgr8tfVkEnD
+	FY574CnwBIQcjxtkiO9t24TpyoDhhTfpqWBw5FLaAegEcIWa2oUckQFjmZZa0iXKqXr89cGIDIbmL
+	zvi4hCO5unOzbgqXhJRZOaXIKv7vz0LLuKpmVy17HWT2HNSZhLM1w7BaM9EuySzDBc4ayEAOhQsLc
+	eCcbTrliqkRE2Y6ccVD3djaY76RluwqJnDrQDn+2DDRy43INewc2bJG3hFWHnjlui7i1Elp1pw1vQ
+	446pVyqS7bVdwM+B1ZJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqXF8-00FjDT-0K;
+	id 1qqXF8-00FjDp-2B;
 	Wed, 11 Oct 2023 11:19:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqXF4-00FjBU-0u
+	id 1qqXF4-00FjBY-0y
 	for linux-phy@lists.infradead.org;
 	Wed, 11 Oct 2023 11:19:08 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39B8Xa0e004047;
-	Wed, 11 Oct 2023 11:18:49 GMT
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39BAJDaO015176;
+	Wed, 11 Oct 2023 11:18:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=nRyixbRMy/pqDX+0KMIbtD9m8Jzt5K5DBOTwDP9RhRQ=;
- b=jpKYDuvsCz/4km0qkiA/U57oZZGaVhbuqSmurDtO00lFQpDOXt0eaGPIr6ibQnQwMmAA
- mjCZUtm584qTrU17TIRrtu45kQ1AmxSpfLokL70msocnh2vJLam9p5PzCt3O9iK8XJyh
- 6sMkksAtnKLi5PNTiKnytJ78KqIBETnIBc8Jc44meJvL1EeZ3K5FXNjhkAyN1TvS/S1A
- /JnQ44NOZKb0ujtXy9tTKi3tjGm/no1oqTXFZ+mwwsrKEf0mSgKPLcFjscWsRkA7YMOd
- V7BFgz2HK+MUkBq8OAHsBmbXdcZKFGJzAufckK1+ZLJgtVk0rhluBasbCMhLDjM6xo3l 3Q== 
+ bh=riWMjx1iyAEzeQqpsEoG3bfXjaRMEi88Qoq3gaqR96U=;
+ b=FXYbEa/oNTVnRQnOpoxnPO9fVnb6hn49GWScYmetmx38QD6DtYqrSJc1vhI+E0hBdDhI
+ acIeTP15Yipq5Zo6jSvpCysnqCSkh0fKCxl0QTl2Zj7fdwOD1uf3vTDE+Q0mb4b/7QTX
+ 6ilCndUu4OYoSdhuWiT+aXg69e6TSYfCcd+fI5J0GtlBRqTmKRstaqmNHumtoH7X0b42
+ +rufIB/Q0PdjU2Ad9naik4fTYfS5adCjqdQ2PaJfz+BgdUCmyfMp6HwKecm7PqwgKQpe
+ EpbYATxIUhETvwP4xe99n+jlZWdf8GHqSjczG9dPq1wvMwHim6LxPWmosOE6J4W1Ys4n 0w== 
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tn3s1awjb-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tnstyr4hf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Oct 2023 11:18:49 +0000
+	Wed, 11 Oct 2023 11:18:48 +0000
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39BBIkZA011282;
-	Wed, 11 Oct 2023 11:18:46 GMT
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39BBIcrY011196;
+	Wed, 11 Oct 2023 11:18:44 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3tk0dkmaxr-1
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3tk0dkmaxh-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Wed, 11 Oct 2023 11:18:46 +0000
+	Wed, 11 Oct 2023 11:18:44 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39BBIjju011276;
-	Wed, 11 Oct 2023 11:18:45 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39BBIigF011243;
+	Wed, 11 Oct 2023 11:18:44 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 39BBIjJA011271;
-	Wed, 11 Oct 2023 11:18:45 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 39BBIhIC011242;
+	Wed, 11 Oct 2023 11:18:44 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
-	id 910A6D83; Wed, 11 Oct 2023 16:48:44 +0530 (+0530)
+	id D037243B8; Wed, 11 Oct 2023 16:48:42 +0530 (+0530)
 From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
         conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
@@ -65,17 +65,17 @@ Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
         dmitry.baryshkov@linaro.org, robh@kernel.org, quic_krichai@quicinc.com,
         quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
         Mrinmay Sarkar <quic_msarkar@quicinc.com>,
-        Bjorn Helgaas <bhelgaas@google.com>,
         Lorenzo Pieralisi <lpieralisi@kernel.org>,
         =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+        Bjorn Helgaas <bhelgaas@google.com>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>, linux-pci@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
         linux-phy@lists.infradead.org
-Subject: [PATCH v2 4/4] arm64: dts: qcom: sa8775p: Add ep pcie0 controller node
-Date: Wed, 11 Oct 2023 16:48:29 +0530
-Message-Id: <1697023109-23671-5-git-send-email-quic_msarkar@quicinc.com>
+Subject: [PATCH v2 3/4] PCI: epf-mhi: Add support for SA8775P
+Date: Wed, 11 Oct 2023 16:48:28 +0530
+Message-Id: <1697023109-23671-4-git-send-email-quic_msarkar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1697023109-23671-1-git-send-email-quic_msarkar@quicinc.com>
 References: <1697023109-23671-1-git-send-email-quic_msarkar@quicinc.com>
@@ -83,19 +83,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: XvdSTA4mbZMkZRyWxiqob6pl2llgrPQE
-X-Proofpoint-GUID: XvdSTA4mbZMkZRyWxiqob6pl2llgrPQE
+X-Proofpoint-ORIG-GUID: U52HIdSpd3SdmBXiSGiRjMUR6agh1dJh
+X-Proofpoint-GUID: U52HIdSpd3SdmBXiSGiRjMUR6agh1dJh
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-11_09,2023-10-11_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 suspectscore=0 bulkscore=0 spamscore=0 impostorscore=0
- lowpriorityscore=0 clxscore=1015 mlxlogscore=999 mlxscore=0 adultscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ bulkscore=0 malwarescore=0 suspectscore=0 priorityscore=1501
+ impostorscore=0 mlxlogscore=695 lowpriorityscore=0 clxscore=1015
+ spamscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2309180000 definitions=main-2310110099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231011_041906_457282_28225859 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20231011_041906_345698_CD52342F 
+X-CRM114-Status: GOOD (  14.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,71 +113,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add ep pcie dtsi node for pcie0 controller found on sa8775p platform.
-it supports x2 link width.
+Add support for Qualcomm Snapdragon SA8775P SoC to the EPF driver.
+SA8775P has the PID (0x0306) and supports HDMA. Currently, it has
+no fixed PCI class, so it is being advertised as "PCI_CLASS_OTHERS".
 
 Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 ---
- arch/arm64/boot/dts/qcom/sa8775p.dtsi | 48 +++++++++++++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ drivers/pci/endpoint/functions/pci-epf-mhi.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-index b6a93b1..485f626 100644
---- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-@@ -2608,4 +2608,52 @@
- 
- 		status = "disabled";
- 	};
-+
-+	pcie0_ep: pcie-ep@1c00000 {
-+		compatible = "qcom,sa8775p-pcie-ep", "qcom,sdx55-pcie-ep";
-+		reg = <0x0 0x01c00000 0x0 0x3000>,
-+		      <0x0 0x40000000 0x0 0xf20>,
-+		      <0x0 0x40000f20 0x0 0xa8>,
-+		      <0x0 0x40001000 0x0 0x4000>,
-+		      <0x0 0x40200000 0x0 0x100000>,
-+		      <0x0 0x01c03000 0x0 0x1000>,
-+		      <0x0 0x40005000 0x0 0x2000>;
-+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
-+			    "mmio", "dma";
-+
-+		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+			<&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+			<&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
-+
-+		clock-names = "aux",
-+			      "cfg",
-+			      "bus_master",
-+			      "bus_slave",
-+			      "slave_q2a";
-+
-+		interrupts = <GIC_SPI 306 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 630 IRQ_TYPE_LEVEL_HIGH>;
-+
-+		interrupt-names = "global", "doorbell", "dma";
-+
-+		interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
-+				<&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_PCIE_0 0>;
-+		interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+		iommu-map = <0x0 &pcie_smmu 0x0000 0x1>,
-+			    <0x100 &pcie_smmu 0x0001 0x1>;
-+
-+		resets = <&gcc GCC_PCIE_0_BCR>;
-+		reset-names = "core";
-+		power-domains = <&gcc PCIE_0_GDSC>;
-+		phys = <&pcie0_phy>;
-+		phy-names = "pciephy";
-+		max-link-speed = <3>;
-+		num-lanes = <2>;
-+
-+		status = "disabled";
-+	};
+diff --git a/drivers/pci/endpoint/functions/pci-epf-mhi.c b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+index b7b9d3e..f05c2e4 100644
+--- a/drivers/pci/endpoint/functions/pci-epf-mhi.c
++++ b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+@@ -114,6 +114,22 @@ static const struct pci_epf_mhi_ep_info sm8450_info = {
+ 	.flags = MHI_EPF_USE_DMA,
  };
+ 
++static const struct pci_epf_header sa8775p_header = {
++	.vendorid = PCI_VENDOR_ID_QCOM,
++	.deviceid = 0x0306,
++	.baseclass_code = PCI_CLASS_OTHERS,
++	.interrupt_pin = PCI_INTERRUPT_INTA,
++};
++
++static const struct pci_epf_mhi_ep_info sa8775p_info = {
++	.config = &mhi_v1_config,
++	.epf_header = &sa8775p_header,
++	.bar_num = BAR_0,
++	.epf_flags = PCI_BASE_ADDRESS_MEM_TYPE_32,
++	.msi_count = 32,
++	.mru = 0x8000,
++};
++
+ struct pci_epf_mhi {
+ 	const struct pci_epc_features *epc_features;
+ 	const struct pci_epf_mhi_ep_info *info;
+@@ -677,6 +693,7 @@ static int pci_epf_mhi_probe(struct pci_epf *epf,
+ }
+ 
+ static const struct pci_epf_device_id pci_epf_mhi_ids[] = {
++	{ .name = "sa8775p", .driver_data = (kernel_ulong_t)&sa8775p_info },
+ 	{ .name = "sdx55", .driver_data = (kernel_ulong_t)&sdx55_info },
+ 	{ .name = "sm8450", .driver_data = (kernel_ulong_t)&sm8450_info },
+ 	{},
 -- 
 2.7.4
 
