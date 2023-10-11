@@ -4,53 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AC84CD98FD
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Oct 2023 08:18:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1CCECD6E59
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Oct 2023 10:40:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fcntkiPLoEgJ4fSkoaY0G5ydbv660KKeZEDk5skRoUA=; b=YYkfwTl0oEXrvg
-	cjhDDK+R6z0YtKJLrdkAyuQ2g5SQgvKUcP7sfpxdMIFfeH9d1fl6EBLdh+m2/0m4afUdhfTijs7X2
-	b8ejwV+rFVk+a7PbS4aq88ebPMeae0vcfYyRsfpykjTOgmvu2UqIUCL2PiJ2Jf+XzlbwQw9TzAsCh
-	RSNgT4GxbJS7S61d1LdlHIXBmgZxB/CkOGyb82IhMPZbyP2jXJjsXV1Uk9v+n+BUIhfFAcRUGQKjq
-	XyGJya+1XZ34h/BaNMce4H2CLvPASDMTKuX7W5uoHU/1tXa1/tQkqlUMqj36/j8JIFmsPq6n80GQS
-	Es41/NCa42U7+KnwsvHQ==;
+	List-Owner; bh=1Ji7l2IYaajfprU5txi0VYe7xTiCVHq4utRbZqR5lU4=; b=Xpahss4Io8j6aA
+	W33AYFTjs1hl6z2um5vlab73yRtwhfGwiychmamefq+nAF1o28nac/23g8fQMYY/gd30HdPfoK/hT
+	o/R7KlBi34jPtWVU0sMohpGD0CSrRvjMmH8uV2L3Lv67nI4NsY1aQ9Xh6l/lCRh0GzRN8WtqHwFG1
+	pl9IB+LHmMvZPiaEq4OXQKhYzSu8Q/53tTRNZUH8/Byk+5I1cVEmXRiA7TOuTQ4FDc8L5jbsFkdSK
+	SDO157X9VthjdQ3SM2FKXRlKS/998SgZ75t8a/Q58mrnvark9bFqt/hm5hjFlNxAJK16ylcQ997Yf
+	luTYnm8YO6Js+ujgVSiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqUQQ-00FDKS-2w;
-	Wed, 11 Oct 2023 08:18:38 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqUQN-00FDIF-0P
+	id 1qqWdE-00FVCw-1a;
+	Wed, 11 Oct 2023 10:40:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qqWdC-00FVCL-0o
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Oct 2023 08:18:37 +0000
-X-IronPort-AV: E=Sophos;i="6.03,214,1694703600"; 
-   d="scan'208";a="182677694"
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie6.idc.renesas.com with ESMTP; 11 Oct 2023 17:18:24 +0900
-Received: from localhost.localdomain (unknown [10.166.15.32])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id B8BE9400F79B;
-	Wed, 11 Oct 2023 17:18:24 +0900 (JST)
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: linux-phy@lists.infradead.org,
-	linux-renesas-soc@vger.kernel.org,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Subject: [PATCH 2/2] phy: renesas: r8a779f0-ether-serdes: Add .exit() ops
-Date: Wed, 11 Oct 2023 17:18:17 +0900
-Message-Id: <20231011081817.257113-3-yoshihiro.shimoda.uh@renesas.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20231011081817.257113-1-yoshihiro.shimoda.uh@renesas.com>
-References: <20231011081817.257113-1-yoshihiro.shimoda.uh@renesas.com>
+	Wed, 11 Oct 2023 10:39:59 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39B7kEow020666;
+	Wed, 11 Oct 2023 10:39:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=dbVR0f08zGU0LFTiDSP4fMsRyjEfLOVaROii0XQJqS4=;
+ b=e5Z9P6OUmumkDhTHscAyOOmBe01pXPv8g4vfB6WXtU3x1tp4RK5iNASb/KvlLqBuPaHx
+ KbJ5bp96Grg3vTQPiBmeifT046fmQXMFSSnkx/itrLhWvW+DnmcNdoHV42pSjFUM/41n
+ jRi5w0AZCTBoKWnhCYUWWGhiMKl0NOhhpGNzvvXWG/autjQxdh4eAROkhvcw3u4pvOHI
+ 2+DHhWf1h3Vmz94IBTzVDCeG5OcdxsMOHujChKvgmukIj2sGFlteMb5ZrnGiQS6Z3HgL
+ y6mvcJfYxEPKPYR+YCPieAWkmv/CVkKA2hQPPwtq7zoGPms/Z8nIgXrd9zMlRWeGZTaj aQ== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tnqh1gd47-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Oct 2023 10:39:41 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39BAdeS6001148
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Oct 2023 10:39:40 GMT
+Received: from [10.216.52.55] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 11 Oct
+ 2023 03:39:33 -0700
+Message-ID: <01230ca8-505b-74c2-7872-24b5411c6b2e@quicinc.com>
+Date: Wed, 11 Oct 2023 16:09:29 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH v1 4/5] PCI: epf-mhi: Add support for SA8775P
+Content-Language: en-US
+To: Manivannan Sadhasivam <mani@kernel.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <konrad.dybcio@linaro.org>, <quic_shazhuss@quicinc.com>,
+        <quic_nitegupt@quicinc.com>, <quic_ramkri@quicinc.com>,
+        <quic_nayiluri@quicinc.com>, <quic_krichai@quicinc.com>,
+        <quic_vbadigan@quicinc.com>, <quic_parass@quicinc.com>,
+        Bjorn Helgaas
+	<bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+        Rob Herring
+	<robh@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Vinod Koul
+	<vkoul@kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <mhi@lists.linux.dev>,
+        <linux-phy@lists.infradead.org>
+References: <1695218113-31198-1-git-send-email-quic_msarkar@quicinc.com>
+ <1695218113-31198-5-git-send-email-quic_msarkar@quicinc.com>
+ <20230921084055.GD2891@thinkpad>
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+In-Reply-To: <20230921084055.GD2891@thinkpad>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: Z6E6trT_zM5dT-pVAFs54BsmvzUih5xn
+X-Proofpoint-ORIG-GUID: Z6E6trT_zM5dT-pVAFs54BsmvzUih5xn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-11_08,2023-10-11_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ spamscore=0 bulkscore=0 clxscore=1011 lowpriorityscore=0 mlxlogscore=789
+ mlxscore=0 priorityscore=1501 adultscore=0 malwarescore=0 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2309180000
+ definitions=main-2310110093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231011_011835_306162_B21DD06A 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231011_033958_293787_77904E61 
+X-CRM114-Status: GOOD (  17.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,50 +111,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add r8a779f0_eth_serdes_exit() to clear the initialized flag
-for re-initializing this PHY if needed.
 
-Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
- drivers/phy/renesas/r8a779f0-ether-serdes.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+On 9/21/2023 2:10 PM, Manivannan Sadhasivam wrote:
+> On Wed, Sep 20, 2023 at 07:25:11PM +0530, Mrinmay Sarkar wrote:
+>> Add support for Qualcomm Snapdragon SA8775P SoC to the EPF driver.
+>> SA8775P has the PID (0x0306) and supports HDMA. Currently, it has
+>> no fixed PCI class, so it is being advertised as "PCI_CLASS_OTHERS".
+>>
+>> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+>> ---
+>>   drivers/pci/endpoint/functions/pci-epf-mhi.c | 18 ++++++++++++++++++
+>>   1 file changed, 18 insertions(+)
+>>
+>> diff --git a/drivers/pci/endpoint/functions/pci-epf-mhi.c b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+>> index b7b9d3e..4b349fd 100644
+>> --- a/drivers/pci/endpoint/functions/pci-epf-mhi.c
+>> +++ b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+>> @@ -114,6 +114,23 @@ static const struct pci_epf_mhi_ep_info sm8450_info = {
+>>   	.flags = MHI_EPF_USE_DMA,
+>>   };
+>>   
+>> +static struct pci_epf_header sa8775p_header = {
+> static const struct...
+>
+>> +	.vendorid = PCI_VENDOR_ID_QCOM,
+>> +	.deviceid = 0x0306,
+> Why are you not using a distinct device id?
+>
+> - Mani
+distinct device id for EP is not created yet as of now we are reusing this.
+Will update once device id is decided.
 
-diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-index ba1109d6bdd9..fc6e398fa3bf 100644
---- a/drivers/phy/renesas/r8a779f0-ether-serdes.c
-+++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-@@ -261,6 +261,15 @@ static int r8a779f0_eth_serdes_init(struct phy *p)
- 	return ret;
- }
- 
-+static int r8a779f0_eth_serdes_exit(struct phy *p)
-+{
-+	struct r8a779f0_eth_serdes_channel *channel = phy_get_drvdata(p);
-+
-+	channel->dd->initialized = false;
-+
-+	return 0;
-+}
-+
- static int r8a779f0_eth_serdes_hw_init_late(struct r8a779f0_eth_serdes_channel
- *channel)
- {
-@@ -318,6 +327,7 @@ static int r8a779f0_eth_serdes_set_speed(struct phy *p, int speed)
- 
- static const struct phy_ops r8a779f0_eth_serdes_ops = {
- 	.init		= r8a779f0_eth_serdes_init,
-+	.exit		= r8a779f0_eth_serdes_exit,
- 	.power_on	= r8a779f0_eth_serdes_power_on,
- 	.set_mode	= r8a779f0_eth_serdes_set_mode,
- 	.set_speed	= r8a779f0_eth_serdes_set_speed,
--- 
-2.25.1
-
+Thanks,
+Mrinmay
+>> +	.baseclass_code = PCI_CLASS_OTHERS,
+>> +	.interrupt_pin = PCI_INTERRUPT_INTA,
+>> +};
+>> +
+>> +static const struct pci_epf_mhi_ep_info sa8775p_info = {
+>> +	.config = &mhi_v1_config,
+>> +	.epf_header = &sa8775p_header,
+>> +	.bar_num = BAR_0,
+>> +	.epf_flags = PCI_BASE_ADDRESS_MEM_TYPE_32,
+>> +	.msi_count = 32,
+>> +	.mru = 0x8000,
+>> +	.flags = MHI_EPF_USE_DMA,
+>> +};
+>> +
+>>   struct pci_epf_mhi {
+>>   	const struct pci_epc_features *epc_features;
+>>   	const struct pci_epf_mhi_ep_info *info;
+>> @@ -677,6 +694,7 @@ static int pci_epf_mhi_probe(struct pci_epf *epf,
+>>   }
+>>   
+>>   static const struct pci_epf_device_id pci_epf_mhi_ids[] = {
+>> +	{ .name = "sa8775p", .driver_data = (kernel_ulong_t)&sa8775p_info },
+>>   	{ .name = "sdx55", .driver_data = (kernel_ulong_t)&sdx55_info },
+>>   	{ .name = "sm8450", .driver_data = (kernel_ulong_t)&sm8450_info },
+>>   	{},
+>> -- 
+>> 2.7.4
+>>
 
 -- 
 linux-phy mailing list
