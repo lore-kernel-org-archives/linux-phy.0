@@ -4,90 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C264DCDB47E
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Oct 2023 10:39:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A932CDB483
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Oct 2023 10:43:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oeHsMkSbhBaavco333htLPb22nAJOki8bviYhezdIXQ=; b=bmD4+WVGWp5c30
-	16vs7ra7sgfRNrBoodVYHmQJENaXyTNAwL7O2b9u7gUGrG6Q4OzQToxM65OpfNFO+iMWOJGGnGAlF
-	JheRSwh2UUPribOLc7+a5azUMAdLLWxQEWGE4mBednLnoErxgyypfQ59BRC0lCD6N/gn41CGZ5Hwk
-	ybcNvZh+VvsPw6FNHba3VeWeeqsZYI0sx5iyPTdZnS3H5mZButwpcO1xXIPfCxjLSwCokNY2COYtF
-	dSvX5rPm/SmZv0n0vLSgo5b5k3aD3waG0Ja6nslWL2O2I4Q/k/68WKZK2FS7NgJotg46eSTe5Qbc7
-	yOh1JxNbEHdWmmcUDIaQ==;
+	List-Owner; bh=jty4kS96PBpz3N3BE7csQWWtU5YHll1W+z1zY/3ZkU4=; b=QYR69qD0a5pU0t
+	zJ9mYJ9MWF8Z8mWOgZYicL4jGlwJQiHGtb+gvxJtlNmBxrFsWx1WLBEQ3UnQ2v+3iy7z3Vb0QeNMa
+	XP8xMTGiPbweoQ4mgSkUnoU2kqjNXntLCWRNSsnPMSrS2D/YyyAkbI96Xgz4Qex+7fO64KZnP183+
+	cHwgZ6Nod179apvfijybtl4/IJiowya/gyyOE1Csp2s0QKYWUQK6CULL7/BRA2zyXi4IXRb87H+cy
+	qMpmGHo4xCToP4hZ3EapwJjEgPC9kzKgbOl1B2GJvJ+16Pi9q0SuKRECG9dr4pbx3yXN4hoO7n9IO
+	1+CHcgHW3/dzc4hSksBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrFZh-003BeF-18;
-	Fri, 13 Oct 2023 10:39:21 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qrFdv-003E85-2g;
+	Fri, 13 Oct 2023 10:43:43 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrFZd-003BJe-2z
+	id 1qrFds-003E7l-2u
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Oct 2023 10:39:19 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39DAco1P026746;
-	Fri, 13 Oct 2023 10:38:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=ChhIVyXy/0SXa2i6PYFsBV+c//2U9kjNCT4GsWSF2hA=;
- b=fz977hvzFdPHng24xJPkBoPLwMEApaV9iBijh4dKsJbxbD394lC8Pv6QvO/65sqCnnt5
- KpfoOxeHXYK4Jp5fB0Ath78rkcA+RylaW3efJ2f7oNyrnUBmfn9NX+bK7xsBTT5gV/fZ
- R2syZKllHZdpQGYgL8i88IVANECHi5CO7/F2MjimZlMG3Y75oiMb1sLrcHLWYi1OnDJb
- GXWKjaWPFERGB8Ej0rMZKtNA3oNza51SoREe01LU9waOnpX21aTKnzgHfqhqA0xkQLCo
- 83pLgcStfhlwm9pBKeO1okxp1vS3NlxVtgrLKMohZmoW1Ov3CCj9sRwu3Eny7B0KAuqT 2w== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tpt109dvd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 10:38:50 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39DAcn1R028179
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 10:38:49 GMT
-Received: from [10.214.66.58] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Fri, 13 Oct
- 2023 03:38:41 -0700
-Message-ID: <b88cc301-52db-4401-8364-7056f0e10149@quicinc.com>
-Date: Fri, 13 Oct 2023 16:08:38 +0530
+	Fri, 13 Oct 2023 10:43:42 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5BD316204F;
+	Fri, 13 Oct 2023 10:43:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEAFBC433C8;
+	Fri, 13 Oct 2023 10:43:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1697193820;
+	bh=TyNV48zrKAaS0i38ucLSEY6vFMJzYVMrLSVh1MF0r4Q=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=rjfpMoiiH+7TOYnrYGGdgwIpio7z+qxqdZT3CIHsJAXhGeQf5iuNnbvRZ4riJ7929
+	 on51y9vvNusWADLMBotE0coQ27DbzJdiUXLudUy9yTgKMqSjpVU1z5yrayjYRxAp89
+	 nQDEtcPCbirSxiB81MTJLaMbfBdtPMeXZ1sU4lO9GG2zCpqEtPZr4g0JQ/iJri51Nn
+	 oDOK5ZAAdkyLpNVRZeKjxGh2agd/l0dr/RXOTMb1X4QHYpy1EwpnFN4I1NnRJZgqeB
+	 /Frk7VgRczqW/a7wCLIB+7q5qme503ZHzZlNahVZGcDh7sgTM9UtfKrYYNVRN962Lx
+	 MfBM+3T5KBXsg==
+From: Vinod Koul <vkoul@kernel.org>
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org
+In-Reply-To: <20230928105445.1210861-1-dmitry.baryshkov@linaro.org>
+References: <20230928105445.1210861-1-dmitry.baryshkov@linaro.org>
+Subject: Re: [PATCH v3 0/3] phy: qcom-qmp-combo: correct USB v6 registers
+Message-Id: <169719381727.165658.9377101716537787206.b4-ty@kernel.org>
+Date: Fri, 13 Oct 2023 16:13:37 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 0/5] Add USB Support on Qualcomm's SDX75 Platform
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <kishon@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <abel.vesa@linaro.org>,
-        <quic_wcheng@quicinc.com>, <dmitry.baryshkov@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <kernel@quicinc.com>
-References: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
- <ZSkb9ajLZGpD46Ik@matsya>
-From: Rohit Agarwal <quic_rohiagar@quicinc.com>
-In-Reply-To: <ZSkb9ajLZGpD46Ik@matsya>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 3YptFoY2CrZmLjVuXVRhUvmpFLviItT2
-X-Proofpoint-ORIG-GUID: 3YptFoY2CrZmLjVuXVRhUvmpFLviItT2
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-13_03,2023-10-12_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 adultscore=0
- spamscore=0 bulkscore=0 suspectscore=0 mlxscore=0 lowpriorityscore=0
- priorityscore=1501 mlxlogscore=577 phishscore=0 malwarescore=0
- clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310130087
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231013_033917_973032_C05C7E34 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20231013_034341_002374_0BA533E7 
+X-CRM114-Status: UNSURE (   5.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,44 +71,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 10/13/2023 3:59 PM, Vinod Koul wrote:
-> On 22-09-23, 10:42, Rohit Agarwal wrote:
->> Hi,
->>
->> Changes in v4:
->>   - Replaced the v5 offsets with v6 offsets as per Dmitry's suggestion in patch 5/5.
->>
->> Changes in v3:
->>   - Removed the unnecessary change introduced in v2 of patch 2/5
->>   - Added Fixes tag in patch 3/5
->>   - Rebased patch 5/5 on Dmitry's cleanup patches.
->>     https://lore.kernel.org/all/20230911203842.778411-1-dmitry.baryshkov@linaro.org/
->>     https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
->>
->> Changes in v2:
->>   - Dropped the new dt schema introduced in v1 for sdx75 usb3 phy
->>     and reusing the bindings.
->>   - Rephrased the commit message of patch 3/5
->>   - Removed stray lines from the patch 5/5
->>
->> This series adds support of USB3 PHY support for Qualcomm's SDX75 Platform.
-> The phy patches fail to apply, can you please rebase the three patches
-> and resend
-Can you please apply these two series. This series depends on it for 
-successful compilation.
-[1] 
-https://lore.kernel.org/all/20230911203842.778411-1-dmitry.baryshkov@linaro.org/
-[2] 
-https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
+On Thu, 28 Sep 2023 13:54:42 +0300, Dmitry Baryshkov wrote:
+> Move and rework USB QMP PHY v6 register names to follow the usual practice.
+> 
+> Changes since v2:
+> - Renamed the series from 'phy: qcom-qmp-combo: correct sm8550 PHY
+>   programming', since the fix for sm8550 was landed separately (via [1])
+> - Removed the comment regarding v5-v6 difference, which looks invalid
+>   now (Konrad)
+> 
+> [...]
 
-Thanks,
-Rohit.
+Applied, thanks!
+
+[1/3] phy: qcom-qmp-combo: fix the prefix for the PCS_USB v6 registers
+      commit: 579483ecd81987fc30a8b13650323a17cb1c14e3
+[2/3] phy: qcom-qmp-usb: move PCS v6 register to the proper header
+      commit: 5077b136fd594d0c9e7df0a749bda75ba6114e3c
+[3/3] phy: qcom-qmp-combo: use v6 registers in v6 regs layout
+      commit: b5ec2824d74e71f16a0243446933542584acd440
+
+Best regards,
+-- 
+~Vinod
+
+
 
 -- 
 linux-phy mailing list
