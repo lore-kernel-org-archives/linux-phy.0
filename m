@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5A1ACDB47E
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Oct 2023 10:43:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C201CDB47E
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Oct 2023 10:43:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0gHhEEznBHHzYeqHmtH2GjuiAp/8ZNn7KShO+TWKgB4=; b=Xafs2lS/wIMYF/
-	wAKvzUlG5wdr1kliJr5KivJ4GkzQUIQdS+3DnTIfe/FGSDtEk+A+lIwj5aQIwdAcKgOWhU4Re07gj
-	wV+LYhjY7xqYYd9Ki1IZQ2wGXaM7d33W0MHNeBNQjSwvJv895LERuZXxMhbjh9FIpJPMOFlfGQpLP
-	Cw/fAkLGAuqBVnxGlJllbg9i9mf1La8xscnV285yTmw9aqZq5bGkcfhpkc1pv1Fe4wHLEz0PUSYIP
-	Z0yJjV1UDy6KXv3jmCUWRXnu2nETeh0fI5NNOyxLUELljwEPfSfdMoA0U6TJHrdT2NGhxnLJRCF87
-	KyR8516G8Qz8m+UHojFg==;
+	List-Owner; bh=MwLQNHqm73jFBk/stnjxu/doq55A7Hn8qk70Wg8FZB4=; b=j7BOk+LSxVCKk4
+	9SLJ+hWgJE6HcufsAQZzRlARTQDVquefEPE0Ay+HWik8kdX8HVP8TJGrYdYPk6m7Phqbk9N7+Jya2
+	9DQ52Ol0iGZR6mPXXyyufaEm5I1VzYwBAfLieVZFiMyh4qtL/MpZ1oP5SmL0LnUaQzbq8cf2CuU3R
+	qFm2Kmyy49DmftR64sciP2QmzVScVWcCRNqVfv7xhrZxjM42AeU8IocOdeUnSROj6Xa4WKv8lmbEU
+	TU5dVFatP28aqiOt0z6lPvpEbFzd+QIttku/eqoln0mMsCzYkZmTb/d1oMFYzKUb6Wf1bmjKKDOi8
+	i4pU7mOqBNWNdZ9R1WVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrFe8-003ED0-1E;
-	Fri, 13 Oct 2023 10:43:56 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1qrFeB-003EE6-0R;
+	Fri, 13 Oct 2023 10:43:59 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrFe4-003EAw-2W;
-	Fri, 13 Oct 2023 10:43:54 +0000
+	id 1qrFe7-003ECG-2K
+	for linux-phy@lists.infradead.org;
+	Fri, 13 Oct 2023 10:43:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 6B516B82A92;
-	Fri, 13 Oct 2023 10:43:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11518C433CA;
-	Fri, 13 Oct 2023 10:43:47 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0648062099
+	for <linux-phy@lists.infradead.org>; Fri, 13 Oct 2023 10:43:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A6C0C433CB;
+	Fri, 13 Oct 2023 10:43:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697193830;
-	bh=45SmktxflpqPYwlKo6pzUpVsREOXFrpnKqeP0QuQW4s=;
+	s=k20201202; t=1697193834;
+	bh=bpRiSXkMmQkHgeqQ+ymmdIlUJfXwAP6+/lOV9tV+YtU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=VRlj8SmlTRJAmHtNaXkBhlduM8TwsgX9Qmbvb3B7+VF+1Tr0RUN6r68YCsLgE356t
-	 1xpXkanwmHTBrFEDedeMhs4awOhMc/lqvrg6dFU1SUCu3D+0CrV1AgfZk5NFnoogP4
-	 PpKCWN4FY0WgFwOkoFdx8VZQbo18g/X+wAuZn8C7ACVTmIeZQZjZtbh25YXsI+fsNP
-	 lvfvg4I3zJr5eX58jmYR31JnxormeL5+hx2jZHXYJMOUtkA8DtQHJMvM1FtuTdqB/E
-	 dYsRHAju/7HYxycvdCpRs6wk7ZqQNNgmz2CesWWJ6nHohOGh28/YeFPxiSydS8KBPj
-	 FFWF4x5mIm1hg==
+	b=KnTYlTITt6oJMVwtaPmTWqd5jnQcenZY/hc9k6LgKNufOz+aNua3WkkdaAoqScsux
+	 gjbSp4Avb4PJe5UNYcS0QF10a80sCpSNBYACS57v9Fm+k5sIJ6h+KJoGk2ZQ0mTzbO
+	 oE5/U4s9Ydw1Kj3gQlEUliAgIMiM+oiTMUYAlqVNJXsGHlj6oZoyO9/t5LT0w5RWW4
+	 OuTwuhlnQAY0NI4ItxtSxXYkvM5P/ZS/ECTIhOKkGRXSRUlRdhuD0ZI717fNZgLKS+
+	 NqOkC7QeiinEbbVTjrAYxFJ1t+bS7xjV4HRd9qR82G3+3Oak5JmadObeE+zG6WU6mO
+	 8Z0XN74bc6kOA==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-In-Reply-To: <20231009172923.2457844-15-robh@kernel.org>
-References: <20231009172923.2457844-15-robh@kernel.org>
-Subject: Re: [PATCH] phy: Use device_get_match_data()
-Message-Id: <169719382764.165658.18062385265662490289.b4-ty@kernel.org>
-Date: Fri, 13 Oct 2023 16:13:47 +0530
+ Rob Herring <robh@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20231009172923.2457844-16-robh@kernel.org>
+References: <20231009172923.2457844-16-robh@kernel.org>
+Subject: Re: [PATCH] phy: Drop unnecessary of_match_device() calls
+Message-Id: <169719383317.165658.7807942867322803604.b4-ty@kernel.org>
+Date: Fri, 13 Oct 2023 16:13:53 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231013_034352_965878_197ACAC2 
+X-CRM114-CacheID: sfid-20231013_034355_802152_C5D45079 
 X-CRM114-Status: UNSURE (   5.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
@@ -74,17 +74,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 09 Oct 2023 12:29:10 -0500, Rob Herring wrote:
-> Use preferred device_get_match_data() instead of of_match_device() to
-> get the driver match data. With this, adjust the includes to explicitly
-> include the correct headers.
+On Mon, 09 Oct 2023 12:29:11 -0500, Rob Herring wrote:
+> If probe is reached, we've already matched the device and in the case of
+> DT matching, the struct device_node pointer will be set. Therefore, there
+> is no need to call of_match_device() in probe.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: Use device_get_match_data()
-      commit: 21bf6fc47a1e45031ba8a7084343b7cfd09ed1d3
+[1/1] phy: Drop unnecessary of_match_device() calls
+      commit: dd69a6379a07f21ab1c41360925ef29ebe992a62
 
 Best regards,
 -- 
