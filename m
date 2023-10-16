@@ -4,110 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0AC5CDB465
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Oct 2023 11:57:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56B3ECDB483
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Oct 2023 18:22:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SfzUtymgKVryHT+ZGqNf2CzXglGlDnU9YuYxd94tetU=; b=D1xrAzeiSW8PcV
-	de5ObI71U5EIHa7H+JL+lxpcvGdgKyrheFXjQi1LLq7Q+5iGcW8QkKdrHt1K2W1pkMzX5MmE7yJLz
-	WbsBvyzf4fU3ZCklsmH/zYjpfFBc/r0sTDALQAPkgYKGo1xXXfWLjGjTgtWWY2DzNngDRppaJKuWH
-	pbAsFgAAW/HFRQf66S54QdjqrbU2LSqyzLC61nfKoDpQgyP8zQzQJAGWwRjsuco7LBcWVNxOCfwK8
-	c/3fFymr7ha1FhWuN5PxOmlff3m69xIfCKzxRoljy4vd01vH0EjxqzLjY+Y+JgQfuI4znYqIlTGzV
-	du93uuUa4Izjmr8wiZ5w==;
+	List-Owner; bh=ebO1e6dWmsbXPxZEjNrRHlUte6N1QinMjoO9lkCMVO0=; b=pDkUQ0ef5POf3G
+	6x2jCgsIiTxUVn2VPCIvmf4CeshqSysdRlwYYS79dcJeqYXp9dgN9o3bFRQHRGgB0fNidd/A0+R7/
+	nHN2cBj/uD6Oa3Z8d61LwMijpNMhq4cwEHQT33vYKD47In9fRb6Gk3MqCy9qtEITzQ1ndg1f0YANV
+	hkhJ4ayaDZ9CFxg+eC51FSM6t09RwtYnpVrsKlVclRHVHcfRnKxi3cmQkqv7+WqAI58GG2yGhSybQ
+	D0COhJ/sdWMlNqgqlmRsla0DxFJRRSqnajUvlYVnzi4hhFljsEG3PdHXCPOYliPd71jtTa+2YHHjB
+	nRcPa/nE25kjWZYLBlGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsMDi-009X39-0j;
-	Mon, 16 Oct 2023 11:57:14 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1qsSEI-00AJof-31;
+	Mon, 16 Oct 2023 18:22:14 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsMDd-009X1Z-0o;
-	Mon, 16 Oct 2023 11:57:11 +0000
+	id 1qsSEF-00AJn1-20
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Oct 2023 18:22:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 2A4CDB8109D;
-	Mon, 16 Oct 2023 11:57:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98143C433C7;
-	Mon, 16 Oct 2023 11:57:01 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 6F697CE192D;
+	Mon, 16 Oct 2023 18:22:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E9A4C433CC;
+	Mon, 16 Oct 2023 18:22:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697457426;
-	bh=JKkLHlefXiDiDYienAtz7iVlJtzOe0TV1BHQ6sC3knc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fSjFpCroKZzXKWNLZ3y23G+1iDO5EBsKyVgQdD9075LzXBANtCgoBMGKm8Ld3c2+8
-	 iyGu0uo6VgmOPK/K7sOdofJ2niJQF/KqN6oo1lTgu2e2v204zvTCCycet2m+wCPrd9
-	 HlaJibRqAvD8HeiRjgCxgtbHJQ89uUWbi0v4qmkL3s267pQal+xwk95cSECN3um0LA
-	 9Qyy+LA+0r6qlr5wN6tDGkdqeoIICcoaOwabbTPefF+7f0swA/UeMyX2wccwX6UraU
-	 sG4yHrcbXAoZBAcg1wD0g2Uogigyb5m298xDsCC+TECQ4nhmsTDVsITEQKOB+EdsMs
-	 ppp92EQCn8Aqg==
-Message-ID: <b20bba75-e646-4c16-a4aa-7085291cfb1f@kernel.org>
-Date: Mon, 16 Oct 2023 13:56:58 +0200
+	s=k20201202; t=1697480528;
+	bh=exthi0CNeGhJZAzUytlzkiBQzqs+H7o+txhy02NswR4=;
+	h=From:To:Subject:Date:In-Reply-To:References:From;
+	b=rZCSKSLxd6FMwLmL7fkW0cppT0eyC2rww3BMNSNg9uv20qnQHnfHYk2HxDhMVOZgo
+	 RiVEg/EuKfdGlUSZa80vmrCM+l6kVF8uxxSvH5FAe+LfrXZzAZhayr9QeiZUXCxXg0
+	 QPGLgLphqFGvtP4ptXm2erlQmK438lvpTkBh5qCOLQ7VzXZ03GBHORGCuI+BN+ZjU+
+	 06wrs40OsGjU2VhnulMVo0apzgOzHuyB8GMsfvU+/3P/WluNw8UGBSdGqVrqGVnD8d
+	 6US1kProb8LRq2bMEZjUiHjNDSzYMvYP3TQytKWxPh0qQmTYh5EcAsTW/aOlwWLa2c
+	 5E+o5+VplMbDg==
+From: Bjorn Andersson <andersson@kernel.org>
+To: agross@kernel.org,
+	konrad.dybcio@linaro.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org,
+	gregkh@linuxfoundation.org,
+	quic_srichara@quicinc.com,
+	quic_varada@quicinc.com,
+	quic_wcheng@quicinc.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Nitheesh Sekar <quic_nsekar@quicinc.com>
+Subject: Re: (subset) [PATCH V4 0/4] Enable IPQ5018 USB2 support
+Date: Mon, 16 Oct 2023 11:25:50 -0700
+Message-ID: <169748074955.1245023.12861217493042461028.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.42.0
+In-Reply-To: <20230904063635.24975-1-quic_nsekar@quicinc.com>
+References: <20230904063635.24975-1-quic_nsekar@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v10 4/7] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Content-Language: en-US
-To: Sandor Yu <Sandor.yu@nxp.com>, dmitry.baryshkov@linaro.org,
- andrzej.hajda@intel.com, neil.armstrong@linaro.org,
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
- jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Cc: kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com,
- alexander.stein@ew.tq-group.com, sam@ravnborg.org
-References: <cover.1697162990.git.Sandor.yu@nxp.com>
- <037c61d582df78a3309a5672ac66b9e74b396ddd.1697162990.git.Sandor.yu@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <037c61d582df78a3309a5672ac66b9e74b396ddd.1697162990.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231016_045709_577426_75A23F0B 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20231016_112211_854798_A0F0BAC6 
+X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,38 +87,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/10/2023 05:24, Sandor Yu wrote:
-> Add a new DRM DisplayPort and HDMI bridge driver for Candence MHDP8501
-> used in i.MX8MQ SOC. MHDP8501 could support HDMI or DisplayPort
-> standards according embedded Firmware running in the uCPU.
 
-...
+On Mon, 04 Sep 2023 12:06:31 +0530, Nitheesh Sekar wrote:
+> This patch series adds the relevant phy and controller
+> DT configurations for enabling USB2 host mode support
+> on IPQ5018.
+> 
+> Tested with a USB Mass storage device.
+> 
+> Depends on:
+> Link: https://lore.kernel.org/linux-arm-msm/20230831030503.17100-1-quic_nsekar@quicinc.com/
+> 
+> [...]
 
-> +
-> +static struct platform_driver cdns_mhdp8501_driver = {
-> +	.probe = cdns_mhdp8501_probe,
-> +	.remove = cdns_mhdp8501_remove,
-> +	.driver = {
-> +		.name = "cdns-mhdp8501",
-> +		.of_match_table = cdns_mhdp8501_dt_ids,
-> +	},
-> +};
-> +
-> +module_platform_driver(cdns_mhdp8501_driver);
-> +
-> +MODULE_AUTHOR("Sandor Yu <sandor.yu@nxp.com>");
-> +MODULE_DESCRIPTION("Cadence MHDP8501 bridge driver");
-> +MODULE_LICENSE("GPL");
-> +MODULE_ALIAS("platform:cdns-mhdp8501");
+Applied, thanks!
 
-You should not need MODULE_ALIAS() in normal cases. If you need it,
-usually it means your device ID table is wrong.
-
-This applies everywhere, to all your patches.
+[3/4] arm64: dts: qcom: ipq5018: Add USB related nodes
+      commit: e7166f2774aafefd29ff26ffbbb7f6d40ac8ea1c
+[4/4] arm64: dts: qcom: ipq5018: Enable USB
+      commit: 80a438775aa398751229bcaed15459f3acdb645f
 
 Best regards,
-Krzysztof
-
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
