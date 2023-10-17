@@ -4,139 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8ADF1CDB482
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Oct 2023 07:21:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 263E2CDB482
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Oct 2023 08:04:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=015kPAZLCk9rAi39C3GTp96+rY2DBhCZNpxfptq9XH0=; b=lZ6Gj6txzIJ3AO
-	zOn+N6iZlCGx//3LdLZ1bhkfIXv8arbBKTBs3pfOZBWM+Q8xUvpYTpxqRNwb+wEfwdX2yJ+kO7OGR
-	gkev/nfBMO7fw+fwy778FewwneicbZqZQiWAc0F7pHYlg2EwOPabdbU2gumUZV03BGNy4YF3/xqAa
-	y8dHXxCgRDnbZl1PjFE1u3ozy23hUVmvIB2NBRAe68hJBwt0t8LTkbTciLYQjyOclDXDc9n31qEtQ
-	JXzt26qjqw3S28Ei/L/2bM/KDolS5fA+7FR61WG92atWK6ifYL0VW0Ie3/U0xk375uy56PINSkxJd
-	nSrzXiQCiMLhLTA/Yc8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sLeM9hfv7Lw9q722701gYjidwtfpgmeg7ebYyNDi34Y=; b=g8KnsU0X43EyCJ
+	sbF8HrYzHCaEaAB0kJksFpP4wvYznimzUUU4cWaA4tfHhiGLPEPuZM6DnkhunQ1O9kosdZQBYdSS1
+	/RbczgwABJiDHnzjJ/qAzWBqvqWzf2TtdIdQAGwOVrbxzgV86G/SEfmvWVg9Cd+Afz6+80UZytY6a
+	U89AHqdtGxJ8t/19Is7rQHUIcsd8CJYB4NGzwwVDkgHr9BxqLVczt5xAqr6P1VIgYcZQwnELjp49R
+	zfwntmH6AX4a6z9Tjo73+o+TZCCjZYLrjkotITVV0KMRSeNqpn7HrDOP6QlSGdSW20wCB6wJwniyJ
+	PFiSw6cjY2GYcZS+plAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qseOa-00BYiD-0t;
-	Tue, 17 Oct 2023 07:21:40 +0000
-Received: from mail-am6eur05on2060b.outbound.protection.outlook.com ([2a01:111:f400:7e1b::60b] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1qsf3e-00BckA-2r;
+	Tue, 17 Oct 2023 08:04:06 +0000
+Received: from mgamail.intel.com ([192.55.52.93])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qseOX-00BYhR-1v;
-	Tue, 17 Oct 2023 07:21:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ajvUztgYcM2DXAxEWXbq9ld8R66+S12cWGNThlEV6T4iGMmkkBJLe9Vy/v+HeZIDSJMMeJDTc/yOhdyA9HN0gHjZxfJJlwwBjyBAv1i7Z5/Bqe/Gvri7NgmAd5KMGaq2ilta6F0kGtZtbbbXJTvOdE8xTQvKWmBsHoAIYuNtxqlG1Edsm4AURslqKxkgsKN28JJeQOISlbpZepIus1pxu3rgl4t3W14/PVeJQaifCmv8CnpqlBVakMRTKr3h37l+uiwd7tTfzsEyBCgwNfPaaRCGq754l0EU9XUeoQj04Emc858xTTqzut7F7/PAlkd1Io4cE4jnFaulBPyDxLqlWQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=KzAZgLl2joNtA+vCPyQVBMSal6U3/ILkdme3HEMQtNo=;
- b=cluz6Z+vf6akTRHZH2gnQJRF7BIoYnEzaw+8W2Po23qZrpYHq811D5JhxOMbSjF2lGhCvNGwhKMl/rvcNQICWOUleOb2ROrATOl7L5a044E9XtpMvhPbjA0tDVZt0MmsmScajXksAEX4wlBkzBjacKrRsRMokf2Vig09kZrLboHVvFxK4w6Cq4p9EQ9ulKoC/PnH4HDNkRWGsO1RLNoqF3xW4dYWLSR9F/4apqu+VraUdF4VEL0KrPbUTDMH+VGkvOB5fpqR55Aeb7r5r1za00du3w/qK8EGnPZcu63sM2NwHvZGsSqw0axE+7M2Q5qiqtr8hJB6OVGb8mB2nu67Ww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KzAZgLl2joNtA+vCPyQVBMSal6U3/ILkdme3HEMQtNo=;
- b=UFEi2kvsgULG6KdpKwNZq7tP7ayjv729lQ4zVG+a2dhnCfuqdRYgs/UZVcXV3kvSIM3sNIEtHRZTQxb137lyf+ipCEuML+TOaUeRvHhRjT+5hD+F4EVaOaeU7ildnic1HREi5Go28NSq5dEHODjiYdlTcqqLYWW/owzjfU2AMaI=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
- by PAXPR04MB8622.eurprd04.prod.outlook.com (2603:10a6:102:219::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.35; Tue, 17 Oct
- 2023 07:06:03 +0000
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::3b23:7c3d:fd28:c3f2]) by PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::3b23:7c3d:fd28:c3f2%7]) with mapi id 15.20.6863.043; Tue, 17 Oct 2023
- 07:06:03 +0000
-From: Sandor Yu <Sandor.yu@nxp.com>
-To: dmitry.baryshkov@linaro.org,
-	andrzej.hajda@intel.com,
-	neil.armstrong@linaro.org,
-	Laurent.pinchart@ideasonboard.com,
-	jonas@kwiboo.se,
-	jernej.skrabec@gmail.com,
-	airlied@gmail.com,
-	daniel@ffwll.ch,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	festevam@gmail.com,
-	vkoul@kernel.org,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: kernel@pengutronix.de,
-	linux-imx@nxp.com,
-	Sandor.yu@nxp.com,
-	oliver.brown@nxp.com,
-	alexander.stein@ew.tq-group.com,
-	sam@ravnborg.org
-Subject: [PATCH v11 2/7] phy: Add HDMI configuration options
-Date: Tue, 17 Oct 2023 15:03:58 +0800
-Message-Id: <4f4ccf83cc63ff28ed2521225a54b076d1a75676.1697524277.git.Sandor.yu@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <cover.1697524277.git.Sandor.yu@nxp.com>
-References: <cover.1697524277.git.Sandor.yu@nxp.com>
-X-ClientProxiedBy: SG2PR03CA0122.apcprd03.prod.outlook.com
- (2603:1096:4:91::26) To PAXPR04MB9448.eurprd04.prod.outlook.com
- (2603:10a6:102:2b1::21)
+	id 1qsf3b-00BcjQ-0R
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Oct 2023 08:04:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1697529843; x=1729065843;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=fuDluEewVCPPpRlZEUD+VBUZTdiv9Ix4p3tW1oI2M/Q=;
+  b=OWTSoO0v5egY+qNju1vVAHPaZX4grZR7jYBQB5eQ6WwSVed+1LPp9zEu
+   0fgg0dJhikiH0Gd577z18qx69lDtlQ7n+fAxEaqtA1Qe8lt/VQSEq4Uu+
+   z/k4Pc+siFViTn9B3DMBxCAvTKjkHRybFsaQ4+vXFDhzwcJj4Qn3MPpR5
+   9q86+e56viBW/DDQQbSMSfTC5vzbfwCsVrt8hMZDBMhkmd3ArngmUi4nm
+   BWVCLZ8O5B8LK9yh9qwaqT80QvPkKOORTTlwIaGrhmdByKl1yz1OhsqZR
+   PfxZM93kx/xeqAuw5MmS27dlLGWJ8+hcFIAiXQeXp/NN2qMWzBoXaHDem
+   A==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10865"; a="382944815"
+X-IronPort-AV: E=Sophos;i="6.03,231,1694761200"; 
+   d="scan'208";a="382944815"
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2023 01:03:59 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10865"; a="872450741"
+X-IronPort-AV: E=Sophos;i="6.03,231,1694761200"; 
+   d="scan'208";a="872450741"
+Received: from turnipsi.fi.intel.com (HELO kekkonen.fi.intel.com) ([10.237.72.44])
+  by fmsmga002-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2023 01:03:58 -0700
+Received: from svinhufvud.ger.corp.intel.com (localhost [IPv6:::1])
+	by kekkonen.fi.intel.com (Postfix) with ESMTP id 5053D11F89D;
+	Tue, 17 Oct 2023 11:03:55 +0300 (EEST)
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: [PATCH 1/1] phy: Kconfig: Select GENERIC_PHY for GENERIC_PHY_MIPI_DPHY
+Date: Tue, 17 Oct 2023 11:03:54 +0300
+Message-Id: <20231017080354.538047-1-sakari.ailus@linux.intel.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|PAXPR04MB8622:EE_
-X-MS-Office365-Filtering-Correlation-Id: 611c498c-34d8-447e-330a-08dbcedf8636
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Ol1uY7Yh33qPJ1V4XitI/tAoNf0RRMCvx04/Sc9lcdftSPn/oEoXvJpL7rOZekxk9VGIn45JTJxmJtCXtg0iCAK0wW/RFqGhKOAL/zHwObnGa5ra5JL9JEab9ww8o144xoEzfg7NRuH5pkt7lHajACuU+GxvXv40zsuHdqFKy14ZuoSHAfJrh2lLSLtBvGsB5ARTsMkT3vUnM6Y6Y8L4p1xNjId2ETMuvznq0P5GPcNXoNDJZHn06xd1fsymlnQ6EU0HiCvvgN0v+U3Ci02hC4mU35L4I3rHeTNbm0iodqJ/pdSFF0SjYx4sGtstLYpEXWeg1UqbC+fglzTWQ6Bn8SflQXFLOyxgZkVekShVJR+AGc/Rv5bZW0xosckC5j8Ep0I1rANGNeqBrleQ4j610ALccI9d68CVy0v0oPBxjhuGSAcANG+VjS6LxTry8FZeuVP6ZpUeJPzwXBurVcp1J6JWN7NB/PCzc/tsTS7xRyAVaw9FZ2hGmqGLpDquL9NbpktrYNJAIZ3l+qNvrTQJhe0Yl+KcTkflpRfVFpswgJN2SrVlRIEXDhd+BGCxaNSx8LlpDme3Q9cs/JhjmOV4Dgcp3SGhncQku8PuEW1YKI3ftA3Q4uUEXgSUWSdbZUt+kuWLcT0cMbq6zBT3LLtPVg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(136003)(346002)(39860400002)(396003)(376002)(230922051799003)(186009)(451199024)(64100799003)(1800799009)(478600001)(2616005)(6486002)(52116002)(6666004)(6506007)(41300700001)(6512007)(316002)(5660300002)(26005)(66946007)(66476007)(66556008)(38350700005)(921005)(36756003)(38100700002)(86362001)(83380400001)(4326008)(8676002)(8936002)(2906002)(7416002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?71Hl8eNSc3BLE2m+gItRUEFrTR+RwXYW+OgUa27+c+1biHssBvPrqVS8BDXn?=
- =?us-ascii?Q?hmoRmc1pX0LmyOv4w1y4HaW0og0pFpgDt9bLeFfmhuhaLClouuSFa2HTDc5Z?=
- =?us-ascii?Q?PH4WPNroWwKJeXJwHrOZHiip7b//64G3Q0vXw5Amy8opciE2sEhEOVYJ1S1X?=
- =?us-ascii?Q?C+rr6k3clkgYEqxBs5W3Z7u8aCFt6yBcvPX1ytoVMX9w3SpacThw4pt1oevZ?=
- =?us-ascii?Q?FKXZcy6rBpt/HRMmGPdg71r6L8O9MLSKH1FKos+YOrV1/tFX71/SWlYekg4J?=
- =?us-ascii?Q?bjBUS0NYODxLHiiPtajLA8ySvTDqGeh7+2wjIWHe72UNOfH1tbhg4Nwe2jCg?=
- =?us-ascii?Q?AHQ8cIqa3pEotRkkA5b+tPxv2TQZwymVqx3XNdGm0wPQtleuFxW5xPZPHIqY?=
- =?us-ascii?Q?03Fx8FcrNRqPiIqPTIBKAFuZ4fA4aaNw+QVHrbHjkGq1t11f/9b5JG+ieFne?=
- =?us-ascii?Q?Xr5MI7+KdpVy2eM76UCbkS63P9m5OvGoamC4ye7IWRyID9fOzarnw/SdEjYh?=
- =?us-ascii?Q?irfRPPJpH8SylPCZo+SHHPnV0UwwaNT5xvmft2T7U2PktzrInjq4xaMWGORf?=
- =?us-ascii?Q?D+ZMoBgBFEfuhUecRLnIm+xOh/RO/E82N/u0oqh7k+TceUJANHd0YDX5QFdH?=
- =?us-ascii?Q?aGwzNch4t1HKiEWEEQyoWY3N2B7cvv3EryqlwS428jJ63fj+mgcBzLeb/6Zg?=
- =?us-ascii?Q?dtl6lzde5RTvOy9NEzTcbTt6ozZGf8fhGb/Hy7IzVLKc71pytRHxe9xSwuxB?=
- =?us-ascii?Q?OwvuxXeHu0aoGF+IxPhjTXvCUqIWRyFe0PD0pfjK/OuVlpCy3Z2aC6rHIoYo?=
- =?us-ascii?Q?HvpdJsRf31CWGDblUtQrj7R96KsJ0MSCtiHAnBoUK/CEP4iPNEEoLaRyfG60?=
- =?us-ascii?Q?0KPWD+zEIfmqA/Kw0ahIKAfLGRpUkkJqdCx3CXIhncdvztvFueyavr4hhT+c?=
- =?us-ascii?Q?3pclfessQNHnNK76IpG6yJzhyi/qsUCrdMC8Mpmkjub4YdwcaYpXzQc+n03s?=
- =?us-ascii?Q?U9AqD+YCrw5+FgIq6NeLI4ho90JVXLOKiy8nf+nUYAE6DD72cd21ouQFl0pE?=
- =?us-ascii?Q?li7ToyMSBelGOd3T71p8oLzp2CNYlvBfKEUlL2idWKGrRW+uN7G3NXXU7rTX?=
- =?us-ascii?Q?4wtNgbws0wDR7CcBMAhYspM519sJCa1L2lDpdShesv9TXmOanOrMRHaMiK87?=
- =?us-ascii?Q?d23Mo78czRLv0o11c7lwGATQ6TSAuslxDO3fY6AFqhXwu/kprITBN8rnuxVR?=
- =?us-ascii?Q?f99YefUm3dH/mQj/mV10EFjn2ZojHl7V5yyDBRocv1Wv4jpf6eauQvM268xd?=
- =?us-ascii?Q?3P4tYX2Afpo4doLgfgYQc9ku6AyUzbBwotHF0QvQGKinepyviCHbjY3xQ0s1?=
- =?us-ascii?Q?08bkgCi4BO4EilT2mkbAL8TvLtbvQC8Ez1UAeaSZqP7Hiya0lh31EhtLQPQg?=
- =?us-ascii?Q?dFlOJ0E5mGrExp2VpTm79tt1vZwFyZkHKKUK7mVe3kbssMvwECxmN64xitz+?=
- =?us-ascii?Q?R/Dx5zmSSU5VEC2FfnVzy+aBuK6wzlsVmYMSCViRfwPMGZeoQoK0vlFW5EoE?=
- =?us-ascii?Q?sYn55sQIqPaBytiUQs4MTuWdvFTlkC4gkUqb740+?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 611c498c-34d8-447e-330a-08dbcedf8636
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Oct 2023 07:06:02.9958
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: BwEWY7EOQF7qtGvbzE58sK6wbizNdPE/gAh/YlAzduHuIfTKtOeZXQtHW1MuT41PiuqIBwbyGU/n/xancSBOvA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8622
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231017_002137_639203_2C4FD176 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20231017_010403_204123_E0BBCC32 
+X-CRM114-Status: GOOD (  10.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,94 +82,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Allow HDMI PHYs to be configured through the generic
-functions through a custom structure added to the generic union.
+GENERIC_PHY can be selected by GENERIC_PHY_MIPI_DPHY directly as
+GENERIC_PHY has no dependencies. This way drivers that depend on
+GENERIC_PHY_MIPI_DPHY can avoid having to select both --- which they
+apparently often omit, too, which further leads to build failures.
 
-The parameters added here are based on HDMI PHY
-implementation practices.  The current set of parameters
-should cover the potential users.
-
-Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Acked-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
 ---
-v9->v11:
- *No change.
+ drivers/phy/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- include/linux/phy/phy-hdmi.h | 24 ++++++++++++++++++++++++
- include/linux/phy/phy.h      |  7 ++++++-
- 2 files changed, 30 insertions(+), 1 deletion(-)
- create mode 100644 include/linux/phy/phy-hdmi.h
-
-diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
-new file mode 100644
-index 0000000000000..b7de88e9090f0
---- /dev/null
-+++ b/include/linux/phy/phy-hdmi.h
-@@ -0,0 +1,24 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2022 NXP
-+ */
-+
-+#ifndef __PHY_HDMI_H_
-+#define __PHY_HDMI_H_
-+
-+#include <linux/hdmi.h>
-+/**
-+ * struct phy_configure_opts_hdmi - HDMI configuration set
-+ * @pixel_clk_rate: Pixel clock of video modes in KHz.
-+ * @bpc: Maximum bits per color channel.
-+ * @color_space: Colorspace in enum hdmi_colorspace.
-+ *
-+ * This structure is used to represent the configuration state of a HDMI phy.
-+ */
-+struct phy_configure_opts_hdmi {
-+	unsigned int pixel_clk_rate;
-+	unsigned int bpc;
-+	enum hdmi_colorspace color_space;
-+};
-+
-+#endif /* __PHY_HDMI_H_ */
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index f6d607ef0e801..94d489a8a163c 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -17,6 +17,7 @@
- #include <linux/regulator/consumer.h>
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index d1670bbe6d6b..787354b849c7 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -18,7 +18,7 @@ config GENERIC_PHY
  
- #include <linux/phy/phy-dp.h>
-+#include <linux/phy/phy-hdmi.h>
- #include <linux/phy/phy-lvds.h>
- #include <linux/phy/phy-mipi-dphy.h>
+ config GENERIC_PHY_MIPI_DPHY
+ 	bool
+-	depends on GENERIC_PHY
++	select GENERIC_PHY
+ 	help
+ 	  Generic MIPI D-PHY support.
  
-@@ -42,7 +43,8 @@ enum phy_mode {
- 	PHY_MODE_MIPI_DPHY,
- 	PHY_MODE_SATA,
- 	PHY_MODE_LVDS,
--	PHY_MODE_DP
-+	PHY_MODE_DP,
-+	PHY_MODE_HDMI,
- };
- 
- enum phy_media {
-@@ -60,11 +62,14 @@ enum phy_media {
-  *		the DisplayPort protocol.
-  * @lvds:	Configuration set applicable for phys supporting
-  *		the LVDS phy mode.
-+ * @hdmi:	Configuration set applicable for phys supporting
-+ *		the HDMI phy mode.
-  */
- union phy_configure_opts {
- 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
- 	struct phy_configure_opts_dp		dp;
- 	struct phy_configure_opts_lvds		lvds;
-+	struct phy_configure_opts_hdmi		hdmi;
- };
- 
- /**
 -- 
-2.34.1
+2.39.2
 
 
 -- 
