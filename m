@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ACF6CDB483
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 12:45:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60227CDB484
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 12:48:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fEVGZRA3p6WnajtzHGchPeumTXPSUZePlaEk/CtpOZ4=; b=BRdLGlnSKXnn41
-	Q8iJLamcIJxa2YpSHIiX16SZkMM28wV4frfaHpvHoKxtfsoGGIik3zZgAg5az93bXx3rOlAUno6+6
-	0B+dIPBPfZ2Co21cZ74bTuSR6kIzpyC0akna0AdUkrGzadLCnD2xMg507OfjPByomI1Gj8ewV4Aw3
-	EiWCXb648eQDndHfZu9xaq2oS4OuL1Ftk8O7BpYXRyYcEsUYd6QkpvhViWc4WiA+IIaIb1Y1xxZAt
-	uCm/9AyG5GjpI+RxU23WOtTs8JCyoOBCr2gFEHc6h1MoG+eUzxa0we4EzPJHZfWj/OMXxBc9YsF6d
-	tthfNfYwFZrECvartycQ==;
+	List-Owner; bh=KI1rA7gAPWpoIxIvWKObooNvMX1QfjFoZaxqm69IreM=; b=Krjl2XdpMtxleD
+	BX7pSk2E78LlYoY8RQSrBTIHsnI9krSaNAx8P91qvIUNQdPc611cx7Ru0f8eeH1HzWb1l2RJDtkNI
+	Mkabas37Kxmkf3VQ9XSGrKT37v0I9kdlyPFQiMnWPBI3BjaK9BO5bbeVERIyEIrUFMWAc+cQlrH2v
+	1/pQk4afnK1RZs/QFwCHGjEq2l3bKsTgwxfjwFKosE+T/BDKImz0jFRszOKZPvPIqg//XqrBEYyPJ
+	kpT+Eg7XpJEP/VyWCVyAHA+bMvMGkQh7Y8767/bks/ruU7NLSvgByBrl2zUD/lsakUWdJwC4cCsl6
+	pmcqO5LT/GOoK5Tbwnlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtSPQ-00HMHT-18;
-	Thu, 19 Oct 2023 12:45:52 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1qtSRw-00HMj7-0M;
+	Thu, 19 Oct 2023 12:48:28 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtSPN-00HMFz-2O
+	id 1qtSRt-00HMi1-0K
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Oct 2023 12:45:51 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-507975d34e8so9063536e87.1
-        for <linux-phy@lists.infradead.org>; Thu, 19 Oct 2023 05:45:47 -0700 (PDT)
+	Thu, 19 Oct 2023 12:48:26 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-313e742a787so451030f8f.1
+        for <linux-phy@lists.infradead.org>; Thu, 19 Oct 2023 05:48:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1697719546; x=1698324346; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1697719701; x=1698324501; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=XyPrAiFxGzk2dyGWiOGzrDGIGbpFiPYSNVDg4vtpN00=;
-        b=GzNI96Lj29VZrevIVm5s8CPYhYDdy7Nngdmudo1fKmqUDYQb1dWHA/9FT4nQDspXRe
-         eKgi3naYW3O+GT4GN5sPKvb2mcA8+aGkXq3fxERCdr3R7yyb39HQosTg0VTIe1RqDCd9
-         Z6MFbiYB8huC7ZeEmfI4xBuuxRnabgWLk3xQlC0CdlQkn2Kd4YqOT2P1ACd8M4QydCAP
-         wLuH9eleJDfHjcwZKnNGAlfSHagQ+O/zV666zkyHVdxuadotiBJtFzngStg12dsasKS8
-         L5MEwMfY90BlV1iOEvD0egmYk9brQPxzAoW6aiw+4PDrqMGEgyMlkmKG8fcHT4SdRFgU
-         6Twg==
+        bh=qFQDquaYrxbOhnZ4aFn7nGgZNpCtXxCsyNZ4tebC/bw=;
+        b=rNXGLzjzu1an1OOYvCDG1/L+im7f+XHM3YJIb0LaUAN0UZlQy8B9caxM8hBklIvLYS
+         XS0gqnOL1N5oiYFrnVMX0o0WObAA0gFGvcE5bL9xHxoa3yFdZIvgavcJDsb8tIjMJYmU
+         VVYVwQlbGAB61zKemGgWBhs8rGbKSsLS0tw1Atx4r8yVob3Nd/ZIifzd3BhA/7iOMBK0
+         Higf49svNH26zsmp6ZDuRkhZx8g1YfZ4UVSULegUI+JMu5QXobZWmc7A97S7EcOKCyEP
+         KN5SE4MoElUhENsIphTO61WxHXFfK+IWdxTuY4zOnqpJ2yWd0COAoCBVFWRwnLT/bsnm
+         eL6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1697719546; x=1698324346;
+        d=1e100.net; s=20230601; t=1697719701; x=1698324501;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=XyPrAiFxGzk2dyGWiOGzrDGIGbpFiPYSNVDg4vtpN00=;
-        b=dA5pogdIsVh4Fy18eXAKkzGUEyhhwbl9Ys/knv6Glnjq36KQcjLKVW0znS9iV5zIBG
-         Y+RvvY/nL/r+diLSH15HGny8zsYm+Z4OZ7ZJTtYYZvG3E9/QRtDlo8RxPp5+GlkqLWhE
-         4otKcc0kGl9arRvEcqBTSM0eG7Sg/K/ZZR3ELW5vmldn963V1+QkrykZuVJYZ8M3kZjs
-         zTo96xT3j8Q7UNYaYy40QXwMetnGk0rlna4Zf2kj4pzTCZBYxORBks/Swa7KKos0RQwS
-         kJ2y8/1mknxr2VgDpkTZQFeUiFq60JW4aZHKRGr5GUKKtjBWR9vpU4M+cszRUEY4kOZP
-         Z1ZA==
-X-Gm-Message-State: AOJu0Yzkyl8/VwElVW+xeyPKutHXE413QbPgGzCWfNws5QJCpNoZZPlW
-	G6Lz6fyWad1tGfb06tyX9bsJlA==
-X-Google-Smtp-Source: AGHT+IFIADFAPPUaYTTocnRZ+shkCqVFc+WazV/YNFoq3vCUdvq84KvSKttY5DUJYBqCA3KyB3qDLw==
-X-Received: by 2002:a05:6512:33ce:b0:503:257a:7f5d with SMTP id d14-20020a05651233ce00b00503257a7f5dmr1624496lfg.31.1697719545735;
-        Thu, 19 Oct 2023 05:45:45 -0700 (PDT)
+        bh=qFQDquaYrxbOhnZ4aFn7nGgZNpCtXxCsyNZ4tebC/bw=;
+        b=Kppm76McWivl3JNzDyHBeWZ1chUbeH3hJPCgqVsOVc8t9OV6glOqmzYJasjYKKYG32
+         W5NLRi5Piq0j1K4mcgSRgPuYUvuqdajzl6wYaahfgMrPS2mSWDGtdl3aorc6htacSf0h
+         AQ51M639KvDzCz0M/cPUXYeR2GoLc8ZleYPBKrLbgSCtEStiE+J4vU9pcT49KGkRgWmZ
+         /S/IQ01rl+aWh1NwyTcDgvQ9zYHq4RoRkqvtlGFajxZ95fg9zzNbYdp3dHor13fkndiy
+         /zZHjCMUIKTQCiyOw+yUzdPrqdx/p8ZBwX03guKLaLGSJYuINzmOEhn4sRDWftzT6hMm
+         msAw==
+X-Gm-Message-State: AOJu0Yz38704cPmWStl1QLXwp3ftQdCckyMtHZMX68T4PeuA3JpDCxpl
+	GGpHvl5edJ50kaoSCAe53IklRQ==
+X-Google-Smtp-Source: AGHT+IFIlFfsK60mBGVm1Umc72MF15R9tIcGFrq3luoIFWuxu+G5Q4MXudqqKlcV9P4gLpkIT/4meQ==
+X-Received: by 2002:adf:c685:0:b0:32d:c850:b4ba with SMTP id j5-20020adfc685000000b0032dc850b4bamr1570646wrg.31.1697719701354;
+        Thu, 19 Oct 2023 05:48:21 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.218.126])
-        by smtp.gmail.com with ESMTPSA id m5-20020a056000180500b0031c6581d55esm4437299wrh.91.2023.10.19.05.45.43
+        by smtp.gmail.com with ESMTPSA id l10-20020a1c790a000000b004063cced50bsm4304072wme.23.2023.10.19.05.48.18
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Oct 2023 05:45:45 -0700 (PDT)
-Message-ID: <0de848a8-a658-4c5b-928b-5e948a22f291@linaro.org>
-Date: Thu, 19 Oct 2023 14:45:41 +0200
+        Thu, 19 Oct 2023 05:48:20 -0700 (PDT)
+Message-ID: <1917c764-9356-4f6e-94d6-1c8a92f4d6a5@linaro.org>
+Date: Thu, 19 Oct 2023 14:48:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/4] PCI: epf-mhi: Add support for SA8775P
+Subject: Re: [PATCH v3 1/5] dt-bindings: PCI: qcom-ep: Add support for SA8775P
+ SoC
 Content-Language: en-US
 To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -75,15 +76,15 @@ Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
  quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
  dmitry.baryshkov@linaro.org, robh@kernel.org, quic_krichai@quicinc.com,
  quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
+ Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lpieralisi@kernel.org>,
  =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  mhi@lists.linux.dev, linux-phy@lists.infradead.org
-References: <1697023109-23671-1-git-send-email-quic_msarkar@quicinc.com>
- <1697023109-23671-4-git-send-email-quic_msarkar@quicinc.com>
+References: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
+ <1697715430-30820-2-git-send-email-quic_msarkar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -129,10 +130,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <1697023109-23671-4-git-send-email-quic_msarkar@quicinc.com>
+In-Reply-To: <1697715430-30820-2-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_054549_785950_9B516096 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20231019_054825_152380_9B9D95B6 
+X-CRM114-Status: GOOD (  12.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,41 +150,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/10/2023 13:18, Mrinmay Sarkar wrote:
-> Add support for Qualcomm Snapdragon SA8775P SoC to the EPF driver.
-> SA8775P has the PID (0x0306) and supports HDMA. Currently, it has
-> no fixed PCI class, so it is being advertised as "PCI_CLASS_OTHERS".
+On 19/10/2023 13:37, Mrinmay Sarkar wrote:
+> Add devicetree bindings support for SA8775P SoC. It has DMA register
+> space and dma interrupt to support HDMA.
 > 
 > Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 > ---
->  drivers/pci/endpoint/functions/pci-epf-mhi.c | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
+>  .../devicetree/bindings/pci/qcom,pcie-ep.yaml      | 44 +++++++++++++++++++++-
+>  1 file changed, 42 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/pci/endpoint/functions/pci-epf-mhi.c b/drivers/pci/endpoint/functions/pci-epf-mhi.c
-> index b7b9d3e..f05c2e4 100644
-> --- a/drivers/pci/endpoint/functions/pci-epf-mhi.c
-> +++ b/drivers/pci/endpoint/functions/pci-epf-mhi.c
-> @@ -114,6 +114,22 @@ static const struct pci_epf_mhi_ep_info sm8450_info = {
->  	.flags = MHI_EPF_USE_DMA,
->  };
+> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+> index a223ce0..7485248 100644
+> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+> @@ -13,6 +13,7 @@ properties:
+>    compatible:
+>      oneOf:
+>        - enum:
+> +          - qcom,sa8775p-pcie-ep
+>            - qcom,sdx55-pcie-ep
+>            - qcom,sm8450-pcie-ep
+>        - items:
+> @@ -20,6 +21,7 @@ properties:
+>            - const: qcom,sdx55-pcie-ep
 >  
-> +static const struct pci_epf_header sa8775p_header = {
-> +	.vendorid = PCI_VENDOR_ID_QCOM,
-> +	.deviceid = 0x0306,
-> +	.baseclass_code = PCI_CLASS_OTHERS,
-> +	.interrupt_pin = PCI_INTERRUPT_INTA,
-> +};
-> +
-> +static const struct pci_epf_mhi_ep_info sa8775p_info = {
-> +	.config = &mhi_v1_config,
-> +	.epf_header = &sa8775p_header,
-> +	.bar_num = BAR_0,
-> +	.epf_flags = PCI_BASE_ADDRESS_MEM_TYPE_32,
-> +	.msi_count = 32,
-> +	.mru = 0x8000,
+>    reg:
+> +    minItems: 6
+>      items:
+>        - description: Qualcomm-specific PARF configuration registers
+>        - description: DesignWare PCIe registers
+> @@ -27,8 +29,10 @@ properties:
+>        - description: Address Translation Unit (ATU) registers
+>        - description: Memory region used to map remote RC address space
+>        - description: BAR memory region
+> +      - description: DMA register space
 
-This is almost the same (minus MHI_EPF_USE_DMA) as sm8450. Are you sure
-these are not compatible?
+You need to constrain IO space in all other variants.
+
+>  
+>    reg-names:
+> +    minItems: 6
+>      items:
+>        - const: parf
+>        - const: dbi
+> @@ -36,13 +40,14 @@ properties:
+>        - const: atu
+>        - const: addr_space
+>        - const: mmio
+> +      - const: dma
+>  
+>    clocks:
+> -    minItems: 7
+> +    minItems: 5
+>      maxItems: 8
+>  
+>    clock-names:
+> -    minItems: 7
+> +    minItems: 5
+>      maxItems: 8
+>  
+>    qcom,perst-regs:
+> @@ -57,14 +62,18 @@ properties:
+>            - description: Perst separation enable offset
+>  
+>    interrupts:
+> +    minItems: 2
+>      items:
+>        - description: PCIe Global interrupt
+>        - description: PCIe Doorbell interrupt
+> +      - description: DMA interrupt
+>  
+>    interrupt-names:
+> +    minItems: 2
+>      items:
+>        - const: global
+>        - const: doorbell
+> +      - const: dma
+
+You need to constrain interrupts in all other variants.
+
+>  
+>    reset-gpios:
+>      description: GPIO used as PERST# input signal
+> @@ -173,6 +182,37 @@ allOf:
+>              - const: ddrss_sf_tbu
+>              - const: aggre_noc_axi
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,sa8775p-pcie-ep
+> +    then:
+> +      properties:
+> +        reg:
+> +          minItems: 7
+
+As well:
+maxItems: 7
+Otherwise any future update will for sure miss this and relax the reg.
+
+> +        reg-names:
+> +          minItems: 7
+
+Ditto
+
+> +        clocks:
+> +          items:
+> +            - description: PCIe Auxiliary clock
+> +            - description: PCIe CFG AHB clock
+> +            - description: PCIe Master AXI clock
+> +            - description: PCIe Slave AXI clock
+> +            - description: PCIe Slave Q2A AXI clock
+> +        clock-names:
+> +          items:
+> +            - const: aux
+> +            - const: cfg
+> +            - const: bus_master
+> +            - const: bus_slave
+> +            - const: slave_q2a
+> +        interrupts:
+> +          minItems: 3
+
+Ditto
+
+> +        interrupt-names:
+> +          minItems: 3
+
+Ditto
+
+> +
+>  unevaluatedProperties: false
+>  
+>  examples:
 
 Best regards,
 Krzysztof
