@@ -4,40 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0959CDB47E
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Oct 2023 15:21:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DCFCCDB482
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 11:37:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l1RYyKJPzxkLXkb5ZIoKsH3UwTSn78uQmQ1CX8VAJ/c=; b=EjHByyp6aPw0S2
-	v+dP4x8v//ZN3nrrR3IEtAeuQjRmBuH7nHXyPDJZPRkYDp3bNo7O7TYH5f/SdC5Lvb2akbogDYwVW
-	CJOSCefKRolGANIolNLhr+LQoWy+iXVfDszmzLsSFcL8p5JTLI6uxVw1zJthdiPLIOpK9mhQtXVHz
-	n4gAruMgYoRzIkFZ6Ifoowd+FjDJpgQWgia/sSL5GSBY6uYyqgmw0DhyrejTSni7WZkFlrYfOQJpl
-	VU+05q1oj5PipA24YL16EGT017jpedk8l1TCeApNhJaPmrUrOuFG1E8G5Rx9Anv04AwQ8+uRucNxE
-	N+XYxXjMxfKCBHEpZbuw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mOVn5LOObmPBJlnRLlUU2CI8YhxmPuPTndnn2j6EbLM=; b=nscYmkqlSUqDrw
+	4Neg+S8iMMbBJ82SPBnJbnG42JbXSBZE6r6VkhKNJlxWQo75VcOh2kQr73XeBvhIKp51MvFTx+Hdh
+	IxTJ2iq7L5/dIgu45f6dNyUmSAcCCKWDbAAH2ayDWnckS+m5/FENyvAOTiYm9DIPAXBY3uOyj66oH
+	afBSB9yofKOjlnmyvbL5j4j6nWKC3oLiFGpRr889bYx/1Y1rxzoRiCyw66ydFwWWaEvCwSrfJjdmx
+	l1QeaOwD8mVOPENnm8dIrcTIEVAmNekRHnfXZaWYleRfBJSaG1ctNmyUwXmcfqkQbAgAPEpobdne+
+	4iUvTQSfybAimNSaX87w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt8M5-00F1kL-11;
-	Wed, 18 Oct 2023 15:21:05 +0000
-Received: from [50.53.46.231] (helo=[192.168.254.15])
-	by bombadil.infradead.org with esmtpsa (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt8M3-00F1k6-23;
-	Wed, 18 Oct 2023 15:21:03 +0000
-Message-ID: <fd672feb-dce5-4140-9609-5fc0392a6f23@infradead.org>
-Date: Wed, 18 Oct 2023 08:21:01 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/1] phy: Kconfig: Select GENERIC_PHY for
- GENERIC_PHY_MIPI_DPHY
-Content-Language: en-US
-To: Sakari Ailus <sakari.ailus@linux.intel.com>, linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-References: <20231017080354.538047-1-sakari.ailus@linux.intel.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-In-Reply-To: <20231017080354.538047-1-sakari.ailus@linux.intel.com>
+	id 1qtRLH-00HBQ3-03;
+	Thu, 19 Oct 2023 11:37:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qtRLD-00HBLc-30
+	for linux-phy@lists.infradead.org;
+	Thu, 19 Oct 2023 11:37:29 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JBJa4B006578;
+	Thu, 19 Oct 2023 11:37:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id; s=qcppdkim1;
+ bh=Uibb7vCKN4Pe9NjvGIf8PjhMn2Ru/ZEvqI1gp9q/eWk=;
+ b=nvIBBWg8OIX1H/FwHvojwoI5mGZevNriC0+28e9UVt8IohFv8uwSiDGQ0l/X9J0WZQS9
+ hF50wqcUf1QO0Dz/LlpcbFU9w6zcITxTx2APY/jbJtbeC9pq1EvvdBRKKwrsvmBzuspz
+ wXGk5CmniLQfuem9sDeYEul05YGF+NNE+7+RRa4BAzQ2ZBIOL7CFku9FfzXy9Gj2yCB0
+ FAhgC7kmx4FG99v6IRWcMkQj9FN2ezpB9DnYLgyOPXcpSVq0fda37BxGecRckedOefQE
+ Dnk3sRpfg9Pp3SpyLQmMX/Hrk6MZ5YcEq5v9lTJAxEn0kzNNpoHyG5fxgiQXf0okzdti mA== 
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ttgw3tevg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Oct 2023 11:37:18 +0000
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39JBbEWL000798;
+	Thu, 19 Oct 2023 11:37:14 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3tqm2mcs2y-1;
+	Thu, 19 Oct 2023 11:37:14 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39JBbEdX000782;
+	Thu, 19 Oct 2023 11:37:14 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 39JBbDPU000781;
+	Thu, 19 Oct 2023 11:37:14 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
+	id DD337441C; Thu, 19 Oct 2023 17:07:12 +0530 (+0530)
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+        conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+        dmitry.baryshkov@linaro.org, robh@kernel.org, quic_krichai@quicinc.com,
+        quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
+        Mrinmay Sarkar <quic_msarkar@quicinc.com>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Vinod Koul <vkoul@kernel.org>, linux-pci@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
+        linux-phy@lists.infradead.org
+Subject: [PATCH v3 0/5] arm64: qcom: sa8775p: add support for EP PCIe
+Date: Thu, 19 Oct 2023 17:07:05 +0530
+Message-Id: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: lpq5l2CFyOWGj1Os-hJ11DuALkuAS5Sq
+X-Proofpoint-GUID: lpq5l2CFyOWGj1Os-hJ11DuALkuAS5Sq
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-19_09,2023-10-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ phishscore=0 lowpriorityscore=0 suspectscore=0 mlxscore=0 bulkscore=0
+ impostorscore=0 adultscore=0 clxscore=1015 malwarescore=0 mlxlogscore=362
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310190099
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20231019_043727_990746_0B00FCD9 
+X-CRM114-Status: GOOD (  16.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -49,46 +104,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This series adds the relavent DT bindings, new compatible string,
+update PHY, add support to EPF driver and add EP PCIe node in dtsi
+file for ep pcie0 controller.
 
+v2 -> v3:
+- removed if/then schemas, added minItems for reg,
+  reg-bnames, interrupt and interrupt-names instead.
+- adding qcom,sa8775p-pcie-ep compitable for sa8775p
+  as we have some specific change to add.
+- reusing sm8450's pcs_misc num table as it is same as sa8775p.
+  used appropriate namespace for pcs.
+- remove const from sa8775p_header as kernel test robot
+  throwing some warnings due to this.
+- remove fallback compatiable as we are adding compatiable for sa8775p.
 
-On 10/17/23 01:03, Sakari Ailus wrote:
-> GENERIC_PHY can be selected by GENERIC_PHY_MIPI_DPHY directly as
-> GENERIC_PHY has no dependencies. This way drivers that depend on
-> GENERIC_PHY_MIPI_DPHY can avoid having to select both --- which they
-> apparently often omit, too, which further leads to build failures.
-> 
-> Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+v1 -> v2:
+- update description for dma
+- Reusing qcom,sdx55-pcie-ep compatibe so remove compaitable
+  for sa8775p
+- sort the defines in phy header file and remove extra defines
+- add const in return type pci_epf_header and remove MHI_EPF_USE_DMA
+  flag as hdma patch is not ready
+- add fallback compatiable as qcom,sdx55-pcie-ep, add iommu property
 
-Reviewed-by: Randy Dunlap <rdunlap@infradead.org>
-Tested-by: Randy Dunlap <rdunlap@infradead.org>
+Mrinmay Sarkar (5):
+  dt-bindings: PCI: qcom-ep: Add support for SA8775P SoC
+  PCI: qcom-ep: Add support for SA8775P SOC
+  phy: qcom-qmp-pcie: add endpoint support for sa8775p
+  PCI: epf-mhi: Add support for SA8775P
+  arm64: dts: qcom: sa8775p: Add ep pcie0 controller node
 
-Thanks.
-
-> ---
->  drivers/phy/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index d1670bbe6d6b..787354b849c7 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -18,7 +18,7 @@ config GENERIC_PHY
->  
->  config GENERIC_PHY_MIPI_DPHY
->  	bool
-> -	depends on GENERIC_PHY
-> +	select GENERIC_PHY
->  	help
->  	  Generic MIPI D-PHY support.
->  
+ .../devicetree/bindings/pci/qcom,pcie-ep.yaml      | 44 +++++++++++++++++++-
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi              | 48 ++++++++++++++++++++++
+ drivers/pci/controller/dwc/pcie-qcom-ep.c          |  1 +
+ drivers/pci/endpoint/functions/pci-epf-mhi.c       | 17 ++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 37 +++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h      |  2 +
+ 6 files changed, 147 insertions(+), 2 deletions(-)
 
 -- 
-~Randy
+2.7.4
+
 
 -- 
 linux-phy mailing list
