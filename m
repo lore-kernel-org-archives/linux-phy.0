@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 828C9CDB488
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8A73CDB483
 	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 11:37:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3lc8qQ7c/FSoMSUjGQWvyEX1R3QvNsrlDDsTZbgj3/E=; b=tY3167l79v2IXI
-	SUZgHbJEETAoUrcTGs+8slbKGNdSUjE5HmvC8dXWt055Fcc3q3DtAsanmW9cUIIoRehwLMSmmdk46
-	8CeOlZ08iRjmkdyXXnW5X3Nux4X82WS8IF2fGkpzcyb+u7w8RADIv/2n8mt8bJXIqZ/npdtfdqY/m
-	3Jx6FJ62fDbUC7pt7hkhZ2x+9QjrZx1gMaVvj5wodtIRsjICEGgYIBguqIgqnEidcROAQRug58BZH
-	sF+i/z/Du7/8tChrl4kCy+HGwdFYXd5JMNyTwlQUQzY6jfbomeTm/736w3wO381TiiKmdYGifJ/kF
-	iYJ7LfXCezFES02dv7Wg==;
+	List-Owner; bh=t7fAQvMGCflTClK19yjJfp6Ci76n7DJG/eLw2MZxBFs=; b=RLiPkluXKLZB0D
+	ykhrgilnIrNZ5orbm7fax9d8OTk+Cs/mZS9sbyHaMQszwom1R+GIJ8GNrchyjIUeVqm90F6HkRR4j
+	bKgBrB26zt8R9D4xdvDoztT9LN5IBuaMrvf3Sf9HwBMcbxcmH53NNhffufUbkH9aDHWV+2Akj7CaB
+	XliIXjv3H2jutLsomSsW/uMYN3Sz5nRGzM4sTPNQ3xRurhDwVWbCWn7SBbHNkfX12DdqsLHO5429Q
+	Oad0ShSJjo6swKMqWXMkP6B/laQ7OCQTDIHfmdcyTJLo3rbzx7Sewj/P981fV0++aW+7Yp1Jz2k1h
+	/ljnaOaevMJwJjnk6z2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtRLK-00HBRH-0m;
+	id 1qtRLK-00HBRT-1f;
 	Thu, 19 Oct 2023 11:37:34 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtRLE-00HBMm-03
+	id 1qtRLG-00HBPB-0X
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Oct 2023 11:37:30 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JBXm4s004140;
-	Thu, 19 Oct 2023 11:37:21 GMT
+	Thu, 19 Oct 2023 11:37:31 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JAjt9V014928;
+	Thu, 19 Oct 2023 11:37:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=d4aGVvvCXOmHar/N1Ef609yamgVrMXuktGdLVETVVWo=;
- b=GqwonEH7/J8hPPc8bAl1YnExZrKeCBdOco4GiQvlDJEoc0ZuogUuXY0nGVy8GDc/5TzE
- LCJQxKZcCBfpwnwxWF6YeTRGVgtizGVxXs6t6Znw7MF37yWLzOiEXQVWFr8wDri6xpM9
- kisND/zOAr6b2VdlVb6xoanOpGBAWl8POwWNguAmjt8L9y2wmer6HjdV0Q23/UREnv1c
- 37CXs5do/vL5xCu0bJ4JnHZlWq+zFoiwC8wSdtY+iZ/oN/uRlrGSRdRNy0TKhV9FILqJ
- yvd5t+t994peVHThR3vFH5jeF2VmCh7Y8HhxVwUbInkB8wD8YYuWI3IkCDSUg1PRC/7/ FQ== 
+ bh=9WSebA+wxvflAFy7chHmr6lERim/LgmFmXjnP3ZZp3Y=;
+ b=nUHPVvJM0PRhy0wT5jXpmAGls5hRVOIrUWGzkjRz/TWWS260jOAz8wsDsRtMC4ot6HbF
+ jaFAZEVeuIKtosOT2OVwS9AfSBdhQceWCsnwRBuZesuvh9x/HhZTc08+LtjZSzBsj/03
+ MCj0Bx0EAmQq5qgMSYtqCvKm5vW487hlNEgpy3nOrWCIa9T5LUjTMMRQu6NvuDU3qa9Y
+ Dw8SfQnHUdXHzyMhKoqu722Ldyv8NHOrE2VGIJvm3PTvJa2ouHoREkh462lG3clDCSQ5
+ jUPe5JlhOhmwaxIiJvDCkOOEUgGR/8PjNBJ/jMSavEZd2qGZ0bMun+O5qKlD02U20qgB aw== 
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tu3pj0075-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ttfeuapbg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Oct 2023 11:37:21 +0000
+	Thu, 19 Oct 2023 11:37:24 +0000
 Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39JBbIib000843;
-	Thu, 19 Oct 2023 11:37:18 GMT
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39JBbGNh000827;
+	Thu, 19 Oct 2023 11:37:21 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3tqm2mcs3g-1;
-	Thu, 19 Oct 2023 11:37:18 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3tqm2mcs3w-1;
+	Thu, 19 Oct 2023 11:37:21 +0000
 Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39JBbIkN000835;
-	Thu, 19 Oct 2023 11:37:18 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39JBbKjJ000894;
+	Thu, 19 Oct 2023 11:37:20 GMT
 Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 39JBbHAo000833;
-	Thu, 19 Oct 2023 11:37:17 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 39JBbKt5000885;
+	Thu, 19 Oct 2023 11:37:20 +0000
 Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
-	id 13A4B441C; Thu, 19 Oct 2023 17:07:17 +0530 (+0530)
+	id 09C76441C; Thu, 19 Oct 2023 17:07:20 +0530 (+0530)
 From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
         conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
@@ -68,13 +68,13 @@ Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
         =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
         Bjorn Helgaas <bhelgaas@google.com>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+        Vinod Koul <vkoul@kernel.org>, linux-pci@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
         linux-phy@lists.infradead.org
-Subject: [PATCH v3 3/5] phy: qcom-qmp-pcie: add endpoint support for sa8775p
-Date: Thu, 19 Oct 2023 17:07:08 +0530
-Message-Id: <1697715430-30820-4-git-send-email-quic_msarkar@quicinc.com>
+Subject: [PATCH v3 5/5] arm64: dts: qcom: sa8775p: Add ep pcie0 controller node
+Date: Thu, 19 Oct 2023 17:07:10 +0530
+Message-Id: <1697715430-30820-6-git-send-email-quic_msarkar@quicinc.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
 References: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
@@ -82,19 +82,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: HFezm9SDIq4ldfAwtVgC6QYc4Yyi3l7-
-X-Proofpoint-ORIG-GUID: HFezm9SDIq4ldfAwtVgC6QYc4Yyi3l7-
+X-Proofpoint-ORIG-GUID: houZrgXEPQbdaH4WRiran116wJpoCU8E
+X-Proofpoint-GUID: houZrgXEPQbdaH4WRiran116wJpoCU8E
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-19_09,2023-10-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 clxscore=1015
- spamscore=0 adultscore=0 lowpriorityscore=0 mlxscore=0 bulkscore=0
- impostorscore=0 priorityscore=1501 phishscore=0 malwarescore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
+ spamscore=0 impostorscore=0 bulkscore=0 adultscore=0 phishscore=0
+ mlxlogscore=999 suspectscore=0 priorityscore=1501 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2309180000 definitions=main-2310190099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_043728_068725_B5987811 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20231019_043730_209316_7AD8C277 
+X-CRM114-Status: GOOD (  13.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,82 +112,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for dual lane end point mode PHY found on sa8755p platform.
+Add ep pcie dtsi node for pcie0 controller found on sa8775p platform.
+It supports gen4 and x2 link width. Due to some stability issue in
+gen4 enabling gen3 as of now.
 
 Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 37 +++++++++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h |  2 ++
- 2 files changed, 39 insertions(+)
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi | 48 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index a63ca74..b64598a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2147,6 +2147,34 @@ static const struct qmp_phy_init_tbl sa8775p_qmp_gen4x4_pcie_rc_serdes_alt_tbl[]
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CLK_SELECT, 0x34),
+diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+index 13dd44d..2aa7383 100644
+--- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
++++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+@@ -3714,4 +3714,52 @@
+ 
+ 		status = "disabled";
+ 	};
++
++	pcie0_ep: pcie-ep@1c00000 {
++		compatible = "qcom,sa8775p-pcie-ep";
++		reg = <0x0 0x01c00000 0x0 0x3000>,
++		      <0x0 0x40000000 0x0 0xf20>,
++		      <0x0 0x40000f20 0x0 0xa8>,
++		      <0x0 0x40001000 0x0 0x4000>,
++		      <0x0 0x40200000 0x0 0x100000>,
++		      <0x0 0x01c03000 0x0 0x1000>,
++		      <0x0 0x40005000 0x0 0x2000>;
++		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
++			    "mmio", "dma";
++
++		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
++			<&gcc GCC_PCIE_0_CFG_AHB_CLK>,
++			<&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
++			<&gcc GCC_PCIE_0_SLV_AXI_CLK>,
++			<&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
++
++		clock-names = "aux",
++			      "cfg",
++			      "bus_master",
++			      "bus_slave",
++			      "slave_q2a";
++
++		interrupts = <GIC_SPI 306 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 630 IRQ_TYPE_LEVEL_HIGH>;
++
++		interrupt-names = "global", "doorbell", "dma";
++
++		interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
++				<&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_PCIE_0 0>;
++		interconnect-names = "pcie-mem", "cpu-pcie";
++
++		iommu-map = <0x0 &pcie_smmu 0x0000 0x1>,
++			    <0x100 &pcie_smmu 0x0001 0x1>;
++
++		resets = <&gcc GCC_PCIE_0_BCR>;
++		reset-names = "core";
++		power-domains = <&gcc PCIE_0_GDSC>;
++		phys = <&pcie0_phy>;
++		phy-names = "pciephy";
++		max-link-speed = <3>;
++		num-lanes = <2>;
++
++		status = "disabled";
++	};
  };
- 
-+static const struct qmp_phy_init_tbl sa8775p_qmp_gen4x2_pcie_ep_serdes_alt_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BG_TIMER, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYS_CLK_CTRL, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CP_CTRL_MODE0, 0x27),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CP_CTRL_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_RCTRL_MODE0, 0x17),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_RCTRL_MODE1, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_CCTRL_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_PLL_CCTRL_MODE1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_EN_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_INTEGLOOP_GAIN0_MODE0, 0xfb),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_INTEGLOOP_GAIN1_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_INTEGLOOP_GAIN0_MODE1, 0xfb),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_INTEGLOOP_GAIN1_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_CMN_MODE, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP1_MODE0, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP2_MODE0, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP1_MODE1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_LOCK_CMP2_MODE1, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DEC_START_MODE0, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_COM_DEC_START_MODE1, 0x28),
-+};
-+
-+static const struct qmp_phy_init_tbl sa8775p_qmp_gen4x2_pcie_ep_pcs_alt_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_INSIG_MX_CTRL7, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_INSIG_SW_CTRL7, 0x00),
-+};
-+
- struct qmp_pcie_offsets {
- 	u16 serdes;
- 	u16 pcs;
-@@ -3043,6 +3071,15 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x2_pciephy_cfg = {
- 		.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl),
- 	},
- 
-+	.tbls_ep = &(const struct qmp_phy_cfg_tbls) {
-+		.serdes		= sa8775p_qmp_gen4x2_pcie_ep_serdes_alt_tbl,
-+		.serdes_num	= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_ep_serdes_alt_tbl),
-+		.pcs_misc	= sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl),
-+		.pcs		= sa8775p_qmp_gen4x2_pcie_ep_pcs_alt_tbl,
-+		.pcs_num	= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_ep_pcs_alt_tbl),
-+	},
-+
- 	.reset_list		= sdm845_pciephy_reset_l,
- 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
- 	.vreg_list		= qmp_phy_vreg_l,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h
-index f0754b6..d3ad5b7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h
-@@ -6,6 +6,8 @@
- #ifndef QCOM_PHY_QMP_PCS_V5_20_H_
- #define QCOM_PHY_QMP_PCS_V5_20_H_
- 
-+#define QPHY_V5_20_PCS_INSIG_SW_CTRL7			0x060
-+#define QPHY_V5_20_PCS_INSIG_MX_CTRL7			0x07c
- #define QPHY_V5_20_PCS_G3S2_PRE_GAIN			0x170
- #define QPHY_V5_20_PCS_RX_SIGDET_LVL			0x188
- #define QPHY_V5_20_PCS_EQ_CONFIG2			0x1d8
 -- 
 2.7.4
 
