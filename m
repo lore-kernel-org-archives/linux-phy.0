@@ -4,97 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8A73CDB483
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 11:37:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ACF6CDB483
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Oct 2023 12:45:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t7fAQvMGCflTClK19yjJfp6Ci76n7DJG/eLw2MZxBFs=; b=RLiPkluXKLZB0D
-	ykhrgilnIrNZ5orbm7fax9d8OTk+Cs/mZS9sbyHaMQszwom1R+GIJ8GNrchyjIUeVqm90F6HkRR4j
-	bKgBrB26zt8R9D4xdvDoztT9LN5IBuaMrvf3Sf9HwBMcbxcmH53NNhffufUbkH9aDHWV+2Akj7CaB
-	XliIXjv3H2jutLsomSsW/uMYN3Sz5nRGzM4sTPNQ3xRurhDwVWbCWn7SBbHNkfX12DdqsLHO5429Q
-	Oad0ShSJjo6swKMqWXMkP6B/laQ7OCQTDIHfmdcyTJLo3rbzx7Sewj/P981fV0++aW+7Yp1Jz2k1h
-	/ljnaOaevMJwJjnk6z2A==;
+	List-Owner; bh=fEVGZRA3p6WnajtzHGchPeumTXPSUZePlaEk/CtpOZ4=; b=BRdLGlnSKXnn41
+	Q8iJLamcIJxa2YpSHIiX16SZkMM28wV4frfaHpvHoKxtfsoGGIik3zZgAg5az93bXx3rOlAUno6+6
+	0B+dIPBPfZ2Co21cZ74bTuSR6kIzpyC0akna0AdUkrGzadLCnD2xMg507OfjPByomI1Gj8ewV4Aw3
+	EiWCXb648eQDndHfZu9xaq2oS4OuL1Ftk8O7BpYXRyYcEsUYd6QkpvhViWc4WiA+IIaIb1Y1xxZAt
+	uCm/9AyG5GjpI+RxU23WOtTs8JCyoOBCr2gFEHc6h1MoG+eUzxa0we4EzPJHZfWj/OMXxBc9YsF6d
+	tthfNfYwFZrECvartycQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtRLK-00HBRT-1f;
-	Thu, 19 Oct 2023 11:37:34 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qtSPQ-00HMHT-18;
+	Thu, 19 Oct 2023 12:45:52 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtRLG-00HBPB-0X
+	id 1qtSPN-00HMFz-2O
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Oct 2023 11:37:31 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JAjt9V014928;
-	Thu, 19 Oct 2023 11:37:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=9WSebA+wxvflAFy7chHmr6lERim/LgmFmXjnP3ZZp3Y=;
- b=nUHPVvJM0PRhy0wT5jXpmAGls5hRVOIrUWGzkjRz/TWWS260jOAz8wsDsRtMC4ot6HbF
- jaFAZEVeuIKtosOT2OVwS9AfSBdhQceWCsnwRBuZesuvh9x/HhZTc08+LtjZSzBsj/03
- MCj0Bx0EAmQq5qgMSYtqCvKm5vW487hlNEgpy3nOrWCIa9T5LUjTMMRQu6NvuDU3qa9Y
- Dw8SfQnHUdXHzyMhKoqu722Ldyv8NHOrE2VGIJvm3PTvJa2ouHoREkh462lG3clDCSQ5
- jUPe5JlhOhmwaxIiJvDCkOOEUgGR/8PjNBJ/jMSavEZd2qGZ0bMun+O5qKlD02U20qgB aw== 
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ttfeuapbg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Oct 2023 11:37:24 +0000
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39JBbGNh000827;
-	Thu, 19 Oct 2023 11:37:21 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3tqm2mcs3w-1;
-	Thu, 19 Oct 2023 11:37:21 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39JBbKjJ000894;
-	Thu, 19 Oct 2023 11:37:20 GMT
-Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 39JBbKt5000885;
-	Thu, 19 Oct 2023 11:37:20 +0000
-Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
-	id 09C76441C; Thu, 19 Oct 2023 17:07:20 +0530 (+0530)
-From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-To: agross@kernel.org, andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-        conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
+	Thu, 19 Oct 2023 12:45:51 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-507975d34e8so9063536e87.1
+        for <linux-phy@lists.infradead.org>; Thu, 19 Oct 2023 05:45:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1697719546; x=1698324346; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=XyPrAiFxGzk2dyGWiOGzrDGIGbpFiPYSNVDg4vtpN00=;
+        b=GzNI96Lj29VZrevIVm5s8CPYhYDdy7Nngdmudo1fKmqUDYQb1dWHA/9FT4nQDspXRe
+         eKgi3naYW3O+GT4GN5sPKvb2mcA8+aGkXq3fxERCdr3R7yyb39HQosTg0VTIe1RqDCd9
+         Z6MFbiYB8huC7ZeEmfI4xBuuxRnabgWLk3xQlC0CdlQkn2Kd4YqOT2P1ACd8M4QydCAP
+         wLuH9eleJDfHjcwZKnNGAlfSHagQ+O/zV666zkyHVdxuadotiBJtFzngStg12dsasKS8
+         L5MEwMfY90BlV1iOEvD0egmYk9brQPxzAoW6aiw+4PDrqMGEgyMlkmKG8fcHT4SdRFgU
+         6Twg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1697719546; x=1698324346;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=XyPrAiFxGzk2dyGWiOGzrDGIGbpFiPYSNVDg4vtpN00=;
+        b=dA5pogdIsVh4Fy18eXAKkzGUEyhhwbl9Ys/knv6Glnjq36KQcjLKVW0znS9iV5zIBG
+         Y+RvvY/nL/r+diLSH15HGny8zsYm+Z4OZ7ZJTtYYZvG3E9/QRtDlo8RxPp5+GlkqLWhE
+         4otKcc0kGl9arRvEcqBTSM0eG7Sg/K/ZZR3ELW5vmldn963V1+QkrykZuVJYZ8M3kZjs
+         zTo96xT3j8Q7UNYaYy40QXwMetnGk0rlna4Zf2kj4pzTCZBYxORBks/Swa7KKos0RQwS
+         kJ2y8/1mknxr2VgDpkTZQFeUiFq60JW4aZHKRGr5GUKKtjBWR9vpU4M+cszRUEY4kOZP
+         Z1ZA==
+X-Gm-Message-State: AOJu0Yzkyl8/VwElVW+xeyPKutHXE413QbPgGzCWfNws5QJCpNoZZPlW
+	G6Lz6fyWad1tGfb06tyX9bsJlA==
+X-Google-Smtp-Source: AGHT+IFIADFAPPUaYTTocnRZ+shkCqVFc+WazV/YNFoq3vCUdvq84KvSKttY5DUJYBqCA3KyB3qDLw==
+X-Received: by 2002:a05:6512:33ce:b0:503:257a:7f5d with SMTP id d14-20020a05651233ce00b00503257a7f5dmr1624496lfg.31.1697719545735;
+        Thu, 19 Oct 2023 05:45:45 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.218.126])
+        by smtp.gmail.com with ESMTPSA id m5-20020a056000180500b0031c6581d55esm4437299wrh.91.2023.10.19.05.45.43
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 19 Oct 2023 05:45:45 -0700 (PDT)
+Message-ID: <0de848a8-a658-4c5b-928b-5e948a22f291@linaro.org>
+Date: Thu, 19 Oct 2023 14:45:41 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 3/4] PCI: epf-mhi: Add support for SA8775P
+Content-Language: en-US
+To: Mrinmay Sarkar <quic_msarkar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, konrad.dybcio@linaro.org, mani@kernel.org
 Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
-        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
-        dmitry.baryshkov@linaro.org, robh@kernel.org, quic_krichai@quicinc.com,
-        quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
-        Mrinmay Sarkar <quic_msarkar@quicinc.com>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>, linux-pci@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
-        linux-phy@lists.infradead.org
-Subject: [PATCH v3 5/5] arm64: dts: qcom: sa8775p: Add ep pcie0 controller node
-Date: Thu, 19 Oct 2023 17:07:10 +0530
-Message-Id: <1697715430-30820-6-git-send-email-quic_msarkar@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
-References: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: houZrgXEPQbdaH4WRiran116wJpoCU8E
-X-Proofpoint-GUID: houZrgXEPQbdaH4WRiran116wJpoCU8E
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-19_09,2023-10-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- spamscore=0 impostorscore=0 bulkscore=0 adultscore=0 phishscore=0
- mlxlogscore=999 suspectscore=0 priorityscore=1501 mlxscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310190099
+ quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+ dmitry.baryshkov@linaro.org, robh@kernel.org, quic_krichai@quicinc.com,
+ quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ mhi@lists.linux.dev, linux-phy@lists.infradead.org
+References: <1697023109-23671-1-git-send-email-quic_msarkar@quicinc.com>
+ <1697023109-23671-4-git-send-email-quic_msarkar@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <1697023109-23671-4-git-send-email-quic_msarkar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_043730_209316_7AD8C277 
-X-CRM114-Status: GOOD (  13.53  )
+X-CRM114-CacheID: sfid-20231019_054549_785950_9B516096 
+X-CRM114-Status: GOOD (  13.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,80 +144,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add ep pcie dtsi node for pcie0 controller found on sa8775p platform.
-It supports gen4 and x2 link width. Due to some stability issue in
-gen4 enabling gen3 as of now.
+On 11/10/2023 13:18, Mrinmay Sarkar wrote:
+> Add support for Qualcomm Snapdragon SA8775P SoC to the EPF driver.
+> SA8775P has the PID (0x0306) and supports HDMA. Currently, it has
+> no fixed PCI class, so it is being advertised as "PCI_CLASS_OTHERS".
+> 
+> Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+> ---
+>  drivers/pci/endpoint/functions/pci-epf-mhi.c | 17 +++++++++++++++++
+>  1 file changed, 17 insertions(+)
+> 
+> diff --git a/drivers/pci/endpoint/functions/pci-epf-mhi.c b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+> index b7b9d3e..f05c2e4 100644
+> --- a/drivers/pci/endpoint/functions/pci-epf-mhi.c
+> +++ b/drivers/pci/endpoint/functions/pci-epf-mhi.c
+> @@ -114,6 +114,22 @@ static const struct pci_epf_mhi_ep_info sm8450_info = {
+>  	.flags = MHI_EPF_USE_DMA,
+>  };
+>  
+> +static const struct pci_epf_header sa8775p_header = {
+> +	.vendorid = PCI_VENDOR_ID_QCOM,
+> +	.deviceid = 0x0306,
+> +	.baseclass_code = PCI_CLASS_OTHERS,
+> +	.interrupt_pin = PCI_INTERRUPT_INTA,
+> +};
+> +
+> +static const struct pci_epf_mhi_ep_info sa8775p_info = {
+> +	.config = &mhi_v1_config,
+> +	.epf_header = &sa8775p_header,
+> +	.bar_num = BAR_0,
+> +	.epf_flags = PCI_BASE_ADDRESS_MEM_TYPE_32,
+> +	.msi_count = 32,
+> +	.mru = 0x8000,
 
-Signed-off-by: Mrinmay Sarkar <quic_msarkar@quicinc.com>
----
- arch/arm64/boot/dts/qcom/sa8775p.dtsi | 48 +++++++++++++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+This is almost the same (minus MHI_EPF_USE_DMA) as sm8450. Are you sure
+these are not compatible?
 
-diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-index 13dd44d..2aa7383 100644
---- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-@@ -3714,4 +3714,52 @@
- 
- 		status = "disabled";
- 	};
-+
-+	pcie0_ep: pcie-ep@1c00000 {
-+		compatible = "qcom,sa8775p-pcie-ep";
-+		reg = <0x0 0x01c00000 0x0 0x3000>,
-+		      <0x0 0x40000000 0x0 0xf20>,
-+		      <0x0 0x40000f20 0x0 0xa8>,
-+		      <0x0 0x40001000 0x0 0x4000>,
-+		      <0x0 0x40200000 0x0 0x100000>,
-+		      <0x0 0x01c03000 0x0 0x1000>,
-+		      <0x0 0x40005000 0x0 0x2000>;
-+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
-+			    "mmio", "dma";
-+
-+		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+			<&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+			<&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-+			<&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
-+
-+		clock-names = "aux",
-+			      "cfg",
-+			      "bus_master",
-+			      "bus_slave",
-+			      "slave_q2a";
-+
-+		interrupts = <GIC_SPI 306 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 630 IRQ_TYPE_LEVEL_HIGH>;
-+
-+		interrupt-names = "global", "doorbell", "dma";
-+
-+		interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
-+				<&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_PCIE_0 0>;
-+		interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+		iommu-map = <0x0 &pcie_smmu 0x0000 0x1>,
-+			    <0x100 &pcie_smmu 0x0001 0x1>;
-+
-+		resets = <&gcc GCC_PCIE_0_BCR>;
-+		reset-names = "core";
-+		power-domains = <&gcc PCIE_0_GDSC>;
-+		phys = <&pcie0_phy>;
-+		phy-names = "pciephy";
-+		max-link-speed = <3>;
-+		num-lanes = <2>;
-+
-+		status = "disabled";
-+	};
- };
--- 
-2.7.4
+Best regards,
+Krzysztof
 
 
 -- 
