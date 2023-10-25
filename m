@@ -4,79 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9C1DC25B6E
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 08:57:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BE3C0032E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 14:33:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QrCRXYPwRgEEX0RllmWExma1VDkBoirEVr85Ds5n1NI=; b=bvo19x/08acBzc
-	VBQSPw1nqU2BERc8gjSC+cwjXEryfWJ68yWxnkBHau7TsCcL6yO21hf0kczJYS2QWRwhOiMRV0T/B
-	Uh8EpQYKFnLyAsS0tdCEK9WFePyiFj/EglySfVOx8za06orAOraMx2cgQRu6Y2X0NbEtZKhhv6jQQ
-	Y40z7+2W3OzwMK/U1uInyy5RgcKG1VOpObXA54PGT9d5qFYze9WuFqx5/ZTnf+f5ezXP9hUPLr8fa
-	vPYDBxuPuaWgWdlNqzhulijuLg7sJHPd2c89mNDvtBpX/midpJeAUxRzbz3w7Y0CLaTBhudKv44qt
-	CAJPzCLAbFIVvYNXbVvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rrGU+UP3AJojnM/0+xxp09ZpjzKrf0PHPsgDICs83Hg=; b=Jm5Ep0wKsvZ3Sl
+	mVM5fEDhLVAaU/i67pSFSwpngdvV/gLvBvoI+RdTElHnnYBqgM9ja9M1yNFp3imJOJaeAVJ7M+4Ew
+	ARL/1pTbwr2DSe3aRjZE+FoGn9zJmvP0LvO/h5z060BHi6aPQ5yVmTNB1BOBnU1sRg58gVuN1Zopq
+	Iqk4XjXEkwuTPcAZfOc/cG0UbfG11VsVnab7zZoHtO0GNjoEUCarw+ZpIs3s9tMN5WzGEoq7Jxqet
+	+FVeXGEtBOq6C3sScsRdQYZlkQI4xoYS+po4t1sPrSWlz1LwLhSjBW00GfhGQt80a3cgDtw9KOYWu
+	yEhDU3RqWfjZKY0HzfJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvZhp-00BlLn-1V;
-	Wed, 25 Oct 2023 08:57:37 +0000
-Received: from mail-ua1-x92a.google.com ([2607:f8b0:4864:20::92a])
+	id 1qvewe-00CWrk-1u;
+	Wed, 25 Oct 2023 14:33:16 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvZhn-00BlL2-0C
+	id 1qvewa-00CWqA-32
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Oct 2023 08:57:36 +0000
-Received: by mail-ua1-x92a.google.com with SMTP id a1e0cc1a2514c-7b9b2ba34d3so513170241.3
-        for <linux-phy@lists.infradead.org>; Wed, 25 Oct 2023 01:57:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698224252; x=1698829052; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=7NldaKyDc0l1BbJHjiT+K+qAycYibl9MYvEsSpwfuMU=;
-        b=alzNarzQiXcCd9zOt1B6nqDl2kqOju4nqbMS1FX8TKsMepExrs35hyZgsrI3/ZXR3n
-         0JM6Pz/skFCdvHdMnnWNLrUtn/g2YfrwuiP9NGc/TTYpm7xLxQNsSoe09SK5wR1qg9TN
-         uzZ11z90U/Fj+ooNdYPXA8vZ5tanMC334gkBbkQ17F6xXXakgTsZ2ikSSYtFnWWlzm1p
-         lzzAbguq3OfgQkNgtt+yTQ9C1VfBHfaK8coTPAw0hKourI/BW9qjhqNiHiHVvrWpBDy9
-         LIK4rlPcgTqsD0ghJFGzqnQngFz2cd0ghYpnBvPK78Xlu4IJpAdjJbezBVkhCS02V5JQ
-         SFuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698224252; x=1698829052;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=7NldaKyDc0l1BbJHjiT+K+qAycYibl9MYvEsSpwfuMU=;
-        b=jxEcJ1ZEFsCT1ml2juloBTI2Ju1rubK4RKFLBHCiLlOGrsBaWKFqDvkRTSVkRITDol
-         5RLFFnkvhAFyXZiehsI8zASaADuSlINcKj7vwfB8/oI92Sb2Ce89oUR9U6c0pMpqzrld
-         T5W7BIpbyLoUQxDclGHqyR2WmYBAwwhAUWjVPyBj/1PBzigrCygq9puROVtnsuqgCxq+
-         5MSbltavClaoqK3Bb4+jcd1C6aC3Cz7hk0rRS6EUr9gA6Z9LaLk7241xzk6j+zu0C87S
-         kcw3L7VIf7FFTVgmCDH3pSVIfwPBtOxkB93taDJ5iL+g62wsqJWXoiDBw1bN0ETu+NBu
-         GRdQ==
-X-Gm-Message-State: AOJu0YzqZTZY8DOQ/7fZf1UzrJgmDKhTqNGKD6ffY6GxO/ttgSMmQEoH
-	qfGqRDexCPfJuK9sgTdn8k03TokcrXOCvRk4Mqam0w==
-X-Google-Smtp-Source: AGHT+IGhheo8Q9Df6KgUGR4PorlbsZsMr3I2+FSZpwFZ03w3W5uEdV5Ej71blcICjUAikq6NvJLTs/3FHZXoJH1v/m8=
-X-Received: by 2002:a67:c313:0:b0:457:66e0:2c6a with SMTP id
- r19-20020a67c313000000b0045766e02c6amr14079783vsj.14.1698224252025; Wed, 25
- Oct 2023 01:57:32 -0700 (PDT)
+	Wed, 25 Oct 2023 14:33:14 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 39PEX4DI112703;
+	Wed, 25 Oct 2023 09:33:04 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1698244384;
+	bh=RhH/BrUGOztTNz0KuDNnXxR7aI5X9VJPOk14LY5Iigs=;
+	h=From:To:CC:Subject:Date;
+	b=EE5vBJ8cJmV3fW4ijWk4TRVNwMo88o6v5fyAQH3wckhY+DiTaxS4jpBQMmdPtPwI1
+	 npGRKwwaYju3nScYfaPuQ46Jjy1LGxXGEEAUq9FFLhaMV8mnMWo0F6wdJnH4PqsJKr
+	 ss3u5eVdtx4xxeM68l3OsvJTjIh1q3hbMx+zViYE=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 39PEX4jF004035
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 25 Oct 2023 09:33:04 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Wed, 25
+ Oct 2023 09:33:04 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Wed, 25 Oct 2023 09:33:04 -0500
+Received: from lelv0326.itg.ti.com (ileaxei01-snat.itg.ti.com [10.180.69.5])
+	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 39PEX4Jk105094;
+	Wed, 25 Oct 2023 09:33:04 -0500
+From: Andrew Davis <afd@ti.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Siddharth Vadapalli <s-vadapalli@ti.com>,
+        Roger Quadros <rogerq@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Andrew
+ Davis <afd@ti.com>
+Subject: [PATCH] phy: ti: gmii-sel: Fix register offset when parent is not a syscon node
+Date: Wed, 25 Oct 2023 09:33:02 -0500
+Message-ID: <20231025143302.1265633-1-afd@ti.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-References: <20231025-topic-sm8650-upstream-phy-v1-0-6137101520c4@linaro.org> <20231025-topic-sm8650-upstream-phy-v1-5-6137101520c4@linaro.org>
-In-Reply-To: <20231025-topic-sm8650-upstream-phy-v1-5-6137101520c4@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 25 Oct 2023 11:57:20 +0300
-Message-ID: <CAA8EJpoxdVNvwbEyVVF65FWVQZwydXvePCTmurF_6G9taQRJfg@mail.gmail.com>
-Subject: Re: [PATCH 5/7] phy: qcom: qmp-ufs: add QMP UFS PHY tables for SM8650
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231025_015735_104991_D3F29453 
-X-CRM114-Status: UNSURE (   8.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231025_073313_163893_E9B33C0A 
+X-CRM114-Status: GOOD (  14.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,22 +84,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 25 Oct 2023 at 10:46, Neil Armstrong <neil.armstrong@linaro.org> wrote:
->
-> Add QMP UFS PHY support for the SM8650 platform.
->
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h     |  1 +
->  .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  7 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 86 ++++++++++++++++++++++
->  3 files changed, 94 insertions(+)
+When the node for this phy selector is a child node of a syscon node then the
+property 'reg' is used as an offset into the parent regmap. When the node
+is standalone and gets its own regmap this offset is pre-applied. So we need
+to track which method was used to get the regmap and not apply the offset
+in the standalone case.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Fixes: 1fdfa7cccd35 ("phy: ti: gmii-sel: Allow parent to not be syscon node")
+Signed-off-by: Andrew Davis <afd@ti.com>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index 555b323f45da1..bc847d3879f79 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -64,6 +64,7 @@ struct phy_gmii_sel_priv {
+ 	u32 num_ports;
+ 	u32 reg_offset;
+ 	u32 qsgmii_main_ports;
++	bool no_offset;
+ };
+ 
+ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+@@ -402,7 +403,8 @@ static int phy_gmii_sel_init_ports(struct phy_gmii_sel_priv *priv)
+ 		priv->num_ports = size / sizeof(u32);
+ 		if (!priv->num_ports)
+ 			return -EINVAL;
+-		priv->reg_offset = __be32_to_cpu(*offset);
++		if (!priv->no_offset)
++			priv->reg_offset = __be32_to_cpu(*offset);
+ 	}
+ 
+ 	if_phys = devm_kcalloc(dev, priv->num_ports,
+@@ -471,6 +473,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+ 			dev_err(dev, "Failed to get syscon %d\n", ret);
+ 			return ret;
+ 		}
++		priv->no_offset = true;
+ 	}
+ 
+ 	ret = phy_gmii_sel_init_ports(priv);
 -- 
-With best wishes
-Dmitry
+2.39.2
+
 
 -- 
 linux-phy mailing list
