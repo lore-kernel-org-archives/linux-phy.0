@@ -4,70 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BE3C0032E
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 14:33:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A5D0C25B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 22:30:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rrGU+UP3AJojnM/0+xxp09ZpjzKrf0PHPsgDICs83Hg=; b=Jm5Ep0wKsvZ3Sl
-	mVM5fEDhLVAaU/i67pSFSwpngdvV/gLvBvoI+RdTElHnnYBqgM9ja9M1yNFp3imJOJaeAVJ7M+4Ew
-	ARL/1pTbwr2DSe3aRjZE+FoGn9zJmvP0LvO/h5z060BHi6aPQ5yVmTNB1BOBnU1sRg58gVuN1Zopq
-	Iqk4XjXEkwuTPcAZfOc/cG0UbfG11VsVnab7zZoHtO0GNjoEUCarw+ZpIs3s9tMN5WzGEoq7Jxqet
-	+FVeXGEtBOq6C3sScsRdQYZlkQI4xoYS+po4t1sPrSWlz1LwLhSjBW00GfhGQt80a3cgDtw9KOYWu
-	yEhDU3RqWfjZKY0HzfJA==;
+	List-Owner; bh=rIzc4NgZpgzUYeJUASRpjnS+DfOOZWo9ItrpSyI6FRE=; b=F1H5xmyovphcqv
+	+CJ1MRFLrUDog40EYSGD6oqCfqbTdL7l3zinda8QeZ8lcXN2B0Iv+NG/6/Wfv/KS6ghWlAcSeE2gN
+	SzbE4AfGqPINZo1t1DgwsRmIJvSz/XPwBVI17tfzawpl99DIveiq6NnhW8KL5z28x3n0G4bCOVY4c
+	2K+/rPj7ZBlseHnjvTItCMqyMcljQwK0SWA32P5LhCXMwJJ1wybqeMtWk2Z5JXZfyprj7Mbsy7igJ
+	530anv+StG34nwkB76L2MaYSRL7Qym4r9Eq+o4aybsasceWwrKZUizzauInKAp5r6YljMAIhl5iar
+	G1/5jNbwo3f4krjtIjEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvewe-00CWrk-1u;
-	Wed, 25 Oct 2023 14:33:16 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1qvmOa-00DFoY-0S;
+	Wed, 25 Oct 2023 22:30:36 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvewa-00CWqA-32
+	id 1qvmOW-00DFnc-1q
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Oct 2023 14:33:14 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
-	by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 39PEX4DI112703;
-	Wed, 25 Oct 2023 09:33:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1698244384;
-	bh=RhH/BrUGOztTNz0KuDNnXxR7aI5X9VJPOk14LY5Iigs=;
-	h=From:To:CC:Subject:Date;
-	b=EE5vBJ8cJmV3fW4ijWk4TRVNwMo88o6v5fyAQH3wckhY+DiTaxS4jpBQMmdPtPwI1
-	 npGRKwwaYju3nScYfaPuQ46Jjy1LGxXGEEAUq9FFLhaMV8mnMWo0F6wdJnH4PqsJKr
-	 ss3u5eVdtx4xxeM68l3OsvJTjIh1q3hbMx+zViYE=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
-	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 39PEX4jF004035
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 25 Oct 2023 09:33:04 -0500
-Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Wed, 25
- Oct 2023 09:33:04 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Wed, 25 Oct 2023 09:33:04 -0500
-Received: from lelv0326.itg.ti.com (ileaxei01-snat.itg.ti.com [10.180.69.5])
-	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 39PEX4Jk105094;
-	Wed, 25 Oct 2023 09:33:04 -0500
-From: Andrew Davis <afd@ti.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Siddharth Vadapalli <s-vadapalli@ti.com>,
-        Roger Quadros <rogerq@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        Andrew
- Davis <afd@ti.com>
-Subject: [PATCH] phy: ti: gmii-sel: Fix register offset when parent is not a syscon node
-Date: Wed, 25 Oct 2023 09:33:02 -0500
-Message-ID: <20231025143302.1265633-1-afd@ti.com>
-X-Mailer: git-send-email 2.39.2
+	Wed, 25 Oct 2023 22:30:34 +0000
+Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2c50906f941so3574241fa.2
+        for <linux-phy@lists.infradead.org>; Wed, 25 Oct 2023 15:30:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1698273030; x=1698877830; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=mzM/s3QFeCJxxTk8M20oowbvJAmjAHB6oasYtF2H1f0=;
+        b=I2SYubXujTRfMRmyEDHftLByMydfFxjW0ie0GA44OsbM2K0jywqv0ZvOj9yxWFrB7g
+         e0bmyUrrdC1nxni4D/fTqxMeujoiGH8OZRsZ8vHfyO3SdtFb2nPqrvlB7hkfbvo+H6N5
+         1zHQE+3B91L6PU7gu1pKFjpILX5XvpncykbfJrlA/1/l2jclMh+GOTnhMqCMcPyPY40Q
+         ptk/RdIT2jUYR45QDxAimyCsszI5c0ClYyTmTbEl32cp7DdWTALiWhwYSEq5yLsNM544
+         95W0PMRY9xKJ8cejIGESPgs49HnohbA7q6/WW8oxE71u3jlHiC0ovppl7gRIzrRPe09h
+         SfBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1698273030; x=1698877830;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=mzM/s3QFeCJxxTk8M20oowbvJAmjAHB6oasYtF2H1f0=;
+        b=QWF99BBbeSvO+g9LD0s3x6ScHqORZtHqiKImut7kqw6TWZOOeQQ5HAD5OsTaOPkjAF
+         ZdnQpvIvxniwSwp1SHPrkA7d/8q6leHShaqsok3oC0qGIE+74J+gxaqy+E7ilMxM25JN
+         LIKKxfNQR/LxThbfLBKJTr2iilA1w6lm6UBUaxbBmMHUSB3oAADdtrAZFviMoGUU2KjY
+         muQksleZTuoS/A3rY02h+SFOlNZQadZwozuz5tWkCkhtjTRHY8kclqrpbFTaOS/cOx3w
+         fDK+64DHueGC/HQ+eudt8L626hx4lTz5H1TkqPc/HhziGfG8C7l3NZIZJy7TuDOP5EwL
+         Wv+Q==
+X-Gm-Message-State: AOJu0YyrPj90yNd3xy2th7Se44Je6+VKag3KscYMQ3uvll5R6VS65s06
+	7xvusasLGrU+Y4srcsSsrfiYqw==
+X-Google-Smtp-Source: AGHT+IE80qJBvoknc8MJoPYBc+MJgH2P0PJwGZo6QC/PZct9VXHGi7xuXRbkjbNG/YWYXz51jiD1cg==
+X-Received: by 2002:a05:651c:1695:b0:2c5:1a89:41c6 with SMTP id bd21-20020a05651c169500b002c51a8941c6mr11515534ljb.33.1698273029414;
+        Wed, 25 Oct 2023 15:30:29 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id a36-20020a05651c212400b002bcbae4c21fsm2612543ljq.50.2023.10.25.15.30.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Oct 2023 15:30:28 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: dri-devel@lists.freedesktop.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	freedreno@lists.freedesktop.org
+Subject: [PATCH v5 0/6] drm: simplify support for transparent DRM bridges
+Date: Thu, 26 Oct 2023 01:28:01 +0300
+Message-ID: <20231025223027.943563-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231025_073313_163893_E9B33C0A 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20231025_153032_635131_D5CFD844 
+X-CRM114-Status: GOOD (  15.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,50 +106,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When the node for this phy selector is a child node of a syscon node then the
-property 'reg' is used as an offset into the parent regmap. When the node
-is standalone and gets its own regmap this offset is pre-applied. So we need
-to track which method was used to get the regmap and not apply the offset
-in the standalone case.
 
-Fixes: 1fdfa7cccd35 ("phy: ti: gmii-sel: Allow parent to not be syscon node")
-Signed-off-by: Andrew Davis <afd@ti.com>
----
- drivers/phy/ti/phy-gmii-sel.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+Supporting DP/USB-C can result in a chain of several transparent
+bridges (PHY, redrivers, mux, etc). All attempts to implement DP support
+in a different way resulted either in series of hacks or in device tree
+not reflecting the actual hardware design. This results in drivers
+having similar boilerplate code for such bridges.
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index 555b323f45da1..bc847d3879f79 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -64,6 +64,7 @@ struct phy_gmii_sel_priv {
- 	u32 num_ports;
- 	u32 reg_offset;
- 	u32 qsgmii_main_ports;
-+	bool no_offset;
- };
- 
- static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
-@@ -402,7 +403,8 @@ static int phy_gmii_sel_init_ports(struct phy_gmii_sel_priv *priv)
- 		priv->num_ports = size / sizeof(u32);
- 		if (!priv->num_ports)
- 			return -EINVAL;
--		priv->reg_offset = __be32_to_cpu(*offset);
-+		if (!priv->no_offset)
-+			priv->reg_offset = __be32_to_cpu(*offset);
- 	}
- 
- 	if_phys = devm_kcalloc(dev, priv->num_ports,
-@@ -471,6 +473,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 			dev_err(dev, "Failed to get syscon %d\n", ret);
- 			return ret;
- 		}
-+		priv->no_offset = true;
- 	}
- 
- 	ret = phy_gmii_sel_init_ports(priv);
+Next, these drivers are susceptible to -EPROBE_DEFER loops: the next
+bridge can either be probed from the bridge->attach callback, when it is
+too late to return -EPROBE_DEFER, or from the probe() callback, when the
+next bridge might not yet be available, because it depends on the
+resources provided by the probing device. Device links can not fully
+solve this problem since there are mutual dependencies between adjancent
+devices.
+
+Last, but not least, this results in the the internal knowledge of DRM
+subsystem slowly diffusing into other subsystems, like PHY or USB/TYPEC.
+
+To solve all these issues, define a separate DRM helper, which creates
+separate aux device just for the bridge. During probe such aux device
+doesn't result in the EPROBE_DEFER loops. Instead it allows the device
+drivers to probe properly, according to the actual resource
+dependencies. The bridge auxdevs are then probed when the next bridge
+becomes available, sparing drivers from drm_bridge_attach() returning
+-EPROBE_DEFER.
+
+Changes since v4:
+ - Added documentation for new API (Sima)
+ - Added generic code to handle "last mile" DP bridges implementing just
+   the HPD functionality.
+ - Rebased on top of linux-next to be able to drop #ifdef's around
+   drm_bridge->of_node
+
+Changes since v3:
+ - Moved bridge driver to gpu/drm/bridge (Neil Armstrong)
+ - Renamed it to aux-bridge (since there is already a simple_bridge driver)
+ - Made CONFIG_OF mandatory for this driver (Neil Armstrong)
+ - Added missing kfree and ida_free (Dan Carpenter)
+
+Changes since v2:
+ - ifdef'ed bridge->of_node access (LKP)
+
+Changes since v1:
+ - Added EXPORT_SYMBOL_GPL / MODULE_LICENSE / etc. to drm_simple_bridge
+
+Dmitry Baryshkov (6):
+  drm/bridge: add transparent bridge helper
+  phy: qcom: qmp-combo: switch to DRM_AUX_BRIDGE
+  usb: typec: nb7vpq904m: switch to DRM_AUX_BRIDGE
+  drm/bridge: implement generic DP HPD bridge
+  soc: qcom: pmic-glink: switch to DRM_AUX_HPD_BRIDGE
+  usb: typec: qcom-pmic-typec: switch to DRM_AUX_HPD_BRIDGE
+
+ drivers/gpu/drm/bridge/Kconfig                |  17 ++
+ drivers/gpu/drm/bridge/Makefile               |   2 +
+ drivers/gpu/drm/bridge/aux-bridge.c           | 140 +++++++++++++++
+ drivers/gpu/drm/bridge/aux-hpd-bridge.c       | 164 ++++++++++++++++++
+ drivers/phy/qualcomm/Kconfig                  |   2 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  44 +----
+ drivers/soc/qcom/Kconfig                      |   1 +
+ drivers/soc/qcom/pmic_glink_altmode.c         |  33 +---
+ drivers/usb/typec/mux/Kconfig                 |   2 +-
+ drivers/usb/typec/mux/nb7vpq904m.c            |  44 +----
+ drivers/usb/typec/tcpm/Kconfig                |   1 +
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c |  41 +----
+ include/drm/bridge/aux-bridge.h               |  37 ++++
+ 13 files changed, 383 insertions(+), 145 deletions(-)
+ create mode 100644 drivers/gpu/drm/bridge/aux-bridge.c
+ create mode 100644 drivers/gpu/drm/bridge/aux-hpd-bridge.c
+ create mode 100644 include/drm/bridge/aux-bridge.h
+
 -- 
-2.39.2
+2.42.0
 
 
 -- 
