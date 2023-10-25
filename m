@@ -4,72 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E28F1C25B6F
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 07:56:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B008AC25B47
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 08:54:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EwCeERfAIsrh/WYsXQmECBbdr40YpCwTilMEbSzhE/0=; b=4FTZC6t+pATzco
-	W4WmPIT/4Bl/WI7YqaggNLvTQqCqM4mRxqRzY2/Es6MsugeUj+0fi8okOgC+KMF3iQMxofeytvulu
-	8EdhAGja+9hpFq6OZ1hF+uoGT/kgJruHYB6ohZoI3fqpMvWV4EqlT/d44XHBOxaSDhuheljmWrLeJ
-	NjyTx5KWQo0N5LpYGsfeT3WTu53O+yPe3nCnoaXJqSbdnwbBgANW581IEURtcbOmDSP1AMD32K6Tl
-	Z855suQ5o/4sNjjYdU1WcVtp9T8K4QrsCinG5gWQuLe3LHrCpoJlnX42cM5mSEQ7D2RCseXjmpXiz
-	VlQzpGGK/1N2OTwFatyg==;
+	List-Owner; bh=6iWroW8TI2W0b7kGyjOcOifavthQzBgzQIC6Iuav5Gg=; b=b6kOVVVNd9ys2l
+	vZuQYKlaTrjNvEi7m7k2iijJgbqu2CoFjPPxSyXh6o8UShkHi+IJyWutlmNr62FpS/itHxHArxGIl
+	Iw+NsXSZeOWcOj1Y20N1xQH6OKvsruzxKyt6vqh8kVKeoq3TfAXJn5gNOB1hj4lPmQkRaHK7iiJ58
+	Y9oHOGws+KMeWBodsRtukIgGW+thW3q2WWTM0doM9ofRIz4W16ryHELzXXjFynJlk6v0XnJjIaOc9
+	gJy2cZU9yQB79o3uzRh54LXi42ryaniYrFKQwTsGu1LJ+vGkAslTosSpRf8pWX9CAb0Eak0/F9fXx
+	d5NzH1gvuX/61kuSyF9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvYkT-00Bd0e-28;
-	Wed, 25 Oct 2023 07:56:17 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qvZei-00Bl7D-12;
+	Wed, 25 Oct 2023 08:54:24 +0000
+Received: from mail-yb1-xb33.google.com ([2607:f8b0:4864:20::b33])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvYkR-00Bd0A-0M
+	id 1qvZef-00Bl5g-38
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Oct 2023 07:56:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8C58B61DEF;
-	Wed, 25 Oct 2023 07:56:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BCD1C433C7;
-	Wed, 25 Oct 2023 07:56:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1698220574;
-	bh=x80PJnG7nAPGTsFHONjS4hVK2x0U+9CPmHqrAKYFlu4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lw+NEy2ANBY8d0WQ2OwP2YDzQtbDr6/ECzBwW+pP/rrNcZmnp4jvEZdeoHewIJhVU
-	 x6mzUQcvzIuW5eEIfUEq9NPdMbG59W0in2EjJw/4PqbgogPXdLgGCKLR3Z4EsPydQF
-	 uaiEO+tPmIw9X79doZ6koGK2nH7J4jZXt4Ge//NgSF+t1FLr8UhTym7DTmOXpdYL9o
-	 IXzHILuVbfNB5BMAVMFLI23Yg29F8OThWTE/x1JuXFGyNkYhJS7WPT9yYoNEHnU0r9
-	 /DMEkledpr6RqJdXxYH/QSuIP4Xctr8TtoNiGfzWL2MLho1Kwfv4m6i0fXHSnBL6HV
-	 c/G9TdWYZS35Q==
-Date: Wed, 25 Oct 2023 13:26:03 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Mrinmay Sarkar <quic_msarkar@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	konrad.dybcio@linaro.org, quic_shazhuss@quicinc.com,
-	quic_nitegupt@quicinc.com, quic_ramkri@quicinc.com,
-	quic_nayiluri@quicinc.com, dmitry.baryshkov@linaro.org,
-	robh@kernel.org, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com, quic_parass@quicinc.com,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 4/5] PCI: epf-mhi: Add support for SA8775P
-Message-ID: <20231025075603.GD3648@thinkpad>
-References: <1697715430-30820-1-git-send-email-quic_msarkar@quicinc.com>
- <1697715430-30820-5-git-send-email-quic_msarkar@quicinc.com>
+	Wed, 25 Oct 2023 08:54:23 +0000
+Received: by mail-yb1-xb33.google.com with SMTP id 3f1490d57ef6-d9b9adaf291so4270082276.1
+        for <linux-phy@lists.infradead.org>; Wed, 25 Oct 2023 01:54:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1698224044; x=1698828844; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=05z2jDJBCkJUaY0qwN312UAtjh1v85RzfJBH/QDD2yE=;
+        b=izVCvDAZd+2C0OcVLFNq1h/tpD5ZbGQMoifAxDSYmmIoIZDSFRlYJxeroBHec8Mlby
+         50amRph4Y2cx3xji8J2recYd1tOvrPfgQI6f2H+EaxHMNJNufvltPnW7D4I4ERTccM6K
+         78RXcat0HQ3B0YDR87eeVcJQf1QIxT/CoZKZlYS/EKw8q3VFJpj40GjMfFbIRsPFpEIK
+         PWI6iEDHv0h8e0GxVfbVdM2zH2YzdSf4RQi16/qYOIRo4bAgOHOd6EJO0ca7oP3n+90C
+         G9ASpGSKuban4eTNF2wpB4slzK/zC0XzpaUIeiK0f5P5V/CkmPuImvo84EofvvnEY3am
+         WjYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1698224044; x=1698828844;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=05z2jDJBCkJUaY0qwN312UAtjh1v85RzfJBH/QDD2yE=;
+        b=Ec1jmE2kfAY8gj6k2zfpmHNpebbTURapKwybuVATNcoUl16R4FEA/ZZWTSW5dxWhE2
+         XWO1alhUMnybpItC4GFGKLymQyaCB1RuiUa5XBCVS7OmILog5JdPe1ofNXPyFZBj4UuI
+         KBhZuKB1iG5Ln0pJ6RiekTV1bQ5tX636wvIk8DqzGoOSkfB9kz3mDJmV8TaFpMaTX3jM
+         n0drWqXZfO/UWB/8QlR9BJ5TYKiFuOfrnwS6TvP1b3mH5jBt7vfKqOZY6nYI2b53UszY
+         vwYf5LLh8XIEYX5uPUJU0WUe/aAf+CNl/PbUmHe06Amu09i6/RzOMYoHqbiScFDLZiqG
+         co6Q==
+X-Gm-Message-State: AOJu0Yxc+B37SrV38ZjHV493toI4P89d6qgsAJKZzWqXFReWiT2VBqUq
+	9twbsk2b9KWHlJkoxD2FRrd4O++JrNWi8b4sG8Mtow==
+X-Google-Smtp-Source: AGHT+IEv8Y1RRki8dQdUkHfMqNiOSNJD2LSTon4K+5zL/p6SyF33Vqj3k2iU08uur8/zm9Esfw/JJA3puyUMAXz9YYQ=
+X-Received: by 2002:a5b:74a:0:b0:da0:4dfc:57d5 with SMTP id
+ s10-20020a5b074a000000b00da04dfc57d5mr3141457ybq.9.1698224043799; Wed, 25 Oct
+ 2023 01:54:03 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1697715430-30820-5-git-send-email-quic_msarkar@quicinc.com>
+References: <20231025-topic-sm8650-upstream-phy-v1-0-6137101520c4@linaro.org> <20231025-topic-sm8650-upstream-phy-v1-6-6137101520c4@linaro.org>
+In-Reply-To: <20231025-topic-sm8650-upstream-phy-v1-6-6137101520c4@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 25 Oct 2023 11:53:52 +0300
+Message-ID: <CAA8EJpotBF5xP2UC307nQpXUfvmiH8iK729KBXsPUrf5b8rQBw@mail.gmail.com>
+Subject: Re: [PATCH 6/7] phy: qcom: qmp-pcie: add QMP PCIe PHY tables for SM8650
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231025_005615_232674_CFB340F1 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20231025_015422_011911_6C302AAA 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,44 +88,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMTksIDIwMjMgYXQgMDU6MDc6MDlQTSArMDUzMCwgTXJpbm1heSBTYXJrYXIg
-d3JvdGU6Cj4gQWRkIHN1cHBvcnQgZm9yIFF1YWxjb21tIFNuYXBkcmFnb24gU0E4Nzc1UCBTb0Mg
-dG8gdGhlIEVQRiBkcml2ZXIuCj4gU0E4Nzc1UCBoYXMgdGhlIFBJRCAoMHgwMzA2KSBhbmQgc3Vw
-cG9ydHMgSERNQS4gQ3VycmVudGx5LCBpdCBoYXMKCklzIHRoZSBQSUQgZml4ZWQ/IEkgdGhvdWdo
-dCB5b3UganVzdCB3YW50IHRvIHJldXNlIHRoZSBTRFh4eCBQSUQgaW4gdGhlCm1lYW50aW1lLgoK
-LSBNYW5pCgo+IG5vIGZpeGVkIFBDSSBjbGFzcywgc28gaXQgaXMgYmVpbmcgYWR2ZXJ0aXNlZCBh
-cyAiUENJX0NMQVNTX09USEVSUyIuCj4gCj4gU2lnbmVkLW9mZi1ieTogTXJpbm1heSBTYXJrYXIg
-PHF1aWNfbXNhcmthckBxdWljaW5jLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9wY2kvZW5kcG9pbnQv
-ZnVuY3Rpb25zL3BjaS1lcGYtbWhpLmMgfCAxNyArKysrKysrKysrKysrKysrKwo+ICAxIGZpbGUg
-Y2hhbmdlZCwgMTcgaW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9l
-bmRwb2ludC9mdW5jdGlvbnMvcGNpLWVwZi1taGkuYyBiL2RyaXZlcnMvcGNpL2VuZHBvaW50L2Z1
-bmN0aW9ucy9wY2ktZXBmLW1oaS5jCj4gaW5kZXggYjdiOWQzZS4uNDQ4NzI2MCAxMDA2NDQKPiAt
-LS0gYS9kcml2ZXJzL3BjaS9lbmRwb2ludC9mdW5jdGlvbnMvcGNpLWVwZi1taGkuYwo+ICsrKyBi
-L2RyaXZlcnMvcGNpL2VuZHBvaW50L2Z1bmN0aW9ucy9wY2ktZXBmLW1oaS5jCj4gQEAgLTExNCw2
-ICsxMTQsMjIgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBwY2lfZXBmX21oaV9lcF9pbmZvIHNtODQ1
-MF9pbmZvID0gewo+ICAJLmZsYWdzID0gTUhJX0VQRl9VU0VfRE1BLAo+ICB9Owo+ICAKPiArc3Rh
-dGljIHN0cnVjdCBwY2lfZXBmX2hlYWRlciBzYTg3NzVwX2hlYWRlciA9IHsKPiArCS52ZW5kb3Jp
-ZCA9IFBDSV9WRU5ET1JfSURfUUNPTSwKPiArCS5kZXZpY2VpZCA9IDB4MDMwNiwKPiArCS5iYXNl
-Y2xhc3NfY29kZSA9IFBDSV9DTEFTU19PVEhFUlMsCj4gKwkuaW50ZXJydXB0X3BpbiA9IFBDSV9J
-TlRFUlJVUFRfSU5UQSwKPiArfTsKPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcGNpX2VwZl9t
-aGlfZXBfaW5mbyBzYTg3NzVwX2luZm8gPSB7Cj4gKwkuY29uZmlnID0gJm1oaV92MV9jb25maWcs
-Cj4gKwkuZXBmX2hlYWRlciA9ICZzYTg3NzVwX2hlYWRlciwKPiArCS5iYXJfbnVtID0gQkFSXzAs
-Cj4gKwkuZXBmX2ZsYWdzID0gUENJX0JBU0VfQUREUkVTU19NRU1fVFlQRV8zMiwKPiArCS5tc2lf
-Y291bnQgPSAzMiwKPiArCS5tcnUgPSAweDgwMDAsCj4gK307Cj4gKwo+ICBzdHJ1Y3QgcGNpX2Vw
-Zl9taGkgewo+ICAJY29uc3Qgc3RydWN0IHBjaV9lcGNfZmVhdHVyZXMgKmVwY19mZWF0dXJlczsK
-PiAgCWNvbnN0IHN0cnVjdCBwY2lfZXBmX21oaV9lcF9pbmZvICppbmZvOwo+IEBAIC02NzcsNiAr
-NjkzLDcgQEAgc3RhdGljIGludCBwY2lfZXBmX21oaV9wcm9iZShzdHJ1Y3QgcGNpX2VwZiAqZXBm
-LAo+ICB9Cj4gIAo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IHBjaV9lcGZfZGV2aWNlX2lkIHBjaV9l
-cGZfbWhpX2lkc1tdID0gewo+ICsJeyAubmFtZSA9ICJzYTg3NzVwIiwgLmRyaXZlcl9kYXRhID0g
-KGtlcm5lbF91bG9uZ190KSZzYTg3NzVwX2luZm8gfSwKPiAgCXsgLm5hbWUgPSAic2R4NTUiLCAu
-ZHJpdmVyX2RhdGEgPSAoa2VybmVsX3Vsb25nX3QpJnNkeDU1X2luZm8gfSwKPiAgCXsgLm5hbWUg
-PSAic204NDUwIiwgLmRyaXZlcl9kYXRhID0gKGtlcm5lbF91bG9uZ190KSZzbTg0NTBfaW5mbyB9
-LAo+ICAJe30sCj4gLS0gCj4gMi43LjQKPiAKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqng
-r40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, 25 Oct 2023 at 10:45, Neil Armstrong <neil.armstrong@linaro.org> wrote:
+>
+> Add QMP PCIe PHY support for the SM8650 platform.
+>
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 65 ++++++++++++++++++++++++++++++++
+>  1 file changed, 65 insertions(+)
+
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
