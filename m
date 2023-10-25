@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02030C0032E
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 08:54:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9C1DC25B6E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Oct 2023 08:57:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7CKhlGk1gUfpcANypLWByo6GfbFvdPIjTG9CoDc4nQI=; b=UG1Zgk2sVq9ode
-	so/jur+QiptPm7/Ws2okXd+3kqHYtc0Z4NUAZgnoGikJ0QFP15FrBgQwpXrSeFdyXoT1NcLfM1Pu3
-	kCiJXTw5smMAZerrtFkI5UyBIds50M9/N6oHAikFEnaDRkHU+fdm2gmkjTLiCCSnLB/UYBOoPW+7x
-	nX9NvdFkI3MQSoE2JXDVg3RXRRLQ1HmYxRViExNfocuYAdg0ufvl3iohJIiqF8ceFjS2YAEvdeNvm
-	FBuKHDQcuacsG/k4MwtNstdtG3nYgFxUyaVRMcr5o5JtNamxwqrvV+DHi83q+XAZoQwOzPO/Mt2kP
-	FzGj0wgdZwk8ft+xbKig==;
+	List-Owner; bh=QrCRXYPwRgEEX0RllmWExma1VDkBoirEVr85Ds5n1NI=; b=bvo19x/08acBzc
+	VBQSPw1nqU2BERc8gjSC+cwjXEryfWJ68yWxnkBHau7TsCcL6yO21hf0kczJYS2QWRwhOiMRV0T/B
+	Uh8EpQYKFnLyAsS0tdCEK9WFePyiFj/EglySfVOx8za06orAOraMx2cgQRu6Y2X0NbEtZKhhv6jQQ
+	Y40z7+2W3OzwMK/U1uInyy5RgcKG1VOpObXA54PGT9d5qFYze9WuFqx5/ZTnf+f5ezXP9hUPLr8fa
+	vPYDBxuPuaWgWdlNqzhulijuLg7sJHPd2c89mNDvtBpX/midpJeAUxRzbz3w7Y0CLaTBhudKv44qt
+	CAJPzCLAbFIVvYNXbVvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvZel-00Bl7o-2L;
-	Wed, 25 Oct 2023 08:54:27 +0000
-Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
+	id 1qvZhp-00BlLn-1V;
+	Wed, 25 Oct 2023 08:57:37 +0000
+Received: from mail-ua1-x92a.google.com ([2607:f8b0:4864:20::92a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qvZej-00Bl7L-1I
+	id 1qvZhn-00BlL2-0C
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Oct 2023 08:54:26 +0000
-Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-d9c66e70ebdso4874377276.2
-        for <linux-phy@lists.infradead.org>; Wed, 25 Oct 2023 01:54:24 -0700 (PDT)
+	Wed, 25 Oct 2023 08:57:36 +0000
+Received: by mail-ua1-x92a.google.com with SMTP id a1e0cc1a2514c-7b9b2ba34d3so513170241.3
+        for <linux-phy@lists.infradead.org>; Wed, 25 Oct 2023 01:57:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698224064; x=1698828864; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1698224252; x=1698829052; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=QecDQjqHLVvpHg006tlf1j+vCUfglYL3ZKJX8YIByeY=;
-        b=y/3hD5htT7A7N1UJzujLf4tLE6FZOnZzCoC71voZmJFEANsBVvF82Aobc++uNFytXx
-         SFjHdl/paFKAQeAZhoNRLLLxUzeOo9ZrxSD4QGKmcu36ChucOefjoBZKDYwdxcJXosFu
-         DnsVK5+Scoyp3TbcpZNu8iFIZhYY7vSU8RGw5Uv4gDodCKqkB5jmESQFuvc0X8w+gD8H
-         lxg8/q3AHwXFFL12UXWSvf99aFYqkK6bUyMcjzmlzXlZtw8unFEOi7trBef2fflZ4o3S
-         W/VNt5AwQPEBMEQbf4a4hCqrleqPzHlkX8NElLggIZgHP1Z1Ht26+ZyVUTk0i2Cw9bnh
-         QU4A==
+        bh=7NldaKyDc0l1BbJHjiT+K+qAycYibl9MYvEsSpwfuMU=;
+        b=alzNarzQiXcCd9zOt1B6nqDl2kqOju4nqbMS1FX8TKsMepExrs35hyZgsrI3/ZXR3n
+         0JM6Pz/skFCdvHdMnnWNLrUtn/g2YfrwuiP9NGc/TTYpm7xLxQNsSoe09SK5wR1qg9TN
+         uzZ11z90U/Fj+ooNdYPXA8vZ5tanMC334gkBbkQ17F6xXXakgTsZ2ikSSYtFnWWlzm1p
+         lzzAbguq3OfgQkNgtt+yTQ9C1VfBHfaK8coTPAw0hKourI/BW9qjhqNiHiHVvrWpBDy9
+         LIK4rlPcgTqsD0ghJFGzqnQngFz2cd0ghYpnBvPK78Xlu4IJpAdjJbezBVkhCS02V5JQ
+         SFuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698224064; x=1698828864;
+        d=1e100.net; s=20230601; t=1698224252; x=1698829052;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=QecDQjqHLVvpHg006tlf1j+vCUfglYL3ZKJX8YIByeY=;
-        b=sr3LoUfN+7kD8Y+S87z0s2VxGLPI6e7pwEBWVPRJA7UddFe1jaGplRJQzHx1rI4/WW
-         N/QQSrMfPPwr2JdDlVKh/lgDxytYC2SDZ8tdmKcYwgxCa4U6AoWTWW4ha+1a878ymg0Z
-         g4V3P6Zo3nYSmmIqAN3zWkQpZBDlRpVj76720YFaJseymL3rwzQry/nkoBYSD3uTbL9n
-         pFSGQ1Miu9AUN1q0+6C9rH6aaI8dIcbqNir+wxVHTCZjBH/1DXdF0IHeUFTQw3UFVqSz
-         PZu/QsYrezJ9FF2m9iL0pUqXx/IoRouX7Fagd3CWqHibxthj1n3GFCBQyiKf45DC2vS+
-         QrqQ==
-X-Gm-Message-State: AOJu0YweaaEkYif7ybwdzpFivXMw2McicYCiudMepLHCi0nxmsYWoodZ
-	FmiSVHoXt/laBS85xGnPVK/boLNtyG8J1e0hbl3t3Q==
-X-Google-Smtp-Source: AGHT+IH3K4Q7pknM1I5B7pKsXdsaVUiTIYG6c6iSatv1EUWsCGs8m2b6Zpy65Pq+Q7ybNggFu3TV5l/LRdXBlTF0Kh8=
-X-Received: by 2002:a25:cecd:0:b0:da0:4201:6365 with SMTP id
- x196-20020a25cecd000000b00da042016365mr4494885ybe.3.1698224064152; Wed, 25
- Oct 2023 01:54:24 -0700 (PDT)
+        bh=7NldaKyDc0l1BbJHjiT+K+qAycYibl9MYvEsSpwfuMU=;
+        b=jxEcJ1ZEFsCT1ml2juloBTI2Ju1rubK4RKFLBHCiLlOGrsBaWKFqDvkRTSVkRITDol
+         5RLFFnkvhAFyXZiehsI8zASaADuSlINcKj7vwfB8/oI92Sb2Ce89oUR9U6c0pMpqzrld
+         T5W7BIpbyLoUQxDclGHqyR2WmYBAwwhAUWjVPyBj/1PBzigrCygq9puROVtnsuqgCxq+
+         5MSbltavClaoqK3Bb4+jcd1C6aC3Cz7hk0rRS6EUr9gA6Z9LaLk7241xzk6j+zu0C87S
+         kcw3L7VIf7FFTVgmCDH3pSVIfwPBtOxkB93taDJ5iL+g62wsqJWXoiDBw1bN0ETu+NBu
+         GRdQ==
+X-Gm-Message-State: AOJu0YzqZTZY8DOQ/7fZf1UzrJgmDKhTqNGKD6ffY6GxO/ttgSMmQEoH
+	qfGqRDexCPfJuK9sgTdn8k03TokcrXOCvRk4Mqam0w==
+X-Google-Smtp-Source: AGHT+IGhheo8Q9Df6KgUGR4PorlbsZsMr3I2+FSZpwFZ03w3W5uEdV5Ej71blcICjUAikq6NvJLTs/3FHZXoJH1v/m8=
+X-Received: by 2002:a67:c313:0:b0:457:66e0:2c6a with SMTP id
+ r19-20020a67c313000000b0045766e02c6amr14079783vsj.14.1698224252025; Wed, 25
+ Oct 2023 01:57:32 -0700 (PDT)
 MIME-Version: 1.0
-References: <20231025-topic-sm8650-upstream-phy-v1-0-6137101520c4@linaro.org> <20231025-topic-sm8650-upstream-phy-v1-7-6137101520c4@linaro.org>
-In-Reply-To: <20231025-topic-sm8650-upstream-phy-v1-7-6137101520c4@linaro.org>
+References: <20231025-topic-sm8650-upstream-phy-v1-0-6137101520c4@linaro.org> <20231025-topic-sm8650-upstream-phy-v1-5-6137101520c4@linaro.org>
+In-Reply-To: <20231025-topic-sm8650-upstream-phy-v1-5-6137101520c4@linaro.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 25 Oct 2023 11:54:13 +0300
-Message-ID: <CAA8EJpr4zLPZrTbtPEuTTtRZy2NuCS-=vMeC7K8TLTJnKEf4ZQ@mail.gmail.com>
-Subject: Re: [PATCH 7/7] phy: qcom: qmp-combo: add QMP USB3/DP PHY tables for SM8650
+Date: Wed, 25 Oct 2023 11:57:20 +0300
+Message-ID: <CAA8EJpoxdVNvwbEyVVF65FWVQZwydXvePCTmurF_6G9taQRJfg@mail.gmail.com>
+Subject: Re: [PATCH 5/7] phy: qcom: qmp-ufs: add QMP UFS PHY tables for SM8650
 To: Neil Armstrong <neil.armstrong@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
 	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
@@ -74,8 +74,8 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231025_015425_438186_73321CEB 
-X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-CacheID: sfid-20231025_015735_104991_D3F29453 
+X-CRM114-Status: UNSURE (   8.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,12 +95,14 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Wed, 25 Oct 2023 at 10:46, Neil Armstrong <neil.armstrong@linaro.org> wrote:
 >
-> Add QMP USB3/DP Combo PHY support for the SM8650 platform.
+> Add QMP UFS PHY support for the SM8650 platform.
 >
 > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++++
->  1 file changed, 4 insertions(+)
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h     |  1 +
+>  .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  7 ++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 86 ++++++++++++++++++++++
+>  3 files changed, 94 insertions(+)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
