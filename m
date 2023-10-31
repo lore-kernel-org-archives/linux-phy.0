@@ -4,123 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBB7CC4167B
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 11:17:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E6FC4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 13:28:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MG/AOB9S0+DMzoy+IUqg/sAAdqxdpIsVlCAXChUAgT0=; b=sfzQQDUwC8VydT
-	Jx2VkWjuqTJ/2XZ0lEcK0ZstB+0iogA97tpcn0YCcYATs0O+f/1mnLofDMlnWkN9WS8dwnkbF63V5
-	mm6SVOVNIWuojkDYxmCwrIo/9JxXlNAIMR1EnyD0i0QfzbHvn/Xn9RpjNLGNExCq0OwfTIQjOolfr
-	K941zz3md1MMA8dEjhuc0yae2RWI3KA2MDqSRUomqjGkp1y98E4IkvP06WErio4HIvc67Gbt1zW5F
-	3o1VTuaAuqkUAUOwQj7FxSExpVLUUs9Bfq9Q/7Fwa3RqU+wQbTfq8uYSuYABH00QoC80nBF9hqU3a
-	9+Xi1++c6Wkko4XY+1Hg==;
+	List-Owner; bh=HClCsFzcrU7Ue1jDJixjJ3JMbe0b2WGrxHY1iFI8XL0=; b=Vta/umGKcsWIiz
+	ILnuldVY9ObQ3XbNtTNDZm9aUwk8qFlLLvBjOmniQYEwQDQT2vKD+XNjaL5I4ySBHqlQtxbLqXf1H
+	e0IuKsCgAif00dSBzteMvBVpFMGPysf2/5VObRKOehBsolgrz/9BN6hvzD+ewLCJEavPItvGfzXLR
+	pxAb3QQ3Jw8hOWuXJGXlTw9c9Vo4Y+gJZ44CdkMRnO9nqadu1W11AIZECCY+ZgL5Uud1Lwq6XZFVB
+	Q1d0nuGo2ZMYiXGwkFlKKL4ptOM3xNs2gA+EWX+wYxqH28/khkkhPrxRskkszfqmFVWlRrD9I17AE
+	0t9sfBMKv78/TPaTAkOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxmkc-0059Kj-2E;
-	Tue, 31 Oct 2023 11:17:38 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1qxonQ-005LSb-12;
+	Tue, 31 Oct 2023 13:28:40 +0000
+Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxmka-0059JH-1k
+	id 1qxonM-005LRY-1Q
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Oct 2023 11:17:37 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-50797cf5b69so7648039e87.2
-        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 04:17:34 -0700 (PDT)
+	Tue, 31 Oct 2023 13:28:37 +0000
+Received: by mail-yb1-xb2f.google.com with SMTP id 3f1490d57ef6-d9caf5cc948so5106987276.0
+        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 06:28:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698751053; x=1699355853; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=PbO/SJMgbSYC0KZVuF9ouObuyktOrD1BDzymUqZmreY=;
-        b=KH/YVLsAbDwqpEyqNy+QwvRNa4syta4wV8XvVnl08sdain8aEQcFngP+oi/+coYHQ0
-         LJ1KYfBpdxpSEKRlGHFpDUtEemHGzc5q+J6JHWxJap6q2LpGHI6qK1RqX80NFQdOAaXH
-         LRDHmk0pXL3pg/K2BvGNV4x7fhueZijFapwmg+gZ/3WehYIgs4upO83Nk7JTcqwqx5OX
-         qquP8/f5TYGsoiGo/UDr8XKzJYPKjjTiPvjwvOkok4V3CxeFGrELGkPHTdQwbbDlLl/o
-         CzLCBP4gD5bFXuZOhyhgAgMdNhQTz5WwNiVr2hfd5LnYt+NMihHu6IW3PC7asrnDNM0q
-         sgKQ==
+        d=linaro.org; s=google; t=1698758913; x=1699363713; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Vkk8ZCgsYoi/AnkxKAKmjXFYbNerVSNaR8gjvx3gGLI=;
+        b=zdA8PUiA3C5Y5o190UYOWlkKFM1/4imYviN+yjc9d4TppLXcdPlMtjJfCd3qZBM9kR
+         4jUPqc/0qMSVsE8jLFyaV96qc6rO7epbH0oRJMCwEElKUtMpNOhs2xMUceoBm5GqmE0w
+         VwhGICrUFl3b/2KE73eP837K2lQLnKXhKtbMwJf3NpmQLc8Anc/UhX5NFAbbiHo/zuin
+         3YZkybxS+6EBfI5uHgiokrtvYFnDKfOIPoA9F2gMQlqakLB+SKgC3tt2ahWTKp/suUFn
+         zUo9MCsc9ZOq7r0G1ZoU4G2ECQDvVUqfe9XGAzyqX/j5eP3cgN6eSwg7lQOrxpqfmkcu
+         GprA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698751053; x=1699355853;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PbO/SJMgbSYC0KZVuF9ouObuyktOrD1BDzymUqZmreY=;
-        b=qtf/g3XE4ntCiTl3xBQ3ijDx+nqulhQxTSQEHpBn4FCt0TXgPRZDGxqoMf1FKoJCBa
-         Colm5vj5S+wio/Pia1xsSaDyHJJNZ8xLZZThgOHbZkaKe15odFW/iA671HH8fVPw1EQd
-         Djs9mZoTE56G3jHZMagOuqdaR0eea5w5VDKAUTyYU7seIIL+JWMLc4+fskfmuilK1P/7
-         pLlsFnkmAHGNawgdekJyzQc0ir7vd6KC5dPHhDiHzRxQhqUndOQ3W2isr/gdmEUDB6hG
-         zkndyGNSwxMv6Ze+dcJteD58UmbN33v082EKUrFcKNNQzNAaNJUds7fKbzgaPKardZnT
-         wSdw==
-X-Gm-Message-State: AOJu0YxeYvmQ6SQjQmYQpc8bnyRfswrl15bw5jEJ8dbDVKuWrCxrdQC3
-	DPC4l5d2Uv4KoxwtKhf/cZaBag==
-X-Google-Smtp-Source: AGHT+IHXNYRv2AT3XhUelDzTPoBiXNz1tD5ww21sCa6PrACDWAigV2GQEcBbj5XtsasA4AssPAthiA==
-X-Received: by 2002:a05:6512:709:b0:500:ac0b:8d58 with SMTP id b9-20020a056512070900b00500ac0b8d58mr9124924lfs.18.1698751052006;
-        Tue, 31 Oct 2023 04:17:32 -0700 (PDT)
-Received: from [192.168.143.96] (178235177091.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.91])
-        by smtp.gmail.com with ESMTPSA id g20-20020a056512119400b0050318bdad45sm181224lfr.64.2023.10.31.04.17.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 31 Oct 2023 04:17:31 -0700 (PDT)
-Message-ID: <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
-Date: Tue, 31 Oct 2023 12:17:30 +0100
+        d=1e100.net; s=20230601; t=1698758913; x=1699363713;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Vkk8ZCgsYoi/AnkxKAKmjXFYbNerVSNaR8gjvx3gGLI=;
+        b=gmtcy2QApy0TsW290kc06fTqxT2U6A839wMhLSYAyMpLLQ2SswPlioceX0TH/gCdyo
+         9k6R3/tbv7mCbPDPWxD2lEfV6a2ImitC6REo2K0Rsd+FwGr+m+Ztjn1N8cKmECzUc9pp
+         AVpChLFGxOEKfvNkJiNo8loLA9Zj9/O0YkacxKIOJdhGaUS+P6NB7ITJXMawFWZBcM8V
+         +FGZw10GY4p68hTWCeu9+YwWHIpkHee+Nk/VgWAc6sn8V8ZTRxbOsuEjo5dyUS0oLHIW
+         PIaVGtFAS/mK89EupsWci749y7IjWeALIh4noo3FAlN1Edwh8JYaiOUSFtM/aBaKU/pd
+         xVnA==
+X-Gm-Message-State: AOJu0Yw7mM0+vraYpCXtdxxorxZmcLqEk1VQvB/irdTjSaVYHntGQgRj
+	rxkxfxIXWFoTaQRFLd3WCQ3OFAgNlitYPNSPRl3P6A==
+X-Google-Smtp-Source: AGHT+IFxGRQfCveVDXVJVYYAtbgwY6/eAygWWpBIQ5S0HJJ6v7iBgo2Jge7ptyq+gUT1DXQGHLc/CMOxuUr+u443Pmg=
+X-Received: by 2002:a25:c541:0:b0:d9a:5ff4:cfde with SMTP id
+ v62-20020a25c541000000b00d9a5ff4cfdemr11842307ybe.13.1698758913054; Tue, 31
+ Oct 2023 06:28:33 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 07/15] phy: qualcomm: add MSM8x60 HDMI PHY support
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Marijn Suijten <marijn.suijten@somainline.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd
- <swboyd@chromium.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Bjorn Andersson <andersson@kernel.org>,
- linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org
 References: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
- <20230928111630.1217419-8-dmitry.baryshkov@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20230928111630.1217419-8-dmitry.baryshkov@linaro.org>
+ <20230928111630.1217419-8-dmitry.baryshkov@linaro.org> <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
+In-Reply-To: <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 31 Oct 2023 15:28:21 +0200
+Message-ID: <CAA8EJpqbMT3+53NndkjvJ67KvURYsbwD6yfT4v6KowsiYdOR8g@mail.gmail.com>
+Subject: Re: [PATCH v3 07/15] phy: qualcomm: add MSM8x60 HDMI PHY support
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>, 
+	Abhinav Kumar <quic_abhinavk@quicinc.com>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd <swboyd@chromium.org>, 
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231031_041736_581133_865CE9CC 
-X-CRM114-Status: UNSURE (   7.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231031_062836_479905_3EB1D880 
+X-CRM114-Status: GOOD (  10.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,14 +94,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28.09.2023 13:16, Dmitry Baryshkov wrote:
-> Add support for HDMI PHY on Qualcomm MSM8x60 / APQ8060 platforms.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
-Do you have the PLL working locally? Would it make sense to ship them both?
+On Tue, 31 Oct 2023 at 13:17, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
+>
+> On 28.09.2023 13:16, Dmitry Baryshkov wrote:
+> > Add support for HDMI PHY on Qualcomm MSM8x60 / APQ8060 platforms.
+> >
+> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > ---
+> Do you have the PLL working locally? Would it make sense to ship them both?
 
-Konrad
+I do not have APQ8060 / MSM8x60 platforms, so I can either c&p the
+existing code or I can drop it completely.
+
+If anybody is willing to donate and/or lend APQ8060 or
+MSM8260/MSM8660, we can probably fix that.
+Requirements:
+ - HDMI output
+ - UART available
+ - fastboot or network support in the bootloader
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
