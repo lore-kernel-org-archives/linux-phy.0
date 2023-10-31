@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80B84C4167D
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 11:16:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBB7CC4167B
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 11:17:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qsQQ+X2MKxutzYxI+zRO+dbzSnv8fy0YZOBqJFjrIfE=; b=gWVzQJhTQglbg6
-	vB9RomBGhQrzYDJ1ysBbwzJrg/6IIwnPU7D/rfNqfuEYEpP0XCvFvu6DxLguuE7ZelEak0Ub0Hd7i
-	vwpcuDHrAx6M7cVwDY8sd/BK3J/AppdtHai6f1Dld8l575AIxPHCLuLOSSVtvLX21Vd/C0MYvYXuz
-	T5J0CCTJiDayr8BNWKqFXpB6nWdfIHgOw/do9TfxGx0tyPbmhFo6ixbTWq6I4DprwX0a0qX6Yo3Rl
-	2oOVasDfiaEwsng2P9JU4BGpZqCte3yKNDwxw34552bDs6noN9jdo1hNTy/vvtHDaerdbbte49PIC
-	Chd8ZfqUwLOwVSqg0KDw==;
+	List-Owner; bh=MG/AOB9S0+DMzoy+IUqg/sAAdqxdpIsVlCAXChUAgT0=; b=sfzQQDUwC8VydT
+	Jx2VkWjuqTJ/2XZ0lEcK0ZstB+0iogA97tpcn0YCcYATs0O+f/1mnLofDMlnWkN9WS8dwnkbF63V5
+	mm6SVOVNIWuojkDYxmCwrIo/9JxXlNAIMR1EnyD0i0QfzbHvn/Xn9RpjNLGNExCq0OwfTIQjOolfr
+	K941zz3md1MMA8dEjhuc0yae2RWI3KA2MDqSRUomqjGkp1y98E4IkvP06WErio4HIvc67Gbt1zW5F
+	3o1VTuaAuqkUAUOwQj7FxSExpVLUUs9Bfq9Q/7Fwa3RqU+wQbTfq8uYSuYABH00QoC80nBF9hqU3a
+	9+Xi1++c6Wkko4XY+1Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxmjG-0059CM-0k;
-	Tue, 31 Oct 2023 11:16:14 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1qxmkc-0059Kj-2E;
+	Tue, 31 Oct 2023 11:17:38 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxmjC-0059Bs-03
+	id 1qxmka-0059JH-1k
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Oct 2023 11:16:11 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-50931355d48so1006580e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 04:16:07 -0700 (PDT)
+	Tue, 31 Oct 2023 11:17:37 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-50797cf5b69so7648039e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 04:17:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698750965; x=1699355765; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1698751053; x=1699355853; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=hJu2yLllJ94MBomatNabmyNQ4Uloi0vS+isN5mDPCt0=;
-        b=JzZJdw7eqQg8MbsDPpk2IIUX5QLKz3so337upIj3fPcjFpreM6tUkkf9uCcJCCtZu4
-         QuSiBXLg1jyDtZi5B7HYpbqiJ7Ok6Y+QwfLYzHhAdqZtpQlVX90w6Rb3gZX75Xj0k+ua
-         eQFPpMUBmcq8SG9aWUlghvNVLdUSm0gnoQpLkTU5m9e8Geg15sy4fmDsPeU6KWU+B39j
-         vu/5Zrq25LI2vrP6a+YF6HuURaRqbBj8N5VVfIUs3w4OvuDnbunD5JPXPY36XyUPLtq6
-         VKdW65LKJXfrMx6vBWoxFOujf6pDLG98Pbsb8VW+IP3FdNTxKXnjFrqu/LGbR+CAfRw9
-         LAzg==
+        bh=PbO/SJMgbSYC0KZVuF9ouObuyktOrD1BDzymUqZmreY=;
+        b=KH/YVLsAbDwqpEyqNy+QwvRNa4syta4wV8XvVnl08sdain8aEQcFngP+oi/+coYHQ0
+         LJ1KYfBpdxpSEKRlGHFpDUtEemHGzc5q+J6JHWxJap6q2LpGHI6qK1RqX80NFQdOAaXH
+         LRDHmk0pXL3pg/K2BvGNV4x7fhueZijFapwmg+gZ/3WehYIgs4upO83Nk7JTcqwqx5OX
+         qquP8/f5TYGsoiGo/UDr8XKzJYPKjjTiPvjwvOkok4V3CxeFGrELGkPHTdQwbbDlLl/o
+         CzLCBP4gD5bFXuZOhyhgAgMdNhQTz5WwNiVr2hfd5LnYt+NMihHu6IW3PC7asrnDNM0q
+         sgKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698750965; x=1699355765;
+        d=1e100.net; s=20230601; t=1698751053; x=1699355853;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=hJu2yLllJ94MBomatNabmyNQ4Uloi0vS+isN5mDPCt0=;
-        b=rKCKJKpEh/Y2PzPRa2a86YX5Jn0wBOHri0ZkFWb/CuZu6zgWFl2U1RplFJim+DA8Gt
-         um2OvrICXALpyWMx2S4QbzgcvuEPciu2pMZSkegEZEAuxfg6O1jcXRB1xHD/gHiAbsQU
-         js2WzcwUOre1yGkdpvT3M5g2f0CwkjVHQyJzPcSWMZF4YScO1NQPczeiPZt8+55Cio41
-         JQa/ECmPigdHmDXqcKrPWIR1CzTwg1Mt7y3XzKIfogWplolpb1s360Q4j1RQkpvfrAcF
-         3IECqknIVT7zvdWXAJ6+AvkNdKcLV4d1ejM/aTa2HOOV/cHUV9kakfz53dUBKx58O0UZ
-         tpnw==
-X-Gm-Message-State: AOJu0YyCyZt08Yb8umDj/g4zKkdgYto9hL+os38TTlL8ItZ2uKMKzIK8
-	Tn3nWDTofwEUSr1BHXRr8TkYEw==
-X-Google-Smtp-Source: AGHT+IHxZpOgWXPogwfe9mGa8MdZqaC12TgzQiZMNeuhq/Y1ScximNnSKTqRhS/LRgGekXZxobp+yA==
-X-Received: by 2002:a05:6512:370c:b0:503:1c58:8a46 with SMTP id z12-20020a056512370c00b005031c588a46mr8812041lfr.9.1698750965529;
-        Tue, 31 Oct 2023 04:16:05 -0700 (PDT)
+        bh=PbO/SJMgbSYC0KZVuF9ouObuyktOrD1BDzymUqZmreY=;
+        b=qtf/g3XE4ntCiTl3xBQ3ijDx+nqulhQxTSQEHpBn4FCt0TXgPRZDGxqoMf1FKoJCBa
+         Colm5vj5S+wio/Pia1xsSaDyHJJNZ8xLZZThgOHbZkaKe15odFW/iA671HH8fVPw1EQd
+         Djs9mZoTE56G3jHZMagOuqdaR0eea5w5VDKAUTyYU7seIIL+JWMLc4+fskfmuilK1P/7
+         pLlsFnkmAHGNawgdekJyzQc0ir7vd6KC5dPHhDiHzRxQhqUndOQ3W2isr/gdmEUDB6hG
+         zkndyGNSwxMv6Ze+dcJteD58UmbN33v082EKUrFcKNNQzNAaNJUds7fKbzgaPKardZnT
+         wSdw==
+X-Gm-Message-State: AOJu0YxeYvmQ6SQjQmYQpc8bnyRfswrl15bw5jEJ8dbDVKuWrCxrdQC3
+	DPC4l5d2Uv4KoxwtKhf/cZaBag==
+X-Google-Smtp-Source: AGHT+IHXNYRv2AT3XhUelDzTPoBiXNz1tD5ww21sCa6PrACDWAigV2GQEcBbj5XtsasA4AssPAthiA==
+X-Received: by 2002:a05:6512:709:b0:500:ac0b:8d58 with SMTP id b9-20020a056512070900b00500ac0b8d58mr9124924lfs.18.1698751052006;
+        Tue, 31 Oct 2023 04:17:32 -0700 (PDT)
 Received: from [192.168.143.96] (178235177091.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.91])
-        by smtp.gmail.com with ESMTPSA id g20-20020a056512119400b0050318bdad45sm181224lfr.64.2023.10.31.04.16.03
+        by smtp.gmail.com with ESMTPSA id g20-20020a056512119400b0050318bdad45sm181224lfr.64.2023.10.31.04.17.30
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 31 Oct 2023 04:16:05 -0700 (PDT)
-Message-ID: <2202b6e6-afe0-4bce-bdb5-43a7c5c4162f@linaro.org>
-Date: Tue, 31 Oct 2023 12:16:02 +0100
+        Tue, 31 Oct 2023 04:17:31 -0700 (PDT)
+Message-ID: <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
+Date: Tue, 31 Oct 2023 12:17:30 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 06/15] phy: qualcomm: add MSM8974 HDMI PHY support
+Subject: Re: [PATCH v3 07/15] phy: qualcomm: add MSM8x60 HDMI PHY support
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
@@ -79,7 +79,7 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd
  linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org
 References: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
- <20230928111630.1217419-7-dmitry.baryshkov@linaro.org>
+ <20230928111630.1217419-8-dmitry.baryshkov@linaro.org>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -116,10 +116,11 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20230928111630.1217419-7-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20230928111630.1217419-8-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231031_041610_082409_D4545AC7 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20231031_041736_581133_865CE9CC 
+X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,154 +138,11 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 28.09.2023 13:16, Dmitry Baryshkov wrote:
-> Add support for HDMI PHY on Qualcomm MSM8974 / APQ8074 platforms.
+> Add support for HDMI PHY on Qualcomm MSM8x60 / APQ8060 platforms.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
-I only have a few style comments (and timers-howto.txt fixes)
-
-[...]
-
-> +#define HDMI_8974_VCO_MAX_FREQ 1800000000UL
-> +#define HDMI_8974_VCO_MIN_FREQ  600000000UL
-> +
-> +#define HDMI_8974_COMMON_DIV 5
-> +
-> +static void qcom_uniphy_setup(void __iomem *base, unsigned int ref_freq,
-> +			      bool sdm_mode,
-> +			      bool ref_freq_mult_2,
-> +			      bool dither,
-> +			      unsigned int refclk_div,
-> +			      unsigned int vco_freq)
-> +{
-> +	unsigned int int_ref_freq = ref_freq * (ref_freq_mult_2 ? 2 : 1);
-> +	unsigned int div_in_freq = vco_freq / refclk_div;
-> +	unsigned int dc_offset = div_in_freq / int_ref_freq - 1;
-> +	unsigned int sdm_freq_seed;
-> +	unsigned int val;
-> +	unsigned int remain = div_in_freq - (dc_offset + 1) * int_ref_freq;
-> +	sdm_freq_seed = mult_frac(remain, 0x10000, int_ref_freq);
-> +
-> +	val = (ref_freq_mult_2 ? BIT(0) : 0) |
-> +		((refclk_div - 1) << 2);
-> +	writel(val, base + UNIPHY_PLL_REFCLK_CFG);
-> +
-> +	writel(sdm_mode ? 0 : 0x40 + dc_offset, base + UNIPHY_PLL_SDM_CFG0);
-> +
-> +	writel(dither ? 0x40 + dc_offset: 0, base + UNIPHY_PLL_SDM_CFG1);
-> +
-> +	writel(sdm_freq_seed & 0xff, base + UNIPHY_PLL_SDM_CFG2);
-The ternary operator doesn't really improve readability here, imo
-
-> +
-> +	writel((sdm_freq_seed >> 8) & 0xff, base + UNIPHY_PLL_SDM_CFG3);
-> +
-> +	writel(sdm_freq_seed >> 16, base + UNIPHY_PLL_SDM_CFG4);
-> +
-> +	ref_freq = ref_freq * 5 / 1000;
-> +	writel(ref_freq & 0xff, base + UNIPHY_PLL_CAL_CFG8);
-> +
-> +	writel(ref_freq >> 8, base + UNIPHY_PLL_CAL_CFG9);
-> +
-> +	vco_freq /= 1000;
-> +	writel(vco_freq & 0xff, base + UNIPHY_PLL_CAL_CFG10);
-> +
-> +	writel(vco_freq >> 8, base + UNIPHY_PLL_CAL_CFG11);
-> +}
-> +
-> +static unsigned long qcom_uniphy_recalc(void __iomem *base, unsigned long parent_rate)
-> +{
-> +	unsigned long rate;
-> +	u32 refclk_cfg;
-> +	u32 dc_offset;
-> +	u64 fraq_n;
-> +	u32 val;
-> +
-> +	refclk_cfg = readl(base + UNIPHY_PLL_REFCLK_CFG);
-> +	if (refclk_cfg & BIT(0))
-Can we name this bit?
-
-> +		parent_rate *= 2;
-> +
-> +	val = readl(base + UNIPHY_PLL_SDM_CFG0);
-> +	if (val & 0x40) {
-BIT(6)? can we name it?
-
-> +		dc_offset = val & 0x3f;
-GENMASK?
-
-> +		fraq_n = 0;
-> +	} else {
-> +		dc_offset = readl(base + UNIPHY_PLL_SDM_CFG1) & 0x3f;
-GENMASK?
-> +		fraq_n = readl(base + UNIPHY_PLL_SDM_CFG2) |
-> +			(readl(base + UNIPHY_PLL_SDM_CFG3) << 8);
-FIELD_PREP?
-
-> +	}
-> +
-> +	rate = (dc_offset + 1) * parent_rate;
-> +	rate += mult_frac(fraq_n, parent_rate, 0x10000);
-> +
-> +	rate *= (refclk_cfg >> 2) * 0x3 + 1;
-3 would be more clear than 0x3 imo
-
-[...]
-> +	udelay(50);
-usleep_range
-
-[...]
-
-> +	udelay(200);
-usleep_range
-
-> +
-> +	return 0;
-> +}
-> +
-> +static int qcom_hdmi_msm8974_phy_pll_enable(struct qcom_hdmi_preqmp_phy *hdmi_phy)
-> +{
-> +	int ret;
-> +	unsigned long status;
-> +
-> +	/* Global enable */
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8x74_GLB_CFG, 0x81);
-> +
-> +	/* Power up power gen */
-> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8x74_PD_CTRL0, 0x00);
-> +	udelay(350);
-usleep_range
-
-> +
-> +	/* PLL power up */
-> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x01);
-> +	udelay(5);
-> +
-> +	/* Power up PLL LDO */
-> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x03);
-> +	udelay(350);
-usleep_range
-
-> +
-> +	/* PLL power up */
-> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x0f);
-> +	udelay(350);
-usleep_range
-
-> +
-> +	/* Poll for PLL ready status */
-> +	ret = readl_poll_timeout(hdmi_phy->pll_reg + UNIPHY_PLL_STATUS,
-> +				 status, status & BIT(0),
-magic bit name?
-
-> +				 100, 2000);
-> +	if (ret) {
-> +		dev_warn(hdmi_phy->dev, "HDMI PLL not ready\n");
-> +		goto err;
-> +	}
-> +
-> +	udelay(350);
-usleep_range
+Do you have the PLL working locally? Would it make sense to ship them both?
 
 Konrad
 
