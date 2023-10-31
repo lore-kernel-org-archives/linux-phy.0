@@ -4,132 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DB7DC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Oct 2023 17:30:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80B84C4167D
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 11:16:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZCaG2TSeXhpiQzOH+g73FgqwwWvkshqOHB5IIV+cDm8=; b=x/rCbPTerQkrYc
-	AiiDLAP+0hHxkuNHZHBceTfF49Qg+zyN3x+PVkaSRXDCyiJ8Dvx9HNximoTBpVJqMTaWMjjjw0sy/
-	mkyUuwRt7GDHl3YDTBYQb0WWuo0Gi6DJiTppIGR5BIGWAuxHTHGQh3NGfhcq7NE2UtkDlorJwM0qH
-	WiKOuPS/uSLUjFUacl03KKXiiEkgesE+M6iEQzDfwcZrYk3xL/xRt/xaewdLzVDk73xHjV6OZH+vq
-	/5v27rbSV/stplBYjmWx1OdoAoRHfqw9vh89BJK5OFa15REnQgUJqqWKjY5+57ggWIlC8RBwMOxf9
-	YNyNnBda8SkEnUMAXNSw==;
+	List-Owner; bh=qsQQ+X2MKxutzYxI+zRO+dbzSnv8fy0YZOBqJFjrIfE=; b=gWVzQJhTQglbg6
+	vB9RomBGhQrzYDJ1ysBbwzJrg/6IIwnPU7D/rfNqfuEYEpP0XCvFvu6DxLguuE7ZelEak0Ub0Hd7i
+	vwpcuDHrAx6M7cVwDY8sd/BK3J/AppdtHai6f1Dld8l575AIxPHCLuLOSSVtvLX21Vd/C0MYvYXuz
+	T5J0CCTJiDayr8BNWKqFXpB6nWdfIHgOw/do9TfxGx0tyPbmhFo6ixbTWq6I4DprwX0a0qX6Yo3Rl
+	2oOVasDfiaEwsng2P9JU4BGpZqCte3yKNDwxw34552bDs6noN9jdo1hNTy/vvtHDaerdbbte49PIC
+	Chd8ZfqUwLOwVSqg0KDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxW5r-003lDm-2i;
-	Mon, 30 Oct 2023 17:30:27 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1qxmjG-0059CM-0k;
+	Tue, 31 Oct 2023 11:16:14 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxW5o-003lDT-2V
+	id 1qxmjC-0059Bs-03
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Oct 2023 17:30:25 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-5431614d90eso2395835a12.1
-        for <linux-phy@lists.infradead.org>; Mon, 30 Oct 2023 10:30:24 -0700 (PDT)
+	Tue, 31 Oct 2023 11:16:11 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-50931355d48so1006580e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 04:16:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698687023; x=1699291823; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1698750965; x=1699355765; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ziePZG2kxDJdeziFjAvPtRBnX63hYXtCniclQtp/sTw=;
-        b=iNzWSRILXzJythnZvvaazf8cLnTy24AkZIuolBwIJ/pm8c0nIp6FBxeB5e8RvpbyTz
-         5lYPopVznch/lKeSX2hf0oxjvMkidNxVDzkG5X1n4mPfdMjL7pxB32ZrNA1829HUcXey
-         CvtDPf+J0qjZEOF395TNZHUSq0c8CB7KqGTAcLFgFOCHqfyQITDG20FEsMMs3r+Ek8QX
-         Gt044QUy5dqdhv9aAeRZh6dErvI1ZqXHAuB2lpEbBG/lgnoItrmHKjtTxgITcFGXs99E
-         yY3dkrdKRMm8ijCVxaCpocXbX86FHbIhcIRF0fBifEgiPvS+uZ5/Xe/5C3Twwuc9lOoB
-         hhrA==
+        bh=hJu2yLllJ94MBomatNabmyNQ4Uloi0vS+isN5mDPCt0=;
+        b=JzZJdw7eqQg8MbsDPpk2IIUX5QLKz3so337upIj3fPcjFpreM6tUkkf9uCcJCCtZu4
+         QuSiBXLg1jyDtZi5B7HYpbqiJ7Ok6Y+QwfLYzHhAdqZtpQlVX90w6Rb3gZX75Xj0k+ua
+         eQFPpMUBmcq8SG9aWUlghvNVLdUSm0gnoQpLkTU5m9e8Geg15sy4fmDsPeU6KWU+B39j
+         vu/5Zrq25LI2vrP6a+YF6HuURaRqbBj8N5VVfIUs3w4OvuDnbunD5JPXPY36XyUPLtq6
+         VKdW65LKJXfrMx6vBWoxFOujf6pDLG98Pbsb8VW+IP3FdNTxKXnjFrqu/LGbR+CAfRw9
+         LAzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698687023; x=1699291823;
+        d=1e100.net; s=20230601; t=1698750965; x=1699355765;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ziePZG2kxDJdeziFjAvPtRBnX63hYXtCniclQtp/sTw=;
-        b=HoOeZ16O0auJcMbcyn+1Uys4d/22gMbAtU1HujOyWaVPdnDYOmtGLBAy2tMUQWou+u
-         +N/KK6I64KMqHkPdLwE/t7EgYLL+Xdl+6hxKBBiu4+h5EDOBe0sPVEPS84HLHRAID485
-         OpMfSqKtkf2vbhFYbg53Ai56LRvQnRFF2xWXu5BAOujZ3UPw8TjbJfWk0rEqFr9GjN1t
-         YKJFyi2U1X0I4izyGeDM2s/jol5+iitLIanMepv8TxgAA6h5JSdWizlU4DbizUjBUVe+
-         G134Hv3TyMP4Wp24UhZ5tr/DDKkX9Oz3ixRw9+7DzFIRILT3HSh2RomS4YCzeBIEtjf3
-         gK3A==
-X-Gm-Message-State: AOJu0YxV4hEOeczGpbAY8flcp3MV4vrjZK8fpK+bv/mrkidDJdzZ32vj
-	NHAeRvzb4ygx/35YBVe9G3li2w==
-X-Google-Smtp-Source: AGHT+IG5Oku/fBs9JqK6krua83s5mZQAYK1VNEY4z7kQAI+lNkFTzzFRQT+1+vt3g65F+TFEERAPoQ==
-X-Received: by 2002:a17:907:6d19:b0:9bf:63b2:b6e2 with SMTP id sa25-20020a1709076d1900b009bf63b2b6e2mr8468752ejc.26.1698687022863;
-        Mon, 30 Oct 2023 10:30:22 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.218.126])
-        by smtp.gmail.com with ESMTPSA id rn20-20020a170906d93400b009930308425csm6295467ejb.31.2023.10.30.10.30.21
+        bh=hJu2yLllJ94MBomatNabmyNQ4Uloi0vS+isN5mDPCt0=;
+        b=rKCKJKpEh/Y2PzPRa2a86YX5Jn0wBOHri0ZkFWb/CuZu6zgWFl2U1RplFJim+DA8Gt
+         um2OvrICXALpyWMx2S4QbzgcvuEPciu2pMZSkegEZEAuxfg6O1jcXRB1xHD/gHiAbsQU
+         js2WzcwUOre1yGkdpvT3M5g2f0CwkjVHQyJzPcSWMZF4YScO1NQPczeiPZt8+55Cio41
+         JQa/ECmPigdHmDXqcKrPWIR1CzTwg1Mt7y3XzKIfogWplolpb1s360Q4j1RQkpvfrAcF
+         3IECqknIVT7zvdWXAJ6+AvkNdKcLV4d1ejM/aTa2HOOV/cHUV9kakfz53dUBKx58O0UZ
+         tpnw==
+X-Gm-Message-State: AOJu0YyCyZt08Yb8umDj/g4zKkdgYto9hL+os38TTlL8ItZ2uKMKzIK8
+	Tn3nWDTofwEUSr1BHXRr8TkYEw==
+X-Google-Smtp-Source: AGHT+IHxZpOgWXPogwfe9mGa8MdZqaC12TgzQiZMNeuhq/Y1ScximNnSKTqRhS/LRgGekXZxobp+yA==
+X-Received: by 2002:a05:6512:370c:b0:503:1c58:8a46 with SMTP id z12-20020a056512370c00b005031c588a46mr8812041lfr.9.1698750965529;
+        Tue, 31 Oct 2023 04:16:05 -0700 (PDT)
+Received: from [192.168.143.96] (178235177091.dynamic-4-waw-k-1-1-0.vectranet.pl. [178.235.177.91])
+        by smtp.gmail.com with ESMTPSA id g20-20020a056512119400b0050318bdad45sm181224lfr.64.2023.10.31.04.16.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 30 Oct 2023 10:30:22 -0700 (PDT)
-Message-ID: <5d8024bb-0e25-484a-a65d-5929984ddc7b@linaro.org>
-Date: Mon, 30 Oct 2023 18:30:21 +0100
+        Tue, 31 Oct 2023 04:16:05 -0700 (PDT)
+Message-ID: <2202b6e6-afe0-4bce-bdb5-43a7c5c4162f@linaro.org>
+Date: Tue, 31 Oct 2023 12:16:02 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/7] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy:
- document the SM8650 QMP UFS PHY
+Subject: Re: [PATCH v3 06/15] phy: qualcomm: add MSM8974 HDMI PHY support
 Content-Language: en-US
-To: Neil Armstrong <neil.armstrong@linaro.org>, Andy Gross
- <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20231030-topic-sm8650-upstream-phy-v2-0-a543a4c4b491@linaro.org>
- <20231030-topic-sm8650-upstream-phy-v2-1-a543a4c4b491@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231030-topic-sm8650-upstream-phy-v2-1-a543a4c4b491@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Marijn Suijten <marijn.suijten@somainline.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd
+ <swboyd@chromium.org>, David Airlie <airlied@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Bjorn Andersson <andersson@kernel.org>,
+ linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org
+References: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
+ <20230928111630.1217419-7-dmitry.baryshkov@linaro.org>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <20230928111630.1217419-7-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231030_103024_819226_7A2D236F 
-X-CRM114-Status: UNSURE (   5.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231031_041610_082409_D4545AC7 
+X-CRM114-Status: GOOD (  15.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,16 +136,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/10/2023 10:48, Neil Armstrong wrote:
-> Document the QMP UFS PHY on the SM8650 Platform.
+On 28.09.2023 13:16, Dmitry Baryshkov wrote:
+> Add support for HDMI PHY on Qualcomm MSM8974 / APQ8074 platforms.
 > 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+I only have a few style comments (and timers-howto.txt fixes)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+[...]
 
-Best regards,
-Krzysztof
+> +#define HDMI_8974_VCO_MAX_FREQ 1800000000UL
+> +#define HDMI_8974_VCO_MIN_FREQ  600000000UL
+> +
+> +#define HDMI_8974_COMMON_DIV 5
+> +
+> +static void qcom_uniphy_setup(void __iomem *base, unsigned int ref_freq,
+> +			      bool sdm_mode,
+> +			      bool ref_freq_mult_2,
+> +			      bool dither,
+> +			      unsigned int refclk_div,
+> +			      unsigned int vco_freq)
+> +{
+> +	unsigned int int_ref_freq = ref_freq * (ref_freq_mult_2 ? 2 : 1);
+> +	unsigned int div_in_freq = vco_freq / refclk_div;
+> +	unsigned int dc_offset = div_in_freq / int_ref_freq - 1;
+> +	unsigned int sdm_freq_seed;
+> +	unsigned int val;
+> +	unsigned int remain = div_in_freq - (dc_offset + 1) * int_ref_freq;
+> +	sdm_freq_seed = mult_frac(remain, 0x10000, int_ref_freq);
+> +
+> +	val = (ref_freq_mult_2 ? BIT(0) : 0) |
+> +		((refclk_div - 1) << 2);
+> +	writel(val, base + UNIPHY_PLL_REFCLK_CFG);
+> +
+> +	writel(sdm_mode ? 0 : 0x40 + dc_offset, base + UNIPHY_PLL_SDM_CFG0);
+> +
+> +	writel(dither ? 0x40 + dc_offset: 0, base + UNIPHY_PLL_SDM_CFG1);
+> +
+> +	writel(sdm_freq_seed & 0xff, base + UNIPHY_PLL_SDM_CFG2);
+The ternary operator doesn't really improve readability here, imo
 
+> +
+> +	writel((sdm_freq_seed >> 8) & 0xff, base + UNIPHY_PLL_SDM_CFG3);
+> +
+> +	writel(sdm_freq_seed >> 16, base + UNIPHY_PLL_SDM_CFG4);
+> +
+> +	ref_freq = ref_freq * 5 / 1000;
+> +	writel(ref_freq & 0xff, base + UNIPHY_PLL_CAL_CFG8);
+> +
+> +	writel(ref_freq >> 8, base + UNIPHY_PLL_CAL_CFG9);
+> +
+> +	vco_freq /= 1000;
+> +	writel(vco_freq & 0xff, base + UNIPHY_PLL_CAL_CFG10);
+> +
+> +	writel(vco_freq >> 8, base + UNIPHY_PLL_CAL_CFG11);
+> +}
+> +
+> +static unsigned long qcom_uniphy_recalc(void __iomem *base, unsigned long parent_rate)
+> +{
+> +	unsigned long rate;
+> +	u32 refclk_cfg;
+> +	u32 dc_offset;
+> +	u64 fraq_n;
+> +	u32 val;
+> +
+> +	refclk_cfg = readl(base + UNIPHY_PLL_REFCLK_CFG);
+> +	if (refclk_cfg & BIT(0))
+Can we name this bit?
+
+> +		parent_rate *= 2;
+> +
+> +	val = readl(base + UNIPHY_PLL_SDM_CFG0);
+> +	if (val & 0x40) {
+BIT(6)? can we name it?
+
+> +		dc_offset = val & 0x3f;
+GENMASK?
+
+> +		fraq_n = 0;
+> +	} else {
+> +		dc_offset = readl(base + UNIPHY_PLL_SDM_CFG1) & 0x3f;
+GENMASK?
+> +		fraq_n = readl(base + UNIPHY_PLL_SDM_CFG2) |
+> +			(readl(base + UNIPHY_PLL_SDM_CFG3) << 8);
+FIELD_PREP?
+
+> +	}
+> +
+> +	rate = (dc_offset + 1) * parent_rate;
+> +	rate += mult_frac(fraq_n, parent_rate, 0x10000);
+> +
+> +	rate *= (refclk_cfg >> 2) * 0x3 + 1;
+3 would be more clear than 0x3 imo
+
+[...]
+> +	udelay(50);
+usleep_range
+
+[...]
+
+> +	udelay(200);
+usleep_range
+
+> +
+> +	return 0;
+> +}
+> +
+> +static int qcom_hdmi_msm8974_phy_pll_enable(struct qcom_hdmi_preqmp_phy *hdmi_phy)
+> +{
+> +	int ret;
+> +	unsigned long status;
+> +
+> +	/* Global enable */
+> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8x74_GLB_CFG, 0x81);
+> +
+> +	/* Power up power gen */
+> +	hdmi_phy_write(hdmi_phy, REG_HDMI_8x74_PD_CTRL0, 0x00);
+> +	udelay(350);
+usleep_range
+
+> +
+> +	/* PLL power up */
+> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x01);
+> +	udelay(5);
+> +
+> +	/* Power up PLL LDO */
+> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x03);
+> +	udelay(350);
+usleep_range
+
+> +
+> +	/* PLL power up */
+> +	hdmi_pll_write(hdmi_phy, UNIPHY_PLL_GLB_CFG, 0x0f);
+> +	udelay(350);
+usleep_range
+
+> +
+> +	/* Poll for PLL ready status */
+> +	ret = readl_poll_timeout(hdmi_phy->pll_reg + UNIPHY_PLL_STATUS,
+> +				 status, status & BIT(0),
+magic bit name?
+
+> +				 100, 2000);
+> +	if (ret) {
+> +		dev_warn(hdmi_phy->dev, "HDMI PLL not ready\n");
+> +		goto err;
+> +	}
+> +
+> +	udelay(350);
+usleep_range
+
+Konrad
 
 -- 
 linux-phy mailing list
