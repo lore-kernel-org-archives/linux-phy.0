@@ -4,80 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E6FC4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Oct 2023 13:28:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A902C4332F
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Nov 2023 05:45:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HClCsFzcrU7Ue1jDJixjJ3JMbe0b2WGrxHY1iFI8XL0=; b=Vta/umGKcsWIiz
-	ILnuldVY9ObQ3XbNtTNDZm9aUwk8qFlLLvBjOmniQYEwQDQT2vKD+XNjaL5I4ySBHqlQtxbLqXf1H
-	e0IuKsCgAif00dSBzteMvBVpFMGPysf2/5VObRKOehBsolgrz/9BN6hvzD+ewLCJEavPItvGfzXLR
-	pxAb3QQ3Jw8hOWuXJGXlTw9c9Vo4Y+gJZ44CdkMRnO9nqadu1W11AIZECCY+ZgL5Uud1Lwq6XZFVB
-	Q1d0nuGo2ZMYiXGwkFlKKL4ptOM3xNs2gA+EWX+wYxqH28/khkkhPrxRskkszfqmFVWlRrD9I17AE
-	0t9sfBMKv78/TPaTAkOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=luYRBXPdPlVQEkfy63LeaWM+Rc8JbEbDr7628YHp2Iw=; b=D9AAeHY4OtqVTK
+	8hWxJN/5oDzpcNY45kCI7uF3FIfSfGUNC+cJjT7cHuvMoBFIOmOjpZ6HjIcQX7J5zI/tR12OUXHA/
+	PdgIo0eVtnhNrt0SW8V/aaR5KcWN7eP7YxlB0IVsVunzVZWcqwWS0XWr+Q48s3e1Y1IlTapnZH1l9
+	RZHmiVM4UJUKw8w+HdBHyYYAGOP7oTaduM6+Lt/y5dk+5yMUBZevP3lS+IMvkVo2qmyxG4YU+9Zqg
+	7Lk7kkZZuoSIsud+h2xDnn43lOAzEaty/xpmcFd1tgJG9VCS6BGnv4mbue2Er2/MtpIf1PDutzxRt
+	yiiVnVUWkAsJMZ3ZWnAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxonQ-005LSb-12;
-	Tue, 31 Oct 2023 13:28:40 +0000
-Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
+	id 1qy42x-006ibM-2H;
+	Wed, 01 Nov 2023 05:45:43 +0000
+Received: from mx1.unisoc.com ([222.66.158.135] helo=SHSQR01.spreadtrum.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxonM-005LRY-1Q
+	id 1qy42t-006iXj-1h
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Oct 2023 13:28:37 +0000
-Received: by mail-yb1-xb2f.google.com with SMTP id 3f1490d57ef6-d9caf5cc948so5106987276.0
-        for <linux-phy@lists.infradead.org>; Tue, 31 Oct 2023 06:28:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1698758913; x=1699363713; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=Vkk8ZCgsYoi/AnkxKAKmjXFYbNerVSNaR8gjvx3gGLI=;
-        b=zdA8PUiA3C5Y5o190UYOWlkKFM1/4imYviN+yjc9d4TppLXcdPlMtjJfCd3qZBM9kR
-         4jUPqc/0qMSVsE8jLFyaV96qc6rO7epbH0oRJMCwEElKUtMpNOhs2xMUceoBm5GqmE0w
-         VwhGICrUFl3b/2KE73eP837K2lQLnKXhKtbMwJf3NpmQLc8Anc/UhX5NFAbbiHo/zuin
-         3YZkybxS+6EBfI5uHgiokrtvYFnDKfOIPoA9F2gMQlqakLB+SKgC3tt2ahWTKp/suUFn
-         zUo9MCsc9ZOq7r0G1ZoU4G2ECQDvVUqfe9XGAzyqX/j5eP3cgN6eSwg7lQOrxpqfmkcu
-         GprA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698758913; x=1699363713;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Vkk8ZCgsYoi/AnkxKAKmjXFYbNerVSNaR8gjvx3gGLI=;
-        b=gmtcy2QApy0TsW290kc06fTqxT2U6A839wMhLSYAyMpLLQ2SswPlioceX0TH/gCdyo
-         9k6R3/tbv7mCbPDPWxD2lEfV6a2ImitC6REo2K0Rsd+FwGr+m+Ztjn1N8cKmECzUc9pp
-         AVpChLFGxOEKfvNkJiNo8loLA9Zj9/O0YkacxKIOJdhGaUS+P6NB7ITJXMawFWZBcM8V
-         +FGZw10GY4p68hTWCeu9+YwWHIpkHee+Nk/VgWAc6sn8V8ZTRxbOsuEjo5dyUS0oLHIW
-         PIaVGtFAS/mK89EupsWci749y7IjWeALIh4noo3FAlN1Edwh8JYaiOUSFtM/aBaKU/pd
-         xVnA==
-X-Gm-Message-State: AOJu0Yw7mM0+vraYpCXtdxxorxZmcLqEk1VQvB/irdTjSaVYHntGQgRj
-	rxkxfxIXWFoTaQRFLd3WCQ3OFAgNlitYPNSPRl3P6A==
-X-Google-Smtp-Source: AGHT+IFxGRQfCveVDXVJVYYAtbgwY6/eAygWWpBIQ5S0HJJ6v7iBgo2Jge7ptyq+gUT1DXQGHLc/CMOxuUr+u443Pmg=
-X-Received: by 2002:a25:c541:0:b0:d9a:5ff4:cfde with SMTP id
- v62-20020a25c541000000b00d9a5ff4cfdemr11842307ybe.13.1698758913054; Tue, 31
- Oct 2023 06:28:33 -0700 (PDT)
+	Wed, 01 Nov 2023 05:45:42 +0000
+Received: from dlp.unisoc.com ([10.29.3.86])
+	by SHSQR01.spreadtrum.com with ESMTP id 3A15ih0A023577;
+	Wed, 1 Nov 2023 13:44:43 +0800 (+08)
+	(envelope-from pu.li@unisoc.com)
+Received: from SHDLP.spreadtrum.com (shmbx06.spreadtrum.com [10.0.1.11])
+	by dlp.unisoc.com (SkyGuard) with ESMTPS id 4SKwnb0BfKz2LjbCt;
+	Wed,  1 Nov 2023 13:40:03 +0800 (CST)
+Received: from zebjkernups01.spreadtrum.com (10.0.93.153) by
+ shmbx06.spreadtrum.com (10.0.1.11) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.23; Wed, 1 Nov 2023 13:44:41 +0800
+From: Pu Li <pu.li@unisoc.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh+dt@kernel.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
+        Conor Dooley <conor+dt@kernel.org>
+CC: Pu Li <pu.li@unisoc.com>, Zhiyong Liu <zhiyong.liu@unisoc.com>,
+        Chunyan
+ Zhang <zhang.lyra@gmail.com>,
+        Orson Zhai <orsonzhai@gmail.com>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH 0/2] phy: sprd: Add Spreadtrum USB20 HSPHY Driver
+Date: Wed, 1 Nov 2023 13:44:30 +0800
+Message-ID: <20231101054432.27509-1-pu.li@unisoc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20230928111630.1217419-1-dmitry.baryshkov@linaro.org>
- <20230928111630.1217419-8-dmitry.baryshkov@linaro.org> <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
-In-Reply-To: <ca3a0d84-befc-4426-8cdb-ea9d55e7fac9@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 31 Oct 2023 15:28:21 +0200
-Message-ID: <CAA8EJpqbMT3+53NndkjvJ67KvURYsbwD6yfT4v6KowsiYdOR8g@mail.gmail.com>
-Subject: Re: [PATCH v3 07/15] phy: qualcomm: add MSM8x60 HDMI PHY support
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd <swboyd@chromium.org>, 
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
-	linux-phy@lists.infradead.org
+X-Originating-IP: [10.0.93.153]
+X-ClientProxiedBy: SHCAS01.spreadtrum.com (10.0.1.201) To
+ shmbx06.spreadtrum.com (10.0.1.11)
+X-MAIL: SHSQR01.spreadtrum.com 3A15ih0A023577
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231031_062836_479905_3EB1D880 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20231031_224540_424233_77D94EEA 
+X-CRM114-Status: UNSURE (   7.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,28 +77,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 31 Oct 2023 at 13:17, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
->
-> On 28.09.2023 13:16, Dmitry Baryshkov wrote:
-> > Add support for HDMI PHY on Qualcomm MSM8x60 / APQ8060 platforms.
-> >
-> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> > ---
-> Do you have the PLL working locally? Would it make sense to ship them both?
+This patchset is used to add spreadtrum usb20 high speed phy driver. Patch 1
+is dt-binding Documentation supports, and patch 2 is the specific implementation.
 
-I do not have APQ8060 / MSM8x60 platforms, so I can either c&p the
-existing code or I can drop it completely.
+Pu Li (2):
+  dt-bindings: phy: Add Spreadtrum usb20 hsphy yaml
+  phy: sprd: Add Spreadtrum usb20 hsphy driver
 
-If anybody is willing to donate and/or lend APQ8060 or
-MSM8260/MSM8660, we can probably fix that.
-Requirements:
- - HDMI output
- - UART available
- - fastboot or network support in the bootloader
+ .../bindings/phy/phy-sprd-usb20-hs.yaml       |   70 +
+ drivers/phy/Kconfig                           |    1 +
+ drivers/phy/Makefile                          |    1 +
+ drivers/phy/sprd/Kconfig                      |   14 +
+ drivers/phy/sprd/Makefile                     |    6 +
+ drivers/phy/sprd/phy-sprd-usb20-hs.c          | 1324 +++++++++++++++++
+ drivers/phy/sprd/phy-sprd-usb20-hs.h          |  525 +++++++
+ 7 files changed, 1941 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-sprd-usb20-hs.yaml
+ create mode 100644 drivers/phy/sprd/Kconfig
+ create mode 100644 drivers/phy/sprd/Makefile
+ create mode 100644 drivers/phy/sprd/phy-sprd-usb20-hs.c
+ create mode 100644 drivers/phy/sprd/phy-sprd-usb20-hs.h
 
 -- 
-With best wishes
-Dmitry
+2.17.1
+
 
 -- 
 linux-phy mailing list
