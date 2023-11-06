@@ -4,91 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58B32C4332F
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Nov 2023 09:42:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C2BAC4167D
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Nov 2023 11:06:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eSykJ9zq1TFLoQKRblPuzOfyhhFGJRXb0ez6OlF1MBY=; b=Rf9+e4KXNmP1fw
-	ynsE9gg2Tdy/dcvjvxKPnY8SUXCInTrhLIPd33pwVytM0mu8+R4ksNUfJrGkKg+DiBwZzub0mQUpQ
-	+9LbiuPsiz/NeuBOQd4EULviMWkR1uN3y8HcHUQmYcWcsdAglXYCT3RLQ2QFbaOzJaBBmTm0Ffl/1
-	Mhzi30crkxLvgl/Ikpb62dvH1PLcMsBGCPo79OYnYdfgrV9V5Ggjj0anxnUs/Ip4PsoWZmYSk2c+k
-	SfSWy+pmLwY2huq6UuhESG7W8Sld+D2DX29atjJagvEwomzkgB81vM5fPReuh/5Z639z1SesaK/Jb
-	pEsFR8UGMZ8n5Zp0F36Q==;
+	List-Owner; bh=a/0H93mgwqrDgtECT/48b4d3b80Qtea8EGPYqw0Fs4o=; b=Kk9Z3i3ZNNfBZZ
+	WVwKjy6l9tRyWYC73ecW5pk6VE6UbaAzdd7GwMA73iIGkfEW0YdFTNHvXUnuq64eG7Q8j79prDumt
+	cRfm7zPgLRSl5x3zNgBugCXun/B27AY4NOMe/y7Jiw5NCjk6hA+zFrp1KKNnRAleq6NWQMBZq2m6s
+	3Sj322LzxCQJNXAF9oP3AYanFVXUi1sA7r6GgaF5kbk5v7yBhwNjlgMY8+zDuev/63JkSPHPC9oXD
+	saAT+j+67ob+iUNMZhIwKudHCikgY67CsNloVigt7IZfW0On8Rsud/Da6jjf6l3KX5ZODkDWuyunB
+	k6fz/rpUufwobustDYPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qzw7O-00GBZh-0I;
-	Mon, 06 Nov 2023 09:42:02 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1qzxRT-00GL3y-0l;
+	Mon, 06 Nov 2023 11:06:51 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qzw7J-00GBYY-28
+	id 1qzxRP-00GL1V-26
 	for linux-phy@lists.infradead.org;
-	Mon, 06 Nov 2023 09:42:00 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3A69UmJm013204;
-	Mon, 6 Nov 2023 09:41:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=XG7DqSJeQJKx8MHCJ/YU4nBle4JN6M8SRLuC5oNFqfY=;
- b=gjxrt1lI6EhD3qioqaUb7hS79A1MAMfE9n0DJJSSM2bST7Jf3PDaeZq8hEc0zCtTZFV5
- ySFZnGz+V4nIW+8J48EE0bI82i30KiaQPR9qwAONczwLpculY062ohzOrUNBtDyFOhP7
- SNuVuur274O1fuEuwro0eQzgYV7XN2u/FKbMs/agbM+IYGxnbFN4AUHmP/+CpYqKSaR0
- VKGsgHHEe98TMV6zBv8h0JCenLlF54cZ0vLbhCkDXn96jqGokx7rQP8xcFDTaoY/VgZZ
- Ptn+DBzlBslkIxKo4s7tPc9cY7QEr9AsuwnxzQCWOZkZDdCUUyJXS2nwA73IByU/HdEj jA== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u5eg3uptj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 06 Nov 2023 09:41:42 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3A69ffCj014306
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 6 Nov 2023 09:41:41 GMT
-Received: from [10.214.66.58] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Mon, 6 Nov
- 2023 01:41:38 -0800
-Message-ID: <67518705-cfc2-4ae0-9cd2-0c33146cf48b@quicinc.com>
-Date: Mon, 6 Nov 2023 15:11:35 +0530
+	Mon, 06 Nov 2023 11:06:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8883F60EB0;
+	Mon,  6 Nov 2023 11:06:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30902C433C9;
+	Mon,  6 Nov 2023 11:06:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1699268806;
+	bh=q/xLTHFuLYcmp6NtzuTCC0cv7q+YbosYhXcrvfEUmDQ=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=peZFJ2Cx2PvFGctJiv0cWGJ08qUNymKNlkYLTLpkqoXiArTcIJNUYJI/EsGt4IR01
+	 oVbC/gxtOuvLRFsV84BwdE0vMOvIStwpjxcap9A9CEZyXON5ey4A+g2lWQF7Xb7zt9
+	 co1rbZNvoMLWQfunW+U5dM7fYiX7BsYsIIDllUtYP81863crCx+9kg2x/VHNBtNhsE
+	 0BxKDuV10vrHoLHrMOv9PnB8Xjc7BX4UJzqExtfzKAHRB4S4anQEQDEtoY62wAHDbT
+	 kI28FsWsByAt4gXXw0h7CJ6/cf35jLKQVe2e+SXU9ltrVNfd1tNWH5SOP6KIvH2Vqm
+	 URkZ50dMEpVQw==
+Received: from johan by xi.lan with local (Exim 4.96)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1qzxS7-00085v-2e;
+	Mon, 06 Nov 2023 12:07:31 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Stanley Chang <stanley_chang@realtek.com>,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>,
+	stable@vger.kernel.org
+Subject: [PATCH 3/3] Revert "usb: phy: add usb phy notify port status API"
+Date: Mon,  6 Nov 2023 12:06:54 +0100
+Message-ID: <20231106110654.31090-4-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.41.0
+In-Reply-To: <20231106110654.31090-1-johan+linaro@kernel.org>
+References: <20231106110654.31090-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 0/3] phy: qcom-qmp-combo: correct sm8550 PHY
- programming
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Philipp Zabel
-	<p.zabel@pengutronix.de>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>
-References: <20230911203842.778411-1-dmitry.baryshkov@linaro.org>
- <aabb8345-7b5d-447d-af79-1e5743465315@quicinc.com>
- <CAA8EJpoQ0k_4GSQyrziLYn1v942ppzNOvwxN55sLkZUUDWLe4w@mail.gmail.com>
-From: Rohit Agarwal <quic_rohiagar@quicinc.com>
-In-Reply-To: <CAA8EJpoQ0k_4GSQyrziLYn1v942ppzNOvwxN55sLkZUUDWLe4w@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: SukmHfoCTb3zIWss7OKtOICtkaZZR5wX
-X-Proofpoint-ORIG-GUID: SukmHfoCTb3zIWss7OKtOICtkaZZR5wX
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-06_07,2023-11-02_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
- adultscore=0 malwarescore=0 suspectscore=0 mlxlogscore=414 clxscore=1015
- bulkscore=0 lowpriorityscore=0 priorityscore=1501 spamscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2310240000 definitions=main-2311060082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231106_014157_706827_BD527441 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20231106_030647_793456_542FAC0A 
+X-CRM114-Status: GOOD (  13.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,36 +77,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This reverts commit a08799cf17c22375752abfad3b4a2b34b3acb287.
 
-On 11/6/2023 3:07 PM, Dmitry Baryshkov wrote:
-> Hi Rohit,
->
-> On Mon, 6 Nov 2023 at 08:46, Rohit Agarwal <quic_rohiagar@quicinc.com> wrote:
->>
->> On 9/12/2023 2:08 AM, Dmitry Baryshkov wrote:
->>> Fix several small issues with the QMP USB+DP PHY programming on the
->>> Qualcomm SM8550 platform.
->> Hi Dmitry,
->>
->> Can we have a conclusion on this series?
-> Yes. Version 3 of this series was accepted by Vinod:
->
-> https://lore.kernel.org/linux-arm-msm/169719381727.165658.9377101716537787206.b4-ty@kernel.org/
-Thanks for the update!!!.
+The recently added Realtek PHY drivers depend on the new port status
+notification mechanism which was built on the deprecated USB PHY
+implementation and devicetree binding.
 
-Thanks,
-Rohit.
->
->> The USB support series [1] for
->> SDX75 depends on it.
->> [1]
->> https://lore.kernel.org/all/1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com/
->
+Specifically, using these PHYs would require describing the very same
+PHY using both the generic "phy" property and the deprecated "usb-phy"
+property which is clearly wrong.
+
+We should not be building new functionality on top of the legacy USB PHY
+implementation even if it is currently stuck in some kind of
+transitional limbo.
+
+Revert the new notification interface which is broken by design.
+
+Fixes: a08799cf17c2 ("usb: phy: add usb phy notify port status API")
+Cc: stable@vger.kernel.org      # 6.6
+Cc: Stanley Chang <stanley_chang@realtek.com>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/usb/core/hub.c  | 23 -----------------------
+ include/linux/usb/phy.h | 13 -------------
+ 2 files changed, 36 deletions(-)
+
+diff --git a/drivers/usb/core/hub.c b/drivers/usb/core/hub.c
+index 0ff47eeffb49..dfc30cebd4c4 100644
+--- a/drivers/usb/core/hub.c
++++ b/drivers/usb/core/hub.c
+@@ -622,29 +622,6 @@ static int hub_ext_port_status(struct usb_hub *hub, int port1, int type,
+ 		ret = 0;
+ 	}
+ 	mutex_unlock(&hub->status_mutex);
+-
+-	/*
+-	 * There is no need to lock status_mutex here, because status_mutex
+-	 * protects hub->status, and the phy driver only checks the port
+-	 * status without changing the status.
+-	 */
+-	if (!ret) {
+-		struct usb_device *hdev = hub->hdev;
+-
+-		/*
+-		 * Only roothub will be notified of port state changes,
+-		 * since the USB PHY only cares about changes at the next
+-		 * level.
+-		 */
+-		if (is_root_hub(hdev)) {
+-			struct usb_hcd *hcd = bus_to_hcd(hdev->bus);
+-
+-			if (hcd->usb_phy)
+-				usb_phy_notify_port_status(hcd->usb_phy,
+-							   port1 - 1, *status, *change);
+-		}
+-	}
+-
+ 	return ret;
+ }
+ 
+diff --git a/include/linux/usb/phy.h b/include/linux/usb/phy.h
+index b513749582d7..e4de6bc1f69b 100644
+--- a/include/linux/usb/phy.h
++++ b/include/linux/usb/phy.h
+@@ -144,10 +144,6 @@ struct usb_phy {
+ 	 */
+ 	int	(*set_wakeup)(struct usb_phy *x, bool enabled);
+ 
+-	/* notify phy port status change */
+-	int	(*notify_port_status)(struct usb_phy *x, int port,
+-				      u16 portstatus, u16 portchange);
+-
+ 	/* notify phy connect status change */
+ 	int	(*notify_connect)(struct usb_phy *x,
+ 			enum usb_device_speed speed);
+@@ -320,15 +316,6 @@ usb_phy_set_wakeup(struct usb_phy *x, bool enabled)
+ 		return 0;
+ }
+ 
+-static inline int
+-usb_phy_notify_port_status(struct usb_phy *x, int port, u16 portstatus, u16 portchange)
+-{
+-	if (x && x->notify_port_status)
+-		return x->notify_port_status(x, port, portstatus, portchange);
+-	else
+-		return 0;
+-}
+-
+ static inline int
+ usb_phy_notify_connect(struct usb_phy *x, enum usb_device_speed speed)
+ {
+-- 
+2.41.0
+
 
 -- 
 linux-phy mailing list
