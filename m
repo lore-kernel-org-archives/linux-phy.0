@@ -4,62 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA2DEC4332F
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Nov 2023 07:03:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA9C9C4332F
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Nov 2023 09:52:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zT0Ad+S+O46U5PAEobr9gIjjoiuyZXqv6dR8VMMeyBs=; b=Cawga+O3w94rdX
-	u05B6q1s1NLif94T25mW5Bl2LUx9Q3qG/ocPtffmJRyS57JyxtiOhXlRZOpZeDD4Lx0iBzhkvV/A7
-	ZLhgUSj8kxFtG/X/qZpVIh1cdRJ4g9TI35/NW7aKzaC+hKB4j4o8JSov32O6rnpkZT1KJM4Zr4E+0
-	dYoLoPrBW62/gAaC0lU/mr09bf/JZ3E1m7Dq5HZBZ0lZoP7KLbYwbQglDMhW/VNOd4VPM9ZLVINZi
-	AYwn8GNo3H7Lbr+D/4urHzPBe17lT+bL6gCp2U772NyoOtuGUJM1UzqqifdervHqtqCkzuOr1QrQn
-	1hHgZCw0eMHIvDmtiJMA==;
+	List-Owner; bh=o3TbKOZ42pEPVWoIXhCrQpCsrHd3PVotC1SjNg8avtc=; b=GuXm2bNLeK7KPK
+	iQLfRxQZBylkrnk8VzXWqZ2ohxx7YN+tXBEVugrC7K0knoVfFIZycuwDL+bQL4v8MjwK7EPMy7kNU
+	zdVqOcqwt2oY3mI8wSp9XkahYxUPaMBrR0JqffsNWFNrnEmRJVQdLcXJTN9uKuwSq2PDwl24u7nLc
+	0Z1mtHMq4mVsGsup375WqHzdnfHCTXpxpWz8Yh/lt56j6oz1RoM53wBKCKZzXYaS5hzcupqkfvVSP
+	2JcfryMiW0cLSoNk6ayl13w2Qxkduupn8lNTImNV5OFLcKN4lP3odfZVvD1fE4kmR1EVtxvpVMtmF
+	tTo1OafzCmpjBl07RFhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r0G75-000gSi-1y;
-	Tue, 07 Nov 2023 07:03:03 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1r0Ikk-000xJJ-0r;
+	Tue, 07 Nov 2023 09:52:10 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r0G73-000gRz-1S
+	id 1r0Iki-000xIi-0R
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Nov 2023 07:03:02 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1C48E6118C;
-	Tue,  7 Nov 2023 07:03:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14915C433C7;
-	Tue,  7 Nov 2023 07:02:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1699340579;
-	bh=JDRGlM9lrsHUhV43a6D7wVaw0GwPSvbuJMm3TbmECDw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=0kjZWwChfUkzXoNI3F0xNtc+Hxuv7g98mWrYubOvkUH6fWwAeBIJcpNktzR7Aakl9
-	 dUPzVJkP4xdUYhFSJ6ybb/rFX5zqT9/V/nQW5HkOzauL3MsfDkY3YmL3Pj9INU33Us
-	 e1EtFqahjL0WXs5LHsi8XuoiBtMtfqc7TBImUTMQ=
-Date: Tue, 7 Nov 2023 08:02:55 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Stanley =?utf-8?B?Q2hhbmdb5piM6IKy5b63XQ==?= <stanley_chang@realtek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan+linaro@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 0/3] Revert "usb: phy: add usb phy notify port status API"
-Message-ID: <2023110713-morphine-mortuary-337e@gregkh>
-References: <20231106110654.31090-1-johan+linaro@kernel.org>
- <2023110623-pointing-stump-643d@gregkh>
- <ZUjM/VEliT5c8H4C@matsya>
- <28e77cbc531248bf913ceedba6425cf6@realtek.com>
+	Tue, 07 Nov 2023 09:52:09 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3A799pOg025340;
+	Tue, 7 Nov 2023 09:52:02 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=gRVHVnW6RyQwwjooSESskhWPcW7DSJvleK6kuyrci1I=;
+ b=ACEiJAQ5jeZHVrKBDyF9zzLJm1VDx2EpVvySo2qSLgBkwvXyJkLFxuihA920CYUmXBAd
+ J2CAjEHYwSsajCQ0X3RUig7Waur3lyeYFQ/BsdGU9NX26a6brRxLbz4uAcrrsCB1vbF7
+ X4DH5cKGAX3tnV5Mz1uh+rk8oftOrRoaM31BpZrCuaeBun53/KtTEGhU+yvFtyAn9ijZ
+ YvIFLP9FJfCRD0wurYe/hNRdCkRdgQs6lt/sI0fQS9Zx2dihLUKHbWPcyItWL5F0PmyX
+ LVTNSZz/z/xSYoHS5cZI2heZvMD74QoKyKT4jMBoIMQlbJ4x//ODBM841s9rsYEJ3rqN ew== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u71bracdp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 07 Nov 2023 09:52:01 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3A79q0Yr026189
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 7 Nov 2023 09:52:00 GMT
+Received: from [10.218.41.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Tue, 7 Nov
+ 2023 01:51:54 -0800
+Message-ID: <9ce28fea-ab3e-0737-6749-3e00be6cc380@quicinc.com>
+Date: Tue, 7 Nov 2023 15:21:51 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <28e77cbc531248bf913ceedba6425cf6@realtek.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.1
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qmp: Add PCIe
+ qcom,refclk-always-on property
+Content-Language: en-US
+To: Bjorn Andersson <andersson@kernel.org>
+CC: Andy Gross <agross@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh+dt@kernel.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
+        Conor Dooley <conor+dt@kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <quic_vbadigan@quicinc.com>,
+        <quic_ramkri@quicinc.com>, <quic_nitegupt@quicinc.com>,
+        <quic_skananth@quicinc.com>, <quic_vpernami@quicinc.com>,
+        <quic_parass@quicinc.com>
+References: <20231106-refclk_always_on-v1-0-17a7fd8b532b@quicinc.com>
+ <20231106-refclk_always_on-v1-1-17a7fd8b532b@quicinc.com>
+ <wt47mf6vx5fx5ddghwb4aljfjqftkplsc2zieays2xwjhkxag3@plromlkrbyxz>
+From: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>
+In-Reply-To: <wt47mf6vx5fx5ddghwb4aljfjqftkplsc2zieays2xwjhkxag3@plromlkrbyxz>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 9wAizPbfiZzIX16tqmpdgZw4uO-g1Boe
+X-Proofpoint-GUID: 9wAizPbfiZzIX16tqmpdgZw4uO-g1Boe
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-06_15,2023-11-02_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
+ malwarescore=0 spamscore=0 adultscore=0 suspectscore=0 bulkscore=0
+ lowpriorityscore=0 mlxlogscore=999 phishscore=0 impostorscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2310240000 definitions=main-2311070081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231106_230301_533009_CE694DAA 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231107_015208_299205_C386DED2 
+X-CRM114-Status: GOOD (  19.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,26 +106,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBOb3YgMDcsIDIwMjMgYXQgMDY6NDQ6MjZBTSArMDAwMCwgU3RhbmxleSBDaGFuZ1vm
-mIzogrLlvrddIHdyb3RlOgo+IEhpIEpvaGFuIGFuZCBWaW5vZCwKPiAKPiBJIG1vZGlmaWVkIHRo
-ZSBSZWFsdGVrIHBoeSB0byBzb2x2ZSB0aGlzIGlzc3VlIGFuZCBvbmx5IHVzZSB0aGUgZ2VuZXJp
-YyBQSFkuCj4gQW5kIHN1Ym1pdHRlZCB0aGVzZSBwYXRjaGVzIHRvZGF5IGFzIGZvbGxvd3MKPiBo
-dHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC11c2IvMjAyMzExMDcwNjM1MTguMjc4MjQtMS1z
-dGFubGV5X2NoYW5nQHJlYWx0ZWsuY29tLwo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4
-LXVzYi8yMDIzMTEwNzA2MzUxOC4yNzgyNC0yLXN0YW5sZXlfY2hhbmdAcmVhbHRlay5jb20vCj4g
-aHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtdXNiLzIwMjMxMTA3MDYzNTE4LjI3ODI0LTMt
-c3RhbmxleV9jaGFuZ0ByZWFsdGVrLmNvbS8KPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51
-eC11c2IvMjAyMzExMDcwNjM1MTguMjc4MjQtNC1zdGFubGV5X2NoYW5nQHJlYWx0ZWsuY29tLwo+
-IAo+IEkgZG9uJ3QgdGhpbmsgdGhpcyBwYXRjaCBpcyBuZWVkZWQgdG8gcmV2ZXJ0IGEwODc5OWNm
-MTdjMiAoInVzYjpwaHk6IE5ldyB1c2IgcGh5IG5vdGlmaWNhdGlvbiBwb3J0IHN0YXR1cyBBUEki
-KS4KCkkgaGFkIGFscmVhZHkgYXBwbGllZCB0aG9zZSByZXZlcnRzIHllc3RlcmRheSwgYnV0IGZv
-cmdvdCB0byBwdXNoIHRoZW0Kb3V0IChzb3JyeSBhYm91dCB0aGF0LCBub3cgZml4ZWQuKSAgTGV0
-J3Mgc3RhcnQgb3ZlciBoZXJlIGFuZCB5b3UgY2FuCnJlYmFzZSB5b3VyIG5ldyBzZXJpZXMgb24g
-dGhlIDYuNy1yYzEuCgp0aGFua3MsCgpncmVnIGstaAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+On 11/6/2023 9:50 PM, Bjorn Andersson wrote:
+> On Mon, Nov 06, 2023 at 05:22:34PM +0530, Krishna chaitanya chundru wrote:
+>> Document qcom,refclk-always-on property which is needed in some platforms
+>> to supply refclk even in PCIe low power states.
+>>
+>> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+>> ---
+>>   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml          | 5 +++++
+>>   1 file changed, 5 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> index 2c3d6553a7ba..9daf0556ed3b 100644
+>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+>> @@ -93,6 +93,11 @@ properties:
+>>     "#phy-cells":
+>>       const: 0
+>>   
+>> +  qcom,refclk-always-on:
+>> +    type: boolean
+>> +    description: A boolean property indicating the refclk is
+>> +      always on even in Low power states (optional)
+> As with the driver patch, please improve this description (and use your
+> 80 characters).
+>
+>
+> It would also be preferable to capture (or at least indicate) the
+> problem that this flash is working around - so that future readers
+> doesn't need to go look in the commit history for the phy driver to
+> figure out what this is doing.
+>
+> Regards,
+> Bjorn
+
+Sure I will update this in my next patch.
+
+- Krishna Chaitanya.
+
+>> +
+>>   required:
+>>     - compatible
+>>     - reg
+>>
+>> -- 
+>> 2.42.0
+>>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
