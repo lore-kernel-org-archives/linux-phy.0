@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C93AC4167D
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Nov 2023 16:36:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19FDEC4332F
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Nov 2023 16:37:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lbzB3k0JDc9u5yMgmM5tccSYcmSXtH0SWCMD6UevI98=; b=u2+OeVcUgVbGvN
-	a179JrgSQSiDtnKgJ9rLsqYxZh8Rovrj7kcIKV7gANgzUPztyrzJoWnoTPv7doy/h1Kt8rqo7td/a
-	CpeusR8VE9vzoZkdDnc79gBroZjXyjpteuO21Fa14CISIRU5zJASgADEvkE2YbEtepMzjc/m7YXC0
-	kruLKu3c5oDkQ1DgkrXIoar1QMhFJzQAEjEH2PliWtoI7ciMVh8ND0BUgRdDKeLOYortzt1nU/KN/
-	02APb6KUIieoGTJY5lQ6umcfcCrxTVVyxINxOPohlBY7xRXbaVZ/wiDMaVNp8YaTbv/1DwdXm+ZMI
-	t3AvJIn8dgZyU26MX0Jw==;
+	List-Owner; bh=vrSv+GxB8xEqF74A5nE7mpcexxYycf+KDQ4CHjSYIug=; b=GL4iY9QoTuAJv9
+	yAsp41aCVxaM6Ai5yiBkRvcbf9037K1jLf9kKejgluI3wQxvXpHeuyk0NXXgjApy2SZvGJRdglWtq
+	JjlH4GZ2abSDu1KBSQMzT2gy2IVdBA6XBLpX0KsQSLFy4yBue0dJrtq88WC8ZWFdZAkq28Wlfnl67
+	oEF9EdxYLcDuQBtnEZfD4iTjR49Znbz0cfN7z17nNKrn3E3CyfXu20pfxPgOWM3ORaTZPmyrz+Eu4
+	UdjUXCu4xCkx0mg6EWpSJqSJI30n/eXKfhvaI3Ljq6avJtklasduQMICwxhpPELwzu4I0eDd1MJPJ
+	Cb53K3MpkWqtEtCE5vuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1819-006kqu-2x;
-	Thu, 09 Nov 2023 16:36:31 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1r1829-006kvj-2a;
+	Thu, 09 Nov 2023 16:37:33 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1817-006kpv-0V
+	id 1r1827-006kum-1n
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Nov 2023 16:36:30 +0000
+	Thu, 09 Nov 2023 16:37:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 4C615B81E6A;
-	Thu,  9 Nov 2023 16:36:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F587C433C8;
-	Thu,  9 Nov 2023 16:36:20 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id D67B8B82142;
+	Thu,  9 Nov 2023 16:37:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C0ADC433C7;
+	Thu,  9 Nov 2023 16:37:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1699547786;
-	bh=X0JXThTYDldD1RoKuZYvLpbUHSFMmcAgluk/KMaoBLQ=;
+	s=k20201202; t=1699547847;
+	bh=N3Ewrl8VPTxsQ+u3R4DFOO3VaEiknH/PqrP7ssBhXTk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=buKg7j7KClZGTXIGDPWEa8Ph4nSypnYpkZABzLpAVaWUHo7+eA1h8vGl3iF/yg6ng
-	 iii36/hhKD1mYqrXLNPaHNwmxmHO6UEqCCc4Yr9s6LmDuiU6We4p0w/mx6SXKUAuc3
-	 MX57tSAmJdw9/GG7JYvNSnEVmpqDTL1YqzRoZNp/ow08XqQNXlavDK4tc/2cGlP+Jz
-	 fO2w7qDUILxctjs/BU2hquisHDkT/g3I+hW2JuTSghucBknPu1XsUqzHKBcolFzOwa
-	 b4ZX3Rz5xhuJyADElj0OfA5uELDsSHLlEsDhQ1LJ4jgSYuYmjdx0o96HyIqoaGdZNY
-	 HlxlNYo52V71A==
-Message-ID: <d5722bdf-2d5a-455e-809b-6470b4c5760c@kernel.org>
-Date: Thu, 9 Nov 2023 17:36:16 +0100
+	b=dwkkM2JgkWRZ8oCtVRhyq9lCaV1fc2LPJb5OsOPMa3b43eS+Zpf5msJ8532gExn5H
+	 7BgV7k8Kqa4BG3PnxLJAJm7RGHq8aRuKW584o+A4xkIyCs4C+WCGTrhLjB9mNSpLfp
+	 mOsBIZ9tIkgytxcw31Bmc6Oq5yT7C2vfLron+3d05UC6ETgl0NqWOs0O81Nc15pPkP
+	 7TCz9CrUiZ/mXrV/tE2qQ2FdL8vK6DK3A/nhKGXPbwzbtIL16pdUobqyREBrPyihsj
+	 mJv2sc9nz8Vdn0z3tVobwHOeP+tsRtEuW7Hq6pAe5WyerVgo3dInMIhnqYnZNvsQXn
+	 w2Jh0Z0VbGQ7A==
+Message-ID: <2ac1a861-0328-446d-b8f1-53122133f96f@kernel.org>
+Date: Thu, 9 Nov 2023 17:37:21 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] phy: realtek: usb: add new driver for the Realtek
- RTD SoC USB 2.0 PHY
+Subject: Re: [PATCH v2 3/4] phy: realtek: usb: add new driver for the Realtek
+ RTD SoC USB 3.0 PHY
 Content-Language: en-US
 To: Stanley Chang <stanley_chang@realtek.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>
@@ -55,13 +55,12 @@ Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>,
  Geert Uytterhoeven <geert+renesas@glider.be>, Rob Herring <robh@kernel.org>,
  Jinjie Ruan <ruanjinjie@huawei.com>, Alan Stern <stern@rowland.harvard.edu>,
- Yang Yingliang <yangyingliang@huawei.com>, Roy Luo <royluo@google.com>,
+ Yang Yingliang <yangyingliang@huawei.com>, Ray Chi <raychi@google.com>,
  =?UTF-8?Q?Ricardo_Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Ray Chi <raychi@google.com>, linux-kernel@vger.kernel.org,
+ Roy Luo <royluo@google.com>, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
 References: <20231107083525.24901-1-stanley_chang@realtek.com>
- <20231107083525.24901-2-stanley_chang@realtek.com>
+ <20231107083525.24901-3-stanley_chang@realtek.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -106,10 +105,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20231107083525.24901-2-stanley_chang@realtek.com>
+In-Reply-To: <20231107083525.24901-3-stanley_chang@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231109_083629_593330_7F9628A8 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20231109_083731_867092_B5356190 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,58 +128,24 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/11/2023 09:31, Stanley Chang wrote:
 > Realtek DHC (digital home center) RTD SoCs support DWC3 XHCI USB
-> controller. Added the driver to drive the USB 2.0 PHY transceivers.
+> controller. Added the driver to drive the USB 3.0 PHY transceivers.
 > 
-> Note: New driver,remove the port status notification on legacy USB PHY.
+> Note: New driver, remove the port status notification on legacy USB PHY.
 > Use the generic PHY to notify the usb device connect and disconnect.
 > To avoid using these PHYs would require describing the very same
 > PHY using both the generic "phy" property and the deprecated "usb-phy"
 > property.
 > 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
-> ---
-> v1 to v2 change:
-
-
 
 ...
-> +
-> +static const struct of_device_id usbphy_rtk_dt_match[] = {
-> +	{ .compatible = "realtek,rtd1295-usb2phy", .data = &rtd1295_phy_cfg },
-> +	{ .compatible = "realtek,rtd1312c-usb2phy", .data = &rtd1312c_phy_cfg },
-> +	{ .compatible = "realtek,rtd1315e-usb2phy", .data = &rtd1315e_phy_cfg },
-> +	{ .compatible = "realtek,rtd1319-usb2phy", .data = &rtd1319_phy_cfg },
-> +	{ .compatible = "realtek,rtd1319d-usb2phy", .data = &rtd1319d_phy_cfg },
-> +	{ .compatible = "realtek,rtd1395-usb2phy", .data = &rtd1395_phy_cfg },
-> +	{ .compatible = "realtek,rtd1395-usb2phy-2port", .data = &rtd1395_phy_cfg_2port },
-> +	{ .compatible = "realtek,rtd1619-usb2phy", .data = &rtd1619_phy_cfg },
-> +	{ .compatible = "realtek,rtd1619b-usb2phy", .data = &rtd1619b_phy_cfg },
 
-Why is this sent separately from the bindings?
-
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, usbphy_rtk_dt_match);
 > +
-> +static struct platform_driver rtk_usb2phy_driver = {
-> +	.probe		= rtk_usb2phy_probe,
-> +	.remove_new	= rtk_usb2phy_remove,
-> +	.driver		= {
-> +		.name	= "rtk-usb2phy",
-> +		.of_match_table = usbphy_rtk_dt_match,
-> +	},
-> +};
-> +
-> +module_platform_driver(rtk_usb2phy_driver);
+> +module_platform_driver(rtk_usb3phy_driver);
 > +
 > +MODULE_LICENSE("GPL");
-> +MODULE_ALIAS("platform: rtk-usb2phy");
+> +MODULE_ALIAS("platform: rtk-usb3phy");
 
-You should not need MODULE_ALIAS() in normal cases. If you need it,
-usually it means your device ID table is wrong (e.g. misses either
-entries or MODULE_DEVICE_TABLE()). MODULE_ALIAS() is not a substitute
-for incomplete ID table.
-
+Same as in the other patch. Drop.
 
 Best regards,
 Krzysztof
