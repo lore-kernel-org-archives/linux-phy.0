@@ -4,85 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91E7CC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Nov 2023 08:54:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E29D4C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Nov 2023 09:03:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CkGPxh8ISY9i0nl2lJFdaJSIIkvmD4SB/FUHYT7gcvE=; b=njw9W+S/Xr5mhN
-	oPB7XoaWXNotTb+OYPiCMD61dHVSN0+TdEfbC+qQZ889Eeq8sJeORi/+tS6/cnX4RZViG8qEdmFQw
-	Prf6SNX8ZuCyywAkCujy0ATuv4CGEWlyNhqnE8z0hj/SKBaPDqQKEL4gNqdYc500Fw6Z7AK+aQN7Y
-	G8k52wm+5E5xgdXm7EeyXCgsZt3Y/uVu0Uhx5DDh8DmD8MPCVefxMM68LMRGate1FyOW1yH4vyHNe
-	FTCVS53XyVFB5XgBBgFbTyeuzszvpSyAe6ekN/zi6qWalXhZk5QN091tZUrKA7gxLUzSM/AWeyee2
-	Mw6+cGP9qo4IXbttCsJg==;
+	List-Owner; bh=7pK4oOhrC/ozkStdP2ld+5rhfM/1OALFPrLO8B60YAk=; b=HCWB5UOxaOUhZy
+	4UVbaXM1eFt+3EFW4b9aPQta6q+cL+A1Bddz4YvqDEikVqzNaMvJpP0hTWnOubQ2Ik4Qcqn4z1Ju5
+	vslnV0xl+4sqW7TmVr0YLTYgMPc4HbScxeF7bse1aGklTvLInKWHETtUk7q3C/dBdPoc37ek49uKr
+	DrfPTC3Ppb7650a0kSG/WbabkphMfOHB8hK2NIIbFtnplUE86iMjb10ix8U1Nzcyp7qBXZW6uJJH6
+	GJ0YpqHuu/jTxiXyJXHZH4GP2v5+G9SibrEEq5YFX/pwJQcV8et8sDmLIEtUNmP4kMrmLzU3W7qG0
+	iHBjPtXMT7COB9VcO0Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1NHq-00883t-0j;
-	Fri, 10 Nov 2023 08:54:46 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1r1NQV-0088tB-1x;
+	Fri, 10 Nov 2023 09:03:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1NHm-00881z-2s;
-	Fri, 10 Nov 2023 08:54:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=u8052caqSNt3af6DzeiZMofvFARC4Kcew0q/mv0AkUE=; b=eRSvftjkjscZdlIzAGYnHH+mCb
-	eJv7Q7N1M5DJC/5JXhgsDiDSEEoNotwJxxH4umHm97Q06EIxLrwmqmo1mUb4IR8pj1P1jwh4VwAxj
-	OHzBFF0spuZUlXJ17MfpYjVtSK2edEQko3bPcc4wQsclDjXJBEfH5e3JD7fb9ae/lhoEMecXAaXqk
-	1j8iyuFbsoLZY9OQpGAYmhJzhkuP+1x6ngan+I2d/m7Xhh9OLXrM3As0nN880dSCwXcBduX0xAXgC
-	xKwiMdqWAJ+ywY2gpw2ZU1qwpKoiGgllcZ6gf1A5oKOkeDPUusJvn9s2XNpxyI5dg/+wd0tyBUGwp
-	QOwiwivA==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:49306)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1r1NHG-0003Lv-28;
-	Fri, 10 Nov 2023 08:54:10 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1r1NHC-0001Q8-OY; Fri, 10 Nov 2023 08:54:06 +0000
-Date: Fri, 10 Nov 2023 08:54:06 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Daniel Golle <daniel@makrotopia.org>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Mark Lee <Mark-MC.Lee@mediatek.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Alexander Couzens <lynxis@fe80.eu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH 3/8] net: pcs: pcs-mtk-lynxi: use 2500Base-X without
- AN
-Message-ID: <ZU3vrhJe7WmyeVHA@shell.armlinux.org.uk>
-References: <cover.1699565880.git.daniel@makrotopia.org>
- <091e466912f1333bb76d23e95dc6019c9b71645f.1699565880.git.daniel@makrotopia.org>
+	id 1r1NQS-0088sg-26
+	for linux-phy@lists.infradead.org;
+	Fri, 10 Nov 2023 09:03:42 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AA7fuxo010154;
+	Fri, 10 Nov 2023 09:03:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=TBYV7bv97Iu3cs83mPkPNVVr/7Yfp0fRAEk0WhPDGqU=;
+ b=KhLozCSUhfP0QuefC1NOXPz/eNiAQAl+FZaW7B3JnXC1RkSjPLTTz2sn8mmVUXyuwo0r
+ C66FbTfPoFRw2WtkeE7WmX2Z7P4kM0Kl7EfUQunZi6c/ImzTq7zk5QhAnF4l0YO0s8wo
+ gm9RCNA1un/SFZ2ghQmYtd4ovZDipgxyV1+ij+eql1fGJprDYVZYI2bChvAps6LVGMYk
+ Twa1fR8r2VyhvAjQdbt/uCbvLXuBi1g1u5rY+MRXdAx7cLXGzoBo3OwkfYDjSSw/NFeD
+ UAwg+KS8bgzTZBm7POj5K32KKV43twWPkW19cnxO/bLpoC6CLUucUA8mQ1vk776Cvnob Cw== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u93qy9qs9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 Nov 2023 09:03:33 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AA93WT7006279
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 Nov 2023 09:03:32 GMT
+Received: from [10.253.32.19] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Fri, 10 Nov
+ 2023 01:03:28 -0800
+Message-ID: <c3fb1fa1-4ba6-613f-a545-79e0e4b2658f@quicinc.com>
+Date: Fri, 10 Nov 2023 17:03:26 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <091e466912f1333bb76d23e95dc6019c9b71645f.1699565880.git.daniel@makrotopia.org>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v2 6/7] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
+ Gear 5 support for SM8550
+To: <neil.armstrong@linaro.org>, Can Guo <cang@qti.qualcomm.com>,
+        <bvanassche@acm.org>, <mani@kernel.org>, <stanley.chu@mediatek.com>,
+        <adrian.hunter@intel.com>, <beanhuo@micron.com>, <avri.altman@wdc.com>,
+        <junwoo80.lee@samsung.com>, <martin.petersen@oracle.com>
+CC: <linux-scsi@vger.kernel.org>, Andy Gross <agross@kernel.org>,
+        "Bjorn
+ Andersson" <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        "open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>,
+        "open
+ list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+        open list
+	<linux-kernel@vger.kernel.org>
+References: <1699332374-9324-1-git-send-email-cang@qti.qualcomm.com>
+ <1699332374-9324-7-git-send-email-cang@qti.qualcomm.com>
+ <e4bafeaf-bbeb-4990-b6f2-497159995910@linaro.org>
+Content-Language: en-US
+From: Can Guo <quic_cang@quicinc.com>
+In-Reply-To: <e4bafeaf-bbeb-4990-b6f2-497159995910@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Bs_mWBVUYlb-vmwGMPmlFCrTOWmKgGG2
+X-Proofpoint-GUID: Bs_mWBVUYlb-vmwGMPmlFCrTOWmKgGG2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-10_05,2023-11-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ spamscore=0 clxscore=1015 malwarescore=0 priorityscore=1501 suspectscore=0
+ mlxscore=0 lowpriorityscore=0 mlxlogscore=767 impostorscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2311060000
+ definitions=main-2311100074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231110_005442_927971_72E6021C 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20231110_010340_742500_EC1C4335 
+X-CRM114-Status: GOOD (  15.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,42 +108,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 09, 2023 at 09:51:22PM +0000, Daniel Golle wrote:
-> Using 2500Base-T SFP modules e.g. on the BananaPi R3 requires manually
-> disabling auto-negotiation, e.g. using ethtool. While a proper fix
-> using SFP quirks is being discussed upstream, bring a work-around to
-> restore user experience to what it was before the switch to the
-> dedicated SGMII PCS driver.
+Hi Neil,
 
-No.
+On 11/10/2023 4:47 PM, neil.armstrong@linaro.org wrote:
+> Hi,
+> 
+> On 07/11/2023 05:46, Can Guo wrote:
+>> From: Can Guo <quic_cang@quicinc.com>
+>>
+>> On SM8550, two sets of UFS PHY settings are provided, one set is to 
+>> support
+>> HS-G5, another set is to support HS-G4 and lower gears. The two sets 
+>> of PHY
+>> settings are programming different values to different registers, mixing
+>> the two sets and/or overwriting one set with another set is definitely 
+>> not
+>> blessed by UFS PHY designers. In order to add HS-G5 support for 
+>> SM8550, we
+>> need to split the two sets into their dedicated tables, and leave only 
+>> the
+>> common settings in the .tlbs. To have the PHY programmed with the correct
+>> set of PHY settings, the submode passed to PHY driver must be either 
+>> HS-G4
+>> or HS-G5.
+> 
+> I guess I'll need to rebase my SM8650 UFS PHY driver to support both G4 
+> and G5 modes
+> at some point ?
 
-> @@ -129,7 +138,8 @@ static int mtk_pcs_lynxi_config(struct phylink_pcs *pcs, unsigned int neg_mode,
->  	if (neg_mode & PHYLINK_PCS_NEG_INBAND)
->  		sgm_mode |= SGMII_REMOTE_FAULT_DIS;
->  
-> -	if (neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED) {
-> +	if (neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED &&
-> +	    interface != PHY_INTERFACE_MODE_2500BASEX) {
->  		if (interface == PHY_INTERFACE_MODE_SGMII)
->  			sgm_mode |= SGMII_SPEED_DUPLEX_AN;
->  		bmcr = BMCR_ANENABLE;
 
-Phylink is asking you to have inband enabled. If inband needs to be
-disabled, then we need to arrange for phylink to pass
-PHYLINK_PCS_NEG_INBAND_DISABLED.
+Thank for reaching out. Yes, please.
 
-Please don't hack special handling and behaviour into drivers.
+I can help review the PHY settings.
 
-Thanks.
+BTW, are you enabling MCQ (by adding MCQ related DT) at the same time?
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+Thanks,
+Can Guo.
+
+> 
+> Neil
+>
 
 -- 
 linux-phy mailing list
