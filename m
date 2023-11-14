@@ -4,71 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32914C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Nov 2023 17:42:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A782C4167B
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Nov 2023 20:59:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1t7DNMaLal1ebcJW2PuTioOEJ9DQNggogo7m7j9PU3g=; b=DzOR5dHNnSqEsd
-	ua3DI3YKoppOYXmHxdJXuRjiCCVOeFIXhPe4FvZIE1Ts63celX1amnqV8nA8VgIH97bBUxW1TkfKm
-	jsR9jrPL1TEMqJc5t3O+j8Wy8AT+tU7BpBMh8HQV9OCoB/jh4sqbmi5ixfL3o7451JFbF/GOw8GYc
-	iCHnDKeYZXFw9Y2U1cJWWC3LkJDA+A3HLb9WDZ6y9xP8D4QU2JXO2/1rpuyRaoMYjJucI7kT0OFoE
-	mEmV+3peKTTslTBYbTXeBA9eg0Uc3qH6cD3k5NjYQ/qtQBtycj2nDk51U7tmookgLTlqZcVw+rc7J
-	6w9l+C9OPUDpDmt1RU5w==;
+	List-Owner; bh=u4ZyQBsX6SUDXirj4je/bVo9K0gIY9fZMf42QxRfgZ4=; b=TiE3YEJLAsoJQs
+	olCa5RxSpK1or6+WBnnKElJiePcrWEATv1YBFRYTf23p3LFpPCsVtKoKAnPaV1b4RaqrXh9YL3yER
+	B3j/jpnG7VRqZlbT6HQS+J+mbG5Xy+cDfYGgLFsP1GUAUxD/Ya/Q/lAvcaHj7UFC2FpkgezwAYci3
+	NFCihTgYHrpnf/hsiifzT7SD7SsSJylLwrqjPr7RZzM9HNvfUcDeTo04iJURKk5IPjxnwQXtOtQKt
+	1VlRSNi0UpcYEw5q0Tyyj5ml1IHTEtgExiY71C5spAV0x+OkaXEqVcGOx5tBG8Sre3RQlrAmvJ+4v
+	ZnLIlIl2XE0hi4HUt8mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r2xR3-00GWdz-2w;
-	Tue, 14 Nov 2023 17:42:49 +0000
-Received: from pidgin.makrotopia.org ([185.142.180.65])
+	id 1r30VV-00GnO3-2L;
+	Tue, 14 Nov 2023 20:59:37 +0000
+Received: from mail-oo1-f45.google.com ([209.85.161.45])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r2xQz-00GWcx-1a;
-	Tue, 14 Nov 2023 17:42:47 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.96.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1r2xQd-0000r4-31;
-	Tue, 14 Nov 2023 17:42:24 +0000
-Date: Tue, 14 Nov 2023 17:42:16 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Rob Herring <robh@kernel.org>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Mark Lee <Mark-MC.Lee@mediatek.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Alexander Couzens <lynxis@fe80.eu>,
-	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH 7/8] dt-bindings: net: mediatek,net: fix and complete
- mt7988-eth binding
-Message-ID: <ZVOxeCAUhFPnxzQr@makrotopia.org>
-References: <cover.1699565880.git.daniel@makrotopia.org>
- <d8152679b6558ce9fd177ff20478e3fbc2ab73b4.1699565880.git.daniel@makrotopia.org>
- <20231114140719.GA1664629-robh@kernel.org>
+	id 1r30VS-00GnNQ-2f
+	for linux-phy@lists.infradead.org;
+	Tue, 14 Nov 2023 20:59:36 +0000
+Received: by mail-oo1-f45.google.com with SMTP id 006d021491bc7-5872b8323faso3424047eaf.1
+        for <linux-phy@lists.infradead.org>; Tue, 14 Nov 2023 12:59:32 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1699995572; x=1700600372;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=zrcyizvCo/KG3mPdKDm6DsKCToJb9p4EVunNF50SWBQ=;
+        b=Xv1gTcAAT+vvuN6SoJqqipPNEKFg68U+swGrXEt1HCy1Am9T+NQxYIKph2nEkl5rEo
+         GcGCSUsuowvkdA1YqHhrqkGGH9EFTz+uylmTdon1G1hxV/a7W8TDYuD2YELlYKKr8PRL
+         Bh/cJK8kqvrCrn2SejGFFEEY59qegDJ3XUG74bxeSyOsTiKdgy5/bvIibyNNDCqdhGOU
+         GWWv9dO6BAmpRzb+rCmSF8vWIwwEajgvhhdef3INuwaoIbtXU0/vq8/Kqj1l/ADm16ia
+         JYzCrCfE186EfPfvl6U9IpAXuHlP9DG+P1MpMGGCTjGoLsF/85XVCuWsmwAlSm6zIxUL
+         SfsQ==
+X-Gm-Message-State: AOJu0YyqDjYfCoL3HvJGskqv7zmf43Yq2vkbZ+CurpQ0l9022TmAqtFi
+	14ReHKm5lTnGw96Dh5/QVw==
+X-Google-Smtp-Source: AGHT+IEels1WRec899esP8NHFJ5xegrQyq/vtE4CnTETG7fpYloXxez8M7OEBWem9xAHHkSub6HW/w==
+X-Received: by 2002:a4a:d287:0:b0:581:ea96:f7f3 with SMTP id h7-20020a4ad287000000b00581ea96f7f3mr11385607oos.7.1699995572267;
+        Tue, 14 Nov 2023 12:59:32 -0800 (PST)
+Received: from herring.priv (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id 123-20020a4a0081000000b00584078d1e17sm400905ooh.45.2023.11.14.12.59.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 14 Nov 2023 12:59:31 -0800 (PST)
+Received: (nullmailer pid 501790 invoked by uid 1000);
+	Tue, 14 Nov 2023 20:59:30 -0000
+Date: Tue, 14 Nov 2023 14:59:30 -0600
+From: Rob Herring <robh@kernel.org>
+To: Elliot Berman <quic_eberman@quicinc.com>
+Cc: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, Andy Gross <agross@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, devicetree@vger.kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: Document sm8450 pcie phys as having 4
+ clocks
+Message-ID: <169999556983.501734.2621240369392640952.robh@kernel.org>
+References: <20231103230339.966792-1-quic_eberman@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231114140719.GA1664629-robh@kernel.org>
+In-Reply-To: <20231103230339.966792-1-quic_eberman@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231114_094245_678623_601F2F31 
-X-CRM114-Status: GOOD (  28.67  )
+X-CRM114-CacheID: sfid-20231114_125934_865902_7E4D362B 
+X-CRM114-Status: GOOD (  11.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,324 +82,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
 
-thank you for reviewing this patch.
+On Fri, 03 Nov 2023 16:03:38 -0700, Elliot Berman wrote:
+> I noticed while running make dtbs_check that
+> qcom,sm8450-qmp-gen3x1-pcie-phy and qcom,sm8450-qmp-gen4x2-pcie-phy have
+> 4 clocks, not 5. There was also a typo for the 8450 bindings:
+> s/gen3x2/gen4x2/.
+> 
+> Update the bindings to reflect the correct number of required clocks.
+> 
+> Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Fixes: 505fb2541678 ("dt-bindings: phy: migrate QMP PCIe PHY bindings to qcom,sc8280xp-qmp-pcie-phy.yaml")
+> Signed-off-by: Elliot Berman <quic_eberman@quicinc.com>
+> ---
+>  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 16 ++++++++++++++--
+>  1 file changed, 14 insertions(+), 2 deletions(-)
+> 
 
-On Tue, Nov 14, 2023 at 08:07:19AM -0600, Rob Herring wrote:
-> On Thu, Nov 09, 2023 at 09:52:09PM +0000, Daniel Golle wrote:
-> > Remove clocks which were copied from the vendor driver but are now taken
-> > care of by dedicated drivers for PCS and PHY in the upstream driver.
-> > Also remove mediatek,sgmiisys phandle which isn't required on MT7988
-> > because we use pcs-handle on the MAC nodes instead.
-> > Last but not least, add an example for MT7988.
-> 
-> 'Also' is a clue for it should be a separate patch. These changes are 
-> all ABI breakage. Please explain why that's okay.
+Acked-by: Rob Herring <robh@kernel.org>
 
-I hope that it's ok because the driver at this point never supported
-any SerDes modes and we are still in the process of bringing up
-mainline support for this SoC. All of clk, pinctrl, reset, ... driver
-and dt-bindings are still pending or being prepared for submission.
-
-> 
-> > 
-> > Fixes: c94a9aabec36 ("dt-bindings: net: mediatek,net: add mt7988-eth binding")
-> > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> > ---
-> >  .../devicetree/bindings/net/mediatek,net.yaml | 171 +++++++++++++++---
-> >  1 file changed, 142 insertions(+), 29 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/net/mediatek,net.yaml b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> > index e74502a0afe86..c0f7bb6f3ef8d 100644
-> > --- a/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> > +++ b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> > @@ -27,9 +27,6 @@ properties:
-> >        - mediatek,mt7988-eth
-> >        - ralink,rt5350-eth
-> >  
-> > -  reg:
-> > -    maxItems: 1
-> > -
-> 
-> It's not clear what this change is from the commit msg.
-> 
-> This should stay and be:
-> 
-> reg:
->   minItems: 1
->   items:
->     - description: what's in the 1st region
->     - description: what's in the 2nd region
-
-Ack.
-
-> 
-> >    clocks: true
-> >    clock-names: true
-> >  
-> > @@ -115,6 +112,9 @@ allOf:
-> >                - mediatek,mt7623-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> >          interrupts:
-> >            maxItems: 3
-> >  
-> > @@ -149,6 +149,9 @@ allOf:
-> >                - mediatek,mt7621-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> >          interrupts:
-> >            maxItems: 1
-> >  
-> > @@ -174,6 +177,9 @@ allOf:
-> >              const: mediatek,mt7622-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> >          interrupts:
-> >            maxItems: 3
-> >  
-> > @@ -215,6 +221,9 @@ allOf:
-> >              const: mediatek,mt7629-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> >          interrupts:
-> >            maxItems: 3
-> >  
-> > @@ -257,6 +266,9 @@ allOf:
-> >              const: mediatek,mt7981-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> >          interrupts:
-> >            minItems: 4
-> >  
-> > @@ -295,6 +307,9 @@ allOf:
-> >              const: mediatek,mt7986-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 1
-> > +
-> 
-> Looks like lots of duplication. Perhaps there's a cleaner way.
-
-Hm, I don't really see any better way. Suggestions anyone?
-
-> 
-> >          interrupts:
-> >            minItems: 4
-> >  
-> > @@ -333,36 +348,32 @@ allOf:
-> >              const: mediatek,mt7988-eth
-> >      then:
-> >        properties:
-> > +        reg:
-> > +          maxItems: 2
-> > +          minItems: 2
-> > +
-> >          interrupts:
-> >            minItems: 4
-> > +          maxItems: 4
-> >  
-> >          clocks:
-> > -          minItems: 34
-> > -          maxItems: 34
-> > +          minItems: 24
-> > +          maxItems: 24
-> >  
-> >          clock-names:
-> >            items:
-> > -            - const: crypto
-> > +            - const: xgp1
-> > +            - const: xgp2
-> > +            - const: xgp3
-> >              - const: fe
-> >              - const: gp2
-> >              - const: gp1
-> >              - const: gp3
-> > +            - const: esw
-> > +            - const: crypto
-> >              - const: ethwarp_wocpu2
-> >              - const: ethwarp_wocpu1
-> >              - const: ethwarp_wocpu0
-> > -            - const: esw
-> > -            - const: netsys0
-> > -            - const: netsys1
-> > -            - const: sgmii_tx250m
-> > -            - const: sgmii_rx250m
-> > -            - const: sgmii2_tx250m
-> > -            - const: sgmii2_rx250m
-> > -            - const: top_usxgmii0_sel
-> > -            - const: top_usxgmii1_sel
-> > -            - const: top_sgm0_sel
-> > -            - const: top_sgm1_sel
-> > -            - const: top_xfi_phy0_xtal_sel
-> > -            - const: top_xfi_phy1_xtal_sel
-> >              - const: top_eth_gmii_sel
-> >              - const: top_eth_refck_50m_sel
-> >              - const: top_eth_sys_200m_sel
-> > @@ -375,18 +386,9 @@ allOf:
-> >              - const: top_netsys_sync_250m_sel
-> >              - const: top_netsys_ppefb_250m_sel
-> >              - const: top_netsys_warp_sel
-> > -            - const: wocpu1
-> > -            - const: wocpu0
-> > -            - const: xgp1
-> > -            - const: xgp2
-> > -            - const: xgp3
-> > -
-> > -        mediatek,sgmiisys:
-> > -          minItems: 2
-> > -          maxItems: 2
-> >  
-> >  patternProperties:
-> > -  "^mac@[0-1]$":
-> > +  "^mac@[0-2]$":
-> >      type: object
-> >      unevaluatedProperties: false
-> >      allOf:
-> > @@ -577,3 +579,114 @@ examples:
-> >          };
-> >        };
-> >      };
-> > +
-> > +  - |
-> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > +    #include <dt-bindings/interrupt-controller/irq.h>
-> > +    #include <dt-bindings/clock/mediatek,mt7988-clk.h>
-> > +
-> > +    soc {
-> > +      #address-cells = <2>;
-> > +      #size-cells = <2>;
-> > +
-> > +      ethernet@15100000 {
-> > +        compatible = "mediatek,mt7988-eth";
-> > +        reg = <0 0x15100000 0 0x80000>, <0 0x15400000 0 0x380000>;
-> > +        interrupts = <GIC_SPI 196 IRQ_TYPE_LEVEL_HIGH>,
-> > +                     <GIC_SPI 197 IRQ_TYPE_LEVEL_HIGH>,
-> > +                     <GIC_SPI 198 IRQ_TYPE_LEVEL_HIGH>,
-> > +                     <GIC_SPI 199 IRQ_TYPE_LEVEL_HIGH>;
-> > +
-> > +        clocks = <&ethsys CLK_ETHDMA_XGP1_EN>,
-> > +                 <&ethsys CLK_ETHDMA_XGP2_EN>,
-> > +                 <&ethsys CLK_ETHDMA_XGP3_EN>,
-> > +                 <&ethsys CLK_ETHDMA_FE_EN>,
-> > +                 <&ethsys CLK_ETHDMA_GP2_EN>,
-> > +                 <&ethsys CLK_ETHDMA_GP1_EN>,
-> > +                 <&ethsys CLK_ETHDMA_GP3_EN>,
-> > +                 <&ethsys CLK_ETHDMA_ESW_EN>,
-> > +                 <&ethsys CLK_ETHDMA_CRYPT0_EN>,
-> > +                 <&ethwarp CLK_ETHWARP_WOCPU2_EN>,
-> > +                 <&ethwarp CLK_ETHWARP_WOCPU1_EN>,
-> > +                 <&ethwarp CLK_ETHWARP_WOCPU0_EN>,
-> > +                 <&topckgen CLK_TOP_ETH_GMII_SEL>,
-> > +                 <&topckgen CLK_TOP_ETH_REFCK_50M_SEL>,
-> > +                 <&topckgen CLK_TOP_ETH_SYS_200M_SEL>,
-> > +                 <&topckgen CLK_TOP_ETH_SYS_SEL>,
-> > +                 <&topckgen CLK_TOP_ETH_XGMII_SEL>,
-> > +                 <&topckgen CLK_TOP_ETH_MII_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_500M_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_PAO_2X_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_SYNC_250M_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_PPEFB_250M_SEL>,
-> > +                 <&topckgen CLK_TOP_NETSYS_WARP_SEL>;
-> > +
-> > +        clock-names = "xgp1", "xgp2", "xgp3", "fe", "gp2", "gp1",
-> > +                      "gp3", "esw", "crypto",
-> > +                      "ethwarp_wocpu2", "ethwarp_wocpu1",
-> > +                      "ethwarp_wocpu0", "top_eth_gmii_sel",
-> > +                      "top_eth_refck_50m_sel", "top_eth_sys_200m_sel",
-> > +                      "top_eth_sys_sel", "top_eth_xgmii_sel",
-> > +                      "top_eth_mii_sel", "top_netsys_sel",
-> > +                      "top_netsys_500m_sel", "top_netsys_pao_2x_sel",
-> > +                      "top_netsys_sync_250m_sel",
-> > +                      "top_netsys_ppefb_250m_sel",
-> > +                      "top_netsys_warp_sel";
-> > +        assigned-clocks = <&topckgen CLK_TOP_NETSYS_2X_SEL>,
-> > +                          <&topckgen CLK_TOP_NETSYS_GSW_SEL>,
-> > +                          <&topckgen CLK_TOP_USXGMII_SBUS_0_SEL>,
-> > +                          <&topckgen CLK_TOP_USXGMII_SBUS_1_SEL>,
-> > +                          <&topckgen CLK_TOP_SGM_0_SEL>,
-> > +                          <&topckgen CLK_TOP_SGM_1_SEL>;
-> > +        assigned-clock-parents = <&apmixedsys CLK_APMIXED_NET2PLL>,
-> > +                                 <&topckgen CLK_TOP_NET1PLL_D4>,
-> > +                                 <&topckgen CLK_TOP_NET1PLL_D8_D4>,
-> > +                                 <&topckgen CLK_TOP_NET1PLL_D8_D4>,
-> > +                                 <&apmixedsys CLK_APMIXED_SGMPLL>,
-> > +                                 <&apmixedsys CLK_APMIXED_SGMPLL>;
-> > +        mediatek,ethsys = <&ethsys>;
-> > +        mediatek,infracfg = <&topmisc>;
-> > +        #address-cells = <1>;
-> > +        #size-cells = <0>;
-> > +
-> > +        mac@0 {
-> > +          compatible = "mediatek,eth-mac";
-> > +          reg = <0>;
-> > +          phy-mode = "internal";
-> > +          status = "disabled";
-> 
-> Examples should be enabled.
-
-Ack.
-
-> 
-> > +
-> > +          fixed-link {
-> > +            speed = <10000>;
-> > +            full-duplex;
-> > +            pause;
-> > +          };
-> > +        };
-> > +
-> > +        mac@1 {
-> > +          compatible = "mediatek,eth-mac";
-> > +          reg = <1>;
-> > +          status = "disabled";
-> > +          pcs-handle = <&usxgmiisys1>;
-> > +        };
-> > +
-> > +        mac@2 {
-> > +          compatible = "mediatek,eth-mac";
-> > +          reg = <2>;
-> > +          status = "disabled";
-> > +          pcs-handle = <&usxgmiisys0>;
-> > +        };
-> > +
-> > +        mdio_bus: mdio-bus {
-> 
-> mdio {
-> 
-> > +          #address-cells = <1>;
-> > +          #size-cells = <0>;
-> > +
-> > +          /* internal 2.5G PHY */
-> > +          int_2p5g_phy: ethernet-phy@15 {
-> > +            reg = <15>;
-> > +            compatible = "ethernet-phy-ieee802.3-c45";
-> > +            phy-mode = "internal";
-> > +          };
-> > +        };
-> > +      };
-> > +    };
-> > -- 
-> > 2.42.1
-> 
 
 -- 
 linux-phy mailing list
