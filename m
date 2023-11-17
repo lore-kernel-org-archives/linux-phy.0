@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE54DC54FB9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07ACDC072A2
 	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 20:17:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LsaJvea5yAB0j5Olwq2vNanmyGpGtAOkRlAEwVotww0=; b=eCUCViT4oS0Ai0
-	s0aKmiWdtuJjaLPROTRYHpFXS5a6Fp8MF0BT++U8JYl4/eqGbZlURrJCYjjv4jP5yHLaZgsV123+k
-	InWHnBn5USN15Zf4vMJRilO11QjNrgvUHCtJCimcU9J+l4AjXF1YaPxyZaRhH8bHYx2tsG5wsKEgM
-	RhG8dsl9BSQaqwsa7BY2IJeDXgXmatepHB7DCynAn3J4yRXr1z6YD38OTTJhD5UQPiSKXc+CUwf21
-	VKPnJ+AbbyJcUevuQ4oA5HsYz3pDynotYYv78ha2WmumSikXMx9tAH4Z3SOWxE6L5s50uNtGvXpx7
-	jL9wEgwAYgl29Ug14mFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nK3Y0Cgzpd7xotLeEgqtbSeP5yEuXER0ZL4bz9WL/YE=; b=cuGaDyjvInGmw5
+	Q+z+skFW7YnQjxJY/O0AN1GmmixP5iatYYEwubTgBedIEc6aXVxk0EP3ytyG4uMHpHvegxdbNLOP4
+	wGdc2XSRTk1lQfQXgkUVapL8Swlat0el7dOUeSqJyEmgbuET3jx2EWGPNn6ZrJDRzOHUfaI515j8c
+	VVcwgTgfTvSZsM+cQ8LdfrmuIdXaAsgsmgNzIlVx7cZ6WVw0XyYOWxkHiUkNAlqkLMVPUQQejmdh9
+	9/ZXClzf7KkakAznhkGIkWT7Kr7IxuQXJpN6HFG40t5hYZolyI1+gv48v7BfMAYYlD69czryKDmW7
+	MVKnZ7FGzBY3G4g0iINw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r45Hf-007Dkr-19;
+	id 1r45Hf-007DlY-23;
 	Fri, 17 Nov 2023 20:17:47 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r45Hc-007Dit-0u
+	id 1r45Hc-007Diz-1n
 	for linux-phy@lists.infradead.org;
 	Fri, 17 Nov 2023 20:17:45 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-9e2838bcb5eso341210666b.0
-        for <linux-phy@lists.infradead.org>; Fri, 17 Nov 2023 12:17:41 -0800 (PST)
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-507cee17b00so3144987e87.2
+        for <linux-phy@lists.infradead.org>; Fri, 17 Nov 2023 12:17:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1700252260; x=1700857060; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=jO4FinG60TptnJlL0I/aBKs5ITFw+rqL2aoAvZdWzlg=;
-        b=iXu8/xT/rRk4enZH0t1CMnZ/aBM2XFwYxyNg9FodPaepRpsDU62Vcx8UvDMf4sEF41
-         j7DUS6DSVwEgBKz5+w8I14INz60nbWAY98aRIZmxwTLJ0FukV2GxrHHPe7sD04apusES
-         SCTNJu5cIeLzwh6ouT6Ub4FDzSBlwiZ6Y01KmkwjOaH3l1b5GVSqxzWAbXXMLtOBeL9Q
-         36Sd/7RVIFqg00tejoXVkrP5Ami0LBlAOt7uM6s7QMZVsbr7MjMktETrU/1M5+Npo9Q8
-         kMLnjeBpvrbYYKs6uDrQzMl7PeD7XJIJV/KogM1SQvUVF3mQciDKJBNo4TOUYLGWptOz
-         yAUg==
+        d=gmail.com; s=20230601; t=1700252262; x=1700857062; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ZKYe02DmJmwFFNmiKnLALvfB/P1IY/5H1knBpaadyWk=;
+        b=TkAUJ8jmkI86OA26T7DhDFn+JeJXoF9UeKGfB5ATDuBZBFh992EactCpRzpJHJTdLh
+         SFwcNsjfkb32QP6gu3Px461sRSb9ibumzlpeS6KweAumug53VkBw2l2g8aUhp1zCTm3r
+         icFuPLhP9NVnlu+3k4N6UCxKLNfM7kEQIa/hR3/LTwFvHhxu+N+le2PY+vEkj8QLXgLN
+         GQddP4sxLGt3RQO+x7dt7gPPOGiWEHB+z3sgZWXKnaOjbykiz5tGsPSWl8oMdiSsKww4
+         TXKamNNDd8jqVAnBVwlzbYAfimogjNToySmJPTbb09pToBFCnUYTlRi+WyKFKoKNi9D4
+         3C2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700252260; x=1700857060;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=jO4FinG60TptnJlL0I/aBKs5ITFw+rqL2aoAvZdWzlg=;
-        b=aJ5xwoJrcB4CnOKSr0b7ASjECH4ttg2/Paxkba5iK7wl90/PDxwRmW2Xic6p3fAFC/
-         8DxWM/0ecoE97DTuC+W1Pps0lwFV0E5hrSFsE5/8XIGTKsyz8zJKTDK8HwgR8ymgjGaY
-         Prx5Yh1fRLfIuqeBF+TXJxQ8K5Z74WTMYlHq0r3ewNIh5qmyyPmagfzH2K8UkJdt9sVk
-         kWqHuYCrG9jsgRnZ7sDbJL424y3cv3pCAFloxYsRdrwLcN9EmzKptFKaE2RVDQUAnp0X
-         f+wyCQi7MpAfosDZEb39rz0+J5FZMdlUKw8B7H2YT1cqqTpN2aNYEZLeCvX68SqB13yE
-         mK/w==
-X-Gm-Message-State: AOJu0YzUNIW0Pv+w5LdxW9qk/ABaB5DJz0lq3xDV2wwUX8sxMv0Nvc/V
-	OvmFQ2zuIHaKCTVD8cXBcLE=
-X-Google-Smtp-Source: AGHT+IGBtBUbtAsV/vAYb+ntpU2hrBW9x5wudUtgIOuOFs8V1oWXMInP7DvsvQycY/b65fJ4JKgGWQ==
-X-Received: by 2002:a17:906:2ce:b0:9e4:716:4e32 with SMTP id 14-20020a17090602ce00b009e407164e32mr147592ejk.11.1700252259887;
-        Fri, 17 Nov 2023 12:17:39 -0800 (PST)
+        d=1e100.net; s=20230601; t=1700252262; x=1700857062;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=ZKYe02DmJmwFFNmiKnLALvfB/P1IY/5H1knBpaadyWk=;
+        b=uWY4CrTd3mlcu1TjKNuJKv+P++NyL/2kvAf5qWxgRZNhFQgyYNacKAxzsjWuaq65AN
+         BE0rJGZv8LOXFvEFV/MEUTtodmwcUfscfkvfSaYl0YeF9CyzffXGWoyHqR6685xeXMO2
+         tIMi0KlhKvF+Jfhrh4trDZ7w8miOmDNNmRphaSXdp7I4/ejjh2zLA07i8FwSs9mjTShc
+         GQRR3DbTjjflcpCy8qApISDfkD9Ak3s8mzoY/ob/8XF26LgE5pR7c3sOwUwAdJUMKP1Q
+         ZfSqhEcQfUaX5+uYnT9Vk4Ds+7iw9wK9+Ay2lFNCy+mVSgm1o7NoAouT3FUZ2kybQZJE
+         rRkA==
+X-Gm-Message-State: AOJu0YyvT4EJYQ8koBY3Jc/xVRM3fEhljDP4TrGweCnha4czPI2L2FQ2
+	a6lS4X0qFqrEc2vGdWfKi5c=
+X-Google-Smtp-Source: AGHT+IFe0hmC2VgViHFT5wuAsjrdil67dwDNZQZv0yUV06HkOxSpStTOzG2BPmbrbVMIt2AXxBTN/w==
+X-Received: by 2002:ac2:5a04:0:b0:50a:9652:31d2 with SMTP id q4-20020ac25a04000000b0050a965231d2mr451791lfn.15.1700252262115;
+        Fri, 17 Nov 2023 12:17:42 -0800 (PST)
 Received: from david-ryuzu.fritz.box ([188.195.169.6])
-        by smtp.googlemail.com with ESMTPSA id e7-20020a1709062c0700b0099d804da2e9sm1130630ejh.225.2023.11.17.12.17.38
+        by smtp.googlemail.com with ESMTPSA id e7-20020a1709062c0700b0099d804da2e9sm1130630ejh.225.2023.11.17.12.17.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Nov 2023 12:17:39 -0800 (PST)
+        Fri, 17 Nov 2023 12:17:41 -0800 (PST)
 From: David Wronek <davidwronek@gmail.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -87,15 +88,19 @@ Cc: cros-qcom-dts-watchers@chromium.org,
 	linux-scsi@vger.kernel.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	phone-devel@vger.kernel.org,
-	David Wronek <davidwronek@gmail.com>
-Subject: [PATCH v2 0/8] Add UFS support for SC7180/SM7125
-Date: Fri, 17 Nov 2023 21:08:32 +0100
-Message-ID: <20231117201720.298422-1-davidwronek@gmail.com>
+	David Wronek <davidwronek@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v2 2/8] dt-bindings: ufs: qcom: Add SC7180 compatible string
+Date: Fri, 17 Nov 2023 21:08:34 +0100
+Message-ID: <20231117201720.298422-3-davidwronek@gmail.com>
 X-Mailer: git-send-email 2.42.1
+In-Reply-To: <20231117201720.298422-1-davidwronek@gmail.com>
+References: <20231117201720.298422-1-davidwronek@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231117_121744_339917_AC6B9F25 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20231117_121744_591612_FC8BAC3A 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,41 +117,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patchset introduces UFS support for SC7180 and SM7125, as well as
-support for the Xiaomi Redmi Note 9S.
+Document the compatible for the UFS found on SC7180.
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: David Wronek <davidwronek@gmail.com>
 ---
-Changes in v2:
- - Fix device tree binding for QMP PHY
- - Separate ICE into its own node
- - Fix style problems in sc7180.dtsi
+ Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
---
-David Wronek (7):
-  dt-bindings: crypto: ice: Document SC7180 inline crypto engine
-  dt-bindings: ufs: qcom: Add SC7180 compatible string
-  dt-bindings: phy: Add QMP UFS PHY compatible for SC7180
-  dt-bindings: arm: qcom: Add Xiaomi Redmi Note 9S
-  phy: qcom: qmp-ufs: Add SC7180 support
-  arm64: dts: qcom: sc7180: Add UFS nodes
-  arm64: dts: qcom: sm7125-xiaomi-common: Add UFS nodes
-
-Joe Mason (1):
-  arm64: dts: qcom: Add support for Xiaomi Redmi Note 9S
-
- .../devicetree/bindings/arm/qcom.yaml         |  1 +
- .../crypto/qcom,inline-crypto-engine.yaml     |  1 +
- .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |  2 +
- .../devicetree/bindings/ufs/qcom,ufs.yaml     |  2 +
- arch/arm64/boot/dts/qcom/Makefile             |  1 +
- arch/arm64/boot/dts/qcom/sc7180.dtsi          | 69 +++++++++++++++++++
- .../boot/dts/qcom/sm7125-xiaomi-common.dtsi   | 16 +++++
- .../boot/dts/qcom/sm7125-xiaomi-curtana.dts   | 16 +++++
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       |  3 +
- 9 files changed, 111 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-
+diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+index 2cf3d016db42..192217ea1d24 100644
+--- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
++++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+@@ -27,6 +27,7 @@ properties:
+           - qcom,msm8996-ufshc
+           - qcom,msm8998-ufshc
+           - qcom,sa8775p-ufshc
++          - qcom,sc7180-ufshc
+           - qcom,sc8280xp-ufshc
+           - qcom,sdm845-ufshc
+           - qcom,sm6115-ufshc
+@@ -212,6 +213,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,sc7180-ufshc
+               - qcom,sm6115-ufshc
+     then:
+       properties:
 -- 
 2.42.1
 
