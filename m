@@ -4,37 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 669D6C197A0
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 13:05:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB7CBC072A2
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 13:05:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vojPnyJQVZab1VFmJ48j73ifyik9s/RqAqO2EozcxYo=; b=UsjfEiwP7HSpzK
-	sSluD/tPMG5yx4dEd5XzKcH7/Xw9F7GQX1xQmU4o+ayVwrq5ZZnqyGe89LzqBCSJgJzYRnplVYTL5
-	9RVetmVRV+mZ2pojzjEgEjPzlQgbZE4H987ixb+mV1kz4FICNPV2RXEdmSnDQ4BY0Ckxa0HrSqC3Q
-	UP9SkWwcsae9deBd8RhN7V9AJT5DVh9INKKXSnld/m3+wUVyhs75uPGKTb0GzrUpc2LFIqEP0505+
-	unapuykLjhf8o2MrXc220RJ75zieqEALeqRmNeNpbgO1wX32NiimsFw02llYHPvAKBAHjz73R21KW
-	eZmYjmPBR5gI7rFA9udw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UYq21mRCBHqNFQF7uZDDuOgYIIGmUTL+UQOrljbaEYs=; b=vI+3q6Na9Vm4lh
+	04KaM+R6mRSkda03R7jWG76fbrwmwpfgqoPDAgfT2wUGOn3gjEDVklRUlklImIqnyjaU8pYjehzPI
+	JuaBc5vTaqU1Y1i1ccTwZn/7vH0na93gxFKYC61ifwb5bz7TtGgYkAoGMPa/lwMrNKO/z9VV0AmAf
+	zxlPFWSt1I9tZ0kRiSREh0c3gLIyoP3b91GGMLpay1h+P6MgBYQgMe1oo6OXLma6KbVULBlBmPzQt
+	2rc2C66lHOoVmV7xDpDXwSOpaA71ZWggGvZ+b2DLNWz7BTs17HHJMGN7SAEZ3p2XKzjuPhOqVPjKe
+	/FvhZ4ms9a5PHorB4PbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r3yX8-006bdE-0V;
-	Fri, 17 Nov 2023 13:05:18 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
+	id 1r3yXA-006be0-1c;
+	Fri, 17 Nov 2023 13:05:20 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r3yX4-006bTc-2X
+	id 1r3yX7-006bTB-06
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Nov 2023 13:05:16 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	Fri, 17 Nov 2023 13:05:19 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 34D3C24E269;
-	Fri, 17 Nov 2023 21:04:24 +0800 (CST)
-Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Nov
- 2023 21:04:24 +0800
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 5E8CE24E1C6;
+	Fri, 17 Nov 2023 21:04:23 +0800 (CST)
+Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Nov
+ 2023 21:04:23 +0800
 Received: from yang-virtual-machine.localdomain (183.27.97.246) by
  EXMBX171.cuchost.com (172.16.6.91) with Microsoft SMTP Server (TLS) id
  15.0.1497.42; Fri, 17 Nov 2023 21:04:23 +0800
@@ -46,20 +46,19 @@ CC: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
 	<changhuang.liang@starfivetech.com>, <rogerq@kernel.org>,
 	<geert+renesas@glider.be>, <keith.zhao@starfivetech.com>,
 	<shengyang.chen@starfivetech.com>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1 1/2] dt-bindings: phy: Add starfive,jh7110-dphy-tx
-Date: Fri, 17 Nov 2023 21:04:20 +0800
-Message-ID: <20231117130421.79261-2-shengyang.chen@starfivetech.com>
+Subject: [PATCH v1 0/2] Add JH7110 MIPI DPHY TX support
+Date: Fri, 17 Nov 2023 21:04:19 +0800
+Message-ID: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
-References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
 MIME-Version: 1.0
 X-Originating-IP: [183.27.97.246]
 X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX171.cuchost.com
  (172.16.6.91)
 X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231117_050514_991701_F10D4E76 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20231117_050517_218663_AE42EB9B 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,95 +75,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-StarFive SoCs like the jh7110 use a MIPI D-PHY TX
-controller based on a M31 IP. Add a binding for it.
+This patchset adds mipi dphy tx support for the StarFive JH7110 SoC.
+It is used to transfer DSI data. The series has been tested on
+the VisionFive 2 board.
 
-Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
----
- .../bindings/phy/starfive,jh7110-dphy-tx.yaml | 74 +++++++++++++++++++
- 1 file changed, 74 insertions(+)
+Shengyang Chen (2):
+  dt-bindings: phy: Add starfive,jh7110-dphy-tx
+  phy: starfive: Add mipi dphy tx support
+
+ .../bindings/phy/starfive,jh7110-dphy-tx.yaml |  74 +++
+ MAINTAINERS                                   |   7 +
+ drivers/phy/starfive/Kconfig                  |  10 +
+ drivers/phy/starfive/Makefile                 |   1 +
+ drivers/phy/starfive/phy-jh7110-dphy-tx.c     | 542 ++++++++++++++++++
+ 5 files changed, 634 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+ create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
 
-diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
-new file mode 100644
-index 000000000000..850fe2e61d1d
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
-@@ -0,0 +1,74 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-tx.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Starfive SoC MIPI D-PHY Tx Controller
-+
-+maintainers:
-+  - Keith Zhao <keith.zhao@starfivetech.com>
-+  - Shengyang Chen <shengyang.chen@starfivetech.com>
-+
-+description:
-+  The Starfive SoC uses the MIPI DSI D-PHY based on M31 IP to transfer
-+  DSI data.
-+
-+properties:
-+  compatible:
-+    const: starfive,jh7110-dphy-tx
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    items:
-+      - const: dphy_txesc
-+
-+  resets:
-+    items:
-+      - description: DSITX_TXBYTEHS reset
-+      - description: MIPITX_DPHY_SYS reset
-+      - description: MIPITX_DPHY_TXBYTEHS reset
-+
-+  reset-names:
-+    items:
-+      - const: dsi_txbytehs
-+      - const: dphy_sys
-+      - const: dphy_txbytehs
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - power-domains
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    phy@295e0000 {
-+      compatible = "starfive,jh7110-dphy-tx";
-+      reg = <0x295e0000 0x10000>;
-+      clocks = <&voutcrg 14>;
-+      clock-names = "dphy_txesc";
-+      resets = <&syscrg 7>,
-+               <&syscrg 10>,
-+               <&syscrg 11>;
-+      reset-names = "dsi_txbytehs", "dphy_sys", "dphy_txbytehs";
-+      power-domains = <&aon_syscon 0>;
-+      #phy-cells = <0>;
-+    };
 -- 
 2.17.1
 
