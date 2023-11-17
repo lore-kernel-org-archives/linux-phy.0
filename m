@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E680C072A2
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 06:15:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10D8BC197A0
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 13:05:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PcLvMFrL/hi/mH95zFQ+jQpOJwe9tTvsUyQ6VnL58OA=; b=F18tUwNai9uvSm
-	BB1uig66QGL8eKtFc52F49CQoaJjgtzvfNqRpz6C3EhrEpqjLJPhmw/SvdKetMFOkzqbCFt1ijm5N
-	pod+mgMezP98jyjKlqYMXIs9gf4EcHnZrpH9k4kLSeG20v4mQga7MDAdqH94q6vWXCspu4zNZDOl6
-	ZnFhPEpbJH4/OYetjdtEb6ncrysxT4Xxa/U2Nk7+Pc8JVF+rMijKWmjTY08QXtUYnJ1vz1C9my3S7
-	IfHLeExahxioIyriFqZnTMVjwPRoK3wReoQany7M1ismK9w2s61ZEpCndRQd05CFItojud8EOEQx5
-	5bk5tGODnx17WzMno0ew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=64xcioD2m7RRWP0eY3eNFI3iVmFgm39fneYAgsWDHJU=; b=ogpw/EPiZaslIp
+	UbCI7u4RTHXd5ztIUHKvLovqJSGoFQQRbKuOUqD8FQ5psu8lOkkPmVB2rmqyrwXTuyNdCyYUFdMZF
+	y7wl3Kv7aBNfklO3JuuGSuGlSPip8i0qiQwLNFt5W5CVjT7+sWNYNFhJb8+H5VMFb/svmQqAJdQ4a
+	QlgY6e5kWXvxXg//sT1xiaQwwwws5g349itCW4NYAd2jhZllekmaShZi02PEUErvI13JybsqG0T0p
+	vKj1X8voD0fOpDPtVQrnxygY/e7/wfQObeOHFxh7bmj5J2JvBHhGSV8tLZHKI/a0BtPdibnhqVf9j
+	rCpRti33YKP8T0TVak6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r3s8j-005jdG-2T;
-	Fri, 17 Nov 2023 06:15:41 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r3s8g-005jcp-35
+	id 1r3yX2-006bc1-2E;
+	Fri, 17 Nov 2023 13:05:12 +0000
+Received: from ex01.ufhost.com ([61.152.239.75])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1r3yWy-006bTs-01
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Nov 2023 06:15:41 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AH5YTUd023367;
-	Fri, 17 Nov 2023 06:15:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding;
- s=qcppdkim1; bh=/0kPZcvmVsuMmebc+67TXSIf6Jny3+zQthozLRxUmLU=;
- b=RrtOGbUV63jE9DvFWa6025b/EXscj2u0cBE29Ze7BFlhxztaByx2q62sXDhH8fGeTpN4
- mZm+PmY6tY+7jmdb91w5Et26r8f3Ow1TA3lHt+V3xOVNQ+259CwtVHx+7G+2uRoOTQ8F
- DVfqFNAgd1ioMx+2rO3FOqsNo6jrRLZf3yBrMiRvdq86+DbYDxob9a9FelphUnRVn21g
- 62PFWaUOHlKnHI3+vS06If1VfgJy4KZayoj51XORnYs5sV3pMO+Gr68ApKbKgEgCa7Ss
- aBK1so3qq07253iVg73Z+yjXN/Lp8ROJm9Vn48MFyO7OM/aqrfzr3Z/Yf+TPEsp4Kxpf HA== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3udkkut1fc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 17 Nov 2023 06:15:34 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3AH6F4On026814;
-	Fri, 17 Nov 2023 06:15:04 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3ua2pkqbs1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 17 Nov 2023 06:15:04 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3AH6F3mK026798;
-	Fri, 17 Nov 2023 06:15:03 GMT
-Received: from hu-devc-hyd-u20-c-new.qualcomm.com (hu-rohiagar-hyd.qualcomm.com [10.147.246.70])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3AH6F3R9026785
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 17 Nov 2023 06:15:03 +0000
-Received: by hu-devc-hyd-u20-c-new.qualcomm.com (Postfix, from userid 3970568)
-	id 061EB2204F; Fri, 17 Nov 2023 11:45:02 +0530 (+0530)
-From: Rohit Agarwal <quic_rohiagar@quicinc.com>
-To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-        vkoul@kernel.org, kishon@kernel.org, dmitry.baryshkov@linaro.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Rohit Agarwal <quic_rohiagar@quicinc.com>
-Subject: [PATCH v5] phy: qcom-qmp-usb: Add Qualcomm SDX75 USB3 PHY support
-Date: Fri, 17 Nov 2023 11:45:01 +0530
-Message-Id: <20231117061501.537529-1-quic_rohiagar@quicinc.com>
-X-Mailer: git-send-email 2.25.1
+	Fri, 17 Nov 2023 13:05:11 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id E572E24E26B;
+	Fri, 17 Nov 2023 21:04:24 +0800 (CST)
+Received: from EXMBX171.cuchost.com (172.16.6.91) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Fri, 17 Nov
+ 2023 21:04:24 +0800
+Received: from yang-virtual-machine.localdomain (183.27.97.246) by
+ EXMBX171.cuchost.com (172.16.6.91) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.42; Fri, 17 Nov 2023 21:04:24 +0800
+From: Shengyang Chen <shengyang.chen@starfivetech.com>
+To: <devicetree@vger.kernel.org>, <linux-phy@lists.infradead.org>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
+	<krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+	<p.zabel@pengutronix.de>, <minda.chen@starfivetech.com>,
+	<changhuang.liang@starfivetech.com>, <rogerq@kernel.org>,
+	<geert+renesas@glider.be>, <keith.zhao@starfivetech.com>,
+	<shengyang.chen@starfivetech.com>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v1 2/2] phy: starfive: Add mipi dphy tx support
+Date: Fri, 17 Nov 2023 21:04:21 +0800
+Message-ID: <20231117130421.79261-3-shengyang.chen@starfivetech.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
+References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 20OnBnZw18OHQq7tUVO0NFOB-aZa_pPp
-X-Proofpoint-ORIG-GUID: 20OnBnZw18OHQq7tUVO0NFOB-aZa_pPp
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-17_03,2023-11-16_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- mlxlogscore=999 clxscore=1015 spamscore=0 impostorscore=0
- lowpriorityscore=0 phishscore=0 adultscore=0 bulkscore=0 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311170043
+X-Originating-IP: [183.27.97.246]
+X-ClientProxiedBy: EXCAS066.cuchost.com (172.16.6.26) To EXMBX171.cuchost.com
+ (172.16.6.91)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231116_221539_132399_22DABD58 
-X-CRM114-Status: GOOD (  18.40  )
+X-CRM114-CacheID: sfid-20231117_050508_478206_DF32FFB1 
+X-CRM114-Status: GOOD (  21.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,264 +76,617 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for USB3 QMP PHY found in SDX75 platform.
+Add mipi dphy tx support for the StarFive JH7110 SoC.
+It is used to transfer DSI data.
 
-Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
 ---
+ MAINTAINERS                               |   7 +
+ drivers/phy/starfive/Kconfig              |  10 +
+ drivers/phy/starfive/Makefile             |   1 +
+ drivers/phy/starfive/phy-jh7110-dphy-tx.c | 542 ++++++++++++++++++++++
+ 4 files changed, 560 insertions(+)
+ create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
 
-Hi,
-
-Changes in v5:
- - Removed all the applied patches from the series.
- - Rebased on 6.7-rc1
- - Link to v4: https://lore.kernel.org/all/1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com/
- - All the dependent changes are applied mentioned in the cover letter
-   of the previous versions.
-
-Changes in v4:
- - Replaced the v5 offsets with v6 offsets as per Dmitry's suggestion in patch 5/5.
-
-Changes in v3:
- - Removed the unnecessary change introduced in v2 of patch 2/5
- - Added Fixes tag in patch 3/5
- - Rebased patch 5/5 on Dmitry's cleanup patches.
-   https://lore.kernel.org/all/20230911203842.778411-1-dmitry.baryshkov@linaro.org/
-   https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
-
-Changes in v2:
- - Dropped the new dt schema introduced in v1 for sdx75 usb3 phy
-   and reusing the bindings.
- - Rephrased the commit message of patch 3/5
- - Removed stray lines from the patch 5/5
-
-Thanks,
-Rohit.
-
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 173 ++++++++++++++++++++++++
- 1 file changed, 173 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 02f156298e77..77e91b3eae79 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -24,6 +24,7 @@
- #include "phy-qcom-qmp-pcs-misc-v4.h"
- #include "phy-qcom-qmp-pcs-usb-v4.h"
- #include "phy-qcom-qmp-pcs-usb-v5.h"
-+#include "phy-qcom-qmp-pcs-usb-v6.h"
+diff --git a/MAINTAINERS b/MAINTAINERS
+index cfb533ec89e8..255c577afa49 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -20677,6 +20677,13 @@ S:	Supported
+ F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+ F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
  
- /* QPHY_SW_RESET bit */
- #define SW_RESET				BIT(0)
-@@ -151,6 +152,17 @@ static const unsigned int qmp_v5_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
- };
++STARFIVE JH7110 DPHY TX DRIVER
++M:	Keith Zhao <keith.zhao@starfivetech.com>
++M:	Shengyang Chen <shengyang.chen@starfivetech.com>
++S:	Supported
++F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
++F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
++
+ STARFIVE JH7110 MMC/SD/SDIO DRIVER
+ M:	William Qiu <william.qiu@starfivetech.com>
+ S:	Supported
+diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+index 9508e2143011..d0cdd7cb4a13 100644
+--- a/drivers/phy/starfive/Kconfig
++++ b/drivers/phy/starfive/Kconfig
+@@ -15,6 +15,16 @@ config PHY_STARFIVE_JH7110_DPHY_RX
+ 	  system. If M is selected, the module will be called
+ 	  phy-jh7110-dphy-rx.ko.
  
-+static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-+	[QPHY_SW_RESET]			= QPHY_V6_PCS_SW_RESET,
-+	[QPHY_START_CTRL]		= QPHY_V6_PCS_START_CONTROL,
-+	[QPHY_PCS_STATUS]		= QPHY_V6_PCS_PCS_STATUS1,
-+	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_PCS_POWER_DOWN_CONTROL,
++config PHY_STARFIVE_JH7110_DPHY_TX
++	tristate "StarFive JH7110 D-PHY TX Support"
++	depends on HAS_IOMEM
++	select GENERIC_PHY
++	select GENERIC_PHY_MIPI_DPHY
++	help
++	  Choose this option if you have a StarFive D-PHY TX in your
++	  system. If M is selected, the module will be called
++	  phy-jh7110-dphy-tx.ko.
 +
-+	/* In PCS_USB */
-+	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-+	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
+ config PHY_STARFIVE_JH7110_PCIE
+ 	tristate "Starfive JH7110 PCIE 2.0/USB 3.0 PHY support"
+ 	depends on HAS_IOMEM
+diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+index b391018b7c47..eedc4a6fec15 100644
+--- a/drivers/phy/starfive/Makefile
++++ b/drivers/phy/starfive/Makefile
+@@ -1,4 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0
+ obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_RX)	+= phy-jh7110-dphy-rx.o
++obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_TX)	+= phy-jh7110-dphy-tx.o
+ obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)		+= phy-jh7110-pcie.o
+ obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)		+= phy-jh7110-usb.o
+diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+new file mode 100644
+index 000000000000..69aa172563e4
+--- /dev/null
++++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+@@ -0,0 +1,542 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * DPHY TX driver for the StarFive JH7110 SoC
++ *
++ * Copyright (C) 2023 StarFive Technology Co., Ltd.
++ * Author: Keith Zhao <keith.zhao@starfivetech.com>
++ * Author: Shengyang Chen <shengyang.chen@starfivetech.com>
++ */
++
++#include <linux/clk.h>
++#include <linux/io.h>
++#include <linux/mfd/syscon.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_device.h>
++#include <linux/phy/phy.h>
++#include <linux/phy/phy-mipi-dphy.h>
++#include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
++#include <linux/regulator/consumer.h>
++#include <linux/reset.h>
++
++#define STF_DPHY_APBIFSAIF_SYSCFG(x)			(x)
++
++#define  STF_DPHY_AON_POWER_READY_N_SHIFT		0x0U
++#define  STF_DPHY_AON_POWER_READY_N_MASK		BIT(0)
++#define  STF_DPHY_CFG_L0_SWAP_SEL_SHIFT			0xCU
++#define  STF_DPHY_CFG_L0_SWAP_SEL_MASK			GENMASK(14, 12)
++#define  STF_DPHY_CFG_L1_SWAP_SEL_SHIFT			0xFU
++#define  STF_DPHY_CFG_L1_SWAP_SEL_MASK			GENMASK(17, 15)
++#define  STF_DPHY_CFG_L2_SWAP_SEL_SHIFT			0x12U
++#define  STF_DPHY_CFG_L2_SWAP_SEL_MASK			GENMASK(20, 18)
++#define  STF_DPHY_CFG_L3_SWAP_SEL_SHIFT			0x15U
++#define  STF_DPHY_CFG_L3_SWAP_SEL_MASK			GENMASK(23, 21)
++#define  STF_DPHY_CFG_L4_SWAP_SEL_SHIFT			0x18U
++#define  STF_DPHY_CFG_L4_SWAP_SEL_MASK			GENMASK(26, 24)
++#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT		0x12U
++#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK		BIT(18)
++#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT		0x13U
++#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK		GENMASK(23, 19)
++#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT		0x18U
++#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK		GENMASK(28, 24)
++
++#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT		0x5U
++#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK		GENMASK(9, 5)
++#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT		0xAU
++#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK		GENMASK(14, 10)
++#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT		0xFU
++#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK		GENMASK(19, 15)
++#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT		0x14U
++#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK		GENMASK(24, 20)
++#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT		0x19U
++#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK		GENMASK(29, 25)
++
++#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT		0x0U
++#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK		GENMASK(4, 0)
++#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT		0x5U
++#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK		GENMASK(9, 5)
++#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT		0x0U
++#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK		GENMASK(23, 0)
++
++#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT		0x0U
++#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK		GENMASK(8, 0)
++#define  STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT		0x9U
++#define  STF_DPHY_RG_CDTX_PLL_FM_EN_MASK		BIT(9)
++#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT	0xAU
++#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK	BIT(10)
++#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT		0xBU
++#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK		GENMASK(12, 11)
++
++#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT		0x12U
++#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK		0x40000U
++
++#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT	0x0U
++#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK	GENMASK(7, 0)
++#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT	0x8U
++#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK		GENMASK(15, 8)
++#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT		0x10U
++#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK		GENMASK(23, 16)
++#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT		0x18U
++#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK		GENMASK(31, 24)
++
++#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT		0x0U
++#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK		GENMASK(7, 0)
++#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT		0x8U
++#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK		GENMASK(15, 8)
++#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT		0x10U
++#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK		GENMASK(23, 16)
++#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT		0x18U
++#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK		GENMASK(31, 24)
++
++#define  STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT		0x0U
++#define  STF_DPHY_RG_EXTD_CYCLE_SEL_MASK		GENMASK(2, 0)
++#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT		0x0U
++#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK		GENMASK(31, 0)
++
++#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT	0x1U
++#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK		GENMASK(2, 1)
++#define  STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT		0x3U
++#define  STF_DPHY_SCFG_PPI_C_READY_SEL_MASK		GENMASK(4, 3)
++
++#define  STF_DPHY_REFCLK_IN_SEL_SHIFT			0x1AU
++#define  STF_DPHY_REFCLK_IN_SEL_MASK			GENMASK(28, 26)
++#define  STF_DPHY_RESETB_SHIFT				0x1DU
++#define  STF_DPHY_RESETB_MASK				BIT(29)
++
++#define STF_DPHY_REFCLK_12M				1
++#define STF_DPHY_BITRATE_ALIGN				10000000
++
++#define STF_MAP_LANES_NUM				5
++
++struct m31_dphy_config {
++	int ref_clk;
++	unsigned long bitrate;
++	u32 pll_prev_div;
++	u32 pll_fbk_int;
++	u32 pll_fbk_fra;
++	u32 extd_cycle_sel;
++	u32 dlane_hs_pre_time;
++	u32 dlane_hs_zero_time;
++	u32 dlane_hs_trail_time;
++	u32 clane_hs_pre_time;
++	u32 clane_hs_zero_time;
++	u32 clane_hs_trail_time;
++	u32 clane_hs_clk_pre_time;
++	u32 clane_hs_clk_post_time;
 +};
 +
- static const struct qmp_phy_init_tbl ipq9574_usb3_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x1a),
- 	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-@@ -871,6 +883,134 @@ static const struct qmp_phy_init_tbl sdx65_usb3_uniphy_rx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_RX_SIGDET_ENABLES, 0x00),
- };
- 
-+static const struct qmp_phy_init_tbl sdx75_usb3_uniphy_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0x9e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x2e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0xea),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE1, 0x25),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xb7),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xb7),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0x9e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xea),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE0, 0x25),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_BUF_ENABLE, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_CFG, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_1, 0xb6),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_2, 0x4b),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_3, 0x37),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC, 0x0c),
++static const struct m31_dphy_config m31_dphy_configs[] = {
++	{12000000, 490000000, 0x0, 0xa3, 0x55 << 16 | 0x55 << 8 | 0x55,
++	 0x2, 0xc, 0x1d, 0x14, 0x8, 0x42, 0x12, 0x3, 0x28},
++	{12000000, 680000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
++	 0x1, 0x8, 0x13, 0xe, 0x5, 0x2e, 0xd, 0x1, 0x16},
++	{12000000, 750000000, 0x0, 0x7d, 0x0 << 16 | 0x0 << 8 | 0x0,
++	 0x1, 0x8, 0x16, 0xf, 0x6, 0x32, 0xe, 0x1, 0x17},
++	{12000000, 900000000, 0x0, 0x96, 0x0 << 16 | 0x0 << 8 | 0x0,
++	 0x1, 0xa, 0x19, 0x12, 0x8, 0x3c, 0x10, 0x1, 0x19},
 +};
 +
-+static const struct qmp_phy_init_tbl sdx75_usb3_uniphy_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_RES_CODE_LANE_TX, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_RES_CODE_LANE_RX, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_RES_CODE_LANE_OFFSET_RX, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0xf5),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_3, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_4, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_5, 0x5f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_RCV_DETECT_LVL_2, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_TX_PI_QEC_CTRL, 0x21),
++struct stf_dphy_info {
++	/**
++	 * @maps:
++	 *
++	 * Physical lanes and logic lanes mapping table.
++	 *
++	 * The default order is:
++	 * [data lane 0, data lane 1, data lane 2, date lane 3, clk lane]
++	 */
++	u8 maps[STF_MAP_LANES_NUM];
 +};
 +
-+static const struct qmp_phy_init_tbl sdx75_usb3_uniphy_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FO_GAIN, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_GAIN, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_FO_GAIN, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_COUNT_LOW, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_PI_CONTROLS, 0x99),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH1, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH2, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_GAIN1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_GAIN2, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_AUX_DATA_TCOARSE_TFINE, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VGA_CAL_CNTRL1, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VGA_CAL_CNTRL2, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_GM_CAL, 0x13),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL2, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_IDAC_TSETTLE_LOW, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x47),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CNTRL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_DEGLITCH_CNTRL, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_LOW, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH, 0xbf),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH2, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH3, 0xdf),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH4, 0xed),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_LOW, 0xdc),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH, 0x5c),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH2, 0x9c),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH3, 0x1d),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH4, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DFE_EN_TIMER, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DCC_CTRL1, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VTH_CODE, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CAL_CTRL1, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CAL_TRIM, 0x08),
++struct stf_dphy {
++	struct device *dev;
++	void __iomem *topsys;
++	struct clk *txesc_clk;
++	struct reset_control *sys_rst;
++	struct reset_control *txbytehs_rst;
++
++	struct phy_configure_opts_mipi_dphy config;
++
++	struct regulator *mipitx_1p8;
++	struct regulator *mipitx_0p9;
++
++	struct phy *phy;
++	const struct stf_dphy_info *info;
 +};
 +
-+static const struct qmp_phy_init_tbl sdx75_usb3_uniphy_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_LOCK_DETECT_CONFIG1, 0xc4),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_LOCK_DETECT_CONFIG2, 0x89),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_LOCK_DETECT_CONFIG3, 0x20),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_LOCK_DETECT_CONFIG6, 0x13),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_REFGEN_REQ_CONFIG1, 0x21),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_RX_SIGDET_LVL, 0xaa),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_CDR_RESET_TIME, 0x0a),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_ALIGN_DETECT_CONFIG1, 0x88),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_ALIGN_DETECT_CONFIG2, 0x13),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_PCS_TX_RX_CONFIG, 0x0c),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_EQ_CONFIG1, 0x4b),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_EQ_CONFIG5, 0x10),
++static inline u32 stf_dphy_get_reg(void *io_addr, u32 addr, u32 shift, u32 mask)
++{
++	u32 tmp;
++
++	tmp = readl(io_addr);
++	tmp = (tmp & mask) >> shift;
++	return tmp;
++}
++
++static inline void stf_dphy_set_reg(void *io_addr, u32 addr, u32 data, u32 shift, u32 mask)
++{
++	u32 tmp;
++
++	tmp = readl(io_addr + addr);
++	tmp &= ~mask;
++	tmp |= (data << shift) & mask;
++	writel(tmp, (io_addr + addr));
++}
++
++static int is_pll_locked(struct stf_dphy *dphy)
++{
++	int tmp = stf_dphy_get_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8),
++				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT,
++				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK);
++	return !tmp;
++}
++
++static void stf_dphy_hw_reset(struct stf_dphy *dphy, int assert)
++{
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
++			 !assert, STF_DPHY_RESETB_SHIFT, STF_DPHY_RESETB_MASK);
++
++	if (!assert) {
++		/*the lock-in time of pll of M31 is 20us-50ms*/
++		while ((!is_pll_locked(dphy)) && msecs_to_jiffies(50))
++			;
++		dev_err(dphy->dev, "MIPI dphy-tx # PLL Locked\n");
++	}
++}
++
++static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct stf_dphy *dphy;
++	u32 bitrate;
++	unsigned long alignment;
++	int i;
++	const struct m31_dphy_config *p;
++	const u32 STF_DPHY_AON_POWER_READY_N_active = 0;
++	const struct stf_dphy_info *info;
++
++	dphy = phy_get_drvdata(phy);
++	info = dphy->info;
++	bitrate = opts->mipi_dphy.hs_clk_rate;
++
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
++			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
++			 STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
++			 STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
++			 STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
++			 STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK);
++
++	alignment = STF_DPHY_BITRATE_ALIGN;
++	if (bitrate % alignment)
++		bitrate += alignment - (bitrate % alignment);
++
++	p = m31_dphy_configs;
++	for (i = 0; i < ARRAY_SIZE(m31_dphy_configs); i++, p++) {
++		if (p->bitrate == bitrate) {
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
++					 STF_DPHY_REFCLK_12M, STF_DPHY_REFCLK_IN_SEL_SHIFT,
++					 STF_DPHY_REFCLK_IN_SEL_MASK);
++
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0),
++					 STF_DPHY_AON_POWER_READY_N_active,
++					 STF_DPHY_AON_POWER_READY_N_SHIFT,
++					 STF_DPHY_AON_POWER_READY_N_MASK);
++
++			/*Lane setting*/
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[0],
++					 STF_DPHY_CFG_L0_SWAP_SEL_SHIFT,
++					 STF_DPHY_CFG_L0_SWAP_SEL_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[1],
++					 STF_DPHY_CFG_L1_SWAP_SEL_SHIFT,
++					 STF_DPHY_CFG_L1_SWAP_SEL_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[2],
++					 STF_DPHY_CFG_L2_SWAP_SEL_SHIFT,
++					 STF_DPHY_CFG_L2_SWAP_SEL_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[3],
++					 STF_DPHY_CFG_L3_SWAP_SEL_SHIFT,
++					 STF_DPHY_CFG_L3_SWAP_SEL_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[4],
++					 STF_DPHY_CFG_L4_SWAP_SEL_SHIFT,
++					 STF_DPHY_CFG_L4_SWAP_SEL_MASK);
++			/*PLL setting*/
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(28), 0x0,
++					 STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
++					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
++					 STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_FM_EN_MASK);
++
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
++					 p->pll_prev_div, STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
++					 p->pll_fbk_int, STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(20),
++					 p->pll_fbk_fra, STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT,
++					 STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(40),
++					 p->extd_cycle_sel, STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT,
++					 STF_DPHY_RG_EXTD_CYCLE_SEL_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
++					 p->dlane_hs_pre_time,
++					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
++					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
++					 p->dlane_hs_pre_time,
++					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
++					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
++					 p->dlane_hs_zero_time,
++					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT,
++					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
++					 p->dlane_hs_trail_time,
++					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT,
++					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
++					 p->clane_hs_pre_time,
++					 STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT,
++					 STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
++					 p->clane_hs_zero_time,
++					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT,
++					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
++					 p->clane_hs_trail_time,
++					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT,
++					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
++					 p->clane_hs_clk_pre_time,
++					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT,
++					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK);
++			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
++					 p->clane_hs_clk_post_time,
++					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT,
++					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK);
++
++			break;
++		}
++	}
++
++	return 0;
++}
++
++static int stf_dphy_init(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	int ret;
++
++	stf_dphy_hw_reset(dphy, 0);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
++			 STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT, STF_DPHY_SCFG_PPI_C_READY_SEL_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
++			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT,
++			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK);
++	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(44), 0x30,
++			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT,
++			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK);
++
++	ret = clk_prepare_enable(dphy->txesc_clk);
++	if (ret) {
++		dev_err(dphy->dev, "Failed to prepare/enable txesc_clk\n");
++		return ret;
++	}
++
++	ret = reset_control_deassert(dphy->sys_rst);
++	if (ret) {
++		dev_err(dphy->dev, "Failed to deassert sys_rst\n");
++		return ret;
++	}
++
++	ret = reset_control_deassert(dphy->txbytehs_rst);
++	if (ret < 0) {
++		dev_err(dphy->dev, "Failed to deassert txbytehs_rst\n");
++		return ret;
++	}
++
++	return 0;
++}
++
++static int stf_dphy_exit(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	int ret;
++
++	ret = reset_control_assert(dphy->txbytehs_rst);
++	if (ret < 0) {
++		dev_err(dphy->dev, "Failed to assert txbytehs_rst\n");
++		return ret;
++	}
++
++	ret = reset_control_assert(dphy->sys_rst);
++	if (ret) {
++		dev_err(dphy->dev, "Failed to assert sys_rst\n");
++		return ret;
++	}
++
++	clk_disable_unprepare(dphy->txesc_clk);
++
++	stf_dphy_hw_reset(dphy, 1);
++
++	return 0;
++}
++
++static int stf_dphy_power_on(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++	int ret;
++
++	ret = pm_runtime_resume_and_get(dphy->dev);
++	if (ret < 0)
++		return ret;
++
++	ret = regulator_enable(dphy->mipitx_0p9);
++	if (ret) {
++		dev_err(dphy->dev, "Cannot enable mipitx_0p9 regulator\n");
++		return ret;
++	}
++
++	return 0;
++}
++
++static int stf_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
++			     union phy_configure_opts *opts)
++{
++	if (mode != PHY_MODE_MIPI_DPHY)
++		return -EINVAL;
++
++	return 0;
++}
++
++static int stf_dphy_power_off(struct phy *phy)
++{
++	struct stf_dphy *dphy = phy_get_drvdata(phy);
++
++	regulator_disable(dphy->mipitx_0p9);
++
++	pm_runtime_put_sync(dphy->dev);
++
++	return 0;
++}
++
++static const struct phy_ops stf_dphy_ops = {
++	.power_on	= stf_dphy_power_on,
++	.power_off	= stf_dphy_power_off,
++	.init		= stf_dphy_init,
++	.exit		= stf_dphy_exit,
++	.configure	= stf_dphy_configure,
++	.validate	= stf_dphy_validate,
++	.owner		= THIS_MODULE,
 +};
 +
-+static const struct qmp_phy_init_tbl sdx75_usb3_uniphy_pcs_usb_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RXEQTRAINING_DFE_TIME_S2, 0x07),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RCVR_DTCT_DLY_U3_L, 0x40),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RCVR_DTCT_DLY_U3_H, 0x00),
++static int stf_dphy_probe(struct platform_device *pdev)
++{
++	struct phy_provider *phy_provider;
++	struct stf_dphy *dphy;
++	int ret;
++
++	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
++	if (!dphy)
++		return -ENOMEM;
++
++	dphy->info = of_device_get_match_data(&pdev->dev);
++
++	dphy->dev = &pdev->dev;
++	dev_set_drvdata(&pdev->dev, dphy);
++
++	dphy->topsys = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(dphy->topsys)) {
++		ret = PTR_ERR(dphy->topsys);
++		return ret;
++	}
++
++	pm_runtime_enable(&pdev->dev);
++
++	dphy->mipitx_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
++	if (IS_ERR(dphy->mipitx_0p9)) {
++		ret = PTR_ERR(dphy->mipitx_0p9);
++		return ret;
++	}
++
++	dphy->txesc_clk = devm_clk_get(&pdev->dev, "dphy_txesc");
++	if (IS_ERR(dphy->txesc_clk)) {
++		ret = PTR_ERR(dphy->txesc_clk);
++		dev_err(&pdev->dev, "txesc_clk get error\n");
++		return ret;
++	}
++
++	dphy->sys_rst = reset_control_get_exclusive(&pdev->dev, "dphy_sys");
++	if (IS_ERR(dphy->sys_rst)) {
++		ret = PTR_ERR(dphy->sys_rst);
++		dev_err(&pdev->dev, "sys_rst get error\n");
++		return ret;
++	}
++
++	dphy->txbytehs_rst = reset_control_get_exclusive(&pdev->dev, "dsi_txbytehs");
++	if (IS_ERR(dphy->txbytehs_rst)) {
++		dev_err(&pdev->dev, "Failed to get txbytehs_rst\n");
++		return PTR_ERR(dphy->txbytehs_rst);
++	}
++
++	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
++	if (IS_ERR(dphy->phy)) {
++		ret = PTR_ERR(dphy->phy);
++		dev_err(&pdev->dev, "Failed to create phy\n");
++		return ret;
++	}
++	phy_set_drvdata(dphy->phy, dphy);
++
++	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
++	if (IS_ERR(phy_provider)) {
++		ret = PTR_ERR(phy_provider);
++		dev_err(&pdev->dev, "Failed to create phy\n");
++		return ret;
++	}
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct stf_dphy_info starfive_dphy_info = {
++	.maps = {0, 1, 2, 3, 4},
 +};
 +
- static const struct qmp_phy_init_tbl sm8350_usb3_uniphy_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_1, 0xa5),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_TX_LANE_MODE_2, 0x82),
-@@ -1317,6 +1457,14 @@ static const struct qmp_usb_offsets qmp_usb_offsets_v5 = {
- 	.rx		= 0x1000,
- };
- 
-+static const struct qmp_usb_offsets qmp_usb_offsets_v6 = {
-+	.serdes		= 0,
-+	.pcs		= 0x0200,
-+	.pcs_usb	= 0x1200,
-+	.tx		= 0x0e00,
-+	.rx		= 0x1000,
++static const struct of_device_id stf_dphy_dt_ids[] = {
++	{
++		.compatible = "starfive,jh7110-dphy-tx",
++		.data = &starfive_dphy_info,
++	},
++	{ /* sentinel */ },
 +};
++MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
 +
- static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
- 	.lanes			= 1,
- 
-@@ -1541,6 +1689,28 @@ static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
- 	.has_pwrdn_delay	= true,
- };
- 
-+static const struct qmp_phy_cfg sdx75_usb3_uniphy_cfg = {
-+	.lanes			= 1,
-+	.offsets		= &qmp_usb_offsets_v6,
-+
-+	.serdes_tbl		= sdx75_usb3_uniphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_serdes_tbl),
-+	.tx_tbl			= sdx75_usb3_uniphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_tx_tbl),
-+	.rx_tbl			= sdx75_usb3_uniphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_rx_tbl),
-+	.pcs_tbl		= sdx75_usb3_uniphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sdx75_usb3_uniphy_pcs_tbl),
-+	.pcs_usb_tbl		= sdx75_usb3_uniphy_pcs_usb_tbl,
-+	.pcs_usb_tbl_num	= ARRAY_SIZE(sdx75_usb3_uniphy_pcs_usb_tbl),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= qmp_v6_usb3phy_regs_layout,
-+	.pcs_usb_offset		= 0x1000,
-+
-+	.has_pwrdn_delay	= true,
++static struct platform_driver stf_dphy_driver = {
++	.driver = {
++		.name	= "starfive-dphy-tx",
++		.of_match_table = stf_dphy_dt_ids,
++	},
++	.probe = stf_dphy_probe,
 +};
++module_platform_driver(stf_dphy_driver);
 +
- static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
- 	.lanes			= 1,
- 
-@@ -2256,6 +2426,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sdx65-qmp-usb3-uni-phy",
- 		.data = &sdx65_usb3_uniphy_cfg,
-+	}, {
-+		.compatible = "qcom,sdx75-qmp-usb3-uni-phy",
-+		.data = &sdx75_usb3_uniphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm6115-qmp-usb3-phy",
- 		.data = &qcm2290_usb3phy_cfg,
++MODULE_AUTHOR("Keith Zhao <keith.zhao@starfivetech.com>");
++MODULE_AUTHOR("Shengyang Chen <shengyang.chen@starfivetech.com>");
++MODULE_DESCRIPTION("StarFive JH7110 DPHY TX driver");
++MODULE_LICENSE("GPL");
 -- 
-2.25.1
+2.17.1
 
 
 -- 
