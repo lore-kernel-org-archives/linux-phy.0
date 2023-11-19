@@ -4,101 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 374C1C5AD4C
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Nov 2023 20:17:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 572DAC072A2
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Nov 2023 12:13:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MgPtnBeaSO/NFsE3UKadoREALIli1twvdhOiVMwaiY4=; b=unfk7Eic4Nvp9G
-	/1tPL33x8yOYtn648FqaNAL4H38i+15WVaEN/T2x2WugRCZn8ZKW2WwzdiKw0X+YW2069gKV7Qmvn
-	RLJFhNeY0CD5cTa6GXNaCmh5kp7edXVn6nvK+fg9wFsLG6sZJjA+YrAjyMET86stydCbj9XaF6S1b
-	KMI/O8veZv3f6InCbuf/zhInxqn632S0Ag4CX4fxm6QHLXHFVNfox30AVvnAfh8qAYJ9aG5VS/j70
-	BxGBXwXrRHePAMaA6zZxNC9Qoh8pHYKl0nc1zp5kun1LNdY9jUJxuyS6PuqmVxgbPeSD9wt8uB+po
-	AiIrFg6sdZQb8mHKLmgQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Zl9yZD8cYMjssIjEGK8nlKJGRlDnQZA8uYq4G+GqaGU=; b=Bd7UtkKMI7iNaF
+	Gc9V5YJHUXsaUenjc6YQgaIoyBX/wPEOJQVUzYB1zi0G+Y4n7o/9nINFMQfQGEKQfwD2ejRxJezkY
+	17yUntR3Do7EP3TzQvidUGfXhqM8w1KPXayJ4lN0TKHu2UsqxNKyzDzJKkYh+syupexBE1Q4CSYgv
+	833oEXNGOurpam1n+yUI0mqdygwF4jw/Akzn5GdVotmKVyCd9H9XCNjnHNbVeEtIZL88hP47LzD1b
+	XE7ijrw5uJN5wfyRrwDeX6+k2joJK5pd6yQhHl3gWKpQPipcyX7OxvxVzBGFb58AueNcqe2s7obIv
+	67xnU3k/Ss5bOz4YSGog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r45Hl-007DpJ-2w;
-	Fri, 17 Nov 2023 20:17:53 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1r4ggU-00A9Bk-2c;
+	Sun, 19 Nov 2023 12:13:54 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r45Hj-007DmW-0b
-	for linux-phy@lists.infradead.org;
-	Fri, 17 Nov 2023 20:17:52 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-53f9af41444so3447356a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 17 Nov 2023 12:17:50 -0800 (PST)
+	id 1r4ggL-00A97E-2R;
+	Sun, 19 Nov 2023 12:13:49 +0000
+Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-53e70b0a218so4951502a12.2;
+        Sun, 19 Nov 2023 04:13:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1700252269; x=1700857069; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vC+himnz38l/KoIV2K7+BOXv6I9H6nNXMdtkGXbKeCU=;
-        b=HqjckG1O09k/HHmaNyBPUoI5oq9vcdn+//5CTdqgAEO1UoMjYV95UqSWmtC+PXxEUF
-         TUwe76eYeDeUO4/qdLKFS48NGFxCXNymgFYMbstKt+i2nR8BJQS7E/exd/Q5YPUGh/j/
-         aWkv1RgJf3SryNOHSKyyJ5CYLRpLQD3FtjHWEZmLuejXNhufV7dMPruIN3AP1zfPzSoF
-         rQSYYFSxZEi8l6R+tN2J/w3lcYoQ4fMo7rmst5Q6bulmpfezj4OninxL0WMAUkkdxFnl
-         riEeMfUueuG+Jc5L4vpQx2DupLSTaewX4N5A9VzGKv6RJh+maUCr13atiqhgjZisObgR
-         Iarw==
+        d=gmail.com; s=20230601; t=1700396023; x=1701000823; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=3Ux1krw1PHmoCa/GU7rGP+Vf9Jy9ZS7rUudcxtdu5Y4=;
+        b=O9uZNfvJCaBidryEoWgK34Q1hGAI7prqdsyDdALHw9R+rUs0Qhu6dVlL3f7pFk4N/J
+         kzDkbBwRjhxMILlcGIVQiAbFQUjjpt4mRDFEpM6AcZMV4I6pyGw7HJZMqxSaT3Dy9xsw
+         NW/+znFK6TlAIIuoO6loKXhjBmMtEOVJPE7QsZLmCWURmvEzRPq+5O64TPiA5cjR6rzM
+         gyHtvdz0dDMLSE9uhZ/dgfevv6ZYFVilBstejOhHB4Xz2y/XgC/HEbmGUC9Kd15RbOLt
+         ZcxzFNAb0Wu2F2xUx0tlIkX9E3lvitqzO8T7RsB47+yVXDp1k6fkZi4dJu1aRQdnAkFN
+         DWKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700252269; x=1700857069;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=vC+himnz38l/KoIV2K7+BOXv6I9H6nNXMdtkGXbKeCU=;
-        b=T7qnTKjDHSt+cPQzKGqj/anWQrOkpqS8UsJEkZLZZ8ykHY7BrGNkgs9AuJEv2unYpT
-         MX2lX5LPfvbl+4g+HVaVImzJghCQT04X5U6qIyK6jCwIREj3hpT7xNre6/yajG+6EeWX
-         FUPPvVjiip/MZ8PLC22ImVMDTr7gCMz8K+fLc2Qxlj6h/vvS9LGVRZHVE3XAbxU/O/1M
-         1iV2tdqbFrio5igOytOC8YgnSTWyvFpSG6ZJ5znjJSzv40EYGOwdR2UVZ6DKWQv9JRnq
-         yZZrTeR3W6+sHxLpFb/rTrXIznmBiz5aMDGYg8d+rDTOSqUioUJ30FmRKGzOldwebIBn
-         IMFQ==
-X-Gm-Message-State: AOJu0Yy4ndJ0B2/47gPc2sE8MXYvl0PlJhG0kOEkqcWeM7apE/NztR+6
-	Ez0jtA3brLLs3IvRKgW4Nrk=
-X-Google-Smtp-Source: AGHT+IGCNBi4gWuvRE++iwdLWuYcOU7PqdFx0Dwq+NJsFkMmZzQ+CsPzHq5WwKF5sfxu4plbJLWyHA==
-X-Received: by 2002:a17:907:9056:b0:9f8:f6bd:2952 with SMTP id az22-20020a170907905600b009f8f6bd2952mr134480ejc.32.1700252268786;
-        Fri, 17 Nov 2023 12:17:48 -0800 (PST)
-Received: from david-ryuzu.fritz.box ([188.195.169.6])
-        by smtp.googlemail.com with ESMTPSA id e7-20020a1709062c0700b0099d804da2e9sm1130630ejh.225.2023.11.17.12.17.47
+        d=1e100.net; s=20230601; t=1700396023; x=1701000823;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=3Ux1krw1PHmoCa/GU7rGP+Vf9Jy9ZS7rUudcxtdu5Y4=;
+        b=rSl4TX0edM+MCyz+08pJgcrw3XgFdvFNH//dgt+2efFCWmsiUC1x0kctLAbYe2JE+6
+         hW3U/9Kaggkb/DrfCQCDMxK4E1eu9SXgBi0ZFbSN1ZhtxHlERO3eMVFT8TENh+1oUjns
+         KpKXfZTsY4IdJI22AmmHQMMEBlcB5gN6Jm+V7w2Msm29M6guUmDbbUT1qcpYn088fUde
+         yrmq0ViseJbt6L7Fc0duFZOtZ6iQMHkXO1xPMQhhbR/361B7adRBC89CyPJ91o7hrIQC
+         lbFj03lV7dKlLZIHFLQ8FWlHldIRbNvWvFBakBvJNO50MFSgedQ9wKtS576Y+/DW84oV
+         4Pxw==
+X-Gm-Message-State: AOJu0Yy3en4vi3e3FqE0EdgFXNLTXg2dhFOZDpYt/hQfdxeJOdsVr3IU
+	Hf9wfBbPgAKQ6vcrqQlxXA==
+X-Google-Smtp-Source: AGHT+IGy1GlDafLSieBuQEQ1Zs4HIKkBJdxt+OUkIXi2Mn2KBJ3XFrfpgR0TU1P5A184X7sPiOKqpg==
+X-Received: by 2002:aa7:c454:0:b0:543:f90:b956 with SMTP id n20-20020aa7c454000000b005430f90b956mr3469757edr.35.1700396022988;
+        Sun, 19 Nov 2023 04:13:42 -0800 (PST)
+Received: from U4.lan ([2a02:810b:f40:4300:7017:f42c:e243:8c57])
+        by smtp.gmail.com with ESMTPSA id r5-20020a056402018500b0053dec545c8fsm2523634edv.3.2023.11.19.04.13.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Nov 2023 12:17:48 -0800 (PST)
-From: David Wronek <davidwronek@gmail.com>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Sun, 19 Nov 2023 04:13:42 -0800 (PST)
+From: Alex Bee <knaerzche@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	"David S . Miller" <davem@davemloft.net>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Joe Mason <buddyjojo06@outlook.com>,
-	hexdump0815@googlemail.com
-Cc: cros-qcom-dts-watchers@chromium.org,
-	linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>
+Cc: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	linux-crypto@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht,
-	phone-devel@vger.kernel.org,
-	David Wronek <davidwronek@gmail.com>
-Subject: [PATCH v2 8/8] arm64: dts: qcom: Add support for Xiaomi Redmi Note 9S
-Date: Fri, 17 Nov 2023 21:08:40 +0100
-Message-ID: <20231117201720.298422-9-davidwronek@gmail.com>
-X-Mailer: git-send-email 2.42.1
-In-Reply-To: <20231117201720.298422-1-davidwronek@gmail.com>
-References: <20231117201720.298422-1-davidwronek@gmail.com>
+	Alex Bee <knaerzche@gmail.com>
+Subject: [PATCH v3 0/5] Add USB support for RK3128
+Date: Sun, 19 Nov 2023 13:13:35 +0100
+Message-ID: <20231119121340.109025-1-knaerzche@gmail.com>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231117_121751_222481_08F45B25 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20231119_041345_812301_0A2A2C7E 
+X-CRM114-Status: GOOD (  13.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,55 +97,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Joe Mason <buddyjojo06@outlook.com>
+While interestingly the DT-binding for the Innosilicon usb phy found in
+RK3128 SoC exists already and it is exposed in the SoC DT, it has never
+been added to the driver.
+This patch-set adds support for this early version of the phy and does
+some DT-fixups in order to make the 2-port host/otg phy and the respective
+controllers work.
 
-Add a device tree for the Xiaomi Redmi Note 9S (curtana) phone, based on
-sm7125-xiaomi-common.dtsi.
+Please see commit messages of the individual patches for details.
 
-Signed-off-by: Joe Mason <buddyjojo06@outlook.com>
-Signed-off-by: David Wronek <davidwronek@gmail.com>
----
- arch/arm64/boot/dts/qcom/Makefile                |  1 +
- .../boot/dts/qcom/sm7125-xiaomi-curtana.dts      | 16 ++++++++++++++++
- 2 files changed, 17 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
+Changes in v3:
+ - rebased on linux-next
+ - added phy-tuning callback for RK3128
+ - moved parent clock assignment of SCLK_USB480M to the phy node
 
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index d6cb840b7050..57974fb0c580 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -207,6 +207,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-curtana.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-joyeuse.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm8150-hdk.dtb
-diff --git a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-new file mode 100644
-index 000000000000..12f517a8492c
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-@@ -0,0 +1,16 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2023, Joe Mason <buddyjojo06@outlook.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "sm7125-xiaomi-common.dtsi"
-+
-+/ {
-+	model = "Xiaomi Redmi Note 9S";
-+	compatible = "xiaomi,curtana", "qcom,sm7125";
-+
-+	/* required for bootloader to select correct board */
-+	qcom,board-id = <0x20022 1>;
-+};
+Alex Bee (5):
+  phy: rockchip-inno-usb2: Split ID interrupt phy registers
+  phy: phy-rockchip-inno-usb2: Add RK3128 support
+  ARM: dts: rockchip: Add USB host clocks for RK3128
+  ARM: dts: rockchip: Add dwc2 otg fifo siztes for RK3128
+  ARM: dts: rockchip: Make usbphy the parent of SCLK_USB480M for RK3128
+
+ arch/arm/boot/dts/rockchip/rk3128.dtsi        |   7 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 156 ++++++++++++++----
+ 2 files changed, 134 insertions(+), 29 deletions(-)
+
 -- 
-2.42.1
+2.42.0
 
 
 -- 
