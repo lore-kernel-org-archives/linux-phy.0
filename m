@@ -4,86 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0010DC5ACB3
-	for <linux-phy@archiver.kernel.org>; Sun, 19 Nov 2023 12:14:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 129B4C072A2
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Nov 2023 16:09:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/IKL/mfHZxB39pwjwX/XdCEBfqm+v04J1uiyQE/PZ9A=; b=TmYT03lAUYsk7E
-	KMP52k0eiY+PKObPVpN0VFZ0YhO+q5PxFRRlg30/8aTJUrF+YEm25y3mZUBOoXCypIDgEcTIry4tU
-	+q/Zmb+WbBCQDOOmNBRvIVXTuoEbVvB7Fy1JqO0zwyOw4pHY4MNUR8nKtDt173RFshJRXpStO2wG9
-	tWm2hdeX+R7lEUGZ0DrLp42UdMZetFcwp9ocRXZQTKatioPKV9vIRiQPjqmc2A0bLoiWtthdrFvP2
-	OZ0bMoWfw3fILjp0tW/Y6BQeX05Dv8kpYIwIBpHcXLjV/xpH1hAn7aUWmqLSY1rjmx2Noj+SyyeH2
-	9VN66kmqiDiu3yav5CqA==;
+	List-Owner; bh=lFW5FsgLKInr9SARqdO48g4JOVRBNqnnFERp6gEZiYk=; b=gQgo8hCwuUWNcy
+	wxd82KrSl15ytERbp/ULT+19wAOe5rO85vfDT8oAXvN64mx0gdp5WkPUQ42GJwkSNFAYoi+ZKJ/lj
+	9h9yyVYabnZVkMhc8Sr9LU9l5Rac+t9UFEIPng41KOhSK9qb2GgERSaOZ7z6qSE4iUl9TLlU0AiXk
+	X+nyib0s2n8h0sMYXkuP6qDlcnA++zdpFuCGiTs1DTBzY/rPtCrSKzRPgdyelsTkT4d9hakHwmXTW
+	A0Ttoi9teN+Jq1IrmZLK0Oa167fZZLby3g2nTlI+sklNXewfYaogHc9mAQaZzIvPkABpecBtenNnL
+	nTbdlpNSc2YocSUruokw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r4ggp-00A9ON-1g;
-	Sun, 19 Nov 2023 12:14:15 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1r4kMk-00ANJq-22;
+	Sun, 19 Nov 2023 16:09:46 +0000
+Received: from mail-oa1-f41.google.com ([209.85.160.41])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r4ggR-00A97H-1n;
-	Sun, 19 Nov 2023 12:13:53 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-9df8d0c2505so660414666b.0;
-        Sun, 19 Nov 2023 04:13:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1700396024; x=1701000824; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=no0ZEH8MGlw8tJ6htWoDUR170bNw3QI+/YlLRVV4UwA=;
-        b=WJe/+inEQJtjUjgqwP7aLXEVXSos11yWtdzNN4RdZciI35NgdipWAZTs3b1zK3EUcA
-         6vKNQH44V37HSrHJcLWX9A5j4GQllvkJ7l+bXTIaVLMNSjhXUetE/Oda856Gk1Lkv+ub
-         mmFNiiwgw6192iRxWIb6DF7kGjjlRNCVk5rDxpghzY0/f2QJtiYb9C/K5swToKTQRCf2
-         bMfA1dAxvDbBHYF2SMpf6opbyCxwUHHM2SBE/04EXsZVB/9rKtIpb3+lBR3ObCJoFkOz
-         qQXcmpQCiA0+zHiKtd7PiI3Oe+Mx+bnt108UDFdPnRAKpQkiweDzrUmTdtPy/4n6aAKb
-         6rRw==
+	id 1r4kMh-00ANIy-1M
+	for linux-phy@lists.infradead.org;
+	Sun, 19 Nov 2023 16:09:45 +0000
+Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-1f03d9ad89fso2073896fac.1
+        for <linux-phy@lists.infradead.org>; Sun, 19 Nov 2023 08:09:42 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700396024; x=1701000824;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=no0ZEH8MGlw8tJ6htWoDUR170bNw3QI+/YlLRVV4UwA=;
-        b=jvjmpQczKOoAPEbqUTRM8GrMuz0aCAqHpiFFRYkOx20fzZOGiwPViImE2KEwhvVSVk
-         e4YxT0Avum1aap0hwSHm6Y/u8mbjd9Vwxcu82AXeWOZVQnyTPKWKWDMY9zIeZL57Jc+P
-         SlCZkNi63K5zSn2u26SYp29DaFQCNrwhXVgX7MY6QJp7AXtBmv0GV3ktsl0YQKY4bw8q
-         gj+yroFK1YrvzpoBwjAvOY0yERnYqkw2Bufrz5c3tezjck44xAW63kkm8iphEwVzlIG6
-         jEQLh1pJSC8zzhozLJBvUkjh9y1jOOkKxc3mjqKNLHq0pUtfBj8JlazAFySnP3B97BwA
-         FgMg==
-X-Gm-Message-State: AOJu0YwEz0zGfFxvnTHRvTE/30PgefC/bciX2PccwAu1jxuU8IZOxDIB
-	+bSZ9yfOgV3tBY4dQf6GVg==
-X-Google-Smtp-Source: AGHT+IE5Dvqdr2Ny9LGLGrJSKCUknctB4NV8cQ67rYxxrcFo45ijhkxFmGxHdUJx/gNi5Y0mq0frIg==
-X-Received: by 2002:a17:906:f1c8:b0:9e2:b1a5:1d2 with SMTP id gx8-20020a170906f1c800b009e2b1a501d2mr9817275ejb.27.1700396024531;
-        Sun, 19 Nov 2023 04:13:44 -0800 (PST)
-Received: from U4.lan ([2a02:810b:f40:4300:7017:f42c:e243:8c57])
-        by smtp.gmail.com with ESMTPSA id r5-20020a056402018500b0053dec545c8fsm2523634edv.3.2023.11.19.04.13.43
+        d=1e100.net; s=20230601; t=1700410182; x=1701014982;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=6FwY3Ii3WuLnORYg7kZbiyOjnq76hZU7a/LRk5adx6s=;
+        b=A/sl/gjOwOuA2zdV0iD1d0oJ/wtw3nKOKdMnOxJiqqoVaGTGmbJPNAo3rfQjffkc0e
+         uiJARPg/0wSk1nB37Ipqk90NAEKsv5aYyUVL44o7WrvBFMysYghqUHpvKoaQUfap32SG
+         /5v4W7v2liCltTsItnqa8jOg2igEg/JqUjSuY9fXS5wTYCjAwFzIScreUpcAXRZ3Namk
+         qlrilUp54A6lo3zNV8PVXCWHzyAZU2U2+rnRIP48z0s5OOVjjJtvQLVUMrWh/XXBiUe4
+         mHWI+lPQ1NOD0d5H3wKfyY2/18y0KP2egzaGNZfPv3J6z28nFrEc7izocUUDNO0/DK2j
+         XLyg==
+X-Gm-Message-State: AOJu0YzEWRxx7UsDkS3QGTH/i7Nd2OTjhLlYWAmMvungVQOhrjNHtjAM
+	PgBhKc6BDv38TCkav65vww==
+X-Google-Smtp-Source: AGHT+IEz6w9sNadnlJUFScEINQMPuBFhN59ha6xK606aQ5nY0TgW8H9gCuKJz13S9Fn5S94b3GiruQ==
+X-Received: by 2002:a05:6871:521e:b0:1eb:192b:e75b with SMTP id ht30-20020a056871521e00b001eb192be75bmr6166361oac.40.1700410182011;
+        Sun, 19 Nov 2023 08:09:42 -0800 (PST)
+Received: from herring.priv ([2607:fb90:45e3:889f:15b4:1348:6d64:224b])
+        by smtp.gmail.com with ESMTPSA id dd14-20020a056871c80e00b001efcb7b4717sm1032878oac.53.2023.11.19.08.09.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Nov 2023 04:13:44 -0800 (PST)
-From: Alex Bee <knaerzche@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Cc: devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Alex Bee <knaerzche@gmail.com>
-Subject: [PATCH v3 2/5] phy: phy-rockchip-inno-usb2: Add RK3128 support
-Date: Sun, 19 Nov 2023 13:13:37 +0100
-Message-ID: <20231119121340.109025-3-knaerzche@gmail.com>
-X-Mailer: git-send-email 2.42.0
-In-Reply-To: <20231119121340.109025-1-knaerzche@gmail.com>
-References: <20231119121340.109025-1-knaerzche@gmail.com>
+        Sun, 19 Nov 2023 08:09:40 -0800 (PST)
+Received: (nullmailer pid 273405 invoked by uid 1000);
+	Sun, 19 Nov 2023 16:09:38 -0000
+Date: Sun, 19 Nov 2023 10:09:38 -0600
+From: Rob Herring <robh@kernel.org>
+To: Shengyang Chen <shengyang.chen@starfivetech.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, p.zabel@pengutronix.de, minda.chen@starfivetech.com, changhuang.liang@starfivetech.com, rogerq@kernel.org, geert+renesas@glider.be, keith.zhao@starfivetech.com, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v1 1/2] dt-bindings: phy: Add starfive,jh7110-dphy-tx
+Message-ID: <20231119160938.GA269430-robh@kernel.org>
+References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
+ <20231117130421.79261-2-shengyang.chen@starfivetech.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20231117130421.79261-2-shengyang.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231119_041351_593109_78F11E9F 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20231119_080943_559607_801887B0 
+X-CRM114-Status: GOOD (  18.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,101 +82,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add registers to support the 2-port usb2 phy found in RK312x SoC familiy.
+On Fri, Nov 17, 2023 at 09:04:20PM +0800, Shengyang Chen wrote:
+> StarFive SoCs like the jh7110 use a MIPI D-PHY TX
+> controller based on a M31 IP. Add a binding for it.
+> 
+> Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
+> ---
+>  .../bindings/phy/starfive,jh7110-dphy-tx.yaml | 74 +++++++++++++++++++
+>  1 file changed, 74 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+> new file mode 100644
+> index 000000000000..850fe2e61d1d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+> @@ -0,0 +1,74 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-tx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Starfive SoC MIPI D-PHY Tx Controller
+> +
+> +maintainers:
+> +  - Keith Zhao <keith.zhao@starfivetech.com>
+> +  - Shengyang Chen <shengyang.chen@starfivetech.com>
+> +
+> +description:
+> +  The Starfive SoC uses the MIPI DSI D-PHY based on M31 IP to transfer
+> +  DSI data.
+> +
+> +properties:
+> +  compatible:
+> +    const: starfive,jh7110-dphy-tx
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: dphy_txesc
 
-Signed-off-by: Alex Bee <knaerzche@gmail.com>
----
-Changes in v3:
- - added phy_tuning-callback for RK3128
- 
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 57 +++++++++++++++++++
- 1 file changed, 57 insertions(+)
+Module name is redundant. Drop 'dphy_'.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index b5a1d30df83a..4f71373ae6e1 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1487,6 +1487,14 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	return ret;
- }
- 
-+static int rk3128_usb2phy_tuning(struct rockchip_usb2phy *rphy)
-+{
-+	/* Turn off differential receiver in suspend mode */
-+	return regmap_write_bits(rphy->grf, 0x298,
-+				BIT(2) << BIT_WRITEABLE_SHIFT | BIT(2),
-+				BIT(2) << BIT_WRITEABLE_SHIFT | 0);
-+}
-+
- static int rk3588_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- {
- 	int ret;
-@@ -1536,6 +1544,54 @@ static int rk3588_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- 	return ret;
- }
- 
-+static const struct rockchip_usb2phy_cfg rk3128_phy_cfgs[] = {
-+	{
-+		.reg = 0x17c,
-+		.num_ports	= 2,
-+		.phy_tuning	= rk3128_usb2phy_tuning,
-+		.clkout_ctl	= { 0x0190, 15, 15, 1, 0 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x017c, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x017c, 14, 14, 0, 1 },
-+				.bvalid_det_st	= { 0x017c, 15, 15, 0, 1 },
-+				.bvalid_det_clr	= { 0x017c, 15, 15, 0, 1 },
-+				.idfall_det_en  = { 0x01a0, 2, 2, 0, 1 },
-+				.idfall_det_st  = { 0x01a0, 3, 3, 0, 1 },
-+				.idfall_det_clr = { 0x01a0, 3, 3, 0, 1 },
-+				.idrise_det_en  = { 0x01a0, 0, 0, 0, 1 },
-+				.idrise_det_st  = { 0x01a0, 1, 1, 0, 1 },
-+				.idrise_det_clr = { 0x01a0, 1, 1, 0, 1 },
-+				.ls_det_en	= { 0x017c, 12, 12, 0, 1 },
-+				.ls_det_st	= { 0x017c, 13, 13, 0, 1 },
-+				.ls_det_clr	= { 0x017c, 13, 13, 0, 1 },
-+				.utmi_bvalid	= { 0x014c, 5, 5, 0, 1 },
-+				.utmi_id	= { 0x014c, 8, 8, 0, 1 },
-+				.utmi_ls	= { 0x014c, 7, 6, 0, 1 },
-+			},
-+			[USB2PHY_PORT_HOST] = {
-+				.phy_sus	= { 0x0194, 8, 0, 0, 0x1d1 },
-+				.ls_det_en	= { 0x0194, 14, 14, 0, 1 },
-+				.ls_det_st	= { 0x0194, 15, 15, 0, 1 },
-+				.ls_det_clr	= { 0x0194, 15, 15, 0, 1 }
-+			}
-+		},
-+		.chg_det = {
-+			.opmode		= { 0x017c, 3, 0, 5, 1 },
-+			.cp_det		= { 0x02c0, 6, 6, 0, 1 },
-+			.dcp_det	= { 0x02c0, 5, 5, 0, 1 },
-+			.dp_det		= { 0x02c0, 7, 7, 0, 1 },
-+			.idm_sink_en	= { 0x0184, 8, 8, 0, 1 },
-+			.idp_sink_en	= { 0x0184, 7, 7, 0, 1 },
-+			.idp_src_en	= { 0x0184, 9, 9, 0, 1 },
-+			.rdm_pdwn_en	= { 0x0184, 10, 10, 0, 1 },
-+			.vdm_src_en	= { 0x0184, 12, 12, 0, 1 },
-+			.vdp_src_en	= { 0x0184, 11, 11, 0, 1 },
-+		},
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct rockchip_usb2phy_cfg rk3228_phy_cfgs[] = {
- 	{
- 		.reg = 0x760,
-@@ -2031,6 +2087,7 @@ static const struct rockchip_usb2phy_cfg rv1108_phy_cfgs[] = {
- 
- static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,px30-usb2phy", .data = &rk3328_phy_cfgs },
-+	{ .compatible = "rockchip,rk3128-usb2phy", .data = &rk3128_phy_cfgs },
- 	{ .compatible = "rockchip,rk3228-usb2phy", .data = &rk3228_phy_cfgs },
- 	{ .compatible = "rockchip,rk3308-usb2phy", .data = &rk3308_phy_cfgs },
- 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
--- 
-2.42.0
+> +
+> +  resets:
+> +    items:
+> +      - description: DSITX_TXBYTEHS reset
+> +      - description: MIPITX_DPHY_SYS reset
+> +      - description: MIPITX_DPHY_TXBYTEHS reset
+> +
+> +  reset-names:
+> +    items:
+> +      - const: dsi_txbytehs
+> +      - const: dphy_sys
+> +      - const: dphy_txbytehs
 
+Drop 'dphy_'.
+
+Is 'dsi_txbytehs' really a part of the DPHY block? Sounds like it is 
+part of the DSI block. If so, the reset belongs there. If the phy driver 
+needs it, then it needs to go find the DSI block and get its reset.
+
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - power-domains
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@295e0000 {
+> +      compatible = "starfive,jh7110-dphy-tx";
+> +      reg = <0x295e0000 0x10000>;
+> +      clocks = <&voutcrg 14>;
+> +      clock-names = "dphy_txesc";
+> +      resets = <&syscrg 7>,
+> +               <&syscrg 10>,
+> +               <&syscrg 11>;
+> +      reset-names = "dsi_txbytehs", "dphy_sys", "dphy_txbytehs";
+> +      power-domains = <&aon_syscon 0>;
+> +      #phy-cells = <0>;
+> +    };
+> -- 
+> 2.17.1
+> 
 
 -- 
 linux-phy mailing list
