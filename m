@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 129B4C072A2
-	for <linux-phy@archiver.kernel.org>; Sun, 19 Nov 2023 16:09:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D840C5AE5B
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Nov 2023 16:12:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lFW5FsgLKInr9SARqdO48g4JOVRBNqnnFERp6gEZiYk=; b=gQgo8hCwuUWNcy
-	wxd82KrSl15ytERbp/ULT+19wAOe5rO85vfDT8oAXvN64mx0gdp5WkPUQ42GJwkSNFAYoi+ZKJ/lj
-	9h9yyVYabnZVkMhc8Sr9LU9l5Rac+t9UFEIPng41KOhSK9qb2GgERSaOZ7z6qSE4iUl9TLlU0AiXk
-	X+nyib0s2n8h0sMYXkuP6qDlcnA++zdpFuCGiTs1DTBzY/rPtCrSKzRPgdyelsTkT4d9hakHwmXTW
-	A0Ttoi9teN+Jq1IrmZLK0Oa167fZZLby3g2nTlI+sklNXewfYaogHc9mAQaZzIvPkABpecBtenNnL
-	nTbdlpNSc2YocSUruokw==;
+	List-Owner; bh=TkBGheTSfq4BL/wOwz7OCZdfDrg+ZPxCArYOtphy10I=; b=0tVxWrAEPTvasp
+	RbG2C33MtYvogBGUMfzj4+mdmUUqgaRuaqmPY5M4W1BdiN67rGRxMC9aGTzdajC8Ee+1L1mOqeYpS
+	wyrsPSWcJMj6xkXies675XOZIFrbxhAuX0q8hmJ0JitBHpQjsm4OwPbk2PKp806wVYyT61wSwe08O
+	KSvLfL2YfQ411cOvWAMKd+OWFKdtPn9Cmi0X/fG88+a+NNqq0lNdgnFSXP6oABXKunzCKjnI7/6lU
+	8q3zBvzvXv+KByX1XHxonhqaFP7MBANczmutDuIbEQKf1A4kppxCVkHJmxet0IqY3wBCxw8mt6SFR
+	iD5sXVb3X5PMFcxH88gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r4kMk-00ANJq-22;
-	Sun, 19 Nov 2023 16:09:46 +0000
-Received: from mail-oa1-f41.google.com ([209.85.160.41])
+	id 1r4kP5-00ANRG-03;
+	Sun, 19 Nov 2023 16:12:11 +0000
+Received: from mail-ot1-f53.google.com ([209.85.210.53])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r4kMh-00ANIy-1M
+	id 1r4kP1-00ANQ7-25
 	for linux-phy@lists.infradead.org;
-	Sun, 19 Nov 2023 16:09:45 +0000
-Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-1f03d9ad89fso2073896fac.1
-        for <linux-phy@lists.infradead.org>; Sun, 19 Nov 2023 08:09:42 -0800 (PST)
+	Sun, 19 Nov 2023 16:12:09 +0000
+Received: by mail-ot1-f53.google.com with SMTP id 46e09a7af769-6d3260385b5so1840374a34.0
+        for <linux-phy@lists.infradead.org>; Sun, 19 Nov 2023 08:12:06 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700410182; x=1701014982;
+        d=1e100.net; s=20230601; t=1700410326; x=1701015126;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6FwY3Ii3WuLnORYg7kZbiyOjnq76hZU7a/LRk5adx6s=;
-        b=A/sl/gjOwOuA2zdV0iD1d0oJ/wtw3nKOKdMnOxJiqqoVaGTGmbJPNAo3rfQjffkc0e
-         uiJARPg/0wSk1nB37Ipqk90NAEKsv5aYyUVL44o7WrvBFMysYghqUHpvKoaQUfap32SG
-         /5v4W7v2liCltTsItnqa8jOg2igEg/JqUjSuY9fXS5wTYCjAwFzIScreUpcAXRZ3Namk
-         qlrilUp54A6lo3zNV8PVXCWHzyAZU2U2+rnRIP48z0s5OOVjjJtvQLVUMrWh/XXBiUe4
-         mHWI+lPQ1NOD0d5H3wKfyY2/18y0KP2egzaGNZfPv3J6z28nFrEc7izocUUDNO0/DK2j
-         XLyg==
-X-Gm-Message-State: AOJu0YzEWRxx7UsDkS3QGTH/i7Nd2OTjhLlYWAmMvungVQOhrjNHtjAM
-	PgBhKc6BDv38TCkav65vww==
-X-Google-Smtp-Source: AGHT+IEz6w9sNadnlJUFScEINQMPuBFhN59ha6xK606aQ5nY0TgW8H9gCuKJz13S9Fn5S94b3GiruQ==
-X-Received: by 2002:a05:6871:521e:b0:1eb:192b:e75b with SMTP id ht30-20020a056871521e00b001eb192be75bmr6166361oac.40.1700410182011;
-        Sun, 19 Nov 2023 08:09:42 -0800 (PST)
+        bh=xEu0nuOXzWy7wH5tn0mHCily9PWBQhKrF+Z00A3ebI8=;
+        b=KNFou71AWbn2XxorENXXAhM+qm9WdiZREW0WuGx5vFYTWeogS9OY7XWa6/SL7BLpLA
+         fP8vjLabv9SAylzVy390N3BxmVLWApI4RBWxVlvAYS6tKHUPbxNE9EC9FTCOLJLkRNnd
+         N0J8olf50ME601oLWPRLuwRMqC/Z3wwxBu/6BZrj8oP+hSzU2BK79SKYokxtwCwB9z+O
+         GxdcAinA/08QylAf/E1jgMv8IIsSCGWMGSqytrwm16hr51T0e0yh5AYdvVm9odFeKERe
+         9dPTCkZBzHBcrWa9KTM0FvNhA1aGVjDt7yEV/01k0WjUSF+N7Wy4f95ty3E1ysGzlNmA
+         a5aQ==
+X-Gm-Message-State: AOJu0YxuJLEMMeSoIX1hzt+D9Vejnh6ECvB6jWPFeEwSfuBLEzJb7neu
+	Ml+0E0cU1ypZfQpUKyfc/w==
+X-Google-Smtp-Source: AGHT+IHGGM8ZAa1lSr23KAzSyTH5dGZQdtx5KG4w1Okx17TDG9eIKkTbs2icl7eKgrEN3ubKijy84A==
+X-Received: by 2002:a9d:628b:0:b0:6cd:9f4:e088 with SMTP id x11-20020a9d628b000000b006cd09f4e088mr5199714otk.5.1700410326260;
+        Sun, 19 Nov 2023 08:12:06 -0800 (PST)
 Received: from herring.priv ([2607:fb90:45e3:889f:15b4:1348:6d64:224b])
-        by smtp.gmail.com with ESMTPSA id dd14-20020a056871c80e00b001efcb7b4717sm1032878oac.53.2023.11.19.08.09.38
+        by smtp.gmail.com with ESMTPSA id c3-20020a9d67c3000000b006ce28044207sm893035otn.58.2023.11.19.08.11.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Nov 2023 08:09:40 -0800 (PST)
-Received: (nullmailer pid 273405 invoked by uid 1000);
-	Sun, 19 Nov 2023 16:09:38 -0000
-Date: Sun, 19 Nov 2023 10:09:38 -0600
+        Sun, 19 Nov 2023 08:12:01 -0800 (PST)
+Received: (nullmailer pid 276187 invoked by uid 1000);
+	Sun, 19 Nov 2023 16:11:56 -0000
+Date: Sun, 19 Nov 2023 10:11:56 -0600
 From: Rob Herring <robh@kernel.org>
-To: Shengyang Chen <shengyang.chen@starfivetech.com>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, p.zabel@pengutronix.de, minda.chen@starfivetech.com, changhuang.liang@starfivetech.com, rogerq@kernel.org, geert+renesas@glider.be, keith.zhao@starfivetech.com, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v1 1/2] dt-bindings: phy: Add starfive,jh7110-dphy-tx
-Message-ID: <20231119160938.GA269430-robh@kernel.org>
-References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
- <20231117130421.79261-2-shengyang.chen@starfivetech.com>
+To: David Wronek <davidwronek@gmail.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>, linux-crypto@vger.kernel.org, Bjorn Andersson <andersson@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, linux-phy@lists.infradead.org, Manivannan Sadhasivam <mani@kernel.org>, Vinod Koul <vkoul@kernel.org>, linux-scsi@vger.kernel.org, hexdump0815@googlemail.com, linux-kernel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht, linux-arm-msm@vger.kernel.org, Avri Altman <avri.altman@wdc.com>, Joe Mason <buddyjojo06@outlook.com>, cros-qcom-dts-watchers@chromium.org, Herbert Xu <herbert@gondor.apana.org.au>, devicetree@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, phone-devel@vger.kernel.org, Andy Gross <agross@kernel.org>, Bart Van Assche <bvanassche@acm.org>, Konrad Dybcio <konrad.dybcio@linaro.org>
+Subject: Re: [PATCH v2 1/8] dt-bindings: crypto: ice: Document SC7180 inline
+ crypto engine
+Message-ID: <170041031632.276154.11804659126094035319.robh@kernel.org>
+References: <20231117201720.298422-1-davidwronek@gmail.com>
+ <20231117201720.298422-2-davidwronek@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231117130421.79261-2-shengyang.chen@starfivetech.com>
+In-Reply-To: <20231117201720.298422-2-davidwronek@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231119_080943_559607_801887B0 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20231119_081207_903646_DB0BF763 
+X-CRM114-Status: GOOD (  10.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,109 +83,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Nov 17, 2023 at 09:04:20PM +0800, Shengyang Chen wrote:
-> StarFive SoCs like the jh7110 use a MIPI D-PHY TX
-> controller based on a M31 IP. Add a binding for it.
+
+On Fri, 17 Nov 2023 21:08:33 +0100, David Wronek wrote:
+> Document the compatible used for the inline crypto engine found on
+> SC7180.
 > 
-> Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
+> Signed-off-by: David Wronek <davidwronek@gmail.com>
 > ---
->  .../bindings/phy/starfive,jh7110-dphy-tx.yaml | 74 +++++++++++++++++++
->  1 file changed, 74 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+>  .../devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml    | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
-> new file mode 100644
-> index 000000000000..850fe2e61d1d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
-> @@ -0,0 +1,74 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/starfive,jh7110-dphy-tx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Starfive SoC MIPI D-PHY Tx Controller
-> +
-> +maintainers:
-> +  - Keith Zhao <keith.zhao@starfivetech.com>
-> +  - Shengyang Chen <shengyang.chen@starfivetech.com>
-> +
-> +description:
-> +  The Starfive SoC uses the MIPI DSI D-PHY based on M31 IP to transfer
-> +  DSI data.
-> +
-> +properties:
-> +  compatible:
-> +    const: starfive,jh7110-dphy-tx
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: dphy_txesc
 
-Module name is redundant. Drop 'dphy_'.
+Acked-by: Rob Herring <robh@kernel.org>
 
-> +
-> +  resets:
-> +    items:
-> +      - description: DSITX_TXBYTEHS reset
-> +      - description: MIPITX_DPHY_SYS reset
-> +      - description: MIPITX_DPHY_TXBYTEHS reset
-> +
-> +  reset-names:
-> +    items:
-> +      - const: dsi_txbytehs
-> +      - const: dphy_sys
-> +      - const: dphy_txbytehs
-
-Drop 'dphy_'.
-
-Is 'dsi_txbytehs' really a part of the DPHY block? Sounds like it is 
-part of the DSI block. If so, the reset belongs there. If the phy driver 
-needs it, then it needs to go find the DSI block and get its reset.
-
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - power-domains
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    phy@295e0000 {
-> +      compatible = "starfive,jh7110-dphy-tx";
-> +      reg = <0x295e0000 0x10000>;
-> +      clocks = <&voutcrg 14>;
-> +      clock-names = "dphy_txesc";
-> +      resets = <&syscrg 7>,
-> +               <&syscrg 10>,
-> +               <&syscrg 11>;
-> +      reset-names = "dsi_txbytehs", "dphy_sys", "dphy_txbytehs";
-> +      power-domains = <&aon_syscon 0>;
-> +      #phy-cells = <0>;
-> +    };
-> -- 
-> 2.17.1
-> 
 
 -- 
 linux-phy mailing list
