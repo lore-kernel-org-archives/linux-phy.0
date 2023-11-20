@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BC7AC54E76
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Nov 2023 09:11:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4579BC2BB3F
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Nov 2023 14:47:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PvIW1T80xcP+sJIaH0E64+MqZyBZzARMJwkm92uxCVs=; b=qizZ2pYQ3QuBod
-	hdne+trGkI3AEOyeXwd+EqtOK7d+MJY+a7jR2TTsUN4qYc9YwqQmTqNpV+X/ovFbjjxFNCOiKO625
-	Ph9ShFkt0klThLyDDqeJcW1sRE+pPBzUlB9eqNTtotcFUiwZYd4/APtVCldEoLH44f1zjPiLVjD1S
-	JtrhqwY8J0FqAWE/5xTA738sea2ZL8TR4ytcyPMM+Ud8bZ/dhsWEThXlQC1S2Lk8Te1YfEh1eRpnF
-	vrTw2VNF9eN+MTdO242tyKUhQ+38LNKsbXzV8TbrVg31SvL0BZIoaZ1QKOEMcpdnswxbIzkrcakYy
-	KRn7PmTkRRdwllLy1Xig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zNkCqRpGkY9fQUkz66Vcmdqc6DvW+O/S2o9CqTWpfzU=; b=3lrjA/Qr13W+v0
+	HELSCjWA91x2yXrGgjgylliXYcTI2e4PvDbmLo/vTlrljMaXmWiisG+vR1D9n+cUG12QBw9y4aHv5
+	It59fPYbrYqdZX2tBA3lcdfp6BNAuQvGjiBz93OdQVzw1Q/IrU2D6cTIBfCvRG5GStgsNzs/oY6PE
+	FjC7dIMkrukVT1RJ/6CAT6WP3vVFklDSwuQB38UefUIji0zCY9wNHvi+KtHIl6zhjR/y21zD5Jz9e
+	c3p6K9wcVzUTykCEhMX48xBdQkRVK83zItu09dNCpnPMQm8hhhqeBM8W27KFI9iLha5FptC596Y42
+	9iykZUcYrsKm+LhZaXuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r50Jv-00BbbI-2o;
-	Mon, 20 Nov 2023 09:11:55 +0000
-Received: from [42.101.60.195] (helo=mail.nfschina.com)
-	by bombadil.infradead.org with smtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r50Js-00BbYf-2R
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Nov 2023 09:11:54 +0000
-Received: from localhost.localdomain (unknown [180.167.10.98])
-	by mail.nfschina.com (Maildata Gateway V2.8.8) with ESMTPA id 74CA062960874;
-	Mon, 20 Nov 2023 17:11:25 +0800 (CST)
-X-MD-Sfrom: suhui@nfschina.com
-X-MD-SrcIP: 180.167.10.98
-From: Su Hui <suhui@nfschina.com>
-To: vincent.sunplus@gmail.com,
-	vkoul@kernel.org,
-	kishon@kernel.org
-Cc: Su Hui <suhui@nfschina.com>,
-	linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org
-Subject: [PATCH] phy: sunplus: return negative error code in sp_usb_phy_probe
-Date: Mon, 20 Nov 2023 17:10:47 +0800
-Message-Id: <20231120091046.163781-1-suhui@nfschina.com>
-X-Mailer: git-send-email 2.30.2
+	id 1r55YB-00CMjk-2m;
+	Mon, 20 Nov 2023 14:46:59 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1r55Xz-00CMbP-05;
+	Mon, 20 Nov 2023 14:46:54 +0000
+Received: from [194.95.143.137] (helo=phil.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1r55Xp-00089h-Fo; Mon, 20 Nov 2023 15:46:37 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Alex Bee <knaerzche@gmail.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Alex Bee <knaerzche@gmail.com>
+Subject: Re: [PATCH v3 1/5] phy: rockchip-inno-usb2: Split ID interrupt phy registers
+Date: Mon, 20 Nov 2023 15:46:36 +0100
+Message-ID: <3530941.iIbC2pHGDl@phil>
+In-Reply-To: <20231119121340.109025-2-knaerzche@gmail.com>
+References: <20231119121340.109025-1-knaerzche@gmail.com>
+ <20231119121340.109025-2-knaerzche@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231120_011153_140998_545DBDD5 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231120_064647_071828_3D1023F1 
+X-CRM114-Status: GOOD (  13.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,30 +65,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-devm_phy_create() return negative error code, 'ret' should be
-'PTR_ERR(phy)' rather than '-PTR_ERR(phy)'.
+Am Sonntag, 19. November 2023, 13:13:36 CET schrieb Alex Bee:
+> Commit 51a9b2c03dd3 ("phy: rockchip-inno-usb2: Handle ID IRQ") added ID
+> detection interrupt registers. However the current implementation assumes
+> that falling and rising edge interrupt are always enabled in registers
+> spanning over subsequent bits.
+> That is not the case for RK3128's version of the phy and this
+> implementation can't be used as-is, since there are bits with different
+> purpose in between.
+> 
+> This splits up the register definitions for id_det_en, id_det_en and
+> id_det_clr registers in rising and falling edge variants.
+> It's required as preparation to support RK3128's Innosilicon usb2 phy as
+> well in this driver and matches pretty much to what the vendor does, so I'm
+> not expecting issues for other SoCs with that change.
+> 
+> Signed-off-by: Alex Bee <knaerzche@gmail.com>
 
-Fixes: 99d9ccd97385 ("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
-Signed-off-by: Su Hui <suhui@nfschina.com>
----
- drivers/phy/sunplus/phy-sunplus-usb2.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
-index 0efe74ac9c6a..637a5fbae6d9 100644
---- a/drivers/phy/sunplus/phy-sunplus-usb2.c
-+++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
-@@ -275,7 +275,7 @@ static int sp_usb_phy_probe(struct platform_device *pdev)
- 
- 	phy = devm_phy_create(&pdev->dev, NULL, &sp_uphy_ops);
- 	if (IS_ERR(phy)) {
--		ret = -PTR_ERR(phy);
-+		ret = PTR_ERR(phy);
- 		return ret;
- 	}
- 
--- 
-2.30.2
 
 
 -- 
