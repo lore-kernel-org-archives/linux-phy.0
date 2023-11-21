@@ -4,56 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41452C5AD4C
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Nov 2023 15:32:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85BD1C54FB9
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Nov 2023 05:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rJyGcw7g7CfeBISlsAB4M33N+xKO3Zox8PzA0E4j12k=; b=YDqvL/RxveXuHJ
-	bFS7iJT2MyGnNK5W2eTusxyXEW2p0wfPflwQ27wbEdP6YZ7UyuKqwkxt1YEK3Bi4F4a1RqAm5GAR0
-	m4xe1CPBpdYZpslYWgrzFOaXKrl0DmFXN+/kkxwHVHhNpSTiPCEC6HT19X4sdLzEzQS7UGAuEI1T2
-	zSOAxeaP92SZGrMDVweQpTEukLkowcvvfswV4g4rWPnm+KDwHL+U6e+JmwsSJjSLVAXOO/NRshLBE
-	joZbMXOKHWdHY3d2AdSuZl8dnRkR4+cTIAVKn+0FPpGr7D10ba+yrzeoqPLemtSY38I2u54S3puks
-	gTo43FP/JQaWJthtvW9g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ob3wu+x8quLwIXzXlXBrsF8hHHB9OEzN1S65MYLVNts=; b=ZBMKBN98vuGWSR8W0BU9aueLps
+	9EF532kL7coudNo3kpmdjEAEangOg0zYoMxFRjbpiXBFVMkFE0uEN5zmx7FkQMEq5uB3cImI3w1bH
+	8o8elobZjhDFsRJHKsYb3DzhU5TgQ1GpeoqrhSDfs0YeKaE4sqzacxOPu/Au5j5/NaxZ/9KZQfN/V
+	PLx/9blPeDw1choZhd2abPWasmDofwbGvmyU17osLtUiSD5KWEqaGcXCvS2psxLb6KZPLXiPzG9PT
+	kUnd7TJhAPvu8JF21nLxa4qLc7C/jDa7ceNJlYqlrMuxAlk1VvGf8BjYThYykw1N4lzl2g3EdwBcE
+	ISNSTZGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r56Fv-00Cggl-2X;
-	Mon, 20 Nov 2023 15:32:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1r5Jbw-00FiUj-0J;
+	Tue, 21 Nov 2023 05:47:48 +0000
+Received: from mail-bn7nam10on20630.outbound.protection.outlook.com ([2a01:111:f400:7e8a::630] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r56Fq-00Cgbk-0F;
-	Mon, 20 Nov 2023 15:32:07 +0000
-Received: from [194.95.143.137] (helo=phil.sntech)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1r56Fn-0008VB-Mr; Mon, 20 Nov 2023 16:32:03 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Rob Herring <robh+dt@kernel.org>,
-	Alex Bee <knaerzche@gmail.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH v3 0/5] Add USB support for RK3128
-Date: Mon, 20 Nov 2023 16:31:52 +0100
-Message-Id: <170049419905.1671702.10955033014678896611.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20231119121340.109025-1-knaerzche@gmail.com>
-References: <20231119121340.109025-1-knaerzche@gmail.com>
+	id 1r5Jbs-00FiTH-2b
+	for linux-phy@lists.infradead.org;
+	Tue, 21 Nov 2023 05:47:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZbSCfrXfj86y0U6KchffjEYp5z9sBoE8pDL2LUQ0xHxcxHPdImH0wTaZxYvkn+MLIrOL55HtfbYsdwmnSAPsR6mKQWiRClQO1hCO3+nEbDR3mB1vkIsESYeaQoNdMjusuJhFcEawXHPlje0WXe6o4iwACzId6cG327KxLz3VGtBH24sTtlXhbXTas7F6jTeSjvortucHUFcAg3Hl8lWNN+CNEno61dJesAW3kVOWEkb+rGLDjr6XEsJcZ5WPKbvAfJXT4GoM2Y0xNjeILQQiBz0tljDAdwV6pLvS902Yi8N88V1JjvzZyJXvmDKj7j8CrswZ5DX/w5gBbSZeMD/Jug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OLYECJIn+OMMlktkYLP+kbnvCTuoK4OJLmIjJKn4zrQ=;
+ b=JoWXHMAIzwOnayUzETN1x23Awhv0Z6fG7e+A3Fz3pceSZL0Ee/fJbSIO1DKNvQtt4b0MoAsNANvBF4EARexocJLOou3nnVELRy7H5al0VdpgkNEOSIIqFI9wjTazdHy2RWgd/o4mSoWUHFOlbpVHlrJPHRjP3pyPJxql9YhTaQd+5AZ4GY5c7CuQfzJ+jBgFkFwbT2vGaLupmI7u6pLKiNUuG0fdqjgXUSI94cihPq8FV6Sg0EU/yjYxOLp4VUzv9hQ8Mk86V5Tqurb+tvjubFeYmC7p/rxa7zh6/4CjOiznn9NcrmsPFNaqh9OBwClysGlJXz1GQSfbOnmNPCIvgA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OLYECJIn+OMMlktkYLP+kbnvCTuoK4OJLmIjJKn4zrQ=;
+ b=Q/EGeIJj1C/Gm5zDkUNsKO0KcemQ25rj4VUFx8zFKtDO3i6A9ObilKQZjm/t6NTCwqJA1CDx+y0ZKi71w4zdXO2f914XN+ZiBaShxKfaUNhLAR5IeNew3XT0j5iniiXR6Uw3ZjiRy+gB1vgklw73VKn3mIcogetJLyJTk8RmFdo=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from BL1PR12MB5827.namprd12.prod.outlook.com (2603:10b6:208:396::19)
+ by CY8PR12MB8242.namprd12.prod.outlook.com (2603:10b6:930:77::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7002.27; Tue, 21 Nov
+ 2023 05:47:38 +0000
+Received: from BL1PR12MB5827.namprd12.prod.outlook.com
+ ([fe80::83bc:6ff8:d40e:a7fc]) by BL1PR12MB5827.namprd12.prod.outlook.com
+ ([fe80::83bc:6ff8:d40e:a7fc%5]) with mapi id 15.20.7002.028; Tue, 21 Nov 2023
+ 05:47:32 +0000
+Message-ID: <2d234d31-3045-72f2-57db-db03515eebcf@amd.com>
+Date: Tue, 21 Nov 2023 11:17:21 +0530
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/4] phy: core: add notify_connect and
+ notify_disconnect callback
+To: Stanley Chang <stanley_chang@realtek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jinjie Ruan <ruanjinjie@huawei.com>, Rob Herring <robh@kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Yang Yingliang <yangyingliang@huawei.com>, Flavio Suligoi
+ <f.suligoi@asem.it>, Roy Luo <royluo@google.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ =?UTF-8?Q?Ricardo_Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org
+References: <20231110054738.23515-1-stanley_chang@realtek.com>
+Content-Language: en-US
+From: Kishon Vijay Abraham I <kvijayab@amd.com>
+In-Reply-To: <20231110054738.23515-1-stanley_chang@realtek.com>
+X-ClientProxiedBy: PN3PR01CA0111.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:c01:96::10) To BL1PR12MB5827.namprd12.prod.outlook.com
+ (2603:10b6:208:396::19)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL1PR12MB5827:EE_|CY8PR12MB8242:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9d7405ea-32e9-42f4-0876-08dbea555aac
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: sJlOzhk84k36T8qPPZos+8yaIZ6UAge1RWTMANxo8+XXIgJpiiD2ftWJhr4fe4hWbT017OnvIq3NpkbA3/O6q0ikkONpTQ/Ixgw2p9ZzsacDyb6JcL8lISy3XVsEiPA4hNuPyv0s694HF2LnxBUfwxWbbwnmakB5kGNvUBq9GJa/J8mZqcxWT55Nebe5Li3Y9y/FlA1tCzeauGdBXL6dOlHzCJW6lRvu8jfn7hE1FMZH8I/o0HvyssDKNlh8292OUoRZFhaWpRbFjvvbAj2LBFvmNHh/laNdRrEOW7zaDto/N6eQtvGiEXVH1p6e1McUF7xmOQh9O0kMdNCIzyK2sH2egxjicAb6wvWw8/DAIjv6p71FJRJm5NtfVtmS0xkpDB3PT8a4RTPEaTOkNmq5OAXmQy4TX4nwDHWeGgomiqMpexcgm5Fxcfic8arqf1vMXGfiOnKee+q+h5/DaVrsEZCoeQn0p1sL3j6D3VAiGNLPsKRO52xXZq/MdMAIQmzhjFhsimjkn+Rn5sVlDAyHevGmY7MebXBzaKcJ2GGFO5HoCrbZPPecxT7AqF0qixaERuYFzw1np7ql/dwkRmjzElRkXahxVoLktijkbeUynG+YUsWzNRC4hGDNPHazecLmSeK9CYrPxN02Gc3UdVmOgw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BL1PR12MB5827.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(346002)(39860400002)(376002)(366004)(136003)(396003)(230922051799003)(186009)(64100799003)(1800799012)(451199024)(2616005)(31696002)(31686004)(110136005)(6486002)(6666004)(6506007)(66476007)(66556008)(316002)(54906003)(66946007)(36756003)(53546011)(6512007)(26005)(83380400001)(7416002)(2906002)(5660300002)(478600001)(41300700001)(38100700002)(8936002)(4326008)(8676002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Y0dMQ3oxUU1pQ0hBOHRva01lbTI3ZmdLaWJjUVNxcVd0MHhvc1JrTm02VEYr?=
+ =?utf-8?B?QWtqOUNreXlaN0Eyb0ladnZSTXVKWTY4blVJUFBZZ0NMeSttdVVHc0NsTXdn?=
+ =?utf-8?B?NGVYa1ptSk5ZYkhRdEVIcjdZZUdrdTFNejJSNGs1bEhKbzZxV0NXRmZYVVpN?=
+ =?utf-8?B?STd3aXVWcjJrbHo4N0E2UDZEa3BkWDdwZjR2SENwS3RCYXVOME1PQ21oR3A5?=
+ =?utf-8?B?NXdPektINXFJdzdCU3JMejU4ZmNvVGg2SWl3Lzc4L0YxNG54NmhPMEwzR005?=
+ =?utf-8?B?VjZ3NklFWUpYTUNNL2Z2dmw4aDJNNElBdGxPOHh4Q1dLbXYwaFFYZ1hrZVNR?=
+ =?utf-8?B?bWw0b1pQNlFxZlRwNms3VHcrdzlGSTlCdGRvUzFObGw5Z0dLbk5tWEdsMm95?=
+ =?utf-8?B?aCsxY2JsQzMrWXYvdWFXdWtnY2J5eXdVNXNlcTdhSkhUeXduaG5TVCs3TEhz?=
+ =?utf-8?B?WEFFdDN2WGhtdlFxclhTYldSallpcFJIQXdOQzdnRWpkdDVLZVRNNUY0SkY2?=
+ =?utf-8?B?amszZXl2dkRnTkdxWk9EZm1xSXc2R2xCa1pnVlhnQmxiTkdVYm52ekZCdlkr?=
+ =?utf-8?B?N3NnNTN3ZjVteVRyLzlBamYzRGY4QkpTT0ZhOVhCYmlqZmo0M1l4a3dwYmgz?=
+ =?utf-8?B?dTZvcllhRmJvSk9oZzhNblhtZXk3dHJyWE9xcnBSc2x2LzVLb2VMMG9mUkx6?=
+ =?utf-8?B?dU9rRDJFTHFQQWE0eXBub2M2bDRzMVFza1l4c0lPbTNCVklBc2Vxb3VWNFlF?=
+ =?utf-8?B?elpaYXI3cHY0c0dvZEpzd25iTFE3SXNHQWU4T1h6OGZ6UlR2NFBweUhBMC9x?=
+ =?utf-8?B?SXA1NlUwSVE5WFB5QWNRR0dpTWhqVjNxMXFWN2JlYk5BdXdwNGJGbks3RGFk?=
+ =?utf-8?B?aUkxYnpweTZySmlET3UzcmRwUml2UFJYN3F2SnBsNzAwc1pMZXR3dFdGRk9p?=
+ =?utf-8?B?d2JheGZLSzdyNnlQeDVhcllvN21YUjkwc3ZQVmpka1lDZGR3WENvNFNMZ0NI?=
+ =?utf-8?B?MyswYVgvN1FMTFRPYmFnamdXaXh4VmpGdDcwbDVUUEhmbFEyNHczTWZEQSt2?=
+ =?utf-8?B?NFIxc3ZRcmZDMHZKUk53Y1N6cHRMdXR1WDNKcHErZzlra0dJeElpQWRnV2Fs?=
+ =?utf-8?B?SGZNcHRxcm1sU2QxeXBqY0RBL1JQRDRGbjI4L0lYS3kvcGtBRjdCZHpVN3o3?=
+ =?utf-8?B?TUVPcHZXVmJLRks4RzI2UWVEZm9NV0tIeHB5eWdmMmRqTS9tc2ZadnJrUW1i?=
+ =?utf-8?B?WjJYcXdaM3hRWllqSnVEbCsvZU9BNDBPTUFEekpSUmw2VCt1T0VPMEQxRlhm?=
+ =?utf-8?B?TThlTU9rdzQ4czdsbjlGMUxYKzRpOSs4R0Y3dHk4YWRzVnVpM0syNXgzM0JI?=
+ =?utf-8?B?YXF5WUhFZHFuQ3hsUG1zTU9JaXpkemFvN2VUWGpXblJxS1BHeWhZMm1wVURp?=
+ =?utf-8?B?TmhTSVZIRmxldXZLTGdiRFhRUVkxWUhERG5Ld04zRVNZcHc1R0hiQnl4Yzdz?=
+ =?utf-8?B?L1NiK0FmcW54eUNLb2IwbTYwTHZVQ3lsaDBjSUlTTndpUzh5cDB2c1Y4c3VY?=
+ =?utf-8?B?MWRUdnZxYmZhTm50cmxFb2hMMHVsRjloMnRNaW5iZmc2U3A2djVUa3h3R1U0?=
+ =?utf-8?B?Q2ZRbUhySEtIUG8wZHQzNllwQldmSUpnQk5aVUJqcGxYTXAzT0FMUWw3U3Y1?=
+ =?utf-8?B?SFViRCtTN3VXNVZ6TUw3ZHNOQzliMkJpcG51bkxBRG1pSll3N2g3Y2lzVTQ5?=
+ =?utf-8?B?N094ZVpVa0Z6RmZPbno2N3VUTXN3VDcwMjFsSGFFT012K1JYVnM4b21OUlhR?=
+ =?utf-8?B?VDQzcVFlNWNvMFREM1gxV3FQaWw5R1FSZWRxSk5Wc2ZuSlhUeFd4Z09TeHg3?=
+ =?utf-8?B?c3QvbWhhbkZsQjhYSXdISXdpZXVJaXBDcmZIdlREZnVjcFg0L2pVejBIWE4z?=
+ =?utf-8?B?TExjMXB2R1ZPVGFPMjRIZmRtaEI5RDVpbExwU1FtY2pHblkyWE1kb2p1cUlH?=
+ =?utf-8?B?UW9qK0IwcWlrdmFleHorM0ZtVUlISWxTK3ZZanN1SHlFY1ltSDQ3MlNFUU4x?=
+ =?utf-8?B?Z0w4b2RnQWU1RWl1MmlUa3QxVmxFd2dheHJsWS9rWXRNSGxBUTlvNWEwaDVo?=
+ =?utf-8?Q?Lep9QGK6POfS806/p42umzjbB?=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9d7405ea-32e9-42f4-0876-08dbea555aac
+X-MS-Exchange-CrossTenant-AuthSource: BL1PR12MB5827.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Nov 2023 05:47:32.0710
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: gxt7LMdrZurohbs3mvPrmPmK6nbsBJm0+MahIoVpW/tPDHV4ARHSsY547nzaGo5wbOwvqD/ybYXTxx7jQ970Tg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR12MB8242
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231120_073206_175744_59E08768 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20231120_214745_384130_2C7A4717 
+X-CRM114-Status: GOOD (  16.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,37 +148,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 19 Nov 2023 13:13:35 +0100, Alex Bee wrote:
-> While interestingly the DT-binding for the Innosilicon usb phy found in
-> RK3128 SoC exists already and it is exposed in the SoC DT, it has never
-> been added to the driver.
-> This patch-set adds support for this early version of the phy and does
-> some DT-fixups in order to make the 2-port host/otg phy and the respective
-> controllers work.
+Hi Stanley,
+
+On 11/10/2023 11:15 AM, Stanley Chang wrote:
+> In Realtek SoC, the parameter of usb phy is designed to can dynamic
+> tuning base on port status. Therefore, add a notify callback of phy
+> driver when usb connection/disconnection change.
 > 
-> [...]
+> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
+> ---
+> v1 to v2:
+>      No change
+> v2 to v3:
+>      No change
+> ---
+>   drivers/phy/phy-core.c  | 47 +++++++++++++++++++++++++++++++++++++++++
+>   include/linux/phy/phy.h | 18 ++++++++++++++++
+>   2 files changed, 65 insertions(+)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 96a0b1e111f3..a84ad4896b7f 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -489,6 +489,53 @@ int phy_calibrate(struct phy *phy)
+>   }
+>   EXPORT_SYMBOL_GPL(phy_calibrate);
+>   
+> +/**
+> + * phy_notify_connect() - phy connect notify
+> + * @phy: the phy returned by phy_get()
+> + * @port: the port index for connect
+> + *
+> + * If phy need the get connection status, the callback can be used.
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_connect(struct phy *phy, int port)
+> +{
+> +	int ret;
+> +
+> +	if (!phy || !phy->ops->connect)
+> +		return 0;
+> +
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->connect(phy, port);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_connect);
+> +
+> +/**
+> + * phy_notify_disconnect() - phy disconnect notify
+> + * @phy: the phy returned by phy_get()
+> + * @port: the port index for disconnect
+> + *
+> + * If phy need the get disconnection status, the callback can be used.
+> + *
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_disconnect(struct phy *phy, int port)
+> +{
+> +	int ret;
+> +
+> +	if (!phy || !phy->ops->disconnect)
+> +		return 0;
+> +
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->disconnect(phy, port);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_disconnect);
 
-Applied, thanks!
+Please use EXTCON framework for notifying connect/disconnect.
 
-[3/5] ARM: dts: rockchip: Add USB host clocks for RK3128
-      commit: 759d6bd9ef94f0e658202947d44b939c6e3ed363
-[4/5] ARM: dts: rockchip: Add dwc2 otg fifo siztes for RK3128
-      commit: 4b12245e59efea81e19d1aa118f6f835b3e27b3a
-[5/5] ARM: dts: rockchip: Make usbphy the parent of SCLK_USB480M for RK3128
-      commit: fd610e604837936440ef7c64ab6998b004631647
-
-The rk3128 binding and the phys is already defined in the binding
-and devicetree, so I've picked up these, as they're independent of
-the phy changes themself.
-
-Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Thanks,
+Kishon
 
 -- 
 linux-phy mailing list
