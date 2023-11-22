@@ -4,93 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A410C61D92
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 07:11:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E074EC072A2
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 08:32:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m4jxOgheIDLc/XRvT2CPC3ovQNlRZouHV4mtaAtM74g=; b=HIe76On78NA2rr
-	mYfdl+In2ibyAZUO3b6DithJeS0hjp3ZuKtBwvF9BeMJz1F3pzZpiaqjlyxHWuoYS2WKS4iDrtFR0
-	twSfcTZLSIBP/FyGTWN/I5c7t7XjjMSHmjjaLH4hAa6DCegntgm/K45EqSHpIxBwh66xwVuz7mVHV
-	kJJcrEL4WRnXGS+YFjSWfk2y44dKWSXdvBZbFC+7JDakIX8/Er+BUUFzxfBja1fhaP/xDE8GZqaiM
-	3/OqG3/jcHfgw70lbc5q38rfFNbx0x+xfm+GBKPjZoIfGT2EWZZn5N2Mewaav04I0TSc9p/gsSxjD
-	ObvR258HjPQroK+IJrSQ==;
+	List-Owner; bh=BY1dm9hJ/0rh1iMWatjStiU6tfrfgQGD+uP1kAhAi5o=; b=32Z6gTpNmD0D20
+	OrnhRNuyLwIKWi5L3JUffZpTC1yAgof6OvRtsTYXMJoI1oWDuW9AUA1q2e+azoXOKZJgNoEYKaXHA
+	T5BocSbaTgCYcZU6i6QBGUDCrQpndMdgGC2qmhnjRUTyRXqJ1AC21pezWh8Y4ak/cWJyl1AwkCi9z
+	Thy1mAbjo+nzJXRMvRCOvS5hIhs7NH2ZzzptlpiDkZ2ilElS0x4iXGLVz26JCW/mXSHEFCE5QTsu7
+	mXIi3h6CtEEFPPs6/ma/dj4wrIrJEDimisUSXsYROIWc5/j1FlIFTrPR0Ai/jtstnGnSuEdxpwtB7
+	yJrX1tjMx/PJjbeTZ4Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5hOM-000sxu-0s;
-	Wed, 22 Nov 2023 07:11:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1r5iew-00148j-1e;
+	Wed, 22 Nov 2023 08:32:34 +0000
+Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5hOH-000sud-1K
+	id 1r5iet-00147n-29
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Nov 2023 07:11:20 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AM5pbxB026792;
-	Wed, 22 Nov 2023 07:11:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=8KIIwOOYOAIVazDSSyJZiSoqwV8HHBUfe3McSpMe1TE=;
- b=kKY8t7vNAZgNm0ZH+/86F3Vg3hSmWTXw11nbPCUFoySbik2L44/W/2/9F9OpaVRtPrvA
- aIRRVUN5YvK8C34rTLRzUqh4kq/Y9ZKnb5Djwp5ItVQl4FGJ+6U/qAPMNJ6bTDq7KkIy
- hJk+wJapi7G4FjSgWvriL5mpWik/yINbgVuAJtIrigrx2GTtjil/uOLaW5xlpnEdaQr7
- tS85mCVhj+eC76xWFTYFBVykljQ0vFtbxm1t+wMjj2c/l4ClO4d3R4U/v3VQvR6h7kQx
- HxL3UHRh7t/0z184gxYx58CkARhTzn17OuycSpZ0BCL8RyNh8w6algIyLMi0Xa8urVTn xA== 
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ugu54avpp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Nov 2023 07:11:08 +0000
-Received: from pps.filterd (NASANPPMTA05.qualcomm.com [127.0.0.1])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3AM7079U009949;
-	Wed, 22 Nov 2023 07:11:07 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by NASANPPMTA05.qualcomm.com (PPS) with ESMTP id 3uhcusg3yn-1;
-	Wed, 22 Nov 2023 07:11:07 +0000
-Received: from NASANPPMTA05.qualcomm.com (NASANPPMTA05.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3AM73gRb016631;
-	Wed, 22 Nov 2023 07:11:07 GMT
-Received: from stor-dylan.qualcomm.com (stor-dylan.qualcomm.com [192.168.140.207])
-	by NASANPPMTA05.qualcomm.com (PPS) with ESMTP id 3AM7B6Ck027691;
-	Wed, 22 Nov 2023 07:11:07 +0000
-Received: by stor-dylan.qualcomm.com (Postfix, from userid 359480)
-	id A51AA20A65; Tue, 21 Nov 2023 23:11:06 -0800 (PST)
-From: Can Guo <quic_cang@quicinc.com>
-To: quic_cang@quicinc.com, bvanassche@acm.org, mani@kernel.org,
-        stanley.chu@mediatek.com, adrian.hunter@intel.com, beanhuo@micron.com,
-        avri.altman@wdc.com, junwoo80.lee@samsung.com,
-        martin.petersen@oracle.com
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        linux-arm-msm@vger.kernel.org (open list:ARM/QUALCOMM SUPPORT),
-        linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-        linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH v3 09/11] phy: qualcomm: phy-qcom-qmp-ufs: Use tbls_hs_max instead of tbls_hs_g4
-Date: Tue, 21 Nov 2023 23:10:40 -0800
-Message-Id: <1700637042-11104-10-git-send-email-quic_cang@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1700637042-11104-1-git-send-email-quic_cang@quicinc.com>
-References: <1700637042-11104-1-git-send-email-quic_cang@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Mjiel9YjSWy5SyAmriOj2vmlnC8hDKRD
-X-Proofpoint-ORIG-GUID: Mjiel9YjSWy5SyAmriOj2vmlnC8hDKRD
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-22_04,2023-11-21_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
- bulkscore=0 phishscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- lowpriorityscore=0 mlxlogscore=961 adultscore=0 suspectscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311220050
+	Wed, 22 Nov 2023 08:32:32 +0000
+Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-5b383b4184fso70935557b3.1
+        for <linux-phy@lists.infradead.org>; Wed, 22 Nov 2023 00:32:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1700641948; x=1701246748; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=SKD7ps1yzVN9YyslM/iBpqLP523I7QRimM6aSYFE9qw=;
+        b=ZiPXlZh+zFDLtcFuDG01e6coO3wD6Sr46GPakRlICo0hNhUFzjFQ5axqP4dZLTIyst
+         hz2at9lQ7acLjNqbjkHqNDb/4UhE6A2XlumKCf8by7Lsd99PeZG4qrYE6gtV0iQKJg4v
+         cjciMpWzkZ00Qd9ZTRxgNvrzI2GZHRxYv6L1YHSFlOgCisaFKBEfIkq7fB2qCxzQXNKb
+         yqpV4/fu2m9hzZ9q0B329bKnrX38I5FfxNdxVnVlyKAsCWaz2hxZocBi5bCu2HF6OGWY
+         vH3LSEzjovuW6O5Xur9+Vby02XwmPCGrcpcrFCs7eJV/p/MhOLYDh9+lEbPk0Qglg8jU
+         8vLw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1700641948; x=1701246748;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=SKD7ps1yzVN9YyslM/iBpqLP523I7QRimM6aSYFE9qw=;
+        b=i0atzrBVnjYhb+huU3qS7V3rHZ4gjFO0OeuhntdJ5L0qbHfV7ayhcFm4A38My6k6Tp
+         f+acXde6Wz5zGsYLRPaJHFNaBJXFofhQ4yxGmWqXQoG0msffEV9Yiz5oG6biFvF9Gw8v
+         Uf+CCDBAGU8MTJnRRMB7xHbjcAL0pvfKiP12Ns5yFw/BX5YGLZsLzkYpQTB0jwjjaXmT
+         zNcRZWgvLh8wl+018+vOgbB5FA9IMNcptptJ+UuIG8/ioWno4K6GFfk57yEraAllOsMD
+         UFdknHdAZvt18TTEqNvq80OIjpqP2hSR8s0gXdtpPVmnKpxMLmd6JHghNzv0mK208Wpb
+         V8VA==
+X-Gm-Message-State: AOJu0YyZoLNvDdgt4vlkkvEg2MdIY7yMQzbc2U9OBvtzaZf59WyZL93Y
+	aUSY7SYc4Q+mLyxEZrZXgYduYJW8wZi4n8HFInHjBw==
+X-Google-Smtp-Source: AGHT+IE5g6LemC66GK6J4NtBnEPhGvTXAOLhtI7zh/ZTgg1uxNkugF5SAUnxnXKq9zo05CTFg+SDAeASJdL8+iGTQBU=
+X-Received: by 2002:a05:690c:4782:b0:5cc:7431:871 with SMTP id
+ ha2-20020a05690c478200b005cc74310871mr699694ywb.25.1700641948499; Wed, 22 Nov
+ 2023 00:32:28 -0800 (PST)
+MIME-Version: 1.0
+References: <1700637042-11104-1-git-send-email-quic_cang@quicinc.com> <1700637042-11104-9-git-send-email-quic_cang@quicinc.com>
+In-Reply-To: <1700637042-11104-9-git-send-email-quic_cang@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 22 Nov 2023 10:32:17 +0200
+Message-ID: <CAA8EJpreEqStpjkN5z3+ufiFXP22-PcW4U+wR6Y7LK7QMT_Ktg@mail.gmail.com>
+Subject: Re: [PATCH v3 08/11] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550
+ UFS HS-G4 PHY Settings
+To: Can Guo <quic_cang@quicinc.com>
+Cc: bvanassche@acm.org, mani@kernel.org, stanley.chu@mediatek.com, 
+	adrian.hunter@intel.com, beanhuo@micron.com, avri.altman@wdc.com, 
+	junwoo80.lee@samsung.com, martin.petersen@oracle.com, 
+	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Johan Hovold <johan+linaro@kernel.org>, 
+	Abel Vesa <abel.vesa@linaro.org>, 
+	"open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, open list <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231121_231117_582015_5D8725E8 
-X-CRM114-Status: GOOD (  18.75  )
+X-CRM114-CacheID: sfid-20231122_003231_723721_5A98244E 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,214 +91,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Table tbls_hs_g4 is added to support HS Gear 4 and applied only if PHY
-submode is HS_G4. In future, we are adding support for Gear 5 and higher.
-To avoiding adding more tables, like tbls_hs_g5, let's use tbls_hs_max
-instead of tbls_hs_g4. In addition, max_hs_gear is added to indicate the
-maximum supported HS Gear of each configuration, so that we can check PHY
-submode against it to tell if tbls_hs_max needs to be applied.
+On Wed, 22 Nov 2023 at 09:11, Can Guo <quic_cang@quicinc.com> wrote:
+>
+> The registers, which are being touched in current SM8550 UFS PHY settings,
+> and the values being programmed are mainly the ones working for HS-G4 mode,
+> meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
+> However, even consider HS-G4 mode only, some of them are incorrect and some
+> are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
+> SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
+>
+> Fixes: 1679bfef906f ("phy: qcom-qmp-ufs: Add SM8550 support")
+> Signed-off-by: Can Guo <quic_cang@quicinc.com>
 
-Signed-off-by: Can Guo <quic_cang@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 49 +++++++++++++++++----------------
- 1 file changed, 26 insertions(+), 23 deletions(-)
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index ad91f92..cae27a9 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -735,8 +735,11 @@ struct qmp_phy_cfg {
- 	const struct qmp_phy_cfg_tbls tbls;
- 	/* Additional sequence for HS Series B */
- 	const struct qmp_phy_cfg_tbls tbls_hs_b;
--	/* Additional sequence for HS G4 */
--	const struct qmp_phy_cfg_tbls tbls_hs_g4;
-+	/* Additional sequence for maximum supported HS Gear */
-+	const struct qmp_phy_cfg_tbls tbls_hs_max;
-+
-+	/* Maximum supported HS Gear */
-+	u32 max_hs_gear;
- 
- 	/* clock ids to be requested */
- 	const char * const *clk_list;
-@@ -839,7 +842,7 @@ static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G3,
- 	.tbls = {
- 		.serdes		= msm8996_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(msm8996_ufsphy_serdes),
-@@ -864,7 +867,7 @@ static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-@@ -879,7 +882,7 @@ static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
-@@ -898,7 +901,7 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-@@ -913,7 +916,7 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
-@@ -932,7 +935,7 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G3,
- 	.tbls = {
- 		.serdes		= sdm845_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
-@@ -960,7 +963,7 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G3,
- 	.tbls = {
- 		.serdes		= sm6115_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm6115_ufsphy_serdes),
-@@ -988,7 +991,7 @@ static const struct qmp_phy_cfg sm7150_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G3,
- 	.tbls = {
- 		.serdes		= sdm845_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sdm845_ufsphy_serdes),
-@@ -1016,7 +1019,7 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8150_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
-@@ -1031,7 +1034,7 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 		.serdes		= sm8150_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8150_ufsphy_hs_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8150_ufsphy_hs_g4_tx),
- 		.rx		= sm8150_ufsphy_hs_g4_rx,
-@@ -1050,7 +1053,7 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8150_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_serdes),
-@@ -1065,7 +1068,7 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- 		.serdes		= sm8150_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8250_ufsphy_hs_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
- 		.rx		= sm8250_ufsphy_hs_g4_rx,
-@@ -1084,7 +1087,7 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-@@ -1099,7 +1102,7 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
-@@ -1118,7 +1121,7 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_serdes),
-@@ -1133,7 +1136,7 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_max = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
-@@ -1152,7 +1155,7 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets_v6,
--
-+	.max_hs_gear		= UFS_HS_G4,
- 	.tbls = {
- 		.serdes		= sm8550_ufsphy_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_serdes),
-@@ -1235,11 +1238,11 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
- 	if (qmp->mode == PHY_MODE_UFS_HS_B)
- 		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
- 	qmp_ufs_lanes_init(qmp, &cfg->tbls);
--	if (qmp->submode == UFS_HS_G4)
--		qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_g4);
-+	if (qmp->submode == cfg->max_hs_gear)
-+		qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_max);
- 	qmp_ufs_pcs_init(qmp, &cfg->tbls);
--	if (qmp->submode == UFS_HS_G4)
--		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_g4);
-+	if (qmp->submode == cfg->max_hs_gear)
-+		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_max);
- }
- 
- static int qmp_ufs_com_init(struct qmp_ufs *qmp)
+> ---
+>  .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  3 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 28 +++++++++++++++-------
+>  2 files changed, 22 insertions(+), 9 deletions(-)
+
+
 -- 
-2.7.4
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
