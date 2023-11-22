@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E5D4C61D97
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 12:10:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25B29C61D9B
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 12:11:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=038A3EEkNZ+Wl8uY4qYkY4jS5Qiy2sfgGBN2zf8xN2w=; b=Yt1ReW6V+SoII5
-	qux7TgqBBr+YCn8jBusztAwqgQjOyUzBB7k+nO/N7p4V68nxgkW1obj0vF7qeY1VkLyFM6syP6Hox
-	cyX6uxH7hdAmEBUnqPfb3XBVYNzA5bQyyA5Bym/g+plVYJthPZTc4vDZrOJCWFY6LLV/lY/62yzlD
-	pay0CgTEWMvvT3vOf6dL7Qa7sfV56iofthIeyZNwZXu5qKPLXrORj1ittR3EzNzpLgim+uC+AsJrY
-	Ipx+YivMkImqctcLQqKKAgjDRqHD9Jj/sFzBigcaHhDjje73INrqcQTPEdF4C9+ViS6JnO2sWdC/2
-	4MNMsFOEybp+sB2HVLGA==;
+	List-Owner; bh=qp9nxUFaxTEaBwfPmPZYoyqbH6dS+dApT0YKCnJu0oA=; b=036UEcp96e7Bk8
+	rLrYzbStQJ7QU5x94ZFLeP6hw+oVXuj58SjhSWRhj84BSaHOhTalJFEPbuZ37Sc9CRovhHhqEB20Y
+	NIwubXIKjdYWQrzECRcUxLzpQaFhaSkprchYbeqsxUi0Jw3Aic2sM0FhosJ1NYA/m6G+bYMBnaE1+
+	Z/P0ACuu69nJ1Vet8Y7trK0m9PWj6bSLU0UdIIL1WTIZtvVOxU2tlyN/0SgPWDBHDCqA6cgoyTlrS
+	wYCEFR27XB4h86IyeQ4ysN4i0DVOYCfAcjio0yevSGS4cDbsa2ogrIfYKppn8bHl7VvyLy+UbEQu0
+	4BQWItl/XvZ6B9osznIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5m45-001k6y-0L;
-	Wed, 22 Nov 2023 12:10:45 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1r5m4M-001kB8-2n;
+	Wed, 22 Nov 2023 12:11:02 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5m42-001k4q-0o
+	id 1r5m4K-001kAQ-27
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Nov 2023 12:10:43 +0000
-Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-548a2c20f50so4998577a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 22 Nov 2023 04:10:38 -0800 (PST)
+	Wed, 22 Nov 2023 12:11:01 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id 4fb4d7f45d1cf-5491eb3fb63so1345955a12.3
+        for <linux-phy@lists.infradead.org>; Wed, 22 Nov 2023 04:10:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1700655037; x=1701259837; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1700655058; x=1701259858; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=B8iwxPg3znTscDLFGjlHjf+9rnyamV4Zgb4qX6qI79I=;
-        b=yaNdPvXcw+oiGcfTvIcKa7w2fgOOcB6FiLJNGgQf4XDln8X9lL3IfUIaBLD4ZNrTF/
-         IhP2mXOcs91cNuLgaHel8AsoONtXIfGcN4f7qipG6sMrkQykB3bUA49Djnik797aRvfo
-         ptGCoGgaIVwhlx8K1gYc7UDZ54KvMeMzqOkgBTJL0XdDJdt7dj49HEV7/wYSmzCe436r
-         EUs2urO/de3HotWq+AcKgOAanQ1+zTi1cGmqOpnSXxS1EjhYOV2dsmozkGaaFvzoyOKd
-         vhJCXCaf2BarFJrWt99xjPAPl/QDSGvaB3lu3cImPksgr0PTJ5/tX5RcaArDeCkMD7IS
-         m7dg==
+        bh=0gWytzWZiprdOyBf/AUmxGEuHaJwWmmvlOwhUmkAkGI=;
+        b=tsiPK/dC5aYF9pxhgFHOeLnmvxcclB0QdxVdStfRfK5wi4p4vTgAz6wPb6wwnNFpHX
+         eL+rJrMQlooay7eEJy3bs28wUw2fKjdDIR3n18SBG1L6wsD3vXAAHKkpkCkogeWG6u/M
+         1ksgZhva0YyCX1OeunEY9pGWuKTWAsXKTkY1wSJ7RD4tIufMUvWqxDlZQ1unU/uXtFyN
+         Ya9wdR6jf3olsZ4pR1JMmdHU/32xSrr0prLUVEgElQzGzjI+mfDkSJJu6fjg3k2KnxCW
+         QDV5qJxdxorNC6ILcQaOy8R63iwt4fnn/o6hSlN9mRXXLS1vVJIL6F5h+CTbeXY7+Ddv
+         izdA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700655037; x=1701259837;
+        d=1e100.net; s=20230601; t=1700655058; x=1701259858;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=B8iwxPg3znTscDLFGjlHjf+9rnyamV4Zgb4qX6qI79I=;
-        b=VRsR9bEFVDE8zij+c2uqcPr5GJKpJ+QKV4x/XyfW3S7KmCWJKOzZztF+5EWdouZNiO
-         lfWWZmOTpQNvutvk6TrpLMw6+46/7UDy/YaDHF+LhtseRo0ivSYtCxSGQBDW8f6hyc5f
-         lQtBXpgcku9s9XopjbQWTIhjN2pCA01HRGXdnAnkmQ75IHgD5cjodiZyx9RxcMMR1JJo
-         LJLM6UbQKmUOL4PXkh09hbeOaqv+o870Q6li1i86kCn7tGbhiLdCakfb0jvdeoK0Rqtq
-         WwuKAMZa1xLfTTDtfSAePllYl6zjrcMxQuSqtXImLJ8mqve8M/bttfws30lB1FQyv3dA
-         oc5A==
-X-Gm-Message-State: AOJu0YyKO8J2/B8MXo9j9V4ASpia0GMPEWblOSZDyga8H/pvl1CnwjE8
-	KtCPVjfhPXxjbWMAtz3hdB36TA==
-X-Google-Smtp-Source: AGHT+IE9WTiEGyg3Co+EiMJg7naWKTSSMWT6BQryE2x6FGaasebtTtvNZ2H1ju0WlmsTIm94y6Y0CA==
-X-Received: by 2002:a17:906:3ed4:b0:a03:9dfb:5298 with SMTP id d20-20020a1709063ed400b00a039dfb5298mr1456972ejj.57.1700655037669;
-        Wed, 22 Nov 2023 04:10:37 -0800 (PST)
+        bh=0gWytzWZiprdOyBf/AUmxGEuHaJwWmmvlOwhUmkAkGI=;
+        b=DGjUSf0b0E5m0xlUadx1x9HitvrTKJbZJpwdePZOx8w2DZD5bvNcagv0j2NfStC+BW
+         66ulEKIsi5yefWI1vqW5V/FIE/SAqhj79Hua4BWUBq3ISXavTJLu6Wcu/gJRmmM7IynD
+         lBkckjk3e4kNvLgNaeQmgNdKeAInfAHwPeNwt9D/3hzaBCMoqieICCbqCAfG36DuwjMZ
+         jQaRzPR3QBoZyGeuQgASLxUgtT3sUi/CMNHhE4btf0A4ju61OvdDWOWoKVmeRfw0x0Za
+         qxQEDq9LsSsQSjavmkbKiCGiCIwW5An1IBxAOFUA1IKQozZIIHRMd/owd7woi36Cokwk
+         nDRg==
+X-Gm-Message-State: AOJu0Yzq8JtnWbzVXc6IEeCXFOIQM+vSWgjdaJUMR9oPO7sBFp1w7jj6
+	/IrpQWJfk4El4+bChuV7cOEh9Q==
+X-Google-Smtp-Source: AGHT+IGWfpaKrqWdDoC4SudbpjPEmLxNb8/PcsUAF949UR7RGpdjXvGZbmTrcSuPhwyBbp/gnlKlfg==
+X-Received: by 2002:a17:906:9c56:b0:a03:90a3:b775 with SMTP id fg22-20020a1709069c5600b00a0390a3b775mr120334ejc.27.1700655058502;
+        Wed, 22 Nov 2023 04:10:58 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.218.100])
-        by smtp.gmail.com with ESMTPSA id l20-20020a1709060e1400b009ff783d892esm3308741eji.146.2023.11.22.04.10.36
+        by smtp.gmail.com with ESMTPSA id l20-20020a1709060e1400b009ff783d892esm3308741eji.146.2023.11.22.04.10.57
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 22 Nov 2023 04:10:37 -0800 (PST)
-Message-ID: <1d224284-7d8e-4f4e-a911-13fdfd54238b@linaro.org>
-Date: Wed, 22 Nov 2023 13:10:35 +0100
+        Wed, 22 Nov 2023 04:10:58 -0800 (PST)
+Message-ID: <aa463adc-0c8d-48e6-b7a4-36096fabdd59@linaro.org>
+Date: Wed, 22 Nov 2023 13:10:57 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: qcom: snps-eusb2: Add X1E80100 Compatible
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom: snps-eusb2: Document the
+ X1E80100 compatible
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Abel Vesa <abel.vesa@linaro.org>
@@ -78,8 +79,8 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20231122-phy-qualcomm-eusb2-x1e80100-v1-0-ce0991161847@linaro.org>
- <20231122-phy-qualcomm-eusb2-x1e80100-v1-2-ce0991161847@linaro.org>
- <CAA8EJpoKEd8B7KTwVb0TEk+Yk3kRXfhvtcdk0QUirOOV4wnUYA@mail.gmail.com>
+ <20231122-phy-qualcomm-eusb2-x1e80100-v1-1-ce0991161847@linaro.org>
+ <CAA8EJppov1ZtJvxyiXwik77bs5=dDfE_k_Wv8-DyzYtoEzvv4Q@mail.gmail.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -125,10 +126,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <CAA8EJpoKEd8B7KTwVb0TEk+Yk3kRXfhvtcdk0QUirOOV4wnUYA@mail.gmail.com>
+In-Reply-To: <CAA8EJppov1ZtJvxyiXwik77bs5=dDfE_k_Wv8-DyzYtoEzvv4Q@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231122_041042_297092_2907A276 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20231122_041100_697618_6B4529DC 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,32 +146,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/11/2023 12:01, Dmitry Baryshkov wrote:
+On 22/11/2023 12:02, Dmitry Baryshkov wrote:
 > On Wed, 22 Nov 2023 at 12:28, Abel Vesa <abel.vesa@linaro.org> wrote:
 >>
->> Add the X1E80100 to the list of supported PHYs for eUSB2
->> SNPS driver.
+>> Add the X1E80100 compatible to the list of supported PHYs.
 >>
 >> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 >> ---
->>  drivers/phy/qualcomm/phy-qcom-snps-eusb2.c | 1 +
+>>  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml | 1 +
 >>  1 file changed, 1 insertion(+)
 >>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
->> index 1484691a41d5..6420f342dc85 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
->> @@ -425,6 +425,7 @@ static int qcom_snps_eusb2_hsphy_probe(struct platform_device *pdev)
->>
->>  static const struct of_device_id qcom_snps_eusb2_hsphy_of_match_table[] = {
->>         { .compatible = "qcom,sm8550-snps-eusb2-phy", },
->> +       { .compatible = "qcom,x1e80100-snps-eusb2-phy", },
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+>> index 8f5d7362046c..ea1809efbf56 100644
+>> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+>> @@ -21,6 +21,7 @@ properties:
+>>                - qcom,sm8650-snps-eusb2-phy
+>>            - const: qcom,sm8550-snps-eusb2-phy
 > 
-> Do we need a separate compatible string or is it fully compatible with
-> sm8550? If it is the same IP block, maybe you can use a fallback
-> compatible instead?
+> Ah, I think this answers my question for patch2. Can we instead reuse
+> the existing compat string as it was done for sm8650?
 
-Yep. This should use fallback.
+If not, commit msg should explain why it cannot.
 
 Best regards,
 Krzysztof
