@@ -4,67 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 716FBC61D97
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 17:51:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B86E9C61D9B
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Nov 2023 18:33:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hg3lYecm93J2mMuSAZdWCwTAKU7IcSFP+/jbVC0XxDE=; b=u4ibj6Qb2euHyK
-	gJkPw5bXC0Ij6W/2mm5VrT2/mGAwQUV2Xa+Cf7QlozZBj/dExKEVUQaXIKF337vG/XQsuRHlBK/3T
-	JXW45tDsSaGdlBFfpXfJ0qeODabKbMIpn4JMwmPNvFS98aE/jwajZXtrM2kaDzIy3g0HYcL8lO3Ax
-	uJ3gSp+TRXmysTLNgLlD9rIrLZZA/q3EdWnC50NCYloMUEc8XFEkP1Vx6/7J8dty3R6jZ4zSSXW3W
-	3n7U7vn8cT53UGMc+DAeR7ZfwX7cuM/u16ZOgjzdbSV3yQUKQYM3teny1w/eKapzT3mu2TGxTCvq+
-	WLuoLoeZ7KuMOEykvLOA==;
+	List-Owner; bh=wUfrTsSXTFus77TJvwRx31gPmwskSL0pNxe6kyM+j6Y=; b=4C6RQ9ZSAk3BNB
+	pXUWaX/UU62OVvrxahP5+a/UwkAfXs9PZNR3bJd0vPxHPeBOAqaJfUJ38k+nl0768Dhn972KcfsvV
+	TcWfuomsYx2QHoH7j/ZCpWT4WjFyaPD2gmnpuIsvdd/uRAmZiLkBlx+81+tw+6MpoZcaLfDYawdpv
+	b/7FAj25ADaR+vtIEgmyIIYRmtsIj1GrU6FK1emKgyrjJPcX4QsjEtxnQ9DQrmqw+bKBlcmqX1XbO
+	V7UXGZrhRwb7zcUnW1uhoECRLsH6kTVY8k0P8dJ3XwadIYi/ACoOdYlyIBZRBQx1wVn0h2roYGY+7
+	Qkj8YtthraoIeDI17mSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5rNO-002jhN-0X;
-	Wed, 22 Nov 2023 17:51:02 +0000
-Received: from out-189.mta1.migadu.com ([2001:41d0:203:375::bd])
+	id 1r5s20-002phL-1E;
+	Wed, 22 Nov 2023 18:33:00 +0000
+Received: from mail-yw1-x112d.google.com ([2607:f8b0:4864:20::112d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5rNK-002jez-2T
+	id 1r5s1x-002pfp-2L
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Nov 2023 17:51:00 +0000
-Message-ID: <09a78110-99d7-44ca-8558-dd300c353632@linux.dev>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1700675447;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=yOw+hHrA4r+TfdEE+WVDT6I3vzKD2GREfHEw4jCowto=;
-	b=NNY0P3nkEdXIvTFdZgaEspupWc3C0vtePf8nbykCdgIOtMGqvdds/UkMdKZrFnfRkqAJpa
-	yGRvRmyTeKle8rm7TxjZmNjkEsL4OYQ2TSRxg/KLwyB+510LT+j1uOjTAtigWzypkOzmnG
-	TtGHevd26yRWoajYzSxHzQSQVkcjYOc=
-Date: Thu, 23 Nov 2023 01:50:37 +0800
+	Wed, 22 Nov 2023 18:32:59 +0000
+Received: by mail-yw1-x112d.google.com with SMTP id 00721157ae682-5ca11922cedso490767b3.2
+        for <linux-phy@lists.infradead.org>; Wed, 22 Nov 2023 10:32:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1700677974; x=1701282774; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=9evLgerhPexVHQkBogiwmvf7m2BOF4vHI4aXwGPPVJ4=;
+        b=NseBq3xY+3jBQdOEqE+1arDa49MprKJoymZG+jHTZY1K7EV4Upnra7dg1WLzF1Vk6k
+         nIy5YyonBSP5GhG7C+tYBWuMD3DVsdbAVA+a8S9nHVbK1NAPFMu1lriUvXTL6co1nZwO
+         Qm+Z/5zdltnyMBG5e0c227cf0rwDKnqGeIA+3aNGIe6zjIxlyp71wP6rbz4MovovG+E7
+         zXxdc8ZSl9RtS1LcrsKygT68Wau+RqxMLrEiSODO8VzmMBhTm6/z7AWqMVLyFxUQwHBc
+         1WEsPjxnWioKPAGxXyNUyzVc1egdCBXlXPwL5WrGVW76zgVLUYRQRvxUrYOJZcymoWj3
+         Y9+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1700677974; x=1701282774;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9evLgerhPexVHQkBogiwmvf7m2BOF4vHI4aXwGPPVJ4=;
+        b=RxCc2ETKbHHIang5V/PzdgJ/eJrksOaOEoDwreS7aXQFHLUugcccpbMpg6DgoHBvzt
+         Hl+MIzSET8aFmK94cqhqd4wuAb+Rq/xtyQwhok/kbH73b0gW6JGfVhpywELVcpf7Mire
+         IOYuT28EwAoFKdYO8Wqrt+M+KoBz46FhH7uamacYfRzx4YRoXZ9NdkPJBc3XcoozK7oT
+         k5p8k4FKWplnibM2gRafaDxxETbPWmOOxgQOhymIWf7Xa5DxmIopIHSsqzb3eFgPVvuK
+         m5YvzCPJCFu0PaosYee0CmeD7QttE3ypvId3FkjbzNzY394jIJZEQemAHxD+GeKK8Kt3
+         mZDQ==
+X-Gm-Message-State: AOJu0YyKdmsqJxfhKsSTWRrdkeNfsWSSnevdsiIygOWkbLEXfVq6nBhR
+	pBSRU8vutSJY3M+lclF0y0D21HfAYwEksDzMOIhG5g==
+X-Google-Smtp-Source: AGHT+IHyhJSWiia3K3sWSqzs9R4jjq04Y+WIUYIc2Ttxdvr+Ys8bPby4u0SJWAcMZONs2xz0YHXI4buzX0cWSLoaSkQ=
+X-Received: by 2002:a0d:f245:0:b0:5c9:d64e:68c7 with SMTP id
+ b66-20020a0df245000000b005c9d64e68c7mr3050822ywf.35.1700677974461; Wed, 22
+ Nov 2023 10:32:54 -0800 (PST)
 MIME-Version: 1.0
-Subject: Re: [v6,1/6] drm/bridge: add transparent bridge helper
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Maxime Ripard <mripard@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-usb@vger.kernel.org, freedreno@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org
-References: <20231103230414.1483428-2-dmitry.baryshkov@linaro.org>
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Sui Jingfeng <sui.jingfeng@linux.dev>
-In-Reply-To: <20231103230414.1483428-2-dmitry.baryshkov@linaro.org>
-X-Migadu-Flow: FLOW_OUT
+References: <20231103230414.1483428-1-dmitry.baryshkov@linaro.org> <7a4a6698-0954-4225-82ff-02dd13bd64bb@linux.dev>
+In-Reply-To: <7a4a6698-0954-4225-82ff-02dd13bd64bb@linux.dev>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 22 Nov 2023 20:32:45 +0200
+Message-ID: <CAA8EJpoqfwyVYQy17QAOtrGr1AGzFkpKrOM5_F58=A95PoYncQ@mail.gmail.com>
+Subject: Re: [PATCH v6 0/6] drm: simplify support for transparent DRM bridges
+To: Sui Jingfeng <sui.jingfeng@linux.dev>
+Cc: David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-phy@lists.infradead.org, 
+	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
+	freedreno@lists.freedesktop.org, dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231122_095058_947926_94C7B147 
-X-CRM114-Status: GOOD (  37.46  )
+X-CRM114-CacheID: sfid-20231122_103257_766253_F87535A7 
+X-CRM114-Status: GOOD (  38.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,168 +90,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksCgoKT24gMjAyMy8xMS80IDA3OjAzLCBEbWl0cnkgQmFyeXNoa292IHdyb3RlOgo+IERlZmlu
-ZSBhIGhlbHBlciBmb3IgY3JlYXRpbmcgc2ltcGxlIHRyYW5zcGFyZW50IGJyaWRnZXMgd2hpY2gg
-c2VydmUgdGhlCj4gb25seSBwdXJwb3NlIG9mIGxpbmtpbmcgZGV2aWNlcyBpbnRvIHRoZSBicmlk
-Z2UgY2hhaW4gdXAgdG8gdGhlIGxhc3QKPiBicmlkZ2UgcmVwcmVzZW50aW5nIHRoZSBjb25uZWN0
-b3IuCgpBcyBmYXIgYXMgSSBjYW4gdGVsbCwgdHJhZGl0aW9uYWxseSwgdHJhbnNwYXJlbnQgZGlz
-cGxheSBicmlkZ2VzIGFyZQp1c2VkIHRvIHJlZmVyIHRvIHRoZSBoYXJkd2FyZSBlbmNvZGVycyB3
-aGljaCB0cmFuc2Zvcm0gdGhlIHZpZGVvIHNpZ25hbHMuClN1Y2ggYXMgQURWNzEyMy9BRFY3MTI1
-KFJHQjg4OCB0byBWR0EpLCBURlA0MTAgKFJHQjg4OCB0byBEVkkpIGV0Yy4KV2hpY2ggY2FuIGJl
-IHVzZWQgd2l0aG91dCB0aGUgbmVlZCBvZiBzb2Z0d2FyZSBjb25maWd1cmF0aW9uLiBURlA0MTAK
-aXMgYSBsaXR0bGUgYml0IHNwZWNpYWwsIGl0IGNhbiBiZSBjb25maWd1cmVkIGJ5IEkyQyBpbnRl
-cmZhY2UsIGJ1dApURlA0MTAgZG9uJ3Qgc3VwcG9ydCByZWFkIGVkaWQgZm9yIHRoZSBtb25pdG9y
-LiBCdXQgYXQgdGhlIGxlYXN0LAp0aGVyZSBkbyBoYXMgYSBjb3JyZXNwb25kaW5nICpoYXJkd2Fy
-ZSBlbnRpdHkqIHdvcmtpbmcgaW4gdGhlIGNoYWlucy4KSXQgaXMganVzdCB0aGF0IGl0IGRvbid0
-IG5lZWQgYSBkcml2ZXIgdG8gY29uZmlndXJlLgoKRG9lcyB0aGUgInNpbXBsZSB0cmFuc3BhcmVu
-dCBicmlkZ2VzIiB5b3UgY3JlYXRlZCBoYXMgYSBjb3JyZXNwb25kaW5nCmhhcmR3YXJlIGVudGl0
-eT8gQXJlIHlvdSB0cnlpbmcgdG8gc29sdmUgc29mdHdhcmUgc2lkZSBwcm9ibGVtcyBieQphYnVz
-aW5nIHRoZSBkZXZpY2UtZHJpdmVyIG1vZGVsPwoKSSdtIGFmcmFpZCB0aGF0IHRoZSB3cml0dGVu
-ICJzaW1wbGUgdHJhbnNwYXJlbnQgYnJpZGdlcyIgaXMgbm90IGEKYWNjdXJhdGUgZGVzY3JpcHRp
-b24gaWYgeW91IGRvbid0IHJlYWxseSBoYXMgYSBoYXJkd2FyZSBlbnRpdHkgdG8KY29ycmVzcG9u
-ZGluZyB3aXRoLiBCZWNhdXNlIGFsbCBvZiB0aGUgY2xhc3NpYyBkcm0gZGlzcGxheSBicmlkZ2Vz
-CmFyZSBhYmxlIHRvIHRyYW5zZm9ybSB0cmFuc2Zlci9jb25zdW1lIHZpZGVvKGFuZC9vciBhdWRp
-bykgZGF0YS4KV2VsbCwgdGhlIGRldmljZSB5b3UgY3JlYXRlIGp1c3QgY2FuJ3QuIFByb2JhYmx5
-LCB5b3Ugc2hvdWxkIGNhbGwKaXQgYXMgInNpbXBsZSBhdXhpbGlhcnkgZGV2aWNlIi4KCgo+IFRo
-aXMgaXMgZXNwZWNpYWxseSB1c2VmdWwgZm9yCj4gRFAvVVNCLUMgYnJpZGdlIGNoYWlucywgd2hp
-Y2ggY2FuIHNwYW4gYWNyb3NzIHNldmVyYWwgZGV2aWNlcywgYnV0IGRvCj4gbm90IHJlcXVpcmUg
-YW55IGFkZGl0aW9uYWwgZnVuY3Rpb25hbGl0eSBmcm9tIHRoZSBpbnRlcm1lZGlhdGUgYnJpZGdl
-cy4KPgo+IFNpZ25lZC1vZmYtYnk6IERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRyeS5iYXJ5c2hrb3ZA
-bGluYXJvLm9yZz4KPiBSZXZpZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcgPG5laWwuYXJtc3Ryb25n
-QGxpbmFyby5vcmc+Cj4gLS0tCj4gICBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL0tjb25maWcgICAg
-ICB8ICAgOSArKwo+ICAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9NYWtlZmlsZSAgICAgfCAgIDEg
-Kwo+ICAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmMgfCAxNDAgKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKwo+ICAgaW5jbHVkZS9kcm0vYnJpZGdlL2F1eC1icmlkZ2UuaCAg
-ICAgfCAgMTkgKysrKwo+ICAgNCBmaWxlcyBjaGFuZ2VkLCAxNjkgaW5zZXJ0aW9ucygrKQo+ICAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWJyaWRnZS5jCj4g
-ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9kcm0vYnJpZGdlL2F1eC1icmlkZ2UuaAo+Cj4g
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvS2NvbmZpZyBiL2RyaXZlcnMvZ3B1
-L2RybS9icmlkZ2UvS2NvbmZpZwo+IGluZGV4IGJhODJhMTE0MmFkZi4uZjEyZWFiNjI3OTlmIDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvS2NvbmZpZwo+ICsrKyBiL2RyaXZl
-cnMvZ3B1L2RybS9icmlkZ2UvS2NvbmZpZwo+IEBAIC0xMiw2ICsxMiwxNSBAQCBjb25maWcgRFJN
-X1BBTkVMX0JSSURHRQo+ICAgCWhlbHAKPiAgIAkgIERSTSBicmlkZ2Ugd3JhcHBlciBvZiBEUk0g
-cGFuZWxzCj4gICAKPiArY29uZmlnIERSTV9BVVhfQlJJREdFCj4gKwl0cmlzdGF0ZQo+ICsJZGVw
-ZW5kcyBvbiBEUk1fQlJJREdFICYmIE9GCj4gKwlzZWxlY3QgQVVYSUxJQVJZX0JVUwo+ICsJc2Vs
-ZWN0IERSTV9QQU5FTF9CUklER0UKPiArCWhlbHAKPiArCSAgU2ltcGxlIHRyYW5zcGFyZW50IGJy
-aWRnZSB0aGF0IGlzIHVzZWQgYnkgc2V2ZXJhbCBub24tRFJNIGRyaXZlcnMgdG8KPiArCSAgYnVp
-bGQgYnJpZGdlcyBjaGFpbi4KPiArCj4gICBtZW51ICJEaXNwbGF5IEludGVyZmFjZSBCcmlkZ2Vz
-Igo+ICAgCWRlcGVuZHMgb24gRFJNICYmIERSTV9CUklER0UKPiAgIAo+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL2dwdS9kcm0vYnJpZGdlL01ha2VmaWxlIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9N
-YWtlZmlsZQo+IGluZGV4IDJiODkyYjdlZDU5ZS4uOTE4ZTNiZmZmMDc5IDEwMDY0NAo+IC0tLSBh
-L2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvTWFrZWZpbGUKPiArKysgYi9kcml2ZXJzL2dwdS9kcm0v
-YnJpZGdlL01ha2VmaWxlCj4gQEAgLTEsNCArMSw1IEBACj4gICAjIFNQRFgtTGljZW5zZS1JZGVu
-dGlmaWVyOiBHUEwtMi4wCj4gK29iai0kKENPTkZJR19EUk1fQVVYX0JSSURHRSkgKz0gYXV4LWJy
-aWRnZS5vCj4gICBvYmotJChDT05GSUdfRFJNX0NISVBPTkVfSUNONjIxMSkgKz0gY2hpcG9uZS1p
-Y242MjExLm8KPiAgIG9iai0kKENPTkZJR19EUk1fQ0hST05URUxfQ0g3MDMzKSArPSBjaHJvbnRl
-bC1jaDcwMzMubwo+ICAgb2JqLSQoQ09ORklHX0RSTV9DUk9TX0VDX0FOWDc2ODgpICs9IGNyb3Mt
-ZWMtYW54NzY4OC5vCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWJy
-aWRnZS5jIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmMKPiBuZXcgZmlsZSBt
-b2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uNjI0NTk3NmI4ZmVmCj4gLS0tIC9kZXYv
-bnVsbAo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWJyaWRnZS5jCj4gQEAgLTAs
-MCArMSwxNDAgQEAKPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCj4gKy8q
-Cj4gKyAqIENvcHlyaWdodCAoQykgMjAyMyBMaW5hcm8gTHRkLgo+ICsgKgo+ICsgKiBBdXRob3I6
-IERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRyeS5iYXJ5c2hrb3ZAbGluYXJvLm9yZz4KPiArICovCj4g
-KyNpbmNsdWRlIDxsaW51eC9hdXhpbGlhcnlfYnVzLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9tb2R1
-bGUuaD4KPiArCj4gKyNpbmNsdWRlIDxkcm0vZHJtX2JyaWRnZS5oPgo+ICsjaW5jbHVkZSA8ZHJt
-L2JyaWRnZS9hdXgtYnJpZGdlLmg+Cj4gKwo+ICtzdGF0aWMgREVGSU5FX0lEQShkcm1fYXV4X2Jy
-aWRnZV9pZGEpOwo+ICsKPiArc3RhdGljIHZvaWQgZHJtX2F1eF9icmlkZ2VfcmVsZWFzZShzdHJ1
-Y3QgZGV2aWNlICpkZXYpCj4gK3sKPiArCXN0cnVjdCBhdXhpbGlhcnlfZGV2aWNlICphZGV2ID0g
-dG9fYXV4aWxpYXJ5X2RldihkZXYpOwo+ICsKPiArCWlkYV9mcmVlKCZkcm1fYXV4X2JyaWRnZV9p
-ZGEsIGFkZXYtPmlkKTsKPiArCj4gKwlrZnJlZShhZGV2KTsKPiArfQo+ICsKPiArc3RhdGljIHZv
-aWQgZHJtX2F1eF9icmlkZ2VfdW5yZWdpc3Rlcl9hZGV2KHZvaWQgKl9hZGV2KQo+ICt7Cj4gKwlz
-dHJ1Y3QgYXV4aWxpYXJ5X2RldmljZSAqYWRldiA9IF9hZGV2OwoKSXQgc2VlbXMgdGhhdCB0aGUg
-c2luZ2xlIHVuZGVyc2NvcmUocHJlZml4KSBhdCBoZXJlIGlzIGEgbGl0dGxlIGJpdApub3QgZ29v
-ZCBpbiBsb29raW5nLCBwbGVhc2UgcmVwbGFjZSBpdCB3aXRoICd2b2lkICpkYXRhJy4KCgo+ICsK
-PiArCWF1eGlsaWFyeV9kZXZpY2VfZGVsZXRlKGFkZXYpOwo+ICsJYXV4aWxpYXJ5X2RldmljZV91
-bmluaXQoYWRldik7Cj4gK30KPiArCj4gKy8qKgo+ICsgKiBkcm1fYXV4X2JyaWRnZV9yZWdpc3Rl
-ciAtIENyZWF0ZSBhIHNpbXBsZSBicmlkZ2UgZGV2aWNlIHRvIGxpbmsgdGhlIGNoYWluCj4gKyAq
-IEBwYXJlbnQ6IGRldmljZSBpbnN0YW5jZSBwcm92aWRpbmcgdGhpcyBicmlkZ2UKPiArICoKPiAr
-ICogQ3JlYXRlcyBhIHNpbXBsZSBEUk0gYnJpZGdlIHRoYXQgZG9lc24ndCBpbXBsZW1lbnQgYW55
-IGRybV9icmlkZ2UKPiArICogb3BlcmF0aW9ucy4gU3VjaCBicmlkZ2VzIG1lcmVseSBmaWxsIGEg
-cGxhY2UgaW4gdGhlIGJyaWRnZSBjaGFpbiBsaW5raW5nCj4gKyAqIHN1cnJvdW5kaW5nIERSTSBi
-cmlkZ2VzLgo+ICsgKgo+ICsgKiBSZXR1cm46IHplcm8gb24gc3VjY2VzcywgbmVnYXRpdmUgZXJy
-b3IgY29kZSBvbiBmYWlsdXJlCj4gKyAqLwo+ICtpbnQgZHJtX2F1eF9icmlkZ2VfcmVnaXN0ZXIo
-c3RydWN0IGRldmljZSAqcGFyZW50KQo+ICt7Cj4gKwlzdHJ1Y3QgYXV4aWxpYXJ5X2RldmljZSAq
-YWRldjsKPiArCWludCByZXQ7Cj4gKwo+ICsJYWRldiA9IGt6YWxsb2Moc2l6ZW9mKCphZGV2KSwg
-R0ZQX0tFUk5FTCk7Cj4gKwlpZiAoIWFkZXYpCj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4gKwo+ICsJ
-cmV0ID0gaWRhX2FsbG9jKCZkcm1fYXV4X2JyaWRnZV9pZGEsIEdGUF9LRVJORUwpOwo+ICsJaWYg
-KHJldCA8IDApIHsKPiArCQlrZnJlZShhZGV2KTsKPiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsK
-PiArCWFkZXYtPmlkID0gcmV0Owo+ICsJYWRldi0+bmFtZSA9ICJhdXhfYnJpZGdlIjsKPiArCWFk
-ZXYtPmRldi5wYXJlbnQgPSBwYXJlbnQ7Cj4gKwlhZGV2LT5kZXYub2Zfbm9kZSA9IHBhcmVudC0+
-b2Zfbm9kZTsKPiArCWFkZXYtPmRldi5yZWxlYXNlID0gZHJtX2F1eF9icmlkZ2VfcmVsZWFzZTsK
-PiArCj4gKwlyZXQgPSBhdXhpbGlhcnlfZGV2aWNlX2luaXQoYWRldik7Cj4gKwlpZiAocmV0KSB7
-Cj4gKwkJaWRhX2ZyZWUoJmRybV9hdXhfYnJpZGdlX2lkYSwgYWRldi0+aWQpOwo+ICsJCWtmcmVl
-KGFkZXYpOwo+ICsJCXJldHVybiByZXQ7Cj4gKwl9Cj4gKwo+ICsJcmV0ID0gYXV4aWxpYXJ5X2Rl
-dmljZV9hZGQoYWRldik7Cj4gKwlpZiAocmV0KSB7CgprZnJlZShhZGV2KQoKPiArCQlhdXhpbGlh
-cnlfZGV2aWNlX3VuaW5pdChhZGV2KTsKPiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsKPiArCXJl
-dHVybiBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQocGFyZW50LCBkcm1fYXV4X2JyaWRnZV91bnJl
-Z2lzdGVyX2FkZXYsIGFkZXYpOwo+ICt9Cj4gK0VYUE9SVF9TWU1CT0xfR1BMKGRybV9hdXhfYnJp
-ZGdlX3JlZ2lzdGVyKTsKCgpZZXQgc3RpbGwgY291cGxpbmcuIFNpbmNlIHlvdSBjaG9vc2UgdG8g
-ZXhwb3J0IHRoaXMgZnVuY3Rpb24gc3ltYm9sLAp0aGVuIGRvc2UgdGhpcyBtZWFucyB0aGF0IHRo
-ZSBwcm92aWRlZCBhcHByb2FjaCBpcyBzdGlsbCB0byBzb2x2ZSB0aGUKcHJvYmxlbSBieSBhbGxv
-d2luZyBzdGF0aWMgbGlua2luZz8gSWYgc28sIHNvcnJ5LCBJIHRoaW5rIHRoaXMgZG9lcwpub3Qg
-bWFrZSBhIGRpZmZlcmVuY2Ugd2l0aCBteSBpdDY2MTIxIHNlcmllcy4KCgo+ICsKPiArc3RydWN0
-IGRybV9hdXhfYnJpZGdlX2RhdGEgewo+ICsJc3RydWN0IGRybV9icmlkZ2UgYnJpZGdlOwo+ICsJ
-c3RydWN0IGRybV9icmlkZ2UgKm5leHRfYnJpZGdlOwo+ICsJc3RydWN0IGRldmljZSAqZGV2Owo+
-ICt9Owo+ICsKPiArc3RhdGljIGludCBkcm1fYXV4X2JyaWRnZV9hdHRhY2goc3RydWN0IGRybV9i
-cmlkZ2UgKmJyaWRnZSwKPiArCQkJCSAgICBlbnVtIGRybV9icmlkZ2VfYXR0YWNoX2ZsYWdzIGZs
-YWdzKQo+ICt7Cj4gKwlzdHJ1Y3QgZHJtX2F1eF9icmlkZ2VfZGF0YSAqZGF0YTsKPiArCj4gKwlp
-ZiAoIShmbGFncyAmIERSTV9CUklER0VfQVRUQUNIX05PX0NPTk5FQ1RPUikpCj4gKwkJcmV0dXJu
-IC1FSU5WQUw7CgpEb2VzIHRoaXMgZmxhZ3MgcmVhbGx5IHVzZWZ1bCBpbiBwcmFjdGljZT8KClNp
-bmNlwqB0aGlzIGJyaWRnZSBpcyBhIGlkZW50aXR5IGJyaWRnZSwgaW50ZW5kIHRvIGJlIHVzZWQg
-b24gbWlkZGxlIG9mIHRoZSB3aG9sZQpjaGFpbi4gRGlzcGxheSBjb250cm9sbGVyIGRyaXZlcnMg
-d2hpY2ggdGhpcyBtb2R1bGUgd29yayB3aXRoIHNob3VsZCBkZWZpbml0ZWx5CnNldCB0aGUgRFJN
-X0JSSURHRV9BVFRBQ0hfTk9fQ09OTkVDVE9SIGZsYWcuIEl0IGlzIGRlZmluaXRlbHkgYSBidWcg
-aWYgbm90IHNldC4KSXQgc2hvdWxkIGJlIGZvdW5kIGR1cmluZyBjb2RlIHJldmlldyBzdGFnZSwg
-SSBtZWFuIHRoYXQgdGhlIGVudW0gZHJtX2JyaWRnZV9hdHRhY2hfZmxhZ3MKaXMgYSBjb21waWxl
-LXRpbWUgdGhpbmcsIG5vdCBhIHJ1bnRpbWUgdGhpbmcgYW55bW9yZSwgQW0gSSBjb3JyZWN0Pwog
-IAoKPiArCWRhdGEgPSBjb250YWluZXJfb2YoYnJpZGdlLCBzdHJ1Y3QgZHJtX2F1eF9icmlkZ2Vf
-ZGF0YSwgYnJpZGdlKTsKPiArCj4gKwlyZXR1cm4gZHJtX2JyaWRnZV9hdHRhY2goYnJpZGdlLT5l
-bmNvZGVyLCBkYXRhLT5uZXh0X2JyaWRnZSwgYnJpZGdlLAo+ICsJCQkJIERSTV9CUklER0VfQVRU
-QUNIX05PX0NPTk5FQ1RPUik7Cj4gK30KPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZHJtX2Jy
-aWRnZV9mdW5jcyBkcm1fYXV4X2JyaWRnZV9mdW5jcyA9IHsKPiArCS5hdHRhY2gJPSBkcm1fYXV4
-X2JyaWRnZV9hdHRhY2gsCj4gK307Cj4gKwo+ICtzdGF0aWMgaW50IGRybV9hdXhfYnJpZGdlX3By
-b2JlKHN0cnVjdCBhdXhpbGlhcnlfZGV2aWNlICphdXhkZXYsCj4gKwkJCQkgICBjb25zdCBzdHJ1
-Y3QgYXV4aWxpYXJ5X2RldmljZV9pZCAqaWQpCj4gK3sKPiArCXN0cnVjdCBkcm1fYXV4X2JyaWRn
-ZV9kYXRhICpkYXRhOwo+ICsKPiArCWRhdGEgPSBkZXZtX2t6YWxsb2MoJmF1eGRldi0+ZGV2LCBz
-aXplb2YoKmRhdGEpLCBHRlBfS0VSTkVMKTsKPiArCWlmICghZGF0YSkKPiArCQlyZXR1cm4gLUVO
-T01FTTsKPiArCj4gKwlkYXRhLT5kZXYgPSAmYXV4ZGV2LT5kZXY7Cj4gKwlkYXRhLT5uZXh0X2Jy
-aWRnZSA9IGRldm1fZHJtX29mX2dldF9icmlkZ2UoJmF1eGRldi0+ZGV2LCBhdXhkZXYtPmRldi5v
-Zl9ub2RlLCAwLCAwKTsKPiArCWlmIChJU19FUlIoZGF0YS0+bmV4dF9icmlkZ2UpKQo+ICsJCXJl
-dHVybiBkZXZfZXJyX3Byb2JlKCZhdXhkZXYtPmRldiwgUFRSX0VSUihkYXRhLT5uZXh0X2JyaWRn
-ZSksCj4gKwkJCQkgICAgICJmYWlsZWQgdG8gYWNxdWlyZSBkcm1fYnJpZGdlXG4iKTsKPiArCj4g
-KwlkYXRhLT5icmlkZ2UuZnVuY3MgPSAmZHJtX2F1eF9icmlkZ2VfZnVuY3M7Cj4gKwlkYXRhLT5i
-cmlkZ2Uub2Zfbm9kZSA9IGRhdGEtPmRldi0+b2Zfbm9kZTsKPiArCj4gKwlyZXR1cm4gZGV2bV9k
-cm1fYnJpZGdlX2FkZChkYXRhLT5kZXYsICZkYXRhLT5icmlkZ2UpOwo+ICt9Cj4gKwo+ICtzdGF0
-aWMgY29uc3Qgc3RydWN0IGF1eGlsaWFyeV9kZXZpY2VfaWQgZHJtX2F1eF9icmlkZ2VfdGFibGVb
-XSA9IHsKPiArCXsgLm5hbWUgPSBLQlVJTERfTU9ETkFNRSAiLmF1eF9icmlkZ2UiIH0sCj4gKwl7
-fSwKPiArfTsKPiArTU9EVUxFX0RFVklDRV9UQUJMRShhdXhpbGlhcnksIGRybV9hdXhfYnJpZGdl
-X3RhYmxlKTsKPiArCj4gK3N0YXRpYyBzdHJ1Y3QgYXV4aWxpYXJ5X2RyaXZlciBkcm1fYXV4X2Jy
-aWRnZV9kcnYgPSB7Cj4gKwkubmFtZSA9ICJhdXhfYnJpZGdlIiwKPiArCS5pZF90YWJsZSA9IGRy
-bV9hdXhfYnJpZGdlX3RhYmxlLAo+ICsJLnByb2JlID0gZHJtX2F1eF9icmlkZ2VfcHJvYmUsCj4g
-K307Cj4gK21vZHVsZV9hdXhpbGlhcnlfZHJpdmVyKGRybV9hdXhfYnJpZGdlX2Rydik7CgoKU29y
-cnksIEkgZG9uJ3QgdW5kZXJzdGFuZC4gSW4gZWZmZWN0LCB0aGlzIGlzIHN0aWxsIHdvcmtzIGJ5
-IGV4cG9ydCBmdW5jdGlvbiBzeW1ib2wuCldoeSB0aGUga2VybmVsIG1vZHVsZSByZWxhdGVkIHN0
-dWZmIGF0IGhlcmUgbWFrZSBzZW5zZSBpbiB0aGUgZW5kPwpTaW5jZSB3ZSBhcmUgYSBoZWxwZXIs
-IHdoeSB3ZSBkZXNlcnZlIGEgZHJpdmVyPyBzYXRpc2Z5IHRoZSBjb21wb25lbnQ/CgoKPiArCj4g
-K01PRFVMRV9BVVRIT1IoIkRtaXRyeSBCYXJ5c2hrb3YgPGRtaXRyeS5iYXJ5c2hrb3ZAbGluYXJv
-Lm9yZz4iKTsKPiArTU9EVUxFX0RFU0NSSVBUSU9OKCJEUk0gdHJhbnNwYXJlbnQgYnJpZGdlIik7
-Cj4gK01PRFVMRV9MSUNFTlNFKCJHUEwiKTsKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9kcm0vYnJp
-ZGdlL2F1eC1icmlkZ2UuaCBiL2luY2x1ZGUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmgKPiBuZXcg
-ZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uNDQxYWIzZjBlOTIwCj4gLS0t
-IC9kZXYvbnVsbAo+ICsrKyBiL2luY2x1ZGUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmgKPiBAQCAt
-MCwwICsxLDE5IEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wKwo+ICsv
-Kgo+ICsgKiBDb3B5cmlnaHQgKEMpIDIwMjMgTGluYXJvIEx0ZC4KPiArICoKPiArICogQXV0aG9y
-OiBEbWl0cnkgQmFyeXNoa292IDxkbWl0cnkuYmFyeXNoa292QGxpbmFyby5vcmc+Cj4gKyAqLwo+
-ICsjaWZuZGVmIERSTV9BVVhfQlJJREdFX0gKPiArI2RlZmluZSBEUk1fQVVYX0JSSURHRV9ICj4g
-Kwo+ICsjaWYgSVNfRU5BQkxFRChDT05GSUdfRFJNX0FVWF9CUklER0UpCj4gK2ludCBkcm1fYXV4
-X2JyaWRnZV9yZWdpc3RlcihzdHJ1Y3QgZGV2aWNlICpwYXJlbnQpOwo+ICsjZWxzZQo+ICtzdGF0
-aWMgaW5saW5lIGludCBkcm1fYXV4X2JyaWRnZV9yZWdpc3RlcihzdHJ1Y3QgZGV2aWNlICpwYXJl
-bnQpCj4gK3sKPiArCXJldHVybiAwOwo+ICt9Cj4gKyNlbmRpZgo+ICsKPiArI2VuZGlmCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, 22 Nov 2023 at 18:03, Sui Jingfeng <sui.jingfeng@linux.dev> wrote:
+>
+> Hi,
+>
+>
+> On 2023/11/4 07:03, Dmitry Baryshkov wrote:
+> > Supporting DP/USB-C can result in a chain of several transparent
+> > bridges (PHY, redrivers, mux, etc). All attempts to implement DP support
+> > in a different way resulted either in series of hacks or in device tree
+> > not reflecting the actual hardware design. This results in drivers
+> > having similar boilerplate code for such bridges.
+>
+> Please improve the written,  "resulted" -> "yield" ?
+>
+> > Next, these drivers are susceptible to -EPROBE_DEFER loops: the next
+> > bridge can either be probed from the bridge->attach callback, when it is
+> > too late to return -EPROBE_DEFER, or from the probe() callback, when the
+> > next bridge might not yet be available, because it depends on the
+> > resources provided by the probing device. Device links can not fully
+> > solve this problem since there are mutual dependencies between adjancent
+> > devices.
+> >
+> > Last, but not least, this results in the the internal knowledge of DRM
+>
+> There is a duplicated "the" word in this sentence.
+>
+> As far as I can understand, nearly all of those troubles are because the display bridges
+> drivers are designed as a kernel module(.ko) instead of making them as static link-able
+> helpers. I means that a display bridge device can not work standalone, as it have to be
+> used with a display controller. So a display bridge is just a slave device or a auxiliary
+> device. My question is: if it can't works by itself, we probably shouldn't design them as
+> kernel modules style. Am I correct?
+
+No. This has nothing to do with the driver being a kernel module or built-in.
+
+>
+> > subsystem slowly diffusing into other subsystems, like PHY or USB/TYPEC.
+>
+> Yeah, this indeed a problem.
+>
+> > To solve all these issues, define a separate DRM helper, which creates
+> > separate aux device just for the bridge.
+>
+> I'm supporting you if want to solve all these problems, this is fine and thanks a lot.
+> But I want to ask a question, now that you are solving these problems by creating separate
+> devices, does this manner match the hardware design perfectly? which is the hardware units
+> you newly created device is corresponding to?
+
+Aux devices do not always follow the actual hardware internals. For
+example, see the TI sn65dsi86 driver, which also uses aux devices to
+split dependency and probing chains.
+
+> > During probe such aux device
+> > doesn't result in the EPROBE_DEFER loops. Instead it allows the device
+> > drivers to probe properly, according to the actual resource
+> > dependencies. The bridge auxdevs are then probed when the next bridge
+> > becomes available, sparing drivers from drm_bridge_attach() returning
+> > -EPROBE_DEFER.
+>
+> OK, as far as I can understand,  in order to solve the mentioned problem
+> you are also retire the defer probe mechanism.
+
+No, I'm not retiring the probe deferral mechanism. Instead I'm
+splitting it into two chains. One going from the controller to the
+usb-c connector for the signal flow, another going from the connector
+back to the drm_encoder for the drm_bridge dependencies.
+
+>
+>
+> > Changes since v5:
+> >   - Removed extra semicolon in !DRM_AUX_HPD_BRIDGE stubs definition.
+> >
+> > Changes since v4:
+> >   - Added documentation for new API (Sima)
+> >   - Added generic code to handle "last mile" DP bridges implementing just
+> >     the HPD functionality.
+> >   - Rebased on top of linux-next to be able to drop #ifdef's around
+> >     drm_bridge->of_node
+> >
+> > Changes since v3:
+> >   - Moved bridge driver to gpu/drm/bridge (Neil Armstrong)
+> >   - Renamed it to aux-bridge (since there is already a simple_bridge driver)
+> >   - Made CONFIG_OF mandatory for this driver (Neil Armstrong)
+> >   - Added missing kfree and ida_free (Dan Carpenter)
+> >
+> > Changes since v2:
+> >   - ifdef'ed bridge->of_node access (LKP)
+> >
+> > Changes since v1:
+> >   - Added EXPORT_SYMBOL_GPL / MODULE_LICENSE / etc. to drm_simple_bridge
+> >
+> > Dmitry Baryshkov (6):
+> >    drm/bridge: add transparent bridge helper
+> >    phy: qcom: qmp-combo: switch to DRM_AUX_BRIDGE
+> >    usb: typec: nb7vpq904m: switch to DRM_AUX_BRIDGE
+> >    drm/bridge: implement generic DP HPD bridge
+> >    soc: qcom: pmic-glink: switch to DRM_AUX_HPD_BRIDGE
+> >    usb: typec: qcom-pmic-typec: switch to DRM_AUX_HPD_BRIDGE
+> >
+> >   drivers/gpu/drm/bridge/Kconfig                |  17 ++
+> >   drivers/gpu/drm/bridge/Makefile               |   2 +
+> >   drivers/gpu/drm/bridge/aux-bridge.c           | 140 +++++++++++++++
+> >   drivers/gpu/drm/bridge/aux-hpd-bridge.c       | 164 ++++++++++++++++++
+> >   drivers/phy/qualcomm/Kconfig                  |   2 +-
+> >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  44 +----
+> >   drivers/soc/qcom/Kconfig                      |   1 +
+> >   drivers/soc/qcom/pmic_glink_altmode.c         |  33 +---
+> >   drivers/usb/typec/mux/Kconfig                 |   2 +-
+> >   drivers/usb/typec/mux/nb7vpq904m.c            |  44 +----
+> >   drivers/usb/typec/tcpm/Kconfig                |   1 +
+> >   drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c |  41 +----
+> >   include/drm/bridge/aux-bridge.h               |  37 ++++
+> >   13 files changed, 383 insertions(+), 145 deletions(-)
+> >   create mode 100644 drivers/gpu/drm/bridge/aux-bridge.c
+> >   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-bridge.c
+> >   create mode 100644 include/drm/bridge/aux-bridge.h
+> >
+
+
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
