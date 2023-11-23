@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A8C4C61D85
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Nov 2023 11:02:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F15C9C624B4
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Nov 2023 11:22:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zPSRTvoQHruwThosclpF+jAye1KmnoOn9kaIOiOsl40=; b=ELmkl6r1ZO1A+R
-	/IvrWuX4h1sqdDkypS4Ui4aXZiEoR6QCFrMa776OUuu9ovtdpSfv9C2ZI03fmCvMfV4/L7+qUkDj1
-	CDdzIC7U1MKzqO4cANXLb2tuxL/KS6ouPRLHdkTP4AtRYRm1tOCRN+CJzgaIrLODt2He5HaEo3TTV
-	Ny144D/71X30NGltvyn3QyhRUUIVO0CN9dIWYMjoqAZs4JaoapMyseZ/jIloutNywxGgGuwnN9vzG
-	kywiT9LX3eIS+a8oBoecfYlNngIOE7x3HjQWtSoZLRh4DfVH4ogWm6LVTyrFm6beCX8MeqnWzA4Bk
-	IYhY2ZXp5JbHME/0mCKw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q4l+PPVpwJy5OElujGugDXwf5PH0GoTAhiy7ch4StA4=; b=ktz7cqUyu99bNa
+	7G1puqlJs/VO9r/IVbb7f91CgZToQR6rVqTLe9p1KlT4TTM6bNw7hSKDMn31ZiHCzquIPalEvfSdF
+	u/kMY9ViDe+xaQM9z+30/f1m2RvoOnfzRvUhDeo2UbEJg0k0BhN7wJAoM1KeZw6MQ4Zeo+xdBXD7b
+	4R+6usEkK4QXvtOvNn89Loz6UyFYBPeTE6PHBGliQPx7oWsprjx/XoboO6H1aIJ+zb0bY6TRyvc3r
+	olj3uBarQ/jSIBIM2iixSZd4YECyAG3AuXlylJJNQGRn/LB0MQ2qyOdmznrdm1qLj0+KsRoXOi1lI
+	JktxoU2SusApSq2ZS7KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r67TP-004SCn-37;
-	Thu, 23 Nov 2023 11:02:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1r67nJ-004VEd-2F;
+	Thu, 23 Nov 2023 11:22:53 +0000
+Received: from madras.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e5ab])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r67TM-004SBo-2Y;
-	Thu, 23 Nov 2023 11:02:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 98D8061F2F;
-	Thu, 23 Nov 2023 11:02:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62CFBC433C7;
-	Thu, 23 Nov 2023 11:02:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1700737335;
-	bh=wGEC7NeVuil562coNYSljHzRxwtVUGQAUh7l2e2swGA=;
-	h=From:To:Cc:Subject:Date:From;
-	b=Dn6wlwSYfiG7Sidrra0kIMHkZaNULLwwBRrTsZLHXaDjU9uyw3MIYxtdhe4Mmm4lZ
-	 htgWBW2kjBpWattsDiGm95gY0c6oZ/qfw0fEj/lsgfIuDvt0bnqlUzQDVpsuhfhrSW
-	 jqLWo2DOAJilMah1rmmFYa/vwFnL3Sl9Q66WNnHPpDpS0MZl8bwTO3dnR6AT1ciLHo
-	 ob5udTeYtRofrHZp286+dX5hK1+s6vYy4knsFoGuQtWomA+nMFvq/mdNV9rInSq0xr
-	 7CGC0fo5B/x//hrPPmYPpshnnz+fVHSeAPgPQ7UE++s6pUIuhEE/YpJt1RVstdt8Jt
-	 b083dvF0JJf9A==
-From: Michael Walle <mwalle@kernel.org>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	CK Hu <ck.hu@mediatek.com>,
-	Jitao Shi <jitao.shi@mediatek.com>
-Cc: dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Michael Walle <mwalle@kernel.org>
-Subject: [PATCH] phy: mediatek: mipi: mt8183: fix minimal supported frequency
-Date: Thu, 23 Nov 2023 12:02:02 +0100
-Message-Id: <20231123110202.2025585-1-mwalle@kernel.org>
-X-Mailer: git-send-email 2.39.2
+	id 1r67nF-004VDb-35;
+	Thu, 23 Nov 2023 11:22:51 +0000
+Received: from [100.107.97.3] (cola.collaboradmins.com [195.201.22.229])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madras.collabora.co.uk (Postfix) with ESMTPSA id C56506607399;
+	Thu, 23 Nov 2023 11:22:47 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1700738568;
+	bh=OkyzQvoiFclRgAoTM1AiGV82e8sHB39X1+ZjadvECzo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=R0khKwsWt3lwNKJWrAnDwzSZMGlJ2CZr1mfieF457KHg8M2u10AApdi7aCTdhWxia
+	 sR+b01+dEi4m335oJSFDxBu7pErCuPFIQJnd30nz2nQLH54PAv0TWSKcn5johqRKH/
+	 rjk7bFHkjlOoCKtDqj4ELeJFfXsXz0T72AO/VWIN4wboepHbx1yKLnOQGOWXhGrt7U
+	 0DbUgn9wZq4z0v8pDNFfkXJJjyOg638V6EogkEm5OlkB6X4qRgqxtJ+7E1DWh7hjR3
+	 2gr73sRiTiUMtH+aFOR0zobUbh64FMV1u4HljPYypautYh3aC/cHoW8Esh9mDbc19L
+	 og3Pr5e8WEf4w==
+Message-ID: <e3262533-b181-4b3c-9ac7-71fc0438f6db@collabora.com>
+Date: Thu, 23 Nov 2023 12:22:45 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: mediatek: mipi: mt8183: fix minimal supported
+ frequency
+Content-Language: en-US
+To: Michael Walle <mwalle@kernel.org>, Chun-Kuang Hu
+ <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, CK Hu <ck.hu@mediatek.com>,
+ Jitao Shi <jitao.shi@mediatek.com>
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20231123110202.2025585-1-mwalle@kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20231123110202.2025585-1-mwalle@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231123_030216_893434_55D5877A 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20231123_032250_126811_DBBF93FA 
+X-CRM114-Status: UNSURE (   5.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,37 +77,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The lowest supported clock frequency of the PHY is 125MHz (see also
-mtk_mipi_tx_pll_enable()), but the clamping in .round_rate() has the
-wrong minimal value, which will make the .enable() op return -EINVAL on
-low frequencies. Fix the minimal clamping value.
+Il 23/11/23 12:02, Michael Walle ha scritto:
+> The lowest supported clock frequency of the PHY is 125MHz (see also
+> mtk_mipi_tx_pll_enable()), but the clamping in .round_rate() has the
+> wrong minimal value, which will make the .enable() op return -EINVAL on
+> low frequencies. Fix the minimal clamping value.
+> 
+> Fixes: efda51a58b4a ("drm/mediatek: add mipi_tx driver for mt8183")
+> Signed-off-by: Michael Walle <mwalle@kernel.org>
 
-Fixes: efda51a58b4a ("drm/mediatek: add mipi_tx driver for mt8183")
-Signed-off-by: Michael Walle <mwalle@kernel.org>
----
- drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
-index f021ec5a70e5..553725e1269c 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
-@@ -100,7 +100,7 @@ static void mtk_mipi_tx_pll_disable(struct clk_hw *hw)
- static long mtk_mipi_tx_pll_round_rate(struct clk_hw *hw, unsigned long rate,
- 				       unsigned long *prate)
- {
--	return clamp_val(rate, 50000000, 1600000000);
-+	return clamp_val(rate, 125000000, 1600000000);
- }
- 
- static const struct clk_ops mtk_mipi_tx_pll_ops = {
--- 
-2.39.2
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 
 -- 
