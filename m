@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F06BC61DF7
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Nov 2023 13:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D09E2C624B4
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Nov 2023 13:38:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qAS2zn42L5OoigaJiJlGOyM+txJbWdxzpijjUX6a+v0=; b=Xj2tQd2i7lJ/JC
-	v5sG1sVOVItHCaCvGsXRn9fTEFO+5d85mB5ZEJjnB9R0+qDsa4ygJNKbnk4js87fPk6GHC6YgkOWD
-	Nm09VAOkdRZDddmNSle0Cf4+OOgj+cV/4eZ+d1LaDswbsdYXteCtTloIWzDgY9jtERDsYTKJz60c8
-	jh9zgenTdTHrKyJrtsPXR06E8MkJqX1lwAUxD8Q49B/h9tXSpWE4fb73gMBG/Ys4BKIgp4FjXIf91
-	e9rQKvBcfW21UJ2bgvkvjgZOYZG5yBFTIkWEE7CWhqQrHR7X/0OHZytyOmxKa8hgjh2TpqVn6F6j3
-	Px0Z/Ik/+utYU1zuAK9A==;
+	List-Owner; bh=otHFOMczjLz6I/Km+srJ/d4JVLq88APxB58ZXPJ2f1E=; b=UQXR+QNS1dYpZp
+	UcSvrbtyQ3R8vfvzVZkmU6Jg247iPIGSHoNDVN4dockUy+CG1hJXjPUgYdVp63onZVeYnYzjxfIWa
+	XhfJsEKhSZWTqX/cMjdgHwj5OqQNW8TPX0e9uR6mC9hVdOqwqAeUJ7OGlk59yxc26muJ/eIZ8j/Xu
+	zXtvqFMYZ+Pbie+n7sS9EDzYhFfPxqnv0PYlnck/xyqmE+gsfGAThZik0wcCw+/GxDPkxlpIGAMyv
+	vQfXv79/yCiMQzkbnKZQPbg6PGhlokgHG4P3KfPO+i+u+fWGXKu6Eh7FqfLIQG46vrrRpNAqyx9Ib
+	iXyRmlEk8Pg73j+47X0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r69uO-004uLF-0L;
-	Thu, 23 Nov 2023 13:38:20 +0000
+	id 1r69uV-004uPf-1j;
+	Thu, 23 Nov 2023 13:38:27 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r69uI-004uGs-0p;
-	Thu, 23 Nov 2023 13:38:15 +0000
+	id 1r69uM-004uJF-1K;
+	Thu, 23 Nov 2023 13:38:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 8BCA3CE293B;
+	by sin.source.kernel.org (Postfix) with ESMTP id 5318DCE293C;
+	Thu, 23 Nov 2023 13:38:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E51CC4339A;
 	Thu, 23 Nov 2023 13:38:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F268C43397;
-	Thu, 23 Nov 2023 13:38:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1700746690;
-	bh=QdhdFBdAsK8Wx92sdI/Ks6p4ztR0/Ud+CG+kITMQvbY=;
+	s=k20201202; t=1700746695;
+	bh=KAXGKMe2WBFft3tNq3FpiQGsTc/R5/rmU8Cl5gayixE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=JmxDhJQyvlddVm4R2cIoOcPWItUFFXOoHLOpGvnaAASQDiAK4S6oO7myupK7c+O1P
-	 WYnhFtk+rkVDR/aGUUIlA4peIH49RzPhWbWy6GInz4mTrQK+HPqoAQ+G435yryJGjE
-	 nbuOZTYLg2808WMVnMOd2ULjqWmy5MxR/Vh/k/ZqzayV9ivfwCt7XVDdPKIJpcNro2
-	 cT6i6Ltuoaf/RcucftzsTzyE7woAzuUWJlybR0DCg+LdLpIGeHVm4LljTxcopS/S6Y
-	 12v5NXndsVjtqmHmeUTAJKD0xwxzzg+I9v7iZzJQfDlSLRU798tkaleZMcYvVE2Uwn
-	 sHlmy5bpO3dhg==
+	b=BhN61ErzqtMja4ZFFmQQN/xzpcG0fK/ObB0YFgMn1t1PGix45506/KGgqWs9ohzmp
+	 teG1YFzyk9oQHh3zwqPYA0hlBtfBusl0Z6r345MOhJnm8rvM4KB48x0iaNk4nldz/u
+	 ZS9+xmE2mHJ2uXcQThWf2D8dspHlyDLqj7SjTHHtbjnWOocfW8x7aUWleDr2BtpDjB
+	 e5xvjFGDf3TbYpIGlY/vHoscApV9jwAZHzjyfe70iG1Z11sj2tcDmNKKqaVZtAr0qI
+	 GXIDyaX0p2WxIBxhNqyYA3+ZN7Nm5yJgt1gk1jWhI4PR5du6I3bNv6b+7Svp2m+9wn
+	 NxEvBWQHWjUjA==
 From: Michael Walle <mwalle@kernel.org>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
@@ -66,16 +66,16 @@ Cc: dri-devel@lists.freedesktop.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org,
 	Michael Walle <mwalle@kernel.org>
-Subject: [PATCH 2/4] dt-bindings: phy: add compatible for Mediatek MT8195
-Date: Thu, 23 Nov 2023 14:37:47 +0100
-Message-Id: <20231123133749.2030661-3-mwalle@kernel.org>
+Subject: [PATCH 3/4] arm64: dts: mediatek: mt8195: add DSI and MIPI DPHY nodes
+Date: Thu, 23 Nov 2023 14:37:48 +0100
+Message-Id: <20231123133749.2030661-4-mwalle@kernel.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20231123133749.2030661-1-mwalle@kernel.org>
 References: <20231123133749.2030661-1-mwalle@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231123_053814_532042_2AD42F9B 
-X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-CacheID: sfid-20231123_053818_905171_858AA9C6 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,26 +93,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the compatible string for MediaTek MT8195 SoC, using the same MIPI
-D-PHY block as the MT8183.
+Add the two DSI controller node and the associated DPHY nodes.
+Individual boards have to enable them in the board device tree.
 
 Signed-off-by: Michael Walle <mwalle@kernel.org>
 ---
- Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/mediatek/mt8195.dtsi | 48 ++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-index 6703689fcdbe..f6e494d0d89b 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-@@ -31,6 +31,7 @@ properties:
-       - items:
-           - enum:
-               - mediatek,mt8188-mipi-tx
-+              - mediatek,mt8195-mipi-tx
-               - mediatek,mt8365-mipi-tx
-           - const: mediatek,mt8183-mipi-tx
-       - const: mediatek,mt2701-mipi-tx
+diff --git a/arch/arm64/boot/dts/mediatek/mt8195.dtsi b/arch/arm64/boot/dts/mediatek/mt8195.dtsi
+index 54c674c45b49..0621bb461967 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8195.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8195.dtsi
+@@ -1714,6 +1714,26 @@ u2port3: usb-phy@0 {
+ 			};
+ 		};
+ 
++		mipi_tx0: dsi-phy@11c80000 {
++			compatible = "mediatek,mt8195-mipi-tx", "mediatek,mt8183-mipi-tx";
++			reg = <0 0x11c80000 0 0x1000>;
++			clocks = <&clk26m>;
++			clock-output-names = "mipi_tx0_pll";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
++			status = "disabled";
++		};
++
++		mipi_tx1: dsi-phy@11c90000 {
++			compatible = "mediatek,mt8195-mipi-tx", "mediatek,mt8183-mipi-tx";
++			reg = <0 0x11c90000 0 0x1000>;
++			clocks = <&clk26m>;
++			clock-output-names = "mipi_tx1_pll";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
++			status = "disabled";
++		};
++
+ 		i2c5: i2c@11d00000 {
+ 			compatible = "mediatek,mt8195-i2c",
+ 				     "mediatek,mt8192-i2c";
+@@ -2737,6 +2757,20 @@ dither0: dither@1c007000 {
+ 			mediatek,gce-client-reg = <&gce0 SUBSYS_1c00XXXX 0x7000 0x1000>;
+ 		};
+ 
++		dsi0: dsi@1c008000 {
++			compatible = "mediatek,mt8195-dsi", "mediatek,mt8183-dsi";
++			reg = <0 0x1c008000 0 0x1000>;
++			interrupts = <GIC_SPI 644 IRQ_TYPE_LEVEL_HIGH 0>;
++			power-domains = <&spm MT8195_POWER_DOMAIN_VDOSYS0>;
++			clocks = <&vdosys0 CLK_VDO0_DSI0>,
++				 <&vdosys0 CLK_VDO0_DSI0_DSI>,
++				 <&mipi_tx0>;
++			clock-names = "engine", "digital", "hs";
++			phys = <&mipi_tx0>;
++			phy-names = "dphy";
++			status = "disabled";
++		};
++
+ 		dsc0: dsc@1c009000 {
+ 			compatible = "mediatek,mt8195-disp-dsc";
+ 			reg = <0 0x1c009000 0 0x1000>;
+@@ -2746,6 +2780,20 @@ dsc0: dsc@1c009000 {
+ 			mediatek,gce-client-reg = <&gce0 SUBSYS_1c00XXXX 0x9000 0x1000>;
+ 		};
+ 
++		dsi1: dsi@1c012000 {
++			compatible = "mediatek,mt8195-dsi", "mediatek,mt8183-dsi";
++			reg = <0 0x1c012000 0 0x1000>;
++			interrupts = <GIC_SPI 654 IRQ_TYPE_LEVEL_HIGH 0>;
++			power-domains = <&spm MT8195_POWER_DOMAIN_VDOSYS0>;
++			clocks = <&vdosys0 CLK_VDO0_DSI1>,
++				 <&vdosys0 CLK_VDO0_DSI1_DSI>,
++				 <&mipi_tx1>;
++			clock-names = "engine", "digital", "hs";
++			phys = <&mipi_tx1>;
++			phy-names = "dphy";
++			status = "disabled";
++		};
++
+ 		merge0: merge@1c014000 {
+ 			compatible = "mediatek,mt8195-disp-merge";
+ 			reg = <0 0x1c014000 0 0x1000>;
 -- 
 2.39.2
 
