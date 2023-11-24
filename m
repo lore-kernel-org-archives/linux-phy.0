@@ -4,75 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FB89C636CB
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Nov 2023 17:19:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253DAC61D85
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 01:56:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EdJAayJSi+JaDOf3mSdjrXM+Q3COeSK1C/cSKg76Szw=; b=pO85c9W3E+ZbPiD4uv0N1mBWcN
-	+PbeR5sQmUc10n1QO3Tg+KUFOMUBDf9d+HDIFS+XOyscn3J0Qi0pKAB2Tdi+Qm0ZLHrRRPJ1Nmw8F
-	HfO1sb2zcM3dxcy7UpGZ6r20c2qgQ/Z/kExWUGUEayhVfHxuIRoV3/wWtQmz5CrCyC1rPFRweKS4+
-	tRA6Fn9ySRwEw1TFSS4KpADg/E3XbEg4BDQPjX4Bz36PZ4puyoH3nk/SuA1FFG/paoTVqaemzB5Yv
-	GjyVoLPyBWLawUKmtIZ2zFNGpT7xBX7DtM2FNPY8rl7Dk69sHl809OWx1Xd7EY+jx7uh5SGAKEFYI
-	8GtBCLwg==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kPjjoEyhW8e7kI50H2H9Z0t40ymylA3dViH+SPTwiYA=; b=dnQoYr1zKy510N
+	upBE3VBxtZvrCunjisG1yIxJps2yH9+eU+GmNrPZ+8px/rugSSl+dv7hPnQaHd03++3EvkKx5rz+K
+	y/UDN3vjohQ5q5QLpbd2PJMpseic3SAgcXGDjc74e2qup2TX4pJ1Qh8pUAFAllhAA1XLVDx+13jwR
+	pjJvqZzwkqUCdrj7ZAs8TRl748V65MzYf/x6A8GBLd7Y+BhMS1F6F4gWssDETPmTuieTxNhVcqGKY
+	DCBfQ/AOua07IEtiDUBvt1reXKwpcROjbcU/5CCPTIQ6kAYEthAyMnoEfhRR4AWpacWssd1rs1i0Z
+	dFve4JJRvp8r8VlV7sLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6DM1-005Oh5-38;
-	Thu, 23 Nov 2023 17:19:05 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1r6LQM-005x6B-2L;
+	Fri, 24 Nov 2023 01:56:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6DLy-005Ofe-2i;
-	Thu, 23 Nov 2023 17:19:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5428A6238B;
-	Thu, 23 Nov 2023 17:19:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88CF7C433C7;
-	Thu, 23 Nov 2023 17:18:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1700759942;
-	bh=o2B91gSRao1cm4mdpvvnT+cSLBigCNcp+xOQKNDn4A4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iahmJvGwt/0+ze9HXyRn6fXTXrsOTmscoofcYH5cE64Jn+7Zl8OLC1CsQeuehJrOY
-	 6Nj1HThnyqA4d+fAqJBUcrJxXD+QW0B5pIjUwP3GoYDMk0i2jNOWHXxCObeyDUEJPg
-	 BK87uBg791nuLw0vqhA5LNrgFRDeXfzXCV28zeFMgyTI03tZoEtN5phBiD3/o1MaYP
-	 bHJIRWj06VnuJSLrOEyQsSZGuoaf3eWlidsEtc1uc0u8MOPZOAt8EUGrYiwRaSEXjU
-	 moXac9FzCSAkQ9lEp26WhADWaZJd124nbIfpyxM6Qqeo2RGdvvjSDZSG+dPnE3Kkhh
-	 As2xxVshd2euA==
-Date: Thu, 23 Nov 2023 17:18:55 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Michael Walle <mwalle@kernel.org>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Jitao Shi <jitao.shi@mediatek.com>,
-	Xinlei Lee <xinlei.lee@mediatek.com>,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 2/4] dt-bindings: phy: add compatible for Mediatek MT8195
-Message-ID: <20231123-atypical-gradation-d98b95e9c416@spud>
-References: <20231123133749.2030661-1-mwalle@kernel.org>
- <20231123133749.2030661-3-mwalle@kernel.org>
+	id 1r6LQJ-005x4v-1o
+	for linux-phy@lists.infradead.org;
+	Fri, 24 Nov 2023 01:56:05 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AO1nrVc010703;
+	Fri, 24 Nov 2023 01:55:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=bKXuh++ZqwEZA9C3H/cwpqmOWdyZdH7ObxuMLPbyP0M=;
+ b=NrltqsvzXEr0EScQOlkOJ4CU2vS6y1/CQ9MWWeNUCEdP26gR8o/19tE7WR6yTWuLhCKE
+ E2UMeMQQbgiHCCBaJtJ9b6J/19mWeMSBssUDYVo2vuCr3McUS1qhPDjR5rTI4n5dq44l
+ rA6MmEJYckuC/AfBrPifNM5mWMZgug5bG2tc2StXkIu/+YW+zMmcVyrNLOPweFPnqi8n
+ H3g2k5uXcceaz6r7wDz9OIX67e0B81Jy87jV2Ru46LcjDvdnEGie5/t+Eivpvth5nk98
+ rwtcxnSoC3Iaa9c8U0FDwVecNcZ0KzeJ4oLG/HyUfaLPBA7K1jlQWFMBjGt9JpWFWQJY Iw== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uj7gjs46u-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 24 Nov 2023 01:55:38 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AO1taJK025184
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 24 Nov 2023 01:55:37 GMT
+Received: from [10.253.9.129] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 23 Nov
+ 2023 17:55:33 -0800
+Message-ID: <c19dee05-a08d-4793-85a9-4527f85ad5ee@quicinc.com>
+Date: Fri, 24 Nov 2023 09:55:31 +0800
 MIME-Version: 1.0
-In-Reply-To: <20231123133749.2030661-3-mwalle@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 09/10] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
+ Gear 5 support for SM8550
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <bvanassche@acm.org>, <mani@kernel.org>, <adrian.hunter@intel.com>,
+        <beanhuo@micron.com>, <avri.altman@wdc.com>,
+        <junwoo80.lee@samsung.com>, <martin.petersen@oracle.com>,
+        <linux-scsi@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        Andy Gross <agross@kernel.org>,
+        Bjorn
+ Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+        open list
+	<linux-kernel@vger.kernel.org>
+References: <1700729190-17268-1-git-send-email-quic_cang@quicinc.com>
+ <1700729190-17268-10-git-send-email-quic_cang@quicinc.com>
+ <CAA8EJpouw-tu+Kz7ExQo+x1p5+fxqRzj=8fZY8GCM6fxB_USYw@mail.gmail.com>
+Content-Language: en-US
+From: Can Guo <quic_cang@quicinc.com>
+In-Reply-To: <CAA8EJpouw-tu+Kz7ExQo+x1p5+fxqRzj=8fZY8GCM6fxB_USYw@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: XrcMH2O--mJqxqQhl5NDSDkrHDBM6-O8
+X-Proofpoint-GUID: XrcMH2O--mJqxqQhl5NDSDkrHDBM6-O8
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-23_15,2023-11-22_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 mlxscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0
+ suspectscore=0 spamscore=0 phishscore=0 bulkscore=0 adultscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311240012
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231123_091902_918494_BE4A7D59 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231123_175603_750959_C97334C5 
+X-CRM114-Status: GOOD (  29.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,57 +106,157 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0926726683883749817=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============0926726683883749817==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ji3UuPhd3xxexBJ5"
-Content-Disposition: inline
 
+On 11/23/2023 8:35 PM, Dmitry Baryshkov wrote:
+> On Thu, 23 Nov 2023 at 10:47, Can Guo <quic_cang@quicinc.com> wrote:
+>>
+>> On SM8550, two sets of UFS PHY settings are provided, one set is to support
+>> HS-G5, another set is to support HS-G4 and lower gears. The two sets of PHY
+>> settings are programming different values to different registers, mixing
+>> the two sets and/or overwriting one set with another set is definitely not
+>> blessed by UFS PHY designers.
+>>
+>> To add HS-G5 support for SM8550, split the two sets of PHY settings into
+>> their dedicated overlay tables, only the common parts of the two sets of
+>> PHY settings are left in the .tbls.
+>>
+>> Consider we are going to add even higher gear support in future, to avoid
+>> adding more tables with different names, rename the .tbls_hs_g4 and make it
+>> an array, a size of 2 is enough as of now.
+>>
+>> In this case, .tbls alone is not a complete set of PHY settings, so either
+>> tbls_hs_overlay[0] or tbls_hs_overlay[1] must be applied on top of the
+>> .tbls to become a complete set of PHY settings.
+>>
+>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+>>
+>> -static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
+>> +static bool qmp_ufs_match_gear_overlay(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg, int *i)
+> 
+> You can simply return int from this function. -EINVAL would mean that
+> the setting was not found. Also this can make max_supported_gear
+> unused.
 
---ji3UuPhd3xxexBJ5
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I will return int in next version, but I'd like to keep the 
+max_support_gear, because for platforms which only .tbls is provided (no 
+overlay case), we need the max_supported_gear to tell whether the 
+requested submode is exceeding the capability provided by the PHY settings.
 
-On Thu, Nov 23, 2023 at 02:37:47PM +0100, Michael Walle wrote:
-> Add the compatible string for MediaTek MT8195 SoC, using the same MIPI
-> D-PHY block as the MT8183.
->=20
-> Signed-off-by: Michael Walle <mwalle@kernel.org>
+> 
+>> +{
+>> +       u32 max_gear, floor_max_gear = cfg->max_supported_gear;
+>> +       bool found = false;
+>> +       int j;
+>> +
+>> +       for (j = 0; j < NUM_OVERLAY; j ++) {
+>> +               max_gear = cfg->tbls_hs_overlay[j].max_gear;
+>> +
+>> +               if (max_gear == 0)
+>> +                       continue;
+>> +
+>> +               /* Direct matching, bail */
+>> +               if (qmp->submode == max_gear) {
+>> +                       *i = j;
+>> +                       return true;
+>> +               }
+>> +
+>> +               /* If no direct matching, the lowest gear is the best matching */
+>> +               if (max_gear < floor_max_gear) {
+>> +                       *i = j;
+>> +                       found = true;
+>> +                       floor_max_gear = max_gear;
+>> +               }
+> 
+> We know that the table is sorted. So we can return an index of the
+> first setting that fits.
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+For SM8550, it is OK, because no-G5 settings are in overlay[0] and G5 
+settings are in overlay[1], applying one overlay is a must.
+.tbls                        | support nothing as it is incomplete
+.tbls + .tbls_hs_overlay[0]  | support G4 and lower gears
+.tb.s + .tbls_hs_overlay[1]  | support G5
 
-Cheers,
-Conor.
+But for previously added platforms, no. I put it this way for two reasons -
 
---ji3UuPhd3xxexBJ5
-Content-Type: application/pgp-signature; name="signature.asc"
+1. In case the tables are not sorted.
+2. For previously added targets, whose configs support G4 and no-G4:
+.tbls                        | support G3 and lower gears
+.tbls + .tbls_hs_overlay     | support G4
+if we anways return an index of the first setting that fits, for these 
+targets, the G4 settings would always be programmed, no matter UFS 
+driver requests for G2/G3/G4. On these targets, as dual UFS init is 
+there to find the most power saving PHY settings, when UFS driver 
+requests for G2/G3, .tbls_hs_overlay should NOT be applied. Otherwise, 
+it defeats all the efforts which Mani had spent for the dual UFS init.
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZV+JfwAKCRB4tDGHoIJi
-0vWUAQCIxBJSBYQxfxnK0ADmbM0UaJC+Lie7AsTjs/2zhG8mjgEAjeZIyAzwtVtq
-+xaFexacDMYRWoecls9a4vRISuN+1wE=
-=mQTP
------END PGP SIGNATURE-----
-
---ji3UuPhd3xxexBJ5--
-
-
---===============0926726683883749817==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Can Guo.
+> 
+>> +       }
+>> +
+>> +       return found;
+>> +}
+>> +
+>> +static int qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
+>>   {
+>> +       bool apply_overlay;
+>> +       int i;
+>> +
+>> +       if (qmp->submode > cfg->max_supported_gear || qmp->submode == 0) {
+>> +               dev_err(qmp->dev, "Invalid PHY submode %u\n", qmp->submode);
+>> +               return -EINVAL;
+>> +       }
+>> +
+>> +       apply_overlay = qmp_ufs_match_gear_overlay(qmp, cfg, &i);
+>> +
+>>          qmp_ufs_serdes_init(qmp, &cfg->tbls);
+>> +       if (apply_overlay)
+>> +               qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_overlay[i]);
+>> +
+>>          if (qmp->mode == PHY_MODE_UFS_HS_B)
+>>                  qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
+>> +
+>>          qmp_ufs_lanes_init(qmp, &cfg->tbls);
+>> -       if (qmp->submode == UFS_HS_G4)
+>> -               qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_g4);
+>> +       if (apply_overlay)
+>> +               qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_overlay[i]);
+>> +
+>>          qmp_ufs_pcs_init(qmp, &cfg->tbls);
+>> -       if (qmp->submode == UFS_HS_G4)
+>> -               qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_g4);
+>> +       if (apply_overlay)
+>> +               qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_overlay[i]);
+>> +
+>> +       return 0;
+>>   }
+>>
+>>   static int qmp_ufs_com_init(struct qmp_ufs *qmp)
+>> @@ -1331,7 +1461,9 @@ static int qmp_ufs_power_on(struct phy *phy)
+>>          unsigned int val;
+>>          int ret;
+>>
+>> -       qmp_ufs_init_registers(qmp, cfg);
+>> +       ret = qmp_ufs_init_registers(qmp, cfg);
+>> +       if (ret)
+>> +               return ret;
+>>
+>>          ret = reset_control_deassert(qmp->ufs_reset);
+>>          if (ret)
+>> --
+>> 2.7.4
+>>
+>>
+> 
+> 
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0926726683883749817==--
-
