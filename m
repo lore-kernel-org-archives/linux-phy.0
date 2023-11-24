@@ -4,97 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253DAC61D85
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 01:56:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B9C0C61D97
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 03:44:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kPjjoEyhW8e7kI50H2H9Z0t40ymylA3dViH+SPTwiYA=; b=dnQoYr1zKy510N
-	upBE3VBxtZvrCunjisG1yIxJps2yH9+eU+GmNrPZ+8px/rugSSl+dv7hPnQaHd03++3EvkKx5rz+K
-	y/UDN3vjohQ5q5QLpbd2PJMpseic3SAgcXGDjc74e2qup2TX4pJ1Qh8pUAFAllhAA1XLVDx+13jwR
-	pjJvqZzwkqUCdrj7ZAs8TRl748V65MzYf/x6A8GBLd7Y+BhMS1F6F4gWssDETPmTuieTxNhVcqGKY
-	DCBfQ/AOua07IEtiDUBvt1reXKwpcROjbcU/5CCPTIQ6kAYEthAyMnoEfhRR4AWpacWssd1rs1i0Z
-	dFve4JJRvp8r8VlV7sLQ==;
+	List-Owner; bh=D5zKAl1CM9es+dFksgX5IRAdOm6W22E0LXwkKVIe1mk=; b=TBiLmp8QI4b8c5
+	V7M090Fl+PcDMQaNHw6JxYmzF5kZR+vty5xZ8arp+uHiNDmoSbnBIJaPeXFmO8rDu+RTMcwr8wsue
+	CckUpOj9M/nDaeBOc2Y/ns3ubE3UJ2ThjXthQXwgOCoBQhow+MyM7ul370/gFA+IJdy7Eq70TID46
+	s0KCUzCY5nU6sREftauK8GDCRT8MC2/pTT3szF4FSL9Vky3np+s1BfdlKA1Z776Pfed+Ja1CvHwf8
+	F77YFTba/OkjoIhGYO8cOZe4Vi6SU7OObV8v4S2iwFjRtpNtLwAXMlLk8sRWV/kywN7u9GDV5PBSl
+	rxuv/tn8Q8DbUcGXL3Tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6LQM-005x6B-2L;
-	Fri, 24 Nov 2023 01:56:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1r6N7C-0064Xy-2L;
+	Fri, 24 Nov 2023 03:44:26 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6LQJ-005x4v-1o
+	id 1r6N79-0064WG-0C
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Nov 2023 01:56:05 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AO1nrVc010703;
-	Fri, 24 Nov 2023 01:55:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=bKXuh++ZqwEZA9C3H/cwpqmOWdyZdH7ObxuMLPbyP0M=;
- b=NrltqsvzXEr0EScQOlkOJ4CU2vS6y1/CQ9MWWeNUCEdP26gR8o/19tE7WR6yTWuLhCKE
- E2UMeMQQbgiHCCBaJtJ9b6J/19mWeMSBssUDYVo2vuCr3McUS1qhPDjR5rTI4n5dq44l
- rA6MmEJYckuC/AfBrPifNM5mWMZgug5bG2tc2StXkIu/+YW+zMmcVyrNLOPweFPnqi8n
- H3g2k5uXcceaz6r7wDz9OIX67e0B81Jy87jV2Ru46LcjDvdnEGie5/t+Eivpvth5nk98
- rwtcxnSoC3Iaa9c8U0FDwVecNcZ0KzeJ4oLG/HyUfaLPBA7K1jlQWFMBjGt9JpWFWQJY Iw== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uj7gjs46u-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Nov 2023 01:55:38 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AO1taJK025184
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Nov 2023 01:55:37 GMT
-Received: from [10.253.9.129] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 23 Nov
- 2023 17:55:33 -0800
-Message-ID: <c19dee05-a08d-4793-85a9-4527f85ad5ee@quicinc.com>
-Date: Fri, 24 Nov 2023 09:55:31 +0800
+	Fri, 24 Nov 2023 03:44:25 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-50797cf5b69so2045991e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 23 Nov 2023 19:44:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google; t=1700797459; x=1701402259; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=RcJej9WUdZZWtLL0jZR7KWhn0SxMMquSiq9yLi1GeNc=;
+        b=mGB8MZnWgFGu+daDqHkRn3ZpUVVlY+DsOpvM3lqnuCMx9DgV0+BbXRj8R+ON1owkGj
+         XkFjliYHuUijepvYLPgxyRi4XqDwXNynqPtI25TDXi118hqdbOd1CU2e+exGtf1d/cnP
+         OvymZ7c+eye37yqaeJsBwSYIEdP12gDbK4zRM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1700797459; x=1701402259;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=RcJej9WUdZZWtLL0jZR7KWhn0SxMMquSiq9yLi1GeNc=;
+        b=sCdIUWsIqGw8btkb+VMCeBPrglaMAVsO0qhcyXVhR/akZ7ejn2v2TlF0NiazhNDn0l
+         MUOBizCobJRLzsVRy4ah8A+g1Wz8+hZSUNsJtmFovXHLUFhKNUYqLKzPY53M/bKNT9gB
+         28vMlJkxB+hRdP8gp92de9t5gyZljN4uWP63zbpVXH5+WY5C0H7xd1B4aTsesjg1pNA6
+         fd5w8OSZCjsy0zICw5OfFwvBzg04iI2dg5G26QfA44Q5zZCDaHckbHbX3tZ6VWK1RMAp
+         b/SHguq8WsTOo+k5dFC9Qje+xIZitx15gWQUe9h9yn7lbm3Wh2oVzEgC6/lXW04rVZ7+
+         Kglw==
+X-Gm-Message-State: AOJu0Yz/rhD1i2gY3/rvcpR/CX6Ro/SJczC50RJyRCRx1/L5yMFWUkHd
+	qb9DTsRdAEFyFe9Iw3JpuXSTFzv/ByRtxJGJL4Jpyg==
+X-Google-Smtp-Source: AGHT+IH7191VcJzspX2lbzBmIE7QpGIGT/USZRwoE7pZJ5nRJbeokYOjJ7hZq8T0ALMqi3yp2bhgV8yGSW2RcGOPhbU=
+X-Received: by 2002:ac2:5dc8:0:b0:50a:a9e1:6c58 with SMTP id
+ x8-20020ac25dc8000000b0050aa9e16c58mr703080lfq.32.1700797458184; Thu, 23 Nov
+ 2023 19:44:18 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 09/10] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
- Gear 5 support for SM8550
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: <bvanassche@acm.org>, <mani@kernel.org>, <adrian.hunter@intel.com>,
-        <beanhuo@micron.com>, <avri.altman@wdc.com>,
-        <junwoo80.lee@samsung.com>, <martin.petersen@oracle.com>,
-        <linux-scsi@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        Andy Gross <agross@kernel.org>,
-        Bjorn
- Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
-        open list
-	<linux-kernel@vger.kernel.org>
-References: <1700729190-17268-1-git-send-email-quic_cang@quicinc.com>
- <1700729190-17268-10-git-send-email-quic_cang@quicinc.com>
- <CAA8EJpouw-tu+Kz7ExQo+x1p5+fxqRzj=8fZY8GCM6fxB_USYw@mail.gmail.com>
-Content-Language: en-US
-From: Can Guo <quic_cang@quicinc.com>
-In-Reply-To: <CAA8EJpouw-tu+Kz7ExQo+x1p5+fxqRzj=8fZY8GCM6fxB_USYw@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: XrcMH2O--mJqxqQhl5NDSDkrHDBM6-O8
-X-Proofpoint-GUID: XrcMH2O--mJqxqQhl5NDSDkrHDBM6-O8
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-23_15,2023-11-22_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 mlxscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0
- suspectscore=0 spamscore=0 phishscore=0 bulkscore=0 adultscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311240012
+References: <20231123133749.2030661-1-mwalle@kernel.org> <20231123133749.2030661-4-mwalle@kernel.org>
+In-Reply-To: <20231123133749.2030661-4-mwalle@kernel.org>
+From: Chen-Yu Tsai <wenst@chromium.org>
+Date: Fri, 24 Nov 2023 11:44:07 +0800
+Message-ID: <CAGXv+5EcT3OjyaW6LkARugWZN2AE5TWRx=Bh5TqfVBG2tcs5Ew@mail.gmail.com>
+Subject: Re: [PATCH 3/4] arm64: dts: mediatek: mt8195: add DSI and MIPI DPHY nodes
+To: Michael Walle <mwalle@kernel.org>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+	Jitao Shi <jitao.shi@mediatek.com>, Xinlei Lee <xinlei.lee@mediatek.com>, 
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231123_175603_750959_C97334C5 
-X-CRM114-Status: GOOD (  29.86  )
+X-CRM114-CacheID: sfid-20231123_194423_151690_48094230 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,157 +91,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 11/23/2023 8:35 PM, Dmitry Baryshkov wrote:
-> On Thu, 23 Nov 2023 at 10:47, Can Guo <quic_cang@quicinc.com> wrote:
->>
->> On SM8550, two sets of UFS PHY settings are provided, one set is to support
->> HS-G5, another set is to support HS-G4 and lower gears. The two sets of PHY
->> settings are programming different values to different registers, mixing
->> the two sets and/or overwriting one set with another set is definitely not
->> blessed by UFS PHY designers.
->>
->> To add HS-G5 support for SM8550, split the two sets of PHY settings into
->> their dedicated overlay tables, only the common parts of the two sets of
->> PHY settings are left in the .tbls.
->>
->> Consider we are going to add even higher gear support in future, to avoid
->> adding more tables with different names, rename the .tbls_hs_g4 and make it
->> an array, a size of 2 is enough as of now.
->>
->> In this case, .tbls alone is not a complete set of PHY settings, so either
->> tbls_hs_overlay[0] or tbls_hs_overlay[1] must be applied on top of the
->> .tbls to become a complete set of PHY settings.
->>
->> Signed-off-by: Can Guo <quic_cang@quicinc.com>
->>
->> -static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
->> +static bool qmp_ufs_match_gear_overlay(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg, int *i)
-> 
-> You can simply return int from this function. -EINVAL would mean that
-> the setting was not found. Also this can make max_supported_gear
-> unused.
-
-I will return int in next version, but I'd like to keep the 
-max_support_gear, because for platforms which only .tbls is provided (no 
-overlay case), we need the max_supported_gear to tell whether the 
-requested submode is exceeding the capability provided by the PHY settings.
-
-> 
->> +{
->> +       u32 max_gear, floor_max_gear = cfg->max_supported_gear;
->> +       bool found = false;
->> +       int j;
->> +
->> +       for (j = 0; j < NUM_OVERLAY; j ++) {
->> +               max_gear = cfg->tbls_hs_overlay[j].max_gear;
->> +
->> +               if (max_gear == 0)
->> +                       continue;
->> +
->> +               /* Direct matching, bail */
->> +               if (qmp->submode == max_gear) {
->> +                       *i = j;
->> +                       return true;
->> +               }
->> +
->> +               /* If no direct matching, the lowest gear is the best matching */
->> +               if (max_gear < floor_max_gear) {
->> +                       *i = j;
->> +                       found = true;
->> +                       floor_max_gear = max_gear;
->> +               }
-> 
-> We know that the table is sorted. So we can return an index of the
-> first setting that fits.
-
-For SM8550, it is OK, because no-G5 settings are in overlay[0] and G5 
-settings are in overlay[1], applying one overlay is a must.
-.tbls                        | support nothing as it is incomplete
-.tbls + .tbls_hs_overlay[0]  | support G4 and lower gears
-.tb.s + .tbls_hs_overlay[1]  | support G5
-
-But for previously added platforms, no. I put it this way for two reasons -
-
-1. In case the tables are not sorted.
-2. For previously added targets, whose configs support G4 and no-G4:
-.tbls                        | support G3 and lower gears
-.tbls + .tbls_hs_overlay     | support G4
-if we anways return an index of the first setting that fits, for these 
-targets, the G4 settings would always be programmed, no matter UFS 
-driver requests for G2/G3/G4. On these targets, as dual UFS init is 
-there to find the most power saving PHY settings, when UFS driver 
-requests for G2/G3, .tbls_hs_overlay should NOT be applied. Otherwise, 
-it defeats all the efforts which Mani had spent for the dual UFS init.
-
-Thanks,
-Can Guo.
-> 
->> +       }
->> +
->> +       return found;
->> +}
->> +
->> +static int qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
->>   {
->> +       bool apply_overlay;
->> +       int i;
->> +
->> +       if (qmp->submode > cfg->max_supported_gear || qmp->submode == 0) {
->> +               dev_err(qmp->dev, "Invalid PHY submode %u\n", qmp->submode);
->> +               return -EINVAL;
->> +       }
->> +
->> +       apply_overlay = qmp_ufs_match_gear_overlay(qmp, cfg, &i);
->> +
->>          qmp_ufs_serdes_init(qmp, &cfg->tbls);
->> +       if (apply_overlay)
->> +               qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_overlay[i]);
->> +
->>          if (qmp->mode == PHY_MODE_UFS_HS_B)
->>                  qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
->> +
->>          qmp_ufs_lanes_init(qmp, &cfg->tbls);
->> -       if (qmp->submode == UFS_HS_G4)
->> -               qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_g4);
->> +       if (apply_overlay)
->> +               qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_overlay[i]);
->> +
->>          qmp_ufs_pcs_init(qmp, &cfg->tbls);
->> -       if (qmp->submode == UFS_HS_G4)
->> -               qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_g4);
->> +       if (apply_overlay)
->> +               qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_overlay[i]);
->> +
->> +       return 0;
->>   }
->>
->>   static int qmp_ufs_com_init(struct qmp_ufs *qmp)
->> @@ -1331,7 +1461,9 @@ static int qmp_ufs_power_on(struct phy *phy)
->>          unsigned int val;
->>          int ret;
->>
->> -       qmp_ufs_init_registers(qmp, cfg);
->> +       ret = qmp_ufs_init_registers(qmp, cfg);
->> +       if (ret)
->> +               return ret;
->>
->>          ret = reset_control_deassert(qmp->ufs_reset);
->>          if (ret)
->> --
->> 2.7.4
->>
->>
-> 
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBOb3YgMjMsIDIwMjMgYXQgOTozOOKAr1BNIE1pY2hhZWwgV2FsbGUgPG13YWxsZUBr
+ZXJuZWwub3JnPiB3cm90ZToKPgo+IEFkZCB0aGUgdHdvIERTSSBjb250cm9sbGVyIG5vZGUgYW5k
+IHRoZSBhc3NvY2lhdGVkIERQSFkgbm9kZXMuCj4gSW5kaXZpZHVhbCBib2FyZHMgaGF2ZSB0byBl
+bmFibGUgdGhlbSBpbiB0aGUgYm9hcmQgZGV2aWNlIHRyZWUuCj4KPiBTaWduZWQtb2ZmLWJ5OiBN
+aWNoYWVsIFdhbGxlIDxtd2FsbGVAa2VybmVsLm9yZz4KClJldmlld2VkLWJ5OiBDaGVuLVl1IFRz
+YWkgPHdlbnN0QGNocm9taXVtLm9yZz4KCkkgY2hlY2tlZCBhbGwgdGhlIGFkZHJlc3MgcmFuZ2Vz
+IGFuZCBpbnRlcnJ1cHQgdmFsdWVzIGFuZCB0aGV5IGFyZSBhbGwKY29ycmVjdC4gVGhlIG90aGVy
+IGJpdHMgc2VlbSB0byBiZSBjb3JyZWN0LCBleHRyYXBvbGF0aW5nIGZyb20gcHJldmlvdXMKY2hp
+cHMgc3VjaCBhcyBNVDgxODMgYW5kIE1UODE5Mi4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
+CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
