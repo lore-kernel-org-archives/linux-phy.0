@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB247C636BD
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 08:42:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC44FC636D3
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 08:42:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yQwQI7abPeFBXKzzyHKS46y4g1ObK5ASwgD/e+QDQEA=; b=pVbSx01FWBYyN4
-	6xTsgaXpmGxOrA5lGfobzjH/j+BZlp2x6Ep27CivkJKB0cLK5MlPJEPBJq9+n4E6DVj/wzl8d/f+m
-	i4iiM5a1Ip84jnGLVvsc6TIgk0EuN2OFVUCMMVaNX9Sw3Hqwo8nFpGxmRActtZBKtONya+rsA5hqL
-	Fijq5A1W3QkpdipYINX7ivPRtbPp77j60LfhYLY8Fzau0e/qHp7wBM1rhk5vdAXYqg+FJAsx5+vCy
-	Q0BKJC0sGDZXRtW6au3uzO5aNIj6akCOTJXJVavR1dmHih51wki8SRFPgCW9hUpvX2utL+mF2QNeC
-	OoAY3e+FEJhAmII3drJA==;
+	List-Owner; bh=JaYJJsEwISRrZCblMXXah3NUSNJRA8B7rIpeyJHcjI8=; b=Fg+5JQfA8AUW3e
+	p0MhrrpTmJRsaeKkKCFs8zAAmvMlG8tQ397wJCcgMqM6EJVbKmEb92t+GBbg3NSU6ezhFA77meYNl
+	na4kK5z3+QO6Y89C0Z5sYPwbPGwIIvXZy6ZHWqvAqYW5EJubmkMSuINxd9wFdMcuKC7C4unlIhbBJ
+	bAGOC4agjbDnGR5H/WIUFceOIqeU1XPYh+VxnzBzZUobVBDe5iXe9v6ZJ9M9pDfSepIAz1c+MUxA0
+	MuNGeK+guQx1V0rJoaVRKMPKvHo8UWkZ6dhitbmMzh69ktcs3aMPgeJjePniRSs4vUkDNS/VaWw1P
+	O9VJX064/N7Sdo5dKRGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6RlP-006YXs-1J;
-	Fri, 24 Nov 2023 08:42:15 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1r6RlR-006YZc-0r;
+	Fri, 24 Nov 2023 08:42:17 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6Rko-006Xti-2F
+	id 1r6Rkp-006XsA-2r
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Nov 2023 08:41:43 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-40b2c8e91afso11975265e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 24 Nov 2023 00:41:38 -0800 (PST)
+	Fri, 24 Nov 2023 08:41:44 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-32faea0fa1fso926956f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 24 Nov 2023 00:41:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1700815297; x=1701420097; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1700815296; x=1701420096; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=fuSB6hXQgNnhjhBZYMiuriEMaNCWnOiIqJ/w1UyCkVs=;
-        b=sh2MRu6tIPrWjlvqjRpEl7FKvZeSrG5dhKd1hbpuHIak2zOQxgPWbvd5C/xduRLqpZ
-         aamWKaIIrWFnBF9DtU/fK7OwD2vB4sAlpmCxwc103fVME0XgkEcAi1GwhZZVzSNG/h00
-         /eUYeHmxgDQv6Gz/81C7YEAxRKIcIK0In/PJ0w1u1oceefePI4k0VfXxxioWV7jesy3a
-         AM9oRi/Fv/g3JQbG0MSib3rRZJJx8vgCgi+HPxtev9W42WenMVVwT4wEyOHYFNpcrQ/h
-         F05AD4iLuoBXKRSJ0PwtcM2vMdY8OHc3JTsm2y3avuJYUPYv/cDzCVDYtVCXT/jchqE/
-         9Tyw==
+        bh=CvmOEb1ckbbB9zBBB0o82fMDjd1uz7C5pNwKHHdJSYY=;
+        b=xFQAjFRwyX88odexdb4rIe/98mIbL6fgiGJwgURnBqsJU42Gb1QOJdJn5fNTKlTuQA
+         6tiAIj3oyyzFWMwVKxlRozCai5C9oDk2PRHfs34xL3s0fIT75B+9fOy7GNjVbRGdOq5+
+         KBb15Iv4r83AfZGaxopBKZvKlmJ8YtSYy0v6cudPufh4++CAdHKZVH8c38WGBUHRVy00
+         bYOGDOpHZxQWRM6x+4QpEIhau/4tI2RFajPJD5LnKZ0ApMn9sBaCYt0oUAniwy3tcA7K
+         +EwRKu2JZ1AbuO9onkZOa9a6ERcwk2n+jw4F/AAvJZu0jouARym5GN1t/nlhftk45LqJ
+         vHag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700815297; x=1701420097;
+        d=1e100.net; s=20230601; t=1700815296; x=1701420096;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=fuSB6hXQgNnhjhBZYMiuriEMaNCWnOiIqJ/w1UyCkVs=;
-        b=DQRXxFaiXYANDCgEtuzAPzAC+2owxgGfAvKnXdUJmFkfOzYS2YdIvOR0OvQlLHso6O
-         VrqaEkLEuyWPsZcF9LBTaTSy9Y77klHsv/j6Plg05x06aI7fEJ9P00o1ERI9ZIRkQ5n9
-         tXX3cZ3n7omPwBLaKS17QTJ+xeiwnjU7Po4uh9HVGKKVCx7fWZahUU/MVuNTNBfj+gP3
-         xpvL3vDBtF51byOb7GngJc+rEKtqEdQfS2BdeVCQcnSZucl0ZwO5rCQni4V1ZFYPsOTL
-         8Ed+AbfTVkMtPR+Gaw2xkKj/0/7ClbHEU11JWwovyp6tvar6oF+i+It72BGB3ifetzK6
-         7c2Q==
-X-Gm-Message-State: AOJu0Yx6RoayD3pxODpOrDliPZx1OfoUfXLpHCQvzL3pgIyRZjtTxYqS
-	En/vwCq3NxOABfCnXbxQYHwoBA==
-X-Google-Smtp-Source: AGHT+IE2UZwrK/cWwh2rBEoUeFF98uKEtaA7VGpaEvV3hUAbSjxLyp4wCEN5Kmi6LYzxAyXCY0lmQg==
-X-Received: by 2002:adf:fa85:0:b0:332:e650:dad8 with SMTP id h5-20020adffa85000000b00332e650dad8mr1476988wrr.17.1700815297315;
-        Fri, 24 Nov 2023 00:41:37 -0800 (PST)
-Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id c11-20020a5d4f0b000000b00332e67d6564sm2534562wru.67.2023.11.24.00.41.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        bh=CvmOEb1ckbbB9zBBB0o82fMDjd1uz7C5pNwKHHdJSYY=;
+        b=hDmYa3vrdGX2m6PstZnzzWM5YknEONldLuX626z3X+HIh0UdFEJ//tIUxij0VAwmTS
+         5+DIkr7/4B0zfMkVAA9MqPPDacfrPtQYTJV4aQzDpqLzkuPJtUXuYSW6kQnjnnP3ROXV
+         hAMtqA0Hgvpp4Ma76vsC83frTco5Yrz1Vzfi+BcczNoJ83z45y6Q7s5EBARCYFDqMuSM
+         MFmvWJ5gSjMqvb7AvktHUa5s5gXhp2gbcviHAwR5T+asHjbFTclYq1OhjJM5G1NzIKZ+
+         AdrLUJ8dRVLHFyMWR7Pt4gduOR/9PLkQRC8qrwIJ8jbq7ARYlFyQh0Q/Nz38MZ30Akco
+         uZYA==
+X-Gm-Message-State: AOJu0YznEYkfM1CmTYOCjOadpKw1Em9wM26D0eeke/VJJilgy+o1KO+I
+	EvkMWsZqgQtayb6PWlHO5qiYrA==
+X-Google-Smtp-Source: AGHT+IG8oV5vR52wvy6RDc5unbTyrdle+A+ZJEr+VxtPQs/QhVcyXpGgV/X216xPtP580nNksVLMHg==
+X-Received: by 2002:adf:e90d:0:b0:332:c585:4005 with SMTP id f13-20020adfe90d000000b00332c5854005mr1606864wrm.13.1700815296061;
         Fri, 24 Nov 2023 00:41:36 -0800 (PST)
+Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
+        by smtp.gmail.com with ESMTPSA id c11-20020a5d4f0b000000b00332e67d6564sm2534562wru.67.2023.11.24.00.41.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Nov 2023 00:41:35 -0800 (PST)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 24 Nov 2023 09:41:21 +0100
-Subject: [PATCH v9 10/12] arm64: meson: g12-common: add the MIPI DSI nodes
+Date: Fri, 24 Nov 2023 09:41:20 +0100
+Subject: [PATCH v9 09/12] drm/meson: gate px_clk when setting rate
 MIME-Version: 1.0
-Message-Id: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-10-95256ed139e6@linaro.org>
+Message-Id: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-9-95256ed139e6@linaro.org>
 References: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
 In-Reply-To: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -88,25 +88,25 @@ Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, Rob Herring <robh@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.12.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3028;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1213;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=xeZV8gmIC9/2/oObVVqqYZ0sOhta5dqkacXris9lM8k=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBlYGGxXEnizWSf7+B7ZodjJhE2lCrlnGpyxQU6g8T2
- sVrEwh2JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZWBhsQAKCRB33NvayMhJ0bhED/
- 95+sFAipBUxjMeFLlGpWzaX+aaME314YyQy85iWqpiZSfTzIyk921PAf5/nQNjVMjWaMT9bcFyVmnC
- FYUT74aRBf8tx27OxN3+m40y2pVnIpPWDTcF0ekBk2Ii6SREBBVj0MXbgnlstPlamiGjK3CIUu0OU1
- FbuFRZazTjVe5x5FSc4h7zk6FwjemlqYl65SqHSCtdbCfOS1+vPHsb1pcSsKrWU59gbAw/5LivKxJ+
- NBv2BGqC3Em8uWoN6/XTIh+z3ToLktXvqE++ydJMjDTrdkxu1arhSfw32ZjafCMpCtCSwIl7WihPcX
- UxZj3JVxYfyrkgbVsYqnABrWZ/ixlYXKD6hCdBKZJFBs+GhGRnFZ/x3hMih6VUoovnrJTXZDzgCA+n
- /ru3vSAjKq2HXFlNWPAKZzGzBtkNUX5zwnBrO61/4s8Sy4lKNSX9rueZnAvNPRjL8BwhBtnvcG6Tvf
- 2z2zzTC1oAFh1O4ZCe1Eut/J+I8JWsKg7UWdpavDsIz1tM4sTf76AQ/WLFze1cXHTr0lqhm8loXERC
- tdYnAsXCiHj5km2w7X+fj7Gg70xdzOe6zjiwdeBaSXvycF22X3dZvbD2l0HU+8fj3tTpORggJCNps4
- S4ASkJk+fCkHLMPIvP+zfyVCVk4d+lIdiJq21ZrA4X7InDu6EXUEvM+am9zQ==
+ bh=6wj78w5SzMRVYfTnHYpi/keB3/pw6jAwnhprIG9LUDw=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBlYGGx2k+lycVMXd4CGKdFmLLkeE1cSxXUGJmEH5Nt
+ WyqAnCOJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZWBhsQAKCRB33NvayMhJ0XmHD/
+ 0a1u9pKRgdiqiNPEVgNnpvsoHZQCkWeGDJUhl/1pzTgkKKwI42m+N0fYEJSu+tGjebpr24UosgSDpb
+ Hdwxq8/ts9nxnJrpXxDKUQgCs66lF/JOr3TntrVHMUh+z9IoiZheukKo7E9q9hXdTrqIJDNJ6MBrCr
+ M6N8VZAuqfRdGbaEpd7FEX5mQCaN6lUruEfC/rV7D1PF/jSc1UDjGevThxuJC3ngOF08pchl00bddm
+ Tl6iBVLDDzjvwipVuSd0y53J7R3+yvUhONC4GYqZKlYAQ+lamPVJjDCzLqhkxSbSn71KeYkm8g5keW
+ e33PL7GAouKsNVgsiK2a32ZBG/N/MEH4IGTvqZq8Bwi/zy1O2K3zixX8Dm1NV/2CjgF1gFU2MSdMCd
+ fTAQjiTQX2Sui2sTWsMRP5rhM75Thas4AAr7DC/2g4HCUNiYNlpJPLrPRDSeI9wEYBFezagPZ7HOIY
+ 3gueBoeolSSLsKEeZWRckNUMmjLChDMtdCh7qdEAwP01Ir5DHxrQZFHyRgShFyj10HMjIRjiPF0svt
+ /rjcJszqh8GJBUduVrIMd2hdP+4KWKXqmPCam/JWTZn2V40nReclE42GEEi53eFlaETzHcQuRz6uIp
+ F/Up8XwbOiSWancRcIvIDmtt5uDD7vWHX6/nM/NUWEKJQtVjLKuxBwhIILpQ==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231124_004138_819796_4D78E205 
-X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-CacheID: sfid-20231124_004139_997774_F419754E 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -124,112 +124,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the MIPI DSI Analog & Digital PHY nodes and the DSI control
-nodes with proper port endpoint to the VPU.
+Disable the px_clk when setting the rate to recover a fully
+configured and correctly reset VCLK clock tree after the rate
+is set.
 
+Fixes: 77d9e1e6b846 ("drm/meson: add support for MIPI-DSI transceiver")
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 70 +++++++++++++++++++++++
- 1 file changed, 70 insertions(+)
+ drivers/gpu/drm/meson/meson_dw_mipi_dsi.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index ff68b911b729..7300408262d5 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -1663,9 +1663,28 @@ pwrc: power-controller {
- 								       <250000000>,
- 								       <0>; /* Do Nothing */
- 					};
-+
-+					mipi_analog_dphy: phy {
-+						compatible = "amlogic,g12a-mipi-dphy-analog";
-+						#phy-cells = <0>;
-+						status = "disabled";
-+					};
- 				};
- 			};
+diff --git a/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c
+index e5fe4e994f43..72abe2057ec3 100644
+--- a/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c
++++ b/drivers/gpu/drm/meson/meson_dw_mipi_dsi.c
+@@ -95,6 +95,7 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+ 		return ret;
+ 	}
  
-+			mipi_dphy: phy@44000 {
-+				compatible = "amlogic,axg-mipi-dphy";
-+				reg = <0x0 0x44000 0x0 0x2000>;
-+				clocks = <&clkc CLKID_MIPI_DSI_PHY>;
-+				clock-names = "pclk";
-+				resets = <&reset RESET_MIPI_DSI_PHY>;
-+				reset-names = "phy";
-+				phys = <&mipi_analog_dphy>;
-+				phy-names = "analog";
-+				#phy-cells = <0>;
-+				status = "disabled";
-+			};
-+
- 			usb3_pcie_phy: phy@46000 {
- 				compatible = "amlogic,g12a-usb3-pcie-phy";
- 				reg = <0x0 0x46000 0x0 0x2000>;
-@@ -2152,6 +2171,15 @@ hdmi_tx_out: endpoint {
- 					remote-endpoint = <&hdmi_tx_in>;
- 				};
- 			};
-+
-+			/* DPI output port */
-+			dpi_port: port@2 {
-+				reg = <2>;
-+
-+				dpi_out: endpoint {
-+					remote-endpoint = <&mipi_dsi_in>;
-+				};
-+			};
- 		};
++	clk_disable_unprepare(mipi_dsi->px_clk);
+ 	ret = clk_set_rate(mipi_dsi->px_clk, mipi_dsi->mode->clock * 1000);
  
- 		gic: interrupt-controller@ffc01000 {
-@@ -2189,6 +2217,48 @@ gpio_intc: interrupt-controller@f080 {
- 				amlogic,channel-interrupts = <64 65 66 67 68 69 70 71>;
- 			};
+ 	if (ret) {
+@@ -103,6 +104,12 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+ 		return ret;
+ 	}
  
-+			mipi_dsi: dsi@7000 {
-+				compatible = "amlogic,meson-g12a-dw-mipi-dsi";
-+				reg = <0x0 0x7000 0x0 0x1000>;
-+				resets = <&reset RESET_MIPI_DSI_HOST>;
-+				reset-names = "top";
-+				clocks = <&clkc CLKID_MIPI_DSI_HOST>,
-+					 <&clkc CLKID_MIPI_DSI_PXCLK>,
-+					 <&clkc CLKID_CTS_ENCL>;
-+				clock-names = "pclk", "bit", "px";
-+				phys = <&mipi_dphy>;
-+				phy-names = "dphy";
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
++	ret = clk_prepare_enable(mipi_dsi->px_clk);
++	if (ret) {
++		dev_err(mipi_dsi->dev, "Failed to enable DSI Pixel clock (ret %d)\n", ret);
++		return ret;
++	}
 +
-+				assigned-clocks = <&clkc CLKID_MIPI_DSI_PXCLK_SEL>,
-+					 <&clkc CLKID_CTS_ENCL_SEL>,
-+					 <&clkc CLKID_VCLK2_SEL>;
-+				assigned-clock-parents = <&clkc CLKID_GP0_PLL>,
-+					 <&clkc CLKID_VCLK2_DIV1>,
-+					 <&clkc CLKID_GP0_PLL>;
-+
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					/* VPU VENC Input */
-+					mipi_dsi_venc_port: port@0 {
-+						reg = <0>;
-+
-+						mipi_dsi_in: endpoint {
-+							remote-endpoint = <&dpi_out>;
-+						};
-+					};
-+
-+					/* DSI Output */
-+					mipi_dsi_panel_port: port@1 {
-+						reg = <1>;
-+					};
-+				};
-+			};
-+
- 			watchdog: watchdog@f0d0 {
- 				compatible = "amlogic,meson-gxbb-wdt";
- 				reg = <0x0 0xf0d0 0x0 0x10>;
+ 	switch (mipi_dsi->dsi_device->format) {
+ 	case MIPI_DSI_FMT_RGB888:
+ 		dpi_data_format = DPI_COLOR_24BIT;
 
 -- 
 2.34.1
