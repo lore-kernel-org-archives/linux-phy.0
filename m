@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AEE1C61D97
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1010C636BD
 	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 08:41:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,62 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0zsmBIMJRT2x4MGyJOu1aTIn+UF3iRbRjPt7ZAxfNQ=; b=nRJRA2FA142XK4
-	pccGkQQN9eyOXMhmd4frPLjJx9nMdv5WH51ebxwx1s03SEuaRy/gQhS4z9GtHBihsODiNyo+W2dIw
-	K3fLf+ZKhDKZ59tmo/vCF2PxDchJI8ObLU+je5XHNOsH024PWtHCW2o7P4dwA8rSlq/hAt+sv/RE7
-	q42DGthknOgc43dkA4UjGsonnMWooD9N1xbQS3mSSmHhy4iEQhQnB+AyVzhOfaF9OfmKDxoRA0j4V
-	3710pMd1AfGsJ41aqFv6s0aPh+IMwzLS97YXMUentJWsAQy+LlRqgT+tni7KT88RWdL9MkDmG3geb
-	8NxBCDo2uVt+thlJVsLw==;
+	List-Owner; bh=1MHaEHSAAZujoThRviODNQBYMpJVL+gmlrS0anx4aM4=; b=Tm18pN6IpA2ZHu
+	6z5a5cVKozFVkGjT1KKyuS/+LQJVI0eVy65He317z2OIFilzcgDM6IPy4eLp9YdrvnE9zSOEPgeKJ
+	KSd8elPrpT5gDtJ+Ds7XrY4VU9I0+I8i7EJIiTASSH1Jov+W/JsgSQtQLLT/TmiQzauCO4z+WpNlN
+	Ruu68AuNXwMczQ/ESivbdZYVw7uahzzh7LpkC5cwBkHeoSoMQGBXCqvt5jetkM71JGtMQPUiha8SD
+	Czzae1+OCRa+Vw/J47ZJfom3rhcHFH33htrKukKvsaLX8aPskJY7mZCH7M+0lmwCnYvQwOFifH3XU
+	BO4zArH8RXGzYoY/dqKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6Rkm-006XsF-2k;
-	Fri, 24 Nov 2023 08:41:36 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1r6Rkn-006Xsm-14;
+	Fri, 24 Nov 2023 08:41:37 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6Rkf-006XjL-1O
+	id 1r6Rkg-006Xje-28
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Nov 2023 08:41:31 +0000
-Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-32f737deedfso946407f8f.3
-        for <linux-phy@lists.infradead.org>; Fri, 24 Nov 2023 00:41:26 -0800 (PST)
+	Fri, 24 Nov 2023 08:41:32 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-40b31232bf0so12964715e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 24 Nov 2023 00:41:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1700815286; x=1701420086; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1700815287; x=1701420087; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Rfvt+EmrHZv1zbeX+XtXPk6Fy/0gOVGXRVeJ603Il6c=;
-        b=Xtvu0xuyZ/NOXe4SmrzruMwzRriOkwywgoWudcT5ifWA+9Vxk+7epGFMumG3uS815v
-         +pEXcJNlRjebIPVk2t2FYAmnso42uPdun7RkqJPyFnNxQx2/rIF03JWshU+UnvZiwbL0
-         FSWaFzP1MmXhcMVEeRjpuVNcJacgSciaD3q3owTB7+L58QFfLAOhEmmATcyPK+V6l363
-         zGpj0wc1cO3kPyknAQ6lF5e6TfjzyrwHCJQAIYGw1xTw4OXHH1UI6RVsdZFU3c1tOdrJ
-         WiPkeRU+7jgi1l9EUTb6FLiNxUNkS8HBXdAnwFMwxvhf4TuB7coaRb/anZQgiBVv+PHL
-         cf1Q==
+        bh=pmqHf7vG3OgSbkZDuoqTVPYV9KLNSSDAPn0Rr1mvHIw=;
+        b=aOUsA9tumDYfXUI21Nj6aqv+5wzXLhajR8qKQbjd/eJSggLJ/MNbf7jA7xuO2NrQfs
+         1FduONmJzM2fulGJLVTC6cwkpXOfhcoGPQzj/VRb40BLhoPzdTMaXEZauofqiIq15RrW
+         tABgWrl3evT4NAERLVoeRJEsgTofQ6fIro8wv5I1EbULdVFH6/mbe5gu++gUi+5mM3TY
+         OMadvaemB4NCX9YM87qZtTVQhawPN9hoaeLfK1H2mWnpYm+DaqFLSSEk4YkJv2mwIaPQ
+         hSpPcfTUo4+aWoAexlv6wLUL9oHna+rCB1SPQTDHzArkN9akM0u5lTziCv5jYmdzhUyW
+         /CQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700815286; x=1701420086;
+        d=1e100.net; s=20230601; t=1700815287; x=1701420087;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Rfvt+EmrHZv1zbeX+XtXPk6Fy/0gOVGXRVeJ603Il6c=;
-        b=U2HjNWdHgRu34LK8zaW4UE4/HOCUmukAb5E8Pe/b/yAWBxxFHfQko1SughcJ+0a/f8
-         zxvpDRxF5Y2fuyKTlZHBjRI4IlHK0K7TQAjCJpklFPO7AftknLOhOZ3PAzVg5kqY601R
-         FpAdhfrpn/LQPtLQYKtyvkkm++WF3TtEUWNLYdANwckDNEPJx/Y9MjuOsR5ElNT5uA4n
-         CBL21PGYQEkJlw4dbf0ES81eUj7OfprW9Gr+QgOG5z52flPrCNmNfUIQPDt4XZDebhOd
-         kIKP764K/uB80MrfWch4xOY2oGb2AUwTdrWvRbThB8UHvDuh89CBXE4DKZUaE5IOd23T
-         lWHg==
-X-Gm-Message-State: AOJu0YytqvkYRA85jbxw1zOx7swTq73wnm+FMPn0XGcieKEH3Sx0g30I
-	zBkmXT9o0YyGXNfnTqBneyEeNw==
-X-Google-Smtp-Source: AGHT+IFnuchw8Ikyiy3m+j3gALkvJfoErNWWwqz7BB2ufK/58r0Gt+p5OXv1H8cdurIdKXJg/ONALw==
-X-Received: by 2002:adf:f48d:0:b0:332:e6d8:9345 with SMTP id l13-20020adff48d000000b00332e6d89345mr1676453wro.8.1700815285668;
-        Fri, 24 Nov 2023 00:41:25 -0800 (PST)
+        bh=pmqHf7vG3OgSbkZDuoqTVPYV9KLNSSDAPn0Rr1mvHIw=;
+        b=pUZ599DoKkndbrmN8zm5p1JurZoy4BX8bVGFP75wYehkhRcdooN8FbcYGIYWHuNohF
+         tklAPz3gX6N5iSqre729+8oBmT6u88WHxFjcAt7GjYC/51tKfSauioB1xnR1/6xZBd56
+         7qUw1sAIPqaeKop7RcTkG5di6wln80sn8jRPueQjVR/Uxr+VAXIvywE5I/69InioyECP
+         7eMSw3brWYlwcHpurbmQvjt4eceJxUt7FXXGiynOKExOvKbAnHOT1AY5kGbKGw8k/AF0
+         gm4QYV1iSM27TQhQ0Rj8ev3gBJHpMjw7fRQDPAQGRV6UApaQFIIMlLZBd1+kUmXcQ59c
+         liMw==
+X-Gm-Message-State: AOJu0YxVzrHMpJMme5p7c1kB6W1WblEJb/t12AysE0RATkOWQTntCBSy
+	uJQsRpn7BiGorMn+hBCloSe58Q==
+X-Google-Smtp-Source: AGHT+IFPKfH4bRgwYLSScdIAX4eq/D8aF5dbD0VbyY0HPbjeV7slo9I4RmgXoBTePe/TnCrXi0Gj6g==
+X-Received: by 2002:adf:f10d:0:b0:331:6c3b:4f1b with SMTP id r13-20020adff10d000000b003316c3b4f1bmr1399602wro.6.1700815286963;
+        Fri, 24 Nov 2023 00:41:26 -0800 (PST)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id c11-20020a5d4f0b000000b00332e67d6564sm2534562wru.67.2023.11.24.00.41.24
+        by smtp.gmail.com with ESMTPSA id c11-20020a5d4f0b000000b00332e67d6564sm2534562wru.67.2023.11.24.00.41.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Nov 2023 00:41:25 -0800 (PST)
+        Fri, 24 Nov 2023 00:41:26 -0800 (PST)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 24 Nov 2023 09:41:12 +0100
-Subject: [PATCH v9 01/12] dt-bindings: clk: g12a-clkc: add CTS_ENCL clock
- ids
+Date: Fri, 24 Nov 2023 09:41:13 +0100
+Subject: [PATCH v9 02/12] dt-bindings: soc: amlogic,meson-gx-hhi-sysctrl:
+ add example covering meson-axg-hhi-sysctrl
 MIME-Version: 1.0
-Message-Id: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-1-95256ed139e6@linaro.org>
+Message-Id: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-2-95256ed139e6@linaro.org>
 References: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
 In-Reply-To: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
 To: Jerome Brunet <jbrunet@baylibre.com>, 
@@ -90,25 +90,25 @@ Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.12.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=761;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1847;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=OBDzXE6zqX89kc7pvzy4CIEH7gf5glqDzs5WzIgtsF0=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBlYGGupCZ+JBm/j62lgDoGr7xNwQCD1mUMzIViQ3Q+
- 5BTtcTmJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZWBhrgAKCRB33NvayMhJ0e0rEA
- C7eQ9byvp8DK/smW2cQqD8180I42XiMLdt3wZ7xVsHlZzRItzA+GMiMo8KBxOsciSTcMe2vQ3qkNz8
- /viQaJnuONTjKXGF1XzU0w2a1mU/w+GMAqpq5t5GYrsJYhBKucDz9O4ybGOoKdKFn12f8S8vjiTPdC
- +zThFD679SlacJRPuk0vKbwaPI4yFbHSvKWYKMtm1yYUOTWdf3asCcSbA1r7ZdSxR9n5ptrY/j0S+/
- 7MyDnuRCfp8bhrWJqlXGhdXqWuabpaTaiWo7WgKW1sfpHHJgnES0z1FOzy3t+/lECu07cuhyLkdHK6
- hBFrNDz28dCn70wp0d3lmAAKuMaGh0riTCG6cjJHW9y2nNUNfLScNubW48XowuSlqaadd5YUu67laO
- bsXX8vh7L1Nu5uT2wmRY2BZpkUek6F6XRKcvDP9fG/P7LNiGCNkG/gK2pGYR0D8pI8SfeZN3558EO5
- m43V1xVJ/3fhvgYUcrY9QiimI6m7WxdQhcxoePjjVBNYsQwezxq4FGFV6yYRLjjGzzPY1REEU0hYSx
- oHJQit3xEHjUuNXc2fQH7wAQLOFnTcqe1LFiHzo8u0TVEv0EaxKFo1fFXSlIPwb+jNK9flSKdZq9aV
- jjtxeGFXZGXslCW1Bd7c+mso633D4cWnl5ZWduv7cUenT9VDAgcrqQz9kh6w==
+ bh=KQGG1ytiHBIC5JgUp3eMPUlMvnricP4K9ae8Hqw91b4=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBlYGGuRHAkz/o0FoARcM/nBhaSVY4S5HKY2Q4xPPDK
+ g0HXtl+JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZWBhrgAKCRB33NvayMhJ0SoJD/
+ 40QaN+xss8YhXmbPd7kcRXbNr00DUi9YXy17gL5d+nQzAJClUpXWM/LHE9EckZTKnrONy8hm8IyTsm
+ +Q7v99Ma/k1BhRTuMLsWwfwFdFNoAm7OTDjKTKX3C8XSRZsYU+fUgVCAk9mLi0ILxo3unQMKEakNSO
+ dE9rb6fvsHrXEVu4hEJRwGyxCKaj3v/DHp1F3CJPhnYNbdk+GJFAYD9mL6/Rquv7pfpR3IjTM6le/R
+ CteRqtCWIuTLlnxJ2PR3bb6vtUGOpsAkWvdE95r40uUkhGJ5c4kZUY26dxnxstVIwWFeG2s7oL8t3S
+ ZVlS1l/hLzSrpaeHiYKZfwxv5nccbZ/0qhpFqor44I2oPPA1T3HykRL+qs0mIMrBmmmK6W5gikOwrA
+ GZifoZAOOG3AChGpZamhVtFHgvVgLP/SvPLmJamG2uSYLX4M7Wu2blhSuoHw/L2HdKB+d3880wK096
+ fdWsEuUVgv8fRo95lxdriQPJb69/AHXgHKL4NQcNFjTNqOJ8YkkAquQwhf/yOaDIcnW3ERUKxybg5+
+ 2lm/rhZbQ1IYLlYT1bip3o4J/rw6V6TvE6LtKHhjvs31uK1MH2UwobR7GUv+a6sJR+vtVHbwzC+9YM
+ iNd8dCd57nIB+Awkk1LFT+YJgUoJCMyAh8AI+tTF+Y4Vrb1wSxd8bt5jIWKQ==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231124_004129_481308_94158F41 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20231124_004130_736130_75FD94FE 
+X-CRM114-Status: UNSURE (   8.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,27 +126,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add new CLK ids for the CTS_ENCL and CTS_ENCL_SEL clocks
-on G12A compatible SoCs.
+Add a third example covering the meson-axg-hhi-sysctrl variant and more
+importantly the phy subnode.
 
 Acked-by: Conor Dooley <conor.dooley@microchip.com>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- include/dt-bindings/clock/g12a-clkc.h | 2 ++
- 1 file changed, 2 insertions(+)
+ .../soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml  | 33 ++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
 
-diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
-index 387767f4e298..636d713f95ff 100644
---- a/include/dt-bindings/clock/g12a-clkc.h
-+++ b/include/dt-bindings/clock/g12a-clkc.h
-@@ -279,5 +279,7 @@
- #define CLKID_MIPI_DSI_PXCLK_DIV		268
- #define CLKID_MIPI_DSI_PXCLK_SEL		269
- #define CLKID_MIPI_DSI_PXCLK			270
-+#define CLKID_CTS_ENCL				271
-+#define CLKID_CTS_ENCL_SEL			272
- 
- #endif /* __G12A_CLKC_H */
+diff --git a/Documentation/devicetree/bindings/soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml b/Documentation/devicetree/bindings/soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml
+index 16977e4e4357..c6bce40946d4 100644
+--- a/Documentation/devicetree/bindings/soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml
++++ b/Documentation/devicetree/bindings/soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml
+@@ -158,3 +158,36 @@ examples:
+             };
+         };
+     };
++
++  - |
++    system-controller@ff63c000 {
++        compatible = "amlogic,meson-axg-hhi-sysctrl", "simple-mfd", "syscon";
++        reg = <0xff63c000 0x400>;
++
++        clock-controller {
++            compatible = "amlogic,axg-clkc";
++            #clock-cells = <1>;
++            clocks = <&xtal>;
++            clock-names = "xtal";
++        };
++
++        power-controller {
++           compatible = "amlogic,meson-axg-pwrc";
++           #power-domain-cells = <1>;
++           amlogic,ao-sysctrl = <&sysctrl_AO>;
++
++           resets = <&reset_viu>,
++                    <&reset_venc>,
++                    <&reset_vcbus>,
++                    <&reset_vencl>,
++                    <&reset_vid_lock>;
++           reset-names = "viu", "venc", "vcbus", "vencl", "vid_lock";
++           clocks = <&clk_vpu>, <&clk_vapb>;
++           clock-names = "vpu", "vapb";
++        };
++
++        phy {
++           compatible = "amlogic,axg-mipi-pcie-analog-phy";
++           #phy-cells = <0>;
++        };
++    };
 
 -- 
 2.34.1
