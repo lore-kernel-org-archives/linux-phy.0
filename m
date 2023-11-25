@@ -4,95 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1001DC636BD
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Nov 2023 16:42:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36CABC61D97
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Nov 2023 01:23:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y+OklL84RKq+4RHk81G/GYO62pszpdyxXah3yr4r0mU=; b=g69Mf9cdsvzArL
-	K6Jp5dMB5JgKkC/lDjUBu0v3kIqfSe+4pNrLBziL5y6xGntHCr0TC5yMpgnuzTZplphRYziVwDF1n
-	VSTSBTQwCw1rolOSAHiBoQWjlFNEFOjDR0tmOJpEbxYYqApzPH0Hs5BPgAaw/fuaeB/8J0iNlL/1f
-	ja2mf4s9j9LrNZSRVDET+yneGJVeQ9L/8RSJjZtFlEFj3wMtCJLm3wEeafQBJyHblEmGlrGQ/Fhsg
-	qpgC5K6ozwbR5MFnPlq0MMG6/QH+BmqbC1cJnMUCIp2tMRcxlZzTtBxOlAP3JnC32BH1rCW5QEWHC
-	OFHRbSEvJWcW8yVF1Lig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9DRxeDS6mS3Yhwa6a6xK/SuwoKOqPK4aNSftVzvggdw=; b=UZ82IzOMfZq8bz
+	F990tvIgdiCeyaDnU0n8DgqhWrP63LMjjhUYq6S4eIZH7T3RVlghXAWs2u0LVeBGmbDMg/IYBYvgz
+	wqlndLI1NYHTwe1PIJO3TkGG48aVu3BRPWvgB5ibP/vAJC12RA1yH9nwvN+2aEDoZA8NS3OCepa8K
+	9JTWZVdIqk1s9zYTVB/yCEqrsC/OdoxvE1pjnbG6UQj/MWjL+vTMqqiMJAhmgO3StE3vjAMQoOBp+
+	3GRsR744cgrgY5eXPX0DZIeuw58MkyrdHM428+KkURM/tF5UhwWPdcxAzjdJY0dFaLUZ5AdKh1X5Q
+	etVzahjW1bFok6RDj6Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6ZGV-007iO4-2D;
-	Fri, 24 Nov 2023 16:42:51 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1r6hO9-008Kio-2Z;
+	Sat, 25 Nov 2023 01:23:17 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6ZGR-007iLx-1g
-	for linux-phy@lists.infradead.org;
-	Fri, 24 Nov 2023 16:42:49 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4079ed65471so15582345e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 24 Nov 2023 08:42:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1700844166; x=1701448966; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=nY57yW8jqPx4DCjz4gafCo99TqRgCQishv/BZqsXq+M=;
-        b=PkW2yagqXe/SeZyabeSlJBeiLADrA+hfyb9d7Mkww1eD1mrUCXnGj0FLZsommzTmor
-         mZkvmqXkXMgqF/Bh8XPkEuvmPKL3uaEmxoMISIdjuEKtX9DK2XG69l0Pk3W7AisxzfIE
-         D/TUFap3mqCzex0IeRdXCjS0qd/l9DpehrecRfBn2Ukfq4kXUkt15Rv0WcEuRumRLz3J
-         wllDyEFUD6Z4ZyNF2vmoNWkXYf0LXLBN1Cd59tfOsivZ9kUGgL6Iu77wbzW8z4EmthXK
-         DLEcAy511zXtoN3bNVbKstSVO3o9ZJFMnUggj6G3WTwk5eF71AV9iC85sQ3T9Wf3YwoT
-         2GrQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1700844166; x=1701448966;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=nY57yW8jqPx4DCjz4gafCo99TqRgCQishv/BZqsXq+M=;
-        b=bue00XDILJXFFDpElFc3tK1oMuBcn8QuFydWKXT5KO38vaJQLN4airn3bdI5ZebpRD
-         MIc/V8n0/hNA827IyEsj2eoC6emEbwwzlah1LsbaQ0Z9f0PrkcU9OsLt9KqjARhH7c3a
-         biMGnrstPeEl+eh1TQeGbWMGqShT+CJ+IPgmZnb94B+PjDAlSQKyr5g124eg1cEotGOp
-         23yi08wDirBwSy3e2Rcid6FD8n37VVfzi2qHjSzpxtDC2eAbwu+KVOIuZsWVltQlNI/i
-         WmXD/lhAk3phXFTEynBTLP/c8nIyj48gCQMKTdsgmYjxAILTODmjRDLDqqnAs+v+gFEQ
-         3HMg==
-X-Gm-Message-State: AOJu0Yy8MYKSHlCrnpM+oEjGQVKjD2eZIKSGt1/eQYfzZaQoDckjb7Xh
-	WImsouOunMFgHy2KNaron/QKtA==
-X-Google-Smtp-Source: AGHT+IF0qtFjt0i/sxwkQJ9BDFSUDAmlZ1vNck5maPD+WnShRNQ0koLnOjpHlDBfcr97NsaHGHftKA==
-X-Received: by 2002:a05:600c:1f93:b0:401:2ee0:7558 with SMTP id je19-20020a05600c1f9300b004012ee07558mr3057188wmb.32.1700844165899;
-        Fri, 24 Nov 2023 08:42:45 -0800 (PST)
-Received: from toaster.baylibre.com ([2a01:e0a:3c5:5fb1:1243:6910:fe68:2de5])
-        by smtp.googlemail.com with ESMTPSA id r4-20020a05600c458400b0040648217f4fsm6159082wmo.39.2023.11.24.08.42.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Nov 2023 08:42:45 -0800 (PST)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>, 
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
- Jagan Teki <jagan@amarulasolutions.com>, 
- Nicolas Belin <nbelin@baylibre.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Remi Pommarel <repk@triplefau.lt>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org, 
- linux-phy@lists.infradead.org, Rob Herring <robh@kernel.org>, 
- Conor Dooley <conor.dooley@microchip.com>, 
- "Lukas F. Hartmann" <lukas@mntre.com>
-In-Reply-To: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
-References: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
-Subject: Re: (subset) [PATCH v9 00/12] drm/meson: add support for MIPI DSI
- Display
-Message-Id: <170084416459.2546450.3587219733392523958.b4-ty@baylibre.com>
-Date: Fri, 24 Nov 2023 17:42:44 +0100
+	id 1r6hO6-008KYx-0I;
+	Sat, 25 Nov 2023 01:23:15 +0000
+X-UUID: 309fcf9a8b3111ee9b7791016c24628a-20231124
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=RGHzH3Rbe7Wts9R3v3pUtZHHN9HXypnbOtqmAifMrA0=;
+	b=osZExdbVx2l34qQtg7wgSNWidjESzprDexnhI3zLCCgWWhxMorCZoiB/QWqVZfV8a7CwUo/0/JuQEs0sqqICaUS7VAGPjjEGzGc13F/cUyszalzpAOTsZmwV1z3plkQP7Bh1mV63CN55EXcIxqa7kNK9/MZqlp6/ltKiNhu01Bs=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.33,REQID:6d84be67-6fcc-48f0-babb-1f91098f7648,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:364b77b,CLOUDID:30b57460-c89d-4129-91cb-8ebfae4653fc,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:
+	NO,DKR:0,DKP:0,BRR:0,BRE:0
+X-CID-BVR: 0,NGT
+X-CID-BAS: 0,NGT,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
+X-UUID: 309fcf9a8b3111ee9b7791016c24628a-20231124
+Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 275217868; Fri, 24 Nov 2023 18:23:08 -0700
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.26; Sat, 25 Nov 2023 09:23:05 +0800
+Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
+ mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Sat, 25 Nov 2023 09:23:04 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, Macpaul Lin <macpaul.lin@mediatek.com>
+Subject: [PATCH 1/2] dt-bindings: phy: mediatek: tphy: add a property for force-mode switch
+Date: Sat, 25 Nov 2023 09:23:02 +0800
+Message-ID: <20231125012303.760-1-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Mailer: b4 0.12.4
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231124_084247_557666_3B929299 
-X-CRM114-Status: UNSURE (   4.23  )
+X-CRM114-CacheID: sfid-20231124_172314_131939_2E834359 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -110,16 +88,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Applied to clk-meson (v6.8/drivers), thanks!
+Due to some old SoCs with shared t-phy only support force-mode switch, and
+can't use compatible to distinguish between shared and non-shared t-phy,
+add a property to supported it.
+But now prefer to use "mediatek,syscon-type" on new SoC as far as possible.
 
-[01/12] dt-bindings: clk: g12a-clkc: add CTS_ENCL clock ids
-        https://github.com/BayLibre/clk-meson/commit/bd5ef3f21d17
-[06/12] clk: meson: g12a: add CTS_ENCL & CTS_ENCL_SEL clocks
-        https://github.com/BayLibre/clk-meson/commit/5de4e8353e32
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Best regards,
---
-Jerome
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index 2bb91542e984..eedba5b7025e 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -235,6 +235,12 @@ patternProperties:
+           Specify the flag to enable BC1.2 if support it
+         type: boolean
+ 
++      mediatek,force-mode:
++        description:
++          Use force mode to switch shared phy mode, perfer to use the bellow
++          property "mediatek,syscon-type" if the hardware support it.
++        type: boolean
++
+       mediatek,syscon-type:
+         $ref: /schemas/types.yaml#/definitions/phandle-array
+         maxItems: 1
+-- 
+2.18.0
 
 
 -- 
