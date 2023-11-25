@@ -4,75 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B954FC624B4
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Nov 2023 01:23:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C70FFC61D9D
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Nov 2023 10:38:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v9F+0IsQ5BghvO35cj92c0Aa7l4GHd4drhlmKk94T8c=; b=4y3+g+REzOnaSz
-	bgA1Xsu+sLiCINaILbO9YDqu+tnXQZJBOJKMTvu7u/kblRyTKIuwRAVhynkKfA3MY4JSFqu5w3MY5
-	j8I1LJoB8nSB7cVG7ZL/sTyKUOk1/bo8qcUC+cSqBgn/nnM71YbT0yhufCQXtF/k8XWDttQKL4Vxf
-	tlaMtu1jZBBJw5gscylfubj3jeNIO0GXTu77tWTuHD0QklefgAmFbBghbuA2VqKj8CxxS/jMQAmqn
-	t5FvTKMgfmHACPbeEtnGPYGLN53D1+grrAwTq4e8CVHbjDKXZV1Iqpq/OQa7TNqjihc7tu7/566sH
-	ejG7XAJSrnvFIv5j0u7g==;
+	List-Owner; bh=K8ZLOeqyAKgkmKEz+1cUV4Q/EAycsLVva6rvWtrFFKM=; b=pyCZGoE3+K6UXG
+	BBwwS/IcykI7i8+rFvgcq8c5jclGpDWm8rhfRAjoYypnTNMCd+pIC5jkUzyIkF6ZWDJvMIvRGQICR
+	a/MqT+GGRNIiBqqu7bB8XsHs3hFa1POkj1fIKTr8+ditn+T7p0BcSwuzhjtqJs1YOBUzr9XOJsVjO
+	FbzA3coPj7+wKUg2lVfV1MscYehQybr9WEkCIkVeg5rGpRaP5Uzuo8hJ3m4krC/Qk9cqlJDsfHzC5
+	Mej01HFzC0Y3rvRVmhNwnJnxELU3HW24/V/AUdU0z7k0DWqrNw+TVJMWH4xXA4KOKsjCvrYnTwA7X
+	yQFiG0LkzhLXyDvlGjhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6hOA-008KjS-3B;
-	Sat, 25 Nov 2023 01:23:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1r6q30-0092Bt-1T;
+	Sat, 25 Nov 2023 10:38:02 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r6hO8-008KZq-00;
-	Sat, 25 Nov 2023 01:23:17 +0000
-X-UUID: 3114eeb08b3111ee86758d4a7c00f3a0-20231124
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=xrv0t8BsePColscuViX0CPUL+ADw51sZfmpfju2FfJQ=;
-	b=QnCxNViZel3b+vzPaOo7B+bFu6unkDwEy2kd/QRlT4tokv70U8knaGrk8sxtoETto+Xenvbgd3ToPfycy9CI06VfeZTgJblOSjTqRKiydFZ8OByvseb/LErN9qA9zYpV1S/HTmGtw3+SksCIAWFh7p4u72VAhaDgAiOmRab962k=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.33,REQID:9e661d75-51c5-4435-92da-657dfd17ae4b,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:364b77b,CLOUDID:1acbc995-10ce-4e4b-85c2-c9b5229ff92b,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:
-	NO,DKR:0,DKP:0,BRR:0,BRE:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: 3114eeb08b3111ee86758d4a7c00f3a0-20231124
-Received: from mtkmbs14n1.mediatek.inc [(172.21.101.75)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1373399099; Fri, 24 Nov 2023 18:23:08 -0700
-Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
- mtkmbs13n2.mediatek.inc (172.21.101.108) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Sat, 25 Nov 2023 09:23:06 +0800
-Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
- mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Sat, 25 Nov 2023 09:23:05 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: [PATCH 2/2] phy: mediatek: tphy: add support force phy mode switch
-Date: Sat, 25 Nov 2023 09:23:03 +0800
-Message-ID: <20231125012303.760-2-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20231125012303.760-1-chunfeng.yun@mediatek.com>
-References: <20231125012303.760-1-chunfeng.yun@mediatek.com>
+	id 1r6q2x-0092AW-2c
+	for linux-phy@lists.infradead.org;
+	Sat, 25 Nov 2023 10:38:01 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-9e1021dbd28so365014766b.3
+        for <linux-phy@lists.infradead.org>; Sat, 25 Nov 2023 02:37:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1700908677; x=1701513477; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uL68GlhAcKFhOb/g68gkWx6ePVIYvVItoEiLNHG799M=;
+        b=zYyGnV89u7uVUbSaSufAo3A8UpPSjFN+YVjWcJl2+BPu9Rg1/JhDpO4CEAqoC15t1q
+         gtrlev+Y1c1+IugRLBr2Pba2MH84arSYe0bx7541kBVB4ulaz2j54YVvSv71zkczJ26L
+         NKLsVJggbvGwQLyIWsYhL8xTvIOrZjyGe1O6yXBoahHaCyD8tr/LAWmDbSaAr2fvSg88
+         /kJH0MTHEELOhV6xnG3gJCvGNky9jJp8CsAeNpf62O1H11z+HYFHcvLSWJvzXmOAzRRM
+         ZdWMVOiY7Pqpz9LVP0aL/MVX6w03kuZjFCZNk5mS0HY+i+XZxST7pY/yWmn8pP2lvYC/
+         374g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1700908677; x=1701513477;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=uL68GlhAcKFhOb/g68gkWx6ePVIYvVItoEiLNHG799M=;
+        b=E/1r3r1PJmlngq3ifN5ZwYaVc6VmmM6I6rIrtvkdfh0u+TDTdEFIy9LNpn2DpmSTS2
+         iQ3xLrGoOXwjCf7PrGU195vHK9RZrOvfKgqWDOvbE/AQ3bPTAfkZet6fRq2PXK6JeuaR
+         vw5jylXJoyTJfv7UfwRut660GgulMqllTknDjHBOk+yzgllfe6gatDlkuEXdH5ysBISH
+         UVI4Ba+6PMrRsSNdh1xPVKnk4+t1n8fduvLcwH44TIR7NGKpjYMO0Qh7CdWxWk/pGO3O
+         kbseOmaUl8Ao78EFt8mQhBvur1nfCUss7lZyz6qEc/IgU62OFynBRmKdJU8cS+SH5iCL
+         tD4Q==
+X-Gm-Message-State: AOJu0YwLFnqF+2zzrSxwXvw4Wd9LS0lYI/SC54fNB5R6gJOwpfNtB8l5
+	gQBgIjlNhPckd1E0mbTSjpyURA==
+X-Google-Smtp-Source: AGHT+IHz7qGIGE4WcmFejKToYecdRR4HXK2mcFzkDtqc028+qTo9Md8j9riiJ2hNb/XGJVurR6sWtA==
+X-Received: by 2002:a17:906:5187:b0:a0a:fdd7:6c2f with SMTP id y7-20020a170906518700b00a0afdd76c2fmr1507489ejk.74.1700908676972;
+        Sat, 25 Nov 2023 02:37:56 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.218.100])
+        by smtp.gmail.com with ESMTPSA id v5-20020a170906488500b0099cc3c7ace2sm3326153ejq.140.2023.11.25.02.37.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 25 Nov 2023 02:37:56 -0800 (PST)
+Message-ID: <e34c2746-8e93-48b8-9c96-690242fbf6e9@linaro.org>
+Date: Sat, 25 Nov 2023 11:37:54 +0100
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek: tphy: add a property for
+ force-mode switch
+Content-Language: en-US
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Macpaul Lin <macpaul.lin@mediatek.com>
+References: <20231125012303.760-1-chunfeng.yun@mediatek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20231125012303.760-1-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231124_172316_047049_A001935F 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20231125_023759_852098_C5B50AA5 
+X-CRM114-Status: GOOD (  14.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,77 +144,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-this is used to be compatible with old SoCs, such as mt8195, which shares t-phy
-between ssusb and pcie controller, usually, it's default mode is pcie rc mode,
-and could use force mode to switch into ssusb mode, because pericfg layer doesn't
-provide mode switch, also no efuse or jumper can be used;
-Note: don't use this way on new SoCs, use pericfg layer's mode switch instead
-(by perperty "mediatek,syscon-type").
+On 25/11/2023 02:23, Chunfeng Yun wrote:
+> Due to some old SoCs with shared t-phy only support force-mode switch, and
+> can't use compatible to distinguish between shared and non-shared t-phy,
+> add a property to supported it.
+> But now prefer to use "mediatek,syscon-type" on new SoC as far as possible.
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index 2bb91542e984..eedba5b7025e 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -235,6 +235,12 @@ patternProperties:
+>            Specify the flag to enable BC1.2 if support it
+>          type: boolean
+>  
+> +      mediatek,force-mode:
+> +        description:
+> +          Use force mode to switch shared phy mode, perfer to use the bellow
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+I still do not understand what is the "force mode" you want to use. What
+modes do you have? What are the characteristics of force mode?
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 05eab9014132..a4746f6cb8a1 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -185,6 +185,10 @@
- #define P3D_RG_CDR_BIR_LTD1		GENMASK(28, 24)
- #define P3D_RG_CDR_BIR_LTD0		GENMASK(12, 8)
- 
-+#define U3P_U3_PHYD_TOP1		0x100
-+#define P3D_RG_PHY_MODE			GENMASK(2, 1)
-+#define P3D_RG_FORCE_PHY_MODE		BIT(0)
-+
- #define U3P_U3_PHYD_RXDET1		0x128
- #define P3D_RG_RXDET_STB2_SET		GENMASK(17, 9)
- 
-@@ -327,6 +331,7 @@ struct mtk_phy_instance {
- 	int discth;
- 	int pre_emphasis;
- 	bool bc12_en;
-+	bool type_force_mode;
- };
- 
- struct mtk_tphy {
-@@ -768,6 +773,23 @@ static void u3_phy_instance_init(struct mtk_tphy *tphy,
- 	void __iomem *phya = u3_banks->phya;
- 	void __iomem *phyd = u3_banks->phyd;
- 
-+	if (instance->type_force_mode) {
-+		/* force phy as usb mode, default is pcie rc mode */
-+		mtk_phy_update_field(phyd + U3P_U3_PHYD_TOP1, P3D_RG_PHY_MODE, 1);
-+		mtk_phy_set_bits(phyd + U3P_U3_PHYD_TOP1, P3D_RG_FORCE_PHY_MODE);
-+		/* power down phy by ip and pipe reset */
-+		mtk_phy_set_bits(u3_banks->chip + U3P_U3_CHIP_GPIO_CTLD,
-+				 P3C_FORCE_IP_SW_RST | P3C_MCU_BUS_CK_GATE_EN);
-+		mtk_phy_set_bits(u3_banks->chip + U3P_U3_CHIP_GPIO_CTLE,
-+				 P3C_RG_SWRST_U3_PHYD | P3C_RG_SWRST_U3_PHYD_FORCE_EN);
-+		udelay(10);
-+		/* power on phy again */
-+		mtk_phy_clear_bits(u3_banks->chip + U3P_U3_CHIP_GPIO_CTLD,
-+				   P3C_FORCE_IP_SW_RST | P3C_MCU_BUS_CK_GATE_EN);
-+		mtk_phy_clear_bits(u3_banks->chip + U3P_U3_CHIP_GPIO_CTLE,
-+				   P3C_RG_SWRST_U3_PHYD | P3C_RG_SWRST_U3_PHYD_FORCE_EN);
-+	}
-+
- 	/* gating PCIe Analog XTAL clock */
- 	mtk_phy_set_bits(u3_banks->spllc + U3P_SPLLC_XTALCTL3,
- 			 XC3_RG_U3_XTAL_RX_PWD | XC3_RG_U3_FRC_XTAL_RX_PWD);
-@@ -1120,6 +1142,9 @@ static void phy_parse_property(struct mtk_tphy *tphy,
- {
- 	struct device *dev = &instance->phy->dev;
- 
-+	if (instance->type == PHY_TYPE_USB3)
-+		instance->type_force_mode = device_property_read_bool(dev, "mediatek,force-mode");
-+
- 	if (instance->type != PHY_TYPE_USB2)
- 		return;
- 
--- 
-2.18.0
+Also, please run spellcheck.
+
+Best regards,
+Krzysztof
 
 
 -- 
