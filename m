@@ -4,64 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 276B0C4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 12:56:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74A80C0755A
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:16:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTwkp8/3VQu6E5nI3vr1WSHYLBxS0k6EF/b2myEoPR4=; b=1r8Ooo0Ezg6QQp
-	aNqLUgYA9BFy0ennMpJbyCnL8ha5b1XWqazw8+gJAlIhonc916xPC9v6juAM44TENaN6jj/kYNWJQ
-	iNZ2segXaT1fbYUZ4ArdIqgOcy8oFDxMvVQbAugqco+F8BGinWit43Mg77jHHjwgL8UaV77cnT5zW
-	lYLyMYp0aUXeX76g032Ko7vkCaF0UZfszU9nJC1rEvZIu9kfsQXV4NibL+WSMcvwbcv8VLsCj3WIL
-	s7N4k2NzjRIRc0x97kLODphHmUdYLa0V111mjN7+RYTH9SP8LbwHJWTyi6KsABvsuvVcGAez9PUzL
-	b/opYTw7gncGYa5rA+MA==;
+	List-Owner; bh=hgFrCXYB4nZf9QypQYWRluBRPKq3WReauccMvq4N2AI=; b=D4/AFqURQ+gBHi
+	VThBz0Aj8RmuyJaQaZ+2fyk5qMiV6XRGT7KvpBfMvNdRICGOsOF9JKzo8O8Z8QOpHcp0LkJ8KhQqF
+	XoitPPjlZI8/Ou10POu1h3Boq0gdJRahfrksoQdGuwL1KGN4w5F7CCUZcznzl4vGvdEO7ya8ybshN
+	ye6NVICz4Z5lAcCOStmzARm2kSbBxskuROlloJrZgmDameJXcoD5OdYYGfQB79AlL84e/o6qRpJXK
+	eangIT+hd8bKniQyI3qdXddZ9f6LHYok/WkP7MVWp7L3IXtpMxHAd/dzApC17HG9m+29grgFyPE3I
+	LK+2+wC11f0fRVForx1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7b9c-002Uq0-2d;
-	Mon, 27 Nov 2023 12:56:00 +0000
+	id 1r7bTG-002X7q-0I;
+	Mon, 27 Nov 2023 13:16:18 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7b9Y-002UpC-0q
-	for linux-phy@lists.infradead.org;
-	Mon, 27 Nov 2023 12:55:59 +0000
+	id 1r7bTB-002X6o-1A;
+	Mon, 27 Nov 2023 13:16:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 5D493B82910;
-	Mon, 27 Nov 2023 12:55:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DFDE2C433C7;
-	Mon, 27 Nov 2023 12:55:52 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 45240B834F1;
+	Mon, 27 Nov 2023 13:16:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C42C4C433C7;
+	Mon, 27 Nov 2023 13:16:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701089753;
-	bh=OkaVj0kQZoxNvjFiy/iUPvm6ml8q1+fcKNVZApGhjcI=;
+	s=k20201202; t=1701090970;
+	bh=h/UapjLhG0TnA+GOIIYsega+vdZ9Jtg0+Tzwur09/eo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=sQ85pDXhBPl1hmX7p0hYZDPsizOxHpZiabGHKL0JlfHoNW26pP7vKVvp7+8DMpX+3
-	 Qo6IkbllSDAJ4wUv46ysjngZ7ANNwe3pbGR2TpDEF0kXiBKiZ0xaOVjg8RiGuAvyl6
-	 11ZRlWjATOxoxvVOcvCQAgiqo5bcADjIfHMRRyuf7fPui1KRJGYyhmkUKD7EILilIC
-	 wIvYisMgRZyEX9TeMOJbmd5/KIl9IOmsYw0xK8VqdJk6558knv5RGX2cEkv1FvwnU2
-	 UAOU1/Syv719i0iCEolxZQplcQaO6NewUtiQ4c38MPRu7UVvcPj7/eY1JglM9xKVQY
-	 wJ9iBVMZmGZfw==
-Date: Mon, 27 Nov 2023 18:25:48 +0530
+	b=REgXrkmo8zgxz/quppot1HYFagMuwmcoq+b1Q22Hak2LvB/ELseDd/oH03b5FSVXE
+	 SLhUXWcK8Y4Y6OqOInmHW5jWyHCuQOgV2MlGuYg36KUzXzU3OXYDU42PPTHx8epw2v
+	 Au2M/dc38dlMTGh7UL3cz+AM30Op799Kuxh6QKYWK/uUX2EGfEvmSnOJZdC+YIJkUU
+	 rYF2/GfdRZCQ1UstxPeqIKxHAmFe5KblBJXsDAhBgO9py64ct5NrenVLvbZIgdcmN8
+	 EeVgC7c3ElMuVwzfcsRvjUn+9T8ZN9OwaE/pqx8yJNnCT2IXGC10yA0W0en6nBUjnr
+	 hPUuAVYJE4pmg==
+Date: Mon, 27 Nov 2023 18:46:06 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Shengyang Chen <shengyang.chen@starfivetech.com>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
-	kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	p.zabel@pengutronix.de, minda.chen@starfivetech.com,
-	changhuang.liang@starfivetech.com, rogerq@kernel.org,
-	geert+renesas@glider.be, keith.zhao@starfivetech.com,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v1 2/2] phy: starfive: Add mipi dphy tx support
-Message-ID: <ZWSR1DSfGPCquWXT@matsya>
-References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
- <20231117130421.79261-3-shengyang.chen@starfivetech.com>
+To: Daniel Golle <daniel@makrotopia.org>
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Mark Lee <Mark-MC.Lee@mediatek.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Alexander Couzens <lynxis@fe80.eu>,
+	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [RFC PATCH 2/8] phy: add driver for MediaTek pextp 10GE SerDes
+ PHY
+Message-ID: <ZWSWltcNRQ5XcBdc@matsya>
+References: <cover.1699565880.git.daniel@makrotopia.org>
+ <0b112d39251b35b5d7975833ad6b4ab4717c029a.1699565880.git.daniel@makrotopia.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231117130421.79261-3-shengyang.chen@starfivetech.com>
+In-Reply-To: <0b112d39251b35b5d7975833ad6b4ab4717c029a.1699565880.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_045556_603918_05DC093E 
-X-CRM114-Status: GOOD (  27.00  )
+X-CRM114-CacheID: sfid-20231127_051613_743195_0D538888 
+X-CRM114-Status: GOOD (  33.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,622 +93,450 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-11-23, 21:04, Shengyang Chen wrote:
-> Add mipi dphy tx support for the StarFive JH7110 SoC.
-> It is used to transfer DSI data.
-
-How different is this from RX driver? Cant the support be added in the
-TX driver with a new compatible?
-
+On 09-11-23, 21:51, Daniel Golle wrote:
+> Add driver for MediaTek's pextp 10 Gigabit/s Ethernet SerDes PHY which
+> can be found in the MT7988 SoC.
 > 
-> Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
+> The PHY can operates only in PHY_MODE_ETHERNET, the submode is one of
+> PHY_INTERFACE_MODE_* corresponding to the supported modes:
+> 
+>  * USXGMII
+>  * 10GBase-R
+>  * 5GBase-R
+>  * 2500Base-X
+>  * 1000Base-X
+>  * Cisco SGMII (MAC side)
+> 
+> In order to work-around a performance issue present on the first of
+> two PEXTP present in MT7988 special tuning is applied which can be
+> selected by adding the mediatek,usxgmii-performance-errata property to
+> the device tree node.
+> 
+> There is no documentation what-so-ever for the pextp registers and
+> this driver is based on a GPL licensed implementation found in
+> MediaTek's SDK.
+> 
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 > ---
->  MAINTAINERS                               |   7 +
->  drivers/phy/starfive/Kconfig              |  10 +
->  drivers/phy/starfive/Makefile             |   1 +
->  drivers/phy/starfive/phy-jh7110-dphy-tx.c | 542 ++++++++++++++++++++++
->  4 files changed, 560 insertions(+)
->  create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
+>  MAINTAINERS                          |   1 +
+>  drivers/phy/mediatek/Kconfig         |  11 +
+>  drivers/phy/mediatek/Makefile        |   1 +
+>  drivers/phy/mediatek/phy-mtk-pextp.c | 355 +++++++++++++++++++++++++++
+>  4 files changed, 368 insertions(+)
+>  create mode 100644 drivers/phy/mediatek/phy-mtk-pextp.c
 > 
 > diff --git a/MAINTAINERS b/MAINTAINERS
-> index cfb533ec89e8..255c577afa49 100644
+> index 7b151710e8c58..6499acd8f3874 100644
 > --- a/MAINTAINERS
 > +++ b/MAINTAINERS
-> @@ -20677,6 +20677,13 @@ S:	Supported
->  F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
->  F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
+> @@ -13527,6 +13527,7 @@ L:	netdev@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/net/phy/mediatek-ge-soc.c
+>  F:	drivers/net/phy/mediatek-ge.c
+> +F:	drivers/phy/mediatek/phy-mediatek-pextp.c
 >  
-> +STARFIVE JH7110 DPHY TX DRIVER
-> +M:	Keith Zhao <keith.zhao@starfivetech.com>
-> +M:	Shengyang Chen <shengyang.chen@starfivetech.com>
-> +S:	Supported
-> +F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
-> +F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
-> +
->  STARFIVE JH7110 MMC/SD/SDIO DRIVER
->  M:	William Qiu <william.qiu@starfivetech.com>
->  S:	Supported
-> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
-> index 9508e2143011..d0cdd7cb4a13 100644
-> --- a/drivers/phy/starfive/Kconfig
-> +++ b/drivers/phy/starfive/Kconfig
-> @@ -15,6 +15,16 @@ config PHY_STARFIVE_JH7110_DPHY_RX
->  	  system. If M is selected, the module will be called
->  	  phy-jh7110-dphy-rx.ko.
+>  MEDIATEK I2C CONTROLLER DRIVER
+>  M:	Qii Wang <qii.wang@mediatek.com>
+> diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+> index 3125ecb5d119f..a7749a6d96541 100644
+> --- a/drivers/phy/mediatek/Kconfig
+> +++ b/drivers/phy/mediatek/Kconfig
+> @@ -13,6 +13,17 @@ config PHY_MTK_PCIE
+>  	  callback for PCIe GEN3 port, it supports software efuse
+>  	  initialization.
 >  
-> +config PHY_STARFIVE_JH7110_DPHY_TX
-> +	tristate "StarFive JH7110 D-PHY TX Support"
+> +config PHY_MTK_PEXTP
+> +	tristate "MediaTek PEXTP Driver"
+> +	depends on ARCH_MEDIATEK || COMPILE_TEST
+> +	depends on OF && OF_ADDRESS
 > +	depends on HAS_IOMEM
 > +	select GENERIC_PHY
-> +	select GENERIC_PHY_MIPI_DPHY
 > +	help
-> +	  Choose this option if you have a StarFive D-PHY TX in your
-> +	  system. If M is selected, the module will be called
-> +	  phy-jh7110-dphy-tx.ko.
+> +	  Say 'Y' here to add support for MediaTek pextp PHY driver.
+> +	  The driver provides access to the Ethernet SerDes PHY supporting
+> +	  various 1GE, 2.5GE, 5GE and 10GE modes.
 > +
->  config PHY_STARFIVE_JH7110_PCIE
->  	tristate "Starfive JH7110 PCIE 2.0/USB 3.0 PHY support"
->  	depends on HAS_IOMEM
-> diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
-> index b391018b7c47..eedc4a6fec15 100644
-> --- a/drivers/phy/starfive/Makefile
-> +++ b/drivers/phy/starfive/Makefile
-> @@ -1,4 +1,5 @@
->  # SPDX-License-Identifier: GPL-2.0
->  obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_RX)	+= phy-jh7110-dphy-rx.o
-> +obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_TX)	+= phy-jh7110-dphy-tx.o
->  obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)		+= phy-jh7110-pcie.o
->  obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)		+= phy-jh7110-usb.o
-> diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+>  config PHY_MTK_TPHY
+>  	tristate "MediaTek T-PHY Driver"
+>  	depends on ARCH_MEDIATEK || COMPILE_TEST
+> diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
+> index c9a50395533eb..ca60c7b9b02ac 100644
+> --- a/drivers/phy/mediatek/Makefile
+> +++ b/drivers/phy/mediatek/Makefile
+> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_MTK_PCIE)		+= phy-mtk-pcie.o
+>  obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
+>  obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
+>  obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
+> +obj-$(CONFIG_PHY_MTK_PEXTP)		+= phy-mtk-pextp.o
+>  
+>  phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
+>  phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt2701.o
+> diff --git a/drivers/phy/mediatek/phy-mtk-pextp.c b/drivers/phy/mediatek/phy-mtk-pextp.c
 > new file mode 100644
-> index 000000000000..69aa172563e4
+> index 0000000000000..272bff4f37a96
 > --- /dev/null
-> +++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
-> @@ -0,0 +1,542 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * DPHY TX driver for the StarFive JH7110 SoC
+> +++ b/drivers/phy/mediatek/phy-mtk-pextp.c
+> @@ -0,0 +1,355 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/* MediaTek 10GE SerDes PHY driver
 > + *
-> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
-> + * Author: Keith Zhao <keith.zhao@starfivetech.com>
-> + * Author: Shengyang Chen <shengyang.chen@starfivetech.com>
+> + * Copyright (c) 2023 Daniel Golle <daniel@makrotopia.org>
+> + * based on mtk_usxgmii.c found in MediaTek's SDK released under GPL-2.0
+> + * Copyright (c) 2022 MediaTek Inc.
+> + * Author: Henry Yen <henry.yen@mediatek.com>
 > + */
 > +
-> +#include <linux/clk.h>
-> +#include <linux/io.h>
-> +#include <linux/mfd/syscon.h>
 > +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_device.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/phy/phy-mipi-dphy.h>
+> +#include <linux/device.h>
+> +#include <linux/netdevice.h>
 > +#include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
-> +#include <linux/regulator/consumer.h>
+> +#include <linux/of.h>
+> +#include <linux/io.h>
+> +#include <linux/clk.h>
 > +#include <linux/reset.h>
+> +#include <linux/phy.h>
+> +#include <linux/phy/phy.h>
 > +
-> +#define STF_DPHY_APBIFSAIF_SYSCFG(x)			(x)
-> +
-> +#define  STF_DPHY_AON_POWER_READY_N_SHIFT		0x0U
-> +#define  STF_DPHY_AON_POWER_READY_N_MASK		BIT(0)
-> +#define  STF_DPHY_CFG_L0_SWAP_SEL_SHIFT			0xCU
-> +#define  STF_DPHY_CFG_L0_SWAP_SEL_MASK			GENMASK(14, 12)
-> +#define  STF_DPHY_CFG_L1_SWAP_SEL_SHIFT			0xFU
-> +#define  STF_DPHY_CFG_L1_SWAP_SEL_MASK			GENMASK(17, 15)
-> +#define  STF_DPHY_CFG_L2_SWAP_SEL_SHIFT			0x12U
-> +#define  STF_DPHY_CFG_L2_SWAP_SEL_MASK			GENMASK(20, 18)
-> +#define  STF_DPHY_CFG_L3_SWAP_SEL_SHIFT			0x15U
-> +#define  STF_DPHY_CFG_L3_SWAP_SEL_MASK			GENMASK(23, 21)
-> +#define  STF_DPHY_CFG_L4_SWAP_SEL_SHIFT			0x18U
-> +#define  STF_DPHY_CFG_L4_SWAP_SEL_MASK			GENMASK(26, 24)
-> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT		0x12U
-> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK		BIT(18)
-> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT		0x13U
-> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK		GENMASK(23, 19)
-> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT		0x18U
-> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK		GENMASK(28, 24)
-> +
-> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT		0x5U
-> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK		GENMASK(9, 5)
-> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT		0xAU
-> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK		GENMASK(14, 10)
-> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT		0xFU
-> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK		GENMASK(19, 15)
-> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT		0x14U
-> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK		GENMASK(24, 20)
-> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT		0x19U
-> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK		GENMASK(29, 25)
-> +
-> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT		0x0U
-> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK		GENMASK(4, 0)
-> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT		0x5U
-> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK		GENMASK(9, 5)
-> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT		0x0U
-> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK		GENMASK(23, 0)
-> +
-> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT		0x0U
-> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK		GENMASK(8, 0)
-> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT		0x9U
-> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_MASK		BIT(9)
-> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT	0xAU
-> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK	BIT(10)
-> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT		0xBU
-> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK		GENMASK(12, 11)
-> +
-> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT		0x12U
-> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK		0x40000U
-> +
-> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT	0x0U
-> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK	GENMASK(7, 0)
-> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT	0x8U
-> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK		GENMASK(15, 8)
-> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT		0x10U
-> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK		GENMASK(23, 16)
-> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT		0x18U
-> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK		GENMASK(31, 24)
-> +
-> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT		0x0U
-> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK		GENMASK(7, 0)
-> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT		0x8U
-> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK		GENMASK(15, 8)
-> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT		0x10U
-> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK		GENMASK(23, 16)
-> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT		0x18U
-> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK		GENMASK(31, 24)
-> +
-> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT		0x0U
-> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_MASK		GENMASK(2, 0)
-> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT		0x0U
-> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK		GENMASK(31, 0)
-> +
-> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT	0x1U
-> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK		GENMASK(2, 1)
-> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT		0x3U
-> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_MASK		GENMASK(4, 3)
-> +
-> +#define  STF_DPHY_REFCLK_IN_SEL_SHIFT			0x1AU
-> +#define  STF_DPHY_REFCLK_IN_SEL_MASK			GENMASK(28, 26)
-> +#define  STF_DPHY_RESETB_SHIFT				0x1DU
-> +#define  STF_DPHY_RESETB_MASK				BIT(29)
-> +
-> +#define STF_DPHY_REFCLK_12M				1
-> +#define STF_DPHY_BITRATE_ALIGN				10000000
-> +
-> +#define STF_MAP_LANES_NUM				5
-> +
-> +struct m31_dphy_config {
-> +	int ref_clk;
-> +	unsigned long bitrate;
-> +	u32 pll_prev_div;
-> +	u32 pll_fbk_int;
-> +	u32 pll_fbk_fra;
-> +	u32 extd_cycle_sel;
-> +	u32 dlane_hs_pre_time;
-> +	u32 dlane_hs_zero_time;
-> +	u32 dlane_hs_trail_time;
-> +	u32 clane_hs_pre_time;
-> +	u32 clane_hs_zero_time;
-> +	u32 clane_hs_trail_time;
-> +	u32 clane_hs_clk_pre_time;
-> +	u32 clane_hs_clk_post_time;
+> +struct mtk_pextp_phy {
+> +	void __iomem		*base;
+> +	struct device		*dev;
+> +	struct reset_control	*reset;
+> +	struct clk		*clk;
+> +	bool			da_war;
 > +};
 > +
-> +static const struct m31_dphy_config m31_dphy_configs[] = {
-> +	{12000000, 490000000, 0x0, 0xa3, 0x55 << 16 | 0x55 << 8 | 0x55,
-> +	 0x2, 0xc, 0x1d, 0x14, 0x8, 0x42, 0x12, 0x3, 0x28},
-> +	{12000000, 680000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
-> +	 0x1, 0x8, 0x13, 0xe, 0x5, 0x2e, 0xd, 0x1, 0x16},
-> +	{12000000, 750000000, 0x0, 0x7d, 0x0 << 16 | 0x0 << 8 | 0x0,
-> +	 0x1, 0x8, 0x16, 0xf, 0x6, 0x32, 0xe, 0x1, 0x17},
-> +	{12000000, 900000000, 0x0, 0x96, 0x0 << 16 | 0x0 << 8 | 0x0,
-> +	 0x1, 0xa, 0x19, 0x12, 0x8, 0x3c, 0x10, 0x1, 0x19},
-> +};
-> +
-> +struct stf_dphy_info {
-> +	/**
-> +	 * @maps:
-> +	 *
-> +	 * Physical lanes and logic lanes mapping table.
-> +	 *
-> +	 * The default order is:
-> +	 * [data lane 0, data lane 1, data lane 2, date lane 3, clk lane]
-> +	 */
-> +	u8 maps[STF_MAP_LANES_NUM];
-> +};
-> +
-> +struct stf_dphy {
-> +	struct device *dev;
-> +	void __iomem *topsys;
-> +	struct clk *txesc_clk;
-> +	struct reset_control *sys_rst;
-> +	struct reset_control *txbytehs_rst;
-> +
-> +	struct phy_configure_opts_mipi_dphy config;
-> +
-> +	struct regulator *mipitx_1p8;
-> +	struct regulator *mipitx_0p9;
-> +
-> +	struct phy *phy;
-> +	const struct stf_dphy_info *info;
-> +};
-> +
-> +static inline u32 stf_dphy_get_reg(void *io_addr, u32 addr, u32 shift, u32 mask)
+> +static inline bool mtk_interface_mode_is_xgmii(phy_interface_t interface)
 > +{
-> +	u32 tmp;
-> +
-> +	tmp = readl(io_addr);
-> +	tmp = (tmp & mask) >> shift;
-> +	return tmp;
-> +}
-> +
-> +static inline void stf_dphy_set_reg(void *io_addr, u32 addr, u32 data, u32 shift, u32 mask)
-> +{
-> +	u32 tmp;
-> +
-> +	tmp = readl(io_addr + addr);
-> +	tmp &= ~mask;
-> +	tmp |= (data << shift) & mask;
-> +	writel(tmp, (io_addr + addr));
-> +}
-> +
-> +static int is_pll_locked(struct stf_dphy *dphy)
-> +{
-> +	int tmp = stf_dphy_get_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8),
-> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT,
-> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK);
-> +	return !tmp;
-> +}
-> +
-> +static void stf_dphy_hw_reset(struct stf_dphy *dphy, int assert)
-> +{
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
-> +			 !assert, STF_DPHY_RESETB_SHIFT, STF_DPHY_RESETB_MASK);
-> +
-> +	if (!assert) {
-> +		/*the lock-in time of pll of M31 is 20us-50ms*/
-> +		while ((!is_pll_locked(dphy)) && msecs_to_jiffies(50))
-> +			;
-> +		dev_err(dphy->dev, "MIPI dphy-tx # PLL Locked\n");
+> +	switch (interface) {
+> +	case PHY_INTERFACE_MODE_INTERNAL:
+> +	case PHY_INTERFACE_MODE_USXGMII:
+> +	case PHY_INTERFACE_MODE_10GBASER:
+> +	case PHY_INTERFACE_MODE_5GBASER:
+> +		return true;
+> +	default:
+> +		return false;
 > +	}
 > +}
 > +
-> +static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+> +static void mtk_pextp_setup(struct mtk_pextp_phy *pextp, phy_interface_t interface)
 > +{
-> +	struct stf_dphy *dphy;
-> +	u32 bitrate;
-> +	unsigned long alignment;
-> +	int i;
-> +	const struct m31_dphy_config *p;
-> +	const u32 STF_DPHY_AON_POWER_READY_N_active = 0;
-> +	const struct stf_dphy_info *info;
+> +	bool is_10g = (interface == PHY_INTERFACE_MODE_10GBASER ||
+> +		       interface == PHY_INTERFACE_MODE_USXGMII);
+> +	bool is_2p5g = (interface == PHY_INTERFACE_MODE_2500BASEX);
+> +	bool is_5g = (interface == PHY_INTERFACE_MODE_5GBASER);
 > +
-> +	dphy = phy_get_drvdata(phy);
-> +	info = dphy->info;
-> +	bitrate = opts->mipi_dphy.hs_clk_rate;
+> +	dev_dbg(pextp->dev, "setting up for mode %s\n", phy_modes(interface));
 > +
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
-> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
-> +			 STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
-> +			 STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
-> +			 STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
-> +			 STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK);
+> +	/* Setup operation mode */
+> +	if (is_10g)
+> +		iowrite32(0x00C9071C, pextp->base + 0x9024);
+
+what are these magic numbers? also lower case hex values pls
+
+> +	else
+> +		iowrite32(0x00D9071C, pextp->base + 0x9024);
 > +
-> +	alignment = STF_DPHY_BITRATE_ALIGN;
-> +	if (bitrate % alignment)
-> +		bitrate += alignment - (bitrate % alignment);
+> +	if (is_5g)
+> +		iowrite32(0xAAA5A5AA, pextp->base + 0x2020);
+> +	else
+> +		iowrite32(0xAA8585AA, pextp->base + 0x2020);
 > +
-> +	p = m31_dphy_configs;
-> +	for (i = 0; i < ARRAY_SIZE(m31_dphy_configs); i++, p++) {
-> +		if (p->bitrate == bitrate) {
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
-> +					 STF_DPHY_REFCLK_12M, STF_DPHY_REFCLK_IN_SEL_SHIFT,
-> +					 STF_DPHY_REFCLK_IN_SEL_MASK);
-> +
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0),
-> +					 STF_DPHY_AON_POWER_READY_N_active,
-> +					 STF_DPHY_AON_POWER_READY_N_SHIFT,
-> +					 STF_DPHY_AON_POWER_READY_N_MASK);
-> +
-> +			/*Lane setting*/
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[0],
-> +					 STF_DPHY_CFG_L0_SWAP_SEL_SHIFT,
-> +					 STF_DPHY_CFG_L0_SWAP_SEL_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[1],
-> +					 STF_DPHY_CFG_L1_SWAP_SEL_SHIFT,
-> +					 STF_DPHY_CFG_L1_SWAP_SEL_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[2],
-> +					 STF_DPHY_CFG_L2_SWAP_SEL_SHIFT,
-> +					 STF_DPHY_CFG_L2_SWAP_SEL_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[3],
-> +					 STF_DPHY_CFG_L3_SWAP_SEL_SHIFT,
-> +					 STF_DPHY_CFG_L3_SWAP_SEL_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[4],
-> +					 STF_DPHY_CFG_L4_SWAP_SEL_SHIFT,
-> +					 STF_DPHY_CFG_L4_SWAP_SEL_MASK);
-> +			/*PLL setting*/
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(28), 0x0,
-> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
-> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
-> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_MASK);
-> +
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
-> +					 p->pll_prev_div, STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
-> +					 p->pll_fbk_int, STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(20),
-> +					 p->pll_fbk_fra, STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT,
-> +					 STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(40),
-> +					 p->extd_cycle_sel, STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT,
-> +					 STF_DPHY_RG_EXTD_CYCLE_SEL_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
-> +					 p->dlane_hs_pre_time,
-> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
-> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
-> +					 p->dlane_hs_pre_time,
-> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
-> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
-> +					 p->dlane_hs_zero_time,
-> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT,
-> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
-> +					 p->dlane_hs_trail_time,
-> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT,
-> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
-> +					 p->clane_hs_pre_time,
-> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT,
-> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
-> +					 p->clane_hs_zero_time,
-> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT,
-> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
-> +					 p->clane_hs_trail_time,
-> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT,
-> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
-> +					 p->clane_hs_clk_pre_time,
-> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT,
-> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK);
-> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
-> +					 p->clane_hs_clk_post_time,
-> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT,
-> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK);
-> +
-> +			break;
-> +		}
+> +	if (is_2p5g || is_5g || is_10g) {
+> +		iowrite32(0x0C020707, pextp->base + 0x2030);
+> +		iowrite32(0x0E050F0F, pextp->base + 0x2034);
+> +		iowrite32(0x00140032, pextp->base + 0x2040);
+> +	} else {
+> +		iowrite32(0x0C020207, pextp->base + 0x2030);
+> +		iowrite32(0x0E05050F, pextp->base + 0x2034);
+> +		iowrite32(0x00200032, pextp->base + 0x2040);
 > +	}
 > +
-> +	return 0;
+> +	if (is_2p5g || is_10g)
+> +		iowrite32(0x00C014AA, pextp->base + 0x50F0);
+> +	else if (is_5g)
+> +		iowrite32(0x00C018AA, pextp->base + 0x50F0);
+> +	else
+> +		iowrite32(0x00C014BA, pextp->base + 0x50F0);
+> +
+> +	if (is_5g) {
+> +		iowrite32(0x3777812B, pextp->base + 0x50E0);
+> +		iowrite32(0x005C9CFF, pextp->base + 0x506C);
+> +		iowrite32(0x9DFAFAFA, pextp->base + 0x5070);
+> +		iowrite32(0x273F3F3F, pextp->base + 0x5074);
+> +		iowrite32(0xA8883868, pextp->base + 0x5078);
+> +		iowrite32(0x14661466, pextp->base + 0x507C);
+> +	} else {
+> +		iowrite32(0x3777C12B, pextp->base + 0x50E0);
+> +		iowrite32(0x005F9CFF, pextp->base + 0x506C);
+> +		iowrite32(0x9D9DFAFA, pextp->base + 0x5070);
+> +		iowrite32(0x27273F3F, pextp->base + 0x5074);
+> +		iowrite32(0xA7883C68, pextp->base + 0x5078);
+> +		iowrite32(0x11661166, pextp->base + 0x507C);
+> +	}
+> +
+> +	if (is_2p5g || is_10g) {
+> +		iowrite32(0x0E000AAF, pextp->base + 0x5080);
+> +		iowrite32(0x08080D0D, pextp->base + 0x5084);
+> +		iowrite32(0x02030909, pextp->base + 0x5088);
+> +	} else if (is_5g) {
+> +		iowrite32(0x0E001ABF, pextp->base + 0x5080);
+> +		iowrite32(0x080B0D0D, pextp->base + 0x5084);
+> +		iowrite32(0x02050909, pextp->base + 0x5088);
+> +	} else {
+> +		iowrite32(0x0E000EAF, pextp->base + 0x5080);
+> +		iowrite32(0x08080E0D, pextp->base + 0x5084);
+> +		iowrite32(0x02030B09, pextp->base + 0x5088);
+> +	}
+> +
+> +	if (is_5g) {
+> +		iowrite32(0x0C000000, pextp->base + 0x50E4);
+> +		iowrite32(0x04000000, pextp->base + 0x50E8);
+> +	} else {
+> +		iowrite32(0x0C0C0000, pextp->base + 0x50E4);
+> +		iowrite32(0x04040000, pextp->base + 0x50E8);
+> +	}
+> +
+> +	if (is_2p5g || mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x0F0F0C06, pextp->base + 0x50EC);
+> +	else
+> +		iowrite32(0x0F0F0606, pextp->base + 0x50EC);
+> +
+> +	if (is_5g) {
+> +		iowrite32(0x50808C8C, pextp->base + 0x50A8);
+> +		iowrite32(0x18000000, pextp->base + 0x6004);
+> +	} else {
+> +		iowrite32(0x506E8C8C, pextp->base + 0x50A8);
+> +		iowrite32(0x18190000, pextp->base + 0x6004);
+> +	}
+> +
+> +	if (is_10g)
+> +		iowrite32(0x01423342, pextp->base + 0x00F8);
+> +	else if (is_5g)
+> +		iowrite32(0x00A132A1, pextp->base + 0x00F8);
+> +	else if (is_2p5g)
+> +		iowrite32(0x009C329C, pextp->base + 0x00F8);
+> +	else
+> +		iowrite32(0x00FA32FA, pextp->base + 0x00F8);
+> +
+> +	/* Force SGDT_OUT off and select PCS */
+> +	if (mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x80201F20, pextp->base + 0x00F4);
+> +	else
+> +		iowrite32(0x80201F21, pextp->base + 0x00F4);
+> +
+> +	/* Force GLB_CKDET_OUT */
+> +	iowrite32(0x00050C00, pextp->base + 0x0030);
+> +
+> +	/* Force AEQ on */
+> +	iowrite32(0x02002800, pextp->base + 0x0070);
+> +	ndelay(1020);
+> +
+> +	/* Setup DA default value */
+> +	iowrite32(0x00000020, pextp->base + 0x30B0);
+> +	iowrite32(0x00008A01, pextp->base + 0x3028);
+> +	iowrite32(0x0000A884, pextp->base + 0x302C);
+> +	iowrite32(0x00083002, pextp->base + 0x3024);
+> +	if (mtk_interface_mode_is_xgmii(interface)) {
+> +		iowrite32(0x00022220, pextp->base + 0x3010);
+> +		iowrite32(0x0F020A01, pextp->base + 0x5064);
+> +		iowrite32(0x06100600, pextp->base + 0x50B4);
+> +		if (interface == PHY_INTERFACE_MODE_USXGMII)
+> +			iowrite32(0x40704000, pextp->base + 0x3048);
+> +		else
+> +			iowrite32(0x47684100, pextp->base + 0x3048);
+> +	} else {
+> +		iowrite32(0x00011110, pextp->base + 0x3010);
+> +		iowrite32(0x40704000, pextp->base + 0x3048);
+> +	}
+> +
+> +	if (!mtk_interface_mode_is_xgmii(interface) && !is_2p5g)
+> +		iowrite32(0x0000C000, pextp->base + 0x3064);
+> +
+> +	if (interface == PHY_INTERFACE_MODE_USXGMII) {
+> +		iowrite32(0xA8000000, pextp->base + 0x3050);
+> +		iowrite32(0x000000AA, pextp->base + 0x3054);
+> +	} else if (mtk_interface_mode_is_xgmii(interface)) {
+> +		iowrite32(0x00000000, pextp->base + 0x3050);
+> +		iowrite32(0x00000000, pextp->base + 0x3054);
+> +	} else {
+> +		iowrite32(0xA8000000, pextp->base + 0x3050);
+> +		iowrite32(0x000000AA, pextp->base + 0x3054);
+> +	}
+> +
+> +	if (mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x00000F00, pextp->base + 0x306C);
+> +	else if (is_2p5g)
+> +		iowrite32(0x22000F00, pextp->base + 0x306C);
+> +	else
+> +		iowrite32(0x20200F00, pextp->base + 0x306C);
+> +
+> +	if (interface == PHY_INTERFACE_MODE_10GBASER && pextp->da_war)
+> +		iowrite32(0x0007B400, pextp->base + 0xA008);
+> +
+> +	if (mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x00040000, pextp->base + 0xA060);
+> +	else
+> +		iowrite32(0x00050000, pextp->base + 0xA060);
+> +
+> +	if (is_10g)
+> +		iowrite32(0x00000001, pextp->base + 0x90D0);
+> +	else if (is_5g)
+> +		iowrite32(0x00000003, pextp->base + 0x90D0);
+> +	else if (is_2p5g)
+> +		iowrite32(0x00000005, pextp->base + 0x90D0);
+> +	else
+> +		iowrite32(0x00000007, pextp->base + 0x90D0);
+> +
+> +	/* Release reset */
+> +	iowrite32(0x0200E800, pextp->base + 0x0070);
+> +	usleep_range(150, 500);
+> +
+> +	/* Switch to P0 */
+> +	iowrite32(0x0200C111, pextp->base + 0x0070);
+> +	ndelay(1020);
+> +	iowrite32(0x0200C101, pextp->base + 0x0070);
+> +	usleep_range(15, 50);
+> +
+> +	if (mtk_interface_mode_is_xgmii(interface)) {
+> +		/* Switch to Gen3 */
+> +		iowrite32(0x0202C111, pextp->base + 0x0070);
+> +	} else {
+> +		/* Switch to Gen2 */
+> +		iowrite32(0x0201C111, pextp->base + 0x0070);
+> +	}
+> +	ndelay(1020);
+> +	if (mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x0202C101, pextp->base + 0x0070);
+> +	else
+> +		iowrite32(0x0201C101, pextp->base + 0x0070);
+> +	usleep_range(100, 500);
+> +	iowrite32(0x00000030, pextp->base + 0x30B0);
+> +	if (mtk_interface_mode_is_xgmii(interface))
+> +		iowrite32(0x80201F00, pextp->base + 0x00F4);
+> +	else
+> +		iowrite32(0x80201F01, pextp->base + 0x00F4);
+> +
+> +	iowrite32(0x30000000, pextp->base + 0x3040);
+> +	usleep_range(400, 1000);
 > +}
 > +
-> +static int stf_dphy_init(struct phy *phy)
+> +static int mtk_pextp_set_mode(struct phy *phy, enum phy_mode mode, int submode)
 > +{
-> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
-> +	int ret;
+> +	struct mtk_pextp_phy *pextp = phy_get_drvdata(phy);
 > +
-> +	stf_dphy_hw_reset(dphy, 0);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
-> +			 STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT, STF_DPHY_SCFG_PPI_C_READY_SEL_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
-> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT,
-> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK);
-> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(44), 0x30,
-> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT,
-> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK);
-> +
-> +	ret = clk_prepare_enable(dphy->txesc_clk);
-> +	if (ret) {
-> +		dev_err(dphy->dev, "Failed to prepare/enable txesc_clk\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = reset_control_deassert(dphy->sys_rst);
-> +	if (ret) {
-> +		dev_err(dphy->dev, "Failed to deassert sys_rst\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = reset_control_deassert(dphy->txbytehs_rst);
-> +	if (ret < 0) {
-> +		dev_err(dphy->dev, "Failed to deassert txbytehs_rst\n");
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int stf_dphy_exit(struct phy *phy)
-> +{
-> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = reset_control_assert(dphy->txbytehs_rst);
-> +	if (ret < 0) {
-> +		dev_err(dphy->dev, "Failed to assert txbytehs_rst\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = reset_control_assert(dphy->sys_rst);
-> +	if (ret) {
-> +		dev_err(dphy->dev, "Failed to assert sys_rst\n");
-> +		return ret;
-> +	}
-> +
-> +	clk_disable_unprepare(dphy->txesc_clk);
-> +
-> +	stf_dphy_hw_reset(dphy, 1);
-> +
-> +	return 0;
-> +}
-> +
-> +static int stf_dphy_power_on(struct phy *phy)
-> +{
-> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = pm_runtime_resume_and_get(dphy->dev);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = regulator_enable(dphy->mipitx_0p9);
-> +	if (ret) {
-> +		dev_err(dphy->dev, "Cannot enable mipitx_0p9 regulator\n");
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int stf_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
-> +			     union phy_configure_opts *opts)
-> +{
-> +	if (mode != PHY_MODE_MIPI_DPHY)
+> +	if (mode != PHY_MODE_ETHERNET)
 > +		return -EINVAL;
 > +
-> +	return 0;
+> +	switch (submode) {
+> +	case PHY_INTERFACE_MODE_1000BASEX:
+> +	case PHY_INTERFACE_MODE_2500BASEX:
+> +	case PHY_INTERFACE_MODE_SGMII:
+> +	case PHY_INTERFACE_MODE_5GBASER:
+> +	case PHY_INTERFACE_MODE_10GBASER:
+> +	case PHY_INTERFACE_MODE_USXGMII:
+> +		mtk_pextp_setup(pextp, submode);
+> +		return 0;
+> +	default:
+> +		return -EINVAL;
+> +	}
 > +}
 > +
-> +static int stf_dphy_power_off(struct phy *phy)
+> +static int mtk_pextp_reset(struct phy *phy)
 > +{
-> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	struct mtk_pextp_phy *pextp = phy_get_drvdata(phy);
 > +
-> +	regulator_disable(dphy->mipitx_0p9);
-> +
-> +	pm_runtime_put_sync(dphy->dev);
+> +	reset_control_assert(pextp->reset);
+> +	usleep_range(100, 500);
+> +	reset_control_deassert(pextp->reset);
+> +	mdelay(10);
 > +
 > +	return 0;
 > +}
 > +
-> +static const struct phy_ops stf_dphy_ops = {
-> +	.power_on	= stf_dphy_power_on,
-> +	.power_off	= stf_dphy_power_off,
-> +	.init		= stf_dphy_init,
-> +	.exit		= stf_dphy_exit,
-> +	.configure	= stf_dphy_configure,
-> +	.validate	= stf_dphy_validate,
+> +static int mtk_pextp_power_on(struct phy *phy)
+> +{
+> +	struct mtk_pextp_phy *pextp = phy_get_drvdata(phy);
+> +
+> +	return clk_prepare_enable(pextp->clk);
+> +}
+> +
+> +static int mtk_pextp_power_off(struct phy *phy)
+> +{
+> +	struct mtk_pextp_phy *pextp = phy_get_drvdata(phy);
+> +
+> +	clk_disable_unprepare(pextp->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops mtk_pextp_ops = {
+> +	.power_on	= mtk_pextp_power_on,
+> +	.power_off	= mtk_pextp_power_off,
+> +	.set_mode	= mtk_pextp_set_mode,
+> +	.reset		= mtk_pextp_reset,
 > +	.owner		= THIS_MODULE,
 > +};
 > +
-> +static int stf_dphy_probe(struct platform_device *pdev)
+> +static int mtk_pextp_probe(struct platform_device *pdev)
 > +{
+> +	struct device_node *np = pdev->dev.of_node;
 > +	struct phy_provider *phy_provider;
-> +	struct stf_dphy *dphy;
-> +	int ret;
+> +	struct mtk_pextp_phy *pextp;
+> +	struct phy *phy;
 > +
-> +	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
-> +	if (!dphy)
+> +	if (!np)
+> +		return -ENODEV;
+> +
+> +	pextp = devm_kzalloc(&pdev->dev, sizeof(*pextp), GFP_KERNEL);
+> +	if (!pextp)
 > +		return -ENOMEM;
 > +
-> +	dphy->info = of_device_get_match_data(&pdev->dev);
+> +	pextp->base = devm_of_iomap(&pdev->dev, np, 0, NULL);
+> +	if (!pextp->base)
+> +		return -EIO;
 > +
-> +	dphy->dev = &pdev->dev;
-> +	dev_set_drvdata(&pdev->dev, dphy);
+> +	pextp->dev = &pdev->dev;
+> +	pextp->clk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(pextp->clk))
+> +		return PTR_ERR(pextp->clk);
 > +
-> +	dphy->topsys = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(dphy->topsys)) {
-> +		ret = PTR_ERR(dphy->topsys);
-> +		return ret;
-> +	}
+> +	pextp->reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
+> +	if (IS_ERR(pextp->reset))
+> +		return PTR_ERR(pextp->reset);
 > +
-> +	pm_runtime_enable(&pdev->dev);
+> +	pextp->da_war = of_property_read_bool(np, "mediatek,usxgmii-performance-errata");
 > +
-> +	dphy->mipitx_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
-> +	if (IS_ERR(dphy->mipitx_0p9)) {
-> +		ret = PTR_ERR(dphy->mipitx_0p9);
-> +		return ret;
-> +	}
+> +	phy = devm_phy_create(&pdev->dev, NULL, &mtk_pextp_ops);
+> +	if (IS_ERR(phy))
+> +		return PTR_ERR(phy);
 > +
-> +	dphy->txesc_clk = devm_clk_get(&pdev->dev, "dphy_txesc");
-> +	if (IS_ERR(dphy->txesc_clk)) {
-> +		ret = PTR_ERR(dphy->txesc_clk);
-> +		dev_err(&pdev->dev, "txesc_clk get error\n");
-> +		return ret;
-> +	}
-> +
-> +	dphy->sys_rst = reset_control_get_exclusive(&pdev->dev, "dphy_sys");
-> +	if (IS_ERR(dphy->sys_rst)) {
-> +		ret = PTR_ERR(dphy->sys_rst);
-> +		dev_err(&pdev->dev, "sys_rst get error\n");
-> +		return ret;
-> +	}
-> +
-> +	dphy->txbytehs_rst = reset_control_get_exclusive(&pdev->dev, "dsi_txbytehs");
-> +	if (IS_ERR(dphy->txbytehs_rst)) {
-> +		dev_err(&pdev->dev, "Failed to get txbytehs_rst\n");
-> +		return PTR_ERR(dphy->txbytehs_rst);
-> +	}
-> +
-> +	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
-> +	if (IS_ERR(dphy->phy)) {
-> +		ret = PTR_ERR(dphy->phy);
-> +		dev_err(&pdev->dev, "Failed to create phy\n");
-> +		return ret;
-> +	}
-> +	phy_set_drvdata(dphy->phy, dphy);
+> +	phy_set_drvdata(phy, pextp);
 > +
 > +	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
-> +	if (IS_ERR(phy_provider)) {
-> +		ret = PTR_ERR(phy_provider);
-> +		dev_err(&pdev->dev, "Failed to create phy\n");
-> +		return ret;
-> +	}
 > +
 > +	return PTR_ERR_OR_ZERO(phy_provider);
 > +}
 > +
-> +static const struct stf_dphy_info starfive_dphy_info = {
-> +	.maps = {0, 1, 2, 3, 4},
+> +static const struct of_device_id mtk_pextp_match[] = {
+> +	{ .compatible = "mediatek,mt7988-xfi-pextp", },
+> +	{ }
 > +};
+> +MODULE_DEVICE_TABLE(of, mtk_pextp_match);
 > +
-> +static const struct of_device_id stf_dphy_dt_ids[] = {
-> +	{
-> +		.compatible = "starfive,jh7110-dphy-tx",
-> +		.data = &starfive_dphy_info,
-> +	},
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
-> +
-> +static struct platform_driver stf_dphy_driver = {
+> +static struct platform_driver mtk_pextp_driver = {
+> +	.probe = mtk_pextp_probe,
 > +	.driver = {
-> +		.name	= "starfive-dphy-tx",
-> +		.of_match_table = stf_dphy_dt_ids,
+> +		.name = "mtk-pextp",
+> +		.of_match_table = mtk_pextp_match,
 > +	},
-> +	.probe = stf_dphy_probe,
 > +};
-> +module_platform_driver(stf_dphy_driver);
+> +module_platform_driver(mtk_pextp_driver);
 > +
-> +MODULE_AUTHOR("Keith Zhao <keith.zhao@starfivetech.com>");
-> +MODULE_AUTHOR("Shengyang Chen <shengyang.chen@starfivetech.com>");
-> +MODULE_DESCRIPTION("StarFive JH7110 DPHY TX driver");
+> +MODULE_DESCRIPTION("MediaTek pextp SerDes PHY driver");
+> +MODULE_AUTHOR("Daniel Golle <daniel@makrotopia.org>");
 > +MODULE_LICENSE("GPL");
 > -- 
-> 2.17.1
+> 2.42.1
 
 -- 
 ~Vinod
