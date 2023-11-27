@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CAE3C4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:22:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9739CC0755A
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:22:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LeW4+4u/mtKZj30eRBvdc1oafYaZzNquW5dWlxcXjg0=; b=GlK5VDnR27Mbym
-	dGInYhHBtmnbz8NVtIq1zCWs4pFstBHbgZffUQevVaiFRGKo/MdyWJyUwmaI1b1BlaOJPlCg/Wr0X
-	Jbj/RDIjqVMsA6blTet5QYTM05OIdTZEcwA2yluJwxXw3w4eDUBvyZn0OpbtTxPss0HwHZLDbFT9C
-	3vW4ig4Y8B7ElRBrb0N0Tv5XVe7/1TCxrzVXm6nUSyf/b/M3qIhBps6E7UBo/nAi0RWtIJ992Ajm/
-	ShZCxWMgV3Fci2uV0ipY+uURjmzB59lQmuPuX1JR+ihUZC9K1STA4PTzyVI82260HvTJxDNQ21fKi
-	LPysUL8OiVz9dNT0eCwg==;
+	List-Owner; bh=RmcnTYh1eUWtkGmSGh+ZOMC6haZiFfhn77dl4laNcfM=; b=S9yVVQb17qusbF
+	HiKnI/TK0PVS7p/MSlQDOk4VBHCiuvwK9oj7mkPCzqZVTU0FqYOfbJVekrui0ZmrioiPx/BK7W8JD
+	TZi4T6UPVH9thDNWRarQuDJfq3YoY7fm66hG1ir+QzHqKd4W/q+yyWs2ikEmV1NZ/nOIAnBl1gA+M
+	fCCzhjYDNJYlnGLTp/++SPQ0jzLjRZkUQSb0MPKKV4FLroPsSN55Ov+WQpV+w8uFIMz3Usph0Sfmc
+	vQ5K0OEfZDamgsDyMwwbNeykrGpO/Tv9LH52vAUBj/pw5hgdJnAxZl4gcegZqoI61Lsic/HXBiRdl
+	rR7HZIT+1Qd/VND9y5oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZO-002YSw-1S;
-	Mon, 27 Nov 2023 13:22:39 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1r7bZQ-002YUE-0S;
+	Mon, 27 Nov 2023 13:22:40 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZH-002YNL-2A;
-	Mon, 27 Nov 2023 13:22:33 +0000
+	id 1r7bZN-002YRb-1Y
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Nov 2023 13:22:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 26FB1CE0EBC;
-	Mon, 27 Nov 2023 13:22:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 756C5C433C8;
-	Mon, 27 Nov 2023 13:22:20 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id EBEE0611D9;
+	Mon, 27 Nov 2023 13:22:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 78255C433CD;
+	Mon, 27 Nov 2023 13:22:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701091347;
-	bh=2JKjpQ+5QKANLP+xGmPCkybvq6kf6sMCsdtq+PhVm3o=;
+	s=k20201202; t=1701091356;
+	bh=35mSssdQ32iia6B41JAGWk9Z95xz7+xMRF65KM9/eUM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=bCbLnI25DgO/3NhVtGI6COesZn76ioTqblgX0vP1w6UCsafKA1UsKw7/uB3q5Si7E
-	 p3Kwxii8gLbZ2pI48nGZ95j7tCxkjRhPDeDT7MIb1pu3byNgX7F9a4EJOuREIhO0KE
-	 omLxzqv8kaY+/4fjVKkhTbtcao3YOMTD+yEee7TTDbDD0gN9sSx0tOisOzv+002ZU9
-	 NSNR9SnqbE5j0LVkbDbzY9ZBG53CmO/nLruMScsiR115l2tUbzLKTvIGkd4MoZGRKI
-	 eyfyZQWOIpSFd+X71z4OeyFouedfd4sC93e34la6eVNuzs3w8/gDNq1j5lW7DL4YbT
-	 QcrR/GgjDKUdg==
+	b=u0kxVcFL1u3Tut+idFGtQrKOgeBXK0Q9kX+gNESLPwytck9pOdMAca5r40EtdASty
+	 CbcOWKmsPxbKTUbfCulvFSxoUul56xoqpvpopxl0oDfDglqR/v4xSVleH0dWh2NWST
+	 b0llnAQ7g0CSlov87WUFzoSYZqj39oRfuSZH+PVUjprQeAs2aKMgZR6FbP/nbriYXw
+	 e56EiPxa6C6qhNr4SeJxixN2MPPxMt3JSdkr1jmGrfxA29VgIkGrucdMDQynZG3LE/
+	 qhRPct7jH048cWmt4ZsU1fQsJqnhF6tOjK/FF/MPwAWWp5tiUzsA4om8xI+1q2iPCR
+	 RCoEcx0JZ3u4Q==
 From: Vinod Koul <vkoul@kernel.org>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, 
- Daniel Vetter <daniel@ffwll.ch>, Lee Jones <lee@kernel.org>, 
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Alex Bee <knaerzche@gmail.com>
-Cc: Elaine Zhang <zhangqing@rock-chips.com>, 
- Johan Jonker <jbx6244@gmail.com>, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- alsa-devel@alsa-project.org, linux-clk@vger.kernel.org, 
- linux-phy@lists.infradead.org
-In-Reply-To: <20230829171647.187787-1-knaerzche@gmail.com>
-References: <20230829171647.187787-1-knaerzche@gmail.com>
-Subject: Re: (subset) [PATCH 00/31] Fix and improve Rockchip RK3128 support
-Message-Id: <170109134007.42627.12929766893521974712.b4-ty@kernel.org>
-Date: Mon, 27 Nov 2023 18:52:20 +0530
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+ conor+dt@kernel.org, gregkh@linuxfoundation.org, abel.vesa@linaro.org, 
+ quic_wcheng@quicinc.com, dmitry.baryshkov@linaro.org, 
+ Rohit Agarwal <quic_rohiagar@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, kernel@quicinc.com
+In-Reply-To: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
+References: <1695359525-4548-1-git-send-email-quic_rohiagar@quicinc.com>
+Subject: Re: (subset) [PATCH v4 0/5] Add USB Support on Qualcomm's SDX75
+ Platform
+Message-Id: <170109135110.42627.7639304783931136606.b4-ty@kernel.org>
+Date: Mon, 27 Nov 2023 18:52:31 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_052232_008952_3F60608D 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20231127_052237_578382_428B1EF4 
+X-CRM114-Status: UNSURE (   5.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,25 +80,27 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 29 Aug 2023 19:16:16 +0200, Alex Bee wrote:
-> this series fixes some issues I found when testing my "new" RK3128 board
-> with the mainline kernel and adds some core functionality like SMP bringup,
-> usb and networking.
+On Fri, 22 Sep 2023 10:42:00 +0530, Rohit Agarwal wrote:
+> Changes in v4:
+>  - Replaced the v5 offsets with v6 offsets as per Dmitry's suggestion in patch 5/5.
 > 
-> The propably most distinctive change is the split up of the DTs for the
-> different SoCs of this platform: RK3126 and RK3128. Even if I'm not adding
-> a RK3126 board in this series: I think this change should be done as early
-> as possible in order to avoid issues in future.
-> Actually it should have been done like that in the first place.
+> Changes in v3:
+>  - Removed the unnecessary change introduced in v2 of patch 2/5
+>  - Added Fixes tag in patch 3/5
+>  - Rebased patch 5/5 on Dmitry's cleanup patches.
+>    https://lore.kernel.org/all/20230911203842.778411-1-dmitry.baryshkov@linaro.org/
+>    https://lore.kernel.org/linux-phy/20230824211952.1397699-1-dmitry.baryshkov@linaro.org/
 > 
 > [...]
 
 Applied, thanks!
 
-[08/31] phy: rockchip-inno-usb2: Split ID interrupt phy registers
-        commit: 2fda59099462ee700e424ba3ac928d13ad6389a8
-[09/31] phy: phy-rockchip-inno-usb2: Add RK3128 support
-        commit: 62ff41017e147472b07de6125c3be82ce02a8dd7
+[1/5] dt-bindings: phy: qcom,snps-eusb2-phy: Add compatible for SDX75
+      (no commit info)
+[2/5] dt-bindings: phy: qcom,qmp-usb: Add SDX75 USB3 PHY
+      (no commit info)
+[5/5] phy: qcom-qmp-usb: Add Qualcomm SDX75 USB3 PHY support
+      commit: 7f6f9e0def00cfaeb1d034fd13dbd84470aeccbd
 
 Best regards,
 -- 
