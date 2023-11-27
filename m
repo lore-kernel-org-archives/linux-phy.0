@@ -4,61 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34E75C4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:23:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFFE0C0755A
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:23:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OVxh8BMfDhFufP88iK1jjmhdZ4ElhoBdfojyiu2yiSo=; b=b8XgdYiXRNLJ++
-	LMis+73hiBbKf8TwzIWlhNmYSeVEvR4q3NZze6eDVNLmFyRs4nCrmTI+kOBbY/hxJuI5rd+TKeqdW
-	IuYY2liT7GUpuw3G2WI2Tf9wpsTNKOSWdbwiTaHoBo6B066lq21MKr0boJcgcgNIZD/ICyXUAkbED
-	Sq9pQP2w1igjoCcx2avga9pYNpkz5RnW+LXo+Osc7bNbkhyapOElzJBx0goE5Q2kRufjEI/VgTt0W
-	wXYO9Zb5IG96uh26YWHV7Sj/98UzmkLii4xjgpoOu0GUOW+DY7gloAWMzHdS9AUOD3RjrHCh99Uci
-	dmvYW6/sWwzSfEHgZYFg==;
+	List-Owner; bh=f3EpbQntRmJjNnkv4Q/vPeIRvUSNS5BGRAeHMqmyFTI=; b=WK7UdxfUsknEra
+	Ns2Yw0kWuhxdTKqJBfA7UVb+QVr11ECiwVnBNiYGuvzIVGoDL4Nx2mazPoue9GvexHW03H5MX/UIC
+	f5aB0t/HKa0/DGCtP5mat9IXuHrxHENRHagFKaLH4tTieT1kMoYoBVyuxoKKAKhYh9xongH13vtE3
+	i21xvWJVEt0XKxo/Pcus8LIpEIqzQIXdH6m065M7aF5cjYzZN5z0z64J0i5UxbN7FlX9zE6Ut/xtu
+	Pxap582PM4KiKuq9ekHnelBx6+HnrR0OPBY7EABf/6rZu4IDU2u3ARHD4QS3EeKhKhGODlAa2P0/O
+	MBtBtWhUsEw2W2abYXVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZo-002YjU-2f;
-	Mon, 27 Nov 2023 13:23:04 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1r7ba1-002YpL-1p;
+	Mon, 27 Nov 2023 13:23:17 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZh-002Yfs-2D;
-	Mon, 27 Nov 2023 13:22:59 +0000
+	id 1r7bZs-002Ykr-0o;
+	Mon, 27 Nov 2023 13:23:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id F30D660FC5;
-	Mon, 27 Nov 2023 13:22:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C29BC43395;
-	Mon, 27 Nov 2023 13:22:53 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id D1FE6CE11E7;
+	Mon, 27 Nov 2023 13:22:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21A3AC433CA;
+	Mon, 27 Nov 2023 13:22:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701091376;
-	bh=QwSBdJ/YKv2G0wND49Ay9xZy3Z92H53HIWkYc1/ISxQ=;
+	s=k20201202; t=1701091372;
+	bh=GAarMoewnkwJp9XLJQmcej2YbN3Q4NV+hfVw+jdVqdE=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=BGvd5vcG9H8ZCuQOfQzYPFnWcZqkc/t3oZVgxdS48Unv8LLEsChHioLVaXoJaV3le
-	 zsWTbQKCaGOAEWldbJ1GoBq680KZ3ws/DIu5/sReU1yHOG4pK5JisVHsSAxp6ootNc
-	 Bt2sCu01dxBxhnpwc7vE4uz7KdwF9A46rgItnp0HYWGj3CgWIhwsR9Ivv6DQXs/uO6
-	 HMlCF4WAp57KsxI4jwOKa9/pjnitSW8HAkSys8jB9m6aXMVlhPs+7eYC6dEFW1Y+aS
-	 IBmCjRhBGd6Mjoopstmdadc4zbizpY9qsjdciMcVN7LflH1ejujnGHbszfGlBvxikQ
-	 6KWokK75hW4Zg==
+	b=po8G/Jd1b5AVxwfM7ACP6l3yi12wgDzzx5ru7waF6zgVpdZN39rWzCrIOAWLsSdGm
+	 N9rZ1yj6R1P8kCHvJxyS5qGtRQb6iJ2l0GWZZJX1NrpZ5vIIlaCiRyPOf2N7MPcGbD
+	 JU9imQ+VOMoYL2lj8HVUDSL3qTSApsBVQo45xWuJuaHk9+GyNhQiXfC2+RzX1ZNe5v
+	 AwlPtiHDdiwSonfwUeMkwxVLD9Wkvylt21nBNInPfQXgLORhP09ns4ptcDk7zF9wCV
+	 2DTCdcNfSFdjw0xMEDAkbNPZpDgSo0NLtK7v+0PkxrbhKZ/uZdNyNOu3a2ij+Eq9yA
+	 LWjaZ/qRhA8OQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, 
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+ Rob Herring <robh+dt@kernel.org>, 
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Alex Bee <knaerzche@gmail.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org
-In-Reply-To: <20231119121340.109025-1-knaerzche@gmail.com>
-References: <20231119121340.109025-1-knaerzche@gmail.com>
-Subject: Re: (subset) [PATCH v3 0/5] Add USB support for RK3128
-Message-Id: <170109137310.42627.13364867198507933834.b4-ty@kernel.org>
-Date: Mon, 27 Nov 2023 18:52:53 +0530
+ Conor Dooley <conor+dt@kernel.org>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Jitao Shi <jitao.shi@mediatek.com>, Xinlei Lee <xinlei.lee@mediatek.com>, 
+ Michael Walle <mwalle@kernel.org>
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+In-Reply-To: <20231123133749.2030661-1-mwalle@kernel.org>
+References: <20231123133749.2030661-1-mwalle@kernel.org>
+Subject: Re: (subset) [PATCH 0/4] drm/mediatek: support DSI output on
+ MT8195
+Message-Id: <170109136570.42627.4378174652499590897.b4-ty@kernel.org>
+Date: Mon, 27 Nov 2023 18:52:45 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_052257_895469_CDBA20EF 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20231127_052308_646021_FEF0F29F 
+X-CRM114-Status: UNSURE (   9.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,22 +88,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sun, 19 Nov 2023 13:13:35 +0100, Alex Bee wrote:
-> While interestingly the DT-binding for the Innosilicon usb phy found in
-> RK3128 SoC exists already and it is exposed in the SoC DT, it has never
-> been added to the driver.
-> This patch-set adds support for this early version of the phy and does
-> some DT-fixups in order to make the 2-port host/otg phy and the respective
-> controllers work.
+On Thu, 23 Nov 2023 14:37:45 +0100, Michael Walle wrote:
+> Add support for a DSI output on VDOSYS0. Luckily, there is a new
+> feature to support dynamic selections of the output (connector).
+> Use it to add support for a DSI output.
+> 
+> Apart from that, this is pretty straghtforward by just adding new
+> compatibles and add the correct DSI nodes to the SoC dtsi.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/5] phy: rockchip-inno-usb2: Split ID interrupt phy registers
-      commit: 2fda59099462ee700e424ba3ac928d13ad6389a8
-[2/5] phy: phy-rockchip-inno-usb2: Add RK3128 support
-      commit: 62ff41017e147472b07de6125c3be82ce02a8dd7
+[2/4] dt-bindings: phy: add compatible for Mediatek MT8195
+      commit: fa50920b4f82993941e0aac349eb8081ce11e38f
 
 Best regards,
 -- 
