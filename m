@@ -4,96 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E680C4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 09:17:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B729EC4167B
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 11:07:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wq/4hyuZ7fhPmC4x+hoLS+8f072EY3RqxDTuApmLJy4=; b=nKNtJFnybAXuG6
-	L9GoWi4sJAUDBpZAa3JWHWthAtEnD+jAjzpgsyg5BKb926pjfqI8/ZU3b1RkuLV3jiPwpdxw/COeY
-	vy1YFxDI2K5cFbslkCRKSzaR119zr+NPGV+gcZV0FNMlXdBUBVjqiX7S4UIQqV2AwpQSErRyvBy2r
-	bnfKyb4NiDBGP3DJkDfpknQHlZLFTG+Nn6TvQDEzFTtfFJKA/MdwxZvU3GjDEAUZVRHgnqFGHse+w
-	+KK/pls3H44IhuVfrpxP5BXE/xJ0idCydihSyxy0qLYwujuQ6H6xEdo8SYkDQURLteVX7c+mBVocd
-	Ug84o3DLz0p8ErHi98Og==;
+	List-Owner; bh=U9G5qpM8KSTTVh6t+YzF+z5uuVykCDn7K+DP/POhOqM=; b=Rft9FIXSJmUisi
+	Z0Xts0pAMl/Qg6Bu6JJmsffCnhsZoDuRz74oWqQbHrrSNk6Foy+ku+Dbmzgl0o6xNPgvvjKh90IhH
+	rDZUOhUZz2xJISD9w3cZpfFNJZ1lpoqrz8oJaamQYYHX8qCDCPgAmUDCrq/ZRummclHcud8uYeuX3
+	yz7CO0Z16JgITbkcWe6HS1NgZoDyJh+CPHORoJu/3WJ6u4BFTUS+ZaYmyVrMlmGJsRMtelmYDJkgc
+	V84iVfQZY6VFNOQyqEXHVccyn9/t7D9EXj/MmUnqkjR1OOSmQ4Mk4AYH1LDX6+S4rDbrNRwIW9JF0
+	1KqEbozrEzbwK4kYjF5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7XkI-001x24-36;
-	Mon, 27 Nov 2023 09:17:38 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1r7ZSn-002Aac-0A;
+	Mon, 27 Nov 2023 11:07:41 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7XkC-001wyK-1y
+	id 1r7ZSj-002AZw-2h
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Nov 2023 09:17:36 +0000
-Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2c878e228b4so48415131fa.1
-        for <linux-phy@lists.infradead.org>; Mon, 27 Nov 2023 01:17:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1701076649; x=1701681449; darn=lists.infradead.org;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:from:to:cc:subject:date:message-id:reply-to;
-        bh=bEIoGh5O/BzqSyDdvmfvLEUiDH4K1xP/uQvVNiufgcU=;
-        b=VPW8POsDcupfKptbXQR90kbleqlgwLsdgrgujMJy36DLn3dtRvFD8GswBPtLG7gBZQ
-         RZUpRqo3tD9g4Y2cAEo62yYj1me422uGMVvtAdGJ3ceSsJGFoirvDnBb997UwbIMminG
-         uoXwv5tiw+kCmqYvhaymoywHXjN3y8cu/2mH/OAJREhezepACLiddQ0J7F/4EpCdsQF1
-         gJzWJdrB3E2pHxuMgITAlPuGFEBV/8Ai4ZAPekoCSh14SjAQCoCAFDxJzHODyc3CHxtx
-         +o5JKgPqm3ebRIM/Zqkf/E3WQJvb+HYub0/W9++pZDTitWW4Rwyv3TSWQPF0OilEjvs9
-         +Tdg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701076649; x=1701681449;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bEIoGh5O/BzqSyDdvmfvLEUiDH4K1xP/uQvVNiufgcU=;
-        b=clx+eBZE37ekqzFmK9iZ18Ev6ClOKZo/DZqCK1DN7t2l1r7zolnvdfXk4xuhYYXiUR
-         arVRAebzrQ6zX0/NOdSQJ/CaChXEBJtDBGnuBbYyWcjiK2ccSu++brZfoXwPiRQGDTWp
-         81Hn/JP1p1j3hU9OV1KqH0yp085sDiNiIyV3Ewy8+2vh4f14xLcQnoJ3nlF42USryhE+
-         DLN9UAC4HgcTAhJsvwh46fuVFszm/zoakuD8HApIMBoNwT13fhAekDRnmxxPIqgjbG5M
-         gLwzHkTDnR46M4tcqHCMmCObbVQAHlcqZ2RnZTyzEwR7rH4DElYK8W2Lye825F3Ww6CC
-         vYhw==
-X-Gm-Message-State: AOJu0YxK1yplgkV4eOoj78it+MGCFaMM4GJ0bOWsu1RLaN3Nby0WSwWB
-	5ssQ8T+ujtX2QIxxGBm3VY96MQ==
-X-Google-Smtp-Source: AGHT+IGy/JmtaB1RId0/b5RlEgolNkKFgTxdlq7MWzbR6GDUGon0doGnidwbBevghTckT6+7ygTSrA==
-X-Received: by 2002:a2e:8387:0:b0:2c8:8745:8f0b with SMTP id x7-20020a2e8387000000b002c887458f0bmr6234114ljg.47.1701076648575;
-        Mon, 27 Nov 2023 01:17:28 -0800 (PST)
-Received: from localhost ([2a01:e0a:3c5:5fb1:fd31:fff0:e26c:d593])
-        by smtp.gmail.com with ESMTPSA id dm16-20020a0560000bd000b0032d09f7a713sm11439739wrb.18.2023.11.27.01.17.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Nov 2023 01:17:28 -0800 (PST)
-References: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
- <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-8-95256ed139e6@linaro.org>
- <1jbkbjdxk8.fsf@starbuckisacylon.baylibre.com>
- <b23ddc3b-d995-4cd6-91f2-3efa59d345a5@linaro.org>
- <1j34wvdtux.fsf@starbuckisacylon.baylibre.com>
- <41a1246e-c885-460a-8208-16844e95e1ae@linaro.org>
-User-agent: mu4e 1.10.8; emacs 29.1
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: neil.armstrong@linaro.org
-Cc: Jerome Brunet <jbrunet@baylibre.com>, Michael Turquette
- <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, Martin Blumenstingl
- <martin.blumenstingl@googlemail.com>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Jagan Teki <jagan@amarulasolutions.com>,
- Nicolas Belin <nbelin@baylibre.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Remi Pommarel <repk@triplefau.lt>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
- <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-phy@lists.infradead.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v9 08/12] clk: meson: g12a: make VCLK2 and ENCL clock
- path configurable by CCF
-Date: Mon, 27 Nov 2023 09:38:28 +0100
-In-reply-to: <41a1246e-c885-460a-8208-16844e95e1ae@linaro.org>
-Message-ID: <1jjzq3zhaw.fsf@starbuckisacylon.baylibre.com>
+	Mon, 27 Nov 2023 11:07:39 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id A8215B834F5;
+	Mon, 27 Nov 2023 11:07:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CAB8C433C8;
+	Mon, 27 Nov 2023 11:07:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701083254;
+	bh=Dw10XYMUkFAfrrpRKBAxCtpIpBU0J1LKx9Ba6WeTt9k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=USEmMTkU19UZvpcqjMaru6fo9yzOqTWivweY0uGhSl7JMzqXcxavaPXbdjObmAspY
+	 UJ67HtNTKU+TpLz7n8D0zLLuIWyFZSQuhYKUMMzz3l+dVZ7n7HVkjir5Y+s/0h/WZt
+	 9wpONPXol8Md2fv7HWjtPNzvtknHjLWlIEub323UtkKp3oKF/796Z5tXL4C4h79kQQ
+	 +QhcvEZuJq2Sz6xMB+q67idgnrE4yLhXYgvUF7N+i+9wxSgP89ejG0cx0HwZnyMyvp
+	 HVj6hptgywrtSBdxPakEDSOd2B9So9zzafLQJM5SBULjbgteY6NBAGRO2LDBT6Ajz7
+	 qofYYLMZRW1nQ==
+Date: Mon, 27 Nov 2023 16:37:28 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Can Guo <quic_cang@quicinc.com>
+Cc: bvanassche@acm.org, mani@kernel.org, adrian.hunter@intel.com,
+	beanhuo@micron.com, avri.altman@wdc.com, junwoo80.lee@samsung.com,
+	martin.petersen@oracle.com, linux-scsi@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Abel Vesa <abel.vesa@linaro.org>,
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v5 08/10] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550
+ UFS HS-G4 PHY Settings
+Message-ID: <ZWR4cN0sJNcVHPrL@matsya>
+References: <1700729190-17268-1-git-send-email-quic_cang@quicinc.com>
+ <1700729190-17268-9-git-send-email-quic_cang@quicinc.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1700729190-17268-9-git-send-email-quic_cang@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_011732_682537_FEDCBB05 
-X-CRM114-Status: GOOD (  26.21  )
+X-CRM114-CacheID: sfid-20231127_030738_186323_FA3292C1 
+X-CRM114-Status: GOOD (  18.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,70 +84,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 23-11-23, 00:46, Can Guo wrote:
+> The registers, which are being touched in current SM8550 UFS PHY settings,
+> and the values being programmed are mainly the ones working for HS-G4 mode,
+> meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
+> However, even consider HS-G4 mode only, some of them are incorrect and some
+> are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
+> SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
 
->> 
->>>
->>> I suspect mipi_dsi_pxclk_div was added to achieve fractional vclk/bitclk ratios,
->>> since it doesn't exist on AXG. Not sure we would ever need it... and none
->>> of the other upstream DSI drivers supports such setups.
->>>
->>> The main reasons I set only mipi_dsi_pxclk in DT is because :
->>> 1) the DSI controller requires a bitclk to respond, pclk is not enough
->>> 2) GP0 is disabled with an invalid config at cold boot, thus we cannot
->>> rely on a default/safe rate on an initial prepare_enable().
->>> This permits setting initial valid state for the DSI controller, while
->>> the actual bitclk and vclk are calculated dynamically with panel/bridge
->>> runtime parameters.
->> Nothing against setting rate in DT when it is static. Setting it then
->> overriding it is not easy to follow.
->
-> Yup, would be simpler to only have parenting set in DT, since it must
-> stay static, I'm fine trying to move rate setup to code.
->
->> To work around GP0 not being set, assuming you want to keep rate
->> propagation as it is, you could call clk_set_rate() on cts_encl (possibly w/o
->> enabling it) to force a setup on gp0 then clk_prepare_enable() on
->> pxclk. You'd get a your safe rate on GP0 and the clock you need on pxclk.
->> It is a bit hackish. Might be better to claim gp0 in your driver to
->> manage it directly, cutting rate propagation above it to control each
->> branch of the subtree as you need. It seems you need to have control over
->> that anyway and it would be clear GP0 is expected to belong to DSI.
->
-> Controlling the PLL from the DSI controller seems violating too much layers,
-> DSI controller driver is not feed directly by the PLL so it's a non-sense
-> regarding DT properties.
+can you copy on cover so that we know the context of the series, I just
+got hit with two patches out of the blue with this
 
-Not sure what you mean by this. You have shown in your the commit
-message that the DSI clocks make significant subtree. I don't see a
-problem if you need to manage the root of that subtree. I'd be great if
-you didn't need to, but it is what it is ...
+> 
+> Fixes: 1679bfef906f ("phy: qcom-qmp-ufs: Add SM8550 support")
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
+> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+> ---
+>  .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  3 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 28 +++++++++++++++-------
+>  2 files changed, 22 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+> index 15bcb4b..674f158 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+> @@ -10,9 +10,12 @@
+>  #define QSERDES_UFS_V6_TX_RES_CODE_LANE_RX			0x2c
+>  #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX		0x30
+>  #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_RX		0x34
+> +#define QSERDES_UFS_V6_TX_LANE_MODE_1				0x7c
+> +#define QSERDES_UFS_V6_TX_FR_DCC_CTRL				0x108
+>  
+>  #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2		0x08
+>  #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		0x10
+> +#define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2			0xd4
+>  #define QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL			0x178
+>  #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0			0x208
+>  #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1			0x20c
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 3927eba..ad91f92 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -658,22 +658,26 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
+>  	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+>  	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
+>  	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x4c),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x99),
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4c),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x0a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x99),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
+>  };
+>  
+>  static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
+> -	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0x05),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_LANE_MODE_1, 0x05),
+>  	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_FR_DCC_CTRL, 0x4c),
+>  };
+>  
+>  static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
+> -	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2, 0x0c),
+> -	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x0f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
+>  	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
+>  
+>  	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
+> @@ -696,6 +700,8 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
+>  	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+>  	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
+>  	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
+> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
+>  };
+>  
+>  struct qmp_ufs_offsets {
+> @@ -1157,6 +1163,10 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
+>  		.pcs		= sm8550_ufsphy_pcs,
+>  		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_pcs),
+>  	},
+> +	.tbls_hs_b = {
+> +		.serdes		= sm8550_ufsphy_hs_b_serdes,
+> +		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_hs_b_serdes),
+> +	},
+>  	.clk_list		= sdm845_ufs_phy_clk_l,
+>  	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+>  	.vreg_list		= qmp_phy_vreg_l,
+> -- 
+> 2.7.4
 
->
-> Setting a safe clock from the DSI controller probe is an idea, but again I
-> don't know which value I should use...
-
-You mentionned that the problem comes DSI bridges that needs to change
-at runtime. I don't know much about those TBH, but is there
-anyway you can come up with a static GP0 rate that would then be able to
-divide to serve all the rates bridge would need in your use case ?
-
-GP0 can go a lot higher than ~100MHz and there are dividers unused in the
-tree it seems.
-
-I suppose there is a finite number of required rate for each use case ?
-If there are not too many and there is a common divider that allows a
-common rate GP0 can do, it would solve your problem. It's a lot of if
-but It is worth checking.
-
-This is how audio works and DT assigned rate is a good match in this case.
-
->
-> I'll review the clk parenting flags and try to hack something.
->
-> Thanks,
-> Neil
->
->
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
