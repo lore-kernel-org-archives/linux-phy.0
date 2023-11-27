@@ -4,61 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1F1CC07CB1
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:22:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CAE3C4167B
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 13:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Lyc47QQ7VoYzHwfrlj1rwBzWUyIsyobkM5qdN3BA8M=; b=HcyJEKa8iSanjW
-	Zd1l1wB2quDtJpkB93H9fUt/l2fbVg4WA+RRSJ/gqOyj+Kl1Ucq7q1D4CKBwa7GFdhxrsHxR9r3Ld
-	goY/aw9hkv9xSeBcM6Yx0Fmf+TWSn06vdv+zy+peZ2l+5HeoYgkckI3nvSg7QxroCKbzFSExkweqW
-	dsV1tEK2z+F+uxRfSA4OYr5vjsSkdHSwmJnAo1BDBSUTwzVzaPv1AEra7GfmXfF8BcWrLDALS6+tl
-	SdXh5Ww6g78b2EN3M4Vmjx6WTOmOaoJ/3Qir8hcN3F1sosu+sEjZz4rKakCq2KyPJzWh+2vaV7yaG
-	F9lmNS1mprgqFK/6eJPg==;
+	List-Owner; bh=LeW4+4u/mtKZj30eRBvdc1oafYaZzNquW5dWlxcXjg0=; b=GlK5VDnR27Mbym
+	dGInYhHBtmnbz8NVtIq1zCWs4pFstBHbgZffUQevVaiFRGKo/MdyWJyUwmaI1b1BlaOJPlCg/Wr0X
+	Jbj/RDIjqVMsA6blTet5QYTM05OIdTZEcwA2yluJwxXw3w4eDUBvyZn0OpbtTxPss0HwHZLDbFT9C
+	3vW4ig4Y8B7ElRBrb0N0Tv5XVe7/1TCxrzVXm6nUSyf/b/M3qIhBps6E7UBo/nAi0RWtIJ992Ajm/
+	ShZCxWMgV3Fci2uV0ipY+uURjmzB59lQmuPuX1JR+ihUZC9K1STA4PTzyVI82260HvTJxDNQ21fKi
+	LPysUL8OiVz9dNT0eCwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZN-002YRf-0n;
-	Mon, 27 Nov 2023 13:22:37 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1r7bZO-002YSw-1S;
+	Mon, 27 Nov 2023 13:22:39 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7bZH-002YNg-28;
+	id 1r7bZH-002YNL-2A;
 	Mon, 27 Nov 2023 13:22:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 276F4611D9;
-	Mon, 27 Nov 2023 13:22:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC5ABC433C9;
-	Mon, 27 Nov 2023 13:22:27 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 26FB1CE0EBC;
+	Mon, 27 Nov 2023 13:22:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 756C5C433C8;
+	Mon, 27 Nov 2023 13:22:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701091350;
-	bh=ctK+hzgQC+MSLrY/zdUFkWtbnB6zds12J32HcsBK/zc=;
+	s=k20201202; t=1701091347;
+	bh=2JKjpQ+5QKANLP+xGmPCkybvq6kf6sMCsdtq+PhVm3o=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=KW4paEx2pGcLIuM4lm1CrNXkrBmaG29is/BxD8BmmmBf08D3aRpeIoHwj9Cx/p3nY
-	 yN3ued0C1c2b2nPPBj7GzF3TypElCj4WVr5cGj05Pf5tW3TEnX/yopo3t0nnL8fjjs
-	 LMJtrqatLKh9MQBU2fj9FxaQZ35X+1zJ2Kd1uExiDcp6SDdjIQlDsKkiENi407uHV4
-	 8OSxtmkavJ0zKHJkIW5N6bMYY+TC1Z9SLOrJ0+SaF1HIsI3JCpyYFueYc+gQjc4HGX
-	 BuBY01a1n5vZfHwOCmEaSjCUEqL8iqZn0GPVKED08Pl9FQiuEVZwpJHTBhSGikcguG
-	 ewtcHT030MBFA==
+	b=bCbLnI25DgO/3NhVtGI6COesZn76ioTqblgX0vP1w6UCsafKA1UsKw7/uB3q5Si7E
+	 p3Kwxii8gLbZ2pI48nGZ95j7tCxkjRhPDeDT7MIb1pu3byNgX7F9a4EJOuREIhO0KE
+	 omLxzqv8kaY+/4fjVKkhTbtcao3YOMTD+yEee7TTDbDD0gN9sSx0tOisOzv+002ZU9
+	 NSNR9SnqbE5j0LVkbDbzY9ZBG53CmO/nLruMScsiR115l2tUbzLKTvIGkd4MoZGRKI
+	 eyfyZQWOIpSFd+X71z4OeyFouedfd4sC93e34la6eVNuzs3w8/gDNq1j5lW7DL4YbT
+	 QcrR/GgjDKUdg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Conor Dooley <conor+dt@kernel.org>, 
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, 
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Rob Herring <robh+dt@kernel.org>, Alex Bee <knaerzche@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- devicetree@vger.kernel.org
-In-Reply-To: <20230830133623.83075-2-knaerzche@gmail.com>
-References: <20230830133623.83075-2-knaerzche@gmail.com>
-Subject: Re: (subset) [PATCH v2 0/5] Add USB support for RK3128
-Message-Id: <170109134730.42627.8256424679982843015.b4-ty@kernel.org>
-Date: Mon, 27 Nov 2023 18:52:27 +0530
+ Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>, 
+ Daniel Vetter <daniel@ffwll.ch>, Lee Jones <lee@kernel.org>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Alex Bee <knaerzche@gmail.com>
+Cc: Elaine Zhang <zhangqing@rock-chips.com>, 
+ Johan Jonker <jbx6244@gmail.com>, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ alsa-devel@alsa-project.org, linux-clk@vger.kernel.org, 
+ linux-phy@lists.infradead.org
+In-Reply-To: <20230829171647.187787-1-knaerzche@gmail.com>
+References: <20230829171647.187787-1-knaerzche@gmail.com>
+Subject: Re: (subset) [PATCH 00/31] Fix and improve Rockchip RK3128 support
+Message-Id: <170109134007.42627.12929766893521974712.b4-ty@kernel.org>
+Date: Mon, 27 Nov 2023 18:52:20 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_052231_868979_2748D59C 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20231127_052232_008952_3F60608D 
+X-CRM114-Status: GOOD (  11.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,22 +83,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 30 Aug 2023 15:36:19 +0200, Alex Bee wrote:
-> While interestingly the dt-binding for the Innosilicon usb phy found in
-> RK3128 SoC exists already and it is exposed in the SoC DT, it has never
-> been added to the driver.
-> This patch-set adds support for this early version of the phy and does
-> some DT-fixups in order to make the 2-port host/otg phy and the respective
-> controllers work.
+On Tue, 29 Aug 2023 19:16:16 +0200, Alex Bee wrote:
+> this series fixes some issues I found when testing my "new" RK3128 board
+> with the mainline kernel and adds some core functionality like SMP bringup,
+> usb and networking.
+> 
+> The propably most distinctive change is the split up of the DTs for the
+> different SoCs of this platform: RK3126 and RK3128. Even if I'm not adding
+> a RK3126 board in this series: I think this change should be done as early
+> as possible in order to avoid issues in future.
+> Actually it should have been done like that in the first place.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/5] phy: rockchip-inno-usb2: Split ID interrupt phy registers
-      commit: 2fda59099462ee700e424ba3ac928d13ad6389a8
-[2/5] phy: phy-rockchip-inno-usb2: Add RK3128 support
-      commit: 62ff41017e147472b07de6125c3be82ce02a8dd7
+[08/31] phy: rockchip-inno-usb2: Split ID interrupt phy registers
+        commit: 2fda59099462ee700e424ba3ac928d13ad6389a8
+[09/31] phy: phy-rockchip-inno-usb2: Add RK3128 support
+        commit: 62ff41017e147472b07de6125c3be82ce02a8dd7
 
 Best regards,
 -- 
