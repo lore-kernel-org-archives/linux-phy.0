@@ -4,104 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F00FC4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 12:14:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 276B0C4167B
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 12:56:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NABlz2ZrSsz47FWX8GlYjhsKV8aj48y02E52RL42+VI=; b=DXOky71X+HoBd4
-	ixPj168YLZEsO+hKhySwIyF0vOZuC1F74T3vskd8L7pfthwvm2L13wJkGEjy0XHQEZbY1cxKtiNOJ
-	GrBpP4KFSAv71TwSXn2Sxkm4S6LJOLxY3335NIGlBzM0Rwpwlza+jwen8QRwin75qxpMhbfN9IBRD
-	JgWYYjMvGB3wlLvC9s4RGOrX9Mw2RlGgGAuIcgSmu9dme+306KqsNv4SlQPMkklM6mzgehEh+HVXA
-	cW294LAW2oMzFmod3HIg1ny+qItHafqVchUPldqRODnvGIh/VFmf0+GHCsmq68PgRjKoi8Rwyz6l3
-	7IDEdT5Au2dmOp6ntX1Q==;
+	List-Owner; bh=PTwkp8/3VQu6E5nI3vr1WSHYLBxS0k6EF/b2myEoPR4=; b=1r8Ooo0Ezg6QQp
+	aNqLUgYA9BFy0ennMpJbyCnL8ha5b1XWqazw8+gJAlIhonc916xPC9v6juAM44TENaN6jj/kYNWJQ
+	iNZ2segXaT1fbYUZ4ArdIqgOcy8oFDxMvVQbAugqco+F8BGinWit43Mg77jHHjwgL8UaV77cnT5zW
+	lYLyMYp0aUXeX76g032Ko7vkCaF0UZfszU9nJC1rEvZIu9kfsQXV4NibL+WSMcvwbcv8VLsCj3WIL
+	s7N4k2NzjRIRc0x97kLODphHmUdYLa0V111mjN7+RYTH9SP8LbwHJWTyi6KsABvsuvVcGAez9PUzL
+	b/opYTw7gncGYa5rA+MA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7aVh-002QfW-3A;
-	Mon, 27 Nov 2023 12:14:45 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1r7b9c-002Uq0-2d;
+	Mon, 27 Nov 2023 12:56:00 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7aVf-002Qf1-32
+	id 1r7b9Y-002UpC-0q
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Nov 2023 12:14:45 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ARBuci5022349;
-	Mon, 27 Nov 2023 12:14:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
- subject : mime-version : content-type : content-transfer-encoding :
- message-id : references : in-reply-to : to : cc; s=qcppdkim1;
- bh=Mwt/tc7oxaZVaxbhV5hYKe81nZekUp6gxT1uZJu+xF4=;
- b=Lm8MSf934ZNE1T3gS9kaDm8MdqdqdflC1ym9U2ttfAUjTzCkKJelpDkc0j1fwWjxvLJA
- VzelAuhJDeZaVHMYaefPprKy7Qf+5dttH2ez5//PmjyqGiSVcSoX+LEuysy0GUqsDl6K
- gRTHTFyGYyZb+c53nqCqhGXPr8Y0h3aas5uIMstJDzPv9wY+DsmXQv+3DLzgTk0ZjQby
- 3En75hSuR2r5z7PtDLFS/2xbhJQREYUIa+D+hjQKpKsirpCTojlDQE048KoG1+CbWyh0
- 80UJgSf/PoU4HSDE29MIgJn0fFxuMHPmyX1/avQE72+Cvl/GGUR2qKLkXqxK+BtRfEoN hw== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uk9adm2un-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Nov 2023 12:14:40 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ARCEdAM014936
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Nov 2023 12:14:39 GMT
-Received: from hu-krichai-hyd.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 27 Nov 2023 04:14:33 -0800
-From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
-Date: Mon, 27 Nov 2023 17:43:51 +0530
-Subject: [PATCH v3 3/3] phy: qcom-qmp-pcie: Add support for keeping refclk
- always on
+	Mon, 27 Nov 2023 12:55:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id 5D493B82910;
+	Mon, 27 Nov 2023 12:55:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DFDE2C433C7;
+	Mon, 27 Nov 2023 12:55:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701089753;
+	bh=OkaVj0kQZoxNvjFiy/iUPvm6ml8q1+fcKNVZApGhjcI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=sQ85pDXhBPl1hmX7p0hYZDPsizOxHpZiabGHKL0JlfHoNW26pP7vKVvp7+8DMpX+3
+	 Qo6IkbllSDAJ4wUv46ysjngZ7ANNwe3pbGR2TpDEF0kXiBKiZ0xaOVjg8RiGuAvyl6
+	 11ZRlWjATOxoxvVOcvCQAgiqo5bcADjIfHMRRyuf7fPui1KRJGYyhmkUKD7EILilIC
+	 wIvYisMgRZyEX9TeMOJbmd5/KIl9IOmsYw0xK8VqdJk6558knv5RGX2cEkv1FvwnU2
+	 UAOU1/Syv719i0iCEolxZQplcQaO6NewUtiQ4c38MPRu7UVvcPj7/eY1JglM9xKVQY
+	 wJ9iBVMZmGZfw==
+Date: Mon, 27 Nov 2023 18:25:48 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Shengyang Chen <shengyang.chen@starfivetech.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	p.zabel@pengutronix.de, minda.chen@starfivetech.com,
+	changhuang.liang@starfivetech.com, rogerq@kernel.org,
+	geert+renesas@glider.be, keith.zhao@starfivetech.com,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v1 2/2] phy: starfive: Add mipi dphy tx support
+Message-ID: <ZWSR1DSfGPCquWXT@matsya>
+References: <20231117130421.79261-1-shengyang.chen@starfivetech.com>
+ <20231117130421.79261-3-shengyang.chen@starfivetech.com>
 MIME-Version: 1.0
-Message-ID: <20231127-refclk_always_on-v3-3-26d969fa8f1d@quicinc.com>
-References: <20231127-refclk_always_on-v3-0-26d969fa8f1d@quicinc.com>
-In-Reply-To: <20231127-refclk_always_on-v3-0-26d969fa8f1d@quicinc.com>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh+dt@kernel.org>,
-        Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-        Conor Dooley
-	<conor+dt@kernel.org>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <quic_vbadigan@quicinc.com>, <quic_ramkri@quicinc.com>,
-        <quic_nitegupt@quicinc.com>, <quic_skananth@quicinc.com>,
-        <quic_vpernami@quicinc.com>, <quic_parass@quicinc.com>,
-        "Krishna chaitanya
- chundru" <quic_krichai@quicinc.com>,
-        Dmitry Baryshkov
-	<dmitry.baryshkov@linaro.org>
-X-Mailer: b4 0.13-dev-83828
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1701087256; l=2385;
- i=quic_krichai@quicinc.com; s=20230907; h=from:subject:message-id;
- bh=w21FU3eA0VG4vGK0aaYA0Nrf7F5/HCavLA1e1RaBndc=;
- b=HCVVnv8YB0O2ZOyoGkIuHDninTGdT9FJjAmNErVSYkGZsmuBLpiW7GdMH4pg7zioo4aXFmRUl
- vJfZecH13gLBl6gud4nA0Cv9qODw0DVkOuLTOm8BhBJyVj5bQ01oxnl
-X-Developer-Key: i=quic_krichai@quicinc.com; a=ed25519;
- pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 6a_EMSw5V3MRyOLGPyw_vUQEdbw9RpdM
-X-Proofpoint-GUID: 6a_EMSw5V3MRyOLGPyw_vUQEdbw9RpdM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-27_09,2023-11-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
- clxscore=1015 priorityscore=1501 malwarescore=0 lowpriorityscore=0
- phishscore=0 bulkscore=0 mlxlogscore=999 adultscore=0 impostorscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311270083
+Content-Disposition: inline
+In-Reply-To: <20231117130421.79261-3-shengyang.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_041444_093982_65F5CCBB 
-X-CRM114-Status: GOOD (  17.90  )
+X-CRM114-CacheID: sfid-20231127_045556_603918_05DC093E 
+X-CRM114-Status: GOOD (  27.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,72 +78,625 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In PCIe low power states like L1.1 or L1.2 the phy will stop
-supplying refclk to endpoint. If endpoint asserts clkreq to bring
-back link L0, then RC needs to provide refclk to endpoint.
+On 17-11-23, 21:04, Shengyang Chen wrote:
+> Add mipi dphy tx support for the StarFive JH7110 SoC.
+> It is used to transfer DSI data.
 
-Some platforms with pcie switch fail to drive the clkreq signal to
-the host from the endpoints because of the switch board design.
-Due to that refclk needs to supplied to the endpoint always.
+How different is this from RX driver? Cant the support be added in the
+TX driver with a new compatible?
 
-Add a flag to keep refclk always supplied to endpoint.
-
-Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 7fdf9b2596b6..e95f677817f7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -43,6 +43,8 @@
- /* QPHY_PCS_STATUS bit */
- #define PHYSTATUS				BIT(6)
- #define PHYSTATUS_4_20				BIT(7)
-+/* PCS_PCIE_ENDPOINT_REFCLK_CNTRL */
-+#define EPCLK_ALWAYS_ON_EN			BIT(6)
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
-@@ -2264,6 +2266,8 @@ struct qmp_pcie {
- 	struct phy *phy;
- 	int mode;
- 
-+	bool refclk_always_on;
-+
- 	struct clk_fixed_rate pipe_clk_fixed;
- };
- 
-@@ -3179,6 +3183,10 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
- 	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
- 
-+	if (qmp->refclk_always_on && cfg->regs[QPHY_PCS_ENDPOINT_REFCLK_CNTRL])
-+		qphy_setbits(pcs_misc, cfg->regs[QPHY_PCS_ENDPOINT_REFCLK_CNTRL],
-+			     EPCLK_ALWAYS_ON_EN);
-+
- 	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
- 		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
- 		qmp_pcie_init_port_b(qmp, tbls);
-@@ -3701,6 +3709,12 @@ static int qmp_pcie_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto err_node_put;
- 
-+	qmp->refclk_always_on = of_property_read_bool(dev->of_node, "qcom,refclk-always-on");
-+	if (qmp->refclk_always_on && !qmp->cfg->regs[QPHY_PCS_ENDPOINT_REFCLK_CNTRL]) {
-+		dev_err(dev, "refclk is always on is present but refclk cntrl offset is not present\n");
-+		goto err_node_put;
-+	}
-+
- 	ret = phy_pipe_clk_register(qmp, np);
- 	if (ret)
- 		goto err_node_put;
+> 
+> Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
+> ---
+>  MAINTAINERS                               |   7 +
+>  drivers/phy/starfive/Kconfig              |  10 +
+>  drivers/phy/starfive/Makefile             |   1 +
+>  drivers/phy/starfive/phy-jh7110-dphy-tx.c | 542 ++++++++++++++++++++++
+>  4 files changed, 560 insertions(+)
+>  create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index cfb533ec89e8..255c577afa49 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -20677,6 +20677,13 @@ S:	Supported
+>  F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+>  F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
+>  
+> +STARFIVE JH7110 DPHY TX DRIVER
+> +M:	Keith Zhao <keith.zhao@starfivetech.com>
+> +M:	Shengyang Chen <shengyang.chen@starfivetech.com>
+> +S:	Supported
+> +F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+> +F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> +
+>  STARFIVE JH7110 MMC/SD/SDIO DRIVER
+>  M:	William Qiu <william.qiu@starfivetech.com>
+>  S:	Supported
+> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+> index 9508e2143011..d0cdd7cb4a13 100644
+> --- a/drivers/phy/starfive/Kconfig
+> +++ b/drivers/phy/starfive/Kconfig
+> @@ -15,6 +15,16 @@ config PHY_STARFIVE_JH7110_DPHY_RX
+>  	  system. If M is selected, the module will be called
+>  	  phy-jh7110-dphy-rx.ko.
+>  
+> +config PHY_STARFIVE_JH7110_DPHY_TX
+> +	tristate "StarFive JH7110 D-PHY TX Support"
+> +	depends on HAS_IOMEM
+> +	select GENERIC_PHY
+> +	select GENERIC_PHY_MIPI_DPHY
+> +	help
+> +	  Choose this option if you have a StarFive D-PHY TX in your
+> +	  system. If M is selected, the module will be called
+> +	  phy-jh7110-dphy-tx.ko.
+> +
+>  config PHY_STARFIVE_JH7110_PCIE
+>  	tristate "Starfive JH7110 PCIE 2.0/USB 3.0 PHY support"
+>  	depends on HAS_IOMEM
+> diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+> index b391018b7c47..eedc4a6fec15 100644
+> --- a/drivers/phy/starfive/Makefile
+> +++ b/drivers/phy/starfive/Makefile
+> @@ -1,4 +1,5 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_RX)	+= phy-jh7110-dphy-rx.o
+> +obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_TX)	+= phy-jh7110-dphy-tx.o
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)		+= phy-jh7110-pcie.o
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)		+= phy-jh7110-usb.o
+> diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> new file mode 100644
+> index 000000000000..69aa172563e4
+> --- /dev/null
+> +++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> @@ -0,0 +1,542 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * DPHY TX driver for the StarFive JH7110 SoC
+> + *
+> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
+> + * Author: Keith Zhao <keith.zhao@starfivetech.com>
+> + * Author: Shengyang Chen <shengyang.chen@starfivetech.com>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/io.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/phy/phy-mipi-dphy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/regulator/consumer.h>
+> +#include <linux/reset.h>
+> +
+> +#define STF_DPHY_APBIFSAIF_SYSCFG(x)			(x)
+> +
+> +#define  STF_DPHY_AON_POWER_READY_N_SHIFT		0x0U
+> +#define  STF_DPHY_AON_POWER_READY_N_MASK		BIT(0)
+> +#define  STF_DPHY_CFG_L0_SWAP_SEL_SHIFT			0xCU
+> +#define  STF_DPHY_CFG_L0_SWAP_SEL_MASK			GENMASK(14, 12)
+> +#define  STF_DPHY_CFG_L1_SWAP_SEL_SHIFT			0xFU
+> +#define  STF_DPHY_CFG_L1_SWAP_SEL_MASK			GENMASK(17, 15)
+> +#define  STF_DPHY_CFG_L2_SWAP_SEL_SHIFT			0x12U
+> +#define  STF_DPHY_CFG_L2_SWAP_SEL_MASK			GENMASK(20, 18)
+> +#define  STF_DPHY_CFG_L3_SWAP_SEL_SHIFT			0x15U
+> +#define  STF_DPHY_CFG_L3_SWAP_SEL_MASK			GENMASK(23, 21)
+> +#define  STF_DPHY_CFG_L4_SWAP_SEL_SHIFT			0x18U
+> +#define  STF_DPHY_CFG_L4_SWAP_SEL_MASK			GENMASK(26, 24)
+> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT		0x12U
+> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK		BIT(18)
+> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT		0x13U
+> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK		GENMASK(23, 19)
+> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT		0x18U
+> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK		GENMASK(28, 24)
+> +
+> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT		0x5U
+> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK		GENMASK(9, 5)
+> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT		0xAU
+> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK		GENMASK(14, 10)
+> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT		0xFU
+> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK		GENMASK(19, 15)
+> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT		0x14U
+> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK		GENMASK(24, 20)
+> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT		0x19U
+> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK		GENMASK(29, 25)
+> +
+> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK		GENMASK(4, 0)
+> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT		0x5U
+> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK		GENMASK(9, 5)
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK		GENMASK(23, 0)
+> +
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK		GENMASK(8, 0)
+> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT		0x9U
+> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_MASK		BIT(9)
+> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT	0xAU
+> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK	BIT(10)
+> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT		0xBU
+> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK		GENMASK(12, 11)
+> +
+> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT		0x12U
+> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK		0x40000U
+> +
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT	0x0U
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK	GENMASK(7, 0)
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT	0x8U
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK		GENMASK(15, 8)
+> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT		0x10U
+> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK		GENMASK(23, 16)
+> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT		0x18U
+> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK		GENMASK(31, 24)
+> +
+> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK		GENMASK(7, 0)
+> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT		0x8U
+> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK		GENMASK(15, 8)
+> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT		0x10U
+> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK		GENMASK(23, 16)
+> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT		0x18U
+> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK		GENMASK(31, 24)
+> +
+> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT		0x0U
+> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_MASK		GENMASK(2, 0)
+> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT		0x0U
+> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK		GENMASK(31, 0)
+> +
+> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT	0x1U
+> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK		GENMASK(2, 1)
+> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT		0x3U
+> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_MASK		GENMASK(4, 3)
+> +
+> +#define  STF_DPHY_REFCLK_IN_SEL_SHIFT			0x1AU
+> +#define  STF_DPHY_REFCLK_IN_SEL_MASK			GENMASK(28, 26)
+> +#define  STF_DPHY_RESETB_SHIFT				0x1DU
+> +#define  STF_DPHY_RESETB_MASK				BIT(29)
+> +
+> +#define STF_DPHY_REFCLK_12M				1
+> +#define STF_DPHY_BITRATE_ALIGN				10000000
+> +
+> +#define STF_MAP_LANES_NUM				5
+> +
+> +struct m31_dphy_config {
+> +	int ref_clk;
+> +	unsigned long bitrate;
+> +	u32 pll_prev_div;
+> +	u32 pll_fbk_int;
+> +	u32 pll_fbk_fra;
+> +	u32 extd_cycle_sel;
+> +	u32 dlane_hs_pre_time;
+> +	u32 dlane_hs_zero_time;
+> +	u32 dlane_hs_trail_time;
+> +	u32 clane_hs_pre_time;
+> +	u32 clane_hs_zero_time;
+> +	u32 clane_hs_trail_time;
+> +	u32 clane_hs_clk_pre_time;
+> +	u32 clane_hs_clk_post_time;
+> +};
+> +
+> +static const struct m31_dphy_config m31_dphy_configs[] = {
+> +	{12000000, 490000000, 0x0, 0xa3, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xc, 0x1d, 0x14, 0x8, 0x42, 0x12, 0x3, 0x28},
+> +	{12000000, 680000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x8, 0x13, 0xe, 0x5, 0x2e, 0xd, 0x1, 0x16},
+> +	{12000000, 750000000, 0x0, 0x7d, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x8, 0x16, 0xf, 0x6, 0x32, 0xe, 0x1, 0x17},
+> +	{12000000, 900000000, 0x0, 0x96, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xa, 0x19, 0x12, 0x8, 0x3c, 0x10, 0x1, 0x19},
+> +};
+> +
+> +struct stf_dphy_info {
+> +	/**
+> +	 * @maps:
+> +	 *
+> +	 * Physical lanes and logic lanes mapping table.
+> +	 *
+> +	 * The default order is:
+> +	 * [data lane 0, data lane 1, data lane 2, date lane 3, clk lane]
+> +	 */
+> +	u8 maps[STF_MAP_LANES_NUM];
+> +};
+> +
+> +struct stf_dphy {
+> +	struct device *dev;
+> +	void __iomem *topsys;
+> +	struct clk *txesc_clk;
+> +	struct reset_control *sys_rst;
+> +	struct reset_control *txbytehs_rst;
+> +
+> +	struct phy_configure_opts_mipi_dphy config;
+> +
+> +	struct regulator *mipitx_1p8;
+> +	struct regulator *mipitx_0p9;
+> +
+> +	struct phy *phy;
+> +	const struct stf_dphy_info *info;
+> +};
+> +
+> +static inline u32 stf_dphy_get_reg(void *io_addr, u32 addr, u32 shift, u32 mask)
+> +{
+> +	u32 tmp;
+> +
+> +	tmp = readl(io_addr);
+> +	tmp = (tmp & mask) >> shift;
+> +	return tmp;
+> +}
+> +
+> +static inline void stf_dphy_set_reg(void *io_addr, u32 addr, u32 data, u32 shift, u32 mask)
+> +{
+> +	u32 tmp;
+> +
+> +	tmp = readl(io_addr + addr);
+> +	tmp &= ~mask;
+> +	tmp |= (data << shift) & mask;
+> +	writel(tmp, (io_addr + addr));
+> +}
+> +
+> +static int is_pll_locked(struct stf_dphy *dphy)
+> +{
+> +	int tmp = stf_dphy_get_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8),
+> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT,
+> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK);
+> +	return !tmp;
+> +}
+> +
+> +static void stf_dphy_hw_reset(struct stf_dphy *dphy, int assert)
+> +{
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
+> +			 !assert, STF_DPHY_RESETB_SHIFT, STF_DPHY_RESETB_MASK);
+> +
+> +	if (!assert) {
+> +		/*the lock-in time of pll of M31 is 20us-50ms*/
+> +		while ((!is_pll_locked(dphy)) && msecs_to_jiffies(50))
+> +			;
+> +		dev_err(dphy->dev, "MIPI dphy-tx # PLL Locked\n");
+> +	}
+> +}
+> +
+> +static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+> +{
+> +	struct stf_dphy *dphy;
+> +	u32 bitrate;
+> +	unsigned long alignment;
+> +	int i;
+> +	const struct m31_dphy_config *p;
+> +	const u32 STF_DPHY_AON_POWER_READY_N_active = 0;
+> +	const struct stf_dphy_info *info;
+> +
+> +	dphy = phy_get_drvdata(phy);
+> +	info = dphy->info;
+> +	bitrate = opts->mipi_dphy.hs_clk_rate;
+> +
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
+> +			 STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
+> +			 STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK);
+> +
+> +	alignment = STF_DPHY_BITRATE_ALIGN;
+> +	if (bitrate % alignment)
+> +		bitrate += alignment - (bitrate % alignment);
+> +
+> +	p = m31_dphy_configs;
+> +	for (i = 0; i < ARRAY_SIZE(m31_dphy_configs); i++, p++) {
+> +		if (p->bitrate == bitrate) {
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
+> +					 STF_DPHY_REFCLK_12M, STF_DPHY_REFCLK_IN_SEL_SHIFT,
+> +					 STF_DPHY_REFCLK_IN_SEL_MASK);
+> +
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0),
+> +					 STF_DPHY_AON_POWER_READY_N_active,
+> +					 STF_DPHY_AON_POWER_READY_N_SHIFT,
+> +					 STF_DPHY_AON_POWER_READY_N_MASK);
+> +
+> +			/*Lane setting*/
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[0],
+> +					 STF_DPHY_CFG_L0_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L0_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[1],
+> +					 STF_DPHY_CFG_L1_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L1_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[2],
+> +					 STF_DPHY_CFG_L2_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L2_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[3],
+> +					 STF_DPHY_CFG_L3_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L3_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[4],
+> +					 STF_DPHY_CFG_L4_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L4_SWAP_SEL_MASK);
+> +			/*PLL setting*/
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(28), 0x0,
+> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
+> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
+> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_MASK);
+> +
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
+> +					 p->pll_prev_div, STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
+> +					 p->pll_fbk_int, STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(20),
+> +					 p->pll_fbk_fra, STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(40),
+> +					 p->extd_cycle_sel, STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT,
+> +					 STF_DPHY_RG_EXTD_CYCLE_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_pre_time,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_pre_time,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_zero_time,
+> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_trail_time,
+> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_pre_time,
+> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->clane_hs_zero_time,
+> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_trail_time,
+> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_clk_pre_time,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_clk_post_time,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK);
+> +
+> +			break;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_init(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	stf_dphy_hw_reset(dphy, 0);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
+> +			 STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT, STF_DPHY_SCFG_PPI_C_READY_SEL_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
+> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT,
+> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(44), 0x30,
+> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT,
+> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK);
+> +
+> +	ret = clk_prepare_enable(dphy->txesc_clk);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Failed to prepare/enable txesc_clk\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = reset_control_deassert(dphy->sys_rst);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Failed to deassert sys_rst\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = reset_control_deassert(dphy->txbytehs_rst);
+> +	if (ret < 0) {
+> +		dev_err(dphy->dev, "Failed to deassert txbytehs_rst\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_exit(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = reset_control_assert(dphy->txbytehs_rst);
+> +	if (ret < 0) {
+> +		dev_err(dphy->dev, "Failed to assert txbytehs_rst\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = reset_control_assert(dphy->sys_rst);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Failed to assert sys_rst\n");
+> +		return ret;
+> +	}
+> +
+> +	clk_disable_unprepare(dphy->txesc_clk);
+> +
+> +	stf_dphy_hw_reset(dphy, 1);
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_power_on(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = pm_runtime_resume_and_get(dphy->dev);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = regulator_enable(dphy->mipitx_0p9);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Cannot enable mipitx_0p9 regulator\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+> +			     union phy_configure_opts *opts)
+> +{
+> +	if (mode != PHY_MODE_MIPI_DPHY)
+> +		return -EINVAL;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_power_off(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +
+> +	regulator_disable(dphy->mipitx_0p9);
+> +
+> +	pm_runtime_put_sync(dphy->dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops stf_dphy_ops = {
+> +	.power_on	= stf_dphy_power_on,
+> +	.power_off	= stf_dphy_power_off,
+> +	.init		= stf_dphy_init,
+> +	.exit		= stf_dphy_exit,
+> +	.configure	= stf_dphy_configure,
+> +	.validate	= stf_dphy_validate,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static int stf_dphy_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *phy_provider;
+> +	struct stf_dphy *dphy;
+> +	int ret;
+> +
+> +	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
+> +	if (!dphy)
+> +		return -ENOMEM;
+> +
+> +	dphy->info = of_device_get_match_data(&pdev->dev);
+> +
+> +	dphy->dev = &pdev->dev;
+> +	dev_set_drvdata(&pdev->dev, dphy);
+> +
+> +	dphy->topsys = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(dphy->topsys)) {
+> +		ret = PTR_ERR(dphy->topsys);
+> +		return ret;
+> +	}
+> +
+> +	pm_runtime_enable(&pdev->dev);
+> +
+> +	dphy->mipitx_0p9 = devm_regulator_get(&pdev->dev, "mipi_0p9");
+> +	if (IS_ERR(dphy->mipitx_0p9)) {
+> +		ret = PTR_ERR(dphy->mipitx_0p9);
+> +		return ret;
+> +	}
+> +
+> +	dphy->txesc_clk = devm_clk_get(&pdev->dev, "dphy_txesc");
+> +	if (IS_ERR(dphy->txesc_clk)) {
+> +		ret = PTR_ERR(dphy->txesc_clk);
+> +		dev_err(&pdev->dev, "txesc_clk get error\n");
+> +		return ret;
+> +	}
+> +
+> +	dphy->sys_rst = reset_control_get_exclusive(&pdev->dev, "dphy_sys");
+> +	if (IS_ERR(dphy->sys_rst)) {
+> +		ret = PTR_ERR(dphy->sys_rst);
+> +		dev_err(&pdev->dev, "sys_rst get error\n");
+> +		return ret;
+> +	}
+> +
+> +	dphy->txbytehs_rst = reset_control_get_exclusive(&pdev->dev, "dsi_txbytehs");
+> +	if (IS_ERR(dphy->txbytehs_rst)) {
+> +		dev_err(&pdev->dev, "Failed to get txbytehs_rst\n");
+> +		return PTR_ERR(dphy->txbytehs_rst);
+> +	}
+> +
+> +	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
+> +	if (IS_ERR(dphy->phy)) {
+> +		ret = PTR_ERR(dphy->phy);
+> +		dev_err(&pdev->dev, "Failed to create phy\n");
+> +		return ret;
+> +	}
+> +	phy_set_drvdata(dphy->phy, dphy);
+> +
+> +	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
+> +	if (IS_ERR(phy_provider)) {
+> +		ret = PTR_ERR(phy_provider);
+> +		dev_err(&pdev->dev, "Failed to create phy\n");
+> +		return ret;
+> +	}
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct stf_dphy_info starfive_dphy_info = {
+> +	.maps = {0, 1, 2, 3, 4},
+> +};
+> +
+> +static const struct of_device_id stf_dphy_dt_ids[] = {
+> +	{
+> +		.compatible = "starfive,jh7110-dphy-tx",
+> +		.data = &starfive_dphy_info,
+> +	},
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
+> +
+> +static struct platform_driver stf_dphy_driver = {
+> +	.driver = {
+> +		.name	= "starfive-dphy-tx",
+> +		.of_match_table = stf_dphy_dt_ids,
+> +	},
+> +	.probe = stf_dphy_probe,
+> +};
+> +module_platform_driver(stf_dphy_driver);
+> +
+> +MODULE_AUTHOR("Keith Zhao <keith.zhao@starfivetech.com>");
+> +MODULE_AUTHOR("Shengyang Chen <shengyang.chen@starfivetech.com>");
+> +MODULE_DESCRIPTION("StarFive JH7110 DPHY TX driver");
+> +MODULE_LICENSE("GPL");
+> -- 
+> 2.17.1
 
 -- 
-2.42.0
-
+~Vinod
 
 -- 
 linux-phy mailing list
