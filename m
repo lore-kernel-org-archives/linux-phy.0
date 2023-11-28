@@ -4,93 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11C3DC07CB1
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Nov 2023 16:41:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40D35C4167B
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Nov 2023 01:50:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=40UKy6TNM9Jvr3GcougmSmdxho/HOVgxYRrFveqMIpc=; b=k5J/lZn4q0bQI8
-	L9kw2or6FlDDQNxm2CHwYfNlCusa8GLIEVrOnKGfRleJJTeByQNMFyvjjc9j7Mwk86FsBhFK7y7Su
-	DUGyQVgghPHrIQvCX1OBKTJLsRHQkI6A9dRxP0W+pzMcUWhxmkISZYT7MMtJaTikuCH9ZE1ZFnpIs
-	3lDkVdbxqfTIyLapocOHF+c4+CWvyUHdXOUO0pr3HuyCP7BrybctuMGucSo93bFvRVlz+qQAmrurt
-	6pb1/oGe1kWuDCQcCLt2VJHaGZk5RruHtpiOHAQCWb1ceIDnqOa5J2kM3E3JvIZkN1xTMlJtzAot4
-	+z7TWimme4fXNfA1dvVA==;
+	List-Owner; bh=u64/OgtDW2BHBE7pszFmBKf12DKNyiybkVTfjfIQnBg=; b=Ru+tHzx2+JyoF6
+	b0lXvGH1GcnA8+0FIjC9VfZ9shGU7247aDaXTERgoDKFCMVchy0x69GUcDGDnIkbxtlSDUL9o18js
+	jpJEmBo8TwDR6T+YizY7J2IwtVdPSzn3/xmbaV8x4REe7Jv4pxZUrzWxgTzBjOy1JMEWmKMALN0nR
+	Tb8wh87s0ZjsuZVnvTTdSIWNjpSxfPctxcG5tNk/0hhqashWXAvWaaXEa1FY78HZ+rSvQU/tHLQef
+	EA/+l9PioCohDcR9mX+RPEWQ/BKaNKCGvVBI+ZHip+wSDsbodNTuGo+gbpnIcbBaBDWe3DITazhKh
+	JYsNy1v0309SuHaWcNOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7eg8-003295-2W;
-	Mon, 27 Nov 2023 16:41:48 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1r7nFR-003qQV-30;
+	Tue, 28 Nov 2023 01:50:49 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7eg4-00327c-0u
+	id 1r7nFO-003qPV-34
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Nov 2023 16:41:47 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-40838915cecso31013575e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 27 Nov 2023 08:41:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1701103302; x=1701708102; darn=lists.infradead.org;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:from:to:cc:subject:date:message-id:reply-to;
-        bh=/Icj54IjZp5B4hkXeCz67YIlN6i5tKQ8M88cBBrEKK4=;
-        b=axbs/3XqISfvuceP7V6HTse5mbdruVm5SVrgfNul7PYGvQZfyqNgmMSH7if0XyswvO
-         ztG0mNVx3m37YF+Ud/QshAG3HKR3lqtbUGhzoxFw4yUj/a5Mop8tl/IZTwClpjk7BjIE
-         +dmG0V5nNid4rvABrvYEVUfbCYr9gB4nfk0HFcCH9VzW6V7irNnbQ4wAbcSfdOFF67n5
-         BiaF9g0U8LfBEGzr6Vplh4T2z6Fkn2giiuM4bCLLf2NZ+68CZt2bpC1mFMCdQAy8+OVU
-         J/6wYv9JGxLqYFhJez/sWqJ6dkL0wWzYVhcMkQHs+cYIE4/2nWoxWiuxmWe9YYgLtL+u
-         aQ+g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701103302; x=1701708102;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/Icj54IjZp5B4hkXeCz67YIlN6i5tKQ8M88cBBrEKK4=;
-        b=l/qs0RKEyMvmy6HcNKpJEF44+MC2WYH9mkKzSVj1Uf2S4dIzx7mJCpA5cxHOd9SnbR
-         HJe2noBKgF2gW3aKQZQHc6O+sQvun8qEIev3jbCoAw9Tqy4noY05FMbzMSsnKwM0WmN4
-         WsTx7ycg/wmvU64Q+AqTLiDALJXuhB1Z0Pf19QeSns+1MwfI3rYvBvQQ6zLLhSulJd+n
-         4eYyM/Fr2Wno+mTiHDxbLx2tANtnPF+EqFtBflIZD9CG5pj3DrbqzWZflSDJZ1vf/qmw
-         oeyNilNn+hdzLbNCFFlQTW6m1UW/yEuLOh2tYL86tGjc8nkD+YwRAaw2ptBsEF/inQR6
-         wwsw==
-X-Gm-Message-State: AOJu0Yx9T62oGgpLrwSCi6Tq2o2obxs229LVIeUt+XADf01BfB38w7vC
-	kZFpC6i1RNfBiBIJIUCnn93KCw==
-X-Google-Smtp-Source: AGHT+IHFJl3YREfNRJgTH6qJi9k1kF+E8TGrqHCGdE2czDiGzqH3Az0cJk7/KmShVK5MIed8bqNenw==
-X-Received: by 2002:a5d:52ca:0:b0:332:fa1b:9f66 with SMTP id r10-20020a5d52ca000000b00332fa1b9f66mr3648641wrv.59.1701103302575;
-        Mon, 27 Nov 2023 08:41:42 -0800 (PST)
-Received: from localhost ([2a01:e0a:3c5:5fb1:3675:e2e8:2f93:3d3b])
-        by smtp.gmail.com with ESMTPSA id c14-20020a056000104e00b00332f95ab44esm5864136wrx.57.2023.11.27.08.41.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Nov 2023 08:41:42 -0800 (PST)
-References: <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-0-95256ed139e6@linaro.org>
- <20231124-amlogic-v6-4-upstream-dsi-ccf-vim3-v9-7-95256ed139e6@linaro.org>
- <1j7cm7dx1b.fsf@starbuckisacylon.baylibre.com>
- <4e5e33c1-45d5-4c83-b647-bfb603347156@linaro.org>
-User-agent: mu4e 1.10.8; emacs 29.1
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: neil.armstrong@linaro.org
-Cc: Jerome Brunet <jbrunet@baylibre.com>, Michael Turquette
- <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, Martin Blumenstingl
- <martin.blumenstingl@googlemail.com>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Jagan Teki <jagan@amarulasolutions.com>,
- Nicolas Belin <nbelin@baylibre.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Remi Pommarel <repk@triplefau.lt>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
- <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-phy@lists.infradead.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v9 07/12] clk: meson: add vclk driver
-Date: Mon, 27 Nov 2023 17:24:03 +0100
-In-reply-to: <4e5e33c1-45d5-4c83-b647-bfb603347156@linaro.org>
-Message-ID: <1jfs0rywqi.fsf@starbuckisacylon.baylibre.com>
+	Tue, 28 Nov 2023 01:50:48 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AS1h8Fk020602;
+	Tue, 28 Nov 2023 01:50:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=Ys4/6FFfW1SAvUPGmv86XCxA3FNAIi1MkHLRZxoOcBk=;
+ b=Ws+75g1I1vgcxIlPy11nIbrzpMccCg84bcAj7cwlR2KzeoFwOtqcR+5zhw/UEA7QG33f
+ f9ruaVWd9Arpe7v53ImQgBPgKMNmZsNCfKfoscRsTBaU9Im8TsDxIjZLHgrQyo8CVzcq
+ Gq/S1dES9kPKMOwnWOJATq5Dkvwh5VhLrg41tn+Fb3lW1mgOCJA6Y/0xDNekPK/AGNpe
+ dMZnNFom8BJwNm0E33WHhjsIi8uBfEuyeyc7Ub8g7hhTtQRDDMDLQX1coA1QkMJQkkvn
+ UZzejRXGo6eT4DidiaQdna3hQXj9soNrNZnKL5dblIRvtMPD8CKzmSBK24uX2enDhgP4 1Q== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3umqxh29as-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Nov 2023 01:50:37 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AS1oaHN004445
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Nov 2023 01:50:36 GMT
+Received: from [10.253.11.37] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 27 Nov
+ 2023 17:50:32 -0800
+Message-ID: <a690f5c1-50e7-4d37-9e12-fff574917aba@quicinc.com>
+Date: Tue, 28 Nov 2023 09:50:28 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 08/10] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550
+ UFS HS-G4 PHY Settings
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>
+CC: <bvanassche@acm.org>, <mani@kernel.org>, <adrian.hunter@intel.com>,
+        <beanhuo@micron.com>, <avri.altman@wdc.com>,
+        <junwoo80.lee@samsung.com>, <martin.petersen@oracle.com>,
+        <linux-scsi@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        Andy Gross <agross@kernel.org>,
+        Bjorn
+ Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Dmitry Baryshkov
+	<dmitry.baryshkov@linaro.org>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Abel
+ Vesa <abel.vesa@linaro.org>,
+        "open list:GENERIC PHY FRAMEWORK"
+	<linux-phy@lists.infradead.org>,
+        open list <linux-kernel@vger.kernel.org>
+References: <1700729190-17268-1-git-send-email-quic_cang@quicinc.com>
+ <1700729190-17268-9-git-send-email-quic_cang@quicinc.com>
+ <ZWR4cN0sJNcVHPrL@matsya>
+From: Can Guo <quic_cang@quicinc.com>
+In-Reply-To: <ZWR4cN0sJNcVHPrL@matsya>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: jE2rucx1THA52q9EfdMqES3Sf4T1tPmF
+X-Proofpoint-ORIG-GUID: jE2rucx1THA52q9EfdMqES3Sf4T1tPmF
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-28_01,2023-11-27_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
+ clxscore=1015 phishscore=0 mlxlogscore=999 spamscore=0 bulkscore=0
+ priorityscore=1501 adultscore=0 lowpriorityscore=0 impostorscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311280013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231127_084144_320989_4D2A0AF8 
-X-CRM114-Status: GOOD (  27.73  )
+X-CRM114-CacheID: sfid-20231127_175046_998935_47E23314 
+X-CRM114-Status: GOOD (  22.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,317 +110,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Vinod,
 
-On Mon 27 Nov 2023 at 17:14, Neil Armstrong <neil.armstrong@linaro.org> wrote:
+On 11/27/2023 7:07 PM, Vinod Koul wrote:
+> On 23-11-23, 00:46, Can Guo wrote:
+>> The registers, which are being touched in current SM8550 UFS PHY settings,
+>> and the values being programmed are mainly the ones working for HS-G4 mode,
+>> meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
+>> However, even consider HS-G4 mode only, some of them are incorrect and some
+>> are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
+>> SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
+> 
+> can you copy on cover so that we know the context of the series, I just
+> got hit with two patches out of the blue with this
+> 
 
-> On 24/11/2023 15:41, Jerome Brunet wrote:
->> On Fri 24 Nov 2023 at 09:41, Neil Armstrong <neil.armstrong@linaro.org>
->> wrote:
->> 
->>> The VCLK and VCLK_DIV clocks have supplementary bits.
->>>
->>> The VCLK has a "SOFT RESET" bit to toggle after the whole
->>> VCLK sub-tree rate has been set, this is implemented in
->>> the gate enable callback.
->>>
->>> The VCLK_DIV clocks as enable and reset bits used to disable
->>> and reset the divider, associated with CLK_SET_RATE_GATE it ensures
->>> the rate is set while the divider is disabled and in reset mode.
->>>
->>> The VCLK_DIV enable bit isn't implemented as a gate since it's part
->>> of the divider logic and vendor does this exact sequence to ensure
->>> the divider is correctly set.
->>>
->>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->>> ---
->>>   drivers/clk/meson/Kconfig  |   5 ++
->>>   drivers/clk/meson/Makefile |   1 +
->>>   drivers/clk/meson/vclk.c   | 141 +++++++++++++++++++++++++++++++++++++++++++++
->>>   drivers/clk/meson/vclk.h   |  51 ++++++++++++++++
->>>   4 files changed, 198 insertions(+)
->>>
->>> diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
->>> index 29ffd14d267b..59a40a49f8e1 100644
->>> --- a/drivers/clk/meson/Kconfig
->>> +++ b/drivers/clk/meson/Kconfig
->>> @@ -30,6 +30,10 @@ config COMMON_CLK_MESON_VID_PLL_DIV
->>>   	tristate
->>>   	select COMMON_CLK_MESON_REGMAP
->>>   +config COMMON_CLK_MESON_VCLK
->>> +	tristate
->>> +	select COMMON_CLK_MESON_REGMAP
->>> +
->>>   config COMMON_CLK_MESON_CLKC_UTILS
->>>   	tristate
->>>   @@ -140,6 +144,7 @@ config COMMON_CLK_G12A
->>>   	select COMMON_CLK_MESON_EE_CLKC
->>>   	select COMMON_CLK_MESON_CPU_DYNDIV
->>>   	select COMMON_CLK_MESON_VID_PLL_DIV
->>> +	select COMMON_CLK_MESON_VCLK
->> This particular line belong in the next patch
->> 
->>>   	select MFD_SYSCON
->>>   	help
->>>   	  Support for the clock controller on Amlogic S905D2, S905X2 and S905Y2
->>> diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
->>> index 9ee4b954c896..9ba43fe7a07a 100644
->>> --- a/drivers/clk/meson/Makefile
->>> +++ b/drivers/clk/meson/Makefile
->>> @@ -12,6 +12,7 @@ obj-$(CONFIG_COMMON_CLK_MESON_PLL) += clk-pll.o
->>>   obj-$(CONFIG_COMMON_CLK_MESON_REGMAP) += clk-regmap.o
->>>   obj-$(CONFIG_COMMON_CLK_MESON_SCLK_DIV) += sclk-div.o
->>>   obj-$(CONFIG_COMMON_CLK_MESON_VID_PLL_DIV) += vid-pll-div.o
->>> +obj-$(CONFIG_COMMON_CLK_MESON_VCLK) += vclk.o
->>>     # Amlogic Clock controllers
->>>   diff --git a/drivers/clk/meson/vclk.c b/drivers/clk/meson/vclk.c
->>> new file mode 100644
->>> index 000000000000..47f08a52b49f
->>> --- /dev/null
->>> +++ b/drivers/clk/meson/vclk.c
->>> @@ -0,0 +1,141 @@
->>> +// SPDX-License-Identifier: GPL-2.0
->>> +/*
->>> + * Copyright (c) 2023 Neil Armstrong <neil.armstrong@linaro.org>
->>> + */
->>> +
->>> +#include <linux/module.h>
->>> +#include "vclk.h"
->>> +
->>> +/* The VCLK gate has a supplementary reset bit to pulse after ungating */
->>> +
->>> +static inline struct clk_regmap_vclk_data *
->>> +clk_get_regmap_vclk_data(struct clk_regmap *clk)
->>> +{
->>> +	return (struct clk_regmap_vclk_data *)clk->data;
->>> +}
->>> +
->>> +static int clk_regmap_vclk_enable(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_data *vclk = clk_get_regmap_vclk_data(clk);
->>> +
->>> +	meson_parm_write(clk->map, &vclk->enable, 1);
->>> +
->>> +	/* Do a reset pulse */
->>> +	meson_parm_write(clk->map, &vclk->reset, 1);
->>> +	meson_parm_write(clk->map, &vclk->reset, 0);
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +static void clk_regmap_vclk_disable(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_data *vclk = clk_get_regmap_vclk_data(clk);
->>> +
->>> +	meson_parm_write(clk->map, &vclk->enable, 0);
->>> +}
->>> +
->>> +static int clk_regmap_vclk_is_enabled(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_data *vclk = clk_get_regmap_vclk_data(clk);
->>> +
->>> +	return meson_parm_read(clk->map, &vclk->enable);
->>> +}
->>> +
->>> +const struct clk_ops clk_regmap_vclk_ops = {
->>> +	.enable = clk_regmap_vclk_enable,
->>> +	.disable = clk_regmap_vclk_disable,
->>> +	.is_enabled = clk_regmap_vclk_is_enabled,
->>> +};
->>> +EXPORT_SYMBOL_GPL(clk_regmap_vclk_ops);
->> s/clk_regmap_vclk/meson_vclk at least for what is exported, ideally most
->> all the code.
->> I get clk_regmap_ comes from code copied from clk_regmap.c.
->> The reason the this part is different (and not using parm) if that when
->> I converted amlogic to regmap, I hope we could make this generic,
->> possibly converging between aml and qcom (which was the only other
->> platform using regmap for clock at the time). This is why clk_regmap.c
->> is a bit different from the other driver.
->> For the aml specific drivers, best to look at the mpll or cpu-dyndiv one.
->> 
->>> +
->>> +/* The VCLK Divider has supplementary reset & enable bits */
->>> +
->>> +static inline struct clk_regmap_vclk_div_data *
->>> +clk_get_regmap_vclk_div_data(struct clk_regmap *clk)
->>> +{
->>> +	return (struct clk_regmap_vclk_div_data *)clk->data;
->>> +}
->>> +
->>> +static unsigned long clk_regmap_vclk_div_recalc_rate(struct clk_hw *hw,
->>> +						     unsigned long prate)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +
->>> +	return divider_recalc_rate(hw, prate, meson_parm_read(clk->map, &vclk->div),
->>> +				   vclk->table, vclk->flags, vclk->div.width);
->>> +}
->>> +
->>> +static int clk_regmap_vclk_div_determine_rate(struct clk_hw *hw,
->>> +					      struct clk_rate_request *req)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +
->>> +	return divider_determine_rate(hw, req, vclk->table, vclk->div.width,
->>> +				      vclk->flags);
->>> +}
->>> +
->>> +static int clk_regmap_vclk_div_set_rate(struct clk_hw *hw, unsigned long rate,
->>> +					unsigned long parent_rate)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +	int ret;
->>> +
->>> +	ret = divider_get_val(rate, parent_rate, vclk->table, vclk->div.width,
->>> +			      vclk->flags);
->>> +	if (ret < 0)
->>> +		return ret;
->>> +
->>> +	meson_parm_write(clk->map, &vclk->div, ret);
->>> +
->>> +	return 0;
->>> +};
->>> +
->>> +static int clk_regmap_vclk_div_enable(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +
->>> +	/* Unreset the divider when ungating */
->>> +	meson_parm_write(clk->map, &vclk->reset, 0);
->>> +	meson_parm_write(clk->map, &vclk->enable, 1);
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +static void clk_regmap_vclk_div_disable(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +
->>> +	/* Reset the divider when gating */
->>> +	meson_parm_write(clk->map, &vclk->enable, 0);
->>> +	meson_parm_write(clk->map, &vclk->reset, 1);
->>> +}
->>> +
->>> +static int clk_regmap_vclk_div_is_enabled(struct clk_hw *hw)
->>> +{
->>> +	struct clk_regmap *clk = to_clk_regmap(hw);
->>> +	struct clk_regmap_vclk_div_data *vclk = clk_get_regmap_vclk_div_data(clk);
->>> +
->>> +	return meson_parm_read(clk->map, &vclk->enable);
->>> +}
->>> +
->>> +const struct clk_ops clk_regmap_vclk_div_ops = {
->>> +	.recalc_rate = clk_regmap_vclk_div_recalc_rate,
->>> +	.determine_rate = clk_regmap_vclk_div_determine_rate,
->>> +	.set_rate = clk_regmap_vclk_div_set_rate,
->>> +	.enable = clk_regmap_vclk_div_enable,
->>> +	.disable = clk_regmap_vclk_div_disable,
->>> +	.is_enabled = clk_regmap_vclk_div_is_enabled,
->>> +};
->>> +EXPORT_SYMBOL_GPL(clk_regmap_vclk_div_ops);
->>> +
->>> +MODULE_DESCRIPTION("Amlogic vclk clock driver");
->>> +MODULE_AUTHOR("Neil Armstrong <neil.armstrong@linaro.org>");
->>> +MODULE_LICENSE("GPL v2");
->>> diff --git a/drivers/clk/meson/vclk.h b/drivers/clk/meson/vclk.h
->>> new file mode 100644
->>> index 000000000000..4f25d7ad2717
->>> --- /dev/null
->>> +++ b/drivers/clk/meson/vclk.h
->
-> Is vclk.c/h ok ? clk-vclk doesn't look pretty, but I can switch to it to
-> keep files organized.
+Will add you to the --to list in next version. The whole series is to 
+enable HS-G5 support on SM8550. FYI, the two changes to UFS PHY driver, 
+which you mentioned above, in the series are to 1. Rectify existing 
+HS-G4 PHY setting for SM8550 and 2. Add HS-G5 PHY settings for SM8550.
 
-I don't have a strong opinion about it.
-I would have suggested vclk-div.c/h - like sclk ... but you do have gate
-ops in there, so ... :/
+Thanks,
+Can Guo.
 
-This made me realize that one does not really go without the other.
-It is more a coherent block, isn't it ?
-Would it make more sense to have these 2 merged in a single clk_ops ?
-
-It's bit late to point this out, sorry about that.
-
-I let you decide whether to merge the ops or not and which name to pick.
-
-If you keep them separated, meson_vclk_gate_ops instead of just
-meson_vclk_ops, to make things clear.
-
->
-> Neil
->
->>> @@ -0,0 +1,51 @@
->>> +/* SPDX-License-Identifier: GPL-2.0 */
->>> +/*
->>> + * Copyright (c) 2023 Neil Armstrong <neil.armstrong@linaro.org>
->>> + */
->>> +
->>> +#ifndef __VCLK_H
->>> +#define __VCLK_H
->> This is too generic.
->> Please add the MESON prefix like the other clock driver please.
->> 
->>> +
->>> +#include "clk-regmap.h"
->>> +#include "parm.h"
->>> +
->>> +/**
->>> + * struct clk_regmap_vclk_data - vclk regmap backed specific data
->>> + *
->>> + * @enable:	vclk enable field
->>> + * @reset:	vclk reset field
->>> + * @flags:	hardware-specific flags
->>> + *
->>> + * Flags:
->>> + * Same as clk_gate except CLK_GATE_HIWORD_MASK which is ignored
->>> + */
->>> +struct clk_regmap_vclk_data {
->>> +	struct parm enable;
->>> +	struct parm reset;
->>> +	u8 flags;
->>> +};
->>> +
->>> +extern const struct clk_ops clk_regmap_vclk_ops;
->>> +
->>> +/**
->>> + * struct clk_regmap_vclk_div_data - vclk_div regmap back specific data
->>> + *
->>> + * @div:	divider field
->>> + * @enable:	vclk divider enable field
->>> + * @reset:	vclk divider reset field
->>> + * @table:	array of value/divider pairs, last entry should have div = 0
->>> + *
->>> + * Flags:
->>> + * Same as clk_divider except CLK_DIVIDER_HIWORD_MASK which is ignored
->>> + */
->>> +struct clk_regmap_vclk_div_data {
->>> +	struct parm div;
->>> +	struct parm enable;
->>> +	struct parm reset;
->>> +	const struct clk_div_table *table;
->>> +	u8 flags;
->>> +};
->>> +
->>> +extern const struct clk_ops clk_regmap_vclk_div_ops;
->>> +
->>> +#endif /* __VCLK_H */
->> 
-
-
--- 
-Jerome
+>>
+>> Fixes: 1679bfef906f ("phy: qcom-qmp-ufs: Add SM8550 support")
+>> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>> Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
+>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+>> ---
+>>   .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  3 +++
+>>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 28 +++++++++++++++-------
+>>   2 files changed, 22 insertions(+), 9 deletions(-)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+>> index 15bcb4b..674f158 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+>> @@ -10,9 +10,12 @@
+>>   #define QSERDES_UFS_V6_TX_RES_CODE_LANE_RX			0x2c
+>>   #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX		0x30
+>>   #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_RX		0x34
+>> +#define QSERDES_UFS_V6_TX_LANE_MODE_1				0x7c
+>> +#define QSERDES_UFS_V6_TX_FR_DCC_CTRL				0x108
+>>   
+>>   #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2		0x08
+>>   #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		0x10
+>> +#define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2			0xd4
+>>   #define QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL			0x178
+>>   #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0			0x208
+>>   #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1			0x20c
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> index 3927eba..ad91f92 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> @@ -658,22 +658,26 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
+>>   	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+>>   	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
+>>   	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x4c),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x99),
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4c),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x0a),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x99),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
+>>   };
+>>   
+>>   static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
+>> -	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0x05),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_LANE_MODE_1, 0x05),
+>>   	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_FR_DCC_CTRL, 0x4c),
+>>   };
+>>   
+>>   static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
+>> -	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2, 0x0c),
+>> -	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x0f),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
+>>   	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
+>>   
+>>   	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
+>> @@ -696,6 +700,8 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
+>>   	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+>>   	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
+>>   	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
+>>   };
+>>   
+>>   struct qmp_ufs_offsets {
+>> @@ -1157,6 +1163,10 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
+>>   		.pcs		= sm8550_ufsphy_pcs,
+>>   		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_pcs),
+>>   	},
+>> +	.tbls_hs_b = {
+>> +		.serdes		= sm8550_ufsphy_hs_b_serdes,
+>> +		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_hs_b_serdes),
+>> +	},
+>>   	.clk_list		= sdm845_ufs_phy_clk_l,
+>>   	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+>>   	.vreg_list		= qmp_phy_vreg_l,
+>> -- 
+>> 2.7.4
+> 
 
 -- 
 linux-phy mailing list
