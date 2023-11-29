@@ -4,96 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 368B7C07CB1
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Nov 2023 08:29:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45FF9C4167B
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Nov 2023 12:06:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMmWZFLpPdxg/1HCSOhIuuOTHTq+Bzi/k6IBnsqv/7U=; b=yo9IYbPgSx//3e
-	UANhxrfpKClSsf5SPI5PMvz3se0AxpMPOE/c0bn0xYswp5PfJFhgq//DbyfUPFbW/tPLudHIEJC81
-	s3sr52F/z1K6HKreTqKB0oODAy6cGN4hN3C8/rJ+GROoUe5M6EPRxHEhIRSOm8JD9NPrCv2vSltOw
-	syUGlTK9pXAQTF3d2gqqt36Hd5WUcpq154MciQDENmRfNGrjCmpxwv34LIdRA7ueMvPazL5N8kozf
-	H471+9MiM/SlBw1Zuv0sPd2aTXiMKFc0VX3W3GZJATSr6NN7Q03ey4RsBfOrl/L9lyfb84THvuTR/
-	NU1Eaux6cEKdDtcjPgNg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lIk54E9qTUnfwyTrNs2tfb+TlnS3UR7KYbkNJU2dbTI=; b=ol5Xj/Ah8pRXrH
+	2T/LedhGUr17JaGova/GklLeV2BT/kVzl/1NEKaC3vAqqOpRoB9sAmKi2B8cGt2B67Wn7ti5xGHAz
+	oy74mlziJChJzVQTCicAAsga9bQDP5wkBrIy6WDzPng24iW2l1Id29RDIkFLS8Q3DTAaUTFri64Bf
+	IcCQsjIn3XtuRudR3ep+UJpwn6it8X4gTUwYjVxNLLeIApZd+KOgts1LmsFxKZKWMlFZytrKwX2RH
+	9+eaQcbYxGc/10daKjnkIZV1p86EYOintk8qw1X5j//o/AJRemtlkUK8Yf0c2nKxkLx0ViKb0LuJd
+	A9AeZt7hq11d+SWw6aCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8Fwg-007TEE-2P;
-	Wed, 29 Nov 2023 08:29:22 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8Fwc-007TC7-2x
+	id 1r8JLG-008F0f-01;
+	Wed, 29 Nov 2023 12:06:58 +0000
+Received: from m12.mail.163.com ([220.181.12.198])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1r8JLC-008Eyx-2u
 	for linux-phy@lists.infradead.org;
-	Wed, 29 Nov 2023 08:29:20 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AT88Ba8016672;
-	Wed, 29 Nov 2023 08:29:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=aDSJwSs6iMbImWri4N3coaLXQnmXC0AhmJE6F48E1E0=;
- b=F4iysN7etTm0Cp4MrbpYfYtspHHy82GzONZO2zBCs2GOIPrRJvWSTbc2hA/SdCPpU2zs
- P9rT+un4VgEvqDFdZ3oC2NDffewMQxTP3R1Auz9o707UEe75dc7Q50oxtEocdmLRMc0M
- vEh0aOvKBjhhq0F6OsjdEecrxOB7L19ERwByVt9zDORxHqdL1R6nvJhH/dHnqIN5aeb0
- 6dJzBsBM2vtHprgAY4qr+ZQd+sgOX7Sw9wFm1oWqGuwbqvo5DSbCjBRf1uD8t3EZzLGf
- SHTyT3j5uDqBErJjWOeNr3xLdkIK1xYzSuO816lXvOaO57Xx18CtvmfiBDvn2Itzl3+Z UA== 
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3up1gt81c1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Nov 2023 08:29:02 +0000
-Received: from pps.filterd (NASANPPMTA03.qualcomm.com [127.0.0.1])
-	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3AT8H9SU023384;
-	Wed, 29 Nov 2023 08:29:01 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by NASANPPMTA03.qualcomm.com (PPS) with ESMTP id 3unmev6x03-1;
-	Wed, 29 Nov 2023 08:29:01 +0000
-Received: from NASANPPMTA03.qualcomm.com (NASANPPMTA03.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3AT8SsZR007540;
-	Wed, 29 Nov 2023 08:29:01 GMT
-Received: from stor-dylan.qualcomm.com (stor-dylan.qualcomm.com [192.168.140.207])
-	by NASANPPMTA03.qualcomm.com (PPS) with ESMTP id 3AT8T0hA007604;
-	Wed, 29 Nov 2023 08:29:01 +0000
-Received: by stor-dylan.qualcomm.com (Postfix, from userid 359480)
-	id CD2B320A5D; Wed, 29 Nov 2023 00:29:00 -0800 (PST)
-From: Can Guo <quic_cang@quicinc.com>
-To: quic_cang@quicinc.com, bvanassche@acm.org, mani@kernel.org,
-        adrian.hunter@intel.com, cmd4@qualcomm.com, beanhuo@micron.com,
-        avri.altman@wdc.com, junwoo80.lee@samsung.com,
-        martin.petersen@oracle.com
-Cc: linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Johan Hovold <johan+linaro@kernel.org>,
-        Abel Vesa <abel.vesa@linaro.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-        linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH v6 07/10] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550 UFS HS-G4 PHY Settings
-Date: Wed, 29 Nov 2023 00:28:32 -0800
-Message-Id: <1701246516-11626-8-git-send-email-quic_cang@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1701246516-11626-1-git-send-email-quic_cang@quicinc.com>
-References: <1701246516-11626-1-git-send-email-quic_cang@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JOANa4W06Kh39MWU-aXNHIGKP8sXDn6l
-X-Proofpoint-ORIG-GUID: JOANa4W06Kh39MWU-aXNHIGKP8sXDn6l
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-29_06,2023-11-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
- malwarescore=0 adultscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
- clxscore=1015 phishscore=0 priorityscore=1501 impostorscore=0
- mlxlogscore=857 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311290062
+	Wed, 29 Nov 2023 12:06:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:Subject:Date:Message-Id; bh=XcvJyms8UCabUgFAD5
+	Q++wTaeOfxzMUw/2HahmsKw7w=; b=Fs+iPt63eB79uiYrz7SjpBk2kVq0U5i4em
+	a51Q0n4JP9nQ9+06RfVarzHO9KUZqgN5MfmWcTtsId+DskcMOAO6650AESeX5eNP
+	LUL/xxh4JkCmrLiCYjdQkJdNfzoRE6PhZH0PWXygbJ7Y/Vc9WxGazZSELF8q8C3i
+	5uEu3ghIc=
+Received: from localhost.localdomain (unknown [39.144.190.126])
+	by zwqz-smtp-mta-g5-0 (Coremail) with SMTP id _____wBnbzhPKWdlcauGAQ--.39921S2;
+	Wed, 29 Nov 2023 20:06:40 +0800 (CST)
+From: Haoran Liu <liuhaoran14@163.com>
+To: vkoul@kernel.org
+Cc: kishon@kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Haoran Liu <liuhaoran14@163.com>
+Subject: [PATCH] [phy/marvell] phy-pxa-28nm-hsic: Add error handling
+Date: Wed, 29 Nov 2023 04:06:38 -0800
+Message-Id: <20231129120638.33294-1-liuhaoran14@163.com>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: _____wBnbzhPKWdlcauGAQ--.39921S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrur1DZFWUJw1xtF4DGrWfZrb_yoWDtrcEgr
+	18CrZ3XF4j9anrK345Gw1rJ3s2kF9avayxWFyIqrWSyFy7X3Za93yDZwsxA3s8Wa12krWD
+	Gw45ZrW7Ar13WjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7sRKpB-UUUUUU==
+X-Originating-IP: [39.144.190.126]
+X-CM-SenderInfo: xolxxtxrud0iqu6rljoofrz/1tbiZQY3gl8ZaQ1sNgABsv
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231129_002918_960174_84235698 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20231129_040655_301472_75D3E397 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,102 +74,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The registers, which are being touched in current SM8550 UFS PHY settings,
-and the values being programmed are mainly the ones working for HS-G4 mode,
-meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
-However, even consider HS-G4 mode only, some of them are incorrect and some
-are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
-SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
+This patch add error handling for the clk_prepare_enable call
+in the mv_hsic_phy_init function. Previously, the
+function did not handle potential failure cases of
+clk_prepare_enable, which could result in undefined behavior if
+the clock preparation failed.
 
-Fixes: 1679bfef906f ("phy: qcom-qmp-ufs: Add SM8550 support")
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Signed-off-by: Can Guo <quic_cang@quicinc.com>
+Signed-off-by: Haoran Liu <liuhaoran14@163.com>
 ---
- .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  3 +++
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 28 +++++++++++++++-------
- 2 files changed, 22 insertions(+), 9 deletions(-)
+ drivers/phy/marvell/phy-pxa-28nm-hsic.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-index 15bcb4b..674f158 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-@@ -10,9 +10,12 @@
- #define QSERDES_UFS_V6_TX_RES_CODE_LANE_RX			0x2c
- #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX		0x30
- #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_RX		0x34
-+#define QSERDES_UFS_V6_TX_LANE_MODE_1				0x7c
-+#define QSERDES_UFS_V6_TX_FR_DCC_CTRL				0x108
+diff --git a/drivers/phy/marvell/phy-pxa-28nm-hsic.c b/drivers/phy/marvell/phy-pxa-28nm-hsic.c
+index eff6dd6b2dd0..1aa09ebeaa8e 100644
+--- a/drivers/phy/marvell/phy-pxa-28nm-hsic.c
++++ b/drivers/phy/marvell/phy-pxa-28nm-hsic.c
+@@ -60,7 +60,11 @@ static int mv_hsic_phy_init(struct phy *phy)
+ 	void __iomem *base = mv_phy->base;
+ 	int ret;
  
- #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2		0x08
- #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		0x10
-+#define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2			0xd4
- #define QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL			0x178
- #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0			0x208
- #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1			0x20c
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 514fa14..2173418 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -763,22 +763,26 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x4c),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x99),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4c),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x99),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
- };
+-	clk_prepare_enable(mv_phy->clk);
++	ret = clk_prepare_enable(mv_phy->clk);
++	if (ret) {
++		dev_err(&pdev->dev, "Failed to enable clock: %d\n", ret);
++		return ret;
++	}
  
- static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
--	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_LANE_MODE_1, 0x05),
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_FR_DCC_CTRL, 0x4c),
- };
- 
- static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
--	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2, 0x0c),
--	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
- 
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
-@@ -801,6 +805,8 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
- };
- 
- struct qmp_ufs_offsets {
-@@ -1296,6 +1302,10 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
- 		.pcs		= sm8550_ufsphy_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_pcs),
- 	},
-+	.tbls_hs_b = {
-+		.serdes		= sm8550_ufsphy_hs_b_serdes,
-+		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_hs_b_serdes),
-+	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
- 	.vreg_list		= qmp_phy_vreg_l,
+ 	/* Set reference clock */
+ 	writel(0x1 << PHY_28NM_HSIC_PLL_SELLPFR_SHIFT |
 -- 
-2.7.4
+2.17.1
 
 
 -- 
