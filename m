@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C6F0C4167B
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Nov 2023 02:13:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8B43C4167B
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Nov 2023 02:28:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PQFuhHJAmPCymukiMprsdL0odRsCpoFw+pI937DOPtk=; b=k7PObpQ+Ey4S3Y
-	iKJ42JvjRL7LU0B++0CE7ZudAu7zCHLzt+sD2ET+trWXFA4S2LyoZdFdoJkEW1lZ+oy4TGHbFpLIZ
-	zDuygGWZy6eY+S4AmMNzlhXP7HaLrKYawpPE1ZbNLsxMJEo4qngpWEL9gI+JYVayrGO4POgAoUn5I
-	jHtFk1Ywc5gnOs6/UbJFxxNQymjUFmTcIebO1fDqR0oZ6uNZ5xjLuOUbjI1eIre62AM6qStu0h7ok
-	hG45SZgl9yI7FzIQYPoIRIfd/Zbu6DSFvfL/zhTYWZbGNytXktpb7DIItMfs0HTWlGf59ltPSUdfA
-	dxrtE56iUsslwWn33Lyw==;
+	List-Owner; bh=PgAHVEU+3q0TE7IqHQAfYFnQEGDDa22O3sQ9KBQsFvA=; b=2dgn5fe8hkTmUF
+	affTc6Lr96sq5VlfmC27LEQnwRbD5esgwgd3ceC2jE9OvtkESy+eOqfnQ1scjshlZufa5LSmqVvz+
+	ttsCiORquqKcs6pyzquwfmLpt8F8RdLTwpsi4W42gBibQqDLBMItWGArYVQ5Hvn3I8KXxLR1rXqjG
+	H+vEAVKFSGfeLsn0SZe8L7aMIOOIzCKKkm4I/2yByZF+P3AcP1OnNIMjj8a9akyWXZNyDYoIsY/of
+	a3MJ4ZBcXkRRQRoSK3IS+vtcVXtKR/tRY1Ks8d85UD+XiXKO1re0r2RL43Y5ZFQ7gvF2PJFZhLZUC
+	vaeFtkN4E1eRFEJhW5YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8WY0-009jRO-2e;
-	Thu, 30 Nov 2023 02:13:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1r8Wn5-009kPE-27;
+	Thu, 30 Nov 2023 02:28:35 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8WXx-009jQr-1N;
-	Thu, 30 Nov 2023 02:12:59 +0000
-X-UUID: f80dea928f2511ee86758d4a7c00f3a0-20231129
+	id 1r8Wn2-009kO8-2Z;
+	Thu, 30 Nov 2023 02:28:34 +0000
+X-UUID: 24f210f48f2811ee9b7791016c24628a-20231129
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=Sdpj5tyH7yU8gomUfqhiQkGfVdljFsy1Oevb/SVnP9I=;
-	b=XNCBRmlSnmJ852nJI5cJWccOq9G0kW6lInAeQUTZXRgD1xjKi2HXmCgl5Vza2hkjT0us03IfiodmfwhZ900j6Jon3s+gyUjnE6sPRgVe+jEEh/dFGZgtcbknvzCGson6e+PmeYeDMoE8cIJQ4wW0Hqv8W1yJVvsmYIJy71qPfx0=;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=ohTjSCub61IEFSVwDaK+ZyqC7CRGMyzUKS4KlGdih60=;
+	b=PB2eNdeEO2Zh9wOafuSyYlvOtSg4GifnW/dA8xDGBBLSKw0pNw/3iMT/CSVhFpUWC19AXVEdslXaFFkLSEImjlCfeLXsWH/coQLFiGyzXKA5aN4H8iX4OdRKa9xD76WeH2vYjpIOPLV9TBXG7XbRXhgypGtAt6REKnSsewpmuA0=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.34,REQID:eb7966f8-de5d-46ac-8a2b-5817559fdb13,IP:0,U
+X-CID-O-INFO: VERSION:1.1.34,REQID:fa7f275d-77ad-4f63-bcdf-d29de3ec5170,IP:0,U
 	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
 	release,TS:0
-X-CID-META: VersionHash:abefa75,CLOUDID:9f203b73-1bd3-4f48-b671-ada88705968c,B
+X-CID-META: VersionHash:abefa75,CLOUDID:8e523b73-1bd3-4f48-b671-ada88705968c,B
 	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
 	RL:11|1,File:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:
 	NO,DKR:0,DKP:0,BRR:0,BRE:0
 X-CID-BVR: 0,NGT
 X-CID-BAS: 0,NGT,0,_
 X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: f80dea928f2511ee86758d4a7c00f3a0-20231129
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+X-UUID: 24f210f48f2811ee9b7791016c24628a-20231129
+Received: from mtkmbs14n2.mediatek.inc [(172.21.101.76)] by mailgw01.mediatek.com
 	(envelope-from <chunfeng.yun@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1588171196; Wed, 29 Nov 2023 19:12:53 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+	with ESMTP id 1432164585; Wed, 29 Nov 2023 19:28:27 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Thu, 30 Nov 2023 09:52:49 +0800
-Received: from APC01-PSA-obe.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Thu, 30 Nov 2023 09:52:49 +0800
+ 15.2.1118.26; Thu, 30 Nov 2023 10:28:24 +0800
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Thu, 30 Nov 2023 10:28:24 +0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Xyx1TcrBlRXxYTpG0sCvJEjTRuufJLyiwLOq1o8YALcaPt8QUpGrGi7azWrhh91Ub1PDpcVpcQ0xz4Daniaifng6un8QyrrRierdOlrsqUHujGmJHSDc4tA6M9I9L4ZyxjLfkhpUTPjEXXIe3ABfeGdiyEoas7JLNvN9L0Slapa95Zn4xlddkYmZddLbgQuXOZXlOhlAcsfDh2UM08TxL56j1KURfrAHfI1ydg5OWrT1Q1uw1qlH2IsMEuPIr0Bs7ez7TSYXI+gJSYjCBW7ZFmALieULqeO68DLH5jESJJDcYtwP71Od1OV4QiQlDMcitnAD89SQl1u7/CT9cdwOSQ==
+ b=gQ9Q7z6sNwXvJIpRueSHCfst+GBv36+sxvKC2Fis1ly1RVYBrZcjsVoOoMzedjOqev+YwZHhwN2VhnDRcrLt4cselJGRMNAXxowpkARHVS2lDDmatbASplCjqAVSPDjrCPSMDKm2eO8bpWHOM3UGg+IM9PqZFqc7O1D7hmd0rTIoK3teb7Ff8/MsLKYshCnPP4cYZU+D+a2huxeWwB0dg15MnlO8q4zBh9OkV8miWcpEUwc/X6FqSJHuEXNbZgImfJCo3wjyQUBNPMwrGQZABE/hYqgSYIkVih0hJrBnRl+Ge1rMLwvBOMzgVMXJvCXReBItQUkxXjdVu/omY/bJIA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Sdpj5tyH7yU8gomUfqhiQkGfVdljFsy1Oevb/SVnP9I=;
- b=QKKrkfEPEo0U17v3pZ9iwF8cxv0JiLOp1EMMxOc+X0oUM8YGw8DIXWmIUGrA3jkvQvENfSNY87U8d0k5Or1ZDjvqpbSRYkMmp9qJ8YZ31kHKFsR2fcBspyq7RUHzek06hFu9vO+R/1KGGMwxlADAIBNgjFtgrkvkfvlTfhVtHBR3i1Oqfd6dBlub4nj8qcCMexlxDB7rhEWYKxhjdj/IBXIMO89GrJY6BqLJfiyTs09bBgAmhpboYqC/aX2YuEq/ZPFqYeOG0fw1vBFWjNqwKCkl+DPpBwYqTbe/A36qf6JOKqX+2AyX/cfEbQ0QHyGhOXuZ11r0AG0fRYG2Wt0ObA==
+ bh=ohTjSCub61IEFSVwDaK+ZyqC7CRGMyzUKS4KlGdih60=;
+ b=WqMCLcAbn+aU0C3eOgY3rEj7wbRxOiN1fjIlTbPyWNI9g0KJCSLMborX9SZxQuITBgZ+guQlCLE+eZMU/HiIyg9AqXNkxeY4f7aeDgPtb/0jQ7ER9e/THAtdMlyUx1/LxYpvoR8mqDaNHqpgr1DW6JW3prtdYm+ZuiVkULNm8Bye2h9yPeqYccstwf17HIB8gbMlQt1lmMM7sNJ1dRfx48S2SF3ud9vpzq2OHxu1FWfQ4t4LMwWB+mR0uQoBgkuMewqnaCYkRfunkNktB//9Yjk2p3urLWZm3ofpF1Tsd77G2wPRjSNI0+movrSX5RAytECDxca6hpFRwQRN2CFwQg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
  dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Sdpj5tyH7yU8gomUfqhiQkGfVdljFsy1Oevb/SVnP9I=;
- b=qs+2Wz9+vye+Db+MuT4FKIHQmDULUyIgW28pepnxBWK+jDv2JIFPSJgjU7Wsk6wBdm2Hat/gGZX6slFcAOmLDFbLzaO2MZ/iUh7TlRJ0owlLiDi2WpGRWnYsW0yrjrX9qIp1jgimJylZl40i8h9l33fY9H5mIMUMVs39gE9h+nY=
+ bh=ohTjSCub61IEFSVwDaK+ZyqC7CRGMyzUKS4KlGdih60=;
+ b=vCLmKqXVpNBgtYQhF9AWnY8cpvyRnY6WwWlPvW0fZwS2iip41kJVROV5Mj6bi7v0vkemBIxl/kdLQqSYj+tK8JHp21Yh7ciFH/jRbnKvJo4WFMyHpjxYI/iUvgzobTVDfM6EuElQfFaRLPlY83L0MaWI2+zm29Ai00/Z6BL3gMc=
 Received: from TYZPR03MB7153.apcprd03.prod.outlook.com (2603:1096:400:33c::6)
- by TYZPR03MB6495.apcprd03.prod.outlook.com (2603:1096:400:1c8::6) with
+ by SEYPR03MB7293.apcprd03.prod.outlook.com (2603:1096:101:13b::13) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7025.27; Thu, 30 Nov
- 2023 01:51:40 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7025.24; Thu, 30 Nov
+ 2023 02:28:14 +0000
 Received: from TYZPR03MB7153.apcprd03.prod.outlook.com
  ([fe80::75b5:9f6d:dc01:9946]) by TYZPR03MB7153.apcprd03.prod.outlook.com
  ([fe80::75b5:9f6d:dc01:9946%6]) with mapi id 15.20.7046.024; Thu, 30 Nov 2023
- 01:51:40 +0000
+ 02:28:14 +0000
 From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
 To: "vkoul@kernel.org" <vkoul@kernel.org>, "krzysztof.kozlowski@linaro.org"
 	<krzysztof.kozlowski@linaro.org>,
@@ -98,14 +98,13 @@ Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek: tphy: add a property for
  force-mode switch
 Thread-Topic: [PATCH 1/2] dt-bindings: phy: mediatek: tphy: add a property for
  force-mode switch
-Thread-Index: AQHaHz31Z+QBjWZtBk+dlN+S28FsW7CK2GgAgALqXwCAAANiAIAEWt+A
-Date: Thu, 30 Nov 2023 01:51:40 +0000
-Message-ID: <74957a9cc4663815e200d222483541a1eec43bbe.camel@mediatek.com>
+Thread-Index: AQHaHz31Z+QBjWZtBk+dlN+S28FsW7CK2GgAgALqXwCABGh5gA==
+Date: Thu, 30 Nov 2023 02:28:14 +0000
+Message-ID: <b351bdfeb1e782bd559f3c33da916de6a24b3446.camel@mediatek.com>
 References: <20231125012303.760-1-chunfeng.yun@mediatek.com>
 	 <e34c2746-8e93-48b8-9c96-690242fbf6e9@linaro.org>
 	 <239def9b-437b-9211-7844-af4332651df0@mediatek.com>
-	 <0dc24d82-e09d-45bc-98ae-1dfb6318cb96@linaro.org>
-In-Reply-To: <0dc24d82-e09d-45bc-98ae-1dfb6318cb96@linaro.org>
+In-Reply-To: <239def9b-437b-9211-7844-af4332651df0@mediatek.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -114,84 +113,83 @@ x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=mediatek.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TYZPR03MB7153:EE_|TYZPR03MB6495:EE_
-x-ms-office365-filtering-correlation-id: 8b1f40cd-1ce6-42ae-5fdc-08dbf146e5a8
+x-ms-traffictypediagnostic: TYZPR03MB7153:EE_|SEYPR03MB7293:EE_
+x-ms-office365-filtering-correlation-id: fa7d2cca-f322-46ad-7585-08dbf14c0154
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +sP5VsLkxHtntuj8kPCg8pMqHksZ0YhF4XyWK2h2TiDKzAw/NjVuS5Oz4n/y07bT1XXNI5GwgWd3je/HmqOm7losJlf2ZYO9tpLc3Jfh8yuZhMzTRInRMF82d9e1hv0/6GcOqx1qoKwftiDZ4EARvSNbgxCZ1LufiY8nLupji2W4HnR3XVKMOwBlfdzSx0728OfQTv5UIchAUNsstkfsC4Qx6k3UXOnvuMe4CDonRutyPxk+Cb0RUMVUnVRROgDjbkRM44iJ/HVNiPWaYpa3tUyK5i+JSMgmPyNuZ62Buzvr1aaauyeV/ieSzsmYc1E0T+XL1ChK5fs6JECVuq9uIFc8MEOJ7v+onV1jtMrI9/IG4PZQyiHcaUuBZgF3ggVZVUfa350J8cp9tCl7039+8DLL9WDdT0t4HXycTvy3KT4jH5Nvew/mxR0WgL6OMTDJfBvIZByCXbuRC+++1hEVt7rBtwbIbTsJJWSntBTzUwYYS/2KiGSmjnkEdg1WXbARbvp54j+I86jwzJH00RQD9HWmOl7bfngLr6WE/UN7cIaAnKy0jcESHl10lX/je1UJcGlTRAO+sOSSNWk4w+VVqCxz24d7wS5EbrFxUVpMdVfH214K6EZIwcSYyMmVU2bAkfe7MBnqxBsSYYf9PbY/o7ol4r2e7ohk5NWos7efxoXExkQyUJGzJsL41kLedFSWQpxQBspoamv3sQ4sUVb44AVupF/MLdfUesHOnkWFvSKw2g1mce7DPdZWzV9J6L9GHR5kxcT3bFqk7VJ/vnSuzQ==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR03MB7153.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(346002)(366004)(396003)(39860400002)(376002)(136003)(230273577357003)(230922051799003)(230173577357003)(64100799003)(451199024)(1800799012)(186009)(64756008)(91956017)(66946007)(76116006)(66446008)(66476007)(54906003)(66556008)(316002)(8676002)(110136005)(4326008)(8936002)(83380400001)(85182001)(4001150100001)(2906002)(202311291699003)(38100700002)(36756003)(6512007)(6486002)(38070700009)(478600001)(53546011)(86362001)(122000001)(6506007)(41300700001)(71200400001)(5660300002)(26005)(2616005)(7416002)(99106002);DIR:OUT;SFP:1102;
+x-microsoft-antispam-message-info: dZufxmnJqrBlabC9LQMLPYSVcPQx/hO3EU7rOaZDxGBPHqXoy9L2PNg+VibvMVmuouewX26EGR2A0rG8+uEeVKm3dsjIlEE+IeWm5WXicvklhDT5AmWCLJkREJtQK96j9R96wEPgDmO/yHrQ74+bGs7k3k9kZdnK/NTgMPdK4+ynT6/6ffn4tO+Xe6UlFefF50KEQM/U7WZ26Soco1yZ+bM4GkGFmEHJPR7r9JdD4LZLPnG5Sw1S7O8tJ2fhYortC9Yt/IU7XbZgEzTruKxBnOX7R7zWVVPPYqUh6m1XqkO8yyCduqzz8lm0FjG3l6ALF0+v64qwux+SGXBxY3CLRkoEu0Bd3HjRt0hsa87I18BVzYAgxJC3SVVxQ9iqIAnf3b+/qThho+oIQl0gfcTZWa+i0i6czH3zbWx8PSYp7gRD808UQW90qAJ2RMu+ckq2udce8pEIrRHEKw8c9+TLlHXD1ZIXWaQkW7hDiMUaI/xMlNfE0+I6bk03WyidP+3xx5Syc8aR6Wo1yHTx6np70KVlAJ5VwAXg1ho0bkKaXPMTDnU026MDkA+smVSOeSCaTjgfMvSu5o6D1GbaousWwCmrx2min8Id86b4lfNhxgylTCJYan/ztzUxBydh4BcTydtpn+19h9GPbnFd3mZpPFhXxREQa1jZijKsUVmdU2fpRqKAbOUlpwU4o8pa76b4tmHSxCRQ5Wvj0ndQIPHoKWI99jVThLwbM2ZQ0+lE8ywAgM+TP7mHx8FSk5sy2BTJB64/3tCv8VxoXwNFkIvvKA==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR03MB7153.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(39860400002)(366004)(136003)(376002)(346002)(230922051799003)(230273577357003)(230173577357003)(1800799012)(451199024)(186009)(64100799003)(8676002)(4326008)(8936002)(83380400001)(85182001)(122000001)(7416002)(36756003)(2906002)(86362001)(38070700009)(4001150100001)(41300700001)(202311291699003)(38100700002)(5660300002)(53546011)(66946007)(6486002)(26005)(71200400001)(6512007)(478600001)(2616005)(316002)(54906003)(64756008)(66446008)(110136005)(76116006)(66556008)(91956017)(66476007)(6506007)(99106002);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?MXJ1WXFydHNPZk1Cc2hNeXlHWjdqSFR1dzU3a1UzcDlIWlpkZTZnT1QvMkd6?=
- =?utf-8?B?a0o0eDdqekxNVG1zN2Nva3FoaFhTZ2twYmtXVzNXTEYzeTcvQXk1RExFS25U?=
- =?utf-8?B?ZjVGQjBmeVRpUmJjemRpRG15VmdpNU5lZVV3V2FpcCt1MVJWakp5bnRkcFVI?=
- =?utf-8?B?dkE2b296T3I1enFXVWFWMDFCeXdOTTlvdWRmeU1BQjRDV2c5aDFIS1V0Tjla?=
- =?utf-8?B?TU5IVk13Y2VrYWRCVXZHa2dQa21wMXlycktLaWZsWkRDMkdaUXZPNnpocGxa?=
- =?utf-8?B?c2xRUTl3YjM1WmUyV3pPU0EzZXpRZng4VFdsTTNvK0sxdmxiK3NQdmQrT2tt?=
- =?utf-8?B?VmtDZnFvRitmS3d6a1ZTb0RCY3R1ejVOZHVJN1hQd1JnOFg5VU81eXRINjQz?=
- =?utf-8?B?dEVnNjVNWDhBNTdCV1NldTVjQXN0VWVsZEZoVzA3RUZxaDluc2xjdWQwUzlk?=
- =?utf-8?B?dVZ0ODZ1c2hyRitoL0I5WktOY01hZ215T1diZEdYQ0doWlNGRlFIb3dvVEZa?=
- =?utf-8?B?QzVqYklkT2hYQWtVOG1JMVJQSnJoNnErRkZ3cFJNTzRSeDQxOVlMLzJIVVZS?=
- =?utf-8?B?R0RPbnJLTWJkUUsrbTdEZ0QrVGpWMlMxQVBOcUIvZmpMYVdQS3g5TG9iWE0w?=
- =?utf-8?B?UW1haWlKcjBTVk9ZSkdTZDFTWXNIdlNjaDJQa3BHN3lENkJEU04xZ1RGMGY0?=
- =?utf-8?B?TDl0azN1R01oYmdkMmdlMndWbjFVb3E3cDJpdTl1Si9hOE03NVBWQjRzbFRj?=
- =?utf-8?B?VlB2Q2p3bzN3QmVjOUJXVkZFekszWE1UNDFRa2JlVEJ2TjFDem5XdUdmVjVE?=
- =?utf-8?B?Njh3c01CLzlOcmpnNmErUTFUQU5nMmRMVmVEbjdXWm5ZQnZ1QndUVXBTRjY4?=
- =?utf-8?B?Z2dQUFZ3R1AxVDJoYmU5RzlZVWExRXRWVHFORjNRNmVqajhlbjBjWVdNa1Zx?=
- =?utf-8?B?MWZFSnpEeTgvV0xmdGJ6NThNYndtSVZiMzdXczYvdllZbWVYWlc3M2ZRdmtZ?=
- =?utf-8?B?SVQvOFRKVXZYdTRzdlFIREhwazBjdlJZQk5Na3pHaC9SVGlHRXVMUDdQbHl4?=
- =?utf-8?B?ODU3VXhuRDEvT1h6d1pJRUplMXN3Z1hpdUZWOWJjR3RzWVI4QWRTN2RwSllM?=
- =?utf-8?B?WW1NSHdXZ2hmWXBGVHVXUTQ0WDZaeEFHazlITklQeFVoTlFGTWc1ZnFZZzVv?=
- =?utf-8?B?dlB0MWQySVZFcHlWVUlHRkMxcE1SbVVnellSNGhsaHZDdnlyQnVWZWI5YWVi?=
- =?utf-8?B?akUzVDJuRmtJSU1PVUVHdFM3YlVjcmxZRjNYRWpwYnc2N1J3NHBXQ0pqSnEw?=
- =?utf-8?B?VDRjdWtYdEtyUWh3c1MwaWdudjAxZ0ZEUlRmbUplY21Pa3lMMUMyVkQrN0Z6?=
- =?utf-8?B?aDRXQXIvN3lBbVE4dnk3Q1ZjSkh3bjcxQWh1ZlpkODZHdm9uc09LaU9TcWlH?=
- =?utf-8?B?OGxTRStjT2Y4ZWFRVnpRUUV6Zm5kb1Rubmo4NTRsOUErM3FhY1ZjRW00OE1G?=
- =?utf-8?B?b2Q3MXRPTzkzWDRla1g1Z0cwdGN3SU9RZ1hyNUR6cFE3Tm9xYk5Rd1VVYlhj?=
- =?utf-8?B?Z1FaR1RGWFlTM2hsR1U5UWhxRXFReGxOYkZlb1dBMU9pZTNDZnFUU1hRUUNq?=
- =?utf-8?B?N1RzZTNvY09GcnNoRUhSemJ3bndyMlA4WDNtSUh5NzhjYi9ZSEo0ZjN0UzNR?=
- =?utf-8?B?R2MwZHdnMDVaeE1TREllZk13NjI0ZFN3b3IrcDJYeXlLaVRrUEt4WlhialNT?=
- =?utf-8?B?bXViWllsTzRjRGF3MmdjbkZuSHJra28wWHhoYjNkMEcxM0FkdlFtYm1MNk15?=
- =?utf-8?B?S0hnR1dOS0ZGdHZQWVJqdEFCeXQzRTFXSUdPOWpIRUh1b1FTNm9VQXBlT2I5?=
- =?utf-8?B?dWZGTHZ4bUg2SlpqNHJjWGdiQmNJWURtMFBQdHNEbmFXMTl1V1FhNWxzMkVB?=
- =?utf-8?B?WnRWRWxVOXVHeGt3TEp1SjloQW5Kb1lXNEFqYTd6WUZXdkhqdThSY0svbUhh?=
- =?utf-8?B?QzA0ZTlEcWIzL3hMMlpSUFgxL0I0VzZaSU9zZlRNbDdFcGtEOWZCQlhOVDhY?=
- =?utf-8?B?UDQ4RmRJWlQyR29ZVXZjZ0JWZWxiQ3ZZQ1RXOE91QnVzMUZxWERQZkxQdjFz?=
- =?utf-8?B?TzNnSEVsMUJxMGVEY0w4TWNDVFFRUDV5UkVkR0xCQThuWVlzdHd4RXloa2Rl?=
- =?utf-8?B?SlE9PQ==?=
-Content-ID: <AAAE7A2D2FE3DF40A26731185BA70111@apcprd03.prod.outlook.com>
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?V2lOL0UyVHFBbG4yN2d0UHkwcVc5SHFyZlY2NEkza1ZKOVhIS0N0bk5qcy9F?=
+ =?utf-8?B?dHVPd2FGOEZkM2JGc3J0aFlsdlhNT2dFVVNYanF4ditrZmVLb0MrbmdkMUJx?=
+ =?utf-8?B?MitmUmNCMGYyclV2ZW5hNG1HNWtNSjlRRHloYzVaM0xqaVN2RW4rSUJkUHdQ?=
+ =?utf-8?B?Z3FKc3pkVWltUGNUeUxpZE5EREQ0MkgwR3NFVXM1Zm1OQVpOZVl3TEVWdUlw?=
+ =?utf-8?B?L2NEUllBOS9QODZpQUVVTXloaG9xVmhqQ3R0MzA0TUd3a1dLQXNFenNrOFJ0?=
+ =?utf-8?B?ekFTOHFiVnUvaGZENUhUdUlFZ2diNklETi9Dckh2VWc4bzhsWGxRcDRxZUc0?=
+ =?utf-8?B?YmNUcEhDQ2hCUEJKZDlQRFg3TGFHdEJSTkp0dXQrT3g5SGowSXVzUTVUL3Zq?=
+ =?utf-8?B?dHdCaDU1UFVPKy9RV1QxZjRrWnJNeDN5VTlhRlVHRW9scHBKa1B1Z1JiSEZ4?=
+ =?utf-8?B?eG16MmhDaVU1Vk9NenIvNVZZZTQ4WWR4ZHo5bTNBZzZYaVBLY1NDc25rTW04?=
+ =?utf-8?B?UllEZDNMMHRRQWxVZnhFWVF0YlE3VWthdkU5OXppcnlNZnRaelQ5UVlpYzBQ?=
+ =?utf-8?B?czB6LzVTRUpaVnBpVUZhTk1xN2kxRHo1RXdLS0hSc1BlVXg2S0J6TEdsUGh5?=
+ =?utf-8?B?Vk5yWlZNMFVMVG9tSUR1cTUvWElzNUk2SlRkejdkeXFoT082MThqM1c0OE5z?=
+ =?utf-8?B?RDN6OWRlUXdYK093b2YvaFRiUzQyWk5nd3hpMXM0aEY5d0JoUWRCTHBtUG53?=
+ =?utf-8?B?UmRMUGJ0ckJiQTBiakRzNE9iemRWYmFON3dqNFZzb2dCcDJmdlJDd2NlamhN?=
+ =?utf-8?B?TkZ4MFJnQ2FHVkZzL3RvZjNSS2VRTkpLTDZqemt1VVVtRHRiZ2QzWS9ObjhN?=
+ =?utf-8?B?LzJqTFRwK2RwVHpqWkgwT2E4dTQvUjZ2enYzNGlkV0RQYVRYUlo1UWdZMnAv?=
+ =?utf-8?B?MFpBdUtvSTJVLzNqN0NQRUQ3bzBFQ2t0b3VOa0hVOFlwZjR6NGFISWxPRFZ1?=
+ =?utf-8?B?T3c1KzVpUGFvUi85UFZVdlllOHdjakJ4ZFhzUmxQMHVIVDkwOVBkKzFjZGh4?=
+ =?utf-8?B?OHd3YTM3MVhLT3NHVEJJckw0dC9oNHpjVTRkcjZsbnRGbkIzWlo3ek5SRVVO?=
+ =?utf-8?B?K1REUFlEZmxEaDZ6aTV5Q04zVlkyeC9BQzNWTENaUURtNUhWUHZGbGFOKzhZ?=
+ =?utf-8?B?c1o3ZzVpd0dPd3UzQXc1clI1ZW5OZjJDNGszNVd0eXI0bnB6dWJhT0Q0aGdy?=
+ =?utf-8?B?LzNqSE1vTTAyUGRuUDJkUk5XamNzRlk4b0liNTJTMGNmZHRic3V1azdSK1dB?=
+ =?utf-8?B?eUxGTnVpandlZzE1Ynk2TmNBL1hhNGRBemNPSnRtWWVSMGx4V1MwV3locWtr?=
+ =?utf-8?B?cXJMVFpLazBnOURGUU4yRVRXSVNwT2xHeVIySzNsNElSUmpTdUJEM2RrVFgx?=
+ =?utf-8?B?cDVvV2xnck1EYmptUG1mQXdXNnFBMlp6VmFTOGo5dUhualFBVkNWb1BRWXFy?=
+ =?utf-8?B?QWFUdU5ueC9tNTMzVFNpa1B3d2dPclRoUVlMbVVOeFl4b1hzYlNuekRucnVB?=
+ =?utf-8?B?S1ZMY2ZtKzZDMXI3ZHEyWmpNblN5U2Ezc2E2cDVNbUFPMnRTUWo3bW5KUTlH?=
+ =?utf-8?B?eEdDcTZEZnhmZ0I2clFocytyT0RPamZXVjNXUHl5bmovZHlJcWJpUi95QzNG?=
+ =?utf-8?B?bnpkQlBMNGl4U01vZmRNZFYxRytaYm8rNE5oNk1XQVdzdDdmcnVDUjVIenhp?=
+ =?utf-8?B?T2RHQmRWSHpwellaY094TTNVTEJONkU2a2VmODl1UnkydWNsOGp6alRtZHZX?=
+ =?utf-8?B?YVpuK1hVUkJFNDQxM2JZejY1ZzBxNUVkbTl0K3Y0Mkc2QityMG5uK09NaDVL?=
+ =?utf-8?B?NENKOHBUYzlHTy80Y0V6OTdHZCtWWFlNUC9XR1FCOEhKb0hhVU80SmpuY0xj?=
+ =?utf-8?B?OTZyVU1LYTlvWGdjbDZsMktlSXFZZnNsaTcvdUlhTGllVGNRaDJQRzk2d245?=
+ =?utf-8?B?ZG1kV1NFWXpHRG1YWFllVW4yYlZ6c1dudW1zblhQS2lCWThDdmorVXZudzhq?=
+ =?utf-8?B?UWp0MnluQUFlOW5RcTJPbnpvamc2VGxueFNuREVBaTh6d0dEZExpd1FUWUgz?=
+ =?utf-8?B?T241ZkJJdUlBSHJpQVVhUTQxcVZBR3U3NDUxRzR5dk02U0dxOWtrVWdLd1k2?=
+ =?utf-8?B?Wnc9PQ==?=
+Content-ID: <E3A4BF68C8ABF843A5A7C493A7094464@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: TYZPR03MB7153.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8b1f40cd-1ce6-42ae-5fdc-08dbf146e5a8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Nov 2023 01:51:40.5995
+X-MS-Exchange-CrossTenant-Network-Message-Id: fa7d2cca-f322-46ad-7585-08dbf14c0154
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Nov 2023 02:28:14.5005
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: zyr5z+VOEM0fnhLigNyrAC+TV5yS23a7mMmFBKDPQz7u7D8wy8ycQ2tv8o26oaUvwxOEdpbaCFQXwgj1YGeAjeYANcwKq5ltk1JekqNC6a8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR03MB6495
+X-MS-Exchange-CrossTenant-userprincipalname: 78xSwpdZ5zvady1j1LLjpnzs0RmTDoHEI6B1xpee+QVlvVPUcC2BR6vCY8N+Ovm/jZ9Ex/isTPICdUX27BVwzbKemSnGH18sUSOSFcs1nio=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR03MB7293
 X-TM-AS-Product-Ver: SMEX-14.0.0.3152-9.1.1006-23728.005
-X-TM-AS-Result: No-10--34.046300-8.000000
-X-TMASE-MatchedRID: CML2QBp/u5TUL3YCMmnG4t7SWiiWSV/1jLOy13Cgb4/n0eNPmPPe5KWz
-	WoIRiV9DM/Se/q/gEyf5MiS7M8c1eGmXMi7Ntyo2mlaAItiONP1RnscLnNAC7Nvpj5+dNlQvMC/
+X-TM-AS-Result: No-10--34.227300-8.000000
+X-TMASE-MatchedRID: 9Mh434hFDFXUL3YCMmnG4t7SWiiWSV/1jLOy13Cgb4/TEy+FT1zrl40e
+	ly2iMqdYyksWSdvP+9GsXAiB6VK48AbbLE2rYg/9wvqOGBrge3shmbYg1ZcOntvpj5+dNlQvMC/
 	K/e26+Q0tIcNCL+1lT4IDpXRi97xlDcy28oDHlwJc/msUC5wFQX5ErfRqpilVZ5yuplze9psVWT
 	DhfTuSaNoUzlM8Yt0I0wOo8Q6y8JusVSjuVu0TEENTnAhL0/m3HznaOB9+eYio+b+yOP0oGEDH7
 	fYNhjWYpLHkqMumMNqfJm8PXdmqu4qtuuQ+CE7v98sqn8kK3uGyNcEJTKJGJs2mvbig5LjG8Z5E
 	7FtTRPZCBxbVTmCgug4BODg3LBohOzEyQBr3GYwSEYfcJF0pRYEcpMn6x9cZ8Ule2AXgYUvppfx
-	NgiuPW6uGnr8dTBKw72n23NsrtG7zLVZFOZrw3uv8QGaI25e3GK57kZ/2mameLRPBGqw/vqKAzl
-	CenXuFl9EADa9mjM5akpdOW1kgxXOUemoddxuVE0Q83A2vD+s5SAOCkuqVt9W0BaT1GcXqGNtH9
-	cKwddYQ2TsKZmZguDvpMjHksKcLSSOWVJeuO1DSBVVc2BozSlkMvWAuahr8+gD2vYtOFhgqtq5d
-	3cxkNQP90fJP9eHt
+	NgiuPWwITVNParjYe8WW0jr6feERCR/FskDJObqngbqTYC4GHKx5ICGp/WtGsIMnczyxe53MuLK
+	lM8AY7tgYCUMHTkb48KzNYBChyYo9oUcx9VMLg0gVVXNgaM0pZDL1gLmoa/PoA9r2LThYYKrauX
+	d3MZDUD/dHyT/Xh7Q==
 X-TM-AS-User-Approved-Sender: No
 X-TM-AS-User-Blocked-Sender: No
-X-TMASE-Result: 10--34.046300-8.000000
+X-TMASE-Result: 10--34.227300-8.000000
 X-TMASE-Version: SMEX-14.0.0.3152-9.1.1006-23728.005
-X-TM-SNTS-SMTP: 78347600CF0BAB8561205D3365B10D339056CE020A764DFA84BC75E3E778B1FD2000:8
+X-TM-SNTS-SMTP: 3F75C111EA6D528458C56BAD0FC9804C1E330D4B3046D8C24458D734C99A36D32000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231129_181257_504585_BD3465CD 
-X-CRM114-Status: GOOD (  24.46  )
+X-CRM114-CacheID: sfid-20231129_182832_881974_FAA7EF1F 
+X-CRM114-Status: GOOD (  26.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -208,137 +206,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2023-11-27 at 08:21 +0100, Krzysztof Kozlowski wrote:
->  	 
-> External email : Please do not click links or open attachments until
-> you have verified the sender or the content.
->  On 27/11/2023 08:09, Macpaul Lin wrote:
-> > On 11/25/23 18:37, Krzysztof Kozlowski and Chunfeng Yun wrote:
-> >> 
-> >>
-> >> External email : Please do not click links or open attachments
-> until you 
-> >> have verified the sender or the content.
-> >>
-> >> On 25/11/2023 02:23, Chunfeng Yun wrote:
-> >>> Due to some old SoCs with shared t-phy only support force-mode
-> switch, and
-> >>> can't use compatible to distinguish between shared and non-shared 
-> t-phy,
-> >>> add a property to supported it.
-> >>> But now prefer to use "mediatek,syscon-type" on new SoC as far as
-> possible.
-> >>>
-> >>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> >>> ---
-> >>>  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6
-> ++++++
-> >>>  1 file changed, 6 insertions(+)
-> >>>
-> >>> diff --git
-> a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> >>> index 2bb91542e984..eedba5b7025e 100644
-> >>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> >>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> >>> @@ -235,6 +235,12 @@ patternProperties:
-> >>>            Specify the flag to enable BC1.2 if support it
-> >>>          type: boolean
-> >>>  
-> >>> +      mediatek,force-mode:
-> >>> +        description:
-> >>> +          Use force mode to switch shared phy mode, perfer to
-> use the bellow
-> >>
-> >> I still do not understand what is the "force mode" you want to
-> use. What
-> >> modes do you have? What are the characteristics of force mode?
-> >>
-> >> Also, please run spellcheck.
-> >>
-> >> Best regards,
-> >> Krzysztof
-> >>
+On Mon, 2023-11-27 at 15:09 +0800, Macpaul Lin wrote:
+> On 11/25/23 18:37, Krzysztof Kozlowski and Chunfeng Yun wrote:
+> > 	
 > > 
-> > Thanks!
+> > External email : Please do not click links or open attachments
+> > until you 
+> > have verified the sender or the content.
 > > 
-> > 1. I've tested this patch and it could solve the clock unstable for
-> > XHCI1 on mt8195 or mt8395 during system boot up or during
-> > unload/reload the phy driver.
+> > On 25/11/2023 02:23, Chunfeng Yun wrote:
+> > > Due to some old SoCs with shared t-phy only support force-mode
+> > > switch, and
+> > > can't use compatible to distinguish between shared and non-shared 
+> > > t-phy,
+> > > add a property to supported it.
+> > > But now prefer to use "mediatek,syscon-type" on new SoC as far as
+> > > possible.
+> > > 
+> > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6
+> > > ++++++
+> > >  1 file changed, 6 insertions(+)
+> > > 
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> > > b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> > > index 2bb91542e984..eedba5b7025e 100644
+> > > --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> > > +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> > > @@ -235,6 +235,12 @@ patternProperties:
+> > >            Specify the flag to enable BC1.2 if support it
+> > >          type: boolean
+> > >  
+> > > +      mediatek,force-mode:
+> > > +        description:
+> > > +          Use force mode to switch shared phy mode, perfer to
+> > > use the bellow
 > > 
-> > The error message has been listed as follows.
+> > I still do not understand what is the "force mode" you want to use.
+> > What
+> > modes do you have? What are the characteristics of force mode?
 > > 
-> > [   13.849936][   T72] xhci-mtk 11290000.usb: supply vbus not
-> found, 
-> > using dummy regulator
-> > [   13.851300][   T72] xhci-mtk 11290000.usb: uwk - reg:0x400,
+> > Also, please run spellcheck.
+> > 
+> > Best regards,
+> > Krzysztof
+> > 
+> 
+> Thanks!
+> 
+> 1. I've tested this patch and it could solve the clock unstable for
+> XHCI1 on mt8195 or mt8395 during system boot up or during
+> unload/reload the phy driver.
+> 
+> The error message has been listed as follows.
+> 
+> [   13.849936][   T72] xhci-mtk 11290000.usb: supply vbus not found, 
+> using dummy regulator
+> [   13.851300][   T72] xhci-mtk 11290000.usb: uwk - reg:0x400,
 > version:104
-> > [   13.852624][   T72] xhci-mtk 11290000.usb: xHCI Host Controller
-> > [   13.853393][   T72] xhci-mtk 11290000.usb: new USB bus
+> [   13.852624][   T72] xhci-mtk 11290000.usb: xHCI Host Controller
+> [   13.853393][   T72] xhci-mtk 11290000.usb: new USB bus
 > registered, 
-> > assigned bus number 3
-> > [   13.874490][   T72] xhci-mtk 11290000.usb: clocks are not stable
+> assigned bus number 3
+> [   13.874490][   T72] xhci-mtk 11290000.usb: clocks are not stable
 > (0x3d0f)
-> > [   13.875369][   T72] xhci-mtk 11290000.usb: can't setup: -110
-> > [   13.876091][   T72] xhci-mtk 11290000.usb: USB bus 3
-> deregistered
-> > [   13.877081][   T72] xhci-mtk: probe of 11290000.usb failed with
+> [   13.875369][   T72] xhci-mtk 11290000.usb: can't setup: -110
+> [   13.876091][   T72] xhci-mtk 11290000.usb: USB bus 3 deregistered
+> [   13.877081][   T72] xhci-mtk: probe of 11290000.usb failed with
 > error 
-> > -110
-> > 
-> > 2. This is a fix patch to XHCI1 since MT8195 has been upstream.
-> > Please add "Fixes:" tags and "Cc: stable@kernel.org" to back ward
-> > porting to previous stable trees.
-> > 
-> > For example, add
-> > Fixes: 6b5ef194611e5 ("phy: mediatek: tphy: remove macros to
-> prepare 
-> > bitfield")
-> > is suggested since the force-mode was missing in the previous
-> > implementation which causes hardware function was abnormal.
-> > However, add
-> > Fixes: 33d18746fa514 ("phy: phy-mtk-tphy: use new io helpers to
+> -110
+> 
+> 2. This is a fix patch to XHCI1 since MT8195 has been upstream.
+> Please add "Fixes:" tags and "Cc: stable@kernel.org" to back ward
+> porting to previous stable trees.
+> 
+> For example, add
+> Fixes: 6b5ef194611e5 ("phy: mediatek: tphy: remove macros to prepare 
+> bitfield")
+> is suggested since the force-mode was missing in the previous
+> implementation which causes hardware function was abnormal.
+> However, add
+> Fixes: 33d18746fa514 ("phy: phy-mtk-tphy: use new io helpers to
 > access 
-> > register")
-> > will be better since the USB support for mt8195 is already enabled
+> register")
+> will be better since the USB support for mt8195 is already enabled
 > in 
-> > late 2021.
-> > 
-> > 3. How about we revise the description as follows for more
-> precisely?
-> > 
-> > mediatek,force-mode:
-> >    description:
-> >      The force mode is used to manually switch the shared PHY mode
-> >      between USB and PCIe. When force-mode is set, the USB 3.0 mode
-> >      will be selected. This is typically required for older SoCs
-> >      that do not automatically manage PHY mode switching.
-> >      For newer SoCs that support it, it is preferable to use the
-> >      "mediatek,syscon-type" property instead.
-> >    type: boolean
-> 
-> Again, what is force-mode? 
-Our DE describe this behavior as force-mode, as you see, the driver
-power down controller and reset pipe to set the mode directly we want,
-but usually the phy controller switch to the mode automatically
-according to the external signal, e.g. trapping pin, efuse etc.
+> late 2021.
+It don't take into account this case, it assume that only use the
+default mode (PCIe).
 
-> It looks like you wrote bindings for the
-> driver behavior. Bindings describe hardware, not how the driver
-> should
-> behave. The property might be reasonable, but you must describe here
-> hardware characteristics/issue/etc.
 > 
-> Also, your driver change suggests this is compatible specific, so why
-> it
-> cannot be deduced from compatible?
-that is because on the same SoC, some t-phy supported USB3 are shared
-with PCIe, but others are not, use the SoC's compatible can not
-distinguish them.
+> 3. How about we revise the description as follows for more precisely?
 > 
-> Best regards,
-> Krzysztof
+> mediatek,force-mode:
+>    description:
+>      The force mode is used to manually switch the shared PHY mode
+>      between USB and PCIe. When force-mode is set, the USB 3.0 mode
+>      will be selected. 
+seems not right, the mode/type is selected by the phy consumer.
+
+> This is typically required for older SoCs
+>      that do not automatically manage PHY mode switching.
+>      For newer SoCs that support it, it is preferable to use the
+>      "mediatek,syscon-type" property instead.
+>    type: boolean
+
 > 
+> Thanks,
+> Macpaul Lin
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
