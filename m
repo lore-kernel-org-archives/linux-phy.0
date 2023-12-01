@@ -4,92 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82F8CC4167B
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Dec 2023 05:05:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1D98C4167B
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Dec 2023 05:46:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XRCuYnROj95G+uKfZZz/MFAciXL+lHfTZdb4r/TPMxU=; b=FMNKg8Swmxdzrn
-	X9t36s8G0v0OP5ewXjzJEPXAIItVBvjXHCjFkGTkQFAcrRSs+2I5vSxxuXebWR/DyHw18xnbzLXce
-	zn9u8EGVzmNQae+cUEohQUnQeCdB2dafd5O1k8k43r+RRvQT3JqnsP0yiYxfTyad7er1vOsmt/rg1
-	hhsLiijUVaR801jzIpoOet/PoINKw+bsxyn8RRnLrDiQ2JgVIIJv+oQ+Fci+BIsLdNIeY82iEOafM
-	2FnXXj4bKI2q4bCw6Osx7ScQTaNzboX7v/HqkVARBtZQ/TAdJsq7ZEmrwMeud9+8cYwVsMC4YTIf0
-	albMXlXZ83NQzvSOdSXA==;
+	List-Owner; bh=fM/CNGBGx8QXryFIqLKr/9ukSheJPj6RyP7sWXYO+jc=; b=Aqw5mQp4BtD6uT
+	ekoP5IlaqpQ3I/C7TnBrsXXN9dzZohurMS995bdrvs3g/2T5NoO3xSBq9FgojuEcZLa8wGaxKZGQA
+	+AvTSxBmStW2VXbiAf+puS+tuyi+IkwIF92KuzmjPCHOA/M+1Qd4LDgy5xvbePqXLzAHoH3i1QZtU
+	0MRC7VC7E9yeP68ibzdnuU2FiP5zM7w0B1VrYKexRTbvUdc2gqarTtBBL7i4BvIfmHPS/ZkZxLRNA
+	YsaubwHxuo4elPn8tAW6GnnNAbIpMLzauymvPKXrCgqgyGJr4Mq4MpvGl90nhIzVCt59lB+wBGNqh
+	DuOKi+RPnKOnZWYsKXrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8vi6-00CdFR-0Z;
-	Fri, 01 Dec 2023 05:05:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1r8wM6-00CiDi-1s;
+	Fri, 01 Dec 2023 05:46:26 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8vhg-00Cd4j-0C
+	id 1r8wM1-00CiCG-20
 	for linux-phy@lists.infradead.org;
-	Fri, 01 Dec 2023 05:04:43 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3B11rsfl019242;
-	Fri, 1 Dec 2023 05:04:10 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=6L/SYJ5H1smgq9VxXhZtrZpMyZjVegChvzvl2wjBiEU=;
- b=BP+LorAMwbeyuPPag2whiNqEBArrwPIkIr73jfCnb+FZQekUu2WJZ4ncBfjMmDw4hym/
- XHKY3x054wWZiK/EPspBQpPZ5B9fezeGIdNe+/1pl4SilPqMAryWsPR20MvNZnb9Pe1E
- vZiGmQLYoK5JghsmpNmwUTgMRsjFZ0aElPoxAiNeL3a39zMxLLzb50lJObDcY427KYkf
- Dzf8piTrThMAn5VnUPhSlifonyridhOReF8QgRxCnsKtG21B4sSMoQdi+E2mH7A9lZwR
- VP7VuakdQkNhPB2ZgEdhozBVOTik1Y8ENAe0jXEnqdc8WQ3W1nscK9gVJf4de43H0i8r dA== 
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3upgfd3pkt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 01 Dec 2023 05:04:10 +0000
-Received: from pps.filterd (NASANPPMTA05.qualcomm.com [127.0.0.1])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3B14sjij021590;
-	Fri, 1 Dec 2023 05:04:09 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by NASANPPMTA05.qualcomm.com (PPS) with ESMTP id 3unmevmcca-1;
-	Fri, 01 Dec 2023 05:04:09 +0000
-Received: from NASANPPMTA05.qualcomm.com (NASANPPMTA05.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3B14w89E026302;
-	Fri, 1 Dec 2023 05:04:09 GMT
-Received: from stor-dylan.qualcomm.com (stor-dylan.qualcomm.com [192.168.140.207])
-	by NASANPPMTA05.qualcomm.com (PPS) with ESMTP id 3B15498R004117;
-	Fri, 01 Dec 2023 05:04:09 +0000
-Received: by stor-dylan.qualcomm.com (Postfix, from userid 359480)
-	id 8EB5720A69; Thu, 30 Nov 2023 21:04:08 -0800 (PST)
-From: Can Guo <quic_cang@quicinc.com>
-To: quic_cang@quicinc.com, bvanassche@acm.org, mani@kernel.org,
-        adrian.hunter@intel.com, vkoul@kernel.org, beanhuo@micron.com,
-        avri.altman@wdc.com, junwoo80.lee@samsung.com,
-        martin.petersen@oracle.com
-Cc: linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-        linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH v7 10/10] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed Gear 5 support for SM8550
-Date: Thu, 30 Nov 2023 21:03:20 -0800
-Message-Id: <1701407001-471-11-git-send-email-quic_cang@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1701407001-471-1-git-send-email-quic_cang@quicinc.com>
+	Fri, 01 Dec 2023 05:46:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id C50E6B842F8;
+	Fri,  1 Dec 2023 05:46:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C657C433C7;
+	Fri,  1 Dec 2023 05:46:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701409578;
+	bh=HYNNvHoGq5a3xbfd/FFacYy2iONYs/LWphKbeUdcGJA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=dIZNI+9ZHmmbpYbR0zK10tDnJjKLWfPiPx/A3BCN0S9HEQyqysJa90ngrflqgrkrS
+	 k8zB8KV4Yrsw3MQ4rJgWDieUKIG8F64EDrPHtlat6cawzIrUwrUHa28/Sn3rfU+uLo
+	 kzKlMowNl187EHbqO/zYvAn/6ahZNZRn9JTQandW181BKDHiS4UzfQK4us4DBqyJL2
+	 JXxRvFgriNLAKVPM1vza8MkS7AeAyJCHGjRWdXwVUNL8SclJTd2tyoEpD+pBIjU71o
+	 deZHryoHp8GRxBWuh8PIih/hCNCHPWWdf8vgUT/xdjLN6aR2fBt2UZm3U3lJ3scN12
+	 +kOb/tmHbTcxw==
+Date: Fri, 1 Dec 2023 11:16:03 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Can Guo <quic_cang@quicinc.com>
+Cc: bvanassche@acm.org, adrian.hunter@intel.com, vkoul@kernel.org,
+	beanhuo@micron.com, avri.altman@wdc.com, junwoo80.lee@samsung.com,
+	martin.petersen@oracle.com, linux-scsi@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v7 10/10] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
+ Gear 5 support for SM8550
+Message-ID: <20231201054603.GD4009@thinkpad>
 References: <1701407001-471-1-git-send-email-quic_cang@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: qlfhEmZxPCdYZt8vXDJ9EYPYQib19Lyy
-X-Proofpoint-GUID: qlfhEmZxPCdYZt8vXDJ9EYPYQib19Lyy
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-01_02,2023-11-30_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- lowpriorityscore=0 spamscore=0 malwarescore=0 impostorscore=0
- priorityscore=1501 bulkscore=0 clxscore=1015 mlxscore=0 adultscore=0
- phishscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2311060000 definitions=main-2312010028
+ <1701407001-471-11-git-send-email-quic_cang@quicinc.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1701407001-471-11-git-send-email-quic_cang@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231130_210440_218748_E06F238A 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20231130_214621_983347_F79B1F2B 
+X-CRM114-Status: GOOD (  25.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,561 +76,391 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On SM8550, two sets of UFS PHY settings are provided, one set is to support
-HS-G5, another set is to support HS-G4 and lower gears. The two sets of PHY
-settings are programming different values to different registers, mixing
-the two sets and/or overwriting one set with another set is definitely not
-blessed by UFS PHY designers.
-
-To add HS-G5 support for SM8550, split the two sets of PHY settings into
-their dedicated overlay tables, only the common parts of the two sets of
-PHY settings are left in the .tbls.
-
-Consider we are going to add even higher gear support in future, to avoid
-adding more tables with different names, rename the .tbls_hs_g4 and make it
-an array, a size of 2 is enough as of now.
-
-In this case, .tbls alone is not a complete set of PHY settings, so either
-tbls_hs_overlay[0] or tbls_hs_overlay[1] must be applied on top of the
-.tbls to become a complete set of PHY settings.
-
-Signed-off-by: Can Guo <quic_cang@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h     |   2 +
- drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h |   2 +
- .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |   8 +
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 169 ++++++++++++++++++---
- 4 files changed, 159 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
-index fe6c450..970cc06 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h
-@@ -19,6 +19,7 @@
- #define QPHY_V6_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
- #define QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
- #define QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0bc
-+#define QPHY_V6_PCS_UFS_RX_HS_G5_SYNC_LENGTH_CAPABILITY	0x12c
- #define QPHY_V6_PCS_UFS_DEBUG_BUS_CLKSEL		0x158
- #define QPHY_V6_PCS_UFS_LINECFG_DISABLE			0x17c
- #define QPHY_V6_PCS_UFS_RX_MIN_HIBERN8_TIME		0x184
-@@ -28,5 +29,6 @@
- #define QPHY_V6_PCS_UFS_READY_STATUS			0x1a8
- #define QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1		0x1f4
- #define QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1		0x1fc
-+#define QPHY_V6_PCS_UFS_RX_HSG5_SYNC_WAIT_TIME		0x220
- 
- #endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
-index f420f8f..ef392ce 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
-@@ -56,6 +56,8 @@
- #define QSERDES_V6_COM_SYS_CLK_CTRL				0xe4
- #define QSERDES_V6_COM_SYSCLK_BUF_ENABLE			0xe8
- #define QSERDES_V6_COM_PLL_IVCO					0xf4
-+#define QSERDES_V6_COM_CMN_IETRIM				0xfc
-+#define QSERDES_V6_COM_CMN_IPTRIM				0x100
- #define QSERDES_V6_COM_SYSCLK_EN_SEL				0x110
- #define QSERDES_V6_COM_RESETSM_CNTRL				0x118
- #define QSERDES_V6_COM_LOCK_CMP_EN				0x120
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-index 35d497f..d9a87bd 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
-@@ -15,13 +15,19 @@
- 
- #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2		0x08
- #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		0x10
-+#define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_SO_GAIN_RATE4		0x24
- #define QSERDES_UFS_V6_RX_UCDR_SO_SATURATION			0x28
-+#define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4	0x54
- #define QSERDES_UFS_V6_RX_UCDR_PI_CTRL1				0x58
- #define QSERDES_UFS_V6_RX_RX_TERM_BW_CTRL0			0xc4
- #define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2			0xd4
- #define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE4			0xdc
-+#define QSERDES_UFS_V6_RX_UCDR_SO_GAIN_RATE4			0xf0
-+#define QSERDES_UFS_V6_RX_UCDR_PI_CONTROLS			0xf4
- #define QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL			0x178
-+#define QSERDES_UFS_V6_RX_EQ_OFFSET_ADAPTOR_CNTRL1		0x1bc
- #define QSERDES_UFS_V6_RX_INTERFACE_MODE			0x1e0
-+#define QSERDES_UFS_V6_RX_OFFSET_ADAPTOR_CNTRL3			0x1c4
- #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0			0x208
- #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1			0x20c
- #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B3			0x214
-@@ -33,6 +39,8 @@
- #define QSERDES_UFS_V6_RX_MODE_RATE3_B5				0x264
- #define QSERDES_UFS_V6_RX_MODE_RATE3_B8				0x270
- #define QSERDES_UFS_V6_RX_MODE_RATE4_B3				0x280
-+#define QSERDES_UFS_V6_RX_MODE_RATE4_B4				0x284
- #define QSERDES_UFS_V6_RX_MODE_RATE4_B6				0x28c
-+#define QSERDES_UFS_V6_RX_DLL0_FTUNE_CTRL			0x2f8
- 
- #endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 3c2e625..11cea34 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -41,6 +41,8 @@
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
-+#define NUM_OVERLAY				2
-+
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
-@@ -754,15 +756,22 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x11),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x0f),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_INITVAL2, 0x00),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g4_serdes[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4c),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x0a),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
-@@ -771,19 +780,24 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
- };
- 
--static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
--	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g5_serdes[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_IETRIM, 0x1b),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_IPTRIM, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x06),
- };
- 
- static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_LANE_MODE_1, 0x05),
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g4_tx[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_FR_DCC_CTRL, 0x4c),
- };
- 
- static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
--	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
- 
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1, 0xc2),
-@@ -799,16 +813,45 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE3_B8, 0x02),
- };
- 
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g4_rx[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g5_rx[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE4, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_SO_GAIN_RATE4, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_PI_CONTROLS, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_OFFSET_ADAPTOR_CNTRL3, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_SO_GAIN_RATE4, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE4_B3, 0xb9),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE4_B4, 0x4f),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE4_B6, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_DLL0_FTUNE_CTRL, 0x30),
-+};
-+
- static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_SIGDET_CTRL2, 0x69),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
--	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
-+};
-+
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g4_pcs[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
- 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
- };
- 
-+static const struct qmp_phy_init_tbl sm8550_ufsphy_g5_pcs[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x33),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HS_G5_SYNC_LENGTH_CAPABILITY, 0x4f),
-+	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSG5_SYNC_WAIT_TIME, 0x9e),
-+};
-+
- static const struct qmp_phy_init_tbl sm8650_ufsphy_serdes[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0xd9),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
-@@ -889,6 +932,8 @@ struct qmp_phy_cfg_tbls {
- 	int rx_num;
- 	const struct qmp_phy_init_tbl *pcs;
- 	int pcs_num;
-+	/* Maximum supported Gear of this tbls */
-+	u32 max_gear;
- };
- 
- /* struct qmp_phy_cfg - per-PHY initialization config */
-@@ -896,13 +941,15 @@ struct qmp_phy_cfg {
- 	int lanes;
- 
- 	const struct qmp_ufs_offsets *offsets;
-+	/* Maximum supported Gear of this config */
-+	u32 max_supported_gear;
- 
- 	/* Main init sequence for PHY blocks - serdes, tx, rx, pcs */
- 	const struct qmp_phy_cfg_tbls tbls;
- 	/* Additional sequence for HS Series B */
- 	const struct qmp_phy_cfg_tbls tbls_hs_b;
--	/* Additional sequence for HS G4 */
--	const struct qmp_phy_cfg_tbls tbls_hs_g4;
-+	/* Additional sequence for different HS Gears */
-+	const struct qmp_phy_cfg_tbls tbls_hs_overlay[NUM_OVERLAY];
- 
- 	/* clock ids to be requested */
- 	const char * const *clk_list;
-@@ -1005,6 +1052,7 @@ static const struct qmp_phy_cfg msm8996_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G3,
- 
- 	.tbls = {
- 		.serdes		= msm8996_ufsphy_serdes,
-@@ -1030,6 +1078,7 @@ static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
-@@ -1045,13 +1094,14 @@ static const struct qmp_phy_cfg sa8775p_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_rx),
- 		.pcs		= sm8350_ufsphy_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sm8450_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sm8450_ufs_phy_clk_l),
-@@ -1064,6 +1114,7 @@ static const struct qmp_phy_cfg sc7280_ufsphy_cfg = {
- 	.lanes                  = 2,
- 
- 	.offsets                = &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes         = sm8150_ufsphy_serdes,
-@@ -1079,13 +1130,14 @@ static const struct qmp_phy_cfg sc7280_ufsphy_cfg = {
- 		.serdes         = sm8150_ufsphy_hs_b_serdes,
- 		.serdes_num     = ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx             = sm8250_ufsphy_hs_g4_tx,
- 		.tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
- 		.rx             = sc7280_ufsphy_hs_g4_rx,
- 		.rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
- 		.pcs            = sm8150_ufsphy_hs_g4_pcs,
- 		.pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list               = sm8450_ufs_phy_clk_l,
- 	.num_clks               = ARRAY_SIZE(sm8450_ufs_phy_clk_l),
-@@ -1098,6 +1150,7 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
-@@ -1113,13 +1166,14 @@ static const struct qmp_phy_cfg sc8280xp_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_rx),
- 		.pcs		= sm8350_ufsphy_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-@@ -1132,6 +1186,7 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G3,
- 
- 	.tbls = {
- 		.serdes		= sdm845_ufsphy_serdes,
-@@ -1160,6 +1215,7 @@ static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G3,
- 
- 	.tbls = {
- 		.serdes		= sm6115_ufsphy_serdes,
-@@ -1188,6 +1244,7 @@ static const struct qmp_phy_cfg sm7150_ufsphy_cfg = {
- 	.lanes			= 1,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G3,
- 
- 	.tbls = {
- 		.serdes		= sdm845_ufsphy_serdes,
-@@ -1216,6 +1273,7 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8150_ufsphy_serdes,
-@@ -1231,13 +1289,14 @@ static const struct qmp_phy_cfg sm8150_ufsphy_cfg = {
- 		.serdes		= sm8150_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8150_ufsphy_hs_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8150_ufsphy_hs_g4_tx),
- 		.rx		= sm8150_ufsphy_hs_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8150_ufsphy_hs_g4_rx),
- 		.pcs		= sm8150_ufsphy_hs_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-@@ -1250,6 +1309,7 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8150_ufsphy_serdes,
-@@ -1265,13 +1325,14 @@ static const struct qmp_phy_cfg sm8250_ufsphy_cfg = {
- 		.serdes		= sm8150_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8250_ufsphy_hs_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
- 		.rx		= sm8250_ufsphy_hs_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8250_ufsphy_hs_g4_rx),
- 		.pcs		= sm8150_ufsphy_hs_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-@@ -1284,6 +1345,7 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
-@@ -1299,13 +1361,14 @@ static const struct qmp_phy_cfg sm8350_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_rx),
- 		.pcs		= sm8350_ufsphy_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-@@ -1318,6 +1381,7 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets,
-+	.max_supported_gear	= UFS_HS_G4,
- 
- 	.tbls = {
- 		.serdes		= sm8350_ufsphy_serdes,
-@@ -1333,13 +1397,14 @@ static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
- 		.serdes		= sm8350_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8350_ufsphy_hs_b_serdes),
- 	},
--	.tbls_hs_g4 = {
-+	.tbls_hs_overlay[0] = {
- 		.tx		= sm8350_ufsphy_g4_tx,
- 		.tx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_tx),
- 		.rx		= sm8350_ufsphy_g4_rx,
- 		.rx_num		= ARRAY_SIZE(sm8350_ufsphy_g4_rx),
- 		.pcs		= sm8350_ufsphy_g4_pcs,
- 		.pcs_num	= ARRAY_SIZE(sm8350_ufsphy_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
- 	},
- 	.clk_list		= sm8450_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sm8450_ufs_phy_clk_l),
-@@ -1352,6 +1417,7 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets_v6,
-+	.max_supported_gear	= UFS_HS_G5,
- 
- 	.tbls = {
- 		.serdes		= sm8550_ufsphy_serdes,
-@@ -1367,6 +1433,26 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
- 		.serdes		= sm8550_ufsphy_hs_b_serdes,
- 		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_hs_b_serdes),
- 	},
-+	.tbls_hs_overlay[0] = {
-+		.serdes		= sm8550_ufsphy_g4_serdes,
-+		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_g4_serdes),
-+		.tx		= sm8550_ufsphy_g4_tx,
-+		.tx_num		= ARRAY_SIZE(sm8550_ufsphy_g4_tx),
-+		.rx		= sm8550_ufsphy_g4_rx,
-+		.rx_num		= ARRAY_SIZE(sm8550_ufsphy_g4_rx),
-+		.pcs		= sm8550_ufsphy_g4_pcs,
-+		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_g4_pcs),
-+		.max_gear	= UFS_HS_G4,
-+	},
-+	.tbls_hs_overlay[1] = {
-+		.serdes		= sm8550_ufsphy_g5_serdes,
-+		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_g5_serdes),
-+		.rx		= sm8550_ufsphy_g5_rx,
-+		.rx_num		= ARRAY_SIZE(sm8550_ufsphy_g5_rx),
-+		.pcs		= sm8550_ufsphy_g5_pcs,
-+		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_g5_pcs),
-+		.max_gear	= UFS_HS_G5,
-+	},
- 	.clk_list		= sdm845_ufs_phy_clk_l,
- 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
- 	.vreg_list		= qmp_phy_vreg_l,
-@@ -1378,6 +1464,7 @@ static const struct qmp_phy_cfg sm8650_ufsphy_cfg = {
- 	.lanes			= 2,
- 
- 	.offsets		= &qmp_ufs_offsets_v6,
-+	.max_supported_gear	= UFS_HS_G5,
- 
- 	.tbls = {
- 		.serdes		= sm8650_ufsphy_serdes,
-@@ -1451,17 +1538,49 @@ static void qmp_ufs_pcs_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls
- 	qmp_ufs_configure(pcs, tbls->pcs, tbls->pcs_num);
- }
- 
-+static int qmp_ufs_get_gear_overlay(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
-+{
-+	u32 max_gear, floor_max_gear = cfg->max_supported_gear;
-+	int idx, ret = -EINVAL;
-+
-+	for (idx = NUM_OVERLAY - 1; idx >= 0; idx--) {
-+		max_gear = cfg->tbls_hs_overlay[idx].max_gear;
-+
-+		/* Skip if the table is not available */
-+		if (max_gear == 0)
-+			continue;
-+
-+		/* Direct matching, bail */
-+		if (qmp->submode == max_gear)
-+			return idx;
-+
-+		/* If no direct matching, the lowest gear is the best matching */
-+		if (max_gear < floor_max_gear) {
-+			ret = idx;
-+			floor_max_gear = max_gear;
-+		}
-+	}
-+
-+	return ret;
-+}
-+
- static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
- {
-+	int i;
-+
- 	qmp_ufs_serdes_init(qmp, &cfg->tbls);
--	if (qmp->mode == PHY_MODE_UFS_HS_B)
--		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
- 	qmp_ufs_lanes_init(qmp, &cfg->tbls);
--	if (qmp->submode == UFS_HS_G4)
--		qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_g4);
- 	qmp_ufs_pcs_init(qmp, &cfg->tbls);
--	if (qmp->submode == UFS_HS_G4)
--		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_g4);
-+
-+	i = qmp_ufs_get_gear_overlay(qmp, cfg);
-+	if (i >= 0) {
-+		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_overlay[i]);
-+		qmp_ufs_lanes_init(qmp, &cfg->tbls_hs_overlay[i]);
-+		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_overlay[i]);
-+	}
-+
-+	if (qmp->mode == PHY_MODE_UFS_HS_B)
-+		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
- }
- 
- static int qmp_ufs_com_init(struct qmp_ufs *qmp)
-@@ -1633,6 +1752,12 @@ static int qmp_ufs_disable(struct phy *phy)
- static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- {
- 	struct qmp_ufs *qmp = phy_get_drvdata(phy);
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+
-+	if (submode > cfg->max_supported_gear || submode == 0) {
-+		dev_err(qmp->dev, "Invalid PHY submode %d\n", submode);
-+		return -EINVAL;
-+	}
- 
- 	qmp->mode = mode;
- 	qmp->submode = submode;
--- 
-2.7.4
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBOb3YgMzAsIDIwMjMgYXQgMDk6MDM6MjBQTSAtMDgwMCwgQ2FuIEd1byB3cm90ZToK
+PiBPbiBTTTg1NTAsIHR3byBzZXRzIG9mIFVGUyBQSFkgc2V0dGluZ3MgYXJlIHByb3ZpZGVkLCBv
+bmUgc2V0IGlzIHRvIHN1cHBvcnQKPiBIUy1HNSwgYW5vdGhlciBzZXQgaXMgdG8gc3VwcG9ydCBI
+Uy1HNCBhbmQgbG93ZXIgZ2VhcnMuIFRoZSB0d28gc2V0cyBvZiBQSFkKPiBzZXR0aW5ncyBhcmUg
+cHJvZ3JhbW1pbmcgZGlmZmVyZW50IHZhbHVlcyB0byBkaWZmZXJlbnQgcmVnaXN0ZXJzLCBtaXhp
+bmcKPiB0aGUgdHdvIHNldHMgYW5kL29yIG92ZXJ3cml0aW5nIG9uZSBzZXQgd2l0aCBhbm90aGVy
+IHNldCBpcyBkZWZpbml0ZWx5IG5vdAo+IGJsZXNzZWQgYnkgVUZTIFBIWSBkZXNpZ25lcnMuCj4g
+Cj4gVG8gYWRkIEhTLUc1IHN1cHBvcnQgZm9yIFNNODU1MCwgc3BsaXQgdGhlIHR3byBzZXRzIG9m
+IFBIWSBzZXR0aW5ncyBpbnRvCj4gdGhlaXIgZGVkaWNhdGVkIG92ZXJsYXkgdGFibGVzLCBvbmx5
+IHRoZSBjb21tb24gcGFydHMgb2YgdGhlIHR3byBzZXRzIG9mCj4gUEhZIHNldHRpbmdzIGFyZSBs
+ZWZ0IGluIHRoZSAudGJscy4KPiAKPiBDb25zaWRlciB3ZSBhcmUgZ29pbmcgdG8gYWRkIGV2ZW4g
+aGlnaGVyIGdlYXIgc3VwcG9ydCBpbiBmdXR1cmUsIHRvIGF2b2lkCj4gYWRkaW5nIG1vcmUgdGFi
+bGVzIHdpdGggZGlmZmVyZW50IG5hbWVzLCByZW5hbWUgdGhlIC50YmxzX2hzX2c0IGFuZCBtYWtl
+IGl0Cj4gYW4gYXJyYXksIGEgc2l6ZSBvZiAyIGlzIGVub3VnaCBhcyBvZiBub3cuCj4gCj4gSW4g
+dGhpcyBjYXNlLCAudGJscyBhbG9uZSBpcyBub3QgYSBjb21wbGV0ZSBzZXQgb2YgUEhZIHNldHRp
+bmdzLCBzbyBlaXRoZXIKPiB0YmxzX2hzX292ZXJsYXlbMF0gb3IgdGJsc19oc19vdmVybGF5WzFd
+IG11c3QgYmUgYXBwbGllZCBvbiB0b3Agb2YgdGhlCj4gLnRibHMgdG8gYmVjb21lIGEgY29tcGxl
+dGUgc2V0IG9mIFBIWSBzZXR0aW5ncy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBDYW4gR3VvIDxxdWlj
+X2NhbmdAcXVpY2luYy5jb20+CgpSZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxt
+YW5pdmFubmFuLnNhZGhhc2l2YW1AbGluYXJvLm9yZz4KCi0gTWFuaQoKPiAtLS0KPiAgZHJpdmVy
+cy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy11ZnMtdjYuaCAgICAgfCAgIDIgKwo+ICBk
+cml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy1jb20tdjYuaCB8ICAgMiAr
+Cj4gIC4uLi9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy10eHJ4LXVmcy12Ni5oICAgIHwg
+ICA4ICsKPiAgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jICAgICAgICAg
+ICAgfCAxNjkgKysrKysrKysrKysrKysrKysrLS0tCj4gIDQgZmlsZXMgY2hhbmdlZCwgMTU5IGlu
+c2VydGlvbnMoKyksIDIyIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
+eS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNzLXVmcy12Ni5oIGIvZHJpdmVycy9waHkvcXVhbGNv
+bW0vcGh5LXFjb20tcW1wLXBjcy11ZnMtdjYuaAo+IGluZGV4IGZlNmM0NTAuLjk3MGNjMDYgMTAw
+NjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy11ZnMtdjYu
+aAo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY3MtdWZzLXY2LmgK
+PiBAQCAtMTksNiArMTksNyBAQAo+ICAjZGVmaW5lIFFQSFlfVjZfUENTX1VGU19CSVNUX0ZJWEVE
+X1BBVF9DVFJMCQkweDA2MAo+ICAjZGVmaW5lIFFQSFlfVjZfUENTX1VGU19UWF9IU0dFQVJfQ0FQ
+QUJJTElUWQkJMHgwNzQKPiAgI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfUlhfSFNHRUFSX0NBUEFC
+SUxJVFkJCTB4MGJjCj4gKyNkZWZpbmUgUVBIWV9WNl9QQ1NfVUZTX1JYX0hTX0c1X1NZTkNfTEVO
+R1RIX0NBUEFCSUxJVFkJMHgxMmMKPiAgI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfREVCVUdfQlVT
+X0NMS1NFTAkJMHgxNTgKPiAgI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfTElORUNGR19ESVNBQkxF
+CQkJMHgxN2MKPiAgI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfUlhfTUlOX0hJQkVSTjhfVElNRQkJ
+MHgxODQKPiBAQCAtMjgsNSArMjksNiBAQAo+ICAjZGVmaW5lIFFQSFlfVjZfUENTX1VGU19SRUFE
+WV9TVEFUVVMJCQkweDFhOAo+ICAjZGVmaW5lIFFQSFlfVjZfUENTX1VGU19UWF9NSURfVEVSTV9D
+VFJMMQkJMHgxZjQKPiAgI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfTVVMVElfTEFORV9DVFJMMQkJ
+MHgxZmMKPiArI2RlZmluZSBRUEhZX1Y2X1BDU19VRlNfUlhfSFNHNV9TWU5DX1dBSVRfVElNRQkJ
+MHgyMjAKPiAgCj4gICNlbmRpZgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9w
+aHktcWNvbS1xbXAtcXNlcmRlcy1jb20tdjYuaCBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1x
+Y29tLXFtcC1xc2VyZGVzLWNvbS12Ni5oCj4gaW5kZXggZjQyMGY4Zi4uZWYzOTJjZSAxMDA2NDQK
+PiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy1jb20tdjYu
+aAo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1xc2VyZGVzLWNvbS12
+Ni5oCj4gQEAgLTU2LDYgKzU2LDggQEAKPiAgI2RlZmluZSBRU0VSREVTX1Y2X0NPTV9TWVNfQ0xL
+X0NUUkwJCQkJMHhlNAo+ICAjZGVmaW5lIFFTRVJERVNfVjZfQ09NX1NZU0NMS19CVUZfRU5BQkxF
+CQkJMHhlOAo+ICAjZGVmaW5lIFFTRVJERVNfVjZfQ09NX1BMTF9JVkNPCQkJCQkweGY0Cj4gKyNk
+ZWZpbmUgUVNFUkRFU19WNl9DT01fQ01OX0lFVFJJTQkJCQkweGZjCj4gKyNkZWZpbmUgUVNFUkRF
+U19WNl9DT01fQ01OX0lQVFJJTQkJCQkweDEwMAo+ICAjZGVmaW5lIFFTRVJERVNfVjZfQ09NX1NZ
+U0NMS19FTl9TRUwJCQkJMHgxMTAKPiAgI2RlZmluZSBRU0VSREVTX1Y2X0NPTV9SRVNFVFNNX0NO
+VFJMCQkJCTB4MTE4Cj4gICNkZWZpbmUgUVNFUkRFU19WNl9DT01fTE9DS19DTVBfRU4JCQkJMHgx
+MjAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXFzZXJk
+ZXMtdHhyeC11ZnMtdjYuaCBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1xc2Vy
+ZGVzLXR4cngtdWZzLXY2LmgKPiBpbmRleCAzNWQ0OTdmLi5kOWE4N2JkIDEwMDY0NAo+IC0tLSBh
+L2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1xc2VyZGVzLXR4cngtdWZzLXY2LmgK
+PiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy10eHJ4LXVm
+cy12Ni5oCj4gQEAgLTE1LDEzICsxNSwxOSBAQAo+ICAKPiAgI2RlZmluZSBRU0VSREVTX1VGU19W
+Nl9SWF9VQ0RSX0ZBU1RMT0NLX0ZPX0dBSU5fUkFURTIJCTB4MDgKPiAgI2RlZmluZSBRU0VSREVT
+X1VGU19WNl9SWF9VQ0RSX0ZBU1RMT0NLX0ZPX0dBSU5fUkFURTQJCTB4MTAKPiArI2RlZmluZSBR
+U0VSREVTX1VGU19WNl9SWF9VQ0RSX0ZBU1RMT0NLX1NPX0dBSU5fUkFURTQJCTB4MjQKPiAgI2Rl
+ZmluZSBRU0VSREVTX1VGU19WNl9SWF9VQ0RSX1NPX1NBVFVSQVRJT04JCQkweDI4Cj4gKyNkZWZp
+bmUgUVNFUkRFU19VRlNfVjZfUlhfVUNEUl9GQVNUTE9DS19DT1VOVF9ISUdIX1JBVEU0CTB4NTQK
+PiAgI2RlZmluZSBRU0VSREVTX1VGU19WNl9SWF9VQ0RSX1BJX0NUUkwxCQkJCTB4NTgKPiAgI2Rl
+ZmluZSBRU0VSREVTX1VGU19WNl9SWF9SWF9URVJNX0JXX0NUUkwwCQkJMHhjNAo+ICAjZGVmaW5l
+IFFTRVJERVNfVUZTX1Y2X1JYX1VDRFJfRk9fR0FJTl9SQVRFMgkJCTB4ZDQKPiAgI2RlZmluZSBR
+U0VSREVTX1VGU19WNl9SWF9VQ0RSX0ZPX0dBSU5fUkFURTQJCQkweGRjCj4gKyNkZWZpbmUgUVNF
+UkRFU19VRlNfVjZfUlhfVUNEUl9TT19HQUlOX1JBVEU0CQkJMHhmMAo+ICsjZGVmaW5lIFFTRVJE
+RVNfVUZTX1Y2X1JYX1VDRFJfUElfQ09OVFJPTFMJCQkweGY0Cj4gICNkZWZpbmUgUVNFUkRFU19V
+RlNfVjZfUlhfVkdBX0NBTF9NQU5fVkFMCQkJMHgxNzgKPiArI2RlZmluZSBRU0VSREVTX1VGU19W
+Nl9SWF9FUV9PRkZTRVRfQURBUFRPUl9DTlRSTDEJCTB4MWJjCj4gICNkZWZpbmUgUVNFUkRFU19V
+RlNfVjZfUlhfSU5URVJGQUNFX01PREUJCQkweDFlMAo+ICsjZGVmaW5lIFFTRVJERVNfVUZTX1Y2
+X1JYX09GRlNFVF9BREFQVE9SX0NOVFJMMwkJCTB4MWM0Cj4gICNkZWZpbmUgUVNFUkRFU19VRlNf
+VjZfUlhfTU9ERV9SQVRFXzBfMV9CMAkJCTB4MjA4Cj4gICNkZWZpbmUgUVNFUkRFU19VRlNfVjZf
+UlhfTU9ERV9SQVRFXzBfMV9CMQkJCTB4MjBjCj4gICNkZWZpbmUgUVNFUkRFU19VRlNfVjZfUlhf
+TU9ERV9SQVRFXzBfMV9CMwkJCTB4MjE0Cj4gQEAgLTMzLDYgKzM5LDggQEAKPiAgI2RlZmluZSBR
+U0VSREVTX1VGU19WNl9SWF9NT0RFX1JBVEUzX0I1CQkJCTB4MjY0Cj4gICNkZWZpbmUgUVNFUkRF
+U19VRlNfVjZfUlhfTU9ERV9SQVRFM19COAkJCQkweDI3MAo+ICAjZGVmaW5lIFFTRVJERVNfVUZT
+X1Y2X1JYX01PREVfUkFURTRfQjMJCQkJMHgyODAKPiArI2RlZmluZSBRU0VSREVTX1VGU19WNl9S
+WF9NT0RFX1JBVEU0X0I0CQkJCTB4Mjg0Cj4gICNkZWZpbmUgUVNFUkRFU19VRlNfVjZfUlhfTU9E
+RV9SQVRFNF9CNgkJCQkweDI4Ywo+ICsjZGVmaW5lIFFTRVJERVNfVUZTX1Y2X1JYX0RMTDBfRlRV
+TkVfQ1RSTAkJCTB4MmY4Cj4gIAo+ICAjZW5kaWYKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkv
+cXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
+b20tcW1wLXVmcy5jCj4gaW5kZXggM2MyZTYyNS4uMTFjZWEzNCAxMDA2NDQKPiAtLS0gYS9kcml2
+ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMKPiArKysgYi9kcml2ZXJzL3BoeS9x
+dWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMKPiBAQCAtNDEsNiArNDEsOCBAQAo+ICAKPiAgI2Rl
+ZmluZSBQSFlfSU5JVF9DT01QTEVURV9USU1FT1VUCQkxMDAwMAo+ICAKPiArI2RlZmluZSBOVU1f
+T1ZFUkxBWQkJCQkyCj4gKwo+ICBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCB7Cj4gIAl1bnNpZ25l
+ZCBpbnQgb2Zmc2V0Owo+ICAJdW5zaWduZWQgaW50IHZhbDsKPiBAQCAtNzU0LDE1ICs3NTYsMjIg
+QEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2luaXRfdGJsIHNtODU1MF91ZnNwaHlfc2Vy
+ZGVzW10gPSB7Cj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZfQ09NX0hTQ0xLX1NFTF8x
+LCAweDExKSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01fSFNDTEtfSFNfU1dJ
+VENIX1NFTF8xLCAweDAwKSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01fTE9D
+S19DTVBfRU4sIDB4MDEpLAo+IC0JUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y2X0NPTV9WQ09f
+VFVORV9NQVAsIDB4MDQpLAo+IC0JUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y2X0NPTV9QTExf
+SVZDTywgMHgwZiksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZfQ09NX1ZDT19UVU5F
+X0lOSVRWQUwyLCAweDAwKSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01fREVD
+X1NUQVJUX01PREUwLCAweDQxKSwKPiAtCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01f
+Q1BfQ1RSTF9NT0RFMCwgMHgwYSksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZfQ09N
+X1BMTF9SQ1RSTF9NT0RFMCwgMHgxOCksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZf
+Q09NX1BMTF9DQ1RSTF9NT0RFMCwgMHgxNCksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNf
+VjZfQ09NX0xPQ0tfQ01QMV9NT0RFMCwgMHg3ZiksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJE
+RVNfVjZfQ09NX0xPQ0tfQ01QMl9NT0RFMCwgMHgwNiksCj4gK307Cj4gKwo+ICtzdGF0aWMgY29u
+c3Qgc3RydWN0IHFtcF9waHlfaW5pdF90Ymwgc204NTUwX3Vmc3BoeV9oc19iX3NlcmRlc1tdID0g
+ewo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y2X0NPTV9WQ09fVFVORV9NQVAsIDB4NDQp
+LAo+ICt9Owo+ICsKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2luaXRfdGJsIHNtODU1
+MF91ZnNwaHlfZzRfc2VyZGVzW10gPSB7Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZf
+Q09NX1ZDT19UVU5FX01BUCwgMHgwNCksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZf
+Q09NX1BMTF9JVkNPLCAweDBmKSwKPiArCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01f
+Q1BfQ1RSTF9NT0RFMCwgMHgwYSksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZfQ09N
+X0RFQ19TVEFSVF9NT0RFMSwgMHg0YyksCj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjZf
+Q09NX0NQX0NUUkxfTU9ERTEsIDB4MGEpLAo+ICAJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y2
+X0NPTV9QTExfUkNUUkxfTU9ERTEsIDB4MTgpLAo+IEBAIC03NzEsMTkgKzc4MCwyNCBAQCBzdGF0
+aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90Ymwgc204NTUwX3Vmc3BoeV9zZXJkZXNbXSA9
+IHsKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNl9DT01fTE9DS19DTVAyX01PREUxLCAw
+eDA3KSwKPiAgfTsKPiAgCj4gLXN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCBz
+bTg1NTBfdWZzcGh5X2hzX2Jfc2VyZGVzW10gPSB7Cj4gLQlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJE
+RVNfVjZfQ09NX1ZDT19UVU5FX01BUCwgMHg0NCksCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcW1w
+X3BoeV9pbml0X3RibCBzbTg1NTBfdWZzcGh5X2c1X3NlcmRlc1tdID0gewo+ICsJUU1QX1BIWV9J
+TklUX0NGRyhRU0VSREVTX1Y2X0NPTV9QTExfSVZDTywgMHgxZiksCj4gKwlRTVBfUEhZX0lOSVRf
+Q0ZHKFFTRVJERVNfVjZfQ09NX0NNTl9JRVRSSU0sIDB4MWIpLAo+ICsJUU1QX1BIWV9JTklUX0NG
+RyhRU0VSREVTX1Y2X0NPTV9DTU5fSVBUUklNLCAweDFjKSwKPiArCVFNUF9QSFlfSU5JVF9DRkco
+UVNFUkRFU19WNl9DT01fQ1BfQ1RSTF9NT0RFMCwgMHgwNiksCj4gIH07Cj4gIAo+ICBzdGF0aWMg
+Y29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90Ymwgc204NTUwX3Vmc3BoeV90eFtdID0gewo+ICAJ
+UU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VGU19WNl9UWF9MQU5FX01PREVfMSwgMHgwNSksCj4g
+IAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1RYX1JFU19DT0RFX0xBTkVfT0ZGU0VU
+X1RYLCAweDA3KSwKPiArfTsKPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9pbml0
+X3RibCBzbTg1NTBfdWZzcGh5X2c0X3R4W10gPSB7Cj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJE
+RVNfVUZTX1Y2X1RYX0ZSX0RDQ19DVFJMLCAweDRjKSwKPiAgfTsKPiAgCj4gIHN0YXRpYyBjb25z
+dCBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCBzbTg1NTBfdWZzcGh5X3J4W10gPSB7Cj4gIAlRTVBf
+UEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX1VDRFJfRk9fR0FJTl9SQVRFMiwgMHgwYyks
+Cj4gLQlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX1ZHQV9DQUxfTUFOX1ZBTCwg
+MHgwZSksCj4gIAo+ICAJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VGU19WNl9SWF9NT0RFX1JB
+VEVfMF8xX0IwLCAweGMyKSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19VRlNfVjZfUlhf
+TU9ERV9SQVRFXzBfMV9CMSwgMHhjMiksCj4gQEAgLTc5OSwxNiArODEzLDQ1IEBAIHN0YXRpYyBj
+b25zdCBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCBzbTg1NTBfdWZzcGh5X3J4W10gPSB7Cj4gIAlR
+TVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX01PREVfUkFURTNfQjgsIDB4MDIpLAo+
+ICB9Owo+ICAKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2luaXRfdGJsIHNtODU1MF91
+ZnNwaHlfZzRfcnhbXSA9IHsKPiArCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19VRlNfVjZfUlhf
+VkdBX0NBTF9NQU5fVkFMLCAweDBlKSwKPiArfTsKPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qg
+cW1wX3BoeV9pbml0X3RibCBzbTg1NTBfdWZzcGh5X2c1X3J4W10gPSB7Cj4gKwlRTVBfUEhZX0lO
+SVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX1VDRFJfRk9fR0FJTl9SQVRFNCwgMHgwYyksCj4gKwlR
+TVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX1VDRFJfU09fR0FJTl9SQVRFNCwgMHgw
+NCksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX0VRX09GRlNFVF9BREFQ
+VE9SX0NOVFJMMSwgMHgxNCksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JY
+X1VDRFJfUElfQ09OVFJPTFMsIDB4MDcpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VG
+U19WNl9SWF9PRkZTRVRfQURBUFRPUl9DTlRSTDMsIDB4MGUpLAo+ICsJUU1QX1BIWV9JTklUX0NG
+RyhRU0VSREVTX1VGU19WNl9SWF9VQ0RSX0ZBU1RMT0NLX0NPVU5UX0hJR0hfUkFURTQsIDB4MDIp
+LAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VGU19WNl9SWF9VQ0RSX0ZBU1RMT0NLX0ZP
+X0dBSU5fUkFURTQsIDB4MWMpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VGU19WNl9S
+WF9VQ0RSX0ZBU1RMT0NLX1NPX0dBSU5fUkFURTQsIDB4MDYpLAo+ICsJUU1QX1BIWV9JTklUX0NG
+RyhRU0VSREVTX1VGU19WNl9SWF9WR0FfQ0FMX01BTl9WQUwsIDB4MDgpLAo+ICsJUU1QX1BIWV9J
+TklUX0NGRyhRU0VSREVTX1VGU19WNl9SWF9NT0RFX1JBVEU0X0IzLCAweGI5KSwKPiArCVFNUF9Q
+SFlfSU5JVF9DRkcoUVNFUkRFU19VRlNfVjZfUlhfTU9ERV9SQVRFNF9CNCwgMHg0ZiksCj4gKwlR
+TVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVUZTX1Y2X1JYX01PREVfUkFURTRfQjYsIDB4ZmYpLAo+
+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1VGU19WNl9SWF9ETEwwX0ZUVU5FX0NUUkwsIDB4
+MzApLAo+ICt9Owo+ICsKPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2luaXRfdGJsIHNt
+ODU1MF91ZnNwaHlfcGNzW10gPSB7Cj4gIAlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjZfUENTX1VG
+U19SWF9TSUdERVRfQ1RSTDIsIDB4NjkpLAo+ICAJUU1QX1BIWV9JTklUX0NGRyhRUEhZX1Y2X1BD
+U19VRlNfVFhfTEFSR0VfQU1QX0RSVl9MVkwsIDB4MGYpLAo+ICAJUU1QX1BIWV9JTklUX0NGRyhR
+UEhZX1Y2X1BDU19VRlNfVFhfTUlEX1RFUk1fQ1RSTDEsIDB4NDMpLAo+IC0JUU1QX1BIWV9JTklU
+X0NGRyhRUEhZX1Y2X1BDU19VRlNfUExMX0NOVEwsIDB4MmIpLAo+ICAJUU1QX1BIWV9JTklUX0NG
+RyhRUEhZX1Y2X1BDU19VRlNfTVVMVElfTEFORV9DVFJMMSwgMHgwMiksCj4gK307Cj4gKwo+ICtz
+dGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90Ymwgc204NTUwX3Vmc3BoeV9nNF9wY3Nb
+XSA9IHsKPiArCVFNUF9QSFlfSU5JVF9DRkcoUVBIWV9WNl9QQ1NfVUZTX1BMTF9DTlRMLCAweDJi
+KSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVBIWV9WNl9QQ1NfVUZTX1RYX0hTR0VBUl9DQVBBQklM
+SVRZLCAweDA0KSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVBIWV9WNl9QQ1NfVUZTX1JYX0hTR0VB
+Ul9DQVBBQklMSVRZLCAweDA0KSwKPiAgfTsKPiAgCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcW1w
+X3BoeV9pbml0X3RibCBzbTg1NTBfdWZzcGh5X2c1X3Bjc1tdID0gewo+ICsJUU1QX1BIWV9JTklU
+X0NGRyhRUEhZX1Y2X1BDU19VRlNfUExMX0NOVEwsIDB4MzMpLAo+ICsJUU1QX1BIWV9JTklUX0NG
+RyhRUEhZX1Y2X1BDU19VRlNfUlhfSFNfRzVfU1lOQ19MRU5HVEhfQ0FQQUJJTElUWSwgMHg0Ziks
+Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjZfUENTX1VGU19SWF9IU0c1X1NZTkNfV0FJVF9U
+SU1FLCAweDllKSwKPiArfTsKPiArCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9pbml0
+X3RibCBzbTg2NTBfdWZzcGh5X3NlcmRlc1tdID0gewo+ICAJUU1QX1BIWV9JTklUX0NGRyhRU0VS
+REVTX1Y2X0NPTV9TWVNDTEtfRU5fU0VMLCAweGQ5KSwKPiAgCVFNUF9QSFlfSU5JVF9DRkcoUVNF
+UkRFU19WNl9DT01fQ01OX0NPTkZJR18xLCAweDE2KSwKPiBAQCAtODg5LDYgKzkzMiw4IEBAIHN0
+cnVjdCBxbXBfcGh5X2NmZ190YmxzIHsKPiAgCWludCByeF9udW07Cj4gIAljb25zdCBzdHJ1Y3Qg
+cW1wX3BoeV9pbml0X3RibCAqcGNzOwo+ICAJaW50IHBjc19udW07Cj4gKwkvKiBNYXhpbXVtIHN1
+cHBvcnRlZCBHZWFyIG9mIHRoaXMgdGJscyAqLwo+ICsJdTMyIG1heF9nZWFyOwo+ICB9Owo+ICAK
+PiAgLyogc3RydWN0IHFtcF9waHlfY2ZnIC0gcGVyLVBIWSBpbml0aWFsaXphdGlvbiBjb25maWcg
+Ki8KPiBAQCAtODk2LDEzICs5NDEsMTUgQEAgc3RydWN0IHFtcF9waHlfY2ZnIHsKPiAgCWludCBs
+YW5lczsKPiAgCj4gIAljb25zdCBzdHJ1Y3QgcW1wX3Vmc19vZmZzZXRzICpvZmZzZXRzOwo+ICsJ
+LyogTWF4aW11bSBzdXBwb3J0ZWQgR2VhciBvZiB0aGlzIGNvbmZpZyAqLwo+ICsJdTMyIG1heF9z
+dXBwb3J0ZWRfZ2VhcjsKPiAgCj4gIAkvKiBNYWluIGluaXQgc2VxdWVuY2UgZm9yIFBIWSBibG9j
+a3MgLSBzZXJkZXMsIHR4LCByeCwgcGNzICovCj4gIAljb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmdf
+dGJscyB0YmxzOwo+ICAJLyogQWRkaXRpb25hbCBzZXF1ZW5jZSBmb3IgSFMgU2VyaWVzIEIgKi8K
+PiAgCWNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZ190YmxzIHRibHNfaHNfYjsKPiAtCS8qIEFkZGl0
+aW9uYWwgc2VxdWVuY2UgZm9yIEhTIEc0ICovCj4gLQljb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmdf
+dGJscyB0YmxzX2hzX2c0Owo+ICsJLyogQWRkaXRpb25hbCBzZXF1ZW5jZSBmb3IgZGlmZmVyZW50
+IEhTIEdlYXJzICovCj4gKwljb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmdfdGJscyB0YmxzX2hzX292
+ZXJsYXlbTlVNX09WRVJMQVldOwo+ICAKPiAgCS8qIGNsb2NrIGlkcyB0byBiZSByZXF1ZXN0ZWQg
+Ki8KPiAgCWNvbnN0IGNoYXIgKiBjb25zdCAqY2xrX2xpc3Q7Cj4gQEAgLTEwMDUsNiArMTA1Miw3
+IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgbXNtODk5Nl91ZnNwaHlfY2ZnID0g
+ewo+ICAJLmxhbmVzCQkJPSAxLAo+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHMs
+Cj4gKwkubWF4X3N1cHBvcnRlZF9nZWFyCT0gVUZTX0hTX0czLAo+ICAKPiAgCS50YmxzID0gewo+
+ICAJCS5zZXJkZXMJCT0gbXNtODk5Nl91ZnNwaHlfc2VyZGVzLAo+IEBAIC0xMDMwLDYgKzEwNzgs
+NyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnIHNhODc3NXBfdWZzcGh5X2NmZyA9
+IHsKPiAgCS5sYW5lcwkJCT0gMiwKPiAgCj4gIAkub2Zmc2V0cwkJPSAmcW1wX3Vmc19vZmZzZXRz
+LAo+ICsJLm1heF9zdXBwb3J0ZWRfZ2Vhcgk9IFVGU19IU19HNCwKPiAgCj4gIAkudGJscyA9IHsK
+PiAgCQkuc2VyZGVzCQk9IHNtODM1MF91ZnNwaHlfc2VyZGVzLAo+IEBAIC0xMDQ1LDEzICsxMDk0
+LDE0IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgc2E4Nzc1cF91ZnNwaHlfY2Zn
+ID0gewo+ICAJCS5zZXJkZXMJCT0gc204MzUwX3Vmc3BoeV9oc19iX3NlcmRlcywKPiAgCQkuc2Vy
+ZGVzX251bQk9IEFSUkFZX1NJWkUoc204MzUwX3Vmc3BoeV9oc19iX3NlcmRlcyksCj4gIAl9LAo+
+IC0JLnRibHNfaHNfZzQgPSB7Cj4gKwkudGJsc19oc19vdmVybGF5WzBdID0gewo+ICAJCS50eAkJ
+PSBzbTgzNTBfdWZzcGh5X2c0X3R4LAo+ICAJCS50eF9udW0JCT0gQVJSQVlfU0laRShzbTgzNTBf
+dWZzcGh5X2c0X3R4KSwKPiAgCQkucngJCT0gc204MzUwX3Vmc3BoeV9nNF9yeCwKPiAgCQkucnhf
+bnVtCQk9IEFSUkFZX1NJWkUoc204MzUwX3Vmc3BoeV9nNF9yeCksCj4gIAkJLnBjcwkJPSBzbTgz
+NTBfdWZzcGh5X2c0X3BjcywKPiAgCQkucGNzX251bQk9IEFSUkFZX1NJWkUoc204MzUwX3Vmc3Bo
+eV9nNF9wY3MpLAo+ICsJCS5tYXhfZ2Vhcgk9IFVGU19IU19HNCwKPiAgCX0sCj4gIAkuY2xrX2xp
+c3QJCT0gc204NDUwX3Vmc19waHlfY2xrX2wsCj4gIAkubnVtX2Nsa3MJCT0gQVJSQVlfU0laRShz
+bTg0NTBfdWZzX3BoeV9jbGtfbCksCj4gQEAgLTEwNjQsNiArMTExNCw3IEBAIHN0YXRpYyBjb25z
+dCBzdHJ1Y3QgcW1wX3BoeV9jZmcgc2M3MjgwX3Vmc3BoeV9jZmcgPSB7Cj4gIAkubGFuZXMgICAg
+ICAgICAgICAgICAgICA9IDIsCj4gIAo+ICAJLm9mZnNldHMgICAgICAgICAgICAgICAgPSAmcW1w
+X3Vmc19vZmZzZXRzLAo+ICsJLm1heF9zdXBwb3J0ZWRfZ2Vhcgk9IFVGU19IU19HNCwKPiAgCj4g
+IAkudGJscyA9IHsKPiAgCQkuc2VyZGVzICAgICAgICAgPSBzbTgxNTBfdWZzcGh5X3NlcmRlcywK
+PiBAQCAtMTA3OSwxMyArMTEzMCwxNCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2Zn
+IHNjNzI4MF91ZnNwaHlfY2ZnID0gewo+ICAJCS5zZXJkZXMgICAgICAgICA9IHNtODE1MF91ZnNw
+aHlfaHNfYl9zZXJkZXMsCj4gIAkJLnNlcmRlc19udW0gICAgID0gQVJSQVlfU0laRShzbTgxNTBf
+dWZzcGh5X2hzX2Jfc2VyZGVzKSwKPiAgCX0sCj4gLQkudGJsc19oc19nNCA9IHsKPiArCS50Ymxz
+X2hzX292ZXJsYXlbMF0gPSB7Cj4gIAkJLnR4ICAgICAgICAgICAgID0gc204MjUwX3Vmc3BoeV9o
+c19nNF90eCwKPiAgCQkudHhfbnVtICAgICAgICAgPSBBUlJBWV9TSVpFKHNtODI1MF91ZnNwaHlf
+aHNfZzRfdHgpLAo+ICAJCS5yeCAgICAgICAgICAgICA9IHNjNzI4MF91ZnNwaHlfaHNfZzRfcngs
+Cj4gIAkJLnJ4X251bSAgICAgICAgID0gQVJSQVlfU0laRShzYzcyODBfdWZzcGh5X2hzX2c0X3J4
+KSwKPiAgCQkucGNzICAgICAgICAgICAgPSBzbTgxNTBfdWZzcGh5X2hzX2c0X3BjcywKPiAgCQku
+cGNzX251bSAgICAgICAgPSBBUlJBWV9TSVpFKHNtODE1MF91ZnNwaHlfaHNfZzRfcGNzKSwKPiAr
+CQkubWF4X2dlYXIJPSBVRlNfSFNfRzQsCj4gIAl9LAo+ICAJLmNsa19saXN0ICAgICAgICAgICAg
+ICAgPSBzbTg0NTBfdWZzX3BoeV9jbGtfbCwKPiAgCS5udW1fY2xrcyAgICAgICAgICAgICAgID0g
+QVJSQVlfU0laRShzbTg0NTBfdWZzX3BoeV9jbGtfbCksCj4gQEAgLTEwOTgsNiArMTE1MCw3IEBA
+IHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgc2M4MjgweHBfdWZzcGh5X2NmZyA9IHsK
+PiAgCS5sYW5lcwkJCT0gMiwKPiAgCj4gIAkub2Zmc2V0cwkJPSAmcW1wX3Vmc19vZmZzZXRzLAo+
+ICsJLm1heF9zdXBwb3J0ZWRfZ2Vhcgk9IFVGU19IU19HNCwKPiAgCj4gIAkudGJscyA9IHsKPiAg
+CQkuc2VyZGVzCQk9IHNtODM1MF91ZnNwaHlfc2VyZGVzLAo+IEBAIC0xMTEzLDEzICsxMTY2LDE0
+IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgc2M4MjgweHBfdWZzcGh5X2NmZyA9
+IHsKPiAgCQkuc2VyZGVzCQk9IHNtODM1MF91ZnNwaHlfaHNfYl9zZXJkZXMsCj4gIAkJLnNlcmRl
+c19udW0JPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlfaHNfYl9zZXJkZXMpLAo+ICAJfSwKPiAt
+CS50YmxzX2hzX2c0ID0gewo+ICsJLnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiAgCQkudHgJCT0g
+c204MzUwX3Vmc3BoeV9nNF90eCwKPiAgCQkudHhfbnVtCQk9IEFSUkFZX1NJWkUoc204MzUwX3Vm
+c3BoeV9nNF90eCksCj4gIAkJLnJ4CQk9IHNtODM1MF91ZnNwaHlfZzRfcngsCj4gIAkJLnJ4X251
+bQkJPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlfZzRfcngpLAo+ICAJCS5wY3MJCT0gc204MzUw
+X3Vmc3BoeV9nNF9wY3MsCj4gIAkJLnBjc19udW0JPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlf
+ZzRfcGNzKSwKPiArCQkubWF4X2dlYXIJPSBVRlNfSFNfRzQsCj4gIAl9LAo+ICAJLmNsa19saXN0
+CQk9IHNkbTg0NV91ZnNfcGh5X2Nsa19sLAo+ICAJLm51bV9jbGtzCQk9IEFSUkFZX1NJWkUoc2Rt
+ODQ1X3Vmc19waHlfY2xrX2wpLAo+IEBAIC0xMTMyLDYgKzExODYsNyBAQCBzdGF0aWMgY29uc3Qg
+c3RydWN0IHFtcF9waHlfY2ZnIHNkbTg0NV91ZnNwaHlfY2ZnID0gewo+ICAJLmxhbmVzCQkJPSAy
+LAo+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHMsCj4gKwkubWF4X3N1cHBvcnRl
+ZF9nZWFyCT0gVUZTX0hTX0czLAo+ICAKPiAgCS50YmxzID0gewo+ICAJCS5zZXJkZXMJCT0gc2Rt
+ODQ1X3Vmc3BoeV9zZXJkZXMsCj4gQEAgLTExNjAsNiArMTIxNSw3IEBAIHN0YXRpYyBjb25zdCBz
+dHJ1Y3QgcW1wX3BoeV9jZmcgc202MTE1X3Vmc3BoeV9jZmcgPSB7Cj4gIAkubGFuZXMJCQk9IDEs
+Cj4gIAo+ICAJLm9mZnNldHMJCT0gJnFtcF91ZnNfb2Zmc2V0cywKPiArCS5tYXhfc3VwcG9ydGVk
+X2dlYXIJPSBVRlNfSFNfRzMsCj4gIAo+ICAJLnRibHMgPSB7Cj4gIAkJLnNlcmRlcwkJPSBzbTYx
+MTVfdWZzcGh5X3NlcmRlcywKPiBAQCAtMTE4OCw2ICsxMjQ0LDcgQEAgc3RhdGljIGNvbnN0IHN0
+cnVjdCBxbXBfcGh5X2NmZyBzbTcxNTBfdWZzcGh5X2NmZyA9IHsKPiAgCS5sYW5lcwkJCT0gMSwK
+PiAgCj4gIAkub2Zmc2V0cwkJPSAmcW1wX3Vmc19vZmZzZXRzLAo+ICsJLm1heF9zdXBwb3J0ZWRf
+Z2Vhcgk9IFVGU19IU19HMywKPiAgCj4gIAkudGJscyA9IHsKPiAgCQkuc2VyZGVzCQk9IHNkbTg0
+NV91ZnNwaHlfc2VyZGVzLAo+IEBAIC0xMjE2LDYgKzEyNzMsNyBAQCBzdGF0aWMgY29uc3Qgc3Ry
+dWN0IHFtcF9waHlfY2ZnIHNtODE1MF91ZnNwaHlfY2ZnID0gewo+ICAJLmxhbmVzCQkJPSAyLAo+
+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHMsCj4gKwkubWF4X3N1cHBvcnRlZF9n
+ZWFyCT0gVUZTX0hTX0c0LAo+ICAKPiAgCS50YmxzID0gewo+ICAJCS5zZXJkZXMJCT0gc204MTUw
+X3Vmc3BoeV9zZXJkZXMsCj4gQEAgLTEyMzEsMTMgKzEyODksMTQgQEAgc3RhdGljIGNvbnN0IHN0
+cnVjdCBxbXBfcGh5X2NmZyBzbTgxNTBfdWZzcGh5X2NmZyA9IHsKPiAgCQkuc2VyZGVzCQk9IHNt
+ODE1MF91ZnNwaHlfaHNfYl9zZXJkZXMsCj4gIAkJLnNlcmRlc19udW0JPSBBUlJBWV9TSVpFKHNt
+ODE1MF91ZnNwaHlfaHNfYl9zZXJkZXMpLAo+ICAJfSwKPiAtCS50YmxzX2hzX2c0ID0gewo+ICsJ
+LnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiAgCQkudHgJCT0gc204MTUwX3Vmc3BoeV9oc19nNF90
+eCwKPiAgCQkudHhfbnVtCQk9IEFSUkFZX1NJWkUoc204MTUwX3Vmc3BoeV9oc19nNF90eCksCj4g
+IAkJLnJ4CQk9IHNtODE1MF91ZnNwaHlfaHNfZzRfcngsCj4gIAkJLnJ4X251bQkJPSBBUlJBWV9T
+SVpFKHNtODE1MF91ZnNwaHlfaHNfZzRfcngpLAo+ICAJCS5wY3MJCT0gc204MTUwX3Vmc3BoeV9o
+c19nNF9wY3MsCj4gIAkJLnBjc19udW0JPSBBUlJBWV9TSVpFKHNtODE1MF91ZnNwaHlfaHNfZzRf
+cGNzKSwKPiArCQkubWF4X2dlYXIJPSBVRlNfSFNfRzQsCj4gIAl9LAo+ICAJLmNsa19saXN0CQk9
+IHNkbTg0NV91ZnNfcGh5X2Nsa19sLAo+ICAJLm51bV9jbGtzCQk9IEFSUkFZX1NJWkUoc2RtODQ1
+X3Vmc19waHlfY2xrX2wpLAo+IEBAIC0xMjUwLDYgKzEzMDksNyBAQCBzdGF0aWMgY29uc3Qgc3Ry
+dWN0IHFtcF9waHlfY2ZnIHNtODI1MF91ZnNwaHlfY2ZnID0gewo+ICAJLmxhbmVzCQkJPSAyLAo+
+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHMsCj4gKwkubWF4X3N1cHBvcnRlZF9n
+ZWFyCT0gVUZTX0hTX0c0LAo+ICAKPiAgCS50YmxzID0gewo+ICAJCS5zZXJkZXMJCT0gc204MTUw
+X3Vmc3BoeV9zZXJkZXMsCj4gQEAgLTEyNjUsMTMgKzEzMjUsMTQgQEAgc3RhdGljIGNvbnN0IHN0
+cnVjdCBxbXBfcGh5X2NmZyBzbTgyNTBfdWZzcGh5X2NmZyA9IHsKPiAgCQkuc2VyZGVzCQk9IHNt
+ODE1MF91ZnNwaHlfaHNfYl9zZXJkZXMsCj4gIAkJLnNlcmRlc19udW0JPSBBUlJBWV9TSVpFKHNt
+ODE1MF91ZnNwaHlfaHNfYl9zZXJkZXMpLAo+ICAJfSwKPiAtCS50YmxzX2hzX2c0ID0gewo+ICsJ
+LnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiAgCQkudHgJCT0gc204MjUwX3Vmc3BoeV9oc19nNF90
+eCwKPiAgCQkudHhfbnVtCQk9IEFSUkFZX1NJWkUoc204MjUwX3Vmc3BoeV9oc19nNF90eCksCj4g
+IAkJLnJ4CQk9IHNtODI1MF91ZnNwaHlfaHNfZzRfcngsCj4gIAkJLnJ4X251bQkJPSBBUlJBWV9T
+SVpFKHNtODI1MF91ZnNwaHlfaHNfZzRfcngpLAo+ICAJCS5wY3MJCT0gc204MTUwX3Vmc3BoeV9o
+c19nNF9wY3MsCj4gIAkJLnBjc19udW0JPSBBUlJBWV9TSVpFKHNtODE1MF91ZnNwaHlfaHNfZzRf
+cGNzKSwKPiArCQkubWF4X2dlYXIJPSBVRlNfSFNfRzQsCj4gIAl9LAo+ICAJLmNsa19saXN0CQk9
+IHNkbTg0NV91ZnNfcGh5X2Nsa19sLAo+ICAJLm51bV9jbGtzCQk9IEFSUkFZX1NJWkUoc2RtODQ1
+X3Vmc19waHlfY2xrX2wpLAo+IEBAIC0xMjg0LDYgKzEzNDUsNyBAQCBzdGF0aWMgY29uc3Qgc3Ry
+dWN0IHFtcF9waHlfY2ZnIHNtODM1MF91ZnNwaHlfY2ZnID0gewo+ICAJLmxhbmVzCQkJPSAyLAo+
+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHMsCj4gKwkubWF4X3N1cHBvcnRlZF9n
+ZWFyCT0gVUZTX0hTX0c0LAo+ICAKPiAgCS50YmxzID0gewo+ICAJCS5zZXJkZXMJCT0gc204MzUw
+X3Vmc3BoeV9zZXJkZXMsCj4gQEAgLTEyOTksMTMgKzEzNjEsMTQgQEAgc3RhdGljIGNvbnN0IHN0
+cnVjdCBxbXBfcGh5X2NmZyBzbTgzNTBfdWZzcGh5X2NmZyA9IHsKPiAgCQkuc2VyZGVzCQk9IHNt
+ODM1MF91ZnNwaHlfaHNfYl9zZXJkZXMsCj4gIAkJLnNlcmRlc19udW0JPSBBUlJBWV9TSVpFKHNt
+ODM1MF91ZnNwaHlfaHNfYl9zZXJkZXMpLAo+ICAJfSwKPiAtCS50YmxzX2hzX2c0ID0gewo+ICsJ
+LnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiAgCQkudHgJCT0gc204MzUwX3Vmc3BoeV9nNF90eCwK
+PiAgCQkudHhfbnVtCQk9IEFSUkFZX1NJWkUoc204MzUwX3Vmc3BoeV9nNF90eCksCj4gIAkJLnJ4
+CQk9IHNtODM1MF91ZnNwaHlfZzRfcngsCj4gIAkJLnJ4X251bQkJPSBBUlJBWV9TSVpFKHNtODM1
+MF91ZnNwaHlfZzRfcngpLAo+ICAJCS5wY3MJCT0gc204MzUwX3Vmc3BoeV9nNF9wY3MsCj4gIAkJ
+LnBjc19udW0JPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlfZzRfcGNzKSwKPiArCQkubWF4X2dl
+YXIJPSBVRlNfSFNfRzQsCj4gIAl9LAo+ICAJLmNsa19saXN0CQk9IHNkbTg0NV91ZnNfcGh5X2Ns
+a19sLAo+ICAJLm51bV9jbGtzCQk9IEFSUkFZX1NJWkUoc2RtODQ1X3Vmc19waHlfY2xrX2wpLAo+
+IEBAIC0xMzE4LDYgKzEzODEsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnIHNt
+ODQ1MF91ZnNwaHlfY2ZnID0gewo+ICAJLmxhbmVzCQkJPSAyLAo+ICAKPiAgCS5vZmZzZXRzCQk9
+ICZxbXBfdWZzX29mZnNldHMsCj4gKwkubWF4X3N1cHBvcnRlZF9nZWFyCT0gVUZTX0hTX0c0LAo+
+ICAKPiAgCS50YmxzID0gewo+ICAJCS5zZXJkZXMJCT0gc204MzUwX3Vmc3BoeV9zZXJkZXMsCj4g
+QEAgLTEzMzMsMTMgKzEzOTcsMTQgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyBz
+bTg0NTBfdWZzcGh5X2NmZyA9IHsKPiAgCQkuc2VyZGVzCQk9IHNtODM1MF91ZnNwaHlfaHNfYl9z
+ZXJkZXMsCj4gIAkJLnNlcmRlc19udW0JPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlfaHNfYl9z
+ZXJkZXMpLAo+ICAJfSwKPiAtCS50YmxzX2hzX2c0ID0gewo+ICsJLnRibHNfaHNfb3ZlcmxheVsw
+XSA9IHsKPiAgCQkudHgJCT0gc204MzUwX3Vmc3BoeV9nNF90eCwKPiAgCQkudHhfbnVtCQk9IEFS
+UkFZX1NJWkUoc204MzUwX3Vmc3BoeV9nNF90eCksCj4gIAkJLnJ4CQk9IHNtODM1MF91ZnNwaHlf
+ZzRfcngsCj4gIAkJLnJ4X251bQkJPSBBUlJBWV9TSVpFKHNtODM1MF91ZnNwaHlfZzRfcngpLAo+
+ICAJCS5wY3MJCT0gc204MzUwX3Vmc3BoeV9nNF9wY3MsCj4gIAkJLnBjc19udW0JPSBBUlJBWV9T
+SVpFKHNtODM1MF91ZnNwaHlfZzRfcGNzKSwKPiArCQkubWF4X2dlYXIJPSBVRlNfSFNfRzQsCj4g
+IAl9LAo+ICAJLmNsa19saXN0CQk9IHNtODQ1MF91ZnNfcGh5X2Nsa19sLAo+ICAJLm51bV9jbGtz
+CQk9IEFSUkFZX1NJWkUoc204NDUwX3Vmc19waHlfY2xrX2wpLAo+IEBAIC0xMzUyLDYgKzE0MTcs
+NyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnIHNtODU1MF91ZnNwaHlfY2ZnID0g
+ewo+ICAJLmxhbmVzCQkJPSAyLAo+ICAKPiAgCS5vZmZzZXRzCQk9ICZxbXBfdWZzX29mZnNldHNf
+djYsCj4gKwkubWF4X3N1cHBvcnRlZF9nZWFyCT0gVUZTX0hTX0c1LAo+ICAKPiAgCS50YmxzID0g
+ewo+ICAJCS5zZXJkZXMJCT0gc204NTUwX3Vmc3BoeV9zZXJkZXMsCj4gQEAgLTEzNjcsNiArMTQz
+MywyNiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnIHNtODU1MF91ZnNwaHlfY2Zn
+ID0gewo+ICAJCS5zZXJkZXMJCT0gc204NTUwX3Vmc3BoeV9oc19iX3NlcmRlcywKPiAgCQkuc2Vy
+ZGVzX251bQk9IEFSUkFZX1NJWkUoc204NTUwX3Vmc3BoeV9oc19iX3NlcmRlcyksCj4gIAl9LAo+
+ICsJLnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiArCQkuc2VyZGVzCQk9IHNtODU1MF91ZnNwaHlf
+ZzRfc2VyZGVzLAo+ICsJCS5zZXJkZXNfbnVtCT0gQVJSQVlfU0laRShzbTg1NTBfdWZzcGh5X2c0
+X3NlcmRlcyksCj4gKwkJLnR4CQk9IHNtODU1MF91ZnNwaHlfZzRfdHgsCj4gKwkJLnR4X251bQkJ
+PSBBUlJBWV9TSVpFKHNtODU1MF91ZnNwaHlfZzRfdHgpLAo+ICsJCS5yeAkJPSBzbTg1NTBfdWZz
+cGh5X2c0X3J4LAo+ICsJCS5yeF9udW0JCT0gQVJSQVlfU0laRShzbTg1NTBfdWZzcGh5X2c0X3J4
+KSwKPiArCQkucGNzCQk9IHNtODU1MF91ZnNwaHlfZzRfcGNzLAo+ICsJCS5wY3NfbnVtCT0gQVJS
+QVlfU0laRShzbTg1NTBfdWZzcGh5X2c0X3BjcyksCj4gKwkJLm1heF9nZWFyCT0gVUZTX0hTX0c0
+LAo+ICsJfSwKPiArCS50YmxzX2hzX292ZXJsYXlbMV0gPSB7Cj4gKwkJLnNlcmRlcwkJPSBzbTg1
+NTBfdWZzcGh5X2c1X3NlcmRlcywKPiArCQkuc2VyZGVzX251bQk9IEFSUkFZX1NJWkUoc204NTUw
+X3Vmc3BoeV9nNV9zZXJkZXMpLAo+ICsJCS5yeAkJPSBzbTg1NTBfdWZzcGh5X2c1X3J4LAo+ICsJ
+CS5yeF9udW0JCT0gQVJSQVlfU0laRShzbTg1NTBfdWZzcGh5X2c1X3J4KSwKPiArCQkucGNzCQk9
+IHNtODU1MF91ZnNwaHlfZzVfcGNzLAo+ICsJCS5wY3NfbnVtCT0gQVJSQVlfU0laRShzbTg1NTBf
+dWZzcGh5X2c1X3BjcyksCj4gKwkJLm1heF9nZWFyCT0gVUZTX0hTX0c1LAo+ICsJfSwKPiAgCS5j
+bGtfbGlzdAkJPSBzZG04NDVfdWZzX3BoeV9jbGtfbCwKPiAgCS5udW1fY2xrcwkJPSBBUlJBWV9T
+SVpFKHNkbTg0NV91ZnNfcGh5X2Nsa19sKSwKPiAgCS52cmVnX2xpc3QJCT0gcW1wX3BoeV92cmVn
+X2wsCj4gQEAgLTEzNzgsNiArMTQ2NCw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9j
+Zmcgc204NjUwX3Vmc3BoeV9jZmcgPSB7Cj4gIAkubGFuZXMJCQk9IDIsCj4gIAo+ICAJLm9mZnNl
+dHMJCT0gJnFtcF91ZnNfb2Zmc2V0c192NiwKPiArCS5tYXhfc3VwcG9ydGVkX2dlYXIJPSBVRlNf
+SFNfRzUsCj4gIAo+ICAJLnRibHMgPSB7Cj4gIAkJLnNlcmRlcwkJPSBzbTg2NTBfdWZzcGh5X3Nl
+cmRlcywKPiBAQCAtMTQ1MSwxNyArMTUzOCw0OSBAQCBzdGF0aWMgdm9pZCBxbXBfdWZzX3Bjc19p
+bml0KHN0cnVjdCBxbXBfdWZzICpxbXAsIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZ190YmxzCj4g
+IAlxbXBfdWZzX2NvbmZpZ3VyZShwY3MsIHRibHMtPnBjcywgdGJscy0+cGNzX251bSk7Cj4gIH0K
+PiAgCj4gK3N0YXRpYyBpbnQgcW1wX3Vmc19nZXRfZ2Vhcl9vdmVybGF5KHN0cnVjdCBxbXBfdWZz
+ICpxbXAsIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyAqY2ZnKQo+ICt7Cj4gKwl1MzIgbWF4X2dl
+YXIsIGZsb29yX21heF9nZWFyID0gY2ZnLT5tYXhfc3VwcG9ydGVkX2dlYXI7Cj4gKwlpbnQgaWR4
+LCByZXQgPSAtRUlOVkFMOwo+ICsKPiArCWZvciAoaWR4ID0gTlVNX09WRVJMQVkgLSAxOyBpZHgg
+Pj0gMDsgaWR4LS0pIHsKPiArCQltYXhfZ2VhciA9IGNmZy0+dGJsc19oc19vdmVybGF5W2lkeF0u
+bWF4X2dlYXI7Cj4gKwo+ICsJCS8qIFNraXAgaWYgdGhlIHRhYmxlIGlzIG5vdCBhdmFpbGFibGUg
+Ki8KPiArCQlpZiAobWF4X2dlYXIgPT0gMCkKPiArCQkJY29udGludWU7Cj4gKwo+ICsJCS8qIERp
+cmVjdCBtYXRjaGluZywgYmFpbCAqLwo+ICsJCWlmIChxbXAtPnN1Ym1vZGUgPT0gbWF4X2dlYXIp
+Cj4gKwkJCXJldHVybiBpZHg7Cj4gKwo+ICsJCS8qIElmIG5vIGRpcmVjdCBtYXRjaGluZywgdGhl
+IGxvd2VzdCBnZWFyIGlzIHRoZSBiZXN0IG1hdGNoaW5nICovCj4gKwkJaWYgKG1heF9nZWFyIDwg
+Zmxvb3JfbWF4X2dlYXIpIHsKPiArCQkJcmV0ID0gaWR4Owo+ICsJCQlmbG9vcl9tYXhfZ2VhciA9
+IG1heF9nZWFyOwo+ICsJCX0KPiArCX0KPiArCj4gKwlyZXR1cm4gcmV0Owo+ICt9Cj4gKwo+ICBz
+dGF0aWMgdm9pZCBxbXBfdWZzX2luaXRfcmVnaXN0ZXJzKHN0cnVjdCBxbXBfdWZzICpxbXAsIGNv
+bnN0IHN0cnVjdCBxbXBfcGh5X2NmZyAqY2ZnKQo+ICB7Cj4gKwlpbnQgaTsKPiArCj4gIAlxbXBf
+dWZzX3NlcmRlc19pbml0KHFtcCwgJmNmZy0+dGJscyk7Cj4gLQlpZiAocW1wLT5tb2RlID09IFBI
+WV9NT0RFX1VGU19IU19CKQo+IC0JCXFtcF91ZnNfc2VyZGVzX2luaXQocW1wLCAmY2ZnLT50Ymxz
+X2hzX2IpOwo+ICAJcW1wX3Vmc19sYW5lc19pbml0KHFtcCwgJmNmZy0+dGJscyk7Cj4gLQlpZiAo
+cW1wLT5zdWJtb2RlID09IFVGU19IU19HNCkKPiAtCQlxbXBfdWZzX2xhbmVzX2luaXQocW1wLCAm
+Y2ZnLT50YmxzX2hzX2c0KTsKPiAgCXFtcF91ZnNfcGNzX2luaXQocW1wLCAmY2ZnLT50YmxzKTsK
+PiAtCWlmIChxbXAtPnN1Ym1vZGUgPT0gVUZTX0hTX0c0KQo+IC0JCXFtcF91ZnNfcGNzX2luaXQo
+cW1wLCAmY2ZnLT50YmxzX2hzX2c0KTsKPiArCj4gKwlpID0gcW1wX3Vmc19nZXRfZ2Vhcl9vdmVy
+bGF5KHFtcCwgY2ZnKTsKPiArCWlmIChpID49IDApIHsKPiArCQlxbXBfdWZzX3NlcmRlc19pbml0
+KHFtcCwgJmNmZy0+dGJsc19oc19vdmVybGF5W2ldKTsKPiArCQlxbXBfdWZzX2xhbmVzX2luaXQo
+cW1wLCAmY2ZnLT50YmxzX2hzX292ZXJsYXlbaV0pOwo+ICsJCXFtcF91ZnNfcGNzX2luaXQocW1w
+LCAmY2ZnLT50YmxzX2hzX292ZXJsYXlbaV0pOwo+ICsJfQo+ICsKPiArCWlmIChxbXAtPm1vZGUg
+PT0gUEhZX01PREVfVUZTX0hTX0IpCj4gKwkJcW1wX3Vmc19zZXJkZXNfaW5pdChxbXAsICZjZmct
+PnRibHNfaHNfYik7Cj4gIH0KPiAgCj4gIHN0YXRpYyBpbnQgcW1wX3Vmc19jb21faW5pdChzdHJ1
+Y3QgcW1wX3VmcyAqcW1wKQo+IEBAIC0xNjMzLDYgKzE3NTIsMTIgQEAgc3RhdGljIGludCBxbXBf
+dWZzX2Rpc2FibGUoc3RydWN0IHBoeSAqcGh5KQo+ICBzdGF0aWMgaW50IHFtcF91ZnNfc2V0X21v
+ZGUoc3RydWN0IHBoeSAqcGh5LCBlbnVtIHBoeV9tb2RlIG1vZGUsIGludCBzdWJtb2RlKQo+ICB7
+Cj4gIAlzdHJ1Y3QgcW1wX3VmcyAqcW1wID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gKwljb25z
+dCBzdHJ1Y3QgcW1wX3BoeV9jZmcgKmNmZyA9IHFtcC0+Y2ZnOwo+ICsKPiArCWlmIChzdWJtb2Rl
+ID4gY2ZnLT5tYXhfc3VwcG9ydGVkX2dlYXIgfHwgc3VibW9kZSA9PSAwKSB7Cj4gKwkJZGV2X2Vy
+cihxbXAtPmRldiwgIkludmFsaWQgUEhZIHN1Ym1vZGUgJWRcbiIsIHN1Ym1vZGUpOwo+ICsJCXJl
+dHVybiAtRUlOVkFMOwo+ICsJfQo+ICAKPiAgCXFtcC0+bW9kZSA9IG1vZGU7Cj4gIAlxbXAtPnN1
+Ym1vZGUgPSBzdWJtb2RlOwo+IC0tIAo+IDIuNy40Cj4gCgotLSAK4K6u4K6j4K6/4K614K6j4K+N
+4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
+IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
