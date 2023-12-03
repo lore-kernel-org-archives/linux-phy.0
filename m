@@ -4,79 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBFEFC4167B
-	for <linux-phy@archiver.kernel.org>; Sat,  2 Dec 2023 20:28:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16C42C10F04
+	for <linux-phy@archiver.kernel.org>; Sun,  3 Dec 2023 16:46:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xs3UI9nxZC1kSo2BjqwZL60EV8VD0EFhyRj+qkCO4iM=; b=lq8K7XISq6Llg8
-	ichHuRVkojVmAeZiOFXEIifZnrN5uQkFc9Q7xXGWCnPc70Hc2INxBAUGyojpKxwnHW8C6zW3VqoCC
-	JpvaqOzbDpfTMnLQyPUob9stg1HT4FCgzlQ+7iDa9zJRHdZW4kmJWl+x5jpBMTE9c0Rz9aECs4Z2N
-	19C/11j3IUuSuFDApM/E0D2QsPhVeB9KrEOf2nmNR8p2fsxppXQOnPWGBgQMUmED9VXLZN7XW6LrB
-	tkSr9W/xzG6Om6rEHjupTDZ7NrdKVNRpunwDEkybkRctKDW47bT8mU4Aa/ZRME5Kdjwn+NkoYC0Vc
-	H1ad+EKR9GRbErxVDOHg==;
+	List-Owner; bh=CUsEF2vWhZQ2zJjMdiyCkgDhehYraHTX/CPKvaotZPc=; b=MWFWcmLeWhyP9f
+	YZWCY4MpQ78Wl8whNm+duaUAlamMRLRAbd2PDL5aBvDTbreZoUgKoxMuG2iAWLNwswOjM/XLTGz9Z
+	bHpvYhHt4TLAmNUMhBHb4HLaKmk64beIlhSOio43SjWMw6I0X6VGvbvOBY+pEOfeqip0NvfvPqsXM
+	LvZLl7+/QdLWnKBJVNim4yxI4BPSBlBGxX/1AIz4o/BqDPnqyrvSnJ+zSHeH0OWtct6cRnHG+f6LS
+	KttaIPNWKHzj6ErsY52zCHw434co1fIK4Qxn5l3tT47sygOLWwNdmK82zN4COLx2vMLFDDDtc+O4M
+	CmvuJmTgEd7lWtnl1Zyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r9Wat-00G5Hq-0R;
-	Sat, 02 Dec 2023 20:28:07 +0000
-Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
+	id 1r9pbs-001RJ9-1j;
+	Sun, 03 Dec 2023 16:46:24 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r9Waq-00G5Fx-1t
+	id 1r9pbp-001RG9-0z
 	for linux-phy@lists.infradead.org;
-	Sat, 02 Dec 2023 20:28:06 +0000
-Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-5cfc3a48ab2so34884167b3.0
-        for <linux-phy@lists.infradead.org>; Sat, 02 Dec 2023 12:27:56 -0800 (PST)
+	Sun, 03 Dec 2023 16:46:22 +0000
+Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-54c79968ffbso1584588a12.3
+        for <linux-phy@lists.infradead.org>; Sun, 03 Dec 2023 08:46:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1701548875; x=1702153675; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=uvT4z76Po6/5Y4/ji/3Hekn4vEQQ+QLQOwThlnNRg+s=;
-        b=kiHF3rMm1vPRIqvRs1p1Rd92kEpVISfD+YLucrFVm3t8wHJIvJb3apGyobChhyB2iV
-         9v2Z5K78xhrMdRWiIGNz+ZlTDJNJ/l/uNCCShIbkkc1fTcZoSX7qPAjl+XWNkFByMaUb
-         BXFEu/wBaANBAb+JmbCd1PWpr5meE9mHjg+AwoEo44dEzJZX7H8PBJnkxEoa0EFjqOSU
-         gxKPKYuLzLnZrSqkGslXRbCpoo3tHU63U+TmqxlXClKxgoLG4WwH6LupDrVcJCjZzqou
-         ObGwOuj72ZQcw8p/yChZnUvQ+V2hob1iQRbQUiN0Q8rbbyd99jNYIJWNUWBtFdUuSf9Q
-         9aTg==
+        d=linaro.org; s=google; t=1701621979; x=1702226779; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FjnVGzR8z11f9xYM+Th1CV1Wf34G9BPeVe7HV0Px++c=;
+        b=QPfhRFY3gWW007jw/KwvakJAvdauhuXuanZQ8Ww9ajW0L4CPajkKMdm6MHD7lRwQfe
+         /u1TvgRzFwqCMFSwCN6xhP75Hf5TtWy9VwxcGO96Fsy/Dr9Fsee9gRutzE2jjNzTLNgE
+         YFvLj1nP0CDNR7v6o2KbC0GRDHFUOdtF82UI+QycpMugDG5V5O+xM367rBm94iy+L/Dc
+         xddGPT60a1hG+BQ7RwCKgFTRnTNtKVty9rl/zLodwkq4bgh4YGMb9k1rIL+w/swQuPXW
+         lKhYxUabGJR5fJczSixRr2APYNUQY7cpNKT1IxVmNVBQIV8re+iehAi6/c+Gp+mU/JOm
+         7MTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701548875; x=1702153675;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=uvT4z76Po6/5Y4/ji/3Hekn4vEQQ+QLQOwThlnNRg+s=;
-        b=t6NPy2deAkniWS7NXllyHr7Wnb9QwYsjUwnI7gmcotpf7nVtxnQBagUBFPPvtVCnla
-         zxhcEpLPuNiEraadlLIzbUet1mYEvPPm8GW2QnhDepdFhiOhcO40wt0jhjpmWxZEbhMd
-         Egn06CEQsmtTBjO0mxWeEhrjiaKBnY/T1fuEbAKxKWBiMOSTJc15dOcBbpd5Tfyq4VPi
-         nK7lS60d7hyK3wmfKabVViLzGtcQ3Zfiecpl9TPcNujhK+DpUzt9XMq9QrqrcvMXwkvd
-         /15nMFeVEekkRpCkUvRZs7hz53TDJhNPHs9wslKeEAzXqMpQdPihPlNZDRlqVfMDwv2T
-         +L/Q==
-X-Gm-Message-State: AOJu0YyHAbco+SS4Lfkplh5iTuNOzezV+1g6X6Z9Gh7ba/N6A2AMqNYV
-	tAJIbzJrtmIpY1WxM568CRroqPAB9P+h5+ptoy3eUA==
-X-Google-Smtp-Source: AGHT+IH1Bi46zI+abA7XowSzg7eAQSNdMduiBzR2eJj0NkSKqxmlcaCcQ8HWp9J2PVu1uH7bwYUGeeRqo5iERm/gCtk=
-X-Received: by 2002:a81:7904:0:b0:5d7:1941:ac0 with SMTP id
- u4-20020a817904000000b005d719410ac0mr1384290ywc.91.1701548875589; Sat, 02 Dec
- 2023 12:27:55 -0800 (PST)
+        d=1e100.net; s=20230601; t=1701621979; x=1702226779;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=FjnVGzR8z11f9xYM+Th1CV1Wf34G9BPeVe7HV0Px++c=;
+        b=S/h62mYbxv5DnO1PiF/eC8k0DlqIoP5F0BbbuJDIzqXs99I6M8tAWazBultip1je3p
+         MRWuvwUgqYgD1npcUpIJMIao9UYmbRCrW+dkTWdLcAZsneB3pPHg7f8FY3ZJMVnTj4g+
+         lPl7dl9AnMkpO4Fk7fXruY8wBq+cKGac4tF87BL6MotxzbcKJYL32ECcj00ij5EDDzMK
+         D2DHYPLRJzSxN9OvldcVc64h1yVCpG9XcRzYngZPf/uiiiB8xRGZ/5wVTtBFHaC3NLmZ
+         w3ELTRzX3yRo9O0v4UhwvxEkwU9kRvBvzikrC1whuU8gLOpAiBms4Ttf6gSlznpI1d5z
+         kXng==
+X-Gm-Message-State: AOJu0Yx3+3e8Ujzjn6gMcJDuYIFMVOWjdpkYXA0fj+u9tCBte6TvbStU
+	g1YG8GYKkglYvpLOkiny9CL+mg==
+X-Google-Smtp-Source: AGHT+IEgpsjt8lO05KrGI94IZRCTYxP/6GqdS0wbBw37q+ja0ZofX9l9rgy9P/TbZKtQ+ciHODRfiQ==
+X-Received: by 2002:a50:8745:0:b0:54c:4837:7587 with SMTP id 5-20020a508745000000b0054c48377587mr3040937edv.51.1701621979137;
+        Sun, 03 Dec 2023 08:46:19 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.223.109])
+        by smtp.gmail.com with ESMTPSA id i26-20020a50d75a000000b0054c6a70a435sm2449068edj.44.2023.12.03.08.46.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 03 Dec 2023 08:46:18 -0800 (PST)
+Message-ID: <01946883-e008-4b4c-8e2a-a73787ad9f23@linaro.org>
+Date: Sun, 3 Dec 2023 17:46:17 +0100
 MIME-Version: 1.0
-References: <1701520577-31163-1-git-send-email-quic_cang@quicinc.com> <1701520577-31163-11-git-send-email-quic_cang@quicinc.com>
-In-Reply-To: <1701520577-31163-11-git-send-email-quic_cang@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 2 Dec 2023 22:27:44 +0200
-Message-ID: <CAA8EJpqp3=wnShnjnLgeWt+TuVjEVOWW7QcACjZq2JD3AcoYGQ@mail.gmail.com>
-Subject: Re: [PATCH v8 10/10] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
- Gear 5 support for SM8550
-To: Can Guo <quic_cang@quicinc.com>
-Cc: bvanassche@acm.org, mani@kernel.org, adrian.hunter@intel.com, 
-	vkoul@kernel.org, beanhuo@micron.com, avri.altman@wdc.com, 
-	junwoo80.lee@samsung.com, martin.petersen@oracle.com, 
-	linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
-	Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, open list <linux-kernel@vger.kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] dt-bindings: phy: realtek: Add Realtek DHC RTD SoC
+ PCIe PHY
+Content-Language: en-US
+To: Tzuyi Chang <tychang@realtek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Stanley Chang <stanley_chang@realtek.com>
+References: <20231201105207.11786-1-tychang@realtek.com>
+ <20231201105207.11786-2-tychang@realtek.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20231201105207.11786-2-tychang@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231202_122804_727063_884A9B0C 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20231203_084621_351130_DC1D99B3 
+X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,41 +143,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 2 Dec 2023 at 14:37, Can Guo <quic_cang@quicinc.com> wrote:
->
-> On SM8550, two sets of UFS PHY settings are provided, one set is to support
-> HS-G5, another set is to support HS-G4 and lower gears. The two sets of PHY
-> settings are programming different values to different registers, mixing
-> the two sets and/or overwriting one set with another set is definitely not
-> blessed by UFS PHY designers.
->
-> To add HS-G5 support for SM8550, split the two sets of PHY settings into
-> their dedicated overlay tables, only the common parts of the two sets of
-> PHY settings are left in the .tbls.
->
-> Consider we are going to add even higher gear support in future, to avoid
-> adding more tables with different names, rename the .tbls_hs_g4 and make it
-> an array, a size of 2 is enough as of now.
->
-> In this case, .tbls alone is not a complete set of PHY settings, so either
-> tbls_hs_overlay[0] or tbls_hs_overlay[1] must be applied on top of the
-> .tbls to become a complete set of PHY settings.
->
-> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+On 01/12/2023 11:52, Tzuyi Chang wrote:
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  nvmem-cells:
+> +    maxItems: 1
+> +    description:
+> +      Phandle to nvmem cell that contains 'Tx swing trim'
+> +      tuning parameter value for PCIe phy.
+> +
+> +  nvmem-cell-names:
+> +    items:
+> +      - const: tx_swing_trim
+> +
+> +  realtek,pcie-syscon:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: phandle of syscon used to control PCIe MDIO register.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Why this does not have reg property but syscon? This looks hacky.
 
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v6.h     |   2 +
->  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h |   2 +
->  .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |   8 +
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 169 ++++++++++++++++++---
->  4 files changed, 159 insertions(+), 22 deletions(-)
+Where is the DTS of your platform so we can verify the bindings? In the
+past Realtek bindings and DTS were sent without testing.
+> +
+> +required:
+> +  - compatible
+> +  - realtek,pcie-syscon
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    pcie1_phy {
 
--- 
-With best wishes
-Dmitry
+phy {
+
+
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
