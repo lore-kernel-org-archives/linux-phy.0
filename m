@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3E22C4167B
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Dec 2023 13:50:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8620C10DC1
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Dec 2023 13:50:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VenjTrO5AduqUrycxxDvSZMYSj5Gj2e+Y9uD6iwGqCM=; b=L1MuA9MVIbE4ej
-	IR9AzMtG3hZIjDhQt5maHOhP02I3snBWnnUkTpbYsbYi//CA+r+Wsb25R5Q/ABToD8G0Ftu/EnOQB
-	5btz7ywu7nETCxGzKrqnXA7qpNUM1N7bQdD+GlxLaWxKu8tjBuJSJgNIjrrXcOqM2ZpQakgA0Zn6u
-	GLF63kmvRC0TAM+wArMAukZ24sr0pLOEcaFqT88PKgbmQf+GuxdRexYb5VmpGwc0lEkbBfRxn0Hue
-	hVWoXtYAKNTKCxpPjWXQanX2G6CblqEnxv9qKU+BSSnfaRP1DngyhTqJRb7pRzrCGSWP9gOq1vJWF
-	GCXQmTwh5qbhNDPe8Ksw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d3si1oN3jkBNt5PZZ5jiw4+Dk5O1kQW7t3MkFeBj36k=; b=ndNo6cWoGSo47L
+	rzy9uPn+dK7FGM23PasY+hxJtZxgBB6mGPX6RjjV0+0eB/eW1Th72u1dTt129W1bCPF4lWM6XxInZ
+	DZUbKjb3eoJiIYF83DpFvUfhHcYJKc9vWANWO7WRpBcjCGGOgtj5zpkHUucZ67bxBg2w9cXzQcB+Z
+	y6KgRTVGjdlI6e04EP1cvG4c62SFHhrsn3X20DwMg2t8jIHitkXc5NWYldBQeZ9jeJDX71qj3oKIM
+	zJH8wdLG3tWOeRin3bXcfMMQjEAg9KV4ps1jPrdCcxdxVDo8VtivgQGmI77gHpVKuNk9Efi2xwPhh
+	CKCFtclHaVQR0bXrRC0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rA9LQ-004h9C-0Q;
-	Mon, 04 Dec 2023 13:50:44 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1rA9LQ-004h9Y-2h;
+	Mon, 04 Dec 2023 13:50:45 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rA9LM-004h7r-3C
+	id 1rA9LN-004h8D-1f
 	for linux-phy@lists.infradead.org;
 	Mon, 04 Dec 2023 13:50:42 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3333131e08dso2979772f8f.2
-        for <linux-phy@lists.infradead.org>; Mon, 04 Dec 2023 05:50:39 -0800 (PST)
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-40c0a11a914so11377305e9.2
+        for <linux-phy@lists.infradead.org>; Mon, 04 Dec 2023 05:50:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1701697838; x=1702302638; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=eAuYi+CP8FnDvl1/9mJlyIJtR24fsmGGBMNOB1G00HM=;
-        b=PW48IXLDBTee2mak5DYsuxFGz2bs43LNWN8l9RA09F8Evm6qs4dIoSTIZek9ubzv4h
-         QcoXnJJw75NK6nzoFf+z45t2ZRRRA/5thXmCOfiijabEDpxdgks6mNPncB8+1xEgydNk
-         zd4SzkbH+5QDr1mC4fKyxR9fShScv2sYgHUs+B5dpDcZ8T1NnpjZlJWbkVIPkixyrFz4
-         8eL/QNIw5WVlf8JX7A09fq+H6FZeRr0lYezwegpS9ESuVCGdz72PocW4JbhCAh+a0jwt
-         WtbGI4mtHLpJ8A+74EgVqPXMMLAXlxK2J7toJsizoYlBZpL+c5ksZhiFzr3FqsiQyq76
-         G+Ig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701697838; x=1702302638;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1701697840; x=1702302640; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=eAuYi+CP8FnDvl1/9mJlyIJtR24fsmGGBMNOB1G00HM=;
-        b=ukQwhR9rtIG2IW7T91QHTYkXJAJKjIp405sTh9Y6AAKmh4RLqXgArCZjKvn7z4ehls
-         Y95fv7OLMjuuBzBZ0wA7PDfVb1VKDluA7pT+vLYEf60FmvgwZ2HFAzUJnZZVgGNQJome
-         dxNbRdJ6tVRm4KENGjoSHMLA0AxvFuJAOsSNzNs+lfFATHJHtvvD488d1ylKGON09wC2
-         SXln4kXH6GSeuLWL11/m1o7q40RmSC3gss+sXngZVq9DXzKiC05jCGajoM5kkyktMwlW
-         g2NZd51xjdcxBoTorDBKLQzVdcZasmvGuQpJ9Z0Pg1iBsSLJN9QUOOOHlu9+PL3HoGgN
-         MBuA==
-X-Gm-Message-State: AOJu0YyUMGYI0l0ULxsvwPuE1NqkADaUjraXTKu2TRVQZGH95HMeZS4g
-	lX/eOrmE+pJTnWIEkEc/mgdvjQ==
-X-Google-Smtp-Source: AGHT+IGi4e3DED/9yTz6CQ5jSU6WrggjZ7YH99yV7/7tpCLqmYsyGhKNkD/u/aBxbEgr9z5+byR+qA==
-X-Received: by 2002:a05:6000:110f:b0:333:39c1:b7b8 with SMTP id z15-20020a056000110f00b0033339c1b7b8mr1872523wrw.119.1701697838164;
-        Mon, 04 Dec 2023 05:50:38 -0800 (PST)
+        bh=dpmzJi4akvzbpZuzwJILp8O80QWxKU2Dnd8Kt1I41OA=;
+        b=M25obZkW7UnVuEE1SVK/O/5Q8P2PnqQn1hlk+i8VP3AD8IZThDvMcFmeJBeMZJq+Vw
+         O3QTASVXicTNuvZcfofuY0pde8d3gkq79zGpgKWXTGHmz7UvtxpVZW9q59FiIQSjvsUp
+         n9YPxfcrsJ8JKFc5r0Ini1w3Ab6OMctPxP8jyxdpzAubq+SK3VQpJqDYWhoG8qwDX6ql
+         uvLZBwixz0gollIZcOV/nzYB4TlgBMka8n5/PVOC1SVE9tH9DJTpprRfjTHwlB4h/z6k
+         RZ4UK4rs8o4zAG1OUrLsg3ikhYAnb/7gCH+r85HORfmNZdBNEA2q0llvx+5MR2e8mT16
+         EdCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701697840; x=1702302640;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=dpmzJi4akvzbpZuzwJILp8O80QWxKU2Dnd8Kt1I41OA=;
+        b=ldDyVQjZQUaYg0D32mjKAsQ5OoILdymYXWAQwttxQH02/fvpFxUNGzuXhZ54MjRDS5
+         aisSrW8MHBha6dLPWQzAabVrsHN4tiLc9hvP4dPhI4oCsEgknDm8TJHOxVgxlXARRi+s
+         KLPMZNEjeMVRIzj4mnBrXbYnELXT0IOL0VVH3T62RAVvDjZNnus9ReLF8RthT9/C7bkj
+         PLTr4AIPNM/fNGHtI2oxgPZ1GE1IXM+MfoQIifCPt0Ypk7GVHxnzEZSwvUKtixZhWxB9
+         LdP6Q2iUvcUb9YMkX/Y3KKnLQs0R8ODqYR/b80MC3nb+Ne2f/iEMPiqpeVswLVvF2hp8
+         ZQiQ==
+X-Gm-Message-State: AOJu0Yz1gaq6u0PriI7+Mr9Ctl00Jxa/oDjNxF9h2efOnoKZusbGXXFq
+	s2uONdgPe5NU4di6d6MuZH1pfA==
+X-Google-Smtp-Source: AGHT+IHnJHIBosD9vpCmfDZQxFbmh8mjVp6z59RUAq7uA8PJwYW35Q4MLv9j09YEiHnhm4JON9LRJQ==
+X-Received: by 2002:a1c:4b0b:0:b0:40b:5e21:cc51 with SMTP id y11-20020a1c4b0b000000b0040b5e21cc51mr2266833wma.124.1701697839976;
+        Mon, 04 Dec 2023 05:50:39 -0800 (PST)
 Received: from [127.0.1.1] ([82.77.85.67])
-        by smtp.gmail.com with ESMTPSA id w12-20020a5d680c000000b003333e09990dsm5908553wru.8.2023.12.04.05.50.36
+        by smtp.gmail.com with ESMTPSA id w12-20020a5d680c000000b003333e09990dsm5908553wru.8.2023.12.04.05.50.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 04 Dec 2023 05:50:37 -0800 (PST)
+        Mon, 04 Dec 2023 05:50:39 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
-Subject: [PATCH v2 0/2] phy: qcom: qmp-usb: Add support for X1E80100 USB3
- PHY
-Date: Mon, 04 Dec 2023 15:50:26 +0200
-Message-Id: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v2-0-1a3e1d98564e@linaro.org>
+Date: Mon, 04 Dec 2023 15:50:27 +0200
+Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add
+ X1E80100 USB PHY binding
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIACLZbWUC/5WOSw6DIBRFt9Iw7mv41FQ76j4aB4AoL0GwUIzGu
- PeiO+jwnME9dyPJRDSJPC8biWbGhMEX4NcL0Vb6wQB2hQmnXDDGOUx2hU+WTodxhJyUgOzxkAs
- zNWWUQvMQuq551TDTk7KjZDKgovTaliWfnStyiqbH5Qy/28IW0zfE9fwxs8P+k5wZUBB9pTrOR
- Vep+8uhlzHcQhxIu+/7DzIw7tzoAAAA
+Message-Id: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v2-1-1a3e1d98564e@linaro.org>
+References: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v2-0-1a3e1d98564e@linaro.org>
+In-Reply-To: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v2-0-1a3e1d98564e@linaro.org>
 To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
@@ -82,25 +81,25 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Abel Vesa <abel.vesa@linaro.org>
 X-Mailer: b4 0.12.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1186; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=bq12H4LhIOP0hqLRSHiVZk4lQQxtWa9RmciRWDla0xI=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlbdkkc7kZeVKqZ0M198ktPur8uAhz993joSY47
- DXYu62EB0KJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZW3ZJAAKCRAbX0TJAJUV
- VhBfEADEHcWM3kW6D8c+Ye+Sr62piQRou48rb7TvAxtP/L9wDjU6rfaiVE9LwMdbIjNnhQl4r5x
- Ff3W/FlqdXLJWIbdhQZRpllk/9eF4i/pZvlnMEjDS8/3OwZAu5D7ehkkpfGifQk+Gu+O2IbxLQU
- ++NK/ailb4Q7f8o2asuHlXxz52W4u25LaikRAF+X6qivYSeST45h39h9HS1opv4jag4wWwX3vUT
- mJv5DpERnIAD0T62EoJauFqnQj9NnmeaNuZOtSrzELJbfUsYlV5JEmOrkN5eS/H/1GsYRJXfGXa
- oa9wNVRJ0n5MzniPh5Gv4hZZQOQmJLTKXHgBIVYiuTt0aW7wnflbWRJJ6HOLNeYxWI8naz6U/PS
- i7pzBfiSdgDhmTurwES5ZREOtzAGiD60z0qMMSnP24I7KDJhiN7xAGuH+fEqrnCH9D4IW5D6Qwp
- nEZ/7zdsqo6QCKE1HsRjL8IBzkI4c5DcMulonTj9AEy5RLKoUSU98QII/Z/0fj5KweISJ2O6/xK
- wqy/DiCdJPdLLMDvh7GIltFEph+iXcqFLE7K8BaY3YMILlWpPW6Tljp4NoiLrAyRM11FtYqp9wM
- YRdtF/cUb9HFiG2o7eTJ6/Ddk65qGYK/MmX5VhZ5FwgHFc1iG6jNTlwwImL16x89qoTrQFBLd14
- 3UIbFGLJtAFUaiQ==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1362; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=Xs+AR9omw6vA45imh5zdaLfjBg4ctH1dPKx1UPB8WBA=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlbdkqXuf2yH7Si9IzdLl7nAlCsTVPqUOgONQDe
+ zxd0mNfbQeJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZW3ZKgAKCRAbX0TJAJUV
+ VprdD/0YS+qbNkPE6ijUxkEeq9YCScrmkW2nw1o4gD7t8tFKS+2DDYLVP1LBHBKYGAuL2A6bT9V
+ Ic5+d2EiBboV08hrOGrnRzKLpRgZ0WyHnwrJML0Xw+Sb1us1qeURbQvmQe7n9XmyzVX/2pasjzB
+ I8dvFoiaJ0cs1Mj9djkV8nOmcpUBxtkT81Yt6L2LFuuIQJEf1sNXVoX8oIHpYNXJCRNGAOCKP3s
+ FHXW6mMSDKpmnt5JTP+4S7Y7UBZvjpw6Py4Z5FUXtM1GEBd/YO4KBBZrVlIHu8nUdDDKE6sXy6s
+ vhZ6v24O4mCUTDz3WM5yvL5+iF56t/v26dwnk0E7+5A6oHugNUmB656nOMqiQOZNP5CEROUSdx1
+ w+nJgqw8fvGpuSAPll+mKpWDsFnhmhEVTBSh/RE1LsGaTy0QUrTm3E44TSyymNcNb8tALh8ndoB
+ eWPysnieFWBx9HKOr5Of2BCNEaafmq4MscAwcIxrYnQLeiCc8hdliybhHAi0yqDWl2GAdp8UAPU
+ LK6N2Jr3l19HVRq1P592faaiiSqwN1AdHmFAxEeSfoWp89fB3oKplDeGCk0ldkdF+WwEab9Ai9m
+ ht/IUnvaREszdFdIlC+GqvdfvPO8qeA94j/S9jymdSqV7X+6HyzWhSNmPjXNnYHavUYedWmwQTb
+ jGcLj9ufcT/lr1A==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231204_055041_060806_F017EF00 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20231204_055041_552780_916AC29A 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,35 +117,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patchset adds support for USB3 PHYs instances found on X1E80100.
-It depends on the v7 register offsets added by the following patchset:
-
-https://lore.kernel.org/all/20231122-phy-qualcomm-v6-v6-20-v7-new-offsets-v1-0-d9340d362664@linaro.org/
+Add compatible string for Qualcomm QMP Super Speed (SS) UNI PHY found
+in X1E80100.
 
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
-Changes in v2:
-- Added qmp_usb_offsets_v7, as Dmitry suggested
-- Properly sorted the init tables, cfg struct and compatible entry, as
-  suggested by Johan
-- Add entries to allOf section in the schema, as suggested by Krzysztof
-- Link to v1: https://lore.kernel.org/r/20231122-phy-qualcomm-usb3-uniphy-x1e80100-v1-0-3f5bd223d5b4@linaro.org
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 3 +++
+ 1 file changed, 3 insertions(+)
 
----
-Abel Vesa (2):
-      dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add X1E80100 USB PHY binding
-      phy: qcom-qmp-usb: Add Qualcomm X1E80100 USB3 PHY support
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+index 57702f7f2a46..15d82c67f157 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+@@ -32,6 +32,7 @@ properties:
+       - qcom,sm8150-qmp-usb3-uni-phy
+       - qcom,sm8250-qmp-usb3-uni-phy
+       - qcom,sm8350-qmp-usb3-uni-phy
++      - qcom,x1e80100-qmp-usb3-uni-phy
+ 
+ 
+   reg:
+@@ -135,6 +136,7 @@ allOf:
+               - qcom,sm8150-qmp-usb3-uni-phy
+               - qcom,sm8250-qmp-usb3-uni-phy
+               - qcom,sm8350-qmp-usb3-uni-phy
++              - qcom,x1e80100-qmp-usb3-uni-phy
+     then:
+       properties:
+         clocks:
+@@ -171,6 +173,7 @@ allOf:
+             enum:
+               - qcom,sa8775p-qmp-usb3-uni-phy
+               - qcom,sc8280xp-qmp-usb3-uni-phy
++              - qcom,x1e80100-qmp-usb3-uni-phy
+     then:
+       required:
+         - power-domains
 
- .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |   3 +
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 160 +++++++++++++++++++++
- 2 files changed, 163 insertions(+)
----
-base-commit: cf0b28e02cfac455b54f1a29fe907931d2b0bb9d
-change-id: 20231122-phy-qualcomm-usb3-uniphy-x1e80100-973c882591ef
-
-Best regards,
 -- 
-Abel Vesa <abel.vesa@linaro.org>
+2.34.1
 
 
 -- 
