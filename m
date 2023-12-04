@@ -4,84 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5FE2C4167B
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Dec 2023 11:29:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73AE8C4167B
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Dec 2023 12:00:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b5L2kRIB2+0fvDq1DTIUzBw3ICivf4fG9OhKjHkGD78=; b=QWo3bYUCyM7YKg
-	5huhq2syxtMSpWyTdO7wNuRwuya3fohhYez0cl4PE34W5ldbJKPyS22oFmHDrMi2LMCMTExrReccO
-	tj1aK2ex71yx8Nu5kDH9ovdkd+afH28rLmc2LSGwHnT7jn7ccti3rKtPSJQdGfohUXhfBoKJmh+l6
-	aHXXbX5Oh/fHf/wzn70WUPwPyR/c5EJ75sw7OD3z9OMzMrD1+aanVHnWGZ9Ylt9QQ2VPyWPXNLSM4
-	Y7NTBsTTs89gUClwtLVQA1pt+zFVV/ST95pauLypIUHqW/v1CG8r8GqxVscPD8YbOea2+sIINuSEd
-	AvIBCCW07TUkmm/TLlCg==;
+	List-Owner; bh=Xuh5W+M751iZYV5xh6cHKyZzcj3jyPF57G+knd3vPSE=; b=yJOSWQL66kCWNP
+	Jz2uYcWmQ4gE8tEBudPDQywmfoh9XTEutsIero32XyA44QmiCHKxCZp79CcI+Tkgdej8tM4Kh1q/J
+	+D1KJ9M18/IGJYUbwJ75414TRQLQOoPUHC+CJxAxc701vNcv9IUfBozMyKDWXDH6Aw1r5sDOI+BjA
+	Tt9cUmkF8VY4Rf/egzfL5kK3wdFh43HAHYVsyTrGYm8KbuQGDxWrOLjepmAefDx95apKQjzwhB8uT
+	zH4QzONP7aVxsri7MuLkawnWqtac89KFIaa/qcahsC7hz+mdVnOw/uaOmSSO34CCMG/a8N+M0Ov8T
+	4uqtAT0r1tE5L6NN3rXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rA78R-003eKB-1C;
-	Mon, 04 Dec 2023 11:29:11 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1rA7ce-003lS0-3D;
+	Mon, 04 Dec 2023 12:00:25 +0000
+Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rA78O-003eJS-0l
+	id 1rA7cb-003lP6-1a
 	for linux-phy@lists.infradead.org;
-	Mon, 04 Dec 2023 11:29:09 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-40c0873cf84so14592305e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 04 Dec 2023 03:29:05 -0800 (PST)
+	Mon, 04 Dec 2023 12:00:23 +0000
+Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-db538b07865so2744384276.2
+        for <linux-phy@lists.infradead.org>; Mon, 04 Dec 2023 04:00:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1701689344; x=1702294144; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=9qpcl1LzmxT9f5tQeRRwg71cpVw9T4IVTGE6Uh/UwRg=;
-        b=VeE4OfhYZ7UrKvUEMUugBNMeBgvk7T4Mw1VFtOC7Y1VYQeJiAgkUolFJqTHrLPaEFm
-         iyQYRdA7rHp65QaaE59R/jDaKD8BwRO1BY5e0h8x7kt8uVWDbSrubESqsB49rBj1EPCM
-         PUhqsVPADnm0mbKZQL9cACUMADnbvJNO8q8H6khhxD60vF8bcI8TLXiB1p/dFCMdOPnG
-         LPbFlFmvRrZ5bvAu0adyToXyj6ctt0ncG92IT5wmwtjF45HBdluzTf4DyBs+EVGHuiGK
-         5SxnzNZt+9qfxCY2j1pMStED58lGHjcHFEt9ozocOLwbFSFv47Nxn9WU+CTZmgvoWk5I
-         cDGA==
+        d=linaro.org; s=google; t=1701691218; x=1702296018; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=AxQa10ALTFJrtePQUNooIdnJ7/2/V51IMg2dt+kkdtw=;
+        b=vhgzJhLEP/zRrXfZK+mV8a7WhFraobvLAxYq9MzW4nmDkK3poUwKnPy2zA7yPUrdPI
+         S1U7rq74oqkH+rk8rok4gUturcbi1aBU4QiJymtdejyIGjp1e7QvUH1EVI0NiKeM8r3o
+         +nU3ixI1zmvyBHBNoW8lg5ydTOKNHIg71FPAYAKUzQvmsOIdeZBbbFoIwpRqModsQ4M7
+         4D2tAXKzGE4AxDrC0knEvVt6+pJjsh7nBzP0O11mJ0izvuhmiXaZzxeOGDNrLXsxHCqd
+         APRIVc48N8NaywSDcQ20ziGDBPm3KRD72gH9JiHUWoGTGPV4h/7nnw4M0qu2byXO2Mcp
+         VCwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701689344; x=1702294144;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9qpcl1LzmxT9f5tQeRRwg71cpVw9T4IVTGE6Uh/UwRg=;
-        b=Gt0V1/Ev0T5QlhFIN9E+4wQnJ8ECzV3cw9PIKUZKqUaRQP7PLuoVug1dDbmSt6fy19
-         bNi1mRE2C2klbckvfcLb4Tf5xNOL+ZGpMP1fH5bOyliUS1SzAXWGqDhQTpsrJymKxZ3w
-         pruphGziQfb/zcIEYhdG9sLUbOsNK1V7R+EU7JWCbKXuqieEbzxt7cnUN0TtbwKnliFt
-         H4/CvrxM1kShmg7zNXxb+PEI4TPd51uc4ZmMgyjrAkY2fklTSEKGndiEurQfpXd/1AyK
-         IJD0gmh2CPG71k716bLoDJJwsU/brns5rjqv1BIP9rlCNtQl94e2pKGgOkxAENN508+S
-         2pVA==
-X-Gm-Message-State: AOJu0Yx271jr+p3XGskgyLbbsoUw54Pov8o3mCEVPT5nPH4ks/40SFMl
-	l7RyHh5l44ChihQqDUkY5RxFn4XgZ+dSG+p5Qd4=
-X-Google-Smtp-Source: AGHT+IFIeHl8tQ97S00ErYokGEb3QRC/5rN0sbxkKGXJpjkxYbsKvilp4T38N4X/ri9J+zArVgE5Yw==
-X-Received: by 2002:a05:600c:3ba9:b0:408:37aa:4766 with SMTP id n41-20020a05600c3ba900b0040837aa4766mr2516553wms.5.1701689344331;
-        Mon, 04 Dec 2023 03:29:04 -0800 (PST)
-Received: from linaro.org ([82.77.85.67])
-        by smtp.gmail.com with ESMTPSA id r21-20020a05600c35d500b0040b3e79bad3sm14655959wmq.40.2023.12.04.03.29.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 04 Dec 2023 03:29:03 -0800 (PST)
-Date: Mon, 4 Dec 2023 13:29:02 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/7] phy: qcom-qmp: qserdes-txrx: Add some more v6.20
- register offsets
-Message-ID: <ZW23/jPxofGw9GnY@linaro.org>
+        d=1e100.net; s=20230601; t=1701691218; x=1702296018;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=AxQa10ALTFJrtePQUNooIdnJ7/2/V51IMg2dt+kkdtw=;
+        b=nO3wtFiQ9KeDI8heKFjdzNx+yqVyYkNI9fX3Zs7HE+dhy3uyaYI9whoXYQRLclbSUi
+         enf1kp8XlVOQLLCml9ehpIwl0F57JOi/8XB4CQIV3IqDNh+ErUeNOVoTDtNLchYaH7lW
+         pe2dPhf10OxrCu66Pq8DsZGDs40v6eX4+NtmL7i1WJ7K+I3ir3bmQgzE6BVWcKANtevi
+         gMtrOJix/eDoA03xeY7L0fe8lA6AcMQ08sh84XGXGl4ccDyhIZwwBRV1KtRqZ8td/4Lm
+         Wpz8opmFPt4yvBDi6qgir7sZiNqOCut4uL5P85uUyqSCxdn3E/OkVkK9kTPk5qWwL1uv
+         E0Vw==
+X-Gm-Message-State: AOJu0YylgtNDawnjQu9VL64Igo7uxUCQOwdP8plLJA4l3AB3X7PaOFe3
+	pzVXOIsKR5jzHox5DO465AVigexB/GGYocuQ+wL34A==
+X-Google-Smtp-Source: AGHT+IGtx7FZUsk81dL3/t2g6cd3rE+aZFVev88VqUsqsQ+gPdRNsR1xz4Vo1+2JrRUIQSocaOyRYdJiyBQUguClOwM=
+X-Received: by 2002:a05:690c:dd0:b0:5d7:1941:aa1 with SMTP id
+ db16-20020a05690c0dd000b005d719410aa1mr2935063ywb.60.1701691218139; Mon, 04
+ Dec 2023 04:00:18 -0800 (PST)
+MIME-Version: 1.0
 References: <20231122-phy-qualcomm-v6-v6-20-v7-new-offsets-v1-0-d9340d362664@linaro.org>
  <20231122-phy-qualcomm-v6-v6-20-v7-new-offsets-v1-2-d9340d362664@linaro.org>
- <CAA8EJpr2HhiXEbp0QsN-qB+L4WQWiV3o2yCc-f5oqdhdKZGL9A@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJpr2HhiXEbp0QsN-qB+L4WQWiV3o2yCc-f5oqdhdKZGL9A@mail.gmail.com>
+ <CAA8EJpr2HhiXEbp0QsN-qB+L4WQWiV3o2yCc-f5oqdhdKZGL9A@mail.gmail.com> <ZW23/jPxofGw9GnY@linaro.org>
+In-Reply-To: <ZW23/jPxofGw9GnY@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 4 Dec 2023 14:00:07 +0200
+Message-ID: <CAA8EJponcVngT5X3+C1nuCd+fX4xMUFYdGoxT+Mdit+BpjEG=w@mail.gmail.com>
+Subject: Re: [PATCH 2/7] phy: qcom-qmp: qserdes-txrx: Add some more v6.20
+ register offsets
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231204_032908_293943_83E607EF 
-X-CRM114-Status: GOOD (  17.57  )
+X-CRM114-CacheID: sfid-20231204_040021_596243_BD196758 
+X-CRM114-Status: GOOD (  18.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,61 +92,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-11-22 12:12:00, Dmitry Baryshkov wrote:
-> On Wed, 22 Nov 2023 at 12:04, Abel Vesa <abel.vesa@linaro.org> wrote:
+On Mon, 4 Dec 2023 at 13:29, Abel Vesa <abel.vesa@linaro.org> wrote:
+>
+> On 23-11-22 12:12:00, Dmitry Baryshkov wrote:
+> > On Wed, 22 Nov 2023 at 12:04, Abel Vesa <abel.vesa@linaro.org> wrote:
+> > >
+> > > Add some missing v6.20 registers offsets that are needed by the new
+> > > Snapdragon X Elite (X1E80100) platform.
+> > >
+> > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > > ---
+> > >  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h | 4 ++++
+> > >  1 file changed, 4 insertions(+)
+> > >
+> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
+> > > index 5385a8b60970..7402a94d1be8 100644
+> > > --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
+> > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
+> > > @@ -14,11 +14,14 @@
+> > >  #define QSERDES_V6_20_TX_LANE_MODE_3                           0x80
+> > >
+> > >  #define QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_2                   0x08
+> > > +#define QSERDES_V6_20_RX_UCDR_SO_GAIN_RATE_2                   0x18
+> > >  #define QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_3                   0x0c
 > >
-> > Add some missing v6.20 registers offsets that are needed by the new
-> > Snapdragon X Elite (X1E80100) platform.
+> > As a side note, this should be probably 0x1c. Could you please verify
+> > it and send a fix?
 > >
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h | 4 ++++
-> >  1 file changed, 4 insertions(+)
-> >
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-> > index 5385a8b60970..7402a94d1be8 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-> > @@ -14,11 +14,14 @@
-> >  #define QSERDES_V6_20_TX_LANE_MODE_3                           0x80
-> >
-> >  #define QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_2                   0x08
-> > +#define QSERDES_V6_20_RX_UCDR_SO_GAIN_RATE_2                   0x18
-> >  #define QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_3                   0x0c
-> 
-> As a side note, this should be probably 0x1c. Could you please verify
-> it and send a fix?
-> 
+>
+> Double checked. The values are correct. So I'll just put the
+> SO_GAIN_RATE_2 below FO_GAIN_RATE_3.
 
-Double checked. The values are correct. So I'll just put the
-SO_GAIN_RATE_2 below FO_GAIN_RATE_3.
+SGTM
 
-> >  #define QSERDES_V6_20_RX_UCDR_PI_CONTROLS                      0x20
-> >  #define QSERDES_V6_20_RX_UCDR_SO_ACC_DEFAULT_VAL_RATE3         0x34
-> >  #define QSERDES_V6_20_RX_IVCM_CAL_CTRL2                                0x9c
-> >  #define QSERDES_V6_20_RX_IVCM_POSTCAL_OFFSET                   0xa0
-> > +#define QSERDES_V6_20_RX_DFE_1                                 0xac
-> > +#define QSERDES_V6_20_RX_DFE_2                                 0xb0
-> >  #define QSERDES_V6_20_RX_DFE_3                                 0xb4
-> >  #define QSERDES_V6_20_RX_VGA_CAL_MAN_VAL                       0xe8
-> >  #define QSERDES_V6_20_RX_GM_CAL                                        0x10c
-> > @@ -41,5 +44,6 @@
-> >  #define QSERDES_V6_20_RX_MODE_RATE3_B4                         0x220
-> >  #define QSERDES_V6_20_RX_MODE_RATE3_B5                         0x224
-> >  #define QSERDES_V6_20_RX_MODE_RATE3_B6                         0x228
-> > +#define QSERDES_V6_20_RX_BKUP_CTRL1                            0x22c
+>
+> > >  #define QSERDES_V6_20_RX_UCDR_PI_CONTROLS                      0x20
+> > >  #define QSERDES_V6_20_RX_UCDR_SO_ACC_DEFAULT_VAL_RATE3         0x34
+> > >  #define QSERDES_V6_20_RX_IVCM_CAL_CTRL2                                0x9c
+> > >  #define QSERDES_V6_20_RX_IVCM_POSTCAL_OFFSET                   0xa0
+> > > +#define QSERDES_V6_20_RX_DFE_1                                 0xac
+> > > +#define QSERDES_V6_20_RX_DFE_2                                 0xb0
+> > >  #define QSERDES_V6_20_RX_DFE_3                                 0xb4
+> > >  #define QSERDES_V6_20_RX_VGA_CAL_MAN_VAL                       0xe8
+> > >  #define QSERDES_V6_20_RX_GM_CAL                                        0x10c
+> > > @@ -41,5 +44,6 @@
+> > >  #define QSERDES_V6_20_RX_MODE_RATE3_B4                         0x220
+> > >  #define QSERDES_V6_20_RX_MODE_RATE3_B5                         0x224
+> > >  #define QSERDES_V6_20_RX_MODE_RATE3_B6                         0x228
+> > > +#define QSERDES_V6_20_RX_BKUP_CTRL1                            0x22c
+> > >
+> > >  #endif
+> > >
+> > > --
+> > > 2.34.1
+> > >
+> > >
 > >
-> >  #endif
 > >
 > > --
-> > 2.34.1
-> >
-> >
-> 
-> 
-> -- 
-> With best wishes
-> Dmitry
+> > With best wishes
+> > Dmitry
+
+
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
