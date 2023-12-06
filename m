@@ -4,75 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7931C4167B
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 09:58:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DC3FC4167B
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 13:08:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L1M0r/xMZ3MLoVSewzGxb5Ze7ZyG/hs5InMRB726jA0=; b=EAOk8beAC+nYRR
-	/F3sUVPNF1m2S2TbFc6t2Isxr1fkfc1Rv17aH4BoUT+1jNjB+u1RNHvYMITfAN9Rrio4C4Nk1giTC
-	b26FwS6xnlS5ui7VJlVYP6aruO5UV0SNLAh21tFra5pvcpgaokVBovCOhIPtW3w4XK58uCGY9Ovoo
-	G9VdHiScR5rIked0vZxx4PyxDtGqBOGVYGqMJCBziPyLEndfwt01aeEZcPwa01q+aii4ky3YdHhhb
-	GmMq1coqMYdAM2pta4xo+V05UouAREp4yrwWy1i7hthBZCSccYVHOQscG93/fsbQNSsOvjp+Mi3dP
-	GSB1PQkuqmy6VKPeN89g==;
+	List-Owner; bh=HmYzog8N7uJH+yhU18tjgO47irogjMSAjE5dXBMe7J8=; b=AdEKYdAbYoMfCr
+	HyGi9RVOaFPMcFfoVqh5gl+TBE3YFlJZsTtE+MofWKyAePh2DYFMj+0KBTjqfrCISq8x/8/7jnHnO
+	OHkDecIAsYpQg6sFcIUBef1R4f2mzatVeplQwlzUnwdSmEvpk7xSh84gl814ruvO5FSQTAkgoc17O
+	uQOih52YJoSvgXY9keNU/NmTPiLkQl6kq684BAkPYAqCpjDFDj7Xg0lRNT0Xu+qad7R4QmIT4mnpk
+	eEcHzcLSHIZB8bmDKTfeomm3cKNiX1Fv/wVQHjtw3YeSo6brayN+1I2vpKU4SGO5Th1ox+xD0t8k1
+	iiHwzSeaIKtTYERpoWYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAogC-009cMT-1w;
-	Wed, 06 Dec 2023 09:58:56 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1rArdD-00AMEz-2m;
+	Wed, 06 Dec 2023 13:08:03 +0000
+Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAog6-009cKY-0o;
-	Wed, 06 Dec 2023 09:58:52 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 3BB97240008;
-	Wed,  6 Dec 2023 09:58:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1701856724;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=dasdfMtvb5/6F6Xl6tXdAQvmSib+B8MTu7AZcbGRRpI=;
-	b=E4sSHAHNbk/P25tK9GlNW898yfNEPsTTCpuSOrvNg3FDLAQa5H2MB8BRBjjdZkmc8iyIaA
-	b6odeZBloX3O6K431Gft6l8bCm/hcnvr2+z/XM6Lahwsh4AtTFk85mbSpf7X6rzHKvMVt6
-	3umP9OEFpwaUVhEVEAcTVj0ieLjeJiNgKnvgJ0VctBblzzer+uzeuVxsOuDH5U9LF9cI2Q
-	zzti/EjMfrFKZsIUnuinTx9zodpPb9o4h+HfB7PROhWn5RHP3LpKUYtFXinRhxwNKJWX1+
-	/fEfRmLP4XlanmKXIT1XLFJfuEOYBwF14EvjJt38ClTdAVVQVxjpVi8R93acjg==
-Date: Wed, 6 Dec 2023 10:58:38 +0100
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-To: Daniel Golle <daniel@makrotopia.org>
-Cc: "David S. Miller" <davem@davemloft.net>, Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
- <pabeni@redhat.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Felix Fietkau <nbd@nbd.name>,
- John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>, Mark
- Lee <Mark-MC.Lee@mediatek.com>, Lorenzo Bianconi <lorenzo@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, Alexander Couzens <lynxis@fe80.eu>, Qingfang Deng
- <dqfext@gmail.com>, SkyLake Huang <SkyLake.Huang@mediatek.com>, Philipp
- Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH v2 5/8] net: pcs: add driver for MediaTek USXGMII
- PCS
-Message-ID: <20231206105838.069ae288@device.home>
-In-Reply-To: <3cd8af5e44554c2db2d7898494ee813967206bd9.1701826319.git.daniel@makrotopia.org>
-References: <cover.1701826319.git.daniel@makrotopia.org>
-	<3cd8af5e44554c2db2d7898494ee813967206bd9.1701826319.git.daniel@makrotopia.org>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; x86_64-redhat-linux-gnu)
+	id 1rArdB-00AMEJ-2E
+	for linux-phy@lists.infradead.org;
+	Wed, 06 Dec 2023 13:08:03 +0000
+Received: by mail-qv1-xf2b.google.com with SMTP id 6a1803df08f44-67ac4fc7217so21724276d6.0
+        for <linux-phy@lists.infradead.org>; Wed, 06 Dec 2023 05:07:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1701868079; x=1702472879; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=gQpMmP2wZ3s7+6OFWhnGzvX5dkNxaHbZY8w8mGlHd4A=;
+        b=f6S/ImRmYEAeQEHaHYJgeow6jy70tRtIfEAKPD9IMVF3HUFUWlH+TLc9GLGr0thJN7
+         +Yio6u64HY7uHyKKfFpnJahJNx7XRsNa50USMmA/Sg/73MnYxJr9r3HR7puj0fWYuqLN
+         1Pc0cQ6MwlHw8F+vj0zzLQqJQh7pukMnGPjA4UOiHJQvMELIYvDkPYbtvPAZQ2Tj2byM
+         t9Dr0ycTDCZJgPHlwyArj3gJR/x2VKDj97LTCbIEoxsdG2qaSw2oYKcgG0pw26BpsL/3
+         JY8vkfGf1wZrwH8jAUYF2d1Nxot1CrjdK7P5jLu2BUREfuG+eLyhnehVye1R7R6jOCna
+         32yg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701868079; x=1702472879;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gQpMmP2wZ3s7+6OFWhnGzvX5dkNxaHbZY8w8mGlHd4A=;
+        b=Dg4Igyq4oSuobdQFgNDwbPP/BOvSNgS4yRE68LbU0ZaUgCWUFXYYULmDPZeHNHgi7h
+         I5ZA6jYrOdkXTNVsJqHQtPStLgQXsubY9fqKiYZQhgKwFo4+jidcJo30tn7/kU3ja/n5
+         3njVqp9MNAlG7ar62OyX0VkHOyMXW2ENuNk5xbiSCdoASsxDA4oeCI7Sn/dgh3+UlJtV
+         mUfs3iCd/nBeVRoVdATIGScsMe4R105oZUbK8bz2apvexdiGcM4vUsIQo80/Kl7cQMAz
+         XJeRB2SlrKT4V53qsuI9rXPBnCxaG9kGqFTDGpSZIfqfzX7kumoF6n1UN91brory/FLf
+         zNNw==
+X-Gm-Message-State: AOJu0Yzm+fSJY9FVJxEVncBZTTpduW27D3p5AbUobP27nwjCi5Btlp7e
+	2COzHw0ggFZnSWSSmbMTnDt1
+X-Google-Smtp-Source: AGHT+IGMvRlyL7C2KEwGemUA9/VVD3S4C+nqnZP0ubycEacEFHKerwgVJe6trkCFC+NxpJq1nwVcHg==
+X-Received: by 2002:a05:6214:d8d:b0:67a:ad52:1f9f with SMTP id e13-20020a0562140d8d00b0067aad521f9fmr862119qve.67.1701868078903;
+        Wed, 06 Dec 2023 05:07:58 -0800 (PST)
+Received: from thinkpad ([117.202.188.104])
+        by smtp.gmail.com with ESMTPSA id y15-20020a0c8ecf000000b0067ac2490d95sm2832957qvb.136.2023.12.06.05.07.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 06 Dec 2023 05:07:57 -0800 (PST)
+Date: Wed, 6 Dec 2023 18:37:46 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Krishna Chaitanya Chundru <quic_krichai@quicinc.com>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, quic_vbadigan@quicinc.com,
+	quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
+	quic_skananth@quicinc.com, quic_vpernami@quicinc.com,
+	quic_parass@quicinc.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,qmp: Add PCIe
+ qcom,refclk-always-on property
+Message-ID: <20231206130746.GC12802@thinkpad>
+References: <20231127-refclk_always_on-v3-1-26d969fa8f1d@quicinc.com>
+ <78815f1b-7390-40de-8afd-ac71806f4051@linaro.org>
+ <24fae40a-453b-b14c-923f-88758a246aa7@quicinc.com>
+ <20231201060716.GJ4009@thinkpad>
+ <166d307e-7d1b-48b5-90db-9b6df01d87c2@linaro.org>
+ <20231201111033.GL4009@thinkpad>
+ <f844cd1e-7e4f-4836-bc9a-2e1ed13f064f@linaro.org>
+ <20231201123054.GM4009@thinkpad>
+ <3a7376aa-18a2-41cb-a4c9-680e735ce75b@linaro.org>
+ <c66a93fb-2729-4a86-a2db-f4692f6d0857@linaro.org>
 MIME-Version: 1.0
-X-GND-Sasl: maxime.chevallier@bootlin.com
+Content-Disposition: inline
+In-Reply-To: <c66a93fb-2729-4a86-a2db-f4692f6d0857@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231206_015850_555549_D65CEC46 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20231206_050801_735776_539D65C1 
+X-CRM114-Status: GOOD (  19.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,157 +109,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Daniel,
-
-On Wed, 6 Dec 2023 01:44:38 +0000
-Daniel Golle <daniel@makrotopia.org> wrote:
-
-> Add driver for USXGMII PCS found in the MediaTek MT7988 SoC and supporting
-> USXGMII, 10GBase-R and 5GBase-R interface modes. In order to support
-> Cisco SGMII, 1000Base-X and 2500Base-X via the also present LynxI PCS
-> create a wrapped PCS taking care of the components shared between the
-> new USXGMII PCS and the legacy LynxI PCS.
-> 
-> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> ---
-
-[...]
-
-> +
-> +static int mtk_usxgmii_pcs_config(struct phylink_pcs *pcs, unsigned int neg_mode,
-> +				  phy_interface_t interface,
-> +				  const unsigned long *advertising,
-> +				  bool permit_pause_to_mac)
-> +{
-> +	struct mtk_usxgmii_pcs *mpcs = pcs_to_mtk_usxgmii_pcs(pcs);
-> +	unsigned int an_ctrl = 0, link_timer = 0, xfi_mode = 0, adapt_mode = 0;
-> +	bool mode_changed = false;
-
-Reverse christmas tree ordering can be used here (longest lines first)
-
-> +
-> +	if (interface == PHY_INTERFACE_MODE_USXGMII) {
-> +		an_ctrl = FIELD_PREP(USXGMII_AN_SYNC_CNT, 0x1FF) | USXGMII_AN_ENABLE;
-> +		link_timer = FIELD_PREP(USXGMII_LINK_TIMER_IDLE_DETECT, 0x7B) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_COMP_ACK_DETECT, 0x7B) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_AN_RESTART, 0x7B);
-> +		xfi_mode = FIELD_PREP(USXGMII_XFI_RX_MODE, USXGMII_XFI_MODE_10G) |
-> +			   FIELD_PREP(USXGMII_XFI_TX_MODE, USXGMII_XFI_MODE_10G);
-> +	} else if (interface == PHY_INTERFACE_MODE_10GBASER) {
-> +		an_ctrl = FIELD_PREP(USXGMII_AN_SYNC_CNT, 0x1FF);
-> +		link_timer = FIELD_PREP(USXGMII_LINK_TIMER_IDLE_DETECT, 0x7B) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_COMP_ACK_DETECT, 0x7B) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_AN_RESTART, 0x7B);
-> +		xfi_mode = FIELD_PREP(USXGMII_XFI_RX_MODE, USXGMII_XFI_MODE_10G) |
-> +			   FIELD_PREP(USXGMII_XFI_TX_MODE, USXGMII_XFI_MODE_10G);
-> +		adapt_mode = USXGMII_RATE_UPDATE_MODE;
-> +	} else if (interface == PHY_INTERFACE_MODE_5GBASER) {
-> +		an_ctrl = FIELD_PREP(USXGMII_AN_SYNC_CNT, 0xFF);
-> +		link_timer = FIELD_PREP(USXGMII_LINK_TIMER_IDLE_DETECT, 0x3D) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_COMP_ACK_DETECT, 0x3D) |
-> +			     FIELD_PREP(USXGMII_LINK_TIMER_AN_RESTART, 0x3D);
-> +		xfi_mode = FIELD_PREP(USXGMII_XFI_RX_MODE, USXGMII_XFI_MODE_5G) |
-> +			   FIELD_PREP(USXGMII_XFI_TX_MODE, USXGMII_XFI_MODE_5G);
-> +		adapt_mode = USXGMII_RATE_UPDATE_MODE;
-> +	} else {
-> +		return -EINVAL;
-> +	}
-> +
-> +	adapt_mode |= FIELD_PREP(USXGMII_RATE_ADAPT_MODE, USXGMII_RATE_ADAPT_MODE_X1);
-> +
-> +	if (mpcs->interface != interface) {
-> +		mpcs->interface = interface;
-> +		mode_changed = true;
-> +	}
-> +
-> +	mtk_usxgmii_reset(mpcs);
-> +
-> +	/* Setup USXGMII AN ctrl */
-> +	mtk_m32(mpcs, RG_PCS_AN_CTRL0,
-> +		USXGMII_AN_SYNC_CNT | USXGMII_AN_ENABLE,
-> +		an_ctrl);
-> +
-> +	mtk_m32(mpcs, RG_PCS_AN_CTRL2,
-> +		USXGMII_LINK_TIMER_IDLE_DETECT |
-> +		USXGMII_LINK_TIMER_COMP_ACK_DETECT |
-> +		USXGMII_LINK_TIMER_AN_RESTART,
-> +		link_timer);
-> +
-> +	mpcs->neg_mode = neg_mode;
-> +
-> +	/* Gated MAC CK */
-> +	mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1,
-> +		USXGMII_MAC_CK_GATED, USXGMII_MAC_CK_GATED);
-> +
-> +	/* Enable interface force mode */
-> +	mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1,
-> +		USXGMII_IF_FORCE_EN, USXGMII_IF_FORCE_EN);
-> +
-> +	/* Setup USXGMII adapt mode */
-> +	mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1,
-> +		USXGMII_RATE_UPDATE_MODE | USXGMII_RATE_ADAPT_MODE,
-> +		adapt_mode);
-> +
-> +	/* Setup USXGMII speed */
-> +	mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1,
-> +		USXGMII_XFI_RX_MODE | USXGMII_XFI_TX_MODE,
-> +		xfi_mode);
-> +
-> +	usleep_range(1, 10);
-> +
-> +	/* Un-gated MAC CK */
-> +	mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1, USXGMII_MAC_CK_GATED, 0);
-> +
-> +	usleep_range(1, 10);
-> +
-> +	/* Disable interface force mode for the AN mode */
-> +	if (an_ctrl & USXGMII_AN_ENABLE)
-> +		mtk_m32(mpcs, RG_PHY_TOP_SPEED_CTRL1, USXGMII_IF_FORCE_EN, 0);
-> +
-> +	return mode_changed;
-> +}
-> +
-
-[...]
-
-> +static void mtk_usxgmii_pcs_get_state(struct phylink_pcs *pcs,
-> +				      struct phylink_link_state *state)
-> +{
-> +	struct mtk_usxgmii_pcs *mpcs = pcs_to_mtk_usxgmii_pcs(pcs);
-> +
-> +	/* Refresh USXGMII link status by toggling RG_PCS_AN_STATUS_UPDATE */
-> +	mtk_m32(mpcs, RG_PCS_RX_STATUS0, RG_PCS_RX_STATUS_UPDATE,
-> +		RG_PCS_RX_STATUS_UPDATE);
-> +	ndelay(1020);
-> +	mtk_m32(mpcs, RG_PCS_RX_STATUS0, RG_PCS_RX_STATUS_UPDATE, 0);
-> +	ndelay(1020);
-> +
-> +	/* Read USXGMII link status */
-> +	state->link = FIELD_GET(RG_PCS_RX_LINK_STATUS,
-> +				mtk_r32(mpcs, RG_PCS_RX_STATUS0));
-> +
-> +	/* Continuously repeat re-configuration sequence until link comes up */
-> +	if (!state->link) {
-> +		mtk_usxgmii_pcs_config(pcs, mpcs->neg_mode,
-> +				       state->interface, NULL, false);
-> +		return;
-
-.pcs_get_state() isn't called only for link state polling,but also when querying
-the link state from ethtool, from phylink_ethtool_ksettings_get().
-
-As mtk_usxgmii_pcs_config triggers a pcs reset and reconfiguration, won't this disrupt
-the link ? 
-
-Thanks,
-
-Maxime
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBEZWMgMDEsIDIwMjMgYXQgMTA6Mjk6MTFQTSArMDEwMCwgS29ucmFkIER5YmNpbyB3
+cm90ZToKPiBPbiAxLjEyLjIwMjMgMTQ6MjUsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4g
+PiBPbiAwMS8xMi8yMDIzIDEzOjMwLCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4gPj4+
+IFdoYXQgSSBzYWlkIGJlZm9yZToKPiA+Pj4gIkFnYWluLCB0aGlyZCB0aW1lIChvbmNlIGZyb20g
+Qmpvcm4sIG9uY2UgZnJvbSBEbWl0cnkpLCByZXBocmFzZQo+ID4+PiBwcm9wZXJ0eSBuYW1lIGFu
+ZCBkZXNjcmlwdGlvbiB0byBkZXNjcmliZSB0aGUgaGFyZHdhcmUgaXNzdWUuIEkgc2VlCj4gPj4+
+IGRlc2NyaXB0aW9uIGltcHJvdmVkLCBidXQgbm90IHRoZSBwcm9wZXJ0eSBuYW1lLiBBZ2FpbiBp
+biB0aGUgZW5kIG9mCj4gPj4+IGRlc2NyaXB0aW9uIHlvdSBzYXkgd2hhdCBMaW51eCBzaG91bGQg
+ZG8uIEJpbmRpbmdzIGRvIG5vdCBkZXNjcmliZSBMaW51eAo+ID4+PiBPUy4iCj4gPj4+Cj4gPj4K
+PiA+PiBZb3UgZGlkbid0IGFuc3dlciBteSBxdWVzdGlvbjoKPiA+Pgo+ID4+ICJJIHNlZSBhIHBs
+ZW50eSBvZiBwcm9wZXJ0aWVzIHNpbWlsYXIgdG8gdGhpcyBvbmUgaW5zdHJ1Y3RpbmcgdGhlIE9T
+IHRvIGtlZXAgc29tZQo+ID4+IHJlc291cmNlIE9OIHRvIHdvcmthcm91bmQgaGFyZHdhcmUgaXNz
+dWVzLiBTbyB0aGV5IGFyZSBhbGwgd3Jvbmc/Igo+ID4gCj4gPiBUaGV5IGFyZSBub3QgdGhlIGJl
+c3QsIGJ1dCBpdCBhbGwgZGVwZW5kcyBvbiB0aGUgaW5kaXZpZHVhbCBjYXNlLgo+ID4gCj4gPj4K
+PiA+PiBJZiB5b3Ugc2F5IHRoZXkgYXJlIHdyb25nLCB3aHkgYXJlIHRoZXkgYXBwcm92ZWQgaW4g
+dGhlIGZpcnN0IHBsYWNlPwo+ID4gQmVjYXVzZSB3ZSBkb24ndCBoYXZlIHRpbWUgdG8ga2VlcCBk
+aWdnaW5nIHdoYXQgdGhlIGRyaXZlciBpcyBkb2luZyBhbmQKPiA+IHdoYXQgaXMgY2xhaW1lZCBp
+biBEVC4gU29tZSBwZW9wbGUgZG9uJ3QgZXZlbiBDQyB1cyBvbiB0aGUgZHJpdmVyLgo+IE5vdCBz
+dXJlIGlmIEkgYXNrZWQgdGhpcyBiZWZvcmUsIGJ1dCBjYW4gdGhpcyBub3QgYmUgc2V0IGluIHRo
+ZSBjb25maWcKPiBzdHJ1Y3QgaW5zaWRlIHRoZSBkcml2ZXI/Cj4gCgpUaGlzIGNhbm5vdCBiZSB0
+aGUgZGVmYXVsdCBjb25maWcgZm9yIGFueSBwbGF0Zm9ybSBhcyBrZWVwaW5nIHJlZmNsayBhbHdh
+eXMgb24Kd2lsbCBoYXZlIHNvbWUgcG93ZXIgcGVuYWx0eS4gT25seSBpZiB0aGUgaGFyZHdhcmUg
+KEVQIG9yIGJvYXJkIGRlc2lnbikgaGFzIGFueQppc3N1ZSwgd2UgY2FuIHR1cm4gb24gdGhpcyBv
+cHRpb24uCgotIE1hbmkKCj4gS29ucmFkCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+N
+IOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
