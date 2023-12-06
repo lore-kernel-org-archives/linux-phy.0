@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E42C4167B
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 01:44:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C11CFC10DC3
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 01:44:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ofJOc9nzguvtQIDnsftfv7i5Y2JZhondNusF8LZcZjc=; b=ny5AeE+04zAbIR
-	TM+jEOVVNqZMhPE3u3vXjzCy6/nAgm27hZ704KtXdbOKLLnr7zUWVgnEjcUfAuxEDlyWlexP3+q/2
-	EcaGELfTpcDm0FlNXcOKI6yrI+qsxfxiBOkKxkfZeNF2zVSlSDT9Pg/GXJwxqc5Qh1fpSGiV4NjdG
-	LmayhjeBlL3iNUOv87N31Ro6IvPEaH7nGCrOBYA3WZBoF1le4GtKbVTnS9bQSbVTd3Db7jwcCffro
-	gAxBBfxBHyqX1wqH1J9A/G56PoaxugDMtpBsxOpQ4vQWNxLfGtmeNvt+jHn5SCpThPfKapVfRb/bJ
-	AfiO7pDfeFTVZkhOKXFg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5WYwHjZrGUso1PVqoqkysQSPXxpn4K9TZ7p9YEoweVc=; b=qHhQtERqlqE0RL
+	MO95gxVFNwNfqfYh+fsP9JLPMHnF7ooaLwWR4PgvdujSjh8tJCD/iIdb12Q9jXNebuAMgy85aRtUq
+	LUg6WANiP/GW1YBFmjPIVFckgkWxSDluHwIsR1jBcJjXvS2gvmQSnCMwRXs60ZKZUzFe+f9zEeBUn
+	AHpua4yFhBpFuNTEwg9IIp94Ny3+jRKOlAJxvhsPvhkKw368XtDgIpG0KFj2Six627KJKNMe3Z+oU
+	9qhRae9y4j7faRkmWQtQRO1EH9AVMjWaoC8jwSRKTD7fR1To3mGWVVIp+fB62dqAkfMeNyBJ8+N9Q
+	eDbmiFsnwDzzH9P45Cpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAgxW-008p4J-13;
-	Wed, 06 Dec 2023 01:44:18 +0000
+	id 1rAgxX-008p5U-1d;
+	Wed, 06 Dec 2023 01:44:19 +0000
 Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAgxS-008p3H-2j;
-	Wed, 06 Dec 2023 01:44:16 +0000
+	id 1rAgxS-008p3G-2j;
+	Wed, 06 Dec 2023 01:44:17 +0000
 Received: from local
 	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
 	 (Exim 4.96.2)
 	(envelope-from <daniel@makrotopia.org>)
-	id 1rAgx1-0002eo-1a;
-	Wed, 06 Dec 2023 01:43:48 +0000
-Date: Wed, 6 Dec 2023 01:43:44 +0000
+	id 1rAgxC-0002ex-16;
+	Wed, 06 Dec 2023 01:43:59 +0000
+Date: Wed, 6 Dec 2023 01:43:55 +0000
 From: Daniel Golle <daniel@makrotopia.org>
 To: "David S. Miller" <davem@davemloft.net>,
 	Eric Dumazet <edumazet@google.com>,
@@ -60,13 +60,16 @@ To: "David S. Miller" <davem@davemloft.net>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: [RFC PATCH v2 0/8] Add support for 10G Ethernet SerDes on MT7988
-Message-ID: <cover.1701826319.git.daniel@makrotopia.org>
+Subject: [RFC PATCH v2 1/8] dt-bindings: phy: mediatek,xfi-pextp: add new
+ bindings
+Message-ID: <f57cc2bfadca35219707a0af507ad6e2e354e311.1701826319.git.daniel@makrotopia.org>
+References: <cover.1701826319.git.daniel@makrotopia.org>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <cover.1701826319.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231205_174415_070281_9583B57A 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20231205_174415_070097_5C6CDC2E 
+X-CRM114-Status: GOOD (  13.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,65 +86,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series aims to add support for GMAC2 and GMAC3 of the MediaTek MT7988 SoC.
-While the vendor SDK stuffs all this into their Ethernet driver, I've tried to
-seperate things into a PHY driver, a PCS driver as well as changes to the
-existing Ethernet and LynxI PCS driver.
+Add bindings for the MediaTek PEXTP Ethernet SerDes PHY found in the
+MediaTek MT7988 SoC which can operate at various interfaces modes:
 
- +--------------+   +----------------+   +------------------+
- |              +---|  USXGMII PCS   |---+                  |
- | Ethernet MAC |   +----------------+   | PEXTP SerDes PHY |
- |              +---|   SGMII PCS    |---+                  |
- +--------------+   +----------------+   +------------------+
+ * USXGMII
+ * 10GBase-R
+ * 5GBase-R
+ * 2500Base-X
+ * 1000Base-X
+ * Cisco SGMII (MAC side)
 
-Alltogether this allows using GMAC2 and GMAC3 with all possible interface modes,
-including in-band-status if needed.
-
-Note that this series depends on patch
-"dt-bindings: clock: mediatek: add MT7988 clock IDs"
-being merged before.
-
-https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=807227
-
-Changes since RFC v1:
- - drop patch inhibiting SGMII AN in 2500Base-X mode
- - make pcs-mtk-lynxi a proper platform driver
- - ... hence allowing to remove all the wrappers from the usxgmii driver
- - attach PEXTP to MAC instead of to USXGMII PCS
-
-Daniel Golle (8):
-  dt-bindings: phy: mediatek,xfi-pextp: add new bindings
-  phy: add driver for MediaTek pextp 10GE SerDes PHY
-  net: pcs: pcs-mtk-lynxi: add platform driver for MT7988
-  dt-bindings: net: pcs: add bindings for MediaTek USXGMII PCS
-  net: pcs: add driver for MediaTek USXGMII PCS
-  dt-bindings: net: mediatek: remove wrongly added clocks and SerDes
-  dt-bindings: net: mediatek,net: fix and complete mt7988-eth binding
-  net: ethernet: mtk_eth_soc: add paths and SerDes modes for MT7988
-
- .../devicetree/bindings/net/mediatek,net.yaml | 180 ++++++--
- .../bindings/net/pcs/mediatek,usxgmii.yaml    |  60 +++
- .../bindings/phy/mediatek,xfi-pextp.yaml      |  80 ++++
- MAINTAINERS                                   |   3 +
- drivers/net/ethernet/mediatek/mtk_eth_path.c  | 122 +++++-
- drivers/net/ethernet/mediatek/mtk_eth_soc.c   | 284 ++++++++++--
- drivers/net/ethernet/mediatek/mtk_eth_soc.h   | 107 ++++-
- drivers/net/pcs/Kconfig                       |  11 +
- drivers/net/pcs/Makefile                      |   1 +
- drivers/net/pcs/pcs-mtk-lynxi.c               | 170 ++++++-
- drivers/net/pcs/pcs-mtk-usxgmii.c             | 413 ++++++++++++++++++
- drivers/phy/mediatek/Kconfig                  |  11 +
- drivers/phy/mediatek/Makefile                 |   1 +
- drivers/phy/mediatek/phy-mtk-pextp.c          | 365 ++++++++++++++++
- include/linux/pcs/pcs-mtk-lynxi.h             |   1 +
- include/linux/pcs/pcs-mtk-usxgmii.h           |  26 ++
- 16 files changed, 1746 insertions(+), 89 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/net/pcs/mediatek,usxgmii.yaml
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+ .../bindings/phy/mediatek,xfi-pextp.yaml      | 80 +++++++++++++++++++
+ 1 file changed, 80 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,xfi-pextp.yaml
- create mode 100644 drivers/net/pcs/pcs-mtk-usxgmii.c
- create mode 100644 drivers/phy/mediatek/phy-mtk-pextp.c
- create mode 100644 include/linux/pcs/pcs-mtk-usxgmii.h
 
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,xfi-pextp.yaml b/Documentation/devicetree/bindings/phy/mediatek,xfi-pextp.yaml
+new file mode 100644
+index 0000000000000..58c93368141e2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,xfi-pextp.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,xfi-pextp.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek XFI PEXTP SerDes PHY
++
++maintainers:
++  - Daniel Golle <daniel@makrotopia.org>
++
++description:
++  The MediaTek XFI PEXTP SerDes PHY provides the physical SerDes lanes
++  used by the MediaTek USXGMII PCS.
++
++properties:
++  $nodename:
++    pattern: "^phy@[0-9a-f]+$"
++
++  compatible:
++    const: mediatek,mt7988-xfi-pextp
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: XFI PHY clock
++      - description: XFI register clock
++
++  clock-names:
++    items:
++      - const: "xfipll"
++      - const: "topxtal"
++
++  resets:
++    items:
++      - description: PEXTP reset
++
++  mediatek,usxgmii-performance-errata:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      USXGMII0 on MT7988 suffers from a performance problem in 10GBase-R
++      mode which needs a work-around in the driver. The work-around is
++      enabled using this flag.
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/mediatek,mt7988-clk.h>
++    #include <dt-bindings/reset/mediatek,mt7988-resets.h>
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      phy@11f20000 {
++        compatible = "mediatek,mt7988-xfi-pextp";
++        reg = <0 0x11f20000 0 0x10000>;
++        clocks = <&xfi_pll CLK_XFIPLL_PLL_EN>,
++                 <&topckgen CLK_TOP_XFI_PHY_0_XTAL_SEL>;
++        clock-names = "xfipll", "topxtal";
++        resets = <&watchdog MT7988_TOPRGU_XFI_PEXTP0_GRST>;
++        mediatek,usxgmii-performance-errata;
++        #phy-cells = <0>;
++      };
++    };
++
++...
 -- 
 2.43.0
 
