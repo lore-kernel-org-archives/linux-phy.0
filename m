@@ -4,81 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D3F3C10F09
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 03:40:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B84D9C10DC1
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 09:38:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ZnRtld03lG8do5J7XksKq6rHBRn8New2y+tUgP1lkQ=; b=JHKV/FXmCWbFBp
-	WaQ+mB7W8qhxzhLjXT/OJizoQEZGtrikqdADPulh1LUfnydlYAeSNwYBZKM853P7KZVuP4rzOmy7Y
-	c7K2K6Zdaza0HeWRi+I0n+KMTtlgoqRhn9+mDEByKwa6pKB+I60BD4zw/z1gNjfOJEbolAFVZzlno
-	+nm811Z5yf+y7YJNjml1FG2wDPRa5dxJ17nR+WemWAnbjYs7z8u23x8TQEIb+trN3SMu6qpkbpY1w
-	nGgro9if94ZNsintdvm+NKu9eYHR7nIikT5q6Z/IbhkZIOIU/jF9DKLtReI1wg30RGYJxmTiNrmVS
-	WAbL6CC/P8fALABaCPdQ==;
+	List-Owner; bh=xs2fGXnIEkwr1G0rGMdnNSzZau0njei0WmvPvZbo5KA=; b=3B+eZJzJmCmnq8
+	iRJI8XL4NHhAfqgDB6UV29qRk7KUovh021hgGlwphJ4rWfqNnOapXFg/rw2bfl8BHcPuoBimZZ4vi
+	/b7cf2GftnopBD6eXP3qRxCANV6Xa6e5v+8tifo9AOz2PIKlbHgu1LGfQJ6PPOdMWEaqWvm/TwEee
+	LKVgfnBFpgrUpCyPS+3c/T54MEwVxJ6oJug7RCZHtaRJaQPAWfIlcZPI7n2mjYUDNVTeWWFTZgzXP
+	7AH93vZQXwMa0BFGVg4oS08d6sWuEYTR717Gz+ZZy/t/kl2z0zv4LuvQoKozYu86wiHJs+vdnJlJO
+	SNRQlTzl+EvCe3Ln1cYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAilX-008yim-0P;
-	Wed, 06 Dec 2023 03:40:03 +0000
-Received: from mail-oa1-f51.google.com ([209.85.160.51])
+	id 1rAoMe-009a6S-1U;
+	Wed, 06 Dec 2023 09:38:44 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAilR-008ycP-1B;
-	Wed, 06 Dec 2023 03:39:58 +0000
-Received: by mail-oa1-f51.google.com with SMTP id 586e51a60fabf-1fa26074783so3460075fac.1;
-        Tue, 05 Dec 2023 19:39:56 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701833996; x=1702438796;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=hLT1BoNdZOsa14xuLGA+JXdO1aXqfEnpbPJsybdwp2I=;
-        b=xOdmBLhYqZOSNAC2slxfEKAww7B0Gc47HHDQwdpYAbaNy1zhkyeLtw1MzCRft6cvB6
-         5E90uFYepsypcHhX2hre/YZ7x5OVspUSXgmzZ8GQVmHHbyLpT1gLsPkCycpZC8yCtgQW
-         NtRcg2O4oScE5ww8Re+o+oVYb+ocyzUFaZQO0D+vzirhe3F0ajE+GW4H0aa1aVeP2V6r
-         6VLqloBWNv0w0HlrhiR/HBgLl7+OYilnWYqO0XWsKKRjipZNeSjOfrG4toCUMXIzj4AS
-         y4mrHCsA/j7jTNCHt9RJR7iuCKFdj1OOYw4PqombgV5LDnoA6OU8r1izDJeMijnvHJse
-         hqRg==
-X-Gm-Message-State: AOJu0YzXcQHJeIYJlcHGcUGW1k9EUcwEHLAc92W8Xkd6IcqLMIxNhr3J
-	JEFzU0GxI3r1Ch5XX7k3iA==
-X-Google-Smtp-Source: AGHT+IGTmq+FN6dwgEMD4lsPZ+v8n15aufTQBAy0f7TbjXAqsv/BoIE1ZkwoUbLlWPs6l+CoQNYQTg==
-X-Received: by 2002:a05:6870:9690:b0:1fb:75a:de65 with SMTP id o16-20020a056870969000b001fb075ade65mr268467oaq.83.1701833996268;
-        Tue, 05 Dec 2023 19:39:56 -0800 (PST)
-Received: from herring.priv (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id pk28-20020a0568704c1c00b001fafc32e808sm2929937oab.0.2023.12.05.19.39.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Dec 2023 19:39:55 -0800 (PST)
-Received: (nullmailer pid 463141 invoked by uid 1000);
-	Wed, 06 Dec 2023 03:39:36 -0000
-MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
+	id 1rAoMZ-009a4H-31;
+	Wed, 06 Dec 2023 09:38:42 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 2AE831C000C;
+	Wed,  6 Dec 2023 09:38:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1701855512;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=4y+flM2aoike/FPH6qr4fSM5H3yUCAUYtHfykcYhVEk=;
+	b=k3xwGbvc8l51DdwhCNNogPX2i1UK8RjJkiIGiGaX0/DJVE/mlb7iIDCQUJX7b0YZt7Pyrz
+	ol/ktsBWk+HKKJ9KtMnbWNEZbsDwzAZarfZ8Tvw7RKPgjQfRyvZTdgdh2dzaknhZgnsGPc
+	CYNBqpr0zllwndP39wsFuYC0BUL1s/YeutbzFu7W1iQ/r2FAd2DGfueucoeZnU4UGzcbUd
+	DKRseSOSfCmYsxVvS2QS2Ef4WcQCfq6MI2Adx2ZJCp2z/Rr7ilVlDANz8ZYN4LzE2Yf7ZG
+	sRDfl+Qr214EPqeEauGxYkj4Y7YZqozG5zfnFxtxI9jLhBh5pkCvFanPbMffsQ==
+Date: Wed, 6 Dec 2023 10:38:26 +0100
+From: Maxime Chevallier <maxime.chevallier@bootlin.com>
 To: Daniel Golle <daniel@makrotopia.org>
-Cc: linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Sean Wang <sean.wang@mediatek.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, SkyLake Huang <SkyLake.Huang@mediatek.com>, 
-	devicetree@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, John Crispin <john@phrozen.org>, 
-	netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, 
-	Felix Fietkau <nbd@nbd.name>, "David S. Miller" <davem@davemloft.net>, Andrew Lunn <andrew@lunn.ch>, 
-	linux-mediatek@lists.infradead.org, Rob Herring <robh+dt@kernel.org>, 
-	Mark Lee <Mark-MC.Lee@mediatek.com>, Lorenzo Bianconi <lorenzo@kernel.org>, 
-	Alexander Couzens <lynxis@fe80.eu>, Qingfang Deng <dqfext@gmail.com>
-In-Reply-To: <e2214e904cde9a9d64ec1e87ac38560f7ac35a1f.1701826319.git.daniel@makrotopia.org>
+Cc: "David S. Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+ <pabeni@redhat.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+ John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>, Mark
+ Lee <Mark-MC.Lee@mediatek.com>, Lorenzo Bianconi <lorenzo@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, Andrew Lunn <andrew@lunn.ch>,
+ Heiner Kallweit <hkallweit1@gmail.com>, Russell King
+ <linux@armlinux.org.uk>, Alexander Couzens <lynxis@fe80.eu>, Qingfang Deng
+ <dqfext@gmail.com>, SkyLake Huang <SkyLake.Huang@mediatek.com>, Philipp
+ Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [RFC PATCH v2 3/8] net: pcs: pcs-mtk-lynxi: add platform driver
+ for MT7988
+Message-ID: <20231206103826.4e396513@device.home>
+In-Reply-To: <68bb81ac6bf99393c8de256f42e5715626590af8.1701826319.git.daniel@makrotopia.org>
 References: <cover.1701826319.git.daniel@makrotopia.org>
- <e2214e904cde9a9d64ec1e87ac38560f7ac35a1f.1701826319.git.daniel@makrotopia.org>
-Message-Id: <170183397527.463082.3332126649962865060.robh@kernel.org>
-Subject: Re: [RFC PATCH v2 6/8] dt-bindings: net: mediatek: remove wrongly
- added clocks and SerDes
-Date: Tue, 05 Dec 2023 21:39:36 -0600
+	<68bb81ac6bf99393c8de256f42e5715626590af8.1701826319.git.daniel@makrotopia.org>
+Organization: Bootlin
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
+X-GND-Sasl: maxime.chevallier@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231205_193957_416639_E693C5C2 
-X-CRM114-Status: GOOD (  18.12  )
+X-CRM114-CacheID: sfid-20231206_013840_260714_CAB9B871 
+X-CRM114-Status: GOOD (  16.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,54 +89,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hello Daniel,
 
-On Wed, 06 Dec 2023 01:44:51 +0000, Daniel Golle wrote:
-> Several clocks as well as both sgmiisys phandles were added by mistake
-> to the Ethernet bindings for MT7988.
+My two cents below :
+
+On Wed, 6 Dec 2023 01:44:17 +0000
+Daniel Golle <daniel@makrotopia.org> wrote:
+
+> Introduce a proper platform MFD driver for the LynxI (H)SGMII PCS which
+> is going to initially be used for the MT7988 SoC.
 > 
-> This happened because the vendor driver which served as a reference
-> uses a high number of syscon phandles to access various parts of the
-> SoC which wasn't acceptable upstream. Hence several parts which have
-> never previously been supported (such SerDes PHY and USXGMII PCS) have
-> been moved to separate drivers which also result in a much more sane
-> device tree.
-> 
-> Quickly align the bindings with the upcoming reality of the drivers
-> actually adding full support for this SoC.
-> 
-> Fixes: c94a9aabec36 ("dt-bindings: net: mediatek,net: add mt7988-eth binding")
 > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> ---
->  .../devicetree/bindings/net/mediatek,net.yaml | 32 ++++---------------
->  1 file changed, 7 insertions(+), 25 deletions(-)
-> 
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+ [ ... ]
 
-yamllint warnings/errors:
+> +static int mtk_pcs_lynxi_enable(struct phylink_pcs *pcs)
+> +{
+> +	struct mtk_pcs_lynxi *mpcs = pcs_to_mtk_pcs_lynxi(pcs);
+> +
+> +	if (mpcs->sgmii_tx && mpcs->sgmii_rx) {
+> +		clk_prepare_enable(mpcs->sgmii_rx);
+> +		clk_prepare_enable(mpcs->sgmii_tx);
 
-dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/net/pcs/mediatek,usxgmii.example.dts:18:18: fatal error: dt-bindings/clock/mediatek,mt7988-clk.h: No such file or directory
-make[2]: *** [scripts/Makefile.lib:419: Documentation/devicetree/bindings/net/pcs/mediatek,usxgmii.example.dtb] Error 1
+You can use the clk_bulk_prepare_enable() here
 
-doc reference errors (make refcheckdocs):
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static void mtk_pcs_lynxi_disable(struct phylink_pcs *pcs)
+>  {
+>  	struct mtk_pcs_lynxi *mpcs = pcs_to_mtk_pcs_lynxi(pcs);
+>  
+> +	regmap_set_bits(mpcs->regmap, SGMSYS_QPHY_PWR_STATE_CTRL, SGMII_PHYA_PWD);
+> +
+> +	if (mpcs->sgmii_tx && mpcs->sgmii_rx) {
+> +		clk_disable_unprepare(mpcs->sgmii_tx);
+> +		clk_disable_unprepare(mpcs->sgmii_rx);
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/e2214e904cde9a9d64ec1e87ac38560f7ac35a1f.1701826319.git.daniel@makrotopia.org
+and clk_bulk_disable_unprepare() here
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
+ [...]
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+> +static int mtk_pcs_lynxi_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = dev->of_node;
+> +	struct mtk_pcs_lynxi *mpcs;
+> +	struct phylink_pcs *pcs;
+> +	struct regmap *regmap;
+> +	u32 flags = 0;
+> +
+> +	mpcs = devm_kzalloc(dev, sizeof(*mpcs), GFP_KERNEL);
+> +	if (!mpcs)
+> +		return -ENOMEM;
+> +
+> +	regmap = syscon_node_to_regmap(np->parent);
+> +	if (IS_ERR(regmap))
+> +		return PTR_ERR(regmap);
+> +
+> +	if (of_property_read_bool(np->parent, "mediatek,pnswap"))
+> +		flags |= MTK_SGMII_FLAG_PN_SWAP;
+> +
+> +	mpcs->rstc = of_reset_control_get_shared(np->parent, NULL);
+> +	if (IS_ERR(mpcs->rstc))
+> +		return PTR_ERR(mpcs->rstc);
+> +
+> +	reset_control_deassert(mpcs->rstc);
+> +	mpcs->sgmii_sel = devm_clk_get_enabled(dev, "sgmii_sel");
+> +	if (IS_ERR(mpcs->sgmii_sel))
+> +		return PTR_ERR(mpcs->sgmii_sel);
+> +
+> +	mpcs->sgmii_rx = devm_clk_get(dev, "sgmii_rx");
+> +	if (IS_ERR(mpcs->sgmii_rx))
+> +		return PTR_ERR(mpcs->sgmii_rx);
+> +
+> +	mpcs->sgmii_tx = devm_clk_get(dev, "sgmii_tx");
+> +	if (IS_ERR(mpcs->sgmii_tx))
+> +		return PTR_ERR(mpcs->sgmii_tx);
 
-pip3 install dtschema --upgrade
+and clk bulk operations here as well ?
 
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+Maxime
 
 -- 
 linux-phy mailing list
