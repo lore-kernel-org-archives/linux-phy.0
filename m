@@ -4,134 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66E1BC10DCE
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 11:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62A28C4167B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 12:15:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FnCmKtmNPvZwI3D6Q7IhcDcoi18biBnVm/M6v7+XQ44=; b=aFbiLtsVC2MNb/
-	pSHAnXnRfaM7k2nnf+u//vVJkpVaOQe+bY61/WQHPLs8Bofv9vaa13V7EQ3G0tETLZ2agTlZOQucb
-	wEfMtI8+1Sbr1EZQhUjEPJDVKwBJZkMyN2EA/68FfLydBhJBPgs9k5y3sx8GjiYmCMEprm4QIg9/o
-	VIHD14unfGO9LNPQy3DkkLgmwswgy/ni26KkddJzzXIHN7mHgKQjW5SGlLoVYplz524wdSzMVOJXd
-	IDQypWDAZ3FdGC5Y5MqDk98g0rVtSPqwS54GpyxS0vZ/4H/pqlhh0LkrQiqRSPkNOFxhMyFFC//mK
-	fNq1O8TLaK7islp/0zdQ==;
+	List-Owner; bh=VE8eoqV25IsTBCx6PSlF0AaxyVDzzEM2jfS1tPedjNs=; b=4VUD9NsiQXIRKI
+	HZaoGsmaS5FMygvASk6lqhRS1ushM2o5S/3A40VlTwHWDgFYP/GxQloGYmnsr91RcgzDIIeMLRRXx
+	C6QT08ZbMkbTJfy1XV8cMVGpHHOG+rIx0sMSmh/NkAUIW18D+6XMo33Rj5RCe58nC92US2amQFUXM
+	AFfV+PER9QK4YrC+VHd3OrOrN97U1Ovayps4eitXMqy9e18czUPhKD5ljeMxlMNCkQN/aXAdy+OXH
+	beKKMJSF9slnDj9xW1IM1vXvuhnqxOBrnpSlPSNmloG1eNClls3DyiukfZrLLc72QD5OfAhg+YqsJ
+	IvsbkjK4E8hNczQj/m+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBCaS-00ChAf-0T;
-	Thu, 07 Dec 2023 11:30:36 +0000
-Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
+	id 1rBDHx-00ClKo-0Q;
+	Thu, 07 Dec 2023 12:15:33 +0000
+Received: from mail-yw1-x1133.google.com ([2607:f8b0:4864:20::1133])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBCaP-00Ch9x-11
+	id 1rBDHr-00ClKK-2l
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Dec 2023 11:30:34 +0000
-Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-5d747dbf81eso5456277b3.1
-        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 03:30:30 -0800 (PST)
+	Thu, 07 Dec 2023 12:15:31 +0000
+Received: by mail-yw1-x1133.google.com with SMTP id 00721157ae682-5d33574f64eso6459857b3.3
+        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 04:15:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1701948630; x=1702553430; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=g6q4WDwdBGnjml+5eYgd3QDalQW3uJ07fD6FI7/knxo=;
-        b=KonLmrbED732hivexdduYz1wQP7D4l25ilunxC9J6NgDh/Cw1Flae5Jqhkh56mmgdI
-         AhNSu2BkS18QDehrXQjx3OvDre6uCovd6n5J2bR30+UgzU+HY3Ipb9UwfN8PTPtyzgpv
-         V5qSAWWt7TjTomJvav3SzA+CQSzeJOFu9VJsvhq8fE+CGCoQZHLMe99ZOZ9vbXX9Ukkd
-         mSHJaa9v4moFp17ctd8Zg4n+DAzO1hzVRh/JGg0uGc1oY4YnJ5fPkgX4PQzFQWnvTRiD
-         XMDL8k4F3GDdFOk+OEJzSOUxY6W38Wxq94gXPe10sZGoHonbyu9eNXun3HIRWNctzTJk
-         jj/A==
+        d=linaro.org; s=google; t=1701951324; x=1702556124; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Fd4LCG8G1EhGHUqbdXTSlaSYTue2O4P5J0HEKGW07dg=;
+        b=FhP1cOQixHz9ygwJ30N3IlTlUSt7MOBZKEqnlyc/Ib/AQQM6/SFnD23GEKaD3Ddmms
+         d21kDXtzh7N8ODveY0ztrVGquCipDpIqegPxubmbmpD70rWZ7p7znRcPQT0x0Ub5F27X
+         rpL9sM2+Lw2EAs0ZY8TvYYwFg98UWQ6Ws6B8u6rlk3wY4h6KyQeQJQr7hqrjkHJ+WRYE
+         oOhUgM3DpE12inIpeRq9K9aQj3ZiwOKVfntJgaHbhOAJelpIlGElVEf+flmaW3cCShzR
+         dF2GvSzRpvf30hgi7fRh7gP/2AKO/e0bWygkfYPN3zuFgHpC18WFNylBIkfbRWL5vMmw
+         W1uA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701948630; x=1702553430;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=g6q4WDwdBGnjml+5eYgd3QDalQW3uJ07fD6FI7/knxo=;
-        b=AqYYFa05RwOqaS3AtJez5ygjG517qmFZp3Yam7QLjpIEakA8/ytmYfBKgWXG0GP3/e
-         1rBnsPLEO7z88a9Iat6gC8ANbv7x/u67jQDJ9g2Sa1ZMXIgLv04zgfSms5p83pLz6JQv
-         gV9bnKlKBO2I8lpAKIOO9Mt602qprqUR1WwkGgDUnIQ2ZRCb1C0mU0rxuukojOuAuyHn
-         3XlSYiG27YpMzl7bIlDPVksZ960t3v6QM0WfJen5jpOvI85IoCtUqAeYjVto3E/BZfXm
-         bqguGHiApMGnbdl/70vaOs2KrNZN4/YnRwNgiDDo1glJQz+eYi7HvVCH2co8QccojYxt
-         BqWA==
-X-Gm-Message-State: AOJu0Yyzi5uHvuHLnvLj3CjBj2OpphkzRSNu9MuYtxGMlJ24QJ1ZVrWt
-	2d9bF/hmtf0UPhPPk54t03pJ9A==
-X-Google-Smtp-Source: AGHT+IEFIy7YvehhnYQ+9UNjhaSCyrZhwFI5h/22/oROd5dD77gPNDGqvwLUYIU3TUuYWQbM7w7VdA==
-X-Received: by 2002:a81:7808:0:b0:5ca:e4a6:bb47 with SMTP id t8-20020a817808000000b005cae4a6bb47mr2179326ywc.35.1701948629850;
-        Thu, 07 Dec 2023 03:30:29 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.218.27])
-        by smtp.gmail.com with ESMTPSA id p3-20020a0dff03000000b005d7647af8ccsm322836ywf.114.2023.12.07.03.30.27
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 07 Dec 2023 03:30:29 -0800 (PST)
-Message-ID: <c864f62e-0ac2-4e5e-83d3-28e493a6f6c0@linaro.org>
-Date: Thu, 7 Dec 2023 12:30:25 +0100
+        d=1e100.net; s=20230601; t=1701951324; x=1702556124;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Fd4LCG8G1EhGHUqbdXTSlaSYTue2O4P5J0HEKGW07dg=;
+        b=UvRHG2lzz1DAZs7WWRpcqVXI1utI6kBYOlLCcXHx8YzqfVTZ9nGCD+4/BmIuByAL4l
+         2Ft2npZdDVdhIQgfCUQPtqvhEfJvFiKtvRxEVsp9p0TiQCGDSc0c++qdWQehTul3BA6E
+         Dt1Q4ElFvKwKCAXian4XjDciGjEoWGndBZgSLx6ylxXHLIZjY0kTMBXdksA8TRSLbItg
+         U2cYcY6quSDTYIGHnZakHrUImOn3e7Nj20A33aQ0bgwNGI1974QIuAQUWBmcjNiQP8ia
+         9PrOeu9YNBCaAt82s0EBehUKVEh9I7IJvKS4bej3ysrhWIu7it0YP9Oa0x/TFeHqcsr4
+         Ig6w==
+X-Gm-Message-State: AOJu0YwuEmq4cRLxyMXYkAIrNAWeDMmiQhg9UFeyPJWOEaW3fktGfz2d
+	/tHfCfu9SXNIfDDGPnOC7KTbYiJpI5enja++Z78gFQ==
+X-Google-Smtp-Source: AGHT+IF1EtX1IrpEgTYCo1uyfnPaP8DcJ1TLBRfdKDWcuhbnv6ec5p9oSwzvhOSMA+SYaPr/FGCsXWfAM9ThqtumU8o=
+X-Received: by 2002:a05:690c:4482:b0:5d7:1940:b37e with SMTP id
+ gr2-20020a05690c448200b005d71940b37emr2425689ywb.74.1701951324029; Thu, 07
+ Dec 2023 04:15:24 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: realtek: Add Realtek DHC RTD SoC
- PCIe PHY
-To: =?UTF-8?B?VFlfQ2hhbmdb5by15a2Q6YC4XQ==?= <tychang@realtek.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- =?UTF-8?B?U3RhbmxleSBDaGFuZ1vmmIzogrLlvrdd?= <stanley_chang@realtek.com>
-References: <20231201105207.11786-1-tychang@realtek.com>
- <20231201105207.11786-2-tychang@realtek.com>
- <01946883-e008-4b4c-8e2a-a73787ad9f23@linaro.org>
- <5e57f7b0f54d4a8aa52ed6e15a9af9f5@realtek.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <5e57f7b0f54d4a8aa52ed6e15a9af9f5@realtek.com>
+References: <20231122-phy-qualcomm-edp-x1e80100-v3-0-576fc4e9559d@linaro.org> <20231122-phy-qualcomm-edp-x1e80100-v3-3-576fc4e9559d@linaro.org>
+In-Reply-To: <20231122-phy-qualcomm-edp-x1e80100-v3-3-576fc4e9559d@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Thu, 7 Dec 2023 14:15:12 +0200
+Message-ID: <CAA8EJpqnDPsDv6rhUScxJ5Lhk9d+vHbB09ZxfhGEcLQei_Y6EQ@mail.gmail.com>
+Subject: Re: [PATCH v3 3/3] phy: qcom: edp: Add support for X1E80100 PHY
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Abhinav Kumar <quic_abhinavk@quicinc.com>, Johan Hovold <johan@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_033033_391930_10E7B974 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20231207_041527_914993_F2226D6D 
+X-CRM114-Status: GOOD (  18.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,32 +87,821 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDcvMTIvMjAyMyAxMToxMCwgVFlfQ2hhbmdb5by15a2Q6YC4XSB3cm90ZToKPiBIaSBLcnp5
-c3p0b2YsCj4gCj4gVGhhbmsgeW91IGZvciB0aGUgcmV2aWV3Lgo+IAo+PiBPbiAwMS8xMi8yMDIz
-IDExOjUyLCBUenV5aSBDaGFuZyB3cm90ZToKPj4+ICsgICIjcGh5LWNlbGxzIjoKPj4+ICsgICAg
-Y29uc3Q6IDAKPj4+ICsKPj4+ICsgIG52bWVtLWNlbGxzOgo+Pj4gKyAgICBtYXhJdGVtczogMQo+
-Pj4gKyAgICBkZXNjcmlwdGlvbjoKPj4+ICsgICAgICBQaGFuZGxlIHRvIG52bWVtIGNlbGwgdGhh
-dCBjb250YWlucyAnVHggc3dpbmcgdHJpbScKPj4+ICsgICAgICB0dW5pbmcgcGFyYW1ldGVyIHZh
-bHVlIGZvciBQQ0llIHBoeS4KPj4+ICsKPj4+ICsgIG52bWVtLWNlbGwtbmFtZXM6Cj4+PiArICAg
-IGl0ZW1zOgo+Pj4gKyAgICAgIC0gY29uc3Q6IHR4X3N3aW5nX3RyaW0KPj4+ICsKPj4+ICsgIHJl
-YWx0ZWsscGNpZS1zeXNjb246Cj4+PiArICAgICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2Rl
-ZmluaXRpb25zL3BoYW5kbGUKPj4+ICsgICAgZGVzY3JpcHRpb246IHBoYW5kbGUgb2Ygc3lzY29u
-IHVzZWQgdG8gY29udHJvbCBQQ0llIE1ESU8gcmVnaXN0ZXIuCj4+Cj4+IFdoeSB0aGlzIGRvZXMg
-bm90IGhhdmUgcmVnIHByb3BlcnR5IGJ1dCBzeXNjb24/IFRoaXMgbG9va3MgaGFja3kuCj4+Cj4g
-Cj4gT3VyIFBDSWUgUEhZIGRyaXZlciBuZWVkcyB0byBhY2Nlc3MgdHdvIHJlZ2lzdGVyczoKPiAx
-LiBQQ0llIE1ESU8gcmVnaXN0ZXI6IFV0aWxpemVkIGZvciBjb25maWd1cmluZyB0aGUgUENJZSBQ
-SFkuCj4gMi4gUENJZSBNQUMgTGluayBDb250cm9sIGFuZCBMaW5rIFN0YXR1cyBSZWdpc3Rlcjog
-VXNlIHRvIGdldCB0aGUgY3VycmVudAo+ICAgbGluayBzcGVlZCBmb3IgY2FsaWJyYXRpb24gcHVy
-cG9zZXMuCj4gCj4gQm90aCB0aGVzZSByZWdpc3RlcnMgcmVzaWRlIHdpdGhpbiB0aGUgUENJZSBj
-b250cm9sbGVyIHJlZ2lzdGVycy4gVGhlIFBDSWUKPiBkcml2ZXIgaGFzIG1hcHBlZCB0aGVzZSBy
-ZWdpc3RlciBhZGRyZXNzIHJlZ2lvbiwgc28gSSB1c2UgcmVnbWFwIHRvIGFjY2Vzcwo+IHRoZXNl
-IHJlZ2lzdGVycy4KCkhtLCBpc24ndCBpbiBzdWNoIGNhc2UgUENJZSBQSFkgYSBjaGlsZCBvZiB0
-aGUgUENJZSBjb250cm9sbGVyPyBIb3cgaXMKaXQgd2l0aCByZXNvdXJjZXMsIGxpa2UgcG93ZXIg
-ZG9tYWlucyBvciByZWd1bGF0b3JzPwoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Thu, 7 Dec 2023 at 12:53, Abel Vesa <abel.vesa@linaro.org> wrote:
+>
+> The Qualcomm X1E80100 platform has a number of eDP/DP PHY instances. These
+> are based on QMP v6. So add support for v6 QMP COM registers by supporting
+> configuration-based register offsets. For legacy platforms, keep the eDP and DP
+> compatibles different, but for new platforms, use the phy-type DT property
+> instead. So add platform specific configs, specify the version and override
+> the PHY type where compatible dictates it.
+
+The phy-type should come as a separate patch. Note, that you also did
+not provide the bindings update for this property, which is a must.
+
+Last, but not least. I think that type should come from the host via
+the phy_set_mode() call.
+
+>
+> Co-developed-by: Abhinav Kumar <quic_abhinavk@quicinc.com>
+> Signed-off-by: Abhinav Kumar <quic_abhinavk@quicinc.com>
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-edp.c | 583 ++++++++++++++++++++++++++++++------
+>  1 file changed, 490 insertions(+), 93 deletions(-)
+>
+> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+> index 8e5078304646..6fc18bf80db1 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+> @@ -68,10 +68,333 @@
+>
+>  #define TXn_TRAN_DRVR_EMP_EN                    0x0078
+>
+> -struct qcom_edp_cfg {
+> -       bool is_dp;
+> +enum dp_qmp_com_version {
+> +       DP_QMP_VERSION_V4,
+> +       DP_QMP_VERSION_V6,
+> +};
+> +
+> +enum dp_link_rate {
+> +       DP_LINK_RATE_1_6_GHZ,
+> +       DP_LINK_RATE_2_7_GHZ,
+> +       DP_LINK_RATE_5_4_GHZ,
+> +       DP_LINK_RATE_8_1_GHZ,
+> +};
+> +
+> +struct qmp_com_regs_layout {
+> +       unsigned int cmn_status;
+> +       unsigned int ssc_en_center;
+> +       unsigned int resetsm_cntrl;
+> +       unsigned int c_ready_status;
+> +       unsigned int ssc_per1;
+> +       unsigned int ssc_per2;
+> +       unsigned int ssc_step_size1_mode0;
+> +       unsigned int ssc_step_size2_mode0;
+> +       unsigned int ssc_adj_per1;
+> +       unsigned int svs_mode_clk_sel;
+> +       unsigned int sysclk_en_sel;
+> +       unsigned int sys_clk_ctrl;
+> +       unsigned int clk_enable1;
+> +       unsigned int clk_select;
+> +       unsigned int sysclk_buf_enable;
+> +       unsigned int hsclk_sel;
+> +       unsigned int pll_ivco;
+> +       unsigned int lock_cmp_en;
+> +       unsigned int pll_cctrl_mode0;
+> +       unsigned int pll_rctrl_mode0;
+> +       unsigned int cp_ctrl_mode0;
+> +       unsigned int dec_start_mode0;
+> +       unsigned int div_frac_start1_mode0;
+> +       unsigned int div_frac_start2_mode0;
+> +       unsigned int div_frac_start3_mode0;
+> +       unsigned int cmn_config;
+> +       unsigned int integloop_gain0_mode0;
+> +       unsigned int integloop_gain1_mode0;
+> +       unsigned int vco_tune_map;
+> +       unsigned int lock_cmp1_mode0;
+> +       unsigned int lock_cmp2_mode0;
+> +       unsigned int bg_timer;
+> +       unsigned int pll_core_clk_div_mode0;
+> +       unsigned int vco_tune_ctrl;
+> +       unsigned int pll_bias_en_clk_buflr_en;
+> +       unsigned int core_clk_en;
+> +       unsigned int vco_tune1_mode0;
+> +       unsigned int vco_tune2_mode0;
+> +       unsigned int bin_vcocal_cmp_code1_mode0;
+> +       unsigned int bin_vcocal_cmp_code2_mode0;
+
+Unfortunately this is too specific. You depend too much on qserdes
+programming details. History has shown that minor details change
+between revisions. Compare e.g. qmp_v3_dp_serdes_tbl_rbr vs
+qmp_v4_dp_serdes_tbl_rbr vs qmp_v6_dp_serdes_tbl_rbr. I suspect that
+we should go either towards per-generation register-value tables (like
+we have in the existing combo PHY) or towards per-generation functions
+(like I had for
+https://patchwork.freedesktop.org/patch/559997/?series=118210&rev=3).
+My vote will be towards the former solution. We should really
+deduplicate information between phy-qcom-edp.c and
+phy-qcom-qmp-combo.c. I haven't looked into that direction for now, I
+wanted to get the combo PHYs for msm8998 / qcm2290 out first.
+
+
+> +};
+> +
+> +static const struct qmp_com_regs_layout qmp_v4_com_regs = {
+> +       .cmn_status                     = QSERDES_V4_COM_CMN_STATUS,
+> +       .c_ready_status                 = QSERDES_V4_COM_C_READY_STATUS,
+> +       .resetsm_cntrl                  = QSERDES_V4_COM_RESETSM_CNTRL,
+> +       .ssc_en_center                  = QSERDES_V4_COM_SSC_EN_CENTER,
+> +       .ssc_per1                       = QSERDES_V4_COM_SSC_PER1,
+> +       .ssc_per2                       = QSERDES_V4_COM_SSC_PER2,
+> +       .ssc_step_size1_mode0           = QSERDES_V4_COM_SSC_STEP_SIZE1_MODE0,
+> +       .ssc_step_size2_mode0           = QSERDES_V4_COM_SSC_STEP_SIZE2_MODE0,
+> +       .ssc_adj_per1                   = QSERDES_V4_COM_SSC_ADJ_PER1,
+> +       .svs_mode_clk_sel               = QSERDES_V4_COM_SVS_MODE_CLK_SEL,
+> +       .sysclk_en_sel                  = QSERDES_V4_COM_SYSCLK_EN_SEL,
+> +       .sys_clk_ctrl                   = QSERDES_V4_COM_SYS_CLK_CTRL,
+> +       .sysclk_buf_enable              = QSERDES_V4_COM_SYSCLK_BUF_ENABLE,
+> +       .clk_enable1                    = QSERDES_V4_COM_CLK_ENABLE1,
+> +       .clk_select                     = QSERDES_V4_COM_CLK_SELECT,
+> +       .hsclk_sel                      = QSERDES_V4_COM_HSCLK_SEL,
+> +       .pll_ivco                       = QSERDES_V4_COM_PLL_IVCO,
+> +       .lock_cmp_en                    = QSERDES_V4_COM_LOCK_CMP_EN,
+> +       .pll_cctrl_mode0                = QSERDES_V4_COM_PLL_CCTRL_MODE0,
+> +       .pll_rctrl_mode0                = QSERDES_V4_COM_PLL_RCTRL_MODE0,
+> +       .cp_ctrl_mode0                  = QSERDES_V4_COM_CP_CTRL_MODE0,
+> +       .dec_start_mode0                = QSERDES_V4_COM_DEC_START_MODE0,
+> +       .div_frac_start1_mode0          = QSERDES_V4_COM_DIV_FRAC_START1_MODE0,
+> +       .div_frac_start2_mode0          = QSERDES_V4_COM_DIV_FRAC_START2_MODE0,
+> +       .div_frac_start3_mode0          = QSERDES_V4_COM_DIV_FRAC_START3_MODE0,
+> +       .cmn_config                     = QSERDES_V4_COM_CMN_CONFIG,
+> +       .integloop_gain0_mode0          = QSERDES_V4_COM_INTEGLOOP_GAIN0_MODE0,
+> +       .integloop_gain1_mode0          = QSERDES_V4_COM_INTEGLOOP_GAIN1_MODE0,
+> +       .vco_tune_map                   = QSERDES_V4_COM_VCO_TUNE_MAP,
+> +       .lock_cmp1_mode0                = QSERDES_V4_COM_LOCK_CMP1_MODE0,
+> +       .lock_cmp2_mode0                = QSERDES_V4_COM_LOCK_CMP2_MODE0,
+> +       .bg_timer                       = QSERDES_V4_COM_BG_TIMER,
+> +       .pll_core_clk_div_mode0         = QSERDES_V4_COM_CORECLK_DIV_MODE0,
+> +       .vco_tune_ctrl                  = QSERDES_V4_COM_VCO_TUNE_CTRL,
+> +       .pll_bias_en_clk_buflr_en       = QSERDES_V4_COM_BIAS_EN_CLKBUFLR_EN,
+> +       .core_clk_en                    = QSERDES_V4_COM_CORE_CLK_EN,
+> +       .vco_tune1_mode0                = QSERDES_V4_COM_VCO_TUNE1_MODE0,
+> +       .vco_tune2_mode0                = QSERDES_V4_COM_VCO_TUNE2_MODE0,
+> +};
+> +
+> +static const struct qmp_com_regs_layout qmp_v6_com_regs = {
+> +       .cmn_status                     = QSERDES_V6_COM_CMN_STATUS,
+> +       .c_ready_status                 = QSERDES_V6_COM_C_READY_STATUS,
+> +       .resetsm_cntrl                  = QSERDES_V6_COM_RESETSM_CNTRL,
+> +       .ssc_en_center                  = QSERDES_V6_COM_SSC_EN_CENTER,
+> +       .ssc_per1                       = QSERDES_V6_COM_SSC_PER1,
+> +       .ssc_per2                       = QSERDES_V6_COM_SSC_PER2,
+> +       .ssc_step_size1_mode0           = QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0,
+> +       .ssc_step_size2_mode0           = QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0,
+> +       .ssc_adj_per1                   = QSERDES_V6_COM_SSC_ADJ_PER1,
+> +       .svs_mode_clk_sel               = QSERDES_V6_COM_SVS_MODE_CLK_SEL,
+> +       .sysclk_en_sel                  = QSERDES_V6_COM_SYSCLK_EN_SEL,
+> +       .sys_clk_ctrl                   = QSERDES_V6_COM_SYS_CLK_CTRL,
+> +       .sysclk_buf_enable              = QSERDES_V6_COM_SYSCLK_BUF_ENABLE,
+> +       .clk_enable1                    = QSERDES_V6_COM_CLK_ENABLE1,
+> +       .clk_select                     = QSERDES_V6_COM_CLK_SELECT,
+> +       .hsclk_sel                      = QSERDES_V6_COM_HSCLK_SEL_1,
+> +       .pll_ivco                       = QSERDES_V6_COM_PLL_IVCO,
+> +       .lock_cmp_en                    = QSERDES_V6_COM_LOCK_CMP_EN,
+> +       .pll_cctrl_mode0                = QSERDES_V6_COM_PLL_CCTRL_MODE0,
+> +       .pll_rctrl_mode0                = QSERDES_V6_COM_PLL_RCTRL_MODE0,
+> +       .cp_ctrl_mode0                  = QSERDES_V6_COM_CP_CTRL_MODE0,
+> +       .dec_start_mode0                = QSERDES_V6_COM_DEC_START_MODE0,
+> +       .div_frac_start1_mode0          = QSERDES_V6_COM_DIV_FRAC_START1_MODE0,
+> +       .div_frac_start2_mode0          = QSERDES_V6_COM_DIV_FRAC_START2_MODE0,
+> +       .div_frac_start3_mode0          = QSERDES_V6_COM_DIV_FRAC_START3_MODE0,
+> +       .cmn_config                     = QSERDES_V6_COM_CMN_CONFIG_1,
+> +       .integloop_gain0_mode0          = QSERDES_V6_COM_INTEGLOOP_GAIN0_MODE0,
+> +       .integloop_gain1_mode0          = QSERDES_V6_COM_INTEGLOOP_GAIN1_MODE0,
+> +       .vco_tune_map                   = QSERDES_V6_COM_VCO_TUNE_MAP,
+> +       .lock_cmp1_mode0                = QSERDES_V6_COM_LOCK_CMP1_MODE0,
+> +       .lock_cmp2_mode0                = QSERDES_V6_COM_LOCK_CMP2_MODE0,
+> +       .bg_timer                       = QSERDES_V6_COM_BG_TIMER,
+> +       .pll_core_clk_div_mode0         = QSERDES_V6_COM_PLL_CORE_CLK_DIV_MODE0,
+> +       .vco_tune_ctrl                  = QSERDES_V6_COM_VCO_TUNE_CTRL,
+> +       .pll_bias_en_clk_buflr_en       = QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
+> +       .core_clk_en                    = QSERDES_V6_COM_CORE_CLK_EN,
+> +       .bin_vcocal_cmp_code1_mode0     = QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0,
+> +       .bin_vcocal_cmp_code2_mode0     = QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0,
+> +};
+> +
+> +struct qmp_com_init {
+> +       const u8 ssc_per1;
+> +       const u8 ssc_per2;
+> +       const u8 pll_ivco;
+> +       const u8 cmn_config;
+> +       const u8 vco_tune1_mode0;
+> +       const u8 vco_tune2_mode0;
+> +       const u8 pll_bias_en_clk_buflr_en;
+> +
+> +       const u8 *ssc_step1;
+> +       const u8 *ssc_step2;
+> +       const u8 *hsclk_sel;
+> +       const u8 *dec_start_mode0;
+> +       const u8 *div_frac_start2_mode0;
+> +       const u8 *div_frac_start3_mode0;
+> +       const u8 *lock_cmp1_mode0;
+> +       const u8 *lock_cmp2_mode0;
+> +       const u8 *code1_mode0;
+> +       const u8 *code2_mode0;
+> +};
+> +
+> +static const u8 qmp_v4_com_ssc_step1[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x45,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x45,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x5c,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x45,
+> +};
+> +
+> +static const u8 qmp_v4_com_ssc_step2[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x06,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x06,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x08,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x06,
+> +};
+> +
+> +static const u8 qmp_v4_com_hsclk_sel[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x05,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x03,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x01,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x00,
+> +};
+> +
+> +static const u8 qmp_v4_com_dec_start_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x69,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x69,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x8c,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x69,
+> +};
+> +
+> +static const u8 qmp_v4_com_div_frac_start2_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x80,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x80,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x00,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x80,
+> +};
+> +
+> +static const u8 qmp_v4_com_div_frac_start3_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x07,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x07,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x0a,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x07,
+> +};
+> +
+> +static const u8 qmp_v4_com_lock_cmp1_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x6f,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x0f,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x1f,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x2f,
+> +};
+> +
+> +static const u8 qmp_v4_com_lock_cmp2_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x08,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x0e,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x1c,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x2a,
+> +};
+> +
+> +static const struct qmp_com_init qmp_v4_com_init = {
+> +       .ssc_per1 = 0x36,
+> +       .ssc_per2 = 0x01,
+> +       .pll_ivco = 0x0f,
+> +       .cmn_config = 0x02,
+> +       .pll_bias_en_clk_buflr_en = 0x17,
+> +       .ssc_step1 = qmp_v4_com_ssc_step1,
+> +       .ssc_step2 = qmp_v4_com_ssc_step2,
+> +       .hsclk_sel = qmp_v4_com_hsclk_sel,
+> +       .dec_start_mode0 = qmp_v4_com_dec_start_mode0,
+> +       .div_frac_start2_mode0 = qmp_v4_com_div_frac_start2_mode0,
+> +       .div_frac_start3_mode0 = qmp_v4_com_div_frac_start3_mode0,
+> +       .lock_cmp1_mode0 = qmp_v4_com_lock_cmp1_mode0,
+> +       .lock_cmp2_mode0 = qmp_v4_com_lock_cmp2_mode0,
+> +       .vco_tune1_mode0 = 0xa0,
+> +       .vco_tune2_mode0 = 0x03,
+> +};
+> +
+> +static const u8 qmp_v6_com_ssc_step1[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x92,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x92,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x18,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x92,
+> +};
+> +
+> +static const u8 qmp_v6_com_ssc_step2[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x01,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x01,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x02,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x01,
+> +};
+> +
+> +static const u8 qmp_v6_com_hsclk_sel[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x05,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x03,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x01,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x00,
+> +};
+> +
+> +static const u8 qmp_v6_com_dec_start_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x34,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x34,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x46,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x34,
+> +};
+> +
+> +static const u8 qmp_v6_com_div_frac_start2_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0xc0,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0xc0,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x00,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0xc0,
+> +};
+> +
+> +static const u8 qmp_v6_com_div_frac_start3_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x0b,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x0b,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x05,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x0b,
+> +};
+> +
+> +static const u8 qmp_v6_com_lock_cmp1_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x37,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x07,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x0f,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x17,
+> +};
+>
+> -       /* DP PHY swing and pre_emphasis tables */
+> +static const u8 qmp_v6_com_lock_cmp2_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x04,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x07,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x0e,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x15,
+> +};
+> +
+> +static const u8 qmp_v6_com_code1_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x71,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x71,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x97,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x71,
+> +};
+> +
+> +static const u8 qmp_v6_com_code2_mode0[] = {
+> +       [DP_LINK_RATE_1_6_GHZ]  = 0x0c,
+> +       [DP_LINK_RATE_2_7_GHZ]  = 0x0c,
+> +       [DP_LINK_RATE_5_4_GHZ]  = 0x10,
+> +       [DP_LINK_RATE_8_1_GHZ]  = 0x0c,
+> +};
+> +
+> +static const struct qmp_com_init qmp_v6_com_init = {
+> +       .ssc_per1 = 0x6b,
+> +       .ssc_per2 = 0x02,
+> +       .pll_ivco = 0x07,
+> +       .cmn_config = 0x12,
+> +       .pll_bias_en_clk_buflr_en = 0x1f,
+> +       .ssc_step1 = qmp_v6_com_ssc_step1,
+> +       .ssc_step2 = qmp_v6_com_ssc_step2,
+> +       .hsclk_sel = qmp_v6_com_hsclk_sel,
+> +       .dec_start_mode0 = qmp_v6_com_dec_start_mode0,
+> +       .div_frac_start2_mode0 = qmp_v6_com_div_frac_start2_mode0,
+> +       .div_frac_start3_mode0 = qmp_v6_com_div_frac_start3_mode0,
+> +       .lock_cmp1_mode0 = qmp_v6_com_lock_cmp1_mode0,
+> +       .lock_cmp2_mode0 = qmp_v6_com_lock_cmp2_mode0,
+> +       .code1_mode0 = qmp_v6_com_code1_mode0,
+> +       .code2_mode0 = qmp_v6_com_code2_mode0,
+> +};
+> +
+> +struct qmp_phy_cfg {
+> +       int type;
+> +       enum dp_qmp_com_version version;
+> +       bool needs_swing_pre_emph_cfg;
+> +};
+> +
+> +struct qcom_dp_swing_pre_emph_cfg {
+>         const u8 (*swing_hbr_rbr)[4][4];
+>         const u8 (*swing_hbr3_hbr2)[4][4];
+>         const u8 (*pre_emphasis_hbr_rbr)[4][4];
+> @@ -80,7 +403,9 @@ struct qcom_edp_cfg {
+>
+>  struct qcom_edp {
+>         struct device *dev;
+> -       const struct qcom_edp_cfg *cfg;
+> +       const struct qcom_dp_swing_pre_emph_cfg *swing_pre_emph_cfg;
+> +       const struct qmp_com_regs_layout *com_regs;
+> +       const struct qmp_com_init *init_values;
+>
+>         struct phy *phy;
+>
+> @@ -96,6 +421,8 @@ struct qcom_edp {
+>
+>         struct clk_bulk_data clks[2];
+>         struct regulator_bulk_data supplies[2];
+> +
+> +       bool is_dp;
+>  };
+>
+>  static const u8 dp_swing_hbr_rbr[4][4] = {
+> @@ -126,8 +453,7 @@ static const u8 dp_pre_emp_hbr2_hbr3[4][4] = {
+>         { 0x04, 0xff, 0xff, 0xff }
+>  };
+>
+> -static const struct qcom_edp_cfg dp_phy_cfg = {
+> -       .is_dp = true,
+> +static const struct qcom_dp_swing_pre_emph_cfg dp_phy_swing_pre_emph_cfg = {
+>         .swing_hbr_rbr = &dp_swing_hbr_rbr,
+>         .swing_hbr3_hbr2 = &dp_swing_hbr2_hbr3,
+>         .pre_emphasis_hbr_rbr = &dp_pre_emp_hbr_rbr,
+> @@ -162,18 +488,40 @@ static const u8 edp_pre_emp_hbr2_hbr3[4][4] = {
+>         { 0x00, 0xff, 0xff, 0xff }
+>  };
+>
+> -static const struct qcom_edp_cfg edp_phy_cfg = {
+> -       .is_dp = false,
+> +static const struct qcom_dp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg = {
+>         .swing_hbr_rbr = &edp_swing_hbr_rbr,
+>         .swing_hbr3_hbr2 = &edp_swing_hbr2_hbr3,
+>         .pre_emphasis_hbr_rbr = &edp_pre_emp_hbr_rbr,
+>         .pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3,
+>  };
+>
+> +static struct qmp_phy_cfg sc7280_dp_phy_cfg = {
+> +       .type = PHY_TYPE_DP,
+> +       .version = DP_QMP_VERSION_V4,
+> +};
+> +
+> +static struct qmp_phy_cfg sc8280xp_dp_phy_cfg = {
+> +       .type = PHY_TYPE_DP,
+> +       .version = DP_QMP_VERSION_V4,
+> +       .needs_swing_pre_emph_cfg = true,
+> +};
+> +
+> +static struct qmp_phy_cfg sc8280xp_edp_phy_cfg = {
+> +       .type = PHY_TYPE_EDP,
+> +       .version = DP_QMP_VERSION_V4,
+> +       .needs_swing_pre_emph_cfg = true,
+> +};
+> +
+> +static struct qmp_phy_cfg x1e80100_phy_cfg = {
+> +       .version = DP_QMP_VERSION_V6,
+> +       .needs_swing_pre_emph_cfg = true,
+> +};
+> +
+>  static int qcom_edp_phy_init(struct phy *phy)
+>  {
+>         struct qcom_edp *edp = phy_get_drvdata(phy);
+> -       const struct qcom_edp_cfg *cfg = edp->cfg;
+> +       const struct qmp_com_init *init = edp->init_values;
+> +       const struct qmp_com_regs_layout *regs = edp->com_regs;
+>         int ret;
+>         u8 cfg8;
+>
+> @@ -190,7 +538,8 @@ static int qcom_edp_phy_init(struct phy *phy)
+>                edp->edp + DP_PHY_PD_CTL);
+>
+>         /* Turn on BIAS current for PHY/PLL */
+> -       writel(0x17, edp->pll + QSERDES_V4_COM_BIAS_EN_CLKBUFLR_EN);
+> +       writel(init->pll_bias_en_clk_buflr_en,
+> +              edp->pll + regs->pll_bias_en_clk_buflr_en);
+>
+>         writel(DP_PHY_PD_CTL_PSR_PWRDN, edp->edp + DP_PHY_PD_CTL);
+>         msleep(20);
+> @@ -200,7 +549,7 @@ static int qcom_edp_phy_init(struct phy *phy)
+>                DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
+>                edp->edp + DP_PHY_PD_CTL);
+>
+> -       if (cfg && cfg->is_dp)
+> +       if (edp->is_dp)
+>                 cfg8 = 0xb7;
+>         else
+>                 cfg8 = 0x37;
+> @@ -234,7 +583,7 @@ static int qcom_edp_phy_init(struct phy *phy)
+>
+>  static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configure_opts_dp *dp_opts)
+>  {
+> -       const struct qcom_edp_cfg *cfg = edp->cfg;
+> +       const struct qcom_dp_swing_pre_emph_cfg *cfg = edp->swing_pre_emph_cfg;
+>         unsigned int v_level = 0;
+>         unsigned int p_level = 0;
+>         u8 ldo_config;
+> @@ -261,7 +610,7 @@ static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configur
+>         if (swing == 0xff || emph == 0xff)
+>                 return -EINVAL;
+>
+> -       ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
+> +       ldo_config = edp->is_dp ? 0x1 : 0x0;
+>
+>         writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
+>         writel(swing, edp->tx0 + TXn_TX_DRV_LVL);
+> @@ -291,20 +640,21 @@ static int qcom_edp_phy_configure(struct phy *phy, union phy_configure_opts *opt
+>  static int qcom_edp_configure_ssc(const struct qcom_edp *edp)
+>  {
+>         const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
+> -       u32 step1;
+> -       u32 step2;
+> +       const struct qmp_com_regs_layout *regs = edp->com_regs;
+> +       const struct qmp_com_init *init = edp->init_values;
+> +       int link_rate;
+> +       u8 step1, step2;
+> +       u8 per1, per2;
+>
+>         switch (dp_opts->link_rate) {
+>         case 1620:
+>         case 2700:
+>         case 8100:
+> -               step1 = 0x45;
+> -               step2 = 0x06;
+> +               link_rate = DP_LINK_RATE_1_6_GHZ;
+>                 break;
+>
+>         case 5400:
+> -               step1 = 0x5c;
+> -               step2 = 0x08;
+> +               link_rate = DP_LINK_RATE_5_4_GHZ;
+>                 break;
+>
+>         default:
+> @@ -312,12 +662,18 @@ static int qcom_edp_configure_ssc(const struct qcom_edp *edp)
+>                 return -EINVAL;
+>         }
+>
+> -       writel(0x01, edp->pll + QSERDES_V4_COM_SSC_EN_CENTER);
+> -       writel(0x00, edp->pll + QSERDES_V4_COM_SSC_ADJ_PER1);
+> -       writel(0x36, edp->pll + QSERDES_V4_COM_SSC_PER1);
+> -       writel(0x01, edp->pll + QSERDES_V4_COM_SSC_PER2);
+> -       writel(step1, edp->pll + QSERDES_V4_COM_SSC_STEP_SIZE1_MODE0);
+> -       writel(step2, edp->pll + QSERDES_V4_COM_SSC_STEP_SIZE2_MODE0);
+> +       step1 = init->ssc_step1[link_rate];
+> +       step2 = init->ssc_step2[link_rate];
+> +
+> +       per1 = init->ssc_per1;
+> +       per2 = init->ssc_per2;
+> +
+> +       writel(0x01, edp->pll + regs->ssc_en_center);
+> +       writel(0x00, edp->pll + regs->ssc_adj_per1);
+> +       writel(per1, edp->pll + regs->ssc_per1);
+> +       writel(per2, edp->pll + regs->ssc_per2);
+> +       writel(step1, edp->pll + regs->ssc_step_size1_mode0);
+> +       writel(step2, edp->pll + regs->ssc_step_size2_mode0);
+>
+>         return 0;
+>  }
+> @@ -325,48 +681,30 @@ static int qcom_edp_configure_ssc(const struct qcom_edp *edp)
+>  static int qcom_edp_configure_pll(const struct qcom_edp *edp)
+>  {
+>         const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
+> +       const struct qmp_com_regs_layout *regs = edp->com_regs;
+> +       const struct qmp_com_init *init = edp->init_values;
+>         u32 div_frac_start2_mode0;
+>         u32 div_frac_start3_mode0;
+>         u32 dec_start_mode0;
+>         u32 lock_cmp1_mode0;
+>         u32 lock_cmp2_mode0;
+> +       u32 code1_mode0;
+> +       u32 code2_mode0;
+>         u32 hsclk_sel;
+> +       int link_rate;
+>
+>         switch (dp_opts->link_rate) {
+>         case 1620:
+> -               hsclk_sel = 0x5;
+> -               dec_start_mode0 = 0x69;
+> -               div_frac_start2_mode0 = 0x80;
+> -               div_frac_start3_mode0 = 0x07;
+> -               lock_cmp1_mode0 = 0x6f;
+> -               lock_cmp2_mode0 = 0x08;
+> +               link_rate = DP_LINK_RATE_1_6_GHZ;
+>                 break;
+> -
+>         case 2700:
+> -               hsclk_sel = 0x3;
+> -               dec_start_mode0 = 0x69;
+> -               div_frac_start2_mode0 = 0x80;
+> -               div_frac_start3_mode0 = 0x07;
+> -               lock_cmp1_mode0 = 0x0f;
+> -               lock_cmp2_mode0 = 0x0e;
+> +               link_rate = DP_LINK_RATE_2_7_GHZ;
+>                 break;
+> -
+>         case 5400:
+> -               hsclk_sel = 0x1;
+> -               dec_start_mode0 = 0x8c;
+> -               div_frac_start2_mode0 = 0x00;
+> -               div_frac_start3_mode0 = 0x0a;
+> -               lock_cmp1_mode0 = 0x1f;
+> -               lock_cmp2_mode0 = 0x1c;
+> +               link_rate = DP_LINK_RATE_5_4_GHZ;
+>                 break;
+> -
+>         case 8100:
+> -               hsclk_sel = 0x0;
+> -               dec_start_mode0 = 0x69;
+> -               div_frac_start2_mode0 = 0x80;
+> -               div_frac_start3_mode0 = 0x07;
+> -               lock_cmp1_mode0 = 0x2f;
+> -               lock_cmp2_mode0 = 0x2a;
+> +               link_rate = DP_LINK_RATE_8_1_GHZ;
+>                 break;
+>
+>         default:
+> @@ -374,36 +712,59 @@ static int qcom_edp_configure_pll(const struct qcom_edp *edp)
+>                 return -EINVAL;
+>         }
+>
+> -       writel(0x01, edp->pll + QSERDES_V4_COM_SVS_MODE_CLK_SEL);
+> -       writel(0x0b, edp->pll + QSERDES_V4_COM_SYSCLK_EN_SEL);
+> -       writel(0x02, edp->pll + QSERDES_V4_COM_SYS_CLK_CTRL);
+> -       writel(0x0c, edp->pll + QSERDES_V4_COM_CLK_ENABLE1);
+> -       writel(0x06, edp->pll + QSERDES_V4_COM_SYSCLK_BUF_ENABLE);
+> -       writel(0x30, edp->pll + QSERDES_V4_COM_CLK_SELECT);
+> -       writel(hsclk_sel, edp->pll + QSERDES_V4_COM_HSCLK_SEL);
+> -       writel(0x0f, edp->pll + QSERDES_V4_COM_PLL_IVCO);
+> -       writel(0x08, edp->pll + QSERDES_V4_COM_LOCK_CMP_EN);
+> -       writel(0x36, edp->pll + QSERDES_V4_COM_PLL_CCTRL_MODE0);
+> -       writel(0x16, edp->pll + QSERDES_V4_COM_PLL_RCTRL_MODE0);
+> -       writel(0x06, edp->pll + QSERDES_V4_COM_CP_CTRL_MODE0);
+> -       writel(dec_start_mode0, edp->pll + QSERDES_V4_COM_DEC_START_MODE0);
+> -       writel(0x00, edp->pll + QSERDES_V4_COM_DIV_FRAC_START1_MODE0);
+> -       writel(div_frac_start2_mode0, edp->pll + QSERDES_V4_COM_DIV_FRAC_START2_MODE0);
+> -       writel(div_frac_start3_mode0, edp->pll + QSERDES_V4_COM_DIV_FRAC_START3_MODE0);
+> -       writel(0x02, edp->pll + QSERDES_V4_COM_CMN_CONFIG);
+> -       writel(0x3f, edp->pll + QSERDES_V4_COM_INTEGLOOP_GAIN0_MODE0);
+> -       writel(0x00, edp->pll + QSERDES_V4_COM_INTEGLOOP_GAIN1_MODE0);
+> -       writel(0x00, edp->pll + QSERDES_V4_COM_VCO_TUNE_MAP);
+> -       writel(lock_cmp1_mode0, edp->pll + QSERDES_V4_COM_LOCK_CMP1_MODE0);
+> -       writel(lock_cmp2_mode0, edp->pll + QSERDES_V4_COM_LOCK_CMP2_MODE0);
+> -
+> -       writel(0x0a, edp->pll + QSERDES_V4_COM_BG_TIMER);
+> -       writel(0x14, edp->pll + QSERDES_V4_COM_CORECLK_DIV_MODE0);
+> -       writel(0x00, edp->pll + QSERDES_V4_COM_VCO_TUNE_CTRL);
+> -       writel(0x17, edp->pll + QSERDES_V4_COM_BIAS_EN_CLKBUFLR_EN);
+> -       writel(0x0f, edp->pll + QSERDES_V4_COM_CORE_CLK_EN);
+> -       writel(0xa0, edp->pll + QSERDES_V4_COM_VCO_TUNE1_MODE0);
+> -       writel(0x03, edp->pll + QSERDES_V4_COM_VCO_TUNE2_MODE0);
+> +       hsclk_sel = init->hsclk_sel[link_rate];
+> +       dec_start_mode0 = init->dec_start_mode0[link_rate];
+> +       div_frac_start2_mode0 = init->div_frac_start2_mode0[link_rate];
+> +       div_frac_start3_mode0 = init->div_frac_start3_mode0[link_rate];
+> +       lock_cmp1_mode0 = init->lock_cmp1_mode0[link_rate];
+> +       lock_cmp2_mode0 = init->lock_cmp2_mode0[link_rate];
+> +
+> +       if (init->code1_mode0)
+> +               code1_mode0 = init->code1_mode0[link_rate];
+> +
+> +       if (init->code2_mode0)
+> +               code2_mode0 = init->code2_mode0[link_rate];
+> +
+> +       writel(0x01, edp->pll + regs->svs_mode_clk_sel);
+> +       writel(0x0b, edp->pll + regs->sysclk_en_sel);
+> +       writel(0x02, edp->pll + regs->sys_clk_ctrl);
+> +       writel(0x0c, edp->pll + regs->clk_enable1);
+> +       writel(0x06, edp->pll + regs->sysclk_buf_enable);
+> +       writel(0x30, edp->pll + regs->clk_select);
+> +       writel(hsclk_sel, edp->pll + regs->hsclk_sel);
+> +       writel(init->pll_ivco, edp->pll + regs->pll_ivco);
+> +       writel(0x08, edp->pll + regs->lock_cmp_en);
+> +       writel(0x36, edp->pll + regs->pll_cctrl_mode0);
+> +       writel(0x16, edp->pll + regs->pll_rctrl_mode0);
+> +       writel(0x06, edp->pll + regs->cp_ctrl_mode0);
+> +       writel(dec_start_mode0, edp->pll + regs->dec_start_mode0);
+> +       writel(0x00, edp->pll + regs->div_frac_start1_mode0);
+> +       writel(div_frac_start2_mode0, edp->pll + regs->div_frac_start2_mode0);
+> +       writel(div_frac_start3_mode0, edp->pll + regs->div_frac_start3_mode0);
+> +       writel(init->cmn_config, edp->pll + regs->cmn_config);
+> +       writel(0x3f, edp->pll + regs->integloop_gain0_mode0);
+> +       writel(0x00, edp->pll + regs->integloop_gain1_mode0);
+> +       writel(0x00, edp->pll + regs->vco_tune_map);
+> +       writel(lock_cmp1_mode0, edp->pll + regs->lock_cmp1_mode0);
+> +       writel(lock_cmp2_mode0, edp->pll + regs->lock_cmp2_mode0);
+> +
+> +       writel(0x0a, edp->pll + regs->bg_timer);
+> +       writel(0x14, edp->pll + regs->pll_core_clk_div_mode0);
+> +       writel(0x00, edp->pll + regs->vco_tune_ctrl);
+> +       writel(0x17, edp->pll + regs->pll_bias_en_clk_buflr_en);
+> +       writel(0x0f, edp->pll + regs->core_clk_en);
+> +
+> +       if (regs->vco_tune1_mode0)
+> +               writel(init->vco_tune1_mode0, edp->pll + regs->vco_tune1_mode0);
+> +
+> +       if (regs->vco_tune2_mode0)
+> +               writel(init->vco_tune2_mode0, edp->pll + regs->vco_tune2_mode0);
+> +
+> +       if (regs->bin_vcocal_cmp_code1_mode0)
+> +               writel(code1_mode0, edp->pll + regs->bin_vcocal_cmp_code1_mode0);
+> +
+> +       if (regs->bin_vcocal_cmp_code2_mode0)
+> +               writel(code2_mode0, edp->pll + regs->bin_vcocal_cmp_code2_mode0);
+>
+>         return 0;
+>  }
+> @@ -447,10 +808,10 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel
+>  static int qcom_edp_phy_power_on(struct phy *phy)
+>  {
+>         const struct qcom_edp *edp = phy_get_drvdata(phy);
+> -       const struct qcom_edp_cfg *cfg = edp->cfg;
+> +       const struct qmp_com_regs_layout *regs = edp->com_regs;
+>         u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+>         unsigned long pixel_freq;
+> -       u8 ldo_config;
+> +       u8 ldo_config = 0x0;
+>         int timeout;
+>         int ret;
+>         u32 val;
+> @@ -462,13 +823,14 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+>                edp->edp + DP_PHY_PD_CTL);
+>         writel(0xfc, edp->edp + DP_PHY_MODE);
+>
+> -       timeout = readl_poll_timeout(edp->pll + QSERDES_V4_COM_CMN_STATUS,
+> +       timeout = readl_poll_timeout(edp->pll + regs->cmn_status,
+>                                      val, val & BIT(7), 5, 200);
+>         if (timeout)
+>                 return timeout;
+>
+>
+> -       ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
+> +       if (edp->swing_pre_emph_cfg && edp->is_dp)
+> +               ldo_config = 0x1;
+>
+>         writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
+>         writel(ldo_config, edp->tx1 + TXn_LDO_CONFIG);
+> @@ -512,9 +874,9 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+>         writel(0x01, edp->edp + DP_PHY_CFG);
+>         writel(0x09, edp->edp + DP_PHY_CFG);
+>
+> -       writel(0x20, edp->pll + QSERDES_V4_COM_RESETSM_CNTRL);
+> +       writel(0x20, edp->pll + regs->resetsm_cntrl);
+>
+> -       timeout = readl_poll_timeout(edp->pll + QSERDES_V4_COM_C_READY_STATUS,
+> +       timeout = readl_poll_timeout(edp->pll + regs->c_ready_status,
+>                                      val, val & BIT(0), 500, 10000);
+>         if (timeout)
+>                 return timeout;
+> @@ -768,6 +1130,37 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
+>         return devm_of_clk_add_hw_provider(edp->dev, of_clk_hw_onecell_get, data);
+>  }
+>
+> +static int qcom_edp_setup_phy(struct platform_device *pdev, struct qcom_edp *edp)
+> +{
+> +       struct device *dev = &pdev->dev;
+> +       const struct qmp_phy_cfg *cfg = of_device_get_match_data(dev);
+> +       enum dp_qmp_com_version version = cfg->version;
+> +       struct device_node *node = dev->of_node;
+> +       int type = cfg->type;
+> +
+> +       of_property_read_u32(node, "phy-type", &type);
+> +
+> +       if (type != PHY_TYPE_DP && type != PHY_TYPE_EDP)
+> +               return -EINVAL;
+> +
+> +       edp->is_dp = (type == PHY_TYPE_DP) ? true : false;
+> +
+> +       if (cfg->needs_swing_pre_emph_cfg)
+> +               edp->swing_pre_emph_cfg = edp->is_dp ?
+> +                                               &dp_phy_swing_pre_emph_cfg:
+> +                                               &edp_phy_swing_pre_emph_cfg;
+> +
+> +       if (version == DP_QMP_VERSION_V6) {
+> +               edp->com_regs = &qmp_v6_com_regs;
+> +               edp->init_values = &qmp_v6_com_init;
+> +       } else {
+> +               edp->com_regs = &qmp_v4_com_regs;
+> +               edp->init_values = &qmp_v4_com_init;
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+>  static int qcom_edp_phy_probe(struct platform_device *pdev)
+>  {
+>         struct phy_provider *phy_provider;
+> @@ -780,7 +1173,10 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
+>                 return -ENOMEM;
+>
+>         edp->dev = dev;
+> -       edp->cfg = of_device_get_match_data(&pdev->dev);
+> +
+> +       ret = qcom_edp_setup_phy(pdev, edp);
+> +       if (ret)
+> +               return ret;
+>
+>         edp->edp = devm_platform_ioremap_resource(pdev, 0);
+>         if (IS_ERR(edp->edp))
+> @@ -839,10 +1235,11 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
+>  }
+>
+>  static const struct of_device_id qcom_edp_phy_match_table[] = {
+> -       { .compatible = "qcom,sc7280-edp-phy" },
+> -       { .compatible = "qcom,sc8180x-edp-phy" },
+> -       { .compatible = "qcom,sc8280xp-dp-phy", .data = &dp_phy_cfg },
+> -       { .compatible = "qcom,sc8280xp-edp-phy", .data = &edp_phy_cfg },
+> +       { .compatible = "qcom,sc7280-edp-phy" , .data = &sc7280_dp_phy_cfg, },
+> +       { .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
+> +       { .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
+> +       { .compatible = "qcom,sc8280xp-edp-phy", .data = &sc8280xp_edp_phy_cfg, },
+> +       { .compatible = "qcom,x1e80100-dp-phy" , .data = &x1e80100_phy_cfg, },
+>         { }
+>  };
+>  MODULE_DEVICE_TABLE(of, qcom_edp_phy_match_table);
+>
+> --
+> 2.34.1
+>
+
+
+--
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
