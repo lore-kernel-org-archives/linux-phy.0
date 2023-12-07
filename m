@@ -4,86 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AF84C10DC3
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 09:50:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8CA0C10DCE
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 10:02:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dA/wURUVCYpI9fPAgHp1dNv6w/wmvEAnA6azNJXBYm0=; b=s7fHNhgXJNAOQ0
-	c4ZH4eyTDlSGD3lvlkTN5oKbsmioKwGR7fbwnwcD5ou4vOJq2Jz26C/K0lhXz1JAA7xtTNaHWOJtm
-	fbFVbi6KvGu+Hxx/Ad8kDCPrK7QC1GYo7pM6PG6V57pe96ZNmLIC8mkYzKrYRUVmi1Z0WI49JbEyv
-	Ohuhv4Q5viKxAY6+w4Kw4PY7C2GgTJlyU6feHuqKMTMYNi5MOG6X/gYeZS9I+jGi+x93BcGC6YW+q
-	QxvMF9ReRfEtUmH8ywNW6iH+p7AMu/5kXq04waeqwbzOzB8EnHwsS56Vc6uTc0VqJxGJDMO/K6p2K
-	F0fwWDqk3oQxXCW6qj9A==;
+	List-Owner; bh=MXnfddyd7QeZgbv/MFJGUt1nzYvbZpPUFgN50tW8NVw=; b=X0BeK10PeHSQER
+	0PiaMbDfBMSuNBeCkMeqiJV8+mwjWJSgXCutv5NWyTH/dPbUJJWAoFZSIo/MdESG6h6556Aa6pN4I
+	PJmq8Sz1UoeNXA8lNTHFJ1+18sQ8M1pejkEphBCyRf/+7BCzkJ7ClEOrI/TI3O1L3bHxOkn58zIiP
+	5QK+2C9TYknpCOBg240yalKLcyewVIn+4fSim9LCVomWevlKHvKcj6VmrwT84hBCx+4Vz13+iHeXR
+	0VZYGfkKw46U/5JaQHUm6qvTNinLrsbnF2WMyDuQlb1dmIz2vButqyXQzHc15HsuF0Ax7iwhNZmjv
+	7G7flXJLTQ34j0VJChaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBB1Z-00CPCX-0l;
-	Thu, 07 Dec 2023 09:50:29 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1rBBDY-00CQcx-0K;
+	Thu, 07 Dec 2023 10:02:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBB1X-00CPAL-0Q
+	id 1rBBDV-00CQc6-2Z
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Dec 2023 09:50:28 +0000
+	Thu, 07 Dec 2023 10:02:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id B466BB82564;
-	Thu,  7 Dec 2023 09:50:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D5B0C433CB;
-	Thu,  7 Dec 2023 09:50:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701942621;
-	bh=YzfxSDFRzoSe+GPPF5UuUyQYbQJvr9Enxd0o7o5jPHw=;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8584361F2A;
+	Thu,  7 Dec 2023 10:02:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A7E0C433C8;
+	Thu,  7 Dec 2023 10:02:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1701943368;
+	bh=SPYAWlnL7TYvvD5fILwvuEjH1F0EdpQ2gn+SMCdXalU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=MHXPpKQXNg1pjrxlf+/vHYiq9+FKp+oLoG9ASwloceCLg8aaYwtTfaAwvxhn4XvS1
-	 DDLjyxmy6a7zqgWmqaqwBIMNlH4Z0lyJ9e19DBmJLP9KTjs/7bIHknLni1a2EWehPK
-	 /D/EXii6OkGi6Y+6YLz3Fp7eYYw2AoHHAwyEv4GCpmENzrAuWGmrGaLXeyxsTGNoim
-	 ly3l4lZOdcwtem6tDSDM36aw6K6rsY7UaIMvgPSJgEDfebhwrO22E2eWEE1mXj7Pb3
-	 jFXIHA6NuKLi/s/nGnz+sloz2UT8/kceEzhR4E+nk+lK/lAERZqbxiFD+J/Y3gBBOt
-	 t2lxQPYABvoTg==
-Received: from johan by xi.lan with local (Exim 4.96.2)
-	(envelope-from <johan@kernel.org>)
-	id 1rBB2D-0008FF-0j;
-	Thu, 07 Dec 2023 10:51:09 +0100
-Date: Thu, 7 Dec 2023 10:51:09 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Krishna Chaitanya Chundru <quic_krichai@quicinc.com>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
+	b=JGbWkqWpE69/KJTLtC9uM/RqiNerYeh5JRHhvMQxGLKrVcgHs+Y1zw+vFVQ9PkZce
+	 11S9dN4QYOZ6GJPXmQz8QV21+ujNRkIa0TTugszsraf4/zenmpWN536nrfxuUpfUl2
+	 bSPBfKG/ulSlq2nXvBrk65Pw8961XtNzLOTLXlb0=
+Date: Thu, 7 Dec 2023 11:02:43 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Stanley Chang <stanley_chang@realtek.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, quic_vbadigan@quicinc.com,
-	quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
-	quic_skananth@quicinc.com, quic_vpernami@quicinc.com,
-	quic_parass@quicinc.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,qmp: Add PCIe
- qcom,refclk-always-on property
-Message-ID: <ZXGVjY9gYMD6-xFJ@hovoldconsulting.com>
-References: <20231127-refclk_always_on-v3-1-26d969fa8f1d@quicinc.com>
- <78815f1b-7390-40de-8afd-ac71806f4051@linaro.org>
- <24fae40a-453b-b14c-923f-88758a246aa7@quicinc.com>
- <20231201060716.GJ4009@thinkpad>
- <166d307e-7d1b-48b5-90db-9b6df01d87c2@linaro.org>
- <20231201111033.GL4009@thinkpad>
- <f844cd1e-7e4f-4836-bc9a-2e1ed13f064f@linaro.org>
- <20231201123054.GM4009@thinkpad>
- <3a7376aa-18a2-41cb-a4c9-680e735ce75b@linaro.org>
- <20231206131009.GD12802@thinkpad>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Jinjie Ruan <ruanjinjie@huawei.com>, Rob Herring <robh@kernel.org>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Flavio Suligoi <f.suligoi@asem.it>,
+	Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v3 RESEND 1/4] phy: core: add notify_connect and
+ notify_disconnect callback
+Message-ID: <2023120750-giggle-annotate-dc4f@gregkh>
+References: <20231207074022.14116-1-stanley_chang@realtek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231206131009.GD12802@thinkpad>
+In-Reply-To: <20231207074022.14116-1-stanley_chang@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_015027_321147_4857EE19 
-X-CRM114-Status: UNSURE (   7.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231207_020249_947920_C4D7AA5C 
+X-CRM114-Status: GOOD (  24.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,20 +78,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 06, 2023 at 06:40:09PM +0530, Manivannan Sadhasivam wrote:
+On Thu, Dec 07, 2023 at 03:38:04PM +0800, Stanley Chang wrote:
+> In Realtek SoC, the parameter of usb phy is designed to can dynamic
+> tuning base on port status. Therefore, add a notify callback of phy
+> driver when usb connection/disconnection change.
+> 
+> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
+> ---
+> RESEND:
+>     Because there is no extcon device provided in the USB framework to
+>     notify connect and disconnect.
+>     Therefore, I added the notification connection/disconnection based
+>     on the generic phy. So I no use the EXTCON framework for notifying
+>     connect/disconnect.
+> v2 to v3:
+>     No change
+> v1 to v2:
+>     No change
+> ---
+>  drivers/phy/phy-core.c  | 47 +++++++++++++++++++++++++++++++++++++++++
+>  include/linux/phy/phy.h | 18 ++++++++++++++++
+>  2 files changed, 65 insertions(+)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 96a0b1e111f3..a84ad4896b7f 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -489,6 +489,53 @@ int phy_calibrate(struct phy *phy)
+>  }
+>  EXPORT_SYMBOL_GPL(phy_calibrate);
+>  
+> +/**
+> + * phy_notify_connect() - phy connect notify
+> + * @phy: the phy returned by phy_get()
+> + * @port: the port index for connect
+> + *
+> + * If phy need the get connection status, the callback can be used.
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_connect(struct phy *phy, int port)
+> +{
+> +	int ret;
+> +
+> +	if (!phy || !phy->ops->connect)
+> +		return 0;
 
-> OK. How about, "qcom,broken-refclk"? This reflects the fact that the default
-> refclk operation is broken on this platform, so the OS should be prepared for
-> it (by keeping it always on).
+How can phy be null?
 
-Shouldn't that be
+And it is not successful if connect is not valid, so why not return an
+error there?
 
-	qcom,broken-clkreq
+> +
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->connect(phy, port);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_connect);
+> +
+> +/**
+> + * phy_notify_disconnect() - phy disconnect notify
+> + * @phy: the phy returned by phy_get()
+> + * @port: the port index for disconnect
+> + *
+> + * If phy need the get disconnection status, the callback can be used.
+> + *
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_disconnect(struct phy *phy, int port)
+> +{
+> +	int ret;
+> +
+> +	if (!phy || !phy->ops->disconnect)
+> +		return 0;
 
-since its the CLKREQ# signal used to request REFCLK that is broken, not
-the REFCLK itself?
+Same as above.
 
-Johan
+> +
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->disconnect(phy, port);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_disconnect);
+> +
+>  /**
+>   * phy_configure() - Changes the phy parameters
+>   * @phy: the phy returned by phy_get()
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index f6d607ef0e80..cf98cb29ddaa 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -122,6 +122,8 @@ struct phy_ops {
+>  			    union phy_configure_opts *opts);
+>  	int	(*reset)(struct phy *phy);
+>  	int	(*calibrate)(struct phy *phy);
+> +	int	(*connect)(struct phy *phy, int port);
+> +	int	(*disconnect)(struct phy *phy, int port);
+
+You forgot to document these and would have a warning from the
+documentation build if this was applied :(
+
+
+>  	void	(*release)(struct phy *phy);
+>  	struct module *owner;
+>  };
+> @@ -243,6 +245,8 @@ static inline enum phy_mode phy_get_mode(struct phy *phy)
+>  }
+>  int phy_reset(struct phy *phy);
+>  int phy_calibrate(struct phy *phy);
+> +int phy_notify_connect(struct phy *phy, int port);
+> +int phy_notify_disconnect(struct phy *phy, int port);
+>  static inline int phy_get_bus_width(struct phy *phy)
+>  {
+>  	return phy->attrs.bus_width;
+> @@ -396,6 +400,20 @@ static inline int phy_calibrate(struct phy *phy)
+>  	return -ENOSYS;
+>  }
+>  
+> +static inline int phy_notify_connect(struct phy *phy, int index)
+> +{
+> +	if (!phy)
+> +		return 0;
+
+Why check this?
+
+> +	return -ENOSYS;
+> +}
+> +
+> +static inline int phy_notify_disconnect(struct phy *phy, int index)
+> +{
+> +	if (!phy)
+> +		return 0;
+
+Again, why check this?
+
+thanks,
+
+greg k-h
 
 -- 
 linux-phy mailing list
