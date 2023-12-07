@@ -4,85 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BB78C10DC3
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 13:04:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0C65C46CA3
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 13:17:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SZle4c0BIWbltddpSEz5ysfiNtD6zSr8QeKM6y6Pnbc=; b=Ov1X9LHFnDpHiN
-	fd0CjCqcqau3LHLgQQ/wAMq+GCUBZsYqe24lxPHNLlfSwWNOAzFXCnGfoFpe9s9cTASOAWtEKakwA
-	j+tZibmTDh+nlBz8kO8ySQcnP7i8+Exgu8mPZojHKJ0UJsxlg2Wv0scRLwf8D7dr8t1FaAIpxTiJi
-	BFIbAflB1N+EZ93xKe4RuIR6Tl4nCYD4gDSfgI/TkwrEsUY/cBcfze1zDT6PkpxUpWu1si/8UjPo7
-	k0AsxhznCwxWen8NcIgV+Fh/lSInKmONXm/zXscWiEoKBvq6cmK6Oz5c4teH45+apzJQ3SK+SpEPV
-	QWdMVddNNRwzI/a2NHOg==;
+	List-Owner; bh=MqMYYsLrTXmoPRd7G/FMd/rsmpBUKxuEEknO2NfH/Ro=; b=Dm1aD5zzr9xT2Y
+	tmrOyxoEM+N1ddKw+uiYDg+YAZYNXXmAcyluDA/8w1OQ8ZFRCM+yXRt9ftRJP+SWkfbQ9hfr2Vy0p
+	UjdUV4qfGEBd/OUZjXXhb8LZk8JWAEn9Orz8ZTuoosUvOMmjK6Tw/3idpd3+CCENSJBvuAdSV+RB6
+	P3Xp+wURGigeg8r1O/8nOY/xJINpdME/mNXQG5XzzDjvoTK6U7uY8+5ehr9quwgKod41s4PvMF34c
+	aTOccVFvzv3F5OMMfbGJ7L17xPaTG6o98TO2l3wjXrF+jiYUb/QRG6ghEedVHtUtvFWCOwegxdFuW
+	h2n98VkI3YZDBwDI307w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBE3J-00Crx5-0x;
-	Thu, 07 Dec 2023 13:04:29 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rBEFR-00CsmS-1v;
+	Thu, 07 Dec 2023 13:17:01 +0000
+Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBE3G-00CrwA-13
+	id 1rBEFN-00Cskq-3C
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Dec 2023 13:04:27 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id DBF06CE2387;
-	Thu,  7 Dec 2023 13:04:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D67BC433C7;
-	Thu,  7 Dec 2023 13:04:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701954263;
-	bh=4jBaR1qmNEDVE39mC30/eFVzEXe5bQ1xUwFeHyj0RXY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=e01Eyt0rpcM1Ytp27Vi/5Ux5jIZUUg3qNyVEgLwye46M3zTNK5v/AhaEytBZ4LHRj
-	 BPtpM4DFz6IHzU1/ql9R7G78du7TsHXIPrhm8VN+4RsUrHks32ZqIjv0yWEMIaFqNB
-	 jOd3IVBrVb9tKtDTZulik5qo9s57vl4bxKLhS/RSV1gmsVUAREBJnf/BImCYnPvMGK
-	 d1z96fqnY6a1WjT9XfmIt+ou7UN8pd+TQrHhALYpDyKHW1CkCwBzxdPJxH6g9QhFSx
-	 D83TwKDW42u9M/tS8nbeKhFC9yXF4/YbUPkVLUdlp112U3z+4NmNtoKzbviQHDoMQk
-	 qBfWp47EIJBJQ==
-Received: from johan by xi.lan with local (Exim 4.96.2)
-	(envelope-from <johan@kernel.org>)
-	id 1rBE40-0000IF-2r;
-	Thu, 07 Dec 2023 14:05:12 +0100
-Date: Thu, 7 Dec 2023 14:05:12 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Krishna Chaitanya Chundru <quic_krichai@quicinc.com>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, quic_vbadigan@quicinc.com,
-	quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
-	quic_skananth@quicinc.com, quic_vpernami@quicinc.com,
-	quic_parass@quicinc.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,qmp: Add PCIe
- qcom,refclk-always-on property
-Message-ID: <ZXHDCNosx8PCUzao@hovoldconsulting.com>
-References: <24fae40a-453b-b14c-923f-88758a246aa7@quicinc.com>
- <20231201060716.GJ4009@thinkpad>
- <166d307e-7d1b-48b5-90db-9b6df01d87c2@linaro.org>
- <20231201111033.GL4009@thinkpad>
- <f844cd1e-7e4f-4836-bc9a-2e1ed13f064f@linaro.org>
- <20231201123054.GM4009@thinkpad>
- <3a7376aa-18a2-41cb-a4c9-680e735ce75b@linaro.org>
- <20231206131009.GD12802@thinkpad>
- <ZXGVjY9gYMD6-xFJ@hovoldconsulting.com>
- <20231207101252.GJ2932@thinkpad>
+	Thu, 07 Dec 2023 13:16:59 +0000
+Received: by mail-lj1-x232.google.com with SMTP id 38308e7fff4ca-2c9f85eff28so10440071fa.3
+        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 05:16:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1701955014; x=1702559814; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Rk8qsAP+TFlPc9+aBIEsrkcMIIW7Ca+8Wo1Dz8GCExE=;
+        b=La4M8kRPku62Pv8t7fU7FdYmQJNCPbTWrOQr1F+iX2sg6t5rz6S6G4ycb6XknYmm/d
+         Y2gzhyUdPdzPSJ8S2GutsBcgWxt4ccpDRXxgmQ32jG+U3UvrpDF9kk2er0PsUduWzUcF
+         sz1vxQu6rNymeSu3GYuu7D/p4RBe/riT7olndlN5WKF4NuSWbakdTku4adfln4WFfQhQ
+         NwE1wywrl8idcCMEnq6bjDNi2BXdj3bVU5/kshw8xyCJQ78ZjOjzMtxBMQuS3i5HWzSY
+         yahwGGcM57B+DjN8I7DTXfkitDzgurOWW7x1BSezJ74uD9M/vZq1BAuTHeExmfe5PEZF
+         sPmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701955014; x=1702559814;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Rk8qsAP+TFlPc9+aBIEsrkcMIIW7Ca+8Wo1Dz8GCExE=;
+        b=E3No8qx9u1Lv8f2trJjTTfQyi9la8+mlRrnbAYEfltIHlH1B30di8+NfdUzsey20nv
+         FeBGbVFQmAfJuwscvtd4+2Fwmo8GepA8ShCvX90MPUftLdgxVlRZ32NdpuJQ4PuMGFhl
+         x2FkK0mdaWuaIRMF/HktqVXV4yBlS86Uia9DmUS6xmMPZmNcdeODlW+81Izh//P3QwXe
+         s1R7SQsVs+YdAbA1jRa779ohk2f+6OUPDJZynMhUDK4b8/X8AE+jeaSWS5hkZ+gAIDak
+         /4sjfyQ/ojDnEPY3vzfzIPMqujnWQwILnsAQLw44NBecDY9DeWQS7a8NJiZN/azWRd1f
+         lxEg==
+X-Gm-Message-State: AOJu0YybWYc9yboJyP3BqMUNLzdVlDuz8iHfzbJW5OMyapd91IUMYifK
+	k/RXxih8Q7FPwB3OcF0gqgoEbQ==
+X-Google-Smtp-Source: AGHT+IFGDrNGI3ZLhjzr4c4hGQgz6xvhbmIM3ZCtrclnigWgEf/f2pmFXpCsGhKpLrzQPADENTmIbg==
+X-Received: by 2002:a05:651c:2129:b0:2ca:2425:e069 with SMTP id a41-20020a05651c212900b002ca2425e069mr2075467ljq.85.1701955014160;
+        Thu, 07 Dec 2023 05:16:54 -0800 (PST)
+Received: from [127.0.1.1] ([82.79.186.233])
+        by smtp.gmail.com with ESMTPSA id d8-20020a170906040800b00a1d01b11498sm815233eja.24.2023.12.07.05.16.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 07 Dec 2023 05:16:53 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Thu, 07 Dec 2023 15:16:41 +0200
+Subject: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Document X1E80100 compatible
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231207101252.GJ2932@thinkpad>
+Message-Id: <20231201-x1e80100-phy-combo-v1-1-6938ec41f3ac@linaro.org>
+References: <20231201-x1e80100-phy-combo-v1-0-6938ec41f3ac@linaro.org>
+In-Reply-To: <20231201-x1e80100-phy-combo-v1-0-6938ec41f3ac@linaro.org>
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Johan Hovold <johan@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.12.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1070; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=+KllDdHtSqAPF3nrZrVao8XwpqtX0txm4oMk2jjIl7w=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlccXA4kvy/jYG73+UFQnfH+xstGVNl/jY15osx
+ 9jCCD09aIeJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZXHFwAAKCRAbX0TJAJUV
+ VgN8D/99psDcOee6DbE+I1kLhwpqH/rhcAkgSWsOMChYH/kkP972vTxtQZhdmzH39ZGuM5DDjy+
+ tKUhmMICnG3HRw5QqbZWZMQmUi5e5xhO8wUBF+uEFrABJyGPlWvoFqBzv21SMmtMyBTGlT073kd
+ TTrfZHTLlNMBB1ByIJ2ZVfUKiV6m89E4BBfOs3Fl3NPEIYkKI783FxsB6iu+tmLLRRcLHCevzCx
+ x3eRCnPwAUld1PHMGKNykTm50AZ6HN98BugWJX++Y8Y44HqnuwVwpnytwCNHJbjFby9lX9uHEwT
+ AhFuwpx9ptyFHuDbVk/67ZLAtC2t36M8W4EzJDCW8Jebz3w4UHoeQvcKTG9SY7newf7kCJ2lV3r
+ FZ+myR1Ejhe8iITQnJECwIoXrWxcOR6j6/4GMVZZ4NdMfZI/4Mw3w4AdPGzV/SMqxlckATQtvLr
+ EBK8IlOvSDWhPqTfb7ZIgps1+znnnZDO6HfbxgDMEZZap5SjTIErUAIXu5V7p/KuW5hzTKX2tmn
+ +GLNiSXhCuCf57PG6WW7ptp+o+XMJxOOSobstX/6v7VWBLbNaYlTeJci6I94neFaJCmMKZhzNGg
+ aZLB/qXKjQlccB6HjeCC6M+Lk80en4HkYBHj9OM3H5BtOmL3ofFslIDiaOVMycA9bulguFUJTGg
+ d0IHYQAOT5pArVw==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_050426_593583_D7B8F5F1 
-X-CRM114-Status: GOOD (  17.93  )
+X-CRM114-CacheID: sfid-20231207_051658_028242_378D1E65 
+X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,41 +118,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 07, 2023 at 03:42:52PM +0530, Manivannan Sadhasivam wrote:
-> On Thu, Dec 07, 2023 at 10:51:09AM +0100, Johan Hovold wrote:
-> > On Wed, Dec 06, 2023 at 06:40:09PM +0530, Manivannan Sadhasivam wrote:
-> > 
-> > > OK. How about, "qcom,broken-refclk"? This reflects the fact that the default
-> > > refclk operation is broken on this platform, so the OS should be prepared for
-> > > it (by keeping it always on).
-> > 
-> > Shouldn't that be
-> > 
-> > 	qcom,broken-clkreq
-> > 
-> > since its the CLKREQ# signal used to request REFCLK that is broken, not
-> > the REFCLK itself?
-> > 
-> 
-> Darn... You are right. I got carried away by the initial property name. Thanks
-> for spotting!
+Add the X1E80100 compatible to the list.
 
-Thinking some more on this after hitting send: It may still be wrong
-with a 'broken-clkreq' property in the PHY instead of in the controller
-(or endpoint).
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml          | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Could there not be other ways to handle a broken clkreq signal so that
-this really should be a decision made by the OS, for example, to disable
-L1 substates and clock PM?
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+index ae83cb8cb21f..159a4a37dec3 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -28,6 +28,7 @@ properties:
+       - qcom,sm8450-qmp-usb3-dp-phy
+       - qcom,sm8550-qmp-usb3-dp-phy
+       - qcom,sm8650-qmp-usb3-dp-phy
++      - qcom,x1e80100-qmp-usb3-dp-phy
+ 
+   reg:
+     maxItems: 1
+@@ -130,6 +131,7 @@ allOf:
+             - qcom,sm6350-qmp-usb3-dp-phy
+             - qcom,sm8550-qmp-usb3-dp-phy
+             - qcom,sm8650-qmp-usb3-dp-phy
++            - qcom,x1e80100-qmp-usb3-dp-phy
+     then:
+       required:
+         - power-domains
 
-Simply leaving the refclk always on in the PHY seems like a bit of a
-hack and I'm not even sure that can be considered correct.
+-- 
+2.34.1
 
-Having a property that maps directly to that behaviour has rightly been
-rejected, but it seems that simply renaming the flag but keeping it in
-the PHY may still not be the right thing to do here.
-
-Johan
 
 -- 
 linux-phy mailing list
