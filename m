@@ -4,80 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE19CC4167B
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 16:47:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C175C4167B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 16:49:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b/ei8Qqr6CFnMy3WCl+XewhmWJk3gGhDQnmmkpeSX2U=; b=S/aa0B+l9IJ8eF
-	XTOoj3Vds1bcpZ7uveaHv7fuceg6B9nm3ziWkghLWJwyIs/WQFDbWvZ9ELdOL3o+luABzo3VMDWW3
-	J0tG4GSO3b7Fg2EK1QRSTSFOKACIxevFiGF/sc1hVbPbgZ34bx0DLCj7wNT7Arlit1jVcAhxwKLN/
-	TWOr5Dl+xF0mCbXwYm0UvDT2BYjfBLOJkbR4sqMwfcl8Pgft2bl8VbicsFM6ldNexS1GmuXrU+F2H
-	xHh04ccHtPWGFxV9PoAHiG3EQ5Cq5mO2UYGTMNJeRVwzlpwP8dD22DY09GlHTdXmBFDNfoQGfPIJH
-	+ssdroOLTsrdTH1P6QUQ==;
+	List-Owner; bh=JDy+TttfMzevtk+cM/+/jbE/sk6xUJT5wouY/c6PrCo=; b=ybLJHj5nrmW61x
+	Smn/8iItpWLcNVsL7Hzq6AT+eZoKWPNHnvPUssjdCWK8OAzxUZpiE8CeJl8te9ixEx34+lexpv0uA
+	KbsIG6tLMiRN3zKSQPJOtrUKR6ZDhD8Sr09GYD5xL3mWJz+WDUdixORfzCBHixIO88Po8Zuly0h+y
+	CMD0/G5D8W+LrSCBjV7YAqitd9B46weosXDIajCD50Rf1AqxDDoZC1yWOBZuLyT3K1y52UCz8bPXm
+	A6p6Y7mz3SWaToJ9psB0D7SXLzsic+2JZSFZadAAPTLaJty2PSg9cHYltnFu6qCturHyBe/HMAJQ4
+	itTsilTBlqE+/g31mzkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBHX7-00DRhl-1p;
-	Thu, 07 Dec 2023 16:47:29 +0000
-Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
+	id 1rBHYx-00DRz2-2k;
+	Thu, 07 Dec 2023 16:49:23 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBHX5-00DRgY-2m
+	id 1rBHYv-00DRxb-1p
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Dec 2023 16:47:29 +0000
-Received: by mail-ed1-x52a.google.com with SMTP id 4fb4d7f45d1cf-54bfa9b3ffaso1673248a12.1
-        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 08:47:27 -0800 (PST)
+	Thu, 07 Dec 2023 16:49:22 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-54cae99a48aso2511991a12.0
+        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 08:49:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1701967646; x=1702572446; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1701967759; x=1702572559; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=WIpY+iOc8xlG/Ufo4e3WYr29UIUy4AtlpTZcCRBGqXU=;
-        b=s0Ynxh33QA1LM24TDfYz5cKn7slg53efvwttqhRWJ4fVgSIMbPzjrQnm5OsorwoAhp
-         UBUEI7+rT2UBtiZwT+qS18kUbYutQ328wVSNUQA2e5gZMcD9IYl+85v3mBx5T9icJcrG
-         /qyGFq/LIa7FXpEOFVwD40+x7PxfKctj6j1ZgC0/jhds+tdzwPRW8HuV3UXNhBCOCzLI
-         LlABmNQucwiN9py8vL5FYY0ZjmVJJ5uW5lfIhfSiRzimP5mBSharzbWPn1B1/u+TqqZ2
-         N9HyYziunpMq6FfSfaBQ0YnUiMl1R2B47W8l3mwbtPVqDe67xhTOVXeta2fBirBbEIl5
-         JOCg==
+        bh=eAmoiBYH0QtvUcTXjpXH8egJv7xDYtCFaKPT0u+QyK4=;
+        b=ha0F7SRlHAj5M0pAugdAYd1/4c2MtWlHb4zNSMsmFkCs54SszMUR76UGkUHIgo4x9f
+         R51VVMw/soEk/SB4EGZiR2iI7KsxBERu2KrGQbDS1pPqXZa2ue5+eq9wIN0BgNfZFTa2
+         CiO9yUiQ5mmboKn3fnCOZ5A4SNMd3OuXhwwVTcvBYKHX4rae05MYcKBu61JT1VOuO/x3
+         /2mjoayaRS5wMOa+3ENggXW6w1Ixmffx+L7EikvCGUDsmaewE1OEVUlOSD319YE3S5q3
+         a1DS3+YU4YdMpDsbc0q7QNqXX157iywgCUoyHl4GLV0TqGHO7dk9SrzlsyAbfW8Bs+Qi
+         2Azw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701967646; x=1702572446;
+        d=1e100.net; s=20230601; t=1701967759; x=1702572559;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WIpY+iOc8xlG/Ufo4e3WYr29UIUy4AtlpTZcCRBGqXU=;
-        b=i4tnh5djkZKEPwblDIIPqyZsEpWsahS+2LGS+GsnZAQWxBCD5pyx+vBICST1LS6/yk
-         EM4mSX6smeFtP0GVyyPjuIQ70o+m7uMEcx0FI2E7x75ejV6vxPe+ExZSVh5aiSmXu7g+
-         wi/+TI7orN8cu5cLxpnyZlKHIfGX2hPXh8ik1YWz+blSyhqCh2OCSo75mQO+LqMvDgV/
-         sryz0ruJr+IkW0sN2reoCH0pldTyoEMkKZVnZwfb1/qW7CLDU4mFfxOkmDQaTGLRvcUk
-         qagU/6QGVgzbN8/W1NjqG5Ef0FSolqiNywJZge7kOSGov3G2el/Vn5Sf3DAAeqnqIOVZ
-         ahow==
-X-Gm-Message-State: AOJu0Yy7y8KyUgh1Jsg9MkMbo9PGKWcNpST6PKsFQ5y0kkyd5lKFaBKa
-	zxAf6D65clWqfjkxjOlXkHL6Mw==
-X-Google-Smtp-Source: AGHT+IEklBn6PcAgTDdJ0AIBu0/uDv4ArnBggbt9v9e5DX+ZtAsY3FnNzGfqypOSIIBf8XzLWyDzYg==
-X-Received: by 2002:a05:6402:1bc4:b0:54a:fb41:14c with SMTP id ch4-20020a0564021bc400b0054afb41014cmr1612161edb.36.1701967646052;
-        Thu, 07 Dec 2023 08:47:26 -0800 (PST)
+        bh=eAmoiBYH0QtvUcTXjpXH8egJv7xDYtCFaKPT0u+QyK4=;
+        b=hXs7x11Q8RcY6+2ScL3Is4htlU/RVfmK8JcWZcrGBe+OBG+42GpGmevqK0Gcaf4FWe
+         79VtpmwuPp1bdAjvRxrDdtcww1rYXWSj2PzTy1TRnIy7NrTHBR9zfk1thw+DmVlPhn4V
+         6Js2Vycm8tTy/03dALztlI/vOT5glWyBzvy6HiCRbuZyOsRDqo+UhJ33te8Uzmarf6pu
+         hAky8NAmAFH/5FZjDWtP9xhbEWgZR+sI2LFRlmm1A4uGdsj7qu9Xk+dmMNFVCn72sUu5
+         J4+GE+VPtxRysTQGWAPD2Zp3DkAhbzoZtX4gusDvAQeFD/wjkoUoZnhtxT0d3RRh3jJw
+         q7Og==
+X-Gm-Message-State: AOJu0YzS3jf2R7+8M+fo38uVTh2NwvhtD0RIQ/4BM//u/u9yyaJLo6JX
+	s1tg4MhFT9jbltCs/Fy5hJMSzQ==
+X-Google-Smtp-Source: AGHT+IGUIsF+1lGU6p4QYRIZmGqqKSLmQYy32qe05/ZLmop0aLuriMSAiW1AB8ehtvly5WSXWz32zg==
+X-Received: by 2002:aa7:c392:0:b0:54b:523:b062 with SMTP id k18-20020aa7c392000000b0054b0523b062mr5795675edq.12.1701967759533;
+        Thu, 07 Dec 2023 08:49:19 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.218.27])
-        by smtp.gmail.com with ESMTPSA id dc14-20020a056402310e00b0054cfb16de51sm22918edb.3.2023.12.07.08.47.24
+        by smtp.gmail.com with ESMTPSA id dc14-20020a056402310e00b0054cfb16de51sm22918edb.3.2023.12.07.08.49.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 07 Dec 2023 08:47:25 -0800 (PST)
-Message-ID: <972ce4e2-b0db-4e2f-918f-221a756dd0e3@linaro.org>
-Date: Thu, 7 Dec 2023 17:47:23 +0100
+        Thu, 07 Dec 2023 08:49:19 -0800 (PST)
+Message-ID: <91637c20-0b04-4fc3-a58d-73fb25e830db@linaro.org>
+Date: Thu, 7 Dec 2023 17:49:17 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom: snps-eusb2: Document the
- X1E80100 compatible
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: Add PHY_TYPE_EDP definition
 Content-Language: en-US
 To: Abel Vesa <abel.vesa@linaro.org>, Andy Gross <agross@kernel.org>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>
+ <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Johan Hovold <johan@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20231122-phy-qualcomm-eusb2-x1e80100-v2-1-3ba9a8e5ade4@linaro.org>
+References: <20231122-phy-qualcomm-edp-x1e80100-v3-0-576fc4e9559d@linaro.org>
+ <20231122-phy-qualcomm-edp-x1e80100-v3-1-576fc4e9559d@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -123,10 +126,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231122-phy-qualcomm-eusb2-x1e80100-v2-1-3ba9a8e5ade4@linaro.org>
+In-Reply-To: <20231122-phy-qualcomm-edp-x1e80100-v3-1-576fc4e9559d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_084727_902678_23BF28E1 
-X-CRM114-Status: UNSURE (   6.80  )
+X-CRM114-CacheID: sfid-20231207_084921_602310_857FA4F2 
+X-CRM114-Status: UNSURE (   4.82  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -144,18 +147,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/12/2023 13:49, Abel Vesa wrote:
-> Add the X1E80100 compatible to the list of supported PHYs.
+On 07/12/2023 11:52, Abel Vesa wrote:
+> Add definition for Embedded DisplayPort (eDP) phy type.
 > 
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
-> Changes in v2:
-> - dropped the dedicated compatible from the driver (use fallback instead)
-> - documented the compatible as working with the sm8550 fallback one
-> - Link to v1: https://lore.kernel.org/r/20231122-phy-qualcomm-eusb2-x1e80100-v1-0-ce0991161847@linaro.org
-> ---
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
