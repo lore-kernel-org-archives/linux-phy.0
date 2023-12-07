@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27AB8C10DCE
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Dec 2023 20:47:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4D00C4167B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 00:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yMTbLsKoZWt/vlScwwMfWcU16R5Db2prmXJYoWlSUO4=; b=kkY+SChcgIacGJ
-	+LP7NoIWdaVA9VViVAOO14n/MsxeuZHFaDMADdNFdIRpErmlIERnU3IPUKfC3AAESahML3JjXjip8
-	NOtgA/tJTzGTYhhbL7VyXSyIuxb8Sx14PZhHiQZ4OMqZcL4ZE3PC2tYcyKvwwnDMVd8u8R+fDE/dS
-	o3NpKGaNs9GIPH8pjbc2VXkCqHKJx1PQh9+OBK3+4ah9UpHBTf7suzEXsxrvMSHoagGiBvu/5TyOd
-	0YHvogyyHeNgdGmr8QXci+Ft4ng56MhoQKujd3KOGe/oBeFsSQ2jeOGqVhiHL0dOvGi1EedaVmd5r
-	+Estzgv/q0x+Lkis64IA==;
+	List-Owner; bh=V3j+KxvcdbsQ2q3dNAPqPaOzVkc+ykalZ1qtfBb11kc=; b=WdQJ9MuzRcTA4T
+	iSEdKZAtRI4gj8KFITmCke6c9AOg6mim3BSTVRr2MyTKLW3+dAW5aT0/QJofxmRO9ZOwfNCsu+5nC
+	WXaLrvIo+6TrodyiQQvID60oZlTmoV7sapS3C6Q/cM3oNCAZSJoAuab2MpfO1/z3InRlc55IszHdo
+	I2mIo0hE/0dpH1iEPxVenmVyq+XkrhRx7uDFQkQSSSYAk8vIxGWKwx2TCe0BA8gLkn5UYu6WImzEQ
+	K+C3KRT2aQ+Ev+lhEWq7IMOgZJBUVMlAkh3NgIF0vw9gtDZV5EG0aQqGI2UHj3N8cnB4tdXbGlUdn
+	o9EIq9gSoxVWXVn+w3VQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAyoD-00BFHU-2h;
-	Wed, 06 Dec 2023 20:47:53 +0000
+	id 1rB1vj-00BXCe-14;
+	Thu, 07 Dec 2023 00:07:51 +0000
 Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAyo8-00BFGG-2M;
-	Wed, 06 Dec 2023 20:47:50 +0000
+	id 1rB1ve-00BXBH-0H;
+	Thu, 07 Dec 2023 00:07:48 +0000
 Received: from local
 	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
 	 (Exim 4.96.2)
 	(envelope-from <daniel@makrotopia.org>)
-	id 1rAynn-0007mp-2m;
-	Wed, 06 Dec 2023 20:47:29 +0000
-Date: Wed, 6 Dec 2023 20:47:25 +0000
+	id 1rB1vB-0000Eb-3C;
+	Thu, 07 Dec 2023 00:07:19 +0000
+Date: Thu, 7 Dec 2023 00:07:14 +0000
 From: Daniel Golle <daniel@makrotopia.org>
 To: "Russell King (Oracle)" <linux@armlinux.org.uk>
 Cc: "David S. Miller" <davem@davemloft.net>,
@@ -59,20 +59,18 @@ Cc: "David S. Miller" <davem@davemloft.net>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH v2 8/8] net: ethernet: mtk_eth_soc: add paths and
- SerDes modes for MT7988
-Message-ID: <ZXDd3VmlG0e_Uzmk@makrotopia.org>
+Subject: Re: [RFC PATCH v2 3/8] net: pcs: pcs-mtk-lynxi: add platform driver
+ for MT7988
+Message-ID: <ZXEMsugMy6_gPRRi@makrotopia.org>
 References: <cover.1701826319.git.daniel@makrotopia.org>
- <3ccc33fa14310ab47e90ff8e6ce46f1562bb838e.1701826319.git.daniel@makrotopia.org>
- <ZXDDtmRklS6o994V@shell.armlinux.org.uk>
- <ZXDQ94Xh3gzL3IR9@makrotopia.org>
- <ZXDYKeXsMuJZlzWB@shell.armlinux.org.uk>
+ <68bb81ac6bf99393c8de256f42e5715626590af8.1701826319.git.daniel@makrotopia.org>
+ <ZXC0pq2C6iRmeF4B@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZXDYKeXsMuJZlzWB@shell.armlinux.org.uk>
+In-Reply-To: <ZXC0pq2C6iRmeF4B@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231206_124748_772374_8DD6630E 
-X-CRM114-Status: GOOD (  39.91  )
+X-CRM114-CacheID: sfid-20231206_160746_119800_EB0650F6 
+X-CRM114-Status: GOOD (  27.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,82 +87,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Russell,
-
-thank for going into my patch in depth and taking your time for an
-elaborate and constructive answer.
-
-On Wed, Dec 06, 2023 at 08:23:05PM +0000, Russell King (Oracle) wrote:
-> On Wed, Dec 06, 2023 at 07:52:23PM +0000, Daniel Golle wrote:
-> > On Wed, Dec 06, 2023 at 06:55:50PM +0000, Russell King (Oracle) wrote:
-> > > On Wed, Dec 06, 2023 at 01:45:17AM +0000, Daniel Golle wrote:
-> > > > @@ -516,6 +538,21 @@ static struct phylink_pcs *mtk_mac_select_pcs(struct phylink_config *config,
-> > > >  	struct mtk_eth *eth = mac->hw;
-> > > >  	unsigned int sid;
-> > > >  
-> > > > +	if (mtk_is_netsys_v3_or_greater(eth)) {
-> > > > +		switch (interface) {
-> > > > +		case PHY_INTERFACE_MODE_1000BASEX:
-> > > > +		case PHY_INTERFACE_MODE_2500BASEX:
-> > > > +		case PHY_INTERFACE_MODE_SGMII:
-> > > > +			return mtk_pcs_lynxi_select_pcs(mac->sgmii_pcs_of_node, interface);
-> > > > +		case PHY_INTERFACE_MODE_5GBASER:
-> > > > +		case PHY_INTERFACE_MODE_10GBASER:
-> > > > +		case PHY_INTERFACE_MODE_USXGMII:
-> > > > +			return mtk_usxgmii_select_pcs(mac->usxgmii_pcs_of_node, interface);
-> > > 
-> > > From what I can see, neither of these two "select_pcs" methods that
-> > > you're calling makes any use of the "interface" you pass to them.
-> > > I'm not sure what they _could_ do with it either, given that what
-> > > you're effectively doing here is getting the phylink_pcs structure from
-> > > the driver, and each one only has a single phylink_pcs.
-> > 
-> > Yes, you are right, the interface parameter isn't used, I will drop
-> > it from both mtk_*_select_pcs() prototypes.
-> > 
-> > In the long run we may want something like
-> > struct phylink_pcs *of_pcs_get(struct device_node *np, phy_interface_t interface)
-> > provided by a to-be-built drivers/net/pcs/core.c...
+On Wed, Dec 06, 2023 at 05:51:34PM +0000, Russell King (Oracle) wrote:
+> On Wed, Dec 06, 2023 at 01:44:17AM +0000, Daniel Golle wrote:
+> > +struct phylink_pcs *mtk_pcs_lynxi_select_pcs(struct device_node *np, phy_interface_t mode)
+> > +{
+> > +	struct platform_device *pdev;
+> > +	struct mtk_pcs_lynxi *mpcs;
+> > +
+> > +	if (!np)
+> > +		return NULL;
+> > +
+> > +	if (!of_device_is_available(np))
+> > +		return ERR_PTR(-ENODEV);
+> > +
+> > +	if (!of_match_node(mtk_pcs_lynxi_of_match, np))
+> > +		return ERR_PTR(-EINVAL);
+> > +
+> > +	pdev = of_find_device_by_node(np);
+> > +	if (!pdev || !platform_get_drvdata(pdev)) {
+> > +		if (pdev)
+> > +			put_device(&pdev->dev);
+> > +		return ERR_PTR(-EPROBE_DEFER);
+> > +	}
+> > +
+> > +	mpcs = platform_get_drvdata(pdev);
+> > +	put_device(&pdev->dev);
+> > +
+> > +	return &mpcs->pcs;
+> > +}
+> > +EXPORT_SYMBOL(mtk_pcs_lynxi_select_pcs);
 > 
-> Again... it's not as simple as that. As soon as we get into the
-> situation that some _other_ driver becomes responsible for providing
-> the struct phylink_pcs pointer, we _then_ need to have some way of
-> dealing with that device going away.
+> If you're going to play games like this, then you must mark the driver
+> with .suppress_bind_attrs = true to remove the bind/unbind attributes
+> in userspace that could wreak havoc with the above - because there is
+> _nothing_ that guarantees that the memory you're returning from this
+> function will remain intact. Basically, it's racy.
 
-I assume you are referring to struct phylink_pcs *of_pcs_get(...),
-right? And true, it'd be quite a complex piece of infrastructure.
+Ack, I've set .suppress_bind_attrs = true in the usxgmii driver but
+forgot to add it here.
 
-> 
-> By that I mean that the memory pointed to returned from such a function
-> that you are proposing above could be freed - or worse could be unmapped
-> from the kernel address space, and the same goes for the operations
-> structure as well - even more so if the "ops" are part of module data
-> and the module is unloaded.
-> 
-> As I know how these discussions go (it's not my first time bringing up
-> these kinds of multi-driver interations), no, locking the module into
-> memory doesn't work, and shows a lack of a full understanding of the
-> problem.
-> 
-> We need to have a way that when a PCS device is removed, that is
-> propagated up the management levels and causes the PCS to be gracefully
-> removed from the network driver (in other words, from phylink).
+> Also, I'm not sure I approve of using the "select_pcs" suffix (I
+> haven't spotted _where_ you use this, but returning EPROBE_DEFER to
+> phylink's mac_select_pcs() method doesn't do anything to defer any
+> probe, so that's an entirely misleading error code.
 
-I see -- spontanous removal of the PCS may not be a practical problem
-on that very hardware, but from the driver model point of view, it is.
+EPROBE_DEFER is handled when the function is called by mtk_add_mac()
+during probe of the Ethernet driver -- which we do want to postpone
+in case the PCS hasn't been probed yet as at this point that's the
+best we can do without adding lots of intrastructure to dynamically
+attach the PCS later on...
 
-Should the callback for removal be implemented as part of the network
-driver or are you suggesting to add such infrastructure to phylink?
+But true, later the function is being called by mac_select_pcs() and
+what ever it returns is returned to the caller of mac_select_pcs().
+If you think it's better to return ENODEV (or EAGAIN?) I can change
+that -- from what I could tell, the only error which receives special
+handling by phylink is -EOPNOTSUPP, everything else just gets passed-
+through to the callers.
 
-> 
-> I won't accept a hack that sticky-plasters around the problem - not for
-> code that I am involved in actively maintaining - and sticky-plastering
-> around this class of problem seems to happen all too often in the
-> kernel.
+> If we are going to have device drivers for PCS, then we need to
+> seriously think about how we look up PCS and return the phylink_pcs
+> pointer - and also how we handle the PCS device going away. None of
+> that should be coded into _any_ PCS driver.
 
-Oh yes, I can see that every day when testing various SFP modules with
-exposed PHYs -- and often get stackdumps thrown at me when I remove
-them...
+I agree -- just wasn't up to design and implement all that at once.
 
 -- 
 linux-phy mailing list
