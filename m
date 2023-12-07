@@ -4,73 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4D00C4167B
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 00:07:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3366DC4167B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 07:11:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3j+KxvcdbsQ2q3dNAPqPaOzVkc+ykalZ1qtfBb11kc=; b=WdQJ9MuzRcTA4T
-	iSEdKZAtRI4gj8KFITmCke6c9AOg6mim3BSTVRr2MyTKLW3+dAW5aT0/QJofxmRO9ZOwfNCsu+5nC
-	WXaLrvIo+6TrodyiQQvID60oZlTmoV7sapS3C6Q/cM3oNCAZSJoAuab2MpfO1/z3InRlc55IszHdo
-	I2mIo0hE/0dpH1iEPxVenmVyq+XkrhRx7uDFQkQSSSYAk8vIxGWKwx2TCe0BA8gLkn5UYu6WImzEQ
-	K+C3KRT2aQ+Ev+lhEWq7IMOgZJBUVMlAkh3NgIF0vw9gtDZV5EG0aQqGI2UHj3N8cnB4tdXbGlUdn
-	o9EIq9gSoxVWXVn+w3VQ==;
+	List-Owner; bh=wi5h7jos9M0ScN4zJc2p/B0W12M6o1WXr/YqYH3Cb3U=; b=DGQPAAxdiArkjh
+	uBouYMtVc9NqpYu8tnX7KpoWG0RcCjbo8n2EpRY7b6rNXk0y10JluTiT1/9SbyIlKkfi0a4hCt9oT
+	dBAcGxxVj0J6C3uSVImNFTISPGFdXGHwTIqpeXdmIKBg8zM0sCeB7R4VVoatFf5TuOx4XPVlooaw+
+	OGcxscUUi5Gedumbaz9bw/fbv3ymuhfXgFh05B9CTMua5sC+FwtZraW5ThoU3EnjPyqCVgTZN6LPH
+	PnR56j71M/gkAlMLBdPc4TDwF1CljDv0MkVXD2b/A5DS4qSSG790c6C+DphKycPzg+gUxp+6GtfVa
+	29G5+oHXtS7S4eMvNkSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rB1vj-00BXCe-14;
-	Thu, 07 Dec 2023 00:07:51 +0000
-Received: from pidgin.makrotopia.org ([185.142.180.65])
+	id 1rB8XM-00C3b5-2o;
+	Thu, 07 Dec 2023 07:11:08 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rB1ve-00BXBH-0H;
-	Thu, 07 Dec 2023 00:07:48 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.96.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1rB1vB-0000Eb-3C;
-	Thu, 07 Dec 2023 00:07:19 +0000
-Date: Thu, 7 Dec 2023 00:07:14 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	id 1rB8XJ-00C3aj-0g
+	for linux-phy@lists.infradead.org;
+	Thu, 07 Dec 2023 07:11:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id 60496B8266B;
+	Thu,  7 Dec 2023 07:11:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2952EC433C7;
+	Thu,  7 Dec 2023 07:11:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1701933062;
+	bh=71XowMO1zokcNUVSjk7xgSIelzcj/5YLVU2L9lqlOek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=HIE61cPk1suFhoEEtmSEKqDL3oRt5v1fozcF1+3dkUah52fb1aTBg3lMYugNifZu6
+	 DSE+OKcVM3mvSSVLZlNV1kg/1SXiemnrQQXMBE/Bm9xQ8CRTJG4I2mR57zgk4rrIuq
+	 mItlLbjuyor+w/iZ8mX/+DVlYGma7Nmi1cg8p178=
+Date: Thu, 7 Dec 2023 08:10:58 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Stanley =?utf-8?B?Q2hhbmdb5piM6IKy5b63XQ==?= <stanley_chang@realtek.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Mark Lee <Mark-MC.Lee@mediatek.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Alexander Couzens <lynxis@fe80.eu>,
-	Qingfang Deng <dqfext@gmail.com>,
-	SkyLake Huang <SkyLake.Huang@mediatek.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH v2 3/8] net: pcs: pcs-mtk-lynxi: add platform driver
- for MT7988
-Message-ID: <ZXEMsugMy6_gPRRi@makrotopia.org>
-References: <cover.1701826319.git.daniel@makrotopia.org>
- <68bb81ac6bf99393c8de256f42e5715626590af8.1701826319.git.daniel@makrotopia.org>
- <ZXC0pq2C6iRmeF4B@shell.armlinux.org.uk>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Rob Herring <robh@kernel.org>, Jinjie Ruan <ruanjinjie@huawei.com>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Yang Yingliang <yangyingliang@huawei.com>,
+	Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>,
+	Roy Luo <royluo@google.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+Subject: Re: [PATCH v3 4/4] usb: core: add phy notify connect and disconnect
+Message-ID: <2023120724-herring-filled-c32e@gregkh>
+References: <20231110054738.23515-1-stanley_chang@realtek.com>
+ <20231110054738.23515-4-stanley_chang@realtek.com>
+ <4736a6933f3546c48f24a635c15a5e20@realtek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZXC0pq2C6iRmeF4B@shell.armlinux.org.uk>
+In-Reply-To: <4736a6933f3546c48f24a635c15a5e20@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231206_160746_119800_EB0650F6 
-X-CRM114-Status: GOOD (  27.92  )
+X-CRM114-CacheID: sfid-20231206_231105_410472_FDE25BD7 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,76 +77,16 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 06, 2023 at 05:51:34PM +0000, Russell King (Oracle) wrote:
-> On Wed, Dec 06, 2023 at 01:44:17AM +0000, Daniel Golle wrote:
-> > +struct phylink_pcs *mtk_pcs_lynxi_select_pcs(struct device_node *np, phy_interface_t mode)
-> > +{
-> > +	struct platform_device *pdev;
-> > +	struct mtk_pcs_lynxi *mpcs;
-> > +
-> > +	if (!np)
-> > +		return NULL;
-> > +
-> > +	if (!of_device_is_available(np))
-> > +		return ERR_PTR(-ENODEV);
-> > +
-> > +	if (!of_match_node(mtk_pcs_lynxi_of_match, np))
-> > +		return ERR_PTR(-EINVAL);
-> > +
-> > +	pdev = of_find_device_by_node(np);
-> > +	if (!pdev || !platform_get_drvdata(pdev)) {
-> > +		if (pdev)
-> > +			put_device(&pdev->dev);
-> > +		return ERR_PTR(-EPROBE_DEFER);
-> > +	}
-> > +
-> > +	mpcs = platform_get_drvdata(pdev);
-> > +	put_device(&pdev->dev);
-> > +
-> > +	return &mpcs->pcs;
-> > +}
-> > +EXPORT_SYMBOL(mtk_pcs_lynxi_select_pcs);
-> 
-> If you're going to play games like this, then you must mark the driver
-> with .suppress_bind_attrs = true to remove the bind/unbind attributes
-> in userspace that could wreak havoc with the above - because there is
-> _nothing_ that guarantees that the memory you're returning from this
-> function will remain intact. Basically, it's racy.
-
-Ack, I've set .suppress_bind_attrs = true in the usxgmii driver but
-forgot to add it here.
-
-> Also, I'm not sure I approve of using the "select_pcs" suffix (I
-> haven't spotted _where_ you use this, but returning EPROBE_DEFER to
-> phylink's mac_select_pcs() method doesn't do anything to defer any
-> probe, so that's an entirely misleading error code.
-
-EPROBE_DEFER is handled when the function is called by mtk_add_mac()
-during probe of the Ethernet driver -- which we do want to postpone
-in case the PCS hasn't been probed yet as at this point that's the
-best we can do without adding lots of intrastructure to dynamically
-attach the PCS later on...
-
-But true, later the function is being called by mac_select_pcs() and
-what ever it returns is returned to the caller of mac_select_pcs().
-If you think it's better to return ENODEV (or EAGAIN?) I can change
-that -- from what I could tell, the only error which receives special
-handling by phylink is -EOPNOTSUPP, everything else just gets passed-
-through to the callers.
-
-> If we are going to have device drivers for PCS, then we need to
-> seriously think about how we look up PCS and return the phylink_pcs
-> pointer - and also how we handle the PCS device going away. None of
-> that should be coded into _any_ PCS driver.
-
-I agree -- just wasn't up to design and implement all that at once.
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBEZWMgMDcsIDIwMjMgYXQgMDQ6NTA6MTBBTSArMDAwMCwgU3RhbmxleSBDaGFuZ1vm
+mIzogrLlvrddIHdyb3RlOgo+IEhpIEdyZWcsCj4gCj4gUGxlYXNlIGhlbHAgcmV2aWV3IHRoaXMg
+cGF0Y2guCgpUaGlzIHNlcmllcyBpcyBnb25lIGZyb20gbXkgdHJlZSBhcyBvdGhlcnMgcmV2aWV3
+ZWQgaXQgYW5kIGFza2VkIGZvcgpjaGFuZ2VzLiAgSWYgeW91IHRoaW5rIHRob3NlIGNoYW5nZXMg
+YXJlIG5vdCBuZWVkZWQsIGZlZWwgZnJlZSB0byByZXNlbmQKaXQgd2l0aCBhbiBleHBsYW5hdGlv
+biBvZiB3aHkgdGhhdCBpcyBzby4KCnRoYW5rcywKCmdyZWcgay1oCgotLSAKbGludXgtcGh5IG1h
+aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
