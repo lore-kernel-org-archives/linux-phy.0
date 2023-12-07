@@ -4,65 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F8C3C4167B
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 10:08:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F48AC4167B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Dec 2023 10:13:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NGOsmC8UUqknlIdmLkXx4CdTKfkxSKvk88ZYAP+OBUE=; b=mi9QL0R1EgS7kP
-	DqIZ33TIGReEjpZqoYJlA/xAYEAmuha7hm7iWrHbwS2E2FWUNilgBHqq7t/ZG/317Pe1zzTEzJBm9
-	kyRvQtIgGzJW48lvUFBaiOaaQa//zmUXspISaMTGqn+yK81NqoOox5lesJk2L7VznnmKbDHjpcr6k
-	hHGAgigpqFPhE4hYNEqhM9d83AlfUUNYqik8HBSHNarp2GcMrd9iXDea/PQyJf5Kn+TDJlW5v/0JQ
-	GbaOZw44FhEAgKX+nLr29Rcafjn550ko6zrYacazbBbr50YXBKFvD1c1KsndMKIMyq53x5rKK5fCY
-	AabBhFRtwhBn2fSUhuRA==;
+	List-Owner; bh=3TNMY81O2Tvu2CHfoltqudKtc3d54BSJDcwgfVdJi/A=; b=WKCN8TJp7NQwV5
+	TjyQhXoar+mhH7ITLN/a7jZsi6tFZ7wzc9M6+m3t97QpD5VRGIhLr12x4iizzY9x3hBiHYqVqpGFW
+	3NJOdDZ17fFxOtxGLMSm/y+zS8KZANBkneAGcIn5sgBdTEsKczuPkv8KZ2XOC/FP+IP9LroYSKL64
+	ybaUlogefq+CV8UG4p0EERJpsy20IPfZ5Gk7uBVfcSoKIk9/PzsN+hXD93n7Xw7HuUwZ0I2x542j1
+	J34SW/U7Bte9/XxrC1P3rVy6N8M2D5b0x1j+7GDBrOYeN6OfmUIAl65y0OqpKrtwbxzCHRLaYvdst
+	IcNdFsOCTcLKlp1ToDVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBBIi-00CREp-11;
-	Thu, 07 Dec 2023 10:08:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rBBNT-00CRy8-0e;
+	Thu, 07 Dec 2023 10:13:07 +0000
+Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBBIf-00CREF-13
+	id 1rBBNR-00CRxY-1A
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Dec 2023 10:08:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 034BF62054;
-	Thu,  7 Dec 2023 10:08:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01AEEC433C9;
-	Thu,  7 Dec 2023 10:08:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1701943687;
-	bh=+TtWj3u6F3zGN0JIXvl73oCLKKxPXp04JKwR9ZXgj3M=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LPPnoCwQQoWgHzBERudad0ncb3tnicMaEM1xQeqYyAMaMSeNXmNv5+N2ZGa6k2C/u
-	 fzwsvVRg4OcGLQw4HeVW/9YxXMauLsodfn2ww6y9Z8oNrgRVSfXZSBYyRhffOPKuUq
-	 WWWPpTNzmsmF60dK43Bme7ISlTk30HraApCZoLMs=
-Date: Thu, 7 Dec 2023 11:08:03 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Stanley Chang <stanley_chang@realtek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan@kernel.org>,
+	Thu, 07 Dec 2023 10:13:06 +0000
+Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-db544987c79so786100276.2
+        for <linux-phy@lists.infradead.org>; Thu, 07 Dec 2023 02:13:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1701943984; x=1702548784; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=e3B67B1TYSjUdt6Cc8K4XbRIZ1QzqkY0WH6+puDGmn4=;
+        b=dXw+n6yCo9tYMN1CyTXTUe0QN+eYCe4VixFT4QsIWlS1uHDnApnyqBVyNI6BZI6Ify
+         t5pcpE7F4YPO19zYmhLnEEx2PVaGfQspha+gSyxl20S8cpOj4LuhqSotpTVSNMKIXxGw
+         i7tsGPvIPsc7gvXqRqV7MFodZIRzAfqFY36Khk1WyaeOZwUsFPFyJ0z0ngyT4hMo4Aev
+         TkSgSsOjry86GswtQtO7RdQ7emulSeKM+g+csXbCPuYiyNc7GCxesbB0jHohjhed08Gl
+         gAVtCMULvhE03kjgzAdtjF4Kay8vzKfJd/7APTNvx6UT+0/EKcYa2TlEoU4Kp83mJAPi
+         T/iw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701943984; x=1702548784;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=e3B67B1TYSjUdt6Cc8K4XbRIZ1QzqkY0WH6+puDGmn4=;
+        b=Hy/OmgxwO9cQ58uL/upGwPxjfIF9vu73j9t9eqDapa28ebtBIgsZe3sYbY5urVCaT6
+         gxp9KOt7/ugY4QB/DCcsiNPggV2huabYz0EpLXcyVcKWIq3JePSIDqOWQBemtBzDQu3e
+         8JDx9Qza+ejdTW93z0/vNFnTb6125VAhwY5Ik9FrOs460+5VclaLibTNYFvMU2vMl/mp
+         3SL6PnF2V+2WpdDCiF90BTUjOXCWOme8ngdchdoZirpaLsBQbaefFmet+ftQROrmmhZu
+         krK2F4I7o4wgEUCIBrlMjVrY/zWiE15I4Wp9OpDq793ytLZ6wGdTm+NVX64Sps2zQCqf
+         fyKw==
+X-Gm-Message-State: AOJu0YzK2QVlfcd9TaiDopRwmuf6evWixze28df4/Nr4xcxY/p18imku
+	/7OEuTmTKLpbbES+7X4gQHvG
+X-Google-Smtp-Source: AGHT+IFNn1HUFDtLCOGTeA3m9Ta/i3bQvpYxwVgKKLYlxLDmi9pfv/W/T/9B2nxE7SkRSL3QSWQJtw==
+X-Received: by 2002:a25:243:0:b0:db5:4503:6de5 with SMTP id 64-20020a250243000000b00db545036de5mr1932607ybc.60.1701943983997;
+        Thu, 07 Dec 2023 02:13:03 -0800 (PST)
+Received: from thinkpad ([117.248.6.133])
+        by smtp.gmail.com with ESMTPSA id l13-20020a0cc20d000000b0067a22bb8d57sm373453qvh.56.2023.12.07.02.12.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 07 Dec 2023 02:13:03 -0800 (PST)
+Date: Thu, 7 Dec 2023 15:42:52 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Krishna Chaitanya Chundru <quic_krichai@quicinc.com>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Rob Herring <robh@kernel.org>, Jinjie Ruan <ruanjinjie@huawei.com>,
-	Alan Stern <stern@rowland.harvard.edu>, Roy Luo <royluo@google.com>,
-	Flavio Suligoi <f.suligoi@asem.it>,
-	Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 RESEND 4/4] usb: core: add phy notify connect and
- disconnect
-Message-ID: <2023120730-mouth-jolt-0170@gregkh>
-References: <20231207074022.14116-1-stanley_chang@realtek.com>
- <20231207074022.14116-4-stanley_chang@realtek.com>
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, quic_vbadigan@quicinc.com,
+	quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
+	quic_skananth@quicinc.com, quic_vpernami@quicinc.com,
+	quic_parass@quicinc.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,qmp: Add PCIe
+ qcom,refclk-always-on property
+Message-ID: <20231207101252.GJ2932@thinkpad>
+References: <78815f1b-7390-40de-8afd-ac71806f4051@linaro.org>
+ <24fae40a-453b-b14c-923f-88758a246aa7@quicinc.com>
+ <20231201060716.GJ4009@thinkpad>
+ <166d307e-7d1b-48b5-90db-9b6df01d87c2@linaro.org>
+ <20231201111033.GL4009@thinkpad>
+ <f844cd1e-7e4f-4836-bc9a-2e1ed13f064f@linaro.org>
+ <20231201123054.GM4009@thinkpad>
+ <3a7376aa-18a2-41cb-a4c9-680e735ce75b@linaro.org>
+ <20231206131009.GD12802@thinkpad>
+ <ZXGVjY9gYMD6-xFJ@hovoldconsulting.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231207074022.14116-4-stanley_chang@realtek.com>
+In-Reply-To: <ZXGVjY9gYMD6-xFJ@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_020809_453375_FFE0A84F 
-X-CRM114-Status: GOOD (  34.10  )
+X-CRM114-CacheID: sfid-20231207_021305_401796_C08BCAEC 
+X-CRM114-Status: GOOD (  12.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,233 +110,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 07, 2023 at 03:38:07PM +0800, Stanley Chang wrote:
-> In Realtek SoC, the parameter of usb phy is designed to can dynamic
-> tuning base on port status. Therefore, add a notify callback of generic
-> phy driver when usb device connect and disconnect change.
-> 
-> The Realtek phy driver is designed to dynamically adjust disconnection
-> level and calibrate phy parameters. When the device connected bit changes
-> and when the disconnected bit changes, do connection change notification:
-> 
-> Check if portstatus is USB_PORT_STAT_CONNECTION and portchange is
-> USB_PORT_STAT_C_CONNECTION.
-> 1. The device is connected, the driver lowers the disconnection level and
->    calibrates the phy parameters.
-> 2. The device disconnects, the driver increases the disconnect level and
->    calibrates the phy parameters.
-> 
-> Generic phy driver in usb core framework does not support device connect
-> and disconnect notifications. Therefore, we add an api to notify phy
-> the connection changes.
-> 
-> Additionally, the generic phy only specifies primary_hcd in the original
-> design. Added specific "usb2-phy" on primary_hcd and "usb3-phy" on
-> shared_hcd.
-> 
-> Signed-off-by: Stanley Chang <stanley_chang@realtek.com>
-> ---
-> v2 to v3:
->     No change
-> v1 to v2 change:
->     rebase the driver to remove the part of usb phy notify API
-> ---
->  drivers/usb/core/hcd.c | 14 +++++--
->  drivers/usb/core/hub.c | 29 +++++++++++++
->  drivers/usb/core/phy.c | 94 ++++++++++++++++++++++++++++++++++++++++++
->  drivers/usb/core/phy.h |  3 ++
->  4 files changed, 136 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/usb/core/hcd.c b/drivers/usb/core/hcd.c
-> index 12b6dfeaf658..992284461ad8 100644
-> --- a/drivers/usb/core/hcd.c
-> +++ b/drivers/usb/core/hcd.c
-> @@ -2794,10 +2794,16 @@ int usb_add_hcd(struct usb_hcd *hcd,
->  	struct usb_device *rhdev;
->  	struct usb_hcd *shared_hcd;
->  
-> -	if (!hcd->skip_phy_initialization && usb_hcd_is_primary_hcd(hcd)) {
-> -		hcd->phy_roothub = usb_phy_roothub_alloc(hcd->self.sysdev);
-> -		if (IS_ERR(hcd->phy_roothub))
-> -			return PTR_ERR(hcd->phy_roothub);
-> +	if (!hcd->skip_phy_initialization) {
-> +		if (usb_hcd_is_primary_hcd(hcd)) {
-> +			hcd->phy_roothub = usb_phy_roothub_alloc(hcd->self.sysdev);
-> +			if (IS_ERR(hcd->phy_roothub))
-> +				return PTR_ERR(hcd->phy_roothub);
-> +		} else {
-> +			hcd->phy_roothub = usb_phy_roothub_alloc_usb3_phy(hcd->self.sysdev);
-> +			if (IS_ERR(hcd->phy_roothub))
-> +				return PTR_ERR(hcd->phy_roothub);
-> +		}
->  
->  		retval = usb_phy_roothub_init(hcd->phy_roothub);
->  		if (retval)
-> diff --git a/drivers/usb/core/hub.c b/drivers/usb/core/hub.c
-> index 87480a6e6d93..65c0454ee70a 100644
-> --- a/drivers/usb/core/hub.c
-> +++ b/drivers/usb/core/hub.c
-> @@ -37,6 +37,7 @@
->  #include <asm/byteorder.h>
->  
->  #include "hub.h"
-> +#include "phy.h"
->  #include "otg_productlist.h"
->  
->  #define USB_VENDOR_GENESYS_LOGIC		0x05e3
-> @@ -622,6 +623,34 @@ static int hub_ext_port_status(struct usb_hub *hub, int port1, int type,
->  		ret = 0;
->  	}
->  	mutex_unlock(&hub->status_mutex);
-> +
-> +	/*
-> +	 * There is no need to lock status_mutex here, because status_mutex
-> +	 * protects hub->status, and the phy driver only checks the port
-> +	 * status without changing the status.
-> +	 */
-> +	if (!ret) {
-> +		struct usb_device *hdev = hub->hdev;
-> +
-> +		/*
-> +		 * Only roothub will be notified of connection changes,
-> +		 * since the USB PHY only cares about changes at the next
-> +		 * level.
-> +		 */
-> +		if (is_root_hub(hdev)) {
-> +			struct usb_hcd *hcd = bus_to_hcd(hdev->bus);
-> +			bool connect;
-> +			bool connect_change;
-> +
-> +			connect_change = *change & USB_PORT_STAT_C_CONNECTION;
-> +			connect = *status & USB_PORT_STAT_CONNECTION;
-> +			if (connect_change && connect)
-> +				usb_phy_roothub_notify_connect(hcd->phy_roothub, port1 - 1);
-> +			else if (connect_change)
-> +				usb_phy_roothub_notify_disconnect(hcd->phy_roothub, port1 - 1);
-> +		}
-> +	}
-> +
->  	return ret;
->  }
->  
-> diff --git a/drivers/usb/core/phy.c b/drivers/usb/core/phy.c
-> index fb1588e7c282..26585fc1ec32 100644
-> --- a/drivers/usb/core/phy.c
-> +++ b/drivers/usb/core/phy.c
-> @@ -19,6 +19,29 @@ struct usb_phy_roothub {
->  	struct list_head	list;
->  };
->  
-> +static int usb_phy_roothub_add_phy_by_name(struct device *dev, const char *name,
-> +					   struct list_head *list)
-> +{
-> +	struct usb_phy_roothub *roothub_entry;
-> +	struct phy *phy;
-> +
-> +	phy = devm_of_phy_get(dev, dev->of_node, name);
-> +	if (IS_ERR(phy))
-> +		return PTR_ERR(phy);
-> +
-> +	roothub_entry = devm_kzalloc(dev, sizeof(*roothub_entry), GFP_KERNEL);
-> +	if (!roothub_entry)
-> +		return -ENOMEM;
-> +
-> +	INIT_LIST_HEAD(&roothub_entry->list);
-> +
-> +	roothub_entry->phy = phy;
-> +
-> +	list_add_tail(&roothub_entry->list, list);
-> +
-> +	return 0;
-> +}
-> +
->  static int usb_phy_roothub_add_phy(struct device *dev, int index,
->  				   struct list_head *list)
->  {
-> @@ -65,6 +88,9 @@ struct usb_phy_roothub *usb_phy_roothub_alloc(struct device *dev)
->  
->  	INIT_LIST_HEAD(&phy_roothub->list);
->  
-> +	if (!usb_phy_roothub_add_phy_by_name(dev, "usb2-phy", &phy_roothub->list))
-> +		return phy_roothub;
-> +
->  	for (i = 0; i < num_phys; i++) {
->  		err = usb_phy_roothub_add_phy(dev, i, &phy_roothub->list);
->  		if (err)
-> @@ -75,6 +101,32 @@ struct usb_phy_roothub *usb_phy_roothub_alloc(struct device *dev)
->  }
->  EXPORT_SYMBOL_GPL(usb_phy_roothub_alloc);
->  
-> +struct usb_phy_roothub *usb_phy_roothub_alloc_usb3_phy(struct device *dev)
-> +{
-> +	struct usb_phy_roothub *phy_roothub;
-> +	int num_phys;
-> +
-> +	if (!IS_ENABLED(CONFIG_GENERIC_PHY))
-> +		return NULL;
-> +
-> +	num_phys = of_count_phandle_with_args(dev->of_node, "phys",
-> +					      "#phy-cells");
-> +	if (num_phys <= 0)
-> +		return NULL;
-> +
-> +	phy_roothub = devm_kzalloc(dev, sizeof(*phy_roothub), GFP_KERNEL);
-> +	if (!phy_roothub)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	INIT_LIST_HEAD(&phy_roothub->list);
-> +
-> +	if (!usb_phy_roothub_add_phy_by_name(dev, "usb3-phy", &phy_roothub->list))
-> +		return phy_roothub;
-> +
-> +	return NULL;
-> +}
-> +EXPORT_SYMBOL_GPL(usb_phy_roothub_alloc_usb3_phy);
-> +
->  int usb_phy_roothub_init(struct usb_phy_roothub *phy_roothub)
->  {
->  	struct usb_phy_roothub *roothub_entry;
-> @@ -172,6 +224,48 @@ int usb_phy_roothub_calibrate(struct usb_phy_roothub *phy_roothub)
->  }
->  EXPORT_SYMBOL_GPL(usb_phy_roothub_calibrate);
->  
-> +int usb_phy_roothub_notify_connect(struct usb_phy_roothub *phy_roothub, int port)
-> +{
-> +	struct usb_phy_roothub *roothub_entry;
-> +	struct list_head *head;
-> +	int err;
-> +
-> +	if (!phy_roothub)
-> +		return 0;
-
-How can phy_roothub ever be NULL?
-
-> +
-> +	head = &phy_roothub->list;
-> +
-> +	list_for_each_entry(roothub_entry, head, list) {
-> +		err = phy_notify_connect(roothub_entry->phy, port);
-> +		if (err)
-> +			return err;
-> +	}
->
-
-You walk a list with no locking at all?  That does not seem right at
-all.
-
-Also, this is a new function that is exported with no documentation?
-Please fix.
-
-thanks,
-
-greg k-h
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBEZWMgMDcsIDIwMjMgYXQgMTA6NTE6MDlBTSArMDEwMCwgSm9oYW4gSG92b2xkIHdy
+b3RlOgo+IE9uIFdlZCwgRGVjIDA2LCAyMDIzIGF0IDA2OjQwOjA5UE0gKzA1MzAsIE1hbml2YW5u
+YW4gU2FkaGFzaXZhbSB3cm90ZToKPiAKPiA+IE9LLiBIb3cgYWJvdXQsICJxY29tLGJyb2tlbi1y
+ZWZjbGsiPyBUaGlzIHJlZmxlY3RzIHRoZSBmYWN0IHRoYXQgdGhlIGRlZmF1bHQKPiA+IHJlZmNs
+ayBvcGVyYXRpb24gaXMgYnJva2VuIG9uIHRoaXMgcGxhdGZvcm0sIHNvIHRoZSBPUyBzaG91bGQg
+YmUgcHJlcGFyZWQgZm9yCj4gPiBpdCAoYnkga2VlcGluZyBpdCBhbHdheXMgb24pLgo+IAo+IFNo
+b3VsZG4ndCB0aGF0IGJlCj4gCj4gCXFjb20sYnJva2VuLWNsa3JlcQo+IAo+IHNpbmNlIGl0cyB0
+aGUgQ0xLUkVRIyBzaWduYWwgdXNlZCB0byByZXF1ZXN0IFJFRkNMSyB0aGF0IGlzIGJyb2tlbiwg
+bm90Cj4gdGhlIFJFRkNMSyBpdHNlbGY/Cj4gCgpEYXJuLi4uIFlvdSBhcmUgcmlnaHQuIEkgZ290
+IGNhcnJpZWQgYXdheSBieSB0aGUgaW5pdGlhbCBwcm9wZXJ0eSBuYW1lLiBUaGFua3MKZm9yIHNw
+b3R0aW5nIQoKLSBNYW5pCgo+IEpvaGFuCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+N
+IOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
