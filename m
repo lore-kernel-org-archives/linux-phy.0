@@ -4,69 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACE3C10DC3
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Dec 2023 18:33:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3A12C4167B
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Dec 2023 18:34:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gUZKEweRAAnFONtIzAVI/vOAKYSJgAU1z5HfM5LKk4o=; b=BTRqAFZAnZCJMY
-	3+PilqVyGiXheR4Dk8lCuXExqLch2BOwWfh+WKNxTpEiIzCNwwW8swruzoABzeVJ7rX8p8wJUKM5u
-	DYEOw/VQQ/wIERsni/FK3uhZ8dbU9hPgDvFkbQqC6PpyTQEZWcSDhy/hBh4bg+XWfmO1ntdGDtkH3
-	xhQD3jiwbin/vtxo5d++rypa3ePWfrBUu/ti2g1PbtWORBTvmwG8NjSN6wzXiTJ7UseoIpxlQfstg
-	Vvhs0Qi7pbtBiYmi8lRKSF8sIMqmNtG33w9NfjrPCWjyKRwIGN4Jk0ZRipdDOWGhTXF28PmzKJuQp
-	M8NpX5ET8D/a+v4Ac/Qg==;
+	List-Owner; bh=yMIe4nkaBr5ifBV0g7QRJjpNMIwJaHADe735r3d8mHk=; b=IzloYhBuk4AtXw
+	NvNzQdfpaz3kZn7kyo2TLoRAISdtXvhYmnoB9F+P5MdyJ5pCJ72v5RrPexvbrpby7UuUqy2gICmfc
+	SueAPCur8zeJZEp9JHxl2TG5QU0d4DCNfgf5bT8gtlazH8pNwc75q8nOblaa68rsxYmnkLXtYROQR
+	xlm0PpmmGGGD4sH50yHOo9HdXB4Wpow2vDll20hMh8TXWR+VhCr9XLH8SVp1hBW3SQIsK1NJ8eq9o
+	vBW0bqmUfM2RJ3gmMuUkjCRCeZylZiSJdDgDaQ7KXYdcEYKo8aueN2/F6AAwsU8LtPVPDVmcmfbZI
+	KWC9RbIKGJQlYoW/gr/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rCl5v-006xPC-1g;
-	Mon, 11 Dec 2023 18:33:31 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rCl5f-006xBt-0u;
-	Mon, 11 Dec 2023 18:33:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=Yx/iN2e/UUXXv4odNw1PrUQv1/sBds6u8ptetj9Y7lY=; b=AelzUHQu07loQVZYhclZslJGoh
-	Ggac28Ac9anYjsEYX9tE+pMGtrxM7ouPmHI76LNtnOSmw3f5bSQp5C9zUFuRRXJsjiwev9IDqkysJ
-	UZMki8ubneIv/nLsjDK80ixuLtL35tdijvwOVIUCheTtSfepBWfd+TpRHPk5aon+5MvApFx7qCxmu
-	I6g6adG5NavJ/MOrJsDQaEUQu6q9ImbqjRckiYj/zaDuN465Hg01N3U9iT+CbasHx/jTgeubipyx/
-	Rs2aSn6sU8OE7ABHxxPF/v33mcTVJ99EoCaftIQ3+jGGaKT279/13ZpVpL41XtCV3sVLu0gGYP7hM
-	XCsxssFA==;
+	id 1rCl6f-006y5a-1a;
+	Mon, 11 Dec 2023 18:34:17 +0000
 Received: from mx07-00178001.pphosted.com ([185.132.182.106])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rCl5b-008AuL-27;
-	Mon, 11 Dec 2023 18:33:14 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 3BBBp5CV026654;
-	Mon, 11 Dec 2023 19:32:42 +0100
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1rCl6c-006y1d-0v;
+	Mon, 11 Dec 2023 18:34:16 +0000
+Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 3BBGvwAD028269;
+	Mon, 11 Dec 2023 19:33:55 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	selector1; bh=Yx/iN2e/UUXXv4odNw1PrUQv1/sBds6u8ptetj9Y7lY=; b=j+
-	OG/A9I1IKBdAWxX2NrSkvaZTb92O6JLyMzrMTQUqCQnjr4ZH5QUV1ST7sgq2eVaZ
-	8yLxSMwXjiWfDwVMOBSIarCAVDoayeN5uhWb66D8oprFEuifzSTIljZBFQvx5XZF
-	B0EVyYVG4PX3RpokIQf5bkCIm0sNIUnnbax8zRLee3Op9851xw2qoqjff13jDu2Z
-	2pF644bnjtY4/UVxd8w/6e5z/5hsd0Xxjfxfzfw4g6CcBiO1CzNblb9Xeo5IdydB
-	dpVPTdV7LOumlYDNe+DIZxVvsp4TTHbVF3LEsZkAiSH11Yel2u8xceYUlMAdPBvX
-	uYkrZqmJxVZtUcC/I8DA==
+	selector1; bh=tCUW8JVJxiCXy3e4884VwBZTRydYUxiUaxHX/uPyrOg=; b=di
+	SNNXuEmf/HJ+sXAi6QbkkKqzzAingxRlsQBuelWt3DM51wxb5vjjS2itjNvqohWf
+	G84S2NgL+GbGzVN60uZjW1wM0twSXQUzDFYY0YrkYbjLLjJSAkbr3HcOQ8hRgTqq
+	sFS/mHsEA/3SRp01o1+reD/ZNcV7u6Mitue9KMvSdT5p6ljzcyA+VflsBQYxqFFr
+	M6mQRonNcKeF7H1brrfkKo3BChViDdKPzDxtY3a3WAJzbKmYLLIqHmHlOjSafPNi
+	kKUPqnWVM2T08+WShhBU/QxJW8abc8SqO+ni1bWHBLaiIgEcSp7x8qM2TfMcopEm
+	0VJyOYDsl9f47Xb1XIUg==
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3uvgf1g0s5-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3uw2p4p2t5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 11 Dec 2023 19:32:42 +0100 (CET)
+	Mon, 11 Dec 2023 19:33:55 +0100 (CET)
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id F321210005C;
-	Mon, 11 Dec 2023 19:32:41 +0100 (CET)
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4ED92100060;
+	Mon, 11 Dec 2023 19:33:55 +0100 (CET)
 Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E2DBB23BE03;
-	Mon, 11 Dec 2023 19:32:41 +0100 (CET)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4254E257AA8;
+	Mon, 11 Dec 2023 19:33:55 +0100 (CET)
 Received: from localhost (10.252.9.5) by SHFDAG1NODE1.st.com (10.75.129.69)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Mon, 11 Dec
- 2023 19:32:41 +0100
+ 2023 19:33:54 +0100
 From: Gatien Chevallier <gatien.chevallier@foss.st.com>
 To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
         <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
@@ -92,9 +78,9 @@ CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-usb@vger.kernel.org>,
         Gatien Chevallier
 	<gatien.chevallier@foss.st.com>
-Subject: [PATCH v7 04/13] dt-bindings: bus: document ETZPC
-Date: Mon, 11 Dec 2023 19:30:35 +0100
-Message-ID: <20231211183044.808204-5-gatien.chevallier@foss.st.com>
+Subject: [PATCH v7 09/13] bus: etzpc: introduce ETZPC firewall controller driver
+Date: Mon, 11 Dec 2023 19:30:40 +0100
+Message-ID: <20231211183044.808204-10-gatien.chevallier@foss.st.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20231211183044.808204-1-gatien.chevallier@foss.st.com>
 References: <20231211183044.808204-1-gatien.chevallier@foss.st.com>
@@ -106,8 +92,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-12-11_08,2023-12-07_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231211_183311_900339_F2F6599B 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20231211_103414_628882_56C0B935 
+X-CRM114-Status: GOOD (  21.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,130 +110,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document ETZPC (Extended TrustZone protection controller). ETZPC is a
-firewall controller.
+ETZPC is a peripheral and memory firewall controller that filter accesses
+based on Arm TrustZone secure state and Arm CPU privilege execution level.
+It handles MCU isolation as well.
 
 Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
 ---
 
-Changes in V6:
-    	- Renamed access-controller to access-controllers
-    	- Removal of access-control-provider property
-    	- Removal of access-controller and access-controller-names
-    	  declaration in the patternProperties field. Add
-    	  additionalProperties: true in this field.
-
-Changes in V5:
-	- Renamed feature-domain* to access-control*
-
 Changes in V2:
-	- Corrected errors highlighted by Rob's robot
-	- No longer define the maxItems for the "feature-domains"
-	  property
-	- Fix example (node name, status)
-	- Declare "feature-domain-names" as an optional
-	  property for child nodes
-	- Fix description of "feature-domains" property
-	- Reordered the properties so it matches ETZPC
-	- Add missing "feature-domain-controller" property
+	- Add controller name
+	- Driver is now a module_platform_driver
+	- Use error code returned by stm32_firewall_populate_bus()
+	- Fix license
 
- .../bindings/bus/st,stm32-etzpc.yaml          | 87 +++++++++++++++++++
- 1 file changed, 87 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+ MAINTAINERS               |   1 +
+ drivers/bus/Makefile      |   2 +-
+ drivers/bus/stm32_etzpc.c | 141 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 143 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/bus/stm32_etzpc.c
 
-diff --git a/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+diff --git a/MAINTAINERS b/MAINTAINERS
+index a1152438b52d..b83b471c8b73 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -20433,6 +20433,7 @@ F:	drivers/media/i2c/st-mipid02.c
+ ST STM32 FIREWALL
+ M:	Gatien Chevallier <gatien.chevallier@foss.st.com>
+ S:	Maintained
++F:	drivers/bus/stm32_etzpc.c
+ F:	drivers/bus/stm32_firewall.c
+ F:	drivers/bus/stm32_rifsc.c
+ 
+diff --git a/drivers/bus/Makefile b/drivers/bus/Makefile
+index e50d18e1d141..cddd4984d6af 100644
+--- a/drivers/bus/Makefile
++++ b/drivers/bus/Makefile
+@@ -26,7 +26,7 @@ obj-$(CONFIG_OMAP_INTERCONNECT)	+= omap_l3_smx.o omap_l3_noc.o
+ obj-$(CONFIG_OMAP_OCP2SCP)	+= omap-ocp2scp.o
+ obj-$(CONFIG_QCOM_EBI2)		+= qcom-ebi2.o
+ obj-$(CONFIG_QCOM_SSC_BLOCK_BUS)	+= qcom-ssc-block-bus.o
+-obj-$(CONFIG_STM32_FIREWALL)	+= stm32_firewall.o stm32_rifsc.o
++obj-$(CONFIG_STM32_FIREWALL)	+= stm32_firewall.o stm32_rifsc.o stm32_etzpc.o
+ obj-$(CONFIG_SUN50I_DE2_BUS)	+= sun50i-de2.o
+ obj-$(CONFIG_SUNXI_RSB)		+= sunxi-rsb.o
+ obj-$(CONFIG_OF)		+= simple-pm-bus.o
+diff --git a/drivers/bus/stm32_etzpc.c b/drivers/bus/stm32_etzpc.c
 new file mode 100644
-index 000000000000..9ca0ad39bc19
+index 000000000000..7fc0f16960be
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
-@@ -0,0 +1,87 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/bus/st,stm32-etzpc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/bus/stm32_etzpc.c
+@@ -0,0 +1,141 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
++ */
 +
-+title: STM32 Extended TrustZone protection controller
++#include <linux/bitfield.h>
++#include <linux/bits.h>
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/init.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_platform.h>
++#include <linux/platform_device.h>
++#include <linux/types.h>
 +
-+description: |
-+  The ETZPC configures TrustZone security in a SoC having bus masters and
-+  devices with programmable-security attributes (securable resources).
++#include "stm32_firewall.h"
 +
-+maintainers:
-+  - Gatien Chevallier <gatien.chevallier@foss.st.com>
++/*
++ * ETZPC registers
++ */
++#define ETZPC_DECPROT			0x10
++#define ETZPC_HWCFGR			0x3F0
 +
-+properties:
-+  compatible:
-+    contains:
-+      const: st,stm32-etzpc
++/*
++ * HWCFGR register
++ */
++#define ETZPC_HWCFGR_NUM_TZMA		GENMASK(7, 0)
++#define ETZPC_HWCFGR_NUM_PER_SEC	GENMASK(15, 8)
++#define ETZPC_HWCFGR_NUM_AHB_SEC	GENMASK(23, 16)
++#define ETZPC_HWCFGR_CHUNKS1N4		GENMASK(31, 24)
 +
-+  reg:
-+    maxItems: 1
++/*
++ * ETZPC miscellaneous
++ */
++#define ETZPC_PROT_MASK			GENMASK(1, 0)
++#define ETZPC_PROT_A7NS			0x3
++#define ETZPC_DECPROT_SHIFT		1
 +
-+  "#address-cells":
-+    const: 1
++#define IDS_PER_DECPROT_REGS		16
 +
-+  "#size-cells":
-+    const: 1
++static int stm32_etzpc_grant_access(struct stm32_firewall_controller *ctrl, u32 firewall_id)
++{
++	u32 offset, reg_offset, sec_val;
 +
-+  ranges: true
++	if (firewall_id >= ctrl->max_entries) {
++		dev_err(ctrl->dev, "Invalid sys bus ID %u", firewall_id);
++		return -EINVAL;
++	}
 +
-+  "#access-controller-cells":
-+    const: 1
-+    description:
-+      Contains the firewall ID associated to the peripheral.
++	/* Check access configuration, 16 peripherals per register */
++	reg_offset = ETZPC_DECPROT + 0x4 * (firewall_id / IDS_PER_DECPROT_REGS);
++	offset = (firewall_id % IDS_PER_DECPROT_REGS) << ETZPC_DECPROT_SHIFT;
 +
-+patternProperties:
-+  "^.*@[0-9a-f]+$":
-+    description: Peripherals
-+    type: object
++	/* Verify peripheral is non-secure and attributed to cortex A7 */
++	sec_val = (readl(ctrl->mmio + reg_offset) >> offset) & ETZPC_PROT_MASK;
++	if (sec_val != ETZPC_PROT_A7NS) {
++		dev_dbg(ctrl->dev, "Invalid bus configuration: reg_offset %#x, value %d\n",
++			reg_offset, sec_val);
++		return -EACCES;
++	}
 +
-+    additionalProperties: true
++	return 0;
++}
 +
-+    required:
-+      - access-controllers
++static void stm32_etzpc_release_access(struct stm32_firewall_controller *ctrl __maybe_unused,
++				       u32 firewall_id __maybe_unused)
++{
++}
 +
-+required:
-+  - compatible
-+  - reg
-+  - "#address-cells"
-+  - "#size-cells"
-+  - "#access-controller-cells"
-+  - ranges
++static int stm32_etzpc_probe(struct platform_device *pdev)
++{
++	struct stm32_firewall_controller *etzpc_controller;
++	struct device_node *np = pdev->dev.of_node;
++	u32 nb_per, nb_master;
++	struct resource *res;
++	void __iomem *mmio;
++	int rc;
 +
-+additionalProperties: false
++	etzpc_controller = devm_kzalloc(&pdev->dev, sizeof(*etzpc_controller), GFP_KERNEL);
++	if (!etzpc_controller)
++		return -ENOMEM;
 +
-+examples:
-+  - |
-+    // In this example, the usart2 device refers to rifsc as its access
-+    // controller.
-+    // Access rights are verified before creating devices.
++	mmio = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
++	if (IS_ERR(mmio))
++		return PTR_ERR(mmio);
 +
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp13-clks.h>
-+    #include <dt-bindings/reset/stm32mp13-resets.h>
++	etzpc_controller->dev = &pdev->dev;
++	etzpc_controller->mmio = mmio;
++	etzpc_controller->name = dev_driver_string(etzpc_controller->dev);
++	etzpc_controller->type = STM32_PERIPHERAL_FIREWALL | STM32_MEMORY_FIREWALL;
++	etzpc_controller->grant_access = stm32_etzpc_grant_access;
++	etzpc_controller->release_access = stm32_etzpc_release_access;
 +
-+    etzpc: bus@5c007000 {
-+        compatible = "st,stm32-etzpc";
-+        reg = <0x5c007000 0x400>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        #access-controller-cells = <1>;
-+        ranges;
++	/* Get number of etzpc entries*/
++	nb_per = FIELD_GET(ETZPC_HWCFGR_NUM_PER_SEC,
++			   readl(etzpc_controller->mmio + ETZPC_HWCFGR));
++	nb_master = FIELD_GET(ETZPC_HWCFGR_NUM_AHB_SEC,
++			      readl(etzpc_controller->mmio + ETZPC_HWCFGR));
++	etzpc_controller->max_entries = nb_per + nb_master;
 +
-+        usart2: serial@4c001000 {
-+            compatible = "st,stm32h7-uart";
-+            reg = <0x4c001000 0x400>;
-+            interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
-+            clocks = <&rcc USART2_K>;
-+            resets = <&rcc USART2_R>;
-+            wakeup-source;
-+            dmas = <&dmamux1 43 0x400 0x5>,
-+                    <&dmamux1 44 0x400 0x1>;
-+            dma-names = "rx", "tx";
-+            access-controllers = <&etzpc 17>;
-+        };
-+    };
++	platform_set_drvdata(pdev, etzpc_controller);
++
++	rc = stm32_firewall_controller_register(etzpc_controller);
++	if (rc) {
++		dev_err(etzpc_controller->dev, "Couldn't register as a firewall controller: %d",
++			rc);
++		return rc;
++	}
++
++	rc = stm32_firewall_populate_bus(etzpc_controller);
++	if (rc) {
++		dev_err(etzpc_controller->dev, "Couldn't populate ETZPC bus: %d",
++			rc);
++		return rc;
++	}
++
++	/* Populate all allowed nodes */
++	return of_platform_populate(np, NULL, NULL, &pdev->dev);
++}
++
++static const struct of_device_id stm32_etzpc_of_match[] = {
++	{ .compatible = "st,stm32-etzpc" },
++	{}
++};
++MODULE_DEVICE_TABLE(of, stm32_etzpc_of_match);
++
++static struct platform_driver stm32_etzpc_driver = {
++	.probe  = stm32_etzpc_probe,
++	.driver = {
++		.name = "stm32-etzpc",
++		.of_match_table = stm32_etzpc_of_match,
++	},
++};
++module_platform_driver(stm32_etzpc_driver);
++
++MODULE_AUTHOR("Gatien Chevallier <gatien.chevallier@foss.st.com>");
++MODULE_DESCRIPTION("STMicroelectronics ETZPC driver");
++MODULE_LICENSE("GPL");
 -- 
 2.35.3
 
