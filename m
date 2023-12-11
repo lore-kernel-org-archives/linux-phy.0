@@ -4,55 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A4F5C4167B
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Dec 2023 18:33:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACE3C10DC3
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Dec 2023 18:33:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NvMbeg72yBLARIOaQoi3skoLbo8yXfsO7KBHKI6Cgd8=; b=WlPqpyuPPNnsCk
-	3R/ZiCF4vj6hOYNnXdeY4gl3/PddKHrRTI1zhgnO2jcD7HqI6+gGj9C+C7GA40LVBDVxuVPIo6q85
-	8+ALvMTskjvN1ugRcqsg7KrnTYd0yJQij+w2aVlq4QjcLCmQp40+9BTkK8TFi+ekKItocN09b+KNT
-	Pjan5oKEMJyT/UYoSeEjTvfKHWLqRbEoBSQ7yNEVACUmWDiA6B97nuNX/YtOFpIGEfUw2x2eHMNoG
-	dCez43fw/ikL2LvwT/DTOwTEzKQxBU7UTxzfegPJlCs9+3v+h+xB7EyU3l/maai7URApl44R40NCS
-	ciXzbxSoU0ulq+mSfiSA==;
+	List-Owner; bh=gUZKEweRAAnFONtIzAVI/vOAKYSJgAU1z5HfM5LKk4o=; b=BTRqAFZAnZCJMY
+	3+PilqVyGiXheR4Dk8lCuXExqLch2BOwWfh+WKNxTpEiIzCNwwW8swruzoABzeVJ7rX8p8wJUKM5u
+	DYEOw/VQQ/wIERsni/FK3uhZ8dbU9hPgDvFkbQqC6PpyTQEZWcSDhy/hBh4bg+XWfmO1ntdGDtkH3
+	xhQD3jiwbin/vtxo5d++rypa3ePWfrBUu/ti2g1PbtWORBTvmwG8NjSN6wzXiTJ7UseoIpxlQfstg
+	Vvhs0Qi7pbtBiYmi8lRKSF8sIMqmNtG33w9NfjrPCWjyKRwIGN4Jk0ZRipdDOWGhTXF28PmzKJuQp
+	M8NpX5ET8D/a+v4Ac/Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rCl5u-006xNW-0C;
-	Mon, 11 Dec 2023 18:33:30 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1rCl5v-006xPC-1g;
+	Mon, 11 Dec 2023 18:33:31 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rCl5Z-006x7a-1j;
-	Mon, 11 Dec 2023 18:33:16 +0000
-Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 3BBGv9lb032113;
-	Mon, 11 Dec 2023 19:32:44 +0100
+	id 1rCl5f-006xBt-0u;
+	Mon, 11 Dec 2023 18:33:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=Yx/iN2e/UUXXv4odNw1PrUQv1/sBds6u8ptetj9Y7lY=; b=AelzUHQu07loQVZYhclZslJGoh
+	Ggac28Ac9anYjsEYX9tE+pMGtrxM7ouPmHI76LNtnOSmw3f5bSQp5C9zUFuRRXJsjiwev9IDqkysJ
+	UZMki8ubneIv/nLsjDK80ixuLtL35tdijvwOVIUCheTtSfepBWfd+TpRHPk5aon+5MvApFx7qCxmu
+	I6g6adG5NavJ/MOrJsDQaEUQu6q9ImbqjRckiYj/zaDuN465Hg01N3U9iT+CbasHx/jTgeubipyx/
+	Rs2aSn6sU8OE7ABHxxPF/v33mcTVJ99EoCaftIQ3+jGGaKT279/13ZpVpL41XtCV3sVLu0gGYP7hM
+	XCsxssFA==;
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1rCl5b-008AuL-27;
+	Mon, 11 Dec 2023 18:33:14 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 3BBBp5CV026654;
+	Mon, 11 Dec 2023 19:32:42 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	selector1; bh=DiieVn9d7KbENVUVaHD9nfqKTKTU8p3WjCoDe+RaB88=; b=Dn
-	gPqoOqdCwzx5VmPF/jeRbKrIv39LT/CTyVyH83QSh5xEvEMZ+w9ai+cbjS4INzpT
-	DjHDNIGKS/jUwEIs0uB+/OUPr+lvV75AxIx24SZq7BhQJCkSW9fvExtGSOD9N29c
-	ug7WTk3AhCe/9LhWHysj4b5E6v8RjNIpsW67+G2TgrgVpNKqpLN/UdcP2XLIwf6O
-	Zj7ObIeEJm3+KGLhtnDObm3Mkk0M5mMSTZPDfZ7wyluxiqh2CgKj4EmODFMAvyMu
-	U46TUk2tCamqWVv8RrsqViM0rYqVKv8O0XZ9q6beJmTFK3/bG6w1h6PTMxu4Qn04
-	5OTczoGT0IwEYG7T9Z4g==
+	selector1; bh=Yx/iN2e/UUXXv4odNw1PrUQv1/sBds6u8ptetj9Y7lY=; b=j+
+	OG/A9I1IKBdAWxX2NrSkvaZTb92O6JLyMzrMTQUqCQnjr4ZH5QUV1ST7sgq2eVaZ
+	8yLxSMwXjiWfDwVMOBSIarCAVDoayeN5uhWb66D8oprFEuifzSTIljZBFQvx5XZF
+	B0EVyYVG4PX3RpokIQf5bkCIm0sNIUnnbax8zRLee3Op9851xw2qoqjff13jDu2Z
+	2pF644bnjtY4/UVxd8w/6e5z/5hsd0Xxjfxfzfw4g6CcBiO1CzNblb9Xeo5IdydB
+	dpVPTdV7LOumlYDNe+DIZxVvsp4TTHbVF3LEsZkAiSH11Yel2u8xceYUlMAdPBvX
+	uYkrZqmJxVZtUcC/I8DA==
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3uw2p4p2qg-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3uvgf1g0s5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 11 Dec 2023 19:32:44 +0100 (CET)
+	Mon, 11 Dec 2023 19:32:42 +0100 (CET)
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DB6C5100062;
-	Mon, 11 Dec 2023 19:32:43 +0100 (CET)
+	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id F321210005C;
+	Mon, 11 Dec 2023 19:32:41 +0100 (CET)
 Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CE8A323BE03;
-	Mon, 11 Dec 2023 19:32:43 +0100 (CET)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E2DBB23BE03;
+	Mon, 11 Dec 2023 19:32:41 +0100 (CET)
 Received: from localhost (10.252.9.5) by SHFDAG1NODE1.st.com (10.75.129.69)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Mon, 11 Dec
- 2023 19:32:43 +0100
+ 2023 19:32:41 +0100
 From: Gatien Chevallier <gatien.chevallier@foss.st.com>
 To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
         <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
@@ -78,9 +92,9 @@ CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-usb@vger.kernel.org>,
         Gatien Chevallier
 	<gatien.chevallier@foss.st.com>
-Subject: [PATCH v7 07/13] bus: rifsc: introduce RIFSC firewall controller driver
-Date: Mon, 11 Dec 2023 19:30:38 +0100
-Message-ID: <20231211183044.808204-8-gatien.chevallier@foss.st.com>
+Subject: [PATCH v7 04/13] dt-bindings: bus: document ETZPC
+Date: Mon, 11 Dec 2023 19:30:35 +0100
+Message-ID: <20231211183044.808204-5-gatien.chevallier@foss.st.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20231211183044.808204-1-gatien.chevallier@foss.st.com>
 References: <20231211183044.808204-1-gatien.chevallier@foss.st.com>
@@ -92,8 +106,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-12-11_08,2023-12-07_01,2023-05-22_02
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231211_103313_893626_5CF4F65C 
-X-CRM114-Status: GOOD (  26.01  )
+X-CRM114-CacheID: sfid-20231211_183311_900339_F2F6599B 
+X-CRM114-Status: GOOD (  13.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,312 +124,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RIFSC is a peripheral firewall controller that filter accesses based on
-Arm TrustZone secure state, Arm CPU privilege execution level and
-Compartment IDentification of the STM32 SoC subsystems.
+Document ETZPC (Extended TrustZone protection controller). ETZPC is a
+firewall controller.
 
 Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
 ---
 
-Changes in V4:
-	- Fix incorrect use of __set_bit() in
-	- stm32_rif_acquire_semaphore()
+Changes in V6:
+    	- Renamed access-controller to access-controllers
+    	- Removal of access-control-provider property
+    	- Removal of access-controller and access-controller-names
+    	  declaration in the patternProperties field. Add
+    	  additionalProperties: true in this field.
+
+Changes in V5:
+	- Renamed feature-domain* to access-control*
 
 Changes in V2:
-	- Add controller name
-	- Driver is now a module_platform_driver
-	- Use error code returned by stm32_firewall_populate_bus()
-	- Fix license
+	- Corrected errors highlighted by Rob's robot
+	- No longer define the maxItems for the "feature-domains"
+	  property
+	- Fix example (node name, status)
+	- Declare "feature-domain-names" as an optional
+	  property for child nodes
+	- Fix description of "feature-domains" property
+	- Reordered the properties so it matches ETZPC
+	- Add missing "feature-domain-controller" property
 
- MAINTAINERS               |   1 +
- drivers/bus/Makefile      |   2 +-
- drivers/bus/stm32_rifsc.c | 252 ++++++++++++++++++++++++++++++++++++++
- 3 files changed, 254 insertions(+), 1 deletion(-)
- create mode 100644 drivers/bus/stm32_rifsc.c
+ .../bindings/bus/st,stm32-etzpc.yaml          | 87 +++++++++++++++++++
+ 1 file changed, 87 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 774c7e1601d8..a1152438b52d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -20434,6 +20434,7 @@ ST STM32 FIREWALL
- M:	Gatien Chevallier <gatien.chevallier@foss.st.com>
- S:	Maintained
- F:	drivers/bus/stm32_firewall.c
-+F:	drivers/bus/stm32_rifsc.c
- 
- ST STM32 I2C/SMBUS DRIVER
- M:	Pierre-Yves MORDRET <pierre-yves.mordret@foss.st.com>
-diff --git a/drivers/bus/Makefile b/drivers/bus/Makefile
-index fc0511450ec2..e50d18e1d141 100644
---- a/drivers/bus/Makefile
-+++ b/drivers/bus/Makefile
-@@ -26,7 +26,7 @@ obj-$(CONFIG_OMAP_INTERCONNECT)	+= omap_l3_smx.o omap_l3_noc.o
- obj-$(CONFIG_OMAP_OCP2SCP)	+= omap-ocp2scp.o
- obj-$(CONFIG_QCOM_EBI2)		+= qcom-ebi2.o
- obj-$(CONFIG_QCOM_SSC_BLOCK_BUS)	+= qcom-ssc-block-bus.o
--obj-$(CONFIG_STM32_FIREWALL)	+= stm32_firewall.o
-+obj-$(CONFIG_STM32_FIREWALL)	+= stm32_firewall.o stm32_rifsc.o
- obj-$(CONFIG_SUN50I_DE2_BUS)	+= sun50i-de2.o
- obj-$(CONFIG_SUNXI_RSB)		+= sunxi-rsb.o
- obj-$(CONFIG_OF)		+= simple-pm-bus.o
-diff --git a/drivers/bus/stm32_rifsc.c b/drivers/bus/stm32_rifsc.c
+diff --git a/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
 new file mode 100644
-index 000000000000..4cf1b60014b7
+index 000000000000..9ca0ad39bc19
 --- /dev/null
-+++ b/drivers/bus/stm32_rifsc.c
-@@ -0,0 +1,252 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (C) 2023, STMicroelectronics - All Rights Reserved
-+ */
++++ b/Documentation/devicetree/bindings/bus/st,stm32-etzpc.yaml
+@@ -0,0 +1,87 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/st,stm32-etzpc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/device.h>
-+#include <linux/err.h>
-+#include <linux/init.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+#include <linux/types.h>
++title: STM32 Extended TrustZone protection controller
 +
-+#include "stm32_firewall.h"
++description: |
++  The ETZPC configures TrustZone security in a SoC having bus masters and
++  devices with programmable-security attributes (securable resources).
 +
-+/*
-+ * RIFSC offset register
-+ */
-+#define RIFSC_RISC_SECCFGR0		0x10
-+#define RIFSC_RISC_PRIVCFGR0		0x30
-+#define RIFSC_RISC_PER0_CIDCFGR		0x100
-+#define RIFSC_RISC_PER0_SEMCR		0x104
-+#define RIFSC_RISC_HWCFGR2		0xFEC
++maintainers:
++  - Gatien Chevallier <gatien.chevallier@foss.st.com>
 +
-+/*
-+ * SEMCR register
-+ */
-+#define SEMCR_MUTEX			BIT(0)
++properties:
++  compatible:
++    contains:
++      const: st,stm32-etzpc
 +
-+/*
-+ * HWCFGR2 register
-+ */
-+#define HWCFGR2_CONF1_MASK		GENMASK(15, 0)
-+#define HWCFGR2_CONF2_MASK		GENMASK(23, 16)
-+#define HWCFGR2_CONF3_MASK		GENMASK(31, 24)
++  reg:
++    maxItems: 1
 +
-+/*
-+ * RIFSC miscellaneous
-+ */
-+#define RIFSC_RISC_CFEN_MASK		BIT(0)
-+#define RIFSC_RISC_SEM_EN_MASK		BIT(1)
-+#define RIFSC_RISC_SCID_MASK		GENMASK(6, 4)
-+#define RIFSC_RISC_SEML_SHIFT		16
-+#define RIFSC_RISC_SEMWL_MASK		GENMASK(23, 16)
-+#define RIFSC_RISC_PER_ID_MASK		GENMASK(31, 24)
++  "#address-cells":
++    const: 1
 +
-+#define RIFSC_RISC_PERx_CID_MASK	(RIFSC_RISC_CFEN_MASK | \
-+					 RIFSC_RISC_SEM_EN_MASK | \
-+					 RIFSC_RISC_SCID_MASK | \
-+					 RIFSC_RISC_SEMWL_MASK)
++  "#size-cells":
++    const: 1
 +
-+#define IDS_PER_RISC_SEC_PRIV_REGS	32
++  ranges: true
 +
-+/* RIF miscellaneous */
-+/*
-+ * CIDCFGR register fields
-+ */
-+#define CIDCFGR_CFEN			BIT(0)
-+#define CIDCFGR_SEMEN			BIT(1)
-+#define CIDCFGR_SEMWL(x)		BIT(RIFSC_RISC_SEML_SHIFT + (x))
++  "#access-controller-cells":
++    const: 1
++    description:
++      Contains the firewall ID associated to the peripheral.
 +
-+#define SEMWL_SHIFT			16
++patternProperties:
++  "^.*@[0-9a-f]+$":
++    description: Peripherals
++    type: object
 +
-+/* Compartiment IDs */
-+#define RIF_CID0			0x0
-+#define RIF_CID1			0x1
++    additionalProperties: true
 +
-+static bool stm32_rifsc_is_semaphore_available(void __iomem *addr)
-+{
-+	return !(readl(addr) & SEMCR_MUTEX);
-+}
++    required:
++      - access-controllers
 +
-+static int stm32_rif_acquire_semaphore(struct stm32_firewall_controller *stm32_firewall_controller,
-+				       int id)
-+{
-+	void __iomem *addr = stm32_firewall_controller->mmio + RIFSC_RISC_PER0_SEMCR + 0x8 * id;
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - "#access-controller-cells"
++  - ranges
 +
-+	writel(SEMCR_MUTEX, addr);
++additionalProperties: false
 +
-+	/* Check that CID1 has the semaphore */
-+	if (stm32_rifsc_is_semaphore_available(addr) ||
-+	    FIELD_GET(RIFSC_RISC_SCID_MASK, readl(addr)) != RIF_CID1)
-+		return -EACCES;
++examples:
++  - |
++    // In this example, the usart2 device refers to rifsc as its access
++    // controller.
++    // Access rights are verified before creating devices.
 +
-+	return 0;
-+}
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/stm32mp13-clks.h>
++    #include <dt-bindings/reset/stm32mp13-resets.h>
 +
-+static void stm32_rif_release_semaphore(struct stm32_firewall_controller *stm32_firewall_controller,
-+					int id)
-+{
-+	void __iomem *addr = stm32_firewall_controller->mmio + RIFSC_RISC_PER0_SEMCR + 0x8 * id;
++    etzpc: bus@5c007000 {
++        compatible = "st,stm32-etzpc";
++        reg = <0x5c007000 0x400>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        #access-controller-cells = <1>;
++        ranges;
 +
-+	if (stm32_rifsc_is_semaphore_available(addr))
-+		return;
-+
-+	writel(SEMCR_MUTEX, addr);
-+
-+	/* Ok if another compartment takes the semaphore before the check */
-+	WARN_ON(!stm32_rifsc_is_semaphore_available(addr) &&
-+		FIELD_GET(RIFSC_RISC_SCID_MASK, readl(addr)) == RIF_CID1);
-+}
-+
-+static int stm32_rifsc_grant_access(struct stm32_firewall_controller *ctrl, u32 firewall_id)
-+{
-+	struct stm32_firewall_controller *rifsc_controller = ctrl;
-+	u32 reg_offset, reg_id, sec_reg_value, cid_reg_value;
-+	int rc;
-+
-+	if (firewall_id >= rifsc_controller->max_entries) {
-+		dev_err(rifsc_controller->dev, "Invalid sys bus ID %u", firewall_id);
-+		return -EINVAL;
-+	}
-+
-+	/*
-+	 * RIFSC_RISC_PRIVCFGRx and RIFSC_RISC_SECCFGRx both handle configuration access for
-+	 * 32 peripherals. On the other hand, there is one _RIFSC_RISC_PERx_CIDCFGR register
-+	 * per peripheral
-+	 */
-+	reg_id = firewall_id / IDS_PER_RISC_SEC_PRIV_REGS;
-+	reg_offset = firewall_id % IDS_PER_RISC_SEC_PRIV_REGS;
-+	sec_reg_value = readl(rifsc_controller->mmio + RIFSC_RISC_SECCFGR0 + 0x4 * reg_id);
-+	cid_reg_value = readl(rifsc_controller->mmio + RIFSC_RISC_PER0_CIDCFGR + 0x8 * firewall_id);
-+
-+	/* First check conditions for semaphore mode, which doesn't take into account static CID. */
-+	if ((cid_reg_value & CIDCFGR_SEMEN) && (cid_reg_value & CIDCFGR_CFEN)) {
-+		if (cid_reg_value & BIT(RIF_CID1 + SEMWL_SHIFT)) {
-+			/* Static CID is irrelevant if semaphore mode */
-+			goto skip_cid_check;
-+		} else {
-+			dev_dbg(rifsc_controller->dev,
-+				"Invalid bus semaphore configuration: index %d\n", firewall_id);
-+			return -EACCES;
-+		}
-+	}
-+
-+	/*
-+	 * Skip CID check if CID filtering isn't enabled or filtering is enabled on CID0, which
-+	 * corresponds to whatever CID.
-+	 */
-+	if (!(cid_reg_value & CIDCFGR_CFEN) ||
-+	    FIELD_GET(RIFSC_RISC_SCID_MASK, cid_reg_value) == RIF_CID0)
-+		goto skip_cid_check;
-+
-+	/* Coherency check with the CID configuration */
-+	if (FIELD_GET(RIFSC_RISC_SCID_MASK, cid_reg_value) != RIF_CID1) {
-+		dev_dbg(rifsc_controller->dev, "Invalid CID configuration for peripheral: %d\n",
-+			firewall_id);
-+		return -EACCES;
-+	}
-+
-+skip_cid_check:
-+	/* Check security configuration */
-+	if (sec_reg_value & BIT(reg_offset)) {
-+		dev_dbg(rifsc_controller->dev,
-+			"Invalid security configuration for peripheral: %d\n", firewall_id);
-+		return -EACCES;
-+	}
-+
-+	/*
-+	 * If the peripheral is in semaphore mode, take the semaphore so that
-+	 * the CID1 has the ownership.
-+	 */
-+	if ((cid_reg_value & CIDCFGR_SEMEN) && (cid_reg_value & CIDCFGR_CFEN)) {
-+		rc = stm32_rif_acquire_semaphore(rifsc_controller, firewall_id);
-+		if (rc) {
-+			dev_err(rifsc_controller->dev,
-+				"Couldn't acquire semaphore for peripheral: %d\n", firewall_id);
-+			return rc;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static void stm32_rifsc_release_access(struct stm32_firewall_controller *ctrl, u32 firewall_id)
-+{
-+	stm32_rif_release_semaphore(ctrl, firewall_id);
-+}
-+
-+static int stm32_rifsc_probe(struct platform_device *pdev)
-+{
-+	struct stm32_firewall_controller *rifsc_controller;
-+	struct device_node *np = pdev->dev.of_node;
-+	u32 nb_risup, nb_rimu, nb_risal;
-+	struct resource *res;
-+	void __iomem *mmio;
-+	int rc;
-+
-+	rifsc_controller = devm_kzalloc(&pdev->dev, sizeof(*rifsc_controller), GFP_KERNEL);
-+	if (!rifsc_controller)
-+		return -ENOMEM;
-+
-+	mmio = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
-+	if (IS_ERR(mmio))
-+		return PTR_ERR(mmio);
-+
-+	rifsc_controller->dev = &pdev->dev;
-+	rifsc_controller->mmio = mmio;
-+	rifsc_controller->name = dev_driver_string(rifsc_controller->dev);
-+	rifsc_controller->type = STM32_PERIPHERAL_FIREWALL | STM32_MEMORY_FIREWALL;
-+	rifsc_controller->grant_access = stm32_rifsc_grant_access;
-+	rifsc_controller->release_access = stm32_rifsc_release_access;
-+
-+	/* Get number of RIFSC entries*/
-+	nb_risup = readl(rifsc_controller->mmio + RIFSC_RISC_HWCFGR2) & HWCFGR2_CONF1_MASK;
-+	nb_rimu = readl(rifsc_controller->mmio + RIFSC_RISC_HWCFGR2) & HWCFGR2_CONF2_MASK;
-+	nb_risal = readl(rifsc_controller->mmio + RIFSC_RISC_HWCFGR2) & HWCFGR2_CONF3_MASK;
-+	rifsc_controller->max_entries = nb_risup + nb_rimu + nb_risal;
-+
-+	platform_set_drvdata(pdev, rifsc_controller);
-+
-+	rc = stm32_firewall_controller_register(rifsc_controller);
-+	if (rc) {
-+		dev_err(rifsc_controller->dev, "Couldn't register as a firewall controller: %d",
-+			rc);
-+		return rc;
-+	}
-+
-+	rc = stm32_firewall_populate_bus(rifsc_controller);
-+	if (rc) {
-+		dev_err(rifsc_controller->dev, "Couldn't populate RIFSC bus: %d",
-+			rc);
-+		return rc;
-+	}
-+
-+	/* Populate all allowed nodes */
-+	return of_platform_populate(np, NULL, NULL, &pdev->dev);
-+}
-+
-+static const struct of_device_id stm32_rifsc_of_match[] = {
-+	{ .compatible = "st,stm32mp25-rifsc" },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, stm32_rifsc_of_match);
-+
-+static struct platform_driver stm32_rifsc_driver = {
-+	.probe  = stm32_rifsc_probe,
-+	.driver = {
-+		.name = "stm32-rifsc",
-+		.of_match_table = stm32_rifsc_of_match,
-+	},
-+};
-+module_platform_driver(stm32_rifsc_driver);
-+
-+MODULE_AUTHOR("Gatien Chevallier <gatien.chevallier@foss.st.com>");
-+MODULE_DESCRIPTION("STMicroelectronics RIFSC driver");
-+MODULE_LICENSE("GPL");
++        usart2: serial@4c001000 {
++            compatible = "st,stm32h7-uart";
++            reg = <0x4c001000 0x400>;
++            interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
++            clocks = <&rcc USART2_K>;
++            resets = <&rcc USART2_R>;
++            wakeup-source;
++            dmas = <&dmamux1 43 0x400 0x5>,
++                    <&dmamux1 44 0x400 0x1>;
++            dma-names = "rx", "tx";
++            access-controllers = <&etzpc 17>;
++        };
++    };
 -- 
 2.35.3
 
