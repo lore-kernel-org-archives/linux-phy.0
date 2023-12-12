@@ -4,63 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D57EC4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Dec 2023 16:08:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C64FC4332F
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Dec 2023 16:21:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9SkaDkPaw7rCYscLBfMOuAqlg++uJvmiqnQoug0Jhv4=; b=ELTKQemV/UaEoFWd4mJYMgzj5w
-	XPrQsBdEksaYKQdOMF/3ICHnY3GkFx4k1uE68MhL/j6genpUt0knxo/b+QRCo1N9+oXr8BhKP/arb
-	IclsVDJtNtNNj7susrsj9xTnc0vONzuueaMxasp9BIRRn+kvbx9m9oaRgVjTy7Z/MqpQ8koVTd7Gc
-	7MrpJ9HtkmgLPhzfxWpDG5EpxFggergk+hVqcCiG8Senk5G9otRNEsCrCignrgORnghSZDajw8jHr
-	O1AX5ruyQ2xdF7SLI655s/S1KpN+S1LxrqMtEBHMCO6TwtwiCtzAvaCSvPv3C3kdQ2/owwSoXhLDr
-	xTaSdXdw==;
+	bh=Q9V+m4uJv0B0cTBWeJ2j+ACZqxS5tfD95cdzMnFqjsw=; b=XUJJx5GsvoVr9PK19Mb9yyZi8F
+	Jb6lP2il7lwcAELTnnQKlIdmYVF1oU9/J+9FhM8MZPHHm2pJyigroqv7abv3MdOrlaDem2BuSn21h
+	Ug0OsDwpR3zTXvFRHZpq8hHwfEbtOGnsi3iZjboM0sh3FBHQn5ycCaEwbuR6fvBG2Cp8BmXlItg4c
+	J29jNmNvoVHecTKrm6JKupC34JLLFnzqdLD3mW9JCl9FWaKxnHE7gZspyreLuN8SRycTkw+fyJR0i
+	SKs3Cg575N16Xw+CihJKnZwuKCAHLwiFhQnc/0v8QLnxItNfcZgWdiYu8bcAtQEHTyAvoMTrCXEeg
+	J8Mu7n1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rD5J7-00CAE8-3A;
-	Tue, 12 Dec 2023 16:08:29 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rD5W6-00CCAd-36;
+	Tue, 12 Dec 2023 16:21:55 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rD5J5-00CADX-1r
-	for linux-phy@lists.infradead.org;
-	Tue, 12 Dec 2023 16:08:28 +0000
+	id 1rD5W3-00CC8A-1M;
+	Tue, 12 Dec 2023 16:21:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 14C47617EB;
-	Tue, 12 Dec 2023 16:08:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 524DBC433C8;
-	Tue, 12 Dec 2023 16:08:24 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 148B9CE1AFD;
+	Tue, 12 Dec 2023 16:21:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C6B8C433C7;
+	Tue, 12 Dec 2023 16:21:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1702397306;
-	bh=OH0G10DH+BAtW5ufCW11pSaAmGWPMbfRjouSrbJTQuw=;
+	s=k20201202; t=1702398106;
+	bh=I4hXkEoUTFcolc2OptvZYGQLuDHWI9mD2TQ75fDGAEg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kjLqLIs5wRJ/96ttv/ATtpwpcykIqyZ/Oembazzvr6zI+UegpxBctN+p5CLBHujuL
-	 DnoEVYLXNejR5FZ/JZE2bsHDSPpYI7JjNZKVqtEoXTk6RVaZF/i1Ni6qjjzpjjL8ih
-	 b+T3+v4ifHyX+jTHtn1OziAPwSsp2N/m35jg2aVWbLjJchME+Yn/Dxc7bBuxZ1OKsJ
-	 JpMbv9Mxo/pML7Jcvu9xDgtznxY7pLnU1zS6w4JdN9kLnIype0DY1fYolK/1GIRnqg
-	 iCQjeGTinvsrINqinEcpe2r+aGrwjWbbQrjkgbRie9902S5nvUBivWgY40n9dIVB4p
-	 kDXs9UcE+KbFQ==
-Date: Tue, 12 Dec 2023 16:08:22 +0000
+	b=gaJ/cK3ae/NyZnW+kIfXD31ZVQhxWOZvEpEiCVaZ2axAEt8mVlkfRPOH7ZSZz1vbq
+	 DLCfEavz6/qjkfAjqzIjV1AHKLEKaNugKFiqJZ3wgh+siQAnwmyOiaSO71VYUtuMAw
+	 5yp5ECVxUihw9upcoHDCAEwoE53y+gipQccjtaUeNeCpnwvzeVQPmzD+ycWnGs3j8n
+	 Nfsl9d2RQwEA9bvLFqEbgmlPTy5ACynj/IAbZyLZzi+ZKxHjg/s32OCuwLJuS8K9ol
+	 V5Pa/ygKBO/eCWPJ3UTgIVD/om+8hOznatNNxeZbuDcUn6NZb2Gj5R2KXnEldsah5A
+	 wL0bvkZNkNtTg==
+Date: Tue, 12 Dec 2023 16:21:38 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Swapnil Jakhade <sjakhade@cadence.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org, mparab@cadence.com, rogerq@kernel.org,
-	s-vadapalli@ti.com
-Subject: Re: [PATCH v2 4/5] dt-bindings: phy: cadence-torrent: Add a separate
- compatible for TI J7200
-Message-ID: <20231212-headphone-dorsal-dcea42263636@spud>
-References: <20231212114840.1468903-1-sjakhade@cadence.com>
- <20231212114840.1468903-5-sjakhade@cadence.com>
+To: Daniel Golle <daniel@makrotopia.org>
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Mark Lee <Mark-MC.Lee@mediatek.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Alexander Couzens <lynxis@fe80.eu>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [RFC PATCH net-next v3 1/8] dt-bindings: phy:
+ mediatek,xfi-pextp: add new bindings
+Message-ID: <20231212-renderer-strobe-2b46652cd6e7@spud>
+References: <cover.1702352117.git.daniel@makrotopia.org>
+ <b875f693f6d4367a610a12ef324584f3bf3a1c1c.1702352117.git.daniel@makrotopia.org>
 MIME-Version: 1.0
-In-Reply-To: <20231212114840.1468903-5-sjakhade@cadence.com>
+In-Reply-To: <b875f693f6d4367a610a12ef324584f3bf3a1c1c.1702352117.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231212_080827_654294_575171BB 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231212_082151_688286_45F78BDE 
+X-CRM114-Status: GOOD (  12.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,49 +90,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8657650499277274836=="
+Content-Type: multipart/mixed; boundary="===============8609123894307679478=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8657650499277274836==
+--===============8609123894307679478==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="uVnzDENYDLNx9frF"
+	protocol="application/pgp-signature"; boundary="WPQBtHmwAqf+kt5+"
 Content-Disposition: inline
 
 
---uVnzDENYDLNx9frF
+--WPQBtHmwAqf+kt5+
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Tue, Dec 12, 2023 at 12:48:39PM +0100, Swapnil Jakhade wrote:
-> TI J7200 uses Torrent SD0805 version which is a special version derived
-> from Torrent SD0801 with some differences in register configurations.
-> Add a separate compatible for TI J7200 platforms.
->=20
-> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+On Tue, Dec 12, 2023 at 03:46:26AM +0000, Daniel Golle wrote:
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+> +  mediatek,usxgmii-performance-errata:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description:
+> +      USXGMII0 on MT7988 suffers from a performance problem in 10GBase-R
+> +      mode which needs a work-around in the driver. The work-around is
+> +      enabled using this flag.
 
-Cheers,
-Conor.
+Why do you need a property for this if you know that it is present on
+the MT7988?
 
---uVnzDENYDLNx9frF
+--WPQBtHmwAqf+kt5+
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZXiFdQAKCRB4tDGHoIJi
-0qFZAP0buWf516DdZnBglwCKgtqcA6Xdl/YA7o4Zq3WV3iMpRAEA+fbxnwYZdAWi
-PYoesrgonvFDnfdaKZOcuCW/rzcwRAA=
-=BDxH
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZXiIkgAKCRB4tDGHoIJi
+0igfAQCIaKPOwiNl671rEJW649XaWHfBlXjLZAGVfwCmX2BsbQEAyKovajF2JIX8
+oC8ansV48AdAaqaRErICzJeNb8cD4gg=
+=vMqS
 -----END PGP SIGNATURE-----
 
---uVnzDENYDLNx9frF--
+--WPQBtHmwAqf+kt5+--
 
 
---===============8657650499277274836==
+--===============8609123894307679478==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -125,5 +142,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============8657650499277274836==--
+--===============8609123894307679478==--
 
