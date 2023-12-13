@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AD41C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 16:04:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F891C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 20:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hc0a+qUqpYETJh3gFHJ2S0rKACI5EvNvfZIfPMcWuHI=; b=GSvW20nEdePSUM
-	bnJgF5J5ECPy58AH3mf2iyVqq7//Rmuw2zBHaCjpGRktMxa+mfG7Iwr321zHwPVhYKJ/6ZpzKEpvg
-	tNbaghi8TmRWHOM5v7MFZZddQM2fhmZejwq3+FP4d7vGbMkIZHxXDrBrioit21Db+IxC86Y27iI0P
-	BKT3gJ0798rAZhxTzXEcJ4+PbZBR46CaZA261Lp/DzX0U8uPG2UuveFJV6XAnxDdld7ZTAFRj71jh
-	53j4PHSR2vJR2Ujw0wlac27Xi4e8hows3E4N10aWvN0NTtWOCasA3bzFWAGNmq6JvhEUfBQJ9TgQS
-	d1RSz/kwuyHOeYo8CaSQ==;
+	List-Owner; bh=c65HXRIteZwCCYlEz76GIMfkOlzw5Ba2/1Cye4ywRm8=; b=ONHNTSUyOharFp
+	Hx1JNP53Z8CgntUkwtqVdwMMp4WD9p08MmzmbRMK/S+gH4vDa6fgiNCbkTkYvVOLJCx3AvFEYdyJn
+	Xqy72r3D+UZ7Ab3fegWHluV4DEtkOZDwEemXCu8SzQ3JmzVjfhlXjoQEIN3+Yocrs18F28KA+QxOv
+	eS21dvffW0Ch5MJAIyBC7zyFFuQAwuk0sabV4jNwCINTeg2cqobqkQqaf9v0tW8wdeDsx/oE/O8K8
+	dxLWDBVBKe7L3Kwz41+/8LT/eBNt//pOwHYuPCelYdWUBqsS4K8TUiXJDSaH7+JB1YAjekV7x+UdQ
+	KUDm/rmYkKIBGKEIodnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDRj7-00FOEp-2j;
-	Wed, 13 Dec 2023 16:04:49 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1rDVri-00FyLP-2S;
+	Wed, 13 Dec 2023 20:29:58 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDRj2-00FOBX-28;
-	Wed, 13 Dec 2023 16:04:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=QRqwo6sswifF3LFPo684dgIWFUyFasVRNKlEWyiikhI=; b=R+1MKf1rzy9ANE955VAmc7MRqm
-	hCWSk4JX137rBfen/P8Nm47Di+4ndSbW7wyKqKAZQfSeKvNqjZOQ7h+ozG1y82K68yoGn+GJmlxTJ
-	HSa3d2+TEnPRtqH2l6FBZBT0QG523tdWrM2gvgIjLfWc+lQ+OwZn8xeMBQZ+p27avi7V6KZ1EIwmE
-	tUOWNpuAZOwuNx7857l8Nppar0NfBSL4jj2fssUdXc1mBs8uG1+Lm5CRVI9LBqGlXLhqKzg21wp1M
-	Pg2rWKekk7nkzy3zfT65bes3ssLwvxH5KjSQJCl0VUaxSTKZcMGrv8l/GBDNAPCaM0ej6RDZvdprY
-	Q6b4hJhQ==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55118)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1rDRiY-0000D5-0G;
-	Wed, 13 Dec 2023 16:04:14 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1rDRiW-0001cw-Q5; Wed, 13 Dec 2023 16:04:12 +0000
-Date: Wed, 13 Dec 2023 16:04:12 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Daniel Golle <daniel@makrotopia.org>
-Cc: "David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Mark Lee <Mark-MC.Lee@mediatek.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Alexander Couzens <lynxis@fe80.eu>,
-	Qingfang Deng <dqfext@gmail.com>,
-	SkyLake Huang <SkyLake.Huang@mediatek.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH net-next v3 3/8] net: pcs: pcs-mtk-lynxi: add
- platform driver for MT7988
-Message-ID: <ZXnV/Pk1PYxAm/jS@shell.armlinux.org.uk>
-References: <cover.1702352117.git.daniel@makrotopia.org>
- <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
+	id 1rDVre-00FyId-2e;
+	Wed, 13 Dec 2023 20:29:56 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-40c3f68b69aso44737355e9.1;
+        Wed, 13 Dec 2023 12:29:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1702499388; x=1703104188; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Zw2AbkoN/4FIKkUWexE+EWqV2AcpdmgqKqjwrsLePhs=;
+        b=FM0pUOFl0BH8HRFurjxh/WfIeGZf9iAHW78xkfgW0HUpqKXqgddZJM8UgZAIVvBwgA
+         a8uwyftRnIbxvL8l3QDmGRnhddCulwctLrE0/Kygk77QJsGOC4FxOPHRgBNsEMqp2v0Q
+         oc7tnOZHobSlZbgUTssyl2gdel9D1qTNxMBLXMcPLKHbsQFhvbQc2+CEocjbXICdXkST
+         /wJb4TdXxHPZVvo8HGIKcy00fd34aIelWk73+YL5CHpz+eyc58F3OIpEkPRoXeZX/TKq
+         QwCkwNzvXZHoW1LAp6AYoRiq+bvHGzbmKm8/vrK50ovqMZ8QNCpZ5dPaTH65/bjmR/Q0
+         g2ig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1702499388; x=1703104188;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Zw2AbkoN/4FIKkUWexE+EWqV2AcpdmgqKqjwrsLePhs=;
+        b=kQZJUVF4fRPe2plh/1JoAXM0H/NB/odWlvbsWVI93YHATDS6nF8ZSj7hFaSxJaZaJo
+         3N88s53tlZw5Qo4D3+VRbmkaKDFGtuBUNatoAeDqvrU+ydih7vi9SgIUU8Mw7r0Iv9VW
+         WO86OIxpS8Zbk/322kW02lzmT8qIudQszuIjTYruZ1bMUlgM+wPZNbZzKL18W3pEjD++
+         FhqtGgtU3CHXyEDFvuMjzP8i8wXGm0nPKg2dpKcQ9WhqV+rJKgZVoRzXZ3qw2b8HdHxO
+         WG7IOmcp+WHO8w5Ee5uIA/WUJwVvS0MW8i6F8WypOR0XFtO2DHCrEQWarXpXAJZVIrC7
+         LERA==
+X-Gm-Message-State: AOJu0YyM7p5sRFVJ7mRro4LC0OGco5Q86MSzjU48fc9o9cZGxNTheAhp
+	Vq3D1q9uW3JSN1A0bjboeQ==
+X-Google-Smtp-Source: AGHT+IG20yw7g9GqI9IbadFk19Exl/zGderaqPqj/VFPT7HLhLixQNc2+B3uD+potrr7JRkM+oOFEA==
+X-Received: by 2002:a05:600c:3648:b0:40b:4812:22e2 with SMTP id y8-20020a05600c364800b0040b481222e2mr5226786wmq.11.1702499387771;
+        Wed, 13 Dec 2023 12:29:47 -0800 (PST)
+Received: from ?IPV6:2a02:810b:f40:4300:3bf6:bcc0:fe50:883f? ([2a02:810b:f40:4300:3bf6:bcc0:fe50:883f])
+        by smtp.gmail.com with ESMTPSA id n21-20020a05600c4f9500b0040b36ad5413sm21179364wmq.46.2023.12.13.12.29.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 13 Dec 2023 12:29:47 -0800 (PST)
+Message-ID: <a5889aba-75b6-4671-918b-26a4b9ec12c5@gmail.com>
+Date: Wed, 13 Dec 2023 21:29:45 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/31] Fix and improve Rockchip RK3128 support
+Content-Language: en-US, de-DE
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Lee Jones <lee@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Elaine Zhang <zhangqing@rock-chips.com>, Johan Jonker
+ <jbx6244@gmail.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ alsa-devel@alsa-project.org, linux-clk@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20230829171647.187787-1-knaerzche@gmail.com>
+ <2167016.irdbgypaU6@phil>
+From: Alex Bee <knaerzche@gmail.com>
+In-Reply-To: <2167016.irdbgypaU6@phil>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231213_080444_714795_4398D9EC 
-X-CRM114-Status: GOOD (  27.80  )
+X-CRM114-CacheID: sfid-20231213_122954_861957_FEB3E52D 
+X-CRM114-Status: GOOD (  11.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,124 +99,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 12, 2023 at 03:47:18AM +0000, Daniel Golle wrote:
-> Introduce a proper platform MFD driver for the LynxI (H)SGMII PCS which
-> is going to initially be used for the MT7988 SoC.
-> 
-> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+Hi Heiko
 
-I made some specific suggestions about what I wanted to see for
-"getting" PCS in the previous review, and I'm disappointed that this
-patch set is still inventing its own solution.
+Am 12.12.23 um 21:03 schrieb Heiko Stuebner:
+> Hi Alex,
+>
+> Am Dienstag, 29. August 2023, 19:16:16 CET schrieb Alex Bee:
+>> this series fixes some issues I found when testing my "new" RK3128 board
+>> with the mainline kernel and adds some core functionality like SMP bringup,
+>> usb and networking.
+> before I discard this thread, is everything from here migrated to
+> separate serieses or are there patches in this big pile that are still
+> relevant on their own, that haven't been applied?
+> [I lost track of what did go where ;-) ]
 
-> +struct phylink_pcs *mtk_pcs_lynxi_get(struct device *dev, struct device_node *np)
-> +{
-> +	struct platform_device *pdev;
-> +	struct mtk_pcs_lynxi *mpcs;
-> +
-> +	if (!np)
-> +		return NULL;
-> +
-> +	if (!of_device_is_available(np))
-> +		return ERR_PTR(-ENODEV);
-> +
-> +	if (!of_match_node(mtk_pcs_lynxi_of_match, np))
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	pdev = of_find_device_by_node(np);
-> +	if (!pdev || !platform_get_drvdata(pdev)) {
+No worries - I kept track :)
 
-This is racy - as I thought I described before, userspace can unbind
-the device in one thread, while another thread is calling this
-function. With just the right timing, this check succeeds, but...
+Not everything is re-sent yet (sound nodes, RK3126/RK3128 split-up) but 
+you can discard this and will re-send everything left in separate series 
+(as I said [0])
 
-> +		if (pdev)
-> +			put_device(&pdev->dev);
-> +		return ERR_PTR(-EPROBE_DEFER);
-> +	}
-> +
-> +	mpcs = platform_get_drvdata(pdev);
+[0] 
+https://lore.kernel.org/linux-arm-kernel/170109134007.42627.12929766893521974712.b4-ty@kernel.org/T/#m63efa1c1379353b5cf764d2f9a260cf0329c864c
 
-mpcs ends up being read as NULL here. Even if you did manage to get a
-valid pointer, "mpcs" being devm-alloced could be freed from under
-you at this point...
+Regards,
 
-> +	device_link_add(dev, mpcs->dev, DL_FLAG_AUTOREMOVE_CONSUMER);
+Alex
 
-resulting in this accessing memory which has been freed.
-
-The solution would be either to suppress the bind/unbind attributes
-(provided the underlying struct device can't go away, which probably
-also means ensuring the same of the MDIO bus. Aternatively, adding
-a lock around the remove path and around the checking of
-platform_get_drvdata() down to adding the device link would probably
-solve it.
-
-However, I come back to my general point - this kind of stuff is
-hairy. Do we want N different implementations of it in various drivers
-with subtle bugs, or do we want _one_ implemenatation.
-
-If we go with the one implemenation approach, then we need to think
-about whether we should be using device links or not. The problem
-could be for network interfaces where one struct device is
-associated with multiple network interfaces. Using device links has
-the unfortunate side effect that if the PCS for one of those network
-interfaces is removed, _all_ network interfaces disappear.
-
-My original suggestion was to hook into phylink to cause that to
-take the link down when an in-use PCS gets removed.
-
-> +
-> +	return &mpcs->pcs;
-> +}
-> +EXPORT_SYMBOL(mtk_pcs_lynxi_get);
-> +
-> +void mtk_pcs_lynxi_put(struct phylink_pcs *pcs)
-> +{
-> +	struct mtk_pcs_lynxi *cur, *mpcs = NULL;
-> +
-> +	if (!pcs)
-> +		return;
-> +
-> +	mutex_lock(&instance_mutex);
-> +	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
-> +		if (pcs == &cur->pcs) {
-> +			mpcs = cur;
-> +			break;
-> +		}
-> +	mutex_unlock(&instance_mutex);
-
-I don't see what this loop gains us, other than checking that the "pcs"
-is still on the list and hasn't already been removed. If that is all
-that this is about, then I would suggest:
-
-	bool found = false;
-
-	if (!pcs)
-		return;
-
-	mpcs = pcs_to_mtk_pcs_lynxi(pcs);
-	mutex_lock(&instance_mutex);
-	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
-		if (cur == mpcs) {
-			found = true;
-			break;
-		}
-	mutex_unlock(&instance_mutex);
-
-	if (WARN_ON(!found))
-		return;
-
-which makes it more obvious why this exists.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+>
+>
+> Thanks
+> Heiko
+>
+>
 
 -- 
 linux-phy mailing list
