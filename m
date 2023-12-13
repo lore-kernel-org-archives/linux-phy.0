@@ -4,47 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C4E4C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 09:46:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A7FAC4167B
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 13:21:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lGndqg6LJJePVL9wu41WXl9BghraEsOA5tU8VQcPxiw=; b=pIV4HdrGkDXKnXYU5dt6/iPQkR
-	UegrjzCvxkq0rH6+ATMOlymqRyyhst9JQqUiAZQby10JmPVlF2dnOgZwkRW0qQJmV4HCzZEeHFFWk
-	Yd3GObZlxFXBkzU41W9bK6vsPMSu6R0J2CzKrJsl+WKIWN/myuKTaAA01qxgqdD5JRpfimlaZaS0s
-	8vfrM6nE4rzdYvSnFd9x6zyb8H2neQ0r5oBsxtg3e/6/OcZN6g/PIdpKcN/+isXRG0ccLdzmbkFem
-	Mpazbug705Tmq/BtaC2Sza3RZ7KSu5OT1ih5cUeD2Oq/n2+hyUMB3sGotcci3IFyi1tCEv8rb+EgB
-	LLfYvvhA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GFIys/Ur7wQnaNGQDt2HIvUr/gJhHHgVU9DiSanBJoQ=; b=eXUkechaq5QREK
+	GKev+GNUAkONzzCWYny6GfadZ7Lvb7AY54pcJPkSviALAyl64+vCCUh3QQX/h7H4LJLjp9ClAUejL
+	Hrt7AbKfgHEMWfoMxDXAOLNMDM6QpVwBKFWDpHV7IbEOJrIUhObRPXnRUr2xIEvGMMvrq9Qt/H0qd
+	T+/6YNE7BMUD7N2G456uX+z9zG985WxUt2/o9z1ghZL+n6XKnuZU3SavdnqbrKGm+9ddb0eAXDrMK
+	SXqgvOSRU7YqdL4YWf4nerWAo+Rtg2NbTCBNAcuufv3ougyKNSH+i7dFckoFkZ6LPX4CjQJNVzXpo
+	FORkjvKsBy5Nr0RMCteg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDLpT-00EB9P-0o;
-	Wed, 13 Dec 2023 09:46:59 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rDPAu-00EmJw-0e;
+	Wed, 13 Dec 2023 13:21:20 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDLpP-00EB7s-1u;
-	Wed, 13 Dec 2023 09:46:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 9F98261B41;
-	Wed, 13 Dec 2023 09:46:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88F15C433C7;
-	Wed, 13 Dec 2023 09:46:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1702460812;
-	bh=k3h+x5Vi0c4IUc2BgiJewMzJeCYyvSk8+ZHJK/SWAOw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tB5OQxh//OBSfXK0FUdFSzcfEoIJyEniRxaI6FF3p7iKPcZ+k+7oHa13+VC5BtTVW
-	 AIvVDladP54+eKEj0Gizw4euRRRU6KZCljmIlisdNUIFEIPMh59eypu8BxdaDEnvgg
-	 +J1/VytncX+iPP7xylS4qbsFfaeCyc35ucSWlT1PIR9VG8UK+IadGA4rhnRd1kZdNI
-	 /xMEdLMTt+iCLnF06HyS5MK4EQ/RO1rWc5rGrvf97MSFIVP3+KQmnXpVVESH+jjOa7
-	 Y3XgFLpzUW+W4LKrAmsIIn5S1Y6lJPRrOn80Znicol+dSEaP5p+knty92G1xUrhR47
-	 j9Ggn0ti7Ij1A==
-Date: Wed, 13 Dec 2023 09:46:44 +0000
-From: Conor Dooley <conor@kernel.org>
+	id 1rDPAq-00EmIP-0e;
+	Wed, 13 Dec 2023 13:21:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=Cxxp9zwlmXO3GMPYFrCkmqu7xOsNc9JwZVzZO/mi2A4=; b=LZwEZi7qV7Mtl/hyhvj2u6ZW7+
+	RDy6JUTK1h/tA/7FmC9blt+9PwcxPp8uBJnkv3DRfL8H50jNqiQw+nXFekAEzei89dWKOHuBTuWvz
+	NaqI4ecySjMGiAum2YoqoLY1RwY8ZdvzS30GJ7y+xSSEg1f5Uyqztl3UgQgAdng6ja/Y=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1rDPAL-002ozk-Nq; Wed, 13 Dec 2023 14:20:45 +0100
+Date: Wed, 13 Dec 2023 14:20:45 +0100
+From: Andrew Lunn <andrew@lunn.ch>
 To: Daniel Golle <daniel@makrotopia.org>
-Cc: "David S. Miller" <davem@davemloft.net>,
+Cc: Conor Dooley <conor@kernel.org>,
+	"David S. Miller" <davem@davemloft.net>,
 	Eric Dumazet <edumazet@google.com>,
 	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -59,7 +56,6 @@ Cc: "David S. Miller" <davem@davemloft.net>,
 	Lorenzo Bianconi <lorenzo@kernel.org>,
 	Matthias Brugger <matthias.bgg@gmail.com>,
 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Andrew Lunn <andrew@lunn.ch>,
 	Heiner Kallweit <hkallweit1@gmail.com>,
 	Russell King <linux@armlinux.org.uk>,
 	Alexander Couzens <lynxis@fe80.eu>,
@@ -71,16 +67,18 @@ Cc: "David S. Miller" <davem@davemloft.net>,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
 Subject: Re: [RFC PATCH net-next v3 1/8] dt-bindings: phy:
  mediatek,xfi-pextp: add new bindings
-Message-ID: <20231213-confined-shaping-f56b1fdfb135@spud>
+Message-ID: <c9605d38-e4b8-477d-84d8-de7b4dedd1f1@lunn.ch>
 References: <cover.1702352117.git.daniel@makrotopia.org>
  <b875f693f6d4367a610a12ef324584f3bf3a1c1c.1702352117.git.daniel@makrotopia.org>
  <20231212-renderer-strobe-2b46652cd6e7@spud>
  <ZXiNhSYDbowUiNvy@makrotopia.org>
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <ZXiNhSYDbowUiNvy@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231213_014655_717606_8F0DB84A 
-X-CRM114-Status: GOOD (  21.90  )
+X-CRM114-CacheID: sfid-20231213_052116_259907_FBF891D6 
+X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,78 +90,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3401048644635922653=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3401048644635922653==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="TQLtrFVr4ShS8Ew7"
-Content-Disposition: inline
-
-
---TQLtrFVr4ShS8Ew7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Dec 12, 2023 at 04:42:45PM +0000, Daniel Golle wrote:
-> On Tue, Dec 12, 2023 at 04:21:38PM +0000, Conor Dooley wrote:
-> > On Tue, Dec 12, 2023 at 03:46:26AM +0000, Daniel Golle wrote:
-> >=20
-> > > +  mediatek,usxgmii-performance-errata:
-> > > +    $ref: /schemas/types.yaml#/definitions/flag
-> > > +    description:
-> > > +      USXGMII0 on MT7988 suffers from a performance problem in 10GBa=
-se-R
-> > > +      mode which needs a work-around in the driver. The work-around =
-is
-> > > +      enabled using this flag.
-> >=20
-> > Why do you need a property for this if you know that it is present on
-> > the MT7988?
->=20
 > Because it is only present in one of the two SerDes channels.
 > Channel 0 needs the work-around, Channel 1 doesn't.
->=20
-> See also this commit in the vendor driver for reference[1].
->=20
-> We previously discussed that[2] and it was decided that a property
-> would be the prefered way to represent this as there aren't any other
-> per-instance differences which would justify another compatible.
 
-Please put it in the commit message so that when the next version shows
-up, Krzysztof doesn't show up and question the property for the third
-time.
+Does the channel know its own number?
 
-Also, on another note, this series is aimed at net-next but half the
-series is fixed for incorrect bindings. Why not net?
-
---TQLtrFVr4ShS8Ew7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZXl9hAAKCRB4tDGHoIJi
-0l51AP9AfxTVJus53lwalnfKdDDM6fu9GnfTQ1DaU51hYEgGlAD+KJiVYUIfbVyH
-NeYoGDoBXFZkUEImGzZ7OfYXmDAzTQw=
-=+6BB
------END PGP SIGNATURE-----
-
---TQLtrFVr4ShS8Ew7--
-
-
---===============3401048644635922653==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+     Andrew
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3401048644635922653==--
-
