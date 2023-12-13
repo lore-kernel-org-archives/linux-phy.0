@@ -4,44 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A7FAC4167B
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 13:21:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AD41C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Dec 2023 16:04:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GFIys/Ur7wQnaNGQDt2HIvUr/gJhHHgVU9DiSanBJoQ=; b=eXUkechaq5QREK
-	GKev+GNUAkONzzCWYny6GfadZ7Lvb7AY54pcJPkSviALAyl64+vCCUh3QQX/h7H4LJLjp9ClAUejL
-	Hrt7AbKfgHEMWfoMxDXAOLNMDM6QpVwBKFWDpHV7IbEOJrIUhObRPXnRUr2xIEvGMMvrq9Qt/H0qd
-	T+/6YNE7BMUD7N2G456uX+z9zG985WxUt2/o9z1ghZL+n6XKnuZU3SavdnqbrKGm+9ddb0eAXDrMK
-	SXqgvOSRU7YqdL4YWf4nerWAo+Rtg2NbTCBNAcuufv3ougyKNSH+i7dFckoFkZ6LPX4CjQJNVzXpo
-	FORkjvKsBy5Nr0RMCteg==;
+	List-Owner; bh=Hc0a+qUqpYETJh3gFHJ2S0rKACI5EvNvfZIfPMcWuHI=; b=GSvW20nEdePSUM
+	bnJgF5J5ECPy58AH3mf2iyVqq7//Rmuw2zBHaCjpGRktMxa+mfG7Iwr321zHwPVhYKJ/6ZpzKEpvg
+	tNbaghi8TmRWHOM5v7MFZZddQM2fhmZejwq3+FP4d7vGbMkIZHxXDrBrioit21Db+IxC86Y27iI0P
+	BKT3gJ0798rAZhxTzXEcJ4+PbZBR46CaZA261Lp/DzX0U8uPG2UuveFJV6XAnxDdld7ZTAFRj71jh
+	53j4PHSR2vJR2Ujw0wlac27Xi4e8hows3E4N10aWvN0NTtWOCasA3bzFWAGNmq6JvhEUfBQJ9TgQS
+	d1RSz/kwuyHOeYo8CaSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDPAu-00EmJw-0e;
-	Wed, 13 Dec 2023 13:21:20 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1rDRj7-00FOEp-2j;
+	Wed, 13 Dec 2023 16:04:49 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDPAq-00EmIP-0e;
-	Wed, 13 Dec 2023 13:21:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=Cxxp9zwlmXO3GMPYFrCkmqu7xOsNc9JwZVzZO/mi2A4=; b=LZwEZi7qV7Mtl/hyhvj2u6ZW7+
-	RDy6JUTK1h/tA/7FmC9blt+9PwcxPp8uBJnkv3DRfL8H50jNqiQw+nXFekAEzei89dWKOHuBTuWvz
-	NaqI4ecySjMGiAum2YoqoLY1RwY8ZdvzS30GJ7y+xSSEg1f5Uyqztl3UgQgAdng6ja/Y=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1rDPAL-002ozk-Nq; Wed, 13 Dec 2023 14:20:45 +0100
-Date: Wed, 13 Dec 2023 14:20:45 +0100
-From: Andrew Lunn <andrew@lunn.ch>
+	id 1rDRj2-00FOBX-28;
+	Wed, 13 Dec 2023 16:04:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=QRqwo6sswifF3LFPo684dgIWFUyFasVRNKlEWyiikhI=; b=R+1MKf1rzy9ANE955VAmc7MRqm
+	hCWSk4JX137rBfen/P8Nm47Di+4ndSbW7wyKqKAZQfSeKvNqjZOQ7h+ozG1y82K68yoGn+GJmlxTJ
+	HSa3d2+TEnPRtqH2l6FBZBT0QG523tdWrM2gvgIjLfWc+lQ+OwZn8xeMBQZ+p27avi7V6KZ1EIwmE
+	tUOWNpuAZOwuNx7857l8Nppar0NfBSL4jj2fssUdXc1mBs8uG1+Lm5CRVI9LBqGlXLhqKzg21wp1M
+	Pg2rWKekk7nkzy3zfT65bes3ssLwvxH5KjSQJCl0VUaxSTKZcMGrv8l/GBDNAPCaM0ej6RDZvdprY
+	Q6b4hJhQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55118)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1rDRiY-0000D5-0G;
+	Wed, 13 Dec 2023 16:04:14 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1rDRiW-0001cw-Q5; Wed, 13 Dec 2023 16:04:12 +0000
+Date: Wed, 13 Dec 2023 16:04:12 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Daniel Golle <daniel@makrotopia.org>
-Cc: Conor Dooley <conor@kernel.org>,
-	"David S. Miller" <davem@davemloft.net>,
+Cc: "David S. Miller" <davem@davemloft.net>,
 	Eric Dumazet <edumazet@google.com>,
 	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -56,8 +65,8 @@ Cc: Conor Dooley <conor@kernel.org>,
 	Lorenzo Bianconi <lorenzo@kernel.org>,
 	Matthias Brugger <matthias.bgg@gmail.com>,
 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Andrew Lunn <andrew@lunn.ch>,
 	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
 	Alexander Couzens <lynxis@fe80.eu>,
 	Qingfang Deng <dqfext@gmail.com>,
 	SkyLake Huang <SkyLake.Huang@mediatek.com>,
@@ -65,20 +74,17 @@ Cc: Conor Dooley <conor@kernel.org>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH net-next v3 1/8] dt-bindings: phy:
- mediatek,xfi-pextp: add new bindings
-Message-ID: <c9605d38-e4b8-477d-84d8-de7b4dedd1f1@lunn.ch>
+Subject: Re: [RFC PATCH net-next v3 3/8] net: pcs: pcs-mtk-lynxi: add
+ platform driver for MT7988
+Message-ID: <ZXnV/Pk1PYxAm/jS@shell.armlinux.org.uk>
 References: <cover.1702352117.git.daniel@makrotopia.org>
- <b875f693f6d4367a610a12ef324584f3bf3a1c1c.1702352117.git.daniel@makrotopia.org>
- <20231212-renderer-strobe-2b46652cd6e7@spud>
- <ZXiNhSYDbowUiNvy@makrotopia.org>
+ <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZXiNhSYDbowUiNvy@makrotopia.org>
+In-Reply-To: <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231213_052116_259907_FBF891D6 
-X-CRM114-Status: UNSURE (   6.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231213_080444_714795_4398D9EC 
+X-CRM114-Status: GOOD (  27.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,12 +101,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> Because it is only present in one of the two SerDes channels.
-> Channel 0 needs the work-around, Channel 1 doesn't.
+On Tue, Dec 12, 2023 at 03:47:18AM +0000, Daniel Golle wrote:
+> Introduce a proper platform MFD driver for the LynxI (H)SGMII PCS which
+> is going to initially be used for the MT7988 SoC.
+> 
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 
-Does the channel know its own number?
+I made some specific suggestions about what I wanted to see for
+"getting" PCS in the previous review, and I'm disappointed that this
+patch set is still inventing its own solution.
 
-     Andrew
+> +struct phylink_pcs *mtk_pcs_lynxi_get(struct device *dev, struct device_node *np)
+> +{
+> +	struct platform_device *pdev;
+> +	struct mtk_pcs_lynxi *mpcs;
+> +
+> +	if (!np)
+> +		return NULL;
+> +
+> +	if (!of_device_is_available(np))
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	if (!of_match_node(mtk_pcs_lynxi_of_match, np))
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	pdev = of_find_device_by_node(np);
+> +	if (!pdev || !platform_get_drvdata(pdev)) {
+
+This is racy - as I thought I described before, userspace can unbind
+the device in one thread, while another thread is calling this
+function. With just the right timing, this check succeeds, but...
+
+> +		if (pdev)
+> +			put_device(&pdev->dev);
+> +		return ERR_PTR(-EPROBE_DEFER);
+> +	}
+> +
+> +	mpcs = platform_get_drvdata(pdev);
+
+mpcs ends up being read as NULL here. Even if you did manage to get a
+valid pointer, "mpcs" being devm-alloced could be freed from under
+you at this point...
+
+> +	device_link_add(dev, mpcs->dev, DL_FLAG_AUTOREMOVE_CONSUMER);
+
+resulting in this accessing memory which has been freed.
+
+The solution would be either to suppress the bind/unbind attributes
+(provided the underlying struct device can't go away, which probably
+also means ensuring the same of the MDIO bus. Aternatively, adding
+a lock around the remove path and around the checking of
+platform_get_drvdata() down to adding the device link would probably
+solve it.
+
+However, I come back to my general point - this kind of stuff is
+hairy. Do we want N different implementations of it in various drivers
+with subtle bugs, or do we want _one_ implemenatation.
+
+If we go with the one implemenation approach, then we need to think
+about whether we should be using device links or not. The problem
+could be for network interfaces where one struct device is
+associated with multiple network interfaces. Using device links has
+the unfortunate side effect that if the PCS for one of those network
+interfaces is removed, _all_ network interfaces disappear.
+
+My original suggestion was to hook into phylink to cause that to
+take the link down when an in-use PCS gets removed.
+
+> +
+> +	return &mpcs->pcs;
+> +}
+> +EXPORT_SYMBOL(mtk_pcs_lynxi_get);
+> +
+> +void mtk_pcs_lynxi_put(struct phylink_pcs *pcs)
+> +{
+> +	struct mtk_pcs_lynxi *cur, *mpcs = NULL;
+> +
+> +	if (!pcs)
+> +		return;
+> +
+> +	mutex_lock(&instance_mutex);
+> +	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
+> +		if (pcs == &cur->pcs) {
+> +			mpcs = cur;
+> +			break;
+> +		}
+> +	mutex_unlock(&instance_mutex);
+
+I don't see what this loop gains us, other than checking that the "pcs"
+is still on the list and hasn't already been removed. If that is all
+that this is about, then I would suggest:
+
+	bool found = false;
+
+	if (!pcs)
+		return;
+
+	mpcs = pcs_to_mtk_pcs_lynxi(pcs);
+	mutex_lock(&instance_mutex);
+	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
+		if (cur == mpcs) {
+			found = true;
+			break;
+		}
+	mutex_unlock(&instance_mutex);
+
+	if (WARN_ON(!found))
+		return;
+
+which makes it more obvious why this exists.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
