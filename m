@@ -4,72 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA1B9C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Dec 2023 11:31:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65976C4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Dec 2023 11:50:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pk6RWykTe9ePpcZVkTB6RZaNbEW3jf2DNtlH01FE2o8=; b=i8Vf4HIeBwhjOd
-	6EoXG1OyV2cToadwneMGHqMEyUcWWWdJmAelFoxiE05C1d5g/J4gSZdwpO4LZ4QxRCwljROb3eCJj
-	q2A/CVlQSboOSKayNqlpT0IjsXseDxefwu5bcE6qPXYYbmj7L19zWwZeQq+7IVYpxmRpM4J+PkjOG
-	SWy5xeSQX6AvWBshRqR8uU8VqiOlpaTdSTyJxrCI/V/D0HSvZbBsN/017Sa9o3LxZhVuF1boQkAGW
-	b7qvR2IyOCz/oLgmOobTu8XfAf5I655TSBVLXBaEov/eLOkfg4Al3vqfllzzgR61dIveqfMkTzm0j
-	zYXxRceeZZMk3yaDITDA==;
+	List-Owner; bh=oIQVoaIayZCvK7uPYLL+MZ1oh+YGGkK2FWnxNxoyVMA=; b=yWluFaMInlAT0z
+	b/7Rynhf1PcXaorZSt8x0Hb1/qwI0S5OuXIBOS3xbsk8QlOk+jwyDDMwayMmSPfoCr49PDE9jmoLS
+	Ixa1priyVwTOq55Ddccn/+fWL7MAnnhztV9u9oTNPZMuQN8cwOrVjv12e/tLHSFdYeXSQmWpzHNXK
+	Gc6nMD+//KoY4tkl2NWv4NVmSRA9dYtFthCz0J2SRMmwwLr4XuLp4icrAYaijTl718gdc2M3M/aVo
+	UYdwhEbVCba0QglR7uTUdLAti1r37GWFino3xULyXNb9vouf7zymIFSyWn63S38med1+G8x7Pr/FP
+	uLCw5ZJzQkZGPH8O0l4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDjvh-0007wA-1M;
-	Thu, 14 Dec 2023 11:31:01 +0000
+	id 1rDkER-000DB5-0D;
+	Thu, 14 Dec 2023 11:50:23 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDjva-0007oo-1I
+	id 1rDkEN-000DAX-0b
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Dec 2023 11:30:56 +0000
+	Thu, 14 Dec 2023 11:50:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 3DBF4CE202D;
-	Thu, 14 Dec 2023 11:30:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F7E6C433C7;
-	Thu, 14 Dec 2023 11:30:49 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id C1E76CE2435;
+	Thu, 14 Dec 2023 11:50:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18BF7C433C7;
+	Thu, 14 Dec 2023 11:50:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1702553449;
-	bh=Fk0lWlyniz2h5a3rEQxROF0ImdCpeMxK4CdTL7O7dQc=;
+	s=k20201202; t=1702554615;
+	bh=gBxMWK/BJQIfktDOXVActk5N+GeQbJZMHW0htfkV+oc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=V4XPPGfs7RCX22aO8nbSp3XIZux1Lb2jKnmSf9SHDPgFiZMu5zgYkzmzL4PgIOH4t
-	 QuZ0eCyXprrpyBJQQgTMltqZ8ZVyWj4uTJDAphoVJ8oFckdNACOC0WGNKn9r04t2oq
-	 xltWlehbXiB67ZMAQWnrQoVj+DiZFHN+NBfjuvU1NjyfB2Ddu2aM8iXCgFRBLDoYay
-	 g16QEPXF4AC9zWT9gmFiFBsI33WYK0hPLPOcUfOEHPmaactnayJJez1VEVBtwiNR9Y
-	 JXNF0ItDpZyc3IIfSo37+EWJEtomFXaWoVDWCwsbw7IKpOoNzZjlXdqVxDxK0o7E4d
-	 aB6mka1O0ln2A==
-Received: from johan by xi.lan with local (Exim 4.96.2)
-	(envelope-from <johan@kernel.org>)
-	id 1rDjvR-0008HE-0v;
-	Thu, 14 Dec 2023 12:30:46 +0100
-Date: Thu, 14 Dec 2023 12:30:45 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Manivannan Sadhasivam <mani@kernel.org>, andersson@kernel.org,
-	konrad.dybcio@linaro.org, vkoul@kernel.org, sboyd@kernel.org,
-	mturquette@baylibre.com, robh+dt@kernel.org,
+	b=uVct52cUOIceKATlABivrxGspm4zxEeI7nJUoPLdOQZrR2QVcd0QbZRuQbc+4/NoO
+	 mmlP9blb5sOixsg+eUYJQjaTb9kGqxE5/2q6nw4QaEyTcJvbXPsr1QdJNkMQXFldoW
+	 o1hc+4HwmRMMMLCbE8vxfX3Mv2fD6FvdaP6nWmMp6p+n7I4UMcbv/TYOtW4xBrLS7N
+	 B/7MCCGYwOQ6coCLo7L5ub/dgdSQIkSGBpuyPTpRnVBaTmrnFxXyo4G53qzLlpGr9i
+	 YsQs90tkpRJbXQ3+15OR/d6CdZoeBmpKwrXxNd4f6p5qHTgz/UR9zsbF2Go9UHIIMc
+	 PJ1YM/zUZBkDg==
+Date: Thu, 14 Dec 2023 17:19:59 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+	sboyd@kernel.org, mturquette@baylibre.com, robh+dt@kernel.org,
 	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Shazad Hussain <quic_shazhuss@quicinc.com>, quic_cang@quicinc.com
 Subject: Re: [PATCH 00/16] Fix Qcom UFS PHY clocks
-Message-ID: <ZXrnZeDYOsteY5zT@hovoldconsulting.com>
+Message-ID: <20231214114959.GC48078@thinkpad>
 References: <20231214091101.45713-1-manivannan.sadhasivam@linaro.org>
  <ZXrVxmxY6wZprbBa@hovoldconsulting.com>
  <20231214103907.GL2938@thinkpad>
  <ZXrgWK5wZz6dAkKP@hovoldconsulting.com>
  <20231214111409.GB48078@thinkpad>
+ <ZXrnZeDYOsteY5zT@hovoldconsulting.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231214111409.GB48078@thinkpad>
+In-Reply-To: <ZXrnZeDYOsteY5zT@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231214_033054_914812_6148992F 
-X-CRM114-Status: GOOD (  28.48  )
+X-CRM114-CacheID: sfid-20231214_035019_699648_6A5B0738 
+X-CRM114-Status: GOOD (  34.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,81 +78,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 14, 2023 at 04:44:09PM +0530, Manivannan Sadhasivam wrote:
-> + Can
-> 
-> On Thu, Dec 14, 2023 at 12:00:40PM +0100, Johan Hovold wrote:
-> > [ +CC: Shazad ]
-> > 
-> > On Thu, Dec 14, 2023 at 04:09:07PM +0530, Manivannan Sadhasivam wrote:
-> > > On Thu, Dec 14, 2023 at 11:15:34AM +0100, Johan Hovold wrote:
-> > > > On Thu, Dec 14, 2023 at 02:40:45PM +0530, Manivannan Sadhasivam wrote:
-
-> > Unless the PHY consumes CXO directly, it should not be included in the
-> > binding as you are suggesting here.
-> 
-> PHY is indeed directly consuming CXO. That's why I included it in the binding.
-
-Ok, good. It's a bit frustrating that people can even seem to agree on
-answers to direct questions about that.
- 
-> > We discussed this at some length at the time with Bjorn and Shazad who
-> > had access to the documentation and the conclusion was that, at least on
-> > sc8280xp, the PHY does not use CXO directly and instead it should be
-> > described as a parent to the UFS refclocks in the clock driver:
-> > 
-> > 	https://lore.kernel.org/lkml/Y2OEjNAPXg5BfOxH@hovoldconsulting.com/
-> > 
-> > The downstream devicetrees have a bad habit of including parent clocks
-> > directly in the consumer node instead of modelling this in clock driver
-> > also for other peripherals.
-> >  
-> 
-> No, I can assure that you got the wrong info. UFS PHY consumes the clock
-> directly from RPMh. It took me several days to dig through the UFS and PHY docs
-> and special thanks to Can Guo from UFS team, who provided much valuable
-> information about these clocks.
-
-Sounds like you've done your research.
-
-> > What exactly is wrong with those commits? We know that the controller
-> > does not consume GCC_UFS_REF_CLKREF_CLK directly, but describing that as
-> > such for now was a deliberate choice:
-> > 
-> > 	GCC_UFS_REF_CLKREF_CLK is the clock to the devices, but as we
-> > 	don't represent the memory device explicitly it seems suitable
-> > 	to use as "ref_clk" in the ufshc nodes - which would then match
-> > 	the special handling of the "link clock" in the UFS driver.
-> >  
-> 
-> No, GCC_UFS_REF_CLKREF_CLK is _not_ the clock to UFS devices. I haven't found
-> information about this specific register in GCC. Initially I thought this is for
-> enabling QREF clocks for the UFS MEM phy, but I haven't found the answer yet.
-
-Just quoting Bjorn.
-
-> But as I said earlier, reference clock to UFS devices comes directly from the
-> controller and there is a specfic register for controlling that. Starting from
-> SM8550, reference clock comes from RPMh.
-
-Sure, but that was only part of what those commits did or claimed. Bjorn
-also explicitly stated that those refclocks were sourced from CXO, even
-though I now see a claim from Shazad in that thread claiming the
-opposite:
-
-	https://lore.kernel.org/all/Y2Imnf1+v5j5CH9r@hovoldconsulting.com/
-
-Without access to docs I can only ask questions and try to do tedious
-inferences from incomplete open sources (e.g. downstream devicetrees).
-
-Johan
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBEZWMgMTQsIDIwMjMgYXQgMTI6MzA6NDVQTSArMDEwMCwgSm9oYW4gSG92b2xkIHdy
+b3RlOgo+IE9uIFRodSwgRGVjIDE0LCAyMDIzIGF0IDA0OjQ0OjA5UE0gKzA1MzAsIE1hbml2YW5u
+YW4gU2FkaGFzaXZhbSB3cm90ZToKPiA+ICsgQ2FuCj4gPiAKPiA+IE9uIFRodSwgRGVjIDE0LCAy
+MDIzIGF0IDEyOjAwOjQwUE0gKzAxMDAsIEpvaGFuIEhvdm9sZCB3cm90ZToKPiA+ID4gWyArQ0M6
+IFNoYXphZCBdCj4gPiA+IAo+ID4gPiBPbiBUaHUsIERlYyAxNCwgMjAyMyBhdCAwNDowOTowN1BN
+ICswNTMwLCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4gPiA+ID4gT24gVGh1LCBEZWMg
+MTQsIDIwMjMgYXQgMTE6MTU6MzRBTSArMDEwMCwgSm9oYW4gSG92b2xkIHdyb3RlOgo+ID4gPiA+
+ID4gT24gVGh1LCBEZWMgMTQsIDIwMjMgYXQgMDI6NDA6NDVQTSArMDUzMCwgTWFuaXZhbm5hbiBT
+YWRoYXNpdmFtIHdyb3RlOgo+IAo+ID4gPiBVbmxlc3MgdGhlIFBIWSBjb25zdW1lcyBDWE8gZGly
+ZWN0bHksIGl0IHNob3VsZCBub3QgYmUgaW5jbHVkZWQgaW4gdGhlCj4gPiA+IGJpbmRpbmcgYXMg
+eW91IGFyZSBzdWdnZXN0aW5nIGhlcmUuCj4gPiAKPiA+IFBIWSBpcyBpbmRlZWQgZGlyZWN0bHkg
+Y29uc3VtaW5nIENYTy4gVGhhdCdzIHdoeSBJIGluY2x1ZGVkIGl0IGluIHRoZSBiaW5kaW5nLgo+
+IAo+IE9rLCBnb29kLiBJdCdzIGEgYml0IGZydXN0cmF0aW5nIHRoYXQgcGVvcGxlIGNhbiBldmVu
+IHNlZW0gdG8gYWdyZWUgb24KPiBhbnN3ZXJzIHRvIGRpcmVjdCBxdWVzdGlvbnMgYWJvdXQgdGhh
+dC4KPiAgCgpJIGNhbiB1bmRlcnN0YW5kIHRoYXQuCgo+ID4gPiBXZSBkaXNjdXNzZWQgdGhpcyBh
+dCBzb21lIGxlbmd0aCBhdCB0aGUgdGltZSB3aXRoIEJqb3JuIGFuZCBTaGF6YWQgd2hvCj4gPiA+
+IGhhZCBhY2Nlc3MgdG8gdGhlIGRvY3VtZW50YXRpb24gYW5kIHRoZSBjb25jbHVzaW9uIHdhcyB0
+aGF0LCBhdCBsZWFzdCBvbgo+ID4gPiBzYzgyODB4cCwgdGhlIFBIWSBkb2VzIG5vdCB1c2UgQ1hP
+IGRpcmVjdGx5IGFuZCBpbnN0ZWFkIGl0IHNob3VsZCBiZQo+ID4gPiBkZXNjcmliZWQgYXMgYSBw
+YXJlbnQgdG8gdGhlIFVGUyByZWZjbG9ja3MgaW4gdGhlIGNsb2NrIGRyaXZlcjoKPiA+ID4gCj4g
+PiA+IAlodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sL1kyT0VqTkFQWGc1QmZPeEhAaG92b2xk
+Y29uc3VsdGluZy5jb20vCj4gPiA+IAo+ID4gPiBUaGUgZG93bnN0cmVhbSBkZXZpY2V0cmVlcyBo
+YXZlIGEgYmFkIGhhYml0IG9mIGluY2x1ZGluZyBwYXJlbnQgY2xvY2tzCj4gPiA+IGRpcmVjdGx5
+IGluIHRoZSBjb25zdW1lciBub2RlIGluc3RlYWQgb2YgbW9kZWxsaW5nIHRoaXMgaW4gY2xvY2sg
+ZHJpdmVyCj4gPiA+IGFsc28gZm9yIG90aGVyIHBlcmlwaGVyYWxzLgo+ID4gPiAgCj4gPiAKPiA+
+IE5vLCBJIGNhbiBhc3N1cmUgdGhhdCB5b3UgZ290IHRoZSB3cm9uZyBpbmZvLiBVRlMgUEhZIGNv
+bnN1bWVzIHRoZSBjbG9jawo+ID4gZGlyZWN0bHkgZnJvbSBSUE1oLiBJdCB0b29rIG1lIHNldmVy
+YWwgZGF5cyB0byBkaWcgdGhyb3VnaCB0aGUgVUZTIGFuZCBQSFkgZG9jcwo+ID4gYW5kIHNwZWNp
+YWwgdGhhbmtzIHRvIENhbiBHdW8gZnJvbSBVRlMgdGVhbSwgd2hvIHByb3ZpZGVkIG11Y2ggdmFs
+dWFibGUKPiA+IGluZm9ybWF0aW9uIGFib3V0IHRoZXNlIGNsb2Nrcy4KPiAKPiBTb3VuZHMgbGlr
+ZSB5b3UndmUgZG9uZSB5b3VyIHJlc2VhcmNoLgo+IAo+ID4gPiBXaGF0IGV4YWN0bHkgaXMgd3Jv
+bmcgd2l0aCB0aG9zZSBjb21taXRzPyBXZSBrbm93IHRoYXQgdGhlIGNvbnRyb2xsZXIKPiA+ID4g
+ZG9lcyBub3QgY29uc3VtZSBHQ0NfVUZTX1JFRl9DTEtSRUZfQ0xLIGRpcmVjdGx5LCBidXQgZGVz
+Y3JpYmluZyB0aGF0IGFzCj4gPiA+IHN1Y2ggZm9yIG5vdyB3YXMgYSBkZWxpYmVyYXRlIGNob2lj
+ZToKPiA+ID4gCj4gPiA+IAlHQ0NfVUZTX1JFRl9DTEtSRUZfQ0xLIGlzIHRoZSBjbG9jayB0byB0
+aGUgZGV2aWNlcywgYnV0IGFzIHdlCj4gPiA+IAlkb24ndCByZXByZXNlbnQgdGhlIG1lbW9yeSBk
+ZXZpY2UgZXhwbGljaXRseSBpdCBzZWVtcyBzdWl0YWJsZQo+ID4gPiAJdG8gdXNlIGFzICJyZWZf
+Y2xrIiBpbiB0aGUgdWZzaGMgbm9kZXMgLSB3aGljaCB3b3VsZCB0aGVuIG1hdGNoCj4gPiA+IAl0
+aGUgc3BlY2lhbCBoYW5kbGluZyBvZiB0aGUgImxpbmsgY2xvY2siIGluIHRoZSBVRlMgZHJpdmVy
+Lgo+ID4gPiAgCj4gPiAKPiA+IE5vLCBHQ0NfVUZTX1JFRl9DTEtSRUZfQ0xLIGlzIF9ub3RfIHRo
+ZSBjbG9jayB0byBVRlMgZGV2aWNlcy4gSSBoYXZlbid0IGZvdW5kCj4gPiBpbmZvcm1hdGlvbiBh
+Ym91dCB0aGlzIHNwZWNpZmljIHJlZ2lzdGVyIGluIEdDQy4gSW5pdGlhbGx5IEkgdGhvdWdodCB0
+aGlzIGlzIGZvcgo+ID4gZW5hYmxpbmcgUVJFRiBjbG9ja3MgZm9yIHRoZSBVRlMgTUVNIHBoeSwg
+YnV0IEkgaGF2ZW4ndCBmb3VuZCB0aGUgYW5zd2VyIHlldC4KPiAKPiBKdXN0IHF1b3RpbmcgQmpv
+cm4uCj4gCj4gPiBCdXQgYXMgSSBzYWlkIGVhcmxpZXIsIHJlZmVyZW5jZSBjbG9jayB0byBVRlMg
+ZGV2aWNlcyBjb21lcyBkaXJlY3RseSBmcm9tIHRoZQo+ID4gY29udHJvbGxlciBhbmQgdGhlcmUg
+aXMgYSBzcGVjZmljIHJlZ2lzdGVyIGZvciBjb250cm9sbGluZyB0aGF0LiBTdGFydGluZyBmcm9t
+Cj4gPiBTTTg1NTAsIHJlZmVyZW5jZSBjbG9jayBjb21lcyBmcm9tIFJQTWguCj4gCj4gU3VyZSwg
+YnV0IHRoYXQgd2FzIG9ubHkgcGFydCBvZiB3aGF0IHRob3NlIGNvbW1pdHMgZGlkIG9yIGNsYWlt
+ZWQuIEJqb3JuCj4gYWxzbyBleHBsaWNpdGx5IHN0YXRlZCB0aGF0IHRob3NlIHJlZmNsb2NrcyB3
+ZXJlIHNvdXJjZWQgZnJvbSBDWE8sIGV2ZW4KPiB0aG91Z2ggSSBub3cgc2VlIGEgY2xhaW0gZnJv
+bSBTaGF6YWQgaW4gdGhhdCB0aHJlYWQgY2xhaW1pbmcgdGhlCj4gb3Bwb3NpdGU6Cj4gCj4gCWh0
+dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC9ZMkltbmYxK3Y1ajVDSDlyQGhvdm9sZGNvbnN1bHRp
+bmcuY29tLwoKVG8gY2xhcmlmeSBmdXJ0aGVyLCB3aGF0IFNoYXphZCBzYWlkIGFib3V0IEdDQ19V
+RlNfUkVGX0NMS1JFRl9DTEsgaXMgY29ycmVjdC4KVGhpcyBjbG9jayBpcyBub3QgZGlyZWN0bHkg
+c291cmNlZCBieSBDWE8sIHNvIGl0IHNob3VsZCBiZSB2b3RlZCBieSB0aGUKX1BIWV8gZHJpdmVy
+IHNlcGFyYXRlbHkgYWxvbmcgd2l0aCBDWE8gKHdoaWNoIHN0aWxsIGZlZWRzIFBIWSkuIFRoYXQn
+cyB3aGF0IEkKcmVwcmVzZW50ZWQgaW4gdGhlIGJpbmRpbmcuCgo+IAo+IFdpdGhvdXQgYWNjZXNz
+IHRvIGRvY3MgSSBjYW4gb25seSBhc2sgcXVlc3Rpb25zIGFuZCB0cnkgdG8gZG8gdGVkaW91cwo+
+IGluZmVyZW5jZXMgZnJvbSBpbmNvbXBsZXRlIG9wZW4gc291cmNlcyAoZS5nLiBkb3duc3RyZWFt
+IGRldmljZXRyZWVzKS4KPiAKClRoYXQncyB0aGUgbGlmZSBmb3IgbW9zdCBvZiB1cyA6KSBFdmVu
+IHdpdGggYWNjZXNzIHRvIGludGVybmFsIGRvY3MsIGl0IGlzCmRpZmZpY3VsdCB0byBmaW5kIHRo
+ZSBpbmZvcm1hdGlvbiB3ZSBhcmUgbG9va2luZyBmb3IuIEJlY2F1c2UsIGEgdmVyeSBmZXcgcGVv
+cGxlCmtub3cgd2hlcmUgdGhlIGluZm9ybWF0aW9uIGlzIGJ1cmllZC4KCi0gTWFuaQoKPiBKb2hh
+bgoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
+r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
+eQo=
