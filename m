@@ -4,65 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE35BC4332F
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Dec 2023 08:08:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFF89C4167B
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Dec 2023 08:28:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QbDS/vpthWm4zCvkFA1mFMdoHjlRpYovBucHnOwwfcc=; b=BG+xNAzAwWq3K24lUC0jDU5NYM
-	iAChc6CHF6kWm7sksC93kYXdPrdLDsIQJV3wseqbmxBreZtNcnXzelxnLWSeCzU2n7TBI5bp/vG8h
-	tsgykCPa/zQ2K63yAReiW7aEnhwIuV2Uzo3BoWo60C2dT4rOks1MvZh/g5JqMm6FwLQhpfT402eAK
-	g3m3rwEHknjH0ZdRi5Bktrz7vGxuCzqTGA37ZcdMQhNz+joWN4orDaRCJRAyjrYlQpJseXKSg7EEW
-	0A/lDTJHGbgD/80IaBRf1TLCAZaIR6JliOEwAj0yiOwNEUOM/F6CubFd/pFzYnxC5zQt6ISD2tmKM
-	bcL5NZ3g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tnA1OMeyFkjE4NGuxM28IO3RIZaqb8bOe5Za+K1mcmQ=; b=TBKUY4f0BxzBb+
+	dG+7aqvXyQRaEO87yYmN/TS2z+H1Cr4u03Ibklicb8+F9I2OnRWVstvPq15hHqEcIg0PMmPXBYAR4
+	sMj2c6KXN5CMgyFl+ubCG8/AbE7J2dGw9HjzOKiO1hX0GDJ6WrNV3xrmsLLbfU8Sqr5QVP6+WkEx+
+	JlSZ960YMeqUGEDEMYQVcwGBEff7jtEhOPwQX6LzqZGXcQhT71ovAJSzNl4w/+CL5NVoxyZMp0d9L
+	kPGvhzzIqfqmp8zrAd3eyrfoh38yHpChJusspgUa/95DKIhMbfwQd3fwPxkqwFv0sZfpcr2CzM5ZC
+	qlGCf0Dxe6OXBcIxqiGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rE3Fc-002Pbk-27;
-	Fri, 15 Dec 2023 08:08:52 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1rE3Yf-002TPE-1S;
+	Fri, 15 Dec 2023 08:28:33 +0000
+Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rE3FZ-002PbL-0E
+	id 1rE3Yc-002TNc-27
 	for linux-phy@lists.infradead.org;
-	Fri, 15 Dec 2023 08:08:51 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <mkl@pengutronix.de>)
-	id 1rE3FR-0002sV-6E; Fri, 15 Dec 2023 09:08:41 +0100
-Received: from [2a0a:edc0:0:b01:1d::7b] (helo=bjornoya.blackshift.org)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <mkl@pengutronix.de>)
-	id 1rE3FP-00FzBq-TY; Fri, 15 Dec 2023 09:08:39 +0100
-Received: from pengutronix.de (unknown [172.20.34.65])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	(Authenticated sender: mkl-all@blackshift.org)
-	by smtp.blackshift.org (Postfix) with ESMTPSA id 45AD52639D1;
-	Fri, 15 Dec 2023 08:08:39 +0000 (UTC)
-Date: Fri, 15 Dec 2023 09:08:38 +0100
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Wang Jinchao <wangjinchao@xfusion.com>
-Cc: Wolfgang Grandegger <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, stone.xulei@xfusion.com
-Subject: Re: [PATCH] phy: phy-can-transceiver: insert space after include
-Message-ID: <20231215-cover-overheat-14be5a6fc0d6-mkl@pengutronix.de>
-References: <202312151407+0800-wangjinchao@xfusion.com>
+	Fri, 15 Dec 2023 08:28:31 +0000
+Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-a1ceae92ab6so47143266b.0
+        for <linux-phy@lists.infradead.org>; Fri, 15 Dec 2023 00:28:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1702628908; x=1703233708; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FVAI74y3AeVAT/7kzguSGN788sS9SdF+TlBv/tBMWbU=;
+        b=FSyjhhxTi79yy0S1KzEgT25GvpLKzZEezlB+UmkNNaGFn9+7K4IHJrJfjSbeH6mjg/
+         IcOt5oTubTW5yccrOtnskVOrKfX7tZYy/LhCshwv4gN05nb/xKmkgGMxpJJ2Mp7bIzQx
+         TTCGR/7ANkmHRHvX6LFd/HFoOGxiz54900+j4p5UUlEu4LyzSeE0navA8QGpO8gKXy0V
+         USgcMWQX0qsLqhpbv0Btw5njkIyKx3rvT9IwBEfnHZX2V54W4Bs/3AbSSfhRUNnShxjp
+         v0BVh3+0vtuoVifJVUeeeBnUrPN0SbpwW5ly1X5y56/Dar01dNOmi2wSl1miuxskYavN
+         vE2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1702628908; x=1703233708;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=FVAI74y3AeVAT/7kzguSGN788sS9SdF+TlBv/tBMWbU=;
+        b=bMSkZrQPfl8Y42B/BvRyDOanMfgFYynVrVEgVcdmiCCNGF+9q9Sow2yTZNIHcSzLDs
+         tPXbktXx9bQpt374QvpLClFOYUxuK0mh6M0z49fX9kuE8QgJ7fscF4RCNlqpXd/tFzq2
+         l2HUcNLLhq0Jz7qkiLkuC1yfYQMDsV35kJ3JeKeVdoM+akfeMLVxY0L/EhyRrwR0y4TL
+         ZCSJwPcyrinZ/WLKLyiNDdXyRmQ+snX8ldlnTGmKbDubFIx9+cyswt92OVSlP7wepkId
+         309kePVg0bmgr4ogiWi3cKcXFjD0QxPKKt85jwX423gsfaNMwmxhmeanYAPuvnO0llSy
+         UJ5A==
+X-Gm-Message-State: AOJu0Yz1HCJbBOKAcrs1pC1B707Bz0xCvN1YyqoWXrmnYqPUZyGNchtR
+	HTj5apKRdJKPHsifXbI5MnYgyA==
+X-Google-Smtp-Source: AGHT+IGHOYgJwQwPk7g2rSdYbdFSmnSiXp5a02gfinwGK9oB/egAQDiTk8sP4DQvR+Q2pgc6sFYJcw==
+X-Received: by 2002:a17:907:d25:b0:a1f:6b64:6a52 with SMTP id gn37-20020a1709070d2500b00a1f6b646a52mr7143130ejc.43.1702628907839;
+        Fri, 15 Dec 2023 00:28:27 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.218.27])
+        by smtp.gmail.com with ESMTPSA id vw12-20020a170907a70c00b00a1c904675cfsm10410578ejc.29.2023.12.15.00.28.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 15 Dec 2023 00:28:27 -0800 (PST)
+Message-ID: <faf0e9a7-8436-47a1-bdf0-3edc26580a05@linaro.org>
+Date: Fri, 15 Dec 2023 09:28:23 +0100
 MIME-Version: 1.0
-In-Reply-To: <202312151407+0800-wangjinchao@xfusion.com>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/10] dt-bindings: clock: Add separate clocks for PCIe
+ and USB for Combo PHY
+Content-Language: en-US
+To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, mturquette@baylibre.com,
+ sboyd@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, bhelgaas@google.com, lpieralisi@kernel.org,
+ kw@linux.com, vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
+ quic_nsekar@quicinc.com, quic_srichara@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: quic_varada@quicinc.com, quic_devipriy@quicinc.com,
+ quic_kathirav@quicinc.com, quic_anusha@quicinc.com
+References: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
+ <20231214062847.2215542-2-quic_ipkumar@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20231214062847.2215542-2-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231215_000849_105828_6ED9DF80 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20231215_002830_710746_BCFA9DDE 
+X-CRM114-Status: UNSURE (   7.70  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,66 +143,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8167389749149849431=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 14/12/2023 07:28, Praveenkumar I wrote:
+> Qualcomm IPQ5332 has a combo PHY for PCIe and USB. Either one of the
+> interface (PCIe/USB) can use this combo PHY and the PHY drivers are
+> different for PCIe and USB. Hence separate the PCIe and USB pipe clock
+> source from DT, and individual driver node can be used as a clock source
+> separately in the gcc. Change the dt-bindings accordingly.
 
---===============8167389749149849431==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="hs7kqyfvdpf4yw4d"
-Content-Disposition: inline
+Adding required clock breaks the ABI and there is no explanation nor
+note about it in commit msg
 
+Best regards,
+Krzysztof
 
---hs7kqyfvdpf4yw4d
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 15.12.2023 14:09:00, Wang Jinchao wrote:
-> Maintain Consistent Formatting: Insert Space after #include
->=20
-> Signed-off-by: Wang Jinchao <wangjinchao@xfusion.com>
-
-Reviewed-by: Marc Kleine-Budde <mkl@pengutronix.de>
-
-regards,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde          |
-Embedded Linux                   | https://www.pengutronix.de |
-Vertretung N=C3=BCrnberg              | Phone: +49-5121-206917-129 |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-9   |
-
---hs7kqyfvdpf4yw4d
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEDs2BvajyNKlf9TJQvlAcSiqKBOgFAmV8CYMACgkQvlAcSiqK
-BOiG4AgAqxMkdiIDbL8RsDETy9Wjp4cYppoKf1BnajImFH+U7XrztoezITfJTY0v
-y4qyitEITNAedX3EHrhISxTE7oMs7imd0ZNTGaAtfH7UhG+MMrDY7QAUe62rbyPY
-YUHlnJZWkKMN4wo66VcERXg8r4Peaqf3Lwm8bfPgPfuvs/K/jZ6Vly5DyhfcXIRo
-cY0Y6RneBdvW7qrWKe5RSoaioTNz9GtqGvsyoSOSOLuX+1P/6VJTFciImIdNWFNe
-b8Io4TvI9TLKawTAqJmce5V10CUtmYubr5Y/fgp4/qbuVYVGCpzmJBp3r4hFWXB7
-/vraeHL36ZPUnyHG4BN0r27abltHYw==
-=JmnX
------END PGP SIGNATURE-----
-
---hs7kqyfvdpf4yw4d--
-
-
---===============8167389749149849431==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8167389749149849431==--
-
