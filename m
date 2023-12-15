@@ -4,69 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15C13C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Dec 2023 17:20:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 798F3C4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Dec 2023 05:44:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/KMpRTY/ELqqKpCNl7QY0FwjfU02viHQ8rrijHJ2GsE=; b=kc3ceVjonRE0HV
-	hjgkEsqR/TG11RXSgbCtXxgFbEwVbD6vYdcAespwFwlz/b6Pz8o0+tIyrDVgDnjFr4NdzUDpc2rQI
-	ksiQU72rdiuprwNZNuShUDavo7tjfO7T/wGEEGfIH6MT2QH6lFVQZVrh1F/HifjNvrDuIvf4OQD9o
-	nprPZ8Qf8j7+fJBqBKgBAn4ML7hlumPV3PpMYXt2yBGDLXQDRr9/S2Pl0I18xbz8Urd+idoujI0ul
-	m4EKjclJhY21eR8qps3r8UeP98JSopjPDau0aehsxL6uO3c+rcUMuIc1jky8VHzi+W/ZuN4MG7zTP
-	VkBbUFwQQfJuL6V4U7Ww==;
+	List-Owner; bh=VmLZwx3Y+Ph4bLsGVVix6GVAmZ1MUabhehA1uKRyN7U=; b=PYjJXkyRbncCzo
+	PQZBIN/tpxWyJaBtVGCQ808CsK+rMk+Oak3umosxVaLc8kLdLles/XJBpha0AvoqO+vpjgheTAjZ5
+	za+24sKRwncCpTc/5gC/p/ajglzCgfDdqCZ1NjQaZAvbApKgoyM7MD3FjhLAFXjfuOiUsS4ghb9rS
+	JPnKhAdKs0a0+byO6xI6BIpf21pO3gGw31UZ7xQtxAmnmcPOeFjeC2RW25exqMQqy0dq0DKugVOcU
+	uyYOmAi7WPXKVYtr8Zo5fspA1OFJ7TofnB6OWf2kK2jTcqXjfISvNsuT7TXU9SpvYhHiIAa4ra7EJ
+	/o+wORIUGNza547vq8Bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDpOM-000uVA-2Y;
-	Thu, 14 Dec 2023 17:20:58 +0000
-Received: from mail-oa1-f46.google.com ([209.85.160.46])
+	id 1rE0zu-00264z-0c;
+	Fri, 15 Dec 2023 05:44:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rDpOK-000uTt-0y
+	id 1rE0zq-00264b-1X
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Dec 2023 17:20:57 +0000
-Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-20335dcebe3so1098315fac.0
-        for <linux-phy@lists.infradead.org>; Thu, 14 Dec 2023 09:20:55 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1702574453; x=1703179253;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5bRpMT8adyLjuk8v3m+Q7iMZxQW0r3mgWAJ3z5hKZNg=;
-        b=Z0jVyKtACGuYFj3a5/h4q282upodvGrfAEatSJhvxsLNzhD0h4y2PI8bGj2KIcALif
-         zlVNYunYrpWvprW1b9EiroKKE4gwTwjr3CTxOXd1/yCshtJVk3HZd9By08Ittxu8Biot
-         cDrzgn/LmIUtgXfIMyimLsUX/ZduHRmZzBVuB5jbxojyYF2uoJ6zWjKPGB9cZUypj5rs
-         O2mfsA6aKad9GlxZiYSL/yW93OSB7SwGwKcpD2Px3CB1ZR9ETL7PFmhjpNzH2evMdDaC
-         XKruuDYFKqS4iikokbiDnQKgMVhWzoBFRBDRZkljuCf+iM/vbOR44bsbnLkw7N0aEZ91
-         eGkA==
-X-Gm-Message-State: AOJu0YzaVfCavm4BzsgxpqmcCxw2QsT+W4ZvxMXOtwU3R1DP0C5Jl4Nm
-	7O+pa+SZaipBWc5kJV6/mQ==
-X-Google-Smtp-Source: AGHT+IFG1H7d5qx/OPE9NFJC6FAAQwsK89rA2Zqb4ztseS1evSpGKvGvToAZ/lZKGdOpICFILPvMYg==
-X-Received: by 2002:a05:6870:4209:b0:203:56f5:5a29 with SMTP id u9-20020a056870420900b0020356f55a29mr895478oac.16.1702574453615;
-        Thu, 14 Dec 2023 09:20:53 -0800 (PST)
-Received: from herring.priv ([2607:fb91:e6c7:a40:1c2d:b875:912d:c28])
-        by smtp.gmail.com with ESMTPSA id so10-20020a056871818a00b001fb1f2c424fsm4597941oab.45.2023.12.14.09.20.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 14 Dec 2023 09:20:53 -0800 (PST)
-Received: (nullmailer pid 614807 invoked by uid 1000);
-	Thu, 14 Dec 2023 17:20:51 -0000
-Date: Thu, 14 Dec 2023 11:20:51 -0600
-From: Rob Herring <robh@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, sboyd@kernel.org, mturquette@baylibre.com, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 01/16] dt-bindings: phy: qmp-ufs: Fix PHY clocks
-Message-ID: <20231214172051.GA611674-robh@kernel.org>
-References: <20231214091101.45713-1-manivannan.sadhasivam@linaro.org>
- <20231214091101.45713-2-manivannan.sadhasivam@linaro.org>
+	Fri, 15 Dec 2023 05:44:28 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BF3Ps0Y008016;
+	Fri, 15 Dec 2023 05:44:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=lNyS6XOOhGk9188CugqQXE0AbjhCg2iwozC+KlPC2+w=; b=Bb
+	IWE6PJ4v0UF1VzhXGTxDPmN+dqZgwR1Itiixv0Nidsubvgk3wJanouPAxQwXW2ch
+	nBqE+nvAj5RGsN0GbohXAHNdTrxJ1J8CjWQH80l2Gl2VqALLXmp9sDD/Z3mHKhvn
+	PjImWLYwZjSSV7wXBxeUwtsm/gw7Ymg1TijOHhhs1mbckxtI8Y1Xbi27GTCxM/Cd
+	LkrLLhiHJgXgB89q494P2CngIuDXEMwQtuq64IQHLDjBc9tdFJYNe/3y3GEHV34q
+	LUc3hz0i1OhrzEfCNPbDtlLDkAIgSExGJtCsAgASqC0BbRObbwgzIl+jPbV9Henl
+	/R0NwoNNuBGrnEashkWg==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v0741j227-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 15 Dec 2023 05:44:18 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3BF5iHFe009359
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 15 Dec 2023 05:44:17 GMT
+Received: from [10.201.3.91] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 14 Dec
+ 2023 21:44:09 -0800
+Message-ID: <6a3895ad-7da3-49c0-a7a0-7dd1031e0544@quicinc.com>
+Date: Fri, 15 Dec 2023 11:14:07 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231214091101.45713-2-manivannan.sadhasivam@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 02/10] clk: qcom: ipq5332: Add separate clocks for PCIe
+ and USB for Combo PHY
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <mani@kernel.org>,
+        <quic_nsekar@quicinc.com>, <quic_srichara@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-clk@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <quic_varada@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <quic_kathirav@quicinc.com>, <quic_anusha@quicinc.com>
+References: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
+ <20231214062847.2215542-3-quic_ipkumar@quicinc.com>
+ <CAA8EJpr61JuznqfdMG96mjrqquf2Qbfe=potB5vzk43XexWj2w@mail.gmail.com>
+Content-Language: en-US
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
+In-Reply-To: <CAA8EJpr61JuznqfdMG96mjrqquf2Qbfe=potB5vzk43XexWj2w@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: p7j-yoodYOO4QQRr6l0cSrWkm_bl4Uet
+X-Proofpoint-GUID: p7j-yoodYOO4QQRr6l0cSrWkm_bl4Uet
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
+ spamscore=0 phishscore=0 lowpriorityscore=0 impostorscore=0 mlxscore=0
+ suspectscore=0 adultscore=0 mlxlogscore=931 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2311290000
+ definitions=main-2312150033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231214_092056_342419_25F5E297 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231214_214426_668402_78F79ACB 
+X-CRM114-Status: GOOD (  20.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,24 +105,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 14, 2023 at 02:40:46PM +0530, Manivannan Sadhasivam wrote:
-> All QMP UFS PHYs except MSM8996 require 3 clocks:
-> 
-> * ref - 19.2MHz reference clock from RPMh
-> * ref_aux - Auxiliary reference clock from GCC
-> * qref - QREF clock from GCC or TCSR (since SM8550)
-> 
-> MSM8996 only requires 'ref' and 'qref' clocks. Hence, fix the binding to
-> reflect the actual clock topology.
 
-Breaking the ABI is okay because...? Please explain in the commit msg.
 
-Rob
+On 12/14/2023 12:39 PM, Dmitry Baryshkov wrote:
+> On Thu, 14 Dec 2023 at 08:29, Praveenkumar I <quic_ipkumar@quicinc.com> wrote:
+>> Qualcomm IPQ5332 has a combo PHY for PCIe and USB. Either one of the
+>> interface (PCIe/USB) can use this combo PHY and the PHY drivers are
+>> different for PCIe and USB. Hence separate the PCIe and USB pipe clock
+>> source from DT, and individual driver node can be used as a clock source
+>> separately in the gcc. Add separate enum for PCIe and USB pipe clock and
+>> change the parent in corresponding structures.
+>>
+>> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> Please use your full name for the git authorship and or the S-o-B
+> tags. This applies to the whole series.
+My full name is "Praveenkumar I". In my region, we used to have only the 
+initial letter of surname.
+
+--
+Thanks,
+Praveenkumar
+> Other than that:
+>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>
+>> ---
+>>   drivers/clk/qcom/gcc-ipq5332.c | 7 ++++---
+>>   1 file changed, 4 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/clk/qcom/gcc-ipq5332.c b/drivers/clk/qcom/gcc-ipq5332.c
+>> index f98591148a97..aa0f616c3b1b 100644
+>> --- a/drivers/clk/qcom/gcc-ipq5332.c
+>> +++ b/drivers/clk/qcom/gcc-ipq5332.c
+>> @@ -25,7 +25,8 @@ enum {
+>>          DT_SLEEP_CLK,
+>>          DT_PCIE_2LANE_PHY_PIPE_CLK,
+>>          DT_PCIE_2LANE_PHY_PIPE_CLK_X1,
+>> -       DT_USB_PCIE_WRAPPER_PIPE_CLK,
+>> +       DT_PCIE_WRAPPER_PIPE_CLK,
+>> +       DT_USB_WRAPPER_PIPE_CLK,
+>>   };
+>>
+>>   enum {
+>> @@ -728,7 +729,7 @@ static struct clk_regmap_phy_mux gcc_pcie3x1_0_pipe_clk_src = {
+>>                  .hw.init = &(struct clk_init_data) {
+>>                          .name = "gcc_pcie3x1_0_pipe_clk_src",
+>>                          .parent_data = &(const struct clk_parent_data) {
+>> -                               .index = DT_USB_PCIE_WRAPPER_PIPE_CLK,
+>> +                               .index = DT_PCIE_WRAPPER_PIPE_CLK,
+>>                          },
+>>                          .num_parents = 1,
+>>                          .ops = &clk_regmap_phy_mux_ops,
+>> @@ -1072,7 +1073,7 @@ static struct clk_regmap_phy_mux gcc_usb0_pipe_clk_src = {
+>>                  .hw.init = &(struct clk_init_data) {
+>>                          .name = "gcc_usb0_pipe_clk_src",
+>>                          .parent_data = &(const struct clk_parent_data) {
+>> -                               .index = DT_USB_PCIE_WRAPPER_PIPE_CLK,
+>> +                               .index = DT_USB_WRAPPER_PIPE_CLK,
+>>                          },
+>>                          .num_parents = 1,
+>>                          .ops = &clk_regmap_phy_mux_ops,
+>> --
+>> 2.34.1
+>>
+>>
+>
 
 
 -- 
