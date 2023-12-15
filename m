@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFF89C4167B
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Dec 2023 08:28:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B9ACC4332F
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Dec 2023 08:31:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tnA1OMeyFkjE4NGuxM28IO3RIZaqb8bOe5Za+K1mcmQ=; b=TBKUY4f0BxzBb+
-	dG+7aqvXyQRaEO87yYmN/TS2z+H1Cr4u03Ibklicb8+F9I2OnRWVstvPq15hHqEcIg0PMmPXBYAR4
-	sMj2c6KXN5CMgyFl+ubCG8/AbE7J2dGw9HjzOKiO1hX0GDJ6WrNV3xrmsLLbfU8Sqr5QVP6+WkEx+
-	JlSZ960YMeqUGEDEMYQVcwGBEff7jtEhOPwQX6LzqZGXcQhT71ovAJSzNl4w/+CL5NVoxyZMp0d9L
-	kPGvhzzIqfqmp8zrAd3eyrfoh38yHpChJusspgUa/95DKIhMbfwQd3fwPxkqwFv0sZfpcr2CzM5ZC
-	qlGCf0Dxe6OXBcIxqiGQ==;
+	List-Owner; bh=Qg03k1XBEX1tyaf1rqs4wp07MT4MqpR1NUZi+42gAUk=; b=WQ2EQ+Ra8RE4Q/
+	99pmA7Au6uS8OnM4WjYgV3yQy1OJ7vFKQdqEvONxV3KMH3Tp/b5e37kUM/aGCtMCgEICYLMftBcQq
+	+uaKBGsaDdP+5Xiezgg/XxXPWBWnxgFrCMY1pHeqojMqHRNVc80JzHZ3apBUTGxGgZov/eGw6gnzD
+	KTelrGDVvzKqVj/jaMz55rRZ8iSYm4CyuNpjtvUD7go+wi/I2OEXfGlNCZs1/yeoEoGIPL5LzCCU2
+	TwMXN4LXQkfU83xsfyKa9uRcVSPguVKIkq9wVyXoppPNVI80io8CUedp5uuipT5ojs3Rbmxl+9kAC
+	9CTpAnVkC00ox48lh8QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rE3Yf-002TPE-1S;
-	Fri, 15 Dec 2023 08:28:33 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1rE3bG-002TpY-0V;
+	Fri, 15 Dec 2023 08:31:14 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rE3Yc-002TNc-27
+	id 1rE3bD-002Top-1f
 	for linux-phy@lists.infradead.org;
-	Fri, 15 Dec 2023 08:28:31 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-a1ceae92ab6so47143266b.0
-        for <linux-phy@lists.infradead.org>; Fri, 15 Dec 2023 00:28:29 -0800 (PST)
+	Fri, 15 Dec 2023 08:31:13 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-54c64316a22so406250a12.0
+        for <linux-phy@lists.infradead.org>; Fri, 15 Dec 2023 00:31:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1702628908; x=1703233708; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1702629068; x=1703233868; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=FVAI74y3AeVAT/7kzguSGN788sS9SdF+TlBv/tBMWbU=;
-        b=FSyjhhxTi79yy0S1KzEgT25GvpLKzZEezlB+UmkNNaGFn9+7K4IHJrJfjSbeH6mjg/
-         IcOt5oTubTW5yccrOtnskVOrKfX7tZYy/LhCshwv4gN05nb/xKmkgGMxpJJ2Mp7bIzQx
-         TTCGR/7ANkmHRHvX6LFd/HFoOGxiz54900+j4p5UUlEu4LyzSeE0navA8QGpO8gKXy0V
-         USgcMWQX0qsLqhpbv0Btw5njkIyKx3rvT9IwBEfnHZX2V54W4Bs/3AbSSfhRUNnShxjp
-         v0BVh3+0vtuoVifJVUeeeBnUrPN0SbpwW5ly1X5y56/Dar01dNOmi2wSl1miuxskYavN
-         vE2A==
+        bh=S/VHrDXjE8ArwAdQn1IvokNpm8/NuKC38VUGI1HTeeM=;
+        b=OH0VP8fRwWm0B4mTaFeogCEXyvaQ0SkkzTvP+xcvMtw+mA3h0cfdyAVNITb62nb4wf
+         Il8+AOGu0C3t44HmwXH4a6eOJfVBIGTo1a0+9wCcvom8PUNqiXkVTbRsFFeIQ9uVRrfg
+         2tLNb+sQZJ2bk1KnDBh1qCxMRna/SNZtQuRaBP3JeSCEYEHq4xGYnq1+AM49uoGuHHlH
+         Uif+HuknqbM9l9k5Zj09F5jKaZiHWAOfLcGk5vfaggufw93ZOz64I0wox0UtIHm5k3SN
+         G5FsyJz95gV8H0UKJoncviAIYhRXOepO1lO0rboPnqFNVHZ5aRMnTZ++YmAMeG5JaqF5
+         6sww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1702628908; x=1703233708;
+        d=1e100.net; s=20230601; t=1702629068; x=1703233868;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FVAI74y3AeVAT/7kzguSGN788sS9SdF+TlBv/tBMWbU=;
-        b=bMSkZrQPfl8Y42B/BvRyDOanMfgFYynVrVEgVcdmiCCNGF+9q9Sow2yTZNIHcSzLDs
-         tPXbktXx9bQpt374QvpLClFOYUxuK0mh6M0z49fX9kuE8QgJ7fscF4RCNlqpXd/tFzq2
-         l2HUcNLLhq0Jz7qkiLkuC1yfYQMDsV35kJ3JeKeVdoM+akfeMLVxY0L/EhyRrwR0y4TL
-         ZCSJwPcyrinZ/WLKLyiNDdXyRmQ+snX8ldlnTGmKbDubFIx9+cyswt92OVSlP7wepkId
-         309kePVg0bmgr4ogiWi3cKcXFjD0QxPKKt85jwX423gsfaNMwmxhmeanYAPuvnO0llSy
-         UJ5A==
-X-Gm-Message-State: AOJu0Yz1HCJbBOKAcrs1pC1B707Bz0xCvN1YyqoWXrmnYqPUZyGNchtR
-	HTj5apKRdJKPHsifXbI5MnYgyA==
-X-Google-Smtp-Source: AGHT+IGHOYgJwQwPk7g2rSdYbdFSmnSiXp5a02gfinwGK9oB/egAQDiTk8sP4DQvR+Q2pgc6sFYJcw==
-X-Received: by 2002:a17:907:d25:b0:a1f:6b64:6a52 with SMTP id gn37-20020a1709070d2500b00a1f6b646a52mr7143130ejc.43.1702628907839;
-        Fri, 15 Dec 2023 00:28:27 -0800 (PST)
+        bh=S/VHrDXjE8ArwAdQn1IvokNpm8/NuKC38VUGI1HTeeM=;
+        b=UK0ugn2qOutncuBdjnPvxZEh1qo5ga1wwlJjMJpoINfafiqbXjVZ7A75rWAokOjGN7
+         51N7XICHAtXSRPpdzS0A9y7gYT0Lcc10qtJP2l4dKs0vImPyhITwVdKZ4sY6s+jMfl9x
+         dDTDpO2XCApdNKrn6DjicUpAWVU1emNjELU1iLmeKq7y1MZwwEx7oJ8U36sXXu1pkJkO
+         inyFxt8TR8WnZMc7cKpILsoJrmmtrVUMviVEkJAMwo4fhxyJlLel3tuarBiRv4v283n1
+         pmMKMvB80PMPImSUy5CRQJdsf/KFFCcaQVwP/LNnTDGv+P7MhDdwjBog4rScEdWVLcCa
+         nF+g==
+X-Gm-Message-State: AOJu0YzdGyReMzdoP8D8//ZY2qa/v+bYTliSwsOmEoFy6Qy0/sxZxWry
+	r43OMafPi454PBnofMUPKZWa3g==
+X-Google-Smtp-Source: AGHT+IFxogtkGNkNyekbXZYz+76lK+ayuc9eput/RFVQ4EizYhc44pFmoxfBr9gfbbOjeTExBzlt7w==
+X-Received: by 2002:a17:906:1084:b0:a22:faec:7d2e with SMTP id u4-20020a170906108400b00a22faec7d2emr1844688eju.113.1702629068426;
+        Fri, 15 Dec 2023 00:31:08 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.218.27])
-        by smtp.gmail.com with ESMTPSA id vw12-20020a170907a70c00b00a1c904675cfsm10410578ejc.29.2023.12.15.00.28.24
+        by smtp.gmail.com with ESMTPSA id bn2-20020a170906c0c200b00a23152a543dsm997827ejb.202.2023.12.15.00.31.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 15 Dec 2023 00:28:27 -0800 (PST)
-Message-ID: <faf0e9a7-8436-47a1-bdf0-3edc26580a05@linaro.org>
-Date: Fri, 15 Dec 2023 09:28:23 +0100
+        Fri, 15 Dec 2023 00:31:08 -0800 (PST)
+Message-ID: <c685ca4e-3992-4deb-adfb-da3bbcb59685@linaro.org>
+Date: Fri, 15 Dec 2023 09:31:04 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/10] dt-bindings: clock: Add separate clocks for PCIe
- and USB for Combo PHY
+Subject: Re: [PATCH 05/10] dt-bindings: phy: qcom,uniphy-pcie: Add ipq5332
+ bindings
 Content-Language: en-US
 To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
  andersson@kernel.org, konrad.dybcio@linaro.org, mturquette@baylibre.com,
@@ -81,7 +81,7 @@ To: Praveenkumar I <quic_ipkumar@quicinc.com>, agross@kernel.org,
 Cc: quic_varada@quicinc.com, quic_devipriy@quicinc.com,
  quic_kathirav@quicinc.com, quic_anusha@quicinc.com
 References: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
- <20231214062847.2215542-2-quic_ipkumar@quicinc.com>
+ <20231214062847.2215542-6-quic_ipkumar@quicinc.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -127,11 +127,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231214062847.2215542-2-quic_ipkumar@quicinc.com>
+In-Reply-To: <20231214062847.2215542-6-quic_ipkumar@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231215_002830_710746_BCFA9DDE 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231215_003111_556373_DCCE1DE7 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,14 +148,124 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 14/12/2023 07:28, Praveenkumar I wrote:
-> Qualcomm IPQ5332 has a combo PHY for PCIe and USB. Either one of the
-> interface (PCIe/USB) can use this combo PHY and the PHY drivers are
-> different for PCIe and USB. Hence separate the PCIe and USB pipe clock
-> source from DT, and individual driver node can be used as a clock source
-> separately in the gcc. Change the dt-bindings accordingly.
+> Qualcomm IPQ5332 has single-lane and dual-lane PCIe UNIPHY
+> with Gen 3 support. This UNIPHY is similar to the one found
+> on Qualcomm IPQ5018. Hence add the bindings in qcom,uniphy-pcie.
+> 
+> Clocks and resets are different for IPQ5332. Update the
+> bindings to support both IPQ5018 and IPQ5332.
+> 
+> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> ---
+> This patch depends on the below series which adds PCIe support in
+> Qualcomm IPQ5018
+> https://lore.kernel.org/all/20231003120846.28626-1-quic_nsekar@quicinc.com/
+> 
+>  .../bindings/phy/qcom,uniphy-pcie-28lp.yaml   | 65 +++++++++++++++++--
+>  1 file changed, 58 insertions(+), 7 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+> index 6b2574f9532e..205eaec2291e 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,uniphy-pcie-28lp.yaml
+> @@ -20,19 +20,20 @@ properties:
+>      maxItems: 1
+>  
+>    clocks:
+> -    maxItems: 1
+> +    minItems: 1
+> +    maxItems: 4
+>  
+>    clock-names:
+> -    items:
+> -      - const: pipe_clk
+> +    minItems: 1
+> +    maxItems: 4
+>  
+>    resets:
+> -    maxItems: 2
+> +    minItems: 2
+> +    maxItems: 3
+>  
+>    reset-names:
+> -    items:
+> -      - const: phy
+> -      - const: phy_phy
+> +    minItems: 2
+> +    maxItems: 3
+>  
+>    "#phy-cells":
+>      const: 0
+> @@ -54,6 +55,56 @@ required:
+>    - "#clock-cells"
+>    - clock-output-names
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,ipq5018-uniphy-pcie-gen2x1
+> +              - qcom,ipq5018-uniphy-pcie-gen2x2
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 1
 
-Adding required clock breaks the ABI and there is no explanation nor
-note about it in commit msg
+Drop
+
+> +          maxItems: 1
+> +        clock-names:
+> +          items:
+> +            - const: pipe_clk
+> +        resets:
+> +          minItems: 2
+
+Drop
+
+> +          maxItems: 2
+> +        reset-name:
+
+Typo
+
+> +          items:
+> +            - const: phy
+> +            - const: phy_phy
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,ipq5332-uniphy-pcie-gen3x1
+> +              - qcom,ipq5332-uniphy-pcie-gen3x2
+
+There are no such compatibles.
+
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 4
+> +          maxItems: 4
+> +        clock-names:
+> +          items:
+> +            - const: pipe
+> +            - const: lane_m
+> +            - const: lane_s
+> +            - const: phy_ahb
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+
+So where are three items?
+
+
+> +        reset-name:
+
+Typo
+
+This patch is so confusing, it looks like it does not make any sense.
 
 Best regards,
 Krzysztof
