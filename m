@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C99EC35274
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Dec 2023 12:08:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9120DC46CCD
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Dec 2023 12:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZhznTXFwkV095RjZ5a3P78PKdHTDR5FKMdBXVw5aCnw=; b=bwY1nJiIk76JwB
-	tV/XzpN9+5psCf80IHRtPoyye8jYACrHwEuQLwAcaINFMa+RZAG61UbWAJZLXJEGzH47dDBX9W1u6
-	KHv15i7xh05gIchBumgKp4+jtbxP+OYPO9pbHVVZIgZZKgbu3qA20ivV9IehrpJP3liWDc0v+rmnU
-	i2E7cigNyUvD1z92qdwNLv9oE7Rt7fL33Qixjah6TFfybReGfhyhnvsLGQ9aQPmhuIxkt+3Xz9GpI
-	JE6Gk/CqgDjwlcgfr+trdZka+wf4KCaZPrkqIceIlT1xgYC+xX6tqKyPtjSNK1xu7EbhrVz9ZW/pl
-	Og8M0ML43CKUpxxvz4fw==;
+	List-Owner; bh=O2i2En3vWziP0l42oitKQvFZ6KGmnil2kRV5RIh2b1s=; b=xQaRJqBJ0Oxhd+
+	cKeF3b1fZYTuH9yARnUxHBPI+6Rh4WdN1CY/18Hv7II0uYOVKoCTR1fbwShLe+W5JbdDCHWLEbhGM
+	aNRB9CbpSepbIsf5WiQxPCprI+f9vAc3DqQyuovSLZHEDeMsVcvFiMs+o9P6THoirzZ738BWYBa49
+	JyBm2BawJkVf5ze3RLU/hgMYdRIdU9zLFX3v4HByHz3ouvK247HaLg2KbviIuBMcDpy9Fcc0c02LE
+	EZA3JVRiJwsSLE0yYUPQizXRXKALV+VVdl6jEtW6ampXqHszOyCpIZlwVGu5cDvClv3SxcOiDeJij
+	VmjuGFX90UUVu2M+FdfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFCQE-00AYZA-2S;
-	Mon, 18 Dec 2023 12:08:34 +0000
-Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
+	id 1rFCQL-00AYcn-12;
+	Mon, 18 Dec 2023 12:08:41 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFCQB-00AYY1-2W
+	id 1rFCQI-00AYab-2X
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Dec 2023 12:08:33 +0000
-Received: by mail-pg1-x532.google.com with SMTP id 41be03b00d2f7-5c66bbb3d77so1107136a12.0
-        for <linux-phy@lists.infradead.org>; Mon, 18 Dec 2023 04:08:31 -0800 (PST)
+	Mon, 18 Dec 2023 12:08:40 +0000
+Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-1d3ce28ace2so1721055ad.3
+        for <linux-phy@lists.infradead.org>; Mon, 18 Dec 2023 04:08:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1702901311; x=1703506111; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1702901317; x=1703506117; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=+NpBpw87ancReoayxiYNLEpdh+qbLyvkQJUBfcAOaoQ=;
-        b=gh0qiVsPjqrw+/pIhFaQCdNfrpjtAXGPnjj6Gc+rxX8ss1aUvLB6cCsQXZnqXk1Sov
-         A3K4g+DNrGmzEGFGyJdL9m01SjIL7rg9eRph0lVKjoYtt8QXte35SLN6p40h0G2tFG+K
-         jlqB5J6j9dGmn9529t8FrBGlLTe6HXchLiJEeeaAtbqRcanTr/jBkbtOy6fOVuOgoOk1
-         BsyV/LMZ3q4iHF6Qp4hjN/TK9Y60D98ZgZuoNQ2BsqtJX9oIk3vaRBE4q+T7IJbp0MpO
-         FRNODV+T568D1ucM3EujwMRXUzvKoVx8gUm8BxIzlDN+rmrFbWFYTuKNVEu6ySHMzV07
-         PHog==
+        bh=gvNQvdCy0O2wlOymvN0iIUEpRjoZ42RcAo4vagPpclg=;
+        b=G4vjTcnfgRNQomSxzX36GJe/qK7An+MuJdl4fxduQc95310yRf3qtIF4cTBOd6hW+W
+         BteZGs+F2F7AGGGuA21ZGYmBp4AqqRfcnRieiYesAH7z5ETsMKYKJcgyInlS2+BboOWt
+         YG6PHLqGzyEXx/ry9YL6VrZzDv5CQoNQrpP+UCvCcF6P8Ar50HvUXk2YzbaLn181vEIW
+         hRLC6J8AarIzYhqcfip+05Da1PdvqnMjGowflttP8Wo0bVXPlLkfzg/syOfAzdcI4+eg
+         RZYGM2XFswNnjky2d1CfHa4B+7ryXlXxiW2Xw+JxAwKYWIwH9y8PUsM6imWbnmH6mbV3
+         IO4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1702901311; x=1703506111;
+        d=1e100.net; s=20230601; t=1702901317; x=1703506117;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=+NpBpw87ancReoayxiYNLEpdh+qbLyvkQJUBfcAOaoQ=;
-        b=LXVK1Wg6Kf54J2Za685Sg00G4rr5oU1MlAUkt/+09kaITCwMl2YTd8wNrZZGnVDyDG
-         bONZT0GfT0/Keij+sgHozqH2TjY4JubU4I+nlqYvxkg9vxDlvZHkXjuz4E/PDrJ1ekkI
-         GH0DjDrZIEv1HCwMEKK1BsKaGlkx00rePFGdolN8DF7WUZg8GbSyAkHQUyFt1F1Dhtbc
-         B/o4JNWBlLqi4mTYWKHJBlybWH7ywHOCnckj4Dbb5tc/RevNi3wMmV4lyxP10E9NwvJd
-         w32vaMXyrxotP9HGXlR3hRw29x4bHeMmTSbkEKPajN2ih1XIawQ3PBlg3By1+j+gIKva
-         F/Dg==
-X-Gm-Message-State: AOJu0YxKtzFnA+RdSY7z9iz9y8NK3d6h0Wj80gCmTxYcJXsqHIjbVLEg
-	vSYRqaC9jxTWSHzbUzXnsi0N
-X-Google-Smtp-Source: AGHT+IHWUgQYCUGlqwV406h6zHwdKzU4NG59nQYN4sJQ2Em0W4gzvKZvabKGPJlQn2udUzFH5dAm9g==
-X-Received: by 2002:a17:903:1106:b0:1d3:aab1:6273 with SMTP id n6-20020a170903110600b001d3aab16273mr870341plh.118.1702901310948;
-        Mon, 18 Dec 2023 04:08:30 -0800 (PST)
+        bh=gvNQvdCy0O2wlOymvN0iIUEpRjoZ42RcAo4vagPpclg=;
+        b=X2Pn97WUH3nfMjD4cmClxjlrk5tyXE0uS8EKEmNyAQGVjUWCGvU2g2T4nwz7aOWE7z
+         Z6J6G31z/NBy0iQ60L9sWis8XAs56WKgMe3fwmpM4qw6C2Nt4wuOAKxdMwTdoXOuXdOj
+         tNv68Twg5pr9pNmz5Ov4QPg6PyLRS46rstHLilcz2b09GeEpetq0XaEaTAaIpdUmiUTj
+         xLQ66lVAcf0rRlGWpJKV9QtUglcep9Jkua6LNn/Eb9wJRRH0WDO6JpGYHk5/xpauyQdA
+         1LFAZZ91jwrmesDK/uNaeRaWtXGYQxq2CqFCd+KrYv1si3vEUuBXsAdX//1bIKxgYWdP
+         uQzw==
+X-Gm-Message-State: AOJu0Yz5Td+kCrvSybgvsIsAeBBJESQfXUSfet+G1tXtyB0Wcg/s+NeX
+	TcPXBDEeSJfi5T+6q6brYoZt
+X-Google-Smtp-Source: AGHT+IEmFgwhty4eOC1HWIN6R/wmWkUmpHUAMlQfWfME+fkRcMzo7kKJtBRaeLQkaRQozYVIufi4aw==
+X-Received: by 2002:a17:903:24c:b0:1d0:6ffd:9e1e with SMTP id j12-20020a170903024c00b001d06ffd9e1emr18461127plh.112.1702901316940;
+        Mon, 18 Dec 2023 04:08:36 -0800 (PST)
 Received: from localhost.localdomain ([117.207.27.21])
-        by smtp.gmail.com with ESMTPSA id j18-20020a170902c3d200b001d368c778dasm1285709plj.235.2023.12.18.04.08.25
+        by smtp.gmail.com with ESMTPSA id j18-20020a170902c3d200b001d368c778dasm1285709plj.235.2023.12.18.04.08.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 18 Dec 2023 04:08:30 -0800 (PST)
+        Mon, 18 Dec 2023 04:08:36 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: andersson@kernel.org,
 	konrad.dybcio@linaro.org,
@@ -78,16 +78,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	quic_cang@quicinc.com,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v2 11/16] arm64: dts: qcom: sm8150: Fix UFS PHY clocks
-Date: Mon, 18 Dec 2023 17:37:07 +0530
-Message-Id: <20231218120712.16438-12-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 12/16] arm64: dts: qcom: sm8250: Fix UFS PHY clocks
+Date: Mon, 18 Dec 2023 17:37:08 +0530
+Message-Id: <20231218120712.16438-13-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
 References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231218_040831_820710_5EEBAC1C 
-X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-CacheID: sfid-20231218_040838_830269_9751F49E 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,7 +105,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QMP PHY used in SM8150 requires 3 clocks:
+QMP PHY used in SM8250 requires 3 clocks:
 
 * ref - 19.2MHz reference clock from RPMh
 * ref_aux - Auxiliary reference clock from GCC
@@ -114,32 +114,32 @@ QMP PHY used in SM8150 requires 3 clocks:
 While at it, let's move 'clocks' property before 'clock-names' to match
 the style used commonly.
 
-Fixes: 3834a2e92229 ("arm64: dts: qcom: sm8150: Add ufs nodes")
+Fixes: b7e2fba06622 ("arm64: dts: qcom: sm8250: Add UFS controller and PHY")
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8150.dtsi | 8 +++++---
+ arch/arm64/boot/dts/qcom/sm8250.dtsi | 8 +++++---
  1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index 43d56968a382..18af94852974 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -2065,10 +2065,12 @@ ufs_mem_phy: phy@1d87000 {
+diff --git a/arch/arm64/boot/dts/qcom/sm8250.dtsi b/arch/arm64/boot/dts/qcom/sm8250.dtsi
+index c1b7f9620ec6..e47c515af6cf 100644
+--- a/arch/arm64/boot/dts/qcom/sm8250.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8250.dtsi
+@@ -2486,10 +2486,12 @@ ufs_mem_phy: phy@1d87000 {
  			#address-cells = <2>;
  			#size-cells = <2>;
  			ranges;
-+			clocks = <&rpmhcc RPMH_CXO_CLK>,
-+				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
-+				 <&gcc GCC_UFS_MEM_CLKREF_CLK>;
- 			clock-names = "ref",
+-			clock-names = "ref",
 -				      "ref_aux";
--			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>,
+ 			clocks = <&rpmhcc RPMH_CXO_CLK>,
 -				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
++				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
++				 <&gcc GCC_UFS_1X_CLKREF_EN>;
++			clock-names = "ref",
 +				      "ref_aux",
 +				      "qref";
  
- 			power-domains = <&gcc UFS_PHY_GDSC>;
- 
+ 			resets = <&ufs_mem_hc 0>;
+ 			reset-names = "ufsphy";
 -- 
 2.25.1
 
