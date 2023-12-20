@@ -4,103 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A899C46CD7
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Dec 2023 20:55:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD95BC41535
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Dec 2023 00:32:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sIUvOH2cHCJdLMuzE9m+740AMI6IWoS6O9XRudVVCbU=; b=DHTQo7S2smr1NC
-	r+ptl2n3L96ugysVDV87uUOOrgHAnmNPNeAnmFbKRZ9/GwCl8IydnHf8m02/Uc2qlEBlZIELxNxEb
-	6oqMNo8Q83y27DwJENXl8egX2Cvdf6ZCVXoIbpLhbXV/To4jJsb5iVZ94PwaXWfYWV7WmoZ8j31f7
-	iFUA2FHzIvwwrePcNPUxwrQQGfpqWN3pV1KprrcJMvyJeCiDbkBitEI27MBivUgvjpbOlj8tz17Qv
-	ZZbQ5Z2GG782LztxEDw+SMNm9cuPBbaTYBjQn9GM5z0zv5B1HBIJDENsdQkKLL9FoMp8ddLS/l+h/
-	9c1OfCqpri66+hVpLQ8Q==;
+	List-Owner; bh=dz/U9XArmlYtmDUFo6FiKcDcR0Ecy3+vOGQ7fyCptvg=; b=4e7hpGYySWJxnO
+	xlGzhuFVvLCBckVvh16SwCa8UN62CcUMlndkR9myxPg5cOzxln9ys9KLvJBMCTTWiCZlkFJnSy+1E
+	fKlg53RKAlZhAi+kms9Ckjd4FsjsuhPN+lUeb+eHoYYQ71CKu0ycblgSdsim26krJ0FiH3/IOV2XJ
+	YmhM/O+O5bxZJ0byxokRYHALhFOxmGxuON1bpYDlTCaDjqoV85jXpdEMKCau7aL0l0C5RCUe68eKu
+	cgD1qKMcuRq+e9SrtFdVBL1CMVKvFnFQRbMvxOKsmeIQA5GNkHkRbFVy/aRxK2KyTphojOu44mejk
+	nozc2CQrou5kJgy0QPjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFh7v-00FRtR-0b;
-	Tue, 19 Dec 2023 20:55:43 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1rFkVz-00FndC-1V;
+	Wed, 20 Dec 2023 00:32:47 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFh7r-00FRrn-2h
+	id 1rFkVx-00FncU-0U
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Dec 2023 20:55:41 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-40d22d3e751so365315e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 19 Dec 2023 12:55:39 -0800 (PST)
+	Wed, 20 Dec 2023 00:32:46 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-553a65b6ad4so1597938a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 19 Dec 2023 16:32:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703019338; x=1703624138; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Dys25wiVmR/dZY2aAxHAJu8B2nMRORXrSQ4unRqdmUU=;
-        b=TH5ERgS/a1Eib8Nbvsc3UfkvwESxxQsFefvBqQcWqPp1bV6PjC5zI2YJ9ktBemRALV
-         yIgn7K2jBmdd/NTUFt28GqkY5RV5nGFNJ1QrIQdq+IXERR+cK3tQXNB44OVl6DzcLq7J
-         b7FPJUsyF/6/8HmIS2j27xFpvDk3AKjk3DYeCoKx6OqC3EgSSJjnyaLRfLsL2dLF0tbT
-         D+0zOMz0n0MTU4bMuSBUmGOq3m9OIStCXFqo6bbUNDwgC2xSFJBGfW4a/kfB/t3qlVSN
-         +hJ1OaFM5sFWrS5C0fnLbecuTNfCLSxUdh2Hh/5Ce2vljmaUqE7JSYK2y5VLAB8GAvG0
-         qJ3A==
+        d=linaro.org; s=google; t=1703032363; x=1703637163; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wfIghYz6jPvMs2Zufehw5QSxayNKMdPCV8nsFQ82cxU=;
+        b=CfeVvQpLpkLkP2nX8bCAY956oKF8ievx5a77YdGjz+6HdcaFABZ2UugKT9EYVe2DWl
+         vxXfgoB6QptxL0DICgz++rSpC+/wj663dF6sIfOTHgweC0ndvt/TK8IlfdKYol87+bN8
+         tNv4Wsrvo+MrJNTxzC/O9qKZlx58LX9nCLXPANqhd+EhIPu8nyCQaLQsrVhRwI/7f1PC
+         vawsaMxhjE1AC+OGB/+xGIUwR1MBYAliDlq3PX7+BnzFLEcyFzgS7ILIAbbVagZEiv00
+         GJqBIRG6irs6VVEy/UxgliXbxdB4/dT1Icfnhy9OimjpSKdgFXDW1EP7U7fgbFu0I/Lq
+         MRYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703019338; x=1703624138;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Dys25wiVmR/dZY2aAxHAJu8B2nMRORXrSQ4unRqdmUU=;
-        b=P7nGXtX18mYW9uT8fWPKJpn1y4hGhTejLDRO+LAfEjlm+2gS3YecRuLUK9GFXZA3hy
-         SffN8JIj/Eo2bRisLx2TInk7NysTX6Yo/dt8plert3PEl33/2pXKnAv/HIk8VycyOT0c
-         nGoCd3JjnNO701SJcauBceCWS1Ik0GD/ByCC9Qc/CT0PN5F6k//JMKloNaeSEBeQAbsN
-         PDAi9oDuLHG7QrINVVTibHNqhgWjr6rYj8lYLj++UJ8HMiaIfwTUs2b/D+vayMK1BRQh
-         uhhLYfyUQMAq/03XdWEFAVb8+Rmt4w0Ag/1QYpmVIDsup1tHvchS/I3InpPZWDzY+tik
-         Uq/w==
-X-Gm-Message-State: AOJu0YylpE4UlkdzH8m9j0Uv4JrO9cHXBEarcp6zQfV95+90c5T7qMay
-	bQqtyp/6Z6FpS0ifu/KnE0IDpg==
-X-Google-Smtp-Source: AGHT+IGTrHbgUNOzyzyvg7p8SZeLv6qYsTkuih5RFFgC0ycO+NmJEfG1BdWYPA35HClF++i4QzM9Pw==
-X-Received: by 2002:a05:600c:3056:b0:40c:6a8f:d1d6 with SMTP id n22-20020a05600c305600b0040c6a8fd1d6mr942264wmh.163.1703019338489;
-        Tue, 19 Dec 2023 12:55:38 -0800 (PST)
-Received: from [127.0.1.1] ([79.115.23.25])
-        by smtp.gmail.com with ESMTPSA id v16-20020a05600c471000b0040c4886f254sm4460701wmo.13.2023.12.19.12.55.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 19 Dec 2023 12:55:38 -0800 (PST)
-From: Abel Vesa <abel.vesa@linaro.org>
-Date: Tue, 19 Dec 2023 22:55:24 +0200
-Subject: [PATCH 3/3] phy: qcom: edp: Allow PHY mode configuration via
- devicetree
+        d=1e100.net; s=20230601; t=1703032363; x=1703637163;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wfIghYz6jPvMs2Zufehw5QSxayNKMdPCV8nsFQ82cxU=;
+        b=CDCzdRsF3ho33vn0KDGBV0n/EH9FVy0G+gQM2gvJ4c4SY9juslOcvO/woyaVcjWR0a
+         5G6xwq+0/cbjafCEY9zM9AAF52E6UKlXGwxxRJpGELCHMb+1iZF1DTImkUGnAStUIkyJ
+         pSzDNmf0lnSfWzAtxplCI3Jgy1R9/oYfBZuaq6QnZixOQXHoU3By+weg+HogogrC4ePa
+         CVo0jr5ebwZpfZPhaMSgo8cpyrQLaOSYE60MToo5IAwOXSsODmu/h9QMVc1eJuG5LhWC
+         jByJl+gv9VxG8au1rIq2zrxuEWmeMYc99ucCIwBFF13ZPSRnHCEw7cz7/2CrtVfAhyCw
+         OZPg==
+X-Gm-Message-State: AOJu0Yz/zaD+ODJ9kq1xGj/KMDIV2vbtdsgwX/N/T8xcS/hCkUTWgRmU
+	Hxuq/VZ2cx6Szxutg5SR9au5kw==
+X-Google-Smtp-Source: AGHT+IFb0vSep8B9Vu6Z30j5qVvXD/ZrXHd0YSl3BtYcAlWwWyjp4/hrTrCHCBLzF5mmR1aKjMq0UQ==
+X-Received: by 2002:a50:b410:0:b0:553:a2d6:8f57 with SMTP id b16-20020a50b410000000b00553a2d68f57mr951903edh.67.1703032362772;
+        Tue, 19 Dec 2023 16:32:42 -0800 (PST)
+Received: from [192.168.199.59] (178235179206.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.206])
+        by smtp.gmail.com with ESMTPSA id cr7-20020a056402222700b0054ce9ef93fbsm12104379edb.4.2023.12.19.16.32.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 19 Dec 2023 16:32:42 -0800 (PST)
+Message-ID: <e307955c-8cef-426b-9b17-36950b82fad7@linaro.org>
+Date: Wed, 20 Dec 2023 01:32:40 +0100
 MIME-Version: 1.0
-Message-Id: <20231219-x1e80100-phy-edp-compatible-refactor-v1-3-f9e77752953d@linaro.org>
-References: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
-In-Reply-To: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
- Johan Hovold <johan@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- Abel Vesa <abel.vesa@linaro.org>
-X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=7095; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=r5Z+IXpqVl7ekhFvsnXNxAtV/air1auWUKPxMS1W7PU=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlggNEYwTQ8/WwveIyH9B0ku1VDjBU7SW0H1GU/
- VDA9K30vwSJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZYIDRAAKCRAbX0TJAJUV
- VkMVEACt3/Enx8c7Fd55U6KqLe+NG08J6437eZPK/IKe/Iueo6v6pwf6IEjWPL9R6PAOmMD875A
- doAkZpOQ+ufoOzDXgwCjKcaYql36Hq/DTCzF8+136w0htXUEBuem5QUqR35FY/xQXyYM5LZUu76
- q1jTvBry2u0c1YQv+qmyEPo97JBpM2PI1rzVXa8hlHCx3cOVJrTw2Ao9XPCJ9fujb2qGhbWaiAz
- +yHY5MDZd/8pJQ8vliHcYAzfwMbBKu9BN1vigwKclNbXEqrttJa4MU42tUCD0+8CGQLZ2OrcKPC
- 5pihto7AEPqPpUZf98IFsTYbrp0E0+qWoz86AfOdToeiRF349UTonNJT6rBaOzCCtXp1SU9x4x7
- TfwfU0WalF2iLOHVD54uZ89C1o//1mOoTKPp0CJKAQa46wM41qRswCASjcV61flZiq5+ws8cvpy
- JTw2XeqiHBBxxHrNKYa1R1PipF7TNMxy+6hKfoUp4N/oNFJtCv13HiR+O/kI7M58CIbGe3qsIRZ
- 4KZzvSD7r8CEAKSS4u9bUqSJjxM9/nE2GIY6SVuRxGhMW8xoQcWhfPjJAvlOx+mXTro1mxDnqmg
- w3BVS12LKoAQM934oNUkKwkBNMO/uNJ5rvbuLk2jubf5H7H0gKK1qxhFKZVsd9NgVZoaB0LAZSv
- wV9guaYlDJ0ZGBA==
-X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
- fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 05/16] arm64: dts: qcom: msm8996: Fix UFS PHY clocks
+Content-Language: en-US
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ andersson@kernel.org, vkoul@kernel.org, sboyd@kernel.org,
+ mturquette@baylibre.com, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, quic_cang@quicinc.com
+References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
+ <20231218120712.16438-6-manivannan.sadhasivam@linaro.org>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <20231218120712.16438-6-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231219_125539_910969_125AAF5D 
-X-CRM114-Status: GOOD (  20.74  )
+X-CRM114-CacheID: sfid-20231219_163245_208120_3E6C0C74 
+X-CRM114-Status: UNSURE (   5.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,225 +134,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Future platforms should not use different compatibles to differentiate
-between eDP and DP mode. Instead, they should use a single compatible as
-the IP block is the same, and use the 'phys' (controller) DT property
-to pass the phy mode. Rework the device match config data so that it
-only keeps the different knobs rather than swing and pre-emphasis tables.
+On 18.12.2023 13:07, Manivannan Sadhasivam wrote:
+> QMP PHY used in MSM8996 requires 2 clocks:
+> 
+> * ref - 19.2MHz reference clock from RPM
+> * qref - QREF clock from GCC
+> 
+> Fixes: 27520210e881 ("arm64: dts: qcom: msm8996: Use generic QMP driver for UFS")
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
-The existing platforms will remain with separate compatibles for each mode.
-
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 89 ++++++++++++++++++++++++++++---------
- 1 file changed, 67 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 8e5078304646..c70e6eae16ba 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -68,19 +68,22 @@
- 
- #define TXn_TRAN_DRVR_EMP_EN                    0x0078
- 
--struct qcom_edp_cfg {
--	bool is_dp;
--
--	/* DP PHY swing and pre_emphasis tables */
-+struct qcom_edp_swing_pre_emph_cfg {
- 	const u8 (*swing_hbr_rbr)[4][4];
- 	const u8 (*swing_hbr3_hbr2)[4][4];
- 	const u8 (*pre_emphasis_hbr_rbr)[4][4];
- 	const u8 (*pre_emphasis_hbr3_hbr2)[4][4];
- };
- 
-+struct qcom_edp_phy_cfg {
-+	int type;
-+	bool needs_swing_pre_emph_cfg;
-+};
-+
- struct qcom_edp {
- 	struct device *dev;
--	const struct qcom_edp_cfg *cfg;
-+	const struct qcom_edp_phy_cfg *cfg;
-+	const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
- 
- 	struct phy *phy;
- 
-@@ -96,6 +99,8 @@ struct qcom_edp {
- 
- 	struct clk_bulk_data clks[2];
- 	struct regulator_bulk_data supplies[2];
-+
-+	bool is_dp;
- };
- 
- static const u8 dp_swing_hbr_rbr[4][4] = {
-@@ -126,8 +131,7 @@ static const u8 dp_pre_emp_hbr2_hbr3[4][4] = {
- 	{ 0x04, 0xff, 0xff, 0xff }
- };
- 
--static const struct qcom_edp_cfg dp_phy_cfg = {
--	.is_dp = true,
-+static const struct qcom_edp_swing_pre_emph_cfg dp_phy_swing_pre_emph_cfg = {
- 	.swing_hbr_rbr = &dp_swing_hbr_rbr,
- 	.swing_hbr3_hbr2 = &dp_swing_hbr2_hbr3,
- 	.pre_emphasis_hbr_rbr = &dp_pre_emp_hbr_rbr,
-@@ -162,18 +166,30 @@ static const u8 edp_pre_emp_hbr2_hbr3[4][4] = {
- 	{ 0x00, 0xff, 0xff, 0xff }
- };
- 
--static const struct qcom_edp_cfg edp_phy_cfg = {
--	.is_dp = false,
-+static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg = {
- 	.swing_hbr_rbr = &edp_swing_hbr_rbr,
- 	.swing_hbr3_hbr2 = &edp_swing_hbr2_hbr3,
- 	.pre_emphasis_hbr_rbr = &edp_pre_emp_hbr_rbr,
- 	.pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3,
- };
- 
-+static struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
-+	.type = PHY_TYPE_DP,
-+};
-+
-+static struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
-+	.type = PHY_TYPE_DP,
-+	.needs_swing_pre_emph_cfg = true,
-+};
-+
-+static struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
-+	.type = PHY_TYPE_EDP,
-+	.needs_swing_pre_emph_cfg = true,
-+};
-+
- static int qcom_edp_phy_init(struct phy *phy)
- {
- 	struct qcom_edp *edp = phy_get_drvdata(phy);
--	const struct qcom_edp_cfg *cfg = edp->cfg;
- 	int ret;
- 	u8 cfg8;
- 
-@@ -200,7 +216,7 @@ static int qcom_edp_phy_init(struct phy *phy)
- 	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
- 	       edp->edp + DP_PHY_PD_CTL);
- 
--	if (cfg && cfg->is_dp)
-+	if (edp->cfg->needs_swing_pre_emph_cfg && edp->is_dp)
- 		cfg8 = 0xb7;
- 	else
- 		cfg8 = 0x37;
-@@ -234,7 +250,7 @@ static int qcom_edp_phy_init(struct phy *phy)
- 
- static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configure_opts_dp *dp_opts)
- {
--	const struct qcom_edp_cfg *cfg = edp->cfg;
-+	const struct qcom_edp_swing_pre_emph_cfg *cfg = edp->swing_pre_emph_cfg;
- 	unsigned int v_level = 0;
- 	unsigned int p_level = 0;
- 	u8 ldo_config;
-@@ -242,7 +258,7 @@ static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configur
- 	u8 emph;
- 	int i;
- 
--	if (!cfg)
-+	if (!edp->cfg->needs_swing_pre_emph_cfg)
- 		return 0;
- 
- 	for (i = 0; i < dp_opts->lanes; i++) {
-@@ -261,7 +277,7 @@ static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configur
- 	if (swing == 0xff || emph == 0xff)
- 		return -EINVAL;
- 
--	ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
-+	ldo_config = edp->is_dp ? 0x1 : 0x0;
- 
- 	writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
- 	writel(swing, edp->tx0 + TXn_TX_DRV_LVL);
-@@ -447,10 +463,9 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel
- static int qcom_edp_phy_power_on(struct phy *phy)
- {
- 	const struct qcom_edp *edp = phy_get_drvdata(phy);
--	const struct qcom_edp_cfg *cfg = edp->cfg;
- 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
- 	unsigned long pixel_freq;
--	u8 ldo_config;
-+	u8 ldo_config = 0x0;
- 	int timeout;
- 	int ret;
- 	u32 val;
-@@ -468,7 +483,8 @@ static int qcom_edp_phy_power_on(struct phy *phy)
- 		return timeout;
- 
- 
--	ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
-+	if (edp->cfg->needs_swing_pre_emph_cfg && edp->is_dp)
-+		ldo_config = 0x1;
- 
- 	writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
- 	writel(ldo_config, edp->tx1 + TXn_LDO_CONFIG);
-@@ -768,6 +784,33 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
- 	return devm_of_clk_add_hw_provider(edp->dev, of_clk_hw_onecell_get, data);
- }
- 
-+static struct phy *qcom_edp_phy_xlate(struct device *dev,
-+				      struct of_phandle_args *args)
-+{
-+	struct qcom_edp *edp = dev_get_drvdata(dev);
-+	int type = edp->cfg->type;
-+
-+	if (args->args_count == 1)
-+		type = args->args[0];
-+
-+	if (type != PHY_TYPE_DP && type != PHY_TYPE_EDP)
-+		return ERR_PTR(-EINVAL);
-+
-+	if (type == PHY_TYPE_EDP) {
-+		edp->phy->attrs.mode = PHY_MODE_EDP;
-+	} else {
-+		edp->phy->attrs.mode = PHY_MODE_DP;
-+		edp->is_dp = true;
-+	}
-+
-+	if (edp->cfg->needs_swing_pre_emph_cfg)
-+		edp->swing_pre_emph_cfg = edp->is_dp ?
-+						&dp_phy_swing_pre_emph_cfg:
-+						&edp_phy_swing_pre_emph_cfg;
-+
-+	return edp->phy;
-+}
-+
- static int qcom_edp_phy_probe(struct platform_device *pdev)
- {
- 	struct phy_provider *phy_provider;
-@@ -832,17 +875,19 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(edp->phy);
- 	}
- 
-+	dev_set_drvdata(edp->dev, edp);
- 	phy_set_drvdata(edp->phy, edp);
- 
--	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	phy_provider = devm_of_phy_provider_register(dev, qcom_edp_phy_xlate);
-+
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
- static const struct of_device_id qcom_edp_phy_match_table[] = {
--	{ .compatible = "qcom,sc7280-edp-phy" },
--	{ .compatible = "qcom,sc8180x-edp-phy" },
--	{ .compatible = "qcom,sc8280xp-dp-phy", .data = &dp_phy_cfg },
--	{ .compatible = "qcom,sc8280xp-edp-phy", .data = &edp_phy_cfg },
-+	{ .compatible = "qcom,sc7280-edp-phy" , .data = &sc7280_dp_phy_cfg, },
-+	{ .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
-+	{ .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
-+	{ .compatible = "qcom,sc8280xp-edp-phy", .data = &sc8280xp_edp_phy_cfg, },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, qcom_edp_phy_match_table);
-
--- 
-2.34.1
-
+Konrad
 
 -- 
 linux-phy mailing list
