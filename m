@@ -4,80 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CFA2C3DA6E
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Dec 2023 07:38:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 597FCC3DA6E
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Dec 2023 07:42:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lgLfMGJLQqvicXeyvUc+gSZftMSM7bKEGnTHassZeaQ=; b=2t/tW/mkN62DR3
-	5i6sJuI43LcW7kpYKfSayIQNRuXJHftwJIU3vKLl8wooyO4rR8loIKVs+Msbb5RHLe0L6xLGu9B37
-	Vhmdcp1GJq2dfUNYfloPlvwhCcQH/pH6OvwL4OXQ6Vb9OscRPWV4toGNkq7By0AprvYNLEu2vVxMh
-	zPhK/b7tGefp6ZLnqTxXeOPd5bneCHXdgdgST8yUUKgmW7IQ+0SWJ6CX2YWs4h7VZP1NisS905ZB+
-	yTvfuqm033f37rO7ds4USGNk81B21uKNbF2pUSa9UfP9FYr6vjucKgsct9WpdHniWUMkjNj9bpXnK
-	gHTxM4UgS3HLrMIteE9Q==;
+	List-Owner; bh=8pdo3YsQU4DovIFj+xpVvoirt9nOSEhARI8C1hHDeS4=; b=2ipPal8/VJQsLC
+	sdUBGa1iU+Sn8RGRS87ER2xf5sft0X9GCM8npJaCOwC1zAcE9M5WHUrvi/6C7ilIp4IPiYM4LBtU/
+	E3ADSkSe+4Vb8M6f8hba+Iu1+jtzx0XbP0e1GicLZifumfBwpqv/KWmp4RHZgATZjMhtNiROXj2iy
+	b5QQCHK6AUtUAxkGmkC+l0LDKRaJIXR/j7cvHT3J7A03rVOA/uzxI7MtVK3SXBtA7NQvDqGVI5ngZ
+	VHqa0oTCv2TQBHLSLx4ZK4blL3Jn/EiyhO0Rw30ambUzwRN7YeqGpKV8pIr9B4DKd8NzdZNGbRpgW
+	koUJHXvuaCGz0qJgwi9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFr9z-00GS3F-2x;
-	Wed, 20 Dec 2023 07:38:31 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1rFrEI-00GSpM-0L;
+	Wed, 20 Dec 2023 07:42:58 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFr9x-00GS16-1G
+	id 1rFrEG-00GSoy-0q
 	for linux-phy@lists.infradead.org;
-	Wed, 20 Dec 2023 07:38:30 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3333b46f26aso4511129f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 19 Dec 2023 23:38:26 -0800 (PST)
+	Wed, 20 Dec 2023 07:42:57 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-32f8441dfb5so5125973f8f.0
+        for <linux-phy@lists.infradead.org>; Tue, 19 Dec 2023 23:42:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703057905; x=1703662705; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1703058172; x=1703662972; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=z0x7fh3uDCb3Zp83uiLU7euur5+OidRZ51YbD8E0msU=;
-        b=UQduLPLWzrLrNkPwbNg3YqRXNfbJDLsV6jA2vXsEm7aOX8nD6HK4V1LX+vtcG9UbUC
-         jLsln0R4hXpD3e0EdcjcuwNjCXRfMUAHP8wF3D3WNKPfZGcr/Ueog2iEROKukDwDpT5S
-         JvbfBauEcK337StS3UxLheIgHqjT0XRpG3XBf+PbBeUOAuksJTBlfsDkMp5aV5zPFJTg
-         +bYW0HR7Ts9ZdO4BtXk+DSv2G1ZKswgvESVHIYqA9Fq1Rdt8ykv1rk3gq9AUq+Cd17rP
-         uX5uH5hRIVC+3XIt4b/PnqSE5vYX1FZqeRHgyeGcvUwlZJQdqnTFRJ7MDE/bG/J1Ikp6
-         0SWQ==
+        bh=O6oeum58Pov922ALSaZk2Shzqt1Yn2X1JKKJTk+NQac=;
+        b=caEbdgz61pHJRPhQbpQ0AYSftVLPXm8mvnK3cjvcjJzztCUUzqaDM3hBrN1uQ3JcoD
+         Z/uqB5+sbbbAZca6cMp3fhRhcC3gC1FIWTxRvynoa6BYVINDIdykLT9VPlFf9U80NEdl
+         SF6vYbBzF0Xgms29EkVezbXHjpHACI8nNtZz+t+1czbgQjTEHuMkDCxlxWEnv3X+F007
+         OqdBLg7o40x9aCD/oXTXLCWv6K3NNi7ti1HCqTaXN7876PnE9RkPKUWvylpe5Yf7nrJC
+         KQ2Yt3tUXLoapxa+qXItWyd4NTdhFekTAa8uiUcmfw9PitamiQb0CoM7dLJYlSDOQc9M
+         pROQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703057905; x=1703662705;
+        d=1e100.net; s=20230601; t=1703058172; x=1703662972;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=z0x7fh3uDCb3Zp83uiLU7euur5+OidRZ51YbD8E0msU=;
-        b=HLbR+PYaI5hgPtYs1Txxgva5pcdvT8RU9JfCH0vnUZdE7btGVEzM1HKCzq5Fyy5vFf
-         U37N5P4fZBiy99N2rVYmC4gezlbXFPP9sA/QO4rAWZKaF0uPBt0j673A3OBSNwp4/SqV
-         AW8txDVK2nu4un7F1afeUKEC6gxFmxApsbCod0rMersSNb3lDhFW+u3tGKh5N6BYZ6bS
-         MwczG5MhVYcg6KQw3oaCyPmD4G6eAAuo0HFmKHHI/G63NLVKIaSvJBDGnaOI4XbsMl/T
-         YIoNDZIfX8s1XH8VYn29weaCJNgqSh9uSEZ+jNmRG+1UEo7ZzFMzVYgmLrlKiru5q/x/
-         nE/Q==
-X-Gm-Message-State: AOJu0YwVcGvSAHv81NLHYZabxBvlW59pdSRdQAOHdYxwyUW4F7DdWdMg
-	GwibBDAWx128vY7daWk9p0gP8w==
-X-Google-Smtp-Source: AGHT+IHpF6kUsvEvle2HjwM8JyNE5U/+A74BSKqztM07Rulb/UvEQv19iOJMlznnUZioRQQQXBrAPQ==
-X-Received: by 2002:a5d:49d2:0:b0:336:76a5:5774 with SMTP id t18-20020a5d49d2000000b0033676a55774mr885713wrs.68.1703057905653;
-        Tue, 19 Dec 2023 23:38:25 -0800 (PST)
+        bh=O6oeum58Pov922ALSaZk2Shzqt1Yn2X1JKKJTk+NQac=;
+        b=GmHlELsSgFvIFNYaiDG2n57Dx8MbBX3GzcaTN9v+oWoR8sQqUelHdWFFAMEYVYZIlp
+         ktdihCDotReok/WNtlrXG4XmsYWyawVR6OoaUZdDDD4aO2uEaGv8wZ9H859wClCfvtLp
+         mxPB+/BQ/A7F/9A70UD+5+pUe2pyUzH2cMf1qJoeCoTXCXafEvJA/dnhbPWxBup2iOoo
+         VKuq9dqNBNjYV2v0cYsvwsKHkkajAQ7M48CY8Y0h2gwd13Ug8a8Sb1Y4jEO9MQyI6Hop
+         s3Qa2gVCcENOrdYl0YbWA1ncgQaGgLSxTM0B5DEo7Pja1jKT4g4btJfkCF9IDYvdajBO
+         BGIQ==
+X-Gm-Message-State: AOJu0YzAR8V/hqtCLy/LTxWfKesBylg+htxEAZWKRh6goe+3nux5Ezer
+	I5aQBLXRTiibcarV4N71eWy9Rw==
+X-Google-Smtp-Source: AGHT+IEGCrTOWE2JTnCzJIZ7fxApcEkFocHqS2KaJwOZdCdUr75btfQ6KHv5FVGsbm/LR6Dk2T3Nwg==
+X-Received: by 2002:a05:600c:4981:b0:402:f55c:faee with SMTP id h1-20020a05600c498100b00402f55cfaeemr9923715wmp.26.1703058172508;
+        Tue, 19 Dec 2023 23:42:52 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.218.27])
-        by smtp.gmail.com with ESMTPSA id t15-20020a0560001a4f00b003367d48520dsm397648wry.46.2023.12.19.23.38.23
+        by smtp.gmail.com with ESMTPSA id o21-20020a05600c4fd500b0040c5cf930e6sm6120855wmq.19.2023.12.19.23.42.50
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 19 Dec 2023 23:38:24 -0800 (PST)
-Message-ID: <4399a91e-d22d-44f7-ad83-9678b27a8cb7@linaro.org>
-Date: Wed, 20 Dec 2023 08:38:23 +0100
+        Tue, 19 Dec 2023 23:42:51 -0800 (PST)
+Message-ID: <dd3e3e6c-dd07-483a-9d56-1b5e22790f01@linaro.org>
+Date: Wed, 20 Dec 2023 08:42:49 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/16] dt-bindings: clock: qcom: Add missing UFS QREF
- clocks
+Subject: Re: [PATCH 1/3] dt-bindings: phy: Add PHY_TYPE_EDP definition
 Content-Language: en-US
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
- sboyd@kernel.org, mturquette@baylibre.com, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, quic_cang@quicinc.com
-References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
- <20231218120712.16438-4-manivannan.sadhasivam@linaro.org>
+To: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Johan Hovold <johan@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
+References: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
+ <20231219-x1e80100-phy-edp-compatible-refactor-v1-1-f9e77752953d@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -123,10 +125,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231218120712.16438-4-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20231219-x1e80100-phy-edp-compatible-refactor-v1-1-f9e77752953d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231219_233829_426290_9131CA5C 
-X-CRM114-Status: UNSURE (   6.28  )
+X-CRM114-CacheID: sfid-20231219_234256_301699_BEC7704F 
+X-CRM114-Status: UNSURE (   7.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -144,14 +146,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18/12/2023 13:06, Manivannan Sadhasivam wrote:
-> Add missing QREF clocks for UFS MEM and UFS CARD controllers.
+On 19/12/2023 21:55, Abel Vesa wrote:
+> Add definition for Embedded DisplayPort (eDP) phy type.
 > 
-> Fixes: 0fadcdfdcf57 ("dt-bindings: clock: Add SC8180x GCC binding")
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
->  include/dt-bindings/clock/qcom,gcc-sc8180x.h | 2 ++
->  1 file changed, 2 insertions(+)
+>  include/dt-bindings/phy/phy.h | 1 +
+>  1 file changed, 1 insertion(+)
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
