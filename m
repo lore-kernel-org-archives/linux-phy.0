@@ -4,127 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D100C41535
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Dec 2023 02:27:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDFA7C3DA6E
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Dec 2023 03:56:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ybPCy0qmqBMNmUwpzExZ9aX/MTIUWo2DQu15aFZUXKI=; b=WCqR6EYSDrrSDP
-	V27X5DkLWdKA6Nz9sbw0pLtA0g4+rhl2s8xkvhGyvcTSp418LQt5qCCo113sctirooMV3TgscT2Zw
-	MOkg/fW/uUq4iZfqgcRihIFSPVIMRlJ1R/V0suj5SgHnxpC8ASNsysrnOn9i+AAFwVs/t56UH3ouA
-	nLlUqUcMtJop3YT6wQN86xFRwC8rnputYvCMFlqegsG/UiwbPdWo2ckWXX+mAmBVeLqS0uB9xRBv8
-	hXn89GMEAkCJHU2ov5dfMEKSAEqa//nYHtlQeuxsjVvoeM8ljtX8D6SAQbqfd1QNleMy7yKwGf7M5
-	OjtQUZFGmmWAr8Y4HChA==;
+	List-Owner; bh=XTq5PA/r2pXzbqZCsGxshxZ7Sg9T5CGS+C28lK5AE2Y=; b=uAnUI5hUD1dWkZ
+	Io/kkIPr5jvFQuRJA5PKdKK//Eo+yFespAhPWY0GazImNhVjqPkEDt/oemcVQi/OshdBSYNyGGXem
+	J2ncMqtQaqp1Jk69t96E6aK+9tDzDeA9F+kdiUEctIl4L9YY6sgO27ieqzYL1/NwaZbS1Ae8C78XV
+	PwHBC7So36rYZ4vvAbfp+l9eLRZisH3EYBFMEfB0B4C+dWhptu07ER377t38WWi2vuBbfVz6E7ZRC
+	VSUaSR7szlIAWvK3s0Vf8fwXKfKgJOaKcTlICr4vi5faJx8tQKEYXgt91A8TScAelqNIex7Efb+uf
+	Evh5YuEY6psbDPh2MneA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFmIt-00FyOl-2W;
-	Wed, 20 Dec 2023 02:27:23 +0000
-Received: from mail-vi1eur04on0612.outbound.protection.outlook.com ([2a01:111:f400:fe0e::612] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1rFnh3-00G5OW-29;
+	Wed, 20 Dec 2023 03:56:25 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFmIr-00FyON-1r;
-	Wed, 20 Dec 2023 02:27:22 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UorIduE3eyDALReHibdwuHRvOh3lqC8nQs06R8vuvGOk8u0fPNwhjCCo5xWekF3WIMMjZgYwOXQyeJ8Wrt3dWjY4Ozy3pMs7l+59srWV4+hY9dt2J5Xpl+r8qdhgxLo1nw/8jAgLFTfwd7AZ3RZ8Plw/Vje8q76CAVG9YsH9vgrv92RowLHdTKAT4/2HHXSwL3+7DNfx4+pjkMwF28fnuyVe7eTShcq2Gv6qRy5pDgnXhrrN8Nni/NUDpHRAhNwuf/uGr9cYiOu4QzTCcfBHpK+DEyCBIwcyJF8pu28Ih0vPD+bn4uabXhMXFKh9RVUEXYuGtQdn5r0PW+y1/Mflpg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pK3Enwy9PqzdhNmCaF9ucko2r31u90F/XHqRh0Pym8U=;
- b=gxXFFinYoW2n7/XZPq+3T4I71Tiw3dyZoRdKjGpsDefgZmCgp6NkRQfPpTNk1rdOpgU6RIFx3q824ISnjZDA4Gk+IcJK+aSWNL9Eam7Os4a7dPXDL6p8uJe0XQRSSnQnzqIFpBmOQko+RqTUfx2TDiAJK5Vyg/DqewvmXoIHu287L5zPZlJ0WQTUg+mhpuE/eZn617lJTIaxQ99GOg08HOIypcGvMTyRXK0e3MOZrlnmIHXEATJ+2QVyu0oxrJFHIZrjMFn1XCfKzsQMA2NfhAW34pMp2KJSnytT9Rb3hNwsZS6bJHJnpghy3OlgHmvbM8zZQ2QZX6UnVTXo4Z5anA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pK3Enwy9PqzdhNmCaF9ucko2r31u90F/XHqRh0Pym8U=;
- b=XPf77KA37y2SGrme5mdvT6Zyh7gYjC/ng5tao6bPpm5CMEFrY2zXuisIvPJ5SLmnuo5tAMD4PQZhbakAZcKurwJClExk2AhCp2q3B/Kp47mgPiDMtiKf2ZxZHRFp3v/jT4RU6QQeaDVS9oaQrtfot1DjplCFBbr+n9Z5Vu+V6II=
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by PAXPR04MB9472.eurprd04.prod.outlook.com (2603:10a6:102:2b1::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7113.18; Wed, 20 Dec
- 2023 02:27:13 +0000
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::d99:f43f:65a3:9bf]) by AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::d99:f43f:65a3:9bf%7]) with mapi id 15.20.7113.016; Wed, 20 Dec 2023
- 02:27:13 +0000
-From: Ying Liu <victor.liu@nxp.com>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>, Vinod Koul
-	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo
-	<shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, Fabio Estevam
-	<festevam@gmail.com>
-CC: Pengutronix Kernel Team <kernel@pengutronix.de>, dl-linux-imx
-	<linux-imx@nxp.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH 1/1] phy: freescale: phy-fsl-imx8-mipi-dphy: Fix alias
- name to use dashes
-Thread-Topic: [PATCH 1/1] phy: freescale: phy-fsl-imx8-mipi-dphy: Fix alias
- name to use dashes
-Thread-Index: AQHaMlon06keOTup3U6uTvH64Kk2q7CxcPsw
-Date: Wed, 20 Dec 2023 02:27:13 +0000
-Message-ID: <AM7PR04MB70468E3BDB14C528F8F3654C9896A@AM7PR04MB7046.eurprd04.prod.outlook.com>
-References: <20231219090248.3317500-1-alexander.stein@ew.tq-group.com>
-In-Reply-To: <20231219090248.3317500-1-alexander.stein@ew.tq-group.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: AM7PR04MB7046:EE_|PAXPR04MB9472:EE_
-x-ms-office365-filtering-correlation-id: acd1f487-ca10-42ae-d435-08dc01032d3f
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: YRvTBY22uR7luJmSqdAueKmZv+q9xcDxW+/yhvmtdVDQh/6tRiMwFbWVYVM2DHfC8KlsJc+i0LNCahwqjvVRw+iY6lDQ18GLhjIlGGc/+2vlkhlYaeUclkcBvpqCPOaCzSI6m+Dj0lnBpwLiHPdf/eFQ194eEfalvcl6o2eLbzTxtOX1WhW0B1+NYAhe2rxcd3T3+PoE+gJRDLBaT6xnR/04AXIVug0LxCzPQlagZYYeTpLqON5DDj7fZdHeP0xlizhNoaorgfRLw7f6m/9nA1dnZ3YVqN212fJyVUBi/AkcbvigjEYL3qKrpXH0FsHehUBQxt7BPEaiSyzbc09rrIuhDo2gFHpDX0d0S+q1BwFRsBxCzPhTwyv/dGyoZsK/o9ASjoaZOnTg5yZlIRybLFqI34oHqsHZMMgPJBgDm9b5QrWVA13EzbuxfcL/BjrylW3vljKfxC391UtCTy1XRKqhTw+seUy1DUeYBnQfizrRlT+7dzEy13lyOXcX/Isk0i4Kwvd8Gm3gSTmZm4bDoE53+0sxmtuIdRVGXCJIXRdI9LiV+AOTDSg8IahrVqAM2QxAD0wWpe3hdBFgYOFJYBXZv48iEZIKZtDW1p8DC68Es5xJnlW8VuEgyMrAggvg
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376002)(366004)(39860400002)(396003)(136003)(346002)(230922051799003)(451199024)(1800799012)(64100799003)(186009)(122000001)(41300700001)(64756008)(54906003)(66446008)(66476007)(66556008)(9686003)(316002)(76116006)(110136005)(66946007)(478600001)(53546011)(7696005)(6506007)(55016003)(33656002)(86362001)(38100700002)(5660300002)(8936002)(8676002)(4326008)(52536014)(4744005)(2906002)(26005)(38070700009)(71200400001);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?M/55spDqjp5Y2NhkGaUpbPEbWfBkGHXIIq2Gsg0pDFn4Uj9QbcKV9TJKbDcv?=
- =?us-ascii?Q?67m/dCA36jYIcMpLu34tZlFeRFVVhh4lDx6+NKz/5u57dw5cPSIBMfhgrcoU?=
- =?us-ascii?Q?Y298xSI5i5PzB+vQTdLhjEIpm2U4X9GhA03gQReFhXX8O3P8xFRThnoDYBcF?=
- =?us-ascii?Q?iOTaLWlXHbhH5XxE64NmxpivaJof6XiYOEf17uDnU+QKi6vEQkWuU3Rcveb+?=
- =?us-ascii?Q?u+29f/xtZptyhYkXRChy1f3MNoX3hTh/Ype10IJRpUgNHBDLQy4NSqBKvNDK?=
- =?us-ascii?Q?DVkPY/o+6xszNRAnxySS2GTA8Dcljcdlp2CFVrXaytrlb30THUgOb9Unszmg?=
- =?us-ascii?Q?l+RG5kWmKdO91sb6rkpyC/krmMQfeDMaMtrdPFWxT6ArMsMmT+nyu83Zwhnp?=
- =?us-ascii?Q?e2S4k2upXPDhdBlU7nA9yox88KaL9LKNFVWVTk1Iu/eEuI5//e0sCVMdXhG8?=
- =?us-ascii?Q?9AoYfSOi9Pnc7iWbw2uoUsBkTFEq9SDDnSgtyCxo+NjnSXYvi8OL9L5V/7xa?=
- =?us-ascii?Q?GMogk3/C2/osP8WJ69B+dkb7+iagb8qOHYEIzq3RLkJjBAS0lotsqsLGFT6+?=
- =?us-ascii?Q?SOIlNmsYz7+DXF8HAU6WDafWWfGbB6WxGKAOFYUpC8ujrjjsdsK7251V+A6c?=
- =?us-ascii?Q?kC0oHyIqA29wiajBjs1SLcTmlF8CGD2CQ6eIafZXVc6z7DmQquLSQjch2yV4?=
- =?us-ascii?Q?Senzh9Emp0Uq2ItmvEyHUX40ah0oMRnqoPWMm8oearLJ567ITibmvIMBxzoV?=
- =?us-ascii?Q?wShglBScDP1bb/dzVHjHFdgVsA/luRSJAi2QsJjKfLWBZ7U3sZAM8aZgxXA7?=
- =?us-ascii?Q?vgbeTNMEjcFB7whb+K0XyLvO5alVorbQFYDXAD1QkWEcmUYNJbUkgE0V49Y4?=
- =?us-ascii?Q?JKJ5SEkNavQvdc9hXueS1ZWQAP0bgs5l5o295m4raWjzl0VUcpgI6J71+/ou?=
- =?us-ascii?Q?omd1oNw3daWktLvYuJ7mP106Gs0bFFf40KM1ukfO2TqYKRKmPz+kLOILODL9?=
- =?us-ascii?Q?rPvfiG4QmUU2RU2TGkmCBSJp/gzZ9MhpJrzDIvCW1Zk7itToK4E8PDusm4i+?=
- =?us-ascii?Q?535f8BUdSyFXsdwLM6H/56AbwbDofMLZ1StwTrxUishMm3CEB8tCnW5tdF9F?=
- =?us-ascii?Q?v8jlYuzwO0q7liI/8cK9gPdD/WoJ+zL98qkZwT2nJelpW3hGsSNsrOXJqMKS?=
- =?us-ascii?Q?BBxeOOJ9ajcJFvyoaykgE6kMCm+VlPHnySryFB5uYJtm5I9Tn26WmKznHZwc?=
- =?us-ascii?Q?Ywdw2MkyiJx8ZsC9c0qpZps8NoVVmKpACNJIfYWu1SfO/A1FIaNSQkjVqsOP?=
- =?us-ascii?Q?GQaE/S++pirdZ/gdWRYTh+pC16RawY3iqKW/L14Vp5W9iYPcpQzZjhllndzG?=
- =?us-ascii?Q?OecnXBvAESLV+LfW3L5fYXqUNvNmQwdzGetDVondZanSKcIlpz8NWvxbUFpV?=
- =?us-ascii?Q?fjABG/6mwJqhCnP2mY5RaHn/EjVqXAJQEVw/f5VNCATTQM7L368ehdgHXlon?=
- =?us-ascii?Q?CzBZ2sNh2yY2jzUcvoMlsxfkEZNTL+TFfNPJ9yBd+g8lV/LfzfyVwu9eeHg2?=
- =?us-ascii?Q?/1wS0r/fgQHnhm9AVAw=3D?=
+	id 1rFnh0-00G5O3-2m
+	for linux-phy@lists.infradead.org;
+	Wed, 20 Dec 2023 03:56:24 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BK1T3c9015055;
+	Wed, 20 Dec 2023 03:56:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=m6SgXRhJwFhAQ6dv55GNTd9UQkjE3XpPXZe3APKf5F0=; b=hg
+	Y1pU0k9iBQEm0Xy9TOm3m6gXii8sSIkjtddyWgqcqAbd7a4eDGTbXsbSRr/Abe/z
+	JVxpjTFuE5LGuoWljxmzOpVx3+ICVDl2z+WtSAQiiFxKi9ZeJmsjP4VRYNUnfU4e
+	h9BjLrMI7cyCLzmTyv/C3hCdgllaTzlE9stDqIdr3NmwicuywIHj24SGQcN0KjF7
+	Rz+xqzaHvjp5w5hFV2OQnfh1WgL6TZ8epn9jfC27d/z15wDRwgM4T+PnSmTc18Ho
+	d669Ous9UHoC2pOiuuoYcNstRSzOVBdBAvuRpUAv9PSTOgkujIzUhvr6aeLbhUNH
+	jFvGu7W/y9PCVXhuU4og==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v3fa3h4w1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 20 Dec 2023 03:56:16 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3BK3uFk4028816
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 20 Dec 2023 03:56:15 GMT
+Received: from [10.253.12.246] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 19 Dec
+ 2023 19:56:11 -0800
+Message-ID: <24dcff81-7b19-4301-a69f-1242c1a352b6@quicinc.com>
+Date: Wed, 20 Dec 2023 11:56:09 +0800
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: acd1f487-ca10-42ae-d435-08dc01032d3f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Dec 2023 02:27:13.4884
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: y/VFn6gcWx8I9K9os0zx36+ErZ+3BaBI883ZfiO+DhsN0s+AiIavItdLRzrhuiZAyBHWdfdcgHwI73N+GDZXVg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9472
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 16/16] arm64: dts: qcom: sm8550: Fix UFS PHY clocks
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
+        <sboyd@kernel.org>, <mturquette@baylibre.com>, <robh+dt@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-clk@vger.kernel.org>,
+        <devicetree@vger.kernel.org>
+References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
+ <20231218120712.16438-17-manivannan.sadhasivam@linaro.org>
+Content-Language: en-US
+From: Can Guo <quic_cang@quicinc.com>
+In-Reply-To: <20231218120712.16438-17-manivannan.sadhasivam@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: LEg498F1SXOE7mQ0_qfpKh5KE5Nak2I5
+X-Proofpoint-ORIG-GUID: LEg498F1SXOE7mQ0_qfpKh5KE5Nak2I5
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ phishscore=0 spamscore=0 suspectscore=0 mlxlogscore=830 impostorscore=0
+ clxscore=1011 adultscore=0 mlxscore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2312200023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231219_182721_634134_AD90FCB5 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231219_195623_055076_650E1C70 
+X-CRM114-Status: GOOD (  12.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,27 +98,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tuesday, December 19, 2023 5:03 PM, Alexander Stein <alexander.stein@ew.tq-group.com> wrote: 
-> Devicetree spec lists only dashes as valid characters for alias names.
 
-This saying is not accurate because it lists digit, lowercase letter and
-dash characters.
 
-> Table 3.2: Valid characters for alias names, Devicee Specification,
-> Release v0.4
+On 12/18/2023 8:07 PM, Manivannan Sadhasivam wrote:
+> QMP PHY used in SM8550 requires 3 clocks:
 > 
-> Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-
-It makes sense to add a Fixes tag:
-Fixes: 3fbae284887d ("phy: freescale: phy-fsl-imx8-mipi-dphy: Add i.MX8qxp LVDS PHY mode support")
-
-Regards,
-Liu Ying
+> * ref - 19.2MHz reference clock from RPMh
+> * ref_aux - Auxiliary reference clock from GCC
+> * qref - QREF clock from TCSR
+> 
+> Fixes: 35cf1aaab169 ("arm64: dts: qcom: sm8550: Add UFS host controller and phy nodes")
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>   arch/arm64/boot/dts/qcom/sm8550.dtsi | 9 ++++++---
+>   1 file changed, 6 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> index baa8540868a4..386ffd0d72c4 100644
+> --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> @@ -1891,9 +1891,12 @@ crypto: crypto@1dfa000 {
+>   		ufs_mem_phy: phy@1d80000 {
+>   			compatible = "qcom,sm8550-qmp-ufs-phy";
+>   			reg = <0x0 0x01d80000 0x0 0x2000>;
+> -			clocks = <&tcsr TCSR_UFS_CLKREF_EN>,
+> -				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+> -			clock-names = "ref", "ref_aux";
+> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
+> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
+> +				 <&tcsr TCSR_UFS_CLKREF_EN>;
+> +			clock-names = "ref",
+> +				      "ref_aux",
+> +				      "qref";
+>   
+>   			power-domains = <&gcc UFS_MEM_PHY_GDSC>;
+>   
+Reviewed-by: Can Guo <quic_cang@quicinc.com>
 
 -- 
 linux-phy mailing list
