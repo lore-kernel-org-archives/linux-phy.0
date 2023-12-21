@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E04D8C46CD3
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 21:07:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72D61C46CD8
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 21:08:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8wwMkhw46s6u3ZU5r+4iT+znt+CNq8kyFr0dgrhEe8s=; b=hGl5xDqSR/6xfr
-	HjgOPCPAk2NpRNTf5MBmlgtrgJYb8Y0GMevRkObh7osA5HKGEOrvn7vcvhrz4HNi9EJnR+wuRXpOL
-	OZk76ljFZFPtjfKeXG1A+HOc6E/WYklNbRZ7rgUOYrRsKbub9ABIF9zPYnKmAXvvdNBYzJkw39nss
-	gcQppIvF7tJJrVbKZQzCzwjGUigZy/q2WdZgntWM+GJuEC6twTGxdl5zpGq5/rS/pifsMBn2jPgj8
-	N3NMhmv7Pz8LOCp7VjKSkhhD8mDE9zUvCw4F0XG4LP0kvfttPksbMdQwdhtujicAXCyVjycCfWdCA
-	Reneg4uRWjDNaTScic3w==;
+	List-Owner; bh=RmglTcN9tMYlIrJmipsKKCo3fa7odP4K2j5pjezDcQg=; b=UCRlw0jswDtoP3
+	/U+PzhiKwany+QcnP5XJ/kTe9/1SoPYB6vYgynzaCv/5FqxuI5ECIaL/o7iPhtuAt26w2tZGbGM1G
+	TKQk/o259nc6R9S9nNY/+5gBikW4iNrIuYAXv/0UJ2sOhOCmj6ju3Eht2b6Pb2WPAx6he8uufFgdO
+	q0xpQug8bMu+mir/pRSj47nDXJiXhnndZCYW/uTiuWQv3I3RMe94bXJYCZTog3SYe2K47en/5TDVd
+	21o4iboedujVsoENqaR0yqG2rkimqkOaZ5q249Y9rYrjka7DMSgDxsQnUncjrvVQdNsSCz+vHP7ry
+	48fMgNOZmX/2yxxX6a2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGQGc-0046YI-1i;
-	Thu, 21 Dec 2023 21:07:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rGQHK-0046iV-07;
+	Thu, 21 Dec 2023 21:08:26 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGQGY-0046X7-2g
+	id 1rGQHG-0046gW-1D
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Dec 2023 21:07:40 +0000
+	Thu, 21 Dec 2023 21:08:24 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B8DA061A53;
-	Thu, 21 Dec 2023 21:07:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E6605C433C7;
-	Thu, 21 Dec 2023 21:07:34 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 7B544B81FF4;
+	Thu, 21 Dec 2023 21:08:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39DADC433C8;
+	Thu, 21 Dec 2023 21:08:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1703192856;
-	bh=l8ep+ho90zz55mBaxz8kcOinwOvjzB7qaAX4jDuIHnw=;
+	s=k20201202; t=1703192897;
+	bh=rWCnstf7VPSOkoEfMQP6U3T55hfbyUebaA/zKF3SW6A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NZSUBm1b3ftXaEDWfhDKmhQa1MG/iOb2MaLnppHsD92h/baQnjTg7AUsC7dKIOZzJ
-	 H2WI2v1NrzlBlPJZqC3z2gZCmNsYt7a8q+9ejav8lsDZ29Yfug1xDLzGBLPN/47X/O
-	 rApMsy+pxCiiDsyD2hbkziXvu9geOQVOdQ4WWkKeGR3J43aOgkyEf5IONRLDytBr81
-	 BL7QRVL9tdJJh6fKs3+/zLX6Skd9G37xGtynFLrrT8eacMD8uN4W66v39Lg+V6CRsG
-	 S6ymSIZbzO1dX9aSSUCARo7JR2a4neSIyYSzF/ohyG6qOU9F7XV0TlUW5Q1C9Ghgf+
-	 zIek1eaHIs5Og==
-Received: (nullmailer pid 95648 invoked by uid 1000);
-	Thu, 21 Dec 2023 21:07:34 -0000
-Date: Thu, 21 Dec 2023 15:07:34 -0600
+	b=ZZ7HE0KHCIPLUKI1EzXKui4xroGUa8k+MkxZf2om2cKxHYz8+4HQhzqMKEPXMx7gR
+	 huk2J7CH7sWq+E8lBkVWUcWMi1HhvHSzp9zPAgVX9/Mj8oVnzqKroY74U2Z+r9QAcs
+	 nPYwkVmMhPmRKICorGd/SsfCi7LZ8jNU4gLkWRtvSQR/qm4V4ZxGvSxFCPjd1Uh7Mt
+	 kvRwRm8Umq2pLP3JLIDBQeowsClO24mRsJ28B0UMY7H0TZ0UJjKuM11+Uwv1AkFB4r
+	 sQM6Qv+t07my4qnQlljljnbCZTglWmWLTkXWdGyUG9mWy9fwi8S2q+q8MYCMVDH0aZ
+	 y15MJFOds2NAA==
+Received: (nullmailer pid 96522 invoked by uid 1000);
+	Thu, 21 Dec 2023 21:08:15 -0000
+Date: Thu, 21 Dec 2023 15:08:15 -0600
 From: Rob Herring <robh@kernel.org>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Jonathan Marek <jonathan@marek.ca>, Marijn Suijten <marijn.suijten@somainline.org>, linux-phy@lists.infradead.org, Krishna Manikandan <quic_mkrishn@quicinc.com>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>, Sean Paul <sean@poorly.run>, Kishon Vijay Abraham I <kishon@kernel.org>, Daniel Vetter <daniel@ffwll.ch>, Abhinav Kumar <quic_abhinavk@quicinc.com>, Andy Gross <agross@kernel.org>, linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Clark <robdclark@gmail.com>, freedreno@lists.freedesktop.org, David Airlie <airlied@gmail.com>
-Subject: Re: [RFC PATCH 1/2] dt-bindings: display: msm: move DSI PHY schema
- to bindings/phy
-Message-ID: <170319283595.95147.10971652363367515055.robh@kernel.org>
+Cc: freedreno@lists.freedesktop.org, Marijn Suijten <marijn.suijten@somainline.org>, Daniel Vetter <daniel@ffwll.ch>, Rob Clark <robdclark@gmail.com>, Jonathan Marek <jonathan@marek.ca>, Vinod Koul <vkoul@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Stephen Boyd <swboyd@chromium.org>, Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, Andy Gross <agross@kernel.org>, Krishna Manikandan <quic_mkrishn@quicinc.com>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, Bjorn Andersson <andersson@kernel.org>, Aiqun Yu <quic_aiquny@quicinc.com>, David Airlie <airlied@gmail.com>, Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org, Abhinav Kumar <quic_abhinavk@quicinc.com>
+Subject: Re: [RFC PATCH 2/2] dt-bindings: display: msm: mass-rename files
+Message-ID: <170319289437.96441.9965499072649831420.robh@kernel.org>
 References: <20231221102506.18320-1-dmitry.baryshkov@linaro.org>
- <20231221102506.18320-2-dmitry.baryshkov@linaro.org>
+ <20231221102506.18320-3-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231221102506.18320-2-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20231221102506.18320-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231221_130738_923881_8300DC8B 
-X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-CacheID: sfid-20231221_130823_505856_E31D519E 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,26 +76,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 21 Dec 2023 12:25:05 +0200, Dmitry Baryshkov wrote:
-> While the DSI PHY schema files describe the display-related hardware,
-> they still describe a PHY. Move all DSI PHY schema files to the phy/
-> subdir.
+On Thu, 21 Dec 2023 12:25:06 +0200, Dmitry Baryshkov wrote:
+> Rename the Qualcomm MSM Display schemas to follow the main compatible
+> string instead of just using the block type. This follows the
+> established practice for YAML file names.
 > 
+> Cc: Aiqun Yu (Maria) <quic_aiquny@quicinc.com>
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  .../msm/dsi-phy-10nm.yaml => phy/qcom,dsi-phy-10nm.yaml}      | 4 ++--
->  .../msm/dsi-phy-14nm.yaml => phy/qcom,dsi-phy-14nm.yaml}      | 4 ++--
->  .../msm/dsi-phy-20nm.yaml => phy/qcom,dsi-phy-20nm.yaml}      | 4 ++--
->  .../msm/dsi-phy-28nm.yaml => phy/qcom,dsi-phy-28nm.yaml}      | 4 ++--
->  .../msm/dsi-phy-7nm.yaml => phy/qcom,dsi-phy-7nm.yaml}        | 4 ++--
->  .../msm/dsi-phy-common.yaml => phy/qcom,dsi-phy-common.yaml}  | 2 +-
->  6 files changed, 11 insertions(+), 11 deletions(-)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-10nm.yaml => phy/qcom,dsi-phy-10nm.yaml} (96%)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-14nm.yaml => phy/qcom,dsi-phy-14nm.yaml} (94%)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-20nm.yaml => phy/qcom,dsi-phy-20nm.yaml} (93%)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-28nm.yaml => phy/qcom,dsi-phy-28nm.yaml} (94%)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-7nm.yaml => phy/qcom,dsi-phy-7nm.yaml} (94%)
->  rename Documentation/devicetree/bindings/{display/msm/dsi-phy-common.yaml => phy/qcom,dsi-phy-common.yaml} (90%)
+>  .../bindings/display/msm/{gmu.yaml => qcom,adreno-gmu.yaml}     | 2 +-
+>  .../bindings/display/msm/{gpu.yaml => qcom,adreno.yaml}         | 2 +-
+>  .../bindings/display/msm/{hdmi.yaml => qcom,hdmi-tx.yaml}       | 2 +-
+>  .../bindings/display/msm/{mdp4.yaml => qcom,mdp4.yaml}          | 2 +-
+>  .../msm/{dsi-controller-main.yaml => qcom,mdss-dsi-ctrl.yaml}   | 2 +-
+>  5 files changed, 5 insertions(+), 5 deletions(-)
+>  rename Documentation/devicetree/bindings/display/msm/{gmu.yaml => qcom,adreno-gmu.yaml} (99%)
+>  rename Documentation/devicetree/bindings/display/msm/{gpu.yaml => qcom,adreno.yaml} (99%)
+>  rename Documentation/devicetree/bindings/display/msm/{hdmi.yaml => qcom,hdmi-tx.yaml} (98%)
+>  rename Documentation/devicetree/bindings/display/msm/{mdp4.yaml => qcom,mdp4.yaml} (97%)
+>  rename Documentation/devicetree/bindings/display/msm/{dsi-controller-main.yaml => qcom,mdss-dsi-ctrl.yaml} (99%)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
