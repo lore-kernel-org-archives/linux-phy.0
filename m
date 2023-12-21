@@ -4,59 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BCFEC46CD8
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 17:16:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA08EC46CD2
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 17:16:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q1XVEqf/FIpGEIyw9MTV4MMnkdDY213++f7dMkaN2nc=; b=xRSMgDW/dITtJM
-	tLdsszz/nXz/tFMwvS1ReiIbjJ4p5qeHT2jx2yl40TW8IHEB5CSgHtk5Au15vI7+1TtUkXrnOLz4E
-	SyGsxj7KzwdWBZFv+PLUr/1DuKT5DHWA1M2635MkfalN8OENLxjwjQ4uuoKNskO2ITB9NUDksqncG
-	88QQboy/Hkz8fBE6NhoV94nRL8OBnNux1MOW31u2ylSehks90VRoMaOMXKQ6WB+ZdZeT4VSJT5CK2
-	CpJVwIEW6CM7bh0AgmtH8Tr6blTNGKDQFnNY7Ur3hY4vVJHxqeeLygH/0+hvcr83LDKRUx7qjOky6
-	R/DR/Dvx/cGBc9pAls8w==;
+	List-Owner; bh=giMGiOCO4ULUKwzF/epVvHVKPGN2UiQDFS2+tD9EXJ0=; b=CxCe0q6eOG66wt
+	cskBczfwmqmGcjXYuFsR+OXyFfP7IFaw8JlD3f97f+cXZHwnIwpjtr92QJFS7RfQK4adjP4cWEOXl
+	0zc8dz7w3UWMUMIwu9hoo48ct0uWqNkMOTDXFYXeJRK3CmHdXl/3wQ3eZVJFb/6jystylT33iXhXX
+	iUo6+rh2SOVvpM3iqWwPWP68XK5PBEVOhedWzH0/3nWZsQoFXPtAGai7R8thoSleGmQhTyXLHCLKD
+	ry4FMve5BaUSKMZFVzFWvJr9X4Q6YL6Oe5CEgWltkmCnakvpdh2EFEV61TD56qasYcP+QWTLIiyAt
+	B9jGZ5hAF4t3sDpjRngA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGMen-003bmK-0I;
-	Thu, 21 Dec 2023 17:16:25 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rGMem-003bla-1X;
+	Thu, 21 Dec 2023 17:16:24 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGMej-003biv-1T
+	id 1rGMeh-003bhP-2G
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Dec 2023 17:16:22 +0000
+	Thu, 21 Dec 2023 17:16:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 82AE86186A;
-	Thu, 21 Dec 2023 17:16:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0FB78C433CA;
-	Thu, 21 Dec 2023 17:16:17 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 1C9C9B82156;
+	Thu, 21 Dec 2023 17:16:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 180C3C433A9;
+	Thu, 21 Dec 2023 17:16:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1703178979;
-	bh=GPRM0+qr4tPE5bf4ipC9dmGTvUdkJMlb+ss4sMnL/bE=;
+	s=k20201202; t=1703178977;
+	bh=GiGjWiCFjhYD3COXF7UOcoSeBaRUyyIV4TEwJQY0BoA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=nkhgHstugS99qn/TPmBqYJlBhZiUq7tS1p/MzxG80atoqPUsHWY4bSmkbb/7tEgZ9
-	 TtdnBUdclg+et7tVHkYPL4ifLRabWmIhypXg8vH7L7ryH88kvBnt6FVXko0yLgM//o
-	 tkz7ygSMPQchQEABlhZMs5tJEg8CEKmY8Pn4VT7rWFcPDfhXR5GFRDAXKsTieHYyf/
-	 bnBWZeIH3+W9BtPq6zo+cYXq08cho8QWrNZSOu0wuBQfCrUoyoNWnnul3UR7aLU24x
-	 vWr6mKbq8kH21IBT2Lsqe5GHvyNVtBzsVnXLt2LOpVjQF7+NK0WZZ313/OgplOag35
-	 p/dG8bBobzS8w==
+	b=Dd4eOicPTjyKWE5Y7eHNki5GqNBHqoB7XQGi+Z7rv3DgxZZwIWIbvGULCgA5ieKU+
+	 XeRWI6ZYdDgr+QkgyZEr2H6A3x3ctfAqsAQyO2/IPaeQVQH3eAg9AxCngSV86MCw6A
+	 kSaUxHLKzpnYig2RdnvomB2+FUsz7NvdptMfI451GJLlYFYXhNu0PvZYjW8gmtqDHD
+	 NDNPJBQRBtpOkpwJH9MqOWQg6I0Qyh1Zmne+wsIoOomz1g3aF4LcgPPx7Qjgc7fjsl
+	 4zLLXGUtmpnqSujBZ2FdCZmac2/haOTYQIsG/xIHEmFM8n/HcYQ1/vkvTBKYoMzMXD
+	 b2fPpluog7iyA==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-kernel@vger.kernel.org, Randy Dunlap <rdunlap@infradead.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
- linux-phy@lists.infradead.org
-In-Reply-To: <20231204234917.23509-1-rdunlap@infradead.org>
-References: <20231204234917.23509-1-rdunlap@infradead.org>
-Subject: Re: [PATCH] phy: renesas: phy-rcar-gen2: use select for
- GENERIC_PHY
-Message-Id: <170317897770.712473.10129741722453482459.b4-ty@kernel.org>
-Date: Thu, 21 Dec 2023 22:46:17 +0530
+To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Johan Hovold <johan@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Abel Vesa <abel.vesa@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v3-0-273814c300f8@linaro.org>
+References: <20231122-phy-qualcomm-usb3-uniphy-x1e80100-v3-0-273814c300f8@linaro.org>
+Subject: Re: [PATCH v3 0/2] phy: qcom: qmp-usb: Add support for X1E80100
+ USB3 PHY
+Message-Id: <170317897267.712473.15138229989572768698.b4-ty@kernel.org>
+Date: Thu, 21 Dec 2023 22:46:12 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231221_091621_596378_DE22F20A 
-X-CRM114-Status: UNSURE (   4.58  )
+X-CRM114-CacheID: sfid-20231221_091619_872925_9AD23F3F 
+X-CRM114-Status: UNSURE (   6.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,17 +83,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 04 Dec 2023 15:49:17 -0800, Randy Dunlap wrote:
-> Change the last "depends on GENERIC_PHY" to use select, like the
-> other 170+ Kconfig users do. This can help prevent circular
-> dependency issues.
+On Thu, 07 Dec 2023 14:34:10 +0200, Abel Vesa wrote:
+> This patchset adds support for USB3 PHYs instances found on X1E80100.
+> It depends on the v7 register offsets added by the following patchset:
+> 
+> https://lore.kernel.org/all/20231122-phy-qualcomm-v6-v6-20-v7-new-offsets-v3-0-dfd1c375ef61@linaro.org/
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: renesas: phy-rcar-gen2: use select for GENERIC_PHY
-      commit: 54c899f0d647e5724b02486243da40134dc91c45
+[1/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add X1E80100 USB PHY binding
+      commit: c5ffffd714373e7c6b39d3b005dbfbaadbbb4d2d
+[2/2] phy: qcom-qmp-usb: Add Qualcomm X1E80100 USB3 PHY support
+      commit: 2daa9555ba9858c29b9734b3a104c338b718feab
 
 Best regards,
 -- 
