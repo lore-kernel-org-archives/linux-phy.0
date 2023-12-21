@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03041C35274
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 10:30:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 770FDC35274
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 10:30:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RiQEIsJedB0+x6uX3Q8q7FZlRouYrmHdCsqLc4gfkC4=; b=A5Du+kNrOUC1bD
-	GxrOYunM49OY3TS7RifRMrkWYXHgdtXfqm72/PuAk7vCuhFlHLsg96fbHICxKRC4a13O7B1RsdKrF
-	NKCY20xQJG06yq93kuyA5fiHw/ysA1NhA9FoWKTrjhA3JcStegCFkH8acTJLvh6AQ+dc+aPbvqFVi
-	3Hn61s3eQBZnNPkdNqpUhT5rx05svWiMl58GOsubR8LFclOeYJYLkgZlt9ms8fTG83necgax8o1H8
-	Fa/i/W+SRuPYrzSmfEkrHkh0rvPDiEBxuHh1BkbpwR7tSeLu3g70QLK1aHKOfo3uu8HjJa6vDD7gq
-	b/rRt7b5ElFFB9mhPk8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E1o+y1pqth9ObkDcjzWZi9JUTQ5o6n9AA9E9UY3+Ccs=; b=E6AlHRjtBllFfO
+	RT/zXWRTatEtQlJPOtxv61pVwMAJVhZv2256oJGhGid611QA6Vy9QujRVVL0pZw/u6ny1aTXEvhdp
+	Oig7padq/rRe2NoDzJGSm+p0bp7ZKLsddhorLZH2V6EwfRVR22ctf66Q+b4W0sv7ZkRxyyGa6V7a4
+	Qw0zlglPvHrzB1f2sXoooqU7xGBabVBlHYrdJQyCtR+DZ3Y9ymB8cMy22Ns0VszWC5zrCFnkWcVUh
+	uismLy6RxytV1j5ZeS3uy8JzC5P43YIacb+78JYBPS43tiVJKXBPOu9n0xkRfiRUMvQFBN2LgMule
+	ZTx/K1aNOlhoO11QANZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGGJk-002Qen-2O;
-	Thu, 21 Dec 2023 10:30:16 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1rGGJs-002QgU-0i;
+	Thu, 21 Dec 2023 10:30:24 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGGJh-002QeK-1L
+	id 1rGGJq-002Qf5-15
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Dec 2023 10:30:14 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 3BLAU7Mb016150;
-	Thu, 21 Dec 2023 04:30:07 -0600
+	Thu, 21 Dec 2023 10:30:23 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 3BLAUDlJ112064;
+	Thu, 21 Dec 2023 04:30:13 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1703154607;
-	bh=inQKoPNZLeZ1cwGBY9kLHmeSPB9ellZ0jwcj4lbGv3I=;
-	h=From:To:CC:Subject:Date;
-	b=kb9TS5kGFH1uKCpofsi3eAG09Lr8zYL7zPblMEN/VpCdDQ/UvQNeiEUjokz3JCxcg
-	 vDEQkn+S6ccTqgFBE1myZ0XflcKJbkRNX49Vs1ER53T/wC8xngV42p82mj0ERbN9k+
-	 GZnEr7TC/yUEWhvFI6PVLCxYrUJcWhGY7qZR4ksc=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 3BLAU7uh016174
+	s=ti-com-17Q1; t=1703154613;
+	bh=FV2RhUD9SV7SdTWfY8qp4/5H5gSClJNwlc4iyQYL4y8=;
+	h=From:To:CC:Subject:Date:In-Reply-To:References;
+	b=GP0l4opeE0TY7YZxiMxyUovZ7rJ5at0Qfb4HhLnC3wvEFzvANT4afVo2ziCiQamuD
+	 m5QMhAniQh5SzAKvLWp4nFs7/pbY73UlYYqrvS1JpYrqDbmnpSKlTGRBYU+oENDf/O
+	 l+xXYczOuK+aVlwZi/UM9IkqTcebMDrVkdrJjvbQ=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+	by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 3BLAUDaR030054
 	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 21 Dec 2023 04:30:07 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+	Thu, 21 Dec 2023 04:30:13 -0600
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 21
- Dec 2023 04:30:06 -0600
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2023 04:30:13 -0600
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Thu, 21 Dec 2023 04:30:06 -0600
+ Frontend Transport; Thu, 21 Dec 2023 04:30:13 -0600
 Received: from localhost (chintan-thinkstation-p360-tower.dhcp.ti.com [172.24.227.220])
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 3BLAU6Rv065632;
-	Thu, 21 Dec 2023 04:30:06 -0600
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 3BLAUCqW087744;
+	Thu, 21 Dec 2023 04:30:12 -0600
 From: Chintan Vankar <c-vankar@ti.com>
 To: Maxime Ripard <mripard@kernel.org>,
         =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?=
@@ -65,15 +65,18 @@ To: Maxime Ripard <mripard@kernel.org>,
  I <kishon@kernel.org>,
         Vinod Koul <vkoul@kernel.org>
 CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [RFC PATCH 1/2] phy: ti: gmii-sel: Enable SGMII mode for J784S4
-Date: Thu, 21 Dec 2023 15:59:55 +0530
-Message-ID: <20231221102956.754617-1-c-vankar@ti.com>
+Subject: [RFC PATCH 2/2] phy: ti: j721e-wiz: Add SGMII support in WIZ driver for J784S4
+Date: Thu, 21 Dec 2023 15:59:56 +0530
+Message-ID: <20231221102956.754617-2-c-vankar@ti.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20231221102956.754617-1-c-vankar@ti.com>
+References: <20231221102956.754617-1-c-vankar@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231221_023013_513434_B8CFFB27 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20231221_023022_412338_AB1E4079 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,28 +93,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-TI's J784S4 SoC supports SGMII mode with the CPSW9G instance of the CPSW
-Ethernet Switch. Thus, enable it by adding SGMII mode to the list of the
-corresponding extra_modes member.
+Enable full rate divider configuration support for J784S4_WIZ_10G
+for SGMII.
 
 Signed-off-by: Chintan Vankar <c-vankar@ti.com>
 ---
- drivers/phy/ti/phy-gmii-sel.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/ti/phy-j721e-wiz.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index bc847d3879f7..0f4818adb440 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -248,7 +248,7 @@ static const
- struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j784s4 = {
- 	.use_of_data = true,
- 	.regfields = phy_gmii_sel_fields_am654,
--	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) |
-+	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII) |
- 		       BIT(PHY_INTERFACE_MODE_USXGMII),
- 	.num_ports = 8,
- 	.num_qsgmii_main_ports = 2,
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index fc3cd98c60ff..00d7e6a6de03 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1240,6 +1240,7 @@ static int wiz_phy_fullrt_div(struct wiz *wiz, int lane)
+ 	case J721E_WIZ_10G:
+ 	case J7200_WIZ_10G:
+ 	case J721S2_WIZ_10G:
++	case J784S4_WIZ_10G:
+ 		if (wiz->lane_phy_type[lane] == PHY_TYPE_SGMII)
+ 			return regmap_field_write(wiz->p0_fullrt_div[lane], 0x2);
+ 		break;
 -- 
 2.34.1
 
