@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9257FC35274
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 16:28:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABE9AC35274
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Dec 2023 16:29:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Mba+0PhqroQvpi2nCWo5nrm+xnt4iBY2CfIXUzvbIo=; b=w/jpF6NJPmqvqM
-	iJ9LeC8LoC+/Smvt8/5R5CWSZTjz9m7G1UAkDUqveGJBpUOJfUUOru50RR9ikqRVzHbTddRbsWjS8
-	GSvHMx/r9DmCDW9DXALnObkbtadhHvaoR662PxOBrkUueo5RSS437CLm8Q7pjldCoOqQ9kYVOGu7u
-	x9uznIlC0Of1yOycSa43RHzYhILSaKQLox6LSgSJU2Klw8Bwy80uMvmsgsAEdL/9DK949s9yUfAjw
-	0c+jI1HpVHMNEpz9eIanaNa69cG7DapcuTJFHaYc2CWRtkT4NVXYTUHSyBc4uIWLSNScMMh7ri5NH
-	uH+ZTnSxLwIrE2p6cf7w==;
+	List-Owner; bh=v389pmrihqshXZe+3d0193X5sSkSC9aDvR7S0mprr20=; b=hyFO9JayJlVbu4
+	HPCKcIpdh0lv4HpDrCWouKcRClTcnVPMNl53PnOFfFeBY7Q6/U9f6mpuMCfrMpJ3uNlvXlMPIGpsI
+	ZJ+6kA3uUNwLyt+Gs/39dz1iSPKdZfmVK9mH0PrC4AWBRT60Ajww26Li9GmvVNNAtxfCkpHEmQpvg
+	tcu/F382b/wWCSa+CsdHZn3jeHQrElmlqjN0hT+sY9ecfTqiSQoKOAk/G4i52561ka6ArMrjNlaAf
+	azj+Ysa7b2TmWstbGgv/go7YRbVEBhrVCAsTGgi9quoBVnzSNJ2Tfsyxp/rIrB2pkjHdMEO5QVr58
+	jTTV07kPr2cm6pF6FJ+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGLuA-003VGU-13;
-	Thu, 21 Dec 2023 16:28:14 +0000
-Received: from mail-yw1-x1134.google.com ([2607:f8b0:4864:20::1134])
+	id 1rGLvH-003Vbh-1M;
+	Thu, 21 Dec 2023 16:29:23 +0000
+Received: from mail-yb1-xb2a.google.com ([2607:f8b0:4864:20::b2a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGLu7-003VF8-2A
+	id 1rGLvF-003Vab-0V
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Dec 2023 16:28:13 +0000
-Received: by mail-yw1-x1134.google.com with SMTP id 00721157ae682-5d33574f64eso10926867b3.3
-        for <linux-phy@lists.infradead.org>; Thu, 21 Dec 2023 08:28:10 -0800 (PST)
+	Thu, 21 Dec 2023 16:29:22 +0000
+Received: by mail-yb1-xb2a.google.com with SMTP id 3f1490d57ef6-db3a09e96daso922901276.3
+        for <linux-phy@lists.infradead.org>; Thu, 21 Dec 2023 08:29:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703176089; x=1703780889; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1703176160; x=1703780960; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=ogIy9a1gLVZmbEpACopYNApQ/4ttBa03kR3FslbDNwE=;
-        b=U4p9OqENvcSwDFtRZq0ETeTuofXd885rcSZPLlT0KtflXK8Jhj/E7aPlCQAEb153wy
-         MHmu2/921J4YYXltZcPI88F4u00eDwZazL+vdQcPaAaFe7EHnu2LeV1iXYWsg8/Lz2Q6
-         5Bqowc8wltKgXnE7ekHzJO/Lu7lpiDoBjw7riB8/EFsHaMIVxYDJXnltmTjhnqJ8Zoq+
-         Ebe2IuX1os3eRiPVTWUbVEECClLCAnYDgm94H3Qij7DnmcPkwAGKMJgDJSZ/H3rg5HpN
-         aoWUdF/OoP1X0cfrCfwtJYKDUgW1jitUlBjAKzdCGKg7O6TXAJUpKkZm0+LBGG6P/Hcp
-         jyBg==
+        bh=BjPHcp5yMT17ibGa6gTs1FBCraAtjJ1c24ScrpYmDdA=;
+        b=nS5R0mQokyNmS64CG8ZX0Ug29zF4KH+CVVOYQXmulm4SdnQgl8Fx7mFJXQCWbwKHK9
+         pjOX3+UzqrIqqoMR9+Y7qpAMRNGVjHNvE9/m3DlHqnsRMjuBt9h29H3lCDypPt3vYtL/
+         SMccIa/WYWF1c9HHhKUiBHdTAkRznKNzaoBFyqvCZC6dEusQgDyS56RmJ7ZUuPon7zRQ
+         JJF+J2RY0aGLttUvamHJIq7wjPWOZbGUH1Uqe8yr3FEm/TTDgQlcWqIEHXZ4imsaIHgu
+         E7sfymvBlbLmgwJcI70rUFQhHFaA4zvHanG3IFinMA5W4fuM+ik2pUj2Nfs1y8w5NlPh
+         TI6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703176089; x=1703780889;
+        d=1e100.net; s=20230601; t=1703176160; x=1703780960;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ogIy9a1gLVZmbEpACopYNApQ/4ttBa03kR3FslbDNwE=;
-        b=EY/GwF9ezZeZTNkXuWTxwHtta/Ja6Flwkds3561yVkt5uKsdCqEoNBQHa1SGGsiFx6
-         zxcsHQf+f35ZNR4/S5bYt48j38PIif17F4zhurm1QeALeh+piAoYd+7y69VrkZiTTFYg
-         6jt4XCJWE3l5Z2bcHFn8BCBO12ftP+mWAotESSGulHgRmfcO9IuBqwCVLvhe0Ekpm4Pt
-         eUxbO5rRcOb2PY94J0n+ydbPDz1QzAfCjYOpd2msyfxN05nToxhkmj8WttrxMTuScoZy
-         o45fhG53bBHwJRRT222I1odAY5KimKjDob5QM/MeJO1CXG7QTpNoI/5Oe8+hF+9mgFAi
-         IhBQ==
-X-Gm-Message-State: AOJu0Yzw9vnf2ePdpzOE9ZwBPhHwa8iCdTNCXufY5bmD93D0SOfDvyCu
-	Wwnhq9v9RXlcyIIjR0T27tjzLIOoomV5eikhKJE/+eOvPBI+KA==
-X-Google-Smtp-Source: AGHT+IEL2gaqjHNdYgkXNUqNMEgIctDRK1FBPJfqjCqOSkq0nQqc7cjjrq9NLaz2hl/9pb5cp2uk5i0aT6gi38YQNM4=
-X-Received: by 2002:a0d:d755:0:b0:5e5:6aa2:a88f with SMTP id
- z82-20020a0dd755000000b005e56aa2a88fmr51380ywd.56.1703176089273; Thu, 21 Dec
- 2023 08:28:09 -0800 (PST)
+        bh=BjPHcp5yMT17ibGa6gTs1FBCraAtjJ1c24ScrpYmDdA=;
+        b=oYIc0yrNl3T9uSfREJ9S2t/xThr4gP74mRD1em3xByVTPO8qTiuZXCbBseVRJ8nxh9
+         AOlcGNpyLVjHjHtzynfTv5zzczYq3hXNi/fgeIIr7HhoYxnbC2GM/ObpxZVjZ0/orCuB
+         ckaSu53Aer/kozRWLpsquLoG5txfEPQwRWU3zZB9Budfk1fnc/muwkurArBQLbe1kQHk
+         2ZIVkOvjRFByvzzxv9GWR4QVvCrAhFr/Suz45uiA46/cK57gsxhGyJBZ98xOH52g5RC2
+         JCR6WcfIcUREiv6+Cc1A+EIx+qLG4qm5cVXO7JDIyxL+bI1Jbmpi9QHjuOpJa6Am1Eor
+         8RPA==
+X-Gm-Message-State: AOJu0Yx8wdymazvWBhZotKbNJce4InHAdH3gVowDS0hWyUfZ79lqjG+1
+	2FwY0THAdrGwjtdJ9troUUQNZH4+fu2Yzg02NxP7yw==
+X-Google-Smtp-Source: AGHT+IGVLs+CQ+PdC7bTznaHnCI5bDzf2xPzHfAm2xC8pi3ssBDcAhHP2dXDVr6YIcp4bw0t0xdhtZqdeJkJ4bW6TGY=
+X-Received: by 2002:a5b:4b:0:b0:dbd:4c39:30bf with SMTP id e11-20020a5b004b000000b00dbd4c3930bfmr1286372ybp.98.1703176159919;
+ Thu, 21 Dec 2023 08:29:19 -0800 (PST)
 MIME-Version: 1.0
 References: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
-In-Reply-To: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
+ <20231219-x1e80100-phy-edp-compatible-refactor-v1-2-f9e77752953d@linaro.org>
+In-Reply-To: <20231219-x1e80100-phy-edp-compatible-refactor-v1-2-f9e77752953d@linaro.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 21 Dec 2023 18:27:58 +0200
-Message-ID: <CAA8EJpr8rKMBzcm-=HGu7-C5hPkNMrnG1cA78O00UjgJVT7p6Q@mail.gmail.com>
-Subject: Re: [PATCH 0/3] phy: qcom: edp: Add support for DT phy mode configuration
+Date: Thu, 21 Dec 2023 18:29:09 +0200
+Message-ID: <CAA8EJpoZDJqJnCvPp2YJcCJd5a3Z3droe=F3oXkiAR-O8KDqGA@mail.gmail.com>
+Subject: Re: [PATCH 2/3] phy: Add PHY Embedded DisplayPort mode
 To: Abel Vesa <abel.vesa@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
 	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
@@ -74,8 +74,8 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
 	devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231221_082811_712967_D97ACB68 
-X-CRM114-Status: GOOD (  21.09  )
+X-CRM114-CacheID: sfid-20231221_082921_207595_36B3CCA7 
+X-CRM114-Status: GOOD (  12.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,45 +94,28 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Tue, 19 Dec 2023 at 22:55, Abel Vesa <abel.vesa@linaro.org> wrote:
 >
-> Until now, all platform that supported both eDP and DP had different
-> compatibles for each mode. Using different compatibles for basically
-> the same IP block but for a different configuration is bad way all
-> around. There is a new compute platform from Qualcomm that supports
-> both eDP and DP with the same PHY. So instead of following the old
-> method, we should allow the mode to be configured from devicetree.
->
-> There has been an off-list discussion on what would be the right way
-> to pass on the PHY mode information to the driver and it has been
-> concluded that phy-cells is the way to go. This means that basically
-> the controller will pass another value (that is, the PHY type) to
-> its 'phys' DT property.
->
-> For this, we need both the bindings value and the PHY mode value to be
-> added as well.
->
-> The controller part will follow shortly. But for now, lets see where
-> this is going.
->
-> There has been another attempt at this here:
-> https://lore.kernel.org/all/20231122-phy-qualcomm-edp-x1e80100-v3-3-576fc4e9559d@linaro.org/
->
-> Compared to that version, this one uses the phy-cells method and drops
-> the X1E80100 support. The X1E80100 support will be a separate patchset.
+> Add definition for Embedded DisplayPort (eDP) phy mode.
 
-After several back and forth discussions, I think that this approach
-is not correct and not that easy to extend. Instead I'd like to
-suggest adding a property to the DP controller, which enables eDP
-behaviour (and thus makes DP driver call phy_set_mode()). Something
-like this:
-dp: displayport-controller@ae0000 {
-    compatible = "qcom,sm8000-dp";
-    /* reg, interrupts, etc */
-   edp-interface;
-   /* or simpler */
-   is-edp;
-};
+If we leave the DT property aside, is eDP a separate PHY mode, or a
+submode? (in terms of phy_set_mode_ext).
 
-What do you think?
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
+>  include/linux/phy/phy.h | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index f6d607ef0e80..bea532711906 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -42,7 +42,8 @@ enum phy_mode {
+>         PHY_MODE_MIPI_DPHY,
+>         PHY_MODE_SATA,
+>         PHY_MODE_LVDS,
+> -       PHY_MODE_DP
+> +       PHY_MODE_DP,
+> +       PHY_MODE_EDP
+>  };
 
 -- 
 With best wishes
