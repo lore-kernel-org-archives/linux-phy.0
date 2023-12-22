@@ -4,72 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1933DC41535
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 15:49:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5099C41535
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 15:50:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3PJoxc7hG4+KQtdfqo0tN4H4uapOZWWdA7syt9XmYdY=; b=JDCn25DFOCePTU
-	vZpNa9JZ3sMhsRjJkrc2CMeiJg6mV2JDNUEiSiZHQQzS7EObY4o7IU5brQTjQ1Y1IfI+ZtIONYZCE
-	hqytLkiw0B23+GBeVihszDN536Cv/5A7fXofwx51mKRMzCEt5W6Iu5ml0i8dpz5tGi4Oto9hbRYKi
-	JH9qho0xF7ztaA3rNcBe5/69QjpPHzGVv3p3BANIK+nMF37ir8Y4q08KhAF5xBNX9/zbJilmC0qnQ
-	aVN+dw00bxQJwA46G1a7TOVgia/CIRS6l/wV+hvl0mAI3GZPBh8Nw2EE0776zZAd0i/aoz17g8/v2
-	d0J+eyxx4czdt3df/UBg==;
+	List-Owner; bh=9kiqjf6W/hc8T+/LrT4hwv4iB1r7JQpbwyMV/7EJ3nY=; b=T4987N5sK8o0NZ
+	pOEaAlunCoiYJ5Cmr1zPk3/ZpstjVDqgLb+0l5M2LRSa96Y6xwiCmbzkAOURR2j8/P0uqYcjgVlZD
+	WY9UqvEvX4HwIzDFWiXYv8SD8it8/Xzz7Osg7m76qKx1705oie6FT4bqd7frxzHPBQXiWyCBmKf/H
+	yQZ41TBOx/CnlZSkt3wAJ9zIxsaJPgqEwXph2u/LnmCUen01H7c9sf9crSzrfd85MqTH7fmuwJAPV
+	8j1pDKtVUWA3+KkrFxr/jlClckHyaC5r9dainf1eynVm6Ci/lqfyx2E9gO7fb30az4IZiCb7Dj6Rz
+	fM+KKP9a5pkXmr52VpQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGhmB-006I3e-2R;
-	Fri, 22 Dec 2023 15:49:27 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1rGhnU-006IAG-2B;
+	Fri, 22 Dec 2023 15:50:48 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGhm8-006I30-2N
+	id 1rGhnR-006I9c-1n
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Dec 2023 15:49:26 +0000
+	Fri, 22 Dec 2023 15:50:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 2811AB822DB;
-	Fri, 22 Dec 2023 15:49:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6B0AC433C7;
-	Fri, 22 Dec 2023 15:49:21 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 2906ACE226F;
+	Fri, 22 Dec 2023 15:50:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7749FC433C8;
+	Fri, 22 Dec 2023 15:50:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1703260162;
-	bh=Ag0mzWcsnW1g3n91UWrk0/4qwvTZgSOiJlVaZYR4sxk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VlDxRxG5wy4qKpfb3iXAPj2Uc6r15R51pEALVoOguck+w7rxTUgs1Xgby3rJZNH4X
-	 aie0n5cySZhL8SQ0JI70Zn4Jeexb+FDiM52jtiZqhjvg6LvIDcmcg29wi4eem6TTdD
-	 P50+IEjlxIsiOcm9fcWgSSzDH7PJUBusRPKGFbWNr4gISpI+/bmuMHTreF5WTcVIrm
-	 pIrpZVrkAQdSsebQ9W90K6cHkkF0JHyjU3EXoteXRH2y3Ei+iPCWckqgI6NaSPbvro
-	 vXNQTvmHG14Uw6zVmpqGD25Rg4sL+c0jd52jqN2lvzDHXbQiC0xPq8l2pznqs+GUg2
-	 HoSzyldwEOq+w==
-Date: Fri, 22 Dec 2023 21:19:18 +0530
+	s=k20201202; t=1703260242;
+	bh=OwinfvSTjp4R9xDLdY3eLiCv4IR2pBcu0X/zy+8LZVU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=Ti9yMeehezTmlpiOg5p4ri+s599iKaEUuyXxfFwIANqbjrqUJplF7VPXBl5ho73sp
+	 eZ6lYzum7RRiRu5WbvR9gPYKsM1lPjvP+D3LuKC5HarNY2XYgUXLYFMk9w6o01AqPA
+	 Q5CHPkMFZyBVTpPI/oxmRQbEJRj5LJef+Dzu5orHFQmR3THWayFnuE+22NixrmguiF
+	 TACs2uTxPEHEvd7ix6a/v97L+qmGTp5xZzYBjFEGhngN+A7Bo1+zL2+QaqyGxxMynX
+	 k48z+5nOX4cpwJp/uBJZhl929xLQFZ10Nu6Oqob5JTUZFc9G5aSH6JMro3yokXJcXX
+	 bMUrkF2xKNHjw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Can Guo <quic_cang@quicinc.com>
-Cc: bvanassche@acm.org, mani@kernel.org, adrian.hunter@intel.com,
-	beanhuo@micron.com, avri.altman@wdc.com, junwoo80.lee@samsung.com,
-	martin.petersen@oracle.com, linux-scsi@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Abel Vesa <abel.vesa@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
-	open list <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v8 09/10] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550
- UFS HS-G4 PHY Settings
-Message-ID: <ZYWv_rmgLN3NuyY2@matsya>
-References: <1701520577-31163-1-git-send-email-quic_cang@quicinc.com>
- <1701520577-31163-10-git-send-email-quic_cang@quicinc.com>
- <ZYRyJU9klhZzLdni@matsya>
- <ad95e193-1216-46ae-9f7d-2967a24d7a12@quicinc.com>
+To: Maxime Ripard <mripard@kernel.org>, 
+ =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
+ Sinthu Raja <sinthu.raja@ti.com>, Andrew Davis <afd@ti.com>, 
+ Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Chintan Vankar <c-vankar@ti.com>
+Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+In-Reply-To: <20231221102956.754617-1-c-vankar@ti.com>
+References: <20231221102956.754617-1-c-vankar@ti.com>
+Subject: Re: [RFC PATCH 1/2] phy: ti: gmii-sel: Enable SGMII mode for
+ J784S4
+Message-Id: <170326023900.743229.14820975046975055823.b4-ty@kernel.org>
+Date: Fri, 22 Dec 2023 21:20:39 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ad95e193-1216-46ae-9f7d-2967a24d7a12@quicinc.com>
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231222_074924_924897_4FC7BE59 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20231222_075045_830665_DF481C48 
+X-CRM114-Status: UNSURE (   6.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,28 +78,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-12-23, 15:41, Can Guo wrote:
-> Hi Vinod,
+
+On Thu, 21 Dec 2023 15:59:55 +0530, Chintan Vankar wrote:
+> TI's J784S4 SoC supports SGMII mode with the CPSW9G instance of the CPSW
+> Ethernet Switch. Thus, enable it by adding SGMII mode to the list of the
+> corresponding extra_modes member.
 > 
-> On 12/22/2023 1:13 AM, Vinod Koul wrote:
-> > On 02-12-23, 04:36, Can Guo wrote:
-> > > The registers, which are being touched in current SM8550 UFS PHY settings,
-> > > and the values being programmed are mainly the ones working for HS-G4 mode,
-> > > meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
-> > > However, even consider HS-G4 mode only, some of them are incorrect and some
-> > > are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
-> > > SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
-> > 
-> > This fails for me, as I have picked Abels offset series, can you please
-> > rebase these two patches and send
-> > 
-> In v8, I rebased the two changes to linux-next. Is the ask there to rebase
-> the two changes to phy/next?
+> 
 
-Yes these two failed to apply for me, pls rebase and post
+Applied, thanks!
 
+[1/2] phy: ti: gmii-sel: Enable SGMII mode for J784S4
+      commit: d719915ad9706a16adde231789a1d46fc12fb9c7
+[2/2] phy: ti: j721e-wiz: Add SGMII support in WIZ driver for J784S4
+      commit: 2029e71482fcd94dcc7df2c66c7fa635479748bf
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
