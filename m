@@ -4,112 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7476C46CD4
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 08:59:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDF1AC41535
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 10:07:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NlWsQKlZjLoiWpr4eBzWINkzzmf8X0tjLJIT9EKfep8=; b=qar8HU1we98d6o
-	lwh/pZl78FxGL0s2rnBjCrhvfZ5tk2mANEclRxYXC5kgt9GlRk7Pu30WfHcMwk8iv2t4V3pnONrd3
-	pI/LkJaXavs2gWYs0QBxHLB+OOzH/cl7ljdR2No+/wII7R9Q4Amy6AHfHpehIGMI98KcdlTlfI9al
-	77QKzoMiJdtOOEWAlHOlq8PQrIUh9mM7J/s4q4w6ufeaerLs/GxCqgqYqivB2Xhaw3sEVTxh/khyd
-	g2bt8udXqAwSZRH21wK8tegFnSo9BNe3YDlpABZHeHJ7vUVXqRa7K9V/I09ZelX3lr1Ip2m6agmNb
-	kdHReRbYnxk/4vG/y8SA==;
+	List-Owner; bh=vzejskVbFqek92eiUAtTrUtgH5yVreHTltYnMT5UEvY=; b=ilvEW+QV9ooDh8
+	qLmCafrjNOBtvDo5AsjsDRmiazScuz6Lh7tAKzLBEmoyFRYtfTvfsZH5mDYJizGMpViyB0QkVDkhf
+	jreN6k9z8KmrcVlY+Jj4W8SVtPihqyK5fhze2G8Di22tupvowO3G43qsPWamFMyudGM2iY8gs1Ktk
+	e6qZJS3GyyHw60H3f/TFFPbUSSicZklwAX25bNA5JjzXCfW/uVdVui3VPCjTx+szTnTQamLQmF7s9
+	XSm7kbRHMPgRE3GPBUUVb/1bIxAKeM/C/n4mMRnZ4ae6TNhL2/+4UHeffmTqinvW75DX6VUD2pn0X
+	AQZm09N8NGRf6XZnVjYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGbN8-005NSp-1N;
-	Fri, 22 Dec 2023 08:59:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1rGcRS-005VHn-1R;
+	Fri, 22 Dec 2023 10:07:42 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGbN5-005NSD-13
+	id 1rGcRO-005VHP-21
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Dec 2023 08:59:08 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BM6MlFc028055;
-	Fri, 22 Dec 2023 08:58:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=OL2XzN7EDGy5bMY0OFne4LQrBx0wrnoKoEQ7MaxQsXQ=; b=Dj
-	5wJ+5uD6XqCemRRD726eiD+AjrvVMPe78wH2oRHtccab1hfsymipxD0S7olIP/G6
-	rCtqNzwnmsFXGSeRgeWDTx3XP9p50EHFqkYyv/6DEjV/Ac3EvQPI12+5uThjhrYD
-	2VFyxZwou2coHvvtJ2uTDmr7sbDr+Bb6pDvwbKNjunrz/i1wA22RDpnolGKR+vh+
-	1LxJfHFL1Kv7/MovZQqLd3ifqhvJrSRYQYjVsNE2pWoisCEnWP82b4oRVCNCjC67
-	LhcS/atzN9MsWLeR6bUZvN9bvwebCsye1pIm4IyW2NyK9Jl+nkLiSOfmFx1p2KAb
-	KL6UlE8sAXNdZZ1YuUVA==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v4xpq944q-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 22 Dec 2023 08:58:57 +0000 (GMT)
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3BM8wuAh021049
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 22 Dec 2023 08:58:56 GMT
-Received: from [10.239.132.150] (10.80.80.8) by nasanex01a.na.qualcomm.com
- (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 22 Dec
- 2023 00:58:50 -0800
-Message-ID: <27f8bc0a-0262-48dc-a879-552c3c5ec9e2@quicinc.com>
-Date: Fri, 22 Dec 2023 16:58:45 +0800
+	Fri, 22 Dec 2023 10:07:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id B28D861B80;
+	Fri, 22 Dec 2023 10:07:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B267BC433C7;
+	Fri, 22 Dec 2023 10:07:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1703239657;
+	bh=HhsKhELSaEHPdEC+e4lvoyNgygmS/hEMwtiEkDSIKzo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=fB8q/XDy4fQ0/f8zO1+P98aJMbnBPSRcSDiRGBttfw6ADYhbiR4tUeHe46t3IJ2+e
+	 TSfTjCs7sG5+QB3rmIRnXdZED123RLgEQBSSVvtPynmHI94mm/2MYvpOM/WvQFhWzT
+	 VeLMjhl1UY7lGGbGThStV0ib/XK/eJJjGLymDEafxnzgVBU9D05MTeFZAXqzXoEDzV
+	 ZZ1M80Cl9sd7TPZsJVcIMfaDhWuaDuQOEFM63/lnLoX+3kcB4LW7B8Jqd3fqVi6V9j
+	 mCAce/rhQaRtoUQLKNlyFPbSTXDn/QOXzXxhX/iH6Ugw+z/C8YUWlBHafaHnz8OcRy
+	 DlCOrRifpF8Ow==
+Message-ID: <48e124d7-94d3-47b2-82c3-db6d0d6fdefd@kernel.org>
+Date: Fri, 22 Dec 2023 12:07:31 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 2/2] dt-bindings: display: msm: mass-rename files
+Subject: Re: [PATCH v3 2/5] phy: cadence-torrent: Add PCIe(100MHz) +
+ USXGMII(156.25MHz) multilink configuration
 Content-Language: en-US
-To: Rob Herring <robh@kernel.org>,
-        Dmitry Baryshkov
-	<dmitry.baryshkov@linaro.org>
-CC: <freedreno@lists.freedesktop.org>,
-        Marijn Suijten
-	<marijn.suijten@somainline.org>,
-        Daniel Vetter <daniel@ffwll.ch>, Rob Clark
-	<robdclark@gmail.com>,
-        Jonathan Marek <jonathan@marek.ca>, Vinod Koul
-	<vkoul@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Stephen Boyd
-	<swboyd@chromium.org>, Sean Paul <sean@poorly.run>,
-        Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>,
-        <linux-phy@lists.infradead.org>, <dri-devel@lists.freedesktop.org>,
-        Andy Gross <agross@kernel.org>,
-        "Krishna
- Manikandan" <quic_mkrishn@quicinc.com>,
-        Kishon Vijay Abraham I
-	<kishon@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>,
-        Bjorn Andersson
-	<andersson@kernel.org>,
-        David Airlie <airlied@gmail.com>, Rob Herring
-	<robh+dt@kernel.org>,
-        <devicetree@vger.kernel.org>,
-        Abhinav Kumar
-	<quic_abhinavk@quicinc.com>
-References: <20231221102506.18320-1-dmitry.baryshkov@linaro.org>
- <20231221102506.18320-3-dmitry.baryshkov@linaro.org>
- <170319289437.96441.9965499072649831420.robh@kernel.org>
-From: "Aiqun Yu (Maria)" <quic_aiquny@quicinc.com>
-In-Reply-To: <170319289437.96441.9965499072649831420.robh@kernel.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Ck5j7imLKK1HMHeZYYRirQhcvywRSUYs
-X-Proofpoint-ORIG-GUID: Ck5j7imLKK1HMHeZYYRirQhcvywRSUYs
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 impostorscore=0 malwarescore=0 adultscore=0 mlxscore=0
- spamscore=0 clxscore=1011 bulkscore=0 lowpriorityscore=0 mlxlogscore=999
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2312220063
+To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Cc: mparab@cadence.com, s-vadapalli@ti.com
+References: <20231221162051.2131202-1-sjakhade@cadence.com>
+ <20231221162051.2131202-3-sjakhade@cadence.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20231221162051.2131202-3-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231222_005907_499026_23D30AD2 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20231222_020738_757150_1B0E86D2 
+X-CRM114-Status: GOOD (  24.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,42 +72,221 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Swapnil,
 
+On 21/12/2023 18:20, Swapnil Jakhade wrote:
+> Torrent PHY can have separate input reference clocks for PLL0 and PLL1.
+> Add support for dual reference clock multilink configurations.
+> 
+> Add register sequences for PCIe(100MHz) + USXGMII(156.25MHz) multilink
+> configuration. PCIe uses PLL0 and USXGMII uses PLL1.
+> 
+> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+> ---
+>  drivers/phy/cadence/phy-cadence-torrent.c | 194 +++++++++++++++++++++-
+>  1 file changed, 191 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+> index a75c96385c57..18ec49c9a76e 100644
+> --- a/drivers/phy/cadence/phy-cadence-torrent.c
+> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+> @@ -355,7 +355,9 @@ struct cdns_torrent_phy {
+>  	struct reset_control *apb_rst;
+>  	struct device *dev;
+>  	struct clk *clk;
+> +	struct clk *clk1;
+>  	enum cdns_torrent_ref_clk ref_clk_rate;
+> +	enum cdns_torrent_ref_clk ref_clk1_rate;
+>  	struct cdns_torrent_inst phys[MAX_NUM_LANES];
+>  	int nsubnodes;
+>  	const struct cdns_torrent_data *init_data;
+> @@ -2460,9 +2462,11 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+>  {
+>  	const struct cdns_torrent_data *init_data = cdns_phy->init_data;
+>  	struct cdns_torrent_vals *cmn_vals, *tx_ln_vals, *rx_ln_vals;
+> +	enum cdns_torrent_ref_clk ref_clk1 = cdns_phy->ref_clk1_rate;
+>  	enum cdns_torrent_ref_clk ref_clk = cdns_phy->ref_clk_rate;
+>  	struct cdns_torrent_vals *link_cmn_vals, *xcvr_diag_vals;
+>  	enum cdns_torrent_phy_type phy_t1, phy_t2;
+> +	struct cdns_torrent_vals *phy_pma_cmn_vals;
+>  	struct cdns_torrent_vals *pcs_cmn_vals;
+>  	int i, j, node, mlane, num_lanes, ret;
+>  	struct cdns_reg_pairs *reg_pairs;
+> @@ -2489,6 +2493,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+>  			 * Get the array values as [phy_t2][phy_t1][ssc].
+>  			 */
+>  			swap(phy_t1, phy_t2);
+> +			swap(ref_clk, ref_clk1);
+>  		}
+>  
+>  		mlane = cdns_phy->phys[node].mlane;
+> @@ -2552,9 +2557,22 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+>  					     reg_pairs[i].val);
+>  		}
+>  
+> +		/* PHY PMA common registers configurations */
+> +		phy_pma_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->phy_pma_cmn_vals_tbl,
+> +							     CLK_ANY, CLK_ANY,
+> +							     phy_t1, phy_t2, ANY_SSC);
+> +		if (phy_pma_cmn_vals) {
+> +			reg_pairs = phy_pma_cmn_vals->reg_pairs;
+> +			num_regs = phy_pma_cmn_vals->num_regs;
+> +			regmap = cdns_phy->regmap_phy_pma_common_cdb;
+> +			for (i = 0; i < num_regs; i++)
+> +				regmap_write(regmap, reg_pairs[i].off,
+> +					     reg_pairs[i].val);
+> +		}
+> +
+>  		/* PMA common registers configurations */
+>  		cmn_vals = cdns_torrent_get_tbl_vals(&init_data->cmn_vals_tbl,
+> -						     ref_clk, ref_clk,
+> +						     ref_clk, ref_clk1,
+>  						     phy_t1, phy_t2, ssc);
+>  		if (cmn_vals) {
+>  			reg_pairs = cmn_vals->reg_pairs;
+> @@ -2567,7 +2585,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+>  
+>  		/* PMA TX lane registers configurations */
+>  		tx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->tx_ln_vals_tbl,
+> -						       ref_clk, ref_clk,
+> +						       ref_clk, ref_clk1,
+>  						       phy_t1, phy_t2, ssc);
+>  		if (tx_ln_vals) {
+>  			reg_pairs = tx_ln_vals->reg_pairs;
+> @@ -2582,7 +2600,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+>  
+>  		/* PMA RX lane registers configurations */
+>  		rx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->rx_ln_vals_tbl,
+> -						       ref_clk, ref_clk,
+> +						       ref_clk, ref_clk1,
+>  						       phy_t1, phy_t2, ssc);
+>  		if (rx_ln_vals) {
+>  			reg_pairs = rx_ln_vals->reg_pairs;
+> @@ -2684,9 +2702,11 @@ static int cdns_torrent_reset(struct cdns_torrent_phy *cdns_phy)
+>  static int cdns_torrent_clk(struct cdns_torrent_phy *cdns_phy)
+>  {
+>  	struct device *dev = cdns_phy->dev;
+> +	unsigned long ref_clk1_rate;
+>  	unsigned long ref_clk_rate;
+>  	int ret;
+>  
+> +	/* refclk: Input reference clock for PLL0 */
+>  	cdns_phy->clk = devm_clk_get(dev, "refclk");
+>  	if (IS_ERR(cdns_phy->clk)) {
+>  		dev_err(dev, "phy ref clock not found\n");
+> @@ -2725,7 +2745,54 @@ static int cdns_torrent_clk(struct cdns_torrent_phy *cdns_phy)
+>  		return -EINVAL;
+>  	}
+>  
+> +	/* refclk1: Input reference clock for PLL1 */
+> +	cdns_phy->clk1 = devm_clk_get_optional(dev, "pll1_refclk");
+> +	if (IS_ERR(cdns_phy->clk1)) {
+> +		dev_err(dev, "phy pll1 ref clock not found\n");
+> +		return PTR_ERR(cdns_phy->clk1);
 
-On 12/22/2023 5:08 AM, Rob Herring wrote:
-> 
-> On Thu, 21 Dec 2023 12:25:06 +0200, Dmitry Baryshkov wrote:
->> Rename the Qualcomm MSM Display schemas to follow the main compatible
->> string instead of just using the block type. This follows the
->> established practice for YAML file names.
->>
->> Cc: Aiqun Yu (Maria) <quic_aiquny@quicinc.com>
->> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
->>   .../bindings/display/msm/{gmu.yaml => qcom,adreno-gmu.yaml}     | 2 +-
->>   .../bindings/display/msm/{gpu.yaml => qcom,adreno.yaml}         | 2 +-
->>   .../bindings/display/msm/{hdmi.yaml => qcom,hdmi-tx.yaml}       | 2 +-
->>   .../bindings/display/msm/{mdp4.yaml => qcom,mdp4.yaml}          | 2 +-
->>   .../msm/{dsi-controller-main.yaml => qcom,mdss-dsi-ctrl.yaml}   | 2 +-
->>   5 files changed, 5 insertions(+), 5 deletions(-)
->>   rename Documentation/devicetree/bindings/display/msm/{gmu.yaml => qcom,adreno-gmu.yaml} (99%)
->>   rename Documentation/devicetree/bindings/display/msm/{gpu.yaml => qcom,adreno.yaml} (99%)
->>   rename Documentation/devicetree/bindings/display/msm/{hdmi.yaml => qcom,hdmi-tx.yaml} (98%)
->>   rename Documentation/devicetree/bindings/display/msm/{mdp4.yaml => qcom,mdp4.yaml} (97%)
->>   rename Documentation/devicetree/bindings/display/msm/{dsi-controller-main.yaml => qcom,mdss-dsi-ctrl.yaml} (99%)
->>
-> 
-> Acked-by: Rob Herring <robh@kernel.org>
-> Nice to see names get more unified!
+Don't you need to disable cdns_phy->clk before exititing?
+So 
+		ret = PTR_ERR(cdns_phy->clk1);
+		goto disbale_clk;
+
+> +	}
+> +
+> +	if (cdns_phy->clk1) {
+> +		ret = clk_prepare_enable(cdns_phy->clk1);
+> +		if (ret) {
+> +			dev_err(cdns_phy->dev, "Failed to prepare pll1 ref clock\n");
+nit, pll should be all uppercase in error messages. so "PLL1"?
+Do you wan't to dump the return error code as well so it is easier to report/debug?
+
+> +			clk_disable_unprepare(cdns_phy->clk);
+> +			return ret;
+Instead of above 2 lines, just: 
+			goto disable_clk.
+
+> +		}
+> +
+> +		ref_clk1_rate = clk_get_rate(cdns_phy->clk1);
+> +		if (!ref_clk1_rate) {
+> +			dev_err(cdns_phy->dev, "Failed to get pll1 ref clock rate\n");
+> +			goto refclk1_err;
+
+For consistency let's call this label disable_clk1
+
+> +		}
+> +
+> +		switch (ref_clk1_rate) {
+> +		case REF_CLK_19_2MHZ:
+> +			cdns_phy->ref_clk1_rate = CLK_19_2_MHZ;
+> +			break;
+> +		case REF_CLK_25MHZ:
+> +			cdns_phy->ref_clk1_rate = CLK_25_MHZ;
+> +			break;
+> +		case REF_CLK_100MHZ:
+> +			cdns_phy->ref_clk1_rate = CLK_100_MHZ;
+> +			break;
+> +		case REF_CLK_156_25MHZ:
+> +			cdns_phy->ref_clk1_rate = CLK_156_25_MHZ;
+> +			break;
+> +		default:
+> +			dev_err(cdns_phy->dev, "Invalid pll1 ref clock rate\n");
+> +			goto refclk1_err;
+> +		}
+> +	} else {
+> +		cdns_phy->ref_clk1_rate = cdns_phy->ref_clk_rate;
+> +	}
+> +
+>  	return 0;
+> +
+> +refclk1_err:
+> +	clk_disable_unprepare(cdns_phy->clk1);
+
+disable_clk:
+
+> +	clk_disable_unprepare(cdns_phy->clk);
+> +	return -EINVAL;
+
+return ret. We need to preserve why the failure
+happened so it is easier to debug.
+
+>  }
+>  
+>  static int cdns_torrent_phy_probe(struct platform_device *pdev)
+> @@ -2981,6 +3048,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+>  	of_node_put(child);
+>  	reset_control_assert(cdns_phy->apb_rst);
+>  	clk_disable_unprepare(cdns_phy->clk);
+> +	clk_disable_unprepare(cdns_phy->clk1);
+
+No sure if it matters, but for symmetry sake should we disable clk1 before clk?
+
+>  clk_cleanup:
+>  	cdns_torrent_clk_cleanup(cdns_phy);
+>  	return ret;
+> @@ -2999,6 +3067,7 @@ static void cdns_torrent_phy_remove(struct platform_device *pdev)
+>  	}
+>  
+>  	clk_disable_unprepare(cdns_phy->clk);
+> +	clk_disable_unprepare(cdns_phy->clk1);
+
+Here too.
+
+>  	cdns_torrent_clk_cleanup(cdns_phy);
+>  }
+>  
+> @@ -3034,6 +3103,100 @@ static struct cdns_torrent_vals dp_usb_xcvr_diag_ln_vals = {
+>  	.num_regs = ARRAY_SIZE(dp_usb_xcvr_diag_ln_regs),
+>  };
+
+<snip>
 
 -- 
-Thx and BRs,
-Aiqun(Maria) Yu
+cheers,
+-roger
 
 -- 
 linux-phy mailing list
