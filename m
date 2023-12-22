@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDF1AC41535
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 10:07:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4E47C46CD8
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Dec 2023 10:11:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzejskVbFqek92eiUAtTrUtgH5yVreHTltYnMT5UEvY=; b=ilvEW+QV9ooDh8
-	qLmCafrjNOBtvDo5AsjsDRmiazScuz6Lh7tAKzLBEmoyFRYtfTvfsZH5mDYJizGMpViyB0QkVDkhf
-	jreN6k9z8KmrcVlY+Jj4W8SVtPihqyK5fhze2G8Di22tupvowO3G43qsPWamFMyudGM2iY8gs1Ktk
-	e6qZJS3GyyHw60H3f/TFFPbUSSicZklwAX25bNA5JjzXCfW/uVdVui3VPCjTx+szTnTQamLQmF7s9
-	XSm7kbRHMPgRE3GPBUUVb/1bIxAKeM/C/n4mMRnZ4ae6TNhL2/+4UHeffmTqinvW75DX6VUD2pn0X
-	AQZm09N8NGRf6XZnVjYg==;
+	List-Owner; bh=BtKKs+P4I+YkAY1bnnPAYnPkwHUfCafWbiP6kn/nNLU=; b=yvDf68icTDMSRH
+	hN2OTeovg4PeRNUoBnah4hDoUgAlkM68sLP5UGLGfXRsEdFUnb3oitm7+dP4QmJn4ulfsqSNsq2jY
+	4xJuHK6N2h/vsSE3gRH2rth5FeIweGtuXGHw9BVF356yhlvclLCdYdviNO42ODZ8omIlwmSsSIPQX
+	w6fP4vc8AyMPaFvqg/FmlebCgjglNHI+/wG7Qi26YoSFGF4P91OO9478aDByBtsN3ptReYYus4SNj
+	70ZmidlHgo+u2DDyopFEoMj+H/LFPLzO3sEFDvhvCboWJ5xRU9UTVr8cRy4GDG3oTlGoG/P2btZwe
+	GnPw0WOWutDq7MBCcXug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGcRS-005VHn-1R;
-	Fri, 22 Dec 2023 10:07:42 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rGcUi-005Vni-29;
+	Fri, 22 Dec 2023 10:11:04 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGcRO-005VHP-21
+	id 1rGcUf-005Vkw-21
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Dec 2023 10:07:40 +0000
+	Fri, 22 Dec 2023 10:11:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B28D861B80;
-	Fri, 22 Dec 2023 10:07:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B267BC433C7;
-	Fri, 22 Dec 2023 10:07:34 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id D9BFFB8220E;
+	Fri, 22 Dec 2023 10:10:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAB3DC433C8;
+	Fri, 22 Dec 2023 10:10:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1703239657;
-	bh=HhsKhELSaEHPdEC+e4lvoyNgygmS/hEMwtiEkDSIKzo=;
+	s=k20201202; t=1703239857;
+	bh=PtfRni5YqYtTuUAHF7+Ii/Rg3HK/H67M5rIFDHSJDOY=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fB8q/XDy4fQ0/f8zO1+P98aJMbnBPSRcSDiRGBttfw6ADYhbiR4tUeHe46t3IJ2+e
-	 TSfTjCs7sG5+QB3rmIRnXdZED123RLgEQBSSVvtPynmHI94mm/2MYvpOM/WvQFhWzT
-	 VeLMjhl1UY7lGGbGThStV0ib/XK/eJJjGLymDEafxnzgVBU9D05MTeFZAXqzXoEDzV
-	 ZZ1M80Cl9sd7TPZsJVcIMfaDhWuaDuQOEFM63/lnLoX+3kcB4LW7B8Jqd3fqVi6V9j
-	 mCAce/rhQaRtoUQLKNlyFPbSTXDn/QOXzXxhX/iH6Ugw+z/C8YUWlBHafaHnz8OcRy
-	 DlCOrRifpF8Ow==
-Message-ID: <48e124d7-94d3-47b2-82c3-db6d0d6fdefd@kernel.org>
-Date: Fri, 22 Dec 2023 12:07:31 +0200
+	b=JdDR7GqQHpTsZfYKBmXqJUNy0sIgvcldcipE2UH90vHdK9Iqn6NqbM9HGIz98WuLt
+	 a2doMCQ39qAAcnMfGktgxkQtCL5OLxlrBndl4YGBDECddhpRNXbNcmy7XltpONNswH
+	 sEyuDgegUOIlMtH946wPiwHj1SEOP4w31PZek2tyQ1a/Co+l4rOvLNF2/GsKhjOqIB
+	 ZZ5xBIqIvWzvURMyFRLQQb+ban6Ap/5GTFoEoveLzUVhXbXN+whoexnuIBg/OtZImp
+	 WCgvpfd6TI3c4qyVoLewETjWE9R9WhLpELU6uUTbv8gyXtiAJQ/AHRf/kOAif6DPUR
+	 bHklAbFb6YK9g==
+Message-ID: <52ac755c-46f0-4dc5-b179-b31b660eca1f@kernel.org>
+Date: Fri, 22 Dec 2023 12:10:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/5] phy: cadence-torrent: Add PCIe(100MHz) +
- USXGMII(156.25MHz) multilink configuration
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: cadence-torrent: Add optional
+ input reference clock for PLL1
 Content-Language: en-US
 To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
  kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -55,12 +55,13 @@ To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
 Cc: mparab@cadence.com, s-vadapalli@ti.com
 References: <20231221162051.2131202-1-sjakhade@cadence.com>
- <20231221162051.2131202-3-sjakhade@cadence.com>
+ <20231221162051.2131202-2-sjakhade@cadence.com>
 From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20231221162051.2131202-3-sjakhade@cadence.com>
+In-Reply-To: <20231221162051.2131202-2-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231222_020738_757150_1B0E86D2 
-X-CRM114-Status: GOOD (  24.38  )
+X-CRM114-CacheID: sfid-20231222_021101_808711_36BFF1EF 
+X-CRM114-Status: UNSURE (   3.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,212 +78,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Swapnil,
+
 
 On 21/12/2023 18:20, Swapnil Jakhade wrote:
-> Torrent PHY can have separate input reference clocks for PLL0 and PLL1.
-> Add support for dual reference clock multilink configurations.
-> 
-> Add register sequences for PCIe(100MHz) + USXGMII(156.25MHz) multilink
-> configuration. PCIe uses PLL0 and USXGMII uses PLL1.
+> Add a new optional input reference clock (pll1_refclk) for PLL1.
+> Update bindings to support dual reference clock multilink configurations.
 > 
 > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-> ---
->  drivers/phy/cadence/phy-cadence-torrent.c | 194 +++++++++++++++++++++-
->  1 file changed, 191 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-> index a75c96385c57..18ec49c9a76e 100644
-> --- a/drivers/phy/cadence/phy-cadence-torrent.c
-> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-> @@ -355,7 +355,9 @@ struct cdns_torrent_phy {
->  	struct reset_control *apb_rst;
->  	struct device *dev;
->  	struct clk *clk;
-> +	struct clk *clk1;
->  	enum cdns_torrent_ref_clk ref_clk_rate;
-> +	enum cdns_torrent_ref_clk ref_clk1_rate;
->  	struct cdns_torrent_inst phys[MAX_NUM_LANES];
->  	int nsubnodes;
->  	const struct cdns_torrent_data *init_data;
-> @@ -2460,9 +2462,11 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  {
->  	const struct cdns_torrent_data *init_data = cdns_phy->init_data;
->  	struct cdns_torrent_vals *cmn_vals, *tx_ln_vals, *rx_ln_vals;
-> +	enum cdns_torrent_ref_clk ref_clk1 = cdns_phy->ref_clk1_rate;
->  	enum cdns_torrent_ref_clk ref_clk = cdns_phy->ref_clk_rate;
->  	struct cdns_torrent_vals *link_cmn_vals, *xcvr_diag_vals;
->  	enum cdns_torrent_phy_type phy_t1, phy_t2;
-> +	struct cdns_torrent_vals *phy_pma_cmn_vals;
->  	struct cdns_torrent_vals *pcs_cmn_vals;
->  	int i, j, node, mlane, num_lanes, ret;
->  	struct cdns_reg_pairs *reg_pairs;
-> @@ -2489,6 +2493,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  			 * Get the array values as [phy_t2][phy_t1][ssc].
->  			 */
->  			swap(phy_t1, phy_t2);
-> +			swap(ref_clk, ref_clk1);
->  		}
->  
->  		mlane = cdns_phy->phys[node].mlane;
-> @@ -2552,9 +2557,22 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  					     reg_pairs[i].val);
->  		}
->  
-> +		/* PHY PMA common registers configurations */
-> +		phy_pma_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->phy_pma_cmn_vals_tbl,
-> +							     CLK_ANY, CLK_ANY,
-> +							     phy_t1, phy_t2, ANY_SSC);
-> +		if (phy_pma_cmn_vals) {
-> +			reg_pairs = phy_pma_cmn_vals->reg_pairs;
-> +			num_regs = phy_pma_cmn_vals->num_regs;
-> +			regmap = cdns_phy->regmap_phy_pma_common_cdb;
-> +			for (i = 0; i < num_regs; i++)
-> +				regmap_write(regmap, reg_pairs[i].off,
-> +					     reg_pairs[i].val);
-> +		}
-> +
->  		/* PMA common registers configurations */
->  		cmn_vals = cdns_torrent_get_tbl_vals(&init_data->cmn_vals_tbl,
-> -						     ref_clk, ref_clk,
-> +						     ref_clk, ref_clk1,
->  						     phy_t1, phy_t2, ssc);
->  		if (cmn_vals) {
->  			reg_pairs = cmn_vals->reg_pairs;
-> @@ -2567,7 +2585,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  
->  		/* PMA TX lane registers configurations */
->  		tx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->tx_ln_vals_tbl,
-> -						       ref_clk, ref_clk,
-> +						       ref_clk, ref_clk1,
->  						       phy_t1, phy_t2, ssc);
->  		if (tx_ln_vals) {
->  			reg_pairs = tx_ln_vals->reg_pairs;
-> @@ -2582,7 +2600,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  
->  		/* PMA RX lane registers configurations */
->  		rx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->rx_ln_vals_tbl,
-> -						       ref_clk, ref_clk,
-> +						       ref_clk, ref_clk1,
->  						       phy_t1, phy_t2, ssc);
->  		if (rx_ln_vals) {
->  			reg_pairs = rx_ln_vals->reg_pairs;
-> @@ -2684,9 +2702,11 @@ static int cdns_torrent_reset(struct cdns_torrent_phy *cdns_phy)
->  static int cdns_torrent_clk(struct cdns_torrent_phy *cdns_phy)
->  {
->  	struct device *dev = cdns_phy->dev;
-> +	unsigned long ref_clk1_rate;
->  	unsigned long ref_clk_rate;
->  	int ret;
->  
-> +	/* refclk: Input reference clock for PLL0 */
->  	cdns_phy->clk = devm_clk_get(dev, "refclk");
->  	if (IS_ERR(cdns_phy->clk)) {
->  		dev_err(dev, "phy ref clock not found\n");
-> @@ -2725,7 +2745,54 @@ static int cdns_torrent_clk(struct cdns_torrent_phy *cdns_phy)
->  		return -EINVAL;
->  	}
->  
-> +	/* refclk1: Input reference clock for PLL1 */
-> +	cdns_phy->clk1 = devm_clk_get_optional(dev, "pll1_refclk");
-> +	if (IS_ERR(cdns_phy->clk1)) {
-> +		dev_err(dev, "phy pll1 ref clock not found\n");
-> +		return PTR_ERR(cdns_phy->clk1);
 
-Don't you need to disable cdns_phy->clk before exititing?
-So 
-		ret = PTR_ERR(cdns_phy->clk1);
-		goto disbale_clk;
-
-> +	}
-> +
-> +	if (cdns_phy->clk1) {
-> +		ret = clk_prepare_enable(cdns_phy->clk1);
-> +		if (ret) {
-> +			dev_err(cdns_phy->dev, "Failed to prepare pll1 ref clock\n");
-nit, pll should be all uppercase in error messages. so "PLL1"?
-Do you wan't to dump the return error code as well so it is easier to report/debug?
-
-> +			clk_disable_unprepare(cdns_phy->clk);
-> +			return ret;
-Instead of above 2 lines, just: 
-			goto disable_clk.
-
-> +		}
-> +
-> +		ref_clk1_rate = clk_get_rate(cdns_phy->clk1);
-> +		if (!ref_clk1_rate) {
-> +			dev_err(cdns_phy->dev, "Failed to get pll1 ref clock rate\n");
-> +			goto refclk1_err;
-
-For consistency let's call this label disable_clk1
-
-> +		}
-> +
-> +		switch (ref_clk1_rate) {
-> +		case REF_CLK_19_2MHZ:
-> +			cdns_phy->ref_clk1_rate = CLK_19_2_MHZ;
-> +			break;
-> +		case REF_CLK_25MHZ:
-> +			cdns_phy->ref_clk1_rate = CLK_25_MHZ;
-> +			break;
-> +		case REF_CLK_100MHZ:
-> +			cdns_phy->ref_clk1_rate = CLK_100_MHZ;
-> +			break;
-> +		case REF_CLK_156_25MHZ:
-> +			cdns_phy->ref_clk1_rate = CLK_156_25_MHZ;
-> +			break;
-> +		default:
-> +			dev_err(cdns_phy->dev, "Invalid pll1 ref clock rate\n");
-> +			goto refclk1_err;
-> +		}
-> +	} else {
-> +		cdns_phy->ref_clk1_rate = cdns_phy->ref_clk_rate;
-> +	}
-> +
->  	return 0;
-> +
-> +refclk1_err:
-> +	clk_disable_unprepare(cdns_phy->clk1);
-
-disable_clk:
-
-> +	clk_disable_unprepare(cdns_phy->clk);
-> +	return -EINVAL;
-
-return ret. We need to preserve why the failure
-happened so it is easier to debug.
-
->  }
->  
->  static int cdns_torrent_phy_probe(struct platform_device *pdev)
-> @@ -2981,6 +3048,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
->  	of_node_put(child);
->  	reset_control_assert(cdns_phy->apb_rst);
->  	clk_disable_unprepare(cdns_phy->clk);
-> +	clk_disable_unprepare(cdns_phy->clk1);
-
-No sure if it matters, but for symmetry sake should we disable clk1 before clk?
-
->  clk_cleanup:
->  	cdns_torrent_clk_cleanup(cdns_phy);
->  	return ret;
-> @@ -2999,6 +3067,7 @@ static void cdns_torrent_phy_remove(struct platform_device *pdev)
->  	}
->  
->  	clk_disable_unprepare(cdns_phy->clk);
-> +	clk_disable_unprepare(cdns_phy->clk1);
-
-Here too.
-
->  	cdns_torrent_clk_cleanup(cdns_phy);
->  }
->  
-> @@ -3034,6 +3103,100 @@ static struct cdns_torrent_vals dp_usb_xcvr_diag_ln_vals = {
->  	.num_regs = ARRAY_SIZE(dp_usb_xcvr_diag_ln_regs),
->  };
-
-<snip>
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
 -- 
 cheers,
