@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAB08C46CD3
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Dec 2023 11:55:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27CBDC3DA6E
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Dec 2023 11:55:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BmZYTpmbF2L2E26+eU77Bn6wR0zkd/nI7sQpc9ILKi4=; b=3agMLBk3bLj6A4
-	BjfXvwKXpTKA8zC6jtEIHRwhgiPhpTmP6UVNCuxoup0pAHXa6p8ZY+FVzDQ9NwqrLjBTadlm8xI9u
-	W7W3b9BTxwm5OdPH4XE89HO26qzkyPjYSRyL4LsK9Y2T+nITelJPJ69BP0TK3lTc/BRETUzE4iSDU
-	zi7/MppuPPDCheVnIZkZMWeFZuRjHGkbT1MjYRYnVJSgmA0TLuqpskrqotDmSJf1miAZAQ49Ohq9v
-	76MBPmEaSOxsq01jySOXgvYTolQo9V9b8St67cIfHk7BBFGaKI1JlmVzXxzDMmdFLgiZAyMJgdXox
-	NSnnXauxvgc9pohnhALw==;
+	List-Owner; bh=lUNjZTr5wDG5tGIscPKLjMi4XYAEb/zif+OSKbiSUMU=; b=pwc5hgMZasekgT
+	qZcAJJFURS3aPRON2wDXf35UdfIOsAwcacVIz41K+35ThM7RKDHJGcPUKTpqyCCgrfCKdhMqHoYtF
+	I/DonniaLsljdZSiK8LuQvA4psVEZmxr1gMRqSyxDoshLVnB34T4g0aiHqokKrVjyLkSsXmljmlOl
+	gWKfpCtBjQHFX0m7NGCoi2FkXufCLd3N+HpnDsp79ZrTaY6oUBDe7rBu6cGfAx6dGu5ofL9Cf9ASS
+	5h7uDUqPPP2UPq6GD/fH/odS+Lju6me8Jzrv3pccdHF6ESYi5nFXBxHF+G2eyBfkZWfSelMBfu8vh
+	UNwapuxbOwA3fyqVxLHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rH0bb-007rhr-1j;
-	Sat, 23 Dec 2023 11:55:47 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1rH0bd-007riE-2t;
+	Sat, 23 Dec 2023 11:55:49 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rH0bY-007rgc-1W
+	id 1rH0bZ-007rgq-1w
 	for linux-phy@lists.infradead.org;
-	Sat, 23 Dec 2023 11:55:45 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-40d3dfcc240so26479955e9.1
-        for <linux-phy@lists.infradead.org>; Sat, 23 Dec 2023 03:55:43 -0800 (PST)
+	Sat, 23 Dec 2023 11:55:46 +0000
+Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-33687627ad0so2239188f8f.2
+        for <linux-phy@lists.infradead.org>; Sat, 23 Dec 2023 03:55:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703332542; x=1703937342; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1703332543; x=1703937343; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=s6BgZXk2Z2EdsOWLkN8A9CQXodyxdbtKQobwp6o/jO0=;
-        b=GWPZw8CblTH97SwgA12VXG1l3e0Y8Jb3xAW3lbQ2szIXfwGknTyhfNfZgfiN6K1X//
-         RJynU7JAelMKMU4lSOSaFL0dPsEyWHOnEKYGnK66dQ4Y2BLuXNQR57b9yL2oxlaaTzRy
-         4Oqr4fDkqyA0xfnY+7Bq07cCXEL2WN3dFQoPp6gFdvkXdn+gWBrKH9G+Z0AbssYzpchh
-         u5ro5fEIyOav3x12lr2Blebt8yVEU5cG47wD43MwbUgOSHcx3goG3AubWH70Yorf/Bqf
-         vUkFAc00NaA01tJZsdBKI0uLXjtucPapaGdFCNj4JCO93mBswtIZJXqs0vCHEHxUaITq
-         g8+Q==
+        bh=xjW+JyAXSaCJAvexLw3wdIiNQdXbZqOYyV5y427gtuA=;
+        b=iTsoHTIMNOnOH68eoF+ZrPX0rwie0fAvlDosRDItTXp6HSsQm0t02ZchFcXJEzvvfc
+         EzxZi9qeYkG9rL3laIf/TvH1fP8fzoKKsSycq9O/xAXDxXpoXV0dq+Kun7JnG/YHyCzX
+         +mDru27ryHeKSi9zget+gvPA1m98XXc0IFpN1erzlm+K+G/A6wggUM6jol7d9boeCK1y
+         0Y509tx0dnjpEeN45UJI7YSB0eZOfZ/WHZfopnEnHCTg3p8lQ0csFIn18ehTZJvoSXRx
+         wy+LEcDdOriwgwvoPd0kRepORSaw2NF2hIv9Ebvrck0fAXK9rKjhRz67sW7dtbcyMvln
+         54jQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703332542; x=1703937342;
+        d=1e100.net; s=20230601; t=1703332543; x=1703937343;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=s6BgZXk2Z2EdsOWLkN8A9CQXodyxdbtKQobwp6o/jO0=;
-        b=TkhHEEiG0Pr179htVEOg5quWK5zYT35CN3Gz4oCqz/f6kpxpvSRSdKICUi/FgJXY/g
-         6dJz981i/FonLT4NGyA6dVBi3byoORTikddeqYB9QNXmX7Rs/4Sye3y83v7os4e0WWGw
-         QgVd8BNRom/9EvKUsNpUAOY0oMiOhxxFyyjnbQSwbBDgLYVrrdbfs3hOm1RYimJt2K8j
-         gfb6GvFldGrohg5yWTauD3uLYSxEtNv1fWzlsF5UF85BCDCSRFW7+sOTKhffT8g4AOlb
-         O3gxD7o+zyoCHfHSHxwn0XAXeVO7tZgj2tcOF8pB/ciAq1OEu0T/6QrT1zGmM5In/a94
-         mtWA==
-X-Gm-Message-State: AOJu0YyxpGyUbSRuRn8Gaxw72X+mtFJJWOzYJyYFMnTz3NA6v+CClNZc
-	mSBkNf3mmFe0/yadPBdqI7LXaUJ5ISnmCw==
-X-Google-Smtp-Source: AGHT+IFbKKaDUzDOTV7tg27SW7s49hsl8UxjmsVqHgSUFLade7q7Lz04XuCiV+7QgzJCtZ2iEIONjQ==
-X-Received: by 2002:a05:600c:3f94:b0:40d:34ec:8809 with SMTP id fs20-20020a05600c3f9400b0040d34ec8809mr1048362wmb.270.1703332542096;
-        Sat, 23 Dec 2023 03:55:42 -0800 (PST)
+        bh=xjW+JyAXSaCJAvexLw3wdIiNQdXbZqOYyV5y427gtuA=;
+        b=a5TrRXm9EkP2Kxc9Et8ixz4OOLnDW9rDwXQ0XVwKyy2mIvSvEzk7zKoH8VF5vgvxmu
+         ShYw5oqZF1nKWpxPme7uwhPPBdnGz05pP4/p9JhK+WYz3aBhmOH/krDUEDbFVYOBeTwB
+         awvc14U7Kmufi3IKP5ikfN6hbToSde0BaNFjWSQfprE6clLpKM1yOl9J4p4wi+L/1xvL
+         4ZZKKwuHtlVa1cHqhUl2AOuhP1GIncrTXFMb4a3bhUpUJKzEhhFqckAdUN+Kde02v1EC
+         GyVwsdORABaeLXBA5nsQ8LxjumbokhBAGVcS43aYBwrcN4eCxg1iIEWhKnuA3x8aakN3
+         vnsQ==
+X-Gm-Message-State: AOJu0Yzo0AHk5yHRd8aoaljDMQhWTfS6vUlREPOQ3qbXCmB2P8csQNoW
+	y2nDKJFEC08Ip/fCLkYDdSLQ20bM/tQ8kw==
+X-Google-Smtp-Source: AGHT+IFswqcZX+bOO4IyaG5MEP+lhRL5syuRpxs5F9RE5GnUcyxKxHeOJLs01X9nDTMCxpRKVCgzKw==
+X-Received: by 2002:adf:ee47:0:b0:336:8690:7488 with SMTP id w7-20020adfee47000000b0033686907488mr1292111wro.107.1703332543445;
+        Sat, 23 Dec 2023 03:55:43 -0800 (PST)
 Received: from [127.0.1.1] ([79.115.23.25])
-        by smtp.gmail.com with ESMTPSA id r10-20020adfce8a000000b00336781490dcsm6351525wrn.69.2023.12.23.03.55.40
+        by smtp.gmail.com with ESMTPSA id r10-20020adfce8a000000b00336781490dcsm6351525wrn.69.2023.12.23.03.55.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 23 Dec 2023 03:55:41 -0800 (PST)
+        Sat, 23 Dec 2023 03:55:43 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
-Date: Sat, 23 Dec 2023 13:55:21 +0200
-Subject: [PATCH v2 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the X1E80100 QMP PCIe PHYs
+Date: Sat, 23 Dec 2023 13:55:22 +0200
+Subject: [PATCH v2 2/3] phy: qcom: qmp-pcie: Add QMP v6 registers layout
 MIME-Version: 1.0
-Message-Id: <20231223-x1e80100-phy-pcie-v2-1-223c0556908a@linaro.org>
+Message-Id: <20231223-x1e80100-phy-pcie-v2-2-223c0556908a@linaro.org>
 References: <20231223-x1e80100-phy-pcie-v2-0-223c0556908a@linaro.org>
 In-Reply-To: <20231223-x1e80100-phy-pcie-v2-0-223c0556908a@linaro.org>
 To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
@@ -79,28 +78,27 @@ To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
  Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Abel Vesa <abel.vesa@linaro.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ Abel Vesa <abel.vesa@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1569; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=Cjd737+0WvbPLfzwP1kvLLPld4NW6uZ8Tvfpkvgqv2U=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlhsq2k0cPV01Jw/I8SkjK5Ygnbi5XDM2jUyHL9
- bS05EY/5RWJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZYbKtgAKCRAbX0TJAJUV
- Vmi5D/9f1U4t+GjBZxjU8iax36NUu3PaOld9Whjbrtds0OLfkX4Nof2QRKGeTud00FYbpSXcv6X
- HEGPebTsn3LZIkDvB3CadQlFZEWVH2mNVGMsmNvuSi+Rp+JgRLbLdF2a08My/MCu8g/Qy8nyw0v
- BOte3qBVbceO4CcXbpysQgjVlQE4OEFMCNCmnInFSbvrmXrnoQs7awAeqRwfpQG0XvrRfIE7SdJ
- Ume6hn+wGy0mZb1dPEjV7EZGesWXMeC3xk5DYjSwLGxGP9x8izsqcI1UGuM0R8EZ+CTASipIp99
- 4JpRXt0DqaavGLhRC1EhV6x3hmNPlO/UNPCQmqGo8KzYi/tE2aK/Tx49BRXoWbjn1cizI0I2Ezs
- 0K09HAsfYsivgqRHSrFKf+bPmg1rlj4e+Bmq9m/GMWhVprdMDpl3fdvX1p/vW/3e9srRzZPtkej
- U4PyNI1bt68c66+7JDohm/xL6AaNhn9JtVXT1/oWt99UFIZ/QPS/2ZmHtd15OqmX3pp8S4zibgG
- OpjQDDiY82tfotlBJDojtCMvDqQ/LXQDhcEfVVKydoaiZFwhoRrtAhYoHYIGdxeG2zBC+d1OJBS
- R8rzwZXNZacCHgTp5UyBD8kA7haNNYkSLtFX6Bs1HXWx+Kqy62Vub97kDGI8VzfsS919E2jXNId
- FgidTucH4UwCLGA==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2434; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=aQTJdCbIPDB/z7LFSFKZkLMGwHpEIeQuU+oxAP8tlJE=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBlhsq4LM1fJC70vKYIm9i0vEjT4NhgnQDYs6vLr
+ REEP8JuS3OJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZYbKuAAKCRAbX0TJAJUV
+ Vmx4D/9Mx4NgoddlhLOFINCkZvKJb8WYWsdHlrx/J8FwU9RZX6p1qGJXdz6OFTKqENY+zr5zixN
+ LACRcushLS7dlIzUgbCFN7Y+78S2zYkhDZMQU8CTbQm78jPTw8q1ovvOFWP3fKL2vc0sUh+tKcO
+ i+PWKK1aeuY30k7h4VH+UbEEI8viSWs0w2anWl5SHRWFmcK6UVk8xcvOx83dwHm1SH6TdfyvoFR
+ 5O2J1OmAzkK8Tees9HSPGNPs8kucTiwiFoeeyvWPQJSnEttrqLtMVw6OsHbUUEeVRBRlm+OAcvF
+ qbTcAaxMoM2KOX8x0AmfirEKyCcNxCuPROZXXIX71PkeX8PJuSC1N7RsfhuE+HTHnesRWmSM1VV
+ j+sWhBIgbAVqesDFVb2zDEB/FyI0XC6kmaeGiD9nRLySViRR0qbZTpv0MjrLLJLhP+/W9VN2CeF
+ XuoEeiDWa0JuY2JM38yAQwGiR5rX4UuGaKhhGSj3H0mdAxkENER5TTU/xQBgWHuyK0oW4UJW6Ee
+ zilLsAyBUQF2Y04qoHtw/pLAUGLZHbfwBPQOgUpNGqF+8s6MxBsMs0bYqr3K/VzUWH4HxfcJjtv
+ SjTyVHymAG99fkY5G/d9Bj+jODSPre+qXUGbkfYnWLR7KnvZwaHknwRL/CjZzNGgBeThn9/vbHr
+ THDqvxmL2v4sO/A==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231223_035544_506687_87BB43A7 
-X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-CacheID: sfid-20231223_035545_637519_76B870A7 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,45 +116,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the QMP PCIe PHYs on the X1E80100 platform.
+For consistency, add the QMP v6 registers layout even though
+they are the same as v5. Also switch all QMP v6 PHYs to use this
+new layout.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml         | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 6c03f2d5fca3..ba966a78a128 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -38,6 +38,8 @@ properties:
-       - qcom,sm8550-qmp-gen4x2-pcie-phy
-       - qcom,sm8650-qmp-gen3x2-pcie-phy
-       - qcom,sm8650-qmp-gen4x2-pcie-phy
-+      - qcom,x1e80100-qmp-gen3x2-pcie-phy
-+      - qcom,x1e80100-qmp-gen4x2-pcie-phy
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 2af7115ef968..03a4898a7e6f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -116,6 +116,13 @@ static const unsigned int pciephy_v5_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V5_PCS_POWER_DOWN_CONTROL,
+ };
  
-   reg:
-     minItems: 1
-@@ -151,6 +153,8 @@ allOf:
-               - qcom,sm8550-qmp-gen4x2-pcie-phy
-               - qcom,sm8650-qmp-gen3x2-pcie-phy
-               - qcom,sm8650-qmp-gen4x2-pcie-phy
-+              - qcom,x1e80100-qmp-gen3x2-pcie-phy
-+              - qcom,x1e80100-qmp-gen4x2-pcie-phy
-     then:
-       properties:
-         clocks:
-@@ -194,6 +198,8 @@ allOf:
-             enum:
-               - qcom,sm8550-qmp-gen4x2-pcie-phy
-               - qcom,sm8650-qmp-gen4x2-pcie-phy
-+              - qcom,x1e80100-qmp-gen3x2-pcie-phy
-+              - qcom,x1e80100-qmp-gen4x2-pcie-phy
-     then:
-       properties:
-         resets:
++static const unsigned int pciephy_v6_regs_layout[QPHY_LAYOUT_SIZE] = {
++	[QPHY_SW_RESET]			= QPHY_V6_PCS_SW_RESET,
++	[QPHY_START_CTRL]		= QPHY_V6_PCS_START_CONTROL,
++	[QPHY_PCS_STATUS]		= QPHY_V6_PCS_PCS_STATUS1,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_PCS_POWER_DOWN_CONTROL,
++};
++
+ static const struct qmp_phy_init_tbl msm8998_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_CLK_SELECT, 0x30),
+@@ -2936,7 +2943,7 @@ static const struct qmp_phy_cfg sdx65_qmp_pciephy_cfg = {
+ 	.num_resets             = ARRAY_SIZE(sdm845_pciephy_reset_l),
+ 	.vreg_list              = qmp_phy_vreg_l,
+ 	.num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs                   = pciephy_v5_regs_layout,
++	.regs                   = pciephy_v6_regs_layout,
+ 
+ 	.pwrdn_ctrl             = SW_PWRDN,
+ 	.phy_status             = PHYSTATUS_4_20,
+@@ -3069,7 +3076,7 @@ static const struct qmp_phy_cfg sm8550_qmp_gen4x2_pciephy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+ 	.vreg_list		= sm8550_qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(sm8550_qmp_phy_vreg_l),
+-	.regs			= pciephy_v5_regs_layout,
++	.regs			= pciephy_v6_regs_layout,
+ 
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS_4_20,
+@@ -3099,7 +3106,7 @@ static const struct qmp_phy_cfg sm8650_qmp_gen4x2_pciephy_cfg = {
+ 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+ 	.vreg_list		= sm8550_qmp_phy_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(sm8550_qmp_phy_vreg_l),
+-	.regs			= pciephy_v5_regs_layout,
++	.regs			= pciephy_v6_regs_layout,
+ 
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+ 	.phy_status		= PHYSTATUS_4_20,
 
 -- 
 2.34.1
