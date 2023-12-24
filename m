@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FAFFC46CD2
-	for <linux-phy@archiver.kernel.org>; Sun, 24 Dec 2023 06:20:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4ED4C46CD2
+	for <linux-phy@archiver.kernel.org>; Sun, 24 Dec 2023 06:23:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YlwBYTK4iPivqD4MVlB9Z+CqDDDbtd3x1XL7FfBLDHE=; b=pvrYGLFhTM/IJJ
-	PBiXF5Il3QdFUgqxIW+KAw7WB7b4hff/zlIixbacLHmaXHxEkiUNczZBVRnFaktzINhhpCIpr9ybk
-	9lUJ3UwxWUyGtRz4qQI+aS4/uVss8YtSopjKtWdC/x+5pk3kA7McH8g0ieF/cRqaUvijvEBHAQfZ1
-	hok/EoFidIyDAtjT5AXKWAlBt+k8N6LSGwoKrHNm+7magOfDOMt3qOJ31l4TYMcCJwySqCenn7Jwv
-	UbVE3vzKd0P8gNmvwrBmqlhublNZEexSyOBCaBH2qP2VpHwwb7GHfyZP9JtNnTk3ri1J+me2Mn1Zh
-	sngMM5dIblQzKrtASshg==;
+	List-Owner; bh=VB/cmhSdMSXABI6l++qCYJJ0nIIpBROw+TrWS2JokG0=; b=nFa3CrtJEgdQm2
+	bM3gOhEIdL7lMnJY93HLnKQtQ1+If13at8P+htRe9ERvBZRuP5NYVxgaRa7qRsL1ds/ZF+HO2kvGy
+	QDtHehjjFKA2swwei6c3KAFUAUYjA2VcjgyUqYvjDs563T8TFPk76Tm/8Xxd8lgMODLK5soklSp+k
+	zy0nfTW6UH3dKLK8n5A1DXWKwh9iQLxEMRoj1PVAoCTNnzBXsdkRy//9YK22t7VMFgD38KhMOq7DK
+	fOY3CU8pd8ZKK7qPOmNCE+/BRSMbdVnetO4zO9UXZXugEVQ/+D/BgmGYezvb1+I1R3P5VpA2L+l/F
+	tQRkV3OXolI+XtXA9AIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHHqj-008xJS-34;
-	Sun, 24 Dec 2023 06:20:33 +0000
-Received: from mail-qk1-x735.google.com ([2607:f8b0:4864:20::735])
+	id 1rHHtG-008xSs-1R;
+	Sun, 24 Dec 2023 06:23:10 +0000
+Received: from mail-yw1-x1129.google.com ([2607:f8b0:4864:20::1129])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHHqh-008xJA-1z
+	id 1rHHtE-008xSU-10
 	for linux-phy@lists.infradead.org;
-	Sun, 24 Dec 2023 06:20:32 +0000
-Received: by mail-qk1-x735.google.com with SMTP id af79cd13be357-7811c58ee93so184673285a.0
-        for <linux-phy@lists.infradead.org>; Sat, 23 Dec 2023 22:20:29 -0800 (PST)
+	Sun, 24 Dec 2023 06:23:09 +0000
+Received: by mail-yw1-x1129.google.com with SMTP id 00721157ae682-5e6c8b70766so26317147b3.3
+        for <linux-phy@lists.infradead.org>; Sat, 23 Dec 2023 22:23:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703398829; x=1704003629; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1703398984; x=1704003784; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=dY6JLnVxrEsnmNyVP0wd7jgyz6XGLyt39+/qdJ/qmgc=;
-        b=ldC+YsH0xkq0P3KRnUvPZLsxKseb3hqokbr+sc4W0JWLcFf/QRHyI0yJxyVwx9UG52
-         iR5uhBjjRefqItVw9HjovaNMcJUe5QL0LJ41pTM2EnwkdwRRk0kcFNAG/3QXanqqogY7
-         MlgJC4QsDkbk7Ua5Idf6a26D4rAsuU55wsg5Kf5ma76qbq7Bk/vW/pdYAs0h1mxW8ZG4
-         +1ScJLSDxFXi4j6dgHtvEYBo17MXqvZIgsLTV3/zRMBFp8GFrx0M/iVNKWmW/jBv70af
-         Rp3f63Tw0TycB0pc2qqJccVdyroI6Oz0Yxoh+XKlG0HrHIhwnTG6u3SCvV0u2h2tu7d8
-         3qZQ==
+        bh=uzEslKtk67JLuRJ0T5eEkiarqj7aZaFBzQA/v07nMCM=;
+        b=ecG8ZCTXXy+bhjV6nMcQTa/vPNm0XDK/GvOefk4EVnMI12AotBlyDgtoE0hsnK7Sfn
+         wHxTuTsxypkBDD9WdEck3xm0AV+8hNI3sEIDbrrsCY0EN3CJEqMe/DaNUUUuROkqFO4Y
+         YYms8gIaxK6WnYk7qH2VvuWkPOfsfBn7Rrjbk/Tpf9LdTBO9bOib7CO7gmcjnHAJ2hvQ
+         tz2icIIyIKv5d+rcLul54RB3ZdTFrtX6Gix+5H7cUT9Vm5meUvbQiamGvkCSoC2QOxZ4
+         NJm14gA+ZVVi08FW8r7cDHVq7saoz84z5Hjguq5xO5fXi3eBTiFrGYxTC7eKrVL0lXEj
+         DfbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703398829; x=1704003629;
+        d=1e100.net; s=20230601; t=1703398984; x=1704003784;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dY6JLnVxrEsnmNyVP0wd7jgyz6XGLyt39+/qdJ/qmgc=;
-        b=KRXpJnhU+hA02GJ3wLzyxg87RbidYdmGDLFLGWsssGq+ez/K6NCzf9OvFNK8hZP/W6
-         gfz5X06IZwDLutxVfLxxaJF1bR8YwZiYDuyuMBCicpD99YND+5zaRjKAuB7yW/qWT/Rf
-         tWw82AF8EFMM+13MZdQn1pIxoZ6x5NTNoXPjmtGMMd7yAw/klHHm3pkaiOYtSPw8VWDz
-         NzwA1lTSnyglbkOkdo6AuqvsWCmFZpDPZYcEvVRIj/9RNqpUplcfhoa/Qx8ilU/dfXMx
-         KRL/ud/dtgOh/8ap0/0qjRjd7EKVL4arS56F4dp6ulHMF7YqrMuAp1OKP4QgBH+4iOmX
-         PJcw==
-X-Gm-Message-State: AOJu0YxlxuijpeQNgsTrDW9W3ovsHJvIC8DfBvF9F5aiOFMe5/m4iGM6
-	VqDsIuGAQ5LcEswAgz3XUdCOAE1lC0QHzyQrx04poHmVAceGGA==
-X-Google-Smtp-Source: AGHT+IFOkGjgfNXHmSpOEjsFf/qZU6hAt4ef5UIQN1lp0Pp+H580Mc1NlscQ7QMxENom9HXHMQhwDP2uIW4atBCUMuI=
-X-Received: by 2002:ae9:e214:0:b0:77e:c67:32e4 with SMTP id
- c20-20020ae9e214000000b0077e0c6732e4mr4045914qkc.23.1703398828926; Sat, 23
- Dec 2023 22:20:28 -0800 (PST)
+        bh=uzEslKtk67JLuRJ0T5eEkiarqj7aZaFBzQA/v07nMCM=;
+        b=kN/+b/i7iiYlZkIKDr0IWTp8qkkryG2rovOXyEObBMMA+F/nrfZ7BXO4CVJIFHKCN9
+         Zj59oplQNVKm8A7NWJ+2yJT6xgWYzYl87WY/JLgQM9me4W8QTgsNVxLxOMmqbOUZB1ll
+         R6yb/SJdtNY7J9PFgM3f89fUC1PyAfRjZYo+6Z48Wwos4QirjRXBAcdjGyUsQWSNEwn9
+         QdFRsVXl5j8hVTrvYGl5Ct0jsK5Ms5RT9XzWktS2S6djbHB5AWS5y9ZGmo7/lg/mk3QB
+         idyOzaj1oo5dEpVyd0esJKoHoQUIokX1GrYhIoHnhU2G7QNTQLF/BHbvBPzvdk2ltIhw
+         dZ3A==
+X-Gm-Message-State: AOJu0YwOFIJNWwLLtyUUkoMe/DRSUYBUg1C6zcvO383bj8xUewAxrl4N
+	dNVq7NG9vN6Kr5YSUDO+kC5IMWHLypDgr6UGY9DUc8qOHmt6Kg==
+X-Google-Smtp-Source: AGHT+IF0zC4Gb4jWv5/ciMlayuYg3GXPYLIF2K58bCCtZziIJhml00lCFYMRxCeEtzCaiTnFzUK8fcVQ2q+0FM+NAKA=
+X-Received: by 2002:a81:a152:0:b0:5e6:8fd8:2742 with SMTP id
+ y79-20020a81a152000000b005e68fd82742mr2130461ywg.82.1703398984475; Sat, 23
+ Dec 2023 22:23:04 -0800 (PST)
 MIME-Version: 1.0
-References: <20231223-x1e80100-phy-pcie-v2-0-223c0556908a@linaro.org> <20231223-x1e80100-phy-pcie-v2-3-223c0556908a@linaro.org>
-In-Reply-To: <20231223-x1e80100-phy-pcie-v2-3-223c0556908a@linaro.org>
+References: <20231223-x1e80100-phy-pcie-v2-0-223c0556908a@linaro.org>
+ <20231223-x1e80100-phy-pcie-v2-2-223c0556908a@linaro.org> <CAA8EJpo774xzmpb2+72sJ80kmcCqJK-gDfkaLERGgmPeSZV3PQ@mail.gmail.com>
+In-Reply-To: <CAA8EJpo774xzmpb2+72sJ80kmcCqJK-gDfkaLERGgmPeSZV3PQ@mail.gmail.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sun, 24 Dec 2023 08:20:17 +0200
-Message-ID: <CAA8EJpo_mFVvvB09e-nLT_GuTAdd_XfVLeVEzGbUV26hJ=C9ig@mail.gmail.com>
-Subject: Re: [PATCH v2 3/3] phy: qcom-qmp-pcie: Add support for X1E80100 g3x2
- and g4x2 PCIE
+Date: Sun, 24 Dec 2023 08:22:52 +0200
+Message-ID: <CAA8EJprYvF08D_82QZ+nEhBVq74B2uS0UKic0Qj3kwHdHqm0XA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/3] phy: qcom: qmp-pcie: Add QMP v6 registers layout
 To: Abel Vesa <abel.vesa@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
 	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
@@ -74,9 +74,8 @@ Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231223_222031_662190_EC38B2E6 
-X-CRM114-Status: UNSURE (   7.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231223_222308_379345_9C13B2B5 
+X-CRM114-Status: GOOD (  15.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,20 +92,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 23 Dec 2023 at 13:55, Abel Vesa <abel.vesa@linaro.org> wrote:
+On Sun, 24 Dec 2023 at 08:16, Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
 >
-> Add the X1E80100 G3 and G4 configurations.
+> On Sat, 23 Dec 2023 at 13:55, Abel Vesa <abel.vesa@linaro.org> wrote:
+> >
+> > For consistency, add the QMP v6 registers layout even though
+> > they are the same as v5. Also switch all QMP v6 PHYs to use this
+> > new layout.
+> >
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 ++++++++++---
+> >  1 file changed, 10 insertions(+), 3 deletions(-)
 >
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 173 +++++++++++++++++++++++++++++++
->  1 file changed, 173 insertions(+)
+> On Thu, 21 Dec 2023 at 05:51, Bjorn Andersson <quic_bjorande@quicinc.com> wrote:
+> >
+> > The SA8295P and SA8540P uses an external regulator (max20411), and
+> > gfx.lvl is not provided by rpmh. Drop the power-domains property of the
+> > gpucc node to reflect this.
+> >
+> > Fixes: eec51ab2fd6f ("arm64: dts: qcom: sc8280xp: Add GPU related nodes")
+> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
+> > ---
+> >  arch/arm64/boot/dts/qcom/sa8540p.dtsi | 2 ++
+> >  1 file changed, 2 insertions(+)
+
+To resolve possible questions, the lines above got c&p-ed from another
+email. The R-B tag is applicable to the patch in question (v6 regs
+layout).
+
 >
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>
+> --
+> With best wishes
+> Dmitry
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 
---
+-- 
+With best wishes
+Dmitry
+
+On Sun, 24 Dec 2023 at 08:16, Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
+>
+> On Sat, 23 Dec 2023 at 13:55, Abel Vesa <abel.vesa@linaro.org> wrote:
+> >
+> > For consistency, add the QMP v6 registers layout even though
+> > they are the same as v5. Also switch all QMP v6 PHYs to use this
+> > new layout.
+> >
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 ++++++++++---
+> >  1 file changed, 10 insertions(+), 3 deletions(-)
+>
+> On Thu, 21 Dec 2023 at 05:51, Bjorn Andersson <quic_bjorande@quicinc.com> wrote:
+> >
+> > The SA8295P and SA8540P uses an external regulator (max20411), and
+> > gfx.lvl is not provided by rpmh. Drop the power-domains property of the
+> > gpucc node to reflect this.
+> >
+> > Fixes: eec51ab2fd6f ("arm64: dts: qcom: sc8280xp: Add GPU related nodes")
+> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
+> > ---
+> >  arch/arm64/boot/dts/qcom/sa8540p.dtsi | 2 ++
+> >  1 file changed, 2 insertions(+)
+>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>
+> --
+> With best wishes
+> Dmitry
+
+
+
+-- 
 With best wishes
 Dmitry
 
