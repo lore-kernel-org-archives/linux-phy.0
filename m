@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AD45C47072
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D838C3DA6E
 	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 12:03:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9doQnZj/SR5XeEAO1b5Kp/NTJMXPJmFaYtjj3g5SE+0=; b=laq7AONFQo0Mab
-	b2x5jbU9tHxB+/TWU/L4Gr7lYG6RH3O7A/RmhYg8jBfBQ3CzO8Cce+FKQmn1dGq7srvJPv3n6P2sB
-	Ltnhyr5/JcMeV7Cc4gXORriai+PQ0vmyf11qrGip4buvVSiskyAfvyGZPYxxlEbXryAPMxq0wgFih
-	P3YUABtM6z3et2ADOGBe7vFjwUO6Q2XXxnlOge7t3YL0zZZOldSFFyiH7poIARL4x2yXJCtwN7xTZ
-	VDBOBbbx++HACCdaxe0+5aOQPADqFF+ChUOHRkrgGncICCJvH/0fCwbJdsHa83oLKWeE8jNxLrPER
-	UvS6CgOdd4WmS+krvuSw==;
+	List-Owner; bh=RJrvc/1ubUMlqTcu1T4gRqZlzcu5OmRl1puViA3GKCQ=; b=zmXRM9IR9NqbAO
+	1P60nCeqwyIgr7s3D/7GclooJrRA+HoSqxL47n39i1WdFAvTCqyVg0ush1J7yNBY+jFuGOKdOfsWt
+	bdi+XKpg3VHegj1h79Mm7B07YygVdHN3GGjzncEKIWxHxLToAV3INw5ZwR6/A2EsjAWsLKHGD/l+N
+	QPOromZ+3oSh6q7QNvu7a/XUsqWNLyFIghUYLJS2lqD6vjs1lWyUYCrPpAWXBuE4WY08dpf6QSAfc
+	tCz+rQgMI4yVf8OQm61ugrq8Q7abFpxy3RVXBTC8i0HpMvHO6WDaT66PUNqFj4piGOU/xFCwGVM3O
+	6ngXs2umPyyYRKTQbTig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgT-00An00-0W;
-	Mon, 25 Dec 2023 12:03:49 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1rHjgS-00Amza-2t;
+	Mon, 25 Dec 2023 12:03:48 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgP-00Amu7-0x
+	id 1rHjgP-00AmvD-0y
 	for linux-phy@lists.infradead.org;
 	Mon, 25 Dec 2023 12:03:46 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-40c60dfa5bfso45430785e9.0
-        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 04:03:44 -0800 (PST)
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-40d4a7f0d17so25968275e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 04:03:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1703505823; x=1704110623; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1703505824; x=1704110624; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=ap57/3CQ6Rq0XA5XYF0Gcs8lH49YqU+xtkO3NhsJdGU=;
-        b=HqpAWtzdzjYlfKqKZ0xVwUZHh44zh8u91LmZKNgVEzRR5yxKZrxZ8LESylyOoU3m+/
-         ZgbajVtU5EKZBa1R1UE181P9Kuphcin2COT6TMssSR9xpA2pu/aXMFgu7NANmGfWPJuF
-         GdRWkx+gpE+UkSBfb4HjjCc2lPEDCGVlXvXyqB2n2gWVBc6vBEUT88nIEzkx3hHarcvK
-         C283zd+MkUnqA08qnPx8GIxLIob7FtB5jQTCPrtIkkDHhKKxfxjdvUe3JU0AagqX5MP/
-         Dro5gRCoOfBqB1AZTQtDKiUBtXzMBh8q6yEswT7pDbeB1xyeaQtjWpp1jZrB2QIv9eKr
-         TCJw==
+        bh=aBQy6vgMSA/KrUei65+R4AvaCjiClzbb1i54FcWf2Kc=;
+        b=UVy/KzpOqlJ3aq/DFSzYZoee44Yvn5wuYA9mJQa385Y5hy6dD4Da1Hqu0TJKX3ZGxs
+         UT6WkqgJvD8QzeAVpPpCJylUY0GC4r6xtBbWOOnEaWIzcEPFTqGDdoGlkoBKZuApP8o7
+         MUCNKOVlx2jyrbRxKeFpWxLKv9sRf9Rn9gqEyqvajz4x12jpYeNNAGlRgO8Hg11CG/aK
+         vypljNloLkEjg4FMb+K52zH8UV9BsZBTLgLv7m8ocQfeYhVl1BpmBVITfJ73oPRf2Slz
+         jDneWS7BYYYqswJzTfCajAWImjJEkH6K0SnzATM49ZNQ0R/J43qsCURjc45UMoLgSLay
+         xQPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703505823; x=1704110623;
+        d=1e100.net; s=20230601; t=1703505824; x=1704110624;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=ap57/3CQ6Rq0XA5XYF0Gcs8lH49YqU+xtkO3NhsJdGU=;
-        b=nbHHnDEP8UZXc+2g9qkmC6ctB2OMJPawCDCppD8dT9ZAHhHDlE5nds9Rx/ZZH7qI4n
-         aZOZon+ILeZcqGnDZcwCRIZdLVH1YYGl/R0k2TBkJIffarzhELKE/oLaOShZWtfDY4ni
-         nYKwrg/S1+uBhhLOIb92WD1i2jsXq7jgLrnXEDpPlCkYu1/QOAvIED4RBUBFZtKHHljI
-         9uac/IOHR48RU+UMHWoxZTzR4i8LeIIg5eoak7FBXpFwcM4qlnR3W9XM023VJZNTzRl2
-         i5i04+uOAPluV8HESWTAh18ZlOjaf0Y02xW4abGKkvNGHAENo2fkVGnbJI+iPvqbV6g3
-         2AcA==
-X-Gm-Message-State: AOJu0YzwHzukzc7FFEm7e3ScL9sI1DUOsShiafXVb3VdkHqUcaKULtyC
-	1E/u8wyzhJ3fSmGhn2diNlg=
-X-Google-Smtp-Source: AGHT+IHNo+uIxQESjDWG1YaCbWAi/OVD30KSQAb5sf0nPgZJVnJNgsaCqvmkOlSnG9mc7G1e9GWB7w==
-X-Received: by 2002:a05:600c:4f89:b0:40b:5e21:d357 with SMTP id n9-20020a05600c4f8900b0040b5e21d357mr3317750wmq.96.1703505822769;
-        Mon, 25 Dec 2023 04:03:42 -0800 (PST)
+        bh=aBQy6vgMSA/KrUei65+R4AvaCjiClzbb1i54FcWf2Kc=;
+        b=GdP2VnneImAHcP4N76bclRZi8dj93NA4s9qNmKwlIC9dTlMRPXi+Ffa5bELb0uvmR+
+         XxM/1pJuCLq0DfcidgAmUkenUOWV6VM7ASQsDIBFrTQnoborTRRViNoLXqqXTyzLn2am
+         IJAEnsLQwsGt74sSQye49no6NXM/bmx1cjiaATvVFf3JFLBSwOUxI6Fs5sirrrv5UF+q
+         ETJ0ipgCpLm7gZLNHaFfvnW0xZrKACWR2T990EqQLDwo0pjTolcLTSUA9lF7m7GNcM/e
+         nl5kcGwvRRoFXNZTvLt8kPrhz1XD1vlDNDQw60k+gySjzTZYyheAxbm+B+/4aAzuchUL
+         M2qw==
+X-Gm-Message-State: AOJu0Yx0tiuUp6di5MXi+MUOzqc7vZcH9hg26xBtW7teIr3BtHWzp4Ei
+	HX8iZuR+Vc2ZTDusK3Vimb0=
+X-Google-Smtp-Source: AGHT+IFqYujQM7qzRs2hqVvPlvkA+1xWN0S8j43BWOm5G7302VwXXV0bEQzIw5oXkTC1ANPIxeyy+A==
+X-Received: by 2002:a05:600c:2203:b0:40d:33eb:d46a with SMTP id z3-20020a05600c220300b0040d33ebd46amr3045684wml.141.1703505823841;
+        Mon, 25 Dec 2023 04:03:43 -0800 (PST)
 Received: from david-ryuzu.fritz.box ([178.26.111.208])
-        by smtp.googlemail.com with ESMTPSA id 14-20020a05600c020e00b0040d23cea7bcsm6349456wmi.1.2023.12.25.04.03.41
+        by smtp.googlemail.com with ESMTPSA id 14-20020a05600c020e00b0040d23cea7bcsm6349456wmi.1.2023.12.25.04.03.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 25 Dec 2023 04:03:42 -0800 (PST)
+        Mon, 25 Dec 2023 04:03:43 -0800 (PST)
 From: David Wronek <davidwronek@gmail.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -89,17 +89,16 @@ Cc: cros-qcom-dts-watchers@chromium.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	phone-devel@vger.kernel.org,
 	David Wronek <davidwronek@gmail.com>
-Subject: [PATCH v3 7/8] arm64: dts: qcom: sm7125-xiaomi-common: Add UFS nodes
-Date: Mon, 25 Dec 2023 13:00:00 +0100
-Message-ID: <20231225120327.166160-8-davidwronek@gmail.com>
+Subject: [PATCH v3 8/8] arm64: dts: qcom: Add support for Xiaomi Redmi Note 9S
+Date: Mon, 25 Dec 2023 13:00:01 +0100
+Message-ID: <20231225120327.166160-9-davidwronek@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20231225120327.166160-1-davidwronek@gmail.com>
 References: <20231225120327.166160-1-davidwronek@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231225_040345_335029_EA89F8EE 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231225_040345_339967_EE33268B 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,81 +115,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the UFS found on the SM7125 Xiaomi smartphones.
+From: Joe Mason <buddyjojo06@outlook.com>
+
+Add a device tree for the Xiaomi Redmi Note 9S (curtana) phone, based on
+sm7125-xiaomi-common.dtsi.
 
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+Signed-off-by: Joe Mason <buddyjojo06@outlook.com>
 Signed-off-by: David Wronek <davidwronek@gmail.com>
 ---
- .../boot/dts/qcom/sm7125-xiaomi-common.dtsi   | 28 +++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ arch/arm64/boot/dts/qcom/Makefile                |  1 +
+ .../boot/dts/qcom/sm7125-xiaomi-curtana.dts      | 16 ++++++++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
 
-diff --git a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-common.dtsi b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-common.dtsi
-index e55cd83c19b8..0dfd1e3730e9 100644
---- a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-common.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-common.dtsi
-@@ -152,6 +152,9 @@ vreg_l4a_0p88: ldo4 {
- 			regulator-min-microvolt = <824000>;
- 			regulator-max-microvolt = <928000>;
- 			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-allow-set-load;
-+			regulator-allowed-modes = <RPMH_REGULATOR_MODE_LPM
-+						   RPMH_REGULATOR_MODE_HPM>;
- 		};
- 
- 		vreg_l5a_2p7: ldo5 {
-@@ -188,6 +191,9 @@ vreg_l12a_1p8: ldo12 {
- 			regulator-min-microvolt = <1696000>;
- 			regulator-max-microvolt = <1952000>;
- 			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-allow-set-load;
-+			regulator-allowed-modes = <RPMH_REGULATOR_MODE_LPM
-+						   RPMH_REGULATOR_MODE_HPM>;
- 		};
- 
- 		vreg_l13a_1p8: ldo13 {
-@@ -230,6 +236,9 @@ vreg_l19a_3p0: ldo19 {
- 			regulator-min-microvolt = <2696000>;
- 			regulator-max-microvolt = <3304000>;
- 			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-allow-set-load;
-+			regulator-allowed-modes = <RPMH_REGULATOR_MODE_LPM
-+						   RPMH_REGULATOR_MODE_HPM>;
- 		};
- 	};
- 
-@@ -258,6 +267,9 @@ vreg_l3c_1p23: ldo3 {
- 			regulator-min-microvolt = <1144000>;
- 			regulator-max-microvolt = <1304000>;
- 			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-allow-set-load;
-+			regulator-allowed-modes = <RPMH_REGULATOR_MODE_LPM
-+						   RPMH_REGULATOR_MODE_HPM>;
- 		};
- 
- 		vreg_l4c_1p8: ldo4 {
-@@ -398,6 +410,22 @@ sd-cd-pins {
- 	};
- };
- 
-+&ufs_mem_hc {
-+	vcc-supply = <&vreg_l19a_3p0>;
-+	vcc-max-microamp = <600000>;
-+	vccq2-supply = <&vreg_l12a_1p8>;
-+	vccq2-max-microamp = <600000>;
-+	status = "okay";
-+};
+diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
+index 39889d5f8e12..2e6984bbbb83 100644
+--- a/arch/arm64/boot/dts/qcom/Makefile
++++ b/arch/arm64/boot/dts/qcom/Makefile
+@@ -210,6 +210,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
++dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-curtana.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-joyeuse.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sm8150-hdk.dtb
+diff --git a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
+new file mode 100644
+index 000000000000..12f517a8492c
+--- /dev/null
++++ b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
+@@ -0,0 +1,16 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2023, Joe Mason <buddyjojo06@outlook.com>
++ */
 +
-+&ufs_mem_phy {
-+	vdda-phy-supply = <&vreg_l4a_0p88>;
-+	vdda-pll-supply = <&vreg_l3c_1p23>;
-+	vdda-phy-max-microamp = <62900>;
-+	vdda-pll-max-microamp = <18300>;
-+	status = "okay";
-+};
++/dts-v1/;
 +
- &usb_1 {
- 	qcom,select-utmi-as-pipe-clk;
- 	status = "okay";
++#include "sm7125-xiaomi-common.dtsi"
++
++/ {
++	model = "Xiaomi Redmi Note 9S";
++	compatible = "xiaomi,curtana", "qcom,sm7125";
++
++	/* required for bootloader to select correct board */
++	qcom,board-id = <0x20022 1>;
++};
 -- 
 2.43.0
 
