@@ -4,78 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4ED4C46CD2
-	for <linux-phy@archiver.kernel.org>; Sun, 24 Dec 2023 06:23:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D983C46CD3
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 02:52:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VB/cmhSdMSXABI6l++qCYJJ0nIIpBROw+TrWS2JokG0=; b=nFa3CrtJEgdQm2
-	bM3gOhEIdL7lMnJY93HLnKQtQ1+If13at8P+htRe9ERvBZRuP5NYVxgaRa7qRsL1ds/ZF+HO2kvGy
-	QDtHehjjFKA2swwei6c3KAFUAUYjA2VcjgyUqYvjDs563T8TFPk76Tm/8Xxd8lgMODLK5soklSp+k
-	zy0nfTW6UH3dKLK8n5A1DXWKwh9iQLxEMRoj1PVAoCTNnzBXsdkRy//9YK22t7VMFgD38KhMOq7DK
-	fOY3CU8pd8ZKK7qPOmNCE+/BRSMbdVnetO4zO9UXZXugEVQ/+D/BgmGYezvb1+I1R3P5VpA2L+l/F
-	tQRkV3OXolI+XtXA9AIw==;
+	List-Owner; bh=C0Ahfg9AQIsNWuFJT4HJif/V7gf5Tm4F417yjgWq34c=; b=fg8yhxiQQr2f9M
+	FFekUAYDegbScbsfPQ44/jDCn+ekXMZT6dNwZalUkmFpZL0PFziAgDY88mUDM+/b6MoIDoGFFH9o+
+	MaXC///ULK27DFlpi6IBxPREMfxKWvjvBLmu1Q3eikeD3z1lpd3kmjbySTEDfRAy2gKEC8Dnrhd7Q
+	X6JTE1GYQLUtoEFef3a80P/uFDL1QJvGikXW5bg7Bb5WXOEgjjxNWf+TdN5VRRRX26bYCV2nZtHyG
+	j/nDb/ny6Jq6r/zHT2Kd0vPTRL3d5AtpeJWFU/PWLqwh33X5YbORoVDYPxP+nkNQ2dgJcfBPe48yL
+	4LN6ctm6iIw9bal6yZ1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHHtG-008xSs-1R;
-	Sun, 24 Dec 2023 06:23:10 +0000
-Received: from mail-yw1-x1129.google.com ([2607:f8b0:4864:20::1129])
+	id 1rHb4w-00A8AI-1w;
+	Mon, 25 Dec 2023 02:52:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHHtE-008xSU-10
+	id 1rHb4t-00A89j-1S
 	for linux-phy@lists.infradead.org;
-	Sun, 24 Dec 2023 06:23:09 +0000
-Received: by mail-yw1-x1129.google.com with SMTP id 00721157ae682-5e6c8b70766so26317147b3.3
-        for <linux-phy@lists.infradead.org>; Sat, 23 Dec 2023 22:23:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703398984; x=1704003784; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=uzEslKtk67JLuRJ0T5eEkiarqj7aZaFBzQA/v07nMCM=;
-        b=ecG8ZCTXXy+bhjV6nMcQTa/vPNm0XDK/GvOefk4EVnMI12AotBlyDgtoE0hsnK7Sfn
-         wHxTuTsxypkBDD9WdEck3xm0AV+8hNI3sEIDbrrsCY0EN3CJEqMe/DaNUUUuROkqFO4Y
-         YYms8gIaxK6WnYk7qH2VvuWkPOfsfBn7Rrjbk/Tpf9LdTBO9bOib7CO7gmcjnHAJ2hvQ
-         tz2icIIyIKv5d+rcLul54RB3ZdTFrtX6Gix+5H7cUT9Vm5meUvbQiamGvkCSoC2QOxZ4
-         NJm14gA+ZVVi08FW8r7cDHVq7saoz84z5Hjguq5xO5fXi3eBTiFrGYxTC7eKrVL0lXEj
-         DfbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703398984; x=1704003784;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=uzEslKtk67JLuRJ0T5eEkiarqj7aZaFBzQA/v07nMCM=;
-        b=kN/+b/i7iiYlZkIKDr0IWTp8qkkryG2rovOXyEObBMMA+F/nrfZ7BXO4CVJIFHKCN9
-         Zj59oplQNVKm8A7NWJ+2yJT6xgWYzYl87WY/JLgQM9me4W8QTgsNVxLxOMmqbOUZB1ll
-         R6yb/SJdtNY7J9PFgM3f89fUC1PyAfRjZYo+6Z48Wwos4QirjRXBAcdjGyUsQWSNEwn9
-         QdFRsVXl5j8hVTrvYGl5Ct0jsK5Ms5RT9XzWktS2S6djbHB5AWS5y9ZGmo7/lg/mk3QB
-         idyOzaj1oo5dEpVyd0esJKoHoQUIokX1GrYhIoHnhU2G7QNTQLF/BHbvBPzvdk2ltIhw
-         dZ3A==
-X-Gm-Message-State: AOJu0YwOFIJNWwLLtyUUkoMe/DRSUYBUg1C6zcvO383bj8xUewAxrl4N
-	dNVq7NG9vN6Kr5YSUDO+kC5IMWHLypDgr6UGY9DUc8qOHmt6Kg==
-X-Google-Smtp-Source: AGHT+IF0zC4Gb4jWv5/ciMlayuYg3GXPYLIF2K58bCCtZziIJhml00lCFYMRxCeEtzCaiTnFzUK8fcVQ2q+0FM+NAKA=
-X-Received: by 2002:a81:a152:0:b0:5e6:8fd8:2742 with SMTP id
- y79-20020a81a152000000b005e68fd82742mr2130461ywg.82.1703398984475; Sat, 23
- Dec 2023 22:23:04 -0800 (PST)
-MIME-Version: 1.0
-References: <20231223-x1e80100-phy-pcie-v2-0-223c0556908a@linaro.org>
- <20231223-x1e80100-phy-pcie-v2-2-223c0556908a@linaro.org> <CAA8EJpo774xzmpb2+72sJ80kmcCqJK-gDfkaLERGgmPeSZV3PQ@mail.gmail.com>
-In-Reply-To: <CAA8EJpo774xzmpb2+72sJ80kmcCqJK-gDfkaLERGgmPeSZV3PQ@mail.gmail.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sun, 24 Dec 2023 08:22:52 +0200
-Message-ID: <CAA8EJprYvF08D_82QZ+nEhBVq74B2uS0UKic0Qj3kwHdHqm0XA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] phy: qcom: qmp-pcie: Add QMP v6 registers layout
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	Mon, 25 Dec 2023 02:52:28 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BP0l79S015281;
+	Mon, 25 Dec 2023 02:51:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:in-reply-to:references; s=
+	qcppdkim1; bh=JEPkzAqIN/Sv9pzPse5I721bVLoIfMgitWmcZPC46GU=; b=Pf
+	5BcvcVh1NUDDY00NhCf3f+a54nfBEbZ4TjFVvRfw3t4F/NtvuFo8HLTf9fBR06li
+	Eqi9bkh6tDyNZgojQasvfX75zU8VjeaE7pfRXWnFW+YR2CSwQWSdFfpYlpCDgDGY
+	raEJ2N9jfjhRv7+g5e+kIKy/6IKmJZ2sSaXc+AHtGrUI3e4pvaWRvK1ujuptl2sR
+	bqZsaQPe6HDjbLPtXW1cRzs9hssW7BWbOcZbctd3JjHkVzMIHT96smW652MPrxy4
+	Spd7wkhn/xukVeiha1cDCO5NwnfbHIGfOFQi1SMeTKp86Ni1MXG5iPkWToY9tCEm
+	6Klh8kohoAupb64kdd4A==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v5qmyasqb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 25 Dec 2023 02:51:51 +0000 (GMT)
+Received: from pps.filterd (NASANPPMTA04.qualcomm.com [127.0.0.1])
+	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3BP2kAPJ025613;
+	Mon, 25 Dec 2023 02:51:49 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by NASANPPMTA04.qualcomm.com (PPS) with ESMTP id 3v5rmkrxxp-1;
+	Mon, 25 Dec 2023 02:51:49 +0000
+Received: from NASANPPMTA04.qualcomm.com (NASANPPMTA04.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3BP2pnJw032214;
+	Mon, 25 Dec 2023 02:51:49 GMT
+Received: from stor-dylan.qualcomm.com (stor-dylan.qualcomm.com [192.168.140.207])
+	by NASANPPMTA04.qualcomm.com (PPS) with ESMTP id 3BP2pnSm032206;
+	Mon, 25 Dec 2023 02:51:49 +0000
+Received: by stor-dylan.qualcomm.com (Postfix, from userid 359480)
+	id 09F5820A8A; Sun, 24 Dec 2023 18:51:48 -0800 (PST)
+From: Can Guo <quic_cang@quicinc.com>
+To: quic_cang@quicinc.com, bvanassche@acm.org, mani@kernel.org,
+        vkoul@kernel.org, abel.vesa@linaro.org, dmitry.baryshkov@linaro.org,
+        neil.armstrong@linaro.org
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        linux-arm-msm@vger.kernel.org (open list:ARM/QUALCOMM SUPPORT),
+        linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+        linux-kernel@vger.kernel.org (open list)
+Subject: [PATCH v9 1/2] phy: qualcomm: phy-qcom-qmp-ufs: Rectify SM8550 UFS HS-G4 PHY Settings
+Date: Sun, 24 Dec 2023 18:51:40 -0800
+Message-Id: <1703472701-34197-2-git-send-email-quic_cang@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1703472701-34197-1-git-send-email-quic_cang@quicinc.com>
+References: <1703472701-34197-1-git-send-email-quic_cang@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: DJ2qNCfYnR7tDfBmfuCZvwoT9pwalDa8
+X-Proofpoint-ORIG-GUID: DJ2qNCfYnR7tDfBmfuCZvwoT9pwalDa8
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
+ suspectscore=0 bulkscore=0 impostorscore=0 spamscore=0 malwarescore=0
+ mlxscore=0 adultscore=0 lowpriorityscore=0 priorityscore=1501
+ mlxlogscore=792 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2312250018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231223_222308_379345_9C13B2B5 
-X-CRM114-Status: GOOD (  15.84  )
+X-CRM114-CacheID: sfid-20231224_185227_630351_39EAFC12 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,91 +102,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 24 Dec 2023 at 08:16, Dmitry Baryshkov
-<dmitry.baryshkov@linaro.org> wrote:
->
-> On Sat, 23 Dec 2023 at 13:55, Abel Vesa <abel.vesa@linaro.org> wrote:
-> >
-> > For consistency, add the QMP v6 registers layout even though
-> > they are the same as v5. Also switch all QMP v6 PHYs to use this
-> > new layout.
-> >
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 ++++++++++---
-> >  1 file changed, 10 insertions(+), 3 deletions(-)
->
-> On Thu, 21 Dec 2023 at 05:51, Bjorn Andersson <quic_bjorande@quicinc.com> wrote:
-> >
-> > The SA8295P and SA8540P uses an external regulator (max20411), and
-> > gfx.lvl is not provided by rpmh. Drop the power-domains property of the
-> > gpucc node to reflect this.
-> >
-> > Fixes: eec51ab2fd6f ("arm64: dts: qcom: sc8280xp: Add GPU related nodes")
-> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> > ---
-> >  arch/arm64/boot/dts/qcom/sa8540p.dtsi | 2 ++
-> >  1 file changed, 2 insertions(+)
+The registers, which are being touched in current SM8550 UFS PHY settings,
+and the values being programmed are mainly the ones working for HS-G4 mode,
+meanwhile, there are also a few ones somehow taken from HS-G5 PHY settings.
+However, even consider HS-G4 mode only, some of them are incorrect and some
+are missing. Rectify the HS-G4 PHY settings by strictly aligning with the
+SM8550 UFS PHY Hardware Programming Guide suggested HS-G4 PHY settings.
 
-To resolve possible questions, the lines above got c&p-ed from another
-email. The R-B tag is applicable to the patch in question (v6 regs
-layout).
+Fixes: 1679bfef906f ("phy: qcom-qmp-ufs: Add SM8550 support")
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Signed-off-by: Can Guo <quic_cang@quicinc.com>
+---
+ .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h    |  3 +++
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 28 +++++++++++++++-------
+ 2 files changed, 22 insertions(+), 9 deletions(-)
 
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->
-> --
-> With best wishes
-> Dmitry
-
-
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+index 15bcb4b..674f158 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v6.h
+@@ -10,9 +10,12 @@
+ #define QSERDES_UFS_V6_TX_RES_CODE_LANE_RX			0x2c
+ #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX		0x30
+ #define QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_RX		0x34
++#define QSERDES_UFS_V6_TX_LANE_MODE_1				0x7c
++#define QSERDES_UFS_V6_TX_FR_DCC_CTRL				0x108
+ 
+ #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2		0x08
+ #define QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		0x10
++#define QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2			0xd4
+ #define QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL			0x178
+ #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0			0x208
+ #define QSERDES_UFS_V6_RX_MODE_RATE_0_1_B1			0x20c
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 3927eba..ad91f92 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -658,22 +658,26 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_serdes[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7f),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x4c),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x0a),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x99),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x99),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
++};
++
++static const struct qmp_phy_init_tbl sm8550_ufsphy_hs_b_serdes[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x44),
+ };
+ 
+ static const struct qmp_phy_init_tbl sm8550_ufsphy_tx[] = {
+-	QMP_PHY_INIT_CFG(QSERDES_V6_TX_LANE_MODE_1, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_LANE_MODE_1, 0x05),
+ 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_TX_FR_DCC_CTRL, 0x4c),
+ };
+ 
+ static const struct qmp_phy_init_tbl sm8550_ufsphy_rx[] = {
+-	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE2, 0x0c),
+-	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_UCDR_FO_GAIN_RATE2, 0x0c),
+ 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_VGA_CAL_MAN_VAL, 0x0e),
+ 
+ 	QMP_PHY_INIT_CFG(QSERDES_UFS_V6_RX_MODE_RATE_0_1_B0, 0xc2),
+@@ -696,6 +700,8 @@ static const struct qmp_phy_init_tbl sm8550_ufsphy_pcs[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+ 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x2b),
+ 	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
+ };
+ 
+ struct qmp_ufs_offsets {
+@@ -1157,6 +1163,10 @@ static const struct qmp_phy_cfg sm8550_ufsphy_cfg = {
+ 		.pcs		= sm8550_ufsphy_pcs,
+ 		.pcs_num	= ARRAY_SIZE(sm8550_ufsphy_pcs),
+ 	},
++	.tbls_hs_b = {
++		.serdes		= sm8550_ufsphy_hs_b_serdes,
++		.serdes_num	= ARRAY_SIZE(sm8550_ufsphy_hs_b_serdes),
++	},
+ 	.clk_list		= sdm845_ufs_phy_clk_l,
+ 	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
+ 	.vreg_list		= qmp_phy_vreg_l,
 -- 
-With best wishes
-Dmitry
+2.7.4
 
-On Sun, 24 Dec 2023 at 08:16, Dmitry Baryshkov
-<dmitry.baryshkov@linaro.org> wrote:
->
-> On Sat, 23 Dec 2023 at 13:55, Abel Vesa <abel.vesa@linaro.org> wrote:
-> >
-> > For consistency, add the QMP v6 registers layout even though
-> > they are the same as v5. Also switch all QMP v6 PHYs to use this
-> > new layout.
-> >
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 ++++++++++---
-> >  1 file changed, 10 insertions(+), 3 deletions(-)
->
-> On Thu, 21 Dec 2023 at 05:51, Bjorn Andersson <quic_bjorande@quicinc.com> wrote:
-> >
-> > The SA8295P and SA8540P uses an external regulator (max20411), and
-> > gfx.lvl is not provided by rpmh. Drop the power-domains property of the
-> > gpucc node to reflect this.
-> >
-> > Fixes: eec51ab2fd6f ("arm64: dts: qcom: sc8280xp: Add GPU related nodes")
-> > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
-> > ---
-> >  arch/arm64/boot/dts/qcom/sa8540p.dtsi | 2 ++
-> >  1 file changed, 2 insertions(+)
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->
-> --
-> With best wishes
-> Dmitry
-
-
-
--- 
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
