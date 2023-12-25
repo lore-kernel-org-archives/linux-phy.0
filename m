@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C07FC47072
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC180C47074
 	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 12:03:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xbEmWpDYM9LlQ8Xae1e0LT2v8+EyT5PcOHgRuC5XESc=; b=ojUDNUiXTtf0S8
-	WD/wkK9eU6CFDCBPxsQJh1hpIqyMzhxGX3w2MxZ9R8btsQxhe8GM0jpVqyhJja/B653uLrmAYCaoZ
-	oLltUpEgkzL+oyWJe3NNg4+HfPZGM247u4aZD+fUKAL5oE9zpiiawZPDtWVgTjyaAB5/L4eO+JnZZ
-	SG4uiMXmPPkCY7JYE6W1y6X5rhDoKr3PTLGH9gQbD52vXvYNFwU/2ugJ3C+MliDYzQi7/0eCRIIwt
-	M/8tAQ8Q5VVEMbiR4TX7Xzi3Me0Hl8e5mBiu5ztj0zy3HmVp2LQEJuZTWdH/cnjmHbcpZBa0HJ2mg
-	vn/Zcw/EVwHd2g8efDPg==;
+	List-Owner; bh=wPYzXGLprqMZf/CdTM/MnltDJFzHO9ryp2RVunSMSy0=; b=FHDb0qzZkgoI7u
+	nj9StwPUH4DOZkr/TgYC8b81csQjuIGUeAPcM+R31hKRjvyqpYRTqVqcUgZPJKPLVecy4DC39wJRT
+	31CB5LqgdvVnt6Wrabwa4ItZKJeRA5vgviaIvy0MB4l9qy+SXApkMmsY33e0m8PGo8OeQAs/jvVlC
+	vroQAzhOIecoefHRrXW7qimy2xsoZEmFXZCFp20l1uD8O5lkVznnzXzUEqMloIRgTSiUBRoKesTOo
+	x6Fcias4H8cUU/0r8Pp7jSQqP1qWJJWe+VQQw4bbPtQCw5tKujtWUOygQ7iP0t2C+FYmvia/wtu8I
+	u5coBAWrqyQE/cfIkWKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgQ-00Amx4-0R;
+	id 1rHjgQ-00AmxR-1U;
 	Mon, 25 Dec 2023 12:03:46 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgM-00Amrc-2A
+	id 1rHjgN-00Amsn-0a
 	for linux-phy@lists.infradead.org;
-	Mon, 25 Dec 2023 12:03:43 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-40d22d3e751so27574235e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 04:03:42 -0800 (PST)
+	Mon, 25 Dec 2023 12:03:44 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-40c60dfa5bfso45430645e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 04:03:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1703505821; x=1704110621; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1703505822; x=1704110622; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=wA2GwbVoxb7vt9RNqPQ+B0nt5JREg2MA/Ix8qlZazuQ=;
-        b=kI6pq2tlTXXToyqfpNFjRhAQpfqf4hhJJDhSnA9AQp2jABAu54INUKYRd6YfW0QH/U
-         thLKylkLjwkD/KoQR7DySEoD9z5pUCJPnJOKNo3gJX/eJLalRieSoIbSQDwrDxMJPWI/
-         oZbgYmx4fbxP9vBgcQtgovLrQsn1Qu8udsRMHZYxehCZNCdwU7fGy9Ez2FBsWbAEc8Yc
-         rH3J/8Y5Zg592zR1euNVItBw2NQoKG919YCKFcrGV7s3EsBrEAQJUUiN1bpQl14Af7jH
-         NpAXTxX7s0w3gPvco8h+dLDcj7Wvq9X9YnPv0wS9SRjRWd5db/ZjoppYjObm+BjcQlbV
-         Vs1w==
+        bh=5brTRSD7VKH6s5ZdAUAu2zmtV4YnYCW0hXVi17eq6+g=;
+        b=CI6RzQyF3zfm9VcCNuBv6d5O8Lx6zDCRcTxkKVZLFfY7SxnFCTwRz/I1d3IhO5D5JN
+         7R5p4eUNX1mXGZEWj7qU4hHSJPEw+lGctJ0BDeGv9MSo50UoMytQz9kAiX+LQDo4hoA6
+         m7RXjGYaQmYmv98e+Wbrho/hRSIhpNiHp2mJt54vv+KZt8Ksj7/4z8EEpFqC2ZNcJUDa
+         6KRyzRju2HJKvBjYysN0FIMQPmDQvspi1vznb3gwHfEFAGhqtiKdib+1utB3KPFAWwdv
+         iyrhs1zdwt9EdITZCDSmGPvPo7ScMEoqRQP5WgxNVL+SKCMeuNJvc9BrHoMLNLt98jsW
+         5MeA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703505821; x=1704110621;
+        d=1e100.net; s=20230601; t=1703505822; x=1704110622;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=wA2GwbVoxb7vt9RNqPQ+B0nt5JREg2MA/Ix8qlZazuQ=;
-        b=p/pVAc5m+Qp09WA4cgDF7GNPkXsg8wGxGxJqZiFU6RYTin9PRol//vYAkLCa2U9NZ2
-         efuQVG6pmSxXkfeIrbABlkMmxdOnNFT2h4T/kVY8ZBdm/ve2V/pTctSy1Hd0hRTp+YB+
-         NNTxrVit4IM+J4VJ83+bInEqDh6XOTSne2B8pqA9kR4KmuoSJ6I0q4eSv9oUDcx2Jesc
-         pah5X7oUd+7H6mVobQ19qNd4e3RowmJpa/t0JQihGY1BRalVXUgKahHJaCl+bc8lflil
-         9agDg0Ast5D4DLsWJJgsAuI2gwILjWT62TlQfJSi7zfBKaMf0lBdg5F5QC1p9IRnnHV2
-         ZtsA==
-X-Gm-Message-State: AOJu0YzCdthvqxC1W18Wm/yxwAPNhpPTrxdE/SPQp2xrMWX0GKKdYFZ0
-	TWoau1kpefLE/IWthTydNTk=
-X-Google-Smtp-Source: AGHT+IFC0NQhcxu6RcuvKfgUGzeb1uVPeKQOxXZlwOy4+uTIL/cxXPsw2nN6RyAnz8JE2poyss5tRQ==
-X-Received: by 2002:a05:600c:3548:b0:40d:4d60:5276 with SMTP id i8-20020a05600c354800b0040d4d605276mr2111975wmq.142.1703505820534;
-        Mon, 25 Dec 2023 04:03:40 -0800 (PST)
+        bh=5brTRSD7VKH6s5ZdAUAu2zmtV4YnYCW0hXVi17eq6+g=;
+        b=AC8OWpsWoN/RJbt1TRKOoygdJW89yJ+jxuWZZ/H70HDVh9Oa969RxhzWBxlBea3Rh6
+         IoESoVq55ek3W1TVj1qI/X4GDW95z5CwKfNGbKKUFNhac5ZF85QKhLNDAk1Y0DKkb5Nv
+         V+ZNj1HWZ0+Gjic4ZSarAhlfXjivqh3Ca1Su/ZNSMhARKsgyEHDsHxJbN/6XF3UUEKNb
+         BQg13iAW40OOREbiJeLwRG7czNGDJn4JN8fA26bhFwS4A2PurAVH3FqQz+L66NL+dru1
+         LS7ifCMAwCbkOrhsbBu2yTpHrKC1dBbesy0G01Yiw0DNVm1v41iy8ef22AfYYZG7JTGy
+         q1eA==
+X-Gm-Message-State: AOJu0YxWiAH3b4a0HLfNeRI495hqZiYqYGfp3d8OSVwyesKBdfEcYei1
+	JpaSMqN//R/a0uUMoEWCfzo=
+X-Google-Smtp-Source: AGHT+IFHLMVKU018jt4XmkVhXpMI+8bK+AStn2t750d5ydJIRbx+bgO9nhFTFfH4CMG0769heh2oOw==
+X-Received: by 2002:a05:600c:5027:b0:40b:4c39:b4e with SMTP id n39-20020a05600c502700b0040b4c390b4emr3193558wmr.1.1703505821662;
+        Mon, 25 Dec 2023 04:03:41 -0800 (PST)
 Received: from david-ryuzu.fritz.box ([178.26.111.208])
-        by smtp.googlemail.com with ESMTPSA id 14-20020a05600c020e00b0040d23cea7bcsm6349456wmi.1.2023.12.25.04.03.39
+        by smtp.googlemail.com with ESMTPSA id 14-20020a05600c020e00b0040d23cea7bcsm6349456wmi.1.2023.12.25.04.03.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 25 Dec 2023 04:03:40 -0800 (PST)
+        Mon, 25 Dec 2023 04:03:41 -0800 (PST)
 From: David Wronek <davidwronek@gmail.com>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>,
@@ -89,16 +89,17 @@ Cc: cros-qcom-dts-watchers@chromium.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	phone-devel@vger.kernel.org,
 	David Wronek <davidwronek@gmail.com>
-Subject: [PATCH v3 5/8] phy: qcom: qmp-ufs: Add SC7180 support
-Date: Mon, 25 Dec 2023 12:59:58 +0100
-Message-ID: <20231225120327.166160-6-davidwronek@gmail.com>
+Subject: [PATCH v3 6/8] arm64: dts: qcom: sc7180: Add UFS nodes
+Date: Mon, 25 Dec 2023 12:59:59 +0100
+Message-ID: <20231225120327.166160-7-davidwronek@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20231225120327.166160-1-davidwronek@gmail.com>
 References: <20231225120327.166160-1-davidwronek@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231225_040342_748859_A0E2B86C 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20231225_040343_232527_D8B2A4ED 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,28 +116,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SC7180 UFS PHY is identical to the one found on SM7150. Add a
-compatible for it.
+Add the UFS, QMP PHY and ICE nodes for the Qualcomm SC7180 SoC.
 
 Signed-off-by: David Wronek <davidwronek@gmail.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/qcom/sc7180.dtsi | 70 ++++++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 3c2e6255e26f..0276de802d78 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1880,6 +1880,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sa8775p-qmp-ufs-phy",
- 		.data = &sa8775p_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sc7180-qmp-ufs-phy",
-+		.data = &sm7150_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sc7280-qmp-ufs-phy",
- 		.data = &sc7280_ufsphy_cfg,
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 4dcaa15caef2..93c867cac755 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -1532,6 +1532,76 @@ mmss_noc: interconnect@1740000 {
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 		};
+ 
++		ufs_mem_hc: ufshc@1d84000 {
++			compatible = "qcom,sc7180-ufshc", "qcom,ufshc",
++				     "jedec,ufs-2.0";
++			reg = <0 0x01d84000 0 0x3000>;
++			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
++			phys = <&ufs_mem_phy>;
++			phy-names = "ufsphy";
++			lanes-per-direction = <1>;
++			#reset-cells = <1>;
++			resets = <&gcc GCC_UFS_PHY_BCR>;
++			reset-names = "rst";
++
++			power-domains = <&gcc UFS_PHY_GDSC>;
++
++			iommus = <&apps_smmu 0xa0 0x0>;
++
++			clock-names = "core_clk",
++				      "bus_aggr_clk",
++				      "iface_clk",
++				      "core_clk_unipro",
++				      "ref_clk",
++				      "tx_lane0_sync_clk",
++				      "rx_lane0_sync_clk";
++			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_UFS_PHY_AHB_CLK>,
++				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
++				 <&rpmhcc RPMH_CXO_CLK>,
++				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
++				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>;
++			freq-table-hz = <50000000 200000000>,
++					<0 0>,
++					<0 0>,
++					<37500000 150000000>,
++					<0 0>,
++					<0 0>,
++					<0 0>;
++
++			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
++					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
++					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
++					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
++			interconnect-names = "ufs-ddr", "cpu-ufs";
++
++			qcom,ice = <&ice>;
++
++			status = "disabled";
++		};
++
++		ufs_mem_phy: phy@1d87000 {
++			compatible = "qcom,sc7180-qmp-ufs-phy",
++				     "qcom,sm7150-qmp-ufs-phy";
++			reg = <0 0x01d87000 0 0x1000>;
++			clocks = <&gcc GCC_UFS_MEM_CLKREF_CLK>,
++				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
++			clock-names = "ref", "ref_aux";
++			power-domains = <&gcc UFS_PHY_GDSC>;
++			resets = <&ufs_mem_hc 0>;
++			reset-names = "ufsphy";
++			#phy-cells = <0>;
++			status = "disabled";
++		};
++
++		ice: crypto@1d90000 {
++			compatible = "qcom,sc7180-inline-crypto-engine",
++				     "qcom,inline-crypto-engine";
++			reg = <0 0x01d90000 0 0x8000>;
++			clocks = <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
++		};
++
+ 		ipa: ipa@1e40000 {
+ 			compatible = "qcom,sc7180-ipa";
+ 
 -- 
 2.43.0
 
