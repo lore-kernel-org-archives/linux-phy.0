@@ -4,84 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B673C3DA6E
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 18:37:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A77EC3DA6E
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 22:20:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=myMYYqAx56WeiY0WtUm996UHGtrqURYu+CANgEf479k=; b=N+90SwpL5cIgbw
-	lF8DQLjXnq/Sa/iFFSZR/n7L2RMklsaBebuGjPHASXbj6d5cfpMg99Jwe+dx78FvbRTM4IEeASD6m
-	TqIbKtyTsNYg4Zi337C3Q7uVz4JFzCYjnNAA3GE9XDLtxf+OZF2mCPz9AB1wwRd+YHn4wLVSGDoHb
-	1U7gx+C+U3dtXXFPc1B0tyazVIhWs0wwUap0lo/87hCTokS9+vPErL4+avmOhBVB9Wo9tKkAWgBaC
-	/L812ml9ZiCjrZDudCvcXi75dWdeGH3fh5TUseml0zr09HNgd+KdXXXWswBziR830jIAPlinMdntY
-	YDdjw9aNalBzxUL0Ig4w==;
+	List-Owner; bh=cUVc9WdrMy0N9My6jZy2583RcF2Db/cvs1s3tV21dWg=; b=eI5K41NUQOSrvO
+	1x4hp6eP88lXyIElFLSKs8Xy69f3Cz/S+b3MyvXKhUYmL8mp1yq+CWmmCACa/OIJOHJKVfX7GOFGO
+	VIPFgnELZ+3/iO1CA8j3zIM6dihAdQEngETnQQR990uBlQYlsCu8RHWUozNO3fm0Ebe2BFpQVo2Yp
+	rIk28HKhI0CP2pkO4j0q9jHlsivGCJe8/PisV53mwkdetzwEmJ1/yLRHhD2cNPlnfOTKmImMruVR0
+	xVTHYbtyqz6fs8ZtH9Vb5GhIpYPebLJGCaQmOv9rgC7sIwS3lyBDTj2LYeuE2fZLl00Xh6mAt15LB
+	QmBeqW5mxo2ruFLdr2DA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHpoy-00BBWT-0R;
-	Mon, 25 Dec 2023 18:37:00 +0000
-Received: from mail-qk1-x72d.google.com ([2607:f8b0:4864:20::72d])
+	id 1rHtJH-00BJwf-2m;
+	Mon, 25 Dec 2023 22:20:31 +0000
+Received: from mgamail.intel.com ([134.134.136.24])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHpov-00BBW5-1d
+	id 1rHtJE-00BJvJ-1u
 	for linux-phy@lists.infradead.org;
-	Mon, 25 Dec 2023 18:36:58 +0000
-Received: by mail-qk1-x72d.google.com with SMTP id af79cd13be357-781161d18ecso315028885a.3
-        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 10:36:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1703529416; x=1704134216; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=rhuoQDM0PcQ1Hf0mmTK6WXCkbN9R/6E9/xIlxdvn19s=;
-        b=ckkrWl8JnIGLFrjKfsq6Lhr0M64+TKfGW3CSwmHbmrW8wABBUvXCliq0fok/Biz9oi
-         QN5wR9MXUMZ+OTvXMM8jlGtpvNXb/yd8p52DvNaN+qYQmC0EDKOsQB745xz2no173z+q
-         +b831ZxkOnRuiD8N1QOrv+WbH2ROis1UEy9sIq657+9LkIrNcw5RuZawMocq0h+1mza9
-         YOEMHEvM6wLVRoWjrpgLBapwuP3ZI7lr57YH+/mAse2xM+QethohfwNO4xdy5AyEQ7e1
-         Gl16owjkd7NgznJiq2ll7lnvEsgB2n0pL377OPj2m/kmXkR7R0auxeZsHv2062vn7txQ
-         ArUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703529416; x=1704134216;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=rhuoQDM0PcQ1Hf0mmTK6WXCkbN9R/6E9/xIlxdvn19s=;
-        b=ElY8CPNNZciJfFiqET7ySnP3DizfIT1jaRSfO0FklbmYRbj5O/Bqiwjn8uxzwlDWi5
-         wPA85g6bJbKpIJO0TfZpTCNxVjfe40aJBvIuFfVUMcGciqDs7xNSjaXP7kBYpZ4jb+su
-         5aICpbu2QqdPgOGfEf6sTg2NilVLaJ+Tt22ilNyvIKrvbm0QlXFM65lhMT1/M2E0P6GU
-         kw0o8aEpjxcZTa1TIwmHDLbwky3BDjSt9aKpT0CkSDZi7FCrf74I0HSZkrVVlfB8Nauv
-         S31XADRGC/R8CxHks+Ud4smceexaNt0n3E7ATjQigbkwj8zMVBk70AxgRzcGX5optyxh
-         TFfg==
-X-Gm-Message-State: AOJu0YwkJ8xiYiVlW2kCYKdl51cr9FREQ/iH+vwI7JgzwNA5OLapEWw6
-	0Ns4mwkObkrBsLAHodkTS72mW/sVrqWbgJicrkkbaweIz1pDdw==
-X-Google-Smtp-Source: AGHT+IE8CS08JUcDq3WI+3+8WI11iUmJs6u/1qSNRmsQnNIvWnx6Y9KlEVMPs7h/FyiJgfivx9Js3Ldg5moOhBHrYkY=
-X-Received: by 2002:ae9:c012:0:b0:77f:b722:50c4 with SMTP id
- u18-20020ae9c012000000b0077fb72250c4mr7269847qkk.83.1703529415782; Mon, 25
- Dec 2023 10:36:55 -0800 (PST)
+	Mon, 25 Dec 2023 22:20:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1703542828; x=1735078828;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=sIIlrh2fCtHoNyDW0ONZAjJ/8f7/sd/eRf5K65yxIcw=;
+  b=Dg/7DDPcPR8UAqDQ4LutDAJ45Y9E37e890S0bebi25xsu2cxM7KL/UYG
+   WzlziVRURodmZNnU8HOzfWGSSI9AQiENckczjochgwaZu015FofkbDQ9L
+   x8zq9sMBTxzDoeGGAr2Z5PeYUQ10tigbZb6WwU1N92ek71ovepemW+20R
+   hI4P5d/jZ4lMfiw2dm2SlZa1X2GXOXOhP/xeOq+gS1MhQ5Aoerxo63k0K
+   W59E+RVRZjycdCC+jz5/qp5Gj610SMX1405L6can7r5ZBznPJaJyuVpCt
+   Xcz2tXN9vJPZq3rb3XGcUBYF8wGpnlZm6+5wDrw1yw9+dnaoEzYkiLsKe
+   g==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10934"; a="399090966"
+X-IronPort-AV: E=Sophos;i="6.04,304,1695711600"; 
+   d="scan'208";a="399090966"
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+  by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Dec 2023 14:20:08 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10934"; a="1109224724"
+X-IronPort-AV: E=Sophos;i="6.04,304,1695711600"; 
+   d="scan'208";a="1109224724"
+Received: from lkp-server02.sh.intel.com (HELO b07ab15da5fe) ([10.239.97.151])
+  by fmsmga005.fm.intel.com with ESMTP; 25 Dec 2023 14:20:05 -0800
+Received: from kbuild by b07ab15da5fe with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1rHtIo-000Dib-2o;
+	Mon, 25 Dec 2023 22:20:02 +0000
+Date: Tue, 26 Dec 2023 06:19:38 +0800
+From: kernel test robot <lkp@intel.com>
+To: Can Guo <quic_cang@quicinc.com>, bvanassche@acm.org, mani@kernel.org,
+	vkoul@kernel.org, abel.vesa@linaro.org, dmitry.baryshkov@linaro.org,
+	neil.armstrong@linaro.org
+Cc: oe-kbuild-all@lists.linux.dev, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v9 2/2] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed
+ Gear 5 support for SM8550
+Message-ID: <202312260623.FFykk4qF-lkp@intel.com>
+References: <1703472701-34197-3-git-send-email-quic_cang@quicinc.com>
 MIME-Version: 1.0
-References: <20231225120327.166160-1-davidwronek@gmail.com> <20231225120327.166160-6-davidwronek@gmail.com>
-In-Reply-To: <20231225120327.166160-6-davidwronek@gmail.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 25 Dec 2023 20:36:44 +0200
-Message-ID: <CAA8EJpq1QiWwJ1dk9xtaY=0pXr0y-QfoibXyX4SZR=YbxjRBVg@mail.gmail.com>
-Subject: Re: [PATCH v3 5/8] phy: qcom: qmp-ufs: Add SC7180 support
-To: David Wronek <davidwronek@gmail.com>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller" <davem@davemloft.net>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
-	Joe Mason <buddyjojo06@outlook.com>, hexdump0815@googlemail.com, 
-	cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-crypto@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-scsi@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht, 
-	phone-devel@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <1703472701-34197-3-git-send-email-quic_cang@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231225_103657_595065_08A093A6 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20231225_142028_673678_34DD8A63 
+X-CRM114-Status: GOOD (  12.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,21 +91,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 25 Dec 2023 at 14:05, David Wronek <davidwronek@gmail.com> wrote:
->
-> The SC7180 UFS PHY is identical to the one found on SM7150. Add a
-> compatible for it.
->
-> Signed-off-by: David Wronek <davidwronek@gmail.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
->  1 file changed, 3 insertions(+)
+Hi Can,
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on linus/master]
+[also build test ERROR on v6.7-rc7]
+[cannot apply to next-20231222]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Can-Guo/phy-qualcomm-phy-qcom-qmp-ufs-Add-High-Speed-Gear-5-support-for-SM8550/20231225-154853
+base:   linus/master
+patch link:    https://lore.kernel.org/r/1703472701-34197-3-git-send-email-quic_cang%40quicinc.com
+patch subject: [PATCH v9 2/2] phy: qualcomm: phy-qcom-qmp-ufs: Add High Speed Gear 5 support for SM8550
+config: arc-randconfig-001-20231225 (https://download.01.org/0day-ci/archive/20231226/202312260623.FFykk4qF-lkp@intel.com/config)
+compiler: arc-elf-gcc (GCC) 13.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20231226/202312260623.FFykk4qF-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202312260623.FFykk4qF-lkp@intel.com/
+
+All error/warnings (new ones prefixed by >>):
+
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1071:10: error: 'const struct qmp_phy_cfg' has no member named 'tbls_hs_g4'; did you mean 'tbls_hs_b'?
+    1071 |         .tbls_hs_g4 = {
+         |          ^~~~~~~~~~
+         |          tbls_hs_b
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1072:17: error: field name not in record or union initializer
+    1072 |                 .tx             = sm8250_ufsphy_hs_g4_tx,
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1072:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1073:17: error: field name not in record or union initializer
+    1073 |                 .tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1073:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   In file included from include/linux/kernel.h:16,
+                    from include/linux/clk.h:13,
+                    from drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:6:
+>> include/linux/array_size.h:11:25: warning: initialization of 'const struct qmp_phy_init_tbl *' from 'unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1073:35: note: in expansion of macro 'ARRAY_SIZE'
+    1073 |                 .tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
+         |                                   ^~~~~~~~~~
+   include/linux/array_size.h:11:25: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay[1].serdes')
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1073:35: note: in expansion of macro 'ARRAY_SIZE'
+    1073 |                 .tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
+         |                                   ^~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1074:17: error: field name not in record or union initializer
+    1074 |                 .rx             = sc7280_ufsphy_hs_g4_rx,
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1074:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:17: warning: excess elements in array initializer
+    1075 |                 .rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:17: error: field name not in record or union initializer
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+>> include/linux/array_size.h:11:25: warning: initialization of 'const struct qmp_phy_init_tbl *' from 'unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:35: note: in expansion of macro 'ARRAY_SIZE'
+    1075 |                 .rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
+         |                                   ^~~~~~~~~~
+   include/linux/array_size.h:11:25: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay[2].serdes')
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1075:35: note: in expansion of macro 'ARRAY_SIZE'
+    1075 |                 .rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
+         |                                   ^~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1076:17: warning: excess elements in array initializer
+    1076 |                 .pcs            = sm8150_ufsphy_hs_g4_pcs,
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1076:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1076:17: error: field name not in record or union initializer
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1076:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:17: warning: excess elements in array initializer
+    1077 |                 .pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
+         |                 ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:17: error: field name not in record or union initializer
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:17: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+>> include/linux/array_size.h:11:25: warning: initialization of 'const struct qmp_phy_init_tbl *' from 'unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:35: note: in expansion of macro 'ARRAY_SIZE'
+    1077 |                 .pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
+         |                                   ^~~~~~~~~~
+   include/linux/array_size.h:11:25: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay[2].serdes')
+      11 | #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]) + __must_be_array(arr))
+         |                         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1077:35: note: in expansion of macro 'ARRAY_SIZE'
+    1077 |                 .pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
+         |                                   ^~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1078:9: warning: excess elements in array initializer
+    1078 |         },
+         |         ^
+   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1078:9: note: (near initialization for 'sc7280_ufsphy_cfg.tbls_hs_overlay')
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1052:53: warning: missing braces around initializer [-Wmissing-braces]
+    1052 | static const struct qmp_phy_cfg sc7280_ufsphy_cfg = {
+         |                                                     ^
+>> drivers/phy/qualcomm/phy-qcom-qmp-ufs.c:1052:53: warning: missing braces around initializer [-Wmissing-braces]
+
+
+vim +1071 drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+
+607c101fe9f2f6 Bartosz Golaszewski 2023-04-11  1051  
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1052  static const struct qmp_phy_cfg sc7280_ufsphy_cfg = {
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1053  	.lanes                  = 2,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1054  
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1055  	.offsets                = &qmp_ufs_offsets,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1056  
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1057  	.tbls = {
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1058  		.serdes         = sm8150_ufsphy_serdes,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1059  		.serdes_num     = ARRAY_SIZE(sm8150_ufsphy_serdes),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1060  		.tx             = sc7280_ufsphy_tx,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1061  		.tx_num         = ARRAY_SIZE(sc7280_ufsphy_tx),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1062  		.rx             = sc7280_ufsphy_rx,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1063  		.rx_num         = ARRAY_SIZE(sc7280_ufsphy_rx),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1064  		.pcs            = sc7280_ufsphy_pcs,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1065  		.pcs_num        = ARRAY_SIZE(sc7280_ufsphy_pcs),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1066  	},
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1067  	.tbls_hs_b = {
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1068  		.serdes         = sm8150_ufsphy_hs_b_serdes,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1069  		.serdes_num     = ARRAY_SIZE(sm8150_ufsphy_hs_b_serdes),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1070  	},
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1071  	.tbls_hs_g4 = {
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1072  		.tx             = sm8250_ufsphy_hs_g4_tx,
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1073  		.tx_num         = ARRAY_SIZE(sm8250_ufsphy_hs_g4_tx),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1074  		.rx             = sc7280_ufsphy_hs_g4_rx,
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1075  		.rx_num         = ARRAY_SIZE(sc7280_ufsphy_hs_g4_rx),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1076  		.pcs            = sm8150_ufsphy_hs_g4_pcs,
+8abe9792d1ff7e Nitin Rawat         2023-09-19 @1077  		.pcs_num        = ARRAY_SIZE(sm8150_ufsphy_hs_g4_pcs),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1078  	},
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1079  	.clk_list               = sm8450_ufs_phy_clk_l,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1080  	.num_clks               = ARRAY_SIZE(sm8450_ufs_phy_clk_l),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1081  	.vreg_list              = qmp_phy_vreg_l,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1082  	.num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1083  	.regs                   = ufsphy_v4_regs_layout,
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1084  };
+8abe9792d1ff7e Nitin Rawat         2023-09-19  1085  
 
 -- 
-With best wishes
-Dmitry
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
