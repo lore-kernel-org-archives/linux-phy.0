@@ -4,101 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D838C3DA6E
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 12:03:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B673C3DA6E
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Dec 2023 18:37:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJrvc/1ubUMlqTcu1T4gRqZlzcu5OmRl1puViA3GKCQ=; b=zmXRM9IR9NqbAO
-	1P60nCeqwyIgr7s3D/7GclooJrRA+HoSqxL47n39i1WdFAvTCqyVg0ush1J7yNBY+jFuGOKdOfsWt
-	bdi+XKpg3VHegj1h79Mm7B07YygVdHN3GGjzncEKIWxHxLToAV3INw5ZwR6/A2EsjAWsLKHGD/l+N
-	QPOromZ+3oSh6q7QNvu7a/XUsqWNLyFIghUYLJS2lqD6vjs1lWyUYCrPpAWXBuE4WY08dpf6QSAfc
-	tCz+rQgMI4yVf8OQm61ugrq8Q7abFpxy3RVXBTC8i0HpMvHO6WDaT66PUNqFj4piGOU/xFCwGVM3O
-	6ngXs2umPyyYRKTQbTig==;
+	List-Owner; bh=myMYYqAx56WeiY0WtUm996UHGtrqURYu+CANgEf479k=; b=N+90SwpL5cIgbw
+	lF8DQLjXnq/Sa/iFFSZR/n7L2RMklsaBebuGjPHASXbj6d5cfpMg99Jwe+dx78FvbRTM4IEeASD6m
+	TqIbKtyTsNYg4Zi337C3Q7uVz4JFzCYjnNAA3GE9XDLtxf+OZF2mCPz9AB1wwRd+YHn4wLVSGDoHb
+	1U7gx+C+U3dtXXFPc1B0tyazVIhWs0wwUap0lo/87hCTokS9+vPErL4+avmOhBVB9Wo9tKkAWgBaC
+	/L812ml9ZiCjrZDudCvcXi75dWdeGH3fh5TUseml0zr09HNgd+KdXXXWswBziR830jIAPlinMdntY
+	YDdjw9aNalBzxUL0Ig4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgS-00Amza-2t;
-	Mon, 25 Dec 2023 12:03:48 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1rHpoy-00BBWT-0R;
+	Mon, 25 Dec 2023 18:37:00 +0000
+Received: from mail-qk1-x72d.google.com ([2607:f8b0:4864:20::72d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHjgP-00AmvD-0y
+	id 1rHpov-00BBW5-1d
 	for linux-phy@lists.infradead.org;
-	Mon, 25 Dec 2023 12:03:46 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-40d4a7f0d17so25968275e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 04:03:45 -0800 (PST)
+	Mon, 25 Dec 2023 18:36:58 +0000
+Received: by mail-qk1-x72d.google.com with SMTP id af79cd13be357-781161d18ecso315028885a.3
+        for <linux-phy@lists.infradead.org>; Mon, 25 Dec 2023 10:36:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1703505824; x=1704110624; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=aBQy6vgMSA/KrUei65+R4AvaCjiClzbb1i54FcWf2Kc=;
-        b=UVy/KzpOqlJ3aq/DFSzYZoee44Yvn5wuYA9mJQa385Y5hy6dD4Da1Hqu0TJKX3ZGxs
-         UT6WkqgJvD8QzeAVpPpCJylUY0GC4r6xtBbWOOnEaWIzcEPFTqGDdoGlkoBKZuApP8o7
-         MUCNKOVlx2jyrbRxKeFpWxLKv9sRf9Rn9gqEyqvajz4x12jpYeNNAGlRgO8Hg11CG/aK
-         vypljNloLkEjg4FMb+K52zH8UV9BsZBTLgLv7m8ocQfeYhVl1BpmBVITfJ73oPRf2Slz
-         jDneWS7BYYYqswJzTfCajAWImjJEkH6K0SnzATM49ZNQ0R/J43qsCURjc45UMoLgSLay
-         xQPw==
+        d=linaro.org; s=google; t=1703529416; x=1704134216; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=rhuoQDM0PcQ1Hf0mmTK6WXCkbN9R/6E9/xIlxdvn19s=;
+        b=ckkrWl8JnIGLFrjKfsq6Lhr0M64+TKfGW3CSwmHbmrW8wABBUvXCliq0fok/Biz9oi
+         QN5wR9MXUMZ+OTvXMM8jlGtpvNXb/yd8p52DvNaN+qYQmC0EDKOsQB745xz2no173z+q
+         +b831ZxkOnRuiD8N1QOrv+WbH2ROis1UEy9sIq657+9LkIrNcw5RuZawMocq0h+1mza9
+         YOEMHEvM6wLVRoWjrpgLBapwuP3ZI7lr57YH+/mAse2xM+QethohfwNO4xdy5AyEQ7e1
+         Gl16owjkd7NgznJiq2ll7lnvEsgB2n0pL377OPj2m/kmXkR7R0auxeZsHv2062vn7txQ
+         ArUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703505824; x=1704110624;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=aBQy6vgMSA/KrUei65+R4AvaCjiClzbb1i54FcWf2Kc=;
-        b=GdP2VnneImAHcP4N76bclRZi8dj93NA4s9qNmKwlIC9dTlMRPXi+Ffa5bELb0uvmR+
-         XxM/1pJuCLq0DfcidgAmUkenUOWV6VM7ASQsDIBFrTQnoborTRRViNoLXqqXTyzLn2am
-         IJAEnsLQwsGt74sSQye49no6NXM/bmx1cjiaATvVFf3JFLBSwOUxI6Fs5sirrrv5UF+q
-         ETJ0ipgCpLm7gZLNHaFfvnW0xZrKACWR2T990EqQLDwo0pjTolcLTSUA9lF7m7GNcM/e
-         nl5kcGwvRRoFXNZTvLt8kPrhz1XD1vlDNDQw60k+gySjzTZYyheAxbm+B+/4aAzuchUL
-         M2qw==
-X-Gm-Message-State: AOJu0Yx0tiuUp6di5MXi+MUOzqc7vZcH9hg26xBtW7teIr3BtHWzp4Ei
-	HX8iZuR+Vc2ZTDusK3Vimb0=
-X-Google-Smtp-Source: AGHT+IFqYujQM7qzRs2hqVvPlvkA+1xWN0S8j43BWOm5G7302VwXXV0bEQzIw5oXkTC1ANPIxeyy+A==
-X-Received: by 2002:a05:600c:2203:b0:40d:33eb:d46a with SMTP id z3-20020a05600c220300b0040d33ebd46amr3045684wml.141.1703505823841;
-        Mon, 25 Dec 2023 04:03:43 -0800 (PST)
-Received: from david-ryuzu.fritz.box ([178.26.111.208])
-        by smtp.googlemail.com with ESMTPSA id 14-20020a05600c020e00b0040d23cea7bcsm6349456wmi.1.2023.12.25.04.03.42
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 25 Dec 2023 04:03:43 -0800 (PST)
-From: David Wronek <davidwronek@gmail.com>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	"David S . Miller" <davem@davemloft.net>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Joe Mason <buddyjojo06@outlook.com>,
-	hexdump0815@googlemail.com
-Cc: cros-qcom-dts-watchers@chromium.org,
-	linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-crypto@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht,
-	phone-devel@vger.kernel.org,
-	David Wronek <davidwronek@gmail.com>
-Subject: [PATCH v3 8/8] arm64: dts: qcom: Add support for Xiaomi Redmi Note 9S
-Date: Mon, 25 Dec 2023 13:00:01 +0100
-Message-ID: <20231225120327.166160-9-davidwronek@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20231225120327.166160-1-davidwronek@gmail.com>
-References: <20231225120327.166160-1-davidwronek@gmail.com>
+        d=1e100.net; s=20230601; t=1703529416; x=1704134216;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rhuoQDM0PcQ1Hf0mmTK6WXCkbN9R/6E9/xIlxdvn19s=;
+        b=ElY8CPNNZciJfFiqET7ySnP3DizfIT1jaRSfO0FklbmYRbj5O/Bqiwjn8uxzwlDWi5
+         wPA85g6bJbKpIJO0TfZpTCNxVjfe40aJBvIuFfVUMcGciqDs7xNSjaXP7kBYpZ4jb+su
+         5aICpbu2QqdPgOGfEf6sTg2NilVLaJ+Tt22ilNyvIKrvbm0QlXFM65lhMT1/M2E0P6GU
+         kw0o8aEpjxcZTa1TIwmHDLbwky3BDjSt9aKpT0CkSDZi7FCrf74I0HSZkrVVlfB8Nauv
+         S31XADRGC/R8CxHks+Ud4smceexaNt0n3E7ATjQigbkwj8zMVBk70AxgRzcGX5optyxh
+         TFfg==
+X-Gm-Message-State: AOJu0YwkJ8xiYiVlW2kCYKdl51cr9FREQ/iH+vwI7JgzwNA5OLapEWw6
+	0Ns4mwkObkrBsLAHodkTS72mW/sVrqWbgJicrkkbaweIz1pDdw==
+X-Google-Smtp-Source: AGHT+IE8CS08JUcDq3WI+3+8WI11iUmJs6u/1qSNRmsQnNIvWnx6Y9KlEVMPs7h/FyiJgfivx9Js3Ldg5moOhBHrYkY=
+X-Received: by 2002:ae9:c012:0:b0:77f:b722:50c4 with SMTP id
+ u18-20020ae9c012000000b0077fb72250c4mr7269847qkk.83.1703529415782; Mon, 25
+ Dec 2023 10:36:55 -0800 (PST)
 MIME-Version: 1.0
+References: <20231225120327.166160-1-davidwronek@gmail.com> <20231225120327.166160-6-davidwronek@gmail.com>
+In-Reply-To: <20231225120327.166160-6-davidwronek@gmail.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 25 Dec 2023 20:36:44 +0200
+Message-ID: <CAA8EJpq1QiWwJ1dk9xtaY=0pXr0y-QfoibXyX4SZR=YbxjRBVg@mail.gmail.com>
+Subject: Re: [PATCH v3 5/8] phy: qcom: qmp-ufs: Add SC7180 support
+To: David Wronek <davidwronek@gmail.com>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller" <davem@davemloft.net>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
+	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Joe Mason <buddyjojo06@outlook.com>, hexdump0815@googlemail.com, 
+	cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-crypto@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-scsi@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht, 
+	phone-devel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231225_040345_339967_EE33268B 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20231225_103657_595065_08A093A6 
+X-CRM114-Status: GOOD (  10.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,57 +98,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Joe Mason <buddyjojo06@outlook.com>
+On Mon, 25 Dec 2023 at 14:05, David Wronek <davidwronek@gmail.com> wrote:
+>
+> The SC7180 UFS PHY is identical to the one found on SM7150. Add a
+> compatible for it.
+>
+> Signed-off-by: David Wronek <davidwronek@gmail.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
+>  1 file changed, 3 insertions(+)
 
-Add a device tree for the Xiaomi Redmi Note 9S (curtana) phone, based on
-sm7125-xiaomi-common.dtsi.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-Signed-off-by: Joe Mason <buddyjojo06@outlook.com>
-Signed-off-by: David Wronek <davidwronek@gmail.com>
----
- arch/arm64/boot/dts/qcom/Makefile                |  1 +
- .../boot/dts/qcom/sm7125-xiaomi-curtana.dts      | 16 ++++++++++++++++
- 2 files changed, 17 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 39889d5f8e12..2e6984bbbb83 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -210,6 +210,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-sony-xperia-seine-pdx201.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6125-xiaomi-laurel-sprout.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6350-sony-xperia-lena-pdx213.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm6375-sony-xperia-murray-pdx225.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-curtana.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm7125-xiaomi-joyeuse.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm7225-fairphone-fp4.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sm8150-hdk.dtb
-diff --git a/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-new file mode 100644
-index 000000000000..12f517a8492c
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dts
-@@ -0,0 +1,16 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2023, Joe Mason <buddyjojo06@outlook.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "sm7125-xiaomi-common.dtsi"
-+
-+/ {
-+	model = "Xiaomi Redmi Note 9S";
-+	compatible = "xiaomi,curtana", "qcom,sm7125";
-+
-+	/* required for bootloader to select correct board */
-+	qcom,board-id = <0x20022 1>;
-+};
 -- 
-2.43.0
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
