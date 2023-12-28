@@ -4,86 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16134C4706F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C45D5C3DA6E
 	for <linux-phy@archiver.kernel.org>; Thu, 28 Dec 2023 05:42:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5geMVWep5clGiMrAdwtub+5U++pqeFswRSsOcR4krJw=; b=l7VfJHh4hRTLkJ
-	eRbfkEH2YzZl2boSpSPbeuX1LY1ETua0vHwS1tTv6TyBTh7SvSSYDps7A92geuX9C5ABz5B1PVZ3q
-	QuTZqi8nQKwDo51BdDs4C6M9Wl/y3ZaGtVZbqWPueC4O0o23wmYfflU6baoA8h5xCv62NPbAqfVxh
-	3QPst2TE1BfNMUvZBAov9TunzE/kBAOYMrtSKNcXwtknAw2YHrtf7AonAn81v9od86ozl40ufPxlN
-	SFG3uuRUmUmemHAHebcCYG7sAjh0nSVvF65XdKvsB13uHGGleP/IgGw4nLrmNPkUhn/Kn9BgqTzZ6
-	SJolbDSF2NrhRk+/LTCQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5XVDITjt8bo999WNsw0wMKh0Q3b3GEGijqdHW+KAwPs=; b=ip8xcvaFqznd1K
+	oDVtKF9r6gtR5hzMWqil26ZAumt6S7UidTzTIq+euvSkD4+rZfAL1euhVFGEMzKCGimTvD6yooRuW
+	8Pc9y+MDHTyRIlAz9ODujCt6lOXa7L/Nt8sxk8QnSewWr3xiQItASz1peikGCnuAjtHYrlYVGx/QJ
+	H5JpzrRT8YMUNazIK+PeIOHPYmEMrMGnrjzXhiDpla+tvvzMKhaFYlVo8LWDqO/TMuEElPOMuMs+2
+	Rd7aNkXkCdJTyH8Lhgmok1OhH6c4IHz1kgXgM1LWkz8bVwlBaLLZLYKsqu5vD2XnbI5IxNpG1iuua
+	r6mO2aMBfoGHMnCbBEBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rIjAV-00GB6G-2M;
+	id 1rIjAV-00GB66-1J;
 	Thu, 28 Dec 2023 05:42:55 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rIjAS-00GB51-35
+	id 1rIjAS-00GB50-13
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Dec 2023 05:42:54 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BS4meGo010228;
+	Thu, 28 Dec 2023 05:42:53 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BS3c669017766;
 	Thu, 28 Dec 2023 05:42:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id; s=qcppdkim1; bh=L7cHtVRr9rfR
-	8SXFuOKy7X1n94uuMmjGNSVxEowJyis=; b=BHI23pVNY7g6E/JtblK2Py9pvGwz
-	7VrSDSadULRuQMYMfDT+pwTN+W/nOHgXzrWSaKV/8O1ZOY4fi4z1TvADCXWguFUX
-	mnPi/HwFXIEfdRTIWyUYGZkT6QJ0RgXqLX1CE879MC10bxsCt9ido/Lfzfs5ljz1
-	4N7ofNxuKo8P4Iis8a0tv23gngVuunfkUs7u8VWhqvSq2QCx15l7ZGPKqJvydPez
-	5Yi3rFjOSZdLnHzfdLFusrYLVV4zOR+AFtkXP7X+u9w4oOnu+j5oNGdIMIInKX4/
-	lSb8buTC1imNSSoujdG3TvYf/qRreSfLLGAbqkHrkqHzemzlH755EAmRrQ==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v8pcxs95f-1
+	from:to:cc:subject:date:message-id:in-reply-to:references; s=
+	qcppdkim1; bh=5PMzEBWHDtxqCU1GPDisDDRpe8uVPE8fXRl+sAk4D+8=; b=LX
+	1etL9VCSE9LbQ6wxZDJc3k+zxr3VpbMqky3KSCniZcSQq4lSpF836pJwsMXSTErU
+	cVGTAYzBVqR9oI5eYFMPSaUnmgWBndF5/2T3/RM+dBWLyXfqY7L6uL8QrkKn18SZ
+	/HTOVfhdt4F6VJoubmPvFyKkdknPdwPHVhVDM5JI9iC3vsoTteIov0TEOtfnt7EM
+	kSYfO9fjI+CLb/RsAJcDORujxhQVX+ORsDnUBjzrz4N9mCK8BjoXvt2bRBC9S2Fa
+	rlk2hz23CwQ5SC5WLwM+sAHKNxpi9ViC7pAAaNNls4KJ9hxO/5rEiQ05/Tv15lKQ
+	DX2AO7y/e0+891d9hpVQ==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v8yyega4t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 28 Dec 2023 05:42:43 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3BS5geSu010667;
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3BS5ge6E015305;
 	Thu, 28 Dec 2023 05:42:40 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTP id 3v5rmkp3ny-1;
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTP id 3v5rmkwkat-1;
 	Thu, 28 Dec 2023 05:42:40 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3BS5gejL010662;
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3BS5gejT015298;
 	Thu, 28 Dec 2023 05:42:40 GMT
 Received: from cbsp-sh-gv.qualcomm.com (CBSP-SH-gv.ap.qualcomm.com [10.231.249.68])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTP id 3BS5gdwf010660;
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTP id 3BS5geE5015294;
 	Thu, 28 Dec 2023 05:42:40 +0000
 Received: by cbsp-sh-gv.qualcomm.com (Postfix, from userid 4098150)
-	id BA4B756EE; Thu, 28 Dec 2023 13:42:38 +0800 (CST)
+	id 6045D56F2; Thu, 28 Dec 2023 13:42:39 +0800 (CST)
 From: Qiang Yu <quic_qianyu@quicinc.com>
 To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
         vkoul@kernel.org, kishon@kernel.org
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org, quic_cang@quicinc.com,
         quic_mrana@quicinc.com, quic_qianyu@quicinc.com
-Subject: [PATCH 0/2] phy: qcom: qmp-pcie: Update PCIe PHY settings for SM8550
-Date: Thu, 28 Dec 2023 13:42:35 +0800
-Message-Id: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
+Subject: [PATCH 2/2] phy: qcom: qmp-pcie: Update PCIe0 PHY settings for SM8550
+Date: Thu, 28 Dec 2023 13:42:37 +0800
+Message-Id: <1703742157-69840-3-git-send-email-quic_qianyu@quicinc.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
+References: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 0Fen_NCLlBdItntuVwUoSmQVTW-z2m6S
-X-Proofpoint-ORIG-GUID: 0Fen_NCLlBdItntuVwUoSmQVTW-z2m6S
+X-Proofpoint-GUID: wrnE-jJ1l89uvcZpqMsb-KBNGLOMTWa5
+X-Proofpoint-ORIG-GUID: wrnE-jJ1l89uvcZpqMsb-KBNGLOMTWa5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
- bulkscore=0 priorityscore=1501 clxscore=1011 suspectscore=0
- lowpriorityscore=0 spamscore=0 adultscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=264 classifier=spam adjust=0 reason=mlx scancount=1
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 clxscore=1015 mlxlogscore=531 impostorscore=0
+ lowpriorityscore=0 bulkscore=0 malwarescore=0 mlxscore=0 phishscore=0
+ spamscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2311290000 definitions=main-2312280043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231227_214253_127067_64AFABFB 
-X-CRM114-Status: UNSURE (   6.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231227_214252_510746_17A7D0F9 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,22 +103,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Align PCIe0/PCIe1 PHY settings with SM8550 latest PCIe PHY Hardware
-Programming Guide.
+Align PCIe0 PHY settings with SM8550 latest PCIe PHY Hardware Programming
+Guide.
 
-Can Guo (1):
-  phy: qcom: qmp-pcie: Update PCIe1 PHY settings for SM8550
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c        | 4 +++-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h | 2 ++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
-Qiang Yu (1):
-  phy: qcom: qmp-pcie: Update PCIe0 PHY settings for SM8550
-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c             | 20 ++++++++++++++------
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h      |  2 ++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h   |  2 ++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h        |  1 +
- .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h   |  2 ++
- 5 files changed, 21 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 5f87ebc..857581d 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -1747,7 +1747,7 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen3x2_pcie_rx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH2, 0x5b),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH3, 0x1a),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH4, 0x89),
+-	QMP_PHY_INIT_CFG(QSERDES_V6_RX_TX_ADAPT_POST_THRESH, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_TX_ADAPT_POST_THRESH, 0x00),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FO_GAIN, 0x09),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_GAIN, 0x05),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH1, 0x08),
+@@ -1767,6 +1767,8 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen3x2_pcie_pcs_tbl[] = {
+ };
+ 
+ static const struct qmp_phy_init_tbl sm8550_qmp_gen3x2_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_EQ_CONFIG1, 0x1e),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_RXEQEVAL_TIME, 0x27),
+ 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG2, 0x1d),
+ 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
+ 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h
+index 91e7000..0ca7933 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h
+@@ -7,6 +7,8 @@
+ #define QCOM_PHY_QMP_PCS_PCIE_V6_H_
+ 
+ /* Only for QMP V6 PHY - PCIE have different offsets than V5 */
++#define QPHY_PCIE_V6_PCS_PCIE_EQ_CONFIG1		0xa4
++#define QPHY_PCIE_V6_PCS_PCIE_RXEQEVAL_TIME		0xf4
+ #define QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG2	0x0c
+ #define QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG4	0x14
+ #define QPHY_PCIE_V6_PCS_PCIE_ENDPOINT_REFCLK_DRIVE	0x20
 -- 
 2.7.4
 
