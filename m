@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5945DC3DA6E
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Dec 2023 05:42:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 457A4C3DA6E
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Dec 2023 07:25:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=00GkqwTfxTacBPQpcB0HlFIGoTjQO6P2lFoczHBL8kU=; b=fCCiWtIKRI7tW5
-	XqxJcNA5dB5zxpijVmZMreRTyO3fvbp+rfKm54oQTziynFZzBCDk92FZ06bXx3FyrTjP66tssftd/
-	p95/usyMzx+skWT8io8EBG6foIH11aLyxYb4zutxoS4/T9gvNrA4y8VPpn3Nbotf4iLi8bn744JC7
-	J7EKWtVQ5fQixojehR3m8CWov4JSUhkyq9Ja5hrebFhHrV6/kBm75QYk1duUksaBBPTmPNDAC0Xdv
-	de+AwkZBml5/vLG2t1lk5qM3+zXBXy+UEWbqxw2IzhKOh6eduF9NlVt2a9gCOGyMNaKP0Sio3xOLa
-	LJzH+s4XSIfFdYniUVGA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L6feNqc8qDm8dlnKMJOcFo8jT7at0YbMP2ZLB2v8PJQ=; b=0hBwo6b/2DrGwT
+	zjA99J1C35i+uN8F64EBYWHFXkpa7pTkb4PWNvsXqyE7Wu4M2jz//5TgHXHlaAtjx3ofojX4T7HJM
+	z/B4di+Ajip+PJumrunMTX4GWnRWD5Fcn3bxU6vFprv+3PEbwn+3HX/tWQRncxSe6mFD5Zn7ULCAC
+	0yj4H31D8R1Y/t+v6SHowN/s+ftammDrVuMPqqBtxAtbCk7g6sLJrB1F0ZdbDCX5k4koykh/8lKTT
+	c2Z/vse5VX5rC1V02eP33UrQGHt/zDzKXKr5CIUl8yuvKKg/F+6VSZN7GFIz/EjXFd7X2+7xF9Dog
+	I2z4orV1o+/REEd6Psgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rIjAZ-00GB6Y-0L;
-	Thu, 28 Dec 2023 05:42:59 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1rIkli-00GKt6-3A;
+	Thu, 28 Dec 2023 07:25:26 +0000
+Received: from out-185.mta0.migadu.com ([2001:41d0:1004:224b::b9])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rIjAS-00GB52-39
+	id 1rIkld-00GKsT-0k
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Dec 2023 05:42:55 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BS4QWWb001581;
-	Thu, 28 Dec 2023 05:42:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references; s=
-	qcppdkim1; bh=cuR4EwC1nbWYU9VZ+F23XRwCskQ3HdcANY3zrRt+aMw=; b=Tw
-	sBOJFtQKbGFism3UKB2yEe89vYNVnXRbHTXpdSOjHmGSJY0q3VMvKr3sAYOrhXua
-	Xa8WVaQIph8nPNMnlaqm1eTa3aekYaxrEuDBB1l+PPYf4oFldyvqLcPCgi9nsocX
-	eBQsqL8reaF/1ykJFnh6YKmgcsH5mXL/ubiZrzyyvF3SsieIXrOE0S/aWpFNXZpJ
-	vydszvE2gZen1TKEKXnXtcLwSG3S984Rc7phlGHdaoYcXpWeX3Iu5Z0LSNDPl+rq
-	HOt37IkPMqMtq3/UxHYiygrBuWHNwZLRgdUOyf/P+JRs6Ho7n7PF9H0jnFnDrbus
-	5TvZDBr7eO3uUl89J2CQ==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v8atftm8k-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Dec 2023 05:42:43 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3BS5geWt015297;
-	Thu, 28 Dec 2023 05:42:40 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTP id 3v5rmkwkaq-1;
-	Thu, 28 Dec 2023 05:42:40 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3BS5geh1015291;
-	Thu, 28 Dec 2023 05:42:40 GMT
-Received: from cbsp-sh-gv.qualcomm.com (CBSP-SH-gv.ap.qualcomm.com [10.231.249.68])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTP id 3BS5gdHi015290;
-	Thu, 28 Dec 2023 05:42:40 +0000
-Received: by cbsp-sh-gv.qualcomm.com (Postfix, from userid 4098150)
-	id 0F7E956F0; Thu, 28 Dec 2023 13:42:39 +0800 (CST)
-From: Qiang Yu <quic_qianyu@quicinc.com>
-To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-        vkoul@kernel.org, kishon@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, quic_cang@quicinc.com,
-        quic_mrana@quicinc.com, quic_qianyu@quicinc.com
-Subject: [PATCH 1/2] phy: qcom: qmp-pcie: Update PCIe1 PHY settings for SM8550
-Date: Thu, 28 Dec 2023 13:42:36 +0800
-Message-Id: <1703742157-69840-2-git-send-email-quic_qianyu@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
-References: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 3Xaf2Xclvu_f02ngsWv5ybWQF7e3Krrc
-X-Proofpoint-GUID: 3Xaf2Xclvu_f02ngsWv5ybWQF7e3Krrc
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 bulkscore=0 clxscore=1015 mlxlogscore=648 malwarescore=0
- suspectscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 mlxscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2312280043
+	Thu, 28 Dec 2023 07:25:24 +0000
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1703748312;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=z5ScjGG+fLfzi4OChhexexLuOSRGIaTN7NsEav5gzyQ=;
+	b=ZiDB7k0G3Bzo3Yr9CaAjKs4eVuxTUOG4YsjWKhk92n3t9XnTnH6THpFKEVR1cMoV+avgpF
+	wFeCHTxlfDyXrL2chmp+xG5tX9XevvCgFe4dAKHL3k26ry/7H8qz5hHwatp6Mq9IfDtJ0V
+	D7KxjpvU7jtNrHZX1PqKqK6nvdHa758=
+From: Yajun Deng <yajun.deng@linux.dev>
+To: davem@davemloft.net,
+	edumazet@google.com,
+	kuba@kernel.org,
+	pabeni@redhat.com
+Cc: andrew@lunn.ch,
+	olteanv@gmail.com,
+	hkallweit1@gmail.com,
+	linux@armlinux.org.uk,
+	rmk+kernel@armlinux.org.uk,
+	kabel@kernel.org,
+	netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Yajun Deng <yajun.deng@linux.dev>
+Subject: [PATCH net-next] net: phy: Cleanup struct mdio_driver_common
+Date: Thu, 28 Dec 2023 15:23:50 +0800
+Message-Id: <20231228072350.1294425-1-yajun.deng@linux.dev>
+MIME-Version: 1.0
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231227_214253_130285_2946A9A4 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20231227_232522_243291_5C12DC46 
+X-CRM114-Status: GOOD (  16.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,132 +71,485 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Can Guo <quic_cang@quicinc.com>
+The struct mdio_driver_common is a wrapper for driver-model structure,
+it contains device_driver and flags. There are only struct phy_driver
+and mdio_driver that use it. The flags is used to distinguish between
+struct phy_driver and mdio_driver.
 
-Align PCIe1 PHY settings with SM8550 latest PCIe PHY Hardware Programming
-Guide.
+We can test that if probe of device_driver is equal to phy_probe. This
+way, the struct mdio_driver_common is no longer needed, and struct
+phy_driver and usb_mdio_driver will be consistent with other driver
+structs.
 
-Signed-off-by: Can Guo <quic_cang@quicinc.com>
-Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+Cleanup struct mdio_driver_common and introduce is_phy_driver(). Use
+is_phy_driver() test that if the driver is a phy or not.
+
+Signed-off-by: Yajun Deng <yajun.deng@linux.dev>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c               | 16 +++++++++++-----
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h     |  2 ++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h          |  1 +
- drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h |  2 ++
- 4 files changed, 16 insertions(+), 5 deletions(-)
+ drivers/net/dsa/b53/b53_mdio.c          |  2 +-
+ drivers/net/dsa/dsa_loop.c              |  2 +-
+ drivers/net/dsa/lan9303_mdio.c          |  2 +-
+ drivers/net/dsa/microchip/ksz8863_smi.c |  2 +-
+ drivers/net/dsa/mt7530-mdio.c           |  2 +-
+ drivers/net/dsa/mv88e6060.c             |  2 +-
+ drivers/net/dsa/mv88e6xxx/chip.c        |  2 +-
+ drivers/net/dsa/qca/ar9331.c            |  2 +-
+ drivers/net/dsa/qca/qca8k-8xxx.c        |  2 +-
+ drivers/net/dsa/realtek/realtek-mdio.c  |  2 +-
+ drivers/net/dsa/xrs700x/xrs700x_mdio.c  |  2 +-
+ drivers/net/phy/mdio_bus.c              |  2 +-
+ drivers/net/phy/mdio_device.c           | 21 +++++++--------
+ drivers/net/phy/phy_device.c            | 35 ++++++++++++++-----------
+ drivers/net/phy/xilinx_gmii2rgmii.c     |  2 +-
+ drivers/phy/broadcom/phy-bcm-ns-usb3.c  |  8 +++---
+ drivers/phy/broadcom/phy-bcm-ns2-pcie.c |  8 +++---
+ include/linux/mdio.h                    | 16 ++---------
+ include/linux/phy.h                     |  9 +++----
+ 19 files changed, 54 insertions(+), 69 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2af7115..5f87ebc 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1823,10 +1823,9 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_serdes_tbl[] = {
+diff --git a/drivers/net/dsa/b53/b53_mdio.c b/drivers/net/dsa/b53/b53_mdio.c
+index 897e5e8b3d69..1ececa4d44e4 100644
+--- a/drivers/net/dsa/b53/b53_mdio.c
++++ b/drivers/net/dsa/b53/b53_mdio.c
+@@ -392,7 +392,7 @@ static struct mdio_driver b53_mdio_driver = {
+ 	.probe	= b53_mdio_probe,
+ 	.remove	= b53_mdio_remove,
+ 	.shutdown = b53_mdio_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "bcm53xx",
+ 		.of_match_table = b53_of_match,
+ 	},
+diff --git a/drivers/net/dsa/dsa_loop.c b/drivers/net/dsa/dsa_loop.c
+index c70ed67cc188..3f885878be3a 100644
+--- a/drivers/net/dsa/dsa_loop.c
++++ b/drivers/net/dsa/dsa_loop.c
+@@ -375,7 +375,7 @@ static void dsa_loop_drv_shutdown(struct mdio_device *mdiodev)
+ }
  
- static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_ln_shrd_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RXCLK_DIV2_CTRL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_Q_EN_RATES, 0xe),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_DFE_DAC_ENABLE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH2, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_TX_ADAPT_POST_THRESH2, 0x0d),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B0, 0x12),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B1, 0x12),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MODE_RATE_0_1_B2, 0xdb),
-@@ -1843,6 +1842,7 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_ln_shrd_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH4_RATE3, 0x1f),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH5_RATE3, 0x1f),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_MARG_COARSE_THRESH6_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_LN_SHRD_RX_SUMMER_CAL_SPD_MODE, 0x5b),
+ static struct mdio_driver dsa_loop_drv = {
+-	.mdiodrv.driver	= {
++	.driver	= {
+ 		.name	= "dsa-loop",
+ 	},
+ 	.probe	= dsa_loop_drv_probe,
+diff --git a/drivers/net/dsa/lan9303_mdio.c b/drivers/net/dsa/lan9303_mdio.c
+index 167a86f39f27..7cb7e2b1478a 100644
+--- a/drivers/net/dsa/lan9303_mdio.c
++++ b/drivers/net/dsa/lan9303_mdio.c
+@@ -162,7 +162,7 @@ static const struct of_device_id lan9303_mdio_of_match[] = {
+ MODULE_DEVICE_TABLE(of, lan9303_mdio_of_match);
+ 
+ static struct mdio_driver lan9303_mdio_driver = {
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "LAN9303_MDIO",
+ 		.of_match_table = lan9303_mdio_of_match,
+ 	},
+diff --git a/drivers/net/dsa/microchip/ksz8863_smi.c b/drivers/net/dsa/microchip/ksz8863_smi.c
+index 5711a59e2ac9..c788cadd7595 100644
+--- a/drivers/net/dsa/microchip/ksz8863_smi.c
++++ b/drivers/net/dsa/microchip/ksz8863_smi.c
+@@ -213,7 +213,7 @@ static struct mdio_driver ksz8863_driver = {
+ 	.probe	= ksz8863_smi_probe,
+ 	.remove	= ksz8863_smi_remove,
+ 	.shutdown = ksz8863_smi_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name	= "ksz8863-switch",
+ 		.of_match_table = ksz8863_dt_ids,
+ 	},
+diff --git a/drivers/net/dsa/mt7530-mdio.c b/drivers/net/dsa/mt7530-mdio.c
+index 088533663b83..7315654a6757 100644
+--- a/drivers/net/dsa/mt7530-mdio.c
++++ b/drivers/net/dsa/mt7530-mdio.c
+@@ -258,7 +258,7 @@ static struct mdio_driver mt7530_mdio_driver = {
+ 	.probe  = mt7530_probe,
+ 	.remove = mt7530_remove,
+ 	.shutdown = mt7530_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "mt7530-mdio",
+ 		.of_match_table = mt7530_of_match,
+ 	},
+diff --git a/drivers/net/dsa/mv88e6060.c b/drivers/net/dsa/mv88e6060.c
+index 294312b58e4f..5925f23e7ab3 100644
+--- a/drivers/net/dsa/mv88e6060.c
++++ b/drivers/net/dsa/mv88e6060.c
+@@ -367,7 +367,7 @@ static struct mdio_driver mv88e6060_driver = {
+ 	.probe	= mv88e6060_probe,
+ 	.remove = mv88e6060_remove,
+ 	.shutdown = mv88e6060_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "mv88e6060",
+ 		.of_match_table = mv88e6060_of_match,
+ 	},
+diff --git a/drivers/net/dsa/mv88e6xxx/chip.c b/drivers/net/dsa/mv88e6xxx/chip.c
+index 383b3c4d6f59..4f24699264d1 100644
+--- a/drivers/net/dsa/mv88e6xxx/chip.c
++++ b/drivers/net/dsa/mv88e6xxx/chip.c
+@@ -7258,7 +7258,7 @@ static struct mdio_driver mv88e6xxx_driver = {
+ 	.probe	= mv88e6xxx_probe,
+ 	.remove = mv88e6xxx_remove,
+ 	.shutdown = mv88e6xxx_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "mv88e6085",
+ 		.of_match_table = mv88e6xxx_of_match,
+ 		.pm = &mv88e6xxx_pm_ops,
+diff --git a/drivers/net/dsa/qca/ar9331.c b/drivers/net/dsa/qca/ar9331.c
+index 8d9d271ac3af..da392d60c9e7 100644
+--- a/drivers/net/dsa/qca/ar9331.c
++++ b/drivers/net/dsa/qca/ar9331.c
+@@ -1122,7 +1122,7 @@ static struct mdio_driver ar9331_sw_mdio_driver = {
+ 	.probe = ar9331_sw_probe,
+ 	.remove = ar9331_sw_remove,
+ 	.shutdown = ar9331_sw_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = AR9331_SW_NAME,
+ 		.of_match_table = ar9331_sw_of_match,
+ 	},
+diff --git a/drivers/net/dsa/qca/qca8k-8xxx.c b/drivers/net/dsa/qca/qca8k-8xxx.c
+index ec57d9d52072..fe396397f405 100644
+--- a/drivers/net/dsa/qca/qca8k-8xxx.c
++++ b/drivers/net/dsa/qca/qca8k-8xxx.c
+@@ -2187,7 +2187,7 @@ static struct mdio_driver qca8kmdio_driver = {
+ 	.probe  = qca8k_sw_probe,
+ 	.remove = qca8k_sw_remove,
+ 	.shutdown = qca8k_sw_shutdown,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "qca8k",
+ 		.of_match_table = qca8k_of_match,
+ 		.pm = &qca8k_pm_ops,
+diff --git a/drivers/net/dsa/realtek/realtek-mdio.c b/drivers/net/dsa/realtek/realtek-mdio.c
+index 292e6d087e8b..8e6a951b391c 100644
+--- a/drivers/net/dsa/realtek/realtek-mdio.c
++++ b/drivers/net/dsa/realtek/realtek-mdio.c
+@@ -274,7 +274,7 @@ static const struct of_device_id realtek_mdio_of_match[] = {
+ MODULE_DEVICE_TABLE(of, realtek_mdio_of_match);
+ 
+ static struct mdio_driver realtek_mdio_driver = {
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "realtek-mdio",
+ 		.of_match_table = realtek_mdio_of_match,
+ 	},
+diff --git a/drivers/net/dsa/xrs700x/xrs700x_mdio.c b/drivers/net/dsa/xrs700x/xrs700x_mdio.c
+index 5f7d344b5d73..1a76d9d49f13 100644
+--- a/drivers/net/dsa/xrs700x/xrs700x_mdio.c
++++ b/drivers/net/dsa/xrs700x/xrs700x_mdio.c
+@@ -164,7 +164,7 @@ static const struct of_device_id __maybe_unused xrs700x_mdio_dt_ids[] = {
+ MODULE_DEVICE_TABLE(of, xrs700x_mdio_dt_ids);
+ 
+ static struct mdio_driver xrs700x_mdio_driver = {
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name	= "xrs700x-mdio",
+ 		.of_match_table = of_match_ptr(xrs700x_mdio_dt_ids),
+ 	},
+diff --git a/drivers/net/phy/mdio_bus.c b/drivers/net/phy/mdio_bus.c
+index 6cf73c15635b..a1092c641d14 100644
+--- a/drivers/net/phy/mdio_bus.c
++++ b/drivers/net/phy/mdio_bus.c
+@@ -1342,7 +1342,7 @@ static int mdio_bus_match(struct device *dev, struct device_driver *drv)
+ 	struct mdio_device *mdio = to_mdio_device(dev);
+ 
+ 	/* Both the driver and device must type-match */
+-	if (!(mdiodrv->mdiodrv.flags & MDIO_DEVICE_IS_PHY) !=
++	if (!(is_phy_driver(&mdiodrv->driver)) !=
+ 	    !(mdio->flags & MDIO_DEVICE_FLAG_PHY))
+ 		return 0;
+ 
+diff --git a/drivers/net/phy/mdio_device.c b/drivers/net/phy/mdio_device.c
+index 73f6539b9e50..16232e7a1255 100644
+--- a/drivers/net/phy/mdio_device.c
++++ b/drivers/net/phy/mdio_device.c
+@@ -40,7 +40,7 @@ int mdio_device_bus_match(struct device *dev, struct device_driver *drv)
+ 	struct mdio_device *mdiodev = to_mdio_device(dev);
+ 	struct mdio_driver *mdiodrv = to_mdio_driver(drv);
+ 
+-	if (mdiodrv->mdiodrv.flags & MDIO_DEVICE_IS_PHY)
++	if (is_phy_driver(&mdiodrv->driver))
+ 		return 0;
+ 
+ 	return strcmp(mdiodev->modalias, drv->name) == 0;
+@@ -203,20 +203,19 @@ static void mdio_shutdown(struct device *dev)
+  */
+ int mdio_driver_register(struct mdio_driver *drv)
+ {
+-	struct mdio_driver_common *mdiodrv = &drv->mdiodrv;
+ 	int retval;
+ 
+-	pr_debug("%s: %s\n", __func__, mdiodrv->driver.name);
++	pr_debug("%s: %s\n", __func__, drv->driver.name);
+ 
+-	mdiodrv->driver.bus = &mdio_bus_type;
+-	mdiodrv->driver.probe = mdio_probe;
+-	mdiodrv->driver.remove = mdio_remove;
+-	mdiodrv->driver.shutdown = mdio_shutdown;
++	drv->driver.bus = &mdio_bus_type;
++	drv->driver.probe = mdio_probe;
++	drv->driver.remove = mdio_remove;
++	drv->driver.shutdown = mdio_shutdown;
+ 
+-	retval = driver_register(&mdiodrv->driver);
++	retval = driver_register(&drv->driver);
+ 	if (retval) {
+ 		pr_err("%s: Error %d in registering driver\n",
+-		       mdiodrv->driver.name, retval);
++		       drv->driver.name, retval);
+ 
+ 		return retval;
+ 	}
+@@ -227,8 +226,6 @@ EXPORT_SYMBOL(mdio_driver_register);
+ 
+ void mdio_driver_unregister(struct mdio_driver *drv)
+ {
+-	struct mdio_driver_common *mdiodrv = &drv->mdiodrv;
+-
+-	driver_unregister(&mdiodrv->driver);
++	driver_unregister(&drv->driver);
+ }
+ EXPORT_SYMBOL(mdio_driver_unregister);
+diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
+index 3611ea64875e..55494a345bd4 100644
+--- a/drivers/net/phy/phy_device.c
++++ b/drivers/net/phy/phy_device.c
+@@ -529,7 +529,7 @@ static int phy_bus_match(struct device *dev, struct device_driver *drv)
+ 	const int num_ids = ARRAY_SIZE(phydev->c45_ids.device_ids);
+ 	int i;
+ 
+-	if (!(phydrv->mdiodrv.flags & MDIO_DEVICE_IS_PHY))
++	if (!(is_phy_driver(&phydrv->driver)))
+ 		return 0;
+ 
+ 	if (phydrv->match_phy_device)
+@@ -1456,9 +1456,9 @@ int phy_attach_direct(struct net_device *dev, struct phy_device *phydev,
+ 	 */
+ 	if (!d->driver) {
+ 		if (phydev->is_c45)
+-			d->driver = &genphy_c45_driver.mdiodrv.driver;
++			d->driver = &genphy_c45_driver.driver;
+ 		else
+-			d->driver = &genphy_driver.mdiodrv.driver;
++			d->driver = &genphy_driver.driver;
+ 
+ 		using_genphy = true;
+ 	}
+@@ -1638,14 +1638,14 @@ static bool phy_driver_is_genphy_kind(struct phy_device *phydev,
+ bool phy_driver_is_genphy(struct phy_device *phydev)
+ {
+ 	return phy_driver_is_genphy_kind(phydev,
+-					 &genphy_driver.mdiodrv.driver);
++					 &genphy_driver.driver);
+ }
+ EXPORT_SYMBOL_GPL(phy_driver_is_genphy);
+ 
+ bool phy_driver_is_genphy_10g(struct phy_device *phydev)
+ {
+ 	return phy_driver_is_genphy_kind(phydev,
+-					 &genphy_c45_driver.mdiodrv.driver);
++					 &genphy_c45_driver.driver);
+ }
+ EXPORT_SYMBOL_GPL(phy_driver_is_genphy_10g);
+ 
+@@ -3410,6 +3410,12 @@ static int phy_remove(struct device *dev)
+ 	return 0;
+ }
+ 
++bool is_phy_driver(struct device_driver *driver)
++{
++	return driver->probe == phy_probe;
++}
++EXPORT_SYMBOL_GPL(is_phy_driver);
++
+ /**
+  * phy_driver_register - register a phy_driver with the PHY layer
+  * @new_driver: new phy_driver to register
+@@ -3433,20 +3439,19 @@ int phy_driver_register(struct phy_driver *new_driver, struct module *owner)
+ 	 * is backed by a struct phy_device. If such a case happens, we will
+ 	 * make out-of-bounds accesses and lockup in phydev->lock.
+ 	 */
+-	if (WARN(new_driver->mdiodrv.driver.of_match_table,
++	if (WARN(new_driver->driver.of_match_table,
+ 		 "%s: driver must not provide a DT match table\n",
+ 		 new_driver->name))
+ 		return -EINVAL;
+ 
+-	new_driver->mdiodrv.flags |= MDIO_DEVICE_IS_PHY;
+-	new_driver->mdiodrv.driver.name = new_driver->name;
+-	new_driver->mdiodrv.driver.bus = &mdio_bus_type;
+-	new_driver->mdiodrv.driver.probe = phy_probe;
+-	new_driver->mdiodrv.driver.remove = phy_remove;
+-	new_driver->mdiodrv.driver.owner = owner;
+-	new_driver->mdiodrv.driver.probe_type = PROBE_FORCE_SYNCHRONOUS;
++	new_driver->driver.name = new_driver->name;
++	new_driver->driver.bus = &mdio_bus_type;
++	new_driver->driver.probe = phy_probe;
++	new_driver->driver.remove = phy_remove;
++	new_driver->driver.owner = owner;
++	new_driver->driver.probe_type = PROBE_FORCE_SYNCHRONOUS;
+ 
+-	retval = driver_register(&new_driver->mdiodrv.driver);
++	retval = driver_register(&new_driver->driver);
+ 	if (retval) {
+ 		pr_err("%s: Error %d in registering driver\n",
+ 		       new_driver->name, retval);
+@@ -3479,7 +3484,7 @@ EXPORT_SYMBOL(phy_drivers_register);
+ 
+ void phy_driver_unregister(struct phy_driver *drv)
+ {
+-	driver_unregister(&drv->mdiodrv.driver);
++	driver_unregister(&drv->driver);
+ }
+ EXPORT_SYMBOL(phy_driver_unregister);
+ 
+diff --git a/drivers/net/phy/xilinx_gmii2rgmii.c b/drivers/net/phy/xilinx_gmii2rgmii.c
+index 7fd9fe6a602b..94ba87dc1975 100644
+--- a/drivers/net/phy/xilinx_gmii2rgmii.c
++++ b/drivers/net/phy/xilinx_gmii2rgmii.c
+@@ -129,7 +129,7 @@ MODULE_DEVICE_TABLE(of, xgmiitorgmii_of_match);
+ 
+ static struct mdio_driver xgmiitorgmii_driver = {
+ 	.probe	= xgmiitorgmii_probe,
+-	.mdiodrv.driver = {
++	.driver = {
+ 		.name = "xgmiitorgmii",
+ 		.of_match_table = xgmiitorgmii_of_match,
+ 	},
+diff --git a/drivers/phy/broadcom/phy-bcm-ns-usb3.c b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
+index 2c8b1b7dda5b..cb6e54e9a37e 100644
+--- a/drivers/phy/broadcom/phy-bcm-ns-usb3.c
++++ b/drivers/phy/broadcom/phy-bcm-ns-usb3.c
+@@ -229,11 +229,9 @@ static int bcm_ns_usb3_mdio_probe(struct mdio_device *mdiodev)
+ }
+ 
+ static struct mdio_driver bcm_ns_usb3_mdio_driver = {
+-	.mdiodrv = {
+-		.driver = {
+-			.name = "bcm_ns_mdio_usb3",
+-			.of_match_table = bcm_ns_usb3_id_table,
+-		},
++	.driver = {
++		.name = "bcm_ns_mdio_usb3",
++		.of_match_table = bcm_ns_usb3_id_table,
+ 	},
+ 	.probe = bcm_ns_usb3_mdio_probe,
  };
+diff --git a/drivers/phy/broadcom/phy-bcm-ns2-pcie.c b/drivers/phy/broadcom/phy-bcm-ns2-pcie.c
+index 2eaa41f8fc70..d23e19527379 100644
+--- a/drivers/phy/broadcom/phy-bcm-ns2-pcie.c
++++ b/drivers/phy/broadcom/phy-bcm-ns2-pcie.c
+@@ -73,11 +73,9 @@ static const struct of_device_id ns2_pci_phy_of_match[] = {
+ MODULE_DEVICE_TABLE(of, ns2_pci_phy_of_match);
  
- static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_tx_tbl[] = {
-@@ -1855,13 +1855,15 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_tx_tbl[] = {
+ static struct mdio_driver ns2_pci_phy_driver = {
+-	.mdiodrv = {
+-		.driver = {
+-			.name = "phy-bcm-ns2-pci",
+-			.of_match_table = ns2_pci_phy_of_match,
+-		},
++	.driver = {
++		.name = "phy-bcm-ns2-pci",
++		.of_match_table = ns2_pci_phy_of_match,
+ 	},
+ 	.probe = ns2_pci_phy_probe,
  };
+diff --git a/include/linux/mdio.h b/include/linux/mdio.h
+index 79ceee3c8673..852f838f52f5 100644
+--- a/include/linux/mdio.h
++++ b/include/linux/mdio.h
+@@ -50,22 +50,11 @@ static inline struct mdio_device *to_mdio_device(const struct device *dev)
+ 	return container_of(dev, struct mdio_device, dev);
+ }
  
- static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_rx_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_2, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_2, 0x0c),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_FO_GAIN_RATE_3, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_SO_GAIN_RATE_2, 0x04),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_PI_CONTROLS, 0x16),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_UCDR_SO_ACC_DEFAULT_VAL_RATE3, 0x00),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_IVCM_CAL_CTRL2, 0x80),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_IVCM_POSTCAL_OFFSET, 0x7c),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_3, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_TX_ADPT_CTRL, 0x10),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0a),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_GM_CAL, 0x0d),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_EQU_ADAPTOR_CNTRL4, 0x0b),
-@@ -1883,11 +1885,13 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_rx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_MODE_RATE3_B4, 0x78),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_MODE_RATE3_B5, 0x76),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_MODE_RATE3_B6, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V6_20_VGA_CAL_CNTRL1, 0x00),
+-/* struct mdio_driver_common: Common to all MDIO drivers */
+-struct mdio_driver_common {
+-	struct device_driver driver;
+-	int flags;
+-};
+ #define MDIO_DEVICE_FLAG_PHY		1
+ 
+-static inline struct mdio_driver_common *
+-to_mdio_common_driver(const struct device_driver *driver)
+-{
+-	return container_of(driver, struct mdio_driver_common, driver);
+-}
+-
+ /* struct mdio_driver: Generic MDIO driver */
+ struct mdio_driver {
+-	struct mdio_driver_common mdiodrv;
++	struct device_driver driver;
+ 
+ 	/*
+ 	 * Called during discovery.  Used to set
+@@ -83,8 +72,7 @@ struct mdio_driver {
+ static inline struct mdio_driver *
+ to_mdio_driver(const struct device_driver *driver)
+ {
+-	return container_of(to_mdio_common_driver(driver), struct mdio_driver,
+-			    mdiodrv);
++	return container_of(driver, struct mdio_driver, driver);
+ }
+ 
+ /* device driver data */
+diff --git a/include/linux/phy.h b/include/linux/phy.h
+index e9e85d347587..458bceb4a832 100644
+--- a/include/linux/phy.h
++++ b/include/linux/phy.h
+@@ -87,7 +87,6 @@ extern const int phy_10gbit_features_array[1];
+ #define PHY_RST_AFTER_CLK_EN	0x00000002
+ #define PHY_POLL_CABLE_TEST	0x00000004
+ #define PHY_ALWAYS_CALL_SUSPEND	0x00000008
+-#define MDIO_DEVICE_IS_PHY	0x80000000
+ 
+ /**
+  * enum phy_interface_t - Interface Mode definitions
+@@ -873,7 +872,7 @@ struct phy_led {
+ /**
+  * struct phy_driver - Driver structure for a particular PHY type
+  *
+- * @mdiodrv: Data common to all MDIO devices
++ * @driver: The driver-model core driver structure.
+  * @phy_id: The result of reading the UID registers of this PHY
+  *   type, and ANDing them with the phy_id_mask.  This driver
+  *   only works for PHYs with IDs which match this field
+@@ -894,7 +893,7 @@ struct phy_led {
+  * though it is not currently supported in the driver).
+  */
+ struct phy_driver {
+-	struct mdio_driver_common mdiodrv;
++	struct device_driver driver;
+ 	u32 phy_id;
+ 	char *name;
+ 	u32 phy_id_mask;
+@@ -1147,8 +1146,7 @@ struct phy_driver {
+ 				  unsigned long *rules);
+ 
  };
+-#define to_phy_driver(d) container_of(to_mdio_common_driver(d),		\
+-				      struct phy_driver, mdiodrv)
++#define to_phy_driver(d) container_of(d, struct phy_driver, driver)
  
- static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_G12S1_TXDEEMPH_M6DB, 0x17),
- 	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_G3S2_PRE_GAIN, 0x2e),
--	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_COM_ELECIDLE_DLY_SEL, 0x25),
-+	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_RX_SIGDET_LVL, 0xcc),
- 	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_EQ_CONFIG4, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_EQ_CONFIG5, 0x22),
- 	QMP_PHY_INIT_CFG(QPHY_V6_20_PCS_TX_RX_CONFIG1, 0x04),
-@@ -1898,6 +1902,8 @@ static const struct qmp_phy_init_tbl sm8550_qmp_gen4x2_pcie_pcs_misc_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_ENDPOINT_REFCLK_DRIVE, 0xc1),
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_OSC_DTCT_ATCIONS, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_EQ_CONFIG1, 0x16),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_G3_RXEQEVAL_TIME, 0x27),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_G4_RXEQEVAL_TIME, 0x27),
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_EQ_CONFIG5, 0x02),
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_G4_PRE_GAIN, 0x2e),
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_20_PCS_RX_MARGINING_CONFIG1, 0x03),
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h
-index e3eb087..dfcecf3 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h
-@@ -12,6 +12,8 @@
- #define QPHY_PCIE_V6_20_PCS_ENDPOINT_REFCLK_DRIVE	0x01c
- #define QPHY_PCIE_V6_20_PCS_OSC_DTCT_ATCIONS		0x090
- #define QPHY_PCIE_V6_20_PCS_EQ_CONFIG1			0x0a0
-+#define QPHY_PCIE_V6_20_PCS_G3_RXEQEVAL_TIME		0x0f0
-+#define QPHY_PCIE_V6_20_PCS_G4_RXEQEVAL_TIME		0x0f4
- #define QPHY_PCIE_V6_20_PCS_EQ_CONFIG5			0x108
- #define QPHY_PCIE_V6_20_PCS_G4_PRE_GAIN			0x15c
- #define QPHY_PCIE_V6_20_PCS_RX_MARGINING_CONFIG1	0x17c
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h
-index 9c3f1e4..4d9615c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h
-@@ -7,6 +7,7 @@
- #define QCOM_PHY_QMP_PCS_V6_20_H_
+ #define PHY_ANY_ID "MATCH ANY PHY"
+ #define PHY_ANY_UID 0xffffffff
+@@ -2148,5 +2146,6 @@ module_exit(phy_module_exit)
  
- /* Only for QMP V6_20 PHY - USB/PCIe PCS registers */
-+#define QPHY_V6_20_PCS_G12S1_TXDEEMPH_M6DB		0x170
- #define QPHY_V6_20_PCS_G3S2_PRE_GAIN			0x178
- #define QPHY_V6_20_PCS_RX_SIGDET_LVL			0x190
- #define QPHY_V6_20_PCS_COM_ELECIDLE_DLY_SEL		0x1b8
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-index 6ed5339..7bac5d5 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h
-@@ -23,6 +23,8 @@
- #define QSERDES_V6_20_RX_DFE_1					0xac
- #define QSERDES_V6_20_RX_DFE_2					0xb0
- #define QSERDES_V6_20_RX_DFE_3					0xb4
-+#define QSERDES_V6_20_RX_TX_ADPT_CTRL				0xd4
-+#define QSERDES_V6_20_VGA_CAL_CNTRL1				0xe0
- #define QSERDES_V6_20_RX_VGA_CAL_MAN_VAL			0xe8
- #define QSERDES_V6_20_RX_GM_CAL					0x10c
- #define QSERDES_V6_20_RX_EQU_ADAPTOR_CNTRL4			0x120
+ bool phy_driver_is_genphy(struct phy_device *phydev);
+ bool phy_driver_is_genphy_10g(struct phy_device *phydev);
++bool is_phy_driver(struct device_driver *driver);
+ 
+ #endif /* __PHY_H */
 -- 
-2.7.4
+2.25.1
 
 
 -- 
