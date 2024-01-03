@@ -4,66 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58D11C46CD2
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jan 2024 17:34:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EBB8C46CD2
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 02:03:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=00nqDaJDQ6fx8KWxsWXP1LLV99VXQlxWMoowtDt54uo=; b=WaiAsFtqGGQXuL
-	yaEV2ACeHt5AErqUV8QYWf2ET4UzuKPqpM+hNC+UVwAgSqjCKTkFky803YGBAFZBcyS0kabSxWGlb
-	D+/JBHzl1kVfiN5UfctLS29IKvrmpPetM5p0XliWMSswapG1JS+QXyRRy27Y0XAhuJrfUX8tHznKl
-	UUwaUJ2nBHrPDP/SMKe2BwysBISyzaf3AicyIxaBrJ84Ds9HsGlm63FuIHg30czT0hu/m32YIi4eM
-	+rADIh5XlU61oWNM9exiyThtsVdRItLRD4hwzorCu+rfVKZZ5CUkrWL2UhdTBtUYaVkOCeBg9SGOZ
-	72aSJ6/VvcEfXuLfoKbg==;
+	List-Owner; bh=HwzSitUTs29kFlW/EGVvRfpBOlJ8QRLQYZUZCRTTYFE=; b=31lshie/eCnFDk
+	QZnKJM+EiJsWfvpAaov8ITxcxQs8AQmnd2RCqEklOL2FaQUmItFwzOXRnQaQFZ541tXdWiQTQMWVJ
+	WCHUlLvpA5HInzvmk2owTm1/MgicSWsh7Yny//kiMQRoZvcEcCqFN2ZV2tazd1KkXeB2gRTh6tkPp
+	w+eFd3falspm6MgsVfMmfP0hVHdeUNjej3lFcyLWVt/aQEF2CPiLt9cMJqFXCaSJMIql7JQu4GZbj
+	cNDMObNl7NzmhV6/WvX05623MEYrr+otrqAViUiva0plzRtLgYquvIG7nGHl0SXe4k1HGDqzFj5lB
+	oiYzM4iBlCboScUPphSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKifG-008cFE-2m;
-	Tue, 02 Jan 2024 17:34:54 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1rKqbU-009XFV-2o;
+	Wed, 03 Jan 2024 02:03:32 +0000
+Received: from out-185.mta0.migadu.com ([2001:41d0:1004:224b::b9])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKifD-008cEP-2U
+	id 1rKqbR-009XEN-2q
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jan 2024 17:34:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=88r7GWZg9xFdEciPBDZ+JiD1krfoRUPpwddSStVgxfI=; b=lX8vRVOlpuM7hDdD6K2fvkbOZd
-	VPP1QhUFJ4aS6XuiyBU0+LaB5nF8+uXuDtdGI6avGTcWrZ/BL8p7az1o7FPvyNdZipjGK2ah5ynfz
-	TG2AteKgS+BoCTpBZmmMTQhzrrZ9b8WMT3dpxn+sl2zLSyjzteRW/mgRNvCOCwBK8WZ2SgB0XUEkm
-	DSPk6qJSzoeTwUKbcGMN1b2pv7lC1HKOqCx5vtRrmjZagAwnDWZXQZCQ9MvJynlJcC9C0lTjOQ0YW
-	llhPsiBz3W6zNEhp9vCe6BDndWXdRk+ey1c1ieFBY8koLAz80NK8Aql1GaYPRKFlcNgOzTIxKjdEo
-	3JHPgw8g==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:58516)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1rKiey-0006lm-0p;
-	Tue, 02 Jan 2024 17:34:36 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1rKif0-0005VF-Bu; Tue, 02 Jan 2024 17:34:38 +0000
-Date: Tue, 2 Jan 2024 17:34:38 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Yajun Deng <yajun.deng@linux.dev>
-Cc: davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
-	pabeni@redhat.com, andrew@lunn.ch, olteanv@gmail.com,
-	hkallweit1@gmail.com, kabel@kernel.org, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH net-next] net: phy: Cleanup struct mdio_driver_common
-Message-ID: <ZZRJLg6U0G5CNRQ0@shell.armlinux.org.uk>
-References: <20231228072350.1294425-1-yajun.deng@linux.dev>
+	Wed, 03 Jan 2024 02:03:31 +0000
+Message-ID: <a5aca886-ca0a-8170-417f-a189ec28c87f@linux.dev>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1704247402;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=eOagWnUDEoE7GjMOwjXwuSws8DvWaGldfOWW9LSOez0=;
+	b=AvNSM4tnQjbmv09Q1fefRqvvAEFSK5ZhpSZAjwRz+IznlQ9HIvGN6vebT2KRCNVc2kXoDb
+	8V2X5cSMaxQ74W/QoFqrQry++k5XYKI2eaYqE6gbJc0X8is3X/WQs5o+1OJiFbOZLwiKc9
+	+y3C32PXtTMm0avn2LH0rjW3cwsFm58=
+Date: Wed, 3 Jan 2024 10:03:14 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231228072350.1294425-1-yajun.deng@linux.dev>
+Subject: Re: [PATCH net-next] net: phy: Cleanup struct mdio_driver_common
+Content-Language: en-US
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+ pabeni@redhat.com, andrew@lunn.ch, olteanv@gmail.com, hkallweit1@gmail.com,
+ kabel@kernel.org, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20231228072350.1294425-1-yajun.deng@linux.dev>
+ <ZZRJLg6U0G5CNRQ0@shell.armlinux.org.uk>
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Yajun Deng <yajun.deng@linux.dev>
+In-Reply-To: <ZZRJLg6U0G5CNRQ0@shell.armlinux.org.uk>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240102_093451_857017_7B9C4EF1 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20240102_180330_060849_2519FFC6 
+X-CRM114-Status: GOOD (  15.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,43 +67,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 28, 2023 at 03:23:50PM +0800, Yajun Deng wrote:
-> The struct mdio_driver_common is a wrapper for driver-model structure,
-> it contains device_driver and flags. There are only struct phy_driver
-> and mdio_driver that use it. The flags is used to distinguish between
-> struct phy_driver and mdio_driver.
-> 
-> We can test that if probe of device_driver is equal to phy_probe. This
-> way, the struct mdio_driver_common is no longer needed, and struct
-> phy_driver and usb_mdio_driver will be consistent with other driver
-> structs.
-
-usb_mdio_driver?
-
-I'm not sure why this consistency is even desired, the commit message
-doesn't properly say _why_ this change is being proposed.
-
-> +bool is_phy_driver(struct device_driver *driver)
-> +{
-> +	return driver->probe == phy_probe;
-> +}
-> +EXPORT_SYMBOL_GPL(is_phy_driver);
-
-Do we really need this exported? It doesn't seem like something anything
-other than core MDIO/phylib code should know about, and all that becomes
-a single module when building it in a modular way - phylib can't be a
-separate module from mdio stuff.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDIwMjQvMS8zIDAxOjM0LCBSdXNzZWxsIEtpbmcgKE9yYWNsZSkgd3JvdGU6Cj4gT24gVGh1
+LCBEZWMgMjgsIDIwMjMgYXQgMDM6MjM6NTBQTSArMDgwMCwgWWFqdW4gRGVuZyB3cm90ZToKPj4g
+VGhlIHN0cnVjdCBtZGlvX2RyaXZlcl9jb21tb24gaXMgYSB3cmFwcGVyIGZvciBkcml2ZXItbW9k
+ZWwgc3RydWN0dXJlLAo+PiBpdCBjb250YWlucyBkZXZpY2VfZHJpdmVyIGFuZCBmbGFncy4gVGhl
+cmUgYXJlIG9ubHkgc3RydWN0IHBoeV9kcml2ZXIKPj4gYW5kIG1kaW9fZHJpdmVyIHRoYXQgdXNl
+IGl0LiBUaGUgZmxhZ3MgaXMgdXNlZCB0byBkaXN0aW5ndWlzaCBiZXR3ZWVuCj4+IHN0cnVjdCBw
+aHlfZHJpdmVyIGFuZCBtZGlvX2RyaXZlci4KPj4KPj4gV2UgY2FuIHRlc3QgdGhhdCBpZiBwcm9i
+ZSBvZiBkZXZpY2VfZHJpdmVyIGlzIGVxdWFsIHRvIHBoeV9wcm9iZS4gVGhpcwo+PiB3YXksIHRo
+ZSBzdHJ1Y3QgbWRpb19kcml2ZXJfY29tbW9uIGlzIG5vIGxvbmdlciBuZWVkZWQsIGFuZCBzdHJ1
+Y3QKPj4gcGh5X2RyaXZlciBhbmQgdXNiX21kaW9fZHJpdmVyIHdpbGwgYmUgY29uc2lzdGVudCB3
+aXRoIG90aGVyIGRyaXZlcgo+PiBzdHJ1Y3RzLgo+IHVzYl9tZGlvX2RyaXZlcj8KClRoaXMgaXMg
+YSBtaXN0YWtlLiBJdCBzaG91bGQgYmUgJ21kaW9fZHJpdmVyJy4KCj4KPiBJJ20gbm90IHN1cmUg
+d2h5IHRoaXMgY29uc2lzdGVuY3kgaXMgZXZlbiBkZXNpcmVkLCB0aGUgY29tbWl0IG1lc3NhZ2UK
+PiBkb2Vzbid0IHByb3Blcmx5IHNheSBfd2h5XyB0aGlzIGNoYW5nZSBpcyBiZWluZyBwcm9wb3Nl
+ZC4KCk1vc3QgZHJpdmVycyB1c2UgZGV2aWNlX2RyaXZlciBkaXJlY3RseS4gVGhpcyBzaG91bGQg
+YmUgYWRkZWQgdG8gdGhlIGNvbW1pdC4KCkxpa2UgdGhpczoKCnN0cnVjdCBzZGlvX2RyaXZlciB7
+CgouLi4gLi4uCgogwqDCoMKgwqDCoMKgwqAgc3RydWN0IGRldmljZV9kcml2ZXIgZHJ2Owp9OwoK
+CnN0cnVjdCBwY2llX3BvcnRfc2VydmljZV9kcml2ZXIgewoKLi4uIC4uLgoKIMKgwqDCoMKgwqDC
+oMKgIHN0cnVjdCBkZXZpY2VfZHJpdmVyIGRyaXZlcjsKfTsKCmFuZCBzbyBvbiAuLi4KCgo+Cj4+
+ICtib29sIGlzX3BoeV9kcml2ZXIoc3RydWN0IGRldmljZV9kcml2ZXIgKmRyaXZlcikKPj4gK3sK
+Pj4gKwlyZXR1cm4gZHJpdmVyLT5wcm9iZSA9PSBwaHlfcHJvYmU7Cj4+ICt9Cj4+ICtFWFBPUlRf
+U1lNQk9MX0dQTChpc19waHlfZHJpdmVyKTsKPiBEbyB3ZSByZWFsbHkgbmVlZCB0aGlzIGV4cG9y
+dGVkPyBJdCBkb2Vzbid0IHNlZW0gbGlrZSBzb21ldGhpbmcgYW55dGhpbmcKPiBvdGhlciB0aGFu
+IGNvcmUgTURJTy9waHlsaWIgY29kZSBzaG91bGQga25vdyBhYm91dCwgYW5kIGFsbCB0aGF0IGJl
+Y29tZXMKPiBhIHNpbmdsZSBtb2R1bGUgd2hlbiBidWlsZGluZyBpdCBpbiBhIG1vZHVsYXIgd2F5
+IC0gcGh5bGliIGNhbid0IGJlIGEKPiBzZXBhcmF0ZSBtb2R1bGUgZnJvbSBtZGlvIHN0dWZmLgpJ
+IHRoaW5rIHRoaXMgZXhwb3J0ZWQgY2FuIGJlIHJlbW92ZWQuCgotLSAKbGludXgtcGh5IG1haWxp
+bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
