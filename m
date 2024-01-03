@@ -4,82 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36361C3DA6E
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 13:42:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA0AEC3DA6E
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 13:50:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=li+mQoH7vy+Ngg8M4Tm4J8JHISvTZ5OT5/PZFLANpy8=; b=azP4ehtsayS5fu
-	mkZaf0oHj3XF+Sm1aH8tnHyE+Rj88VrUiJMePSaxpFME741srhnLQRqIRpIm/BSOlL6La25DPyt5P
-	QXwtJCvYUanW9D7TDOnqhg0Fm7z+EPNjb/LRDvsQ9D4ajgo0fdioo3sE2fssR+AWx3wiu/GnAeC8Z
-	ZTiKdGGmlMneMxIzr9ix7ICfvBlut22f8yUqVBEdzoSmLcnVavq2mYNbO0hoO06onTZY1WCJrxxY3
-	WEFxY5gt6oZqtc++lw0DrZ+4LAacza/HJ4RFirbFbrzLaw9PzU7akVKBmqfLB6ibOMo/JbeEOrHaK
-	vXB6GXeM7Y6YjWXfQsmw==;
+	List-Owner; bh=mHF+x3Gz2nBSe5zD7iPZzPqlK7WQKK0aHwHkpVzTVUY=; b=dVzAb0zOS0sIf+
+	OFvNzB3OVAaQE5YOKn00UTDgrOmxGdqkUDssa8dZ47RWCxHUE5cMnH/+x4Ab7wSzRJScU1VVAwhys
+	hzNft8xVudlNaMjbjZMj34WrWMf/LoUcePNLm+B20juMxPiyfyAu2wubVsU+HgT01URl4ptgYF3DA
+	TAdX+o0YlZb90IktxzN1dDswuIlRMA9p6SaGcxpQB4LSIQhgbL3+1+Jd5Y6xsDmdCNW4WxqwWOOY/
+	EHnIBf2prGe6cO6AGOkveXSnN85ZV1t7J65L29wLGkDFC7DXZ0D7ya8kJAM1TYAMLQC1NKp7sob6/
+	JMbbStkPyC1+4/IyczeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rL1WL-00B0Ve-31;
-	Wed, 03 Jan 2024 13:42:57 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1rL1dN-00B1Wc-1L;
+	Wed, 03 Jan 2024 13:50:13 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rL1WJ-00B0U9-07
+	id 1rL1dK-00B1W0-0X
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jan 2024 13:42:56 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-50e7aed09adso8574640e87.0
-        for <linux-phy@lists.infradead.org>; Wed, 03 Jan 2024 05:42:53 -0800 (PST)
+	Wed, 03 Jan 2024 13:50:11 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-50e9e5c97e1so2046800e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 03 Jan 2024 05:50:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704289372; x=1704894172; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1704289806; x=1704894606; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ywm1NJM84MFVbNs8Kn4Mu02P9WC9fu63PnwufUkYyus=;
-        b=LZ3YdqqziQIQEAsdlo3ViQYAFTE92Wslf8l/rzQ8JZhV+cMYPbaPKPTx29n1DHwj0A
-         Q6tfMXjAE5pKwkWa5WNXMxq0KRS0o3sF8aqP3vi1CeJiHli2V/9aULb0NcsbR1XBlEJF
-         Fswavewjv6r8926fOXL+vQHisI4wVPy+YviEhwjxDeMAgtT1UOWYbNb8NJ1IZbmZB9wX
-         ou1u6ZWGJmwZRbC2UrMCPgbFUkYrHAGHVyY5wFR6yjlS2XYSIRj+C+u2dctmK1YAWYlb
-         oDVqVsIZt7i1o04LylL29Cgs2NVxIGH4h0KWyEhFgSDpRTVfIGjOiSARw2/+98RT2OkU
-         Odkw==
+        bh=f1dvuFHKe4j17EX4txcAT9Lw2KXFp4kBJ6tMYnn9PJw=;
+        b=Qfz0akivFCVq+X4Qt+uf9BFmObWwEqZpcr8qxa6CQzbpkEYKc7HRP7SqTl/gKcZZxo
+         dYcHu985dFucDb9CCPvKxKNXSucR5FjeUkfsMB812SQfTACr2HSctopj0wmQSR1IAm6P
+         h09Zwpo/M6RAWsOkLh+OG8fPLHwCj0SxCWeOlpFLFZP44NP62/j7TfUB8EZMfwCYEP4M
+         QLVatVIEH/MhCH6Ha24YEx6KPvCbWX5j/6vQVKQERIyvubi+Xt1kryJrag/v6QI9e9OK
+         BvLOSR91EFFcEcjZA0kuQSP8qWTN1HqYG2kvULLWzR8zUCNyCvzGilx83agU7i3Toqlh
+         gQLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704289372; x=1704894172;
+        d=1e100.net; s=20230601; t=1704289806; x=1704894606;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ywm1NJM84MFVbNs8Kn4Mu02P9WC9fu63PnwufUkYyus=;
-        b=NEOftRPrEIRGOtp1xPEWpULto2AYZ1inusOMXm0n52X3NsRkcdDPZb7Ek2w8h9TrIT
-         VMopIH/s0DQI7JzlKqiAjQpI779JKUSvHl41umz0b/H8AcR64vo1EbYX2OUXs0cuZbqN
-         BxJSUMSztLGl5Tmxp7/CcvYVZzgPKmCQhz5yMOa7O7Ui8e6oib8WgmJUpG7Yu7FEPUCU
-         Rp0Uy2bQy6I/jyXqhQ6Z4czepjlbUCXVCEYH7B4yeUvqjlroMr+gZIeSV6Ix8W/i+CtZ
-         BjWeh/TVCFXE6+4cqSeiVGWZ7AK6cwjmMf4iOA1MHoFek60CeOO6Gp7XzWTdQzOWAOFW
-         8T/Q==
-X-Gm-Message-State: AOJu0YzMgcqG28E1JuBoRKChF2/lansHQF9pv9wrluoAe8K/P9hUvr/2
-	R5wLrNNQ2ARBw6zIGXlT3oQnLmfob9zU8bo1TG3yxR+lJyw=
-X-Google-Smtp-Source: AGHT+IF/E3O4/SeJ3/L03JtNje4HPHmKSxk1jYT6GhkDV/vLGOKfuXNGpS6l0kqQGCl2uDjt2JUZ0A==
-X-Received: by 2002:a05:6512:39d4:b0:50e:8158:1fae with SMTP id k20-20020a05651239d400b0050e81581faemr7183741lfu.99.1704289372403;
-        Wed, 03 Jan 2024 05:42:52 -0800 (PST)
+        bh=f1dvuFHKe4j17EX4txcAT9Lw2KXFp4kBJ6tMYnn9PJw=;
+        b=TAnhHQbW+hop/ra2G8Hm78oF4c1FNntHykyFfslPQNYOObJZD9J+DO3bhVt/nTX3ed
+         B/rRFCBornwy64uE9D45L38hjhOxzuZiJZpu0L8i9Grn1Z3dcj2sAtoDjJiHzFedUlap
+         IHE/gZJBe0dnkBgdLmqOCAGw3K1QrIBc7IGmzvfsb7t2EDdov0NJxOyIeRMIuP1TcoJp
+         vuufHriirgRiSyLVYDjbSymIlbxzyTHUWDj/PYxLLewbA6d/Kd9WoKHVd9QgcvSWTnKp
+         VU3m93yin9Lgm7FFUq7CXTrk212YbE2ABRtWKIZ2Pn4ydJtoP6WGI75NxgO+P40503/e
+         JA1A==
+X-Gm-Message-State: AOJu0Ywz9O2E/em4Ib4HAAnKsanvLNAAQ7+M8kMw+tZCm17Edp+Zs8mZ
+	rucc7g6VwhByRt6544DYjHaT69bfp4sNgQ==
+X-Google-Smtp-Source: AGHT+IHKBy24cMcTBsmEGGMRYVASYXcuE3vV3BgZ0qtR4tJ+F1QDU88ZKxXyy7feuxWWsXnn+F85uw==
+X-Received: by 2002:a05:6512:3451:b0:50b:ea8e:b42c with SMTP id j17-20020a056512345100b0050bea8eb42cmr7027914lfr.97.1704289806350;
+        Wed, 03 Jan 2024 05:50:06 -0800 (PST)
 Received: from [192.168.199.125] (178235179036.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.36])
-        by smtp.gmail.com with ESMTPSA id a5-20020a17090680c500b00a26a4458241sm12720131ejx.18.2024.01.03.05.42.50
+        by smtp.gmail.com with ESMTPSA id r9-20020aa7cb89000000b005550844cd1dsm11312288edt.30.2024.01.03.05.50.04
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 03 Jan 2024 05:42:52 -0800 (PST)
-Message-ID: <6179e3c7-f399-4b0f-abb0-aaf5e549d8d9@linaro.org>
-Date: Wed, 3 Jan 2024 14:42:49 +0100
+        Wed, 03 Jan 2024 05:50:06 -0800 (PST)
+Message-ID: <a888e261-e990-445c-ab98-f63859c19dd2@linaro.org>
+Date: Wed, 3 Jan 2024 14:50:04 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/3] phy: qcom: edp: Add support for DT phy mode
- configuration
+Subject: Re: [PATCH v2 14/16] arm64: dts: qcom: sc8280xp: Fix UFS PHY clocks
 Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Abel Vesa <abel.vesa@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Johan Hovold <johan@kernel.org>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
-References: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
- <CAA8EJpr8rKMBzcm-=HGu7-C5hPkNMrnG1cA78O00UjgJVT7p6Q@mail.gmail.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: andersson@kernel.org, vkoul@kernel.org, sboyd@kernel.org,
+ mturquette@baylibre.com, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, quic_cang@quicinc.com
+References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
+ <20231218120712.16438-15-manivannan.sadhasivam@linaro.org>
+ <e905c463-6f89-4939-981a-7a360ed31669@linaro.org>
+ <20231220083014.GB3544@thinkpad>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -116,10 +115,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <CAA8EJpr8rKMBzcm-=HGu7-C5hPkNMrnG1cA78O00UjgJVT7p6Q@mail.gmail.com>
+In-Reply-To: <20231220083014.GB3544@thinkpad>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240103_054255_116232_9D30C2EC 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20240103_055010_214312_7A92D081 
+X-CRM114-Status: GOOD (  10.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,51 +135,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21.12.2023 17:27, Dmitry Baryshkov wrote:
-> On Tue, 19 Dec 2023 at 22:55, Abel Vesa <abel.vesa@linaro.org> wrote:
->>
->> Until now, all platform that supported both eDP and DP had different
->> compatibles for each mode. Using different compatibles for basically
->> the same IP block but for a different configuration is bad way all
->> around. There is a new compute platform from Qualcomm that supports
->> both eDP and DP with the same PHY. So instead of following the old
->> method, we should allow the mode to be configured from devicetree.
->>
->> There has been an off-list discussion on what would be the right way
->> to pass on the PHY mode information to the driver and it has been
->> concluded that phy-cells is the way to go. This means that basically
->> the controller will pass another value (that is, the PHY type) to
->> its 'phys' DT property.
->>
->> For this, we need both the bindings value and the PHY mode value to be
->> added as well.
->>
->> The controller part will follow shortly. But for now, lets see where
->> this is going.
->>
->> There has been another attempt at this here:
->> https://lore.kernel.org/all/20231122-phy-qualcomm-edp-x1e80100-v3-3-576fc4e9559d@linaro.org/
->>
->> Compared to that version, this one uses the phy-cells method and drops
->> the X1E80100 support. The X1E80100 support will be a separate patchset.
+On 20.12.2023 09:30, Manivannan Sadhasivam wrote:
+> On Wed, Dec 20, 2023 at 01:35:27AM +0100, Konrad Dybcio wrote:
+>> On 18.12.2023 13:07, Manivannan Sadhasivam wrote:
+>>> QMP PHY used in SC8280XP requires 3 clocks:
+>>>
+>>> * ref - 19.2MHz reference clock from RPMh
+>>> * ref_aux - Auxiliary reference clock from GCC
+>>> * qref - QREF clock from GCC
+>>>
+>>> Fixes: 152d1faf1e2f ("arm64: dts: qcom: add SC8280XP platform")
+>>> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+>>> ---
+>>>  arch/arm64/boot/dts/qcom/sc8280xp.dtsi | 18 ++++++++++++------
+>>>  1 file changed, 12 insertions(+), 6 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+>>> index cad59af7ccef..37344abbe8bf 100644
+>>> --- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+>>> +++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+>>> @@ -2256,9 +2256,12 @@ ufs_mem_phy: phy@1d87000 {
+>>>  			compatible = "qcom,sc8280xp-qmp-ufs-phy";
+>>>  			reg = <0 0x01d87000 0 0x1000>;
+>>>  
+>>> -			clocks = <&gcc GCC_UFS_CARD_CLKREF_CLK>,
+>>> -				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+>>> -			clock-names = "ref", "ref_aux";
+>>> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
+>>> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
+>>> +				 <&gcc GCC_UFS_CARD_CLKREF_CLK>;
+>> GCC_UFS_REF_CLKREF_CLK
 > 
-> After several back and forth discussions, I think that this approach
-> is not correct and not that easy to extend. Instead I'd like to
-> suggest adding a property to the DP controller, which enables eDP
-> behaviour (and thus makes DP driver call phy_set_mode()). Something
-> like this:
-> dp: displayport-controller@ae0000 {
->     compatible = "qcom,sm8000-dp";
->     /* reg, interrupts, etc */
->    edp-interface;
->    /* or simpler */
->    is-edp;
-> };
-> 
-> What do you think?
-
-Please excuse my alzheimer, but why did we not go with phy-type after
-the last discussion?
+> I'm not sure about this CLK. So I kept it as it is until I verify it.
+I am quite sure everything *UFS_CARD_* refers to the other UFS host..
 
 Konrad
 
