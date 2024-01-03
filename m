@@ -4,60 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6415BC3DA6E
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 11:38:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25DC9C3DA6E
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 13:30:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zs6uV+j2o2lWJffV0yQMUAqmOg+Lh4lbK5DRszUFOCg=; b=hx85dYPU6cbZxX
-	bTPc5+O5uZ5a4sLSDIVEIen3boipsa53hS9Umy3klb9k3isrzL63Al5O+KTT+p9zw19+qKLlNRYFo
-	t0yZT928Pxo+sUYwCxR6FLEf4GT7xaSvJVtT/p+uLOBabpO0RXIYmY++gJmylvruvx5dWO3jXLewH
-	uZPCwiRijmx8lo64tWuv7+Y+wymYO1utDFBN+lSpQiznGjfEk4nONz5bixu4tpDwjYnU0Ej4qjGHY
-	+MtGAitNcQE/7tRuJuzqfAB8t3aUM1D2wdUHxMbe0nY7RqJYTBpnEZ6CH6iWWbvj76z5+c5WZ8Iax
-	HIwi485mBQ8YPcw1FP1w==;
+	List-Owner; bh=ue19W4ib8JTbr7i5uCB7Y9SdBoAo9nEP9PH6rsHqhYs=; b=ppGARC8B8UcrPb
+	GaEypknDV7GwYOwSOEX+PixDwOicjv7uIkXbR4XC71oaigervtIfxeUyb8amOFHMzd8El8AMWWOUt
+	KSNWlQsshJlQEsLzvZKb/84WyOYX2JzXfYgdJSQn/JO125m4yYV7lZT+4ea6tB9oSIcDcexG24Jyo
+	X47Ns8C9wyfMdKa+yKyII0dplXJpGeV/yE3JThZToDZjXiXflM+QaWeZfeb+izVUEQCJgCn8gm7MT
+	PkMV6sP5w0VG/cAwLbLKV5G/sQgbpe6anV1gakOoXI+qNvov49Dig1zEwizLGAK75uWBj5J/pxWgF
+	dcSvr6YWyRvvja6jxzKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKzZp-00AZr2-0Q;
-	Wed, 03 Jan 2024 11:38:25 +0000
-Received: from out-178.mta1.migadu.com ([95.215.58.178])
+	id 1rL1KW-00AxOq-2b;
+	Wed, 03 Jan 2024 13:30:44 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKzZl-00AZjI-2e
+	id 1rL1KS-00AxKo-1y
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jan 2024 11:38:23 +0000
-Message-ID: <52ea5dbf-2d60-7a23-e525-9dcae2809554@linux.dev>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1704281893;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fWtlIAOzUvDm9M4JJeNbJAd3af9ZIm0GtuZrj7wr4/0=;
-	b=G2gwt3l3L4osQhnnysqyLT3YLCLl6GHz5vJT7X83GvaVHeq2VWmghkeOJ7a24SRwe3Aw6s
-	mIp10JeJYu9LiuVYg/FnNlRSakB0DuEqJEhmEvLFOWg71oNJyaHvYu8IjNa37RcVF6XYZh
-	eQoxUsN8eQhmmMVZn8weTS/il/O1UrQ=
-Date: Wed, 3 Jan 2024 19:38:04 +0800
-MIME-Version: 1.0
+	Wed, 03 Jan 2024 13:30:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Transfer-Encoding:Content-Disposition:
+	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:From:
+	Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Content-Disposition:
+	In-Reply-To:References; bh=1H++AJiescRoXR5SWrVB1eNQUoip3aAkOmJ/HiZ4zFc=; b=1z
+	HnQX+cm/ClYDZS+R5jDLXvXTqeToFIScTgJmaxWCtETaENqsdsnHh5KxQzovCNiLb/Fx8sJa0kTcD
+	rMA3pPqTrNa7ZY9R64Wl9LYSxiS80L7yrD82n7/1d5vul9xWJ6tb0SzQemRdx4eK34bqzblhXXsq7
+	5dtK8NxHj7Vk330=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1rL1K8-004Fxw-12; Wed, 03 Jan 2024 14:30:20 +0100
+Date: Wed, 3 Jan 2024 14:30:20 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Yajun Deng <yajun.deng@linux.dev>
+Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>, davem@davemloft.net,
+	edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
+	olteanv@gmail.com, hkallweit1@gmail.com, kabel@kernel.org,
+	netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
 Subject: Re: [PATCH net-next] net: phy: Cleanup struct mdio_driver_common
-Content-Language: en-US
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
- pabeni@redhat.com, andrew@lunn.ch, olteanv@gmail.com, hkallweit1@gmail.com,
- kabel@kernel.org, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
+Message-ID: <7367681a-3ef5-42ad-9c2f-173f77cc1b56@lunn.ch>
 References: <20231228072350.1294425-1-yajun.deng@linux.dev>
  <ZZRJLg6U0G5CNRQ0@shell.armlinux.org.uk>
  <a5aca886-ca0a-8170-417f-a189ec28c87f@linux.dev>
  <ZZU8I5wwH+y1VsIy@shell.armlinux.org.uk>
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Yajun Deng <yajun.deng@linux.dev>
-In-Reply-To: <ZZU8I5wwH+y1VsIy@shell.armlinux.org.uk>
-X-Migadu-Flow: FLOW_OUT
+ <52ea5dbf-2d60-7a23-e525-9dcae2809554@linux.dev>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <52ea5dbf-2d60-7a23-e525-9dcae2809554@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240103_033822_282363_58C23591 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20240103_053040_667131_B648081E 
+X-CRM114-Status: GOOD (  25.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,34 +71,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ck9uIDIwMjQvMS8zIDE4OjUxLCBSdXNzZWxsIEtpbmcgKE9yYWNsZSkgd3JvdGU6Cj4gT24gV2Vk
-LCBKYW4gMDMsIDIwMjQgYXQgMTA6MDM6MTRBTSArMDgwMCwgWWFqdW4gRGVuZyB3cm90ZToKPj4g
-T24gMjAyNC8xLzMgMDE6MzQsIFJ1c3NlbGwgS2luZyAoT3JhY2xlKSB3cm90ZToKPj4+IEknbSBu
-b3Qgc3VyZSB3aHkgdGhpcyBjb25zaXN0ZW5jeSBpcyBldmVuIGRlc2lyZWQsIHRoZSBjb21taXQg
-bWVzc2FnZQo+Pj4gZG9lc24ndCBwcm9wZXJseSBzYXkgX3doeV8gdGhpcyBjaGFuZ2UgaXMgYmVp
-bmcgcHJvcG9zZWQuCj4+IE1vc3QgZHJpdmVycyB1c2UgZGV2aWNlX2RyaXZlciBkaXJlY3RseS4g
-VGhpcyBzaG91bGQgYmUgYWRkZWQgdG8gdGhlIGNvbW1pdC4KPj4KPj4gTGlrZSB0aGlzOgo+Pgo+
-PiBzdHJ1Y3Qgc2Rpb19kcml2ZXIgewo+Pgo+PiAuLi4gLi4uCj4+Cj4+ICDCoMKgwqDCoMKgwqDC
-oCBzdHJ1Y3QgZGV2aWNlX2RyaXZlciBkcnY7Cj4+IH07Cj4+Cj4+Cj4+IHN0cnVjdCBwY2llX3Bv
-cnRfc2VydmljZV9kcml2ZXIgewo+Pgo+PiAuLi4gLi4uCj4+Cj4+ICDCoMKgwqDCoMKgwqDCoCBz
-dHJ1Y3QgZGV2aWNlX2RyaXZlciBkcml2ZXI7Cj4+IH07Cj4+Cj4+IGFuZCBzbyBvbiAuLi4KPiAu
-Li4gd2hpY2ggaXMgZmluZSBmb3IgdGhvc2Ugb3RoZXIgZHJpdmVycyBiZWNhdXNlIHRoZXkgZG9u
-J3Qgc2hhcmUgdGhlCj4gc2FtZSBidXMuIFRoYXQgaXMgbm90IHRoZSBjYXNlIGhlcmUgLSB3ZSBo
-YXZlIHR3byBkaWZmZXJlbnQgY2xhc3Nlcwo+IG9mIGRyaXZlcnMgb24gdGhlIHNhbWUgYnVzLgoK
-ClllcywgdGhhdCdzIHRydWUuIEJ1dCB3ZSBjYW4gaW1wbGVtZW50IGl0IHdpdGggaXNfcGh5X2Ry
-aXZlcigpLiBJIGRvbid0IAp0aGluayB3ZSBuZWVkIGEgZmxhZyBmb3IgdGhhdC4KCj4KPiBJIGRv
-bid0IGxpa2UgYSBqdXN0aWZpY2F0aW9uIHRoYXQganVzdCBiZWNhdXNlIG90aGVyIHN1YnN5c3Rl
-bXMgZG8KPiBzb21ldGhpbmcgaW4gb25lIHBhcnRpY3VsYXIgd2F5LCB0aGF0IGlzIHRoZSBvbmx5
-IHdheSB0aGluZ3Mgc2hvdWxkIGJlCj4gZG9uZS4gSSB0aGluayB0aGVyZSBpcyBnb29kIHJlYXNv
-biB0byBoYXZlIHRoZSBzdHJ1Y3R1cmUgd2UgaGF2ZSwgYW5kCj4gdGh1cyB0aGVyZSBuZWVkcyB0
-byBiZSBhIGdvb2QgcmVhc29uIHRvIGNoYW5nZSBpdC4KCkl0cyBwdXJwb3NlIGlzIHRvIGNsZWFu
-IHVwIHN0cnVjdCBtZGlvX2RyaXZlcl9jb21tb24sIGFuZCBtYWtlIHRoZSBjb2RlIApjbGVhbmVy
-LgoKCj4gTWF5YmUgQW5kcmV3IGhhcyBhIGRpZmZlcmVudCBvcGluaW9uLCBidXQgSSB0aGluayB3
-ZSBuZWVkIGEgYmV0dGVyCj4ganVzdGlmaWNhdGlvbiBmb3IgdGhpcyBjaGFuZ2UuCj4KCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Wed, Jan 03, 2024 at 07:38:04PM +0800, Yajun Deng wrote:
+> =
+
+> On 2024/1/3 18:51, Russell King (Oracle) wrote:
+> > On Wed, Jan 03, 2024 at 10:03:14AM +0800, Yajun Deng wrote:
+> > > On 2024/1/3 01:34, Russell King (Oracle) wrote:
+> > > > I'm not sure why this consistency is even desired, the commit messa=
+ge
+> > > > doesn't properly say _why_ this change is being proposed.
+> > > Most drivers use device_driver directly. This should be added to the =
+commit.
+> > > =
+
+> > > Like this:
+> > > =
+
+> > > struct sdio_driver {
+> > > =
+
+> > > ... ...
+> > > =
+
+> > >  =A0=A0=A0=A0=A0=A0=A0 struct device_driver drv;
+> > > };
+> > > =
+
+> > > =
+
+> > > struct pcie_port_service_driver {
+> > > =
+
+> > > ... ...
+> > > =
+
+> > >  =A0=A0=A0=A0=A0=A0=A0 struct device_driver driver;
+> > > };
+> > > =
+
+> > > and so on ...
+> > ... which is fine for those other drivers because they don't share the
+> > same bus. That is not the case here - we have two different classes
+> > of drivers on the same bus.
+> =
+
+> =
+
+> Yes, that's true. But we can implement it with is_phy_driver(). I don't
+> think we need a flag for that.
+> =
+
+> > =
+
+> > I don't like a justification that just because other subsystems do
+> > something in one particular way, that is the only way things should be
+> > done. I think there is good reason to have the structure we have, and
+> > thus there needs to be a good reason to change it.
+> =
+
+> Its purpose is to clean up struct mdio_driver_common, and make the code
+> cleaner.
+
+I have to agree with Russell here. The commit message should explain
+the 'Why?'. Why is this better? Why is it cleaner? Why does making it
+the same as all other drivers make it better, when in fact we have two
+classes of devices stacked on top of it, and making it different to
+every other driver actually helps developers realise that?
+
+      Andrew
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
