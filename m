@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 818AFC47073
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 02:54:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E96D6C3DA6E
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jan 2024 10:51:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jcililrBKflGDjqxO3vQdH+Afy4wTYQr0+wiPYDxurY=; b=AKH9M+Dz75e+3q
-	Rm5I6aaekfCLdto9LCPeD+sKYhFLMjqR4ZPhxsw3dFfko16BCjZwUQix9Cfz/iQ3CQFulVXnF/rXx
-	UJxYHoWC73KW+cXxmbRL1j8vfvdMitqWNnzXdIUhXTZpgPoZraT9Jns5osixsD02TvhTljuFupR3D
-	bM22G7squzSoSo4ZY6UwYEphLKiYDHVRw+6bE5SohG4+/K7DnbU5TK0jLctSr0vSYS9c1EWuXqa6o
-	jkUid+BR1l8K8CfuY6BFJypzMQCWdWxWc7pD2gnGaS8OdxBgRmtCdUpEQXUXxXWb5MN8+JhfeLVSO
-	cJTL3OoJ3UYVYonnSB0A==;
+	List-Owner; bh=lkdAjEnMBEzrnF2rLsoZ8QR0eM7to9Q7EtEstTphApM=; b=OhjG2QIhs0+29C
+	XQnTJVgAHlPVchGEKSsJmMVnaIJrg3SArFMhMr9XFTKVov14zYauIrGtRQz+7D8lrhR4jodJZystl
+	nHnKfpf5AL2DpRCmXUvugT082soSOlAkIxqA53P8lGPw0wGPGuOvV16oPHuIkneQ5tlnPJGf75sIO
+	KcD+HXDUhTzTw3j3EQQTwJPYOVKtMbdTKBoL7YOWyOLpn4HDGRgm2qFsW02FUmF0iKBwOFRSPbO/K
+	TCjG5E79DCc8muJ+q8plJ1oFMb78buYMnq3kFjfecXaC1JrDmrC/SVgseamvQW3Ju/bdC/AkmInEC
+	nb2fRGw5l/JVVcUM3APQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKrOm-009cnG-0T;
-	Wed, 03 Jan 2024 02:54:28 +0000
-Received: from out-174.mta0.migadu.com ([2001:41d0:1004:224b::ae])
+	id 1rKyqX-00ARNF-1i;
+	Wed, 03 Jan 2024 10:51:37 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKrOi-009cle-1k
+	id 1rKyqU-00ARLd-2m
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jan 2024 02:54:26 +0000
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1704250461;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=rMt7lZjCiYyD0IatuGzXYEdVsPArKyHXFkUBPDO+8is=;
-	b=rzbiOiqonwmAWpfAUA7RmoR8Qvz7aff/QP18gShTRo4K9/ITTdPBOBMGsQzFginEwyNYuR
-	GS1Tm+z8D3XBADkl2sA26vGJdGx7xgZz97WKh8donTMzdRViHmO67seZGdknyVH26wGMbr
-	RE4OZyJDrXhHqineE2q4jcdvLJACU0Q=
-From: Yajun Deng <yajun.deng@linux.dev>
-To: davem@davemloft.net,
-	edumazet@google.com,
-	kuba@kernel.org,
-	pabeni@redhat.com
-Cc: andrew@lunn.ch,
-	olteanv@gmail.com,
-	hkallweit1@gmail.com,
-	linux@armlinux.org.uk,
-	przemyslaw.kitszel@intel.com,
-	rmk+kernel@armlinux.org.uk,
-	kabel@kernel.org,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Yajun Deng <yajun.deng@linux.dev>
-Subject: [PATCH net-next v2 2/2] net: phy: Introduce is_phy_device()
-Date: Wed,  3 Jan 2024 10:53:34 +0800
-Message-Id: <20240103025334.541682-3-yajun.deng@linux.dev>
-In-Reply-To: <20240103025334.541682-1-yajun.deng@linux.dev>
-References: <20240103025334.541682-1-yajun.deng@linux.dev>
+	Wed, 03 Jan 2024 10:51:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=UsxFTjUw6Zc2yvy6gkvn2mjApUFXVkeXpGQUxAbjitU=; b=gpZ/aCjnmyd++8LssUZU3FoxdS
+	6XaYiNdun0vIQV5JJmt2Pf3BjvxTq5Ch1Z97pUyBawgO/vOBlUiRJAMbQtpTFBBMGKHSmpJoWa4Uw
+	WhKFhSIBGDm23A1bEM6Zr3pjEMAboW0AWo5XwZWxX5lQLwHCJvKYhHwrOKLIKs+HRjIsj2q/NtHco
+	43oQyAcVgfqZcxIF1IuIsEztTSoukqniwvxlR2Pl+efRByvnAy4PPIeuMIddCRdCbpVqIEp67mitf
+	u/RNfIcrqInq0IJoVxyrZ+aTboaQIvXsDmITtylv4fbz/JNmTg+JfDgtS0S5kPUrTJJabNwu0Dhrz
+	QRqo0bYg==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57900)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1rKyqC-0007Ll-3B;
+	Wed, 03 Jan 2024 10:51:17 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1rKyqB-0006Ia-VO; Wed, 03 Jan 2024 10:51:15 +0000
+Date: Wed, 3 Jan 2024 10:51:15 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Yajun Deng <yajun.deng@linux.dev>
+Cc: davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, andrew@lunn.ch, olteanv@gmail.com,
+	hkallweit1@gmail.com, kabel@kernel.org, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next] net: phy: Cleanup struct mdio_driver_common
+Message-ID: <ZZU8I5wwH+y1VsIy@shell.armlinux.org.uk>
+References: <20231228072350.1294425-1-yajun.deng@linux.dev>
+ <ZZRJLg6U0G5CNRQ0@shell.armlinux.org.uk>
+ <a5aca886-ca0a-8170-417f-a189ec28c87f@linux.dev>
 MIME-Version: 1.0
-X-Migadu-Flow: FLOW_OUT
+Content-Disposition: inline
+In-Reply-To: <a5aca886-ca0a-8170-417f-a189ec28c87f@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240102_185424_717529_55816D24 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20240103_025134_896711_0C3C6C13 
+X-CRM114-Status: GOOD (  15.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,131 +77,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MDIO_DEVICE_FLAG_PHY is the only flag that can be set in the
-struct mdio_device. This flag is used to test that if it is a phy
-device.
+On Wed, Jan 03, 2024 at 10:03:14AM +0800, Yajun Deng wrote:
+> =
 
-We can test that the type of the device is equal to mdio_bus_phy_type,
-so that, the flags in struct mdio_device can be removed.
+> On 2024/1/3 01:34, Russell King (Oracle) wrote:
+> > I'm not sure why this consistency is even desired, the commit message
+> > doesn't properly say _why_ this change is being proposed.
+> =
 
-Introduce is_phy_device(), use it to test that if the device is a phy
-device.
+> Most drivers use device_driver directly. This should be added to the comm=
+it.
+> =
 
-Signed-off-by: Yajun Deng <yajun.deng@linux.dev>
----
- drivers/net/phy/mdio_bus.c   | 7 +++----
- drivers/net/phy/phy_device.c | 8 ++++++--
- include/linux/mdio.h         | 3 ---
- include/linux/phy.h          | 1 +
- 4 files changed, 10 insertions(+), 9 deletions(-)
+> Like this:
+> =
 
-diff --git a/drivers/net/phy/mdio_bus.c b/drivers/net/phy/mdio_bus.c
-index 69b8ddef9500..a80e6a7cbca5 100644
---- a/drivers/net/phy/mdio_bus.c
-+++ b/drivers/net/phy/mdio_bus.c
-@@ -75,7 +75,7 @@ int mdiobus_register_device(struct mdio_device *mdiodev)
- 	if (mdiodev->bus->mdio_map[mdiodev->addr])
- 		return -EBUSY;
- 
--	if (mdiodev->flags & MDIO_DEVICE_FLAG_PHY) {
-+	if (is_phy_device(&mdiodev->dev)) {
- 		err = mdiobus_register_gpiod(mdiodev);
- 		if (err)
- 			return err;
-@@ -125,7 +125,7 @@ struct phy_device *mdiobus_get_phy(struct mii_bus *bus, int addr)
- 	if (!mdiodev)
- 		return NULL;
- 
--	if (!(mdiodev->flags & MDIO_DEVICE_FLAG_PHY))
-+	if (!is_phy_device(&mdiodev->dev))
- 		return NULL;
- 
- 	return container_of(mdiodev, struct phy_device, mdio);
-@@ -1345,8 +1345,7 @@ static int mdio_bus_match(struct device *dev, struct device_driver *drv)
- 	struct mdio_device *mdio = to_mdio_device(dev);
- 
- 	/* Both the driver and device must type-match */
--	if (is_phy_driver(&mdiodrv->driver) ==
--	    !(mdio->flags & MDIO_DEVICE_FLAG_PHY))
-+	if (is_phy_driver(&mdiodrv->driver) != is_phy_device(&mdio->dev))
- 		return 0;
- 
- 	if (of_driver_match_device(dev, drv))
-diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
-index 732cfec293dd..1e19956e9e8d 100644
---- a/drivers/net/phy/phy_device.c
-+++ b/drivers/net/phy/phy_device.c
-@@ -640,6 +640,11 @@ static int phy_request_driver_module(struct phy_device *dev, u32 phy_id)
- 	return 0;
- }
- 
-+bool is_phy_device(struct device *dev)
-+{
-+	return dev->type == &mdio_bus_phy_type;
-+}
-+
- struct phy_device *phy_device_create(struct mii_bus *bus, int addr, u32 phy_id,
- 				     bool is_c45,
- 				     struct phy_c45_device_ids *c45_ids)
-@@ -660,7 +665,6 @@ struct phy_device *phy_device_create(struct mii_bus *bus, int addr, u32 phy_id,
- 	mdiodev->bus = bus;
- 	mdiodev->bus_match = phy_bus_match;
- 	mdiodev->addr = addr;
--	mdiodev->flags = MDIO_DEVICE_FLAG_PHY;
- 	mdiodev->device_free = phy_mdio_device_free;
- 	mdiodev->device_remove = phy_mdio_device_remove;
- 	mdiodev->reset_state = -1;
-@@ -3266,7 +3270,7 @@ struct phy_device *fwnode_phy_find_device(struct fwnode_handle *phy_fwnode)
- 	if (!mdiodev)
- 		return NULL;
- 
--	if (mdiodev->flags & MDIO_DEVICE_FLAG_PHY)
-+	if (is_phy_device(&mdiodev->dev))
- 		return to_phy_device(&mdiodev->dev);
- 
- 	put_device(&mdiodev->dev);
-diff --git a/include/linux/mdio.h b/include/linux/mdio.h
-index 852f838f52f5..8364e2d0c269 100644
---- a/include/linux/mdio.h
-+++ b/include/linux/mdio.h
-@@ -37,7 +37,6 @@ struct mdio_device {
- 
- 	/* Bus address of the MDIO device (0-31) */
- 	int addr;
--	int flags;
- 	int reset_state;
- 	struct gpio_desc *reset_gpio;
- 	struct reset_control *reset_ctrl;
-@@ -50,8 +49,6 @@ static inline struct mdio_device *to_mdio_device(const struct device *dev)
- 	return container_of(dev, struct mdio_device, dev);
- }
- 
--#define MDIO_DEVICE_FLAG_PHY		1
--
- /* struct mdio_driver: Generic MDIO driver */
- struct mdio_driver {
- 	struct device_driver driver;
-diff --git a/include/linux/phy.h b/include/linux/phy.h
-index 603c440f09f6..7d10b44a475b 100644
---- a/include/linux/phy.h
-+++ b/include/linux/phy.h
-@@ -2156,5 +2156,6 @@ module_exit(phy_module_exit)
- bool phy_driver_is_genphy(struct phy_device *phydev);
- bool phy_driver_is_genphy_10g(struct phy_device *phydev);
- bool is_phy_driver(struct device_driver *driver);
-+bool is_phy_device(struct device *dev);
- 
- #endif /* __PHY_H */
--- 
-2.25.1
+> struct sdio_driver {
+> =
 
+> ... ...
+> =
 
--- 
+> =A0=A0=A0=A0=A0=A0=A0 struct device_driver drv;
+> };
+> =
+
+> =
+
+> struct pcie_port_service_driver {
+> =
+
+> ... ...
+> =
+
+> =A0=A0=A0=A0=A0=A0=A0 struct device_driver driver;
+> };
+> =
+
+> and so on ...
+
+... which is fine for those other drivers because they don't share the
+same bus. That is not the case here - we have two different classes
+of drivers on the same bus.
+
+I don't like a justification that just because other subsystems do
+something in one particular way, that is the only way things should be
+done. I think there is good reason to have the structure we have, and
+thus there needs to be a good reason to change it.
+
+Maybe Andrew has a different opinion, but I think we need a better
+justification for this change.
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
