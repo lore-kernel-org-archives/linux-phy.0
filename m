@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97C3EC47073
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB4C9C47074
 	for <linux-phy@archiver.kernel.org>; Thu,  4 Jan 2024 13:30:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KNIvis+4DiW7/gY+a7+RLdjf+j77wBg/USUegx4BdAg=; b=BLWLzkHdXvfsuA
-	9n87vM2u44TPRNnEKvzuYlXuSR7r2RwzOwEZPmkv2ktEFLIJAbyWt2H0UHb7ENlV9R4dLA1s09j/t
-	8vleIwMxGmKn23yx3TdDzyBhQGsRKRiDjFxdkQCQpHicSi2ZtLvZALOKXWHUFdpDRA0+7BZC9HovR
-	/e2+m0zYHwPNiTZ1f/sx24Gfmz3DI3ZyYpuopar9738MYo2k3PwyerMv2BuC7wHXmqiDeqbJjjjgD
-	StMQWYlOqOZp7IoPQw7BNJdcQCUlYEU3W6ElyojupvRlmJLM72IcjFF0rVuNldSuSzR6N06K+DDL4
-	tEPVX1Y27LzjVJ/Kt62Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xRU8lnqE7TqARi+cuyzE/bD1cQEgcZZJOVlgRp/WSEE=; b=DKrykwsZgrhC29
+	tQM41QZdhFOjZ7kcQ2Pc0pX3rb8G3igEPtamYHAMSCXlmVj14EWJCaMFmYCF32Vryob4KjGDQwfqs
+	RjzH+afb2V3FQGAPaIZrq7ZAOrvNh5WIrCkHinoUI6Z/iFrxCwe79j+GGEPZxLL11BIAY+podU8XJ
+	GRtUOemg7lK/mIHw4F1EaF3dZ2bN/Y5dGDTQVkHxzXFV1kc2gaLpsSMrD0FTqvaQtY140zZcT/aPS
+	yg4lNWOOt1e+ZmL4pbcaRaxOVz3mE5poXWIB1BlP5KqQZ1hGg62q0PF1mERpZN3Qtr9nx7/ebRI84
+	qS0Si4lyV/bMb3BQB1/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLNo5-00EA9X-0u;
+	id 1rLNo5-00EA9o-1q;
 	Thu, 04 Jan 2024 13:30:45 +0000
 Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLNo0-00EA6r-1x
+	id 1rLNo0-00EA71-26
 	for linux-phy@lists.infradead.org;
 	Thu, 04 Jan 2024 13:30:43 +0000
 Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
-	by mx0a-0014ca01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 404CC1BX005199;
-	Thu, 4 Jan 2024 05:30:26 -0800
+	by mx0a-0014ca01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 404CEZM3029523;
+	Thu, 4 Jan 2024 05:30:27 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com; h=
-	from:to:cc:subject:date:message-id:mime-version:content-type; s=
-	proofpoint; bh=i6DQf3ZI7Ty4jDXX6q/5g1aY0LA81l6Y+x7ZVKV4P68=; b=P
-	QYsawFz3Tga1qOH0oqaeppc5VwxOlhlLoUAhzqPLfRjmQnRlearlPDK3EbJhDlih
-	1qw3BJfjrAmC7cnUJpxM+HcISeQRAdDGsDoKIBDoxOnatA2+PJPvM6YayQJ/Vsc+
-	mEyfVwWygqKKuTPuKJDdBK5PSvS/J0RFTfXhq7S8etd2H1fTye6nZJUBKL7RJvta
-	ElhsPGh2jwiVoojXe+M+YFlJFsfylx4XSAgr9NR5xvKdJYKBSaLNZ+2rn9x9SLnN
-	h6xDmdppAlNZnXkl1pHth95J53ER/NVgOTmtlsDiM1pH9g3tOLpdLXqCL6OHxSeY
-	ub6TFEAa8zERl/UV8hw/A==
-Received: from nam10-mw2-obe.outbound.protection.outlook.com (mail-mw2nam10lp2100.outbound.protection.outlook.com [104.47.55.100])
-	by mx0a-0014ca01.pphosted.com (PPS) with ESMTPS id 3vagmwhm62-1
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-type; s=proofpoint; bh=SoCb8bokPzZuZz0PJjB
+	oW2MD0J9YPZXsxwHOstD+xsI=; b=Z0KPkH/W1KvDYVQKm6wDxtDWuaqmCdWyx01
+	PHHxbuwR80mimhN9IB4Y1jNGqr7AjFUagyLEq/LIwmbJ87GEGYDDvNfzijziMDly
+	necvKEeC4SfzJvFK6xxz8Tf0iwF481bfjXvJ/Epl3KteyUPkHtyqtmo1DwY2C96J
+	PGm5Lq9QT2ZObomyRUPsyiZw4s8OSWYUhSovDkK3UhdEebY6+midqOqc5I7zbT1O
+	fkoC93lvIDwPV7JCMXTm3R60D6Gsjigmduc/ZPtR3QDV6t1NoCgGGcrBlfMiPvUS
+	NffzeOikoqmzVE0pCZdQB9S+vZavnDWHrT4NdB5WaoHXZSK41qw==
+Received: from nam12-dm6-obe.outbound.protection.outlook.com (mail-dm6nam12lp2169.outbound.protection.outlook.com [104.47.59.169])
+	by mx0a-0014ca01.pphosted.com (PPS) with ESMTPS id 3vagmwhm6b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 Jan 2024 05:30:25 -0800 (PST)
+	Thu, 04 Jan 2024 05:30:27 -0800 (PST)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aIzYkDvk5XfkbPV8Bjy5mEe70DAY27FRIGUIMdCHOuqkAtwdjbSjJI6VQNCkj7ZOOq+FYLSb3abFa479U0qJHH5UD7F/5LxbBv8wmbC3fP0LgGd1gdmz04AaLyTvyJyLVNZ18Mzy9PYngKi/kA+jvHpyRYKy2ySLXxyxBzYid+/6xLLYIlUSrCOkT2XbaJnjKT/kfFBxR7HeELOxJqMU4pu0fgnSoqyRtigsH6wuDh24w616oN2CmhN2DF8ANJq8JNSNFHWTomY1jnKBYmkrgnHtQcTVB5h6/kMr3CIUVEmiDG8XGDdVZQ8MpC8qmG75rC0dcy7peRt3Km411gPdgg==
+ b=Zxxm3hzrCFrpYyFFOirlW7Wq2gAclw6JyvnPju/Gsa+r/vpMhw6j5BxIOE2rlwY4xG2ISaYhr66V2ZJRNg/g6WGnIabxe8K0yRemkotPtwQYPft399DRLo/EOEUWwyW/YOj0cBzQbMZSWXCyzN39F5+oMCmyjOMzMOcT35gqn5jZ3zHvBKPXL9KF4ePQhoeleMvpPrimGctRnGGif4nuNKMq0NK3ZP3sw+kiZdvo9aHOi5uXljJGPQdjRDZHDQt/b9RAvc3VHxugQRDijyAdCkHW3a+I4b+nA+8XYCOf7iUHfG1z6vbimYaX4/YutZljoa/FICkEkV/OvYiTqcZx0Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=i6DQf3ZI7Ty4jDXX6q/5g1aY0LA81l6Y+x7ZVKV4P68=;
- b=lFpEo8OmTViFsCx7wtoKi0uipgXv/TqcASM0kY5OL175Ich2AxJODISCl1hU2aY3CML6daATrJA2bOFpcZGHdbthOXbcp31FUoCniPEQUpGjfhX3quykCcyppLIbnt04unNCQliF6FnZsfGtQNZktT8zCsdsYdN6cfB5XlB65r2n0zYAJjHtoRixlG8IjBJDNTH9AzB0of8qxBjw6utvtv/70nQm+HN8YFr0zER9eS7ReGJ1PtZL4JH91+V+m4abubeWEi3lrwkqn34fXYl2WD5i9kRsDEYxAIVSEM/txvAJoDPSnIbf5pjjYDjahdHUeTE3B8y1yiY2aF5iH8JIpA==
+ bh=SoCb8bokPzZuZz0PJjBoW2MD0J9YPZXsxwHOstD+xsI=;
+ b=Au/+9SVGs0MKaUpDhKzwhP51rE+vIv863yBXVpO1kSEvPKIz+OB1PrG5EWy3DxovyosPCpIfIqMVrFfBgmnUDtmyigs5gZTu6BfQHtyOI4Uu5pyZwz4gz8N2w3ZA6Nl2Z6/CYPvz0rDCBUTSUM9VxkE7cujUQ6NTTpWG8NjvPXmyR6PaWoddtDNu+MaqlTcLI4bRQP7aGN7zFc6XNKfn8N71fC3PJI1w5Ijz6MIbBNHwUhqjLYvuNG4/ddwPCa1IV5inPqdwVdEA7OaRvZJyYuJHlSvOuq+6uksK1Oj2PFJDTskFXTbS5SUdSoQa8IOKIhE1o2B2ubrM6CuiydZzhw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  64.207.220.244) smtp.rcpttodomain=ti.com smtp.mailfrom=cadence.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
@@ -57,17 +57,17 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=i6DQf3ZI7Ty4jDXX6q/5g1aY0LA81l6Y+x7ZVKV4P68=;
- b=J5e/uT1PD6WCZO4K6mjfcYYM47E+GpVQMjvfMgOVr2abFOXbD9t2eLDos+p3FMp9u7+zSGmDNE5lO9LRLI7A9XHaktsP9XlskZoXOGLp/yFpIBnE2fAK3LdUXPYxN+u6jij1PjmHEOAsM2HQJBP0CJ+QvlG3ml9Dzsy5vZI2C8E=
-Received: from MN2PR20CA0060.namprd20.prod.outlook.com (2603:10b6:208:235::29)
- by SA0PR07MB7674.namprd07.prod.outlook.com (2603:10b6:806:b8::20) with
+ bh=SoCb8bokPzZuZz0PJjBoW2MD0J9YPZXsxwHOstD+xsI=;
+ b=1mEAvJM+wohz2Gjv5/fhlYMsPbDtKB71wD9hgQUDf9xZIgtLUyO058PPW2QFfCeLTSo9CdOL+EPMoSEIJR1Gg5SPYikcuTSOEd0BxyWuJ5l2C3THKCYLWt8Vp7jQ5C31svQsK1kxhhi2xRSlfTyvcA17jLIhCuuRtBJcKSRvKF8=
+Received: from DM6PR06CA0075.namprd06.prod.outlook.com (2603:10b6:5:336::8) by
+ BL0PR07MB8097.namprd07.prod.outlook.com (2603:10b6:208:1ca::16) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.16; Thu, 4 Jan
- 2024 13:30:23 +0000
-Received: from BL6PEPF0001AB76.namprd02.prod.outlook.com
- (2603:10b6:208:235:cafe::39) by MN2PR20CA0060.outlook.office365.com
- (2603:10b6:208:235::29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.16 via Frontend
+ 2024 13:30:24 +0000
+Received: from DM6NAM12FT088.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:5:336:cafe::16) by DM6PR06CA0075.outlook.office365.com
+ (2603:10b6:5:336::8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.15 via Frontend
  Transport; Thu, 4 Jan 2024 13:30:23 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
  smtp.mailfrom=cadence.com; dkim=none (message not signed)
@@ -76,13 +76,13 @@ Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
  64.207.220.244 as permitted sender) receiver=protection.outlook.com;
  client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com; pr=C
 Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
- BL6PEPF0001AB76.mail.protection.outlook.com (10.167.242.169) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.7159.9 via Frontend Transport; Thu, 4 Jan 2024 13:30:22 +0000
+ DM6NAM12FT088.mail.protection.outlook.com (10.13.179.210) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7135.29 via Frontend Transport; Thu, 4 Jan 2024 13:30:22 +0000
 Received: from maileu4.global.cadence.com (eudvw-maileu4.cadence.com [10.160.110.201])
-	by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id 404DUJMh096550
+	by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id 404DUJMi096550
 	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK);
-	Thu, 4 Jan 2024 05:30:20 -0800
+	Thu, 4 Jan 2024 05:30:21 -0800
 Received: from maileu5.global.cadence.com (10.160.110.202) by
  maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -92,11 +92,11 @@ Received: from cadence.com (10.160.88.83) by maileu5.global.cadence.com
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.24 via Frontend
  Transport; Thu, 4 Jan 2024 14:30:18 +0100
 Received: from vleu-orange.cadence.com (localhost [127.0.0.1])
-	by cadence.com (8.15.2/8.15.2) with ESMTP id 404DUG8i2911082;
-	Thu, 4 Jan 2024 14:30:16 +0100
+	by cadence.com (8.15.2/8.15.2) with ESMTP id 404DUIUc2911086;
+	Thu, 4 Jan 2024 14:30:18 +0100
 Received: (from sjakhade@localhost)
-	by vleu-orange.cadence.com (8.15.2/8.15.2/Submit) id 404DUDQF2911077;
-	Thu, 4 Jan 2024 14:30:13 +0100
+	by vleu-orange.cadence.com (8.15.2/8.15.2/Submit) id 404DUIsD2911085;
+	Thu, 4 Jan 2024 14:30:18 +0100
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
         <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
@@ -104,45 +104,47 @@ To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh+dt@kernel.org>,
         <devicetree@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <rogerq@kernel.org>,
         <s-vadapalli@ti.com>
-Subject: [PATCH v4 0/5] PHY: Add support for dual refclk configurations in Cadence Torrent PHY driver
-Date: Thu, 4 Jan 2024 14:30:08 +0100
-Message-ID: <20240104133013.2911035-1-sjakhade@cadence.com>
+Subject: [PATCH v4 1/5] dt-bindings: phy: cadence-torrent: Add optional input reference clock for PLL1
+Date: Thu, 4 Jan 2024 14:30:09 +0100
+Message-ID: <20240104133013.2911035-2-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20240104133013.2911035-1-sjakhade@cadence.com>
+References: <20240104133013.2911035-1-sjakhade@cadence.com>
 MIME-Version: 1.0
 X-CrossPremisesHeadersFilteredBySendConnector: maileu4.global.cadence.com
 X-OrganizationHeadersPreserved: maileu4.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL6PEPF0001AB76:EE_|SA0PR07MB7674:EE_
-X-MS-Office365-Filtering-Correlation-Id: 17de738e-16c7-4317-0c1e-08dc0d294d74
+X-MS-TrafficTypeDiagnostic: DM6NAM12FT088:EE_|BL0PR07MB8097:EE_
+X-MS-Office365-Filtering-Correlation-Id: e570aedf-cbd3-4d44-248e-08dc0d294d8d
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: ChOBDvODDR8qMOUj0HqRtIE9goQTDbPPydmFEJSVOG2mEjXrcFyKnPHNBW6GOob2RvuPKJZoGMT40krxrRO4P3o5UhFNJiqDbyiXjOQ+WMjZ+echOCWnDaSANNoxRA27y9MAZe542MQ4VW1FBC8y40BMW9fYffdehxh6XYb2l/ZGV1buWUEuHEkmdNyHBXepVF3VQcocFHar0Nc/Y/EWroNEaXtDgAhlPmYU+uUtJizlEv5DEr0LYDyXp+aBJOfsGP5lW/zbdtmFNSa7/+w3TdxEi0AwfVvq2u7W3Xh+PRDpObHyXRe1oGVzrHalK19vhpNGBuVYGV4a/aRAQu+H0sTM1Hj+Fs++lAHqyjIMbyEWA5psuO98dnqyyYDqlIMdiDsoaytFq+AsBpKf3fv7zeDVye11qW9SvVMjB/aARjMYle17hbz2Jp3mrRBb8Ykw5bOFtYDRZDIYTj7TqWNRm+xk92FFP2FkpSrtaIZ07C2VprmYIc3CM7HQHe7AX7gVYpxvZRr7JAo89qgI2GgCMO7SUX69xIjITerd8n/pLfqj7ImA6LYbcpibOUORTJ5HGWcHqo+7sU6gtVVX3UJXZ8FWLyfEIYvN6HuXECVjN4UCZqwSP+LDz66PC1VjLezeBMpzMWycDdd1agT6KaG6np2khIiLy92kZSm8bn83ExaxiIEpUQAJSbHXtns1Jt2XnB5QO9BrVWUzmfFrxEPqiqeEBEjy4Xu+VWk+X59GGVrAIRpbMhmkbbsU4bOJVHOVN893yVr/QZrLcyy+T641mfg+bzyJ7tDx0cruJLvmoLo=
-X-Forefront-Antispam-Report: CIP:64.207.220.244;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:wcmailrelayl01.cadence.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230031)(4636009)(136003)(376002)(346002)(396003)(39860400002)(230922051799003)(451199024)(64100799003)(186009)(82310400011)(1800799012)(46966006)(36840700001)(40470700004)(47076005)(1076003)(26005)(2616005)(336012)(83380400001)(81166007)(356005)(426003)(2906002)(36860700001)(41300700001)(82740400003)(8936002)(8676002)(54906003)(110136005)(7416002)(316002)(5660300002)(966005)(42186006)(4326008)(6666004)(478600001)(70206006)(70586007)(86362001)(36756003)(40480700001)(40460700003)(36900700001)(2101003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: pu/AtLYyqIfWXzcXwP0l6MTmIy/Cn7iiW3cscSM3+/CXgm2W/+iORIvHcyqomcrmOpmD9K9kjIBkJofjmhHxQtNqM8IZu5Kfh0lPY3ApxFt7SA4zI2gVyeqGdshu7EOCsaHCbwTD6Khy8FnNNQZqLjfjiChWRf5SBNJq33dz8PUWkeSQglUtlCOvw+qgE4EMa1SbTq7IC+JoHMOFoL8DDe6xjjLQfhM26RfJIdpwQyXTkMwgezMTT8kV6JgDamCk6YYWHtua4qV8KxZGGXKONFOZmLqNJD9JPxTm1BNBuofrccHjTJbVv3qHyVz1aBZ5QH3A0aqwvJXV5kbW64om1dLgAw51dvJwhLbNzVDib7cPCiHYSNXWge2PvvR92ov+2c/HdnvMwMQSh6+TBJqB1rF/1yMKtM0r8zllX7PfUWporn3UZMyngU0htCsDODGXamr8T3oyrpUEtC+jLfjqwGsKuqt6QvpV0S2p2b1lr2U8uVy+QJvSeNm073jw6o3gnnfVfI4Qs1UBph+6QKx59aSw2AvQqToD1IXWpQugZxFWgTROQ/dh9SMfRy/u93ARhHv/V1eDijYkQiW6Gtm44cGbL2pg7pVtg6NHx1nPGH3spv1CwW/hfUTJQyGFKPl+QubA2qZyMzFoKr90YkIUI0M7r7yf8gqMDO92npsNa4SItaRdvlgCoOHHiRahhJO5kI8qxzdsqQ4v79cPfIT7YhLAZAkYg/7B+sVDEb7bYwhanqBhm5pLbxFyiDdKsgNesby1jhID/qF5pjyM+k2C9Q==
+X-Forefront-Antispam-Report: CIP:64.207.220.244;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:wcmailrelayl01.cadence.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230031)(4636009)(396003)(376002)(136003)(346002)(39850400004)(230922051799003)(186009)(82310400011)(64100799003)(451199024)(1800799012)(46966006)(36840700001)(40480700001)(36756003)(70586007)(70206006)(86362001)(426003)(336012)(81166007)(356005)(2616005)(1076003)(26005)(83380400001)(47076005)(36860700001)(2906002)(7416002)(5660300002)(6666004)(478600001)(4326008)(82740400003)(41300700001)(316002)(54906003)(42186006)(110136005)(8676002)(8936002)(2101003)(36900700001);DIR:OUT;SFP:1101;
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jan 2024 13:30:22.1382
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jan 2024 13:30:22.4589
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 17de738e-16c7-4317-0c1e-08dc0d294d74
+X-MS-Exchange-CrossTenant-Network-Message-Id: e570aedf-cbd3-4d44-248e-08dc0d294d8d
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9;Ip=[64.207.220.244];Helo=[wcmailrelayl01.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF0001AB76.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT088.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA0PR07MB7674
-X-Proofpoint-GUID: ZkO-7IIy4VE0tfD4rhxL8jCf_5R8plwf
-X-Proofpoint-ORIG-GUID: ZkO-7IIy4VE0tfD4rhxL8jCf_5R8plwf
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB8097
+X-Proofpoint-GUID: n74I9Hhh2stGSFD01X8oKb3vGTyIzUVq
+X-Proofpoint-ORIG-GUID: n74I9Hhh2stGSFD01X8oKb3vGTyIzUVq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-12-02_01,2023-11-30_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check score=0 impostorscore=0
- phishscore=0 adultscore=0 malwarescore=0 clxscore=1015 bulkscore=0
+ phishscore=0 adultscore=0 malwarescore=0 clxscore=1011 bulkscore=0
  priorityscore=1501 suspectscore=0 lowpriorityscore=0 mlxscore=0
- spamscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
+ spamscore=0 mlxlogscore=931 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.19.0-2311290000 definitions=main-2401040105
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240104_053040_941439_7A3E3078 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20240104_053040_941439_207365A5 
+X-CRM114-Status: GOOD (  12.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,49 +161,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series extends Torrent PHY driver functionality to support
-dual input reference clocks.
+Add a new optional input reference clock (pll1_refclk) for PLL1.
+Update bindings to support dual reference clock multilink configurations.
 
-It also adds support for following multilink configurations:
-- PCIe(100MHz) + USXGMII(156.25MHz)
-- USXGMII(156.25MHz) + SGMII/QSGMII(100MHz)
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
+---
+ .../devicetree/bindings/phy/phy-cadence-torrent.yaml   | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
-The changes have been validated on TI J721E and J7200 platforms.
-
-v1 of the patch series can be found at [1].
-
-Version History:
-
-v4:
-   - Fixed error handling in patch 2/5 as per review comments for v3
-   - Added Acked-by and Reviewed-by tags
-
-v3:
-   - Updated clock description in DT documentation
-   - Added Acked-by from Conor
-
-v2:
-   - Rename refclk1 to pll1_refclk in bindings and in driver
-   - Simplify clock-names as suggested by Rob
-
-[1] https://lore.kernel.org/linux-phy/20230724150002.5645-1-sjakhade@cadence.com/
-
-Swapnil Jakhade (5):
-  dt-bindings: phy: cadence-torrent: Add optional input reference clock
-    for PLL1
-  phy: cadence-torrent: Add PCIe(100MHz) + USXGMII(156.25MHz) multilink
-    configuration
-  phy: cadence-torrent: Add USXGMII(156.25MHz) + SGMII/QSGMII(100MHz)
-    multilink configuration
-  dt-bindings: phy: cadence-torrent: Add a separate compatible for TI
-    J7200
-  phy: cadence-torrent: Add USXGMII(156.25MHz) + SGMII/QSGMII(100MHz)
-    multilink config for TI J7200
-
- .../bindings/phy/phy-cadence-torrent.yaml     |  11 +-
- drivers/phy/cadence/phy-cadence-torrent.c     | 720 +++++++++++++++++-
- 2 files changed, 719 insertions(+), 12 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+index dfb31314face..3893800f81b4 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+@@ -35,14 +35,18 @@ properties:
+     minItems: 1
+     maxItems: 2
+     description:
+-      PHY reference clock for 1 item. Must contain an entry in clock-names.
+-      Optional Parent to enable output reference clock.
++      PHY input reference clocks - refclk (for PLL0) & pll1_refclk (for PLL1).
++      pll1_refclk is optional and used for multi-protocol configurations requiring
++      separate reference clock for each protocol.
++      Same refclk is used for both PLL0 and PLL1 if no separate pll1_refclk is used.
++      Optional parent clock (phy_en_refclk) to enable a reference clock output feature
++      on some platforms to output either derived or received reference clock.
+ 
+   clock-names:
+     minItems: 1
+     items:
+       - const: refclk
+-      - const: phy_en_refclk
++      - enum: [ pll1_refclk, phy_en_refclk ]
+ 
+   reg:
+     minItems: 1
 -- 
 2.25.1
 
