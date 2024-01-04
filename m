@@ -4,117 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F354C47073
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Jan 2024 22:50:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35D79C47073
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Jan 2024 22:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7AAolQstqr3xCz9h+YGueG50eLYNgQBjrd49HnJ3mPw=; b=bhgNs6ONmPQ3+g
-	IlWcrWh5c892G86l13DjkQoOmowKIW63yyTZjnJHTSer5a9AJC10UuGumJ1BfmqS2kNX3MDApONlP
-	SFjzid0/fUNaMr6frzb87tGF1C3ypuArSFD4+Y6cSQd+9ArmpFoVf4kyxtj7A5tKi+8W8XFEa478w
-	jwxbdrMqi8cq+FA8VRBMn7tDAStQxE272zA0fZfJhnfrb6Fq9al1Vi7tbBAk5XsMcnSmX5OmGqbKl
-	YxH12JNq4nSHo1MYwhwABqrhjrYiqVEXB0VeGT1/mUnh4zfW3dQUDWhHE+B9FbvLO88kgz4bEoiyW
-	Oe3+9V4w91f0kuinT4HA==;
+	List-Owner; bh=5eQmZP1MeU4/pMyjz9yCWbmyFnc0CQMiETIH2Ch8t5c=; b=1fCxYpaLX4Oima
+	hqFI1F6zO2LlxkVSd8p/fU6VwwZl87EDWV+DGQUURB+18ufncLzsc2TuWFzcpSMbsi5pxQXcp26yG
+	CCEedysCGb43hqIgIbO6yq9JKLAvyowsGyzLontDGWHbNx9suwUocq8/eaVUlen8JyThjkSN5FxHk
+	UmMozZtnJPwsYhCuuqVRwDlPyNxLYfs39PUySeGVQjL19botJl+BsDOiCB1830deXogXLWE/cRINS
+	VCqPcmtZzFbahQAgETQcrKf5IKvIu5mX29JurJfYHkfLm0/2Gc9BZGMDSL/+Ax8ZKA+zHqyEoD/Yx
+	OjUVNBEEoOBezYMJNM+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLWYE-00FOS1-2y;
-	Thu, 04 Jan 2024 22:50:58 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1rLWff-00FPDJ-2u;
+	Thu, 04 Jan 2024 22:58:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLWYC-00FOQ9-0s
+	id 1rLWfc-00FPCm-37
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Jan 2024 22:50:57 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3366ddd1eddso888934f8f.0
-        for <linux-phy@lists.infradead.org>; Thu, 04 Jan 2024 14:50:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704408651; x=1705013451; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=VcPQ9Xa0tJ4XfKkhqDvXF2rtEgjcj5MLQaEjWV4A5Kg=;
-        b=vzyDpOW4/s/jh+lvIcgXvoLkIi6NMQ8zojAbXeDgVoMdwZdl9RjActHH+iZKUdd8zl
-         wtrFeWFJhgMEFuMApQKuwlC4oxkqmAZchPOyb5q0C4UK2lGepwQHb7XwlzP3TpFeVbVc
-         9gO+wMP6UM2ikdU6pE7HnCyent6jq26ShqLn48rA/Ye2bv0tVNDc6vAY5NVKC/PaVHVw
-         ZtJSpme43r6zSTNDG1ry5ttLq6VcWgKo+dbUNZvoCrWL3EBSojbKuiTrF//Ob+OGltOP
-         wVv1V66IhT4tfng5371zvsFDoKV7hk+FiKVgxuTF04FsdFrBY2ExsT/fI3lWmgjug5Yx
-         l5ig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704408651; x=1705013451;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=VcPQ9Xa0tJ4XfKkhqDvXF2rtEgjcj5MLQaEjWV4A5Kg=;
-        b=msCMF5B/q3CIErKxKkHL+9Hl8UGsKAgvWInG+B02HcMc71zluGKjZyHuAjH6CzYARa
-         wn7LyyvCMvwStEjtCZarEHg098ZdMSfrRvuikE/2DnVugKUG0Y2hN+sJ4dEezZBLhjaD
-         d3QWPsuL2PoP7FLXGkpvBxrlnvGHUZ7VSJBERNS34uUCYdo+BfBf/NU4eUguzPShxyHl
-         vlDCcqnDysJU1UEEM+E24EwGKHYGtH7RD/bNy8UZUTT/DJNYCOIFXiFyaIR4zVt9+1rX
-         znWNjdV8XRBvoe/pnggtYYvsaHb3xqTBRqvNnMfiRkL2dSqFWkq4d7acYriuOzcbv3ey
-         e3wA==
-X-Gm-Message-State: AOJu0YxzCKKYc8Wjzi/wx1C44QoO1Y8P1y4ec1p7mO4KytgZiI/dhhe3
-	+Nmrv8h7WFubyn6SiSyvUpn9OwHaioHWQQ==
-X-Google-Smtp-Source: AGHT+IE3+wslo/R5fktyBQLHhO2GpT5lUe0uUiBgWQLm5rhL1CAYSVuuqQ/iTdjnpdLjsRGK7bgkOg==
-X-Received: by 2002:a5d:464a:0:b0:337:43c2:d17b with SMTP id j10-20020a5d464a000000b0033743c2d17bmr377479wrs.77.1704408650907;
-        Thu, 04 Jan 2024 14:50:50 -0800 (PST)
-Received: from [192.168.199.125] (178235179036.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.36])
-        by smtp.gmail.com with ESMTPSA id co22-20020a0564020c1600b00556cf695da0sm214100edb.78.2024.01.04.14.50.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 04 Jan 2024 14:50:50 -0800 (PST)
-Message-ID: <33b32e2b-fa35-448c-8b4c-c5c51a514922@linaro.org>
-Date: Thu, 4 Jan 2024 23:50:48 +0100
+	Thu, 04 Jan 2024 22:58:38 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 404Mhfd0010981;
+	Thu, 4 Jan 2024 22:58:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=HptTqmPQ1Pxy0XsGa3EiuulInmHFr8LzcaXL6ybczHA=; b=Ib
+	dD9WfVbkslO5ioVWwkPMHulUDcKTFithYgFTvHl0MZoFQB+LQZe7k9KSv+CGyxTi
+	IPzT5b+OABbfjxr1X8NLj7U1ccBb5GguXmzvW2Wo0MXh0BBXwd/dD4L5O7GQktFZ
+	jQIVHJVIVbboeQcnLFcA/kQ2hlSfQDikSRcp5dRbR/WMtUeWnsFIvUhaS+o3hKte
+	yXwLt/bI13Vph07LivpzKuwH5YUNeb86zvuzHFjzyIEXXGpeilzuiqyIrs8Y9voN
+	u4+yqMoHzmhAQ/nuSe7tW1Zp3qTr44VIy/WISnZvRfZMQARTE6ugON7qj1TAfNIE
+	/R272n7BtKSQ/m6Ksx1A==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ve1sgghj4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 04 Jan 2024 22:58:31 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 404MwUIu027484
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 4 Jan 2024 22:58:30 GMT
+Received: from [10.71.108.105] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 4 Jan
+ 2024 14:58:29 -0800
+Message-ID: <1e9fd6f2-3fdb-4779-b79a-274e51c4cbba@quicinc.com>
+Date: Thu, 4 Jan 2024 14:58:29 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: qualcomm: eusb2-repeater: Drop the redundant
- zeroing
+Subject: Re: [PATCH 0/2] phy: qualcomm: eusb2-repeater: Some fixes after the
+ regmap rework
 Content-Language: en-US
 To: Abel Vesa <abel.vesa@linaro.org>, Bjorn Andersson <andersson@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
 References: <20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org>
- <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
+From: Elliot Berman <quic_eberman@quicinc.com>
+In-Reply-To: <20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: OdiNoiUE90c92Fr3UrgSrfVNDcasfR6y
+X-Proofpoint-ORIG-GUID: OdiNoiUE90c92Fr3UrgSrfVNDcasfR6y
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1011
+ spamscore=0 bulkscore=0 mlxscore=0 mlxlogscore=546 impostorscore=0
+ adultscore=0 phishscore=0 suspectscore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401040174
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240104_145056_312765_5CA1A760 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20240104_145837_151492_E8ECD70F 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,46 +103,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4.01.2024 15:52, Abel Vesa wrote:
-> The local init_tlb is already zero initialized, so the entire zeroing loop
-> is useless in this case, since the initial values are copied over anyway,
-> before being written.
+
+
+On 1/4/2024 6:52 AM, Abel Vesa wrote:
+> Found the first issue (from first patch) while adding support
+> for X Elite (X1E80100) which comes with more than one repeaters.
+> The second fix is just bonus.
 > 
-> Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+
+Tested-by: Elliot Berman <quic_eberman@quicinc.com> # sm8650-qrd
+
 > ---
-
-That's another good spot.. partial struct initialization of
-pm8550b_init_tbl zeroes out the uninitialized fields.
-
-
->  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 10 ----------
->  1 file changed, 10 deletions(-)
+> Abel Vesa (2):
+>       phy: qualcomm: eusb2-repeater: Fix the regfields for multiple instances
+>       phy: qualcomm: eusb2-repeater: Drop the redundant zeroing
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> index 5f5862a68b73..3060c0749797 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> @@ -156,16 +156,6 @@ static int eusb2_repeater_init(struct phy *phy)
->  
->  	regmap_field_update_bits(rptr->regs[F_EN_CTL1], EUSB2_RPTR_EN, EUSB2_RPTR_EN);
->  
-> -	for (i = 0; i < F_NUM_TUNE_FIELDS; i++) {
-> -		if (init_tbl[i]) {
-> -			regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
-> -		} else {
-> -			/* Write 0 if there's no value set */
-> -			u32 mask = GENMASK(regfields[i].msb, regfields[i].lsb);
-> -
-> -			regmap_field_update_bits(rptr->regs[i], mask, 0);
-> -		}
-> -	}
->  	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
-
-I think this patchset can be made even better, this memcpy is also
-useless and we can simply initialize init_tbl=rptr->cfg->init_tbl.
-
-Konrad
+>  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 23 ++++++++++-------------
+>  1 file changed, 10 insertions(+), 13 deletions(-)
+> ---
+> base-commit: 0fef202ac2f8e6d9ad21aead648278f1226b9053
+> change-id: 20240104-phy-qcom-eusb2-repeater-fixes-c9201113032c
+> 
+> Best regards,
 
 -- 
 linux-phy mailing list
