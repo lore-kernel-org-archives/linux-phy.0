@@ -4,119 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22EECC3DA6E
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 10:09:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50344C4707B
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 10:16:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6TV9BBJHBeaFrufoxRrmyFQTtZglUBAc7h8acKsTpZE=; b=2H27EDc/xFPO8P
-	Q3q0AS9CwgLppf5OI03OBa9gteqTgE6Wo+bTYry5G6y3ksV4qB2zm8j3myRN63j1y0m2B8EgeMT0W
-	pLSQECDzljwLpl8PNoJPjU0Yk8TNqyAKF9vxgYbiXFFYs6mD/5cATayDv62oGuakdMgB07vIGYBLe
-	B4fMUJdcmQ4HbnCMyXls7Wh/UiQvD0Ry/mayuVDZ2me4Vhr7GRNhKbOILRMqxG4lZGRMvMLAGT1TZ
-	vSMmXzUXHJcQobn8oNBpzLawWB2ciZQXTeJZ3NwspnUEto2njgAJfbw31sQfIbg+qC/RWo6VaJjGb
-	zJIolVuGZp3FYFC2KAhg==;
+	List-Owner; bh=2TsaAc4/wmaEcWmIax2+NQdgRFWfEHDPqpsfwnO5EmY=; b=OrgZ4Nip6CYJ++
+	vtJBHJ6KGsGUrUZeVAIniYDuFQovC7unG6sw3Gf+AKXv51LRJyiiNElddydPNWJnl7TPb24Phsarj
+	E2e4RhZM6PJGmXseMtW4qh4BwFBAWhzh7pVqy+YoXhJ218+NRhAMxxkJq8hQJUzi6D6FAS5PD/QG/
+	g0IoA5iA319y4J4lC7E5XktwQl9qcSl+uk0KqtqoNEy6byU525fmIFfX/ZYqhgt+2zlZg6VqCebHe
+	cyoMIFYtyGVJQlsH2R7xfE7N8QAKXdmpNQkwFX93/TMFiYph51gBSbl52bBH2tMimcsuhsZx59t06
+	liOQCUluWqAdbXjuzM7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLh91-00GU50-2q;
-	Fri, 05 Jan 2024 10:09:39 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1rLhFi-00GVCh-0B;
+	Fri, 05 Jan 2024 10:16:34 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLh8y-00GU4h-2K
+	id 1rLhFe-00GVB2-2E
 	for linux-phy@lists.infradead.org;
-	Fri, 05 Jan 2024 10:09:38 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-a28bf46ea11so75432366b.1
-        for <linux-phy@lists.infradead.org>; Fri, 05 Jan 2024 02:09:36 -0800 (PST)
+	Fri, 05 Jan 2024 10:16:32 +0000
+Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-a28b2e1a13fso159251366b.3
+        for <linux-phy@lists.infradead.org>; Fri, 05 Jan 2024 02:16:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704449375; x=1705054175; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=gTcEvk43Zi+UN7zzUBz/Hjg74Fz72ewwhYJTN4bjNtI=;
-        b=yK80p4nNWODGnEzI9jBfcztosoNiwzUXcb5hWe3XyNzeXEzU8AFnQXtUuffNJxagHP
-         XuiWOQImHTidp8wGeqh/IVwsRJ3GAvWg9x29V3AH4ZbgszkXw+1FIYBqRcSXwPLZC5U1
-         qegfqkPSrnHs/TgRmlWTVTke7nwSfZ5TpnEks9I/JB53E4KWaOHo2jW+5CcWXcMe7bBq
-         U4PF5qoIVLhE7TK+fByoCpc9VpbRltwl96NrT5zOUTi6/pHjFQ4R2WCsX0itnZKqm/X9
-         bS66lfsSOo/sEPxXgxeGzHPCtro8Jx8LNq15lUgsV0L829mfVuPNub+BuBuiArkbSu3s
-         LJsQ==
+        d=linaro.org; s=google; t=1704449789; x=1705054589; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=M2SbbmAUvxuz+3O7vyQxuSBbpMgT1hRNIR0aHAh7TUs=;
+        b=Cz+mRX9H3cxbY8nGdmgUSGDqP71GTBGj1TXBWiL9dbHA6USMAAKYd6OAVTTp/CpzSs
+         QUxorinbikHMJxcBGKtVV7DUuzKhCkU+Xt833Wpy64/J7UVBVDNdZc2ntCyhlSIzKkI/
+         JoWuh3rmJGxNjlj9ASMZ8kAxn4PYdDO4fC2r5rr86z+4HZA081mox3XgL4oNRhrEQqiV
+         wk7aTKn5qExCEXC+2viKHOXQMYhrdcR/v9y4e5QrNHdbiNKZBnRpVMywer+ZYx5do7rx
+         pioqiYLNSRbyTnVUWHRu5pUdEzGmfGbFxXlHhpLTTyZBhpMXkhR8M21M1tiTZEpnQKvd
+         lnuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704449375; x=1705054175;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=gTcEvk43Zi+UN7zzUBz/Hjg74Fz72ewwhYJTN4bjNtI=;
-        b=Yfw5/x2v6fGASDTjoVn8g2enQrk5vONtLY5GPaflpwAWMGR8qDHW1xxW/5yROE/iZU
-         tudTB972OqHFuz7Sptt/qnKeShEaUvkFxE+bbqLr8ZVPH/qLXuXbjjCnEXkf+ks/0MOS
-         EdL6VsMgg6NSUtjAQ3dpR8EcMshMJo1o9t7PiFG7IBSORr70YJtOZ/D9/eGjooKuf84h
-         gnh6qcv+Pjj2Rjm2qvQY8hH0vZP1Y7zB4ueAzP7MAMGiSXT+08hsgQyheH86BAHylW7/
-         lKPfbH7mGEBIiR/5igx79htIZddK/UrjC2POSw8t9H1lKHClPZ2/XRccc7DuoKuVUAKH
-         oLKQ==
-X-Gm-Message-State: AOJu0YyPev2kxBo+oSyo9RapSAVqkRk/klZieYTV8Na6/QW+aE0R4wZ3
-	/8fqARYn36ulvYmeMCnrtW/waVTSD0ilvA==
-X-Google-Smtp-Source: AGHT+IF8sfuHpaTxBxJG1gisQbpioyy4ova0pOxUKeHyMgZow4orIbEewEQEjK6no57uTAMRurEpDQ==
-X-Received: by 2002:a17:906:c289:b0:a28:ac22:7575 with SMTP id r9-20020a170906c28900b00a28ac227575mr1746518ejz.4.1704449375170;
-        Fri, 05 Jan 2024 02:09:35 -0800 (PST)
-Received: from [192.168.199.125] (178235179036.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.36])
-        by smtp.gmail.com with ESMTPSA id ka8-20020a170907920800b00a1c7b20e9e6sm711718ejb.32.2024.01.05.02.09.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 05 Jan 2024 02:09:34 -0800 (PST)
-Message-ID: <e216c027-dc23-415d-8d00-e6b1cbbd4248@linaro.org>
-Date: Fri, 5 Jan 2024 11:09:33 +0100
+        d=1e100.net; s=20230601; t=1704449789; x=1705054589;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=M2SbbmAUvxuz+3O7vyQxuSBbpMgT1hRNIR0aHAh7TUs=;
+        b=mP9UBzFOWXof7bYIj9LCT97xvV7/84yv4Avi01X9jVNnIBR27OcYDMZqJTSGHzedlb
+         07h7XTCnRAggGOrQbfXmU5wt+WIoaUXbb7Ds4ZV+2MnyYoku13pVzU2Dynpt5f8SJ/zM
+         FpTTunHDjTBvCp9Ty0+QvqOpvK4Y/ZyfGJB/S055mCrYEeN2sLTWBGhTDRFeIWs2VAxd
+         CG9Ql8D4tFksGHhzJiXT/A3MKoAuS4r/aTKxCK29jePEZkgclweziQGqn1Vj7t9xYCEW
+         QM2EaK8LA02Q7rNFjVIpTJQgSi5Zgx3lbSg0CY4nMFpxGvCVo4sKGGn71XsfWTmFoaqb
+         2HYA==
+X-Gm-Message-State: AOJu0YwkZ546sjONV0CzcfrsZDPd8DjqPzBjJUbFCCyfblApgX25cdut
+	WzajC1orCQjSkb5rh2BzVlFR3e0gUw9aLg==
+X-Google-Smtp-Source: AGHT+IGXz2g8H97RWKY+7sFScbllJc8+MA2CAHJyVkS1v+Mjo7+A0HD5O0yVEja/MabxVgS6haXrfg==
+X-Received: by 2002:a17:906:1d9:b0:a28:ad97:e214 with SMTP id 25-20020a17090601d900b00a28ad97e214mr1018779ejj.1.1704449789326;
+        Fri, 05 Jan 2024 02:16:29 -0800 (PST)
+Received: from [127.0.1.1] ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id o9-20020a170906358900b00a2824bff5b1sm713180ejb.216.2024.01.05.02.16.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 05 Jan 2024 02:16:28 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Fri, 05 Jan 2024 12:16:16 +0200
+Subject: [PATCH v2 1/2] phy: qualcomm: eusb2-repeater: Fix the regfields
+ for multiple instances
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: qualcomm: eusb2-repeater: Drop the redundant
- zeroing
-Content-Language: en-US
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org>
- <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
- <33b32e2b-fa35-448c-8b4c-c5c51a514922@linaro.org>
- <ZZfI66Mj6v/Qjp5X@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <ZZfI66Mj6v/Qjp5X@linaro.org>
+Message-Id: <20240105-phy-qcom-eusb2-repeater-fixes-v2-1-775d98e7df05@linaro.org>
+References: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
+In-Reply-To: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Elliot Berman <quic_eberman@quicinc.com>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.12.4
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2272; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=vIbUfNQlZTi1v25Ve+Sd4HHhwYJTXbuLuFkWrD7aJiM=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBll9b412/e8NdvgMxOeqdne0SbNS5xvfDpT5ibA
+ mNOTJNMutmJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZZfW+AAKCRAbX0TJAJUV
+ VvHvEACX+B/Dfb3IwGS3F1o+zp26fCXYgaMHeIrlqxwCWDSKYGcmjmCH8lBMHKOVzaPSKz+hExZ
+ Q8sVmp0CuZkAAhuTs4YQSywX54L1BLD49ApRdASsfzvucIUXcqOf4aW4E8UvBTXX2YrD2xZG/+b
+ Y9jus7yZF0GCbabI9hnxd4HYaDn+KBzSoWz5+iEzU3kLsYI+MyzkdmNxXJnZwm+khQ3YqjjbXgd
+ FUe9CotAQlXu6OFqSBCC4PJ4uOWdPWT1XB9QK/3PqqH9C1d3A35KC8lG7dybHfsexHrBwxux/1s
+ 1qMtc2xw/yLtQp1OZSyPiHU4OkoyRBiKYMYllWjutWCzxXAqD0FLax+k3AsCcXQLUECjKERivM2
+ 5FMIdxS318g9etxPl/7BsnbOV10/yUoVazYudaCCnXiOlfv6b6gcWRm4zghRc9kt73QPKO35Bt0
+ JsTc/w1u0H8WwceWNV65T2AXOmMLX0b56orO7CGuXtXQJGhc1OaknOcgURit54n0LFtEt9BHh4m
+ PLms9g4BJbcBgqkkkqxFD4Dg+h0zbMKRRHI+k/2Y9wNxX7U9OsYwTtJinUMgNyNHKIHDtIdVyo2
+ CUBQAeg9Ms+1f8fHsSSD6NiYiJbNIeDwBkQSjeg5WXg2Y05qbrEc/AxcY6tKQhoAmeGac8G8W1k
+ pzX3kGTBm2uD7dA==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240105_020936_768789_19C1297C 
-X-CRM114-Status: GOOD (  16.57  )
+X-CRM114-CacheID: sfid-20240105_021630_725719_57A64397 
+X-CRM114-Status: GOOD (  14.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,65 +112,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5.01.2024 10:16, Abel Vesa wrote:
-> On 24-01-04 23:50:48, Konrad Dybcio wrote:
->> On 4.01.2024 15:52, Abel Vesa wrote:
->>> The local init_tlb is already zero initialized, so the entire zeroing loop
->>> is useless in this case, since the initial values are copied over anyway,
->>> before being written.
->>>
->>> Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
->>> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
->>> ---
->>
->> That's another good spot.. partial struct initialization of
->> pm8550b_init_tbl zeroes out the uninitialized fields.
->>
->>
->>>  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 10 ----------
->>>  1 file changed, 10 deletions(-)
->>>
->>> diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
->>> index 5f5862a68b73..3060c0749797 100644
->>> --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
->>> +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
->>> @@ -156,16 +156,6 @@ static int eusb2_repeater_init(struct phy *phy)
->>>  
->>>  	regmap_field_update_bits(rptr->regs[F_EN_CTL1], EUSB2_RPTR_EN, EUSB2_RPTR_EN);
->>>  
->>> -	for (i = 0; i < F_NUM_TUNE_FIELDS; i++) {
->>> -		if (init_tbl[i]) {
->>> -			regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
->>> -		} else {
->>> -			/* Write 0 if there's no value set */
->>> -			u32 mask = GENMASK(regfields[i].msb, regfields[i].lsb);
->>> -
->>> -			regmap_field_update_bits(rptr->regs[i], mask, 0);
->>> -		}
->>> -	}
->>>  	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
->>
->> I think this patchset can be made even better, this memcpy is also
->> useless and we can simply initialize init_tbl=rptr->cfg->init_tbl.
-> 
-> Actually no. The init_tbl in cfg is a pointer to const. Plus, if you do
-> that, you will end up with the same situation like in the other patch,
-> as there are some overrides based on DT values below this.
+The global regmap fields offsets currently get incremented with the base
+address of the repeater. This issue doesn't get noticed unless the probe
+defers or there are multiple repeaters on that platform. So instead of
+incrementing the global ones, copy them for each instance of the
+repeater.
 
-Hm, you're right. Maybe we should simple store *base and stop
-modifying these tables then. There's not a whole lot of regmap_rw
-calls, so making the first argument "rptr->base + rptr->regs[ASDF]"
-shouldn't add much fluff. Then we can make the cfg referernce const.
+Fixes: 4ba2e52718c0 ("phy: qualcomm: phy-qcom-eusb2-repeater: Use regmap_fields")
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
-Konrad
+diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+index a623f092b11f..5f5862a68b73 100644
+--- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
++++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+@@ -101,6 +101,7 @@ struct eusb2_repeater {
+ 	struct regmap_field *regs[F_NUM_FIELDS];
+ 	struct phy *phy;
+ 	struct regulator_bulk_data *vregs;
++	struct reg_field *regfields;
+ 	const struct eusb2_repeater_cfg *cfg;
+ 	enum phy_mode mode;
+ };
+@@ -140,8 +141,8 @@ static int eusb2_repeater_init_vregs(struct eusb2_repeater *rptr)
+ 
+ static int eusb2_repeater_init(struct phy *phy)
+ {
+-	struct reg_field *regfields = eusb2_repeater_tune_reg_fields;
+ 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
++	struct reg_field *regfields = rptr->regfields;
+ 	struct device_node *np = rptr->dev->of_node;
+ 	u32 init_tbl[F_NUM_TUNE_FIELDS] = { 0 };
+ 	u8 override;
+@@ -262,15 +263,21 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
+ 	if (!regmap)
+ 		return -ENODEV;
+ 
++	rptr->regfields = devm_kmemdup(dev, eusb2_repeater_tune_reg_fields,
++				       sizeof(eusb2_repeater_tune_reg_fields),
++				       GFP_KERNEL);
++	if (!rptr->regfields)
++		return -ENOMEM;
++
+ 	ret = of_property_read_u32(np, "reg", &res);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	for (i = 0; i < F_NUM_FIELDS; i++)
+-		eusb2_repeater_tune_reg_fields[i].reg += res;
++		rptr->regfields[i].reg += res;
+ 
+ 	ret = devm_regmap_field_bulk_alloc(dev, regmap, rptr->regs,
+-					   eusb2_repeater_tune_reg_fields,
++					   rptr->regfields,
+ 					   F_NUM_FIELDS);
+ 	if (ret)
+ 		return ret;
 
-> 
-> But now that I've had another look, maybe doing the exact same thing as
-> the other patch does (kmemdup) will probably look better anyway,
-> specially if we do that on probe.
-> 
->>
->> Konrad
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
