@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50344C4707B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0860BC3DA6E
 	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 10:16:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2TsaAc4/wmaEcWmIax2+NQdgRFWfEHDPqpsfwnO5EmY=; b=OrgZ4Nip6CYJ++
-	vtJBHJ6KGsGUrUZeVAIniYDuFQovC7unG6sw3Gf+AKXv51LRJyiiNElddydPNWJnl7TPb24Phsarj
-	E2e4RhZM6PJGmXseMtW4qh4BwFBAWhzh7pVqy+YoXhJ218+NRhAMxxkJq8hQJUzi6D6FAS5PD/QG/
-	g0IoA5iA319y4J4lC7E5XktwQl9qcSl+uk0KqtqoNEy6byU525fmIFfX/ZYqhgt+2zlZg6VqCebHe
-	cyoMIFYtyGVJQlsH2R7xfE7N8QAKXdmpNQkwFX93/TMFiYph51gBSbl52bBH2tMimcsuhsZx59t06
-	liOQCUluWqAdbXjuzM7w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DD14n9p5ZkA58+/7/ekiU3OzsyyT2TAejKHaMPz1LW0=; b=cw/CAtxg+fqZtw
+	dk/bybZgF07Mx5pWgQ2mawI9zk2Ets33O09j13gRfMx6CwGzNgdl0qwvtJizd+QHhlsChX0+40Lbs
+	8LwSQyzIagnEfKj6507KJTYzvaMMvH2Ic59k6ooddVsXGt4T/1d1czZKWwTN7i0w1XLVfFRTB9nmI
+	0sajAU/FjS7og5vmTmfsfFIt5B29EjhqYDvc66gllEcB9c1sW1Kq9I0WpIAfjuvUKgJKno89epto+
+	wYHC22Jc5z8Y76DSY0aKnGrYIoiwMx2H6LRRbrfy8/TQJKz9EqkGDzb6SAc2ZyGEqVYYcq7BOj5bw
+	Ld4D7VyhLxFh2ueTnKhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLhFi-00GVCh-0B;
-	Fri, 05 Jan 2024 10:16:34 +0000
+	id 1rLhFh-00GVCW-2R;
+	Fri, 05 Jan 2024 10:16:33 +0000
 Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLhFe-00GVB2-2E
+	id 1rLhFe-00GVAz-1D
 	for linux-phy@lists.infradead.org;
-	Fri, 05 Jan 2024 10:16:32 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-a28b2e1a13fso159251366b.3
-        for <linux-phy@lists.infradead.org>; Fri, 05 Jan 2024 02:16:30 -0800 (PST)
+	Fri, 05 Jan 2024 10:16:31 +0000
+Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-a2967a6a86bso26132366b.1
+        for <linux-phy@lists.infradead.org>; Fri, 05 Jan 2024 02:16:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704449789; x=1705054589; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=M2SbbmAUvxuz+3O7vyQxuSBbpMgT1hRNIR0aHAh7TUs=;
-        b=Cz+mRX9H3cxbY8nGdmgUSGDqP71GTBGj1TXBWiL9dbHA6USMAAKYd6OAVTTp/CpzSs
-         QUxorinbikHMJxcBGKtVV7DUuzKhCkU+Xt833Wpy64/J7UVBVDNdZc2ntCyhlSIzKkI/
-         JoWuh3rmJGxNjlj9ASMZ8kAxn4PYdDO4fC2r5rr86z+4HZA081mox3XgL4oNRhrEQqiV
-         wk7aTKn5qExCEXC+2viKHOXQMYhrdcR/v9y4e5QrNHdbiNKZBnRpVMywer+ZYx5do7rx
-         pioqiYLNSRbyTnVUWHRu5pUdEzGmfGbFxXlHhpLTTyZBhpMXkhR8M21M1tiTZEpnQKvd
-         lnuQ==
+        d=linaro.org; s=google; t=1704449788; x=1705054588; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=JEdYVhrehgTxb2xPeGPy8ZmHUEqPAqYAW54ixn4xFbo=;
+        b=nO4aEbdhqn8/3r700VNSZ1KulL9D4t3evFWanQtVJ2ptT/hhgTxXwS7LzgvgArJxgO
+         oonRUx/rsaBDeDiS785/lCCVBqZt3pG7bGpB7N/vQrPN+ghQ3qkwqMuf2cRyerJocOWO
+         TxWQEgElnkSmaNUIvnf1oEsOOKtOgj2Ov38m+2+DYSDf8qnU09MlufLfEmZVHhJXa16R
+         cDZsNNZSwe199AECKT9NmEgL0f2IKj6TnQGxGTiPhJZiVHAFCne0I7ad4m5UXwIftsV5
+         dnsSV7PspdTc/FoKtKSHe64/zWCNoCoBkvytbT5KA+1eKoW1fiaGilFNaiKTKv469eXa
+         djGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704449789; x=1705054589;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=M2SbbmAUvxuz+3O7vyQxuSBbpMgT1hRNIR0aHAh7TUs=;
-        b=mP9UBzFOWXof7bYIj9LCT97xvV7/84yv4Avi01X9jVNnIBR27OcYDMZqJTSGHzedlb
-         07h7XTCnRAggGOrQbfXmU5wt+WIoaUXbb7Ds4ZV+2MnyYoku13pVzU2Dynpt5f8SJ/zM
-         FpTTunHDjTBvCp9Ty0+QvqOpvK4Y/ZyfGJB/S055mCrYEeN2sLTWBGhTDRFeIWs2VAxd
-         CG9Ql8D4tFksGHhzJiXT/A3MKoAuS4r/aTKxCK29jePEZkgclweziQGqn1Vj7t9xYCEW
-         QM2EaK8LA02Q7rNFjVIpTJQgSi5Zgx3lbSg0CY4nMFpxGvCVo4sKGGn71XsfWTmFoaqb
-         2HYA==
-X-Gm-Message-State: AOJu0YwkZ546sjONV0CzcfrsZDPd8DjqPzBjJUbFCCyfblApgX25cdut
-	WzajC1orCQjSkb5rh2BzVlFR3e0gUw9aLg==
-X-Google-Smtp-Source: AGHT+IGXz2g8H97RWKY+7sFScbllJc8+MA2CAHJyVkS1v+Mjo7+A0HD5O0yVEja/MabxVgS6haXrfg==
-X-Received: by 2002:a17:906:1d9:b0:a28:ad97:e214 with SMTP id 25-20020a17090601d900b00a28ad97e214mr1018779ejj.1.1704449789326;
-        Fri, 05 Jan 2024 02:16:29 -0800 (PST)
-Received: from [127.0.1.1] ([79.115.23.25])
-        by smtp.gmail.com with ESMTPSA id o9-20020a170906358900b00a2824bff5b1sm713180ejb.216.2024.01.05.02.16.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        d=1e100.net; s=20230601; t=1704449788; x=1705054588;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JEdYVhrehgTxb2xPeGPy8ZmHUEqPAqYAW54ixn4xFbo=;
+        b=vJZfHcBHC7tPAiyQ4yTUiSecqr0fsZOO4JJn8zUD+5Q7QQQOuU4y+MNyQzzxXJx/jq
+         wsPhgawwaBvJ6vixRhCR0z197yXfAN0jWQ46P0n6VZL3MGwnw3JnkstBz4+Kt9P4EJJp
+         C+wFekvOBHvPNpGMy3Cm5FBIi7Xk/wN8Mtn08gAP1Ag/PpXNvA76fN4pfsIunebYEQGF
+         Z4rEcD2pwJxllqlQ776jQ4SwLbf3gtypxIC5Gz4B/pmptItfHirxEhrMz9ChJpU0Sz7k
+         hzQfGuJFsnAFOD1z9ekegAwTk9tWCTDmnTAwaqA89m0R02iL3klXGfquD3r6F865NuBW
+         6STg==
+X-Gm-Message-State: AOJu0YwHaeYm3kp6f5gxvT23JHQU908cpdBx6zdWWFWQ60yJPkN4fW31
+	N+Uut1ujUgMdPlUm6teshoAikDLG6AuFEA==
+X-Google-Smtp-Source: AGHT+IHXszKz6YoDG5ESGGOO/jQA7HvVNO9DLvuBEm1mEOAj0fYQG14FVh+OjKPjAnLApWAgadvYvg==
+X-Received: by 2002:a17:906:c417:b0:a28:e546:1efb with SMTP id u23-20020a170906c41700b00a28e5461efbmr1024879ejz.115.1704449788331;
         Fri, 05 Jan 2024 02:16:28 -0800 (PST)
+Received: from [127.0.1.1] ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id o9-20020a170906358900b00a2824bff5b1sm713180ejb.216.2024.01.05.02.16.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 05 Jan 2024 02:16:27 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
-Date: Fri, 05 Jan 2024 12:16:16 +0200
-Subject: [PATCH v2 1/2] phy: qualcomm: eusb2-repeater: Fix the regfields
- for multiple instances
+Subject: [PATCH v2 0/2] phy: qualcomm: eusb2-repeater: Some fixes after the
+ regmap rework
+Date: Fri, 05 Jan 2024 12:16:15 +0200
+Message-Id: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
 MIME-Version: 1.0
-Message-Id: <20240105-phy-qcom-eusb2-repeater-fixes-v2-1-775d98e7df05@linaro.org>
-References: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
-In-Reply-To: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAO/Wl2UC/42NQQ6CMBBFr0Jm7ZhpS0RdeQ/DgtYRJlGKUyQSw
+ t2tnMDlez95f4HEKpzgXCygPEmS2GewuwJC1/Qto9wygyVbkqESh27GV4hP5HfyFpUHbkZWvMu
+ HE4aTJWOMI2cD5MagvA05ca0zd5LGqPN2N5mf/bc8GSSksvKVP/ijc+7ykL7RuI/aQr2u6xc16
+ E+tywAAAA==
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>
@@ -77,25 +78,25 @@ Cc: Elliot Berman <quic_eberman@quicinc.com>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Abel Vesa <abel.vesa@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2272; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=vIbUfNQlZTi1v25Ve+Sd4HHhwYJTXbuLuFkWrD7aJiM=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBll9b412/e8NdvgMxOeqdne0SbNS5xvfDpT5ibA
- mNOTJNMutmJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZZfW+AAKCRAbX0TJAJUV
- VvHvEACX+B/Dfb3IwGS3F1o+zp26fCXYgaMHeIrlqxwCWDSKYGcmjmCH8lBMHKOVzaPSKz+hExZ
- Q8sVmp0CuZkAAhuTs4YQSywX54L1BLD49ApRdASsfzvucIUXcqOf4aW4E8UvBTXX2YrD2xZG/+b
- Y9jus7yZF0GCbabI9hnxd4HYaDn+KBzSoWz5+iEzU3kLsYI+MyzkdmNxXJnZwm+khQ3YqjjbXgd
- FUe9CotAQlXu6OFqSBCC4PJ4uOWdPWT1XB9QK/3PqqH9C1d3A35KC8lG7dybHfsexHrBwxux/1s
- 1qMtc2xw/yLtQp1OZSyPiHU4OkoyRBiKYMYllWjutWCzxXAqD0FLax+k3AsCcXQLUECjKERivM2
- 5FMIdxS318g9etxPl/7BsnbOV10/yUoVazYudaCCnXiOlfv6b6gcWRm4zghRc9kt73QPKO35Bt0
- JsTc/w1u0H8WwceWNV65T2AXOmMLX0b56orO7CGuXtXQJGhc1OaknOcgURit54n0LFtEt9BHh4m
- PLms9g4BJbcBgqkkkqxFD4Dg+h0zbMKRRHI+k/2Y9wNxX7U9OsYwTtJinUMgNyNHKIHDtIdVyo2
- CUBQAeg9Ms+1f8fHsSSD6NiYiJbNIeDwBkQSjeg5WXg2Y05qbrEc/AxcY6tKQhoAmeGac8G8W1k
- pzX3kGTBm2uD7dA==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1305; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=xkpoCUfYUnRlKp4mUYR1zyLDW4HOErb0ofza230yj5Q=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBll9bzhtIy9JFvKOV55EJCAuxUM2665z65pjA9O
+ MV3tU+LoOmJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZZfW8wAKCRAbX0TJAJUV
+ VmP8D/9l8aBD7nGZ4ofFcmrf5G3oLZn5pbgBkzkdf4mNvLOVgcjfcwQkpL4o8Z75Px8herVyJk7
+ SjZYUQOM4TsUu69JNQIen0N+wcaUJlH9OWtIwOLRStJ4cYRYY4N7XXwwELbU2qJhrS2+PDOKHSr
+ ztM+2YpCIojhFOhwT6FgkP1OmXiXKu18aQGJHBSTnni1SnFRxXqdld5B9E1oSJgs9r/twfw7hAN
+ Vbx4v/aUZlGzkzIqF+/1G2d5NHCd1iADCY6fGWIPiejOdxkUfAmvX9fqEYK/eAvtqVs2YbHRq3u
+ lx+GxR8OiUiM56vbc5kUfxk+RQp6cjy7LhFWnDjbF3ra6yHblL4kdvK2m25ZdHvTXzpIdQxMOZh
+ zoZccUFVyaO6uY+fzTK0XOCSuI/bnwTMFcBGvtBpEjNDjwFHWP68pMvUqxaXZ9/kTHKitLUfxlB
+ mfo29Oxqx/e36B5KGtQAA34RtBtI60a3VOOTO16UwDIAl0mLJ6f/9zjFj7rhcCg6pNl897KJPLf
+ Q0QneGWztEmEDnq4h4eDrzPXz14MQWdku8TYN9s27FTfcWLcqGghDx10Rb4+rze4N27Fltjufhb
+ VbG4GgVc5P5fqJnfy3B+eRtlIwndJ5Les4ut97e7M6V2ekcCHrjAmM5l9+dyWbs6jKpH14NFy+5
+ rHH8bPJHkr1utyQ==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240105_021630_725719_57A64397 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20240105_021630_413481_5A977F42 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,68 +113,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The global regmap fields offsets currently get incremented with the base
-address of the repeater. This issue doesn't get noticed unless the probe
-defers or there are multiple repeaters on that platform. So instead of
-incrementing the global ones, copy them for each instance of the
-repeater.
+Found the first issue (from first patch) while adding support
+for X Elite (X1E80100) which comes with more than one repeaters.
+The second fix is just bonus.
 
-Fixes: 4ba2e52718c0 ("phy: qualcomm: phy-qcom-eusb2-repeater: Use regmap_fields")
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
+Changes in v2:
+- The regfields is being dropped from the repeater init, but it's done
+  in the second patch in order to not break bisectability, as it is
+  still needed by the zero-out loop.
+- Added Konrad's R-b tag to the first patch. Did not add Elliot's T-b
+  tag as the second patch has been reworked massively.
+- The zero-out loop is dropped now by holding a copy of the init_tlb in
+  the container struct. This led to dropping the cfg from the container
+  struct (see second patch commit message for more details).
+- Link to v1: https://lore.kernel.org/r/20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-index a623f092b11f..5f5862a68b73 100644
---- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-+++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-@@ -101,6 +101,7 @@ struct eusb2_repeater {
- 	struct regmap_field *regs[F_NUM_FIELDS];
- 	struct phy *phy;
- 	struct regulator_bulk_data *vregs;
-+	struct reg_field *regfields;
- 	const struct eusb2_repeater_cfg *cfg;
- 	enum phy_mode mode;
- };
-@@ -140,8 +141,8 @@ static int eusb2_repeater_init_vregs(struct eusb2_repeater *rptr)
- 
- static int eusb2_repeater_init(struct phy *phy)
- {
--	struct reg_field *regfields = eusb2_repeater_tune_reg_fields;
- 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
-+	struct reg_field *regfields = rptr->regfields;
- 	struct device_node *np = rptr->dev->of_node;
- 	u32 init_tbl[F_NUM_TUNE_FIELDS] = { 0 };
- 	u8 override;
-@@ -262,15 +263,21 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
- 	if (!regmap)
- 		return -ENODEV;
- 
-+	rptr->regfields = devm_kmemdup(dev, eusb2_repeater_tune_reg_fields,
-+				       sizeof(eusb2_repeater_tune_reg_fields),
-+				       GFP_KERNEL);
-+	if (!rptr->regfields)
-+		return -ENOMEM;
-+
- 	ret = of_property_read_u32(np, "reg", &res);
- 	if (ret < 0)
- 		return ret;
- 
- 	for (i = 0; i < F_NUM_FIELDS; i++)
--		eusb2_repeater_tune_reg_fields[i].reg += res;
-+		rptr->regfields[i].reg += res;
- 
- 	ret = devm_regmap_field_bulk_alloc(dev, regmap, rptr->regs,
--					   eusb2_repeater_tune_reg_fields,
-+					   rptr->regfields,
- 					   F_NUM_FIELDS);
- 	if (ret)
- 		return ret;
+---
+Abel Vesa (2):
+      phy: qualcomm: eusb2-repeater: Fix the regfields for multiple instances
+      phy: qualcomm: eusb2-repeater: Rework init to drop redundant zero-out loop
 
+ drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 53 ++++++++++++++------------
+ 1 file changed, 28 insertions(+), 25 deletions(-)
+---
+base-commit: e2425464bc87159274879ab30f9d4fe624b9fcd2
+change-id: 20240104-phy-qcom-eusb2-repeater-fixes-c9201113032c
+
+Best regards,
 -- 
-2.34.1
+Abel Vesa <abel.vesa@linaro.org>
 
 
 -- 
