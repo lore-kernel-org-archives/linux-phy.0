@@ -4,82 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07C3CC3DA6E
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 09:16:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26318C3DA6E
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 09:37:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ciDdag/A93hanTr3Ku1i8lpn/1f/lJru5AXqykoAQU4=; b=QrrMBh2ee5ox4U
-	it9s1yw532+LY22Dnvb8xtJn1M9DyACQepz4YhKOkU7xeMvy9xouiViWhSJa8+oZIb3BXEMKzFV6K
-	KxQ9xXY+I83ntvWYAaikoAgcfhhuvS5IP3a0szcc6GKUqIw1VCSZX7IvbeT4A734alRYkxw5i3aPZ
-	0S9FJAY8YIp9AQ1P0HXRRN8vt7vulcub3AIjgz6PUl8hfZGH7C8N52GkBuUqrD0RbcLzGvQBng7PH
-	M9i+4RnzWrf8C5Wdi8Qkcqmj2Je+/NV9EjHVfqyNo2x3CiaTkgPAzUxwoQhGnAunEUhjMjEAElY16
-	p/agxAPwdJutVprBRTeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=387y0WB29ZgY/UyuEdjPVWLFy/QVBxWeQmO0W5/KR3A=; b=rWjG5LuEvRYqrH
+	4yDb+nPK5AzV44Q6a6Wc3w/prm4prtvgAW0AckWkY2aPSCT3lKmeigPIJyh5ZJezeAWqL0vtXu60w
+	CuvFIxrbsff3nQXegTho75EQAMp0FG5LQsrq9PNy2qnSMbhaFZDYVsxOB7uIXGKzrWRZVTzRfiPxh
+	uz60TfijGNShHE99YlrZrHIrAnVw5PugtNxLItTXsVhR2vGZliOzvPqLfYwkcAEz+7TPM7ZnWmJCf
+	wc9KMsMDMUUDRnc/BAvi9h7PZMuioyoskih+CRXnV32Tdro4nopgjj1rdAuRBnAW3jXGd6vg4kyFr
+	kPRi5Ym0cZe81nZqBqMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLgJd-00GMEM-2S;
-	Fri, 05 Jan 2024 09:16:33 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLgJb-00GMDx-0o
+	id 1rLgdm-00GPUz-2q;
+	Fri, 05 Jan 2024 09:37:22 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1rLgdk-00GPUd-0D
 	for linux-phy@lists.infradead.org;
-	Fri, 05 Jan 2024 09:16:32 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-a28f66dc7ffso69778566b.0
-        for <linux-phy@lists.infradead.org>; Fri, 05 Jan 2024 01:16:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704446189; x=1705050989; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=bJqK2boMhlBPvYPzwyxlpWb4GxEdD9+xMel7BalA1gY=;
-        b=E07AHbdZUX/AsX8Uj5eeE9g7zUc+0oqO2aJwvFHFpVzw5zANS4/FcdM3FC2D00ootl
-         D7BsImzJlPQWJrXSKSpWsiTASLXajzcwIzw+AXL1Efd6LyXSzcvT5RmxQt3ahjzRPiAy
-         4jsKSFH1uxhpHEwZyA4Qu1d4D1k41xoGPU1ufvwWGUxWt/54yeYZDoEP/vRIfkFzX0pO
-         ohVERxO9V9vSfqeCXIQ7NoVdy9TE7Diufi4JctkzwXjlregqKpiKpcX/XhYbby/J0/PG
-         cLRH9kHthruFdZOg0FnyQUAtoNlCWj42/2Wbv1sijciFPboQvS8BEMv6+u2AOcPCw8e/
-         Mz6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704446189; x=1705050989;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bJqK2boMhlBPvYPzwyxlpWb4GxEdD9+xMel7BalA1gY=;
-        b=BLsnuI7gFta43wcX6dpTzstu5AYyjnAAc+ySb7Q+HvTD7NnLHqZ5SAMSjo0Urf1GtW
-         o2Dq4q4rzi/+MrARr5OQqIjuOtV5/Zb/glTGSje3RL3keRkrJT56AgOxMoTlzUvlIUJH
-         OwfodJDLL8eBK83Kp40GMxmMSV+Kyfy01yEblYu8ReYowm+h29tVN/MTibUTsVcoNwqk
-         OklwW2Ry3/iKxS/xGLIKAWvve4QphisvEvOTtP8lCGEBROr1N5jlp6N3uYKmxymvLpyi
-         Bv6XIvDuZyaoGLsgWbK+y4pfMflh0VXhJllp2RXNmlFdouTNMUzNR+TERM23g2VwWDVC
-         zMsA==
-X-Gm-Message-State: AOJu0YwjlIh+GgFO+/fFt/cEmbSfSO9K61RWGrnYu8KBllWgOyPHoiJD
-	fvcpOEhFYH3U+RDCB3Gd9i+y5FMA95cs3w==
-X-Google-Smtp-Source: AGHT+IE7Ems0dPZ1o0LW0EtS1iu6PYF+DxBcwjMzLo1TFWzXXKrSUypTKqAr3qn2Lye0u/OuOf1ekA==
-X-Received: by 2002:a17:907:b9cc:b0:a28:bc4f:16ff with SMTP id xa12-20020a170907b9cc00b00a28bc4f16ffmr1788363ejc.28.1704446188930;
-        Fri, 05 Jan 2024 01:16:28 -0800 (PST)
-Received: from linaro.org ([79.115.23.25])
-        by smtp.gmail.com with ESMTPSA id t8-20020a056402020800b0055712dec5a6sm747448edv.2.2024.01.05.01.16.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 05 Jan 2024 01:16:28 -0800 (PST)
-Date: Fri, 5 Jan 2024 11:16:27 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] phy: qualcomm: eusb2-repeater: Drop the redundant
- zeroing
-Message-ID: <ZZfI66Mj6v/Qjp5X@linaro.org>
-References: <20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org>
- <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
- <33b32e2b-fa35-448c-8b4c-c5c51a514922@linaro.org>
+	Fri, 05 Jan 2024 09:37:21 +0000
+X-IronPort-AV: E=Sophos;i="6.04,333,1695654000"; 
+   d="scan'208";a="193323643"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+  by relmlie6.idc.renesas.com with ESMTP; 05 Jan 2024 18:37:12 +0900
+Received: from localhost.localdomain (unknown [10.166.13.99])
+	by relmlir6.idc.renesas.com (Postfix) with ESMTP id DB01A420DBDA;
+	Fri,  5 Jan 2024 18:37:12 +0900 (JST)
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org
+Cc: error27@gmail.com,
+	linux-phy@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	kernel test robot <lkp@intel.com>
+Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Fix returning wrong error code
+Date: Fri,  5 Jan 2024 18:37:03 +0900
+Message-Id: <20240105093703.3359949-1-yoshihiro.shimoda.uh@renesas.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <33b32e2b-fa35-448c-8b4c-c5c51a514922@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240105_011631_357373_78778AF2 
-X-CRM114-Status: GOOD (  20.39  )
+X-CRM114-CacheID: sfid-20240105_013720_240014_E86B7CE2 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,56 +67,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-01-04 23:50:48, Konrad Dybcio wrote:
-> On 4.01.2024 15:52, Abel Vesa wrote:
-> > The local init_tlb is already zero initialized, so the entire zeroing loop
-> > is useless in this case, since the initial values are copied over anyway,
-> > before being written.
-> > 
-> > Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> 
-> That's another good spot.. partial struct initialization of
-> pm8550b_init_tbl zeroes out the uninitialized fields.
-> 
-> 
-> >  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 10 ----------
-> >  1 file changed, 10 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> > index 5f5862a68b73..3060c0749797 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> > @@ -156,16 +156,6 @@ static int eusb2_repeater_init(struct phy *phy)
-> >  
-> >  	regmap_field_update_bits(rptr->regs[F_EN_CTL1], EUSB2_RPTR_EN, EUSB2_RPTR_EN);
-> >  
-> > -	for (i = 0; i < F_NUM_TUNE_FIELDS; i++) {
-> > -		if (init_tbl[i]) {
-> > -			regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
-> > -		} else {
-> > -			/* Write 0 if there's no value set */
-> > -			u32 mask = GENMASK(regfields[i].msb, regfields[i].lsb);
-> > -
-> > -			regmap_field_update_bits(rptr->regs[i], mask, 0);
-> > -		}
-> > -	}
-> >  	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
-> 
-> I think this patchset can be made even better, this memcpy is also
-> useless and we can simply initialize init_tbl=rptr->cfg->init_tbl.
+Even if device_create_file() returns error code,
+rcar_gen3_phy_usb2_probe() will return zero because the "ret" is
+variable shadowing.
 
-Actually no. The init_tbl in cfg is a pointer to const. Plus, if you do
-that, you will end up with the same situation like in the other patch,
-as there are some overrides based on DT values below this.
+Reported-by: kernel test robot <lkp@intel.com>
+Reported-by: Dan Carpenter <error27@gmail.com>
+Closes: https://lore.kernel.org/r/202312161021.gOLDl48K-lkp@intel.com/
+Fixes: 441a681b8843 ("phy: rcar-gen3-usb2: fix implementation for runtime PM")
+Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 4 ----
+ 1 file changed, 4 deletions(-)
 
-But now that I've had another look, maybe doing the exact same thing as
-the other patch does (kmemdup) will probably look better anyway,
-specially if we do that on probe.
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index e53eace7c91e..6387c0d34c55 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -673,8 +673,6 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 	channel->irq = platform_get_irq_optional(pdev, 0);
+ 	channel->dr_mode = rcar_gen3_get_dr_mode(dev->of_node);
+ 	if (channel->dr_mode != USB_DR_MODE_UNKNOWN) {
+-		int ret;
+-
+ 		channel->is_otg_channel = true;
+ 		channel->uses_otg_pins = !of_property_read_bool(dev->of_node,
+ 							"renesas,no-otg-pins");
+@@ -738,8 +736,6 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 		ret = PTR_ERR(provider);
+ 		goto error;
+ 	} else if (channel->is_otg_channel) {
+-		int ret;
+-
+ 		ret = device_create_file(dev, &dev_attr_role);
+ 		if (ret < 0)
+ 			goto error;
+-- 
+2.25.1
 
-> 
-> Konrad
 
 -- 
 linux-phy mailing list
