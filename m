@@ -4,96 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D73E7C3DA6E
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Jan 2024 13:10:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33903C47077
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Jan 2024 14:56:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hb1yLPRhYPWcoqg5FixPkmQQsNwJpiSqBIjWqM5WigQ=; b=dKM+jonZeX817e
-	3xiqIz53s9cVRrLuja9hUxxmu0vjKuzjW4mR3dkRqwRMxJNoZCQdyLSU7Oy5Pd6L52yZOheU/oMej
-	923zTgIteRuI6BFq57iqF+hp7RcsH623cbjZuNttfKq/m6l+N9Br6gWfrmjrGji+F68R8zGI2C/Y5
-	mh3YoHAsc9XddThdwbJ3DiayCtzNXsx1LVi6zDIzs1XeVd4qRwe8cSqueqDbAxp8yAiqWPO3DQHKm
-	gTEKtuohF5Hrz5HYDvre9afPoqlQhN7QdxEkNBMaU6P9K76g92f1BcYX5e4DvOCMwAmU2P+99b3GS
-	MWUV3sLFFDwI4bhwRiSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3hNfO0im/40966k0IHAx/JqZhr1ekY7XFmeruWeFN68=; b=PRSoLcsJySuw05
+	EJ9Wo8YGEc+LvzNGR9LWHCdMWEFVMLJCs/dR4BxUyDw6qP/bChy4u/PTRLazUsuXCl/BsTQYXLTXA
+	EuPt2IgnEiNIUphV8WqCY7yCjR8EHhKLiZOP5zINF/kigzI/NakTPYOtnRvMUOOJzJl0Yh3NLqcS4
+	FU6UsbEjD0hY1tTyrs+x3pdBpOO4vDofMnWA3+BLt5CDbKARzOr1CnqZbJOAaswEYvtb0po5FNX46
+	VpCOeEogFPe0KxZ4xGcsfRnguKDIfYnv6/SJhM9feO0Ku4h4QNnkoz+KKLdqnTgn8T7wYg+ReLHKQ
+	3jwQt2rrY3XibUR3JW5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLjy7-00GvZV-1t;
-	Fri, 05 Jan 2024 13:10:35 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93])
+	id 1rM86V-001T7y-2f;
+	Sat, 06 Jan 2024 14:56:51 +0000
+Received: from mail-he1eur04on0613.outbound.protection.outlook.com ([2a01:111:f400:fe0d::613] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLjy2-00GvWT-0K;
-	Fri, 05 Jan 2024 13:10:34 +0000
-Received: from pps.filterd (m0369457.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.22/8.17.1.22) with ESMTP id 405A7Z9T032002;
-	Fri, 5 Jan 2024 14:08:15 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	selector1; bh=sfAJhjxdJzMmZQUVkdUcE22sUcbyaci+leuVPmAOkWc=; b=29
-	oL3ivGP8MKajoUUqj/e6Ve2ctYQj0+VXGBMWWdiOkb20ELU9zm8HaoBdbo1oRVZ3
-	kygUAw7evyj5h9fQi9PsOn4NLLTguPz2NBzcEOAo3ox+Gs8AhJG1JN8mzBn7DGHg
-	jzpqXLZsNAmjg9D/D1+GFYjOizAoHgu0nDyRWi69OZ3+A4baClJm1x7jv7QM+/Av
-	OuD05E7Dn46Sf/uwc/yNDB6GN5VafNNCevDE6iXepMsJocEa6IsgB4FYf64qM0bV
-	pGyslFpGLFfsngO3qOlwLLss61rsa/cv5SRrq8NFaUZNt6K0zb8JtFNFyjt13ARk
-	x1GBMLnbSbIrsdalZn5A==
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3ve9eq26dj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 05 Jan 2024 14:08:15 +0100 (CET)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B6B5710002A;
-	Fri,  5 Jan 2024 14:08:13 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node1.st.com [10.75.129.69])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A7C8322A6C8;
-	Fri,  5 Jan 2024 14:08:13 +0100 (CET)
-Received: from localhost (10.201.20.32) by SHFDAG1NODE1.st.com (10.75.129.69)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Fri, 5 Jan
- 2024 14:08:13 +0100
-From: Gatien Chevallier <gatien.chevallier@foss.st.com>
-To: <Oleksii_Moisieiev@epam.com>, <gregkh@linuxfoundation.org>,
-        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
-        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <conor+dt@kernel.org>, <alexandre.torgue@foss.st.com>,
-        <vkoul@kernel.org>, <jic23@kernel.org>, <olivier.moysan@foss.st.com>,
-        <arnaud.pouliquen@foss.st.com>, <mchehab@kernel.org>,
-        <fabrice.gasnier@foss.st.com>, <andi.shyti@kernel.org>,
-        <ulf.hansson@linaro.org>, <edumazet@google.com>, <kuba@kernel.org>,
-        <pabeni@redhat.com>, <hugues.fruchet@foss.st.com>, <lee@kernel.org>,
-        <will@kernel.org>, <catalin.marinas@arm.com>, <arnd@kernel.org>,
-        <richardcochran@gmail.com>, Frank Rowand <frowand.list@gmail.com>,
-        <peng.fan@oss.nxp.com>, <lars@metafoo.de>, <rcsekar@samsung.com>,
-        <wg@grandegger.com>, <mkl@pengutronix.de>
-CC: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <dmaengine@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
-        <linux-iio@vger.kernel.org>, <alsa-devel@alsa-project.org>,
-        <linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
-        <netdev@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>,
-        Gatien Chevallier
-	<gatien.chevallier@foss.st.com>
-Subject: [PATCH v9 12/13] ARM: dts: stm32: add ETZPC as a system bus for STM32MP13x boards
-Date: Fri, 5 Jan 2024 14:04:03 +0100
-Message-ID: <20240105130404.301172-13-gatien.chevallier@foss.st.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20240105130404.301172-1-gatien.chevallier@foss.st.com>
-References: <20240105130404.301172-1-gatien.chevallier@foss.st.com>
+	id 1rM86S-001T73-1r
+	for linux-phy@lists.infradead.org;
+	Sat, 06 Jan 2024 14:56:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AN7b1Rf99SmZdklUyuW+eP+zeggkweX4Dx5RR+ntDC0N2g5jF9pk9AkRimD+jhIvCmA0pNlrbbvHMdd1dkkfGpCjIG2ZjvdEAk2abzU0xtG1x2z+/uUHePL8PgHS63rffSvZ3j4xfS0crrI6k6GL62F5PGkHjuLv9V6MkyiLdMw3RNQL9cJ6+4ECK+4VjDkSJd1EE7XcgVxHOlHeHUIfb8lS0Hl/l2hnH1WaAtKJcEWcwnm9SdEU759SiaXvPmNwPn9R6XwJel8/ybuWJxnXodTIeoyVIjgbLH7QV6RYI5UDh2d5GayrkcjMgBT8WYWPkT8rYaKPBjpIiDIvClgjyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=j2J/ppFX0x3roEZmXCNhC744X5VAT72SLLNjPUe/BnI=;
+ b=EwVQ9uPxPliXxrkSk0hCd0PENBSUu/iiaBZIk3r4a/zufT0AWp5LHI8M6+KK2ENJzqFpkn7JTeGlBnCKKoql/a2+t7JrpJPSbeRAJrdTlRaVMkNONP/WagkfDuGiMpQEuNap0yAzIFpaC3tTm8VjQK8xAHAt15GfIHGutoEqV3rbwvVH7yUKV/Kkn/Dk35fwYYtUaDHvnLSL63tFLPUgAIhLl3qG88BzM9FLgYr7FafwlXvsN0VGIU1aI3mZ2hmu1W4/0fdPIoOtu94bpWZ2V7kD37nvCNhFmPzuP/vOuf31ighFxDvpEihHqFlzzUvzRVASVeWPkXmBKFoHBcf1Vg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=solid-run.com; dmarc=pass action=none
+ header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j2J/ppFX0x3roEZmXCNhC744X5VAT72SLLNjPUe/BnI=;
+ b=SGutDUBqST3bMyrATzYwlTnqzwPjkkLvYodbyKP5/DdT9TyvDZavMopkcLZhvjTH0Yl4BmiJ+cEjAxStzwPjue8Lr+vtk88D+Ox5hR1uerExdYhXUfmbS4URXPzBB/fjbqp8MHaa8yPJTjZOJouZu32GFVLTavmK7xcbffFbv5A=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=solid-run.com;
+Received: from AS8PR04MB8963.eurprd04.prod.outlook.com (2603:10a6:20b:42e::18)
+ by AM7PR04MB7175.eurprd04.prod.outlook.com (2603:10a6:20b:111::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.14; Sat, 6 Jan
+ 2024 14:56:36 +0000
+Received: from AS8PR04MB8963.eurprd04.prod.outlook.com
+ ([fe80::daf2:8c54:d469:793d]) by AS8PR04MB8963.eurprd04.prod.outlook.com
+ ([fe80::daf2:8c54:d469:793d%6]) with mapi id 15.20.7159.018; Sat, 6 Jan 2024
+ 14:56:36 +0000
+From: Josua Mayer <josua@solid-run.com>
+Date: Sat, 06 Jan 2024 15:56:33 +0100
+Subject: [PATCH] phy: armada-38x: add mux value for gbe port 0 on serdes 0
+Message-Id: <20240106-fix-a38x-comphy-sd0-gbe0-v1-1-c7fd87272050@solid-run.com>
+X-B4-Tracking: v=1; b=H4sIACBqmWUC/x2MSQqAMAwAvyI5G0ir1OUr4sHWqDm40IJUpH+3e
+ ByYmRcCe+EAffGC51uCnEcGVRbgtulYGWXODJp0TYoMLhJxqtqI7tyv7cEwE66WCUlb0xrllq6
+ pIOeX5+z+62FM6QNStixqagAAAA==
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: rmk@armlinux.org.uk, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Josua Mayer <josua@solid-run.com>
+X-Mailer: b4 0.12.4
+X-ClientProxiedBy: FR3P281CA0199.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:a5::16) To AS8PR04MB8963.eurprd04.prod.outlook.com
+ (2603:10a6:20b:42e::18)
 MIME-Version: 1.0
-X-Originating-IP: [10.201.20.32]
-X-ClientProxiedBy: EQNCAS1NODE3.st.com (10.75.129.80) To SHFDAG1NODE1.st.com
- (10.75.129.69)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-01-05_06,2024-01-05_01,2023-05-22_02
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS8PR04MB8963:EE_|AM7PR04MB7175:EE_
+X-MS-Office365-Filtering-Correlation-Id: b7dc262f-e956-410d-01d7-08dc0ec7ae22
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: uI3rSuJxjkSmuV/99CCm9ny+TEGEeMezMTUw7Ecc+uEJMYGtFLOpaYrzyTT4rp5HgxSKK5B9L+j6z8505Nf95H7Bk/ft7VHW+98e67zcm+pH5ePKTI6ts5TTqS5VqUqOc0Y5CtvbVg+aHhEQg0gubJ15O+eZOQIY8yGfjPtOy8y33v7esB9YPCf10HAugTmbKFkYC+DR/IBzz+wrjSfHVBRZhsZ/dnVF5J4QQQhRZC1dOFq7bpP1UrBtSYdedFpORTw4cJcAIN/1v3QD8Ox1WcLPqxryEKHo5TUFhMrvaRC5fNgLXEexBeitDnRYBri1tcBzBij++2Kv8qFCWO5orfK9OjQSdF7Wt+40ZciT7tWdTAwiYWujIisw4SSd0aeFIjXWv2bllztZGnI+kEQm1OfJ7RdwWzL9qEtgI1QEQdu5EDMjqt2osgleaJgftb0+hB+higsuSxHDPCt0MIbVJqqGIWuMmf3W2cgixtCA/Skkodj1LqOFECTRdwTJJ+WUuLM6JvbgtxoF3lHMECyxMF50GaDBibSecdzarHbqo4AGK93+UeOJ9gpTidv8bFOyTDyaew0qmdU+XNi1EVT5yq/q3e+bHXdyOcysJEqGuFC9ytJlPEpXXEqprAzqSkOM
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8963.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(376002)(346002)(366004)(39830400003)(136003)(230922051799003)(186009)(1800799012)(451199024)(64100799003)(107886003)(26005)(38100700002)(41300700001)(8676002)(316002)(110136005)(2906002)(8936002)(6666004)(4326008)(5660300002)(66556008)(52116002)(66946007)(66476007)(6506007)(6486002)(86362001)(478600001)(2616005)(6512007)(38350700005)(83380400001)(36756003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?K2tOZ0tDd3czOE9NbzB1bTgrNGs1bkk1MjNJOEJqU0VLYjFLNlNodkRaNWhH?=
+ =?utf-8?B?bURPTHFHNU95ZWJIVFZQY2dvOWRQQ3JiZHlVdVJqaU8vVVZUa3AzcXBQSnlW?=
+ =?utf-8?B?VEJFdG4yeXFvQzd3aFJEWWxOZXVtQUNTanJvTGNsdUtGdUtEZi9CQ1Z6anpY?=
+ =?utf-8?B?WUZJTXZyN3YzNjBkOEhJUFBoR3VRbU4yQXF2MnVkN3J6QzFBZnRGVlRRalQ5?=
+ =?utf-8?B?N3duc285L2xMZm9NUDdHY1dKWmt3R2JuOHlpdjc1cU4rTUh0NUZMejc3MnJV?=
+ =?utf-8?B?YnJaRDFNNzUwQzF6UHRSNjZUZXBMSFhDM3RkK0NKdjJ1UllJTURWSDlZR2c2?=
+ =?utf-8?B?WklJa0VCS0k1aDAvc1NZZmFiSDdiV2F4RFc0Vlg2cEh3R0V4MDdETFVjQ1Iz?=
+ =?utf-8?B?NjJVekgzSEpoMHVZYWkrbExQNldmblMzc0ZSOFg2MWtWQVB5bGlmODJVNHA5?=
+ =?utf-8?B?MVBHRjkzeTN1aW45WlYvekZGZzZVK3JHQmFhbDFrQXNHK2cwdzFZVXdlTU5F?=
+ =?utf-8?B?VDJaRTZJd0RaUUhpUG1uZXpGaUFjenRHbjRIU2xLRzJzWTZVVHBVWDNvYXda?=
+ =?utf-8?B?cXpwS1pRbHNnQ1h2Z3EzRnF4aG5nUmlNK29xYXI1K3hUUmszeFFHNEptL3ll?=
+ =?utf-8?B?dnZWb0NiNG5scU5KZ25PL1Uxb1l3enU1NzlSTDY4VjZ6Wk5qTWptcGNMQ0dC?=
+ =?utf-8?B?TzNaRHNOd1NtSjluek0wTTVMcjhtbW9ZSnRUNE1JRm1EdXI0Sk1Id2ppalNq?=
+ =?utf-8?B?K25qdHJTUkZ3dG5mQlgzeEVxUDd5NWIvQ1UzWDUwZDNadWdLbEp3THBtVUJO?=
+ =?utf-8?B?dDhrUHc2VEd2UjVLVmN2SEpMVmVSZ1VkNFhkeU1wK0RTQVNEcDAwaFAyV2pw?=
+ =?utf-8?B?RVU5Ym5oT0Vua3pUL01CVU9YQW5zTjhRWXE4dk9zRVpKL1V1SEZCOXdnVVk2?=
+ =?utf-8?B?cDRJM0lCME5SaUpjcjkyOEwzeTJMa08yeXhqS3VVZ0xmYTN5ZE44bFRyWXlG?=
+ =?utf-8?B?ekJvL0syODZNUlJ5WVdXczRFZkMrNUdKaHFCOGxDZ3lYci8wVWhGWHJVTW9v?=
+ =?utf-8?B?MkN0VjYrdWt0T29xNWh2QWJBZUc1WTRWRTNXS2pFUkVLQzVEVStiWFF6YnJo?=
+ =?utf-8?B?TkJxNjh0UklhT096Y25ydkdNNCtOV1ZHMTNobUdlOFZsYTIySXNadHl4NDBa?=
+ =?utf-8?B?Vm1WcFgxaG05WEZUWXlnSExJMXVsRklLNktrU2ZRcjd5K2ZXSjRlUlZhcjRD?=
+ =?utf-8?B?Zlo0RVcyL2IyaE9EcVJkSlNZR3BMclJOZ0JjREUrbUx0TXlXQlhycEhzc2xy?=
+ =?utf-8?B?U2xmM21Vb2puL2QrbFlDRUI1aW9WeXpmU2cvVG42S3U0VXRyTHdNR252Vkhs?=
+ =?utf-8?B?WFZ4QlZDbXpscFJNeGVuNWQ0a1p5QUYyVVd0R3dSUmMrR0kzVTVhckZ2QzBT?=
+ =?utf-8?B?Q2dlTXFhQWFmZnNtQVRLdW5MR1BnbFdFdnk1cmhMb1BMd09QOFZ6YmJuL0Mz?=
+ =?utf-8?B?Zk4vR2xMVlN0d3puaVB3NmtmdDVBcSsxSFBLbWhydmNPS2p5OXk3SzZZMHpR?=
+ =?utf-8?B?Und1ZHJzZVpVeW9nWVlLV1ZVRktmMVE5WjZ6RmJsWk9XbmpCVmZjWE5FZmZs?=
+ =?utf-8?B?Nkx6WkEwQTg2a0RzVk1YZmJqeWlkU05IdzRWQmdOS1JEajNkbFg1NVloZDRD?=
+ =?utf-8?B?UytwTURob2VwaVdmc2w5T3hoMms4Tko0b042N3pMQ2tDWURQU2k5NDg5aWRj?=
+ =?utf-8?B?TVdWR0hhS2V1TTI1SnJwNGdVdS9WN0hMbnRHbVpVV3ZpTVhjTGtRZUFhZUk5?=
+ =?utf-8?B?dFAxTUs1eTZ5MU54MHBDcS9WVmtDNlRpMlBuRzNMbDJFdVB3REVmenM1YUJB?=
+ =?utf-8?B?ZWJPdU5oMXRNNVZxT0t1YlBkUVFOeXgvRmtza1c2a20rZE03dnNjejlZREY1?=
+ =?utf-8?B?NVNVTkF0a3UvK0tNampzRDRwSmhtTkxkRU9GV2UzOTNiVk8rc3JBUlZaNFp3?=
+ =?utf-8?B?cE1PanY3TDkxa0JmQnVzSkVRbngrZGZqdlpEZHQydmowL0VGSHhJSm1oTVNl?=
+ =?utf-8?B?TmhRWW5BeENlcE9DaHFrbStyVWFEajViRWxQZXVKWXZ4YXd6SFJwVk5SUEgw?=
+ =?utf-8?Q?DEdsxAO+o1sDVJN0nmRutm4S0?=
+X-OriginatorOrg: solid-run.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b7dc262f-e956-410d-01d7-08dc0ec7ae22
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8963.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jan 2024 14:56:36.4376
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: aIlakZv0ukjiCKAGxOzJZnvhumcm7yNEKqJM5kHR7n2BqsS705tjrksRFU1LZAizlrMnioadyHPuBZ81DNJEpg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB7175
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240105_051030_431247_AF2A40D1 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20240106_065648_677010_5B6CE36C 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,1244 +145,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-ETZPC is a firewall controller. Put all peripherals filtered by the
-ETZPC as ETZPC subnodes and keep the "simple-bus" compatible for
-backward compatibility.
+Armada 38x supports 3 functions on serdes #0:
+- pcie port 0
+- sata port 0
+- gbe port 0
 
-Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+Add missing entry for gbe port 0 on serdes 0 to the gbe_mux array.
+
+Because this array looks obscure to new readers, also add a comment
+explaining the meaning of rows, columns and values.
+
+Signed-off-by: Josua Mayer <josua@solid-run.com>
 ---
+ drivers/phy/marvell/phy-armada38x-comphy.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-Changes in V7:
-    	- Keep simple-bus compatible
-    	- Remove access-controllers reference in this patch
-
-Changes in V6:
-    	- Renamed access-controller to access-controllers
-    	- Removal of access-control-provider property
-
-Changes in V5:
-    	- Renamed feature-domain* to access-control*
-
- arch/arm/boot/dts/st/stm32mp131.dtsi  | 1037 +++++++++++++------------
- arch/arm/boot/dts/st/stm32mp133.dtsi  |   50 +-
- arch/arm/boot/dts/st/stm32mp13xc.dtsi |   18 +-
- arch/arm/boot/dts/st/stm32mp13xf.dtsi |   18 +-
- 4 files changed, 564 insertions(+), 559 deletions(-)
-
-diff --git a/arch/arm/boot/dts/st/stm32mp131.dtsi b/arch/arm/boot/dts/st/stm32mp131.dtsi
-index b04d24c939c3..6ba8e3fd43b0 100644
---- a/arch/arm/boot/dts/st/stm32mp131.dtsi
-+++ b/arch/arm/boot/dts/st/stm32mp131.dtsi
-@@ -745,340 +745,6 @@ dmamux1: dma-router@48002000 {
- 			dma-channels = <16>;
- 		};
- 
--		adc_2: adc@48004000 {
--			compatible = "st,stm32mp13-adc-core";
--			reg = <0x48004000 0x400>;
--			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc ADC2>, <&rcc ADC2_K>;
--			clock-names = "bus", "adc";
--			interrupt-controller;
--			#interrupt-cells = <1>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			status = "disabled";
--
--			adc2: adc@0 {
--				compatible = "st,stm32mp13-adc";
--				#io-channel-cells = <1>;
--				#address-cells = <1>;
--				#size-cells = <0>;
--				reg = <0x0>;
--				interrupt-parent = <&adc_2>;
--				interrupts = <0>;
--				dmas = <&dmamux1 10 0x400 0x80000001>;
--				dma-names = "rx";
--				status = "disabled";
--
--				channel@13 {
--					reg = <13>;
--					label = "vrefint";
--				};
--				channel@14 {
--					reg = <14>;
--					label = "vddcore";
--				};
--				channel@16 {
--					reg = <16>;
--					label = "vddcpu";
--				};
--				channel@17 {
--					reg = <17>;
--					label = "vddq_ddr";
--				};
--			};
--		};
--
--		usbotg_hs: usb@49000000 {
--			compatible = "st,stm32mp15-hsotg", "snps,dwc2";
--			reg = <0x49000000 0x40000>;
--			clocks = <&rcc USBO_K>;
--			clock-names = "otg";
--			resets = <&rcc USBO_R>;
--			reset-names = "dwc2";
--			interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
--			g-rx-fifo-size = <512>;
--			g-np-tx-fifo-size = <32>;
--			g-tx-fifo-size = <256 16 16 16 16 16 16 16>;
--			dr_mode = "otg";
--			otg-rev = <0x200>;
--			usb33d-supply = <&scmi_usb33>;
--			status = "disabled";
--		};
--
--		usart1: serial@4c000000 {
--			compatible = "st,stm32h7-uart";
--			reg = <0x4c000000 0x400>;
--			interrupts-extended = <&exti 26 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc USART1_K>;
--			resets = <&rcc USART1_R>;
--			wakeup-source;
--			dmas = <&dmamux1 41 0x400 0x5>,
--			       <&dmamux1 42 0x400 0x1>;
--			dma-names = "rx", "tx";
--			status = "disabled";
--		};
--
--		usart2: serial@4c001000 {
--			compatible = "st,stm32h7-uart";
--			reg = <0x4c001000 0x400>;
--			interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc USART2_K>;
--			resets = <&rcc USART2_R>;
--			wakeup-source;
--			dmas = <&dmamux1 43 0x400 0x5>,
--			       <&dmamux1 44 0x400 0x1>;
--			dma-names = "rx", "tx";
--			status = "disabled";
--		};
--
--		i2s4: audio-controller@4c002000 {
--			compatible = "st,stm32h7-i2s";
--			reg = <0x4c002000 0x400>;
--			#sound-dai-cells = <0>;
--			interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
--			dmas = <&dmamux1 83 0x400 0x01>,
--			       <&dmamux1 84 0x400 0x01>;
--			dma-names = "rx", "tx";
--			status = "disabled";
--		};
--
--		spi4: spi@4c002000 {
--			compatible = "st,stm32h7-spi";
--			reg = <0x4c002000 0x400>;
--			interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc SPI4_K>;
--			resets = <&rcc SPI4_R>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			dmas = <&dmamux1 83 0x400 0x01>,
--			       <&dmamux1 84 0x400 0x01>;
--			dma-names = "rx", "tx";
--			status = "disabled";
--		};
--
--		spi5: spi@4c003000 {
--			compatible = "st,stm32h7-spi";
--			reg = <0x4c003000 0x400>;
--			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc SPI5_K>;
--			resets = <&rcc SPI5_R>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			dmas = <&dmamux1 85 0x400 0x01>,
--			       <&dmamux1 86 0x400 0x01>;
--			dma-names = "rx", "tx";
--			status = "disabled";
--		};
--
--		i2c3: i2c@4c004000 {
--			compatible = "st,stm32mp13-i2c";
--			reg = <0x4c004000 0x400>;
--			interrupt-names = "event", "error";
--			interrupts = <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc I2C3_K>;
--			resets = <&rcc I2C3_R>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			dmas = <&dmamux1 73 0x400 0x1>,
--			       <&dmamux1 74 0x400 0x1>;
--			dma-names = "rx", "tx";
--			st,syscfg-fmp = <&syscfg 0x4 0x4>;
--			i2c-analog-filter;
--			status = "disabled";
--		};
--
--		i2c4: i2c@4c005000 {
--			compatible = "st,stm32mp13-i2c";
--			reg = <0x4c005000 0x400>;
--			interrupt-names = "event", "error";
--			interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc I2C4_K>;
--			resets = <&rcc I2C4_R>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			dmas = <&dmamux1 75 0x400 0x1>,
--			       <&dmamux1 76 0x400 0x1>;
--			dma-names = "rx", "tx";
--			st,syscfg-fmp = <&syscfg 0x4 0x8>;
--			i2c-analog-filter;
--			status = "disabled";
--		};
--
--		i2c5: i2c@4c006000 {
--			compatible = "st,stm32mp13-i2c";
--			reg = <0x4c006000 0x400>;
--			interrupt-names = "event", "error";
--			interrupts = <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc I2C5_K>;
--			resets = <&rcc I2C5_R>;
--			#address-cells = <1>;
--			#size-cells = <0>;
--			dmas = <&dmamux1 115 0x400 0x1>,
--			       <&dmamux1 116 0x400 0x1>;
--			dma-names = "rx", "tx";
--			st,syscfg-fmp = <&syscfg 0x4 0x10>;
--			i2c-analog-filter;
--			status = "disabled";
--		};
--
--		timers12: timer@4c007000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c007000 0x400>;
--			interrupts = <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM12_K>;
--			clock-names = "int";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@11 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <11>;
--				status = "disabled";
--			};
--		};
--
--		timers13: timer@4c008000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c008000 0x400>;
--			interrupts = <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM13_K>;
--			clock-names = "int";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@12 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <12>;
--				status = "disabled";
--			};
--		};
--
--		timers14: timer@4c009000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c009000 0x400>;
--			interrupts = <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM14_K>;
--			clock-names = "int";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@13 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <13>;
--				status = "disabled";
--			};
--		};
--
--		timers15: timer@4c00a000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c00a000 0x400>;
--			interrupts = <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM15_K>;
--			clock-names = "int";
--			dmas = <&dmamux1 105 0x400 0x1>,
--			       <&dmamux1 106 0x400 0x1>,
--			       <&dmamux1 107 0x400 0x1>,
--			       <&dmamux1 108 0x400 0x1>;
--			dma-names = "ch1", "up", "trig", "com";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@14 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <14>;
--				status = "disabled";
--			};
--		};
--
--		timers16: timer@4c00b000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c00b000 0x400>;
--			interrupts = <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM16_K>;
--			clock-names = "int";
--			dmas = <&dmamux1 109 0x400 0x1>,
--			       <&dmamux1 110 0x400 0x1>;
--			dma-names = "ch1", "up";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@15 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <15>;
--				status = "disabled";
--			};
--		};
--
--		timers17: timer@4c00c000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-timers";
--			reg = <0x4c00c000 0x400>;
--			interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "global";
--			clocks = <&rcc TIM17_K>;
--			clock-names = "int";
--			dmas = <&dmamux1 111 0x400 0x1>,
--			       <&dmamux1 112 0x400 0x1>;
--			dma-names = "ch1", "up";
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			timer@16 {
--				compatible = "st,stm32h7-timer-trigger";
--				reg = <16>;
--				status = "disabled";
--			};
--		};
--
- 		rcc: rcc@50000000 {
- 			compatible = "st,stm32mp13-rcc", "syscon";
- 			reg = <0x50000000 0x1000>;
-@@ -1105,69 +771,6 @@ syscfg: syscon@50020000 {
- 			clocks = <&rcc SYSCFG>;
- 		};
- 
--		lptimer2: timer@50021000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-lptimer";
--			reg = <0x50021000 0x400>;
--			interrupts-extended = <&exti 48 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc LPTIM2_K>;
--			clock-names = "mux";
--			wakeup-source;
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm-lp";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			trigger@1 {
--				compatible = "st,stm32-lptimer-trigger";
--				reg = <1>;
--				status = "disabled";
--			};
--
--			counter {
--				compatible = "st,stm32-lptimer-counter";
--				status = "disabled";
--			};
--
--			timer {
--				compatible = "st,stm32-lptimer-timer";
--				status = "disabled";
--			};
--		};
--
--		lptimer3: timer@50022000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			compatible = "st,stm32-lptimer";
--			reg = <0x50022000 0x400>;
--			interrupts-extended = <&exti 50 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc LPTIM3_K>;
--			clock-names = "mux";
--			wakeup-source;
--			status = "disabled";
--
--			pwm {
--				compatible = "st,stm32-pwm-lp";
--				#pwm-cells = <3>;
--				status = "disabled";
--			};
--
--			trigger@2 {
--				compatible = "st,stm32-lptimer-trigger";
--				reg = <2>;
--				status = "disabled";
--			};
--
--			timer {
--				compatible = "st,stm32-lptimer-timer";
--				status = "disabled";
--			};
--		};
--
- 		lptimer4: timer@50023000 {
- 			compatible = "st,stm32-lptimer";
- 			reg = <0x50023000 0x400>;
-@@ -1210,25 +813,6 @@ timer {
- 			};
- 		};
- 
--		hash: hash@54003000 {
--			compatible = "st,stm32mp13-hash";
--			reg = <0x54003000 0x400>;
--			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc HASH1>;
--			resets = <&rcc HASH1_R>;
--			dmas = <&mdma 30 0x2 0x1000a02 0x0 0x0>;
--			dma-names = "in";
--			status = "disabled";
--		};
--
--		rng: rng@54004000 {
--			compatible = "st,stm32mp13-rng";
--			reg = <0x54004000 0x400>;
--			clocks = <&rcc RNG1_K>;
--			resets = <&rcc RNG1_R>;
--			status = "disabled";
--		};
--
- 		mdma: dma-controller@58000000 {
- 			compatible = "st,stm32h7-mdma";
- 			reg = <0x58000000 0x1000>;
-@@ -1239,82 +823,6 @@ mdma: dma-controller@58000000 {
- 			dma-requests = <48>;
- 		};
- 
--		fmc: memory-controller@58002000 {
--			compatible = "st,stm32mp1-fmc2-ebi";
--			reg = <0x58002000 0x1000>;
--			ranges = <0 0 0x60000000 0x04000000>, /* EBI CS 1 */
--				 <1 0 0x64000000 0x04000000>, /* EBI CS 2 */
--				 <2 0 0x68000000 0x04000000>, /* EBI CS 3 */
--				 <3 0 0x6c000000 0x04000000>, /* EBI CS 4 */
--				 <4 0 0x80000000 0x10000000>; /* NAND */
--			#address-cells = <2>;
--			#size-cells = <1>;
--			clocks = <&rcc FMC_K>;
--			resets = <&rcc FMC_R>;
--			status = "disabled";
--
--			nand-controller@4,0 {
--				compatible = "st,stm32mp1-fmc2-nfc";
--				reg = <4 0x00000000 0x1000>,
--				      <4 0x08010000 0x1000>,
--				      <4 0x08020000 0x1000>,
--				      <4 0x01000000 0x1000>,
--				      <4 0x09010000 0x1000>,
--				      <4 0x09020000 0x1000>;
--				#address-cells = <1>;
--				#size-cells = <0>;
--				interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--				dmas = <&mdma 24 0x2 0x12000a02 0x0 0x0>,
--				       <&mdma 24 0x2 0x12000a08 0x0 0x0>,
--				       <&mdma 25 0x2 0x12000a0a 0x0 0x0>;
--				dma-names = "tx", "rx", "ecc";
--				status = "disabled";
--			};
--		};
--
--		qspi: spi@58003000 {
--			compatible = "st,stm32f469-qspi";
--			reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
--			reg-names = "qspi", "qspi_mm";
--			#address-cells = <1>;
--			#size-cells = <0>;
--			interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
--			dmas = <&mdma 26 0x2 0x10100002 0x0 0x0>,
--			       <&mdma 26 0x2 0x10100008 0x0 0x0>;
--			dma-names = "tx", "rx";
--			clocks = <&rcc QSPI_K>;
--			resets = <&rcc QSPI_R>;
--			status = "disabled";
--		};
--
--		sdmmc1: mmc@58005000 {
--			compatible = "st,stm32-sdmmc2", "arm,pl18x", "arm,primecell";
--			arm,primecell-periphid = <0x20253180>;
--			reg = <0x58005000 0x1000>, <0x58006000 0x1000>;
--			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc SDMMC1_K>;
--			clock-names = "apb_pclk";
--			resets = <&rcc SDMMC1_R>;
--			cap-sd-highspeed;
--			cap-mmc-highspeed;
--			max-frequency = <130000000>;
--			status = "disabled";
--		};
--
--		sdmmc2: mmc@58007000 {
--			compatible = "st,stm32-sdmmc2", "arm,pl18x", "arm,primecell";
--			arm,primecell-periphid = <0x20253180>;
--			reg = <0x58007000 0x1000>, <0x58008000 0x1000>;
--			interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc SDMMC2_K>;
--			clock-names = "apb_pclk";
--			resets = <&rcc SDMMC2_R>;
--			cap-sd-highspeed;
--			cap-mmc-highspeed;
--			max-frequency = <130000000>;
--			status = "disabled";
--		};
--
- 		usbh_ohci: usb@5800c000 {
- 			compatible = "generic-ohci";
- 			reg = <0x5800c000 0x1000>;
-@@ -1342,29 +850,6 @@ iwdg2: watchdog@5a002000 {
- 			status = "disabled";
- 		};
- 
--		usbphyc: usbphyc@5a006000 {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			#clock-cells = <0>;
--			compatible = "st,stm32mp1-usbphyc";
--			reg = <0x5a006000 0x1000>;
--			clocks = <&rcc USBPHY_K>;
--			resets = <&rcc USBPHY_R>;
--			vdda1v1-supply = <&scmi_reg11>;
--			vdda1v8-supply = <&scmi_reg18>;
--			status = "disabled";
--
--			usbphyc_port0: usb-phy@0 {
--				#phy-cells = <0>;
--				reg = <0>;
--			};
--
--			usbphyc_port1: usb-phy@1 {
--				#phy-cells = <1>;
--				reg = <1>;
--			};
--		};
--
- 		rtc: rtc@5c004000 {
- 			compatible = "st,stm32mp1-rtc";
- 			reg = <0x5c004000 0x400>;
-@@ -1393,6 +878,527 @@ ts_cal2: calib@5e {
- 			};
- 		};
- 
-+		etzpc: bus@5c007000 {
-+			compatible = "st,stm32-etzpc", "simple-bus";
-+			reg = <0x5c007000 0x400>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			ranges;
-+
-+			adc_2: adc@48004000 {
-+				compatible = "st,stm32mp13-adc-core";
-+				reg = <0x48004000 0x400>;
-+				interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc ADC2>, <&rcc ADC2_K>;
-+				clock-names = "bus", "adc";
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+
-+				adc2: adc@0 {
-+					compatible = "st,stm32mp13-adc";
-+					#io-channel-cells = <1>;
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+					reg = <0x0>;
-+					interrupt-parent = <&adc_2>;
-+					interrupts = <0>;
-+					dmas = <&dmamux1 10 0x400 0x80000001>;
-+					dma-names = "rx";
-+					status = "disabled";
-+
-+					channel@13 {
-+						reg = <13>;
-+						label = "vrefint";
-+					};
-+					channel@14 {
-+						reg = <14>;
-+						label = "vddcore";
-+					};
-+					channel@16 {
-+						reg = <16>;
-+						label = "vddcpu";
-+					};
-+					channel@17 {
-+						reg = <17>;
-+						label = "vddq_ddr";
-+					};
-+				};
-+			};
-+
-+			usbotg_hs: usb@49000000 {
-+				compatible = "st,stm32mp15-hsotg", "snps,dwc2";
-+				reg = <0x49000000 0x40000>;
-+				clocks = <&rcc USBO_K>;
-+				clock-names = "otg";
-+				resets = <&rcc USBO_R>;
-+				reset-names = "dwc2";
-+				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
-+				g-rx-fifo-size = <512>;
-+				g-np-tx-fifo-size = <32>;
-+				g-tx-fifo-size = <256 16 16 16 16 16 16 16>;
-+				dr_mode = "otg";
-+				otg-rev = <0x200>;
-+				usb33d-supply = <&scmi_usb33>;
-+				status = "disabled";
-+			};
-+
-+			usart1: serial@4c000000 {
-+				compatible = "st,stm32h7-uart";
-+				reg = <0x4c000000 0x400>;
-+				interrupts-extended = <&exti 26 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc USART1_K>;
-+				resets = <&rcc USART1_R>;
-+				wakeup-source;
-+				dmas = <&dmamux1 41 0x400 0x5>,
-+				<&dmamux1 42 0x400 0x1>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			usart2: serial@4c001000 {
-+				compatible = "st,stm32h7-uart";
-+				reg = <0x4c001000 0x400>;
-+				interrupts-extended = <&exti 27 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc USART2_K>;
-+				resets = <&rcc USART2_R>;
-+				wakeup-source;
-+				dmas = <&dmamux1 43 0x400 0x5>,
-+				<&dmamux1 44 0x400 0x1>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			i2s4: audio-controller@4c002000 {
-+				compatible = "st,stm32h7-i2s";
-+				reg = <0x4c002000 0x400>;
-+				#sound-dai-cells = <0>;
-+				interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
-+				dmas = <&dmamux1 83 0x400 0x01>,
-+				<&dmamux1 84 0x400 0x01>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			spi4: spi@4c002000 {
-+				compatible = "st,stm32h7-spi";
-+				reg = <0x4c002000 0x400>;
-+				interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc SPI4_K>;
-+				resets = <&rcc SPI4_R>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				dmas = <&dmamux1 83 0x400 0x01>,
-+				       <&dmamux1 84 0x400 0x01>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			spi5: spi@4c003000 {
-+				compatible = "st,stm32h7-spi";
-+				reg = <0x4c003000 0x400>;
-+				interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc SPI5_K>;
-+				resets = <&rcc SPI5_R>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				dmas = <&dmamux1 85 0x400 0x01>,
-+				       <&dmamux1 86 0x400 0x01>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			i2c3: i2c@4c004000 {
-+				compatible = "st,stm32mp13-i2c";
-+				reg = <0x4c004000 0x400>;
-+				interrupt-names = "event", "error";
-+				interrupts = <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc I2C3_K>;
-+				resets = <&rcc I2C3_R>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				dmas = <&dmamux1 73 0x400 0x1>,
-+				       <&dmamux1 74 0x400 0x1>;
-+				dma-names = "rx", "tx";
-+				st,syscfg-fmp = <&syscfg 0x4 0x4>;
-+				i2c-analog-filter;
-+				status = "disabled";
-+			};
-+
-+			i2c4: i2c@4c005000 {
-+				compatible = "st,stm32mp13-i2c";
-+				reg = <0x4c005000 0x400>;
-+				interrupt-names = "event", "error";
-+				interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc I2C4_K>;
-+				resets = <&rcc I2C4_R>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				dmas = <&dmamux1 75 0x400 0x1>,
-+				       <&dmamux1 76 0x400 0x1>;
-+				dma-names = "rx", "tx";
-+				st,syscfg-fmp = <&syscfg 0x4 0x8>;
-+				i2c-analog-filter;
-+				status = "disabled";
-+			};
-+
-+			i2c5: i2c@4c006000 {
-+				compatible = "st,stm32mp13-i2c";
-+				reg = <0x4c006000 0x400>;
-+				interrupt-names = "event", "error";
-+				interrupts = <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc I2C5_K>;
-+				resets = <&rcc I2C5_R>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				dmas = <&dmamux1 115 0x400 0x1>,
-+				       <&dmamux1 116 0x400 0x1>;
-+				dma-names = "rx", "tx";
-+				st,syscfg-fmp = <&syscfg 0x4 0x10>;
-+				i2c-analog-filter;
-+				status = "disabled";
-+			};
-+
-+			timers12: timer@4c007000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c007000 0x400>;
-+				interrupts = <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM12_K>;
-+				clock-names = "int";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@11 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <11>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			timers13: timer@4c008000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c008000 0x400>;
-+				interrupts = <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM13_K>;
-+				clock-names = "int";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@12 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <12>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			timers14: timer@4c009000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c009000 0x400>;
-+				interrupts = <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM14_K>;
-+				clock-names = "int";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@13 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <13>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			timers15: timer@4c00a000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c00a000 0x400>;
-+				interrupts = <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM15_K>;
-+				clock-names = "int";
-+				dmas = <&dmamux1 105 0x400 0x1>,
-+				<&dmamux1 106 0x400 0x1>,
-+				<&dmamux1 107 0x400 0x1>,
-+				<&dmamux1 108 0x400 0x1>;
-+				dma-names = "ch1", "up", "trig", "com";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@14 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <14>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			timers16: timer@4c00b000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c00b000 0x400>;
-+				interrupts = <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM16_K>;
-+				clock-names = "int";
-+				dmas = <&dmamux1 109 0x400 0x1>,
-+				<&dmamux1 110 0x400 0x1>;
-+				dma-names = "ch1", "up";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@15 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <15>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			timers17: timer@4c00c000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-timers";
-+				reg = <0x4c00c000 0x400>;
-+				interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "global";
-+				clocks = <&rcc TIM17_K>;
-+				clock-names = "int";
-+				dmas = <&dmamux1 111 0x400 0x1>,
-+				       <&dmamux1 112 0x400 0x1>;
-+				dma-names = "ch1", "up";
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				timer@16 {
-+					compatible = "st,stm32h7-timer-trigger";
-+					reg = <16>;
-+					status = "disabled";
-+				};
-+			};
-+
-+			lptimer2: timer@50021000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-lptimer";
-+				reg = <0x50021000 0x400>;
-+				interrupts-extended = <&exti 48 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc LPTIM2_K>;
-+				clock-names = "mux";
-+				wakeup-source;
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm-lp";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				trigger@1 {
-+					compatible = "st,stm32-lptimer-trigger";
-+					reg = <1>;
-+					status = "disabled";
-+				};
-+
-+				counter {
-+					compatible = "st,stm32-lptimer-counter";
-+					status = "disabled";
-+				};
-+
-+				timer {
-+					compatible = "st,stm32-lptimer-timer";
-+					status = "disabled";
-+				};
-+			};
-+
-+			lptimer3: timer@50022000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "st,stm32-lptimer";
-+				reg = <0x50022000 0x400>;
-+				interrupts-extended = <&exti 50 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc LPTIM3_K>;
-+				clock-names = "mux";
-+				wakeup-source;
-+				status = "disabled";
-+
-+				pwm {
-+					compatible = "st,stm32-pwm-lp";
-+					#pwm-cells = <3>;
-+					status = "disabled";
-+				};
-+
-+				trigger@2 {
-+					compatible = "st,stm32-lptimer-trigger";
-+					reg = <2>;
-+					status = "disabled";
-+				};
-+
-+				timer {
-+					compatible = "st,stm32-lptimer-timer";
-+					status = "disabled";
-+				};
-+			};
-+
-+			hash: hash@54003000 {
-+				compatible = "st,stm32mp13-hash";
-+				reg = <0x54003000 0x400>;
-+				interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc HASH1>;
-+				resets = <&rcc HASH1_R>;
-+				dmas = <&mdma 30 0x2 0x1000a02 0x0 0x0>;
-+				dma-names = "in";
-+			};
-+
-+			rng: rng@54004000 {
-+				compatible = "st,stm32mp13-rng";
-+				reg = <0x54004000 0x400>;
-+				clocks = <&rcc RNG1_K>;
-+				resets = <&rcc RNG1_R>;
-+			};
-+
-+			fmc: memory-controller@58002000 {
-+				compatible = "st,stm32mp1-fmc2-ebi";
-+				reg = <0x58002000 0x1000>;
-+				ranges = <0 0 0x60000000 0x04000000>, /* EBI CS 1 */
-+					 <1 0 0x64000000 0x04000000>, /* EBI CS 2 */
-+					 <2 0 0x68000000 0x04000000>, /* EBI CS 3 */
-+					 <3 0 0x6c000000 0x04000000>, /* EBI CS 4 */
-+					 <4 0 0x80000000 0x10000000>; /* NAND */
-+				#address-cells = <2>;
-+				#size-cells = <1>;
-+				clocks = <&rcc FMC_K>;
-+				resets = <&rcc FMC_R>;
-+				status = "disabled";
-+
-+				nand-controller@4,0 {
-+					compatible = "st,stm32mp1-fmc2-nfc";
-+					reg = <4 0x00000000 0x1000>,
-+					      <4 0x08010000 0x1000>,
-+					      <4 0x08020000 0x1000>,
-+					      <4 0x01000000 0x1000>,
-+					      <4 0x09010000 0x1000>,
-+					      <4 0x09020000 0x1000>;
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+					interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+					dmas = <&mdma 24 0x2 0x12000a02 0x0 0x0>,
-+					       <&mdma 24 0x2 0x12000a08 0x0 0x0>,
-+					       <&mdma 25 0x2 0x12000a0a 0x0 0x0>;
-+					dma-names = "tx", "rx", "ecc";
-+					status = "disabled";
-+				};
-+			};
-+
-+			qspi: spi@58003000 {
-+				compatible = "st,stm32f469-qspi";
-+				reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
-+				reg-names = "qspi", "qspi_mm";
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
-+				dmas = <&mdma 26 0x2 0x10100002 0x0 0x0>,
-+				       <&mdma 26 0x2 0x10100008 0x0 0x0>;
-+				dma-names = "tx", "rx";
-+				clocks = <&rcc QSPI_K>;
-+				resets = <&rcc QSPI_R>;
-+				status = "disabled";
-+			};
-+
-+			sdmmc1: mmc@58005000 {
-+				compatible = "st,stm32-sdmmc2", "arm,pl18x", "arm,primecell";
-+				arm,primecell-periphid = <0x20253180>;
-+				reg = <0x58005000 0x1000>, <0x58006000 0x1000>;
-+				interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc SDMMC1_K>;
-+				clock-names = "apb_pclk";
-+				resets = <&rcc SDMMC1_R>;
-+				cap-sd-highspeed;
-+				cap-mmc-highspeed;
-+				max-frequency = <130000000>;
-+				status = "disabled";
-+			};
-+
-+			sdmmc2: mmc@58007000 {
-+				compatible = "st,stm32-sdmmc2", "arm,pl18x", "arm,primecell";
-+				arm,primecell-periphid = <0x20253180>;
-+				reg = <0x58007000 0x1000>, <0x58008000 0x1000>;
-+				interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&rcc SDMMC2_K>;
-+				clock-names = "apb_pclk";
-+				resets = <&rcc SDMMC2_R>;
-+				cap-sd-highspeed;
-+				cap-mmc-highspeed;
-+				max-frequency = <130000000>;
-+				status = "disabled";
-+			};
-+
-+			usbphyc: usbphyc@5a006000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				#clock-cells = <0>;
-+				compatible = "st,stm32mp1-usbphyc";
-+				reg = <0x5a006000 0x1000>;
-+				clocks = <&rcc USBPHY_K>;
-+				resets = <&rcc USBPHY_R>;
-+				vdda1v1-supply = <&scmi_reg11>;
-+				vdda1v8-supply = <&scmi_reg18>;
-+				status = "disabled";
-+
-+				usbphyc_port0: usb-phy@0 {
-+					#phy-cells = <0>;
-+					reg = <0>;
-+				};
-+
-+				usbphyc_port1: usb-phy@1 {
-+					#phy-cells = <1>;
-+					reg = <1>;
-+				};
-+			};
-+		};
-+
- 		/*
- 		 * Break node order to solve dependency probe issue between
- 		 * pinctrl and exti.
-@@ -1404,6 +1410,7 @@ pinctrl: pinctrl@50002000 {
- 			ranges = <0 0x50002000 0x8400>;
- 			interrupt-parent = <&exti>;
- 			st,syscfg = <&exti 0x60 0xff>;
-+			pins-are-numbered;
- 
- 			gpioa: gpio@50002000 {
- 				gpio-controller;
-diff --git a/arch/arm/boot/dts/st/stm32mp133.dtsi b/arch/arm/boot/dts/st/stm32mp133.dtsi
-index df451c3c2a26..c4d3a520c14b 100644
---- a/arch/arm/boot/dts/st/stm32mp133.dtsi
-+++ b/arch/arm/boot/dts/st/stm32mp133.dtsi
-@@ -33,35 +33,37 @@ m_can2: can@4400f000 {
- 			bosch,mram-cfg = <0x1400 0 0 32 0 0 2 2>;
- 			status = "disabled";
- 		};
-+	};
-+};
- 
--		adc_1: adc@48003000 {
--			compatible = "st,stm32mp13-adc-core";
--			reg = <0x48003000 0x400>;
--			interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc ADC1>, <&rcc ADC1_K>;
--			clock-names = "bus", "adc";
--			interrupt-controller;
--			#interrupt-cells = <1>;
-+&etzpc {
-+	adc_1: adc@48003000 {
-+		compatible = "st,stm32mp13-adc-core";
-+		reg = <0x48003000 0x400>;
-+		interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&rcc ADC1>, <&rcc ADC1_K>;
-+		clock-names = "bus", "adc";
-+		interrupt-controller;
-+		#interrupt-cells = <1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		status = "disabled";
-+
-+		adc1: adc@0 {
-+			compatible = "st,stm32mp13-adc";
-+			#io-channel-cells = <1>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
-+			reg = <0x0>;
-+			interrupt-parent = <&adc_1>;
-+			interrupts = <0>;
-+			dmas = <&dmamux1 9 0x400 0x80000001>;
-+			dma-names = "rx";
- 			status = "disabled";
- 
--			adc1: adc@0 {
--				compatible = "st,stm32mp13-adc";
--				#io-channel-cells = <1>;
--				#address-cells = <1>;
--				#size-cells = <0>;
--				reg = <0x0>;
--				interrupt-parent = <&adc_1>;
--				interrupts = <0>;
--				dmas = <&dmamux1 9 0x400 0x80000001>;
--				dma-names = "rx";
--				status = "disabled";
--
--				channel@18 {
--					reg = <18>;
--					label = "vrefint";
--				};
-+			channel@18 {
-+				reg = <18>;
-+				label = "vrefint";
- 			};
- 		};
- 	};
-diff --git a/arch/arm/boot/dts/st/stm32mp13xc.dtsi b/arch/arm/boot/dts/st/stm32mp13xc.dtsi
-index 4d00e7592882..b9fb071a1471 100644
---- a/arch/arm/boot/dts/st/stm32mp13xc.dtsi
-+++ b/arch/arm/boot/dts/st/stm32mp13xc.dtsi
-@@ -4,15 +4,13 @@
-  * Author: Alexandre Torgue <alexandre.torgue@foss.st.com> for STMicroelectronics.
-  */
- 
--/ {
--	soc {
--		cryp: crypto@54002000 {
--			compatible = "st,stm32mp1-cryp";
--			reg = <0x54002000 0x400>;
--			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc CRYP1>;
--			resets = <&rcc CRYP1_R>;
--			status = "disabled";
--		};
-+&etzpc {
-+	cryp: crypto@54002000 {
-+		compatible = "st,stm32mp1-cryp";
-+		reg = <0x54002000 0x400>;
-+		interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&rcc CRYP1>;
-+		resets = <&rcc CRYP1_R>;
-+		status = "disabled";
- 	};
+diff --git a/drivers/phy/marvell/phy-armada38x-comphy.c b/drivers/phy/marvell/phy-armada38x-comphy.c
+index b7d99861526a..d3259984ee8e 100644
+--- a/drivers/phy/marvell/phy-armada38x-comphy.c
++++ b/drivers/phy/marvell/phy-armada38x-comphy.c
+@@ -47,8 +47,13 @@ struct a38x_comphy {
+ 	struct a38x_comphy_lane lane[MAX_A38X_COMPHY];
  };
-diff --git a/arch/arm/boot/dts/st/stm32mp13xf.dtsi b/arch/arm/boot/dts/st/stm32mp13xf.dtsi
-index 4d00e7592882..b9fb071a1471 100644
---- a/arch/arm/boot/dts/st/stm32mp13xf.dtsi
-+++ b/arch/arm/boot/dts/st/stm32mp13xf.dtsi
-@@ -4,15 +4,13 @@
-  * Author: Alexandre Torgue <alexandre.torgue@foss.st.com> for STMicroelectronics.
-  */
  
--/ {
--	soc {
--		cryp: crypto@54002000 {
--			compatible = "st,stm32mp1-cryp";
--			reg = <0x54002000 0x400>;
--			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&rcc CRYP1>;
--			resets = <&rcc CRYP1_R>;
--			status = "disabled";
--		};
-+&etzpc {
-+	cryp: crypto@54002000 {
-+		compatible = "st,stm32mp1-cryp";
-+		reg = <0x54002000 0x400>;
-+		interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&rcc CRYP1>;
-+		resets = <&rcc CRYP1_R>;
-+		status = "disabled";
- 	};
- };
++/*
++ * Map serdes lanes and gbe ports to serdes mux configuration values:
++ * row index = serdes lane,
++ * column index = gbe port number.
++ */
+ static const u8 gbe_mux[MAX_A38X_COMPHY][MAX_A38X_PORTS] = {
+-	{ 0, 0, 0 },
++	{ 3, 0, 0 },
+ 	{ 4, 5, 0 },
+ 	{ 0, 4, 0 },
+ 	{ 0, 0, 4 },
+
+---
+base-commit: b85ea95d086471afb4ad062012a4d73cd328fa86
+change-id: 20240106-fix-a38x-comphy-sd0-gbe0-02b6861cf973
+
+Sincerely,
 -- 
-2.35.3
+Josua Mayer <josua@solid-run.com>
 
 
 -- 
