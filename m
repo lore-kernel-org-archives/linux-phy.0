@@ -4,131 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33903C47077
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Jan 2024 14:56:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 282A5C46CD2
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Jan 2024 17:32:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3hNfO0im/40966k0IHAx/JqZhr1ekY7XFmeruWeFN68=; b=PRSoLcsJySuw05
-	EJ9Wo8YGEc+LvzNGR9LWHCdMWEFVMLJCs/dR4BxUyDw6qP/bChy4u/PTRLazUsuXCl/BsTQYXLTXA
-	EuPt2IgnEiNIUphV8WqCY7yCjR8EHhKLiZOP5zINF/kigzI/NakTPYOtnRvMUOOJzJl0Yh3NLqcS4
-	FU6UsbEjD0hY1tTyrs+x3pdBpOO4vDofMnWA3+BLt5CDbKARzOr1CnqZbJOAaswEYvtb0po5FNX46
-	VpCOeEogFPe0KxZ4xGcsfRnguKDIfYnv6/SJhM9feO0Ku4h4QNnkoz+KKLdqnTgn8T7wYg+ReLHKQ
-	3jwQt2rrY3XibUR3JW5A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6npQiVTRopYZr05GRMxcdZV4RLulvrX7dtvHkDJ7LbE=; b=lNjWRRpkjaZuiy
+	z/fapDW+BrDfsUhzEXvs9NM+91Os0aid6ke2MgjIeGXzimX+t4cAFKmHs8vIUGcTkprnzlPoXoNtb
+	6hxrQPuKwDSS5Odmo4StYoqXG2giH/Wp0DI69h3TWxR+LNB7eN5IW/KOv3lI5Ph7vAKY5NiWWhBQr
+	PbVwKBS7gbZ/z/Dka1/FyettCe4Y1z1Q1uryMHfR8ry2qZkVoxaZrWHRFeXxfc5FOP3voryABROtM
+	nuAvWylCG80eqRSGdEHK5/w4K7xFI7aVDstplgCFuSITVmQoiiBbIXsqgrNeZt/o2jXa6OVBUe1DP
+	guZm5r22d1gqqdpdA+dQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rM86V-001T7y-2f;
-	Sat, 06 Jan 2024 14:56:51 +0000
-Received: from mail-he1eur04on0613.outbound.protection.outlook.com ([2a01:111:f400:fe0d::613] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1rMAWo-001feH-2q;
+	Sat, 06 Jan 2024 17:32:10 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rM86S-001T73-1r
+	id 1rMAWm-001fck-1R
 	for linux-phy@lists.infradead.org;
-	Sat, 06 Jan 2024 14:56:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AN7b1Rf99SmZdklUyuW+eP+zeggkweX4Dx5RR+ntDC0N2g5jF9pk9AkRimD+jhIvCmA0pNlrbbvHMdd1dkkfGpCjIG2ZjvdEAk2abzU0xtG1x2z+/uUHePL8PgHS63rffSvZ3j4xfS0crrI6k6GL62F5PGkHjuLv9V6MkyiLdMw3RNQL9cJ6+4ECK+4VjDkSJd1EE7XcgVxHOlHeHUIfb8lS0Hl/l2hnH1WaAtKJcEWcwnm9SdEU759SiaXvPmNwPn9R6XwJel8/ybuWJxnXodTIeoyVIjgbLH7QV6RYI5UDh2d5GayrkcjMgBT8WYWPkT8rYaKPBjpIiDIvClgjyg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=j2J/ppFX0x3roEZmXCNhC744X5VAT72SLLNjPUe/BnI=;
- b=EwVQ9uPxPliXxrkSk0hCd0PENBSUu/iiaBZIk3r4a/zufT0AWp5LHI8M6+KK2ENJzqFpkn7JTeGlBnCKKoql/a2+t7JrpJPSbeRAJrdTlRaVMkNONP/WagkfDuGiMpQEuNap0yAzIFpaC3tTm8VjQK8xAHAt15GfIHGutoEqV3rbwvVH7yUKV/Kkn/Dk35fwYYtUaDHvnLSL63tFLPUgAIhLl3qG88BzM9FLgYr7FafwlXvsN0VGIU1aI3mZ2hmu1W4/0fdPIoOtu94bpWZ2V7kD37nvCNhFmPzuP/vOuf31ighFxDvpEihHqFlzzUvzRVASVeWPkXmBKFoHBcf1Vg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=solid-run.com; dmarc=pass action=none
- header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=j2J/ppFX0x3roEZmXCNhC744X5VAT72SLLNjPUe/BnI=;
- b=SGutDUBqST3bMyrATzYwlTnqzwPjkkLvYodbyKP5/DdT9TyvDZavMopkcLZhvjTH0Yl4BmiJ+cEjAxStzwPjue8Lr+vtk88D+Ox5hR1uerExdYhXUfmbS4URXPzBB/fjbqp8MHaa8yPJTjZOJouZu32GFVLTavmK7xcbffFbv5A=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=solid-run.com;
-Received: from AS8PR04MB8963.eurprd04.prod.outlook.com (2603:10a6:20b:42e::18)
- by AM7PR04MB7175.eurprd04.prod.outlook.com (2603:10a6:20b:111::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.14; Sat, 6 Jan
- 2024 14:56:36 +0000
-Received: from AS8PR04MB8963.eurprd04.prod.outlook.com
- ([fe80::daf2:8c54:d469:793d]) by AS8PR04MB8963.eurprd04.prod.outlook.com
- ([fe80::daf2:8c54:d469:793d%6]) with mapi id 15.20.7159.018; Sat, 6 Jan 2024
- 14:56:36 +0000
-From: Josua Mayer <josua@solid-run.com>
-Date: Sat, 06 Jan 2024 15:56:33 +0100
-Subject: [PATCH] phy: armada-38x: add mux value for gbe port 0 on serdes 0
-Message-Id: <20240106-fix-a38x-comphy-sd0-gbe0-v1-1-c7fd87272050@solid-run.com>
-X-B4-Tracking: v=1; b=H4sIACBqmWUC/x2MSQqAMAwAvyI5G0ir1OUr4sHWqDm40IJUpH+3e
- ByYmRcCe+EAffGC51uCnEcGVRbgtulYGWXODJp0TYoMLhJxqtqI7tyv7cEwE66WCUlb0xrllq6
- pIOeX5+z+62FM6QNStixqagAAAA==
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: rmk@armlinux.org.uk, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Josua Mayer <josua@solid-run.com>
-X-Mailer: b4 0.12.4
-X-ClientProxiedBy: FR3P281CA0199.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:a5::16) To AS8PR04MB8963.eurprd04.prod.outlook.com
- (2603:10a6:20b:42e::18)
+	Sat, 06 Jan 2024 17:32:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1704562328; x=1736098328;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=n3+Tj0E2c0KPwQ7B4hOXXMxq2BNvY8cDkv/UylSvfWo=;
+  b=QFB+tDId8mIAheVloigLVbp/Ojg9g7BwJhNbxUqQYiJzNAIO3U+aTFZH
+   YtpHqd0/202UWjfJ61az6J3ti+P2w2eR5bL4rfQnsqqG3SAL0oiZGQ0rM
+   WUY9iqyEoWUMyvv64RmhDnpPcphh+cKoH95hBd6rdKPya2YF8+HJa0HYR
+   LxCzBBJ8dH4eCkFoI6Zw6xDTZ/B1EHRVoQbSMv4T/p7Q2bMICYEwm1ide
+   K1U7e3iicxqnyh+0y9KNA+xa6234RFefYHOnwbKh/Lz1+LqUvWOApfyIY
+   27iANL+4ew+BvV0ktC0lUWNOZMpvEkKAgr0JiU5OM29OmBQEoDrzTqZfy
+   g==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10945"; a="11022451"
+X-IronPort-AV: E=Sophos;i="6.04,337,1695711600"; 
+   d="scan'208";a="11022451"
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Jan 2024 09:31:51 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10945"; a="784470349"
+X-IronPort-AV: E=Sophos;i="6.04,337,1695711600"; 
+   d="scan'208";a="784470349"
+Received: from lkp-server02.sh.intel.com (HELO b07ab15da5fe) ([10.239.97.151])
+  by fmsmga007.fm.intel.com with ESMTP; 06 Jan 2024 09:31:48 -0800
+Received: from kbuild by b07ab15da5fe with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1rMAWQ-0002o8-1c;
+	Sat, 06 Jan 2024 17:31:46 +0000
+Date: Sun, 7 Jan 2024 01:30:46 +0800
+From: kernel test robot <lkp@intel.com>
+To: Abel Vesa <abel.vesa@linaro.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Abel Vesa <abel.vesa@linaro.org>
+Subject: Re: [PATCH 2/2] phy: qualcomm: eusb2-repeater: Drop the redundant
+ zeroing
+Message-ID: <202401070143.pnnuXAwC-lkp@intel.com>
+References: <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8PR04MB8963:EE_|AM7PR04MB7175:EE_
-X-MS-Office365-Filtering-Correlation-Id: b7dc262f-e956-410d-01d7-08dc0ec7ae22
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: uI3rSuJxjkSmuV/99CCm9ny+TEGEeMezMTUw7Ecc+uEJMYGtFLOpaYrzyTT4rp5HgxSKK5B9L+j6z8505Nf95H7Bk/ft7VHW+98e67zcm+pH5ePKTI6ts5TTqS5VqUqOc0Y5CtvbVg+aHhEQg0gubJ15O+eZOQIY8yGfjPtOy8y33v7esB9YPCf10HAugTmbKFkYC+DR/IBzz+wrjSfHVBRZhsZ/dnVF5J4QQQhRZC1dOFq7bpP1UrBtSYdedFpORTw4cJcAIN/1v3QD8Ox1WcLPqxryEKHo5TUFhMrvaRC5fNgLXEexBeitDnRYBri1tcBzBij++2Kv8qFCWO5orfK9OjQSdF7Wt+40ZciT7tWdTAwiYWujIisw4SSd0aeFIjXWv2bllztZGnI+kEQm1OfJ7RdwWzL9qEtgI1QEQdu5EDMjqt2osgleaJgftb0+hB+higsuSxHDPCt0MIbVJqqGIWuMmf3W2cgixtCA/Skkodj1LqOFECTRdwTJJ+WUuLM6JvbgtxoF3lHMECyxMF50GaDBibSecdzarHbqo4AGK93+UeOJ9gpTidv8bFOyTDyaew0qmdU+XNi1EVT5yq/q3e+bHXdyOcysJEqGuFC9ytJlPEpXXEqprAzqSkOM
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8963.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(376002)(346002)(366004)(39830400003)(136003)(230922051799003)(186009)(1800799012)(451199024)(64100799003)(107886003)(26005)(38100700002)(41300700001)(8676002)(316002)(110136005)(2906002)(8936002)(6666004)(4326008)(5660300002)(66556008)(52116002)(66946007)(66476007)(6506007)(6486002)(86362001)(478600001)(2616005)(6512007)(38350700005)(83380400001)(36756003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?K2tOZ0tDd3czOE9NbzB1bTgrNGs1bkk1MjNJOEJqU0VLYjFLNlNodkRaNWhH?=
- =?utf-8?B?bURPTHFHNU95ZWJIVFZQY2dvOWRQQ3JiZHlVdVJqaU8vVVZUa3AzcXBQSnlW?=
- =?utf-8?B?VEJFdG4yeXFvQzd3aFJEWWxOZXVtQUNTanJvTGNsdUtGdUtEZi9CQ1Z6anpY?=
- =?utf-8?B?WUZJTXZyN3YzNjBkOEhJUFBoR3VRbU4yQXF2MnVkN3J6QzFBZnRGVlRRalQ5?=
- =?utf-8?B?N3duc285L2xMZm9NUDdHY1dKWmt3R2JuOHlpdjc1cU4rTUh0NUZMejc3MnJV?=
- =?utf-8?B?YnJaRDFNNzUwQzF6UHRSNjZUZXBMSFhDM3RkK0NKdjJ1UllJTURWSDlZR2c2?=
- =?utf-8?B?WklJa0VCS0k1aDAvc1NZZmFiSDdiV2F4RFc0Vlg2cEh3R0V4MDdETFVjQ1Iz?=
- =?utf-8?B?NjJVekgzSEpoMHVZYWkrbExQNldmblMzc0ZSOFg2MWtWQVB5bGlmODJVNHA5?=
- =?utf-8?B?MVBHRjkzeTN1aW45WlYvekZGZzZVK3JHQmFhbDFrQXNHK2cwdzFZVXdlTU5F?=
- =?utf-8?B?VDJaRTZJd0RaUUhpUG1uZXpGaUFjenRHbjRIU2xLRzJzWTZVVHBVWDNvYXda?=
- =?utf-8?B?cXpwS1pRbHNnQ1h2Z3EzRnF4aG5nUmlNK29xYXI1K3hUUmszeFFHNEptL3ll?=
- =?utf-8?B?dnZWb0NiNG5scU5KZ25PL1Uxb1l3enU1NzlSTDY4VjZ6Wk5qTWptcGNMQ0dC?=
- =?utf-8?B?TzNaRHNOd1NtSjluek0wTTVMcjhtbW9ZSnRUNE1JRm1EdXI0Sk1Id2ppalNq?=
- =?utf-8?B?K25qdHJTUkZ3dG5mQlgzeEVxUDd5NWIvQ1UzWDUwZDNadWdLbEp3THBtVUJO?=
- =?utf-8?B?dDhrUHc2VEd2UjVLVmN2SEpMVmVSZ1VkNFhkeU1wK0RTQVNEcDAwaFAyV2pw?=
- =?utf-8?B?RVU5Ym5oT0Vua3pUL01CVU9YQW5zTjhRWXE4dk9zRVpKL1V1SEZCOXdnVVk2?=
- =?utf-8?B?cDRJM0lCME5SaUpjcjkyOEwzeTJMa08yeXhqS3VVZ0xmYTN5ZE44bFRyWXlG?=
- =?utf-8?B?ekJvL0syODZNUlJ5WVdXczRFZkMrNUdKaHFCOGxDZ3lYci8wVWhGWHJVTW9v?=
- =?utf-8?B?MkN0VjYrdWt0T29xNWh2QWJBZUc1WTRWRTNXS2pFUkVLQzVEVStiWFF6YnJo?=
- =?utf-8?B?TkJxNjh0UklhT096Y25ydkdNNCtOV1ZHMTNobUdlOFZsYTIySXNadHl4NDBa?=
- =?utf-8?B?Vm1WcFgxaG05WEZUWXlnSExJMXVsRklLNktrU2ZRcjd5K2ZXSjRlUlZhcjRD?=
- =?utf-8?B?Zlo0RVcyL2IyaE9EcVJkSlNZR3BMclJOZ0JjREUrbUx0TXlXQlhycEhzc2xy?=
- =?utf-8?B?U2xmM21Vb2puL2QrbFlDRUI1aW9WeXpmU2cvVG42S3U0VXRyTHdNR252Vkhs?=
- =?utf-8?B?WFZ4QlZDbXpscFJNeGVuNWQ0a1p5QUYyVVd0R3dSUmMrR0kzVTVhckZ2QzBT?=
- =?utf-8?B?Q2dlTXFhQWFmZnNtQVRLdW5MR1BnbFdFdnk1cmhMb1BMd09QOFZ6YmJuL0Mz?=
- =?utf-8?B?Zk4vR2xMVlN0d3puaVB3NmtmdDVBcSsxSFBLbWhydmNPS2p5OXk3SzZZMHpR?=
- =?utf-8?B?Und1ZHJzZVpVeW9nWVlLV1ZVRktmMVE5WjZ6RmJsWk9XbmpCVmZjWE5FZmZs?=
- =?utf-8?B?Nkx6WkEwQTg2a0RzVk1YZmJqeWlkU05IdzRWQmdOS1JEajNkbFg1NVloZDRD?=
- =?utf-8?B?UytwTURob2VwaVdmc2w5T3hoMms4Tko0b042N3pMQ2tDWURQU2k5NDg5aWRj?=
- =?utf-8?B?TVdWR0hhS2V1TTI1SnJwNGdVdS9WN0hMbnRHbVpVV3ZpTVhjTGtRZUFhZUk5?=
- =?utf-8?B?dFAxTUs1eTZ5MU54MHBDcS9WVmtDNlRpMlBuRzNMbDJFdVB3REVmenM1YUJB?=
- =?utf-8?B?ZWJPdU5oMXRNNVZxT0t1YlBkUVFOeXgvRmtza1c2a20rZE03dnNjejlZREY1?=
- =?utf-8?B?NVNVTkF0a3UvK0tNampzRDRwSmhtTkxkRU9GV2UzOTNiVk8rc3JBUlZaNFp3?=
- =?utf-8?B?cE1PanY3TDkxa0JmQnVzSkVRbngrZGZqdlpEZHQydmowL0VGSHhJSm1oTVNl?=
- =?utf-8?B?TmhRWW5BeENlcE9DaHFrbStyVWFEajViRWxQZXVKWXZ4YXd6SFJwVk5SUEgw?=
- =?utf-8?Q?DEdsxAO+o1sDVJN0nmRutm4S0?=
-X-OriginatorOrg: solid-run.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b7dc262f-e956-410d-01d7-08dc0ec7ae22
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8963.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jan 2024 14:56:36.4376
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: aIlakZv0ukjiCKAGxOzJZnvhumcm7yNEKqJM5kHR7n2BqsS705tjrksRFU1LZAizlrMnioadyHPuBZ81DNJEpg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB7175
+Content-Disposition: inline
+In-Reply-To: <20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240106_065648_677010_5B6CE36C 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240106_093208_530495_14195980 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,49 +91,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Armada 38x supports 3 functions on serdes #0:
-- pcie port 0
-- sata port 0
-- gbe port 0
+Hi Abel,
 
-Add missing entry for gbe port 0 on serdes 0 to the gbe_mux array.
+kernel test robot noticed the following build warnings:
 
-Because this array looks obscure to new readers, also add a comment
-explaining the meaning of rows, columns and values.
+[auto build test WARNING on 0fef202ac2f8e6d9ad21aead648278f1226b9053]
 
-Signed-off-by: Josua Mayer <josua@solid-run.com>
----
- drivers/phy/marvell/phy-armada38x-comphy.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+url:    https://github.com/intel-lab-lkp/linux/commits/Abel-Vesa/phy-qualcomm-eusb2-repeater-Fix-the-regfields-for-multiple-instances/20240104-225513
+base:   0fef202ac2f8e6d9ad21aead648278f1226b9053
+patch link:    https://lore.kernel.org/r/20240104-phy-qcom-eusb2-repeater-fixes-v1-2-047b7b6b8333%40linaro.org
+patch subject: [PATCH 2/2] phy: qualcomm: eusb2-repeater: Drop the redundant zeroing
+config: i386-buildonly-randconfig-004-20240106 (https://download.01.org/0day-ci/archive/20240107/202401070143.pnnuXAwC-lkp@intel.com/config)
+compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240107/202401070143.pnnuXAwC-lkp@intel.com/reproduce)
 
-diff --git a/drivers/phy/marvell/phy-armada38x-comphy.c b/drivers/phy/marvell/phy-armada38x-comphy.c
-index b7d99861526a..d3259984ee8e 100644
---- a/drivers/phy/marvell/phy-armada38x-comphy.c
-+++ b/drivers/phy/marvell/phy-armada38x-comphy.c
-@@ -47,8 +47,13 @@ struct a38x_comphy {
- 	struct a38x_comphy_lane lane[MAX_A38X_COMPHY];
- };
- 
-+/*
-+ * Map serdes lanes and gbe ports to serdes mux configuration values:
-+ * row index = serdes lane,
-+ * column index = gbe port number.
-+ */
- static const u8 gbe_mux[MAX_A38X_COMPHY][MAX_A38X_PORTS] = {
--	{ 0, 0, 0 },
-+	{ 3, 0, 0 },
- 	{ 4, 5, 0 },
- 	{ 0, 4, 0 },
- 	{ 0, 0, 4 },
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202401070143.pnnuXAwC-lkp@intel.com/
 
----
-base-commit: b85ea95d086471afb4ad062012a4d73cd328fa86
-change-id: 20240106-fix-a38x-comphy-sd0-gbe0-02b6861cf973
+All warnings (new ones prefixed by >>):
 
-Sincerely,
+   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c: In function 'eusb2_repeater_init':
+>> drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:145:20: warning: unused variable 'regfields' [-Wunused-variable]
+     struct reg_field *regfields = rptr->regfields;
+                       ^~~~~~~~~
+
+
+vim +/regfields +145 drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+
+56d77c9a10d97d Abel Vesa     2023-02-08  141  
+56d77c9a10d97d Abel Vesa     2023-02-08  142  static int eusb2_repeater_init(struct phy *phy)
+56d77c9a10d97d Abel Vesa     2023-02-08  143  {
+56d77c9a10d97d Abel Vesa     2023-02-08  144  	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
+ac0aae0074102c Abel Vesa     2024-01-04 @145  	struct reg_field *regfields = rptr->regfields;
+56156a76e765d3 Konrad Dybcio 2023-09-13  146  	struct device_node *np = rptr->dev->of_node;
+56156a76e765d3 Konrad Dybcio 2023-09-13  147  	u32 init_tbl[F_NUM_TUNE_FIELDS] = { 0 };
+56156a76e765d3 Konrad Dybcio 2023-09-13  148  	u8 override;
+56d77c9a10d97d Abel Vesa     2023-02-08  149  	u32 val;
+56d77c9a10d97d Abel Vesa     2023-02-08  150  	int ret;
+56d77c9a10d97d Abel Vesa     2023-02-08  151  	int i;
+56d77c9a10d97d Abel Vesa     2023-02-08  152  
+56d77c9a10d97d Abel Vesa     2023-02-08  153  	ret = regulator_bulk_enable(rptr->cfg->num_vregs, rptr->vregs);
+56d77c9a10d97d Abel Vesa     2023-02-08  154  	if (ret)
+56d77c9a10d97d Abel Vesa     2023-02-08  155  		return ret;
+56d77c9a10d97d Abel Vesa     2023-02-08  156  
+4ba2e52718c0ce Konrad Dybcio 2023-09-13  157  	regmap_field_update_bits(rptr->regs[F_EN_CTL1], EUSB2_RPTR_EN, EUSB2_RPTR_EN);
+56d77c9a10d97d Abel Vesa     2023-02-08  158  
+56156a76e765d3 Konrad Dybcio 2023-09-13  159  	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
+56156a76e765d3 Konrad Dybcio 2023-09-13  160  
+56156a76e765d3 Konrad Dybcio 2023-09-13  161  	if (!of_property_read_u8(np, "qcom,tune-usb2-amplitude", &override))
+56156a76e765d3 Konrad Dybcio 2023-09-13  162  		init_tbl[F_TUNE_IUSB2] = override;
+56156a76e765d3 Konrad Dybcio 2023-09-13  163  
+56156a76e765d3 Konrad Dybcio 2023-09-13  164  	if (!of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &override))
+56156a76e765d3 Konrad Dybcio 2023-09-13  165  		init_tbl[F_TUNE_HSDISC] = override;
+56156a76e765d3 Konrad Dybcio 2023-09-13  166  
+56156a76e765d3 Konrad Dybcio 2023-09-13  167  	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &override))
+56156a76e765d3 Konrad Dybcio 2023-09-13  168  		init_tbl[F_TUNE_USB2_PREEM] = override;
+56156a76e765d3 Konrad Dybcio 2023-09-13  169  
+56156a76e765d3 Konrad Dybcio 2023-09-13  170  	for (i = 0; i < F_NUM_TUNE_FIELDS; i++)
+56156a76e765d3 Konrad Dybcio 2023-09-13  171  		regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
+56d77c9a10d97d Abel Vesa     2023-02-08  172  
+4ba2e52718c0ce Konrad Dybcio 2023-09-13  173  	ret = regmap_field_read_poll_timeout(rptr->regs[F_RPTR_STATUS],
+4ba2e52718c0ce Konrad Dybcio 2023-09-13  174  					     val, val & RPTR_OK, 10, 5);
+56d77c9a10d97d Abel Vesa     2023-02-08  175  	if (ret)
+56d77c9a10d97d Abel Vesa     2023-02-08  176  		dev_err(rptr->dev, "initialization timed-out\n");
+56d77c9a10d97d Abel Vesa     2023-02-08  177  
+56d77c9a10d97d Abel Vesa     2023-02-08  178  	return ret;
+56d77c9a10d97d Abel Vesa     2023-02-08  179  }
+56d77c9a10d97d Abel Vesa     2023-02-08  180  
+
 -- 
-Josua Mayer <josua@solid-run.com>
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
