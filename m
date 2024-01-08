@@ -4,132 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D79E8C47073
-	for <linux-phy@archiver.kernel.org>; Sun,  7 Jan 2024 10:54:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF213C3DA6E
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jan 2024 10:29:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hSYsWFuCxcDigJ5wkX+mZlQxn7kfJrFiu280psO0qn0=; b=2LjKV+KsnvskeV
-	HCvqaxXfebIGKPELxvJGw3GcXeLgpEtBvAdNpyjFImvbBMLqQMppxomIzBtuDzHn+ekNnyJCO1m1i
-	ZQ7o2y9DqzP+H+IIjP7x9kW+gFcrlyfftiNVD/Qru33YLQeM21r5DJcTf1/PtEaLSPODeosvfVuXn
-	oMLofZvvQ+MJiUoF672Gi1hLHQCDiq2e7cFQIzkk5W2o/VjzMINuje3zYpy1acc9sXyYx8RTuAZKo
-	DtPLRV2ikjbgUEhQrh2h14oKjRUC4P3EN4tSnAOmYrFxmchXSAt698thcUmCupQsP1aJMNy0wwCqE
-	8jhxoW4oB1WUnNTzgzJw==;
+	List-Owner; bh=laY3eCvfQAISf5SnYG21gCX9qfAVEei8pe3myetSyxU=; b=U+n8K62v80KgGB
+	KmViOchHGHzdDvtMeGb5jXoD5votU1xjadRFZtj0mxXCjeCHqy7T6BV/QDQu+sw7M6d+jPOTfAmF7
+	WqcjBPVnSzZXKEew5k+YBx0lbTtM3MjYh5VtPbcUORHEwkh5xLRWv/wtju4hx/ceZCqUtGzS4Xab+
+	itwI7EJIXq5EAg9EAz764ErV9S2fOe32/+whOIUbRqTGEK/27a6K2KPcWUTyAbu0jnLOI8omcxjPi
+	bbDF9yRA5JX9zZPoy6EgRkumntKqT4XfnKsMSAZaNmK+DfL+QQ6HFYwGAHAQezf/9p/yJNmcqBoFc
+	wGVAXpjn6u2Rmfog5zDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rMQnh-002meZ-1X;
-	Sun, 07 Jan 2024 10:54:41 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1rMmt0-004c4I-2D;
+	Mon, 08 Jan 2024 10:29:38 +0000
+Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rMQne-002mdB-08
+	id 1rMmsx-004c3x-18
 	for linux-phy@lists.infradead.org;
-	Sun, 07 Jan 2024 10:54:39 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-a28b2e1a13fso87129066b.3
-        for <linux-phy@lists.infradead.org>; Sun, 07 Jan 2024 02:54:35 -0800 (PST)
+	Mon, 08 Jan 2024 10:29:36 +0000
+Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-5571e662b93so1344748a12.2
+        for <linux-phy@lists.infradead.org>; Mon, 08 Jan 2024 02:29:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704624875; x=1705229675; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=l7CZZNNieMh3zplDWROiJ70WyHBFxWl8IfRy1FQG0ao=;
-        b=L0ftAauP5kASIz0KBaG3H8jgpdszzCRPnZg5mdyY+5p3xTCeeXlz+h+KpAFSKFqWlD
-         Z4hk9K2m/Dgohzy+USDUGNnyskIoIUktYpAn0+2+/WW5Jwsu2H4tEsIaGyms3pzZZGp9
-         kTZHpchyepkUYQX9r3xhK85t7+8dZZiJWapK/C/Focj34KLW/Q+OequmYY6q3JgfsK7x
-         gMImFnVeZVW/3J9AAQHr4NtrCbZhEuhuN6HpybI4syjkpMx+8cFQ3IQMj7T/G2iL2Om2
-         eqEjJVF0uDz7zSBTvpoMqrqbV3qdG90VY/tdivOZnvUfNUh5Uzr1UawCvtbblxFsa9Uv
-         gBKw==
+        d=linaro.org; s=google; t=1704709772; x=1705314572; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=J0INKQiw2jrwahwrMOC10qIoex00EN2Y17N016vNomw=;
+        b=E5s6SOM2WjYWWOjA7wxRwEryQg7CmpBKDlx+IN/IAF8L6l0RerTl+xf5MxgOO4quGy
+         EwsTDE1k9gNbm1U9ZhVIUIRv3AzYH/Ikvj15goiK8YumcZIzZvgU7uusCfMBuutsIuaO
+         rBDd3k0vC+Fp95oTPY8uvYt18GsVe1uMFxJgSEbX/ce8Sbd5xDGuLZ+1D8M8DW5ThRpI
+         PnxwHeqq+cLdIwVtLALPsYzneM3UkgB9HtGrwlHo7C0j3oiDvgmUjn63SUlLa9fq5mt2
+         BvGpltlsAaY17VH561OPaSURWej8uVBaxFGdM1n8vHWkfd8SXUlcoCjRxpBnGDd/hrTb
+         1ZzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704624875; x=1705229675;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=l7CZZNNieMh3zplDWROiJ70WyHBFxWl8IfRy1FQG0ao=;
-        b=ljQRV+aV6mLu6sfFYbTq0ONpsaXDrNbf3dHn+bFxyiH2yYKCMHGdQfXGVMihVyQExl
-         VBEIkla4ANanWmu6uC38QGDWpUZsyrm+h0oWGSddBK9Gx4NSOWRlmQ/RifuM744JhY6o
-         sfx52ywGqUrxy5S2nOlglMTaX2EglFAt0MnmUcSzOQKUQy2Dj2maSV9kHV09XcsytOiV
-         NjVViJUap7kCMcWFHw3BCax0iEtT1H1raRPGzyJspTsiaVgF/o3Gh0UlBZP65WGZgAA9
-         ELxtLWEJBJLfrvhULT8JYDuit1KLafrOfEirOOPDJLJumUut0nrictC/xciGhk3p82cG
-         iJ5g==
-X-Gm-Message-State: AOJu0YzUCshDFDDHERSFb/OknkebHs8iNxzOGy6SViFH3UD2c2Jv/LtW
-	rpbGFdstet8ADHVmLjYkP3i0WzHcHMniH5PD9R8wakeUsf8dsQ==
-X-Google-Smtp-Source: AGHT+IHNzo+xTt8pv9jqgT0hsD1MgncJeZVZpVcNYu/kPyBtWvGRGb9iZx6nY6I/yvqvg/9m6vpSWA==
-X-Received: by 2002:a17:906:ee8e:b0:a23:37b8:6ac8 with SMTP id wt14-20020a170906ee8e00b00a2337b86ac8mr1018131ejb.43.1704624874779;
-        Sun, 07 Jan 2024 02:54:34 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.223.112])
-        by smtp.gmail.com with ESMTPSA id t23-20020a17090605d700b00a1f7f851607sm2863210ejt.197.2024.01.07.02.54.33
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 07 Jan 2024 02:54:34 -0800 (PST)
-Message-ID: <00c3c536-a17e-4465-92a0-300780dac39a@linaro.org>
-Date: Sun, 7 Jan 2024 11:54:33 +0100
+        d=1e100.net; s=20230601; t=1704709772; x=1705314572;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=J0INKQiw2jrwahwrMOC10qIoex00EN2Y17N016vNomw=;
+        b=bJALS2Hycy2qENw1/p/bO8V+jV7siY9ACq/Idr42RJ7H1Qlizel9tHcKw/sjlVqKR1
+         +BqOoZqghMtCHAwXmws2NkMrStqyqrKHr35qlb/Dq+5gpFpKr2YyO/OYD/oZPEmsWrUE
+         1U+DBanxiJa5AnZwF2BuimqKiOPcCH88vs3ydWBBpAwC9P57rqSRZF1AkyhkqvAGS81V
+         4sbfinh+FBiFvhOyUNAqVrnAXj6CWLlqgf7XaGubaO2Cdkf9vao+jLrkuRKAvs2WB+C/
+         9ynHdsxlpDP60BobYRjuSjDu3JcqM9g9d6kWo7eYy57m/TUsxURKIG0Qz7o2szz+hURD
+         L6mA==
+X-Gm-Message-State: AOJu0Yx3E+5KBocpq2/nyjMsFFdEbSHzdvd7j1XPJ1mokDsD5FyUdNH3
+	JslIVyq81grRO4YwOQuLW4xrxdSKyvyzRA==
+X-Google-Smtp-Source: AGHT+IGZ5RCgxVpuPDDy9Yc9IgdivJoTADBX0bICoB3ZlcPnD70Nyp9tnjnsp7CWxfv8Dn3p9svcuA==
+X-Received: by 2002:a50:8707:0:b0:557:1b48:b931 with SMTP id i7-20020a508707000000b005571b48b931mr1961869edb.32.1704709772514;
+        Mon, 08 Jan 2024 02:29:32 -0800 (PST)
+Received: from linaro.org ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id b5-20020a50ccc5000000b0055504002a5fsm4273174edj.72.2024.01.08.02.29.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 08 Jan 2024 02:29:32 -0800 (PST)
+Date: Mon, 8 Jan 2024 12:29:30 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Elliot Berman <quic_eberman@quicinc.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] phy: qualcomm: eusb2-repeater: Rework init to
+ drop redundant zero-out loop
+Message-ID: <ZZvOih+gTTnxPkUr@linaro.org>
+References: <20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org>
+ <20240105-phy-qcom-eusb2-repeater-fixes-v2-2-775d98e7df05@linaro.org>
+ <158df3b2-a7fa-449d-9cc8-1e4cdf6ef49b@linaro.org>
+ <CAA8EJpq88bhFFY2RcSEqaecoTw4a_ps6Osx5rJs3s0Mi7toXyQ@mail.gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V2 1/2] dt-bindings: phy: add binding for the i.MX8MP HDMI
- PHY
-Content-Language: en-US
-To: Adam Ford <aford173@gmail.com>, dri-devel@lists.freedesktop.org
-Cc: Lucas Stach <l.stach@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20240106221907.325127-1-aford173@gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240106221907.325127-1-aford173@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <CAA8EJpq88bhFFY2RcSEqaecoTw4a_ps6Osx5rJs3s0Mi7toXyQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240107_025438_103801_9CF2418C 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240108_022935_459140_B89F0100 
+X-CRM114-Status: GOOD (  16.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,40 +100,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/01/2024 23:19, Adam Ford wrote:
-> From: Lucas Stach <l.stach@pengutronix.de>
+On 24-01-05 14:22:50, Dmitry Baryshkov wrote:
+> On Fri, 5 Jan 2024 at 13:44, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
+> >
+> > On 5.01.2024 11:16, Abel Vesa wrote:
+> > > The device match config init table already has zero values, so rework
+> > > the container struct to hold a copy of the init table that can be
+> > > override be the DT specified values. By doing this, only the number of
+> > > vregs remain in the device match config that will be later needed, so
+> > > instead of holding the cfg after probe, store the number of vregs in the
+> > > container struct.
+> > >
+> > > Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
+> > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > > ---
+> >
+> > This looks good as-is, though I think my proposal of storing the
+> > peripheral base reg instead is still better, as it'd require less
+> > memory (no kmemdup as the regs wouldn't be modified).
 > 
-> Add a DT binding for the HDMI PHY found on the i.MX8MP SoC.
+> I'd second this. We usually handle such cases via the base + offset
+> rather than patching the data. If regfields can not handle this, then
+> the regfield should be fixed.
 > 
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 
+Sure. Will do that instead.
 
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#clock-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    minItems: 2
-
-If there is going to be new version/resend:
-
-drop, maxItems is enough
-
-Anyway:
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-
-> +    maxItems: 2
-> +
-
-
-Best regards,
-Krzysztof
-
+> -- 
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
