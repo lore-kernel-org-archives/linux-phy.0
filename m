@@ -4,74 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 125FAC3DA6E
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Jan 2024 03:06:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F509C46CD2
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Jan 2024 07:13:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qfN/B9RcyY0DzvxbjSQkxTw8dkRveDLJpLM4qXFtyDo=; b=O4rlhojwCdxKv1
-	Mq+KFcppUngSvM+XJ6SJkZWLVwpLvCuQEHV/8UGGtE5yxgXHEJ+Wcn7kuSLJCaIxx+LmzVKmoScUH
-	J8vbwOpjmcX049qIZATzvQ6Q+wcD7qY7/l5puLypQpxzplE7HdcMO4oWFAAo0acrYMRJ40OQhWGX9
-	hdsmfm/gHkH89PQbb0hKmuQGRH1Qek3wUQnlzNuQoGriLMzpaq+rFzgLyseL2ccB6RrGdnyalaTtd
-	FDSswhWRZEfL+Ghmx+uQH7PPteFTPQsrtjjeGewJxdJImYlC+5VJTkjvNYpY7clXt92phR/CgaUGq
-	OZry4CXqAv8IwuiRVekA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=75upcl++4mhUJ0cAtodb09rRRnAZ9Hals7FYYQ9wN1o=; b=cFcOgjGuLyxTmh
+	CFNIe2dZ1tyZR6TQvAgnWW6+VgX6tCSDG+oxbTRXpkFLCKM5T6NDXqY2pskjKUpAaNKz4ImOz0Qe3
+	mnw9kFBSRVB3PiQWVgpHIQbmrNd5mm6xQb+pDIyZM01ujDWKlJWjK/4n1Wa+/tlCfyOwoKz0oDEzA
+	zrinFC8OFLxOh66p4VqknGqCmWssWXi+7O3JTFBpF97mKzXfEuV4oquAgp/LnhX0HsVjkfDZ/XhrY
+	fXsdbkG5PqXjjfK21OBN3Lam2wcCzXcwBqOxmxwRVLAPlY0GOIa/EfhB3x7hplkbol9yxU7y06Ld2
+	eNHmFtG/qxwXwfmzj6UA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rN2Rx-006lCF-2V;
-	Tue, 09 Jan 2024 03:06:45 +0000
-Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
+	id 1rN6IU-0077Dr-2y;
+	Tue, 09 Jan 2024 07:13:14 +0000
+Received: from mail-sh0chn02on20606.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::606] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rN2Rv-006lBR-1G
+	id 1rN6IR-0077CU-27
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Jan 2024 03:06:44 +0000
-Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-5f8cf76ef5bso11215967b3.0
-        for <linux-phy@lists.infradead.org>; Mon, 08 Jan 2024 19:06:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704769601; x=1705374401; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=26JP9y1F4cMVTf91bkP52Z8nKjtVJapFjy43p2aiDF0=;
-        b=WEmSKkrAv5i+2aAwrdwofYE8kT2jXp68eBtEavVtldxmuVh0SYWtKQNBYKY5YYNq96
-         B2aOFrbh0U2T02NfePgs1hmt5QABR4a3Qz+fbTJm/wS28bnP2hVfjf0bnFaTGTdawcUu
-         Z8TfY7Y4Cyuk1sR3yFH4JqA+v4aT686Yun+6bgtgMvlL7iMR3tXHYgk9/Ogpi3Pj7/wV
-         3LOlcpSC46upxH3xd6zD4sBzddol8d9Y1zhQiIRAGFX70w0Z/k9MomMNI0XvubsmTXcd
-         jbiEqh32kS/0825uwcnx27aXHLWG3Y/b4polOFeW371ibusq8iu9F8YS8UAcw2R2cR/i
-         O7AQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704769601; x=1705374401;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=26JP9y1F4cMVTf91bkP52Z8nKjtVJapFjy43p2aiDF0=;
-        b=HaxzQFl7iflZIGCAGIjjVkFoTvgvKrgKjpS0D+m8wR6VTb+3Gj4aOzaw8gKotyLe8w
-         LVltrs+p3M5lY6twa4Lm44PmrrYneEybpOeyJXERdhn8bfnOprYDu1sDpedI2fGQ1s6J
-         R4WMLabamdCcmC1kXh/rfrZMis8AmXLIrqQ+3Yt9tCHeDuFCG2ZFg9v3k2g0n1y2S7zf
-         cuphmu5XpQKBrNiFzU+35dwO9OhiZbnkP756X1+5Lr8xLFOEXiAg+SeaD0UhzVjyoDNm
-         6hDV/TIIQW7JZCgZajt38ZvDx9BhWgELSXTNRvv8Dg62Uww7p1HMlvL0cybCFEFKeZXy
-         5dBQ==
-X-Gm-Message-State: AOJu0Yxa39v/rzcngMf8tDRhS2Q1+0edzpoaFzsvuSFVOqG3KprrI1Y4
-	r0odbl90QAtDjdnfVLWtXls7Vj6i7Dn9vOyx2WIHIwoYdl7ogg==
-X-Google-Smtp-Source: AGHT+IHS+E1oSB20aZLFgtENwyGxUcHbyRkiNyRCDWyRdZW5jlDKLhXMRV8NPOJypNxa26Fdje8wLmkpx1h0Bk/d6CA=
-X-Received: by 2002:a0d:d7d1:0:b0:5ee:1ca0:b7ef with SMTP id
- z200-20020a0dd7d1000000b005ee1ca0b7efmr2614627ywd.42.1704769601306; Mon, 08
- Jan 2024 19:06:41 -0800 (PST)
+	Tue, 09 Jan 2024 07:13:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=NqAoaRdZ9RDhpvlgAig9fxh16t0tzfCN1P6Kn8Xq814/UtJ945BYKsFSModATaBLhdYpziIYETq17SR8anJd+uyf1jkFY3Y7Q+Yb8N0Io8jgjYeH6KvdSslETEizK44bFhVzUrL6D6pMREfzSkUvKU5ewsLwvld8jBDCj/coAjIFIVRaAxf77InoDjhbNh/OwjATJsY3zRtUSc0gOtK2WZXjWxZuEfHMvxYS56ODb2xqTg2JgRnJ7BZ+0UZwHsVbRHQobM9q0lXG5QWVJNpmfJpIlrcM5O88Zv9qKOpp6nSRQlIyR5yGxe2B3Zjgvav0k2CTwpPC25Dr2Qi3bF4PoQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=CbwkNBfMAtvtjoDE2g5+26yH+NEeG0775jqiRWFJH3s=;
+ b=P0ntvRYQ3LBK2I7hK2SP1Vxvu8beSODGOvCiE871rIYsWIOfTB1V2got+8qvKsvPyT49y2QuS50ouK6z/ilR+m+ojG6lvbhvbPC81wCrI2GqiEYFT/6LZMHKTt+GzJxvrkCuUKDj8c46aDCaJbR/np68gZgXeopyEGn+gTkXw0GrubCRUH6GpCCHJBsVSb3xMhNNs3beO8MXdMe+iHjCJIs+3WooCeQSi1VhhLrZbF3CrUFGD3T5nfrmjyhe7Usflz43FYCUyzYSFrH81FHCCQY4jrW7SEL9sls7QFoKiji1ThF8rbjCW5+z+Z44MSYvLgZCBGK0p/e/KTniH01zbg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+Received: from NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c510:3::6) by NT0PR01MB0957.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c510:6::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7135.20; Tue, 9 Jan
+ 2024 07:12:55 +0000
+Received: from NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+ ([fe80::85fc:7fb9:8b00:dd88]) by
+ NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn ([fe80::85fc:7fb9:8b00:dd88%3])
+ with mapi id 15.20.7135.019; Tue, 9 Jan 2024 07:12:55 +0000
+From: Shengyang Chen <shengyang.chen@starfivetech.com>
+To: devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org,
+	p.zabel@pengutronix.de,
+	minda.chen@starfivetech.com,
+	changhuang.liang@starfivetech.com,
+	rogerq@kernel.org,
+	geert+renesas@glider.be,
+	keith.zhao@starfivetech.com,
+	shengyang.chen@starfivetech.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] Add JH7110 MIPI DPHY TX support
+Date: Tue,  9 Jan 2024 15:12:44 +0800
+Message-Id: <20240109071246.24065-1-shengyang.chen@starfivetech.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: ZQ0PR01CA0032.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c550:2::6) To NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c510:3::6)
 MIME-Version: 1.0
-References: <20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org>
-In-Reply-To: <20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 9 Jan 2024 05:06:30 +0200
-Message-ID: <CAA8EJppOtG2xBY+t0G_WrXDZs8DfN1dEdWjnqGOtzRYJ2ysezw@mail.gmail.com>
-Subject: Re: [PATCH 0/8] phy: qcom: merge common register defines in QMP drivers
-To: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: NT0PR01MB1070:EE_|NT0PR01MB0957:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3242e14b-f145-4838-8bd3-08dc10e266e7
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: p7SaokcJr6CssfjnDXMbIvQbai1YlrBoYN0ZylZz6htM00MyYJIuhptTm5meej3Y3d1zdQjZ4uKq9nbdP+ed/PaLeiXAaQXB34ghtc0yquskHmN6g7T48pXvQ2DJkVwsbYCOBwhl/ll6JnNZr40UpeGc1aeNOVZgzGp7XacHvFnhHMlHKRpF3CAuQxw1DDAMb+c695EtvuPlYdFhyePv4yCioh2xNC4B3+Lgwm0Zc2bUf97XqRT4BKa6gr6eMnt7eVuRpnzHM9zmETe0DMZh2uSignWkUDeUKWjMJVmffZamzYEg27Gyrlpx2l5Tdh8xJuGH+04/2vEZGTGCcyxVy6B7mtd6NrrnWSpnw3yctC23LTugTP0zbsQhzjYLDM5aHRCxQfYUangVdghuO0l/izh+OBm/st6KLgE8V8G1MHWLG4eQLXF8SSOwvjWK+Ykg1BFQRlw7SAnwnYWCj8SCAHpxSOv3gA6UkyGyo0NtJWC7ZHYL+wQP0Dic9KOEPz3hsri0aoC4H9fjCCK1oU1uwTSyhtVBtWSJsA1s+ptqQyvQJj0d0ER5ejs8olyg2fgR
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230031)(396003)(39830400003)(366004)(346002)(136003)(230922051799003)(451199024)(186009)(1800799012)(64100799003)(66476007)(66946007)(4326008)(66556008)(8936002)(44832011)(36756003)(26005)(2616005)(966005)(6666004)(1076003)(508600001)(8676002)(41320700001)(41300700001)(5660300002)(2906002)(7416002)(52116002)(83380400001)(40180700001)(38350700005)(40160700002)(86362001)(38100700002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?FW9ZvuXC6yv4TOYy07cAlpEGh0gzQpO+wfaEauupjiAUFLmEOnfFJnVSFi7R?=
+ =?us-ascii?Q?6/aLgN/qvF0/WNNGtMA2+a7Tlrzvd4Z6UKKDdnAfWD2r3wxRxvD3nqlbFQko?=
+ =?us-ascii?Q?0Emg2atCLyidNzbsYt1HIovBnOibwltDSTwmhYcmP6yZakolB4RZ+ZNZTBqs?=
+ =?us-ascii?Q?OqLWW05wElDmjpKDafQk0O4nwPfLPj+hABGZd5mMv/mp3UKMujoAIVHVBrWW?=
+ =?us-ascii?Q?ExvWKso7gNtzv9chPmuTRi57daErIMo+H5zx+VQJ5z1uPiKRO4w7eLUwZlvP?=
+ =?us-ascii?Q?TW6k96Is0OYdEQUA9qd3jv+P3KTfA2LN5/srLq7cn7AhM4mQpBdmEMhM58XJ?=
+ =?us-ascii?Q?WnMfnJblQabUzIOCYHmVoUYruf4YqS/tiRfn82R9PcNmE79Uu51+sve8tlhq?=
+ =?us-ascii?Q?z5OK4IZYhmO+ucCGAWe+TPPEvoUXK1N3qc8qVpwbwQv9Tnq6dzRkI4M/T9+g?=
+ =?us-ascii?Q?7B8QClxJZdEa1myoG/xjWumOh1jE247PHh5bLdx0oLVCjzhQYBF62ly20piB?=
+ =?us-ascii?Q?rm8BDDFPcFivvhPgjaK9VDf860HLMa+uuRsHVsiRcJora7KyMfnlhVF5l5j2?=
+ =?us-ascii?Q?SAMauQx1ffgCfSTt0zIWNqizmYxeykANaNv4DoWZFKaGHMJ9vdDg3upf25vU?=
+ =?us-ascii?Q?VSYaYLtfRg+T2NuonF39ys4c2VB6vFz4nURVQBs5/KuVSwnpg8E+YypErY8e?=
+ =?us-ascii?Q?D3NqjtR+egEu5oXu9SziBEfUbqgtYGYScQWLpsjmqzB5wvO+EAQu0b1lpnvj?=
+ =?us-ascii?Q?T0Sp/JMxKldsiEulk6E8fKpPZ3es2njXc7zAgAbX8lzB5mMpgS+byFR7AIrh?=
+ =?us-ascii?Q?1H9l9R4G2LUOT+DinLryA5gfyYzZeDfkEisL5kIZyMGqCzjxsgGsGsQ/xfmF?=
+ =?us-ascii?Q?IrqfgIwAP+sDefmxz5YBfVJ0xMqVDJjy1+opTSS8iAgD3BX/ofCmnqM0CcTQ?=
+ =?us-ascii?Q?khwZkHJURbM3Z+Wx00DdA/g47Eu3VN+lI4q7r3AlJfFK7q0AK1qVbaHuEbp7?=
+ =?us-ascii?Q?PExoGDA8KlmEE8MEQXqj9shEUVBmEyN3PYvP4IPCIzdNSGMMjdGKULhg6TyM?=
+ =?us-ascii?Q?LZjstMkDla58+pADNONnAKVvbYwza8iCy9LwbaufvhrSN0dNkVLEeqhuU4qb?=
+ =?us-ascii?Q?8YDsguq+Iy+10sbLGpKcLzmhm5gZcAq9iogS98G8Jorfj7ZnutFNgEpRQk5d?=
+ =?us-ascii?Q?k0Z7Ky2UTADL5iBTkh54K7wNa8zJjdbbPe0KCAjhUftuXjWox4vKh6+NY7Up?=
+ =?us-ascii?Q?JdRZpkK/K4a5lIMeSXYyx7NUgcJPizltg4pT6ka6xZT1zdRG1pq7ggkiYbRH?=
+ =?us-ascii?Q?MmOpbCBictSasHpgsi3boKc5QtLBzUAvkcN1UKthMaum772eiXQXVal/i3oP?=
+ =?us-ascii?Q?ugcQooKngpLrL0oS0/wcXHuqIK+maNjDCSpDDyRpeF8vAtKmgKPNSWYGpX0F?=
+ =?us-ascii?Q?VP5+uPq94xy136ISMqBKonGMJepIeDT7LiI+89t/osfX9k6GkwoP0XeBU8Do?=
+ =?us-ascii?Q?/VwvOv+d03wgSf6WnScHmJYGBwTCYlH+QQLdGl2b+6JTnTjHsJPb3WCKhrQe?=
+ =?us-ascii?Q?oTgRLXcrTZT/vsOxlpVXgQRvtRcdCoeM7uV10zAK5+FpiRnD8svP9nnz0/Kk?=
+ =?us-ascii?Q?U8GELfHQid+EFC5kTXWPGZQ=3D?=
+X-OriginatorOrg: starfivetech.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3242e14b-f145-4838-8bd3-08dc10e266e7
+X-MS-Exchange-CrossTenant-AuthSource: NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jan 2024 07:12:55.6343
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: BhX4G90XvLSk9f7gwjZOlsSmLrzE/mSeiPMuiLyKUmhQ6Bwmqm8Gr0LEAtX1wObK5hyCAU7icxJNYXU6esB0X2tW2yr50ez7dN2DeRE/STs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: NT0PR01MB0957
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240108_190643_430013_629D41C6 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20240108_231311_702710_2B648F8B 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,61 +138,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 9 Jan 2024 at 05:04, Dmitry Baryshkov
-<dmitry.baryshkov@linaro.org> wrote:
->
-> After the split of the gigantic QMP PHY driver, individual drivers
-> contained common regster bits definitions. Move them to the global
-> header. While we are at it, also remove register definitions from the
-> phy-qcom-sgmi-eth driver, which is yet another QMP driver with its own
-> embedde register defines.
->
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
-> Dmitry Baryshkov (8):
->       phy: qcom: qmp-usb-legacy: drop single-lane support
->       phy: qcom: qmp-usb-legacy: drop qmp_usb_legacy_iomap
->       phy: qcom: qmp: move common functions to common header
->       phy: qcom: qmp: split DP PHY registers to separate headers
->       phy: qcom: qmp: move common bits definitions to common header
->       fixup! phy: qcom: qmp: move common functions to common header
+This patchset adds mipi dphy tx support for the StarFive JH7110 SoC.
+It is used to transfer DSI data. The series has been tested on
+the VisionFive 2 board.
 
-I haven't noticed the non-squashed fixup. I'll squash it for v2.
 
->       phy: qcom: sgmii-eth: use existing register definitions
->       phy: qcom: sgmii-eth: move PCS registers to separate header
->
->  drivers/phy/qualcomm/phy-qcom-edp.c              |   3 +-
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 127 ++-----
->  drivers/phy/qualcomm/phy-qcom-qmp-common.h       |  59 +++
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-com-v3.h    |  18 +
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v3.h    |  21 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v4.h    |  19 +
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h    |  13 +
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h    |  13 +
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy.h       |  62 ++++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c |  70 +---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         |  90 +----
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h    |  20 +
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          |  72 +---
->  drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c   |  76 +---
->  drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 101 +-----
->  drivers/phy/qualcomm/phy-qcom-qmp.h              | 111 ++----
->  drivers/phy/qualcomm/phy-qcom-sgmii-eth.c        | 441 ++++++++++-------------
->  17 files changed, 516 insertions(+), 800 deletions(-)
-> ---
-> base-commit: 39676dfe52331dba909c617f213fdb21015c8d10
-> change-id: 20240108-phy-qmp-merge-common-d681dd1d1995
->
-> Best regards,
-> --
-> Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->
+changes since v1:
+- Rebased on tag v6.7.
 
+patch 1:
+- Drop 'dphy_'prefix.
+- Drop DSI reset.
+- Drop unnecessary resets.
+
+
+patch 2:
+- Changed the commit message.
+- Use dev_err_probe() and PTR_ERR() in probing.
+- Drop DSI reset operation.
+- Drop unnecessary resets operation.
+- Add configs in array for full support of the module
+- Changed 'void *io_addr' to 'void __iomem *io_addr'.
+
+v1: https://patchwork.kernel.org/project/linux-phy/cover/20231117130421.79261-1-shengyang.chen@starfivetech.com/
+
+Shengyang Chen (2):
+  dt-bindings: phy: Add starfive,jh7110-dphy-tx
+  phy: starfive: Add mipi dphy tx support
+
+ .../bindings/phy/starfive,jh7110-dphy-tx.yaml |  68 ++
+ MAINTAINERS                                   |   7 +
+ drivers/phy/starfive/Kconfig                  |  10 +
+ drivers/phy/starfive/Makefile                 |   1 +
+ drivers/phy/starfive/phy-jh7110-dphy-tx.c     | 651 ++++++++++++++++++
+ 5 files changed, 737 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+ create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
 
 -- 
-With best wishes
-Dmitry
+2.17.1
+
 
 -- 
 linux-phy mailing list
