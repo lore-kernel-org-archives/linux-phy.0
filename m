@@ -4,92 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60577C4725D
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Jan 2024 03:04:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BCFBC47DA2
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Jan 2024 03:04:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I2Kb49h+Za8HJnTCl4t2Ip7EeQFpnFFh7rzZlLWAItY=; b=e6Zy5mh7KpABYm
-	xy58gwpM85IfycvWwMq8dY9jP5fLZ0pojStg7HMkgKHRcVJRR0uZQ3OMkqc7jREjI6XA49yNEV+dY
-	55cug7PUn3N5LWPUoIpstBChSzyv7jnIa4uYNnHnShrSO6ZYi2VfXrHQYGk+y+Kdxx2VYpBGditWo
-	iDo1gmEamFD7C1qETEaMITKhHG2PDSHhNI1qe37VYUOXnYs5VjvCh7WV27XvEB4YLQROBqx6f+iJ5
-	wpi291CRIxlel0fLG2pf83c31ZsrJolBdWu0L4DA4b/kiZwVqe6wV+bqE4uadjM5nzqg5igRFaBVB
-	VwQxoUwGT9AVzNDMSNiA==;
+	List-Owner; bh=tFs27owpVDy/hb7ngLxJeDWDmeYE97vl1su0bw/iJRc=; b=y08wKAYAFxo+y+
+	CNPeimgp6aTKbSVUpi9MZIDbAYnTQdgdhwRqEiXKX3kIT3Xn6D4sK/rraFJKUO4bp2MDXXA+R9rKZ
+	nVABFchqr+xgRADMaAvaS8kt+DowCxSTdBAMjhQ//gokwxNW+H3HZ//LOUlY9kyRH26DdchpdO3gD
+	JFiVm0zUAAAHD0S6vfiRAKo8SQ+hSs8FHLoP/CpbxSr1mQyDpbdIumXHdR9xsZOVTPrGHf5QxwKwb
+	/rcfnNJurgLELkN/K6WEnXYWScLca2aOniaGmbQYg1jbcvBAJWcZleE09mvpY25Mae9yTyAb1aiHa
+	9FXfuutaJSTqSsG9GJng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rN2PY-006ksW-0L;
-	Tue, 09 Jan 2024 03:04:16 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1rN2PZ-006ktF-2b;
+	Tue, 09 Jan 2024 03:04:17 +0000
+Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rN2PS-006knY-0n
+	id 1rN2PS-006knq-29
 	for linux-phy@lists.infradead.org;
 	Tue, 09 Jan 2024 03:04:14 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2cd65f803b7so1873121fa.1
-        for <linux-phy@lists.infradead.org>; Mon, 08 Jan 2024 19:04:06 -0800 (PST)
+Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2cd56dac1adso17828731fa.2
+        for <linux-phy@lists.infradead.org>; Mon, 08 Jan 2024 19:04:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1704769444; x=1705374244; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1704769447; x=1705374247; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=p/ZBfRr5NYsf/wPFz0lJKWgWgRxwch+qjls6Rlf3ZYY=;
-        b=lnI8s3IlMeqXCi3GIfagVnO9oZBp6HLl3MSQcwMWjXXg9q0xUo29/Ymm7pWPUp8qYn
-         Zqv2GVLiQgntW++SwCNr7KvFrWB86wymjyeun0j4s2QYG1Eci+cNZal6OzadingpRcy1
-         H1WDTwQ+D6VsY5M+ZgbzIO+5DS8/hhl/ZkE39BsbhVtlW8qLvzQjFTK5zuru+8hryGqY
-         pL+Z4izZaf45E9BsMKN5ycj0VLX0IDjpFptu56EYxvuOrV/qTX2TuoJxzkswQJcj802V
-         B42sL7Zbj+AwgYSZ91LxBkK08cqEPr759RkoiM9wtrNuDyx4DBjBpvGpdiZHOqCcbHh4
-         CWEA==
+        bh=TP6GRjzdQEtuwVNJ22A6QSMTAgb1n7vuBGLyOlDRLe8=;
+        b=A+p/fLpShdW2FRMXL+RKN7qRHu5Upbt2FsiMm381l4vYcOgHYl+TANDmrv8+wkLUoK
+         Y6ZVc9lPNDT8EokaCnTgTSNAV7gIGOUjumN3O3PAcqxbMsMXDyVDmEIsLGSbtCvx9xyk
+         E+twxvyNwh4G9mjRFnS0DRW5uqNfCtHLxJVNmFUMu4bgpeTJlRirxGAMWJyUVXG1Ci0O
+         +dvTI9PpLJHy9mpOtmfWJntUo15vncdormNCmUI0Qpi2zpf3bJxhdQEvi4ZnGop60mMl
+         J/earRu/cxNcsumet1vKW8ICbVdRNqX8wuynAB3o6kZf8oyx/AV8Uz3/LyC4leYj4qRN
+         9EJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704769444; x=1705374244;
+        d=1e100.net; s=20230601; t=1704769447; x=1705374247;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=p/ZBfRr5NYsf/wPFz0lJKWgWgRxwch+qjls6Rlf3ZYY=;
-        b=fBXNvF+taLz/IhC5BnvaKmLk7E/x5sAEh3HATcYHXeJAftQIfy9ysIFtf4Mi5GyNKW
-         ytU32gsrwK7uLyZQS5zIOpOT9n8/jl5G4tA2tYpFZCzOfmN3AsPKJoDdSoqqUQb412nm
-         Q1zNVyKaBQbxQktfaiG/LPvWFw58s8e0EJ5rdbJhVlFEceGIN0Z3cozKYe3lHKxqqTei
-         xSCFX8/iHWEdTxf1ki7kWsNWWGyd+J2a8eCtkZzGNL7iAIz5y8VdAwNaNU2YrpBO/RY3
-         AbA6XttGBpJ5ZdKDTdrOVeFVhisskmhsvUG8X/22z79jI2RyP3Wadf8KYdxxUFMdZ5q7
-         7FTQ==
-X-Gm-Message-State: AOJu0YyGf1Nw/2EK0kriQ44mAyB7vImX4+cbYi/7T8W2nNKPflMwfMZb
-	z+EBd4lYF5aQ7ReNWuvBnqCTp0nlLanUOg==
-X-Google-Smtp-Source: AGHT+IHS69xCZIJcj57iK74/tgjfaBcFTe/Jg1J34CJoI+xdCmj7LarBY4kz3ErLrA8TZXOdA8Um7w==
-X-Received: by 2002:a2e:8348:0:b0:2cc:d21b:a92a with SMTP id l8-20020a2e8348000000b002ccd21ba92amr2102194ljh.69.1704769444570;
-        Mon, 08 Jan 2024 19:04:04 -0800 (PST)
+        bh=TP6GRjzdQEtuwVNJ22A6QSMTAgb1n7vuBGLyOlDRLe8=;
+        b=Vu5covN0KT7I8qwhQ15tICSdZLmnmV7D5L673jvfqzwI/gCn9A5afzKHFJ9JIvKgLT
+         BhMVZhrBEJxVQ6aoSPnPvGDcLmaYkVWWyDOiWv5XHFzAv9hswhUhvWcPi7pV5z6h53H8
+         Hl60JzVfwxGRcL4ObKg3ABYb++FxJYaWz8t+uPrEDI+pzQ/Iq1Rb1y77HaieFAmw3ASW
+         d+W+0nNt3+PtRPtWifqo3Be+gY129fxMyl9rp90ba4LKNZ5/NEAiyX19idzkXrNyaKMb
+         wrv29rquL+26a5iHN3za5AWIBvJmCLdnfAtNdcNtjXn6bNn8OHRIHPSK5uHixTN0V8Ya
+         Cj5g==
+X-Gm-Message-State: AOJu0Yw/jxIk0Ps7flMpYJY4wb1NvbOns9A00XOoKVbOhD6srnfrbkUe
+	dk4YTrECfxLNJztcQE4mQCxc5SsICKDq4w==
+X-Google-Smtp-Source: AGHT+IE1sTVVo8uE8LihK9ZbIhbtt6Rkz8ckVcVwexXuLeDtay3Gex/huWIqtIH9sZYP7VaavAa0iA==
+X-Received: by 2002:a2e:be93:0:b0:2cd:936:8b68 with SMTP id a19-20020a2ebe93000000b002cd09368b68mr2630346ljr.56.1704769447564;
+        Mon, 08 Jan 2024 19:04:07 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id g30-20020a2e391e000000b002cd1ad3b11csm176920lja.42.2024.01.08.19.04.04
+        by smtp.gmail.com with ESMTPSA id g30-20020a2e391e000000b002cd1ad3b11csm176920lja.42.2024.01.08.19.04.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 08 Jan 2024 19:04:04 -0800 (PST)
+        Mon, 08 Jan 2024 19:04:07 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 09 Jan 2024 05:04:01 +0200
-Subject: [PATCH 3/8] phy: qcom: qmp: move common functions to common header
+Date: Tue, 09 Jan 2024 05:04:05 +0200
+Subject: [PATCH 7/8] phy: qcom: sgmii-eth: use existing register
+ definitions
 MIME-Version: 1.0
-Message-Id: <20240109-phy-qmp-merge-common-v1-3-572899a14318@linaro.org>
+Message-Id: <20240109-phy-qmp-merge-common-v1-7-572899a14318@linaro.org>
 References: <20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org>
 In-Reply-To: <20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=22817;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=25939;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=8g/vNcUUMAXYw/uuQ5dzybPHyBQ1gr43bX7LN+HqV/8=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlnLegd/JwZo8xOYmR8JrmUVRhp73HuA7kfp5Me
- blLz5s2KGCJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZZy3oAAKCRCLPIo+Aiko
- 1aGoB/4nJWVI+1X7+tR2tlnbkOrM1/MZgz+LLDoveSzemBHv00Y/q/C87/DhbLIO9uE36jyTA7R
- lz5uGFtHR51bsS9+X/Af4CSmz8G6keydmu/8ar/UeFR33cisQQ1NbnUL3JyHgTfUilCTw3i0RB7
- IyFSvmexnAygp1RXQbHi1tqDpHY9ycI+uTpmLGoFG9doaE5WL/tSpZmJ3k69srHomchVBipkJuR
- +1Dhbns93MSlLf+Yl2Hq62m6lb9t4AO46M0j7/hCzrxkSAlpTdCxCurWgRgMESagH7JRQvvhT+K
- Jc8VbkJV/R+twSARy+TU6PFdoRgjYN1hh4ydettBSP6RmzG1
+ bh=MNDcGPi3jXRbFhtBDOtCVwUNUCWjxnA1vYQ96GhwJlI=;
+ b=owEBbAGT/pANAwAKAYs8ij4CKSjVAcsmYgBlnLehsGmhNkR88GYVPc38StH2fWtyavmkO8Iow
+ +GWvdaBxEWJATIEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZZy3oQAKCRCLPIo+Aiko
+ 1Yx1B/igbsrx78PyddiodJt1Oo2l01yJr7b8eqZ/iYd/wmKjAdMN3eDStx7wxKJjzkkLcyW37wj
+ 2YpCNZuzKIBYtIkBj6suRvltIWVMsBiDBnWX8TJo4G+oyrFoM5qPo61/UIBN9QOOhFG/R9PUcXl
+ czxSiL/BAkzIY191m8feBPUyK2bqA/2a5vQjGy95KFfMuTiwprtpJ0Q3P30VORQIXMgK7tz8NgT
+ ScurJUBlPOZ8bwMDAjiidpglysY0+IUU6yRtFLk5ukM/ieBhpLw0FHtWVoC8q7UJhuABn2D5X+V
+ iSO7eUleVFlxLq0V3JMi56RfuicDHotVKJb4ypFeKKZtpis=
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240108_190410_292767_274ACAD2 
-X-CRM114-Status: GOOD (  22.21  )
+X-CRM114-CacheID: sfid-20240108_190410_712017_A5552CD1 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,758 +109,425 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move common init tables code to the common header phy-qcom-qmp-common.h.
+The Qualcomm SGMII SerDes PHY is a QMP PHY. As such, it uses standard
+registers for QSERDES COM/RX/TX regions. Use register defines from the
+existing headers.
 
+Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 98 ++++++------------------
- drivers/phy/qualcomm/phy-qcom-qmp-common.h       | 60 +++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 60 ++-------------
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 78 ++++---------------
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          | 65 +++-------------
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 66 +++-------------
- 6 files changed, 124 insertions(+), 303 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c | 367 ++++++++++++------------------
+ 1 file changed, 149 insertions(+), 218 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 1ad10110dd25..c86f6f612b1e 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -25,6 +25,8 @@
+diff --git a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+index 03dc753f0de1..233f9b70c673 100644
+--- a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
++++ b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+@@ -11,83 +11,14 @@
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
  
- #include <dt-bindings/phy/phy-qcom-qmp.h>
+-#define QSERDES_QMP_PLL					0x0
+-#define QSERDES_COM_BIN_VCOCAL_CMP_CODE1_MODE0		(QSERDES_QMP_PLL + 0x1ac)
+-#define QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE0		(QSERDES_QMP_PLL + 0x1b0)
+-#define QSERDES_COM_BIN_VCOCAL_HSCLK_SEL		(QSERDES_QMP_PLL + 0x1bc)
+-#define QSERDES_COM_CORE_CLK_EN				(QSERDES_QMP_PLL + 0x174)
+-#define QSERDES_COM_CORECLK_DIV_MODE0			(QSERDES_QMP_PLL + 0x168)
+-#define QSERDES_COM_CP_CTRL_MODE0			(QSERDES_QMP_PLL + 0x74)
+-#define QSERDES_COM_DEC_START_MODE0			(QSERDES_QMP_PLL + 0xbc)
+-#define QSERDES_COM_DIV_FRAC_START1_MODE0		(QSERDES_QMP_PLL + 0xcc)
+-#define QSERDES_COM_DIV_FRAC_START2_MODE0		(QSERDES_QMP_PLL + 0xd0)
+-#define QSERDES_COM_DIV_FRAC_START3_MODE0		(QSERDES_QMP_PLL + 0xd4)
+-#define QSERDES_COM_HSCLK_HS_SWITCH_SEL			(QSERDES_QMP_PLL + 0x15c)
+-#define QSERDES_COM_HSCLK_SEL				(QSERDES_QMP_PLL + 0x158)
+-#define QSERDES_COM_LOCK_CMP1_MODE0			(QSERDES_QMP_PLL + 0xac)
+-#define QSERDES_COM_LOCK_CMP2_MODE0			(QSERDES_QMP_PLL + 0xb0)
+-#define QSERDES_COM_PLL_CCTRL_MODE0			(QSERDES_QMP_PLL + 0x84)
+-#define QSERDES_COM_PLL_IVCO				(QSERDES_QMP_PLL + 0x58)
+-#define QSERDES_COM_PLL_RCTRL_MODE0			(QSERDES_QMP_PLL + 0x7c)
+-#define QSERDES_COM_SYSCLK_EN_SEL			(QSERDES_QMP_PLL + 0x94)
+-#define QSERDES_COM_VCO_TUNE1_MODE0			(QSERDES_QMP_PLL + 0x110)
+-#define QSERDES_COM_VCO_TUNE2_MODE0			(QSERDES_QMP_PLL + 0x114)
+-#define QSERDES_COM_VCO_TUNE_INITVAL2			(QSERDES_QMP_PLL + 0x124)
+-#define QSERDES_COM_C_READY_STATUS			(QSERDES_QMP_PLL + 0x178)
+-#define QSERDES_COM_CMN_STATUS				(QSERDES_QMP_PLL + 0x140)
++#include "phy-qcom-qmp-qserdes-com-v5.h"
++#include "phy-qcom-qmp-qserdes-txrx-v5.h"
  
-+#include "phy-qcom-qmp-common.h"
++#define QSERDES_QMP_PLL					0x0
+ #define QSERDES_RX					0x600
+-#define QSERDES_RX_UCDR_FO_GAIN				(QSERDES_RX + 0x8)
+-#define QSERDES_RX_UCDR_SO_GAIN				(QSERDES_RX + 0x14)
+-#define QSERDES_RX_UCDR_FASTLOCK_FO_GAIN		(QSERDES_RX + 0x30)
+-#define QSERDES_RX_UCDR_SO_SATURATION_AND_ENABLE	(QSERDES_RX + 0x34)
+-#define QSERDES_RX_UCDR_FASTLOCK_COUNT_LOW		(QSERDES_RX + 0x3c)
+-#define QSERDES_RX_UCDR_FASTLOCK_COUNT_HIGH		(QSERDES_RX + 0x40)
+-#define QSERDES_RX_UCDR_PI_CONTROLS			(QSERDES_RX + 0x44)
+-#define QSERDES_RX_UCDR_PI_CTRL2			(QSERDES_RX + 0x48)
+-#define QSERDES_RX_RX_TERM_BW				(QSERDES_RX + 0x80)
+-#define QSERDES_RX_VGA_CAL_CNTRL2			(QSERDES_RX + 0xd8)
+-#define QSERDES_RX_GM_CAL				(QSERDES_RX + 0xdc)
+-#define QSERDES_RX_RX_EQU_ADAPTOR_CNTRL1		(QSERDES_RX + 0xe8)
+-#define QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2		(QSERDES_RX + 0xec)
+-#define QSERDES_RX_RX_EQU_ADAPTOR_CNTRL3		(QSERDES_RX + 0xf0)
+-#define QSERDES_RX_RX_EQU_ADAPTOR_CNTRL4		(QSERDES_RX + 0xf4)
+-#define QSERDES_RX_RX_IDAC_TSETTLE_LOW			(QSERDES_RX + 0xf8)
+-#define QSERDES_RX_RX_IDAC_TSETTLE_HIGH			(QSERDES_RX + 0xfc)
+-#define QSERDES_RX_RX_IDAC_MEASURE_TIME			(QSERDES_RX + 0x100)
+-#define QSERDES_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1		(QSERDES_RX + 0x110)
+-#define QSERDES_RX_RX_OFFSET_ADAPTOR_CNTRL2		(QSERDES_RX + 0x114)
+-#define QSERDES_RX_SIGDET_CNTRL				(QSERDES_RX + 0x11c)
+-#define QSERDES_RX_SIGDET_DEGLITCH_CNTRL		(QSERDES_RX + 0x124)
+-#define QSERDES_RX_RX_BAND				(QSERDES_RX + 0x128)
+-#define QSERDES_RX_RX_MODE_00_LOW			(QSERDES_RX + 0x15c)
+-#define QSERDES_RX_RX_MODE_00_HIGH			(QSERDES_RX + 0x160)
+-#define QSERDES_RX_RX_MODE_00_HIGH2			(QSERDES_RX + 0x164)
+-#define QSERDES_RX_RX_MODE_00_HIGH3			(QSERDES_RX + 0x168)
+-#define QSERDES_RX_RX_MODE_00_HIGH4			(QSERDES_RX + 0x16c)
+-#define QSERDES_RX_RX_MODE_01_LOW			(QSERDES_RX + 0x170)
+-#define QSERDES_RX_RX_MODE_01_HIGH			(QSERDES_RX + 0x174)
+-#define QSERDES_RX_RX_MODE_01_HIGH2			(QSERDES_RX + 0x178)
+-#define QSERDES_RX_RX_MODE_01_HIGH3			(QSERDES_RX + 0x17c)
+-#define QSERDES_RX_RX_MODE_01_HIGH4			(QSERDES_RX + 0x180)
+-#define QSERDES_RX_RX_MODE_10_LOW			(QSERDES_RX + 0x184)
+-#define QSERDES_RX_RX_MODE_10_HIGH			(QSERDES_RX + 0x188)
+-#define QSERDES_RX_RX_MODE_10_HIGH2			(QSERDES_RX + 0x18c)
+-#define QSERDES_RX_RX_MODE_10_HIGH3			(QSERDES_RX + 0x190)
+-#define QSERDES_RX_RX_MODE_10_HIGH4			(QSERDES_RX + 0x194)
+-#define QSERDES_RX_DCC_CTRL1				(QSERDES_RX + 0x1a8)
+-
+ #define QSERDES_TX					0x400
+-#define QSERDES_TX_TX_BAND				(QSERDES_TX + 0x24)
+-#define QSERDES_TX_SLEW_CNTL				(QSERDES_TX + 0x28)
+-#define QSERDES_TX_RES_CODE_LANE_OFFSET_TX		(QSERDES_TX + 0x3c)
+-#define QSERDES_TX_RES_CODE_LANE_OFFSET_RX		(QSERDES_TX + 0x40)
+-#define QSERDES_TX_LANE_MODE_1				(QSERDES_TX + 0x84)
+-#define QSERDES_TX_LANE_MODE_3				(QSERDES_TX + 0x8c)
+-#define QSERDES_TX_RCV_DETECT_LVL_2			(QSERDES_TX + 0xa4)
+-#define QSERDES_TX_TRAN_DRVR_EMP_EN			(QSERDES_TX + 0xc0)
+-
+-#define QSERDES_PCS					0xC00
++#define QSERDES_PCS					0xc00
 +
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-misc-v3.h"
- #include "phy-qcom-qmp-pcs-usb-v4.h"
-@@ -72,30 +74,6 @@
+ #define QSERDES_PCS_PHY_START				(QSERDES_PCS + 0x0)
+ #define QSERDES_PCS_POWER_DOWN_CONTROL			(QSERDES_PCS + 0x4)
+ #define QSERDES_PCS_SW_RESET				(QSERDES_PCS + 0x8)
+@@ -115,77 +46,77 @@ static void qcom_dwmac_sgmii_phy_init_1g(struct regmap *regmap)
+ 	regmap_write(regmap, QSERDES_PCS_SW_RESET, 0x01);
+ 	regmap_write(regmap, QSERDES_PCS_POWER_DOWN_CONTROL, 0x01);
  
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
--struct qmp_phy_init_tbl {
--	unsigned int offset;
--	unsigned int val;
--	/*
--	 * mask of lanes for which this register is written
--	 * for cases when second lane needs different values
--	 */
--	u8 lane_mask;
--};
+-	regmap_write(regmap, QSERDES_COM_PLL_IVCO, 0x0F);
+-	regmap_write(regmap, QSERDES_COM_CP_CTRL_MODE0, 0x06);
+-	regmap_write(regmap, QSERDES_COM_PLL_RCTRL_MODE0, 0x16);
+-	regmap_write(regmap, QSERDES_COM_PLL_CCTRL_MODE0, 0x36);
+-	regmap_write(regmap, QSERDES_COM_SYSCLK_EN_SEL, 0x1A);
+-	regmap_write(regmap, QSERDES_COM_LOCK_CMP1_MODE0, 0x0A);
+-	regmap_write(regmap, QSERDES_COM_LOCK_CMP2_MODE0, 0x1A);
+-	regmap_write(regmap, QSERDES_COM_DEC_START_MODE0, 0x82);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START3_MODE0, 0x03);
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE1_MODE0, 0x24);
 -
--#define QMP_PHY_INIT_CFG(o, v)		\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = 0xff,	\
--	}
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE2_MODE0, 0x02);
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE_INITVAL2, 0x00);
+-	regmap_write(regmap, QSERDES_COM_HSCLK_SEL, 0x04);
+-	regmap_write(regmap, QSERDES_COM_HSCLK_HS_SWITCH_SEL, 0x00);
+-	regmap_write(regmap, QSERDES_COM_CORECLK_DIV_MODE0, 0x0A);
+-	regmap_write(regmap, QSERDES_COM_CORE_CLK_EN, 0x00);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xB9);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1E);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_HSCLK_SEL, 0x11);
 -
--#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = l,		\
--	}
+-	regmap_write(regmap, QSERDES_TX_TX_BAND, 0x05);
+-	regmap_write(regmap, QSERDES_TX_SLEW_CNTL, 0x0A);
+-	regmap_write(regmap, QSERDES_TX_RES_CODE_LANE_OFFSET_TX, 0x09);
+-	regmap_write(regmap, QSERDES_TX_RES_CODE_LANE_OFFSET_RX, 0x09);
+-	regmap_write(regmap, QSERDES_TX_LANE_MODE_1, 0x05);
+-	regmap_write(regmap, QSERDES_TX_LANE_MODE_3, 0x00);
+-	regmap_write(regmap, QSERDES_TX_RCV_DETECT_LVL_2, 0x12);
+-	regmap_write(regmap, QSERDES_TX_TRAN_DRVR_EMP_EN, 0x0C);
 -
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
- 	/* PCS registers */
-@@ -2031,55 +2009,29 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- };
+-	regmap_write(regmap, QSERDES_RX_UCDR_FO_GAIN, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_UCDR_SO_GAIN, 0x06);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_FO_GAIN, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7F);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x01);
+-	regmap_write(regmap, QSERDES_RX_UCDR_PI_CONTROLS, 0x81);
+-	regmap_write(regmap, QSERDES_RX_UCDR_PI_CTRL2, 0x80);
+-	regmap_write(regmap, QSERDES_RX_RX_TERM_BW, 0x04);
+-	regmap_write(regmap, QSERDES_RX_VGA_CAL_CNTRL2, 0x08);
+-	regmap_write(regmap, QSERDES_RX_GM_CAL, 0x0F);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4A);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_TSETTLE_LOW, 0x80);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_TSETTLE_HIGH, 0x01);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_MEASURE_TIME, 0x20);
+-	regmap_write(regmap, QSERDES_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17);
+-	regmap_write(regmap, QSERDES_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00);
+-	regmap_write(regmap, QSERDES_RX_SIGDET_CNTRL, 0x0F);
+-	regmap_write(regmap, QSERDES_RX_SIGDET_DEGLITCH_CNTRL, 0x1E);
+-	regmap_write(regmap, QSERDES_RX_RX_BAND, 0x05);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_LOW, 0xE0);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH3, 0x09);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH4, 0xB1);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_LOW, 0xE0);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH3, 0x09);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH4, 0xB1);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_LOW, 0xE0);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH3, 0x3B);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH4, 0xB7);
+-	regmap_write(regmap, QSERDES_RX_DCC_CTRL1, 0x0C);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_IVCO, 0x0F);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CP_CTRL_MODE0, 0x06);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_RCTRL_MODE0, 0x16);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_CCTRL_MODE0, 0x36);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_SYSCLK_EN_SEL, 0x1A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_LOCK_CMP1_MODE0, 0x0A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_LOCK_CMP2_MODE0, 0x1A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DEC_START_MODE0, 0x82);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START1_MODE0, 0x55);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START2_MODE0, 0x55);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START3_MODE0, 0x03);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE1_MODE0, 0x24);
++
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE2_MODE0, 0x02);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE_INITVAL2, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_HSCLK_SEL, 0x04);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_HSCLK_HS_SWITCH_SEL, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CORECLK_DIV_MODE0, 0x0A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CORE_CLK_EN, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xB9);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1E);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_HSCLK_SEL, 0x11);
++
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_TX_BAND, 0x05);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_SLEW_CNTL, 0x0A);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x09);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x09);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_LANE_MODE_1, 0x05);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_LANE_MODE_3, 0x00);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RCV_DETECT_LVL_2, 0x12);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_TRAN_DRVR_EMP_EN, 0x0C);
++
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FO_GAIN, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_SO_GAIN, 0x06);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_FO_GAIN, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x01);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_PI_CONTROLS, 0x81);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_PI_CTRL2, 0x80);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_TERM_BW, 0x04);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x08);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_GM_CAL, 0x0F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_TSETTLE_LOW, 0x80);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_TSETTLE_HIGH, 0x01);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_MEASURE_TIME, 0x20);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_SIGDET_CNTRL, 0x0F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_SIGDET_DEGLITCH_CNTRL, 0x1E);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_BAND, 0x05);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_LOW, 0xE0);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x09);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH4, 0xB1);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_LOW, 0xE0);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH3, 0x09);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH4, 0xB1);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_LOW, 0xE0);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH3, 0x3B);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH4, 0xB7);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_DCC_CTRL1, 0x0C);
  
--static void qmp_combo_configure_lane(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num,
--					u8 lane_mask)
--{
--	int i;
--	const struct qmp_phy_init_tbl *t = tbl;
+ 	regmap_write(regmap, QSERDES_PCS_LINE_RESET_TIME, 0x0C);
+ 	regmap_write(regmap, QSERDES_PCS_TX_LARGE_AMP_DRV_LVL, 0x1F);
+@@ -203,77 +134,77 @@ static void qcom_dwmac_sgmii_phy_init_2p5g(struct regmap *regmap)
+ 	regmap_write(regmap, QSERDES_PCS_SW_RESET, 0x01);
+ 	regmap_write(regmap, QSERDES_PCS_POWER_DOWN_CONTROL, 0x01);
+ 
+-	regmap_write(regmap, QSERDES_COM_PLL_IVCO, 0x0F);
+-	regmap_write(regmap, QSERDES_COM_CP_CTRL_MODE0, 0x06);
+-	regmap_write(regmap, QSERDES_COM_PLL_RCTRL_MODE0, 0x16);
+-	regmap_write(regmap, QSERDES_COM_PLL_CCTRL_MODE0, 0x36);
+-	regmap_write(regmap, QSERDES_COM_SYSCLK_EN_SEL, 0x1A);
+-	regmap_write(regmap, QSERDES_COM_LOCK_CMP1_MODE0, 0x1A);
+-	regmap_write(regmap, QSERDES_COM_LOCK_CMP2_MODE0, 0x41);
+-	regmap_write(regmap, QSERDES_COM_DEC_START_MODE0, 0x7A);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START2_MODE0, 0x20);
+-	regmap_write(regmap, QSERDES_COM_DIV_FRAC_START3_MODE0, 0x01);
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE1_MODE0, 0xA1);
 -
--	if (!t)
--		return;
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE2_MODE0, 0x02);
+-	regmap_write(regmap, QSERDES_COM_VCO_TUNE_INITVAL2, 0x00);
+-	regmap_write(regmap, QSERDES_COM_HSCLK_SEL, 0x03);
+-	regmap_write(regmap, QSERDES_COM_HSCLK_HS_SWITCH_SEL, 0x00);
+-	regmap_write(regmap, QSERDES_COM_CORECLK_DIV_MODE0, 0x05);
+-	regmap_write(regmap, QSERDES_COM_CORE_CLK_EN, 0x00);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xCD);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1C);
+-	regmap_write(regmap, QSERDES_COM_BIN_VCOCAL_HSCLK_SEL, 0x11);
 -
--	for (i = 0; i < num; i++, t++) {
--		if (!(t->lane_mask & lane_mask))
--			continue;
+-	regmap_write(regmap, QSERDES_TX_TX_BAND, 0x04);
+-	regmap_write(regmap, QSERDES_TX_SLEW_CNTL, 0x0A);
+-	regmap_write(regmap, QSERDES_TX_RES_CODE_LANE_OFFSET_TX, 0x09);
+-	regmap_write(regmap, QSERDES_TX_RES_CODE_LANE_OFFSET_RX, 0x02);
+-	regmap_write(regmap, QSERDES_TX_LANE_MODE_1, 0x05);
+-	regmap_write(regmap, QSERDES_TX_LANE_MODE_3, 0x00);
+-	regmap_write(regmap, QSERDES_TX_RCV_DETECT_LVL_2, 0x12);
+-	regmap_write(regmap, QSERDES_TX_TRAN_DRVR_EMP_EN, 0x0C);
 -
--		writel(t->val, base + t->offset);
--	}
--}
--
--static void qmp_combo_configure(void __iomem *base,
--				   const struct qmp_phy_init_tbl tbl[],
--				   int num)
--{
--	qmp_combo_configure_lane(base, tbl, num, 0xff);
--}
--
- static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *serdes = qmp->dp_serdes;
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+-	regmap_write(regmap, QSERDES_RX_UCDR_FO_GAIN, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_UCDR_SO_GAIN, 0x06);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_FO_GAIN, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7F);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00);
+-	regmap_write(regmap, QSERDES_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x01);
+-	regmap_write(regmap, QSERDES_RX_UCDR_PI_CONTROLS, 0x81);
+-	regmap_write(regmap, QSERDES_RX_UCDR_PI_CTRL2, 0x80);
+-	regmap_write(regmap, QSERDES_RX_RX_TERM_BW, 0x00);
+-	regmap_write(regmap, QSERDES_RX_VGA_CAL_CNTRL2, 0x08);
+-	regmap_write(regmap, QSERDES_RX_GM_CAL, 0x0F);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4A);
+-	regmap_write(regmap, QSERDES_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0A);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_TSETTLE_LOW, 0x80);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_TSETTLE_HIGH, 0x01);
+-	regmap_write(regmap, QSERDES_RX_RX_IDAC_MEASURE_TIME, 0x20);
+-	regmap_write(regmap, QSERDES_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17);
+-	regmap_write(regmap, QSERDES_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00);
+-	regmap_write(regmap, QSERDES_RX_SIGDET_CNTRL, 0x0F);
+-	regmap_write(regmap, QSERDES_RX_SIGDET_DEGLITCH_CNTRL, 0x1E);
+-	regmap_write(regmap, QSERDES_RX_RX_BAND, 0x18);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_LOW, 0x18);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH3, 0x0C);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_00_HIGH4, 0xB8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_LOW, 0xE0);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH3, 0x09);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_01_HIGH4, 0xB1);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_LOW, 0xE0);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH2, 0xC8);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH3, 0x3B);
+-	regmap_write(regmap, QSERDES_RX_RX_MODE_10_HIGH4, 0xB7);
+-	regmap_write(regmap, QSERDES_RX_DCC_CTRL1, 0x0C);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_IVCO, 0x0F);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CP_CTRL_MODE0, 0x06);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_RCTRL_MODE0, 0x16);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_PLL_CCTRL_MODE0, 0x36);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_SYSCLK_EN_SEL, 0x1A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_LOCK_CMP1_MODE0, 0x1A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_LOCK_CMP2_MODE0, 0x41);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DEC_START_MODE0, 0x7A);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START1_MODE0, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START2_MODE0, 0x20);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_DIV_FRAC_START3_MODE0, 0x01);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE1_MODE0, 0xA1);
++
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE2_MODE0, 0x02);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_VCO_TUNE_INITVAL2, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_HSCLK_SEL, 0x03);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_HSCLK_HS_SWITCH_SEL, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CORECLK_DIV_MODE0, 0x05);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_CORE_CLK_EN, 0x00);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xCD);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1C);
++	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V5_COM_BIN_VCOCAL_HSCLK_SEL, 0x11);
++
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_TX_BAND, 0x04);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_SLEW_CNTL, 0x0A);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX, 0x09);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX, 0x02);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_LANE_MODE_1, 0x05);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_LANE_MODE_3, 0x00);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_RCV_DETECT_LVL_2, 0x12);
++	regmap_write(regmap, QSERDES_TX + QSERDES_V5_TX_TRAN_DRVR_EMP_EN, 0x0C);
++
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FO_GAIN, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_SO_GAIN, 0x06);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_FO_GAIN, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x01);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_PI_CONTROLS, 0x81);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_UCDR_PI_CTRL2, 0x80);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_TERM_BW, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_VGA_CAL_CNTRL2, 0x08);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_GM_CAL, 0x0F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0A);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_TSETTLE_LOW, 0x80);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_TSETTLE_HIGH, 0x01);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_IDAC_MEASURE_TIME, 0x20);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_SIGDET_CNTRL, 0x0F);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_SIGDET_DEGLITCH_CNTRL, 0x1E);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_BAND, 0x18);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_LOW, 0x18);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH3, 0x0C);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_00_HIGH4, 0xB8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_LOW, 0xE0);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH3, 0x09);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_01_HIGH4, 0xB1);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_LOW, 0xE0);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH2, 0xC8);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH3, 0x3B);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_RX_MODE_10_HIGH4, 0xB7);
++	regmap_write(regmap, QSERDES_RX + QSERDES_V5_RX_DCC_CTRL1, 0x0C);
  
--	qmp_combo_configure(serdes, cfg->dp_serdes_tbl, cfg->dp_serdes_tbl_num);
-+	qmp_configure(serdes, cfg->dp_serdes_tbl, cfg->dp_serdes_tbl_num);
- 
- 	switch (dp_opts->link_rate) {
- 	case 1620:
--		qmp_combo_configure(serdes, cfg->serdes_tbl_rbr,
-+		qmp_configure(serdes, cfg->serdes_tbl_rbr,
- 				cfg->serdes_tbl_rbr_num);
- 		break;
- 	case 2700:
--		qmp_combo_configure(serdes, cfg->serdes_tbl_hbr,
-+		qmp_configure(serdes, cfg->serdes_tbl_hbr,
- 				cfg->serdes_tbl_hbr_num);
- 		break;
- 	case 5400:
--		qmp_combo_configure(serdes, cfg->serdes_tbl_hbr2,
-+		qmp_configure(serdes, cfg->serdes_tbl_hbr2,
- 				cfg->serdes_tbl_hbr2_num);
- 		break;
- 	case 8100:
--		qmp_combo_configure(serdes, cfg->serdes_tbl_hbr3,
-+		qmp_configure(serdes, cfg->serdes_tbl_hbr3,
- 				cfg->serdes_tbl_hbr3_num);
- 		break;
- 	default:
-@@ -2135,7 +2087,7 @@ static void qmp_v3_dp_aux_init(struct qmp_combo *qmp)
- 	       qmp->dp_dp_phy + QSERDES_V3_DP_PHY_AUX_INTERRUPT_MASK);
- }
- 
--static int qmp_combo_configure_dp_swing(struct qmp_combo *qmp)
-+static int qmp_configure_dp_swing(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -2177,7 +2129,7 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 bias_en, drvr_en;
- 
--	if (qmp_combo_configure_dp_swing(qmp) < 0)
-+	if (qmp_configure_dp_swing(qmp) < 0)
- 		return;
- 
- 	if (dp_opts->lanes == 1) {
-@@ -2194,7 +2146,7 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
- 	writel(bias_en, qmp->dp_tx2 + QSERDES_V3_TX_TRANSCEIVER_BIAS_EN);
- }
- 
--static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
-+static bool qmp_configure_dp_mode(struct qmp_combo *qmp)
- {
- 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-@@ -2218,7 +2170,7 @@ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
- 	return reverse;
- }
- 
--static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
-+static int qmp_configure_dp_clocks(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 phy_vco_div;
-@@ -2259,12 +2211,12 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
- 	u32 status;
- 	int ret;
- 
--	qmp_combo_configure_dp_mode(qmp);
-+	qmp_configure_dp_mode(qmp);
- 
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V3_DP_PHY_TX0_TX1_LANE_CTL);
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V3_DP_PHY_TX2_TX3_LANE_CTL);
- 
--	ret = qmp_combo_configure_dp_clocks(qmp);
-+	ret = qmp_configure_dp_clocks(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -2361,7 +2313,7 @@ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp)
- 	writel(0x20, qmp->dp_tx + cfg->regs[QPHY_TX_TX_EMP_POST1_LVL]);
- 	writel(0x20, qmp->dp_tx2 + cfg->regs[QPHY_TX_TX_EMP_POST1_LVL]);
- 
--	qmp_combo_configure_dp_swing(qmp);
-+	qmp_configure_dp_swing(qmp);
- }
- 
- static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
-@@ -2372,7 +2324,7 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
- 
- 	writel(0x0f, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_CFG_1);
- 
--	qmp_combo_configure_dp_mode(qmp);
-+	qmp_configure_dp_mode(qmp);
- 
- 	writel(0x13, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG1);
- 	writel(0xa4, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG2);
-@@ -2380,7 +2332,7 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_TX0_TX1_LANE_CTL);
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_TX2_TX3_LANE_CTL);
- 
--	ret = qmp_combo_configure_dp_clocks(qmp);
-+	ret = qmp_configure_dp_clocks(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -2681,8 +2633,8 @@ static int qmp_combo_dp_power_on(struct phy *phy)
- 
- 	qmp_combo_dp_serdes_init(qmp);
- 
--	qmp_combo_configure_lane(tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
--	qmp_combo_configure_lane(tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
-+	qmp_configure_lane(tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
-+	qmp_configure_lane(tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
- 
- 	/* Configure special DP tx tunings */
- 	cfg->configure_dp_tx(qmp);
-@@ -2724,7 +2676,7 @@ static int qmp_combo_usb_power_on(struct phy *phy)
- 	unsigned int val;
- 	int ret;
- 
--	qmp_combo_configure(serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
-+	qmp_configure(serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
-@@ -2733,16 +2685,16 @@ static int qmp_combo_usb_power_on(struct phy *phy)
+ 	regmap_write(regmap, QSERDES_PCS_LINE_RESET_TIME, 0x0C);
+ 	regmap_write(regmap, QSERDES_PCS_TX_LARGE_AMP_DRV_LVL, 0x1F);
+@@ -313,7 +244,7 @@ static int qcom_dwmac_sgmii_phy_calibrate(struct phy *phy)
  	}
  
- 	/* Tx, Rx, and PCS configurations */
--	qmp_combo_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_combo_configure_lane(tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 
--	qmp_combo_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	qmp_combo_configure_lane(rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure_lane(rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
--	qmp_combo_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (pcs_usb)
--		qmp_combo_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
-+		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(10, 20);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-new file mode 100644
-index 000000000000..45cc5b795f58
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-@@ -0,0 +1,60 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_COMMON_H_
-+#define QCOM_PHY_QMP_COMMON_H_
-+
-+struct qmp_phy_init_tbl {
-+	unsigned int offset;
-+	unsigned int val;
-+	/*
-+	 * mask of lanes for which this register is written
-+	 * for cases when second lane needs different values
-+	 */
-+	u8 lane_mask;
-+};
-+
-+#define QMP_PHY_INIT_CFG(o, v)		\
-+	{				\
-+		.offset = o,		\
-+		.val = v,		\
-+		.lane_mask = 0xff,	\
-+	}
-+
-+#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
-+	{				\
-+		.offset = o,		\
-+		.val = v,		\
-+		.lane_mask = l,		\
-+	}
-+
-+static inline void qmp_configure_lane(void __iomem *base,
-+					   const struct qmp_phy_init_tbl tbl[],
-+					   int num,
-+					   u8 lane_mask)
-+{
-+	int i;
-+	const struct qmp_phy_init_tbl *t = tbl;
-+
-+	if (!t)
-+		return;
-+
-+	for (i = 0; i < num; i++, t++) {
-+		if (!(t->lane_mask & lane_mask))
-+			continue;
-+
-+		writel(t->val, base + t->offset);
-+	}
-+}
-+
-+static inline void qmp_configure(void __iomem *base,
-+				      const struct qmp_phy_init_tbl tbl[],
-+				      int num)
-+{
-+	qmp_configure_lane(base, tbl, num, 0xff);
-+}
-+
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index ab61a9c73b18..07c6f20a49d4 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -19,6 +19,8 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
-+#include "phy-qcom-qmp-common.h"
-+
- #include "phy-qcom-qmp.h"
- 
- /* QPHY_SW_RESET bit */
-@@ -39,30 +41,6 @@
- #define POWER_DOWN_DELAY_US_MIN			10
- #define POWER_DOWN_DELAY_US_MAX			20
- 
--struct qmp_phy_init_tbl {
--	unsigned int offset;
--	unsigned int val;
--	/*
--	 * mask of lanes for which this register is written
--	 * for cases when second lane needs different values
--	 */
--	u8 lane_mask;
--};
--
--#define QMP_PHY_INIT_CFG(o, v)		\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = 0xff,	\
--	}
--
--#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = l,		\
--	}
--
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
- 	/* Common block control registers */
-@@ -307,32 +285,6 @@ static const struct qmp_phy_cfg msm8996_pciephy_cfg = {
- 	.regs			= pciephy_regs_layout,
- };
- 
--static void qmp_pcie_msm8996_configure_lane(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num,
--					u8 lane_mask)
--{
--	int i;
--	const struct qmp_phy_init_tbl *t = tbl;
--
--	if (!t)
--		return;
--
--	for (i = 0; i < num; i++, t++) {
--		if (!(t->lane_mask & lane_mask))
--			continue;
--
--		writel(t->val, base + t->offset);
--	}
--}
--
--static void qmp_pcie_msm8996_configure(void __iomem *base,
--				   const struct qmp_phy_init_tbl tbl[],
--				   int num)
--{
--	qmp_pcie_msm8996_configure_lane(base, tbl, num, 0xff);
--}
--
- static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
- {
- 	struct qcom_qmp *qmp = qphy->qmp;
-@@ -344,7 +296,7 @@ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
- 	unsigned int val;
- 	int ret;
- 
--	qmp_pcie_msm8996_configure(serdes, serdes_tbl, serdes_tbl_num);
-+	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
- 
- 	qphy_clrbits(serdes, cfg->regs[QPHY_COM_SW_RESET], SW_RESET);
- 	qphy_setbits(serdes, cfg->regs[QPHY_COM_START_CONTROL],
-@@ -487,9 +439,9 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
+ 	if (qcom_dwmac_sgmii_phy_poll_status(data->regmap,
+-					     QSERDES_COM_C_READY_STATUS,
++					     QSERDES_QMP_PLL + QSERDES_V5_COM_C_READY_STATUS,
+ 					     QSERDES_COM_C_READY)) {
+ 		dev_err(dev, "QSERDES_COM_C_READY_STATUS timed-out");
+ 		return -ETIMEDOUT;
+@@ -334,7 +265,7 @@ static int qcom_dwmac_sgmii_phy_calibrate(struct phy *phy)
  	}
  
- 	/* Tx, Rx, and PCS configurations */
--	qmp_pcie_msm8996_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_pcie_msm8996_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	qmp_pcie_msm8996_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	/*
- 	 * Pull out PHY from POWER DOWN state.
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 2af7115ef968..6be6c554e0b3 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -22,6 +22,8 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
-+#include "phy-qcom-qmp-common.h"
-+
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-misc-v3.h"
- #include "phy-qcom-qmp-pcs-pcie-v4.h"
-@@ -46,30 +48,6 @@
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
--struct qmp_phy_init_tbl {
--	unsigned int offset;
--	unsigned int val;
--	/*
--	 * mask of lanes for which this register is written
--	 * for cases when second lane needs different values
--	 */
--	u8 lane_mask;
--};
--
--#define QMP_PHY_INIT_CFG(o, v)		\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = 0xff,	\
--	}
--
--#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = l,		\
--	}
--
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
- 	/* PCS registers */
-@@ -3183,32 +3161,6 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x4_pciephy_cfg = {
- 	.phy_status		= PHYSTATUS_4_20,
- };
- 
--static void qmp_pcie_configure_lane(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num,
--					u8 lane_mask)
--{
--	int i;
--	const struct qmp_phy_init_tbl *t = tbl;
--
--	if (!t)
--		return;
--
--	for (i = 0; i < num; i++, t++) {
--		if (!(t->lane_mask & lane_mask))
--			continue;
--
--		writel(t->val, base + t->offset);
--	}
--}
--
--static void qmp_pcie_configure(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num)
--{
--	qmp_pcie_configure_lane(base, tbl, num, 0xff);
--}
--
- static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -3220,11 +3172,11 @@ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_
- 	tx4 = qmp->port_b + offs->tx2;
- 	rx4 = qmp->port_b + offs->rx2;
- 
--	qmp_pcie_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
--	qmp_pcie_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
- 
--	qmp_pcie_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
--	qmp_pcie_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
-+	qmp_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
-+	qmp_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
- }
- 
- static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
-@@ -3242,25 +3194,25 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 	if (!tbls)
- 		return;
- 
--	qmp_pcie_configure(serdes, tbls->serdes, tbls->serdes_num);
-+	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
- 
--	qmp_pcie_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
--	qmp_pcie_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
- 
- 	if (cfg->lanes >= 2) {
--		qmp_pcie_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
--		qmp_pcie_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
-+		qmp_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
-+		qmp_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
- 	}
- 
--	qmp_pcie_configure(pcs, tbls->pcs, tbls->pcs_num);
--	qmp_pcie_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-+	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
-+	qmp_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
- 
- 	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
--		qmp_pcie_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
-+		qmp_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
- 		qmp_pcie_init_port_b(qmp, tbls);
- 	}
- 
--	qmp_pcie_configure(ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
-+	qmp_configure(ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
- }
- 
- static int qmp_pcie_init(struct phy *phy)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 3c2e6255e26f..ce9c55f7d5f5 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -20,6 +20,9 @@
- #include <linux/slab.h>
- 
- #include <ufs/unipro.h>
-+
-+#include "phy-qcom-qmp-common.h"
-+
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-ufs-v2.h"
- #include "phy-qcom-qmp-pcs-ufs-v3.h"
-@@ -41,30 +44,6 @@
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
--struct qmp_phy_init_tbl {
--	unsigned int offset;
--	unsigned int val;
--	/*
--	 * mask of lanes for which this register is written
--	 * for cases when second lane needs different values
--	 */
--	u8 lane_mask;
--};
--
--#define QMP_PHY_INIT_CFG(o, v)		\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = 0xff,	\
--	}
--
--#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = l,		\
--	}
--
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
- 	/* PCS registers */
-@@ -1396,37 +1375,11 @@ static const struct qmp_phy_cfg sm8650_ufsphy_cfg = {
- 	.regs			= ufsphy_v6_regs_layout,
- };
- 
--static void qmp_ufs_configure_lane(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num,
--					u8 lane_mask)
--{
--	int i;
--	const struct qmp_phy_init_tbl *t = tbl;
--
--	if (!t)
--		return;
--
--	for (i = 0; i < num; i++, t++) {
--		if (!(t->lane_mask & lane_mask))
--			continue;
--
--		writel(t->val, base + t->offset);
--	}
--}
--
--static void qmp_ufs_configure(void __iomem *base,
--				   const struct qmp_phy_init_tbl tbl[],
--				   int num)
--{
--	qmp_ufs_configure_lane(base, tbl, num, 0xff);
--}
--
- static void qmp_ufs_serdes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
- {
- 	void __iomem *serdes = qmp->serdes;
- 
--	qmp_ufs_configure(serdes, tbls->serdes, tbls->serdes_num);
-+	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
- }
- 
- static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
-@@ -1435,12 +1388,12 @@ static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbl
- 	void __iomem *tx = qmp->tx;
- 	void __iomem *rx = qmp->rx;
- 
--	qmp_ufs_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
--	qmp_ufs_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
- 
- 	if (cfg->lanes >= 2) {
--		qmp_ufs_configure_lane(qmp->tx2, tbls->tx, tbls->tx_num, 2);
--		qmp_ufs_configure_lane(qmp->rx2, tbls->rx, tbls->rx_num, 2);
-+		qmp_configure_lane(qmp->tx2, tbls->tx, tbls->tx_num, 2);
-+		qmp_configure_lane(qmp->rx2, tbls->rx, tbls->rx_num, 2);
- 	}
- }
- 
-@@ -1448,7 +1401,7 @@ static void qmp_ufs_pcs_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls
- {
- 	void __iomem *pcs = qmp->pcs;
- 
--	qmp_ufs_configure(pcs, tbls->pcs, tbls->pcs_num);
-+	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
- }
- 
- static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 243cc2b9a0fb..e481f76b8ed8 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -19,6 +19,8 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
-+#include "phy-qcom-qmp-common.h"
-+
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-misc-v3.h"
- #include "phy-qcom-qmp-pcs-misc-v4.h"
-@@ -64,30 +66,6 @@
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
--struct qmp_phy_init_tbl {
--	unsigned int offset;
--	unsigned int val;
--	/*
--	 * mask of lanes for which this register is written
--	 * for cases when second lane needs different values
--	 */
--	u8 lane_mask;
--};
--
--#define QMP_PHY_INIT_CFG(o, v)		\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = 0xff,	\
--	}
--
--#define QMP_PHY_INIT_CFG_LANE(o, v, l)	\
--	{				\
--		.offset = o,		\
--		.val = v,		\
--		.lane_mask = l,		\
--	}
--
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
- 	/* PCS registers */
-@@ -1920,32 +1898,6 @@ static const struct qmp_phy_cfg x1e80100_usb3_uniphy_cfg = {
- 	.regs			= qmp_v7_usb3phy_regs_layout,
- };
- 
--static void qmp_usb_configure_lane(void __iomem *base,
--					const struct qmp_phy_init_tbl tbl[],
--					int num,
--					u8 lane_mask)
--{
--	int i;
--	const struct qmp_phy_init_tbl *t = tbl;
--
--	if (!t)
--		return;
--
--	for (i = 0; i < num; i++, t++) {
--		if (!(t->lane_mask & lane_mask))
--			continue;
--
--		writel(t->val, base + t->offset);
--	}
--}
--
--static void qmp_usb_configure(void __iomem *base,
--				   const struct qmp_phy_init_tbl tbl[],
--				   int num)
--{
--	qmp_usb_configure_lane(base, tbl, num, 0xff);
--}
--
- static int qmp_usb_serdes_init(struct qmp_usb *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -1953,7 +1905,7 @@ static int qmp_usb_serdes_init(struct qmp_usb *qmp)
- 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
- 
--	qmp_usb_configure(serdes, serdes_tbl, serdes_tbl_num);
-+	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
- 
- 	return 0;
- }
-@@ -2034,18 +1986,18 @@ static int qmp_usb_power_on(struct phy *phy)
- 	}
- 
- 	/* Tx, Rx, and PCS configurations */
--	qmp_usb_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_usb_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
- 	if (cfg->lanes >= 2) {
--		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--		qmp_usb_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+		qmp_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+		qmp_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 	}
- 
--	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (pcs_usb)
--		qmp_usb_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
-+		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(10, 20);
+ 	if (qcom_dwmac_sgmii_phy_poll_status(data->regmap,
+-					     QSERDES_COM_CMN_STATUS,
++					     QSERDES_QMP_PLL + QSERDES_V5_COM_CMN_STATUS,
+ 					     QSERDES_COM_C_PLL_LOCKED)) {
+ 		dev_err(dev, "PLL Lock Status timed-out");
+ 		return -ETIMEDOUT;
 
 -- 
 2.39.2
