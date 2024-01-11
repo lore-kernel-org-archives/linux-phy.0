@@ -4,70 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 001FBC4707B
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jan 2024 12:09:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03D4CC47077
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jan 2024 14:13:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MbGERbMQ5RqGk8M5mMDBmMW1I9MCHXy40RMkZbh/Nbo=; b=BsdKYws+EgSNUh
-	3EnhgsPO8aDHQIcmsa9+VhlvZKCh7OttuiFkTYWEGtd7Kl3VV8Xo+aAaVKoBCe3EtMVNjkxnG+6go
-	Pryd9vLW9Fpk6191T1dtm+0NjxnFgy6qybjP3fP2iR4Gq+pA38MUsuy2X1gMHM9lCtsbvtqYbMN0A
-	AkH/y6Byjy8dZS6a/X1YxdLsysNCcV6epcK/wxsHH33fvFYxtYWUJ5TiuajWD09BXSiZ0OXF9m4p2
-	PJ+MCKIMfE7n3O+bUbWt1W8oQNKiTMjXRGGkWj1vu5nzN2VL0pKWDBESs99b1cQhhGa2aIr5bbNIn
-	ylLRTz79hsYWEGdtxlZw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=khsbJ00JPE5PKn3ymZrlSfBeVX9ERA2kze10EI9Pnpc=; b=e55MTqrGgjwOlL
+	UX9LC9qzU6CQ4uxnubz5Euu5SY1+ZTte6M8mCfTWrNE+B70MSXP/6Rq569Kj1wwx9IwQhS82lvEkq
+	7PRNG5wRnMg29GuNbbDaaM2dNlq7Tz8t1kv1bw6E1vv+RIrCUv25nq9vUz8Q+TQSiG1iqhautjE2D
+	vrKzYgEFcMozYFOpMbFFQalTpF0rY2uzeEL6ZoOAzaa+1ny9PQk9yu3zYrybxGaR05f5nbw0Hl1Pm
+	MA+pJlTnlPXDZW6aty8BbMm97qHcdJNJZOc5on+Q+EgGuIXlBeLtRXgXCAldhbBqRhhhya0Adh53f
+	LMheUYAgpWWm0P41Lbyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNts6-00HZm6-22;
-	Thu, 11 Jan 2024 12:09:18 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+	id 1rNvoe-000G60-1q;
+	Thu, 11 Jan 2024 14:13:52 +0000
+Received: from mta-65-226.siemens.flowmailer.net ([185.136.65.226])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNts3-00HZjK-0T;
-	Thu, 11 Jan 2024 12:09:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1704974950;
-	bh=eZahT2rDuCpxGaxjQ0g1JBIf/O3DF9bTmSWTwmZEQco=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=WwFaddtkJJu7jPZYnHCPG/N6e4prkzO+Gu9Qw9P81aKmJQxyuQCYIXjImX3YoGb1n
-	 HP8wobgYkBR95NKbpkw18krJRqRwGBpUo1uL2+j2MyUY4cuMUvQdPUEKKy/wWAksLH
-	 0K/rfQU7ifpiAcY0wyz1pYY6n2M8CgvYOMgIzaIpS0vjPR2B6REitQwwcpkAaOecsk
-	 Q9KgW3ocGcqqiufREDJq9p9ks37nX/ThwWupsLHS7x/giZnmOZiMwiSMxMRpMOBjvi
-	 V6MgfIs1T4kciPxkPgdwdDQoQjbgqvCe5w7RxrN3Bv/YTBn0KQiVCRu14tuBhbUX00
-	 AliBy58fCgVEw==
-Received: from [100.113.186.2] (cola.collaboradmins.com [195.201.22.229])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id C42ED3781FCD;
-	Thu, 11 Jan 2024 12:09:09 +0000 (UTC)
-Message-ID: <09de860e-224b-4ed5-a6f3-da4f336d2dd7@collabora.com>
-Date: Thu, 11 Jan 2024 13:09:09 +0100
+	id 1rNvob-000G5K-0V
+	for linux-phy@lists.infradead.org;
+	Thu, 11 Jan 2024 14:13:51 +0000
+Received: by mta-65-226.siemens.flowmailer.net with ESMTPSA id 202401111413413003138c90d27313a4
+        for <linux-phy@lists.infradead.org>;
+        Thu, 11 Jan 2024 15:13:41 +0100
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
+ d=siemens.com; i=diogo.ivo@siemens.com;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc;
+ bh=d8P5SF5niklck9uG6u8e0iLUYDzwhhYqU5LhoJl31Ws=;
+ b=iGT8QY7rW2ewIQSYYXQwZwhs3xejTEGZKgyOHU0CF2n0zQth5OiZS9aRsuVfNsV9wzViKh
+ ewJ+DYgDzwBgowFFoLnCeJ34qkh2YAkQtlbi3k4DkBNCe0GhxQ/Ukb+8voumQC5AbJ5j7j+V
+ BlAc7SvPkzvRwFXp9pRVJBTWvVBmg=;
+From: Diogo Ivo <diogo.ivo@siemens.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	linux-phy@lists.infradead.org,
+	tjoseph@cadence.com,
+	linux-pci@vger.kernel.org,
+	ylal@codeaurora.org,
+	gregkh@linuxfoundation.org,
+	regressions@lists.linux.dev
+Cc: diogo.ivo@siemens.com,
+	jan.kiszka@siemens.com
+Subject: [REGRESSION] Keystone PCI driver probing and SerDes PLL timeout
+Date: Thu, 11 Jan 2024 14:13:30 +0000
+Message-ID: <20240111141331.3715265-1-diogo.ivo@siemens.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 2/2] phy: mtk-mipi-csi: add driver for CSI phy
-Content-Language: en-US
-To: Julien Stephan <jstephan@baylibre.com>
-Cc: Phi-bang Nguyen <pnguyen@baylibre.com>, Louis Kuo
- <louis.kuo@mediatek.com>, Andy Hsieh <andy.hsieh@mediatek.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>
-References: <20240111101738.468916-1-jstephan@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20240111101738.468916-1-jstephan@baylibre.com>
+X-Flowmailer-Platform: Siemens
+Feedback-ID: 519:519-1320519:519-21489:flowmailer
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240111_040915_316369_CFBAD974 
-X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-CacheID: sfid-20240111_061349_940882_355061B7 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,32 +69,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 11/01/24 11:17, Julien Stephan ha scritto:
-> From: Phi-bang Nguyen <pnguyen@baylibre.com>
-> 
-> This is a new driver that supports the MIPI CSI CD-PHY version 0.5
-> 
-> The number of PHYs depend on the SoC.
-> Each PHY can support D-PHY only or CD-PHY configuration.
-> The driver supports only D-PHY mode, so CD-PHY
-> compatible PHY are configured in D-PHY mode.
-> 
-> Signed-off-by: Louis Kuo <louis.kuo@mediatek.com>
-> Signed-off-by: Phi-bang Nguyen <pnguyen@baylibre.com>
-> [Julien Stephan: refactor code]
-> [Julien Stephan: simplify driver model: one instance per phy vs
-> one instance for all phys]
-> Co-developed-by: Julien Stephan <jstephan@baylibre.com>
-> Signed-off-by: Julien Stephan <jstephan@baylibre.com>
+Hello,
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+When testing the IOT2050 Advanced M.2 platform with Linux CIP 6.1
+we came across a breakage in the probing of the Keystone PCI driver
+(drivers/phy/ti/pci-keystone.c). This probing was working correctly
+in the previous version we were using, v5.10.
 
+In order to debug this we changed over to mainline Linux and bissecting
+lead us to find that commit e611f8cd8717 is the culprit, and with it applied
+we get the following messages:
 
+[   10.954597] phy-am654 910000.serdes: Failed to enable PLL
+[   10.960153] phy phy-910000.serdes.3: phy poweron failed --> -110
+[   10.967485] keystone-pcie 5500000.pcie: failed to enable phy
+[   10.973560] keystone-pcie: probe of 5500000.pcie failed with error -110
+
+This timeout is occuring in serdes_am654_enable_pll(), called from the 
+phy_ops .power_on() hook.
+
+Due to the nature of the error messages and the contents of the commit we
+believe that this is due to an unidentified race condition in the probing of
+the Keystone PCI driver when enabling the PHY PLLs, since changes in the
+workqueue the deferred probing runs on should not affect if probing works
+or not. To further support the existence of a race condition, commit
+86bfbb7ce4f6 (a scheduler commit) fixes probing, most likely unintentionally
+meaning that the problem may arise in the future again.
+
+One possible explanation is that there are pre-requisites for enabling the PLL
+that are not being met when e611f8cd8717 is applied; to see if this is the case
+help from people more familiar with the hardware details would be useful.
+
+As official support specifically for the IOT2050 Advanced M.2 platform was
+introduced in Linux v6.3 (so in the middle of the commits mentioned above)
+all of our testing was done with the latest mainline DeviceTree with [1]
+applied on top.
+
+This is being reported as a regression even though technically things are
+working with the current state of mainline since we believe the current fix
+to be an unintended by-product of other work.
+
+#regzbot introduced: e611f8cd8717
+
+[1]: https://lore.kernel.org/all/cover.1699087938.git.jan.kiszka@siemens.com/
 
 -- 
 linux-phy mailing list
