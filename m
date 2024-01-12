@@ -4,57 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A6BDC4706C
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jan 2024 11:47:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AF75C4706C
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jan 2024 12:51:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:
+	Cc:To:Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZSPwyXp3o2tKayhtWA2bhZEJsBqiXZ7kw/2hmQNMCEw=; b=23cw6zUOuIVdob
-	5wqCpCn2iOcIeEIJP8wbT4x1vd1GrzzTythP2TPYmMjAtoZqGoaRRNKj8Tqd9puNrvyaTQpN90lDu
-	aGls4zBJo32PGQTFVsbDWPFv1tbCzPoKXzybX6xDaRsH4GzfZ+zaEtOcSsu9jFHIywA0R7jFVWWvM
-	x6SpHi2YVdJeTVQfaPW02wWcEHk6HUV/yjpDJ6sbZIo3lZb4IDyrt5GPmGDTRC0XaZ3auFNsHEVIL
-	Hkceyv0nRIu4rv81mCkm61HHgqT++QUSrHPBYCyatu1UXbKjlKjm0QSqOv+vQAX0b7OxTlFOlsmhD
-	WEWjnicEWSl9WEoRFyWA==;
+	List-Owner; bh=RxqpBKSbdQyt/mZo4VTKguplwFkQXz0aB+6n+/VOYQE=; b=GfZL61HA5z5fVu
+	DbcH3KG5CX32iZSaSe7AZGDhONqf3vMfdrdNhdCQ34y7OUHb7aaDji6dJGgIERoRy2ZuYhgVDIASH
+	ImbmNpIQ5Ti5bfzzfUcVV6yhrhaLQXpbivf16WMjWJ3T2xbXLntzwhgjzqFZXlkWuAHHaZteHROlA
+	54/+OdmvdH5gysZ6qD8OoG9ZsApGwNL/+dytmnVIxZ/d5zlQ0SSzfgmVDg7lU1K/aAH4sKGp/ATF/
+	NMJYek+qxeHZwfdjHdInZ8gzoxjXe3ANtpZuQ8XyeRk0CBJCdM1RAd/dgziyxIcuio9p/Nod5zo6I
+	3n1pfjGPfYLWaX0F0h5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOG07-002dXc-3B;
-	Fri, 12 Jan 2024 11:47:03 +0000
-Received: from mta-64-227.siemens.flowmailer.net ([185.136.64.227])
+	id 1rOH0H-002rWf-2u;
+	Fri, 12 Jan 2024 12:51:17 +0000
+Received: from wp530.webpack.hosteurope.de ([80.237.130.52])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOG03-002dU7-2i
+	id 1rOH0E-002rW2-0v
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Jan 2024 11:47:02 +0000
-Received: by mta-64-227.siemens.flowmailer.net with ESMTPSA id 202401121146493a65397d26456c5f15
-        for <linux-phy@lists.infradead.org>;
-        Fri, 12 Jan 2024 12:46:49 +0100
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
- d=siemens.com; i=diogo.ivo@siemens.com;
- h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc:References:In-Reply-To;
- bh=jwFkMf/yFaZb1IFUb1fdxY2YROUvz1UsFSbX6ha3kc8=;
- b=DanPW/6rYHMehKg4uGRaMYFIzlcghVP/CP7dOuoVbcMmDlKf4hphSmBzQVTd08+naeXLOW
- EHAoxvv0EEA83dJifjG37hhJ3qTukTNumthFuF5lUAeWp3Jy4u1ZiUv6a9x09JBlzk8FKkmp
- /AHdsClrVbJL7Vx4iVIud2KaIG/lE=;
-Message-ID: <1cce86b1-b309-40e0-afff-45baeb013e1f@siemens.com>
-Date: Fri, 12 Jan 2024 11:46:46 +0000
+	Fri, 12 Jan 2024 12:51:16 +0000
+Received: from [2a02:8108:8980:2478:8cde:aa2c:f324:937e]; authenticated
+	by wp530.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
+	id 1rOH02-0000Pz-QE; Fri, 12 Jan 2024 13:51:02 +0100
+Message-ID: <0cae38cd-5d3d-4cb8-b5eb-680afd977e0d@leemhuis.info>
+Date: Fri, 12 Jan 2024 13:51:02 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [REGRESSION] Keystone PCI driver probing and SerDes PLL timeout
-Content-Language: en-US
-To: Greg KH <gregkh@linuxfoundation.org>
+Content-Language: en-US, de-DE
+To: Diogo Ivo <diogo.ivo@siemens.com>, Greg KH <gregkh@linuxfoundation.org>
 Cc: vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
  tjoseph@cadence.com, linux-pci@vger.kernel.org, ylal@codeaurora.org,
- regressions@lists.linux.dev, jan.kiszka@siemens.com, diogo.ivo@siemens.com
+ regressions@lists.linux.dev, jan.kiszka@siemens.com
 References: <20240111141331.3715265-1-diogo.ivo@siemens.com>
  <2024011246-corned-disregard-7123@gregkh>
-From: Diogo Ivo <diogo.ivo@siemens.com>
-In-Reply-To: <2024011246-corned-disregard-7123@gregkh>
-X-Flowmailer-Platform: Siemens
-Feedback-ID: 519:519-1320519:519-21489:flowmailer
+ <1cce86b1-b309-40e0-afff-45baeb013e1f@siemens.com>
+From: "Linux regression tracking (Thorsten Leemhuis)"
+ <regressions@leemhuis.info>
+In-Reply-To: <1cce86b1-b309-40e0-afff-45baeb013e1f@siemens.com>
+X-bounce-key: webpack.hosteurope.de;regressions@leemhuis.info;1705063874;240d6cb7;
+X-HE-SMSGID: 1rOH02-0000Pz-QE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_034700_596124_AE546B9B 
-X-CRM114-Status: GOOD (  26.91  )
+X-CRM114-CacheID: sfid-20240112_045114_485213_B32B3537 
+X-CRM114-Status: GOOD (  24.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,87 +62,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Reply-To: Linux regressions mailing list <regressions@lists.linux.dev>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 1/12/24 07:57, Greg KH wrote:
-> On Thu, Jan 11, 2024 at 02:13:30PM +0000, Diogo Ivo wrote:
->> Hello,
->>
->> When testing the IOT2050 Advanced M.2 platform with Linux CIP 6.1
->> we came across a breakage in the probing of the Keystone PCI driver
->> (drivers/phy/ti/pci-keystone.c). This probing was working correctly
->> in the previous version we were using, v5.10.
->>
->> In order to debug this we changed over to mainline Linux and bissecting
->> lead us to find that commit e611f8cd8717 is the culprit, and with it applied
->> we get the following messages:
->>
->> [   10.954597] phy-am654 910000.serdes: Failed to enable PLL
->> [   10.960153] phy phy-910000.serdes.3: phy poweron failed --> -110
->> [   10.967485] keystone-pcie 5500000.pcie: failed to enable phy
->> [   10.973560] keystone-pcie: probe of 5500000.pcie failed with error -110
->>
->> This timeout is occuring in serdes_am654_enable_pll(), called from the
->> phy_ops .power_on() hook.
->>
->> Due to the nature of the error messages and the contents of the commit we
->> believe that this is due to an unidentified race condition in the probing of
->> the Keystone PCI driver when enabling the PHY PLLs, since changes in the
->> workqueue the deferred probing runs on should not affect if probing works
->> or not. To further support the existence of a race condition, commit
->> 86bfbb7ce4f6 (a scheduler commit) fixes probing, most likely unintentionally
->> meaning that the problem may arise in the future again.
->>
->> One possible explanation is that there are pre-requisites for enabling the PLL
->> that are not being met when e611f8cd8717 is applied; to see if this is the case
->> help from people more familiar with the hardware details would be useful.
->>
->> As official support specifically for the IOT2050 Advanced M.2 platform was
->> introduced in Linux v6.3 (so in the middle of the commits mentioned above)
->> all of our testing was done with the latest mainline DeviceTree with [1]
->> applied on top.
->>
->> This is being reported as a regression even though technically things are
->> working with the current state of mainline since we believe the current fix
->> to be an unintended by-product of other work.
->>
->> #regzbot introduced: e611f8cd8717
-> A "regression" for a commit that was in 5.13, i.e. almost 2 years ago,
-> is a bit tough, and not something I would consider really a "regression"
-> as it is core code that everyone runs.  Given you point at scheduler
-> changes also fixing the issue, this seems like a hint as to what is
-> wrong with your driver/platform, but is not the root cause of it and
-> needs to be resolved.  Please look at fixing it in your drivers?  Are
-> they all in Linus's tree?
->
-> thanks,
->
-> greg k-h
-Hello,
-
-I see the point that this code has been living in the kernel for a
-long time now and that it becomes more difficult to justify it as
-a regression; I reported it as such based on the supposition that
-the current fix is not the proper one and that technically this
-support was broken between the identified commits.
-
-If this situation is incompatible with a regression report then it
-can be dropped as one and we keep it is as a bug report for which
-we are looking for input from the community.
-
-I agree that this needs to be fixed in the driver since all other
-drivers are working fine with e611f8cd8717, and yes, all of the
-drivers in question are in mainline, where we performed the bissection.
-
-Thank you,
-
-Diogo Ivo
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTIuMDEuMjQgMTI6NDYsIERpb2dvIEl2byB3cm90ZToKPiBPbiAxLzEyLzI0IDA3OjU3LCBH
+cmVnIEtIIHdyb3RlOgo+PiBPbiBUaHUsIEphbiAxMSwgMjAyNCBhdCAwMjoxMzozMFBNICswMDAw
+LCBEaW9nbyBJdm8gd3JvdGU6Cj4+Pgo+Pj4gV2hlbiB0ZXN0aW5nIHRoZSBJT1QyMDUwIEFkdmFu
+Y2VkIE0uMiBwbGF0Zm9ybSB3aXRoIExpbnV4IENJUCA2LjEKPj4+IHdlIGNhbWUgYWNyb3NzIGEg
+YnJlYWthZ2UgaW4gdGhlIHByb2Jpbmcgb2YgdGhlIEtleXN0b25lIFBDSSBkcml2ZXIKPj4+IChk
+cml2ZXJzL3BoeS90aS9wY2kta2V5c3RvbmUuYykuIFRoaXMgcHJvYmluZyB3YXMgd29ya2luZyBj
+b3JyZWN0bHkKPj4+IGluIHRoZSBwcmV2aW91cyB2ZXJzaW9uIHdlIHdlcmUgdXNpbmcsIHY1LjEw
+Lgo+Pj4KPj4+IEluIG9yZGVyIHRvIGRlYnVnIHRoaXMgd2UgY2hhbmdlZCBvdmVyIHRvIG1haW5s
+aW5lIExpbnV4IGFuZCBiaXNzZWN0aW5nCj4+PiBsZWFkIHVzIHRvIGZpbmQgdGhhdCBjb21taXQg
+ZTYxMWY4Y2Q4NzE3IGlzIHRoZSBjdWxwcml0LCBhbmQgd2l0aCBpdAo+Pj4gYXBwbGllZAo+Pj4g
+d2UgZ2V0IHRoZSBmb2xsb3dpbmcgbWVzc2FnZXM6Cj4+Pgo+Pj4gW8KgwqAgMTAuOTU0NTk3XSBw
+aHktYW02NTQgOTEwMDAwLnNlcmRlczogRmFpbGVkIHRvIGVuYWJsZSBQTEwKPj4+IFvCoMKgIDEw
+Ljk2MDE1M10gcGh5IHBoeS05MTAwMDAuc2VyZGVzLjM6IHBoeSBwb3dlcm9uIGZhaWxlZCAtLT4g
+LTExMAo+Pj4gW8KgwqAgMTAuOTY3NDg1XSBrZXlzdG9uZS1wY2llIDU1MDAwMDAucGNpZTogZmFp
+bGVkIHRvIGVuYWJsZSBwaHkKPj4+IFvCoMKgIDEwLjk3MzU2MF0ga2V5c3RvbmUtcGNpZTogcHJv
+YmUgb2YgNTUwMDAwMC5wY2llIGZhaWxlZCB3aXRoIGVycm9yCj4+PiAtMTEwCj4+Pgo+Pj4gVGhp
+cyB0aW1lb3V0IGlzIG9jY3VyaW5nIGluIHNlcmRlc19hbTY1NF9lbmFibGVfcGxsKCksIGNhbGxl
+ZCBmcm9tIHRoZQo+Pj4gcGh5X29wcyAucG93ZXJfb24oKSBob29rLgo+Pj4KPj4+IER1ZSB0byB0
+aGUgbmF0dXJlIG9mIHRoZSBlcnJvciBtZXNzYWdlcyBhbmQgdGhlIGNvbnRlbnRzIG9mIHRoZQo+
+Pj4gY29tbWl0IHdlCj4+PiBiZWxpZXZlIHRoYXQgdGhpcyBpcyBkdWUgdG8gYW4gdW5pZGVudGlm
+aWVkIHJhY2UgY29uZGl0aW9uIGluIHRoZQo+Pj4gcHJvYmluZyBvZgo+Pj4gdGhlIEtleXN0b25l
+IFBDSSBkcml2ZXIgd2hlbiBlbmFibGluZyB0aGUgUEhZIFBMTHMsIHNpbmNlIGNoYW5nZXMgaW4g
+dGhlCj4+PiB3b3JrcXVldWUgdGhlIGRlZmVycmVkIHByb2JpbmcgcnVucyBvbiBzaG91bGQgbm90
+IGFmZmVjdCBpZiBwcm9iaW5nCj4+PiB3b3Jrcwo+Pj4gb3Igbm90LiBUbyBmdXJ0aGVyIHN1cHBv
+cnQgdGhlIGV4aXN0ZW5jZSBvZiBhIHJhY2UgY29uZGl0aW9uLCBjb21taXQKPj4+IDg2YmZiYjdj
+ZTRmNiAoYSBzY2hlZHVsZXIgY29tbWl0KSBmaXhlcyBwcm9iaW5nLCBtb3N0IGxpa2VseQo+Pj4g
+dW5pbnRlbnRpb25hbGx5Cj4+PiBtZWFuaW5nIHRoYXQgdGhlIHByb2JsZW0gbWF5IGFyaXNlIGlu
+IHRoZSBmdXR1cmUgYWdhaW4uCj4+Pgo+Pj4gT25lIHBvc3NpYmxlIGV4cGxhbmF0aW9uIGlzIHRo
+YXQgdGhlcmUgYXJlIHByZS1yZXF1aXNpdGVzIGZvcgo+Pj4gZW5hYmxpbmcgdGhlIFBMTAo+Pj4g
+dGhhdCBhcmUgbm90IGJlaW5nIG1ldCB3aGVuIGU2MTFmOGNkODcxNyBpcyBhcHBsaWVkOyB0byBz
+ZWUgaWYgdGhpcwo+Pj4gaXMgdGhlIGNhc2UKPj4+IGhlbHAgZnJvbSBwZW9wbGUgbW9yZSBmYW1p
+bGlhciB3aXRoIHRoZSBoYXJkd2FyZSBkZXRhaWxzIHdvdWxkIGJlCj4+PiB1c2VmdWwuCj4+Pgo+
+Pj4gQXMgb2ZmaWNpYWwgc3VwcG9ydCBzcGVjaWZpY2FsbHkgZm9yIHRoZSBJT1QyMDUwIEFkdmFu
+Y2VkIE0uMgo+Pj4gcGxhdGZvcm0gd2FzCj4+PiBpbnRyb2R1Y2VkIGluIExpbnV4IHY2LjMgKHNv
+IGluIHRoZSBtaWRkbGUgb2YgdGhlIGNvbW1pdHMgbWVudGlvbmVkCj4+PiBhYm92ZSkKPj4+IGFs
+bCBvZiBvdXIgdGVzdGluZyB3YXMgZG9uZSB3aXRoIHRoZSBsYXRlc3QgbWFpbmxpbmUgRGV2aWNl
+VHJlZSB3aXRoIFsxXQo+Pj4gYXBwbGllZCBvbiB0b3AuCj4+Pgo+Pj4gVGhpcyBpcyBiZWluZyBy
+ZXBvcnRlZCBhcyBhIHJlZ3Jlc3Npb24gZXZlbiB0aG91Z2ggdGVjaG5pY2FsbHkgdGhpbmdzCj4+
+PiBhcmUKPj4+IHdvcmtpbmcgd2l0aCB0aGUgY3VycmVudCBzdGF0ZSBvZiBtYWlubGluZSBzaW5j
+ZSB3ZSBiZWxpZXZlIHRoZQo+Pj4gY3VycmVudCBmaXgKPj4+IHRvIGJlIGFuIHVuaW50ZW5kZWQg
+YnktcHJvZHVjdCBvZiBvdGhlciB3b3JrLgo+Pj4KPj4+ICNyZWd6Ym90IGludHJvZHVjZWQ6IGU2
+MTFmOGNkODcxNwo+PiBBICJyZWdyZXNzaW9uIiBmb3IgYSBjb21taXQgdGhhdCB3YXMgaW4gNS4x
+MywgaS5lLiBhbG1vc3QgMiB5ZWFycyBhZ28sCj4+IGlzIGEgYml0IHRvdWdoLCBhbmQgbm90IHNv
+bWV0aGluZyBJIHdvdWxkIGNvbnNpZGVyIHJlYWxseSBhICJyZWdyZXNzaW9uIgo+PiBhcyBpdCBp
+cyBjb3JlIGNvZGUgdGhhdCBldmVyeW9uZSBydW5zLgoKSW4gY2FzZSBhbnlvbmUgY2FyZXM6IEkn
+ZCBjYWxsIGl0IGEgcmVncmVzc2lvbiwgYnV0IG5vdCBvbmUgd2hlcmUgdGhlCiJubyByZWdyZXNz
+aW9ucyIgcnVsZSBhcHBsaWVzLiBQcmltYXJpbHkgYmVjYXVzZSB0aGUgcmVncmVzc2lvbiBkb2Vz
+IG5vdAogaGFwcGVuIGFueW1vcmUgaW4gbWFpbmxpbmUgKGV2ZW4gaWYgdGhhdCB3YXMgYnkgY2hh
+bmNlKS4gRnVydGhlcm1vcmUgSQp0aGluayBMaW51cyBvbmNlIHNhaWQgdGhhdCByZWdyZXNzaW9u
+cyBiZWNvbWUganVzdCBidWdzIHdoZW4gdGhleSBhcmUKcmVwb3J0ZWQgb25seSBhZnRlciBxdWl0
+ZSBzb21lIHRpbWUuIE5vdCBzdXJlIGlmIHRoYXQgaXMgdGhlIGNhc2UgaGVyZSwKYnV0IHdoYXRl
+dmVyLCBkdWUgdG8gdGhlIHByZXZpb3VzIHBvaW50IGRpc2N1c3NpbmcgdGhpcyBpcyBtb290LiBU
+aGF0J3MKd2h5IEknbGwgZHJvcCBpdCBmcm9tIHRoZSB0cmFja2luZzoKCiNyZWd6Ym90IGluY29u
+Y2x1c2l2ZTogZml4ZWQgaW4gbWFpbmxpbmUgKG1heWJlIGFjY2lkZW50YWxseSksIGJ1dCBub3QK
+aW4gc3RhYmxlCgo+IEkgc2VlIHRoZSBwb2ludCB0aGF0IHRoaXMgY29kZSBoYXMgYmVlbiBsaXZp
+bmcgaW4gdGhlIGtlcm5lbCBmb3IgYQo+IGxvbmcgdGltZSBub3cgYW5kIHRoYXQgaXQgYmVjb21l
+cyBtb3JlIGRpZmZpY3VsdCB0byBqdXN0aWZ5IGl0IGFzCj4gYSByZWdyZXNzaW9uOyBJIHJlcG9y
+dGVkIGl0IGFzIHN1Y2ggYmFzZWQgb24gdGhlIHN1cHBvc2l0aW9uIHRoYXQKPiB0aGUgY3VycmVu
+dCBmaXggaXMgbm90IHRoZSBwcm9wZXIgb25lIGFuZCB0aGF0IHRlY2huaWNhbGx5IHRoaXMKPiBz
+dXBwb3J0IHdhcyBicm9rZW4gYmV0d2VlbiB0aGUgaWRlbnRpZmllZCBjb21taXRzLgoKVHJ1ZSwg
+YnV0IGl0IGFwcGFyZW50bHkgYWxzbyBkb2Vzbid0IGhhcHBlbiBhbnltb3JlIGluIG1haW5saW5l
+LiBUbwp0ZWNobmljYWxseSBub2JvZHkgaXMgYWZhaWNzIG9ibGlnZWQgdG8gbG9vayBpbnRvIHRo
+aXMgYWZhaWNzLgoKT2YgY291cnNlIGl0IHN0aWxsIHdvdWxkIGJlIG5pY2UgdG8gcmVzb2x2ZSB0
+aGlzIGluIHRoZSBhZmZlY3RlZApsb25ndGVybSBzZXJpZXMuIEFuZCBoZXksIHdpdGggYSBiaXQg
+b2YgbHVjayB0aGlzIHRocmVhZCBtaWdodCBsZWFkIHRvIGEKZml4IG9uZSB3YXkgb3IgYW5vdGhl
+ci4gSSBob3BlIHRoYXQgd2lsbCBiZSB0aGUgY2FzZSEKCj4gWy4uLl0KCkNpYW8sIFRob3JzdGVu
+ICh3ZWFyaW5nIGhpcyAndGhlIExpbnV4IGtlcm5lbCdzIHJlZ3Jlc3Npb24gdHJhY2tlcicgaGF0
+KQotLQpFdmVyeXRoaW5nIHlvdSB3YW5uYSBrbm93IGFib3V0IExpbnV4IGtlcm5lbCByZWdyZXNz
+aW9uIHRyYWNraW5nOgpodHRwczovL2xpbnV4LXJlZ3RyYWNraW5nLmxlZW1odWlzLmluZm8vYWJv
+dXQvI3RsZHIKSWYgSSBkaWQgc29tZXRoaW5nIHN0dXBpZCwgcGxlYXNlIHRlbGwgbWUsIGFzIGV4
+cGxhaW5lZCBvbiB0aGF0IHBhZ2UuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
