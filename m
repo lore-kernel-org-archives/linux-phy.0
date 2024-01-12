@@ -4,53 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AF75C4706C
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jan 2024 12:51:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 827C4C4706C
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jan 2024 15:34:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:
-	Cc:To:Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RxqpBKSbdQyt/mZo4VTKguplwFkQXz0aB+6n+/VOYQE=; b=GfZL61HA5z5fVu
-	DbcH3KG5CX32iZSaSe7AZGDhONqf3vMfdrdNhdCQ34y7OUHb7aaDji6dJGgIERoRy2ZuYhgVDIASH
-	ImbmNpIQ5Ti5bfzzfUcVV6yhrhaLQXpbivf16WMjWJ3T2xbXLntzwhgjzqFZXlkWuAHHaZteHROlA
-	54/+OdmvdH5gysZ6qD8OoG9ZsApGwNL/+dytmnVIxZ/d5zlQ0SSzfgmVDg7lU1K/aAH4sKGp/ATF/
-	NMJYek+qxeHZwfdjHdInZ8gzoxjXe3ANtpZuQ8XyeRk0CBJCdM1RAd/dgziyxIcuio9p/Nod5zo6I
-	3n1pfjGPfYLWaX0F0h5g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KPaV1BKIL+RaYSsIaDjUmkBE9BmvS5+Y23xu4SqBZSo=; b=r5Fet240FEkMkg
+	z8q7VBagg40dcvU7hxqLAmQfEjuI6iMaJZ/RkPVI8e8R6vXhVi8srCh3FJVEuS8Z+tkuXXDoZJQ32
+	EcbrWtR1XKAX83Mn56BPD9NqSygGKduZmeGiXn6UpZ7L7bfAoCq/CHGYRaQRdd5n1IqK4jkLZE7vX
+	nknlurLO+v4C14emWG8PRI9y9pVT7/Yk1Bgw2wfOT1/R+XlguWN9rZsoWV781/35zNkAMKLoS0FLk
+	sXpUoB0IWaU5TB9LHNYgwLCnefHsuDjbFoXR+XLsc650J5yKnkUnBCoTPtqwwEyclT6La3/Pf75h2
+	PAG3pHBoBchOoaWEwSCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOH0H-002rWf-2u;
-	Fri, 12 Jan 2024 12:51:17 +0000
-Received: from wp530.webpack.hosteurope.de ([80.237.130.52])
+	id 1rOJXq-003ATM-0P;
+	Fri, 12 Jan 2024 15:34:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOH0E-002rW2-0v
+	id 1rOJXn-003AS9-0N
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Jan 2024 12:51:16 +0000
-Received: from [2a02:8108:8980:2478:8cde:aa2c:f324:937e]; authenticated
-	by wp530.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
-	id 1rOH02-0000Pz-QE; Fri, 12 Jan 2024 13:51:02 +0100
-Message-ID: <0cae38cd-5d3d-4cb8-b5eb-680afd977e0d@leemhuis.info>
-Date: Fri, 12 Jan 2024 13:51:02 +0100
+	Fri, 12 Jan 2024 15:34:04 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40CDOrcn023577;
+	Fri, 12 Jan 2024 15:33:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding; s=qcppdkim1; bh=Q11XAhYvlT+pPYbbmi3t
+	nqbrEGmbsowZ/Otmw6pZCPw=; b=X7632k/Fs4ESIA4H4gaa1MPB+AoDv7rcdtsr
+	4SqNWWz2brnMjN0jtiLQ3hADObwF7ScIYxC5BL0F/o8DvgJZMtC5LQoWKG5FP5su
+	ctlaRRisjeF0emWFo3ngQzvRLTmw1yIt430PSbYuyEwBoHWBtvu8Y0XzxmniIUKR
+	z52qUtz+SOR+DI8CA3+tGteuqh9fSnTXIP2ACHyoBdypyy9ad1zayFAcR60+5boo
+	385vnkHmAXhaiAvqrBswEft6TrOhkV07Lm9MqnFxkzOWVXXNOGenfLnui25D0iEq
+	UbfQb5/dfyXEAB60v2+dC1IbHMSWNZhlsCPtbo/+302uT3RYgg==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vjjjj3425-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 12 Jan 2024 15:33:56 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 40CFXqno032668;
+	Fri, 12 Jan 2024 15:33:52 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3veyxnj2y6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Fri, 12 Jan 2024 15:33:52 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 40CFXp1v032660;
+	Fri, 12 Jan 2024 15:33:51 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 40CFXpi3032657;
+	Fri, 12 Jan 2024 15:33:51 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 5435E572C41; Fri, 12 Jan 2024 21:03:50 +0530 (+0530)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+To: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        "James E.J. Bottomley" <jejb@linux.ibm.com>,
+        "Martin K. Petersen" <martin.petersen@oracle.com>,
+        Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+        Nitin Rawat <quic_nitirawa@quicinc.com>
+Subject: [PATCH V1 0/2] Refactor phy powerup sequence
+Date: Fri, 12 Jan 2024 21:03:46 +0530
+Message-ID: <20240112153348.2778-1-quic_nitirawa@quicinc.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [REGRESSION] Keystone PCI driver probing and SerDes PLL timeout
-Content-Language: en-US, de-DE
-To: Diogo Ivo <diogo.ivo@siemens.com>, Greg KH <gregkh@linuxfoundation.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
- tjoseph@cadence.com, linux-pci@vger.kernel.org, ylal@codeaurora.org,
- regressions@lists.linux.dev, jan.kiszka@siemens.com
-References: <20240111141331.3715265-1-diogo.ivo@siemens.com>
- <2024011246-corned-disregard-7123@gregkh>
- <1cce86b1-b309-40e0-afff-45baeb013e1f@siemens.com>
-From: "Linux regression tracking (Thorsten Leemhuis)"
- <regressions@leemhuis.info>
-In-Reply-To: <1cce86b1-b309-40e0-afff-45baeb013e1f@siemens.com>
-X-bounce-key: webpack.hosteurope.de;regressions@leemhuis.info;1705063874;240d6cb7;
-X-HE-SMSGID: 1rOH02-0000Pz-QE
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: fV1al1rQQFm9ktPOmNbbSJEkyTvavawf
+X-Proofpoint-GUID: fV1al1rQQFm9ktPOmNbbSJEkyTvavawf
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ phishscore=0 mlxscore=0 spamscore=0 impostorscore=0 mlxlogscore=424
+ lowpriorityscore=0 priorityscore=1501 clxscore=1011 bulkscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401120121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_045114_485213_B32B3537 
-X-CRM114-Status: GOOD (  24.21  )
+X-CRM114-CacheID: sfid-20240112_073403_300386_07E02884 
+X-CRM114-Status: GOOD (  10.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,82 +103,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Linux regressions mailing list <regressions@lists.linux.dev>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTIuMDEuMjQgMTI6NDYsIERpb2dvIEl2byB3cm90ZToKPiBPbiAxLzEyLzI0IDA3OjU3LCBH
-cmVnIEtIIHdyb3RlOgo+PiBPbiBUaHUsIEphbiAxMSwgMjAyNCBhdCAwMjoxMzozMFBNICswMDAw
-LCBEaW9nbyBJdm8gd3JvdGU6Cj4+Pgo+Pj4gV2hlbiB0ZXN0aW5nIHRoZSBJT1QyMDUwIEFkdmFu
-Y2VkIE0uMiBwbGF0Zm9ybSB3aXRoIExpbnV4IENJUCA2LjEKPj4+IHdlIGNhbWUgYWNyb3NzIGEg
-YnJlYWthZ2UgaW4gdGhlIHByb2Jpbmcgb2YgdGhlIEtleXN0b25lIFBDSSBkcml2ZXIKPj4+IChk
-cml2ZXJzL3BoeS90aS9wY2kta2V5c3RvbmUuYykuIFRoaXMgcHJvYmluZyB3YXMgd29ya2luZyBj
-b3JyZWN0bHkKPj4+IGluIHRoZSBwcmV2aW91cyB2ZXJzaW9uIHdlIHdlcmUgdXNpbmcsIHY1LjEw
-Lgo+Pj4KPj4+IEluIG9yZGVyIHRvIGRlYnVnIHRoaXMgd2UgY2hhbmdlZCBvdmVyIHRvIG1haW5s
-aW5lIExpbnV4IGFuZCBiaXNzZWN0aW5nCj4+PiBsZWFkIHVzIHRvIGZpbmQgdGhhdCBjb21taXQg
-ZTYxMWY4Y2Q4NzE3IGlzIHRoZSBjdWxwcml0LCBhbmQgd2l0aCBpdAo+Pj4gYXBwbGllZAo+Pj4g
-d2UgZ2V0IHRoZSBmb2xsb3dpbmcgbWVzc2FnZXM6Cj4+Pgo+Pj4gW8KgwqAgMTAuOTU0NTk3XSBw
-aHktYW02NTQgOTEwMDAwLnNlcmRlczogRmFpbGVkIHRvIGVuYWJsZSBQTEwKPj4+IFvCoMKgIDEw
-Ljk2MDE1M10gcGh5IHBoeS05MTAwMDAuc2VyZGVzLjM6IHBoeSBwb3dlcm9uIGZhaWxlZCAtLT4g
-LTExMAo+Pj4gW8KgwqAgMTAuOTY3NDg1XSBrZXlzdG9uZS1wY2llIDU1MDAwMDAucGNpZTogZmFp
-bGVkIHRvIGVuYWJsZSBwaHkKPj4+IFvCoMKgIDEwLjk3MzU2MF0ga2V5c3RvbmUtcGNpZTogcHJv
-YmUgb2YgNTUwMDAwMC5wY2llIGZhaWxlZCB3aXRoIGVycm9yCj4+PiAtMTEwCj4+Pgo+Pj4gVGhp
-cyB0aW1lb3V0IGlzIG9jY3VyaW5nIGluIHNlcmRlc19hbTY1NF9lbmFibGVfcGxsKCksIGNhbGxl
-ZCBmcm9tIHRoZQo+Pj4gcGh5X29wcyAucG93ZXJfb24oKSBob29rLgo+Pj4KPj4+IER1ZSB0byB0
-aGUgbmF0dXJlIG9mIHRoZSBlcnJvciBtZXNzYWdlcyBhbmQgdGhlIGNvbnRlbnRzIG9mIHRoZQo+
-Pj4gY29tbWl0IHdlCj4+PiBiZWxpZXZlIHRoYXQgdGhpcyBpcyBkdWUgdG8gYW4gdW5pZGVudGlm
-aWVkIHJhY2UgY29uZGl0aW9uIGluIHRoZQo+Pj4gcHJvYmluZyBvZgo+Pj4gdGhlIEtleXN0b25l
-IFBDSSBkcml2ZXIgd2hlbiBlbmFibGluZyB0aGUgUEhZIFBMTHMsIHNpbmNlIGNoYW5nZXMgaW4g
-dGhlCj4+PiB3b3JrcXVldWUgdGhlIGRlZmVycmVkIHByb2JpbmcgcnVucyBvbiBzaG91bGQgbm90
-IGFmZmVjdCBpZiBwcm9iaW5nCj4+PiB3b3Jrcwo+Pj4gb3Igbm90LiBUbyBmdXJ0aGVyIHN1cHBv
-cnQgdGhlIGV4aXN0ZW5jZSBvZiBhIHJhY2UgY29uZGl0aW9uLCBjb21taXQKPj4+IDg2YmZiYjdj
-ZTRmNiAoYSBzY2hlZHVsZXIgY29tbWl0KSBmaXhlcyBwcm9iaW5nLCBtb3N0IGxpa2VseQo+Pj4g
-dW5pbnRlbnRpb25hbGx5Cj4+PiBtZWFuaW5nIHRoYXQgdGhlIHByb2JsZW0gbWF5IGFyaXNlIGlu
-IHRoZSBmdXR1cmUgYWdhaW4uCj4+Pgo+Pj4gT25lIHBvc3NpYmxlIGV4cGxhbmF0aW9uIGlzIHRo
-YXQgdGhlcmUgYXJlIHByZS1yZXF1aXNpdGVzIGZvcgo+Pj4gZW5hYmxpbmcgdGhlIFBMTAo+Pj4g
-dGhhdCBhcmUgbm90IGJlaW5nIG1ldCB3aGVuIGU2MTFmOGNkODcxNyBpcyBhcHBsaWVkOyB0byBz
-ZWUgaWYgdGhpcwo+Pj4gaXMgdGhlIGNhc2UKPj4+IGhlbHAgZnJvbSBwZW9wbGUgbW9yZSBmYW1p
-bGlhciB3aXRoIHRoZSBoYXJkd2FyZSBkZXRhaWxzIHdvdWxkIGJlCj4+PiB1c2VmdWwuCj4+Pgo+
-Pj4gQXMgb2ZmaWNpYWwgc3VwcG9ydCBzcGVjaWZpY2FsbHkgZm9yIHRoZSBJT1QyMDUwIEFkdmFu
-Y2VkIE0uMgo+Pj4gcGxhdGZvcm0gd2FzCj4+PiBpbnRyb2R1Y2VkIGluIExpbnV4IHY2LjMgKHNv
-IGluIHRoZSBtaWRkbGUgb2YgdGhlIGNvbW1pdHMgbWVudGlvbmVkCj4+PiBhYm92ZSkKPj4+IGFs
-bCBvZiBvdXIgdGVzdGluZyB3YXMgZG9uZSB3aXRoIHRoZSBsYXRlc3QgbWFpbmxpbmUgRGV2aWNl
-VHJlZSB3aXRoIFsxXQo+Pj4gYXBwbGllZCBvbiB0b3AuCj4+Pgo+Pj4gVGhpcyBpcyBiZWluZyBy
-ZXBvcnRlZCBhcyBhIHJlZ3Jlc3Npb24gZXZlbiB0aG91Z2ggdGVjaG5pY2FsbHkgdGhpbmdzCj4+
-PiBhcmUKPj4+IHdvcmtpbmcgd2l0aCB0aGUgY3VycmVudCBzdGF0ZSBvZiBtYWlubGluZSBzaW5j
-ZSB3ZSBiZWxpZXZlIHRoZQo+Pj4gY3VycmVudCBmaXgKPj4+IHRvIGJlIGFuIHVuaW50ZW5kZWQg
-YnktcHJvZHVjdCBvZiBvdGhlciB3b3JrLgo+Pj4KPj4+ICNyZWd6Ym90IGludHJvZHVjZWQ6IGU2
-MTFmOGNkODcxNwo+PiBBICJyZWdyZXNzaW9uIiBmb3IgYSBjb21taXQgdGhhdCB3YXMgaW4gNS4x
-MywgaS5lLiBhbG1vc3QgMiB5ZWFycyBhZ28sCj4+IGlzIGEgYml0IHRvdWdoLCBhbmQgbm90IHNv
-bWV0aGluZyBJIHdvdWxkIGNvbnNpZGVyIHJlYWxseSBhICJyZWdyZXNzaW9uIgo+PiBhcyBpdCBp
-cyBjb3JlIGNvZGUgdGhhdCBldmVyeW9uZSBydW5zLgoKSW4gY2FzZSBhbnlvbmUgY2FyZXM6IEkn
-ZCBjYWxsIGl0IGEgcmVncmVzc2lvbiwgYnV0IG5vdCBvbmUgd2hlcmUgdGhlCiJubyByZWdyZXNz
-aW9ucyIgcnVsZSBhcHBsaWVzLiBQcmltYXJpbHkgYmVjYXVzZSB0aGUgcmVncmVzc2lvbiBkb2Vz
-IG5vdAogaGFwcGVuIGFueW1vcmUgaW4gbWFpbmxpbmUgKGV2ZW4gaWYgdGhhdCB3YXMgYnkgY2hh
-bmNlKS4gRnVydGhlcm1vcmUgSQp0aGluayBMaW51cyBvbmNlIHNhaWQgdGhhdCByZWdyZXNzaW9u
-cyBiZWNvbWUganVzdCBidWdzIHdoZW4gdGhleSBhcmUKcmVwb3J0ZWQgb25seSBhZnRlciBxdWl0
-ZSBzb21lIHRpbWUuIE5vdCBzdXJlIGlmIHRoYXQgaXMgdGhlIGNhc2UgaGVyZSwKYnV0IHdoYXRl
-dmVyLCBkdWUgdG8gdGhlIHByZXZpb3VzIHBvaW50IGRpc2N1c3NpbmcgdGhpcyBpcyBtb290LiBU
-aGF0J3MKd2h5IEknbGwgZHJvcCBpdCBmcm9tIHRoZSB0cmFja2luZzoKCiNyZWd6Ym90IGluY29u
-Y2x1c2l2ZTogZml4ZWQgaW4gbWFpbmxpbmUgKG1heWJlIGFjY2lkZW50YWxseSksIGJ1dCBub3QK
-aW4gc3RhYmxlCgo+IEkgc2VlIHRoZSBwb2ludCB0aGF0IHRoaXMgY29kZSBoYXMgYmVlbiBsaXZp
-bmcgaW4gdGhlIGtlcm5lbCBmb3IgYQo+IGxvbmcgdGltZSBub3cgYW5kIHRoYXQgaXQgYmVjb21l
-cyBtb3JlIGRpZmZpY3VsdCB0byBqdXN0aWZ5IGl0IGFzCj4gYSByZWdyZXNzaW9uOyBJIHJlcG9y
-dGVkIGl0IGFzIHN1Y2ggYmFzZWQgb24gdGhlIHN1cHBvc2l0aW9uIHRoYXQKPiB0aGUgY3VycmVu
-dCBmaXggaXMgbm90IHRoZSBwcm9wZXIgb25lIGFuZCB0aGF0IHRlY2huaWNhbGx5IHRoaXMKPiBz
-dXBwb3J0IHdhcyBicm9rZW4gYmV0d2VlbiB0aGUgaWRlbnRpZmllZCBjb21taXRzLgoKVHJ1ZSwg
-YnV0IGl0IGFwcGFyZW50bHkgYWxzbyBkb2Vzbid0IGhhcHBlbiBhbnltb3JlIGluIG1haW5saW5l
-LiBUbwp0ZWNobmljYWxseSBub2JvZHkgaXMgYWZhaWNzIG9ibGlnZWQgdG8gbG9vayBpbnRvIHRo
-aXMgYWZhaWNzLgoKT2YgY291cnNlIGl0IHN0aWxsIHdvdWxkIGJlIG5pY2UgdG8gcmVzb2x2ZSB0
-aGlzIGluIHRoZSBhZmZlY3RlZApsb25ndGVybSBzZXJpZXMuIEFuZCBoZXksIHdpdGggYSBiaXQg
-b2YgbHVjayB0aGlzIHRocmVhZCBtaWdodCBsZWFkIHRvIGEKZml4IG9uZSB3YXkgb3IgYW5vdGhl
-ci4gSSBob3BlIHRoYXQgd2lsbCBiZSB0aGUgY2FzZSEKCj4gWy4uLl0KCkNpYW8sIFRob3JzdGVu
-ICh3ZWFyaW5nIGhpcyAndGhlIExpbnV4IGtlcm5lbCdzIHJlZ3Jlc3Npb24gdHJhY2tlcicgaGF0
-KQotLQpFdmVyeXRoaW5nIHlvdSB3YW5uYSBrbm93IGFib3V0IExpbnV4IGtlcm5lbCByZWdyZXNz
-aW9uIHRyYWNraW5nOgpodHRwczovL2xpbnV4LXJlZ3RyYWNraW5nLmxlZW1odWlzLmluZm8vYWJv
-dXQvI3RsZHIKSWYgSSBkaWQgc29tZXRoaW5nIHN0dXBpZCwgcGxlYXNlIHRlbGwgbWUsIGFzIGV4
-cGxhaW5lZCBvbiB0aGF0IHBhZ2UuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+Refactor phy_power_on and phy_calibrate callbacks.
+
+In Current code regulators enable, clks enable, calibrating UFS PHY,
+start_serdes and polling PCS_ready_status are part of phy_power_on.
+
+UFS PHY registers are retained after power collapse, meaning calibrating
+UFS PHY, start_serdes and polling PCS_ready_status can be done only when
+hba is powered_on, and not needed every time when phy_power_on is called
+during resume. Hence keep the code which enables PHY's regulators & clks
+in phy_power_on and move the rest steps into phy_calibrate function.
+
+Since phy_power_on is separated out from phy calibrate, make separate calls
+to phy_power_on and phy_calibrate calls from ufs qcom driver.
+
+Also for better power saving, remove the phy_power_on/off calls from
+resume/suspend path and put them to ufs_qcom_setup_clocks, so that
+PHY's regulators & clks can be turned on/off along with UFS's clocks.
+
+This patch series is tested on SM8550 MTP, SM8350 MTP and SA8775p.
+
+There is functional dependency between ufs-qcom and phy-qcom-qmp-ufs
+and hence both the patches should be part of same merge window.
+
+Nitin Rawat (2):
+  scsi: ufs: qcom : Refactor phy_power_on/off calls
+  phy: qcom: Refactor phy_power_on and phy_calibrate callbacks
+
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 183 +++++++++---------------
+ drivers/ufs/host/ufs-qcom.c             | 104 +++++++++-----
+ drivers/ufs/host/ufs-qcom.h             |   4 +
+ 3 files changed, 139 insertions(+), 152 deletions(-)
+
+--
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
