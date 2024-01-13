@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F338C4706C
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 10:32:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFC12C4707B
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 10:34:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XBdencGefuO5VIFX+hEgnW2LYbIcAzAqRwAlv9WeJfY=; b=kl5oQeb81Ic4Z2
-	yYDGJheTIsvwaRcLac8ekAnZR5I9o5e6YyoeEiQjWvqhb9756L2xgMUzfapioLVTuy8Sv6QjWEZ+s
-	Ec8ovJOI2wysHIFKiKu9ASxm1Qryhu5oXZTXSjT0ggo7RFN2YWyLZSPgzjUNELvZq6YQeyFx9bSdc
-	7TfdK2VA+yfh9k+OLtcp+lkk/rbCrOxFAWnGDfuX+RLT33pLwfGIAq25sz5wJON6SqrvczYL/2KBX
-	JDYvBgpFdKPdjGLMWUbY7kpv1URpM+M63kJfGT7/7lz2/9pdA65Jwhhx3Kk1i6bEJt+nE+rHWlBDn
-	jfY8WUlYO6qJW0AHWCEw==;
+	List-Owner; bh=4ykPeWFuunFvsfwnwcD1BQOtU61CIp4DaRHfMY+BH5Y=; b=mMVy/ACFfJp7mg
+	44Ahu5ym/02qmwVVvbT6SSZHof4q4LDp7iKeTCGoeYhY2I4s8vU8hU7JRgDCy6AxS7H14rWMG2f9g
+	7ezYL9/iCuZVBHLlR6qua6dN/kpnebiNzBaM/6ypxZoeMDOb6/i4qK3gFG16cSdGoyD3GrUJ2Uhce
+	DfqcnQIOBnRKNwoDL9US1McamLQITG0IWr7mWOsXiKtPgvhXPJuFeveTTLqnQgmaFaOAJcfF6/H2q
+	y9J9pnZyb7W8WOmB9brilzqXal2Z+1XMpTIsUB0Razp4BZ6TfB5mcDF9q8C0E7dFYqRxgGeapYu13
+	zdcc1quzkWI6Aj4POjjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rObJj-004uug-3C;
-	Sat, 13 Jan 2024 10:32:43 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1rObL3-004v06-1D;
+	Sat, 13 Jan 2024 10:34:05 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rObJg-004utK-23
+	id 1rObL1-004uzY-1j
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 10:32:42 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-557a3ce9942so7821054a12.1
-        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 02:32:37 -0800 (PST)
+	Sat, 13 Jan 2024 10:34:04 +0000
+Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-50e835800adso7783005e87.0
+        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 02:34:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705141956; x=1705746756; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705142039; x=1705746839; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=A4NP2s/NZcZRFJr2jB09+2fWd3wUGutLp7fYffSjRHs=;
-        b=qDUZphMT0+hoU/wo5Xk8istss5WEymPfAUSQE+oXjf0NIeF+KccivGNKug/l4o5ekP
-         1P867TgKJJcbAaOw9AlL1TbuaJiU+LsHLRB/h/bVSPcrYm/DRdx9qSFU07OpxhkWmOWy
-         lLLNW9gHQ74ip1Oj1en5D7QleiA7cZbDBs+GqqntzQT3TayAYAhwKDF1ufFZaRiOAL4e
-         RDZgON/zSFHfBHtQ/NPy/Si6WcoYSEGWLJMMKeGNXcPS32G0/VcHy/JL6QIEBkdDohjD
-         5YINn4ZlH0rmkIozEzP0owB4YKd9plniAd4yb0/l34yku+hvIrqvyFyfK1SwsSN2LBd2
-         xA3Q==
+        bh=O+x8bBUhmaZ5bctGOTnaKMvIif9jd5WuTDY2PH/sR2U=;
+        b=uDMjQwvnXCx16iXslKnos/wVMHIRbAisT92ueD9MxZrD4CpdB75b3EqS2eGv2ODMDa
+         ZlAtk1XMWSqajH3xUU8wFpwer2vZzOh5R+B3YPJatAYZn0B1wFNywI6DdZ1KPNYCOGAr
+         py6KKzaZNIB9PVgxKJRmtW0/pdm6PRliW1/Oqdwd9rIwv176i77QB2GCczoKR5iOjf3v
+         V0YUNiLyeEwI37Xu8Xs0+Z0nVKIxALLTbiOWVLnujidqKMFYQnv7FOVi8KraQMzfxCpy
+         JBoEflOXrc8FdXidfhiF9z0EF9ClYAeBWeBaXtfPxoX42MGOLNy3d07nPKD9VnbEQyG1
+         1bUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705141956; x=1705746756;
+        d=1e100.net; s=20230601; t=1705142039; x=1705746839;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=A4NP2s/NZcZRFJr2jB09+2fWd3wUGutLp7fYffSjRHs=;
-        b=qJItJ/BELnZmAym3ecrluRjrewntpdZDF3a0HZALrUzOeQdL5MX0kK9D1JrpWEk0bz
-         C83rDBSWtbsbC5Wnm/JuKd04LyMQmPtvaHgfJwJCTePwy7TJK2YBvjoCePxABgs2nPBK
-         HHsE128u2Mtq3YnhaqqxBG4aCrS9dLnEzGUjLKj1XYCJD1pA6BzHTeQKiLPF6IdqhC5u
-         cmL4TFLjoHgQwTMciWxf7UWayiTo0eCmHgTNPE+EzhYIesbbeu2Gfcx4HXxToT0CCbbl
-         3PpCfZuhfYjHouZC+hTdaPg9rX3JpW/a1VTaxpC8L9muSqA/ARVsW3NzXh46EkDuVJpx
-         CkKw==
-X-Gm-Message-State: AOJu0YwtHoccBqPPhC/jN7mfh7qWAYBLZYMRk+lRVqLfKGDp/xKSiIGp
-	s5r6R2bf9fpwPb3aFxtfxhyFdOLQiHHoRw==
-X-Google-Smtp-Source: AGHT+IG95Lc4vfFkA1I+bg6/+GRf0HRam+7Jt3Eft/sBwJkmo/E6k6JMgde4ifTGYE+zg0KPMuekpg==
-X-Received: by 2002:a17:907:a782:b0:a2c:e2a4:17b3 with SMTP id vx2-20020a170907a78200b00a2ce2a417b3mr831678ejc.120.1705141956288;
-        Sat, 13 Jan 2024 02:32:36 -0800 (PST)
+        bh=O+x8bBUhmaZ5bctGOTnaKMvIif9jd5WuTDY2PH/sR2U=;
+        b=lvBYsxD+/KrhxV/1+vO0KS6Cpq7F5eK7/u25xoLpzAFyEBTVK2fRJrYll92hPMMzN4
+         CeZ/FmOENXW1EmWAdijOwceyzpOAnkL/RWoabMj2m48C7WYDv030+4ms4Lav6Du3eByg
+         OIU89ULmPACQnHlyCYB+8xh6Nq7va7FEizplJijQ8HdiaJBKU9MNZc+e7vYSLo7w5Vqm
+         vndERQ2P/rLFJIsxLoYdS/EpPTcEePMlsc+pgiRc/wfuUvfSieFba+Lpy5n0hSFVbpgq
+         GIi2neq7uQ5hfC10hKU5JGtbpqnEzUG5p6HNFNIGE29NSPthsZcs0UfNe/Frzy8Z3OzE
+         9NIA==
+X-Gm-Message-State: AOJu0YwsZ9fga3djWPPshXs/j2BeKyxJlws3YYPPZM+lnwMpyd9h65I+
+	81mKRaPJ0TKxbGC4H63FxPznpY8Rfc7LyQ==
+X-Google-Smtp-Source: AGHT+IENpYfdaChdnutOsF0MpaQwHUt3wT9gMBJC/eiMG9zYCne1iuFI71w8sKjNAIuFwsXGphjhhg==
+X-Received: by 2002:a05:6512:15a3:b0:50e:9a16:fb with SMTP id bp35-20020a05651215a300b0050e9a1600fbmr927066lfb.6.1705142039394;
+        Sat, 13 Jan 2024 02:33:59 -0800 (PST)
 Received: from [192.168.174.25] (178235179017.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.17])
-        by smtp.gmail.com with ESMTPSA id q8-20020a170906360800b00a2bd52d2a84sm2719827ejb.200.2024.01.13.02.32.33
+        by smtp.gmail.com with ESMTPSA id q8-20020a170906360800b00a2bd52d2a84sm2719827ejb.200.2024.01.13.02.33.56
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 13 Jan 2024 02:32:35 -0800 (PST)
-Message-ID: <30df6954-1d22-4c55-bb4b-e8746c3c331d@linaro.org>
-Date: Sat, 13 Jan 2024 11:32:32 +0100
+        Sat, 13 Jan 2024 02:33:59 -0800 (PST)
+Message-ID: <7e36b380-8ab5-4555-8919-1c2c6ff7aa68@linaro.org>
+Date: Sat, 13 Jan 2024 11:33:56 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/13] usb: typec: qcom-pmic-typec: allow different
- implementations for the PD PHY
+Subject: Re: [PATCH 06/13] usb: typec: qcom-pmic-typec: add support for PMI632
+ PMIC
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Bjorn Andersson <andersson@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
@@ -84,7 +84,7 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
- <20240113-pmi632-typec-v1-5-de7dfd459353@linaro.org>
+ <20240113-pmi632-typec-v1-6-de7dfd459353@linaro.org>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -121,10 +121,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20240113-pmi632-typec-v1-5-de7dfd459353@linaro.org>
+In-Reply-To: <20240113-pmi632-typec-v1-6-de7dfd459353@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_023241_519467_127F358F 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20240113_023403_614121_C81CDE62 
+X-CRM114-Status: GOOD (  10.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,48 +142,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13.01.2024 06:42, Dmitry Baryshkov wrote:
-> Rework Qualcomm PMIC TCPM driver to allow different platform-specific
-> implementations of the PD PHY interface. While majority of platforms
-> has the same of register for the PD PHY, some obscure ones (PMI632) do
-> not have real PD PHY support. Add proper interface between the main
-> module and the PD PHY backend to allow switching the PD PHY
-> implementation.
+> The PMI632 PMIC support Type-C port handling, but lacks USB
+> PowerDelivery support. The TCPM requires all callbacks to be provided
+> by the implementation. Implement a special, 'stub' Qcom PD PHY
+> implementation to enable the PMI632 support.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
 
 [...]
 
-> @@ -366,12 +439,13 @@ int qcom_pmic_typec_pdphy_set_roles(struct pmic_typec_pdphy *pmic_typec_pdphy,
->  				 pmic_typec_pdphy->base + USB_PDPHY_MSG_CONFIG_REG,
->  				 MSG_CONFIG_PORT_DATA_ROLE |
->  				 MSG_CONFIG_PORT_POWER_ROLE,
-> -				 data_role_host << 3 | power_role_src << 2);
-> +				 (data_role == TYPEC_HOST ? MSG_CONFIG_PORT_DATA_ROLE : 0) |
-> +				 (power_role == TYPEC_SOURCE ? MSG_CONFIG_PORT_POWER_ROLE : 0));
+>  #endif /* __QCOM_PMIC_TYPEC_PDPHY_H__ */
+> diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c
+> new file mode 100644
+> index 000000000000..5d3b0e78d4d8
+> --- /dev/null
+> +++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c
 
-Was this hunk supposed to be part of this patch?
+Not a fan.
 
-[...]
-
->  int qcom_pmic_typec_pdphy_probe(struct platform_device *pdev,
-> -				struct pmic_typec_pdphy *pmic_typec_pdphy,
-> -				struct pmic_typec_pdphy_resources *res,
-> +				struct pmic_typec *tcpm,
-> +				const struct pmic_typec_pdphy_resources *res,
->  				struct regmap *regmap,
->  				u32 base)
->  {
-> +	struct pmic_typec_pdphy *pmic_typec_pdphy;
->  	struct device *dev = &pdev->dev;
->  	struct pmic_typec_pdphy_irq_data *irq_data;
->  	int i, ret, irq;
->  
-> +	pmic_typec_pdphy = devm_kzalloc(dev, sizeof(struct pmic_typec_pdphy), GFP_KERNEL);
-> +	if (!pmic_typec_pdphy)
-> +		return -ENOMEM;
-
-or simply sizeof(*pdphy) 
+Maybe add some TCPM_FLAG_NO_PD and solve it in a generic manner?
 
 Konrad
 
