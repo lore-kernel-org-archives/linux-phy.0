@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B96AC47DA7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E007C4707B
 	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 05:42:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,61 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KxfdLejIiSXdZy1lfHfkkUKu0nusDnkicK3b2lYJ9oU=; b=4T0enMjCYcAqum
-	O5t2ZeOhHQ8WrOTMtSqMVCRW/xwna8a/CmrTSdXNGJjAea181xHY3uY4xzRMLRCzPL0wcwGfN1XRh
-	fqOD16WLF74xVQCvIqyOKtjGqkGuvh3ZwrF4gRMm9XZR+bnxswZu3oBYQsdbjmQ2hI919U/tN8MRz
-	c6JKrqfkGUg7vHMLATQx9w3GrNR0n2eQp+eXQ9kmtqpjLw9ln7erDuP5EHgJmDFCkUNaMiJNmw30E
-	o7kz4IVZMzOxxVXkMb7crOBJPav+1fl1XcxpMOZ8Zc+fcoVedBtkjutBT2HqKqowT9+6KUWEe42hd
-	R7HU94ooIdKslzfwJILw==;
+	List-Owner; bh=XAFBSzAr6Calv0oReLJTcRzRLsK3FA9WihUIcMsKgz4=; b=3/Cnn/AmuFp6G1
+	mAddreDkh1KKve5kqOBqEK7lSxTEFWQiDe2gvwONkeMwtjCDriCpKtTdZw1hPBM0R9JZft6xv+z2H
+	Yd55/Ao/ASS2CS36FYFtoI5V7Amu8ZZcP2CVi2vCcgrs2TvgxSsBgTf7kPG73HAjKiCkxHn5vuVpI
+	REUd1wCSlzxOqm1X0oUHYD+oUzuZQiKjHaB4aH7jl6nGgUx55hunGaFSK7ENiOiS1FO7E4UMQD/Vz
+	4Rkm+lMYzPfNBt2yP6g+rPCND1tcmBF6MjdSyq+iquSlKHFjDb/XriDU/9cvqr0sNy9kZyBKzmnqf
+	Q2vGtI0tBrW4Y5E5rOsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnH-004ZiL-2Z;
-	Sat, 13 Jan 2024 05:42:55 +0000
+	id 1rOWnI-004Zid-0R;
+	Sat, 13 Jan 2024 05:42:56 +0000
 Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnD-004ZeW-1T
+	id 1rOWnE-004ZfW-1p
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 05:42:52 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2cd0db24e03so84073781fa.3
-        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:51 -0800 (PST)
+	Sat, 13 Jan 2024 05:42:53 +0000
+Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2cd2f472665so76977241fa.2
+        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705124569; x=1705729369; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705124571; x=1705729371; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=0ECF4xeGyS84BCoz/EcX50y2jLIrAgXZ1cOppZLqEXg=;
-        b=JA7e+c6K50NpZmrsFtwNc6RbWC6n3gtngVP+pAKL7rFKwhjzaIRPwsqd1ULeRFuaf7
-         1QINDbQhRr4/RCMDxTKxO6p4ZZAOXcFn+qZmKc7VAJYo4n/C3CnOr+zpeV8NnLCKKq74
-         BRm504BwjVT6R1PZ0ITexD8zBd36aO81qeNpo+fCFK/mi7mBuQdFM2CQxl8cqsqo2O+E
-         /v7ctoumrOw0DRi/utJjEVecZY7ULISJJDAvqWeHZDQO0ymDZijQkimveKd61XdOlROm
-         +TApEOol46w8EoFXZaAIpYLGr3v01jD3Pbk4DixMkJ91ekiFxHbiwCEd6d+QzzIs8Vo9
-         NwIw==
+        bh=Rt1Fx2eXQZUxhHw8olyy9wzj6/smMSugyfFHU2p7CSk=;
+        b=HtSVdxdiMPt1AuRdo3pImfC/8rfLxg//M294+kYzwEt5HnGf8W9gF1rq5i+lHcNiEv
+         h5d03ERb5YybdP8oYkM7spqqpp9zftS7xC57fJ1zl+fzgepeaJO9bCFpzlvk+CkwZkw6
+         NuG7L2ZLpkFa/GThaNDcmwhs0b4TxljkFIBju7Do2vUhai5iOg2+NpIpdVga0iP1PB2s
+         XfXqRHayHsT5xgyyFtC6rNSb9UQoYs5N211UWtWVx/oQPUxUBG2sngdX8aD8T4UYPCTF
+         V9TGpjxkyJnV2fLHy41kHXBWO71vSwdmYWaKbiB16oYpC4t5dHajntRsLKKSNkDgFmrw
+         nl6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705124569; x=1705729369;
+        d=1e100.net; s=20230601; t=1705124571; x=1705729371;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=0ECF4xeGyS84BCoz/EcX50y2jLIrAgXZ1cOppZLqEXg=;
-        b=cHetwPODgdk17/xTpj/Juyd+o4fRTYkkRZ5/aqWxvaIu6kV9huTiWdR/37oBhFxg3Q
-         13gqAzouSx1yfk8yhuyec7YvRi1hUWxZLyOYGRj9Wn/bwQcc/WJKUHba4XJILVpnWbAj
-         1vmOMk/5rM7zLK7DH5lqbQUG4Wil8KB4dPacfcRIsR4z+tIJ8pNGHnwoDdhmjPj/hDEP
-         zw3iCiendm3pOrx9GcEj6/pvYzsxwmOjgPfWKmowDUs5YiiobOL/TteODvCupzEB5SR7
-         iQhf0sWZ33AN86fB3E86tUrPV1PYXgkAcN/K0f477wj17BHYXxE0Aowg91RJ53Y1e7Nb
-         rx0Q==
-X-Gm-Message-State: AOJu0YxV19pfb+L2IxLUyM9jDUvdoNTey40SD/pq+lGAI9ORGlEULKWz
-	o9X+tYW1XOXxnhHmylVjc7EhvyzPaZ9iIQ==
-X-Google-Smtp-Source: AGHT+IFuZ8KYIlQ596YAkjwkadTsbP2Ny6UXmX4GYzvavxYOUXI1TIeDKlfdfg5Ug9C2wp2k4J2nUQ==
-X-Received: by 2002:a05:651c:213:b0:2cc:f993:e40c with SMTP id y19-20020a05651c021300b002ccf993e40cmr603714ljn.9.1705124569790;
-        Fri, 12 Jan 2024 21:42:49 -0800 (PST)
+        bh=Rt1Fx2eXQZUxhHw8olyy9wzj6/smMSugyfFHU2p7CSk=;
+        b=Dt+268sOdzPNqI6ygAOSl1dyVqv3MnLQySFJg/HFcGcQnywS44qshWnmnpb1TsiZJ6
+         2ae3+7fIFH5qjCVm1vkDvyat0cWQMWlEcvm73/rwXnPk0A1dhxM+aXBiuo89jTJH4xGx
+         dSFobqd7iuPr7unkcXE6f7G5ZX4HYJ236pTjl7JOeJMuTWEgvhuPB21bZnRk0k6y//VK
+         8moRSX5PXlkuwsa4dhx9K4mKT51Dn7ffEzL/0nKM7bn+Ta4NWk0pnchPfzrPVC5RyPMu
+         4L6V5TV0JOq0ZJ1JS4P9foNNXtf+0qpaWtAedmhrNUpH79yAw8RCWYfjG2tS1FWXBKoE
+         7jFQ==
+X-Gm-Message-State: AOJu0YyaqTabdN8uXNogrxhFG2SNjSHL5sK0T9bKnOqU8GgFvSmsMuRZ
+	NLRTDI2Oqq/Snp3pvnpvOucL5oPg4Trp+g==
+X-Google-Smtp-Source: AGHT+IFYL7r0H7cOwUhVd8updc6YFb5OB2cs2sH8xDnwWH/pCAT17TOk/6BBLFhB72M2J7+rrNndjQ==
+X-Received: by 2002:a2e:8906:0:b0:2cc:932e:6bc8 with SMTP id d6-20020a2e8906000000b002cc932e6bc8mr1154677lji.6.1705124571279;
+        Fri, 12 Jan 2024 21:42:51 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.49
+        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Jan 2024 21:42:49 -0800 (PST)
+        Fri, 12 Jan 2024 21:42:50 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 13 Jan 2024 07:42:46 +0200
-Subject: [PATCH 09/13] phy: qcom: qmp-usbc: drop single lane handling
+Date: Sat, 13 Jan 2024 07:42:48 +0200
+Subject: [PATCH 11/13] arm64: dts: qcom: pmi632: define USB-C related
+ blocks
 MIME-Version: 1.0
-Message-Id: <20240113-pmi632-typec-v1-9-de7dfd459353@linaro.org>
+Message-Id: <20240113-pmi632-typec-v1-11-de7dfd459353@linaro.org>
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 In-Reply-To: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -85,21 +86,22 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3148;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1645;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=UisAuRjDYlccXYZeHJj5rFNlGEZ17JayC7TRBBm7Sck=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLRZvq1ycb60O52UIrEeUpj+JTNyiI2HyQgL
- t4srEbZ8HuJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0QAKCRCLPIo+Aiko
- 1VgCB/9HI43MbXB+YW97AUQohOOwQb6A2g8DOEiZ3Be8/tnFby3U3yFmq8DExU0DPviGQQ2NzpJ
- sp+FHuqqln53CNcUXj3s0UPK+LCXPGUqXDNDnJsxNdfvmS+ziI79NnPEf3Uc6nlk16e+rtnWsAE
- twP5mMgDb1o1qDVupT3EH9IC2evoA2QFm59fF8cIf8Ep3Uc9ss3frD92TuldIzi4aLw4NTXrM32
- VCSzgdlgd9zg7oS2cOf8YTtFEBRIgrKx2OS3ASzSMqmU9szEVQQNta0YHymAuVC4rmESOsk8y82
- 6tQmcxBOmMetkC8Fdfl0DEwtvb8oOdiETYzAni9yVKUGOl6R
+ bh=b+2xLC1HSDWyK7NfHL7Qb4D4Cu0c6AyLWzMpnVJ2Bkw=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLREn5R2vwCLilh0Ije+tbpYax/p/jUu0bF7
+ p0wrWOrQaOJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0QAKCRCLPIo+Aiko
+ 1ecTCACcoT9cfmlWMLg7FWQiVgL+vtSXFyl8GY+TiV22QRdlsM0tocTnhHu0JSgfzbuuvPiMvUb
+ hSVUr56DA1TauYDZa+dGPwkdEcxp0UvguzxOuy2Do6eW3Hlm4gIMAuRDzoBP0eVsSEmgascPf0l
+ fWZpUiZkBPgdDWoyWHEM93ggm+Y5evMgSLUZfk3/rV8KyxhIEnuZGYDMCWGg7WpLA8tbclnE7g7
+ l3Vb8YDQM2ZKUxmH4AiAuxGCx3GvjBMmFqcnGs9scaSavroMrH74upYoHMvQ6Xym68WTnaHfATe
+ xdVOOWg1BFJAj2jJvKzJSPkeZBY2frZqHRl90ZL0X6MaeyuR
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_214251_512126_98A77D04 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20240112_214252_609054_8AA5305F 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,98 +118,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-All USB-C PHYs use 2 lanes for the USB. Drop single lane handling in
-this driver.
+Define VBUS regulator and the Type-C handling block as present on the
+Quacomm PMI632 PMIC.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 36 ++++++++++----------------------
- 1 file changed, 11 insertions(+), 25 deletions(-)
+ arch/arm64/boot/dts/qcom/pmi632.dtsi | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index fd2439175cdf..21faed7f648a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -332,8 +332,6 @@ struct qmp_usbc_offsets {
+diff --git a/arch/arm64/boot/dts/qcom/pmi632.dtsi b/arch/arm64/boot/dts/qcom/pmi632.dtsi
+index 4eb79e0ce40a..ccf288ddc987 100644
+--- a/arch/arm64/boot/dts/qcom/pmi632.dtsi
++++ b/arch/arm64/boot/dts/qcom/pmi632.dtsi
+@@ -45,6 +45,35 @@ pmic@2 {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
- /* struct qmp_phy_cfg - per-PHY initialization config */
- struct qmp_phy_cfg {
--	int lanes;
--
- 	const struct qmp_usbc_offsets *offsets;
- 
- 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
-@@ -444,8 +442,6 @@ static const struct qmp_usbc_offsets qmp_usbc_offsets_v3_qcm2290 = {
- };
- 
- static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
--	.lanes			= 2,
--
- 	.offsets		= &qmp_usbc_offsets_v3_qcm2290,
- 
- 	.serdes_tbl             = msm8998_usb3_serdes_tbl,
-@@ -462,8 +458,6 @@ static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
- };
- 
- static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
--	.lanes			= 2,
--
- 	.offsets		= &qmp_usbc_offsets_v3_qcm2290,
- 
- 	.serdes_tbl		= qcm2290_usb3_serdes_tbl,
-@@ -596,10 +590,8 @@ static int qmp_usbc_power_on(struct phy *phy)
- 	qmp_usbc_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 	qmp_usbc_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
--	if (cfg->lanes >= 2) {
--		qmp_usbc_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--		qmp_usbc_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
--	}
-+	qmp_usbc_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+	qmp_usbc_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
- 	qmp_usbc_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
-@@ -940,19 +932,15 @@ static int qmp_usbc_parse_dt_legacy(struct qmp_usbc *qmp, struct device_node *np
- 	if (cfg->pcs_usb_offset)
- 		qmp->pcs_usb = qmp->pcs + cfg->pcs_usb_offset;
- 
--	if (cfg->lanes >= 2) {
--		qmp->tx2 = devm_of_iomap(dev, np, 3, NULL);
--		if (IS_ERR(qmp->tx2))
--			return PTR_ERR(qmp->tx2);
-+	qmp->tx2 = devm_of_iomap(dev, np, 3, NULL);
-+	if (IS_ERR(qmp->tx2))
-+		return PTR_ERR(qmp->tx2);
- 
--		qmp->rx2 = devm_of_iomap(dev, np, 4, NULL);
--		if (IS_ERR(qmp->rx2))
--			return PTR_ERR(qmp->rx2);
-+	qmp->rx2 = devm_of_iomap(dev, np, 4, NULL);
-+	if (IS_ERR(qmp->rx2))
-+		return PTR_ERR(qmp->rx2);
- 
--		qmp->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
--	} else {
--		qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
--	}
-+	qmp->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
- 
- 	if (IS_ERR(qmp->pcs_misc)) {
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
-@@ -1004,10 +992,8 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
- 	qmp->tx = base + offs->tx;
- 	qmp->rx = base + offs->rx;
- 
--	if (cfg->lanes >= 2) {
--		qmp->tx2 = base + offs->tx2;
--		qmp->rx2 = base + offs->rx2;
--	}
-+	qmp->tx2 = base + offs->tx2;
-+	qmp->rx2 = base + offs->rx2;
- 
- 	ret = qmp_usbc_clk_init(qmp);
- 	if (ret)
++		pmi632_vbus: usb-vbus-regulator@1100 {
++			compatible = "qcom,pmi632-vbus-reg", "qcom,pm8150b-vbus-reg";
++			status = "disabled";
++			reg = <0x1100>;
++		};
++
++		pmi632_typec: typec@1500 {
++			compatible = "qcom,pmi632-typec";
++			status = "disabled";
++			reg = <0x1500>;
++			interrupts = <0x2 0x15 0x00 IRQ_TYPE_EDGE_RISING>,
++				     <0x2 0x15 0x01 IRQ_TYPE_EDGE_BOTH>,
++				     <0x2 0x15 0x02 IRQ_TYPE_EDGE_RISING>,
++				     <0x2 0x15 0x03 IRQ_TYPE_EDGE_BOTH>,
++				     <0x2 0x15 0x04 IRQ_TYPE_EDGE_RISING>,
++				     <0x2 0x15 0x05 IRQ_TYPE_EDGE_RISING>,
++				     <0x2 0x15 0x06 IRQ_TYPE_EDGE_BOTH>,
++				     <0x2 0x15 0x07 IRQ_TYPE_EDGE_RISING>;
++			interrupt-names = "or-rid-detect-change",
++					  "vpd-detect",
++					  "cc-state-change",
++					  "vconn-oc",
++					  "vbus-change",
++					  "attach-detach",
++					  "legacy-cable-detect",
++					  "try-snk-src-detect";
++			vdd-vbus-supply = <&pmi632_vbus>;
++		};
++
+ 		pmi632_temp: temp-alarm@2400 {
+ 			compatible = "qcom,spmi-temp-alarm";
+ 			reg = <0x2400>;
 
 -- 
 2.39.2
