@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EA06C4707B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B0EDC4707C
 	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 20:56:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,61 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=npaWlQYXVE+5uOY6wdlBTsDfAeMSKDrKwE+icC2/ALw=; b=Sd35PEGSfgOS1U
-	SxZMLacVrqjf7NfVuNhSsHhUL5bCO7G1mOwFMZ/cQQnbm9e7BVzDdWBj3fJr1ZnqbkRFYoaxXOwBN
-	AsSzF3fi9Ej7t4wHV9/HJoeMbejcqv6b1fOeGnXw+m0A80WCEA0SNKWQ8SVZgriZzPSB1hIPLxYqY
-	HGP9x57fX922Ed11iD6gIGQErpDv2Ry8m5yFOibuGbKSVpf29h6I51+3Wthzmm2TI8gLdM+oeR0Bj
-	2qtnJO4YtId9EHxKay1NR0uesO1u8bnQnh7MAYxsgpPBnYRgHr9mxVpi4779m4rpD028SgjQhfgDX
-	RK9dbVauIfkLXTqJWPaw==;
+	List-Owner; bh=W+NeRIXsXNLPtnRDYL1O8qkymx1O9G+CI9LVgIOivaY=; b=VJZnt9My3f+Kxo
+	gTAOvpFM5do1y+6TIk+rxJAh9vD+s1OEiP9EaSlZu4klK7J+HebsQRHHPZsFp0SrE9BpyK/qQ07QP
+	6h96pexr8TIfoXwnenf6gxmPxxTCbUqF9+De29mVqiMwHQyW/S2CNeFcFeg8ihvOomaN0fWdoyJOh
+	1DNCU/1Z92ZfAg8NWDRppmkNG8f6fHGgTUosQ251XCv8pBYv++YNN4NtUr97lDHmMjSX+LHnaw0JN
+	+EcAA+WWRW/TZDqcfxzTjZqEAn9GfN+GZj4H0zrD70HKBjqwbWSlXHBuFrlEVutBKBCFVqM4k+sgk
+	Car4ok0zwVlcWRo1oUMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOl33-005gnG-0E;
-	Sat, 13 Jan 2024 20:56:09 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1rOl32-005gmI-1z;
+	Sat, 13 Jan 2024 20:56:08 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOl2y-005gia-2P
+	id 1rOl2x-005ghq-0q
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 20:56:07 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-50eabfac2b7so8752893e87.0
-        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 12:56:03 -0800 (PST)
+	Sat, 13 Jan 2024 20:56:06 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-50e7abe4be4so10074075e87.2
+        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 12:56:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705179362; x=1705784162; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705179359; x=1705784159; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ocqUmmZ/X296NwFA4flyjkRbWukD7GvTg3YxA6yGitg=;
-        b=VLb9y16t6nZ4zNkAUY/6XPpETCnJVH8tJV5T/LZAXB0/GbsfjgyoPTYrTSrbyQZmA0
-         x+9wwYc2IMfT8SSLIpojILxEGUxmy4RKu9L0K7jnpop/g6CMIQURIIsIURmSYSE/Meqb
-         7wYf9oODoocGNxXjL0yVsmSxXWA1NmTsgyynI6qiW+enlYotf9GFILs0aBd+X0GzNE+/
-         oSKp0jtFxO/5TgOQqxPT+XLv5JAFCmD96a2tCCA7DGvyeiFoPAyr2B/HACeKhEKqiEt1
-         O5XDJzvX2L/bX2o/pBXSHo6IOG8mZ5cMhG3+MnwfABonXs/1V05IjxkH9Cz1TB9IK8PU
-         Ss4Q==
+        bh=rfCDPHRZshUclTE7Q60hNvhZq8fsj+/CQe3BirP36lM=;
+        b=VSIM9G5OievY6v9eMHW4kyY/1S4zwf4bfDwK+r0PelavN3H2v4F47vqwvwC/4w0kJV
+         KQmdbcG2ampQiWHnTV/Z+vo+wFGP07ariiecQvpbSDoV8tFb0qcPkkJ/uiFrQMAUhfck
+         D1HOx9Ccd07K0vLAuO1unXTp0XHDFGw5GIRBTxmlbMPGIt6vzT5GCySto+e64VjP4fTA
+         RHqqoKJriNliW3oGY6F5qPK/7GbB26I3IYWggkct/p5SuM5EJOadaIMAoiBMhl3A1s/8
+         //kLCbi5m++3Qtf0c2ILXKL15Z2n+cCu5SP+GAw0RYnVD1yLMj98BXVRJJyJ0nlC77hP
+         yNPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705179362; x=1705784162;
+        d=1e100.net; s=20230601; t=1705179359; x=1705784159;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=ocqUmmZ/X296NwFA4flyjkRbWukD7GvTg3YxA6yGitg=;
-        b=c+1KDF/niJVRUVwkW72UwlMdD0J55eXqaKBp3vL9EWdInPALH/ekraT6QxNbOB0GFr
-         nq6iRytDDmePcCrbSFFy3JP999TdOVnxLk2MBBXSFRK+m3Mi8wb0UQDPmIEUrojGHVL0
-         Wv3ysScgOOWZfid2SFuXbujTWszL1L+z6ZifeIRYpcOx0jJjcYSX2cJZ5qg85k1caQ+C
-         mDg+RatguVYfURco92iM1o1zNFdUij+Af2oZZ4eK4GLi1TdUGPEosoYJiYKdiv8SSetB
-         LIbZjtFIYTigANzaOm8bpn56j0DXZiTMPl9LYLcwfePCyyUuVaOEzA1xkPlod1jeweYj
-         nAkA==
-X-Gm-Message-State: AOJu0Yw+bGAj5ouGWlc8qqsRSbdn9xzG+RWcVZVuv8j6M8DoHGr2GQ63
-	IIAj2l9X3mGiK2rp/ohRm3773X5XsiRN0A==
-X-Google-Smtp-Source: AGHT+IFq5oyAxNyvZqsebgXqK9XeuFvoy7sczjjQk42iU+4SXCyPiqkCuX4XXzNEeVFM3pzj9qSVAQ==
-X-Received: by 2002:a19:4317:0:b0:50e:cbf9:682f with SMTP id q23-20020a194317000000b0050ecbf9682fmr1333728lfa.89.1705179362378;
-        Sat, 13 Jan 2024 12:56:02 -0800 (PST)
+        bh=rfCDPHRZshUclTE7Q60hNvhZq8fsj+/CQe3BirP36lM=;
+        b=vkLeLXW1UOsUNYp//HsfGQ5otTZic13uxiQQvQsKtz9uu7vhf2YLVcv9zAk7NdyCC6
+         0eiNalVL/apkIzW8zkM3X2QI8kEf9NjD8UnMRCT0qVRfmm+jsWN5seikJVXB6gauLT8w
+         Sdqan0tfbR3JpNvOTVD3+YLx3tq+V9EIkJCesX1LRCsvfdUGxUQdpRJoo2x57D+s4z1r
+         XbUUyeb4vzlcz4jFS8AXXkx2duSYYt+d5oh8MCOSBtoLycVeKo1DIoQ+ubYKPBBT6UMk
+         Z4fNdNRSRa4WGZff8tiQJ5DIh+hqaLhVzFlpOULSmpkZuT8eczZRSgc3Um0R1ogfGC2o
+         nnhA==
+X-Gm-Message-State: AOJu0Yz+TEBmcdbYHuFAqMUrE+psCHN5Ato3Lpf2fslu0XOhqgh4Gu7z
+	U8NgNnVjgGi9N5cM4mSA4t5vj73t+Q5+aQ==
+X-Google-Smtp-Source: AGHT+IHusO1vG7W52BGFKamLfH32wJn7Z07eOGbCYsTYUA2QIc++slHBcDivGkUT5YMhpNkBx+LTQA==
+X-Received: by 2002:ac2:4c26:0:b0:50e:9eaf:98ec with SMTP id u6-20020ac24c26000000b0050e9eaf98ecmr1556512lfq.54.1705179359169;
+        Sat, 13 Jan 2024 12:55:59 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id p14-20020a056512328e00b0050e9355d7eesm919802lfe.103.2024.01.13.12.56.01
+        by smtp.gmail.com with ESMTPSA id p14-20020a056512328e00b0050e9355d7eesm919802lfe.103.2024.01.13.12.55.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 13 Jan 2024 12:56:02 -0800 (PST)
+        Sat, 13 Jan 2024 12:55:58 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 13 Jan 2024 22:55:54 +0200
-Subject: [PATCH v2 11/15] phy: qcom: qmp-usb: drop dual-lane handling
+Date: Sat, 13 Jan 2024 22:55:50 +0200
+Subject: [PATCH v2 07/15] usb: typec: qcom-pmic-typec: allow different
+ implementations for the PD PHY
 MIME-Version: 1.0
-Message-Id: <20240113-pmi632-typec-v2-11-182d9aa0a5b3@linaro.org>
+Message-Id: <20240113-pmi632-typec-v2-7-182d9aa0a5b3@linaro.org>
 References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
 In-Reply-To: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -84,21 +85,21 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6460;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=18738;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=8Dls26g2bshLZ1TTPkRX3m67fZ2HP79XYN3bxXtlmvY=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlovjXoLHSPe5bguIF7nWwQTULJ0mFKEIWGZ9uH
- ssM6WbKDu+JATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaL41wAKCRCLPIo+Aiko
- 1TBcB/4tjZdrNuWkAPNFXEmUdlxAvzKC4QXcW7OQDxsDYCnfU/tlD3s/EYbBgouQ8iiJDa41VxG
- NNQO04oEQHhK4PhxapxxAZgPjKRhXzladm8pFBKdJ3Vi0lRF5LVi57z77maJz1WYuSw7lrEYFFA
- KksvNvJh7rWKveQ+WhOP0R6sBbkR5tuUrRTG7cowz1DKOl4mnwsxqFnsSAU2FSeTogtVMKII+j5
- 5Poege+FQcF9opKheZQ6wBbpVlj6kqIDLHb2puznXZw5PV9FSBuguytF5Bc/s0mh+T/7Lx0nfZi
- U+nTpYg9yveN40oaQSAq2faTGcrTEnmi1RWo/D+ZWlbLm9lq
+ bh=FpV3mWAJeYNC5njvp3M2TJhjiJJSyONyWk1ydvxodyg=;
+ b=owGbwMvMwMXYbdNlx6SpcZXxtFoSQ+qiH9fDvU3Pl/6NLdAtKEt4l15z41SRSVONxw3O5P+ZJ
+ xkWCTJ2MhqzMDByMciKKbL4FLRMjdmUHPZhx9R6mEGsTCBTGLg4BWAivFvZ/8oee+FbZfVd8Xj8
+ lCncLaZzOn46srxf7HGg6GXn3C+RdQZXDxv1XxNyeu6S+6pB+0Wicrvy7RfXLZkUTsjopk0LPr/
+ qcajD3DOWwgV8QXGNp7hVVNPzFrsWOq10ks2t+PHxA7OA95TP8maXBV7KJDc+m+rIuuWW4bPgpR
+ +7FZu+ic2rl5GvfPOtSyr/1G1JiZDUzHWu578VCD+33zNVflehx5ncW6l3yjIP/Ov68/jFFKa1r
+ jkO90+WGppp/uB5onW+fMW53N/8RopCykevtPSemCiw4qip1ARtI6XWm6q6CzIUJ8+Qnf1fY22E
+ ZKZv3+K7Iv3HGwVsAn4ULi7f/Wp/tG7WT2cf+9J1wsqtAA==
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_125604_804851_7C873518 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20240113_125603_305390_55F064CE 
+X-CRM114-Status: GOOD (  22.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,215 +116,569 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Now as all dual-lane PHYs have been migrated to a new driver, drop
-support for dual lanes configuration. If the PHY uses two lanes for USB,
-it is symthom that it should use either a combo USB+DP or a USB-C PHY
-driver.
+Rework Qualcomm PMIC TCPM driver to allow different platform-specific
+implementations of the PD PHY interface. While majority of platforms
+has the same of register for the PD PHY, some obscure ones (PMI632) do
+not have real PD PHY support. Add proper interface between the main
+module and the PD PHY backend to allow switching the PD PHY
+implementation.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+Tested-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Acked-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 57 +--------------------------------
- 1 file changed, 1 insertion(+), 56 deletions(-)
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c      |  91 +-----------
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h      |  25 ++++
+ .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c    | 153 ++++++++++++++++++---
+ .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h    |  93 +------------
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h |   4 +-
+ 5 files changed, 171 insertions(+), 195 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index c7698369d3dc..e62539ce99a6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1237,15 +1237,10 @@ struct qmp_usb_offsets {
- 	u16 pcs_usb;
- 	u16 tx;
- 	u16 rx;
--	/* for PHYs with >= 2 lanes */
--	u16 tx2;
--	u16 rx2;
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c
+index a243648abb4a..4c7c38c58a02 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c
+@@ -20,26 +20,15 @@
+ 
+ #include <drm/bridge/aux-bridge.h>
+ 
++#include "qcom_pmic_typec.h"
+ #include "qcom_pmic_typec_pdphy.h"
+ #include "qcom_pmic_typec_port.h"
+ 
+ struct pmic_typec_resources {
+-	struct pmic_typec_pdphy_resources	*pdphy_res;
++	const struct pmic_typec_pdphy_resources	*pdphy_res;
+ 	struct pmic_typec_port_resources	*port_res;
  };
  
- /* struct qmp_phy_cfg - per-PHY initialization config */
- struct qmp_phy_cfg {
--	int lanes;
+-struct pmic_typec {
+-	struct device		*dev;
+-	struct tcpm_port	*tcpm_port;
+-	struct tcpc_dev		tcpc;
+-	struct pmic_typec_pdphy	*pmic_typec_pdphy;
+-	struct pmic_typec_port	*pmic_typec_port;
+-	bool			vbus_enabled;
+-	struct mutex		lock;		/* VBUS state serialization */
+-};
 -
- 	const struct qmp_usb_offsets *offsets;
- 
- 	/* Init sequence for PHY blocks - serdes, tx, rx, pcs */
-@@ -1285,8 +1280,6 @@ struct qmp_usb {
- 	void __iomem *pcs_usb;
- 	void __iomem *tx;
- 	void __iomem *rx;
--	void __iomem *tx2;
--	void __iomem *rx2;
- 
- 	struct clk *pipe_clk;
- 	struct clk_bulk_data *clks;
-@@ -1393,8 +1386,6 @@ static const struct qmp_usb_offsets qmp_usb_offsets_v7 = {
- };
- 
- static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
--	.lanes			= 1,
+-#define tcpc_to_tcpm(_tcpc_) container_of(_tcpc_, struct pmic_typec, tcpc)
 -
- 	.offsets		= &qmp_usb_offsets_v3,
+ static int qcom_pmic_typec_get_vbus(struct tcpc_dev *tcpc)
+ {
+ 	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
+@@ -116,34 +105,6 @@ static int qcom_pmic_typec_start_toggling(struct tcpc_dev *tcpc,
+ 						   port_type, cc);
+ }
  
- 	.serdes_tbl		= ipq8074_usb3_serdes_tbl,
-@@ -1411,8 +1402,6 @@ static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
- };
- 
- static const struct qmp_phy_cfg ipq9574_usb3phy_cfg = {
--	.lanes			= 1,
+-static int qcom_pmic_typec_set_roles(struct tcpc_dev *tcpc, bool attached,
+-				     enum typec_role power_role,
+-				     enum typec_data_role data_role)
+-{
+-	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
 -
- 	.offsets		= &qmp_usb_offsets_ipq9574,
- 
- 	.serdes_tbl		= ipq9574_usb3_serdes_tbl,
-@@ -1429,8 +1418,6 @@ static const struct qmp_phy_cfg ipq9574_usb3phy_cfg = {
- };
- 
- static const struct qmp_phy_cfg msm8996_usb3phy_cfg = {
--	.lanes			= 1,
+-	return qcom_pmic_typec_pdphy_set_roles(tcpm->pmic_typec_pdphy,
+-					       power_role, data_role);
+-}
 -
- 	.offsets		= &qmp_usb_offsets_v3,
- 
- 	.serdes_tbl		= msm8996_usb3_serdes_tbl,
-@@ -1447,8 +1434,6 @@ static const struct qmp_phy_cfg msm8996_usb3phy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
--	.lanes			= 1,
+-static int qcom_pmic_typec_set_pd_rx(struct tcpc_dev *tcpc, bool on)
+-{
+-	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
 -
- 	.offsets		= &qmp_usb_offsets_v5,
- 
- 	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
-@@ -1467,8 +1452,6 @@ static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
--	.lanes			= 1,
+-	return qcom_pmic_typec_pdphy_set_pd_rx(tcpm->pmic_typec_pdphy, on);
+-}
 -
- 	.offsets		= &qmp_usb_offsets_v5,
- 
- 	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
-@@ -1487,8 +1470,6 @@ static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
--	.lanes			= 1,
+-static int qcom_pmic_typec_pd_transmit(struct tcpc_dev *tcpc,
+-				       enum tcpm_transmit_type type,
+-				       const struct pd_message *msg,
+-				       unsigned int negotiated_rev)
+-{
+-	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
 -
- 	.offsets		= &qmp_usb_offsets_v3,
- 
- 	.serdes_tbl		= qmp_v3_usb3_uniphy_serdes_tbl,
-@@ -1507,8 +1488,6 @@ static const struct qmp_phy_cfg qmp_v3_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm8150_usb3_uniphy_cfg = {
--	.lanes			= 1,
+-	return qcom_pmic_typec_pdphy_pd_transmit(tcpm->pmic_typec_pdphy, type,
+-						 msg, negotiated_rev);
+-}
 -
- 	.offsets		= &qmp_usb_offsets_v4,
+ static int qcom_pmic_typec_init(struct tcpc_dev *tcpc)
+ {
+ 	return 0;
+@@ -177,9 +138,6 @@ static int qcom_pmic_typec_probe(struct platform_device *pdev)
+ 	tcpm->tcpc.set_polarity = qcom_pmic_typec_set_polarity;
+ 	tcpm->tcpc.set_vconn = qcom_pmic_typec_set_vconn;
+ 	tcpm->tcpc.start_toggling = qcom_pmic_typec_start_toggling;
+-	tcpm->tcpc.set_pd_rx = qcom_pmic_typec_set_pd_rx;
+-	tcpm->tcpc.set_roles = qcom_pmic_typec_set_roles;
+-	tcpm->tcpc.pd_transmit = qcom_pmic_typec_pd_transmit;
  
- 	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-@@ -1530,8 +1509,6 @@ static const struct qmp_phy_cfg sm8150_usb3_uniphy_cfg = {
- };
+ 	regmap = dev_get_regmap(dev->parent, NULL);
+ 	if (!regmap) {
+@@ -195,16 +153,12 @@ static int qcom_pmic_typec_probe(struct platform_device *pdev)
+ 	if (IS_ERR(tcpm->pmic_typec_port))
+ 		return PTR_ERR(tcpm->pmic_typec_port);
  
- static const struct qmp_phy_cfg sm8250_usb3_uniphy_cfg = {
--	.lanes			= 1,
+-	tcpm->pmic_typec_pdphy = qcom_pmic_typec_pdphy_alloc(dev);
+-	if (IS_ERR(tcpm->pmic_typec_pdphy))
+-		return PTR_ERR(tcpm->pmic_typec_pdphy);
 -
- 	.offsets		= &qmp_usb_offsets_v4,
- 
- 	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-@@ -1553,8 +1530,6 @@ static const struct qmp_phy_cfg sm8250_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sdx55_usb3_uniphy_cfg = {
--	.lanes			= 1,
--
- 	.offsets		= &qmp_usb_offsets_v4,
- 
- 	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-@@ -1576,8 +1551,6 @@ static const struct qmp_phy_cfg sdx55_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
--	.lanes			= 1,
--
- 	.offsets		= &qmp_usb_offsets_v5,
- 
- 	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-@@ -1599,7 +1572,6 @@ static const struct qmp_phy_cfg sdx65_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sdx75_usb3_uniphy_cfg = {
--	.lanes			= 1,
- 	.offsets		= &qmp_usb_offsets_v6,
- 
- 	.serdes_tbl		= sdx75_usb3_uniphy_serdes_tbl,
-@@ -1621,8 +1593,6 @@ static const struct qmp_phy_cfg sdx75_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
--	.lanes			= 1,
--
- 	.offsets		= &qmp_usb_offsets_v5,
- 
- 	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-@@ -1644,8 +1614,6 @@ static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
- };
- 
- static const struct qmp_phy_cfg x1e80100_usb3_uniphy_cfg = {
--	.lanes			= 1,
--
- 	.offsets		= &qmp_usb_offsets_v7,
- 
- 	.serdes_tbl		= x1e80100_usb3_uniphy_serdes_tbl,
-@@ -1780,11 +1748,6 @@ static int qmp_usb_power_on(struct phy *phy)
- 	qmp_usb_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 	qmp_usb_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
--	if (cfg->lanes >= 2) {
--		qmp_usb_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--		qmp_usb_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
--	}
--
- 	qmp_usb_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (pcs_usb)
-@@ -2131,7 +2094,6 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 	/*
- 	 * Get memory resources for the PHY:
- 	 * Resources are indexed as: tx -> 0; rx -> 1; pcs -> 2.
--	 * For dual lane PHYs: tx2 -> 3, rx2 -> 4, pcs_misc (optional) -> 5
- 	 * For single lane PHYs: pcs_misc (optional) -> 3.
- 	 */
- 	qmp->tx = devm_of_iomap(dev, np, 0, NULL);
-@@ -2149,19 +2111,7 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 	if (cfg->pcs_usb_offset)
- 		qmp->pcs_usb = qmp->pcs + cfg->pcs_usb_offset;
- 
--	if (cfg->lanes >= 2) {
--		qmp->tx2 = devm_of_iomap(dev, np, 3, NULL);
--		if (IS_ERR(qmp->tx2))
--			return PTR_ERR(qmp->tx2);
--
--		qmp->rx2 = devm_of_iomap(dev, np, 4, NULL);
--		if (IS_ERR(qmp->rx2))
--			return PTR_ERR(qmp->rx2);
--
--		qmp->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
--	} else {
--		qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
--	}
-+	qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
- 
- 	if (IS_ERR(qmp->pcs_misc)) {
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
-@@ -2213,11 +2163,6 @@ static int qmp_usb_parse_dt(struct qmp_usb *qmp)
- 	qmp->tx = base + offs->tx;
- 	qmp->rx = base + offs->rx;
- 
--	if (cfg->lanes >= 2) {
--		qmp->tx2 = base + offs->tx2;
--		qmp->rx2 = base + offs->rx2;
--	}
--
- 	ret = qmp_usb_clk_init(qmp);
+ 	ret = qcom_pmic_typec_port_probe(pdev, tcpm->pmic_typec_port,
+ 					 res->port_res, regmap, base[0]);
  	if (ret)
  		return ret;
+ 
+-	ret = qcom_pmic_typec_pdphy_probe(pdev, tcpm->pmic_typec_pdphy,
++	ret = qcom_pmic_typec_pdphy_probe(pdev, tcpm,
+ 					  res->pdphy_res, regmap, base[1]);
+ 	if (ret)
+ 		return ret;
+@@ -231,8 +185,7 @@ static int qcom_pmic_typec_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto fwnode_remove;
+ 
+-	ret = qcom_pmic_typec_pdphy_start(tcpm->pmic_typec_pdphy,
+-					  tcpm->tcpm_port);
++	ret = tcpm->pdphy_start(tcpm, tcpm->tcpm_port);
+ 	if (ret)
+ 		goto fwnode_remove;
+ 
+@@ -248,46 +201,12 @@ static void qcom_pmic_typec_remove(struct platform_device *pdev)
+ {
+ 	struct pmic_typec *tcpm = platform_get_drvdata(pdev);
+ 
+-	qcom_pmic_typec_pdphy_stop(tcpm->pmic_typec_pdphy);
++	tcpm->pdphy_stop(tcpm);
+ 	qcom_pmic_typec_port_stop(tcpm->pmic_typec_port);
+ 	tcpm_unregister_port(tcpm->tcpm_port);
+ 	fwnode_remove_software_node(tcpm->tcpc.fwnode);
+ }
+ 
+-static struct pmic_typec_pdphy_resources pm8150b_pdphy_res = {
+-	.irq_params = {
+-		{
+-			.virq = PMIC_PDPHY_SIG_TX_IRQ,
+-			.irq_name = "sig-tx",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_SIG_RX_IRQ,
+-			.irq_name = "sig-rx",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_MSG_TX_IRQ,
+-			.irq_name = "msg-tx",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_MSG_RX_IRQ,
+-			.irq_name = "msg-rx",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_MSG_TX_FAIL_IRQ,
+-			.irq_name = "msg-tx-failed",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_MSG_TX_DISCARD_IRQ,
+-			.irq_name = "msg-tx-discarded",
+-		},
+-		{
+-			.virq = PMIC_PDPHY_MSG_RX_DISCARD_IRQ,
+-			.irq_name = "msg-rx-discarded",
+-		},
+-	},
+-	.nr_irqs = 7,
+-};
+-
+ static struct pmic_typec_port_resources pm8150b_port_res = {
+ 	.irq_params = {
+ 		{
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h
+new file mode 100644
+index 000000000000..da035916c12a
+--- /dev/null
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h
+@@ -0,0 +1,25 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2023, Linaro Ltd. All rights reserved.
++ */
++
++#ifndef __QCOM_PMIC_TYPEC_H__
++#define __QCOM_PMIC_TYPEC_H__
++
++struct pmic_typec {
++	struct device		*dev;
++	struct tcpm_port	*tcpm_port;
++	struct tcpc_dev		tcpc;
++	struct pmic_typec_pdphy	*pmic_typec_pdphy;
++	struct pmic_typec_port	*pmic_typec_port;
++	bool			vbus_enabled;
++	struct mutex		lock;		/* VBUS state serialization */
++
++	int (*pdphy_start)(struct pmic_typec *tcpm,
++			   struct tcpm_port *tcpm_port);
++	void (*pdphy_stop)(struct pmic_typec *tcpm);
++};
++
++#define tcpc_to_tcpm(_tcpc_) container_of(_tcpc_, struct pmic_typec, tcpc)
++
++#endif
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
+index 44d8342ed0ad..984d90b0d763 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
+@@ -14,8 +14,74 @@
+ #include <linux/slab.h>
+ #include <linux/usb/pd.h>
+ #include <linux/usb/tcpm.h>
++#include "qcom_pmic_typec.h"
+ #include "qcom_pmic_typec_pdphy.h"
+ 
++/* PD PHY register offsets and bit fields */
++#define USB_PDPHY_MSG_CONFIG_REG	0x40
++#define MSG_CONFIG_PORT_DATA_ROLE	BIT(3)
++#define MSG_CONFIG_PORT_POWER_ROLE	BIT(2)
++#define MSG_CONFIG_SPEC_REV_MASK	(BIT(1) | BIT(0))
++
++#define USB_PDPHY_EN_CONTROL_REG	0x46
++#define CONTROL_ENABLE			BIT(0)
++
++#define USB_PDPHY_RX_STATUS_REG		0x4A
++#define RX_FRAME_TYPE			(BIT(0) | BIT(1) | BIT(2))
++
++#define USB_PDPHY_FRAME_FILTER_REG	0x4C
++#define FRAME_FILTER_EN_HARD_RESET	BIT(5)
++#define FRAME_FILTER_EN_SOP		BIT(0)
++
++#define USB_PDPHY_TX_SIZE_REG		0x42
++#define TX_SIZE_MASK			0xF
++
++#define USB_PDPHY_TX_CONTROL_REG	0x44
++#define TX_CONTROL_RETRY_COUNT(n)	(((n) & 0x3) << 5)
++#define TX_CONTROL_FRAME_TYPE(n)        (((n) & 0x7) << 2)
++#define TX_CONTROL_FRAME_TYPE_CABLE_RESET	(0x1 << 2)
++#define TX_CONTROL_SEND_SIGNAL		BIT(1)
++#define TX_CONTROL_SEND_MSG		BIT(0)
++
++#define USB_PDPHY_RX_SIZE_REG		0x48
++
++#define USB_PDPHY_RX_ACKNOWLEDGE_REG	0x4B
++#define RX_BUFFER_TOKEN			BIT(0)
++
++#define USB_PDPHY_BIST_MODE_REG		0x4E
++#define BIST_MODE_MASK			0xF
++#define BIST_ENABLE			BIT(7)
++#define PD_MSG_BIST			0x3
++#define PD_BIST_TEST_DATA_MODE		0x8
++
++#define USB_PDPHY_TX_BUFFER_HDR_REG	0x60
++#define USB_PDPHY_TX_BUFFER_DATA_REG	0x62
++
++#define USB_PDPHY_RX_BUFFER_REG		0x80
++
++/* VDD regulator */
++#define VDD_PDPHY_VOL_MIN		2800000	/* uV */
++#define VDD_PDPHY_VOL_MAX		3300000	/* uV */
++#define VDD_PDPHY_HPM_LOAD		3000	/* uA */
++
++/* Message Spec Rev field */
++#define PD_MSG_HDR_REV(hdr)		(((hdr) >> 6) & 3)
++
++/* timers */
++#define RECEIVER_RESPONSE_TIME		15	/* tReceiverResponse */
++#define HARD_RESET_COMPLETE_TIME	5	/* tHardResetComplete */
++
++/* Interrupt numbers */
++#define PMIC_PDPHY_SIG_TX_IRQ		0x0
++#define PMIC_PDPHY_SIG_RX_IRQ		0x1
++#define PMIC_PDPHY_MSG_TX_IRQ		0x2
++#define PMIC_PDPHY_MSG_RX_IRQ		0x3
++#define PMIC_PDPHY_MSG_TX_FAIL_IRQ	0x4
++#define PMIC_PDPHY_MSG_TX_DISCARD_IRQ	0x5
++#define PMIC_PDPHY_MSG_RX_DISCARD_IRQ	0x6
++#define PMIC_PDPHY_FR_SWAP_IRQ		0x7
++
++
+ struct pmic_typec_pdphy_irq_data {
+ 	int				virq;
+ 	int				irq;
+@@ -231,11 +297,13 @@ qcom_pmic_typec_pdphy_pd_transmit_payload(struct pmic_typec_pdphy *pmic_typec_pd
+ 	return ret;
+ }
+ 
+-int qcom_pmic_typec_pdphy_pd_transmit(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				      enum tcpm_transmit_type type,
+-				      const struct pd_message *msg,
+-				      unsigned int negotiated_rev)
++static int qcom_pmic_typec_pdphy_pd_transmit(struct tcpc_dev *tcpc,
++					     enum tcpm_transmit_type type,
++					     const struct pd_message *msg,
++					     unsigned int negotiated_rev)
+ {
++	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
++	struct pmic_typec_pdphy *pmic_typec_pdphy = tcpm->pmic_typec_pdphy;
+ 	struct device *dev = pmic_typec_pdphy->dev;
+ 	int ret;
+ 
+@@ -336,8 +404,10 @@ static irqreturn_t qcom_pmic_typec_pdphy_isr(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-int qcom_pmic_typec_pdphy_set_pd_rx(struct pmic_typec_pdphy *pmic_typec_pdphy, bool on)
++static int qcom_pmic_typec_pdphy_set_pd_rx(struct tcpc_dev *tcpc, bool on)
+ {
++	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
++	struct pmic_typec_pdphy *pmic_typec_pdphy = tcpm->pmic_typec_pdphy;
+ 	unsigned long flags;
+ 	int ret;
+ 
+@@ -353,10 +423,12 @@ int qcom_pmic_typec_pdphy_set_pd_rx(struct pmic_typec_pdphy *pmic_typec_pdphy, b
+ 	return ret;
+ }
+ 
+-int qcom_pmic_typec_pdphy_set_roles(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				    enum typec_role power_role,
+-				    enum typec_data_role data_role)
++static int qcom_pmic_typec_pdphy_set_roles(struct tcpc_dev *tcpc, bool attached,
++					   enum typec_role power_role,
++					   enum typec_data_role data_role)
+ {
++	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
++	struct pmic_typec_pdphy *pmic_typec_pdphy = tcpm->pmic_typec_pdphy;
+ 	struct device *dev = pmic_typec_pdphy->dev;
+ 	unsigned long flags;
+ 	int ret;
+@@ -437,9 +509,10 @@ static int pmic_typec_pdphy_reset(struct pmic_typec_pdphy *pmic_typec_pdphy)
+ 	return ret;
+ }
+ 
+-int qcom_pmic_typec_pdphy_start(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				struct tcpm_port *tcpm_port)
++static int qcom_pmic_typec_pdphy_start(struct pmic_typec *tcpm,
++				       struct tcpm_port *tcpm_port)
+ {
++	struct pmic_typec_pdphy *pmic_typec_pdphy = tcpm->pmic_typec_pdphy;
+ 	int i;
+ 	int ret;
+ 
+@@ -459,8 +532,9 @@ int qcom_pmic_typec_pdphy_start(struct pmic_typec_pdphy *pmic_typec_pdphy,
+ 	return 0;
+ }
+ 
+-void qcom_pmic_typec_pdphy_stop(struct pmic_typec_pdphy *pmic_typec_pdphy)
++static void qcom_pmic_typec_pdphy_stop(struct pmic_typec *tcpm)
+ {
++	struct pmic_typec_pdphy *pmic_typec_pdphy = tcpm->pmic_typec_pdphy;
+ 	int i;
+ 
+ 	for (i = 0; i < pmic_typec_pdphy->nr_irqs; i++)
+@@ -471,21 +545,21 @@ void qcom_pmic_typec_pdphy_stop(struct pmic_typec_pdphy *pmic_typec_pdphy)
+ 	regulator_disable(pmic_typec_pdphy->vdd_pdphy);
+ }
+ 
+-struct pmic_typec_pdphy *qcom_pmic_typec_pdphy_alloc(struct device *dev)
+-{
+-	return devm_kzalloc(dev, sizeof(struct pmic_typec_pdphy), GFP_KERNEL);
+-}
+-
+ int qcom_pmic_typec_pdphy_probe(struct platform_device *pdev,
+-				struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				struct pmic_typec_pdphy_resources *res,
++				struct pmic_typec *tcpm,
++				const struct pmic_typec_pdphy_resources *res,
+ 				struct regmap *regmap,
+ 				u32 base)
+ {
++	struct pmic_typec_pdphy *pmic_typec_pdphy;
+ 	struct device *dev = &pdev->dev;
+ 	struct pmic_typec_pdphy_irq_data *irq_data;
+ 	int i, ret, irq;
+ 
++	pmic_typec_pdphy = devm_kzalloc(dev, sizeof(*pmic_typec_pdphy), GFP_KERNEL);
++	if (!pmic_typec_pdphy)
++		return -ENOMEM;
++
+ 	if (!res->nr_irqs || res->nr_irqs > PMIC_PDPHY_MAX_IRQS)
+ 		return -EINVAL;
+ 
+@@ -524,5 +598,48 @@ int qcom_pmic_typec_pdphy_probe(struct platform_device *pdev,
+ 			return ret;
+ 	}
+ 
++	tcpm->pmic_typec_pdphy = pmic_typec_pdphy;
++
++	tcpm->tcpc.set_pd_rx = qcom_pmic_typec_pdphy_set_pd_rx;
++	tcpm->tcpc.set_roles = qcom_pmic_typec_pdphy_set_roles;
++	tcpm->tcpc.pd_transmit = qcom_pmic_typec_pdphy_pd_transmit;
++
++	tcpm->pdphy_start = qcom_pmic_typec_pdphy_start;
++	tcpm->pdphy_stop = qcom_pmic_typec_pdphy_stop;
++
+ 	return 0;
+ }
++
++const struct pmic_typec_pdphy_resources pm8150b_pdphy_res = {
++	.irq_params = {
++		{
++			.virq = PMIC_PDPHY_SIG_TX_IRQ,
++			.irq_name = "sig-tx",
++		},
++		{
++			.virq = PMIC_PDPHY_SIG_RX_IRQ,
++			.irq_name = "sig-rx",
++		},
++		{
++			.virq = PMIC_PDPHY_MSG_TX_IRQ,
++			.irq_name = "msg-tx",
++		},
++		{
++			.virq = PMIC_PDPHY_MSG_RX_IRQ,
++			.irq_name = "msg-rx",
++		},
++		{
++			.virq = PMIC_PDPHY_MSG_TX_FAIL_IRQ,
++			.irq_name = "msg-tx-failed",
++		},
++		{
++			.virq = PMIC_PDPHY_MSG_TX_DISCARD_IRQ,
++			.irq_name = "msg-tx-discarded",
++		},
++		{
++			.virq = PMIC_PDPHY_MSG_RX_DISCARD_IRQ,
++			.irq_name = "msg-rx-discarded",
++		},
++	},
++	.nr_irqs = 7,
++};
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h
+index 070822dc6f17..5f428e67ccfe 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h
+@@ -8,74 +8,6 @@
+ 
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+-#include <linux/usb/tcpm.h>
+-
+-#define USB_PDPHY_MAX_DATA_OBJ_LEN	28
+-#define USB_PDPHY_MSG_HDR_LEN		2
+-
+-/* PD PHY register offsets and bit fields */
+-#define USB_PDPHY_MSG_CONFIG_REG	0x40
+-#define MSG_CONFIG_PORT_DATA_ROLE	BIT(3)
+-#define MSG_CONFIG_PORT_POWER_ROLE	BIT(2)
+-#define MSG_CONFIG_SPEC_REV_MASK	(BIT(1) | BIT(0))
+-
+-#define USB_PDPHY_EN_CONTROL_REG	0x46
+-#define CONTROL_ENABLE			BIT(0)
+-
+-#define USB_PDPHY_RX_STATUS_REG		0x4A
+-#define RX_FRAME_TYPE			(BIT(0) | BIT(1) | BIT(2))
+-
+-#define USB_PDPHY_FRAME_FILTER_REG	0x4C
+-#define FRAME_FILTER_EN_HARD_RESET	BIT(5)
+-#define FRAME_FILTER_EN_SOP		BIT(0)
+-
+-#define USB_PDPHY_TX_SIZE_REG		0x42
+-#define TX_SIZE_MASK			0xF
+-
+-#define USB_PDPHY_TX_CONTROL_REG	0x44
+-#define TX_CONTROL_RETRY_COUNT(n)	(((n) & 0x3) << 5)
+-#define TX_CONTROL_FRAME_TYPE(n)        (((n) & 0x7) << 2)
+-#define TX_CONTROL_FRAME_TYPE_CABLE_RESET	(0x1 << 2)
+-#define TX_CONTROL_SEND_SIGNAL		BIT(1)
+-#define TX_CONTROL_SEND_MSG		BIT(0)
+-
+-#define USB_PDPHY_RX_SIZE_REG		0x48
+-
+-#define USB_PDPHY_RX_ACKNOWLEDGE_REG	0x4B
+-#define RX_BUFFER_TOKEN			BIT(0)
+-
+-#define USB_PDPHY_BIST_MODE_REG		0x4E
+-#define BIST_MODE_MASK			0xF
+-#define BIST_ENABLE			BIT(7)
+-#define PD_MSG_BIST			0x3
+-#define PD_BIST_TEST_DATA_MODE		0x8
+-
+-#define USB_PDPHY_TX_BUFFER_HDR_REG	0x60
+-#define USB_PDPHY_TX_BUFFER_DATA_REG	0x62
+-
+-#define USB_PDPHY_RX_BUFFER_REG		0x80
+-
+-/* VDD regulator */
+-#define VDD_PDPHY_VOL_MIN		2800000	/* uV */
+-#define VDD_PDPHY_VOL_MAX		3300000	/* uV */
+-#define VDD_PDPHY_HPM_LOAD		3000	/* uA */
+-
+-/* Message Spec Rev field */
+-#define PD_MSG_HDR_REV(hdr)		(((hdr) >> 6) & 3)
+-
+-/* timers */
+-#define RECEIVER_RESPONSE_TIME		15	/* tReceiverResponse */
+-#define HARD_RESET_COMPLETE_TIME	5	/* tHardResetComplete */
+-
+-/* Interrupt numbers */
+-#define PMIC_PDPHY_SIG_TX_IRQ		0x0
+-#define PMIC_PDPHY_SIG_RX_IRQ		0x1
+-#define PMIC_PDPHY_MSG_TX_IRQ		0x2
+-#define PMIC_PDPHY_MSG_RX_IRQ		0x3
+-#define PMIC_PDPHY_MSG_TX_FAIL_IRQ	0x4
+-#define PMIC_PDPHY_MSG_TX_DISCARD_IRQ	0x5
+-#define PMIC_PDPHY_MSG_RX_DISCARD_IRQ	0x6
+-#define PMIC_PDPHY_FR_SWAP_IRQ		0x7
+ 
+ /* Resources */
+ #define PMIC_PDPHY_MAX_IRQS		0x08
+@@ -87,34 +19,17 @@ struct pmic_typec_pdphy_irq_params {
+ 
+ struct pmic_typec_pdphy_resources {
+ 	unsigned int				nr_irqs;
+-	struct pmic_typec_pdphy_irq_params	irq_params[PMIC_PDPHY_MAX_IRQS];
++	const struct pmic_typec_pdphy_irq_params	irq_params[PMIC_PDPHY_MAX_IRQS];
+ };
+ 
+ /* API */
+ struct pmic_typec_pdphy;
+ 
+-struct pmic_typec_pdphy *qcom_pmic_typec_pdphy_alloc(struct device *dev);
+-
++extern const struct pmic_typec_pdphy_resources pm8150b_pdphy_res;
+ int qcom_pmic_typec_pdphy_probe(struct platform_device *pdev,
+-				struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				struct pmic_typec_pdphy_resources *res,
++				struct pmic_typec *tcpm,
++				const struct pmic_typec_pdphy_resources *res,
+ 				struct regmap *regmap,
+ 				u32 base);
+ 
+-int qcom_pmic_typec_pdphy_start(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				struct tcpm_port *tcpm_port);
+-
+-void qcom_pmic_typec_pdphy_stop(struct pmic_typec_pdphy *pmic_typec_pdphy);
+-
+-int qcom_pmic_typec_pdphy_set_roles(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				    enum typec_role power_role,
+-				    enum typec_data_role data_role);
+-
+-int qcom_pmic_typec_pdphy_set_pd_rx(struct pmic_typec_pdphy *pmic_typec_pdphy, bool on);
+-
+-int qcom_pmic_typec_pdphy_pd_transmit(struct pmic_typec_pdphy *pmic_typec_pdphy,
+-				      enum tcpm_transmit_type type,
+-				      const struct pd_message *msg,
+-				      unsigned int negotiated_rev);
+-
+ #endif /* __QCOM_PMIC_TYPEC_PDPHY_H__ */
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h
+index d4d358c680b6..4a892048908e 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h
+@@ -3,8 +3,8 @@
+  * Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
+  * Copyright (c) 2023, Linaro Ltd. All rights reserved.
+  */
+-#ifndef __QCOM_PMIC_TYPEC_H__
+-#define __QCOM_PMIC_TYPEC_H__
++#ifndef __QCOM_PMIC_TYPEC_PORT_H__
++#define __QCOM_PMIC_TYPEC_PORT_H__
+ 
+ #include <linux/platform_device.h>
+ #include <linux/usb/tcpm.h>
 
 -- 
 2.39.2
