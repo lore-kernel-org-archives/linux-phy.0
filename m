@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 458AEC4707B
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 14:16:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 874F4C4706C
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 14:18:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aiDS4QcfDg7j0VmZXA46RLaOlsMix7Z2CS5GCMi0BJw=; b=nUOZS3mE6CCR2V
-	uepWzLNMPs5QOBxlOhiKkJbWN6lNZgDI0pF5n8iojuWt2RNETjzgDWeGLlu/9oohBa6vqvsPofg0e
-	VCH0sW5zjkQ2dztjL5lrNCPFaGWLtYNVuvgRGsg4hJJXElC6/v3sXY3lkaL5pQQv2xO8nZbdFFxH9
-	X2JJ2laGC3f2vtSDXgylvx2cLc2ootPxXFGZDNKOyP9Qf8hlr9z9XE4tDOxkS0bi7ZRrFQzAdw4hX
-	tOXJlw4uEcUYkdvVlsx6s9Md7SCHTU6z8rXId7MLK1TXRg54iKG2H8LRENJrtl2sk5Tuv/EL8hNYZ
-	iLTplJ8JZAsS+hlAIEVg==;
+	List-Owner; bh=OCq6j+Fg/Dep6AFJlL3OZGUpO5+iitP0j+CE5Rw9cTI=; b=sb/U5figu9rvti
+	FFQxOKPszyLX6CMzBuweeTlrDar46+gKpRGwJ1PRXDJJrhhrTu72hs4YYey1LKsuIKqm1iFyKljZL
+	MSJKLhIZFcHW5l2T5o/YFhTDzIzw8vd12HBGeASwck7n0rTxD1MvD07K62FHCGUsNDupiEbRPLnfl
+	bIqPQmjhnZPJ+1dvQAd+ZSjXk3DcV58EyTmpKcyS+1vmJMGb1YnhAD9ZAooGMcNOfGSmT8tBQSnHW
+	0jZfy7h3EFvl7suFWeQ27uZuF7Fr1zGb6FY2NNOU0d8Oi1bohdiGCsmPlSFtMrCYyPaPEODY29qq9
+	jlGRUQb817iKL6Bfodsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOeoV-005EGN-34;
-	Sat, 13 Jan 2024 14:16:43 +0000
-Received: from mail-oo1-f41.google.com ([209.85.161.41])
+	id 1rOepl-005EJK-0g;
+	Sat, 13 Jan 2024 14:18:01 +0000
+Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOeoT-005EFv-16
+	id 1rOepg-005EIs-2h
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 14:16:43 +0000
-Received: by mail-oo1-f41.google.com with SMTP id 006d021491bc7-598eb173b74so31508eaf.3
-        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 06:16:40 -0800 (PST)
+	Sat, 13 Jan 2024 14:17:58 +0000
+Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-dbe69afb431so6332866276.1
+        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 06:17:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705155339; x=1705760139; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705155476; x=1705760276; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=GpDGmuJVxdjDUWEr6kZyW9N+8zv6rEZ2JqLAU+v81VA=;
-        b=q/WOfD3kz2w0T0NotMn1kpRFgdN8eM8B1zhqmacRP1VnRR3SdQp/3vqxyn+R05jmIy
-         RfWERWpEj5qyGhYMByWJJ7y3K5jHYeNlzUQaa3D3uMul2lwKOujT8bmVUBLonlRl5qpJ
-         3vfXuFgbLRXqJOYvtQ5rYVbbOZDaE0jK4Olbdz93BY2hKyzkDmHe7KiS/1f1F8mMJYeU
-         VQjHK/7jXTnwo9Grxrl58s0UaFDUYqjlr2Rk9gFTKS9DPfSdyITLWHMO4odEhsMtzkVU
-         VWJSXUplVtTPc4hiPWGEuksnWvx9OUWUr1ZymzUf6zhUFPP9iw4cPR/RR7bCU0c7MnC4
-         iRTA==
+        bh=FpapplPXSwA8dgQHySDipjmJ1OdA0p6AH2z0SETgUb4=;
+        b=GxIDYc8v39GW41JwgwhEUjCSZ0Ny76ZgyPnYHDnGknHFhSclxbB7v2GexaQHD9JUV5
+         8HOW11SUY0JTxPxECDhVxXAm6fIo1ZVYYeRYMnUFSv3/OIz+sz5bPGZHosMAG5ixkjRB
+         fkk/k+83v6njW8sE70Q6KU7XzfY/kNKwy1h6Q6NoX6/+xNfr6LQKUevkhrI/xEPGMqIB
+         B72T1mvlnlq9zQGOTA2zMViWVOxri6a590l4QqB7DHG+es9EGOL3w3cBxpczyTooIA0q
+         vP/nilW1NTxJ3zrWlmGpoYNmkgv1sYtbDXWxgNzphhzEYc0Ed39/NeKp1fcKrr9fo9oY
+         tyUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705155339; x=1705760139;
+        d=1e100.net; s=20230601; t=1705155476; x=1705760276;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=GpDGmuJVxdjDUWEr6kZyW9N+8zv6rEZ2JqLAU+v81VA=;
-        b=M0xyTpY2TGoYFrkiMd9uPoe/LHTY06mtyuLNdVsK6Xz7W4qxyCALumUgdZYzA3aBeR
-         bPEhoYC2awzjyrzAIWuYagEc/P7w/Tk3whFQ9whVEQEMbCpTZO7jhtLhw3BG0D+8K2yy
-         sXYy8fd9d67/yq8ZBf5qlY/1RtzjW+OS6RewYQp9sAnDW5g4VMhP1JI/n88xIlxDg5QQ
-         iVGKQqLCN9/dW5fRS2rG/r7dnIcpynI2uTBfm7/NJeQcuIepG7IJbjf4Sb0T/N5CMz3u
-         w5KvisDEHhOGcGqIMLWhi1cPemlUxe4WGRGpvj1uwOrTH58Kb+/a+uNjgyrxX+AxRc97
-         bDVQ==
-X-Gm-Message-State: AOJu0YwEdQSppudwOlH6P3Xqvi454XVHZP1jy8xGmmVW/id8YkHtca4k
-	X0P4EF8ZjZi6dZ7HQb2PptGhYKpWg8U/bcTiz3tOiMTdCbYgbA==
-X-Google-Smtp-Source: AGHT+IGmizCd5syeqMnnXBBY8/Nm+SD3H32E3Q7uuwl7FpPEfX8ik7nRdHLpZVBm1j4DEkVPqZDGzNXqzlG2wKpThAs=
-X-Received: by 2002:a05:6358:ee85:b0:175:50b4:8ca2 with SMTP id
- il5-20020a056358ee8500b0017550b48ca2mr3154743rwb.9.1705155339368; Sat, 13 Jan
- 2024 06:15:39 -0800 (PST)
+        bh=FpapplPXSwA8dgQHySDipjmJ1OdA0p6AH2z0SETgUb4=;
+        b=aAod9qiMjMeYoO/2bARd8SpP0RSx2eQNWDqbyEQVFV0DzjDnPtl4pCDVpfQwO8favj
+         uyHbQfzr4L00Sae3p5vmxp/TB5LnQTQIoEYwYn9tmy85gpPt3/pMoS6SdrK6acuufbUO
+         fYUZ8rJoGCZi/S4MgE1hPhNudlWVf9KLdoaBRS/wh5b7DNmeeouuuD5GDyolypOPdFxr
+         cxii0vTu1ugrpoemNafe6/XZ1V9raYsN27hlCerVzBlirYyWL+6AkHyJkTIpBU4KC1qd
+         wuf0pagQrzsx9hzpQvGIjyoZ+wf51WY2DOug1gfz9fvSte69sH/bt49MEDmsGLSxibs7
+         mNew==
+X-Gm-Message-State: AOJu0YxFEbCwesh6xVcs6H5e5n6XgfuVn0j+piMwytychq08MOlVXHLQ
+	dK0F/pZXvHEt879FcvYXjTB2/ssNZO0dd7+z4BIuu35DR8zAkg==
+X-Google-Smtp-Source: AGHT+IEhkGFyRk54+YFnuRK35imOYfuCVpxnEEr5O+Sul0jCRTBmNNZc4z+pQ+B9yz0VzbYYSr8h7Ze0o7qfS0Cs7VI=
+X-Received: by 2002:a25:acc2:0:b0:dbe:ac83:6c99 with SMTP id
+ x2-20020a25acc2000000b00dbeac836c99mr1573535ybd.124.1705155476011; Sat, 13
+ Jan 2024 06:17:56 -0800 (PST)
 MIME-Version: 1.0
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
- <20240113-pmi632-typec-v1-7-de7dfd459353@linaro.org> <f6ec016e-7319-42a7-8ca3-06f21a7ab6e5@linaro.org>
-In-Reply-To: <f6ec016e-7319-42a7-8ca3-06f21a7ab6e5@linaro.org>
+ <20240113-pmi632-typec-v1-10-de7dfd459353@linaro.org> <ed511811-b110-4fa3-b7b2-b2ec512d4061@linaro.org>
+In-Reply-To: <ed511811-b110-4fa3-b7b2-b2ec512d4061@linaro.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 13 Jan 2024 16:15:28 +0200
-Message-ID: <CAA8EJppOR3z4n4ws_3S9KiCFmHhzPsBiEjWw5Bgy4o+F4deT9w@mail.gmail.com>
-Subject: Re: [PATCH 07/13] phy: qcom: qmp-usb: split USB-C PHY driver
+Date: Sat, 13 Jan 2024 16:17:45 +0200
+Message-ID: <CAA8EJpqR1u_bW=UZoWYhrU2WbOexJSY7ZXaegVp2P8=aqXqROQ@mail.gmail.com>
+Subject: Re: [PATCH 10/13] phy: qcom: qmp-usbc: add support for the Type-C handling
 To: Konrad Dybcio <konrad.dybcio@linaro.org>
 Cc: Bjorn Andersson <andersson@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
 	Mark Brown <broonie@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
@@ -78,8 +78,8 @@ Cc: Bjorn Andersson <andersson@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
 	devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
 	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_061641_385891_36E49549 
-X-CRM114-Status: GOOD (  25.91  )
+X-CRM114-CacheID: sfid-20240113_061756_919394_834C5B0C 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,230 +96,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 13 Jan 2024 at 12:42, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
+On Sat, 13 Jan 2024 at 12:48, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
 >
 > On 13.01.2024 06:42, Dmitry Baryshkov wrote:
-> > In preparation to adding Type-C handling for MSM8998, QCM2290 and SM6115
-> > platforms, create new QMP USB-C PHY driver by splitting mentioned
-> > platforms to a separate file. In future it will also be extended with
-> > support for the DisplayPort handling. It will also be reused later for
-> > such platforms as SDM660, SM6125, SM6150.
+> > The USB-C PHYs on the msm8998, QCM2290 and SM6115 platforms use special
+> > register to control which lanes of the Type-C port are used for the
+> > SuperSpeed USB connection. Mimic the qmp-combo driver and handle this
+> > register.
 > >
 > > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > > ---
 >
 > [...]
 >
+> > +#if IS_ENABLED(CONFIG_TYPEC)
 >
-> > +#include "phy-qcom-qmp.h"
-> > +#include "phy-qcom-qmp-pcs-misc-v3.h"
-> > +
-> > +/* QPHY_SW_RESET bit */
-> > +#define SW_RESET                             BIT(0)
-> > +/* QPHY_POWER_DOWN_CONTROL */
-> > +#define SW_PWRDN                             BIT(0)
+> I understand some people may want their USB to work without TC compiled
+> in, but it looks funky to have a "USB-C PHY" with optional USB-C support..
 >
-> Most / all of these defines could probably live in a header file.
+> Should we just depend on it in kconfig?
 
-For this (and several other comments), see
-https://lore.kernel.org/linux-arm-msm/20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org/
-
->
-> [...]
->
-> > +struct qmp_usbc_offsets {
-> > +     u16 serdes;
-> > +     u16 pcs;
-> > +     u16 pcs_misc;
-> > +     u16 pcs_usb;
-> > +     u16 tx;
-> > +     u16 rx;
-> > +     /* for PHYs with >= 2 lanes */
->
-> So, all PHYs within this driver if I'm following correctly
-
-Yes. I just felt that it is easier to follow for copy & modify rather
-than just rushing all the changes in. I can squash one of the next
-patches that clear single-lane support out of this driver..
-
->
-> > +     u16 tx2;
-> > +     u16 rx2;
-> > +};
-> > +
->
-> > +static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-> > +{
-> > +     u32 reg;
-> > +
-> > +     reg = readl(base + offset);
-> > +     reg |= val;
-> > +     writel(reg, base + offset);
-> > +
-> > +     /* ensure that above write is through */
-> > +     readl(base + offset);
-> > +}
-> > +
-> > +static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
-> > +{
-> > +     u32 reg;
-> > +
-> > +     reg = readl(base + offset);
-> > +     reg &= ~val;
-> > +     writel(reg, base + offset);
-> > +
-> > +     /* ensure that above write is through */
-> > +     readl(base + offset);
-> > +}
->
-> Maybe you could use regmap to avoid NIH-ing such accessors
-
-regmap will still require posting through read, will it not?
-
->
-> > +
-> > +/* list of clocks required by phy */
-> > +static const char * const qmp_usbc_phy_clk_l[] = {
-> > +     "aux", "cfg_ahb", "ref", "com_aux",
-> > +};
-> > +
-> > +/* list of resets */
-> > +static const char * const usb3phy_legacy_reset_l[] = {
-> > +     "phy", "common",
-> > +};
-> > +
-> > +static const char * const usb3phy_reset_l[] = {
-> > +     "phy_phy", "phy",
-> > +};
-> > +
-> > +/* list of regulators */
-> > +static const char * const qmp_phy_vreg_l[] = {
-> > +     "vdda-phy", "vdda-pll",
-> > +};
-> > +
-> > +static const struct qmp_usbc_offsets qmp_usbc_offsets_v3_qcm2290 = {
-> > +     .serdes         = 0x0,
-> > +     .pcs            = 0xc00,
-> > +     .pcs_misc       = 0xa00,
-> > +     .tx             = 0x200,
-> > +     .rx             = 0x400,
-> > +     .tx2            = 0x600,
-> > +     .rx2            = 0x800,
-> > +};
-> > +
-> > +static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
-> > +     .lanes                  = 2,
-> > +
-> > +     .offsets                = &qmp_usbc_offsets_v3_qcm2290,
-> > +
-> > +     .serdes_tbl             = msm8998_usb3_serdes_tbl,
-> > +     .serdes_tbl_num         = ARRAY_SIZE(msm8998_usb3_serdes_tbl),
-> > +     .tx_tbl                 = msm8998_usb3_tx_tbl,
-> > +     .tx_tbl_num             = ARRAY_SIZE(msm8998_usb3_tx_tbl),
-> > +     .rx_tbl                 = msm8998_usb3_rx_tbl,
-> > +     .rx_tbl_num             = ARRAY_SIZE(msm8998_usb3_rx_tbl),
-> > +     .pcs_tbl                = msm8998_usb3_pcs_tbl,
-> > +     .pcs_tbl_num            = ARRAY_SIZE(msm8998_usb3_pcs_tbl),
-> > +     .vreg_list              = qmp_phy_vreg_l,
-> > +     .num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
-> > +     .regs                   = qmp_v3_usb3phy_regs_layout,
-> > +};
-> > +
-> > +static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
-> > +     .lanes                  = 2,
-> > +
-> > +     .offsets                = &qmp_usbc_offsets_v3_qcm2290,
-> > +
-> > +     .serdes_tbl             = qcm2290_usb3_serdes_tbl,
-> > +     .serdes_tbl_num         = ARRAY_SIZE(qcm2290_usb3_serdes_tbl),
-> > +     .tx_tbl                 = qcm2290_usb3_tx_tbl,
-> > +     .tx_tbl_num             = ARRAY_SIZE(qcm2290_usb3_tx_tbl),
-> > +     .rx_tbl                 = qcm2290_usb3_rx_tbl,
-> > +     .rx_tbl_num             = ARRAY_SIZE(qcm2290_usb3_rx_tbl),
-> > +     .pcs_tbl                = qcm2290_usb3_pcs_tbl,
-> > +     .pcs_tbl_num            = ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
-> > +     .vreg_list              = qmp_phy_vreg_l,
-> > +     .num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
-> > +     .regs                   = qmp_v3_usb3phy_regs_layout_qcm2290,
-> > +};
-> > +
-> > +static void qmp_usbc_configure_lane(void __iomem *base,
-> > +                                     const struct qmp_phy_init_tbl tbl[],
-> > +                                     int num,
-> > +                                     u8 lane_mask)
-> > +{
-> > +     int i;
-> > +     const struct qmp_phy_init_tbl *t = tbl;
-> > +
-> > +     if (!t)
-> > +             return;
-> > +
-> > +     for (i = 0; i < num; i++, t++) {
-> > +             if (!(t->lane_mask & lane_mask))
-> > +                     continue;
-> > +
-> > +             writel(t->val, base + t->offset);
-> > +     }
-> > +}
-> > +
-> > +static void qmp_usbc_configure(void __iomem *base,
-> > +                                const struct qmp_phy_init_tbl tbl[],
-> > +                                int num)
-> > +{
-> > +     qmp_usbc_configure_lane(base, tbl, num, 0xff);
-> > +}
-> > +
->
-> Can this be inlined?
-
-Yes and yes.
-
->
-> > +static int qmp_usbc_serdes_init(struct qmp_usbc *qmp)
-> > +{
-> > +     const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > +     void __iomem *serdes = qmp->serdes;
-> > +     const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
-> > +     int serdes_tbl_num = cfg->serdes_tbl_num;
-> > +
-> > +     qmp_usbc_configure(serdes, serdes_tbl, serdes_tbl_num);
-> > +
-> > +     return 0;
-> > +}
->
-> Can this be inlined?
->
-> [...]
->
-> > +     /* Tx, Rx, and PCS configurations */
-> > +     qmp_usbc_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-> > +     qmp_usbc_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-> > +
-> > +     if (cfg->lanes >= 2) {
->
-> Again, if (true) IIUC
->
->
-> > +             qmp_usbc_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-> > +             qmp_usbc_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-> > +     }
-> > +
-> > +     qmp_usbc_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-> > +
-> > +     if (pcs_usb)
->
-> if (false)?
-
-Nice catch.
-
->
-> [...]
->
-> The rest looks to be boilerplate that's already present in at least
-> one more driver..
->
-> Konrad
-
+Well, we didn't for combo PHY. Also both PHYs support working with
+just micro-/mini-USB OTG.
+I'll wait for Vinod's feedback here.
 
 
 -- 
