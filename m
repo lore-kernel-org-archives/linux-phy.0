@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0CE2C47DA6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69B5CC47DA2
 	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 05:42:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,62 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3DJee31ebIFc1QWjinja7CpXx5aqq2az2BS9VIiCZMI=; b=a28oeONI+pcigM
-	Y040dmK5rKpIgO2qy740pBeSZ5VYJJAyPApks+XunbGqxlcUL5sosXQ8kFv0QKOYe9xVXwu3dzGM/
-	FD8xsKwnX2EXwgwakVpkYXrnic2Nbl7L528REf2c5Qc+JajbMH8+RQmaHi+Nf5m5x8p7ViYrrmUUQ
-	77RCj0tbe7AGEnMgNNDp20Q87BLIuQl3AvmlvGinyN3qFBpuUpRLsA3912pK9+jElaAVUL8zgPY+1
-	6SnvYvcayxpKkVWpYao0+MvBPTMR/4D94x3NwjOo6ICH302gCwAHBNcgborFInTwg3O36PxCwiVgW
-	MXKm+rOd2XR91SiHXf1A==;
+	List-Owner; bh=wBx3BEnJ9bRouOzWziJUUM3nHmlLp4FA2uKPV42WNp0=; b=yyxWto4SSq/5wF
+	QLEtN3xT48ysFsLrthi/uaeC/O1xPtV7XsCv1kiAJcBs4agLB/5ITVybB61jueUj+ojuC1f3LboPk
+	B1RVOnUCbs74hSiEOjDd7ArfwP/YdVon7Cx0NXFOA1Mllp1NUxPR6+0r4z0aenvTNsFJ6hnpDxQRJ
+	c8O33zpi3zFXAD/WIK3Gkix6hVmZfPgmDuwSoVhF6TwfSCbiNFIxZd6t2JrH9P17LAJezp+0TjEbQ
+	Z4WbfQoBUu06liuE+U3KHJ9ysnkSDYz9daK6Gzg1xMzaK8tznxVE5GwkA8NJz/DDeCr47eMVskQSm
+	LfQfvCaLXIHGvEYZZMBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnG-004ZhO-11;
+	id 1rOWnF-004ZhD-3D;
 	Sat, 13 Jan 2024 05:42:54 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnD-004Zds-0N
+	id 1rOWnC-004Zdc-0X
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 05:42:52 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2cd1a1c5addso82534861fa.1
-        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:50 -0800 (PST)
+	Sat, 13 Jan 2024 05:42:51 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2cd81b09e83so34381851fa.2
+        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705124566; x=1705729366; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705124564; x=1705729364; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=/K+0DJkKOAkCr/6OujJMFc4kf8wuvqM0qNumbavVg68=;
-        b=SIwbDrvckCHxbX4v4D0Q9cC+hn/vdAvtZE1vr7iEAgS6E/SFwWfCTRGO8iN9ktdxjw
-         tFCPoAQFTAt9ZjSjUJuMVoy0wvgTaKEQzjYoEdjBF0nzDRrT07Lp9MDs3lNpc96cWcje
-         h2GPI7RTEirUU1q3NCpts55YN8mxV9SE1j+z07ACevK4DcyXKPGfUy+K3eXwglCHn8uV
-         Xpqd10+c3o/v+Dl57GgvXNjVnSnJ+bUbiIzMxcwgfMm/d4oGHxOPS8c6ucOouJeCZBSI
-         hAxFm1EXkU7BJKRon+WqsQJlMN90KkC0b3xnpwFXfoi4ag77aYDvaofYbnXjXDmsRyYr
-         sY9Q==
+        bh=1plu6Fal9qcn1Wtuu6vQETPtirp4Q/rK0fLCOiwCIQY=;
+        b=KYlB1op/yov0ERo5fSv9bGuuD7ylzL6B0joh6H6Tx7LjptMfo4g6QRzwyX4BEoGlvc
+         Y7K2/ORpTPG9riJx4cllK4Uifh0cntqEmOrVGBBoE/0jdH4TZ5dhgPgF0ZMSZQlRKyya
+         p5RIEn/aBLKEa4KTduEyyeTU1BQezXshdFWjyLi6q7cMowwfBKvmuIf5MTUkqvAzMSWf
+         IqGJavaU/tXGOuCKeYsmMu/S8PUS+H8KHa06PcvRcZ3euUvNB75V4/LKKA0YXgCmlGmO
+         jtfD7jWsda3ts7UXnZy/DkJuY0mvRjO2QHjJESUVoxx4jCnyXODTJZDoCbnTqHvvtBVA
+         L/WA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705124566; x=1705729366;
+        d=1e100.net; s=20230601; t=1705124564; x=1705729364;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=/K+0DJkKOAkCr/6OujJMFc4kf8wuvqM0qNumbavVg68=;
-        b=mwwgoPVSxnfTKstXkkPATETCsvPjzJGQZQE4rocZwn7itUPnMqGJYQOUWF9sE18VTc
-         9o7R7vFaejCoukxjwOw13X51I4RNKexcUnlncFNrIoqtS7lA7FpYAYvL4osKZXWY6tFx
-         4DxeaAw0vCKz28Prsxw1BSjohJFqwkSV1QOJyTvOwT42gJVQmkCmDDiUboAVoeeo7y0d
-         jmVGGqLTbZer2VX1nLGXE++fdZCf1QXzM0cMG5/kOqlynUt07jUrJDghnw+GM17totj2
-         CQvP+fhmJCLeHve401n8b+aSL5AwotrNuHp06S9LtVXPyahxqnqnOn4gyjVIYXcJACUq
-         inLg==
-X-Gm-Message-State: AOJu0Ywf4w5gtMrBu8snOs7L1UwaWMdzXb+eS90pivzgMvR9R0+2T7c4
-	TLVNpeGSTbYhsPCJU2t9/hTtqG2kmhQYtg==
-X-Google-Smtp-Source: AGHT+IFj9k9Z8RKCkHf+7mKSNLWGDLEp7aTc99Eq1DEglfVpyZ2uICLKxezJVxvpFHENnYxP1bVnXQ==
-X-Received: by 2002:a05:651c:332:b0:2cc:e3ae:1ca9 with SMTP id b18-20020a05651c033200b002cce3ae1ca9mr1077728ljp.1.1705124565809;
-        Fri, 12 Jan 2024 21:42:45 -0800 (PST)
+        bh=1plu6Fal9qcn1Wtuu6vQETPtirp4Q/rK0fLCOiwCIQY=;
+        b=oW+wLCyUYIGk7xa+MRydd6qXIQbgE9BheKJVq5PM9n7Lxsp6wTutBKhA9L1OySmX+G
+         WMcvV8PuZOxQYCZ9h9cbRI3JxD/cYn7dlhwHdGwwkWLNcs3uWZZib3HllfBm9uo7V9sC
+         YMo/kc9MXLRS0z0Q/8tyBr3XtopVJaZL1DnUCfGBCpY3bt2eY7NZ4ZVQgzG0pOFgujip
+         3f1ND36qSq7m4eF+P5L6rfo5F5EJoMaMfH4v0dPCYgRyG13tHnTdCykdWEhfj5JcFQSj
+         2mRzujTSy2Zro6lIg1WQXV1LohX8TI5kbrY6F+AgaZ4yzSyp1tWW/YYfjLFu37Lrj88L
+         gZ2Q==
+X-Gm-Message-State: AOJu0YwupmAj4wcP4GFvKzRRpV484uX/vUcwZO4suetVbGktvO4upYMa
+	F++QipHwdGYm5ZttXs/5VmaL3UkqEBPELA==
+X-Google-Smtp-Source: AGHT+IFd1jPpJPDKDRrkgYEFhTbv5z5l7BYXN+JECjDlZMmNU14o63+C2Gmf4IDFn8+YmejCRRIslQ==
+X-Received: by 2002:a2e:9614:0:b0:2cc:c895:7140 with SMTP id v20-20020a2e9614000000b002ccc8957140mr637588ljh.73.1705124563714;
+        Fri, 12 Jan 2024 21:42:43 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.45
+        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Jan 2024 21:42:45 -0800 (PST)
+        Fri, 12 Jan 2024 21:42:43 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 13 Jan 2024 07:42:41 +0200
-Subject: [PATCH 04/13] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: support
- USB-C data
+Date: Sat, 13 Jan 2024 07:42:38 +0200
+Subject: [PATCH 01/13] dt-bindings: regulator: qcom,usb-vbus-regulator: add
+ support for PMI632
 MIME-Version: 1.0
-Message-Id: <20240113-pmi632-typec-v1-4-de7dfd459353@linaro.org>
+Message-Id: <20240113-pmi632-typec-v1-1-de7dfd459353@linaro.org>
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 In-Reply-To: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -86,21 +86,21 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1828;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1073;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=0IxH6ZQ/pvgkQeQ5Scy9Fo++yLl5788lBeDWb25jTG0=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLQOENnNbCH86sIYE5VOHPTdZ2MUd2+oUBiu
- crA6iwxntGJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0AAKCRCLPIo+Aiko
- 1RZGB/sFpJMDyj17cqJovnDxY1d2S70NXPtcQKawv5DDgI+yRR2rf5JTyFT/MkNIks2BndUh6JQ
- Z3ziloHRvLkxYqrzefaNBuQLymPa07JlD4zVET8FzP2r20MPcOwfoWZBcaHw1LPGgmJF3TqRsQ0
- b+OpA2gNyZqiK/Zf91sOaSxvTbI6rmUX6F6XBKN+hDrWljgvHqxisA/Kw9pABV2J5A0hta4FSLA
- iTetdQ1tY9jz2ay6mMd5uZb30CUAdBz//YMmoNbTqQT2DbiwiYebLltUcLdnG0V1pv05HHc3v58
- LaDenRPqj6o/IPnbxgoOBhoc8QJi3j62TEVxdmZrAQWM22tA
+ bh=VO6sCRtukMYbFqUkroEE9VOEtJ3mqzFoVaUfeIJHtBE=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLQLfTXIowNMw1HcfpGXvc8pKu+5bdoQQ0PL
+ deZL6vAXBeJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0AAKCRCLPIo+Aiko
+ 1c1BB/9X3V4VUltARNirVryclPWLymp+ODlBtn2/MwSLhsc4VHMGsr3DnsRZmZUwzjgFw4SXtwB
+ 3N6Lx9lYkcDDwmjixCxUaC+84PZkqj0TgX3diLz3ioz4U+F3OUGLVMaoE6MJloAe9ISaJJLFI2r
+ ipbJEbX7X5qK8g8HkJa4ngBTh49qG6HgPUsIftLwCAR/sNPcrI7NbxE4Jbpi81N65HFmmTcAMCE
+ LNK6xeCXRkHGQF/IY3sofOkqqiq+7emxD+EIyUtPK5PkaAIoaIDTIeXHj2j+GOmZfMb9iPiHd22
+ 3hk6RdL6gqy9ykUlI+/VhhkF7qLXmScxPILjdChVlxregXY1
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_214251_151243_87EA9445 
-X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-CacheID: sfid-20240112_214250_204343_E28E8662 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,69 +118,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Extend the Qualcomm USB-C QMP PHY schema with the USB-C related entry
-points: orientation-switch property and USB-C connection graph.
+The VBUS register block on the PMI632 PMIC shares the design with the
+PM8150B one. Define corresponding compatible string, having the
+qcom,pm8150b-vbus-reg as a fallback.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    | 39 ++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+ .../devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml   | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-index 868fabd44d72..da5d4cbca24c 100644
---- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-@@ -50,6 +50,22 @@ properties:
-   "#phy-cells":
-     const: 0
+diff --git a/Documentation/devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml b/Documentation/devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml
+index 534f87e98716..66dcd5ce03e6 100644
+--- a/Documentation/devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml
++++ b/Documentation/devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml
+@@ -19,8 +19,13 @@ allOf:
  
-+  orientation-switch:
-+    description:
-+      Flag the PHY as possible handler of USB Type-C orientation switching
-+    type: boolean
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Output endpoint of the PHY
-+
-+      port@1:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Incoming endpoint from the USB controller
-+
- required:
-   - compatible
-   - reg
-@@ -129,4 +145,27 @@ examples:
+ properties:
+   compatible:
+-    enum:
+-      - qcom,pm8150b-vbus-reg
++    oneOf:
++      - enum:
++          - qcom,pm8150b-vbus-reg
++      - items:
++          - enum:
++              - qcom,pmi632-vbus-reg
++          - const: qcom,pm8150b-vbus-reg
  
-       vdda-phy-supply = <&vreg_l1a_0p875>;
-       vdda-pll-supply = <&vreg_l2a_1p2>;
-+
-+      orientation-switch;
-+
-+      ports {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+
-+        port@0 {
-+          reg = <0>;
-+
-+          endpoint {
-+            remote-endpoint = <&pmic_typec_mux_in>;
-+          };
-+        };
-+
-+        port@1 {
-+          reg = <1>;
-+
-+          endpoint {
-+            remote-endpoint = <&usb_dwc3_ss>;
-+          };
-+        };
-+      };
-     };
+   reg:
+     maxItems: 1
 
 -- 
 2.39.2
