@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB76AC47DA9
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 05:42:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78813C47258
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 05:42:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TiBJnFHfKJCGJiETmXzzeowYJ/D+PfzpJ5kDrIOaBug=; b=q8UfEoVzyXePQn
-	CLhhwX0h/xjW72T3f3spU2zh0WUoZlAh3Ic7AfOe67ZrSvxeWtArB+sN2w+EHFrfdpOxDFJr3OgKr
-	5myxGp2I07QRVCNiXvszh299yU8W5ajhqbGhOfMmSs/cFJUTwNM2nMVM2Hh8fMvsE5r3SIBYe9nYX
-	7HJwmwl5Amlf/JS5JGvAnEqMZUh/b72IPTypnb1TwGQei0I4mHiX+NWIoI6TbF0a9IzQyNMfB+93h
-	xP/k86yk1h/Wo7fEe6ht35RdSU70wOGsQNvYce6ZAb5sqGoDSLnaFZ085srMYHx54ZOVbKoUcrH3h
-	WyRRIz+1vzMwCZnXl2Tw==;
+	List-Owner; bh=f2jLTemVFM60pTMK6OaVJB5aVzxpB7Flj8ArISfARqo=; b=viicn3vAT/mrcE
+	Kz4Y2z2VODY0/MLN9PQKK5dTaC4vuGri5ZySSOBHhcRoiYCtScwgL7/OBN15cGOHiNowUjjX+rZfM
+	Y6bS4BucgeBxfE/gIdwASXRYiV0aBjPQi92Y0wHa9l9u9UHK82ntRYjpof+W6zwI84WaY7jms3AKq
+	t5ECtCMj5B697S2iEs34W9LvnUxGWomuoHyETFVYCmkTL5btYhyYQ7SvZfMxUZ+s8AdNjuRdV42Km
+	RHYHNgjU1W6lNSNUIWU+rn+z12yFaSAwjCy3LHttn6fXlN+i92cC5vvuala1oo7ZENWT8qdqNLsye
+	TmJGQ35vcjSaJ9OfS3OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnI-004Zj8-1O;
-	Sat, 13 Jan 2024 05:42:56 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1rOWnJ-004Zjj-0O;
+	Sat, 13 Jan 2024 05:42:57 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOWnE-004Zen-2v
+	id 1rOWnG-004Zh3-21
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 05:42:54 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2cd7e429429so40791941fa.1
-        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:51 -0800 (PST)
+	Sat, 13 Jan 2024 05:42:55 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2cd1ca52f31so82956491fa.3
+        for <linux-phy@lists.infradead.org>; Fri, 12 Jan 2024 21:42:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705124570; x=1705729370; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705124572; x=1705729372; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Z5irpYM5MTpJq3VqIMDtY9CGRoQJVYlNPi44Y66fgdM=;
-        b=BfB4YKscjdleHG/WjEObMm0oUzF30/bnvRJD+PL3xgqILB5eeiABAd180s+lC7kC9m
-         a9VaLld7KZXAhnBp4Je6j5oQoag3uoCfCAe6OU0S1pI4CisWBwYrG8nwyoww6rri2RP2
-         Hmjda2rS0iEx32gnr78V6+agaZqehwZxiyit8H1BeIqzmFOKN+vAL1GI5mmBO0fZVChS
-         7T5kyoyCc7yuO86+FmywHdCAWAC4qePzszYBDtOTPpUlHQ2/CbnQmL2OaLmAaLMbJity
-         aLqN4cmRTrpPhQMA5pYH9/RaJtbcMoiM7p5SqwW/Tb3PJ3eS0RcOmoLVtJ/QLKfjnPob
-         N26w==
+        bh=maqz8OOCJx2/2Q8p+D0KjTHVWD1DBWuVM7oX4CTcnm0=;
+        b=RS4/gz5uyLiyO7vi2f8+ayRPA1DOeLuCTrHLJJLIiPvibFDhGD0UrK3RIc2Z+9Z9fw
+         Evg0qkdGHR8og2dRmJcYHcXtkvd5Moe3NHWZhRXxdn83jRp9BHBRueZzZQkEmC/gkchc
+         bW0V03UU6L2ie1EAoOUhbcsH+69UFmPyvn7Zg5FP4xeknkVXo89u3/yGD2AbsAuoFKyI
+         Q+YuHRT9PzKkpRjSmOCqYv85pbq8+ujrIytLPP5wZZDvMTnGmYEj1EjFq2iQ+2pEILbM
+         epl0pHjWkcFS2503s3iQ2JiCa/BtIFur3ZgSIHNugPep+wK/vJJAXI9Lv+U0V+Sjc2dH
+         lf5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705124570; x=1705729370;
+        d=1e100.net; s=20230601; t=1705124572; x=1705729372;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Z5irpYM5MTpJq3VqIMDtY9CGRoQJVYlNPi44Y66fgdM=;
-        b=fqmw2HsQoW9OTdn7xryZGz8eTD9hIdJu+FP1a6pgtItCCWtYMdFGsqZg3MDqZle+FS
-         tJeSmKuE61neMvl2H4PQTdUAOLpz7OSBpHtRn5BKrQtHIGupX4DKqKaAYPTUkqBzC0WV
-         kl4mLvlLDDDXnzV5vZrPxzAW6aiYPgM045dd9tOrX3wmH9TFXDu8rydb1mge5zl7X1PI
-         Xl5KW7vpwPgSdKlO5gN7dqsM0t1lIjDyxexftINuOTDzBikaiQjjVzXAY20S2EsOkJld
-         xAsiR3pZvVb0LpE4sjSVH2nBMSEBnca9TG96frEoLcbpBYz25yFrcy65sfYKTe6dEX4E
-         B7PA==
-X-Gm-Message-State: AOJu0Yxo9qL2U2E0rWXZV4FSq161GX8oq5eeAwPuLKsMV0XbSloWTYtj
-	JZnshmOwvByjEp996qlnn1IV7ixOaVu/gA==
-X-Google-Smtp-Source: AGHT+IHgLTCBUBb+cumPz42qHGnYZI45jV8ou7S+J/ZocJ/9+xC5j1fd9zLANoBkfFDBc7IR9hb5Vg==
-X-Received: by 2002:a2e:98d4:0:b0:2cc:fe03:4360 with SMTP id s20-20020a2e98d4000000b002ccfe034360mr1325938ljj.24.1705124570525;
-        Fri, 12 Jan 2024 21:42:50 -0800 (PST)
+        bh=maqz8OOCJx2/2Q8p+D0KjTHVWD1DBWuVM7oX4CTcnm0=;
+        b=Em5dCAj3E96XNfRW8R9zFyUveMvPpDsyAQHAbvZf9DuCBfdIsGxsETJ4+iSIwOVUsw
+         ghtjIiNpDeuU0GKhU103H9BPbvv0ZGtX40SZYDEZupfYtKsYoRO/245r7RAqm8eNJ4/J
+         W8BEO69bV8cpXdGHhd7ofGfFYaeADU+N3KBq1mz0lLmI8LtaxpnC994u11wNaKK0Rt3b
+         aMa/+lp6VTtC2od0ZWKO4IlNBlEjzzYzb3zJCQojJoGVLzfZUuNECRizgVQndLZC29wV
+         +7eb+u/LsBlqAZ1+wZ4IQ6jPH2CaSrKfOILzM1SAe9v+cE/LEfskdInG3IIOnp/HEVrl
+         KUKw==
+X-Gm-Message-State: AOJu0YyK14Vdmri9qLSYuL5bH+rp+mMdtoEQ203hpXNAiA3gWxFDazNZ
+	XRcHdmTMgMRKbf95t7SMfwXVNKvOkWhkvA==
+X-Google-Smtp-Source: AGHT+IFDeHpIKX8sZLltlk2rJ0XufBJkRveFWRaqQvNdBAgjYsprqO7l/OKZS3jBNPfBHCIS0NgyYw==
+X-Received: by 2002:a2e:9ed3:0:b0:2cd:1d93:115 with SMTP id h19-20020a2e9ed3000000b002cd1d930115mr1131444ljk.77.1705124572236;
+        Fri, 12 Jan 2024 21:42:52 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.49
+        by smtp.gmail.com with ESMTPSA id r22-20020a2eb616000000b002cc71e9168csm677719ljn.129.2024.01.12.21.42.51
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Jan 2024 21:42:50 -0800 (PST)
+        Fri, 12 Jan 2024 21:42:51 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 13 Jan 2024 07:42:47 +0200
-Subject: [PATCH 10/13] phy: qcom: qmp-usbc: add support for the Type-C
- handling
+Date: Sat, 13 Jan 2024 07:42:49 +0200
+Subject: [PATCH 12/13] arm64: dts: qcom: sm6115: drop pipe clock selection
 MIME-Version: 1.0
-Message-Id: <20240113-pmi632-typec-v1-10-de7dfd459353@linaro.org>
+Message-Id: <20240113-pmi632-typec-v1-12-de7dfd459353@linaro.org>
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 In-Reply-To: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -84,23 +83,25 @@ To: Bjorn Andersson <andersson@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, 
  Bhupesh Sharma <bhupesh.sharma@linaro.org>
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
+ linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5166;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1422;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=vrGMpxrK0VSYVpeyxHuCQp6gFuTsIdr2EtQDlSiiH6Y=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLR1IiCvPDQIJxTk7qswUkejvN9Hk5ieoTCU
- gqFwEGaw1OJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0QAKCRCLPIo+Aiko
- 1QJuCACb3srGHjAYjlfjgCSx4EPBnhy083HxD8b9m48H5Z32tNkKO13DRO4gTl/MF3ksLubXKua
- omVVcyFbxskE0BPiR1Y+WG73f600A+K9/WDgGEK1V1FnadjjDzM+EHoEEucYm5GdeLGVZbAEodc
- wU3GV2vD/wAsk8iukiphskvHhdAbwe1uwrwGVwvnLXpmiuyzvV4t2lS978vN8V0Up/1aHdQ1qWE
- lVu85OoovoHHrQMEFnW4TsBKCMskSOEhwklhCdYUuDfdU+QYp9lKlECPfanmWSjXJvwcQPSCOR+
- Mnb6fqHrZWMxBs/MeJ6Fm2ks5c2C7/a7nuTks+YR0pPAKhHq
+ bh=PoyicLEdV7BNvd9Kbg7da0oOR4R7+Utnj7Siv8A91PQ=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBloiLSvDsuwwJnb055Vspk3eCehqaZ6iqJZUpWE
+ /oa9J0doPyJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaIi0gAKCRCLPIo+Aiko
+ 1TT3B/4j9uDIml/uby302RFGIim5onN4fZITAgJi5BzYRNYrhVivYJZGckwa7lgZq+KhqAW9UJj
+ in/pp+YCuRiluRiqqqKoj/UsGtCg7Vt1gKTuoOT9SHWZnOKG85aE0bNfb6GInCQP35IDjH9U8dq
+ VNRE04ypv3ropnSofTmigJoSe4Nwl9qYtSUq1pSUwOnnM2rMxrXdLj2mfo/DD6zzjCDYospTS12
+ bJSs3ep4LybvkMHu9JrXLn+DDmmzwYWS6JyMuS6Ye/OVNltGYRiEDOqgfvCvb61fAVoV++E3Vxo
+ 7yaz3QEovk27fdg3tGIpgogeITCjS2UBgFHDT9GZE54V2dqu
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_214252_951018_E94956F9 
-X-CRM114-Status: GOOD (  19.78  )
+X-CRM114-CacheID: sfid-20240112_214254_686704_583392F8 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,195 +118,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB-C PHYs on the msm8998, QCM2290 and SM6115 platforms use special
-register to control which lanes of the Type-C port are used for the
-SuperSpeed USB connection. Mimic the qmp-combo driver and handle this
-register.
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 
+Stop selecting UTMI clock as the USB3 PIPE clock. This setting is
+incompatible with the USB host working in USB3 (SuperSpeed) mode.
+
+Fixes: 9dd5f6dba729 ("arm64: dts: qcom: sm6115: Add USB SS qmp phy node")
+Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+[DB: fixed commit message, dropped dr_mode setting]
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 97 +++++++++++++++++++++++++++++++-
- 1 file changed, 94 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/qcom/qrb4210-rb2.dts | 4 ----
+ arch/arm64/boot/dts/qcom/sm6115.dtsi     | 1 -
+ 2 files changed, 5 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 21faed7f648a..9cddba30b52e 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -18,6 +18,8 @@
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
-+#include <linux/usb/typec.h>
-+#include <linux/usb/typec_mux.h>
- 
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-misc-v3.h"
-@@ -381,11 +383,17 @@ struct qmp_usbc {
- 	struct reset_control_bulk_data *resets;
- 	struct regulator_bulk_data *vregs;
- 
-+	struct mutex phy_mutex;
-+
- 	enum phy_mode mode;
-+	unsigned int usb_init_count;
- 
- 	struct phy *phy;
- 
- 	struct clk_fixed_rate pipe_clk_fixed;
-+
-+	struct typec_switch_dev *sw;
-+	enum typec_orientation orientation;
+diff --git a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
+index 7c19f874fa71..52f31f3166c2 100644
+--- a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
++++ b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
+@@ -607,10 +607,6 @@ &usb {
+ 	status = "okay";
  };
  
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -516,6 +524,7 @@ static int qmp_usbc_init(struct phy *phy)
- 	struct qmp_usbc *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *pcs = qmp->pcs;
-+	u32 val = 0;
- 	int ret;
+-&usb_dwc3 {
+-	maximum-speed = "super-speed";
+-};
+-
+ &usb_hsphy {
+ 	vdd-supply = <&vreg_l4a_0p9>;
+ 	vdda-pll-supply = <&vreg_l12a_1p8>;
+diff --git a/arch/arm64/boot/dts/qcom/sm6115.dtsi b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+index 160e098f1075..76c429e8ebab 100644
+--- a/arch/arm64/boot/dts/qcom/sm6115.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+@@ -1600,7 +1600,6 @@ &bimc SLAVE_EBI_CH0 RPM_ALWAYS_TAG>,
+ 			interconnect-names = "usb-ddr",
+ 					     "apps-usb";
  
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-@@ -542,6 +551,14 @@ static int qmp_usbc_init(struct phy *phy)
+-			qcom,select-utmi-as-pipe-clk;
+ 			status = "disabled";
  
- 	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
- 
-+#define SW_PORTSELECT_VAL			BIT(0)
-+#define SW_PORTSELECT_MUX			BIT(1)
-+	/* Use software based port select and switch on typec orientation */
-+	val = SW_PORTSELECT_MUX;
-+	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
-+		val |= SW_PORTSELECT_VAL;
-+	writel(val, qmp->pcs_misc);
-+
- 	return 0;
- 
- err_assert_reset:
-@@ -646,23 +663,34 @@ static int qmp_usbc_power_off(struct phy *phy)
- 
- static int qmp_usbc_enable(struct phy *phy)
- {
-+	struct qmp_usbc *qmp = phy_get_drvdata(phy);
- 	int ret;
- 
-+	mutex_lock(&qmp->phy_mutex);
-+
- 	ret = qmp_usbc_init(phy);
- 	if (ret)
--		return ret;
-+		goto out_unlock;
- 
- 	ret = qmp_usbc_power_on(phy);
--	if (ret)
-+	if (ret) {
- 		qmp_usbc_exit(phy);
-+		goto out_unlock;
-+	}
-+
-+	qmp->usb_init_count++;
-+out_unlock:
-+	mutex_unlock(&qmp->phy_mutex);
- 
- 	return ret;
- }
- 
- static int qmp_usbc_disable(struct phy *phy)
- {
-+	struct qmp_usbc *qmp = phy_get_drvdata(phy);
- 	int ret;
- 
-+	qmp->usb_init_count--;
- 	ret = qmp_usbc_power_off(phy);
- 	if (ret)
- 		return ret;
-@@ -900,6 +928,61 @@ static int phy_pipe_clk_register(struct qmp_usbc *qmp, struct device_node *np)
- 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
- 
-+#if IS_ENABLED(CONFIG_TYPEC)
-+static int qmp_usbc_typec_switch_set(struct typec_switch_dev *sw,
-+				      enum typec_orientation orientation)
-+{
-+	struct qmp_usbc *qmp = typec_switch_get_drvdata(sw);
-+
-+	if (orientation == qmp->orientation || orientation == TYPEC_ORIENTATION_NONE)
-+		return 0;
-+
-+	mutex_lock(&qmp->phy_mutex);
-+	qmp->orientation = orientation;
-+
-+	if (qmp->usb_init_count) {
-+		qmp_usbc_power_off(qmp->phy);
-+		qmp_usbc_exit(qmp->phy);
-+
-+		qmp_usbc_init(qmp->phy);
-+		qmp_usbc_power_on(qmp->phy);
-+	}
-+
-+	mutex_unlock(&qmp->phy_mutex);
-+
-+	return 0;
-+}
-+
-+static void qmp_usbc_typec_unregister(void *data)
-+{
-+	struct qmp_usbc *qmp = data;
-+
-+	typec_switch_unregister(qmp->sw);
-+}
-+
-+static int qmp_usbc_typec_switch_register(struct qmp_usbc *qmp)
-+{
-+	struct typec_switch_desc sw_desc = {};
-+	struct device *dev = qmp->dev;
-+
-+	sw_desc.drvdata = qmp;
-+	sw_desc.fwnode = dev->fwnode;
-+	sw_desc.set = qmp_usbc_typec_switch_set;
-+	qmp->sw = typec_switch_register(dev, &sw_desc);
-+	if (IS_ERR(qmp->sw)) {
-+		dev_err(dev, "Unable to register typec switch: %pe\n", qmp->sw);
-+		return PTR_ERR(qmp->sw);
-+	}
-+
-+	return devm_add_action_or_reset(dev, qmp_usbc_typec_unregister, qmp);
-+}
-+#else
-+static int qmp_usbc_typec_switch_register(struct qmp_usbc *qmp)
-+{
-+	return 0;
-+}
-+#endif
-+
- static int qmp_usbc_parse_dt_legacy(struct qmp_usbc *qmp, struct device_node *np)
- {
- 	struct platform_device *pdev = to_platform_device(qmp->dev);
-@@ -1027,16 +1110,24 @@ static int qmp_usbc_probe(struct platform_device *pdev)
- 
- 	qmp->dev = dev;
- 
-+	qmp->orientation = TYPEC_ORIENTATION_NORMAL;
-+
- 	qmp->cfg = of_device_get_match_data(dev);
- 	if (!qmp->cfg)
- 		return -EINVAL;
- 
-+	mutex_init(&qmp->phy_mutex);
-+
- 	ret = qmp_usbc_vreg_init(qmp);
- 	if (ret)
- 		return ret;
- 
-+	ret = qmp_usbc_typec_switch_register(qmp);
-+	if (ret)
-+		return ret;
-+
- 	/* Check for legacy binding with child node. */
--	np = of_get_next_available_child(dev->of_node, NULL);
-+	np = of_get_child_by_name(dev->of_node, "phy");
- 	if (np) {
- 		ret = qmp_usbc_parse_dt_legacy(qmp, np);
- 	} else {
+ 			usb_dwc3: usb@4e00000 {
 
 -- 
 2.39.2
