@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 665BAC4706C
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 10:46:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36365C4706C
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 10:46:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8PfZvMaa1C9c6yXv/LDlQLBlQ8CtZ7IyTbCwvFOdxMc=; b=VoRObcyPP0KI90
-	0ONDFnzLRlItPArAP3OBLhcQT4KKDDJTl6DdOj0ZduFYOK1uTw6mj8IIQ3eflcn9IFAf33hDXB4DI
-	0LtxTZBWQNUiQ+YILY8sTWqtyJg5qI9+/8Et2qhyqQq+ej/kGwUcHdp3KXj+/W2j6afzmtmtSsbMR
-	rNxI6R3afV60LmlK+gWzBY3WVIchtnVq/eeaJF8kqq1n1IFIdIJwWLhtvjJDUEmDorW4O2x1X/2/q
-	sAqheDt/0yIWnfenzqfEq+ZcSYH4Tx9hf71brTTLbBIVLDwDGzTsRRtiTFBJfSi5BJ8H7KBzVPlrU
-	lj/ULwozO5HR4Vu72M5g==;
+	List-Owner; bh=0Vg+FtBhhXDT0VN3kGyWqYPKMh9mpofH8Hqok8gtK6o=; b=UiYOAtzM3eZa3T
+	vO61AWDcUACx20IQ0GC7iGQFqLQPRstWdwJeF35/KU6GRLflo3gAtwL797ET9ircOt3xa9tJekID3
+	TTw61gYqxTds7R2oxnmAqghjUiIHoIPQ1EJslLv0g6/RrHF3wG1MFWaraZth0TqeOJ9OctSJOyatU
+	iL663z71YE7AUy6rNfzjWAZq6XYaZu+Q6zJulrIxvVoJouZ5dBoepQqbYHDmOghSdUwvDx768Vloy
+	kDPW8z5bR61596XZR6nU+bPZu28j6nV/AuSGU1TovIrN3h0DaVRarLlLBjiJc9eYir6gVnFQbj9gg
+	JAkn5rEf7mPgonSFkgqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rObWy-004vyy-08;
-	Sat, 13 Jan 2024 10:46:24 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1rObXI-004w0n-2q;
+	Sat, 13 Jan 2024 10:46:44 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rObWv-004vya-1F
+	id 1rObXE-004w0K-2b
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 10:46:22 +0000
-Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-558b5f4cf29so2257630a12.3
-        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 02:46:21 -0800 (PST)
+	Sat, 13 Jan 2024 10:46:43 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-40e586a62f7so44107945e9.2
+        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 02:46:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705142776; x=1705747576; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705142795; x=1705747595; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=e+y1u5WjJiqNbgaxV2wvxVE6oW9dtVZIdCc4TInVijc=;
-        b=y+rIYtKOxCq9anZaafX+898i3Rf7l2MrKKNdLWh2I0ExLCohVt53p3Y6LG0NoDn/dy
-         Ly2/FvESlNO/R3PZOOAJqezCGTqNYnMy7cCGY5kQWNGF0kdZHDmbIEQhTquUQK28/RuP
-         50dtK/plq69X1kdF6UKh9zlfZ+yVmVLgC1NBo9MVa+4CovhFhLqbrVSm3DNCNj5HqYWx
-         aClFh6izTpChEBqCbmLfYhWncQyKUbhSYE0jPYwxkmpKlFr6aP72UqC4mlj2tZe6qwPk
-         YvRJhnlJSOwWzvm9GRnBs/jxGnX3oElzbpNu2scj3HA0ezBBZnQEMashfg4446F+4oz7
-         4j1A==
+        bh=Ade321jw7JHVTLOJpXCwgL7HJUJfSQ7XZ3DIEXpUbQI=;
+        b=kr3heZ0G7dE/5zXPIGk0Ehcsn+jzLmOwpN4asAV3PqEwB1nFL93nVpnMx3R2Ot7Z4D
+         eSZ4GoR7CjXYh8LxQf4ksfDI1ydi44Y3zBMDpADipJy42kfEHoNiLXP4D/SmF4/eaQJA
+         YzCYnFEAL7m2sm1rYzyhrXHnKk9CLNQM5tYUdLxRabh0aY8yCZWxBr1fYgV0H+/0slEa
+         NOaROj65RpFq2P+zr0Wh+ALAzOGI9Hvi0TTYTn3cIAXSCdb0zdZgctHhZLMeaLmR54xK
+         vPqT1d/B1fsqZ1IUyhyoX3da2Lhz5NKrz6NeicyiwXuBrvPFUxsa7Ax2QL18/3Os/MJ0
+         TWSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705142776; x=1705747576;
+        d=1e100.net; s=20230601; t=1705142795; x=1705747595;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=e+y1u5WjJiqNbgaxV2wvxVE6oW9dtVZIdCc4TInVijc=;
-        b=BZ5+VDjJNa6Iern+uFsZE4i87sXu92D6ap9ZlU1nHw3oVFM0AUc/hgzhOx5ZiMJ3JG
-         adxgmepBJJMnhCu+uf3zHOZmbK8c1pgYCrADTMh0d3iL2q68yi+/KrPtZR659mpeh2Wv
-         Iegm9WD7RNPw8ITF4g5dytWRzuIuWnrGo/hID+wIt7xcr0p/FWvMOC5LgtqCmedCvOhf
-         O8oLhg8oi6DZrKr4QRc9mjn3AglF0uyjEf8lj1D8Fpha3TlFFXZr6kyRPb2WSkU23Zyf
-         R7raAftEAuIW2xRZV4WMvHoi8nZwWYYivtS4wfjANuJEm77dwinK9LE6bvfHKgMvMzno
-         D8/A==
-X-Gm-Message-State: AOJu0YweEY3VG6VDGE/MwZbPOCjURUhWIkKuNWZnzUzalFDihdfN4kDE
-	g4vYB+1GfOSvPpS7AFItg2QNGvU48aWdbg==
-X-Google-Smtp-Source: AGHT+IGUW+ZScGiUzdXqg3AxMP54fcI8REq6Lrh8isyAdqdNmgkdJ23mPgVpypNeCVNtKqmc8PQ+HA==
-X-Received: by 2002:a17:906:a102:b0:a2b:2e02:583d with SMTP id t2-20020a170906a10200b00a2b2e02583dmr1133717ejy.113.1705142775729;
-        Sat, 13 Jan 2024 02:46:15 -0800 (PST)
+        bh=Ade321jw7JHVTLOJpXCwgL7HJUJfSQ7XZ3DIEXpUbQI=;
+        b=NAJIGxtJVYOh6IcjyO07aJREnoHu18jfIanhS/dinvlV/Bqehob49UiJe4f3Ml35nw
+         2ladOfXWQ8/mbzurwioSK4RlsbTGUoA8kQAHs9MXnXxKYWKdLYYSUJVVGc4BHJkBR03W
+         dKkQJKnOjXHFjZTSQTu4syNav/2WEbeJY7IEUXrNogW8iHc3z7uPOmoFq8atBaLh3XpU
+         6kY4ksRdLf1MKt8zowcL90w+hSMdFtFLYLfYRAalY4V4jpB3MkoY0YAqwFA46ki5FXc5
+         NoI0ldA40JtTcn5QogtEwB4Px0rftaaLXBh9v1ku70x5uPK3Qi/WxnVOK+W5/WOm4AdI
+         ua8A==
+X-Gm-Message-State: AOJu0YwyaJWgTCK0vF24n8v4TRkamdDusBdyovNN8hGAHG/hESP/WmI4
+	FCZAAjDeT6RFqltagGQI0wnuMTbf94RdLQ==
+X-Google-Smtp-Source: AGHT+IE8ys/uPqy6kT1AZTlwSbhPW0haHO6vob7NMk4QN/2SCglOtJASn0w8NCOfozKHBDuidxy6OA==
+X-Received: by 2002:a05:600c:1987:b0:40e:461e:26a6 with SMTP id t7-20020a05600c198700b0040e461e26a6mr1533455wmq.36.1705142794944;
+        Sat, 13 Jan 2024 02:46:34 -0800 (PST)
 Received: from [192.168.174.25] (178235179017.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.17])
-        by smtp.gmail.com with ESMTPSA id q21-20020a1709066b1500b00a2990007447sm2733330ejr.122.2024.01.13.02.46.13
+        by smtp.gmail.com with ESMTPSA id q21-20020a1709066b1500b00a2990007447sm2733330ejr.122.2024.01.13.02.46.32
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 13 Jan 2024 02:46:15 -0800 (PST)
-Message-ID: <516eda05-3dd5-48aa-89af-e04032a908c3@linaro.org>
-Date: Sat, 13 Jan 2024 11:46:12 +0100
+        Sat, 13 Jan 2024 02:46:34 -0800 (PST)
+Message-ID: <35f9ee57-3a4c-41d3-870a-f78c873afbad@linaro.org>
+Date: Sat, 13 Jan 2024 11:46:32 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 08/13] phy: qcom: qmp-usb: drop dual-lane handling
+Subject: Re: [PATCH 09/13] phy: qcom: qmp-usbc: drop single lane handling
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Bjorn Andersson <andersson@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
@@ -83,7 +83,7 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
- <20240113-pmi632-typec-v1-8-de7dfd459353@linaro.org>
+ <20240113-pmi632-typec-v1-9-de7dfd459353@linaro.org>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -120,10 +120,11 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20240113-pmi632-typec-v1-8-de7dfd459353@linaro.org>
+In-Reply-To: <20240113-pmi632-typec-v1-9-de7dfd459353@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_024621_468014_E78B6C57 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20240113_024642_558782_3DE02196 
+X-CRM114-Status: UNSURE (   6.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,42 +142,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13.01.2024 06:42, Dmitry Baryshkov wrote:
-> Now as all dual-lane PHYs have been migrated to a new driver, drop
-> support for dual lanes configuration. If the PHY uses two lanes for USB,
-> it is symthom that it should use either a combo USB+DP or a USB-C PHY
-> driver.
+> All USB-C PHYs use 2 lanes for the USB. Drop single lane handling in
+> this driver.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
 
-[...]
-
-> -	if (cfg->lanes >= 2) {
-> -		qmp->tx2 = devm_of_iomap(dev, np, 3, NULL);
-> -		if (IS_ERR(qmp->tx2))
-> -			return PTR_ERR(qmp->tx2);
-> -
-> -		qmp->rx2 = devm_of_iomap(dev, np, 4, NULL);
-> -		if (IS_ERR(qmp->rx2))
-> -			return PTR_ERR(qmp->rx2);
-> -
-> -		qmp->pcs_misc = devm_of_iomap(dev, np, 5, NULL);
-> -	} else {
-> -		qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
-> -	}
-> +	qmp->pcs_misc = devm_of_iomap(dev, np, 3, NULL);
->  
->  	if (IS_ERR(qmp->pcs_misc)) {
-Since you may need a new revision, you can remove the neline
-above to get a nice
-
-ret = ...
-if (ret)
-	...
-
-equivalent while at it
-
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+Why is this not part of the introduction of that driver then?
 
 Konrad
 
