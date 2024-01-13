@@ -4,130 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73DF6C4707B
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 14:49:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA275C4706C
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jan 2024 20:56:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jSdMIXhArK7K6S4C3y9KKOcXhqGSBYuEebCI3WqjDe8=; b=XhjSdVQ7sKAtHf
-	ed6D9x/LckW//wZYmtL7wgjE4jpeuMYOZ6xpGtMNU8xqyk9dLi4K7RQP44W8Sdycil6CruEYSykwN
-	bkdhd3X/6Cv+MXLHSNphSIuTw0zPRmSURQE1BnS6GfcJJEQ6Bc7kLpn38uZGGuWCksYTUsil62Rv2
-	fm83Jb/7e/FhQNYz0qXzgBaekiXJJqjJHWOk2W5R+uYkvcmv47kf+Y5h/g25Qh2kCZInO4usfRs9P
-	PonDG2PsnDx+upr2OuXuxVXJrmydNHpJ7PmkebYdvL6KoERLDJ37QtjcvyhJoT7EOLf55AfEIbPth
-	jbZH67d0RC074rsb7V8A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9adbBsrBJyLNLV+p7YZtcygJVE960yahhTD2Yl7uMsQ=; b=0hlgStrW53groE
+	TE5eq/v9bSFjZCGQhgRJdR1rRMkKR42Zeodq8tN53+G7lYV8+OETODm7xJeKO9yUWMLV5CTpP0FtU
+	xOvgW8KNfRafE2DQbOuRMCVmexrSQD0wmLch+f/I4Ea3QMrFCBMXi0RKTVavFaZHfUNTHuDF5mvkn
+	vWaM0WFYBT27iinxOgwxAgCj5YQcIGanw6gBqwIevGjT5DZMmtsTix2p5I6/Ja4Ma7WWL8vwC3rL9
+	gGLSmK/W8Qclrrm0ALcAc8tWPB+9rLQQlv6JFhkaR2a2sw5IKiTZv2RaDEgaIXBRTNXbXZPXEKoIx
+	WcOFtrUadbkbxY0weieQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOfJx-005Fyq-3B;
-	Sat, 13 Jan 2024 14:49:13 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1rOl2v-005ghO-17;
+	Sat, 13 Jan 2024 20:56:01 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOfJr-005Fxd-2C
+	id 1rOl2r-005gex-0C
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jan 2024 14:49:12 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-a28cc85e6b5so877954066b.1
-        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 06:49:03 -0800 (PST)
+	Sat, 13 Jan 2024 20:55:59 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-2cd0f4f306fso88716281fa.0
+        for <linux-phy@lists.infradead.org>; Sat, 13 Jan 2024 12:55:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705157341; x=1705762141; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Fgnakmxn1JjWO2jtB4gPrdw1IguBzIfKLNtH54kDoA0=;
-        b=bFpNmHrZuosoJALrNYBwqtYkqRXKh2Yz0vyIlT1Szlixuu9bffsAlA5h/2U07Bb0LF
-         ZckHOoKIP9DJ13Dk2d/OXiv9NIDyCeK/Uygyx6GeXFjeD9ORWBEVn9MmA0aU9+9RTN3F
-         8KLZaob4xxcxMU1vGeCuh3SruwaYvKNrv+2Rygcc0KbAGFVfDy02b736doppLqo8JjlC
-         IJ5gEa/pC0yujTiXXxBkjullBmHoHnpjLLrZLjzasnSkzzTZbIkD9XiyFDPtSbuvkn3n
-         L+U7i5fBvWgYw5J6HIV7RgkSh3pc+0pCaN+vO1gRXGgAR5ikSKTidoBWjnEQ1+LmpU7e
-         JHMg==
+        d=linaro.org; s=google; t=1705179354; x=1705784154; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=8H3lEOLtQff6kh0Ma41nbBlczO7GfMuk2Ro8jq93iTk=;
+        b=d+zSQ4eIan7TudCqZKnVgGnAb+LtFvA+Jh1POwoUOsMzcLu2WAYzxbXkRatrxldtkO
+         4NgTrlCFNEVSiPVTAHQjAI4BpQEcRAJ0/kCHqC0a0P1NJikFrz/pIaQWWvfltC2AULI4
+         7oYL/glf+vlYt0b3VI3Tjy4Up2qrZUbtx7dFk40tyR11uVyTzE5Y7/8pkGlJCwiTBxX8
+         m4f2I3+ch77b0poBVcDbAywHgYjKHzGeaVI7CqdJvmboIwdnMNe5n1bGqda3cgpe3U+5
+         bYJ5zDvf0EVu8SR6SRaR2EOBthGwFVjWLRGZ2OD+MrVCEIzGcEdb22fXy7hclNrS7qRz
+         ZUZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705157341; x=1705762141;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Fgnakmxn1JjWO2jtB4gPrdw1IguBzIfKLNtH54kDoA0=;
-        b=j7rw3qlv+Xl+Pee3aZQZ+3NVXT43Szr8wU11rxC+FRo5R13aj2VmKmXr7Rm84WreKl
-         Sr2hBVKUAQmnAeuYBuu2W79ghIGaiWvI4GDUy4GH4lqz3bneLLAFA4+V4Iz3zQJknPv4
-         X+mMPQ8sDd6nzwXw/SPP8Wf01OmpqqxU8wfQ1LQjIE9Vd6P4HSx69qcWXUJjJUamvBSL
-         PBEMRmTpQI7RwUjP6iWklF/WjxeJBUrpVqMmp9u5R4jzecPyO2KR7aNiw9UmTdpD0+Ep
-         5f4VYVeIq+8Tn0zluk/lxBfHYgcz1baJ5Yz0r3dkI3XRfTwxbTxVd+yGmCA/bqPteR06
-         QlRw==
-X-Gm-Message-State: AOJu0YyltCYYEQBZiO7BfMCwvSkydEl0TCDWAte1jtBLecpnLYlBfP8D
-	pV2VZh/emVgF08CChMXmNr+fwf6V6ZVEaw==
-X-Google-Smtp-Source: AGHT+IFhadScNI3VamFqdSD9giKVOpdAKZCTwgNK/O/5p3BHKj0sntt5VWwmzbXTgL8Gqpk1f3K8cw==
-X-Received: by 2002:a17:907:3c09:b0:a28:f771:7343 with SMTP id gh9-20020a1709073c0900b00a28f7717343mr767400ejc.139.1705157341052;
-        Sat, 13 Jan 2024 06:49:01 -0800 (PST)
-Received: from [192.168.174.25] (178235179017.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.17])
-        by smtp.gmail.com with ESMTPSA id w26-20020a17090652da00b00a1c7b20e9e6sm2927363ejn.32.2024.01.13.06.48.56
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 13 Jan 2024 06:49:00 -0800 (PST)
-Message-ID: <7032da8e-dd34-4dce-abdd-c6e32c55753e@linaro.org>
-Date: Sat, 13 Jan 2024 15:48:55 +0100
+        d=1e100.net; s=20230601; t=1705179354; x=1705784154;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=8H3lEOLtQff6kh0Ma41nbBlczO7GfMuk2Ro8jq93iTk=;
+        b=I3lgmpauoFVeoNxKvKtx58lzV8J7osBDQLX6K8B1RBLUdRWb9tU8z1P1CTL5RVipWt
+         aCzH5guwwcwdjc5u/jjz7+7eYbiHqPGzEQ7y7hBFMBcno2Mvp0DXUnSqO97TJaFL4PGB
+         jnLLxjPhISzh26glOyKELZzsVWZFcaMxEQjTOLc/k1EYeFuB+cw+0ydVvWp8G0EB2UTX
+         0eWtYxYvgwxtpSkdo6y9x5vu2mFthXwcKGkeLNxYf9tLC+0aHNQSsY1mzppuqyMtqMvs
+         YqJJps+o4Or4MyS2u8EebCuYXj52FwTPXU0uHA36lfRf1lzGpVb70sBVBBcU/wZUl4Bz
+         i1YQ==
+X-Gm-Message-State: AOJu0Ywtp2OA3dztg2+KkxN+V6HGgPiDARcheKgYkBL8/JEP8VhHwgCF
+	FQRw8AEdSTBzng/WW9ElNPGHpmxth27h7Q==
+X-Google-Smtp-Source: AGHT+IHYTf1qpzeijG/IAVOHBC9Svr8p0OrVPy2HbaZQn38lIRbpcNldfpa+W+dMGhsU/h3uV49Cjg==
+X-Received: by 2002:a05:6512:3b90:b0:50e:935a:ca83 with SMTP id g16-20020a0565123b9000b0050e935aca83mr1825970lfv.91.1705179353618;
+        Sat, 13 Jan 2024 12:55:53 -0800 (PST)
+Received: from umbar.lan ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id p14-20020a056512328e00b0050e9355d7eesm919802lfe.103.2024.01.13.12.55.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 13 Jan 2024 12:55:53 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 00/15] usb: typec: qcom-pmic-typec: enable support for
+ PMI632 PMIC
+Date: Sat, 13 Jan 2024 22:55:43 +0200
+Message-Id: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 07/13] phy: qcom: qmp-usb: split USB-C PHY driver
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Guenter Roeck <linux@roeck-us.net>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bhupesh Sharma <bhupesh.sharma@linaro.org>, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
- <20240113-pmi632-typec-v1-7-de7dfd459353@linaro.org>
- <f6ec016e-7319-42a7-8ca3-06f21a7ab6e5@linaro.org>
- <CAA8EJppOR3z4n4ws_3S9KiCFmHhzPsBiEjWw5Bgy4o+F4deT9w@mail.gmail.com>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- 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
- izWDgYvmBE8=
-In-Reply-To: <CAA8EJppOR3z4n4ws_3S9KiCFmHhzPsBiEjWw5Bgy4o+F4deT9w@mail.gmail.com>
+X-B4-Tracking: v=1; b=H4sIAM/4omUC/1XMQQqDMBCF4avIrJuSZLSpXfUexYUkow60SUhEK
+ uLdmwpddPk/eN8GmRJThlu1QaKFMwdfQp8qsFPvRxLsSoOWupZKaRFffEEt5jWSFbU1DaJsNV4
+ NlEtMNPD74B5d6YnzHNJ66Iv6rj8I/6FFCSkcGTe4ummxwfuTfZ/COaQRun3fP9vsOwapAAAA
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Guenter Roeck <linux@roeck-us.net>, 
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+X-Mailer: b4 0.12.4
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3797;
+ i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
+ bh=CS9SbNxFzGdH021lW0ayb4u0wurDARzzELIZIOoEHYs=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlovjVgTNg+7k1nM72B6joVl25KPM1s15T6Nfw/
+ KHDh5ovnJeJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaL41QAKCRCLPIo+Aiko
+ 1SNWB/4gB8dpPDVvSXPhjV9SucMh7BkyGVx2mhG29317CtS0V62KEIOYwaFP9YIEQYzOoc1gpJm
+ HLoIJAgORJ4eWCciCZlkdmXS4XjtJ6xJPiczt7G3s1QFLqsWgHBwJEY4JQWDPAuXOSroRNg8SRv
+ OpxbPqRuZWByNn7KTKHkQCHO09Tyc5YB4E6S/N5FynMkgobVXWeFRJbdLANoDYTA3FNsk1BnNtG
+ 4r4Ul+Tai6qZ/RECBSi/MI7tn8sySUZrRlO3IkZ465GoW9xrhqS3//nYhLsEr3QfQU8X9G4gOGC
+ Jbacdkfp2lPCCcRAdBCtVlZ2MvrghilYCW8xusv6w6gMt3ZF
+X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_064907_785353_5F018451 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240113_125557_143578_F714D6D9 
+X-CRM114-Status: GOOD (  11.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,39 +117,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13.01.2024 15:15, Dmitry Baryshkov wrote:
-> On Sat, 13 Jan 2024 at 12:42, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
->>
->> On 13.01.2024 06:42, Dmitry Baryshkov wrote:
->>> In preparation to adding Type-C handling for MSM8998, QCM2290 and SM6115
->>> platforms, create new QMP USB-C PHY driver by splitting mentioned
->>> platforms to a separate file. In future it will also be extended with
->>> support for the DisplayPort handling. It will also be reused later for
->>> such platforms as SDM660, SM6125, SM6150.
->>>
->>> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->>> ---
->>
->> [...]
->>
->>
->>> +#include "phy-qcom-qmp.h"
->>> +#include "phy-qcom-qmp-pcs-misc-v3.h"
->>> +
->>> +/* QPHY_SW_RESET bit */
->>> +#define SW_RESET                             BIT(0)
->>> +/* QPHY_POWER_DOWN_CONTROL */
->>> +#define SW_PWRDN                             BIT(0)
->>
->> Most / all of these defines could probably live in a header file.
-> 
-> For this (and several other comments), see
-> https://lore.kernel.org/linux-arm-msm/20240109-phy-qmp-merge-common-v1-0-572899a14318@linaro.org/
+The Qualcomm PMI632 PMIC (found on Qualcomm Robotics RB2 platform)
+doesn't support USB Power Delivery. However this PMIC still supports
+handling of the Type-C port (orientation detection, etc). Reuse exiting
+qcom-pmic-typec driver to support Type-C related functionality of this
+PMIC. Use this to enable USB-C connector support on the RB2 platform.
 
-So, I'd assume the plan is to land these two series in parallel and
-then submit a cleanup to this one? Sounds ok then!
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+Changes in v2:
+- Split qcom_pmic_typec_pdphy_set_roles() changes to separate patch
+  (Konrad)
+- Simplified devm_kzalloc / sizeof() argument (Konrad)
+- Made start / stop callbacks mandatory (Bryan)
+- Reworked Type-C port handling into a backend similar to PD PHY (Bryan)
+- Made more qcom-pmic-typec data static const (Bryan)
+- Squashed usbc PHY single-lane removal patch (Konrad)
+- Further usbc PHY cleanup (Konrad)
+- Fixed order of DT properties in pmi632.dtsi (Konrad)
+- Instead of specifying bogus PDOs for the port, specify pd-disable and
+  typec-power-opmode properties for the connector
+- Moved orientation-switch / usb-dual-role properties to sm6115.dtsi
+  (Konrad)
+- Linked usb_dwc3_ss and usb_qmpphy_usb_ss_in
+- Link to v1: https://lore.kernel.org/r/20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org
 
-Konrad
+---
+Dmitry Baryshkov (14):
+      dt-bindings: regulator: qcom,usb-vbus-regulator: add support for PMI632
+      dt-bindings: usb: qcom,pmic-typec: add support for the PMI632 block
+      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: split from sc8280xp PHY schema
+      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: support USB-C data
+      usb: typec: tcpm: fix the PD disabled case
+      usb: typec: qcom-pmic-typec: fix arguments of qcom_pmic_typec_pdphy_set_roles
+      usb: typec: qcom-pmic-typec: allow different implementations for the PD PHY
+      usb: typec: qcom-pmic-typec: allow different implementations for the port backend
+      usb: typec: qcom-pmic-typec: add support for PMI632 PMIC
+      phy: qcom: qmp-usb: split USB-C PHY driver
+      phy: qcom: qmp-usb: drop dual-lane handling
+      phy: qcom: qmp-usbc: add support for the Type-C handling
+      arm64: dts: qcom: pmi632: define USB-C related blocks
+      arm64: dts: qcom: qrb4210-rb2: enable USB-C port handling
+
+Vladimir Zapolskiy (1):
+      arm64: dts: qcom: sm6115: drop pipe clock selection
+
+ .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    |  171 +++
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |   22 -
+ .../regulator/qcom,usb-vbus-regulator.yaml         |    9 +-
+ .../devicetree/bindings/usb/qcom,pmic-typec.yaml   |   28 +-
+ arch/arm64/boot/dts/qcom/pmi632.dtsi               |   30 +
+ arch/arm64/boot/dts/qcom/qrb4210-rb2.dts           |   50 +-
+ arch/arm64/boot/dts/qcom/sm6115.dtsi               |   44 +-
+ drivers/phy/qualcomm/Makefile                      |    2 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            |  323 +-----
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c           | 1169 ++++++++++++++++++++
+ drivers/usb/typec/tcpm/qcom/Makefile               |    3 +-
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c      |  254 +----
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h      |   27 +
+ .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c    |  157 ++-
+ .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h    |   94 +-
+ .../typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c   |   80 ++
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c |  290 ++++-
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h |  172 +--
+ drivers/usb/typec/tcpm/tcpm.c                      |    3 +-
+ 19 files changed, 2058 insertions(+), 870 deletions(-)
+---
+base-commit: 9e21984d62c56a0f6d1fc6f76b646212cfd7fe88
+change-id: 20240112-pmi632-typec-4c7533092387
+
+Best regards,
+-- 
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 
 -- 
