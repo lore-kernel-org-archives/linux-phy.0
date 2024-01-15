@@ -4,84 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E8EC3DA79
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 09:47:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86712C3DA79
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 09:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RL7DfX3WngTIkHj/8FXdfulbD0zTK24ihVDOCx9LXHU=; b=s0Y5rrqVE7TFQa
-	mBnui3nHGKbdAJJ4zqIHH2o0Yo15/IsWIi460nlNRmG1apbEDKMjsZS2qz7mxeEW3Ns2xJdw8sxxf
-	wdAawtw3qbzToSydkGNzxzQfZT9z7RVH8q6U/Hmtw0GjKYZRD9yTvIuNBjU5KdHwOizn1xc+tQL/c
-	yt3kPwwUKPsXXwG5T14+HgT3qb0zAj+Bsor+ubKhe3GmW0f3TU/56pmjvIQIC2N8i70HMFbooaKK1
-	nvDbaH5TsWqIYZ119ySIBFo4YXgAdi6hrXeuz+9995jYy80hwbLT7zNDhuaAbgpAj+s6GSQWLKGv9
-	yAEKsir2LZFYUtRVo1rg==;
+	List-Owner; bh=H7LIwTjvUBPWGS4q/RliOyEVyjJ9DTkZtdI+7STSjwA=; b=10zmfNBizcucv5
+	RBCy7cfpfJuJ1ECVmGGJdUcxvRgGbP/pLevUUi6bYohqVFGoFyIK4Ep1rvl5kNDGdnHzQ+c1rROU6
+	miJvQigJwxbDKDGDCM/3jhkCdpG7ZJwpIg4Y7YlU+8Yuja0Uk3RtmBJu1Myyau1O0l+HJT/GAwVLB
+	LFhKV0Rh5/minQTZoCKHLKTmWkeUMSqrChN+6hDnJWVJhg42F2vaGCDJUdqutQAXmOQjkA4cmIT2P
+	GrHw8GgDDTneOeTVRYjdnn6RUQCYPJI0HrrDgrzk5klihG5OXCFhqYj12TQVTzlC3UXl7m1fE6ap/
+	HRlTsKoFAUVtTcSXXnSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPJZ7-008TON-2u;
-	Mon, 15 Jan 2024 09:47:33 +0000
-Received: from mail-yw1-x1134.google.com ([2607:f8b0:4864:20::1134])
+	id 1rPJdj-008Ts8-0h;
+	Mon, 15 Jan 2024 09:52:19 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPJZ5-008TNw-39
+	id 1rPJdg-008TqL-1n
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jan 2024 09:47:33 +0000
-Received: by mail-yw1-x1134.google.com with SMTP id 00721157ae682-5e7f0bf46a2so76422697b3.1
-        for <linux-phy@lists.infradead.org>; Mon, 15 Jan 2024 01:47:27 -0800 (PST)
+	Mon, 15 Jan 2024 09:52:18 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-5542a7f1f3cso10262167a12.2
+        for <linux-phy@lists.infradead.org>; Mon, 15 Jan 2024 01:52:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705312047; x=1705916847; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=KFasKVeIFS8eA29J5OC5S7BAGeeHVHQITZOFxwu8rvQ=;
-        b=omVU8/VdVA/6oIMv5AvxDoLPZt518PuYl18o7G8kqB+cL04Enj7WcTOUSBf8CIrow/
-         yc7yB2B0EAq3TU4jTFfCFPTHUQQEbdXzxL4GUFU14WaGg76RAiySeg8yGhe3SMoPFo5k
-         l0Py6dLTg6/gfPs3AaIRXtC1RwFuOLdcpv8qrHEPyJV3yubkCLUl4FK09qQAYcqzR6Sq
-         H7fNJ4k1khWjHAdsnE3ZbzTl3Pz+xaO+OmO1lCJ4RUTM1QpFkkUJB8dIuYg4E/fiEY2C
-         HAlzkw/byw5m9fb4ZAx9r7gNsY8VKz3f7DIwKh+RHYvhXl5nioG9oI7zyz8gXOdN4w+C
-         4bnw==
+        d=linaro.org; s=google; t=1705312331; x=1705917131; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=zZFT1yFxYlVkgqvKMiV1rHlNH9vvM1PcstUoRcD6u4I=;
+        b=PUbAhI/gCXestbMJYgTR9n/qyJmiajyEK3e9lEaeSX4Vyei+CoY7lI/LC4RPEKULeG
+         6cU+jYgh5Ar8qT+H7mm+X4r474x1rhdFittsRdj2urWZw/mgg9ARK2gozILIcOmuL4XT
+         9V89Ezr0tx9+2Y+5I6LGMMMeQfKgAx62zX+z5W8/w4ZuHaOfIKixlY9q0sQm9o9o7B8X
+         UIBHEHpb9c6HuXxb8lfv0qUWKXz3aaIPIxRCxNpwds4r4Gi8WCnyFnmXhmi2pTFZIZIZ
+         zHWk1gLD+L3mu49X8bioGWA8d/gVKcRNq2yiGKMyPVv3fFB/qHJPJ3ix9X3tPfWl/+dK
+         0M6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705312047; x=1705916847;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=KFasKVeIFS8eA29J5OC5S7BAGeeHVHQITZOFxwu8rvQ=;
-        b=t1eVFMh286xkM2KFS7BdoF0hRY/tQLJpsIcm7z6r1wZpvczuu57K2UvOHXvzDACTsm
-         QNGj5bO4v6Dnq4lkVWnalI4lqookQF4JhdvR26yKrCkJkdQ00mZC8wZLR8DFuRKNChdM
-         veAfmqgv5SdVCBTkd05VrpnDXUlIYNEqBYDUWtkslQI3ECd6w5RHibY4XczSn35Mb/Hy
-         9cljkzTWindFC3Jughkw+z1cbRtt+Vk/4mXejDrsMzpVoYKc/rkUeemK3J0HwT4it8b/
-         7KFaVvCQaNQSXqIveeolFawehU+mWF+rHX8QWp4zy76VWXZXWQohoXQy3r1JqkNNolW4
-         Uq+A==
-X-Gm-Message-State: AOJu0YxdnEwCHAy3nB7E8Nhwm/iyNhZdz/g0WNoBrTe4EGQWfSlQLh8j
-	IPpPsuHs1gEW5WTeNoPBEaWnlTClMXXW8DqNjWAhec4iS1x7hA==
-X-Google-Smtp-Source: AGHT+IGDxeO4T8bagcuUSUZ0vMjmvo/iXyCvviU6IkM5zpYZ/eSn970UnrLfZAjyWjqwQ+WhSzN85TavpbmAnoNw87w=
-X-Received: by 2002:a81:d003:0:b0:5ee:1ca0:b7ef with SMTP id
- v3-20020a81d003000000b005ee1ca0b7efmr3089640ywi.42.1705312047014; Mon, 15 Jan
- 2024 01:47:27 -0800 (PST)
+        d=1e100.net; s=20230601; t=1705312331; x=1705917131;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=zZFT1yFxYlVkgqvKMiV1rHlNH9vvM1PcstUoRcD6u4I=;
+        b=dYfQiDG64Cq+NQoxSoANgQoPmIhZOfZdMPaeEwJCFgeA6v5dEvNIKh77ttL6gDnnqD
+         h2wIgdoTA2yAviIZ8dORbPY0W1niwyKMWiq+xY1mPIh0povx1mVpAPnvVkauM3q7ihLj
+         pKGzW5oeSKQDxKEQ+4IPzJUvH4ziJs8zjf71CvvBKkvxjhNsMP4llLskyecKGRzfynzM
+         VH/SqnzPg1qy2Dt+G1f8Ledy08pwPydVWnNoWCHaeu3cRn41aok8sDGm8figvStPGxzi
+         Z37Fy7UbsINm6PXzv81EIgIwV7B3jnvxwCA9MlAKc0yrLI9FQeJj/jqsX0ECOSvFlTNO
+         LvaA==
+X-Gm-Message-State: AOJu0YwPKf/0tQhXasQMNrSeDkBCdQzQu27GxRYhkfYsoqCf6G268sGo
+	VXJWR+nZD99AwvXGxkkXYLx7KgnYJ4ujVw==
+X-Google-Smtp-Source: AGHT+IHBVQUjjN8/aG9IdhmJJPXEZfd8a0pPAsVT20N4DzCul13RsnLmi6Q0dZZtNr4378VNTQVVXQ==
+X-Received: by 2002:a17:906:3750:b0:a23:71ca:2bb4 with SMTP id e16-20020a170906375000b00a2371ca2bb4mr2367128ejc.144.1705312331209;
+        Mon, 15 Jan 2024 01:52:11 -0800 (PST)
+Received: from linaro.org ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id st7-20020a170907c08700b00a2cfa8edbcesm3342141ejc.199.2024.01.15.01.52.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 15 Jan 2024 01:52:10 -0800 (PST)
+Date: Mon, 15 Jan 2024 11:52:09 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, Johan Hovold <johan@kernel.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 0/3] phy: qcom: edp: Add support for DT phy mode
+ configuration
+Message-ID: <ZaUASV+0gc/Bufmw@linaro.org>
+References: <20231219-x1e80100-phy-edp-compatible-refactor-v1-0-f9e77752953d@linaro.org>
+ <CAA8EJpr8rKMBzcm-=HGu7-C5hPkNMrnG1cA78O00UjgJVT7p6Q@mail.gmail.com>
+ <6179e3c7-f399-4b0f-abb0-aaf5e549d8d9@linaro.org>
 MIME-Version: 1.0
-References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
- <20240113-pmi632-typec-v2-4-182d9aa0a5b3@linaro.org> <2c291056-e4c6-4c8d-a8c1-37cfd5341652@linaro.org>
-In-Reply-To: <2c291056-e4c6-4c8d-a8c1-37cfd5341652@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 15 Jan 2024 11:47:16 +0200
-Message-ID: <CAA8EJpquRv20NhQ2CUZaAju-=E4cFUsXS3i9fKAPHnwkd8Yf_g@mail.gmail.com>
-Subject: Re: [PATCH v2 04/15] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy:
- support USB-C data
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, "Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>, 
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <6179e3c7-f399-4b0f-abb0-aaf5e549d8d9@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_014732_018100_F0D9D187 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240115_015216_591308_98641DA9 
+X-CRM114-Status: GOOD (  29.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,25 +101,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 15 Jan 2024 at 11:16, Krzysztof Kozlowski
-<krzysztof.kozlowski@linaro.org> wrote:
->
-> On 13/01/2024 21:55, Dmitry Baryshkov wrote:
-> > Extend the Qualcomm USB-C QMP PHY schema with the USB-C related entry
-> > points: orientation-switch property and USB-C connection graph.
-> >
-> > Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->
-> Hm, this feels unusual - is really the phy handling it? Not "Qualcomm
-> PMIC based USB Type-C block"?
+On 24-01-03 14:42:49, Konrad Dybcio wrote:
+> On 21.12.2023 17:27, Dmitry Baryshkov wrote:
+> > On Tue, 19 Dec 2023 at 22:55, Abel Vesa <abel.vesa@linaro.org> wrote:
+> >>
+> >> Until now, all platform that supported both eDP and DP had different
+> >> compatibles for each mode. Using different compatibles for basically
+> >> the same IP block but for a different configuration is bad way all
+> >> around. There is a new compute platform from Qualcomm that supports
+> >> both eDP and DP with the same PHY. So instead of following the old
+> >> method, we should allow the mode to be configured from devicetree.
+> >>
+> >> There has been an off-list discussion on what would be the right way
+> >> to pass on the PHY mode information to the driver and it has been
+> >> concluded that phy-cells is the way to go. This means that basically
+> >> the controller will pass another value (that is, the PHY type) to
+> >> its 'phys' DT property.
+> >>
+> >> For this, we need both the bindings value and the PHY mode value to be
+> >> added as well.
+> >>
+> >> The controller part will follow shortly. But for now, lets see where
+> >> this is going.
+> >>
+> >> There has been another attempt at this here:
+> >> https://lore.kernel.org/all/20231122-phy-qualcomm-edp-x1e80100-v3-3-576fc4e9559d@linaro.org/
+> >>
+> >> Compared to that version, this one uses the phy-cells method and drops
+> >> the X1E80100 support. The X1E80100 support will be a separate patchset.
+> > 
+> > After several back and forth discussions, I think that this approach
+> > is not correct and not that easy to extend. Instead I'd like to
+> > suggest adding a property to the DP controller, which enables eDP
+> > behaviour (and thus makes DP driver call phy_set_mode()). Something
+> > like this:
+> > dp: displayport-controller@ae0000 {
+> >     compatible = "qcom,sm8000-dp";
+> >     /* reg, interrupts, etc */
+> >    edp-interface;
+> >    /* or simpler */
+> >    is-edp;
+> > };
+> > 
+> > What do you think?
+> 
+> Please excuse my alzheimer, but why did we not go with phy-type after
+> the last discussion?
 
-Yes. The PHY handles orientation by switching the SS lanes accordingly
-to the way the cable has been plugged in.
+phy-type would be a property of the phy. That way we would need pass
+the mode to the controller. So it was concluded that passing that
+information from the controller via phy_set_mode is more straightforward.
 
--- 
-With best wishes
-Dmitry
+> 
+> Konrad
 
 -- 
 linux-phy mailing list
