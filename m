@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41F52C3DA79
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 16:17:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE97BC47422
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 16:17:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RymJMg6JlNFxc85YWab7nG7e/8uRR2gPv2x1fCUQWJU=; b=VnYTSgiXK8dvfa
-	zzTgXIUqOSG8JZsn8UH6vsiDnWwzfT3Y1VfFeeX5ODiOJmph8NIHhccPQw0azi7bu5LtfLvxvN35r
-	QYL992XXZVAl5nWytRDCtNdpqk/He5fhLpBTdYLyw3zQaYi2/8z3uCS/kPRa8xWSZjIBlECejgKR2
-	5/yfCnr77jDxu/MS8jMOrZudX8h3sihvQMXBXA1QZtvJKnb4Inw1DpganN/orfUspv4OMQkyCbDL9
-	8oGeDUf2ewvW7G6HbxhuBoOwKi1zTSPniALu8fxncYkieO9mcCuJVsuP5IiHngT6ZpCYjDP/F62LW
-	9zsxl2y4M7t2OPG15ezQ==;
+	List-Owner; bh=MfbofSTolJiS5F5abi4HpQzaSVfyfZKzMPQzAJ8r06g=; b=vq83IaprjFBHu0
+	mdWPpgW2lybFIas045qi5wULSzEl2nbkV+Of0zhOG/hWa/kkvVP6P9/QIdK+429qxZpch5Eth8KJr
+	uNBHc6Z3AFuGUJ0mA2IVMsXF5QniSa5Bq26WoCQyGegw6Euh/o+ZcJyv1iOMeTBtNFy8x+XdkyW26
+	CdDVw+hNJQAnPTsQVKZB71CQ4JYuFU8RlfswmLDcYxbZz01mKWQk39+h8oXR/dAHJ7QMjmJeuqjmN
+	RF5cgblWq9fK4nRRvQ6eLV4UyK3ClkUZ1wmLovhbKiTUyUzSutQ07TMnWLjvOyQCfEv2Cek6W+OC6
+	cZjqKVGBsZV12GsFXwSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPPe3-009b9s-1n;
-	Mon, 15 Jan 2024 16:17:03 +0000
+	id 1rPPe6-009bBs-08;
+	Mon, 15 Jan 2024 16:17:06 +0000
 Received: from relay6-d.mail.gandi.net ([2001:4b98:dc4:8::226])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPPdU-009aZw-2Z;
-	Mon, 15 Jan 2024 16:16:30 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 00588C000A;
-	Mon, 15 Jan 2024 16:16:25 +0000 (UTC)
+	id 1rPPdV-009abA-2l;
+	Mon, 15 Jan 2024 16:16:31 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 26252C0010;
+	Mon, 15 Jan 2024 16:16:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1705335387;
+	t=1705335388;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=qficUP/hgylBwzfb8Z6WHapI52GIrCvvi9N3cV9r1KI=;
-	b=VlZHKfcKFnDt9K9MqUnkndWkdLF8ma4Uy5h/hOicZhTcAm2XJqKOEwJoA4PWJN70o3Tq9K
-	G5dd2JlULGUreMbvNFBibG+XjO27U9rRnWtOxJ3WN2JQ2+u2bYGDdtPot/lEmn2PxLHpk+
-	mpYUgbIC8p0y9ZtpLGHBMH4tZLeKqkqgpkNe4JKRDqiiIhp1uVgL5mw5aOvJwqL4s8x2lH
-	qXG1hMLiTuEmMoNf+FpSZQyEiZrKt9CfhY0/ddvnsXvdYN5jK864ob2D9WhyB6+4rVhdtL
-	h+M9kMAW0FRu7AeoixDskBlSq8cHG71Vvy2fQ3lLJVK9sIBkLY/nQcZQlnz1Xw==
+	bh=ZG2Pox00yczUKsAlTmAE1lwg+/Kk7l0gD46+mEZfvAE=;
+	b=XGvUOA+e6WdCR5PyqrZfuF3SK/PbCfdr6CrX72v2I0IcCGz6htsbkE35DqpOh78dCB30vx
+	VmFbjwqxVuXofkTBoLio5wn+Osd0rYWMUhLDcrcdGQWTYKBf40QT8yDgCq+tZlbEUziIDf
+	cvIITxE0+8Q9SQNpINfr3+L7LLsYBXMBKsqbthuzb85zrjiN8Q8aZHbWrsh0gqE6C6vpfF
+	/FbHjbC8TGebFkQyb7tSjXBBq5QRt6ttYsD0fuZcjzEAi6fJCkjskscR8YBQuhHD9VKnfR
+	GdU01PLTUzSM0c/Bo6VKZRp5iyooUBB62UGPMuBLkxyop3kw1iTa7PznPYj/hQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Mon, 15 Jan 2024 17:14:51 +0100
-Subject: [PATCH 10/14] phy: cadence-torrent: remove noop_ops phy operations
+Date: Mon, 15 Jan 2024 17:14:52 +0100
+Subject: [PATCH 11/14] phy: cadence-torrent: add suspend and resume support
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v1-10-84e55da52400@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v1-11-84e55da52400@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v1-0-84e55da52400@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v1-0-84e55da52400@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -68,8 +68,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_081629_135390_98562B63 
-X-CRM114-Status: GOOD (  13.81  )
+X-CRM114-CacheID: sfid-20240115_081630_184738_3D449409 
+X-CRM114-Status: GOOD (  14.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,98 +81,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Even if a phy is already configured, the phy operations are needed
-during resume stage, as the phy is in reset state.
-The noop_ops phy operations is removed to always have phy operations.
-The already_configured flag is checked at the begening of init,
-configure and poweron operations to keep the already_configured
-behaviour.
-
-Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
----
- drivers/phy/cadence/phy-cadence-torrent.c | 30 +++++++++++++-----------------
- 1 file changed, 13 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index a1e9d06453e6..70413fca5776 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -1593,6 +1593,9 @@ static int cdns_torrent_dp_configure(struct phy *phy,
- 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(phy->dev.parent);
- 	int ret;
- 
-+	if (cdns_phy->already_configured)
-+		return 0;
-+
- 	ret = cdns_torrent_dp_verify_config(inst, &opts->dp);
- 	if (ret) {
- 		dev_err(&phy->dev, "invalid params for phy configure\n");
-@@ -1628,6 +1631,12 @@ static int cdns_torrent_phy_on(struct phy *phy)
- 	u32 read_val;
- 	int ret;
- 
-+	if (cdns_phy->already_configured) {
-+		/* Give 5ms to 10ms delay for the PIPE clock to be stable */
-+		usleep_range(5000, 10000);
-+		return 0;
-+	}
-+
- 	if (cdns_phy->nsubnodes == 1) {
- 		/* Take the PHY lane group out of reset */
- 		reset_control_deassert(inst->lnk_rst);
-@@ -2306,6 +2315,9 @@ static int cdns_torrent_phy_init(struct phy *phy)
- 	u32 num_regs;
- 	int i, j;
- 
-+	if (cdns_phy->already_configured)
-+		return 0;
-+
- 	if (cdns_phy->nsubnodes > 1) {
- 		if (phy_type == TYPE_DP)
- 			return cdns_torrent_dp_multilink_init(cdns_phy, inst, phy);
-@@ -2443,19 +2455,6 @@ static const struct phy_ops cdns_torrent_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
--static int cdns_torrent_noop_phy_on(struct phy *phy)
--{
--	/* Give 5ms to 10ms delay for the PIPE clock to be stable */
--	usleep_range(5000, 10000);
--
--	return 0;
--}
--
--static const struct phy_ops noop_ops = {
--	.power_on	= cdns_torrent_noop_phy_on,
--	.owner		= THIS_MODULE,
--};
--
- static
- int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
- {
-@@ -2870,10 +2869,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 		of_property_read_u32(child, "cdns,ssc-mode",
- 				     &cdns_phy->phys[node].ssc_mode);
- 
--		if (!cdns_phy->already_configured)
--			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
--		else
--			gphy = devm_phy_create(dev, child, &noop_ops);
-+		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
- 		if (IS_ERR(gphy)) {
- 			ret = PTR_ERR(gphy);
- 			goto put_child;
-
--- 
-2.39.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QWRkIHN1c3BlbmQgYW5kIHJlc3VtZSBzdXBwb3J0LgpUaGUgYWxyZWFkX2NvbmZpZ3VyZWQgZmxh
+ZyBpcyBjbGVhcmVkIGR1cmluZyBzdXNwZW5kIHN0YWdlIHRvIGZvcmNlIHRoZQpwaHkgaW5pdGlh
+bGl6YXRpb24gZHVyaW5nIHRoZSByZXN1bWUgc3RhZ2UuCgpCYXNlZCBvbiB0aGUgd29yayBvZiBU
+aMOpbyBMZWJydW4gPHRoZW8ubGVicnVuQGJvb3RsaW4uY29tPgoKU2lnbmVkLW9mZi1ieTogVGhv
+bWFzIFJpY2hhcmQgPHRob21hcy5yaWNoYXJkQGJvb3RsaW4uY29tPgotLS0KIGRyaXZlcnMvcGh5
+L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5jIHwgNTcgKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDU3IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQg
+YS9kcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYyBiL2RyaXZlcnMvcGh5
+L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5jCmluZGV4IDcwNDEzZmNhNTc3Ni4uMzFiMjU5
+NGU1OTQyIDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJl
+bnQuYworKysgYi9kcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYwpAQCAt
+MzAwNiw2ICszMDA2LDYyIEBAIHN0YXRpYyB2b2lkIGNkbnNfdG9ycmVudF9waHlfcmVtb3ZlKHN0
+cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJY2Ruc190b3JyZW50X2Nsa19jbGVhbnVwKGNk
+bnNfcGh5KTsKIH0KIAorI2lmZGVmIENPTkZJR19QTQorc3RhdGljIGludCBjZG5zX3RvcnJlbnRf
+cGh5X3N1c3BlbmRfbm9pcnEoc3RydWN0IGRldmljZSAqZGV2KQoreworCXN0cnVjdCBjZG5zX3Rv
+cnJlbnRfcGh5ICpjZG5zX3BoeSA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOworCWludCBpOworCisJ
+cmVzZXRfY29udHJvbF9hc3NlcnQoY2Ruc19waHktPnBoeV9yc3QpOworCXJlc2V0X2NvbnRyb2xf
+YXNzZXJ0KGNkbnNfcGh5LT5hcGJfcnN0KTsKKwlmb3IgKGkgPSAwOyBpIDwgY2Ruc19waHktPm5z
+dWJub2RlczsgaSsrKQorCQlyZXNldF9jb250cm9sX2Fzc2VydChjZG5zX3BoeS0+cGh5c1tpXS5s
+bmtfcnN0KTsKKworCWlmICghY2Ruc19waHktPmFscmVhZHlfY29uZmlndXJlZCkKKwkJY2xrX2Rp
+c2FibGVfdW5wcmVwYXJlKGNkbnNfcGh5LT5jbGspOworCWVsc2UKKwkJY2Ruc19waHktPmFscmVh
+ZHlfY29uZmlndXJlZCA9IDA7CisKKwlyZXR1cm4gMDsKK30KKworc3RhdGljIGludCBjZG5zX3Rv
+cnJlbnRfcGh5X3Jlc3VtZV9ub2lycShzdHJ1Y3QgZGV2aWNlICpkZXYpCit7CisJc3RydWN0IGNk
+bnNfdG9ycmVudF9waHkgKmNkbnNfcGh5ID0gZGV2X2dldF9kcnZkYXRhKGRldik7CisJaW50IG5v
+ZGUgPSBjZG5zX3BoeS0+bnN1Ym5vZGVzOworCWludCByZXQsIGk7CisKKwlyZXQgPSBjZG5zX3Rv
+cnJlbnRfY2xrKGNkbnNfcGh5KTsKKwlpZiAocmV0KQorCQlnb3RvIGNsa19jbGVhbnVwOworCisJ
+LyogRW5hYmxlIEFQQiAqLworCXJlc2V0X2NvbnRyb2xfZGVhc3NlcnQoY2Ruc19waHktPmFwYl9y
+c3QpOworCisJaWYgKGNkbnNfcGh5LT5uc3Vibm9kZXMgPiAxKSB7CisJCXJldCA9IGNkbnNfdG9y
+cmVudF9waHlfY29uZmlndXJlX211bHRpbGluayhjZG5zX3BoeSk7CisJCWlmIChyZXQpCisJCQln
+b3RvIHB1dF9sbmtfcnN0OworCX0KKworCXJldHVybiAwOworCitwdXRfbG5rX3JzdDoKKwlmb3Ig
+KGkgPSAwOyBpIDwgbm9kZTsgaSsrKQorCQlyZXNldF9jb250cm9sX3B1dChjZG5zX3BoeS0+cGh5
+c1tpXS5sbmtfcnN0KTsKKwlyZXNldF9jb250cm9sX2Fzc2VydChjZG5zX3BoeS0+YXBiX3JzdCk7
+CisJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGNkbnNfcGh5LT5jbGspOworY2xrX2NsZWFudXA6CisJ
+Y2Ruc190b3JyZW50X2Nsa19jbGVhbnVwKGNkbnNfcGh5KTsKKwlyZXR1cm4gcmV0OworfQorCitz
+dGF0aWMgY29uc3Qgc3RydWN0IGRldl9wbV9vcHMgY2Ruc190b3JyZW50X3BoeV9wbV9vcHMgPSB7
+CisJU0VUX05PSVJRX1NZU1RFTV9TTEVFUF9QTV9PUFMoY2Ruc190b3JyZW50X3BoeV9zdXNwZW5k
+X25vaXJxLAorCQkJCSAgICAgIGNkbnNfdG9ycmVudF9waHlfcmVzdW1lX25vaXJxKQorfTsKKyNl
+bmRpZgorCiAvKiBVU0IgYW5kIERQIGxpbmsgY29uZmlndXJhdGlvbiAqLwogc3RhdGljIHN0cnVj
+dCBjZG5zX3JlZ19wYWlycyB1c2JfZHBfbGlua19jbW5fcmVnc1tdID0gewogCXsweDAwMDIsIFBI
+WV9QTExfQ0ZHfSwKQEAgLTQ1NzcsNiArNDYzMyw3IEBAIHN0YXRpYyBzdHJ1Y3QgcGxhdGZvcm1f
+ZHJpdmVyIGNkbnNfdG9ycmVudF9waHlfZHJpdmVyID0gewogCS5kcml2ZXIgPSB7CiAJCS5uYW1l
+CT0gImNkbnMtdG9ycmVudC1waHkiLAogCQkub2ZfbWF0Y2hfdGFibGUJPSBjZG5zX3RvcnJlbnRf
+cGh5X29mX21hdGNoLAorCQkucG0JPSBwbV9wdHIoJmNkbnNfdG9ycmVudF9waHlfcG1fb3BzKSwK
+IAl9CiB9OwogbW9kdWxlX3BsYXRmb3JtX2RyaXZlcihjZG5zX3RvcnJlbnRfcGh5X2RyaXZlcik7
+CgotLSAKMi4zOS4yCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
