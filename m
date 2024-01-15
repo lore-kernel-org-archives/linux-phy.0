@@ -4,138 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E890DC3DA79
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 08:00:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 244E1C3DA79
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 09:00:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s1d2fz3/xHyLGR5VC+STCJFRDAuEapqWKj7imiWiQKM=; b=0uh8kP5BJW3Ncl
-	Pk2OQENbcnBuRQHTsEZVxJJkfsmIPOv/ZORbAcRmpZ5ClN4BqTrBzsXiPcGSSgBC/pQLczxvN4vgf
-	/VatETZppyPbnZ1RLB87bHP9O4NSMbEIl1dRah5CP0a5P+0+HaNG3I9ECA5HJy2+OW3N5ME9XzQ4K
-	6WA/yY4uZkVVKyHuToyKBMQgFe0TKN/cJQlew+28Ug9QCg/zxjNCTZqbiaSxCBxGUQ92JG+QR3BUc
-	KYcP61YnzV+ZPvISMTxx0Nem7CetVN7Ri+r1ACWYMjDApYi9D9P+/CoOp5hp+iEVNTjU110kXWq6M
-	BaoWR7w9sNc3+iB++Nqg==;
+	List-Owner; bh=+dlbZK5FSLUGv19h7JLUFf9pskfkbmXUe0//tyZ+low=; b=worVneTodKeV8W
+	kM87XGDLm5zlvY/hvHRmLHsreqOj/nBQyqibNtyktjIQXZmlk0cky60PFl44+chIm0Es20VkzJ6Tg
+	E4iQR4+tSbEjC5pnylQEgeGqIu9l/R1l+FceRV6CAxeAs+8Om3z75P7blmBUkhaxlGbhUeBmbNUn1
+	PfnGEMJDq5sTgUQlLqZO+Wi81xW2lvtT5zHoKjPMUQgg+ons+Vp/zyCJWCxHJDbtWEN1b5hf89NTg
+	mBMjl8kLBiZWkXjcGAI7tK+I1bcRttBt3k7+7P4ddJxtSL4qVCBYbXiOYCZeSiEUqu2EksjT7LK6M
+	iqnlZZdNNR/X/YMSCUbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPHtc-008BEK-1z;
-	Mon, 15 Jan 2024 08:00:36 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1rPIpZ-008LVd-2d;
+	Mon, 15 Jan 2024 09:00:29 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPHta-008BDS-2k
+	id 1rPIpW-008LTb-0d
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jan 2024 08:00:36 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-55817a12ad8so6063935a12.2
-        for <linux-phy@lists.infradead.org>; Mon, 15 Jan 2024 00:00:34 -0800 (PST)
+	Mon, 15 Jan 2024 09:00:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705305633; x=1705910433; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=aMLGYIN57ehNFhMwUFM2Vk+jg17vNz6L9iWNnQrm92w=;
-        b=GOPRYDXBN78e87haT8CKe5p4QNzZJDwoOoSWxeeKat6Tp1zYqa9ZKr58E8rQTAmvx6
-         hVIFUZQA+C8yRSeI2/t8PiEQHpjuGbjv4doJBIOijfV+IOtbYTkYfzGPOJt1yvyWK/uq
-         yXXUcjbaAbNK5xLAQggK7ijAGplS5S7DcYVUC0TcZOhmsKIQWjK0FCBraTCUSMueatKR
-         Bjj7c9ZeLm8McXn+SHbcpXnMujDA3g6QZVKelfGeRMotijbEJiztLwRZkJ/zB985L0tU
-         GOdiCBlkdSWEaPOKVAUuVhNxosk69qSyBYGhQM6iLZLhlXSw0vVshKwm36ln8KyFyNqo
-         ceWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705305633; x=1705910433;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=aMLGYIN57ehNFhMwUFM2Vk+jg17vNz6L9iWNnQrm92w=;
-        b=g1iHX2nMH69WNYUoQMf1wQGLYt4QQz2Qapqcb5Fqhm2a+sjx9smapAV9AAObW1NYyy
-         ZMM7k4LLEyDl4zcfeQFRW17hISR+i4lvJe2lA87IE8rsgIsVr45SAq9dHrgzlzSnP36x
-         dvInbukaZXZzDvojUJwqZW2fJCaW6jewKPmmb0DCdEtOzsxKMLqbRhmzQbarWv17zAB1
-         X19yno8bSU+oc4zDAmhZK+UvIJOVCM7I6NQAKcPiCadE7puM8OzetRBDVTSfpgmVbiQE
-         NxoO5F2sbbBqN7LU5sce5ZzYee1+xKD3YhbfzTqoV1emf15jqFUK81KijqBQVcsNiiiN
-         c+Ig==
-X-Gm-Message-State: AOJu0YwNiPJRjtNho0Q3ir4oF2n3L4FyA21+aTN9V877qhkaEtnJNTvb
-	2IJP1JmywozA+NkRPkfAEm3gKDsFnwdJsQ==
-X-Google-Smtp-Source: AGHT+IHco5MIu0GpxbWqMFEbHIhmoOF62xMHrffp09Oj6DSNI6yyeqWd7F5TwZ96ZyE6XbN0gdqCyw==
-X-Received: by 2002:a17:906:ff53:b0:a2c:7293:af58 with SMTP id zo19-20020a170906ff5300b00a2c7293af58mr2284340ejb.79.1705305633075;
-        Mon, 15 Jan 2024 00:00:33 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id z19-20020a170906271300b00a2ae0aa9002sm4980398ejc.40.2024.01.15.00.00.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 Jan 2024 00:00:32 -0800 (PST)
-Message-ID: <bdb3ea3c-d726-4f7b-a78e-daa7865ef838@linaro.org>
-Date: Mon, 15 Jan 2024 09:00:30 +0100
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1705309226; x=1736845226;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=g6PvM5PZ5lAwk5blKzy9Iw4vRtHOu2phSirCBIVrkLg=;
+  b=iJVJjOnU2AuYf/c+xasRUNU0Pg7b+E+bR2N6sSyVtZHCJ9dEFKvytWrI
+   sNLtwbdyuQtny+G+6/2XT4PVyX75AGsl5AK3K1PSJsrJXEqoJLOFlMsUx
+   Z16UpMG0PVTRSzh3W1ZyyoWfTjg58isfmp4Vbd6nFlJLgkQfPpVQRX76H
+   BziztAnjp+C+Qdi/FO1VB01oqMad07XbJBJn5ZvJmBNzMcmT61QUsj1ed
+   FC4ZQbbpFLhYq1/SGefQI7ZQZaNrguj+UUcTbkluxlmrTnUMeio9ZgrpQ
+   +hdnwdPeUonyJfkEga9bnupT4hZXtQGrleN3XlUqi/cQQU8w98IBoL/27
+   A==;
+X-IronPort-AV: E=Sophos;i="6.04,196,1695679200"; 
+   d="scan'208";a="34890230"
+Received: from vtuxmail01.tq-net.de ([10.115.0.20])
+  by mx1.tq-group.com with ESMTP; 15 Jan 2024 10:00:20 +0100
+Received: from steina-w.localnet (steina-w.tq-net.de [10.123.53.25])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 4A7BA280075;
+	Mon, 15 Jan 2024 10:00:04 +0100 (CET)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 05/15] usb: typec: tcpm: fix the PD disabled case
+Date: Mon, 15 Jan 2024 10:00:03 +0100
+Message-ID: <12361952.O9o76ZdvQC@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <20240113-pmi632-typec-v2-5-182d9aa0a5b3@linaro.org>
+References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org> <20240113-pmi632-typec-v2-5-182d9aa0a5b3@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/15] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy:
- split from sc8280xp PHY schema
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>, Liam Girdwood
- <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Guenter Roeck <linux@roeck-us.net>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
- <20240113-pmi632-typec-v2-3-182d9aa0a5b3@linaro.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240113-pmi632-typec-v2-3-182d9aa0a5b3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_000034_897669_7DA9F32D 
-X-CRM114-Status: UNSURE (   6.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240115_010026_637144_142E07D1 
+X-CRM114-Status: GOOD (  16.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,26 +74,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/01/2024 21:55, Dmitry Baryshkov wrote:
-> In preparation to defining the USB-C handling on MSM8998, QCM2290 and
-> SM6115 split existing QMP USB3 PHY schema into pure USB3 and USB-C
-> schema definitions.
-> 
+Hi Dmitry,
+
+Am Samstag, 13. Januar 2024, 21:55:48 CET schrieb Dmitry Baryshkov:
+> If the PD is disabled for the port, port->pds will be left as NULL,
+> which causes the following crash during caps intilisation. Fix the
+> crash.
+> =
+
+> Unable to handle kernel NULL pointer dereference at virtual address
+> 0000000000000000 Call trace:
+>  tcpm_register_port+0xaec/0xc44
+>  qcom_pmic_typec_probe+0x1a4/0x254
+>  platform_probe+0x68/0xc0
+>  really_probe+0x148/0x2ac
+>  __driver_probe_device+0x78/0x12c
+>  driver_probe_device+0xd8/0x160
+> Bluetooth: hci0: QCA Product ID   :0x0000000a
+>  __device_attach_driver+0xb8/0x138
+>  bus_for_each_drv+0x80/0xdc
+> Bluetooth: hci0: QCA SOC Version  :0x40020150
+>  __device_attach+0x9c/0x188
+>  device_initial_probe+0x14/0x20
+>  bus_probe_device+0xac/0xb0
+>  deferred_probe_work_func+0x8c/0xc8
+>  process_one_work+0x1ec/0x51c
+>  worker_thread+0x1ec/0x3e4
+>  kthread+0x120/0x124
+>  ret_from_fork+0x10/0x20
+> =
+
+> Fixes: cd099cde4ed2 ("usb: typec: tcpm: Support multiple capabilities")
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
+>  drivers/usb/typec/tcpm/tcpm.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> =
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> diff --git a/drivers/usb/typec/tcpm/tcpm.c b/drivers/usb/typec/tcpm/tcpm.c
+> index 5945e3a2b0f7..a0978ed1a257 100644
+> --- a/drivers/usb/typec/tcpm/tcpm.c
+> +++ b/drivers/usb/typec/tcpm/tcpm.c
+> @@ -6848,7 +6848,8 @@ struct tcpm_port *tcpm_register_port(struct device
+> *dev, struct tcpc_dev *tcpc) if (err)
+>  		goto out_role_sw_put;
+> =
+
+> -	port->typec_caps.pd =3D port->pds[0];
+> +	if (port->pds)
+
+I'm wondering if the check should be for port->pd_supported instead.
+Nevertheless this works on my "pd-disable" platform as well.
 
 Best regards,
-Krzysztof
+Alexander
+
+> +		port->typec_caps.pd =3D port->pds[0];
+> =
+
+>  	port->typec_port =3D typec_register_port(port->dev, &port-
+>typec_caps);
+>  	if (IS_ERR(port->typec_port)) {
 
 
--- 
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
