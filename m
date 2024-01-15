@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40355C3DA79
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 07:58:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3679EC3DA79
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 07:59:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yPTqCeK5kYd3Ctu3P183HTB/ngjAvCOWBkc2vshNews=; b=h/XuGPuOG92BX3
-	dSrjtvy1JGCRlNws+aEYcONMegep0+6HjvVRu9Lk4YH5sFkjia/UnylpJWCIq1prLrbz7cHqrXmqP
-	l5rj1OhHlaiSVfe9jsHw6ZWqR8rgOE4t56jVHbJ8XVnhNc4+dOl3aZfHqtJoBNmAAuE0o7ysDwS1q
-	d1cO1dTrEooKU3iK3W+AWm1cauQlycXFFNeGKlrEekVZbgfMSTNg4ZpTx8kPiS+RNc2ilMa/1vcmd
-	W3J73pvu5lcDGL9A2+MzIj5R2WW/LrS739pjwAXvrWrUdtQO/cFnoatpv2KzJfZPQem9O2XKboDhq
-	X9rbOrxLEgV+SPBHoIug==;
+	List-Owner; bh=G6INs4AVJFHX9LFBqrwouOD/2b5AePrI1PKugHNbS/8=; b=sN0ovKuivqwk7m
+	CS0BMiRKkKjOD84EyC9Hp1dKRoM+DC13UcnknBfnbgOahy/bS+NRIUeezEJkMJ+h2oPUr749OgWk+
+	VbXg0xV2Fr9CrqHTge2gGTArwAUDFJs+pbAhEjJS1c6SMU6CPTd98VxhYwdRsGGl2HmJr0WXfHEQY
+	at/j4hwf08UJmdnL6uyQ847UIxT6J9utAlHChQHs5xW1od0z4EHCll+ITj7EwnjqQ7glEDpVA2gaQ
+	xhoQK6MPnqGwbrQuQ9ZbYO61z74jfMRaSz00zoUyqTJiWGE6gsEXYWTkXppgXhsz2abrOn0Ct2FrJ
+	AGheob+8aKGJBTku1FIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPHrn-008AcL-32;
-	Mon, 15 Jan 2024 07:58:43 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1rPHsj-008B4M-2s;
+	Mon, 15 Jan 2024 07:59:41 +0000
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPHrk-008Aaq-2b
+	id 1rPHsh-008B3L-2N
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jan 2024 07:58:42 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-a2d7e2e7fe0so172078966b.1
-        for <linux-phy@lists.infradead.org>; Sun, 14 Jan 2024 23:58:39 -0800 (PST)
+	Mon, 15 Jan 2024 07:59:40 +0000
+Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-a26fa294e56so866842366b.0
+        for <linux-phy@lists.infradead.org>; Sun, 14 Jan 2024 23:59:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705305518; x=1705910318; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705305578; x=1705910378; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=tYRn6aBORbyB+XRrfcjO0/uu/L6gaWFnRR7/0ydeYt4=;
-        b=L+YfOZ9eNkZomXfICG1a4tbQAwX9ye43RoViO1tp7yZGMpQ6rzCUSsstnwWWW/N6Dq
-         Y7RgiQMSC/KswSinf9A4Rgr8bKDqp/O53iJjOjbTIiiq1++A4ffC4Ar7igckeg/T8/0+
-         eQ6BJrIvzSJx8+4cqZyI6b8DQN2/86cmpfb7ozIWLSs8llmsGFPAQJCV5Jm6F/vE6orl
-         yOCS+Yd5WQNyMkYqMLm4e+BuMbZe1KsxnNG8y6LlidkR5gUxoC304RRXuRss14d0kd+A
-         rWIuAuZ54bRQvFcf44XmibJ0bdheSvnyvsu7GE6HXYBIHwZB7pQvrlqmfLi4G8g316PS
-         xzBA==
+        bh=wRZUDBNYz5iDNDrsfNTUwfQnmD96xaApAiv+ywLtE/c=;
+        b=BbE1jwFCxtRbmbaaI9G7o3rhQveM8FUZohpqMU2cB2D4dKvfklz7kqb9/LQdsPXUi4
+         ovwgLVDtEhudWO1v7xqGzimyyroCvgzEk/yGC0FohRz3ikMe8KmY01OenQDyDk/6rWZV
+         KlLWlUAI7KUDZSZ+BfIQasW8MFQSOqqtn5uF9u7Rh/6MS6xy/2bH0XTA+tFYfWjPKPsH
+         +OhqhTPH/ehOr4ISWwcp1ZNmkD4o8+Y+Cmgj5BZUSXh1NXL7vsXn+ZsKrbGAj55Id+q6
+         cdCd8thP8unfrFeRfRiZVTavfoIrgzO9YsUp4SEOKHKuhfmjvPDqxrWuDD0y9IBF+cNa
+         yTeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705305518; x=1705910318;
+        d=1e100.net; s=20230601; t=1705305578; x=1705910378;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tYRn6aBORbyB+XRrfcjO0/uu/L6gaWFnRR7/0ydeYt4=;
-        b=HogFCQ6L5sZ/cI1URT5y4cBPvv6InK9t7Fmd5WnxpnhnIZWPU8Spk6hCgrms167zc2
-         4NU7dsT2l17PnGDN6LozreAWkaQ+FXRPY84t80Pb+YpMTgmt2yzC/KNXonQRuzs0B/v5
-         CVBeBVqFqrN+9lrBffCfElMmx3njVLgGNsOuuclmRvCVJ8H4xOgRWEoMU9GYU8wgCxeN
-         J2ArLRuiTMdLdBa2Rhmu/GHqh6SllOadkigCfPyuTKZ40R8oiDkpgmGYrpmGw3tM7puQ
-         JzVcWq6fGUOXOEKorKoUeyw889CXiBQpvFt6RcyF4H2wI1MIwd+79IwoxFSnf/fgIL8O
-         6igA==
-X-Gm-Message-State: AOJu0Yz93hX50SYJiskooY1Ej/+cEZJ8W+Kj89hpgbitzwXn9kzNf+Wq
-	WXnfOFHJgiIkhj5QyrS4KxanB2CRQtjsOQ==
-X-Google-Smtp-Source: AGHT+IEMHEPUNW7jTMfZ6r1WgH6mVlxLUu4GG8azbtdZ1wlzQnhEBFi2qSgYvW8+/T6B/WnTGqs5Zw==
-X-Received: by 2002:a17:906:6802:b0:a28:e980:8984 with SMTP id k2-20020a170906680200b00a28e9808984mr4542514ejr.18.1705305518487;
-        Sun, 14 Jan 2024 23:58:38 -0800 (PST)
+        bh=wRZUDBNYz5iDNDrsfNTUwfQnmD96xaApAiv+ywLtE/c=;
+        b=P6ULtkroVCFjA/u5nUHlJpqLnZ2g5ALcLaLRyqgSIlRqvxIfT5ygx/7BnzHTVQlqWq
+         wdYbhEvzuIoIfDcBsGLK/yqH3fSUXd2YtG7M32Fxkjc+zDSMHAWyTwvy/k6N7lUvtX0N
+         6GqwLrA9SngivBFsWRudcRUHH/DUTj/Xj3SsKBQXXO78O+CBqLOS1nokZ3xQFt63alc4
+         Mmrthiqn4vEm+HIFIOnvgxzR1rv5vvbq+IGaidRjw3ShHIu79yPn3T/TbO+h19NDJy2q
+         BBOngm8m+81RPq93GZD876yj/79iP9eAnoxiAtspBr3weH7hG85O8cman4ety1iNkTrt
+         RcFA==
+X-Gm-Message-State: AOJu0YxjaidclTUddwYo8QfHLLeecVI48BUP5h8EjkvF0+RFPt/KBmE9
+	qC1e96RF8Bp7joSjjKyDq0YlXwznEzlvMg==
+X-Google-Smtp-Source: AGHT+IGMSs9bbRb5zvm9RHxK3WIZABdhg0mgETaSF4NpkrMGsdOpnkOUaAjm9IBNq3cRqnmvdmqo4Q==
+X-Received: by 2002:a17:906:4452:b0:a2d:bc4b:4304 with SMTP id i18-20020a170906445200b00a2dbc4b4304mr490285ejp.118.1705305578101;
+        Sun, 14 Jan 2024 23:59:38 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id z19-20020a170906271300b00a2ae0aa9002sm4980398ejc.40.2024.01.14.23.58.36
+        by smtp.gmail.com with ESMTPSA id z19-20020a170906271300b00a2ae0aa9002sm4980398ejc.40.2024.01.14.23.59.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 14 Jan 2024 23:58:37 -0800 (PST)
-Message-ID: <d9677def-ea41-4c4b-85ef-97f90a7aec33@linaro.org>
-Date: Mon, 15 Jan 2024 08:58:35 +0100
+        Sun, 14 Jan 2024 23:59:37 -0800 (PST)
+Message-ID: <e9b8367c-a090-4586-b03c-b99a6493edca@linaro.org>
+Date: Mon, 15 Jan 2024 08:59:35 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 01/15] dt-bindings: regulator: qcom,usb-vbus-regulator:
- add support for PMI632
+Subject: Re: [PATCH v2 02/15] dt-bindings: usb: qcom,pmic-typec: add support
+ for the PMI632 block
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Bjorn Andersson <andersson@kernel.org>,
@@ -85,7 +85,7 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
- <20240113-pmi632-typec-v2-1-182d9aa0a5b3@linaro.org>
+ <20240113-pmi632-typec-v2-2-182d9aa0a5b3@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -131,10 +131,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240113-pmi632-typec-v2-1-182d9aa0a5b3@linaro.org>
+In-Reply-To: <20240113-pmi632-typec-v2-2-182d9aa0a5b3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240114_235840_850707_2BEDCE7D 
-X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-CacheID: sfid-20240114_235939_773584_F5C302CA 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -153,14 +153,37 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13/01/2024 21:55, Dmitry Baryshkov wrote:
-> The VBUS register block on the PMI632 PMIC shares the design with the
-> PM8150B one. Define corresponding compatible string, having the
-> qcom,pm8150b-vbus-reg as a fallback.
+> The PMI632 PMIC has the same Type-C register block as the PM8150B.
+> However this PMIC doesn't support USB Power Delivery. As such it doesn't
+> have the second region used by the existing pm8150b bindings. Add if
+> clauses to handle the PMI632 usecase.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+...
+
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,pmi632-typec
+> +    then:
+> +      properties:
+> +        interrupts:
+> +          maxItems: 8
+> +        interrupt-names:
+> +          maxItems: 8
+> +        vdd-pdphy-supply: false
+> +    else:
+> +      properties:
+> +        interrupts:
+> +          minItems: 16
+> +        interrupt-names:
+> +          maxItems: 16
+
+In both if:else: narrow also "reg".
 
 Best regards,
 Krzysztof
