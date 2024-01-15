@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C301DC47077
-	for <linux-phy@archiver.kernel.org>; Sun, 14 Jan 2024 16:13:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40355C3DA79
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jan 2024 07:58:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lC7Lxo+LJrCr0mi0Ix45mMYYTLNLy2GFyY8KuYnhMU=; b=iTClSZpBQHB01I
-	1x/XZwM3DKdc4qEsa5DHBruBd/mwMD1b61LF7xMPoJLTZIflpNULgy8dZaD59Q37CV1j9oM0+8nlc
-	N+x2uuvuXHAE8F/KYg8gLS3Pm0eR2+UqAW8YeV5ghzRuhbUMBnoJ5+HcyIQ+FN8yLp6aPiUQ7CIRx
-	AZ2H7NkjnmqSHUYYv370QWLFiqXKSCc6H3ybuH/Ca8PMwJK+o/uilvIyNap2h44cVvWmsFn157O/r
-	JrhNCKs4W70gMZzGEJmct1w0Gf/TKrPsIt8cNlP+KvEzJtsFhonE7MLt9UGMigo6plI1Dv+QaUPj3
-	6/NWvyRy9KGZNIiWOp3A==;
+	List-Owner; bh=yPTqCeK5kYd3Ctu3P183HTB/ngjAvCOWBkc2vshNews=; b=h/XuGPuOG92BX3
+	dSrjtvy1JGCRlNws+aEYcONMegep0+6HjvVRu9Lk4YH5sFkjia/UnylpJWCIq1prLrbz7cHqrXmqP
+	l5rj1OhHlaiSVfe9jsHw6ZWqR8rgOE4t56jVHbJ8XVnhNc4+dOl3aZfHqtJoBNmAAuE0o7ysDwS1q
+	d1cO1dTrEooKU3iK3W+AWm1cauQlycXFFNeGKlrEekVZbgfMSTNg4ZpTx8kPiS+RNc2ilMa/1vcmd
+	W3J73pvu5lcDGL9A2+MzIj5R2WW/LrS739pjwAXvrWrUdtQO/cFnoatpv2KzJfZPQem9O2XKboDhq
+	X9rbOrxLEgV+SPBHoIug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP37U-006x9o-1X;
-	Sun, 14 Jan 2024 16:13:56 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1rPHrn-008AcL-32;
+	Mon, 15 Jan 2024 07:58:43 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP37S-006x87-0C
+	id 1rPHrk-008Aaq-2b
 	for linux-phy@lists.infradead.org;
-	Sun, 14 Jan 2024 16:13:55 +0000
-Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-336c8ab0b20so7051888f8f.1
-        for <linux-phy@lists.infradead.org>; Sun, 14 Jan 2024 08:13:53 -0800 (PST)
+	Mon, 15 Jan 2024 07:58:42 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-a2d7e2e7fe0so172078966b.1
+        for <linux-phy@lists.infradead.org>; Sun, 14 Jan 2024 23:58:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705248831; x=1705853631; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=linaro.org; s=google; t=1705305518; x=1705910318; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=jnkq2UkgPpVsEo47nILwi/m7D73qWwB4CzFMK6Ortrw=;
-        b=L8mTVn8odDOTzRztO0xBns1Z8hKNi/17tULx7HcZnOJjAWOvKKTT7CGFFDMQub5vYD
-         Y2LJRWHFXW/BzjKRiJsyEsOMko4hTHdrGSvvDQ3771QJ19sUu1hN5yOWdfn67T6q9Vwp
-         nO/vd+3TNeQ6n6j3u3bcFtYVAmLO5NTl8feQX5/4OrJ/iuWR2lJHDfa4DvwrgcQdk0J1
-         iZYUG68rmo9xGkps/37dKhmaHjWybkbL1uymHlpS0UfETT/mXgf7pAbGIB1G2mBcDama
-         8nzYh57No0TDjm5GAEck7RQZ2+FhGDOzi1Z1QM30hi3tWv4NLS3H2EnYusfL2dZ5a8Rl
-         lRgg==
+        bh=tYRn6aBORbyB+XRrfcjO0/uu/L6gaWFnRR7/0ydeYt4=;
+        b=L+YfOZ9eNkZomXfICG1a4tbQAwX9ye43RoViO1tp7yZGMpQ6rzCUSsstnwWWW/N6Dq
+         Y7RgiQMSC/KswSinf9A4Rgr8bKDqp/O53iJjOjbTIiiq1++A4ffC4Ar7igckeg/T8/0+
+         eQ6BJrIvzSJx8+4cqZyI6b8DQN2/86cmpfb7ozIWLSs8llmsGFPAQJCV5Jm6F/vE6orl
+         yOCS+Yd5WQNyMkYqMLm4e+BuMbZe1KsxnNG8y6LlidkR5gUxoC304RRXuRss14d0kd+A
+         rWIuAuZ54bRQvFcf44XmibJ0bdheSvnyvsu7GE6HXYBIHwZB7pQvrlqmfLi4G8g316PS
+         xzBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705248831; x=1705853631;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1705305518; x=1705910318;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=jnkq2UkgPpVsEo47nILwi/m7D73qWwB4CzFMK6Ortrw=;
-        b=T8c/Pcp7WlCgK8Win857fDx1Z4d32gS4uqxnNVuX5REWhGGEAvfh8DbUG26k2R+20f
-         DDoS1n4uJ1ol7tcHAlV2Rr5PBvJqy42uNW5TorXLsP0KzIX33Pm/oKRGGfdYSXKyw6DB
-         1MGW+r9FYiI8lUDQRmobRHQDkR1nGaClTc8ZNlcud2zza5aJx3NG9drP52hcscwi7m7S
-         SLMpm5KHs3/MTTkOGD1fEUt9HMRMU5Up5JTas5ET3Z2tVcDUzEvVMmTcHFRgMsg2lNgD
-         s9tvM/a60iAzmxdzpuGR28Yp7AMVs07zbaWEHZhTpChq8vFh85lTSL2+vvihPGH33msg
-         WQPw==
-X-Gm-Message-State: AOJu0Yz0ocDLXA1iJIQxTt2QMpHaKmtxB99S6YyDVTDCaxsEoMkE/ruP
-	GjmjwQVYmWiG4YitPRx3yUfZSGv/JNd+XA==
-X-Google-Smtp-Source: AGHT+IF5m2DAEY26RamFHE/RDILSrRoXqn+NXcQBtc0X9MyybfSFoA+02oJOWrUK/+mSZShCljgbVA==
-X-Received: by 2002:adf:eacc:0:b0:337:62ca:7f2e with SMTP id o12-20020adfeacc000000b0033762ca7f2emr2727073wrn.93.1705248830746;
-        Sun, 14 Jan 2024 08:13:50 -0800 (PST)
-Received: from [192.168.100.86] ([37.228.218.3])
-        by smtp.gmail.com with ESMTPSA id e19-20020a5d5953000000b0033609b71825sm9451486wri.35.2024.01.14.08.13.49
+        bh=tYRn6aBORbyB+XRrfcjO0/uu/L6gaWFnRR7/0ydeYt4=;
+        b=HogFCQ6L5sZ/cI1URT5y4cBPvv6InK9t7Fmd5WnxpnhnIZWPU8Spk6hCgrms167zc2
+         4NU7dsT2l17PnGDN6LozreAWkaQ+FXRPY84t80Pb+YpMTgmt2yzC/KNXonQRuzs0B/v5
+         CVBeBVqFqrN+9lrBffCfElMmx3njVLgGNsOuuclmRvCVJ8H4xOgRWEoMU9GYU8wgCxeN
+         J2ArLRuiTMdLdBa2Rhmu/GHqh6SllOadkigCfPyuTKZ40R8oiDkpgmGYrpmGw3tM7puQ
+         JzVcWq6fGUOXOEKorKoUeyw889CXiBQpvFt6RcyF4H2wI1MIwd+79IwoxFSnf/fgIL8O
+         6igA==
+X-Gm-Message-State: AOJu0Yz93hX50SYJiskooY1Ej/+cEZJ8W+Kj89hpgbitzwXn9kzNf+Wq
+	WXnfOFHJgiIkhj5QyrS4KxanB2CRQtjsOQ==
+X-Google-Smtp-Source: AGHT+IEMHEPUNW7jTMfZ6r1WgH6mVlxLUu4GG8azbtdZ1wlzQnhEBFi2qSgYvW8+/T6B/WnTGqs5Zw==
+X-Received: by 2002:a17:906:6802:b0:a28:e980:8984 with SMTP id k2-20020a170906680200b00a28e9808984mr4542514ejr.18.1705305518487;
+        Sun, 14 Jan 2024 23:58:38 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.215.66])
+        by smtp.gmail.com with ESMTPSA id z19-20020a170906271300b00a2ae0aa9002sm4980398ejc.40.2024.01.14.23.58.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 14 Jan 2024 08:13:50 -0800 (PST)
-Message-ID: <66aa917e-d1dd-497a-ab06-6577c8256e13@linaro.org>
-Date: Sun, 14 Jan 2024 16:13:49 +0000
+        Sun, 14 Jan 2024 23:58:37 -0800 (PST)
+Message-ID: <d9677def-ea41-4c4b-85ef-97f90a7aec33@linaro.org>
+Date: Mon, 15 Jan 2024 08:58:35 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 06/15] usb: typec: qcom-pmic-typec: fix arguments of
- qcom_pmic_typec_pdphy_set_roles
+Subject: Re: [PATCH v2 01/15] dt-bindings: regulator: qcom,usb-vbus-regulator:
+ add support for PMI632
 Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Bjorn Andersson <andersson@kernel.org>,
@@ -76,6 +76,7 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Guenter Roeck <linux@roeck-us.net>,
@@ -84,12 +85,56 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
- <20240113-pmi632-typec-v2-6-182d9aa0a5b3@linaro.org>
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-In-Reply-To: <20240113-pmi632-typec-v2-6-182d9aa0a5b3@linaro.org>
+ <20240113-pmi632-typec-v2-1-182d9aa0a5b3@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzTRLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnp5c3p0b2Yua296bG93c2tpQGxpbmFyby5vcmc+wsGUBBMBCgA+FiEE
+ m9B+DgxR+NWWd7dUG5NDfTtBYpsFAmI+BxMCGwMFCRRfreEFCwkIBwIGFQoJCAsCBBYCAwEC
+ HgECF4AACgkQG5NDfTtBYptgbhAAjAGunRoOTduBeC7V6GGOQMYIT5n3OuDSzG1oZyM4kyvO
+ XeodvvYv49/ng473E8ZFhXfrre+c1olbr1A8pnz9vKVQs9JGVa6wwr/6ddH7/yvcaCQnHRPK
+ mnXyP2BViBlyDWQ71UC3N12YCoHE2cVmfrn4JeyK/gHCvcW3hUW4i5rMd5M5WZAeiJj3rvYh
+ v8WMKDJOtZFXxwaYGbvFJNDdvdTHc2x2fGaWwmXMJn2xs1ZyFAeHQvrp49mS6PBQZzcx0XL5
+ cU9ZjhzOZDn6Apv45/C/lUJvPc3lo/pr5cmlOvPq1AsP6/xRXsEFX/SdvdxJ8w9KtGaxdJuf
+ rpzLQ8Ht+H0lY2On1duYhmro8WglOypHy+TusYrDEry2qDNlc/bApQKtd9uqyDZ+rx8bGxyY
+ qBP6bvsQx5YACI4p8R0J43tSqWwJTP/R5oPRQW2O1Ye1DEcdeyzZfifrQz58aoZrVQq+innR
+ aDwu8qDB5UgmMQ7cjDSeAQABdghq7pqrA4P8lkA7qTG+aw8Z21OoAyZdUNm8NWJoQy8m4nUP
+ gmeeQPRc0vjp5JkYPgTqwf08cluqO6vQuYL2YmwVBIbO7cE7LNGkPDA3RYMu+zPY9UUi/ln5
+ dcKuEStFZ5eqVyqVoZ9eu3RTCGIXAHe1NcfcMT9HT0DPp3+ieTxFx6RjY3kYTGLOwU0EVUNc
+ NAEQAM2StBhJERQvgPcbCzjokShn0cRA4q2SvCOvOXD+0KapXMRFE+/PZeDyfv4dEKuCqeh0
+ hihSHlaxTzg3TcqUu54w2xYskG8Fq5tg3gm4kh1Gvh1LijIXX99ABA8eHxOGmLPRIBkXHqJY
+ oHtCvPc6sYKNM9xbp6I4yF56xVLmHGJ61KaWKf5KKWYgA9kfHufbja7qR0c6H79LIsiYqf92
+ H1HNq1WlQpu/fh4/XAAaV1axHFt/dY/2kU05tLMj8GjeQDz1fHas7augL4argt4e+jum3Nwt
+ yupodQBxncKAUbzwKcDrPqUFmfRbJ7ARw8491xQHZDsP82JRj4cOJX32sBg8nO2N5OsFJOcd
+ 5IE9v6qfllkZDAh1Rb1h6DFYq9dcdPAHl4zOj9EHq99/CpyccOh7SrtWDNFFknCmLpowhct9
+ 5ZnlavBrDbOV0W47gO33WkXMFI4il4y1+Bv89979rVYn8aBohEgET41SpyQz7fMkcaZU+ok/
+ +HYjC/qfDxT7tjKXqBQEscVODaFicsUkjheOD4BfWEcVUqa+XdUEciwG/SgNyxBZepj41oVq
+ FPSVE+Ni2tNrW/e16b8mgXNngHSnbsr6pAIXZH3qFW+4TKPMGZ2rZ6zITrMip+12jgw4mGjy
+ 5y06JZvA02rZT2k9aa7i9dUUFggaanI09jNGbRA/ABEBAAHCwXwEGAEKACYCGwwWIQSb0H4O
+ DFH41ZZ3t1Qbk0N9O0FimwUCYDzvagUJFF+UtgAKCRAbk0N9O0Fim9JzD/0auoGtUu4mgnna
+ oEEpQEOjgT7l9TVuO3Qa/SeH+E0m55y5Fjpp6ZToc481za3xAcxK/BtIX5Wn1mQ6+szfrJQ6
+ 59y2io437BeuWIRjQniSxHz1kgtFECiV30yHRgOoQlzUea7FgsnuWdstgfWi6LxstswEzxLZ
+ Sj1EqpXYZE4uLjh6dW292sO+j4LEqPYr53hyV4I2LPmptPE9Rb9yCTAbSUlzgjiyyjuXhcwM
+ qf3lzsm02y7Ooq+ERVKiJzlvLd9tSe4jRx6Z6LMXhB21fa5DGs/tHAcUF35hSJrvMJzPT/+u
+ /oVmYDFZkbLlqs2XpWaVCo2jv8+iHxZZ9FL7F6AHFzqEFdqGnJQqmEApiRqH6b4jRBOgJ+cY
+ qc+rJggwMQcJL9F+oDm3wX47nr6jIsEB5ZftdybIzpMZ5V9v45lUwmdnMrSzZVgC4jRGXzsU
+ EViBQt2CopXtHtYfPAO5nAkIvKSNp3jmGxZw4aTc5xoAZBLo0OV+Ezo71pg3AYvq0a3/oGRG
+ KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
+ fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20240113-pmi632-typec-v2-1-182d9aa0a5b3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240114_081354_104327_816D5F5F 
-X-CRM114-Status: UNSURE (   4.55  )
+X-CRM114-CacheID: sfid-20240114_235840_850707_2BEDCE7D 
+X-CRM114-Status: UNSURE (   7.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,19 +147,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/01/2024 20:55, Dmitry Baryshkov wrote:
-> +				 (data_role == TYPEC_HOST ? MSG_CONFIG_PORT_DATA_ROLE : 0) |
-> +				 (power_role == TYPEC_SOURCE ? MSG_CONFIG_PORT_POWER_ROLE : 0));
+On 13/01/2024 21:55, Dmitry Baryshkov wrote:
+> The VBUS register block on the PMI632 PMIC shares the design with the
+> PM8150B one. Define corresponding compatible string, having the
+> qcom,pm8150b-vbus-reg as a fallback.
+> 
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
 
-Not a big fan of this syntax but... its fine too
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Acked-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
