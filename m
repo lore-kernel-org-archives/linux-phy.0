@@ -4,85 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDAE5C47077
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 14:23:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0297AC47077
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 18:20:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hSvTe13Xyx5vYsSWe+3YdDrctWtOGJeOIJET9PQZews=; b=MD8Sk9sWoi4Kap
-	H9TFss5F3bSfJP9xiu0SEhg30RGPPVZHM9KQ22VlDBfhJ2qDXS6ZatYrneueOfrRpBqSMlGrryoVI
-	6OLRYbT8vwmDjLYgr22VvuK5u97acd13WawyzsB0kVUOwrDqQGZI/0OF5I1bTmYiUEfNymr8v4hmj
-	y686h4LPWbiZvibcN6s5PzmSKl2Ur2HojC2kQq5BPSvoZZGDr23KZELANO/faPk/wcEozmWJ7fE+5
-	E+o3q4L4DLMsgDKW25md6TN8I4P5lWfJf/ZgmnJ+Ke/olWcrbPcsD3c0k4oafDnamnmBe05sKd+tY
-	g6wn/9FdEWcDbXKp+gdA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=g5lLN/xTGhJbSk4smCSiO2Hmj8MllZ2R6mh1It511Ts=; b=3z3gkBWC3itESk
+	A+xkYGYt32fB46W/5/KaSG3QRXR2GO831EDlBeC0xtcFMLBlWOrWempx1k3yeJ2oT8GTAFhYMY+ki
+	GQDvTQcRHaf2T0rM+VrZYXggxoNgZCWUja41LUoWSFDsYeOLpDDsDmkn8puw49KMR2pkpKrCENZ6L
+	QZsb6ziQvNfwhn66AKgqlF/swn1+6rIkNjmcIxzXqVedYYOl3P5ZegNwZffpmPfly1OkuELl5CtGJ
+	phuvQhk0hUzoMIwBaXo3VPtzGP7DBDsb/oGWac8FTAmObSka10vsvEoaR6+vVEmh/jBmluKxXHJTg
+	DIjm/XTLmPLhqCGXwrfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPkLz-00CHkW-19;
-	Tue, 16 Jan 2024 14:23:47 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1rPo2q-00CxVX-2E;
+	Tue, 16 Jan 2024 18:20:16 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPkLw-00CHk0-36
-	for linux-phy@lists.infradead.org;
-	Tue, 16 Jan 2024 14:23:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1705415025; x=1736951025;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=Na5eWQh1Z258eSgFghhYRXbSbOGbUrO4q4Hww3wmrL8=;
-  b=L5uH7SuzPw8EKG21R2c4n6qayfb/Z66KYC7RnuI5D3xe397/Hw1DdFOM
-   DeKmB9L8i+3xdqAGDnhK6v4R0voaUuHE7uzgfLmrpI9yNNugizd8OB12H
-   i3Q9YtF/KopFP+s81am47wW/OR1SU/PrYgvLRvZnoH/wTfO4jxrls9/iF
-   d7wQ3l5agZkLzEs+7PWnbfTvIJ+w/eUb/i9MV6wKqJMQXIOwoHWjZwnwg
-   SdecFaSNDOjWySSRNh38+cBGw/udGXDnE40k5BYVEuEwM5L+30KupSdvV
-   X7VXvlD/mjRJsyD/4uxtG6rNdn4yytBNJNbS0epVzwki3dWqjYnW9FALv
-   Q==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10955"; a="13376536"
-X-IronPort-AV: E=Sophos;i="6.05,199,1701158400"; 
-   d="scan'208";a="13376536"
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Jan 2024 06:23:42 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10955"; a="1115308365"
-X-IronPort-AV: E=Sophos;i="6.05,199,1701158400"; 
-   d="scan'208";a="1115308365"
-Received: from kuha.fi.intel.com ([10.237.72.185])
-  by fmsmga005.fm.intel.com with SMTP; 16 Jan 2024 06:23:34 -0800
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Tue, 16 Jan 2024 16:23:35 +0200
-Date: Tue, 16 Jan 2024 16:23:35 +0200
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Guenter Roeck <linux@roeck-us.net>
-Cc: Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	id 1rPo2n-00CxT3-01;
+	Tue, 16 Jan 2024 18:20:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id DD0B36132A;
+	Tue, 16 Jan 2024 18:19:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4490FC433F1;
+	Tue, 16 Jan 2024 18:19:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1705429181;
+	bh=cK0uK7R2+gEbjOCsenY8rYIQosqscpXTCp6F+qM8Pd8=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=DsPYcpVqeSMaQVwap6TSM10XjoOPuojT6s+DQLUtOv+G5QecnwOOLG/Btd30B9sKD
+	 sPLkDVnjb3Ujys/qaKlj6P/2Q2Q976Ex1Qvf1/GH+yU1SiUnOC2LJ6MwMU6A0kkb4b
+	 laB0h0Yy1fmCV5dvcsLx+/XtcTFLtVXXPReiJfAINVpuOKuFIX3CfdDb/k7vHjTyE8
+	 EpnyMDv5x9RZhgd0oSGVD9/8ujhuWDfhz67X1nUEGE7Q2EVz0/eU202+tc6yopwHJk
+	 mlhOdTwzbhGv1kssB7mJQ3FfHQgC/qjiMsfFWtIYbEVwdvWBzJM/I/6Y3PGVRbGwm5
+	 BA2iB9BUFtu6Q==
+Date: Tue, 16 Jan 2024 12:19:39 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Thomas Richard <thomas.richard@bootlin.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	Andy Shevchenko <andy@kernel.org>, Tony Lindgren <tony@atomide.com>,
+	Haojian Zhuang <haojian.zhuang@linaro.org>,
+	Vignesh R <vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+	Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 09/15] usb: typec: qcom-pmic-typec: add support for
- PMI632 PMIC
-Message-ID: <ZaaRZ/xi8vyIKD5d@kuha.fi.intel.com>
-References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
- <20240113-pmi632-typec-v2-9-182d9aa0a5b3@linaro.org>
- <2e07f014-0884-49ca-babd-b89cc90a16b7@linaro.org>
- <CAA8EJpqPqV_nHxxbo2Vzwcp__hvREjF3bhduGhM=7UpuOgBxTQ@mail.gmail.com>
+	Tom Joseph <tjoseph@cadence.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+	theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com,
+	u-kumar1@ti.com
+Subject: Re: [PATCH 13/14] PCI: j721e: move reset GPIO to device struct
+Message-ID: <20240116181939.GA101049@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAA8EJpqPqV_nHxxbo2Vzwcp__hvREjF3bhduGhM=7UpuOgBxTQ@mail.gmail.com>
+In-Reply-To: <20240102-j7200-pcie-s2r-v1-13-84e55da52400@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_062345_040478_6D850A10 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20240116_102013_112682_041F1240 
+X-CRM114-Status: GOOD (  12.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,36 +83,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 16, 2024 at 02:56:11PM +0200, Dmitry Baryshkov wrote:
-> On Tue, 16 Jan 2024 at 14:32, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
-> > On 1/13/24 21:55, Dmitry Baryshkov wrote:
-> > > The PMI632 PMIC support Type-C port handling, but lacks USB
-> > > PowerDelivery support. The TCPM requires all callbacks to be provided
-> > > by the implementation. Implement a special, 'stub' Qcom PD PHY
-> > > implementation to enable the PMI632 support.
-> > >
-> > > Acked-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> > > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> > > ---
-> >
-> > Still not a fan of stubby stubs :/
-> 
-> Me too. If there are better suggestions, I'll be pleased to implement
-> them. Greg, Heikki?
-
-Guenter, do you have time to look at this?
-
-thanks,
-
--- 
-heikki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCBKYW4gMTUsIDIwMjQgYXQgMDU6MTQ6NTRQTSArMDEwMCwgVGhvbWFzIFJpY2hhcmQg
+d3JvdGU6Cj4gRnJvbTogVGjDqW8gTGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4KPiAK
+PiBNb3ZlIHJlc2V0IEdQSU8gdG8gZGV2aWNlIHN0cnVjdCwgc28gaXQgY2FuIGJlIHVzZWQgYXQg
+c3VzcGVuZCBhbmQKPiByZXN1bWUgc3RhZ2VzLgoKcy9Nb3ZlL0FkZC8gc2luY2Ugd2UncmUgbm90
+IG1vdmluZyBpdCBmcm9tIG9uZSBzdHJ1Y3QgdG8gYW5vdGhlci4gIChJbgpzdWJqZWN0IGFsc28u
+KQoKcy9kZXZpY2Ugc3RydWN0L3N0cnVjdCBqNzIxZV9wY2llLyBzaW5jZSAiZGV2aWNlIHN0cnVj
+dCIgY291bGQgYWxzbwpyZWZlciB0byB0aGUgInN0cnVjdCBkZXZpY2UiLCB3aGljaCBpcyBvYnZp
+b3VzbHkgbm90IHJlbGV2YW50IGhlcmUuCgpCVFcsIGlmIHlvdSBjYXBpdGFsaXplIHRoZSBQQ0kg
+c3ViamVjdCBsaW5lcyB0byBtYXRjaCBwcmV2aW91cwpoaXN0b3J5LCBpdCB3aWxsIHNhdmUgc29t
+ZSB3b3JrIHdoZW4gYXBwbHlpbmcgdGhpcyBzZXJpZXMuCgpBbHNvIHJld3JhcCBjb21taXQgbG9n
+cyB0byBmaWxsIDc1IGNvbHVtbnMgYW5kIGFkZCBibGFuayBsaW5lcyBiZXR3ZWVuCnBhcmFncmFw
+aHMgKG5vdGljZWQgaW4gcGF0Y2ggMTIvMTQpLgoKPiBAQCAtNTQsNiArNTQsNyBAQCBzdHJ1Y3Qg
+ajcyMWVfcGNpZSB7Cj4gIAlzdHJ1Y3QgY2xrCQkqcmVmY2xrOwo+ICAJdTMyCQkJbW9kZTsKPiAg
+CXUzMgkJCW51bV9sYW5lczsKPiArCXN0cnVjdCBncGlvX2Rlc2MJKnJlc2V0X2dwaW87Cj4gIAl2
+b2lkIF9faW9tZW0JCSp1c2VyX2NmZ19iYXNlOwo+ICAJdm9pZCBfX2lvbWVtCQkqaW50ZF9jZmdf
+YmFzZTsKPiAgCXUzMgkJCWxpbmtkb3duX2lycV9yZWdmaWVsZDsKPiBAQCAtMzU5LDcgKzM2MCw2
+IEBAIHN0YXRpYyBpbnQgajcyMWVfcGNpZV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
+ZGV2KQo+ICAJc3RydWN0IGo3MjFlX3BjaWUgKnBjaWU7Cj4gIAlzdHJ1Y3QgY2Ruc19wY2llX3Jj
+ICpyYyA9IE5VTEw7Cj4gIAlzdHJ1Y3QgY2Ruc19wY2llX2VwICplcCA9IE5VTEw7Cj4gLQlzdHJ1
+Y3QgZ3Bpb19kZXNjICpncGlvZDsKPiAgCXZvaWQgX19pb21lbSAqYmFzZTsKPiAgCXN0cnVjdCBj
+bGsgKmNsazsKPiAgCXUzMiBudW1fbGFuZXM7CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
+aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
