@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F740C47DA6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2145CC47DA2
 	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 01:11:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,61 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7XVDmtjL/nqQjcyujmEY+cWyNnpvKk7wc7AtTrtERBM=; b=0+fJCps4VKzajd
-	ZBlTdOFo88hOmfy3Pj6YgtfHmJTfWNM3KwiWYA9CAK7iaKt7whN3vlD+JfTMUtQBYmhiFSXZ0BSut
-	F/EzWRfj0+voDrPu6D8gUmeo2awnzsg9K0/gwmnM58sB0GU+Gf7nFoVaZBK19vErA03rkF+QHumI2
-	vRYhF70bNEURxbrf4Ycr6szROz4bPwEQ5J4epLbgLkMQLEKcFV0+PAhFS+pJBmf2eBMkKB0TVobOZ
-	1RMWHd43xwcP26g0LWMxGbVTptmLT3WFYr4iCkGhrM+Ui5DG6vsdHv+lZ7sm6g7SPHyi8Z8P9nKiU
-	ZqYiRcJUWYZVLwkadRrA==;
+	List-Owner; bh=iTS59BESNjCTNVkHIctKLxISGNgLbU3FWFqWge1rK3k=; b=Rbn1aqvldBZTQL
+	1FHB0c4Ph8Uc1gyBKVFavydYxBe02KQV626NjCAwhIZwfPs6uetKpzR5Ujf1HYSNT9xwuzi4nm3vS
+	Yxy1VKQ0YJvqqJwU4bP1Fzf1x7/Jp2fEEKuVdCc8MhaOZhvicSREa4t40oMihIqa7iAmj0kGJfQc/
+	oeisd8KnkcC074uoQoC2BAoIXHXrYkD0kKhAoRa+/oIYevaJvbi5iuOIxF4rDG4GFqX51tUgD2sxw
+	kLJ33Xcfz/ADCERtBj05jlkNylImE9RPUsbT7QZlN/LGb6X55DgRiMVNd9aSwGvCkY6Bxe7+/+3xc
+	PAkbzzz/pNZ5BR8VfX1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPXz9-00AeDJ-0I;
-	Tue, 16 Jan 2024 01:11:23 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1rPXz8-00AeD6-2b;
+	Tue, 16 Jan 2024 01:11:22 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPXz5-00AeAH-2Z
+	id 1rPXz5-00AeAD-2u
 	for linux-phy@lists.infradead.org;
 	Tue, 16 Jan 2024 01:11:21 +0000
-Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2cd1ca52f31so107421551fa.3
-        for <linux-phy@lists.infradead.org>; Mon, 15 Jan 2024 17:11:17 -0800 (PST)
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2cd8b64a52dso48498661fa.2
+        for <linux-phy@lists.infradead.org>; Mon, 15 Jan 2024 17:11:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705367476; x=1705972276; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705367475; x=1705972275; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=J5SAl7h8gFScgWdY2BB7MUIpGVN5ls88lp1PxJmfDXY=;
-        b=asalbV5WyEe6rZakhTzEoo1V9iqEMLoQI3rObxJROpEVRMQHvoa5GnngH70w9xTBCN
-         Xs78+cvXgJ8j3Ml34m/p4R0WPA0bv1hTJSV9WeeAdNJT9/OA4yNjNE7mtCdaAG5TkZBL
-         0BDp/4o8Hqieicr1lqYOam++DIQgKo8R01pnlrPbNOP0iJnAXMvxI6p329jhun5EIyav
-         3XLJjapBypgxCcL/0WSWel04pHmICdp5qcXR1c9c+0kQ2bocTdCXVGET5GF1OcBAbBpJ
-         Db3UO983D2fzZISkNU/UAgA9u4Jssa7IL/cwrVUZJDWVSnEukJjnf8+sbjDBvjPPrmYf
-         /wvw==
+        bh=gvN59bcYauRfvTOIrHhbS9eyPkcywNo1pcI7+S2IrzY=;
+        b=sXk2tJj7tYWxrMrE/Q+TG5Z7/6qD+G/s9CXZoFFSlYH0aGtHqSoq0K71AtmK997XZj
+         PPsEJu12y1MHY2C1tO8ZFM6bvIyZEWcgtfl4ZcV5qYRKkd2BZbgoAoCVbRgQqvYyi8Wt
+         4qGnCcmmDCLj9dTYmatpsTTZ6PZXVuGft8UHNYfWdYN6BI9fMfreUOFjyp2hMJhfEc3n
+         /VhZore3BK3MhYBOTDdxYLho7wKBP2KqXMGLLugb1oMf9vbF0bJ/hoCfy3e/vIJUXj5R
+         1w/S854+D/h8sigCvSYmHzZ9dv7+nv2Dji+4Zn0f2QQu1LoQnOPxoo9Ak+f1sWrcHIWh
+         d+uw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705367476; x=1705972276;
+        d=1e100.net; s=20230601; t=1705367475; x=1705972275;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=J5SAl7h8gFScgWdY2BB7MUIpGVN5ls88lp1PxJmfDXY=;
-        b=jLW85TsFiQxCjhTj8G0AkqS7M6vNqJ/pVPj9VvSfU2dfFuwZpghpH1wgMkVM1TZf7l
-         4p+YWPh97VBv3vsDImyQhXYzz5vnUmdAS7v8vrwjb+T0aOvgIkrh8XCd2VZ9Ev5nqtOp
-         a2QQdRLujvJZdN6uUxFCoUQ6bwx1ao7mZjWi+OuGmvN2DVzf6fDQbMSsgVKzhV3YetFF
-         8EGOd3YQO74hmpthy+q34wQjZctEMUzypXK85it43zXQwnisICSVY2/YxPgbOqKpBTIA
-         +GdsBFa7S9R+blrokw1m8N39ZH68TTFiCMZX5jKUeB1z/0oksKvsnWoMBA2+CETUSXgY
-         LZJA==
-X-Gm-Message-State: AOJu0YxyEKRRQbWL8NmLIMnnw7cz//DIPMOLicIxQJpfTlKAe8/hk/Ba
-	qRZrLdhnSh9jKI+Kd6dRtOJut+i2izkVpw==
-X-Google-Smtp-Source: AGHT+IGnFSgrxxhuxucsFygBud7v8OlWJ2Srm7pGmOeI++Y3FYvteXWehObGvCiESvrq7GXczc+w1Q==
-X-Received: by 2002:a2e:8193:0:b0:2cd:217:4605 with SMTP id e19-20020a2e8193000000b002cd02174605mr2838078ljg.50.1705367476226;
-        Mon, 15 Jan 2024 17:11:16 -0800 (PST)
+        bh=gvN59bcYauRfvTOIrHhbS9eyPkcywNo1pcI7+S2IrzY=;
+        b=Cw9jPMJnKoKy10s08WrMZmyhq3khrf3BE6yrMtw/dXAAdZyUQ7jk+wroXqxlG3H41C
+         CRutF+vZGSojsF0cPbP3gIWBBU/oTp0DLTvnGS+W3I8HO7P81kzuzryv61h4ewJiLBUe
+         39tSaXRsdV0Ds3KjTLwGL5sBqJpDoZvQE62lMvV4iG0Eq1Dh5kEETYzal6H+WyXq7ssi
+         zph6QuwbPruiGdjkgt4iTMEtHfKCtwi0zNfX0p67qpTQqv+RzZaNGGG/bT4iri+rRi66
+         wBZgkwzHVan2+YEJ8wX83ji5iRonDq3J9hVcnVIyoJt2tO6RRAnXffRzEEB4Uv0ltjx7
+         yiMg==
+X-Gm-Message-State: AOJu0YxEIerIRCEUoq6BUkdr1bBdQ0Rs+wbTR5eHrrjRg4ZCRaf231rO
+	I5pb4LSdqEVGZlmlSrLssZSFO82QHBieCg==
+X-Google-Smtp-Source: AGHT+IHuLop8vp8Yhjr/JyMmyHuy4+5jnRd9Vu0nqA3dQer4A3K45OZgXQ7xEchn2oUM8YV8FCOdcw==
+X-Received: by 2002:a2e:83cd:0:b0:2cd:7ac4:f9b7 with SMTP id s13-20020a2e83cd000000b002cd7ac4f9b7mr2863336ljh.4.1705367475387;
+        Mon, 15 Jan 2024 17:11:15 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id q15-20020a2e84cf000000b002cc7a2f7a9asm1513414ljh.98.2024.01.15.17.11.15
+        by smtp.gmail.com with ESMTPSA id q15-20020a2e84cf000000b002cc7a2f7a9asm1513414ljh.98.2024.01.15.17.11.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Mon, 15 Jan 2024 17:11:15 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 16 Jan 2024 03:10:56 +0200
-Subject: [PATCH 2/4] phy: qcom: qmp-usbc: enable SDM630 support
+Date: Tue, 16 Jan 2024 03:10:55 +0200
+Subject: [PATCH 1/4] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: support
+ SDM660
 MIME-Version: 1.0
-Message-Id: <20240116-sdm660-usb3-support-v1-2-2fbd683aea77@linaro.org>
+Message-Id: <20240116-sdm660-usb3-support-v1-1-2fbd683aea77@linaro.org>
 References: <20240116-sdm660-usb3-support-v1-0-2fbd683aea77@linaro.org>
 In-Reply-To: <20240116-sdm660-usb3-support-v1-0-2fbd683aea77@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -78,21 +79,21 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3233;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1027;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=LV1qhUDjS69E+vkNbGfcoPcd1GenuQZvkFoXfpH+sl4=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlpdexwWXnEsw4+1OBDC1CllDE0TkIbp3x5YUxM
- pKToQtVOEeJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZaXXsQAKCRCLPIo+Aiko
- 1ZACB/oDojuk1Tw5dooz8yXhndcO4Yq7KT2xCIo+40pOTgx2m54SJy67qrEzjXBExPn8dttYzvN
- h6TmOcjwKJ55G/Xth39mkbI4ZAtpJ9KUubM2loksZKl6nsfwlueBNdG4sxRbqXY8HgUpShjmT8X
- QG88AS3hv6xl7nWswzPE8xl3BPuSjOgO4y//7lQq7TL4Jai/15EXbY8G9Bg/T5zV7Ykl33T/d9b
- mf+VsG9VSZAouAoqrXEVwP0IDydyDySq+HeQA7Ob9AKt0QvhERarAoDWsG0aFhnMUBTkLhWQijd
- bAqTiWSa7MwdJ6ByeAAFv/T9addNbpXoG8pBDCcm5cXobB84
+ bh=zYn9443fSl+U0zoJ7ooRMTFtK4x8618NHGGtAH7cW2Y=;
+ b=owGbwMvMwMXYbdNlx6SpcZXxtFoSQ+rS6xs/CbF+t0hhSvU6EK225eV1lyWcPFNdmVq2n3eOU
+ mMMmyTYyWjMwsDIxSArpsjiU9AyNWZTctiHHVPrYQaxMoFMYeDiFICJyE7gYFh0Ysm3Hxr/Tnzu
+ npB5fDm/tLdHwd9sW44/T/UEt2zi+m7IXFb6J0lxtW2lyOL1m+KK1Rs4qxobzViyb5Yqd67ju10
+ 9N9zUzL57fc8a5rjUxmX5L8SVjCexPbiVr3TPK+5d1ssfia2Z+aw729oDkwuST7UmCjom81We95
+ /KdOBO9wGd/9k/z4VvW3uv+a1g4B2Zux4s06QWTXvr3Js2i2Vyz0SzyWG7H5gunMUQcXLdhd9qJ
+ kXyW7ueKp4U7HRcafCI/2SjEw93W+yMJ3b9PRLmKVeuf2p8lHT2MJNpY2nTN8N+b45ddp4tGeuW
+ HlFbk7xk0R5WTg2Bh6FOR1bvvMKwzqyHaWKBkLFBceZxAA==
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_171119_835157_CDEDB5E8 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20240115_171119_937036_215A851C 
+X-CRM114-Status: UNSURE (   7.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -110,79 +111,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Provide PHY configuration for the USB QMP PHY for the SDM630 / SDM660
+Declare the USB-C QMP PHY present on the Qualcomm SDM660 / SDM630
 platforms.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 40 ++++++++++++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+ Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 3a4b4849db0f..02babec76881 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -293,6 +293,27 @@ static const struct qmp_phy_init_tbl qcm2290_usb3_rx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_MODE_00, 0x00),
- };
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+index 140843347d1e..f1f4e4f83352 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+     enum:
+       - qcom,msm8998-qmp-usb3-phy
+       - qcom,qcm2290-qmp-usb3-phy
++      - qcom,sdm660-qmp-usb3-phy
+       - qcom,sm6115-qmp-usb3-phy
  
-+/* the only difference is QSERDES_V3_RX_UCDR_PI_CONTROLS */
-+static const struct qmp_phy_init_tbl sdm660_usb3_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_PI_CONTROLS, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_FO_GAIN, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SO_GAIN, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x75),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL2, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4e),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQU_ADAPTOR_CNTRL4, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x77),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_VGA_CAL_CNTRL2, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_CNTRL, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_DEGLITCH_CNTRL, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_SIGDET_ENABLES, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_RX_RX_MODE_00, 0x00),
-+};
-+
- static const struct qmp_phy_init_tbl qcm2290_usb3_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXMGN_V0, 0x9f),
- 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_TXDEEMPH_M6DB_V0, 0x17),
-@@ -474,6 +495,22 @@ static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
- 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
- };
- 
-+static const struct qmp_phy_cfg sdm660_usb3phy_cfg = {
-+	.offsets		= &qmp_usbc_offsets_v3_qcm2290,
-+
-+	.serdes_tbl		= qcm2290_usb3_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(qcm2290_usb3_serdes_tbl),
-+	.tx_tbl			= qcm2290_usb3_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(qcm2290_usb3_tx_tbl),
-+	.rx_tbl			= sdm660_usb3_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sdm660_usb3_rx_tbl),
-+	.pcs_tbl		= qcm2290_usb3_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
-+};
-+
- static void qmp_usbc_configure_lane(void __iomem *base,
- 					const struct qmp_phy_init_tbl tbl[],
- 					int num,
-@@ -1171,6 +1208,9 @@ static const struct of_device_id qmp_usbc_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,qcm2290-qmp-usb3-phy",
- 		.data = &qcm2290_usb3phy_cfg,
-+	}, {
-+		.compatible = "qcom,sdm660-qmp-usb3-phy",
-+		.data = &sdm660_usb3phy_cfg,
- 	}, {
- 		.compatible = "qcom,sm6115-qmp-usb3-phy",
- 		.data = &qcm2290_usb3phy_cfg,
+   reg:
+@@ -95,6 +96,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,msm8998-qmp-usb3-phy
++              - qcom,sdm660-qmp-usb3-phy
+     then:
+       properties:
+         clocks:
 
 -- 
 2.39.2
