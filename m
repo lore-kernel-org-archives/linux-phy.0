@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3517EC4706C
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 08:11:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ECB2C47077
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 08:13:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8EwXmTmJkjfz2NluE6fnIGToVJcnfwbjhLVggXvNQYA=; b=fCt1V1NFgj1deJ
-	6PL8h0hiljWUiWC3QbckkKJSaeAPL+JWTj+yf3smBwdke+t0FKThB5/ZeU+dEG/cKoNu1mFOtOCvQ
-	gM2sf+CUs4/N674VKzkapCIxATT1+YfOjvxgXtZNJV5A6AKlxMzmOtscJHfmJXF5yy6ugEVetcY/d
-	Vd9Li9xdXyA4lB5jNzaQNRLtxej0148+UtEQUxlSIXn/amY/008PP3SCRLgmOCArHFO/oO7csxg5D
-	bdOs99Qa9BS8yqujQaVIolP4GQLD1OVHU9CuYDFMxijYaCzvepZRanYNeU1HMYp2h0ijkWzaWy2Im
-	2gTtYadBDjE99pLZuKDQ==;
+	List-Owner; bh=mWJJlGVlHEqkyoe2YnsIb6LnrL1y8Z3etD3XshCNHc4=; b=LVnKMlrT39DaHd
+	+sYMd9R8bZhhU6qw9JmQ9/m6Id95WbBmMFk36hRxz8KZy//67pSeLM5A+JSMFY67EQ12gcJ45ls+q
+	95hbsfj9bNAt2qjR69vpHVpe29YS8cYtsm6lev1ie0iFleWBG2EkUtjxrZ9NlEMhIOzlHmu7pClCG
+	Y6ddI4Y8GcIycVtME5C2qp8orPJ8lsm3J3GlbwaOnD3hWzPhn8mt6EvW7sDXlbLjJAiK3z7oWKg70
+	4c3SlGoEdjvxWTWl0y4GilEZo/0SjyK5H89/03WW+QEQRxnGSjpqdBNjyURSVOfuKMtHZonvMwQCf
+	ourL92GhHdWvjmWeE3ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPeXf-00BNBQ-2p;
-	Tue, 16 Jan 2024 08:11:27 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1rPeZV-00BNZ2-0M;
+	Tue, 16 Jan 2024 08:13:21 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPeXc-00BN9b-2J
+	id 1rPeZS-00BNYA-0K
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Jan 2024 08:11:26 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-a2c67be31edso553416166b.0
-        for <linux-phy@lists.infradead.org>; Tue, 16 Jan 2024 00:11:21 -0800 (PST)
+	Tue, 16 Jan 2024 08:13:19 +0000
+Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-a2dd05e02ffso177863466b.3
+        for <linux-phy@lists.infradead.org>; Tue, 16 Jan 2024 00:13:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705392681; x=1705997481; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=5YaUh3Vx+pFy543is0p0CYjgqEQTyHZhtRn/mxfdYqQ=;
-        b=aYP3H1dKTn6BWX1bj24D778+dpDTmq6ycZChgAxmjwxC+JGnAxPnOdrD7P26BkO5nT
-         YJOJsLWGaFtvf1pBFW+gnYLTn7r5Ybv/gFVfJqdTVRo4SXFNf9e1ZtOQACva8DuB8HHs
-         r7RCkRq1Oo1bES1PKVgjHl6pd/m2qt1FXO17uU4y9bg22GE5BQh/fstAWIDFbdyBFH2l
-         OApHSODlpurl/7Pt0j01W8A7aS1uaCM7XzARsQ+sovfEAXmMsxIbsLiMe8lY+0n8gtfK
-         eqpmy8ZQX9J1XIhLX0N/K5POuCI/vGsug5cx+azFV5VMYQg5WleRDHJiy/G+3OufmotZ
-         6L9Q==
+        d=linaro.org; s=google; t=1705392796; x=1705997596; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DGmLCNMS3pHlFzCDgFBDqQ+dSA236e0z1kX8/MIOJCw=;
+        b=HihoBAve2Izk0bd4jwFj5W+5nErHp9pxhpaeKbXSx/qScSD7qeLlpagbCQYfdUhsbJ
+         HqdBZ/RCQ/KclVYpKDhkLj1CigFNvxwdjlwr+5jSpEqrTO9e9RskGSesUQLW7bjFwMxw
+         3XJuT57mpQn5VJXc6rEmPbn5QGN7nsAo8OTFB5RomOyXeHMEFik1uqeGfn26xYQqKa4L
+         FPODLn3/kDMHsyWFPB49xFBNJvBsaORkOX0Lx5Er0R+7b7HHRi/q8j6zjnaII2K0ziDK
+         i2uC+5PgOzcRHb+KAJFMjuhFNqGt8MlXb9QErpWi2xBpCAAaC0Hxu44ijvaUSDtwM0x8
+         zIFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705392681; x=1705997481;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5YaUh3Vx+pFy543is0p0CYjgqEQTyHZhtRn/mxfdYqQ=;
-        b=M+WGvMRobWSD7MsZM7vKWqzfiT0cJh8/FFGdIjTJeqCHXA45DG+DPpsqDOk9I8uU1d
-         9KiM6Ih1ABd4mryaCZoPvCuLecHfcg2jB/od1nVnVpoq2xMkNqpKZrM8eY7U+X/11cWj
-         3H+47bsfDP7qso8ShGMCR5N/+DVUN38mZY6p7f6M25DsfiOj69hj7Yw9HdR0q90S+/n1
-         tMD/xC5NufMR4YEUpJSuo1pjD1hGO8xgbwsxL2pJbiMJfUPQ9wgg4jQFauDxfiV/yd39
-         EDfVKCXmGRY1qQG0ONuplg8Po1lVY5Sl7mCGROdSfZtF8PCec7GikdHUS8QxaMm2KKn4
-         N/0g==
-X-Gm-Message-State: AOJu0Yw2gPpNbUY0NTrSWTh+F0UwI0dtSqaswOSgOy0oQZ855/bUShPW
-	Klpf816xyH4qFnk0dV/UTJP3isq2PzT0TQ==
-X-Google-Smtp-Source: AGHT+IEC0bXvXiqH4tAZ/ih5Yxi6tMLXXn5LyEX4Dgsr5guSnwS1yoyiUkH2iOmG9/e95MLmijfjSA==
-X-Received: by 2002:a17:906:6d52:b0:a2c:34c9:469e with SMTP id a18-20020a1709066d5200b00a2c34c9469emr1908098ejt.57.1705392680668;
-        Tue, 16 Jan 2024 00:11:20 -0800 (PST)
+        d=1e100.net; s=20230601; t=1705392796; x=1705997596;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=DGmLCNMS3pHlFzCDgFBDqQ+dSA236e0z1kX8/MIOJCw=;
+        b=KKOtNb3uEOLVlZ3y9IMrvY/EbFKn1TXhnC5L5wRAidFaIQtWD2dffdch5jlvbd6JVG
+         g6NxVt5A0EW6XeM0590WE3o/LL+glsXhIHzalLb+O1NqdkIH3D3HrGPaEXjbdtfoetUl
+         X8p2yv9BhDMTqAV6/L+wim01mKUBngkxzTdNn5mvyAqWZHqBuuMbtrmocqing0E+Xfi2
+         /AUEL7E3jXVwn7rjK7X7YOmu0Z/YahNevZGnQEEAWDZdVBhRBAZXaG6gRP5NLEpxZ2v5
+         b/ujSurXLIl1BnPj4rzx1XgfTSh7OfrDXHz+KomBB03WMypLJOIKzJoHtltVhyUZmVLz
+         hrZA==
+X-Gm-Message-State: AOJu0Yw5nPgwrcak0onQWVERUQRir/UXVK+4Jcv4hF+sxIZP0S6es7W2
+	JHiK7wFhqlNwEZxji7bVUzUjt/bGOQOZjA==
+X-Google-Smtp-Source: AGHT+IH4YJHupOgrKKQRBvhQjTOZMjGW4OVyr66WaXFVFgFPWy8oQ4kU8+5kQNSqjKgs2AsMcA6OmQ==
+X-Received: by 2002:a17:906:1407:b0:a2b:d12c:ee41 with SMTP id p7-20020a170906140700b00a2bd12cee41mr2156236ejc.165.1705392796472;
+        Tue, 16 Jan 2024 00:13:16 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id o26-20020a170906289a00b00a2bd8953af2sm6156036ejd.55.2024.01.16.00.11.19
+        by smtp.gmail.com with ESMTPSA id vw15-20020a170907a70f00b00a2d0595cd0dsm4367621ejc.86.2024.01.16.00.13.14
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 Jan 2024 00:11:20 -0800 (PST)
-Message-ID: <d52b82d5-c0fa-440a-ac48-da3633e82d04@linaro.org>
-Date: Tue, 16 Jan 2024 09:11:18 +0100
+        Tue, 16 Jan 2024 00:13:15 -0800 (PST)
+Message-ID: <d7cafb45-234a-4cee-b29d-110e6ffb836c@linaro.org>
+Date: Tue, 16 Jan 2024 09:13:13 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: mfd: qcom,tcsr: Add compatibles for
- QCM2290 and SM6115
+Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: add TCSR
+ registers
+Content-Language: en-US
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, Lee Jones <lee@kernel.org>,
@@ -80,8 +80,7 @@ To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <20240116-usbc-phy-vls-clamp-v1-0-73b2da7691c5@linaro.org>
- <20240116-usbc-phy-vls-clamp-v1-1-73b2da7691c5@linaro.org>
-Content-Language: en-US
+ <20240116-usbc-phy-vls-clamp-v1-2-73b2da7691c5@linaro.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -127,10 +126,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240116-usbc-phy-vls-clamp-v1-1-73b2da7691c5@linaro.org>
+In-Reply-To: <20240116-usbc-phy-vls-clamp-v1-2-73b2da7691c5@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_001124_818340_D5EC4E33 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20240116_001318_168359_ADD19493 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -149,13 +148,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 16/01/2024 02:08, Dmitry Baryshkov wrote:
-> Add qcom,qcm2290-tcsr and qcom,sm6115-tcsr, compatibles for TCSR blocks
-> on the corresponding platforms.
+> The QMP USB PHYs on msm8998, qcm2290 and some other platforms don't have
+> the PCS_MISC_CLAMP_ENABLE register. Instead they need to toggle the
+> register in the TCSR space. Declare the registers accessible through the
+> TCSR space.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  Documentation/devicetree/bindings/mfd/qcom,tcsr.yaml | 2 ++
->  1 file changed, 2 insertions(+)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
