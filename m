@@ -4,98 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F505C47DA2
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 14:04:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5469C47DA2
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 15:13:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZYuoxgnbqTTtAY9h4XPFkaX6vXO2jtFjolP/lgPb88g=; b=kMYnY1qLayE6xB
-	Yc0yM3iXUantJajSvZzkrRCFyZwzIoawQ7FhX8ar0gf2F/uBwR7fxtAuz6gcbuKrMyBluce150QiA
-	oAUfQcMGwQIgzuCJYAWB2ubLNEBaKRyvR9fThSk+uqMZKFIg3BRiOX95kGhBO67VwhM/MTVSQGzlQ
-	DA4o5naYVwSnc15cp3ep9lSE9Gp6NIiC5DkkdvZ98pchJY/bPZpI2IWXYp4t2FGgUrXcV8M244Ypa
-	3MqtPKsTclS1DMzNfJV9ZtaJ8NhlGihJ18LiMw6Dm5sISt9SKXEaxmOOQcDWOhkwIYlfuJa08l7H6
-	tqIzpNjLjsSb7mP2e25w==;
+	List-Owner; bh=m9zKyy5xS67VXVeAvxnQ0mMnUfIq6xC8FDtsBqf1CNU=; b=ljID68OkW07Hvc
+	dNN1OTplIfe2r3s4B+4woH1I2BZPKvobO1KvA0Sb8EsD2sY0mUbseniwQ4XkBs+Owjb+4L/eYDBzx
+	XHtjx2SMJqAEbPNcmJ895lnlRJlTafh+yP+urj24xQ2R3GAYQFVWg9VQp34XOC5jM8o3P6MqjVfLH
+	91H9CPORJwHjclu10TTLA0Bdq9wks3sfOog4pOCM0z3hSewU9WShug9X2dM2lKVtaK4t7fT7VikAz
+	0NwORKYixY2My5upln5Y+eOukkMiwzArGkSWMW4B9GoOJqxrRFmPTFSU2XNzBb9p5m/YO6ySN39XZ
+	IepBYvC1wlq+qRCqn/HQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Wz-00GrBm-0G;
-	Wed, 17 Jan 2024 14:04:37 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1rQ7bW-00HOrd-1D;
+	Wed, 17 Jan 2024 15:13:22 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Wr-00Gr1L-10
+	id 1rQ7bT-00HOoB-1m
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Jan 2024 14:04:33 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-50e7e55c0f6so13339684e87.0
-        for <linux-phy@lists.infradead.org>; Wed, 17 Jan 2024 06:04:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705500267; x=1706105067; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=UVMtrjYxxS8jU9P9HQIcKp62CJkYBOMDQz6j5+KpHA4=;
-        b=AqMTMDA7AoClXPi+sAR+VISXhTvvJKO1aj+6ly3PKEr16gPzdQnPbZx2qHIModscJw
-         k8KpBv/MrbkTlfWa/phsPpIDgSBZdTgyUPYa3K4mv3ArZ5K80FGjqoFcnny13aOxwG8R
-         dBHl12mfifJfQoSt2hzQdEDgdtKkOaiNsOMg+n5yLfv+c04fWrWS4KOVzeySQJcZ+mKq
-         Yg7DUF1xyKksiLS/1Evg9K/Owd7Dq0gf5o+sHaBDseYCuzSRfCxQa9y2AekuOmwyE5KB
-         1ZbQmWg5TZb+i9D25F4CnGf3s8eeqV1lJSx1vW0k4YFCHTBoYG1TByZkM1ubH/Awqfoh
-         WGwQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705500267; x=1706105067;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=UVMtrjYxxS8jU9P9HQIcKp62CJkYBOMDQz6j5+KpHA4=;
-        b=Xk2+3m76s/r01hDb+J3Kwk7llxNLtQAcah0+0V7hh/i3HWhK2x8nry3LJR2lSMxoJC
-         wpwEu4mtwX23VxBQgTs4EuL0lg0sFvNyHCWSEJW5NO5Se4HRvwiVCm2FCmrCYKsolbsD
-         ru5JCQrzOIXkEu6U4ORAupdfeqwNe/JvjVYi28/CbB9v7z5/6cRAC/dDsu5pkQ6KvuLG
-         WMJME/zg6pkicG0DP3ZDD9r2UR21f7uUdF2Wg9FN2qXK2u26SqtziALN3AxmDXxn2zJA
-         bBri3RerIjNMwluAOiyfuqV4T/vvbwlAPlo6iEmwHYKCS8RHbJVgpILfWYTJxMl0PFuL
-         BkdQ==
-X-Gm-Message-State: AOJu0Ywh40payHDv6jtd2XJ/GrdYVdoiNEPopxCNyLOW9R++NxekgSKp
-	HucTT4lKWmqrO6iQjgqus5BXM+IoO649TA==
-X-Google-Smtp-Source: AGHT+IGnKfW/zKJEKLJ57VfOhgD4hwJXRAAE7C1938RtE1q8aYT02DJ+oHYYF8UDbye1cQopCmc5qg==
-X-Received: by 2002:a19:6455:0:b0:50e:ac2a:6b5b with SMTP id b21-20020a196455000000b0050eac2a6b5bmr2074559lfj.95.1705500267343;
-        Wed, 17 Jan 2024 06:04:27 -0800 (PST)
-Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id y29-20020a19915d000000b0050ec7a26420sm269711lfj.204.2024.01.17.06.04.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Jan 2024 06:04:26 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 17 Jan 2024 16:04:25 +0200
-Subject: [PATCH v2 4/6] arm64: dts: qcom: msm8998: declare VLS CLAMP
- register for USB3 PHY
+	Wed, 17 Jan 2024 15:13:21 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rQ7b0-0000IN-Ew; Wed, 17 Jan 2024 16:12:50 +0100
+Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rQ7ay-000UW3-1a; Wed, 17 Jan 2024 16:12:48 +0100
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rQ7ax-000C5F-36;
+	Wed, 17 Jan 2024 16:12:47 +0100
+Message-ID: <cf6440c08b8b7382e6693e18cdd29325aaea9cc9.camel@pengutronix.de>
+Subject: Re: [PATCH 11/14] phy: cadence-torrent: add suspend and resume
+ support
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Thomas Richard <thomas.richard@bootlin.com>, Linus Walleij
+ <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Andy
+ Shevchenko <andy@kernel.org>, Tony Lindgren <tony@atomide.com>, Haojian
+ Zhuang <haojian.zhuang@linaro.org>,  Vignesh R <vigneshr@ti.com>, Aaro
+ Koskinen <aaro.koskinen@iki.fi>, Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+ Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>, Vinod
+ Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Tom
+ Joseph <tjoseph@cadence.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Krzysztof =?UTF-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,  Rob Herring
+ <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org, 
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+ theo.lebrun@bootlin.com,  thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+Date: Wed, 17 Jan 2024 16:12:47 +0100
+In-Reply-To: <20240102-j7200-pcie-s2r-v1-11-84e55da52400@bootlin.com>
+References: <20240102-j7200-pcie-s2r-v1-0-84e55da52400@bootlin.com>
+	 <20240102-j7200-pcie-s2r-v1-11-84e55da52400@bootlin.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-Message-Id: <20240117-usbc-phy-vls-clamp-v2-4-a950c223f10f@linaro.org>
-References: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
-In-Reply-To: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Lee Jones <lee@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Jeffrey Hugo <quic_jhugo@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-phy@lists.infradead.org
-X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1222;
- i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=PIb4wJZB4VPlU9DjKkOwyEjMvVPp21zzloRzfQ9S7E8=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlp95nHnrAdiE2GmvCls+EigE0xuWR5GY7+JU01
- Af/HfcBhoeJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZafeZwAKCRCLPIo+Aiko
- 1WJ9B/9cRMVbhIbRZHH2bVMJlbRMpNAkNqBgxawM6doivzRBHH5vgI66vUToizJLw901etSNeuO
- zrwWdqqvLNU4auJhXTCl2lwLdqFfKpv2e4nJEzp55cJ6Djcjf5U5/JxD9gVf60FrdDso92OI2Fl
- WdA+lwvrYrC12gZwYGsHAmYyZs8Ce5YABZ8fAz4P+NnAvApYc/Lpp3cWBKrfAMapHFQlyoeaU1H
- viVvv73LppXB+nKK+glygLd/uUiZCKQ5ooaTkXUXdGEBxP15Y53qH5aoy2GCw9WLGpOX6R7n2ox
- 2xpyf2IZBF5pA2dN9jUqmFK8VlJTAGRR63eUuUl2mfiH+I1A
-X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
- fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240117_060429_473349_151AE90C 
-X-CRM114-Status: UNSURE (   8.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240117_071319_713872_1BB535DC 
+X-CRM114-Status: GOOD (  16.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,53 +84,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB3 PHY on the MSM8998 platform doesn't have built-in
-PCS_MISC_CLAMP_ENABLE register. Instead clamping is handled separately
-via the register in the TCSR space. Declare corresponding register.
-
-Fixes: 026dad8f5873 ("arm64: dts: qcom: msm8998: Add USB-related nodes")
-Cc: Jeffrey Hugo <quic_jhugo@quicinc.com>
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- arch/arm64/boot/dts/qcom/msm8998.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-index 2793cc22d381..317a91d669f8 100644
---- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-@@ -1072,6 +1072,11 @@ tcsr_regs_1: syscon@1f60000 {
- 			reg = <0x01f60000 0x20000>;
- 		};
- 
-+		tcsr_regs_2: syscon@1fc0000 {
-+			compatible = "qcom,msm8998-tcsr", "syscon";
-+			reg = <0x01fc0000 0x26000>;
-+		};
-+
- 		tlmm: pinctrl@3400000 {
- 			compatible = "qcom,msm8998-pinctrl";
- 			reg = <0x03400000 0xc00000>;
-@@ -2174,6 +2179,8 @@ usb3phy: phy@c010000 {
- 			reset-names = "phy",
- 				      "phy_phy";
- 
-+			qcom,tcsr-reg = <&tcsr_regs_2 0xb244>;
-+
- 			status = "disabled";
- 		};
- 
-
--- 
-2.39.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVGhvbWFzLAoKT24gTW8sIDIwMjQtMDEtMTUgYXQgMTc6MTQgKzAxMDAsIFRob21hcyBSaWNo
+YXJkIHdyb3RlOgo+IEFkZCBzdXNwZW5kIGFuZCByZXN1bWUgc3VwcG9ydC4KPiBUaGUgYWxyZWFk
+X2NvbmZpZ3VyZWQgZmxhZyBpcyBjbGVhcmVkIGR1cmluZyBzdXNwZW5kIHN0YWdlIHRvIGZvcmNl
+IHRoZQo+IHBoeSBpbml0aWFsaXphdGlvbiBkdXJpbmcgdGhlIHJlc3VtZSBzdGFnZS4KPiAKPiBC
+YXNlZCBvbiB0aGUgd29yayBvZiBUaMOpbyBMZWJydW4gPHRoZW8ubGVicnVuQGJvb3RsaW4uY29t
+Pgo+IAo+IFNpZ25lZC1vZmYtYnk6IFRob21hcyBSaWNoYXJkIDx0aG9tYXMucmljaGFyZEBib290
+bGluLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50
+LmMgfCA1NyArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gIDEgZmlsZSBjaGFuZ2Vk
+LCA1NyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2NhZGVuY2Uv
+cGh5LWNhZGVuY2UtdG9ycmVudC5jIGIvZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10
+b3JyZW50LmMKPiBpbmRleCA3MDQxM2ZjYTU3NzYuLjMxYjI1OTRlNTk0MiAxMDA2NDQKPiAtLS0g
+YS9kcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYwo+ICsrKyBiL2RyaXZl
+cnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5jCj4gQEAgLTMwMDYsNiArMzAwNiw2
+MiBAQCBzdGF0aWMgdm9pZCBjZG5zX3RvcnJlbnRfcGh5X3JlbW92ZShzdHJ1Y3QgcGxhdGZvcm1f
+ZGV2aWNlICpwZGV2KQpbLi4uXQo+ICtzdGF0aWMgaW50IGNkbnNfdG9ycmVudF9waHlfcmVzdW1l
+X25vaXJxKHN0cnVjdCBkZXZpY2UgKmRldikKPiArewo+ICsJc3RydWN0IGNkbnNfdG9ycmVudF9w
+aHkgKmNkbnNfcGh5ID0gZGV2X2dldF9kcnZkYXRhKGRldik7Cj4gKwlpbnQgbm9kZSA9IGNkbnNf
+cGh5LT5uc3Vibm9kZXM7Cj4gKwlpbnQgcmV0LCBpOwo+ICsKPiArCXJldCA9IGNkbnNfdG9ycmVu
+dF9jbGsoY2Ruc19waHkpOwo+ICsJaWYgKHJldCkKPiArCQlnb3RvIGNsa19jbGVhbnVwOwo+ICsK
+PiArCS8qIEVuYWJsZSBBUEIgKi8KPiArCXJlc2V0X2NvbnRyb2xfZGVhc3NlcnQoY2Ruc19waHkt
+PmFwYl9yc3QpOwo+ICsKPiArCWlmIChjZG5zX3BoeS0+bnN1Ym5vZGVzID4gMSkgewo+ICsJCXJl
+dCA9IGNkbnNfdG9ycmVudF9waHlfY29uZmlndXJlX211bHRpbGluayhjZG5zX3BoeSk7Cj4gKwkJ
+aWYgKHJldCkKPiArCQkJZ290byBwdXRfbG5rX3JzdDsKPiArCX0KPiArCj4gKwlyZXR1cm4gMDsK
+PiArCj4gK3B1dF9sbmtfcnN0Ogo+ICsJZm9yIChpID0gMDsgaSA8IG5vZGU7IGkrKykKPiArCQly
+ZXNldF9jb250cm9sX3B1dChjZG5zX3BoeS0+cGh5c1tpXS5sbmtfcnN0KTsKCldoYXQgaXMgdGhp
+cyBpbnRlbmRlZCB0byBkbz8gSSBleHBlY3QgdGhpcyB0byBleHBsb2RlIGluIF9yZW1vdmUsIHdo
+ZXJlCnRoZcKgbG5rX3JzdCBhcmUgcHV0IGFnYWluLiBTaG91bGQgdGhpcyBiZToKCgkJcmVzZXRf
+Y29udHJvbF9hc3NlcnQoY2Ruc19waHktPnBoeXNbaV0ubG5rX3JzdCk7Cgo/CgoKcmVnYXJkcwpQ
+aGlsaXBwCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
