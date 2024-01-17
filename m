@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E454C47DAF
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 14:04:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8707C47DA9
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 14:04:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzQuXl3VSK4NB/s8oivGy5J9lT8YQhxjd/mOIoeNlXI=; b=0nrp/wZ9R7gGTD
-	0LRsOXLyaLho8M7fMAG9XuQJQXYKe2cbjGWjCb6oxttmhPwSjqgkynw+nkDGteYR/DU4zPTvd6Ngl
-	A9bDwKIJFPuow7i1x/5BLyb/AJ0oORX757y/3Qt+HKNXggQAzBgbUJqvPjYLC0zcFcx0Q+gU6jHl5
-	9WdZEtbt5vJaBAt5hd42hI3ggXOzALAcWm/28GzFiI+Nls3mtRidkgmQnrf47pgZeG4jzjNEEUjHS
-	7LORypXbUrS+koedRCjvURVjHfdCEhARfdh8l3++AQTiIwUoZ5ZIVyPy3N1o2DsvDJkOl93LuMFP3
-	FzHxXNhoLe2DAB/m8+Jg==;
+	List-Owner; bh=eGagjaCbjRgMqvdvr/bJC4UnoN2xwCcwnAZUfTVIAeE=; b=Ig7IkGGwJUL893
+	YBVue0jOb2gLCgmSFMvKa7P2YhqJwGPCWSTshqZG1PqjhHjCBzMqwkmUg5sNiStUDqfUghsGMVZz3
+	syQqTdkPZhz2PnLBCkEGPQ2DrPFBS/2QvCskhK0TjaOQHMY3mq+hPeP9wrPVUB6AJSnvMc0w43dGC
+	iAE9AV7V2lcmnoO7PybZC0JsTiMaNcHDnNLyZ3xlnxVDXhtnVXMgghHA03rR/As6Rg0hQwlA0Vm40
+	2E8vs6tirFp5wXfwCNcyrw2Y1ZY45S5KYBntBY0SwPbvkGUrC4Yua2dgMc8lVrx65tOYaipt/X3i4
+	N/wuQ8B8P3/QUMQ4Dktg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Wx-00Gr9j-00;
-	Wed, 17 Jan 2024 14:04:35 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1rQ6Ww-00Gr93-1V;
+	Wed, 17 Jan 2024 14:04:34 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Wr-00Gr2G-1E
+	id 1rQ6Wq-00Gr0g-39
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Jan 2024 14:04:32 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-50eabd1c701so13656419e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 17 Jan 2024 06:04:29 -0800 (PST)
+	Wed, 17 Jan 2024 14:04:31 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-2cd04078ebeso112647451fa.1
+        for <linux-phy@lists.infradead.org>; Wed, 17 Jan 2024 06:04:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705500268; x=1706105068; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705500266; x=1706105066; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=MDBhbGYpjTtYfLENzNTw+65o/Tc1yQuvKthYRLJB+4M=;
-        b=imrGyyEDxHSye2i2p/xnXtiN2MtktdpLp3Yi4zFDuuwzKVu/5kG5aDPQ2wMT3rczor
-         Z3SxfJ65hehBHuI+gqt4TySGt3SHPeiYBq7xLlI+i5glrjhirISNsvtpZgQ67VWC3sAb
-         wPB1ZDzzvNFpS+bzIiE6gkL46JVK6spW5/EIpMrebf4rqYIVSgvwo09rfH4ccvPR/7qE
-         3PVYiJ5EjFYBIhXWiU66vjwPYIoDnC2Cz/i3/R3xfOgcZ2AA2Uh6PccuI8USSbo9DhMG
-         PEoqPCvmRHbtAC03I5qI3vSH+lzxoZDfhwGNkivrbPsFm8AIiN+AoH01rpnH0lCMFnw5
-         UAXA==
+        bh=72k1xLJVwiMJbLRb7ZUUcy6cJZtX/coZxcCHHlFdCmQ=;
+        b=Y334PTKqzIuUbWhRBn7IZSO99cQ0BYtSxC0yZsc5AlUL8tlUjOZjTi6Hp5Aamd+BHm
+         h5oSPRT+RBXK68q6RggzkSQRrR2B1MajyuX83kkrOqCzK0D36q5+a32BUVbocAq0U60Y
+         bquTwhtGA2YLRUg/EASpcSkwe5lQSk519CFsxA3ubQaZzE4PPdnqJ08gqbSbzUpCdmz6
+         WVHj1yfL3pXlyJZiceJZqnYczUV2LVEZKKkCFdQ6447PXGjHTXXqoEM09fou5zMyE09k
+         YcvPs37+XoVV3cgGzobMzDtVfNt2eYYkchXs7aTAEUgOPajjTWfPkPl95QYQb25Bi62t
+         fc+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705500268; x=1706105068;
+        d=1e100.net; s=20230601; t=1705500266; x=1706105066;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=MDBhbGYpjTtYfLENzNTw+65o/Tc1yQuvKthYRLJB+4M=;
-        b=Dbdz1F3WMd78gBtiJ4T2R8bWoC7929gBu9+VzQGC3AxZiNcHNvRIhe73lvOgdRp5o/
-         pbp5by8KRQD/M+dK5lcQuVXAqpXpjOj6bNE7ZXrM+riaclQ5GVSIyP9MIWdSB0hEN/S7
-         Kr3XEtuRJtLdOiX6pvRU1kf2x4Cvn8CKpJJrPeB9dl7yzAVupPNssGAJA0d6eM5DvNLJ
-         ErGQBun6bU0kl3PnBQ85DSRdzOSjj38wk3OOi3y+ScIKxJiMu9RvE5yqsF+vDF2MFQtd
-         BjTKQikFyF8L2DA2yw3qMbu85aYlg8UtQy916ea8yE2/be6AQlmszp9O8Zh04/Bu7oEB
-         aXCg==
-X-Gm-Message-State: AOJu0Ywm2LQM/tnogsiNVpoHr8gG0Dqnq8dlCXUWGrd7FbRjQMTKohxi
-	5GkysvLTltfEEZzy0oXRsHUq2CcgqKJzpA==
-X-Google-Smtp-Source: AGHT+IH1vHCYDSOtvo5keq6KG+y5uUXHlp8a1UnMO5nKy5PkIM9jbKTRki6B6acZ5XtiWN6qDyqAXA==
-X-Received: by 2002:a05:6512:b19:b0:50e:246d:7566 with SMTP id w25-20020a0565120b1900b0050e246d7566mr6081947lfu.7.1705500267900;
-        Wed, 17 Jan 2024 06:04:27 -0800 (PST)
+        bh=72k1xLJVwiMJbLRb7ZUUcy6cJZtX/coZxcCHHlFdCmQ=;
+        b=iJWMlbN//eqdvqb78GTUyZGT/2yyRrypgoQspUh6E9tsDFPe1mHByWfnyVL3swCRrA
+         H0AWtCx5Ihum8M7Er+f0oaJXG+IBbWB0vG828Dk+gbEAlWbpmDpI+JLNMhyMhF47icZR
+         f6yFfJaARtHQtD0c9hcO9XwWxtPOA9NNdvfpAMGnUNp1yibfTJ+HOyVYjgfrYxxRNMly
+         zAKRL40Az5HQdCJrYLLN9hE/XSzgxwx3VroS66IKIv0JPWDWXLnmmafdEcs9YGClxwZg
+         n/h6xurrfon5gqQ7j3NSB5a8IqZzxUEd9v4KXR2R10nWxrTvbDO+snZJHNIpk/2BRpXi
+         /ZYA==
+X-Gm-Message-State: AOJu0YzGl8xzkD5YW2IdS6xrEVyq2+frVYEn/2iNn/NO0hKns9cDDkQ9
+	fJC8j3HSR34IkXtub9z3DSBniuJmuxUwHHUt7gPXFVU55rpGT6ntSHTjnx7ds4ewaX+JSmSdWLf
+	jzOE=
+X-Google-Smtp-Source: AGHT+IF4LwyCoukcpgt8rgqEw0LpkrX/Ucil34MzXMX67x66tM4HWKETBO/i4geX6cAeJ32JTkl5UQ==
+X-Received: by 2002:a19:2d4d:0:b0:50e:7e45:4e43 with SMTP id t13-20020a192d4d000000b0050e7e454e43mr586156lft.15.1705500266641;
+        Wed, 17 Jan 2024 06:04:26 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id y29-20020a19915d000000b0050ec7a26420sm269711lfj.204.2024.01.17.06.04.27
+        by smtp.gmail.com with ESMTPSA id y29-20020a19915d000000b0050ec7a26420sm269711lfj.204.2024.01.17.06.04.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Jan 2024 06:04:27 -0800 (PST)
+        Wed, 17 Jan 2024 06:04:26 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 17 Jan 2024 16:04:26 +0200
-Subject: [PATCH v2 5/6] arm64: dts: qcom: qcm2290: declare VLS CLAMP
- register for USB3 PHY
+Date: Wed, 17 Jan 2024 16:04:24 +0200
+Subject: [PATCH v2 3/6] phy: qcom: qmp-usbc: handle CLAMP register in a
+ correct way
 MIME-Version: 1.0
-Message-Id: <20240117-usbc-phy-vls-clamp-v2-5-a950c223f10f@linaro.org>
+Message-Id: <20240117-usbc-phy-vls-clamp-v2-3-a950c223f10f@linaro.org>
 References: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
 In-Reply-To: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -80,22 +81,21 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-phy@lists.infradead.org
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1144;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5055;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=MdoBSrycZYklvpg3wMrnQWxk/afUuXbu3ZRk4SLziVo=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlp95nKvHWn6Ym3qkYZUxeHE2QKkiDl6lZquXZL
- Q4IpSopRwmJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZafeZwAKCRCLPIo+Aiko
- 1UgeB/9dhgwttDM/QiCLtTkfn7SYobAr+0HKa13nNimPrtMxJzAPF83QdCgwXEAoANDZ4S8zQFC
- vBh3/p9yWK+2M2HqLSI+fSBAqH/8hv15KnaazNugWT8xgUwQ7rBJBl2ELZvTqXsjsDD+zdVxdlT
- TB9nvCbCpm+vmT8zO7gF1iOnQWNvToc9sDVCSIBZCh6roYhsAfkqEC7Z9CM6E1zW2mYqclT6vjl
- QJZr7uM5ET/dAkIRy5Ohz+P1zOOywiEeu5o8K2aA1VqnV46zkj2pp7td3zCmmuNcqAfMrxAlObQ
- o2ohpwcqiNCnalg5oG+OBPUGl7u5oubMJloF+9tMLskENNyb
+ bh=XQ5Pv7+enL8CAcnblULFpJMoVjMYx0Ov7jzzVvGDtFw=;
+ b=owGbwMvMwMXYbdNlx6SpcZXxtFoSQ+rye+kxLw8d6ZKJDiu35KtJPjCHr2pR9MUNjQn3P1za+
+ mJanl1kJ6MxCwMjF4OsmCKLT0HL1JhNyWEfdkythxnEygQyhYGLUwAmsr2Mg6E5VXfJ8sz3dfNU
+ nvRGTpaVy3L+4mfk81ekrLCEcyLj71+/1zz0qPm/Q0ZGpI3t8534bROcrLvtUk4lpXPc3Tb3rPT
+ +Q+Jsp8oDPqxq/vJirkd/ty87ryKT2ZqavlllzzhWrZa01xd5vexq6kMLjRTPkgS/sOqufFuLXi
+ lhzYsZlgd/m4TP9Fmo+qNrUmR/63O149oyC+5Lsjdvf6iVNS0kd+ZGaefjS2Q+rL2ZdTh5svDF6
+ vUT1sqdfMgr/2+PTK2zTXNsivli5qnzX7TpW0z7pG2nZz+7mXeGxoF0HS3FrvY1U1oPM9lJ8jvo
+ u57jfnur5MynOdGHOwWzFDwOGSTfqQytuDhH8EKabGs9AA==
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240117_060429_459187_506BFB6B 
-X-CRM114-Status: UNSURE (   7.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240117_060429_040230_8A0A1D94 
+X-CRM114-Status: GOOD (  20.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,41 +112,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB3 PHY on the QCM2290 platform doesn't have built-in
-PCS_MISC_CLAMP_ENABLE register. Instead clamping is handled separately
-via the register in the TCSR space. Declare corresponding register.
+The QMP USB PHYs on msm8998, qcm2290 and some other platforms don't have
+the PCS_MISC_CLAMP_ENABLE register. Instead they need to toggle the
+register in the TCSR space. Make the new phy-qcom-qmp-usbc driver
+correctly handle the clamp register.
 
-Fixes: 0c55f6229bc3 ("arm64: dts: qcom: qcm2290: Add USB3 PHY")
+Fixes: a51969fafc82 ("phy: qcom-qmp: Add QMP V3 USB3 PHY support for msm8998")
+Fixes: 8abe5e778b2c ("phy: qcom-qmp: Add QCM2290 USB3 PHY support")
+Cc: Jeffrey Hugo <quic_jhugo@quicinc.com>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/qcm2290.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 48 ++++++++++++++++++++++++--------
+ 1 file changed, 37 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/qcm2290.dtsi b/arch/arm64/boot/dts/qcom/qcm2290.dtsi
-index 0911fb08ed63..89beac833d43 100644
---- a/arch/arm64/boot/dts/qcom/qcm2290.dtsi
-+++ b/arch/arm64/boot/dts/qcom/qcm2290.dtsi
-@@ -442,6 +442,11 @@ tcsr_mutex: hwlock@340000 {
- 			#hwlock-cells = <1>;
- 		};
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index 214cf4203de4..3a4b4849db0f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -10,11 +10,13 @@
+ #include <linux/io.h>
+ #include <linux/iopoll.h>
+ #include <linux/kernel.h>
++#include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/regmap.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/reset.h>
+ #include <linux/slab.h>
+@@ -56,9 +58,6 @@
+ /* QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR register bits */
+ #define IRQ_CLEAR				BIT(0)
  
-+		tcsr_regs: syscon@3c0000 {
-+			compatible = "qcom,qcm2290-tcsr", "syscon";
-+			reg = <0x0 0x003c0000 0x0 0x40000>;
-+		};
+-/* QPHY_V3_PCS_MISC_CLAMP_ENABLE register bits */
+-#define CLAMP_EN				BIT(0) /* enables i/o clamp_n */
+-
+ #define PHY_INIT_COMPLETE_TIMEOUT		10000
+ 
+ struct qmp_phy_init_tbl {
+@@ -94,7 +93,6 @@ enum qphy_reg_layout {
+ 	QPHY_PCS_AUTONOMOUS_MODE_CTRL,
+ 	QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR,
+ 	QPHY_PCS_POWER_DOWN_CONTROL,
+-	QPHY_PCS_MISC_CLAMP_ENABLE,
+ 	/* Keep last to ensure regs_layout arrays are properly initialized */
+ 	QPHY_LAYOUT_SIZE
+ };
+@@ -106,7 +104,6 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V3_PCS_AUTONOMOUS_MODE_CTRL,
+ 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V3_PCS_LFPS_RXTERM_IRQ_CLEAR,
+ 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V3_PCS_POWER_DOWN_CONTROL,
+-	[QPHY_PCS_MISC_CLAMP_ENABLE]	= QPHY_V3_PCS_MISC_CLAMP_ENABLE,
+ };
+ 
+ static const unsigned int qmp_v3_usb3phy_regs_layout_qcm2290[QPHY_LAYOUT_SIZE] = {
+@@ -369,6 +366,9 @@ struct qmp_usbc {
+ 	void __iomem *tx2;
+ 	void __iomem *rx2;
+ 
++	struct regmap *tcsr_map;
++	u32 vls_clamp_reg;
 +
- 		tlmm: pinctrl@500000 {
- 			compatible = "qcom,qcm2290-tlmm";
- 			reg = <0x0 0x00500000 0x0 0x300000>;
-@@ -690,6 +695,8 @@ usb_qmpphy: phy@1615000 {
+ 	struct clk *pipe_clk;
+ 	struct clk_bulk_data *clks;
+ 	int num_clks;
+@@ -691,7 +691,6 @@ static void qmp_usbc_enable_autonomous_mode(struct qmp_usbc *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	void __iomem *pcs_misc = qmp->pcs_misc;
+ 	u32 intr_mask;
  
- 			#phy-cells = <0>;
+ 	if (qmp->mode == PHY_MODE_USB_HOST_SS ||
+@@ -712,19 +711,18 @@ static void qmp_usbc_enable_autonomous_mode(struct qmp_usbc *qmp)
+ 	qphy_setbits(pcs, cfg->regs[QPHY_PCS_AUTONOMOUS_MODE_CTRL], intr_mask);
  
-+			qcom,tcsr-reg = <&tcsr_regs 0xb244>;
+ 	/* Enable i/o clamp_n for autonomous mode */
+-	if (pcs_misc && cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE])
+-		qphy_clrbits(pcs_misc, cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE], CLAMP_EN);
++	if (qmp->tcsr_map && qmp->vls_clamp_reg)
++		regmap_write(qmp->tcsr_map, qmp->vls_clamp_reg, 1);
+ }
+ 
+ static void qmp_usbc_disable_autonomous_mode(struct qmp_usbc *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	void __iomem *pcs_misc = qmp->pcs_misc;
+ 
+ 	/* Disable i/o clamp_n on resume for normal mode */
+-	if (pcs_misc && cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE])
+-		qphy_setbits(pcs_misc, cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE], CLAMP_EN);
++	if (qmp->tcsr_map && qmp->vls_clamp_reg)
++		regmap_write(qmp->tcsr_map, qmp->vls_clamp_reg, 0);
+ 
+ 	qphy_clrbits(pcs, cfg->regs[QPHY_PCS_AUTONOMOUS_MODE_CTRL],
+ 		     ARCVR_DTCT_EN | ARCVR_DTCT_EVENT_SEL | ALFPS_DTCT_EN);
+@@ -1063,6 +1061,30 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
+ 	return 0;
+ }
+ 
++static int qmp_usbc_parse_vls_clamp(struct qmp_usbc *qmp)
++{
++	struct of_phandle_args tcsr_args;
++	struct device *dev = qmp->dev;
++	int ret;
 +
- 			status = "disabled";
- 		};
++	/*  for backwards compatibility ignore if there is no property */
++	ret = of_parse_phandle_with_fixed_args(dev->of_node, "qcom,tcsr-reg", 1, 0,
++					       &tcsr_args);
++	if (ret == -ENOENT)
++		return 0;
++	else if (ret < 0)
++		return dev_err_probe(dev, ret, "Failed to parse qcom,tcsr-reg\n");
++
++	qmp->tcsr_map = syscon_node_to_regmap(tcsr_args.np);
++	of_node_put(tcsr_args.np);
++	if (IS_ERR(qmp->tcsr_map))
++		return PTR_ERR(qmp->tcsr_map);
++
++	qmp->vls_clamp_reg = tcsr_args.args[0];
++
++	return 0;
++}
++
+ static int qmp_usbc_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -1093,6 +1115,10 @@ static int qmp_usbc_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
  
++	ret = qmp_usbc_parse_vls_clamp(qmp);
++	if (ret)
++		return ret;
++
+ 	/* Check for legacy binding with child node. */
+ 	np = of_get_child_by_name(dev->of_node, "phy");
+ 	if (np) {
 
 -- 
 2.39.2
