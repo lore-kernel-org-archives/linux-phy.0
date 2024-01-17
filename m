@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BC66C47258
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB0F1C47DA9
 	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 14:04:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=I08ozR7blbp0APgWVHcBxAB6o2WKLX0qDIB+O9juIfc=; b=wsO2bf2v6zSM8a
-	5zrRyk82/QTqICFchgXr0NQPEENcQ1wUlHNn0xggLw8QJtNaXfIOZxlY4YjL+iSHVcvj+iwna9eeq
-	wSds0bN+PYFfPQMnnALsEWUO+RUfND7DuDy5qqfx0VIGBis/Lzs/UFixegywVBftMRRrlJEKB+F+1
-	LFIwJOs3eygNXtQpCdkkgQ/nAuhqU30rcj9mssOViF1xEAOa/zCXvAxx4E8VohzZAK1olhZfBihMr
-	vAHHeHWgX9pnP/G5qaDMO2h4OCRZC0WxAWj7ed1MGHUh2+3iu6i3sOSiexj1F5HgTSw8sFGnt7ely
-	pL6kuuVgkP1o+gOoH+CA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hkoCBk1fLFzLv466f41CRqzmzvxQ/iB4fWS47fqFmPU=; b=r43siofRdPMLIT
+	3P6mU8WEaD2XUypP/RkzYfuJQCIR+JjEdaC/JzMe41BxXVdYqdXKaZhvVZG+V/wfNW8mwSB1GOTW5
+	eD9Q3IRWPbIwOANCB66usoxtc1B3eXy4q8rD3Pbdt+zrCK4D6qPWg+96PXd/lxeMXIAPEkt//hFKH
+	bcBQ2wK6zku8iHHWgGZDFVh9bBq5t363lFWYYxTgu2GGJRAmLAxs03pzld53y8nRFOa0TpbTUsjM/
+	MkTcC9YrhiZxZLKHM1J9byr+xauzO2Lijbqdz6BQujJRgXoxu21EU78RGu0KPKMFfIULEPBCjlbVg
+	zkpb6YF09IwtU6F/qFSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Ws-00Gr5B-2R;
-	Wed, 17 Jan 2024 14:04:30 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1rQ6Wt-00Gr5a-0k;
+	Wed, 17 Jan 2024 14:04:31 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ6Wp-00GqzH-22
+	id 1rQ6Wp-00Gr05-2q
 	for linux-phy@lists.infradead.org;
 	Wed, 17 Jan 2024 14:04:29 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-50ea9daac4cso11678398e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 17 Jan 2024 06:04:26 -0800 (PST)
+Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-50e835800adso12468574e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 17 Jan 2024 06:04:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705500265; x=1706105065; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=5/B2R8i2UwNaK6kv0GcOo8eHMF4ro6wVFkh1Kz4AGgE=;
-        b=S7Hr7DU8FrOwRJHR31lbnmiiunEVClgp2l7QQanX1uv5qnAF/nDpY1WKjCtPVwg/QC
-         gJTxWIqvS6AuRID/7ozEGx52d45olrZLPI1iZoXXB0jvpndPFOaphEnZhQVDxTrjs/2e
-         oqvyXWo/wl+W/BF8E57hPrx5eVWs9BAoVWHKgD049QYw0iDVWXPB2vFTFQENXZb+m0Oj
-         Zff/iBZcrNPnG/UDqMKOFSg26lwyrV3WE8+Qhx8XRzChxXUccVTgMDVnUWW9dV+sp0LN
-         cSAOemD2QtwqaWwFiaEZJsnzvWm6ArP1uIgyEGwnUPr2a5a759YEw6fcwN10ahqNpT9R
-         BLxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705500265; x=1706105065;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1705500266; x=1706105066; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=5/B2R8i2UwNaK6kv0GcOo8eHMF4ro6wVFkh1Kz4AGgE=;
-        b=jTGHLescGG7JpDHbQkGnMd0x/uqM72egWW2IBMUnC5UkTGO0qfKqNkjd7R0PkB6R2A
-         l5XvI118eJPmWa9ObDvIt1PZiLc+Qfo2FTBG7S5CPMiLsJRgSLElCf3noXMvqiJZ/sTg
-         Kv42fxAlLdPbzGlN/Ep5WL8BOPOkVH2naw+RRcK8LWMRdvCvRpd4bvskEqrKLCNQKrng
-         lKz7IrA9b8K3xqIMiZjaApeC/CrMi8cZJndq9viPhz2tM3+D2kOGCjfOyP47myucBsOl
-         /Ogiv9nEzFXpYnZVQqqce1YRKycW20NiZbK18YEV6OuhNN2wKLy+5j9G2ZVWn/6obyC2
-         Sl8Q==
-X-Gm-Message-State: AOJu0YxM/xL5yhVr6U0s4rovwuPL0TWRGoWsUGNRsqG1m0XSjyNm+m3v
-	7HyThdBA7mqOR8g3Cfi1TOptB9QT5E5uYA==
-X-Google-Smtp-Source: AGHT+IErux1sMeAqdhWkaZXehfNGakmpthvwi4xOe9yPto2lwcwykC6xj5+JSWU3lu5Nh2w3eKdPHw==
-X-Received: by 2002:a19:8c58:0:b0:50e:812c:1acf with SMTP id i24-20020a198c58000000b0050e812c1acfmr3853287lfj.113.1705500264642;
-        Wed, 17 Jan 2024 06:04:24 -0800 (PST)
+        bh=772vTg8hfgBaDB+Qe7kc5uSF/E3F4uLPYVgiAcwBFyw=;
+        b=emYdWDUbTZnFXnYpQR+wtq7mM3SVbQZiMVoYja22C+2exfPQPnBmU6kNrZTWPRWnz+
+         B5Xza+B2zUyBvkiZI3ae/2YEM9xl/CtHJTvU2nc140LQIBqgxGojNbiIb6670QIr27+l
+         yOFn61DMtQdLVtHM4kNdUFHZfsUsBdFYSCEsjhc3CABm/onmivbrkWnxx83TgGuOAzo6
+         CyZO1vT+vdYRUfR/dWxDYA+PSqNC8Zc2a6qShLAe4rzQpzRQVkWqu7ejlb03/aIowevV
+         jgWMLrfA54izxSrHv/I0dHDkkq6/Ss4Q0sApw4tisPpYZFcb680c7fRsQ3SYVxTanHU2
+         8v9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1705500266; x=1706105066;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=772vTg8hfgBaDB+Qe7kc5uSF/E3F4uLPYVgiAcwBFyw=;
+        b=Kbsxp9mj9WTxLm/QliPB/LuStM3g8WLkXACsJ6Y9ChsPd3cbX5EUvga96+icf47u3h
+         d9Un8wQ3FCkpRok8r6dfLiUIRiGsSoXzs7Gf4VNNovWcaSv1XCw6Kp7FkDVvbs2bSvL4
+         ZiPanmeye9qmQC8YuHRKInLe16emDIiex7oUgIInr0+vVHnGzHSjkwg7NXlCHGuylb2j
+         ipXvA694mVk4lA6DkqnRfjwoPdvJXKndOTdLQzDjkS/Qy7qbaZMfEF4h2OoqxtU+ZEtx
+         EAfFwr3Gzb3wxDNjhIoj+hKQ/hd2oLXmRE684yfcT+DaQ9kfTl1ZyZ0jS88Pkqfittn2
+         h7WA==
+X-Gm-Message-State: AOJu0Yyp60kAJu4zry24ZuB1Z/Z28L9geUl8vCgHIkxDOY6ESeUazmE9
+	znGzdDEiA2ceQSJDw4p3t+QMYqtQr6jlKw==
+X-Google-Smtp-Source: AGHT+IFkPW0tH2jtfBfz4Aip9qhxOYVsIvceiz48wRBf771jjy/Lori/rlGUHmxrapPVDLJh3wJXcA==
+X-Received: by 2002:a19:2d0c:0:b0:50e:82e7:912b with SMTP id k12-20020a192d0c000000b0050e82e7912bmr2731161lfj.138.1705500265979;
+        Wed, 17 Jan 2024 06:04:25 -0800 (PST)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id y29-20020a19915d000000b0050ec7a26420sm269711lfj.204.2024.01.17.06.04.24
+        by smtp.gmail.com with ESMTPSA id y29-20020a19915d000000b0050ec7a26420sm269711lfj.204.2024.01.17.06.04.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Jan 2024 06:04:24 -0800 (PST)
+        Wed, 17 Jan 2024 06:04:25 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH v2 0/6] phy: qcom: qmp-usbc: properly handle the clamping
- register
-Date: Wed, 17 Jan 2024 16:04:21 +0200
-Message-Id: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
+Date: Wed, 17 Jan 2024 16:04:23 +0200
+Subject: [PATCH v2 2/6] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: add
+ TCSR registers
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAGXep2UC/32NQQ6CMBBFr0Jm7ZhOVRBX3sOwKKXQSSptWm0kh
- LtbOYDL95L//grJRDYJbtUK0WRO7OcC8lCBtmqeDPJQGKSQZ0FU4zv1GoNdMLuE2qlnQBJ0bc0
- 46JEklGGIZuTPHn10hS2nl4/L/pHpZ//mMqHA5tTLQTV1S/pydzyr6I8+TtBt2/YFtBg4m7UAA
- AA=
+Message-Id: <20240117-usbc-phy-vls-clamp-v2-2-a950c223f10f@linaro.org>
+References: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
+In-Reply-To: <20240117-usbc-phy-vls-clamp-v2-0-a950c223f10f@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Lee Jones <lee@kernel.org>, 
  Rob Herring <robh+dt@kernel.org>, 
@@ -82,21 +81,21 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, 
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2555;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1670;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=x81CLncY/hIwp8vTAImj73oz1jLkJ9NlHddtBkJ5pxQ=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlp95mMacSd+CX45gkjTa81604OBU9Jbtyvkuyk
- r/u2D5gRKiJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZafeZgAKCRCLPIo+Aiko
- 1UHdB/40oZ6ZQjoG9rx7y2T6f4ugeoDywqi7KNkuDTEmJaRcLW/YG2rqMrB0/KUC2Sla5Z9suks
- A0EudD8KkMnCBVDo6TLI/A9fmfCJ9QeFLTI+sXPfsEQLtHDj6nGDHv4QXEiZnX818kRb9ToDaZ1
- riPwXHI4MHSv8sTdOqGtRWJvqPJZIMmpDEoKQl4xt9cm/Cf6Nikhxh9FGwfzo79w2Vq5QOUMduW
- H2HgdzQKXhs24gNbkU0mdQp6i43dZcmGTffjqjVwZGg9PheyS68Ngann5uzk8d2+R4qVb+tfQLr
- dD37J9lHnK0kkumwhsR3kfaWl0L67h3lB7H3ojpPSjli4KK5
+ bh=IIYXjLUeMbWnutvTtYPCUZAo+vNBHeW5XfLCEiQbpb4=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBlp95nRXFznK8SZhS163IK0W66kvR4acev8hG7T
+ X5LLlH1ILiJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZafeZwAKCRCLPIo+Aiko
+ 1U+7B/9zuQGfbIQc1PlKK3gMFlCrFkYzIUTVKQvONlpjQVXipXYInTZdFNHQpweJi+j+0Fqm9ge
+ zQbW7MriaaywehjRX5Uo0zmLwPKxcD16v0l73DHPFhz2Uf4a/sVyhnjg47DmGYWa3TETWak422v
+ wCtNL8bv0RogEl92ek/U9Y3oWWMcH1V7L625tkIuhp5UX9vgkqeW7Nd1xVSaCX1R/zvTcO8Jvab
+ PWS94mlciV207HIhhADnY2n26YF3tZOfKgTNTlm7sfHYQzYaKhSq33CEDWfej4qCxdCBMV6IZVe
+ rwaBV0PZ8gIHo8nOYfEl4oApNo1vBQ6Ixwingqwk7L/PI0tg
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240117_060427_696091_115563DB 
-X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-CacheID: sfid-20240117_060427_962403_65A7E8F9 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -114,59 +113,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB-C PHY on the MSM8998, QCM2290, SM6115 and several other platforms
-doesn't have built-in PCS_MISC_CLAMP_ENABLE register. Instead clamping
-is handled separately via the register in the TCSR space. Make the new
-phy-qcom-qmp-usbc driver correctly handle the clamp register.
+The QMP USB PHYs on msm8998, qcm2290 and some other platforms don't have
+the PCS_MISC_CLAMP_ENABLE register. Instead they need to toggle the
+register in the TCSR space. Declare the registers accessible through the
+TCSR space.
 
-For backwards compatibility the driver treats these registers as
-optional. They are only required for the PHY suspend/resume. However the
-schema declares corresponding property as required, it should be present
-on all relevant platforms.
-
-At this point I'm not sure whether having a single TCSR-based register
-will be enough or whether we will have to add more TCSR registers in
-future. In order to avoid repeating TCSR handle (and having multiple
-instances of TCSR regmap in the driver) use qcom,tcsr-reg property
-rather than someting more exact like qcom,vls-clamp-reg.
-
-Dependecies: PHY-related changes of [1]
-
-Note for the backporters: if the patch is packported to the kernel
-before the phy-qocm-qmp-usbc split, the phy-qcom-qmp-usb driver needs to
-handle both PCS_MISC_CLAMP_ENABLE and VLS_CLAMP registers as optional.
-
-[1] https://lore.kernel.org/linux-arm-msm/20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org/
-
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
-Changes in v2:
-- Fixed the TCSR region definitions (Konrad, Bjorn)
-- Link to v1: https://lore.kernel.org/r/20240116-usbc-phy-vls-clamp-v1-0-73b2da7691c5@linaro.org
+ .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
----
-Dmitry Baryshkov (6):
-      dt-bindings: mfd: qcom,tcsr: Add compatibles for QCM2290 and SM6115
-      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: add TCSR registers
-      phy: qcom: qmp-usbc: handle CLAMP register in a correct way
-      arm64: dts: qcom: msm8998: declare VLS CLAMP register for USB3 PHY
-      arm64: dts: qcom: qcm2290: declare VLS CLAMP register for USB3 PHY
-      arm64: dts: qcom: sm6115: declare VLS CLAMP register for USB3 PHY
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+index da5d4cbca24c..140843347d1e 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+@@ -55,6 +55,14 @@ properties:
+       Flag the PHY as possible handler of USB Type-C orientation switching
+     type: boolean
+ 
++  qcom,tcsr-reg:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    items:
++      - items:
++          - description: phandle to TCSR hardware block
++          - description: offset of the VLS CLAMP register
++    description: Clamp register present in the TCSR
++
+   ports:
+     $ref: /schemas/graph.yaml#/properties/ports
+     properties:
+@@ -78,6 +86,7 @@ required:
+   - "#clock-cells"
+   - clock-output-names
+   - "#phy-cells"
++  - qcom,tcsr-reg
+ 
+ allOf:
+   - if:
+@@ -148,6 +157,8 @@ examples:
+ 
+       orientation-switch;
+ 
++      qcom,tcsr-reg = <&tcsr_regs_1 0x6b244>;
++
+       ports {
+         #address-cells = <1>;
+         #size-cells = <0>;
 
- .../devicetree/bindings/mfd/qcom,tcsr.yaml         |  2 +
- .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    | 11 +++++
- arch/arm64/boot/dts/qcom/msm8998.dtsi              |  7 ++++
- arch/arm64/boot/dts/qcom/qcm2290.dtsi              |  7 ++++
- arch/arm64/boot/dts/qcom/sm6115.dtsi               |  7 ++++
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c           | 48 +++++++++++++++++-----
- 6 files changed, 71 insertions(+), 11 deletions(-)
----
-base-commit: 3cbd23fa6ef85801574a4b0d3f81fb365e06b2d2
-change-id: 20240116-usbc-phy-vls-clamp-10189efdcf12
-
-Best regards,
 -- 
-Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+2.39.2
 
 
 -- 
