@@ -4,75 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D70CC47077
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jan 2024 18:22:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB28CC47077
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Jan 2024 00:04:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=eP/V2NxJun0Izm+lzE3yrwSI/PNHbzqEP8i2JTcYa3A=; b=GFLPEyzX0AYrPD
-	1y7HcRwn2+xD7DlXud5HsUHHABqOtuahsgQZnk6AJMdLR6JdgiWWXku/ZkVJEPp2R8of+luxRZzVt
-	Rlv/qgcC96kYFiXn2nr6R+1r0d5tt/i10xTbtZG2p2q2EZ5Si0jUk/d08tAFw4fHFW1SaeGFgdbUk
-	w9AjHy9DmQ8zuBT8qP5EZviBYFDgbLtWLhoSs+crM3kAQZoy3qQjbLdbgIo08TQaPHaPLzcsA/gh8
-	X7bDpsZMRD6v9gPHf5O/IOi67dwwm1Gf8LMvX4jkg4VVk79yfYWNF8OB9ieJPxhTiPhtl8yRAJ4gJ
-	YiBWfVDqYji1Ns0kGZwg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gEuouD+9CKDcYicgHuSkl9oZIka0TioLw1DrXqBUYuA=; b=UQL6KZkULDEgQl
+	ifyOG+Xkotz0JUC41XiCatzcm/g7i8jPpjqXP+IyrTu15F0IhxYYUtWhKI8CIIcf+I/Pusoh0aAik
+	iuDndmY3ZNJXP3XXNV2bOCfDH3lYw4HH13j4O0k/Ullg0u0oi6ayZy9I/BjIX8TaZxV7f4+d1MEhD
+	RsXiBJpzb7fMP6kSFaPLZ+yLgmxslz1xkooBpZBPYAwPTJgWJapzq0vyT10NVla0fE4nCLunN5bQW
+	Kp13tXMT3tSurgmJKpPxdg8BREE2h0IMgFQOBPFO8iRMOaVlvhvVangIN0rglqEZPFIsL8r+79SEJ
+	Wbqdb6GCMP2kVcW5DBwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPo5N-00Cy7M-0K;
-	Tue, 16 Jan 2024 18:22:53 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rPtPt-00E33L-0x;
+	Wed, 17 Jan 2024 00:04:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPo5J-00Cy68-0v;
-	Tue, 16 Jan 2024 18:22:50 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 63518CE1944;
-	Tue, 16 Jan 2024 18:22:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D20CC433F1;
-	Tue, 16 Jan 2024 18:22:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705429366;
-	bh=24yf9WQZM8mCzBoY4DhIxhCfHQZP8hu82jOqs15h0jg=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=CBatexrm9aBNAYXsNpveWnrw+Di773YudoVO/VDqgpP9FKlSYHdGeCs9ySe0HGtWK
-	 so2FLx7CeRayeJj9Z8kDp8bZqEEJxqHCJNS8c7tRBEMn8ySC/D9sH5IShv/Qo2Gila
-	 wWFRNUHVyYshYfyYmIKD3cxzN/7U7Wl9fvvywrJvdzChhTimASQuKCYIKy5nyIsOoN
-	 f/v4avvA0QcnowjCCBcL0oOvQHhzavvXAnirlz3cJXInydu6jFKaIIj/QeIkONkFoS
-	 KSS5MkeXX+d1acaZzpQ/8hWvCjtvGU+aU4P2i/MhH3Czdl1GJCYXt9uBuT7TSbAFul
-	 v2V7zez4Z1JzA==
-Date: Tue, 16 Jan 2024 12:22:44 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Thomas Richard <thomas.richard@bootlin.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	Andy Shevchenko <andy@kernel.org>, Tony Lindgren <tony@atomide.com>,
-	Haojian Zhuang <haojian.zhuang@linaro.org>,
-	Vignesh R <vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
-	Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Tom Joseph <tjoseph@cadence.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
-	theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com,
-	u-kumar1@ti.com
-Subject: Re: [PATCH 11/14] phy: cadence-torrent: add suspend and resume
- support
-Message-ID: <20240116182244.GA101245@bhelgaas>
+	id 1rPtPp-00E32d-39
+	for linux-phy@lists.infradead.org;
+	Wed, 17 Jan 2024 00:04:23 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40GNpwfO004069;
+	Wed, 17 Jan 2024 00:04:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=oUoG7KVTagCiJE3z/rvyUKdC8ngAzBSP6ocA0mr3YGE=; b=Hh
+	k5eiksMrkj1CSu66RFv0C3bHHsRHk1TXEx88zBvAlXkQcHNIh1XH9l0Ffj7I9WPL
+	lG/Vr36GP7d/MwmIakT4cuskJwsYFj28SMRAhbA9Fugs/0n+Ffyn5r6xPpk9kdVd
+	wSyEruHFmW82n9gjCnJ/ABfU4vvwyNLz0IMUb0QGXTRLzvZM4tu8x88aT2hYQN7e
+	Z+N9y3kWT6UQm/od3DEaZechVvm9sJjFRLsh2xuwG/40Xd6kYnhfYQ25M3H51UaY
+	97hN7vHzdeU7mw++vnXk5JF86JruUNyXz01PZgYxxAecUg9NrM79N/cn+hK8arKm
+	XRPUFLsxmpdjQ0Iez+Ng==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vnnkeaa2b-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 17 Jan 2024 00:04:09 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40H048Mr021623
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 17 Jan 2024 00:04:08 GMT
+Received: from [10.110.99.42] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 16 Jan
+ 2024 16:04:07 -0800
+Message-ID: <a9c68fa2-57c2-4ddc-9261-acf1f58b0e38@quicinc.com>
+Date: Tue, 16 Jan 2024 16:04:06 -0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240102-j7200-pcie-s2r-v1-11-84e55da52400@bootlin.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 08/13] phy: qcom: qmp-usb: drop dual-lane handling
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Bjorn Andersson
+	<andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        "Liam
+ Girdwood" <lgirdwood@gmail.com>,
+        Mark Brown <broonie@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        Bryan O'Donoghue
+	<bryan.odonoghue@linaro.org>,
+        Greg Kroah-Hartman
+	<gregkh@linuxfoundation.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Guenter Roeck <linux@roeck-us.net>,
+        "Heikki
+ Krogerus" <heikki.krogerus@linux.intel.com>,
+        Philipp Zabel
+	<p.zabel@pengutronix.de>,
+        Bhupesh Sharma <bhupesh.sharma@linaro.org>
+CC: <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <linux-phy@lists.infradead.org>
+References: <20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org>
+ <20240113-pmi632-typec-v1-8-de7dfd459353@linaro.org>
+Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240113-pmi632-typec-v1-8-de7dfd459353@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: GFHcz04WR6vLPyaRWl7Xa_kAkk30rIp3
+X-Proofpoint-ORIG-GUID: GFHcz04WR6vLPyaRWl7Xa_kAkk30rIp3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-01-16_14,2024-01-16_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ clxscore=1011 bulkscore=0 malwarescore=0 phishscore=0 priorityscore=1501
+ impostorscore=0 mlxlogscore=609 spamscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401160189
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_102249_499968_CCD3954C 
-X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-CacheID: sfid-20240116_160422_043457_D85F61B2 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -90,22 +124,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 15, 2024 at 05:14:52PM +0100, Thomas Richard wrote:
-> Add suspend and resume support.
-> The alread_configured flag is cleared during suspend stage to force the
-> phy initialization during the resume stage.
+On 1/12/2024 9:42 PM, Dmitry Baryshkov wrote:
+> Now as all dual-lane PHYs have been migrated to a new driver, drop
+> support for dual lanes configuration. If the PHY uses two lanes for USB,
+> it is symthom that it should use either a combo USB+DP or a USB-C PHY
 
-s/alread_configured/already_configured/
+if you re-spin: s/symthom/symptom/
 
-Wrap to fill 75 columns.  Add a blank line if you intend two
-paragraphs.
-
-I don't know whether there's a strong convention in drivers/phy, but I
-see several commit logs that capitalize "PHY".  "Phy" is not a
-standard English word, so I think the capitalization makes it easier
-to read.
-
-Bjorn
 
 -- 
 linux-phy mailing list
