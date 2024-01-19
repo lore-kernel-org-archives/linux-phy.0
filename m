@@ -4,84 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAF6DC47DB3
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Jan 2024 18:00:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A405EC4725D
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Jan 2024 15:50:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nfDo0uOEQCXLzHklFRxJlP1yIdL7g1KBK5PyqXN2isA=; b=scFJ/yxqwlGvO8
-	qTQO44POMlzmSnpvfzvMFdRGOU40qRnq6QipU95UvRWw9HunpRR54gcMVm8kQSM8zcZ00xnYQUBzS
-	/2loN7x+tOYHnthDlhLDCD8GyQWeX6f5V78KCscoi6mNIWjxJ3EdG00nVqDqDDzjY2jbmIiwSYe+U
-	Cl+VSLAgIdzQ/uJHTp6sYfYpV10vdkwHRRtmF8xWKmMytvsdmnY0qTFV2ob9G1vH4+gdCkL89qPY5
-	RQTt7WGXMXy40GthuRRQrygoKJBipXPq0zVIKdCAjqu41bg3BJuXXxtsR96+F+sHgxd3mhO/qdL1T
-	CFweMhzGg5Cw1b6CzeRg==;
+	List-Owner; bh=gTzFQlLh8LAWb1ry6pgjwEukbhHwZMhH5mDyLkKNnb0=; b=lKPleMg+zbMeTU
+	kplnokMDIckWM7Ud4GTbLFqpoIgwQyjekNHbAF26Gzm21Z6nsk/ekt9zHrIkVwwWqgspu5zgkZ7GA
+	0BmXOpYrYejomvTjv/A24vXH7POZ5wZBVAFFawDME5mrrXAmxCUetnGqZpBIxYDPEJHCd2uwl7qy8
+	Wv+c5SxK0dgdDrXomwNLf+PLvL546rP7t/tIprijqZwUIIYDCXKnziMobxxLm5HK+8+rEKypSuhJA
+	VCfgbF14Guqm7aIYvoFo2VerpLyrMtssnvjpRNROJVm/KhVH/om3L1uo/WYqQOUPSJeSWpJvH9m+Y
+	kVLCWX0PcXmm1cP0Vfew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQWgc-003S5l-16;
-	Thu, 18 Jan 2024 18:00:18 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1rQr8K-0061wF-0V;
+	Fri, 19 Jan 2024 15:50:16 +0000
+Received: from relay6-d.mail.gandi.net ([2001:4b98:dc4:8::226])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQWgZ-003S5P-0W
-	for linux-phy@lists.infradead.org;
-	Thu, 18 Jan 2024 18:00:16 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-50e7abe4be4so17101719e87.2
-        for <linux-phy@lists.infradead.org>; Thu, 18 Jan 2024 10:00:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705600812; x=1706205612; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=iBqwoxlx4gnnWqnFvaKADZ4JLIY+I21s4gGLYsTualc=;
-        b=vM+HuXthSYJPnYhFJzhTKIsI5lhWFe5xx3rs7ZZCGji42xRVPng3l6llMskB7MCc79
-         j6XQxm8k9U7eDOFDmEBAd2xrwMoZ6okcLPaAiVRb5zvMVpVLWdMLCVhlllAhd+HPhE1k
-         Y5OThVRfJDS7ECgT2GRdFAZTzkpfuZ6hO3nDTArat4HJWUQxq79+Lzba2M6OXuPHRGj6
-         7HSP9Zs+DOrGcGM/EpYHgo5fY3L8qTgmv/0VO0R8/2xFLRCpuS2MzBkP2LgSUwDVEPCW
-         otqgl465UbwgX24UhktcGdqbPhgD3164nFBbNCBs3U/8A8HWdDxPQ72g/smHXPMgdSQs
-         mXJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705600812; x=1706205612;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iBqwoxlx4gnnWqnFvaKADZ4JLIY+I21s4gGLYsTualc=;
-        b=emFG7Dn1o5qYMdIwIuB92w+P3IpqyV5DoENKrpSqcdFXkoCPV55e3AcyEvB5i9R/+8
-         rQfFSgwwC94VhK1HsHVN6qbrHq3j7uWmxxr4B+8wJvc6c9RmIEBB2i/aKJpzYN1K1OGa
-         HtKSE1i8niXPMFIai6GR3VXd6NIrpVNF1KPlerNerddRxgXoGtsKKt8IlYDugzXOkxq6
-         dWERbvAv2RU4QNlqeylB+TUVMzSTEkf/ohhkbLgvTiv/svahcIgFd1yPgaVqIDKjrCi7
-         tHN8Rb5uz5njhEUi9tocWNJc8Cwz0D5TsOBLq79BbNMOcdww9sDDYvcmWWBRJjX9nent
-         fnIA==
-X-Gm-Message-State: AOJu0Yz+cOKGTli5Tea8QvenVpvZUGz2K6KPBsGwmI1WuV0+3tjh8wK3
-	r9zVFq7TmWTPRKgwpeWhs8JhBVANmURMfHp6XW47mvlA6OWKaAMJ9FtL0i3cBKU=
-X-Google-Smtp-Source: AGHT+IEGPOjGHD9Ar9cWEdm17o6nO+I+JA4OZLTIl8Z2GO2P+L5AcbMBNN/pBByZ4phpxTWIBwA2mQ==
-X-Received: by 2002:a05:6512:11c9:b0:50e:6b45:c915 with SMTP id h9-20020a05651211c900b0050e6b45c915mr16575lfr.7.1705600812396;
-        Thu, 18 Jan 2024 10:00:12 -0800 (PST)
-Received: from [172.30.205.26] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
-        by smtp.gmail.com with ESMTPSA id n6-20020ac242c6000000b0050f0d944b3esm656797lfl.140.2024.01.18.10.00.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 18 Jan 2024 10:00:11 -0800 (PST)
-Message-ID: <e1c6053e-d26d-4eb4-84ba-b16403fd0ad1@linaro.org>
-Date: Thu, 18 Jan 2024 19:00:09 +0100
+	id 1rQr8F-0061v3-2p;
+	Fri, 19 Jan 2024 15:50:14 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 26730C000A;
+	Fri, 19 Jan 2024 15:50:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1705679405;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=no9Zk1+Ofv930fy1IruQYBJcZcLId9qedsWBTajBqLk=;
+	b=jAd3/erbItSU8bRgfAurVO1vRfyY/x0FFjkEhN5ogLafuPpdFJlYMmw2mvONe7FjotJExF
+	BCJ0M7Lt4+ymTm4ZxxE8hUAKY/pe8tNemwOl1tSMTwHlHpwxf5NQblXa4VMrDmXoQsrNS5
+	5b/Rmf+/gXOlw2geifYAL25tJpZnR5yejCKR8gMnrQ17x0KZP6d/kMzlnHMV5f8bI4EVi7
+	dkvJwUcXwAyhIksBlz/wEdHtqMQyIg4YOvKycNYAi3OZvUi9otL4B/8Q0qUTWFa7aAlIJM
+	jJIjiN22G+zWSX/1su7DBWwGIYuS9eT9gCUYSoahyvjaAQq5ux+PvpfWVOZocw==
+Message-ID: <a4627e51-c851-4abf-a3b2-222b2b315d4e@bootlin.com>
+Date: Fri, 19 Jan 2024 16:50:00 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/4] arm64: dts: qcom: sdm630: add USB QMP PHY support
+Subject: Re: [PATCH 01/14] gpio: pca953x: move suspend/resume to
+ suspend_noirq/resume_noirq
 Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20240116-sdm660-usb3-support-v1-0-2fbd683aea77@linaro.org>
- <20240116-sdm660-usb3-support-v1-3-2fbd683aea77@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20240116-sdm660-usb3-support-v1-3-2fbd683aea77@linaro.org>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Haojian Zhuang
+ <haojian.zhuang@linaro.org>, Vignesh R <vigneshr@ti.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti
+ <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Tom Joseph <tjoseph@cadence.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+ theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+References: <20240102-j7200-pcie-s2r-v1-0-84e55da52400@bootlin.com>
+ <20240102-j7200-pcie-s2r-v1-1-84e55da52400@bootlin.com>
+ <CAHp75VezeBp3Umg4prvdS83WrHViyTs-hBV0SejVD2BBnGYEvg@mail.gmail.com>
+From: Thomas Richard <thomas.richard@bootlin.com>
+In-Reply-To: <CAHp75VezeBp3Umg4prvdS83WrHViyTs-hBV0SejVD2BBnGYEvg@mail.gmail.com>
+X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240118_100015_203154_92D7F5E8 
-X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-CacheID: sfid-20240119_075012_216522_7456C5D4 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,29 +86,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 1/16/24 02:10, Dmitry Baryshkov wrote:
-> Define USB3 QMP PHY presend on the SDM630 / SDM660 platforms. Enable it by
-> default in the USB3 host, but (for compatibility), force USB 2.0 mode
-> for all defined boards. The boards should opt-in to enable USB 3.0
-> support.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
-
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-
-wonder if we can make this dynamic, somehow..
-
-Konrad
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMS8xNS8yNCAyMDo1NiwgQW5keSBTaGV2Y2hlbmtvIHdyb3RlOgo+IE9uIE1vbiwgSmFuIDE1
+LCAyMDI0IGF0IDY6MTbigK9QTSBUaG9tYXMgUmljaGFyZAo+IDx0aG9tYXMucmljaGFyZEBib290
+bGluLmNvbT4gd3JvdGU6Cj4+Cj4+IFNvbWUgSU9zIGNhbiBiZSBuZWVkZWQgZHVyaW5nIHN1c3Bl
+bmRfbm9pcnEvcmVzdW1lX25vaXJxLgo+IAo+IC0+c3VzcGVuZF9ub2lycSgpIC8gLT5yZXN1bWVf
+bm9pcnEoKQo+IAo+PiBTbyBtb3ZlIHN1c3BlbmQvcmVzdW1lIGNhbGxiYWNrcyB0byBub2lycS4K
+PiAKPiAuLi4KPiAKPj4gLXN0YXRpYyBERUZJTkVfU0lNUExFX0RFVl9QTV9PUFMocGNhOTUzeF9w
+bV9vcHMsIHBjYTk1M3hfc3VzcGVuZCwgcGNhOTUzeF9yZXN1bWUpOwo+PiArc3RhdGljIGNvbnN0
+IHN0cnVjdCBkZXZfcG1fb3BzIHBjYTk1M3hfcG1fb3BzID0gewo+PiArICAgICAgIFNFVF9OT0lS
+UV9TWVNURU1fU0xFRVBfUE1fT1BTKHBjYTk1M3hfc3VzcGVuZF9ub2lycSwgcGNhOTUzeF9yZXN1
+bWVfbm9pcnEpCj4+ICt9Owo+IAo+IFBsZWFzZSwgdXNlIGNvcnJlY3QgLyBtb2Rlcm4gbWFjcm8u
+Cj4gCgpIZWxsbyBBbmR5LAoKVGhhbmtzIGZvciB0aGUgcmV2aWV3cy4KCkkgYXBwbGllZCB5b3Vy
+IGNvbW1lbnRzIGZvciB0aGUgbmV4dCBpdGVyYXRpb24uCgpSZWdhcmRzLAoKLS0gClRob21hcyBS
+aWNoYXJkLCBCb290bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwgZW5naW5lZXJpbmcKaHR0
+cHM6Ly9ib290bGluLmNvbQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
