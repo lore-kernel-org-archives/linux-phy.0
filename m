@@ -4,78 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07A7EC47DAF
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Jan 2024 12:14:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E272C47DAF
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Jan 2024 14:24:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BDgssZ6CSxhw7bnTfxGmE+uhdp09wxtqd1tRSz2ciV8=; b=Vy+7TZ+21Py1pB
-	ASkphP/ngboCZfFjMue69YdFb+1klFYia54nMgDqegnWXHrgGXrddbvMspHfMnIUbUwnelsGpoKwd
-	nVS+LisXo/WE4JdasUVcBl2b/zG9uNqFzrPCCsOWJVHiO0msP8KHpBw43g9LIWDvXo49uG6TKBKT0
-	l47Qo1rmIDtzWbus2JK1Ds59Y4/fQahAA+4ef5OvIY4QwQeHUG8DaUJ9hL93F/YN69QpoaPLk0ccu
-	SB0eTidqUL7ZdIqAIbXw3+FEIq+1Ov1mW48BYZNhpqTY+zhXduJ44r9uyL0LBKLghDt7SoiphfPFN
-	z5s9hfguiDcXZMURvCtA==;
+	List-Owner; bh=hvw9A3mjTtO+Bd0cR+k/CQl/IFJ8om6/f4P0LpoHCL0=; b=CAcT9nGVLw5H+H
+	+qNLAehLvC7tbKCtZ84slvT8Nicpq6ZpKOMy5VXeEjN/JfiD5g5xzbo266mvNbJYFkt5EULdrRy4+
+	r2Q9vZAGnhYiVZ0TN5iASmhfis/8CrIIt2pO0x9VUIkZqQy3gR/pxidXRrZ64TLDrQ9hkYyYA3s0k
+	tEjIH/Bkx/LESZbPuy7XbsN7LvMqrYX3dyQm2dAuL2A0fuEs1lOedOmDSCvlsi/3XEs6T2HOaYzr+
+	wGFbJ8Da1DPO9k/Wz9J1TTHCoJjezj0ecO4R8D1JGer/UCHT2iQNjdzB8Kd+es0QQPUMvNGBL9IjC
+	260l21AWl9fmZjv/qjpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rRtCE-00C2zV-1w;
-	Mon, 22 Jan 2024 12:14:34 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1rRvDh-00CO0L-31;
+	Mon, 22 Jan 2024 14:24:13 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rRtCA-00C2x7-0z
-	for linux-phy@lists.infradead.org;
-	Mon, 22 Jan 2024 12:14:32 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <sha@pengutronix.de>)
-	id 1rRtBt-0001Ez-7i; Mon, 22 Jan 2024 13:14:13 +0100
-Received: from [2a0a:edc0:2:b01:1d::c0] (helo=ptx.whiteo.stw.pengutronix.de)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <sha@pengutronix.de>)
-	id 1rRtBp-001al3-I5; Mon, 22 Jan 2024 13:14:09 +0100
-Received: from sha by ptx.whiteo.stw.pengutronix.de with local (Exim 4.92)
-	(envelope-from <sha@pengutronix.de>)
-	id 1rRtBp-001Bwe-En; Mon, 22 Jan 2024 13:14:09 +0100
-Date: Mon, 22 Jan 2024 13:14:09 +0100
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Johan Jonker <jbx6244@gmail.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Algea Cao <algea.cao@rock-chips.com>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@collabora.com
-Subject: Re: [PATCH 3/3] phy: rockchip: Add Samsung HDMI/DP Combo PHY driver
-Message-ID: <20240122121409.GW4700@pengutronix.de>
-References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
- <20240119193806.1030214-4-cristian.ciocaltea@collabora.com>
+	id 1rRvDe-00CNzX-1d;
+	Mon, 22 Jan 2024 14:24:12 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 562831BF20E;
+	Mon, 22 Jan 2024 14:24:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1705933445;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=PrbPm4U9gTUgFkdJBeExNHbmpdtsVHY66VNg0wV3TpI=;
+	b=UCjldjGAg35lVQBN0mR/Ja8PzHUW42EQboTIr9Q5NKy+PB/D28qdW1oOc4F5ZQ3/MGfsKu
+	2+wCbOhAspaJUoKrzJXTj/fpGlUEHwLMZPqVrE5VeUo0u6ZMn3a9uXf+5m0B3LZ5rDpsYh
+	nhBuF/hIsEIUuVeCO7HY3X/NFUT+J3fCfoSqZv/FjddnaMfhqTbIG/s8958X5CdNcqGfQC
+	K9b1ACXRkYKCZ36n5YKaTaDCLOCEimcQEo1ghUhX1cw2kqbbnHBXEbejobqdkdGMVh5wdW
+	uYszU+SivBh3bBHK9O5iK8tf9oPdXsGCgOTYpLJ6gYFt0l2TZEXtlOPMvgZImw==
+Message-ID: <71c7e797-feaa-4285-9399-327b24308a34@bootlin.com>
+Date: Mon, 22 Jan 2024 15:24:02 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240119193806.1030214-4-cristian.ciocaltea@collabora.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 11/14] phy: cadence-torrent: add suspend and resume
+ support
+Content-Language: en-US
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Haojian Zhuang
+ <haojian.zhuang@linaro.org>, Vignesh R <vigneshr@ti.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti
+ <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Tom Joseph <tjoseph@cadence.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+ theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+References: <20240116182244.GA101245@bhelgaas>
+From: Thomas Richard <thomas.richard@bootlin.com>
+In-Reply-To: <20240116182244.GA101245@bhelgaas>
+X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240122_041430_496294_6D486450 
-X-CRM114-Status: GOOD (  37.28  )
+X-CRM114-CacheID: sfid-20240122_062410_847215_9283E841 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,176 +88,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 19, 2024 at 09:38:03PM +0200, Cristian Ciocaltea wrote:
-> Add driver for the Rockchip HDMI/eDP TX Combo PHY found on RK3588 SoC.
+Hello,
+
+On 1/16/24 19:22, Bjorn Helgaas wrote:
+> On Mon, Jan 15, 2024 at 05:14:52PM +0100, Thomas Richard wrote:
+>> Add suspend and resume support.
+>> The alread_configured flag is cleared during suspend stage to force the
+>> phy initialization during the resume stage.
 > 
-> The PHY is based on a Samsung IP block and supports HDMI 2.1 TMDS, FRL
-> and eDP links.  The maximum data rate is 12Gbps (HDMI 2.1 FRL), while
-> the minimum is 250Mbps (HDMI 2.1 TMDS).
+> s/alread_configured/already_configured/
 > 
-> Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
-> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> ---
->  drivers/phy/rockchip/Kconfig                  |    8 +
->  drivers/phy/rockchip/Makefile                 |    1 +
->  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 2045 +++++++++++++++++
->  3 files changed, 2054 insertions(+)
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> Wrap to fill 75 columns.  Add a blank line if you intend two
+> paragraphs.
 > 
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 94360fc96a6f..95666ac6aa3b 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -83,6 +83,14 @@ config PHY_ROCKCHIP_PCIE
->  	help
->  	  Enable this to support the Rockchip PCIe PHY.
->  
-> +config PHY_ROCKCHIP_SAMSUNG_HDPTX
-> +	tristate "Rockchip Samsung HDMI/DP Combo PHY driver"
-> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the Rockchip HDMI/DP Combo PHY
-> +	  with Samsung IP block.
-> +
->  config PHY_ROCKCHIP_SNPS_PCIE3
->  	tristate "Rockchip Snps PCIe3 PHY Driver"
->  	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
-> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
-> index 7eab129230d1..3d911304e654 100644
-> --- a/drivers/phy/rockchip/Makefile
-> +++ b/drivers/phy/rockchip/Makefile
-> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
->  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
->  obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
->  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
-> +obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
->  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
->  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
->  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> new file mode 100644
-> index 000000000000..d8171ea5ce2b
-> --- /dev/null
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -0,0 +1,2045 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright (c) 2021-2022 Rockchip Electronics Co., Ltd.
-> + * Copyright (c) 2024 Collabora Ltd.
-> + *
-> + * Author: Algea Cao <algea.cao@rock-chips.com>
-> + * Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> + */
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +#include <linux/delay.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/rational.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +
-> +#define GRF_HDPTX_CON0			0x00
-> +#define HDPTX_I_PLL_EN			BIT(7)
-> +#define HDPTX_I_BIAS_EN			BIT(6)
-> +#define HDPTX_I_BGR_EN			BIT(5)
-> +#define GRF_HDPTX_STATUS		0x80
-> +#define HDPTX_O_PLL_LOCK_DONE		BIT(3)
-> +#define HDPTX_O_PHY_CLK_RDY		BIT(2)
-> +#define HDPTX_O_PHY_RDY			BIT(1)
-> +#define HDPTX_O_SB_RDY			BIT(0)
-> +
-> +#define CMN_REG0000			0x0000
+> I don't know whether there's a strong convention in drivers/phy, but I
+> see several commit logs that capitalize "PHY".  "Phy" is not a
+> standard English word, so I think the capitalization makes it easier
+> to read.
+> 
 
-These register names are not particularly helpful. Maybe use a
+Yes indeed, PHY is used in lots of commit logs.
+So I guess I can use it.
 
-#define CMN_REG(x)			((x) * 4)
-
-Instead?
-
-> +
-> +static int hdptx_lcpll_frl_mode_config(struct rockchip_hdptx_phy *hdptx,
-> +				       u32 rate)
-> +{
-> +	u32 bit_rate = rate & DATA_RATE_MASK;
-> +	u8 color_depth = (rate & COLOR_DEPTH_MASK) ? 1 : 0;
-> +	const struct lcpll_config *cfg = lcpll_cfg;
-> +
-> +	for (; cfg->bit_rate != ~0; cfg++)
-> +		if (bit_rate == cfg->bit_rate)
-> +			break;
-
-You could use ARRAY_SIZE() to iterate over the array and save the extra
-entry at the end. Likewise for the other arrays used in the driver.
-
-> +
-> +	if (cfg->bit_rate == ~0)
-> +		return -EINVAL;
-> +
-
-> +static int rockchip_hdptx_phy_power_on(struct phy *phy)
-> +{
-> +	struct rockchip_hdptx_phy *hdptx = phy_get_drvdata(phy);
-> +	int bus_width = phy_get_bus_width(hdptx->phy);
-> +	int bit_rate = bus_width & DATA_RATE_MASK;
-
-What is going on here? bus_width is set to 8 in probe() using
-phy_set_bus_width(), but the value you pull out of phy_get_bus_width()
-is expected to contain the bit_rate and several other flags.
-
-It looks like you are tunneling flags from some other driver using this
-field. Isn't there a better way to accomplish this? If not, I think this
-needs some explanation.
-
-At least the variable should be renamed. it's called "bus_width" and it's
-passed to functions like hdptx_lcpll_frl_mode_config() which has this
-parameter named "rate" which is quite confusing.
-
-Sascha
-
-> +	int ret;
-> +
-> +	dev_dbg(hdptx->dev, "%s bus_width=%x rate=%d\n",
-> +		__func__, bus_width, bit_rate);
-> +
-> +	ret = pm_runtime_resume_and_get(hdptx->dev);
-> +	if (ret) {
-> +		dev_err(hdptx->dev, "Failed to resume phy: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	if (bus_width & HDMI_EARC_MASK)
-> +		hdptx->earc_en = true;
-> +	else
-> +		hdptx->earc_en = false;
-> +
-> +	if (bus_width & HDMI_MODE_MASK) {
-> +		if (bit_rate > 24000000)
-> +			ret = hdptx_lcpll_frl_mode_config(hdptx, bus_width);
-> +		else
-> +			ret = hdptx_ropll_frl_mode_config(hdptx, bus_width);
-> +	} else {
-> +		ret = hdptx_ropll_tmds_mode_config(hdptx, bus_width);
-> +	}
-> +
-> +	if (ret)
-> +		pm_runtime_put(hdptx->dev);
-> +
-> +	return ret;
-> +}
-> +
+Regards,
 
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Thomas Richard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
 
 -- 
 linux-phy mailing list
