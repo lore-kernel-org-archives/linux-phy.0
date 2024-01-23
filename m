@@ -4,79 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B887AC47258
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Jan 2024 16:09:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EC1AC47258
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Jan 2024 16:09:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FDrpYymSL2F0JhoQ+x6OSBlUP3oPEgM29mHHHCXIGPU=; b=LO1/LyTBkpEQ8J
-	AjwUZ+YEd0e6INNw2z62bN23Gr7EdO2/csnzOdfSV7xgCpsr4aT2mhROakKDBPyfNS7h7tyNhpcKi
-	VAvCTnajyMvi9RE8rrJtRp1chlhoMoY5f3v9zDL/J6syULfH9vpwDSRBZEkU25ZELEjSBOyLsVcOL
-	F9d8cpaclvNTrbTgjlx2+1QWtqE8nXTF4zQJJzfoadsnpspnRsXnVESNHCHuKBvoJexJmittnRgq9
-	07+Zzpn1K66+ADhQLQbdcEhOsl9LtiA9JFSW9rXTo8R5dMB93cGhPa/uMpRkGNsFsPikmqhuEq0UX
-	rZgKjdfB7D1SQU+QU21A==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s1V8hwx1AdwISYuACV6kpk7jEZfzLn4ysDhbfAEgMaI=; b=2HKFDOTm+owBfZ
+	JwTDQ7U4FVfNb5o46UsMtoVa59Sw6/W2bIh/+CV1gGaLnersB53izfk+XXoxLE2bxLYE2d04lQC/C
+	gpEZc1cIJ7P3WZak3epJ7tR1LvFPlJCtEUkja/TF2a+MKe9mi6p5qA+HIUK0xxBtD8KdS7Ij5soxU
+	UcKrmmy7091lej5JoRZtniE54DSK5iZT8eedQtl6pgnhiIG79YXIXD4wyRAe79VbdsQTN6QpHKQI8
+	uQJJQAvDe8ONPRqjA5hsYztXwZg44+Syf3I49+hiWmzsiNlibkNzmETBm94l8DWrx+TDXmob2euBZ
+	GVI6681bMdHtsRrIWQ7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSJLE-00HDbK-0y;
-	Tue, 23 Jan 2024 16:09:36 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1rSJLK-00HDcj-2Q;
+	Tue, 23 Jan 2024 16:09:42 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSJLC-00HDaQ-0E
+	id 1rSJLI-00HDcA-28
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Jan 2024 16:09:35 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-50edf4f478eso5970244e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 08:09:32 -0800 (PST)
+	Tue, 23 Jan 2024 16:09:41 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-50eaabc36bcso4845238e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 08:09:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=8devices.com; s=8devices; t=1706026171; x=1706630971; darn=lists.infradead.org;
-        h=message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=il2ElxRNzWyOW/OqtXsEs39fOt6ojB/hy8eo1dob0o0=;
-        b=CcFSIYygNJQoPeIdc7ygbP6Gp/TR60dKoHmnQCL+xYxq56V8qQ0nsIYtdD6oKLzjRe
-         ZspYyXNqmvGhJs6e5J7OX7eLBUo2S7K27GpPQYwKuhCky3Kdd98oFdt4wxhL8HbHFzSO
-         ovux/IieaYoMYe7ObcXth9N+d/PhRnQL12JQDc+fP++VkRCiTfn374BZYL59qlIviDqj
-         OoSxR6kV6zadgiM1qqUnEZHTG7M4TlKc+GpF33SMJWHQ0HreO+i9StwUBp2gU4AXNqz9
-         6M3BBt8ZR5UkmF/7BTEfmg1TuVga/s6rFBGJAjL3imJH2kzWC4vv118x94+IwLvhkUGB
-         /TSw==
+        d=8devices.com; s=8devices; t=1706026178; x=1706630978; darn=lists.infradead.org;
+        h=references:in-reply-to:message-id:date:subject:cc:to:from:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=TCsEp2lpUC7FkoNHc/fEc8WeD5OX/0nFFUd/EH7Tzfk=;
+        b=bfE2s1M4owY/ka+ii0cJ6eysrv+A4d1PVZW/pp2AG4K6/QMVoBop55l7Gfs9LHd9Ds
+         uzW61JCHHh8NqRpdhEMh39pGaM+9+NCxCtSmxTXgYuUj6dSIobYCic0g4N/zy0yCB9fr
+         8gTcQmBEBEEdmYRIZSAKWd6+pdB3071nyawGA0g/USN9RNFTC0pNS1F8jWuqqmc/f53d
+         SGGWeL1c3astMq7rEWV3EqCDUaUCmL+R/6r1G72ZHItHMBwK87GMApAzQfGdTkSVuIye
+         DXyRKxlBYFvtHTRCZ+7KG0msOPqJ2DYS+ofVxbL6wwj5McOf95n8yhq4IP8sqmoaflqz
+         aw1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706026171; x=1706630971;
-        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=il2ElxRNzWyOW/OqtXsEs39fOt6ojB/hy8eo1dob0o0=;
-        b=eRvc797MfMSZEM7bLburyI6nRwGazTV5kfHIhvRqY+C02N5csHXYl7cQWqP4wbO8gW
-         Q0XASK7QTI/qS3fHHtw1HF/EEEk81cRUeOqrsWY9+nfgssoojTe15gwP5jLKtBJcd/ex
-         uDvgGrSyavu1VDsJBiEE5oWI2OEDepVhqo4C7BUU3666iCTS05uwnCR8rNci9sy21kg1
-         JnsXjLqjwp4Mzz9JGYZCVrp1Gt8TsHE5jwOZJRyZKphBnycBKVpqvC6MKpqCtyRlLuSh
-         9e3xbCNueoRe6DMkkDeAyYJaMbVPTj6GTpbsbHdF8r6Kw03b9hXAhWhs25RT2Ztaw0gG
-         I+dQ==
-X-Gm-Message-State: AOJu0YwctVvAatlZjsINiCCMF8p5wejp+jvnFRbwhrVGFSpH2rik33LG
-	e278AejyloQ5NzNqoQAaOXHkuMcF4gPyAwdKKd3b52t0PfqR/om0R6HLr5J4IBw=
-X-Google-Smtp-Source: AGHT+IHw6j71sfnQVGET6XZK2wZu1RpeQY7Ck7bikm4cGXee9ZDOihsHZrKm9SF45FbWWaz4ASBX1A==
-X-Received: by 2002:a05:6512:2253:b0:50e:7a04:2229 with SMTP id i19-20020a056512225300b0050e7a042229mr2975733lfu.25.1706026171539;
-        Tue, 23 Jan 2024 08:09:31 -0800 (PST)
+        d=1e100.net; s=20230601; t=1706026178; x=1706630978;
+        h=references:in-reply-to:message-id:date:subject:cc:to:from
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=TCsEp2lpUC7FkoNHc/fEc8WeD5OX/0nFFUd/EH7Tzfk=;
+        b=wpNrIosYoKWepq1pIi8uQyd+HwzmKwWIXo/eSaoQ8evbv/GimhcBK0e42mczEQ3O3e
+         71VuXcz7Mrh3/iGfZCHBZvDuxU4Q0oEO/lbN4cCTJE+g+8vE6vnr2B14yFQxsqg1tLxh
+         Y1Kwc0N3iOtuAd/PdNiH5K4+GOoeu4mlhu75vBTGDl6zZfFKqZYdYtVdXMz1Ght3Xkbj
+         /udd6RM5WlyKsg35VIgW913LSpDOHqKdpilx6UYwaAAJDq6gBOhJvJHShRrRIF+Nq0kO
+         3OU2Tan8ueKOJs9agDqGTIOkFho4LMLiTkyoMxrsrUd5aVMireyI91sQ1PFrQR7/nOZS
+         VDEw==
+X-Gm-Message-State: AOJu0Yy5Xu9ISgdJ6otx6rlFFFO1oDbrHUtUGaDyRPZZ+oeGTigw7WYZ
+	2h2snsLVEltDtJDq7HXjka6ZoTb2+z9IWyHJrBqY8l4ujvVayC4hSLdKtKOHm7w=
+X-Google-Smtp-Source: AGHT+IGnnNSe1moGqxiwEYHIJKv7pqXFqRebOu3b3bLqL4dAFLPA+RPMl1SlBpFXalVBh4JuDpd0Hw==
+X-Received: by 2002:a05:6512:402:b0:510:56e:f56c with SMTP id u2-20020a056512040200b00510056ef56cmr674541lfk.31.1706026178547;
+        Tue, 23 Jan 2024 08:09:38 -0800 (PST)
 Received: from mantas-MS-7994.8devices.com ([84.15.37.222])
-        by smtp.gmail.com with ESMTPSA id q20-20020a0565123a9400b0050e7be886d9sm2336950lfu.56.2024.01.23.08.09.30
+        by smtp.gmail.com with ESMTPSA id q20-20020a0565123a9400b0050e7be886d9sm2336950lfu.56.2024.01.23.08.09.37
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 23 Jan 2024 08:09:30 -0800 (PST)
+        Tue, 23 Jan 2024 08:09:38 -0800 (PST)
 From: Mantas Pucka <mantas@8devices.com>
 To: Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Mantas Pucka <mantas@8devices.com>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 0/2] phy: qcom-qmp-usb: fix ipq8074/ipq6018 USB issues
-Date: Tue, 23 Jan 2024 18:09:18 +0200
-Message-Id: <1706026160-17520-1-git-send-email-mantas@8devices.com>
+Subject: [PATCH 1/2] phy: qcom-qmp-usb: fix register offsets for ipq8074/ipq6018
+Date: Tue, 23 Jan 2024 18:09:19 +0200
+Message-Id: <1706026160-17520-2-git-send-email-mantas@8devices.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1706026160-17520-1-git-send-email-mantas@8devices.com>
+References: <1706026160-17520-1-git-send-email-mantas@8devices.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_080934_106298_55C5BDFE 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240123_080940_698954_B0B6C2DF 
+X-CRM114-Status: GOOD (  13.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,16 +96,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Two issues were found in ipq8074/ipq6018 USB support. Sending as series,
-because fixes touch the same code.
+Commit 2be22aae6b18 ("phy: qcom-qmp-usb: populate offsets configuration")
+introduced register offsets to the driver but for ipq8074/ipq6018 they do
+not match what was in the old style device tree. Example from old
+ipq6018.dtsi:
 
-Mantas Pucka (2):
-  phy: qcom-qmp-usb: fix register offsets for ipq8074/ipq6018
-  phy: qcom-qmp-usb: fix serdes init sequence for IPQ6018
+<0x00078200 0x130>,     /* Tx */
+<0x00078400 0x200>,     /* Rx */
+<0x00078800 0x1f8>,     /* PCS */
+<0x00078600 0x044>;     /* PCS misc */
 
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 30 ++++++++++++++++++++++++++++--
- 1 file changed, 28 insertions(+), 2 deletions(-)
+which would translate to:
+{.., .pcs = 0x800, .pcs_misc = 0x600, .tx = 0x200, .rx = 0x400 }
 
+but was translated to:
+{.., .pcs = 0x600, .tx = 0x200, .rx = 0x400 }
+
+So split usb_offsets and fix USB initialization for IPQ8074 and IPQ6018.
+Tested only on IPQ6018
+
+Fixes: 2be22aae6b18 ("phy: qcom-qmp-usb: populate offsets configuration")
+Signed-off-by: Mantas Pucka <mantas@8devices.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 243cc2b9a0fb..05b4c0e67896 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -1556,6 +1556,14 @@ static const char * const qmp_phy_vreg_l[] = {
+ 	"vdda-phy", "vdda-pll",
+ };
+ 
++static const struct qmp_usb_offsets qmp_usb_offsets_ipq8074 = {
++	.serdes		= 0,
++	.pcs		= 0x800,
++	.pcs_misc	= 0x600,
++	.tx		= 0x200,
++	.rx		= 0x400,
++};
++
+ static const struct qmp_usb_offsets qmp_usb_offsets_ipq9574 = {
+ 	.serdes		= 0,
+ 	.pcs		= 0x800,
+@@ -1616,7 +1624,7 @@ static const struct qmp_usb_offsets qmp_usb_offsets_v7 = {
+ static const struct qmp_phy_cfg ipq8074_usb3phy_cfg = {
+ 	.lanes			= 1,
+ 
+-	.offsets		= &qmp_usb_offsets_v3,
++	.offsets		= &qmp_usb_offsets_ipq8074,
+ 
+ 	.serdes_tbl		= ipq8074_usb3_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(ipq8074_usb3_serdes_tbl),
 -- 
 2.7.4
 
