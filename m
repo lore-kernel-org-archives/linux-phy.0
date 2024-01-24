@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70FE7C47422
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:37:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5290C47422
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:37:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oiTOSM8t07kybbUPCQeSjza50ucFSgSutX4vACJnPiM=; b=ggOzdorXtKVBRC
-	vy9tyUwicLx0BdZG++pbstpyblpoPATbN89iR3JzH0f2wtr+yeM9en3H1ahYHefzXwkg51z/v0zgw
-	JXBEPaPQXCaajzyCjtb+70cjU2imGrjo3Ldp6rGFxPArLi8zWIgu+Ip549LPlEaNWxJyF/9X0P4XZ
-	GfwO0061hhJHQcof5rjfb2p6ZOJ//JrqWNGrhdgIoVJ+2DU7eSNNVkslOPVqNZ5jQ+TL4WgxDHflc
-	b3IrkfNqCWgsgBIFpInSozSJhZ3N6LLc1lFdY8MR45j1mJWdIMwJaC70q/xgwsBf8sk+hTXW6DCGX
-	8mOLUuYbUPLn/heFj2fg==;
+	List-Owner; bh=Yg52AsTytXDe23rpwuZGXIzUFXwz4fnzONp2RTR5y9Y=; b=CaAc85rCDkIHy+
+	w8x9TYEjm21CaTKRk/730jlJjUCJ2rMEO+S3XLSZrmSni1H8WCDphMqibHGEFoYQfMtKqn6OkIEpO
+	6H/29dOqt5BIZIMBymZPsisHAhIolqoMe/9FaQTwxFXC8Z+6j5vcBbCAjL0Vpq4s/Ac7Muje54Gya
+	NqHkVtBKr3XlIRba48n6mgY10XO/OMWNd4tK3JhWJzfbzQRQL4wdcU3PrHyVeg9ihdxzK9/uRvkpu
+	YH2hsVg/qSZulWjsay1Gj4X7hdYbKla/eT1yBLjLMxelKulRoPEx5KJeysZuu0i2s8k6Ri1BBZ8dB
+	Zx3ameTzCk4RSgCn3kzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXpM-001sXU-05;
-	Wed, 24 Jan 2024 07:37:40 +0000
+	id 1rSXpQ-001sYk-1M;
+	Wed, 24 Jan 2024 07:37:44 +0000
 Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXpJ-001sWh-2p
+	id 1rSXpN-001sYB-2I
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 07:37:39 +0000
-Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-1d70a98c189so30094555ad.1
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:37:36 -0800 (PST)
+	Wed, 24 Jan 2024 07:37:42 +0000
+Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-1d6ff29293dso34332205ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:37:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706081856; x=1706686656; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706081861; x=1706686661; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=l7zLlm6d5CA8X7mFvOVBpegHqSNqfCtqpbevUvsC+dc=;
-        b=IB20K0pGJMkITj8ZuE/XuUGwIunpKMKIqGK61zsF1RMB/5vRQj/py18KUyUOFwO3aZ
-         1tpICIsDhv/gp7sRNkO/h8zBgjS7NL5yb2yCzKTYiUr4ZzWNgOgLKaf+nBKxIGccMIvp
-         83go1XRy8KFztOxkoi394euGz/eQM4wqAlyVraVwPzZRpsmOXiRpCLklL169Bz8I4fHq
-         pr9iuDz6P2rSLLX8+IFyNBmZKw0kAmsFBYdSc+nCoKb/68B3E6jhFOTCtddJQrjLwmBc
-         0QNthU+0QYGeA+vDbKq+tCpe3q3DpC4eUJq9aWns7Na9aoV3d8DdW5MMZhjaKz/M4wtV
-         oZIA==
+        bh=iKf4wr/PhU8C8jJcjTd70SR5SaHAZ16yhIfEOdFxtCU=;
+        b=GYyhKhNDV+tye+kWnsC2tMOBh+TOp40ETfeb911LKzwEZzEjBfrNQceIL+8ELEliuw
+         mivwUCfLOmO6k6Hypz3Jh7Y/qnGXk6f+j29OVQsnRKl1O+NYpoVjxFNCF5m3LFBNkJL/
+         9anldNPxAUbnGJwx+FUXdjWLQOi5prUYqFKuJa5bGzyW+x3T6V3BA5zwRlQsa05Yoqiw
+         KeXPGBlgPF+xAbu1RYPQMSEx5ny+r5kAGGWNKoKRUbU/F2CnveGu8aLgkN1Jsobc+RbH
+         RpjOZdtyg6+uf9OKTcTzj6XSd6cUP1EanWxKl4dUEh9248sM5lnu2t31aUx9GsOyRjq5
+         ow2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706081856; x=1706686656;
+        d=1e100.net; s=20230601; t=1706081861; x=1706686661;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=l7zLlm6d5CA8X7mFvOVBpegHqSNqfCtqpbevUvsC+dc=;
-        b=LnJqw1TZwHJm1o5PC+82oMxEjuUudXwwUgFUIgRpyo7C5dv8h3eND8n2CNMybzvfWA
-         MUqJCmkzcx3GZR6HrLwCvd7QjhucTb7O+6+vlmAYYzItD1NcpWxn7rM0h3jBarcBylYE
-         wFhkXWvAg6Bb2ph5LaLgB3bBNqXXdnlAMi42rhfQv4AVbRhZtMXv+CJJyXA9QM3uez6t
-         mM97dFiIsnh2hxMs/on6kfpZxpqSPmurtaYh4niL4IWs6BIuNqQ0OMZKCcIo6aKsBzSx
-         3f2uCM6pIyjqoVrSKWlgwYXdufFme8aCxgmTpZm2n5WZi8Umj+4cTLliY4MRKTK6xZR2
-         RYLg==
-X-Gm-Message-State: AOJu0YxLZfxuiiDOQmToNVnIX9xiG6U98BMx2jgDRxIfZvKKXKcEGOm9
-	oxgZPRTdRqo2LYCu7PiwGUhbDKdv8nLIe/toFtWKOPW+JHCKebeHcZTWM1ld+w==
-X-Google-Smtp-Source: AGHT+IHlsAL4NqkYacbzZuLMy3cYbkj5DCyJUwh+SajhTTNjeDpitNlfwHG4VfJa42WgZplyNBAqSw==
-X-Received: by 2002:a17:903:11cc:b0:1d7:46a2:9383 with SMTP id q12-20020a17090311cc00b001d746a29383mr326721plh.33.1706081856061;
-        Tue, 23 Jan 2024 23:37:36 -0800 (PST)
+        bh=iKf4wr/PhU8C8jJcjTd70SR5SaHAZ16yhIfEOdFxtCU=;
+        b=CuPcmy8JaKcAMW1DYMdF7LDFMsa9JqPEWWuZ3Lsl+B2icWZ5p6Xwo5kg574fQKxZa7
+         Hh/e8wRIlJstWuxU42QRwat4jy8/ISgP9a9IHavzs5mRhGuJkxKSeW3cLrsDk+bcB0ek
+         Kv0n0A61TMljuVfSOmsxgPTnN00lAk0LZvA+70lu6rxyukxv3VYG16Vz9+E+L/A59OwB
+         owTBnEbKBOvcPASe1DR3EUr3k1pApSfvkWhaoHtYq6QJsK96G2HfJv3UGu7QyMY98sZW
+         DOvyKxj/xxFJNzVczGUke0DIDOCpiU55Fwr3Xu8d8JlRADD9Ak9Gtj+wc2mryxM2St/W
+         rCCA==
+X-Gm-Message-State: AOJu0YzH7Ztsx+jlOPVmKYX2U422OMrSP+7jEAzHxQuvngBiv4UkPkmA
+	OJBpveWK/iWYL4aUNcgnr4b16sZSl7P5Pvjo9tzp0d2md+2mCUUZojkCLCDGXw==
+X-Google-Smtp-Source: AGHT+IFzkjDdfXVH1eFhiSZ/tTh3VQLR3Zc4fY3VVxilv+uGwzMM7MRyx1ANpgPtt9PStovNzoxI6A==
+X-Received: by 2002:a17:902:d34c:b0:1d7:17ce:cc5b with SMTP id l12-20020a170902d34c00b001d717cecc5bmr300844plk.133.1706081861253;
+        Tue, 23 Jan 2024 23:37:41 -0800 (PST)
 Received: from [127.0.1.1] ([117.217.189.109])
-        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.37.31
+        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.37.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Jan 2024 23:37:35 -0800 (PST)
+        Tue, 23 Jan 2024 23:37:40 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Date: Wed, 24 Jan 2024 13:06:38 +0530
-Subject: [PATCH 10/14] arm64: dts: qcom: sm8350: Drop PCIE_AUX_CLK from
- pcie_phy nodes
+Date: Wed, 24 Jan 2024 13:06:39 +0530
+Subject: [PATCH 11/14] arm64: dts: qcom: sm8450: Drop PCIE_AUX_CLK from
+ pcie_phy node
 MIME-Version: 1.0
-Message-Id: <20240124-pcie-aux-clk-fix-v1-10-d8a4852b6ba6@linaro.org>
+Message-Id: <20240124-pcie-aux-clk-fix-v1-11-d8a4852b6ba6@linaro.org>
 References: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
 In-Reply-To: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -80,21 +80,21 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1736;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1078;
  i=manivannan.sadhasivam@linaro.org; h=from:subject:message-id;
- bh=49EHGJo+BF0aAusaw6YV9QxMus+FF03TSQS/+RfWzT8=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4EBMA0JPQ+taWm5D5iCJHV6WyXEqHPIoZZD
- U6GiyBn8wSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+BAAKCRBVnxHm/pHO
- 9Tf9B/wNcnSzONZ35yT0CY2kXhWYHcTu/lh+g6/zyMICDLDyuUoIMb84lVoC1rzB15CMmHG5HYL
- uc14OFvnZFRmLblaowYZ/f5Gc/MX1XdfLaBrkYtj5V4xNaBjlT3cOdSRxXbtW8dda2fkIz2CJ48
- CcESQ81hAKgTLVk0h4dD0nAy/7E32DB/JFTlLbbe6CcTCpY4lBw/o3JSZuA+5xqXgJMGl2SkwM8
- 1IJb0QfcO1jIR2kcVwtinNom162H83LDvSZhcvgCf0WQlH802OzK6Mv+nDTLUUEPlvNrMRgul5z
- VFa01hCGZD73rM3RkRBHO3v8SvvcXVIl/u4NTdYV5umIymGM
+ bh=q4REQuD/EeSNLvb14a6jAbCKy8un8bWTNayXDrd2sPM=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4FuIFWugJBxWD5/8i6mcSozobTq0w7ntmVL
+ VXJIpEnfTKJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+BQAKCRBVnxHm/pHO
+ 9QAsB/9WNzb2oQg0/MVu/Ww+cCD6j6lVrfmW+ehkb9jNlHHSOJbLRlu3JI1T39wTq26klASZlbZ
+ +7h2sNu4y+h4T1zNFyxE+sqhAXkOkO4E0wiLMcFaDg2Hh2YOnAC2wMe5ieylobU/Oy33OuJCMTE
+ GqSttxJ8dfRJjr8Ks9tH8r02I5kPEGjwHaOg8d3YzlddoOyM8ywBOFiTMHNcqNj6nk+J8FylhvB
+ lY96HKZx28DIjqFR8z1vQ2ft8VlwJgjXfK/u2ckDV7GYilXZM9PCSY6Jn2b1tpeVsr8HJR1RGuH
+ uCMB1vw4LnwteK6iPQABiiocCqFgYw6wNNC9cZ0mPbTgubXw
 X-Developer-Key: i=manivannan.sadhasivam@linaro.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_233737_914288_01FEA503 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20240123_233741_755063_729149FA 
+X-CRM114-Status: UNSURE (   8.88  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -113,47 +113,33 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 PCIe PHY hw doesn't require PCIE_AUX_CLK for functioning. This clock is
-only required by the PCIe controller. Hence drop it from pcie_phy nodes.
+only required by the PCIe controller. Hence drop it from pcie_phy node.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8350.dtsi | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
+ arch/arm64/boot/dts/qcom/sm8450.dtsi | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8350.dtsi b/arch/arm64/boot/dts/qcom/sm8350.dtsi
-index e78c83a897c2..23a9060f21d9 100644
---- a/arch/arm64/boot/dts/qcom/sm8350.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8350.dtsi
-@@ -1571,12 +1571,11 @@ pcie0: pcie@1c00000 {
- 		pcie0_phy: phy@1c06000 {
- 			compatible = "qcom,sm8350-qmp-gen3x1-pcie-phy";
+diff --git a/arch/arm64/boot/dts/qcom/sm8450.dtsi b/arch/arm64/boot/dts/qcom/sm8450.dtsi
+index 01e4dfc4babd..1e0091dabaf1 100644
+--- a/arch/arm64/boot/dts/qcom/sm8450.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8450.dtsi
+@@ -1830,13 +1830,11 @@ pcie0_phy: phy@1c06000 {
+ 			compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy";
  			reg = <0 0x01c06000 0 0x2000>;
+ 
 -			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
 -				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
 +			clocks = <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
  				 <&gcc GCC_PCIE_0_CLKREF_EN>,
- 				 <&gcc GCC_PCIE0_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
  				 <&gcc GCC_PCIE_0_PIPE_CLK>;
--			clock-names = "aux", "cfg_ahb", "ref", "rchng", "pipe";
-+			clock-names = "cfg_ahb", "ref", "rchng", "pipe";
- 
- 			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
- 			reset-names = "phy";
-@@ -1654,12 +1653,11 @@ pcie1: pcie@1c08000 {
- 		pcie1_phy: phy@1c0e000 {
- 			compatible = "qcom,sm8350-qmp-gen3x2-pcie-phy";
- 			reg = <0 0x01c0e000 0 0x2000>;
--			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
--				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+			clocks = <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
- 				 <&gcc GCC_PCIE_1_CLKREF_EN>,
- 				 <&gcc GCC_PCIE1_PHY_RCHNG_CLK>,
- 				 <&gcc GCC_PCIE_1_PIPE_CLK>;
--			clock-names = "aux", "cfg_ahb", "ref", "rchng", "pipe";
-+			clock-names = "cfg_ahb", "ref", "rchng", "pipe";
- 
- 			resets = <&gcc GCC_PCIE_1_PHY_BCR>;
- 			reset-names = "phy";
+-			clock-names = "aux",
+-				      "cfg_ahb",
++			clock-names = "cfg_ahb",
+ 				      "ref",
+ 				      "rchng",
+ 				      "pipe";
 
 -- 
 2.25.1
