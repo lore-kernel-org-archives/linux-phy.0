@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4694C47422
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:37:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D4B1C47422
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:37:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YlVqtpfDSN7Kk7DJ1GH9lRDK7QGaVvgdXtJFzNzSdiA=; b=B8mMBrDPX9KBHZ
-	xttnugxbxXRq9r1sFYkj5edyj18f1VT/F0JwxYMr6eGeCueVg+IpEDNtVIdO+liboL0W0WCiP2Sq3
-	cf2ZStkKyEBBGd6gvo1a/U4YwN3Rk6qXra1+XpPsauslpewR5NzDunAkfZMIC5wwrC03UZiMl59BU
-	PvuLfKattWi7Arr8KtQAd3wHf2ZEJbkQfzpUctptxikdGq/Lzdda15O/iY4xvRKK5PxWU7/Iu9dDj
-	cTPkTk+3zlwgKldZs9Wzl77k2T/rSKciV7e7rOGaXWkWN81kCy5TM3/8mgdH3vK4hu6WE4WAzmGcI
-	MRe7LoR0TTJyNGSMZKow==;
+	List-Owner; bh=n4jAGHF8zlXMKgPN16JCgMEJhUaRopjJ26V0glxAEIM=; b=JKITQPORkWy0xt
+	7iXrtr4YvWD5B9gUVNi35KFzrb/8eTUrfw97jWlv2TmZ7hcfNI7zymkqh9vaK26zXmS+o8FUH6B5Y
+	0RbpauOXR9xmPY41xGIi5zv5sBUmCJdggHBvzlYEuateW9LhjXKDz6XyoeKGZ34jOxbHrMmNXB5RH
+	UYTyEAY1LhK0o6bC+1XCnMpKCpzmSGH+tWOdWOCI8H1pyVK8uXtDN01EP9Pd7725YUCZUux9HYShG
+	voIKpihBn3RfKdP57BFKR6B+QD4QUHU4SJoqsqLoxfJBs+DojIzTKSkCfvjv369fo/xWhCg1kuAs4
+	3YI1rdpJ1fMtCDw//auA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXpE-001sVS-0i;
-	Wed, 24 Jan 2024 07:37:32 +0000
-Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
+	id 1rSXpJ-001sWw-2C;
+	Wed, 24 Jan 2024 07:37:37 +0000
+Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXpB-001sTd-0E
+	id 1rSXpH-001sUy-1b
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 07:37:30 +0000
-Received: by mail-pl1-x633.google.com with SMTP id d9443c01a7336-1d51ba18e1bso46528685ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:37:25 -0800 (PST)
+	Wed, 24 Jan 2024 07:37:36 +0000
+Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-1d74dce86f7so24707725ad.2
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:37:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706081845; x=1706686645; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706081850; x=1706686650; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=CXDDfi064rCtRThZJZGkVDjzRTpEFvKlRw59+OoT04Y=;
-        b=rgKLLV8ZtastS4Jz1aqMeS1Hr5hu9wa/w9sSbFTNNBMyYlkbdkkorxmTmhIHH9y9sn
-         SqarHUZe3c9UXu4YCFzc+m8KC12D/QUvYDvoI0QESY/KmLRYZWe/YNya9qwOn9Aux8TM
-         l8VagOLBOLpNweFgosTtl7F+M8WfG1rr9NESw491rBw6PWfxqNUe77n5VQhdLsnNznR+
-         ntv7AXMAqlYYUznAdxJdA8BoHpDPCe9ZHQD5FQJ1oEp2oFgSE9a1+oSTiYRO7dGPzN5x
-         EwLgDaUDQGQgffOqMZZ4dm6OAVDOQ4qt1v2fSHEb+zRWgVnxeTi4Vapy5WI8nqv1T8fG
-         1PTA==
+        bh=7tKk/gUA2vZt4YWRFyEnjgkAtVvTsiFIxZN8q5DEuUk=;
+        b=GasEa2YYE68hGMQwjdZLd26vWDP/6vA2EYLYK5nfLNqrjwDZTWdjrNnJqUdiQGV/Ui
+         T7ZnjtyiZ2xNGlVBBqOCNsq+tDb9eMNkvvK5cs8JRLlGX5pB7fyD4VHBFQ8yFHuMI9Qf
+         IgYThHMG9OjJLNx5cZSz0Z8WeWmCXBoPb12OiqJ8UJOZqGxIF/Qj8b/pMtZVPvATivV1
+         KQ9uGIa6L9cJBZQgIQtSW1aY8Mxpu7Xb77T7NMtxscAHuVs5Mcl1qVs4m6RYPiAKLbnH
+         3r1o+DlXu9LBer5BuQg4yB57yK0Jq4xUY3haPYFenxaaV+enllFwQiLD2BmpETS/ku2G
+         uEjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706081845; x=1706686645;
+        d=1e100.net; s=20230601; t=1706081850; x=1706686650;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=CXDDfi064rCtRThZJZGkVDjzRTpEFvKlRw59+OoT04Y=;
-        b=tfP4Ck2cTYcLbXWVpT498itSU24+1kpXoooXeM+k/R6WDCtjUocDzz5b30e9ui9YVt
-         ip/abfplnVaePR1jqlvd36kHTIb1dd8hHIizu8PhHtasZjDrep/7r17z+HVCK7w1G9l/
-         41ljjtqz8jelFrDy0CJUKhfjLu9aqJb4tazWbXbEv2jhBQxd5hZdzSezP/PzU1kaiQgy
-         9Ep6UZEAUJYRGramscR5JD9iYelvyQwhP56PuYxv5uUq7J7Cmz7g/QXQeXXcE9p2e+jv
-         oVBNtJaP66b0NYw06gGRBapmDSKhXX7UQuAB0N3h4ECAqsEkk3GjH2sYNkznSjTOybfL
-         LD4A==
-X-Gm-Message-State: AOJu0YyEp4JwLKbFZvVMeFzHuIUHfLq8iHwIPN+vS5XmiNiF8hlOLUC7
-	eizCxnpaZPijG+JOPs8nX7BFCNOllC96fW/i5xE8ZsHrFFzkOXI353vh3s27zg==
-X-Google-Smtp-Source: AGHT+IF99KK54fuqFFMfmzqMybtJrANjExFeTmDyL1Qt8Q4Zi7bMzYpz82W5D68CZj4gDoCyRGD5yA==
-X-Received: by 2002:a17:903:1206:b0:1d7:5b9a:c121 with SMTP id l6-20020a170903120600b001d75b9ac121mr632265plh.20.1706081845404;
-        Tue, 23 Jan 2024 23:37:25 -0800 (PST)
+        bh=7tKk/gUA2vZt4YWRFyEnjgkAtVvTsiFIxZN8q5DEuUk=;
+        b=FM82tGjy7JS2wsJUaTKDfjVKXaMuRGMoBGyAYBpVSQ1pAcBHNyvb6g6+le1Q76SSRr
+         LZ89BO1HPeaXlpmJYXfnYPCRCh28ZaiEC6/r0at0sllFM+/mUnaUA5lICgl2iMdcMaR5
+         +cFGIgfpvMklMQL6gY9iDnvemInFSEFxVvhM7CFbDbV6Z+hXEFQMk/CoFXnRQkps4Taq
+         5RsrxLPu5inLJeaJilRVdvChuoKyUOoxkEoN8lVPf/PRU0IBVdsyV+f/DaOBnvlea9Sz
+         f+0HY4iVRudD0w6aEj7Uj71VaBLkIy4WsE/dGEHHxKkJGXZyxRRwV+OqocURAjYme4Hc
+         VWJQ==
+X-Gm-Message-State: AOJu0YxLjxUavOmFFSPmtf+y8YtqHemUXjtZxg5qiCZUXmAEvLN8hbkE
+	j0Wrjzqk6OuxJYnF1TvwWv3HgTaUj70xeg5T1G4vQNEv51BL+Wmdtf4zBLHocw==
+X-Google-Smtp-Source: AGHT+IE5gSR9S1hNumT5Gs9vRn/HrJ2yq2svOakpJLMn1E1SeeC1nBHi/YQbyiTo51gPSYVY5Nv8ug==
+X-Received: by 2002:a17:903:492:b0:1d3:d27f:77c9 with SMTP id jj18-20020a170903049200b001d3d27f77c9mr390645plb.14.1706081850722;
+        Tue, 23 Jan 2024 23:37:30 -0800 (PST)
 Received: from [127.0.1.1] ([117.217.189.109])
-        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.37.20
+        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.37.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Jan 2024 23:37:25 -0800 (PST)
+        Tue, 23 Jan 2024 23:37:30 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Date: Wed, 24 Jan 2024 13:06:36 +0530
-Subject: [PATCH 08/14] arm64: dts: qcom: sc7280: Drop PCIE_AUX_CLK from
- pcie_phy node
+Date: Wed, 24 Jan 2024 13:06:37 +0530
+Subject: [PATCH 09/14] arm64: dts: qcom: sc8280xp: Drop PCIE_AUX_CLK from
+ pcie_phy nodes
 MIME-Version: 1.0
-Message-Id: <20240124-pcie-aux-clk-fix-v1-8-d8a4852b6ba6@linaro.org>
+Message-Id: <20240124-pcie-aux-clk-fix-v1-9-d8a4852b6ba6@linaro.org>
 References: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
 In-Reply-To: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -80,21 +80,21 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1245;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3664;
  i=manivannan.sadhasivam@linaro.org; h=from:subject:message-id;
- bh=xQGmJ609x5rY5WnQZu2UiuYBmCFSMa/qh9a8EVqrblk=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4E35ElitvKxvgn52B7cnJz0JUaxM9PnNc0A
- YZLT3RUs1+JATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+BAAKCRBVnxHm/pHO
- 9WzEB/9AWVJHzHB6yiYRzLzH5QMJyCI3Uey/WEyC9zrlInlCFP8ttR0TRYGIqNPMtlsudajr4Gh
- RwpC8CAwS3A4Jf0oosP/6RXE1zNUfu2UjlcdqwOOxHs8AHMNKKM3toEfV0hFTdMklLboKyoEpgW
- sj2l+ax0lyo1k2+nMyO9dzjY/ydeqp96BnCqc+N/TRwcJ3md0oC/ZejQjOYqewn84720yaqyduf
- kstWJuleC/arnJeAq0oQL/W/vG4KnHN0bm+4Do+Ab2t+dKkViydZvkDALc8juNUZ0jUrVUJ5ndh
- KHNGEK7XglGMRE/SqBmQdOXjH9s7XvhAlHttDhKii90je4kW
+ bh=5NPwNoYz985HYek6uHJDI/5wY+uuiyXnKa4opvBCJj8=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4EVGO3TtV6DQzvJ/PExud2tothVXBlk9nJc
+ KgeDCk+AGuJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+BAAKCRBVnxHm/pHO
+ 9ae/B/45By/VPGVbVxv8n0z7xSGfU/JGiMFrTjUS69Gmsob8PF7fxftlTWwZCLkrUgIuJRBzdkb
+ ZkHzrSGbdR0j2Foxfp/j51A4pVzGBC45wverE1WOVAm7SXjE1RiAe+KFpN70Jnciy0gDs0voIsC
+ I8h+my8LE3a9yTp9A2F0se8GWbdtNlTIXQLB3l5n1QNEohi+6AaJMXKXo2RAZ0T91aPbtOmcn9z
+ tkxrffCFt8jriWYRyJB7Nw1aHfs7LoWB70dND9G+MqYRK9dMhufB9K7BXZgQniBJZ9xkoe29Tzt
+ jJRaUqkSIdQFvvfxsXfrJN5i+O0TgUj8StTbu76AE2zXoRtv
 X-Developer-Key: i=manivannan.sadhasivam@linaro.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_233729_111285_D6AB7A55 
-X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-CacheID: sfid-20240123_233735_533712_DFB3A6B5 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -113,39 +113,97 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 PCIe PHY hw doesn't require PCIE_AUX_CLK for functioning. This clock is
-only required by the PCIe controller. Hence drop it from pcie_phy node.
-
-This also warrants a new compatible as the clocks differ between SC7280 and
-SM8250.
+only required by the PCIe controller. Hence drop it from pcie_phy nodes.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sc7280.dtsi | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/qcom/sc8280xp.dtsi | 25 ++++++++++---------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7280.dtsi b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-index 83b5b76ba179..00fa14777417 100644
---- a/arch/arm64/boot/dts/qcom/sc7280.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-@@ -2238,15 +2238,13 @@ pcie1: pcie@1c08000 {
- 		};
+diff --git a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+index febf28356ff8..cc33ef47d5a7 100644
+--- a/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc8280xp.dtsi
+@@ -1785,13 +1785,12 @@ pcie4_phy: phy@1c06000 {
+ 			compatible = "qcom,sc8280xp-qmp-gen3x1-pcie-phy";
+ 			reg = <0x0 0x01c06000 0x0 0x2000>;
  
- 		pcie1_phy: phy@1c0e000 {
--			compatible = "qcom,sm8250-qmp-gen3x2-pcie-phy";
-+			compatible = "qcom,sc7280-qmp-pcie-phy";
- 			reg = <0 0x01c0e000 0 0x1000>;
--			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
--				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+			clocks = <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
- 				 <&gcc GCC_PCIE_CLKREF_EN>,
- 				 <&gcc GCC_PCIE1_PHY_RCHNG_CLK>,
- 				 <&gcc GCC_PCIE_1_PIPE_CLK>;
--			clock-names = "aux",
--				      "cfg_ahb",
-+			clock-names = "cfg_ahb",
- 				      "ref",
- 				      "refgen",
- 				      "pipe";
+-			clocks = <&gcc GCC_PCIE_4_AUX_CLK>,
+-				 <&gcc GCC_PCIE_4_CFG_AHB_CLK>,
++			clocks = <&gcc GCC_PCIE_4_CFG_AHB_CLK>,
+ 				 <&gcc GCC_PCIE_4_CLKREF_CLK>,
+ 				 <&gcc GCC_PCIE4_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_4_PIPE_CLK>,
+ 				 <&gcc GCC_PCIE_4_PIPEDIV2_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref", "rchng",
++			clock-names = "cfg_ahb", "ref", "rchng",
+ 				      "pipe", "pipediv2";
+ 
+ 			assigned-clocks = <&gcc GCC_PCIE4_PHY_RCHNG_CLK>;
+@@ -1883,13 +1882,12 @@ pcie3b_phy: phy@1c0e000 {
+ 			compatible = "qcom,sc8280xp-qmp-gen3x2-pcie-phy";
+ 			reg = <0x0 0x01c0e000 0x0 0x2000>;
+ 
+-			clocks = <&gcc GCC_PCIE_3B_AUX_CLK>,
+-				 <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
++			clocks = <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
+ 				 <&gcc GCC_PCIE_3A3B_CLKREF_CLK>,
+ 				 <&gcc GCC_PCIE3B_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_3B_PIPE_CLK>,
+ 				 <&gcc GCC_PCIE_3B_PIPEDIV2_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref", "rchng",
++			clock-names = "cfg_ahb", "ref", "rchng",
+ 				      "pipe", "pipediv2";
+ 
+ 			assigned-clocks = <&gcc GCC_PCIE3B_PHY_RCHNG_CLK>;
+@@ -1982,13 +1980,12 @@ pcie3a_phy: phy@1c14000 {
+ 			reg = <0x0 0x01c14000 0x0 0x2000>,
+ 			      <0x0 0x01c16000 0x0 0x2000>;
+ 
+-			clocks = <&gcc GCC_PCIE_3A_AUX_CLK>,
+-				 <&gcc GCC_PCIE_3A_CFG_AHB_CLK>,
++			clocks = <&gcc GCC_PCIE_3A_CFG_AHB_CLK>,
+ 				 <&gcc GCC_PCIE_3A3B_CLKREF_CLK>,
+ 				 <&gcc GCC_PCIE3A_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_3A_PIPE_CLK>,
+ 				 <&gcc GCC_PCIE_3A_PIPEDIV2_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref", "rchng",
++			clock-names = "cfg_ahb", "ref", "rchng",
+ 				      "pipe", "pipediv2";
+ 
+ 			assigned-clocks = <&gcc GCC_PCIE3A_PHY_RCHNG_CLK>;
+@@ -2082,13 +2079,12 @@ pcie2b_phy: phy@1c1e000 {
+ 			compatible = "qcom,sc8280xp-qmp-gen3x2-pcie-phy";
+ 			reg = <0x0 0x01c1e000 0x0 0x2000>;
+ 
+-			clocks = <&gcc GCC_PCIE_2B_AUX_CLK>,
+-				 <&gcc GCC_PCIE_2B_CFG_AHB_CLK>,
++			clocks = <&gcc GCC_PCIE_2B_CFG_AHB_CLK>,
+ 				 <&gcc GCC_PCIE_2A2B_CLKREF_CLK>,
+ 				 <&gcc GCC_PCIE2B_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_2B_PIPE_CLK>,
+ 				 <&gcc GCC_PCIE_2B_PIPEDIV2_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref", "rchng",
++			clock-names = "cfg_ahb", "ref", "rchng",
+ 				      "pipe", "pipediv2";
+ 
+ 			assigned-clocks = <&gcc GCC_PCIE2B_PHY_RCHNG_CLK>;
+@@ -2181,13 +2177,12 @@ pcie2a_phy: phy@1c24000 {
+ 			reg = <0x0 0x01c24000 0x0 0x2000>,
+ 			      <0x0 0x01c26000 0x0 0x2000>;
+ 
+-			clocks = <&gcc GCC_PCIE_2A_AUX_CLK>,
+-				 <&gcc GCC_PCIE_2A_CFG_AHB_CLK>,
++			clocks = <&gcc GCC_PCIE_2A_CFG_AHB_CLK>,
+ 				 <&gcc GCC_PCIE_2A2B_CLKREF_CLK>,
+ 				 <&gcc GCC_PCIE2A_PHY_RCHNG_CLK>,
+ 				 <&gcc GCC_PCIE_2A_PIPE_CLK>,
+ 				 <&gcc GCC_PCIE_2A_PIPEDIV2_CLK>;
+-			clock-names = "aux", "cfg_ahb", "ref", "rchng",
++			clock-names = "cfg_ahb", "ref", "rchng",
+ 				      "pipe", "pipediv2";
+ 
+ 			assigned-clocks = <&gcc GCC_PCIE2A_PHY_RCHNG_CLK>;
 
 -- 
 2.25.1
