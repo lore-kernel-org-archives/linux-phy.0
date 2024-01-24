@@ -4,70 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECF05C47258
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 01:04:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DBA3C47258
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 01:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LjDuDlkxVx+fCKbQq2deuN230CaweO6l/57gUTFhh4E=; b=y1Eh1oJU9TlkWa
-	hvKX0Jwrad3FmBFJFxV+0OZkju1QPyXmLVDt20NkPQNe6fqMoaEx9RR+946nzP8YRl0KF3AZewmgX
-	gcnFXObRhKGs2yZOsMMBFqoxjFHfia0zVqinp4GtwIs0C+VMpK09lUfyb6xNqiHMsGY18O+3HVvuF
-	JbKK9lzfLTSX517GPxHS2zrZ/2zVpl4VdzqJqfHMz0A3t0C3+KGzzyenBEBnfMQE3wEs+gsiJma3X
-	+4M+lX/iyEWqTSf2N8L1/TYZw0XWDrCEpKx62YsO/i/B8Zs3pVou1vFinHVACGzxSX1Gz13Il0aXQ
-	mdKTaBZshLM58rbWb5Aw==;
+	List-Owner; bh=hJOWyh40/4u4jl11pH4szZGdhUgfvrFSygNqGDCtn88=; b=KVQ2IgxJ5rcib6
+	W9wxuvLU2t0SKAk67tNbMrKaTaoowanqA/GAWmvV49pTBPaS+OwCupDPCQGNu8eHJ9rrvFjxmso3u
+	EaxLR94OTJLXaIuoIL2SCWNgMMYWYyhbLD+r7O1cR+ES17Vt1tKL9GtEGR4RMJn+b/9HhGk/bF0x7
+	1u8mfGF7Z9SLGlrloiM/GJNFu9Z7RJvnFFoRbpCpB1ehnBVKFdEb05fqnaOTnuQnMmwOLxp/TQ7fa
+	Gq53vnMu70GMKsy3z8G+0F4CCLjKs8XVkhRfzGy4ZedN7LXufKFyehjM9Qk+mf1TP+7dwlrm7cU2O
+	4J6EAoXMMi+2sJnnE+Zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSRgQ-000yPl-1d;
-	Wed, 24 Jan 2024 01:04:02 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+	id 1rSRsp-000zuO-2U;
+	Wed, 24 Jan 2024 01:16:51 +0000
+Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSRgM-000yNb-1c;
-	Wed, 24 Jan 2024 01:03:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1706058236;
-	bh=ehveRBNnG2mx2K0XMQwz5dn4O/JDiS3/LjXos/xx6I0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=IBtheqpvdmfu+c2cwYXyujjJjpot42tc5/ys79dH33xGT4MF32SvIMJHCy1VmBhIP
-	 1iW/HY5gVrfSNZMb0rh9/mJLyRHx+gqSc3NoUpvMnuxVo2CfVFjy2vIC2ZiDAUK+wn
-	 EpLqrOlIJcg4V56Ewdh2JAoKOF1xnfCXVdNzdufuZePLVwxD3Sl6e4nClFYrZMLFhr
-	 rDRcTmMSWlV3qc/1a9vo3vFifDpFj8fjiDMj4K58hACXlTC1v3nNTbfm209jUInH6A
-	 GzSnSbgFIM6US3giJsKhTpWDl8WEDwCLZy7u+kV0UalL1FUx+coUAt61ucyxnBWb0o
-	 p3JtHoK5+KMVA==
-Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id D06E33782074;
-	Wed, 24 Jan 2024 01:03:55 +0000 (UTC)
-Message-ID: <724284f0-b387-4b81-9043-f73df6c9f697@collabora.com>
-Date: Wed, 24 Jan 2024 03:03:55 +0200
+	id 1rSRsm-000ztP-1l
+	for linux-phy@lists.infradead.org;
+	Wed, 24 Jan 2024 01:16:50 +0000
+Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-db3a09e96daso4142304276.3
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 17:16:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1706059006; x=1706663806; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=XiDZPdJfTfPzimLT8ACIvzkmMThhwDufXcvlEt4ng70=;
+        b=odCv2Uls3f6mxvpTQndVWkuLsqA+6KB23jDu4gi3WtNma3Rfjyla4+Bkt8z6dn3bPJ
+         lJ0Y0tsdR3MnfQ5iuHUE1IuiA/W8kIadgnUH2gKUNglcFo+AvTTkSdDrC/j8iJYg2udX
+         r+uqE/AT9vYmKW+4khxzrDALQTfgirSRP+erGEZqJGm1EkUpgOh9Y8uaaDFMCcF4triV
+         R4l46fVNLuYqn4iGo8YEYDXEGnNI/KEt2jnUrQ32I2WsNjc0+4NPl/SgO1iK+wEDEKVG
+         idYYzAPt3DDp+lyIAHJKZ8PeNeKtzq6ig/qwWR9UrXiWsAGzSsxBvxbrXRrGKjq7+B+o
+         CxiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1706059006; x=1706663806;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=XiDZPdJfTfPzimLT8ACIvzkmMThhwDufXcvlEt4ng70=;
+        b=QbDUQZEQjNeft/sd3U/AHKmvOZEAeUbxDvJQCVnp7PJCJ3KG/bA/jg69HV0Z8LZnTt
+         qMcZQIgwVsskVmdRVwtQuDtGU0TZ5C4VTIIAqFIayYcFzD3Kg+P2GIeTsW1ppfmrLJBB
+         FWNJMHp1LHFSnpMEq2QShExXVJKUWXDEJbTIFx8jYwFltpHrhBCW/M/DUTAWsn4kTYil
+         CJATlGBcx7MmNpCqbCKtfQIFop4tPj1lERIW8ldEQCFb6iyqk/d1zUtT0effUoPTDSJK
+         056Ja9TuWDXLua3PAKXIfpvA+n9Q+neANLXnxrr9RFQHMnum1Xy5mQRwt4apNpifRYc6
+         b41Q==
+X-Gm-Message-State: AOJu0YxpzhtW8GtJt0IXn3oJzAVUbkwn50iMVO31GYQlRv3itWSdLnXe
+	dlA5nm5UplZh/cuCPhzWZ5VXjhnami6aYfCqF/H5r8gvujX7bijPNvmGY2cYJ1cMoUf4NEyeoXw
+	f1FBH/hVyYcSWPS5aU2O/Dufsj32hecDwcofs03QYBPcL6bU7u3w=
+X-Google-Smtp-Source: AGHT+IGQ7HCSgRIhv+Wm9LSN6sbjwrzJYjPinkuCo89KnHd0kys9EF4OXMRQPRnVOV1NpPzxcP/YMnpDezw9TivlCAQ=
+X-Received: by 2002:a05:6902:2189:b0:dbc:ab9d:4fab with SMTP id
+ dl9-20020a056902218900b00dbcab9d4fabmr78935ybb.60.1706059006416; Tue, 23 Jan
+ 2024 17:16:46 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/3] Add support for RK3588 HDMI/DP Combo PHY
-Content-Language: en-US
-To: Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
- Johan Jonker <jbx6244@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Algea Cao <algea.cao@rock-chips.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, kernel@collabora.com
-References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
- <417281cd-23b1-4948-8c5a-b9820dff65aa@collabora.com>
- <a7e5304a-1cfd-4f38-8708-bfca30f0ef7f@rock-chips.com>
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <a7e5304a-1cfd-4f38-8708-bfca30f0ef7f@rock-chips.com>
+References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org>
+ <20240113-pmi632-typec-v2-15-182d9aa0a5b3@linaro.org> <CYMDEAJZ0TJK.K31XZB3E9QOG@fairphone.com>
+In-Reply-To: <CYMDEAJZ0TJK.K31XZB3E9QOG@fairphone.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 24 Jan 2024 03:16:35 +0200
+Message-ID: <CAA8EJpr-a1T_GTfYbUcaXv+mmjfqUYnx+fch-M=0-q89_UmeoQ@mail.gmail.com>
+Subject: Re: [PATCH v2 15/15] arm64: dts: qcom: qrb4210-rb2: enable USB-C port handling
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Wesley Cheng <quic_wcheng@quicinc.com>, "Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>, 
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_170358_737532_A3AA8372 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20240123_171648_592890_4A89232A 
+X-CRM114-Status: GOOD (  19.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,25 +92,196 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMS8yMi8yNCAxMjoxMCwgQW5keSBZYW4gd3JvdGU6Cj4gSGkgQ3Jpc3RpYW46Cj4gCj4gT24g
-MS8yMC8yNCAwNzo0MSwgQ3Jpc3RpYW4gQ2lvY2FsdGVhIHdyb3RlOgo+PiBPbiAxLzE5LzI0IDIx
-OjM4LCBDcmlzdGlhbiBDaW9jYWx0ZWEgd3JvdGU6Cj4+PiBBZGQgZHJpdmVyIGFuZCBiaW5kaW5n
-cyB0byBzdXBwb3J0IHRoZSBSb2NrY2hpcCBIRE1JL2VEUCBUWCBDb21ibyBQSFkKPj4+IGZvdW5k
-IG9uIFJLMzU4OCBTb0MuCj4+Pgo+Pj4gVGhlIFBIWSBpcyBiYXNlZCBvbiBhIFNhbXN1bmcgSVAg
-YmxvY2sgYW5kIHN1cHBvcnRzIEhETUkgMi4xIFRNRFMsIEZSTAo+Pj4gYW5kIGVEUCBsaW5rcy4K
-Pj4+Cj4+PiBUaGUgSERNSSBsaW5rIGhhcyBiZWVuIHRlc3RlZCBvbiBSb2NrIDVCIGFuZCBFVkIx
-IGJvYXJkcy4KPj4KPj4gSSBtaXNzZWQgdG8gaGlnaGxpZ2h0IHRoZXJlIGlzIG5vIGVEUCBzdXBw
-b3J0IHByb3ZpZGVkIGJ5IHRoZSBjdXJyZW50Cj4+IGltcGxlbWVudGF0aW9uLsKgIERvd25zdHJl
-YW0ga2VybmVsIGhhcyBhIHNlcGFyYXRlIGRyaXZlciBmb3IgdGhhdCBhbmQgYXQKPj4gdGhlIG1v
-bWVudCBJIGRvbid0IGhhdmUgdGhlIGhhcmR3YXJlIHRvIHdpcmUgdGhpcyB1cC4KPj4KPj4gV2ls
-bCBpbmNsdWRlIHRoaXMgc3RhdGVtZW50IGluIHYyLgo+IAo+IFRoZSBQSFkgaXMgdXNlZCBmb3Ig
-SERNSSBhbmQgZURQIG9uIHJrMzU4OCwgYW5kIHNob3VsZCB1c2VkIGJlIGV4Y2x1c2l2ZWx5Lgo+
-IHNvIEkgdGhpbmsgc2hvdWxkIHMvRFAvZURQLyBpbsKgIGFsbCBkZXNjcmlwdGlvbi4KClJpZ2h0
-LCB3aWxsIG1ha2UgdGhpcyBjb25zaXN0ZW50LgoKVGhhbmtzLApDcmlzdGlhbgoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, 23 Jan 2024 at 22:32, Luca Weiss <luca.weiss@fairphone.com> wrote:
+>
+> On Sat Jan 13, 2024 at 9:55 PM CET, Dmitry Baryshkov wrote:
+> > Plug in USB-C related bits and pieces to enable USB role switching and
+> > USB-C orientation handling for the Qualcomm RB2 board.
+> >
+> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > ---
+> >  arch/arm64/boot/dts/qcom/qrb4210-rb2.dts | 50 ++++++++++++++++++++++++++++++++
+> >  arch/arm64/boot/dts/qcom/sm6115.dtsi     | 43 +++++++++++++++++++++++++++
+> >  2 files changed, 93 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
+> > index 52f31f3166c2..696d6d43c56b 100644
+> > --- a/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
+> > +++ b/arch/arm64/boot/dts/qcom/qrb4210-rb2.dts
+> > @@ -6,8 +6,10 @@
+> >  /dts-v1/;
+> >
+> >  #include <dt-bindings/leds/common.h>
+> > +#include <dt-bindings/usb/pd.h>
+> >  #include "sm4250.dtsi"
+> >  #include "pm6125.dtsi"
+> > +#include "pmi632.dtsi"
+> >
+> >  / {
+> >       model = "Qualcomm Technologies, Inc. QRB4210 RB2";
+> > @@ -256,6 +258,46 @@ kypd_vol_up_n: kypd-vol-up-n-state {
+> >       };
+> >  };
+> >
+> > +&pmi632_typec {
+> > +     status = "okay";
+> > +
+> > +     connector {
+> > +             compatible = "usb-c-connector";
+> > +
+> > +             power-role = "dual";
+> > +             data-role = "dual";
+> > +             self-powered;
+> > +
+> > +             typec-power-opmode = "default";
+> > +             pd-disable;
+> > +
+> > +             ports {
+> > +                     #address-cells = <1>;
+> > +                     #size-cells = <0>;
+> > +
+> > +                     port@0 {
+> > +                             reg = <0>;
+> > +                             pmi632_hs_in: endpoint {
+> > +                                     remote-endpoint = <&usb_dwc3_hs>;
+> > +                             };
+> > +                     };
+> > +
+> > +                     port@1 {
+> > +                             reg = <1>;
+> > +                             pmi632_ss_in: endpoint {
+> > +                                     remote-endpoint = <&usb_qmpphy_out>;
+> > +                             };
+> > +                     };
+> > +             };
+> > +     };
+> > +};
+> > +
+> > +&pmi632_vbus {
+> > +     regulator-min-microamp = <500000>;
+> > +     regulator-max-microamp = <3000000>;
+>
+> Hi Dmitry,
+>
+> Are you sure vbus can supply 3000mA?
+>
+> In Qualcomm's document 80-PF208-77 I see 1000mA is the maximum it can
+> provide, and I see the same value looking into downstream smb5 driver
+> in sdm632 sources.
+
+Indeed, you are correct here. It seems I confused vbus current with
+charge current
+
+>
+> https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-4.9/+/refs/heads/int/13/fp3/drivers/power/supply/qcom/qpnp-smb5.c#414
+>
+> Regards
+> Luca
+>
+> > +     status = "okay";
+> > +};
+> > +
+> >  &pon_pwrkey {
+> >       status = "okay";
+> >  };
+> > @@ -607,6 +649,10 @@ &usb {
+> >       status = "okay";
+> >  };
+> >
+> > +&usb_dwc3_hs {
+> > +     remote-endpoint = <&pmi632_hs_in>;
+> > +};
+> > +
+> >  &usb_hsphy {
+> >       vdd-supply = <&vreg_l4a_0p9>;
+> >       vdda-pll-supply = <&vreg_l12a_1p8>;
+> > @@ -622,6 +668,10 @@ &usb_qmpphy {
+> >       status = "okay";
+> >  };
+> >
+> > +&usb_qmpphy_out {
+> > +     remote-endpoint = <&pmi632_ss_in>;
+> > +};
+> > +
+> >  &wifi {
+> >       vdd-0.8-cx-mx-supply = <&vreg_l8a_0p664>;
+> >       vdd-1.8-xo-supply = <&vreg_l16a_1p3>;
+> > diff --git a/arch/arm64/boot/dts/qcom/sm6115.dtsi b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+> > index 76c429e8ebab..01dff6641280 100644
+> > --- a/arch/arm64/boot/dts/qcom/sm6115.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/sm6115.dtsi
+> > @@ -878,8 +878,29 @@ usb_qmpphy: phy@1615000 {
+> >                       clock-output-names = "usb3_phy_pipe_clk_src";
+> >
+> >                       #phy-cells = <0>;
+> > +                     orientation-switch;
+> >
+> >                       status = "disabled";
+> > +
+> > +                     ports {
+> > +                             #address-cells = <1>;
+> > +                             #size-cells = <0>;
+> > +
+> > +                             port@0 {
+> > +                                     reg = <0>;
+> > +
+> > +                                     usb_qmpphy_out: endpoint {
+> > +                                     };
+> > +                             };
+> > +
+> > +                             port@1 {
+> > +                                     reg = <1>;
+> > +
+> > +                                     usb_qmpphy_usb_ss_in: endpoint {
+> > +                                             remote-endpoint = <&usb_dwc3_ss>;
+> > +                                     };
+> > +                             };
+> > +                     };
+> >               };
+> >
+> >               system_noc: interconnect@1880000 {
+> > @@ -1614,6 +1635,28 @@ usb_dwc3: usb@4e00000 {
+> >                               snps,has-lpm-erratum;
+> >                               snps,hird-threshold = /bits/ 8 <0x10>;
+> >                               snps,usb3_lpm_capable;
+> > +
+> > +                             usb-role-switch;
+> > +
+> > +                             ports {
+> > +                                     #address-cells = <1>;
+> > +                                     #size-cells = <0>;
+> > +
+> > +                                     port@0 {
+> > +                                             reg = <0>;
+> > +
+> > +                                             usb_dwc3_hs: endpoint {
+> > +                                             };
+> > +                                     };
+> > +
+> > +                                     port@1 {
+> > +                                             reg = <1>;
+> > +
+> > +                                             usb_dwc3_ss: endpoint {
+> > +                                                     remote-endpoint = <&usb_qmpphy_usb_ss_in>;
+> > +                                             };
+> > +                                     };
+> > +                             };
+> >                       };
+> >               };
+> >
+>
+
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
