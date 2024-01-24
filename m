@@ -4,86 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3481C46CD2
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 08:47:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11725C47DDF
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 08:58:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=negXrLP2WxV1ejuF6yWz3klprbJV/69996i/za0rC+c=; b=XDFDeJNSL8n+NS
-	eeURrui3mdR1VcjVQYaY6W38BQf30vaJfeA5PnXomqjrzBfPc0qw1fk/09WMunsvj1rehX69Sy+9u
-	1rgh2pWgtaLqsS4gIQIRqXhL/1723mAABDEvbIzPP12M/57Ms3jJdP385F4t//TB9YBDsipnCyvXw
-	wbvRQXaB1aHepV2VhCe7ZBPAeCyzAdxBKCovDZ9GI6KPfJRFH5Bk0bULZWQCKPMn9bZ9fUWfR4/oF
-	FQFCQbpu5h3xE9ckXWNUkSBCh2lWVLt94DB1qlql0g1UHamiTO2rYuKtMmpS3e+ACqroHWisnZIEN
-	u4pu3/B2BCcA5Yz7mhIg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=er8ucAP3NCbIG3BOZpybybLnlnU2CE2kisESqgBQVPk=; b=GogsNJOgn3ad9Agc5+3ucxyCql
+	AZosVXCMoTKp7OaBPUJazGXXbj23tnnuTwRcKP3uy0dU8yiiAX244ZHvm+8P/I+66VieeRTlJq++m
+	IZ0lo42OVDT97OTUBhJdAMyZskDwWHAnNNg3uKqxaB/YqvKXEWCwCidkLdHN/BK9P5RNjg1zWAVQG
+	FDQ1jrR3ue1lYJxNeqpttvaQLXAAcPSqNewPf7XyiRCSX6dr2Xc5U9zK4lQjRnoiEtiJGJm21Qrfj
+	JZkur6muG/QKRMbYLOwwT4WAke26gb1RNX4BQaKOGr2yBiWvF54AX/PibG8BdCRPz9aLlt5yfP9jE
+	H0ABlzHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSYum-0023d0-1k;
-	Wed, 24 Jan 2024 08:47:20 +0000
-Received: from mail-qv1-xf29.google.com ([2607:f8b0:4864:20::f29])
+	id 1rSZ5K-002598-1j;
+	Wed, 24 Jan 2024 08:58:14 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSYuk-0023ca-0L
+	id 1rSZ5G-00256Y-3C
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 08:47:19 +0000
-Received: by mail-qv1-xf29.google.com with SMTP id 6a1803df08f44-6868823be58so16956706d6.0
-        for <linux-phy@lists.infradead.org>; Wed, 24 Jan 2024 00:47:16 -0800 (PST)
+	Wed, 24 Jan 2024 08:58:13 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-3367a304091so5544035f8f.3
+        for <linux-phy@lists.infradead.org>; Wed, 24 Jan 2024 00:58:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706086036; x=1706690836; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=vOnv3adWQrKv1Zkv4bX3OIcJzRZ65t2vYD9WyrY+EY8=;
-        b=tN75ZpJrOpCuHfNPLjzcLdLIHtneA1UnXfVclhEILbmIzGQPL1HboTtNrOtOAwB8vZ
-         A/Hh23LsC9TOH3si9bzHa8w3fP7Jvg+5MvdlFL06zgckuXT7hA2uPT5S3kLZCBvqVjTM
-         7uX/1AkMaFTopYLjVAlpv0mwOHnd9RoLy5i8JK0UEOV4mFAFN5T6r4cWP5O+Tf2ug+5/
-         4orRVlveXseMLulivdNaLuCVNTjeQ73tfKMIrEny2Vc1YQ3+pcMEStUZkngYR4Od/4DA
-         matvuoH7tJGFlZZ+ofbkTpsrY44gbpho3IxLBSOBYdMriqWBltwLKHxt1WSzC2ckvDnB
-         J4Aw==
+        d=linaro.org; s=google; t=1706086689; x=1706691489; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ztaP5iJjQnXrgl0zMMgX8A+csccy+mQSF5M8vkU9Z2U=;
+        b=AvyKkqdl1LZY2SO5wka8WVOanPUP2kQWNydOlcxR8M7HudKZzYaWlHzmwFljcPZr1u
+         XNFOnuzM5rlRlEnWD8A772nWLwPS1Xn7lmw/oDn7arNkA8HwanztdMZmus/NoEHOCDgF
+         KsE7vdtZVWcxijBCJGjP6iODHHBavYpWsiPUYiZOfkzJPFJ5ACe+nv87fVpbn40IDZ+p
+         inz4YKyZqzFRVR7oaEqSu7atrj4F90E1QIaTUSQvEPoD7VhQHKP5v18RoLBbfXklTUB1
+         +g5VUPzb73SspXnik4TODl8V1sGWcIkUuBoSBwQkJhU8yOqWeRpFnfh/nrnqhbZEVTWS
+         Mp6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706086036; x=1706690836;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=vOnv3adWQrKv1Zkv4bX3OIcJzRZ65t2vYD9WyrY+EY8=;
-        b=afXM7ezBWNDze9IVDwNvJi/J3UA1zPrYVtBSl/CK+S64ve6MrJykbHSO6xhjpLJAM0
-         n3npEV0kA0AWzNPod9fcEaJlcwCLQCUFtYdjMUZzUamMMOUZuD3Doo8FQJVeVoYVA9FZ
-         VcFzK/7vPv/HnAbvpgoS9DVuWBkf5o+J7wwk3OJ1t/VExEAJVE9j2/nx6GA+1KnCBkkL
-         5Tv8V/qnFy52FvG0AnYGRo4xL1KZ9oGaD8znEHk07HLcbLMl3BDZZpR5FdhIoazVe9BV
-         XWqynuSYU6nmCAAh00qVUDcfr5lazvg9FVT+lwKlElEkewLGb2Yr9sYs/VfjX+cndYqo
-         tN5w==
-X-Gm-Message-State: AOJu0YzihlrwLGZaHB4+3w2tvK8Y5blRdKvyr7J+rZuZnbIYe9x2PDiV
-	jlkua0ksFZ2JUxIiuYM9N9GuZ+voi554/tLKTarOPrkboMt7P6fKQuBuIqOirA==
-X-Google-Smtp-Source: AGHT+IHI35pk3JFRrtsiBg3LW/bMC+Q5U/NC24rnsI0zZ+xuGKIthCubKXQN+iyZccdPkF6iDuPrJw==
-X-Received: by 2002:a0c:e285:0:b0:686:2b72:6f39 with SMTP id r5-20020a0ce285000000b006862b726f39mr2160281qvl.98.1706086036074;
-        Wed, 24 Jan 2024 00:47:16 -0800 (PST)
-Received: from thinkpad ([117.217.189.109])
-        by smtp.gmail.com with ESMTPSA id ny18-20020a056214399200b006868e6d8b37sm2960906qvb.23.2024.01.24.00.47.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Jan 2024 00:47:15 -0800 (PST)
-Date: Wed, 24 Jan 2024 14:16:59 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: andersson@kernel.org, vkoul@kernel.org, sboyd@kernel.org,
-	mturquette@baylibre.com, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, quic_cang@quicinc.com
-Subject: Re: [PATCH v2 14/16] arm64: dts: qcom: sc8280xp: Fix UFS PHY clocks
-Message-ID: <20240124084659.GE4906@thinkpad>
-References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
- <20231218120712.16438-15-manivannan.sadhasivam@linaro.org>
- <e905c463-6f89-4939-981a-7a360ed31669@linaro.org>
- <20231220083014.GB3544@thinkpad>
- <a888e261-e990-445c-ab98-f63859c19dd2@linaro.org>
+        d=1e100.net; s=20230601; t=1706086689; x=1706691489;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ztaP5iJjQnXrgl0zMMgX8A+csccy+mQSF5M8vkU9Z2U=;
+        b=TDxX9PWcpwKRwcOuSwh2AVLsBgYOUjoPp79vokbMDMWXPcnnJ+B1FIchK4aRA9nMGH
+         vk048qSgVZVL7LLXwKLZ2GEVDC/vq5fRmlm/wG3H5osof/x78oT2bf4GtxkQKQh8BmVB
+         H+FvMN41JxTlQO7SLHv1RsR6YM8MvCjHfybuf9PsOS32N+b4KVJEbcq4ZVNoZb6ajrwP
+         3yfKzMoKYeYGwmq3l8jo5Gx3r0FbSQVMw7w/pvxWwrULGWVuo7pvu4mR2oTNVFeDZy+n
+         lVMRMkXHT2oGdjXVJ+FbA+XR/gTCEBaOvnjh49ffzjLxOtqIg/cRIgzU0ILpyPU7WXOh
+         xbtw==
+X-Gm-Message-State: AOJu0Yy9zSllkwT58liXbeVWDtn3cJohXBHmtdJCrkc90Pxf5Ax0x/f+
+	K6NkGK9c7DGvtPItW7/4jdvoi92e5d+LtPHnwK2jM7OrVymJtlzHpDaXKwvqt8U=
+X-Google-Smtp-Source: AGHT+IF+1DNPW9ZmN2qeaSvbY7hn2ZCDh2EuftJzvf6GGLnETy6hh/0C5Quq9lTYEfAGJZSYTWh9hg==
+X-Received: by 2002:a05:6000:922:b0:337:be12:5846 with SMTP id cx2-20020a056000092200b00337be125846mr192591wrb.163.1706086688975;
+        Wed, 24 Jan 2024 00:58:08 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:982:cbb0:fd4f:fd82:e4fb:1654? ([2a01:e0a:982:cbb0:fd4f:fd82:e4fb:1654])
+        by smtp.gmail.com with ESMTPSA id j28-20020adfb31c000000b003393457afc2sm7885382wrd.95.2024.01.24.00.58.08
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 24 Jan 2024 00:58:08 -0800 (PST)
+Message-ID: <e6b8befb-82e8-4803-929c-32e86d1e825a@linaro.org>
+Date: Wed, 24 Jan 2024 09:58:06 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a888e261-e990-445c-ab98-f63859c19dd2@linaro.org>
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH 0/2] phy: qcom: qmp-pcie: Update PCIe PHY settings for
+ SM8550
+Content-Language: en-US, fr
+To: Qiang Yu <quic_qianyu@quicinc.com>, agross@kernel.org,
+ andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org,
+ kishon@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, quic_cang@quicinc.com, quic_mrana@quicinc.com
+References: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro Developer Services
+In-Reply-To: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240124_004718_149644_AB214283 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20240124_005811_041980_837B39E4 
+X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,42 +119,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: neil.armstrong@linaro.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBKYW4gMDMsIDIwMjQgYXQgMDI6NTA6MDRQTSArMDEwMCwgS29ucmFkIER5YmNpbyB3
-cm90ZToKPiBPbiAyMC4xMi4yMDIzIDA5OjMwLCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6
-Cj4gPiBPbiBXZWQsIERlYyAyMCwgMjAyMyBhdCAwMTozNToyN0FNICswMTAwLCBLb25yYWQgRHli
-Y2lvIHdyb3RlOgo+ID4+IE9uIDE4LjEyLjIwMjMgMTM6MDcsIE1hbml2YW5uYW4gU2FkaGFzaXZh
-bSB3cm90ZToKPiA+Pj4gUU1QIFBIWSB1c2VkIGluIFNDODI4MFhQIHJlcXVpcmVzIDMgY2xvY2tz
-Ogo+ID4+Pgo+ID4+PiAqIHJlZiAtIDE5LjJNSHogcmVmZXJlbmNlIGNsb2NrIGZyb20gUlBNaAo+
-ID4+PiAqIHJlZl9hdXggLSBBdXhpbGlhcnkgcmVmZXJlbmNlIGNsb2NrIGZyb20gR0NDCj4gPj4+
-ICogcXJlZiAtIFFSRUYgY2xvY2sgZnJvbSBHQ0MKPiA+Pj4KPiA+Pj4gRml4ZXM6IDE1MmQxZmFm
-MWUyZiAoImFybTY0OiBkdHM6IHFjb206IGFkZCBTQzgyODBYUCBwbGF0Zm9ybSIpCj4gPj4+IFNp
-Z25lZC1vZmYtYnk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFt
-QGxpbmFyby5vcmc+Cj4gPj4+IC0tLQo+ID4+PiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3Nj
-ODI4MHhwLmR0c2kgfCAxOCArKysrKysrKysrKystLS0tLS0KPiA+Pj4gIDEgZmlsZSBjaGFuZ2Vk
-LCAxMiBpbnNlcnRpb25zKCspLCA2IGRlbGV0aW9ucygtKQo+ID4+Pgo+ID4+PiBkaWZmIC0tZ2l0
-IGEvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjODI4MHhwLmR0c2kgYi9hcmNoL2FybTY0L2Jv
-b3QvZHRzL3Fjb20vc2M4MjgweHAuZHRzaQo+ID4+PiBpbmRleCBjYWQ1OWFmN2NjZWYuLjM3MzQ0
-YWJiZThiZiAxMDA2NDQKPiA+Pj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjODI4
-MHhwLmR0c2kKPiA+Pj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjODI4MHhwLmR0
-c2kKPiA+Pj4gQEAgLTIyNTYsOSArMjI1NiwxMiBAQCB1ZnNfbWVtX3BoeTogcGh5QDFkODcwMDAg
-ewo+ID4+PiAgCQkJY29tcGF0aWJsZSA9ICJxY29tLHNjODI4MHhwLXFtcC11ZnMtcGh5IjsKPiA+
-Pj4gIAkJCXJlZyA9IDwwIDB4MDFkODcwMDAgMCAweDEwMDA+Owo+ID4+PiAgCj4gPj4+IC0JCQlj
-bG9ja3MgPSA8JmdjYyBHQ0NfVUZTX0NBUkRfQ0xLUkVGX0NMSz4sCj4gPj4+IC0JCQkJIDwmZ2Nj
-IEdDQ19VRlNfUEhZX1BIWV9BVVhfQ0xLPjsKPiA+Pj4gLQkJCWNsb2NrLW5hbWVzID0gInJlZiIs
-ICJyZWZfYXV4IjsKPiA+Pj4gKwkJCWNsb2NrcyA9IDwmcnBtaGNjIFJQTUhfQ1hPX0NMSz4sCj4g
-Pj4+ICsJCQkJIDwmZ2NjIEdDQ19VRlNfUEhZX1BIWV9BVVhfQ0xLPiwKPiA+Pj4gKwkJCQkgPCZn
-Y2MgR0NDX1VGU19DQVJEX0NMS1JFRl9DTEs+Owo+ID4+IEdDQ19VRlNfUkVGX0NMS1JFRl9DTEsK
-PiA+IAo+ID4gSSdtIG5vdCBzdXJlIGFib3V0IHRoaXMgQ0xLLiBTbyBJIGtlcHQgaXQgYXMgaXQg
-aXMgdW50aWwgSSB2ZXJpZnkgaXQuCj4gSSBhbSBxdWl0ZSBzdXJlIGV2ZXJ5dGhpbmcgKlVGU19D
-QVJEXyogcmVmZXJzIHRvIHRoZSBvdGhlciBVRlMgaG9zdC4uCj4gCgpXZSBjYW5ub3QgaW5mZXIg
-dGhhdCBmcm9tIHRoZSBuYW1pbmcuIFRoZXJlIGlzIGEgY2hhbmNlIHRoYXQgdGhlIHNhbWUgY2xv
-Y2sKY291bGQgYmUgcm91dGVkIHRvIE1FTV9QSFkgaW50ZXJuYWxseS4gTW9yZW92ZXIsIHRoZXJl
-IGlzIG5vIHNlcGFyYXRlICJyZWYiCmNsb2NrIGZvciBNRU1fUEhZIHRob3VnaC4KCi0gTWFuaQoK
-LS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40K
-Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 28/12/2023 06:42, Qiang Yu wrote:
+> Align PCIe0/PCIe1 PHY settings with SM8550 latest PCIe PHY Hardware
+> Programming Guide.
+> 
+> Can Guo (1):
+>    phy: qcom: qmp-pcie: Update PCIe1 PHY settings for SM8550
+> 
+> Qiang Yu (1):
+>    phy: qcom: qmp-pcie: Update PCIe0 PHY settings for SM8550
+> 
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c             | 20 ++++++++++++++------
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h      |  2 ++
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_20.h   |  2 ++
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_20.h        |  1 +
+>   .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_20.h   |  2 ++
+>   5 files changed, 21 insertions(+), 6 deletions(-)
+> 
+
+- On SM8550-HDK:
+# lspci
+0000:00:00.0 PCI bridge: Qualcomm Device 0113
+0000:01:00.0 Network controller: Qualcomm Device 1107 (rev 01)
+0001:00:00.0 PCI bridge: Qualcomm Device 0113
+0001:01:00.0 Non-Volatile memory controller: Phison Electronics Corporation E12 NVMe Controller (rev 01)
+
+
+# lspci -nvv
+0000:00:00.0 0604: 17cb:0113 (prog-if 00 [Normal decode])
+		LnkCap:	Port #0, Speed 8GT/s, Width x2, ASPM L0s L1, Exit Latency L0s <4us, L1 <8us
+		LnkSta:	Speed 5GT/s, Width x2
+0001:00:00.0 0604: 17cb:0113 (prog-if 00 [Normal decode])
+		LnkCap:	Port #0, Speed 16GT/s, Width x2, ASPM L0s L1, Exit Latency L0s <4us, L1 <8us
+		LnkSta:	Speed 8GT/s, Width x2
+
+Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8550-HDK
+
+- On SM8550-QRD:
+# lspci
+00:00.0 PCI bridge: Qualcomm Device 0113
+01:00.0 Network controller: Qualcomm Device 1107 (rev 01)
+
+# lspci -nvv
+		LnkCap:	Port #0, Speed 8GT/s, Width x2, ASPM L0s L1, Exit Latency L0s <4us, L1 <8us
+		LnkSta:	Speed 5GT/s, Width x2
+
+Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8550-QRD
+
+Thanks,
+Neil
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
