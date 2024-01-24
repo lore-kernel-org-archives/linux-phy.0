@@ -4,64 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 322C1C46CD2
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 05:44:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3C03C46CD2
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 05:59:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n4G3zdrSgtJ2tUM5fXOI+rEvt4TKa6hGbCatLIURNLI=; b=uBpq9DZP82IUyH
-	AtiW4c7BHIM97YNemO7+UhCTpUeS87pSMJJRN9oB4rk84880Fw/GU8R5oyq8opGVd9H2ivV5YFC6i
-	Mv0d53e5+Xt6S/8XOPs1NOoiVELN59fX/rWsY3rxcp49P1HXoNFZPrSlVXkgm2BqKdi/bR+BC3Knn
-	71tenIYgktpOHAPlFukL/mx6xGguAVYfTdWqTrFM/D09e+tZNx++gY7HlYsCPZKw10tFnHI7K9GiN
-	GsCP4p+Q70fI1i4yceLaehE/FH23u8g2mz4h276trrnT3EPMY8gaPMcpKV/VyLB953JkZtFwxty99
-	nYS69R/jYUXyz6xBOsXA==;
+	List-Owner; bh=Oo1Jd6AmNIKsi3PD43Os1JyuMxb2naoC3AO+MX+HzgY=; b=wcVFhMvbC0XWoa
+	A93z31BshU2tqzGJ8pDN01JB8vCHAJkXpyxeF9z38kaJBJ+r4qEXugOvHZEai1LbtsNP6mVtroWca
+	6Lz9yk0oMEVse1eKsOHCbp2ifbMqrh7Y47SkUqCiTjbcKs0a7RHLkNw36DFsSlN4DB+TGKH8EuCPf
+	qjjfzW/I+RNPmyc+wePzPAezh9YwPAs/kdnAoLPC2qt5M37EBUqJP0jtEQFXPHmuANoAC/b+7ZLun
+	vHt9S1jYeH47YTykQDvU8AfB5gPNUp7YfBPRXE2jaAdOnffgXjTleTECBWtAVLCUrnby20h4kF4Pp
+	VsYK4U6CcsWEqDRVLEFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSW4I-001cmy-2R;
-	Wed, 24 Jan 2024 05:44:58 +0000
+	id 1rSWIP-001fAR-0j;
+	Wed, 24 Jan 2024 05:59:33 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSW4F-001cmQ-0N
+	id 1rSWIM-001f9p-30
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 05:44:56 +0000
+	Wed, 24 Jan 2024 05:59:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4763D60FDB;
-	Wed, 24 Jan 2024 05:44:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AB01C433C7;
-	Wed, 24 Jan 2024 05:44:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0F47F61E7E;
+	Wed, 24 Jan 2024 05:59:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CB2EC433F1;
+	Wed, 24 Jan 2024 05:59:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706075090;
-	bh=wydq3m3awroYwRKyCn8UdwP+RAL9z4c7EejX5926Jyg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ry/iJkcO2HUVEdQ7x7oBemcfuHqJLabZ2pEtEkfpCmGxW+KA1kPHTtCLCH9cdugrE
-	 ifbeEdyDnPdsimCGVzqKdQtuHze+DLoBulaP5++3w/72QxWVQwSEizTz+IFImdiZ1w
-	 FaQUp8lZumV5yd64FOj0MErKaaoKUuJY+JOvwLTTqpe9O4XIJmoW1DAnEiWez+Nlst
-	 NrUNpAS1Ks8Y4BoaX0+FBEiUGWK3RYWMUylRn8Ka+N/VNXdZD+zUqWBTDbleMGwxEu
-	 8Rs1GKw6RzShKppIdHvtzgbdmPvb1WF2QzprGmU++4NfjllOl9lPwSK4Zy3AqBtFGZ
-	 bO/B9sQMFANWA==
-Date: Wed, 24 Jan 2024 11:14:45 +0530
+	s=k20201202; t=1706075969;
+	bh=THNCpjJfkari3A89HCYqRjqY8HEsq7oCLnNzT/WpTBU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=hobzoJx8QwgRzgBLHM1sj+uyJwG1UeYyxal8BEtN2Z4a0VNQy5CkJ7udw6QaWler2
+	 SfpSL4bQRAKTSLXtn/8hgmPE8bD3eFXmk7fms7bbu9qU+nmZ0S+NHBkNYzKrlLZikX
+	 jSxUCOtTLvRTi7xLib4SnS9TK3L0aMl8nRZVZy4JJmz0RO1yjBsFvb44sUZD0cVYgB
+	 YYkKCwLmTs9j/NVwfmYFGE7xTCsyiUwfHBki0CNwbTxlj04lmIt706d6f5reIsyZOp
+	 XOUprR0LMwINpOjE60q6eUVopJkJW69Zh9+w4w9LzAigQb3dOJ1U8qdItFCwilKwYo
+	 QY/C7WAPc5lGg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: andersson@kernel.org, konrad.dybcio@linaro.org, sboyd@kernel.org,
-	mturquette@baylibre.com, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, quic_cang@quicinc.com,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v2 01/16] dt-bindings: phy: qmp-ufs: Fix PHY clocks
-Message-ID: <ZbCjzeMTKtbRxJHw@matsya>
-References: <20231218120712.16438-1-manivannan.sadhasivam@linaro.org>
- <20231218120712.16438-2-manivannan.sadhasivam@linaro.org>
+To: kishon@kernel.org, Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20240108205140.1701770-1-horatiu.vultur@microchip.com>
+References: <20240108205140.1701770-1-horatiu.vultur@microchip.com>
+Subject: Re: [PATCH] phy: lan966x: Add missing serdes mux entry
+Message-Id: <170607596825.395031.15945327841005877396.b4-ty@kernel.org>
+Date: Wed, 24 Jan 2024 11:29:28 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231218120712.16438-2-manivannan.sadhasivam@linaro.org>
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_214455_212838_2C9A07D5 
-X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-CacheID: sfid-20240123_215931_016132_EDA846C0 
+X-CRM114-Status: UNSURE (   8.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,23 +72,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-12-23, 17:36, Manivannan Sadhasivam wrote:
-> All QMP UFS PHYs except MSM8996 require 3 clocks:
-> 
-> * ref - 19.2MHz reference clock from RPMh
-> * ref_aux - Auxiliary reference clock from GCC
-> * qref - QREF clock from GCC or TCSR (since SM8550)
-> 
-> MSM8996 only requires 'ref' and 'qref' clocks. Hence, fix the binding to
-> reflect the actual clock topology.
-> 
-> This change obviously breaks the ABI, but it is inevitable since the
-> clock topology needs to be accurately described in the binding.
 
-This fails to apply on phy/fixes, pls rebase
+On Mon, 08 Jan 2024 21:51:40 +0100, Horatiu Vultur wrote:
+> According to the datasheet(Table 3-2: Port configuration) the serdes 2
+> (SD2) can be configured to run QSGMII or SGMII mode. Already the QSGMII
+> mode is supported in the serdes_muxes list  but was missing the SGMII mode.
+> In this mode the serdes is connected to the port 4.
+> Therefore add this entry in the list.
+> 
+> 
+> [...]
 
+Applied, thanks!
+
+[1/1] phy: lan966x: Add missing serdes mux entry
+      commit: 4e4a1183f281d95fbb6caf28d670775d13264beb
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
