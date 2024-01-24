@@ -4,84 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 421D6C47258
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 01:44:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D2EAC47DDB
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 02:43:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fuV2y/GBQLNX614tnZD5xGG6DuEiJQA2R4260DRBTwY=; b=txRlP6khIX+jD/
-	6O1JYGuLpXhrt98WOaiW6gD7anfuXtFrAy/JAld23iUV0/wRH5ouonUd11uERG7U6+T6iqmHi8eKC
-	0drPJiNDbDWUlHKhEdxELdnxgjtZGYpi1PbPdpK2STjHzxCtNpOOs/kBEjVNIZkgljs9eNWKfOPK+
-	ZS1QZ5hqvIuPCvuZaaodvcNS9xYqF3bLSFvQkSEG6pjzv7mIb/fPaFA8a+lR7g3LcX2YCCwyvZdYk
-	JuI4Qc/LDer55Z85/5O06DZAaI2Wzl/wyRfcU3I+LcmfHoE4y+HUuwjhNdIXq/ElM/h1XY+H0o55F
-	m4Q6WWRs4/S328RqC1Ng==;
+	List-Owner; bh=pBbdKztGxl//FN7chmwxu0w+oFkiICcx/J5QMT95me4=; b=oeX+fxBKljVpk1
+	DFmNupVU03vLZMxodyXzqQKJCmdPYrGvV1G4ztSxw6yYYuMy77oKN+YwGf6q5D8KIqsBMn/eGaVJf
+	6nf8Yeg4qvygq9q3Xbp+b9RymJopb9Uqvw5Ykn1pJaiz5EtL6dDv8iIuOWg1t2RBTpBX9SFoFplyf
+	MWBFq27cIp+KWy+q1Yyrh7YpJ8ubhliCrFN3GOXiVTYuwHCE4Bak6gENWy0FFB2LZyM0mb+7Nvss+
+	quK6dd5eI5BFtilcPmTG+RAJKem4F6puFbi9vFnR9Mp91D6OaZ0vmMGnrkZH1NT4JYjfs6MageDIZ
+	6/mSypJQWTus6dFOo/pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSSJN-0012dP-2a;
-	Wed, 24 Jan 2024 01:44:17 +0000
-Received: from mail-yb1-xb2b.google.com ([2607:f8b0:4864:20::b2b])
+	id 1rSTER-001AfP-09;
+	Wed, 24 Jan 2024 02:43:15 +0000
+Received: from mail-m15591.qiye.163.com ([101.71.155.91])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSSJK-0012c9-1C
-	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 01:44:16 +0000
-Received: by mail-yb1-xb2b.google.com with SMTP id 3f1490d57ef6-dafe04717baso4084225276.1
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 17:44:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706060651; x=1706665451; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=+EJ9ZUznar9sJ684CFkqKMAG0mvXQb80PSMhKIErrW0=;
-        b=OlDZxBuo/HDlOKvbOVf65Ss7/liDPRL9VfKrNPtiA3hm1PoXXteeR+kIVAu9sP8sK4
-         XnAInjWNaAgA0rQY9rL+IiWBumlxq7eezZSMdofaegE6RmnaA0OLGH3KV9L015wD8X4w
-         Fcrdv2rHjJPu2uLmrnY5oz7E7o/JdFpDcttA+4in62sDe7aJemEgegfsHHj7MKuKVSnE
-         MwKxiqE9MlKewUV8PVfpNg1mdk9gds14tOGC57fSUXtP7A5BuQ2AEYW5izfdO/hNfdpl
-         pNojEvF3pEgTyjjw3jO81Y+N9lHMgoUiYiH718YAUOgJRfiqompjDZlSRfHrm09U6WjH
-         C7Zg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706060651; x=1706665451;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=+EJ9ZUznar9sJ684CFkqKMAG0mvXQb80PSMhKIErrW0=;
-        b=TSK+Ia3iIRY76ldSGnH0tfa3H/4ei/6NyatSQcPJcYtVVV7y5eKdahqOl2421GbN+2
-         MZvEVj4brH+G06Zxle+kL3lbgbps/NMeG4BoCkIYEOI8bptEB/R/WpZUMLFKHR1JR/Wd
-         eovaV26TtKouI53sHUbL+h0yP9IUydFLMQDbrbWqvt+7Mc97D6AxaQZlJTsuIF0mpbxm
-         R3n/YCs21C3arYzrJFfZBVuLok38nFzfVOD5XPdF02oFRlz1YBxIP7CeZD6xlNWthCTl
-         HDavKPF2sSgZ8oub1U3IYGU34FKGmKngS1xFdKAf0GciI6pT9WPbxA4BTYlT6eugmRyN
-         jWUg==
-X-Gm-Message-State: AOJu0Yw5fOVFE7TDt1Znp8rnQGGLaHTcn49BTOa/lRwdfnWlotCjoSi0
-	YUqNXmRqCLAdnb8rW7qYygNa4CT/7gEvTSQqAK5PiygbkrzC2JpnHGFAudQQzvzlG4rDqO0naUT
-	zNkRPLBtFkyk7kJiYz86Gj9OUDeRej0ANil6NLg==
-X-Google-Smtp-Source: AGHT+IFdFd9XSV1qb3fXFDQRWsSosCJLwTufWRBJrP7gZM8W3AYbECne9ER587NBXf7shK6NbzG7fh2hdunuhmE/fRg=
-X-Received: by 2002:a25:ac03:0:b0:dc2:3d03:bce8 with SMTP id
- w3-20020a25ac03000000b00dc23d03bce8mr86878ybi.127.1706060650705; Tue, 23 Jan
- 2024 17:44:10 -0800 (PST)
+	id 1rSTEN-001AZX-1S;
+	Wed, 24 Jan 2024 02:43:13 +0000
+DKIM-Signature: a=rsa-sha256;
+	b=QfH2Us9Eq8B0ueN4t3tCCXCgmbIqlFl7ZJymOQuLq7M9YeL9smUzrKpL905TUTtNqsltZOxtpgQpdHkuqvWUXq0CZPZmy8JLlcS1NlFLVNWSTCiKR0ghlYv2lzXt/RCUWBVgMKQx0A0tv8P0Ew9Cyzg2QyIlvURz7W7Yw0MY5Gg=;
+	s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=TAinrEkDcwYxgKcucbTjUS75lf3OZ7z9iVmkDRaZ18I=;
+	h=date:mime-version:subject:message-id:from;
+Received: from [172.16.12.141] (unknown [58.22.7.114])
+	by mail-m12779.qiye.163.com (Hmail) with ESMTPA id 660777801C6;
+	Wed, 24 Jan 2024 10:42:32 +0800 (CST)
+Message-ID: <e1c56975-6a55-4b75-a447-dd2d0eec62e2@rock-chips.com>
+Date: Wed, 24 Jan 2024 10:42:31 +0800
 MIME-Version: 1.0
-References: <20240113-pmi632-typec-v2-0-182d9aa0a5b3@linaro.org> <CYMDMMXUICGY.21UIRWVXMLART@fairphone.com>
-In-Reply-To: <CYMDMMXUICGY.21UIRWVXMLART@fairphone.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 24 Jan 2024 03:43:59 +0200
-Message-ID: <CAA8EJpq3ex7m1ZdV9DeRC+jN9=+RCZ4D_ue3C6ijwdkT9r433g@mail.gmail.com>
-Subject: Re: [PATCH v2 00/15] usb: typec: qcom-pmic-typec: enable support for
- PMI632 PMIC
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, "Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Guenter Roeck <linux@roeck-us.net>, 
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/3] phy: rockchip: Add Samsung HDMI/DP Combo PHY driver
+Content-Language: en-US
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Algea Cao <algea.cao@rock-chips.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>
+References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
+ <20240119193806.1030214-4-cristian.ciocaltea@collabora.com>
+ <20240122121409.GW4700@pengutronix.de>
+ <00c749f7-3eb9-4bd1-a057-43a692b77d68@collabora.com>
+From: Andy Yan <andy.yan@rock-chips.com>
+In-Reply-To: <00c749f7-3eb9-4bd1-a057-43a692b77d68@collabora.com>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQkIdTlZNHx9NTUxKTEJLTk9VEwETFh
+	oSFyQUDg9ZV1kYEgtZQVlOQ1VJSVVMVUpKT1lXWRYaDxIVHRRZQVlPS0hVSk1PSU5IVUpLS1VKQk
+	tLWQY+
+X-HM-Tid: 0a8d395908efb24fkuuu660777801c6
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NUk6ORw*MzwtCAJMAxoCKRIz
+	DU8aCwJVSlVKTEtNS01PSk5IT0xCVTMWGhIXVRoVHwJVAhoVOwkUGBBWGBMSCwhVGBQWRVlXWRIL
+	WUFZTkNVSUlVTFVKSk9ZV1kIAVlBQ0NITDcG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_174414_506467_EA3E65D3 
-X-CRM114-Status: GOOD (  33.35  )
+X-CRM114-CacheID: sfid-20240123_184311_998279_DE5353E9 
+X-CRM114-Status: GOOD (  28.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,163 +81,167 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 23 Jan 2024 at 22:43, Luca Weiss <luca.weiss@fairphone.com> wrote:
->
-> On Sat Jan 13, 2024 at 9:55 PM CET, Dmitry Baryshkov wrote:
-> > The Qualcomm PMI632 PMIC (found on Qualcomm Robotics RB2 platform)
-> > doesn't support USB Power Delivery. However this PMIC still supports
-> > handling of the Type-C port (orientation detection, etc). Reuse exiting
-> > qcom-pmic-typec driver to support Type-C related functionality of this
-> > PMIC. Use this to enable USB-C connector support on the RB2 platform.
->
-> Hi Dmitry,
->
-> I'm happy to report that testing this series on v6.8-rc1 kernel on
-> sdm632-fairphone-fp3 shows that USB role switching is working with this!
->
-> It's not extensive testing but plugging in a USB stick and USB headphone
-> jack dongle in both directions show up in dmesg as expected, and
-> afterwards also USB networking gadget still works to ssh into the
-> device.
->
-> My .dts part is a bit different to your RB2 dts since
-> sdm632-fairphone-fp3 doesn't support USB 3.0, only USB 2.0, but
-> otherwise looks pretty similar. I'll send a patch for that once your
-> series has landed.
->
-> Not sure on which patches it makes sense, but have my:
->
-> Tested-by: Luca Weiss <luca.weiss@fairphone.com> # sdm632-fairphone-fp3
+Hi Cristian:
 
-Probably this makes sense on pmi632 patches, as you definitely tested
-only those and not RB2 ones.
+On 1/24/24 08:58, Cristian Ciocaltea wrote:
+> On 1/22/24 14:14, Sascha Hauer wrote:
+>> On Fri, Jan 19, 2024 at 09:38:03PM +0200, Cristian Ciocaltea wrote:
+>>> Add driver for the Rockchip HDMI/eDP TX Combo PHY found on RK3588 SoC.
+>>>
+>>> The PHY is based on a Samsung IP block and supports HDMI 2.1 TMDS, FRL
+>>> and eDP links.  The maximum data rate is 12Gbps (HDMI 2.1 FRL), while
+>>> the minimum is 250Mbps (HDMI 2.1 TMDS).
+>>>
+>>> Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
+>>> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
+>>> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>>> ---
+>>>   drivers/phy/rockchip/Kconfig                  |    8 +
+>>>   drivers/phy/rockchip/Makefile                 |    1 +
+>>>   .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 2045 +++++++++++++++++
+>>>   3 files changed, 2054 insertions(+)
+>>>   create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>
+>>> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+>>> index 94360fc96a6f..95666ac6aa3b 100644
+>>> --- a/drivers/phy/rockchip/Kconfig
+>>> +++ b/drivers/phy/rockchip/Kconfig
+>>> @@ -83,6 +83,14 @@ config PHY_ROCKCHIP_PCIE
+>>>   	help
+>>>   	  Enable this to support the Rockchip PCIe PHY.
+>>>   
+>>> +config PHY_ROCKCHIP_SAMSUNG_HDPTX
+>>> +	tristate "Rockchip Samsung HDMI/DP Combo PHY driver"
+>>> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
+>>> +	select GENERIC_PHY
+>>> +	help
+>>> +	  Enable this to support the Rockchip HDMI/DP Combo PHY
+>>> +	  with Samsung IP block.
+>>> +
+>>>   config PHY_ROCKCHIP_SNPS_PCIE3
+>>>   	tristate "Rockchip Snps PCIe3 PHY Driver"
+>>>   	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
+>>> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+>>> index 7eab129230d1..3d911304e654 100644
+>>> --- a/drivers/phy/rockchip/Makefile
+>>> +++ b/drivers/phy/rockchip/Makefile
+>>> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
+>>> +obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
+>>>   obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
+>>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>> new file mode 100644
+>>> index 000000000000..d8171ea5ce2b
+>>> --- /dev/null
+>>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>> @@ -0,0 +1,2045 @@
+>>> +// SPDX-License-Identifier: GPL-2.0+
+>>> +/*
+>>> + * Copyright (c) 2021-2022 Rockchip Electronics Co., Ltd.
+>>> + * Copyright (c) 2024 Collabora Ltd.
+>>> + *
+>>> + * Author: Algea Cao <algea.cao@rock-chips.com>
+>>> + * Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>>> + */
+>>> +#include <linux/bitfield.h>
+>>> +#include <linux/clk.h>
+>>> +#include <linux/delay.h>
+>>> +#include <linux/mfd/syscon.h>
+>>> +#include <linux/module.h>
+>>> +#include <linux/of.h>
+>>> +#include <linux/of_platform.h>
+>>> +#include <linux/phy/phy.h>
+>>> +#include <linux/platform_device.h>
+>>> +#include <linux/rational.h>
+>>> +#include <linux/regmap.h>
+>>> +#include <linux/reset.h>
+>>> +
+>>> +#define GRF_HDPTX_CON0			0x00
+>>> +#define HDPTX_I_PLL_EN			BIT(7)
+>>> +#define HDPTX_I_BIAS_EN			BIT(6)
+>>> +#define HDPTX_I_BGR_EN			BIT(5)
+>>> +#define GRF_HDPTX_STATUS		0x80
+>>> +#define HDPTX_O_PLL_LOCK_DONE		BIT(3)
+>>> +#define HDPTX_O_PHY_CLK_RDY		BIT(2)
+>>> +#define HDPTX_O_PHY_RDY			BIT(1)
+>>> +#define HDPTX_O_SB_RDY			BIT(0)
+>>> +
+>>> +#define CMN_REG0000			0x0000
+>>
+>> These register names are not particularly helpful. Maybe use a
+>>
+>> #define CMN_REG(x)			((x) * 4)
+>>
+>> Instead?
+> 
+> Yes, sounds good.
+> 
+>>> +
+>>> +static int hdptx_lcpll_frl_mode_config(struct rockchip_hdptx_phy *hdptx,
+>>> +				       u32 rate)
+>>> +{
+>>> +	u32 bit_rate = rate & DATA_RATE_MASK;
+>>> +	u8 color_depth = (rate & COLOR_DEPTH_MASK) ? 1 : 0;
+>>> +	const struct lcpll_config *cfg = lcpll_cfg;
+>>> +
+>>> +	for (; cfg->bit_rate != ~0; cfg++)
+>>> +		if (bit_rate == cfg->bit_rate)
+>>> +			break;
+>>
+>> You could use ARRAY_SIZE() to iterate over the array and save the extra
+>> entry at the end. Likewise for the other arrays used in the driver.
+> 
+> Sure, will do.
+> 
+>>> +
+>>> +	if (cfg->bit_rate == ~0)
+>>> +		return -EINVAL;
+>>> +
+>>
+>>> +static int rockchip_hdptx_phy_power_on(struct phy *phy)
+>>> +{
+>>> +	struct rockchip_hdptx_phy *hdptx = phy_get_drvdata(phy);
+>>> +	int bus_width = phy_get_bus_width(hdptx->phy);
+>>> +	int bit_rate = bus_width & DATA_RATE_MASK;
+>>
+>> What is going on here? bus_width is set to 8 in probe() using
+>> phy_set_bus_width(), but the value you pull out of phy_get_bus_width()
+>> is expected to contain the bit_rate and several other flags.
+>>
+>> It looks like you are tunneling flags from some other driver using this
+>> field. Isn't there a better way to accomplish this? If not, I think this
+>> needs some explanation.
+> 
+> Indeed, sorry for missing a comment here.  The flags are set by the
+> bridge driver to enable 10-bit color depth, FRL and EARC.  So far I
+> couldn't find an alternative approach to pass custom data using the PHY API.
+> 
+>> At least the variable should be renamed. it's called "bus_width" and it's
+>> passed to functions like hdptx_lcpll_frl_mode_config() which has this
+>> parameter named "rate" which is quite confusing.
+> 
+> I think for the initial support it's not really necessary to implement
+> all those features.  Andy, should we drop them until a better solution
+> is found?
 
->
-> And for reference:
->
-> Only thing I've noticed here is "Host supports USB 3.0 SuperSpeed" which
-> is half true, to my knowledge SDM632 does support USB 3.0 but it's not
-> hooked up (for some reason) on most MSM8953/SDM632-based devices.
+I'm fine with it.
+It would be very appreciated if some linux-phy or drm bridge experts can give
+some suggestions about how to pass different custom phy modes.
 
-I suppose it is the same story as SDM660. The SoC supports USB 3.0,
-but device manufacturers at that time didn't care for the sake of
-making them cheaper. So development kits had USB 3.0 (e.g. IFC6560),
-but the actual phones didn't.
-
->
-> [   22.986096] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
-> [   22.986273] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 1
-> [   22.990847] xhci-hcd xhci-hcd.1.auto: hcc params 0x0230f665 hci version 0x100 quirks 0x0000000002000010
-> [   22.998260] xhci-hcd xhci-hcd.1.auto: irq 57, io mem 0x07000000
-> [   23.007684] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
-> [   23.013435] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 2
-> [   23.019029] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
-> [   23.027696] hub 1-0:1.0: USB hub found
-> [   23.033167] hub 1-0:1.0: 1 port detected
-> [   23.037538] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
-> [   23.041853] hub 2-0:1.0: USB hub found
-> [   23.049034] hub 2-0:1.0: 1 port detected
-> [   23.120301] qcom,pmic-typec 200f000.spmi:pmic@2:typec@1500: vbus vsafe5v fail
-> [   23.845537] usb 1-1: new high-speed USB device number 2 using xhci-hcd
-> [   23.995466] usb-storage 1-1:1.0: USB Mass Storage device detected
-> [   23.996166] scsi host0: usb-storage 1-1:1.0
-> [   25.022547] scsi 0:0:0:0: Direct-Access     SanDisk  Ultra            1.00 PQ: 0 ANSI: 6
-> [   25.023926] sd 0:0:0:0: [sda] 60062500 512-byte logical blocks: (30.8 GB/28.6 GiB)
-> [   25.030873] sd 0:0:0:0: [sda] Write Protect is off
-> [   25.037204] sd 0:0:0:0: [sda] Mode Sense: 43 00 00 00
-> [   25.042395] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
-> [   25.070314]  sda: sda1 sda2 sda3
-> [   25.071050] sd 0:0:0:0: [sda] Attached SCSI removable disk
->
->
-> [   31.347094] usb 1-1: USB disconnect, device number 2
-> [   31.364973] xhci-hcd xhci-hcd.1.auto: remove, state 4
-> [   31.365149] usb usb2: USB disconnect, device number 1
-> [   31.370427] xhci-hcd xhci-hcd.1.auto: USB bus 2 deregistered
-> [   31.374236] xhci-hcd xhci-hcd.1.auto: remove, state 1
-> [   31.379906] usb usb1: USB disconnect, device number 1
-> [   31.475790] xhci-hcd xhci-hcd.1.auto: USB bus 1 deregistered
->
-> Regards
-> Luca
->
->
-> >
-> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> > ---
-> > Changes in v2:
-> > - Split qcom_pmic_typec_pdphy_set_roles() changes to separate patch
-> >   (Konrad)
-> > - Simplified devm_kzalloc / sizeof() argument (Konrad)
-> > - Made start / stop callbacks mandatory (Bryan)
-> > - Reworked Type-C port handling into a backend similar to PD PHY (Bryan)
-> > - Made more qcom-pmic-typec data static const (Bryan)
-> > - Squashed usbc PHY single-lane removal patch (Konrad)
-> > - Further usbc PHY cleanup (Konrad)
-> > - Fixed order of DT properties in pmi632.dtsi (Konrad)
-> > - Instead of specifying bogus PDOs for the port, specify pd-disable and
-> >   typec-power-opmode properties for the connector
-> > - Moved orientation-switch / usb-dual-role properties to sm6115.dtsi
-> >   (Konrad)
-> > - Linked usb_dwc3_ss and usb_qmpphy_usb_ss_in
-> > - Link to v1: https://lore.kernel.org/r/20240113-pmi632-typec-v1-0-de7dfd459353@linaro.org
-> >
-> > ---
-> > Dmitry Baryshkov (14):
-> >       dt-bindings: regulator: qcom,usb-vbus-regulator: add support for PMI632
-> >       dt-bindings: usb: qcom,pmic-typec: add support for the PMI632 block
-> >       dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: split from sc8280xp PHY schema
-> >       dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: support USB-C data
-> >       usb: typec: tcpm: fix the PD disabled case
-> >       usb: typec: qcom-pmic-typec: fix arguments of qcom_pmic_typec_pdphy_set_roles
-> >       usb: typec: qcom-pmic-typec: allow different implementations for the PD PHY
-> >       usb: typec: qcom-pmic-typec: allow different implementations for the port backend
-> >       usb: typec: qcom-pmic-typec: add support for PMI632 PMIC
-> >       phy: qcom: qmp-usb: split USB-C PHY driver
-> >       phy: qcom: qmp-usb: drop dual-lane handling
-> >       phy: qcom: qmp-usbc: add support for the Type-C handling
-> >       arm64: dts: qcom: pmi632: define USB-C related blocks
-> >       arm64: dts: qcom: qrb4210-rb2: enable USB-C port handling
-> >
-> > Vladimir Zapolskiy (1):
-> >       arm64: dts: qcom: sm6115: drop pipe clock selection
-> >
-> >  .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    |  171 +++
-> >  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |   22 -
-> >  .../regulator/qcom,usb-vbus-regulator.yaml         |    9 +-
-> >  .../devicetree/bindings/usb/qcom,pmic-typec.yaml   |   28 +-
-> >  arch/arm64/boot/dts/qcom/pmi632.dtsi               |   30 +
-> >  arch/arm64/boot/dts/qcom/qrb4210-rb2.dts           |   50 +-
-> >  arch/arm64/boot/dts/qcom/sm6115.dtsi               |   44 +-
-> >  drivers/phy/qualcomm/Makefile                      |    2 +-
-> >  drivers/phy/qualcomm/phy-qcom-qmp-usb.c            |  323 +-----
-> >  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c           | 1169 ++++++++++++++++++++
-> >  drivers/usb/typec/tcpm/qcom/Makefile               |    3 +-
-> >  drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.c      |  254 +----
-> >  drivers/usb/typec/tcpm/qcom/qcom_pmic_typec.h      |   27 +
-> >  .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c    |  157 ++-
-> >  .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.h    |   94 +-
-> >  .../typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c   |   80 ++
-> >  drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c |  290 ++++-
-> >  drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.h |  172 +--
-> >  drivers/usb/typec/tcpm/tcpm.c                      |    3 +-
-> >  19 files changed, 2058 insertions(+), 870 deletions(-)
-> > ---
-> > base-commit: 9e21984d62c56a0f6d1fc6f76b646212cfd7fe88
-> > change-id: 20240112-pmi632-typec-4c7533092387
-> >
-> > Best regards,
->
-
-
--- 
-With best wishes
-Dmitry
+> 
+>> Sascha
+> 
+> Thanks for the review,
+> Cristian
 
 -- 
 linux-phy mailing list
