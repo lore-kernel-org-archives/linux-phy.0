@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F7D5C46CD2
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:36:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81CABC46CD2
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 07:36:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gltfCxxJLUsJJmZ06PMCrujSM8d1GV6xMmamuh/KBrU=; b=wSKjN1+ZZ9u/CO
-	Ixh+yy+K8aoJ8x/NMAcyq0CB90qUuqasZSx96T6T0bhbA/Rs/YQRRYApDFMbt7Qn6rkQhEL7eyFJW
-	V6eDl5xiTc43b+YhipLFd+NdAOE5hV4LVXtxbHFKJNH4Ylphz9bPzkfyciF2T5fH+lyYSGXpF7KVX
-	aiU8LqvooQ7JvsFLT8xlyR/DpFIGmYBOHvc9RavYdX/HTvFAzanMCaeLJ2CpImRpDHTkOdgfPCIED
-	Vrk8tGTaAvQiy61M4HVfGIQcJWUo8A3qg+l6NZ8Kl9NAhwsHab/7+QjYuSMAb+x1bBOqetQKm5L1T
-	i7LTalenje4/hI6u5oJw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2i2h9X4eNJS+2xUJdF2yYyoVbXxkwvbjxPw7k1MHCPo=; b=FXfxtmdK/C6iiW
+	eiUc8Yfl6+QyjXmHjMVAAqKLjDa91zeBSMPF7DEYfyDCwYMwAqPPUp81IyYZq/G3TrrPDDaQdjurc
+	NT7R2eYOvwJ+bjDY4DiVR+iMxff+pSV06Fo9+aqURt8fyeaG1IsygqUb7jlwTmL9K2TlYxq1p8+Cr
+	2PyHPJUalXMl2XbhgFdv7EEJvvrIFt+wp7Kajf7YJbchmbG1DIrkEX5hwP+KHBnVICI7w7qaCj0sV
+	NQgLVAn0Kv0kjY0JKRrBDTtC/XG0Vo8Vj7Bcwy20ygmVdPFRKvoWAEetpLDaBidTTkX7UqK+BMZOZ
+	YJU32yXnx8m61sDQY1YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXoV-001sGs-2C;
-	Wed, 24 Jan 2024 07:36:47 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
+	id 1rSXoa-001sIr-0H;
+	Wed, 24 Jan 2024 07:36:52 +0000
+Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSXoT-001sFI-0R
+	id 1rSXoX-001sHR-2C
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Jan 2024 07:36:46 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-1d780a392fdso4458775ad.3
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:36:43 -0800 (PST)
+	Wed, 24 Jan 2024 07:36:50 +0000
+Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-5cddfe0cb64so2613776a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jan 2024 23:36:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706081803; x=1706686603; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=L0WO0CYl2/04yEtIdQGCOmoVDUFynJRcTJckMO4oOK8=;
-        b=VohdZCIOeiz6uyJzD/pCutLuloDroMkPz8D5HTX6UmnUGbLs4TrP0KzN7pFXC+TmrN
-         ivDkf4NJkFACEjyEgUj79QK25zjpGxbWSxxU8nvdJUk1MSOxVHWfZirrDmFs87Ah05xE
-         0jSMwXGnPNDavpSBfTofeM0x0EvWC9CT/2JQmrNGgX0PSvCg4tQZDdLkp6Xx/UtVsVRR
-         CCZDPeWo+tbzwMzj9A6lXYzFNwnsdt0R80iQJPMvPts4bhhF2L0mGtL//QCiWKWb8a6v
-         NWRDvnHainsld/9qypi+wpIfP6C2GDtxW3IUwCNfPVvR2H6Vn2ldBQiCBj26qsXhd7hT
-         2jFg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706081803; x=1706686603;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1706081808; x=1706686608; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=L0WO0CYl2/04yEtIdQGCOmoVDUFynJRcTJckMO4oOK8=;
-        b=Xm1HIOVvLcZrytKgoLa+FWqS1GVotQB7lviQcf/LOBbFHEclj3pltJM1X/6wE+okUE
-         sXi2Ol8au6fTAa5LP4pACCoSzipylbErXSe3A2jVCYGXu/l7tNQpKXyaxPvQd8UzEmBb
-         11xNKhdewCh8WQuGRSJUAfsOsrLiyMOxXjk/gUd1oNK1WIOqfMtZj43t+ctXc+GGQlpq
-         f+/pAQuPU3eSwaFsPbVZUuuQn7Z344Eifc3rl7nD9zMnCeGztxnrB/Q7II0XP4rxfpZw
-         VqN3iLclE59HiwpZL7UmX23RuIvrKl9udbx+7ptS2D+k92gjeO4vE4cHV3305AW42GGC
-         kl/Q==
-X-Gm-Message-State: AOJu0Yy6GWdJHvD6tu9sUrofqz02yZdfrGeLk1Xroga2Ng9JLAJuwL9x
-	SyYVE6U5ieNBOF3GNv9Ys9yMtvPMpGcrFmP1P91yVAVjNgHoKXPRvBzd/UHSHA==
-X-Google-Smtp-Source: AGHT+IE7CH/SGuc+7xjw0qQvVJK175DYMK2mpFDNjyVSXN13WBOxq7vs5X3Pc3k+0o5j0S8TsBRNpQ==
-X-Received: by 2002:a17:902:6bcc:b0:1d7:5c2c:ddc with SMTP id m12-20020a1709026bcc00b001d75c2c0ddcmr361944plt.18.1706081802977;
-        Tue, 23 Jan 2024 23:36:42 -0800 (PST)
+        bh=acrJlYqUICjl/fNKMSHxOuQG7AfEPQFGVB71vx3dR1c=;
+        b=MLWbHOohe6ctmiblpT4FsBdsaSJscuUI1ChtS2tqR/5DPc3PUEji6u50KlQ8Xtuc+5
+         r0UiJkxFupzqWMfVy6LcfmaAiykIg48+MQpEEx0qb66awAJBtdyanvLvOhmLinkTm8VL
+         xZcQV8jM5vDOwfUcY61uJPMc60mEbsum81we5TAJoX/AEgei6Kz6rwsZsh+5PC6sjJvK
+         3AWFZfUU6Nc19ZBlnnyXseduzg6QHRQB74dnL/mqo4DNebWeyhMCASjL8Y3//vGzOzch
+         wUThFZ82YnrcaLOquxbd1cf/pScaZ0yKK/j/GKze4DJec/yfGRUx4qqlIkYx3h4n38XX
+         yq9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1706081808; x=1706686608;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=acrJlYqUICjl/fNKMSHxOuQG7AfEPQFGVB71vx3dR1c=;
+        b=JG6o4/8SRSL6R6MDWoxaGAxDGI9a509wyrBKp3uxwAayqv5asDI9j9dK4ptlOye8Cr
+         yvMngO1MCoSIz0HLid5YLN39Hon7GUAyJgXcYS4VudX9ZNaDMpAXifQBfB0dVhrrgmvG
+         5Bmc5o3NSDT2MYJ404AqVbNF81Gz9xaONyrnnMgyB4wH+JuI0o1Jk25hT1k8LiqhHp1Q
+         D3ZxW4RI2e45wxgwVKtro8eSQXLqIEBPfT1XT8zdzR+Z6js5r1MxYabbAdR4vLrEt1nc
+         OkYlqaWmXvXIZLoC55ygUdmKhwITsaf82czZNfpE+WSYXyw8c8vQFxfsF22OoAfIFJhb
+         CHSg==
+X-Gm-Message-State: AOJu0YzSM2KNGwam1EeLjnkwYMVUut8lDfFD6BOcysWwONU++rZVkFgg
+	pNm+J64wPXn5OfQHOX1iWb9RARB0bAfWUC2VN0MMxXUuLr0P5wtV4kcbPwgE6A==
+X-Google-Smtp-Source: AGHT+IHMZADYbjyE70v0RtIuM4joKlEWmfgzB62tpW1UDbeUqXCniEdLIob+5sbOtqxUtYoqeFybMg==
+X-Received: by 2002:a05:6a20:bf03:b0:199:aeaf:cd3b with SMTP id gc3-20020a056a20bf0300b00199aeafcd3bmr270676pzb.42.1706081808139;
+        Tue, 23 Jan 2024 23:36:48 -0800 (PST)
 Received: from [127.0.1.1] ([117.217.189.109])
-        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.36.38
+        by smtp.gmail.com with ESMTPSA id t3-20020a170902b20300b001d726d9f591sm7386982plr.196.2024.01.23.23.36.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Jan 2024 23:36:42 -0800 (PST)
+        Tue, 23 Jan 2024 23:36:47 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 00/14] Drop PCIE_AUX_CLK from the PCIe PHY nodes of Qcom
- SoCs
-Date: Wed, 24 Jan 2024 13:06:28 +0530
-Message-Id: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
+Date: Wed, 24 Jan 2024 13:06:29 +0530
+Subject: [PATCH 01/14] dt-bindings: phy: qcom,ipq8074-qmp-pcie: Drop
+ PCIE_AUX_CLK from pcie_phy node
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAPy9sGUC/x2MQQqAIBAAvxJ7bkFFkvpKdNhsq6WoUAoh/HvSc
- QZmXogchCN01QuBH4lyHgV0XYFf6VgYZSoMRhmrtDF4eWGkO6HfN5wloWrt6J0j3YwEJbsCF/0
- v+yHnD7T8we5iAAAA
+Message-Id: <20240124-pcie-aux-clk-fix-v1-1-d8a4852b6ba6@linaro.org>
+References: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
+In-Reply-To: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
@@ -80,21 +80,22 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3936;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1433;
  i=manivannan.sadhasivam@linaro.org; h=from:subject:message-id;
- bh=0bAo+DjmDYAuM+Ex9Q8ZUzStygNJaMDJB87PuoEd+ww=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4CPWzo4+SR5Na1gb570X2vt2Ge6JWjdpdWW
- tce2HtyVNiJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+AgAKCRBVnxHm/pHO
- 9bawB/0XUQu+lUtdV1rIUEuXFT8P8HpJPXTIJ+lMtA5ObbJqnZbcNl5XR1z2LWsg4tAijmB/svb
- I3SpxZ2wvr1h1LqY1+6vAudNWgCeNI7k5vHMVejmkn21iY9hE3eQAPrZsuvudQW2G5h87RIiw1Z
- /iD5b3ipQE+lgrwOjnijxCsE4vfyzk6R0Klh4bNt9mFQ8oQnlhyQACvkSyN3HUkmg6roBveew0/
- edDLruGdzlnODmh0H8uQ2wjn7w9+YSxGNs7w59JMJ4olsgdjXsJbBj7CKDnj0Ep2O99+2/kfaAT
- oqMgEVCk0Csif2L7leVYwb5FcGiFIZzqHDp7sAt/XaUpN32s
+ bh=/R7t+UW6ZmKuKk7MIzT+d0YPo+66e3175rDe543o5Ic=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlsL4CiEXvEQ+narxvebS5XjcYmsO6QpgRHqHvp
+ rAqTcXLWsyJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbC+AgAKCRBVnxHm/pHO
+ 9eoUB/9jif/45s9Im3bQE1b5z3netk6pqcfdn67RHHTYUyCIixCOxMKgvmqEN9n48XIP/d9RFRt
+ R7IlQxs2liAg57al7DMCRjYQUeAkMXAu+cF43aY+PxK+xXa/QBy1Tb1KT08qC5AhLmaGDjYLlmL
+ EwnWwzX43aet5J+7NxdvgbtPxlVkGGDAKrroJeWin7T02c47+/915MJ+mjIFnWdHUX2b+NfFjm/
+ bnSiNEf73NJRZjPFsug7zRq63JB5dG2dONZPsogzL6Plym+hinqwcGQnzOTpSJBU8QFy9SUJRAy
+ SDiAHnJUf63xHOazM9doqVZJe5OXjdAJoRCwSitEo6Dr2A1I
 X-Developer-Key: i=manivannan.sadhasivam@linaro.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_233645_172130_D6441919 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20240123_233649_718362_65860377 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,80 +112,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
-
-This series fixes a longstanding but recently identified issue on Qcom
-platforms regarding the use of PCIE_AUX_CLK in PCIe PHY nodes. While trying
-to remove the PCIE_GDSC power domain from the PCIe PHY nodes, Johan reported
-[1] that he encountered "gcc_pcie_3b_aux_clk status stuck at 'off'" issue on
-the X13s while powering up the PCIe PHY without enabling the PCIE_GDSC.
-
-This confirmed that the "gcc_pcie_3b_aux_clk" depends on PCIE_GDSC. But the
-name of the clock implies that it is used by the PCIe controller. So I checked
-with Qcom internally and confirmed that this clock belongs to the controller,
-not PHY.
-
-But on some SoCs, there is a separate PCIE_PHY_AUX_CLK for the PHY to keep the
-link stable during the PCIe L1SS state. But due to some reasons, that clock is
-powered by PCIE_GDSC.
-
-So to conclude, PCIE_AUX_CLK belongs to the controller and it depends on
-PCIE_GDSC, so it should be removed from the PHY nodes. On the other hand,
-PCIE_PHY_AUX_CLK belongs to the PHY and it also depends on the PCIE_GDSC. So for
-the PHY instances that require this clock, PCIE_GDSC should be added as a
-second power domain along with MX domain which is applicable to all PHYs.
-
-This series removes the PCIE_AUX_CLK from PCIe PHY nodes of all SoCs and also
-makes the changes to the bindings to reflect the same. I will also submit a
-followup series to fix the PHY power domain across all SoCs.
-
-NOTE: I haven't added the Fixes tag on purpose, since the patches are getting
-backported by the stable team whenever the tag is present and if both the
-binding and dts patches didn't get backported to a release, then it will cause
-ABI break.
-
-- Mani
-
-[1] https://lore.kernel.org/lkml/ZY6sh8nlEUyEfL0u@hovoldconsulting.com/
+PCIe PHY hw doesn't require PCIE_AUX_CLK for functioning. This clock is
+only required by the PCIe controller. Hence drop it from the binding.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
-Manivannan Sadhasivam (14):
-      dt-bindings: phy: qcom,ipq8074-qmp-pcie: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: ipq6018: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: ipq8074: Drop PCIE_AUX_CLK from pcie_phy nodes
-      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Fix the usage of aux clk
-      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document missing compatible for SM8350 3x2 PHY
-      phy: qcom: qmp-pcie: Add a new compatible for SC7280 SoC
-      phy: qcom: qmp-pcie: Add a comment to clarify the use of "aux and "phy_aux" clocks
-      arm64: dts: qcom: sc7280: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: sc8280xp: Drop PCIE_AUX_CLK from pcie_phy nodes
-      arm64: dts: qcom: sm8350: Drop PCIE_AUX_CLK from pcie_phy nodes
-      arm64: dts: qcom: sm8450: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: sm8550: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: sm8650: Drop PCIE_AUX_CLK from pcie_phy node
-      arm64: dts: qcom: sa8775p: Drop PCIE_AUX_CLK from pcie_phy nodes
+ .../devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml       | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
- .../bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml    |  9 +--
- .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 81 ++++++++++++++--------
- arch/arm64/boot/dts/qcom/ipq6018.dtsi              |  6 +-
- arch/arm64/boot/dts/qcom/ipq8074.dtsi              | 12 ++--
- arch/arm64/boot/dts/qcom/sa8775p.dtsi              | 14 ++--
- arch/arm64/boot/dts/qcom/sc7280.dtsi               |  8 +--
- arch/arm64/boot/dts/qcom/sc8280xp.dtsi             | 25 +++----
- arch/arm64/boot/dts/qcom/sm8350.dtsi               | 10 ++-
- arch/arm64/boot/dts/qcom/sm8450.dtsi               |  6 +-
- arch/arm64/boot/dts/qcom/sm8550.dtsi               |  6 +-
- arch/arm64/boot/dts/qcom/sm8650.dtsi               |  6 +-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 13 +++-
- 12 files changed, 104 insertions(+), 92 deletions(-)
----
-base-commit: 6613476e225e090cc9aad49be7fa504e290dd33d
-change-id: 20240122-pcie-aux-clk-fix-094bc77a16ba
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+index 634cec5d57ea..a953ac197dfd 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
+@@ -25,11 +25,10 @@ properties:
+       - description: serdes
+ 
+   clocks:
+-    maxItems: 3
++    maxItems: 2
+ 
+   clock-names:
+     items:
+-      - const: aux
+       - const: cfg_ahb
+       - const: pipe
+ 
+@@ -72,11 +71,9 @@ examples:
+         compatible = "qcom,ipq6018-qmp-pcie-phy";
+         reg = <0x00084000 0x1000>;
+ 
+-        clocks = <&gcc GCC_PCIE0_AUX_CLK>,
+-                 <&gcc GCC_PCIE0_AHB_CLK>,
++        clocks = <&gcc GCC_PCIE0_AHB_CLK>,
+                  <&gcc GCC_PCIE0_PIPE_CLK>;
+-        clock-names = "aux",
+-                      "cfg_ahb",
++        clock-names = "cfg_ahb",
+                       "pipe";
+ 
+         clock-output-names = "gcc_pcie0_pipe_clk_src";
 
-Best regards,
 -- 
-Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+2.25.1
 
 
 -- 
