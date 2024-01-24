@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3C03C46CD2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9BC6C47E49
 	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 05:59:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,49 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oo1Jd6AmNIKsi3PD43Os1JyuMxb2naoC3AO+MX+HzgY=; b=wcVFhMvbC0XWoa
-	A93z31BshU2tqzGJ8pDN01JB8vCHAJkXpyxeF9z38kaJBJ+r4qEXugOvHZEai1LbtsNP6mVtroWca
-	6Lz9yk0oMEVse1eKsOHCbp2ifbMqrh7Y47SkUqCiTjbcKs0a7RHLkNw36DFsSlN4DB+TGKH8EuCPf
-	qjjfzW/I+RNPmyc+wePzPAezh9YwPAs/kdnAoLPC2qt5M37EBUqJP0jtEQFXPHmuANoAC/b+7ZLun
-	vHt9S1jYeH47YTykQDvU8AfB5gPNUp7YfBPRXE2jaAdOnffgXjTleTECBWtAVLCUrnby20h4kF4Pp
-	VsYK4U6CcsWEqDRVLEFw==;
+	List-Owner; bh=Khouqv4WE/zvRoq0v44dfb3a7eTWi7iaZY3Q1KMTGgY=; b=kZKsqRskQo1rJ2
+	F5IE1nE9OQoaVA6DgHq7wkaeoDF7/URzG2b4UAZ67JryxXqGJyztJ6wi2cXFq7J5btls1DanoZQdc
+	UQdtuWdpZfBLZcxnCgnjaRGsYi6TNmj3mKC1nMa5BdYRIxPHPfWlBE8/bMZg2NwMnK9H6YE2h1J37
+	wf5WEoYiOpAM7Fvi6ZXOfqa6dJmJEWqgXlzs67cloPEoa3K/nW1Xb6/S0tWyF/gNQTUZh+rGG2WML
+	v8TRHQv3ru8ebYVeVEjETrwp991tVKiZjkYZqdfEHLNvy7YXKHVxF8GO811+k0yTlbgffMBFjOpSe
+	T4HRfRPlqChONVpTKqiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSWIP-001fAR-0j;
+	id 1rSWIP-001fAa-1a;
 	Wed, 24 Jan 2024 05:59:33 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSWIM-001f9p-30
+	id 1rSWIN-001f9l-1F
 	for linux-phy@lists.infradead.org;
 	Wed, 24 Jan 2024 05:59:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0F47F61E7E;
-	Wed, 24 Jan 2024 05:59:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CB2EC433F1;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 386DF61F8C;
 	Wed, 24 Jan 2024 05:59:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48444C43390;
+	Wed, 24 Jan 2024 05:59:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706075969;
-	bh=THNCpjJfkari3A89HCYqRjqY8HEsq7oCLnNzT/WpTBU=;
+	s=k20201202; t=1706075968;
+	bh=yFrBozIaKa9pAQDFKe2ZCraZhpn/YfI3TF+Anbs/H2A=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=hobzoJx8QwgRzgBLHM1sj+uyJwG1UeYyxal8BEtN2Z4a0VNQy5CkJ7udw6QaWler2
-	 SfpSL4bQRAKTSLXtn/8hgmPE8bD3eFXmk7fms7bbu9qU+nmZ0S+NHBkNYzKrlLZikX
-	 jSxUCOtTLvRTi7xLib4SnS9TK3L0aMl8nRZVZy4JJmz0RO1yjBsFvb44sUZD0cVYgB
-	 YYkKCwLmTs9j/NVwfmYFGE7xTCsyiUwfHBki0CNwbTxlj04lmIt706d6f5reIsyZOp
-	 XOUprR0LMwINpOjE60q6eUVopJkJW69Zh9+w4w9LzAigQb3dOJ1U8qdItFCwilKwYo
-	 QY/C7WAPc5lGg==
+	b=aBUpOPbTiMioWl4no25kDR0vJDt6WM95RpRIz0jij8zo0D0bOjgL44TwDz1g2Tolq
+	 Ezq+YrmjsWZgk4lEcSCPulj3Xl/cgADt6qzsg7+P08okWa+1DTQYJYC31vgDc7U8PW
+	 SZWvVXHSx5zlKEpGG1677A0SUBbyOf2rR6q+DX2GME3NL/VTSID0IjVptsNKO6myDG
+	 nm/pG4uOZzzmh8zIhQcubzZeIZlB2XpUr8JBldofKG2WU5G5X5+AAzd9cjV4fZBUuk
+	 vVM0YoQHWSaxKQZ5DbtPhX03/De7G9f5ySIE34PpwtIyteTmdxadIRNKNd4H7eiet3
+	 nk8b2VBwwQB1g==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20240108205140.1701770-1-horatiu.vultur@microchip.com>
-References: <20240108205140.1701770-1-horatiu.vultur@microchip.com>
-Subject: Re: [PATCH] phy: lan966x: Add missing serdes mux entry
-Message-Id: <170607596825.395031.15945327841005877396.b4-ty@kernel.org>
-Date: Wed, 24 Jan 2024 11:29:28 +0530
+To: kishon@kernel.org, Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Cc: error27@gmail.com, linux-phy@lists.infradead.org, 
+ linux-renesas-soc@vger.kernel.org, kernel test robot <lkp@intel.com>
+In-Reply-To: <20240105093703.3359949-1-yoshihiro.shimoda.uh@renesas.com>
+References: <20240105093703.3359949-1-yoshihiro.shimoda.uh@renesas.com>
+Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Fix returning wrong
+ error code
+Message-Id: <170607596591.395031.2360574561399395550.b4-ty@kernel.org>
+Date: Wed, 24 Jan 2024 11:29:25 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_215931_016132_EDA846C0 
-X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-CacheID: sfid-20240123_215931_466303_6F714398 
+X-CRM114-Status: UNSURE (   4.24  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,20 +75,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 08 Jan 2024 21:51:40 +0100, Horatiu Vultur wrote:
-> According to the datasheet(Table 3-2: Port configuration) the serdes 2
-> (SD2) can be configured to run QSGMII or SGMII mode. Already the QSGMII
-> mode is supported in the serdes_muxes list  but was missing the SGMII mode.
-> In this mode the serdes is connected to the port 4.
-> Therefore add this entry in the list.
+On Fri, 05 Jan 2024 18:37:03 +0900, Yoshihiro Shimoda wrote:
+> Even if device_create_file() returns error code,
+> rcar_gen3_phy_usb2_probe() will return zero because the "ret" is
+> variable shadowing.
 > 
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: lan966x: Add missing serdes mux entry
-      commit: 4e4a1183f281d95fbb6caf28d670775d13264beb
+[1/1] phy: renesas: rcar-gen3-usb2: Fix returning wrong error code
+      commit: 249abaf3bf0dd07f5ddebbb2fe2e8f4d675f074e
 
 Best regards,
 -- 
