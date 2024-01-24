@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07CA0C47258
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 00:24:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D27BC47DDB
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jan 2024 00:58:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UA0Hd4bV59F/253i+fTZEWNUveHm3QkPJgEJnvcu1Hc=; b=aBnEZ7uH1C3K6O
-	pSmdE86xh2ApqAZaSJGrEGUtuWMb26g8iFKCKwulfRq71V2dB/X5Z8I0vb/lH2NIIdsZSdnflDqz9
-	CqHKgCBgKsUP+Zf7TvIch7Tv4sXCy64mq/fNdFDTAvvx8uvuwpX2jYE1j3GmPnwbAOl21x0z5mSnz
-	JZlnahZJMXnpbPg4yvwfHhMR54RUcEmmhGHBtepd28eCORy5yvOZE3IXsQnaR9DT5L2IIv2YnBbD7
-	DHPDU08bAv5stiIfrSSYRAvE0LcTK46z1z9LwavG4vtyQjV9LpxfFECVU/3KJ5UdBFGUzUgh+DPk6
-	+7U97v25RcO874gZtbZA==;
+	List-Owner; bh=Og59RkvAjAs8FWP18Fl/4yMJtz5/ccL+HVMEgrJ+rhY=; b=Py+LHdLygoj3jx
+	941lk5TSfMW+6XG2spADBwpjkGk+ET72iFW+2SWWUq9P3+9FWu2eKaUgpiHpFpk1p8KMj2Gzl0I85
+	Ym+WOS0COaw3Y3KjhRnVygIxlq6ra5XThuaVk2BlJTms43Zh7rpJtJ9W5EFcdrfdG0FRqIqILNXHG
+	0XN2kYs5xWyG8gsPIPcAHiy7fMQ5+fKFx8xUQ7+V82ii4McdiMUT54GUi5FUSDdDj5s+pjGNc4K4Y
+	GWK0QOcT0+3DPp/CeqmG+4tQkfSrSEHGs/GMCy79I1CojlCxJMCrF4R+OGFhl2NyfcegJsDB0gPPm
+	6F1WFxGz4EpJrzLgqjMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSR4P-000ueG-1R;
-	Wed, 24 Jan 2024 00:24:45 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+	id 1rSRb4-000xGf-2D;
+	Wed, 24 Jan 2024 00:58:30 +0000
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSR4L-000ubT-2I;
-	Wed, 24 Jan 2024 00:24:43 +0000
+	id 1rSRay-000xFV-2d;
+	Wed, 24 Jan 2024 00:58:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1706055876;
-	bh=1Ilef9mn2H+4EwNKZD3TwdLOWn1+suThiEC0pHeCWIw=;
+	s=mail; t=1706057901;
+	bh=al7R95D+C2woyVqs5DbpxGVGpHHf8O78JLDnxNkJK3E=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=EgLvktNb+xFV5neKx76QNUz8Z6PPviCRKinW7BzxHLZO1KWzI0qzXvuVuWr3naKRD
-	 t7boXipAQId+6NrFpby105Ebs67n+knviJsu4/Xc6fXMVhJ4nSbJUZ+zQKyYq1hhpK
-	 BGeeCn4z1XqWwBXo/DR3QlGnVEljBMqYSu9Wodipu9yWstwAWPEY1315bYR0I0a7Nl
-	 zdsDTJzZXs56kUABSuzQUNzvZjSKxNh6uH7YufGKAI7mCJksKpTrooIRpZV2MoZZzo
-	 cLAtdcb43RImuABmsrMTHbEIs52y0imxjhQanzf0k1OxWl6LAWGqL2oj0h5Klkh5LG
-	 chz8vkBvwMabA==
+	b=2haRJJLXlx/nQrEk+J41rkiz+7O6rZXpKno9CzHeNbGdrLgqhjZzEA0oDXaj5s9jL
+	 5dYVQV/oN5oO/cl3nG//7wpbtXMlu5dmnzg2uvxjbtBYkMr+Jc2jvzW9lwVu797cYc
+	 b2m+rSrRBLBvZF/MiXndlpULeBWKTOW8vY4Y6CbjDQSugt55KDunGpkZpZnADeGJqn
+	 bW9XUc+ERwpbTBd916emZbN5qvZXRG0YCFC3SE8BXPOvcKV58nLqj+riTkWarxlOhI
+	 sqmnYUXuSgwk9sO2k6P97fnbJrfPgJTlq2avH18Hze1ovY8GvocyzoKWjxfKYwGUQP
+	 fQeORGWwgeOWw==
 Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id C780D3782066;
-	Wed, 24 Jan 2024 00:24:35 +0000 (UTC)
-Message-ID: <ba848de7-1a20-47ee-9013-10500eb3da00@collabora.com>
-Date: Wed, 24 Jan 2024 02:24:35 +0200
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id D1EBD3782074;
+	Wed, 24 Jan 2024 00:58:20 +0000 (UTC)
+Message-ID: <00c749f7-3eb9-4bd1-a057-43a692b77d68@collabora.com>
+Date: Wed, 24 Jan 2024 02:58:20 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 3/3] phy: rockchip: Add Samsung HDMI/DP Combo PHY driver
 Content-Language: en-US
-To: Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
- Johan Jonker <jbx6244@gmail.com>,
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>,
  Sebastian Reichel <sebastian.reichel@collabora.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Algea Cao <algea.cao@rock-chips.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ Andy Yan <andy.yan@rock-chips.com>, Algea Cao <algea.cao@rock-chips.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org, kernel@collabora.com
 References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
  <20240119193806.1030214-4-cristian.ciocaltea@collabora.com>
- <298b7a10-2acb-4297-92cd-2ee4d890bfb2@rock-chips.com>
+ <20240122121409.GW4700@pengutronix.de>
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <298b7a10-2acb-4297-92cd-2ee4d890bfb2@rock-chips.com>
+In-Reply-To: <20240122121409.GW4700@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_162441_960217_20CBE60C 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20240123_165825_000407_796D7673 
+X-CRM114-Status: GOOD (  31.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,34 +79,161 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQW5keSwKCk9uIDEvMjIvMjQgMTI6MTcsIEFuZHkgWWFuIHdyb3RlOgo+IEhpIENyaXN0aWFu
-Ogo+IAo+IE9uIDEvMjAvMjQgMDM6MzgsIENyaXN0aWFuIENpb2NhbHRlYSB3cm90ZToKPj4gQWRk
-IGRyaXZlciBmb3IgdGhlIFJvY2tjaGlwIEhETUkvZURQIFRYIENvbWJvIFBIWSBmb3VuZCBvbiBS
-SzM1ODggU29DLgoKWy4uLl0KCj4+ICtzdGF0aWMgaW50IHJvY2tjaGlwX2hkcHR4X3BoeV9wb3dl
-cl9vbihzdHJ1Y3QgcGh5ICpwaHkpCj4+ICt7Cj4+ICvCoMKgwqAgc3RydWN0IHJvY2tjaGlwX2hk
-cHR4X3BoeSAqaGRwdHggPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPj4gK8KgwqDCoCBpbnQgYnVz
-X3dpZHRoID0gcGh5X2dldF9idXNfd2lkdGgoaGRwdHgtPnBoeSk7Cj4+ICvCoMKgwqAgaW50IGJp
-dF9yYXRlID0gYnVzX3dpZHRoICYgREFUQV9SQVRFX01BU0s7Cj4+ICvCoMKgwqAgaW50IHJldDsK
-Pj4gKwo+PiArwqDCoMKgIGRldl9kYmcoaGRwdHgtPmRldiwgIiVzIGJ1c193aWR0aD0leCByYXRl
-PSVkXG4iLAo+PiArwqDCoMKgwqDCoMKgwqAgX19mdW5jX18sIGJ1c193aWR0aCwgYml0X3JhdGUp
-Owo+PiArCj4+ICvCoMKgwqAgcmV0ID0gcG1fcnVudGltZV9yZXN1bWVfYW5kX2dldChoZHB0eC0+
-ZGV2KTsKPj4gK8KgwqDCoCBpZiAocmV0KSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCBkZXZfZXJyKGhk
-cHR4LT5kZXYsICJGYWlsZWQgdG8gcmVzdW1lIHBoeTogJWRcbiIsIHJldCk7Cj4+ICvCoMKgwqDC
-oMKgwqDCoCByZXR1cm4gcmV0Owo+PiArwqDCoMKgIH0KPj4gKwo+PiArwqDCoMKgIGlmIChidXNf
-d2lkdGggJiBIRE1JX0VBUkNfTUFTSykKPj4gK8KgwqDCoMKgwqDCoMKgIGhkcHR4LT5lYXJjX2Vu
-ID0gdHJ1ZTsKPj4gK8KgwqDCoCBlbHNlCj4+ICvCoMKgwqDCoMKgwqDCoCBoZHB0eC0+ZWFyY19l
-biA9IGZhbHNlOwo+PiArCj4+ICvCoMKgwqAgaWYgKGJ1c193aWR0aCAmIEhETUlfTU9ERV9NQVNL
-KSB7Cj4gCj4gSGVyZSB1c2UgcGh5LT5hdHRycy5idXNfd2lkdGggdG8gaW5kaWNhdGUgZGlmZmVy
-ZW50IHdvcmsgbW9kZSwKPiB3ZSBhbHNvIHVzZSB0aGUgc2FtZSBpbiBvdXIgYnNwLCBidXQgbm90
-IHN1cmUgaWYgaXQgaXMgdGhlIGFwcHJvcHJpYXRlIHdheS4KClVuZm9ydHVuYXRlbHkgdGhlIFBI
-WSBBUEkgZG9lc24ndCBzZWVtIHRvIHByb3ZpZGUgYSBjbGVhbiB3YXkgdG8gcGFzcwphcmJpdHJh
-cnkgZGF0YS4gIFByb2JhYmx5IGZvciB0aGUgaW5pdGlhbCBzdXBwb3J0IHdlIGNvdWxkIHNpbXBs
-eSBkcm9wCnRoZSAxMC1iaXQgY29sb3IgZGVwdGgsIEZSTCBhbmQgRUFSQyBmZWF0dXJlcy4KClRo
-YW5rcywKQ3Jpc3RpYW4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LXBoeQo=
+On 1/22/24 14:14, Sascha Hauer wrote:
+> On Fri, Jan 19, 2024 at 09:38:03PM +0200, Cristian Ciocaltea wrote:
+>> Add driver for the Rockchip HDMI/eDP TX Combo PHY found on RK3588 SoC.
+>>
+>> The PHY is based on a Samsung IP block and supports HDMI 2.1 TMDS, FRL
+>> and eDP links.  The maximum data rate is 12Gbps (HDMI 2.1 FRL), while
+>> the minimum is 250Mbps (HDMI 2.1 TMDS).
+>>
+>> Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
+>> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
+>> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>> ---
+>>  drivers/phy/rockchip/Kconfig                  |    8 +
+>>  drivers/phy/rockchip/Makefile                 |    1 +
+>>  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 2045 +++++++++++++++++
+>>  3 files changed, 2054 insertions(+)
+>>  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>
+>> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+>> index 94360fc96a6f..95666ac6aa3b 100644
+>> --- a/drivers/phy/rockchip/Kconfig
+>> +++ b/drivers/phy/rockchip/Kconfig
+>> @@ -83,6 +83,14 @@ config PHY_ROCKCHIP_PCIE
+>>  	help
+>>  	  Enable this to support the Rockchip PCIe PHY.
+>>  
+>> +config PHY_ROCKCHIP_SAMSUNG_HDPTX
+>> +	tristate "Rockchip Samsung HDMI/DP Combo PHY driver"
+>> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
+>> +	select GENERIC_PHY
+>> +	help
+>> +	  Enable this to support the Rockchip HDMI/DP Combo PHY
+>> +	  with Samsung IP block.
+>> +
+>>  config PHY_ROCKCHIP_SNPS_PCIE3
+>>  	tristate "Rockchip Snps PCIe3 PHY Driver"
+>>  	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
+>> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+>> index 7eab129230d1..3d911304e654 100644
+>> --- a/drivers/phy/rockchip/Makefile
+>> +++ b/drivers/phy/rockchip/Makefile
+>> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
+>> +obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
+>>  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
+>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> new file mode 100644
+>> index 000000000000..d8171ea5ce2b
+>> --- /dev/null
+>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> @@ -0,0 +1,2045 @@
+>> +// SPDX-License-Identifier: GPL-2.0+
+>> +/*
+>> + * Copyright (c) 2021-2022 Rockchip Electronics Co., Ltd.
+>> + * Copyright (c) 2024 Collabora Ltd.
+>> + *
+>> + * Author: Algea Cao <algea.cao@rock-chips.com>
+>> + * Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>> + */
+>> +#include <linux/bitfield.h>
+>> +#include <linux/clk.h>
+>> +#include <linux/delay.h>
+>> +#include <linux/mfd/syscon.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_platform.h>
+>> +#include <linux/phy/phy.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/rational.h>
+>> +#include <linux/regmap.h>
+>> +#include <linux/reset.h>
+>> +
+>> +#define GRF_HDPTX_CON0			0x00
+>> +#define HDPTX_I_PLL_EN			BIT(7)
+>> +#define HDPTX_I_BIAS_EN			BIT(6)
+>> +#define HDPTX_I_BGR_EN			BIT(5)
+>> +#define GRF_HDPTX_STATUS		0x80
+>> +#define HDPTX_O_PLL_LOCK_DONE		BIT(3)
+>> +#define HDPTX_O_PHY_CLK_RDY		BIT(2)
+>> +#define HDPTX_O_PHY_RDY			BIT(1)
+>> +#define HDPTX_O_SB_RDY			BIT(0)
+>> +
+>> +#define CMN_REG0000			0x0000
+> 
+> These register names are not particularly helpful. Maybe use a
+> 
+> #define CMN_REG(x)			((x) * 4)
+> 
+> Instead?
+
+Yes, sounds good.
+
+>> +
+>> +static int hdptx_lcpll_frl_mode_config(struct rockchip_hdptx_phy *hdptx,
+>> +				       u32 rate)
+>> +{
+>> +	u32 bit_rate = rate & DATA_RATE_MASK;
+>> +	u8 color_depth = (rate & COLOR_DEPTH_MASK) ? 1 : 0;
+>> +	const struct lcpll_config *cfg = lcpll_cfg;
+>> +
+>> +	for (; cfg->bit_rate != ~0; cfg++)
+>> +		if (bit_rate == cfg->bit_rate)
+>> +			break;
+> 
+> You could use ARRAY_SIZE() to iterate over the array and save the extra
+> entry at the end. Likewise for the other arrays used in the driver.
+
+Sure, will do.
+
+>> +
+>> +	if (cfg->bit_rate == ~0)
+>> +		return -EINVAL;
+>> +
+> 
+>> +static int rockchip_hdptx_phy_power_on(struct phy *phy)
+>> +{
+>> +	struct rockchip_hdptx_phy *hdptx = phy_get_drvdata(phy);
+>> +	int bus_width = phy_get_bus_width(hdptx->phy);
+>> +	int bit_rate = bus_width & DATA_RATE_MASK;
+> 
+> What is going on here? bus_width is set to 8 in probe() using
+> phy_set_bus_width(), but the value you pull out of phy_get_bus_width()
+> is expected to contain the bit_rate and several other flags.
+> 
+> It looks like you are tunneling flags from some other driver using this
+> field. Isn't there a better way to accomplish this? If not, I think this
+> needs some explanation.
+
+Indeed, sorry for missing a comment here.  The flags are set by the
+bridge driver to enable 10-bit color depth, FRL and EARC.  So far I
+couldn't find an alternative approach to pass custom data using the PHY API.
+
+> At least the variable should be renamed. it's called "bus_width" and it's
+> passed to functions like hdptx_lcpll_frl_mode_config() which has this
+> parameter named "rate" which is quite confusing.
+
+I think for the initial support it's not really necessary to implement
+all those features.  Andy, should we drop them until a better solution
+is found?
+
+> Sascha
+
+Thanks for the review,
+Cristian
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
