@@ -4,61 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2ABCC47422
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jan 2024 17:18:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22875C47258
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Jan 2024 19:57:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ry7P1AykrP/RCuN/HDrkDbCWE8KrFQf+1YclqMs3rSE=; b=plqhK4BZlKBVeJ
-	ROes4p1IsHg2KafHb0manrbzJF7eEfZDFAwp//rINU6bGA0kGqhThpdnXZryatNICxJtXA4/WKHbW
-	LZ0X8UWCwoHErcyRh2HX1q3tzZmNlBkf5w2QRtBMXUICrHxBJj0ZozzmD7j1aa5IOncaZOXrcpa3M
-	n2Jj6sYDoR+z8KFHK198j606VRARznvypqmQ5kF0CDxzjP8S2HNpwxCCO4YdvwE0lncDxePfk8K+m
-	U7v93+iUfWWKMCoWcJfIbIMtLyMDOvCVwJR98fLDK05+zcJb2AhLc3VEy08+QaxbG9VU76o3mpobw
-	5L06268H19HeOzdSXU9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AcsPQlVxpdk2E6GZ6jDPFaQgn9+9774bio0dq0F5ihs=; b=qhznpQVoSlIcmk
+	9TKOUrAnvSBuiljjJqjWNBRBAgzywImj+HkB5/qbkCrKFqOBvJB0HpMgAXjNCTbUAH+3F5DIo8Cw/
+	/TItbMbpsoeuEMRVl9L/uFjZbh2A7SOID1eqv9yX1AkHqJ6zt4BkrX7JSbI+U1HOFZdZNSQHzF075
+	+JNKsheg0+5bCm/Hv/5SlfYzNOkwMlpjjAeXXGdfK2QsPYhGYxFYizkU+2wIhG4d0tsvnu7LEYVHA
+	Fe1OczrXXc45/4acU6wcvQRavXU5CGOBG9ZbcGBlxGXF5Y9FUUyo3DV9HmSou1imr2mz+FIDywTW/
+	kfiO9X0zkhmv+RHxrVCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rT3ND-000000017Yu-1Bmb;
-	Thu, 25 Jan 2024 17:18:43 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1rT5qa-00000001fcH-1xLy;
+	Thu, 25 Jan 2024 19:57:12 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rT3NA-000000017Uj-0o3G
-	for linux-phy@lists.infradead.org;
-	Thu, 25 Jan 2024 17:18:42 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 9362920003;
-	Thu, 25 Jan 2024 17:18:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1706203115;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=M3w/v9oEuYlkPL4C5kh7T1VxbhDjpPY1oFMPL7Ii+tg=;
-	b=TLymDIkiKJiBhJzkLiN12QBT7u1FHgvghk103/R4JrrlkXq220kOYkho7k6V6QnW8UYRcI
-	GRzm3FPVbO1h46mQwSqJT+qWV6TOc9X8LmaklPnnsrU5GI6OYzGQMfyIJrPMiRfO+nbsFf
-	8piTxBJGnoVzusL13EhQofWSNV5HcJOOhIXSU7ZCmKR3mSaMUf89nLvDa/oLQvsgIOh0PD
-	56sx5qChrNmwIou6OVgKOaHWjE10xZQE08koPG/Xu+f4GdV1HM5IQzslN3x7LbHyiUIGEk
-	aJdLsDyXTdyQnqMpxttPwztAwaQTdmLrxdHnP0obqUoS+x3U4VuXGr/o2aU9zQ==
-From: Thomas Richard <thomas.richard@bootlin.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	gregory.clement@bootlin.com,
-	thomas.petazzoni@bootlin.com,
-	theo.lebrun@bootlin.com,
-	u-kumar1@ti.com,
-	Thomas Richard <thomas.richard@bootlin.com>
-Subject: [PATCH] phy: ti: gmii-sel: add resume support
-Date: Thu, 25 Jan 2024 18:17:54 +0100
-Message-Id: <20240125171754.773909-1-thomas.richard@bootlin.com>
+	id 1rT5qW-00000001fZy-1P4E;
+	Thu, 25 Jan 2024 19:57:09 +0000
+Received: from [194.95.143.137] (helo=phil.dip.tu-dresden.de)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1rT5qE-0001FJ-Df; Thu, 25 Jan 2024 20:56:50 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Algea Cao <algea.cao@rock-chips.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	kernel@collabora.com,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCH 0/3] Add support for RK3588 HDMI/DP Combo PHY
+Date: Thu, 25 Jan 2024 20:56:44 +0100
+Message-Id: <170621254052.1850726.5970136297823229036.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
+References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
 MIME-Version: 1.0
-X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240125_091840_393970_F48E13FA 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20240125_115708_407519_87840DC5 
+X-CRM114-Status: GOOD (  10.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,59 +77,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The resume callback restores the submode of each PHY.
+On Fri, 19 Jan 2024 21:38:00 +0200, Cristian Ciocaltea wrote:
+> Add driver and bindings to support the Rockchip HDMI/eDP TX Combo PHY
+> found on RK3588 SoC.
+> 
+> The PHY is based on a Samsung IP block and supports HDMI 2.1 TMDS, FRL
+> and eDP links.
+> 
+> The HDMI link has been tested on Rock 5B and EVB1 boards.
+> 
+> [...]
 
-It uses the submode stored in struct phy_gmii_sel_phy_priv (variable
-phy_if_mode). The submode was saved by the set_mode PHY operation.
+Applied, thanks!
 
-Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
----
- drivers/phy/ti/phy-gmii-sel.c | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+[1/3] dt-bindings: soc: rockchip: Add rk3588 hdptxphy syscon
+      commit: 738227ab42fe0c6047f932aef11b9fd647d203f9
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index 555b323f45da..c62790937313 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -491,11 +491,35 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static int phy_gmii_sel_resume_noirq(struct device *dev)
-+{
-+	struct phy_gmii_sel_priv *priv = dev_get_drvdata(dev);
-+	struct phy_gmii_sel_phy_priv *if_phys = priv->if_phys;
-+	int ret, i;
-+
-+	for (i = 0; i < priv->num_ports; i++) {
-+		if (if_phys[i].phy_if_mode) {
-+			ret = phy_gmii_sel_mode(if_phys[i].if_phy,
-+						PHY_MODE_ETHERNET, if_phys[i].phy_if_mode);
-+			if (ret) {
-+				dev_err(dev, "port%u: restore mode fail %d\n",
-+					if_phys[i].if_phy->id, ret);
-+				return ret;
-+			}
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static DEFINE_NOIRQ_DEV_PM_OPS(phy_gmii_sel_pm_ops, NULL, phy_gmii_sel_resume_noirq);
-+
- static struct platform_driver phy_gmii_sel_driver = {
- 	.probe		= phy_gmii_sel_probe,
- 	.driver		= {
- 		.name	= "phy-gmii-sel",
- 		.of_match_table = phy_gmii_sel_id_table,
-+		.pm = pm_sleep_ptr(&phy_gmii_sel_pm_ops),
- 	},
- };
- module_platform_driver(phy_gmii_sel_driver);
+I've grabbed this one already, to keep my GRFs together :-)
+
+
+Best regards,
 -- 
-2.39.2
-
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
