@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15A0AC47258
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jan 2024 09:11:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CCC5C47258
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Jan 2024 09:12:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=egMKtUfqRciF34/xOajAyWiHFIBuCSR+uDPHiGHvu4M=; b=Vt3M8JV7WpT4Ft
-	V1sC7Pi8RK7GeVc9Gt672kgZeNa989PUrNFBgpNUPickyyVfkhLkEEqkcLCSPttek0Rjjx4FocZba
-	qeKoU3zMUqxw/1ZE5i5+ghR3pR/9FDFZDTkiyHJtvvhh22ZJACNBTSeIyHJ1+4b6e0TseEkrE+3H0
-	eSxCcOJwnxiQOEyd94RRxQRrmQOEzHMU+hIVvsjspPqxnwTKnWI6ShVVgkJVypSmNkOD3BwQcdpSY
-	QcFfPsOeIlJvOhawBUcWQ28rl8lSp4dSNTA3idqNsVxFhWo7AQZIwdDO27xDkgsDQHXbsEEDxf7rd
-	9bBZwMR4gAh4gWBZ7moA==;
+	List-Owner; bh=GwQcFm5/XPvsRtQLqw7VE5+R/mlVS/MgslWrKtPIWss=; b=KtBUGX+cVukvsQ
+	PvI3+S9CsCdfbk7QnvTxu2vROgxF8KrB3fL1vVB3EKV6xclctqNKHtWKzNzRMo5K8hoCXazAIYssf
+	bNo2IZGbomrpKdLNKV4ny0HMuhEL0+6+JJuEYOSmOVeWLvDzrAGg1ZEp6SzoiqqL93tkyKLD6H9cm
+	mJpz/QMMwIIx6HGz5Bj2LPY88aYicJfPkzj6y9mfoKGc5ulrY+LHpurzKXGSFS1E/k77Pu1+FvMHR
+	IUTM2C25jUX1RtOQ68sYhcpF+hsKjhr2Og99VJmXPJkPk7xO+7dbxxuv1uyRsjYYudCylZffAyX/g
+	YOSjhYVUoMttPD7qkL6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSvlE-007TnQ-0w;
-	Thu, 25 Jan 2024 09:11:00 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1rSvmJ-007U9S-1r;
+	Thu, 25 Jan 2024 09:12:07 +0000
+Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSvlB-007TlP-0O
+	id 1rSvmF-007U64-1F
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Jan 2024 09:10:58 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-33934567777so4349623f8f.1
-        for <linux-phy@lists.infradead.org>; Thu, 25 Jan 2024 01:10:54 -0800 (PST)
+	Thu, 25 Jan 2024 09:12:05 +0000
+Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-336c8ab0b20so6233993f8f.1
+        for <linux-phy@lists.infradead.org>; Thu, 25 Jan 2024 01:12:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706173853; x=1706778653; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706173920; x=1706778720; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Ig9CtrewkNZDns+fis+CVNjk9HmfwY1rg6axCTrCm6U=;
-        b=A8ex9n58eRnYzS3huYT5FvfpJcYYIVXyOiqnXOuiivnTkYzH/4TPTNue0Mxs6in+2p
-         2j0iZcxfojy0Yi87LHNdBMK2YEE23URbITq1dOgBrDKaYTx8qAlSXdy17uBAggnvTSlb
-         AcY/gNmFAVR/FXjbiA+uzhSNUUbJV0ydEkxrS55uTrrsodjuYnGC9H6BkBVlo48BNJEO
-         2QAGJRRu06TvqGh5g2lsyVpS/RVPZPMzKBXMpWRmka0OcZNra6KfH+rBym3y3KFdGUdo
-         q7bg/saZ0mF5273QcaU3S6rqxaxN4BFgMLFgCTjrTQac15t6XjO4uovyOXxVAmxE78vR
-         ShjA==
+        bh=M2SHDklRhuIM4Vve+jzipzf/eeoRWPqWL/eYEbe7cNc=;
+        b=tKGTwZ3v9U2uNAIX86zLQMVh7rzGj0f4c7dQmjHfMbNOCpnHncguZVeUUAECz7c2QF
+         aiRhAFiStCt2ai7D68u96dVTuTw19IxUYgqN/xL2ujbyZh1wcagjKgurJHJz0+Als/8k
+         UU92w7+qM0t01HOUb+AaffbJ+ctXaRLLE5exjamY4qHlpFyyejlAQRZARE5EK2T9TzGV
+         JByFo4lzp7lUEtbAcwzSmZFBRVNds33rEm155YAwJk2Mxc7HzKzRQ+JVyxRBidRdSiJ9
+         T3AyjTnIUeG5YPGAJP1Utur5hbDj6eAwe8lVgtkHOlLjOWsCZVtvxV8qR2mYKqJJ9WZX
+         4O2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706173853; x=1706778653;
+        d=1e100.net; s=20230601; t=1706173920; x=1706778720;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ig9CtrewkNZDns+fis+CVNjk9HmfwY1rg6axCTrCm6U=;
-        b=syOp5KGx+M3sUfTrSQnBfeHNvGguyl1a3IB/9z+jnSQsvMWsxkE3BH/xnNBvr4AOZD
-         6O6n1YgY3xHcm2CN6KTjcIzAUZ6CA6luV9pwOjCWj0Rgt2pc3gX9mzAELEjpxbyWW93e
-         8OlLo6tEgilsDc8ElS6qQ//BjpTiBxEa9058F6sISY6ujxP7nsC2toshpquTMNtNYRhP
-         2/EF9n+HvqVCQUiPCJz1ESWS+6GwRhA27D2jaZYBH2egAoD4XFMayUCwZohxtrWAXHsx
-         CLto+TBqn1dYP9GCnx/IMjPGi3Sq1imFF2/X+WArXIAcFB5U5BKJF7gpqKNcHCa5cgdb
-         Wfww==
-X-Gm-Message-State: AOJu0YxXjTcc5wThVCTUZ9Mg50TNHTs8SV6Cn56ZbIgkyiO5UGHhvFYz
-	rcvJsuSG0G/MlcmKd4vQZkq2HztG/7i5bPYaFVM5D4n4xQT/Ka+hkB6GE7Yq0wA=
-X-Google-Smtp-Source: AGHT+IFUJPNBSnfe9pze2R8lQTxaYfxlsEsmMzJxMBhHjI41QOyKtS211+yYpJKCAXhXnASW8/3ZoA==
-X-Received: by 2002:a5d:4e91:0:b0:337:c6b5:46df with SMTP id e17-20020a5d4e91000000b00337c6b546dfmr288727wru.141.1706173853473;
-        Thu, 25 Jan 2024 01:10:53 -0800 (PST)
+        bh=M2SHDklRhuIM4Vve+jzipzf/eeoRWPqWL/eYEbe7cNc=;
+        b=MHdGgAa9tEDGdBcg8nCar98bqAaEfzqvV3i+smYldP0fpzdKY7jsVxVpuFSLBequxy
+         Sed2VtxUbGi3drE1MilyNF3RyPv4Xy4ymwrhmVuewIkW5iT1HSwiUPFwg9Q4TXLJkpna
+         DGn+ewBaXWqfClOiJ7WJd8DSiS3ltMObYsO5TyxLKA84R44V4Tv/Qmj75upip2vjpEjZ
+         2oH3FkjtxGHKO5L1V4+40YQ+3RGuHCblgqeM3JVTVh4QidmyvxhEazIfnMLJFSQbr01A
+         8KpmKaRtWjMajn91ETulp6WC3EJAXuc4n+vHWdUPgP5fanr5kaZZGZ26JBXl/J7n6ZEX
+         xHdA==
+X-Gm-Message-State: AOJu0YzQLFjqIq550m1I2Y3woevtVLwYPRmK+YtyyGWANd8BV7VJlu/u
+	yjxLwRFho3BHAfCH6iMWRjwGeOPHeAnIHPFJsdPuffxeqflBaowh5T+i3gXFaRI=
+X-Google-Smtp-Source: AGHT+IF/XHrOyv+BY+vt+ddWUVuE2X08It9QeCFnkuJ5Ef6N6u3nEayjIWZqwtCWE9zoJxMIA+elBA==
+X-Received: by 2002:adf:e84a:0:b0:333:2fd2:5d21 with SMTP id d10-20020adfe84a000000b003332fd25d21mr397719wrn.83.1706173920604;
+        Thu, 25 Jan 2024 01:12:00 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id q7-20020adffec7000000b0033926505eafsm13294530wrs.32.2024.01.25.01.10.51
+        by smtp.gmail.com with ESMTPSA id q7-20020adffec7000000b0033926505eafsm13294530wrs.32.2024.01.25.01.11.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 25 Jan 2024 01:10:53 -0800 (PST)
-Message-ID: <89acec5f-1248-46fb-90fe-b93a7151d535@linaro.org>
-Date: Thu, 25 Jan 2024 10:10:50 +0100
+        Thu, 25 Jan 2024 01:12:00 -0800 (PST)
+Message-ID: <18f66108-98e7-49b3-b362-880121438fc6@linaro.org>
+Date: Thu, 25 Jan 2024 10:11:58 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] dt-bindings: soc: rockchip: Add rk3588 hdptxphy
- syscon
+Subject: Re: [PATCH 2/3] dt-bindings: phy: Add Rockchip HDMI/DP Combo PHY
+ schema
 Content-Language: en-US
 To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -82,7 +82,7 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org, kernel@collabora.com
 References: <20240119193806.1030214-1-cristian.ciocaltea@collabora.com>
- <20240119193806.1030214-2-cristian.ciocaltea@collabora.com>
+ <20240119193806.1030214-3-cristian.ciocaltea@collabora.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -128,10 +128,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240119193806.1030214-2-cristian.ciocaltea@collabora.com>
+In-Reply-To: <20240119193806.1030214-3-cristian.ciocaltea@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240125_011057_170127_D514A48F 
-X-CRM114-Status: UNSURE (   6.33  )
+X-CRM114-CacheID: sfid-20240125_011203_436385_A92B0443 
+X-CRM114-Status: UNSURE (   6.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -150,12 +150,30 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 19/01/2024 20:38, Cristian Ciocaltea wrote:
-> Add compatible for the hdptxphy GRF used by rk3588-hdptx-phy.
-> 
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> ---
+> +    soc {
+> +      #address-cells = <2>;
+> +      #size-cells = <2>;
+> +
+> +      hdptxphy_grf: syscon@fd5e0000 {
+> +        compatible = "rockchip,rk3588-hdptxphy-grf", "syscon";
+> +        reg = <0x0 0xfd5e0000 0x0 0x100>;
+> +      };
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Drop node, not part of this binding.
+
+> +
+> +      hdptxphy: phy@fed60000 {
+
+Drop label.
+
+> +        compatible = "rockchip,rk3588-hdptx-phy";
+> +        reg = <0x0 0xfed60000 0x0 0x2000>;
+> +        clocks = <&cru CLK_USB2PHY_HDPTXRXPHY_REF>, <&cru PCLK_HDPTX0>;
+> +        clock-names = "ref", "apb";
+
+With these two changes:
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
