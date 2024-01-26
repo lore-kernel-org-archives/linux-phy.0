@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0299C48260
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jan 2024 14:37:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E4A3C47422
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jan 2024 14:38:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GlqkWp71em4YKiWL5ga0Sj+qBWUOVXF6wIaix8tYaZQ=; b=FvigLaeQ5qoTEZ
-	zhXlnE32tfKS90GhTjwuDyfLlk8XdUjXqtsxhVkG27d2zpFEfbtkb2FCoKNTFnQFe3r+jGKbPTeX3
-	ijMLR27MXkZblBQgPf5vwfPQtbq1GVjL5mBD1Du9jfIXMMLrU3d0S/C5l4Jtkv7qj3BLtbbRrJo/P
-	DWPJYHz95MFIgFLoaDEkvCnRoGRd4pIcf6q0biInkxuB04S9PQGbsxOsb7Bi6DfqFmavAR2G49hzO
-	XcYgzKAGnRo2iApBNscfCeP3vGJto9LkVrLDpWZMhTd/pylclKOpdRnhM+6qADjs73M8JzmZYRbjn
-	/pJwIuU281aX1f3J3TFA==;
+	List-Owner; bh=LwC0ggeVwjJns9Gd2Bl9fWKNEVkcLSUWsLYOYeEmArw=; b=fzUZQKNSpZZkJX
+	zTGm3YpEJa/l+XaPSUeHFzyEOku2NnfU1vYS0cV62NYqWyAZyBldRRAUX+J7lzTxkvJadAEZhKPYD
+	B1jtravHwwNUG817SKklDVPIRaUyiMkKV70DTWuhYUHJ9+nNUTQI/lp2EeEo/RW9bWkrqBFMGgrjm
+	MGKbcCNDSMN1yWeHPx8wSTDuuQVAEbEvMgM2KZBKfofOQqY02M08elIZD2JuDy5V/YQXN/VJZIu2R
+	fDntZpw+IY9NQVRVwBh+lcu/HnqN/Sd615LgvQ0UaRIUee+S8UbVp5EqrhBe/ChkAfhyqr1+zutNd
+	nK25TJbPOqGAoKjcQBiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTNLB-00000004N6r-1QTI;
-	Fri, 26 Jan 2024 14:37:57 +0000
+	id 1rTNLD-00000004N8M-2CfW;
+	Fri, 26 Jan 2024 14:37:59 +0000
 Received: from relay2-d.mail.gandi.net ([217.70.183.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTNKt-00000004Mv3-3JFR;
-	Fri, 26 Jan 2024 14:37:41 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 6711C40004;
-	Fri, 26 Jan 2024 14:37:34 +0000 (UTC)
+	id 1rTNKw-00000004Mw5-2mIA;
+	Fri, 26 Jan 2024 14:37:44 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 72DEE40015;
+	Fri, 26 Jan 2024 14:37:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1706279858;
+	t=1706279861;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=bBvfyrsgnxZkigb51H7bXjq0DEAjmH59sXjUpzTvFno=;
-	b=Eduz/GPtIshO4mhHx0xqXY9W397R7/7eTiPnCpA1xinvHumYUW15LbC6hpiJ8vUVPJusIO
-	1/fi+ua9yXAwEL5p3+mXoMJ+HN+LjJKuAfLXINAN0FmNgv0Hqia+1z3w+j1YSD9ES1AMKl
-	45WY9fSHJZ6Za1bEzrYDRWc0g4sbE+p9Ls/4k+LbLuL/ZnsftWzBvr0dgpug8OgL/SK5mZ
-	cX5bDEhyCrjk4GvrxP3WhZXqmv2StRGvA9KGTV3k0LRh2JrWJ0w21qnHZTNVRPPYOdU+Q9
-	IbDVUT5+UK6L1Jk6if5RmpuOa/tg9LnIalVXenvesLE4Mxi4WyO4pk//kzgSUg==
+	bh=HkHotbSbtdMXKRaQO3NvmhStluWksZQ2iVlQ1BQwp/I=;
+	b=Bj8R8Tf4PXMPWI2dTOvlQf19bh14EHrUwblXp9Ri21obZFiVBXZ2kqSLmeuNIq250JQwRr
+	HW5d1caxgvZP5mRH2njiaedfOLVVK7fHFEdRro8cZlvONRmluu9rlEgxwflbRvVNWfiQKo
+	e/1rkB9DNlNMWtqvLP9Y79xdQEvmEKUZGr3GXptYrwNjci9nWaTysP88xuwHxDlEGkPEFW
+	u3O+QFhZmsY93Nip0wgPoUwOBYXIknqWXidqTyHeZjWBKPyXY1R+kdJuaqKBQGT47pIjQd
+	jvgymVGrwCXIuzoblVHrjKqQx9i4pM6dh2aRyuvXb5dDkhH5aDwyP4w+/q/jwQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Fri, 26 Jan 2024 15:36:44 +0100
-Subject: [PATCH v2 02/15] pinctrl: pinctrl-single: move suspend()/resume()
- callbacks to noirq
+Date: Fri, 26 Jan 2024 15:36:45 +0100
+Subject: [PATCH v2 03/15] i2c: omap: wakeup the controller during suspend()
+ callback
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v2-2-8e4f7d228ec2@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v2-3-8e4f7d228ec2@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v2-0-8e4f7d228ec2@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v2-0-8e4f7d228ec2@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -69,8 +69,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240126_063740_174315_0A398420 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20240126_063743_038190_5BC6BCED 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,89 +87,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The goal is to extend the active period of pinctrl.
-Some devices may need active pinctrl after suspend() and/or before
-resume().
-So move suspend()/resume() to suspend_noirq()/resume_noirq() in order to
-have active pinctrl until suspend_noirq() (included), and from
-resume_noirq() (included).
+A device may need the controller up during suspend_noirq() or
+resume_noirq().
+But if the controller is autosuspended, there is no way to wakeup it during
+suspend_noirq() or resume_noirq() because runtime pm is disabled at this
+time.
 
-The deprecated API has been removed to use the new one (dev_pm_ops struct).
+The suspend() callback wakes up the controller, so it is available until
+its suspend_noirq() callback (pm_runtime_force_suspend()).
+During the resume, it's restored by resume_noirq() callback
+(pm_runtime_force_resume()). Then resume() callback enables autosuspend.
+
+So the controller is up during a little time slot in suspend and resume
+sequences even if it's not used.
 
 Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
 ---
- drivers/pinctrl/pinctrl-single.c | 28 +++++++++-------------------
- 1 file changed, 9 insertions(+), 19 deletions(-)
+ drivers/i2c/busses/i2c-omap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/pinctrl/pinctrl-single.c b/drivers/pinctrl/pinctrl-single.c
-index 19cc0db771a5..0dd4b0e11adf 100644
---- a/drivers/pinctrl/pinctrl-single.c
-+++ b/drivers/pinctrl/pinctrl-single.c
-@@ -1625,7 +1625,6 @@ static int pcs_irq_init_chained_handler(struct pcs_device *pcs,
+diff --git a/drivers/i2c/busses/i2c-omap.c b/drivers/i2c/busses/i2c-omap.c
+index 42165ef57946..cc9841cb08f1 100644
+--- a/drivers/i2c/busses/i2c-omap.c
++++ b/drivers/i2c/busses/i2c-omap.c
+@@ -1575,9 +1575,23 @@ static int __maybe_unused omap_i2c_runtime_resume(struct device *dev)
  	return 0;
  }
  
--#ifdef CONFIG_PM
- static int pcs_save_context(struct pcs_device *pcs)
- {
- 	int i, mux_bytes;
-@@ -1690,14 +1689,9 @@ static void pcs_restore_context(struct pcs_device *pcs)
- 	}
- }
- 
--static int pinctrl_single_suspend(struct platform_device *pdev,
--					pm_message_t state)
-+static int pinctrl_single_suspend_noirq(struct device *dev)
- {
--	struct pcs_device *pcs;
--
--	pcs = platform_get_drvdata(pdev);
--	if (!pcs)
--		return -EINVAL;
-+	struct pcs_device *pcs = dev_get_drvdata(dev);
- 
- 	if (pcs->flags & PCS_CONTEXT_LOSS_OFF) {
- 		int ret;
-@@ -1710,20 +1704,19 @@ static int pinctrl_single_suspend(struct platform_device *pdev,
- 	return pinctrl_force_sleep(pcs->pctl);
- }
- 
--static int pinctrl_single_resume(struct platform_device *pdev)
-+static int pinctrl_single_resume_noirq(struct device *dev)
- {
--	struct pcs_device *pcs;
--
--	pcs = platform_get_drvdata(pdev);
--	if (!pcs)
--		return -EINVAL;
-+	struct pcs_device *pcs = dev_get_drvdata(dev);
- 
- 	if (pcs->flags & PCS_CONTEXT_LOSS_OFF)
- 		pcs_restore_context(pcs);
- 
- 	return pinctrl_force_default(pcs->pctl);
- }
--#endif
++static int omap_i2c_suspend(struct device *dev)
++{
++	return pm_runtime_resume_and_get(dev);
++}
 +
-+static DEFINE_NOIRQ_DEV_PM_OPS(pinctrl_single_pm_ops,
-+			       pinctrl_single_suspend_noirq,
-+			       pinctrl_single_resume_noirq);
- 
- /**
-  * pcs_quirk_missing_pinctrl_cells - handle legacy binding
-@@ -1986,11 +1979,8 @@ static struct platform_driver pcs_driver = {
- 	.driver = {
- 		.name		= DRIVER_NAME,
- 		.of_match_table	= pcs_of_match,
-+		.pm = pm_sleep_ptr(&pinctrl_single_pm_ops),
- 	},
--#ifdef CONFIG_PM
--	.suspend = pinctrl_single_suspend,
--	.resume = pinctrl_single_resume,
--#endif
++static int omap_i2c_resume(struct device *dev)
++{
++	pm_runtime_mark_last_busy(dev);
++	pm_runtime_put_autosuspend(dev);
++
++	return 0;
++}
++
+ static const struct dev_pm_ops omap_i2c_pm_ops = {
+ 	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
+ 				      pm_runtime_force_resume)
++	SET_SYSTEM_SLEEP_PM_OPS(omap_i2c_suspend, omap_i2c_resume)
+ 	SET_RUNTIME_PM_OPS(omap_i2c_runtime_suspend,
+ 			   omap_i2c_runtime_resume, NULL)
  };
- 
- module_platform_driver(pcs_driver);
 
 -- 
 2.39.2
