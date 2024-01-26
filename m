@@ -4,76 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28DE7C47DDB
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jan 2024 08:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B1E5C47422
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jan 2024 08:53:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aUBSKtH/LfJTe6JXrPNMzDIYPc9xI7zaUW9/NfrjmFc=; b=k28Hp9Nm9e2C2F
-	x2OC34dmcD1YQJ13Y0gbpiaFqimre7UT0EJAykEgO/+kt5jEAgWgmCf/dg5I8XOF41kOkZMO/kmlC
-	tH+xeXjsvmKmdywCkwDa7QX3RK1bjfJ7sEL1fFiZTGBGyLbhK0thGQHfqoyUnm12nsw8cM4wPqKXQ
-	TB9UY6X1YcPgMwhcH25cC0AJmsDMcj0YKmmt2bfVZZgEHceAYjsDpqOPl7HnDwe89HnwNG6zgz90u
-	6z3M0mvV1J21THmUJwdb4Gn2utnOdYtSxGQf4iZpqu4g1lJbZF8PWdFDO4OVJvvcRW97ESZazisBY
-	rPqDOj1bUpoJCvIUKNbw==;
+	List-Owner; bh=np5gNlhCThstqRQemPg2nifcc1o6dNJSAvqJiPXf2Jw=; b=sEBETQ+M9Dotmt
+	VuE5BvtrKthSMvBuuoPK3RSCdZ17xE/JwtztOjP7+anSB9uxA5/UuTQtQSIquewlrfNPRlc1rNd7c
+	sL1Y80VPyVvv67g6ZWsgIcojUV6/rP4NzxRzQAuhDR57dAPdjF7+GS3QxaYGJveJ6WcwYHlS6Tyq9
+	XBj5bSgTwLSyQqpXRi47/Tto9u+rIi2k7Vx3GLbSseUxfrDQCoEsjk2MBk7G5S4dxS4om9bz5cTzf
+	Z8+nNpA4j6O8yClwifUPkKbTovQYVDWxjdO7glNZG1o+afeTJBHWgTxVFmSphzOTgfZw07+mPoHnd
+	07rUJoLx4QMzYJ8zEGjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTHwb-00000003V7o-3VxP;
-	Fri, 26 Jan 2024 08:52:13 +0000
-Received: from mail-yb1-xb32.google.com ([2607:f8b0:4864:20::b32])
+	id 1rTHxb-00000003VRK-34dB;
+	Fri, 26 Jan 2024 08:53:15 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTHwY-00000003V6G-3cne
+	id 1rTHxW-00000003VNd-2WwY
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Jan 2024 08:52:12 +0000
-Received: by mail-yb1-xb32.google.com with SMTP id 3f1490d57ef6-dc35fd0df02so246008276.0
-        for <linux-phy@lists.infradead.org>; Fri, 26 Jan 2024 00:52:08 -0800 (PST)
+	Fri, 26 Jan 2024 08:53:14 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-602ab446cd8so1525517b3.1
+        for <linux-phy@lists.infradead.org>; Fri, 26 Jan 2024 00:53:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706259127; x=1706863927; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706259187; x=1706863987; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=S81DTGo0RxOmNoDRhjegpnnjf7jQff8tYCdklC47ijY=;
-        b=wbxNKpUmI5+YH8aUYC6iPNGTrMg3wBZ4ewh5lIaBom/xt1rklpufBITjFUJcH7NkkE
-         7L+4KEIzbCeiB0dcEuYEqFdRSm/oNzkMs99IMAuhFNv8wp4CJYm8E6b/xZyLAe71/a3c
-         slTuCefsjNBZt6gAVqjqKBjsYMo72F1wBMLPQEOEvmuMe0HIU/fNq9rpAeOQCVX5SlVE
-         eD1I/6xRA6ETTF6u2m8BMv25UXBAXoXLLdnveZqu0wC+dP4cKO9JTUC+fPIPaxGSEwdv
-         roXyeILfKbXZqZeFSuvA4vqyZXiU30M2QTCatQcVCE82qMRh2bi+F9Fthyv9XSy41y2d
-         m5ew==
+        bh=uBG7JpOBgb/l7SFLPK3edINhuCMiTrRBotlDi9jgRxI=;
+        b=UGxur6mg7+CfMO23v1MUMv0xQegQ0+J5lrloeJem5IBzY8dBZXb2S1mahqp/XQu8Fa
+         vaUu9gzFJRn05uNj274J+GbESfBXcFjBHtO4st+O5WEnf9QGgA9FIsK80Vlo8NXIyLDZ
+         zD+vYK6J1Q6WmkXkXMbRv28810zjQA2zhmslEAhd/SQDRZwqRULrbyvyMZ72IjgDjg8d
+         eH+VMauZQy9T8jQ3rjOy5aqpajej+9bna62MhEViII07iUPqeQApAkDii1y161/Ipj7s
+         s4s6E41giPZBKJmXM/Ee6aXfvlZM1kIqfFSMi9q+DM4cRLE/bsNfUlsQ1Fx1bmByrbWx
+         7Eaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706259127; x=1706863927;
+        d=1e100.net; s=20230601; t=1706259187; x=1706863987;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=S81DTGo0RxOmNoDRhjegpnnjf7jQff8tYCdklC47ijY=;
-        b=toJXt7MHmZAb0vRF7NLcrmmq9yt8p/iLjkwE/G4t5QLvmFj4US505onjhDysJRb96K
-         s1f18NhPhQuCbBzaZIaBsyK0BK7mcJc8suz7+9loITV84fQkJFjvw5+N5h+cBOY0neqy
-         BsQWBsi+NMzB0rk8eoyCLWghTHkMSERXccTIlZyZkyDulkIBH4ehhWLoTsr3qRCJQcbs
-         ZgqwyTE98WLaqAjRnmr1XF4Jyf/zIIOYnyLcEanF2TEa0doVQyj82W3muU3rQsyzf4ev
-         9B5ip15fMA9Uqt/F/BMG7Slsc1qe8ewl1w1xo45f3QRw+diAXb/gFDREg4fa016nrUSK
-         15gg==
-X-Gm-Message-State: AOJu0YzNqUdW5kYMVvVbpoa3mjoevoAAIYuY9v1CNLLbLrWRqPsWLDz+
-	yUHG0jdc/jcCYWRX2WfuRyZasoWbbVSTce7OIcFsj6825+o35IerHRoVKjZKDq0GGO84zDbvyWq
-	CVlnVxsGUNnHkzCYcMCS+TvVV0DyhBfKN0DtKfg==
-X-Google-Smtp-Source: AGHT+IEDhwUqA0ezn+xg6AQkgkKJlqIKM2kSQJnzsF6FONphx1zejBQuxcLC/vvkE+BOten67lfCsyIzie0IT51qYE0=
-X-Received: by 2002:a5b:68b:0:b0:dc2:23f7:665f with SMTP id
- j11-20020a5b068b000000b00dc223f7665fmr894722ybq.127.1706259127403; Fri, 26
- Jan 2024 00:52:07 -0800 (PST)
+        bh=uBG7JpOBgb/l7SFLPK3edINhuCMiTrRBotlDi9jgRxI=;
+        b=E7XxTslaCn6DLF/h+52LF4MiMhEEI4Km0hcvvYS/cEZ7HMJ47o7gw8C3449HP3UTGq
+         LX+lof7d9Ytuo6yeNTBJEgVx6YG+Im/82WfDHFKt3SFOAcFagUkDh65tLT+luujEfc9f
+         tpp63oq6ZpqbwF9J8d8uHZl/QqB9XGNwGTZjWpl5QvyWpmM7zvoUaWIDjujD1eG4Nj40
+         v2C9s9O+EP198jlrSvsAxvvYtVXj7zgRVztxqUneUA3POYK39ukiCVwyZII2E9Pw3pu5
+         vD3FLKN/j07WwAXaZn02MbHKa7l059LCSw8uYRDvNdjRmpYWfm4kXYT5105JnmRhtiW7
+         DBkQ==
+X-Gm-Message-State: AOJu0YzyW3IMV5KbkBmmEQP2No8UkBwh2PNBTW2EfnIQtiFVqDgly8y+
+	eqtGk3++0q4klejXyrZC+HvmPLoqU0ou9byyZatD+aFuu8K1rDyf7osQFKeQgvmY95pUIpHiGox
+	zpNBLEwDWQVnL7VLC9xwl246EtGuxS1sWfwUQnA==
+X-Google-Smtp-Source: AGHT+IGtJMR2wWXvWmk7JYRIuQnD7tvw0DN59oPKaclKbP6MX1a37Czd6V+zglEmXe7/2wP7eiF60wx5LotcVxO9+A8=
+X-Received: by 2002:a81:7e41:0:b0:602:9dd4:d717 with SMTP id
+ p1-20020a817e41000000b006029dd4d717mr869310ywn.49.1706259186796; Fri, 26 Jan
+ 2024 00:53:06 -0800 (PST)
 MIME-Version: 1.0
-References: <20240126-phy-qmp-merge-common-v2-0-a463d0b57836@linaro.org>
- <20240126-phy-qmp-merge-common-v2-7-a463d0b57836@linaro.org> <CACMJSeuOmz2DC0m98k9MFx71A-9jyZkrWQMGt8DVUrqKJk-bsw@mail.gmail.com>
-In-Reply-To: <CACMJSeuOmz2DC0m98k9MFx71A-9jyZkrWQMGt8DVUrqKJk-bsw@mail.gmail.com>
+References: <20240126-phy-qmp-merge-common-v2-0-a463d0b57836@linaro.org> <20240126-phy-qmp-merge-common-v2-8-a463d0b57836@linaro.org>
+In-Reply-To: <20240126-phy-qmp-merge-common-v2-8-a463d0b57836@linaro.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 26 Jan 2024 10:51:56 +0200
-Message-ID: <CAA8EJppz+-GSSKuwQi9uTknPLka1N-8=bOdTqu20cPsmxQPn7w@mail.gmail.com>
-Subject: Re: [PATCH v2 7/8] phy: qcom: sgmii-eth: use existing register definitions
-To: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+Date: Fri, 26 Jan 2024 10:52:56 +0200
+Message-ID: <CAA8EJpo9aPZbujxJfn=TTGHzXS-DUtMOkf2OfZkAPGc4G=z41Q@mail.gmail.com>
+Subject: Re: [PATCH v2 8/8] phy: qcom: sgmii-eth: move PCS registers to
+ separate header
+To: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240126_005210_937730_915C6DBE 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20240126_005312_597283_7F2141CA 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,27 +91,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 26 Jan 2024 at 10:10, Bartosz Golaszewski
-<bartosz.golaszewski@linaro.org> wrote:
+On Fri, 26 Jan 2024 at 01:23, Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
 >
-> On Fri, 26 Jan 2024 at 00:23, Dmitry Baryshkov
-> <dmitry.baryshkov@linaro.org> wrote:
-> >
-> > The Qualcomm SGMII SerDes PHY is a QMP PHY. As such, it uses standard
-> > registers for QSERDES COM/RX/TX regions. Use register defines from the
-> > existing headers.
-> >
-> > Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> > ---
+> Follow the example of the rest of the QMP PHY drivers and move SGMII PCS
+> registers to a separate header file.
 >
-> I have reviewed v1 of this patch already.
+> Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h | 20 +++++++++
+>  drivers/phy/qualcomm/phy-qcom-sgmii-eth.c     | 64 +++++++++++----------------
+>  2 files changed, 47 insertions(+), 37 deletions(-)
+>
 
-Hmm, for some reason b4 trailers didn't pick it up. Or maybe I forgot
-to use it, that's also possible.
+Carrying this from v1:
 
-Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 Tested-by: Andrew Halaney <ahalaney@redhat.com> # sa8775p-ride
+
+
 
 -- 
 With best wishes
