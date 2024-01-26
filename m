@@ -4,82 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9590BC47258
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jan 2024 23:59:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41491C47422
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jan 2024 08:10:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rfoRPAfD3sDQk+sOq+9wnISBaLvIMKwnOje5un3kzAk=; b=b63+M/oP2m2okx
-	X+Giwnq9k+vNxg66UQzIoBEmd6uNnWBnOXuS6TIyMIzq43/19Mc0FKZZ+WiMUArjtjYvlqJrYJYLt
-	HKd9ZleqnJJqdwz1L2uDn8s3/Ag8fZxsQYYEWlwwa4wqPQ4BiLrhSxRzUM0o/AdF4jMTAr3ZwAGc5
-	tp7qb8Shx8PN/D3ErHG6ha5FJv5XKk5+iDKulbch7MN16493hZEsmVzQ9WmvPArLD1kBNY2OiQeH9
-	7pTFTJR/c1QzcZmtGXtjRQaI9q3jVae62wYUbt2aUNlUbEw4Hn43E25w6CkD7skvaa6gq1qaqLJRE
-	WJAdclDcXM6AfVagZFtg==;
+	List-Owner; bh=HGVEOJ1eog3WLQlbW2KGpL3xvpUmDCbjQaZgA15UVN8=; b=ifeP81fc0wEYx8
+	Y/dATAWqkAgj8Tt/b5zOavmAWtvEfRkhvw+sBrZB9DlCGvTMlKjbTDoc4F2v5eNncjn05cuh5l05L
+	4oBNZWChRiY8zqsotDRnzRb4tr8mO1UfaPzI9HMoagl89YfulYp+lVP99pi8G6Z1sOjq1eYiABT20
+	eluzr5bXWJL1zOj/Sj1zSk8RE40GOnYDNkmUl94PP9vhRB5NTAG3/OqINKW/vNq0UwGHxysCc315D
+	oiC4FzYt14ShIjtTALehrcei8whT8Gmhi/9JrMn1Ls2S5YNSv8FxojqqjkHh9KRmGNzChf+Vslv/M
+	NjSQLkpFbw3Feu2NtANQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rT9d2-00000002YQV-0q6e;
-	Thu, 25 Jan 2024 23:59:28 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1rTHI2-00000003Q8t-3qKV;
+	Fri, 26 Jan 2024 08:10:18 +0000
+Received: from mail-yw1-x1133.google.com ([2607:f8b0:4864:20::1133])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rT9cs-00000002YLT-0boH
+	id 1rTHI0-00000003Q80-3Fdu
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Jan 2024 23:59:26 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-50e4e3323a6so1402487e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 25 Jan 2024 15:59:16 -0800 (PST)
+	Fri, 26 Jan 2024 08:10:17 +0000
+Received: by mail-yw1-x1133.google.com with SMTP id 00721157ae682-5fc2e997804so1120797b3.3
+        for <linux-phy@lists.infradead.org>; Fri, 26 Jan 2024 00:10:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706227155; x=1706831955; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=z0uvR4k90nJUoTmw5mM95zggQNT83JXcHe60niGgesQ=;
-        b=FGqwb4b2BR2a87lmP3QeEDnsvg/N0lK6+5RQkj6PdDBS0PsjtQFQS7pFPetJfIqxmi
-         18Fcqdov6XKVTCbR3LTjEif7vQPgiH5qxW9El6mjtSYABgA2OoT2QgIFsL46VyCkZoLQ
-         XApCmVD8Sf2PFuNgPXftQIgAjhk+K4YdNUJFqmnTwAbcaOe+O96MzTJ9keIwSiLStzBN
-         1UnwDBkcUNyc0tz9gXcQX6FA8CNoYx3ILgmQz2nGWb3rwTncvlGm1dSkTOXYdsIU6fXL
-         +C283aMijH7KKQaOMImalyoXIAhxySZ7b2+weSLoI7/5+ZP+zQXBdPt5S2viwnP8boPv
-         Z3sQ==
+        d=linaro.org; s=google; t=1706256615; x=1706861415; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=t5Xk1RT4M0Csc/jUPQRNsGr5hsLf0lR7LKm1an0iRCE=;
+        b=Nu7xDtvFGQaPR5SPAiTToi9jSkCcJcbzmDCbG1g6UWSlaYsAGl5/3dYArzO+DV7E7d
+         d07ammPLu3/3njxwKO857E3QvQXaJqGv9qQl+dpgHjxH4VNo0KVRvtEnp/DTb6jvd0GQ
+         gvBlnJwdUpa+0DLN3AP48rY1kMX1l+5LXRpmlfCMULL+g5zOnrmPARwQ9tlKPPmeaUQr
+         N4MNA0257EWTSpGNE1MFGTXJ4KF/zA6YDkdGMdmfhO0nGwUw6MBV3rkt9gIJqiwvmIfm
+         PpMbbYEY51KKrZtxX3lQ0YJKrweS106ua0mmgiJVSUHDhZMRehD+hlq07mSispG+xi7S
+         rXlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706227155; x=1706831955;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=z0uvR4k90nJUoTmw5mM95zggQNT83JXcHe60niGgesQ=;
-        b=D8bmi+dtTpXdVjLbSMHBSTolx4TN34RitxF1NWC/d9Xh5UQ2SeICLY6D8EFQHQWlTb
-         8xyMYDRdTqYCebPv8Z3RQ9hMncN3tj9GTgY1SRWMqj1Wm26uxCcHdJCkenZ7enoNELCB
-         Zn4oatvavPPmbIFBwB2dC5sIMwgLaVHZdgyktsGq31L+F4uQMuQ2P6EaMTU+ElVUFZdG
-         etjEDCr57fFjIRM7y8hIjz5pWyCt8wIoZsKFhVN3fCB/pmlq/uMWfrsBx9pE2ufYvMBm
-         9tHeXDaVeQCV4h4acxo28PHH3gLFLhKQ222FsCZJQ+lPvAuLUc5MiCJ6ijukCGznVY/j
-         ncPg==
-X-Gm-Message-State: AOJu0YzO5PEHVAuFpFcXYMvMIYP3M0ZEkEeEOufsR7YNjETOnbS/3d4k
-	DZ12wLtQg0xwHYcDZMp6VNyRv1Q1Y+ugC5Kr4X9SYm5IwuXfDdNrfOg/EndZGGM=
-X-Google-Smtp-Source: AGHT+IFoLvvnUhhkzp8ywNMvjAOePCPyBH1dUod36LEuK6Dj2PUXE10Q4WQcB8jYl5KON8cXhtcucg==
-X-Received: by 2002:a05:6512:748:b0:510:1818:4f14 with SMTP id c8-20020a056512074800b0051018184f14mr28987lfs.30.1706227155449;
-        Thu, 25 Jan 2024 15:59:15 -0800 (PST)
-Received: from [172.30.205.155] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
-        by smtp.gmail.com with ESMTPSA id w20-20020ac24434000000b0050e64a0c62dsm12363lfl.240.2024.01.25.15.59.14
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 25 Jan 2024 15:59:15 -0800 (PST)
-Message-ID: <34726ca0-2612-4d03-b064-e5d3f2a83671@linaro.org>
-Date: Fri, 26 Jan 2024 00:59:14 +0100
+        d=1e100.net; s=20230601; t=1706256615; x=1706861415;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=t5Xk1RT4M0Csc/jUPQRNsGr5hsLf0lR7LKm1an0iRCE=;
+        b=nVmBD9HIwUHVlRTgVUpyXpwSyLvn3Pb5Kyl9FQqKpj9Pau62hnsMpfDFBurvmQggdw
+         V9iXBKttrQTGDtmZoRWTTSZ6Z4++4QFf+vj9rR2HP6NoTPPkUymJiBLprH1+lKYe5FKl
+         RZl2F3rHmRG2I2MUbop011wkW0fab/EnNywkT/9dfTk00dKncCc23NI0FYBJoOdBfME8
+         Pi4Q4ygvpVM3p3a0OHv1ESBEi+P3Q3vxroc2+C/0Iybgg8iNKzZVpqfDvWcoC1GVbZ9K
+         qYmlaLe9tpdj0IpIWRipSEdyzMuJ+O4IUOK6zkUcro4hUQU5k8jrPWEXgHGXdBub0gpY
+         8jrw==
+X-Gm-Message-State: AOJu0YwvvTk8Xd2Gy5xWOOe8I/nlzKryJIeX+kq3/vIcf6kKgnYGYLyL
+	7pKM56gRa7hLtfMwQB80yLjhLggSYvS6uuoZf8tYy1XAmd8pm7gdiAbYxrmXuCXLna7FX0JMapM
+	ATbBstRqIWy60TbWfYJIh//EJFNawjwwGOmLTNQ==
+X-Google-Smtp-Source: AGHT+IHnaNC5K++PdbgO7WEfWh0nVAaXrRXgiWebU6yDcX8FPmozYPH++dLrlUkis2bR82+yU94dtnUxE8v98Ryvz0A=
+X-Received: by 2002:a81:6d81:0:b0:5fc:d382:4bfc with SMTP id
+ i123-20020a816d81000000b005fcd3824bfcmr959161ywc.97.1706256615398; Fri, 26
+ Jan 2024 00:10:15 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/8] phy: qcom: qmp-usb-legacy: drop
- qmp_usb_legacy_iomap
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20240126-phy-qmp-merge-common-v2-0-a463d0b57836@linaro.org>
- <20240126-phy-qmp-merge-common-v2-2-a463d0b57836@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20240126-phy-qmp-merge-common-v2-2-a463d0b57836@linaro.org>
+References: <20240126-phy-qmp-merge-common-v2-0-a463d0b57836@linaro.org> <20240126-phy-qmp-merge-common-v2-7-a463d0b57836@linaro.org>
+In-Reply-To: <20240126-phy-qmp-merge-common-v2-7-a463d0b57836@linaro.org>
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Date: Fri, 26 Jan 2024 09:10:04 +0100
+Message-ID: <CACMJSeuOmz2DC0m98k9MFx71A-9jyZkrWQMGt8DVUrqKJk-bsw@mail.gmail.com>
+Subject: Re: [PATCH v2 7/8] phy: qcom: sgmii-eth: use existing register definitions
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240125_155918_315113_520D977A 
-X-CRM114-Status: UNSURE (   5.40  )
+X-CRM114-CacheID: sfid-20240126_001016_848670_D70F3FE6 
+X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,23 +85,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 1/26/24 00:22, Dmitry Baryshkov wrote:
-> All PHYs supported by qmp-usb-legacy driver don't have issues with the
-> PCS region. Replace qmp_usb_legacy_iomap() with devm_of_iomap().
-> 
+On Fri, 26 Jan 2024 at 00:23, Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
+>
+> The Qualcomm SGMII SerDes PHY is a QMP PHY. As such, it uses standard
+> registers for QSERDES COM/RX/TX regions. Use register defines from the
+> existing headers.
+>
+> Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+I have reviewed v1 of this patch already.
 
-Konrad
+Bart
 
 -- 
 linux-phy mailing list
