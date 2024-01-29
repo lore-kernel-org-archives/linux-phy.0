@@ -4,56 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B8F5C47258
-	for <linux-phy@archiver.kernel.org>; Sun, 28 Jan 2024 12:06:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9242BC47258
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jan 2024 00:26:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fi32rMtMAGJ/ZunKCwkSrefOkOEQRtGUR665zRGFEd4=; b=SvyBGN43X7r6Gy
-	s0NvR2UvFiQFu5fprudS2pxsM8xS2gWHbv8d120gU5bH38YXZHWkhNMAz4eBUc65XtNEaCDeeY5hw
-	TPAjyWzBEi0KhHqQ0H+HOwHaa42m61Jmt3xfatd6ufD/3eRA1K7O0LNBKhJ2kCsgt7ldN+KGd1rGx
-	uDcdQBDVCDtR1ERvAtmWcdGaiYM7y7DyRrSvWPm5DH6o5JLXNqyXp3GA67pdl2B3CaWwb8ip8JPjz
-	SgMgejE1W51FxGwaqSWcFVLN7ja5o871BEUiwRon0GFousv8JIBlA4aHojDtIbMYGnB5+aU0uSoQF
-	oTwX/EbFxjOAwHgfyUyA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n133kywqYCVKiGkvQCghmVR1l7DFv6T9/srRP8iUBfQ=; b=YgUiaBcKAky1gu
+	sUmZDoO27F18rEe3xMW8CZv6JGj3OZS/y3VwvQ/TJd+qS8cIwhNjHQwM9iibCssHHXsjjHV2qzxDa
+	TYzD0jql1UfVwQLjyhLsbx/UvJYYixx0W2da5tO7/Fp1O325BcaHtG2XCOaHcOOzRvLhrcUsyX7UJ
+	Mxo5YfFkXXzc+9VKIli67nAYlva/6ynr0pLpSIjauJbbPRbySYBshj3MpBpgk7kN+QJvjMD6PYYmN
+	seCmT/RUAEekSm4KwEFXcNor8nVq+T0qdANSFSnrShnvy3UPypXGLwByqjM0yHI+1/TE38nAJW90v
+	GQOEoGuZ60h+XBik0jNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rU3vf-00000009OcT-40lT;
-	Sun, 28 Jan 2024 12:06:27 +0000
-Received: from mail5.25mail.st ([74.50.62.9])
+	id 1rUFTX-0000000Aomu-0KTT;
+	Mon, 29 Jan 2024 00:26:11 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rU3vd-00000009Obe-0IGy
+	id 1rUFTS-0000000Aols-0t6p
 	for linux-phy@lists.infradead.org;
-	Sun, 28 Jan 2024 12:06:26 +0000
-Received: from localhost (91-158-86-216.elisa-laajakaista.fi [91.158.86.216])
-	by mail5.25mail.st (Postfix) with ESMTPSA id C573760AE5;
-	Sun, 28 Jan 2024 12:06:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=atomide.com;
-	s=25mailst; t=1706443581;
-	bh=M7Ev9192KYDUZR06Rbu+YlDp6Wi8bnytRXzrwVDHUw4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=LOHWCzWj46a4fvodr67zSqCZmjdhl7Oy4ab60B659EgQOM0u18DhHloT6eafgW0IE
-	 qxGvX9+kCV2ZHVjMLAwahpo1++34k7Rqk7QW3PngdK2ilFTo0om4O1+N9Je2iPi1B1
-	 ToXCUi/FLhOSBQgdoEFoH9JaQhdUFimevl8/B4b5dRiZmqVF+p0iF5jXyb4goynjbq
-	 2Qo9DAngEFnqSPVPOIt7Z6ai/3+oVfqmRCBwBnSATEoPna9wGW8TAqh614ViPkV6xK
-	 VnBdClzxY6Z0eKHFtluixadqlbVQ6IU3Ahus1nqnHGTxaPtZDtLBM7MiXOfm2/zeqK
-	 yYlHTilF3yKBQ==
-From: Tony Lindgren <tony@atomide.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felipe Balbi <balbi@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org
-Subject: [PATCH] phy: ti: phy-omap-usb2: Fix NULL pointer dereference for SRP
-Date: Sun, 28 Jan 2024 14:05:54 +0200
-Message-ID: <20240128120556.8848-1-tony@atomide.com>
-X-Mailer: git-send-email 2.43.0
+	Mon, 29 Jan 2024 00:26:09 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2cf4a22e10dso23504591fa.3
+        for <linux-phy@lists.infradead.org>; Sun, 28 Jan 2024 16:26:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1706487963; x=1707092763; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=YXniBx4zGce2I+zUvQZeh9F9TJPf5+YSFwkB/zgLcpo=;
+        b=rwFlBr/f/aeTy6hOnmPgkpWWR29H4pago5JgFPTyDX2vj11I8Aj1TPD+xDg7FyrMxQ
+         J70yeuv32OTlES+jjsrUU1acc8R+sABJeaSx7DpuTr3RJkQizQIFErEUGYNmmSPkN9WD
+         zMi363gfayXCnNApvMBJkcbxr6wpE+iRGcWaWAYWRQUbYwaK+qKcOz0YbFHAAxSNHZ0S
+         9zYE+CDOlhIWi8ZnKJyTxajkuy7wJx10mYngfm2ers1FJL1an2IAkPR3bhODWMWBb9fi
+         E66g5HZVqg+6hI3O6p89T6h4FOufnNW82602TiiEtTdYQs+rE9rOQXE6hs+WQuAJZJzT
+         Ck8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1706487963; x=1707092763;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=YXniBx4zGce2I+zUvQZeh9F9TJPf5+YSFwkB/zgLcpo=;
+        b=YTSGqLf/ndYrySPT5IEi1PoOO2QBHYCxa/wAunOFDAn5PoX6w5CW2l/UEabO2Z8MXp
+         82rP036NiiibzV4Z/QPYIQOuePCbEyoHsGppLuEw04df404B4aZT2L9uhV5Ws6JFmDnv
+         KS7OsBfsegyg3tvrrtqWnUXX2MDYi+bpQEFZQ58Sp4zITTi2Oty9W5qs7eikblzWW8sW
+         3vYGT8okqtv5dzDBBy48QE1Ad03v0FQSOHxb9Ua9B7gWFpdjOwUA3mfOu8vhJs5vF6hK
+         CQYXCwbodvZay28va7yxmxAtc4IwfpmTRgZiioFFd4V0tkytlQAPpdOL5N4pMSpLlwtv
+         HEpg==
+X-Gm-Message-State: AOJu0YyGSosu22ik2MHdtipt28SvBDTAiP1PrDsNXUtsUhKUYpiYJOsr
+	7JF2MWoh04IL/y+emyBvo8sGieI1WsptL6XEi2TnnZeYjSF3coG2QdgkMnSAw9k=
+X-Google-Smtp-Source: AGHT+IFKiUBYLnInTq+oVg5fiUp9BFxIiVDPCRTaXeICaTOOX1dhQt8t5Z5qyar+jPWySD6PjNyDMA==
+X-Received: by 2002:a2e:bcc4:0:b0:2d0:4158:bb4a with SMTP id z4-20020a2ebcc4000000b002d04158bb4amr2188639ljp.15.1706487962427;
+        Sun, 28 Jan 2024 16:26:02 -0800 (PST)
+Received: from [127.0.1.1] ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id h29-20020a0564020e9d00b0055cfb3f948fsm3208193eda.76.2024.01.28.16.26.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 28 Jan 2024 16:26:02 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Mon, 29 Jan 2024 02:25:45 +0200
+Subject: [PATCH v3 1/2] phy: Add Embedded DisplayPort and DisplayPort
+ submodes
 MIME-Version: 1.0
+Message-Id: <20240129-x1e80100-phy-edp-compatible-refactor-v3-1-e71f3359c535@linaro.org>
+References: <20240129-x1e80100-phy-edp-compatible-refactor-v3-0-e71f3359c535@linaro.org>
+In-Reply-To: <20240129-x1e80100-phy-edp-compatible-refactor-v3-0-e71f3359c535@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Johan Hovold <johan@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.12.4
+X-Developer-Signature: v=1; a=openpgp-sha256; l=715; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=UEn883fEvn74EKDrMBY5HRtTZ852wPrXNTB+0TMl9N8=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBltvCVBACVcZrnMVBS+u5qZXFWmx75hCoRDiMe8
+ 4tB4whZiQuJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZbbwlQAKCRAbX0TJAJUV
+ ViXqD/0Zq/xflYC4cjb8dLUvaPg2eVQbiY0yhO7NNn7RgChfT9xZdxuvknkqI6BbJWdB/xC6Sax
+ W3zekXpByUJI7mY6rAk4+7WdxUDCILW1mt7GsTMA5691iRkoTIX2bhiIqdiQN1KjQN0dDzjHgpY
+ bk2CplmmI+l9ONHNwhI6rqvavP4XCEouREjX4+Ej13lSJXz0nCPHBqyaWMMRsaNoJdtZo7W791Q
+ cK7nC6rzBg+KGhbWf7CN9zJMLgBcMGGNpYkEyP6KtLbQODvDOyGnIoYpVeBZXgPg6pkmslQnuS+
+ fdsFRpBFdNVoTIrimhYrvF1qGsgcq7zwgCkFSS1krrDQJv/dzwbZWkPbfsR7M4mKoBXAOcJb1TZ
+ umyY9I4SPiMelFFYBKBPHdadIy4Dg6Kftg7YAgMHBjmOLjdIDtLkTj2T4gJO0yFjvd5RT1WMOrh
+ kMHadP/o10ZuBjWtygPs/ytEUW3XpNCVaYapGN+uiEvAwrPE+45ZH3WqUTvp6YRaB8wbF28b8y+
+ /41vVQJaZrIVrc+AHSl+Ds8buUYzZ7POYJy7Lg2+uBXMJTRF2hBFxY81o+z0/6Yfep7L/vW/d0a
+ HL+AEtzeaS6rJD4G90rgeqlA5tarcHWF1A+AflurwCnWmeMjKAUoUW5QWu8yQSAZ1BNkdbtDgRl
+ EaQned+k0SYex4g==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240128_040625_436937_FFDBCE21 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20240128_162606_311692_185BCC64 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,67 +118,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-If the external phy working together with phy-omap-usb2 does not implement
-send_srp(), we may still attempt to call it. This can happen on an idle
-Ethernet gadget triggering a wakeup for example:
+In some cases, a DP PHY needs to be configured to work in eDP mode.
+So add submodes for both DP and eDP so they can be used by the
+controllers for specifying the mode the PHY should be configured in.
 
-configfs-gadget.g1 gadget.0: ECM Suspend
-configfs-gadget.g1 gadget.0: Port suspended. Triggering wakeup
-...
-Unable to handle kernel NULL pointer dereference at virtual address
-00000000 when execute
-...
-PC is at 0x0
-LR is at musb_gadget_wakeup+0x1d4/0x254 [musb_hdrc]
-...
-musb_gadget_wakeup [musb_hdrc] from usb_gadget_wakeup+0x1c/0x3c [udc_core]
-usb_gadget_wakeup [udc_core] from eth_start_xmit+0x3b0/0x3d4 [u_ether]
-eth_start_xmit [u_ether] from dev_hard_start_xmit+0x94/0x24c
-dev_hard_start_xmit from sch_direct_xmit+0x104/0x2e4
-sch_direct_xmit from __dev_queue_xmit+0x334/0xd88
-__dev_queue_xmit from arp_solicit+0xf0/0x268
-arp_solicit from neigh_probe+0x54/0x7c
-neigh_probe from __neigh_event_send+0x22c/0x47c
-__neigh_event_send from neigh_resolve_output+0x14c/0x1c0
-neigh_resolve_output from ip_finish_output2+0x1c8/0x628
-ip_finish_output2 from ip_send_skb+0x40/0xd8
-ip_send_skb from udp_send_skb+0x124/0x340
-udp_send_skb from udp_sendmsg+0x780/0x984
-udp_sendmsg from __sys_sendto+0xd8/0x158
-__sys_sendto from ret_fast_syscall+0x0/0x58
-
-Let's fix the issue by checking for send_srp() and set_vbus() before
-calling them. For USB peripheral only cases these both could be NULL.
-
-Fixes: 657b306a7bdf ("usb: phy: add a new driver for omap usb2 phy")
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- drivers/phy/ti/phy-omap-usb2.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ include/linux/phy/phy-dp.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
---- a/drivers/phy/ti/phy-omap-usb2.c
-+++ b/drivers/phy/ti/phy-omap-usb2.c
-@@ -117,7 +117,7 @@ static int omap_usb_set_vbus(struct usb_otg *otg, bool enabled)
- {
- 	struct omap_usb *phy = phy_to_omapusb(otg->usb_phy);
+diff --git a/include/linux/phy/phy-dp.h b/include/linux/phy/phy-dp.h
+index 18cad23642cd..9cce5766bc0b 100644
+--- a/include/linux/phy/phy-dp.h
++++ b/include/linux/phy/phy-dp.h
+@@ -8,6 +8,9 @@
  
--	if (!phy->comparator)
-+	if (!phy->comparator || !phy->comparator->set_vbus)
- 		return -ENODEV;
+ #include <linux/types.h>
  
- 	return phy->comparator->set_vbus(phy->comparator, enabled);
-@@ -127,7 +127,7 @@ static int omap_usb_start_srp(struct usb_otg *otg)
- {
- 	struct omap_usb *phy = phy_to_omapusb(otg->usb_phy);
- 
--	if (!phy->comparator)
-+	if (!phy->comparator || !phy->comparator->start_srp)
- 		return -ENODEV;
- 
- 	return phy->comparator->start_srp(phy->comparator);
++#define PHY_SUBMODE_DP	0
++#define PHY_SUBMODE_EDP	1
++
+ /**
+  * struct phy_configure_opts_dp - DisplayPort PHY configuration set
+  *
+
 -- 
-2.43.0
+2.34.1
+
 
 -- 
 linux-phy mailing list
