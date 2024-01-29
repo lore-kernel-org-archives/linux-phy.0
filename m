@@ -4,82 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10461C47422
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Jan 2024 09:40:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 442F6C47DA9
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jan 2024 10:54:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YD6wuLa/dRxFsPg61Ub6Uz4PdJM6UYKv0jMc3M1h9s4=; b=OGYlayNJZxE4yn
-	H+m+dt+MkAtkGjkYlc5Pjq8rwAWEXZEJ7g1qQ+7ggeg9D9DIMjH5YVLLrZLebykkKfueUgTDvHZf4
-	6/lg/NOhWdMTo654gB6beQIXbYZb5iKmvhYWICmu6EyoKYTuUcB/jZZR21ulV28JKcg9clMF4mONm
-	HXmeSbmu2Kec+fratnD1qghfRMu/z1Z1xsxNHGLzIHQOx0tysecXG/UAVhYK30FNOhxc6/S0EmA7w
-	xM6dt2gCBnXX9C0zOWHPvrRZAHEP+NEov9jRN9pvOxGdYfXpSinEE4eyDuFgWqpGZstf3FJMNOaAf
-	I4nFBoRhPhcdWhSRrxCg==;
+	List-Owner; bh=IXD9EXjpk/KhKNlwuK3L0L0fKZ6XpRX0eO8HMPW1VSo=; b=WkYsd7QCR3yQZH
+	t/lLW/0z96tQkVwGAhDzUoURq8Ff3ShB3/NnoqqIY0q1qZfQm+Xa9dyzQgQK6Sub6a/WPOBJQTbM/
+	tK4O4y5Od8QyjPl6746Qv1uvzvjfh2b1A6cEGYqLhlteKYaK7ruVq5Fi3xPTy2B93MTEAxlB0sFW9
+	kp4pXtud4txpuMwvuMRuw80Xt55wXxKoKH6nJtXVXcP3wK6xcC7HQUm6bxwYzsyvIZm3gY/bZt4jh
+	oiSEk1cxoQSh+suWdw7abv8Cof9ESBFoegWc9TPIKxUZeYGToGuSGSodUnHChwZ80FDQ/TkeZqR6E
+	u229wyvwRAiRLG+ryP5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUO89-0000000C5Nc-31RF;
-	Mon, 29 Jan 2024 09:40:41 +0000
-Received: from mail-yb1-xb32.google.com ([2607:f8b0:4864:20::b32])
+	id 1rUPHg-0000000CJMv-3ikO;
+	Mon, 29 Jan 2024 10:54:36 +0000
+Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUO87-0000000C5Mq-0oOa
+	id 1rUPHd-0000000CJMT-3nqE
 	for linux-phy@lists.infradead.org;
-	Mon, 29 Jan 2024 09:40:40 +0000
-Received: by mail-yb1-xb32.google.com with SMTP id 3f1490d57ef6-dc6424880e4so1814246276.1
-        for <linux-phy@lists.infradead.org>; Mon, 29 Jan 2024 01:40:36 -0800 (PST)
+	Mon, 29 Jan 2024 10:54:35 +0000
+Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-a2d7e2e7fe0so488497266b.1
+        for <linux-phy@lists.infradead.org>; Mon, 29 Jan 2024 02:54:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706521235; x=1707126035; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=2JY6ToXPjNwXhuXrTT6QOjgiDmdF+CeM/r9NF1DgPmk=;
-        b=ORdo23sSWOrhfd7+sXK0QGoskqQOzhpJx+J2xMZDynxXJ99IEFWGNWZGCzWTWY1Vlq
-         /t+Qi5wYqXV04HR2Re8ZgD3Ent77MDah4OPzNCAMlY+ChIpsYycTLXpxOXtBHwIx403k
-         T/JEwKqKuFvaFiEWnQOcHDt48Y0bJTS53GmUQJOu7uDfrS8ogW/4G6IyfwLr0D2QDBKn
-         NaTvuYdDEWTaxKWqjBBz+MzPwwyyMcVl3HK4aCN6xhYTj2Vmw2LLVtyA2U/wLGPS1Dd/
-         prJ0CI+lO+gsrX0Vy8YdRsQXrsSNun4s3A7o2aKGOmBbKHiC80VIh6CWDsKlHA0eeF8S
-         9MNQ==
+        d=linaro.org; s=google; t=1706525671; x=1707130471; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=f/oSSDICCHbrdP4BH59WaW/TlR2fru4lRGyTtk+4aYs=;
+        b=lNktT888nNdGwKEjxsNyzzJWPXr8o85IEkNSTNc2MKpeQyidCoKTxkmuUfpkVxGblZ
+         FJFivwXFXY9cGWktbD1MXt3TozaqcbwHN6rs7Xfcpd+DOS8Yv0UyHjRE0LugqL5xrgSL
+         DKwBx1A4J7MnuEWqbH+bd9xjz5QViw2ON0J5vmPgM5n32QO2azOK/zJpXxnE3Q9Uqawf
+         YzxOWA/GGNBhMfTS6nD/0e9++tbEBsscsBIcc0WoRLdPyyUcmZabvKeQfo03sEYxIAFu
+         EBGLFkf9/2wdro/iCDaQP3upK1G+zEXKu4hdPu8bB7DKaWvoAHGZUJCAy0xZmXUPKfZn
+         uAbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706521235; x=1707126035;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=2JY6ToXPjNwXhuXrTT6QOjgiDmdF+CeM/r9NF1DgPmk=;
-        b=AGk8SiudqzVbpO2CZFWxIJVWS8AaZH2QmY6yWRp+dQ0KMKoUNnwUg0MxBtM0pTiREp
-         pN0abiuFYL3q/KXGUv38Pj2z5saF26w3Dkqpkuuy0Tx0L8qfoaaNtma1BjN+BqmPCL9B
-         AHh3TZsBzrq0cF+eUeS71uhPo5yJxQOdae7UI2F4qo43Kc9IVQtfOYNyclS+Tqut9tX/
-         lNDyE4/3/uORAQgSADmGXtRlKx4OOMDdv0p5BeQQ29dmWtdrtshJC8KWktf82b33G76q
-         SmOM/w4G1yEdNVqSWEam3rbdRwsSZQzo6vGTWMiaBVg/kTqKHJa6NBpO3YBezdydvMj+
-         8/3Q==
-X-Gm-Message-State: AOJu0Yx7heRQ5/K0WNO1OptgNLyh4BdN89rEU0Fp8yel1WVUwJU0rGye
-	vxiOSxJEfsbcXknMPXQ9OHiy5z7ac3ZVcxPvr/VaLvk0qEoqvCxvvm+rUJ54Q99d63VC8sn5mb2
-	DT9Nt2nRvt3iDlW+QhtrGXMO5Am2ghb+ws7y6hQ==
-X-Google-Smtp-Source: AGHT+IH4lWSb6WG9jfOKtjqmDCo4I5nviQ3kAEzfInwhv5cfQoct03pp8KFNFA8IYJr4yCU2gWeZ0ebx2mBpRYiPCJA=
-X-Received: by 2002:a0d:d415:0:b0:5ef:78ad:b0b6 with SMTP id
- w21-20020a0dd415000000b005ef78adb0b6mr3331146ywd.69.1706521235443; Mon, 29
- Jan 2024 01:40:35 -0800 (PST)
+        d=1e100.net; s=20230601; t=1706525671; x=1707130471;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=f/oSSDICCHbrdP4BH59WaW/TlR2fru4lRGyTtk+4aYs=;
+        b=wsahF5LveLnZFXC4Cp5LGq6XJMmcqi/5lCeblZ4rPHA4lsDwX3+/zkQvTX7VVuUCqi
+         XbRnzgYqtpqQ52ECSqFyFatn+l8IbwD816UBRhX7XruHDvUPbBI9h7mzUMmsve0tRKRc
+         BRo0I/3U5FKN6PAAvQ0kru9Qr4Kxsvhx+09JPww1KYRp51Jx9DKj63CbJZhqPabZGyHS
+         7h3k4rEAkBWYQ4/i7JauBLt2GK7y5cCdTVLp5/VKBhBR6khAE+eeUcuzTxg8/laOoM4p
+         EkUN1mCGZcv+XQ5S8ejuAXyEm7lTwjmBheP0YsJpE2b6b/nwxSXOfLLvDxz0p7gVi8v6
+         VacQ==
+X-Gm-Message-State: AOJu0YzX6PbJ2uBDpJnX8H0dNs0OtAe48a85p9vTgX9P1w+XXWiXdQCJ
+	eUAPKXGc4JZC+8lrSfwVTIYXmwgg6kcxvILXDvoWRgFQmrhJ63kmKq3d+oe/no4=
+X-Google-Smtp-Source: AGHT+IGYJNC7edW5Scg3uDqbgjo1SqWrpwkLVxKzftNyn2dt9ODUd83gW+enc/Joa5DPoyRrJaHk+A==
+X-Received: by 2002:a17:906:4eca:b0:a28:c04e:315b with SMTP id i10-20020a1709064eca00b00a28c04e315bmr5994406ejv.13.1706525671246;
+        Mon, 29 Jan 2024 02:54:31 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.222.62])
+        by smtp.gmail.com with ESMTPSA id hd10-20020a170907968a00b00a35cd148c7esm636039ejc.212.2024.01.29.02.54.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 Jan 2024 02:54:30 -0800 (PST)
+Message-ID: <83b4315c-f2d8-419d-9b16-36341764b797@linaro.org>
+Date: Mon, 29 Jan 2024 11:54:28 +0100
 MIME-Version: 1.0
-References: <20240129-x1e80100-phy-edp-compatible-refactor-v3-0-e71f3359c535@linaro.org>
- <20240129-x1e80100-phy-edp-compatible-refactor-v3-2-e71f3359c535@linaro.org>
- <CAA8EJpr5Ci7M92ibsCMec3wcQTVqFkaVgRQUhKUSdhg66YhW1Q@mail.gmail.com> <Zbdcao0emQyBodCK@linaro.org>
-In-Reply-To: <Zbdcao0emQyBodCK@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 29 Jan 2024 11:40:24 +0200
-Message-ID: <CAA8EJppkEksTL90KLcaw0adg73K=ngoYp8semB_u5YFk6rChhA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] phy: qcom: edp: Add set_mode op for configuring
- eDP/DP submode
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Johan Hovold <johan@kernel.org>, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 04/14] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Fix
+ the usage of aux clk
+Content-Language: en-US
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+ cros-qcom-dts-watchers@chromium.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
+ <20240124-pcie-aux-clk-fix-v1-4-d8a4852b6ba6@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20240124-pcie-aux-clk-fix-v1-4-d8a4852b6ba6@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240129_014039_291616_6B1AD4D8 
-X-CRM114-Status: GOOD (  33.14  )
+X-CRM114-CacheID: sfid-20240129_025434_004908_212F74DD 
+X-CRM114-Status: GOOD (  13.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,257 +145,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 29 Jan 2024 at 10:06, Abel Vesa <abel.vesa@linaro.org> wrote:
->
-> On 24-01-29 06:05:09, Dmitry Baryshkov wrote:
-> > On Mon, 29 Jan 2024 at 02:26, Abel Vesa <abel.vesa@linaro.org> wrote:
-> > >
-> > > Future platforms should not use different compatibles to differentiate
-> > > between eDP and DP mode. Instead, they should use a single compatible as the
-> > > IP block is the same. It will be the job of the controller to set the submode
-> > > of the PHY accordingly.
-> > >
-> > > The existing platforms will remain with separate compatibles for each mode.
-> > >
-> > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > > ---
-> > >  drivers/phy/qualcomm/phy-qcom-edp.c | 71 ++++++++++++++++++++++++++-----------
-> > >  1 file changed, 51 insertions(+), 20 deletions(-)
-> > >
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-> > > index 8e5078304646..af941d6c5588 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-edp.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-> > > @@ -14,6 +14,7 @@
-> > >  #include <linux/module.h>
-> > >  #include <linux/of.h>
-> > >  #include <linux/phy/phy.h>
-> > > +#include <linux/phy/phy-dp.h>
-> > >  #include <linux/platform_device.h>
-> > >  #include <linux/regulator/consumer.h>
-> > >  #include <linux/reset.h>
-> > > @@ -68,19 +69,21 @@
-> > >
-> > >  #define TXn_TRAN_DRVR_EMP_EN                    0x0078
-> > >
-> > > -struct qcom_edp_cfg {
-> > > -       bool is_dp;
-> > > -
-> > > -       /* DP PHY swing and pre_emphasis tables */
-> > > +struct qcom_edp_swing_pre_emph_cfg {
-> > >         const u8 (*swing_hbr_rbr)[4][4];
-> > >         const u8 (*swing_hbr3_hbr2)[4][4];
-> > >         const u8 (*pre_emphasis_hbr_rbr)[4][4];
-> > >         const u8 (*pre_emphasis_hbr3_hbr2)[4][4];
-> > >  };
-> > >
-> > > +struct qcom_edp_phy_cfg {
-> > > +       bool is_edp;
-> > > +       const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
-> > > +};
-> > > +
-> > >  struct qcom_edp {
-> > >         struct device *dev;
-> > > -       const struct qcom_edp_cfg *cfg;
-> > > +       const struct qcom_edp_phy_cfg *cfg;
-> > >
-> > >         struct phy *phy;
-> > >
-> > > @@ -96,6 +99,8 @@ struct qcom_edp {
-> > >
-> > >         struct clk_bulk_data clks[2];
-> > >         struct regulator_bulk_data supplies[2];
-> > > +
-> > > +       bool is_edp;
-> > >  };
-> > >
-> > >  static const u8 dp_swing_hbr_rbr[4][4] = {
-> > > @@ -126,8 +131,7 @@ static const u8 dp_pre_emp_hbr2_hbr3[4][4] = {
-> > >         { 0x04, 0xff, 0xff, 0xff }
-> > >  };
-> > >
-> > > -static const struct qcom_edp_cfg dp_phy_cfg = {
-> > > -       .is_dp = true,
-> > > +static const struct qcom_edp_swing_pre_emph_cfg dp_phy_swing_pre_emph_cfg = {
-> > >         .swing_hbr_rbr = &dp_swing_hbr_rbr,
-> > >         .swing_hbr3_hbr2 = &dp_swing_hbr2_hbr3,
-> > >         .pre_emphasis_hbr_rbr = &dp_pre_emp_hbr_rbr,
-> > > @@ -162,18 +166,28 @@ static const u8 edp_pre_emp_hbr2_hbr3[4][4] = {
-> > >         { 0x00, 0xff, 0xff, 0xff }
-> > >  };
-> > >
-> > > -static const struct qcom_edp_cfg edp_phy_cfg = {
-> > > -       .is_dp = false,
-> > > +static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg = {
-> > >         .swing_hbr_rbr = &edp_swing_hbr_rbr,
-> > >         .swing_hbr3_hbr2 = &edp_swing_hbr2_hbr3,
-> > >         .pre_emphasis_hbr_rbr = &edp_pre_emp_hbr_rbr,
-> > >         .pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3,
-> > >  };
-> > >
-> > > +static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
-> > > +};
-> > > +
-> > > +static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
-> > > +       .swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
-> > > +};
-> > > +
-> > > +static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
-> > > +       .is_edp = true,
-> > > +       .swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
-> > > +};
-> > > +
-> > >  static int qcom_edp_phy_init(struct phy *phy)
-> > >  {
-> > >         struct qcom_edp *edp = phy_get_drvdata(phy);
-> > > -       const struct qcom_edp_cfg *cfg = edp->cfg;
-> > >         int ret;
-> > >         u8 cfg8;
-> > >
-> > > @@ -200,7 +214,7 @@ static int qcom_edp_phy_init(struct phy *phy)
-> > >                DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-> > >                edp->edp + DP_PHY_PD_CTL);
-> > >
-> > > -       if (cfg && cfg->is_dp)
-> > > +       if (edp->cfg->swing_pre_emph_cfg && !edp->is_edp)
-> >
-> > I think (!edp->is_edp) should be enough here.
->
-> Actually, in case of DP, the cfg8 needs to be 0xb7 for sc8280xp, while for sc7280 it should be 0x37.
->
-> So to differentiate between first and second we check if the config
-> provides a swing_pre_emph_cfg
-
-Using swing_pre_emph_cfg to distinguish between those two cases is a pure hack.
-Is there any sensible meaning behind those bits? If not, just put
-those values into the configuration data.
-
->
-> >
-> > >                 cfg8 = 0xb7;
-> > >         else
-> > >                 cfg8 = 0x37;
-> > > @@ -234,7 +248,7 @@ static int qcom_edp_phy_init(struct phy *phy)
-> > >
-> > >  static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configure_opts_dp *dp_opts)
-> > >  {
-> > > -       const struct qcom_edp_cfg *cfg = edp->cfg;
-> > > +       const struct qcom_edp_swing_pre_emph_cfg *cfg = edp->cfg->swing_pre_emph_cfg;
-> > >         unsigned int v_level = 0;
-> > >         unsigned int p_level = 0;
-> > >         u8 ldo_config;
-> > > @@ -245,6 +259,9 @@ static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configur
-> > >         if (!cfg)
-> > >                 return 0;
-> > >
-> > > +       if (edp->is_edp)
-> > > +               cfg = &edp_phy_swing_pre_emph_cfg;
-> > > +
-> > >         for (i = 0; i < dp_opts->lanes; i++) {
-> > >                 v_level = max(v_level, dp_opts->voltage[i]);
-> > >                 p_level = max(p_level, dp_opts->pre[i]);
-> > > @@ -261,7 +278,7 @@ static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configur
-> > >         if (swing == 0xff || emph == 0xff)
-> > >                 return -EINVAL;
-> > >
-> > > -       ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
-> > > +       ldo_config = edp->is_edp ? 0x0 : 0x1;
-> > >
-> > >         writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
-> > >         writel(swing, edp->tx0 + TXn_TX_DRV_LVL);
-> > > @@ -447,10 +464,9 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel
-> > >  static int qcom_edp_phy_power_on(struct phy *phy)
-> > >  {
-> > >         const struct qcom_edp *edp = phy_get_drvdata(phy);
-> > > -       const struct qcom_edp_cfg *cfg = edp->cfg;
-> > >         u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
-> > >         unsigned long pixel_freq;
-> > > -       u8 ldo_config;
-> > > +       u8 ldo_config = 0x0;
-> > >         int timeout;
-> > >         int ret;
-> > >         u32 val;
-> > > @@ -468,7 +484,8 @@ static int qcom_edp_phy_power_on(struct phy *phy)
-> > >                 return timeout;
-> > >
-> > >
-> > > -       ldo_config = (cfg && cfg->is_dp) ? 0x1 : 0x0;
-> > > +       if (edp->cfg->swing_pre_emph_cfg && !edp->cfg->is_edp)
-> >
-> > I'd assume this should be `if (!edp->is_edp)`, see qcom_edp_set_voltages()
-> >
->
-> Yep. will fix.
->
-> > > +               ldo_config = 0x1;
-> > >
-> > >         writel(ldo_config, edp->tx0 + TXn_LDO_CONFIG);
-> > >         writel(ldo_config, edp->tx1 + TXn_LDO_CONFIG);
-> > > @@ -589,6 +606,18 @@ static int qcom_edp_phy_power_off(struct phy *phy)
-> > >         return 0;
-> > >  }
-> > >
-> > > +static int qcom_edp_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> > > +{
-> > > +       struct qcom_edp *edp = phy_get_drvdata(phy);
-> > > +
-> > > +       if (mode != PHY_MODE_DP)
-> > > +               return -EINVAL;
-> > > +
-> > > +       edp->is_edp = submode == PHY_SUBMODE_EDP ? true : false;
-> > > +
-> > > +       return 0;
-> > > +}
-> > > +
-> > >  static int qcom_edp_phy_exit(struct phy *phy)
-> > >  {
-> > >         struct qcom_edp *edp = phy_get_drvdata(phy);
-> > > @@ -604,6 +633,7 @@ static const struct phy_ops qcom_edp_ops = {
-> > >         .configure      = qcom_edp_phy_configure,
-> > >         .power_on       = qcom_edp_phy_power_on,
-> > >         .power_off      = qcom_edp_phy_power_off,
-> > > +       .set_mode       = qcom_edp_phy_set_mode,
-> > >         .exit           = qcom_edp_phy_exit,
-> > >         .owner          = THIS_MODULE,
-> > >  };
-> > > @@ -781,6 +811,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
-> > >
-> > >         edp->dev = dev;
-> > >         edp->cfg = of_device_get_match_data(&pdev->dev);
-> > > +       edp->is_edp = edp->cfg->is_edp;
-> > >
-> > >         edp->edp = devm_platform_ioremap_resource(pdev, 0);
-> > >         if (IS_ERR(edp->edp))
-> > > @@ -839,10 +870,10 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
-> > >  }
-> > >
-> > >  static const struct of_device_id qcom_edp_phy_match_table[] = {
-> > > -       { .compatible = "qcom,sc7280-edp-phy" },
-> > > -       { .compatible = "qcom,sc8180x-edp-phy" },
-> > > -       { .compatible = "qcom,sc8280xp-dp-phy", .data = &dp_phy_cfg },
-> > > -       { .compatible = "qcom,sc8280xp-edp-phy", .data = &edp_phy_cfg },
-> > > +       { .compatible = "qcom,sc7280-edp-phy" , .data = &sc7280_dp_phy_cfg, },
-> > > +       { .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
-> > > +       { .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
-> > > +       { .compatible = "qcom,sc8280xp-edp-phy", .data = &sc8280xp_edp_phy_cfg, },
-> > >         { }
-> > >  };
-> > >  MODULE_DEVICE_TABLE(of, qcom_edp_phy_match_table);
-> > >
-> > > --
-> > > 2.34.1
-> > >
-> >
-> >
-> > --
-> > With best wishes
-> > Dmitry
+On 24/01/2024 08:36, Manivannan Sadhasivam wrote:
+> On some platforms, PHY block requires PCIE_PHY_AUX_CLK to be used when the
+> PCIe link enters L1SS state. On those platforms, a dedicated
+> PCIE_PHY_AUX_CLK is available from GCC. Other than this, the PHY block
+> doesn't require any other "aux" clock, including PCIE_AUX_CLK which only
+> required by the PCIe controller.
+> 
+> Historically, the DTs of the platforms requiring "aux" clock passed
+> PCIE_PHY_AUX_CLK as "aux" clock. But over the period of time, platforms
+> that do not require this dedicated "aux" clock mistakenly started passing
+> the PCIE_AUX_CLK as the "aux" clock. More recently, SA8775P platform passed
+> both "aux" (PCIE_AUX_CLK) and "phy_aux" (PCIE_PHY_AUX_CLK) clocks.
+> 
+> So to clean up this mess, let's remove the newly introduced "phy_aux" clock
+> and just use "aux" clock to supply PCIE_PHY_AUX_CLK for platforms that
+> require it. For the platforms that do not require a dedicated "aux" clock,
+> the clock is removed from DT.
+> 
+> While at it, let's also define "qcom,sc7280-qmp-pcie-phy" compatible for
+> SC7280 SoC which was earlier using the compatible
+> "qcom,sm8250-qmp-gen3x2-pcie-phy" as the clock requirement has changed and
+> also restructure the "clock-names" property for the affected platforms.
+> 
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
--- 
-With best wishes
-Dmitry
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
