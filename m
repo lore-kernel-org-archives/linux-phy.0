@@ -4,67 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 444DDC47DA9
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jan 2024 17:14:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 245B0C46CD2
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jan 2024 17:39:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BvgoIx452tEC2N8D7TrfWQCXp4cYTlnbiXXEaY/9lV4=; b=OZE4IFHWs7Ok/+
-	OpNQrFd8Ox4+jI7WYv3Q+mWg1Zn38YaFENS/qHlliI4RH7Y+PlQDDc+S3ErHaGe5VP7rp5RGlOe/3
-	BQxVfhUx+c6D7FHZFfS6p2D/Hr6T+b2dkAwXo4VVrbDhQ8V0TPQoBsyU2uaCe0HZyBj2PDMCzWkEn
-	GX3glKM7DfWqHwpcxvExFnIjNjRA2kgsV+tDhmjnwP3/V1ynxac9dwuN3Z/WwNXvuE7Sg4zIAwsuE
-	KZNfOB8SBTJ7dxFNiZuq9B3LUG0BiQbv/EBjWuIqfCIwRFqNkPVkdWKnkXfWoQHM4G1w2qzp+XHDa
-	84q1MHA5qd1KTeA1oq3g==;
+	List-Owner; bh=snxfF2uPtgEcF3jU/fG/ZZZUslQDHVYtMRB8fOav5Cc=; b=eQNhfPtwbXVFhq
+	3XapV7zejSmhHaLrB20qyelPLBBWzVGTgZ8iFdt5VGLEJ5WjYHKarLkJ+35byS2eu0y6buFSNg5Tp
+	9ARmWmBxmuMYR4C0X4T56BFfBmfqrWOSjbEA0cZ/epQdBSSVYK8MBkth9Q5Ouq3iICXG7siAB3q3i
+	6P/uk+/5V9Vab6U8MPsaP7BL/JD+l7nnZvFiDUvqrtQuXgGHJbIsdJ8/ABUDEEzEMA/HNwaCGaMuf
+	wXmyF98Xe8GQNhToyPUFf//wv7rHYaiRSvBVtNC0H+80OP9c8j5YWzmK0hhDuc8ylqQxBtQwFjNiQ
+	W44MuFPOaTIvXWF9ElqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUrhF-0000000HWiC-3mkE;
-	Tue, 30 Jan 2024 17:14:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rUs5Q-0000000HavT-37iV;
+	Tue, 30 Jan 2024 17:39:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUrhD-0000000HWhf-313y
+	id 1rUs5N-0000000Haur-3xZ5
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Jan 2024 17:14:53 +0000
+	Tue, 30 Jan 2024 17:39:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 034F260F0D;
-	Tue, 30 Jan 2024 17:14:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC0B3C433C7;
-	Tue, 30 Jan 2024 17:14:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9012D60E0A;
+	Tue, 30 Jan 2024 17:39:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDE05C433F1;
+	Tue, 30 Jan 2024 17:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706634890;
-	bh=A5T8FP/fhIVtH/olVEw0tzShluBYACTWaf+iE7kNjHc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=B5sVTDYcZYQd6secc+1JOjx11SzAr4mybLbcRDSte3T8Xi62OLzcth2fj04pGx37w
-	 SfdAaUIfYHZH44RnWaSeE9sFYUpJAVvbBDO1o42UR514TdkB7qJPRdy2etQ45uYCp6
-	 DIKvVDpDFZohfFtwzm/tEAh30eyIsJHjeuts7GQ0PVks8OaC0jxNKjgm4tQXYFs9hz
-	 WaskVbC/gMNGEhjIWK5Ytt8jNaVc1+Ck49ELh5odrADWqEZb0B1IMltoNXWNuBjPo8
-	 WmLTkMkGEXr3xmf7AVnWdDUD8uDtkj4AzA9k9SbGrVkMM2T+8RC3RXS4Vs3RYjQBSj
-	 MPdAOv5LpsXWQ==
-Date: Tue, 30 Jan 2024 22:44:46 +0530
+	s=k20201202; t=1706636388;
+	bh=NcU+mdNlkKy//Z7WYZmwlRZRQjhVmvq+zS+39FzljlU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=Pu9qtVtVW3O1OFkG/kEaAV5qNjcOo9zwqp9RmHe/fiiYNj3b+9EKdEne8qBWaIFi2
+	 vz8dcyhxFebJvJHSa+FxQk85STMYSjJ/gKxZPnWYz3JWeeTAeUAk/eIB9NVRkybjR+
+	 SqUGG9uJ1bCCpj2tBUTTaYcAOjHo/IDk+g13//6pQ9tQiv8H6GNxkUKHpoNgDV8X9U
+	 7kAKa0F8GNfl6UcG3RJQ6enlnRzfPpxgGE/NLBzv7DtJf6/nPL7L028od8Gcd/wDuK
+	 tSvXm4gzQ9eTpUxgXYw36l2r2Sl6+7IgZh5jxRgZ5YtJ0xSTKn9SnilSmNR9aj1wmC
+	 LUleZShrPZj8A==
 From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 04/14] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Fix
- the usage of aux clk
-Message-ID: <ZbkuhjOa31ma3Mx8@matsya>
-References: <20240124-pcie-aux-clk-fix-v1-0-d8a4852b6ba6@linaro.org>
- <20240124-pcie-aux-clk-fix-v1-4-d8a4852b6ba6@linaro.org>
+To: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org, 
+ kishon@kernel.org, Qiang Yu <quic_qianyu@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, quic_cang@quicinc.com, quic_mrana@quicinc.com
+In-Reply-To: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
+References: <1703742157-69840-1-git-send-email-quic_qianyu@quicinc.com>
+Subject: Re: [PATCH 0/2] phy: qcom: qmp-pcie: Update PCIe PHY settings for
+ SM8550
+Message-Id: <170663638451.685888.12123923812372214913.b4-ty@kernel.org>
+Date: Tue, 30 Jan 2024 23:09:44 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240124-pcie-aux-clk-fix-v1-4-d8a4852b6ba6@linaro.org>
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240130_091451_821941_93778984 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20240130_093950_122541_B7EDDA37 
+X-CRM114-Status: UNSURE (   3.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,33 +75,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-01-24, 13:06, Manivannan Sadhasivam wrote:
-> On some platforms, PHY block requires PCIE_PHY_AUX_CLK to be used when the
-> PCIe link enters L1SS state. On those platforms, a dedicated
-> PCIE_PHY_AUX_CLK is available from GCC. Other than this, the PHY block
-> doesn't require any other "aux" clock, including PCIE_AUX_CLK which only
-> required by the PCIe controller.
-> 
-> Historically, the DTs of the platforms requiring "aux" clock passed
-> PCIE_PHY_AUX_CLK as "aux" clock. But over the period of time, platforms
-> that do not require this dedicated "aux" clock mistakenly started passing
-> the PCIE_AUX_CLK as the "aux" clock. More recently, SA8775P platform passed
-> both "aux" (PCIE_AUX_CLK) and "phy_aux" (PCIE_PHY_AUX_CLK) clocks.
-> 
-> So to clean up this mess, let's remove the newly introduced "phy_aux" clock
-> and just use "aux" clock to supply PCIE_PHY_AUX_CLK for platforms that
-> require it. For the platforms that do not require a dedicated "aux" clock,
-> the clock is removed from DT.
-> 
-> While at it, let's also define "qcom,sc7280-qmp-pcie-phy" compatible for
-> SC7280 SoC which was earlier using the compatible
-> "qcom,sm8250-qmp-gen3x2-pcie-phy" as the clock requirement has changed and
-> also restructure the "clock-names" property for the affected platforms.
 
-This one fails to apply for me
+On Thu, 28 Dec 2023 13:42:35 +0800, Qiang Yu wrote:
+> Align PCIe0/PCIe1 PHY settings with SM8550 latest PCIe PHY Hardware
+> Programming Guide.
+> 
+> Can Guo (1):
+>   phy: qcom: qmp-pcie: Update PCIe1 PHY settings for SM8550
+> 
+> Qiang Yu (1):
+>   phy: qcom: qmp-pcie: Update PCIe0 PHY settings for SM8550
+> 
+> [...]
 
+Applied, thanks!
+
+[1/2] phy: qcom: qmp-pcie: Update PCIe1 PHY settings for SM8550
+      commit: 06e34728827cb47026e80db22304d03ee83c73a8
+[2/2] phy: qcom: qmp-pcie: Update PCIe0 PHY settings for SM8550
+      commit: 80082fc89edde66fe61ab85d23ea27b245fe73cb
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
