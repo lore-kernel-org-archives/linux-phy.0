@@ -4,100 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2222C48285
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jan 2024 07:09:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D9ABC47258
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jan 2024 07:17:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qj5FqfI1pQmlfWbJe9CviU5Jnx921G6+yS3aTMv4qYo=; b=UCG0jHvC4hDy3y
-	k2w8wdJt3x5oRQJGFvacbDL8qa7lJHcAhkNyw7pjxRYxrStg1fPVDlQdu/8oD2aJIhdJKXJOeG33z
-	VLdCD/Hb5SOxGDsJuHDqsGMpqGSPm5q0SBvG/4X5Sx2xlIwBAMH6BAIkO8MZPyNFq6ObmpkO/c7Za
-	7hDA4W7ye+Wuk3Niw2kkBMBOIJEa8kKwWMNvFxf/oDLMyY8ZpaedkoMqE+tron7tSBD/QwfdVrpXs
-	aXCEY7HvRTSPZRpoJoDwJqCBv9/RrBXobsfRqp5K+CIvJppccz5UsLZCeltQgZNLWyQADkwJ5KLkv
-	unPDAXc1VtzCXaUKsdrg==;
+	List-Owner; bh=kENJQPVTB4Kb8m2v7apnKycIOGUpufm+vvix3ia91oo=; b=WFDXH+v1kpzfiF
+	70I45zOg9uuDCK968+zfDGcWcIZwHV0Fxq/6fDH4K245qOmJmBYwVQKTWGVGRCbzXXc2yn+9kFija
+	MqBki7fdDZIGMgKUALEOGESvmD5fY6Y4LgOjSef66RV+Eg1cI/Xd7kISdsStoADfRz6XSI3Hwp751
+	P4l2Pxm3Hm7SCVNOcqSsDAjyOHodrbCIzXi7pk+NgwXRf1BL2M9eZEBosPjceblfWj3fFXSaGUvQq
+	G4i9GTebMaL0Wsj4ImBdPHnJTVauzgssBvbLFlE1HodDjHySjZGwVPgwTYNcszpjYX0/NAtI/7qjc
+	5Bv3YfpJzc1obo5qG4OQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV4j1-00000001jbo-2ExZ;
-	Wed, 31 Jan 2024 07:09:35 +0000
-Received: from mail-ot1-x334.google.com ([2607:f8b0:4864:20::334])
+	id 1rV4qQ-00000001ldB-0a7o;
+	Wed, 31 Jan 2024 07:17:14 +0000
+Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV4iy-00000001ja2-0Eg8
+	id 1rV4qK-00000001la7-2A0g
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jan 2024 07:09:33 +0000
-Received: by mail-ot1-x334.google.com with SMTP id 46e09a7af769-6e11faeb125so1418983a34.2
-        for <linux-phy@lists.infradead.org>; Tue, 30 Jan 2024 23:09:31 -0800 (PST)
+	Wed, 31 Jan 2024 07:17:12 +0000
+Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-dc6b5d0e015so718726276.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 Jan 2024 23:17:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706684971; x=1707289771; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lWsO+esC0d2AYKWWl4iIuis67padS7ySZZsjP3PTjQQ=;
-        b=qKpQCdGNiHcIpGq8z7YpO6fMW8HOD8yE/Q/0tZPOdqtOW+PjJnjCu0tGc9L9OnXAd2
-         zo/uDmzieNAORMh0RxXcXlFEfRFapnmHxVvF6ZAX83Qdauw1BdF8Vr2/6fmwniMEFqHH
-         MDdI2xwxSu1Zo+ecTc6sC+urgQsvug/2rKdqfgjWj6ZKZE/IKQDEwvjBMloQcXRO1Hzh
-         /heCR3cXXha5OQ0Slyc7RO9QUkkU78+xPVJQzthUMQVJDiLIPWNhkdmqBeXMFX551zAr
-         AyyhGuiOABmKHjClVCwc6jqIUh8Ljk3wwVSQLPVIEyKZv8uywOL5ZbMOxBfbw4vMV7C6
-         fsBg==
+        d=linaro.org; s=google; t=1706685427; x=1707290227; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=i++Ghkf0yxbfp+SFq64kOAC5DCFdLn2FGQfA07BzBKg=;
+        b=W2AXHUW+VFphxigQsfGa5g4L/1PbVqrGRYGdxRMqOG+72ZqAF83wDcl0UNIgMibHjX
+         Fd/CezHp+rKfdHKGCOFr86V2zGUfsFOL1v+rscARjXvdo4qLyMlgwyjZS/UDBHfz+mqP
+         ybFeDbp6zmDbCuMHvkk+1NXhWmKwTaNTmFCSdJo2One9GhtbvD2JcL8bfddg+SrO62pD
+         qTrDUN87hLEdrBPpCs4JEGX5rhJ/pb1RaN9WFiD2xfJLUkiv2/xAfUizmXL4wAxxXqZr
+         CcmGgejmMPDDFbo6VIt6nEix90HsvoLSGY7MYNS+K7gCk67YD76UVQrEC2inHcyfKQ1K
+         SKLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706684971; x=1707289771;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=lWsO+esC0d2AYKWWl4iIuis67padS7ySZZsjP3PTjQQ=;
-        b=ZjXxeI9GhrlLW4vjWaio9dktnZvYk22ircBaDI8UO+NLOnT6hoDL5/3VSRn8+08739
-         6JzY866Oom3fPTnN2Ii5mwwOhkOPh9jiMPZIsJRJ+qe5zKETrhZarpLkAwsUFO7AyaoO
-         Sd/DO8doVTKR/GWq5M1RKXpp98hS0a+dNzw8DnEeO7VuJh9RHDT0QKlwmw+oUivogHSg
-         spGD6ZDcmFHngusZrJr0I+ECNq9e5H7Z6bVoTMBrckYn26TH7aZYmV3FV1K9vkh3szOc
-         SUnUhABzFYCzBUx8Y5/qPHbi4BU0W6wZtbiq4RVVqns9WnGxEzCXTpMDwha142Sd3m04
-         bPCQ==
-X-Gm-Message-State: AOJu0YyRuCDoBAZcnKhP/r7pNUBBTyq8VOJEh+sZpur57/NhvJxLuf5K
-	2/xxkWuquo3/hqtzYNEYmcN6GYuDEi4V4JFeagxHpReVUQX6/0sOUlY3t7Zifw==
-X-Google-Smtp-Source: AGHT+IHteOzFOILISoB8e3ZraEytXha6YtyVTN5AGfm+j1w2zTnAEYNcgu6UVnIMSyvUiyY/g965XQ==
-X-Received: by 2002:a05:6808:2f0a:b0:3bd:a866:124a with SMTP id gu10-20020a0568082f0a00b003bda866124amr1473409oib.9.1706684971390;
-        Tue, 30 Jan 2024 23:09:31 -0800 (PST)
-Received: from [127.0.1.1] ([103.28.246.26])
-        by smtp.gmail.com with ESMTPSA id lp17-20020a056a003d5100b006ddd182bf1csm9087956pfb.46.2024.01.30.23.09.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 Jan 2024 23:09:31 -0800 (PST)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Date: Wed, 31 Jan 2024 12:37:40 +0530
-Subject: [PATCH v3 17/17] arm64: dts: qcom: sm8650: Fix UFS PHY clocks
+        d=1e100.net; s=20230601; t=1706685427; x=1707290227;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=i++Ghkf0yxbfp+SFq64kOAC5DCFdLn2FGQfA07BzBKg=;
+        b=kMGamO2WlyVpNu+oml7MHJ5iqgtdo3L0gQMfLEW5FFvO8sSIF4iLBgl6C/0d9+ubzA
+         yyltQDD9HWpOuvnrsFUgGcr1NMK7/m1KoH2oSdkq255t9QoOLC8uCuszNY+FYiTKw7kw
+         5+y1amDaC6anAehGfNgU3sseEe54XLMivShboaNognJSpSDR+7ooU75n9zMfot9pWQTb
+         ot08xq2s5H7ee8g/DJ01ag9IHbt01oBX6Ki142o19+aorh9tLpiQP1JksEY8pF7PJWxb
+         otz/DzNGmIvjNZk+wi6qGqKuuIiGXlZSfGHFULXs0vYS9DmjCw2/sKzyvV3Ff8MIjfmh
+         D75w==
+X-Gm-Message-State: AOJu0Yx6uXhuVWG2I+ACpW1RJ/GbnLM6Dxal9+zJgOYD0L1TWtunuXGx
+	QaS09xCffKdwk6wu4FdOxt3HvEaKjJFOBJRG2vEOl7nIYg8/AUUJY1EATsHLUAZ+HaKju1dL5oo
+	lFBzO2+24aELgFQM6TN+nCghx1AfrO/+dOaAp1r94mMfH2TAgU/g=
+X-Google-Smtp-Source: AGHT+IFTNzxcPE7P1aDSv5JKuBB1enENzJJokT41i2jNc0I+1qhMXhMXCe1ePN6biXsX0bf+Ecr83unT7phgH6+21hA=
+X-Received: by 2002:a25:6b44:0:b0:dc2:2e50:dc4b with SMTP id
+ o4-20020a256b44000000b00dc22e50dc4bmr894449ybm.52.1706685427161; Tue, 30 Jan
+ 2024 23:17:07 -0800 (PST)
 MIME-Version: 1.0
-Message-Id: <20240131-ufs-phy-clock-v3-17-58a49d2f4605@linaro.org>
-References: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org>
-In-Reply-To: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org>
-To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-clk@vger.kernel.org, quic_cang@quicinc.com, 
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1160;
- i=manivannan.sadhasivam@linaro.org; h=from:subject:message-id;
- bh=VvvbKDQ1v37NesUwZ4Ka5npjjk3GwT+dettCywR4LiA=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlufG/WVdKYwr5kNyolAW+hmSR6O4P1ei0YSKpH
- 3slSGtvb7yJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbnxvwAKCRBVnxHm/pHO
- 9eXSCACPXL4Nd0gJ9qj4Vafm9PgyB4uU60lf4fyE480qMy0Mx3O5B4+qFlvym/AyZrSYeg9cj2z
- MVCQJigCXOIbQcpQy7FQaBY811D358xrbzjBgU1HdNI81CVsr6flwPbimmvGvTKJ6TvLUFYzDAq
- NS4JEvnZciye6ZeLn8xDWEQByqCgOfP5/Vg+fEotuUi219ldpkHwmIrPz6E7sQX9uzirKoX+ubn
- MFLH5iXTwLXvyE7LEFZ7sczDQdD5OHbK4rLbkxkvOAaat+CnK4TqpveCHpclEbIaWSF6DBG0y5u
- Zg1tguc7IQG5gmBhi3CTiyAHpElFCOmPCMZ/TzdX4P3Ap39C
-X-Developer-Key: i=manivannan.sadhasivam@linaro.org; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+References: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org> <20240131-ufs-phy-clock-v3-2-58a49d2f4605@linaro.org>
+In-Reply-To: <20240131-ufs-phy-clock-v3-2-58a49d2f4605@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 31 Jan 2024 09:16:56 +0200
+Message-ID: <CAA8EJpqGhUiF6is9K0OeB+DW5BmTTEEvk1sEDkxV+cN5BWpNnw@mail.gmail.com>
+Subject: Re: [PATCH v3 02/17] phy: qcom-qmp-ufs: Switch to devm_clk_bulk_get_all()
+ API
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-clk@vger.kernel.org, quic_cang@quicinc.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240130_230932_181548_3B5DB1F5 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240130_231708_710267_F32B36F5 
+X-CRM114-Status: GOOD (  11.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,42 +95,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QMP PHY used in SM8650 requires 3 clocks:
+On Wed, 31 Jan 2024 at 09:08, Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Device drivers should just rely on the clocks provided by the devicetree
+> and enable/disable them based on the requirement. There is no need to
+> validate the clocks provided by devicetree in the driver. That's the job
+> of DT schema.
+>
+> So let's switch to devm_clk_bulk_get_all() API that just gets the clocks
+> provided by devicetree and remove hardcoded clocks info.
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 63 ++++-----------------------------
+>  1 file changed, 7 insertions(+), 56 deletions(-)
 
-* ref - 19.2MHz reference clock from RPMh
-* ref_aux - Auxiliary reference clock from GCC
-* qref - QREF clock from TCSR
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Fixes: 10e024671295 ("arm64: dts: qcom: sm8650: add interconnect dependent device nodes")
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- arch/arm64/boot/dts/qcom/sm8650.dtsi | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/sm8650.dtsi b/arch/arm64/boot/dts/qcom/sm8650.dtsi
-index 942e602bfc97..464b871ebcb7 100644
---- a/arch/arm64/boot/dts/qcom/sm8650.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8650.dtsi
-@@ -2476,10 +2476,12 @@ ufs_mem_phy: phy@1d80000 {
- 			compatible = "qcom,sm8650-qmp-ufs-phy";
- 			reg = <0 0x01d80000 0 0x2000>;
- 
--			clocks = <&tcsr TCSR_UFS_CLKREF_EN>,
--				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
-+			clocks = <&rpmhcc RPMH_CXO_CLK>,
-+				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
-+				 <&tcsr TCSR_UFS_CLKREF_EN>;
- 			clock-names = "ref",
--				      "ref_aux";
-+				      "ref_aux",
-+				      "qref";
- 
- 			resets = <&ufs_mem_hc 0>;
- 			reset-names = "ufsphy";
 
 -- 
-2.25.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
