@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8CD7C47258
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jan 2024 07:08:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F31E7C47258
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jan 2024 07:08:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bubQmvQZ0550ulWN84/4T66n1O3xnVzjTcLgFU1G0w0=; b=oPi0z9TE/wmp30
-	1wdT+lLSP1v5h8lu8Ihh6ltkIuwn/85NTvijAlc8LJnYzCm9jc7EVNcFjDFJ0hZAUaa+PXEFj+v7P
-	WKl1Tccpjfz5A06iq7CH+AAvZSkD6rdYXAN52v3vkVFCT/70essrXQQNwtGfb4mP/LoAWd3C3n6hs
-	ErJle8ngZ3aIWdEIPdWloY5+tYjqqzygRgr6g2P3wtqGVjY9K1TvZAOKAlWkMIxbDbm16SiPFNAuV
-	scg9DicyON49j0psCxkS/hi3TWwX71Jtm8lnsEBI25Q/wK0o4PhH8XOdksOY6+xtkHPWY4Qpe8KF9
-	+HN3AaqdFdhjubkh3M/A==;
+	List-Owner; bh=0JZMlbqXga55hPzXqCC2GYbKvPp7h9rtZyXKOc7CyXk=; b=2SD/JMGGWvSNuW
+	IA2mxv/7h/J7yBgTxUTNQ4wmbq1YmX4iVxhkXnovZneaZVa6fBFsyQIOEi/EIaZwCEU4n0OLtXcDg
+	oUo0bnyI/EaBKC9bwbgDBvSa9aWGw6NZIMZfmNnEuj0PCTzmKt7Nk8NzXZ+mNgrBVReerMa1U7wcK
+	k7R7p66PHSKcNt8FYL8W29hJBUrRVYH9hl7kgzn3gi5qxuY+rVsbMs3jXzx1XKuoVzoty/SawLkvF
+	luEkt+yKix1QiIRIU2g5A9C0vLXDxiWLChz9STVX3MCoUqDXGAnIOMWkn20P7+WarfCmLPPKKa7TG
+	Ev69SWktODGVEQYzH7xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV4hm-00000001j8k-0xW5;
-	Wed, 31 Jan 2024 07:08:18 +0000
-Received: from mail-oo1-xc2b.google.com ([2607:f8b0:4864:20::c2b])
+	id 1rV4ho-00000001j9G-2hEu;
+	Wed, 31 Jan 2024 07:08:20 +0000
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV4hk-00000001j67-18PC
+	id 1rV4hk-00000001j3L-2HB4
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jan 2024 07:08:17 +0000
-Received: by mail-oo1-xc2b.google.com with SMTP id 006d021491bc7-5957ede4deaso3104488eaf.1
-        for <linux-phy@lists.infradead.org>; Tue, 30 Jan 2024 23:08:13 -0800 (PST)
+	Wed, 31 Jan 2024 07:08:18 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-5ce942efda5so3498372a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 30 Jan 2024 23:07:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706684892; x=1707289692; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706684876; x=1707289676; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=uQzh0HKJLV9OIo7v+P8AXxLZS3sXrPK/5N8JyocCrC8=;
-        b=yx64b30Lb60nmCX26sdjXB4Um/NMAdswP9iIuq6Vv0hm9J1zYqTo3gq0jJzGhBpdvf
-         02NA5Papz/nh70MW0mHp+ijim3s5zDqYN2ct5HZv56G92QepFYAt5x4fY+T1BinYRS9u
-         Zd60OiRY5zc1q4MEcEFtAzSrNa+FjXd5ODPfeA58p53AX6XsK+vsWDXD2T8+lDnImo2p
-         yJ157gomqJm8M8xTFraCpyjD4DqH7j0Uy2orkKfceZSmcoJqTGRC1LCkhOVulylga0xQ
-         O+YBppnX0lxhtpMRqctxVNtSqFX4Nxz13rMOJM701xzl5jqMLfBbqdyVkEPCL5tBJSft
-         uGQw==
+        bh=coxloDouSUUvKnRVFNrYwU4912onDxzNLQ/Lzm3Gahg=;
+        b=Wj/ICLTxaj89l+W617Sky/NyAozanc8dehNq7PrzxVRktR7omBLTaGD1KzpTVahANs
+         Rw3UVZiuUU2no5mQxNzYLgd8w9mka2PKpub0FrK7c+UU+SW315ZxXxJos0r6aFz5A6SQ
+         5Zudhf24mLwHDuu4hDB72DmKi3t+O6yX2Q68kViNy79SxYePLB7EhC9rnO09ySr17AfY
+         Lwv37zjVTF6EW8L6xQQaMvDPNq6X9iTIeEyjpdNUx36B5WZnxtPEjsXNk1H2ndAZR8IT
+         sCpe4MBhgKpUBL3d9xQkdFgJhCnYYicEfkGTNdIPK8//69LUVzrUHEo68zTkPyZSajFf
+         Zo8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706684892; x=1707289692;
+        d=1e100.net; s=20230601; t=1706684876; x=1707289676;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=uQzh0HKJLV9OIo7v+P8AXxLZS3sXrPK/5N8JyocCrC8=;
-        b=koD5rVwLOr2LOz4chn3TwFxcwZyOcEnmJZJK6hs648UhMmm7FyvB20i+yjkuL9v1TO
-         vH6XLURwkju1UbUvrZkxX01Clufm3pgRbF1PhH1QR3stHC39MkwCvy81fNNErtKFh+ZJ
-         DIRkerNfDEh/6grSDU2fx65NU6v6OKH8F1Fz+8Uy5txN3uDibT3Xfzn3+9UiSXwidt8G
-         vqWj+BF8FBN+Sivx+AJHn8p/++JJICDztitkL5gahnhaoijGpcdBjYnUTAQKHPYcgZIF
-         FiuI0+s9KZ9w2WIYe1fy1QlTIlHsFH2XWqwJpLBBmdMDTEYQad3K2Xa1mn425Y+5iL+a
-         7TSw==
-X-Gm-Message-State: AOJu0YxIEWLaEmxLSw6iAJl+NW/vefrq8eOouMG1FXmhoGInPYJEcTxf
-	Cku7FXAqKebBsk711ggZP4FF4YPs/28/29Oval1nzDE2zt8LJPxBi+Q6pzwSEQ==
-X-Google-Smtp-Source: AGHT+IHhaczXoyebcX0Ci/z75+z8a7nwadolealrO3mrZHk66PieHH3wFp2W4NYZNelqO7uo+4O0VQ==
-X-Received: by 2002:a05:6358:2915:b0:176:a5f5:d266 with SMTP id y21-20020a056358291500b00176a5f5d266mr660926rwb.6.1706684892422;
-        Tue, 30 Jan 2024 23:08:12 -0800 (PST)
+        bh=coxloDouSUUvKnRVFNrYwU4912onDxzNLQ/Lzm3Gahg=;
+        b=PvbNObDBOeZ3aJAXwhpSewLaJVzXnK4G1PHJdgQXl+8Qov7/XnLKEDzUsWH+U8alHD
+         IPVhtlnl4K1YghQzqBEQKhfH8oUC4aoWLtofZINS/jtkbNJFWkooqDS0pwCqblBSpdN0
+         EeS6ZgaI+JMRJd/Zsw3KZHL4yqMxPl2zTKOnvDwDQwJhZKkOQd6HM4BN5AnNGnq/++bO
+         nMDMZRDu8tnPKeJAsKjiDbskIvR0cEH1EXeEv/2PF3KGysWU4YBRIdoYQJLKsUSYtKKq
+         pFoW6mBDUduYmtVopYjhRocrqPzofQpZ0giGVZoqrL/clSKkQ//9nKFMPJeKvWi2SJ24
+         UXbQ==
+X-Gm-Message-State: AOJu0Ywee5fwthHWbWo+iceh2PvZDGtfTo+QMRQ5kmTpqWIKmohqiTCI
+	4ahKX/eQdEtFo5gOPH5qN1x4+th6l1qZwiOxp4GI4+/VeDoc5f4ySCKjOBDenA==
+X-Google-Smtp-Source: AGHT+IHUy0XPbMF4KwS60BBVoH/xkV/oZdh8S9A4JKqzGeq7rtyDQzOffoPagqAFRnuPhp4OsfOf+w==
+X-Received: by 2002:a05:6a20:b99d:b0:19c:8505:a232 with SMTP id ff29-20020a056a20b99d00b0019c8505a232mr660070pzb.40.1706684876422;
+        Tue, 30 Jan 2024 23:07:56 -0800 (PST)
 Received: from [127.0.1.1] ([103.28.246.26])
-        by smtp.gmail.com with ESMTPSA id lp17-20020a056a003d5100b006ddd182bf1csm9087956pfb.46.2024.01.30.23.08.04
+        by smtp.gmail.com with ESMTPSA id lp17-20020a056a003d5100b006ddd182bf1csm9087956pfb.46.2024.01.30.23.07.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 Jan 2024 23:08:11 -0800 (PST)
+        Tue, 30 Jan 2024 23:07:56 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Date: Wed, 31 Jan 2024 12:37:26 +0530
-Subject: [PATCH v3 03/17] dt-bindings: clock: qcom: Add missing UFS QREF
- clocks
+Date: Wed, 31 Jan 2024 12:37:24 +0530
+Subject: [PATCH v3 01/17] dt-bindings: phy: qmp-ufs: Fix PHY clocks
 MIME-Version: 1.0
-Message-Id: <20240131-ufs-phy-clock-v3-3-58a49d2f4605@linaro.org>
+Message-Id: <20240131-ufs-phy-clock-v3-1-58a49d2f4605@linaro.org>
 References: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org>
 In-Reply-To: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org>
 To: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
@@ -82,24 +81,23 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-clk@vger.kernel.org, quic_cang@quicinc.com, 
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=920;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3589;
  i=manivannan.sadhasivam@linaro.org; h=from:subject:message-id;
- bh=Oh+qBJcINLq2OcoHBhkxeh1csmVsCpWRCken5YykIEM=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlufG7TeUQgpF/a42PzE+MhGgIrIUjlECuigRwm
- nPn0vpTJwmJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbnxuwAKCRBVnxHm/pHO
- 9a8JCACUr5RRPWChWvqVroeXCyW19FzPPkP3kW7i8BiXlVihSOZhiZS6z/ylsgq+r19Zl6xggQr
- KS6VA4AAunNd/PnXR1+GMTulirXY1SngbpM4hRKAk0aipixyBHTwFMCq/4ZjdVDDScdOy9BIh4A
- cENw388V5jgp2GpU/w24DE5sWW4jQC2A/vsco5bqDvqCwAmdb4puPFxQxwb7tQvMXMBtc58sXoA
- xPigBzG5dyXSa7DiX7MN2DlPazv1/1ZfxpbSqFCn/mECiFjPMr6gGdEa4IlK1mHFGrmwDA/zUod
- 14V05wtx5CuXwbyj+vhpTDv5PULQo6K9etzwCzxeryQCW0a5
+ bh=ml/UM28kjmlc+frUcnxa+j2RW6/d0+c3kGBo/EvxtPo=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBlufG790GDMMLVLzZeV/Q9JRjDC1zn2/vd0of52
+ gXjQqF7AuCJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCZbnxuwAKCRBVnxHm/pHO
+ 9ciGB/0TP8dhgNW+Upo4kF97YvCsnKZIv3FUbqCT/SokeCap2KZPfFokITJmj84238+AtQ/j8EC
+ UuI/Cptq5CUkY8W7WSJXhj2QbHlEsQVUSoFAtwcJgqkk6RJ/iQk7D7JgozqmrDPqpigiR0J9R1n
+ mqRzD0ayr2SOMNlWLGwpNZvvZEOIV2H9dMHmIhpcMOh2jcKn1Pv61VvhSxsfyOPOYNQSmHbmyzp
+ uhl32nYOLLxrOc5JAMrISgKTBjLZNHb60J/+yiIx6o1Nq9bjVCzQ81+JJnRYckgp0SmP9SPTgme
+ dA2DQxbf8HIJ95K2EembigLgZLObil316MycK6KkIXtdj1yD
 X-Developer-Key: i=manivannan.sadhasivam@linaro.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240130_230816_340670_CA571244 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240130_230816_601474_36B12FF1 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,28 +114,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add missing QREF clocks for UFS MEM and UFS CARD controllers.
+All QMP UFS PHYs except MSM8996 require 3 clocks:
 
-Fixes: 0fadcdfdcf57 ("dt-bindings: clock: Add SC8180x GCC binding")
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+* ref - 19.2MHz reference clock from RPMh
+* ref_aux - Auxiliary reference clock from GCC
+* qref - QREF clock from GCC or TCSR (since SM8550)
+
+MSM8996 only requires 'ref' and 'qref' clocks. Hence, fix the binding to
+reflect the actual clock topology.
+
+This change obviously breaks the ABI, but it is inevitable since the
+clock topology needs to be accurately described in the binding.
+
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- include/dt-bindings/clock/qcom,gcc-sc8180x.h | 2 ++
- 1 file changed, 2 insertions(+)
+ .../bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 48 ++++++++++------------
+ 1 file changed, 21 insertions(+), 27 deletions(-)
 
-diff --git a/include/dt-bindings/clock/qcom,gcc-sc8180x.h b/include/dt-bindings/clock/qcom,gcc-sc8180x.h
-index e893415ae13d..90c6e021a035 100644
---- a/include/dt-bindings/clock/qcom,gcc-sc8180x.h
-+++ b/include/dt-bindings/clock/qcom,gcc-sc8180x.h
-@@ -246,6 +246,8 @@
- #define GCC_PCIE_3_CLKREF_CLK					236
- #define GCC_USB3_PRIM_CLKREF_CLK				237
- #define GCC_USB3_SEC_CLKREF_CLK					238
-+#define GCC_UFS_MEM_CLKREF_EN					239
-+#define GCC_UFS_CARD_CLKREF_EN					240
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 5faa1cb3a12e..91a6cc38ff7f 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -39,15 +39,12 @@ properties:
+     maxItems: 1
  
- #define GCC_EMAC_BCR						0
- #define GCC_GPU_BCR						1
+   clocks:
+-    minItems: 1
++    minItems: 2
+     maxItems: 3
+ 
+   clock-names:
+-    minItems: 1
+-    items:
+-      - const: ref
+-      - const: ref_aux
+-      - const: qref
++    minItems: 2
++    maxItems: 3
+ 
+   power-domains:
+     maxItems: 1
+@@ -87,23 +84,9 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,msm8998-qmp-ufs-phy
+               - qcom,sa8775p-qmp-ufs-phy
+               - qcom,sc7280-qmp-ufs-phy
+-              - qcom,sm8450-qmp-ufs-phy
+-    then:
+-      properties:
+-        clocks:
+-          minItems: 3
+-        clock-names:
+-          minItems: 3
+-
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8998-qmp-ufs-phy
+-              - qcom,sc7180-qmp-ufs-phy
+               - qcom,sc8180x-qmp-ufs-phy
+               - qcom,sc8280xp-qmp-ufs-phy
+               - qcom,sdm845-qmp-ufs-phy
+@@ -114,14 +97,19 @@ allOf:
+               - qcom,sm8150-qmp-ufs-phy
+               - qcom,sm8250-qmp-ufs-phy
+               - qcom,sm8350-qmp-ufs-phy
++              - qcom,sm8450-qmp-ufs-phy
+               - qcom,sm8550-qmp-ufs-phy
+               - qcom,sm8650-qmp-ufs-phy
+     then:
+       properties:
+         clocks:
+-          maxItems: 2
++          minItems: 3
++          maxItems: 3
+         clock-names:
+-          maxItems: 2
++          items:
++            - const: ref
++            - const: ref_aux
++            - const: qref
+ 
+   - if:
+       properties:
+@@ -132,22 +120,28 @@ allOf:
+     then:
+       properties:
+         clocks:
+-          maxItems: 1
++          minItems: 2
++          maxItems: 2
+         clock-names:
+-          maxItems: 1
++          items:
++            - const: ref
++            - const: qref
+ 
+ additionalProperties: false
+ 
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,gcc-sc8280xp.h>
++    #include <dt-bindings/clock/qcom,rpmh.h>
+ 
+     ufs_mem_phy: phy@1d87000 {
+         compatible = "qcom,sc8280xp-qmp-ufs-phy";
+         reg = <0x01d87000 0x1000>;
+ 
+-        clocks = <&gcc GCC_UFS_REF_CLKREF_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
+-        clock-names = "ref", "ref_aux";
++        clocks = <&rpmhcc RPMH_CXO_CLK>, <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
++                 <&gcc GCC_UFS_REF_CLKREF_CLK>;
++
++        clock-names = "ref", "ref_aux", "qref";
+ 
+         power-domains = <&gcc UFS_PHY_GDSC>;
+ 
 
 -- 
 2.25.1
