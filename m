@@ -4,96 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5958C47DB3
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Feb 2024 02:19:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA624C47DDF
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Feb 2024 08:07:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oluWaELJuOnuiUlMR+Sxd8Q1Fy1El1QROBj1G7vSly4=; b=mzUYG4pdjWDAix
-	Ru/VeUZoAsWFC6yC00R+uxL6aAsRMo5wd4sRj4gs7pee14iKXBClfmIdcseUK//sw4ypo/JT/xRHX
-	W4X6CWTj5v6jPiyb3AoywAEk0KU+hZJbJbCRBWRsmbnrOgJJTl8mZRby0x8XqHkFh6vuSstHkTRHz
-	csXABkdkv6XTJ0v/1vWRCqzzn6yhAyL9YNNWzdIpe+E/QQ/i0YEO+Ez8z1pNsyrERTTnTN5BCFhlV
-	32sksCFkbu6jfqPWqHmtapvBLOceEa/RFbxky7wNSvldq1MPpmysIBGtFi2yCdKi6GpCtPn/yWa9d
-	srM8dBgDLyXAH2kMwWuA==;
+	List-Owner; bh=T5bxTs/6NOAGQYMTkq1sejdpURE6QUpte8EuOaISnKk=; b=TCUslBMm0KxOZZ
+	OwurO8bAnBQz2hHOLVWzS7HL7YTa+vz0uUA8+tm3iALYztAb76Y2bj3fRjLGNGEpGAClcKmx8ZNxW
+	SQZwczPfLF8a+nEFVhmclm3IbG96vZW9Pxg+oZ2ztxc5MzgUyWdYGkTU1FND1+jyxsslRA5NjKXVd
+	MAjgZuYzA/og7jscvEJtuiuCzN1a61MQrYUBZtKsvX+SiSOgRxThRtPfDwBek6nO52OoISlnyj4hr
+	qw2UI8Hp3JAAu6R59C3zJ+nyW5ghLY0OCxyQbhzxwAMFr01AK/WOBeTqZuW4I8pQCOO+8teKbeVZV
+	OOjXQcN+BbnKmDt3FJ1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVMfa-00000006HgH-1Nji;
-	Thu, 01 Feb 2024 02:19:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1rVS6o-00000006zjb-24KV;
+	Thu, 01 Feb 2024 08:07:42 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVMfX-00000006HeI-1HS0
+	id 1rVS6k-00000006zhF-3anl
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Feb 2024 02:19:12 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40VLIchp010605;
-	Thu, 1 Feb 2024 02:19:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	date:from:to:cc:subject:message-id:references:mime-version
-	:content-type:in-reply-to; s=qcppdkim1; bh=PU1zeIEEaGx4EL7Rhsm2x
-	OONX/kLjzZ7k7bT4ihUE80=; b=okkk1Cb8sK11reuiCwu0RcooacXIVbkrAqBrK
-	0IYsXtePaIKmiVNWE96YjmnCZBDVvwqdKQjxVpoEV51RFFW5Ihcctn2FPEl6U6Ji
-	F/3lc4RSeOzq093hpaJJ72tZcuAhJaj3+m4bbrDqXu6MYypHwnyInt2/TcVtlT+b
-	VaFEIORzNuS7KClbk68qie+Dz8GeMRx1yTgoZswg5w9Anh/IIwgIE9UbyI8pdC0Y
-	1Q5Yll1VsS1YwP5PuQqcXcG2T/6wQrsCIWr9M1H7zMeqFa7o3dvDjfb1kTTv0lQt
-	Ej+WgHIge6jOgN3a73fYNmNNIIBJv6AbgGL/RJOoAXwn6Hr0g==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vyve60sgw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 01 Feb 2024 02:19:04 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4112J4WQ032591
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 1 Feb 2024 02:19:04 GMT
-Received: from hu-eberman-lv.qualcomm.com (10.49.16.6) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Wed, 31 Jan 2024 18:19:03 -0800
-Date: Wed, 31 Jan 2024 18:19:03 -0800
-From: Elliot Berman <quic_eberman@quicinc.com>
-To: Abel Vesa <abel.vesa@linaro.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay
- Abraham I <kishon@kernel.org>,
-        Dmitry Baryshkov
-	<dmitry.baryshkov@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
+	Thu, 01 Feb 2024 08:07:40 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-a30f7c9574eso74712066b.0
+        for <linux-phy@lists.infradead.org>; Thu, 01 Feb 2024 00:07:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1706774854; x=1707379654; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=GAvJSpelRjNBFxPj6S/HIO6kCDmVIfmCpRrsUawbjIk=;
+        b=PgWF9BaXN73HU+d5Al+JK5FOXe8XTZtYPTAKXaUDmzxSozcIqeSaFCmEXameXazbKb
+         wDENwxDuT01kBTmSfMSTQTnlt7PtOXziFjkzBJUmeOxUNjcHXl8OGWsIVdxxMxVG6JV7
+         eJIAjPwqnHJyYNI8KcLflBnRxILf7ySPk3ea2J2nOR+qYyjLATaJXAsWGAElQs1a+HeB
+         +QFjHpEDu+TCZgoLMv8l7jq1u0tpg6e1q9j5hoe/xPl0XnJqE/qi3opVTGEmxBRjA4UT
+         1F2mjPuA4XFKNn0/KCx7co31v9PjnT7F4ID6W+8fBjksv7wB/pvn7aInnju49JiadiXs
+         5wJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1706774854; x=1707379654;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GAvJSpelRjNBFxPj6S/HIO6kCDmVIfmCpRrsUawbjIk=;
+        b=NEkTKADBZoVoEUQSAs2zSOvD9q+ElLCTrCv4jj4WXJGd3UhoZ7kktFNb7/uj8I9+Lj
+         ufJahPGphmyVtMw8TgZo+cWzoDimdIpCttfUiWlxmTrQMR7TmDUHzoadFFvjMPIJGvuJ
+         zWbC/YawTqfBQOE2rW80V5bh5v6sLn/c6iJu91dCeiCGKINtxeXUcnaKDUkX0WgOWFIK
+         0SRURf6HpCeTFsoNNEAAiYjqsIEOswNKoSYRQx2qk7Jpp/MJj3kWV1QXNfK2fVqyEPN0
+         intqyfhkavI6v8p9P3CCjHNTpiuedGSVdOE1leUwqkEzBkshqlxVhF3fLMPInBnQYu1M
+         Hn/w==
+X-Gm-Message-State: AOJu0YxdOS/v/ProVYD/JJUYKxDNNmXfcuP5gTcZ+N71Bhn4O0ZrD2XF
+	diQvbQiwwSkCHWM3bGoE0Xt1kZjJQG/ijI41QQKtObEdhTuuaDjuluND5v/nUa4=
+X-Google-Smtp-Source: AGHT+IED6stdxmgsD+YTTsOO5XS3/6oJ9tH7HJkgFoxi9vMKAziwOyBNDzzBe13AJthKGKMJ3rlTuA==
+X-Received: by 2002:a17:906:b58:b0:a36:c8d4:1a40 with SMTP id v24-20020a1709060b5800b00a36c8d41a40mr433755ejg.59.1706774854381;
+        Thu, 01 Feb 2024 00:07:34 -0800 (PST)
+X-Forwarded-Encrypted: i=0; AJvYcCXxg5dW9vulv1nU7F96ku8R+qUO0EfwU9sCZGHo5UiJTuLdlr8h474+XD+V7lgDfLLvMn7QslCrLxoMyPxlol0JaFnqwZLx6pJAqlxbt9pZvvZwvR+j3+O5tslnVgPMQ8YCeIXRyOcEhcRPYn+gKu8fkIadXskbPVJ2uWC7k7gvBj14E2ABc8k6//TkOsVpojW/yqyovi713VaZ/vuPORT8YIv9IWkqc5Z+nNECp2KAnCquw26bJy7bdp+Nisg/H7JC0Lhd0hz5IB5DslMVHJEY49QMRZmcYvnuTDjE9PnezBARuc6J+w==
+Received: from linaro.org ([79.115.23.25])
+        by smtp.gmail.com with ESMTPSA id tx18-20020a1709078e9200b00a3604597618sm2957289ejc.178.2024.02.01.00.07.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 01 Feb 2024 00:07:32 -0800 (PST)
+Date: Thu, 1 Feb 2024 10:07:31 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Elliot Berman <quic_eberman@quicinc.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v3] phy: qualcomm: eusb2-repeater: Rework init to drop
  redundant zero-out loop
-Message-ID: <ocecdc6cmznvrvjbllm6vzuvwem7c2754phltllbfw6ab4bqfd@cj2fcywg4nso>
-Mail-Followup-To: Abel Vesa <abel.vesa@linaro.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+Message-ID: <ZbtRQ9BHfQJgyi33@linaro.org>
 References: <20240129-phy-qcom-eusb2-repeater-fixes-v3-1-9a61ef3490de@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20240129-phy-qcom-eusb2-repeater-fixes-v3-1-9a61ef3490de@linaro.org>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FypysBqDUxRfFH5VIscL6_p7rbdU-x6k
-X-Proofpoint-ORIG-GUID: FypysBqDUxRfFH5VIscL6_p7rbdU-x6k
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-01-31_10,2024-01-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
- malwarescore=0 spamscore=0 clxscore=1011 impostorscore=0 bulkscore=0
- mlxlogscore=999 suspectscore=0 lowpriorityscore=0 priorityscore=1501
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401190000 definitions=main-2402010016
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240131_181911_386154_F0565428 
-X-CRM114-Status: GOOD (  37.17  )
+X-CRM114-CacheID: sfid-20240201_000738_967708_F5D95F96 
+X-CRM114-Status: GOOD (  33.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,7 +98,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 29, 2024 at 03:03:24PM +0200, Abel Vesa wrote:
+On 24-01-29 15:03:24, Abel Vesa wrote:
 > The device match config init table already has zero values, so rework
 > the container struct to hold a copy of the init table that can be
 > override be the DT specified values. By doing this, only the number of
@@ -118,14 +106,11 @@ On Mon, Jan 29, 2024 at 03:03:24PM +0200, Abel Vesa wrote:
 > instead of holding the cfg after probe, store the number of vregs in the
 > container struct.
 > 
+
+I'll have to respin this as the commit message needs updating.
+
 > Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-
-I forgot I've been having this on my device for past few days and USB's
-been coming up consistently, so I'll count that as:
-
-Tested-by: Elliot Berman <quic_eberman@quicinc.com> # sm8650-qrd
-
 > ---
 > Changes in v3:
 > - Reworked so that it uses base + reg-index.
