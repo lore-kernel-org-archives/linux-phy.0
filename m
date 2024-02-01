@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C252C4828D
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Feb 2024 19:16:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D0D1C4828D
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Feb 2024 19:17:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ua8wxjQShM/rab00DpJIhBmskui16rasg1v4cmAXSAE=; b=yU93li8PJVLdXO
-	vuILkxNVf72CRSotKkzlCyTFYzO0e/oFrRlFTsSeb05TbzSj8ib74kY/mtxal8Yq64NCTxXxexcb/
-	sT6ljdgAiSXHbq4O1tblWnXC+S4AugPXIePiyhO8DuBVND2+jrB7+kqcWdd+iqnhk5eQCTNTeLT5n
-	Ad5bkpw013LgRhwA+SS+XnOgZHv2gk3CeGZXDKbCF0up+QChKue5x1vQgMZur2zTju+w2+jteU7M4
-	BBCjT9HTlaR7z8sjv/TU1q1NR1HXAxRlQuEGT2oh/iR6eDiZLckp00VLEgertDWG647nIDw7mh9/u
-	KXQP0jKXzhP1iO0cEotg==;
+	List-Owner; bh=D3KMq36WEqE6OAvAZWP4jT/gZzLG0itw2OWpqfG3rEU=; b=F6Crwbu7TjO9KB
+	7x1fP1pfRcWSfMUz46vVldIrpP+eEEXPL6isJZjHRWesEq8M41MbwMBP+DeC1+gR/m8//ltuAk1mB
+	U3Ly9fzv9TK70tbVoXRMGOnPdFyEvTV3D7MIVMHOo9NJaIm0FHQhLiXPLqOZKgkAG4HakO3ChTLKA
+	0yEGWdRaBbMT/gZUMr3SVtR0J8OqognsgYXFTwYXR8b4Py4aI4BqyW0Gl4WJaEZbyB2L93Uv4UH4G
+	eTUUxaUvfpGHwn0Mm3AlraOn6on2dYPnqrsdql1LKTLxgT4+2vJesGwdGujHopjJm6I9G5DqOAj17
+	kfoMahyGm25Z3l008QTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVcYE-000000098em-176v;
-	Thu, 01 Feb 2024 19:16:42 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1rVcYt-000000098k1-30sx;
+	Thu, 01 Feb 2024 19:17:23 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVcYB-000000098dt-3PCS
+	id 1rVcYq-000000098it-2xz2
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Feb 2024 19:16:41 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-51121c08535so2061422e87.3
-        for <linux-phy@lists.infradead.org>; Thu, 01 Feb 2024 11:16:38 -0800 (PST)
+	Thu, 01 Feb 2024 19:17:21 +0000
+Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-a35385da5bbso235617166b.3
+        for <linux-phy@lists.infradead.org>; Thu, 01 Feb 2024 11:17:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706814997; x=1707419797; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1706815039; x=1707419839; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=hoIj9II25PNIZhnmzc7SonBXWyc/dj/iIiU1Yyw7lNg=;
-        b=zZ9CDx9lEZ0B5dsrXZAp8wy4ptln9Wd74ZuWVL17TsrTzFKPVz4nuU4kGmYM77mgrT
-         xHaeZoTNSz0zW4BYCya5kMaA7L34vwUE3z831qkR+QtZ7Yjb32TpuWFoF8oo96ZXCyWi
-         ouSm8kKijMUynEn8zscsimrOdP2jOmfpKiMf1yBr3pcqfa9x87AD6gz2m22nQbvjfwey
-         wcUPRTz7+Z2B0Dkssq6RTTMlDF4Dl94mci9mICzIoY2HI/QYiSjw4D8P8bAsf5J/4LpX
-         Et2dnuzCZkxJpZPL8GldjfE3YRpAIqEHFoslwD3yqsch066B2vEauRoYL8egw/sgJ3If
-         ML0A==
+        bh=2CsZcImjF2+pH1KCbHt00XrVx5lcTjvCoapJtuOEFeA=;
+        b=NjzooC5XxYQ37w1NS7fD56PUexnw0PHSlnPcjTsKRPGiZ5GNA0TYVgJrz7SLE+aK8L
+         SP+4wIdj2FiV5oHrqkLujnADhs0WgEo+UjMMXSQ3wBvp//s0Pnj1IMyAYp65GeX7LEG3
+         7pXdXZe5IqRdb+EpidNrJu4sfB8ihFTtsrqapeiX1iwz3lBUCNHXcUD9kEYXXIpVyMJY
+         RoTbSGlurZCNciT2eJ2+qvsgXt7mCz+qBUWpO5+qM7d0vVNMSrDbSYyzp4itlaGpVjkm
+         8U7jgjuAH3fRbfhaGlNPz6ccgU1idCLo2/UeTfVrYv2prhd1Y5OcXz8p7U38cDwtOTpb
+         A2MA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706814997; x=1707419797;
+        d=1e100.net; s=20230601; t=1706815039; x=1707419839;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=hoIj9II25PNIZhnmzc7SonBXWyc/dj/iIiU1Yyw7lNg=;
-        b=ay8JHQglzFladIkQ3FkFm7+tWm3v/qq6+XVTce8mHyqqp5pbbc4rBACdNpPYu4wLEM
-         qGAfl+CoAzcMqr1S4sx30voUvVZzZzfpjx1LP0cmuFS8fQrYTlxFEPl5OFkF27f8u2xw
-         qMHYaFVD/zL9rv308k84gPEqN6NiWBsaxOl+CPFlhD9cfmucYHECZpd3adQIs+o1XCGJ
-         TdF3fBHmlTvb2TEu9/Q7Cfaz4pmNLKuXxRQ7HqICdUVZNK5vaEX+RD+0LsIBiZXahAFT
-         ZKRRVW3wReGdsipa4Hu0A/BvGxmNeJPYEufhlpdr1iDg0/8QCg9gL7gZXJ/EfTrp4JGx
-         9QcA==
-X-Gm-Message-State: AOJu0YxC+YsSig2kKAxjhvVKIri/wUGwuc4laN5S90kK41gbfmdDPFiG
-	qrdcHXu798bBEi++XdRQjNo04QnyV8K/qktdqDf+y2LKV9Ya8p2vD/AJWxuTMb8=
-X-Google-Smtp-Source: AGHT+IE0U9RFwXa9ogJKDBpgq0w+sUwlvmcEpk0KoM0FFUx9lGsGX5z4ghDUieUh5oipGaoF07To6g==
-X-Received: by 2002:a05:6512:1143:b0:511:f41:dff7 with SMTP id m3-20020a056512114300b005110f41dff7mr2139593lfg.56.1706814997345;
-        Thu, 01 Feb 2024 11:16:37 -0800 (PST)
-X-Forwarded-Encrypted: i=0; AJvYcCX7jmPIWKpaz+qEeXcpuehLATCNsmJ943Q2ct/ectfJgLVmPtBuch2JIUSL/trV8bxg7LDYhQRzBRAfWXb7We/ajO3Kca7JJshUQEwY5EFAFx2xL65jn6dEAZMH1UTZ6psmZwEvzdeamDpSvFXSzF+8y4FUtI/7auQYxj6koyd32KsU4JzdOEQ1aQhPR+ACKVhq874oyh2TcxDyXCVOp7tyjKdHQd852702+r5DPUHCxRehnU6SzCFQRcqrheVd+u+EAvos8y/YHFp0m7dJpmYXhrjeBdtKMIAuxEoCV9q95U54l+AG2WSQSM1jjVXqkP3awKQfkhbuNN+JnW1ZEyDAFuE4AMPJikQ2rWuFprsKvajs19vfDwC2lxYJT4FY3pupz58nyvdhWfBAUKOg2qOB+oSrKYOTk8c1vnrt5jr42y3cVvi1vy6Acdh828NBtawpg0QRP+XT9Syhv/cLNtDqt8bMnE7bU4X3+9BfXkc4g7y4U/HtA8IXiAOLDAdh
+        bh=2CsZcImjF2+pH1KCbHt00XrVx5lcTjvCoapJtuOEFeA=;
+        b=aHjF4s6aED/PgOgJXLmFkXJTp2EFHPPc+DOPZMVaAAmlYQuxfM5Rh7L1qRi5/Qss2/
+         PUMjFhVN5ZHdY+5tEE6bCBjTJU7VXkqihfCHa5lw1Fv1xU+CoT3WE1EaGE6qxtayOQJf
+         bnLDcoEu/PCd/W/otPubklQIyNGIkmLr+lhtr4IHru10+LY+pS9er7zRrDndIBgqlRII
+         at1kg2YU+R3SF9QafSnjuaSktI71/vwpkicmQfFTE0I/1V6OXFTfPMeOmRNb/0ROCelJ
+         k3TMFaotEGYGM75P5Ms5fz8vIoEQmhUIYadE5+W5KUhbFmDypDUTJdBfomZHKZgY12Pb
+         3Jcw==
+X-Gm-Message-State: AOJu0Yzr/1+tHgQGk/WPXZQkTUabyeYmwWXpUVAvH+xj3J7lO3KE16yt
+	TFQS8orH0UJDh93mL7gCpUykHL14gQW6E+zj2y64X0VvOwiJsWd3mm8U5Yyzuu4=
+X-Google-Smtp-Source: AGHT+IFiE9QQ8QoMvyd0AOwB6JqvdAO3IwQsUgYLuTbdqDH/hXq1n/RSDh8NACUJ2wkaCdAePeBoSg==
+X-Received: by 2002:a17:907:36b:b0:a36:696f:3e20 with SMTP id rs11-20020a170907036b00b00a36696f3e20mr35819ejb.66.1706815039017;
+        Thu, 01 Feb 2024 11:17:19 -0800 (PST)
+X-Forwarded-Encrypted: i=0; AJvYcCVdEOF4uC2AlRgIAOqNIxc7ER6QvNRDB9SRk+rYaB5VFOACQEP/kc7mhEUQxhRcyf1hPVZwH8mSigXgvRbXCMhzFkqPoV81wlIDM/apPqQoO4ZqLHtWgSFgsSZXlqfNFYZsUky9s+vMchkKW77yAOzpq06/ID/tOlKfisrv9Vo7KfDvZRWOWSWzHehabau+d5j9HmsU1upjrYOsvM5y9y2R/de7WePblAYlbGWlVIP3KwNAMPENtgZIzZF4uxHVcSMsazt4ZQ7lE/eLVM4AghES7iG43LC1+tEEi1V5zxlBZU6qywvHvCWuk3WkrXB3gwuhI+SSoWGy+71KjdDGT7/VYm3UiC+0qxk4/g6O8R06y+UnGnTj5iEhf78PLVUD4yP7alyODrgbBbNOGBPofRxnbsxEo7aAMNBHgKZi+rFguZqzv4IButdv0qcfGitKH6OY2JBg8LDH7EyTzARdismyoOIas4zM+ZiT+JdpgOqdQpSGCzgYrxg3QNHo7Apv
 Received: from [192.168.159.104] (178235179129.dynamic-4-waw-k-1-3-0.vectranet.pl. [178.235.179.129])
-        by smtp.gmail.com with ESMTPSA id vk8-20020a170907cbc800b00a36f8fdeb98sm23088ejc.59.2024.02.01.11.16.35
+        by smtp.gmail.com with ESMTPSA id vk8-20020a170907cbc800b00a36f8fdeb98sm23088ejc.59.2024.02.01.11.17.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 01 Feb 2024 11:16:36 -0800 (PST)
-Message-ID: <c7606dea-8b6b-4c9b-9ad0-3516d545a6e4@linaro.org>
-Date: Thu, 1 Feb 2024 20:16:34 +0100
+        Thu, 01 Feb 2024 11:17:18 -0800 (PST)
+Message-ID: <edee0b14-abef-41fd-a88c-3ca125b384d2@linaro.org>
+Date: Thu, 1 Feb 2024 20:17:17 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 02/17] phy: qcom-qmp-ufs: Switch to
- devm_clk_bulk_get_all() API
+Subject: Re: [PATCH v3 17/17] arm64: dts: qcom: sm8650: Fix UFS PHY clocks
 Content-Language: en-US
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -81,7 +80,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, quic_cang@quicinc.com
 References: <20240131-ufs-phy-clock-v3-0-58a49d2f4605@linaro.org>
- <20240131-ufs-phy-clock-v3-2-58a49d2f4605@linaro.org>
+ <20240131-ufs-phy-clock-v3-17-58a49d2f4605@linaro.org>
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
@@ -118,10 +117,10 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20240131-ufs-phy-clock-v3-2-58a49d2f4605@linaro.org>
+In-Reply-To: <20240131-ufs-phy-clock-v3-17-58a49d2f4605@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240201_111639_886425_8D1B98C5 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20240201_111720_781277_FC3635F7 
+X-CRM114-Status: UNSURE (   5.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -140,23 +139,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31.01.2024 08:07, Manivannan Sadhasivam wrote:
-> Device drivers should just rely on the clocks provided by the devicetree
-> and enable/disable them based on the requirement. There is no need to
-> validate the clocks provided by devicetree in the driver. That's the job
-> of DT schema.
+> QMP PHY used in SM8650 requires 3 clocks:
 > 
-> So let's switch to devm_clk_bulk_get_all() API that just gets the clocks
-> provided by devicetree and remove hardcoded clocks info.
+> * ref - 19.2MHz reference clock from RPMh
+> * ref_aux - Auxiliary reference clock from GCC
+> * qref - QREF clock from TCSR
 > 
+> Fixes: 10e024671295 ("arm64: dts: qcom: sm8650: add interconnect dependent device nodes")
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
-
-Amazing, thanks
 
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
 Konrad
-
 
 -- 
 linux-phy mailing list
