@@ -4,102 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75D42C47258
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jan 2024 10:16:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5958C47DB3
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Feb 2024 02:19:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0lErVL0REJXFatsiQO/cZG2JL9cvCWuMLvwQLkcUvEI=; b=vi3XFMcoK6vXnj
-	3anJ1n4hns++L2SDGZsorEtYTpJPiN+wGNwfnXHErywZxfmnC09pdn6yvt1/t8ZNavAwhsQMqDyRU
-	gk4mMpKnFY1xgrXgmeZtGJ+1beIltgOFQRXnyl1zlT5Di54bh+46ex0Twv7R+WeJHvr2wjiNdPJfV
-	HVeSFtz1w6ceMcl/5VeMLHXdPP5MDFmNrBb5wXjODScQagTqbtje2sPVBQGTunk3Wgo8VGlmkatiL
-	GnOzq1mMr10EcW/k768guk+aLJbQOhSfKknRhEl2lx7cx4C1pyqmSXcVo+bZVsz8QDX7TUonMhlNu
-	A9rLEKsQ90g99mHGNJbg==;
+	List-Owner; bh=oluWaELJuOnuiUlMR+Sxd8Q1Fy1El1QROBj1G7vSly4=; b=mzUYG4pdjWDAix
+	Ru/VeUZoAsWFC6yC00R+uxL6aAsRMo5wd4sRj4gs7pee14iKXBClfmIdcseUK//sw4ypo/JT/xRHX
+	W4X6CWTj5v6jPiyb3AoywAEk0KU+hZJbJbCRBWRsmbnrOgJJTl8mZRby0x8XqHkFh6vuSstHkTRHz
+	csXABkdkv6XTJ0v/1vWRCqzzn6yhAyL9YNNWzdIpe+E/QQ/i0YEO+Ez8z1pNsyrERTTnTN5BCFhlV
+	32sksCFkbu6jfqPWqHmtapvBLOceEa/RFbxky7wNSvldq1MPpmysIBGtFi2yCdKi6GpCtPn/yWa9d
+	srM8dBgDLyXAH2kMwWuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV7dz-00000002irM-0NeP;
-	Wed, 31 Jan 2024 10:16:35 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rVMfa-00000006HgH-1Nji;
+	Thu, 01 Feb 2024 02:19:14 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV5bu-00000001zni-1VR7
-	for linux-phy@bombadil.infradead.org;
-	Wed, 31 Jan 2024 08:06:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=O3NcPrb8t7YnX3CjYpseCkmCegR+NfSEh06RZsASR0w=; b=j3OLvOvKpQJ1V9POunj6XrT109
-	CMYqKKz3Pt958/aEwdIjWYqcIBQ+pRX/K4VJS9FspsaPYJ/j96ifZf+/z4rBU2hdei91PWwhws4Ze
-	AZt6BOsAs6Q9mNOuW1Plr7V/+lGyfVRyLF5tBEx0OQUR/wa2+A5uaDuvTcZlfWTCaQ8pHm/nzyGRa
-	MlH/ONYfae3xr7LD40KtlLtTk1PlcfxMVwN/B/lTQLQNd2472yBUpUgOEVL6WDW1qEK2uFocUgcqe
-	0dX2SpRsup6esjI68c2YmFwuSuorw0AM0THUlJ+y06RIkszWzkFKgwiNiljM1L+tkKq5/4YS9qtZU
-	UrKfnuMg==;
-Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV5bp-00000008o8v-3qp8
+	id 1rVMfX-00000006HeI-1HS0
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jan 2024 08:06:17 +0000
-Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-60406dba03cso7147167b3.0
-        for <linux-phy@lists.infradead.org>; Wed, 31 Jan 2024 00:06:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1706688369; x=1707293169; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=O3NcPrb8t7YnX3CjYpseCkmCegR+NfSEh06RZsASR0w=;
-        b=u9oQlKciKXAE/VqBcCMJ3w1PcLUN0FB5tOH3gmJdLxS1z3O+32iOuNgH3jNvppQanT
-         TjttcICg6K9YGY56uERupAslF+WyrB2q/dAMrvOXiDq21xvn6Zd94gjZqs7K1+Ut8gSC
-         k8nHWehTCco5yJ1SKIas2dS9iYWrJHTD29I9jGvoPQKEZVrX7fGAclW0rTUUMC44HnF8
-         t6OSw4R5rBUHle12Te8Ata8f7atWkSvmqQfzFCCKb+vvWYwEmbjx8J1HbdhS7XoRXqEY
-         KTl2MY/hCpJ8iQXxTeS+nmNeKQYf9MKE0meKk/RDFSgub/A+VEl3JAPIDuG6ejIRnjtg
-         oeJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706688369; x=1707293169;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=O3NcPrb8t7YnX3CjYpseCkmCegR+NfSEh06RZsASR0w=;
-        b=JKNzUcmn5/JNdRvBhYZC39+tGi/3yPebU2nKKznTYS3yObcdYp+I2YpEo+A4Pb6jIP
-         mX/PWb/VwFbZuTc7czIjmnN0KGoGWTUzLKp5mRTd2dLbOe9yBhnFio39OOmfA9Wrlzp3
-         J/OYftfcjAGu4CyZ201cq6JsDJdiVH7XLdGZSKrXc23E3DnbU0oyCD/2WnAJJmmAHd3Y
-         TR6hRpcw/5+zCSzpDmEKNqVcBXGHBPQ3DwG//UJWFa7HHjgL94p2if8B4E12BDMRFRAn
-         UZksrqfmJ88ILWt5fijpmy81kT4I47QPU07A8kiUvKQSkZF5hepiTDzmqGsjaPWMlHro
-         iS2A==
-X-Gm-Message-State: AOJu0Yz87nfiU7VYlJgoFlWxkaQvYzugsa7Dl4PyDBgHwewrCTSEv/sP
-	CXzY+trKtdxqOkHZcRnK5elR+2fndoS8RAktJpsCvxpuM3Hcx/slxFch6hpL30j3WuMXMJa+l1r
-	EEVga4WczFJ5/rdHcKGIFui8ZwbsskcYcYMSQrA==
-X-Google-Smtp-Source: AGHT+IHwBZYKjdPkSD3Jf+XYtxk1vkFmihVDnoguJobWmbAAdRRE+yQJUmDl9KcK+DvSlc7YoXrqNhzXKL6xw0pFg2I=
-X-Received: by 2002:a05:690c:954:b0:602:ce22:7079 with SMTP id
- cc20-20020a05690c095400b00602ce227079mr618106ywb.41.1706688368926; Wed, 31
- Jan 2024 00:06:08 -0800 (PST)
+	Thu, 01 Feb 2024 02:19:12 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40VLIchp010605;
+	Thu, 1 Feb 2024 02:19:04 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	date:from:to:cc:subject:message-id:references:mime-version
+	:content-type:in-reply-to; s=qcppdkim1; bh=PU1zeIEEaGx4EL7Rhsm2x
+	OONX/kLjzZ7k7bT4ihUE80=; b=okkk1Cb8sK11reuiCwu0RcooacXIVbkrAqBrK
+	0IYsXtePaIKmiVNWE96YjmnCZBDVvwqdKQjxVpoEV51RFFW5Ihcctn2FPEl6U6Ji
+	F/3lc4RSeOzq093hpaJJ72tZcuAhJaj3+m4bbrDqXu6MYypHwnyInt2/TcVtlT+b
+	VaFEIORzNuS7KClbk68qie+Dz8GeMRx1yTgoZswg5w9Anh/IIwgIE9UbyI8pdC0Y
+	1Q5Yll1VsS1YwP5PuQqcXcG2T/6wQrsCIWr9M1H7zMeqFa7o3dvDjfb1kTTv0lQt
+	Ej+WgHIge6jOgN3a73fYNmNNIIBJv6AbgGL/RJOoAXwn6Hr0g==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vyve60sgw-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 01 Feb 2024 02:19:04 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4112J4WQ032591
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 1 Feb 2024 02:19:04 GMT
+Received: from hu-eberman-lv.qualcomm.com (10.49.16.6) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Wed, 31 Jan 2024 18:19:03 -0800
+Date: Wed, 31 Jan 2024 18:19:03 -0800
+From: Elliot Berman <quic_eberman@quicinc.com>
+To: Abel Vesa <abel.vesa@linaro.org>
+CC: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay
+ Abraham I <kishon@kernel.org>,
+        Dmitry Baryshkov
+	<dmitry.baryshkov@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3] phy: qualcomm: eusb2-repeater: Rework init to drop
+ redundant zero-out loop
+Message-ID: <ocecdc6cmznvrvjbllm6vzuvwem7c2754phltllbfw6ab4bqfd@cj2fcywg4nso>
+Mail-Followup-To: Abel Vesa <abel.vesa@linaro.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org
+References: <20240129-phy-qcom-eusb2-repeater-fixes-v3-1-9a61ef3490de@linaro.org>
 MIME-Version: 1.0
-References: <20240102-j7200-pcie-s2r-v1-0-84e55da52400@bootlin.com> <20240102-j7200-pcie-s2r-v1-2-84e55da52400@bootlin.com>
-In-Reply-To: <20240102-j7200-pcie-s2r-v1-2-84e55da52400@bootlin.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 31 Jan 2024 09:05:57 +0100
-Message-ID: <CACRpkdZ8Yx_8MoV3eedm14GfyJCm2WVdY=nQ9sEQVeoeec+2ZQ@mail.gmail.com>
-Subject: Re: [PATCH 02/14] pinctrl: pinctrl-single: move suspend/resume to suspend_noirq/resume_noirq
-To: Thomas Richard <thomas.richard@bootlin.com>
-Cc: Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, Tony Lindgren <tony@atomide.com>, 
-	Haojian Zhuang <haojian.zhuang@linaro.org>, Vignesh R <vigneshr@ti.com>, 
-	Aaro Koskinen <aaro.koskinen@iki.fi>, Janusz Krzysztofik <jmkrzyszt@gmail.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Tom Joseph <tjoseph@cadence.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, linux-gpio@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org, 
-	gregory.clement@bootlin.com, theo.lebrun@bootlin.com, 
-	thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+Content-Disposition: inline
+In-Reply-To: <20240129-phy-qcom-eusb2-repeater-fixes-v3-1-9a61ef3490de@linaro.org>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: FypysBqDUxRfFH5VIscL6_p7rbdU-x6k
+X-Proofpoint-ORIG-GUID: FypysBqDUxRfFH5VIscL6_p7rbdU-x6k
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-01-31_10,2024-01-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ malwarescore=0 spamscore=0 clxscore=1011 impostorscore=0 bulkscore=0
+ mlxlogscore=999 suspectscore=0 lowpriorityscore=0 priorityscore=1501
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401190000 definitions=main-2402010016
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240131_080615_415017_0CB5E473 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240131_181911_386154_F0565428 
+X-CRM114-Status: GOOD (  37.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,22 +105,312 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKYW4gMTUsIDIwMjQgYXQgNToxNuKAr1BNIFRob21hcyBSaWNoYXJkCjx0aG9tYXMu
-cmljaGFyZEBib290bGluLmNvbT4gd3JvdGU6Cgo+IFRoZSBnb2FsIGlzIHRvIGV4dGVuZCB0aGUg
-YWN0aXZlIHBlcmlvZCBvZiBwaW5jdHJsLgo+IFNvbWUgZGV2aWNlcyBtYXkgbmVlZCBhY3RpdmUg
-cGluY3RybCBhZnRlciBzdXNwZW5kIGFuZC9vciBiZWZvcmUgcmVzdW1lLgo+IFNvIG1vdmUgc3Vz
-cGVuZC9yZXN1bWUgdG8gc3VzcGVuZF9ub2lycS9yZXN1bWVfbm9pcnEgdG8gaGF2ZSBhY3RpdmUK
-PiBwaW5jdHJsIHVudGlsIHN1c3BlbmRfbm9pcnEgKGluY2x1ZGVkKSwgYW5kIGZyb20gcmVzdW1l
-X25vaXJxCj4gKGluY2x1ZGVkKS4KPgo+IFRoZSBkZXByZWNhdGVkIEFQSSBoYXMgYmVlbiByZW1v
-dmVkIHRvIHVzZSB0aGUgbmV3IG9uZSAoZGV2X3BtX29wcyBzdHJ1Y3QpLgo+Cj4gU2lnbmVkLW9m
-Zi1ieTogVGhvbWFzIFJpY2hhcmQgPHRob21hcy5yaWNoYXJkQGJvb3RsaW4uY29tPgoKVGhpcyBu
-ZWVkcyB0ZXN0aW5nIG9uIE9NQVAgYW5kIEFDSyBmcm9tIFRvbnkgYmVmb3JlIEkgY2FuIG1lcmdl
-IGl0LgpQcmVmZXJhYmx5IEhhb2ppYW4gc2hvdWxkIHRlc3QgaXQgdG9vLCB0aGlzIGlzIGEgcHJl
-dHR5IHNlcmlvdXMgc2VtYW50aWMKY2hhbmdlLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Mon, Jan 29, 2024 at 03:03:24PM +0200, Abel Vesa wrote:
+> The device match config init table already has zero values, so rework
+> the container struct to hold a copy of the init table that can be
+> override be the DT specified values. By doing this, only the number of
+> vregs remain in the device match config that will be later needed, so
+> instead of holding the cfg after probe, store the number of vregs in the
+> container struct.
+> 
+> Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+
+I forgot I've been having this on my device for past few days and USB's
+been coming up consistently, so I'll count that as:
+
+Tested-by: Elliot Berman <quic_eberman@quicinc.com> # sm8650-qrd
+
+> ---
+> Changes in v3:
+> - Reworked so that it uses base + reg-index.
+> - Link to v2: https://lore.kernel.org/r/20240105-phy-qcom-eusb2-repeater-fixes-v2-0-775d98e7df05@linaro.org
+> 
+> Changes in v2:
+> - The regfields is being dropped from the repeater init, but it's done
+>   in the second patch in order to not break bisectability, as it is
+>   still needed by the zero-out loop.
+> - Added Konrad's R-b tag to the first patch. Did not add Elliot's T-b
+>   tag as the second patch has been reworked massively.
+> - The zero-out loop is dropped now by holding a copy of the init_tlb in
+>   the container struct. This led to dropping the cfg from the container
+>   struct (see second patch commit message for more details).
+> - Link to v1: https://lore.kernel.org/r/20240104-phy-qcom-eusb2-repeater-fixes-v1-0-047b7b6b8333@linaro.org
+> ---
+>  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 166 +++++++++----------------
+>  1 file changed, 62 insertions(+), 104 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+> index a623f092b11f..a43e20abb10d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+> @@ -37,56 +37,28 @@
+>  #define EUSB2_TUNE_EUSB_EQU		0x5A
+>  #define EUSB2_TUNE_EUSB_HS_COMP_CUR	0x5B
+>  
+> -#define QCOM_EUSB2_REPEATER_INIT_CFG(r, v)	\
+> -	{					\
+> -		.reg = r,			\
+> -		.val = v,			\
+> -	}
+> -
+> -enum reg_fields {
+> -	F_TUNE_EUSB_HS_COMP_CUR,
+> -	F_TUNE_EUSB_EQU,
+> -	F_TUNE_EUSB_SLEW,
+> -	F_TUNE_USB2_HS_COMP_CUR,
+> -	F_TUNE_USB2_PREEM,
+> -	F_TUNE_USB2_EQU,
+> -	F_TUNE_USB2_SLEW,
+> -	F_TUNE_SQUELCH_U,
+> -	F_TUNE_HSDISC,
+> -	F_TUNE_RES_FSDIF,
+> -	F_TUNE_IUSB2,
+> -	F_TUNE_USB2_CROSSOVER,
+> -	F_NUM_TUNE_FIELDS,
+> -
+> -	F_FORCE_VAL_5 = F_NUM_TUNE_FIELDS,
+> -	F_FORCE_EN_5,
+> -
+> -	F_EN_CTL1,
+> -
+> -	F_RPTR_STATUS,
+> -	F_NUM_FIELDS,
+> -};
+> -
+> -static struct reg_field eusb2_repeater_tune_reg_fields[F_NUM_FIELDS] = {
+> -	[F_TUNE_EUSB_HS_COMP_CUR] = REG_FIELD(EUSB2_TUNE_EUSB_HS_COMP_CUR, 0, 1),
+> -	[F_TUNE_EUSB_EQU] = REG_FIELD(EUSB2_TUNE_EUSB_EQU, 0, 1),
+> -	[F_TUNE_EUSB_SLEW] = REG_FIELD(EUSB2_TUNE_EUSB_SLEW, 0, 1),
+> -	[F_TUNE_USB2_HS_COMP_CUR] = REG_FIELD(EUSB2_TUNE_USB2_HS_COMP_CUR, 0, 1),
+> -	[F_TUNE_USB2_PREEM] = REG_FIELD(EUSB2_TUNE_USB2_PREEM, 0, 2),
+> -	[F_TUNE_USB2_EQU] = REG_FIELD(EUSB2_TUNE_USB2_EQU, 0, 1),
+> -	[F_TUNE_USB2_SLEW] = REG_FIELD(EUSB2_TUNE_USB2_SLEW, 0, 1),
+> -	[F_TUNE_SQUELCH_U] = REG_FIELD(EUSB2_TUNE_SQUELCH_U, 0, 2),
+> -	[F_TUNE_HSDISC] = REG_FIELD(EUSB2_TUNE_HSDISC, 0, 2),
+> -	[F_TUNE_RES_FSDIF] = REG_FIELD(EUSB2_TUNE_RES_FSDIF, 0, 2),
+> -	[F_TUNE_IUSB2] = REG_FIELD(EUSB2_TUNE_IUSB2, 0, 3),
+> -	[F_TUNE_USB2_CROSSOVER] = REG_FIELD(EUSB2_TUNE_USB2_CROSSOVER, 0, 2),
+> -
+> -	[F_FORCE_VAL_5] = REG_FIELD(EUSB2_FORCE_VAL_5, 0, 7),
+> -	[F_FORCE_EN_5] = REG_FIELD(EUSB2_FORCE_EN_5, 0, 7),
+> -
+> -	[F_EN_CTL1] = REG_FIELD(EUSB2_EN_CTL1, 0, 7),
+> -
+> -	[F_RPTR_STATUS] = REG_FIELD(EUSB2_RPTR_STATUS, 0, 7),
+> +enum eusb2_reg_layout {
+> +	TUNE_EUSB_HS_COMP_CUR,
+> +	TUNE_EUSB_EQU,
+> +	TUNE_EUSB_SLEW,
+> +	TUNE_USB2_HS_COMP_CUR,
+> +	TUNE_USB2_PREEM,
+> +	TUNE_USB2_EQU,
+> +	TUNE_USB2_SLEW,
+> +	TUNE_SQUELCH_U,
+> +	TUNE_HSDISC,
+> +	TUNE_RES_FSDIF,
+> +	TUNE_IUSB2,
+> +	TUNE_USB2_CROSSOVER,
+> +	NUM_TUNE_FIELDS,
+> +
+> +	FORCE_VAL_5 = NUM_TUNE_FIELDS,
+> +	FORCE_EN_5,
+> +
+> +	EN_CTL1,
+> +
+> +	RPTR_STATUS,
+> +	LAYOUT_SIZE,
+>  };
+>  
+>  struct eusb2_repeater_cfg {
+> @@ -98,10 +70,11 @@ struct eusb2_repeater_cfg {
+>  
+>  struct eusb2_repeater {
+>  	struct device *dev;
+> -	struct regmap_field *regs[F_NUM_FIELDS];
+> +	struct regmap *regmap;
+>  	struct phy *phy;
+>  	struct regulator_bulk_data *vregs;
+>  	const struct eusb2_repeater_cfg *cfg;
+> +	u32 base;
+>  	enum phy_mode mode;
+>  };
+>  
+> @@ -109,10 +82,10 @@ static const char * const pm8550b_vreg_l[] = {
+>  	"vdd18", "vdd3",
+>  };
+>  
+> -static const u32 pm8550b_init_tbl[F_NUM_TUNE_FIELDS] = {
+> -	[F_TUNE_IUSB2] = 0x8,
+> -	[F_TUNE_SQUELCH_U] = 0x3,
+> -	[F_TUNE_USB2_PREEM] = 0x5,
+> +static const u32 pm8550b_init_tbl[NUM_TUNE_FIELDS] = {
+> +	[TUNE_IUSB2] = 0x8,
+> +	[TUNE_SQUELCH_U] = 0x3,
+> +	[TUNE_USB2_PREEM] = 0x5,
+>  };
+>  
+>  static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
+> @@ -140,47 +113,42 @@ static int eusb2_repeater_init_vregs(struct eusb2_repeater *rptr)
+>  
+>  static int eusb2_repeater_init(struct phy *phy)
+>  {
+> -	struct reg_field *regfields = eusb2_repeater_tune_reg_fields;
+>  	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
+>  	struct device_node *np = rptr->dev->of_node;
+> -	u32 init_tbl[F_NUM_TUNE_FIELDS] = { 0 };
+> -	u8 override;
+> +	struct regmap *regmap = rptr->regmap;
+> +	const u32 *init_tbl = rptr->cfg->init_tbl;
+> +	u8 tune_usb2_preem = init_tbl[TUNE_USB2_PREEM];
+> +	u8 tune_hsdisc = init_tbl[TUNE_HSDISC];
+> +	u8 tune_iusb2 = init_tbl[TUNE_IUSB2];
+> +	u32 base = rptr->base;
+>  	u32 val;
+>  	int ret;
+> -	int i;
+> +
+> +	of_property_read_u8(np, "qcom,tune-usb2-amplitude", &tune_iusb2);
+> +	of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &tune_hsdisc);
+> +	of_property_read_u8(np, "qcom,tune-usb2-preem", &tune_usb2_preem);
+>  
+>  	ret = regulator_bulk_enable(rptr->cfg->num_vregs, rptr->vregs);
+>  	if (ret)
+>  		return ret;
+>  
+> -	regmap_field_update_bits(rptr->regs[F_EN_CTL1], EUSB2_RPTR_EN, EUSB2_RPTR_EN);
+> +	regmap_write(regmap, base + EUSB2_EN_CTL1, EUSB2_RPTR_EN);
+>  
+> -	for (i = 0; i < F_NUM_TUNE_FIELDS; i++) {
+> -		if (init_tbl[i]) {
+> -			regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
+> -		} else {
+> -			/* Write 0 if there's no value set */
+> -			u32 mask = GENMASK(regfields[i].msb, regfields[i].lsb);
+> -
+> -			regmap_field_update_bits(rptr->regs[i], mask, 0);
+> -		}
+> -	}
+> -	memcpy(init_tbl, rptr->cfg->init_tbl, sizeof(init_tbl));
+> +	regmap_write(regmap, base + EUSB2_TUNE_EUSB_HS_COMP_CUR, init_tbl[TUNE_EUSB_HS_COMP_CUR]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_EUSB_EQU, init_tbl[TUNE_EUSB_EQU]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_EUSB_SLEW, init_tbl[TUNE_EUSB_SLEW]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_USB2_HS_COMP_CUR, init_tbl[TUNE_USB2_HS_COMP_CUR]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_USB2_EQU, init_tbl[TUNE_USB2_EQU]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_USB2_SLEW, init_tbl[TUNE_USB2_SLEW]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_SQUELCH_U, init_tbl[TUNE_SQUELCH_U]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_RES_FSDIF, init_tbl[TUNE_RES_FSDIF]);
+> +	regmap_write(regmap, base + EUSB2_TUNE_USB2_CROSSOVER, init_tbl[TUNE_USB2_CROSSOVER]);
+>  
+> -	if (!of_property_read_u8(np, "qcom,tune-usb2-amplitude", &override))
+> -		init_tbl[F_TUNE_IUSB2] = override;
+> +	regmap_write(regmap, base + EUSB2_TUNE_USB2_PREEM, tune_usb2_preem);
+> +	regmap_write(regmap, base + EUSB2_TUNE_HSDISC, tune_hsdisc);
+> +	regmap_write(regmap, base + EUSB2_TUNE_IUSB2, tune_iusb2);
+>  
+> -	if (!of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &override))
+> -		init_tbl[F_TUNE_HSDISC] = override;
+> -
+> -	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &override))
+> -		init_tbl[F_TUNE_USB2_PREEM] = override;
+> -
+> -	for (i = 0; i < F_NUM_TUNE_FIELDS; i++)
+> -		regmap_field_update_bits(rptr->regs[i], init_tbl[i], init_tbl[i]);
+> -
+> -	ret = regmap_field_read_poll_timeout(rptr->regs[F_RPTR_STATUS],
+> -					     val, val & RPTR_OK, 10, 5);
+> +	ret = regmap_read_poll_timeout(regmap, base + EUSB2_RPTR_STATUS, val, val & RPTR_OK, 10, 5);
+>  	if (ret)
+>  		dev_err(rptr->dev, "initialization timed-out\n");
+>  
+> @@ -191,6 +159,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+>  				   enum phy_mode mode, int submode)
+>  {
+>  	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
+> +	struct regmap *regmap = rptr->regmap;
+> +	u32 base = rptr->base;
+>  
+>  	switch (mode) {
+>  	case PHY_MODE_USB_HOST:
+> @@ -199,10 +169,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+>  		 * per eUSB 1.2 Spec. Below implement software workaround until
+>  		 * PHY and controller is fixing seen observation.
+>  		 */
+> -		regmap_field_update_bits(rptr->regs[F_FORCE_EN_5],
+> -					 F_CLK_19P2M_EN, F_CLK_19P2M_EN);
+> -		regmap_field_update_bits(rptr->regs[F_FORCE_VAL_5],
+> -					 V_CLK_19P2M_EN, V_CLK_19P2M_EN);
+> +		regmap_write(regmap, base + EUSB2_FORCE_EN_5, F_CLK_19P2M_EN);
+> +		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, V_CLK_19P2M_EN);
+>  		break;
+>  	case PHY_MODE_USB_DEVICE:
+>  		/*
+> @@ -211,10 +179,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+>  		 * repeater doesn't clear previous value due to shared
+>  		 * regulators (say host <-> device mode switch).
+>  		 */
+> -		regmap_field_update_bits(rptr->regs[F_FORCE_EN_5],
+> -					 F_CLK_19P2M_EN, 0);
+> -		regmap_field_update_bits(rptr->regs[F_FORCE_VAL_5],
+> -					 V_CLK_19P2M_EN, 0);
+> +		regmap_write(regmap, base + EUSB2_FORCE_EN_5, 0);
+> +		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, 0);
+>  		break;
+>  	default:
+>  		return -EINVAL;
+> @@ -243,9 +209,8 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct phy_provider *phy_provider;
+>  	struct device_node *np = dev->of_node;
+> -	struct regmap *regmap;
+> -	int i, ret;
+>  	u32 res;
+> +	int ret;
+>  
+>  	rptr = devm_kzalloc(dev, sizeof(*rptr), GFP_KERNEL);
+>  	if (!rptr)
+> @@ -258,22 +223,15 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
+>  	if (!rptr->cfg)
+>  		return -EINVAL;
+>  
+> -	regmap = dev_get_regmap(dev->parent, NULL);
+> -	if (!regmap)
+> +	rptr->regmap = dev_get_regmap(dev->parent, NULL);
+> +	if (!rptr->regmap)
+>  		return -ENODEV;
+>  
+>  	ret = of_property_read_u32(np, "reg", &res);
+>  	if (ret < 0)
+>  		return ret;
+>  
+> -	for (i = 0; i < F_NUM_FIELDS; i++)
+> -		eusb2_repeater_tune_reg_fields[i].reg += res;
+> -
+> -	ret = devm_regmap_field_bulk_alloc(dev, regmap, rptr->regs,
+> -					   eusb2_repeater_tune_reg_fields,
+> -					   F_NUM_FIELDS);
+> -	if (ret)
+> -		return ret;
+> +	rptr->base = res;
+>  
+>  	ret = eusb2_repeater_init_vregs(rptr);
+>  	if (ret < 0) {
+> 
+> ---
+> base-commit: 01af33cc9894b4489fb68fa35c40e9fe85df63dc
+> change-id: 20240104-phy-qcom-eusb2-repeater-fixes-c9201113032c
+> 
+> Best regards,
+> -- 
+> Abel Vesa <abel.vesa@linaro.org>
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
