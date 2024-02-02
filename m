@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3869FC4828E
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Feb 2024 11:20:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EE06C47DB3
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Feb 2024 11:38:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9WRym4dzCSNgm8FQ7xmZar5dBMAih7js9jfZSWhGcs=; b=uUHH5FUCMhRyoP
-	rjZtRoslg4zTuaOQHqmZ5KpFBnFwSgrB1cSNPTOE60Ts0dxh7Oe52QzA4VW/r43rNCmX5DYYZoG4D
-	UI4mp5KjbGy2jHXeS3P3M1CcS3QkZhcsfN2rl1bRU5qaVQdpRfoOPqw7zoII7SLAXCuS/uruRxXW9
-	QR3PXsw9F6/TH9EYVcPPWEYj8h1Sm948rfeK+K5ptPb7n/XbODLeGa6+L+gj5r4NApOkXxgr6bLmG
-	3Vm6PWZdlvVyMnsUhLFJryFUqDb6LPT0zknZ3PBmLX5onC5jY+Ol+PRwBnqEN3rb7bK6tA0APTAxW
-	dJ3VfhfqncPbDiHldvgQ==;
+	List-Owner; bh=S/YrWA22k5idcwMkxjsrWylJ3epyiX1rom4Q2tRFAsg=; b=fj9avwLUR4wV+C
+	hsDt7Xs7ofCMEBNS2M2WdD+RJNsm4DhDDCgofxajlo1QtyTd1xKTsaRHzUHkQZHvMPGsSQzZTOnLF
+	UhWJcUiM1LYPkB1v8BphSMbnqqXCIVA4z4beqXrwREugUScFhSoExlm1n3W89zXM/i8UVScIBd2Hy
+	4i9V9dBiWcKvfFarKih8XYXVTVeDAByNBK+GiRobtgOEL+G9e83Qw0PbyY0h6MDUI1RM2eqczTOmO
+	aDVa+rsnUZu7cng3Yep+Ks5zuQ5Grs7MC7+mfrfG8YQPsYioqlSK/AxRb96t24OXypgb5bzo5FhQn
+	vGiuFvmjEe9Y3ckdF1xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVrbE-0000000BHD8-3MdH;
-	Fri, 02 Feb 2024 11:20:48 +0000
-Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
+	id 1rVrry-0000000BJoS-0vLh;
+	Fri, 02 Feb 2024 11:38:06 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVrbA-0000000BH8G-1lu5;
-	Fri, 02 Feb 2024 11:20:46 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 8667E1BF20A;
-	Fri,  2 Feb 2024 11:20:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1706872839;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=C801XntAx6vFH+ttC2yyLkXTQzS50DDecHjK0YLEF9U=;
-	b=oD4486gF+t55vbzZkQfwe6Ks80voR9BadNJK17DdKY2sGSYG3Mht8NVxspZipuV6rFKGZA
-	tIGSBbv2mv4adrsdgRIKTzv7yRGxQoC0XHK8f/31SiRWvQ9fBeT9QNGkdcxYyPT4LKEVDZ
-	XH7evlQ2OJcDlcJjIBtiwMpZAUxGoFR7tLGD2j5gOWQFgyFzPZOAtLfaLgvcuc2QHtLPPl
-	8AzodWGrlZFdNRol8DJSOeyUKlwJuULAJ5DQlnLhsX6SD2cYyG3u/GYeP7P7FK1pjW32FM
-	8HcdVuTZFig+4ifYlpN16pnaSMP0+5D4AP8QHG56UlZ8LySlFOFWcSnQVeN3vA==
-Date: Fri, 2 Feb 2024 12:20:36 +0100
-From: Luca Ceresoli <luca.ceresoli@bootlin.com>
-To: Adam Ford <aford173@gmail.com>
-Cc: dri-devel@lists.freedesktop.org, Kishon Vijay Abraham I
- <kishon@kernel.org>, devicetree@vger.kernel.org, Conor Dooley
- <conor+dt@kernel.org>, Fabio Estevam <festevam@gmail.com>, Pengutronix
- Kernel Team <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org, Vinod
- Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, NXP Linux Team
- <linux-imx@nxp.com>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH V2 2/2] phy: freescale: add Samsung HDMI PHY
-Message-ID: <20240202122036.7aa66d9d@booty>
-In-Reply-To: <20240106221907.325127-2-aford173@gmail.com>
-References: <20240106221907.325127-1-aford173@gmail.com>
-	<20240106221907.325127-2-aford173@gmail.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
+	id 1rVrrv-0000000BJo4-2DvM
+	for linux-phy@lists.infradead.org;
+	Fri, 02 Feb 2024 11:38:04 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id DDD2E62440;
+	Fri,  2 Feb 2024 11:38:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC355C433F1;
+	Fri,  2 Feb 2024 11:37:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1706873882;
+	bh=p5lXBrTHJqQYc6rYWZj48xlKqjP4sLrBohNcmDgpqvg=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=WhSeQjr3l/GbnCW9pTnVmhXQjQfBKb9n+fzZSjXV3RJXg0fFVMZAr9bR06bZ0bFAa
+	 5G1tAArTjA0PcO3TQAKYElQCTLEQ8Jdy/DfcVfEqa/curg80oW/vpxvft7UjDExF/I
+	 +MoyMvv3iAI6kh5o6ebkn8RQzA15nXJtLqr1jx9tiGyXo/M5SSjoCEqCZykmhUtV84
+	 BaCbM9pfOIEzJVycbI3OMBAuyecMuewd3Zn+MajENWJ1ijydu0wTZzp55G304skt8T
+	 KKWTofvYQ8Asnfq6lLZQ+nLCQrWBklX2Eg3U7SsB+EZiLsnfxsTVKBT4OWUV0pHT3s
+	 N9LkvVBv9cstg==
+Message-ID: <fb8ea6c6-609a-4a0d-ae7b-06b8500bd978@kernel.org>
+Date: Fri, 2 Feb 2024 13:37:56 +0200
 MIME-Version: 1.0
-X-GND-Sasl: luca.ceresoli@bootlin.com
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/5] phy: cadence-torrent: Add PCIe(100MHz) +
+ USXGMII(156.25MHz) multilink configuration
+Content-Language: en-US
+To: Swapnil Jakhade <sjakhade@cadence.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Cc: mparab@cadence.com, s-vadapalli@ti.com
+References: <20240104133013.2911035-1-sjakhade@cadence.com>
+ <20240104133013.2911035-3-sjakhade@cadence.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20240104133013.2911035-3-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240202_032044_654931_A1017096 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20240202_033803_642666_085227CC 
+X-CRM114-Status: UNSURE (   5.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,36 +78,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Adam,
 
-On Sat,  6 Jan 2024 16:19:05 -0600
-Adam Ford <aford173@gmail.com> wrote:
 
-> From: Lucas Stach <l.stach@pengutronix.de>
+On 04/01/2024 15:30, Swapnil Jakhade wrote:
+> Torrent PHY can have separate input reference clocks for PLL0 and PLL1.
+> Add support for dual reference clock multilink configurations.
 > 
-> This adds the driver for the Samsung HDMI PHY found on the
-> i.MX8MP SoC.
+> Add register sequences for PCIe(100MHz) + USXGMII(156.25MHz) multilink
+> configuration. PCIe uses PLL0 and USXGMII uses PLL1.
 > 
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> Signed-off-by: Adam Ford <aford173@gmail.com>
+> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 
-I had already tested the v2 from Lucas, however I also tested this
-version which works as well, on v6.8-rc1, custom hardware based on the
-Avnet i.MX8MP SMARC SoM.
-
-Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
-
-Generally speaking, as there are several small patch series around which
-together implement HDMI on iMX8MP and similar, I think it would be much
-easier fore reviewing and testing if they were grouped into a unique
-series.
-
-Luca
-
--- 
-Luca Ceresoli, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
 -- 
 linux-phy mailing list
