@@ -4,73 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E366FC4828D
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Feb 2024 17:12:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC22BC4828D
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Feb 2024 20:47:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:Cc:To:From:References:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WDmnP+6plB2/f6NvNGbVp1tsA1CDsVzRrkNJ+Cqa0pU=; b=MRYihAt7gH2yxd
-	5Ca3utqZFagrIAgpyqhGRIixirZqOWKu3AoE3eN0M9ZbA3ZJzS/Nb3cNDWxfJCeXHuM7l0FJwOWQ2
-	C19tU51VKobAqPEBiskhJTQA/UrZoE5fIZRRHXE9Kc/5zjM2KD2FeFZO9nUmZQVUIC5oOaFyVijyy
-	waUQBf/1GyN/IETZHTCHBzXwfeOSwzH9+GhzCWjmaW4/8pu0T8x61uOGsUNimyLdJ/WSwverwdnyq
-	Y1EmQraItano4OQzHmvXExXT7RxoOu3eQGeSK1jC+B+XKTB4q8H/5mKtqPJywmSyugJ9XGDLXQeeV
-	wheZySjvQ4YRjhrbWVBQ==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4NbhwfKm49CFefaT0xY0PG9hSlN7lal2Pri+eEBH5Vo=; b=ZxSv5qN2vy23TS0FjxgpOiqb8L
+	x1eePc6UsJw7QUaFY0ZJvqTuQItJ+arN4V7N6ZkapfX/qR9wpoZVNIeYvK4r/YaP7oetl2NPtSNAe
+	qo3TFOHNZmW01aGrhSrYP66XRWjxMAkI37U6OmXy+grfXkwcp29XaAnK8/hwz8vtvFr4KJX64eM52
+	eQWmgbD+km9MoK8yW8VZ/Jnc2mm+4Z0u3hJ/2mnSZDHjAcp+nG1XM9XSeZXeWYnFBww40QWb9iOTM
+	vtH4iw4Nr42iVohkak/kMQ0n4snSNx/cXjBsfajvfrJ9sKpAcq2sP1dvkJbXv5iQZDwWcNG5q9uF/
+	T3yX7f+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rWJZQ-0000000GtUj-2SoV;
-	Sat, 03 Feb 2024 17:12:48 +0000
-Received: from smtp-20.smtpout.orange.fr ([80.12.242.20] helo=smtp.smtpout.orange.fr)
+	id 1rWMvW-0000000HDOd-2SL6;
+	Sat, 03 Feb 2024 20:47:50 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rWJZM-0000000GtTm-01A6;
-	Sat, 03 Feb 2024 17:12:47 +0000
-Received: from [192.168.1.18] ([92.140.202.140])
-	by smtp.orange.fr with ESMTPA
-	id WJZ5r8EMLWeJzWJZ5r3AWG; Sat, 03 Feb 2024 18:12:36 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1706980356;
-	bh=ay6OCUA7f665DqUoUex+m2wntbywTqOyj8cITOvN8KA=;
-	h=Date:Subject:References:From:To:Cc:In-Reply-To;
-	b=kCMx8q0mDjuLPqDx/7+dWEIEE7lW8OT9Y5QLRj4N5/t8G2hNphXtndT49IBqx1acW
-	 XB+W2IBQY0HrTHcD5EhobF1wPMfpI5ZKbl4vBUo4wTeyUQRjEtIXheQezSoNeuvpSO
-	 TucK/VPKWZh8z6kE3lYW6uOMQSo8EdGvDWV7TsRtlKAXEkK92cZBTO1sXJ8zqrEEoA
-	 AKDsDrT4e3NBeKtrkkJb84bS1sX98TV3yEQIqZ4LrYqX+lA+jn4JKbV+oYgH37wx7V
-	 dweJuDy+gPkmydNUCqD4D0C8h/lnLBT14lniu84QJVTfnHOVnNZbswo3O9rC4SpFOc
-	 LI1vxqSTSFK+Q==
-X-ME-Helo: [192.168.1.18]
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sat, 03 Feb 2024 18:12:36 +0100
-X-ME-IP: 92.140.202.140
-Message-ID: <9dd39fe9-9e9d-4093-b914-13006ac99792@wanadoo.fr>
-Date: Sat, 3 Feb 2024 18:12:27 +0100
+	id 1rWMvT-0000000HDN3-1PLg;
+	Sat, 03 Feb 2024 20:47:48 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 6310BCE0946;
+	Sat,  3 Feb 2024 20:47:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA2F8C433F1;
+	Sat,  3 Feb 2024 20:47:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1706993263;
+	bh=f2I8gWEzkwSZbGGlhrQHuwLADXjkshYxOtnScKHw11s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=GN/4T/RqtAM5pPUfQihjK3Wa8sAV3pUsmPhYvA/cg2Mt2nro2ZyjanWbrJsFNV3X0
+	 z5BUbR+pQSMZAeHOP3sXKHIURcwPfLXvK10KTL7JVV6BMqAtJcWeBZZaUNH8BgEZwr
+	 WzCvc/4pSyEOOKjimaGiYIRPvzhm5cFZkClqVzDoxmb/PXTafnKB5XS5SvdpzINgmK
+	 q/IJVnPabe73UT5UmIzBjjFDfb7yi95qtdPjsD2ng69sNJ9Ox97m8liHEvjdKMoKE0
+	 QcQjfDe1BO9oUeMuwNyLPZn3s3kiyHosGSbJT7/8lpjlfsPnQ91fjVkcMwRyGM/tUl
+	 QPqwMl+qAzuzA==
+Date: Sat, 3 Feb 2024 21:47:39 +0100
+From: Wolfram Sang <wsa@kernel.org>
+To: Gatien Chevallier <gatien.chevallier@foss.st.com>
+Cc: Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
+	herbert@gondor.apana.org.au, davem@davemloft.net,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
+	jic23@kernel.org, olivier.moysan@foss.st.com,
+	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
+	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
+	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
+	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
+	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
+	peng.fan@oss.nxp.com, lars@metafoo.de, rcsekar@samsung.com,
+	wg@grandegger.com, mkl@pengutronix.de, linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v8 02/13] dt-bindings: treewide: add access-controllers
+ description
+Message-ID: <Zb6ma9lHMu3SAe0U@shikoro>
+Mail-Followup-To: Wolfram Sang <wsa@kernel.org>,
+	Gatien Chevallier <gatien.chevallier@foss.st.com>,
+	Oleksii_Moisieiev@epam.com, gregkh@linuxfoundation.org,
+	herbert@gondor.apana.org.au, davem@davemloft.net,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, alexandre.torgue@foss.st.com, vkoul@kernel.org,
+	jic23@kernel.org, olivier.moysan@foss.st.com,
+	arnaud.pouliquen@foss.st.com, mchehab@kernel.org,
+	fabrice.gasnier@foss.st.com, andi.shyti@kernel.org,
+	ulf.hansson@linaro.org, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, hugues.fruchet@foss.st.com, lee@kernel.org,
+	will@kernel.org, catalin.marinas@arm.com, arnd@kernel.org,
+	richardcochran@gmail.com, Frank Rowand <frowand.list@gmail.com>,
+	peng.fan@oss.nxp.com, lars@metafoo.de, rcsekar@samsung.com,
+	wg@grandegger.com, mkl@pengutronix.de, linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
+	linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+	linux-usb@vger.kernel.org
+References: <20231212152356.345703-1-gatien.chevallier@foss.st.com>
+ <20231212152356.345703-3-gatien.chevallier@foss.st.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V8 02/12] phy: freescale: add Samsung HDMI PHY
-Content-Language: en-MW
-References: <20240203165307.7806-1-aford173@gmail.com>
- <20240203165307.7806-3-aford173@gmail.com>
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: aford173@gmail.com
-Cc: Laurent.pinchart@ideasonboard.com, airlied@gmail.com,
- alexander.stein@ew.tq-group.com, andrzej.hajda@intel.com,
- catalin.marinas@arm.com, conor+dt@kernel.org, daniel@ffwll.ch,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- festevam@gmail.com, frieder.schrempf@kontron.de, jernej.skrabec@gmail.com,
- jonas@kwiboo.se, kernel@pengutronix.de, kishon@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, l.stach@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, maarten.lankhorst@linux.intel.com, marex@denx.de,
- mripard@kernel.org, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
- rfoss@kernel.org, robh+dt@kernel.org, s.hauer@pengutronix.de,
- shawnguo@kernel.org, tzimmermann@suse.de, ulf.hansson@linaro.org,
- victor.liu@nxp.com, vkoul@kernel.org, will@kernel.org
-In-Reply-To: <20240203165307.7806-3-aford173@gmail.com>
+In-Reply-To: <20231212152356.345703-3-gatien.chevallier@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240203_091245_414954_C7ECCAB5 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20240203_124747_736628_2FE2E179 
+X-CRM114-Status: GOOD (  10.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,47 +111,70 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============3012423421491534185=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-TGUgMDMvMDIvMjAyNCDDoCAxNzo1MiwgQWRhbSBGb3JkIGEgw6ljcml0wqA6Cj4gRnJvbTogTHVj
-YXMgU3RhY2ggPGwuc3RhY2gtYkljbnZiYUxaOU1FR25FOEM5K0lyUUBwdWJsaWMuZ21hbmUub3Jn
-Pgo+IAo+IFRoaXMgYWRkcyB0aGUgZHJpdmVyIGZvciB0aGUgU2Ftc3VuZyBIRE1JIFBIWSBmb3Vu
-ZCBvbiB0aGUKPiBpLk1YOE1QIFNvQy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBMdWNhcyBTdGFjaCA8
-bC5zdGFjaC1iSWNudmJhTFo5TUVHbkU4QzkrSXJRQHB1YmxpYy5nbWFuZS5vcmc+Cj4gU2lnbmVk
-LW9mZi1ieTogQWRhbSBGb3JkIDxhZm9yZDE3My1SZTVKUUVlUXFlOEF2eHRpdU13eDN3QHB1Ymxp
-Yy5nbWFuZS5vcmc+Cj4gVGVzdGVkLWJ5OiBBbGV4YW5kZXIgU3RlaW4gPGFsZXhhbmRlci5zdGVp
-bi1XM28rOUJ1V2pRYVpveDRvcDRpV3p3QHB1YmxpYy5nbWFuZS5vcmc+Cj4gLS0tCgouLi4KCj4g
-K3N0YXRpYyBpbnQgZnNsX3NhbXN1bmdfaGRtaV9waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rl
-dmljZSAqcGRldikKPiArewo+ICsJc3RydWN0IGZzbF9zYW1zdW5nX2hkbWlfcGh5ICpwaHk7Cj4g
-KwlpbnQgcmV0Owo+ICsKPiArCXBoeSA9IGRldm1fa3phbGxvYygmcGRldi0+ZGV2LCBzaXplb2Yo
-KnBoeSksIEdGUF9LRVJORUwpOwo+ICsJaWYgKCFwaHkpCj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4g
-Kwo+ICsJcGxhdGZvcm1fc2V0X2RydmRhdGEocGRldiwgcGh5KTsKPiArCXBoeS0+ZGV2ID0gJnBk
-ZXYtPmRldjsKPiArCj4gKwlwaHktPnJlZ3MgPSBkZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3Vy
-Y2UocGRldiwgMCk7Cj4gKwlpZiAoSVNfRVJSKHBoeS0+cmVncykpCj4gKwkJcmV0dXJuIFBUUl9F
-UlIocGh5LT5yZWdzKTsKPiArCj4gKwlwaHktPmFwYmNsayA9IGRldm1fY2xrX2dldChwaHktPmRl
-diwgImFwYiIpOwo+ICsJaWYgKElTX0VSUihwaHktPmFwYmNsaykpCj4gKwkJcmV0dXJuIGRldl9l
-cnJfcHJvYmUocGh5LT5kZXYsIFBUUl9FUlIocGh5LT5hcGJjbGspLAo+ICsJCQkJICAgICAiZmFp
-bGVkIHRvIGdldCBhcGIgY2xrXG4iKTsKPiArCj4gKwlwaHktPnJlZmNsayA9IGRldm1fY2xrX2dl
-dChwaHktPmRldiwgInJlZiIpOwo+ICsJaWYgKElTX0VSUihwaHktPnJlZmNsaykpCj4gKwkJcmV0
-dXJuIGRldl9lcnJfcHJvYmUocGh5LT5kZXYsIFBUUl9FUlIocGh5LT5yZWZjbGspLAo+ICsJCQkJ
-ICAgICAiZmFpbGVkIHRvIGdldCByZWYgY2xrXG4iKTsKPiArCj4gKwlyZXQgPSBjbGtfcHJlcGFy
-ZV9lbmFibGUocGh5LT5hcGJjbGspOwo+ICsJaWYgKHJldCkgewo+ICsJCWRldl9lcnIocGh5LT5k
-ZXYsICJmYWlsZWQgdG8gZW5hYmxlIGFwYmNsa1xuIik7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0K
-PiArCj4gKwlwbV9ydW50aW1lX2dldF9ub3Jlc3VtZShwaHktPmRldik7Cj4gKwlwbV9ydW50aW1l
-X3NldF9hY3RpdmUocGh5LT5kZXYpOwo+ICsJcG1fcnVudGltZV9lbmFibGUocGh5LT5kZXYpOwo+
-ICsKPiArCXJldCA9IHBoeV9jbGtfcmVnaXN0ZXIocGh5KTsKPiArCWlmIChyZXQpIHsKPiArCQlk
-ZXZfZXJyKCZwZGV2LT5kZXYsICJyZWdpc3RlciBjbGsgZmFpbGVkXG4iKTsKPiArCQlnb3RvIHJl
-Z2lzdGVyX2Nsa19mYWlsZWQ7Cj4gKwl9Cj4gKwo+ICsJcG1fcnVudGltZV9wdXQocGh5LT5kZXYp
-Owo+ICsKPiArCXJldHVybiAwOwo+ICsKPiArcmVnaXN0ZXJfY2xrX2ZhaWxlZDoKPiArCWNsa19k
-aXNhYmxlX3VucHJlcGFyZShwaHktPmFwYmNsayk7Cj4gKwo+ICsJcmV0dXJuIHJldDsKPiArfQo+
-ICsKPiArc3RhdGljIGludCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9yZW1vdmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKPiArewo+ICsJb2ZfY2xrX2RlbF9wcm92aWRlcihwZGV2LT5kZXYu
-b2Zfbm9kZSk7CgpBIGNsa19kaXNhYmxlX3VucHJlcGFyZShwaHktPmFwYmNsaykgY2FsbCBzZWVt
-cyB0byBiZSBtaXNzaW5nIGhlcmUuCk9yIG1heWJlIGRldm1fY2xrX2dldF9lbmFibGVkKCkgc2hv
-dWxkIGJlIHVzZWQgZm9yICdhcGJjbGsnPwoKQ0oKCj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KCi4u
-LgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5
-Cg==
+
+--===============3012423421491534185==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="VPm+VxExOC+V7OZ+"
+Content-Disposition: inline
+
+
+--VPm+VxExOC+V7OZ+
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Dec 12, 2023 at 04:23:45PM +0100, Gatien Chevallier wrote:
+> access-controllers is an optional property that allows a peripheral to
+> refer to one or more domain access controller(s).
+>=20
+> Description of this property is added to all peripheral binding files of
+> the peripheral under the STM32 firewall controller. It allows an accurate
+> representation of the hardware, where various peripherals are connected
+> to a firewall bus. The firewall can then check the peripheral accesses
+> before allowing its device to probe.
+>=20
+> Signed-off-by: Gatien Chevallier <gatien.chevallier@foss.st.com>
+
+Acked-by: Wolfram Sang <wsa+renesas@sang-engineering.com> # for I2C
+
+
+--VPm+VxExOC+V7OZ+
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmW+pmsACgkQFA3kzBSg
+KbY64RAAof4Gx7h4jhXu9UFvGgxDMB7nucJwU2vnrWAQqslpX78IIuHnDzQGSdx4
+YeqQnv3x5PquSqBz8x/rnE1ptR0LqnAgeJdEOQB0AAicQ+VFy75kPngr9dtiCJuf
+SrCwaIYQ13qIhhC6pa7HTEUSQN/KX6DVSffmeJmOJoHIqGa1L1ldEH5tujF71Plb
+q5ugpGi2Jkmb+UU5/EaXadNKZ5b3BSp/xWur8Eemy9Z4DqqoipzJRzSJHufFNZDR
+pRdNn14JQlzQ948vT+YdpGqPE6jrVpd48rygAjaXsPx3cVQx7ouU6tKPnFLjtgyp
+tb0R2ZIQNXVaQV36XLwhvv0qFqHEiY36q+GjYSEbMHbO1b0+zneKgmZXNSwCclEp
+WQ8DrD3UEKTXcDHmoRV5GVgzZyk7wmK8zq3jofTemYyfKhSvsmAiufzZCQLV/9GI
+ScuNib34aJrsiIXiD40DsFNcutPh2v+aBXQmtfpkA++3ZvY9aBQa5KeEqzrKPaa0
+AVXFtXPN4hnNkUzTogCTHEvL7dYtbi0h7W5fun3D5kOLdZuewR8vFAotIaDRG7tB
+S7AWJDu+x2RT2xAs2yJEfSHMwoBZRdq3nJVugmRDb+VELZmIDBdN4vwBRXfi+cHr
+ouzPgt76DcQhfF6JGRUhloWtVuWW3QRQ1uYMpWUrKztG+3WiqBU=
+=nMRV
+-----END PGP SIGNATURE-----
+
+--VPm+VxExOC+V7OZ+--
+
+
+--===============3012423421491534185==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3012423421491534185==--
+
