@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74248C4828D
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Feb 2024 16:54:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2FC4C48298
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Feb 2024 16:54:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0lgYVyImvL5CfQoVe8MpySOgqTf/xmHkhXtCHPVyEPc=; b=G1Y74y++DRmIow
-	8iM52mQFxN2R5w9pZo16TJEEskQPoBjo17/qt64DUHi8OK8BWMbjvgeqvyKKNq2tkinS4yozE4lHH
-	jiVbV7e2yhFlRGFr+10YQtRhcfsF6iZIDgF9Xe7U2QCQeN02UllHnZ/Kb4roeHF6ecqCGaPMu98aT
-	MAPyNfIqFZyaKnhHt9vamr5cf65UIg0wsLlX3O0/VzVfTy6/iJLQAgpQEHxBnHoo4aBEib4EiZDNb
-	VOoXOIXN5jqFdJtEdmE0s/zTqyN+6h1lrrPvbu3KJokoG8cUGj9MBOsmbuwZZhnwquxUjyEEapZXw
-	TsZO1V/0Yw26jBGfcp5w==;
+	List-Owner; bh=Vmrz9En2onFLNQ2C32/BW7zlxsaeUyYtRrlqGNR9tI8=; b=iJoDI45aDwQO45
+	3g7Gfp7pqXYYn6E3uEntiCamp0MXM5grSFAEldKHybUg90MJ+Yb41kznud02Hg7bGJTHT53yHKmEN
+	DAn9WRh8J1WRGtv0h7g2ir8GB+9rnbR6UZcdMpKNHxv3w+RHk0WffiONTMmMHnWQRo+h5s00lrWXu
+	C33o4BJQnhZ/wljEnGlAv9d2maQdC3+4TBliHecHYkKj5hzUEtja3HPcS+v96aZZasMYlUIzjDx/P
+	7ODGMNzwkaGXQBX0BXZ/bI/AqL0Ov7yuICpx+M1hBM8zM/NSYtvWU+/hEmmzwVbp0hVAwKF/SeKOZ
+	GwBeJD5Cq/hYdyNBh6yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rWJHF-0000000GqKL-3Yyx;
-	Sat, 03 Feb 2024 16:54:01 +0000
-Received: from mail-io1-xd35.google.com ([2607:f8b0:4864:20::d35])
+	id 1rWJHO-0000000GqRf-1e1E;
+	Sat, 03 Feb 2024 16:54:10 +0000
+Received: from mail-io1-xd30.google.com ([2607:f8b0:4864:20::d30])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rWJHA-0000000GqF3-1wJI;
-	Sat, 03 Feb 2024 16:53:58 +0000
-Received: by mail-io1-xd35.google.com with SMTP id ca18e2360f4ac-7bed9c7d33fso126091639f.1;
-        Sat, 03 Feb 2024 08:53:55 -0800 (PST)
+	id 1rWJHE-0000000GqIG-2Jbe;
+	Sat, 03 Feb 2024 16:54:02 +0000
+Received: by mail-io1-xd30.google.com with SMTP id ca18e2360f4ac-7bfd5eeffefso126456739f.1;
+        Sat, 03 Feb 2024 08:53:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1706979234; x=1707584034; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1706979238; x=1707584038; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=xTz41youk0MNhd57tDHSRqDDcqb1mXikbXnVvCDl5qs=;
-        b=GyCkgMu+9Hzq07xQCyIa4o4Ap/r0b6ehmKFjnUgUlwKLCxG/Ah83/BO33JzduVpzA4
-         FUM0L13bkU4YIZG4lZcWsgTnUFppB1EyOL12eQhq1VqarOaGj3czoDarywalCiKium1E
-         uVZBNIvWav8gt3gsOVAp51O3J0pP2+snn340x1pNi9iBGWADuxgyuyaK/pkqlSsN0kDj
-         sjBAD9EVglmVHHgBP8ZUyPD9DidZ/midq8UKLQx+oASB5IbBuaMHlpA73p/MYRvFf243
-         XAWiV6rTYi2D4mO4KuUwt5o7PoUAWoN9U0KQuGVfqxMG/5PUqhl5E7LhwRV1oMe6HH//
-         Y4lA==
+        bh=taDwADqgs/vXZTWtQL/uIsBG3gMoUnf1EEy+EC/Jro4=;
+        b=Idhe9otWeaY5zmj4JCGDWR0HXl5PIFT+4pvKyPg5GeBPl7yEPjVOGUeBQBMplpPVNa
+         U2Xg/jLXmBjotZNBAhTKPwcD1hU8ayFJamkwOm078CQPoyUG4544atWTkv3XRIAZpOCv
+         OoQEZtgSMPduVHh/6ip5o56F4aFfDQWcvmgDAfPSHHJ7Xex7dM9aITSTv3c6GhZjOT6Q
+         4VYgsBvrbtWY7WC7nWblV3DLgZq1jkAGo38UZtuQ+gmhapRSOqzXAS+vKwMSyTD4Eraq
+         U+pi3oV7x3hJpU4fhNbfk24Px0OayQkCGnd+taxiQC5MDHUfznSMDj+5MHYjJ+Kjxeds
+         nNzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706979234; x=1707584034;
+        d=1e100.net; s=20230601; t=1706979238; x=1707584038;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=xTz41youk0MNhd57tDHSRqDDcqb1mXikbXnVvCDl5qs=;
-        b=tG+Z1gpx20wihZ2FOgukM87umKk/n0j7gCJ6FqSOj29FS7ou6yc0rrAEaiNONWb+UB
-         CtNdmAZyc3AjK3sMVRD5C+sPWPQifM9VXz1QCYQOa9ELcvAfRqU+XFWFfSL5dVAz0wNX
-         3xb24VbzKH+BHP+JQkac2D/u/WaOfsHnWlU3vr4796UWUotVj+jb503Z0YctNG6TBUfL
-         xrFEaPXulBQCvdPL49ozRj9dNM09rDQ55rFxYqYTUSHVLmRQd1Kzt6yxrBFxaqjcVPBG
-         mSs1Z5UNQxKDo83uMXSp7JD1mT/68NBPNIvt6q1iGENXc6iLnTl+9N+oLpuCMO3Q5RyH
-         CWsA==
-X-Gm-Message-State: AOJu0Yz3AjnJmvGnvgdrNlGMSmyTCv1RCGYV8mMmCHwZZRRm0HvG3tl+
-	8r0s0YUGjPHjOVlbADMlDfDbMhBlIUgbNVFxdlbUEncZb5LarGG1dJMj0rIMClg=
-X-Google-Smtp-Source: AGHT+IFyEA0Xii6DxXVLQmKqTt50wj06h7R4pQOHBCC/7rAn9AxwjHk/98owuv5mKfuaCa0UFjMBEQ==
-X-Received: by 2002:a6b:fb03:0:b0:7c0:3e75:f46d with SMTP id h3-20020a6bfb03000000b007c03e75f46dmr4802889iog.1.1706979233728;
-        Sat, 03 Feb 2024 08:53:53 -0800 (PST)
-X-Forwarded-Encrypted: i=0; AJvYcCVZdVoNbFEdixs+13RcadW8GCllVZ7xKVTj2NXM54/anl1fBuhrAHCat0rqnv3RhPASNx1opDJMA21l2z1ij3X8Rx12yVkcQF3JZTOK/TdeH+RaAtahnLEJQFr1EBEUsLv9uMvFjgkQj5cv+aAdNFwFbShA0kgja3hR3iG+/3YWHfTuV/1S1mP0chXWaEzo1MccDnVMn18czRjOnRdwS7S8EUhB/wt2V5/2+DD3jLoPD1YGeWMWIWwvNSPDn99bqMs6krYj7WIBM8uXm9uPmLjqWgjON/i6J4pg7Gd0ha42QIp6q8ORyMPm+DNgUlu+ZnGaGNxp7pw/60q7lPdfXZAwTb4x3OFApr+MUxTmbZOXDfUy89W0rZix+B3E3fOytm2w1Os/SuG+zS2jWyWAG49gtmBoWgVC9EN0+CjvIUNdxiAk0NCabImRXO4kvDZ/05GrkGmjNjwhmCwOHTNxNJ/VYPYDz8C+m20Zh3YXaeRs/ZzFi1qNX6Hbu6nGQgB53BFrrE7DW8wy7BerDEwfQN7OF6Lxf3q82TSpWlsu+op0Si2PXXkMX/A9CMmDR5IQNaxVjjL4V/4Ykpc/iOapGlUYY9hGaC4h9/BtwNDpSpu9qJs5ZIS6Pds7A8ARxvis4/LecvT0lPDtItXD1lA9gzCH9fIkyLGw/tO9z1GQdU5fJzgUlbZQcdA1S2vN/dobTHOkGlgkEkBEEypLuGbX/OJCO0DBcGp7xE8+MtJradWpWSB7zSmA0Sp2ghrlum17CIgR353mLSHpuhim31D3HFt5reRqCIhlV5aClUhtcLqzM/ACrx3JM79u06NOcVklVWAb5WPhjkdTaw2RJA+/DBN7RMsH9Ruthu4++IamxsZN0zGXu94y3o/HqeWtxxec24GM6y7XWNJl1u7NWvSf9ptVeauIDMqfUwFnszPpQr0AR4e3aUVEVEPFasL8tlOP00vcN+
- mpGj9R8UMZ1+rT0d+JO6gXS+Yd+LDUMkxu/IWny7gVOlL4rA/IwaPBq/NnhEmmHkNPit6gfH7urCstUx8uEBN6/fIb4pnzHC1PX52xvzvlMLFrlSyowHFSRg+imxQyt00NhHYnbLy7R8EvstG8GndKToyv0053jjyytesykhtwZRO2JKVkUX/w6GQUERQnIpcKJZJ6aWP9YjuMSDPAxUDfkw/dQPb++belRYOp318rrcFN+Sd0dXaZDCDwVPT5KRGQZqg2zIermNjiPcM=
+        bh=taDwADqgs/vXZTWtQL/uIsBG3gMoUnf1EEy+EC/Jro4=;
+        b=dlhjdY9xLWDtBs5wD9WZPkJ4GWyieaGu+ceXTzl14arKou/bImGVwV3EM1TRYdThmK
+         UxJaEM7rWAaNdeha0JOA2euhZQGPukXFL30xrmcFpNRp/WTuItYQ//Thmpb4L7qYsY01
+         3dxDjW9HgjkkQ35ye2G1XAc9WriXV9zk2sw2Aju2YQM4PIi4SzuYzeeGCMf06Cc8RdBH
+         rMVfCyDb66kGccF04wzYuDBS2d3qESWTKFTAvHKMG3nPunZSiFvcDwqeqXD0V1V4x6Q0
+         j2WsjHUDaQps8Z4U1AQxdbJmjj6By3Pn2zYU0atLNIQcCe0euAy+hpoWlGPExcYwy8F5
+         Drbw==
+X-Gm-Message-State: AOJu0Yx0No9cCDOChG9eNCSvSyfUFPL9XkoYn+bs0w71gozcyhhRAUMD
+	NdhSXdDHSVnAazbcoexrC9CCWBSAq/NSCPd/daONNa8ODtTgDErot/Uy0zpu2ck=
+X-Google-Smtp-Source: AGHT+IGSIrWbB8jR5uaJBwAlIfAilmzMPT34+qSqtn8M+K3ASa98MtXlrgLootz9nRYzgIf22ww9/A==
+X-Received: by 2002:a05:6602:2806:b0:7c0:3e72:998c with SMTP id d6-20020a056602280600b007c03e72998cmr6003233ioe.9.1706979238133;
+        Sat, 03 Feb 2024 08:53:58 -0800 (PST)
+X-Forwarded-Encrypted: i=0; AJvYcCUD62zg8tJ7qMwNwxmrNMP/+OYqlFBEhICF5gxfVobVJ4LnXerUR5pumG2PtuG5+Cmz7Qfs6PkvZNFzjWFg6HopgDfdIH+CrhJFHbAwLVkYFE1Gky5g76gmocMJz7rKSZSFH0wz0PGpn+QujBSeWaW1bTd4givdDsdoFza+0pxjcv6yKGy7rEu1/s7iTfuXWHEMSK1g8YxlUZ4ksVEg9YAVZdvygkgS04Ukez64aJpKQb5+2v2XodxFNH/1cAABEgBKWMPLLzszvggkQTSHX1GIolk8NFkZPPeLGYeYiUkpbeoRwsEhdm91rZxvI2XOpmQOT3rUKclMKk6QdMrzukJVrFFPyjXfvG//tBYVoSxIwE0BlykyOEbpyG+4FQFGigvg4XfwpnyZMSC9GgupXhY5d+t8AFac/q1sF2IdQXbISCSiY4ZAAaQI5dXDRVcf5BbfkjTrnoErFj1kkAX0sAKCdiLjVXD45OcGOIwrmReYBeajeQ9mV18gnX4UKlvr+uguAgY1PxVQ3g+CAAvwSlD8PdWuun7nmhBAM0+PBzXyteqCNHXeiswiDUcbqMyv9vhmmzJSJJP9iU07weq0Ne/emI/B35nszR/mec2Vw6qhN2F7u7TA22yJ61oR0pGna47Zv3k+AwHQdQ2z1JcP/od3janjHDB1aTzX9NNnYpC/WvYklUCj757VfqhEfzsVwqOTqRvRQcbYSS6bjs695FEGfS+gTqoI9XaRfw/wVyQvzSz0pCKN+ybkBc8UrWX3nt1CEdOw0keAF86Jp6Og8hwRbADGnVhU80JfhgEPIiVyzk4gWlVMOGMPHgDd00CbvE1A5M2HCUJrRackwYDqHSvO/JLky9AjE2C+/u1wQaqiRVngv6pYBgBUAzCqqqEK7X680hK1IciJbH63FpWpnoSS4FSoDH6zlB7rzbllUnyRFzEN8lftCtU9vmNGp84/0bO6zC
+ tPc+kBpnmgA8VI5bKu/CBQBhxIXDGMbduBGf5zFg/mUqGiqIRi/nukYaNl5I8AcS2jy5e2zjr3Jfer0jAAOV7PBb7frc24lvmLSilFIjuj+0MkhPhuOWv5cvogwrsDLXMJ75BPLDJ3j54uiLyFRUhAmNX80hkWwe4o9O3vAKH/wFiBgsUin1KJr7WD0JtKOfNhxluLTZcCpooyc1EfcgOYrHNZNWHp8A==
 Received: from aford-System-Version.lan ([2601:447:d002:5be:d9b2:bb4f:5531:6aa9])
-        by smtp.gmail.com with ESMTPSA id t30-20020a05663836de00b00470b29b82b1sm1086256jau.154.2024.02.03.08.53.49
+        by smtp.gmail.com with ESMTPSA id t30-20020a05663836de00b00470b29b82b1sm1086256jau.154.2024.02.03.08.53.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 03 Feb 2024 08:53:51 -0800 (PST)
+        Sat, 03 Feb 2024 08:53:56 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
 Cc: marex@denx.de,
 	alexander.stein@ew.tq-group.com,
 	frieder.schrempf@kontron.de,
+	Lucas Stach <l.stach@pengutronix.de>,
 	Adam Ford <aford173@gmail.com>,
-	Jacky Bai <ping.bai@nxp.com>,
-	Sandor Yu <Sandor.yu@nxp.com>,
 	Andrzej Hajda <andrzej.hajda@intel.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Robert Foss <rfoss@kernel.org>,
@@ -97,22 +96,22 @@ Cc: marex@denx.de,
 	Will Deacon <will@kernel.org>,
 	Liu Ying <victor.liu@nxp.com>,
 	Ulf Hansson <ulf.hansson@linaro.org>,
-	Lucas Stach <l.stach@pengutronix.de>,
 	dri-devel@lists.freedesktop.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-pm@vger.kernel.org
-Subject: [PATCH V8 04/12] pmdomain: imx8mp-blk-ctrl: imx8mp_blk: Add fdcc clock to hdmimix domain
-Date: Sat,  3 Feb 2024 10:52:44 -0600
-Message-ID: <20240203165307.7806-5-aford173@gmail.com>
+Subject: [PATCH V8 05/12] arm64: dts: imx8mp: add HDMI power-domains
+Date: Sat,  3 Feb 2024 10:52:45 -0600
+Message-ID: <20240203165307.7806-6-aford173@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240203165307.7806-1-aford173@gmail.com>
 References: <20240203165307.7806-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240203_085356_604163_84D2DF99 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20240203_085400_722100_4F2BB5B9 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,61 +128,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to i.MX8MP RM and HDMI ADD, the fdcc clock is part of
-hdmi rx verification IP that should not enable for HDMI TX.
-But actually if the clock is disabled before HDMI/LCDIF probe,
-LCDIF will not get pixel clock from HDMI PHY and print the error
-logs:
+From: Lucas Stach <l.stach@pengutronix.de>
 
-[CRTC:39:crtc-2] vblank wait timed out
-WARNING: CPU: 2 PID: 9 at drivers/gpu/drm/drm_atomic_helper.c:1634 drm_atomic_helper_wait_for_vblanks.part.0+0x23c/0x260
-
-Add fdcc clock to LCDIF and HDMI TX power domains to fix the issue.
+This adds the PGC and HDMI blk-ctrl nodes providing power control for
+HDMI subsystem peripherals.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
-Reviewed-by: Jacky Bai <ping.bai@nxp.com>
-Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 ---
-V2:  No Change
+V2:  Add missing power-domains hdcp and hrv
 ---
- drivers/pmdomain/imx/imx8mp-blk-ctrl.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 38 +++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
 
-diff --git a/drivers/pmdomain/imx/imx8mp-blk-ctrl.c b/drivers/pmdomain/imx/imx8mp-blk-ctrl.c
-index e488cf79b800..77e889165eed 100644
---- a/drivers/pmdomain/imx/imx8mp-blk-ctrl.c
-+++ b/drivers/pmdomain/imx/imx8mp-blk-ctrl.c
-@@ -55,7 +55,7 @@ struct imx8mp_blk_ctrl_domain_data {
- 	const char *gpc_name;
- };
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index 76c73daf546b..5c54073de615 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -836,6 +836,23 @@ pgc_mediamix: power-domain@10 {
+ 							 <&clk IMX8MP_CLK_MEDIA_APB_ROOT>;
+ 					};
  
--#define DOMAIN_MAX_CLKS 2
-+#define DOMAIN_MAX_CLKS 3
- #define DOMAIN_MAX_PATHS 3
++					pgc_hdmimix: power-domains@14 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MP_POWER_DOMAIN_HDMIMIX>;
++						clocks = <&clk IMX8MP_CLK_HDMI_ROOT>,
++							 <&clk IMX8MP_CLK_HDMI_APB>;
++						assigned-clocks = <&clk IMX8MP_CLK_HDMI_AXI>,
++								  <&clk IMX8MP_CLK_HDMI_APB>;
++						assigned-clock-parents = <&clk IMX8MP_SYS_PLL2_500M>,
++									 <&clk IMX8MP_SYS_PLL1_133M>;
++						assigned-clock-rates = <500000000>, <133000000>;
++					};
++
++					pgc_hdmi_phy: power-domains@15 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MP_POWER_DOMAIN_HDMI_PHY>;
++					};
++
+ 					pgc_mipi_phy2: power-domain@16 {
+ 						#power-domain-cells = <0>;
+ 						reg = <IMX8MP_POWER_DOMAIN_MIPI_PHY2>;
+@@ -1361,6 +1378,27 @@ eqos: ethernet@30bf0000 {
+ 				intf_mode = <&gpr 0x4>;
+ 				status = "disabled";
+ 			};
++
++			hdmi_blk_ctrl: blk-ctrl@32fc0000 {
++				compatible = "fsl,imx8mp-hdmi-blk-ctrl", "syscon";
++				reg = <0x32fc0000 0x23c>;
++				clocks = <&clk IMX8MP_CLK_HDMI_APB>,
++					 <&clk IMX8MP_CLK_HDMI_ROOT>,
++					 <&clk IMX8MP_CLK_HDMI_REF_266M>,
++					 <&clk IMX8MP_CLK_HDMI_24M>,
++					 <&clk IMX8MP_CLK_HDMI_FDCC_TST>;
++				clock-names = "apb", "axi", "ref_266m", "ref_24m", "fdcc";
++				power-domains = <&pgc_hdmimix>, <&pgc_hdmimix>,
++						<&pgc_hdmimix>, <&pgc_hdmimix>,
++						<&pgc_hdmimix>, <&pgc_hdmimix>,
++						<&pgc_hdmimix>, <&pgc_hdmi_phy>,
++						<&pgc_hdmimix>, <&pgc_hdmimix>;
++				power-domain-names = "bus", "irqsteer", "lcdif",
++						     "pai", "pvi", "trng",
++						     "hdmi-tx", "hdmi-tx-phy",
++						     "hdcp", "hrv";
++				#power-domain-cells = <1>;
++			};
+ 		};
  
- struct imx8mp_blk_ctrl_domain {
-@@ -457,8 +457,8 @@ static const struct imx8mp_blk_ctrl_domain_data imx8mp_hdmi_domain_data[] = {
- 	},
- 	[IMX8MP_HDMIBLK_PD_LCDIF] = {
- 		.name = "hdmiblk-lcdif",
--		.clk_names = (const char *[]){ "axi", "apb" },
--		.num_clks = 2,
-+		.clk_names = (const char *[]){ "axi", "apb", "fdcc" },
-+		.num_clks = 3,
- 		.gpc_name = "lcdif",
- 		.path_names = (const char *[]){"lcdif-hdmi"},
- 		.num_paths = 1,
-@@ -483,8 +483,8 @@ static const struct imx8mp_blk_ctrl_domain_data imx8mp_hdmi_domain_data[] = {
- 	},
- 	[IMX8MP_HDMIBLK_PD_HDMI_TX] = {
- 		.name = "hdmiblk-hdmi-tx",
--		.clk_names = (const char *[]){ "apb", "ref_266m" },
--		.num_clks = 2,
-+		.clk_names = (const char *[]){ "apb", "ref_266m", "fdcc" },
-+		.num_clks = 3,
- 		.gpc_name = "hdmi-tx",
- 	},
- 	[IMX8MP_HDMIBLK_PD_HDMI_TX_PHY] = {
+ 		aips5: bus@30c00000 {
 -- 
 2.43.0
 
