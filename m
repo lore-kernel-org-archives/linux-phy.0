@@ -4,86 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 594CAC48292
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Feb 2024 19:19:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DEA0C4828D
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Feb 2024 19:23:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DdSdO15AR7W8To13Y2SX0FdlnCtUIoq2om+VcsKHsa4=; b=RyzJQhRM/xq8Fg
-	N0dTLQNZf2HMxIuUUktxvi57mT6KriT1iXhobWucZ3rr/AJ2TmPceUG9cItTcfl2aHRP65LXS1Ily
-	wDfJzFGoz7ipK4YZXDUbciUQR9p3l6oF0pDI2OKhgIdM3EshHZU8MYxTEfTbKbaMuV+YjAeBshXRd
-	FAec8CkzU5aLNDENv3y/9+aMhuGF1fj7FD7b5Rn01ixeDOUK/TcPr2XPGpKAClCtwNNtyWLuzeopu
-	BjMihXddYZCntEqcqZwGSq8cTcBVTHB9ySqKv4vA2+3l6Oi1VxJ2cv66GhG9IQqYZmOirtpGn3MHv
-	+hFwAkBwfnRwK0xl2cWw==;
+	List-Owner; bh=4KBRqXmgHSckKWgeeNTZCq7Yqo8K/QiAqnjE9OU00e4=; b=1XmGIDlNbGE5tB
+	LwQ/F0z40ElnuDiT0zMC0kuHQFXMLR93NW26gpM6NnOkigar8lIGCQcq7udLHihl/fLU9qlUpp5Fs
+	+VTCBTcpMx8nkbdvt3tNU5lpnslUVLGLw8dBia8iHrWdQdXBH4S8Anyf7pbZPmmcoCumLSj8XBd3z
+	nV9PAr7XNx3OPg078/DEVPGtquPEjY8VARQ1nartyiSQDSiJq29+Np0cmlZeT/a1YGzwYk/GS8Fck
+	SUnve+P6TK3+0/+3OWWjT1JWyzicYRqw1RFaA5/cIG8TYgMYbzaxgaXC/UueW1sHOEGxe9ky7GlZH
+	wscehOgrmA+vl7Q/f3cQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rX4V5-00000004YQZ-3uDa;
-	Mon, 05 Feb 2024 19:19:27 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rX4Ye-00000004ZUA-3hkU;
+	Mon, 05 Feb 2024 19:23:08 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rX4V0-00000004YMk-3Wrg;
-	Mon, 05 Feb 2024 19:19:24 +0000
+	id 1rX4Yb-00000004ZSu-3ZcP;
+	Mon, 05 Feb 2024 19:23:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id AC509CE0F20;
-	Mon,  5 Feb 2024 19:19:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68B54C433C7;
-	Mon,  5 Feb 2024 19:19:18 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4032E6126B;
+	Mon,  5 Feb 2024 19:23:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 402F7C433C7;
+	Mon,  5 Feb 2024 19:23:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707160758;
-	bh=IQgAhNiM9Q3k0p3uoVL7JBB79afL2zsOoVNpWvCcKl4=;
+	s=k20201202; t=1707160984;
+	bh=631bnoI95/4RxTtmJPA8muY0K1qwK11eTM0Wq4Qeiqg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qtKVLMrtkrK2hMUJn94uioxTjvRe0KKC3dIcgh4mWv/uMQK3iM7kyMimKmR0kBweM
-	 2VyhcNFlxjudSEn7ZKDga6Mtcj1PmYaCjnQFrlqWdldeavwXGpUYuoDcwR4yBaNjiy
-	 Vzadv3oNb0ObugFg5PT+JoDxRMND8EDRg7B5lwsMO46Hk6UHv2DjiL4MxyrpoRIn6q
-	 By68DuMz4rjTBxnWm8gPnpvcEAUo/aihoZ1X+SRyNWC2OPCZWE6k5XiZoULWw41D6Y
-	 ovLAm/Bievxa7cZT8ZStH2zGyjQkg3JLZMFlG62kCiyCS/cdypB2ZQ5vFFk3cqqcyR
-	 uze7Hi4MG6BQg==
-Date: Mon, 5 Feb 2024 19:19:15 +0000
+	b=gO2BZ96L12Ko4SirbE6I+iube4OZRYzWisRTKnxXc4PMSk7O3zZe7IXUiIF1IsTLv
+	 7Z1dKJffUXWX2Vy4QzfB6mnlry1P2TO/W0wpjluAPpf5Y01JhVRiW8Gd2BC94wD4Ol
+	 dTARJ+2AOtehctbstCm3ujDaljymGGc/sIKFQ4GyrN0nWPxXuf4+LmOKtmMHubfw1h
+	 cnr2b67n44ONH1ChKtUuLEeD2iwDoWLF9Qb/zy/kCqk7jff4M9tRAEpIaXkLpnJjTF
+	 caftyFybrPV4vFLKiy9KgKXDkMTqB7QX1jyzrQ52bjnHt1NrYTDMN2jkdVgSbnSMrQ
+	 Qs4CLr2BXwz5A==
+Date: Mon, 5 Feb 2024 19:23:01 +0000
 From: Rob Herring <robh@kernel.org>
 To: Adam Ford <aford173@gmail.com>
-Cc: Andrzej Hajda <andrzej.hajda@intel.com>,
-	David Airlie <airlied@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>, linux-kernel@vger.kernel.org,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	frieder.schrempf@kontron.de, alexander.stein@ew.tq-group.com,
-	Maxime Ripard <mripard@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Rob Herring <robh+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, marex@denx.de,
-	Robert Foss <rfoss@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
+Cc: linux-arm-kernel@lists.infradead.org, Robert Foss <rfoss@kernel.org>,
 	Liu Ying <victor.liu@nxp.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Fabio Estevam <festevam@gmail.com>, devicetree@vger.kernel.org,
-	Vinod Koul <vkoul@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
-	linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	devicetree@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	David Airlie <airlied@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+	alexander.stein@ew.tq-group.com, dri-devel@lists.freedesktop.org,
+	Lucas Stach <l.stach@pengutronix.de>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Will Deacon <will@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Vinod Koul <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+	marex@denx.de, linux-kernel@vger.kernel.org,
+	Ulf Hansson <ulf.hansson@linaro.org>, linux-phy@lists.infradead.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-pm@vger.kernel.org,
+	Thomas Zimmermann <tzimmermann@suse.de>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-pm@vger.kernel.org
-Subject: Re: [PATCH V8 03/12] dt-bindings: soc: imx: add missing clock and
- power-domains to imx8mp-hdmi-blk-ctrl
-Message-ID: <170716075503.138486.15196612878281167365.robh@kernel.org>
+	frieder.schrempf@kontron.de
+Subject: Re: [PATCH V8 09/12] dt-bindings: display: imx: add binding for
+ i.MX8MP HDMI TX
+Message-ID: <170716098090.168745.4661359468123158581.robh@kernel.org>
 References: <20240203165307.7806-1-aford173@gmail.com>
- <20240203165307.7806-4-aford173@gmail.com>
+ <20240203165307.7806-10-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240203165307.7806-4-aford173@gmail.com>
+In-Reply-To: <20240203165307.7806-10-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240205_111923_274377_002435AE 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20240205_112305_954588_7CE7691D 
+X-CRM114-Status: GOOD (  11.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,35 +99,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 03 Feb 2024 10:52:43 -0600, Adam Ford wrote:
-> Per guidance from the NXP downstream kernel, if the clock is
-> disabled before HDMI/LCDIF probe, LCDIF will not get pixel
-> clock from HDMI PHY and throw an error:
+On Sat, 03 Feb 2024 10:52:49 -0600, Adam Ford wrote:
+> From: Lucas Stach <l.stach@pengutronix.de>
 > 
-> [CRTC:39:crtc-2] vblank wait timed out
->     WARNING: CPU: 2 PID: 9 at drivers/gpu/drm/drm_atomic_helper.c:
->         1634 drm_atomic_helper_wait_for_vblanks.part.0+0x23c/0x260
+> The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
+> core with a little bit of SoC integration around it.
 > 
-> Fix this by adding the fdcc clock to the hdmi_blk_ctrl.  This
-> should be safe, since neither this power domain nor the dependent
-> HDMI and LCDIF drivers been enabled or added to the SoC device
-> tree yet.
-> 
-> According to Sandor Yu from NXP, "the FDCC clock is not for HDMITX
-> in desgin, but it is part of HDMI domain that needed by HDMITX.
-> So I think it is reasonable added it to the power domain driver."
-> 
-> The driver also supports two power domains which are missing from the binding
-> that also fix an issue with resuming from suspend.
-> 
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 > Signed-off-by: Adam Ford <aford173@gmail.com>
+> 
 > ---
-> V2:  Update commit message to both show error and give a bit more
->      background.
->      Add missing power domains hdcp and hdrv as pointed out by Marek Vasut
+> V3:  Change name and location to better idenfity as a bridge and
+>      HDMI 2.0a transmitter
+> 
+>      Fix typos and feedback from Rob and added ports.
 > ---
->  .../soc/imx/fsl,imx8mp-hdmi-blk-ctrl.yaml     | 22 ++++++++++++-------
->  1 file changed, 14 insertions(+), 8 deletions(-)
+>  .../display/bridge/fsl,imx8mp-hdmi-tx.yaml    | 102 ++++++++++++++++++
+>  1 file changed, 102 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/fsl,imx8mp-hdmi-tx.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
