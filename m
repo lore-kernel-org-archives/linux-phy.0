@@ -4,69 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22C03C4829C
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 10:31:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C075CC4829A
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 10:54:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RMLhEVSZntjgzG+9oxgk67hBE454Bsj3isZ55UFitxQ=; b=thhIrspOngVajEqhcwUaeG1UJK
-	kIGj5ll0VvT+30DHcnrfX70wyrv6Oca9m+6UglrW438BPaz4BiaRTbuCNO9ypXKGzUnOpDl75u+7V
-	HSg4Ln3xiAs6YE6lQRSmupiMascUHsGpF2Mujy+hGgn2er2kH3Fe9MSenfZbsANOm/BvZYC1HWur2
-	RQag/yczCuASql+PPsYfUqpVDVApy7SnGo8DFTb7Tj5vKUuxV+Mx7yXUVFR9+FDMeh+pzgW3IymI8
-	jrsz3XtaY4dPf1TAU3hj5izYT2Lk3rXboewcbeWWCtrCeIWembHxKj6uyvlahZTsZlqu6UUkZATHq
-	t2glS6Lg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=96MG83JfK52obIx9FqaW35ejMj+Glm+jk1dPZQNpT2s=; b=G3s9uV2ucbkhf1
+	tortgyxy0EUk+cl/0bOEmMe+a0uqSxJB1IlwHil5IXc1DBznLMoTARTsM/tuIkevqc37e1SxHjXpb
+	h5Va7qdmvVpU/4eiYreiyrBPHcPU2fIqsy2bPA/TJlTynbkTM8wnF9bLAd6vXaB5ijpnJVg+453MQ
+	UsCzAWoMGIDqINJserl/3VES2C7in2CzvYtA3fZFrid5pG39qiHjMkzDrC7+3jxbazJlhPCXUp9p4
+	tUXjxwBuqk5Jnt1f6nEPdJqC58NfUoorcV/YCK1GnocpSpNY7Kijb0sy0x2VTe27NSIOpJSsanVyj
+	5XSSxHyNyluEmEyTeKWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXIjO-000000073So-1YEQ;
-	Tue, 06 Feb 2024 10:31:10 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+	id 1rXJ5Z-000000079iU-1OTT;
+	Tue, 06 Feb 2024 10:54:05 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHku-00000006iIs-2Q6q;
-	Tue, 06 Feb 2024 09:28:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1707211719;
-	bh=2Xrzre9dmcGOoIHcHGMvLHKHKLzHYCWIXe840+0qVeQ=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=x+EkDserXeZIDx38jSRNE1m5SBpssqP7OemvhDAealPBtoDg/7KRAi0mLRnQ09oj3
-	 Awzrne9T9AA3bpqNmjyvbSt94DaMPvVgysDgCbL8ZkB+wz5CJnsl1jdqmBUUVK7HwO
-	 4nMlEaZCfYd0NS/TarfVpqURG6zdGli5mq240MD1bMJzQZW6rhOmac/fCCMcZpW8Qf
-	 iTqfHsMtWtpEi9epF2Ji5auQTAvgA9J2JRKZF7wfXuy7Ua+0F9zpL1SB+ypCrEsTk4
-	 /8q4aTGrOha+feqIsXNDTx4WOVxbenIXuOItHIy5j1GCArn+LIHfZ+QB5JpzbutXhj
-	 ikgZF19ksZe3w==
-Received: from [100.113.186.2] (cola.collaboradmins.com [195.201.22.229])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 5A7DD3782039;
-	Tue,  6 Feb 2024 09:28:38 +0000 (UTC)
-Message-ID: <98c6c8ae-f7cf-4e5d-895a-18cb2dcc5d35@collabora.com>
-Date: Tue, 6 Feb 2024 10:28:38 +0100
+	id 1rXJ5V-000000079fH-2uFs
+	for linux-phy@lists.infradead.org;
+	Tue, 06 Feb 2024 10:54:03 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-33b2fba3176so473513f8f.0
+        for <linux-phy@lists.infradead.org>; Tue, 06 Feb 2024 02:54:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1707216840; x=1707821640; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=peh04Mc8jWTNyW0UQcY6hZJV+oroF5j2npCj0wR1Ht4=;
+        b=U0xAtfcqaUokFkYTbTEvi5DC8UZSg6hVgm1MJ1KkdmlpGh1bQruoK9qhHnCw4lwBGC
+         S+gVR/bHKbG0O02LUQ/0Sjxj+7yBdAYepPAOLZeC09zEimIsbMbwJM6HhC6SshNzV4pE
+         V/+oHbivNx4ooVwYZImzdu+uh0sonYYHamGDq+pYSmE4torXMWYYF0E/9+VKf0kalKAy
+         P2zKNDE8IoILNuZzdbLMrgtymihqMxXwYl5R7Ed7Eg4ohepMfj47/np7YyanXZC96ZZA
+         bSe71YCyi6UcMN91xE4YAUcx1uVLHA4bO67CxP/m0LcYvSV63zUBjKe9ImGVLHCD2qwK
+         gnCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707216840; x=1707821640;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=peh04Mc8jWTNyW0UQcY6hZJV+oroF5j2npCj0wR1Ht4=;
+        b=JXQVtrXPz6eRNV0/qcI6r1YxiLY5xVzahgqgHZpkRJPzNqhUfQ3qnPQHs7n59pUpym
+         KSMvVdvf0p/iiONZr6lbXAzZFPSGOVaFgitfAinKy7UIdz4KcyGxxLjwTnvu39fuaPX5
+         p0Wv/1KER40IMCtZ4067S1YPFFC7vGaw8TvaB6ZHHkV6BSvZQbAV17zf/yknx+anZxl7
+         B/ApR9RzaFAxZN6JGIv2ocBJhuSdzcWsiUAZfgwgjLA5cynwqLUAJhk4PdRcXG+1+GgJ
+         sMm74fbqdmrxWLQfptPxPnHn8WTHG7jhu/Uffhurjxeu+V1OJH9+R3O1WAgkJm09ENgH
+         p4/Q==
+X-Gm-Message-State: AOJu0YwZUbBq2SGAT1mcC16rvWVSTIaTL1Y8bOnSkYUpHen4UINy8tK7
+	TLNpaXsEzKS2HtKnPktTL2rfbaTTiVZ2GQTJL1SAEq182ooLtBuxCf4/MYapCcs=
+X-Google-Smtp-Source: AGHT+IH5KmQHormD38g/lCwrifWHoDohJ1EJAdKb1AvzhL0nMahHzdcj8nHtFgojh0wXa+4VvQuAug==
+X-Received: by 2002:adf:f182:0:b0:33b:247c:d61a with SMTP id h2-20020adff182000000b0033b247cd61amr1123604wro.31.1707216839885;
+        Tue, 06 Feb 2024 02:53:59 -0800 (PST)
+X-Forwarded-Encrypted: i=0; AJvYcCWfbgpNyaL1DLbG+4I/HCaNz79UPN5C40/T7D29TiocQzEiatjTb1kyP4qYoKXtD2pY2XSx9jTHXCVCWQZnqu8ulJYfRIUMTR8xkmNAWFdJIVXexSbtQ6Rq2Ex8Y4p2IzaJX9+h1aNtqo+Tby4IPmiiqDuiZtH/AAfk5eZFRt4KAGkq0rzbA2RYrbpzea2j0WVtq0btPEX20B0d1J5kOfWtP6OBj1xHfvIWssFVZOxl1HsLMhas686ushwctlHX0WlcjX/a4XE5XsONcrqlgJU/WkDIvDFuYdVhmQv+cQ5G6YNUfFgXd1Ftfze2D0AaxJWxGnkL/Tc6Seq9iQIbMtXpNklcFc92wRxxHSx1TGS/CCNUv3weIhfFBvOaO6UDwwckxUM1XJFsJm6bwnol/TjUGwaMCrkT23XGcj44lglfFBV70nYdhO2I1+0e9xBD0/2d3N5Yx3v7T8aJ9a+QcQUgAahiv10H9jgZqEtVBSkbb5ioUChgHawexZMobmNsnpyWmW5hj7DXxxoYk7ItuXzJjEYcJAZpoagLLG2SNlGIBywUj1ZhTpjUUhk7mlmIz2ykO76+ZzJxVJi7PrcBzOZh0+7VWyrgih8uBMrC8nWIDyFkS8CMDK8W8LkAF7y4H1QmT2P2C5HkJpPDd+LEOkvyWVDg1SlEfwOZ
+Received: from [192.168.1.20] ([178.197.222.62])
+        by smtp.gmail.com with ESMTPSA id f3-20020a5d5683000000b0033946c0f9e7sm1782365wrv.17.2024.02.06.02.53.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 06 Feb 2024 02:53:59 -0800 (PST)
+Message-ID: <31d2c56a-5108-4265-a267-6733e1ba328e@linaro.org>
+Date: Tue, 6 Feb 2024 11:53:55 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek,mt7988-xfi-tphy: add
  new bindings
-Content-Language: en-US
 To: Daniel Golle <daniel@makrotopia.org>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Qingfang Deng <dqfext@gmail.com>,
- SkyLake Huang <SkyLake.Huang@mediatek.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
+ <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Qingfang Deng <dqfext@gmail.com>, SkyLake Huang
+ <SkyLake.Huang@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, netdev@vger.kernel.org
 References: <3251ac3db1a739e0c18ded0a824edae981c1e2df.1707153425.git.daniel@makrotopia.org>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
 In-Reply-To: <3251ac3db1a739e0c18ded0a824edae981c1e2df.1707153425.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_012840_775249_914EC853 
-X-CRM114-Status: UNSURE (   5.82  )
+X-CRM114-CacheID: sfid-20240206_025401_797824_AC420E89 
+X-CRM114-Status: UNSURE (   7.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,29 +145,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 05/02/24 18:28, Daniel Golle ha scritto:
+On 05/02/2024 18:28, Daniel Golle wrote:
 > Add bindings for the MediaTek XFI Ethernet SerDes T-PHY found in the
 > MediaTek MT7988 SoC which can operate at various interfaces modes:
 > 
 > via USXGMII PCS:
->   * USXGMII
->   * 10GBase-R
->   * 5GBase-R
+>  * USXGMII
+>  * 10GBase-R
+>  * 5GBase-R
 > 
 > via LynxI SGMII PCS:
->   * 2500Base-X
->   * 1000Base-X
->   * Cisco SGMII (MAC side)
+>  * 2500Base-X
+>  * 1000Base-X
+>  * Cisco SGMII (MAC side)
 > 
 > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> ---
+> v2: unify filename and compatible as requested
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Several comments, from me and Rob, were ignored. Please respond to them.
 
+Best regards,
+Krzysztof
 
 
 -- 
