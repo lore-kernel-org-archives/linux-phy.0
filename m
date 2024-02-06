@@ -4,50 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E16D3C4829A
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 10:31:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22C03C4829C
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 10:31:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ktEpe5K0tRjZ6QjQOJM1xd5IbRiD9j5G2uCgVbQ3XK8=; b=M612wlSn5+Es+m
-	g/gXqgux174TkHv3bvZd+tclY2et6PG0Uc+Nc67Jq3M8TEWpjaj20TQRNdkBYUboZBMwtf0Q5IrGL
-	aeogLCCIqC/akdgM8lWQw6AmA1qQ1fFMGbwOc7qVna3RUWpeYAe3AH0g6WY3qlgDm07QFiART/fNF
-	dQ1PlSXJcvFO56SPPi1FhKGdui/8IY5WeXUrFBsfPR6MZ3xRx0q6kg7iv1xIjwlDcE4S01skLs1wM
-	HY2eJ15Q1XAfpaX2FPT6560ZDxBmNvPiC2YT+WaSFXeHnKR+wYPsQ7g7wjMbTO49l80CLFISV/IhV
-	0HP889Zaz542wZr/cH4g==;
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RMLhEVSZntjgzG+9oxgk67hBE454Bsj3isZ55UFitxQ=; b=thhIrspOngVajEqhcwUaeG1UJK
+	kIGj5ll0VvT+30DHcnrfX70wyrv6Oca9m+6UglrW438BPaz4BiaRTbuCNO9ypXKGzUnOpDl75u+7V
+	HSg4Ln3xiAs6YE6lQRSmupiMascUHsGpF2Mujy+hGgn2er2kH3Fe9MSenfZbsANOm/BvZYC1HWur2
+	RQag/yczCuASql+PPsYfUqpVDVApy7SnGo8DFTb7Tj5vKUuxV+Mx7yXUVFR9+FDMeh+pzgW3IymI8
+	jrsz3XtaY4dPf1TAU3hj5izYT2Lk3rXboewcbeWWCtrCeIWembHxKj6uyvlahZTsZlqu6UUkZATHq
+	t2glS6Lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXIjJ-000000073O8-43lJ;
-	Tue, 06 Feb 2024 10:31:05 +0000
+	id 1rXIjO-000000073So-1YEQ;
+	Tue, 06 Feb 2024 10:31:10 +0000
 Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHkQ-00000006i86-3l39;
-	Tue, 06 Feb 2024 09:28:12 +0000
+	id 1rXHku-00000006iIs-2Q6q;
+	Tue, 06 Feb 2024 09:28:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1707211689;
-	bh=A4GC26ZvMOKhodYJDqUeGvS/fHc7oz32Zo3RglFVqy4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ZuUd+Fue2DTUYn81nMSnY9HrH+nWCVRoR4LnDIm5HmZK4+fsBHcspBXbsP9JyW0u/
-	 X2Efdk2AC/zoERqxDDw5O3wVfjcBXpBOyfYUYLQgGtRxD5X1WRXpUbkNtTmPtRYaBA
-	 buGg7spyDambfAq4WTT+4YZUx/a/OkPxNxlN/bGL8Fzs2FUURqOY8eJU1q/NkYalNu
-	 z/O6E5UD7zU1Vyu265Ve/LHqNtwtUdOo26k53cX8HMf1D8hqTh06YsKdm67l1/uFsG
-	 m1jst4zG6jgS+GLeuApS2U6zjEHcSH79aNtN665AEmLZItO1Ko0Jaglu6/9PrLQJvP
-	 ghtVaIqIAA2kw==
+	s=mail; t=1707211719;
+	bh=2Xrzre9dmcGOoIHcHGMvLHKHKLzHYCWIXe840+0qVeQ=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=x+EkDserXeZIDx38jSRNE1m5SBpssqP7OemvhDAealPBtoDg/7KRAi0mLRnQ09oj3
+	 Awzrne9T9AA3bpqNmjyvbSt94DaMPvVgysDgCbL8ZkB+wz5CJnsl1jdqmBUUVK7HwO
+	 4nMlEaZCfYd0NS/TarfVpqURG6zdGli5mq240MD1bMJzQZW6rhOmac/fCCMcZpW8Qf
+	 iTqfHsMtWtpEi9epF2Ji5auQTAvgA9J2JRKZF7wfXuy7Ua+0F9zpL1SB+ypCrEsTk4
+	 /8q4aTGrOha+feqIsXNDTx4WOVxbenIXuOItHIy5j1GCArn+LIHfZ+QB5JpzbutXhj
+	 ikgZF19ksZe3w==
 Received: from [100.113.186.2] (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id D2D7F3782039;
-	Tue,  6 Feb 2024 09:28:07 +0000 (UTC)
-Message-ID: <02f4d6ee-e9f6-4184-a125-091f45bae54a@collabora.com>
-Date: Tue, 6 Feb 2024 10:28:07 +0100
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 5A7DD3782039;
+	Tue,  6 Feb 2024 09:28:38 +0000 (UTC)
+Message-ID: <98c6c8ae-f7cf-4e5d-895a-18cb2dcc5d35@collabora.com>
+Date: Tue, 6 Feb 2024 10:28:38 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] phy: add driver for MediaTek XFI T-PHY
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek,mt7988-xfi-tphy: add
+ new bindings
 Content-Language: en-US
 To: Daniel Golle <daniel@makrotopia.org>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
@@ -60,15 +61,13 @@ To: Daniel Golle <daniel@makrotopia.org>,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, netdev@vger.kernel.org
-Cc: Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
- Steven Liu <steven.liu@mediatek.com>, John Crispin <john@phrozen.org>
 References: <3251ac3db1a739e0c18ded0a824edae981c1e2df.1707153425.git.daniel@makrotopia.org>
- <2972dfd0b9ca48174fbf49b9d162bac1a12b2331.1707153425.git.daniel@makrotopia.org>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <2972dfd0b9ca48174fbf49b9d162bac1a12b2331.1707153425.git.daniel@makrotopia.org>
+In-Reply-To: <3251ac3db1a739e0c18ded0a824edae981c1e2df.1707153425.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_012811_118267_D61BD4BD 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20240206_012840_775249_914EC853 
+X-CRM114-Status: UNSURE (   5.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,34 +84,19 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 05/02/24 18:29, Daniel Golle ha scritto:
-> Add driver for MediaTek's XFI T-PHY which can be found in the MT7988
-> SoC. The XFI T-PHY is a 10 Gigabit/s Ethernet SerDes PHY with muxes on
-> the internal side to be used with either USXGMII PCS or LynxI PCS,
-> depending on the selected PHY interface mode.
+Il 05/02/24 18:28, Daniel Golle ha scritto:
+> Add bindings for the MediaTek XFI Ethernet SerDes T-PHY found in the
+> MediaTek MT7988 SoC which can operate at various interfaces modes:
 > 
-> The PHY can operates only in PHY_MODE_ETHERNET, the submode is one of
-> PHY_INTERFACE_MODE_* corresponding to the supported modes:
+> via USXGMII PCS:
+>   * USXGMII
+>   * 10GBase-R
+>   * 5GBase-R
 > 
->   * USXGMII                 \
->   * 10GBase-R                }- USXGMII PCS - XGDM  \
->   * 5GBase-R                /                        \
->                                                       }- Ethernet MAC
->   * 2500Base-X              \                        /
->   * 1000Base-X               }- LynxI PCS - GDM     /
->   * Cisco SGMII (MAC side)  /
-> 
-> In order to work-around a performance issue present on the first of
-> two XFI T-PHYs present in MT7988, special tuning is applied which can be
-> selected by adding the 'mediatek,usxgmii-performance-errata' property to
-> the device tree node.
-> 
-> There is no documentation for most registers used for the
-> analog/tuning part, however, most of the registers have been partially
-> reverse-engineered from MediaTek's SDK implementation (an opaque
-> sequence of 32-bit register writes) and descriptions for all relevant
-> digital registers and bits such as resets and muxes have been supplied
-> by MediaTek.
+> via LynxI SGMII PCS:
+>   * 2500Base-X
+>   * 1000Base-X
+>   * Cisco SGMII (MAC side)
 > 
 > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 
