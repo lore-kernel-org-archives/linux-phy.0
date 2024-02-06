@@ -4,64 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDDD0C4828D
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 15:31:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87FB5C4828D
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 17:06:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=etOShV/TwgZH29TIjiN8zL1wi6LuVFl+Z4tIeka3dKE=; b=e9nIp3ZEueIPKc
-	AOzjQM7pXeHri3qrfjakc2zQ0lXjcH7a0nkP1VQ9WzQX5s4DVA+s6ERhsDCwiYw25kSL81yyv+np1
-	0ehv3mDW8tE4zltGX5jDvRFBA9mMrmVPKS/ZlzNMReLIepko1wATiakYmCyh8G/aO/AD9/vqAkAeq
-	9QgEfK12kjXGPlzmoDX73mdlVPsxq5/Yu4X1OqjtN8/oVhgoK6HyhpL4zRw5sJnQp4KioDZVvjn0E
-	W5claKWjVSj5SRr7a5lXVHC4Yp8K1CTjSvF7WC6diuM3V2D6AdER93IraTxnYaFY9bNaT8EIJtS++
-	y1d8cC/kXzezn/d0QkTw==;
+	List-Owner; bh=kfSYUifSNyM3Lk8Pb1AlladppRt02FZtBp3UHo5NPiM=; b=AeJJFVVY+xtvJn
+	mpUHFnrL0lcmcMFUPc9PVo34HBYwG2cUWDp+OzxFFTY+Y9ZprNtt0K8GgageB0yZj/0C+zaSJEPCq
+	h1tPaRGLkDrsp653Q0pB8lYeJOsqC4DQA7BAxOOK0JkORzgnprBGS3V5wKD6PmwD2Eh+LoecGb+0M
+	/LDP8gzjUwqXl4zqYZWRhfgME2yovZCgAzaik76w/QnebGvhUusDM7A4aXhwVjuPH/0v3Mu70ABgT
+	OdvKyYwThUbO7jpLACLKgBxe7MoBQhzVMQ0yCh+EDKVKR4NUXaMdFFNcYX52Ys6xq1p1iOwVNYW4j
+	AQR7e2juPLJzhpP+HVBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXNQK-000000086Xr-1yyj;
-	Tue, 06 Feb 2024 15:31:48 +0000
-Received: from pidgin.makrotopia.org ([185.142.180.65])
+	id 1rXOuA-00000008L07-0XpI;
+	Tue, 06 Feb 2024 17:06:42 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXNQF-000000086Wp-2tfI;
-	Tue, 06 Feb 2024 15:31:45 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.96.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1rXNQ4-0000nG-2R;
-	Tue, 06 Feb 2024 15:31:32 +0000
-Date: Tue, 6 Feb 2024 15:31:21 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: SkyLake Huang <SkyLake.Huang@mediatek.com>,
-	Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	id 1rXOu7-00000008KzP-0QrO;
+	Tue, 06 Feb 2024 17:06:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id ACE47CE1413;
+	Tue,  6 Feb 2024 17:06:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA24FC433C7;
+	Tue,  6 Feb 2024 17:06:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1707239195;
+	bh=Mdibn1Y+5lHSiz0nAb0TK65XaYSoIgSUVDm18PAxxiQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=dPy6ZjEe2Zt+dwxg52XVC8PESSwxzL9L3ptuPJ6WQy4HpT9fqApeYpZdop4T5gNMj
+	 6aBATnFLZ6W4p7mczcRpd79auYTHgZ49jVXrdpBxVsOuYDC0HFKJOdyf0arHhlc+RH
+	 tb5SDUeT9zjDX5Cu3bcnCDLyh4GT6YX8gsFgHim97E++afyN9gC6w9CKuwYI7m/UoN
+	 zIOkHDWilMfEH+XqI95cewE1BiQpQ8JctOVAuXivaLCBLgCgSDpr+MI7WuSHTB43gS
+	 iv1TJJtc6MWR0e1MTdXuRsg4ci1dWiCmb8cyR5Jx99Cvw1o5aXvbJnWOLzzmV2EJWR
+	 CSqH0s0LPflFQ==
+Date: Tue, 6 Feb 2024 10:06:32 -0700
+From: Nathan Chancellor <nathan@kernel.org>
+To: Adam Ford <aford173@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de,
+	alexander.stein@ew.tq-group.com, frieder.schrempf@kontron.de,
+	Lucas Stach <l.stach@pengutronix.de>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Richard Leitner <richard.leitner@skidata.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Fabio Estevam <festevam@gmail.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Qingfang Deng <dqfext@gmail.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	netdev@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek,mt7988-xfi-tphy: add
- new bindings
-Message-ID: <ZcJQyaTotW_bCWGU@makrotopia.org>
-References: <3251ac3db1a739e0c18ded0a824edae981c1e2df.1707153425.git.daniel@makrotopia.org>
- <31d2c56a-5108-4265-a267-6733e1ba328e@linaro.org>
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>, Liu Ying <victor.liu@nxp.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, llvm@lists.linux.dev
+Subject: Re: [PATCH V8 08/12] drm/bridge: imx: add driver for HDMI TX
+ Parallel Video Interface
+Message-ID: <20240206170632.GA2183819@dev-arch.thelio-3990X>
+References: <20240203165307.7806-1-aford173@gmail.com>
+ <20240203165307.7806-9-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <31d2c56a-5108-4265-a267-6733e1ba328e@linaro.org>
+In-Reply-To: <20240203165307.7806-9-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_073143_750801_C2DE79E8 
-X-CRM114-Status: GOOD (  19.39  )
+X-CRM114-CacheID: sfid-20240206_090639_508980_7B760526 
+X-CRM114-Status: GOOD (  22.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,75 +101,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+Hi all,
 
-On Tue, Feb 06, 2024 at 11:53:55AM +0100, Krzysztof Kozlowski wrote:
-> On 05/02/2024 18:28, Daniel Golle wrote:
-> > Add bindings for the MediaTek XFI Ethernet SerDes T-PHY found in the
-> > MediaTek MT7988 SoC which can operate at various interfaces modes:
-> > 
-> > via USXGMII PCS:
-> >  * USXGMII
-> >  * 10GBase-R
-> >  * 5GBase-R
-> > 
-> > via LynxI SGMII PCS:
-> >  * 2500Base-X
-> >  * 1000Base-X
-> >  * Cisco SGMII (MAC side)
-> > 
-> > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> > ---
-> > v2: unify filename and compatible as requested
+On Sat, Feb 03, 2024 at 10:52:48AM -0600, Adam Ford wrote:
+> From: Lucas Stach <l.stach@pengutronix.de>
 > 
-> Several comments, from me and Rob, were ignored. Please respond to them.
+> This IP block is found in the HDMI subsystem of the i.MX8MP SoC. It has a
+> full timing generator and can switch between different video sources. On
+> the i.MX8MP however the only supported source is the LCDIF. The block
+> just needs to be powered up and told about the polarity of the video
+> sync signals to act in bypass mode.
+> 
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com> (v7)
+> Tested-by: Marek Vasut <marex@denx.de> (v1)
+> Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com> (v7)
+> Tested-by: Richard Leitner <richard.leitner@skidata.com> (v2)
+> Tested-by: Frieder Schrempf <frieder.schrempf@kontron.de> (v2)
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com> (v3)
+> Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+> Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+> Tested-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Adam Ford <aford173@gmail.com>
 
-I'm sorry if I have missed something. I just checked again on
-patchwork, just in case I would have missed an email reply to this or
-any of the preceding posts of this patch as part of the old series
-going to netdev.
+<snip>
 
-Comments you have made which I have addressed:
- - removed $nodename
- - use compatible as filename
+> diff --git a/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c
+> new file mode 100644
+> index 000000000000..a76b7669fe8a
+> --- /dev/null
+> +++ b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c
+...
+> +static void imx8mp_hdmi_pvi_bridge_enable(struct drm_bridge *bridge,
+> +					  struct drm_bridge_state *bridge_state)
+> +{
+> +	struct drm_atomic_state *state = bridge_state->base.state;
+> +	struct imx8mp_hdmi_pvi *pvi = to_imx8mp_hdmi_pvi(bridge);
+> +	struct drm_connector_state *conn_state;
+> +	const struct drm_display_mode *mode;
+> +	struct drm_crtc_state *crtc_state;
+> +	struct drm_connector *connector;
+> +	u32 bus_flags, val;
+> +
+> +	connector = drm_atomic_get_new_connector_for_encoder(state, bridge->encoder);
+> +	conn_state = drm_atomic_get_new_connector_state(state, connector);
+> +	crtc_state = drm_atomic_get_new_crtc_state(state, conn_state->crtc);
+> +
+> +	if (WARN_ON(pm_runtime_resume_and_get(pvi->dev)))
+> +		return;
+> +
+> +	mode = &crtc_state->adjusted_mode;
+> +
+> +	val = FIELD_PREP(PVI_CTRL_MODE_MASK, PVI_CTRL_MODE_LCDIF) | PVI_CTRL_EN;
+> +
+> +	if (mode->flags & DRM_MODE_FLAG_PVSYNC)
+> +		val |= PVI_CTRL_OP_VSYNC_POL | PVI_CTRL_INP_VSYNC_POL;
+> +
+> +	if (mode->flags & DRM_MODE_FLAG_PHSYNC)
+> +		val |= PVI_CTRL_OP_HSYNC_POL | PVI_CTRL_INP_HSYNC_POL;
+> +
+> +	if (pvi->next_bridge->timings)
+> +		bus_flags = pvi->next_bridge->timings->input_bus_flags;
+> +	else if (bridge_state)
+> +		bus_flags = bridge_state->input_bus_cfg.flags;
+> +
+> +	if (bus_flags & DRM_BUS_FLAG_DE_HIGH)
+> +		val |= PVI_CTRL_OP_DE_POL | PVI_CTRL_INP_DE_POL;
+> +
+> +	writel(val, pvi->regs + HTX_PVI_CTRL);
+> +}
 
-And the only thing I found that I didn't either fix or reply to is this:
-> Can you explain what is this issue and errata about (except performance)?
+Apologies if this has already been reported or fixed, I searched lore
+and did not find anything. Clang warns (or errors with CONFIG_WERROR=y)
+for this function:
 
-Not overwriting that (undocumented) value in that (undocumented)
-register results in 10GBase-R having performance issues according to a
-commit in MediaTek's SDK, see here:
+  drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c:81:11: error: variable 'bus_flags' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
+     81 |         else if (bridge_state)
+        |                  ^~~~~~~~~~~~
+  drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c:84:6: note: uninitialized use occurs here
+     84 |         if (bus_flags & DRM_BUS_FLAG_DE_HIGH)
+        |             ^~~~~~~~~
+  drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c:81:7: note: remove the 'if' if its condition is always true
+     81 |         else if (bridge_state)
+        |              ^~~~~~~~~~~~~~~~~
+     82 |                 bus_flags = bridge_state->input_bus_cfg.flags;
+  drivers/gpu/drm/bridge/imx/imx8mp-hdmi-pvi.c:60:15: note: initialize the variable 'bus_flags' to silence this warning
+     60 |         u32 bus_flags, val;
+        |                      ^
+        |                       = 0
+  1 error generated.
 
-https://git01.mediatek.com/plugins/gitiles/openwrt/feeds/mtk-openwrt-feeds/+/a500d94cd%5E%21/#F0
+This seems legitimate. If bridge_state can be NULL, should bus_flags be
+initialized to zero like it suggests or should that 'else if' be turned
+into a plain 'else'? I am happy to send a patch with that guidance.
 
-Maybe Bc or SkyLake of MediaTek (added to Cc) can explain this in more
-detail?
-
-
-What I did miss was Rob's comment at the very bottom of this reply:
-> What is PEXTP?
-
-I can again only answer by referencing to MediaTek's SDK sources:
-
-https://git01.mediatek.com/plugins/gitiles/openwrt/feeds/mtk-openwrt-feeds/+/refs/heads/master/21.02/files/target/linux/mediatek/files-5.4/drivers/net/ethernet/mediatek/mtk_sgmii.c#96
-
-Here this reset is called XFI_PEXTP0_GRST.
-
-I personally find that name confusing (as this PHY has nothing to do with
-_P_ci _EX_press) and have tried to get rid of it where it isn't either part
-of official documentation or already merged drivers (like Sam's clock driver).
-
-If there have been any other issues with this patch which I'm not aware
-of, please point them out to me.
-
-
-Thank you
-
-
-Best regards
-
-
-Daniel
+Cheers,
+Nathan
 
 -- 
 linux-phy mailing list
