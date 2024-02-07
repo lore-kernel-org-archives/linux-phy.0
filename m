@@ -4,70 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E2E0C4828F
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Feb 2024 10:17:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 433FDC4828D
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Feb 2024 10:35:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AxLKDL2J4phJOzoB1eIEbcfDN5A2M/aDIAuovnqruW0=; b=EPQvKVijFx8fuU
-	V7y1+UVFydqdgrQjlSssB/cRugIu59VwOBYHzX0FsCXIFJqODyVZxH8ZgYj3kWHxDO12mmq2rvm4f
-	pOHYvdlFaUulXKCy6+sOC6CJbutQTb9KBPDAAJy751huBJLGqCcPPakDbSYkao+mjPxPbXFz0Y0+0
-	BUjpBY9S4pHzsUqwAUFBDzqceKfQ6EjChVdaB2POJRjigobzKENHaBEFlfTXB+M762mQ+HA8LRSNP
-	xtqGUzLhip2G7FyHRJXSpszvTkGvumlC6HQKrkGx7NqkmfaSY+80sRdpqCPEVQ6jhEg7YQe4j3rL4
-	yqFv5M4cSrp0HRI0/WHw==;
+	List-Owner; bh=kOw+y0nNBegtA0QNnDuYiP6zFWEFOGoBaGK+5OEKITk=; b=noqEOc6Lldm13j
+	WoxJjCPgdvKlrIt503/Ehe3J7obH41x3gGX7IorQnlYfO2SxeRBCcUWhLNi/iOcYmX+tnT8bBpZXF
+	OB8LcFm0VF8ks41f4Jw8DZS6pke7RsXW1yl322XX1Gaknt9IfiLKzJAv7pfp5HYvgwVQyYTZB7Nhz
+	jkF2Od2SfvKCwutQDifmN6+gFrHJpW1uEhF5Zv+RnMu71H+YUtAfXMLvl/t2MS6yZKt6+Re8wLSw1
+	Brp0AxYrXsfvxy6D81RiNfeokXYgcvVaKRoBr+w0z97TpWR9+UATtKueWQdWpmrOqvDTdi9bngD4O
+	S6AJk+Lnt6KP+K+5TCTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXezN-0000000AK11-3RSw;
-	Wed, 07 Feb 2024 10:17:09 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rXfHH-0000000ANGS-3jzH;
+	Wed, 07 Feb 2024 10:35:39 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXezH-0000000AJzU-429K;
-	Wed, 07 Feb 2024 10:17:07 +0000
+	id 1rXfHD-0000000ANG7-2d4A
+	for linux-phy@lists.infradead.org;
+	Wed, 07 Feb 2024 10:35:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 43004CE1888;
-	Wed,  7 Feb 2024 10:16:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2A30C433F1;
-	Wed,  7 Feb 2024 10:16:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id DF37660AED;
+	Wed,  7 Feb 2024 10:35:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C31B2C433F1;
+	Wed,  7 Feb 2024 10:35:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707301015;
-	bh=BJ+Q4OeyOO0TcO3RIx09PJu3TLLV0TcK8TlZTnSjGO0=;
+	s=k20201202; t=1707302134;
+	bh=amhnJJzYltfOjwoS2oeBCkkBkbLyx1dJCyBGXv2aaVI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=JmOBKe3jMlKMJivNXcH2jQ1qEXEbCAfnZVuF0TqJsUL4AdPgl+rEZNrWochVLY/Jz
-	 Tkgnd+t4b3Kd9ogIvEGhCW6IPtl9fXjZdY+O7XEHZPfN22s756GmotN6jb+lRhlOJE
-	 EWqbaM6UW1UaSIvON/6H4yk+wNeWC3/rs4B4l5MCyNoYXKOr+r/+LKuMNOBQSTXDB6
-	 55oXrx5FlsNnt1/xLGoaqa8zmKnOmqyN+lJLCaTv89PEaQ+yUh1bl7z1eJ0wPDYxvs
-	 04l0rKSR3VanwAYFYjb0UOvO32Ut5eCO9Lr7gIRFQ78v9b4y0ML2hyliWzj8WU8CLv
-	 veLzjjwdMmZng==
-Date: Wed, 7 Feb 2024 11:16:52 +0100
+	b=K5/SqoW8uvvY5FZhQF1wIOuuXwktm60ojiEajvVdFW0QrY8/vGHqQ/RNSchRX0kp4
+	 NGGhYdRoXOOAOVVFhXwZauqvu5+oTfTFUzFgV+JOJlYsf8zNl+OeUoJ7rVPSEhSxRT
+	 I5QT5HWj8yymVFUQHMzEPiFIr2lfwP0JYC0Fm2yMPN5jTacsHog6m511A6njLg5gvV
+	 42jEocSKKwGyhh0rKO7C3D516iA8JdYdyjNGs/lQpyAqlh0R5BcU4T8XyhPMiVqSg5
+	 6SQyIgonJOA+5i5wEAPz8dZNe+lhGr1CkqLuI9MnJDkKXmbR568HEZjznJRsf49tZK
+	 3B7x6t38iBzfQ==
+Date: Wed, 7 Feb 2024 11:35:31 +0100
 From: Vinod Koul <vkoul@kernel.org>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Algea Cao <algea.cao@rock-chips.com>, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, kernel@collabora.com
-Subject: Re: [PATCH v2 2/2] phy: rockchip: Add Samsung HDMI/eDP Combo PHY
- driver
-Message-ID: <ZcNYlFgT0rXiCGbo@matsya>
-References: <20240205-phy-hdptx-v2-0-a7150814c047@collabora.com>
- <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+To: Shengyang Chen <shengyang.chen@starfivetech.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	p.zabel@pengutronix.de, minda.chen@starfivetech.com,
+	changhuang.liang@starfivetech.com, rogerq@kernel.org,
+	geert+renesas@glider.be, keith.zhao@starfivetech.com,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 2/2] phy: starfive: Add mipi dphy tx support
+Message-ID: <ZcNc8zZzsVU6viBL@matsya>
+References: <20240206061921.107372-1-shengyang.chen@starfivetech.com>
+ <20240206061921.107372-3-shengyang.chen@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+In-Reply-To: <20240206061921.107372-3-shengyang.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240207_021704_405978_730CB20E 
-X-CRM114-Status: GOOD (  21.49  )
+X-CRM114-CacheID: sfid-20240207_023535_796716_FE716372 
+X-CRM114-Status: GOOD (  20.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,1114 +78,727 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-02-24, 13:24, Cristian Ciocaltea wrote:
-> Add driver for the HDMI/eDP TX Combo PHY found on Rockchip RK3588 SoC.
+On 06-02-24, 14:19, Shengyang Chen wrote:
+> Add mipi dphy tx support for the StarFive JH7110 SoC.
+> It is a module which is used to receive data from DSI
+> driver and transfer data to DSI interface like mipi screen.
 > 
-> The PHY is based on a Samsung IP block and supports HDMI 2.1 TMDS, FRL
-> and eDP links.  The maximum data rate is 12Gbps (FRL), while the minimum
-> is 250Mbps (TMDS).
-> 
-> Only the TMDS link is currently supported.
-> 
-> Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
-> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> Signed-off-by: Shengyang Chen <shengyang.chen@starfivetech.com>
 > ---
->  drivers/phy/rockchip/Kconfig                      |    8 +
->  drivers/phy/rockchip/Makefile                     |    1 +
->  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 1040 +++++++++++++++++++++
->  3 files changed, 1049 insertions(+)
+>  MAINTAINERS                               |   7 +
+>  drivers/phy/starfive/Kconfig              |  10 +
+>  drivers/phy/starfive/Makefile             |   1 +
+>  drivers/phy/starfive/phy-jh7110-dphy-tx.c | 635 ++++++++++++++++++++++
+>  4 files changed, 653 insertions(+)
+>  create mode 100644 drivers/phy/starfive/phy-jh7110-dphy-tx.c
 > 
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 94360fc96a6f..a34f67bb7e61 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -83,6 +83,14 @@ config PHY_ROCKCHIP_PCIE
->  	help
->  	  Enable this to support the Rockchip PCIe PHY.
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 944b8ec33639..5e062b7393cb 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -20864,6 +20864,13 @@ S:	Supported
+>  F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-rx.yaml
+>  F:	drivers/phy/starfive/phy-jh7110-dphy-rx.c
 >  
-> +config PHY_ROCKCHIP_SAMSUNG_HDPTX
-> +	tristate "Rockchip Samsung HDMI/eDP Combo PHY driver"
-> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the Rockchip HDMI/eDP Combo PHY
-> +	  with Samsung IP block.
+> +STARFIVE JH7110 DPHY TX DRIVER
+> +M:	Keith Zhao <keith.zhao@starfivetech.com>
+> +M:	Shengyang Chen <shengyang.chen@starfivetech.com>
+> +S:	Supported
+> +F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+> +F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
 > +
->  config PHY_ROCKCHIP_SNPS_PCIE3
->  	tristate "Rockchip Snps PCIe3 PHY Driver"
->  	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
-> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
-> index 7eab129230d1..3d911304e654 100644
-> --- a/drivers/phy/rockchip/Makefile
-> +++ b/drivers/phy/rockchip/Makefile
-> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
->  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
->  obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
->  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
-> +obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
->  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
->  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
->  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>  STARFIVE JH7110 MMC/SD/SDIO DRIVER
+>  M:	William Qiu <william.qiu@starfivetech.com>
+>  S:	Supported
+> diff --git a/drivers/phy/starfive/Kconfig b/drivers/phy/starfive/Kconfig
+> index 9508e2143011..d0cdd7cb4a13 100644
+> --- a/drivers/phy/starfive/Kconfig
+> +++ b/drivers/phy/starfive/Kconfig
+> @@ -15,6 +15,16 @@ config PHY_STARFIVE_JH7110_DPHY_RX
+>  	  system. If M is selected, the module will be called
+>  	  phy-jh7110-dphy-rx.ko.
+>  
+> +config PHY_STARFIVE_JH7110_DPHY_TX
+> +	tristate "StarFive JH7110 D-PHY TX Support"
+> +	depends on HAS_IOMEM
+> +	select GENERIC_PHY
+> +	select GENERIC_PHY_MIPI_DPHY
+> +	help
+> +	  Choose this option if you have a StarFive D-PHY TX in your
+> +	  system. If M is selected, the module will be called
+> +	  phy-jh7110-dphy-tx.ko.
+> +
+>  config PHY_STARFIVE_JH7110_PCIE
+>  	tristate "Starfive JH7110 PCIE 2.0/USB 3.0 PHY support"
+>  	depends on HAS_IOMEM
+> diff --git a/drivers/phy/starfive/Makefile b/drivers/phy/starfive/Makefile
+> index b391018b7c47..eedc4a6fec15 100644
+> --- a/drivers/phy/starfive/Makefile
+> +++ b/drivers/phy/starfive/Makefile
+> @@ -1,4 +1,5 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_RX)	+= phy-jh7110-dphy-rx.o
+> +obj-$(CONFIG_PHY_STARFIVE_JH7110_DPHY_TX)	+= phy-jh7110-dphy-tx.o
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_PCIE)		+= phy-jh7110-pcie.o
+>  obj-$(CONFIG_PHY_STARFIVE_JH7110_USB)		+= phy-jh7110-usb.o
+> diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
 > new file mode 100644
-> index 000000000000..744bbe8280a8
+> index 000000000000..00be118c9606
 > --- /dev/null
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -0,0 +1,1040 @@
+> +++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> @@ -0,0 +1,635 @@
 > +// SPDX-License-Identifier: GPL-2.0+
 > +/*
-> + * Copyright (c) 2021-2022 Rockchip Electronics Co., Ltd.
-> + * Copyright (c) 2024 Collabora Ltd.
+> + * DPHY TX driver for the StarFive JH7110 SoC
 > + *
-> + * Author: Algea Cao <algea.cao@rock-chips.com>
-> + * Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> + * Copyright (C) 2023 StarFive Technology Co., Ltd.
+> + * Author: Keith Zhao <keith.zhao@starfivetech.com>
+> + * Author: Shengyang Chen <shengyang.chen@starfivetech.com>
 > + */
-> +#include <linux/bitfield.h>
+> +
 > +#include <linux/clk.h>
-> +#include <linux/delay.h>
+> +#include <linux/io.h>
 > +#include <linux/mfd/syscon.h>
 > +#include <linux/module.h>
 > +#include <linux/of.h>
-> +#include <linux/of_platform.h>
+> +#include <linux/of_device.h>
 > +#include <linux/phy/phy.h>
+> +#include <linux/phy/phy-mipi-dphy.h>
 > +#include <linux/platform_device.h>
-> +#include <linux/rational.h>
-> +#include <linux/regmap.h>
+> +#include <linux/pm_runtime.h>
 > +#include <linux/reset.h>
 > +
-> +#define GRF_HDPTX_CON0			0x00
-> +#define HDPTX_I_PLL_EN			BIT(7)
-> +#define HDPTX_I_BIAS_EN			BIT(6)
-> +#define HDPTX_I_BGR_EN			BIT(5)
-> +#define GRF_HDPTX_STATUS		0x80
-> +#define HDPTX_O_PLL_LOCK_DONE		BIT(3)
-> +#define HDPTX_O_PHY_CLK_RDY		BIT(2)
-> +#define HDPTX_O_PHY_RDY			BIT(1)
-> +#define HDPTX_O_SB_RDY			BIT(0)
+> +#define STF_DPHY_APBIFSAIF_SYSCFG(x)			(x)
 > +
-> +#define HDTPX_REG(_n, _min, _max)				\
-> +	(							\
-> +		BUILD_BUG_ON_ZERO((0x##_n) < (0x##_min)) +	\
-> +		BUILD_BUG_ON_ZERO((0x##_n) > (0x##_max)) +	\
-> +		((0x##_n) * 4)					\
-> +	)
+> +#define  STF_DPHY_AON_POWER_READY_N_SHIFT		0x0U
+> +#define  STF_DPHY_AON_POWER_READY_N_MASK		BIT(0)
+> +#define  STF_DPHY_CFG_L0_SWAP_SEL_SHIFT			0xCU
+
+lower case please, here and everywhere
+
+> +#define  STF_DPHY_CFG_L0_SWAP_SEL_MASK			GENMASK(14, 12)
+> +#define  STF_DPHY_CFG_L1_SWAP_SEL_SHIFT			0xFU
+> +#define  STF_DPHY_CFG_L1_SWAP_SEL_MASK			GENMASK(17, 15)
+> +#define  STF_DPHY_CFG_L2_SWAP_SEL_SHIFT			0x12U
+> +#define  STF_DPHY_CFG_L2_SWAP_SEL_MASK			GENMASK(20, 18)
+> +#define  STF_DPHY_CFG_L3_SWAP_SEL_SHIFT			0x15U
+> +#define  STF_DPHY_CFG_L3_SWAP_SEL_MASK			GENMASK(23, 21)
+> +#define  STF_DPHY_CFG_L4_SWAP_SEL_SHIFT			0x18U
+> +#define  STF_DPHY_CFG_L4_SWAP_SEL_MASK			GENMASK(26, 24)
+> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT		0x12U
+> +#define  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK		BIT(18)
+> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT		0x13U
+> +#define  STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK		GENMASK(23, 19)
+> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT		0x18U
+> +#define  STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK		GENMASK(28, 24)
 > +
-> +#define CMN_REG(n)			HDTPX_REG(n, 0000, 00A7)
-> +#define SB_REG(n)			HDTPX_REG(n, 0100, 0129)
-> +#define LNTOP_REG(n)			HDTPX_REG(n, 0200, 0229)
-> +#define LANE_REG(n)			HDTPX_REG(n, 0300, 062D)
+> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT		0x5U
+> +#define  STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK		GENMASK(9, 5)
+> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT		0xAU
+> +#define  STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK		GENMASK(14, 10)
+> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT		0xFU
+> +#define  STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK		GENMASK(19, 15)
+> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT		0x14U
+> +#define  STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK		GENMASK(24, 20)
+> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT		0x19U
+> +#define  STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK		GENMASK(29, 25)
 > +
-> +/* CMN_REG(0008) */
-> +#define LCPLL_EN_MASK			BIT(6)
-> +#define LCPLL_LCVCO_MODE_EN_MASK	BIT(4)
-> +/* CMN_REG(001E) */
-> +#define LCPLL_PI_EN_MASK		BIT(5)
-> +#define LCPLL_100M_CLK_EN_MASK		BIT(0)
-> +/* CMN_REG(0025) */
-> +#define LCPLL_PMS_IQDIV_RSTN		BIT(4)
-> +/* CMN_REG(0028) */
-> +#define LCPLL_SDC_FRAC_EN		BIT(2)
-> +#define LCPLL_SDC_FRAC_RSTN		BIT(0)
-> +/* CMN_REG(002D) */
-> +#define LCPLL_SDC_N_MASK		GENMASK(3, 1)
-> +/* CMN_REG(002E) */
-> +#define LCPLL_SDC_NUMBERATOR_MASK	GENMASK(5, 0)
-> +/* CMN_REG(002F) */
-> +#define LCPLL_SDC_DENOMINATOR_MASK	GENMASK(7, 2)
-> +#define LCPLL_SDC_NDIV_RSTN		BIT(0)
-> +/* CMN_REG(003D) */
-> +#define ROPLL_LCVCO_EN			BIT(4)
-> +/* CMN_REG(004E) */
-> +#define ROPLL_PI_EN			BIT(5)
-> +/* CMN_REG(005C) */
-> +#define ROPLL_PMS_IQDIV_RSTN		BIT(5)
-> +/* CMN_REG(005E) */
-> +#define ROPLL_SDM_EN_MASK		BIT(6)
-> +#define ROPLL_SDM_FRAC_EN_RBR		BIT(3)
-> +#define ROPLL_SDM_FRAC_EN_HBR		BIT(2)
-> +#define ROPLL_SDM_FRAC_EN_HBR2		BIT(1)
-> +#define ROPLL_SDM_FRAC_EN_HBR3		BIT(0)
-> +/* CMN_REG(0064) */
-> +#define ROPLL_SDM_NUM_SIGN_RBR_MASK	BIT(3)
-> +/* CMN_REG(0069) */
-> +#define ROPLL_SDC_N_RBR_MASK		GENMASK(2, 0)
-> +/* CMN_REG(0074) */
-> +#define ROPLL_SDC_NDIV_RSTN		BIT(2)
-> +#define ROPLL_SSC_EN			BIT(0)
-> +/* CMN_REG(0081) */
-> +#define OVRD_PLL_CD_CLK_EN		BIT(8)
-> +#define PLL_CD_HSCLK_EAST_EN		BIT(0)
-> +/* CMN_REG(0086) */
-> +#define PLL_PCG_POSTDIV_SEL_MASK	GENMASK(7, 4)
-> +#define PLL_PCG_CLK_SEL_MASK		GENMASK(3, 1)
-> +#define PLL_PCG_CLK_EN			BIT(0)
-> +/* CMN_REG(0087) */
-> +#define PLL_FRL_MODE_EN			BIT(3)
-> +#define PLL_TX_HS_CLK_EN		BIT(2)
-> +/* CMN_REG(0089) */
-> +#define LCPLL_ALONE_MODE		BIT(1)
-> +/* CMN_REG(0097) */
-> +#define DIG_CLK_SEL			BIT(1)
-> +#define ROPLL_REF			BIT(1)
-> +#define LCPLL_REF			0
-> +/* CMN_REG(0099) */
-> +#define CMN_ROPLL_ALONE_MODE		BIT(2)
-> +#define ROPLL_ALONE_MODE		BIT(2)
-> +/* CMN_REG(009A) */
-> +#define HS_SPEED_SEL			BIT(0)
-> +#define DIV_10_CLOCK			BIT(0)
-> +/* CMN_REG(009B) */
-> +#define IS_SPEED_SEL			BIT(4)
-> +#define LINK_SYMBOL_CLOCK		BIT(4)
-> +#define LINK_SYMBOL_CLOCK1_2		0
+> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK		GENMASK(4, 0)
+> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT		0x5U
+> +#define  STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK		GENMASK(9, 5)
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK		GENMASK(23, 0)
 > +
-> +/* SB_REG(0102) */
-> +#define OVRD_SB_RXTERM_EN_MASK		BIT(5)
-> +#define SB_RXTERM_EN_MASK		BIT(4)
-> +#define ANA_SB_RXTERM_OFFSP_MASK	GENMASK(3, 0)
-> +/* SB_REG(0103) */
-> +#define ANA_SB_RXTERM_OFFSN_MASK	GENMASK(6, 3)
-> +#define OVRD_SB_RX_RESCAL_DONE_MASK	BIT(1)
-> +#define SB_RX_RESCAL_DONE_MASK		BIT(0)
-> +/* SB_REG(0104) */
-> +#define OVRD_SB_EN_MASK			BIT(5)
-> +#define SB_EN_MASK			BIT(4)
-> +/* SB_REG(0105) */
-> +#define OVRD_SB_EARC_CMDC_EN_MASK	BIT(6)
-> +#define SB_EARC_CMDC_EN_MASK		BIT(5)
-> +#define ANA_SB_TX_HLVL_PROG_MASK	GENMASK(2, 0)
-> +/* SB_REG(0106) */
-> +#define ANA_SB_TX_LLVL_PROG_MASK	GENMASK(6, 4)
-> +/* SB_REG(0109) */
-> +#define ANA_SB_DMRX_AFC_DIV_RATIO_MASK	GENMASK(2, 0)
-> +/* SB_REG(010F) */
-> +#define OVRD_SB_VREG_EN_MASK		BIT(7)
-> +#define SB_VREG_EN_MASK			BIT(6)
-> +#define OVRD_SB_VREG_LPF_BYPASS_MASK	BIT(5)
-> +#define SB_VREG_LPF_BYPASS_MASK		BIT(4)
-> +#define ANA_SB_VREG_GAIN_CTRL_MASK	GENMASK(3, 0)
-> +/* SB_REG(0110) */
-> +#define ANA_SB_VREG_REF_SEL_MASK	BIT(0)
-> +/* SB_REG(0113) */
-> +#define SB_RX_RCAL_OPT_CODE_MASK	GENMASK(5, 4)
-> +#define SB_RX_RTERM_CTRL_MASK		GENMASK(3, 0)
-> +/* SB_REG(0114) */
-> +#define SB_TG_SB_EN_DELAY_TIME_MASK	GENMASK(5, 3)
-> +#define SB_TG_RXTERM_EN_DELAY_TIME_MASK	GENMASK(2, 0)
-> +/* SB_REG(0115) */
-> +#define SB_READY_DELAY_TIME_MASK	GENMASK(5, 3)
-> +#define SB_TG_OSC_EN_DELAY_TIME_MASK	GENMASK(2, 0)
-> +/* SB_REG(0116) */
-> +#define AFC_RSTN_DELAY_TIME_MASK	GENMASK(6, 4)
-> +/* SB_REG(0117) */
-> +#define FAST_PULSE_TIME_MASK		GENMASK(3, 0)
-> +/* SB_REG(011B) */
-> +#define SB_EARC_SIG_DET_BYPASS_MASK	BIT(4)
-> +#define SB_AFC_TOL_MASK			GENMASK(3, 0)
-> +/* SB_REG(011F) */
-> +#define SB_PWM_AFC_CTRL_MASK		GENMASK(7, 2)
-> +#define SB_RCAL_RSTN_MASK		BIT(1)
-> +/* SB_REG(0120) */
-> +#define SB_EARC_EN_MASK			BIT(1)
-> +#define SB_EARC_AFC_EN_MASK		BIT(2)
-> +/* SB_REG(0123) */
-> +#define OVRD_SB_READY_MASK		BIT(5)
-> +#define SB_READY_MASK			BIT(4)
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK		GENMASK(8, 0)
+> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT		0x9U
+> +#define  STF_DPHY_RG_CDTX_PLL_FM_EN_MASK		BIT(9)
+> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT	0xAU
+> +#define  STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK	BIT(10)
+> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT		0xBU
+> +#define  STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK		GENMASK(12, 11)
 > +
-> +/* LNTOP_REG(0200) */
-> +#define PROTOCOL_SEL			BIT(2)
-> +#define HDMI_MODE			BIT(2)
-> +#define HDMI_TMDS_FRL_SEL		BIT(1)
-> +/* LNTOP_REG(0206) */
-> +#define DATA_BUS_SEL			BIT(0)
-> +#define DATA_BUS_36_40			BIT(0)
-> +/* LNTOP_REG(0207) */
-> +#define LANE_EN				0xf
-> +#define ALL_LANE_EN			0xf
+> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT		0x12U
+> +#define  STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK		0x40000U
 > +
-> +/* LANE_REG(0312) */
-> +#define LN0_TX_SER_RATE_SEL_RBR		BIT(5)
-> +#define LN0_TX_SER_RATE_SEL_HBR		BIT(4)
-> +#define LN0_TX_SER_RATE_SEL_HBR2	BIT(3)
-> +#define LN0_TX_SER_RATE_SEL_HBR3	BIT(2)
-> +/* LANE_REG(0412) */
-> +#define LN1_TX_SER_RATE_SEL_RBR		BIT(5)
-> +#define LN1_TX_SER_RATE_SEL_HBR		BIT(4)
-> +#define LN1_TX_SER_RATE_SEL_HBR2	BIT(3)
-> +#define LN1_TX_SER_RATE_SEL_HBR3	BIT(2)
-> +/* LANE_REG(0512) */
-> +#define LN2_TX_SER_RATE_SEL_RBR		BIT(5)
-> +#define LN2_TX_SER_RATE_SEL_HBR		BIT(4)
-> +#define LN2_TX_SER_RATE_SEL_HBR2	BIT(3)
-> +#define LN2_TX_SER_RATE_SEL_HBR3	BIT(2)
-> +/* LANE_REG(0612) */
-> +#define LN3_TX_SER_RATE_SEL_RBR		BIT(5)
-> +#define LN3_TX_SER_RATE_SEL_HBR		BIT(4)
-> +#define LN3_TX_SER_RATE_SEL_HBR2	BIT(3)
-> +#define LN3_TX_SER_RATE_SEL_HBR3	BIT(2)
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT	0x0U
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK	GENMASK(7, 0)
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT	0x8U
+> +#define  STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK		GENMASK(15, 8)
+> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT		0x10U
+> +#define  STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK		GENMASK(23, 16)
+> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT		0x18U
+> +#define  STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK		GENMASK(31, 24)
 > +
-> +struct lcpll_config {
-> +	u32 bit_rate;
-> +	u8 lcvco_mode_en;
-> +	u8 pi_en;
-> +	u8 clk_en_100m;
-> +	u8 pms_mdiv;
-> +	u8 pms_mdiv_afc;
-> +	u8 pms_pdiv;
-> +	u8 pms_refdiv;
-> +	u8 pms_sdiv;
-> +	u8 pi_cdiv_rstn;
-> +	u8 pi_cdiv_sel;
-> +	u8 sdm_en;
-> +	u8 sdm_rstn;
-> +	u8 sdc_frac_en;
-> +	u8 sdc_rstn;
-> +	u8 sdm_deno;
-> +	u8 sdm_num_sign;
-> +	u8 sdm_num;
-> +	u8 sdc_n;
-> +	u8 sdc_n2;
-> +	u8 sdc_num;
-> +	u8 sdc_deno;
-> +	u8 sdc_ndiv_rstn;
-> +	u8 ssc_en;
-> +	u8 ssc_fm_dev;
-> +	u8 ssc_fm_freq;
-> +	u8 ssc_clk_div_sel;
-> +	u8 cd_tx_ser_rate_sel;
+> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT		0x0U
+> +#define  STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK		GENMASK(7, 0)
+> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT		0x8U
+> +#define  STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK		GENMASK(15, 8)
+> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT		0x10U
+> +#define  STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK		GENMASK(23, 16)
+> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT		0x18U
+> +#define  STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK		GENMASK(31, 24)
+> +
+> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT		0x0U
+> +#define  STF_DPHY_RG_EXTD_CYCLE_SEL_MASK		GENMASK(2, 0)
+> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT		0x0U
+> +#define  STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK		GENMASK(31, 0)
+> +
+> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT	0x1U
+> +#define  STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK		GENMASK(2, 1)
+> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT		0x3U
+> +#define  STF_DPHY_SCFG_PPI_C_READY_SEL_MASK		GENMASK(4, 3)
+> +
+> +#define  STF_DPHY_REFCLK_IN_SEL_SHIFT			0x1AU
+> +#define  STF_DPHY_REFCLK_IN_SEL_MASK			GENMASK(28, 26)
+> +#define  STF_DPHY_RESETB_SHIFT				0x1DU
+> +#define  STF_DPHY_RESETB_MASK				BIT(29)
+> +
+> +#define STF_DPHY_REFCLK_12M				1
+> +#define STF_DPHY_BITRATE_ALIGN				10000000
+> +
+> +#define STF_MAP_LANES_NUM				5
+> +
+> +struct m31_dphy_config {
+> +	int ref_clk;
+> +	unsigned long bitrate;
+> +	u32 pll_prev_div;
+> +	u32 pll_fbk_int;
+> +	u32 pll_fbk_fra;
+> +	u32 extd_cycle_sel;
+> +	u32 dlane_hs_pre_time;
+> +	u32 dlane_hs_zero_time;
+> +	u32 dlane_hs_trail_time;
+> +	u32 clane_hs_pre_time;
+> +	u32 clane_hs_zero_time;
+> +	u32 clane_hs_trail_time;
+> +	u32 clane_hs_clk_pre_time;
+> +	u32 clane_hs_clk_post_time;
 > +};
 > +
-> +struct ropll_config {
-> +	u32 bit_rate;
-> +	u8 pms_mdiv;
-> +	u8 pms_mdiv_afc;
-> +	u8 pms_pdiv;
-> +	u8 pms_refdiv;
-> +	u8 pms_sdiv;
-> +	u8 pms_iqdiv_rstn;
-> +	u8 ref_clk_sel;
-> +	u8 sdm_en;
-> +	u8 sdm_rstn;
-> +	u8 sdc_frac_en;
-> +	u8 sdc_rstn;
-> +	u8 sdm_clk_div;
-> +	u8 sdm_deno;
-> +	u8 sdm_num_sign;
-> +	u8 sdm_num;
-> +	u8 sdc_n;
-> +	u8 sdc_num;
-> +	u8 sdc_deno;
-> +	u8 sdc_ndiv_rstn;
-> +	u8 ssc_en;
-> +	u8 ssc_fm_dev;
-> +	u8 ssc_fm_freq;
-> +	u8 ssc_clk_div_sel;
-> +	u8 ana_cpp_ctrl;
-> +	u8 ana_lpf_c_sel;
-> +	u8 cd_tx_ser_rate_sel;
+> +static const struct m31_dphy_config m31_dphy_configs[] = {
+> +	{12000000, 160000000, 0x0, 0x6a, 0xaa << 16 | 0xaa << 8 | 0xaa,
+
+FIELD_PREP/GET instead of bit shifts please
+
+> +	 0x3, 0xa, 0x17, 0x11, 0x5, 0x2b, 0xd, 0x7, 0x3d},
+> +	{12000000, 170000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x3, 0xb, 0x18, 0x11, 0x5, 0x2e, 0xd, 0x7, 0x3d},
+> +	{12000000, 180000000, 0x0, 0x78, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x3, 0xb, 0x19, 0x12, 0x6, 0x30, 0xe, 0x7, 0x3e},
+> +	{12000000, 190000000, 0x0, 0x7e, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x3, 0xc, 0x1a, 0x12, 0x6, 0x33, 0xe, 0x7, 0x3e},
+> +	{12000000, 200000000, 0x0, 0x85, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x3, 0xc, 0x1b, 0x13, 0x7, 0x35, 0xf, 0x7, 0x3f},
+> +	{12000000, 320000000, 0x0, 0x6a, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0x8, 0x14, 0xf, 0x5, 0x2b, 0xd, 0x3, 0x23},
+> +	{12000000, 330000000, 0x0, 0x6e, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0x8, 0x15, 0xf, 0x5, 0x2d, 0xd, 0x3, 0x23},
+> +	{12000000, 340000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0x9, 0x15, 0xf, 0x5, 0x2e, 0xd, 0x3, 0x23},
+> +	{12000000, 350000000, 0x0, 0x74, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0x9, 0x15, 0x10, 0x6, 0x2f, 0xe, 0x3, 0x24},
+> +	{12000000, 360000000, 0x0, 0x78, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0x9, 0x16, 0x10, 0x6, 0x30, 0xe, 0x3, 0x24},
+> +	{12000000, 370000000, 0x0, 0x7b, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0x9, 0x17, 0x10, 0x6, 0x32, 0xe, 0x3, 0x24},
+> +	{12000000, 380000000, 0x0, 0x7e, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xa, 0x17, 0x10, 0x6, 0x33, 0xe, 0x3, 0x24},
+> +	{12000000, 390000000, 0x0, 0x82, 0x0 << 16 | 0x0 << 8 | 0x0, 0x2,
+> +	 0xa, 0x17, 0x11, 0x6, 0x35, 0xf, 0x3, 0x25},
+> +	{12000000, 400000000, 0x0, 0x85, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xa, 0x18, 0x11, 0x7, 0x35, 0xf, 0x3, 0x25},
+> +	{12000000, 410000000, 0x0, 0x88, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xa, 0x19, 0x11, 0x7, 0x37, 0xf, 0x3, 0x25},
+> +	{12000000, 420000000, 0x0, 0x8c, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xa, 0x19, 0x12, 0x7, 0x38, 0x10, 0x3, 0x26},
+> +	{12000000, 430000000, 0x0, 0x8f, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xb, 0x19, 0x12, 0x7, 0x39, 0x10, 0x3, 0x26},
+> +	{12000000, 440000000, 0x0, 0x92, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xb, 0x1a, 0x12, 0x7, 0x3b, 0x10, 0x3, 0x26},
+> +	{12000000, 450000000, 0x0, 0x96, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xb, 0x1b, 0x12, 0x8, 0x3c, 0x10, 0x3, 0x26},
+> +	{12000000, 460000000, 0x0, 0x99, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xb, 0x1b, 0x13, 0x8, 0x3d, 0x11, 0x3, 0x27},
+> +	{12000000, 470000000, 0x0, 0x9c, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xc, 0x1b, 0x13, 0x8, 0x3e, 0x11, 0x3, 0x27},
+> +	{12000000, 480000000, 0x0, 0xa0, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xc, 0x1c, 0x13, 0x8, 0x40, 0x11, 0x3, 0x27},
+> +	{12000000, 490000000, 0x0, 0xa3, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xc, 0x1d, 0x14, 0x8, 0x42, 0x12, 0x3, 0x28},
+> +	{12000000, 500000000, 0x0, 0xa6, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xc, 0x1d, 0x14, 0x9, 0x42, 0x12, 0x3, 0x28},
+> +	{12000000, 510000000, 0x0, 0xaa, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xc, 0x1e, 0x14, 0x9, 0x44, 0x12, 0x3, 0x28},
+> +	{12000000, 520000000, 0x0, 0xad, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xd, 0x1e, 0x15, 0x9, 0x45, 0x13, 0x3, 0x29},
+> +	{12000000, 530000000, 0x0, 0xb0, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xd, 0x1e, 0x15, 0x9, 0x47, 0x13, 0x3, 0x29},
+> +	{12000000, 540000000, 0x0, 0xb4, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xd, 0x1f, 0x15, 0x9, 0x48, 0x13, 0x3, 0x29},
+> +	{12000000, 550000000, 0x0, 0xb7, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xd, 0x20, 0x16, 0x9, 0x4a, 0x14, 0x3, 0x2a},
+> +	{12000000, 560000000, 0x0, 0xba, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xe, 0x20, 0x16, 0xa, 0x4a, 0x14, 0x3, 0x2a},
+> +	{12000000, 570000000, 0x0, 0xbe, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xe, 0x20, 0x16, 0xa, 0x4c, 0x14, 0x3, 0x2a},
+> +	{12000000, 580000000, 0x0, 0xc1, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xe, 0x21, 0x16, 0xa, 0x4d, 0x14, 0x3, 0x2a},
+> +	{12000000, 590000000, 0x0, 0xc4, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xe, 0x22, 0x17, 0xa, 0x4f, 0x15, 0x3, 0x2b},
+> +	{12000000, 600000000, 0x0, 0xc8, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x2, 0xe, 0x23, 0x17, 0xa, 0x50, 0x15, 0x3, 0x2b},
+> +	{12000000, 610000000, 0x0, 0xcb, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x2, 0xf, 0x22, 0x17, 0xb, 0x50, 0x15, 0x3, 0x2b},
+> +	{12000000, 620000000, 0x0, 0xce, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x2, 0xf, 0x23, 0x18, 0xb, 0x52, 0x16, 0x3, 0x2c},
+> +	{12000000, 630000000, 0x0, 0x69, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x7, 0x12, 0xd, 0x5, 0x2a, 0xc, 0x1, 0x15},
+> +	{12000000, 640000000, 0x0, 0x6a, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x7, 0x13, 0xe, 0x5, 0x2b, 0xd, 0x1, 0x16},
+> +	{12000000, 650000000, 0x0, 0x6c, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x7, 0x13, 0xe, 0x5, 0x2c, 0xd, 0x1, 0x16},
+> +	{12000000, 660000000, 0x0, 0x6e, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x7, 0x13, 0xe, 0x5, 0x2d, 0xd, 0x1, 0x16},
+> +	{12000000, 670000000, 0x0, 0x6f, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x8, 0x13, 0xe, 0x5, 0x2d, 0xd, 0x1, 0x16},
+> +	{12000000, 680000000, 0x0, 0x71, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x8, 0x13, 0xe, 0x5, 0x2e, 0xd, 0x1, 0x16},
+> +	{12000000, 690000000, 0x0, 0x73, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x8, 0x14, 0xe, 0x6, 0x2e, 0xd, 0x1, 0x16},
+> +	{12000000, 700000000, 0x0, 0x74, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x8, 0x14, 0xf, 0x6, 0x2f, 0xe, 0x1, 0x16},
+> +	{12000000, 710000000, 0x0, 0x76, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x8, 0x14, 0xf, 0x6, 0x2f, 0xe, 0x1, 0x17},
+> +	{12000000, 720000000, 0x0, 0x78, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x8, 0x15, 0xf, 0x6, 0x30, 0xe, 0x1, 0x17},
+> +	{12000000, 730000000, 0x0, 0x79, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x8, 0x15, 0xf, 0x6, 0x31, 0xe, 0x1, 0x17},
+> +	{12000000, 740000000, 0x0, 0x7b, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x8, 0x15, 0xf, 0x6, 0x32, 0xe, 0x1, 0x17},
+> +	{12000000, 750000000, 0x0, 0x7d, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x8, 0x16, 0xf, 0x6, 0x32, 0xe, 0x1, 0x17},
+> +	{12000000, 760000000, 0x0, 0x7e, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x9, 0x15, 0xf, 0x6, 0x33, 0xe, 0x1, 0x17},
+> +	{12000000, 770000000, 0x0, 0x80, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x9, 0x15, 0x10, 0x6, 0x34, 0xf, 0x1, 0x18},
+> +	{12000000, 780000000, 0x0, 0x82, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x9, 0x16, 0x10, 0x6, 0x35, 0xf, 0x1, 0x18,},
+> +	{12000000, 790000000, 0x0, 0x83, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x9, 0x16, 0x10, 0x7, 0x34, 0xf, 0x1, 0x18},
+> +	{12000000, 800000000, 0x0, 0x85, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x9, 0x17, 0x10, 0x7, 0x35, 0xf, 0x1, 0x18},
+> +	{12000000, 810000000, 0x0, 0x87, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x9, 0x17, 0x10, 0x7, 0x36, 0xf, 0x1, 0x18},
+> +	{12000000, 820000000, 0x0, 0x88, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0x9, 0x17, 0x10, 0x7, 0x37, 0xf, 0x1, 0x18},
+> +	{12000000, 830000000, 0x0, 0x8a, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0x9, 0x18, 0x10, 0x7, 0x37, 0xf, 0x1, 0x18},
+> +	{12000000, 840000000, 0x0, 0x8c, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0x9, 0x18, 0x11, 0x7, 0x38, 0x10, 0x1, 0x19},
+> +	{12000000, 850000000, 0x0, 0x8d, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xa, 0x17, 0x11, 0x7, 0x39, 0x10, 0x1, 0x19},
+> +	{12000000, 860000000, 0x0, 0x8f, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0xa, 0x18, 0x11, 0x7, 0x39, 0x10, 0x1, 0x19},
+> +	{12000000, 870000000, 0x0, 0x91, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xa, 0x18, 0x11, 0x7, 0x3a, 0x10, 0x1, 0x19},
+> +	{12000000, 880000000, 0x0, 0x92, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xa, 0x18, 0x11, 0x7, 0x3b, 0x10, 0x1, 0x19},
+> +	{12000000, 890000000, 0x0, 0x94, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0xa, 0x19, 0x11, 0x7, 0x3c, 0x10, 0x1, 0x19},
+> +	{12000000, 900000000, 0x0, 0x96, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xa, 0x19, 0x12, 0x8, 0x3c, 0x10, 0x1, 0x19},
+> +	{12000000, 910000000, 0x0, 0x97, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xa, 0x19, 0x12, 0x8, 0x3c, 0x11, 0x1, 0x1a},
+> +	{12000000, 920000000, 0x0, 0x99, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0xa, 0x1a, 0x12, 0x8, 0x3d, 0x11, 0x1, 0x1a},
+> +	{12000000, 930000000, 0x0, 0x9b, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xa, 0x1a, 0x12, 0x8, 0x3e, 0x11, 0x1, 0x1a},
+> +	{12000000, 940000000, 0x0, 0x9c, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xb, 0x1a, 0x12, 0x8, 0x3e, 0x11, 0x1, 0x1a},
+> +	{12000000, 950000000, 0x0, 0x9e, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0xb, 0x1a, 0x12, 0x8, 0x3f, 0x11, 0x1, 0x1a},
+> +	{12000000, 960000000, 0x0, 0xa0, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xb, 0x1a, 0x12, 0x8, 0x40, 0x11, 0x1, 0x1a},
+> +	{12000000, 970000000, 0x0, 0xa1, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xb, 0x1b, 0x13, 0x8, 0x41, 0x12, 0x1, 0x1b},
+> +	{12000000, 980000000, 0x0, 0xa3, 0x55 << 16 | 0x55 << 8 | 0x55,
+> +	 0x1, 0xb, 0x1b, 0x13, 0x8, 0x42, 0x12, 0x1, 0x1b},
+> +	{12000000, 990000000, 0x0, 0xa5, 0x0 << 16 | 0x0 << 8 | 0x0,
+> +	 0x1, 0xb, 0x1b, 0x13, 0x8, 0x42, 0x12, 0x1, 0x1b},
+> +	{12000000, 1000000000, 0x0, 0xa6, 0xaa << 16 | 0xaa << 8 | 0xaa,
+> +	 0x1, 0xb, 0x1c, 0x13, 0x9, 0x42, 0x12, 0x1, 0x1b},
 > +};
 > +
-> +enum rockchip_hdptx_reset {
-> +	RST_PHY = 0,
-> +	RST_APB,
-> +	RST_INIT,
-> +	RST_CMN,
-> +	RST_LANE,
-> +	RST_ROPLL,
-> +	RST_LCPLL,
-> +	RST_MAX
+> +struct stf_dphy_info {
+> +	/**
+> +	 * @maps:
+> +	 *
+> +	 * Physical lanes and logic lanes mapping table.
+> +	 *
+> +	 * The default order is:
+> +	 * [data lane 0, data lane 1, data lane 2, date lane 3, clk lane]
+> +	 */
+> +	u8 maps[STF_MAP_LANES_NUM];
 > +};
 > +
-> +struct rockchip_hdptx_phy {
+> +struct stf_dphy {
 > +	struct device *dev;
-> +	struct regmap *regmap;
-> +	struct regmap *grf;
+> +	void __iomem *topsys;
+> +	struct clk *txesc_clk;
+> +	struct reset_control *sys_rst;
+> +
+> +	struct phy_configure_opts_mipi_dphy config;
 > +
 > +	struct phy *phy;
-> +	struct phy_config *phy_cfg;
-> +	struct clk_bulk_data *clks;
-> +	int nr_clks;
-> +	struct reset_control_bulk_data rsts[RST_MAX];
+> +	const struct stf_dphy_info *info;
 > +};
 > +
-> +static const struct ropll_config ropll_tmds_cfg[] = {
-> +	{ 5940000, 124, 124, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 3712500, 155, 155, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 2970000, 124, 124, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1620000, 135, 135, 1, 1, 3, 1, 1, 0, 1, 1, 1, 1, 4, 0, 3, 5, 5, 0x10,
-> +	  1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1856250, 155, 155, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1540000, 193, 193, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 193, 1, 32, 2, 1,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1485000, 0x7b, 0x7b, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 4, 0, 3, 5, 5,
-> +	  0x10, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1462500, 122, 122, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 244, 1, 16, 2, 1, 1,
-> +	  1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1190000, 149, 149, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 149, 1, 16, 2, 1, 1,
-> +	  1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1065000, 89, 89, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 89, 1, 16, 1, 0, 1,
-> +	  1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 1080000, 135, 135, 1, 1, 5, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
-> +	  0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 855000, 214, 214, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 214, 1, 16, 2, 1,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 835000, 105, 105, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 42, 1, 16, 1, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 928125, 155, 155, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 742500, 124, 124, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 650000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
-> +	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 337500, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5,
-> +	  1, 1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 400000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
-> +	  0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 270000, 0x5a, 0x5a, 1, 1, 0xf, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
-> +	  0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +	{ 251750, 84, 84, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 168, 1, 16, 4, 1, 1,
-> +	  1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-> +};
+> +static inline u32 stf_dphy_get_reg(void __iomem *io_addr, u32 addr, u32 shift, u32 mask)
+> +{
+> +	u32 tmp;
 > +
-> +static const struct reg_sequence hdtpx_common_cmn_init_seq[] = {
-> +	REG_SEQ0(CMN_REG(0009), 0x0c),
-> +	REG_SEQ0(CMN_REG(000A), 0x83),
-> +	REG_SEQ0(CMN_REG(000B), 0x06),
-> +	REG_SEQ0(CMN_REG(000C), 0x20),
-> +	REG_SEQ0(CMN_REG(000D), 0xb8),
-> +	REG_SEQ0(CMN_REG(000E), 0x0f),
-> +	REG_SEQ0(CMN_REG(000F), 0x0f),
+> +	tmp = readl(io_addr);
+> +	tmp = (tmp & mask) >> shift;
+> +	return tmp;
+> +}
+> +
+> +static inline void stf_dphy_set_reg(void __iomem *io_addr, u32 addr, u32 data, u32 shift, u32 mask)
+> +{
+> +	u32 tmp;
+> +
+> +	tmp = readl(io_addr + addr);
+> +	tmp &= ~mask;
+> +	tmp |= (data << shift) & mask;
+> +	writel(tmp, (io_addr + addr));
+> +}
+> +
+> +static int is_pll_locked(struct stf_dphy *dphy)
+> +{
+> +	int tmp = stf_dphy_get_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8),
+> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_SHIFT,
+> +				  STF_DPHY_RGS_CDTX_PLL_UNLOCK_MASK);
+> +	return !tmp;
+> +}
+> +
+> +static void stf_dphy_hw_reset(struct stf_dphy *dphy, int assert)
+> +{
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
+> +			 !assert, STF_DPHY_RESETB_SHIFT, STF_DPHY_RESETB_MASK);
+> +
+> +	if (!assert) {
+> +		/*the lock-in time of pll of M31 is 20us-50ms*/
+> +		while ((!is_pll_locked(dphy)) && msecs_to_jiffies(50))
 
-Any reason for these to be mixed case, lets have lower case pls
-everywhere
+former makes sense why later condition, why is this condition here
 
-> +	REG_SEQ0(CMN_REG(0010), 0x04),
-> +	REG_SEQ0(CMN_REG(0011), 0x00),
-> +	REG_SEQ0(CMN_REG(0012), 0x26),
-> +	REG_SEQ0(CMN_REG(0013), 0x22),
-> +	REG_SEQ0(CMN_REG(0014), 0x24),
-> +	REG_SEQ0(CMN_REG(0015), 0x77),
-> +	REG_SEQ0(CMN_REG(0016), 0x08),
-> +	REG_SEQ0(CMN_REG(0017), 0x00),
-> +	REG_SEQ0(CMN_REG(0018), 0x04),
-> +	REG_SEQ0(CMN_REG(0019), 0x48),
-> +	REG_SEQ0(CMN_REG(001A), 0x01),
-> +	REG_SEQ0(CMN_REG(001B), 0x00),
-> +	REG_SEQ0(CMN_REG(001C), 0x01),
-> +	REG_SEQ0(CMN_REG(001D), 0x64),
-> +	REG_SEQ0(CMN_REG(001F), 0x00),
-> +	REG_SEQ0(CMN_REG(0026), 0x53),
-> +	REG_SEQ0(CMN_REG(0029), 0x01),
-> +	REG_SEQ0(CMN_REG(0030), 0x00),
-> +	REG_SEQ0(CMN_REG(0031), 0x20),
-> +	REG_SEQ0(CMN_REG(0032), 0x30),
-> +	REG_SEQ0(CMN_REG(0033), 0x0b),
-> +	REG_SEQ0(CMN_REG(0034), 0x23),
-> +	REG_SEQ0(CMN_REG(0035), 0x00),
-> +	REG_SEQ0(CMN_REG(0038), 0x00),
-> +	REG_SEQ0(CMN_REG(0039), 0x00),
-> +	REG_SEQ0(CMN_REG(003A), 0x00),
-> +	REG_SEQ0(CMN_REG(003B), 0x00),
-> +	REG_SEQ0(CMN_REG(003C), 0x80),
-> +	REG_SEQ0(CMN_REG(003E), 0x0c),
-> +	REG_SEQ0(CMN_REG(003F), 0x83),
-> +	REG_SEQ0(CMN_REG(0040), 0x06),
-> +	REG_SEQ0(CMN_REG(0041), 0x20),
-> +	REG_SEQ0(CMN_REG(0042), 0xb8),
-> +	REG_SEQ0(CMN_REG(0043), 0x00),
-> +	REG_SEQ0(CMN_REG(0044), 0x46),
-> +	REG_SEQ0(CMN_REG(0045), 0x24),
-> +	REG_SEQ0(CMN_REG(0046), 0xff),
-> +	REG_SEQ0(CMN_REG(0047), 0x00),
-> +	REG_SEQ0(CMN_REG(0048), 0x44),
-> +	REG_SEQ0(CMN_REG(0049), 0xfa),
-> +	REG_SEQ0(CMN_REG(004A), 0x08),
-> +	REG_SEQ0(CMN_REG(004B), 0x00),
-> +	REG_SEQ0(CMN_REG(004C), 0x01),
-> +	REG_SEQ0(CMN_REG(004D), 0x64),
-> +	REG_SEQ0(CMN_REG(004E), 0x14),
-> +	REG_SEQ0(CMN_REG(004F), 0x00),
-> +	REG_SEQ0(CMN_REG(0050), 0x00),
-> +	REG_SEQ0(CMN_REG(005D), 0x0c),
-> +	REG_SEQ0(CMN_REG(005F), 0x01),
-> +	REG_SEQ0(CMN_REG(006B), 0x04),
-> +	REG_SEQ0(CMN_REG(0073), 0x30),
-> +	REG_SEQ0(CMN_REG(0074), 0x00),
-> +	REG_SEQ0(CMN_REG(0075), 0x20),
-> +	REG_SEQ0(CMN_REG(0076), 0x30),
-> +	REG_SEQ0(CMN_REG(0077), 0x08),
-> +	REG_SEQ0(CMN_REG(0078), 0x0c),
-> +	REG_SEQ0(CMN_REG(0079), 0x00),
-> +	REG_SEQ0(CMN_REG(007B), 0x00),
-> +	REG_SEQ0(CMN_REG(007C), 0x00),
-> +	REG_SEQ0(CMN_REG(007D), 0x00),
-> +	REG_SEQ0(CMN_REG(007E), 0x00),
-> +	REG_SEQ0(CMN_REG(007F), 0x00),
-> +	REG_SEQ0(CMN_REG(0080), 0x00),
-> +	REG_SEQ0(CMN_REG(0081), 0x09),
-> +	REG_SEQ0(CMN_REG(0082), 0x04),
-> +	REG_SEQ0(CMN_REG(0083), 0x24),
-> +	REG_SEQ0(CMN_REG(0084), 0x20),
-> +	REG_SEQ0(CMN_REG(0085), 0x03),
-> +	REG_SEQ0(CMN_REG(0086), 0x01),
-> +	REG_SEQ0(CMN_REG(0087), 0x0c),
-> +	REG_SEQ0(CMN_REG(008A), 0x55),
-> +	REG_SEQ0(CMN_REG(008B), 0x25),
-> +	REG_SEQ0(CMN_REG(008C), 0x2c),
-> +	REG_SEQ0(CMN_REG(008D), 0x22),
-> +	REG_SEQ0(CMN_REG(008E), 0x14),
-> +	REG_SEQ0(CMN_REG(008F), 0x20),
-> +	REG_SEQ0(CMN_REG(0090), 0x00),
-> +	REG_SEQ0(CMN_REG(0091), 0x00),
-> +	REG_SEQ0(CMN_REG(0092), 0x00),
-> +	REG_SEQ0(CMN_REG(0093), 0x00),
-> +	REG_SEQ0(CMN_REG(009A), 0x11),
-> +	REG_SEQ0(CMN_REG(009B), 0x10),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_tmds_cmn_init_seq[] = {
-> +	REG_SEQ0(CMN_REG(0008), 0x00),
-> +	REG_SEQ0(CMN_REG(0011), 0x01),
-> +	REG_SEQ0(CMN_REG(0017), 0x20),
-> +	REG_SEQ0(CMN_REG(001E), 0x14),
-> +	REG_SEQ0(CMN_REG(0020), 0x00),
-> +	REG_SEQ0(CMN_REG(0021), 0x00),
-> +	REG_SEQ0(CMN_REG(0022), 0x11),
-> +	REG_SEQ0(CMN_REG(0023), 0x00),
-> +	REG_SEQ0(CMN_REG(0024), 0x00),
-> +	REG_SEQ0(CMN_REG(0025), 0x53),
-> +	REG_SEQ0(CMN_REG(0026), 0x00),
-> +	REG_SEQ0(CMN_REG(0027), 0x00),
-> +	REG_SEQ0(CMN_REG(0028), 0x01),
-> +	REG_SEQ0(CMN_REG(002A), 0x00),
-> +	REG_SEQ0(CMN_REG(002B), 0x00),
-> +	REG_SEQ0(CMN_REG(002C), 0x00),
-> +	REG_SEQ0(CMN_REG(002D), 0x00),
-> +	REG_SEQ0(CMN_REG(002E), 0x04),
-> +	REG_SEQ0(CMN_REG(002F), 0x00),
-> +	REG_SEQ0(CMN_REG(0030), 0x20),
-> +	REG_SEQ0(CMN_REG(0031), 0x30),
-> +	REG_SEQ0(CMN_REG(0032), 0x0b),
-> +	REG_SEQ0(CMN_REG(0033), 0x23),
-> +	REG_SEQ0(CMN_REG(0034), 0x00),
-> +	REG_SEQ0(CMN_REG(003D), 0x40),
-> +	REG_SEQ0(CMN_REG(0042), 0x78),
-> +	REG_SEQ0(CMN_REG(004E), 0x34),
-> +	REG_SEQ0(CMN_REG(005C), 0x25),
-> +	REG_SEQ0(CMN_REG(005E), 0x4f),
-> +	REG_SEQ0(CMN_REG(0074), 0x04),
-> +	REG_SEQ0(CMN_REG(0081), 0x01),
-> +	REG_SEQ0(CMN_REG(0087), 0x04),
-> +	REG_SEQ0(CMN_REG(0089), 0x00),
-> +	REG_SEQ0(CMN_REG(0095), 0x00),
-> +	REG_SEQ0(CMN_REG(0097), 0x02),
-> +	REG_SEQ0(CMN_REG(0099), 0x04),
-> +	REG_SEQ0(CMN_REG(009B), 0x00),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_common_sb_init_seq[] = {
-> +	REG_SEQ0(SB_REG(0114), 0x00),
-> +	REG_SEQ0(SB_REG(0115), 0x00),
-> +	REG_SEQ0(SB_REG(0116), 0x00),
-> +	REG_SEQ0(SB_REG(0117), 0x00),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_tmds_lntop_highbr_seq[] = {
-> +	REG_SEQ0(LNTOP_REG(0201), 0x00),
-> +	REG_SEQ0(LNTOP_REG(0202), 0x00),
-> +	REG_SEQ0(LNTOP_REG(0203), 0x0f),
-> +	REG_SEQ0(LNTOP_REG(0204), 0xff),
-> +	REG_SEQ0(LNTOP_REG(0205), 0xff),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_tmds_lntop_lowbr_seq[] = {
-> +	REG_SEQ0(LNTOP_REG(0201), 0x07),
-> +	REG_SEQ0(LNTOP_REG(0202), 0xc1),
-> +	REG_SEQ0(LNTOP_REG(0203), 0xf0),
-> +	REG_SEQ0(LNTOP_REG(0204), 0x7c),
-> +	REG_SEQ0(LNTOP_REG(0205), 0x1f),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_common_lane_init_seq[] = {
-> +	REG_SEQ0(LANE_REG(0303), 0x0c),
-> +	REG_SEQ0(LANE_REG(0307), 0x20),
-> +	REG_SEQ0(LANE_REG(030A), 0x17),
-> +	REG_SEQ0(LANE_REG(030B), 0x77),
-> +	REG_SEQ0(LANE_REG(030C), 0x77),
-> +	REG_SEQ0(LANE_REG(030D), 0x77),
-> +	REG_SEQ0(LANE_REG(030E), 0x38),
-> +	REG_SEQ0(LANE_REG(0310), 0x03),
-> +	REG_SEQ0(LANE_REG(0311), 0x0f),
-> +	REG_SEQ0(LANE_REG(0316), 0x02),
-> +	REG_SEQ0(LANE_REG(031B), 0x01),
-> +	REG_SEQ0(LANE_REG(031F), 0x15),
-> +	REG_SEQ0(LANE_REG(0320), 0xa0),
-> +	REG_SEQ0(LANE_REG(0403), 0x0c),
-> +	REG_SEQ0(LANE_REG(0407), 0x20),
-> +	REG_SEQ0(LANE_REG(040A), 0x17),
-> +	REG_SEQ0(LANE_REG(040B), 0x77),
-> +	REG_SEQ0(LANE_REG(040C), 0x77),
-> +	REG_SEQ0(LANE_REG(040D), 0x77),
-> +	REG_SEQ0(LANE_REG(040E), 0x38),
-> +	REG_SEQ0(LANE_REG(0410), 0x03),
-> +	REG_SEQ0(LANE_REG(0411), 0x0f),
-> +	REG_SEQ0(LANE_REG(0416), 0x02),
-> +	REG_SEQ0(LANE_REG(041B), 0x01),
-> +	REG_SEQ0(LANE_REG(041F), 0x15),
-> +	REG_SEQ0(LANE_REG(0420), 0xa0),
-> +	REG_SEQ0(LANE_REG(0503), 0x0c),
-> +	REG_SEQ0(LANE_REG(0507), 0x20),
-> +	REG_SEQ0(LANE_REG(050A), 0x17),
-> +	REG_SEQ0(LANE_REG(050B), 0x77),
-> +	REG_SEQ0(LANE_REG(050C), 0x77),
-> +	REG_SEQ0(LANE_REG(050D), 0x77),
-> +	REG_SEQ0(LANE_REG(050E), 0x38),
-> +	REG_SEQ0(LANE_REG(0510), 0x03),
-> +	REG_SEQ0(LANE_REG(0511), 0x0f),
-> +	REG_SEQ0(LANE_REG(0516), 0x02),
-> +	REG_SEQ0(LANE_REG(051B), 0x01),
-> +	REG_SEQ0(LANE_REG(051F), 0x15),
-> +	REG_SEQ0(LANE_REG(0520), 0xa0),
-> +	REG_SEQ0(LANE_REG(0603), 0x0c),
-> +	REG_SEQ0(LANE_REG(0607), 0x20),
-> +	REG_SEQ0(LANE_REG(060A), 0x17),
-> +	REG_SEQ0(LANE_REG(060B), 0x77),
-> +	REG_SEQ0(LANE_REG(060C), 0x77),
-> +	REG_SEQ0(LANE_REG(060D), 0x77),
-> +	REG_SEQ0(LANE_REG(060E), 0x38),
-> +	REG_SEQ0(LANE_REG(0610), 0x03),
-> +	REG_SEQ0(LANE_REG(0611), 0x0f),
-> +	REG_SEQ0(LANE_REG(0616), 0x02),
-> +	REG_SEQ0(LANE_REG(061B), 0x01),
-> +	REG_SEQ0(LANE_REG(061F), 0x15),
-> +	REG_SEQ0(LANE_REG(0620), 0xa0),
-> +};
-> +
-> +static const struct reg_sequence hdtpx_tmds_lane_init_seq[] = {
-> +	REG_SEQ0(LANE_REG(0312), 0x00),
-> +	REG_SEQ0(LANE_REG(031E), 0x00),
-> +	REG_SEQ0(LANE_REG(0412), 0x00),
-> +	REG_SEQ0(LANE_REG(041E), 0x00),
-> +	REG_SEQ0(LANE_REG(0512), 0x00),
-> +	REG_SEQ0(LANE_REG(051E), 0x00),
-> +	REG_SEQ0(LANE_REG(0612), 0x00),
-> +	REG_SEQ0(LANE_REG(061E), 0x08),
-> +	REG_SEQ0(LANE_REG(0303), 0x2f),
-> +	REG_SEQ0(LANE_REG(0403), 0x2f),
-> +	REG_SEQ0(LANE_REG(0503), 0x2f),
-> +	REG_SEQ0(LANE_REG(0603), 0x2f),
-> +	REG_SEQ0(LANE_REG(0305), 0x03),
-> +	REG_SEQ0(LANE_REG(0405), 0x03),
-> +	REG_SEQ0(LANE_REG(0505), 0x03),
-> +	REG_SEQ0(LANE_REG(0605), 0x03),
-> +	REG_SEQ0(LANE_REG(0306), 0x1c),
-> +	REG_SEQ0(LANE_REG(0406), 0x1c),
-> +	REG_SEQ0(LANE_REG(0506), 0x1c),
-> +	REG_SEQ0(LANE_REG(0606), 0x1c),
-> +};
-> +
-> +static bool rockchip_hdptx_phy_is_rw_reg(struct device *dev, unsigned int reg)
-> +{
-> +	switch (reg) {
-> +	case 0x0000 ... 0x029c:
-> +	case 0x0400 ... 0x04a4:
-> +	case 0x0800 ... 0x08a4:
-> +	case 0x0c00 ... 0x0cb4:
-> +	case 0x1000 ... 0x10b4:
-> +	case 0x1400 ... 0x14b4:
-> +	case 0x1800 ... 0x18b4:
-> +		return true;
+> +			;
+> +		dev_err(dphy->dev, "MIPI dphy-tx # PLL Locked\n");
 > +	}
-> +
-> +	return false;
 > +}
 > +
-> +static const struct regmap_config rockchip_hdptx_phy_regmap_config = {
-> +	.reg_bits = 32,
-> +	.reg_stride = 4,
-> +	.val_bits = 32,
-> +	.writeable_reg = rockchip_hdptx_phy_is_rw_reg,
-> +	.readable_reg = rockchip_hdptx_phy_is_rw_reg,
-> +	.fast_io = true,
-> +	.max_register = 0x18b4,
-> +};
-> +
-> +static int hdptx_write(struct rockchip_hdptx_phy *hdptx, u32 reg, u8 val)
+> +static int stf_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
 > +{
-> +	return regmap_write(hdptx->regmap, reg, val);
-> +}
-> +
-> +#define hdptx_multi_reg_write(hdptx, seq) \
-> +	regmap_multi_reg_write((hdptx)->regmap, seq, ARRAY_SIZE(seq))
-> +
-> +static int hdptx_update_bits(struct rockchip_hdptx_phy *hdptx, u32 reg,
-> +			     u8 mask, u8 val)
-> +{
-> +	return regmap_update_bits(hdptx->regmap, reg, mask, val);
-> +}
-> +
-> +static int hdptx_grf_write(struct rockchip_hdptx_phy *hdptx, u32 reg, u32 val)
-> +{
-> +	return regmap_write(hdptx->grf, reg, val);
-> +}
-> +
-> +static u8 hdptx_grf_read(struct rockchip_hdptx_phy *hdptx, u32 reg)
-> +{
-> +	u32 val;
-> +
-> +	regmap_read(hdptx->grf, reg, &val);
-> +
-> +	return val;
-> +}
-
-why use wrappers, why not call regmap_ apis directly
-
-> +
-> +static void hdptx_pre_power_up(struct rockchip_hdptx_phy *hdptx)
-> +{
-> +	u32 val;
-> +
-> +	reset_control_assert(hdptx->rsts[RST_APB].rstc);
-> +	usleep_range(20, 25);
-> +	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
-> +
-> +	reset_control_assert(hdptx->rsts[RST_LANE].rstc);
-> +	reset_control_assert(hdptx->rsts[RST_CMN].rstc);
-> +	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
-> +
-> +	val = (HDPTX_I_PLL_EN | HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN) << 16;
-> +	hdptx_grf_write(hdptx, GRF_HDPTX_CON0, val);
-> +}
-> +
-> +static int hdptx_post_enable_lane(struct rockchip_hdptx_phy *hdptx)
-> +{
-> +	u32 val;
-> +	int ret;
-> +
-> +	reset_control_deassert(hdptx->rsts[RST_LANE].rstc);
-> +
-> +	val = (HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN) << 16 |
-> +	       HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN;
-> +	hdptx_grf_write(hdptx, GRF_HDPTX_CON0, val);
-> +
-> +	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS, val,
-> +				       (val & HDPTX_O_PHY_RDY) &&
-> +				       (val & HDPTX_O_PLL_LOCK_DONE),
-> +				       100, 5000);
-> +	if (ret) {
-> +		dev_err(hdptx->dev, "Failed to get PHY lane lock: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	dev_dbg(hdptx->dev, "PHY lane locked\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static int hdptx_post_enable_pll(struct rockchip_hdptx_phy *hdptx)
-> +{
-> +	u32 val;
-> +	int ret;
-> +
-> +	val = (HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN) << 16 |
-> +	       HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN;
-> +	hdptx_grf_write(hdptx, GRF_HDPTX_CON0, val);
-> +
-> +	usleep_range(10, 15);
-> +	reset_control_deassert(hdptx->rsts[RST_INIT].rstc);
-> +
-> +	usleep_range(10, 15);
-> +	val = HDPTX_I_PLL_EN << 16 | HDPTX_I_PLL_EN;
-> +	hdptx_grf_write(hdptx, GRF_HDPTX_CON0, val);
-> +
-> +	usleep_range(10, 15);
-> +	reset_control_deassert(hdptx->rsts[RST_CMN].rstc);
-> +
-> +	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS, val,
-> +				       val & HDPTX_O_PHY_CLK_RDY, 20, 400);
-> +	if (ret) {
-> +		dev_err(hdptx->dev, "Failed to get PHY clk ready: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	dev_dbg(hdptx->dev, "PHY clk ready\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static void hdptx_phy_disable(struct rockchip_hdptx_phy *hdptx)
-> +{
-> +	u32 val;
-> +
-> +	/* reset phy and apb, or phy locked flag may keep 1 */
-> +	reset_control_assert(hdptx->rsts[RST_PHY].rstc);
-> +	usleep_range(20, 30);
-> +	reset_control_deassert(hdptx->rsts[RST_PHY].rstc);
-> +
-> +	reset_control_assert(hdptx->rsts[RST_APB].rstc);
-> +	usleep_range(20, 30);
-> +	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
-> +
-> +	hdptx_write(hdptx, LANE_REG(0300), 0x82);
-> +	hdptx_write(hdptx, SB_REG(010F), 0xc1);
-> +	hdptx_write(hdptx, SB_REG(0110), 0x1);
-> +	hdptx_write(hdptx, LANE_REG(0301), 0x80);
-> +	hdptx_write(hdptx, LANE_REG(0401), 0x80);
-> +	hdptx_write(hdptx, LANE_REG(0501), 0x80);
-> +	hdptx_write(hdptx, LANE_REG(0601), 0x80);
-> +
-> +	reset_control_assert(hdptx->rsts[RST_LANE].rstc);
-> +	reset_control_assert(hdptx->rsts[RST_CMN].rstc);
-> +	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
-> +
-> +	val = (HDPTX_I_PLL_EN | HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN) << 16;
-> +	hdptx_grf_write(hdptx, GRF_HDPTX_CON0, val);
-> +}
-> +
-> +static bool hdptx_phy_clk_pll_calc(unsigned int data_rate,
-> +				   struct ropll_config *cfg)
-> +{
-> +	const unsigned int fout = data_rate / 2, fref = 24000;
-> +	unsigned long k = 0, lc, k_sub, lc_sub;
-> +	unsigned int fvco, sdc;
-> +	u32 mdiv, sdiv, n = 8;
-> +
-> +	for (sdiv = 16; sdiv >= 1; sdiv--) {
-> +		if (sdiv % 2 && sdiv != 1)
-> +			continue;
-> +
-> +		fvco = fout * sdiv;
-> +
-> +		if (fvco < 2000000 || fvco > 4000000)
-> +			continue;
-> +
-> +		mdiv = DIV_ROUND_UP(fvco, fref);
-> +		if (mdiv < 20 || mdiv > 255)
-> +			continue;
-> +
-> +		if (fref * mdiv - fvco) {
-> +			for (sdc = 264000; sdc <= 750000; sdc += fref)
-> +				if (sdc * n > fref * mdiv)
-> +					break;
-> +
-> +			if (sdc > 750000)
-> +				continue;
-> +
-> +			rational_best_approximation(fref * mdiv - fvco,
-> +						    sdc / 16,
-> +						    GENMASK(6, 0),
-> +						    GENMASK(7, 0),
-> +						    &k, &lc);
-> +
-> +			rational_best_approximation(sdc * n - fref * mdiv,
-> +						    sdc,
-> +						    GENMASK(6, 0),
-> +						    GENMASK(7, 0),
-> +						    &k_sub, &lc_sub);
-> +		}
-> +
-> +		break;
-> +	}
-> +
-> +	if (sdiv < 1)
-> +		return false;
-> +
-> +	if (cfg) {
-> +		cfg->pms_mdiv = mdiv;
-> +		cfg->pms_mdiv_afc = mdiv;
-> +		cfg->pms_pdiv = 1;
-> +		cfg->pms_refdiv = 1;
-> +		cfg->pms_sdiv = sdiv - 1;
-> +
-> +		cfg->sdm_en = k > 0 ? 1 : 0;
-> +		if (cfg->sdm_en) {
-> +			cfg->sdm_deno = lc;
-> +			cfg->sdm_num_sign = 1;
-> +			cfg->sdm_num = k;
-> +			cfg->sdc_n = n - 3;
-> +			cfg->sdc_num = k_sub;
-> +			cfg->sdc_deno = lc_sub;
-> +		}
-> +	}
-> +
-> +	return true;
-> +}
-> +
-> +static int hdptx_ropll_tmds_cmn_config(struct rockchip_hdptx_phy *hdptx,
-> +				       unsigned int rate)
-> +{
-> +	const struct ropll_config *cfg = NULL;
-> +	struct ropll_config rc = {0};
+> +	struct stf_dphy *dphy;
+> +	u32 bitrate;
+> +	unsigned long alignment;
 > +	int i;
+> +	const struct m31_dphy_config *p;
+> +	const u32 STF_DPHY_AON_POWER_READY_N_active = 0;
+> +	const struct stf_dphy_info *info;
 > +
-> +	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
-> +		if (rate == ropll_tmds_cfg[i].bit_rate) {
-> +			cfg = &ropll_tmds_cfg[i];
+> +	dphy = phy_get_drvdata(phy);
+> +	info = dphy->info;
+> +	bitrate = opts->mipi_dphy.hs_clk_rate;
+> +
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L2N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L3N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
+> +			 STF_DPHY_RG_CDTX_L4N_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4N_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(8), 0x10,
+> +			 STF_DPHY_RG_CDTX_L0P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L0P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L1P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L1P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L2P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L2P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(12), 0x10,
+> +			 STF_DPHY_RG_CDTX_L3P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L3P_HSTX_RES_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(16), 0x10,
+> +			 STF_DPHY_RG_CDTX_L4P_HSTX_RES_SHIFT, STF_DPHY_RG_CDTX_L4P_HSTX_RES_MASK);
+> +
+> +	alignment = STF_DPHY_BITRATE_ALIGN;
+> +	if (bitrate % alignment)
+> +		bitrate += alignment - (bitrate % alignment);
+> +
+> +	p = m31_dphy_configs;
+> +	for (i = 0; i < ARRAY_SIZE(m31_dphy_configs); i++, p++) {
+> +		if (p->bitrate == bitrate) {
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(100),
+> +					 STF_DPHY_REFCLK_12M, STF_DPHY_REFCLK_IN_SEL_SHIFT,
+> +					 STF_DPHY_REFCLK_IN_SEL_MASK);
+> +
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0),
+> +					 STF_DPHY_AON_POWER_READY_N_active,
+> +					 STF_DPHY_AON_POWER_READY_N_SHIFT,
+> +					 STF_DPHY_AON_POWER_READY_N_MASK);
+> +
+> +			/*Lane setting*/
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[0],
+> +					 STF_DPHY_CFG_L0_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L0_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[1],
+> +					 STF_DPHY_CFG_L1_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L1_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[2],
+> +					 STF_DPHY_CFG_L2_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L2_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[3],
+> +					 STF_DPHY_CFG_L3_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L3_SWAP_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(0), info->maps[4],
+> +					 STF_DPHY_CFG_L4_SWAP_SEL_SHIFT,
+> +					 STF_DPHY_CFG_L4_SWAP_SEL_MASK);
+> +			/*PLL setting*/
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(28), 0x0,
+> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_SSC_EN_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
+> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_LDO_STB_X2_EN_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24), 0x1,
+> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FM_EN_MASK);
+> +
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
+> +					 p->pll_prev_div, STF_DPHY_RG_CDTX_PLL_PRE_DIV_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_PRE_DIV_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(24),
+> +					 p->pll_fbk_int, STF_DPHY_RG_CDTX_PLL_FBK_INT_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FBK_INT_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(20),
+> +					 p->pll_fbk_fra, STF_DPHY_RG_CDTX_PLL_FBK_FRA_SHIFT,
+> +					 STF_DPHY_RG_CDTX_PLL_FBK_FRA_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(40),
+> +					 p->extd_cycle_sel, STF_DPHY_RG_EXTD_CYCLE_SEL_SHIFT,
+> +					 STF_DPHY_RG_EXTD_CYCLE_SEL_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_pre_time,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_pre_time,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_zero_time,
+> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_ZERO_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->dlane_hs_trail_time,
+> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_SHIFT,
+> +					 STF_DPHY_RG_DLANE_HS_TRAIL_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_pre_time,
+> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(36),
+> +					 p->clane_hs_zero_time,
+> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_ZERO_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_trail_time,
+> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_TRAIL_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_clk_pre_time,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_PRE_TIME_MASK);
+> +			stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(32),
+> +					 p->clane_hs_clk_post_time,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_SHIFT,
+> +					 STF_DPHY_RG_CLANE_HS_CLK_POST_TIME_MASK);
+> +
 > +			break;
 > +		}
-> +
-> +	if (!cfg) {
-> +		if (hdptx_phy_clk_pll_calc(rate, &rc)) {
-> +			cfg = &rc;
-> +		} else {
-> +			dev_err(hdptx->dev, "%s cannot find pll cfg\n", __func__);
-> +			return -EINVAL;
-> +		}
 > +	}
 > +
-> +	dev_dbg(hdptx->dev, "mdiv=%u, sdiv=%u, sdm_en=%u, k_sign=%u, k=%u, lc=%u\n",
-> +		cfg->pms_mdiv, cfg->pms_sdiv + 1, cfg->sdm_en,
-> +		cfg->sdm_num_sign, cfg->sdm_num, cfg->sdm_deno);
-> +
-> +	hdptx_pre_power_up(hdptx);
-> +
-> +	reset_control_assert(hdptx->rsts[RST_ROPLL].rstc);
-> +	usleep_range(20, 30);
-> +	reset_control_deassert(hdptx->rsts[RST_ROPLL].rstc);
-> +
-> +	hdptx_multi_reg_write(hdptx, hdtpx_common_cmn_init_seq);
-> +	hdptx_multi_reg_write(hdptx, hdtpx_tmds_cmn_init_seq);
-> +
-> +	hdptx_write(hdptx, CMN_REG(0051), cfg->pms_mdiv);
-> +	hdptx_write(hdptx, CMN_REG(0055), cfg->pms_mdiv_afc);
-> +	hdptx_write(hdptx, CMN_REG(0059), (cfg->pms_pdiv << 4) | cfg->pms_refdiv);
-> +	hdptx_write(hdptx, CMN_REG(005A), cfg->pms_sdiv << 4);
-
-small case here as well pls
-
-> +
-> +	hdptx_update_bits(hdptx, CMN_REG(005E), ROPLL_SDM_EN_MASK,
-> +			  FIELD_PREP(ROPLL_SDM_EN_MASK, cfg->sdm_en));
-> +	if (!cfg->sdm_en)
-> +		hdptx_update_bits(hdptx, CMN_REG(005E), 0xf, 0);
-> +
-> +	hdptx_update_bits(hdptx, CMN_REG(0064), ROPLL_SDM_NUM_SIGN_RBR_MASK,
-> +			  FIELD_PREP(ROPLL_SDM_NUM_SIGN_RBR_MASK, cfg->sdm_num_sign));
-> +
-> +	hdptx_write(hdptx, CMN_REG(0060), cfg->sdm_deno);
-> +	hdptx_write(hdptx, CMN_REG(0065), cfg->sdm_num);
-> +
-> +	hdptx_update_bits(hdptx, CMN_REG(0069), ROPLL_SDC_N_RBR_MASK,
-> +			  FIELD_PREP(ROPLL_SDC_N_RBR_MASK, cfg->sdc_n));
-> +
-> +	hdptx_write(hdptx, CMN_REG(006C), cfg->sdc_num);
-> +	hdptx_write(hdptx, CMN_REG(0070), cfg->sdc_deno);
-> +
-> +	hdptx_update_bits(hdptx, CMN_REG(0086), PLL_PCG_POSTDIV_SEL_MASK,
-> +			  FIELD_PREP(PLL_PCG_POSTDIV_SEL_MASK, cfg->pms_sdiv));
-> +
-> +	hdptx_update_bits(hdptx, CMN_REG(0086), PLL_PCG_CLK_EN, PLL_PCG_CLK_EN);
-> +
-> +	return hdptx_post_enable_pll(hdptx);
+> +	return 0;
 > +}
 > +
-> +static int hdptx_ropll_tmds_mode_config(struct rockchip_hdptx_phy *hdptx,
-> +					unsigned int rate)
+> +static int stf_dphy_init(struct phy *phy)
 > +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
 > +	int ret;
 > +
-> +	if (!(hdptx_grf_read(hdptx, GRF_HDPTX_STATUS) & HDPTX_O_PLL_LOCK_DONE)) {
-> +		ret = hdptx_ropll_tmds_cmn_config(hdptx, rate);
-> +		if (ret)
-> +			return ret;
-> +	}
+> +	stf_dphy_hw_reset(dphy, 0);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
+> +			 STF_DPHY_SCFG_PPI_C_READY_SEL_SHIFT, STF_DPHY_SCFG_PPI_C_READY_SEL_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(48), 0,
+> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_SHIFT,
+> +			 STF_DPHY_SCFG_DSI_TXREADY_ESC_SEL_MASK);
+> +	stf_dphy_set_reg(dphy->topsys, STF_DPHY_APBIFSAIF_SYSCFG(44), 0x30,
+> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_SHIFT,
+> +			 STF_DPHY_SCFG_C_HS_PRE_ZERO_TIME_MASK);
 > +
-> +	hdptx_multi_reg_write(hdptx, hdtpx_common_sb_init_seq);
-> +
-> +	hdptx_write(hdptx, LNTOP_REG(0200), 0x06);
-> +
-> +	if (rate >= 3400000) {
-> +		/* For 1/40 bitrate clk */
-> +		hdptx_multi_reg_write(hdptx, hdtpx_tmds_lntop_highbr_seq);
-> +	} else {
-> +		/* For 1/10 bitrate clk */
-> +		hdptx_multi_reg_write(hdptx, hdtpx_tmds_lntop_lowbr_seq);
-> +	}
-> +
-> +	hdptx_write(hdptx, LNTOP_REG(0206), 0x07);
-> +	hdptx_write(hdptx, LNTOP_REG(0207), 0x0f);
-> +
-> +	hdptx_multi_reg_write(hdptx, hdtpx_common_lane_init_seq);
-> +	hdptx_multi_reg_write(hdptx, hdtpx_tmds_lane_init_seq);
-> +
-> +	return hdptx_post_enable_lane(hdptx);
-> +}
-> +
-> +static int rockchip_hdptx_phy_power_on(struct phy *phy)
-> +{
-> +	struct rockchip_hdptx_phy *hdptx = phy_get_drvdata(phy);
-> +	int ret, bus_width = phy_get_bus_width(hdptx->phy);
-> +	/*
-> +	 * FIXME: Temporary workaround to pass pixel_clk_rate
-> +	 * from the HDMI bridge driver until phy_configure_opts_hdmi
-> +	 * becomes available in the PHY API.
-> +	 */
-> +	unsigned int rate = bus_width & 0xFFFFFFF;
-> +
-> +	dev_dbg(hdptx->dev, "%s bus_width=%x rate=%u\n",
-> +		__func__, bus_width, rate);
-> +
-> +	ret = pm_runtime_resume_and_get(hdptx->dev);
+> +	ret = clk_prepare_enable(dphy->txesc_clk);
 > +	if (ret) {
-> +		dev_err(hdptx->dev, "Failed to resume phy: %d\n", ret);
+> +		dev_err(dphy->dev, "Failed to prepare/enable txesc_clk\n");
 > +		return ret;
 > +	}
 > +
-> +	ret = hdptx_ropll_tmds_mode_config(hdptx, rate);
-> +	if (ret)
-> +		pm_runtime_put(hdptx->dev);
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_hdptx_phy_power_off(struct phy *phy)
-> +{
-> +	struct rockchip_hdptx_phy *hdptx = phy_get_drvdata(phy);
-> +
-> +	if (hdptx_grf_read(hdptx, GRF_HDPTX_STATUS) & HDPTX_O_PLL_LOCK_DONE)
-> +		hdptx_phy_disable(hdptx);
-> +
-> +	pm_runtime_put(hdptx->dev);
+> +	ret = reset_control_deassert(dphy->sys_rst);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Failed to deassert sys_rst\n");
+> +		return ret;
+> +	}
 > +
 > +	return 0;
 > +}
 > +
-> +static const struct phy_ops rockchip_hdptx_phy_ops = {
-> +	.power_on  = rockchip_hdptx_phy_power_on,
-> +	.power_off = rockchip_hdptx_phy_power_off,
-> +	.owner	   = THIS_MODULE,
+> +static int stf_dphy_exit(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = reset_control_assert(dphy->sys_rst);
+> +	if (ret) {
+> +		dev_err(dphy->dev, "Failed to assert sys_rst\n");
+> +		return ret;
+> +	}
+> +
+> +	clk_disable_unprepare(dphy->txesc_clk);
+> +
+> +	stf_dphy_hw_reset(dphy, 1);
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_power_on(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = pm_runtime_resume_and_get(dphy->dev);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+> +			     union phy_configure_opts *opts)
+> +{
+> +	if (mode != PHY_MODE_MIPI_DPHY)
+> +		return -EINVAL;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stf_dphy_power_off(struct phy *phy)
+> +{
+> +	struct stf_dphy *dphy = phy_get_drvdata(phy);
+> +
+> +	pm_runtime_put_sync(dphy->dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops stf_dphy_ops = {
+> +	.power_on	= stf_dphy_power_on,
+> +	.power_off	= stf_dphy_power_off,
+> +	.init		= stf_dphy_init,
+> +	.exit		= stf_dphy_exit,
+> +	.configure	= stf_dphy_configure,
+> +	.validate	= stf_dphy_validate,
+> +	.owner		= THIS_MODULE,
 > +};
 > +
-> +static int rockchip_hdptx_phy_runtime_suspend(struct device *dev)
+> +static int stf_dphy_probe(struct platform_device *pdev)
 > +{
-> +	struct rockchip_hdptx_phy *hdptx = dev_get_drvdata(dev);
-> +
-> +	clk_bulk_disable_unprepare(hdptx->nr_clks, hdptx->clks);
-> +
-> +	return 0;
-> +}
-> +
-> +static int rockchip_hdptx_phy_runtime_resume(struct device *dev)
-> +{
-> +	struct rockchip_hdptx_phy *hdptx = dev_get_drvdata(dev);
-> +	int ret;
-> +
-> +	ret = clk_bulk_prepare_enable(hdptx->nr_clks, hdptx->clks);
-> +	if (ret)
-> +		dev_err(hdptx->dev, "Failed to enable clocks: %d\n", ret);
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_hdptx_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct rockchip_hdptx_phy *hdptx;
 > +	struct phy_provider *phy_provider;
-> +	void __iomem *regs;
-> +	int ret;
+> +	struct stf_dphy *dphy;
 > +
-> +	hdptx = devm_kzalloc(dev, sizeof(*hdptx), GFP_KERNEL);
-> +	if (!hdptx)
+> +	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
+> +	if (!dphy)
 > +		return -ENOMEM;
 > +
-> +	hdptx->dev = dev;
+> +	dphy->info = of_device_get_match_data(&pdev->dev);
 > +
-> +	regs = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(regs))
-> +		return dev_err_probe(dev, PTR_ERR(regs),
-> +				     "Failed to ioremap resource\n");
+> +	dphy->dev = &pdev->dev;
+> +	dev_set_drvdata(&pdev->dev, dphy);
 > +
-> +	ret = devm_clk_bulk_get_all(dev, &hdptx->clks);
-> +	if (ret < 0)
-> +		return dev_err_probe(dev, ret, "Failed to get clocks\n");
-> +	if (ret == 0)
-> +		return dev_err_probe(dev, -EINVAL, "Missing clocks\n");
+> +	dphy->topsys = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(dphy->topsys))
+> +		return PTR_ERR(dphy->topsys);
 > +
-> +	hdptx->nr_clks = ret;
+> +	pm_runtime_enable(&pdev->dev);
 > +
-> +	hdptx->regmap = devm_regmap_init_mmio(dev, regs,
-> +					      &rockchip_hdptx_phy_regmap_config);
-> +	if (IS_ERR(hdptx->regmap))
-> +		return dev_err_probe(dev, PTR_ERR(hdptx->regmap),
-> +				     "Failed to init regmap\n");
+> +	dphy->txesc_clk = devm_clk_get(&pdev->dev, "txesc");
+> +	if (IS_ERR(dphy->txesc_clk))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(dphy->txesc_clk),
+> +				     "Failed to get txesc clock\n");
 > +
-> +	hdptx->rsts[RST_PHY].id = "phy";
-> +	hdptx->rsts[RST_APB].id = "apb";
-> +	hdptx->rsts[RST_INIT].id = "init";
-> +	hdptx->rsts[RST_CMN].id = "cmn";
-> +	hdptx->rsts[RST_LANE].id = "lane";
-> +	hdptx->rsts[RST_ROPLL].id = "ropll";
-> +	hdptx->rsts[RST_LCPLL].id = "lcpll";
+> +	dphy->sys_rst = devm_reset_control_get_exclusive(&pdev->dev, "sys");
+> +	if (IS_ERR(dphy->sys_rst))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(dphy->sys_rst),
+> +				     "Failed to get sys reset\n");
 > +
-> +	ret = devm_reset_control_bulk_get_exclusive(dev, RST_MAX, hdptx->rsts);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to get resets\n");
+> +	dphy->phy = devm_phy_create(&pdev->dev, NULL, &stf_dphy_ops);
+> +	if (IS_ERR(dphy->phy))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(dphy->phy),
+> +				     "Failed to create phy\n");
 > +
-> +	hdptx->grf = syscon_regmap_lookup_by_phandle(dev->of_node,
-> +						     "rockchip,grf");
-> +	if (IS_ERR(hdptx->grf))
-> +		return dev_err_probe(dev, PTR_ERR(hdptx->grf),
-> +				     "Could not get GRF syscon\n");
+> +	phy_set_drvdata(dphy->phy, dphy);
 > +
-> +	hdptx->phy = devm_phy_create(dev, NULL, &rockchip_hdptx_phy_ops);
-> +	if (IS_ERR(hdptx->phy))
-> +		return dev_err_probe(dev, PTR_ERR(hdptx->phy),
-> +				     "Failed to create HDMI PHY\n");
-> +
-> +	platform_set_drvdata(pdev, hdptx);
-> +	phy_set_drvdata(hdptx->phy, hdptx);
-> +	phy_set_bus_width(hdptx->phy, 8);
-> +
-> +	ret = devm_pm_runtime_enable(dev);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to enable runtime PM\n");
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
 > +	if (IS_ERR(phy_provider))
-> +		return dev_err_probe(dev, PTR_ERR(phy_provider),
-> +				     "Failed to register PHY provider\n");
-> +
-> +	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
-> +	reset_control_deassert(hdptx->rsts[RST_CMN].rstc);
-> +	reset_control_deassert(hdptx->rsts[RST_INIT].rstc);
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(phy_provider),
+> +				     "Failed to register phy\n");
 > +
 > +	return 0;
 > +}
 > +
-> +static const struct dev_pm_ops rockchip_hdptx_phy_pm_ops = {
-> +	RUNTIME_PM_OPS(rockchip_hdptx_phy_runtime_suspend,
-> +		       rockchip_hdptx_phy_runtime_resume, NULL)
+> +static const struct stf_dphy_info starfive_dphy_info = {
+> +	.maps = {0, 1, 2, 3, 4},
 > +};
 > +
-> +static const struct of_device_id rockchip_hdptx_phy_of_match[] = {
-> +	{ .compatible = "rockchip,rk3588-hdptx-phy", },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, rockchip_hdptx_phy_of_match);
-> +
-> +static struct platform_driver rockchip_hdptx_phy_driver = {
-> +	.probe  = rockchip_hdptx_phy_probe,
-> +	.driver = {
-> +		.name = "rockchip-hdptx-phy",
-> +		.pm = &rockchip_hdptx_phy_pm_ops,
-> +		.of_match_table = rockchip_hdptx_phy_of_match,
+> +static const struct of_device_id stf_dphy_dt_ids[] = {
+> +	{
+> +		.compatible = "starfive,jh7110-dphy-tx",
+> +		.data = &starfive_dphy_info,
 > +	},
+> +	{ /* sentinel */ },
 > +};
-> +module_platform_driver(rockchip_hdptx_phy_driver);
+> +MODULE_DEVICE_TABLE(of, stf_dphy_dt_ids);
 > +
-> +MODULE_AUTHOR("Algea Cao <algea.cao@rock-chips.com>");
-> +MODULE_AUTHOR("Cristian Ciocaltea <cristian.ciocaltea@collabora.com>");
-> +MODULE_DESCRIPTION("Samsung HDMI/eDP Transmitter Combo PHY Driver");
+> +static struct platform_driver stf_dphy_driver = {
+> +	.driver = {
+> +		.name	= "starfive-dphy-tx",
+> +		.of_match_table = stf_dphy_dt_ids,
+> +	},
+> +	.probe = stf_dphy_probe,
+> +};
+> +module_platform_driver(stf_dphy_driver);
+> +
+> +MODULE_AUTHOR("Keith Zhao <keith.zhao@starfivetech.com>");
+> +MODULE_AUTHOR("Shengyang Chen <shengyang.chen@starfivetech.com>");
+> +MODULE_DESCRIPTION("StarFive JH7110 DPHY TX driver");
 > +MODULE_LICENSE("GPL");
+> -- 
+> 2.17.1
+> 
 > 
 > -- 
-> 2.43.0
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- 
 ~Vinod
