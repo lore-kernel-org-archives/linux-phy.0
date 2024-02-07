@@ -4,89 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACF8C4829C
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Feb 2024 18:53:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2E61C48297
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Feb 2024 01:29:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2NBo+iWBBewV5z6m1jnx2LgLeRcDojc0SNfIiufBVng=; b=eTkJzb4aFhAoI+
-	7ro7D89SWgObzTBD2J7lKGK06m2hRlrbGO1G3aGIPtSrWscr7iP7UWMMQvOpQYTvYj9F2lHL60e2y
-	d54TnND2TmyRr/2BaD+OQryouM2cocD9kca+J9nZhZ3Iuh988BZ1r3GWHrr73dZWKGLu9+7rpnxdm
-	4APuxp1wA9WVGjh4UY16Vgopr1akgTTy6shMHBflDiQzY0jBLC1pr1vzefPQlKefJDKgAl/mDeUkE
-	pGqGEoHerDd2PLPZgTeIXwukqq5n9nY8w/p618ChzkpDnndJxHi/SGEkj481K17c39xOQs8Z2w2wY
-	QrLXEj8fkPBcXZ1ACysQ==;
+	List-Owner; bh=mB8hPGHFLjhw9rqg8cE7PQ6f+HJpV7c/Y8jpvGHMseA=; b=bHBNI7C0IstN0K
+	2EwuO+qTqHyuNVNxJBUVxElxZZ2IPa7aKEBfAeRmdcNccOMKZUpVbUW2FCtSWyWuOZ93GUINf1qaN
+	FQwRlkFG5U1lRSFR2ZNVr80CJJ7T/2vWYcACiTszFtTTKLyzboAGLsY4ihbcBV28EkpAJO+noODhu
+	H/L0ZSI/2egXbLY+Sjsv4NcEcQF0r39nSg7VWjDKEIIkTqHHC1uRDgmBB3XRSrFPEXBOwEsyq4kHD
+	x2IimcQ5kqIa7u4QERQS8k47OXWKq7Da5FeOZW9bfRKkKIFPslrs0aep/yomFpUhmd5nHyH34Xvcj
+	tsDEmnKO4Fz+BbyNDIEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXQZ9-00000008aqT-3EWa;
-	Tue, 06 Feb 2024 18:53:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rXWlC-00000009MTl-1bqN;
+	Wed, 07 Feb 2024 01:29:58 +0000
+Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXQZ6-00000008aoL-10UA;
-	Tue, 06 Feb 2024 18:53:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 839AE6168F;
-	Tue,  6 Feb 2024 18:53:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE82CC433C7;
-	Tue,  6 Feb 2024 18:53:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707245583;
-	bh=SG3kh9GfzzT+XgLFlhGrW0bYQFDPElr02XcGaKdWcjI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=O/Qosa+5Vi6kIyyC1irVymZ6lfjGwkRXtWi0QZ91zUyz1Fgzbb2lOws7sZSxDYF6h
-	 TFh2NGSV4E3kPsnMeuJl3fAKNVzgtSosvjYw3sMkTyZ2Z+b2VG54vv7Y7QccvUN9gX
-	 Te9eFRhIGNaOcbhh6GniDh8CW1AVBe45boBZNVkGLWBq6baEutywJcBhCAe0xfkaGN
-	 P8ByQGCUKn+R4Fx+LI4+ZDHJaufensjl+OGJ2SJXSgpdNoknWVKdSDvSscWPpK48Fp
-	 pyu0QBftSpPkdljTeY79WslVWTN7Tnce/623Tdd+Vre4B/phqOE/oGwnOfoBxhlQfs
-	 0ciChUTImYUQw==
-Date: Tue, 6 Feb 2024 11:52:59 -0700
-From: Nathan Chancellor <nathan@kernel.org>
-To: Adam Ford <aford173@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de,
-	alexander.stein@ew.tq-group.com, frieder.schrempf@kontron.de,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Richard Leitner <richard.leitner@skidata.com>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Fabio Estevam <festevam@gmail.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
+	id 1rXWl8-00000009MRn-1dRu;
+	Wed, 07 Feb 2024 01:29:55 +0000
+Received: from local
+	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+	 (Exim 4.96.2)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1rXWki-0004bF-0d;
+	Wed, 07 Feb 2024 01:29:28 +0000
+Date: Wed, 7 Feb 2024 01:29:18 +0000
+From: Daniel Golle <daniel@makrotopia.org>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>, Liu Ying <victor.liu@nxp.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, llvm@lists.linux.dev
-Subject: Re: [PATCH V8 08/12] drm/bridge: imx: add driver for HDMI TX
- Parallel Video Interface
-Message-ID: <20240206185259.GA2649447@dev-arch.thelio-3990X>
-References: <20240203165307.7806-1-aford173@gmail.com>
- <20240203165307.7806-9-aford173@gmail.com>
- <20240206170632.GA2183819@dev-arch.thelio-3990X>
- <CAHCN7x+Jt8Qfyjxg=TasUgezA3ZDk=6mFZkMyFEwk2Evt-6c5Q@mail.gmail.com>
+	Felix Fietkau <nbd@nbd.name>, John Crispin <john@phrozen.org>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Mark Lee <Mark-MC.Lee@mediatek.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Alexander Couzens <lynxis@fe80.eu>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [RFC PATCH net-next v3 3/8] net: pcs: pcs-mtk-lynxi: add
+ platform driver for MT7988
+Message-ID: <ZcLc7vJ4fPmRyuxn@makrotopia.org>
+References: <cover.1702352117.git.daniel@makrotopia.org>
+ <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
+ <ZXnV/Pk1PYxAm/jS@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAHCN7x+Jt8Qfyjxg=TasUgezA3ZDk=6mFZkMyFEwk2Evt-6c5Q@mail.gmail.com>
+In-Reply-To: <ZXnV/Pk1PYxAm/jS@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_105304_394717_3B0B49FA 
-X-CRM114-Status: GOOD (  36.83  )
+X-CRM114-CacheID: sfid-20240206_172954_603742_EFFB5116 
+X-CRM114-Status: GOOD (  50.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,106 +82,214 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBGZWIgMDYsIDIwMjQgYXQgMTI6NTA6MTZQTSAtMDYwMCwgQWRhbSBGb3JkIHdyb3Rl
-Ogo+IE9uIFR1ZSwgRmViIDYsIDIwMjQgYXQgMTE6MDbigK9BTSBOYXRoYW4gQ2hhbmNlbGxvciA8
-bmF0aGFuQGtlcm5lbC5vcmc+IHdyb3RlOgo+ID4KPiA+IEhpIGFsbCwKPiA+Cj4gPiBPbiBTYXQs
-IEZlYiAwMywgMjAyNCBhdCAxMDo1Mjo0OEFNIC0wNjAwLCBBZGFtIEZvcmQgd3JvdGU6Cj4gPiA+
-IEZyb206IEx1Y2FzIFN0YWNoIDxsLnN0YWNoQHBlbmd1dHJvbml4LmRlPgo+ID4gPgo+ID4gPiBU
-aGlzIElQIGJsb2NrIGlzIGZvdW5kIGluIHRoZSBIRE1JIHN1YnN5c3RlbSBvZiB0aGUgaS5NWDhN
-UCBTb0MuIEl0IGhhcyBhCj4gPiA+IGZ1bGwgdGltaW5nIGdlbmVyYXRvciBhbmQgY2FuIHN3aXRj
-aCBiZXR3ZWVuIGRpZmZlcmVudCB2aWRlbyBzb3VyY2VzLiBPbgo+ID4gPiB0aGUgaS5NWDhNUCBo
-b3dldmVyIHRoZSBvbmx5IHN1cHBvcnRlZCBzb3VyY2UgaXMgdGhlIExDRElGLiBUaGUgYmxvY2sK
-PiA+ID4ganVzdCBuZWVkcyB0byBiZSBwb3dlcmVkIHVwIGFuZCB0b2xkIGFib3V0IHRoZSBwb2xh
-cml0eSBvZiB0aGUgdmlkZW8KPiA+ID4gc3luYyBzaWduYWxzIHRvIGFjdCBpbiBieXBhc3MgbW9k
-ZS4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogTHVjYXMgU3RhY2ggPGwuc3RhY2hAcGVuZ3V0
-cm9uaXguZGU+Cj4gPiA+IFJldmlld2VkLWJ5OiBMdWNhIENlcmVzb2xpIDxsdWNhLmNlcmVzb2xp
-QGJvb3RsaW4uY29tPiAodjcpCj4gPiA+IFRlc3RlZC1ieTogTWFyZWsgVmFzdXQgPG1hcmV4QGRl
-bnguZGU+ICh2MSkKPiA+ID4gVGVzdGVkLWJ5OiBMdWNhIENlcmVzb2xpIDxsdWNhLmNlcmVzb2xp
-QGJvb3RsaW4uY29tPiAodjcpCj4gPiA+IFRlc3RlZC1ieTogUmljaGFyZCBMZWl0bmVyIDxyaWNo
-YXJkLmxlaXRuZXJAc2tpZGF0YS5jb20+ICh2MikKPiA+ID4gVGVzdGVkLWJ5OiBGcmllZGVyIFNj
-aHJlbXBmIDxmcmllZGVyLnNjaHJlbXBmQGtvbnRyb24uZGU+ICh2MikKPiA+ID4gUmV2aWV3ZWQt
-Ynk6IExhdXJlbnQgUGluY2hhcnQgPGxhdXJlbnQucGluY2hhcnRAaWRlYXNvbmJvYXJkLmNvbT4g
-KHYzKQo+ID4gPiBSZXZpZXdlZC1ieTogTHVjYSBDZXJlc29saSA8bHVjYS5jZXJlc29saUBib290
-bGluLmNvbT4KPiA+ID4gVGVzdGVkLWJ5OiBMdWNhIENlcmVzb2xpIDxsdWNhLmNlcmVzb2xpQGJv
-b3RsaW4uY29tPgo+ID4gPiBUZXN0ZWQtYnk6IEZhYmlvIEVzdGV2YW0gPGZlc3RldmFtQGdtYWls
-LmNvbT4KPiA+ID4gU2lnbmVkLW9mZi1ieTogQWRhbSBGb3JkIDxhZm9yZDE3M0BnbWFpbC5jb20+
-Cj4gPgo+ID4gPHNuaXA+Cj4gPgo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2Jy
-aWRnZS9pbXgvaW14OG1wLWhkbWktcHZpLmMgYi9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2lteC9p
-bXg4bXAtaGRtaS1wdmkuYwo+ID4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4gPiBpbmRleCAw
-MDAwMDAwMDAwMDAuLmE3NmI3NjY5ZmU4YQo+ID4gPiAtLS0gL2Rldi9udWxsCj4gPiA+ICsrKyBi
-L2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvaW14L2lteDhtcC1oZG1pLXB2aS5jCj4gPiAuLi4KPiA+
-ID4gK3N0YXRpYyB2b2lkIGlteDhtcF9oZG1pX3B2aV9icmlkZ2VfZW5hYmxlKHN0cnVjdCBkcm1f
-YnJpZGdlICpicmlkZ2UsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICBzdHJ1Y3QgZHJtX2JyaWRnZV9zdGF0ZSAqYnJpZGdlX3N0YXRlKQo+ID4gPiArewo+ID4g
-PiArICAgICBzdHJ1Y3QgZHJtX2F0b21pY19zdGF0ZSAqc3RhdGUgPSBicmlkZ2Vfc3RhdGUtPmJh
-c2Uuc3RhdGU7Cj4gPiA+ICsgICAgIHN0cnVjdCBpbXg4bXBfaGRtaV9wdmkgKnB2aSA9IHRvX2lt
-eDhtcF9oZG1pX3B2aShicmlkZ2UpOwo+ID4gPiArICAgICBzdHJ1Y3QgZHJtX2Nvbm5lY3Rvcl9z
-dGF0ZSAqY29ubl9zdGF0ZTsKPiA+ID4gKyAgICAgY29uc3Qgc3RydWN0IGRybV9kaXNwbGF5X21v
-ZGUgKm1vZGU7Cj4gPiA+ICsgICAgIHN0cnVjdCBkcm1fY3J0Y19zdGF0ZSAqY3J0Y19zdGF0ZTsK
-PiA+ID4gKyAgICAgc3RydWN0IGRybV9jb25uZWN0b3IgKmNvbm5lY3RvcjsKPiA+ID4gKyAgICAg
-dTMyIGJ1c19mbGFncywgdmFsOwo+ID4gPiArCj4gPiA+ICsgICAgIGNvbm5lY3RvciA9IGRybV9h
-dG9taWNfZ2V0X25ld19jb25uZWN0b3JfZm9yX2VuY29kZXIoc3RhdGUsIGJyaWRnZS0+ZW5jb2Rl
-cik7Cj4gPiA+ICsgICAgIGNvbm5fc3RhdGUgPSBkcm1fYXRvbWljX2dldF9uZXdfY29ubmVjdG9y
-X3N0YXRlKHN0YXRlLCBjb25uZWN0b3IpOwo+ID4gPiArICAgICBjcnRjX3N0YXRlID0gZHJtX2F0
-b21pY19nZXRfbmV3X2NydGNfc3RhdGUoc3RhdGUsIGNvbm5fc3RhdGUtPmNydGMpOwo+ID4gPiAr
-Cj4gPiA+ICsgICAgIGlmIChXQVJOX09OKHBtX3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQocHZpLT5k
-ZXYpKSkKPiA+ID4gKyAgICAgICAgICAgICByZXR1cm47Cj4gPiA+ICsKPiA+ID4gKyAgICAgbW9k
-ZSA9ICZjcnRjX3N0YXRlLT5hZGp1c3RlZF9tb2RlOwo+ID4gPiArCj4gPiA+ICsgICAgIHZhbCA9
-IEZJRUxEX1BSRVAoUFZJX0NUUkxfTU9ERV9NQVNLLCBQVklfQ1RSTF9NT0RFX0xDRElGKSB8IFBW
-SV9DVFJMX0VOOwo+ID4gPiArCj4gPiA+ICsgICAgIGlmIChtb2RlLT5mbGFncyAmIERSTV9NT0RF
-X0ZMQUdfUFZTWU5DKQo+ID4gPiArICAgICAgICAgICAgIHZhbCB8PSBQVklfQ1RSTF9PUF9WU1lO
-Q19QT0wgfCBQVklfQ1RSTF9JTlBfVlNZTkNfUE9MOwo+ID4gPiArCj4gPiA+ICsgICAgIGlmICht
-b2RlLT5mbGFncyAmIERSTV9NT0RFX0ZMQUdfUEhTWU5DKQo+ID4gPiArICAgICAgICAgICAgIHZh
-bCB8PSBQVklfQ1RSTF9PUF9IU1lOQ19QT0wgfCBQVklfQ1RSTF9JTlBfSFNZTkNfUE9MOwo+ID4g
-PiArCj4gPiA+ICsgICAgIGlmIChwdmktPm5leHRfYnJpZGdlLT50aW1pbmdzKQo+ID4gPiArICAg
-ICAgICAgICAgIGJ1c19mbGFncyA9IHB2aS0+bmV4dF9icmlkZ2UtPnRpbWluZ3MtPmlucHV0X2J1
-c19mbGFnczsKPiA+ID4gKyAgICAgZWxzZSBpZiAoYnJpZGdlX3N0YXRlKQo+ID4gPiArICAgICAg
-ICAgICAgIGJ1c19mbGFncyA9IGJyaWRnZV9zdGF0ZS0+aW5wdXRfYnVzX2NmZy5mbGFnczsKPiA+
-ID4gKwo+ID4gPiArICAgICBpZiAoYnVzX2ZsYWdzICYgRFJNX0JVU19GTEFHX0RFX0hJR0gpCj4g
-PiA+ICsgICAgICAgICAgICAgdmFsIHw9IFBWSV9DVFJMX09QX0RFX1BPTCB8IFBWSV9DVFJMX0lO
-UF9ERV9QT0w7Cj4gPiA+ICsKPiA+ID4gKyAgICAgd3JpdGVsKHZhbCwgcHZpLT5yZWdzICsgSFRY
-X1BWSV9DVFJMKTsKPiA+ID4gK30KPiA+Cj4gPiBBcG9sb2dpZXMgaWYgdGhpcyBoYXMgYWxyZWFk
-eSBiZWVuIHJlcG9ydGVkIG9yIGZpeGVkLCBJIHNlYXJjaGVkIGxvcmUKPiA+IGFuZCBkaWQgbm90
-IGZpbmQgYW55dGhpbmcuIENsYW5nIHdhcm5zIChvciBlcnJvcnMgd2l0aCBDT05GSUdfV0VSUk9S
-PXkpCj4gPiBmb3IgdGhpcyBmdW5jdGlvbjoKPiA+Cj4gPiAgIGRyaXZlcnMvZ3B1L2RybS9icmlk
-Z2UvaW14L2lteDhtcC1oZG1pLXB2aS5jOjgxOjExOiBlcnJvcjogdmFyaWFibGUgJ2J1c19mbGFn
-cycgaXMgdXNlZCB1bmluaXRpYWxpemVkIHdoZW5ldmVyICdpZicgY29uZGl0aW9uIGlzIGZhbHNl
-IFstV2Vycm9yLC1Xc29tZXRpbWVzLXVuaW5pdGlhbGl6ZWRdCj4gPiAgICAgIDgxIHwgICAgICAg
-ICBlbHNlIGlmIChicmlkZ2Vfc3RhdGUpCj4gPiAgICAgICAgIHwgICAgICAgICAgICAgICAgICBe
-fn5+fn5+fn5+fn4KPiA+ICAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbXgvaW14OG1wLWhkbWkt
-cHZpLmM6ODQ6Njogbm90ZTogdW5pbml0aWFsaXplZCB1c2Ugb2NjdXJzIGhlcmUKPiA+ICAgICAg
-ODQgfCAgICAgICAgIGlmIChidXNfZmxhZ3MgJiBEUk1fQlVTX0ZMQUdfREVfSElHSCkKPiA+ICAg
-ICAgICAgfCAgICAgICAgICAgICBefn5+fn5+fn4KPiA+ICAgZHJpdmVycy9ncHUvZHJtL2JyaWRn
-ZS9pbXgvaW14OG1wLWhkbWktcHZpLmM6ODE6Nzogbm90ZTogcmVtb3ZlIHRoZSAnaWYnIGlmIGl0
-cyBjb25kaXRpb24gaXMgYWx3YXlzIHRydWUKPiA+ICAgICAgODEgfCAgICAgICAgIGVsc2UgaWYg
-KGJyaWRnZV9zdGF0ZSkKPiA+ICAgICAgICAgfCAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+
-fn4KPiA+ICAgICAgODIgfCAgICAgICAgICAgICAgICAgYnVzX2ZsYWdzID0gYnJpZGdlX3N0YXRl
-LT5pbnB1dF9idXNfY2ZnLmZsYWdzOwo+ID4gICBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2lteC9p
-bXg4bXAtaGRtaS1wdmkuYzo2MDoxNTogbm90ZTogaW5pdGlhbGl6ZSB0aGUgdmFyaWFibGUgJ2J1
-c19mbGFncycgdG8gc2lsZW5jZSB0aGlzIHdhcm5pbmcKPiA+ICAgICAgNjAgfCAgICAgICAgIHUz
-MiBidXNfZmxhZ3MsIHZhbDsKPiA+ICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICBeCj4g
-PiAgICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgID0gMAo+ID4gICAxIGVycm9yIGdlbmVy
-YXRlZC4KPiA+Cj4gPiBUaGlzIHNlZW1zIGxlZ2l0aW1hdGUuIElmIGJyaWRnZV9zdGF0ZSBjYW4g
-YmUgTlVMTCwgc2hvdWxkIGJ1c19mbGFncyBiZQo+ID4gaW5pdGlhbGl6ZWQgdG8gemVybyBsaWtl
-IGl0IHN1Z2dlc3RzIG9yIHNob3VsZCB0aGF0ICdlbHNlIGlmJyBiZSB0dXJuZWQKPiA+IGludG8g
-YSBwbGFpbiAnZWxzZSc/IEkgYW0gaGFwcHkgdG8gc2VuZCBhIHBhdGNoIHdpdGggdGhhdCBndWlk
-YW5jZS4KPiAKPiBJIGRvbid0IHRoaW5rIHdlIGNhbiB0dXJuIHRoZSBlbHNlLWlmIGludG8gYSBi
-bGluZCBlbHNlLCBiZWNhdXNlIGluCj4gb3JkZXIgdG8gbWFrZSBidXNfZmxhZ3MgcG9pbnQgdG8g
-YnJpZGdlX3N0YXRlLT5pbnB1dF9idXNfY2ZnLmZsYWdzLAo+IGJyaWRnZV9zdGF0ZSBtdXN0IG5v
-dCBiZSBOVUxMLCBidXQgd2UgY291bGQgYWRkIGFuIGFkZGl0aW9uYWwgZWxzZSB0bwo+IHNldCBi
-dXNfZmxhZ3MgdG8gMCwgYnV0IEkgdGhpbmsgdGhlIHNpbXBsZXN0IHRoaW5nIHRvIGRvIHdvdWxk
-IGJlIHRvCj4gc2V0IGJ1c19mbGFncyA9IDAgYXQgdGhlIGluaXRpYWxpemF0aW9uIG9uIGxpbmUg
-NjAgYXMgaXQgc3VnZ2VzdHMuCj4gCj4gSWYgeW91IGFncmVlLCBJIGNhbiBzdWJtaXQgYSBwYXRj
-aCBsYXRlciB0b25pZ2h0LiAgSSBuZWVkIHRvIGZpeAo+IGFub3RoZXIgaXNzdWUgZm91bmQgYnkg
-dGhlIGJ1aWxkLWJvdCBbMV0gIHRvIG1ha2UgbGluZSAxMTMgcmV0dXJuIE5VTEwKPiBpbnN0ZWFk
-IG9mIDAgYW55d2F5LiAgSSBmaWd1cmVkIEkgY291bGQganVzdCBmaXggdGhlbSBib3RoIGF0IHRo
-ZSBzYW1lCj4gdGltZS4KPiAKPiBbMV0gLSBodHRwczovL2xvcmUua2VybmVsLm9yZy9vZS1rYnVp
-bGQtYWxsLzIwMjQwMjA2MjEzNC5hNkNxQXQzcy1sa3BAaW50ZWwuY29tLwoKU2VlbXMgcmVhc29u
-YWJsZSB0byBtZSwgdGhhbmtzIQoKTmF0aGFuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Russell,
+
+sorry for the extended time it took me to get back to this patch and
+the comments you made for it. Understanding the complete scope of the
+problem took a while (plus there were holidays and other fun things),
+and also brought up further questions which I hope you can help me
+find good answers for, see below:
+
+On Wed, Dec 13, 2023 at 04:04:12PM +0000, Russell King (Oracle) wrote:
+> On Tue, Dec 12, 2023 at 03:47:18AM +0000, Daniel Golle wrote:
+> > Introduce a proper platform MFD driver for the LynxI (H)SGMII PCS which
+> > is going to initially be used for the MT7988 SoC.
+> > 
+> > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> 
+> I made some specific suggestions about what I wanted to see for
+> "getting" PCS in the previous review, and I'm disappointed that this
+> patch set is still inventing its own solution.
+> 
+> > +struct phylink_pcs *mtk_pcs_lynxi_get(struct device *dev, struct device_node *np)
+> > +{
+> > +	struct platform_device *pdev;
+> > +	struct mtk_pcs_lynxi *mpcs;
+> > +
+> > +	if (!np)
+> > +		return NULL;
+> > +
+> > +	if (!of_device_is_available(np))
+> > +		return ERR_PTR(-ENODEV);
+> > +
+> > +	if (!of_match_node(mtk_pcs_lynxi_of_match, np))
+> > +		return ERR_PTR(-EINVAL);
+> > +
+> > +	pdev = of_find_device_by_node(np);
+> > +	if (!pdev || !platform_get_drvdata(pdev)) {
+> 
+> This is racy - as I thought I described before, userspace can unbind
+> the device in one thread, while another thread is calling this
+> function. With just the right timing, this check succeeds, but...
+> 
+> > +		if (pdev)
+> > +			put_device(&pdev->dev);
+> > +		return ERR_PTR(-EPROBE_DEFER);
+> > +	}
+> > +
+> > +	mpcs = platform_get_drvdata(pdev);
+> 
+> mpcs ends up being read as NULL here. Even if you did manage to get a
+> valid pointer, "mpcs" being devm-alloced could be freed from under
+> you at this point...
+> 
+> > +	device_link_add(dev, mpcs->dev, DL_FLAG_AUTOREMOVE_CONSUMER);
+> 
+> resulting in this accessing memory which has been freed.
+> 
+> The solution would be either to suppress the bind/unbind attributes
+> (provided the underlying struct device can't go away, which probably
+> also means ensuring the same of the MDIO bus. Aternatively, adding
+> a lock around the remove path and around the checking of
+> platform_get_drvdata() down to adding the device link would probably
+> solve it.
+> 
+> However, I come back to my general point - this kind of stuff is
+> hairy. Do we want N different implementations of it in various drivers
+> with subtle bugs, or do we want _one_ implemenatation.
+> 
+> If we go with the one implemenation approach, then we need to think
+> about whether we should be using device links or not. The problem
+> could be for network interfaces where one struct device is
+> associated with multiple network interfaces. Using device links has
+> the unfortunate side effect that if the PCS for one of those network
+> interfaces is removed, _all_ network interfaces disappear.
+
+I agree, esp. on this MT7988 removal of a PCS which may then not
+even be in use also impairs connectivity on the built-in gigE DSA
+switch. It would be nice to try to avoid this.
+
+> 
+> My original suggestion was to hook into phylink to cause that to
+> take the link down when an in-use PCS gets removed.
+
+I took a deep dive into how this could be done correctly and how
+similar things are done for other drivers. Apart from the PCS there
+often also is a muxing-PHY involved, eg. MediaTek's XFI T-PHY in this
+case (previously often called "pextp" for no apparent reason) or
+Marvell's comphy (mvebu-comphy).
+
+So let's try something simple on an already well-supported platform,
+I thought and grabbed Marvell Armada CN9131-DB running vanilla Linux,
+and it didn't even take some something racy, but plain:
+
+ip link set eth6 up
+cd /sys/bus/platform/drivers/mvebu-comphy
+echo f2120000.phy > unbind
+echo f4120000.phy > unbind
+echo f6120000.phy > unbind
+ip link set eth6 down
+
+
+That was enough. The result is a kernel crash, and the same should
+apply on popular platforms like the SolidRun MACCHIATOBin and other
+similar boards.
+
+So this gets me to think that there is a wider problem around
+non-phylink-managed resources which may disappear while in use by
+network drivers, and I guess that the same applies in many other
+places. I don't have a SATA drive connected to that Marvell board, but
+I can imagine what happens when suddenly removing the comphy instance
+in charge of the SATA link and then a subsequent SATA hotplug event
+happens or stuff like that...
+
+Anyway, back to network subsystem and phylink:
+
+Do you agree that we need a way to register (and unregister) PCS
+providers with phylink, so we don't need *_get_by_of_node implementations
+in each driver? If so, can you sketch out what the basic requirements
+for an acceptable solution would be?
+
+Also, do you agree that lack of handling of disappearing resources,
+such as PHYs (*not* network PHYs, but PHYs as in drivers/phy/*) or
+syscons, is already a problem right now which should be addressed?
+
+If you imagine phylink to take care of the life-cycle of all link-
+resources, what is vision about those things other than classic MDIO-
+connected PHYs?
+
+And well, of course, the easy fix for the example above would be:
+diff --git a/drivers/phy/marvell/phy-mvebu-cp110-comphy.c b/drivers/phy/marvell/phy-mvebu-cp110-comphy.c
+index b0dd133665986..9517c96319595 100644
+--- a/drivers/phy/marvell/phy-mvebu-cp110-comphy.c
++++ b/drivers/phy/marvell/phy-mvebu-cp110-comphy.c
+@@ -1099,6 +1099,7 @@ static const struct of_device_id mvebu_comphy_of_match_table[] = {
+ MODULE_DEVICE_TABLE(of, mvebu_comphy_of_match_table);
+ 
+ static struct platform_driver mvebu_comphy_driver = {
++	.suppress_bind_attrs = true,
+ 	.probe	= mvebu_comphy_probe,
+ 	.driver	= {
+ 		.name = "mvebu-comphy",
+
+But that should then apply to every single driver in drivers/phy/...
+
+
+> 
+> > +
+> > +	return &mpcs->pcs;
+> > +}
+> > +EXPORT_SYMBOL(mtk_pcs_lynxi_get);
+> > +
+> > +void mtk_pcs_lynxi_put(struct phylink_pcs *pcs)
+> > +{
+> > +	struct mtk_pcs_lynxi *cur, *mpcs = NULL;
+> > +
+> > +	if (!pcs)
+> > +		return;
+> > +
+> > +	mutex_lock(&instance_mutex);
+> > +	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
+> > +		if (pcs == &cur->pcs) {
+> > +			mpcs = cur;
+> > +			break;
+> > +		}
+> > +	mutex_unlock(&instance_mutex);
+> 
+> I don't see what this loop gains us, other than checking that the "pcs"
+> is still on the list and hasn't already been removed. If that is all
+> that this is about, then I would suggest:
+> 
+> 	bool found = false;
+> 
+> 	if (!pcs)
+> 		return;
+> 
+> 	mpcs = pcs_to_mtk_pcs_lynxi(pcs);
+> 	mutex_lock(&instance_mutex);
+> 	list_for_each_entry(cur, &mtk_pcs_lynxi_instances, node)
+> 		if (cur == mpcs) {
+> 			found = true;
+> 			break;
+> 		}
+> 	mutex_unlock(&instance_mutex);
+> 
+> 	if (WARN_ON(!found))
+> 		return;
+> 
+> which makes it more obvious why this exists.
+
+The idea was not only to make sure it hasn't been removed, but also
+to be sure that what ever the private data pointer points to has
+actually been created by that very driver.
+
+But yes, doing it in the way you suggest will work in the same way,
+just when having my idea in mind it looks more fishy to use
+pcs_to_mtk_pcs_lynxi() before we are 100% sure that what we dealing
+with has previously been created by this driver.
+
+
+Cheers
+
+
+Daniel
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
