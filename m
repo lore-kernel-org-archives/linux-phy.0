@@ -4,79 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DE85C48297
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Feb 2024 15:30:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA7D9C48297
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Feb 2024 16:03:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tReoy/RiVBHeHEM4b+JTzsht7gWDm7cN54XhWGby9k=; b=1sVLRYXJWF8HMN
-	IdUEbtq9uIdfMu56LLmCmF1zPdNhZlVAobHs1MWj3xoWMJWCvGMc84KSikXqWbBYDipzEfe6BSU9B
-	K8xiSTESwsmm52os+x37bgH10YBomTpjrPRZlIvbRUEozd/QlnBnfM6cy5840NZtTbRvKPa1EsMQt
-	fECtVokMFsaDWbT6V4cIt7H4lCAQw6aNPLBylDHFM/vSCJG+OSKg/gIKASrwa0L19pVqNMtDOIoDv
-	iFg7XEzPDBSv32gTpf1eErh7HbdTB6iPLzt3dwgkZzWKUmWbjsHlPz/Fru4g801+KWMFYkWQ/xTEc
-	3X9Z8145Y6e8asxWtWIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=deg9SXnWB68kyGRiPURl5e7ROSPFzreMTstwDSVngcQ=; b=mXu90nMBTaJ5Tb
+	cQUyeJM6PGGaoUUFtc7eGbMosZ9dYexzfjaIddwtgTDXbIwfnItGzgp1hysj4muQcRaeZj6VKOnSQ
+	TtZtTgcJXUcYi4Gi0jeT4DGQRl6m6YFOCAzknJWv3pX71L22AaSwsdbZzg9Lk2cfe4CA0vc57uE7Z
+	lZrEbcRQiZtr65e8RIFNYwtFnZZz1H6UI3bMYkDH5nGaATMAU3bhDCzgl44x9d5gqa5oC9tau+MEk
+	W513S6I+VF7HKWEb/iZBS9Ew5f9eIsNTQpZ+3G3n0ZN8wV9AlJFllwFBR8mgYkos6E2AtL1GfsTE/
+	769TTKSgm/n1OeCuGTDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYSpY-0000000HOkP-3yaN;
-	Fri, 09 Feb 2024 15:30:20 +0000
-Received: from mail-yw1-x112f.google.com ([2607:f8b0:4864:20::112f])
+	id 1rYTLs-0000000HSpl-1Ij1;
+	Fri, 09 Feb 2024 16:03:44 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYSpW-0000000HOjQ-0Tsp
+	id 1rYTLp-0000000HSnm-2KRe
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Feb 2024 15:30:19 +0000
-Received: by mail-yw1-x112f.google.com with SMTP id 00721157ae682-604966eaf6eso10897157b3.1
-        for <linux-phy@lists.infradead.org>; Fri, 09 Feb 2024 07:30:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1707492615; x=1708097415; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=DwPyne/Srr/E0bqYu1xMZ7k+F7q7JB1awfFG2iwj5SM=;
-        b=thVPpBPFJOFpCJf9QLANmTRpNULPwgXubOXalbkFpb9ZKyzKs1dSJI/sg1ro191pcc
-         Jx3IWFhB52H/wNShQUN8JmPls2rm51Yi9wo0oeNNnfhYpqqziWEuoy2KzlsrF5cbovyT
-         xWY624m+wXoT26Kqv0+GMAC8zPLiwRE4Z/D9cVdOJFt9Diey59HAfAAZsJdX9mjG9PxO
-         BXeVxf/DLBwiPijDgQhfG1UnAzXejMZoVc3pG4zJzVpIs/NDUYOEvw+2yPgyV6mZsip/
-         3qpG4E56h+6uy4LUU+mXeXLNgBF53Js7xJUWY8yt6KPPF6rVZX35Cy3MJswLV7RGQfyd
-         fZTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707492615; x=1708097415;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=DwPyne/Srr/E0bqYu1xMZ7k+F7q7JB1awfFG2iwj5SM=;
-        b=qCFdf8MIZBV3D2sFq6CYZ1XfnpxMsLy/xNNuLOmhpaNDVwLFrMGsFjKC70IDy+CKO3
-         oRrUZsyClyjudsB9R5nBk+q/rK71YwAddAKUzpnmv3LExfLh2Q7C2ezu9bN74pzbk7Yt
-         hfAwNmCxbU/EhdoW63pSufUlXDhaP+d9oUJ6CSIgms6jV5/U0IXUbqFyyGuMEEtMIsta
-         acfZQ0vKkaKZCWJVKyTBUT/M3Ud4P8zcwigde4ScRwsm8ji/GTEgDOlq3nDJu/5A5evp
-         iqAaq8ebbAsBhbGgt9LzbkKo2At/ZwqDcj7zF6JDjuKiSEfOUUcOm/VQvNH+i2wuRr66
-         Oz0g==
-X-Gm-Message-State: AOJu0YwtyiDjezhBzWz08kNsEGR/lQQWdrU8zFj+6+ii2nyuFYJ3JF6u
-	BRBJkaIUNd2R/3tbpGIXreQCr7E5KqgLb6PceQT0gMSlyST80wYKXvO1KOGS73Mrq15QIY4IOdc
-	ta+h8l8O6lfYeO5FEK43fMxxahwlebYxmbGkrbA==
-X-Google-Smtp-Source: AGHT+IHKpJlDohaMbxRWC+5/t8hSxuj+YTX27ZF5QMSJPTcosnKN65Lc9QOWzjA950A7MwAeqivc87GvLixD28RNDbI=
-X-Received: by 2002:a05:690c:2711:b0:604:cb07:b37 with SMTP id
- dy17-20020a05690c271100b00604cb070b37mr958456ywb.33.1707492613963; Fri, 09
- Feb 2024 07:30:13 -0800 (PST)
+	Fri, 09 Feb 2024 16:03:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1707494622; x=1739030622;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=sxZgoQzRCkLciYTRnG7LsjTANpdXGKFB+KxqRFaktcc=;
+  b=NODS1jx9Uj9O1x5ivQrwpOQK+ofU43D16rs/VjS4AGjq3UI5Q1meymEQ
+   X4+jXms72yGfot/hwlafDEyzDsUuKtBBhoZPdyvlZTOq3jpOPtmWcuiiG
+   AmNtCr66Aur+aQoHgxjIcvtEWagM24tVLcqG5u1w5Cz6wWgNmoqKbsJ3A
+   Br23qNdWCKjMmAq+WeawgWSM0iIwqDhG0GqKKZY4WH1TuoVEVTq+pexNF
+   rR54cmqyYfaTOuur/WdKL5RWxp9SdsCe0lNKvWsjWugZq05HSpFAY+gZ0
+   OPwTKEX9xOPiJL0t6ijDM8kA1T03ZWH3XRcusAZCnW9bfJ+Gxp/2wztA0
+   w==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10979"; a="4432020"
+X-IronPort-AV: E=Sophos;i="6.05,257,1701158400"; 
+   d="scan'208";a="4432020"
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Feb 2024 08:03:39 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10979"; a="934459658"
+X-IronPort-AV: E=Sophos;i="6.05,257,1701158400"; 
+   d="scan'208";a="934459658"
+Received: from black.fi.intel.com ([10.237.72.28])
+  by fmsmga001.fm.intel.com with ESMTP; 09 Feb 2024 08:03:37 -0800
+Received: by black.fi.intel.com (Postfix, from userid 1003)
+	id 80496159; Fri,  9 Feb 2024 18:03:36 +0200 (EET)
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: [PATCH v1 0/2] phy: ti: tusb1210: a couple of cleanups
+Date: Fri,  9 Feb 2024 18:02:13 +0200
+Message-ID: <20240209160334.2304230-1-andriy.shevchenko@linux.intel.com>
+X-Mailer: git-send-email 2.43.0.rc1.1.gbec44491f096
 MIME-Version: 1.0
-References: <20240209-phy-qualcomm-eusb2-repeater-smb2360-v1-0-af2ca4d95a67@linaro.org>
- <20240209-phy-qualcomm-eusb2-repeater-smb2360-v1-2-af2ca4d95a67@linaro.org>
-In-Reply-To: <20240209-phy-qualcomm-eusb2-repeater-smb2360-v1-2-af2ca4d95a67@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 9 Feb 2024 17:30:02 +0200
-Message-ID: <CAA8EJppwOjKaRJXj2Re0mugcguAcTZnvEqp_6x-FANrJ__PRTw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] phy: qualcomm: phy-qcom-eusb2-repeater: Add support
- for SMB2360
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240209_073018_180464_9676E6D1 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20240209_080341_623679_259ACE3D 
+X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,74 +84,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 9 Feb 2024 at 17:14, Abel Vesa <abel.vesa@linaro.org> wrote:
->
-> The SMB2360 PMICs contain the same eUSB2 repeater as the PM8550B,
-> so add dedicated compatible for SMB82360.
+A couple of ad-hoc cleanups. Nothing special. Has been tested on
+Intel Merrifield platform (with DWC3 using this PHY).
 
-"...same repeater as the PM8550B, but requiring different settings..."
+Andy Shevchenko (2):
+  phy: ti: tusb1210: Use temporary variable for struct device
+  phy: ti: tusb1210: Define device IDs
 
-With that fixed:
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
->
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
->
-> diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> index a43e20abb10d..68cc8e24f383 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> @@ -88,6 +88,12 @@ static const u32 pm8550b_init_tbl[NUM_TUNE_FIELDS] = {
->         [TUNE_USB2_PREEM] = 0x5,
->  };
->
-> +static const u32 smb2360_init_tbl[NUM_TUNE_FIELDS] = {
-> +       [TUNE_IUSB2] = 0x5,
-> +       [TUNE_SQUELCH_U] = 0x3,
-> +       [TUNE_USB2_PREEM] = 0x2,
-> +};
-> +
->  static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
->         .init_tbl       = pm8550b_init_tbl,
->         .init_tbl_num   = ARRAY_SIZE(pm8550b_init_tbl),
-> @@ -95,6 +101,13 @@ static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
->         .num_vregs      = ARRAY_SIZE(pm8550b_vreg_l),
->  };
->
-> +static const struct eusb2_repeater_cfg smb2360_eusb2_cfg = {
-> +       .init_tbl       = smb2360_init_tbl,
-> +       .init_tbl_num   = ARRAY_SIZE(smb2360_init_tbl),
-> +       .vreg_list      = pm8550b_vreg_l,
-> +       .num_vregs      = ARRAY_SIZE(pm8550b_vreg_l),
-> +};
-> +
->  static int eusb2_repeater_init_vregs(struct eusb2_repeater *rptr)
->  {
->         int num = rptr->cfg->num_vregs;
-> @@ -271,6 +284,10 @@ static const struct of_device_id eusb2_repeater_of_match_table[] = {
->                 .compatible = "qcom,pm8550b-eusb2-repeater",
->                 .data = &pm8550b_eusb2_cfg,
->         },
-> +       {
-> +               .compatible = "qcom,smb2360-eusb2-repeater",
-> +               .data = &smb2360_eusb2_cfg,
-> +       },
->         { },
->  };
->  MODULE_DEVICE_TABLE(of, eusb2_repeater_of_match_table);
->
-> --
-> 2.34.1
->
->
-
+ drivers/phy/ti/phy-tusb1210.c | 57 ++++++++++++++++++-----------------
+ 1 file changed, 30 insertions(+), 27 deletions(-)
 
 -- 
-With best wishes
-Dmitry
+2.43.0.rc1.1.gbec44491f096
+
 
 -- 
 linux-phy mailing list
