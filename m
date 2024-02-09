@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95D99C4828F
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Feb 2024 18:18:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5186CC48297
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Feb 2024 18:18:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LVoTQ3qKmDCKvZo9OoMGITBvfeEpYAfXipTnY24LTiw=; b=ZGSNIVPkHsRcXV
-	KW0FR9pGleQeYEELwy6HwABlfI8FCh4YJNvowUB1FchdRpSZYqEq/dBEvltok53V62nigZJ8ea0Cf
-	u1So/2dUJI9WqjivUQoGyYYt1uG8M1are+llUEsATyvkFfLM6RmzRFBXhi6bkMK0ipsI9iSyoWK2I
-	vdwn/aHAqYHp605NWEvmtPeKgH4iuiOS2Augp0fVO1QTfaqJcSXzdM5f9IV/Z6r1D2qP4Ff23cM9N
-	oO5/faePBI/gSo8s7dRamQ4M/Q9DaFtFqh2+yaLipKPSmEjLLG3GDd1KKsHu70dUmRiP0HEGH8nic
-	hhBygJE+fc6zqNkF4oyg==;
+	List-Owner; bh=5d4bpuP4pOtEW8yrOnx31/dt2sVqNkKNSCscF1Xcf7M=; b=FluzvKWllsPrYU
+	51jfjUVpcJXDiCoQLXSOUFanmP9drGu85K5p55netnOY0WwHEvIZN7J9JdOQ8Vyl9W9awjWUKZihu
+	tUsfpR5s37xt5RI/dPwFL619tpopDF5ApiGlxNw6mFoYjpEH1ykmYA69cW4wdZaYSgTY6LEtKH7c/
+	R/XwOtiBC9cuN19Rzg+AiaPrIqWoX6gRphm/EodxLi9nTiK/LL+0n47iKfD2YtD1VVaXyp7FLk+je
+	sO4ohDzzU6zS+QERVMCWK3+pmBQ1SeowqU48V8rl7Y6oXAVBbWe1/uQaH/k5mU23xY9oM28lBRxG1
+	YMiQLqboynQhksdy4q4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYVSW-00000000DmX-1DLH;
+	id 1rYVSW-00000000Dms-4AwW;
 	Fri, 09 Feb 2024 18:18:44 +0000
 Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYVSO-00000000Dh7-3kkE;
-	Fri, 09 Feb 2024 18:18:40 +0000
+	id 1rYVSR-00000000Dij-3FR8;
+	Fri, 09 Feb 2024 18:18:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1707502713;
-	bh=xZcm+orw00B6Nq4H2S1rryWFpOh727WR5BMjfMSxMew=;
+	bh=W78wJAlvixNiHCrlDx7Yf34X8zTmj0Mc93LVC6YUGHk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZkHFi/RnV1PYk4lpnI59yDDYJ/BooxzDGd0zHXCBNrPTb5ujilZPNJ5phoTFHRLbO
-	 DBDZHdmImQwVLljhWQCwXlGFOuz5unduh6X59QJFLvDUznAyi/BLep3rhnFAiCZOFb
-	 ZWrjyJ4C/8jrbkp7V+ynRAwvApyy4hlnhXNPo28ZQuYscoUCMS4vMMcRK+kR2LJBIr
-	 9rGbx4u2bjQmX/Yj7cLJSt/xaZkjX+BgtXDqQihNiAPYv4NkL+KFbOY2Os7AsulOyd
-	 xGJHHbwPJxEIMnqIsjvvk5JK1z4osf3uqD3d9a+XQeNq+cyIns04jREZvQNOgtlxsA
-	 Q/5Wl6+nFMTjg==
+	b=VtOBVG1u257+IaxbL4kCb1BZvnebVBjMBRdk0bovXc7lTsHVRvyrKKb35oidH+Eoe
+	 itPO+GWc9iKODx/G/DKDktLKcSucCwDSwEdoqqfZwu3Hl2Z4JK9Q+WEo5qdvweAsmT
+	 PH793MjuHdk+yMFRVcUtiUm7lVhXmZgi4YK0RkW8ZrerPQYor2c59yAsInzOJMeA4N
+	 TTdnbA1t5CroXZxEl8Qxy5YkeF+uZIyQ/b420cPCSoEl8eWC3L+Pe+q5bZElLfkxzW
+	 vOS8BR8C2Dp99bskFvyuc389Qkd9Dq9yhxuI/trNzi+Ta85gR/P9kfYyyZ5xRue6aB
+	 6V60As5VEZVYg==
 Received: from jupiter.universe (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 0A4E5378209E;
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 8BBB037820B7;
 	Fri,  9 Feb 2024 18:18:33 +0000 (UTC)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 91DC84800D1; Fri,  9 Feb 2024 19:18:32 +0100 (CET)
+	id 9990F4800D5; Fri,  9 Feb 2024 19:18:32 +0100 (CET)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -60,16 +60,17 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v1 03/10] dt-bindings: phy: add rockchip usbdp combo phy document
-Date: Fri,  9 Feb 2024 19:17:19 +0100
-Message-ID: <20240209181831.104687-4-sebastian.reichel@collabora.com>
+Subject: [PATCH v1 07/10] arm64: dts: rockchip: add USB3 DRD controllers on rk3588
+Date: Fri,  9 Feb 2024 19:17:23 +0100
+Message-ID: <20240209181831.104687-8-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240209181831.104687-1-sebastian.reichel@collabora.com>
 References: <20240209181831.104687-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240209_101837_303040_E94873E4 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20240209_101840_042669_26AD85DA 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,189 +87,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add device tree binding document for Rockchip USBDP Combo PHY
-with Samsung IP block.
+Add both USB3 dual-role controllers to the RK3588 devicetree.
 
-Co-developed-by: Frank Wang <frank.wang@rock-chips.com>
-Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- .../bindings/phy/phy-rockchip-usbdp.yaml      | 166 ++++++++++++++++++
- 1 file changed, 166 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
+ arch/arm64/boot/dts/rockchip/rk3588.dtsi  | 20 ++++++++++++++++++++
+ arch/arm64/boot/dts/rockchip/rk3588s.dtsi | 22 ++++++++++++++++++++++
+ 2 files changed, 42 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-new file mode 100644
-index 000000000000..3375a3099038
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-@@ -0,0 +1,166 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/phy-rockchip-usbdp.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588.dtsi b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+index c26288ec75ce..8b991da9db4f 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588.dtsi
+@@ -7,6 +7,26 @@
+ #include "rk3588-pinctrl.dtsi"
+ 
+ / {
++	usb_host1_xhci: usb@fc400000 {
++		compatible = "rockchip,rk3588-dwc3", "snps,dwc3";
++		reg = <0x0 0xfc400000 0x0 0x400000>;
++		interrupts = <GIC_SPI 221 IRQ_TYPE_LEVEL_HIGH 0>;
++		clocks = <&cru REF_CLK_USB3OTG1>, <&cru SUSPEND_CLK_USB3OTG1>,
++			 <&cru ACLK_USB3OTG1>;
++		clock-names = "ref_clk", "suspend_clk", "bus_clk";
++		dr_mode = "otg";
++		phys = <&u2phy1_otg>, <&usbdp_phy1_u3>;
++		phy-names = "usb2-phy", "usb3-phy";
++		phy_type = "utmi_wide";
++		power-domains = <&power RK3588_PD_USB>;
++		resets = <&cru SRST_A_USB3OTG1>;
++		snps,dis_enblslpm_quirk;
++		snps,dis-u2-freeclk-exists-quirk;
++		snps,dis-del-phy-power-chg-quirk;
++		snps,dis-tx-ipgap-linecheck-quirk;
++		status = "disabled";
++	};
 +
-+title: Rockchip USBDP Combo PHY with Samsung IP block
+ 	pcie30_phy_grf: syscon@fd5b8000 {
+ 		compatible = "rockchip,rk3588-pcie3-phy-grf", "syscon";
+ 		reg = <0x0 0xfd5b8000 0x0 0x10000>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+index 553e1883cfe4..6ded159d6dc9 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+@@ -436,6 +436,28 @@ scmi_shmem: sram@0 {
+ 		};
+ 	};
+ 
++	usb_host0_xhci: usb@fc000000 {
++		compatible = "rockchip,rk3588-dwc3", "snps,dwc3";
++		reg = <0x0 0xfc000000 0x0 0x400000>;
++		interrupts = <GIC_SPI 220 IRQ_TYPE_LEVEL_HIGH 0>;
++		clocks = <&cru REF_CLK_USB3OTG0>, <&cru SUSPEND_CLK_USB3OTG0>,
++			 <&cru ACLK_USB3OTG0>;
++		clock-names = "ref_clk", "suspend_clk", "bus_clk";
++		dr_mode = "otg";
++		phys = <&u2phy0_otg>, <&usbdp_phy0_u3>;
++		phy-names = "usb2-phy", "usb3-phy";
++		phy_type = "utmi_wide";
++		power-domains = <&power RK3588_PD_USB>;
++		resets = <&cru SRST_A_USB3OTG0>;
++		snps,dis_enblslpm_quirk;
++		snps,dis-u1-entry-quirk;
++		snps,dis-u2-entry-quirk;
++		snps,dis-u2-freeclk-exists-quirk;
++		snps,dis-del-phy-power-chg-quirk;
++		snps,dis-tx-ipgap-linecheck-quirk;
++		status = "disabled";
++	};
 +
-+maintainers:
-+  - Frank Wang <frank.wang@rock-chips.com>
-+  - Zhang Yubing <yubing.zhang@rock-chips.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - rockchip,rk3588-usbdp-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 4
-+
-+  clock-names:
-+    items:
-+      - const: refclk
-+      - const: immortal
-+      - const: pclk
-+      - const: utmi
-+
-+  resets:
-+    maxItems: 5
-+
-+  reset-names:
-+    items:
-+      - const: init
-+      - const: cmn
-+      - const: lane
-+      - const: pcs_apb
-+      - const: pma_apb
-+
-+  rockchip,dp-lane-mux:
-+    $ref: /schemas/types.yaml#/definitions/uint32-array
-+    minItems: 2
-+    maxItems: 4
-+    description:
-+      An array of physical Tyep-C lanes indexes. Position of an entry determines
-+      the dp lane index, while the value of an entry indicater physical Type-C lane.
-+      The support dp lanes number are 2 or 4. e.g. for 2 lanes dp lanes map, we could
-+      have "rockchip,dp-lane-mux = <2, 3>;", assuming dp lane0 on Type-C phy lane2,
-+      dp lane1 on Type-C phy lane3. For 4 lanes dp lanes map, we could have
-+      "rockchip,dp-lane-mux = <0, 1, 2, 3>;", assuming dp lane0 on Type-C phy lane0,
-+      dp lane1 on Type-C phy lane1, dp lane2 on Type-C phy lane2, dp lane3 on Type-C
-+      phy lane3. If dp lane map by DisplayPort Alt mode, this property is not need.
-+
-+  rockchip,u2phy-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'usb2 phy general register files'.
-+
-+  rockchip,usb-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'usb general register files'.
-+
-+  rockchip,usbdpphy-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'usbdp phy general register files'.
-+
-+  rockchip,vo-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'video output general register files'.
-+      When select the dp lane mapping will request its phandle.
-+
-+  sbu1-dc-gpios:
-+    description:
-+      GPIO connected to the SBU1 line of the USB-C connector via a big resistor
-+      (~100K) to apply a DC offset for signalling the connector orientation.
-+
-+  sbu2-dc-gpios:
-+    description:
-+      GPIO connected to the SBU2 line of the USB-C connector via a big resistor
-+      (~100K) to apply a DC offset for signalling the connector orientation.
-+
-+  orientation-switch:
-+    description: Flag the port as possible handler of orientation switching
-+    type: boolean
-+
-+  mode-switch:
-+    description: Flag the port as possible handle of altmode switching
-+    type: boolean
-+
-+  dp-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+    required:
-+      - "#phy-cells"
-+
-+  usb3-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+    required:
-+      - "#phy-cells"
-+
-+  port:
-+    $ref: /schemas/graph.yaml#/properties/port
-+    description:
-+      A port node to link the PHY to a TypeC controller for the purpose of
-+      handling orientation switching.
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - dp-port
-+  - usb3-port
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-+    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
-+
-+    usbdp_phy0: phy@fed80000 {
-+      compatible = "rockchip,rk3588-usbdp-phy";
-+      reg = <0xfed80000 0x10000>;
-+      rockchip,u2phy-grf = <&usb2phy0_grf>;
-+      rockchip,usb-grf = <&usb_grf>;
-+      rockchip,usbdpphy-grf = <&usbdpphy0_grf>;
-+      rockchip,vo-grf = <&vo0_grf>;
-+      clocks = <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>,
-+               <&cru CLK_USBDP_PHY0_IMMORTAL>,
-+               <&cru PCLK_USBDPPHY0>,
-+               <&u2phy0>;
-+      clock-names = "refclk", "immortal", "pclk", "utmi";
-+      resets = <&cru SRST_USBDP_COMBO_PHY0_INIT>,
-+               <&cru SRST_USBDP_COMBO_PHY0_CMN>,
-+               <&cru SRST_USBDP_COMBO_PHY0_LANE>,
-+               <&cru SRST_USBDP_COMBO_PHY0_PCS>,
-+               <&cru SRST_P_USBDPPHY0>;
-+      reset-names = "init", "cmn", "lane", "pcs_apb", "pma_apb";
-+
-+      usbdp_phy0_dp: dp-port {
-+        #phy-cells = <0>;
-+      };
-+
-+      usbdp_phy0_u3: usb3-port {
-+        #phy-cells = <0>;
-+      };
-+    };
+ 	usb_host0_ehci: usb@fc800000 {
+ 		compatible = "rockchip,rk3588-ehci", "generic-ehci";
+ 		reg = <0x0 0xfc800000 0x0 0x40000>;
 -- 
 2.43.0
 
