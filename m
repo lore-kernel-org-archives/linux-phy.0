@@ -4,64 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C923C48297
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 02:10:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7344EC4829A
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 20:46:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=crd2KuzxU1HT3S5GbN5sdyWmxBvfj20OTTSr8mLQlFg=; b=gU8otzZDNG1Rj1
-	YajfgGaM67HGxMA7+dy5Xa/hB4za+PoXJ3UJpX+0jo7FVaD7AFtD4ApVHhxlB6xp6zs1MuBmBFt2U
-	ZvwX3udS5URq3btf/M1l+qSyR14xiOIWJtXs9WTq3Lc/8sEopXOpAZBq15I9jUQP7nBH4sFthbkDA
-	T2f6FZ26Kinb8M0K7aaUPYtB2d+mp2gDOA1bjVvgSbq2dAJqtMmofArI7hkYdRNcK71v5HZhgCCAO
-	0W2+zABipgKQALOFNwdtHj3DCyGTcyQsOYEeOb1MOLr1B89Ql7UAApUv/6bxn1YoLPGHE+hhjNqj1
-	RlLUBwQtIeiPiBwSzeBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CkjHIQ8tWONW8TEFcx6S5RPfbNKbZNCIg/oVgIIriI8=; b=Vn7aqEkkkCpOiT
+	/pi/VGRQ0JAtT2Z4if65bsLVSccc1sTvm9wC/KmxKpyG+E+8NECoeWPYPNhg/71nSJqr347mqEv7m
+	GdPY1l+1KnD7I23bYWNxxJOVn5NEJEwy2HDKGwARc5QQfYd7zXu3nrL08ntxXx5UJN17wgIDYBw+A
+	53x1zprE9tOSYMlRD7jC+ruoYVkXZylkwkbNyi7sXAlxM42wbRxgBpve9NtooMGl+Xhjin1BV0JHM
+	DntK/lbtgRHYXgTqa6MzPYaWR2t8u31xWo+whPrgwnquPBKCCam7txVE8XBsm2M+s9MD+LHDsVSVU
+	I3/koDXCOY8rXrXO30/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYcpG-000000015Dj-3C5R;
-	Sat, 10 Feb 2024 02:10:42 +0000
-Received: from pidgin.makrotopia.org ([185.142.180.65])
+	id 1rYuEu-0000000201v-3wK8;
+	Sat, 10 Feb 2024 20:46:20 +0000
+Received: from mail-qk1-x72c.google.com ([2607:f8b0:4864:20::72c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYcpC-000000015Bv-0xI3;
-	Sat, 10 Feb 2024 02:10:40 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.96.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1rYcp4-0001To-0I;
-	Sat, 10 Feb 2024 02:10:30 +0000
-Date: Sat, 10 Feb 2024 02:10:24 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
-	Steven Liu <steven.liu@mediatek.com>,
-	John Crispin <john@phrozen.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	id 1rYuEr-00000002018-2Y3r;
+	Sat, 10 Feb 2024 20:46:18 +0000
+Received: by mail-qk1-x72c.google.com with SMTP id af79cd13be357-783d4b3ad96so135014885a.3;
+        Sat, 10 Feb 2024 12:46:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707597976; x=1708202776; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=9dpTBORzvcr6rF6XXf+SosfV3PtzsuSPAw4k+uR/IS4=;
+        b=ID2Nmu6URT7etfj5X6d+Loz2ZgoL6O6llOk05jJNB1HGoAXN6SrUCQIKvmpH33xYop
+         I9ErXWXDfGVR6f5tASR7DvmQOzNx4L0gPNReljP+f+nEygUY3ZrmqaArdF6EqX8c/A6N
+         6LkyYpeh3ZCqsxppPbLmu0ZVoan8a7UIEN0DEgeTK4RMY8XR3kYjL99HgUyXheN3aEQO
+         h0JPJbh/9dBGV3KIieB+OXAEFDih/5aMcUfmYjTNcfitKf4fFXo54PbiGMHwklGB6fFw
+         JvXBZIWifA0jUXniNNfiq9Ado0eUkjt989HSYcwmux+rfrlYXrkvo7wjqZHzqDqL/oj6
+         Z27w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707597976; x=1708202776;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9dpTBORzvcr6rF6XXf+SosfV3PtzsuSPAw4k+uR/IS4=;
+        b=BBPmmr7PmmM5ugGzfY11S1Z+iD+6qwXHJwdVgPXqogT7DrSwv3TfPfSeOiUJzktlKk
+         tpfE0+m8HG+GZYd1TCjPBwW3+a8C/ggVlhplhRCA2QrvhnxSSBr/0eDaw2IXJx96QXE4
+         pbSbwBoZNkJni0rhtswYW1DCu9dFKQca+TZpGDhVqsZKrPp0WIukNjlAcp+yOIKRnyoQ
+         zk31rNdvjSbCyV7bGyzFe7r7lgFEDzs1NucCBT6TGWPhSrpsFG6uPvVVVSp7vsFf9TGW
+         +Q8ofthWjwqC58UUjV3j5ctfyBRbSZJ6mkz1qHJON62XqNjuDhK2PMEHA7RIBr/HagDe
+         a2tA==
+X-Gm-Message-State: AOJu0Yy3qHuahaPj+WKLqwL6avQN9i5y4u/5hs1ebGZgVpEuG7Rz+jnP
+	b6+0XXO2XBBq3uRu0o+JCqH9CPz9MlgNjeKlNmqee3vOqi/vprzeAi+ITOyo
+X-Google-Smtp-Source: AGHT+IFcn8J0TevF9WZ6w5Db5BRLWD3hiNNHAAcu1bnhmw5dWyBjVgAFHcF70cj/6k2D46yZO4ZoZg==
+X-Received: by 2002:a0c:e2ca:0:b0:68c:bda7:3dc7 with SMTP id t10-20020a0ce2ca000000b0068cbda73dc7mr2745130qvl.20.1707597975693;
+        Sat, 10 Feb 2024 12:46:15 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVtj022cdUZKFt2ePjfGc4JKbsKkFj6bg3zIoePxxP1sTazxeh8eFGAfhvuIOn7ORN2GsRVQ3vc3NxGOvSALHJZO2uvK82axmWazGDk0DzCJqNK19aYH69czBhQEtdAfiEaouvJvm3XtgD0XKlQtF/yc0HO+OASYiawWCzlv5Ac/8FQ7Ns+DQWEVrk7HEe6QL3Judr68ASTXniexW411g8OuPul8u8p49TF6cvyv9tgkOcEmlpJsxbjV3zO4og49z5EptcKrLdT+KzLMeAHuskQZHESfyTYarv08caQ4gXL0PXjoiv5l20AdGaI5F1VAbHXFiRQyPR4JxiYDAFasnhRSAVGoIR2GGOnwxE5yw68VoHGY3yMgLN8Quj0TDye8s+Vxn1QBwJ8Haij2ubzvW01t9YjBtNlHrJBn4TI3s3BCbL3F9S1wGkQRrTec3bNBC31Le8VnILwHzPjuwWygrEU6aywkGafjBhcaPDr9bolqob8hxTx3/c85g6TU/KV42H4jYoKI85HWNphpKVMP66M4MRO+u9hB6ect+KHP5r6NQD3t/IfXJX2BwWaT6k40n6qb93M/s5YO619NY5odfPB/RZnK5ILdxPm/W8irVKibQ==
+Received: from aford-System-Version.lan ([2601:447:d002:5be:27d7:3989:2897:88a7])
+        by smtp.gmail.com with ESMTPSA id m20-20020a0cdb94000000b0068c9db26ae1sm2079526qvk.41.2024.02.10.12.46.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 10 Feb 2024 12:46:14 -0800 (PST)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Cc: marex@denx.de,
+	aford@beaconembedded.com,
+	Adam Ford <aford173@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Daniel Golle <daniel@makrotopia.org>,
-	Qingfang Deng <dqfext@gmail.com>,
-	SkyLake Huang <SkyLake.Huang@mediatek.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	netdev@vger.kernel.org
-Subject: [PATCH v3 2/2] phy: add driver for MediaTek XFI T-PHY
-Message-ID: <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
-References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH V4 0/6] soc: imx8mp: Finish support for HDMI
+Date: Sat, 10 Feb 2024 14:45:56 -0600
+Message-ID: <20240210204606.11944-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240209_181038_640382_62FFF9B8 
-X-CRM114-Status: GOOD (  26.07  )
+X-CRM114-CacheID: sfid-20240210_124617_690982_CE089B16 
+X-CRM114-Status: GOOD (  15.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,471 +106,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add driver for MediaTek's XFI T-PHY which can be found in the MT7988
-SoC. The XFI T-PHY is a 10 Gigabit/s Ethernet SerDes PHY with muxes on
-the internal side to be used with either USXGMII PCS or LynxI PCS,
-depending on the selected PHY interface mode.
+The i.MX8M Plus has an HDMI controller, which depends on several
+other systems.  The Parallel Video Interface (PVI) and the
+HDMI-TX are already in the Linux-Next staging area 20240209, but
+the HDMI PHY driver and several device trees updates are still needed.
 
-The PHY can operates only in PHY_MODE_ETHERNET, the submode is one of
-PHY_INTERFACE_MODE_* corresponding to the supported modes:
+This series is adapted from multiple series from Lucas Stach with
+edits and suggestions from feedback from various attemps, but it
+since it's difficult to use and test them independently,
+I merged them into on unified series.  The version history is a
+bit ambiguous since different components were submitted at different
+times and had different amount of attempts.  
 
- * USXGMII                 \
- * 10GBase-R                }- USXGMII PCS - XGDM  \
- * 5GBase-R                /                        \
-                                                     }- Ethernet MAC
- * 2500Base-X              \                        /
- * 1000Base-X               }- LynxI PCS - GDM     /
- * Cisco SGMII (MAC side)  /
+The previous attempt I did used the wrong starting point for the PHY,
+so this update includes a newer starting point with tags from that version
+and fixes from various people's feedback.  I hope I caught them all, but 
+I apologize if I missed something. Any tags from the previous attempt I
+made were intentionally dropped, because of the significant change,
+but I kept tags from the newer version I grabbed from patchwork.
 
-In order to work-around a performance issue present on the first of
-two XFI T-PHYs present in MT7988, special tuning is applied which can be
-selected by adding the 'mediatek,usxgmii-performance-errata' property to
-the device tree node.
+Because several items from the last attempt were merged, this
+series is only focussed on adding the HDMI PHY driver, and enabling
+the power domain, irqsteer interrupt controller, and HDMI pipeline
+in the device tree. The version numbers are a bit strange since
+these all got pulled from various attempts with different versions,
+but I wanted to push them together as a series to complete the pending
+work.
 
-There is no documentation for most registers used for the
-analog/tuning part, however, most of the registers have been partially
-reverse-engineered from MediaTek's SDK implementation (an opaque
-sequence of 32-bit register writes) and descriptions for all relevant
-digital registers and bits such as resets and muxes have been supplied
-by MediaTek.
+Adam Ford (1):
+  arm64: defconfig: Enable DRM_IMX8MP_DW_HDMI_BRIDGE as module
 
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
-v3: no changes
-v2:
- * use IO helpers from mtk-io.h instead of rolling my own
- * use devm_clk_bulk_get()
- * yse devm_platform_ioremap_resource()
- * unify name and description everywhere
- * invert bool is_xgmii into bool use_lynxi_pcs and add comments
-   describing the meaning of each of the stack variables
- * not much we can do about remaining magic values unless MTK provides
-   definitions for them
+Lucas Stach (5):
+  dt-bindings: phy: add binding for the i.MX8MP HDMI PHY
+  phy: freescale: add Samsung HDMI PHY
+  arm64: dts: imx8mp: add HDMI power-domains
+  arm64: dts: imx8mp: add HDMI irqsteer
+  arm64: dts: imx8mp: add HDMI display pipeline
 
+ .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     |  62 ++
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi     | 145 ++++
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/phy/freescale/Kconfig                 |   6 +
+ drivers/phy/freescale/Makefile                |   1 +
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c  | 721 ++++++++++++++++++
+ 6 files changed, 936 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
+ create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
 
- MAINTAINERS                             |   1 +
- drivers/phy/mediatek/Kconfig            |  12 +
- drivers/phy/mediatek/Makefile           |   1 +
- drivers/phy/mediatek/phy-mtk-xfi-tphy.c | 360 ++++++++++++++++++++++++
- 4 files changed, 374 insertions(+)
- create mode 100644 drivers/phy/mediatek/phy-mtk-xfi-tphy.c
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 4be2fd097f261..616b86e3e62fd 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -13776,6 +13776,7 @@ L:	netdev@vger.kernel.org
- S:	Maintained
- F:	drivers/net/phy/mediatek-ge-soc.c
- F:	drivers/net/phy/mediatek-ge.c
-+F:	drivers/phy/mediatek/phy-mtk-xfi-tphy.c
- 
- MEDIATEK I2C CONTROLLER DRIVER
- M:	Qii Wang <qii.wang@mediatek.com>
-diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
-index 3849b7c87d287..117d0e84c7360 100644
---- a/drivers/phy/mediatek/Kconfig
-+++ b/drivers/phy/mediatek/Kconfig
-@@ -13,6 +13,18 @@ config PHY_MTK_PCIE
- 	  callback for PCIe GEN3 port, it supports software efuse
- 	  initialization.
- 
-+config PHY_MTK_XFI_TPHY
-+	tristate "MediaTek 10GE SerDes XFI T-PHY driver"
-+	depends on ARCH_MEDIATEK || COMPILE_TEST
-+	depends on OF && OF_ADDRESS
-+	depends on HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Say 'Y' here to add support for MediaTek XFI T-PHY driver.
-+	  The driver provides access to the Ethernet SerDes T-PHY supporting
-+	  1GE and 2.5GE modes via the LynxI PCS, and 5GE and 10GE modes
-+	  via the USXGMII PCS found in MediaTek SoCs with 10G Ethernet.
-+
- config PHY_MTK_TPHY
- 	tristate "MediaTek T-PHY Driver"
- 	depends on ARCH_MEDIATEK || COMPILE_TEST
-diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
-index f6e24a47e0815..1b8088df71e84 100644
---- a/drivers/phy/mediatek/Makefile
-+++ b/drivers/phy/mediatek/Makefile
-@@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_MTK_PCIE)		+= phy-mtk-pcie.o
- obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
- obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
- obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
-+obj-$(CONFIG_PHY_MTK_XFI_TPHY)		+= phy-mtk-xfi-tphy.o
- 
- phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
- phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt2701.o
-diff --git a/drivers/phy/mediatek/phy-mtk-xfi-tphy.c b/drivers/phy/mediatek/phy-mtk-xfi-tphy.c
-new file mode 100644
-index 0000000000000..551d6cee33f94
---- /dev/null
-+++ b/drivers/phy/mediatek/phy-mtk-xfi-tphy.c
-@@ -0,0 +1,360 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/* MediaTek 10GE SerDes XFI T-PHY driver
-+ *
-+ * Copyright (c) 2024 Daniel Golle <daniel@makrotopia.org>
-+ *                    Bc-bocun Chen <bc-bocun.chen@mediatek.com>
-+ * based on mtk_usxgmii.c and mtk_sgmii.c found in MediaTek's SDK (GPL-2.0)
-+ * Copyright (c) 2022 MediaTek Inc.
-+ * Author: Henry Yen <henry.yen@mediatek.com>
-+ */
-+
-+#include <linux/module.h>
-+#include <linux/device.h>
-+#include <linux/platform_device.h>
-+#include <linux/of.h>
-+#include <linux/io.h>
-+#include <linux/clk.h>
-+#include <linux/reset.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
-+
-+#include "phy-mtk-io.h"
-+
-+#define MTK_XFI_TPHY_NUM_CLOCKS		2
-+
-+#define REG_DIG_GLB_70			0x0070
-+#define  XTP_PCS_RX_EQ_IN_PROGRESS(x)	FIELD_PREP(GENMASK(25, 24), (x))
-+#define  XTP_PCS_MODE_MASK		GENMASK(17, 16)
-+#define  XTP_PCS_MODE(x)		FIELD_PREP(GENMASK(17, 16), (x))
-+#define  XTP_PCS_RST_B			BIT(15)
-+#define  XTP_FRC_PCS_RST_B		BIT(14)
-+#define  XTP_PCS_PWD_SYNC_MASK		GENMASK(13, 12)
-+#define  XTP_PCS_PWD_SYNC(x)		FIELD_PREP(XTP_PCS_PWD_SYNC_MASK, (x))
-+#define  XTP_PCS_PWD_ASYNC_MASK		GENMASK(11, 10)
-+#define  XTP_PCS_PWD_ASYNC(x)		FIELD_PREP(XTP_PCS_PWD_ASYNC_MASK, (x))
-+#define  XTP_FRC_PCS_PWD_ASYNC		BIT(8)
-+#define  XTP_PCS_UPDT			BIT(4)
-+#define  XTP_PCS_IN_FR_RG		BIT(0)
-+
-+#define REG_DIG_GLB_F4			0x00f4
-+#define  XFI_DPHY_PCS_SEL		BIT(0)
-+#define   XFI_DPHY_PCS_SEL_SGMII	FIELD_PREP(XFI_DPHY_PCS_SEL, 1)
-+#define   XFI_DPHY_PCS_SEL_USXGMII	FIELD_PREP(XFI_DPHY_PCS_SEL, 0)
-+#define  XFI_DPHY_AD_SGDT_FRC_EN	BIT(5)
-+
-+#define REG_DIG_LN_TRX_40		0x3040
-+#define  XTP_LN_FRC_TX_DATA_EN		BIT(29)
-+#define  XTP_LN_TX_DATA_EN		BIT(28)
-+
-+#define REG_DIG_LN_TRX_B0		0x30b0
-+#define  XTP_LN_FRC_TX_MACCK_EN		BIT(5)
-+#define  XTP_LN_TX_MACCK_EN		BIT(4)
-+
-+#define REG_ANA_GLB_D0			0x90d0
-+#define  XTP_GLB_USXGMII_SEL_MASK	GENMASK(3, 1)
-+#define  XTP_GLB_USXGMII_SEL(x)		FIELD_PREP(GENMASK(3, 1), (x))
-+#define  XTP_GLB_USXGMII_EN		BIT(0)
-+
-+struct mtk_xfi_tphy {
-+	void __iomem		*base;
-+	struct device		*dev;
-+	struct reset_control	*reset;
-+	struct clk_bulk_data	clocks[MTK_XFI_TPHY_NUM_CLOCKS];
-+	bool			da_war;
-+};
-+
-+static void mtk_xfi_tphy_setup(struct mtk_xfi_tphy *xfi_tphy,
-+			       phy_interface_t interface)
-+{
-+	/* Override 10GBase-R tuning value if work-around is selected */
-+	bool da_war = (xfi_tphy->da_war && (interface == PHY_INTERFACE_MODE_10GBASER));
-+	/* Bools to make setting up values for specific PHY speeds easier */
-+	bool is_2p5g = (interface == PHY_INTERFACE_MODE_2500BASEX);
-+	bool is_1g = (interface == PHY_INTERFACE_MODE_1000BASEX ||
-+		      interface == PHY_INTERFACE_MODE_SGMII);
-+	bool is_10g = (interface == PHY_INTERFACE_MODE_10GBASER ||
-+		       interface == PHY_INTERFACE_MODE_USXGMII);
-+	bool is_5g = (interface == PHY_INTERFACE_MODE_5GBASER);
-+	/* Bool to configure input mux to either
-+	 *  - USXGMII PCS (64b/66b coding) for 5G/10G
-+	 *  - LynxI PCS (8b/10b coding) for 1G/2.5G
-+	 */
-+	bool use_lynxi_pcs = (is_1g || is_2p5g);
-+
-+	dev_dbg(xfi_tphy->dev, "setting up for mode %s\n", phy_modes(interface));
-+
-+	/* Setup PLL setting */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x9024, 0x100000, is_10g ? 0x0 : 0x100000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x2020, 0x202000, is_5g ? 0x202000 : 0x0);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x2030, 0x500, is_1g ? 0x0 : 0x500);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x2034, 0xa00, is_1g ? 0x0 : 0xa00);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x2040, 0x340000, is_1g ? 0x200000 : 0x140000);
-+
-+	/* Setup RXFE BW setting */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50f0, 0xc10, is_1g ? 0x410 : is_5g ? 0x800 : 0x400);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50e0, 0x4000, is_5g ? 0x0 : 0x4000);
-+
-+	/* Setup RX CDR setting */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x506c, 0x30000, is_5g ? 0x0 : 0x30000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5070, 0x670000, is_5g ? 0x620000 : 0x50000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5074, 0x180000, is_5g ? 0x180000 : 0x0);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5078, 0xf000400, is_5g ? 0x8000000 :
-+									0x7000400);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x507c, 0x5000500, is_5g ? 0x4000400 :
-+									0x1000100);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5080, 0x1410, is_1g ? 0x400 : is_5g ? 0x1010 : 0x0);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5084, 0x30300, is_1g ? 0x30300 :
-+							      is_5g ? 0x30100 :
-+								      0x100);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x5088, 0x60200, is_1g ? 0x20200 :
-+							      is_5g ? 0x40000 :
-+								      0x20000);
-+
-+	/* Setting RXFE adaptation range setting */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50e4, 0xc0000, is_5g ? 0x0 : 0xc0000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50e8, 0x40000, is_5g ? 0x0 : 0x40000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50ec, 0xa00, is_1g ? 0x200 : 0x800);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x50a8, 0xee0000, is_5g ? 0x800000 :
-+								       0x6e0000);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x6004, 0x190000, is_5g ? 0x0 : 0x190000);
-+
-+	if (is_10g)
-+		writel(0x01423342, xfi_tphy->base + 0x00f8);
-+	else if (is_5g)
-+		writel(0x00a132a1, xfi_tphy->base + 0x00f8);
-+	else if (is_2p5g)
-+		writel(0x009c329c, xfi_tphy->base + 0x00f8);
-+	else
-+		writel(0x00fa32fa, xfi_tphy->base + 0x00f8);
-+
-+	/* Force SGDT_OUT off and select PCS */
-+	mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_F4,
-+			    XFI_DPHY_AD_SGDT_FRC_EN | XFI_DPHY_PCS_SEL,
-+			    XFI_DPHY_AD_SGDT_FRC_EN |
-+			    (use_lynxi_pcs ? XFI_DPHY_PCS_SEL_SGMII :
-+					     XFI_DPHY_PCS_SEL_USXGMII));
-+
-+	/* Force GLB_CKDET_OUT */
-+	mtk_phy_set_bits(xfi_tphy->base + 0x0030, 0xc00);
-+
-+	/* Force AEQ on */
-+	writel(XTP_PCS_RX_EQ_IN_PROGRESS(2) | XTP_PCS_PWD_SYNC(2) | XTP_PCS_PWD_ASYNC(2),
-+	       xfi_tphy->base + REG_DIG_GLB_70);
-+
-+	usleep_range(1, 5);
-+
-+	/* Setup TX DA default value */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x30b0, 0x30, 0x20);
-+	writel(0x00008a01, xfi_tphy->base + 0x3028);
-+	writel(0x0000a884, xfi_tphy->base + 0x302c);
-+	writel(0x00083002, xfi_tphy->base + 0x3024);
-+
-+	/* Setup RG default value */
-+	if (use_lynxi_pcs) {
-+		writel(0x00011110, xfi_tphy->base + 0x3010);
-+		writel(0x40704000, xfi_tphy->base + 0x3048);
-+	} else {
-+		writel(0x00022220, xfi_tphy->base + 0x3010);
-+		writel(0x0f020a01, xfi_tphy->base + 0x5064);
-+		writel(0x06100600, xfi_tphy->base + 0x50b4);
-+		if (interface == PHY_INTERFACE_MODE_USXGMII)
-+			writel(0x40704000, xfi_tphy->base + 0x3048);
-+		else
-+			writel(0x47684100, xfi_tphy->base + 0x3048);
-+	}
-+
-+	if (is_1g)
-+		writel(0x0000c000, xfi_tphy->base + 0x3064);
-+
-+	/* Setup RX EQ initial value */
-+	mtk_phy_update_bits(xfi_tphy->base + 0x3050, 0xa8000000,
-+			    (interface != PHY_INTERFACE_MODE_10GBASER) ? 0xa8000000 : 0x0);
-+	mtk_phy_update_bits(xfi_tphy->base + 0x3054, 0xaa,
-+			    (interface != PHY_INTERFACE_MODE_10GBASER) ? 0xaa : 0x0);
-+
-+	if (!use_lynxi_pcs)
-+		writel(0x00000f00, xfi_tphy->base + 0x306c);
-+	else if (is_2p5g)
-+		writel(0x22000f00, xfi_tphy->base + 0x306c);
-+	else
-+		writel(0x20200f00, xfi_tphy->base + 0x306c);
-+
-+	mtk_phy_update_bits(xfi_tphy->base + 0xa008, 0x10000, da_war ? 0x10000 : 0x0);
-+
-+	mtk_phy_update_bits(xfi_tphy->base + 0xa060, 0x50000, use_lynxi_pcs ? 0x50000 : 0x40000);
-+
-+	/* Setup PHYA speed */
-+	mtk_phy_update_bits(xfi_tphy->base + REG_ANA_GLB_D0,
-+			    XTP_GLB_USXGMII_SEL_MASK | XTP_GLB_USXGMII_EN,
-+			    is_10g ?  XTP_GLB_USXGMII_SEL(0) :
-+			    is_5g ?   XTP_GLB_USXGMII_SEL(1) :
-+			    is_2p5g ? XTP_GLB_USXGMII_SEL(2) :
-+				      XTP_GLB_USXGMII_SEL(3));
-+	mtk_phy_set_bits(xfi_tphy->base + REG_ANA_GLB_D0, XTP_GLB_USXGMII_EN);
-+
-+	/* Release reset */
-+	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_GLB_70,
-+			 XTP_PCS_RST_B | XTP_FRC_PCS_RST_B);
-+	usleep_range(150, 500);
-+
-+	/* Switch to P0 */
-+	mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
-+			    XTP_PCS_IN_FR_RG |
-+			    XTP_FRC_PCS_PWD_ASYNC |
-+			    XTP_PCS_PWD_ASYNC_MASK |
-+			    XTP_PCS_PWD_SYNC_MASK |
-+			    XTP_PCS_UPDT,
-+			    XTP_PCS_IN_FR_RG |
-+			    XTP_FRC_PCS_PWD_ASYNC |
-+			    XTP_PCS_UPDT);
-+	usleep_range(1, 5);
-+
-+	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_70, XTP_PCS_UPDT);
-+	usleep_range(15, 50);
-+
-+	if (use_lynxi_pcs) {
-+		/* Switch to Gen2 */
-+		mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
-+				    XTP_PCS_MODE_MASK | XTP_PCS_UPDT,
-+				    XTP_PCS_MODE(1) | XTP_PCS_UPDT);
-+	} else {
-+		/* Switch to Gen3 */
-+		mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
-+				    XTP_PCS_MODE_MASK | XTP_PCS_UPDT,
-+				    XTP_PCS_MODE(2) | XTP_PCS_UPDT);
-+	}
-+	usleep_range(1, 5);
-+
-+	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_70, XTP_PCS_UPDT);
-+
-+	usleep_range(100, 500);
-+
-+	/* Enable MAC CK */
-+	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_LN_TRX_B0, XTP_LN_TX_MACCK_EN);
-+	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_F4, XFI_DPHY_AD_SGDT_FRC_EN);
-+
-+	/* Enable TX data */
-+	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_LN_TRX_40,
-+			 XTP_LN_FRC_TX_DATA_EN | XTP_LN_TX_DATA_EN);
-+	usleep_range(400, 1000);
-+}
-+
-+static int mtk_xfi_tphy_set_mode(struct phy *phy, enum phy_mode mode, int
-+				 submode)
-+{
-+	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
-+
-+	if (mode != PHY_MODE_ETHERNET)
-+		return -EINVAL;
-+
-+	switch (submode) {
-+	case PHY_INTERFACE_MODE_1000BASEX:
-+	case PHY_INTERFACE_MODE_2500BASEX:
-+	case PHY_INTERFACE_MODE_SGMII:
-+	case PHY_INTERFACE_MODE_5GBASER:
-+	case PHY_INTERFACE_MODE_10GBASER:
-+	case PHY_INTERFACE_MODE_USXGMII:
-+		mtk_xfi_tphy_setup(xfi_tphy, submode);
-+		return 0;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static int mtk_xfi_tphy_reset(struct phy *phy)
-+{
-+	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
-+
-+	reset_control_assert(xfi_tphy->reset);
-+	usleep_range(100, 500);
-+	reset_control_deassert(xfi_tphy->reset);
-+	usleep_range(1, 10);
-+
-+	return 0;
-+}
-+
-+static int mtk_xfi_tphy_power_on(struct phy *phy)
-+{
-+	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
-+
-+	return clk_bulk_prepare_enable(MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
-+}
-+
-+static int mtk_xfi_tphy_power_off(struct phy *phy)
-+{
-+	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
-+
-+	clk_bulk_disable_unprepare(MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops mtk_xfi_tphy_ops = {
-+	.power_on	= mtk_xfi_tphy_power_on,
-+	.power_off	= mtk_xfi_tphy_power_off,
-+	.set_mode	= mtk_xfi_tphy_set_mode,
-+	.reset		= mtk_xfi_tphy_reset,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int mtk_xfi_tphy_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	struct phy_provider *phy_provider;
-+	struct mtk_xfi_tphy *xfi_tphy;
-+	struct phy *phy;
-+	int ret;
-+
-+	if (!np)
-+		return -ENODEV;
-+
-+	xfi_tphy = devm_kzalloc(&pdev->dev, sizeof(*xfi_tphy), GFP_KERNEL);
-+	if (!xfi_tphy)
-+		return -ENOMEM;
-+
-+	xfi_tphy->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(xfi_tphy->base))
-+		return PTR_ERR(xfi_tphy->base);
-+
-+	xfi_tphy->dev = &pdev->dev;
-+	xfi_tphy->clocks[0].id = "topxtal";
-+	xfi_tphy->clocks[1].id = "xfipll";
-+	ret = devm_clk_bulk_get(&pdev->dev, MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
-+	if (ret)
-+		return ret;
-+
-+	xfi_tphy->reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
-+	if (IS_ERR(xfi_tphy->reset))
-+		return PTR_ERR(xfi_tphy->reset);
-+
-+	xfi_tphy->da_war = of_property_read_bool(np, "mediatek,usxgmii-performance-errata");
-+
-+	phy = devm_phy_create(&pdev->dev, NULL, &mtk_xfi_tphy_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, xfi_tphy);
-+	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id mtk_xfi_tphy_match[] = {
-+	{ .compatible = "mediatek,mt7988-xfi-tphy", },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, mtk_xfi_tphy_match);
-+
-+static struct platform_driver mtk_xfi_tphy_driver = {
-+	.probe = mtk_xfi_tphy_probe,
-+	.driver = {
-+		.name = "mtk-xfi-tphy",
-+		.of_match_table = mtk_xfi_tphy_match,
-+	},
-+};
-+module_platform_driver(mtk_xfi_tphy_driver);
-+
-+MODULE_DESCRIPTION("MediaTek 10GE SerDes XFI T-PHY driver");
-+MODULE_AUTHOR("Daniel Golle <daniel@makrotopia.org>");
-+MODULE_AUTHOR("Bc-bocun Chen <bc-bocun.chen@mediatek.com>");
-+MODULE_LICENSE("GPL");
 -- 
 2.43.0
+
 
 -- 
 linux-phy mailing list
