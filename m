@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E54B7C4829D
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 20:46:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B449C48260
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 20:46:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NpViNf5AWCC70cFW3EypPptUKqwzI3pwhjf+IjHD0d4=; b=wj7RpqbS/mxuEt
-	XOUzI2HDMGn0fdjGqNcdjXW16dT523INZLsGr7te0pK5V7v2XyPK+jQ/yqx1HNPnTwaMu9B7Om9P4
-	S17HXSAOsXXbl4kiuIXfMPK+YBMc2EFXCAyoMoG0mzjEl3Xg/a33j+xCK7oHsX3reTKWXgpEC0YiQ
-	R86GLaeFG8/fKjZJu/ENY7QP+tFcbicikmUkXD9lp0eCg+/ZxEy98lfWEtSJvfgxBUhAF4H5d8nMX
-	/pumJrJehkpw3nGIHZoLQwLY7NQ3F+JNjzgjQHjeoe+7GwrkBxCEQqnmGCbSfAiL4U5vRnAq3nvdX
-	mSdJ+5n9LEAKXIKCaWmg==;
+	List-Owner; bh=Af5sI1gfdPUpNCQUUSnL7hiaKp/0ZlrQJ73MKFqux3o=; b=JkTX1kNQbX0xdT
+	FBajUPI4wZVlTrrSRA41M/+OrprTzuU/84WN3s22NsaxvoTmYOgpLeMRYn6DFaCAFwCBaAgp34uev
+	c05OU79HOOPIBTnsTZjEjW3srNXx7biKxmfN6QwsfY0lvotWP0hYR7UfFMvxMBeCfFlsJKdi6eCPq
+	r/yr7w90Ld96Gqhd+jomVSK8pLK8xEFmJzERDbL7wc0ZDOYGaZEU6e8gkL2Ev6HvwC96ZWOH9/CPe
+	qpgkcaJo7gnoTK5FvsJaH2o+eiX87g8XB+Sg0HH8nWSccRaeiXlEMiOZGCl0tRe6FApb6APKzFcSc
+	JDjSuDy1C6qo2FQQeg5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYuFF-000000020CC-1OAy;
-	Sat, 10 Feb 2024 20:46:41 +0000
-Received: from mail-oo1-xc2d.google.com ([2607:f8b0:4864:20::c2d])
+	id 1rYuFH-000000020DZ-15Mu;
+	Sat, 10 Feb 2024 20:46:43 +0000
+Received: from mail-yw1-x112c.google.com ([2607:f8b0:4864:20::112c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYuF5-0000000205p-3a4I;
-	Sat, 10 Feb 2024 20:46:33 +0000
-Received: by mail-oo1-xc2d.google.com with SMTP id 006d021491bc7-59a45d8ec91so752858eaf.3;
-        Sat, 10 Feb 2024 12:46:30 -0800 (PST)
+	id 1rYuF7-0000000206b-1bTJ;
+	Sat, 10 Feb 2024 20:46:34 +0000
+Received: by mail-yw1-x112c.google.com with SMTP id 00721157ae682-604819d544cso20932327b3.1;
+        Sat, 10 Feb 2024 12:46:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1707597989; x=1708202789; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1707597991; x=1708202791; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=X+jee4efnNUiNV1RtX5y1A9X8AcFgWXwTvWCcq5t/8o=;
-        b=PuxXpjCZ8gfC5oLFfp+UkbKFINF5oPffrVJQ9iODAy0CHh4czMQRauad4/b3SWHDiG
-         xspS5WrZ6/hgIj3W9A/2Crx+cu+Zv7SHZXzH15PplIL5EgMhVr0FFTwCFNbLIkul500h
-         uRBQ0HgbMZJc9nprc00EUSpqjOJzsyw8o5jo6GW+cmcLmfT92izmjovfaI9+Ih4LBbZw
-         WDYBOWie6RnBY1j2vYEcHQ/UyrfVgevXpXHh8qIYjyTP3rDwAaw6oaaYX5+ne183UIX5
-         ssK0nnCSMw06qJA6t3/IwWF5OBIqh/Qf3nex2A3EaaTjgikw8j6O7rMwTcbXm8ON0nu6
-         iv4A==
+        bh=jMNqmGpCpYRyGD3lm2gu6alF/32hYvXVEyCc/US0g+U=;
+        b=AtcBcUC7DPusaqdCtlSmD6PdUAmIPpl8/+pJITSsC64K4YFbbHgOdtthl6UIJKbtNe
+         XdRWqT2HVvp+F8h7g6R53BVjJY1x+hTOiFRcbzPNpp7X/XXWIddqvdRtuemYZbZhFhn7
+         mphrpFWjg3kkfyFCsX6EUqGuH8Yj55Um8y/Wu6AYyfhpdRQKbb51fXCz7SbJzvna3QFC
+         ivzHbgXUGeCWWDip9B6oGCpuH1pVbpISZWoMuNsWpD8NlWMAh2v3FhtZSD/ZM3LJH+pY
+         2klHmjZNPfBx8QZoDvaiBFhUgqFpe7sraZHB90ZP63OJYe/u8PguMAUHqdJHHhkiQ8jx
+         OgZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707597989; x=1708202789;
+        d=1e100.net; s=20230601; t=1707597991; x=1708202791;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=X+jee4efnNUiNV1RtX5y1A9X8AcFgWXwTvWCcq5t/8o=;
-        b=HwyoUjQ2DBLUWC3iitbR+sEoOUFRjFsgUKGE1gE2dQhTL57EGykaJxR15o7Jnb1IZs
-         pgMblVmYwTQqHUMDcjmWlfTcd1WiGGJdSAoL8JX2tsjpNn+Sg9ZuqQ6fiyJzhIU168/d
-         5DhzxpBRT9I067y8VkEe9XpzywYA2tHBx02otwy3u7+AVQdsgiXNhFty/9gE5FMxmCK1
-         kYbiicP1Ov40GVNGRA8WRIoObI1/nuVpik8McZCsvjrda6oVzdgQb7ucN6nsapNBUI/m
-         iB+mRnSD+2ckzRU0vLj9H6Q7FtOMnZb0hjFO61FKo4RXoDYfN0MU6qFOUcx6ZA10qlTX
-         7dwg==
-X-Gm-Message-State: AOJu0Yxr+ALoSyR5w1aWHNGbJcW/q2ZbG2TOfwqelm8av01UjhtHSTSd
-	x1i+CHXanZ10Sq6EXI8rsDtaehJOGLH7GRrJMbXSg+Vr5N4DqX1iJp+BszbA
-X-Google-Smtp-Source: AGHT+IE+7Q4zjnqD99X1wOCIWZux1UlC3g48TiSZqsWGyoEcQOAOcEZ9Sgyjp6zyB0blK/ckLz0q4A==
-X-Received: by 2002:a05:6358:61c6:b0:176:5c75:b348 with SMTP id x6-20020a05635861c600b001765c75b348mr5305197rwx.4.1707597988924;
-        Sat, 10 Feb 2024 12:46:28 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCU/Funz6vl4Z8HBiKu/tAOPe+UvMuiG/UEkDEf0wfP4rrmmLME6f5IAZc3kZr1cpU6lsLRwPHo42SbVjrjngMsy4dvhblCcqsGbFjxGQYVb3hy/zmhyi/Q+eOjGTo0c0dSZxBar+5mwsxWNbqO0s7XHwg1hudShO8rTwJulSyD+LzqB+64kPrjB3qa7t0v5TZLy1ckyoshpSildO27RPlSrYITgLtoVfGTPmG4hmhlbuD+Tre+wdv1w8PiRh2AgAfOf2eTjkGTP+CZWpuQGLa9jsrzQrUT1/sljK6GA0ZToA/b3IU47Prq8OSjj7LxPf0tRZz7WNCNpa1aEpTw4bjOZsHXLtEUjsbuiMN3QJWQ4PnDahI00sE1JP9SDA9CEeMraXkuCyu1Nk0Gd+BFkS8/eQm4cdRaM6T88D0HO1KV71B3vXl9zj8LmLahFDscex8oAUSY9/br9NOcaf7pQKMktQg3YpzxcMwL2jf6PtVRL5cNrraGggfGzEDhmVipDzK3FY8NrxMSs8kGhdWFPN6+8eKwtOvefnR++wbFLQNdQbuC51lMPjve2YgpUsKm1nZqJJUUcywNFUOBQA9ysRS01KfBND6jm5rghpnToD8Wwfw==
+        bh=jMNqmGpCpYRyGD3lm2gu6alF/32hYvXVEyCc/US0g+U=;
+        b=M1ft7hw48/9AXT3Kjxo9ZJwH/2pxFlPH8wwtP6UroAHyI6UfekEqszCE5iHGEExcYi
+         o6KV2eIoNFUTL/Wjb2AuufDfaJKs8Z8MaPPkQJ+TSCp37FxgdbRdsXVqqBNOJ3HOIxGw
+         o1rokkU0FGg4FVNqY8zvzn4T2XqymEyJBPh7aMcU9Tt4fzDMy6aZAgqZ9KHLKnynv37s
+         +cNjAoCtUbXK8irFb7ZL2qlMNklUhk9ZSwKYVe2WUnc1vKesCrMPhZHP4Xp/uJBgiVBJ
+         UwpEd80vonacC7t2wCjp5aQ2hvj87KBH2R6NhQ/xdrKWGOQ6YHg5rXF0nP42seWW5vMY
+         PZ8Q==
+X-Gm-Message-State: AOJu0Yy8u6TE133PZ3IX2Pt/r+gD27v6dFdqEEeiJ5GvGdNZ4xg7G58Y
+	EA/A2ekMzI86FWRh4ngL6DDVUmAqPGIlHOOpjHsd+gDQ6boO//Ijgw20tG5D
+X-Google-Smtp-Source: AGHT+IHgx712Qt0uPzY3BKOyK91B3LD/rc1vFptzX160m43q2KsKblVYhW7VrPbTHGq3SN6LhllN8g==
+X-Received: by 2002:a5b:b0f:0:b0:dc7:49da:5f4 with SMTP id z15-20020a5b0b0f000000b00dc749da05f4mr2754107ybp.11.1707597991484;
+        Sat, 10 Feb 2024 12:46:31 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVR6ncD88zt1yVh3P2jEjcgsr1octwT0Xcboct6HI+KW6uiASuYizor/YMwjA/4YBU7J4v1FeUR88pazimK2bL68tdOTAyYfSb/ds5aUAx6J3lpvN3WYqFOzuEeXHYB/W3ViaxfIuTRqjI2uvi/EBLHTtfOj7ukXeSOYe1Nd6tfJNwG+43UDTCvXyYVRfkTq8BLyrBa4y7J7BXkjqZlYUozI8x3Pn1Fa328zhGAdvkbzCQg6n2atr4pRUM/Bo6q7Z1GvJIbLKbsZsceiuOZwRdXAeKDfpwXlKYkI9ShmjInX45mUX/lvzwd6ZLlSSKsOq4duF7Mv7R6AChrWWH4kc1+DQrVPF8XXaLdwJe5ieaBOhg8CBmluRLRab9eqRpBLPcKu2woU8laW3ZtwQ+kPiYgBjdaqeNIajdZScZFNL97YFE15YmF3+VYdJdWan39AGaKOBxKWqgT+7q/r6Hq4ul8ujbaV7NessyP64Q6NDVjKWYiQJByNU+/3U3FKwgJVt7rOsuA3JbY+VvQc3hub6I6HP2RhG3F2vkTGZmC2z0bn6UsuSW3yw2H1Nfw5hOUnNJaitQv9JhExulkZufn1RP6CfX1xcepclF61Hg4s8OU0g==
 Received: from aford-System-Version.lan ([2601:447:d002:5be:27d7:3989:2897:88a7])
-        by smtp.gmail.com with ESMTPSA id m20-20020a0cdb94000000b0068c9db26ae1sm2079526qvk.41.2024.02.10.12.46.27
+        by smtp.gmail.com with ESMTPSA id m20-20020a0cdb94000000b0068c9db26ae1sm2079526qvk.41.2024.02.10.12.46.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 10 Feb 2024 12:46:28 -0800 (PST)
+        Sat, 10 Feb 2024 12:46:30 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
 Cc: marex@denx.de,
 	aford@beaconembedded.com,
-	Lucas Stach <l.stach@pengutronix.de>,
 	Adam Ford <aford173@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -80,19 +79,21 @@ Cc: marex@denx.de,
 	NXP Linux Team <linux-imx@nxp.com>,
 	Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>,
+	Lucas Stach <l.stach@pengutronix.de>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V4 5/6] arm64: dts: imx8mp: add HDMI display pipeline
-Date: Sat, 10 Feb 2024 14:46:01 -0600
-Message-ID: <20240210204606.11944-6-aford173@gmail.com>
+Subject: [PATCH V4 6/6] arm64: defconfig: Enable DRM_IMX8MP_DW_HDMI_BRIDGE as module
+Date: Sat, 10 Feb 2024 14:46:02 -0600
+Message-ID: <20240210204606.11944-7-aford173@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240210204606.11944-1-aford173@gmail.com>
 References: <20240210204606.11944-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240210_124631_931329_B0D25341 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20240210_124633_456358_92F07F22 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,133 +110,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Lucas Stach <l.stach@pengutronix.de>
+The i.MX8M Plus has support for an HDMI transmitter.  The
+video is genereated by lcdif3, routed to the hdmi parallel
+video interface, then fed to a DW HDMI bridge to support
+up to 4K video output.
 
-This adds the DT nodes for all the peripherals that make up the
-HDMI display pipeline.
-
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 Signed-off-by: Adam Ford <aford173@gmail.com>
 ---
-V3:  Re-ordered the HDMI parts to properly come after irqstree_hdmi
-     inside AIPS4.  Change size of LCDIF3 and PVI to match TRM sizes
-     of 4KB.
-
-V2:  I took this from Lucas' original submission with the following:
-     Removed extra clock from HDMI-TX since it is now part of the
-     power domain
-     Added interrupt-parent to PVI
-     Changed the name of the HDMI tranmitter to fsl,imx8mp-hdmi-tx
-     Added ports to HDMI-tx
+No change since V1
 ---
- arch/arm64/boot/dts/freescale/imx8mp.dtsi | 94 +++++++++++++++++++++++
- 1 file changed, 94 insertions(+)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-index 9b8ab367d774..013c2d9824cd 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-@@ -1940,6 +1940,100 @@ irqsteer_hdmi: interrupt-controller@32fc2000 {
- 				clock-names = "ipg";
- 				power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_IRQSTEER>;
- 			};
-+
-+			hdmi_pvi: display-bridge@32fc4000 {
-+				compatible = "fsl,imx8mp-hdmi-pvi";
-+				reg = <0x32fc4000 0x1000>;
-+				interrupt-parent = <&irqsteer_hdmi>;
-+				interrupts = <12>;
-+				power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_PVI>;
-+
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					port@0 {
-+						reg = <0>;
-+						pvi_from_lcdif3: endpoint {
-+							remote-endpoint = <&lcdif3_to_pvi>;
-+						};
-+					};
-+
-+					port@1 {
-+						reg = <1>;
-+						pvi_to_hdmi_tx: endpoint {
-+							remote-endpoint = <&hdmi_tx_from_pvi>;
-+						};
-+					};
-+				};
-+			};
-+
-+			lcdif3: display-controller@32fc6000 {
-+				compatible = "fsl,imx8mp-lcdif";
-+				reg = <0x32fc6000 0x1000>;
-+				interrupt-parent = <&irqsteer_hdmi>;
-+				interrupts = <8>;
-+				clocks = <&hdmi_tx_phy>,
-+					 <&clk IMX8MP_CLK_HDMI_APB>,
-+					 <&clk IMX8MP_CLK_HDMI_ROOT>;
-+				clock-names = "pix", "axi", "disp_axi";
-+				power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_LCDIF>;
-+
-+				port {
-+					lcdif3_to_pvi: endpoint {
-+						remote-endpoint = <&pvi_from_lcdif3>;
-+					};
-+				};
-+			};
-+
-+			hdmi_tx: hdmi@32fd8000 {
-+				compatible = "fsl,imx8mp-hdmi-tx";
-+				reg = <0x32fd8000 0x7eff>;
-+				interrupt-parent = <&irqsteer_hdmi>;
-+				interrupts = <0>;
-+				clocks = <&clk IMX8MP_CLK_HDMI_APB>,
-+					 <&clk IMX8MP_CLK_HDMI_REF_266M>,
-+					 <&clk IMX8MP_CLK_32K>,
-+					 <&hdmi_tx_phy>;
-+				clock-names = "iahb", "isfr", "cec", "pix";
-+				assigned-clocks = <&clk IMX8MP_CLK_HDMI_REF_266M>;
-+				assigned-clock-parents = <&clk IMX8MP_SYS_PLL1_266M>;
-+				power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX>;
-+				reg-io-width = <1>;
-+				status = "disabled";
-+
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					port@0 {
-+						reg = <0>;
-+
-+						hdmi_tx_from_pvi: endpoint {
-+							remote-endpoint = <&pvi_to_hdmi_tx>;
-+						};
-+					};
-+
-+					port@1 {
-+						reg = <1>;
-+						/* Point endpoint to the HDMI connector */
-+					};
-+				};
-+			};
-+
-+			hdmi_tx_phy: phy@32fdff00 {
-+				compatible = "fsl,imx8mp-hdmi-phy";
-+				reg = <0x32fdff00 0x100>;
-+				clocks = <&clk IMX8MP_CLK_HDMI_APB>,
-+					 <&clk IMX8MP_CLK_HDMI_24M>;
-+				clock-names = "apb", "ref";
-+				assigned-clocks = <&clk IMX8MP_CLK_HDMI_24M>;
-+				assigned-clock-parents = <&clk IMX8MP_CLK_24M>;
-+				power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX_PHY>;
-+				#clock-cells = <0>;
-+				#phy-cells = <0>;
-+				status = "disabled";
-+			};
- 		};
- 
- 		pcie: pcie@33800000 {
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index f44b3abf3cef..03ba9e89a0a5 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -886,6 +886,7 @@ CONFIG_DRM_ANALOGIX_ANX7625=m
+ CONFIG_DRM_I2C_ADV7511=m
+ CONFIG_DRM_I2C_ADV7511_AUDIO=y
+ CONFIG_DRM_CDNS_MHDP8546=m
++CONFIG_DRM_IMX8MP_DW_HDMI_BRIDGE=m
+ CONFIG_DRM_DW_HDMI_AHB_AUDIO=m
+ CONFIG_DRM_DW_HDMI_CEC=m
+ CONFIG_DRM_IMX_DCSS=m
 -- 
 2.43.0
 
