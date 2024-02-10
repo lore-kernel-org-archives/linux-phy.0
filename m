@@ -4,53 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBC6DC48297
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Feb 2024 22:17:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6B07C4829B
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 02:10:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RWXVaiwfP6hKaZ5qmdd0R/jE+pGN+N689g8iixSxN1I=; b=MeTPlUR1GL1xrk
-	gMn613RtsVytGNBAeZ4zfzI2HViiBmQlHg46VZzNELW9tyL96jzF1nAp25kZepynvfmC2gV4boZuo
-	tScIiFIPxpim3I4N5RVC7HgW7gYYBtB5NiYEdMg5vDj1pdH17F+X+z6X8ACx/gMzLc2/O+7abxxWa
-	x2E2JUVmU/VWb8jC0ppVIGNoePNwjUmNjPE9CkNkmQbpQ9w2Sx+6hUdGKFVcA4dr5Pd7qLFJIf8Ji
-	jJyn6DkkKu5fWcgXpn86RERVlIhSpvtc4+ARRRtKq7sw8vG49F/qcFa1AsX2jPBiYuo9ZM/Uh04QQ
-	1PhavsHzyPpJal4f9IKw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=20FL99DXgn9GRRHXlfr0k0iuUgTnyONmbU5ivtN71Kg=; b=CCqpSnvZOyx3DL
+	LDU7OS2YRDTT1fUVYmqKSRrT5hFgRDQD+puqcsmIxNO4gmYXCG+4/L8DLJCYyE5Q7oyjxuMu2cl06
+	qhl/eypnaHqetDmDOd/bbI6mldXThEohu2fChF0ppcX5Y+z0NmenmAYWn5SoB/rBnmajrT+gcbpFH
+	I/FHLY9TchY0Rt7DiQday+n5iHNzD6iY4/KUQU518HDKiQsmCR982+aF1bMM9pJGATJqmQ6K+a+WB
+	5cHGYiQmy5/V/A6YD59TBahDgdg4oBonvsz7mhTtSM3ijcwUF1JpBzUMPs17F4p0Cnk6iGtocdc/5
+	lXij1YHGRztjp3l0BhCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYZBx-00000000keR-1zMK;
-	Fri, 09 Feb 2024 22:17:53 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1rYcpB-000000015Bp-1Gdq;
+	Sat, 10 Feb 2024 02:10:37 +0000
+Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYZBu-00000000kb6-1PvW;
-	Fri, 09 Feb 2024 22:17:51 +0000
-Received: from i5e861914.versanet.de ([94.134.25.20] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1rYZBm-00089k-3z; Fri, 09 Feb 2024 23:17:42 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Frank Wang <frank.wang@rock-chips.com>,
- Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com
-Subject: Re: [PATCH v1 03/10] dt-bindings: phy: add rockchip usbdp combo phy document
-Date: Fri, 09 Feb 2024 23:17:40 +0100
-Message-ID: <3267388.oiGErgHkdL@diego>
-In-Reply-To: <20240209181831.104687-4-sebastian.reichel@collabora.com>
-References: <20240209181831.104687-1-sebastian.reichel@collabora.com>
- <20240209181831.104687-4-sebastian.reichel@collabora.com>
+	id 1rYcp6-000000015Ag-3W61;
+	Sat, 10 Feb 2024 02:10:34 +0000
+Received: from local
+	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+	 (Exim 4.96.2)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1rYcoq-0001TQ-1c;
+	Sat, 10 Feb 2024 02:10:16 +0000
+Date: Sat, 10 Feb 2024 02:10:08 +0000
+From: Daniel Golle <daniel@makrotopia.org>
+To: Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
+	Steven Liu <steven.liu@mediatek.com>,
+	John Crispin <john@phrozen.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Daniel Golle <daniel@makrotopia.org>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	netdev@vger.kernel.org
+Subject: [PATCH v3 1/2] dt-bindings: phy: mediatek,mt7988-xfi-tphy: add new
+ bindings
+Message-ID: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240209_141750_415858_1AB6E6D8 
-X-CRM114-Status: GOOD (  19.45  )
+X-CRM114-CacheID: sfid-20240209_181032_901243_EF0B7910 
+X-CRM114-Status: GOOD (  12.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,138 +77,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Add bindings for the MediaTek XFI Ethernet SerDes T-PHY found in the
+MediaTek MT7988 SoC which can operate at various interfaces modes:
 
-Am Freitag, 9. Februar 2024, 19:17:19 CET schrieb Sebastian Reichel:
-> Add device tree binding document for Rockchip USBDP Combo PHY
-> with Samsung IP block.
-> 
-> Co-developed-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+via USXGMII PCS:
+ * USXGMII
+ * 10GBase-R
+ * 5GBase-R
 
-looks ok to me overall, but I stumbled over some spelling below.
+via LynxI SGMII PCS:
+ * 2500Base-X
+ * 1000Base-X
+ * Cisco SGMII (MAC side)
 
-> ---
->  .../bindings/phy/phy-rockchip-usbdp.yaml      | 166 ++++++++++++++++++
->  1 file changed, 166 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> new file mode 100644
-> index 000000000000..3375a3099038
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> @@ -0,0 +1,166 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/phy-rockchip-usbdp.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip USBDP Combo PHY with Samsung IP block
-> +
-> +maintainers:
-> +  - Frank Wang <frank.wang@rock-chips.com>
-> +  - Zhang Yubing <yubing.zhang@rock-chips.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - rockchip,rk3588-usbdp-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 4
-> +
-> +  clock-names:
-> +    items:
-> +      - const: refclk
-> +      - const: immortal
-> +      - const: pclk
-> +      - const: utmi
-> +
-> +  resets:
-> +    maxItems: 5
-> +
-> +  reset-names:
-> +    items:
-> +      - const: init
-> +      - const: cmn
-> +      - const: lane
-> +      - const: pcs_apb
-> +      - const: pma_apb
-> +
-> +  rockchip,dp-lane-mux:
-> +    $ref: /schemas/types.yaml#/definitions/uint32-array
-> +    minItems: 2
-> +    maxItems: 4
-> +    description:
-> +      An array of physical Tyep-C lanes indexes. Position of an entry determines
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+v3: Add reference to MediaTek-internal "pextp" name, better explain reset as
+    well as 10GBase-R tuning work-around.
+v2: unify filename and compatible as requested
 
-nit: Type-C lane indexes
+ .../phy/mediatek,mt7988-xfi-tphy.yaml         | 80 +++++++++++++++++++
+ 1 file changed, 80 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt7988-xfi-tphy.yaml
 
-> +      the dp lane index, while the value of an entry indicater physical Type-C lane.
-
-nit: indicates instead of indicater?
-
-> +      The support dp lanes number are 2 or 4. e.g. for 2 lanes dp lanes map, we could
-
-nit: The supported dp lane numbers ... ?
-
-
-> +      have "rockchip,dp-lane-mux = <2, 3>;", assuming dp lane0 on Type-C phy lane2,
-> +      dp lane1 on Type-C phy lane3. For 4 lanes dp lanes map, we could have
-> +      "rockchip,dp-lane-mux = <0, 1, 2, 3>;", assuming dp lane0 on Type-C phy lane0,
-> +      dp lane1 on Type-C phy lane1, dp lane2 on Type-C phy lane2, dp lane3 on Type-C
-> +      phy lane3. If dp lane map by DisplayPort Alt mode, this property is not need.
-> +
-> +  rockchip,u2phy-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'usb2 phy general register files'.
-> +
-> +  rockchip,usb-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'usb general register files'.
-> +
-> +  rockchip,usbdpphy-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'usbdp phy general register files'.
-> +
-> +  rockchip,vo-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'video output general register files'.
-> +      When select the dp lane mapping will request its phandle.
-> +
-> +  sbu1-dc-gpios:
-> +    description:
-> +      GPIO connected to the SBU1 line of the USB-C connector via a big resistor
-> +      (~100K) to apply a DC offset for signalling the connector orientation.
-> +
-> +  sbu2-dc-gpios:
-> +    description:
-> +      GPIO connected to the SBU2 line of the USB-C connector via a big resistor
-> +      (~100K) to apply a DC offset for signalling the connector orientation.
-> +
-> +  orientation-switch:
-> +    description: Flag the port as possible handler of orientation switching
-> +    type: boolean
-> +
-> +  mode-switch:
-> +    description: Flag the port as possible handle of altmode switching
-
-nit: also a handler ... aka add an r ?
-
-
-Heiko
-
-
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt7988-xfi-tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt7988-xfi-tphy.yaml
+new file mode 100644
+index 0000000000000..c0ab444f9c687
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,mt7988-xfi-tphy.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,mt7988-xfi-tphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek MT7988 XFI T-PHY
++
++maintainers:
++  - Daniel Golle <daniel@makrotopia.org>
++
++description:
++  The MediaTek XFI SerDes T-PHY provides the physical SerDes lanes
++  used by the (10G/5G) USXGMII PCS and (1G/2.5G) LynxI PCS found in
++  MediaTek's 10G-capabale MT7988 SoC.
++  In MediaTek's SDK sources, this unit is referred to as "pextp".
++
++properties:
++  compatible:
++    const: mediatek,mt7988-xfi-tphy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: XFI PHY clock
++      - description: XFI register clock
++
++  clock-names:
++    items:
++      - const: xfipll
++      - const: topxtal
++
++  resets:
++    items:
++      - description: Reset controller corresponding to the phy instance.
++
++  mediatek,usxgmii-performance-errata:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      One instance of the T-PHY on MT7988 suffers from a performance
++      problem in 10GBase-R mode which needs a work-around in the driver.
++      This flag enables a work-around ajusting an analog phy setting and
++      is required for XFI Port0 of the MT7988 SoC to be in compliance with
++      the SFP specification.
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/mediatek,mt7988-clk.h>
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      phy@11f20000 {
++        compatible = "mediatek,mt7988-xfi-tphy";
++        reg = <0 0x11f20000 0 0x10000>;
++        clocks = <&xfi_pll CLK_XFIPLL_PLL_EN>,
++                 <&topckgen CLK_TOP_XFI_PHY_0_XTAL_SEL>;
++        clock-names = "xfipll", "topxtal";
++        resets = <&watchdog 14>;
++        mediatek,usxgmii-performance-errata;
++        #phy-cells = <0>;
++      };
++    };
++
++...
+-- 
+2.43.0
 
 -- 
 linux-phy mailing list
