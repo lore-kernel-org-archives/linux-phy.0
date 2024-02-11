@@ -4,95 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B449C48260
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Feb 2024 20:46:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20CD6C4829B
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Feb 2024 13:43:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Af5sI1gfdPUpNCQUUSnL7hiaKp/0ZlrQJ73MKFqux3o=; b=JkTX1kNQbX0xdT
-	FBajUPI4wZVlTrrSRA41M/+OrprTzuU/84WN3s22NsaxvoTmYOgpLeMRYn6DFaCAFwCBaAgp34uev
-	c05OU79HOOPIBTnsTZjEjW3srNXx7biKxmfN6QwsfY0lvotWP0hYR7UfFMvxMBeCfFlsJKdi6eCPq
-	r/yr7w90Ld96Gqhd+jomVSK8pLK8xEFmJzERDbL7wc0ZDOYGaZEU6e8gkL2Ev6HvwC96ZWOH9/CPe
-	qpgkcaJo7gnoTK5FvsJaH2o+eiX87g8XB+Sg0HH8nWSccRaeiXlEMiOZGCl0tRe6FApb6APKzFcSc
-	JDjSuDy1C6qo2FQQeg5w==;
+	List-Owner; bh=wCnxCQ1Ialgt1BPVDaubBpL1yxqdNJmBcxMrDNn4ba8=; b=Bfocyl3FhM5vd9
+	7JZpb+OfashB7GStdQ1sbpnHoYJ0ZGjHEpd18YBfJXqGYKdfHlc+P8gTO+xv19aYnNtNKLUIraZt9
+	T48vi+24YHcxGJzF7eDFLZ/Zh5v4BYbA8heWLissy5CEoEyAE6T78sL5vbnBGcazZNF/DFPtX7Idn
+	3mOhP82vnuV2JoiJTwLVoe54VR8pR2Ow6M+B72wxhK3AdErnBTIHg4RIW8PsXl4ThUfjtYrbpqZTK
+	TM3vvfn9XtotWFhLbj7jKlGN+uEnqcwpkNUT0sRPjq8hxXHEcMk3m2uHqToSJ6Yy9xZKsRLobSVNp
+	yFuefbJI0+uJ/re8xCzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYuFH-000000020DZ-15Mu;
-	Sat, 10 Feb 2024 20:46:43 +0000
-Received: from mail-yw1-x112c.google.com ([2607:f8b0:4864:20::112c])
+	id 1rZA6m-00000002nd1-3J3S;
+	Sun, 11 Feb 2024 13:43:00 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rYuF7-0000000206b-1bTJ;
-	Sat, 10 Feb 2024 20:46:34 +0000
-Received: by mail-yw1-x112c.google.com with SMTP id 00721157ae682-604819d544cso20932327b3.1;
-        Sat, 10 Feb 2024 12:46:32 -0800 (PST)
+	id 1rZA6i-00000002nc0-47dQ
+	for linux-phy@lists.infradead.org;
+	Sun, 11 Feb 2024 13:42:58 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-33b80e2146aso118250f8f.1
+        for <linux-phy@lists.infradead.org>; Sun, 11 Feb 2024 05:42:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1707597991; x=1708202791; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=jMNqmGpCpYRyGD3lm2gu6alF/32hYvXVEyCc/US0g+U=;
-        b=AtcBcUC7DPusaqdCtlSmD6PdUAmIPpl8/+pJITSsC64K4YFbbHgOdtthl6UIJKbtNe
-         XdRWqT2HVvp+F8h7g6R53BVjJY1x+hTOiFRcbzPNpp7X/XXWIddqvdRtuemYZbZhFhn7
-         mphrpFWjg3kkfyFCsX6EUqGuH8Yj55Um8y/Wu6AYyfhpdRQKbb51fXCz7SbJzvna3QFC
-         ivzHbgXUGeCWWDip9B6oGCpuH1pVbpISZWoMuNsWpD8NlWMAh2v3FhtZSD/ZM3LJH+pY
-         2klHmjZNPfBx8QZoDvaiBFhUgqFpe7sraZHB90ZP63OJYe/u8PguMAUHqdJHHhkiQ8jx
-         OgZQ==
+        d=linaro.org; s=google; t=1707658971; x=1708263771; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=vNl2TNJJT9F/ECiKzGFxOoeb4VRRB8d6Ro6PERp/HBw=;
+        b=Fe81ICzRaWWMrQnX+X/Qvgg3F5aKrIdFMZSIK4jOSeUx4Goa/vogHvQKp+IV7/RkEq
+         BlZgiHDyVGS96kH1FDmTnOC6fI6YQP2LJ6ixfRLckZ0hqwiwyEWF8Ed/Vg3gu4RICO9Y
+         FwczXnFzu91vBrYMktT/aWzj04lGF8CKwTR0IkN/VVT/g7fdYAXhcqUUyG7GM2jzGEAO
+         i8xXviYRTwuLBasWRp9C/W1HmwDuuz819ORhWHChWg6OtRfbz04QYU4FMPQm04oNB43Q
+         xu+WgwsDUgPttu99tFOt9nXJNbyQhP8OtRKYEVs5v9NJCOn2BylCUox90O8C4FAzb9XP
+         8Dhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707597991; x=1708202791;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=jMNqmGpCpYRyGD3lm2gu6alF/32hYvXVEyCc/US0g+U=;
-        b=M1ft7hw48/9AXT3Kjxo9ZJwH/2pxFlPH8wwtP6UroAHyI6UfekEqszCE5iHGEExcYi
-         o6KV2eIoNFUTL/Wjb2AuufDfaJKs8Z8MaPPkQJ+TSCp37FxgdbRdsXVqqBNOJ3HOIxGw
-         o1rokkU0FGg4FVNqY8zvzn4T2XqymEyJBPh7aMcU9Tt4fzDMy6aZAgqZ9KHLKnynv37s
-         +cNjAoCtUbXK8irFb7ZL2qlMNklUhk9ZSwKYVe2WUnc1vKesCrMPhZHP4Xp/uJBgiVBJ
-         UwpEd80vonacC7t2wCjp5aQ2hvj87KBH2R6NhQ/xdrKWGOQ6YHg5rXF0nP42seWW5vMY
-         PZ8Q==
-X-Gm-Message-State: AOJu0Yy8u6TE133PZ3IX2Pt/r+gD27v6dFdqEEeiJ5GvGdNZ4xg7G58Y
-	EA/A2ekMzI86FWRh4ngL6DDVUmAqPGIlHOOpjHsd+gDQ6boO//Ijgw20tG5D
-X-Google-Smtp-Source: AGHT+IHgx712Qt0uPzY3BKOyK91B3LD/rc1vFptzX160m43q2KsKblVYhW7VrPbTHGq3SN6LhllN8g==
-X-Received: by 2002:a5b:b0f:0:b0:dc7:49da:5f4 with SMTP id z15-20020a5b0b0f000000b00dc749da05f4mr2754107ybp.11.1707597991484;
-        Sat, 10 Feb 2024 12:46:31 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVR6ncD88zt1yVh3P2jEjcgsr1octwT0Xcboct6HI+KW6uiASuYizor/YMwjA/4YBU7J4v1FeUR88pazimK2bL68tdOTAyYfSb/ds5aUAx6J3lpvN3WYqFOzuEeXHYB/W3ViaxfIuTRqjI2uvi/EBLHTtfOj7ukXeSOYe1Nd6tfJNwG+43UDTCvXyYVRfkTq8BLyrBa4y7J7BXkjqZlYUozI8x3Pn1Fa328zhGAdvkbzCQg6n2atr4pRUM/Bo6q7Z1GvJIbLKbsZsceiuOZwRdXAeKDfpwXlKYkI9ShmjInX45mUX/lvzwd6ZLlSSKsOq4duF7Mv7R6AChrWWH4kc1+DQrVPF8XXaLdwJe5ieaBOhg8CBmluRLRab9eqRpBLPcKu2woU8laW3ZtwQ+kPiYgBjdaqeNIajdZScZFNL97YFE15YmF3+VYdJdWan39AGaKOBxKWqgT+7q/r6Hq4ul8ujbaV7NessyP64Q6NDVjKWYiQJByNU+/3U3FKwgJVt7rOsuA3JbY+VvQc3hub6I6HP2RhG3F2vkTGZmC2z0bn6UsuSW3yw2H1Nfw5hOUnNJaitQv9JhExulkZufn1RP6CfX1xcepclF61Hg4s8OU0g==
-Received: from aford-System-Version.lan ([2601:447:d002:5be:27d7:3989:2897:88a7])
-        by smtp.gmail.com with ESMTPSA id m20-20020a0cdb94000000b0068c9db26ae1sm2079526qvk.41.2024.02.10.12.46.29
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 10 Feb 2024 12:46:30 -0800 (PST)
-From: Adam Ford <aford173@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Cc: marex@denx.de,
-	aford@beaconembedded.com,
-	Adam Ford <aford173@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH V4 6/6] arm64: defconfig: Enable DRM_IMX8MP_DW_HDMI_BRIDGE as module
-Date: Sat, 10 Feb 2024 14:46:02 -0600
-Message-ID: <20240210204606.11944-7-aford173@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240210204606.11944-1-aford173@gmail.com>
-References: <20240210204606.11944-1-aford173@gmail.com>
+        d=1e100.net; s=20230601; t=1707658971; x=1708263771;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=vNl2TNJJT9F/ECiKzGFxOoeb4VRRB8d6Ro6PERp/HBw=;
+        b=PkUdllHPBoWHA/aezkij6fWezNfdaufsCh39mVGudm0J1BR8ZLug0LZG8L+nvLCAeF
+         SVTV4KK/2Gi/BMMyyom+kGaze7pLDrGtsi/od4MxDLCyxbxSI3breCylJHo8HD9wVxCZ
+         hfvkMvm2UvRDNMqwynKoviJoOwWEDpVovwKvxqpQ/5e2ZEIsiUk+t1gqd7HSoX4TPv1i
+         pjQ8y7laSoDOaKfY4SCGd5IdwyDzbGtFAwy74a5TdeC2Y1FENFNo4Rdxbx4bdi3OpCDS
+         sRNmVYnYQzjiXR/24aNXRkVQA5+H2onrrf140pieyQX0zf1R5PE62z14LzsSZyN+1I21
+         1nZA==
+X-Forwarded-Encrypted: i=1; AJvYcCVkF1/aimxW+ixjOTWVyjFypHAKvol3dWg5rAkSOcmopk7DKf67fMKT5p886ndlQuSrOewo7FlNXKc8Q7RBBGq9GmIpk0kK+YSgb4I+BA==
+X-Gm-Message-State: AOJu0YxTJBG6AjRpWEUGIS3t10YcWCAyu1bMCwj0BnwpOjF6EtB2LeZS
+	IcDGHR4FmyzsX/H0LTe6/coYs+iiUzg6/ugM2cugx8EeSFgcq1Cb55qjcw86ZiA=
+X-Google-Smtp-Source: AGHT+IHZ/a5U6it5nOITDX6BVKRmPbh7X1afwcLmxuPyfMAqtYz3gHLXPT8ZIBqIsDnKSqR/+VJpqw==
+X-Received: by 2002:adf:d1ee:0:b0:33b:649a:1a12 with SMTP id g14-20020adfd1ee000000b0033b649a1a12mr4062726wrd.55.1707658970873;
+        Sun, 11 Feb 2024 05:42:50 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCXp7r9BIoB/cXoY9YZQSb5jOs+5TxAm1QbngscDcGXCd3VYAoUurb6YMWRyhbxrbC+veqwNRiX3IEg0teXQRmJ9O5IrqtjGpLUvMe8I+cUuorrKAZkkqnlg13ImHzbjuHOohFgNigDuO9fkZk8EvWtoo3P1N11DjI+1rYdZ4Gj9ZUBW9LPKbrTJr79MY6smBKmfbE6SZk6oyB90L0uI2Ktv1nidF67JEpbi8TlWPUqGlr7G7GptZ/QUbFATm8orhvg3XIoLlPTaV/w6aJsrQgVLTqBUKIpaKb//h0htOhNGPC7L2r0mSe/s2HLum4ocKd6XaX+J0cf0Bb2MdRBsOD+QkOyJMBZKywmTPP9uN1iKQfDhJfanR38FYnS8Px0YktK5Ylrv2Bg6nSFmtgz3kbUDLzEYWtIGgMfoq+nFwKj3DmiQF1x861bpAN2YrrwOeTUH+cABU5AvZQa3K5jrZ3SjNKISVDW2yboZQoENTvBi+nX+3Llv5C1Pq8zgzqAB6ZY1uXAf1+creAgbla8QmK6ZrGZsDfgjMm93zET2WO9qPOEKrvUa99tf72xRllcPS/nVnrqatXmwvu1hNrSp+bEWxTDWHs16gSQ0+XdN/Qv5qaiJPkF4hCJVR50VfKfIVKsHD1wEIMAb5ikmsFl5L40iBwovmB97fTpnfW5L8xz5HwPe+6fDbHTTT25c4ntM6VjOO++CcvDxHYsiiIb3rgh9aawVU0qSA00iyHTu9mcIfsniZ8zMNdbtcOc+4jR8HVU=
+Received: from [192.168.1.20] ([178.197.223.6])
+        by smtp.gmail.com with ESMTPSA id dv5-20020a0560000d8500b0033b483d1abcsm4273462wrb.53.2024.02.11.05.42.49
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 11 Feb 2024 05:42:50 -0800 (PST)
+Message-ID: <b6c28118-a20c-46a5-b070-2306d4c0b2a1@linaro.org>
+Date: Sun, 11 Feb 2024 14:42:48 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: mediatek,mt7988-xfi-tphy: add
+ new bindings
+Content-Language: en-US
+To: Daniel Golle <daniel@makrotopia.org>,
+ Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
+ Steven Liu <steven.liu@mediatek.com>, John Crispin <john@phrozen.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Qingfang Deng <dqfext@gmail.com>, SkyLake Huang
+ <SkyLake.Huang@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, netdev@vger.kernel.org
+References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240210_124633_456358_92F07F22 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20240211_054257_080043_29934AAA 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -110,32 +152,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The i.MX8M Plus has support for an HDMI transmitter.  The
-video is genereated by lcdif3, routed to the hdmi parallel
-video interface, then fed to a DW HDMI bridge to support
-up to 4K video output.
+On 10/02/2024 03:10, Daniel Golle wrote:
+> Add bindings for the MediaTek XFI Ethernet SerDes T-PHY found in the
+> MediaTek MT7988 SoC which can operate at various interfaces modes:
+> 
+> via USXGMII PCS:
+>  * USXGMII
+>  * 10GBase-R
+>  * 5GBase-R
+> 
+> via LynxI SGMII PCS:
+>  * 2500Base-X
+>  * 1000Base-X
+>  * Cisco SGMII (MAC side)
+> 
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> ---
+> v3: Add reference to MediaTek-internal "pextp" name, better explain reset as
+>     well as 10GBase-R tuning work-around.
+> v2: unify filename and compatible as requested
+> 
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
----
-No change since V1
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index f44b3abf3cef..03ba9e89a0a5 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -886,6 +886,7 @@ CONFIG_DRM_ANALOGIX_ANX7625=m
- CONFIG_DRM_I2C_ADV7511=m
- CONFIG_DRM_I2C_ADV7511_AUDIO=y
- CONFIG_DRM_CDNS_MHDP8546=m
-+CONFIG_DRM_IMX8MP_DW_HDMI_BRIDGE=m
- CONFIG_DRM_DW_HDMI_AHB_AUDIO=m
- CONFIG_DRM_DW_HDMI_CEC=m
- CONFIG_DRM_IMX_DCSS=m
--- 
-2.43.0
+Best regards,
+Krzysztof
 
 
 -- 
