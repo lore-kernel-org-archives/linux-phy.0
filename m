@@ -4,88 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E453C48297
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 16:45:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8730DC4829E
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 18:36:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DUoLQXqavY8sGGfs7C7qyyeplgy444wpZknGf25+PBA=; b=nDhvw7R/xpbP5k
-	7EBKjjJ/pvbBs60KiRRoTVTmd07NbgbiqxO2bw346ON5gOWZr26j2Gg8RNK6davPDFDhRVWVtWEzi
-	tsrVnIYPSZ6E0+MfMDRbj1U/rxekT3Ig88HksvfwpyXsm0hB6vHIM8eL4Ityu7cOW70yJaMR0G1Ix
-	LJ4Q0bAV8ixg8LECMXIbA4GhSCpCFqrqgKLfEmg9KvgWfNr3k1ZSS43DHtPFNEBgSjJ0GvLOHNdOa
-	GR02baOd68Tin4fZeNN/NmJAny5orTGMlnlV8Ds6OS2KeI6pc93p5b/Col4JlvttTl066OC/jEfxO
-	2AWx8a7mtgUj+g4/Zf0g==;
+	List-Owner; bh=J5rQJ+V6pguhWAVBV7SMe6oeqBw8VPdl3bqJ5sJqM6Q=; b=NFaPNzuDpXeM4N
+	hqAiplDpREm3CVlcUwNkKSVlTyWJgc5BV43+kvuzWWc8ISs7BDL6RhBl/fokoGsC05qxnS3VBhRLY
+	OVZYGtlv8MZsRmPnzJd/szxfBv5n1wlS3YdUmSLwOwLF2cVXLteOaiCVJuGFtHBIV5vDmcNEyzUfi
+	G+7uWKolB5KFK04rOGqCDvrKs9zZ+YoSk8cKxyvNr8xg8BMGWQM6s0LSr788jCvHR4wEf1Za9QN9n
+	gBINZBlM35xOaNUDyPe99Sk8vmh87oq1OjFd5W1A6a26ajJIZXqPsjivY070FlxjHZH9wKJzZbbTl
+	kQYYhQS+oArT5FuHLI+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZZQU-00000006EAN-0STr;
-	Mon, 12 Feb 2024 16:45:02 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1rZbA5-00000006dND-0rHu;
+	Mon, 12 Feb 2024 18:36:13 +0000
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZZQQ-00000006E8G-2pld;
-	Mon, 12 Feb 2024 16:45:00 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-33b86bc8974so500187f8f.2;
-        Mon, 12 Feb 2024 08:44:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1707756296; x=1708361096; darn=lists.infradead.org;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:cc:to:from:subject:message-id:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=aogiPWx9iamxsGoJiTEZzs3mhZ4z87cPE84LPd+suNs=;
-        b=Uui4XVQ0INtpLz8ZsUCVgtc+T+ih+z5buhUfF24KSpH+7+Ttk7TRqX7psI6EmiGC1C
-         u8lSVESFOtRYgQg7UEsd9dKcDq4oREYKPGneA5xwxtf8vWMOj/0GIeQAdKX3ck2JKqFd
-         FNx2MBSWd2RQboZ1d2oz210OtPXD08BsgblV/Rj4ZQDz0gIAkEXFTJBDvMdcLuLtYO8o
-         9yRbyev4hK68wOfIcZamxmK3oLLr40lEGT6YHmA9BNkv2pvYj8sO7l97NpROLKXxCQil
-         wuMMHNIjhgCC6y/8meQQQHNznVUZPK30uju3TMZKt9H6tv4+GJ9Ar3GGaUmsLdSQzAEY
-         YC+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707756296; x=1708361096;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=aogiPWx9iamxsGoJiTEZzs3mhZ4z87cPE84LPd+suNs=;
-        b=n0Zw/ZYyxr+W3KJtwywJpAYNkYddJZA1QeJpMXDqvbBoS3B+umTPJVj9UxUJizm1qh
-         7ZqcUR9HoLb6xNn/MjEPCjYhnKvBjxTkDNmDTpreefOYSS+4k4U8G0hRzl+Ij6sZDod5
-         k2uQ2bYl+mSog4cM7kO+VB0GChNveTeTXb1QQsZr4VzMfeJc2KRv2fpAWZbmS3bx2LuT
-         6Btus4Wf3FKAo3zKONRc0fgMLTk3JiDXm96mZy5RWdaRJSmYIs8ZoxeP146p4LsLhQY7
-         wDwSJkjhpinnypecpKm3QCP2wnH1cyj33R/xHyXAcXF/DGdjN8lg1MXnxyQ46ZBod3xd
-         rTBA==
-X-Gm-Message-State: AOJu0YwwowUlWGW8zwJJ3qDXvuqc5rQTfhkBgc/4JcJf/Whcg901MbK6
-	pCR0K49MwwbpK4PrxtCa4S6XQqOV3IS4bLdyZkSu5biv5p7CwQzN
-X-Google-Smtp-Source: AGHT+IE2bXWI0Cjr/ufrLe9ZMhXhO3vMwdu8pOdp7/5tmJ3s20byT+ET+47/262D86z59Rglhlix8A==
-X-Received: by 2002:adf:f050:0:b0:33b:4967:4d2 with SMTP id t16-20020adff050000000b0033b496704d2mr5545729wro.41.1707756296237;
-        Mon, 12 Feb 2024 08:44:56 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVCCznL4B0+Zm2htBLr3PiX2fwM06xhFy47awuh1W5sFjX6kE/NdvRa1VsW8o2EiNOyLJPpqDqnpRDm0A0virs6YAXAs1h+y5dAxKaWtTGGJmnWWeCrWifXynTD5NoZ5IWAwPWi9OFwgd3Kty8cGZk9M6DK1wjfo5HdKHtZO8AAepEqJjcpKF1Sztvp/dEMQn+D2P6JSrcGGsFoleyWTEPiWg4wsYu0Ly8YwjU17jLKHi6YkDIqNmc+2G7d6kLXRtJjxmxKPSUtiQC01KhIrnCnDdl0feWeSQTiADdogpq7NhOVI2TuznpdolRtXcL0NDPmpO0ol8BnWjCn185qaHb2QMyp4pCxci5B+P34vUhOUkEwKo3099qqeotcA3DG7cCc7nHWrFdlIe6ZHsQog5wKhzoGwOAzxHhTCLDeFCOQ5SJvFbvi5pa73e7FbnzSrh6XmaRBRKJEe0FlCjjqFNF1yWZWEIpPUP7OMWVEQJGhAme+ZI27yBklbw8w8HiVZtU3GEmL3hVkbhmomWScym9ZG7RVKPSx+x1wtjsFUz1jYSSDSaraXx73+oNLd0vYPlEvA49ICyZM84zKLm/gc/vqQ5hfr5H8JxZTl1M66F8PyrAnBCoNupbTquNGMFJvl5jpVKBh
-Received: from [192.168.0.9] (cm-83-97-153-254.telecable.es. [83.97.153.254])
-        by smtp.gmail.com with ESMTPSA id v7-20020a5d6787000000b0033b541e987csm7206803wru.33.2024.02.12.08.44.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Feb 2024 08:44:55 -0800 (PST)
-Message-ID: <61af7b121b23fe8ed06df5348692f862b9b125bf.camel@gmail.com>
+	id 1rZbA1-00000006dME-1ye4;
+	Mon, 12 Feb 2024 18:36:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1707762965;
+	bh=T6klo5znd49M931UrjN16DNw3T/R1nxaLTG4aDB8gV4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=ViEM1ASSooz6/5l6YhYrLglA/e9pS7yzXmNL899kVcI6WvbWsO2YTMBU5RHhM6vHo
+	 sDSDiOBEF+9A1U24pV7d6Nv30985UXdCSXoUx5+H/Yla0qVzWC/OPoMd1/J1WEo8Yx
+	 jmUOfgyRlk/a6nLF26s8jpyQzl1e1G/x28X307zQFTPvDVV34WxMGM13V+fWNLfVSb
+	 0TeJqUoxnUjURSy+5zYdcIr/3bnPOBiV5ScgmQBFcZuWX41VxhhfIaNk92UNZOqwtW
+	 WDWgb3nhFoZGfvSMXy3nOcP+/xfI3vNm+zh1oG6gDiy3gbuLeXCLjdmy6iCdPmJ6nv
+	 FtcJtDTDDWgYQ==
+Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 277193781FCE;
+	Mon, 12 Feb 2024 18:36:04 +0000 (UTC)
+Message-ID: <4efca2ec-b078-4421-8956-e3add15d8f62@collabora.com>
+Date: Mon, 12 Feb 2024 20:36:03 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 2/2] phy: rockchip: Add Samsung HDMI/eDP Combo PHY
  driver
-From: Luis de Arquer <ldearquer@gmail.com>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, Rob Herring
- <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>,  Conor Dooley <conor+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, Sascha Hauer
- <s.hauer@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Philipp
- Zabel <p.zabel@pengutronix.de>, Algea Cao <algea.cao@rock-chips.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, kernel@collabora.com
-Date: Mon, 12 Feb 2024 17:44:43 +0100
-In-Reply-To: <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+Content-Language: en-US
+To: Luis de Arquer <ldearquer@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Johan Jonker <jbx6244@gmail.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Algea Cao <algea.cao@rock-chips.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, kernel@collabora.com
 References: <20240205-phy-hdptx-v2-0-a7150814c047@collabora.com>
-	 <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
-User-Agent: Evolution 3.44.4-0ubuntu2 
-MIME-Version: 1.0
+ <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+ <61af7b121b23fe8ed06df5348692f862b9b125bf.camel@gmail.com>
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <61af7b121b23fe8ed06df5348692f862b9b125bf.camel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240212_084458_747991_FE2EB51A 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20240212_103609_831261_AE82643D 
+X-CRM114-Status: GOOD (  14.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,40 +85,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Cristian,
+Hi Luis,
 
-On Mon, 2024-02-05 at 13:24 +0200, Cristian Ciocaltea wrote:
-> +
-> +static bool hdptx_phy_clk_pll_calc(unsigned int data_rate,
-> +				   struct ropll_config *cfg)
-> +{
-> +	const unsigned int fout = data_rate / 2, fref = 24000;
-> +	unsigned long k = 0, lc, k_sub, lc_sub;
-> +	unsigned int fvco, sdc;
-> +	u32 mdiv, sdiv, n = 8;
-> +
-> +	for (sdiv = 16; sdiv >= 1; sdiv--) {
-> +		if (sdiv % 2 && sdiv != 1)
-> +			continue;
-> +
-> +		fvco = fout * sdiv;
-> +
-> +		if (fvco < 2000000 || fvco > 4000000)
-> +			continue;
-> +
+On 2/12/24 18:44, Luis de Arquer wrote:
+> Hi Cristian,
+> 
+> On Mon, 2024-02-05 at 13:24 +0200, Cristian Ciocaltea wrote:
+>> +
+>> +static bool hdptx_phy_clk_pll_calc(unsigned int data_rate,
+>> +				   struct ropll_config *cfg)
+>> +{
+>> +	const unsigned int fout = data_rate / 2, fref = 24000;
+>> +	unsigned long k = 0, lc, k_sub, lc_sub;
+>> +	unsigned int fvco, sdc;
+>> +	u32 mdiv, sdiv, n = 8;
+>> +
+>> +	for (sdiv = 16; sdiv >= 1; sdiv--) {
+>> +		if (sdiv % 2 && sdiv != 1)
+>> +			continue;
+>> +
+>> +		fvco = fout * sdiv;
+>> +
+>> +		if (fvco < 2000000 || fvco > 4000000)
+>> +			continue;
+>> +
+> 
+> What about adding a check to data_rate, maybe like
+> 
+> if (fout > 0x0FFFFFFF)
+> 	return false;
+> 
+> or similar, before the for loop, to keep the multiplication safe?
+> 
+> Right now it would be redundant, given that data_rate was, at some
+> point, encoded in 28 bits within bus_width. But can prevent future pain,
+> especially after changing to phy_configure_opts_hdmi.
 
-What about adding a check to data_rate, maybe like
+Indeed, it makes sense to do the check, thanks for the heads up!
+I was almost ready to submit v3, so this arrived just in time. :-)
 
-if (fout > 0x0FFFFFFF)
-	return false;
-
-or similar, before the for loop, to keep the multiplication safe?
-
-Right now it would be redundant, given that data_rate was, at some
-point, encoded in 28 bits within bus_width. But can prevent future pain,
-especially after changing to phy_configure_opts_hdmi.
-
-Luis
+Regards,
+Cristian
 
 -- 
 linux-phy mailing list
