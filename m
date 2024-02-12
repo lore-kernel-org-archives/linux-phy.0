@@ -4,64 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2A11C4829A
-	for <linux-phy@archiver.kernel.org>; Sun, 11 Feb 2024 20:45:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A41AC4829B
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 10:02:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=krVQ5VMVnSr/u4irTEENHItNfy0ulyA3sZMOx3h5dic=; b=geCE1nhGsGpS19
-	8h4DvO5mv25phfAo5iADsNivnkfri97TxWOfx1Rol6mHbArWdlkqEAhvDhNFbmZ2VNpGTqAhmJuI5
-	rPDa8+F1g0KG5/61MISwwf12S9LeKuaL8zC2VO9zGERUDkFYysRec1kONH2vBasdFXk6UyWeNCydC
-	oukCL2KdjjyXqOfTRhE84VjqjjlHNsMwl/akJoxNyRboIbUfvnEeVbJbKssvI0ne1TwWtRgIizI7D
-	xghm6Vofs/+TXGwrABsQ3R55EpL+wjeaNvN6ukwP5jJLSuaOxc09/a8eO4w3UR4j6+Qgn01JoR42P
-	ssooQlYfe+D4n66mcB/A==;
+	List-Owner; bh=s9TsBkUQUjgyJdWCIOPq1qmj0gAHmIMWx+8p5ml+XpI=; b=eUbEhkmpjbXkR2
+	qGvl6LCYRBBeBGgpqInM9UDCsuF552O5JMcfJ154Iwdjy8IewEXLmS2TOe/ggnhbUJAsQu8SJkaHE
+	jCQvtfHf/T/tExo8Z78KvvHtU8AX8gIlVa4D7qNhilDeXIueXhnzilFxJZ2foeUV5uP9vDRbMx3JX
+	q0SbkRO+iWS2hLvAN4dCIZZJg7ad4zvbOIpH1BKKpVmfCuKgghjnbWxbQWhOn/PTo1PyTy1Rr8EDG
+	JKq938T/vxXTktttXgwakZ9aVwbQpGIXbBrj+6sWA2s8w+FLn6T2Z2QA7eldsv5zBVjKtq6JqP78Y
+	LZ+e+OtL20botOnlTh6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZGhU-00000003JLI-1XZB;
-	Sun, 11 Feb 2024 20:45:20 +0000
-Received: from forward502a.mail.yandex.net ([2a02:6b8:c0e:500:1:45:d181:d502])
+	id 1rZT9O-00000004oWo-11PQ;
+	Mon, 12 Feb 2024 10:02:58 +0000
+Received: from mx0a-001ae601.pphosted.com ([67.231.149.25] helo=mx0b-001ae601.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZGhQ-00000003JKb-0qPm;
-	Sun, 11 Feb 2024 20:45:18 +0000
-Received: from mail-nwsmtp-smtp-production-main-51.vla.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-51.vla.yp-c.yandex.net [IPv6:2a02:6b8:c0d:2a02:0:640:77d9:0])
-	by forward502a.mail.yandex.net (Yandex) with ESMTPS id 5310460D2B;
-	Sun, 11 Feb 2024 23:45:10 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-51.vla.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id 5jsT2eIDX8c0-J19H6vkO;
-	Sun, 11 Feb 2024 23:45:09 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
-	t=1707684309; bh=f5rRJR6KNn/eOO0vS9ImbNMvdI5OX8OfzGV14/X6mbA=;
-	h=From:In-Reply-To:Cc:Date:References:To:Subject:Message-ID;
-	b=SQXWkKNz3llZC3eFqKDPg9fqHM3R23uhtyqwJutAGYubmH2pQpkRSHqigAgGcu4qe
-	 sCDOLTytsMsRIgoxeOG11Pr3x2GBRH0d6sGybO9YuXjB/4UIus89bfGVNkMq9vvEeb
-	 Qpytfo+H88tyz5U2QjP2emKwvGZQXsH5vS8U/bRk=
-Authentication-Results: mail-nwsmtp-smtp-production-main-51.vla.yp-c.yandex.net; dkim=pass header.i=@yandex.com
-Message-ID: <bdb92ba5-5ac7-4ae7-ab63-8a7545053988@yandex.com>
-Date: Sun, 11 Feb 2024 21:45:04 +0100
+	id 1rZT9K-00000004oVK-1ebG;
+	Mon, 12 Feb 2024 10:02:56 +0000
+Received: from pps.filterd (m0077473.ppops.net [127.0.0.1])
+	by mx0a-001ae601.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41C7sVo4016307;
+	Mon, 12 Feb 2024 04:02:21 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cirrus.com; h=
+	date:from:to:cc:subject:message-id:references:mime-version
+	:content-type:in-reply-to; s=PODMain02222019; bh=WLF2X+j3Bn92Q1D
+	DaV05/unswsO5ahBS+1WWPqaApW4=; b=LWzQNVJn8q7dcq0Bd+TtMxT1lIBoGiw
+	yD0TsejCsoABuy8AggRDJW06Q1z2xJlky/ztkU9ADIkffObtOL0UuCQv3Beh4nhA
+	Put6Ypu2vVivviEJ6Oil+cEfW1Q27QM+O9ltZ623dvQO4anhr/dZNovMzxP3lw+a
+	LhOj5jub+y3fjAvlvXTHjliMbTrYlMFuhJHFxHorIs5Vl5GjaGvKHU61HqyF2Ni8
+	oMyxoPUphkMgU1KFNxi+kfuEZzYoo4jyVm3Qy64lf8Glce+CGjlLDllqFwliGFC9
+	RTpYBk2a8X7avMhCql6FZ7NmoU/tVg544Z1TluPmt36M8g8y3w06Uow==
+Received: from ediex02.ad.cirrus.com ([84.19.233.68])
+	by mx0a-001ae601.pphosted.com (PPS) with ESMTPS id 3w67e21nee-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 12 Feb 2024 04:02:21 -0600 (CST)
+Received: from ediex02.ad.cirrus.com (198.61.84.81) by ediex02.ad.cirrus.com
+ (198.61.84.81) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 12 Feb
+ 2024 10:02:18 +0000
+Received: from ediswmail9.ad.cirrus.com (198.61.86.93) by
+ anon-ediex02.ad.cirrus.com (198.61.84.81) with Microsoft SMTP Server id
+ 15.2.1118.40 via Frontend Transport; Mon, 12 Feb 2024 10:02:18 +0000
+Received: from ediswmail9.ad.cirrus.com (ediswmail9.ad.cirrus.com [198.61.86.93])
+	by ediswmail9.ad.cirrus.com (Postfix) with ESMTPS id 70E1F820242;
+	Mon, 12 Feb 2024 10:02:18 +0000 (UTC)
+Date: Mon, 12 Feb 2024 10:02:17 +0000
+From: Charles Keepax <ckeepax@opensource.cirrus.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+CC: Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd
+	<sboyd@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+        Peng Fan
+	<peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+        Nishanth Menon
+	<nm@ti.com>, Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@linaro.org>,
+        Geert Uytterhoeven <geert+renesas@glider.be>,
+        Thierry Reding <thierry.reding@gmail.com>,
+        Jonathan Hunter
+	<jonathanh@nvidia.com>,
+        Linus Walleij <linus.walleij@linaro.org>,
+        "Laurent
+ Pinchart" <laurent.pinchart@ideasonboard.com>,
+        Mauro Carvalho Chehab
+	<mchehab@kernel.org>,
+        Vinod Koul <vkoul@kernel.org>, Russell King
+	<linux@armlinux.org.uk>,
+        Srinivas Kandagatla
+	<srinivas.kandagatla@linaro.org>,
+        Mark Brown <broonie@kernel.org>, "Jaroslav
+ Kysela" <perex@perex.cz>,
+        Takashi Iwai <tiwai@suse.com>, <linux-clk@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <patches@opensource.cirrus.com>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        NXP Linux Team
+	<linux-imx@nxp.com>,
+        <linux-amlogic@lists.infradead.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-renesas-soc@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+        <linux-omap@vger.kernel.org>, <linux-media@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <alsa-devel@alsa-project.org>,
+        <linux-sound@vger.kernel.org>
+Subject: Re: [PATCH] clk: constify the of_phandle_args argument of
+ of_clk_provider
+Message-ID: <ZcnsqaIftZXcNaUA@ediswmail9.ad.cirrus.com>
+References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 04/10] phy: rockchip: add usbdp combo phy driver
-To: Sebastian Reichel <sebastian.reichel@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org
-Cc: Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Frank Wang <frank.wang@rock-chips.com>,
- Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, kernel@collabora.com,
- Zhang Yubing <yubing.zhang@rock-chips.com>
-References: <20240209181831.104687-1-sebastian.reichel@collabora.com>
- <20240209181831.104687-5-sebastian.reichel@collabora.com>
-Content-Language: en-US
-From: Johan Jonker <jbx6244@yandex.com>
-In-Reply-To: <20240209181831.104687-5-sebastian.reichel@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
+X-Proofpoint-ORIG-GUID: NzDJLMtFiatrdGDskmwX3IMPmG4MYizJ
+X-Proofpoint-GUID: NzDJLMtFiatrdGDskmwX3IMPmG4MYizJ
+X-Proofpoint-Spam-Reason: safe
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240211_124516_507002_AA00787F 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20240212_020254_449389_BAB27BDE 
+X-CRM114-Status: GOOD (  11.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,36 +119,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2/9/24 19:17, Sebastian Reichel wrote:
-> This adds a new USBDP combo PHY with Samsung IP block driver.
+On Thu, Feb 08, 2024 at 05:37:10PM +0100, Krzysztof Kozlowski wrote:
+> None of the implementations of the get() and get_hw() callbacks of
+> "struct of_clk_provider" modify the contents of received of_phandle_args
+> pointer.  They treat it as read-only variable used to find the clock to
+> return.  Make obvious that implementations are not supposed to modify
+> the of_phandle_args, by making it a pointer to const.
 > 
-> The driver get lane mux and mapping info in 2 ways, supporting
-> DisplayPort alternate mode or parsing from DT. When parsing from DT,
-> the property "rockchip,dp-lane-mux" provide the DP mux and mapping
-> info. This is needed when the PHY is not used with TypeC Alt-Mode.
-> For example if the USB3 interface of the PHY is connected to a USB
-> Type A connector and the DP interface is connected to a DisplayPort
-> connector.
-> 
-> When do DP link training, need to set lane number, link rate, swing,
-> and pre-emphasis via PHY configure interface.
-> 
-> Co-developed-by: Heiko Stuebner <heiko@sntech.de>
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> Co-developed-by: Zhang Yubing <yubing.zhang@rock-chips.com>
-> Signed-off-by: Zhang Yubing <yubing.zhang@rock-chips.com>
-> Co-developed-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > ---
+>  drivers/clk/clk-lochnagar.c                   |  2 +-
 
-For Linux FTRACE filters it is needed that all functions in a driver start with the same function prefix.
-Currently there's a mix of udphy_* and rockchip_*
-Maybe use rk_udphy_* ??? similar to for example rk_nfc_* in rockchip-nand-controller.c
+For the Lochnagar bits:
 
-Johan
+Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
+
+Thanks,
+Charles
 
 -- 
 linux-phy mailing list
