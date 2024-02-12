@@ -4,105 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A41AC4829B
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 10:02:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E453C48297
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 16:45:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s9TsBkUQUjgyJdWCIOPq1qmj0gAHmIMWx+8p5ml+XpI=; b=eUbEhkmpjbXkR2
-	qGvl6LCYRBBeBGgpqInM9UDCsuF552O5JMcfJ154Iwdjy8IewEXLmS2TOe/ggnhbUJAsQu8SJkaHE
-	jCQvtfHf/T/tExo8Z78KvvHtU8AX8gIlVa4D7qNhilDeXIueXhnzilFxJZ2foeUV5uP9vDRbMx3JX
-	q0SbkRO+iWS2hLvAN4dCIZZJg7ad4zvbOIpH1BKKpVmfCuKgghjnbWxbQWhOn/PTo1PyTy1Rr8EDG
-	JKq938T/vxXTktttXgwakZ9aVwbQpGIXbBrj+6sWA2s8w+FLn6T2Z2QA7eldsv5zBVjKtq6JqP78Y
-	LZ+e+OtL20botOnlTh6g==;
+	List-Owner; bh=DUoLQXqavY8sGGfs7C7qyyeplgy444wpZknGf25+PBA=; b=nDhvw7R/xpbP5k
+	7EBKjjJ/pvbBs60KiRRoTVTmd07NbgbiqxO2bw346ON5gOWZr26j2Gg8RNK6davPDFDhRVWVtWEzi
+	tsrVnIYPSZ6E0+MfMDRbj1U/rxekT3Ig88HksvfwpyXsm0hB6vHIM8eL4Ityu7cOW70yJaMR0G1Ix
+	LJ4Q0bAV8ixg8LECMXIbA4GhSCpCFqrqgKLfEmg9KvgWfNr3k1ZSS43DHtPFNEBgSjJ0GvLOHNdOa
+	GR02baOd68Tin4fZeNN/NmJAny5orTGMlnlV8Ds6OS2KeI6pc93p5b/Col4JlvttTl066OC/jEfxO
+	2AWx8a7mtgUj+g4/Zf0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZT9O-00000004oWo-11PQ;
-	Mon, 12 Feb 2024 10:02:58 +0000
-Received: from mx0a-001ae601.pphosted.com ([67.231.149.25] helo=mx0b-001ae601.pphosted.com)
+	id 1rZZQU-00000006EAN-0STr;
+	Mon, 12 Feb 2024 16:45:02 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZT9K-00000004oVK-1ebG;
-	Mon, 12 Feb 2024 10:02:56 +0000
-Received: from pps.filterd (m0077473.ppops.net [127.0.0.1])
-	by mx0a-001ae601.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41C7sVo4016307;
-	Mon, 12 Feb 2024 04:02:21 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cirrus.com; h=
-	date:from:to:cc:subject:message-id:references:mime-version
-	:content-type:in-reply-to; s=PODMain02222019; bh=WLF2X+j3Bn92Q1D
-	DaV05/unswsO5ahBS+1WWPqaApW4=; b=LWzQNVJn8q7dcq0Bd+TtMxT1lIBoGiw
-	yD0TsejCsoABuy8AggRDJW06Q1z2xJlky/ztkU9ADIkffObtOL0UuCQv3Beh4nhA
-	Put6Ypu2vVivviEJ6Oil+cEfW1Q27QM+O9ltZ623dvQO4anhr/dZNovMzxP3lw+a
-	LhOj5jub+y3fjAvlvXTHjliMbTrYlMFuhJHFxHorIs5Vl5GjaGvKHU61HqyF2Ni8
-	oMyxoPUphkMgU1KFNxi+kfuEZzYoo4jyVm3Qy64lf8Glce+CGjlLDllqFwliGFC9
-	RTpYBk2a8X7avMhCql6FZ7NmoU/tVg544Z1TluPmt36M8g8y3w06Uow==
-Received: from ediex02.ad.cirrus.com ([84.19.233.68])
-	by mx0a-001ae601.pphosted.com (PPS) with ESMTPS id 3w67e21nee-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 12 Feb 2024 04:02:21 -0600 (CST)
-Received: from ediex02.ad.cirrus.com (198.61.84.81) by ediex02.ad.cirrus.com
- (198.61.84.81) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 12 Feb
- 2024 10:02:18 +0000
-Received: from ediswmail9.ad.cirrus.com (198.61.86.93) by
- anon-ediex02.ad.cirrus.com (198.61.84.81) with Microsoft SMTP Server id
- 15.2.1118.40 via Frontend Transport; Mon, 12 Feb 2024 10:02:18 +0000
-Received: from ediswmail9.ad.cirrus.com (ediswmail9.ad.cirrus.com [198.61.86.93])
-	by ediswmail9.ad.cirrus.com (Postfix) with ESMTPS id 70E1F820242;
-	Mon, 12 Feb 2024 10:02:18 +0000 (UTC)
-Date: Mon, 12 Feb 2024 10:02:17 +0000
-From: Charles Keepax <ckeepax@opensource.cirrus.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-CC: Michael Turquette <mturquette@baylibre.com>,
-        Stephen Boyd
-	<sboyd@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
-        Peng Fan
-	<peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
-        Nishanth Menon
-	<nm@ti.com>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Geert Uytterhoeven <geert+renesas@glider.be>,
-        Thierry Reding <thierry.reding@gmail.com>,
-        Jonathan Hunter
-	<jonathanh@nvidia.com>,
-        Linus Walleij <linus.walleij@linaro.org>,
-        "Laurent
- Pinchart" <laurent.pinchart@ideasonboard.com>,
-        Mauro Carvalho Chehab
-	<mchehab@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>, Russell King
-	<linux@armlinux.org.uk>,
-        Srinivas Kandagatla
-	<srinivas.kandagatla@linaro.org>,
-        Mark Brown <broonie@kernel.org>, "Jaroslav
- Kysela" <perex@perex.cz>,
-        Takashi Iwai <tiwai@suse.com>, <linux-clk@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <patches@opensource.cirrus.com>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        NXP Linux Team
-	<linux-imx@nxp.com>,
-        <linux-amlogic@lists.infradead.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-renesas-soc@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
-        <linux-omap@vger.kernel.org>, <linux-media@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <alsa-devel@alsa-project.org>,
-        <linux-sound@vger.kernel.org>
-Subject: Re: [PATCH] clk: constify the of_phandle_args argument of
- of_clk_provider
-Message-ID: <ZcnsqaIftZXcNaUA@ediswmail9.ad.cirrus.com>
-References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
+	id 1rZZQQ-00000006E8G-2pld;
+	Mon, 12 Feb 2024 16:45:00 +0000
+Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-33b86bc8974so500187f8f.2;
+        Mon, 12 Feb 2024 08:44:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707756296; x=1708361096; darn=lists.infradead.org;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=aogiPWx9iamxsGoJiTEZzs3mhZ4z87cPE84LPd+suNs=;
+        b=Uui4XVQ0INtpLz8ZsUCVgtc+T+ih+z5buhUfF24KSpH+7+Ttk7TRqX7psI6EmiGC1C
+         u8lSVESFOtRYgQg7UEsd9dKcDq4oREYKPGneA5xwxtf8vWMOj/0GIeQAdKX3ck2JKqFd
+         FNx2MBSWd2RQboZ1d2oz210OtPXD08BsgblV/Rj4ZQDz0gIAkEXFTJBDvMdcLuLtYO8o
+         9yRbyev4hK68wOfIcZamxmK3oLLr40lEGT6YHmA9BNkv2pvYj8sO7l97NpROLKXxCQil
+         wuMMHNIjhgCC6y/8meQQQHNznVUZPK30uju3TMZKt9H6tv4+GJ9Ar3GGaUmsLdSQzAEY
+         YC+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707756296; x=1708361096;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=aogiPWx9iamxsGoJiTEZzs3mhZ4z87cPE84LPd+suNs=;
+        b=n0Zw/ZYyxr+W3KJtwywJpAYNkYddJZA1QeJpMXDqvbBoS3B+umTPJVj9UxUJizm1qh
+         7ZqcUR9HoLb6xNn/MjEPCjYhnKvBjxTkDNmDTpreefOYSS+4k4U8G0hRzl+Ij6sZDod5
+         k2uQ2bYl+mSog4cM7kO+VB0GChNveTeTXb1QQsZr4VzMfeJc2KRv2fpAWZbmS3bx2LuT
+         6Btus4Wf3FKAo3zKONRc0fgMLTk3JiDXm96mZy5RWdaRJSmYIs8ZoxeP146p4LsLhQY7
+         wDwSJkjhpinnypecpKm3QCP2wnH1cyj33R/xHyXAcXF/DGdjN8lg1MXnxyQ46ZBod3xd
+         rTBA==
+X-Gm-Message-State: AOJu0YwwowUlWGW8zwJJ3qDXvuqc5rQTfhkBgc/4JcJf/Whcg901MbK6
+	pCR0K49MwwbpK4PrxtCa4S6XQqOV3IS4bLdyZkSu5biv5p7CwQzN
+X-Google-Smtp-Source: AGHT+IE2bXWI0Cjr/ufrLe9ZMhXhO3vMwdu8pOdp7/5tmJ3s20byT+ET+47/262D86z59Rglhlix8A==
+X-Received: by 2002:adf:f050:0:b0:33b:4967:4d2 with SMTP id t16-20020adff050000000b0033b496704d2mr5545729wro.41.1707756296237;
+        Mon, 12 Feb 2024 08:44:56 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVCCznL4B0+Zm2htBLr3PiX2fwM06xhFy47awuh1W5sFjX6kE/NdvRa1VsW8o2EiNOyLJPpqDqnpRDm0A0virs6YAXAs1h+y5dAxKaWtTGGJmnWWeCrWifXynTD5NoZ5IWAwPWi9OFwgd3Kty8cGZk9M6DK1wjfo5HdKHtZO8AAepEqJjcpKF1Sztvp/dEMQn+D2P6JSrcGGsFoleyWTEPiWg4wsYu0Ly8YwjU17jLKHi6YkDIqNmc+2G7d6kLXRtJjxmxKPSUtiQC01KhIrnCnDdl0feWeSQTiADdogpq7NhOVI2TuznpdolRtXcL0NDPmpO0ol8BnWjCn185qaHb2QMyp4pCxci5B+P34vUhOUkEwKo3099qqeotcA3DG7cCc7nHWrFdlIe6ZHsQog5wKhzoGwOAzxHhTCLDeFCOQ5SJvFbvi5pa73e7FbnzSrh6XmaRBRKJEe0FlCjjqFNF1yWZWEIpPUP7OMWVEQJGhAme+ZI27yBklbw8w8HiVZtU3GEmL3hVkbhmomWScym9ZG7RVKPSx+x1wtjsFUz1jYSSDSaraXx73+oNLd0vYPlEvA49ICyZM84zKLm/gc/vqQ5hfr5H8JxZTl1M66F8PyrAnBCoNupbTquNGMFJvl5jpVKBh
+Received: from [192.168.0.9] (cm-83-97-153-254.telecable.es. [83.97.153.254])
+        by smtp.gmail.com with ESMTPSA id v7-20020a5d6787000000b0033b541e987csm7206803wru.33.2024.02.12.08.44.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 12 Feb 2024 08:44:55 -0800 (PST)
+Message-ID: <61af7b121b23fe8ed06df5348692f862b9b125bf.camel@gmail.com>
+Subject: Re: [PATCH v2 2/2] phy: rockchip: Add Samsung HDMI/eDP Combo PHY
+ driver
+From: Luis de Arquer <ldearquer@gmail.com>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>,  Conor Dooley <conor+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Philipp
+ Zabel <p.zabel@pengutronix.de>, Algea Cao <algea.cao@rock-chips.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, kernel@collabora.com
+Date: Mon, 12 Feb 2024 17:44:43 +0100
+In-Reply-To: <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+References: <20240205-phy-hdptx-v2-0-a7150814c047@collabora.com>
+	 <20240205-phy-hdptx-v2-2-a7150814c047@collabora.com>
+User-Agent: Evolution 3.44.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
-X-Proofpoint-ORIG-GUID: NzDJLMtFiatrdGDskmwX3IMPmG4MYizJ
-X-Proofpoint-GUID: NzDJLMtFiatrdGDskmwX3IMPmG4MYizJ
-X-Proofpoint-Spam-Reason: safe
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240212_020254_449389_BAB27BDE 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20240212_084458_747991_FE2EB51A 
+X-CRM114-Status: GOOD (  10.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,23 +102,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 08, 2024 at 05:37:10PM +0100, Krzysztof Kozlowski wrote:
-> None of the implementations of the get() and get_hw() callbacks of
-> "struct of_clk_provider" modify the contents of received of_phandle_args
-> pointer.  They treat it as read-only variable used to find the clock to
-> return.  Make obvious that implementations are not supposed to modify
-> the of_phandle_args, by making it a pointer to const.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  drivers/clk/clk-lochnagar.c                   |  2 +-
+Hi Cristian,
 
-For the Lochnagar bits:
+On Mon, 2024-02-05 at 13:24 +0200, Cristian Ciocaltea wrote:
+> +
+> +static bool hdptx_phy_clk_pll_calc(unsigned int data_rate,
+> +				   struct ropll_config *cfg)
+> +{
+> +	const unsigned int fout = data_rate / 2, fref = 24000;
+> +	unsigned long k = 0, lc, k_sub, lc_sub;
+> +	unsigned int fvco, sdc;
+> +	u32 mdiv, sdiv, n = 8;
+> +
+> +	for (sdiv = 16; sdiv >= 1; sdiv--) {
+> +		if (sdiv % 2 && sdiv != 1)
+> +			continue;
+> +
+> +		fvco = fout * sdiv;
+> +
+> +		if (fvco < 2000000 || fvco > 4000000)
+> +			continue;
+> +
 
-Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
+What about adding a check to data_rate, maybe like
 
-Thanks,
-Charles
+if (fout > 0x0FFFFFFF)
+	return false;
+
+or similar, before the for loop, to keep the multiplication safe?
+
+Right now it would be redundant, given that data_rate was, at some
+point, encoded in 28 bits within bus_width. But can prevent future pain,
+especially after changing to phy_configure_opts_hdmi.
+
+Luis
 
 -- 
 linux-phy mailing list
