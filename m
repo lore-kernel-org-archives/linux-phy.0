@@ -4,77 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2270FC4829E
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 22:22:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24BA8C4829E
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Feb 2024 22:45:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/PKbhAXeg9N3Slg1sYz0lJYI+2VMKdllkGM7IdlrAKo=; b=W/M0ZOA3YyjUaF
-	desm5Gp/9J56vNO40cmytP6dXtxgy+HfidkVZNVV/JDoiAG3tI6GEFkK2OupAUscnnns8/TK4yi85
-	+GejtDCNbMsThZ3NdVC9mNDKyvI+MwI17VeiLninPmiW7gH0K4ZuuwofopSbenBN9wAhEw3oPUvm3
-	MrQF+QCKX0s1Rm0LI6zR3VnWYTz5ycQ5hJM/iAz9dTA+lb2yBE5jwKieIbX0hMlxPFz6X5fGQk+dW
-	csGYIRda4i/KW5BAhunTfFoG4fJ+0XKv6StBHa7i+lo7GgxKTHWsfyoYl4WjCHDK1dJoqRvxn38Vv
-	PSKQXiR3dvqV8991cwUA==;
+	List-Owner; bh=/H2fdOlNpMIhJDuVaS00yNztsgKAJrvLdNj/kW3G58I=; b=Kdbhd7k97MI5fk
+	DQKwROUDPiHA+ea34MCFQTLSzcfTFVSYbtotRoo22ktCmQ/NU1/aMX1KDwHfBvT18eWlA9UEMt8bS
+	jlWdakkjUIFMdxMiAzgHst/Mi0C1tcPQYzWixef9MaqGe5lPsVEESKcAVYfn90wNV5iTUwsZbBF9e
+	eVg5Pgc/T1F8BUF1Mgew2aoGx1K3BaAvzzp6kdGovamfedILtLGG1d8pUPBuyK6PRGsHYmMve+xEz
+	/3aU4LAN5P3SyPpqclwTvx/pB+jNRfauUeCuUVQ3/twWzY8iZOfXJ09fpBweWntR0NJ7oNNCxMEyY
+	zzye7JfnJqcZeHGUeuSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZehG-0000000791r-3TSy;
-	Mon, 12 Feb 2024 22:22:42 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rZf2p-00000007By6-2y4f;
+	Mon, 12 Feb 2024 22:44:59 +0000
+Received: from forward500c.mail.yandex.net ([178.154.239.208])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZehE-0000000790z-0sfQ
-	for linux-phy@lists.infradead.org;
-	Mon, 12 Feb 2024 22:22:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 28F2CCE1676;
-	Mon, 12 Feb 2024 22:22:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39D63C433C7;
-	Mon, 12 Feb 2024 22:22:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707776554;
-	bh=0IusXPQHXi66v5j+nmnkJrxK8Pdqo4Ksu739OrYknrQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Hmgv4A+BeRMvlSjxes5DlqJTRfGXFLA4EQJFae22u5pAp8YsBpncoyUnMRysNiogZ
-	 lsX/d5Whk/aBo4JZqiVapBKNf6OuyE3DBHR5NWX1hyAhZZojukhq3f4Lhl6EVPqhFp
-	 BbvIqBZ9a3zoU75koZjO8f+ALB8hU4tr2vjFa6uUYNv+A77uLjEfUWdX4qXX63aMZZ
-	 xtHMBUsAu8woT1hbyp4mh62luHt6uq+CZVP8NpZkgRayGj+O1KVkBRdwUU5J0SB5yb
-	 WutQATu4qOrMHZ9vnIItqGyRbEujU+WBGNHwDBADHex9zQBS67PwiXBxg1FsxYKDuE
-	 J22waLRABKb1w==
-Date: Mon, 12 Feb 2024 16:22:32 -0600
-From: Rob Herring <robh@kernel.org>
-To: David Wronek <davidwronek@gmail.com>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	"David S. Miller" <davem@davemloft.net>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Andy Gross <agross@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	cros-qcom-dts-watchers@chromium.org, linux-arm-msm@vger.kernel.org,
-	linux-crypto@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	~postmarketos/upstreaming@lists.sr.ht,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v4 2/8] dt-bindings: ufs: qcom: Add SC7180 compatible
- string
-Message-ID: <20240212222232.GB2655166-robh@kernel.org>
-References: <20240121-sm7125-upstream-v4-0-f7d1212c8ebb@gmail.com>
- <20240121-sm7125-upstream-v4-2-f7d1212c8ebb@gmail.com>
+	id 1rZf2l-00000007BxY-0BkF;
+	Mon, 12 Feb 2024 22:44:57 +0000
+Received: from mail-nwsmtp-smtp-production-main-19.sas.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-19.sas.yp-c.yandex.net [IPv6:2a02:6b8:c24:5a6:0:640:ee22:0])
+	by forward500c.mail.yandex.net (Yandex) with ESMTPS id CC6E460F42;
+	Tue, 13 Feb 2024 01:44:42 +0300 (MSK)
+Received: by mail-nwsmtp-smtp-production-main-19.sas.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id civpIX0pHCg0-aviaNSvO;
+	Tue, 13 Feb 2024 01:44:41 +0300
+X-Yandex-Fwd: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
+	t=1707777881; bh=l8YSD2byZe121ynq36axzQobriPKExDpwph35JKavO8=;
+	h=From:In-Reply-To:Cc:Date:References:To:Subject:Message-ID;
+	b=ItaX6CF4USzkVKNlQQCdzilewN5z2Q7DBFIvnEZuIxlmcJs8onDIXydbmfYoYRpg+
+	 tHqvqS52aa+lhAHGn064WwlFWUku1+2lHNGxi4OuotcDy55wgflA6pak2SgMR0MkQA
+	 lZuvjnIRIiCGvY0L5gkQTcYYJS/Srfu5XwLvfyrc=
+Authentication-Results: mail-nwsmtp-smtp-production-main-19.sas.yp-c.yandex.net; dkim=pass header.i=@yandex.com
+Message-ID: <9f8d39c1-66ca-4bb7-994e-de15cb516473@yandex.com>
+Date: Mon, 12 Feb 2024 23:44:37 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240121-sm7125-upstream-v4-2-f7d1212c8ebb@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1 06/10] arm64: dts: rockchip: add USBDP phys on rk3588
+Content-Language: en-US
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Frank Wang <frank.wang@rock-chips.com>,
+ Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kernel@collabora.com
+References: <20240209181831.104687-1-sebastian.reichel@collabora.com>
+ <20240209181831.104687-7-sebastian.reichel@collabora.com>
+ <6bc2f825-7e50-488d-a373-a211ac2cc8e1@yandex.com>
+ <dsfne22iebd7mvyyskhpw3rkkfhlxpv32afht456vq3u52axyr@kgkxfzm5vn4c>
+From: Johan Jonker <jbx6244@yandex.com>
+In-Reply-To: <dsfne22iebd7mvyyskhpw3rkkfhlxpv32afht456vq3u52axyr@kgkxfzm5vn4c>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240212_142240_449975_2093E3F8 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240212_144455_642255_4A7600C3 
+X-CRM114-Status: GOOD (  18.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,19 +79,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Jan 21, 2024 at 05:57:42PM +0100, David Wronek wrote:
-> Document the compatible for the UFS found on SC7180.
+
+
+On 2/12/24 19:48, Sebastian Reichel wrote:
+> Hi Johan,
 > 
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Signed-off-by: David Wronek <davidwronek@gmail.com>
-> ---
->  Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+> On Sun, Feb 11, 2024 at 08:24:36PM +0100, Johan Jonker wrote:
+>>> +		u2phy1: usb2-phy@4000 {
+>>
+>>         "usb2phy@[0-9a-f]+$":
+> 
+> Interesting. I would have expected that to pop up in dtbs_check, but
+> it does not for some reason. I will fix it for all usb2phy instances
+> in rk3588.
+> 
+>>> +			compatible = "rockchip,rk3588-usb2phy";
+>>> +			reg = <0x4000 0x10>;
+>>> +			interrupts = <GIC_SPI 394 IRQ_TYPE_LEVEL_HIGH 0>;
+>>
+>>> +			resets = <&cru SRST_OTGPHY_U3_1>, <&cru SRST_P_USB2PHY_U3_1_GRF0>;
+>>> +			reset-names = "phy", "apb";
+>>> +			clocks = <&cru CLK_USB2PHY_HDPTXRXPHY_REF>;
+>>> +			clock-names = "phyclk";
+>>> +			clock-output-names = "usb480m_phy1";
+>>> +			#clock-cells = <0>;
+>>
+>> Align with the (new) documentation
+>> about property ordering.
+>>
+>>> +			status = "disabled";
+>>> +
+>>> +			u2phy1_otg: otg-port {
+>>> +				#phy-cells = <0>;
+>>> +				status = "disabled";
+>>> +			};
+>>> +		};
+>>> +	};
+> 
+> The above follows everything from [0], which does not specify an
+> order for the "standard/common  properties". For those this follows
+> the order of existing usb2phy nodes. Did I miss any other new
+> Documentation?
+> 
+> [0] https://www.kernel.org/doc/html/next/devicetree/bindings/dts-coding-style.html#order-of-properties-in-device-node
 
-Should have been picked up by SCSI/UFS maintainers, but it 
-hasn't, so I applied it.
+While reading the text below I think it's in need for a clarification that the property order for common and vendor category is alpha-numerical as is for nodes.
+For Rockchip DT in this case "reset*" below "clock*", so that the person after you can add properties in a sort list.
 
-Rob
+Johan
+
+.===
+
+The following order of properties in device nodes is preferred:
+
+    "compatible"
+
+    "reg"
+
+    "ranges"
+
+    Standard/common properties (defined by common bindings, e.g. without vendor-prefixes)
+
+    Vendor-specific properties
+
+    "status" (if applicable)
+
+    Child nodes, where each node is preceded with a blank line
+
+The "status" property is by default "okay", thus it can be omitted.
+
+
+> 
+> -- Sebastian
 
 -- 
 linux-phy mailing list
