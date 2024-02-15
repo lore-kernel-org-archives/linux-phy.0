@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47F2AC4829E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 15:18:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CEB6C48BC4
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 15:18:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wi6Q/4Bm3t8S0NCymQKNpPr+riviJdqzVSk0qvMB06I=; b=tasSU2ra01aoef
-	XafUVcte+FkSG93GcjyXzByCF55QiwlCSWl0JrmjvEduczIpJ8cd7Im48dmrrYUJnwIWUx1tjq6tz
-	yMvflYhqm4Wbev+beXUBIa96S4h2CoPhk7wTgojkhxI7IZN3SsJ0d+f6v1khtXasFz2b0f3F5av1A
-	nJsIWJYMAZyQSlQMYIVWcqkg9MvEjbv2xXbqfLU/7fJBZkB48E3yjmOP5smSddAG2IQKU0mwo0pje
-	UoqYfY0IdbaAFDncN9rMPyau0QQboeChxrNCL84ZBSawSQtPYGl2SVeUhMqN9Hv5X4+lxCQVLBoDE
-	dgoxzOr8XdCqJKuk+BEw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m/u7dFhuGsYmUTJBfaG7aROuXzvr0iBVovnDpxbXL+M=; b=jdToWc1o1rj4V4
+	VV27zQVwEWLMEEVe0BVjZyR4FQWZuErDr6NDjEr4z6zyzu+aVV0pNYOotITACciLkot1u07rUm9V5
+	sHvyZBsobwsDzDwuyq/RXcKwr2PItdU2xKFrUWntMCju6TFBR7iI1H64eeGj9XslKtXScGiqXCSNL
+	7xjK8wyPwIn7fl8jIZF9NzVAtthM8SG9nWOmkuexzIO/CYyO3u/uIWPnGLglppWsZ7a+hk3E+1Ngp
+	RH6ibk7mE192o6lSeooTUkkB9KNSfA6PBygOweTWs+l4xmrBt0pAM979005kk6ObkP69/BgsYi5ZL
+	sl7wn44v7o1N5vIEJZ3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radV3-0000000GgrF-2MMV;
-	Thu, 15 Feb 2024 15:18:09 +0000
+	id 1radV7-0000000Ggun-2C5o;
+	Thu, 15 Feb 2024 15:18:13 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radUy-0000000GgoW-1qin;
-	Thu, 15 Feb 2024 15:18:06 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 8270C240002;
-	Thu, 15 Feb 2024 15:17:57 +0000 (UTC)
+	id 1radUy-0000000GgoY-1qrz;
+	Thu, 15 Feb 2024 15:18:07 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 949FA240005;
+	Thu, 15 Feb 2024 15:17:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708010279;
+	t=1708010280;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=mFwF74WYG389eTgoCBYbyxfkr+BMGReUM+V29ejlH/U=;
-	b=o9DbmqpX4/9BdCNE5XP79nCuaHvPL3RSwYXLefC9AJr49SuqVn3XKDXDtej/ID9DyQRboT
-	6u1yn7jIStwyGAhYzO5ATu7pptNaohDS2ZrCLPXskvm+Nm3iEdf1G0YYl3siW7qgw/OKUn
-	zVHPSIdue3Jq+cDPL6NNW7NVvY1eAJbQDJNlGBCU0CGcPMgnW97E0O0o+8omOjAcaQj4FC
-	40hZf8UBmaWOUGGFL3CM0LoU4uXpj8wvxUFt8c2rym1n5LpMz6gtBEMGlW+c4Mc4qHMZjx
-	xcbwmKpDSpz/78ukf6JT1G3dRc9WJnGouHmAeGu5fYJPzIASeTCac6dOGjC/wA==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=hyF0yc35eBHz6J5ozV2PTcEtd5Ku7xNg8KIyrWR2Ppc=;
+	b=mTIdkXRMUnc1Ncw1CWpsPwNllIyE5RWLeNrhM1TegKqa7oqfvKO/Fb10XiXCzERmNJAm5a
+	DJRnqTUiopMwB+wrwWP3sLY6zMDgVKdm4t8K+sIb4rQILYECzSqDiy1a76l/mA/DuUKYEw
+	OmkRRFfjY+3POb7TaLbNucl8alqGWRLtBYswCxalNLkoAZdOB+kgcQv44HuMZkBZZ96lIP
+	gkIsc61gjI4l1hc1skr2UKj4en2dKzD1iuXh3gwbC/SjbTPR0NiIu0tgOlKRmK+tdCDWFy
+	6d/wPjybitM07zx/FEjIsX7BDsGLsyUtPIDxaEJR4joKe5HG/b9X73Wvq2kCjQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Subject: [PATCH v3 00/18] Add suspend to ram support for PCIe on J7200
-Date: Thu, 15 Feb 2024 16:17:45 +0100
-Message-Id: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
+Date: Thu, 15 Feb 2024 16:17:46 +0100
+Subject: [PATCH v3 01/18] gpio: pca953x: move suspend()/resume() to
+ suspend_noirq()/resume_noirq()
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIABkrzmUC/32NQQ7CIBBFr9KwdgxMS2hdeQ/jAujUYrQ00BBN0
- 7sL3bnQ5Z/5/72VRQqOIjtVKwuUXHR+yqE+VMyOeroRuD5nhhwbLjjCXSHnMFtHEDEAWSN0pzq
- qpWJ5ZHQkMEFPdiyzp44LhfKYAw3utZsu15xHFxcf3rs4iXL96UgCOLQNSdlrmSv8bLxfHm46W
- v9kBZbwPwALgJpB9YgtWfwGbNv2Adp2j00IAQAA
+Message-Id: <20240102-j7200-pcie-s2r-v3-1-5c2e4a3fac1f@bootlin.com>
+References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
+In-Reply-To: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
  Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, 
  Tony Lindgren <tony@atomide.com>, 
@@ -71,8 +71,9 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_071804_780131_D1B76DDE 
-X-CRM114-Status: GOOD (  17.71  )
+X-CRM114-CacheID: sfid-20240215_071804_801113_9D56A5E7 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,96 +85,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhpcyBhZGQgc3VzcGVuZCB0byByYW0gc3VwcG9ydCBmb3IgdGhlIFBDSWUgKFJDIG1vZGUpIG9u
-IEo3MjAwIHBsYXRmb3JtLgoKSW4gUkMgbW9kZSwgdGhlIHJlc2V0IHBpbiBmb3IgZW5kcG9pbnRz
-IGlzIG1hbmFnZWQgYnkgYSBncGlvIGV4cGFuZGVyIG9uIGEKaTJjIGJ1cy4gVGhpcyBwaW4gc2hh
-bGwgYmUgbWFuYWdlZCBpbiBzdXNwZW5kX25vaXJxKCkgYW5kIHJlc3VtZV9ub2lycSgpLgpUaGUg
-c3VzcGVuZC9yZXN1bWUgaGFzIGJlZW4gbW92ZWQgdG8gc3VzcGVuZF9ub2lycSgpL3Jlc3VtZV9u
-b2lycSgpIGZvcgpwY2E5NTN4IChleHBhbmRlcikgYW5kIHBpbmN0cmwtc2luZ2xlLgoKVG8gZG8g
-aTJjIGFjY2Vzc2VzIGR1cmluZyBzdXNwZW5kX25vaXJxL3Jlc3VtZV9ub2lycSwgd2UgbmVlZCB0
-byBmb3JjZSB0aGUKd2FrZXVwIG9mIHRoZSBpMmMgY29udHJvbGxlciAod2hpY2ggaXMgYXV0b3N1
-c3BlbmRlZCkgZHVyaW5nIHN1c3BlbmQKY2FsbGJhY2suIApJdCdzIHRoZSBvbmx5IHdheSB0byB3
-YWtldXAgdGhlIGNvbnRyb2xsZXIgaWYgaXQncyBhdXRvc3VzcGVuZGVkLCBhcwpydW50aW1lIHBt
-IGlzIGRpc2FibGVkIGluIHN1c3BlbmRfbm9pcnEgYW5kIHJlc3VtZV9ub2lycS4KClRoZSBtYWlu
-IGNoYW5nZSBpbiB0aGlzIHYzIGlzIHRoZSByZW1vdmFsIG9mIHRoZSBwcm9iZSBib29sZWFuIGZv
-ciB0aGUKZnVuY3Rpb25zIHdpel9jbG9ja19wcm9iZSgpIGFuZCBjZG5zX3BjaWVfaG9zdF9zZXR1
-cCgpLgpUaGVpciBjb250ZW50cyB3ZXJlIHNwbGl0IGluIG11bHRpcGxlIGZ1bmN0aW9ucyB3aGlj
-aCBhcmUgY2FsbGVkIGluIHRoZQpyZXN1bWVfbm9pcnEoKSBjYWxsYmFja3MuCgpTaWduZWQtb2Zm
-LWJ5OiBUaG9tYXMgUmljaGFyZCA8dGhvbWFzLnJpY2hhcmRAYm9vdGxpbi5jb20+Ci0tLQpDaGFu
-Z2VzIGluIHYzOgotIHBpbmN0cmwtc2luZ2xlOiBzcGxpdCBwYXRjaCBpbiB0d28gcGFydHMsIGEg
-Zmlyc3QgcGF0Y2ggdG8gcmVtb3ZlIHRoZQogIGRlYWQgY29kZSwgYSBzZWNvbmQgdG8gbW92ZSBz
-dXNwZW5kKCkvcmVzdW1lKCkgY2FsbGJhY2tzIHRvIG5vaXJxLgotIGkyYy1vbWFwOiBhZGQgYSBj
-b21tZW50cyBhYm92ZSB0aGUgc3VzcGVuZF9ub2lycSgpIGNhbGxiYWNrLgotIG11eDogbm93IG11
-eF9jaGlwX3Jlc3VtZSgpIHRyeSB0byByZXN0b3JlcyBhbGwgbXV4ZXMsIHRoZW4gcmV0dXJuIDAg
-aWYKICBhbGwgaXMgb2sgb3IgdGhlIGZpcnN0IGZhaWx1cmUuCi0gbW1pbzogZml4IGNvbW1pdCBt
-ZXNzYWdlLgotIHBoeS1qNzIxZS13aXo6IGFkZCBhIHBhdGNoIHRvIHVzZSBkZXZfZXJyX3Byb2Jl
-KCkgaW5zdGVhZCBvZiBkZXZfZXJyKCkgaW4KICB0aGUgd2l6X2Nsb2NrX2luaXQoKSBmdW5jdGlv
-bi4KLSBwaHktajcyMWUtd2l6OiByZW1vdmUgcHJvYmUgYm9vbGVhbiBmb3IgdGhlIHdpel9jbG9j
-a19pbml0KCksIHJlbmFtZSB0aGUKICBmdW5jdGlvbiB0byB3aXpfY2xvY2tfcHJvYmUoKSwgZXh0
-cmFjdCBoYXJkd2FyZSBjb25maWd1cmF0aW9uIHBhcnQgaW4gYQogIG5ldyBmdW5jdGlvbiB3aXpf
-Y2xvY2tfaW5pdCgpLgotIHBoeS1jYWRlbmNlLXRvcnJlbnQ6IHVzZSBkZXZfZXJyX3Byb2JlKCkg
-YW5kIGZpeCBjb21taXQgbWVzc2FnZXMKLSBwY2llLWNhZGVuY2UtaG9zdDogcmVtb3ZlIHByb2Jl
-IGJvb2xlYW4gZm9yIHRoZSBjZG5zX3BjaWVfaG9zdF9zZXR1cCgpCiAgZnVuY3Rpb24gYW5kIGV4
-dHJhY3QgdGhlIGxpbmsgc2V0dXAgcGFydCBpbiBhIG5ldyBmdW5jdGlvbgogIGNkbnNfcGNpZV9o
-b3N0X2xpbmtfc2V0dXAoKS4KLSBwY2llLWNhZGVuY2UtaG9zdDogbWFrZSBjZG5zX3BjaWVfaG9z
-dF9pbml0KCkgZ2xvYmFsLgotIHBjaS1qNzIxZTogdXNlIHRoZSBjZG5zX3BjaWVfaG9zdF9saW5r
-X3NldHVwKCkgY2Ruc19wY2llX2hvc3RfaW5pdCgpCiAgZnVuY3Rpb25zIGluIHRoZSByZXN1bWVf
-bm9pcnEoKSBjYWxsYmFjay4KLSBMaW5rIHRvIHYyOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9y
-LzIwMjQwMTAyLWo3MjAwLXBjaWUtczJyLXYyLTAtOGU0ZjdkMjI4ZWMyQGJvb3RsaW4uY29tCgpD
-aGFuZ2VzIGluIHYyOgotIGFsbDogZml4IGNvbW1pdHMgbWVzc2FnZXMuCi0gYWxsOiB1c2UgREVG
-SU5FX05PSVJRX0RFVl9QTV9PUFMgYW5kIHBtX3NsZWVwX3B0ciBtYWNyb3MuCi0gYWxsOiByZW1v
-dmUgdXNlbGVzcyAjaWZkZWYgQ09ORklHX1BNLgotIHBpbmN0cmwtc2luZ2xlOiBkcm9wIGRlYWQg
-Y29kZQotIG11eDogYWRkIG11eF9jaGlwX3Jlc3VtZSgpIGZ1bmN0aW9uIGluIG11eCBjb3JlLgot
-IG1taW86IHJlc3VtZSBzZXF1ZW5jZSBpcyBub3cgYSBjYWxsIHRvIG11eF9jaGlwX3Jlc3VtZSgp
-LgotIHBoeS1jYWRlbmNlLXRvcnJlbnQ6IGZpeCB0eXBvIGluIHJlc3VtZSBzZXF1ZW5jZSAocmVz
-ZXRfY29udHJvbF9hc3NlcnQoKQogIGluc3RlYWQgb2YgcmVzZXRfY29udHJvbF9wdXQoKSkuCi0g
-cGh5LWNhZGVuY2UtdG9ycmVudDogdXNlIFBIWSBpbnN0ZWFkIG9mIHBoeS4KLSBwY2ktajcyMWU6
-IGRvIG5vdCBzaGFkb3cgY2Ruc19wY2llX2hvc3Rfc2V0dXAgcmV0dXJuIGNvZGUgaW4gcmVzdW1l
-CiAgc2VxdWVuY2UuCi0gcGNpLWo3MjFlOiBkcm9wIGRlYWQgY29kZS4KLSBMaW5rIHRvIHYxOiBo
-dHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMjQwMTAyLWo3MjAwLXBjaWUtczJyLXYxLTAtODRl
-NTVkYTUyNDAwQGJvb3RsaW4uY29tCgotLS0KVGhvbWFzIFJpY2hhcmQgKDE1KToKICAgICAgZ3Bp
-bzogcGNhOTUzeDogbW92ZSBzdXNwZW5kKCkvcmVzdW1lKCkgdG8gc3VzcGVuZF9ub2lycSgpL3Jl
-c3VtZV9ub2lycSgpCiAgICAgIHBpbmN0cmw6IHBpbmN0cmwtc2luZ2xlOiByZW1vdmUgZGVhZCBj
-b2RlIGluIHN1c3BlbmQoKSBhbmQgcmVzdW1lKCkgY2FsbGJhY2tzCiAgICAgIHBpbmN0cmw6IHBp
-bmN0cmwtc2luZ2xlOiBtb3ZlIHN1c3BlbmQoKS9yZXN1bWUoKSBjYWxsYmFja3MgdG8gbm9pcnEK
-ICAgICAgaTJjOiBvbWFwOiB3YWtldXAgdGhlIGNvbnRyb2xsZXIgZHVyaW5nIHN1c3BlbmQoKSBj
-YWxsYmFjawogICAgICBtdXg6IGFkZCBtdXhfY2hpcF9yZXN1bWUoKSBmdW5jdGlvbgogICAgICBw
-aHk6IHRpOiBwaHktajcyMWUtd2l6OiB1c2UgZGV2X2Vycl9wcm9iZSgpIGluc3RlYWQgb2YgZGV2
-X2VycigpCiAgICAgIHBoeTogdGk6IHBoeS1qNzIxZS13aXo6IHNwbGl0IHdpel9jbG9ja19pbml0
-KCkgZnVuY3Rpb24KICAgICAgcGh5OiB0aTogcGh5LWo3MjFlLXdpejogYWRkIHJlc3VtZSBzdXBw
-b3J0CiAgICAgIHBoeTogY2FkZW5jZS10b3JyZW50OiBleHRyYWN0IGNhbGxzIHRvIGNsa19nZXQg
-ZnJvbSBjZG5zX3RvcnJlbnRfY2xrCiAgICAgIHBoeTogY2FkZW5jZS10b3JyZW50OiByZWdpc3Rl
-ciByZXNldHMgZXZlbiBpZiB0aGUgcGh5IGlzIGFscmVhZHkgY29uZmlndXJlZAogICAgICBwaHk6
-IGNhZGVuY2UtdG9ycmVudDogYWRkIGFscmVhZHlfY29uZmlndXJlZCB0byBzdHJ1Y3QgY2Ruc190
-b3JyZW50X3BoeQogICAgICBwaHk6IGNhZGVuY2UtdG9ycmVudDogcmVtb3ZlIG5vb3Bfb3BzIHBo
-eSBvcGVyYXRpb25zCiAgICAgIHBoeTogY2FkZW5jZS10b3JyZW50OiBhZGQgc3VzcGVuZCBhbmQg
-cmVzdW1lIHN1cHBvcnQKICAgICAgUENJOiBjYWRlbmNlOiBleHRyYWN0IGxpbmsgc2V0dXAgc2Vx
-dWVuY2UgZnJvbSBjZG5zX3BjaWVfaG9zdF9zZXR1cCgpCiAgICAgIFBDSTogY2FkZW5jZTogc2V0
-IGNkbnNfcGNpZV9ob3N0X2luaXQoKSBnbG9iYWwKClRow6lvIExlYnJ1biAoMyk6CiAgICAgIG11
-eDogbW1pbzogYWRkIHJlc3VtZSBzdXBwb3J0CiAgICAgIFBDSTogajcyMWU6IGFkZCByZXNldCBH
-UElPIHRvIHN0cnVjdCBqNzIxZV9wY2llCiAgICAgIFBDSTogajcyMWU6IGFkZCBzdXNwZW5kIGFu
-ZCByZXN1bWUgc3VwcG9ydAoKIGRyaXZlcnMvZ3Bpby9ncGlvLXBjYTk1M3guYyAgICAgICAgICAg
-ICAgICAgICAgICAgIHwgICA3ICstCiBkcml2ZXJzL2kyYy9idXNzZXMvaTJjLW9tYXAuYyAgICAg
-ICAgICAgICAgICAgICAgICB8ICAyMiArKysrCiBkcml2ZXJzL211eC9jb3JlLmMgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICB8ICAzMCArKysrKwogZHJpdmVycy9tdXgvbW1pby5jICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMTIgKysKIGRyaXZlcnMvcGNpL2NvbnRy
-b2xsZXIvY2FkZW5jZS9wY2ktajcyMWUuYyAgICAgICAgIHwgMTAyICsrKysrKysrKysrKysrKyst
-CiBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2UvcGNpZS1jYWRlbmNlLWhvc3QuYyB8ICA0
-NCArKysrKy0tLQogZHJpdmVycy9wY2kvY29udHJvbGxlci9jYWRlbmNlL3BjaWUtY2FkZW5jZS5o
-ICAgICAgfCAgMTIgKysKIGRyaXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5j
-ICAgICAgICAgIHwgMTIxICsrKysrKysrKysrKysrKy0tLS0tLQogZHJpdmVycy9waHkvdGkvcGh5
-LWo3MjFlLXdpei5jICAgICAgICAgICAgICAgICAgICAgfCAxMTkgKysrKysrKysrKysrKy0tLS0t
-LS0KIGRyaXZlcnMvcGluY3RybC9waW5jdHJsLXNpbmdsZS5jICAgICAgICAgICAgICAgICAgIHwg
-IDI4ICsrLS0tCiBpbmNsdWRlL2xpbnV4L211eC9kcml2ZXIuaCAgICAgICAgICAgICAgICAgICAg
-ICAgICB8ICAgMSArCiAxMSBmaWxlcyBjaGFuZ2VkLCAzODAgaW5zZXJ0aW9ucygrKSwgMTE4IGRl
-bGV0aW9ucygtKQotLS0KYmFzZS1jb21taXQ6IDAwZmYwZjljZTQwZGI4ZTY0ZmUxNmM0MjRhOTY1
-ZmQ3YWI3NjljNDIKY2hhbmdlLWlkOiAyMDI0MDEwMi1qNzIwMC1wY2llLXMyci1lY2IxYTk3OWUz
-NTcKCkJlc3QgcmVnYXJkcywKLS0gClRob21hcyBSaWNoYXJkIDx0aG9tYXMucmljaGFyZEBib290
-bGluLmNvbT4KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+Some IOs can be needed during suspend_noirq()/resume_noirq().
+So move suspend()/resume() to noirq.
+
+Reviewed-by: Andi Shyti <andi.shyti@kernel.org>
+Acked-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Reviewed-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+---
+ drivers/gpio/gpio-pca953x.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
+index 00ffa168e405..6e495fc67a93 100644
+--- a/drivers/gpio/gpio-pca953x.c
++++ b/drivers/gpio/gpio-pca953x.c
+@@ -1234,7 +1234,7 @@ static void pca953x_save_context(struct pca953x_chip *chip)
+ 	regcache_cache_only(chip->regmap, true);
+ }
+ 
+-static int pca953x_suspend(struct device *dev)
++static int pca953x_suspend_noirq(struct device *dev)
+ {
+ 	struct pca953x_chip *chip = dev_get_drvdata(dev);
+ 
+@@ -1248,7 +1248,7 @@ static int pca953x_suspend(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int pca953x_resume(struct device *dev)
++static int pca953x_resume_noirq(struct device *dev)
+ {
+ 	struct pca953x_chip *chip = dev_get_drvdata(dev);
+ 	int ret;
+@@ -1268,7 +1268,8 @@ static int pca953x_resume(struct device *dev)
+ 	return ret;
+ }
+ 
+-static DEFINE_SIMPLE_DEV_PM_OPS(pca953x_pm_ops, pca953x_suspend, pca953x_resume);
++static DEFINE_NOIRQ_DEV_PM_OPS(pca953x_pm_ops,
++			       pca953x_suspend_noirq, pca953x_resume_noirq);
+ 
+ /* convenience to stop overlong match-table lines */
+ #define OF_653X(__nrgpio, __int) ((void *)(__nrgpio | PCAL653X_TYPE | __int))
+
+-- 
+2.39.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
