@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41BA7C48BF0
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 15:18:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9296DC4829E
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 15:18:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QSw9Rze8JTa2ziqD0m8p/TQgnrgfJyCDr+M/jVHaO7A=; b=YVbmL/zJ0kCmir
-	aC3vrU96O+HpBAz72yI+9HNpywVp4vrujX90L/R1TYvAM9VTQ10+2PCA6HYfdmYUzzzUS4O6/20mL
-	BZLmIRntYLWVwFz5CHp9giFWm19eGeFoF9kIAUasEijNY2387RX902oYlw5AicaRsdxyY56zIeMgm
-	pwWQ5CCaJp5kXFA5CAxfgRUUUTQf3AYsrHeW8Uswjij87E/Mtxz2DQSrlti+kMvljxD1ilunXZkJs
-	H+X6LrWY/qkAM+7InpSg2UBWF7mVZaY3gV1PKdo0tb8554s+CB0xamoNHZe4WLj5hZKhbhkbjIVTd
-	+AIY7NO+kjGt8lwznVUg==;
+	List-Owner; bh=0rs046y/2jNidYpOVTt/89zOAYtJLQ41OXoDBronimo=; b=iHfQGfzbJNPxSD
+	2O/WELUEgLYZjlhSHRV8ttPrOWCIDpqp7ONO72+3zC1iIpqNZOKCZE3kOwxxS8A7GRjITP8qBQpzZ
+	WU0MbMH878Vatpe6SVQJPpfPXU5ZEb0n9KOdTk79oAgq5Is6p5nSOJAcqpAG6LU4kUXo80MweJpGg
+	cabuGs/FKN1bhWzj1/1NwcKITgt1ISgYYO7rREGwLHV219Url11yxlV+9whgddrtXj/S2e8MOa+NE
+	CKu/Mrr3tDN3ZHJRR59h+rNSBXpjEQ+isXPBip14eBA1UpI4OC+2QuHG715fAONVeypP4MFjl3jq4
+	C1Qc4BlqwMF7zOQw+85A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radVd-0000000GhFs-2Wkn;
-	Thu, 15 Feb 2024 15:18:45 +0000
+	id 1radVg-0000000GhHM-03U4;
+	Thu, 15 Feb 2024 15:18:48 +0000
 Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radV1-0000000GgpK-2Na0;
-	Thu, 15 Feb 2024 15:18:09 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 1CEBA24000F;
-	Thu, 15 Feb 2024 15:18:04 +0000 (UTC)
+	id 1radV1-0000000Ggog-2NcR;
+	Thu, 15 Feb 2024 15:18:10 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 06364240006;
+	Thu, 15 Feb 2024 15:18:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708010285;
+	t=1708010284;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=R9wanZgvZg9ml7GqR5bBizFjTTL8Y7tpLwMVbRWiGTQ=;
-	b=h2c3O0R+H0aCNoaovxhZxz4fVFJgW/NkDJL4iE9MA9Bz5bB4Q8VUtl+qcZNa1VkafuNCvG
-	Nh2QWFaXefaOXRuJwA1HeepNj94AJ5PRbtA5XvajB96K8R6+iEDM+Eua9YE9Ry7Iye7X4u
-	Ec83gQy1b/PELMMhtjR8ynHlH9HaanPxGx4KfuDnTvSHlQ+bLIKxoFwKsVjb/2xmTkp+gh
-	G0qRYloGTPFpOywJdOMsviEGR+p1ktX0l7KhCK+ZJYyBSBw56F87l6sgyFk0v+JehhmYXQ
-	O90Sg5w+vvRoktD0MEwuP7eeBpOVjN1azXxru/XFZELdZ9L7jN4/MwooN/BlaQ==
+	bh=5Nb4IKDaAI4vBqYGKsypVxdn/pv7j5S+qa35Zvmbq10=;
+	b=a1sPo+SljVkvFgmvNstzu6qhGzIn8T2Jlq8tR6v7f3Wbt2waxMx0PuXyqzenCM75tzcGFX
+	/EFaVr4qjHtDeGymq+4E5AB4rp8tCP1yfFcg2ezFRM5SF2tHoz+oGaVIYhdUDJDDuKqQkX
+	RMfkk8TZENhJCHFuKZRiqlsZU5G9g6gmNL0swzNg3pxdi92grHlbi6MIUQnYmxpu3f9Ueu
+	aZEd4yXKtB7eHTAtqi/3ORkRti+LBBzONHFZbGbrEJJdrI41gF656WQxq8D1waPDOhrNEJ
+	m+ECSeFtL8qio+b0CmbOQxBVJDbd5Yr8KkltuhGdubtNpfYUCvmb8wxccoMPyw==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Thu, 15 Feb 2024 16:17:50 +0100
-Subject: [PATCH v3 05/18] mux: add mux_chip_resume() function
+Date: Thu, 15 Feb 2024 16:17:49 +0100
+Subject: [PATCH v3 04/18] i2c: omap: wakeup the controller during suspend()
+ callback
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v3-5-5c2e4a3fac1f@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v3-4-5c2e4a3fac1f@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -68,8 +69,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_071807_978988_9AE8F49E 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20240215_071808_010658_B7F3418B 
+X-CRM114-Status: GOOD (  13.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,68 +87,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The mux_chip_resume() function restores a mux_chip using the cached state
-of each mux.
+A device may need the controller up during suspend_noirq() or
+resume_noirq().
+But if the controller is autosuspended, there is no way to wakeup it during
+suspend_noirq() or resume_noirq() because runtime pm is disabled at this
+time.
+
+The suspend() callback wakes up the controller, so it is available until
+its suspend_noirq() callback (pm_runtime_force_suspend()).
+During the resume, it's restored by resume_noirq() callback
+(pm_runtime_force_resume()). Then resume() callback enables autosuspend.
+
+So the controller is up during a little time slot in suspend and resume
+sequences even if it's not used.
 
 Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
 ---
- drivers/mux/core.c         | 30 ++++++++++++++++++++++++++++++
- include/linux/mux/driver.h |  1 +
- 2 files changed, 31 insertions(+)
+ drivers/i2c/busses/i2c-omap.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/drivers/mux/core.c b/drivers/mux/core.c
-index 775816112932..5db5a7698ad1 100644
---- a/drivers/mux/core.c
-+++ b/drivers/mux/core.c
-@@ -215,6 +215,36 @@ void mux_chip_free(struct mux_chip *mux_chip)
+diff --git a/drivers/i2c/busses/i2c-omap.c b/drivers/i2c/busses/i2c-omap.c
+index 42165ef57946..c11deb285114 100644
+--- a/drivers/i2c/busses/i2c-omap.c
++++ b/drivers/i2c/busses/i2c-omap.c
+@@ -1575,9 +1575,31 @@ static int __maybe_unused omap_i2c_runtime_resume(struct device *dev)
+ 	return 0;
  }
- EXPORT_SYMBOL_GPL(mux_chip_free);
  
-+/**
-+ * mux_chip_resume() - restores the mux-chip state
-+ * @mux_chip: The mux-chip to resume.
-+ *
-+ * Restores the mux-chip state.
-+ *
-+ * Return: Zero on success or a negative errno on error.
-+ */
-+int mux_chip_resume(struct mux_chip *mux_chip)
++static int omap_i2c_suspend(struct device *dev)
 +{
-+	int global_ret = 0;
-+	int ret, i;
-+
-+	for (i = 0; i < mux_chip->controllers; ++i) {
-+		struct mux_control *mux = &mux_chip->mux[i];
-+
-+		if (mux->cached_state == MUX_CACHE_UNKNOWN)
-+			continue;
-+
-+		ret = mux_control_set(mux, mux->cached_state);
-+		if (ret < 0) {
-+			dev_err(&mux_chip->dev, "unable to restore state\n");
-+			if (!global_ret)
-+				global_ret = ret;
-+		}
-+	}
-+	return global_ret;
++	/*
++	 * If the controller is autosuspended, there is no way to wakeup it once
++	 * runtime pm is disabled (in suspend_late()).
++	 * But a device may need the controller up during suspend_noirq() or
++	 * resume_noirq().
++	 * Wakeup the controller while runtime pm is enabled, so it is available until
++	 * its suspend_noirq(), and from resume_noirq().
++	 */
++	return pm_runtime_resume_and_get(dev);
 +}
-+EXPORT_SYMBOL_GPL(mux_chip_resume);
 +
- static void devm_mux_chip_release(struct device *dev, void *res)
- {
- 	struct mux_chip *mux_chip = *(struct mux_chip **)res;
-diff --git a/include/linux/mux/driver.h b/include/linux/mux/driver.h
-index 18824064f8c0..2a7e5ec5d540 100644
---- a/include/linux/mux/driver.h
-+++ b/include/linux/mux/driver.h
-@@ -88,6 +88,7 @@ struct mux_chip *mux_chip_alloc(struct device *dev,
- int mux_chip_register(struct mux_chip *mux_chip);
- void mux_chip_unregister(struct mux_chip *mux_chip);
- void mux_chip_free(struct mux_chip *mux_chip);
-+int mux_chip_resume(struct mux_chip *mux_chip);
- 
- struct mux_chip *devm_mux_chip_alloc(struct device *dev,
- 				     unsigned int controllers,
++static int omap_i2c_resume(struct device *dev)
++{
++	pm_runtime_mark_last_busy(dev);
++	pm_runtime_put_autosuspend(dev);
++
++	return 0;
++}
++
+ static const struct dev_pm_ops omap_i2c_pm_ops = {
+ 	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
+ 				      pm_runtime_force_resume)
++	SET_SYSTEM_SLEEP_PM_OPS(omap_i2c_suspend, omap_i2c_resume)
+ 	SET_RUNTIME_PM_OPS(omap_i2c_runtime_suspend,
+ 			   omap_i2c_runtime_resume, NULL)
+ };
 
 -- 
 2.39.2
