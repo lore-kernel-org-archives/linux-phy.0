@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6830CC4829E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 16:31:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C7C7C48BEB
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 16:31:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=POyJ8CMWyWrvCkv/W9QbVQuOV2J9U2hbOcKwDwikbYE=; b=dP21G6pXLRPpy2
-	8S9Bg9RPDnjIAG6Vv+xG1E2/7P9l0sbUUUm2wsL1qlb2xtP1+SZbYKE+Ceux502qM+wmF7O8rubBf
-	Tme6vsZyqYcZ6ohOwSsxScezc7pAo3XPMYNSnNc09MSImuJfuu0wcqrX/rMh4826wRGMoJfsSIMHx
-	7mg0lXOf1qyFxtiCl4+qsigdCrjjJR3RT6PP8BYuTN9yWXoYdfOz6LFc3Xtvn7uI2jLMvpINxSId3
-	UEQv2tRQmZ9JsgNBV6h1WJ/v3BPu9t+odPHd7wnMn1MTtEevfQbrq6yBKuusIKyQguQPngNgLy1am
-	vo4naG3I3FuA8saH6CwA==;
+	List-Owner; bh=yzXBlRxY5qnDAzBTuaXzkQD1nPI/th2lFCsB4ulRBfY=; b=fRImYNscrEqPTL
+	sTRde+a/7hZcrLNGXHBmi1h8kfH8EsNI72p2OkU4eUk5sr+knQkKh0wPTUAVsoBKPKgqC0RTLvc/y
+	nlBxzKWHi+zYiCGBNOphP+iNX4FDqEbp/ep9FmWhA91QWL8haOBbfQJi5tOT94WedKjl3R/Z/oSVG
+	356XemzGur8ObZXafw2YXLfpb9+Ek7wmDPbxXNf1zOu3ekeyqVhtCdGys0LaCnG6ngLrTmxCnPUNY
+	fwJ4RPKCnfx/qrEc0f81LptLXbDfa8JjpMr5MZ/MmyhJsMrhPQyNTJeZd80//WFW3xIBLeUcNie8a
+	QkmEfhdjYdFe2FrxaOAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raedb-0000000GyvW-0DuA;
-	Thu, 15 Feb 2024 16:31:03 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1raedj-0000000Gz4a-2aqc;
+	Thu, 15 Feb 2024 16:31:11 +0000
+Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radV6-0000000Ggsm-0YDv;
-	Thu, 15 Feb 2024 15:18:13 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 9FE6E24000D;
-	Thu, 15 Feb 2024 15:18:09 +0000 (UTC)
+	id 1radV7-0000000Ggtp-1RIF;
+	Thu, 15 Feb 2024 15:18:15 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id A27E9240002;
+	Thu, 15 Feb 2024 15:18:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708010290;
+	t=1708010291;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=EQj8fkDqiCncYkbq3rqvKqeGNPNTXUz4lWxpr6Y6suo=;
-	b=UDiws/SjWesPdNffMn2bHZI5uY7/Dr/iLgrz0mbUng6Y/CkR88vM9/q3/ROqauOm7USTx1
-	8LvrR//w1kOPNTrulzu2HdHY+xUo+/FfplD/jj3YHb+N4AnwFHaygD68bejfY9RaToGIpi
-	W6oLksh/lSnoIk/zrtcFbyYgturyDn0UZUoAy1NkIfgBIzfVlCjqkllOJLJeHELNC62F6w
-	mUBrAB0bbyGxX36m/Km7D5yNI7BlkZiytRgVIz6RaAFY2hW9B2qCMddQNj17N10pscxamt
-	X/yyuSpNXboa++2kJtw/gGTCpInol8oV82XaMCgz13kKsbXyGOO6J6KLmTbDEA==
+	bh=ZY4zwQDv37yWJBGtlc4HVZQiyWGnejxAqR+BxRsb2To=;
+	b=mMihYMdu+xVGazYhvzrNJygS3F6vfTiAOpP4RpTyz32c1o8B3cQ5fZenBZXfPnzym+zTcN
+	ZdXNIhWkJkFLRqQc0x4yi2dias50AwLN6FjMj31WkbL+ptbTqgf5utpG4QdpZn7yKvcd3U
+	UnDx7pxNE58UaPoLK5k2LcTbuxgPoT26VDgXXVDMPYT3LSrukMxFpgEKshH0xQhk02BFRC
+	rae/HNwQI/bodK+FwNUQ3jq8n6UCaTjqXypkupP/KDhWHQL2LqrhhBshxW1L+wTD2T2jSt
+	LvwyG0kIL7rre5u0FFzE4j6/+x3Xu75Gwk1kMSOseS9MbGVPbHKnrdMxzihOuQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Thu, 15 Feb 2024 16:17:55 +0100
-Subject: [PATCH v3 10/18] phy: cadence-torrent: extract calls to clk_get
- from cdns_torrent_clk
+Date: Thu, 15 Feb 2024 16:17:56 +0100
+Subject: [PATCH v3 11/18] phy: cadence-torrent: register resets even if the
+ phy is already configured
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v3-10-5c2e4a3fac1f@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v3-11-5c2e4a3fac1f@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -69,8 +69,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_071812_502748_CD1896E7 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20240215_071813_645858_2BF6CEAC 
+X-CRM114-Status: GOOD (  13.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,41 +82,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RXh0cmFjdCBjYWxscyB0byBjbGtfZ2V0IGZyb20gY2Ruc190b3JyZW50X2NsayBpbnRvIGEgc2Vw
-YXJhdGUgZnVuY3Rpb24uCkl0IG5lZWRzIHRvIGNhbGwgY2Ruc190b3JyZW50X2NsayBhdCByZXN1
-bWUgd2l0aG91dCBsb29raW5nIHVwIHRoZSBjbG9jay4KCkJhc2VkIG9uIHRoZSB3b3JrIG9mIFRo
-w6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+CgpTaWduZWQtb2ZmLWJ5OiBUaG9t
-YXMgUmljaGFyZCA8dGhvbWFzLnJpY2hhcmRAYm9vdGxpbi5jb20+Ci0tLQogZHJpdmVycy9waHkv
-Y2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMgfCAyMSArKysrKysrKysrKysrKy0tLS0tLS0K
-IDEgZmlsZSBjaGFuZ2VkLCAxNCBpbnNlcnRpb25zKCspLCA3IGRlbGV0aW9ucygtKQoKZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5jIGIvZHJpdmVy
-cy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMKaW5kZXggYTc1Yzk2Mzg1YzU3Li44
-MDNhNzZhY2YyZmQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2Ut
-dG9ycmVudC5jCisrKyBiL2RyaXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5j
-CkBAIC0yNjgxLDE4ICsyNjgxLDIxIEBAIHN0YXRpYyBpbnQgY2Ruc190b3JyZW50X3Jlc2V0KHN0
-cnVjdCBjZG5zX3RvcnJlbnRfcGh5ICpjZG5zX3BoeSkKIAlyZXR1cm4gMDsKIH0KIAorc3RhdGlj
-IGludCBjZG5zX3RvcnJlbnRfb2ZfZ2V0X2NsayhzdHJ1Y3QgY2Ruc190b3JyZW50X3BoeSAqY2Ru
-c19waHkpCit7CisJY2Ruc19waHktPmNsayA9IGRldm1fY2xrX2dldChjZG5zX3BoeS0+ZGV2LCAi
-cmVmY2xrIik7CisJaWYgKElTX0VSUihjZG5zX3BoeS0+Y2xrKSkKKwkJcmV0dXJuIGRldl9lcnJf
-cHJvYmUoY2Ruc19waHktPmRldiwgUFRSX0VSUihjZG5zX3BoeS0+Y2xrKSwKKwkJCQkgICAgICJw
-aHkgcmVmIGNsb2NrIG5vdCBmb3VuZFxuIik7CisKKwlyZXR1cm4gMDsKK30KKwogc3RhdGljIGlu
-dCBjZG5zX3RvcnJlbnRfY2xrKHN0cnVjdCBjZG5zX3RvcnJlbnRfcGh5ICpjZG5zX3BoeSkKIHsK
-LQlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBjZG5zX3BoeS0+ZGV2OwogCXVuc2lnbmVkIGxvbmcgcmVm
-X2Nsa19yYXRlOwogCWludCByZXQ7CiAKLQljZG5zX3BoeS0+Y2xrID0gZGV2bV9jbGtfZ2V0KGRl
-diwgInJlZmNsayIpOwotCWlmIChJU19FUlIoY2Ruc19waHktPmNsaykpIHsKLQkJZGV2X2Vycihk
-ZXYsICJwaHkgcmVmIGNsb2NrIG5vdCBmb3VuZFxuIik7Ci0JCXJldHVybiBQVFJfRVJSKGNkbnNf
-cGh5LT5jbGspOwotCX0KLQogCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShjZG5zX3BoeS0+Y2xr
-KTsKIAlpZiAocmV0KSB7CiAJCWRldl9lcnIoY2Ruc19waHktPmRldiwgIkZhaWxlZCB0byBwcmVw
-YXJlIHJlZiBjbG9ja1xuIik7CkBAIC0yNzc2LDYgKzI3NzksMTAgQEAgc3RhdGljIGludCBjZG5z
-X3RvcnJlbnRfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJaWYgKHJl
-dCkKIAkJcmV0dXJuIHJldDsKIAorCXJldCA9IGNkbnNfdG9ycmVudF9vZl9nZXRfY2xrKGNkbnNf
-cGh5KTsKKwlpZiAocmV0KQorCQlnb3RvIGNsa19jbGVhbnVwOworCiAJcmVnbWFwX2ZpZWxkX3Jl
-YWQoY2Ruc19waHktPnBoeV9wbWFfY21uX2N0cmxfMSwgJmFscmVhZHlfY29uZmlndXJlZCk7CiAK
-IAlpZiAoIWFscmVhZHlfY29uZmlndXJlZCkgewoKLS0gCjIuMzkuMgoKCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Resets are needed during suspend and resume stages.
+So they shall be registered during the probe even the phy is already
+initialized.
+
+The function cdns_torrent_reset is renamed cdns_torrent_of_get_reset() to
+make it clear.
+
+Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+---
+ drivers/phy/cadence/phy-cadence-torrent.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index 803a76acf2fd..bba10ca0bfdd 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -2660,7 +2660,7 @@ static int cdns_torrent_clk_register(struct cdns_torrent_phy *cdns_phy)
+ 	return 0;
+ }
+ 
+-static int cdns_torrent_reset(struct cdns_torrent_phy *cdns_phy)
++static int cdns_torrent_of_get_reset(struct cdns_torrent_phy *cdns_phy)
+ {
+ 	struct device *dev = cdns_phy->dev;
+ 
+@@ -2779,6 +2779,10 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = cdns_torrent_of_get_reset(cdns_phy);
++	if (ret)
++		goto clk_cleanup;
++
+ 	ret = cdns_torrent_of_get_clk(cdns_phy);
+ 	if (ret)
+ 		goto clk_cleanup;
+@@ -2786,10 +2790,6 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
+ 
+ 	if (!already_configured) {
+-		ret = cdns_torrent_reset(cdns_phy);
+-		if (ret)
+-			goto clk_cleanup;
+-
+ 		ret = cdns_torrent_clk(cdns_phy);
+ 		if (ret)
+ 			goto clk_cleanup;
+
+-- 
+2.39.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
