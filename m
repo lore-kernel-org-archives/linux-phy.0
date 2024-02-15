@@ -4,48 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D94AC4829E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 17:46:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9725AC4829E
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 17:46:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KRYzFWpsdoBsRgMddrJTRzXx2SEk2/bfgOUjm6aBs0s=; b=Tymr/Ao09Bmrqo
-	kZy+NWdn0dYTrbuLCs2bITwzqXZZZ4dSAIfTd719GsR9sjAYVOcc8My6bJzL2aGp3cYAMgx42V3f9
-	SMV8mIU3+mc9yOntxXWKAvoYlCzAd5+ef6NlLfFe5Q8AaXF/M7K+DgM7qbrzQj9wA7kB7GtfpOSEc
-	t8GLxxthXFTYoJjGDeD0Dd9JQUC7A3833/GmanpuA/rjJ3UYqGGUPaVkKhMvFzQvshJqoWIxGF7FV
-	CPBybatUL27j4pbfP0T4n481yZrSps0pQ/3ZxA//FV8SxFNCpTmajbwU3B1A48ASCw1BcWYveEPR4
-	fTbsZvqKghRSHPI6HXKA==;
+	List-Owner; bh=Ghu/38OW3EeYljYcoeiIXMfMs3szj2q+MT08UmM5sG4=; b=LkspMTdIiW9Xnp
+	Tch6MS671hBm4CUeT/blLo3hjlrJwjWefhNuOslJ9zRC5RPKk7qyM8HhVjeMmqdMkWSdX9zcykOBC
+	zUO5iZn2fhBNBMcxlIadm+gIpR0d21eGvk6UiQMU3VFQ7l4VgnO70HUsDrVG1sU94PnHl3APDwiCE
+	N8mfE7XNczfPKsWPNIakrqFtglD5wQxgOLM1e2jRGTJNP+xA2ac8hRc0J+wiOD9uPcnOHppGul4Sr
+	dghWQpPn7YeMY9qzcxjncfkoY7ny7JaHbcVAvK4MjfFyGfAEhgM+a3ReCnxufxkkUiKlQvvCDJbwD
+	iXO9RiA3na6dgiYTolbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rafo8-0000000HE43-3DyX;
-	Thu, 15 Feb 2024 17:46:04 +0000
+	id 1rafoF-0000000HE5h-17id;
+	Thu, 15 Feb 2024 17:46:09 +0000
 Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1radVB-0000000Ggx4-3nm0;
-	Thu, 15 Feb 2024 15:18:20 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 43FEA24000C;
-	Thu, 15 Feb 2024 15:18:15 +0000 (UTC)
+	id 1radVC-0000000Ggy0-47Ag;
+	Thu, 15 Feb 2024 15:18:21 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 5A70B240011;
+	Thu, 15 Feb 2024 15:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708010296;
+	t=1708010297;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=IAFq8gnQLkAuZEJxQcdlNSuJ0c9RJtiPkL9kSYkKtUc=;
-	b=XhQEl6nsOJlPT8bqe7eashq44KBh3BxprioEvTZsyIPqhvop6ahUCejb7pGmJ5XQwuRyz7
-	QqpnhFMml0Gy6oioCZVhB/4e4SS/Y4ScyrXao0zB6/ES+ce4DGYSJW7hUUWUIf8mWUoBgT
-	GyzAfQ6y2D4qwjLjRUuJTtdmmON2MBiTwJgcHlwZW+MLx5Oq6iK3GvQ3MyD3lMBtzWg95q
-	ZwpNe/g5xi3m0+df9quWccZ2nQPU5uK248+MINd5p+rP/ElvpVXEnZYB6bilblwvmm51Wi
-	j78mjF0m2xmhfP/4/HclzHyAnu1nCUCjJCeaIfULvh7mSVsG4bsZLRLtPqe2eg==
+	bh=WIGGC0lj48fyJbGMqvl3dkIPzOEFiGF9ZPkrCVi5RWA=;
+	b=ZjIA2HtPvJTv2WhUZQ0z3cbQUg92xBdAbXHiEtRpbgkaAfMA7t++pQjgY1WuiTONb17dnn
+	016yjw4b87/Sp6OQHmKA+1Z51jFnWRRhHX6zKOdhaV8yP61/Cw34Oe2mvLttkUdqPIw193
+	VOto2Ot9CprgUcZVdAEbZNEi9/jpa9dbxbA26VCmK/Xf/mV1Wo+tTP9UfRl0aNHUZjqoMr
+	+kWfU5IRNUx5ZoHdQc7IBC67++fe/gxsNn5IbOa/TpM799uaFakht73vSrXG6sZbNWeiz7
+	kpLbBs7Lnee7JuZmMtlQciobFKFbv1r0PehP9m8LLfeLjS6zz4JdZxo6DHqNsQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Thu, 15 Feb 2024 16:18:00 +0100
-Subject: [PATCH v3 15/18] PCI: cadence: extract link setup sequence from
- cdns_pcie_host_setup()
+Date: Thu, 15 Feb 2024 16:18:01 +0100
+Subject: [PATCH v3 16/18] PCI: cadence: set cdns_pcie_host_init() global
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v3-15-5c2e4a3fac1f@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v3-16-5c2e4a3fac1f@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -69,8 +68,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_071818_361802_BED3F8A5 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20240215_071819_503881_B760F1E4 
+X-CRM114-Status: GOOD (  10.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,89 +86,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The function cdns_pcie_host_setup() mixes probe structure and link setup.
+During the resume sequence of the host, cdns_pcie_host_init() needs to be
+called, so set it global.
 
-The link setup must be done during the resume sequence. So extract it from
-cdns_pcie_host_setup() and create a dedicated function.
+The dev function parameter is removed, as it isn't used.
 
 Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
 ---
- drivers/pci/controller/cadence/pcie-cadence-host.c | 39 ++++++++++++++--------
- drivers/pci/controller/cadence/pcie-cadence.h      |  6 ++++
- 2 files changed, 32 insertions(+), 13 deletions(-)
+ drivers/pci/controller/cadence/pcie-cadence-host.c | 5 ++---
+ drivers/pci/controller/cadence/pcie-cadence.h      | 6 ++++++
+ 2 files changed, 8 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/pci/controller/cadence/pcie-cadence-host.c b/drivers/pci/controller/cadence/pcie-cadence-host.c
-index 5b14f7ee3c79..93d9922730af 100644
+index 93d9922730af..8af95e9da7ce 100644
 --- a/drivers/pci/controller/cadence/pcie-cadence-host.c
 +++ b/drivers/pci/controller/cadence/pcie-cadence-host.c
-@@ -497,6 +497,30 @@ static int cdns_pcie_host_init(struct device *dev,
- 	return cdns_pcie_host_init_address_translation(rc);
+@@ -485,8 +485,7 @@ static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
+ 	return cdns_pcie_host_map_dma_ranges(rc);
  }
  
-+int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc)
-+{
-+	struct cdns_pcie *pcie = &rc->pcie;
-+	struct device *dev = rc->pcie.dev;
-+	int ret;
-+
-+	if (rc->quirk_detect_quiet_flag)
-+		cdns_pcie_detect_quiet_min_delay_set(&rc->pcie);
-+
-+	cdns_pcie_host_enable_ptm_response(pcie);
-+
-+	ret = cdns_pcie_start_link(pcie);
-+	if (ret) {
-+		dev_err(dev, "Failed to start link\n");
-+		return ret;
-+	}
-+
-+	ret = cdns_pcie_host_start_link(rc);
-+	if (ret)
-+		dev_dbg(dev, "PCIe link never came up\n");
-+
-+	return 0;
-+}
-+
- int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
+-static int cdns_pcie_host_init(struct device *dev,
+-			       struct cdns_pcie_rc *rc)
++int cdns_pcie_host_init(struct cdns_pcie_rc *rc)
  {
- 	struct device *dev = rc->pcie.dev;
-@@ -533,20 +557,9 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
- 		return PTR_ERR(rc->cfg_base);
- 	rc->cfg_res = res;
+ 	int err;
  
--	if (rc->quirk_detect_quiet_flag)
--		cdns_pcie_detect_quiet_min_delay_set(&rc->pcie);
--
--	cdns_pcie_host_enable_ptm_response(pcie);
--
--	ret = cdns_pcie_start_link(pcie);
--	if (ret) {
--		dev_err(dev, "Failed to start link\n");
--		return ret;
--	}
--
--	ret = cdns_pcie_host_start_link(rc);
-+	ret = cdns_pcie_host_link_setup(rc);
- 	if (ret)
--		dev_dbg(dev, "PCIe link never came up\n");
-+		return ret;
- 
+@@ -564,7 +563,7 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
  	for (bar = RP_BAR0; bar <= RP_NO_BAR; bar++)
  		rc->avail_ib_bar[bar] = true;
+ 
+-	ret = cdns_pcie_host_init(dev, rc);
++	ret = cdns_pcie_host_init(rc);
+ 	if (ret)
+ 		return ret;
+ 
 diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
-index 373cb50fcd15..4c687aeb810e 100644
+index 4c687aeb810e..d55dfd173f22 100644
 --- a/drivers/pci/controller/cadence/pcie-cadence.h
 +++ b/drivers/pci/controller/cadence/pcie-cadence.h
-@@ -515,10 +515,16 @@ static inline bool cdns_pcie_link_up(struct cdns_pcie *pcie)
- }
+@@ -516,6 +516,7 @@ static inline bool cdns_pcie_link_up(struct cdns_pcie *pcie)
  
  #ifdef CONFIG_PCIE_CADENCE_HOST
-+int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc);
+ int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc);
++int cdns_pcie_host_init(struct cdns_pcie_rc *rc);
  int cdns_pcie_host_setup(struct cdns_pcie_rc *rc);
  void __iomem *cdns_pci_map_bus(struct pci_bus *bus, unsigned int devfn,
  			       int where);
- #else
-+static inline int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc)
+@@ -525,6 +526,11 @@ static inline int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc)
+ 	return 0;
+ }
+ 
++static inline int cdns_pcie_host_init(struct cdns_pcie_rc *rc)
 +{
 +	return 0;
 +}
