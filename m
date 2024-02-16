@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C76AC48BF5
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 17:05:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC7EC48BEF
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 17:05:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+9aHs1HUsaUolG8NED3YfUbsOtDSvTy87yvsrfxpgZA=; b=DM5I8IngipyEf9
-	cusowbcdubqUY5vwRCjroZsp54czFgNDaBPusevulBdax1/WRUI3aS2B3uvh+XnEPA4//Ah+E7ztE
-	5TfMOnr2KlhGfp+MHnN2fc7LJ//MBa2XekzyVKdPHC5M01q+rg32YiY6PIku3kWZOqixoOrdxyg7p
-	5fntc1NSOwFimiAeSKHp3rm2Q3U9VyiF8SEAo5xvO9VE/huvzZ0pZ8j+Fvdc8PGRb9W5NNaZLA9TE
-	VpVVlkNAgwnVi3oC+jRPh5gbyKljccCwBoJvpmZW558qFeMkDn0J77g2w172XkSXSW0q34lBzo+So
-	KQxD1AuRo+/zzeQE75EA==;
+	List-Owner; bh=rRzVEto32eA1Bamm0ElK8hAn4KJ57mUBkCrvlxf8WpY=; b=gmPQteLd20pq+n
+	7O++Bugp9RZoACCYcp4D3uSRNwxY41kcdVB69JwKO3GqadP0BLfVEML5nvzzexW5EglO4LJThKLfi
+	/h8UpHghMclPm6Hgl1BmfIKYJFi/LkzkdFgKhBnwWfdgXbrjUqQcPvnsrrMXpduTWD/Uq3CVGzdoQ
+	veioE/O/GrSiKq4MvxfX8WYgpSfdmprlmeAEAdYTDEB5xokxMlq22VNeqliRTsiB6FTsg/QdBxGJB
+	q28HAMF1EFVSJ215y8nDK2h2Uc3L6cfPVJ7F9yYqIIKspqbBGMYs52uGrKzZYvpDiaEygfjVRANhQ
+	TuPys4J5bDVPQe+oYhBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rb1ec-000000036ms-3uWg;
-	Fri, 16 Feb 2024 17:05:38 +0000
+	id 1rb1ed-000000036nN-1oqI;
+	Fri, 16 Feb 2024 17:05:39 +0000
 Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rb1eO-000000036Yu-2KTh;
+	id 1rb1eO-000000036Yy-2GJS;
 	Fri, 16 Feb 2024 17:05:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1708103118;
-	bh=WAwF9+4NxVFIAxAbMjIC26UpfeO4GAskAOtMN4AnYh8=;
+	bh=x0cgeWgRq1pe/oohivryYMlY5YOEjfyvfHcbCiW1XMI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=w7k2Cie/vvju8NAWz8fKFRuJ1p+QmjDGqWNi1S72mOPSYVUdVU4eLsCStQGNy5IkW
-	 6oTNaC7cYRGyAmbq1Vjp4BAwqedg1VpkN4lywILUvfrdJfmVvzE4t81bynI9itSxAD
-	 J6IFMHtHO+tiNHReD7EIP5Gp3zm5sJLr+QB+3JCT46Oiw21QoV+vcJFoCNgVhTtKPg
-	 onkylhCRLxoyh6VIqVEGYC/i53zHsBeEhs5kYx792ty8ghvYBs4c+Ug9oI3mP1cfcx
-	 m82utQDwXQWMLpEkuqfZCcTR5wt/KhiCCBTQN/8tJZWy8+xhxkQp3/NSwweXagrx9S
-	 dNDv+15Lc2ZYQ==
+	b=yVOfGmgfraL06iJ+8UCpf8xLwh84VngZqeSPAIoqmAntiiDpEVFPM+79fu0z8/+T4
+	 FBA1T0eqqbwFPgcyrw3V1kOhILcR4MoyokWnPiGWDVfrVSq7i3tfEreU548+SUw8iz
+	 RJnbhwKR+W9TBNDoDApI/QlTg7MZbpyfKNW8Hqp0tOoqW5Eg/253DErKJEzwSsc+Hu
+	 dOY9/ztofv+SyIGg7YoFyWTr3aNh+BOnHm9MersuNXtqmt3YSImSduqDw9WagGyhrB
+	 HijpFQFVaawLAxrrSVIo4LmHa+XEtOc9HnW9gQrii7lWaaY7UI1KeaMndA3kFZI5WW
+	 /BzB+9B2K9MZw==
 Received: from jupiter.universe (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id EFCD337820C2;
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id EF38C37820C1;
 	Fri, 16 Feb 2024 17:05:17 +0000 (UTC)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id E02C44800D5; Fri, 16 Feb 2024 18:05:16 +0100 (CET)
+	id E1F0B4800D6; Fri, 16 Feb 2024 18:05:16 +0100 (CET)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -60,16 +60,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v3 09/10] arm64: dts: rockchip: add upper USB3 port to rock-5a
-Date: Fri, 16 Feb 2024 18:01:24 +0100
-Message-ID: <20240216170514.75200-10-sebastian.reichel@collabora.com>
+Subject: [PATCH v3 10/10] arm64: dts: rockchip: add lower USB3 port to rock-5b
+Date: Fri, 16 Feb 2024 18:01:25 +0100
+Message-ID: <20240216170514.75200-11-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240216170514.75200-1-sebastian.reichel@collabora.com>
 References: <20240216170514.75200-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240216_090525_035469_F74AAC77 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20240216_090524_995214_66EF00CF 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,55 +87,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable full support (XHCI, EHCI, OHCI) for the upper USB3 port from
-Radxa Rock 5 Model A. The lower one is already supported.
+Enable full support (XHCI, EHCI, OHCI) for the lower USB3 port from
+Radxa Rock 5 Model B. The upper one is already supported.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- .../boot/dts/rockchip/rk3588s-rock-5a.dts      | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-index 2002fd0221fa..149058352f4e 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-@@ -698,6 +698,14 @@ regulator-state-mem {
- 	};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
+index a0e303c3a1dc..149bd44ffd1c 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
+@@ -736,6 +736,14 @@ &uart2 {
+ 	status = "okay";
  };
  
-+&u2phy0 {
++&u2phy1 {
 +	status = "okay";
 +};
 +
-+&u2phy0_otg {
++&u2phy1_otg {
 +	status = "okay";
 +};
 +
  &u2phy2 {
  	status = "okay";
  };
-@@ -721,6 +729,11 @@ &uart2 {
+@@ -755,6 +763,10 @@ &u2phy3_host {
  	status = "okay";
  };
  
-+&usbdp_phy0 {
++&usbdp_phy1 {
 +	status = "okay";
-+	rockchip,dp-lane-mux = <2 3>;
 +};
 +
  &usb_host0_ehci {
  	status = "okay";
- 	pinctrl-names = "default";
-@@ -731,6 +744,11 @@ &usb_host0_ohci {
+ };
+@@ -771,6 +783,11 @@ &usb_host1_ohci {
  	status = "okay";
  };
  
-+&usb_host0_xhci {
++&usb_host1_xhci {
 +	dr_mode = "host";
 +	status = "okay";
 +};
 +
- &usb_host1_ehci {
+ &usb_host2_xhci {
  	status = "okay";
  };
 -- 
