@@ -4,96 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0604AC48BEB
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 09:34:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B1D5C48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 09:37:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1AD9pTsp9JhFGYMpjqQ8RS22Iuy+5qmCjzDpgdVMQMA=; b=l9N4cn4WZPOG1g
-	eeFklaehcAs06ThNPVwBr7F3jJIbB8iicRbVW7QBMtMVbBtANLzK/eQ70e0sM3V444ZtzDux9x1jW
-	xrlv0MmQmjzKxGCBFIgCRtnUK3O4JF6ij1lVxOGg8FiLq3blYBa1O+pwZwjZ+VYYe4/CL0C7kDZZ4
-	VSvRbFq5N8eMyN/Opq7/o7yaudkDBJXZRbvbZb4AW19LKDCcF9q3l4dwSgy5DhG+FgWEHaAJZLDpJ
-	WBrZ8b57s5P+f8Rj1iDd6OicI7raj/te/6JAVc9yaYulNgpcSbi1lWu4yYoaETeP07VttIRMKUXg4
-	EGtTLe5NlJqpEC3fAVaA==;
+	List-Owner; bh=GGoEShKfuie7iVUC0aYpa7zovBUwwYVV9iIKhdkgO0o=; b=3aD9touXXZl0aD
+	iSy8c7BtTvkYrTBHawJWCcSoY61RFyC/SYP0s3ip4PkUFXmY8NsxGRHtv4Fu3LzKFPmqbljsFu3aC
+	zvAsC1EFBNz/5GH5p3vgceSZixaR9Fpmix/EbgiOFg2Cg2pQOu2xPEdlEZNrsc/tSDUBsV7H3qtw9
+	/TvKDmYL5HGKolAEutqA27Sas/9KiJQ/8Hhd+ITv5Ee43LjYnOZRctXgG0PacRC5Xqs5bsbVxlSEU
+	4riwsQC1kkiGKpvRFk9ApXX294pVCd80RKtKE1ya/4tZTAwU9M71i/JgzeZfjliTeeXYmIq4jmSOP
+	cN5hQ6uGMLacB5iFNXGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raucI-00000001kOC-2efo;
-	Fri, 16 Feb 2024 09:34:46 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1raueU-00000001klZ-45Xe;
+	Fri, 16 Feb 2024 09:37:02 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raucF-00000001kNN-0UIN;
-	Fri, 16 Feb 2024 09:34:44 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 41G9YDeq060094;
-	Fri, 16 Feb 2024 03:34:13 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1708076053;
-	bh=vKwAOmyTIKWOUkF+ltd/wXRNBHA5NjPfXEM/pH4HgCE=;
-	h=Date:From:To:CC:Subject:References:In-Reply-To;
-	b=dBUWI9sql6TnlUIEOGFAg4vS8BWuS/JbhwS9gC86EL1cddmuNSFGe21Sbp3oVpOUP
-	 guWZf54EVOiiV7PHE/3ylqvfDNUbduYWyeri/qgOwP1hrmJr4N9Wh83De+L3D/jKfk
-	 gwQR04D2czoTUO9EfIQm7q2LFvd15n95Q8GRlAZQ=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 41G9YDLg057428
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 16 Feb 2024 03:34:13 -0600
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Fri, 16
- Feb 2024 03:34:12 -0600
-Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Fri, 16 Feb 2024 03:34:12 -0600
-Received: from localhost (uda0492258.dhcp.ti.com [172.24.227.9])
-	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 41G9YB1G048944;
-	Fri, 16 Feb 2024 03:34:12 -0600
-Date: Fri, 16 Feb 2024 15:04:11 +0530
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: Thomas Richard <thomas.richard@bootlin.com>
-CC: Linus Walleij <linus.walleij@linaro.org>,
-        Bartosz Golaszewski
-	<brgl@bgdev.pl>,
-        Andy Shevchenko <andy@kernel.org>, Tony Lindgren
-	<tony@atomide.com>,
-        Haojian Zhuang <haojian.zhuang@linaro.org>,
-        Vignesh R
-	<vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-        Janusz Krzysztofik
-	<jmkrzyszt@gmail.com>,
-        Andi Shyti <andi.shyti@kernel.org>, Peter Rosin
-	<peda@axentia.se>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I
-	<kishon@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Lorenzo
- Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?=
-	<kw@linux.com>,
-        Rob Herring <robh@kernel.org>, Bjorn Helgaas
-	<bhelgaas@google.com>,
-        <linux-gpio@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
-        <linux-i2c@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-pci@vger.kernel.org>, <gregory.clement@bootlin.com>,
-        <theo.lebrun@bootlin.com>, <thomas.petazzoni@bootlin.com>,
-        <u-kumar1@ti.com>, <s-vadapalli@ti.com>
-Subject: Re: [PATCH v3 15/18] PCI: cadence: extract link setup sequence from
- cdns_pcie_host_setup()
-Message-ID: <72300ba5-1db2-4bbb-a797-d1b547001ddb@ti.com>
-References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
- <20240102-j7200-pcie-s2r-v3-15-5c2e4a3fac1f@bootlin.com>
+	id 1raueR-00000001kkM-3TMA;
+	Fri, 16 Feb 2024 09:37:01 +0000
+Received: from pendragon.ideasonboard.com (89-27-53-110.bb.dnainternet.fi [89.27.53.110])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id E8B746B3;
+	Fri, 16 Feb 2024 10:36:51 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1708076212;
+	bh=FqIG4hQ/2p90XglkBfcZ3NnAeisl+tmJAkWr6NZhF0Q=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uNUjB6Gw3OxkvkHlmGSI/pkrf1LZkc1jpT/X9oJcmmrO5PwnbIe8er7efnoLnnde4
+	 EJCR+DW8RAqM7mraBwyYb41PjGtQ2zQu7cWh/h/nBhV0w0TvfPG5Urbm3zm5QqRtJz
+	 JzCOTixie+sNZIGN5ZidIK9mD6GREBUJXuiNf14Q=
+Date: Fri, 16 Feb 2024 11:37:00 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Alexander Stein <alexander.stein@ew.tq-group.com>
+Cc: linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+	marex@denx.de, frieder.schrempf@kontron.de,
+	Lucas Stach <l.stach@pengutronix.de>,
+	Adam Ford <aford173@gmail.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>, Liu Ying <victor.liu@nxp.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org
+Subject: Re: [PATCH V8 09/12] dt-bindings: display: imx: add binding for
+ i.MX8MP HDMI TX
+Message-ID: <20240216093700.GA10584@pendragon.ideasonboard.com>
+References: <20240203165307.7806-1-aford173@gmail.com>
+ <20240203165307.7806-10-aford173@gmail.com>
+ <5916132.MhkbZ0Pkbq@steina-w>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240102-j7200-pcie-s2r-v3-15-5c2e4a3fac1f@bootlin.com>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <5916132.MhkbZ0Pkbq@steina-w>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240216_013443_261790_1EFEE14C 
-X-CRM114-Status: GOOD (  19.31  )
+X-CRM114-CacheID: sfid-20240216_013700_037445_EB1539B3 
+X-CRM114-Status: GOOD (  23.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,110 +94,159 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/02/15 04:18PM, Thomas Richard wrote:
-> The function cdns_pcie_host_setup() mixes probe structure and link setup.
+On Fri, Feb 16, 2024 at 10:05:26AM +0100, Alexander Stein wrote:
+> Hi all,
 > 
-> The link setup must be done during the resume sequence. So extract it from
-> cdns_pcie_host_setup() and create a dedicated function.
+> Am Samstag, 3. Februar 2024, 17:52:49 CET schrieb Adam Ford:
+> > From: Lucas Stach <l.stach@pengutronix.de>
+> > 
+> > The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
+> > core with a little bit of SoC integration around it.
+> > 
+> > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> > Signed-off-by: Adam Ford <aford173@gmail.com>
+> > 
+> > ---
+> > V3:  Change name and location to better idenfity as a bridge and
+> >      HDMI 2.0a transmitter
+> > 
+> >      Fix typos and feedback from Rob and added ports.
+> > ---
+> >  .../display/bridge/fsl,imx8mp-hdmi-tx.yaml    | 102 ++++++++++++++++++
+> >  1 file changed, 102 insertions(+)
+> >  create mode 100644
+> > Documentation/devicetree/bindings/display/bridge/fsl,imx8mp-hdmi-tx.yaml
+> > 
+> > diff --git
+> > a/Documentation/devicetree/bindings/display/bridge/fsl,imx8mp-hdmi-tx.yaml
+> > b/Documentation/devicetree/bindings/display/bridge/fsl,imx8mp-hdmi-tx.yaml
+> > new file mode 100644
+> > index 000000000000..3791c9f4ebab
+> > --- /dev/null
+> > +++
+> > b/Documentation/devicetree/bindings/display/bridge/fsl,imx8mp-hdmi-tx.yaml
+> > @@ -0,0 +1,102 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/display/bridge/fsl,imx8mp-hdmi-tx.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Freescale i.MX8MP DWC HDMI TX Encoder
+> > +
+> > +maintainers:
+> > +  - Lucas Stach <l.stach@pengutronix.de>
+> > +
+> > +description:
+> > +  The i.MX8MP HDMI transmitter is a Synopsys DesignWare
+> > +  HDMI 2.0a TX controller IP.
+> > +
+> > +allOf:
+> > +  - $ref: /schemas/display/bridge/synopsys,dw-hdmi.yaml#
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - fsl,imx8mp-hdmi-tx
+> > +
+> > +  reg-io-width:
+> > +    const: 1
+> > +
+> > +  clocks:
+> > +    maxItems: 4
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: iahb
+> > +      - const: isfr
+> > +      - const: cec
+> > +      - const: pix
+> > +
+> > +  power-domains:
+> > +    maxItems: 1
+> > +
+> > +  ports:
+> > +    $ref: /schemas/graph.yaml#/properties/ports
+> > +
+> > +    properties:
+> > +      port@0:
+> > +        $ref: /schemas/graph.yaml#/properties/port
+> > +        description: Parallel RGB input port
+> > +
+> > +      port@1:
+> > +        $ref: /schemas/graph.yaml#/properties/port
+> > +        description: HDMI output port
+> > +
+> > +    required:
+> > +      - port@0
+> > +      - port@1
 > 
-> Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+> Is this really correct that port@1 is required? AFAICS this host already 
+> supports HPD and DDC by itself, so there is no need for a dedicated HDMI 
+> connector.
 
-LGTM.
+The chip has an HDMI output, so there's an output port.
 
-Reviewed-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+> With the current state of the drivers this output port is completely ignored 
+> anyway. Yet it works for a lot of people.
 
+DT bindings describe the hardware. From a DT point of view, tt's fine
+for drivers to ignore the port (that may or may not be true from a DRM
+point of view, but that's a separate discussion).
+
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - interrupts
+> > +  - power-domains
+> > +  - ports
+> > +
+> > +unevaluatedProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/imx8mp-clock.h>
+> > +    #include <dt-bindings/interrupt-controller/irq.h>
+> > +    #include <dt-bindings/power/imx8mp-power.h>
+> > +
+> > +    hdmi@32fd8000 {
+> > +        compatible = "fsl,imx8mp-hdmi-tx";
+> > +        reg = <0x32fd8000 0x7eff>;
+> > +        interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+> > +        clocks = <&clk IMX8MP_CLK_HDMI_APB>,
+> > +                 <&clk IMX8MP_CLK_HDMI_REF_266M>,
+> > +                 <&clk IMX8MP_CLK_32K>,
+> > +                 <&hdmi_tx_phy>;
+> > +        clock-names = "iahb", "isfr", "cec", "pix";
+> > +        power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX>;
+> > +        reg-io-width = <1>;
+> > +        ports {
+> > +           #address-cells = <1>;
+> > +           #size-cells = <0>;
+> > +           port@0 {
+> > +             reg = <0>;
+> > +
+> > +             hdmi_tx_from_pvi: endpoint {
+> > +               remote-endpoint = <&pvi_to_hdmi_tx>;
+> > +             };
+> > +          };
+> > +
+> > +          port@1 {
+> > +            reg = <1>;
+> > +              hdmi_tx_out: endpoint {
+> > +                remote-endpoint = <&hdmi0_con>;
+> > +              };
+> > +          };
+> > +        };
+> > +    };
+
+-- 
 Regards,
-Siddharth.
 
-> ---
->  drivers/pci/controller/cadence/pcie-cadence-host.c | 39 ++++++++++++++--------
->  drivers/pci/controller/cadence/pcie-cadence.h      |  6 ++++
->  2 files changed, 32 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence-host.c b/drivers/pci/controller/cadence/pcie-cadence-host.c
-> index 5b14f7ee3c79..93d9922730af 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence-host.c
-> +++ b/drivers/pci/controller/cadence/pcie-cadence-host.c
-> @@ -497,6 +497,30 @@ static int cdns_pcie_host_init(struct device *dev,
->  	return cdns_pcie_host_init_address_translation(rc);
->  }
->  
-> +int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc)
-> +{
-> +	struct cdns_pcie *pcie = &rc->pcie;
-> +	struct device *dev = rc->pcie.dev;
-> +	int ret;
-> +
-> +	if (rc->quirk_detect_quiet_flag)
-> +		cdns_pcie_detect_quiet_min_delay_set(&rc->pcie);
-> +
-> +	cdns_pcie_host_enable_ptm_response(pcie);
-> +
-> +	ret = cdns_pcie_start_link(pcie);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to start link\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = cdns_pcie_host_start_link(rc);
-> +	if (ret)
-> +		dev_dbg(dev, "PCIe link never came up\n");
-> +
-> +	return 0;
-> +}
-> +
->  int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
->  {
->  	struct device *dev = rc->pcie.dev;
-> @@ -533,20 +557,9 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
->  		return PTR_ERR(rc->cfg_base);
->  	rc->cfg_res = res;
->  
-> -	if (rc->quirk_detect_quiet_flag)
-> -		cdns_pcie_detect_quiet_min_delay_set(&rc->pcie);
-> -
-> -	cdns_pcie_host_enable_ptm_response(pcie);
-> -
-> -	ret = cdns_pcie_start_link(pcie);
-> -	if (ret) {
-> -		dev_err(dev, "Failed to start link\n");
-> -		return ret;
-> -	}
-> -
-> -	ret = cdns_pcie_host_start_link(rc);
-> +	ret = cdns_pcie_host_link_setup(rc);
->  	if (ret)
-> -		dev_dbg(dev, "PCIe link never came up\n");
-> +		return ret;
->  
->  	for (bar = RP_BAR0; bar <= RP_NO_BAR; bar++)
->  		rc->avail_ib_bar[bar] = true;
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
-> index 373cb50fcd15..4c687aeb810e 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence.h
-> +++ b/drivers/pci/controller/cadence/pcie-cadence.h
-> @@ -515,10 +515,16 @@ static inline bool cdns_pcie_link_up(struct cdns_pcie *pcie)
->  }
->  
->  #ifdef CONFIG_PCIE_CADENCE_HOST
-> +int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc);
->  int cdns_pcie_host_setup(struct cdns_pcie_rc *rc);
->  void __iomem *cdns_pci_map_bus(struct pci_bus *bus, unsigned int devfn,
->  			       int where);
->  #else
-> +static inline int cdns_pcie_host_link_setup(struct cdns_pcie_rc *rc)
-> +{
-> +	return 0;
-> +}
-> +
->  static inline int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
->  {
->  	return 0;
-> 
-> -- 
-> 2.39.2
-> 
-> 
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
