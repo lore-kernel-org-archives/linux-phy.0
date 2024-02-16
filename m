@@ -4,64 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96CD4C48BEC
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 07:07:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C4A4C48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 07:12:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9hmY1dIfiECYeM7Zju0fhxLIVEKISY6H7WKm8c6/Lrs=; b=K8a2W2GSHXQGrU
-	B8oNGRw8znrVJHFzK9pjmG09+V8qXPyNVM8eDTwEoAfVYBZAerFPcIb2EQbyi3rP7QFZgopoJxW24
-	N+f5yzZu3Bfwex44QjgHRx7r3bsVs+GCcxvYjniileTbzRnE3kEm+H3hSNFf4HGmymF8etXulj9uS
-	6cP4E9TgWfQxgZKghSxg71ZLYDRSJK75qUmmE3zFC6NUPEOTOKxB38A7LbqqqQJjky6uCAlkNoY29
-	m6utPf49fEfAN12Y1BK+RyOAs+fdPa7N1RAQkNHNJuKKratNb2v9n0HcbSbhBFtOTg72mDUnjFc7s
-	Kbv5x9sQ8kDq4HG4YyFw==;
+	List-Owner; bh=aXOhcgy7rcgE8WXKy+jHlLsr2AtTuoHZDVhnLbxgqG4=; b=tQzOQYRpXr/TKz
+	uugXXNvL33ofo4vHeX6uzI0gOwoXlbRQy2SFImOZLfQWvZZeFJTZqreg/kVACSvnUahmv3FSr2Ay5
+	p9XhWed3ost9kXaeH5vSlmm0hr5aXnaJJGhIiNAgZ9AJ9v6wInqMa5MX7/5kTfiYwor+3/q5NDzOd
+	Uq4lmgLtXk0yXplrYziqIAMWinwXI5rUTT8RHrOvay6IRBFewB5PfDtXq2utNPrvwO4qOM4/uE4kU
+	sZIZ7YajmUH5URlRV8CvzPy3g2p4Mz92qIBvfbNJ1Vshsdm7qRc0W8amB/TWBKNi+uLyEqtpQjMM2
+	GSo2gcf5N1KxxPL4/ByQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rasK7-00000001KKq-1EfT;
-	Fri, 16 Feb 2024 07:07:51 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1rasOk-00000001LJV-0LoQ;
+	Fri, 16 Feb 2024 07:12:38 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rasJs-00000001K9n-1Zfd;
-	Fri, 16 Feb 2024 07:07:38 +0000
+	id 1rasOh-00000001LGS-08DB
+	for linux-phy@lists.infradead.org;
+	Fri, 16 Feb 2024 07:12:36 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-a26fa294e56so251769866b.0
+        for <linux-phy@lists.infradead.org>; Thu, 15 Feb 2024 23:12:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1708067256; x=1739603256;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=WBfhOO5MG89bHmVdv1ErRWoZYXedtmnnpZfysTdIvno=;
-  b=VvHJmeGsXYYFy3HMrq/2lvTwpEMWI1CJLyQMDgYnzufCCpkjAGJQVwTX
-   EKgLIgyJNtkEzl47stNQQnqWnl740gyL2AyilfS4UzBt4/bpY5NrqNChS
-   s8HGofUQZ6vu4H83gm2xZE9es+X+GkI4ODlzmWdKdTzRCSN5c6u7Kyk/I
-   blCxKco2bB4NZSs+joZlt5HFzJ4mTS4KVwoVVOVdeO13sQKmYmW5rBc/H
-   7HfoRzZhSZQ+3AoP1PL9pP+o0xJjkepsVjlM5g+ho4+q+kNEvMixWOsB7
-   ECpE4hjEnjZOyG7RUacFEdVaSZSgew5Jl8Zwn9SMK2Nwoebymu/wY9YbR
-   Q==;
-X-IronPort-AV: E=Sophos;i="6.06,163,1705359600"; 
-   d="scan'208";a="35436739"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 16 Feb 2024 08:07:29 +0100
-Received: from steina-w.localnet (steina-w.tq-net.de [10.123.53.25])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 56DA7280075;
-	Fri, 16 Feb 2024 08:07:29 +0100 (CET)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Sandor Yu <Sandor.yu@nxp.com>
-Cc: kernel@pengutronix.de, linux-imx@nxp.com, Sandor.yu@nxp.com, oliver.brown@nxp.com, sam@ravnborg.org
-Subject: Re: [PATCH v13 4/7] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Date: Fri, 16 Feb 2024 08:07:31 +0100
-Message-ID: <3549548.iIbC2pHGDl@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <5bd01470cf971e2385ecd169c3d5ac659a020973.1707040881.git.Sandor.yu@nxp.com>
-References: <cover.1707040881.git.Sandor.yu@nxp.com> <5bd01470cf971e2385ecd169c3d5ac659a020973.1707040881.git.Sandor.yu@nxp.com>
+        d=linaro.org; s=google; t=1708067552; x=1708672352; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=ATkurgrubpUgh0fShoFCedN3hGiv0h68AvHCnzi4M2s=;
+        b=IlSV5w/NjHZR2QiEIHe/FBYbyvfbcCNaKth0J0FZ3PHhHaHoMEky8Pu2R4ibK3H34w
+         n54WHuFelWxMreE/DbqzzhK+ZMV1Oeb/0ECpCWfy4jRS6pwW/hd2AcLN7TIGi+7kNwDE
+         lnjUtjjCXdZ9blbQP8nFNIO/tGTVenFR/AjjyUbCFaehZsHhYVeDwzxn3D2oIfjwmIdZ
+         m4dtSkk81sDxz6VCCqFHni3SILLAg9Jsxyr0OxqK4NBWd8xdfFNBeIqgd3XcPH//o6Qu
+         NxVtLc6WGUoVtBcq5dambK6yjDAw64KrKhooMrj2YOTsEeu1KDr9RscvTaJpq+Rarztf
+         lUOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708067552; x=1708672352;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ATkurgrubpUgh0fShoFCedN3hGiv0h68AvHCnzi4M2s=;
+        b=Q/ZuVtD8UndjjrHLMsujIwk5xssMxZRnzpOFTgaufhp5Q48joF2jQ9gFcVx+Doa6Bh
+         6GCISlJk7FPf5euBHF5Pbn7Zc9V5r7BK8ohOvgv4C2NdXC3LK7i35EKl1QsXwFZmFIna
+         JUdJP0TSXs8F2JXxUm50CRnO1hoMLmNQ5g6OKhUPnz3kigfze+bX7SfgdycdPFCjCFVA
+         qZ66+2YCD0TN4KH+dT2PAN9wRFKwkRdGTXEY3pQYc/DjHpZ918uEPiSEVFojXZa5mjjR
+         zZTKvRIaPuJgb9Fx9VVUlhAZsMybIuqm4cLT1m2WxGH+r2e2OiK7oxImeY8aZ8QGoA+8
+         w9bg==
+X-Forwarded-Encrypted: i=1; AJvYcCWKLKUvcJS06xqhWogxBtTKoZN15mEaPtlJ7K+fTtSJsjOpEjBRpurOeJj/x5k5OWhWcrE7aF8XCMIr3ed1/FTU8mnaML1nUGB/LHgMvA==
+X-Gm-Message-State: AOJu0YyLkmTWlloyVzgNqTzRqSZaD6xFY0DYSiDaXYxnk38k5R8uoOKs
+	xLNhB0MK+W5Oduk3C0P+Sc9JMw3zn/L7ry4oaaVrhi5L+nVQUnJxJp5Cvo4TmnY=
+X-Google-Smtp-Source: AGHT+IHpIBqVJpYgmERaWvMTmzuZlC7ldDINGPCwctFY0/xh+c5nNK7lzCpRfEPfDlKJ3PmwCQOluQ==
+X-Received: by 2002:a17:906:7196:b0:a3c:7b20:2dfb with SMTP id h22-20020a170906719600b00a3c7b202dfbmr3268891ejk.1.1708067552347;
+        Thu, 15 Feb 2024 23:12:32 -0800 (PST)
+Received: from [192.168.0.22] ([78.10.207.130])
+        by smtp.gmail.com with ESMTPSA id tj10-20020a170907c24a00b00a3dd52e7539sm339695ejc.60.2024.02.15.23.12.30
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 15 Feb 2024 23:12:31 -0800 (PST)
+Message-ID: <02461595-16b3-4fea-a029-54190e10e6f5@linaro.org>
+Date: Fri, 16 Feb 2024 08:12:29 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] clk: constify the of_phandle_args argument of
+ of_clk_provider
+To: Stephen Boyd <sboyd@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jaroslav Kysela <perex@perex.cz>, Jonathan Hunter <jonathanh@nvidia.com>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Mark Brown <broonie@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Nishanth Menon <nm@ti.com>,
+ Peng Fan <peng.fan@nxp.com>, Russell King <linux@armlinux.org.uk>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Takashi Iwai <tiwai@suse.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ alsa-devel@alsa-project.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
+ linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-tegra@vger.kernel.org, patches@opensource.cirrus.com
+References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
+ <38e7e80f61f7c67c984735cf55c3dfb3.sboyd@kernel.org>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <38e7e80f61f7c67c984735cf55c3dfb3.sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_230736_824657_FEA5A1BE 
-X-CRM114-Status: GOOD (  20.54  )
+X-CRM114-CacheID: sfid-20240215_231235_167254_87DF0A34 
+X-CRM114-Status: GOOD (  12.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,136 +154,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Sandor,
+On 16/02/2024 00:12, Stephen Boyd wrote:
+> Quoting Krzysztof Kozlowski (2024-02-08 08:37:10)
+>> None of the implementations of the get() and get_hw() callbacks of
+>> "struct of_clk_provider" modify the contents of received of_phandle_args
+>> pointer.  They treat it as read-only variable used to find the clock to
+>> return.  Make obvious that implementations are not supposed to modify
+>> the of_phandle_args, by making it a pointer to const.
+>>
+>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>> ---
+> 
+> This will almost certainly break the build once it is merged to
+> linux-next. What's your plan to merge this?
 
-thanks for the update.
+First problem is that it might not apply... I prepared it on next to be
+sure all subsystems are updated.
 
-Am Sonntag, 4. Februar 2024, 11:21:49 CET schrieb Sandor Yu:
-> Add a new DRM DisplayPort and HDMI bridge driver for Candence MHDP8501
-> used in i.MX8MQ SOC. MHDP8501 could support HDMI or DisplayPort
-> standards according embedded Firmware running in the uCPU.
-> =
+The idea is to get reviews and acks and then:
+1. Maybe it applies cleanly to your tree meaning there will be no
+conflicts with other trees,
+2. If not, then I can keep rebasing it and it should be applied after rc1.
 
-> For iMX8MQ SOC, the DisplayPort/HDMI FW was loaded and activated by
-> SOC's ROM code. Bootload binary included respective specific firmware
-> is required.
-> =
 
-> Driver will check display connector type and
-> then load the corresponding driver.
-> =
-
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> ---
-> v12->v13:
-> - Explicitly include linux/platform_device.h for cdns-mhdp8501-core.c
-> - Fix build warning
-> - Order bit bpc and color_space in descending shit.
-> =
-
-> v11->v12:
-> - Replace DRM_INFO with dev_info or dev_warn.
-> - Replace DRM_ERROR with dev_err.
-> - Return ret when cdns_mhdp_dpcd_read failed in function
-> cdns_dp_aux_transferi(). - Remove unused parmeter in function
-> cdns_dp_get_msa_misc
->   and use two separate variables for color space and bpc.
-> - Add year 2024 to copyright.
-> =
-
->  drivers/gpu/drm/bridge/cadence/Kconfig        |  16 +
->  drivers/gpu/drm/bridge/cadence/Makefile       |   2 +
->  .../drm/bridge/cadence/cdns-mhdp8501-core.c   | 316 ++++++++
->  .../drm/bridge/cadence/cdns-mhdp8501-core.h   | 365 +++++++++
->  .../gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c | 699 ++++++++++++++++++
->  .../drm/bridge/cadence/cdns-mhdp8501-hdmi.c   | 679 +++++++++++++++++
->  6 files changed, 2077 insertions(+)
->  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.c
->  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.h
->  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
->  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
-> =
-
-> [snip]
-> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
-> b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c new file mode 100644
-> index 0000000000000..0117cddb85694
-> --- /dev/null
-> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
-> @@ -0,0 +1,699 @@
-> [snip]
-> +
-> +const struct drm_bridge_funcs cdns_dp_bridge_funcs =3D {
-> +	.attach =3D cdns_dp_bridge_attach,
-> +	.detect =3D cdns_dp_bridge_detect,
-> +	.get_edid =3D cdns_dp_bridge_get_edid,
-
-Please note that with commits d807ad80d811b ("drm/bridge: add ->edid_read h=
-ook =
-
-and drm_bridge_edid_read()") and 27b8f91c08d99 ("drm/bridge: remove ->get_e=
-did =
-
-callback") the API has slightly changed meanwhile.
-
-> +	.mode_valid =3D cdns_dp_bridge_mode_valid,
-> +	.atomic_enable =3D cdns_dp_bridge_atomic_enable,
-> +	.atomic_disable =3D cdns_dp_bridge_atomic_disable,
-> +	.atomic_duplicate_state =3D drm_atomic_helper_bridge_duplicate_state,
-> +	.atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
-> +	.atomic_reset =3D drm_atomic_helper_bridge_reset,
-> +};
-> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
-> b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c new file mode 100644
-> index 0000000000000..e6ed13b9f9ca3
-> --- /dev/null
-> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
-> @@ -0,0 +1,679 @@
-> [snip]
-> +
-> +const struct drm_bridge_funcs cdns_hdmi_bridge_funcs =3D {
-> +	.attach =3D cdns_hdmi_bridge_attach,
-> +	.detect =3D cdns_hdmi_bridge_detect,
-> +	.get_edid =3D cdns_hdmi_bridge_get_edid,
-
-Please note that with commits d807ad80d811b ("drm/bridge: add ->edid_read h=
-ook =
-
-and drm_bridge_edid_read()") and 27b8f91c08d99 ("drm/bridge: remove ->get_e=
-did =
-
-callback") the API has slightly changed meanwhile.
-
-> +	.mode_valid =3D cdns_hdmi_bridge_mode_valid,
-> +	.mode_fixup =3D cdns_hdmi_bridge_mode_fixup,
-> +	.atomic_enable =3D cdns_hdmi_bridge_atomic_enable,
-> +	.atomic_disable =3D cdns_hdmi_bridge_atomic_disable,
-> +	.atomic_duplicate_state =3D drm_atomic_helper_bridge_duplicate_state,
-> +	.atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
-> +	.atomic_reset =3D drm_atomic_helper_bridge_reset,
-> +};
-
-Please rebase your patch series, thanks.
 
 Best regards,
-Alexander
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
+Krzysztof
 
 
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
