@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83F77C48260
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 06:47:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96CD4C48BEC
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 07:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Nxejj3pT0N2xX3aWePUpcLfyonU2a9dX1O1cqUkNms=; b=xXVJzLv1s62ntW
-	GUepWHrMfgeeJKNHnGANnmI7S0CuBFBE/zPeOTlBCgZ74U3Rc4j+tDUGk9s6qeFdSjgXi7gcn5M6g
-	yHR9LhhvBtImeBh/Q9HXnARBY6HYEPWKW3Bm1iWDJnqOr7qy/rde7FrVLdBdPSFBIvbEoTghGU+xM
-	jW5iUUkgJdabaAykRgGdxo+8h/4dXxR9GpTGZfF1UYOt6DkrBS1YJA59qlnISdq2NaIfmQxvtzyl6
-	SGsndmZ+xTMqR1lt+8D9HLg0HRQSG/yaC+3sZCCKPA2OD9jebnoCRcz0CnY9haoFrrv+AwbsrdyCj
-	JETie9XdcNjCTweYYBiA==;
+	List-Owner; bh=9hmY1dIfiECYeM7Zju0fhxLIVEKISY6H7WKm8c6/Lrs=; b=K8a2W2GSHXQGrU
+	B8oNGRw8znrVJHFzK9pjmG09+V8qXPyNVM8eDTwEoAfVYBZAerFPcIb2EQbyi3rP7QFZgopoJxW24
+	N+f5yzZu3Bfwex44QjgHRx7r3bsVs+GCcxvYjniileTbzRnE3kEm+H3hSNFf4HGmymF8etXulj9uS
+	6cP4E9TgWfQxgZKghSxg71ZLYDRSJK75qUmmE3zFC6NUPEOTOKxB38A7LbqqqQJjky6uCAlkNoY29
+	m6utPf49fEfAN12Y1BK+RyOAs+fdPa7N1RAQkNHNJuKKratNb2v9n0HcbSbhBFtOTg72mDUnjFc7s
+	Kbv5x9sQ8kDq4HG4YyFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ras0c-00000001GYG-0Xpo;
-	Fri, 16 Feb 2024 06:47:42 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rasK7-00000001KKq-1EfT;
+	Fri, 16 Feb 2024 07:07:51 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ras0Z-00000001GXj-0M5T;
-	Fri, 16 Feb 2024 06:47:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AFCFA61503;
-	Fri, 16 Feb 2024 06:47:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28845C433C7;
-	Fri, 16 Feb 2024 06:47:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1708066057;
-	bh=IaYS5krugxcWWLdlP3aNH0s2GExm1DY2BuiHt8XgCtM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OFixQkYX/oFkmeTY9XozPfHlCyyrwGGiRn+t5Qo2SQB/M3BQWiTr6Gmi+2QULbQIP
-	 ZXyActqWf41o80jJ/+K/aXx3YrthzC4zot80y4ffZW05ZYxhXuJLS4Xb9d8m+4qWm4
-	 ZITMB1FHWB47wV/xS9bobtFeFdi8szGyjBCxLvwX6VopLmpkmGPqg/gMb4BR97pBwO
-	 HOXf7/oYuxZ+TR5Qjqc8l5ef/mmv6O4cZt7vWOFgPIOo42otWumPFAq/7INIlaVp+D
-	 lZvsWls0YcMYkkuRYs8lmSvHfHBp3g4mkjYpFRZt/hOfeHmFVZszks349e2vRiV7ZP
-	 PJ0kdCoTwZeEQ==
-Date: Fri, 16 Feb 2024 12:17:32 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, kernel@collabora.com,
-	Zhang Yubing <yubing.zhang@rock-chips.com>
-Subject: Re: [PATCH v2 04/12] phy: rockchip: add usbdp combo phy driver
-Message-ID: <Zc8FBJbMeLng9DjS@matsya>
-References: <20240213163609.44930-1-sebastian.reichel@collabora.com>
- <20240213163609.44930-5-sebastian.reichel@collabora.com>
+	id 1rasJs-00000001K9n-1Zfd;
+	Fri, 16 Feb 2024 07:07:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1708067256; x=1739603256;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=WBfhOO5MG89bHmVdv1ErRWoZYXedtmnnpZfysTdIvno=;
+  b=VvHJmeGsXYYFy3HMrq/2lvTwpEMWI1CJLyQMDgYnzufCCpkjAGJQVwTX
+   EKgLIgyJNtkEzl47stNQQnqWnl740gyL2AyilfS4UzBt4/bpY5NrqNChS
+   s8HGofUQZ6vu4H83gm2xZE9es+X+GkI4ODlzmWdKdTzRCSN5c6u7Kyk/I
+   blCxKco2bB4NZSs+joZlt5HFzJ4mTS4KVwoVVOVdeO13sQKmYmW5rBc/H
+   7HfoRzZhSZQ+3AoP1PL9pP+o0xJjkepsVjlM5g+ho4+q+kNEvMixWOsB7
+   ECpE4hjEnjZOyG7RUacFEdVaSZSgew5Jl8Zwn9SMK2Nwoebymu/wY9YbR
+   Q==;
+X-IronPort-AV: E=Sophos;i="6.06,163,1705359600"; 
+   d="scan'208";a="35436739"
+Received: from vtuxmail01.tq-net.de ([10.115.0.20])
+  by mx1.tq-group.com with ESMTP; 16 Feb 2024 08:07:29 +0100
+Received: from steina-w.localnet (steina-w.tq-net.de [10.123.53.25])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 56DA7280075;
+	Fri, 16 Feb 2024 08:07:29 +0100 (CET)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Sandor Yu <Sandor.yu@nxp.com>
+Cc: kernel@pengutronix.de, linux-imx@nxp.com, Sandor.yu@nxp.com, oliver.brown@nxp.com, sam@ravnborg.org
+Subject: Re: [PATCH v13 4/7] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+Date: Fri, 16 Feb 2024 08:07:31 +0100
+Message-ID: <3549548.iIbC2pHGDl@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <5bd01470cf971e2385ecd169c3d5ac659a020973.1707040881.git.Sandor.yu@nxp.com>
+References: <cover.1707040881.git.Sandor.yu@nxp.com> <5bd01470cf971e2385ecd169c3d5ac659a020973.1707040881.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240213163609.44930-5-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_224739_240089_AE4B83CC 
-X-CRM114-Status: GOOD (  32.95  )
+X-CRM114-CacheID: sfid-20240215_230736_824657_FEA5A1BE 
+X-CRM114-Status: GOOD (  20.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,185 +73,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-02-24, 17:32, Sebastian Reichel wrote:
-> This adds a new USBDP combo PHY with Samsung IP block driver.
-> 
-> The driver get lane mux and mapping info in 2 ways, supporting
-> DisplayPort alternate mode or parsing from DT. When parsing from DT,
-> the property "rockchip,dp-lane-mux" provide the DP mux and mapping
-> info. This is needed when the PHY is not used with TypeC Alt-Mode.
-> For example if the USB3 interface of the PHY is connected to a USB
-> Type A connector and the DP interface is connected to a DisplayPort
-> connector.
-> 
-> When do DP link training, need to set lane number, link rate, swing,
-> and pre-emphasis via PHY configure interface.
-> 
-> Co-developed-by: Heiko Stuebner <heiko@sntech.de>
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> Co-developed-by: Zhang Yubing <yubing.zhang@rock-chips.com>
-> Signed-off-by: Zhang Yubing <yubing.zhang@rock-chips.com>
-> Co-developed-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Hi Sandor,
+
+thanks for the update.
+
+Am Sonntag, 4. Februar 2024, 11:21:49 CET schrieb Sandor Yu:
+> Add a new DRM DisplayPort and HDMI bridge driver for Candence MHDP8501
+> used in i.MX8MQ SOC. MHDP8501 could support HDMI or DisplayPort
+> standards according embedded Firmware running in the uCPU.
+> =
+
+> For iMX8MQ SOC, the DisplayPort/HDMI FW was loaded and activated by
+> SOC's ROM code. Bootload binary included respective specific firmware
+> is required.
+> =
+
+> Driver will check display connector type and
+> then load the corresponding driver.
+> =
+
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
 > ---
->  drivers/phy/rockchip/Kconfig              |   12 +
->  drivers/phy/rockchip/Makefile             |    1 +
->  drivers/phy/rockchip/phy-rockchip-usbdp.c | 1639 +++++++++++++++++++++
->  3 files changed, 1652 insertions(+)
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-usbdp.c
-> 
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 94360fc96a6f..d21b458c1d18 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -107,3 +107,15 @@ config PHY_ROCKCHIP_USB
->  	select GENERIC_PHY
->  	help
->  	  Enable this to support the Rockchip USB 2.0 PHY.
-> +
-> +config PHY_ROCKCHIP_USBDP
-> +	tristate "Rockchip USBDP COMBO PHY Driver"
-> +	depends on ARCH_ROCKCHIP && OF
-> +	select GENERIC_PHY
-> +	select TYPEC
-> +	help
-> +	  Enable this to support the Rockchip USB3.0/DP combo PHY with
-> +	  Samsung IP block. This is required for USB3 support on RK3588.
-> +
-> +	  To compile this driver as a module, choose M here: the module
-> +	  will be called phy-rockchip-usbdp
-> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
-> index 7eab129230d1..25d2e1355db7 100644
-> --- a/drivers/phy/rockchip/Makefile
-> +++ b/drivers/phy/rockchip/Makefile
-> @@ -11,3 +11,4 @@ obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
->  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
->  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
->  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
-> +obj-$(CONFIG_PHY_ROCKCHIP_USBDP)	+= phy-rockchip-usbdp.o
-> diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> new file mode 100644
-> index 000000000000..8b1ace2aaa98
+> v12->v13:
+> - Explicitly include linux/platform_device.h for cdns-mhdp8501-core.c
+> - Fix build warning
+> - Order bit bpc and color_space in descending shit.
+> =
+
+> v11->v12:
+> - Replace DRM_INFO with dev_info or dev_warn.
+> - Replace DRM_ERROR with dev_err.
+> - Return ret when cdns_mhdp_dpcd_read failed in function
+> cdns_dp_aux_transferi(). - Remove unused parmeter in function
+> cdns_dp_get_msa_misc
+>   and use two separate variables for color space and bpc.
+> - Add year 2024 to copyright.
+> =
+
+>  drivers/gpu/drm/bridge/cadence/Kconfig        |  16 +
+>  drivers/gpu/drm/bridge/cadence/Makefile       |   2 +
+>  .../drm/bridge/cadence/cdns-mhdp8501-core.c   | 316 ++++++++
+>  .../drm/bridge/cadence/cdns-mhdp8501-core.h   | 365 +++++++++
+>  .../gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c | 699 ++++++++++++++++++
+>  .../drm/bridge/cadence/cdns-mhdp8501-hdmi.c   | 679 +++++++++++++++++
+>  6 files changed, 2077 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.c
+>  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.h
+>  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+>  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> =
+
+> [snip]
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+> b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c new file mode 100644
+> index 0000000000000..0117cddb85694
 > --- /dev/null
-> +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -0,0 +1,1639 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/*
-> + * Rockchip USBDP Combo PHY with Samsung IP block driver
-> + *
-> + * Copyright (C) 2021 Rockchip Electronics Co., Ltd
-> + */
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+> @@ -0,0 +1,699 @@
+> [snip]
 > +
-> +#include <linux/bitfield.h>
-> +#include <linux/bits.h>
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/delay.h>
-> +#include <linux/gpio.h>
-> +#include <linux/io.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/mutex.h>
-> +#include <linux/of.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/property.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/usb/ch9.h>
-> +#include <linux/usb/typec_dp.h>
-> +#include <linux/usb/typec_mux.h>
+> +const struct drm_bridge_funcs cdns_dp_bridge_funcs =3D {
+> +	.attach =3D cdns_dp_bridge_attach,
+> +	.detect =3D cdns_dp_bridge_detect,
+> +	.get_edid =3D cdns_dp_bridge_get_edid,
 
-Thats a lot of headers, do you need all?
+Please note that with commits d807ad80d811b ("drm/bridge: add ->edid_read h=
+ook =
 
-> +static inline int rk_udphy_grfreg_write(struct regmap *base,
-> +					const struct rk_udphy_grf_reg *reg, bool en)
-> +{
-> +	u32 val, mask, tmp;
-> +
-> +	tmp = en ? reg->enable : reg->disable;
-> +	mask = GENMASK(reg->bitend, reg->bitstart);
-> +	val = (tmp << reg->bitstart) | (mask << BIT_WRITEABLE_SHIFT);
+and drm_bridge_edid_read()") and 27b8f91c08d99 ("drm/bridge: remove ->get_e=
+did =
 
-Perhaps FIELD_PREP|GET for these?
+callback") the API has slightly changed meanwhile.
 
-> +static int rk_udphy_dplane_get(struct rk_udphy *udphy)
-> +{
-> +	int dp_lanes;
+> +	.mode_valid =3D cdns_dp_bridge_mode_valid,
+> +	.atomic_enable =3D cdns_dp_bridge_atomic_enable,
+> +	.atomic_disable =3D cdns_dp_bridge_atomic_disable,
+> +	.atomic_duplicate_state =3D drm_atomic_helper_bridge_duplicate_state,
+> +	.atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
+> +	.atomic_reset =3D drm_atomic_helper_bridge_reset,
+> +};
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c new file mode 100644
+> index 0000000000000..e6ed13b9f9ca3
+> --- /dev/null
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> @@ -0,0 +1,679 @@
+> [snip]
 > +
-> +	switch (udphy->mode) {
-> +	case UDPHY_MODE_DP:
-> +		dp_lanes = 4;
-> +		break;
+> +const struct drm_bridge_funcs cdns_hdmi_bridge_funcs =3D {
+> +	.attach =3D cdns_hdmi_bridge_attach,
+> +	.detect =3D cdns_hdmi_bridge_detect,
+> +	.get_edid =3D cdns_hdmi_bridge_get_edid,
 
-empty line after break makes it more readable
+Please note that with commits d807ad80d811b ("drm/bridge: add ->edid_read h=
+ook =
 
-> +	case UDPHY_MODE_DP_USB:
-> +		dp_lanes = 2;
-> +		break;
-> +	case UDPHY_MODE_USB:
-> +		fallthrough;
-> +	default:
-> +		dp_lanes = 0;
-> +		break;
-> +	}
-> +
-> +	return dp_lanes;
-> +}
-> +
-> +static int rk_udphy_dplane_enable(struct rk_udphy *udphy, int dp_lanes)
-> +{
-> +	u32 val = 0;
-> +	int i;
-> +
-> +	for (i = 0; i < dp_lanes; i++)
-> +		val |= BIT(udphy->dp_lane_sel[i]);
-> +
-> +	regmap_update_bits(udphy->pma_regmap, CMN_LANE_MUX_AND_EN_OFFSET, CMN_DP_LANE_EN_ALL,
-> +			   FIELD_PREP(CMN_DP_LANE_EN_ALL, val));
-> +
-> +	if (!dp_lanes)
-> +		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
-> +				   CMN_DP_CMN_RSTN, FIELD_PREP(CMN_DP_CMN_RSTN, 0x0));
-> +
-> +	return 0;
+and drm_bridge_edid_read()") and 27b8f91c08d99 ("drm/bridge: remove ->get_e=
+did =
 
-there is no error generation in the fn, these kind of fn should really
-be not returning anything
+callback") the API has slightly changed meanwhile.
 
-> +static int rk_udphy_usb3_phy_init(struct phy *phy)
-> +{
-> +	struct rk_udphy *udphy = phy_get_drvdata(phy);
-> +	int ret = 0;
-> +
-> +	mutex_lock(&udphy->mutex);
-> +	/* DP only or high-speed, disable U3 port */
-> +	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-> +		rk_udphy_u3_port_disable(udphy, true);
-> +		goto unlock;
+> +	.mode_valid =3D cdns_hdmi_bridge_mode_valid,
+> +	.mode_fixup =3D cdns_hdmi_bridge_mode_fixup,
+> +	.atomic_enable =3D cdns_hdmi_bridge_atomic_enable,
+> +	.atomic_disable =3D cdns_hdmi_bridge_atomic_disable,
+> +	.atomic_duplicate_state =3D drm_atomic_helper_bridge_duplicate_state,
+> +	.atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
+> +	.atomic_reset =3D drm_atomic_helper_bridge_reset,
+> +};
 
-no power up in that case?
+Please rebase your patch series, thanks.
 
-> +	}
-> +
-> +	ret = rk_udphy_power_on(udphy, UDPHY_MODE_USB);
-> +
-> +unlock:
-> +	mutex_unlock(&udphy->mutex);
-> +	return ret;
-> +}
--- 
-~Vinod
+Best regards,
+Alexander
+-- =
 
--- 
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
