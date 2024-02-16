@@ -4,122 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 285DFC48260
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 13:38:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88E41C48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 14:56:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=162upAo7FzIct6sew89FqYa/EFtG61RGZN+GYMAYNZA=; b=FAEGuwOKdack3z
-	3G6bYLrn/Fdfn5gXK7nzr4ZLyXnTTxkwaAix78lUXp5oGfEYcVpDI7oAvBp6FU07swvUEPiyWRa54
-	qKdvI/QLp1um6GyEtwIn8bJ5y4nLt6MSorXEJu3nBV2SlAFojBX8/RlFWsC1Br7ZiDkHTyCFEPXIT
-	RT9LdK2fWf4OSMzMa//v10m588HS4UsONt3AtkR3mTmTO/Qt+QkRePd6WlgY3YUy0as5Oz968SAc9
-	Yv2zyHmNiWZ4LeNtxgfa3cLCMXvBGidhNSGvNjK1Tcyduz5W2oH60dQrRMT/JIpKKWL7TjNG6z5ff
-	69QW0Ib70MMwcREU7sBA==;
+	List-Owner; bh=H68oJrHeYpsY7m+r+yB5LfeWUwUgGaHoYY0YmVfIDGM=; b=r92VIzMUphXzHz
+	6ZEY55I2H+UP/oVaav3EgUdmWoJ77hNEtE2fZOW2kn+NEHcIavBWQLJ91qfsMB5E0lBqT65pTG3Rv
+	iNUpgown6RVp1/jyUXVUY9Cs0vdVgnjTZDK8mXGG0kssGg9MPsJift/Lu6MYuYCrQFDvXEd18qZhi
+	2GRBTF9s01ZjetX9Y3kx01TjoJmlyNtIXlwYHKzlyOdZ0hUArn0Ar3UWMZyGKhrz4VI381pB6Lt+t
+	xG9C8pW98Z91PXVTCU61WHcnj5ZZm2FGNra3Anarrw1aPEbPHeae7pDOqU/JU89LeJ3R0xHfFU/OV
+	WC4irGtZxOZlVqkS+eHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rayQB-00000002Ruc-3Ea8;
-	Fri, 16 Feb 2024 13:38:31 +0000
-Received: from mail-ed1-f51.google.com ([209.85.208.51])
+	id 1razdm-00000002fnm-0RWf;
+	Fri, 16 Feb 2024 14:56:38 +0000
+Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rayQ6-00000002Ru3-4ABp
-	for linux-phy@lists.infradead.org;
-	Fri, 16 Feb 2024 13:38:29 +0000
-Received: by mail-ed1-f51.google.com with SMTP id 4fb4d7f45d1cf-5640fef9fa6so35916a12.0
-        for <linux-phy@lists.infradead.org>; Fri, 16 Feb 2024 05:38:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708090643; x=1708695443; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=e7mWMJkXIbMvIROqSSXDtNCbW+ZmdhTlFHhBB0TaXxE=;
-        b=o0BhFj3KeLW9/d0j39HGkFgOE2MlZnIBUt57wzOvM4M0vT7bKEV2oTg50SUIItqA96
-         bMhWXWvDVl284DrnzVnHA9djWkzcdOerAcu6UW/iIpWt/JyRIr4DpoZeCvdvD0FGBidV
-         fIjjhLxTDta3jyifhNu9iR8JWWjQHbkHFvxT0ZIi2Ib9E2JhskKKTL3bdVbMWylLjUya
-         9HEmgc+glzLvTUN/WLV6tHv9/aC98wdt/VJ5a+D5s0X2ETzDkFZV7+07T7v7PA49bN/q
-         X1e/2TPfrN7Bi3/0LaiSlaAUe4ND7A9Nj5UoJ3XSjSp/OvzXh/xDrQpLF5QaOLUHWp7u
-         Ht1Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708090643; x=1708695443;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=e7mWMJkXIbMvIROqSSXDtNCbW+ZmdhTlFHhBB0TaXxE=;
-        b=B4dc+VAcEX+Oz6qrXIuLiFgqZ5EMPbcTdoTRX3i48AisWLGlJcGkDhjPa1KFz42Evg
-         v3nmDONvA7kjwINg87uHC+Ixyc9FWaYS/sg0wev+0EvrhaD/N0BEY6EYEUi9AZUr/W5I
-         YMIaLIkldRQRFNzm8DuK1lu3QbxWGOTqYLxGLp+26Hy64i+O+jt909zUbP/sBBo9NHbg
-         cOFt6SnDYzlW6Emq16IlgjxW/OS+G6ndUT5r2+q8WMz0zNZv7ebSjvfHvN8nRu0cxS5k
-         zW8PV4Spb8tVkY4Um3jB6bHjY13Ro3JTgEPzOKSEnAyI65lgvp21Yq0Np4i8PHJ9OxPG
-         4GRQ==
-X-Gm-Message-State: AOJu0YxCbiuSqFvyIxag8cOjXM4ds+tI6JD3q/fb8d32ppGVjyFE6QNb
-	AFQoSz4xGfw8v8zrYOU6uhigeWBpZr9XMIE1oukb2TeE2ohYa4Na5e1dAF/kvek=
-X-Google-Smtp-Source: AGHT+IFwsnhqo5fuZJ8FqRpHtnHU94q/U/1l85xYwdqcS08wSTd5C15gHUgVfO6Fv6+Xgy0dq7WHEQ==
-X-Received: by 2002:a05:6402:50c:b0:563:c54e:fb with SMTP id m12-20020a056402050c00b00563c54e00fbmr160941edv.15.1708090642646;
-        Fri, 16 Feb 2024 05:37:22 -0800 (PST)
-Received: from [192.168.192.135] (078088045141.garwolin.vectranet.pl. [78.88.45.141])
-        by smtp.gmail.com with ESMTPSA id y2-20020a50eb02000000b00561a443a393sm1495698edp.92.2024.02.16.05.37.20
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 16 Feb 2024 05:37:21 -0800 (PST)
-Message-ID: <b11ec88e-5408-4bcc-9d93-942ad81eccde@linaro.org>
-Date: Fri, 16 Feb 2024 14:37:19 +0100
+	id 1razdj-00000002fn3-0hDR;
+	Fri, 16 Feb 2024 14:56:36 +0000
+X-IronPort-AV: E=McAfee;i="6600,9927,10985"; a="2336762"
+X-IronPort-AV: E=Sophos;i="6.06,164,1705392000"; 
+   d="scan'208";a="2336762"
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Feb 2024 06:56:32 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10985"; a="912372670"
+X-IronPort-AV: E=Sophos;i="6.06,164,1705392000"; 
+   d="scan'208";a="912372670"
+Received: from smile.fi.intel.com ([10.237.72.54])
+  by fmsmga002.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Feb 2024 06:56:25 -0800
+Received: from andy by smile.fi.intel.com with local (Exim 4.97)
+	(envelope-from <andy@kernel.org>)
+	id 1razdW-000000054ij-1AX9;
+	Fri, 16 Feb 2024 16:56:22 +0200
+Date: Fri, 16 Feb 2024 16:56:22 +0200
+From: Andy Shevchenko <andy@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Thomas Richard <thomas.richard@bootlin.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	Tony Lindgren <tony@atomide.com>,
+	Haojian Zhuang <haojian.zhuang@linaro.org>,
+	Vignesh R <vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+	Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+	theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com,
+	u-kumar1@ti.com
+Subject: Re: [PATCH v3 08/18] phy: ti: phy-j721e-wiz: split wiz_clock_init()
+ function
+Message-ID: <Zc93lnpGK8PGKbb-@smile.fi.intel.com>
+References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
+ <20240102-j7200-pcie-s2r-v3-8-5c2e4a3fac1f@bootlin.com>
+ <Zc4xJtLl3zo_YrBC@smile.fi.intel.com>
+ <Zc76d4B4hjTC3xum@matsya>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: qcom: edp: Add set_mode op for configuring
- eDP/DP submode
-Content-Language: en-US
-To: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Johan Hovold <johan@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
-References: <20240216-x1e80100-phy-edp-compatible-refactor-v4-0-c07fd1a52186@linaro.org>
- <20240216-x1e80100-phy-edp-compatible-refactor-v4-2-c07fd1a52186@linaro.org>
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
- xsFNBF9ALYUBEADWAhxdTBWrwAgDQQzc1O/bJ5O7b6cXYxwbBd9xKP7MICh5YA0DcCjJSOum
- BB/OmIWU6X+LZW6P88ZmHe+KeyABLMP5s1tJNK1j4ntT7mECcWZDzafPWF4F6m4WJOG27kTJ
- HGWdmtO+RvadOVi6CoUDqALsmfS3MUG5Pj2Ne9+0jRg4hEnB92AyF9rW2G3qisFcwPgvatt7
- TXD5E38mLyOPOUyXNj9XpDbt1hNwKQfiidmPh5e7VNAWRnW1iCMMoKqzM1Anzq7e5Afyeifz
- zRcQPLaqrPjnKqZGL2BKQSZDh6NkI5ZLRhhHQf61fkWcUpTp1oDC6jWVfT7hwRVIQLrrNj9G
- MpPzrlN4YuAqKeIer1FMt8cq64ifgTzxHzXsMcUdclzq2LTk2RXaPl6Jg/IXWqUClJHbamSk
- t1bfif3SnmhA6TiNvEpDKPiT3IDs42THU6ygslrBxyROQPWLI9IL1y8S6RtEh8H+NZQWZNzm
- UQ3imZirlPjxZtvz1BtnnBWS06e7x/UEAguj7VHCuymVgpl2Za17d1jj81YN5Rp5L9GXxkV1
- aUEwONM3eCI3qcYm5JNc5X+JthZOWsbIPSC1Rhxz3JmWIwP1udr5E3oNRe9u2LIEq+wH/toH
- kpPDhTeMkvt4KfE5m5ercid9+ZXAqoaYLUL4HCEw+HW0DXcKDwARAQABzShLb25yYWQgRHli
- Y2lvIDxrb25yYWQuZHliY2lvQGxpbmFyby5vcmc+wsGOBBMBCAA4FiEEU24if9oCL2zdAAQV
- R4cBcg5dfFgFAmQ5bqwCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQR4cBcg5dfFjO
- BQ//YQV6fkbqQCceYebGg6TiisWCy8LG77zV7DB0VMIWJv7Km7Sz0QQrHQVzhEr3trNenZrf
- yy+o2tQOF2biICzbLM8oyQPY8B///KJTWI2khoB8IJSJq3kNG68NjPg2vkP6CMltC/X3ohAo
- xL2UgwN5vj74QnlNneOjc0vGbtA7zURNhTz5P/YuTudCqcAbxJkbqZM4WymjQhe0XgwHLkiH
- 5LHSZ31MRKp/+4Kqs4DTXMctc7vFhtUdmatAExDKw8oEz5NbskKbW+qHjW1XUcUIrxRr667V
- GWH6MkVceT9ZBrtLoSzMLYaQXvi3sSAup0qiJiBYszc/VOu3RbIpNLRcXN3KYuxdQAptacTE
- mA+5+4Y4DfC3rUSun+hWLDeac9z9jjHm5rE998OqZnOU9aztbd6zQG5VL6EKgsVXAZD4D3RP
- x1NaAjdA3MD06eyvbOWiA5NSzIcC8UIQvgx09xm7dThCuQYJR4Yxjd+9JPJHI6apzNZpDGvQ
- BBZzvwxV6L1CojUEpnilmMG1ZOTstktWpNzw3G2Gis0XihDUef0MWVsQYJAl0wfiv/0By+XK
- mm2zRR+l/dnzxnlbgJ5pO0imC2w0TVxLkAp0eo0LHw619finad2u6UPQAkZ4oj++iIGrJkt5
- Lkn2XgB+IW8ESflz6nDY3b5KQRF8Z6XLP0+IEdLOOARkOW7yEgorBgEEAZdVAQUBAQdAwmUx
- xrbSCx2ksDxz7rFFGX1KmTkdRtcgC6F3NfuNYkYDAQgHwsF2BBgBCAAgFiEEU24if9oCL2zd
- AAQVR4cBcg5dfFgFAmQ5bvICGwwACgkQR4cBcg5dfFju1Q//Xta1ShwL0MLSC1KL1lXGXeRM
- 8arzfyiB5wJ9tb9U/nZvhhdfilEDLe0jKJY0RJErbdRHsalwQCrtq/1ewQpMpsRxXzAjgfRN
- jc4tgxRWmI+aVTzSRpywNahzZBT695hMz81cVZJoZzaV0KaMTlSnBkrviPz1nIGHYCHJxF9r
- cIu0GSIyUjZ/7xslxdvjpLth16H27JCWDzDqIQMtg61063gNyEyWgt1qRSaK14JIH/DoYRfn
- jfFQSC8bffFjat7BQGFz4ZpRavkMUFuDirn5Tf28oc5ebe2cIHp4/kajTx/7JOxWZ80U70mA
- cBgEeYSrYYnX+UJsSxpzLc/0sT1eRJDEhI4XIQM4ClIzpsCIN5HnVF76UQXh3a9zpwh3dk8i
- bhN/URmCOTH+LHNJYN/MxY8wuukq877DWB7k86pBs5IDLAXmW8v3gIDWyIcgYqb2v8QO2Mqx
- YMqL7UZxVLul4/JbllsQB8F/fNI8AfttmAQL9cwo6C8yDTXKdho920W4WUR9k8NT/OBqWSyk
- bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
- nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
- izWDgYvmBE8=
-In-Reply-To: <20240216-x1e80100-phy-edp-compatible-refactor-v4-2-c07fd1a52186@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <Zc76d4B4hjTC3xum@matsya>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240216_053827_058483_896622C5 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20240216_065635_258129_18FC90A2 
+X-CRM114-Status: GOOD (  15.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,33 +93,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16.02.2024 14:02, Abel Vesa wrote:
-> Future platforms should not use different compatibles to differentiate
-> between eDP and DP mode. Instead, they should use a single compatible as
-> the IP block is the same. It will be the job of the controller to set the
-> submode of the PHY accordingly.
+On Fri, Feb 16, 2024 at 11:32:31AM +0530, Vinod Koul wrote:
+> On 15-02-24, 17:43, Andy Shevchenko wrote:
+> > On Thu, Feb 15, 2024 at 04:17:53PM +0100, Thomas Richard wrote:
+
+...
+
+> > (Side note, as this can be done later)
+> > 
+> > >  	if (rate >= 100000000)
+> > 
+> > > +		if (rate >= 100000000)
+> > 
+> > > +	if (rate >= 100000000)
+> > 
+> > I would make local definition and use it, we may get the global one as there
+> > are users.
+> > 
+> > #define HZ_PER_GHZ	1000000000UL
 > 
-> The existing platforms will remain with separate compatibles for each
-> mode.
-> 
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
+> Better to define as:
+> #define HZ_PER_GHZ 1 * GIGA
 
-[...]
+(with parentheses)
 
->  
-> +static int qcom_edp_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	struct qcom_edp *edp = phy_get_drvdata(phy);
-> +
-> +	if (mode != PHY_MODE_DP)
-> +		return -EINVAL;
-> +
-> +	edp->is_edp = submode == PHY_SUBMODE_EDP ? true : false;
+Maybe here, but when it appears in units.h it will be defined as I wrote
+to be aligned with the rest of definitions.
 
-it's bool-converted even without the ternary operator
+-- 
+With Best Regards,
+Andy Shevchenko
 
-Konrad
+
 
 -- 
 linux-phy mailing list
