@@ -4,49 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFC6FC48260
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 07:36:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D5ECC48BEB
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 07:52:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7S1Zk1HvpzoYnpGnGReAyioGWGlpyaROifQaQRGjYM8=; b=VZ0sdpKKBPKhsg
-	v1Sg5fSVd6jQ4Dxa1E90qfRYTVTceevX58rtc1ynoZgpeB9L2fx8ioUJQg3Xc++rCLxT13W+Fem19
-	E4UqtRXhEMoqrt1Uw1jIAKhgn5pN2m9ea8RbgLKF1/nRJarU4cne0ahRo5VL9n4GML+ZG/3foj0hk
-	kaQF1mJy7rIephf1KQqSjgUNwyDTrmeNEP0ssB6p1Jbpe0YB4ZvnWM1X9pnuIyz/cxsZuagQVga6A
-	kITor74Akh2ACDAZIBdKvkp0+luWCeI1lz1g2wO3HgH/KVa4NhhscivTmlP0WYRm5Xt+NLVDcYWnR
-	hSnZQgDcJaFNeTATMx6g==;
+	List-Owner; bh=FPob7rQehdUYmyv242QFVoOXi1M0Batsu6J4SELtu4s=; b=xdmorFlGLL6LKK
+	3gYL1o1J5Nc3mq8SBB+plQNCgtvV1/ibdb15T7NEU1ZeTQIseqN/tx1Bh7kgJLXzx3XeM20M9+/M9
+	tox22yvTOpAwbTeqqYWPoCm2bAuU6s3WbqWhsunwSIeXAPkjZngRAEXWF7e6910il3UTjgi5EKThY
+	T1BFwp4K0f3hgL4ZANn2mhwPk3X8d9b7itY1kw9+VYxCHm1gCAU+Nv8VCePKgSmHSEY1geVE8aIDD
+	Ih2WMDwnEHrAW7dqdz7IsEd53Y1QGnxSedgHPjcuANCQp1+nSk7vcaMuU2TlZcLZ0bSIv0chI2loP
+	LhIl+5a7cSDXguwgBXGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rasmD-00000001OSU-1ysW;
-	Fri, 16 Feb 2024 07:36:53 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1rat1K-00000001QSD-0DhO;
+	Fri, 16 Feb 2024 07:52:30 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rasm9-00000001ORm-0CNK;
-	Fri, 16 Feb 2024 07:36:51 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 4FD8924000B;
-	Fri, 16 Feb 2024 07:36:42 +0000 (UTC)
+	id 1rat1G-00000001QQy-47Tt;
+	Fri, 16 Feb 2024 07:52:28 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 6DA131C0005;
+	Fri, 16 Feb 2024 07:52:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708069005;
+	t=1708069942;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=OceffZlD1lIRrksGFR8T20wExx5FlLvt5rO7c2PaCW0=;
-	b=GTRnjZLfmc2MBgiM1Zf60+hsxmEgvJSAgGfpD3EUcdMGy67ksahC4u4bWw6gKe4BQLm9hS
-	LSV9/i/SxXWbTXIqhaVJny94dwU7J7Isx8fOfAUKJFhgAgoCYOrmGsMTESGCeDB6JTGFIx
-	q5CjZxup1yTajZRgaH2xgPhKjnLk2R2zInVEGgxJpobpIO5whKDl979ttmSKs20EC9Fekb
-	QbuTDbEJbLinNt/aR2Gd7PolhTTx71myPFc0Qrt8WHYyWBLbc6YElGLJ1iqsVEV3vjBB/k
-	Cm9HzvOLZsKgKefbLRhMbBSa+TJXzKMTB3VgMlVA5smCpuKtnfYMNLZP2B8axw==
-Message-ID: <e009fda0-3dd1-4834-8dce-73756c1e32f6@bootlin.com>
-Date: Fri, 16 Feb 2024 08:36:41 +0100
+	bh=VVeiECxEmwSLffzbtwy2YG4CyEm4W66/wRiP637DW7E=;
+	b=psvjRJ16HrEu/GqFLLL7wMMfKBPT08MCl4ar0FAhJ0EKI6MP0fdlU9/TMRf2aJcPbYuHTT
+	Y/XaWJ5OWcn2Ggc41n+8jK67j9PIuW99NYEcgM6cqWyWbdDssXoZ47Z7/Z2Iy53x05h9Eb
+	B3p8wByuOej2VhFVfrmVTvV/uJNYxSvZtxPhi08Uq7ysqNY/mn4KsAxzwT0Vnpk33SKyAH
+	9YgXPL9T+KdVxh3hEjjdo9kwWrADnu9szuZSYl+ofMyLx2D0BOytKOrgIrdNHN1q9n9t2b
+	+MsYZsZV4HOyhZnFWK6rQfV+wPw8aelkKg/RHraSCGZQOpQOZcJmL1zXzqpfMA==
+Message-ID: <f1d2c9b0-238d-4b09-8212-62e00a2192b2@bootlin.com>
+Date: Fri, 16 Feb 2024 08:52:17 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 14/18] phy: cadence-torrent: add suspend and resume
- support
-Content-Language: en-US
+Subject: Re: [PATCH v3 05/18] mux: add mux_chip_resume() function
 To: Andy Shevchenko <andy@kernel.org>
 Cc: Linus Walleij <linus.walleij@linaro.org>,
  Bartosz Golaszewski <brgl@bgdev.pl>, Tony Lindgren <tony@atomide.com>,
@@ -65,14 +63,14 @@ Cc: Linus Walleij <linus.walleij@linaro.org>,
  linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
  theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
- <20240102-j7200-pcie-s2r-v3-14-5c2e4a3fac1f@bootlin.com>
- <Zc4x7kvFfBI2sb_E@smile.fi.intel.com>
+ <20240102-j7200-pcie-s2r-v3-5-5c2e4a3fac1f@bootlin.com>
+ <Zc4t82V9czlEqamL@smile.fi.intel.com>
 From: Thomas Richard <thomas.richard@bootlin.com>
-In-Reply-To: <Zc4x7kvFfBI2sb_E@smile.fi.intel.com>
+In-Reply-To: <Zc4t82V9czlEqamL@smile.fi.intel.com>
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_233649_527641_2C2816D9 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20240215_235227_191379_A4F01718 
+X-CRM114-Status: GOOD (  18.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,66 +87,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/15/24 16:46, Andy Shevchenko wrote:
->> +static int cdns_torrent_phy_suspend_noirq(struct device *dev)
->> +{
->> +	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
->> +	int i;
+On 2/15/24 16:29, Andy Shevchenko wrote:
+> On Thu, Feb 15, 2024 at 04:17:50PM +0100, Thomas Richard wrote:
+>> The mux_chip_resume() function restores a mux_chip using the cached state
+>> of each mux.
 > 
-> Why signed?
-
-In the for loop below, the i variable is compared to
-cdns_phy->nsubnodes, which is an int.
-
-https://elixir.bootlin.com/linux/latest/source/drivers/phy/cadence/phy-cadence-torrent.c#L360
-
+> ...
 > 
->> +	reset_control_assert(cdns_phy->phy_rst);
->> +	reset_control_assert(cdns_phy->apb_rst);
->> +	for (i = 0; i < cdns_phy->nsubnodes; i++)
->> +		reset_control_assert(cdns_phy->phys[i].lnk_rst);
->> +
->> +	if (cdns_phy->already_configured)
->> +		cdns_phy->already_configured = 0;
->> +	else
->> +		clk_disable_unprepare(cdns_phy->clk);
->> +
->> +	return 0;
->> +}
->> +
->> +static int cdns_torrent_phy_resume_noirq(struct device *dev)
+>> +int mux_chip_resume(struct mux_chip *mux_chip)
 >> +{
->> +	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
->> +	int node = cdns_phy->nsubnodes;
+>> +	int global_ret = 0;
 >> +	int ret, i;
+>> +
+>> +	for (i = 0; i < mux_chip->controllers; ++i) {
+>> +		struct mux_control *mux = &mux_chip->mux[i];
+>> +
+>> +		if (mux->cached_state == MUX_CACHE_UNKNOWN)
+>> +			continue;
+>> +
+>> +		ret = mux_control_set(mux, mux->cached_state);
+>> +		if (ret < 0) {
+>> +			dev_err(&mux_chip->dev, "unable to restore state\n");
+>> +			if (!global_ret)
+>> +				global_ret = ret;
 > 
-> Ditto>
+> Hmm... This will record the first error and continue.
 
-Same reason
+In the v2 we talked about this with Peter Rosin.
 
->> +	ret = cdns_torrent_clk(cdns_phy);
->> +	if (ret)
->> +		goto clk_cleanup;
->> +
->> +	/* Enable APB */
->> +	reset_control_deassert(cdns_phy->apb_rst);
->> +
->> +	if (cdns_phy->nsubnodes > 1) {
->> +		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
->> +		if (ret)
->> +			goto put_lnk_rst;
+In fact, in the v1 (mux_chip_resume() didn't exists yet, everything was
+done in the mmio driver) I had the same behavior: try to restore all
+muxes and in case of error restore the first one.
+
+I don't know what is the right solution. I just restored the behavior I
+had in v1.
+
+> 
+>> +		}
 >> +	}
->> +
->> +	return 0;
->> +
->> +put_lnk_rst:
->> +	for (i = 0; i < node; i++)
->> +		reset_control_assert(cdns_phy->phys[i].lnk_rst);
->> +	reset_control_assert(cdns_phy->apb_rst);
->> +	clk_disable_unprepare(cdns_phy->clk);
->> +clk_cleanup:
->> +	cdns_torrent_clk_cleanup(cdns_phy);
->> +	return ret;
+>> +	return global_ret;
+> 
+> So here, we actually will get stale data in case there are > 1 failures.
+
+Yes, indeed. But we will have an error message for each failure.
+
+> 
 >> +}
 > 
 -- 
