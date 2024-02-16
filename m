@@ -4,87 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA9FCC48260
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 11:47:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C373C48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 11:57:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0pVZwg8mlGstufnML+OPHghImrkd6u9E3t9qQaqjuo=; b=xlyFcwGoepRb75
-	IlnGfVET2t9IZwtZR5zWMFZ5lkZ39gjJK/fFBpZvzHBLihwruKG+reT88EcXbqsXhnptSq18hMh+u
-	0AlbJM7cUsbC0hoOAEHiJBY5BYSh9Vn9SNA9ELrc51lxJ6SJbqb9i2Fzm+fcQhkeJRUwHfB9sagtq
-	VFJOPmNxfUn2nz5AO8qhXjbv4WtnO0F4UxWJIEid+GVfmzQ9VPn8lBBo9P0vVTZpbExOlqqMc/CvP
-	gsx1HK4C2PSgnJASoyHDaW/t106ZA3AVeMxU9Sz/USYu4CHvpOvrd+C+t33tq60P7NqFimlEkxXM1
-	W4BvhQECf/yT23Ie343Q==;
+	List-Owner; bh=g1amem9nC2klpeolYzLgCOoEzrS/SwS1vNTvXdYSquw=; b=UbJltHlubOXjV/
+	qrLiWVDRBOgOZRcm7jfeAIhmQIjA2w1dyrOd9I4QYgJglZSYX1uCnnr2gTkeNXZ4xVOsDhld/DeBO
+	lvCAiO7BkwU+bVBTQ58zMAt+2FtWcO3rrk0irAb6zW9V9y/8vSPwHhwyWgsZZVWrlBEE2rmcfPgG0
+	Wn1/K7Yzt9klMj6gih0cQEC7ipwbW6a8t2VMnpbBEJkAxeTBLASwoX+sr8QD4HPl9BgPW9P8uxYd6
+	boig2JcA165SBj71KEptaQYbLxoLcPty//qH0ktn2dDh1noMmREYqEYXDzb9LfYAFFd7JFPdvWg5n
+	gESJ92a62Ef2XNQEnGhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rawgR-00000002CbX-1uNW;
-	Fri, 16 Feb 2024 11:47:11 +0000
-Received: from mail-yw1-f172.google.com ([209.85.128.172])
+	id 1rawqs-00000002DqJ-0LIo;
+	Fri, 16 Feb 2024 11:57:58 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rawgN-00000002CaZ-1vSl;
-	Fri, 16 Feb 2024 11:47:08 +0000
-Received: by mail-yw1-f172.google.com with SMTP id 00721157ae682-607d633381fso5611997b3.1;
-        Fri, 16 Feb 2024 03:47:06 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708084023; x=1708688823;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=lQ7tnAKFUkQOj4UEtgJN4h/6u4fraBJnTp0nHjLT6cQ=;
-        b=QM7tcCQtrlCtYqVwDmaS4MPBAo4NxlY82MjRAJ0452GV1D4iWhEFfkujeehPuXcDZk
-         B8kDMyQdAGCThybw8yNIYoftV7b74du4Y6Y0ofRriWB2aVYIHliAt78nxTH7QJvco7cF
-         N3TaMiZXtKBv6OBw7DbhTUqK5j/CSoLd+KseawUWNsPudfTfqj6/U9KJP22hRwA1+n0Q
-         l9azctc9xXSbd0kJ/3oe9p+GNdxlila4njlN8+OMMPu/f9BRUn8bJAiFU3aRhFqe+ZcK
-         fMICKFmpFmHal1JYk1slL3FHgu44ZWUwa91I6ADxD7Qs9iLZo1/w6M1t9zsfOwpeAVHU
-         UL2A==
-X-Forwarded-Encrypted: i=1; AJvYcCVUo5JV4QCD+u+wIBndCXICTbULuSgD+ti2vzRmo/aJdYCSl47xwFvtx4wufFDNlFlWW/xjSHL3WckJnayulvp9mzmBe/k28F1zNAd8MNROtg6vdw/ahcv1rNnRacCdoQPhNTMWb5TtKXQx/SfwVyXlBcyCQcMqt+HRpTQTW3xgV0ZC1BATHYMpM4RRAwqRcvMyJx2xCbU=
-X-Gm-Message-State: AOJu0YxcPGSrgSX6lUTeXP6S2yKfQcX/Gf/ax+YG7aLmgnEVoZS6/gLN
-	hBdhsiGvJAw3Ui+yIjM5DEWpDuwdSTl7kZOM9FUAtkFkdaPyLR9P2gMomWSiJiU=
-X-Google-Smtp-Source: AGHT+IFwBZza/xkw/bqBxnpzNr+1Jfvl1UQUeI9Xp/yOSRNqMhXZV9vweCJWtNa+l1QTlOo8MkAvYA==
-X-Received: by 2002:a81:914a:0:b0:604:f681:a1 with SMTP id i71-20020a81914a000000b00604f68100a1mr4922904ywg.16.1708084023131;
-        Fri, 16 Feb 2024 03:47:03 -0800 (PST)
-Received: from mail-yb1-f173.google.com (mail-yb1-f173.google.com. [209.85.219.173])
-        by smtp.gmail.com with ESMTPSA id o124-20020a817382000000b006078781907bsm303582ywc.139.2024.02.16.03.47.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 16 Feb 2024 03:47:01 -0800 (PST)
-Received: by mail-yb1-f173.google.com with SMTP id 3f1490d57ef6-dcc80d6006aso689228276.0;
-        Fri, 16 Feb 2024 03:47:01 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCU37D4ST3qi3UwNtE05fwDt9tYr538VIuWrleE/6f8tss3rE4wEUViNQTLtPvB2kgJwjIktVtGyAlpK6tLe7ymyYcHWV0aZQ7EdDQxK899YJB8cXNFKjhcO61hduvl/6j1DctSg4MzRubvbMlwGTvuwcuEMeVfK0uzrPrA5Afl9Pd8JMOPHVZVJFumlXjoX+GfkDBr4Pro=
-X-Received: by 2002:a5b:708:0:b0:dc6:cc35:35e9 with SMTP id
- g8-20020a5b0708000000b00dc6cc3535e9mr4412013ybq.35.1708084021189; Fri, 16 Feb
- 2024 03:47:01 -0800 (PST)
+	id 1rawqp-00000002Dpj-3JCI
+	for linux-phy@lists.infradead.org;
+	Fri, 16 Feb 2024 11:57:57 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id A29E1CE2AF7;
+	Fri, 16 Feb 2024 11:57:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 216A0C433C7;
+	Fri, 16 Feb 2024 11:57:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1708084672;
+	bh=q54b+r3HTYV9zIDF4ItH8BvDFz8WwM/tv+Owy9PZbIg=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=DKJUShQbW7EA2ta76eXSj7hhZ/wy/T+FV+Td7iIzct1+HTFwsQWJ1vFuG28Pv/U2e
+	 M+xbLqzREuC9tOaX1V4b8h033ATTlx5FZM2u8Uxb8xb8fjDnantINpOS3tbbAWNZYM
+	 uaOHAAO6WAj+C1UAUcilUyxF4AHah5EoQaoZVwMUYPKDu2L222ex7KwfhBUNDS+RVN
+	 etBMT6OvXM41ALaYGMYjgJu/tivmd0sPiX2Y8rpbhTkUe54g1w7L9SjnsRPZ0b7cGz
+	 0KJ35BN5fY2GrHs22gm0Ve2oHNX+mhPYc7XVsoqEoOgDqNfGlHFPLSKcTsOQv1kzNT
+	 WtW32GiLK80kQ==
+From: Vinod Koul <vkoul@kernel.org>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org
+In-Reply-To: <20240213133824.2218916-1-dmitry.baryshkov@linaro.org>
+References: <20240213133824.2218916-1-dmitry.baryshkov@linaro.org>
+Subject: Re: [PATCH] phy: qcom-qmp-usb: fix v3 offsets data
+Message-Id: <170808466973.352622.4246974712400834462.b4-ty@kernel.org>
+Date: Fri, 16 Feb 2024 17:27:49 +0530
 MIME-Version: 1.0
-References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 16 Feb 2024 12:46:48 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdXzObEqExtJZpUpXLfCWB5fW9ZhekbbotcxcMrN+uj0Ag@mail.gmail.com>
-Message-ID: <CAMuHMdXzObEqExtJZpUpXLfCWB5fW9ZhekbbotcxcMrN+uj0Ag@mail.gmail.com>
-Subject: Re: [PATCH] clk: constify the of_phandle_args argument of of_clk_provider
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
-	Sudeep Holla <sudeep.holla@arm.com>, Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>, 
-	Nishanth Menon <nm@ti.com>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Thierry Reding <thierry.reding@gmail.com>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Linus Walleij <linus.walleij@linaro.org>, 
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
-	Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Russell King <linux@armlinux.org.uk>, 
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Mark Brown <broonie@kernel.org>, 
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, linux-clk@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com, 
-	NXP Linux Team <linux-imx@nxp.com>, linux-amlogic@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-tegra@vger.kernel.org, linux-omap@vger.kernel.org, 
-	linux-media@vger.kernel.org, linux-phy@lists.infradead.org, 
-	alsa-devel@alsa-project.org, linux-sound@vger.kernel.org
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240216_034707_522484_9209E6FE 
-X-CRM114-Status: GOOD (  17.61  )
+X-CRM114-CacheID: sfid-20240216_035756_034543_9BE1893C 
+X-CRM114-Status: UNSURE (   6.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,30 +71,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBGZWIgOCwgMjAyNCBhdCA1OjM34oCvUE0gS3J6eXN6dG9mIEtvemxvd3NraQo8a3J6
-eXN6dG9mLmtvemxvd3NraUBsaW5hcm8ub3JnPiB3cm90ZToKPiBOb25lIG9mIHRoZSBpbXBsZW1l
-bnRhdGlvbnMgb2YgdGhlIGdldCgpIGFuZCBnZXRfaHcoKSBjYWxsYmFja3Mgb2YKPiAic3RydWN0
-IG9mX2Nsa19wcm92aWRlciIgbW9kaWZ5IHRoZSBjb250ZW50cyBvZiByZWNlaXZlZCBvZl9waGFu
-ZGxlX2FyZ3MKPiBwb2ludGVyLiAgVGhleSB0cmVhdCBpdCBhcyByZWFkLW9ubHkgdmFyaWFibGUg
-dXNlZCB0byBmaW5kIHRoZSBjbG9jayB0bwo+IHJldHVybi4gIE1ha2Ugb2J2aW91cyB0aGF0IGlt
-cGxlbWVudGF0aW9ucyBhcmUgbm90IHN1cHBvc2VkIHRvIG1vZGlmeQo+IHRoZSBvZl9waGFuZGxl
-X2FyZ3MsIGJ5IG1ha2luZyBpdCBhIHBvaW50ZXIgdG8gY29uc3QuCj4KPiBTaWduZWQtb2ZmLWJ5
-OiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnp5c3p0b2Yua296bG93c2tpQGxpbmFyby5vcmc+Cgo+
-ICBkcml2ZXJzL2Nsay9yZW5lc2FzL3I5YTA2ZzAzMi1jbG9ja3MuYyAgICAgICAgfCAgMiArLQo+
-ICBkcml2ZXJzL2Nsay9yZW5lc2FzL3JlbmVzYXMtY3BnLW1zc3IuYyAgICAgICAgfCAgMiArLQo+
-ICBkcml2ZXJzL2Nsay9yZW5lc2FzL3J6ZzJsLWNwZy5jICAgICAgICAgICAgICAgfCAgMiArLQoK
-UmV2aWV3ZWQtYnk6IEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2VlcnQrcmVuZXNhc0BnbGlkZXIuYmU+
-CkFja2VkLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgoK
-R3J7b2V0amUsZWV0aW5nfXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdl
-ZXJ0IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0g
-Z2VlcnRAbGludXgtbTY4ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNo
-bmljYWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2lu
-ZyB0byBqb3VybmFsaXN0cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlr
-ZSB0aGF0LgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRz
-CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+On Tue, 13 Feb 2024 15:38:24 +0200, Dmitry Baryshkov wrote:
+> The MSM8996 platform has registers setup different to the rest of QMP v3
+> USB platforms. It has PCS region at 0x600 and no PCS_MISC region, while
+> other platforms have PCS region at 0x800 and PCS_MISC at 0x600.  This
+> results in the malfunctioning USB host on some of the platforms.  The
+> commit f74c35b630d4 ("phy: qcom-qmp-usb: fix register offsets for
+> ipq8074/ipq6018") fixed the issue for IPQ platforms, but missed the
+> SDM845 which has the same register layout.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: qcom-qmp-usb: fix v3 offsets data
+      commit: d4c08d8b23b22807c712208cd05cb047e92e7672
+
+Best regards,
+-- 
+~Vinod
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
