@@ -4,75 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88E46C48260
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 08:00:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A98EFC48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 09:05:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ibmUZvJ6yY17DLf1rkHQI78lGwNysxoTNXnuY/fXSbk=; b=2597Kg1wdZwPIL
-	4lDO2KmuiR23e8icCRZ1Ly77W0dfcpPi92yp3zP1gTag11tRBrfh2oAh7va0qGJ/BRMgfY5nm7DGr
-	s0OWEgO+6upw/T6xG5A/XhXzfbuUyVwaTgghTWmYVGpVBl8KSCZ8EBL/QQBC6ITY6JDJAq0C6No1e
-	DlW0mWBwQyTviLTwwEtcHCrBUQMbHtojXQm+jqhu81FTECHrA/pYQClYbUsmCK7smswjeFqhhZca6
-	e+xvaYNydzddc4LSsP1lUAntYYSwEl8LPodPCTM6mnXyEye+U7OmwtRHwI6aR3ANoN7aeJx1RCPQ2
-	3kh6l9ZF4omrRpyIhgww==;
+	List-Owner; bh=Y10jD7MqhJD/wa+pHlmnHeqzfDEi1FTRcs+9lCChSHs=; b=hRrovbS7uBmk6I
+	rUgSUB8K0/V7UFUbELoCpBpYjFDzLttTAJVWiF+4wl01gMgpeHlPziubbB155h0JTCCSP87YZc0w4
+	oaihOjcKYQbyv/3RUTyWCZ6aADtApP+KGdRIVqaeCgQFusiillq/mz/uuoa/wxZSn0MKVY6NnPkao
+	7ObXUtzyhdfw4dkxuGCvT3p3UbvCDDGH1CDVizEP6qDn0yvMdO4Th67MpBLWTBEhBFRWV3Q46O8AT
+	YQ3ReEBmGbrBuZIZ3HFrFo1GUuYSWOsaLl/Znk8JAtlzS0hLQJs4Jn687rBqJGDCEmhS0CeaNeEvE
+	2ZEszOps4EvdGvsxLuhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rat8a-00000001Rwi-12dD;
-	Fri, 16 Feb 2024 08:00:00 +0000
-Received: from relay6-d.mail.gandi.net ([2001:4b98:dc4:8::226])
+	id 1rau9i-00000001fIn-1XC9;
+	Fri, 16 Feb 2024 09:05:14 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rat8V-00000001RvT-3Vp9;
-	Fri, 16 Feb 2024 07:59:57 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id F28A5C0006;
-	Fri, 16 Feb 2024 07:59:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708070391;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=1hUYFR1qvUKlxyuPUPNfEnuK9T+rqDJlWXvdCBwvEVg=;
-	b=lo+p/qBQMhPwepXZCYApgvlfDkOGsNpT+Pg8es5xwAOU+wWyXLhmUg5dZfc6wF7Q6H/ek8
-	aAGXOM2eE2CfgBAWb5ap2l6fvCLgUgAqH+OkpY3GFhgJWqXAbBgLeZsj2YVNU8tVzeuweY
-	wcNY+uaQu3esHlFqNhwVcl8RzO/E9LGl6WVA6d/I7NwXnITuv3757IoMjcUsatikA7D2kD
-	WnmVYAnPXvem+lm5GHe3eQS549Bx1IOzsk/CXIfyt1xl5Hu3NzoFQQxHzLRuw9PHIsZqzE
-	UCy2/ADPKQj9DTCvWyq7WDQGOQSkABK4Q18akdWYKrZirdqYJoyCA+KC+p47lg==
-Message-ID: <78add459-a96a-46c6-83ff-e2657d4d3db4@bootlin.com>
-Date: Fri, 16 Feb 2024 08:59:47 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 02/18] pinctrl: pinctrl-single: remove dead code in
- suspend() and resume() callbacks
-To: Andy Shevchenko <andy@kernel.org>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>, Tony Lindgren <tony@atomide.com>,
- Haojian Zhuang <haojian.zhuang@linaro.org>, Vignesh R <vigneshr@ti.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti
- <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
- theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+	id 1rau9e-00000001fH2-26B5;
+	Fri, 16 Feb 2024 09:05:11 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 41G94eJE042556;
+	Fri, 16 Feb 2024 03:04:40 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1708074280;
+	bh=qKnEBzEkahRZQGyLlG5caVJAX0ujkHEkHCnhmcHnJss=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=Ga1ELh13Fmc4SCWCtqOcJOvkxzdlZcoRb+2I2ZtdsBOn+CHXoQZBCTZqXQO27M3GE
+	 m+QAAFnGAOnJiRL3AGE3v/YrTKt/Tddb7d18CVJad8VrRKNSSCBFxqe1xJTGhfaXX1
+	 N+K101UbOoQH2ziHXxgx59QU6QLKo1rC7coWs7q8=
+Received: from DFLE107.ent.ti.com (dfle107.ent.ti.com [10.64.6.28])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 41G94ecD023131
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Fri, 16 Feb 2024 03:04:40 -0600
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Fri, 16
+ Feb 2024 03:04:40 -0600
+Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Fri, 16 Feb 2024 03:04:40 -0600
+Received: from localhost (uda0492258.dhcp.ti.com [172.24.227.9])
+	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 41G94drM059981;
+	Fri, 16 Feb 2024 03:04:40 -0600
+Date: Fri, 16 Feb 2024 14:34:39 +0530
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Andy Shevchenko <andy@kernel.org>,
+        Thomas Richard
+	<thomas.richard@bootlin.com>,
+        Linus Walleij <linus.walleij@linaro.org>,
+        Bartosz Golaszewski <brgl@bgdev.pl>, Tony Lindgren <tony@atomide.com>,
+        Haojian Zhuang <haojian.zhuang@linaro.org>,
+        Vignesh R <vigneshr@ti.com>, Aaro
+ Koskinen <aaro.koskinen@iki.fi>,
+        Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+        Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
+        Kishon
+ Vijay Abraham I <kishon@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Krzysztof
+ =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        <linux-gpio@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
+        <linux-i2c@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-pci@vger.kernel.org>, <gregory.clement@bootlin.com>,
+        <theo.lebrun@bootlin.com>, <thomas.petazzoni@bootlin.com>,
+        <u-kumar1@ti.com>, <s-vadapalli@ti.com>
+Subject: Re: [PATCH v3 08/18] phy: ti: phy-j721e-wiz: split wiz_clock_init()
+ function
+Message-ID: <14429802-b4d8-4a3e-88ea-a9fc55d2251c@ti.com>
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
- <20240102-j7200-pcie-s2r-v3-2-5c2e4a3fac1f@bootlin.com>
- <Zc4tedAhqYX3bQcw@smile.fi.intel.com>
-Content-Language: en-US
-From: Thomas Richard <thomas.richard@bootlin.com>
-In-Reply-To: <Zc4tedAhqYX3bQcw@smile.fi.intel.com>
-X-GND-Sasl: thomas.richard@bootlin.com
+ <20240102-j7200-pcie-s2r-v3-8-5c2e4a3fac1f@bootlin.com>
+ <Zc4xJtLl3zo_YrBC@smile.fi.intel.com>
+ <Zc76d4B4hjTC3xum@matsya>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <Zc76d4B4hjTC3xum@matsya>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_235956_051108_858CDF52 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20240216_010510_640554_7B4CE59A 
+X-CRM114-Status: GOOD (  17.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,28 +107,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/15/24 16:27, Andy Shevchenko wrote:
-> On Thu, Feb 15, 2024 at 04:17:47PM +0100, Thomas Richard wrote:
->> No need to check the pointer returned by platform_get_drvdata(), as
->> platform_set_drvdata() is called during the probe.
+On 24/02/16 11:32AM, Vinod Koul wrote:
+> On 15-02-24, 17:43, Andy Shevchenko wrote:
+> > On Thu, Feb 15, 2024 at 04:17:53PM +0100, Thomas Richard wrote:
+> > > The wiz_clock_init() function mixes probe and hardware configuration.
+> > > Rename the wiz_clock_init() to wiz_clock_probe() and move the hardware
+> > > configuration part in a new function named wiz_clock_init().
+> > > 
+> > > This hardware configuration sequence must be called during the resume
+> > > stage of the driver.
+> > 
+> > ...
+> > 
+> > (Side note, as this can be done later)
+> > 
+> > >  	if (rate >= 100000000)
+> > 
+> > > +		if (rate >= 100000000)
+> > 
+> > > +	if (rate >= 100000000)
+> > 
+> > I would make local definition and use it, we may get the global one as there
+> > are users.
+> > 
+> > #define HZ_PER_GHZ	1000000000UL
 > 
-> This patch should go _after_ the next one, otherwise the commit message doesn't
-> tell full story and the code change bring a potential regression.
-> 
+> Better to define as:
+> #define HZ_PER_GHZ 1 * GIGA
 
-Hello Andy,
+The variable "rate" is being compared against 100 MHz and not 1 GHz.
+The driver already has the following macros defined:
+#define REF_CLK_19_2MHZ         19200000
+#define REF_CLK_25MHZ           25000000
+#define REF_CLK_100MHZ          100000000
+#define REF_CLK_156_25MHZ       156250000
 
-I'm ok to move this patch after the next one.
-But for my understanding, could you explain me why changing the order is
-important in this case ?
+So would it be acceptable to change it to:
+	if (rate >= REF_CLK_100MHZ)
+instead?
 
 Regards,
-
--- 
-Thomas Richard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
+Siddharth.
 
 -- 
 linux-phy mailing list
