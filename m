@@ -4,58 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05CC5C4829E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Feb 2024 23:12:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6F62C48260
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Feb 2024 06:02:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:To:From:Subject:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=llBnmYTHHmYBZEP5oRB3G4Cj7Za5PEkkQa6AjJ2Pw0o=; b=V99iUDOyKI1jb/wqXZn7Nr2TM1
-	q8cwJ8DfgPpgwcI67ZRkK+NskZcd4xoOC/ML3TERpMhbDHK0y4TMbFFnkc+N1eOXcxlFy/gjwvEvF
-	uV8INhbv5vyE8JPk48nK7mY6kohNrxOutTFa5k+DFtO9gPMQbhRSgVfhs4FwLS99iYP42pVNvX/qT
-	IChaughk7IXTkoSR8muOoWwJy9xXgpWmmEei2iV44iMph2VlvL7nPE0RaPwDPoqn6e/NzdWsLRLe/
-	P2OwGT5TiMTR3+WHCIsqnoBWSBprbsafENS2y3/sf2pge21law8QQ+lUVNEETnrQdmbnkZfTYATNf
-	wWtEpObQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eD7mNaO6iiyzmmOBTCxZRT1FHsHXmPpcRku2JXX7NMk=; b=BHnyvs6kUCwEcw
+	4ikSvkPb0QunFYuOmv75mpXZ96UkePUjAYM+vsimr/ltvTD/9AUj7qEN0zGjbG8V4iiCqc3ul0wys
+	NYNy3VcLbV7Sz+PT8l3fFrLKBwBKnOw/EsvmEZ9/9KPPYF/v+BC/f6g8V1LiWGQb6NxyhRGmXHX/8
+	zh4nm1KXtCiEvjvn/U1Crs84ubueXdbk0XW5EWT3jlJp5fGxuq/En3q5CDw0fqqNCzOQQpo7+OSHF
+	PQz6i/5DY1HfRV88kE1OBLSjKAua7k5dsMECfJWBnbXwuAiP9v46fcRIlbqsB8FQZwSqwVzYXY59q
+	etKuR/6jR/OlcV4FBs5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rakty-00000000Q7p-2Oho;
-	Thu, 15 Feb 2024 23:12:22 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rarJ6-00000001BOt-0wlM;
+	Fri, 16 Feb 2024 06:02:44 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raktu-00000000Q6i-29ZQ;
-	Thu, 15 Feb 2024 23:12:19 +0000
+	id 1rarJ2-00000001BO5-37FT;
+	Fri, 16 Feb 2024 06:02:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id AAF86CE291F;
-	Thu, 15 Feb 2024 23:12:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8FE2C433C7;
-	Thu, 15 Feb 2024 23:12:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 70F0461120;
+	Fri, 16 Feb 2024 06:02:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D6DFC433C7;
+	Fri, 16 Feb 2024 06:02:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1708038734;
-	bh=Eb/9YuG1ExOw9aKA1oqZbr3X02sG3sH9UxVJp/eMEdU=;
-	h=In-Reply-To:References:Subject:From:To:Date:From;
-	b=VKWARMnYNviJPXiOtKuoccPiteYKCHSVFRLfobnKgCAmFe3rC2z0Wd3jsy6VvnDNO
-	 LU9halfyBb8j8Gtgt3x3Yl2qjLDsAaN4XWZY7vP2J42INqR9FJQbRW1OHvIkeGQQFp
-	 uBCYksmhH7HE6OaG4D9ym/b893RmduQl4SpP0JiZwyMF3BNC3fvmpvB1RmIpvsXepi
-	 DfFkHY0/gR6aJRNCjSdzlugiIA0yQlY7txVukxSAYJg5oBs5tW432Y/k7zJ3C35m36
-	 +j4EikR/4v5vFeyHEmEG7BhaHzvhhTsPRPWFIm8wrAx8nLp781+VxGDyfk8VT7NiAg
-	 cIy678urUpZjg==
-Message-ID: <38e7e80f61f7c67c984735cf55c3dfb3.sboyd@kernel.org>
+	s=k20201202; t=1708063356;
+	bh=xLbg9CJsDugebWTcD0p7oHppt3/BIZOhQtv1Tcg/emU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=THXyeRcij7KtomuLH6sUqnXn8UU7L7Hte6T9jzC5fFgVNlU3zQKtDaRdHKmQbcgAN
+	 CRhnLUVsiOag7GJykwVBqAHhbNekbvdJn2iTZr3hWMoippmFXyEWEJXGt6XEtrcA5T
+	 gWtVwASk5StZBaoXwTP1sDuRPOBBYT2w1d1Ubgd4rwjDtL064eHSRhxJ3A3LYwgpRF
+	 AXuNnzln5/R5Frx7J9tRu5PklVyvd7GMXIXtfXEstV29hrLzwnpYCSIvBEq0KuSaSD
+	 6RJEcQBJ4KPZfh8oe5/P6hxicMI/Rw5+2L17q/fcIcbmzsIbNukbmK1OaO6KrkpQsH
+	 xdirAFy6zk3hw==
+Date: Fri, 16 Feb 2024 11:32:31 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Andy Shevchenko <andy@kernel.org>
+Cc: Thomas Richard <thomas.richard@bootlin.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	Tony Lindgren <tony@atomide.com>,
+	Haojian Zhuang <haojian.zhuang@linaro.org>,
+	Vignesh R <vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+	Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+	theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com,
+	u-kumar1@ti.com
+Subject: Re: [PATCH v3 08/18] phy: ti: phy-j721e-wiz: split wiz_clock_init()
+ function
+Message-ID: <Zc76d4B4hjTC3xum@matsya>
+References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
+ <20240102-j7200-pcie-s2r-v3-8-5c2e4a3fac1f@bootlin.com>
+ <Zc4xJtLl3zo_YrBC@smile.fi.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
-References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH] clk: constify the of_phandle_args argument of of_clk_provider
-From: Stephen Boyd <sboyd@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, Jaroslav Kysela <perex@perex.cz>, Jonathan Hunter <jonathanh@nvidia.com>, Konrad Dybcio <konrad.dybcio@linaro.org>, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Linus Walleij <linus.walleij@linaro.org>, Mark Brown <broonie@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>, Michael Turquette <mturquette@baylibre.com>, NXP Linux Team <linux-imx@nxp.com>, Nishanth Menon <nm@ti.com>, Peng Fan <peng.fan@nxp.com>, Russell King <linux@armlinux.org.uk>, Shawn Guo <shawnguo@kernel.org>, Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>, Takashi Iwai <tiwai@suse.com>, Thierry Reding <thierry.reding@gmail.com>, Vinod Koul <vkoul@kernel.org>, alsa-devel@alsa-project.org, linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, linux-omap@vger.kernel.org, linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org, linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org, patches@opensource.cirrus.com
-Date: Thu, 15 Feb 2024 15:12:12 -0800
-User-Agent: alot/0.10
+Content-Disposition: inline
+In-Reply-To: <Zc4xJtLl3zo_YrBC@smile.fi.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_151218_733643_3110E1E4 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240215_220240_848102_8574DF4B 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,18 +91,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Krzysztof Kozlowski (2024-02-08 08:37:10)
-> None of the implementations of the get() and get_hw() callbacks of
-> "struct of_clk_provider" modify the contents of received of_phandle_args
-> pointer.  They treat it as read-only variable used to find the clock to
-> return.  Make obvious that implementations are not supposed to modify
-> the of_phandle_args, by making it a pointer to const.
+On 15-02-24, 17:43, Andy Shevchenko wrote:
+> On Thu, Feb 15, 2024 at 04:17:53PM +0100, Thomas Richard wrote:
+> > The wiz_clock_init() function mixes probe and hardware configuration.
+> > Rename the wiz_clock_init() to wiz_clock_probe() and move the hardware
+> > configuration part in a new function named wiz_clock_init().
+> > 
+> > This hardware configuration sequence must be called during the resume
+> > stage of the driver.
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
+> ...
+> 
+> (Side note, as this can be done later)
+> 
+> >  	if (rate >= 100000000)
+> 
+> > +		if (rate >= 100000000)
+> 
+> > +	if (rate >= 100000000)
+> 
+> I would make local definition and use it, we may get the global one as there
+> are users.
+> 
+> #define HZ_PER_GHZ	1000000000UL
 
-This will almost certainly break the build once it is merged to
-linux-next. What's your plan to merge this?
+Better to define as:
+#define HZ_PER_GHZ 1 * GIGA
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
