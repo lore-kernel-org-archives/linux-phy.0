@@ -4,85 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72739C48BC3
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 10:16:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C8A8C48BC3
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 10:18:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RzCtzRgWZUBCKoiVdLH2dL4Qw0KhLzwjzXC1hPwVKOo=; b=SnR85Mj8FSFbOl
-	9e8fVk3T1iPvEZlSa1SkKngsjPecC3uSRkVeCC6UW0PynqB1oFcZNPnWCQ021yGe9Tn5VwfN7n+oj
-	ulKbBuk/cVOEAnfQwZJCCXZxwJu/dVLdNDsta+h07f2g9Qqfh5xg7kmzjb4zcWhtXEaL8BAxm8+/j
-	Q9GAUtphfc4GyvrFHURzdlGYTwHX3SWhrahPtyfemroxIWFMoRgtiYORjeqTmK+zn62d18detEWan
-	o6EAD/u9/A+6ZpXgs3oOz3C4m/Y2mexQiL0LQ5dACCXlpe0TaVtI1WAas4nWHnzhgAiU9GioDMP9Y
-	NbylnZnO4Nty3iQNlP/g==;
+	List-Owner; bh=yvlhoguoRpMSq8pru8nFCPjKNEkkiAKbRxJlbHqhF8g=; b=Ik8ZE/Bs0NOHgF
+	oxfmSrhQkFR9mAS9lNEliuAkkQrGTrHD5Pf+2c1/UlvHltqTiP0JWwijkSsmLkhtCpd/Y0OxGN83u
+	rvxUuJ4hn7KY6+Nt6ae8lDh/hyd1a155xRLMsYW1UHudpCLuCowEVSPbyKejd3pt0pDJUXLkjmf6o
+	jn6UXVhAFGOj+pUXVgLlrOpnQupjsRBVF2LA6M9rw6obqRkVH6rWctj/kPs+UTx+AIFtFHA+MPcZ6
+	vhEu6ZEJdOdyExjyaJLGIX97J4JAfKBW4FrMJ5pPwRx26yzzBfWMv8Cl1dYEJr+LiKv49HulYw2wV
+	He4YnLKLm/Jq6WKI/6aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbHk5-00000005Kfp-0d5U;
-	Sat, 17 Feb 2024 10:16:21 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rbHlu-00000005L5Y-0D7W;
+	Sat, 17 Feb 2024 10:18:14 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbHk4-00000005KfL-1NoM
-	for linux-phy@bombadil.infradead.org;
-	Sat, 17 Feb 2024 10:16:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=QSht4um5QdxkKEwk9U46YwTYDsntPvBYfxqz99LVvew=; b=EcM1hqxz0NLbewpmAq3MxWIYDQ
-	vVfqY6L+AnPHZ9JVktnbQ8L6aIr37myX6btGxNwBBN65NRWvS4LYW4A/RIwvlVSaKS6GSLkReW2xG
-	siNt2f9OxEkxT2c2fZlzcVPqcBNhb1a+13HjDtfwDsGCsMBCAHXb4mRrjRfAR7SCIShJUaTR4y4zL
-	XIFnuaY3A9y/APOaoea3V4rviVNxggMohp36P724xhvREiNhGYMkBFp5pbPfH0Hw40iS9dHPqasPd
-	luGoBeuK53gc5dIevSTgE6UTn2l2VJetudHqDv44pbKvvKvtwbBJOpoEuugEVQ4EheOpBrNTaE8Kj
-	Xa9ZUFNQ==;
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbHjy-00000000JMb-0zm7
+	id 1rbHls-00000005L4f-1NrN
 	for linux-phy@lists.infradead.org;
-	Sat, 17 Feb 2024 10:16:17 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-51299d29e43so1324968e87.2
-        for <linux-phy@lists.infradead.org>; Sat, 17 Feb 2024 02:16:11 -0800 (PST)
+	Sat, 17 Feb 2024 10:18:13 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-5118d65cf9cso3525825e87.0
+        for <linux-phy@lists.infradead.org>; Sat, 17 Feb 2024 02:18:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708164970; x=1708769770; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1708165090; x=1708769890; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=QSht4um5QdxkKEwk9U46YwTYDsntPvBYfxqz99LVvew=;
-        b=D3n+x1acec7AYuU8Fs3A2c1smLqsrsl8oeo3jLszEgkKUXtfdECAZnA1sF0bPdwpTM
-         KStzOFmR9a6frjPhqY5byk4vFYwmcZSm2Um+NgpeMseoRWmFPeKZHiz7zzx45QulmYGl
-         /Ssr51hzps5t7HN2LHAjqIkR2cWC0oqomHpTsXLaEf9SQxgwCsxu9JzK53UoBc9IgyPo
-         3SX3yc9nneqqItTe3sULGpGIwNcGjpj2egMfOvwRxwIryMMS/qknOBVFXv5aZwf8jkZg
-         2JnL2UgtMsX/mn6mM4gFuoModb4QFY36QxA+m32hPld0YCtV7FWAc8rKX+vLn0M7Xl9D
-         66Sw==
+        bh=G09/RC0saxXkfUZDfkgZ+GKUad7uMZWsR5uXIihK6mM=;
+        b=tElXZSpGrg49jT/HityUpbdRmU+zD4HiY8BoTMtOZiwg6AuMRD5uH0pcPmFa+PBISS
+         3Z4PTE8BQNBQrJxGNFsVvrpbPzwWo/jsHp8s32t+NE2JS4D0H+ZY8xJXwTWsPg8RazpI
+         zSb9HQ9eVPvOByZgXCkW1qpmqs+doGPD0oWEo2oUKNJJ9ez+vEKm5i5tIiZMw5OppUpo
+         eSRZdBgxhtTDhDV0eDhcNbIjEsGMxRg3H45FRXfJNsJKNh7ArU4zRQjXWF1XgImjFKte
+         wUY1CELKk/wdxf5A+Rl7+r9MTJlPZtwc396W8b40pVY95SI/Lvyyol/t6wPYCrmsV0xA
+         BnDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708164970; x=1708769770;
+        d=1e100.net; s=20230601; t=1708165090; x=1708769890;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=QSht4um5QdxkKEwk9U46YwTYDsntPvBYfxqz99LVvew=;
-        b=NjSfzFYv86+8EN/uSvnekoZqUbwbeNT3x9gb7GDlPTEHmNZjAIcVs602duZguZ9KW6
-         QxfKGgxp1lU4+CLgOGKpqCzmWP3PXh1JD/39lCi4Ky/JbT27jTF5ynyFK+/bUcmcZMik
-         R06Nt6os/bf27BmcHZ39jjqF//l+tFoI0daqdaxg48DTgaeVtsTdOxYcdXl6U2gprxL2
-         oge0AqzFXYWl0VcSkbwGC/vL2J3QK1XMnCxjQZTbobDwjyeP94gMFN3TRQO/oknExGS5
-         rMs61Tw4GEJON/G9KWEggWeBBMUyg6pa1PMdR21JKLxJMJgA4SyPKukLV51fvimy2YLr
-         y0yg==
-X-Gm-Message-State: AOJu0YyodFDotjk6yFfTWUFN+QLO4zP9HmlK5n8GH4++Lbx6FF0hDLj3
-	zl9zT+nkG87mcBZKU0U5Zoi9N20gaCWboDtIbWrVDequVIXeg+L9hOvQD2IJ4Cc=
-X-Google-Smtp-Source: AGHT+IFLrQJGZ4VI12ihSlw3Jd/DMgL9mrvE+VrzDKyHCNPqpi8fuvM2A6Rd/Ngj4t4uLF2zc0BAJA==
-X-Received: by 2002:ac2:5f84:0:b0:512:a982:6dc3 with SMTP id r4-20020ac25f84000000b00512a9826dc3mr232769lfe.6.1708164970334;
-        Sat, 17 Feb 2024 02:16:10 -0800 (PST)
+        bh=G09/RC0saxXkfUZDfkgZ+GKUad7uMZWsR5uXIihK6mM=;
+        b=HgY0Vz+jqGyb3h66jc+QV6siFnRMUTbYZZlMW+wcn6teH/ZTbExBNe9Hl6pddLRZVt
+         7NWz8uLZdwttNhsoEjYs0BJp/7zB6cODDm0IyvCXQ5ENzOe+TLJhuFno1i03dnZcCso3
+         QQAuyQaWPpw1Vi7EUXbXFDvL6+KoUNxjJQwcZdp7fuFBv1/qCJG6Fg8ZB4N1lEyHxXlY
+         YRg9lAzEdv6hy4Lmt4J1nfyYRAL443BGBVJh9RMaUJoW+WR6NULCneiln0zhF/wZTQFN
+         a/Ss92YCfIFHhUJ/68O/bKPODGzlmUtYoj6llJ5wLLA43MsU7SRwwBmBt0qLf3cUfkgw
+         j/dg==
+X-Gm-Message-State: AOJu0YwtH6TJoref04h1K0bOcaV4Mf9rBoim37yDj7hwTeKhCj/i0b+a
+	nBO+VEWNfb4/Dx3cjFI8rOUCrB4iov9TcS0pzxNmrpx9oNge3CVv0ehSj80PreM=
+X-Google-Smtp-Source: AGHT+IHA1NlaZbjhGgFUPHrEffiPkB8WtxgE6fa0j0SxzFd5fz+hMv2qphs7IubwiFi34Wy6M+ZpCA==
+X-Received: by 2002:ac2:41d5:0:b0:511:9fd3:b2d5 with SMTP id d21-20020ac241d5000000b005119fd3b2d5mr4695248lfi.67.1708165090255;
+        Sat, 17 Feb 2024 02:18:10 -0800 (PST)
 Received: from [192.168.0.22] ([78.10.207.130])
-        by smtp.gmail.com with ESMTPSA id tl23-20020a170907c31700b00a3da5bf34absm846758ejc.207.2024.02.17.02.16.08
+        by smtp.gmail.com with ESMTPSA id tj1-20020a170907c24100b00a3d35bccdf0sm853812ejc.139.2024.02.17.02.18.08
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 17 Feb 2024 02:16:09 -0800 (PST)
-Message-ID: <55f8815e-fbfc-4587-9edb-bbff6ef84deb@linaro.org>
-Date: Sat, 17 Feb 2024 11:16:08 +0100
+        Sat, 17 Feb 2024 02:18:09 -0800 (PST)
+Message-ID: <dd1f1b28-4bde-4d40-8022-b57d201c70ee@linaro.org>
+Date: Sat, 17 Feb 2024 11:18:08 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 4/4] dt-binding: phy: hisi-inno-usb2: add compatible
- of hisilicon,hi3798mv200-usb2-phy
+Subject: Re: [PATCH RFC 0/4] phy: hisi-inno-phy: add support for
+ hi3798mv200-usb2-phy
 Content-Language: en-US
 To: forbidden405@outlook.com, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
@@ -94,7 +79,6 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
  David Yang <mmyangfl@gmail.com>
 References: <20240216-inno-phy-v1-0-1ab912f0533f@outlook.com>
- <20240216-inno-phy-v1-4-1ab912f0533f@outlook.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -140,10 +124,11 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240216-inno-phy-v1-4-1ab912f0533f@outlook.com>
+In-Reply-To: <20240216-inno-phy-v1-0-1ab912f0533f@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240217_101615_359290_FDE797D0 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20240217_021812_423079_37FD3CC7 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,51 +146,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 16/02/2024 16:21, Yang Xiwen via B4 Relay wrote:
-> From: Yang Xiwen <forbidden405@outlook.com>
+> This should be considered a dirty hack. The proper solution would be
+> extracting write_reg logic to a separate regmap driver. Leaving only
+> "write BIT(2) to address 0x6" to the PHY driver.
 > 
-> It is accessed by direct MMIO, making "ranges" property mandatory for
-> it.
-> 
+> The initial commit is already doing things wrong. The following patches
+> adding hi3798mv100 support is also very confusing. The name of the
+> enumeration "PHY_TYPE_x" is very misleading as if it's the phy which is
+> different across SoCs. But actually it's the bus (i.e. how to write to a
+> given address) which is different, not the PHY.
 
-Please use subject prefixes matching the subsystem. You can get them for
-example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
-your patch is touching.
-
-> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
-> ---
->  .../devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml       | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
-> index 73256eee10f9..d702878b8e6e 100644
-> --- a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
-> @@ -16,6 +16,7 @@ properties:
->        - enum:
->            - hisilicon,hi3798cv200-usb2-phy
->            - hisilicon,hi3798mv100-usb2-phy
-> +          - hisilicon,hi3798mv200-usb2-phy
->        - const: hisilicon,inno-usb2-phy
->  
->    reg:
-> @@ -64,6 +65,15 @@ required:
->    - '#size-cells'
->    - resets
->  
-> +if:
-
-allOf: above.
-
-> +  properties:
-> +    compatible:
-> +      contains:
-> +        const: hisilicon,hi3798mv200-inno-usb2-phy
-> +then:
-> +  required:
-> +    - ranges
-So please test your DTS first.
-
-> 
+I have many bounces from your emails. Please do not Cc unrelated,
+non-working hisilicon emails.
 
 Best regards,
 Krzysztof
