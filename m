@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C5C5C48BC3
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 15:03:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C81A1C48BC4
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 15:03:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oeU6Dofw7DTaCIzrCxJMU1rjLGA8mVLtTGAE30ZmjGA=; b=kWKpDPN6fLYKSF
-	g8dSPI2ykwnQgxV45ZhrBO09309P+z+Fp1olBCazTt2eDNWJwG7NYJJu3OLNA6iSLYAjjb77pE82Q
-	bnZ4qlaNQl0bJMUjmCL6R9i2GYCw7bMqZiHBNQ93+hRfkrNS6jubg92hs4571FbqCqDSr8Ws8PCEt
-	I4muP43cIvzS9N3BGoXUDdSVe2Agvw5cyVwLfEzHPcI4maOwch0hDDiYlg2A8PXb9Suhxu9nXS1vV
-	awcBcCF6ru8VdB5fsGy4CQB/hXlme5J/MklaCJN4vz0nquUBwOpZKh7MSkKP3a4p00Nd0WTF0Re1l
-	Mif0q58fu84Is5E1mTIA==;
+	List-Owner; bh=A4L/UiEBnFxqoxYIcS1OKsvdOAfqPcwkv9L8oR0mMTU=; b=DfCI+NsoBaB5OB
+	Xq9mb2YWVbl3peP6gGcSC02Siq9BHSEngvIXTlkXgbHRCR1Xqwz1WIn5FmbAps3GiHCIcUlDMwqxk
+	9s7md/u5JewsHjo+q9miqV73fCaWhQBWm3dThYdGJSkQNwy5ydg2+KzyWHWiYyyO6oq3PO1GgxLHU
+	CDLMPW/4+iOBsKmyfnlRFqXGcsJbaC8shi9r1QhDEv6usAADYjgAU6lP7+4OrYLutxzQBgiIdurb2
+	7H99EHby7FwjRfoHilfgnQsj5h+4nD7BlLk8K3sv+bdyte2mKFqLrnrlJun3CKp+S4bRnih3/eLDe
+	tClyeihz+M8DH15kwKNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbMDf-00000005sjX-389E;
-	Sat, 17 Feb 2024 15:03:11 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rbMDe-00000005sjA-3pbV;
+	Sat, 17 Feb 2024 15:03:10 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbMDZ-00000005sfm-0Kwa
+	id 1rbMDY-00000005sfj-3hHs
 	for linux-phy@lists.infradead.org;
 	Sat, 17 Feb 2024 15:03:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 6708861440;
-	Sat, 17 Feb 2024 15:03:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A5D9C433A6;
+	by dfw.source.kernel.org (Postfix) with ESMTP id DF901611BE;
+	Sat, 17 Feb 2024 15:03:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12F4AC43390;
 	Sat, 17 Feb 2024 15:03:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1708182183;
-	bh=7NJQ8xLcC4Pw/NsMyFhL+x4rzV/sXkDltG7OfC8mrxE=;
+	bh=UrO8iSOZ0DaThfpdYnA1yNkyhVkUZHq2oInX+0bHaNU=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=OPPejr3iLm85A6MmkuPGuNxKa4BBDq8CYhN+l0KtRM9OD7ghOkDGHoPPEp8ffRASy
-	 XdJCp6RK8lS8pgXlDs1Hj5Xj9vFREwv0rv9cxi9CblKdvcPX50V+6bk+7meChV7gxV
-	 BGdsS44UNHKTl7J9O6w2HIrZNhFWVyiCbTBKK8eArhami/C6L8mZvn5uTQeLCIeqmH
-	 09ykI0yrNAre727AXakVzgdElSudSpRnaXkjo7eznqZzajpBrvC1z5qsqfojO9EnpM
-	 IPow9UV6iG/nabuvgkoFtCJGXW0BtmctJjMHkiKMMJ/xOu1O+ls7EsYicfRiA5jfsG
-	 8PDu0oWeigPgg==
+	b=NaZiHiRTPIbfPSO9V0T+nG2YbfYd4RoH8ksqJQQ1dehfcWd2IBpfDfHByIOYR552k
+	 nFE6hEIT8qeuW8E1DS42blBrIgHYehI0FYTJGCYTibnUeVmyZJiOsvTtME4KgkAEe1
+	 2DZMp8TbZu2Mg7JL+VzvP8/SC4bf+EeS4GljpXWaWwPxOIFZ7DYN71gVu5IEEVjh+w
+	 DzXELAT5AkdX51DLJnuyzx5+kHBA06WxIT15EspnGNlrpCt7XfgVUA4CP7eTv9tjWo
+	 yjnjggK8Df0jykaNcY2Dpx0NYTW6TsHn3D25leWURtAkgUtuWIOc5QR84HO7i0InVS
+	 Lg+4YkPkvcdxQ==
 Received: from johan by xi.lan with local (Exim 4.97.1)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1rbMDW-000000001Vu-3Stp;
+	id 1rbMDW-000000001Vq-2fLy;
 	Sat, 17 Feb 2024 16:03:02 +0100
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Bjorn Andersson <andersson@kernel.org>,
@@ -71,19 +71,17 @@ Cc: Jonas Karlman <jonas@kwiboo.se>,
 	linux-kernel@vger.kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	Rob Clark <robdclark@chromium.org>,
-	stable@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 4/6] soc: qcom: pmic_glink: Fix boot when QRTR=m
-Date: Sat, 17 Feb 2024 16:02:26 +0100
-Message-ID: <20240217150228.5788-5-johan+linaro@kernel.org>
+Subject: [PATCH 2/6] drm/bridge: aux-hpd: separate allocation and registration
+Date: Sat, 17 Feb 2024 16:02:24 +0100
+Message-ID: <20240217150228.5788-3-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240217150228.5788-1-johan+linaro@kernel.org>
 References: <20240217150228.5788-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240217_070305_263078_146BACAE 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20240217_070305_085433_733BD4BE 
+X-CRM114-Status: GOOD (  15.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,89 +98,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Rob Clark <robdclark@chromium.org>
+Combining allocation and registration is an anti-pattern that should be
+avoided. Add two new functions for allocating and registering an dp-hpd
+bridge with a proper 'devm' prefix so that it is clear that these are
+device managed interfaces.
 
-We need to bail out before adding/removing devices if we are going to
--EPROBE_DEFER. Otherwise boot can get stuck in a probe deferral loop due
-to a long-standing issue in driver core (see fbc35b45f9f6 ("Add
-documentation on meaning of -EPROBE_DEFER")).
+	devm_drm_dp_hpd_bridge_alloc()
+	devm_drm_dp_hpd_bridge_add()
 
-Deregistering the altmode child device can potentially also trigger bugs
-in the DRM bridge implementation, which does not expect bridges to go
-away.
+The new interface will be used to fix a use-after-free bug in the
+Qualcomm PMIC GLINK driver and may prevent similar issues from being
+introduced elsewhere.
 
-Suggested-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Rob Clark <robdclark@chromium.org>
-Link: https://lore.kernel.org/r/20231213210644.8702-1-robdclark@gmail.com
-[ johan: rebase on 6.8-rc4, amend commit message and mention DRM ]
-Fixes: 58ef4ece1e41 ("soc: qcom: pmic_glink: Introduce base PMIC GLINK driver")
-Cc: stable@vger.kernel.org      # 6.3
-Cc: Bjorn Andersson <andersson@kernel.org>
+The existing drm_dp_hpd_bridge_register() is reimplemented using the
+above and left in place for now.
+
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- drivers/soc/qcom/pmic_glink.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ drivers/gpu/drm/bridge/aux-hpd-bridge.c | 67 +++++++++++++++++++------
+ include/drm/bridge/aux-bridge.h         | 15 ++++++
+ 2 files changed, 67 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/soc/qcom/pmic_glink.c b/drivers/soc/qcom/pmic_glink.c
-index f4bfd24386f1..f913e9bd57ed 100644
---- a/drivers/soc/qcom/pmic_glink.c
-+++ b/drivers/soc/qcom/pmic_glink.c
-@@ -265,10 +265,17 @@ static int pmic_glink_probe(struct platform_device *pdev)
- 
- 	pg->client_mask = *match_data;
- 
-+	pg->pdr = pdr_handle_alloc(pmic_glink_pdr_callback, pg);
-+	if (IS_ERR(pg->pdr)) {
-+		ret = dev_err_probe(&pdev->dev, PTR_ERR(pg->pdr),
-+				    "failed to initialize pdr\n");
-+		return ret;
-+	}
-+
- 	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_UCSI)) {
- 		ret = pmic_glink_add_aux_device(pg, &pg->ucsi_aux, "ucsi");
- 		if (ret)
--			return ret;
-+			goto out_release_pdr_handle;
- 	}
- 	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_ALTMODE)) {
- 		ret = pmic_glink_add_aux_device(pg, &pg->altmode_aux, "altmode");
-@@ -281,17 +288,11 @@ static int pmic_glink_probe(struct platform_device *pdev)
- 			goto out_release_altmode_aux;
- 	}
- 
--	pg->pdr = pdr_handle_alloc(pmic_glink_pdr_callback, pg);
--	if (IS_ERR(pg->pdr)) {
--		ret = dev_err_probe(&pdev->dev, PTR_ERR(pg->pdr), "failed to initialize pdr\n");
--		goto out_release_aux_devices;
--	}
--
- 	service = pdr_add_lookup(pg->pdr, "tms/servreg", "msm/adsp/charger_pd");
- 	if (IS_ERR(service)) {
- 		ret = dev_err_probe(&pdev->dev, PTR_ERR(service),
- 				    "failed adding pdr lookup for charger_pd\n");
--		goto out_release_pdr_handle;
-+		goto out_release_aux_devices;
- 	}
- 
- 	mutex_lock(&__pmic_glink_lock);
-@@ -300,8 +301,6 @@ static int pmic_glink_probe(struct platform_device *pdev)
- 
- 	return 0;
- 
--out_release_pdr_handle:
--	pdr_handle_release(pg->pdr);
- out_release_aux_devices:
- 	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_BATT))
- 		pmic_glink_del_aux_device(pg, &pg->ps_aux);
-@@ -311,6 +310,8 @@ static int pmic_glink_probe(struct platform_device *pdev)
- out_release_ucsi_aux:
- 	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_UCSI))
- 		pmic_glink_del_aux_device(pg, &pg->ucsi_aux);
-+out_release_pdr_handle:
-+	pdr_handle_release(pg->pdr);
- 
- 	return ret;
+diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
+index 9e71daf95bde..6886db2d9e00 100644
+--- a/drivers/gpu/drm/bridge/aux-hpd-bridge.c
++++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
+@@ -30,16 +30,13 @@ static void drm_aux_hpd_bridge_release(struct device *dev)
+ 	kfree(adev);
  }
+ 
+-static void drm_aux_hpd_bridge_unregister_adev(void *_adev)
++static void drm_aux_hpd_bridge_free_adev(void *_adev)
+ {
+-	struct auxiliary_device *adev = _adev;
+-
+-	auxiliary_device_delete(adev);
+-	auxiliary_device_uninit(adev);
++	auxiliary_device_uninit(_adev);
+ }
+ 
+ /**
+- * drm_dp_hpd_bridge_register - Create a simple HPD DisplayPort bridge
++ * devm_drm_dp_hpd_bridge_alloc - allocate a HPD DisplayPort bridge
+  * @parent: device instance providing this bridge
+  * @np: device node pointer corresponding to this bridge instance
+  *
+@@ -47,11 +44,9 @@ static void drm_aux_hpd_bridge_unregister_adev(void *_adev)
+  * DRM_MODE_CONNECTOR_DisplayPort, which terminates the bridge chain and is
+  * able to send the HPD events.
+  *
+- * Return: device instance that will handle created bridge or an error code
+- * encoded into the pointer.
++ * Return: bridge auxiliary device pointer or an error pointer
+  */
+-struct device *drm_dp_hpd_bridge_register(struct device *parent,
+-					  struct device_node *np)
++struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(struct device *parent, struct device_node *np)
+ {
+ 	struct auxiliary_device *adev;
+ 	int ret;
+@@ -82,13 +77,55 @@ struct device *drm_dp_hpd_bridge_register(struct device *parent,
+ 		return ERR_PTR(ret);
+ 	}
+ 
+-	ret = auxiliary_device_add(adev);
+-	if (ret) {
+-		auxiliary_device_uninit(adev);
++	ret = devm_add_action_or_reset(parent, drm_aux_hpd_bridge_free_adev, adev);
++	if (ret)
+ 		return ERR_PTR(ret);
+-	}
+ 
+-	ret = devm_add_action_or_reset(parent, drm_aux_hpd_bridge_unregister_adev, adev);
++	return adev;
++}
++EXPORT_SYMBOL_GPL(devm_drm_dp_hpd_bridge_alloc);
++
++static void drm_aux_hpd_bridge_del_adev(void *_adev)
++{
++	auxiliary_device_delete(_adev);
++}
++
++/**
++ * devm_drm_dp_hpd_bridge_add - register a HDP DisplayPort bridge
++ * @dev: struct device to tie registration lifetime to
++ * @adev: bridge auxiliary device to be registered
++ *
++ * Returns: zero on success or a negative errno
++ */
++int devm_drm_dp_hpd_bridge_add(struct device *dev, struct auxiliary_device *adev)
++{
++	int ret;
++
++	ret = auxiliary_device_add(adev);
++	if (ret)
++		return ret;
++
++	return devm_add_action_or_reset(dev, drm_aux_hpd_bridge_del_adev, adev);
++}
++EXPORT_SYMBOL_GPL(devm_drm_dp_hpd_bridge_add);
++
++/**
++ * drm_dp_hpd_bridge_register - allocate and register a HDP DisplayPort bridge
++ * @parent: device instance providing this bridge
++ * @np: device node pointer corresponding to this bridge instance
++ *
++ * Return: device instance that will handle created bridge or an error pointer
++ */
++struct device *drm_dp_hpd_bridge_register(struct device *parent, struct device_node *np)
++{
++	struct auxiliary_device *adev;
++	int ret;
++
++	adev = devm_drm_dp_hpd_bridge_alloc(parent, np);
++	if (IS_ERR(adev))
++		return ERR_CAST(adev);
++
++	ret = devm_drm_dp_hpd_bridge_add(parent, adev);
+ 	if (ret)
+ 		return ERR_PTR(ret);
+ 
+diff --git a/include/drm/bridge/aux-bridge.h b/include/drm/bridge/aux-bridge.h
+index c4c423e97f06..4453906105ca 100644
+--- a/include/drm/bridge/aux-bridge.h
++++ b/include/drm/bridge/aux-bridge.h
+@@ -9,6 +9,8 @@
+ 
+ #include <drm/drm_connector.h>
+ 
++struct auxiliary_device;
++
+ #if IS_ENABLED(CONFIG_DRM_AUX_BRIDGE)
+ int drm_aux_bridge_register(struct device *parent);
+ #else
+@@ -19,10 +21,23 @@ static inline int drm_aux_bridge_register(struct device *parent)
+ #endif
+ 
+ #if IS_ENABLED(CONFIG_DRM_AUX_HPD_BRIDGE)
++struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(struct device *parent, struct device_node *np);
++int devm_drm_dp_hpd_bridge_add(struct device *dev, struct auxiliary_device *adev);
+ struct device *drm_dp_hpd_bridge_register(struct device *parent,
+ 					  struct device_node *np);
+ void drm_aux_hpd_bridge_notify(struct device *dev, enum drm_connector_status status);
+ #else
++static inline struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(struct device *parent,
++								    struct device_node *np)
++{
++	return NULL;
++}
++
++static inline int devm_drm_dp_hpd_bridge_add(struct auxiliary_device *adev)
++{
++	return 0;
++}
++
+ static inline struct device *drm_dp_hpd_bridge_register(struct device *parent,
+ 							struct device_node *np)
+ {
 -- 
 2.43.0
 
