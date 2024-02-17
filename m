@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD082C48BF8
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 14:02:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29A1BC48BC4
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Feb 2024 14:03:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5CqrOjn+r2NL3/5DXc98kummx46ciD+kgKSPPuXJWKk=; b=OpOC897FXuhooD
-	dbo5akiwosEo1busuFnT4cT0z3bpwagOfMpX3S/OuboYtwDoUX3XHqrFxRaoKWRKJIjUJDbZSMZ7d
-	GH9A4x1CrxoN6NwCV64Re/qvJaakja928UMed2b2vVlmxkFPS9/Q9mm3Skt7Qiaf5kfpa4iyKPwe1
-	LhQW++hITH0yR+ZoOwyn1bHABgKkJTj7mhGJy7EbKHhWacykowiN8lpk5KJJNKAmA1X/o8NENK3fg
-	yGpDgwyQT2qwv92r7tCAe5PVMt7wKEA7yZBiSb9wwujHmzEe8KjWoKSJlhaWBqQXzyAYFh8ak9UsS
-	UoPiXFzjWdzHKlOSPKAg==;
+	List-Owner; bh=/URnU3c1QUVpIQFum11DnOM7RW9vmImwTM1j18u0f5Q=; b=Tl2FxoYaacZxo4
+	STbjmnOrIuj1A8qL9U0u1qCIauCXD0ICVxPMfpjBt2edF/33eQIDgT7tdZcF/tzAtmQI59qhu+H7m
+	uf8osXe5y5sPhzZKPYOuqgJTVJnPdFyvMm+BvDlyFsjeW5+u0Q/XTP1c7hijKnzToA9zcynetVuER
+	9XON77m79ZZm+X49Ab4ZC4d75z+brO9xq1JU4UhGKPUhcV7DInzJTIsYrm7P6ATDQEcvAZN75ANC8
+	BxhV7rQ9pmvFWroB802c0XbVEgeQoKNqZaWPWB6m8uc1aEshyZnEBtVro48o9upx2Ts2bCU3ANNdP
+	uD0H0K5CmHXOcyiKpVfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbLHO-00000005n8E-1Cjp;
-	Sat, 17 Feb 2024 14:02:58 +0000
+	id 1rbLHP-00000005n8f-2Xtn;
+	Sat, 17 Feb 2024 14:02:59 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbLHL-00000005n6Y-2fXj
+	id 1rbLHL-00000005n6h-3UQW
 	for linux-phy@lists.infradead.org;
 	Sat, 17 Feb 2024 14:02:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 9A716CE09EF;
+	by sin.source.kernel.org (Postfix) with ESMTP id F253BCE09F1;
 	Sat, 17 Feb 2024 14:02:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E80FCC43394;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id F3434C43390;
 	Sat, 17 Feb 2024 14:02:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1708178572;
-	bh=esSfqR/EN2uGgQJhZInB3gQ5IgggyIpQkCwvAPI4KIE=;
+	bh=fSZGw8CHrtheqHYmGL9yCRQ6avDh/svcGOMbahUkH18=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=NT9Ie+1HH/Cgr/s1+RKuwi4xdU2skqzHG2qBu26n9RRbxJKVD0GbkXXWj02Q9Cufm
-	 2rsDWa+ojQLiL++Wx4LVU8C0hsecTcFqnvfDl0xvfhUeK+Osf+uzlhMVMwA40chvoT
-	 sjv7KVCWoqkOP4Io61j86460ohdsiKBV8twoMs7q8NjiU+nGXUcf7UvrdIQXr0999K
-	 1T0VRlHtb0N/QtFCuQyAQ+VpiT3Q6unh5/DEzfH+y3A6BDB42ORWOBxIZ/Sq5/r8D/
-	 1lz1augVyMGu1BYxj5M/46fKU6TmVJyBIqwsdpInRG1qwCw1HTWupQjkmzCbfQFW4U
-	 ro2+byNGaLs2g==
+	b=ItWTLi+lum8ZgxobUsXJoYhEZ0KRb+0nQ+rcGAxenOSCuCYbFzjQQBvZTOnIg/NKs
+	 fs5pjwyV4A0e9cQr9ybl8LkPZCqw/aVSc+C9qo++Fpr4vm0WoHAARCFm5Y2prSsj8W
+	 yy7hHcw9C3KJcYCVeTQAdqY9GtmmpN1gwDMhF/2k0cgx0d8xfbPhYC6pLG4ARnJfl6
+	 ibEtbzgmc5m5T6PVaVU8DAuQQAEqFqRkSwxOlNJGcAjU+OhqqqpTE0K2cWtq+79SLx
+	 GfUfqTzFmKdeUA4AK7o261QhnSk5eMdUerIsM9jxtGtoPUMRPwInkBO51Ini9NiU7w
+	 oUYMeRsdaggTA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CDF9EC48BC4;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D8FD9C54766;
 	Sat, 17 Feb 2024 14:02:51 +0000 (UTC)
 From: Yang Xiwen via B4 Relay <devnull+forbidden405.outlook.com@kernel.org>
-Date: Sat, 17 Feb 2024 22:02:46 +0800
-Subject: [PATCH RFC v2 2/4] phy: hisilicon: hisi-inno-phy: enable clocks
- for every ports
+Date: Sat, 17 Feb 2024 22:02:47 +0800
+Subject: [PATCH RFC v2 3/4] phy: hisilicon: hisi-inno-phy: add support for
+ Hi3798MV200 INNO PHY
 MIME-Version: 1.0
-Message-Id: <20240217-inno-phy-v2-2-3bf7e87b0e9e@outlook.com>
+Message-Id: <20240217-inno-phy-v2-3-3bf7e87b0e9e@outlook.com>
 References: <20240217-inno-phy-v2-0-3bf7e87b0e9e@outlook.com>
 In-Reply-To: <20240217-inno-phy-v2-0-3bf7e87b0e9e@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,18 +64,18 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, 
  David Yang <mmyangfl@gmail.com>, Yang Xiwen <forbidden405@outlook.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1708178566; l=971;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1708178566; l=4896;
  i=forbidden405@outlook.com; s=20230724; h=from:subject:message-id;
- bh=jGUbESXsyAvU27nkXjLoTOKtwqcjOT068eM8RNJCWfs=;
- b=UHXOSwwODhww8EbGOJMLYpPN9XmbFpLtbnFuU8Z5k/lZVtDRxNc8n70BZnZEw2b+WB9jx8etr
- bHvTFAnMpBTAaslzLl5OHfnpTvZcXqAT/TkBUYPvHBe5bCC3fvCPJwM
+ bh=GrCYJatgoRWu7Bx47GQoBXbcdNOq+uSu0U+veti+reE=;
+ b=io0SbJNsSxMgQ3OaTc/0Z9tbTMuoUOoI7sFB5VfjG/ciOZl7aRIc2R0BYahKWoutI+NCTpO1B
+ 377gjmMHMKGC9NMcLg0mt9uEo6KkEz1OM3+1O/B+KLbzoqsmWc1xz3t
 X-Developer-Key: i=forbidden405@outlook.com; a=ed25519;
  pk=qOD5jhp891/Xzc+H/PZ8LWVSWE3O/XCQnAg+5vdU2IU=
 X-Endpoint-Received: by B4 Relay for forbidden405@outlook.com/20230724 with auth_id=67
 X-Original-From: Yang Xiwen <forbidden405@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240217_060255_907786_AD2EE3D6 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20240217_060256_336469_D0A612F5 
+X-CRM114-Status: GOOD (  15.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,30 +95,156 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Yang Xiwen <forbidden405@outlook.com>
 
-This is needed for port1 to work.
+Direct MMIO resgiter access is used by Hi3798MV200. For other models,
+of_iomap() returns 0 due to insufficient length. So they are unaffected.
 
-Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
+Also Hi3798MV200 INNO PHY has an extra reset required to be deasserted,
+switch to reset_control_bulk_() APIs to resolve this.
+
 Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
 ---
- drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 65 ++++++++++++++++++------------
+ 1 file changed, 39 insertions(+), 26 deletions(-)
 
 diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-index c138cd4807d6..b7e740eb4752 100644
+index b7e740eb4752..5175e5a351ac 100644
 --- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
 +++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-@@ -86,8 +86,10 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+@@ -10,6 +10,7 @@
+ #include <linux/io.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
++#include <linux/of_address.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
+ #include <linux/reset.h>
+@@ -43,6 +44,7 @@
+ #define PHY_CLK_ENABLE		BIT(2)
  
- static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
- {
-+	int i;
- 	/* The phy clk is controlled by the port0 register 0x06. */
--	hisi_inno_phy_write_reg(priv, 0, 0x06, PHY_CLK_ENABLE);
-+	for (i = 0; i < INNO_PHY_PORT_NUM; i++)
-+		hisi_inno_phy_write_reg(priv, i, 0x06, PHY_CLK_ENABLE);
- 	msleep(PHY_CLK_STABLE_TIME);
+ struct hisi_inno_phy_port {
++	void __iomem *base;
+ 	struct reset_control *utmi_rst;
+ 	struct hisi_inno_phy_priv *priv;
+ };
+@@ -50,7 +52,7 @@ struct hisi_inno_phy_port {
+ struct hisi_inno_phy_priv {
+ 	void __iomem *mmio;
+ 	struct clk *ref_clk;
+-	struct reset_control *por_rst;
++	struct reset_control *rsts;
+ 	unsigned int type;
+ 	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
+ };
+@@ -62,26 +64,31 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+ 	u32 val;
+ 	u32 value;
+ 
+-	if (priv->type == PHY_TYPE_0)
+-		val = (data & PHY_TEST_DATA) |
+-		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
+-		      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
+-		      PHY0_TEST_WREN | PHY0_TEST_RST;
+-	else
+-		val = (data & PHY_TEST_DATA) |
+-		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
+-		      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
+-		      PHY1_TEST_WREN | PHY1_TEST_RST;
+-	writel(val, reg);
+-
+-	value = val;
+-	if (priv->type == PHY_TYPE_0)
+-		value |= PHY0_TEST_CLK;
+-	else
+-		value |= PHY1_TEST_CLK;
+-	writel(value, reg);
+-
+-	writel(val, reg);
++	if (priv->ports[port].base)
++		// stride is 4
++		writel(data, (u32 *)priv->ports[port].base + addr);
++	else {
++		if (priv->type == PHY_TYPE_0)
++			val = (data & PHY_TEST_DATA) |
++			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
++			      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
++			      PHY0_TEST_WREN | PHY0_TEST_RST;
++		else
++			val = (data & PHY_TEST_DATA) |
++			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
++			      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
++			      PHY1_TEST_WREN | PHY1_TEST_RST;
++		writel(val, reg);
++
++		value = val;
++		if (priv->type == PHY_TYPE_0)
++			value |= PHY0_TEST_CLK;
++		else
++			value |= PHY1_TEST_CLK;
++		writel(value, reg);
++
++		writel(val, reg);
++	}
  }
  
+ static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
+@@ -104,7 +111,7 @@ static int hisi_inno_phy_init(struct phy *phy)
+ 		return ret;
+ 	udelay(REF_CLK_STABLE_TIME);
+ 
+-	reset_control_deassert(priv->por_rst);
++	reset_control_deassert(priv->rsts);
+ 	udelay(POR_RST_COMPLETE_TIME);
+ 
+ 	/* Set up phy registers */
+@@ -122,7 +129,7 @@ static int hisi_inno_phy_exit(struct phy *phy)
+ 	struct hisi_inno_phy_priv *priv = port->priv;
+ 
+ 	reset_control_assert(port->utmi_rst);
+-	reset_control_assert(priv->por_rst);
++	reset_control_assert(priv->rsts);
+ 	clk_disable_unprepare(priv->ref_clk);
+ 
+ 	return 0;
+@@ -158,15 +165,16 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->ref_clk))
+ 		return PTR_ERR(priv->ref_clk);
+ 
+-	priv->por_rst = devm_reset_control_get_exclusive(dev, NULL);
+-	if (IS_ERR(priv->por_rst))
+-		return PTR_ERR(priv->por_rst);
++	priv->rsts = devm_reset_control_array_get(dev, false, false);
++	if (IS_ERR(priv->rsts))
++		return PTR_ERR(priv->rsts);
+ 
+ 	priv->type = (uintptr_t) of_device_get_match_data(dev);
+ 
+ 	for_each_child_of_node(np, child) {
+ 		struct reset_control *rst;
+ 		struct phy *phy;
++		void __iomem *base;
+ 
+ 		rst = of_reset_control_get_exclusive(child, NULL);
+ 		if (IS_ERR(rst)) {
+@@ -174,7 +182,10 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 			return PTR_ERR(rst);
+ 		}
+ 
++		base = of_iomap(child, 0);
++
+ 		priv->ports[i].utmi_rst = rst;
++		priv->ports[i].base = base;
+ 		priv->ports[i].priv = priv;
+ 
+ 		phy = devm_phy_create(dev, child, &hisi_inno_phy_ops);
+@@ -205,6 +216,8 @@ static const struct of_device_id hisi_inno_phy_of_match[] = {
+ 	  .data = (void *) PHY_TYPE_0 },
+ 	{ .compatible = "hisilicon,hi3798mv100-usb2-phy",
+ 	  .data = (void *) PHY_TYPE_1 },
++	{ .compatible = "hisilicon,hi3798mv200-usb2-phy",
++	  .data = (void *) PHY_TYPE_0 },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, hisi_inno_phy_of_match);
 
 -- 
 2.43.0
