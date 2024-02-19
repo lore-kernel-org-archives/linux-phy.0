@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4794C54788
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 21:28:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45338C48BF8
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 21:28:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zA0jRGxys2EE9cJvE1TIecArQ8vo+1Um8Q/gP5rwPHs=; b=kruei+Kad87HXL
-	Bf5OgMmMwov53teYGFezMnfZzGaan0DtjANR1gjCL77/Fov6X6nOLynQrIRBcrnTEnbWHE7uJJULO
-	N/i1bvtw74KhWrzYp10xLFMNIaZZokiBDBf7YVOZUmgT31Axgh5BqmkXL0p7oO9C3rEDpiCKhWOct
-	+FripLo8IW0NWdKo5/K02WmDhDC8MZBviipmIGSYXj60o6IpWD/ofLD/LNrgDYpPa+Qla5alFRMJz
-	r3xICm3Wm9MvUR/nP567svJuqTL2chIfQwRy4hpyWS7bFI6MLEkpruE4XXu5IyKkDJ065+q4ySM0a
-	0PjpHD0/ahc3Kq0puLJQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5CqrOjn+r2NL3/5DXc98kummx46ciD+kgKSPPuXJWKk=; b=TKAIfWS6aqZStF
+	AKw3DgWQCM38FwSefFJ5tQSEKGoxY2p8C5ug7F3E1dNFOytu/iJq9RHwaEU9ISI1z/4zjWjxgZGGq
+	4ozLMkLLZg4QxXVXGCviT1F+hAQC2AJ0zxT2XBhmTREi1iJfd0f340BYYofHb+foU+b0xMef6a/eP
+	p2otjZ895g7ySOL+RWf7O98jyb1vztCg6K9J1oi7TXJoF5XaS6tHtEY9osOOtoK1sLVr5e2OH5P8k
+	XiCRu5o11Pa0on2AguFUZfnu4utzLYrj59WNmwWyesNNfGS7gXn5VEbGvg2E2k7HOqJRvkGcTmMTJ
+	EV5KV6xWc9KMrDVjNldw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcBBF-0000000CE8s-1uyS;
-	Mon, 19 Feb 2024 21:28:05 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rcBBH-0000000CE9q-3g3F;
+	Mon, 19 Feb 2024 21:28:07 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcBBB-0000000CE4O-2q6d
+	id 1rcBBC-0000000CE55-3Fl8
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Feb 2024 21:28:03 +0000
+	Mon, 19 Feb 2024 21:28:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id E787DCE140C;
-	Mon, 19 Feb 2024 21:27:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 24B8AC433F1;
+	by sin.source.kernel.org (Postfix) with ESMTP id F073BCE1720;
+	Mon, 19 Feb 2024 21:28:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 58CAFC433A6;
 	Mon, 19 Feb 2024 21:27:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1708378079;
-	bh=gDuXXkEkFzr58dGxUU60LC3RjfnVRpdwuyjfjNAJ450=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=ggbzYq0XRjW6Y+FBjEbi3F4CWZSNytX3r5dVwHgz7MST2kh/wVbUSIHulPyBHn4pE
-	 LsLqvOJdFU+ODuSH8kjGtfPqM20JgqIVgMZXUdCq46q9vETjKebUUpF3RSwT1p2XEF
-	 +iQJ1Z/yysCpyfYJSOWsOp5d/+5TwKFmR7Nd0tKpA5bc6bidqQv+bDaV/Exz9NUjjl
-	 P8GB1xcJw+iltdcd65P+Po+lO0m2xW59nw0YvRFWFiFyqx6dWX82nhkWkah2l8Lnkb
-	 LFhF5x/aT5BU0M7XKG9eyb6EgY0Tym22H3AzvEasPyvAzeDPnBwPfZ04H8DFK4d9iF
-	 YeSIR6c/0xz6A==
+	bh=esSfqR/EN2uGgQJhZInB3gQ5IgggyIpQkCwvAPI4KIE=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=YbPciEzKQMYE7noRsTetjNj3S9+k7Ik1GeacWOOuS+ThMtoaO1ZkflWACao+7rYih
+	 gCHfwLLmHNN/b/6Ycu7whZhRHunuj5/m+hk0VxA6ClSAsqb9hwclvPSlBly+QPqG38
+	 72KrvgDKyBiBzzbiUSeeaErXXsllCTohfyAq4+oW+JbAw+LmZlVvDe4aHvyVZn/QV4
+	 sVsocx6VN0a+cYLAA4RfUOm6eu6f1QhMUSrTVRjLZDnTnn95k2+89H9npeFfBydnzY
+	 xmqvx0EC4HkrIEiFdQOpBe39nsrMEI/tbY97N4j0XKAhqMlxOfOwIDtxhxNFsscDyv
+	 87YumtHsIvzxQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 080C1C48BC3;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3594DC5478A;
 	Mon, 19 Feb 2024 21:27:59 +0000 (UTC)
 From: Yang Xiwen via B4 Relay <devnull+forbidden405.outlook.com@kernel.org>
-Subject: [PATCH RFC v3 0/5] phy: hisi-inno-phy: add support for
- hi3798mv200-usb2-phy
-Date: Tue, 20 Feb 2024 05:27:57 +0800
-Message-Id: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
+Date: Tue, 20 Feb 2024 05:28:00 +0800
+Subject: [PATCH RFC v3 3/5] phy: hisilicon: hisi-inno-phy: enable clocks
+ for every ports
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAN3H02UC/2WMvQ7CIBRGX8XcWQxcammdTEx8AFfjUFqwRIUGK
- rFp+u4SphrH7+ecGYLyRgU4bGbwKppgnE2BbzfQ9o29K2K6lAEpFhRZSYy1jgz9RBrsKoG6lKK
- QkO6DV9p8suoKl/MJbqnsTRidn7I+sjz9myIjlLBG1gw13XOuj+49Pp177Fr3ypqIa1SsUEwol
- 1qoSkiqavWLLsvyBdzD2tjiAAAA
+Message-Id: <20240220-inno-phy-v3-3-893cdf8633b4@outlook.com>
+References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
+In-Reply-To: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
  Rob Herring <robh+dt@kernel.org>, 
@@ -66,18 +64,18 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, 
  David Yang <mmyangfl@gmail.com>, Yang Xiwen <forbidden405@outlook.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1708378078; l=2399;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1708378078; l=971;
  i=forbidden405@outlook.com; s=20230724; h=from:subject:message-id;
- bh=gDuXXkEkFzr58dGxUU60LC3RjfnVRpdwuyjfjNAJ450=;
- b=9p7dgq5jmpamdAUqgWlwV23SezvYSPG09hlcTehj58oXrF+O0oQjBBfsDhC2/deBUWKh792fO
- DTf7ttYhf7eAo48PSSESDWIv9cloym3t9fux76XDU9EVul2mzD7yrgU
+ bh=jGUbESXsyAvU27nkXjLoTOKtwqcjOT068eM8RNJCWfs=;
+ b=zs3Pye2H9yxnBHI/KFOaUXuqr2aivy0VIlFkP7na/Xbw3rIoaMubBcpeDNsVhE3207LPYz72J
+ c2VRW0Hg+5MCQr8XwdaAjcx1MiDv9f2A/+Fv+yagKFNF/ujcU467b1S
 X-Developer-Key: i=forbidden405@outlook.com; a=ed25519;
  pk=qOD5jhp891/Xzc+H/PZ8LWVSWE3O/XCQnAg+5vdU2IU=
 X-Endpoint-Received: by B4 Relay for forbidden405@outlook.com/20230724 with auth_id=67
 X-Original-From: Yang Xiwen <forbidden405@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240219_132802_135705_69E6757E 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20240219_132803_034909_DD24DC76 
+X-CRM114-Status: GOOD (  10.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,57 +93,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This should be considered a dirty hack. The proper solution would be
-extracting write_reg logic to a separate regmap driver. Leaving only
-"write BIT(2) to address 0x6" to the PHY driver.
+From: Yang Xiwen <forbidden405@outlook.com>
 
-The initial commit is already doing things wrong. The following patches
-adding hi3798mv100 support is also very confusing. The name of the
-enumeration "PHY_TYPE_x" is very misleading as if it's the phy which is
-different across SoCs. But actually it's the bus (i.e. how to write to a
-given address) which is different, not the PHY.
+This is needed for port1 to work.
 
+Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
 Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
 ---
-Changes in v3:
-- address a few binding issue mistakenly missing in v2 (Krzysztof Kozlowski)
-  - add msg about hi3798mv100 being added to compatible list
-  - remove minItems for compatible
-  - remove | for reg:
-- fix existing dts (hi3798cv200.dtsi) due to binding change.
-- Link to v2: https://lore.kernel.org/r/20240217-inno-phy-v2-0-3bf7e87b0e9e@outlook.com
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-Changes in v2:
-- rewrite commit msg to show why hisilicon,hi3798mv100-usb2-phy is added during YAML convertion.
-- split required: to multiple line
-- add allOf to wrap if:
-- remove perictrl wrapper and the second phy in the example
-- tested the binding both for mv200 and cv200 dts. fix some silly errors.
-- remove Pengcheng Li from To:
-Above all are suggested by Krzysztof
-- use reset_control_array_* APIs to ensure all resets are controlled
-- Link to v1: https://lore.kernel.org/r/20240216-inno-phy-v1-0-1ab912f0533f@outlook.com
+diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+index c138cd4807d6..b7e740eb4752 100644
+--- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
++++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+@@ -86,8 +86,10 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+ 
+ static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
+ {
++	int i;
+ 	/* The phy clk is controlled by the port0 register 0x06. */
+-	hisi_inno_phy_write_reg(priv, 0, 0x06, PHY_CLK_ENABLE);
++	for (i = 0; i < INNO_PHY_PORT_NUM; i++)
++		hisi_inno_phy_write_reg(priv, i, 0x06, PHY_CLK_ENABLE);
+ 	msleep(PHY_CLK_STABLE_TIME);
+ }
+ 
 
----
-Yang Xiwen (5):
-      dt-bindings: phy: hisi-inno-usb2: convert to YAML
-      arm64: dts: hi3798cv200: add hisilicon,inno-usb2-phy to compatible list
-      phy: hisilicon: hisi-inno-phy: enable clocks for every ports
-      phy: hisilicon: hisi-inno-phy: add support for Hi3798MV200 INNO PHY
-      dt-bindings: phy: hisi-inno-usb2: add compatible of hisilicon,hi3798mv200-usb2-phy
-
- .../bindings/phy/hisilicon,inno-usb2-phy.yaml      | 123 +++++++++++++++++++++
- .../devicetree/bindings/phy/phy-hisi-inno-usb2.txt |  71 ------------
- arch/arm64/boot/dts/hisilicon/hi3798cv200.dtsi     |   6 +-
- drivers/phy/hisilicon/phy-hisi-inno-usb2.c         |  69 +++++++-----
- 4 files changed, 169 insertions(+), 100 deletions(-)
----
-base-commit: 8d3dea210042f54b952b481838c1e7dfc4ec751d
-change-id: 20240216-inno-phy-a2d872f6b74b
-
-Best regards,
 -- 
-Yang Xiwen <forbidden405@outlook.com>
+2.43.0
 
 
 -- 
