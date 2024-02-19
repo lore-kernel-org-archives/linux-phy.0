@@ -4,148 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6940C48260
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 06:59:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A74D0C48BC3
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 07:24:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2t3Ri1MQMGzAtoG5rT0mSGX5PG9J3iYqkh5ZDkOc/rk=; b=C15nxaUQJaRK3t
-	RehqNwJeNTMpU1P9/SuhAH+TD/NyAhKOXpgfBjxPyZ0P92tcBUhcGr+iraV/FPu83sqwKLRWECGVH
-	cWZgvuevmRlqguxRG3Xzv5dRibSaaJOCccyb4tlp/0ai0OU9sS1WmJKnbWJ3ONXMrldv4ygF3+WRh
-	ppmJ5Wkn+B3SyIEIKfuRnm7J/LSIXDgJpr90eK8lJWoQYDqBhYEN0ZsSeNP86zzWhC6jg49tYRtJb
-	d2xhxMAYY8Yc2pf5xKuc4BK2v2i3BYyH5a/WBn0WOvq8E2ojDE3R+b053J0d5U/VwA1erNHO85KRn
-	Z5NLEGMmI/drLLKZ/xag==;
+	List-Owner; bh=+OJWz9Xq5R627t6Hx+A6CgIRHrZZtSRzsGLAeRGmtms=; b=YWfrR4YVESfu8C
+	ygQC4XQxCo8h52pXIU6+72s2mSVoXcpOjNqfMxauLv2ggO3Z1YgLack1tp1qXd4XEgY8L3JKQyfaF
+	C7Bu/1QYm5wMjEiiLpYZdu2JkpBghqOp9ZVQlilW0r6dCOm35rghi1oTJKyWJgs+uHLbzEWE0gsLf
+	A/T7jEfpTt3Zf2UouTZJM9mQLZhoF98diwFEL2SgE7k5o/r+dtB7o7zzden/FaLx6AauPvXk76G7Z
+	Dp7C3bgMNpnL8rYNgTBfabXTdaHIvXh/cJRqajy3TUJbh23Vf1LwlerCs9t7nnltCOIlmumoAZgFw
+	pFBtcBinoJMK9DRC2ltw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbxcw-00000009JUd-1SpI;
-	Mon, 19 Feb 2024 06:59:46 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1rby13-00000009MIc-0C9f;
+	Mon, 19 Feb 2024 07:24:41 +0000
+Received: from mail-db5eur01on0603.outbound.protection.outlook.com ([2a01:111:f400:fe02::603] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbxcs-00000009JSx-36qd
-	for linux-phy@lists.infradead.org;
-	Mon, 19 Feb 2024 06:59:44 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4125df3c40aso13486815e9.3
-        for <linux-phy@lists.infradead.org>; Sun, 18 Feb 2024 22:59:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708325981; x=1708930781; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=AfAV24x7YrRfp7a1aPkTeFhdi55Bp5TvgPp9C25tWp0=;
-        b=VoR7fbaO3dvnce3ON0UARtINxCphflSMQNOLYrFaT4PpQ9EGwAOa4WljLufZOz4C5r
-         VPCrq9g6QLhn+ei+ulSHbBn00sXE1i2B+ILGZr94ymyTZUjPA7xGSc4PTFDDNZPH5xr0
-         Tu5v0ay5x/nLdOYcbv3lsZt3lCY7TYBW78YZwWBgEfnU1l250TvHYeI0oFHt4FTrZSIW
-         Yhsj2xGBVfX8aMSfj0rZvcphV0JuCya1SH55vfIPWJtNagyR+b1vbXIYoBRUnybDtX4c
-         9KMJR2fVKVyDeD6nc4+Vk4YeSDG+h+jCrti0GAzyGEfquWvHVp09M7qhM2rNBH49N4rX
-         BX0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708325981; x=1708930781;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=AfAV24x7YrRfp7a1aPkTeFhdi55Bp5TvgPp9C25tWp0=;
-        b=b1eL5Rb8ETr7wZphkdrRfKfDLtJFE4ilEsiVSjBlJhoOiSQivi2GcFqJqt2bM6EqVR
-         UEfUqgF22GenNqxklTlUJCR4xpHdb8YYdaSLRm2glP2KbvL47zi5Diq9Wdp3oKEoYK8v
-         1tPojt8ljnehyPoWsoHiU+7lfqXvVl29n6FgfGF9P+7d65AbOaSUYwI45QqCxf1/+kxN
-         CxP0XHC3l+m4xSPwdjIzNhN/LWuVIcr1TsOmbdrE6kt3522bmrQUFtNl1HcmZ8SBrwuz
-         Ci8N5sLJLEAtUjc45ZowAAJr28youlbYOUGwJRvZpiSwC9+EEorzjw0/iqQdl2s478dI
-         ZzVQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXefOub1wduTUY8DJ1GdK/j6ABVSJRiSe34//I78NTXlhD7CXf+hb0kAO+J1RXabj2mVckLpy9EuTaMiwxw+jP6R7+JI/jlRp+pLviSOA==
-X-Gm-Message-State: AOJu0Yxd82+vBA3Qgx5fFx/eKaraTeTtqawpfrpCoA52hrpj48vO0XcO
-	6AP+sYF+lwFO5u+c4aOMxqqe6DmVM+4GqqrDd7bgZEUcpV9swhZNXERtphSsFso=
-X-Google-Smtp-Source: AGHT+IE/wOzaL7fQihkYqoU1MECC1GWbfyGnRdiNkkmlrFDDTCslsV8yH4p06YEr4kqTduK2N5CsEw==
-X-Received: by 2002:a05:600c:4fc4:b0:412:16d8:d565 with SMTP id o4-20020a05600c4fc400b0041216d8d565mr8152877wmq.15.1708325980793;
-        Sun, 18 Feb 2024 22:59:40 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.222.116])
-        by smtp.gmail.com with ESMTPSA id p11-20020a05600c1d8b00b004126a0dfd11sm113616wms.29.2024.02.18.22.59.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 18 Feb 2024 22:59:40 -0800 (PST)
-Message-ID: <88de75cd-4069-4be6-9c4e-f32befa46d58@linaro.org>
-Date: Mon, 19 Feb 2024 07:59:36 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] clk: constify the of_phandle_args argument of
- of_clk_provider
-To: claudiu beznea <claudiu.beznea@tuxon.dev>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Nishanth Menon <nm@ti.com>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com,
- NXP Linux Team <linux-imx@nxp.com>, linux-amlogic@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
- alsa-devel@alsa-project.org, linux-sound@vger.kernel.org
-References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
- <e43727bd-d83d-4271-9871-ff995c8e7d03@tuxon.dev>
+	id 1rby0z-00000009MGj-2mHf;
+	Mon, 19 Feb 2024 07:24:39 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DqJH5NPOKWBeP+d/sE261MLDIfbuNcCOYpip4Sscz9hrZ3MPNFLj5BkG6rU8qkGQsVzLXHQsr+NXuFUCsb6cEN4Ncn4x0GzbmZIDYJLmAma7JUGTl/CNa+h5RNDHF/Z5VQS0yMsxGZvqDmTDfLrxaUTSOXnaDVUVZxYJvMGj4VOofMcY1jkgancRKPRsb2GLUFKgJ2Q/YiieVkMKHKiZDbCS4IBalrQy9nyprj7KtVPKkizpdq4DLPn5xGDRv/H/O5iq9foMr/g0z5yu4i1rUoAi6fPe6e6/cHrZ8nCC6Aei2EjGb8mO5+UmgF1zBFEYbA/xX5BLotVlQqtYYI6DRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=1fOlKrhhJREJW+rln1r05pWwcE7CoUF3q80sOghrdO0=;
+ b=LpTeVTCE/MCAjPwE+dPx4p/4tofkd3xS6xeOnWdivr3lX3YhtWE+l2zudmqPZxsPmx/NttqjHY4NsnQLNtTKBmCqdci57HE95NcbFIbLq3xQedr3GP4K5C84X4DBaywhijGfw+NgyVU1OuA8qyofSy6vS3FnMnNsy4kWE1ymmRkN01mkPAHY0597kRM+zKFqkgtt49U4JD4XLgzOrkwmg3I8kzfMFzsDutqaRM0xL6K0SpBv++zYLi7NKF7AY0spB23FNZPTvrXk4yVmZGGsr5QtGrtiX3gIM3FH9b2AVkywscX/eaVcg9aBNR3wC53EkCG5BoxuHAYQ2qNtCMHrVQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1fOlKrhhJREJW+rln1r05pWwcE7CoUF3q80sOghrdO0=;
+ b=Kd//NOQC4VPZBk+/dmcszQItz7l4IwDjaqrMwx+q/yXh/bvWptPcBzTABgrmVOPvt24b9xzs7VVKzeam3FVtEe4uSi3AnSuKBiV/29qzN0MHNtzTUc6v9b/mMEb6jBJWSMRlRZMyM46o/a8gKzuCqmfhzARwSv1830r/Wj/9yRw=
+Received: from DB9PR04MB9452.eurprd04.prod.outlook.com (2603:10a6:10:367::13)
+ by AM9PR04MB7601.eurprd04.prod.outlook.com (2603:10a6:20b:285::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7270.33; Mon, 19 Feb
+ 2024 07:24:25 +0000
+Received: from DB9PR04MB9452.eurprd04.prod.outlook.com
+ ([fe80::4272:e277:dda3:2446]) by DB9PR04MB9452.eurprd04.prod.outlook.com
+ ([fe80::4272:e277:dda3:2446%2]) with mapi id 15.20.7292.029; Mon, 19 Feb 2024
+ 07:24:25 +0000
+From: Sandor Yu <sandor.yu@nxp.com>
+To: Alexander Stein <alexander.stein@ew.tq-group.com>,
+	"dmitry.baryshkov@linaro.org" <dmitry.baryshkov@linaro.org>,
+	"andrzej.hajda@intel.com" <andrzej.hajda@intel.com>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, Laurent Pinchart
+	<laurent.pinchart@ideasonboard.com>, "jonas@kwiboo.se" <jonas@kwiboo.se>,
+	"jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, "airlied@gmail.com"
+	<airlied@gmail.com>, "daniel@ffwll.ch" <daniel@ffwll.ch>,
+	"robh+dt@kernel.org" <robh+dt@kernel.org>,
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
+	"shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+	<s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "dri-devel@lists.freedesktop.org"
+	<dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>
+CC: "kernel@pengutronix.de" <kernel@pengutronix.de>, dl-linux-imx
+	<linux-imx@nxp.com>, Oliver Brown <oliver.brown@nxp.com>, "sam@ravnborg.org"
+	<sam@ravnborg.org>
+Subject: RE: [EXT] Re: [PATCH v13 4/7] drm: bridge: Cadence: Add MHDP8501
+ DP/HDMI driver
+Thread-Topic: [EXT] Re: [PATCH v13 4/7] drm: bridge: Cadence: Add MHDP8501
+ DP/HDMI driver
+Thread-Index: AQHaV1QsTfsqjPM64Eapj6JNsPkB8bEMnvWAgAS6OOA=
+Date: Mon, 19 Feb 2024 07:24:25 +0000
+Message-ID: <DB9PR04MB94522ED2DB0D32A0792EAB33F4512@DB9PR04MB9452.eurprd04.prod.outlook.com>
+References: <cover.1707040881.git.Sandor.yu@nxp.com>
+ <5bd01470cf971e2385ecd169c3d5ac659a020973.1707040881.git.Sandor.yu@nxp.com>
+ <3549548.iIbC2pHGDl@steina-w>
+In-Reply-To: <3549548.iIbC2pHGDl@steina-w>
+Accept-Language: en-US
 Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <e43727bd-d83d-4271-9871-ff995c8e7d03@tuxon.dev>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DB9PR04MB9452:EE_|AM9PR04MB7601:EE_
+x-ms-office365-filtering-correlation-id: dee72258-9aa3-48a3-67c1-08dc311bcd23
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: a0HsB/y02FxsRatPN9H42C/ro80kDgdQsnWJfWYlqh7YzWTmn4UXkCg1Z2PCl4bxZZS6+exQtOuDE07GKL2VrkHXvYOB8BpmzwdzXpOLnIjfQvaOSE9oZSQIyBeuQzbsjxeKNQMgakdn1zPvuTtjhMVpw2+wcFv1f6rJ2qTDm9ddAolEmVrEsR5z4frtJpd3OqDP54mZR/7RLydNSVTkClPha5p7A/S17l67ll+DfgOROoU+EcYpWXApS6UBTGsybV4AXo2vtvqsA/5IRu8RjNcygSGbg9aq3WrriMxkGfaL9AE5b0iklcxCQfo5roygBxoiU9oPE72BgaqHp/1VK/n4RuH53xbl7gepQqjYtl6O6c4b0x8qGvYHHCZNpaahL/xlS8jEEA0az+hvZBsiH74IakkN5mrpgqaHHXbowmLRIVNWoARnDPUCEv5CVdsG9cg3NbOod4H3zDPdLU63T0seKNNMKKI8MXX1D82PA+R/ex844S/IOM4s9kr6jWEdvFtsytCQOloy7X0ExXihwyOKtCqr+nvs3mzX6avTaB+9qTa5/Uh5Bkkl4oeygmQF89uhIkWgJ1xyObbYPQllZuprIJaELmKJ5COmT33HGuia9TSQJc3XKyPYJYN6USCy
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9452.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376002)(39860400002)(396003)(346002)(136003)(366004)(230922051799003)(230273577357003)(186009)(64100799003)(1800799012)(451199024)(55016003)(966005)(45080400002)(71200400001)(478600001)(9686003)(41300700001)(2906002)(5660300002)(4326008)(7416002)(44832011)(52536014)(76116006)(6506007)(316002)(7696005)(66556008)(8936002)(110136005)(54906003)(66946007)(66446008)(64756008)(66476007)(8676002)(83380400001)(66574015)(86362001)(38070700009)(38100700002)(122000001)(33656002)(921011)(26005);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?hpItkqBrAa//KvFRd65TFmI0zEmtNGQRsT/AQkf+Lr4CDu93mG9/A8eFwt?=
+ =?iso-8859-1?Q?eQxsqqZmaGLSnfPWqlBbc3Z0p7x2aOQNJl69GoPAOq03RJpMgjMLmU1Ey2?=
+ =?iso-8859-1?Q?TEkqxZLZPaf99vtbjatYe+NrxboZ1yK3oPlpBT9vMKFS72EkA/meisL5kx?=
+ =?iso-8859-1?Q?rip3RUEmeJ7Hs2w5YukVy8hTO4vZHWY0/qVuPBHJr45N6Pu+Upk4ScbQxO?=
+ =?iso-8859-1?Q?11XlzHakP8zcYt4fD40zEPxfkfwasi5XQyypmglm+85hq8PjUH8z52q/qf?=
+ =?iso-8859-1?Q?c8+MEd8OTsYBEpsDW1497iUx/5V2SigHm9cGncc4+QDaNUJrnOTWusXFlo?=
+ =?iso-8859-1?Q?uKig8PUiY6rCW2fMKX4zBqcdgoS9EaEejFDZECEUCw1XO8Cnkj0nN7kqQd?=
+ =?iso-8859-1?Q?XnFNTZUtiwz9f4rB0lYf+eDtOJ9bm2H+Dy2leQ8+GmnHQtEw5ZvCDfhwAd?=
+ =?iso-8859-1?Q?NSeDBZUgmSIPl52c8uOok9suJSTTNirBEtB0iQzLMPSpTCMP064EOb3FQ/?=
+ =?iso-8859-1?Q?+MeJRO1hppp3QFI41CNZIG79UrHuBLSNDS6mkMUJwa/Z0Q1xBU8EiAHzj8?=
+ =?iso-8859-1?Q?jCN+WUHt3i+52yapcknMnZLIu9fgUxl/+phcAY7U5i42Ntg70Irkr5tS1t?=
+ =?iso-8859-1?Q?zGfanYGrjrGag8bi37/Cu5UJeA1A43D0SKWo1MsZIQ5NGjx9F6hsdfleMZ?=
+ =?iso-8859-1?Q?kO6N3nRHFO9eYOcE1JGGp0VhUFL0UNOanPvXOjQ7GLclSYSRURvyJf77mC?=
+ =?iso-8859-1?Q?U/ERH/A13skLw+C90F4BHXJ3Izvj4I1e3ZOntG7/bFrE/e2FSs0uMGRN2S?=
+ =?iso-8859-1?Q?GQKINXWv0bjjDdGta1A381MDFrmxkdUnWG5e2956pdJlY69J4o2agZe6yQ?=
+ =?iso-8859-1?Q?tXMhFQ5G7rEVy4cr0x4zQUo4PHpDx0wuLK4KCBMxt7+Gnv4OrvIAF0Mu/J?=
+ =?iso-8859-1?Q?XQ/bWBEzP1PlX8Dj6szBxSN1/VaMNthAr5qaRKGLiv9Jx8pRwfQqylsH47?=
+ =?iso-8859-1?Q?PLR+j1bNnCWyUr7vaaJMWA9AdwK1XrJ0wFDyj6gdqCXVOUC41m4eivSToj?=
+ =?iso-8859-1?Q?Tw9Bd7wmt8t44NhLKOB0CUV5eO3LrUIShkSTmNOmQokQdsGkVI0r03nhdB?=
+ =?iso-8859-1?Q?52jL18ak4KdYZZGY3qv3UiSDOgzBxifziQemed3QyVIl+DLA8WTdPKH7ir?=
+ =?iso-8859-1?Q?4jtLvi6D+esmOn8rsWGjL3wgjyoXq4bqZNXghTjKCqlwstKeWnt9QKf/Ol?=
+ =?iso-8859-1?Q?xlvE1tCIeo59aXE02+8blsLNovqm0zeY8ipK+6bZBEu2yzq3zZOAdYJrsn?=
+ =?iso-8859-1?Q?L5BcMjzEo4U5F5xTHTbDsutoLlmRKZvdYbJqkEQ+BPCvb2Wa1iLlJx9/W6?=
+ =?iso-8859-1?Q?2ACy1y9O+F5l97B7bNljp30sfCQZCJhywb19lhS0N9KXwjHgkN/QzE6uvM?=
+ =?iso-8859-1?Q?F1qDXm3imlwgrqtVotO+Ydreb4z5HQ9cxzUDhAgt6VcGoATlvG6K1dylwJ?=
+ =?iso-8859-1?Q?bc+s7F4jWMsjowrAnFeSKE1GaGoIQV7rv5F+IaNuXleZ07LAAu3epdjyMO?=
+ =?iso-8859-1?Q?Tmf1Kk80YNd+j+Qzl4HgwMWMdf4fJVajRtIYhdbA3oQLMGb4mo6G6zRwIi?=
+ =?iso-8859-1?Q?i7ddZl1zUeEQs=3D?=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB9452.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dee72258-9aa3-48a3-67c1-08dc311bcd23
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Feb 2024 07:24:25.5154
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Y20q7goMgV6w0i/lMVYDHYyv7XMie5UcCNLo3MTT8iq6DzWLwRy6L1dymNdrtpNbh+kOMB8RIBkVQhr2W0eE8A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB7601
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240218_225942_851665_E2BE7817 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240218_232437_713029_92581C47 
+X-CRM114-Status: GOOD (  26.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,38 +151,147 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/02/2024 07:25, claudiu beznea wrote:
-> 
-> 
-> On 08.02.2024 18:37, Krzysztof Kozlowski wrote:
->> None of the implementations of the get() and get_hw() callbacks of
->> "struct of_clk_provider" modify the contents of received of_phandle_args
->> pointer.  They treat it as read-only variable used to find the clock to
->> return.  Make obvious that implementations are not supposed to modify
->> the of_phandle_args, by making it a pointer to const.
->>
->> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->> ---
->>  drivers/clk/at91/pmc.c                        |  3 +-
->>  drivers/clk/at91/pmc.h                        |  3 +-
-> 
-> Reviewed-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+Hi Alexander,
 
-You understand there is no review for "part of patch"? You probably
-meant Acked-by.
+Thanks for your comments,
+get_edid function will be replace by edid_read as community update in the n=
+ext version.
 
-https://elixir.bootlin.com/linux/v6.8-rc5/source/Documentation/process/submitting-patches.rst#L544
+B.R
+Sandor
 
-Best regards,
-Krzysztof
+>
+>
+> Hi Sandor,
+>
+> thanks for the update.
+>
+> Am Sonntag, 4. Februar 2024, 11:21:49 CET schrieb Sandor Yu:
+> > Add a new DRM DisplayPort and HDMI bridge driver for Candence
+> MHDP8501
+> > used in i.MX8MQ SOC. MHDP8501 could support HDMI or DisplayPort
+> > standards according embedded Firmware running in the uCPU.
+> >
+> > For iMX8MQ SOC, the DisplayPort/HDMI FW was loaded and activated by
+> > SOC's ROM code. Bootload binary included respective specific firmware
+> > is required.
+> >
+> > Driver will check display connector type and then load the
+> > corresponding driver.
+> >
+> > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > Tested-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> > ---
+> > v12->v13:
+> > - Explicitly include linux/platform_device.h for cdns-mhdp8501-core.c
+> > - Fix build warning
+> > - Order bit bpc and color_space in descending shit.
+> >
+> > v11->v12:
+> > - Replace DRM_INFO with dev_info or dev_warn.
+> > - Replace DRM_ERROR with dev_err.
+> > - Return ret when cdns_mhdp_dpcd_read failed in function
+> > cdns_dp_aux_transferi(). - Remove unused parmeter in function
+> > cdns_dp_get_msa_misc
+> >   and use two separate variables for color space and bpc.
+> > - Add year 2024 to copyright.
+> >
+> >  drivers/gpu/drm/bridge/cadence/Kconfig        |  16 +
+> >  drivers/gpu/drm/bridge/cadence/Makefile       |   2 +
+> >  .../drm/bridge/cadence/cdns-mhdp8501-core.c   | 316 ++++++++
+> >  .../drm/bridge/cadence/cdns-mhdp8501-core.h   | 365 +++++++++
+> >  .../gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c | 699
+> ++++++++++++++++++
+> >  .../drm/bridge/cadence/cdns-mhdp8501-hdmi.c   | 679
+> +++++++++++++++++
+> >  6 files changed, 2077 insertions(+)
+> >  create mode 100644
+> > drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.c
+> >  create mode 100644
+> > drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-core.h
+> >  create mode 100644
+> drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+> >  create mode 100644
+> > drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> >
+> > [snip]
+> > diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+> > b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c new file mode
+> > 100644 index 0000000000000..0117cddb85694
+> > --- /dev/null
+> > +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-dp.c
+> > @@ -0,0 +1,699 @@
+> > [snip]
+> > +
+> > +const struct drm_bridge_funcs cdns_dp_bridge_funcs =3D {
+> > +     .attach =3D cdns_dp_bridge_attach,
+> > +     .detect =3D cdns_dp_bridge_detect,
+> > +     .get_edid =3D cdns_dp_bridge_get_edid,
+>
+> Please note that with commits d807ad80d811b ("drm/bridge: add
+> ->edid_read hook and drm_bridge_edid_read()") and 27b8f91c08d99
+> ("drm/bridge: remove ->get_edid
+> callback") the API has slightly changed meanwhile.
+>
+> > +     .mode_valid =3D cdns_dp_bridge_mode_valid,
+> > +     .atomic_enable =3D cdns_dp_bridge_atomic_enable,
+> > +     .atomic_disable =3D cdns_dp_bridge_atomic_disable,
+> > +     .atomic_duplicate_state =3D
+> drm_atomic_helper_bridge_duplicate_state,
+> > +     .atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
+> > +     .atomic_reset =3D drm_atomic_helper_bridge_reset, };
+> > diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> > b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c new file mode
+> > 100644 index 0000000000000..e6ed13b9f9ca3
+> > --- /dev/null
+> > +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8501-hdmi.c
+> > @@ -0,0 +1,679 @@
+> > [snip]
+> > +
+> > +const struct drm_bridge_funcs cdns_hdmi_bridge_funcs =3D {
+> > +     .attach =3D cdns_hdmi_bridge_attach,
+> > +     .detect =3D cdns_hdmi_bridge_detect,
+> > +     .get_edid =3D cdns_hdmi_bridge_get_edid,
+>
+> Please note that with commits d807ad80d811b ("drm/bridge: add
+> ->edid_read hook and drm_bridge_edid_read()") and 27b8f91c08d99
+> ("drm/bridge: remove ->get_edid
+> callback") the API has slightly changed meanwhile.
+>
+> > +     .mode_valid =3D cdns_hdmi_bridge_mode_valid,
+> > +     .mode_fixup =3D cdns_hdmi_bridge_mode_fixup,
+> > +     .atomic_enable =3D cdns_hdmi_bridge_atomic_enable,
+> > +     .atomic_disable =3D cdns_hdmi_bridge_atomic_disable,
+> > +     .atomic_duplicate_state =3D
+> drm_atomic_helper_bridge_duplicate_state,
+> > +     .atomic_destroy_state =3D drm_atomic_helper_bridge_destroy_state,
+> > +     .atomic_reset =3D drm_atomic_helper_bridge_reset, };
+>
+> Please rebase your patch series, thanks.
+>
+> Best regards,
+> Alexander
+> --
+> TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+> Amtsgericht M=FCnchen, HRB 105018
+> Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+> http://www.tq-/
+> group.com%2F&data=3D05%7C02%7CSandor.yu%40nxp.com%7Cfc532fc168004f
+> 07439308dc2ebdf280%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%
+> 7C638436640551238910%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAw
+> MDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C
+> &sdata=3DE1%2Fd8VTcDiXL3uhGDlHz7synQjRD%2BN1hDoHlbB72RiY%3D&reser
+> ved=3D0
+>
 
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
