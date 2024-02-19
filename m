@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B7EFC48BC3
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 21:37:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB31AC48BF8
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 21:50:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
 	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ayHVhvTtaxK1Rj4hVA+3VZpRj+8hIo3neRQ6sDXIVNA=; b=xjc4tz7ouANiDb8cgO2PKxOaiJ
-	SG/QAWUXoDIYp57VG9qhJktXDEUToG1BGjMQ968YxW4QyQoyffGgNpSfbWtLs0iETJmWefm9eVy5Q
-	O3xDcqzVNuo2j5Lxkq80tSG1U09khP4I4WDrb4iATo2Bbi+VbMrEQI4MSBkM0YJFPTrM+F3uR9geI
-	e+L9AhZfamabS5DrMBCE1fQLOBejoc2ZoDRSUWm10GUq8UA3ErzFQQm0NWT5je8mUnGiuWD/HJiYq
-	o/709dj7QM4NPf7W/4M4MTVgqXg5164AoE75cpwCeOKdQQ/YJczmBHtKWamf5HtBJ8m2L5tp+q1Qv
-	O1ChCk1A==;
+	bh=vbcmRM21l2W/NXsbHpX4N5hCbSJ+/ybkyw5DG8C8vAY=; b=T91/DkNgN/Be7mCPE446Hkmwz2
+	3kHLyJxIMQOB4pW8KQkyVgZNXBXuBxGahcTWJUnM1k2HMKCAdwG1SJe3FZlTGq0HbcUiVKCf/+iap
+	llS7zed7VTmB6RKzqgu+qZSIvmxAQaeW4zav1J4YrFdz5I0/vBjhG6CBZuwHi/fM/Yi2ACJiGMqhZ
+	6sMmLmp8EQZQ0NWh36xGT1JHqKC9q63xAu0b4t1QrVh9yyVt26eYYf//p5fVesiin1A6sm6Zb9Hgu
+	+K1eGcxeZIgZX6enzaedujenzKx15ZBF/E9CGbu8kE1lz80xmUnFlRe2ljjRVtQDD9sum9C8MEpmy
+	KygOGDqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcBKp-0000000CGO3-0AWE;
-	Mon, 19 Feb 2024 21:37:59 +0000
-Received: from mail-sgaapc01acsn20801.outbound.protection.outlook.com ([2a01:111:f400:feab::801] helo=APC01-SG2-obe.outbound.protection.outlook.com)
+	id 1rcBWf-0000000CIV6-1tik;
+	Mon, 19 Feb 2024 21:50:13 +0000
+Received: from mail-sgaapc01olkn2081f.outbound.protection.outlook.com ([2a01:111:f400:feab::81f] helo=APC01-SG2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcBKm-0000000CGLc-0DWU
+	id 1rcBWc-0000000CITt-1dZ6
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Feb 2024 21:37:57 +0000
+	Mon, 19 Feb 2024 21:50:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZdqAYLxBC6e+O32PI9C+lKyKt/lqGLSmuducctR26LrKh8/XKpX5bd7mrJii6MscmFYLMHhZj/ytHc7T/mdMIkILciAzxXNJ2t8VAOD75YfTLLm5PVcD3axDcqO1ROS0aXtJXUfE/Hg1cyWA4zajdsFfHk3GLH1ed9XiBu4gAht3X4kalEldv6n8fUia7gKMnzC6Zim4atcxMJil+3Ho14Cv/T0496EcUoxCtXdXEllCQ0ROjm+S434qaDbKmHRTTa/5MoNJV5UVJ986Q3UJczUuIFTHXd9+EEUS+k5CxJJL/D7bgqODckwtE3bx9Oauv5LY5SAteMGIqCFylrHtEg==
+ b=bqoru7kk3C/jKZchAi30BQVuP0GrbVdVJgnAG9HGMshOnSaHHGHuczbtvL2xfmG05OgqEWbpQsYe9njgW2uGhsZ4bjWUwIqVCav4fOYEmh3ZalpBp17Wqft3Amu0DroAXhn1ePoMztpBkANoKUHE+bbP7hiNdisB02SXnHTND6UB0IhM/E1XCsNI7GXmUNsrbczAMPncryMC0GALTNnF9UcVRs0th9byYoAbcpjckMg1LuCPlboX7yVje7AznsXTQqjWJEFvBh0Is0ZiYwljQ4GOQ56ul6y4ngPoyuP56DnZjHBOSW/Df0dzukzZuBtL0c90QJPfDCtbZD5Gfl3yAQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5FT1UoDxPixqD5RIiaCaXtujmi/2sdZozbjQknH+Ae8=;
- b=XjRo3FymiBDNvNQDqVgZfd4G/rx0/PnubRjEjNViJkvXxGWRJIFT/zGk6ta4tNEJr394g1dm2rDuPq/9iYC8mHPSB4U42U0dEs4CXvid1cVHhmdcw5MwGqDCUuOKvUWzQJjcVVSZSGIjhrVBnjb+nxHFWLp3etvqAbuYaGKMo2xYWKeHC8DXmCzXvVnhst5jY8QjxtFbsJje9D/ZyoVjNGN9sFjKyccBPYl0u6VBnj6G8wE/O2OOa3Y5Dy55Y0zNjkV7azpPqMOz8Y6i8zyFZtpx8T4qjD+SHmN3ra7Sf6ofM2Vmn39Hn4BI1KSSAUaqeZ+yB4DaRkBxIlq8FiQvGA==
+ bh=l7kU2f1K6bQMsMfQhGT/iroaK+/1ORBJ3fUDB6VViEU=;
+ b=XICPnuhMZLkbJXo4PMGwGIDJa0cu0omU8xDdi0gg1uyUVprQQqj/KiFkdeqsJgsW1XzgUNysZAiP1iLALK5BjC7/Ll+1G7qXs0vpvBXr9pv3JkeI58jZkimDKfJidwCyJb5JLfWI0Mvp4wRAoOpu0XW06FwJ3iA/dzUglH2yJr8XrdtloVmgFumfedL+V9mdKF7FkpWvI24pggWZIHXtecYQXOgNprzsk45puW3DgkrrZ6SH0rWUORzW2ZYRDYOzlEkrAeS02lwjoRHtD8GJSur7Kr3dw1d2Ej4uRFk6OakSWP95hvXsYbM69xYY695JkurdM/uA3DYYBCMBSFhcww==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
  dkim=none; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5FT1UoDxPixqD5RIiaCaXtujmi/2sdZozbjQknH+Ae8=;
- b=dJ+yyIdDbaWI3xvonOn4He6tVXA3UbxFGjSwiNTYOqpBGIUbaSsry+Otx9YaouW38XVaURzzZxMYfb1a6EcXWh/h3Lx61uPGybcI18Cam4ruvzGHqhqFZG7jPW/Haq/vif9OmM67UC5iNp7/N11g3r6B8Z0c6MjSQl2ASGCe1D+vt5QvNuq6fzSMgIn+krWiSIO0ZEh+bsYCshY9Le0dvvwS7FPH/TTYQeQN7KKlWAiW+K4AgI7D+fkZqxYJV9V0ki2qeKMP7ukchkIobNHPlGg4n72K8Rk5Ebd0o5boVKKDEBp6UXIqFRbFi8KsrYwHlHAKdoMpNsFro8mKGfMrfQ==
+ bh=l7kU2f1K6bQMsMfQhGT/iroaK+/1ORBJ3fUDB6VViEU=;
+ b=MdAk7S4rUsjiAS/Xn1BaK6zRLVQYH4YdHG3he8oIx7J7/2PTpUMpjXO9X9FQb1FQEiF/yqn96WWBpzR52HDuusHu9S2HFP7SN2MD3EQ57RntAD3lzOSl85ieHQknKJsz48BRC4i/I7rw5RI1x6gTVG0YqnCaWc+gwYFleaI3+QohVVv2X0V00t9lTnlz2PzlunxInMhr6dcomm5iKzgOma2W3S3BW4rlwCjfZLVI6KkKmlYdBRHiZY4FlmPStu30E/uZL3LX1RuktcK/Cb47YPVy6INSti6svb9BDSUSbmYLgwxluvLhN87J1RsNzVaOAyKhovvpXesIpnV9xqh9Mg==
 Received: from SEZPR06MB6959.apcprd06.prod.outlook.com (2603:1096:101:1ed::14)
- by TYZPR06MB4413.apcprd06.prod.outlook.com (2603:1096:400:73::7) with
+ by KL1PR06MB5993.apcprd06.prod.outlook.com (2603:1096:820:d1::9) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.39; Mon, 19 Feb
- 2024 21:37:48 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.34; Mon, 19 Feb
+ 2024 21:49:53 +0000
 Received: from SEZPR06MB6959.apcprd06.prod.outlook.com
  ([fe80::53da:a8a:83cb:b9ad]) by SEZPR06MB6959.apcprd06.prod.outlook.com
  ([fe80::53da:a8a:83cb:b9ad%4]) with mapi id 15.20.7292.036; Mon, 19 Feb 2024
- 21:37:48 +0000
-Message-ID: <SEZPR06MB6959B40C2B486E52754C98C296512@SEZPR06MB6959.apcprd06.prod.outlook.com>
-Date: Tue, 20 Feb 2024 05:37:43 +0800
+ 21:49:53 +0000
+Message-ID: <SEZPR06MB69592FACB1EF1B9FEDA89E5996512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+Date: Tue, 20 Feb 2024 05:49:46 +0800
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC v3 4/5] phy: hisilicon: hisi-inno-phy: add support for
- Hi3798MV200 INNO PHY
+Subject: Re: [PATCH RFC v3 1/5] dt-bindings: phy: hisi-inno-usb2: convert to
+ YAML
 Content-Language: en-US
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -67,66 +67,68 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
  David Yang <mmyangfl@gmail.com>
 References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
- <20240220-inno-phy-v3-4-893cdf8633b4@outlook.com>
- <271c7f14-abbe-4922-91ea-809e50be46cd@linaro.org>
+ <20240220-inno-phy-v3-1-893cdf8633b4@outlook.com>
+ <62221084-247c-4a0b-a030-e12cb2931411@linaro.org>
+ <SEZPR06MB6959AAB6B43F3E1F5E1C526596512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+ <6f3f22f6-f659-494d-963c-544cf5f44adc@linaro.org>
 From: Yang Xiwen <forbidden405@outlook.com>
-In-Reply-To: <271c7f14-abbe-4922-91ea-809e50be46cd@linaro.org>
-X-TMN: [3lg3OipTytNDu/ce3vVBUaaLQFFDFvfEDLhPtXQxceOi26XyX+tyb3JeqPqvscuV]
-X-ClientProxiedBy: TYCP301CA0041.JPNP301.PROD.OUTLOOK.COM
- (2603:1096:400:380::7) To SEZPR06MB6959.apcprd06.prod.outlook.com
+In-Reply-To: <6f3f22f6-f659-494d-963c-544cf5f44adc@linaro.org>
+X-TMN: [FQ3BXibj0QxnPFnthjZcncLRcL4amSLO4nu8uv8+dxsJtF89CDT/WWZPZufXeG+G72F8HVCBxbU=]
+X-ClientProxiedBy: TY2PR0101CA0027.apcprd01.prod.exchangelabs.com
+ (2603:1096:404:8000::13) To SEZPR06MB6959.apcprd06.prod.outlook.com
  (2603:1096:101:1ed::14)
-X-Microsoft-Original-Message-ID: <f63e3793-35e1-40dc-b02b-9098fc1483f5@outlook.com>
+X-Microsoft-Original-Message-ID: <d1e3ebb4-ca40-487a-8171-3a5a5fa567f6@outlook.com>
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SEZPR06MB6959:EE_|TYZPR06MB4413:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2df6b4a4-43e0-49fa-0222-08dc31930406
+X-MS-TrafficTypeDiagnostic: SEZPR06MB6959:EE_|KL1PR06MB5993:EE_
+X-MS-Office365-Filtering-Correlation-Id: 03b4d655-0ae7-4c2b-543e-08dc3194b40f
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 9DWADyFCN/zhJ3uPoTtDpQgs1ru3wAIktF7Udy6g8rF3IBzrM/Ylf+aYHnJPVRfnKLMQG+PnmIDfD0zwtl42EHznSy9l57k6rwjVgQHaBjvqcUvPKSTz4nDpx9EAe7Mgc7qLwnf9etOJmp0kbuE53K2ZW1Q3uO0o47U7+dOJEGJO6gwj65SvJ34JVtwFtzPI4xRvTl5sX6UFWGzv3+4WxPgFjI1VMO2CV8kAZxGmZ2BjuyL04ctTAOk7HlpQYdgWYBCvLxMxUl6aqFicPGUbYQ5GSJcczhwgEpZlRuxTZTHR+1hMDqEdGHcUO+74R/633MrdCuTXii+uss4NB8OI82D23Ctyjrj+d8HCd5iKJone+Yc9LI4VEoSdfVHs56s0k7z/MSaE+Q62XWjvu/Chf1jyj0JMPzg+bpDMOusiFwQfgRUoyxV5JbAgbZfU+l4oDR5fpptNHrYjxG1dk0rWIwZfSp6BNP079oc29H6Ohe2to89EjKqWmVZOktralnB7KgRZu2Hee+dDBDPUWcxqqJdbxLUDy8JnF9GdbKWl+CWWm/wYWfEBFwhdZCE4R+tK
+X-Microsoft-Antispam-Message-Info: ELcJds9EkO7zMbbi8X5YN8J94Pmi02FkE0T7FlvKmHhvf8OnaZYHo2DuxK+o/SWKBGqvnbJ0PrZTjw8DRwGumtRXrJctglCA5SafGKwdjJEh8wXw30jskeDSNkOXgDYCRb70RVqPtDhssCCw86MpFfG9Va7M+rEG94Zx4FTwooDxRhsH1KuRveIkVOe37eV++CALZY3NSAfymr1vZZKnQL5HaIijkl07X36KixqDNSljzl9UTC2fQyLrdwVnRCfscGrLO/SII01sBS8yDLQsc9p2B02xuXsRlB1VBoWfIECo1ZakanX4ve03Uqkm3e3UfOv31WSIto+FRvbEou5VpLoWQYb0wlwSAjN/pPCl9eHdzgGyhTHRKJGspTHM1ivEdrbglzmJ01l70+gw3+TOJw2jmfTQRiVgnjmwHOv/WzSAR6YcESR+IHA8frTReg82NWbdX/Vg9vi5CnppaMT2THmvSt4QLb6ThEpxayzbyQwZyVVZeisgnuDskFpRKwJxTKpNDYOI9+npiFTb87bwlR0NgB8zAqsyZ5uOOPU0CRhJC2sJleYbhGAVo4zIb961cDoNIIFLIGxHzVmaa636PnrH+GkmYNaKJ8vPyoL8TnIYuFU3PRLeOaoBZtKBIf/tlJBH62n1Dz/0dA3uP8rVAQ==
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?MGtnTWJhWEJSWHZ2WXp1VEw5Wk4zZzd1OVRQQUlNNGYvaDIyVmFkWFZHMXA0?=
- =?utf-8?B?U2pKb0tqdUdWWGVtQjF4SEpLV3JJYUdJcERzcUs4MTN3TUs0b05YSlZFTi8r?=
- =?utf-8?B?R2tQS2YzMUZRLzVydXUwb1ZRTDlVMndQdm5ZVlJVNzNLandDVXF2K3FsNzVq?=
- =?utf-8?B?MTZOcFlnK3JpTWtnMTllbUdwYmJ4Uks0SG9JT0pVZ29Zdm0xWWRHVDRpUFZp?=
- =?utf-8?B?TThzRzhOemUrLzNNOTRsOUlCK2hsMnRYZG1ZU1I2azhGUTVwNVdRa3RlS2wz?=
- =?utf-8?B?N1RkKzFEUUZIZTdRTG5iY1htUTRWVVlIdjUzNTBPQjhKU3YreWtYVHJwaVFR?=
- =?utf-8?B?dmtsYnJMc3kvdytXQmdFd0xmQzg0cUlNMkZhNG05akR3UkJYSEtEZ0NWSEwz?=
- =?utf-8?B?d213djMwRkRXdGljQ1Zrbk15ZjY5ZHpYdEJKU3V3a0xpRFMrUUJ5bXN5YXQ1?=
- =?utf-8?B?TkhsSXViYTV0Q2g1RDF2cWFjY2lQcG9SMlFWWVhDNjI5dGVIWExGT28ycjYy?=
- =?utf-8?B?RzhMeFZtbC83a3cyMmhUVXNZZlF3Z1I5aHNQb25vQTBycFpEbDBXdHhGRTIw?=
- =?utf-8?B?QnpOR0tOQmFxN0lIOW5BYVNlRGZ0SklmRWgrN3FsWFVsd3lSQ21XUGNYSmpl?=
- =?utf-8?B?KzgxZDllV1gvbjY4R3ZUN00zVGl6ekl1NmNocExNcm1EaHZlK2ZPWGdkQldE?=
- =?utf-8?B?WjkvMjZUSE9PYWFQR2NuKzF3VEVxa00wc0Y1dDd4dVF6SzFLNy9wV09pUW5W?=
- =?utf-8?B?MWZqVWlCNE9OZ2RYVnNPR3cvYnhhQmZya1oyUWswQXZMSUFwVGU0anBpY1Bt?=
- =?utf-8?B?RXU5Rnl0MkRkclRQMTRoV28wbWYrZGFNbG0xaExqZXZ1d1hIaVcxbXd0NEcv?=
- =?utf-8?B?ZTNxUEk5aGprZUIxdU1RRHRpWmdHaUxXb0xtQjVBWURadWEyREVCTm9xbG5Z?=
- =?utf-8?B?RE1naUMyR0VEVi9DWUFWMUJPMWFrWUV5VHBkMllaOTFJZkpvTlRWa2oxd1V4?=
- =?utf-8?B?RUFHT3FBa1djRk5DczIrYW9hVkdIVHdzLzZmaGNhb2dudkw4aEJUQ0xmek5j?=
- =?utf-8?B?ZnlkRmphakxXTWpQY24xWEpld2NxTnJUbWxVYS9uSmtLWnJ1K0hITVRqdDhz?=
- =?utf-8?B?SE9qcis0RjlWdXgzb24vVkZITllNZHZzV1EvVkZ2QklQNjVxeEdwUEE2cE4z?=
- =?utf-8?B?Mm5ZTWFGdk9XMG1JRmM0RGxFQ0lmZFBRSEdqN2FEWTlLQzRrcENqNVVFd0Zp?=
- =?utf-8?B?U1k2eVpXcmxpb2F1d2JicHpRVERSN2wvdUZWciswRi8yNENQVnFkTlVBdHRh?=
- =?utf-8?B?QzY2anE5ZDI0UmR0NHUwOWlaR1FiOUxmNlNWVkpzaU91RW5xbTN6TytPTTNP?=
- =?utf-8?B?Y3N5aW5JcGI5b0tlWEsxU3FraytOcFlmNlM5OHlYc3VGLzQ0VlNQd0xqK0s5?=
- =?utf-8?B?U1A3Yjh5dDNGbGk2clJjeFNNUEZBRTJGVnpwVGxYR1B1K1hySEZjeXMrcUZn?=
- =?utf-8?B?YzdWaHZBQ3dpdzErR1B4YkRvK29MV0liQTNzSlV3dXB1eVpjVUJlcVQ5SWow?=
- =?utf-8?B?aXdlT1ZpUlIwazdsTmljZUovUDN6djB0Ymd6MlNWb21ZVmwyUm1TRlYwY0Fs?=
- =?utf-8?B?N1F3UGtWeTc1TE54RkczOThQQnZYMUFHMDVDWHN2a2xkYXRmQ1djcStPUnl3?=
- =?utf-8?B?bUJKTGdqZHZGU2NVTUcra2tSNXNNQlY5WnBpTmJucE1SdzR3dWd3cXpTN1pK?=
- =?utf-8?Q?GS/UJfob8fOJqorfeXIbuANa2d1lUD8aa//dYmc?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?M0VibVJJeDE0c1lqendNelJkUUVwejhyQ3FVbi9IQk1PYm5ickZSZjZlYWlx?=
+ =?utf-8?B?UWpZOUtWZWpBelRKRUJnenNZZHRsV0hMcHRwTm1WajFtUkNEK2ZweTZsZDZN?=
+ =?utf-8?B?Z1p0cnArZTUzOU1IZjR0cUJ4VEVCUDdEQm5sU054MEhkUUlkdmRqMnY0dmNV?=
+ =?utf-8?B?ZEdNd3RzdWVuYVZVNXoxTllzWEtRZXVoVW1FQlJKR2JsTzVBZjQ4Q28zUW9Z?=
+ =?utf-8?B?Q0FpYndaaGhNbG42L3lYdGY2RjA2L3pwNStlemtkaVpPbWNqWE1pRFlWdFZU?=
+ =?utf-8?B?Umx3UStQenZGWFFaT2JsUDZ2Q2lJbW5SdG1Ic3ppdGpwRzY0elRWSVQ1V0R6?=
+ =?utf-8?B?NXd4dzFsc3Zxc20rbGtNMDJKOFJKN0l6ejZmY085VXZla0lWMEdwaEluUHFn?=
+ =?utf-8?B?S1RhV24yVGVWZktyT2MzcXcycGxqckVhRmQxYkhDM2s3eHZtbHAzdEF1M3gy?=
+ =?utf-8?B?TkNub3l6YkZQMkVJeVA4Wm14dFRBdmhpTFU2L1g5bkF1Zy9NV3piRWlEenFJ?=
+ =?utf-8?B?OWJaT0FoeWEwTlJtZ0ZwQXhCMk1MQ0pJQlZwSFJEdGNIQndaaGJ1THFWVDZk?=
+ =?utf-8?B?YXRuaDBjNWoxTEdlbWZpZmN1bW56UTlpTVkxNWRtaEgrNE5BOHhqNkQrNVNj?=
+ =?utf-8?B?Wk1iblpGdUhIeHhHSUgrdklFU2xCV0dST0ZkYzFsSWRsRzJnbkVZTWVta0ZI?=
+ =?utf-8?B?YTFwR2ZUcFNyRnZzbTRqeThCMDMzdVpTZ0RhSkZONzJBNktFUTNscEo2SVI3?=
+ =?utf-8?B?eGprTGZpWWJ6ZjNkNzdiV3ZuZnUrZnhGbDVCU0NNc3JScnBvdHlTaG9EbEtY?=
+ =?utf-8?B?SGdWbnVOUWdKUkhHOVdGSjNpY05HQzJIUnhiOVNkQVBVMEkyMEtxZmNXMDNT?=
+ =?utf-8?B?YU1zZm96a1BhVWJZeGR2eGJLaHdERFNHQnJ5bGQxdlJTUjdZd3lFWW9zZ01N?=
+ =?utf-8?B?QU9peWVlUWZ2YW5jaHljcE1zb0liaXVOV3pEMis5L0grMFhKZHVZZG96YlUy?=
+ =?utf-8?B?V0FrMFhsSVNPSzlneG1mU0pvbFdvUFRVOVlJUSttUlkrcElpdW9vN09aUk44?=
+ =?utf-8?B?UzRvajcwTzAvSENyVkwzTDJQWEZxMmZsd1hKdmF2NVhnSmVFY3p2cmtycWNy?=
+ =?utf-8?B?UHh4YVowbEh0VmFHL29tVDFlb2NLdk5sK1FMSE5ueUdZSjBjYUkranBmVmFk?=
+ =?utf-8?B?Sjhha1RLSHFaUDB3bkVrbXF2ZTB4WHI1amVNRU4vbUFCV3BkYWJGSzYrYm9I?=
+ =?utf-8?B?QlBiUFVBN2VKTGFpQU9CckprNGFTUWNQZjBuZHdlMmVjdFBhdkhyNkhQMmhU?=
+ =?utf-8?B?T2NLNEt6YXQvOEgyU3ZCV1h0WGh5aW91andIeUJSYUpHdW5UdG4vd1c3U0Vu?=
+ =?utf-8?B?MFJuTWtzUHEwb2R4RldMcDRpQmppUE9sVnpVdW8xVGtORDEyeVlEMCs3ZEFt?=
+ =?utf-8?B?TUpmc0liYUk2RHRUUE9NQUhwR293R1ZuVm1YY3p2SXBRV2hxcGxkTUtGNzVs?=
+ =?utf-8?B?TU9XZDNYSFkwTy9QS2l3c3Evdm9sV3BFVW5hN0JHaFlxMExUelJFWlVtTTlD?=
+ =?utf-8?B?RHRFM3VycWFJZisrSzFpSUJ5LzhOSTloQ1EreGtoeHFYZGNSb29mdmg3Z0tz?=
+ =?utf-8?B?MDh2a3pCQVo3blBIbVZvUHVreDljM0NTQlBSc2UwWEt5d0FvYjBYZXNabHpM?=
+ =?utf-8?B?NjhiWEVBSHByREtPV2lmci84eHJkOExMWVBBZUU0TXRlTXQ1R1pnUFdGdTNz?=
+ =?utf-8?Q?9j7shLkN09Voydp9BDZ7R6m1fbDof8xfZ/qZeG8?=
 X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2df6b4a4-43e0-49fa-0222-08dc31930406
+X-MS-Exchange-CrossTenant-Network-Message-Id: 03b4d655-0ae7-4c2b-543e-08dc3194b40f
 X-MS-Exchange-CrossTenant-AuthSource: SEZPR06MB6959.apcprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2024 21:37:47.8471
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2024 21:49:52.8738
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB4413
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR06MB5993
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240219_133756_132825_70DA21D9 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20240219_135010_485471_5A33F621 
+X-CRM114-Status: GOOD (  18.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,56 +145,73 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/20/2024 5:34 AM, Krzysztof Kozlowski wrote:
-> On 19/02/2024 22:28, Yang Xiwen via B4 Relay wrote:
->> From: Yang Xiwen <forbidden405@outlook.com>
->>
->> Direct MMIO resgiter access is used by Hi3798MV200. For other models,
->> of_iomap() returns 0 due to insufficient length. So they are unaffected.
->>
->> Also Hi3798MV200 INNO PHY has an extra reset required to be deasserted,
->> switch to reset_control_bulk_() APIs to resolve this.
->>
->> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
->> ---
->>   drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 65 ++++++++++++++++++------------
->>   1 file changed, 39 insertions(+), 26 deletions(-)
->>
->> diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
->> index b7e740eb4752..5175e5a351ac 100644
->> --- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
->> +++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
->> @@ -10,6 +10,7 @@
->>   #include <linux/io.h>
->>   #include <linux/module.h>
->>   #include <linux/of.h>
->> +#include <linux/of_address.h>
->>   #include <linux/phy/phy.h>
->>   #include <linux/platform_device.h>
->>   #include <linux/reset.h>
->> @@ -43,6 +44,7 @@
->>   #define PHY_CLK_ENABLE		BIT(2)
->>   
->>   struct hisi_inno_phy_port {
->> +	void __iomem *base;
->>   	struct reset_control *utmi_rst;
->>   	struct hisi_inno_phy_priv *priv;
->>   };
->> @@ -50,7 +52,7 @@ struct hisi_inno_phy_port {
->>   struct hisi_inno_phy_priv {
->>   	void __iomem *mmio;
->>   	struct clk *ref_clk;
->> -	struct reset_control *por_rst;
->> +	struct reset_control *rsts;
-> This does not look related to this patch at all.
-I should emphasize this in commit log. Hi3798MV200 have two resets 
-rather than one. To make things easier, I simply used 
-reset_control_array APIs instead.
+On 2/20/2024 5:37 AM, Krzysztof Kozlowski wrote:
+> On 19/02/2024 22:35, Yang Xiwen wrote:
+>> On 2/20/2024 5:32 AM, Krzysztof Kozlowski wrote:
+>>> On 19/02/2024 22:27, Yang Xiwen via B4 Relay wrote:
+>>>> From: Yang Xiwen <forbidden405@outlook.com>
+>>>>
+>>>> Add missing compatible "hisilicon,hi3798mv100-usb2-phy" to compatible
+>>>> list due to prior driver change.
+>>>>
+>>>> Also rename to hisilicon,inno-usb2-phy.yaml and add this name to
+>>>> compatible lists.
+>>>>
+>>>> Fixes: 3940ffc65492 ("phy: hisilicon: Add inno-usb2-phy driver for Hi3798MV100")
+>>>> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
+>>>> ---
+>>>>    .../bindings/phy/hisilicon,inno-usb2-phy.yaml      | 95 ++++++++++++++++++++++
+>>>>    .../devicetree/bindings/phy/phy-hisi-inno-usb2.txt | 71 ----------------
+>>>>    2 files changed, 95 insertions(+), 71 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>> new file mode 100644
+>>>> index 000000000000..1b57e0396209
+>>>> --- /dev/null
+>>>> +++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>> @@ -0,0 +1,95 @@
+>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>>> +%YAML 1.2
+>>>> +---
+>>>> +$id: http://devicetree.org/schemas/phy/hisilicon,inno-usb2-phy.yaml#
+>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>> +
+>>>> +title: HiSilicon HiSTB SoCs INNO USB2 PHY device
+>>>> +
+>>>> +maintainers:
+>>>> +  - Yang Xiwen <forbidden405@outlook.com>
+>>>> +
+>>>> +properties:
+>>>> +  compatible:
+>>>> +    items:
+>>>> +      - enum:
+>>>> +          - hisilicon,hi3798cv200-usb2-phy
+>>>> +          - hisilicon,hi3798mv100-usb2-phy
+>>>> +      - const: hisilicon,inno-usb2-phy
+>>> According to your driver hisilicon,hi3798mv100-usb2-phy and
+>>> hisilicon,inno-usb2-phy are not compatible.
+>> Ah, i didn't pay too much attention to that. I should remove the entry
+>> for hisilicon,inno-usb2-phy in the driver. Sorry for that.
+> We don't talk here about driver, although I used the driver as proof or
+> argument, because I don't have access to hardware datasheet (and no
+> intention to look there).
 >
->>   	unsigned int type;
->>   	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
->>   };
->
+> What I claim is these are not compatible, so respond to this argument,
+> not some other one.
+
+Why not? Of course they are compatible. All 3 SoCs are using 
+inno-usb2-phy. The only difference here is the method to access the 
+registers. They are all enabled by `writing BIT(2) to address 0x6`. In 
+the cover letter, I said the driver is actually doing things wrong. 
+Especially the commit adding PHY_TYPE enums, the name is confusing and 
+conveys the wrong info. It's not PHY which are not compatible, it's the 
+bus. I'll fix the driver, but still the PHY hardwares are compatible 
+between these 3 SoCs.
+
+I'll say the driver is broken from the beginning. They should move 
+write_reg function to a separate regmap driver and only left `write 
+BIT(2) to addr 0x6` to the PHY driver.
+
 >
 > Best regards,
 > Krzysztof
