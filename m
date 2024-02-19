@@ -4,104 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAA7EC48260
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 07:34:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF00EC48260
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 09:03:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EVNkpY8epQ0PBVpR0rTnOP2JMJwCpkCRGfDESVlZJm8=; b=HIceiREaE1ycGO
-	0a5LEoNNYVv8rYwyYn0QYI9UdkHETjxzcqPmqrlsJ0a6EH2ZHbLWHnYD/cuaWfxaX0T+mwFYVssJb
-	QyAl61MyjSapGWEOEw286MZDoYTTz/ZJDBNyBiPkYCtasCXO0El412NXSjyrAuc8e7zUWaQc/OWix
-	tm7SM3+cyWe0m2q/SfEd6TyIWGM9nL84jvQ/7ZsyYERzlPAHMz5ItwWpWqsRHwrBXDnUkKNUdft9n
-	xPPk3huE2hq3UXT87DLDlbEy/HJ3bDFi6UahCxCBjAJ3VS3+DQNOAQddCZlDEgd1YbRdri3WMB4ww
-	ztV4h+2exUAHvryxGF/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=SXB0xzRgGg5RWPbTL+CXktoGKwT0l0auLie8KDOXyuU=; b=pkjeXLku4Wdyz7AkLzHLVxEYVq
+	F71tgwAYm2crqrsZpVd/spg4RIspJMTlTunB6aY9fj+6coQ84flti8b2rDckNeiFPFKkAlDrJ/daf
+	cvbyewTjifEubWUi2P0tdu+VmcvDr4MKhZA//qbpBRKIYlaJoq4IlPxdl4pY4WZ20BcJy28/xNsLd
+	9iSzMpDUzFkSqD9+o5H8B61EveVfCJrIJYyxRwlaQkgQquVDOZ3/icGjRsd8LOlF0eT5OcXcVAyTU
+	jTblgJ8iBfFheY7s0YXybTXH8O/ZE1gj34YFlNa6pSMBRfo2wRl/74RE2+iytlGzijwkOxa2NZ1A7
+	6FhvRn0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbyA7-00000009NnM-1rx8;
-	Mon, 19 Feb 2024 07:34:03 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1rbzYt-00000009iRF-2HtK;
+	Mon, 19 Feb 2024 09:03:43 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbyA4-00000009NmG-2UEz
+	id 1rbzYq-00000009iP6-2oyc
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Feb 2024 07:34:02 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-512b13bf764so768711e87.0
-        for <linux-phy@lists.infradead.org>; Sun, 18 Feb 2024 23:33:58 -0800 (PST)
+	Mon, 19 Feb 2024 09:03:41 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-33d44d78e5fso310851f8f.1
+        for <linux-phy@lists.infradead.org>; Mon, 19 Feb 2024 01:03:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1708328037; x=1708932837; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=+ng3gW4V3o0lgSkXW6LbE2EKjcIRK6fb4LZxE38g6CE=;
-        b=fmaYGCZ6n453cIfAFACjPDsAKAHccBiqt4aJLZAIVHTigLLHJztz+JWfSrbQitohcR
-         BQ1gNP+y1oMqYN63jGRWx3VXDZrQJCH21CWaSZyvhk5i/QdQcgdOsGSzdG3Jm79pvu1c
-         zXcSW75tWA8smCjnM22Qy6ldUddnZ3vhxeNWS54W850lE/QYp2Xpux3gYJSVTHbwLN5A
-         gYwsuUDtEf7JL1/Kk0D81YvT6EomerOZq7EYYISbAWblZx7CzH4crCQZBZlCjQtjqXJY
-         Pvfw2x/YTNgTvSmbjAKzt0KGddfZQhAtnXUXh+++MspABv63is7Ki/B5hhFCRjR/0sJN
-         CtEA==
+        d=linaro.org; s=google; t=1708333419; x=1708938219; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gF7sGDk1x24G6RZbBVHNrWjV9qvXDZGdRDsrtRvQq9E=;
+        b=nq+KsEKLRk5Dxp3OcFxnIIbAMnL/MRgAORAmqKmI5EM/DXX88Jue30KSa3Kr4MkFqd
+         HeMXE9bpq9bBRhRzOJKW1USCqxg7RyIjPlaMHQsC2r5tAaLeY/tuvRxActh9kCnlbsYO
+         v5/p5QydRH3uAJ2a6TW+oRk4txVAgylz74SKjDkmj0BqlNKtwlLMCAH9XdP0J2c+hvON
+         H/dapVdM5zCeU3EJb312zyD125210h3vNtbKzkWWX/MU63pbJWBLWf1A0oKEp+6T8ORy
+         KmLAucWcIYBdEBH0u+TJQ7ZHmohZRLsCxfI2deq+ExyZegSRhgzKp/PumBCXDMzCFxWs
+         1jDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708328037; x=1708932837;
-        h=content-transfer-encoding:in-reply-to:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+ng3gW4V3o0lgSkXW6LbE2EKjcIRK6fb4LZxE38g6CE=;
-        b=j8Zsd4hX7eedkYpvJ+dmutMIgLun2RIcvomwynQnz3GqY+E70JhomM41Y3BpxD1iCZ
-         aRscwpmQ9bj4LQT8x2z5r936ou4rcMR8mGmELj2EvqtbQ/zvlY3EIun6Lvi1tbKeO4xI
-         VZMIybDQtpzkwyytu7db18YDmSjecmaN3zvdJT+Nol4Lftht+sYUd1RhLE9NUWCwbv20
-         vtQ/1Q15Xcj3pX0lP28jt3GBHbMWXBhBnPXOuc8cIdezdFcG3xQBidrI/OxDx1wu4AG5
-         o7w2iq0oWOZxfgjAHZ+Uk9cuUd3LbYWFNqAn7kphC39Jde++wfWS4F7cdwYCDTHUqV1N
-         FnQA==
-X-Forwarded-Encrypted: i=1; AJvYcCUUU+b8f43D4gyLuzY5OQxStZ79HAm5clgSq5xfC4pAXvxTarF4qSATP0WnWpQRSk/C3GjddopRE6vxXwX2SJB7kHR4xgvR+sZS5UPcfg==
-X-Gm-Message-State: AOJu0Yx+jiLMhr5df/XhuTPvFy/UpT5rYWxqSkHd8TVHNm6qKUboY4CY
-	H3Da6JzPvsMa64vCfZp0SBITKyD50k/cn3980pxUeA/RAF2OLtq3UqsF4aTuKTo=
-X-Google-Smtp-Source: AGHT+IH7t2S3UJLlE+g5RosWguA6ACJo1jYaUo0HRFcgzCtXQeK6rSIGLys7KhAWV1PTPsrhu0txhw==
-X-Received: by 2002:a05:6512:3144:b0:511:84fe:8dcd with SMTP id s4-20020a056512314400b0051184fe8dcdmr7786108lfi.1.1708328036943;
-        Sun, 18 Feb 2024 23:33:56 -0800 (PST)
-Received: from [192.168.50.4] ([82.78.167.20])
-        by smtp.gmail.com with ESMTPSA id l20-20020a05600c1d1400b0041256ab5becsm7611582wms.26.2024.02.18.23.33.54
+        d=1e100.net; s=20230601; t=1708333419; x=1708938219;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=gF7sGDk1x24G6RZbBVHNrWjV9qvXDZGdRDsrtRvQq9E=;
+        b=K6SGAW9QAMmPYQ1qcK0JoQ1aDh621KeUJC/RAmSShyZInq38yqo5TtX4xYbR8WtmEQ
+         0AqaLV7LbFpECAWPzpM+NAbz1DkuIXdFk8qq/9/dKrQE+yjUyMiDkfmMXEluB8nqekhH
+         j1+ZPueFq+odnhe9yVf1jTxL9bMM+m8kwaGHu196eHd4ynLxRDlnCOMHj64hJwSiUrfv
+         de1s+hGNq4skEIIaFkrSEvAgrP3dPY1QqRDwfnF0evot9ZmkAAIGH+aCTC/BiJKEteCT
+         UbpDAC4OOOuk/oBQhqZZpXJadY7rTuZgfK2S4OU0YpkRADKPgOUKnIo72gBirAko0rci
+         Wg4g==
+X-Forwarded-Encrypted: i=1; AJvYcCX8qodAjiy4Z65FVWVr+q62WI9bj5G3XPh/D7p3TFRsITdQEziSPvifidWjfGWojHazNTJASmdWIcb0rGagv2BMHkfWRjYj+/qtpIcacw==
+X-Gm-Message-State: AOJu0Yw5N9u09gj5dbcgLxOTKqQ6kxUFcOZie7zTNJXCbn1MFYKbyqqR
+	NLJg0QA/Knam8Vk8QhdIPGnrReeo7DFqMts8Koxkerz/pNJ4c75Epl7SZKkq6oE=
+X-Google-Smtp-Source: AGHT+IHeW4FAyqvBoHaZHyX8ohtq5iNNLDp8u7VcW4ZWJqvxtsgUI3BYpUKh1ifXeE1GS2yUvTjqBg==
+X-Received: by 2002:a5d:588f:0:b0:33d:2b3d:b598 with SMTP id n15-20020a5d588f000000b0033d2b3db598mr4141771wrf.70.1708333418779;
+        Mon, 19 Feb 2024 01:03:38 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:982:cbb0:9470:c6e0:c87a:fa9f? ([2a01:e0a:982:cbb0:9470:c6e0:c87a:fa9f])
+        by smtp.gmail.com with ESMTPSA id s1-20020adff801000000b0033d01fe1f04sm9722957wrp.55.2024.02.19.01.03.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 18 Feb 2024 23:33:56 -0800 (PST)
-Message-ID: <e6c6e825-42dd-4f2d-8329-f7b3e09bb8a9@tuxon.dev>
-Date: Mon, 19 Feb 2024 09:33:53 +0200
+        Mon, 19 Feb 2024 01:03:38 -0800 (PST)
+Message-ID: <c86594cd-f32d-4b66-8459-9045640aa928@linaro.org>
+Date: Mon, 19 Feb 2024 10:03:36 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] clk: constify the of_phandle_args argument of
- of_clk_provider
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Nishanth Menon <nm@ti.com>, Bjorn Andersson <andersson@kernel.org>,
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH 5/6] phy: qcom-qmp-combo: fix drm bridge registration
+Content-Language: en-US, fr
+To: Johan Hovold <johan+linaro@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>
+Cc: Jonas Karlman <jonas@kwiboo.se>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
  Konrad Dybcio <konrad.dybcio@linaro.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- patches@opensource.cirrus.com, linux-stm32@st-md-mailman.stormreply.com,
- NXP Linux Team <linux-imx@nxp.com>, linux-amlogic@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
- alsa-devel@alsa-project.org, linux-sound@vger.kernel.org
-References: <20240208163710.512733-1-krzysztof.kozlowski@linaro.org>
- <e43727bd-d83d-4271-9871-ff995c8e7d03@tuxon.dev>
- <88de75cd-4069-4be6-9c4e-f32befa46d58@linaro.org>
-From: claudiu beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <88de75cd-4069-4be6-9c4e-f32befa46d58@linaro.org>
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Kuogee Hsieh <quic_khsieh@quicinc.com>, freedreno@lists.freedesktop.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ stable@vger.kernel.org, Bjorn Andersson <quic_bjorande@quicinc.com>
+References: <20240217150228.5788-1-johan+linaro@kernel.org>
+ <20240217150228.5788-6-johan+linaro@kernel.org>
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro Developer Services
+In-Reply-To: <20240217150228.5788-6-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240218_233400_783985_09C60075 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240219_010340_777864_C898C483 
+X-CRM114-Status: GOOD (  20.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,43 +132,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 19.02.2024 08:59, Krzysztof Kozlowski wrote:
-> On 19/02/2024 07:25, claudiu beznea wrote:
->>
->>
->> On 08.02.2024 18:37, Krzysztof Kozlowski wrote:
->>> None of the implementations of the get() and get_hw() callbacks of
->>> "struct of_clk_provider" modify the contents of received of_phandle_args
->>> pointer.  They treat it as read-only variable used to find the clock to
->>> return.  Make obvious that implementations are not supposed to modify
->>> the of_phandle_args, by making it a pointer to const.
->>>
->>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->>> ---
->>>  drivers/clk/at91/pmc.c                        |  3 +-
->>>  drivers/clk/at91/pmc.h                        |  3 +-
->>
->> Reviewed-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+On 17/02/2024 16:02, Johan Hovold wrote:
+> Due to a long-standing issue in driver core, drivers may not probe defer
+> after having registered child devices to avoid triggering a probe
+> deferral loop (see fbc35b45f9f6 ("Add documentation on meaning of
+> -EPROBE_DEFER")).
 > 
-> You understand there is no review for "part of patch"? You probably
-> meant Acked-by.
+> This could potentially also trigger a bug in the DRM bridge
+> implementation which does not expect bridges to go away even if device
+> links may avoid triggering this (when enabled).
+> 
+> Move registration of the DRM aux bridge to after looking up clocks and
+> other resources.
+> 
+> Note that PHY creation can in theory also trigger a probe deferral when
+> a 'phy' supply is used. This does not seem to affect the QMP PHY driver
+> but the PHY subsystem should be reworked to address this (i.e. by
+> separating initialisation and registration of the PHY).
+> 
+> Fixes: 35921910bbd0 ("phy: qcom: qmp-combo: switch to DRM_AUX_BRIDGE")
+> Fixes: 1904c3f578dc ("phy: qcom-qmp-combo: Introduce drm_bridge")
+> Cc: stable@vger.kernel.org      # 6.5
+> Cc: Bjorn Andersson <quic_bjorande@quicinc.com>
+> Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 ++++----
+>   1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 1ad10110dd25..e19d6a084f10 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -3566,10 +3566,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+>   	if (ret)
+>   		return ret;
+>   
+> -	ret = drm_aux_bridge_register(dev);
+> -	if (ret)
+> -		return ret;
+> -
+>   	/* Check for legacy binding with child nodes. */
+>   	usb_np = of_get_child_by_name(dev->of_node, "usb3-phy");
+>   	if (usb_np) {
+> @@ -3589,6 +3585,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
+>   	if (ret)
+>   		goto err_node_put;
+>   
+> +	ret = drm_aux_bridge_register(dev);
+> +	if (ret)
+> +		goto err_node_put;
+> +
+>   	pm_runtime_set_active(dev);
+>   	ret = devm_pm_runtime_enable(dev);
+>   	if (ret)
 
-Sure... Here it is:
-Acked-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-
-> 
-> https://elixir.bootlin.com/linux/v6.8-rc5/source/Documentation/process/submitting-patches.rst#L544
-> 
-> Best regards,
-> Krzysztof
-> 
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
