@@ -4,87 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 843DCC48BF8
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 15:58:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAC97C48BC3
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Feb 2024 17:49:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:To:From:Subject:Message-Id:Date:Mime-Version:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z0WE7IywrWG2Jb+3AVRXZfQ7QvrLo4SvMg4/n6WIEAU=; b=E6C4Srej+/5CaiOJ6TyMgHQFLa
-	qmV/vgnUanR2AMNJj4IsRoH0wefqBphEF0KpZfs10zvLme1wON18Uaiiw7E8jam6GzIbd4qEux4db
-	kkTIEWc2R8H+Ina2kuECBGVeIk+HpIsM927f8dSLNztJEo+ZNqGPZrs1Yf5mAAYqes/YssogqwteE
-	eAQoZxdBdVnmWpqD4jmq1m5Z63iK/JUclHe8w8R3GEGtcxl7hN/3zhq4JC0ovfwvyx1i5ile6gKNI
-	7mo7hsGKv2yHpKXEWnCLLVaMW1NKIKtoMK0i7BzYUUUiH8Clzw2kw3KXpYNLGKlrhv8HbkHpS+ySt
-	Iqmtjwrw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
+	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AWAjy+z93SDvN50VBoXTdaYyAOSFX9keFrEUvxhElIw=; b=xJhTOkov88iYOs
+	yC7lAx8raen+88BxafJPLYM7FeXNt2echZSdmOrIGkY7D8L02G2SOpR9/RxDLd+jwKCOlAAh1pSql
+	QYFMeGHaQM3HW82e62PLmF1EN0yS7+iW5lEvgKoWbLMCmi762G4UoXVXSxCei74jcycrMNs+W2pAz
+	DnifU7fBeVN41get+DkoSHoZRxwxEn5cFpCAlPOY55GvAlY9GGw36lc9IlHU2zlqJ/RuZBlh+PKHj
+	+w+DkUJrM552C98N7wXnxoFSPXeTuzKyQw4/jWga+x4fxcEQG+QZGdmaOJvLVCn9EGiDDAeDFddzI
+	Lb2V84N+lKVLpyEg9PeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rc62J-0000000BEXJ-0CXN;
-	Mon, 19 Feb 2024 15:58:31 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1rc7lR-0000000BaKn-2elu;
+	Mon, 19 Feb 2024 17:49:13 +0000
+Received: from mout.web.de ([212.227.15.14])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rc62H-0000000BEVn-0Y3f;
-	Mon, 19 Feb 2024 15:58:30 +0000
-Received: by mail-ed1-x532.google.com with SMTP id 4fb4d7f45d1cf-563d56ee65cso3956372a12.2;
-        Mon, 19 Feb 2024 07:58:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1708358307; x=1708963107; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:message-id:date:mime-version
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=tiqLc5KdCmtjYQt/eIFsjHHh0iB3V/zgzPhPHivKtAs=;
-        b=c+PPF1D6kbyAFAvHpE9KoiVY6WzOTCadGla2QtCuQdBNl0zv5ubOZmIz9CphfZst5+
-         J2ue31TE9f9CxqBouriUiu3OR1u2ehqH76W85Yw7nw9AdoXPqgqc3KHtLtmWfHkNp3cJ
-         zTn5RTwrhCOB78rKWmKmcAni87k/0nOndR/TLGunuznjPPS5Th4+GXz8uBC5Qk+dnifN
-         tA6WcSwdGjKO2iIqAtCxmz0aFVAQ5BHOofeY6bRRhT0ELlqF+CoaEU2w78PxHhVmcLft
-         tUipe5l4+YWOD6RzaQjcuQ7tEPC3wGXagf2LmhZDlI2bO2NMS2Z8VshhlaO1gdf3JWxs
-         xiIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708358307; x=1708963107;
-        h=in-reply-to:references:to:from:subject:message-id:date:mime-version
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tiqLc5KdCmtjYQt/eIFsjHHh0iB3V/zgzPhPHivKtAs=;
-        b=cd17skTmlqcKf+Cs/EhA3yvF+FqbYQYTyaXXdtx5uarE1MaT1Vl3pOMOw5cLJS77KS
-         UaOkr0kSn1lctyDRgqAUX3tJo2BXGuAdBx9boDHbdzJJ5lOv692HyQ67P7HufnbsuKhn
-         oMpZBy39Hu6dNA+1KyAcqT/seOyPKUeO4J7RUFCsObErkM7yWHheo5NA71jsnRZoKOO7
-         IteSsU1XEiRRtu2OVk1xHOfD84n9H9HS+0tuzamGXNk+BMLogXc6QgsNVTIdFpaP5o8N
-         t+NPw84koKy/LAQq9JA97vwpsc+967HHMofvSgNmDbSKq5UBSzf6S1sfcdh/9e3zKpuu
-         IPXg==
-X-Forwarded-Encrypted: i=1; AJvYcCWKTpQd8Af/Q7SQ/1CbQhwPRMVlSJfkMKZtVGiF2f1dhNwrDeKQJV87gQpXi9v7fsTLAto1X3pwHq76/wqMhFSHl7KFu2/deZ1X3cnKTIuNYY0/Gig6YNmtKt/mopicLoehzPD39MPorDsSXb1z+OCEKrosMywbuNt+aJxivyR0iobK+FMJ+3wh8R5Czb1BoD+PMRUz1bCKzXq4vBKp90ci6P2XM72UCDEhqxOAQLB69030C5iprGYn+fW2KKLxHpZ8vQZmzrSzf2LUoiOxWRENL7l025P7Itwwh65BWXc=
-X-Gm-Message-State: AOJu0Ywi/MvUpjGKUnFud/DCBDoj6JTH5OMgH2nx446H7Xc+mhzaGcZs
-	+ElO84Ql6aJYko9Kh0NgKYuBiv+A/I78lLqv2eVxdzTPS3oHZS4U
-X-Google-Smtp-Source: AGHT+IFtwqfaW9gJsxLy3j5F49CYy1xFjRlT0RRadI4Z0IOCUNhh1itGGGOPl5tKEJMCv67TBumOMw==
-X-Received: by 2002:a17:906:851:b0:a3d:80d7:d1e3 with SMTP id f17-20020a170906085100b00a3d80d7d1e3mr7428154ejd.77.1708358306585;
-        Mon, 19 Feb 2024 07:58:26 -0800 (PST)
-Received: from localhost (p200300e41f2d4600f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f2d:4600:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id rf23-20020a1709076a1700b00a3da5bf6aa5sm3076542ejc.211.2024.02.19.07.58.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 19 Feb 2024 07:58:26 -0800 (PST)
-Mime-Version: 1.0
-Date: Mon, 19 Feb 2024 16:58:25 +0100
-Message-Id: <CZ96H72GI4Z0.SZJBZXA1VXJZ@gmail.com>
-Subject: Re: [PATCH] phy: constify of_phandle_args in xlate
-From: "Thierry Reding" <thierry.reding@gmail.com>
-To: "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>, "Vinod Koul"
- <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>,
- "Chun-Kuang Hu" <chunkuang.hu@kernel.org>, "Philipp Zabel"
- <p.zabel@pengutronix.de>, "Jonathan Hunter" <jonathanh@nvidia.com>,
- "Laurent Pinchart" <laurent.pinchart@ideasonboard.com>, "Linus Walleij"
- <linus.walleij@linaro.org>, <linux-phy@lists.infradead.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-sunxi@lists.linux.dev>,
- <linux-kernel@vger.kernel.org>, <linux-amlogic@lists.infradead.org>,
- <netdev@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
- <linux-mediatek@lists.infradead.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-renesas-soc@vger.kernel.org>, <linux-rockchip@lists.infradead.org>,
- <linux-samsung-soc@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, <linux-tegra@vger.kernel.org>,
- <linux-gpio@vger.kernel.org>
-X-Mailer: aerc 0.16.0-1-0-g560d6168f0ed-dirty
-References: <20240217093937.58234-1-krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20240217093937.58234-1-krzysztof.kozlowski@linaro.org>
+	id 1rc7lO-0000000BaHj-0j2V
+	for linux-phy@lists.infradead.org;
+	Mon, 19 Feb 2024 17:49:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de; s=s29768273;
+	t=1708364915; x=1708969715; i=markus.elfring@web.de;
+	bh=hPupRt57+r+Pl0dfVnsjq1GsNhHpCJ6eXReICe+eDDo=;
+	h=X-UI-Sender-Class:Date:To:Cc:References:Subject:From:
+	 In-Reply-To;
+	b=h4sRlf5zIV+QWDila5ohfglWmS12NfxX6Wx6NvhudyKq05oHZRWmmvB+yQAl/USd
+	 s/hF88fZLogXlVoPr9rYZcV6U1BvLPtgrwOs3I0XIdBFv8XpCNCNY3EEijkJj1DzY
+	 5VvHfB+6tRpIy0Tq9+g7oAj5CiRYslmyzxurJVIsHN3Kc9uYA8tBa3N1Mp5L6Y/wr
+	 oucP7TurufLy2QMHeMn/SgfhJjg31IVk1/FHtcdSB/Axxv9EWjjleNaSPrJeU4eX5
+	 oZ7w/z6ZtPYAINIoef5Lp0bfUVTHb8xQlzM7tiiHXC7yK1h1ujvgMvoDn/CvIgI7W
+	 Yu6xFw2F9eBfP/W1YQ==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.80.95]) by smtp.web.de (mrweb005
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1M2xrs-1rfQbv2m5c-003JhM; Mon, 19
+ Feb 2024 18:48:35 +0100
+Message-ID: <c95f5ff3-8dad-4302-9384-92a9b83f7bdc@web.de>
+Date: Mon, 19 Feb 2024 18:48:30 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: Johan Hovold <johan+linaro@kernel.org>, freedreno@lists.freedesktop.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Bjorn Andersson <andersson@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Vinod Koul <vkoul@kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Kuogee Hsieh <quic_khsieh@quicinc.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Rob Clark <robdclark@gmail.com>
+References: <20240217150228.5788-2-johan+linaro@kernel.org>
+Subject: Re: [PATCH 1/6] drm/bridge: aux-hpd: fix OF node leaks
+Content-Language: en-GB
+From: Markus Elfring <Markus.Elfring@web.de>
+In-Reply-To: <20240217150228.5788-2-johan+linaro@kernel.org>
+X-Provags-ID: V03:K1:1qY8TG6XGBPBySkXD9Iw+B/jMk+ITC9FUkKiHaIFz/AtRCFm3X8
+ A2bG3gibnYIc7UfT5py0ZV3IHcRAAwqod7yJen0dD22Od/rMMXKMtv4O3ehHFd6NK1O47oF
+ 2FKhSK+MFr0qgPhK4sp6Gvv75D7So3Dsd6VTfJ4FGrbLdu71hXEBz4h4bEnOqoDzSyVLUQM
+ FFo2segx5J963ehK0Nyqg==
+UI-OutboundReport: notjunk:1;M01:P0:Vt1j2p9N3tU=;Y5Fkv24B75ZRsEO6v+JeViz6QDS
+ Z0Qr1vSndEAhOcBQzzzF9Hc+zTH8Lh5ACQIDs7Em43y0RsMfANmO66fe8KzHagSpTU3nCS9yw
+ seqRMXtdrL7zS+FYfxRWVQMh2n+AW0LD8yuU/LvcAOqSzpZuAxCp9sB894cWb6Vs/KQwhcvix
+ 0c0MCspFvzytZ8Z/VmjJpOa6U7u79EUFZbSTMcXdtOidhEyGaXoD1ed1lSk72ZHY4WrxBcoIG
+ AQDpd7AAX8XoGPbGzDh8DSIIf76R1xfHsRz/IWtBKre8C5hyOZibsT6rlCWZf1Hn4OY8nyGe8
+ 0R7jtfGDhFTNaLob/euJ4Xouo1S6JDEo6roUqqRQhLm+eihsK/1yoocr3e4TN5EfooNR/mqlb
+ JU0s2ZXbFHxS1HxFt10qTR2Q3UBDpjnHxaf0nc6H7jpfWpYApArkm5d6/CArQHWMYRyHggilo
+ NOJYAzpbA7OAaB9NNxId1wvcwZvrTgkzAeabC2c5HsL0UzNsbWqKbMMceESmfn72wOIfsQIsP
+ L1S6NcAESVAnTYRBVYmDfWpuRiWfiWzh6aw9JFeF6HLm6Y4ajY/9ve+rE1vwM2zw9Na/oA3vn
+ fbfuZnuDVcd6HgPLX6VmhUXnUzA/O+87vE3/mjhRZ30qPnFNmB7/gDo+4lkRApUIZ+Y5SsU8T
+ C/RmhXE33yy5bOoTU1jR3W+iZ1ylFub+AO8utosVVJ5xfLspRIaoR6ptLogpbtO8A+duLEl5g
+ BTecZA4H8EdbrwYdstFYfumSnHWDkijS5WNqggvyMOhheue05/XZGimtzonJucoBOFIY89JRK
+ mjveQA3OLbiH8J7EvTIIAlcAE3cn0wtcE7uXKqhPCSnq8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240219_075829_201019_870F0EC7 
-X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-CacheID: sfid-20240219_094910_507134_396142FE 
+X-CRM114-Status: UNSURE (   8.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,112 +102,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2863728712566050691=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============2863728712566050691==
-Content-Type: multipart/signed;
- boundary=f0caf17c841197981a0b66a2ac604de0b745306e0ba899959bfe0165d31f;
- micalg=pgp-sha256; protocol="application/pgp-signature"
-
---f0caf17c841197981a0b66a2ac604de0b745306e0ba899959bfe0165d31f
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-
-On Sat Feb 17, 2024 at 10:39 AM CET, Krzysztof Kozlowski wrote:
-> The xlate callbacks are supposed to translate of_phandle_args to proper
-> provider without modifying the of_phandle_args.  Make the argument
-> pointer to const for code safety and readability.
->
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  drivers/phy/allwinner/phy-sun4i-usb.c              |  2 +-
->  drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c     |  2 +-
->  drivers/phy/broadcom/phy-bcm-sr-pcie.c             |  2 +-
->  drivers/phy/broadcom/phy-bcm-sr-usb.c              |  2 +-
->  drivers/phy/broadcom/phy-bcm63xx-usbh.c            |  2 +-
->  drivers/phy/broadcom/phy-brcm-usb.c                |  2 +-
->  drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c    |  2 +-
->  drivers/phy/freescale/phy-fsl-lynx-28g.c           |  2 +-
->  drivers/phy/hisilicon/phy-histb-combphy.c          |  2 +-
->  drivers/phy/intel/phy-intel-lgm-combo.c            |  2 +-
->  drivers/phy/lantiq/phy-lantiq-vrx200-pcie.c        |  2 +-
->  drivers/phy/marvell/phy-armada375-usb2.c           |  2 +-
->  drivers/phy/marvell/phy-armada38x-comphy.c         |  2 +-
->  drivers/phy/marvell/phy-berlin-sata.c              |  2 +-
->  drivers/phy/marvell/phy-mvebu-a3700-comphy.c       |  2 +-
->  drivers/phy/marvell/phy-mvebu-cp110-comphy.c       |  2 +-
->  drivers/phy/mediatek/phy-mtk-mipi-csi-0-5.c        |  2 +-
->  drivers/phy/mediatek/phy-mtk-tphy.c                |  2 +-
->  drivers/phy/mediatek/phy-mtk-xsphy.c               |  2 +-
->  drivers/phy/microchip/lan966x_serdes.c             |  2 +-
->  drivers/phy/microchip/sparx5_serdes.c              |  2 +-
->  drivers/phy/mscc/phy-ocelot-serdes.c               |  2 +-
->  drivers/phy/phy-core.c                             |  8 ++++----
->  drivers/phy/phy-xgene.c                            |  2 +-
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          |  2 +-
->  drivers/phy/ralink/phy-mt7621-pci.c                |  2 +-
->  drivers/phy/renesas/phy-rcar-gen2.c                |  2 +-
->  drivers/phy/renesas/phy-rcar-gen3-usb2.c           |  2 +-
->  drivers/phy/renesas/r8a779f0-ether-serdes.c        |  2 +-
->  drivers/phy/rockchip/phy-rockchip-naneng-combphy.c |  2 +-
->  drivers/phy/rockchip/phy-rockchip-pcie.c           |  2 +-
->  drivers/phy/samsung/phy-exynos-mipi-video.c        |  2 +-
->  drivers/phy/samsung/phy-exynos5-usbdrd.c           |  2 +-
->  drivers/phy/samsung/phy-samsung-usb2.c             |  2 +-
->  drivers/phy/socionext/phy-uniphier-usb2.c          |  2 +-
->  drivers/phy/st/phy-miphy28lp.c                     |  2 +-
->  drivers/phy/st/phy-spear1310-miphy.c               |  2 +-
->  drivers/phy/st/phy-spear1340-miphy.c               |  2 +-
->  drivers/phy/st/phy-stm32-usbphyc.c                 |  2 +-
->  drivers/phy/tegra/xusb.c                           |  2 +-
->  drivers/phy/ti/phy-am654-serdes.c                  |  2 +-
->  drivers/phy/ti/phy-da8xx-usb.c                     |  2 +-
->  drivers/phy/ti/phy-gmii-sel.c                      |  2 +-
->  drivers/phy/xilinx/phy-zynqmp.c                    |  2 +-
->  drivers/pinctrl/tegra/pinctrl-tegra-xusb.c         |  2 +-
->  include/linux/phy/phy.h                            | 14 +++++++-------
->  46 files changed, 55 insertions(+), 55 deletions(-)
-
-Makes sense:
-
-Acked-by: Thierry Reding <treding@nvidia.com>
-
---f0caf17c841197981a0b66a2ac604de0b745306e0ba899959bfe0165d31f
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmXTeqIACgkQ3SOs138+
-s6GdEBAAsZtqIRL7k6ZV5nu5N0juG6RO7Sm34o9+isHlbNUAhmDQeIXxdlWIF3qc
-ap2W/H4jLtQnrDaCtdFWa5oPx8Ud41AKoeOQRlZq6goHZemt2JbUyB5IzsMIL0KN
-FUGwvVEZdDnJbhe2+8YX0fN8WG4qpAYo7vrb1XsgP4RzGwgkwH64LbCOtoAoYtYl
-rOc7hn6eNJrIYlW1LaU37BApWV0KgdMiI1YSILAT5YJK24fYst7j//8UxyEQP4aO
-S+3uPr8/1K1JifAihpgqu7w5kyDcMW1ncoAamilKe2xDzz7wJ8wxtYcdypnwBSpd
-/+rhMybnEj2kgbDrSbY+LVlczSU6Wf/SEtZzB+DOCE4+CZrtFyMVsSgAeVXFT1n0
-L5vTh0182skHEAm97GXHwoQOmLND8wJJVZR+Sw1OApxEYI1Y8hTx33NrbA+5hiVq
-15m0Jq8NXvpd237p5obNfFNuDmK/BlMhlq3x+3/aWGqT+pRlavF1i0HP/wEV9YoC
-6zleWWkx9BAonksD76uhrk/LBnYnc3wb9O5B4KS6dp+tYE3ekIWauHxzhg4tpOcg
-FqcY6ObCs+Jjtplo4vtrTBR6A4jdvunJQcp4WqSO/5RkZd/ySVdSbpvCdK1yy/JM
-j7SSnUWV03IbkbGoBduin/a8YT84GAn3seVzxO0ik5dpZHGbAPM=
-=Z186
------END PGP SIGNATURE-----
-
---f0caf17c841197981a0b66a2ac604de0b745306e0ba899959bfe0165d31f--
-
-
---===============2863728712566050691==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2863728712566050691==--
-
+PiBUaGUgdHdvIGRldmljZSBub2RlIHJlZmVyZW5jZXMgdGFrZW4gZHVyaW5nIGFsbG9jYXRpb24g
+bmVlZCB0byBiZQo+IGRyb3BwZWQgd2hlbiB0aGUgYXV4aWxpYXJ5IGRldmljZSBpcyBmcmVlZC4K
+4oCmCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtaHBkLWJyaWRnZS5jCuKApgo+
+IEBAIC03NCw2ICs3NSw4IEBAIHN0cnVjdCBkZXZpY2UgKmRybV9kcF9ocGRfYnJpZGdlX3JlZ2lz
+dGVyKHN0cnVjdCBkZXZpY2UgKnBhcmVudCwKPgo+ICAJcmV0ID0gYXV4aWxpYXJ5X2RldmljZV9p
+bml0KGFkZXYpOwo+ICAJaWYgKHJldCkgewo+ICsJCW9mX25vZGVfcHV0KGFkZXYtPmRldi5wbGF0
+Zm9ybV9kYXRhKTsKPiArCQlvZl9ub2RlX3B1dChhZGV2LT5kZXYub2Zfbm9kZSk7Cj4gIAkJaWRh
+X2ZyZWUoJmRybV9hdXhfaHBkX2JyaWRnZV9pZGEsIGFkZXYtPmlkKTsKPiAgCQlrZnJlZShhZGV2
+KTsKPiAgCQlyZXR1cm4gRVJSX1BUUihyZXQpOwoKVGhlIGxhc3QgdHdvIHN0YXRlbWVudHMgYXJl
+IGFsc28gdXNlZCBpbiBhIHByZXZpb3VzIGlmIGJyYW5jaC4KaHR0cHM6Ly9lbGl4aXIuYm9vdGxp
+bi5jb20vbGludXgvdjYuOC1yYzUvc291cmNlL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWhw
+ZC1icmlkZ2UuYyNMNjMKCkhvdyBkbyB5b3UgdGhpbmsgYWJvdXQgdG8gYXZvaWQgc3VjaCBhIGJp
+dCBvZiBkdXBsaWNhdGUgc291cmNlIGNvZGUKYnkgYWRkaW5nIGEgbGFiZWwgaGVyZT8KClJlZ2Fy
+ZHMsCk1hcmt1cwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcGh5Cg==
