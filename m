@@ -4,64 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB2C5C48BC3
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 10:07:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ED81C48BC3
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 10:40:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/E6m4ANliOwgfGLvtiRnxLQqP6AulwPOvly2/9c3mY=; b=ra2uRUxHQ3eSfx
-	pi8sjVir4JWZBWWpD+JF2yFOMjepWIQ15/IBnmbhwA+eoelBWkaRy/EWoLgu0TDlv1M4byCt0lXEu
-	8ppz4Jpi+ksBpKKWBzgBNFDH/sz7cSFSMOPsDxBbcgBK081/2vUHFbQc2oqbkVxsdF1CY1DH1Jead
-	GbqRcnmekdV8KBl34sWpHx8frl2VSIePdb8y9PoaLKZBhWuUnFUbDFDW5WG31bkjANDQ21FV3TRHl
-	0T3ojgiP3R3gOyg50VnR6T5HiHrdvFVn7bhKa2nqotbEYTBTXN86bYAmjf0gHcLw+EvvA69FMsNA5
-	qaQLjZlXptzCId6oyhVg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=3ge4wm0U1ad3u87lpR5wWxKB040POxWOg4A76PmT3J4=; b=edtMKy5dW3LmqImfuzAOjZ5KSw
+	auC9T0VxMov/9tLSwJ1GG3ilTJOOzcr7x4s+9PRZLMRfVDspJMpndpNvMPclnoNY6i5HrQML11h5S
+	31I+GonfnvPAUYUbRru6Vxoaz4/HPPPb50uH7+o5ls2gooZK22t91cedg+75aghjEoT6B+jz0/Jdr
+	YOQYD0u1jGPzFGVWsWlTfUC5VsoMZl1obNm02RU+he5N7SAz1kMatAE5iRKvdp4ZrhNkOoKYd2259
+	tZ17oBZ0KdtgDlJ7WzB/pd9lpzwR1XAlmwRXaj2BV//ygDbFciOBjVjvze5CtB2yxuhG6iieW9ndm
+	Kh/hfC3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcN1p-0000000EB0s-1gw4;
-	Tue, 20 Feb 2024 10:07:09 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1rcNYG-0000000EITh-3FRL;
+	Tue, 20 Feb 2024 10:40:40 +0000
+Received: from mail-psaapc01acsn20803.outbound.protection.outlook.com ([2a01:111:f400:feae::803] helo=APC01-PSA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcN1l-0000000EAwj-2TvM;
-	Tue, 20 Feb 2024 10:07:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1708423625; x=1739959625;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=EzVIo/Erko3TaB1q/0Z3yVbLBXjoJVz6+76Ci1MxT2A=;
-  b=AVLkAwOE7DQchcFXP61Vd+ROvcxSitZ0n4oBfVeSwdMn89uUOriiK2UE
-   gPOgtV7k/kAk0KDVJhjL3tEHlCC7zQrkmh10/7F1ZoScWFinelf86atsL
-   5GqFjnhTO/Kb+ir3AteBhyZyMmdcYatPUteULAC27EFJRtNGruxDDDevN
-   +UJ8KsCh/dB9hzdX4ThH0cfrC/y0SILm/8NOq+a+TovuIZzWibNs5cyWw
-   OT6+5R2GdKa3VKSP9LcBIzB5kENqtpqUlQ8oIe3gnWV40p7lnQav1M/rr
-   kzRN6jdxNfIr+YHNyXekNMxFXBKqNQf2UtdWSee2UcuYwI92ij9o1z9hi
-   w==;
-X-IronPort-AV: E=Sophos;i="6.06,172,1705359600"; 
-   d="scan'208";a="35495206"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
-  by mx1.tq-group.com with ESMTP; 20 Feb 2024 11:06:52 +0100
-Received: from steina-w.localnet (steina-w.tq-net.de [10.123.53.25])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 458BD280075;
-	Tue, 20 Feb 2024 11:06:52 +0100 (CET)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Sandor Yu <Sandor.yu@nxp.com>
-Cc: kernel@pengutronix.de, linux-imx@nxp.com, Sandor.yu@nxp.com, oliver.brown@nxp.com, sam@ravnborg.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v14 5/7] dt-bindings: phy: Add Freescale iMX8MQ DP and HDMI PHY
-Date: Tue, 20 Feb 2024 11:06:54 +0100
-Message-ID: <10421561.nUPlyArG6x@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <8ddbb34b5f6bf2414bdb03f9e7cd9da70e4e7228.1708395604.git.Sandor.yu@nxp.com>
-References: <cover.1708395604.git.Sandor.yu@nxp.com> <8ddbb34b5f6bf2414bdb03f9e7cd9da70e4e7228.1708395604.git.Sandor.yu@nxp.com>
+	id 1rcNYE-0000000EIT2-2w3L
+	for linux-phy@lists.infradead.org;
+	Tue, 20 Feb 2024 10:40:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=g/NRIEQtLzznDvg3TlweP1yLnkF2tGLgiA1WB5Ft/acczIMXhYaQj5nrVDo27ExVEDCTUWNkmaoid1YHsvHijjV9yW3QkmrZ25nn0nYhii0Z8bW1706AjNs6kvbZkVdPcs7ep588n//O/mgiZ/pi0IxyF70Juh+Zbxzd9hZGu4H37aguMynWxZGyb7KYV47ysJ5LGqkoIkq8MOmEO8uubY6YNfXy+O8vl8oq2mncO7vxc04psPa4xZ5C1gJxUFYiNNLl76CPEXrI5KvcF6s7S33LTH3Tmtyvj7jmnFVH3vKi302mMCGjGmDoAs9iWyOfrSumc/o61nAZXhFWZYtCDQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ynzqihl5m6RG2EHU6ulgyrEty8/XuckZJ9LfbS+ymG4=;
+ b=FBPb8D121NpXa7G98bSmlNZYz1Gj21BFdT5+6409hMySn+EeRmNDz2ReU7hilOGgBtZFFdtHETVLnz1b+q+bzD6nNFteYZk6Ie6g2/AQvFbgxNhSalXuAnd1v5oL8ApT8pYJdgYVEh8MKNYMQ4PxvB/rmFFeR48+R/HI5deLKyvV4R+iYEs4zch11e8+N1o4ZExUw9GUVR64kEUQB9fejGG+TOam6tpys4IF4Ksbhj9Szkkmhcp2QOTOMNKgc8MM4+IITHSouy9TThD37PnuJcrKuVNWccUusPj3NKmscb2UcZRKIF3vYLxi5qDTbTbS/vRUp5+ylzYlnMJL4+6KVQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ynzqihl5m6RG2EHU6ulgyrEty8/XuckZJ9LfbS+ymG4=;
+ b=IJakxOFfYCj6Ai8/d2nM7PHmQBIl0gongrK1YK0Eudso4Fv3ZussgSU2bXd4qJuSxMvyOCt8GUwxDNbbeg2cskaAeQxFjCQptmmlGWEjPn++tajaq2Sp1abeYBD9D4iUN2s6uFkDT43eZwUEWUZ+Bt1qp+clNszlqAx5wWHv6nqlxIopU/RvIW5bHciQfmUY+RWt1tBTFEQ/fwygy23amvfbVyw3yv7Sg0w+tRjhOlnhvAabT1eZIqjKFXppaYHKqDy/XnBTQIEVX2ybUPJhCN5Kk0CZhER/Qv6kSu83vXWanLZDe7bunU4MB0BpwNqbztIuyAwUsM8erZsqSmVtUQ==
+Received: from SEZPR06MB6959.apcprd06.prod.outlook.com (2603:1096:101:1ed::14)
+ by PSAPR06MB4343.apcprd06.prod.outlook.com (2603:1096:301:78::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.39; Tue, 20 Feb
+ 2024 10:40:28 +0000
+Received: from SEZPR06MB6959.apcprd06.prod.outlook.com
+ ([fe80::53da:a8a:83cb:b9ad]) by SEZPR06MB6959.apcprd06.prod.outlook.com
+ ([fe80::53da:a8a:83cb:b9ad%4]) with mapi id 15.20.7292.036; Tue, 20 Feb 2024
+ 10:40:28 +0000
+Message-ID: <SEZPR06MB69594A5036F122CE6C14043C96502@SEZPR06MB6959.apcprd06.prod.outlook.com>
+Date: Tue, 20 Feb 2024 18:40:23 +0800
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFC v3 1/5] dt-bindings: phy: hisi-inno-usb2: convert to
+ YAML
+Content-Language: en-US
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Jiancheng Xue <xuejiancheng@hisilicon.com>, Shawn Guo
+ <shawn.guo@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ David Yang <mmyangfl@gmail.com>
+References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
+ <20240220-inno-phy-v3-1-893cdf8633b4@outlook.com>
+ <62221084-247c-4a0b-a030-e12cb2931411@linaro.org>
+ <SEZPR06MB6959AAB6B43F3E1F5E1C526596512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+ <6f3f22f6-f659-494d-963c-544cf5f44adc@linaro.org>
+ <SEZPR06MB69592FACB1EF1B9FEDA89E5996512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+ <9a5e9363-79eb-416c-89ae-c826062350b5@linaro.org>
+From: Yang Xiwen <forbidden405@outlook.com>
+In-Reply-To: <9a5e9363-79eb-416c-89ae-c826062350b5@linaro.org>
+X-TMN: [1SEx1yBc0sVBU2Q+aWh2FHRG/vhUrhr02WLJQEGsv5OjZnhhInLqBcnkzNYvCRY/]
+X-ClientProxiedBy: TY2PR02CA0069.apcprd02.prod.outlook.com
+ (2603:1096:404:e2::33) To SEZPR06MB6959.apcprd06.prod.outlook.com
+ (2603:1096:101:1ed::14)
+X-Microsoft-Original-Message-ID: <1615f7c5-21bd-422d-84fa-fbffcaa56454@outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SEZPR06MB6959:EE_|PSAPR06MB4343:EE_
+X-MS-Office365-Filtering-Correlation-Id: c2800f1e-e7c4-42fc-984c-08dc32005a63
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: rcmCUaLiMk7znWigMA9hihrJAMvNbzU/Pr+PRScoiD6Hk4L9TD35mN+yxTVPJ0sGbOcNoUs/ffAp/Et7Sk7avAbCau+5JVdjcr086bVBAAg3kLUjvs3B1L0kNiWyo8c/ozh1VoGMOYIcTgcIE7+GwhsQ1sbr/XDfTNYK9lM1yA8SzmBRZgjEvhzHacTlXjJd9/IRiwV9YPwjxdo//luVCUrIJc2cp9jqQz/7JjobeoGpPnAExMdFBlk9FUpEQZmY1I0hggQ4+fDPNOQvBIpRAs8XlPbzv0xCkggL6kllkwUpX2KcV1ZAnir1uy0DjlAJvKxaGHYmCvpmWk2KYiHCNtM4PQt2BbHz1NxQJjWb0O20Ogzjp4idAqgAEc5kQOrQRi/VXsHQ7VbWuZf6gWRnOFGQsSk65xEHciH0FBQWTo2/KMwgNntsWndGiRfwm6f6pFo2tesiPtFVJmxfsKWzLpiZaop8506AwfY0xWUeSFFmUtrG5okazJR4uO6pRX24NuiqFYN7zojDu8NMQbVgpzynMMVvYdMps8eb069uc2Xxh0wYQn9lX+hZASsH/hfuPJpIm7hM8Kvz8lMbBU3sNXbol1xHnavb+GNsbbX4YQU=
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Yi9iWjhtcThOamdVYVFxVVpqbXQrRmliT1NISzZaSXRaeE1CazBVUGg0aFJD?=
+ =?utf-8?B?ZU5GM3BYenY3MWtOY0VCc2haWjJxVzNTWEZuY2JuVzdyc0VveWh3b3FTeU4r?=
+ =?utf-8?B?ZkZzM0d6T3AyR3Z3ajllV2Y4bmt6TDlPR2JoSG5MK1gxSjYrTGc2b0NxS2E3?=
+ =?utf-8?B?UWd1RFZpSnlHQUJFRVF1OGVQTmNtMEpvdFBOWUh3dEJSQjdvb0tCaXJDOCtL?=
+ =?utf-8?B?VXdZd3QvY0ZWREpNM3BaMVJheFZEV3NUVHgrN2dTdVB2U1N3d0J2OEthRHlD?=
+ =?utf-8?B?RnZyQSszbm9UK3dZK0JKeVZuSlI5d2RiZE5rR2dDdG9aMEpBQUMzL3lQd050?=
+ =?utf-8?B?VUJOVHJSWE52UDV5dmJWZ1ZTb0hnMmFFMGxBZmk2eWRtVVJzMmJ1MzBOcXZi?=
+ =?utf-8?B?UklQYUhsWVBya3pOazBsZHdwc01tMzhMamE2Nm5WMnd6OGNuTUxaWlQ2ZUlD?=
+ =?utf-8?B?RlhjTGpsYTQ3MGxhRytpc1NpYlVpY0p5NG5JbUN1YVlZR3hPeUxacUtpMnAw?=
+ =?utf-8?B?NHJ1QWN2UitTR0sraTQzc2JJa1A4OWpaVnF5U3hvd1dUdE1UbHhQVnZ3T2Q1?=
+ =?utf-8?B?WTdscUlhT3ZKV1orM1QzZ25qbmNwNDZ2Wmpnb21UYXVBWWJHYUhmTSs4YkRx?=
+ =?utf-8?B?U0FZVFc5T2s4aHRwR0diRjkrdVdyemtNaTdBVG44QndvRzQySm1IbmQvRU93?=
+ =?utf-8?B?OXpKcFdxeG0yS2JNT3dsa3NRUFJLZVd6bTVLTmNLVHo4ZGNWbkk2aVlBOWJX?=
+ =?utf-8?B?bU5MS1U1WVdpVEpNNnhDN0swck5WbG54bDNuVWVJVkluZDRtWWRBdSsxd3dT?=
+ =?utf-8?B?UlUxWGRUMmVxY1VQK0p5NmduYVUzUldOZ2NBcGZxQzNqWnlIUnFiY0t5dmF6?=
+ =?utf-8?B?eUlXQXkwSUgzcDFIK2NMVjMwcTZkWnMzS1RmcFlRMU1sRDJwdHNvUFRmd3N2?=
+ =?utf-8?B?K09Va1ZVbE5Fd0tYR1JUak95NkJCY2E4ckZsQmZGUTdjdG1YdzNmVEIwR3dS?=
+ =?utf-8?B?QkdPZnZpWmtnMytXeGM1Z3FCM3lzNWhuVnFiVnI1L1ZKbmZNM3ovSUZqcTEx?=
+ =?utf-8?B?SGVCZkJhMDkvKzhXYVI1aXhrcEgvblFOd2R1UkRyNng0UWRrdEhpS216eEdK?=
+ =?utf-8?B?bUpFTEZNOXhLcXNpd0JxaVdZWWhQNGFIQjVIZTdwM0xCV2haY2g5NldGQUdL?=
+ =?utf-8?B?dE42bGJ1OUZOOU5TV0p0Q0huMjl6L01XMkdNUVdXMXJNQ0J1UkFhaXZ4d1JD?=
+ =?utf-8?B?N1ZzV1NLdXBRdFBqZG5GRlE2eUVia0FBUzhwU0wwVDYxd0l1ZDlBQWxRdlNs?=
+ =?utf-8?B?SFFiREpiSzRuSGhwQUZmbDMrbnI4OGtiZlQ2TDR6aXd5aWREZjhXeEtWblV4?=
+ =?utf-8?B?ZzJubjhsZm5mNE90ZlJmUXExdEZqaFZ3T3o2TGRhV04zb0tFWjZTbnozRWk5?=
+ =?utf-8?B?U0owTEtZcDlrZHdKaktCaHlnbERLUGNNMXcvTG1Ec3dGY2ZLRWZQc1FGWFJM?=
+ =?utf-8?B?YVRrbElEeUhnN1RJY29jNGloRkhzQ1NLMWJ2WUh2VHhZK0huSDZVQ1pHMFlY?=
+ =?utf-8?B?RmpML2o5NWMyS3VIOUQ4R1JUVWNKQlQxb2JhZVliUTZHcWYzcExQcG9uMWxh?=
+ =?utf-8?B?Q0dGL0xHcW1DMGFiRER6dkpiQmRoYksvd00zWFZyV1BDU2Nsc3lIRERxeDZE?=
+ =?utf-8?B?UStFOS9qT20wM0JHSDhBdkRFeHBDcUVBb0pFTytXRVBNY25NekxnSUdOVnVG?=
+ =?utf-8?Q?gYxNF2em7AS7kIw/m9Hp7JrT6Ftuc6QzDvI1bNv?=
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c2800f1e-e7c4-42fc-984c-08dc32005a63
+X-MS-Exchange-CrossTenant-AuthSource: SEZPR06MB6959.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Feb 2024 10:40:27.9040
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PSAPR06MB4343
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240220_020705_935452_B4E4F9CA 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20240220_024038_785650_246BB7BC 
+X-CRM114-Status: GOOD (  27.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,117 +142,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 2/20/2024 4:16 PM, Krzysztof Kozlowski wrote:
+> On 19/02/2024 22:49, Yang Xiwen wrote:
+>> On 2/20/2024 5:37 AM, Krzysztof Kozlowski wrote:
+>>> On 19/02/2024 22:35, Yang Xiwen wrote:
+>>>> On 2/20/2024 5:32 AM, Krzysztof Kozlowski wrote:
+>>>>> On 19/02/2024 22:27, Yang Xiwen via B4 Relay wrote:
+>>>>>> From: Yang Xiwen <forbidden405@outlook.com>
+>>>>>>
+>>>>>> Add missing compatible "hisilicon,hi3798mv100-usb2-phy" to compatible
+>>>>>> list due to prior driver change.
+>>>>>>
+>>>>>> Also rename to hisilicon,inno-usb2-phy.yaml and add this name to
+>>>>>> compatible lists.
+>>>>>>
+>>>>>> Fixes: 3940ffc65492 ("phy: hisilicon: Add inno-usb2-phy driver for Hi3798MV100")
+>>>>>> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
+>>>>>> ---
+>>>>>>     .../bindings/phy/hisilicon,inno-usb2-phy.yaml      | 95 ++++++++++++++++++++++
+>>>>>>     .../devicetree/bindings/phy/phy-hisi-inno-usb2.txt | 71 ----------------
+>>>>>>     2 files changed, 95 insertions(+), 71 deletions(-)
+>>>>>>
+>>>>>> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>>>> new file mode 100644
+>>>>>> index 000000000000..1b57e0396209
+>>>>>> --- /dev/null
+>>>>>> +++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>>>> @@ -0,0 +1,95 @@
+>>>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>>>>> +%YAML 1.2
+>>>>>> +---
+>>>>>> +$id: http://devicetree.org/schemas/phy/hisilicon,inno-usb2-phy.yaml#
+>>>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>>>> +
+>>>>>> +title: HiSilicon HiSTB SoCs INNO USB2 PHY device
+>>>>>> +
+>>>>>> +maintainers:
+>>>>>> +  - Yang Xiwen <forbidden405@outlook.com>
+>>>>>> +
+>>>>>> +properties:
+>>>>>> +  compatible:
+>>>>>> +    items:
+>>>>>> +      - enum:
+>>>>>> +          - hisilicon,hi3798cv200-usb2-phy
+>>>>>> +          - hisilicon,hi3798mv100-usb2-phy
+>>>>>> +      - const: hisilicon,inno-usb2-phy
+>>>>> According to your driver hisilicon,hi3798mv100-usb2-phy and
+>>>>> hisilicon,inno-usb2-phy are not compatible.
+>>>> Ah, i didn't pay too much attention to that. I should remove the entry
+>>>> for hisilicon,inno-usb2-phy in the driver. Sorry for that.
+>>> We don't talk here about driver, although I used the driver as proof or
+>>> argument, because I don't have access to hardware datasheet (and no
+>>> intention to look there).
+>>>
+>>> What I claim is these are not compatible, so respond to this argument,
+>>> not some other one.
+>> Why not? Of course they are compatible. All 3 SoCs are using
+> Why? Because...
+>
+>> inno-usb2-phy. The only difference here is the method to access the
+> ... here! Different programming interface means not compatible.
+>
+> Please provide instead any argument that they are compatible, in the
+> meaning of Devicetree of course. You are claiming inno-usb2-phy  can be
+> used for hi3798mv100 and it will work fine?
+>
+>> registers. They are all enabled by `writing BIT(2) to address 0x6`. In
+>> the cover letter, I said the driver is actually doing things wrong.
+> Cover letter does not matter, I don't even read them. Your commits matter.
+>
+>> Especially the commit adding PHY_TYPE enums, the name is confusing and
+>> conveys the wrong info. It's not PHY which are not compatible, it's the
+>> bus. I'll fix the driver, but still the PHY hardwares are compatible
+>> between these 3 SoCs.
+> Provide any argument.
 
-thanks for the update.
-
-Am Dienstag, 20. Februar 2024, 04:23:53 CET schrieb Sandor Yu:
-> Add bindings for Freescale iMX8MQ DP and HDMI PHY.
-> =
-
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
-> v9->v14:
->  *No change.
-> =
-
->  .../bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml  | 53 +++++++++++++++++++
->  1 file changed, 53 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-h=
-dmi-phy.yaml
-> =
-
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy=
-.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml
-> new file mode 100644
-> index 0000000000000..917f113503dca
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-dp-hdmi-phy.yaml
-> @@ -0,0 +1,53 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,imx8mq-dp-hdmi-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Cadence HDP-TX DP/HDMI PHY for Freescale i.MX8MQ SoC
-> +
-> +maintainers:
-> +  - Sandor Yu <sandor.yu@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8mq-dp-phy
-> +      - fsl,imx8mq-hdmi-phy
-
-While reading cdns-mhdp8501-core.c I'm not so sure about this. There is
-only a single PHY which can be configured for either DP or HDMI.
-Using separate compatibles for that somehow bugs me.
-Maybe the DT maintainers can add some input if this should be single
-or double compatibles.
-
-Thanks and best regards,
-Alexander
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: PHY reference clock.
-> +      - description: APB clock.
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref
-> +      - const: apb
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8mq-clock.h>
-> +    #include <dt-bindings/phy/phy.h>
-> +    dp_phy: phy@32c00000 {
-> +        compatible =3D "fsl,imx8mq-dp-phy";
-> +        reg =3D <0x32c00000 0x100000>;
-> +        #phy-cells =3D <0>;
-> +        clocks =3D <&hdmi_phy_27m>, <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
-> +        clock-names =3D "ref", "apb";
-> +    };
-> =
+Just take a look at the driver. hisi_inno_phy_write_reg() is the 
+function that differs between different models. But for all of them, 
+hisi_inno_phy_setup() is the same.
 
 
-
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
+hisi_inno_phy_write_reg() should be moved to a separate bus driver. It's 
+bus-related, not phy. PHY driver should not care how to access the bus, 
+but the bus driver should. The PHY driver only needs to use regmap_* 
+APIs to "write BIT(2) to addr 6".
 
 
+For mv100 and cv200, the PHY master bus interface is attached to the 
+perictrl core in SoC (though the perictrl core provides slightly 
+different register offsets to access the PHY bus). For mv200, it is 
+directly attached to AHB/APB system bus so we don't need to put it under 
+a perictrl node anymore. So here, clearly it's the bus the PHY attached 
+to which is different, not the PHY itself.
 
--- =
 
+That's why i say the driver is wrong from the beginning. It's mixing PHY 
+driver and bus driver together but they ought to be different. PHY is 
+always compatible, but the bus is not.
+
+
+The correct fix should be moving hisi_inno_phy_write_reg() to a new bus 
+driver and migrating to regmap_* APIs in PHY driver. But i'll have to 
+write a new driver for that, which i try to avoid (it takes too much 
+time!). So i said clearly in the cover-letter this should be considered 
+a hack.
+
+
+>
+>> I'll say the driver is broken from the beginning. They should move
+>> write_reg function to a separate regmap driver and only left `write
+>> BIT(2) to addr 0x6` to the PHY driver.
+>>
+> Best regards,
+> Krzysztof
+>
+
+-- 
+Regards,
+Yang Xiwen
+
+
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
