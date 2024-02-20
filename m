@@ -4,90 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02553C48BC3
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 11:55:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA998C48BC4
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 11:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aydyhxyQ7TMR/K4u3q2kgw8oaTpWcfXkiwTSUqNXwWM=; b=xAPe4Ge5SkCVCy
-	rK/VozOiY+xJZDZGoNJd0dLFzW4ieZ9chztMoPh4hhGbMOuJYvgTWD3bboCfrmw67CaHcfHY+J/a4
-	fVMfbO6Jyn4Y8cJ+wIfhiEu2UFA4XROaD4Vup9iYZcNf3UbWq9BiTn+1GRCpkai3Jpq2Z7hhTC/UA
-	dFnlTMun7SWs4mximjDWfhosZfi9W90rPhAho3uljakWhztVtXIF7g/2dyNFZWhs1xW2aqDijVBeI
-	hMzAjEAAb8qPRaZUkBOX+yzl0buqpAq+Ts2TXC4lay4VNmGFFvmn4pVetEscIE+zCavIgYsR/UEU7
-	ncaA65RPFsPDUwozZ8wA==;
+	List-Owner; bh=n133kywqYCVKiGkvQCghmVR1l7DFv6T9/srRP8iUBfQ=; b=2/4bbT1/tr7eeE
+	rHlbMfs5Tm2IU3a3oMbCReudEYbFcO4gM/JyysaIUi79nc+3pL4Ldk0dLENAow2QmiErxNfUCYt08
+	v1LfPGGOoxMAEjNH0T27+x5YWl9LvIpvqMhKGxX8HY4lQA7zeyPfIZX6+1X1nh2wKaJG9ggRgerCD
+	o/VmpQMBBzDU+VpHghQGBgX61gMuoVIZ/Ae0KQQaAw9jc83ffsCyObh9U/dQ29zja0a9wIUMWl+hW
+	saejOzRv18SMow6QhR1BMcvbMPJLw1bmCjrNAVTFphlc+2acBorEmp5UETjaPKMbNIZsss2Qu0UBm
+	V8uBaFaGdKX2fUULUS6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcOj8-0000000EYiw-0AtP;
-	Tue, 20 Feb 2024 11:55:58 +0000
-Received: from mail-yb1-xb29.google.com ([2607:f8b0:4864:20::b29])
+	id 1rcOlU-0000000EZKw-1mbe;
+	Tue, 20 Feb 2024 11:58:24 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcOj3-0000000EYem-1Tw0
+	id 1rcOlR-0000000EZIK-44Y2
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Feb 2024 11:55:55 +0000
-Received: by mail-yb1-xb29.google.com with SMTP id 3f1490d57ef6-dcd94fb9e4dso5396173276.2
-        for <linux-phy@lists.infradead.org>; Tue, 20 Feb 2024 03:55:52 -0800 (PST)
+	Tue, 20 Feb 2024 11:58:23 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-512b29f82d1so2944092e87.1
+        for <linux-phy@lists.infradead.org>; Tue, 20 Feb 2024 03:58:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708430152; x=1709034952; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=uumLRt54NCf1C2r2Jw813VJ80gZwOfopdqyWnHS9j/Y=;
-        b=bjmjt4548H0tokhoUrk4Mmy+VnZSdiUahedOHSM/WlFQvn+E6Z1LTW1t07Fg4bYUc8
-         YerqC8EwTNck/4cqJVWGiVrZprBUhbGuduzUirheP3B3H23R42Hcp6u4Ennhds/OMDCZ
-         /jIqsTvWjte+zzNXq4H61aucRhCyaKSvzYkG7vohd+lrCZxt9+40ZbUxQK3qG9pDwwzN
-         foUZS3ich9CzSXtisbNl93l4MVXwH+RzF3Up9zEt9+qg+STMJn5sGZgjY0XMrZjCm7JA
-         bxjVMy6+52LdjltVgH0dWGGaFAPc5Kn/w5YQrtXl3uq7zkd/RHlVCyPOdrXSPkcD4LDO
-         kGZw==
+        d=linaro.org; s=google; t=1708430300; x=1709035100; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=YXniBx4zGce2I+zUvQZeh9F9TJPf5+YSFwkB/zgLcpo=;
+        b=HvfEJNv3A0sanz2JL7aKmjq1qith+xqUqeyw3M9wzoXuHLt4CpxH8QOgXd0xrFcv+j
+         gNk66apEbpGB1hC3DAaYzHKE3c24V+JWwQm6YPNJdbHLJh+gLi85z7LRslSpsUiipxoC
+         wgYz4UGMaWlfgKNLXpEOHddp4uMaOLvAIwvAwWEtZvTEpbrNfsXC1col5G2JrdOZ8Esj
+         ApsHotEpZn3wtEvUlItgYgBwE6JirKScuEiSJ7okTTgfRuNJFUWfk+nEuK6qs7m/dlNC
+         d9fnNCmCmlGiamDjlMwAKOMkYbQjxP4XECoBY56V7x6jHjjF5YoTH/CmbH89kloi6SES
+         M99w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708430152; x=1709034952;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+        d=1e100.net; s=20230601; t=1708430300; x=1709035100;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=uumLRt54NCf1C2r2Jw813VJ80gZwOfopdqyWnHS9j/Y=;
-        b=lh6XzX7SxgJ0ljsm6dU7i8IZkVicGbQjAUvIrJGXDF8XfOjjEVhkCOroQFFeZtD8oL
-         Ndf06iv4RbANy3xAX65blQCwQTyYCCVoCLDmc15Czr6QK4v7+FILtTsLvwtFNZN75bJ6
-         IWYanWogVasj2Xu7zS1ZkhsvKwSKDP7nKmM9QB7kgoUGmvj65IWkAOpNo0b75o4HrsjA
-         BPpG6EBXR7AR/0Tz8QsNtnd8qHfAdolHRmPq6eJ5xPt/6p7P3BUfuSIjDrb8vg06CrM0
-         q09mnwyuGc4oYn2Nab2eFj4EXZC9VBy13Io4g360Fr1A8ZavqGWHU5hMx7zdwIlWkKtd
-         UQDQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU0Mb1XJ69JGTMDBstb1wF1o9xx8vX43oMhqf2GrZfk/3BMek/DMU20YGaBMModUHzp7TH7a7Sl5DEi6yFK/455LFipghHF0o4DGRjkzA==
-X-Gm-Message-State: AOJu0YxVL1LyVRWU2+4m8uo+k2QIi86kzu2tHZqTFrqdf1kLadbVytRc
-	knDSN9Um5xleBK7Jg+skQzy5BU1q7VvdVaf9SI43ikSTCs3xJgsW1CzukKsxF2Tu2KZvFPOmMaG
-	wGIxijsM0Npl8awZGptlia83luOB4OEcGvJUsVQ==
-X-Google-Smtp-Source: AGHT+IExpvpD8AgXA3aIHbCHCE4RqNcFOBxn35EoCinO8Hpk+aekmgbnXIo/496q/fTFdU86koAVpAivWwXL7BwqeFo=
-X-Received: by 2002:a25:8d0d:0:b0:dcb:ef22:3869 with SMTP id
- n13-20020a258d0d000000b00dcbef223869mr12986540ybl.16.1708430151780; Tue, 20
- Feb 2024 03:55:51 -0800 (PST)
+        bh=YXniBx4zGce2I+zUvQZeh9F9TJPf5+YSFwkB/zgLcpo=;
+        b=gDvFTuVnrCcTp5ngIgolQ9E1IwVNCCsl0uP1U6pPhxd5hSHM84WvXMOxOPX2aNr7is
+         U3aIlco6wYxLJdwCkbF4tGjSLlZPXuComS/ht/bN0Oo7yHe1WgE3ZLkhUJL6ayLVkeY0
+         UwHw5M9MhRyhjB/ddU0Lx22fhnbt0sAWD0o2wy7GR37/+hronyE0YobVV5TBWScjClnT
+         26DRokItjcvDGg+LwVyPbx4FR35En1hhfVrVm5hnt8dYChZRETl1SM8HA+ITs0McNt2B
+         8cR+9MCFuPMigJCqR7QriR0qDtYiZKmRMAIxaOJ8X6jdB9VcD9jNbh2aWJLc+BJuM9G9
+         4hOg==
+X-Gm-Message-State: AOJu0YzROT+OtoxJd5csQsKCVvtc6dtenxdZ4JtxSU8M5B3Pp69lYIeC
+	8rZvY60cBNzdrygUUOcouvpn8t85KvLrahoR+mflIOYZt1hDcIi0yJS0SZeG69o=
+X-Google-Smtp-Source: AGHT+IG4jWWO+KknvlzpM+Lin7JrB+HmfQsUsz/gayBqrfoSc7B9J+Cnq1Ez2e+vd4q1YCG4NdRrVw==
+X-Received: by 2002:ac2:4241:0:b0:512:aad2:80c9 with SMTP id m1-20020ac24241000000b00512aad280c9mr4291841lfl.27.1708430300290;
+        Tue, 20 Feb 2024 03:58:20 -0800 (PST)
+Received: from [127.0.1.1] ([188.24.162.93])
+        by smtp.gmail.com with ESMTPSA id hu11-20020a170907a08b00b00a3e0b6ea9fdsm3806200ejc.26.2024.02.20.03.58.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 Feb 2024 03:58:19 -0800 (PST)
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Tue, 20 Feb 2024 13:58:10 +0200
+Subject: [PATCH v5 1/2] phy: Add Embedded DisplayPort and DisplayPort
+ submodes
 MIME-Version: 1.0
-References: <20240217150228.5788-2-johan+linaro@kernel.org>
- <c95f5ff3-8dad-4302-9384-92a9b83f7bdc@web.de> <ZdRTx2lmHBVlcLub@hovoldconsulting.com>
- <1afc87c-2c1f-df10-a0c8-2a267d44122@inria.fr>
-In-Reply-To: <1afc87c-2c1f-df10-a0c8-2a267d44122@inria.fr>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 20 Feb 2024 13:55:40 +0200
-Message-ID: <CAA8EJppH9ey97yKFUccNLHhMKs3eUS55+rY0tXm_a6KGp9jtug@mail.gmail.com>
-Subject: Re: [PATCH 1/6] drm/bridge: aux-hpd: fix OF node leaks
-To: Julia Lawall <julia.lawall@inria.fr>
-Cc: Johan Hovold <johan@kernel.org>, Markus Elfring <Markus.Elfring@web.de>, 
-	Johan Hovold <johan+linaro@kernel.org>, freedreno@lists.freedesktop.org, 
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Bjorn Andersson <andersson@kernel.org>, 
-	Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@gmail.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Vinod Koul <vkoul@kernel.org>, 
-	LKML <linux-kernel@vger.kernel.org>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Kuogee Hsieh <quic_khsieh@quicinc.com>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Rob Clark <robdclark@gmail.com>
+Message-Id: <20240220-x1e80100-phy-edp-compatible-refactor-v5-1-e8658adf5461@linaro.org>
+References: <20240220-x1e80100-phy-edp-compatible-refactor-v5-0-e8658adf5461@linaro.org>
+In-Reply-To: <20240220-x1e80100-phy-edp-compatible-refactor-v5-0-e8658adf5461@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Johan Hovold <johan@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=715; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=UEn883fEvn74EKDrMBY5HRtTZ852wPrXNTB+0TMl9N8=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBl1JPXL4Ic8N92mDtTIZbPRk9h2SHNRLPdcNxki
+ 2nwDS20y+uJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZdST1wAKCRAbX0TJAJUV
+ Vth8D/9NTlqJoCtLixiwCSoEDO+8wgtAsvUobYA3/01ndpgPwajs8duOOTVTUd/F1pAvwOd4aYd
+ fEw6G0L77T4oaedJ/tLeGbVr2oo+BtxtYAdzQDs6I0ZLLF7J+P987j9IZdtSz/iG51YQKwYK/1c
+ kqDYEnpSQLG4V/0ItMUqOsiFzGvjuI7tMoS7ieoM07EbfRmf5q0Qn/uP1oMscBQFPnx+JKiEKM7
+ VzbDetS33Rol2vbz6/P1nitKxR9ApL3ZENaCVvOGd1fCGiZmLbH++fnb1+meX98Zr9QGY2Rb4zg
+ 80ri+T/edvDFujKP1Z6NvI6Fs/ogyYzvGFxd4Z5MQxaKwxgSJJHamT1TQ/0OgvG236Fvd6QKakP
+ iAC4llFD4+nd/xqofsCxh76F7bksT0ps05VgAUvmwKE6pn7Rsywj6p9a+tl8si9AREkg8S9dl19
+ vmWSakQ9VUbzanGQx+JxkTysGv3v4YxC7t++zFvESIijWYcp3l5gbFfl2RClc/VdO9/aACXESGd
+ ZqiXo1P3E0nKYbsQSf3c/gIJRMN3VYxOHaRbvVw1NCfC4t0dep+LFtLgB8nOBrYUXI30qrgeSFq
+ FD12D/dF7xLE2uaPUPfryjE+J08evl3yXtHYtFqxKbplCSCZrD/WdfoYwqDGULg9E1NZpTR2ujV
+ 0KyKifVBRS5Z8sA==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240220_035553_463469_71DF72DF 
-X-CRM114-Status: GOOD (  20.20  )
+X-CRM114-CacheID: sfid-20240220_035822_066657_735CBDA3 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,37 +113,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCAyMCBGZWIgMjAyNCBhdCAxMzo1MiwgSnVsaWEgTGF3YWxsIDxqdWxpYS5sYXdhbGxA
-aW5yaWEuZnI+IHdyb3RlOgo+Cj4KPgo+IE9uIFR1ZSwgMjAgRmViIDIwMjQsIEpvaGFuIEhvdm9s
-ZCB3cm90ZToKPgo+ID4gT24gTW9uLCBGZWIgMTksIDIwMjQgYXQgMDY6NDg6MzBQTSArMDEwMCwg
-TWFya3VzIEVsZnJpbmcgd3JvdGU6Cj4gPiA+ID4gVGhlIHR3byBkZXZpY2Ugbm9kZSByZWZlcmVu
-Y2VzIHRha2VuIGR1cmluZyBhbGxvY2F0aW9uIG5lZWQgdG8gYmUKPiA+ID4gPiBkcm9wcGVkIHdo
-ZW4gdGhlIGF1eGlsaWFyeSBkZXZpY2UgaXMgZnJlZWQuCj4gPiA+IOKApgo+ID4gPiA+ICsrKyBi
-L2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWhwZC1icmlkZ2UuYwo+ID4gPiDigKYKPiA+ID4g
-PiBAQCAtNzQsNiArNzUsOCBAQCBzdHJ1Y3QgZGV2aWNlICpkcm1fZHBfaHBkX2JyaWRnZV9yZWdp
-c3RlcihzdHJ1Y3QgZGV2aWNlICpwYXJlbnQsCj4gPiA+ID4KPiA+ID4gPiAgIHJldCA9IGF1eGls
-aWFyeV9kZXZpY2VfaW5pdChhZGV2KTsKPiA+ID4gPiAgIGlmIChyZXQpIHsKPiA+ID4gPiArICAg
-ICAgICAgb2Zfbm9kZV9wdXQoYWRldi0+ZGV2LnBsYXRmb3JtX2RhdGEpOwo+ID4gPiA+ICsgICAg
-ICAgICBvZl9ub2RlX3B1dChhZGV2LT5kZXYub2Zfbm9kZSk7Cj4gPiA+ID4gICAgICAgICAgIGlk
-YV9mcmVlKCZkcm1fYXV4X2hwZF9icmlkZ2VfaWRhLCBhZGV2LT5pZCk7Cj4gPiA+ID4gICAgICAg
-ICAgIGtmcmVlKGFkZXYpOwo+ID4gPiA+ICAgICAgICAgICByZXR1cm4gRVJSX1BUUihyZXQpOwo+
-ID4gPgo+ID4gPiBUaGUgbGFzdCB0d28gc3RhdGVtZW50cyBhcmUgYWxzbyB1c2VkIGluIGEgcHJl
-dmlvdXMgaWYgYnJhbmNoLgo+ID4gPiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92
-Ni44LXJjNS9zb3VyY2UvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtaHBkLWJyaWRnZS5jI0w2
-Mwo+ID4gPgo+ID4gPiBIb3cgZG8geW91IHRoaW5rIGFib3V0IHRvIGF2b2lkIHN1Y2ggYSBiaXQg
-b2YgZHVwbGljYXRlIHNvdXJjZSBjb2RlCj4gPiA+IGJ5IGFkZGluZyBhIGxhYmVsIGhlcmU/Cj4g
-Pgo+ID4gTm8sIHRoZSBjdXJyZW50IGNvZGUgaXMgZmluZSBhbmQgd2hhdCB5b3UgYXJlIHN1Z2dl
-c3RpbmcgaXMgaW4gYW55IGNhc2UKPiA+IHVucmVsYXRlZCB0byB0aGlzIGZpeC4KPiA+Cj4gPiBJ
-ZiB0aGlzIGZ1bmN0aW9uIGV2ZXIgZ3Jvd3MgYSB0aGlyZCBlcnJvciBwYXRoIGxpa2UgdGhhdCwg
-SSB0b28gd291bGQKPiA+IGNvbnNpZGVyIGl0IGhvd2V2ZXIuCj4KPiBJIGd1ZXNzIHRoZXNlIG9m
-X25vZGVfcHV0cyBjYW4gYWxsIGdvIGF3YXkgc2hvcnRseSB3aXRoIGNsZWFudXAgYW55d2F5PwoK
-SSdtIG5vdCBzdXJlIGFib3V0IGl0LiBUaG9zZSBhcmUgbG9uZy1saXZpbmcgdmFyaWFibGVzLCBz
-byB0aGV5IGFyZQpub3QgYSBzdWJqZWN0IG9mIGNsZWFudXAuaCwgYXJlIHRoZXk/CgoKLS0gCldp
-dGggYmVzdCB3aXNoZXMKRG1pdHJ5CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+In some cases, a DP PHY needs to be configured to work in eDP mode.
+So add submodes for both DP and eDP so they can be used by the
+controllers for specifying the mode the PHY should be configured in.
+
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+ include/linux/phy/phy-dp.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/include/linux/phy/phy-dp.h b/include/linux/phy/phy-dp.h
+index 18cad23642cd..9cce5766bc0b 100644
+--- a/include/linux/phy/phy-dp.h
++++ b/include/linux/phy/phy-dp.h
+@@ -8,6 +8,9 @@
+ 
+ #include <linux/types.h>
+ 
++#define PHY_SUBMODE_DP	0
++#define PHY_SUBMODE_EDP	1
++
+ /**
+  * struct phy_configure_opts_dp - DisplayPort PHY configuration set
+  *
+
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
