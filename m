@@ -4,82 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5C67C48BC4
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 07:25:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8284AC48BC4
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 08:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CvOS+/Xwy20WiNcGBYibPv3I0coXDw+CkV/8wSDhhzA=; b=pDqUGPClRxYZ9J
-	ezrcyyQl9UZYMly3HCDn22tlDdC5vHyYv3EP4woET1pJD6SzYyxLuWQSyn5rrerNqFTzDDSm3lHo6
-	XwsFS4JpctLGweaPWHhql7c6OTWjBMBv8e14R39nsTESLNfDvVONTSSXKJtg9zf6KAhNjKqHGvU6L
-	VjzXsaR2ZwJ0M3xBl3IfnzudXxjDX8p/lb7jM6xcWmHbDASJQNkyV6pAZ2If/YTSXHtEEWUK6NRb+
-	kPcfxyTKiOXBa6C4IfRVRiy+qu3l3YsvE8+thA3CwOWYuwMRIFjCvlPHHpIJDlE2rZA2hfDwH0nak
-	UakWGtZKYksUwjst4HTA==;
+	List-Owner; bh=K9OkOh4qfcnX37UINv8+6fxNdMkl4WTqDVpFRtVw9Ns=; b=u1+TNq1uq9V1MU
+	EInjVzlcAmbaiAcwkq7T8Ft47k6N//e0KqCYLOM4CkqTk8X1CQU0w/CbeOdoy/1e+5NPdILmXgf5B
+	GoDc5pggreYL1aZPmSmoVj3enrPYf1KbfnLM6bwkMObPM15cM4HVFcs192sah7hYQHyxnT6ClrjPU
+	alrrlRQJA+dfv/gwaTyfyM27p9fkEA1SIgZ5Qu2Fg2PEYjo7ObXZYckyTWECutfu2s6NJ/Vb4/CQ0
+	gLaMelVICr+WlsfUGjBAJRiuWk5CJG9BDmEowtbwWyIXbpbh+a/JmQ5HToc+slnR6gf2fy89XrJkg
+	85lq0LsjPazSu0xtKL+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcKUy-0000000DVfG-18eZ;
-	Tue, 20 Feb 2024 07:25:04 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rcLJI-0000000DdyP-0nGy;
+	Tue, 20 Feb 2024 08:17:04 +0000
+Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcKUv-0000000DVeH-24x4
+	id 1rcLJF-0000000DdxB-02p8
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Feb 2024 07:25:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 63889CE1312;
-	Tue, 20 Feb 2024 07:24:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96CECC433C7;
-	Tue, 20 Feb 2024 07:24:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1708413898;
-	bh=Km8gZMkJB7vNwcEvKJf3Z5MjG8s2kLrFv7d6SMKvVC4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Y6WSjOKxHt9TBefi2fivgCw5sGg4pib4PrIDZmtoesOTgo80CtchhROVw3pw0FeqR
-	 Pc9MGfrCfAKPZbAgDQVs+NvTqOslO+bcwY0+bPdxSK2Sx7n0x9RIur2VOHGKxXS5q1
-	 ZojucTaTTOXH7nqkaDAr7oKNW9keBDciLLBBztXj3jG96Dqy7egDtQFdz8u2Q2iBJt
-	 aWy2UUb55Fmr0MdRm5gJysrUBrLO6+m7+7BBeis1O8wXCAb8JBXQ17KOHFtUMJxzgm
-	 /zoywKFK7JfGrRP4yu7ts9/D14Ft57GqR0srDYm1N84JAeD8Tp4Vli9+dIMNop2M/1
-	 B2HwmHPKoXLyg==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1rcKUp-0000000024l-2ZkS;
-	Tue, 20 Feb 2024 08:24:56 +0100
-Date: Tue, 20 Feb 2024 08:24:55 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Markus Elfring <Markus.Elfring@web.de>
-Cc: Johan Hovold <johan+linaro@kernel.org>, freedreno@lists.freedesktop.org,
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Vinod Koul <vkoul@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kuogee Hsieh <quic_khsieh@quicinc.com>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Rob Clark <robdclark@gmail.com>
-Subject: Re: [PATCH 1/6] drm/bridge: aux-hpd: fix OF node leaks
-Message-ID: <ZdRTx2lmHBVlcLub@hovoldconsulting.com>
-References: <20240217150228.5788-2-johan+linaro@kernel.org>
- <c95f5ff3-8dad-4302-9384-92a9b83f7bdc@web.de>
+	Tue, 20 Feb 2024 08:17:02 +0000
+Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2d240d8baf6so15958401fa.3
+        for <linux-phy@lists.infradead.org>; Tue, 20 Feb 2024 00:17:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1708417019; x=1709021819; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=2s9snNCdmson1o/B85ImsqEy6xXo5/r33ShXsHFKVVU=;
+        b=sBSCaFNVr/WUlpvmSQXL3pBfYybUocI4b+k0Zc+CcT6S72wiRyNpLmYWLmpQ86maYp
+         CRiRv5ptDYF2YMg8VhcZKaVCqjGWDFaTdAQn2huaAwAQND9ycGVeGmBRxYlQL1mJuDpx
+         AFAsmRnYUDAaJ0ToomykzQ7rvkiJJ+zUQooXAZ30VqiTxhxLqzTx8fLZh7QN/3EtLaXS
+         XIdd+Q+OuOQh1WiEXT2dLvHmkg9nV6wDsEg+9pAvEvWy93b1iA1UIccRD6ZHX9QhFsB6
+         jlPe3PRxebiz0OR5hEwT/uNM/Y1tx6E64eH8oNx3qP7P8wTXRQa4WsG83DJ+Y0EMciXV
+         MGkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708417019; x=1709021819;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=2s9snNCdmson1o/B85ImsqEy6xXo5/r33ShXsHFKVVU=;
+        b=Xowop4O+mly3zjF4odXQ/7g6EVY7XaWFLBmHdIUVIKAr8/sAucOxSem4rANzxntKCe
+         rabgnDmuyV2Juosr4j2VGi/li5rnquUqQ0xmWnYsdM+jUPSwLpt8vUNAfG6VcfiefdpE
+         G6zuBSf9Oax9O6hS44RXzUY/zUW5A5sk438FVMi+qu2khzSbD5GpkhQgmCvQerMEzs+5
+         lZvz5GQpeFOBLPCYJBYcRVSRdnPHySQe4Lu1oQ3u9gWtUUUPiZjgroMvaxRwTDv93n9g
+         omzGIZ9vFjqR22rvFlFv12wrQgKYAe8eXLG2MTr8ZktUUdN08vBapsSKqeU3iYVxZxuI
+         mSiQ==
+X-Gm-Message-State: AOJu0YxD06Kz15ZwllhQSd1Mzt+CHZYMo0urNCaEGI+CodiIflEouhD3
+	7NBs6grv7Cde+w2mN+mMGB/xWa1noUyZRUbGJ/GeVYAVCUWYeNsO1vGKs9JY2SY=
+X-Google-Smtp-Source: AGHT+IFpLOBR3vSEm1r1J6jmg6PvF5rfZq6Prwjcx3Mow3d1UkP8CPQM50ZwtvOsTyksTiFaIVtHhQ==
+X-Received: by 2002:a05:651c:1a0c:b0:2d2:3987:36b0 with SMTP id by12-20020a05651c1a0c00b002d2398736b0mr4057981ljb.43.1708417018906;
+        Tue, 20 Feb 2024 00:16:58 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.222.116])
+        by smtp.gmail.com with ESMTPSA id bs20-20020a056000071400b0033d449f5f65sm7000414wrb.4.2024.02.20.00.16.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Feb 2024 00:16:58 -0800 (PST)
+Message-ID: <9a5e9363-79eb-416c-89ae-c826062350b5@linaro.org>
+Date: Tue, 20 Feb 2024 09:16:56 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c95f5ff3-8dad-4302-9384-92a9b83f7bdc@web.de>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFC v3 1/5] dt-bindings: phy: hisi-inno-usb2: convert to
+ YAML
+Content-Language: en-US
+To: Yang Xiwen <forbidden405@outlook.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>,
+ Jiancheng Xue <xuejiancheng@hisilicon.com>, Shawn Guo
+ <shawn.guo@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ David Yang <mmyangfl@gmail.com>
+References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
+ <20240220-inno-phy-v3-1-893cdf8633b4@outlook.com>
+ <62221084-247c-4a0b-a030-e12cb2931411@linaro.org>
+ <SEZPR06MB6959AAB6B43F3E1F5E1C526596512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+ <6f3f22f6-f659-494d-963c-544cf5f44adc@linaro.org>
+ <SEZPR06MB69592FACB1EF1B9FEDA89E5996512@SEZPR06MB6959.apcprd06.prod.outlook.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <SEZPR06MB69592FACB1EF1B9FEDA89E5996512@SEZPR06MB6959.apcprd06.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240219_232501_728328_1E164A40 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20240220_001701_094571_B88B1C12 
+X-CRM114-Status: GOOD (  19.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,29 +144,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBGZWIgMTksIDIwMjQgYXQgMDY6NDg6MzBQTSArMDEwMCwgTWFya3VzIEVsZnJpbmcg
-d3JvdGU6Cj4gPiBUaGUgdHdvIGRldmljZSBub2RlIHJlZmVyZW5jZXMgdGFrZW4gZHVyaW5nIGFs
-bG9jYXRpb24gbmVlZCB0byBiZQo+ID4gZHJvcHBlZCB3aGVuIHRoZSBhdXhpbGlhcnkgZGV2aWNl
-IGlzIGZyZWVkLgo+IOKApgo+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtaHBk
-LWJyaWRnZS5jCj4g4oCmCj4gPiBAQCAtNzQsNiArNzUsOCBAQCBzdHJ1Y3QgZGV2aWNlICpkcm1f
-ZHBfaHBkX2JyaWRnZV9yZWdpc3RlcihzdHJ1Y3QgZGV2aWNlICpwYXJlbnQsCj4gPgo+ID4gIAly
-ZXQgPSBhdXhpbGlhcnlfZGV2aWNlX2luaXQoYWRldik7Cj4gPiAgCWlmIChyZXQpIHsKPiA+ICsJ
-CW9mX25vZGVfcHV0KGFkZXYtPmRldi5wbGF0Zm9ybV9kYXRhKTsKPiA+ICsJCW9mX25vZGVfcHV0
-KGFkZXYtPmRldi5vZl9ub2RlKTsKPiA+ICAJCWlkYV9mcmVlKCZkcm1fYXV4X2hwZF9icmlkZ2Vf
-aWRhLCBhZGV2LT5pZCk7Cj4gPiAgCQlrZnJlZShhZGV2KTsKPiA+ICAJCXJldHVybiBFUlJfUFRS
-KHJldCk7Cj4gCj4gVGhlIGxhc3QgdHdvIHN0YXRlbWVudHMgYXJlIGFsc28gdXNlZCBpbiBhIHBy
-ZXZpb3VzIGlmIGJyYW5jaC4KPiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92Ni44
-LXJjNS9zb3VyY2UvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hdXgtaHBkLWJyaWRnZS5jI0w2Mwo+
-IAo+IEhvdyBkbyB5b3UgdGhpbmsgYWJvdXQgdG8gYXZvaWQgc3VjaCBhIGJpdCBvZiBkdXBsaWNh
-dGUgc291cmNlIGNvZGUKPiBieSBhZGRpbmcgYSBsYWJlbCBoZXJlPwoKTm8sIHRoZSBjdXJyZW50
-IGNvZGUgaXMgZmluZSBhbmQgd2hhdCB5b3UgYXJlIHN1Z2dlc3RpbmcgaXMgaW4gYW55IGNhc2UK
-dW5yZWxhdGVkIHRvIHRoaXMgZml4LgoKSWYgdGhpcyBmdW5jdGlvbiBldmVyIGdyb3dzIGEgdGhp
-cmQgZXJyb3IgcGF0aCBsaWtlIHRoYXQsIEkgdG9vIHdvdWxkCmNvbnNpZGVyIGl0IGhvd2V2ZXIu
-CgpKb2hhbgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcGh5Cg==
+On 19/02/2024 22:49, Yang Xiwen wrote:
+> On 2/20/2024 5:37 AM, Krzysztof Kozlowski wrote:
+>> On 19/02/2024 22:35, Yang Xiwen wrote:
+>>> On 2/20/2024 5:32 AM, Krzysztof Kozlowski wrote:
+>>>> On 19/02/2024 22:27, Yang Xiwen via B4 Relay wrote:
+>>>>> From: Yang Xiwen <forbidden405@outlook.com>
+>>>>>
+>>>>> Add missing compatible "hisilicon,hi3798mv100-usb2-phy" to compatible
+>>>>> list due to prior driver change.
+>>>>>
+>>>>> Also rename to hisilicon,inno-usb2-phy.yaml and add this name to
+>>>>> compatible lists.
+>>>>>
+>>>>> Fixes: 3940ffc65492 ("phy: hisilicon: Add inno-usb2-phy driver for Hi3798MV100")
+>>>>> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
+>>>>> ---
+>>>>>    .../bindings/phy/hisilicon,inno-usb2-phy.yaml      | 95 ++++++++++++++++++++++
+>>>>>    .../devicetree/bindings/phy/phy-hisi-inno-usb2.txt | 71 ----------------
+>>>>>    2 files changed, 95 insertions(+), 71 deletions(-)
+>>>>>
+>>>>> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>>> new file mode 100644
+>>>>> index 000000000000..1b57e0396209
+>>>>> --- /dev/null
+>>>>> +++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+>>>>> @@ -0,0 +1,95 @@
+>>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>>>> +%YAML 1.2
+>>>>> +---
+>>>>> +$id: http://devicetree.org/schemas/phy/hisilicon,inno-usb2-phy.yaml#
+>>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>>> +
+>>>>> +title: HiSilicon HiSTB SoCs INNO USB2 PHY device
+>>>>> +
+>>>>> +maintainers:
+>>>>> +  - Yang Xiwen <forbidden405@outlook.com>
+>>>>> +
+>>>>> +properties:
+>>>>> +  compatible:
+>>>>> +    items:
+>>>>> +      - enum:
+>>>>> +          - hisilicon,hi3798cv200-usb2-phy
+>>>>> +          - hisilicon,hi3798mv100-usb2-phy
+>>>>> +      - const: hisilicon,inno-usb2-phy
+>>>> According to your driver hisilicon,hi3798mv100-usb2-phy and
+>>>> hisilicon,inno-usb2-phy are not compatible.
+>>> Ah, i didn't pay too much attention to that. I should remove the entry
+>>> for hisilicon,inno-usb2-phy in the driver. Sorry for that.
+>> We don't talk here about driver, although I used the driver as proof or
+>> argument, because I don't have access to hardware datasheet (and no
+>> intention to look there).
+>>
+>> What I claim is these are not compatible, so respond to this argument,
+>> not some other one.
+> 
+> Why not? Of course they are compatible. All 3 SoCs are using 
+
+Why? Because...
+
+> inno-usb2-phy. The only difference here is the method to access the 
+
+... here! Different programming interface means not compatible.
+
+Please provide instead any argument that they are compatible, in the
+meaning of Devicetree of course. You are claiming inno-usb2-phy  can be
+used for hi3798mv100 and it will work fine?
+
+> registers. They are all enabled by `writing BIT(2) to address 0x6`. In 
+> the cover letter, I said the driver is actually doing things wrong. 
+
+Cover letter does not matter, I don't even read them. Your commits matter.
+
+> Especially the commit adding PHY_TYPE enums, the name is confusing and 
+> conveys the wrong info. It's not PHY which are not compatible, it's the 
+> bus. I'll fix the driver, but still the PHY hardwares are compatible 
+> between these 3 SoCs.
+
+Provide any argument.
+
+> 
+> I'll say the driver is broken from the beginning. They should move 
+> write_reg function to a separate regmap driver and only left `write 
+> BIT(2) to addr 0x6` to the PHY driver.
+> 
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
