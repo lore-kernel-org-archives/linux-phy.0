@@ -4,93 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC39AC48BC4
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 10:56:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1182C48BC3
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 11:19:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lLKdaC0J/NT/TTq78mja0c10ij6tiAw0cJ/zS4MBpsg=; b=Et2Ury0TiCbGIu
-	sO+haO/cLHADchPBAsQ6oR05HGzDyub3yffpSUkpVEV7BcrwkKhO+OjuHKiR8wg3gtyuYEKpCNiK7
-	ziwrJczgx9PcRwDdZFo8vMe8gL7wi+E2TMYjS2SG4DWmbIlBtS5idVGVElOWDmocrJVNOHMB2HcA9
-	xrpXxCQMoPDug4kNMh3mNa3NTwF1JsVyZHqM5PdJkAeBKx6xLW8Iwocq++c6gSrf9bbt1r73aYZH+
-	pFVmvffS4eTArOyZpWBPP1Bgc8LQNpZOih4Rtkyp0ECTt9lFDNEo6jJvQrgmKinM6/7oj08P3sDTR
-	GzmEGEerX4nVFq9K3k2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LUTwZ300zrT80WzN/JXJJxouHokmOpHcGXRFezq/nMQ=; b=Dt0mZ2Y8w5hF8s
+	0fGYISzQ2ZtOlV4qMfiDjdZY9j9Ya8lsIcq/5vB4ILg7EV0U54HZUCleaMgVC2PVn2AOKr0MHkmCP
+	BkyF69gyf4Ud/4+y9BdyLmGExj9vUml9LseCfCRw50OuceDSSCd1Hf4QWhOkkQfvjWpSmn4PerF/9
+	TwtEuuIe9mw1CepFVHOhMC7eXADSQRxBZlZfs3rvzaY7bXMQEIrKGvLkcGQVWR5LQsKnokDxpNuyn
+	3bKC2ipI/Mz8jaAs1lIOvH+SiIWtemF6pNYkqfLlxFmaYrT7w6q5Lf+FmKegFci5DF+uHNsIBwToK
+	b5ZQvX2LSviIidyQgiuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcNna-0000000EM0A-1UeS;
-	Tue, 20 Feb 2024 10:56:30 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1rcOAI-0000000EPpB-2Fol;
+	Tue, 20 Feb 2024 11:19:58 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcNnW-0000000ELyo-1sx0
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Feb 2024 10:56:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de; s=s29768273;
-	t=1708426561; x=1709031361; i=markus.elfring@web.de;
-	bh=MpJcVGRKO8AWBDMnssLpCilOGC18nfaO9n9RoVZq7VQ=;
-	h=X-UI-Sender-Class:Date:To:Cc:References:Subject:From:
-	 In-Reply-To;
-	b=wC0uPW99wmHtcswlvxbPWW4Njo8pkzvI7Ov7Is/B95jRPoMy+GuKmIczMSgPsRhS
-	 027Qj46J9Up1e7X10Fm3s03xd4xeAC+YzP5GoQcLYCNxHY0YU3pejL7NxEdL0/FAk
-	 262n9loPfLR9hGFgrrPH8/wHs25gprGTJEHeKVVQ6/d8Ib7OBKRpliRYk4JJNz028
-	 bdQAGRwIkUEVWujAmoj05rOkG/0UYGTyPUbJXN2R98q3uMYUMOKnLgSLI6mwpn0Uy
-	 ys47+Pah0dxX36YEJcq8UYu7YyTmnwaRoY4hazeKndI836VUohji5zKlhh7+7cF9r
-	 2ejmaIXDvc4Ufg8q9g==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from [192.168.178.21] ([94.31.80.95]) by smtp.web.de (mrweb105
- [213.165.67.124]) with ESMTPSA (Nemesis) id 1M7Nig-1rZ6Xk3SFY-007pjU; Tue, 20
- Feb 2024 11:56:00 +0100
-Message-ID: <9ff4221a-7083-4cb1-abde-1690f655da8d@web.de>
-Date: Tue, 20 Feb 2024 11:55:57 +0100
+	id 1rcOAE-0000000EPoO-2WtW;
+	Tue, 20 Feb 2024 11:19:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1708427994; x=1739963994;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=a17JouAcvzgDsexC19eNTWJV4xZc81Ozyv0pAv63uXQ=;
+  b=F8WygDaojOeMM3y+4E9lDGfpaL8XpfVC8hXgOuxkd7b1RJyvenhVDrcJ
+   L1Mho0p99HC4NjnoCr3P9TjySPCQAOgDZrTtN8D57JrFq/KDmbV/n4IDp
+   /t7CFD4LhTCvxlHrY4R3VsZRsBypgt/kyWoXfsnTLYlhnTRH2NLKTRF/E
+   M+rzr5uud7AnCRoZVFjsPfkR6jz61yOQDY/TGQpeqoOkH741E73zOIumd
+   ZNn3oFfluNDjeqv/pw/IuRAUH+OEdGQKdAuJ2TEXBotkAX3oR1k8JmGQA
+   XKaSVQWNzeSOssg1138EUjNEXS/dLr0FS4FMtw/J7Te2BRCJrhmPkCeDh
+   A==;
+X-IronPort-AV: E=Sophos;i="6.06,172,1705359600"; 
+   d="scan'208";a="35497524"
+Received: from vmailcow01.tq-net.de ([10.150.86.48])
+  by mx1.tq-group.com with ESMTP; 20 Feb 2024 12:19:52 +0100
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2C8CB16EE60;
+	Tue, 20 Feb 2024 12:19:47 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
+	s=dkim; t=1708427988; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding; bh=a17JouAcvzgDsexC19eNTWJV4xZc81Ozyv0pAv63uXQ=;
+	b=jfajOyBENTqgJDjpOCpKNY2QAnViQGWSlNnuyb+QBb8SlZWo4uAuMyEfsI9HfL3FJegPjb
+	AbpMmCc5JO17YcwIdwGfUqPCQ9itnwlz/hXaSX+B5nWBBCJa/fqyjAja/hMNgqd2zsAlZB
+	sG8iq8+JKQKVnY0Ee1LVsxlkqXTMvQtJ/8a1NkWurKL28qQmzu3VDkQZZIT+j/HJdwK2Z8
+	B4d+x1zbEKWvG6HbLDAZ3wtozUTgUClfPon1NV6nC9IbVqVfVlY8OcHcqh6Q8X9yHgfs10
+	yOifxcUz5DBJy2W+tJ6Yls3dWvdkRE3ZLiW02lRsV6hTaZi8nes97ObTbyNNMA==
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>
+Cc: Alexander Stein <alexander.stein@ew.tq-group.com>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	NXP Linux Team <linux-imx@nxp.com>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/1] phy: fsl-imx8mq-usb: make vbus regulator optional
+Date: Tue, 20 Feb 2024 12:19:48 +0100
+Message-Id: <20240220111948.2227506-1-alexander.stein@ew.tq-group.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Johan Hovold <johan+linaro@kernel.org>, freedreno@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Bjorn Andersson <andersson@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Thomas Zimmermann <tzimmermann@suse.de>, Vinod Koul <vkoul@kernel.org>
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Kuogee Hsieh <quic_khsieh@quicinc.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Rob Clark <robdclark@gmail.com>, stable@vger.kernel.org
-References: <20240217150228.5788-4-johan+linaro@kernel.org>
-Subject: Re: [PATCH 3/6] soc: qcom: pmic_glink_altmode: fix drm bridge
- use-after-free
-Content-Language: en-GB
-From: Markus Elfring <Markus.Elfring@web.de>
-In-Reply-To: <20240217150228.5788-4-johan+linaro@kernel.org>
-X-Provags-ID: V03:K1:+nHgQKTeGuYog2KEpVvwroQxHKbVWgy4x84LyT/hTMOvc2YQpn3
- JDDJBBZ8e8iXt3Iuyj6UFT2vAkr8MqMibV6zXbFxjjJ4NonyB3VINxG4cgtMo5Xs7xuC6zv
- xHHA+wCH+zFVfPWvJKoIfdB4zOgAfy83sRz8V39oAy7aiZgIKyhsi1FhkeElCu/itLaX0BA
- SMxSEIL5gaOlUNFNP274g==
-UI-OutboundReport: notjunk:1;M01:P0:t82oGWIlCJ4=;7+ho17LAUzbb+8jansfprRaT4K3
- tkXnZ69uYqQ9Yr40k/fxQ+39GLI67PzDy3fOhtM/dwhZhudfM1yJ0/5S/0chhwFJDnZDg/5tE
- WLLRz2kV+hzJGyd5QzcmOj8ppCN/PqNjdaaxl+adhWTYlFeVD2I0H1biUV+x6G8X/eAuv8FJE
- gtvkRo+LUdYlXJ7VXCC0TL7pWOUFbSSlwtgTGev7UuV/QpstPjHlkEbFmrjPtNV/5VAtXA8Uy
- 5BeWc7XP34vuq1gxnS9HH4FAbxdrvKNpa8Z/RJBfwDkMxZs/5VJcFVa35xoGewZGULRXM1mls
- zylKnysUsrygin5x6Yf5ctYrUbSX5xXH/CSWGW+FCKqTHWLCWCMpJXZt8WhzTgXRjG4wE22lc
- 2KiGFn13qGww9c4STZ4wdiEdzNsw9Lz6B7FV8CsOTYFIFPGZhAyGocdEQPaSreYPzWnjpLssE
- j/5AVYE/BucQ+TmeC3IhigE/ZENdm/RidjY3KP0PrA7KHUmbHAtwMvH0Mgor2AU27oQsgpyu4
- qQ2j2sJpeA+dlGJ6nl3nnYL+YqMt/kquiG8b84J3yWCf20cgvlJQGxTkr5Ng2rBkH8R4kiN6Z
- 2LhBLA/PoMcUgapN+3qkrFzp/pA9v9gne94Zwk0eeBKmj6GU+rpp9bB0+1aytagEnWSmcoeTQ
- eUHAdUaujUH21M760THc9Iie0eSgXf1Wyqt1SKnjtA9WiabnkP3Ox67umd1gPHvj1c32E74EV
- EtKfp8P3OC9RQC9gsU50ImVehqLpOFlEq9Xck4pelKEH1vm8tT9Be+TFvlZptoNp20SmsIB1/
- aPcKF0oh2XFRsluKbBSulO5XmA0ZBHgzVFUXT7LAglKlM=
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240220_025626_784741_814CD635 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20240220_031955_149191_5C9D04AA 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,32 +86,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-4oCmCj4gU3BlY2lmaWNhbGx5LCB0aGUgZHAtaHBkIGJyaWRnZSBpcyBjdXJyZW50bHkgcmVnaXN0
-ZXJlZCBiZWZvcmUgYWxsCj4gcmVzb3VyY2VzIGhhdmUgYmVlbiBhY3F1aXJlZCB3aGljaCBtZWFu
-cyB0aGF0IGl0IGNhbiBhbHNvIGJlCj4gZGVyZWdpc3RlcmVkIG9uIHByb2JlIGRlZmVycmFscy4K
-Pgo+IEluIHRoZSBtZWFudGltZSB0aGVyZSBpcyBhIHJhY2Ugd2luZG93IHdoZXJlIHRoZSBuZXcg
-YXV4IGJyaWRnZSBkcml2ZXIKPiAob3IgUEhZIGRyaXZlciBwcmV2aW91c2x5KSBtYXkgaGF2ZSBs
-b29rZWQgdXAgdGhlIGRwLWhwZCBicmlkZ2UgYW5kCj4gc3RvcmVkIGEgKG5vbi1yZWZlcmVuY2Ut
-Y291bnRlZCkgcG9pbnRlciB0byB0aGUgYnJpZGdlIHdoaWNoIGlzIGFib3V0IHRvCj4gYmUgZGVh
-bGxvY2F0ZWQuCuKApgo+ICsrKyBiL2RyaXZlcnMvc29jL3Fjb20vcG1pY19nbGlua19hbHRtb2Rl
-LmMK4oCmCj4gQEAgLTQ1NCw3ICs0NTQsNyBAQCBzdGF0aWMgaW50IHBtaWNfZ2xpbmtfYWx0bW9k
-ZV9wcm9iZShzdHJ1Y3QgYXV4aWxpYXJ5X2RldmljZSAqYWRldiwKPiAgCQlhbHRfcG9ydC0+aW5k
-ZXggPSBwb3J0Owo+ICAJCUlOSVRfV09SSygmYWx0X3BvcnQtPndvcmssIHBtaWNfZ2xpbmtfYWx0
-bW9kZV93b3JrZXIpOwo+Cj4gLQkJYWx0X3BvcnQtPmJyaWRnZSA9IGRybV9kcF9ocGRfYnJpZGdl
-X3JlZ2lzdGVyKGRldiwgdG9fb2Zfbm9kZShmd25vZGUpKTsKPiArCQlhbHRfcG9ydC0+YnJpZGdl
-ID0gZGV2bV9kcm1fZHBfaHBkX2JyaWRnZV9hbGxvYyhkZXYsIHRvX29mX25vZGUoZndub2RlKSk7
-Cj4gIAkJaWYgKElTX0VSUihhbHRfcG9ydC0+YnJpZGdlKSkgewo+ICAJCQlmd25vZGVfaGFuZGxl
-X3B1dChmd25vZGUpOwo+ICAJCQlyZXR1cm4gUFRSX0VSUihhbHRfcG9ydC0+YnJpZGdlKTsK4oCm
-CgpUaGUgZnVuY3Rpb24gY2FsbCDigJxmd25vZGVfaGFuZGxlX3B1dChmd25vZGUp4oCdIGlzIHVz
-ZWQgaW4gbXVsdGlwbGUgaWYgYnJhbmNoZXMuCmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xp
-bnV4L3Y2LjgtcmM1L3NvdXJjZS9kcml2ZXJzL3NvYy9xY29tL3BtaWNfZ2xpbmtfYWx0bW9kZS5j
-I0w0MzUKCkkgc3VnZ2VzdCB0byBhZGQgYSBqdW1wIHRhcmdldCBzbyB0aGF0IGEgYml0IG9mIGV4
-Y2VwdGlvbiBoYW5kbGluZwpjYW4gYmUgYmV0dGVyIHJldXNlZCBhdCB0aGUgZW5kIG9mIHRoaXMg
-ZnVuY3Rpb24gaW1wbGVtZW50YXRpb24uCgpSZWdhcmRzLApNYXJrdXMKCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+vbus-supply property is optional, so instead of allocating a
+dummy regulator make it pure optional.
+
+Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+---
+ drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+index 0b9a59d5b8f02..3af007b8e77f5 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
++++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+@@ -323,9 +323,11 @@ static int imx8mq_phy_power_on(struct phy *phy)
+ 	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
+ 	int ret;
+ 
+-	ret = regulator_enable(imx_phy->vbus);
+-	if (ret)
+-		return ret;
++	if (imx_phy->vbus) {
++		ret = regulator_enable(imx_phy->vbus);
++		if (ret)
++			return ret;
++	}
+ 
+ 	return clk_prepare_enable(imx_phy->clk);
+ }
+@@ -335,7 +337,8 @@ static int imx8mq_phy_power_off(struct phy *phy)
+ 	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
+ 
+ 	clk_disable_unprepare(imx_phy->clk);
+-	regulator_disable(imx_phy->vbus);
++	if (imx_phy->vbus)
++		regulator_disable(imx_phy->vbus);
+ 
+ 	return 0;
+ }
+@@ -392,8 +395,10 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(imx_phy->phy))
+ 		return PTR_ERR(imx_phy->phy);
+ 
+-	imx_phy->vbus = devm_regulator_get(dev, "vbus");
+-	if (IS_ERR(imx_phy->vbus))
++	imx_phy->vbus = devm_regulator_get_optional(dev, "vbus");
++	if (PTR_ERR(imx_phy->vbus) == -ENODEV)
++		imx_phy->vbus = NULL;
++	else if (IS_ERR(imx_phy->vbus))
+ 		return dev_err_probe(dev, PTR_ERR(imx_phy->vbus), "failed to get vbus\n");
+ 
+ 	phy_set_drvdata(imx_phy->phy, imx_phy);
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
