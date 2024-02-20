@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ED62C48BC3
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 19:42:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66AF4C48BC4
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Feb 2024 19:42:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F1Mu89sOchkiobXIOOVhpCs4m56MpyZllvRv/wdnNgU=; b=AaP172lffIGCoT
-	FdVGiGoXixoUFemLtlATjJHRi/YErj8BmQ9xuJznqBKRN/pBfD/+0TELlMm5dblWHPLNfbh+mFPLx
-	eVZkeDMXnlMKDLqrj+oWdyoDo9HN+Tz2aO3Ijh7a0QXC0FS/MKWFJ6Yw+9Oan+fiRgiqpyVEv7p3R
-	n4zuoQa5XL/sBvRukEoD5T0prWHeYByI8BDdZic+x1MiLU1agtP55tXmQuTqMm1Poka/OGBTHeMxV
-	FH7+mUNnkQ0UMhlAOfimCnKpqJD5LKOqwH5BSUbYVV/EULQgE4SU2ZGMhmITcfFZSWBf/GQj9qtau
-	nzDVdETxa+0wb4tTs6Dg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PKZSm2fKqc6CBeG9IGt+qj38+2Eah+QetLrMVUAvEF8=; b=AJvTYkIk1XmoM8
+	W/v0jbeBh7PnjBp0Vw7iKHzmkbzaldbeLvTTOqpbO7hqgNHEijr+qK5gT59U6euOF6SpwlT/D4TK+
+	tT9gTRjF3pdLmiMsGbk2dG/Mk83nd2jxoOjBWMu2ok24Hh2bqzoyYQhq0ehhRSFqhqc4UKyp9ndzX
+	L5d6BmOdgC97OGOXzYxMyHR+q6HvFBqJ7EKMo3AAtYCGndOGJkgO17j8RMbFqPtU4XkGF4Ymk33ZE
+	Ak/G0iUtVBy5McQe4SuX8joV9lONm0155zwoTki1a5ZbT3Ej2pg43qsQcFrAeSfwhyyy3Wsdzeg2e
+	3ZpQ5LPMFtphon/LgN7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcW0M-0000000Fz8q-3BA6;
-	Tue, 20 Feb 2024 19:42:14 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1rcW0O-0000000Fz97-0LfH;
+	Tue, 20 Feb 2024 19:42:16 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcW0J-0000000Fz7s-041j
+	id 1rcW0K-0000000Fz7v-0edC
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Feb 2024 19:42:13 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-5643eccad0bso4666967a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 20 Feb 2024 11:42:10 -0800 (PST)
+	Tue, 20 Feb 2024 19:42:14 +0000
+Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-563b7b3e3ecso7285972a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 20 Feb 2024 11:42:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708458129; x=1709062929; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=JhuET/T0FANjeqzL8xf3U1OOYne712izFcHMVgNkJis=;
-        b=GazQHwffftKm64QSUlfL4pqVwF1t+d2GtfeA5Fblu32nh5mQZpkAPxU9XmFJKQahpF
-         NSVDDPhDxBrltEYFJizLBTJs0fOD74FVij/4KPcE8l6tjmI7IaNfYfXLdskNHH6z9brM
-         mqJ8kV2SPLxE0+OsWllpkFSVMFNKznf4InoDFN77nQ0Vv9/1CVi8kvefdNcw8XOGakmW
-         zcDLcBNulIwNeIozd/TRV1bGFwvvccWfdaMz/QcSKORETaX5P7gmu/wnvc5UF2b733dD
-         3fcPWTXtZw49xWSC1ZivzKAyn58U07FqbgQl7weKN88LVbBShInWQyVXuIXWviqJ7oe2
-         jGbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708458129; x=1709062929;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1708458130; x=1709062930; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=JhuET/T0FANjeqzL8xf3U1OOYne712izFcHMVgNkJis=;
-        b=NiNdOiddNdcR4sPt2aznIsHA++ilEkAfGMgEbFm5g1s7fxfPl0A1PS38hinmMdXQzE
-         SvOJKRihPFcBebnn/1b7y6ZtpfuK3kFT1xPw4mqznPlGvK8TJzzm/u5EO5AG2I4LzQkq
-         GIyARPi89E8ulktlv/4LRy0t10FhypUW3RG+VD4e89g1vEIXFndKhQj5Go1ZmTro+K/m
-         YwtnLvOjyfIYY8urY3yv/i091T5Wsk9i01wMej62lU+XsTg/qq9Gh/EjwamQ2vpzNMEX
-         f9qWoHC2n/XmJdJNwr8NuLIq0/KJA5fUBdm7APO/cGvIEJjEAs3dcy0KXeov187r503O
-         1SOQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXtpkNxbiSzIszly+Y9lKa+KIGJgzDOB8esgaRkb/QIUAT8gFZcdXqdmRQoT38eSklGHGAGjSiqKduOcqYLXYqR03RGJ+Pvex2qbyfsfg==
-X-Gm-Message-State: AOJu0YxjN891/b/c2UEH27j2luAwJe3bM/p/n1oSEvs9qzWSiLHgd/go
-	5/VMLIhI7cUNYn9gP1JHijVUMYyjkdswFrarQTfBv7vArsomI3LlDD5GWtsKZ40eNp34MC5hUux
-	L
-X-Google-Smtp-Source: AGHT+IFRrj5v8hh0hSjlC77d2Mey3KqKNXqp373Xia098XsxTnsRZEZzSLlrq/fVkmA7kp1skyw5jg==
-X-Received: by 2002:a05:6402:33c9:b0:563:e5e0:85e3 with SMTP id a9-20020a05640233c900b00563e5e085e3mr7766330edc.33.1708458129076;
-        Tue, 20 Feb 2024 11:42:09 -0800 (PST)
+        bh=68h+LE3V0lr/x+lRFuw+jGun3H+4YcH4pkj7W0Hoxgk=;
+        b=muHyFwTA4HmDSP492iiUddAWxLHHtbpIJ7zJuBoh9GgtV94BAdp9B7P2MoWkubb7FY
+         62kxHT45BNsksWyrMbCH3FPDFvFSCGEz97eMl+tcLBpxFROtrGctq/d6LrkoAt6VeWn6
+         UFN0kwWuCsOxcLZAlDnaNLnO0LB5gr+2ocqrXhf+QHkxpPYWFzQlftpdyrCnoILdlOMH
+         IKwqVt4ucQWaT6fIascKINydVoUe8MINcCn3TNCjtThHmfW3Ro6My2+jwWoRkFxAMcBV
+         s/KgG6kp0/jneZtE4lQERwEpCQdq1ywFip0au/e1ELOBMVM+RiWQFzL62R3pUg4w84/J
+         ntJQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708458130; x=1709062930;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=68h+LE3V0lr/x+lRFuw+jGun3H+4YcH4pkj7W0Hoxgk=;
+        b=ZjiR+8XFqmR1aghIhMlCJyl2MXPOQilUH6np83+ggOA1QNBKdUt/dJljlyQu3cyLN0
+         qA07XXSZQwoBddynZVZK5ivyE5I9oFMQ/WZG8XZUJTY6+ZIbocI0gfGdi024dKoWVcBI
+         EhNeWtjvoVYYcMS7Ka8IwfLiut7p0VVwtZaZRFwha81gmFbDvAbYz3u1RwmDcgboPzQh
+         j6VHKbRfg0TESUMcQYw0eGDbnBa3NUIwv+HbOex8SQVIgCxA/D3H/mdxbO9+F2buJzSB
+         Th+afyjpWKKLzr+ktyGG4UqoQUNwIwT9HiEym7V/uSacbSqLaKyAavsgGvLT2VbCvyzP
+         n12w==
+X-Forwarded-Encrypted: i=1; AJvYcCXO1UX2E9WOA1jPzIWcTLLHrl0Lln3wy+nYEWlRSkKnThZp1PbYrpcGZhYmPnb3TqSgvJv+Nfe/WIFyQHeoV+50iv6sT83jiWUV5n6N6A==
+X-Gm-Message-State: AOJu0YymcDq4jEyKTgQYBRFQJGK+he/K/IphyjD4Sw6kDd/WRREb7hcn
+	L1sivDQLBxBJbYzQWir6Pr2DpzxQHGQ0eY64s+KC+5M+vANQraFmZYB06DMXSHB5tMW+T6ZxVoI
+	H
+X-Google-Smtp-Source: AGHT+IEmN3u9NfNCJHi5YlS2KPIwUVANNjzpvxdcGsi7+HFNP9uN+rCikJJbcI05RahxcW0koN940g==
+X-Received: by 2002:aa7:d899:0:b0:564:4028:e2cf with SMTP id u25-20020aa7d899000000b005644028e2cfmr4651208edq.24.1708458130436;
+        Tue, 20 Feb 2024 11:42:10 -0800 (PST)
 Received: from [127.0.1.1] ([188.24.162.93])
-        by smtp.gmail.com with ESMTPSA id c1-20020a056402100100b0056486eaa669sm1906822edu.50.2024.02.20.11.42.07
+        by smtp.gmail.com with ESMTPSA id c1-20020a056402100100b0056486eaa669sm1906822edu.50.2024.02.20.11.42.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Feb 2024 11:42:08 -0800 (PST)
+        Tue, 20 Feb 2024 11:42:10 -0800 (PST)
 From: Abel Vesa <abel.vesa@linaro.org>
-Subject: [PATCH v2 0/2] phy: qcom: eusb2-repeater: Add support for SMB2360
-Date: Tue, 20 Feb 2024 21:41:58 +0200
-Message-Id: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-0-213338ca1d5f@linaro.org>
+Date: Tue, 20 Feb 2024 21:41:59 +0200
+Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ compatible for SMB2360
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAIYA1WUC/42OQQ6CMBBFr0K6dkwZEMWV9zAshjLYJtDiFIjEc
- HerJ3D53uK//1aRxXFU1+ythFcXXfAJ8JApY8k/GFyXWKHGIs8RYbIbPBcaTBhH4CW2CMIT08w
- CcWyxqDSQ7rtKd8UFTanSUkuRoRXyxqYtvwxDkpNw716/9L1JbF2cg2y/J2v+td9oqVHXf0XXH
- FK5R0NlV5+oOt8G50nCMchDNfu+fwCqJIf57AAAAA==
+Message-Id: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-1-213338ca1d5f@linaro.org>
+References: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-0-213338ca1d5f@linaro.org>
+In-Reply-To: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-0-213338ca1d5f@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
@@ -80,28 +80,27 @@ To: Bjorn Andersson <andersson@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Abel Vesa <abel.vesa@linaro.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1078; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=BcD6RsSSskw1Y1FZWqSNW79K1il0ALG4B1Z5loGjs3c=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBl1QCInUMm+zVQe4rePGCRdJoZPR1980x4ZsJ6M
- blrGB5KFI2JAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZdUAiAAKCRAbX0TJAJUV
- VjxvEACSN7RkodjVNVk0+UuvzJNhrhOyKBVFhQvbXkauXDtYeg3+LJR+10MbcvR14n/tMT4vxix
- v3Oz6mUK1HOhCiBqsJt873FNX8JWWAU67Ic711H0AbP4jmL9rYualvMC5v4f+3vVmHCqalp5h1t
- sb2/rQktL9Tca5jKbzXt5R0xsjPJ0pshvMkef7Z4ADQJFdX2Y7xTFnB7UVk17ydXt/oUt0dcdwP
- uCgJKJ5rRq6LZGFQ92PxB05N49Fr3fbbbRf2VDEhDBwSkdOxkL9z/1L5r2jI/yVYInMozBsGu1F
- sGmRgX5strm+bMigviWZqJnTiJqgeg5cYBRukOkIdSKb8gr6OJzZVh6UM+pR+yHHnpUnkznEs38
- xd8qJQ2ccCcEBYmQam24FpSb/GKcr8iShAOpWguqQZN3DT8ToF3Ps6vR1Wa39u9m1AhUZWhgN2T
- 2D+nLkC9P31eejfNQDid7/X/4gU2MqIzNnO97o7/qaMDnND3ger5VYsxpoh1joT+irmPpan+tBJ
- gQQ45Z3b+BV+Nz48koEuNRnRmSI3hqUIXaqsphi80w2Tg7GXhcJrgb8Faho84SA3G8Hc+ewMCnT
- +SQJeqFax6GMs9UJw+Ld9XkYEwskfenlBixNtMBQ/6T9RqUT7c1Vkw6TvHzsYx7BYGvg9fW0unR
- oDKOhTNrzMpadfg==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1000; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=SIo7UuL857cJN/BAk2/OFWYIDGu1F5bYNPOrEFilIxU=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBl1QCNOAZipYAXjBdAijs80zBC/8NG6RFfVTGz9
+ 97PbulbEI2JAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZdUAjQAKCRAbX0TJAJUV
+ VtFmD/4pQdUIgFWfHGlCQU/z5+p7XGVVkaS82l5b7PjySJRSqhcG0utgcrUheaUccIIe6WKt+ud
+ aneGbMEBXiqaIfLG7jwggwntMT0hXUhf+0GwqznWXid+XYOClUgXvHB0tLP4jSsTXYvASZWdYWJ
+ ovUnzG20wzUwOjcyP21L3IVCWxw33+CVDyj+GDycVQ3a7TePPhiOI4FJkonzk1wnBXolaetI08Q
+ HBSCvqic7GPndYXb6iZUApNnL6Zqb+nLbkcIU0Kk2X3/zukCvOij5OJmlnmiEOSvSecYODXcyJ3
+ GIErepa7iUsTU0UcUSYN8NMlM1ZaAhBX3Px9+9A2pxWp9IVOvvs+OwVxjlNw9/16XgYj329wTX6
+ dZxSNXptwFjYAZaQGoioxUTXFgx6+iKZjtUNsTgdzgrrauj1MGlfhAu8bh8sIm0nA/m/jFqaIvH
+ a/ZAKjU67T3bsDcYu9b0XcTJXOnuItoqgc8OOYtEU5McZss3W6uiBvDRBYt7uEv7sHunxzShGC8
+ e4tLiG4a3TYrIhyvAKSzJaNw3EoDkFFjnreg+/Cal2BVZ7gbVOtRVej888ZNIH6eX1CB6oVPmvp
+ TI/9AM13TR+/DMQziN4bdQZNgtWJoZLemkLjQVRjfMzxw0UOw5LRk9zgowrwBWyodZA53LiuLss
+ KR1/B257ikB506A==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240220_114211_091313_A1C8A3C8 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20240220_114212_227728_A99A6195 
+X-CRM114-Status: UNSURE (   8.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,33 +118,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patchset adds support for the eUSB2 repeater provided
-by the SMB2360 PMICs.
+Add a dt-bindings compatible string for the Qualcomm's SMB2360 PMIC.
 
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
-Changes in v2:
-- Re-worded the commit message for the driver patch to fit Dmitry's request
-- Added Dmitry's R-b tag to the driver patch
-- Changed the compatible entry in schema to enum, like Krzysztof suggested
-- Added Krzysztof's A-b tag to the schema patch
-- Link to v1: https://lore.kernel.org/r/20240209-phy-qualcomm-eusb2-repeater-smb2360-v1-0-af2ca4d95a67@linaro.org
+ Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
----
-Abel Vesa (2):
-      dt-bindings: phy: qcom,snps-eusb2-repeater: Add compatible for SMB2360
-      phy: qualcomm: phy-qcom-eusb2-repeater: Add support for SMB2360
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+index 24c733c10e0e..90d79491e281 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+@@ -20,7 +20,9 @@ properties:
+           - enum:
+               - qcom,pm7550ba-eusb2-repeater
+           - const: qcom,pm8550b-eusb2-repeater
+-      - const: qcom,pm8550b-eusb2-repeater
++      - enum:
++          - qcom,pm8550b-eusb2-repeater
++          - qcom,smb2360-eusb2-repeater
+ 
+   reg:
+     maxItems: 1
 
- .../bindings/phy/qcom,snps-eusb2-repeater.yaml          |  4 +++-
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c          | 17 +++++++++++++++++
- 2 files changed, 20 insertions(+), 1 deletion(-)
----
-base-commit: 2d5c7b7eb345249cb34d42cbc2b97b4c57ea944e
-change-id: 20231122-phy-qualcomm-eusb2-repeater-smb2360-a0fd60d382c4
-
-Best regards,
 -- 
-Abel Vesa <abel.vesa@linaro.org>
+2.34.1
 
 
 -- 
