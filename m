@@ -4,93 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D136C48BC3
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 11:40:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42C61C48BF6
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 12:53:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=puVTQDgQwnpWbzA0lwCxwej6cxZt3/rRYowAHO/5S8A=; b=oLZrqpFWlWUaMy
-	sZ9DIxz3egJZ0tpA0G0G0NwN6Ya6YRzEJHljbLwhPzT8+Jc/+3DpbQMGWDQGW4AT9u2iO4moY/feG
-	crWTu2F612l+nKIrTn0t1U1h0YwUCy2n896Nb9DWbFRLNU3kQi6Y1oKnTxxQm7A2RPC3IFX8w9Dw3
-	FxhzKw+qoDj3/SyQbJbQT53rj9OOUMMkYqXI5ApKrfwCLrqo8miwUoGUsFutJH2pVrHpiJW+OlWXC
-	0+qIdJjIdu96uwbJx8mtfw3GjylByiZd3X2sS4kiClpadsTL8LqkPvqx/39IVMkxlevlXOdqTepCb
-	2M6aioKzpQ8ljtrkggHw==;
+	List-Owner; bh=ZPVnmFijgHIfNKLSute0uqz7Cs4wU7EK1ixNH7gawL8=; b=JWWYL5K0j8BRGB
+	H0i9GrBM62cGTjpr05iDfaKd4cGyOpgkosyNwU86yPIrNtJ8NtWsJ6XQB+8eGTFle5YKqg1eSUXhe
+	1WatKrDg8oeQJBfFfLGSlLEyP3LdWdQm76SyBiGUlQFB9WRlZjaQwFk+qJeUGbC2tEzOo9oi45EQ9
+	4hZKUixw2qToGrxcx6cH620IgZ4cqVIg+FaXBwB2ANAFwpRyTP3lR7DE5zLkAg1EE8md+6I8xvdPx
+	1Wxc3u57ZDhREVBVholmumN0XSUHjtUM1xle34oqtACYgtk3kjnxNHx8GKsj/qxRKFlgDnpqtQdq0
+	OWlO+YOkIoWF645VxuUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rckxd-00000000jkT-0b8O
-	for linux-phy@archiver.kernel.org;
-	Wed, 21 Feb 2024 11:40:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1rcm6S-00000000uxB-3sv9;
+	Wed, 21 Feb 2024 12:53:36 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rckxa-00000000jj4-2XbD
+	id 1rcm6Q-00000000uvU-1lps
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Feb 2024 11:40:24 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41L8AB6D010696;
-	Wed, 21 Feb 2024 11:40:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=55EJpJjN/7VQPyDIfbMUTZRT/+5KZL9krJsL+5YEq/s=; b=E/
-	eZZMw31yXmpyBtXkDf6YPpYZF9nFNwRWXViSFQYjyZBSgwg6Ni3GDyUchinVC5nc
-	F/GPackZq2AqwlLtF7QDnnR+3ZbMtrgs04IAEbO/oNAZSEZnwiS3AEoMNmRS+ik/
-	Der8LrqNK/SxU1xv3XgkXWDJSS2DiRGfOuBdn69lCXXFtEkyR7jNXwy088V3kpNo
-	emS9lEvRpGH72oPaWnHe6WfpKeeg2CnLZUPCI8KJh+Fke+06D1tDynQ4F0ZTLZgy
-	0AbdUSg91QyE2x9BiuAxDO5npwLOgPz9vPsgOg0jrRjgYmsaQfkx9M7BR9qaV4D3
-	x3VTN1BmBr4aZCdw1LbQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wdddg0ey0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Feb 2024 11:40:17 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41LBeG3T021375
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Feb 2024 11:40:16 GMT
-Received: from [10.216.53.46] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 21 Feb
- 2024 03:40:12 -0800
-Message-ID: <00bd50ed-bc7c-482f-b126-321d1ac9228d@quicinc.com>
-Date: Wed, 21 Feb 2024 17:10:07 +0530
+	Wed, 21 Feb 2024 12:53:35 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rcm6C-0005K1-8p; Wed, 21 Feb 2024 13:53:20 +0100
+Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rcm68-0022jj-SA; Wed, 21 Feb 2024 13:53:16 +0100
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1rcm68-00083g-2a;
+	Wed, 21 Feb 2024 13:53:16 +0100
+Message-ID: <4bf4146749abb1500f8a412deb4d61ab0f3c80e6.camel@pengutronix.de>
+Subject: Re: [PATCH RFC v3 4/5] phy: hisilicon: hisi-inno-phy: add support
+ for Hi3798MV200 INNO PHY
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: forbidden405@outlook.com, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof
+ Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley
+ <conor+dt@kernel.org>,  Jiancheng Xue <xuejiancheng@hisilicon.com>, Shawn
+ Guo <shawn.guo@linaro.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, David
+ Yang <mmyangfl@gmail.com>
+Date: Wed, 21 Feb 2024 13:53:16 +0100
+In-Reply-To: <20240220-inno-phy-v3-4-893cdf8633b4@outlook.com>
+References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
+	 <20240220-inno-phy-v3-4-893cdf8633b4@outlook.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom-snps: Fixed order of enabling regulators
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon Vijay
- Abraham I" <kishon@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <quic_ppratap@quicinc.com>,
-        <quic_jackp@quicinc.com>
-References: <20240221103202.3628142-1-quic_kriskura@quicinc.com>
- <CAA8EJprMd5tr91gm99GyP1oefO_=tNQzxKA6hmB-xtBNVTbeeQ@mail.gmail.com>
-Content-Language: en-US
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <CAA8EJprMd5tr91gm99GyP1oefO_=tNQzxKA6hmB-xtBNVTbeeQ@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: P90DIIVEW0y5-5QJQhHZwpZwmt94OTHk
-X-Proofpoint-ORIG-GUID: P90DIIVEW0y5-5QJQhHZwpZwmt94OTHk
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-20_06,2024-02-21_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 mlxlogscore=999
- spamscore=0 adultscore=0 impostorscore=0 suspectscore=0 clxscore=1015
- priorityscore=1501 lowpriorityscore=0 bulkscore=0 malwarescore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2402210090
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240221_034022_700181_B89C4F93 
-X-CRM114-Status: GOOD (  19.00  )
+X-CRM114-CacheID: sfid-20240221_045334_538369_F95ABB57 
+X-CRM114-Status: GOOD (  18.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,66 +77,145 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2/21/2024 4:26 PM, Dmitry Baryshkov wrote:
-> On Wed, 21 Feb 2024 at 12:32, Krishna Kurapati > <quic_kriskura@quicinc.com> wrote:
-[...]
->> ---
->>
->> Downstream kernels on QC targets use this sequence to power up
->> the phy and this has been tested extensively on multiple targets.
->> This change has been tested with upstream kernel on QCM6490-IDP
->> without EUD to ensure there is no loss or breakage of functionality.
->>
->>   drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 2 +-
->>   1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> index eb0b0f61d98e..e86d221b7397 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> @@ -79,7 +79,7 @@
->>   #define LS_FS_OUTPUT_IMPEDANCE_MASK            GENMASK(3, 0)
->>
->>   static const char * const qcom_snps_hsphy_vreg_names[] = {
->> -       "vdda-pll", "vdda33", "vdda18",
->> +       "vdda-pll", "vdda18", "vdda33",
+On Di, 2024-02-20 at 05:28 +0800, Yang Xiwen via B4 Relay wrote:
+> From: Yang Xiwen <forbidden405@outlook.com>
 > 
-> NAK.
-> The driver uses regulator_bulk_enable, which enables all three
-> regulators simultaneously via async calls, thus your change doesn't
-> have any effect.
+> Direct MMIO resgiter access is used by Hi3798MV200. For other models,
+
+              register
+
+> of_iomap() returns 0 due to insufficient length. So they are unaffected.
 > 
-Hi Dmitry,
+> Also Hi3798MV200 INNO PHY has an extra reset required to be deasserted,
+> switch to reset_control_bulk_() APIs to resolve this.
 
-  Thanks for this information. I thought it was synchronous but you are 
-right, I see in code they are async:
+            reset_control_array_()
 
-                 async_schedule_domain(regulator_bulk_enable_async,
-                                       &consumers[i], &async_domain);
+apparently.
 
-  I think separating them out and calling regulator_enable on each one 
-might work out.
-
-> Also note, that these regulators are frequently shared between
-> different consumers. As such, even if you have tight control of
-> regulator ordering in the driver, other drivers might enable
-> corresponding regulators on their own, breaking the ordering.
+> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
+> ---
+>  drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 65 ++++++++++++++++++------------
+>  1 file changed, 39 insertions(+), 26 deletions(-)
 > 
+> diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> index b7e740eb4752..5175e5a351ac 100644
+> --- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> +++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+> @@ -10,6 +10,7 @@
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> +#include <linux/of_address.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/reset.h>
+> @@ -43,6 +44,7 @@
+>  #define PHY_CLK_ENABLE		BIT(2)
+>  
+>  struct hisi_inno_phy_port {
+> +	void __iomem *base;
+>  	struct reset_control *utmi_rst;
+>  	struct hisi_inno_phy_priv *priv;
+>  };
+> @@ -50,7 +52,7 @@ struct hisi_inno_phy_port {
+>  struct hisi_inno_phy_priv {
+>  	void __iomem *mmio;
+>  	struct clk *ref_clk;
+> -	struct reset_control *por_rst;
+> +	struct reset_control *rsts;
+>  	unsigned int type;
+>  	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
+>  };
+> @@ -62,26 +64,31 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+>  	u32 val;
+>  	u32 value;
+>  
+> -	if (priv->type == PHY_TYPE_0)
+> -		val = (data & PHY_TEST_DATA) |
+> -		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
+> -		      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
+> -		      PHY0_TEST_WREN | PHY0_TEST_RST;
+> -	else
+> -		val = (data & PHY_TEST_DATA) |
+> -		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
+> -		      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
+> -		      PHY1_TEST_WREN | PHY1_TEST_RST;
+> -	writel(val, reg);
+> -
+> -	value = val;
+> -	if (priv->type == PHY_TYPE_0)
+> -		value |= PHY0_TEST_CLK;
+> -	else
+> -		value |= PHY1_TEST_CLK;
+> -	writel(value, reg);
+> -
+> -	writel(val, reg);
+> +	if (priv->ports[port].base)
+> +		// stride is 4
+> +		writel(data, (u32 *)priv->ports[port].base + addr);
+> +	else {
+> +		if (priv->type == PHY_TYPE_0)
+> +			val = (data & PHY_TEST_DATA) |
+> +			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
+> +			      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
+> +			      PHY0_TEST_WREN | PHY0_TEST_RST;
+> +		else
+> +			val = (data & PHY_TEST_DATA) |
+> +			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
+> +			      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
+> +			      PHY1_TEST_WREN | PHY1_TEST_RST;
+> +		writel(val, reg);
+> +
+> +		value = val;
+> +		if (priv->type == PHY_TYPE_0)
+> +			value |= PHY0_TEST_CLK;
+> +		else
+> +			value |= PHY1_TEST_CLK;
+> +		writel(value, reg);
+> +
+> +		writel(val, reg);
+> +	}
+>  }
+>  
+>  static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
+> @@ -104,7 +111,7 @@ static int hisi_inno_phy_init(struct phy *phy)
+>  		return ret;
+>  	udelay(REF_CLK_STABLE_TIME);
+>  
+> -	reset_control_deassert(priv->por_rst);
+> +	reset_control_deassert(priv->rsts);
+>  	udelay(POR_RST_COMPLETE_TIME);
+>  
+>  	/* Set up phy registers */
+> @@ -122,7 +129,7 @@ static int hisi_inno_phy_exit(struct phy *phy)
+>  	struct hisi_inno_phy_priv *priv = port->priv;
+>  
+>  	reset_control_assert(port->utmi_rst);
+> -	reset_control_assert(priv->por_rst);
+> +	reset_control_assert(priv->rsts);
+>  	clk_disable_unprepare(priv->ref_clk);
+>  
+>  	return 0;
+> @@ -158,15 +165,16 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+>  	if (IS_ERR(priv->ref_clk))
+>  		return PTR_ERR(priv->ref_clk);
+>  
+> -	priv->por_rst = devm_reset_control_get_exclusive(dev, NULL);
+> -	if (IS_ERR(priv->por_rst))
+> -		return PTR_ERR(priv->por_rst);
+> +	priv->rsts = devm_reset_control_array_get(dev, false, false);
 
-You are right. Let me check how the phy regulators are allocated in 
-different femto phy targets.
+Please use devm_reset_control_array_get_exclusive() instead.
 
-Thanks for the review.
 
-Regards,
-Krishna,
+regards
+Philipp
 
 -- 
 linux-phy mailing list
