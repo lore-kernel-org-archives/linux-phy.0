@@ -4,59 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42C61C48BF6
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 12:53:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97D9BC48BF6
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 13:10:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZPVnmFijgHIfNKLSute0uqz7Cs4wU7EK1ixNH7gawL8=; b=JWWYL5K0j8BRGB
-	H0i9GrBM62cGTjpr05iDfaKd4cGyOpgkosyNwU86yPIrNtJ8NtWsJ6XQB+8eGTFle5YKqg1eSUXhe
-	1WatKrDg8oeQJBfFfLGSlLEyP3LdWdQm76SyBiGUlQFB9WRlZjaQwFk+qJeUGbC2tEzOo9oi45EQ9
-	4hZKUixw2qToGrxcx6cH620IgZ4cqVIg+FaXBwB2ANAFwpRyTP3lR7DE5zLkAg1EE8md+6I8xvdPx
-	1Wxc3u57ZDhREVBVholmumN0XSUHjtUM1xle34oqtACYgtk3kjnxNHx8GKsj/qxRKFlgDnpqtQdq0
-	OWlO+YOkIoWF645VxuUw==;
+	List-Owner; bh=4O4F9z/gE3/6DRZo8SrtCNtNo1W6G9f4fQAOixhj5AY=; b=L6wPRripvzCps9
+	PVWK9VuJyEEB2ivamAgZn9vPpCro9Oywma8TgvBQrlot9/RTYn4Kl5tKalWoTBOmsV6ZjvmomJgyY
+	7tmIARnuFgGBx7fikeZhnz1wDrhI6pT2Fwy8Fw39d8Rs9bxXzadDn6CQkHc9jjcQya+Mz9Q66urPb
+	EUfNSPK+auxrpFqrtBu54xhdMkHrjiVZsmSqSQj6solIaQzpQSgFM/+RRpulZx4uHXBSVlOexN41m
+	iZk/fz+pVD80tG5vOARjB7y8h8m1lR2ykF2QGHNwZ9kJgvwce6ksAuNfMkuvLHledyARNM9x1dr9o
+	DMkx6d5WZy540guTz3bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcm6S-00000000uxB-3sv9;
-	Wed, 21 Feb 2024 12:53:36 +0000
+	id 1rcmMS-00000000yg8-1Jz6;
+	Wed, 21 Feb 2024 13:10:08 +0000
 Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcm6Q-00000000uvU-1lps
+	id 1rcmMO-00000000yfH-1Tbx
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Feb 2024 12:53:35 +0000
+	Wed, 21 Feb 2024 13:10:05 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1rcm6C-0005K1-8p; Wed, 21 Feb 2024 13:53:20 +0100
+	id 1rcmM7-0000Ni-FO; Wed, 21 Feb 2024 14:09:47 +0100
 Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
 	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.94.2)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1rcm68-0022jj-SA; Wed, 21 Feb 2024 13:53:16 +0100
+	id 1rcmM5-00235h-KR; Wed, 21 Feb 2024 14:09:45 +0100
 Received: from pza by lupine with local (Exim 4.96)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1rcm68-00083g-2a;
-	Wed, 21 Feb 2024 13:53:16 +0100
-Message-ID: <4bf4146749abb1500f8a412deb4d61ab0f3c80e6.camel@pengutronix.de>
-Subject: Re: [PATCH RFC v3 4/5] phy: hisilicon: hisi-inno-phy: add support
- for Hi3798MV200 INNO PHY
+	id 1rcmM5-0008RC-1k;
+	Wed, 21 Feb 2024 14:09:45 +0100
+Message-ID: <c105bfa8567f9e76731f2b018f4ca3176357204d.camel@pengutronix.de>
+Subject: Re: [PATCH v3 14/18] phy: cadence-torrent: add suspend and resume
+ support
 From: Philipp Zabel <p.zabel@pengutronix.de>
-To: forbidden405@outlook.com, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley
- <conor+dt@kernel.org>,  Jiancheng Xue <xuejiancheng@hisilicon.com>, Shawn
- Guo <shawn.guo@linaro.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, David
- Yang <mmyangfl@gmail.com>
-Date: Wed, 21 Feb 2024 13:53:16 +0100
-In-Reply-To: <20240220-inno-phy-v3-4-893cdf8633b4@outlook.com>
-References: <20240220-inno-phy-v3-0-893cdf8633b4@outlook.com>
-	 <20240220-inno-phy-v3-4-893cdf8633b4@outlook.com>
+To: Thomas Richard <thomas.richard@bootlin.com>, Linus Walleij
+ <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Andy
+ Shevchenko <andy@kernel.org>, Tony Lindgren <tony@atomide.com>, Haojian
+ Zhuang <haojian.zhuang@linaro.org>,  Vignesh R <vigneshr@ti.com>, Aaro
+ Koskinen <aaro.koskinen@iki.fi>, Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+ Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>, Vinod
+ Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof
+ =?UTF-8?Q?Wilczy=C5=84ski?= <kw@linux.com>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org, 
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
+ theo.lebrun@bootlin.com,  thomas.petazzoni@bootlin.com, u-kumar1@ti.com
+Date: Wed, 21 Feb 2024 14:09:45 +0100
+In-Reply-To: <20240102-j7200-pcie-s2r-v3-14-5c2e4a3fac1f@bootlin.com>
+References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
+	 <20240102-j7200-pcie-s2r-v3-14-5c2e4a3fac1f@bootlin.com>
 User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
@@ -64,8 +71,8 @@ X-SA-Exim-Mail-From: p.zabel@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240221_045334_538369_F95ABB57 
-X-CRM114-Status: GOOD (  18.38  )
+X-CRM114-CacheID: sfid-20240221_051004_420926_EF9B1336 
+X-CRM114-Status: GOOD (  18.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,147 +84,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Di, 2024-02-20 at 05:28 +0800, Yang Xiwen via B4 Relay wrote:
-> From: Yang Xiwen <forbidden405@outlook.com>
-> 
-> Direct MMIO resgiter access is used by Hi3798MV200. For other models,
-
-              register
-
-> of_iomap() returns 0 due to insufficient length. So they are unaffected.
-> 
-> Also Hi3798MV200 INNO PHY has an extra reset required to be deasserted,
-> switch to reset_control_bulk_() APIs to resolve this.
-
-            reset_control_array_()
-
-apparently.
-
-> Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
-> ---
->  drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 65 ++++++++++++++++++------------
->  1 file changed, 39 insertions(+), 26 deletions(-)
-> 
-> diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-> index b7e740eb4752..5175e5a351ac 100644
-> --- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-> +++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-> @@ -10,6 +10,7 @@
->  #include <linux/io.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
-> +#include <linux/of_address.h>
->  #include <linux/phy/phy.h>
->  #include <linux/platform_device.h>
->  #include <linux/reset.h>
-> @@ -43,6 +44,7 @@
->  #define PHY_CLK_ENABLE		BIT(2)
->  
->  struct hisi_inno_phy_port {
-> +	void __iomem *base;
->  	struct reset_control *utmi_rst;
->  	struct hisi_inno_phy_priv *priv;
->  };
-> @@ -50,7 +52,7 @@ struct hisi_inno_phy_port {
->  struct hisi_inno_phy_priv {
->  	void __iomem *mmio;
->  	struct clk *ref_clk;
-> -	struct reset_control *por_rst;
-> +	struct reset_control *rsts;
->  	unsigned int type;
->  	struct hisi_inno_phy_port ports[INNO_PHY_PORT_NUM];
->  };
-> @@ -62,26 +64,31 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
->  	u32 val;
->  	u32 value;
->  
-> -	if (priv->type == PHY_TYPE_0)
-> -		val = (data & PHY_TEST_DATA) |
-> -		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
-> -		      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
-> -		      PHY0_TEST_WREN | PHY0_TEST_RST;
-> -	else
-> -		val = (data & PHY_TEST_DATA) |
-> -		      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
-> -		      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
-> -		      PHY1_TEST_WREN | PHY1_TEST_RST;
-> -	writel(val, reg);
-> -
-> -	value = val;
-> -	if (priv->type == PHY_TYPE_0)
-> -		value |= PHY0_TEST_CLK;
-> -	else
-> -		value |= PHY1_TEST_CLK;
-> -	writel(value, reg);
-> -
-> -	writel(val, reg);
-> +	if (priv->ports[port].base)
-> +		// stride is 4
-> +		writel(data, (u32 *)priv->ports[port].base + addr);
-> +	else {
-> +		if (priv->type == PHY_TYPE_0)
-> +			val = (data & PHY_TEST_DATA) |
-> +			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY0_TEST_ADDR) |
-> +			      ((port << PHY0_TEST_PORT_OFFSET) & PHY0_TEST_PORT) |
-> +			      PHY0_TEST_WREN | PHY0_TEST_RST;
-> +		else
-> +			val = (data & PHY_TEST_DATA) |
-> +			      ((addr << PHY_TEST_ADDR_OFFSET) & PHY1_TEST_ADDR) |
-> +			      ((port << PHY1_TEST_PORT_OFFSET) & PHY1_TEST_PORT) |
-> +			      PHY1_TEST_WREN | PHY1_TEST_RST;
-> +		writel(val, reg);
-> +
-> +		value = val;
-> +		if (priv->type == PHY_TYPE_0)
-> +			value |= PHY0_TEST_CLK;
-> +		else
-> +			value |= PHY1_TEST_CLK;
-> +		writel(value, reg);
-> +
-> +		writel(val, reg);
-> +	}
->  }
->  
->  static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
-> @@ -104,7 +111,7 @@ static int hisi_inno_phy_init(struct phy *phy)
->  		return ret;
->  	udelay(REF_CLK_STABLE_TIME);
->  
-> -	reset_control_deassert(priv->por_rst);
-> +	reset_control_deassert(priv->rsts);
->  	udelay(POR_RST_COMPLETE_TIME);
->  
->  	/* Set up phy registers */
-> @@ -122,7 +129,7 @@ static int hisi_inno_phy_exit(struct phy *phy)
->  	struct hisi_inno_phy_priv *priv = port->priv;
->  
->  	reset_control_assert(port->utmi_rst);
-> -	reset_control_assert(priv->por_rst);
-> +	reset_control_assert(priv->rsts);
->  	clk_disable_unprepare(priv->ref_clk);
->  
->  	return 0;
-> @@ -158,15 +165,16 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
->  	if (IS_ERR(priv->ref_clk))
->  		return PTR_ERR(priv->ref_clk);
->  
-> -	priv->por_rst = devm_reset_control_get_exclusive(dev, NULL);
-> -	if (IS_ERR(priv->por_rst))
-> -		return PTR_ERR(priv->por_rst);
-> +	priv->rsts = devm_reset_control_array_get(dev, false, false);
-
-Please use devm_reset_control_array_get_exclusive() instead.
-
-
-regards
-Philipp
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRG8sIDIwMjQtMDItMTUgYXQgMTY6MTcgKzAxMDAsIFRob21hcyBSaWNoYXJkIHdyb3RlOgo+
+IEFkZCBzdXNwZW5kIGFuZCByZXN1bWUgc3VwcG9ydC4KPiAKPiBUaGUgYWxyZWFkeV9jb25maWd1
+cmVkIGZsYWcgaXMgY2xlYXJlZCBkdXJpbmcgdGhlIHN1c3BlbmQgc3RhZ2UgdG8gZm9yY2UKPiB0
+aGUgUEhZIGluaXRpYWxpemF0aW9uIGR1cmluZyB0aGUgcmVzdW1lIHN0YWdlLgo+IAo+IEJhc2Vk
+IG9uIHRoZSB3b3JrIG9mIFRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+Cj4g
+Cj4gU2lnbmVkLW9mZi1ieTogVGhvbWFzIFJpY2hhcmQgPHRob21hcy5yaWNoYXJkQGJvb3RsaW4u
+Y29tPgo+IC0tLQo+ICBkcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYyB8
+IDU0ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgMSBmaWxlIGNoYW5nZWQsIDU0
+IGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvY2FkZW5jZS9waHkt
+Y2FkZW5jZS10b3JyZW50LmMgYi9kcml2ZXJzL3BoeS9jYWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJl
+bnQuYwo+IGluZGV4IDUyY2FkY2E0YzA3Yi4uZjg5NDVhMTFlN2NhIDEwMDY0NAo+IC0tLSBhL2Ry
+aXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVudC5jCj4gKysrIGIvZHJpdmVycy9w
+aHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMKPiBAQCAtMzAwNSw2ICszMDA1LDU5IEBA
+IHN0YXRpYyB2b2lkIGNkbnNfdG9ycmVudF9waHlfcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
+Y2UgKnBkZXYpCj4gIAljZG5zX3RvcnJlbnRfY2xrX2NsZWFudXAoY2Ruc19waHkpOwo+ICB9Cj4g
+IAo+ICtzdGF0aWMgaW50IGNkbnNfdG9ycmVudF9waHlfc3VzcGVuZF9ub2lycShzdHJ1Y3QgZGV2
+aWNlICpkZXYpCj4gK3sKPiArCXN0cnVjdCBjZG5zX3RvcnJlbnRfcGh5ICpjZG5zX3BoeSA9IGRl
+dl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsJaW50IGk7Cj4gKwo+ICsJcmVzZXRfY29udHJvbF9hc3Nl
+cnQoY2Ruc19waHktPnBoeV9yc3QpOwo+ICsJcmVzZXRfY29udHJvbF9hc3NlcnQoY2Ruc19waHkt
+PmFwYl9yc3QpOwo+ICsJZm9yIChpID0gMDsgaSA8IGNkbnNfcGh5LT5uc3Vibm9kZXM7IGkrKykK
+PiArCQlyZXNldF9jb250cm9sX2Fzc2VydChjZG5zX3BoeS0+cGh5c1tpXS5sbmtfcnN0KTsKPiAr
+Cj4gKwlpZiAoY2Ruc19waHktPmFscmVhZHlfY29uZmlndXJlZCkKPiArCQljZG5zX3BoeS0+YWxy
+ZWFkeV9jb25maWd1cmVkID0gMDsKPiArCWVsc2UKPiArCQljbGtfZGlzYWJsZV91bnByZXBhcmUo
+Y2Ruc19waHktPmNsayk7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQg
+Y2Ruc190b3JyZW50X3BoeV9yZXN1bWVfbm9pcnEoc3RydWN0IGRldmljZSAqZGV2KQo+ICt7Cj4g
+KwlzdHJ1Y3QgY2Ruc190b3JyZW50X3BoeSAqY2Ruc19waHkgPSBkZXZfZ2V0X2RydmRhdGEoZGV2
+KTsKPiArCWludCBub2RlID0gY2Ruc19waHktPm5zdWJub2RlczsKPiArCWludCByZXQsIGk7Cj4g
+Kwo+ICsJcmV0ID0gY2Ruc190b3JyZW50X2NsayhjZG5zX3BoeSk7Cj4gKwlpZiAocmV0KQo+ICsJ
+CWdvdG8gY2xrX2NsZWFudXA7Cj4gKwo+ICsJLyogRW5hYmxlIEFQQiAqLwo+ICsJcmVzZXRfY29u
+dHJvbF9kZWFzc2VydChjZG5zX3BoeS0+YXBiX3JzdCk7Cj4gKwo+ICsJaWYgKGNkbnNfcGh5LT5u
+c3Vibm9kZXMgPiAxKSB7Cj4gKwkJcmV0ID0gY2Ruc190b3JyZW50X3BoeV9jb25maWd1cmVfbXVs
+dGlsaW5rKGNkbnNfcGh5KTsKPiArCQlpZiAocmV0KQo+ICsJCQlnb3RvIHB1dF9sbmtfcnN0Owo+
+ICsJfQo+ICsKPiArCXJldHVybiAwOwo+ICsKPiArcHV0X2xua19yc3Q6Cj4gKwlmb3IgKGkgPSAw
+OyBpIDwgbm9kZTsgaSsrKQo+ICsJCXJlc2V0X2NvbnRyb2xfYXNzZXJ0KGNkbnNfcGh5LT5waHlz
+W2ldLmxua19yc3QpOwoKVGhlIHNhbWUgY2xlYW51cCBpcyBmb3VuZCBpbiBwcm9iZS4gV291bGQg
+aXQgYmUgY2xlYW5lciB0byBtb3ZlIHRoaXMKaW50byBjZG5zX3RvcnJlbnRfcGh5X2NvbmZpZ3Vy
+ZV9tdWx0aWxpbmsoKSBpbnN0ZWFkIG9mIGR1cGxpY2F0aW5nIGl0CmhlcmU/Cgo+ICsJcmVzZXRf
+Y29udHJvbF9hc3NlcnQoY2Ruc19waHktPmFwYl9yc3QpOwo+ICsJY2xrX2Rpc2FibGVfdW5wcmVw
+YXJlKGNkbnNfcGh5LT5jbGspOwo+ICtjbGtfY2xlYW51cDoKPiArCWNkbnNfdG9ycmVudF9jbGtf
+Y2xlYW51cChjZG5zX3BoeSk7CgpUaGlzIGNhbGxzIG9mX2Nsa19kZWxfcHJvdmlkZXIoKSwgc2Vl
+bXMgbWlzcGxhY2VkIGhlcmUuCgpyZWdhcmRzClBoaWxpcHAKCgotLSAKbGludXgtcGh5IG1haWxp
+bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
