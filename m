@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 907C4C48BF6
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 10:59:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF6ADC48BC3
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Feb 2024 11:01:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IcJmyGpWZT1tuU3BfhSz0r1HGJK+/1K+ooWtw4q2r2M=; b=fPbJJ6WJCt+uov
-	AJrkRTu+gXE9mj0Zbat56ONbFikOsB3LpcHi51Rku+tIGkLULiHBuE8trvvDHtTmqLoCLDYKjvui4
-	0XmTmbqhSheXg4A2UTSL/JV+5BK0VRBiBs9yzfHyeuoMX/VOyi5xR7YEHdXv9oC6k6ebLWuiA79AP
-	jhoHNiGEmmW00kbNfKwDeTWDKd6j9vFk6lZoNoJTomnxH5bPDxdTzFP0qjFyB8Sr1gkUByOJOZB5H
-	dmQi2etaP189piIWawQ418JutyjauKlJNfm7qTIqDrkjwjR/0Pi1aS+f8bm16g1uMdavN9BPEcjoE
-	SQarYAGd7z+dPTIjXCzw==;
+	List-Owner; bh=vQqwkpQHShwjHtZqoBO0MISfKJV3KkSwq7YkyFbeXkk=; b=GyYPGSsAKwdmyY
+	qD3XCjxugbvcOZnlCTxmOzF93cRAy1Mp/l28dOblkM4pgkpvEmnut6E2sPNHnDAjxvWT2GmLgVt0c
+	llLNBdp8wLD3EZASoHU1xJgvzd7QCi2eeG5LnY4cz13v5Bbf/cFGGRg91qoHrqkE8ZmPPAtWEyVFC
+	3XDIxkk2TAiF9WwinoxXnABukgIsyKbuXVOTLLS3I+LUov+td5CnRSgi1YsBGxtUlL7RZ2XZwKv6F
+	/h9VS+WVXM7lKYVKLplZ2y8uk4LSLVUjWNzHKU7C7eaUReO/tnUUcPZrQJ994qQFBBF/Q/McCmul7
+	h9PKeazalcjb28CP0E4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rckJs-00000000bLv-0yBe;
-	Wed, 21 Feb 2024 10:59:20 +0000
-Received: from relay9-d.mail.gandi.net ([2001:4b98:dc4:8::229])
+	id 1rckMM-00000000c5f-2JcY;
+	Wed, 21 Feb 2024 11:01:54 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rckJn-00000000bIq-2ukj;
-	Wed, 21 Feb 2024 10:59:17 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 23106FF809;
-	Wed, 21 Feb 2024 10:59:06 +0000 (UTC)
+	id 1rckMJ-00000000c3k-1vde;
+	Wed, 21 Feb 2024 11:01:53 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 441241BF209;
+	Wed, 21 Feb 2024 11:01:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708513149;
+	t=1708513307;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=zEHFQ0b81cDkLGXCwktGr5yACT9BYmzY2jUziR5kBWE=;
-	b=O2cnQkRkGWcS8AeId+uKeW5crrGFVmgagH9G9AFsXOgr9cYdITOV3qZ7FuVoN8k7d+WuvJ
-	pnRsOIxo3yVXZWVIPTLiQNSR171q9h3D/FPpeBY6FCJzbDnihnWWNLnyB6+baU2WvkqGeT
-	4XvgzNBTPWtDPBYnc3/VWIzpl59yjELncXzktjt7ydKr5n5QdxeiSwUJWWsqM/y3WIqBOi
-	2xdQHYgYfEQNZ7XFePjr4zjIVsMaDmDn3fdPbBd3ewJXLjizpaWX6cxbcvb+DoqGwnO6p2
-	RXM1ok5jXdYesnUqM/tetsnKP8xZezDXM3pVm/6OinnHjN+1N6V7oryM6Mrh9g==
-Message-ID: <eb37a117-74bd-44fe-b677-89dc7c2aced8@bootlin.com>
-Date: Wed, 21 Feb 2024 11:59:05 +0100
+	bh=vInAPH5p+e8119+v06ulfZ5lvJvXTu8ss9P3JzvQTHY=;
+	b=XN2ZfXNc0o0/ZL9aDDvYuX0tX/X+cAUOjEyPjjYOeuCHaYl1rlDr1Zo2s5XyriovJpzcap
+	5ZjBJwOO30nd09Epax4Smr0EKKs2MnvZ6Q3CHnOyYM6NwMgAUWRW4U6CmpYsOp6wOCBm6e
+	Y4luy+dNbIH4qMXu7QFPc4ol2jaCvPTZ9WhoCrLsokTohJ569FN6n4JNHtW33M7bro/a6F
+	PKuVY4qRveAwriMN481ITaN546VAyU3LywwhyzfSs6aURNBCIxVNE/C/trMpsclq4Q7hAZ
+	Jc3HcZu+GwQDdXz9UFfQrUzBF5NmVJHPQyOh6pylNe/TMxTyGPghV8PG2xYDpA==
+Message-ID: <a2c3c5b9-79a3-4793-892c-b1ab79b71c7d@bootlin.com>
+Date: Wed, 21 Feb 2024 12:01:43 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 05/18] mux: add mux_chip_resume() function
+Subject: Re: [PATCH v3 02/18] pinctrl: pinctrl-single: remove dead code in
+ suspend() and resume() callbacks
 Content-Language: en-US
 To: Andy Shevchenko <andy@kernel.org>
 Cc: Linus Walleij <linus.walleij@linaro.org>,
@@ -64,16 +65,16 @@ Cc: Linus Walleij <linus.walleij@linaro.org>,
  linux-pci@vger.kernel.org, gregory.clement@bootlin.com,
  theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com
 References: <20240102-j7200-pcie-s2r-v3-0-5c2e4a3fac1f@bootlin.com>
- <20240102-j7200-pcie-s2r-v3-5-5c2e4a3fac1f@bootlin.com>
- <Zc4t82V9czlEqamL@smile.fi.intel.com>
- <f1d2c9b0-238d-4b09-8212-62e00a2192b2@bootlin.com>
- <Zc96Ke_iG_bHIvkP@smile.fi.intel.com>
+ <20240102-j7200-pcie-s2r-v3-2-5c2e4a3fac1f@bootlin.com>
+ <Zc4tedAhqYX3bQcw@smile.fi.intel.com>
+ <78add459-a96a-46c6-83ff-e2657d4d3db4@bootlin.com>
+ <Zc96dSff5Y-dufrJ@smile.fi.intel.com>
 From: Thomas Richard <thomas.richard@bootlin.com>
-In-Reply-To: <Zc96Ke_iG_bHIvkP@smile.fi.intel.com>
+In-Reply-To: <Zc96dSff5Y-dufrJ@smile.fi.intel.com>
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240221_025916_198398_E4058EA5 
-X-CRM114-Status: GOOD (  19.48  )
+X-CRM114-CacheID: sfid-20240221_030151_695333_E0E2B989 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,51 +91,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/16/24 16:07, Andy Shevchenko wrote:
-> On Fri, Feb 16, 2024 at 08:52:17AM +0100, Thomas Richard wrote:
->> On 2/15/24 16:29, Andy Shevchenko wrote:
->>> On Thu, Feb 15, 2024 at 04:17:50PM +0100, Thomas Richard wrote:
-> 
-> ...
-> 
->>>> +int mux_chip_resume(struct mux_chip *mux_chip)
->>>> +{
->>>> +	int global_ret = 0;
->>>> +	int ret, i;
->>>> +
->>>> +	for (i = 0; i < mux_chip->controllers; ++i) {
->>>> +		struct mux_control *mux = &mux_chip->mux[i];
->>>> +
->>>> +		if (mux->cached_state == MUX_CACHE_UNKNOWN)
->>>> +			continue;
->>>> +
->>>> +		ret = mux_control_set(mux, mux->cached_state);
->>>> +		if (ret < 0) {
->>>> +			dev_err(&mux_chip->dev, "unable to restore state\n");
->>>> +			if (!global_ret)
->>>> +				global_ret = ret;
+On 2/16/24 16:08, Andy Shevchenko wrote:
+> On Fri, Feb 16, 2024 at 08:59:47AM +0100, Thomas Richard wrote:
+>> On 2/15/24 16:27, Andy Shevchenko wrote:
+>>> On Thu, Feb 15, 2024 at 04:17:47PM +0100, Thomas Richard wrote:
+>>>> No need to check the pointer returned by platform_get_drvdata(), as
+>>>> platform_set_drvdata() is called during the probe.
 >>>
->>> Hmm... This will record the first error and continue.
+>>> This patch should go _after_ the next one, otherwise the commit message doesn't
+>>> tell full story and the code change bring a potential regression.
 >>
->> In the v2 we talked about this with Peter Rosin.
+>> Hello Andy,
 >>
->> In fact, in the v1 (mux_chip_resume() didn't exists yet, everything was
->> done in the mmio driver) I had the same behavior: try to restore all
->> muxes and in case of error restore the first one.
->>
->> I don't know what is the right solution. I just restored the behavior I
->> had in v1.
+>> I'm ok to move this patch after the next one.
+>> But for my understanding, could you explain me why changing the order is
+>> important in this case ?
 > 
-> Okay, I believe you know what you are doing, folks. But to me this approach
-> sounds at bare minimum "unusual". Because the failures here are not fatal
-> and recording the first one may or may not make sense and it's so fragile
-> as it completely implementation-dependent.
+> Old PM calls obviously can be called in different circumstances and these
+> checks are important.
+> 
+> Just squash these two patches to avoid additional churn and we are done.
 
-I guess if there is an error, the resume is completely dead so no need
-to continue.
-If it's okay for Peter I can return on first failure.
-
-Regards,
+You mean invert the order instead of squash.
 
 -- 
 Thomas Richard, Bootlin
