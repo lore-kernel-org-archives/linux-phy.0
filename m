@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4C38C48BF8
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Feb 2024 21:00:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83EEAC5478C
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Feb 2024 21:10:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0GT+s3YvdoRhbCLHnhRv9R5KjAdxTpQZYHEiOtx9Eag=; b=omWkFF97uL5T1w
-	zHgYhEwswSgTgAa1SFIpg8fvFlzaRRWykEc4yk6HEqedWQaTv8ixFWcZ0UuYhmH8WQpfdkSYFRgOA
-	YIj1AYlB7jynup1/sy7xTOOZBTAENas+Nj9CgYlLM3H0lhrLYFLLS5r0ls6bRHf3CkOV4AGIaUWq9
-	pW60SUDX4U53AHDrDCvMZWPl+BTAx/F2g3AILCBgvY6j4pMCSOJMy6KAc7nI1TS/nG7HE54e5n6IB
-	wuFWwYjXCXWco3pUlSyjArl6AQuizm3hQPTT4YenNh2Fjuzk8sbYkUWxcGHf8hdTSs7Foe71HvA+T
-	9AOXrBcG5olQrmOVq4aA==;
+	List-Owner; bh=WFcAVRKtBhB1wLxzvWIuXgpcdrzHq2XLqNIkjA17xSI=; b=cPD1hJR2+8UQ56
+	8ifqVWAXLR416dPRaxORxnUK/Jlq2ajOHmnMGqxsP5QT8aksZS4OI2/qu8q7lTAemCjG8P5sjYj94
+	q6JxkG6n+l04jW6TXKfWz70Er4i9a9V2EJjAYLxrNRn6AH5dtBHU/oVxjA1Ni2hlPAlwT29Y+YWfs
+	lGLAvHkIhLY5CMGy2jt1a8ZaznNANdXy2USwVOymFTCA/mfIiqim+pQV1QoISfHtt8cL1Ps8ie6XM
+	jQt1tV0H8DviAH9zVj5Ps7IXmf+BhnCrXLdU+/1Tillpy2H2FuG1/T5alBCIY7fmE0dmslIol/+Nd
+	XsifKA1NDV8auk3mxh7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdGB5-00000006aHJ-2U5W;
-	Thu, 22 Feb 2024 21:00:23 +0000
-Received: from mail-yb1-xb2b.google.com ([2607:f8b0:4864:20::b2b])
+	id 1rdGKw-00000006bad-0sUI;
+	Thu, 22 Feb 2024 21:10:34 +0000
+Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdGB2-00000006aFz-3fvm
+	id 1rdGKt-00000006bXW-2P6i
 	for linux-phy@lists.infradead.org;
-	Thu, 22 Feb 2024 21:00:22 +0000
-Received: by mail-yb1-xb2b.google.com with SMTP id 3f1490d57ef6-dbed0710c74so140672276.1
-        for <linux-phy@lists.infradead.org>; Thu, 22 Feb 2024 13:00:20 -0800 (PST)
+	Thu, 22 Feb 2024 21:10:32 +0000
+Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-dc742543119so165937276.0
+        for <linux-phy@lists.infradead.org>; Thu, 22 Feb 2024 13:10:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708635619; x=1709240419; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1708636222; x=1709241022; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=dmvjj7fhOobzTivUlelD//oyOg39L8TaqEJkHM6CbjU=;
-        b=cqbo1PbaG8NDK/tuYNUmT9lrqhwdK7aIq0Aqu9XfP6+u5ewRCVz5lWWeemQRxfNBIh
-         VCejbTE6rWojh3q6kXBD67zlmfeyfTNP5BCIaQpELdlzZJKI0XO74y49AK3MofDgpgCs
-         A5zJC0TUGGR3u/qNeBZUVmlBltyhiYWjNzk+/cSxjJL6+oDzuu/N4T1VSD1NXa3G2ngq
-         dbIE59bjLGJ02wXWxyefVGxe2NbhqXVP1aN3j+TeKKLq51T3hD8cjp91+dclOrSgUjXm
-         Z908lkdRE2WG9q+YL0Gq+pXSbeVbVKJQObMu+da5/tFf5BayJfuwCUORwdTUmEqDhYUr
-         aSsA==
+        bh=KISjjhinzIu3kIcQRpPQsw9fHAQrHUvQiIbfDFbxHeA=;
+        b=SGdmcy04SqmDgZdIVPJhxj38zbcXmJpPyMmLZImbcrKF4JpiXzr5uPR9YoKyvJ1bgM
+         Cc2wmBO2Hts/EJOVd3pE4pCtXS5iV2ytdeAKzhd7mukIqmKEQsbaQ8lsWOm7g6EKiM5g
+         XqO5DZ9DPNqWtIhVj7k2QZqrFrNEpRPYkhDy7Qb88J28NjGptRIvjM2lfLKJ2FPk1BGW
+         zZwpxrutN6YqBuArI/2VN6aX/YtNC1uztFAxscNgJW/UaZUxsdJAOwKmuXAZo31m3HtE
+         mVDyv3/YFilN4uXgyGk+Cq5nK6aX4WfgeFPz4ZKSuBvOT4W3AVQS7lANAywr2ETrgaZC
+         SlRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708635619; x=1709240419;
+        d=1e100.net; s=20230601; t=1708636222; x=1709241022;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dmvjj7fhOobzTivUlelD//oyOg39L8TaqEJkHM6CbjU=;
-        b=JZGpyhaJLQGzdosIt0Yg03/Tqc4fEmqckHVCOh/Bad47B5YSP9nb80VASiNB22bdlX
-         QEIBDB9H1jgFMJlzbDucftDDBbsMKNieCEYly0Lhb0Ipd/ymp8jh8/jxTpIV4uht+yyt
-         l8odTmbNab6BUftjKkPD0mvKrKvh7BKOx7/rTlH9Qc6ZQwGI00xgfovj59qcHWqBdGgv
-         lTIgdMcpJKuzjoXwBEOcm474l8l6cPbmjUfB6LcPLHasVqk9Tcq3XzdEGjzpx6yr+BN4
-         8ZswjKn34qWsh/l98lnmNuWTns7uN4P9Mq5tXPGthgwwC5Z5PCkHdbsiDZU/luhyX/rs
-         w1MQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUhSoJ1hLtew7nzRYr6v2WdQc0lBCjSUPU2Hshjr/gpZaSgxCWFmY8gscls3c0zDv8a5obFN1mRLA1v7hTElxQSKk808Pdo1uJgbT1z4Q==
-X-Gm-Message-State: AOJu0Ywz6cAOmvsWV+l7bxU9MjVvzXGZHVpxH627uBdk2md1y1BagYQs
-	pld1hd7t559KnPbxOq5OVj9fZwC8ON0MhMJ70jL7qccGJhYS9HXw9Tm5+c/abS9DvxyEnjNBjO0
-	UsGfOU2smQUN05E7gHTWkJz//mHQ1jzfg7BtHog==
-X-Google-Smtp-Source: AGHT+IFdnFEXZ/1Ob2Rd+e7Qs1/dnY3m9z+vfb8chmIF2GjOTnC5mGKNn2WgjovOSKHSnuhiBw7HcB/7y1Jd6eekJXs=
-X-Received: by 2002:a5b:d05:0:b0:dcc:8aaa:3ed3 with SMTP id
- y5-20020a5b0d05000000b00dcc8aaa3ed3mr303376ybp.16.1708635619664; Thu, 22 Feb
- 2024 13:00:19 -0800 (PST)
+        bh=KISjjhinzIu3kIcQRpPQsw9fHAQrHUvQiIbfDFbxHeA=;
+        b=bm6uKIs6b5uk5KCnAUa6v/mJK8vyCP+qvukMbhcLDTDU3aSCktFMGnW1n5GdoMI6cS
+         78vsZib3Uq9qDVdW1eUwNE8zG+21LxdY6u9h6elIuYP0P8LBDQC0tUXyk5Wzt+Txclu9
+         HWruYrKlKMa/6DpNd01RUnh8OPLiypo+UwrVi/VTF94FN4i0Zb+E5BAqmNg0R1WuxzNb
+         yEj4jW95dhQJyCGIUM0cufrGt/ycIROmX6OspRuPPX7MN0CD65r7WCmnpEip+VcwOqjd
+         p7jrDP50FdceooQiUeryWzHcUvPdI8Dua0rPJfCkKX/P75GmJn364hcdFrrA2MLUpd+O
+         zPoA==
+X-Forwarded-Encrypted: i=1; AJvYcCX5XK7L0wJbIWocWNCwOoTJnnGwSVqUxAGloEOMlRTN91s5ZOC6sef2Y5nv7tqrg2oCgqsfYZbXa9UjjZDUrgQbn/LXRFipdI4mcn2MGw==
+X-Gm-Message-State: AOJu0YwQAjxcI7JnmFUIKVH1/1iKlicOJ8U9Bl/aQCWwbPIKu2ORlqnC
+	uW/UTlGa8H4iRmaT5NrEdJSlCI8u+nMzi0bVLwJVRt3L+8+v0H+k37ArOMtNgzJY1ToI9LCNNaI
+	Ll+HKq3d9jw5Jml9AIPcxr2VTiLCeyqDB/y1BHQ==
+X-Google-Smtp-Source: AGHT+IEBy/FkALInxvThzqnKOPLYZgoL5uV+k6buUGcPqG2FwQZGtnq6q8rWdEVgVmBapKjqMXBdOJ9HXitiHUCL6FU=
+X-Received: by 2002:a25:888f:0:b0:dcc:aa1f:af3c with SMTP id
+ d15-20020a25888f000000b00dccaa1faf3cmr366027ybl.40.1708636222326; Thu, 22 Feb
+ 2024 13:10:22 -0800 (PST)
 MIME-Version: 1.0
-References: <20240217150228.5788-1-johan+linaro@kernel.org> <20240217150228.5788-2-johan+linaro@kernel.org>
-In-Reply-To: <20240217150228.5788-2-johan+linaro@kernel.org>
+References: <20240217150228.5788-1-johan+linaro@kernel.org> <20240217150228.5788-4-johan+linaro@kernel.org>
+In-Reply-To: <20240217150228.5788-4-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 22 Feb 2024 23:00:08 +0200
-Message-ID: <CAA8EJprBs8ASwZMAHFMQUEg7NN67rzRtUX--8h72-7F9R_=o6Q@mail.gmail.com>
-Subject: Re: [PATCH 1/6] drm/bridge: aux-hpd: fix OF node leaks
+Date: Thu, 22 Feb 2024 23:10:11 +0200
+Message-ID: <CAA8EJpoPaknqPUEg8p37Nh1MV62Cr8fH+MxE-1b+T-8h3BmO9Q@mail.gmail.com>
+Subject: Re: [PATCH 3/6] soc: qcom: pmic_glink_altmode: fix drm bridge use-after-free
 To: Johan Hovold <johan+linaro@kernel.org>
 Cc: Bjorn Andersson <andersson@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, 
 	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
@@ -79,11 +79,10 @@ Cc: Bjorn Andersson <andersson@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.c
 	Abhinav Kumar <quic_abhinavk@quicinc.com>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
 	freedreno@lists.freedesktop.org, dri-devel@lists.freedesktop.org, 
 	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+	linux-phy@lists.infradead.org, stable@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240222_130020_940191_5DE7F109 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240222_131031_623120_83479443 
+X-CRM114-Status: GOOD (  21.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,19 +101,65 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Sat, 17 Feb 2024 at 17:03, Johan Hovold <johan+linaro@kernel.org> wrote:
 >
-> The two device node references taken during allocation need to be
-> dropped when the auxiliary device is freed.
+> A recent DRM series purporting to simplify support for "transparent
+> bridges" and handling of probe deferrals ironically exposed a
+> use-after-free issue on pmic_glink_altmode probe deferral.
 >
-> Fixes: 6914968a0b52 ("drm/bridge: properly refcount DT nodes in aux bridge drivers")
+> This has manifested itself as the display subsystem occasionally failing
+> to initialise and NULL-pointer dereferences during boot of machines like
+> the Lenovo ThinkPad X13s.
+>
+> Specifically, the dp-hpd bridge is currently registered before all
+> resources have been acquired which means that it can also be
+> deregistered on probe deferrals.
+>
+> In the meantime there is a race window where the new aux bridge driver
+> (or PHY driver previously) may have looked up the dp-hpd bridge and
+> stored a (non-reference-counted) pointer to the bridge which is about to
+> be deallocated.
+>
+> When the display controller is later initialised, this triggers a
+> use-after-free when attaching the bridges:
+>
+>         dp -> aux -> dp-hpd (freed)
+>
+> which may, for example, result in the freed bridge failing to attach:
+>
+>         [drm:drm_bridge_attach [drm]] *ERROR* failed to attach bridge /soc@0/phy@88eb000 to encoder TMDS-31: -16
+>
+> or a NULL-pointer dereference:
+>
+>         Unable to handle kernel NULL pointer dereference at virtual address 0000000000000000
+>         ...
+>         Call trace:
+>           drm_bridge_attach+0x70/0x1a8 [drm]
+>           drm_aux_bridge_attach+0x24/0x38 [aux_bridge]
+>           drm_bridge_attach+0x80/0x1a8 [drm]
+>           dp_bridge_init+0xa8/0x15c [msm]
+>           msm_dp_modeset_init+0x28/0xc4 [msm]
+>
+> The DRM bridge implementation is clearly fragile and implicitly built on
+> the assumption that bridges may never go away. In this case, the fix is
+> to move the bridge registration in the pmic_glink_altmode driver to
+> after all resources have been looked up.
+>
+> Incidentally, with the new dp-hpd bridge implementation, which registers
+> child devices, this is also a requirement due to a long-standing issue
+> in driver core that can otherwise lead to a probe deferral loop (see
+> fbc35b45f9f6 ("Add documentation on meaning of -EPROBE_DEFER")).
+>
+> Fixes: 080b4e24852b ("soc: qcom: pmic_glink: Introduce altmode support")
+> Fixes: 2bcca96abfbf ("soc: qcom: pmic-glink: switch to DRM_AUX_HPD_BRIDGE")
+> Cc: stable@vger.kernel.org      # 6.3
+> Cc: Bjorn Andersson <andersson@kernel.org>
 > Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Cc: Neil Armstrong <neil.armstrong@linaro.org>
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  drivers/soc/qcom/pmic_glink_altmode.c | 16 +++++++++++++---
+>  1 file changed, 13 insertions(+), 3 deletions(-)
+>
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
-> ---
->  drivers/gpu/drm/bridge/aux-hpd-bridge.c | 3 +++
->  1 file changed, 3 insertions(+)
 
 
 -- 
