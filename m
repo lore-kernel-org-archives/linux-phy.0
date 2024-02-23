@@ -4,96 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B0FBC5478C
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Feb 2024 11:04:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 652F4C54798
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Feb 2024 11:05:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fCFQXpQ2ZMzF+fabSnUk7OQH4jOxnhu5nUeltbG3bWM=; b=tOoZiz6ltS2bJl
-	651aJaYIW3yFD3EgFjpCkmRyixmb0Fh71qo4QzEOnTULe14LqdlgT/5CH0XIQ77U24WRdDq95VvyX
-	21MVKyOvWmnJdX28V9PZYPU9ZDai6UTg6/tMhyEeoH9qyo5LetCeDffzsaGJT5OSZfnwCAU/fpjwS
-	ne/IjdJlS2z1ic9yP+QAetW1UpPxSsTN8hO0lPxFnbGm2U0GOfoeK7GkyJ/UxSh80oF14yAOZTtbC
-	hBsvbVbdWZWfAKQMx6D20z4rsYQhD+s9/gJuG7s1SwTD0rf2qL0aCbN0h0b8eIwBi6cRz/iTRpvbF
-	8C6ONia0HDgACsi1VB8Q==;
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GTvmzuooJ0GrBiLhOWXo8ASWCN5ZAX2heMaV39spAak=; b=wDuv/OxSNusWzV4arNXQao7H33
+	4dpwLQAdgKfiVr/NOOn6++cM84+rsC1I6asvJZwX5MbF49D5OkDTV6rSz2D1wkXrkcOioBCISooCP
+	k/xxMR0CfITGWwLkgekwTx+mRV3aAk5o06yidwt2DdTGkAkmhscMu6Z4kKCG+ZGhU8T+rvSs0rkAm
+	k7yRzsRp/1NcRKgv1zpvc9dR6Kx2hTFb76NKpaJeGasuA2wT4UMo8RCq1mAo13JosoyPaVTq/tS0g
+	3Rxl7L6p6oxtmabmAZ3xMO2/WpS8WHciEoRaquRQUmzFRRwq+rw1Xv7Jdod2OFKVOi9RVbbVj5FHN
+	jPzC2T6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdTM0-000000093v1-0SAP;
-	Fri, 23 Feb 2024 11:04:32 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1rdTN3-00000009478-0E6k;
+	Fri, 23 Feb 2024 11:05:37 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdTLt-000000093tv-2tQ7
-	for linux-phy@bombadil.infradead.org;
-	Fri, 23 Feb 2024 11:04:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
-	In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=/RpTYiyFTL0cV1HIXamxy5oNLm7jD4YHf0G0C+wgOA8=; b=DLFPme9eDdcH7Yr5eAF9mv5bLz
-	kf6Hicl61aarTFkML9mqbyX3FnLhABi+sUiADLcmViLMe+1em1IG68rEUnOlOsZfG/h5y2rcoC9mW
-	1YKJGn+/2ehax998fOubqsdWeCOu8lMDQuSLqRisJDutfbJUHvVOdASuLObipQwyX1/8fRgIpm0RF
-	imztb5d6c+i1skGGqa9Tph0N3Glnr15iawfXbGWgdDOUJu4uiwmfsyYFg12TR5J5TUxWgoJKcMRtE
-	ld2DL1PeagNRO5ev9C1dLD2Eb2eayk8w4xup9/Zn0ucEQ5skMGWOq2QLX+24bJuTKype2I2PMyo2V
-	Zh39bo3g==;
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
-	by casper.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdTLo-00000006mA5-1VW6
+	id 1rdTMJ-000000093yK-44L3
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Feb 2024 11:04:24 +0000
-Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-512bb2ed1f7so220936e87.3
-        for <linux-phy@lists.infradead.org>; Fri, 23 Feb 2024 03:04:19 -0800 (PST)
+	Fri, 23 Feb 2024 11:04:56 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-412949fd224so1419055e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Feb 2024 03:04:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708686192; x=1709290992; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1708686290; x=1709291090; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :references:cc:to:from:content-language:subject:user-agent
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=/RpTYiyFTL0cV1HIXamxy5oNLm7jD4YHf0G0C+wgOA8=;
-        b=NG1aXwUzG4nJIt77NQnF2ZM5JTRfaKu3xZI4KvRhu8rmSgv0hCGA6wcFKEl/leBvBE
-         hRu+o+/Lu30bNhHnkFns4KB6W8+0MJ+GcbgLzqGrCeE51E+FGgOHc7Ag6IAGEo6KwdUJ
-         VszFDTGmIg04tNE0msAti7759kWiwmi2P5NCVHS6Z6lnxKHxA59G8lW2UUOOqPi85ae6
-         +KIytEL4FUdl67Yw0p0I+oAUUHtqj3HUSRqx/CJ+CBHG60V3LqhKhtMn5JNnTN2QHIsL
-         AUzt0MvZidvPiFZggp05eaoeNHdT2/E25XmEIZSbpnlh55j7JctFFvskSt/40UxMcdvx
-         y3Cw==
+        bh=dpIrZ6DID2LKFZOgEe2hRQ7/dIExMrSdp13/JdG8p1M=;
+        b=fsRtSdh74eXMkoBq7PhKbeCmtTtnp9yN46jnO5uXQXlZTqkDJWLSax+LSwGDkGWGnU
+         Tqks5GN7jFsWGeUhAKzOBEvfZojUYQsanqo1qapF7CtpZ5Wh+YQXvxxGfLyFh+9NqzKf
+         9aowme3Yz2wnFQNFQVf26VWs2rL5xcILomlNqwSfuObU2s9MexwxHJ6jpqYCml//UWy4
+         W3iUx0eK4NNV8SLkcijRTWlhNgJGmABUE4kr65UKx0/js0ulqZU9E6/ZdFi0Ri9r9Q1S
+         Bqf1GCNnq3cX81uRmSmVqPrdrT1ci4DDmwfaWtl04iu0M60obvLfl9WBX2gUkmFIXUcU
+         JdOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708686192; x=1709290992;
+        d=1e100.net; s=20230601; t=1708686290; x=1709291090;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :references:cc:to:from:content-language:subject:user-agent
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=/RpTYiyFTL0cV1HIXamxy5oNLm7jD4YHf0G0C+wgOA8=;
-        b=wji6GG0YxkUX3cKPBXwUcvsG9KfNTIhF9XJzMWlf2bqnTKBklTOVeFRR2tcxVfLmV3
-         bApMQ1HSrbU48DPLaqUMzS1o1+z5KqTHiqyrE9JbliAwhna4fNXsXL7Qhut5FZtR4o35
-         gKXvnaUx/NM+KKjN56uvpu0BwSjbls+Sxf4bK04gvfPaVSx6jhntq+GxFlVC6apgrGfn
-         U4qToVuKgYqca6xlZKWb9e3C/vjl8M/HM+1BR+SF436z0F/2zrY6lBJfBs3fC4ZV10/O
-         kh+MtAxaDsDJNJQ5eyd3RaIu5bKEweg77TM0GhYaY5jyYcFmplvS512w5N6N9OPdwXfD
-         bYxw==
-X-Forwarded-Encrypted: i=1; AJvYcCW+VsVFFN6wiYKzqbBihP9kJoWRQ2ZbBeIcR8M9wLFaKbgwAnhFI1y/2NnCA1yS+JTaJuwYlrfZT4lq17XR2fOw5G431rTo+8lOoLrAdQ==
-X-Gm-Message-State: AOJu0YwRunKP0vqx7AwCC3OoDgvhldFCFlnx+EOiZ4QYxaYzHFuymnAq
-	8CYTq7cZxxXudHexkXJSibktSr1aJ2Jgecil12hEaRg4nnlUHCZXxLdZ/YBcy1I=
-X-Google-Smtp-Source: AGHT+IFT9W3nGYiyOdEzCSKGOnZ74IabhMCjp6QTcpJbx2fT9JJlPrAlcV6NNwKGl1ykqb6VM2pP6w==
-X-Received: by 2002:a05:6512:3f5:b0:512:ab9e:3521 with SMTP id n21-20020a05651203f500b00512ab9e3521mr952191lfq.11.1708686192169;
-        Fri, 23 Feb 2024 03:03:12 -0800 (PST)
+        bh=dpIrZ6DID2LKFZOgEe2hRQ7/dIExMrSdp13/JdG8p1M=;
+        b=ntsrMJ223NpexuytSP7ePnJBZ7hdIG+FVYa47xeVX7l87CWWlw/c1kEL29F+jlhT/V
+         2MhcqClV0Uiqq9r4oVOj20c+gr8R5oPXKoxYr4HvQA3+hslouBK8HEV6WchN/MQTZcB2
+         JY5yqh6BfhQ1+g7k24D1wr7FL92JaZO7XWETsfs/ljq+FrsNCMSoclfsFEozxYD4kvRb
+         6Aye2z+kI/KUocL/+q0CtqeW4Zp9Lq4X5gAx21t7UKcwg1jWGTtMytpTU6BBTpyrZM+M
+         HFCZOZ3rcXpTzqzof1paI9LL0r0b4p9iwj2QkOONvboRwA8lZ++vzMgypEDAEVWW4ggd
+         WquA==
+X-Forwarded-Encrypted: i=1; AJvYcCVZUyEvzakrsVuhbTUcvtc3GIJ/vzjXsTTyaLhkgOvKeqD3QIvYELfDFHWFATQkM9B49QqtqADnWSs3vfz7Fp+G8b4ujD8DFaIp/4YuWA==
+X-Gm-Message-State: AOJu0YzDLVtYAhezob58f6sFSFC5VTkILkYvlxigeNNFJcG6cr5/0Ya0
+	OMPc4RQUcBIwVZrO3ltV0I8haFv7cGzhgXgmj+FKt7pnzNL5gEfb+Gnw5BWQCMU=
+X-Google-Smtp-Source: AGHT+IGnhOanEmC+FFYKStze36jnGP7rwyWuG1Kq6ilYQmZZ4KpE6Mgybp5TasF6iXliwnPhK8ra0g==
+X-Received: by 2002:a05:600c:3b07:b0:412:95fb:9613 with SMTP id m7-20020a05600c3b0700b0041295fb9613mr859610wms.2.1708686290037;
+        Fri, 23 Feb 2024 03:04:50 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:982:cbb0:58e3:6b80:c446:11f4? ([2a01:e0a:982:cbb0:58e3:6b80:c446:11f4])
-        by smtp.gmail.com with ESMTPSA id jj26-20020a05600c6a1a00b0041294a6fc03sm1541476wmb.9.2024.02.23.03.03.10
+        by smtp.gmail.com with ESMTPSA id jj26-20020a05600c6a1a00b0041294a6fc03sm1541476wmb.9.2024.02.23.03.04.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Feb 2024 03:03:11 -0800 (PST)
-Message-ID: <3c4246b6-431a-442e-8ace-3b0d0e67743f@linaro.org>
-Date: Fri, 23 Feb 2024 12:03:10 +0100
+        Fri, 23 Feb 2024 03:04:49 -0800 (PST)
+Message-ID: <cd2b45d4-53b4-4a3f-88bd-116f4e6a7bae@linaro.org>
+Date: Fri, 23 Feb 2024 12:04:48 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/6] soc: qcom: pmic_glink_altmode: fix drm bridge
- use-after-free
-Content-Language: en-US, fr
 From: Neil Armstrong <neil.armstrong@linaro.org>
-To: Bjorn Andersson <andersson@kernel.org>,
+Subject: Re: [PATCH 4/6] soc: qcom: pmic_glink: Fix boot when QRTR=m
+Content-Language: en-US, fr
+To: Johan Hovold <johan+linaro@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
  Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
  David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan+linaro@kernel.org>
+ Vinod Koul <vkoul@kernel.org>
 Cc: Jonas Karlman <jonas@kwiboo.se>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
@@ -103,9 +88,10 @@ Cc: Jonas Karlman <jonas@kwiboo.se>,
  Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
  Kuogee Hsieh <quic_khsieh@quicinc.com>, freedreno@lists.freedesktop.org,
  dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ Rob Clark <robdclark@chromium.org>, stable@vger.kernel.org
 References: <20240217150228.5788-1-johan+linaro@kernel.org>
- <170868613914.4029284.5549880672870201262.b4-ty@linaro.org>
+ <20240217150228.5788-5-johan+linaro@kernel.org>
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
  GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
@@ -131,11 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro Developer Services
-In-Reply-To: <170868613914.4029284.5549880672870201262.b4-ty@linaro.org>
+In-Reply-To: <20240217150228.5788-5-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240223_110420_432487_C1B52430 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240223_030454_605883_66332347 
+X-CRM114-Status: GOOD (  17.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,46 +132,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/02/2024 12:02, Neil Armstrong wrote:
-> Hi,
+On 17/02/2024 16:02, Johan Hovold wrote:
+> From: Rob Clark <robdclark@chromium.org>
 > 
-> On Sat, 17 Feb 2024 16:02:22 +0100, Johan Hovold wrote:
->> Starting with 6.8-rc1 the internal display sometimes fails to come up on
->> machines like the Lenovo ThinkPad X13s and the logs indicate that this
->> is due to a regression in the DRM subsystem [1].
->>
->> This series fixes a race in the pmic_glink_altmode driver which was
->> exposed / triggered by the transparent DRM bridges rework that went into
->> 6.8-rc1 and that manifested itself as a bridge failing to attach and
->> sometimes triggering a NULL-pointer dereference.
->>
->> [...]
+> We need to bail out before adding/removing devices if we are going to
+> -EPROBE_DEFER. Otherwise boot can get stuck in a probe deferral loop due
+> to a long-standing issue in driver core (see fbc35b45f9f6 ("Add
+> documentation on meaning of -EPROBE_DEFER")).
 > 
-> Thanks, Applied to https://anongit.freedesktop.org/git/drm/drm-misc.git (drm-misc-fixes)
+> Deregistering the altmode child device can potentially also trigger bugs
+> in the DRM bridge implementation, which does not expect bridges to go
+> away.
 > 
-> [1/6] drm/bridge: aux-hpd: fix OF node leaks
->        https://cgit.freedesktop.org/drm/drm-misc/commit/?id=9ee485bdda68d6d3f5728cbe3150eb9013d7d22b
-> [2/6] drm/bridge: aux-hpd: separate allocation and registration
->        (no commit info)
-> [3/6] soc: qcom: pmic_glink_altmode: fix drm bridge use-after-free
->        (no commit info)
-> [4/6] soc: qcom: pmic_glink: Fix boot when QRTR=m
->        (no commit info)
-> [5/6] phy: qcom-qmp-combo: fix drm bridge registration
->        (no commit info)
-> [6/6] phy: qcom-qmp-combo: fix type-c switch registration
->        (no commit info)
+> Suggested-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: Rob Clark <robdclark@chromium.org>
+> Link: https://lore.kernel.org/r/20231213210644.8702-1-robdclark@gmail.com
+> [ johan: rebase on 6.8-rc4, amend commit message and mention DRM ]
+> Fixes: 58ef4ece1e41 ("soc: qcom: pmic_glink: Introduce base PMIC GLINK driver")
+> Cc: stable@vger.kernel.org      # 6.3
+> Cc: Bjorn Andersson <andersson@kernel.org>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>   drivers/soc/qcom/pmic_glink.c | 21 +++++++++++----------
+>   1 file changed, 11 insertions(+), 10 deletions(-)
 > 
+> diff --git a/drivers/soc/qcom/pmic_glink.c b/drivers/soc/qcom/pmic_glink.c
+> index f4bfd24386f1..f913e9bd57ed 100644
+> --- a/drivers/soc/qcom/pmic_glink.c
+> +++ b/drivers/soc/qcom/pmic_glink.c
+> @@ -265,10 +265,17 @@ static int pmic_glink_probe(struct platform_device *pdev)
+>   
+>   	pg->client_mask = *match_data;
+>   
+> +	pg->pdr = pdr_handle_alloc(pmic_glink_pdr_callback, pg);
+> +	if (IS_ERR(pg->pdr)) {
+> +		ret = dev_err_probe(&pdev->dev, PTR_ERR(pg->pdr),
+> +				    "failed to initialize pdr\n");
+> +		return ret;
+> +	}
+> +
+>   	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_UCSI)) {
+>   		ret = pmic_glink_add_aux_device(pg, &pg->ucsi_aux, "ucsi");
+>   		if (ret)
+> -			return ret;
+> +			goto out_release_pdr_handle;
+>   	}
+>   	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_ALTMODE)) {
+>   		ret = pmic_glink_add_aux_device(pg, &pg->altmode_aux, "altmode");
+> @@ -281,17 +288,11 @@ static int pmic_glink_probe(struct platform_device *pdev)
+>   			goto out_release_altmode_aux;
+>   	}
+>   
+> -	pg->pdr = pdr_handle_alloc(pmic_glink_pdr_callback, pg);
+> -	if (IS_ERR(pg->pdr)) {
+> -		ret = dev_err_probe(&pdev->dev, PTR_ERR(pg->pdr), "failed to initialize pdr\n");
+> -		goto out_release_aux_devices;
+> -	}
+> -
+>   	service = pdr_add_lookup(pg->pdr, "tms/servreg", "msm/adsp/charger_pd");
+>   	if (IS_ERR(service)) {
+>   		ret = dev_err_probe(&pdev->dev, PTR_ERR(service),
+>   				    "failed adding pdr lookup for charger_pd\n");
+> -		goto out_release_pdr_handle;
+> +		goto out_release_aux_devices;
+>   	}
+>   
+>   	mutex_lock(&__pmic_glink_lock);
+> @@ -300,8 +301,6 @@ static int pmic_glink_probe(struct platform_device *pdev)
+>   
+>   	return 0;
+>   
+> -out_release_pdr_handle:
+> -	pdr_handle_release(pg->pdr);
+>   out_release_aux_devices:
+>   	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_BATT))
+>   		pmic_glink_del_aux_device(pg, &pg->ps_aux);
+> @@ -311,6 +310,8 @@ static int pmic_glink_probe(struct platform_device *pdev)
+>   out_release_ucsi_aux:
+>   	if (pg->client_mask & BIT(PMIC_GLINK_CLIENT_UCSI))
+>   		pmic_glink_del_aux_device(pg, &pg->ucsi_aux);
+> +out_release_pdr_handle:
+> +	pdr_handle_release(pg->pdr);
+>   
+>   	return ret;
+>   }
 
-To clarify, I only applied patch 1 to drm-misc-fixes
-
-Thanks,
-Neil
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
