@@ -4,129 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 900ABC54E41
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Feb 2024 14:55:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE495C5478C
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Feb 2024 15:06:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=V4GPhW526NNsVGuh6Sb3lC2EpL+d6wTEaQAIT1SDPf8=; b=3wR5+X9NeXAty6zANxZmNPVNp2
-	YHr/vORO+zb7QEXgGVOEqc2fBeOQqC2SdgB9HixipNvjVzsxkEZfuYzpA3C7Knn6XLjc5No2QKNA8
-	5xAevUHjKepQljE1CDR31x7sc5DnGRhX4TlBy3Sfm54vkjBAdVoUbttywkrs5M+lmzE3r+Y1Go0/W
-	wV0RbU/C4TQO6A3F1TyBrBwXAwo+US5si+oQwNXfXpSHO1rFFuWBPe6qYaapEgEZj4CsLrdabTSoD
-	4FFeOt6ODaOdmwZ0iL+3pSaz2tkFADeEtIrh5LdLM3vQzhbEvAl3lkQyLb4FpbL/uRIIBMoMTmcji
-	HrbSunBw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IOb7QfG/eyh516MHIA8XGN9Owib3Cu9XxTD/aot6dlQ=; b=C4o6cE8CqkYyCK
+	F5MrBhvslsc6zPAlwKz32SrBM7pXGY0UCgswVi2YhfUb7sj1Cb6NX9lb+phz/zsRWiSIa9f/X2TKu
+	P7aSVCdUyq6IknihuiAehGGFT2xnFZ9g0WeisI1KTGqmxU/B6rrXsmJ6VRPAKBduwfXtvjRCEGsmI
+	66PKZRND1FqvPyk3v7z6uOlTfq/yexgusfTN1tbmmL0Dbcy75OoZeZgFH8J9fSA/LJt9oOaDKECID
+	V8/Syd9qPW0TZFdF28eWGXvILbvE76mwGs1Ixv0/7AXOytD5MZ81AKJC/JxDjgps/SJm12DN4vdCU
+	buLXx40Kj3494zUeW/Tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdWxb-00000009sd5-3HUf;
-	Fri, 23 Feb 2024 14:55:35 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1rdX8F-00000009uYU-1NK7;
+	Fri, 23 Feb 2024 15:06:35 +0000
+Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rdWxI-00000009sXa-13Ud
+	id 1rdX80-00000009uWD-248S
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Feb 2024 14:55:21 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4128f3ee934so6480525e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 23 Feb 2024 06:55:15 -0800 (PST)
+	Fri, 23 Feb 2024 15:06:32 +0000
+Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2d2533089f6so9639571fa.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Feb 2024 07:06:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1708700114; x=1709304914; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :references:cc:to:content-language:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=YR4FOB3mTjpSyt3x+AV6258Jdc3Bc2u/zffBWrsEEk0=;
-        b=IoCBi8zwiwanZ16CKf61BTMQdBlSXfpHkC1uvp2XIAzPO9bnVJIg++WtwgTnCz4iX0
-         sKxjKEciIDyEK1G56ULdU8MuE9N4aH5Qk0v52VaVJoUsYnWl2DaLOWkFsreiVy6RsTqj
-         hf6VTYCjNEwCPUmsj2bTjXi6JCqvZ06tqHkb4vUa3o2t52+xZS/oTXS6AWw25eqeFqm5
-         t52/UR+Pqx9cUrlFxFOoEncpFdr32mlkdnmPRZPZpbyGhKH6H41tbiEU/z52Rf/JBoGP
-         +WgZyqbPlC1NR0cePSnsHKUtdSmhiFvXWe26Maq8onOAZPQH9sDKtaouR0ZY8pjwh0ip
-         AGYw==
+        d=linaro.org; s=google; t=1708700778; x=1709305578; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=4sJGs1NYZ5QUnzqdBB1Q8b+bNbJNb63ZLKIOCTbd53c=;
+        b=hvXO2cRmIp5FlRb5N0EhKsjyZAli6MKd76BbrBw7WnHIRPoi1zEWaTkGYYZN3eSI72
+         k9MVZsv8r4Cmi17U/471zkw1s7miBfWSsKxUMbf1CKhpmSqUu4HsO201Xxuqi8wO1Z7Z
+         IIP8Ibcg76pOc6y9eo6emi/bBjDK6rFhwXS8xy2+hiotnMQbcQyM5eKJphlovB/FZ8mI
+         4okVAQ6zl/8O/bmVLiZj5zW6ES9T/TaV3qf4j8Qk/FFnT1mUaEIeNqU3QR+KXkJjTUM8
+         W43204WgEsJfiaEYDfxFS4vpt3SEzn66OWqRb9Ty1F6lrtM9aC+33ur5QDPZMteZOpXz
+         kraA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1708700114; x=1709304914;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :references:cc:to:content-language:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=YR4FOB3mTjpSyt3x+AV6258Jdc3Bc2u/zffBWrsEEk0=;
-        b=mjPConwTYgZUDK0DUbnJPKm4fUAQihm4S9tPvllXn/Mc8BsdygZbbbpBiTbSqxaER9
-         5damPue8QyAzekRSKQmGxA9GQktNLlQv2cI4SNw3Rst5ORZsI+JglIikbMzgpPXYhLYR
-         K/wdCCQ7gDM62tfrgCucYJb4VerwNdtkY3xYxPV0+od3MBxoNDLt0aEaCnPitTDBa3Dv
-         9eZVI53rV6jlbKmZ6eHOC4B9wdlHA+kvF0mTleYtgKm46Eya7LV/A3yGkP46LessUATo
-         ndgQ7Li3HQxfHuCl/CAjXPKnAej7cMlp7RtO9rigEK2zcl1k9SJ0tUdHp6AKAn3lfloE
-         dHBg==
-X-Forwarded-Encrypted: i=1; AJvYcCWG+KY5nCTkXJZuJEspjmb+9MQ9JaNUu4Pz9pXNRNj1jECRl0mkfqNAv7SGh7iMHZRJ0cymG+48QOjOW//O7hjP0l/x4kLhASyV98Hw5A==
-X-Gm-Message-State: AOJu0YzXwWRako7+lvAOmxYynxd6GG3s3lb/RDdqLIHeIKqUDucNosJD
-	q1s1AWhJNwvl+iGquDMT9NaZ0QiXW9n6sl2LSdLlAw7i5NYZbmfhhsUhyJ7ljrY=
-X-Google-Smtp-Source: AGHT+IGAy96HbSPMW3k44GU39oK9LfJtPL+l0X+t5AUlvKsigL3XKGl9EWcCWb2kXfdcmrgGHf2JOw==
-X-Received: by 2002:a05:600c:46d0:b0:412:5fbe:3740 with SMTP id q16-20020a05600c46d000b004125fbe3740mr36553wmo.24.1708700113947;
-        Fri, 23 Feb 2024 06:55:13 -0800 (PST)
-Received: from ?IPV6:2a01:e0a:982:cbb0:58e3:6b80:c446:11f4? ([2a01:e0a:982:cbb0:58e3:6b80:c446:11f4])
-        by smtp.gmail.com with ESMTPSA id fa15-20020a05600c518f00b0041294a1d7bcsm2314742wmb.36.2024.02.23.06.55.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Feb 2024 06:55:13 -0800 (PST)
-Message-ID: <b5401b19-09d9-4907-86d6-9aab9dc2970e@linaro.org>
-Date: Fri, 23 Feb 2024 15:55:12 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 0/6] soc: qcom: pmic_glink_altmode: fix drm bridge
- use-after-free
-Content-Language: en-US, fr
-To: Johan Hovold <johan@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Maxime Ripard <mripard@kernel.org>, David Airlie <airlied@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>
-Cc: Bjorn Andersson <andersson@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Vinod Koul <vkoul@kernel.org>, Johan Hovold <johan+linaro@kernel.org>,
- Jonas Karlman <jonas@kwiboo.se>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Kuogee Hsieh <quic_khsieh@quicinc.com>, freedreno@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+        d=1e100.net; s=20230601; t=1708700778; x=1709305578;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=4sJGs1NYZ5QUnzqdBB1Q8b+bNbJNb63ZLKIOCTbd53c=;
+        b=K8N+PDOLqqSk60lEpjdE8S+7/KanDe1DdcCtBEAIsjlO0W7E+y3Mqy+z9Qbc5zubHY
+         fwjMl5j6qknvGFIGYsvqMyQr1e+1GIBGkaY8TBE4a+E3cYDsrgK/7DLny2EpMfAkosve
+         /2A4mNHRqKK4RSES6va+lWXcprKwosxwuyUxdsOM+0ebjYnsrDAcu9bMHMeQ4oVZTg8+
+         ySrfNIL8Hj8/0zAb3lCpNl/aEkQ4jx7HGkG2zrqM477ExR/N7tbKaoF7px7T+cUM6gEY
+         YVHGeoOrdgjPs+U7YCIS4mor1bh4E7JqkFbzJ1WJMhAhUrXdiA6tLAxr5CiYZ73bb/qz
+         rx6w==
+X-Forwarded-Encrypted: i=1; AJvYcCVJPIGq4BovrZVg8ahopbq9haQzZ8DeplU+Pui0NtHTLwLFdU/P8EttjRft1aoJ5SsnRwZn6O1ffyUpSUl0g+Ob+TjO6Pfz+6a6RwdWRA==
+X-Gm-Message-State: AOJu0YwTapHaxXhGFekXmrvfkub4tHDpZTrv/rCCkLSE7OoS8m9k7kAx
+	LhKlfCRnK1u3ow1NZpQsZCbWEFi11tFV3vlAqF+onbqM1OItfPuRuoD8CjoR97c=
+X-Google-Smtp-Source: AGHT+IGfCIE307IqSzsAUBlWRNDb7b8z9zOXY/2OH+3bNQA44KSVllJBbJFnbX+Qnh3P7Q37qv1Exw==
+X-Received: by 2002:a2e:a488:0:b0:2d2:61fd:7c2d with SMTP id h8-20020a2ea488000000b002d261fd7c2dmr63698lji.17.1708700778286;
+        Fri, 23 Feb 2024 07:06:18 -0800 (PST)
+Received: from eriador.lan (dzyjmhyyyyyyyyyyyykxt-3.rev.dnainternet.fi. [2001:14ba:a00e:a300::227])
+        by smtp.gmail.com with ESMTPSA id u24-20020a2e91d8000000b002d0c8fa072asm2681353ljg.20.2024.02.23.07.06.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 Feb 2024 07:06:17 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Vinod Koul <vkoul@kernel.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Cc: Jonas Karlman <jonas@kwiboo.se>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Clark <robdclark@gmail.com>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Kuogee Hsieh <quic_khsieh@quicinc.com>,
+	freedreno@lists.freedesktop.org,
+	dri-devel@lists.freedesktop.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: (subset) [PATCH 0/6] soc: qcom: pmic_glink_altmode: fix drm bridge use-after-free
+Date: Fri, 23 Feb 2024 17:06:15 +0200
+Message-ID: <170870071756.13438.16980480346490993922.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240217150228.5788-1-johan+linaro@kernel.org>
 References: <20240217150228.5788-1-johan+linaro@kernel.org>
- <170868613914.4029284.5549880672870201262.b4-ty@linaro.org>
- <3c4246b6-431a-442e-8ace-3b0d0e67743f@linaro.org>
- <ZdiU2z8rzo542_Ih@hovoldconsulting.com>
- <d4049823-ad24-4426-887b-9c66cdd96318@linaro.org>
- <ZdiqAPPTn9SvsjL8@hovoldconsulting.com>
- <77715ecd-ddb9-450c-98bf-4fcade0e81c0@linaro.org>
- <ZdixFo2EjUQDgeFh@hovoldconsulting.com>
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro Developer Services
-In-Reply-To: <ZdixFo2EjUQDgeFh@hovoldconsulting.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240223_065516_765106_8BEEA80A 
-X-CRM114-Status: GOOD (  16.29  )
+X-CRM114-CacheID: sfid-20240223_070630_281992_A8E19175 
+X-CRM114-Status: GOOD (  10.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,51 +109,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/02/2024 15:52, Johan Hovold wrote:
-> On Fri, Feb 23, 2024 at 03:38:13PM +0100, Neil Armstrong wrote:
->> On 23/02/2024 15:21, Johan Hovold wrote:
+On Sat, 17 Feb 2024 16:02:22 +0100, Johan Hovold wrote:
+> Starting with 6.8-rc1 the internal display sometimes fails to come up on
+> machines like the Lenovo ThinkPad X13s and the logs indicate that this
+> is due to a regression in the DRM subsystem [1].
 > 
->>> But it is *not* standalone as I tried to explain above.
->>>
->>> So you have to drop it again as the later patches depend on it and
->>> cannot be merged (through a different tree) without it.
->>
->> drm-misc branches cannot be rebased, it must be reverted, but it can still be applied
->> on drm-misc-next and I'll send a revert patch for drm-misc-fixes if needed, not a big deal.
->>
->>> I thought you had all the acks you needed to take this through drm-misc,
->>> but we can wait a bit more if necessary (and there's no rush to get the
->>> first one in).
->>
->> If you want it to be in v6.9, it's too late since the last drm-misc-next PR has been sent
->> yesterday (https://cgit.freedesktop.org/drm/drm-misc/tag/?h=drm-misc-next-2024-02-22)
->>
->> Please ping Thomas or Maxime, perhaps it's not too late since the drm-misc-next tree
->> really closes on sunday.
+> This series fixes a race in the pmic_glink_altmode driver which was
+> exposed / triggered by the transparent DRM bridges rework that went into
+> 6.8-rc1 and that manifested itself as a bridge failing to attach and
+> sometimes triggering a NULL-pointer dereference.
 > 
-> I don't want this in 6.9, this is needed for *6.8* as this fixes a DRM
-> regression in 6.8-rc1 that breaks the display on machines like the X13s.
-> 
-> If you guys can't sort this out in time, then perhaps Bjorn can take
-> this through the Qualcomm tree instead (with DRM acks).
-> 
-> But again, this is fixing a severe *regression* in 6.8-rc1. It can not
-> wait for 6.9.
+> [...]
 
-Right, I can't apply them right now, I send a patchset ack so it can be applied ASAP,
+Applied to drm-misc-fixes, thanks!
 
-Thanks,
-Neil
+[2/6] drm/bridge: aux-hpd: separate allocation and registration
+      commit: e5ca263508f7e9d2cf711edf3258d11ca087885c
+[3/6] soc: qcom: pmic_glink_altmode: fix drm bridge use-after-free
+      commit: b979f2d50a099f3402418d7ff5f26c3952fb08bb
+[4/6] soc: qcom: pmic_glink: Fix boot when QRTR=m
+      commit: f79ee78767ca60e7a2c89eacd2dbdf237d97e838
 
-> 
-> Johan
+Note, PHY patches (5,6) do not have dependency on the drm patch, so they can go
+through the phy/fixes tree.
 
+Best regards,
+-- 
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 linux-phy mailing list
