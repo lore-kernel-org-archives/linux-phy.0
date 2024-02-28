@@ -4,88 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 929F5C5478C
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Feb 2024 18:06:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3A46C47DD9
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Feb 2024 18:34:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wHS4FvUbqHBiPcn6rhwe19y9y5Kd6fBLSJADO5G4Qoc=; b=TJFSkGsQfKvtOx
-	vAF1+3tTQUJCGjr3G6hcHBIW2fd6peTZZVXZ47kRmjXC+snkNxbtusl6HgV/Kq6xtFQQdxi2G134j
-	evGYdRfHKfiRevCNZwuiGMoyx5EBVU8JFuU10514Hdi8CQcOgRVvu6r9/GjFEqT+joljgrNnof/92
-	XT5Uxa7QEl2IYUp8MG61TIf+hnXgPItIKlgAzgOW8w4l2l6DFpzNqOc3a8dV7wDM952+iDOCHGcmb
-	g4aYiIReuxUcGwL39ffe9cgCXdynqA1M2ktaX9hhY6S6eqhVAN0xCZfp+7DEP2NXqn8Nh43MM2Ync
-	2KurYTIad9KFIo0ng1ZA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UgRcYeNx98xS/Wrj8BvQlHpUtuJZAlB/1VmZPWrfMLQ=; b=pC5MJDlTWlydYT
+	bjPbXgNfQM/HDbGchw7XlYmzivludEGh4nfU06edvHMNLa0Wy5X/HkD6sxZa7LBAspi66rdFEX16i
+	C7MoeHxdq9w4yvSJpGIdEicmSkfgXRCPKwJyI+JkJkXy+D1v283qrNR4kBDeA3pfkzBqkSdQCa/jH
+	cl5wLHZ70c4T1Tmf5rgr2dcfbL3gXG9lTXkuC4Qqv5jTj98FN5QuXEUfgCjCzDPND5miIb0nLeCUo
+	qdqJ9DXZYs9OYlmgJfoRmx1rYG88oNvEavq65+qdYGc8YczDkKTDtF/vFBPoqkvxYdwHuXWnJLNWi
+	7gHHbV1zWjtJMoBcV/CA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfOK2-0000000AQ7R-0cqX;
-	Wed, 28 Feb 2024 18:06:26 +0000
-Received: from mout.web.de ([212.227.15.14])
+	id 1rfOlW-0000000AWvq-2iFP;
+	Wed, 28 Feb 2024 18:34:50 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfOJz-0000000AQ5t-0BT1
+	id 1rfOlT-0000000AWvE-0rBR
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Feb 2024 18:06:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de; s=s29768273;
-	t=1709143545; x=1709748345; i=markus.elfring@web.de;
-	bh=ZR1gVUOsggkAbfdG+ftQUzWOijBHNwcEyXHlrDPii78=;
-	h=X-UI-Sender-Class:Date:To:Cc:From:Subject;
-	b=F37x/wC4sz0BlmrhNfGJbY9QYfbgCDdECqjqmR8+Qgp/aZlE6TkMN0GKa0JQr8bu
-	 pYx47w4r5lrX51LBu9srNhahzoPMPe3wHn8qNqSpW1y5ORydxTTAf1l0eBc5PHIVF
-	 SQlleuUC4sPtHNWeQ72+4Wh3OGjvGLod8ZdiDAAPMFejtSwurcoJ8UJ1MN7PetcWL
-	 GNPVrTGoNcGhQhr2hACgMHHzvNqvcOMx6vzcTDMwB4PYJEWxJ4F58gFAerQImuilL
-	 1HSgJSqDfBTrLnqaQ5MJ4zuN38guPhVSrm9IDQWEk+g0DZ5cRcC4+rvcsK5hICj2O
-	 jaD+9dM6n2hxzXGFbA==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from [192.168.178.21] ([94.31.91.95]) by smtp.web.de (mrweb006
- [213.165.67.108]) with ESMTPSA (Nemesis) id 1N01di-1qiar90csg-00x4Um; Wed, 28
- Feb 2024 19:05:45 +0100
-Message-ID: <29b63eb4-2342-4ca8-a313-5de2a6ec6a83@web.de>
-Date: Wed, 28 Feb 2024 19:05:20 +0100
+	Wed, 28 Feb 2024 18:34:48 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41S7DHgw024408;
+	Wed, 28 Feb 2024 18:34:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=rHlM6504boSe/WdCMqn0oovvsuz9yItBmL+8TFwM3uo=; b=ku
+	qElOaxWnLZkmnbubjopF3VjcpHB3pWPd/fel6ORf7H+EA7DZv9BQmYHgG+aFVHo5
+	+pjh7TMgiJz3bcW3SK1SsyZE4XFkTlWp2suSdvAWszeKltD83sZvJD+8TDsF3t5m
+	VvL+wImFOZzslcBTqb94SVByy5O8T9RjhsxUAw1UbbVxEOLjJ8PZQkmJR5KqFLhB
+	ebUsVhM0aBDxbKt5H0icmeghAgY32mswKYdmvGRV4aiEzf8YL/FpBSR2i7kqmHaD
+	SBpr8DezoFHTstz/2zNjK9uA81z3MnjHRcd7ToC+vAvM4/txenXNqtQqePwoUGHW
+	VajSpyEk+x6sTBNOiW4Q==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3whv1ft5t5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 28 Feb 2024 18:34:16 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41SIYFPX020955
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 28 Feb 2024 18:34:15 GMT
+Received: from [10.71.109.81] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 28 Feb
+ 2024 10:34:14 -0800
+Message-ID: <c83fb5af-a42e-c9b8-1b70-3818a7fc7b37@quicinc.com>
+Date: Wed, 28 Feb 2024 10:34:13 -0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
- Bjorn Andersson <andersson@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Johan Hovold <johan+linaro@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>
-Content-Language: en-GB
-Cc: LKML <linux-kernel@vger.kernel.org>, freedreno@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
- Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@gmail.com>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Jonas Karlman <jonas@kwiboo.se>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Kuogee Hsieh <quic_khsieh@quicinc.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Clark <robdclark@gmail.com>,
- Robert Foss <rfoss@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: [PATCH] soc: qcom: pmic_glink_altmode: Use common error handling code
- in pmic_glink_altmode_probe()
-X-Provags-ID: V03:K1:HVTWRcYqGqMfooiCzODDDLdvq1YXrP76vl9kG0CgTTVleNhkQhp
- qMdM5H805+s5j4I3CO1Wy5IjM69/xBbwSgtYSBUhQq00nyLv3gXYz0twA9bbkDxf3NFWHiQ
- dBmYZhQAv5/kDZuLudY3jIvffAQ+qU3P5hDwV/0c6vruwCo+elms0rU7L2BLdDW4b+l+Dbh
- +2WWF0u/kir9+uMIRlzeA==
-UI-OutboundReport: notjunk:1;M01:P0:CPX/jO7+ewY=;yhID4ONoDIwnFO6yGSsnbKFCn7H
- bTQNfvnLitKYrhPfC12En+H8iIpWoA8Ja+6RHQN+BzYzevX6jW+NjUp/I/Lpnt3V2aESDDlgc
- BhrM9j2NJ55Ag2RVNBzTSzFxo88yrcB6wFKOcp3Py+NHR3I0eB4SbfUSZKXgSrLAjRzrwP1yT
- nJ+RmDCiwlW7cB4dYtJujO3fk3DCxUJ66cLwLBC+0CIZRJdQPnlONmmBxfY7wuLft+wfCV2EC
- XNq0LZwRYdsTsrs4JDwhyRE+vROGlBYxlYiNgXOE7fPSxwDpuA+pEiU/cydWdi+ao7UKKPDUo
- 1keFkGa0D0DHm2TnyfZ0CGD4sxw8MwvsS8nyYviz4kjBp244XYuUav9Bl0hHVfpRm8xfMoSVa
- ZATms1bl1ZQRCisunCU1bXIPjJb2X3kmomFiVcO7JGZEvKDr6NLqDTDyUYKnnearTHUper6/F
- TdCzeCHwBwO2V7dak5MLM1zsSTvLcEWdRpO0ejwQo1Cho/FWkPlvaXZCmMZ+2z/c1ln4ffVKN
- +xpHFG6yQSEKRXg/TogbD6B17BHcq0o6ZDxp5ePwzVtJHBPaDqp17CZOWriV5xzE1bnb1LYU4
- 4zLvIayVtGfYVFXs/XrVxZ0Fa2EvrwDVoEqBOpifHgWGWsVeWbi+lEydRtmw12DKHvGJg5AR9
- HhBpDyHF4WVKWJ2rOvg5FyCGYV7ySI6vSk5hWWx8pMA7fLPYQrRJ5rD050t5a84zAv4XYKcxe
- lSprAcdmzK0et8zDKJnz3Vx6huNxi8w163dQf2WYJ013Aycrxu0zBtZTFH8H87o1Yuq9sDIYX
- Xul8XmKrL6TEi1s/welcuEwC7JcgGf6QxjbvfNqJWaoHE=
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: [PATCH] phy: qcom: qmp-combo: fix duplicate return in
+ qmp_v4_configure_dp_phy
+Content-Language: en-US
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+        Bjorn Andersson
+	<andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Vinod Koul
+	<vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Dmitry
+ Baryshkov <dmitry.baryshkov@linaro.org>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20240228-topic-sm8x50-upstream-phy-combo-fix-duplicate-return-v1-1-60027a37cab1@linaro.org>
+From: Abhinav Kumar <quic_abhinavk@quicinc.com>
+In-Reply-To: <20240228-topic-sm8x50-upstream-phy-combo-fix-duplicate-return-v1-1-60027a37cab1@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: A9bimcU9Q5HOTvQYJ5KYb9jx2P-r-O1L
+X-Proofpoint-ORIG-GUID: A9bimcU9Q5HOTvQYJ5KYb9jx2P-r-O1L
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-02-28_08,2024-02-27_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ mlxlogscore=952 impostorscore=0 malwarescore=0 mlxscore=0 suspectscore=0
+ adultscore=0 lowpriorityscore=0 priorityscore=1501 spamscore=0
+ clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2402280145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240228_100623_379997_9C73AE0D 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20240228_103447_398574_BD764D13 
+X-CRM114-Status: UNSURE (   6.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,141 +104,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Wed, 28 Feb 2024 18:45:13 +0100
 
-Add a jump target so that a bit of exception handling can be better reused
-at the end of this function implementation.
 
-This issue was transformed by using the Coccinelle software.
+On 2/28/2024 9:05 AM, Neil Armstrong wrote:
+> Remove duplicate "return 0" in qmp_v4_configure_dp_phy()
+> 
+> Fixes: 186ad90aa49f ("phy: qcom: qmp-combo: reuse register layouts for even more registers")
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 2 --
+>   1 file changed, 2 deletions(-)
+> 
 
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
----
- drivers/soc/qcom/pmic_glink_altmode.c | 57 +++++++++++++--------------
- 1 file changed, 27 insertions(+), 30 deletions(-)
-
-diff --git a/drivers/soc/qcom/pmic_glink_altmode.c b/drivers/soc/qcom/pmic_glink_altmode.c
-index b3808fc24c69..c987a45e1703 100644
---- a/drivers/soc/qcom/pmic_glink_altmode.c
-+++ b/drivers/soc/qcom/pmic_glink_altmode.c
-@@ -434,8 +434,7 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
- 		ret = fwnode_property_read_u32(fwnode, "reg", &port);
- 		if (ret < 0) {
- 			dev_err(dev, "missing reg property of %pOFn\n", fwnode);
--			fwnode_handle_put(fwnode);
--			return ret;
-+			goto put_fwnode;
- 		}
-
- 		if (port >= ARRAY_SIZE(altmode->ports)) {
-@@ -445,8 +444,8 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
-
- 		if (altmode->ports[port].altmode) {
- 			dev_err(dev, "multiple connector definition for port %u\n", port);
--			fwnode_handle_put(fwnode);
--			return -EINVAL;
-+			ret = -EINVAL;
-+			goto put_fwnode;
- 		}
-
- 		alt_port = &altmode->ports[port];
-@@ -456,8 +455,8 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
-
- 		alt_port->bridge = devm_drm_dp_hpd_bridge_alloc(dev, to_of_node(fwnode));
- 		if (IS_ERR(alt_port->bridge)) {
--			fwnode_handle_put(fwnode);
--			return PTR_ERR(alt_port->bridge);
-+			ret = PTR_ERR(alt_port->bridge);
-+			goto put_fwnode;
- 		}
-
- 		alt_port->dp_alt.svid = USB_TYPEC_DP_SID;
-@@ -466,48 +465,42 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
-
- 		alt_port->typec_mux = fwnode_typec_mux_get(fwnode);
- 		if (IS_ERR(alt_port->typec_mux)) {
--			fwnode_handle_put(fwnode);
--			return dev_err_probe(dev, PTR_ERR(alt_port->typec_mux),
--					     "failed to acquire mode-switch for port: %d\n",
--					     port);
-+			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_mux),
-+					    "failed to acquire mode-switch for port: %d\n",
-+					    port);
-+			goto put_fwnode;
- 		}
-
- 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_mux,
- 					       alt_port->typec_mux);
--		if (ret) {
--			fwnode_handle_put(fwnode);
--			return ret;
--		}
-+		if (ret)
-+			goto put_fwnode;
-
- 		alt_port->typec_retimer = fwnode_typec_retimer_get(fwnode);
- 		if (IS_ERR(alt_port->typec_retimer)) {
--			fwnode_handle_put(fwnode);
--			return dev_err_probe(dev, PTR_ERR(alt_port->typec_retimer),
--					     "failed to acquire retimer-switch for port: %d\n",
--					     port);
-+			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_retimer),
-+					    "failed to acquire retimer-switch for port: %d\n",
-+					    port);
-+			goto put_fwnode;
- 		}
-
- 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_retimer,
- 					       alt_port->typec_retimer);
--		if (ret) {
--			fwnode_handle_put(fwnode);
--			return ret;
--		}
-+		if (ret)
-+			goto put_fwnode;
-
- 		alt_port->typec_switch = fwnode_typec_switch_get(fwnode);
- 		if (IS_ERR(alt_port->typec_switch)) {
--			fwnode_handle_put(fwnode);
--			return dev_err_probe(dev, PTR_ERR(alt_port->typec_switch),
--					     "failed to acquire orientation-switch for port: %d\n",
--					     port);
-+			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_switch),
-+					    "failed to acquire orientation-switch for port: %d\n",
-+					    port);
-+			goto put_fwnode;
- 		}
-
- 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_switch,
- 					       alt_port->typec_switch);
--		if (ret) {
--			fwnode_handle_put(fwnode);
--			return ret;
--		}
-+		if (ret)
-+			goto put_fwnode;
- 	}
-
- 	for (port = 0; port < ARRAY_SIZE(altmode->ports); port++) {
-@@ -526,6 +519,10 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
- 							  pmic_glink_altmode_pdr_notify,
- 							  altmode);
- 	return PTR_ERR_OR_ZERO(altmode->client);
-+
-+put_fwnode:
-+	fwnode_handle_put(fwnode);
-+	return ret;
- }
-
- static const struct auxiliary_device_id pmic_glink_altmode_id_table[] = {
---
-2.43.2
-
+Reviewed-by: Abhinav Kumar <quic_abhinavk@quicinc.com>
 
 -- 
 linux-phy mailing list
