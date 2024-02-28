@@ -4,84 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C64CC47DD9
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Feb 2024 17:20:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 929F5C5478C
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Feb 2024 18:06:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8DEyPakQbnQoSUTPuNup6q20/EbjxR74BDLVEoypYAQ=; b=HxiP5jWkYT5ap3
-	rx5yj/BizFLYyAD6IPzUFEDiZhOcRJwas39Qo2JWzVwRJmDRaUvEAinljCw0+uL8I0r6mNxMzHdaU
-	kGDsk2wTvlKPUrqRrChkZV+YgwKsZu637EZaMAxOy+SCfogS8ky56Olt5qGBBksAVmpCWI3gM9404
-	gD4tda6YfeEflb+szycnd2poozgfhIuZfS336T+UGWF4rgKtr3CVdWE56EWunlf/vKPJgrBckNdhm
-	greake9qrILpExUU8Pblact1yRBseAWd2R1/XkUVu4B4UteLGXIUvBAe6DmLVvXvmwOl8QWVNWoBV
-	tCZhg7BuhgjcLQQ0awWA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wHS4FvUbqHBiPcn6rhwe19y9y5Kd6fBLSJADO5G4Qoc=; b=TJFSkGsQfKvtOx
+	vAF1+3tTQUJCGjr3G6hcHBIW2fd6peTZZVXZ47kRmjXC+snkNxbtusl6HgV/Kq6xtFQQdxi2G134j
+	evGYdRfHKfiRevCNZwuiGMoyx5EBVU8JFuU10514Hdi8CQcOgRVvu6r9/GjFEqT+joljgrNnof/92
+	XT5Uxa7QEl2IYUp8MG61TIf+hnXgPItIKlgAzgOW8w4l2l6DFpzNqOc3a8dV7wDM952+iDOCHGcmb
+	g4aYiIReuxUcGwL39ffe9cgCXdynqA1M2ktaX9hhY6S6eqhVAN0xCZfp+7DEP2NXqn8Nh43MM2Ync
+	2KurYTIad9KFIo0ng1ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfNbM-0000000AGjI-0FwP;
-	Wed, 28 Feb 2024 17:20:16 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1rfOK2-0000000AQ7R-0cqX;
+	Wed, 28 Feb 2024 18:06:26 +0000
+Received: from mout.web.de ([212.227.15.14])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfNbK-0000000AGit-0muv
+	id 1rfOJz-0000000AQ5t-0BT1
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Feb 2024 17:20:15 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-512b3b04995so5758966e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 28 Feb 2024 09:20:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1709140812; x=1709745612; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=GTtoNXU05+3x+sA+PfVAb7gBpkSmywqkYgS428yH0a8=;
-        b=Bw2wgYj2WvR6ZQBKQfqzEh4sjxV1SgLHbVklXJXgNWdPRmZI9x35e5Ou15bVluNNGm
-         PqGIZp12i8GmU7LRNhyLzd2xPY6WIKGtnPluV3qfYTAm13CNTUbCL2Hzfv/dbrwn/Po2
-         i/KU657Pe1MLCcUqwrcyy/tQNh6/pwC4akSAfmf14NrwYyMtcB/khj9kNMIEd3CJwgy4
-         azymdFTlKUcDENN2UDuiti6YSd/KU7TQMAW3XqBiGw31nv+la86JUprET09MV8wvopZ2
-         LRcgW0ceZJRvzwaTm8d5OKAo/eEIGwHUhI04Dfa44Pu7aa/+S1A0o8IzE+k3TBvnOXsL
-         VlOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709140812; x=1709745612;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=GTtoNXU05+3x+sA+PfVAb7gBpkSmywqkYgS428yH0a8=;
-        b=rM5twEACPvuppvEyloAgoxs4RAtFsdm7BJXu2qy4/sC0A4GREsqSAmFo5bRLDajupO
-         FatplcXwvk0O2HeBtGtq9UR5agusE0+zfgpq8ovc7d5M81ZHW9zeO7/xaEE2zVXsNvtu
-         NbkFvizL5sR/I4UPK+HT2U6+22maNF/uwxLkNYgqccuwx+2f6SApQp3ana2KH94q00zx
-         jpeU9t9nMi2Xivl1DtphxEU+bvoAY/DcSA4tNyvaCMazMvspF3vleWcgTg7934gP3ON5
-         H33HrjB0vl7e/NugpMPC7jJPNy14z2HXz09nJOvNxw8xtqM3wipxfpbx0Xk4soZ3L3Ak
-         fFxQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV22OqCWQyPrpKqAWqbPDejs9344Ua7S5Iz4H6FqUSxa0ZV+gPDNT4PnlDN9cAcW/iFxpsXURGRHFPpzHCUM/iwkFw9faSNlN3t5/EsGQ==
-X-Gm-Message-State: AOJu0Yw0zFdmxze1696LE0Lh+/jo6NXnrCSz+J+RydVqyAT7DX44+e0C
-	HwmjkgJgMZ+TNaQ0jrLq08wTaOCFPZnL8X69nXyauRkrR0+rGc38xE0hjA9hLN4=
-X-Google-Smtp-Source: AGHT+IFOd+Zu7qeZ6jYL8j3/S+KSJEaWE5dSNrBJp3nEw+bc1IMqD2pna0G9xWgzNH2yGakVHP+ZWg==
-X-Received: by 2002:a19:5506:0:b0:512:d06b:2804 with SMTP id n6-20020a195506000000b00512d06b2804mr193921lfe.33.1709140811931;
-        Wed, 28 Feb 2024 09:20:11 -0800 (PST)
-Received: from [172.30.205.146] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
-        by smtp.gmail.com with ESMTPSA id j5-20020a19f505000000b00512daaef13bsm1593760lfb.102.2024.02.28.09.20.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 28 Feb 2024 09:20:11 -0800 (PST)
-Message-ID: <04b1c7c5-37f3-4673-aa0e-8c39fb5fce7b@linaro.org>
-Date: Wed, 28 Feb 2024 18:20:08 +0100
+	Wed, 28 Feb 2024 18:06:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de; s=s29768273;
+	t=1709143545; x=1709748345; i=markus.elfring@web.de;
+	bh=ZR1gVUOsggkAbfdG+ftQUzWOijBHNwcEyXHlrDPii78=;
+	h=X-UI-Sender-Class:Date:To:Cc:From:Subject;
+	b=F37x/wC4sz0BlmrhNfGJbY9QYfbgCDdECqjqmR8+Qgp/aZlE6TkMN0GKa0JQr8bu
+	 pYx47w4r5lrX51LBu9srNhahzoPMPe3wHn8qNqSpW1y5ORydxTTAf1l0eBc5PHIVF
+	 SQlleuUC4sPtHNWeQ72+4Wh3OGjvGLod8ZdiDAAPMFejtSwurcoJ8UJ1MN7PetcWL
+	 GNPVrTGoNcGhQhr2hACgMHHzvNqvcOMx6vzcTDMwB4PYJEWxJ4F58gFAerQImuilL
+	 1HSgJSqDfBTrLnqaQ5MJ4zuN38guPhVSrm9IDQWEk+g0DZ5cRcC4+rvcsK5hICj2O
+	 jaD+9dM6n2hxzXGFbA==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.91.95]) by smtp.web.de (mrweb006
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1N01di-1qiar90csg-00x4Um; Wed, 28
+ Feb 2024 19:05:45 +0100
+Message-ID: <29b63eb4-2342-4ca8-a313-5de2a6ec6a83@web.de>
+Date: Wed, 28 Feb 2024 19:05:20 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom: qmp-combo: fix duplicate return in
- qmp_v4_configure_dp_phy
-To: Neil Armstrong <neil.armstrong@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20240228-topic-sm8x50-upstream-phy-combo-fix-duplicate-return-v1-1-60027a37cab1@linaro.org>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20240228-topic-sm8x50-upstream-phy-combo-fix-duplicate-return-v1-1-60027a37cab1@linaro.org>
+To: linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ Bjorn Andersson <andersson@kernel.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Johan Hovold <johan+linaro@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>
+Content-Language: en-GB
+Cc: LKML <linux-kernel@vger.kernel.org>, freedreno@lists.freedesktop.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@gmail.com>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Kuogee Hsieh <quic_khsieh@quicinc.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Clark <robdclark@gmail.com>,
+ Robert Foss <rfoss@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] soc: qcom: pmic_glink_altmode: Use common error handling code
+ in pmic_glink_altmode_probe()
+X-Provags-ID: V03:K1:HVTWRcYqGqMfooiCzODDDLdvq1YXrP76vl9kG0CgTTVleNhkQhp
+ qMdM5H805+s5j4I3CO1Wy5IjM69/xBbwSgtYSBUhQq00nyLv3gXYz0twA9bbkDxf3NFWHiQ
+ dBmYZhQAv5/kDZuLudY3jIvffAQ+qU3P5hDwV/0c6vruwCo+elms0rU7L2BLdDW4b+l+Dbh
+ +2WWF0u/kir9+uMIRlzeA==
+UI-OutboundReport: notjunk:1;M01:P0:CPX/jO7+ewY=;yhID4ONoDIwnFO6yGSsnbKFCn7H
+ bTQNfvnLitKYrhPfC12En+H8iIpWoA8Ja+6RHQN+BzYzevX6jW+NjUp/I/Lpnt3V2aESDDlgc
+ BhrM9j2NJ55Ag2RVNBzTSzFxo88yrcB6wFKOcp3Py+NHR3I0eB4SbfUSZKXgSrLAjRzrwP1yT
+ nJ+RmDCiwlW7cB4dYtJujO3fk3DCxUJ66cLwLBC+0CIZRJdQPnlONmmBxfY7wuLft+wfCV2EC
+ XNq0LZwRYdsTsrs4JDwhyRE+vROGlBYxlYiNgXOE7fPSxwDpuA+pEiU/cydWdi+ao7UKKPDUo
+ 1keFkGa0D0DHm2TnyfZ0CGD4sxw8MwvsS8nyYviz4kjBp244XYuUav9Bl0hHVfpRm8xfMoSVa
+ ZATms1bl1ZQRCisunCU1bXIPjJb2X3kmomFiVcO7JGZEvKDr6NLqDTDyUYKnnearTHUper6/F
+ TdCzeCHwBwO2V7dak5MLM1zsSTvLcEWdRpO0ejwQo1Cho/FWkPlvaXZCmMZ+2z/c1ln4ffVKN
+ +xpHFG6yQSEKRXg/TogbD6B17BHcq0o6ZDxp5ePwzVtJHBPaDqp17CZOWriV5xzE1bnb1LYU4
+ 4zLvIayVtGfYVFXs/XrVxZ0Fa2EvrwDVoEqBOpifHgWGWsVeWbi+lEydRtmw12DKHvGJg5AR9
+ HhBpDyHF4WVKWJ2rOvg5FyCGYV7ySI6vSk5hWWx8pMA7fLPYQrRJ5rD050t5a84zAv4XYKcxe
+ lSprAcdmzK0et8zDKJnz3Vx6huNxi8w163dQf2WYJ013Aycrxu0zBtZTFH8H87o1Yuq9sDIYX
+ Xul8XmKrL6TEi1s/welcuEwC7JcgGf6QxjbvfNqJWaoHE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240228_092014_263988_88AB9B56 
-X-CRM114-Status: UNSURE (   5.06  )
+X-CRM114-CacheID: sfid-20240228_100623_379997_9C73AE0D 
+X-CRM114-Status: UNSURE (   8.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,25 +98,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Wed, 28 Feb 2024 18:45:13 +0100
 
+Add a jump target so that a bit of exception handling can be better reused
+at the end of this function implementation.
 
-On 2/28/24 18:05, Neil Armstrong wrote:
-> Remove duplicate "return 0" in qmp_v4_configure_dp_phy()
-> 
-> Fixes: 186ad90aa49f ("phy: qcom: qmp-combo: reuse register layouts for even more registers")
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
+This issue was transformed by using the Coccinelle software.
 
-Somebody was just trying to go up 2 levels up!
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+---
+ drivers/soc/qcom/pmic_glink_altmode.c | 57 +++++++++++++--------------
+ 1 file changed, 27 insertions(+), 30 deletions(-)
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
+diff --git a/drivers/soc/qcom/pmic_glink_altmode.c b/drivers/soc/qcom/pmic_glink_altmode.c
+index b3808fc24c69..c987a45e1703 100644
+--- a/drivers/soc/qcom/pmic_glink_altmode.c
++++ b/drivers/soc/qcom/pmic_glink_altmode.c
+@@ -434,8 +434,7 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
+ 		ret = fwnode_property_read_u32(fwnode, "reg", &port);
+ 		if (ret < 0) {
+ 			dev_err(dev, "missing reg property of %pOFn\n", fwnode);
+-			fwnode_handle_put(fwnode);
+-			return ret;
++			goto put_fwnode;
+ 		}
 
-Konrad
+ 		if (port >= ARRAY_SIZE(altmode->ports)) {
+@@ -445,8 +444,8 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
+
+ 		if (altmode->ports[port].altmode) {
+ 			dev_err(dev, "multiple connector definition for port %u\n", port);
+-			fwnode_handle_put(fwnode);
+-			return -EINVAL;
++			ret = -EINVAL;
++			goto put_fwnode;
+ 		}
+
+ 		alt_port = &altmode->ports[port];
+@@ -456,8 +455,8 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
+
+ 		alt_port->bridge = devm_drm_dp_hpd_bridge_alloc(dev, to_of_node(fwnode));
+ 		if (IS_ERR(alt_port->bridge)) {
+-			fwnode_handle_put(fwnode);
+-			return PTR_ERR(alt_port->bridge);
++			ret = PTR_ERR(alt_port->bridge);
++			goto put_fwnode;
+ 		}
+
+ 		alt_port->dp_alt.svid = USB_TYPEC_DP_SID;
+@@ -466,48 +465,42 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
+
+ 		alt_port->typec_mux = fwnode_typec_mux_get(fwnode);
+ 		if (IS_ERR(alt_port->typec_mux)) {
+-			fwnode_handle_put(fwnode);
+-			return dev_err_probe(dev, PTR_ERR(alt_port->typec_mux),
+-					     "failed to acquire mode-switch for port: %d\n",
+-					     port);
++			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_mux),
++					    "failed to acquire mode-switch for port: %d\n",
++					    port);
++			goto put_fwnode;
+ 		}
+
+ 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_mux,
+ 					       alt_port->typec_mux);
+-		if (ret) {
+-			fwnode_handle_put(fwnode);
+-			return ret;
+-		}
++		if (ret)
++			goto put_fwnode;
+
+ 		alt_port->typec_retimer = fwnode_typec_retimer_get(fwnode);
+ 		if (IS_ERR(alt_port->typec_retimer)) {
+-			fwnode_handle_put(fwnode);
+-			return dev_err_probe(dev, PTR_ERR(alt_port->typec_retimer),
+-					     "failed to acquire retimer-switch for port: %d\n",
+-					     port);
++			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_retimer),
++					    "failed to acquire retimer-switch for port: %d\n",
++					    port);
++			goto put_fwnode;
+ 		}
+
+ 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_retimer,
+ 					       alt_port->typec_retimer);
+-		if (ret) {
+-			fwnode_handle_put(fwnode);
+-			return ret;
+-		}
++		if (ret)
++			goto put_fwnode;
+
+ 		alt_port->typec_switch = fwnode_typec_switch_get(fwnode);
+ 		if (IS_ERR(alt_port->typec_switch)) {
+-			fwnode_handle_put(fwnode);
+-			return dev_err_probe(dev, PTR_ERR(alt_port->typec_switch),
+-					     "failed to acquire orientation-switch for port: %d\n",
+-					     port);
++			ret = dev_err_probe(dev, PTR_ERR(alt_port->typec_switch),
++					    "failed to acquire orientation-switch for port: %d\n",
++					    port);
++			goto put_fwnode;
+ 		}
+
+ 		ret = devm_add_action_or_reset(dev, pmic_glink_altmode_put_switch,
+ 					       alt_port->typec_switch);
+-		if (ret) {
+-			fwnode_handle_put(fwnode);
+-			return ret;
+-		}
++		if (ret)
++			goto put_fwnode;
+ 	}
+
+ 	for (port = 0; port < ARRAY_SIZE(altmode->ports); port++) {
+@@ -526,6 +519,10 @@ static int pmic_glink_altmode_probe(struct auxiliary_device *adev,
+ 							  pmic_glink_altmode_pdr_notify,
+ 							  altmode);
+ 	return PTR_ERR_OR_ZERO(altmode->client);
++
++put_fwnode:
++	fwnode_handle_put(fwnode);
++	return ret;
+ }
+
+ static const struct auxiliary_device_id pmic_glink_altmode_id_table[] = {
+--
+2.43.2
+
 
 -- 
 linux-phy mailing list
