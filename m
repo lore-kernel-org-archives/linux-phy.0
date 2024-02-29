@@ -4,102 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9415CC54E49
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Feb 2024 13:07:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70A20C48BF6
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Feb 2024 13:11:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6I8NhMK7UAooWJ3FDM46mod/GT/qQw6D4M9XiyiER5Y=; b=G+9pKlg7Bt9eyn
-	KfvYp+MbXb0+NrAUikTP4hZnwn2+Tf0gTjZdDyNjGWfXmwwuL0cb0hpa7Lk6Wrwxta+2kt9HUdh1K
-	I5o3aCQteFMm17T6aSsyx+80/D9yLvXhlb0CAkZmOHAAI7DCPx2rF8gaqQIVqgKp+rXFKxKGmOC2F
-	3tSCfXlDMHEv8uvjU6N80aehDxTjv2r2Dcxq6KNs6SyfjluswoxZdDI2j1VLEYiDUSBY8gk6ldbBk
-	m02xEu2+SyRBn+Q/TkS2THSIoG5dPk0CO19qMo7Uvcyv2DP1OjvGU+DEDH05o11uupvUccVxrMUV+
-	ZFF+VQq7Qa7pviWVTjFw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AVNr5CPlXPbg2Wb31EJ3nRAamDZmUNyeQ5Kss9yk+Xs=; b=V2/pUWxFfs8L0wZNuInxZQlLqw
+	KjVWLfdJyIOqjWrRN0uscBC1FafdceMIN8bdMDfYOKHKF5zefvxGgn/NhlK+DLNgMdxBpgU2pw1P9
+	2194J4SB0h1DfgYuj7Bnx/gVQ2eEx5+ZrIQlR9Gz+Ec0BGVQOXgo4Sq/UxizP8sW3VUlvqQv4dCS4
+	GrADp1phCcrw9Jp8Iz+KviTC7bATg06KhtcED3E/GN9FH00g48JE+QQNvSU05HUvtcLBpNgpI5+AZ
+	wK7ydkC1/MpfT4Vn9szJ0ooR0Ib9bB9L2hJP6yO6CQPFMph/3aiN5WMMQxzw6eBF9WmESrRqSXaut
+	9OFYCe4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfg8D-0000000DbLQ-034g;
-	Thu, 29 Feb 2024 13:07:25 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1rfgCC-0000000Dc9Y-0LyQ;
+	Thu, 29 Feb 2024 13:11:32 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfg86-0000000DbHc-1lIR
+	id 1rfgC8-0000000Dc7d-1a6V
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Feb 2024 13:07:20 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2d311081954so4409611fa.2
-        for <linux-phy@lists.infradead.org>; Thu, 29 Feb 2024 05:07:17 -0800 (PST)
+	Thu, 29 Feb 2024 13:11:29 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-412b68d1a42so6710755e9.0
+        for <linux-phy@lists.infradead.org>; Thu, 29 Feb 2024 05:11:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1709212036; x=1709816836; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1709212286; x=1709817086; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Xt1W5faP85PAWQumOAeVXjmBkQB+qfkabp5eD5nJ+aI=;
-        b=Lrn4eFmeBcgG6R8b30rnZhtqCVYOyjGbGdgAIvTzA/FKFjKAzK6qJ0p6/D65CYJsDF
-         H8UULtiQZVEgXkHlwuFYa53fdu6A1MrmkpfhfWb9zyRFWFVylj5I1Y3jEPttf2xANTPG
-         1ybRoyK10d7P/EKlZhSPdnICuM+BtV1GRqEnMcnqtKlfNP97w8kLO1SXe+zx/+BzaDPH
-         ZMF+hbPUlMD/41lGewh12R1evOnYizUNm3ZW5HZnyshr3sNp59lbJCUIp/a2K1l2EEMF
-         KTGYDjVg9hsMRPr0DxV/iCs2n7P+m1W4hc8gqOQ8cQgq2ZNjX5D5HDnoHbIU1680WRR9
-         UxdQ==
+        bh=h6M8B4BfVBtOt+STshPGZoAe3kMEQJjnBG/nPTu0M2I=;
+        b=LjTSnuNJmvbgBABbg3W+tM++L9N3rC00+LfALWzmZC2TUctF/tkwXmT3ovMN2LjKPm
+         uJP/pNxAmkqgaWp43Z8WWavkPcdpFXFltl6OqhDudqWM7/+S6sBfUoZwiOGifoermGRO
+         bHNuhmaA3lY2QeLN395yO/SJ/cpKb0Se7SiqBdxFG2McwoRQcZ6pC+Up/w1GEIKpbyWN
+         RHW8+XP2qmOSx8ocejIlspy2e9e60ldLErAjZUeeG9olPYfrjhLixNcHYPynEkoFDyj8
+         UEQqPDld7I31+vcKp6M3akzfrwQyjN1EefoQ8UXCW6uFlRJlz9mw8X3UuHcicd1rpZh6
+         0j9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709212036; x=1709816836;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Xt1W5faP85PAWQumOAeVXjmBkQB+qfkabp5eD5nJ+aI=;
-        b=UF44cjYR2JppdrGT0+JIw4GwB7QTkHoyS3ncO6VI9x1Z3motcM7drSUhACmUMPtx0u
-         rc1UEwu5LluwvYh8FSz4am4vUmXGrooA9ZUV7trKoerFeFAk+PupE+7xLT7iUhIb4OnI
-         j3d44rFrRiu2FXA0LrSxqyupMjSDcPbTLAVz6//mqDukMeMpql2iBiyCBVK4WcvQ5cn3
-         0W+q4cqUXCg7Ddvh+Vdy3sr4Z73vI3YyeXfCAdiLKrpArWr1Gv044/AyMOomm63PE43e
-         Gx69psoi+xmK7tTNLuYcA2pOEt0SZPFDoFLIbJszAxPDbimC+L2/VNiqyDQwbESADtwZ
-         6Ehw==
-X-Forwarded-Encrypted: i=1; AJvYcCXXiXNsccc5O4U6H6JtYrZLGOyMeIVK6UHiAak/+xXtXW72p91MaqNYqWzmVf8cH5/1P+XU5ys2yl1ux3/HARzZ5OmwbBVheirm4OSQsA==
-X-Gm-Message-State: AOJu0Yz/A3KlCmH/k+uSgeEmIwRPjuQmaQEsUK+XZMuBjZ/A1cUWJNKs
-	aJ/IiNVYJqo8hqsoy318B8SGaq53AJcL1BCeXgIS0NLCqBFqe8Z0g+2aO17U8Oc=
-X-Google-Smtp-Source: AGHT+IEC7e7Knw0M0ILVJfYrukKdzBj70uBdk2cN9FZc2XJm4ZtvVGGvMvO0ORqpmrytaQdJgTB8Uw==
-X-Received: by 2002:a2e:925a:0:b0:2d3:1f1:d408 with SMTP id v26-20020a2e925a000000b002d301f1d408mr1330088ljg.0.1709212036293;
-        Thu, 29 Feb 2024 05:07:16 -0800 (PST)
-Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id t7-20020a05600c198700b00412a38e732csm2071473wmq.35.2024.02.29.05.07.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Feb 2024 05:07:15 -0800 (PST)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Thu, 29 Feb 2024 14:07:06 +0100
-Subject: [PATCH RFT 6/7] arm64: dts: qcom-sm8650: allow 4 lanes for
- DisplayPort and enable QMP PHY mode-switch
+        d=1e100.net; s=20230601; t=1709212286; x=1709817086;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=h6M8B4BfVBtOt+STshPGZoAe3kMEQJjnBG/nPTu0M2I=;
+        b=EJOWqOsLvkqtFtwvFXYWOfOxsztAKWdhObpZJKHGIpAwW9KY3sgFqnbN3i1fKu/UHj
+         IK2woowurptwezhoq07bbapxpvzb2vo3rh6mFeZsZnx7mXUo4C3z8liTI7NO1QqLpmJT
+         CSr/myzFy3IvRVCOrsWE712OQbO2ag3vJZSdlgyIFtH57eBjQuyKPsZzWz8TBjqZd5rw
+         HJREMiy2vcaYs53C4FSLRgAWnCzGHd4nR4XuqiuOMNI5RBfcZdy4DH59GSPV6UwhERpX
+         GTt6QjYHObeuI4mXSUW5nB/UhDDD+4S+DKv8IbfP0/UAKYgeFhoaO/g12BEi9ciMorTB
+         M5qQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXPweEPnZeSJH5+9YVPQjBESZu4p985p+O5qwK3cDA6Eob7xFz6J2V4InbsrT4FCNRGcmhN2fsqGmCu+HGs4CJsUgicsXdjrRP5OqQYEQ==
+X-Gm-Message-State: AOJu0Yxp6l3IAB+oHZ3S2i0/QWlHdn4MDp7T8WhS2TN2hucWK0MNt2k5
+	JOnEwLIGgdf6e1xBZwZHB2sLXX9Xbdn0fpD3bEQ7+oub5pAr0NPCHC6jxidXmeU=
+X-Google-Smtp-Source: AGHT+IEBAMt+2DVoMzLFB2ujBnCPkPwxCpwtsJYFq8Gh+tlnMzHg/PTvDQu0GO3Pn/Hbi9aHlCngRg==
+X-Received: by 2002:a05:600c:4f51:b0:412:6dd7:1d44 with SMTP id m17-20020a05600c4f5100b004126dd71d44mr1651953wmq.17.1709212286296;
+        Thu, 29 Feb 2024 05:11:26 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:982:cbb0:651:5318:b12c:be82? ([2a01:e0a:982:cbb0:651:5318:b12c:be82])
+        by smtp.gmail.com with ESMTPSA id hg14-20020a05600c538e00b0041228b2e179sm2046504wmb.39.2024.02.29.05.11.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 29 Feb 2024 05:11:25 -0800 (PST)
+Message-ID: <15239863-4e89-4322-8dc5-297661e22b40@linaro.org>
+Date: Thu, 29 Feb 2024 14:11:25 +0100
 MIME-Version: 1.0
-Message-Id: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-6-07e24a231840@linaro.org>
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
-In-Reply-To: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH RFT 7/7] arm64: dts: qcom-mode-switch: allow 4 lanes for
+ DisplayPort and enable QMP PHY mode-switch
+To: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Neil Armstrong <neil.armstrong@linaro.org>
-X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=886;
- i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=AX7XuHTDoRahKMAp+cH7GEaNZR5Qd0pBmGI8tAPbhQ8=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBl4IF90QBAS6ajIUqSeE3L+wyYvQnNnniQUAW+vzOK
- eUT0lRyJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZeCBfQAKCRB33NvayMhJ0QSKD/
- wLsTQUePv4/u6Ehr2mKU2piyxeS9kM3cXKqGejQlkzPnv3M7ZpQ1aBv7bEybprYefYzmXUYhUsZu3W
- si2yvhUGPAzp3Sp8LlwlewM2vSXzc8/dHPlbsKwv4fBGIu6wkmSmMPh/Hzq6Qegr15ZiRoIwqcYcEF
- dKgPUOOx+LnCqhDJSBBTXRg/O8bSk8BvbKlrHBDZg0p9tnCNCelDCX0LnmGkx63qAShDfeo7p1zaUa
- 7BLK0L7awpxrpl3lQS6oFuwASHNvitTmtd7Frdj4/jeLwpFUKtsgshPB9Sq9q4aww1I9bbPV7TuUZb
- IpldH0pK/KF/i26xmmnpEkb6O2xZ9cF9YqnO/NHs50dFxSr4ib8ERzmxoaIADSg7iMDqg7U+zn+t5r
- eAfx5xY93P8F5XhOfNlP2VUy/XEedGbsk1kkKUqk6yTTRhRLb6bygCTJ+gA/JUXfUhJ5VDkNKeQcIa
- DNohs2UT28UVehlsWXNVXi70MhrhPf9dfA8OP5hRoeDyAcaZAb6tnFqFLQm+Fgc8bw1uV7VDjZPGuW
- VF9yUabDeOmONuSFiF4bRDvPHbsPS6Vh8mgp8jnV/mR/BHMQGvDwpKjx3k0rYMAj9Hv1DV5mEViwKh
- P5oazDg0p9ax/nYsywImDJ0ACTkhQEJGsapxg10X3IwPZw4enUXIf2fWTOEw==
-X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
- fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
+ <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-7-07e24a231840@linaro.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro Developer Services
+In-Reply-To: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-7-07e24a231840@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240229_050718_700118_A532A8E2 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240229_051128_484918_BECF4157 
+X-CRM114-Status: GOOD (  11.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,43 +122,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Allow up to 4 lanes for the DisplayPort link from the PHY to the Controller
-and allow mode-switch events to the QMP Combo PHY.
+Bad copy-pasta, subject should be:
+[PATCH RFT 7/7] arm64: dts: wcom-sc8280xp-lenovo-thinkpad-x13: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
 
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
----
- arch/arm64/boot/dts/qcom/sm8650-qrd.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-index b07cac2e5bc8..35259ebd07ce 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-@@ -823,7 +823,7 @@ &mdss_dp0 {
- };
- 
- &mdss_dp0_out {
--	data-lanes = <0 1>;
-+	data-lanes = <0 1 2 3>;
- 	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
- };
- 
-@@ -1224,6 +1224,7 @@ &usb_dp_qmpphy {
- 	vdda-phy-supply = <&vreg_l3i_1p2>;
- 	vdda-pll-supply = <&vreg_l3g_0p91>;
- 
-+	mode-switch;
- 	orientation-switch;
- 
- 	status = "okay";
-
--- 
-2.34.1
+On 29/02/2024 14:07, Neil Armstrong wrote:
+> Allow up to 4 lanes for the DisplayPort link from the PHYs to the Controllers
+> and allow mode-switch events to the QMP Combo PHYs.
+> 
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+>   arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts | 6 ++++--
+>   1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+> index a0fdef55a40a..6c73e0fc001f 100644
+> --- a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+> +++ b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+> @@ -556,7 +556,7 @@ &mdss0_dp0 {
+>   };
+>   
+>   &mdss0_dp0_out {
+> -	data-lanes = <0 1>;
+> +	data-lanes = <0 1 2 3>;
+>   	remote-endpoint = <&usb_0_qmpphy_dp_in>;
+>   };
+>   
+> @@ -565,7 +565,7 @@ &mdss0_dp1 {
+>   };
+>   
+>   &mdss0_dp1_out {
+> -	data-lanes = <0 1>;
+> +	data-lanes = <0 1 2 3>;
+>   	remote-endpoint = <&usb_1_qmpphy_dp_in>;
+>   };
+>   
+> @@ -1112,6 +1112,7 @@ &usb_0_qmpphy {
+>   	vdda-phy-supply = <&vreg_l9d>;
+>   	vdda-pll-supply = <&vreg_l4d>;
+>   
+> +	mode-switch;
+>   	orientation-switch;
+>   
+>   	status = "okay";
+> @@ -1149,6 +1150,7 @@ &usb_1_qmpphy {
+>   	vdda-phy-supply = <&vreg_l4b>;
+>   	vdda-pll-supply = <&vreg_l3b>;
+>   
+> +	mode-switch;
+>   	orientation-switch;
+>   
+>   	status = "okay";
+> 
 
 
 -- 
