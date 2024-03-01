@@ -4,86 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81752C5478C
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Mar 2024 18:00:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D09C5475B
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Mar 2024 18:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dl2qypOJ1jVj4/PN0+JFYhhSSs76dN/bErzsQK+4bhQ=; b=nzFwZMDU0+pngI
-	YncG3bwiR85gkZuX6tNZUgLzqvWtrCRtzexhofjh7z8mhj8/pIO/ltRGOCrtAzwKIP0ZkzgWhefrX
-	SDTivsaAcybS8laVTOMbhMHC4Klz+Ky2l1kHfQSVS9N0AtjhIAVQZ86WwXJ9fLXxeZSjJAGr1UHnf
-	1iskbYqQkowZX48eFPI/BLfoVkxgDG6hOE1Cv1cCeGYitOAomodiumpTKNvRJcM/7t69onX8zprPW
-	lOyGMA2KYitExqMkUFShtCplDJzzxR/sBaA+uH3V1DRStRDID5xeebbB7PECtkBphnDrTOvkwN2Iv
-	rPihkkpaBqk5ALeaOphg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TlYbbAtWUrWCtqnvGbGgyavhlLOHyNRher2OlAqhrTQ=; b=sQtdKie96TenQnY53UiWy215bI
+	2Tuxslb1+d9651nFDJTuI4bW66/jajJh7ABetAApcbtH6ynLG2bcx+dAylKVxcaCIKkCJ1HRluoLa
+	jYO8YKzSD2AY+nVsK3zr9brE/zs4G9usPaOt2N44wCPizlvQPMndpVAFHa0bSTK1EGGhotHv8iE+n
+	kZ1rcrO7+8hzfPpYm4rbe3JmT2//nUS9vDHZSRia0XS+nDA93kUE3yS+77eC3enihc6INdvmgL4Vu
+	CDjI8xJabcuJO0Sb3G/4mhbgDzyqxAuGykwGGvDcNyvRqUXaNs4elQUz2hmR/Urjyg0ptBh52IXuE
+	3NsTvnxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rg7Aw-00000001RZh-0FOC;
-	Fri, 01 Mar 2024 18:00:02 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1rg7fD-00000001XzU-3inr;
+	Fri, 01 Mar 2024 18:31:19 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rg7As-00000001RYm-0eWn;
-	Fri, 01 Mar 2024 18:00:00 +0000
-Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 421AwWhm023685;
-	Fri, 1 Mar 2024 18:59:34 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	selector1; bh=PAPioxXa2h6OuhH4vckkwY/Atx8pRc11B94nRO1l+Bg=; b=j+
-	JB7jHojteHT8ULQrshJNFqm8aXbyppTzSXQk0kraU24i8BA5pCOzQgOAu4ISIYOi
-	zX5rfLAIXYcEPjRISVigI7Utgni9HWJgvtyfqafMPd0bo/Jn9ubhNkFKf6A5YVud
-	Dul71EoZ36StUyD++cZIOHXrK2V4LRjD7LqslaghzYHKQZISMBKcXfLSELV4vT7g
-	m0CSPY3YSVaqDEOW+odQS9wZjOo5p6VpyR9kYCjg0l3jrkh4Lwi2e07pzumDmiGA
-	YQREUyQicdTJ+TNt/QhFRq/1Mh8wDJKC86EMNwF1bZKo/XIq2Lk/f9aQE+IxN4fy
-	4H8z/skW1izbClAxi5gA==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3whf4bs1tu-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 01 Mar 2024 18:59:34 +0100 (CET)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id E351D4002D;
-	Fri,  1 Mar 2024 18:59:29 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node2.st.com [10.75.129.70])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E9E882B19E8;
-	Fri,  1 Mar 2024 18:58:23 +0100 (CET)
-Received: from [10.201.22.191] (10.201.22.191) by SHFDAG1NODE2.st.com
- (10.75.129.70) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Fri, 1 Mar
- 2024 18:58:22 +0100
-Message-ID: <bda00a5c-d976-4525-9740-c83d97da8923@foss.st.com>
-Date: Fri, 1 Mar 2024 18:58:21 +0100
+	id 1rg7fB-00000001Xys-087o
+	for linux-phy@lists.infradead.org;
+	Fri, 01 Mar 2024 18:31:18 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-412c3f4c6b9so10151685e9.0
+        for <linux-phy@lists.infradead.org>; Fri, 01 Mar 2024 10:31:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1709317875; x=1709922675; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=00fDWV96hGzMlgHmADg+FHDT30+NNE+7RPj/2lJdLsA=;
+        b=mz6eYqFGkb4utY5aX158h0iagqx43DxWQPyI4tM0J7DnMJZFvEAgHL3S+RoSdBgVAn
+         cIqF5s1wvJSrgvkABFNA76SLs7h8hf0bNuAbBWtZyHVXW8S+eROXdQ6FDdmqRkLadFPd
+         mUCAh2N94uTQ6s7Q3D7btalS51oHR7wIrpx5TWu3bPty3nEMxPdXCjyfyeVfbCeXXx5Z
+         9VaB3hcT2pH7uNe4Z8z0dzGphNwWLQXL3lkavxIod2wiFtMgSBG+rcLlQWkPiBo6xhEs
+         kUBdiVER6nIS67xrEi8flBPjIWG/8ng/PiWBTCdLSOjcR6J+jI0eM35cuZVw5oQHudP0
+         V82w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709317875; x=1709922675;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=00fDWV96hGzMlgHmADg+FHDT30+NNE+7RPj/2lJdLsA=;
+        b=Ka9yQdVDGB+jopK/L6ONemrVdBeTrSc0B0JD4simqGLEUWsRvUMXxcGwAreMkd6A1n
+         jtUN1Msc2IqeeFrX/uTnYfRPt2gVielyvPSynDrIJEe476iAkAPWadFbiBh4cTfwdJgP
+         fLox2SwATkeX85agwLUborSXyzVbvNIXBjKNU6SnHcc9XdUlUNir6wF5HhGIB0VroiH5
+         vovSUg995ZMMjyQf9SIaz12Oae3OetLTeH5O4N+kMubmqpaAe2OBzZQG6oTaWtUTTIPj
+         88HEFb2NGKNQYaFpEIKNjLrENs+wjqIagtXQUZ3lG5f6+/M8AmZFwo8MxFVcne5jTm3I
+         zkGA==
+X-Forwarded-Encrypted: i=1; AJvYcCWPL3ds3EPQw8yKCcO0bnAZcwta7aKkjZaUe/mo6X9B7KkXnvs0tYb2xdRrz7MxHA2zuQHU5eiK2XZW9o9ewX+NnlU0owV1jr6SC8pa1w==
+X-Gm-Message-State: AOJu0YzF6bVamJ6gZKBrtRZXDIEx2n+z8fhef3SkVmEt+IueGU6YEwWs
+	Bo73ABJimN98UynJ2+y1tTNQTEFsHIf8u1hRZfO8izrArX1ymBvduPsO5SCr0zY=
+X-Google-Smtp-Source: AGHT+IFEic06454DIPjHdGIhjkTFcQQke8zNWqIpZhtgGWNUnK5McNBCaU6INJ6zvLIZyqlDxtOTcw==
+X-Received: by 2002:a05:600c:5105:b0:412:b0ef:22b1 with SMTP id o5-20020a05600c510500b00412b0ef22b1mr2001771wms.4.1709317874803;
+        Fri, 01 Mar 2024 10:31:14 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:982:cbb0:7f8a:cf96:378:4490? ([2a01:e0a:982:cbb0:7f8a:cf96:378:4490])
+        by smtp.gmail.com with ESMTPSA id p26-20020a05600c205a00b00412b62f6e35sm8342697wmg.15.2024.03.01.10.31.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 01 Mar 2024 10:31:14 -0800 (PST)
+Message-ID: <4ec8a486-285b-40f7-8501-28550a9f83b9@linaro.org>
+Date: Fri, 1 Mar 2024 19:31:13 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [Linux-stm32] stm32mp1xx: use of reg11, reg18 and vdd_usb rails
-Content-Language: en-US
-To: Sean Nyekjaer <sean@geanix.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-        Alexandre Torgue
-	<alexandre.torgue@foss.st.com>,
-        <lgirdwood@gmail.com>, <broonie@kernel.org>,
-        <u.kleine-koenig@pengutronix.de>,
-        Marc Kleine-Budde <mkl@pengutronix.de>, <m.grzeschik@pengutronix.de>,
-        <linux-phy@lists.infradead.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <marex@denx.de>,
-        <p.paillet@st.com>, Olivier Moysan <olivier.moysan@foss.st.com>,
-        <l.goehrs@pengutronix.de>, "Ahmad Fatoum" <a.fatoum@pengutronix.de>
-CC: =?UTF-8?Q?Martin_Hundeb=C3=B8ll?= <martin@geanix.com>
-References: <4807FD7F-FEB5-4460-B1EB-3E2330864C8B@geanix.com>
-From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-In-Reply-To: <4807FD7F-FEB5-4460-B1EB-3E2330864C8B@geanix.com>
-X-Originating-IP: [10.201.22.191]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE2.st.com
- (10.75.129.70)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-01_20,2024-03-01_02,2023-05-22_02
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH RFT 7/7] arm64: dts: qcom-mode-switch: allow 4 lanes for
+ DisplayPort and enable QMP PHY mode-switch
+To: Bjorn Andersson <andersson@kernel.org>
+Cc: Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
+ <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-7-07e24a231840@linaro.org>
+ <jfwskyt3wllpf33ceeibrodorsfmhctfulfkzpkgmjikzbr63n@f4llf7wcmyxi>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro Developer Services
+In-Reply-To: <jfwskyt3wllpf33ceeibrodorsfmhctfulfkzpkgmjikzbr63n@f4llf7wcmyxi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240301_095958_517938_A1858C1E 
-X-CRM114-Status: GOOD (  31.90  )
+X-CRM114-CacheID: sfid-20240301_103117_133394_15B04D6A 
+X-CRM114-Status: GOOD (  20.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,99 +123,100 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: neil.armstrong@linaro.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMy8xLzI0IDE1OjQxLCBTZWFuIE55ZWtqYWVyIHdyb3RlOgo+IEhpIGFsbCwKPiAKPiBXZSBh
-cmUgdXNpbmcgdGhlIG9zZDMybXAxIFNJUCBtb2R1bGUgWzBdLgo+IFdlIGFyZSBzZWVpbmcgc29t
-ZSBoYXJkd2FyZSBnZXTigJlzIGZyaWVkIGluc2lkZSB0aGUgU0lQIG1vZHVsZS4KPiBJdOKAmXMg
-c29tZXdoYXQgdHJhY2VkIGRvd24gdG8gdGhlIHVzYiBjb250cm9sbGVyL3BoeS9yZWd1bGF0b3Iu
-Cj4gCj4gV2l0aCB0aGlzIGRldmljZSB0cmVlWzFdLiBXZSBoYXZlIG5vdGljZWQgZHVyaW5nIGJv
-b3QgdGhlIHJlZzE4IGlzIHRvZ2dsZWQgb24gYW5kIG9mZgoKRGVhciBTZWFuLAoKSSd2ZSB0cmll
-ZCB0byBjaGVjayB3aGF0IHlvdSd2ZSBwb2ludGVkIG91dC4KClRoZSB0b2dnbGluZyBoYXBwZW5z
-IHdoZW4gcmVnaXN0ZXJpbmcgdGhlIFBIWSBhcyBhIGNsb2NrIHByb3ZpZGVyLiBUaGUKVVNCIFBI
-WSBoYXMgYSBQTEwgdG8gcHJvdmlkZSBjbG9jayBmb3IgT1RHIGFuZCBVU0JILiBUaGlzIGNsb2Nr
-IGdldHMKcmVnaXN0ZXJlZCB0byB0aGUgY2xvY2sgZnJhbWV3b3JrLCBhcyB0aGV5IGdvIHRocm91
-Z2ggUkNDLgoKc3RtMzJfdXNicGh5Y19jbGs0OF9yZWdpc3RlcigpIC0+IGNsa19od19yZWdpc3Rl
-cigpCgpJbiBvcmRlciB0byBwcm9wZXJseSBiZSBpbnNlcnRlZCBpbnRvIHRoZSBjbG9jayB0cmVl
-LCAoZS5nLiBSQ0MgZG9lcwpzb21lIGdhdGluZyB0aGVuKSByZXBhcmVudCBvcGVyYXRpb24gcmVx
-dWlyZXMgdGhlIFBMTCAod2l0aCBpdHMKc3VwcGxpZXMpIHRvIGJlIGVuYWJsZWQuIE9uY2UgdGhl
-IHJlcGFyZW50IGlzIGNvbXBsZXRlZCwgaXQgcmVxdWVzdHMgdG8KdHVybiBpdCBPRkYuCgpUaGF0
-J3MgdGhlIHJlYXNvbiBmb3IgdGhlIHRvZ2dsaW5nLgoKPiB3aXRob3V0IHZkZF91c2IgYmVpbmcg
-dHVybmVkIG9mZiBiZWZvcmUgcmVnMTggYXMgcmVxdWlyZWQgaW4gdGhlIGRhdGEgc2hlZXRbMl0s
-IHNlY3Rpb24gMy44LjE6Cgp2ZGRfdXNiIGlzIHByb2JsYWJseSAoSSBoYXZlbid0IGNoZWNrZWQp
-IGEgYm9vdC1vbiByZWd1bGF0b3IsIHRvdGFsbHkKdW50b3VjaGVkIHdoZW4gdGhlIHRvZ2dsaW5n
-IGhhcHBlbnMuIEl0IGdldHMgZW5hYmxlZCBpbiBkcml2ZXJzIGxhdGVyLApkdXJpbmcgcGh5X3Bv
-d2VyX29uKCkgb3IgaW4gZHdjMiBkcml2ZXIgKHN0bSBpZCBnbHVlIC8gdXNiMzNkIGNhc2NhZGVk
-CnRoZW4gdG8gcHdyKS4gU28gaXQgaXNuJ3QgY29udHJvbGxlZCBiZWZvcmUgdGhhdC4KCj4gVkRE
-M1YzX1VTQkhTIG11c3Qgbm90IGJlIHByZXNlbnQgdW5sZXNzIFZEREExVjhfUkVHIGlzIHByZXNl
-bnQsIG90aGVyd2lzZSBwZXJtYW5lbnQgCj4gU1RNMzJNUDE1N0MvRiBkYW1hZ2UgY291bGQgb2Nj
-dXIuIE11c3QgYmUgZW5zdXJlZCBieSBQTUlDIHJhbmtpbmcgb3JkZXIgb3Igd2l0aAo+IGV4dGVy
-bmFsIGNvbXBvbmVudCBpbiBjYXNlIG9mIGRpc2NyZXRlIGNvbXBvbmVudCBwb3dlciBzdXBwbHkg
-aW1wbGVtZW50YXRpb24uCj4gCj4gSXTigJlzIGhhcHBlbnMgYmVjYXVzZSB0aGUgc29tZXRoaW5n
-IGlzIGFscmVhZHkgdXNlcyB0aGUgdmRkX3VzYiwgaXTigJlzIGJvdGggdGhlIGRyaXZlcnMvcGh5
-L3N0L3BoeS1zdG0zMi11c2JwaHljLmMKPiBhbmQgZHJpdmVycy9yZWd1bGF0b3Ivc3RtMzItcHdy
-LmMgdGhhdCBjb25zdW1lcyBpdC4KCk5vIChzZWUgYWJvdmUpLgoKPiAKPiBJIGNhbiBmaXggaXQg
-YnkgcmVtb3ZpbmcgdGhlIHZkZF91c2IgZnJvbSB0aGUgdXNiMzMgc3VwcGx5WzNdOgoKVGhpcyB3
-aWxsIGJyZWFrIGFsbCBpbXBsZW1lbnRhdGlvbnMgdGhhdCByZWx5IG9uIElEL1ZidXMgcGlucyBv
-biBNUDE1LgoKPiBUaGUgc3RtMzItcHdyLmMgaXMgKHRvIG1lKSByYXRoZXIgd2VpcmQsIGFzIGl0
-IGV4cG9zZXMgdGhlIHVzYjMzIGFzIGEgcmVndWxhdG9yIHdoZW4gaW4gZmFjdCBpdOKAmXMgYSBk
-ZXRlY3Rpb24gcGluLgo+IElzIHRoYXQgZG9uZSBvbiBwdXJwb3NlPwo+IAo+IEkgd291bGQgbGlr
-ZSBpbnRyb2R1Y2UgYSBlcnJvciBpbiB0aGUgc3RtMzItcHdyLmMgaWYgc29tZXRoaW5nIGlzIHRy
-eWluZyB0byBwb3dlciBvZmYgcmVnMTggd2l0aCB1c2IzMyBwcmVzZW50PwoKV2VsbCwgYWRkaW5n
-IHNvbWUgZXJyb3IgYXMgeW91IGhhdmUgZHJhZnRlZCBzaG91bGQgcHJvdGVjdCB0aGUgaGFyZHdh
-cmUuCkRvZXNuJ3QgdGhpcyBicmluZ3MgZXJyb3IsIHdoZW4gcmVnaXN0ZXJpbmcgaW50byB0aGUg
-Y2xvY2sgZnJhbWV3b3JrID8KRG9lcyB0aGlzIHByZXZlbnQgcmVnaXN0ZXJpbmcgVVNCIHRoZW4g
-PwoKVGhlcmUncyBwcm9iYWJseSBiZXR0ZXIgb3B0aW9ucy4gSXQgbmVlZHMgYWRkaXRpb25hbCBm
-aXguIEkgY2FuJ3QgdGhpbmsKYWJvdXQgcmlnaHQgbm93Li4uCkl0IGlzIGp1c3QgYSB0aG91Z2h0
-LCBidXQgd2hlbiB0aGUgUEhZIGRyaXZlciByZWdpc3RlcnMgdGhlIGNsb2NrLCBhCmJldHRlciBj
-b250cm9sIG9mIGFsbCB0aGUgcmVndWxhdG9yIDF2MSwgMXY4IGFuZCB2ZGRfdXNiIGNvdWxkIGJl
-IHRvCmVuZm9yY2UgdmRkX3VzYiBmaXJzdCBnZXRzIGRpc2FibGVkIGluIHRoaXMgcHJvY2Vzcy4K
-Ck9yIHRlbXBvcmFyaWx5IGZsYWcgdGhpcyBpbml0aWFsaXphdGlvbiBzdGVwLCBmcm9tCnN0bTMy
-X3VzYnBoeWNfY2xrNDhfcmVnaXN0ZXIoKSwgdW50aWwgcGh5X2luaXQoKSBvY2N1cnMsIHNvIHRo
-ZSAxdjEgYW5kCjF2OCBkb24ndCBnZXQgZGlzYWJsZWQgPyBUaGlzIHdpbGwgc3BhcmUgdGltZSAo
-ZS5nLiB0b2dnbGluZykgYXMKcGh5X2luaXQgd2lsbCByZWVuYWJsZSBhbGwgdGhlc2UganVzdCBm
-ZXcgdGltZSBhZnRlciBpdCdzIGJlZW4gZGlzYWJsZWQuCgo+IFdvdWxkIGl0IGJlIG9rYXkgdG8g
-cmV0dXJuIC1FQlVTWT8gT3IgZXZlbiAtRVNNT0tFPyA6KQo+IAo+IE9yIGlzIGl0IGJldHRlciB0
-byBkbyBpdCBpbiBwaHktc3RtMzItdXNicGh5Yy5jWzRdPwo+IAo+IC9TZWFuCj4gCj4gWzBdOiBo
-dHRwczovL29jdGF2b3N5c3RlbXMuY29tL29jdGF2b19wcm9kdWN0cy9vc2QzMm1wMTV4Lwo+IFsx
-XTogaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFs
-ZHMvbGludXguZ2l0L3RyZWUvYXJjaC9hcm0vYm9vdC9kdHMvc3Qvc3RtMzJtcDE1N2Mtb3NkMzJt
-cDEtcmVkLmR0cwo+IFsyXTogaHR0cHM6Ly93d3cuc3QuY29tL3Jlc291cmNlL2VuL2RhdGFzaGVl
-dC9zdG0zMm1wMTU3Yy5wZGYKPiBbM106Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRz
-L3N0L3N0bTMybXAxNTdjLW9zZDMybXAxLXJlZC5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9zdC9z
-dG0zMm1wMTU3Yy1vc2QzMm1wMS1yZWQuZHRzCj4gaW5kZXggNTI3YzMzYmU2NmNjLi4wZDY3MDA2
-ODA2YzQgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvc3Qvc3RtMzJtcDE1N2Mtb3Nk
-MzJtcDEtcmVkLmR0cwo+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N0L3N0bTMybXAxNTdjLW9z
-ZDMybXAxLXJlZC5kdHMKPiBAQCAtMTQ5LDcgKzE0OSw2IEBAICZtX2NhbjEgewo+IAo+ICAmcHdy
-X3JlZ3VsYXRvcnMgewo+ICAgICAgICAgdmRkLXN1cHBseSA9IDwmdmRkPjsKPiAtICAgICAgIHZk
-ZF8zdjNfdXNiZnMtc3VwcGx5ID0gPCZ2ZGRfdXNiPjsKCkFzIHNhaWQgYWJvdmUsIHRoaXMgd2ls
-bCBtYWtlIHRoZSBJRCBhbmQgVmJ1cyBkZXRlY3Rpb24gbG9naWMgb24gT1RHCnBvcnQgbm90IHdv
-cmtpbmcuCgo+ICB9Owo+IAo+ICAmcnRjIHsKPiBbNF06Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L3N0L3BoeS1zdG0zMi11c2JwaHljLmMgYi9kcml2ZXJzL3BoeS9zdC9waHktc3RtMzItdXNi
-cGh5Yy5jCj4gaW5kZXggZDVlN2U0NDAwMGI1Li41OGZjYzMwOTk4MDMgMTAwNjQ0Cj4gLS0tIGEv
-ZHJpdmVycy9waHkvc3QvcGh5LXN0bTMyLXVzYnBoeWMuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3N0
-L3BoeS1zdG0zMi11c2JwaHljLmMKPiBAQCAtMTg4LDggKzE4OCwxOCBAQCBzdGF0aWMgaW50IHN0
-bTMyX3VzYnBoeWNfcmVndWxhdG9yc19lbmFibGUoc3RydWN0IHN0bTMyX3VzYnBoeWMgKnVzYnBo
-eWMpCj4gCj4gIHN0YXRpYyBpbnQgc3RtMzJfdXNicGh5Y19yZWd1bGF0b3JzX2Rpc2FibGUoc3Ry
-dWN0IHN0bTMyX3VzYnBoeWMgKnVzYnBoeWMpCj4gIHsKPiArICAgICAgIHN0cnVjdCBzdG0zMl91
-c2JwaHljX3BoeSAqdXNicGh5Y19waHk7Cj4gICAgICAgICBpbnQgcmV0Owo+IAo+ICsgICAgICAg
-Zm9yIChwb3J0ID0gMDsgcG9ydCA8IHVzYnBoeWMtPm5waHlzOyBwb3J0KyspIHsKPiArICAgICAg
-ICAgICAgICAgdXNicGh5Y19waHkgPSB1c2JwaHljLT5waHlzW3BvcnRdOwo+ICsKPiArICAgICAg
-ICAgICAgICAgaWYocmVndWxhdG9yX2lzX2VuYWJsZWQodXNicGh5Y19waHktPnBoeS0+cHdyKSkg
-ewo+ICsgICAgICAgICAgICAgICAgICAgICAgIHByX2VycigiJXM6IHBoeSBpcyBwb3dlcmVkIG5v
-dCBhbGxvd2VkIHRvIHN3aXRjaCBvZmYgcmVndWxhdG9yXG4iLCBfX2Z1bmNfXyk7Cj4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgcmV0dXJuIC1FQlVTWTsKPiArICAgICAgICAgICAgICAgfQo+ICsg
-ICAgICAgfQo+ICsKCkFzIGFib3ZlLCB0aGlzIGNvdWxkIG1ha2Ugc2Vuc2UgdG8gZmxhZyB0aGUg
-ZXJyb3IuCkJ1dCBpdCBuZWVkcyBzb21lIGhhbmRsaW5nIHRvIHByb3Blcmx5IGF2b2lkIHRoZSB0
-b2dnbGluZywgb3IgbWFrZSBpdCBzYWZlLgoKSG9wZSB0aGlzIGhlbHBzIHRvIGNsYXJpZnksCkJS
-LApGYWJyaWNlCgo+ICAgICAgICAgcmV0ID0gcmVndWxhdG9yX2Rpc2FibGUodXNicGh5Yy0+dmRk
-YTF2OCk7Cj4gICAgICAgICBpZiAocmV0KQo+ICAgICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+
-IAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4g
-TGludXgtc3RtMzIgbWFpbGluZyBsaXN0Cj4gTGludXgtc3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9y
-bXJlcGx5LmNvbQo+IGh0dHBzOi8vc3QtbWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbS9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXN0bTMyCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+On 01/03/2024 04:00, Bjorn Andersson wrote:
+> On Thu, Feb 29, 2024 at 02:07:07PM +0100, Neil Armstrong wrote:
+>> Allow up to 4 lanes for the DisplayPort link from the PHYs to the Controllers
+>> and allow mode-switch events to the QMP Combo PHYs.
+>>
+> 
+> Please adjust $subject and commit message to suite the x13s.dts...
+
+Sure I realized this after sending the patches....
+
+> 
+> 
+> With this series I'm reaching 4k@60 on my X13s (with some difficulty due
+> to current hotplug issues in the DP driver) - but 4-lane DP works, and
+> so does 2-lane combo.
+> 
+> I tested switching between DP-only and a USB device, this worked fine a
+> few (3-4) times, after which the USB device stopped showing up. The DP
+> display continued to work nicely and the debug prints from the driver
+> indicates that we're moving back and forth between the modes...
+> 
+> The problems I had when trying to implement this previously, with the
+> device crashing on disconnect have not been seen, across 20+
+> attempts.
+
+Greatm nice this was fixed!
+
+I also experienced USB issue after a few connect/disconnects, it seems that messing
+with the USB PHY doesn't make DWC3 very happy, not sure how we could actually fix that.
+
+Thx for testing!
+
+Neil
+
+> 
+> Regards,
+> Bjorn
+> 
+>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>> ---
+>>   arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts | 6 ++++--
+>>   1 file changed, 4 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+>> index a0fdef55a40a..6c73e0fc001f 100644
+>> --- a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+>> +++ b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
+>> @@ -556,7 +556,7 @@ &mdss0_dp0 {
+>>   };
+>>   
+>>   &mdss0_dp0_out {
+>> -	data-lanes = <0 1>;
+>> +	data-lanes = <0 1 2 3>;
+>>   	remote-endpoint = <&usb_0_qmpphy_dp_in>;
+>>   };
+>>   
+>> @@ -565,7 +565,7 @@ &mdss0_dp1 {
+>>   };
+>>   
+>>   &mdss0_dp1_out {
+>> -	data-lanes = <0 1>;
+>> +	data-lanes = <0 1 2 3>;
+>>   	remote-endpoint = <&usb_1_qmpphy_dp_in>;
+>>   };
+>>   
+>> @@ -1112,6 +1112,7 @@ &usb_0_qmpphy {
+>>   	vdda-phy-supply = <&vreg_l9d>;
+>>   	vdda-pll-supply = <&vreg_l4d>;
+>>   
+>> +	mode-switch;
+>>   	orientation-switch;
+>>   
+>>   	status = "okay";
+>> @@ -1149,6 +1150,7 @@ &usb_1_qmpphy {
+>>   	vdda-phy-supply = <&vreg_l4b>;
+>>   	vdda-pll-supply = <&vreg_l3b>;
+>>   
+>> +	mode-switch;
+>>   	orientation-switch;
+>>   
+>>   	status = "okay";
+>>
+>> -- 
+>> 2.34.1
+>>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
