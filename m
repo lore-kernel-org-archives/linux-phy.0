@@ -4,66 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FA27C48BF6
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:22:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA082C54E49
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:50:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S5Vp2bLKWsYR1aa313OJSLIEBjsuKBj9w9zZiUEDHUo=; b=W/cHg8SUFyNneP
-	LNgQ8INcnVe7da5vEauY+tMiNoX2sO414KW3WrUbHXYAuaIPNDSa9XxCk0psG5VKd+DOKe0gZjrDr
-	ICYyaer1SgbvNaCI5ZefqVjmpmvPyRrYyw6uEQgMIX8J+ROTgfdTTEnFZG9bse5irPRtLkjgD5CvG
-	9PrThYYUlah79bykr7eKph2F+SoQ8dZ3L2neqnqE/fK0E9vH1CSMAZAQ9SreE8P+BWRCGS/fuYrm8
-	G81NXJeqxppmQdD3uR+NxbzbhMsITlOSJz54Q8wUFNt5eyX4R5TNMD9hVV+mrsaH+uyCe+iZ0Zgh0
-	FjrwG0CnuC+YM8NPcTbA==;
+	List-Owner; bh=a1xK2hJ4ydFGJa2WI17/mb5lCfcpfMy8et+D21M5bcM=; b=HK0b1+gzzH1e74
+	JQJMt+lJUiy0B/+9ILaLvwngevJWiYP5Nbt0ueynpwf7E91w2Crc8rpH9DoBSu0GbrwBF6+34NYtj
+	L4f5TIJYkGbb2RzVPg0VyulHjWNl+jURj8A3UtN6fyxp++58+BxBUtOzvYhscZPqIcH3Ue7M2MiRk
+	OxnjJ354ThOo8LSQT00qmdW9GbVJy2R6Z6F1vzPAnxFaaQ+7IL70gI3bmoX1ebSWbNl6nipf5zdhY
+	OtXSClIheKqvrwMphkd6i1fw97cVzXH5EbJep62LsH6BwDqtLimoI63AV3D4UwbmfkQ7Ssj9OJlgE
+	1zp1qm7G1dJiEB6XklKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhB4x-00000009ocv-2M5T;
-	Mon, 04 Mar 2024 16:22:15 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rhBW7-00000009tWx-13hs;
+	Mon, 04 Mar 2024 16:50:19 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhB4u-00000009ocJ-24qB
-	for linux-phy@lists.infradead.org;
-	Mon, 04 Mar 2024 16:22:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DC88460BCB;
-	Mon,  4 Mar 2024 16:22:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59C82C433F1;
-	Mon,  4 Mar 2024 16:22:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1709569331;
-	bh=5GtQDIrUrxIsf2wt+vj62jwD5dGLz3Z9gt06aDoswXU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=q1CLLwLdF2wB+bofcls+9RVbRYQjh9p+gNuxXBUkikSV1cijv4XYaOgX/pyWSsJi7
-	 6wD0NnwdF6u2k4Aq56xmiTb78EkBgcjC4lU4mGta7dAb7a/5T45hbhWOLk6iu21GHo
-	 SFRgWRfdt2bhE9ZaBZ26yBpnbgnAsW2za8c/LWAbPQXV5gOXFNS7pJwdqL1k6q8Nps
-	 5nK6vh6QRsR2JPhLzGbEFFLg58SM61SS59wFhyUSauUED6lsGsgvkzeaBBWPbwedrk
-	 YaNHrpei4TyQfNyeBkOsiaEgMAv5dPRgzmGHfkn6T+EbXigmWzhqRsP7t6cLWKwBmv
-	 fWoqdW2MqZ5Rg==
-Date: Mon, 4 Mar 2024 10:22:09 -0600
-From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT 1/7] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add
- mode-switch
-Message-ID: <20240304162209.GA343498-robh@kernel.org>
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
- <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-1-07e24a231840@linaro.org>
+	id 1rhAMa-00000009cTV-1OHY;
+	Mon, 04 Mar 2024 15:36:30 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id B7D041BF20F;
+	Mon,  4 Mar 2024 15:36:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1709566582;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=atrvTInBTa9ftnt4eeX7cpQDhxNmTdh+W88IDH8sTxw=;
+	b=X03KZaMnWcCRGT68bktpQfrNroVp3VtpQkl5woOBUaf3UYJV1shpZHNcYvQYTA1JqhAmQ3
+	uHVpfl7dR/RzKXB90qOYy2fe1QyCoQVQNf8kL0Honv54htsH0aofSW34InidaoLQJisVB/
+	xSIEd/+t+dW5Dppc56fC+M4MR74fQMXaPVgXGAhpKIymZsbUpbAGhZP44IrOFIzslfnb8B
+	r1y/7Rmsm9xqfTj7Ig5mobitM/gBV4MF1X2p3ERVOXTd4cmgLXuzwO73X8G6mIn50pI+RO
+	noSKKK9vjPwnKJBsxo6ot75ctGaiKYBtWx85UVqvpQ++r3AQ6DvyMy5KQtGQ+A==
+From: Thomas Richard <thomas.richard@bootlin.com>
+Date: Mon, 04 Mar 2024 16:35:50 +0100
+Subject: [PATCH v4 07/18] phy: ti: phy-j721e-wiz: split wiz_clock_init()
+ function
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-1-07e24a231840@linaro.org>
+Message-Id: <20240102-j7200-pcie-s2r-v4-7-6f1f53390c85@bootlin.com>
+References: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
+In-Reply-To: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
+To: Linus Walleij <linus.walleij@linaro.org>, 
+ Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, 
+ Tony Lindgren <tony@atomide.com>, 
+ Haojian Zhuang <haojian.zhuang@linaro.org>, Vignesh R <vigneshr@ti.com>, 
+ Aaro Koskinen <aaro.koskinen@iki.fi>, 
+ Janusz Krzysztofik <jmkrzyszt@gmail.com>, 
+ Andi Shyti <andi.shyti@kernel.org>, Peter Rosin <peda@axentia.se>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-omap@vger.kernel.org, 
+ linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pci@vger.kernel.org, gregory.clement@bootlin.com, 
+ theo.lebrun@bootlin.com, thomas.petazzoni@bootlin.com, u-kumar1@ti.com, 
+ Thomas Richard <thomas.richard@bootlin.com>
+X-Mailer: b4 0.12.0
+X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240304_082212_596585_C350D511 
-X-CRM114-Status: GOOD (  14.18  )
+X-CRM114-CacheID: sfid-20240304_073624_976290_CEAAAF42 
+X-CRM114-Status: GOOD (  15.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,45 +87,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 29, 2024 at 02:07:01PM +0100, Neil Armstrong wrote:
-> The QMP USB3/DP Combo PHY can work in 3 modes:
-> - DisplayPort Only
-> - USB3 Only
-> - USB3 + DisplayPort Combo mode
-> 
-> In order to switch between those modes, the PHY needs to receive
-> Type-C events, allow marking to the phy with the mode-switch
-> property in order to allow the PHY to Type-C events.
-> 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml       | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> index 2d0d7e9e6431..49c6539b9df0 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> @@ -71,6 +71,11 @@ properties:
->      description:
->        See include/dt-bindings/phy/phy-qcom-qmp.h
->  
-> +  mode-switch:
-> +    description:
-> +      Flag the PHY as possible handler of USB Type-C altmode switching
-> +    type: boolean
-> +
+The wiz_clock_init() function mixes probe and hardware configuration.
+Rename the wiz_clock_init() to wiz_clock_probe() and move the hardware
+configuration part in a new function named wiz_clock_init().
 
-Perhaps you should be including the usb-switch.yaml schema that's in 
-next.
+This hardware configuration sequence must be called during the resume
+stage of the driver.
 
->    orientation-switch:
->      description:
->        Flag the PHY as possible handler of USB Type-C orientation switching
-> 
-> -- 
-> 2.34.1
-> 
+Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 67 ++++++++++++++++++++++++------------------
+ 1 file changed, 38 insertions(+), 29 deletions(-)
+
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 5fea4df9404e..0e3cb1ed5a52 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1076,26 +1076,12 @@ static int wiz_clock_register(struct wiz *wiz)
+ 	return ret;
+ }
+ 
+-static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
++static void wiz_clock_init(struct wiz *wiz)
+ {
+-	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
+-	struct device *dev = wiz->dev;
+-	struct device_node *clk_node;
+-	const char *node_name;
+ 	unsigned long rate;
+-	struct clk *clk;
+-	int ret;
+-	int i;
+-
+-	clk = devm_clk_get(dev, "core_ref_clk");
+-	if (IS_ERR(clk))
+-		return dev_err_probe(dev, PTR_ERR(clk),
+-				     "core_ref_clk clock not found\n");
+ 
+-	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
+-
+-	rate = clk_get_rate(clk);
+-	if (rate >= 100000000)
++	rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK]);
++	if (rate >= REF_CLK_100MHZ)
+ 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x1);
+ 	else
+ 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x3);
+@@ -1119,6 +1105,39 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 		break;
+ 	}
+ 
++	if (wiz->input_clks[WIZ_CORE_REFCLK1]) {
++		rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK1]);
++		if (rate >= REF_CLK_100MHZ)
++			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
++		else
++			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
++
++	}
++
++	rate = clk_get_rate(wiz->input_clks[WIZ_EXT_REFCLK]);
++	if (rate >= REF_CLK_100MHZ)
++		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
++	else
++		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
++}
++
++static int wiz_clock_probe(struct wiz *wiz, struct device_node *node)
++{
++	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
++	struct device *dev = wiz->dev;
++	struct device_node *clk_node;
++	const char *node_name;
++	struct clk *clk;
++	int ret;
++	int i;
++
++	clk = devm_clk_get(dev, "core_ref_clk");
++	if (IS_ERR(clk))
++		return dev_err_probe(dev, PTR_ERR(clk),
++				     "core_ref_clk clock not found\n");
++
++	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
++
+ 	if (wiz->data->pma_cmn_refclk1_int_mode) {
+ 		clk = devm_clk_get(dev, "core_ref1_clk");
+ 		if (IS_ERR(clk))
+@@ -1126,12 +1145,6 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 					     "core_ref1_clk clock not found\n");
+ 
+ 		wiz->input_clks[WIZ_CORE_REFCLK1] = clk;
+-
+-		rate = clk_get_rate(clk);
+-		if (rate >= 100000000)
+-			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
+-		else
+-			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
+ 	}
+ 
+ 	clk = devm_clk_get(dev, "ext_ref_clk");
+@@ -1141,11 +1154,7 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 
+ 	wiz->input_clks[WIZ_EXT_REFCLK] = clk;
+ 
+-	rate = clk_get_rate(clk);
+-	if (rate >= 100000000)
+-		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
+-	else
+-		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
++	wiz_clock_init(wiz);
+ 
+ 	switch (wiz->type) {
+ 	case AM64_WIZ_10G:
+@@ -1589,7 +1598,7 @@ static int wiz_probe(struct platform_device *pdev)
+ 		goto err_get_sync;
+ 	}
+ 
+-	ret = wiz_clock_init(wiz, node);
++	ret = wiz_clock_probe(wiz, node);
+ 	if (ret < 0) {
+ 		dev_warn(dev, "Failed to initialize clocks\n");
+ 		goto err_get_sync;
+
+-- 
+2.39.2
+
 
 -- 
 linux-phy mailing list
