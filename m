@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27E95C54E4A
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 15:36:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B5A0C5478C
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 15:37:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EUCoSg9f3HRAeL0HAxtoCZs0mJdvWG1maFKzDMqL4CY=; b=EY6wFWREQXzGOm
-	icKOMOJwx5WsmHVXX3Cenvsq0dh8Fkh1W2Hfic614+hqxpOZZkCmB/caLi4cWLUkfCrLZADsDkphO
-	2LeGXFADsPB/qVmKRaGr69HkgMs0rAASUgic8QE9uMOL707rFcj26hhclUZP8g+GCzmNsQYt0bwYY
-	4nL71296Zy9vzLWA78GcTCoRwBpjuoyeIbLhCoGKgSATsMSU2NecvnwAN1XpzwEY21PjuanwtKbES
-	2Cnh7HuJyygh4B7otHuyrLIwXJyevFETF3QvYFPbLA82xf/Tg9JghQ68s2qfxugD3qG9DwIvyRc/0
-	Byb14f6qRZdkqYUcoRYg==;
+	List-Owner; bh=yzXBlRxY5qnDAzBTuaXzkQD1nPI/th2lFCsB4ulRBfY=; b=J80RL3jZMEUcjh
+	neaDzaT6uNDVoXPdP4QDcFCNwHMHOJYEqovFFXky9fmlAE89xTyrs1NOZhxYnfJlR33DrU7BNn03i
+	PxP7UL3qylpxTs66lRG1pNknlmu4jHcFVx2CZsf9D1T0+oV0VsfVtu9+qkJW5V5U+qbBhS2ih4LuQ
+	oYx/krZohOPhEn2ABH+PdXrA9yAdN9r3RMWyqsJAXvnJ3PqppwiMGQlzXTx7a8a1gmPf3Oy5mUQdN
+	9m2KDHmiR9bf1ZdnAJ/e2YEzGPInej2d8Rd7Cy1Q42pCgHyGu500apMTb+qtmB2sjK+aNBp7f+4fz
+	wQfdr1cDRwlk0U7dH+rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhAMz-00000009csk-3L7x;
-	Mon, 04 Mar 2024 15:36:49 +0000
+	id 1rhANU-00000009dAv-33XK;
+	Mon, 04 Mar 2024 15:37:20 +0000
 Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhAMY-00000009cS4-2VzD;
-	Mon, 04 Mar 2024 15:36:25 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D52811BF20E;
-	Mon,  4 Mar 2024 15:36:18 +0000 (UTC)
+	id 1rhAMf-00000009cZJ-429Q;
+	Mon, 04 Mar 2024 15:36:36 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 203261BF20E;
+	Mon,  4 Mar 2024 15:36:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1709566580;
+	t=1709566587;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=9MU9XELe1rM5Qiqxbtkg8dW/yfnlPXWOR1yK6MM7gxg=;
-	b=oXi19VKF5yDJqVZZ865hfvPY/iEeC1bAFreQVtJL0SApnx/uRhJ7RNklpOZYjjEA+5BSQa
-	3wMtRucKkBiDFCiijlJfqBp2XS866d49WvtD3qtAiG6KHrIPXvP/UZmY/N5tzyfoKNfoH/
-	HSc40iBTcFg6kQ2ZDy8lhjdQvN3reu2FuzP+i6WwX6+Bn/UfDs7fRnO517BH8mYJyian3z
-	oIrpuRLcM4kuBujFJLg4NSxZdOBQ+KSRFMnrGoIDwVc0s9WszTijFN06rVUfuPY1KJyDwt
-	yFV2QBNrddPjzDWGEmIE/lofQj85aNE0vOeywP1KfaI0ABAPIcTUQTDwo66JWA==
+	bh=ZY4zwQDv37yWJBGtlc4HVZQiyWGnejxAqR+BxRsb2To=;
+	b=Q+he/qonM7ce+3DcO7pg2cLmmB2q17k26lCCSFkwtjGa5ylJuU59mevM2Qvtcb8PVuFEHy
+	Q1sTqNqifckyCGoQuPW1izOlHIMCR4bbcsOOv/NcRFU3eM7iS8eMFBNC14VMGrfxr4R9n/
+	ZvchPop/U9fSn4YT3Gr6Ebjj22hiRGuGiuq90/oQ8NZXHdM1Ul17kDCjfyR6UWJtqBLmrs
+	rtZp6uR83vPpeH5ZqPf+eDnjPPMPt2EDVQd7ZhVlProjbqimFEnUX64LZ8Q/KKk6YmALdy
+	6AARmY9OozTj8oklubGUHFRfiibRXsDrBr9hUDQaQ+CZtHolyXzZ3q0TMMJTmg==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Mon, 04 Mar 2024 16:35:49 +0100
-Subject: [PATCH v4 06/18] phy: ti: phy-j721e-wiz: use dev_err_probe()
- instead of dev_err()
+Date: Mon, 04 Mar 2024 16:35:53 +0100
+Subject: [PATCH v4 10/18] phy: cadence-torrent: register resets even if the
+ phy is already configured
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v4-6-6f1f53390c85@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v4-10-6f1f53390c85@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -69,8 +69,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240304_073623_149328_12BA4FD0 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20240304_073631_030828_A696536E 
+X-CRM114-Status: GOOD (  14.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,118 +87,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use dev_err_probe() instead of dev_err() in wiz_clock_init() to simplify
-the code and standardize the error output.
+Resets are needed during suspend and resume stages.
+So they shall be registered during the probe even the phy is already
+initialized.
+
+The function cdns_torrent_reset is renamed cdns_torrent_of_get_reset() to
+make it clear.
 
 Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 46 +++++++++++++++++++-----------------------
- 1 file changed, 21 insertions(+), 25 deletions(-)
+ drivers/phy/cadence/phy-cadence-torrent.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 00d7e6a6de03..5fea4df9404e 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -1088,11 +1088,10 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 	int i;
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index 803a76acf2fd..bba10ca0bfdd 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -2660,7 +2660,7 @@ static int cdns_torrent_clk_register(struct cdns_torrent_phy *cdns_phy)
+ 	return 0;
+ }
  
- 	clk = devm_clk_get(dev, "core_ref_clk");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "core_ref_clk clock not found\n");
--		ret = PTR_ERR(clk);
--		return ret;
--	}
-+	if (IS_ERR(clk))
-+		return dev_err_probe(dev, PTR_ERR(clk),
-+				     "core_ref_clk clock not found\n");
+-static int cdns_torrent_reset(struct cdns_torrent_phy *cdns_phy)
++static int cdns_torrent_of_get_reset(struct cdns_torrent_phy *cdns_phy)
+ {
+ 	struct device *dev = cdns_phy->dev;
+ 
+@@ -2779,6 +2779,10 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = cdns_torrent_of_get_reset(cdns_phy);
++	if (ret)
++		goto clk_cleanup;
 +
- 	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
+ 	ret = cdns_torrent_of_get_clk(cdns_phy);
+ 	if (ret)
+ 		goto clk_cleanup;
+@@ -2786,10 +2790,6 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
  
- 	rate = clk_get_rate(clk);
-@@ -1122,11 +1121,10 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 
- 	if (wiz->data->pma_cmn_refclk1_int_mode) {
- 		clk = devm_clk_get(dev, "core_ref1_clk");
--		if (IS_ERR(clk)) {
--			dev_err(dev, "core_ref1_clk clock not found\n");
--			ret = PTR_ERR(clk);
--			return ret;
--		}
-+		if (IS_ERR(clk))
-+			return dev_err_probe(dev, PTR_ERR(clk),
-+					     "core_ref1_clk clock not found\n");
-+
- 		wiz->input_clks[WIZ_CORE_REFCLK1] = clk;
- 
- 		rate = clk_get_rate(clk);
-@@ -1137,11 +1135,10 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 	}
- 
- 	clk = devm_clk_get(dev, "ext_ref_clk");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "ext_ref_clk clock not found\n");
--		ret = PTR_ERR(clk);
--		return ret;
--	}
-+	if (IS_ERR(clk))
-+		return dev_err_probe(dev, PTR_ERR(clk),
-+				     "ext_ref_clk clock not found\n");
-+
- 	wiz->input_clks[WIZ_EXT_REFCLK] = clk;
- 
- 	rate = clk_get_rate(clk);
-@@ -1157,8 +1154,9 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 	case J721S2_WIZ_10G:
- 		ret = wiz_clock_register(wiz);
+ 	if (!already_configured) {
+-		ret = cdns_torrent_reset(cdns_phy);
+-		if (ret)
+-			goto clk_cleanup;
+-
+ 		ret = cdns_torrent_clk(cdns_phy);
  		if (ret)
--			dev_err(dev, "Failed to register wiz clocks\n");
--		return ret;
-+			return dev_err_probe(dev, ret, "Failed to register wiz clocks\n");
-+
-+		return 0;
- 	default:
- 		break;
- 	}
-@@ -1167,16 +1165,15 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 		node_name = clk_mux_sel[i].node_name;
- 		clk_node = of_get_child_by_name(node, node_name);
- 		if (!clk_node) {
--			dev_err(dev, "Unable to get %s node\n", node_name);
--			ret = -EINVAL;
-+			ret = dev_err_probe(dev, -EINVAL, "Unable to get %s node\n", node_name);
- 			goto err;
- 		}
- 
- 		ret = wiz_mux_of_clk_register(wiz, clk_node, wiz->mux_sel_field[i],
- 					      clk_mux_sel[i].table);
- 		if (ret) {
--			dev_err(dev, "Failed to register %s clock\n",
--				node_name);
-+			dev_err_probe(dev, ret, "Failed to register %s clock\n",
-+				      node_name);
- 			of_node_put(clk_node);
- 			goto err;
- 		}
-@@ -1188,16 +1185,15 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 		node_name = clk_div_sel[i].node_name;
- 		clk_node = of_get_child_by_name(node, node_name);
- 		if (!clk_node) {
--			dev_err(dev, "Unable to get %s node\n", node_name);
--			ret = -EINVAL;
-+			ret = dev_err_probe(dev, -EINVAL, "Unable to get %s node\n", node_name);
- 			goto err;
- 		}
- 
- 		ret = wiz_div_clk_register(wiz, clk_node, wiz->div_sel_field[i],
- 					   clk_div_sel[i].table);
- 		if (ret) {
--			dev_err(dev, "Failed to register %s clock\n",
--				node_name);
-+			dev_err_probe(dev, ret, "Failed to register %s clock\n",
-+				      node_name);
- 			of_node_put(clk_node);
- 			goto err;
- 		}
+ 			goto clk_cleanup;
 
 -- 
 2.39.2
