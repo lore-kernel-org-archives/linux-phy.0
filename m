@@ -4,61 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41E91C54E49
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:50:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 191FEC48BF6
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:50:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kKKOinWQAmjey77u6RIejW9zO5rt+9FwM0Yu1LUkIA=; b=Y7tPrht3PiViC3
-	AiJ+TNU71K4wYNZwg0La3sLb53+4MAw/vU6DaAqm3SoVqx80QHKwZWm6fcrGPwzYAPog474jPOsTC
-	mQA3Sm7x+3X6K2rK7kMvEuYvBJK7c67zqk5AUtzzx+qkXO1LuG21xB5IXEat3bPVO0sAakf35P5Mz
-	ZzLdikyr70nWF/PtTsn1dqUD4bHxfZSXrl6nu5sWuif2k0vZe4CzyPj5HAakBYOvVMv0s5qI0wE90
-	PEpWz68v/w2gvA/nPrc7v1zUIp3CD6N9gLiOe1i5iXiysatKg7/GT8iSQjZY4WRm2DdMUJPcWSKya
-	+2Z61pU/WCCoS9cXHXRA==;
+	List-Owner; bh=LaxKZMuiBVnuwmeTqRJv47mQysWI68QCQEgjh7wBXgM=; b=HgiXtvvdUBGBUq
+	lmc4ds8DQ29oUWyDJqtYpevB5tJDOn7gyY1sNzA6/7M1YdZ8lT43IiCrbcK/L/ZtRPfrxhmllw9Ib
+	s2w9tk2/8csTVRliLllTxvSmQKcyewSdjb0t6iyi9i0aMc5Tji4JxE5E4bbBLgk4LIqiYL0+0Si6e
+	iajY+r5VjaRiZvLxxm8MlMocmZ2HT8gXC//+nzL7RmsWODqhO8Kxcr5bqgEWJgurdbSVvG+3cH9p/
+	agEcX0IOQs1K+JAplNluY8cH8StVEHb1lxnxYxT7q06ES/xku+wk6qnNXFsB9IWbSlN2CVIPWmxIs
+	oEDXDFp9Ph8sZ4IyBp2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhBWH-00000009tf2-1i4M;
-	Mon, 04 Mar 2024 16:50:29 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rhBWQ-00000009tnm-11Hp;
+	Mon, 04 Mar 2024 16:50:38 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhAMz-00000009cs1-1SaH;
-	Mon, 04 Mar 2024 15:36:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=s6E/Ne64c6+x0FpS9CVe8d7lEAGfcFSrGEubkDw5WnM=; b=an0kXuXSxhWIng+WfEaM7+Vl17
-	H4cxpBNpnU0+K+9qtVs8toF67jG15iUKeQFcm4ouh4XNsC7+o1vurnWk0TB6ThdHRdwZIaOFn2TN2
-	V8B6jhqVcLPmDQFjwTVWv5n5sPlRDCgBAh42o+PDcu1fsZ8WOD3NJj0bF5xMZlab/VocIbiwxFyuV
-	GMBdcXVhwW6gKpXN5MOuPxY4+q6BmBcNLbtuQhlIpLZG232RyhkCgD7elpLhhfJGImp3Depam1P2D
-	8LfVOsSTwmIgdnCVu0/MRuKVG7psZguDvGlRiP1Sm8aIlnFhasa9v0wtCEFhlVQoPqjqNjkVZWJen
-	cnYh0E6A==;
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhAMt-00000004wgE-3Rc9;
-	Mon, 04 Mar 2024 15:36:48 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C85DC1BF20D;
-	Mon,  4 Mar 2024 15:36:40 +0000 (UTC)
+	id 1rhAMk-00000009ce2-2VGA;
+	Mon, 04 Mar 2024 15:36:55 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id AE0981BF204;
+	Mon,  4 Mar 2024 15:36:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1709566602;
+	t=1709566591;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=s6E/Ne64c6+x0FpS9CVe8d7lEAGfcFSrGEubkDw5WnM=;
-	b=DkCG7exsY9UG0LnSnUH7x6xVnM2DPQ1Lj6I2RzBY+M7bkhHNhhakHh7CoGAHXYsXcvlGbq
-	A4ejNjPUVEZWsUjN2ioBLevD96g9DYAkOMpX7opwl8btRLw7jmFxXMP/bauJTQo844czGL
-	OSe/8J5KC3IpIFWpHreXS9ou4YhhpN0nCNBtkCj/ruw3mJOxuLyXilxeDtASBR76Qigb6K
-	B114owohauREEMF/fDdF5MUh0CSC+C5D2QJqkBiZCrO6hRngqjLDG85AFBezRdn59uE0IG
-	3Rwp0QtrYvsmiBlp+g4K7wa2jNHudKR/F5DFFBkYT9eyk43BYTXkAVvLynrQSw==
+	bh=Kd9Oz4mdVW+hDLej27Xfdp5hp9Tma/hgJ2XUMzL0uAo=;
+	b=L4Zzf4vINewbTLzOek8ywqdNRQTcMGgT1T78dNAvJ08wb1UOFzcnMRT3lboAucDV4zWxff
+	oWdtgYF2g/GzqrBm6YyEvtxZPTrHS0tIu23sU2VVrTFodL4CqJ/EFZHB8IPYKivor/38SN
+	L53+UVOCAES0QA6BpVlBCh5Owts47tgyrirQdAnyGLy77S+P889nWs1HjxeIMVNMzm7rcM
+	TZLXnZbK3nZVFX4wq2etkQUWrpDV7k7d2BXMnjZxW4AH/gb+tJIB1BCNn7F0dvIk2mv3zP
+	yNGljErCqNGOPns14qcLeQ8hLYQSFUUKJAGEsF5fe4L7Nl6XTNm2FmFUrLQs3w==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Mon, 04 Mar 2024 16:36:01 +0100
-Subject: [PATCH v4 18/18] PCI: j721e: Add suspend and resume support
+Date: Mon, 04 Mar 2024 16:35:55 +0100
+Subject: [PATCH v4 12/18] phy: cadence-torrent: remove noop_ops phy
+ operations
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v4-18-6f1f53390c85@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v4-12-6f1f53390c85@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -82,8 +69,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240304_153644_025522_B4C10A36 
-X-CRM114-Status: GOOD (  17.83  )
+X-CRM114-CacheID: sfid-20240304_073639_377912_B7851372 
+X-CRM114-Status: GOOD (  14.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,74 +82,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogVGjDqW8gTGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4KCkFkZCBzdXNwZW5k
-IGFuZCByZXN1bWUgc3VwcG9ydC4gT25seSB0aGUgcmMgbW9kZSBpcyBzdXBwb3J0ZWQuCgpEdXJp
-bmcgdGhlIHN1c3BlbmQgc3RhZ2UgUEVSU1QjIGlzIGFzc2VydGVkLCB0aGVuIGRlYXNzZXJ0ZWQg
-ZHVyaW5nIHRoZQpyZXN1bWUgc3RhZ2UuCgpTaWduZWQtb2ZmLWJ5OiBUaMOpbyBMZWJydW4gPHRo
-ZW8ubGVicnVuQGJvb3RsaW4uY29tPgpTaWduZWQtb2ZmLWJ5OiBUaG9tYXMgUmljaGFyZCA8dGhv
-bWFzLnJpY2hhcmRAYm9vdGxpbi5jb20+Ci0tLQogZHJpdmVycy9wY2kvY29udHJvbGxlci9jYWRl
-bmNlL3BjaS1qNzIxZS5jIHwgODYgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCiAxIGZp
-bGUgY2hhbmdlZCwgODYgaW5zZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2Nv
-bnRyb2xsZXIvY2FkZW5jZS9wY2ktajcyMWUuYyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvY2Fk
-ZW5jZS9wY2ktajcyMWUuYwppbmRleCA5YWY0ZmQ2NGMxZjkuLmExZjEyMzJlOGVlNSAxMDA2NDQK
-LS0tIGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9jYWRlbmNlL3BjaS1qNzIxZS5jCisrKyBiL2Ry
-aXZlcnMvcGNpL2NvbnRyb2xsZXIvY2FkZW5jZS9wY2ktajcyMWUuYwpAQCAtNyw2ICs3LDggQEAK
-ICAqLwogCiAjaW5jbHVkZSA8bGludXgvY2xrLmg+CisjaW5jbHVkZSA8bGludXgvY2xrLXByb3Zp
-ZGVyLmg+CisjaW5jbHVkZSA8bGludXgvY29udGFpbmVyX29mLmg+CiAjaW5jbHVkZSA8bGludXgv
-ZGVsYXkuaD4KICNpbmNsdWRlIDxsaW51eC9ncGlvL2NvbnN1bWVyLmg+CiAjaW5jbHVkZSA8bGlu
-dXgvaW8uaD4KQEAgLTIyLDYgKzI0LDggQEAKICNpbmNsdWRlICIuLi8uLi9wY2kuaCIKICNpbmNs
-dWRlICJwY2llLWNhZGVuY2UuaCIKIAorI2RlZmluZSBjZG5zX3BjaWVfdG9fcmMocCkgY29udGFp
-bmVyX29mKHAsIHN0cnVjdCBjZG5zX3BjaWVfcmMsIHBjaWUpCisKICNkZWZpbmUgRU5BQkxFX1JF
-R19TWVNfMgkweDEwOAogI2RlZmluZSBTVEFUVVNfUkVHX1NZU18yCTB4NTA4CiAjZGVmaW5lIFNU
-QVRVU19DTFJfUkVHX1NZU18yCTB4NzA4CkBAIC01ODgsNiArNTkyLDg3IEBAIHN0YXRpYyB2b2lk
-IGo3MjFlX3BjaWVfcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJcG1fcnVu
-dGltZV9kaXNhYmxlKGRldik7CiB9CiAKK3N0YXRpYyBpbnQgajcyMWVfcGNpZV9zdXNwZW5kX25v
-aXJxKHN0cnVjdCBkZXZpY2UgKmRldikKK3sKKwlzdHJ1Y3QgajcyMWVfcGNpZSAqcGNpZSA9IGRl
-dl9nZXRfZHJ2ZGF0YShkZXYpOworCisJaWYgKHBjaWUtPm1vZGUgPT0gUENJX01PREVfUkMpIHsK
-KwkJZ3Bpb2Rfc2V0X3ZhbHVlX2NhbnNsZWVwKHBjaWUtPnJlc2V0X2dwaW8sIDApOworCQljbGtf
-ZGlzYWJsZV91bnByZXBhcmUocGNpZS0+cmVmY2xrKTsKKwl9CisKKwljZG5zX3BjaWVfZGlzYWJs
-ZV9waHkocGNpZS0+Y2Ruc19wY2llKTsKKworCXJldHVybiAwOworfQorCitzdGF0aWMgaW50IGo3
-MjFlX3BjaWVfcmVzdW1lX25vaXJxKHN0cnVjdCBkZXZpY2UgKmRldikKK3sKKwlzdHJ1Y3Qgajcy
-MWVfcGNpZSAqcGNpZSA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOworCXN0cnVjdCBjZG5zX3BjaWUg
-KmNkbnNfcGNpZSA9IHBjaWUtPmNkbnNfcGNpZTsKKwlpbnQgcmV0OworCisJcmV0ID0gajcyMWVf
-cGNpZV9jdHJsX2luaXQocGNpZSk7CisJaWYgKHJldCA8IDApCisJCXJldHVybiByZXQ7CisKKwlq
-NzIxZV9wY2llX2NvbmZpZ19saW5rX2lycShwY2llKTsKKworCS8qCisJICogVGhpcyBpcyBub3Qg
-Y2FsbGVkIGV4cGxpY2l0bHkgaW4gdGhlIHByb2JlLCBpdCBpcyBjYWxsZWQgYnkKKwkgKiBjZG5z
-X3BjaWVfaW5pdF9waHkoKS4KKwkgKi8KKwlyZXQgPSBjZG5zX3BjaWVfZW5hYmxlX3BoeShwY2ll
-LT5jZG5zX3BjaWUpOworCWlmIChyZXQgPCAwKQorCQlyZXR1cm4gcmV0OworCisJaWYgKHBjaWUt
-Pm1vZGUgPT0gUENJX01PREVfUkMpIHsKKwkJc3RydWN0IGNkbnNfcGNpZV9yYyAqcmMgPSBjZG5z
-X3BjaWVfdG9fcmMoY2Ruc19wY2llKTsKKworCQlyZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUocGNp
-ZS0+cmVmY2xrKTsKKwkJaWYgKHJldCA8IDApCisJCQlyZXR1cm4gcmV0OworCisJCS8qCisJCSAq
-ICJQb3dlciBTZXF1ZW5jaW5nIGFuZCBSZXNldCBTaWduYWwgVGltaW5ncyIgdGFibGUgaW4KKwkJ
-ICogUENJIEVYUFJFU1MgQ0FSRCBFTEVDVFJPTUVDSEFOSUNBTCBTUEVDSUZJQ0FUSU9OLCBSRVYu
-IDMuMAorCQkgKiBpbmRpY2F0ZXMgUEVSU1QjIHNob3VsZCBiZSBkZWFzc2VydGVkIGFmdGVyIG1p
-bmltdW0gb2YgMTAwdXMKKwkJICogb25jZSBSRUZDTEsgaXMgc3RhYmxlLiBUaGUgUkVGQ0xLIHRv
-IHRoZSBjb25uZWN0b3IgaW4gUkMKKwkJICogbW9kZSBpcyBzZWxlY3RlZCB3aGlsZSBlbmFibGlu
-ZyB0aGUgUEhZLiBTbyBkZWFzc2VydCBQRVJTVCMKKwkJICogYWZ0ZXIgMTAwIHVzLgorCQkgKi8K
-KwkJaWYgKHBjaWUtPnJlc2V0X2dwaW8pIHsKKwkJCWZzbGVlcCgxMDApOworCQkJZ3Bpb2Rfc2V0
-X3ZhbHVlX2NhbnNsZWVwKHBjaWUtPnJlc2V0X2dwaW8sIDEpOworCQl9CisKKwkJcmV0ID0gY2Ru
-c19wY2llX2hvc3RfbGlua19zZXR1cChyYyk7CisJCWlmIChyZXQgPCAwKSB7CisJCQljbGtfZGlz
-YWJsZV91bnByZXBhcmUocGNpZS0+cmVmY2xrKTsKKwkJCXJldHVybiByZXQ7CisJCX0KKworCQkv
-KgorCQkgKiBSZXNldCBpbnRlcm5hbCBzdGF0dXMgb2YgQkFScyB0byBmb3JjZSByZWluaXRpYWxp
-emF0aW9uIGluCisJCSAqIGNkbnNfcGNpZV9ob3N0X2luaXQoKS4KKwkJICovCisJCWZvciAoZW51
-bSBjZG5zX3BjaWVfcnBfYmFyIGJhciA9IFJQX0JBUjA7IGJhciA8PSBSUF9OT19CQVI7IGJhcisr
-KQorCQkJcmMtPmF2YWlsX2liX2JhcltiYXJdID0gdHJ1ZTsKKworCQlyZXQgPSBjZG5zX3BjaWVf
-aG9zdF9pbml0KHJjKTsKKwkJaWYgKHJldCkgeworCQkJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKHBj
-aWUtPnJlZmNsayk7CisJCQlyZXR1cm4gcmV0OworCQl9CisJfQorCisJcmV0dXJuIDA7Cit9CisK
-K3N0YXRpYyBERUZJTkVfTk9JUlFfREVWX1BNX09QUyhqNzIxZV9wY2llX3BtX29wcywKKwkJCSAg
-ICAgICBqNzIxZV9wY2llX3N1c3BlbmRfbm9pcnEsCisJCQkgICAgICAgajcyMWVfcGNpZV9yZXN1
-bWVfbm9pcnEpOworCiBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBqNzIxZV9wY2llX2Ry
-aXZlciA9IHsKIAkucHJvYmUgID0gajcyMWVfcGNpZV9wcm9iZSwKIAkucmVtb3ZlX25ldyA9IGo3
-MjFlX3BjaWVfcmVtb3ZlLApAQCAtNTk1LDYgKzY4MCw3IEBAIHN0YXRpYyBzdHJ1Y3QgcGxhdGZv
-cm1fZHJpdmVyIGo3MjFlX3BjaWVfZHJpdmVyID0gewogCQkubmFtZQk9ICJqNzIxZS1wY2llIiwK
-IAkJLm9mX21hdGNoX3RhYmxlID0gb2ZfajcyMWVfcGNpZV9tYXRjaCwKIAkJLnN1cHByZXNzX2Jp
-bmRfYXR0cnMgPSB0cnVlLAorCQkucG0JPSBwbV9zbGVlcF9wdHIoJmo3MjFlX3BjaWVfcG1fb3Bz
-KSwKIAl9LAogfTsKIGJ1aWx0aW5fcGxhdGZvcm1fZHJpdmVyKGo3MjFlX3BjaWVfZHJpdmVyKTsK
-Ci0tIAoyLjM5LjIKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+Even if a PHY is already configured, the PHY operations are needed during
+resume stage, as the PHY is in reset state.
+The noop_ops PHY operations is removed to always have PHY operations.
+The already_configured flag is checked at the begening of init, configure
+and poweron operations to keep the already_configured behaviour.
+
+Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+---
+ drivers/phy/cadence/phy-cadence-torrent.c | 30 +++++++++++++-----------------
+ 1 file changed, 13 insertions(+), 17 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index b35fbc8a60e5..52cadca4c07b 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -1593,6 +1593,9 @@ static int cdns_torrent_dp_configure(struct phy *phy,
+ 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(phy->dev.parent);
+ 	int ret;
+ 
++	if (cdns_phy->already_configured)
++		return 0;
++
+ 	ret = cdns_torrent_dp_verify_config(inst, &opts->dp);
+ 	if (ret) {
+ 		dev_err(&phy->dev, "invalid params for phy configure\n");
+@@ -1628,6 +1631,12 @@ static int cdns_torrent_phy_on(struct phy *phy)
+ 	u32 read_val;
+ 	int ret;
+ 
++	if (cdns_phy->already_configured) {
++		/* Give 5ms to 10ms delay for the PIPE clock to be stable */
++		usleep_range(5000, 10000);
++		return 0;
++	}
++
+ 	if (cdns_phy->nsubnodes == 1) {
+ 		/* Take the PHY lane group out of reset */
+ 		reset_control_deassert(inst->lnk_rst);
+@@ -2306,6 +2315,9 @@ static int cdns_torrent_phy_init(struct phy *phy)
+ 	u32 num_regs;
+ 	int i, j;
+ 
++	if (cdns_phy->already_configured)
++		return 0;
++
+ 	if (cdns_phy->nsubnodes > 1) {
+ 		if (phy_type == TYPE_DP)
+ 			return cdns_torrent_dp_multilink_init(cdns_phy, inst, phy);
+@@ -2443,19 +2455,6 @@ static const struct phy_ops cdns_torrent_phy_ops = {
+ 	.owner		= THIS_MODULE,
+ };
+ 
+-static int cdns_torrent_noop_phy_on(struct phy *phy)
+-{
+-	/* Give 5ms to 10ms delay for the PIPE clock to be stable */
+-	usleep_range(5000, 10000);
+-
+-	return 0;
+-}
+-
+-static const struct phy_ops noop_ops = {
+-	.power_on	= cdns_torrent_noop_phy_on,
+-	.owner		= THIS_MODULE,
+-};
+-
+ static
+ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+ {
+@@ -2869,10 +2868,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		of_property_read_u32(child, "cdns,ssc-mode",
+ 				     &cdns_phy->phys[node].ssc_mode);
+ 
+-		if (!cdns_phy->already_configured)
+-			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
+-		else
+-			gphy = devm_phy_create(dev, child, &noop_ops);
++		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+ 			goto put_child;
+
+-- 
+2.39.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
