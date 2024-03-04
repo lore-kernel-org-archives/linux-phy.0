@@ -4,48 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA082C54E49
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8DBFC5478C
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Mar 2024 16:50:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a1xK2hJ4ydFGJa2WI17/mb5lCfcpfMy8et+D21M5bcM=; b=HK0b1+gzzH1e74
-	JQJMt+lJUiy0B/+9ILaLvwngevJWiYP5Nbt0ueynpwf7E91w2Crc8rpH9DoBSu0GbrwBF6+34NYtj
-	L4f5TIJYkGbb2RzVPg0VyulHjWNl+jURj8A3UtN6fyxp++58+BxBUtOzvYhscZPqIcH3Ue7M2MiRk
-	OxnjJ354ThOo8LSQT00qmdW9GbVJy2R6Z6F1vzPAnxFaaQ+7IL70gI3bmoX1ebSWbNl6nipf5zdhY
-	OtXSClIheKqvrwMphkd6i1fw97cVzXH5EbJep62LsH6BwDqtLimoI63AV3D4UwbmfkQ7Ssj9OJlgE
-	1zp1qm7G1dJiEB6XklKg==;
+	List-Owner; bh=3B9rPfeMQK857aG8lz5yj7kGVUxmkp1tpGOkBxT5PP0=; b=AElPJjqPP4lUrs
+	AVfme6kadn6VUBlRyJzwnMBs4gpkDkTYQ/5Czjdaedf8fnF3h4owae+Yabn0RmvRsPcrAepahL3gl
+	lWpUAAWszlcxRlA8YMXd76lQ36TmREepbDU3SdrZ9Z0tuPDJav5F+ptc/M5n8xM/HfC1J+7PgvsHr
+	6/Y7l7snEvDD1MwYzGAtfAMMISvgnoXEA1t3FpFX5csI5e9GOWLcSl33mNuxq1VL2tAn+VwRPhTn9
+	E/KlbcK0Rdf/uV6e2SzktATtpt1zGx5qF5rTb4sO4p1wsjY9Wl7w1mlKHc2+TMZxe6KfBRU6UuFRj
+	//I1C5sn4ndumQaWkm6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhBW7-00000009tWx-13hs;
-	Mon, 04 Mar 2024 16:50:19 +0000
-Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
+	id 1rhBWD-00000009tak-1LJq;
+	Mon, 04 Mar 2024 16:50:25 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhAMa-00000009cTV-1OHY;
-	Mon, 04 Mar 2024 15:36:30 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id B7D041BF20F;
-	Mon,  4 Mar 2024 15:36:20 +0000 (UTC)
+	id 1rhAMs-00000009cmE-3VKD;
+	Mon, 04 Mar 2024 15:36:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=UcbAmu4dmEBPFqimSZPh3yEPPq1ape6wFi34dJc4ne4=; b=O8r1ttlEe623yyHHLYQS0U2Cbi
+	I3CcSOrQrfgFkBBidl+h2yCzIZzT/LAN3RwKe/P/GjPdH9A61LAFZ/3n4kFxayOnd4vOOypvwa+i9
+	AlsrEJLtR00S4CQTeu2Yx4M4f3jtJQZWb94fykrOhPoAc4e5DvgxW1HmAXWoAWZQaUPffTbZECm3N
+	BxzMJP6yP1GUVH7ytRK8GhBSwqvdl8EKFTb+secmihZFd5dcEUPl8j/hpVyzFPrDVkDY3PxQUCXso
+	B805W0CdpVquBiVpirpSBp12/nbYKvsY9DQo4eo32fxdWvZEw4UYNsaVqBJCSvGSvRT1iaNoMITTa
+	jHDEdhtQ==;
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1rhAMp-00000004wd3-0xnN;
+	Mon, 04 Mar 2024 15:36:41 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 865931BF216;
+	Mon,  4 Mar 2024 15:36:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1709566582;
+	t=1709566593;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=atrvTInBTa9ftnt4eeX7cpQDhxNmTdh+W88IDH8sTxw=;
-	b=X03KZaMnWcCRGT68bktpQfrNroVp3VtpQkl5woOBUaf3UYJV1shpZHNcYvQYTA1JqhAmQ3
-	uHVpfl7dR/RzKXB90qOYy2fe1QyCoQVQNf8kL0Honv54htsH0aofSW34InidaoLQJisVB/
-	xSIEd/+t+dW5Dppc56fC+M4MR74fQMXaPVgXGAhpKIymZsbUpbAGhZP44IrOFIzslfnb8B
-	r1y/7Rmsm9xqfTj7Ig5mobitM/gBV4MF1X2p3ERVOXTd4cmgLXuzwO73X8G6mIn50pI+RO
-	noSKKK9vjPwnKJBsxo6ot75ctGaiKYBtWx85UVqvpQ++r3AQ6DvyMy5KQtGQ+A==
+	bh=UcbAmu4dmEBPFqimSZPh3yEPPq1ape6wFi34dJc4ne4=;
+	b=OYOTK8boA3wSOeBGMzlrYVBUR9aW9TAdg4WSIxbjoRSEvtuaNf3OVnimXwUEVR2m+g+60V
+	g48l7l/BeSQJd00hnTI9Bs9ZDP/SG2wWhAoeAxaXAi59KsD12vbclhui7/fCyrRa6Y0rSa
+	u6obxZ0hZdmtn3WwNDZf1yVpNeiVfb7cZgt3RdiDcecGrVHuOZU0sFhVqaLEhQjQh5btSb
+	om/h4Qf7eG/OWOyb/yaJ7x9bnkMQU7gDfBtHJ0y9+t4v1vnJ+eSPUQzjF0wM7dYcotnzF+
+	+iawwIgWi9DzikK9K8x1kcZkn9Q1DTGLrDS0ozAV1x71MwuDcquxfbIq9Dy6lA==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Date: Mon, 04 Mar 2024 16:35:50 +0100
-Subject: [PATCH v4 07/18] phy: ti: phy-j721e-wiz: split wiz_clock_init()
- function
+Date: Mon, 04 Mar 2024 16:35:56 +0100
+Subject: [PATCH v4 13/18] phy: cadence-torrent: add suspend and resume
+ support
 MIME-Version: 1.0
-Message-Id: <20240102-j7200-pcie-s2r-v4-7-6f1f53390c85@bootlin.com>
+Message-Id: <20240102-j7200-pcie-s2r-v4-13-6f1f53390c85@bootlin.com>
 References: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 In-Reply-To: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -69,8 +83,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240304_073624_976290_CEAAAF42 
-X-CRM114-Status: GOOD (  15.17  )
+X-CRM114-CacheID: sfid-20240304_153639_349409_52C7753F 
+X-CRM114-Status: GOOD (  14.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,138 +96,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The wiz_clock_init() function mixes probe and hardware configuration.
-Rename the wiz_clock_init() to wiz_clock_probe() and move the hardware
-configuration part in a new function named wiz_clock_init().
-
-This hardware configuration sequence must be called during the resume
-stage of the driver.
-
-Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
----
- drivers/phy/ti/phy-j721e-wiz.c | 67 ++++++++++++++++++++++++------------------
- 1 file changed, 38 insertions(+), 29 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 5fea4df9404e..0e3cb1ed5a52 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -1076,26 +1076,12 @@ static int wiz_clock_register(struct wiz *wiz)
- 	return ret;
- }
- 
--static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
-+static void wiz_clock_init(struct wiz *wiz)
- {
--	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
--	struct device *dev = wiz->dev;
--	struct device_node *clk_node;
--	const char *node_name;
- 	unsigned long rate;
--	struct clk *clk;
--	int ret;
--	int i;
--
--	clk = devm_clk_get(dev, "core_ref_clk");
--	if (IS_ERR(clk))
--		return dev_err_probe(dev, PTR_ERR(clk),
--				     "core_ref_clk clock not found\n");
- 
--	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
--
--	rate = clk_get_rate(clk);
--	if (rate >= 100000000)
-+	rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK]);
-+	if (rate >= REF_CLK_100MHZ)
- 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x1);
- 	else
- 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x3);
-@@ -1119,6 +1105,39 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 		break;
- 	}
- 
-+	if (wiz->input_clks[WIZ_CORE_REFCLK1]) {
-+		rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK1]);
-+		if (rate >= REF_CLK_100MHZ)
-+			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
-+		else
-+			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
-+
-+	}
-+
-+	rate = clk_get_rate(wiz->input_clks[WIZ_EXT_REFCLK]);
-+	if (rate >= REF_CLK_100MHZ)
-+		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
-+	else
-+		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
-+}
-+
-+static int wiz_clock_probe(struct wiz *wiz, struct device_node *node)
-+{
-+	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
-+	struct device *dev = wiz->dev;
-+	struct device_node *clk_node;
-+	const char *node_name;
-+	struct clk *clk;
-+	int ret;
-+	int i;
-+
-+	clk = devm_clk_get(dev, "core_ref_clk");
-+	if (IS_ERR(clk))
-+		return dev_err_probe(dev, PTR_ERR(clk),
-+				     "core_ref_clk clock not found\n");
-+
-+	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
-+
- 	if (wiz->data->pma_cmn_refclk1_int_mode) {
- 		clk = devm_clk_get(dev, "core_ref1_clk");
- 		if (IS_ERR(clk))
-@@ -1126,12 +1145,6 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 					     "core_ref1_clk clock not found\n");
- 
- 		wiz->input_clks[WIZ_CORE_REFCLK1] = clk;
--
--		rate = clk_get_rate(clk);
--		if (rate >= 100000000)
--			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
--		else
--			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
- 	}
- 
- 	clk = devm_clk_get(dev, "ext_ref_clk");
-@@ -1141,11 +1154,7 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
- 
- 	wiz->input_clks[WIZ_EXT_REFCLK] = clk;
- 
--	rate = clk_get_rate(clk);
--	if (rate >= 100000000)
--		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
--	else
--		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
-+	wiz_clock_init(wiz);
- 
- 	switch (wiz->type) {
- 	case AM64_WIZ_10G:
-@@ -1589,7 +1598,7 @@ static int wiz_probe(struct platform_device *pdev)
- 		goto err_get_sync;
- 	}
- 
--	ret = wiz_clock_init(wiz, node);
-+	ret = wiz_clock_probe(wiz, node);
- 	if (ret < 0) {
- 		dev_warn(dev, "Failed to initialize clocks\n");
- 		goto err_get_sync;
-
--- 
-2.39.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QWRkIHN1c3BlbmQgYW5kIHJlc3VtZSBzdXBwb3J0LgoKVGhlIGFscmVhZHlfY29uZmlndXJlZCBm
+bGFnIGlzIGNsZWFyZWQgZHVyaW5nIHRoZSBzdXNwZW5kIHN0YWdlIHRvIGZvcmNlCnRoZSBQSFkg
+aW5pdGlhbGl6YXRpb24gZHVyaW5nIHRoZSByZXN1bWUgc3RhZ2UuCgpDby1kZXZlbG9wZWQtYnk6
+IFRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+ClNpZ25lZC1vZmYtYnk6IFRo
+w6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+ClNpZ25lZC1vZmYtYnk6IFRob21h
+cyBSaWNoYXJkIDx0aG9tYXMucmljaGFyZEBib290bGluLmNvbT4KLS0tCiBkcml2ZXJzL3BoeS9j
+YWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYyB8IDUzICsrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCA1MyBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMgYi9kcml2ZXJzL3BoeS9j
+YWRlbmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYwppbmRleCA1MmNhZGNhNGMwN2IuLmI0MjQ1YzA4
+ODc2MCAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50
+LmMKKysrIGIvZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMKQEAgLTMw
+MDUsNiArMzAwNSw1OCBAQCBzdGF0aWMgdm9pZCBjZG5zX3RvcnJlbnRfcGh5X3JlbW92ZShzdHJ1
+Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCWNkbnNfdG9ycmVudF9jbGtfY2xlYW51cChjZG5z
+X3BoeSk7CiB9CiAKK3N0YXRpYyBpbnQgY2Ruc190b3JyZW50X3BoeV9zdXNwZW5kX25vaXJxKHN0
+cnVjdCBkZXZpY2UgKmRldikKK3sKKwlzdHJ1Y3QgY2Ruc190b3JyZW50X3BoeSAqY2Ruc19waHkg
+PSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsKKwlpbnQgaTsKKworCXJlc2V0X2NvbnRyb2xfYXNzZXJ0
+KGNkbnNfcGh5LT5waHlfcnN0KTsKKwlyZXNldF9jb250cm9sX2Fzc2VydChjZG5zX3BoeS0+YXBi
+X3JzdCk7CisJZm9yIChpID0gMDsgaSA8IGNkbnNfcGh5LT5uc3Vibm9kZXM7IGkrKykKKwkJcmVz
+ZXRfY29udHJvbF9hc3NlcnQoY2Ruc19waHktPnBoeXNbaV0ubG5rX3JzdCk7CisKKwlpZiAoY2Ru
+c19waHktPmFscmVhZHlfY29uZmlndXJlZCkKKwkJY2Ruc19waHktPmFscmVhZHlfY29uZmlndXJl
+ZCA9IDA7CisJZWxzZQorCQljbGtfZGlzYWJsZV91bnByZXBhcmUoY2Ruc19waHktPmNsayk7CisK
+KwlyZXR1cm4gMDsKK30KKworc3RhdGljIGludCBjZG5zX3RvcnJlbnRfcGh5X3Jlc3VtZV9ub2ly
+cShzdHJ1Y3QgZGV2aWNlICpkZXYpCit7CisJc3RydWN0IGNkbnNfdG9ycmVudF9waHkgKmNkbnNf
+cGh5ID0gZGV2X2dldF9kcnZkYXRhKGRldik7CisJaW50IG5vZGUgPSBjZG5zX3BoeS0+bnN1Ym5v
+ZGVzOworCWludCByZXQsIGk7CisKKwlyZXQgPSBjZG5zX3RvcnJlbnRfY2xrKGNkbnNfcGh5KTsK
+KwlpZiAocmV0KQorCQlyZXR1cm4gcmV0OworCisJLyogRW5hYmxlIEFQQiAqLworCXJlc2V0X2Nv
+bnRyb2xfZGVhc3NlcnQoY2Ruc19waHktPmFwYl9yc3QpOworCisJaWYgKGNkbnNfcGh5LT5uc3Vi
+bm9kZXMgPiAxKSB7CisJCXJldCA9IGNkbnNfdG9ycmVudF9waHlfY29uZmlndXJlX211bHRpbGlu
+ayhjZG5zX3BoeSk7CisJCWlmIChyZXQpCisJCQlnb3RvIHB1dF9sbmtfcnN0OworCX0KKworCXJl
+dHVybiAwOworCitwdXRfbG5rX3JzdDoKKwlmb3IgKGkgPSAwOyBpIDwgbm9kZTsgaSsrKQorCQly
+ZXNldF9jb250cm9sX2Fzc2VydChjZG5zX3BoeS0+cGh5c1tpXS5sbmtfcnN0KTsKKwlyZXNldF9j
+b250cm9sX2Fzc2VydChjZG5zX3BoeS0+YXBiX3JzdCk7CisJY2xrX2Rpc2FibGVfdW5wcmVwYXJl
+KGNkbnNfcGh5LT5jbGspOworCisJcmV0dXJuIHJldDsKK30KKworc3RhdGljIERFRklORV9OT0lS
+UV9ERVZfUE1fT1BTKGNkbnNfdG9ycmVudF9waHlfcG1fb3BzLAorCQkJICAgICAgIGNkbnNfdG9y
+cmVudF9waHlfc3VzcGVuZF9ub2lycSwKKwkJCSAgICAgICBjZG5zX3RvcnJlbnRfcGh5X3Jlc3Vt
+ZV9ub2lycSk7CisKIC8qIFVTQiBhbmQgRFAgbGluayBjb25maWd1cmF0aW9uICovCiBzdGF0aWMg
+c3RydWN0IGNkbnNfcmVnX3BhaXJzIHVzYl9kcF9saW5rX2Ntbl9yZWdzW10gPSB7CiAJezB4MDAw
+MiwgUEhZX1BMTF9DRkd9LApAQCAtNDU3Niw2ICs0NjI4LDcgQEAgc3RhdGljIHN0cnVjdCBwbGF0
+Zm9ybV9kcml2ZXIgY2Ruc190b3JyZW50X3BoeV9kcml2ZXIgPSB7CiAJLmRyaXZlciA9IHsKIAkJ
+Lm5hbWUJPSAiY2Rucy10b3JyZW50LXBoeSIsCiAJCS5vZl9tYXRjaF90YWJsZQk9IGNkbnNfdG9y
+cmVudF9waHlfb2ZfbWF0Y2gsCisJCS5wbQk9IHBtX3NsZWVwX3B0cigmY2Ruc190b3JyZW50X3Bo
+eV9wbV9vcHMpLAogCX0KIH07CiBtb2R1bGVfcGxhdGZvcm1fZHJpdmVyKGNkbnNfdG9ycmVudF9w
+aHlfZHJpdmVyKTsKCi0tIAoyLjM5LjIKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
+eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1waHkK
