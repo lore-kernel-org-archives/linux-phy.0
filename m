@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03F11C54E41
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 13:32:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ECC4C54E49
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 13:32:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5CqrOjn+r2NL3/5DXc98kummx46ciD+kgKSPPuXJWKk=; b=KmF9ufAOlLvF40
-	KMZHzWlSdeWRzxufpVqn6rmOBUpm5lgAUy13hwnwrblSeC2kGi8afyYu3O5JB+yzQgTH2aOrfwZVH
-	tKDEGrU1w/nRg29V2tbyZMwKyqzqG4qgPAqb2RFvaDK5xZBRsaScKs4/dXdbTqX8etoQnvuN/1V2h
-	8z8c0wTUyr3BKuV76bLdhFGf99sVQ7CZSSeoA4wH0JnpI4jI1/bQtx/M7Lu3msz5ba7/h0Mc/Ngfr
-	f0mKdcBFdDN/0MJ8PHYNxd7vD8AHudTAe3vsthHmqv5HG9LkADzQZXkFviegeIwqqcsh22QvR/5TQ
-	pql707OK8FXlcqPFRlNg==;
+	List-Owner; bh=O93Fq0zULCP3+hRhSDuTsUXf08Tz2hCjJjAvA0iOsPI=; b=U6mLvCqcvV65Of
+	+yJq8EgPh28a1ChGtSBAIGqa6HOLmYWb3pTBcfOsKGXP2S0HA8FxbJs99EjKn4QNXpqkOqxC+2Iqf
+	ST7mmRzu6k7s7lXfaSBsp1APutbjRl3cBDootyWlaJwDX7k/iUbKgWJw2c1HczeKS95UemfaC7utS
+	d5cdqMDQ0jSL2H865XZesRP0fZUd1exl2UC703894KsKd0kjIjxoJnXMU6SuLeViZwc4xiCFpzcYi
+	w0QpoKoYsaGxSEg39copgCMDpP/mNDGUx0fbx6N/wwI5Be8rHghL2ckCpO6EnBEjp974N6GIwrdw/
+	TuiCVkBGiu4lwSAW1Bzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhUu4-0000000DlcO-1spG;
-	Tue, 05 Mar 2024 13:32:20 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rhUu6-0000000DldC-0i1Q;
+	Tue, 05 Mar 2024 13:32:22 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhUu1-0000000DlaM-20GE
+	id 1rhUu2-0000000Dlap-47OL
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Mar 2024 13:32:18 +0000
+	Tue, 05 Mar 2024 13:32:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 65F0761523;
-	Tue,  5 Mar 2024 13:32:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id B9702C433C7;
+	by sin.source.kernel.org (Postfix) with ESMTP id 2C253CE1B1B;
+	Tue,  5 Mar 2024 13:32:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id D0A35C433B2;
 	Tue,  5 Mar 2024 13:32:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1709645535;
-	bh=esSfqR/EN2uGgQJhZInB3gQ5IgggyIpQkCwvAPI4KIE=;
+	bh=j2QxGDEhq99RHC8PPIr7+4POEgFQFJ0Y8qdfPyL6lA4=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=Cy+Dkvs3AUK003lAX1XA2Tm5K5lMTlK72LOSkm0x0mpV84Jip7Lgmv3wrTMKXjnlL
-	 U0efQ8gUG3yCPVTc2Cxpx5pCrjg6fCk2KEDne9UhJ1Ovi/Gq75JXcTK2+GbOEuQRBi
-	 yomYaiWuWq9utas1Ub2+L0RwzHqdoPRmazUGHs0hyTVacl87djBzrkPezmLbPisaEC
-	 g/UHtJDpUksgTgdSyj8KO+wRUgZXJmSbDeR3qxmD2S/YHk4a2l2sHvrcLZ4AR9IF+Z
-	 ygwXAwRshk+7KxbtgiDsrB1N+QKPVInSqt8cfNoBfYDVqGzqyMu5uxnsffvdPnTTW5
-	 KPqL/5iZvmaNw==
+	b=EaehtikRo2RXGapAhCRTcyCb1PfQIuJNUcsejMGXdO8zS6aq7+ZRVInuo2vrbSWBd
+	 ahd2Lt3oGM2A+AsUshzrMWZgyvObBfqrTFp6jeVUQ0G4heWXf1QFh3cK77ZSQl2h+P
+	 kIHs19WPnXexq8aXvxVbHdyhWC82qWM7dR0Umfy3pJhVysGpnkNJ2IzZ2U6/zlV9tQ
+	 L+FLcXjClaMIxIVkdfLtpzSSvl5NfPKBGrr1YM5qCx4STHdDL6QixVf/oiRmpYgiPM
+	 kaullGnT4nLKHYivhE2qFsKjWPD6vutekgt3putW1fq2LDAMOtaKPL+UdJLwiMKhx9
+	 Nc24YaD/m2Bkg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 96AB1C54E49;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B5918C54E5C;
 	Tue,  5 Mar 2024 13:32:15 +0000 (UTC)
 From: Yang Xiwen via B4 Relay <devnull+forbidden405.outlook.com@kernel.org>
-Date: Tue, 05 Mar 2024 21:32:12 +0800
-Subject: [PATCH v5 1/5] phy: hisilicon: hisi-inno-phy: enable clocks for
- every ports
+Date: Tue, 05 Mar 2024 21:32:14 +0800
+Subject: [PATCH v5 3/5] dt-bindings: phy: hisilicon,inno-usb2-phy: add
+ support for Hi3798MV100 INNO PHY
 MIME-Version: 1.0
-Message-Id: <20240305-inno-phy-v5-1-dc1cb130ea08@outlook.com>
+Message-Id: <20240305-inno-phy-v5-3-dc1cb130ea08@outlook.com>
 References: <20240305-inno-phy-v5-0-dc1cb130ea08@outlook.com>
 In-Reply-To: <20240305-inno-phy-v5-0-dc1cb130ea08@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,18 +64,19 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, 
  David Yang <mmyangfl@gmail.com>, Yang Xiwen <forbidden405@outlook.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1709645533; l=971;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1709645533; l=829;
  i=forbidden405@outlook.com; s=20230724; h=from:subject:message-id;
- bh=jGUbESXsyAvU27nkXjLoTOKtwqcjOT068eM8RNJCWfs=;
- b=HPJ5ck0MlMZNGEmcLKzPz9CIqfO7rL3sKI59I3rFgOAsz0Fpfqj3r4qB5h9RDN5C7XGwYNkvH
- Y449p9GY2fVBevg2VPT9H4W2fjNMDrjPlZ8Qa5GMzekCMWRNOoJRL5i
+ bh=6dFyqSF2W3Rgkd9gq9kKKbV4XaRy0uRiH6eHrHgNDio=;
+ b=+egDR1/Qmctv6w54Lz4Mc/tEJnd4aFHGjswWikeghXVIeMPQUH9OvB7sx50pFyY3OJOW1l2j1
+ KBmBd29EgVRDveojk1lNQ383uT5vmXi1CgMIRh2a28RWPYldEE0DW4M
 X-Developer-Key: i=forbidden405@outlook.com; a=ed25519;
  pk=qOD5jhp891/Xzc+H/PZ8LWVSWE3O/XCQnAg+5vdU2IU=
 X-Endpoint-Received: by B4 Relay for forbidden405@outlook.com/20230724 with auth_id=67
 X-Original-From: Yang Xiwen <forbidden405@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240305_053217_698089_5647E76B 
-X-CRM114-Status: GOOD (  11.13  )
+X-CRM114-CacheID: sfid-20240305_053219_204129_D76E9062 
+X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,30 +96,26 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Yang Xiwen <forbidden405@outlook.com>
 
-This is needed for port1 to work.
+Hi3798MV100 also has a similar INNO USB2 PHY with slightly different
+register fields offsets. Document it in the binding.
 
-Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
 Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
 ---
- drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-index c138cd4807d6..b7e740eb4752 100644
---- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-+++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
-@@ -86,8 +86,10 @@ static void hisi_inno_phy_write_reg(struct hisi_inno_phy_priv *priv,
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+index ba82405ddf51..7f0811a2dc2b 100644
+--- a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+@@ -14,6 +14,7 @@ properties:
+     items:
+       - enum:
+           - hisilicon,hi3798cv200-usb2-phy
++          - hisilicon,hi3798mv100-usb2-phy
  
- static void hisi_inno_phy_setup(struct hisi_inno_phy_priv *priv)
- {
-+	int i;
- 	/* The phy clk is controlled by the port0 register 0x06. */
--	hisi_inno_phy_write_reg(priv, 0, 0x06, PHY_CLK_ENABLE);
-+	for (i = 0; i < INNO_PHY_PORT_NUM; i++)
-+		hisi_inno_phy_write_reg(priv, i, 0x06, PHY_CLK_ENABLE);
- 	msleep(PHY_CLK_STABLE_TIME);
- }
- 
+   reg:
+     maxItems: 1
 
 -- 
 2.43.0
