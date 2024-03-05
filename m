@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EF18C48BF6
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 02:20:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C55BFC54E49
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 02:20:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O93Fq0zULCP3+hRhSDuTsUXf08Tz2hCjJjAvA0iOsPI=; b=TAFTD8hjR9kTQU
-	O+NyhbT5tgZCl/ryqDeVZ6aR+wXIldR5k7kl2z0EDiJfe3fD9I5EKm0lnM0jl3BcIFZfkNJ8y5f6D
-	Y2KmKaTaF3EORa6ubczplS9qDnXv1KQhpcVppSoKv3BBN2PmAMyaU0Zk9njBTHvnAoB9koQ7nYz+s
-	uupoBrBaJ0z5FruVQGmhDL+8waMH0oC08sT9jdk9kX9kEx3U2eYhmcyKkMhNlo+UZq2h+UbnB4Ow8
-	oTgE8+K1ftnmCrQln+FeNUMNGbkaqOcXr5KlhhPiEpxNXtRkcJcqsjs9ihcXYpTKsHEIc7SAgOlj9
-	5CH/hnKuFMpMFTK6+RTw==;
+	List-Owner; bh=/NMmSJktMieLa+CkoCqhkyxmt7rLH66rfejjBt5t/gQ=; b=xNQtMmolNi08uX
+	9EdDgwBQlp5HJQ6/ZHGkLDPL7Ejz0QW9QYaFjP/gU2bKXFtVxksAoYPj2Qxy8r9qx+8R5nOi/ZoI8
+	PP5Cp1g7AqUzNsrGmn1f5rCLVX89fWRhDIsinuqcuNWN/1zhl88wHgXVvumanwWgbgG146xY9R5RD
+	Yr0/WOgJj72DHuW64iuhH9ZhkqYS0AgUb7/TorLQxG9bjJ8FlwhGXxcZEPKWY+di7niZeZbgXWXuL
+	Ljs2oXKQraj1Yvdyi3o5pPvCvek7cTRV/VwhPRDID2u05PyRy5gZMhb3aKZmLFvZlQh8lkNIU5lTB
+	51lDcwxaeaWeA/jlmQEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhKPZ-0000000BXXF-3gsm;
-	Tue, 05 Mar 2024 02:20:09 +0000
+	id 1rhKPe-0000000BXYl-1N9H;
+	Tue, 05 Mar 2024 02:20:14 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhKPO-0000000BXRM-42gw
+	id 1rhKPO-0000000BXRL-3cuG
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Mar 2024 02:20:07 +0000
+	Tue, 05 Mar 2024 02:20:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C70136123D;
+	by dfw.source.kernel.org (Postfix) with ESMTP id AAF716132A;
 	Tue,  5 Mar 2024 02:19:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 90637C43394;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 98281C43330;
 	Tue,  5 Mar 2024 02:19:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1709605196;
-	bh=j2QxGDEhq99RHC8PPIr7+4POEgFQFJ0Y8qdfPyL6lA4=;
+	bh=Nb/la9hCvIDGODkj1BLvn7upbkGoEP4jj+8C4O4Wx18=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=vAwCX0T5XC55C8KD+4b8Yd+cjS3vfJRmE/JSXBEK+Y579w6DsWnsEQ+SeLG7tyv0c
-	 ummb7qt3utjLsbclCSpfdrK1ZMYCtxKHLH6J1W039wkMEIGkuNCbJb11tp+O6X6IEc
-	 5TBmZGQadJPD7Ds1AG+dalB+FVJ+lWCeZ1uoj4S45emW9qSxpISoInobKnIXd1H9Y6
-	 ySeWju+DOMvhNZ5okrxP1h1Mii2VarkHM2DSpzF3P57Om6kIJdNtLQ994RFv/osKcl
-	 QfWvtxvSMeDb3ErGe1RQJrxnq6tUmNHU51YYOrkzm1suZ4lprkL4nz2ke4ZR/BClTD
-	 PdakwTHcD0J2w==
+	b=OVn4PUXfa7uCyZYEqJTCTmUczcuu64E/tJZpSIF0b4lyrJBiokBLs/tYoLgz3TTtl
+	 6EUxRO5xmS72QSJIjDhvq4n9LdtxAaeHRLWaIvjsV8pcnF9g1MCv5qi4guD6KBJLn7
+	 VPRuNJEYh8mZ59NEGM5ygjHhhA57/WkcI/ygpTgGtVWLTxN/sHw2MR/x471038g1In
+	 x7/d6z244O4AQUWo8zblNnU0+vzrM4KSXzsmaf9SEG45b6cxn/VYprM6AZwb4p64cK
+	 eRBDWmU7PJqUpEOitRiXTaUzsdYtwLzbMdoqmvRbzZY5gmz1gjfgcQ5a5cZIHFJuQE
+	 e9kW6H1HizXuQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 78CDAC54E4A;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 81FCEC54E5C;
 	Tue,  5 Mar 2024 02:19:56 +0000 (UTC)
 From: Yang Xiwen via B4 Relay <devnull+forbidden405.outlook.com@kernel.org>
-Date: Tue, 05 Mar 2024 10:19:48 +0800
-Subject: [PATCH v4 3/5] dt-bindings: phy: hisilicon,inno-usb2-phy: add
- support for Hi3798MV100 INNO PHY
+Date: Tue, 05 Mar 2024 10:19:49 +0800
+Subject: [PATCH v4 4/5] dt-bindings: phy: hisi-inno-usb2: add compatible of
+ hisilicon,hi3798mv200-usb2-phy
 MIME-Version: 1.0
-Message-Id: <20240305-inno-phy-v4-3-a03204c9cf1c@outlook.com>
+Message-Id: <20240305-inno-phy-v4-4-a03204c9cf1c@outlook.com>
 References: <20240305-inno-phy-v4-0-a03204c9cf1c@outlook.com>
 In-Reply-To: <20240305-inno-phy-v4-0-a03204c9cf1c@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,18 +64,18 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, 
  David Yang <mmyangfl@gmail.com>, Yang Xiwen <forbidden405@outlook.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1709605195; l=829;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1709605195; l=1981;
  i=forbidden405@outlook.com; s=20230724; h=from:subject:message-id;
- bh=6dFyqSF2W3Rgkd9gq9kKKbV4XaRy0uRiH6eHrHgNDio=;
- b=rkQ0Luc5fivUDIuQxsUqDT1LMOA7aZ5/z3xiXyMpkOfiv2nAPIafLjZGeKrFJSTSJv06mOnDs
- dgIdv7UUNJ8A9eG0uKnq4B1shlgOHRQLUBJsDd5hc2Dg4YKUiqjTVmB
+ bh=wZ19rp19Vxc5/c1Dz8YVfg/y4dYjOmfzasZL5uF3AuA=;
+ b=Dnqcmj76wQuPc3ttKvuVarxC4G2id7/3Z9Wg2UUMDSlEc3KKyPFjdZSm7lgammo8QVZj5yIbZ
+ 0Ijy5mV9iiqAX061Dn92Hh+Um0E2n1z/jJJMs3f8Y/VDhM3w3xKBfOK
 X-Developer-Key: i=forbidden405@outlook.com; a=ed25519;
  pk=qOD5jhp891/Xzc+H/PZ8LWVSWE3O/XCQnAg+5vdU2IU=
 X-Endpoint-Received: by B4 Relay for forbidden405@outlook.com/20230724 with auth_id=67
 X-Original-From: Yang Xiwen <forbidden405@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240304_181959_110549_93BAB40D 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20240304_181959_301528_790144DF 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,26 +96,81 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Yang Xiwen <forbidden405@outlook.com>
 
-Hi3798MV100 also has a similar INNO USB2 PHY with slightly different
-register fields offsets. Document it in the binding.
+Hi3798MV200 INNO USB2 PHY is attached directly to system bus. Add
+compatible "hisilicon,hi3798mv200-usb2-phy" for it. The ports of
+Hi3798MV200 INNO PHY has its own address space, so
 
 Signed-off-by: Yang Xiwen <forbidden405@outlook.com>
 ---
- Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ .../bindings/phy/hisilicon,inno-usb2-phy.yaml      | 31 ++++++++++++++++++++--
+ 1 file changed, 29 insertions(+), 2 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
-index ba82405ddf51..7f0811a2dc2b 100644
+index 7f0811a2dc2b..92559bdc4fef 100644
 --- a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
-@@ -14,6 +14,7 @@ properties:
-     items:
+@@ -15,6 +15,7 @@ properties:
        - enum:
            - hisilicon,hi3798cv200-usb2-phy
-+          - hisilicon,hi3798mv100-usb2-phy
+           - hisilicon,hi3798mv100-usb2-phy
++          - hisilicon,hi3798mv200-usb2-phy
  
    reg:
      maxItems: 1
+@@ -22,18 +23,29 @@ properties:
+       peripheral controller, e.g. PERI_USB0 for USB 2.0 PHY01 on Hi3798CV200 SoC,
+       or direct MMIO address space.
+ 
++  ranges:
++    maxItems: 1
++
+   '#address-cells':
+     const: 1
+ 
+   '#size-cells':
+-    const: 0
++    enum: [0, 1]
+ 
+   clocks:
+     maxItems: 1
+     description: reference clock
+ 
+   resets:
+-    maxItems: 1
++    minItems: 1
++    items:
++      - description: port reset
++      - description: optional external test bus reset
++
++  reset-names:
++    items:
++      - const: port
++      - const: test
+ 
+ patternProperties:
+   'phy@[0-9a-f]+':
+@@ -66,6 +78,21 @@ required:
+   - '#size-cells'
+   - resets
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: hisilicon,hi3798mv200-usb2-phy
++    then:
++      required:
++        - ranges
++        - reset-names
++    else:
++      properties:
++        ranges: false
++        reset-names: false
++
+ additionalProperties: false
+ 
+ examples:
 
 -- 
 2.43.0
