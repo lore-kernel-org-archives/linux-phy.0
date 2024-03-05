@@ -4,65 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53075C54798
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 19:22:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A43BBC54798
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 21:08:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1veSJu13y9uwOeI+c0ScZDXSIvHPvydDnkPpwku7VUU=; b=FRaunnXbeKkzZh
-	O5KHIjQUX79kwRuxQoL2NvBMWWLZcbcZ/qywB/t528Dul3lDqWCjOveovfd/9/EZhFrZ9Id9J/LeP
-	dfrT9xl1mtTwq0ULLSzV4xThT00+MahSLBHgPlP4yYVwyCuxqaRtg6XU6BqYnr/yFuo9COfYIG5Zx
-	c08DR1+fD2n29cuYXvzlFALhh/ypUlvcElk/MwiC6YSRGNqcabSwPvEgdcHY07IbZ1S/PmL9oW50L
-	ziNx9hcKLAlL1gU2gZl8kXGx4e8d7GD0WpAkdlQKL5qVFlMIHAHI/E2IM9BpptakyidnmE4E6kG/H
-	KT7mv9R9k+1pxGd6tAXA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5SE/f4y4Y82j90RoPIj3ofavpdCzKgOY16BuCbFnRm8=; b=pKoMh3mMzVgJBL6OcDgTLicfcv
+	Z1GiMwiprTSOTpaaoCGF8iPy1jpj422ZjwpGIfN47ST05ZiOM9XOA0U7X4TJdlY7qKlktZRJy74YC
+	yU/RuqnwuxSnp09a2iR+HX5jxJX7I/Nqj/l0LASZAueaMAzrf6ktvZ3dipBMIWocxh0Hu9y8z3A16
+	NwgRM5OdfJ5ZKN9t88yLdqdiflkkGN6gIAEAvZ/KDT5VnGOf6oJ/r+vh3p/WKsCJRls/YbsAqWyKy
+	BMUWLsQSaT7crIaISW9Xq9LwGP7Z0eZ2QDOc2DBh9zyjLIEVOzXCeZrXgfZ8SviiFJGQ3QOofEIfD
+	y4DrLpUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhaMl-0000000F02Z-00tc;
-	Tue, 05 Mar 2024 19:22:19 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rhc14-0000000FH5l-1ItA;
+	Tue, 05 Mar 2024 21:08:02 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhaMi-0000000F01y-2Ypg
+	id 1rhc11-0000000FH51-0b0L
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Mar 2024 19:22:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id ED884CE1E57;
-	Tue,  5 Mar 2024 19:22:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B45EC433C7;
-	Tue,  5 Mar 2024 19:22:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1709666533;
-	bh=WK1G/NaCYvxTxQ/E6MRFLMHXXETCzVWrlTphyKmWH/s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=aX8Y8+Zdk66foHU/vgrLhRefbVfoikrZmF/gHYbKS8iwxqGuKMao8AKX2dUTTPLZE
-	 PPxBFJmD30zUO1nCZDHPHHT+OZaih4sHfTFhtPUHQ5w9WRu6MK+nx1GImp19ggsEcQ
-	 Nh5nbkHh6rAUaJsRiOuulf/KSZsrYE+czREyXeiEGhGDTnzzwssBu6lIidtAZNxaxI
-	 ezPNglsH/T3IB1JRycxGEq996pd55valJ8I+djh8U9C4lbdLXAxMgYX9tR9OdQAWv2
-	 opbvye3lD/s9F+4xQ5sSjKXB9aHxIzsWtkrplp+GdYMd32CvC6PHWOZM0m9C0ZjXXj
-	 fxGHEoE90EXJQ==
-Date: Tue, 5 Mar 2024 13:22:09 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Sriram Dash <quic_sriramd@quicinc.com>
-Cc: konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
-	robh@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
-	gregkh@linuxfoundation.org, quic_wcheng@quicinc.com, Thinh.Nguyen@synopsys.com, 
-	p.zabel@pengutronix.de, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	quic_psodagud@quicinc.com, quic_nkela@quicinc.com, manivannan.sadhasivam@linaro.org, 
-	ulf.hansson@linaro.org, sudeep.holla@arm.com, quic_shazhuss@quicinc.com
-Subject: Re: [RFC 2/3] USB: dwc3: qcom: Add support for firmware managed
- resources
-Message-ID: <ltjrdqxvupzjdqa22fvpzndeh7pc7zfmi5ybqxu2izjnnxjon7@jojqkltzukvv>
-References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
- <1709657858-8563-3-git-send-email-quic_sriramd@quicinc.com>
+	Tue, 05 Mar 2024 21:08:00 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-51331634948so196542e87.0
+        for <linux-phy@lists.infradead.org>; Tue, 05 Mar 2024 13:07:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1709672875; x=1710277675; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=b09ID0S8XkErCqQ2Ru57MwiOAeJTYdJ0mk6wlA5iiPQ=;
+        b=WsGokyfWCLFL+c8iytS5oG/+FTF4iSmWHlC623Xqx2d0YvWr+A/SeEGBdgK2iTw8yV
+         EsFpUbozdKzWH4012moJdqqiMo0J3BA/oVNS8aKNxWPSzS+4wqkUDNzAhtvlg1zPYS33
+         uPacesOukEzYtXzgUzTfA4228XsdJWEzH3yhALgrYFZqSmHE7ayyQ1C7J5oX9sewt187
+         EwMfJ3U/LpRRXoDfDUYM2lKBDOgv1dVa9e0gNjhEQpqYDZCDbPUrIfVO131d6dWACXFt
+         4ytitO4yDqjdeweSaNV22P+sbmwbwUz4bO58LlNyYVvJlNW26JBOL8U3er71ibCbtlFG
+         QwNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709672875; x=1710277675;
+        h=content-transfer-encoding:in-reply-to:from:references:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=b09ID0S8XkErCqQ2Ru57MwiOAeJTYdJ0mk6wlA5iiPQ=;
+        b=Yz5XJfMDz3KFF2HT8uTYbEgDUOWlfSHqz+i64McR+MoHN8+5pZq7u38bix5sZdK4vc
+         KITV9YCFED4BJfzMUPRfZnSoqD2MS6Y7HCvnCFRddVIk6vP7KVNBOnBS8ippcM7WGIOm
+         iv2pptCIL4fI6gaS4/YvFQ1BS77OmM6shUDmnNqAOoRmrwCb7nBJLFbZ/6NvEv3zEphM
+         ZC8PKyyLenYBBGKZNW3FQYaBdkDHMeI05WuCYnKcmaV4TjD14rlgjQDqH1NzzcULb7NX
+         DNuqjYL2t2DGfYrcW/wnaIjpDyY7rnKnSDxxwElFqIDLat42cxC9clk1grTBcEFRnt6Z
+         2A0A==
+X-Forwarded-Encrypted: i=1; AJvYcCW3XLIuazkKar8VHnY8cj93xWixRI/z0EE7bi7Rl3d/QlWiUJLE2RZmkQu9ltAtcV5pjzK808se09u6by4vEBOCX6oZ7tzgwT55Q3ApiQ==
+X-Gm-Message-State: AOJu0Yx4ZgG/NoNqbsElcoGiJJGbEQPa1b7/Ij8yX4QzYZ4ZanK1AH/9
+	7M/vfQdgwpb2DhRXzKfa1EViEWFTWm2q5NnUQV+LTxfI8R30WAR5hfXsZesnUlE=
+X-Google-Smtp-Source: AGHT+IGBKoiS7ffna3KjUqa82zmNiDZh4gX9qfpTO1pytymFQ8KydevY5xCfcZoe8Xkpy4Obklbznw==
+X-Received: by 2002:a05:6512:281a:b0:513:2c5f:1078 with SMTP id cf26-20020a056512281a00b005132c5f1078mr1337677lfb.8.1709672875550;
+        Tue, 05 Mar 2024 13:07:55 -0800 (PST)
+Received: from [172.30.204.154] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
+        by smtp.gmail.com with ESMTPSA id g13-20020ac24d8d000000b0051316ccc5besm2300433lfe.269.2024.03.05.13.07.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 Mar 2024 13:07:54 -0800 (PST)
+Message-ID: <5736796f-061b-46a0-b4eb-ab447fac4426@linaro.org>
+Date: Tue, 5 Mar 2024 22:07:52 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1709657858-8563-3-git-send-email-quic_sriramd@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC 3/3] arm64: dts: qcom: sa8775p-ride: Enable support for
+ firmware managed resources
+Content-Language: en-US
+To: Sriram Dash <quic_sriramd@quicinc.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, andersson@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ gregkh@linuxfoundation.org, quic_wcheng@quicinc.com,
+ Thinh.Nguyen@synopsys.com, p.zabel@pengutronix.de,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ quic_psodagud@quicinc.com, quic_nkela@quicinc.com,
+ manivannan.sadhasivam@linaro.org, ulf.hansson@linaro.org,
+ sudeep.holla@arm.com, quic_shazhuss@quicinc.com, devicetree@vger.kernel.org
+References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
+ <1709657858-8563-4-git-send-email-quic_sriramd@quicinc.com>
+ <b9142874-0afb-40a6-9008-b33bd8f56840@linaro.org>
+ <399555e8-d8fa-46b7-8b15-3d3a4a30809b@quicinc.com>
+ <a2e863e2-9c8b-47c2-b4d8-5664d954cd49@quicinc.com>
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <a2e863e2-9c8b-47c2-b4d8-5664d954cd49@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240305_112217_026549_4BD73D5C 
-X-CRM114-Status: GOOD (  25.98  )
+X-CRM114-CacheID: sfid-20240305_130759_286737_D043314A 
+X-CRM114-Status: GOOD (  11.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,135 +102,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 05, 2024 at 10:27:37PM +0530, Sriram Dash wrote:
-> Some target systems allow multiple resources to be managed by firmware.
-> On these targets, tasks related to clocks, regulators, resets, and
-> interconnects can be delegated to the firmware, while the remaining
-> responsibilities are handled by Linux.
-> 
-> The driver is responsible for managing multiple power domains and
-> linking them to consumers as needed. Incase there is only single
-> power domain, it is considered to be a standard GDSC hooked on to
-> the qcom dt node which is read and assigned to device structure
-> (by genpd framework) before the driver probe even begins.
-> 
-> This differentiation logic allows the driver to determine whether
-> device resources are managed by Linux or firmware, ensuring
-> backward compatibility.
-> 
-> Furthermore, minor cleanup is performed for the private data of
-
-No "futhermore"s please, separate matters should be proposed as separate
-patches. Perhaps these can be sent separately and merged immediately?
-
-> the SNPS Femto PHY. However, ACPI handling is omitted due to the
-> absence of clients on the ACPI side.
-> 
-> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 290 ++++++++++++++++++++------
->  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 213 +++++++++++++++----
->  drivers/usb/dwc3/dwc3-qcom.c                  | 259 +++++++++++++++++------
-
-You're making independent changes across three different drivers across
-two different subsystems, with different maintainers, this is not
-acceptable as a single patch.
-
->  3 files changed, 594 insertions(+), 168 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> index 8525393..1ac1b50 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-> @@ -21,6 +21,9 @@
->  
->  #include "phy-qcom-qmp-common.h"
->  
-> +#include <linux/pm_opp.h>
-> +#include <linux/pm_domain.h>
-
-Why are these includes alone here? Integrate your changes with the
-driver properly.
-
-> +
->  #include "phy-qcom-qmp.h"
->  #include "phy-qcom-qmp-pcs-misc-v3.h"
->  #include "phy-qcom-qmp-pcs-misc-v4.h"
-> @@ -1212,6 +1215,9 @@ struct qmp_phy_cfg {
->  	unsigned int pcs_usb_offset;
->  };
->  
-> +#define DOMAIN_GENPD_TRANSFER			0
-> +#define DOMAIN_GENPD_CORE			1
-
-Does this really represent the hardware? What hardware constructs does
-"transfer" and "core" maps to?
-
-> +
->  struct qmp_usb {
->  	struct device *dev;
->  
-> @@ -1236,6 +1242,19 @@ struct qmp_usb {
->  	struct phy *phy;
->  
->  	struct clk_fixed_rate pipe_clk_fixed;
-> +
-> +	struct dev_pm_domain_list *pd_list;
-> +	struct device *genpd_core;
-> +	struct device *genpd_transfer;
-> +
-> +	bool fw_managed;
-> +	/* separate resource management for fw_managed vs locally managed devices */
-> +	struct qmp_usb_device_ops {
-> +		int (*bus_resume_resource)(struct qmp_usb *qmp);
-
-Not only does these function pointers make the drivers much harder to
-follow, your naming of these seems chosen to maximize the confusion.
-
-In your managed case this doesn't seem to relate to any "bus", in the
-"local" case, this doesn't relate to a "bus", and these callbacks are
-decoupled from the actual runtime resume and suspend cycle of the QMP
-device itself...
-
-> +		int (*runtime_resume_resource)(struct qmp_usb *qmp);
-> +		int (*bus_suspend_resource)(struct qmp_usb *qmp);
-> +		int (*runtime_suspend_resource)(struct qmp_usb *qmp);
-> +	} qmp_usb_device_ops;
->  };
->  
->  static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-> @@ -1598,6 +1617,41 @@ static const struct qmp_phy_cfg x1e80100_usb3_uniphy_cfg = {
->  	.regs			= qmp_v7_usb3phy_regs_layout,
->  };
->  
-> +static void qmp_fw_managed_domain_remove(struct qmp_usb *qmp)
-> +{
-> +	dev_pm_domain_detach_list(qmp->pd_list);
-> +}
-> +
-> +static int qmp_fw_managed_domain_init(struct qmp_usb *qmp)
-> +{
-> +	struct device *dev = qmp->dev;
-> +	struct dev_pm_domain_attach_data pd_data = {
-> +		.pd_flags	= PD_FLAG_NO_DEV_LINK,
-
-Iiuc, you attach the two power-domains with NO_DEV_LINK, such that the
-pm runtime state of the device itself won't reflect on the power
-domains, and then you hand-code all the involved logic yourself?
-
-Why can't you integrate with the device and use its runtime state?
-Please clearly explain why you're doing it like this in your commit
-messages.
-
-Regards,
-Bjorn
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAzLzUvMjQgMTk6MjUsIFNyaXJhbSBEYXNoIHdyb3RlOgo+IE9uIDMvNS8yMDI0IDExOjMz
+IFBNLCBTcmlyYW0gRGFzaCB3cm90ZToKPj4gT24gMy81LzIwMjQgMTA6MzggUE0sIEtyenlzenRv
+ZiBLb3psb3dza2kgd3JvdGU6Cj4+PiBPbiAwNS8wMy8yMDI0IDE3OjU3LCBTcmlyYW0gRGFzaCB3
+cm90ZToKPj4+PiBFc3RhYmxpc2ggdGhlIGNoYW5uZWwgYW5kIGRvbWFpbiBtYXBwaW5nIGZvciB0
+aGUgcG93ZXIgZG9tYWlucyB0byBjb25uZWN0Cj4+Pj4gd2l0aCBmaXJtd2FyZSwgZW5hYmxpbmcg
+dGhlIGZpcm13YXJlIHRvIGhhbmRsZSB0aGUgYXNzaWduZWQgcmVzb3VyY2VzLgo+Pj4+IFNpbmNl
+IHRoZXNlIGRlbGVnYXRlZCByZXNvdXJjZXMgd2lsbCByZW1haW4gaW52aXNpYmxlIHRvIHRoZSBv
+cGVyYXRpbmcKPj4+PiBzeXN0ZW0sIGVuc3VyZSB0aGF0IGFueSByZWZlcmVuY2VzIHRvIHRoZW0g
+YXJlIHJlbW92ZWQuCj4+Pj4KPj4+PiBTaWduZWQtb2ZmLWJ5OiBTcmlyYW0gRGFzaCA8cXVpY19z
+cmlyYW1kQHF1aWNpbmMuY29tPgo+Pj4+IC0tLQo+Pj4+IMKgIGFyY2gvYXJtNjQvYm9vdC9kdHMv
+cWNvbS9zYTg3NzVwLXJpZGUuZHRzIHwgOTYgKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0t
+LQo+Pj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCA3NyBpbnNlcnRpb25zKCspLCAxOSBkZWxldGlvbnMo
+LSkKPj4+Cj4+PiBEbyBub3QgbWl4IERUUyBwYXRjaGVzIHdpdGggc3VibWlzc2lvbnMgdG8gbmV0
+ZGV2IG9yIFVTQi4KPj4+Cj4+PiBQbGVhc2UgcHV0IGl0IGluc2lkZSB5b3VyIGludGVybmFsIGd1
+aWRlcywgc28geW91IHdpbGwgbm90IGJlIHJlcGVhdGluZwo+Pj4gdGhpcyBvdmVyIGFuZCBvdmVy
+Lgo+Pj4KPj4KPj4gU3VyZS4gV2lsbCB0YWtlIGNhcmUuIFRoYW5rcy4KPj4KPj4+Pgo+Pj4+IGRp
+ZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2E4Nzc1cC1yaWRlLmR0cyBiL2Fy
+Y2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9zYTg3NzVwLXJpZGUuZHRzCj4+Pj4gaW5kZXggMjZhZDA1
+Yi4uYjZjOWNhYyAxMDA2NDQKPj4+PiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2E4
+Nzc1cC1yaWRlLmR0cwo+Pj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9zYTg3NzVw
+LXJpZGUuZHRzCj4+Pj4gQEAgLTc2NCw4ICs3NjQsMTggQEAKPj4+PiDCoCB9Owo+Pj4+IMKgICZ1
+c2JfMCB7Cj4+Pj4gLcKgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+Pj4+IC3CoMKg
+wqAgcGluY3RybC0wID0gPCZ1c2IwX2VuX3N0YXRlPjsKPj4+PiArwqDCoMKgIC9kZWxldGUtcHJv
+cGVydHkvIGNsb2NrczsKPj4+PiArwqDCoMKgIC9kZWxldGUtcHJvcGVydHkvIGNsb2NrLW5hbWVz
+Owo+Pj4+ICvCoMKgwqAgL2RlbGV0ZS1wcm9wZXJ0eS8gYXNzaWduZWQtY2xvY2tzOwo+Pj4+ICvC
+oMKgwqAgL2RlbGV0ZS1wcm9wZXJ0eS8gYXNzaWduZWQtY2xvY2stcmF0ZXM7Cj4+Pj4gK8KgwqDC
+oCAvZGVsZXRlLXByb3BlcnR5LyByZXF1aXJlZC1vcHBzOwo+Pj4+ICvCoMKgwqAgL2RlbGV0ZS1w
+cm9wZXJ0eS8gcmVzZXRzOwo+Pj4+ICvCoMKgwqAgL2RlbGV0ZS1wcm9wZXJ0eS8gaW50ZXJjb25u
+ZWN0czsKPj4+PiArwqDCoMKgIC9kZWxldGUtcHJvcGVydHkvIGludGVyY29ubmVjdC1uYW1lczsK
+ClRoaXMgaXMgdG90YWxseSB1bmFjY2VwdGFibGUuLiBBbmQgZXNwZWNpYWxseSBtYWtlcyBubyBz
+ZW5zZSBnaXZlbgpyaWRlIGlzIGxpa2VseSB0aGUgb25seSBzYTg3NzUgYm9hcmQgaW4gZXhpc3Rl
+bmNlLi4KCj4+Pj4gKwo+Pj4+ICvCoMKgwqAgcG93ZXItZG9tYWlucyA9IDxUT0RPPiwgPFRPRE8+
+Owo+Pj4KPj4+IFRoaXMgd2Fzbid0IGV2ZW4gdGVzdGVkLgo+Pj4KPj4KPj4gVGhpcyBpcyB0ZXN0
+ZWQgd2l0aCB0aGUgc3BlY2lmaWMgcG93ZXIgZG9tYWlucyBpbiBwbGFjZQo+PiBvZiA8VE9ETz4u
+IFNDTUkgaW50ZXJmYWNlIGlzIHVzZWQgZm9yIHRoZSBwb3dlciBkb21haW5zLgoKSSdtIHNvcnJ5
+LCBidXQgImJyZWFrIGNvbXBpbGF0aW9uIHN1Y2Nlc3NmdWxseSIgaXMgbm90IGEgdmFsaWQKdGVz
+dCByZXN1bHQuLgoKS29ucmFkCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1waHkK
