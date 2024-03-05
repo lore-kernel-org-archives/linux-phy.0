@@ -4,94 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 884C6C54E41
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 18:04:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7D01C54798
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 18:19:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XwSzYFXhEtqvrRB56jPfpwxHOQDTlUFT0o1s5fMxEz4=; b=fW0I6p+rUXNQFJC3RsP3WsNRGo
-	2uAUByqnkWXy1VLtcyo/dhoAiOBtrky/A4Gq98l728aWwtvaoeMhhOckB1N7+oS1SQSL+TIXAgnyE
-	eC9oCwasECVQ58/dlaOX5fwFeV7T9DAURQHZqbFNagYLedgIKMLM+IBAT19N2yXiZl0G1yMdMM1QT
-	54K8JcGR31RhMGHO4v2WDUBtdNviWXho7JoBxhP4pVq+gioGDbUfzLsyiDC8n0V+XzVPLdIMCAcwP
-	tP+XtJynZoAF1lnsMilal/yaMjkvl4pxN0WhNptkmrKRycm1J29KPYiff4f4XR/na73SFSw7GmdtY
-	PWtWEk+g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f2YHBzRL/PvOZxIt/ToYzQpfSmuboCUpCtxNoVlqNac=; b=0sHLTkOWIYtheK
+	dzS0c9fpi+VA9xEPsPUgqH9Kohm+DK+AAqEgqltqR5Qid8SWbgPM1n9TDBsC+mVmBngS93qb+MJ40
+	LuIt6IDCJ+8ahcllLnOnB+QhGOtN/SHQuCfA28qdsn0anvEYiulsDT4F+JSqS1B4wNf+ywqFSocuU
+	27I/vSz34VhyDFBkB6yjd1Y2RBV3iwgtZgi1H9IIFgYm4clXg2LVARZCrJpc0bMc+KzpjHg8/OcoQ
+	cDgvKPYv62NjnOyGdgJa34Xgc7Nf9Tyboh4ibNK7pg/QwS5/JEeJtivHHDOV0co7OFfvarS1Qs46D
+	nMs7ZtyTuTtz4UnAHL5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhZ9U-0000000En74-0MwY;
-	Tue, 05 Mar 2024 18:04:32 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1rhZNX-0000000EpaR-26MA;
+	Tue, 05 Mar 2024 18:19:03 +0000
+Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhZ9R-0000000En61-1UTj
+	id 1rhZNU-0000000EpZR-0GkP
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Mar 2024 18:04:30 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 425ER8Pb032429;
-	Tue, 5 Mar 2024 18:04:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=sghqC+om+7KfQnUHnhcBPIALJGyNo7LhaapE291B5b0=; b=nm
-	iYXkXBm7jZSjeA42OzytxgY+zrHhWjnWN5eYlP17xcH70zIVD87ELqKuqWpUUr3Q
-	RRLsAwgkD4FrsojfOb2VkUNll1GKNIufLtc2xmAxZNxmh18QpxWZf/L093ZQxauc
-	Ea4f9NdoHLamn6Tb8A/aa1KLsXKzNQTGNaRJ2kIFu5jUXymDxIQmomUQfWXZnn+9
-	QqMUTbrCd9TeppRhfpwiSv/p8Fij5fM+3/5BbCFkxnmWptAMRGsHl8NiT17vIwMM
-	kL/8oeBxbiFr40fhPxOna3hxI5lDpiwaEjVdDHivHEST4xOdMhs5CwXI35KTT6FS
-	Y7eJLPsZR2VoJMANmJCQ==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wp02898bh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 05 Mar 2024 18:04:20 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 425I4Kqj010381
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 5 Mar 2024 18:04:20 GMT
-Received: from [10.216.51.173] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 5 Mar
- 2024 10:04:12 -0800
-Message-ID: <1a47c20a-abda-4493-a8f0-ff7b4e144d9c@quicinc.com>
-Date: Tue, 5 Mar 2024 23:34:12 +0530
+	Tue, 05 Mar 2024 18:19:01 +0000
+Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-1d944e8f367so41599535ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 05 Mar 2024 10:18:58 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709662738; x=1710267538;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:dkim-signature:from:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=HI8MIcEEjpVSHq6tmixm5MdGRtSK9TQ269Plf4i1Nbc=;
+        b=I+BFSCyr6+4jFRCIXIZHEAGniZgx0xQnrRBvonIndDevgneGi49/tDDCKBQtjRHebl
+         RPJYOi1X4Hex/dPmgPL7Tb6mA9xCrAu2wP6qCwlKP0g5r4DPl7jeBkd3sNlZuCf5Ry9Z
+         AGv6y1T6zEyucaYXskkYvRk5iP/lgRX7ZDkT86udz9msmg9kz6qZ6A+AJIwEXDJzShQG
+         IURFjo0jgwlnopG/kpezTBvGI+Yy52E18rwZVxwOlD19VsA4K4N0U8B2kp+0YK5zVF72
+         9kcQVXTedUqmYjjONGIsdOKtYjhGMrNQOaVLQ+6bObZYuHrMcWLCHMRGadJc/zH8gAiP
+         NPug==
+X-Gm-Message-State: AOJu0YwUmWuW1/Z2jrYhNr26gxxNh7XlFGeT3OLTf2DOzSLXuTQbseLm
+	6DFmc9lV1JAO5fTMp3HjEM6RGyyAyl5HyWAeQXwi/442QDiYEwbF
+X-Google-Smtp-Source: AGHT+IHWTpTarFj5TMDKd9wHITF96/ovlRR+Xq9KPffH+QHtDH+oRMS1p0CIfMCSAsGTjloFdNYHfQ==
+X-Received: by 2002:a17:902:f688:b0:1db:e41f:bc0 with SMTP id l8-20020a170902f68800b001dbe41f0bc0mr3332848plg.30.1709662738049;
+        Tue, 05 Mar 2024 10:18:58 -0800 (PST)
+Received: from mail.marliere.net ([24.199.118.162])
+        by smtp.gmail.com with ESMTPSA id d11-20020a170903208b00b001dcc109a621sm10858683plc.184.2024.03.05.10.18.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 05 Mar 2024 10:18:57 -0800 (PST)
+From: "Ricardo B. Marliere" <ricardo@marliere.net>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marliere.net;
+	s=2024; t=1709662736;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=HI8MIcEEjpVSHq6tmixm5MdGRtSK9TQ269Plf4i1Nbc=;
+	b=f+aoQw1vwJrWWobBExg1clhjh0AEXqLxrpDT750sMETiFtQ6hMTy5rJ8FeShDis0V8x4LD
+	3BjupLESMB40QFADO2NrtMjMxYf52Wqe62ejrL6l8fXlWRn6m/SKdDtRhGITsHFOdEi7ix
+	P/RZbqsefGMwcvtedFZuiwGxWT7f59I/OnEua73ISf3HTTeVZTzoZ0n2Gyn1KT+JInWIrC
+	+92cnD2HjIiE7ZzaZfdpmDlI9uPudcRP+bdWDkMKIxs0YGKix8f/va0+jvbEoRTGZxR8rV
+	Nf7ut25EGKsr9kmEdysLLb9BsrNbStzT1Lg4SiiBnNjRq+jDath1EJseDmJpPA==
+Authentication-Results: ORIGINATING;
+	auth=pass smtp.auth=ricardo@marliere.net smtp.mailfrom=ricardo@marliere.net
+Date: Tue, 05 Mar 2024 15:18:51 -0300
+Subject: [PATCH] net: phy: core: make phy_class constant
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC 0/3] Enable firmware-managed USB resources on Qcom targets
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <gregkh@linuxfoundation.org>, <quic_wcheng@quicinc.com>,
-        <Thinh.Nguyen@synopsys.com>, <p.zabel@pengutronix.de>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <quic_psodagud@quicinc.com>,
-        <quic_nkela@quicinc.com>, <manivannan.sadhasivam@linaro.org>,
-        <ulf.hansson@linaro.org>, <sudeep.holla@arm.com>,
-        <quic_shazhuss@quicinc.com>
-References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
- <4d2501a7-d56d-4736-95d7-41556166859b@linaro.org>
-From: Sriram Dash <quic_sriramd@quicinc.com>
-In-Reply-To: <4d2501a7-d56d-4736-95d7-41556166859b@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 2IOJRVrWpQ7_YUUjAOmM_nf0gKuKdET4
-X-Proofpoint-ORIG-GUID: 2IOJRVrWpQ7_YUUjAOmM_nf0gKuKdET4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-05_15,2024-03-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 mlxlogscore=951 suspectscore=0 phishscore=0 spamscore=0
- malwarescore=0 mlxscore=0 clxscore=1015 bulkscore=0 impostorscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2403050144
+Message-Id: <20240305-class_cleanup-phy-v1-1-106013a644dc@marliere.net>
+X-B4-Tracking: v=1; b=H4sIAApi52UC/x3MSwqAMAwA0atI1hZq/SBeRURijRqQWhoUpXh3i
+ 8u3mIkgFJgEuixCoIuFD5dQ5BnYDd1KiudkMNpUutS1sjuKjHYndKdXfntU07RYVO1k0M6QOh9
+ o4ft/9sP7foC0dVhjAAAA
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ "Ricardo B. Marliere" <ricardo@marliere.net>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2768; i=ricardo@marliere.net;
+ h=from:subject:message-id; bh=MtUhEwdZhD08cYNDeoVJ869oD8ivWXm6QaLStsSVeu0=;
+ b=owEBbQKS/ZANAwAKAckLinxjhlimAcsmYgBl52IMzuzrSBdu88Sk6J8FL+ZjpyXhYGoTCLRjK
+ cbF37OLdCKJAjMEAAEKAB0WIQQDCo6eQk7jwGVXh+HJC4p8Y4ZYpgUCZediDAAKCRDJC4p8Y4ZY
+ pvypEACRI3I07T9suJ6lkiDx7vvEBsJOmhwk2c+MTOmUANvxLGIjKEYEirKAH7aB1CxO2YRG54Z
+ /NRAugoybDeVCa/SRGp+jwii81xgVNlVFlcpuKzvYBouO72GfZz3irSK5Yjse3Trwdxv6XNnMHE
+ Lfd3c1SjZhUdeNBlNQzp8Wi39aemZboJtJ6SR1FwUxGRUG3ZGlj5nmjqqjx9abdE8NFut5BQt+8
+ vUQ3ew2mgsemHhYS9UeQH+Ijmhro5Fm2eBpgJvuqXLWWxUEH92A3G5+U8ToDfB9T0s0LQtvgLgb
+ zt0s3MwUenJ2YzAqZG2RRKRGhYzup4QP/q6WqvywmW1ysD9C6NOgdhiSrsWR1+V2Q/oSMeKpQI4
+ UX7EV8k6rR71tlEiERG3nkrUkx7wucusA6eWZIbySjpIxRr73Wwx7A/OfhMw2y3LKBB6TzRA+d0
+ 8cNFF5LeJ57yNO/+Cc8P+pSUd+dnAhGnJ2C57adV7HYDbpykiKZs/F2CPyEnR6oghzoKMYo85CF
+ LFHy+bBVf7Ju501+0x04K2exgyn5sn3suPl4LiD2mKOvW/f6e+XtVUsgpJ5wJSnKG1u9HeoShm4
+ nqM6MRanucU7oxeuFAHA9KARpDvFF+8oQxgUezIT6L6s5FR+zybbb2UpvC9WhHxtOlBTisbBS4/
+ v3xVveiSDFN0VXQ==
+X-Developer-Key: i=ricardo@marliere.net; a=openpgp;
+ fpr=030A8E9E424EE3C0655787E1C90B8A7C638658A6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240305_100429_478947_F65125A7 
-X-CRM114-Status: GOOD (  16.82  )
+X-CRM114-CacheID: sfid-20240305_101900_148648_EF7CE17F 
+X-CRM114-Status: GOOD (  12.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,50 +106,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/5/2024 10:42 PM, Krzysztof Kozlowski wrote:
-> On 05/03/2024 17:57, Sriram Dash wrote:
->> Some target systems allow multiple resources to be managed by firmware.
-> 
-> Which? Why this is so vague...
-> 
+Since commit 43a7206b0963 ("driver core: class: make class_register() take
+a const *"), the driver core allows for struct class to be in read-only
+memory, so move the phy_class structure to be declared at build time
+placing it into read-only memory, instead of having to be dynamically
+allocated at boot time.
 
-SA8775 will be using it as pilot. Will include the target name.
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Suggested-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Ricardo B. Marliere <ricardo@marliere.net>
+---
+ drivers/phy/phy-core.c | 26 +++++++++++++++-----------
+ 1 file changed, 15 insertions(+), 11 deletions(-)
 
->> On these targets, tasks related to clocks, regulators, resets, and
->> interconnects can be delegated to the firmware, while the remaining
->> responsibilities are handled by Linux.
->>
->> To support the management of partial resources in Linux and leave the rest
->> to firmware, multiple power domains are introduced. Each power domain can
->> manage one or more resources, depending on the specific use case.
->>
->> These power domains handle SCMI calls to the firmware, enabling the
->> activation and deactivation of firmware-managed resources.
->>
->> The driver is responsible for managing multiple power domains and
->> linking them to consumers as needed. Incase there is only single
->> power domain, it is considered to be a standard GDSC hooked on to
->> the qcom dt node which is read and assigned to device structure
->> (by genpd framework) before the driver probe even begins.
-> 
-> This will break the ABI. Sorry, come with an ABI stable solution.
-> 
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 7f9b4de772ee..5776d44fd32f 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -20,7 +20,12 @@
+ #include <linux/pm_runtime.h>
+ #include <linux/regulator/consumer.h>
+ 
+-static struct class *phy_class;
++static void phy_release(struct device *dev);
++static const struct class phy_class = {
++	.name = "phy",
++	.dev_release = phy_release,
++};
++
+ static struct dentry *phy_debugfs_root;
+ static DEFINE_MUTEX(phy_provider_mutex);
+ static LIST_HEAD(phy_provider_list);
+@@ -706,7 +711,7 @@ struct phy *of_phy_simple_xlate(struct device *dev,
+ 	struct phy *phy;
+ 	struct class_dev_iter iter;
+ 
+-	class_dev_iter_init(&iter, phy_class, NULL, NULL);
++	class_dev_iter_init(&iter, &phy_class, NULL, NULL);
+ 	while ((dev = class_dev_iter_next(&iter))) {
+ 		phy = to_phy(dev);
+ 		if (args->np != phy->dev.of_node)
+@@ -969,7 +974,7 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
+ 	device_initialize(&phy->dev);
+ 	mutex_init(&phy->mutex);
+ 
+-	phy->dev.class = phy_class;
++	phy->dev.class = &phy_class;
+ 	phy->dev.parent = dev;
+ 	phy->dev.of_node = node ?: dev->of_node;
+ 	phy->id = id;
+@@ -1238,14 +1243,13 @@ static void phy_release(struct device *dev)
+ 
+ static int __init phy_core_init(void)
+ {
+-	phy_class = class_create("phy");
+-	if (IS_ERR(phy_class)) {
+-		pr_err("failed to create phy class --> %ld\n",
+-			PTR_ERR(phy_class));
+-		return PTR_ERR(phy_class);
+-	}
++	int err;
+ 
+-	phy_class->dev_release = phy_release;
++	err = class_register(&phy_class);
++	if (err) {
++		pr_err("failed to register phy class");
++		return err;
++	}
+ 
+ 	phy_debugfs_root = debugfs_create_dir("phy", NULL);
+ 
+@@ -1256,6 +1260,6 @@ device_initcall(phy_core_init);
+ static void __exit phy_core_exit(void)
+ {
+ 	debugfs_remove_recursive(phy_debugfs_root);
+-	class_destroy(phy_class);
++	class_unregister(&phy_class);
+ }
+ module_exit(phy_core_exit);
 
-The plan is to include multiple power-domains and fw-managed
-property or similar in the device tree and fw-managed property
-will be deciding if we need some resource management offloaded
-to firmware. So, OS is always in control here. The decision
-making will be done in the drivers. Also, there will be no
-separate vendor hooks.
+---
+base-commit: 00ca8a15dafa990d391abc37f2b8256ddf909b35
+change-id: 20240305-class_cleanup-phy-668a148b2acd
 
-> Best regards,
-> Krzysztof
-> 
+Best regards,
+-- 
+Ricardo B. Marliere <ricardo@marliere.net>
+
 
 -- 
 linux-phy mailing list
