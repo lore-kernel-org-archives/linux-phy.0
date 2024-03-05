@@ -4,131 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF699C54798
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 17:12:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D37C54798
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Mar 2024 18:03:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BVDpLnbjT1EXCELMKLxpkBUX6uON1aK22BxXOa7jkcM=; b=0ON2twv3lJfymQ
-	wOGsmceZgWLBr3LP6gsG4wByd81u52BxVgGStQV7N5j9XyEgNtHZEoVMgbq6qkrJguzJJmvgCUnGr
-	m7v6AUIzzCRc85JKVqPzN//3K6JS9OeGtGw9fP8caXae3fDHQwgOcpRthg0bmfXZ6CWuS6DVERh7T
-	ktcQhXB+3l8Lrkv5lBvFzGWwNSaP9JGqAVf/m3cHdgOUpoyGKADHzpMlOAZLTtZlycaSrzCWuZCqw
-	JBoWMvysgn4AQqx4eYM639ql/aDh5Eb8CmfTAHoKoOfwKFLK4SLXN7ho6fJ9wa81bOUeJRfw4O9SZ
-	9ck/RBLbI1k6pPuvtTKQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=cZBW9FzPKMkWa2BRu+yRYrbrEgM6cFoHgQsjz22PTzc=; b=kC7Z8/a9VmxdbE4X8VHYANVD0D
+	iDPpzQsZxRjWL1sYAPrr/iBh8bQ0K28BvwiBUmIm645DaXmJC3vaTkzcdhktsCCrQ9S6RXP/bO8hS
+	HD/hBh+fj+ZPQVaDgwYsv7g0RtMe+S1vItBsZFAc+houhn+pGjHLwScdqBZ+E+oMaw7z9D6+fCvOK
+	MFAdqxTfoLigXXhWT9EAzkMDYOJIOj0LFAhPzK+OKUUDq8KoDpqPvCdYuJywrv1x/9spW3TJCoeBx
+	DWmsiRaeqAgRltCjbqdGy09l/7dl2rfSBPlu9Du78xSmS12QxnZeWjmbwza7K5UDr39KyuBSmSvIR
+	vwlqSn/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhYL5-0000000Ednu-2XTM;
-	Tue, 05 Mar 2024 17:12:27 +0000
-Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	id 1rhZ8x-0000000Emyb-0ydL;
+	Tue, 05 Mar 2024 18:03:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhYL2-0000000EdlU-0u39
+	id 1rhZ8u-0000000EmyC-2mcl
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Mar 2024 17:12:25 +0000
-Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-a458eb7db13so181560766b.2
-        for <linux-phy@lists.infradead.org>; Tue, 05 Mar 2024 09:12:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1709658741; x=1710263541; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=tw5qY/yrG8Cl06TuYqfyN+gfIP9rYoMHvnA9fsjGPpE=;
-        b=Esq8/nDJwe5BkuJXUXAmYfFXdJVB8zEHNf8AvpPyh5hIpofSXARcuynS1UjhwweuY9
-         zwIyaxxhds532YTZ+TZwY2pL/90xmAPmoUmBDLftb2PN4WyrRplIlr9mCfSwdrkY8d17
-         K9jHnyps5i+G9dzWspRTWML5sP6k5rczy8okilzRqg5u7ofWOQH4CzA6ZsSvil5K8XT8
-         CXLnKnw1ngB4hEYRNS/JL7uEsPNohPqCUbWA6hA+9pF8VE/1TUvmw4XlBmxMs3o54Hfc
-         DzF0lSISaOovVRS4t4e2JlzSxu/mHLzPPx95jFMqY9SrsIJqWWhP2nUChIQysSqQpMBv
-         XFZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709658741; x=1710263541;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tw5qY/yrG8Cl06TuYqfyN+gfIP9rYoMHvnA9fsjGPpE=;
-        b=ccNyxSu1w/0iovbQnRbYGmhF8OQvtKqbRp09VSaQiRpkjAf+3xCPQim0BhL2es8nbP
-         +7TTxrbFdwR7h3Y4ok58Fa2MK3L1upPuAp3GqPAtvzD8I5REp7OUmM2w0ywt1J/1P4Wx
-         4TsDTaG/3tFO94FaqQ6Mj+ET2MmGelpU8VJ+Rl3IO0+9OcEuBlp53oMhHIRrdoxO/P5A
-         dDZqIoYVzs06/smI3i4ErIzqrYwA+baaWGfWeBTUzGzoshbvAq2CDk3ijMkbstPs5za2
-         xFB9juZAo+eCmLbSQLtDTVFlB4MMehAy7NGOJmn3PrjnSlANk7gCKJ5R4jTOLVaLQEIo
-         9F3g==
-X-Forwarded-Encrypted: i=1; AJvYcCX3l6nDgmo0QG2fNObtI/wM2ZHTKvTysMo2a+GxfHiIaTV42S9PEo7vGONiqKhuThdCPHB5NnFUfLL2t23Jk8furR7NzEucWSh728qmbQ==
-X-Gm-Message-State: AOJu0YwfPvIxZQa1x/hFfrsz+l99/l3KrRM3FKKBKZPqqfpMMATsTyKR
-	CHl7WyF5+ZSuXzWceXEE2wreahbdmLmtdqTE2HY4z/KUAt/KtaHtoFXFiRBHK4k=
-X-Google-Smtp-Source: AGHT+IGBRWKPpgiOPv81nwRPgePQqNj1yMSlZJA2kwknURX1IDOqsusbtKktkwBfxEs4zczyJJPAhA==
-X-Received: by 2002:a17:906:1d5a:b0:a44:48c5:85f6 with SMTP id o26-20020a1709061d5a00b00a4448c585f6mr9000357ejh.43.1709658741636;
-        Tue, 05 Mar 2024 09:12:21 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.222.97])
-        by smtp.gmail.com with ESMTPSA id d14-20020a170906040e00b00a4138c3f065sm6192107eja.56.2024.03.05.09.12.19
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Mar 2024 09:12:21 -0800 (PST)
-Message-ID: <4d2501a7-d56d-4736-95d7-41556166859b@linaro.org>
-Date: Tue, 5 Mar 2024 18:12:18 +0100
+	Tue, 05 Mar 2024 18:03:58 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 425G05IO021625;
+	Tue, 5 Mar 2024 18:03:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=Av2mb1Kc5Cdu2jRZCAhrELoJozZQqOJF1ySrghSTjG8=; b=eC
+	pmSp7wWsZyW2oI/71bieR3USbmLW7hlVawZjh4sj2EabYAYKJzQ2TMBe56fw6Xda
+	wZZcYLS6oQ2f4iqCoCTsqIXjDStuPDXaOTnAl6t6lrJh+s1BJiJgDL5AZ9e463LB
+	K6lbx1p5EfWba5TdgzinC4GGP7qIwPdtOL0siRFy8NChRG8j5uxW9nnDNOb7LR8k
+	bqBoXK//2Y1Z3Yi2SxUMbhpaY2pnClpxfUhpjuYAjOCanAsY4rdnP9Uwf/oIZeJr
+	pMf0WIXpcnaP4NUCvXLmf/zms69+7J1jTUtGVgIfFlWCeRRAAD4hHimUy0rH0Byj
+	qqzqLHVyzgpS4VPjX0+A==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wp2uwrubt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 05 Mar 2024 18:03:46 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 425I3icl009739
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 5 Mar 2024 18:03:44 GMT
+Received: from [10.216.51.173] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 5 Mar
+ 2024 10:03:36 -0800
+Message-ID: <986b49f5-6a4a-430d-ba6a-2f387f2a262a@quicinc.com>
+Date: Tue, 5 Mar 2024 23:33:33 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC 0/3] Enable firmware-managed USB resources on Qcom targets
+Subject: Re: [RFC 1/3] dt-bindings: usb: qcom,dwc3: Add support for multiple
+ power-domains
 Content-Language: en-US
-To: Sriram Dash <quic_sriramd@quicinc.com>, andersson@kernel.org,
- konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- gregkh@linuxfoundation.org, quic_wcheng@quicinc.com,
- Thinh.Nguyen@synopsys.com, p.zabel@pengutronix.de,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, quic_psodagud@quicinc.com,
- quic_nkela@quicinc.com, manivannan.sadhasivam@linaro.org,
- ulf.hansson@linaro.org, sudeep.holla@arm.com, quic_shazhuss@quicinc.com
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh@kernel.org>,
+        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <quic_wcheng@quicinc.com>,
+        <Thinh.Nguyen@synopsys.com>, <p.zabel@pengutronix.de>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <quic_psodagud@quicinc.com>,
+        <quic_nkela@quicinc.com>, <manivannan.sadhasivam@linaro.org>,
+        <ulf.hansson@linaro.org>, <sudeep.holla@arm.com>,
+        <quic_shazhuss@quicinc.com>
 References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
+ <1709657858-8563-2-git-send-email-quic_sriramd@quicinc.com>
+ <86371fc0-ef49-4dc9-b98c-7c5131cd1227@linaro.org>
+From: Sriram Dash <quic_sriramd@quicinc.com>
+In-Reply-To: <86371fc0-ef49-4dc9-b98c-7c5131cd1227@linaro.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: JustTdGEHBZhhpGdfimgSnESEslb1W-h
+X-Proofpoint-ORIG-GUID: JustTdGEHBZhhpGdfimgSnESEslb1W-h
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-05_15,2024-03-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ lowpriorityscore=0 phishscore=0 spamscore=0 suspectscore=0
+ priorityscore=1501 clxscore=1011 mlxlogscore=808 impostorscore=0
+ mlxscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2403050143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240305_091224_559294_08664543 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20240305_100356_927980_BD7FEFA2 
+X-CRM114-Status: GOOD (  23.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,38 +105,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/03/2024 17:57, Sriram Dash wrote:
-> Some target systems allow multiple resources to be managed by firmware.
-
-Which? Why this is so vague...
-
-> On these targets, tasks related to clocks, regulators, resets, and
-> interconnects can be delegated to the firmware, while the remaining
-> responsibilities are handled by Linux.
+On 3/5/2024 10:37 PM, Krzysztof Kozlowski wrote:
+> On 05/03/2024 17:57, Sriram Dash wrote:
+>> Some target systems allow multiple resources to be managed by firmware.
+>> On these targets, tasks related to clocks, regulators, resets, and
+>> interconnects can be delegated to the firmware, while the remaining
+>> responsibilities are handled by Linux.
+>>
+>> To support the management of partial resources in Linux and leave the rest
+>> to firmware, multiple power domains are introduced. Each power domain can
+>> manage one or more resources, depending on the specific use case.
+>>
+>> These power domains handle SCMI calls to the firmware, enabling the
+>> activation and deactivation of firmware-managed resources.
+>>
+>> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
+>> ---
+>>   .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 74 ++++++++++++++++------
+>>   .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 49 ++++++++++++--
+>>   .../devicetree/bindings/usb/qcom,dwc3.yaml         | 37 ++++++++++-
+>>   3 files changed, 130 insertions(+), 30 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+>> index 1e2d4dd..53b9ba9 100644
+>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+>> @@ -44,7 +44,32 @@ properties:
+>>       maxItems: 5
+>>   
+>>     power-domains:
+>> -    maxItems: 1
+>> +    description: specifies a phandle to PM domain provider node
 > 
-> To support the management of partial resources in Linux and leave the rest
-> to firmware, multiple power domains are introduced. Each power domain can
-> manage one or more resources, depending on the specific use case.
+> Please drop all redundant descriptions. Adding them is not even related
+> to this patch.
 > 
-> These power domains handle SCMI calls to the firmware, enabling the
-> activation and deactivation of firmware-managed resources.
+
+Thanks Krzysztof for the super quick response !
+Sure. will drop the description for power-domain
+and power-doamin-names.
+
+>> +    minItems: 1
+>> +    maxItems: 2
+>> +
+>> +  power-domain-names:
+>> +    description:
+>> +      A list of power domain name strings sorted in the same order as the
+>> +      power-domains property.
+>> +
+>> +      For platforms where some resource are firmware managed, the name
+>> +      corresponding to the index of an SCMI domain provider can be
+>> +      "usb_core" or "usb_transfer".
+>> +    items:
+>> +      - const: usb_core
+>> +      - const: usb_transfer
 > 
-> The driver is responsible for managing multiple power domains and
-> linking them to consumers as needed. Incase there is only single
-> power domain, it is considered to be a standard GDSC hooked on to
-> the qcom dt node which is read and assigned to device structure
-> (by genpd framework) before the driver probe even begins.
+> How is this related to fw-managed? I fail to see it. Don't mix
+> independent problems in one patch.
+> 
 
-This will break the ABI. Sorry, come with an ABI stable solution.
+Some of the the resources like clocks, regulators, etc will be 
+controlled by the firmware instead of OS. However, some resources
+still will be controlled by OS (interrupts for example).
 
-Best regards,
-Krzysztof
+So, to support the management of partial resources in Linux, and
+offload the other resource management to firmware, multiple power 
+domains are introduced. They will be corresponding to different
+hw blocks.
 
+Do you suggest splitting the addition of power-domain-names and
+addition of fw-managed property in separate patches for bindings!
+
+>> +
+>> +  qmp,fw-managed:
+> 
+> Please do not upstream vendor code directly, but perform basic
+> adjustment to upstream Linux kernel. There is no such company as gmp.
+> 
+> Run this first through your internal review process.
+> 
+
+This property is newly introduced for the qmp superspeed phy and
+similar dt properties are introduced for hsphy and dwc3 qcom
+controller glue layer driver. It will govern the suspend/ resume
+of the resources (by firmware or OS) as required.
+
+>> +    description:
+>> +      Some targets allow multiple resources to be managed by firmware.
+> 
+> You miss clear mapping between compatibles and this property - allOf
+> restricting it to specific SoCs.
+> 
+> Is this different property than qcom,controlled-remotely?
+> 
+
+No. unlike "qcom,controlled-remotely", which lets the OS know only to
+consume the resources, "qmp,fw-managed" property will decide the
+resource management and trigger the suspend/ resume from OS, which
+will be handled by the firmware.
+
+Can we reuse the property "qcom,controlled-remotely" here? If so,
+we can replace the aformentioned property with qmp phy, hsphy, and
+controller glue layer property. Please suggest.
+
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-phy mailing list
