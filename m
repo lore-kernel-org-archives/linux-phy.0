@@ -4,68 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A0ADC54E41
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Mar 2024 15:12:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E96C54E41
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Mar 2024 15:50:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ie6zQu07wfsuKONvdGZvS6Q4Iyv6FZEHfTfy47YJ0iE=; b=bxiNILw9u5/i2T0TshJTv89Jlg
-	/zwg3JNHT2LV/WFI4hyfXv6scU8FvtpdJ7xJiMeXRZhacpLgxKm7LtVTiRXQhrj3CkWJJk/RIDELp
-	Q9cnDH9ZsTS4biloe9sXRg6U5EBFJfJtpDtELFrbGaaMNz7MmJGie1CjgRNmXx0UwA53U8aj2hFc6
-	70VGNxIwMkbreMkRooMCu7afUg5Zxx8OzF/ck23uYa7U9tzGm10kvAWZyHmhiksZDcomCoHaakue1
-	H5V1IWBTW4jeZbS+kEXZ5HIKOBL5KVEK62XzbaIcvCpVXZxl9Qf+dMJWE1RO/4zsJzvh2JBk4v69W
-	n/Epy6nw==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gGXdBW7BhvEwnwTRsnNEYptYpN+Nvqg/EjsFHCc7QRY=; b=mnZpd7Qz5VNmzo
+	cMCIowm2Co0O7Q8gBQQvvbdedrDtsUsxkUMZSOhRAVQ3ANXosgbJAz8dCmE3wQ1+pF7RSiX9hFZ20
+	b7ZldBEkdIX8Cx3zpePG8y1KoJZ2kK4FaITmiZcZoMbbZzL3kmS0JupN3DBrmiHkHg9yqTOzooJVF
+	aLo/Vw5dE83oVUdMQKdU1m1+Mb/zf08jUzC2RxHF/jLK6CT4A3QNEhESSRoqNSO2OIaaWjTNf76cD
+	wL441ogPFALlyqwwY1w+vhk9EWpzQaSQuotuf9QZwth1CKPoNMXyNm7mw5Ou0EwC7khd1+h3nDTUz
+	o4eeSgqNmAecOA/Qg/VA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhswJ-00000000jOp-0988;
-	Wed, 06 Mar 2024 15:12:15 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rhtWq-00000000qt4-0eHk;
+	Wed, 06 Mar 2024 15:50:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhswD-00000000jMh-3rww;
-	Wed, 06 Mar 2024 15:12:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id B02DACE2241;
-	Wed,  6 Mar 2024 15:12:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D39BC433C7;
-	Wed,  6 Mar 2024 15:12:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1709737927;
-	bh=RkXvgfFkQeab6f37tUpRH2m7Hc4zq4G2QQFYL2agHN4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DD1IDXNmd2Htv29SsgSyAU2hFP3h9kX8C2GCVtBUXQtN/aXH8PXn2lLuvXkHZ+Vgm
-	 i20lg50sutBkjRnMuWtuxpjmFeNe+ZZys5LS8C5YDqH+ZRrx+pGOXwuDwwsRbLYq7S
-	 9oTJmQHPvJNAY3HVBOtSf9+LL40f57ybK8qSOsEJ4R+Es7rNc8VW7vgQnMB5CoFzbW
-	 A+vCCYEIED6D5jhPbBnIqhi1m86tzqaINKuUi6M7SFMXZsCTwFGbuzRcxiWqyickpQ
-	 dZdsZQyd5B3EdrHSZlSpof+SIg6QQ58HkrDhQNe/iHIrkmQYYzk5vy+9rzMTdIlh8c
-	 2qiqyQ8nE9iMg==
-Date: Wed, 6 Mar 2024 16:12:04 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, David Airlie <airlied@gmail.com>, 
-	Daniel Vetter <daniel@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
-	Sandor Yu <Sandor.yu@nxp.com>, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, imx@lists.linux.dev, 
-	linux-arm-kernel@lists.infradead.org, linux@ew.tq-group.com
-Subject: Re: [PATCH v15 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Message-ID: <20240306-mysterious-hoatzin-of-faith-49aec0@houat>
-References: <20240306101625.795732-1-alexander.stein@ew.tq-group.com>
- <20240306101625.795732-5-alexander.stein@ew.tq-group.com>
+	id 1rhtWn-00000000qsL-0EOf
+	for linux-phy@lists.infradead.org;
+	Wed, 06 Mar 2024 15:49:58 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 426FISU6031255;
+	Wed, 6 Mar 2024 15:49:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=MQc1wjjU8NkRsMI5u/E32Gitd9ayAX0A/PGoygQBeSc=; b=KC
+	RdPITzRL+3fcBS2Ri3EqXyGW9R/EHPVXwQ4tOoJJJ0fFoqgkKjfs7gKJUVCA3d9P
+	GBRATxpEaiVs+M4K1d+9CQbOcY9xwMwDJZla9OnuSIG6hKLTD8c34EoGAWToi0/W
+	PTt8RosHOG6RMZn99fGrEGU+vE55N2ceQBpDVVBcd04qnbbIB3RoR4LiNMDG7j00
+	UGume81Z97SudfodeJcvMgL4V63OBA9qW9WYXrqfqJbU2D4VWY/r+l6oZcT7wveE
+	LFJdDAvd6fehMfXFAIQdTR3ebLG4J7wYqwvQ+S2GRNwUgEYpfKwICFNT//1iuNdB
+	dYXoGyqzliEA25nPUOzw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wpktps2y5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 06 Mar 2024 15:49:45 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 426FnieG012157
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 6 Mar 2024 15:49:44 GMT
+Received: from [10.216.51.173] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 6 Mar
+ 2024 07:49:37 -0800
+Message-ID: <b2ae44ff-55e2-495b-b320-cbb8deae81be@quicinc.com>
+Date: Wed, 6 Mar 2024 21:19:34 +0530
 MIME-Version: 1.0
-In-Reply-To: <20240306101625.795732-5-alexander.stein@ew.tq-group.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC 1/3] dt-bindings: usb: qcom,dwc3: Add support for multiple
+ power-domains
+Content-Language: en-US
+To: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>,
+        <andersson@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <dmitry.baryshkov@linaro.org>
+CC: <quic_shazhuss@quicinc.com>, <linux-usb@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <Thinh.Nguyen@synopsys.com>,
+        <kishon@kernel.org>, <konrad.dybcio@linaro.org>, <robh@kernel.org>,
+        <sudeep.holla@arm.com>, <p.zabel@pengutronix.de>,
+        <ulf.hansson@linaro.org>, <conor+dt@kernel.org>,
+        <manivannan.sadhasivam@linaro.org>, <quic_psodagud@quicinc.com>,
+        <quic_nkela@quicinc.com>, <gregkh@linuxfoundation.org>,
+        <linux-arm-msm@vger.kernel.org>, <quic_wcheng@quicinc.com>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <vkoul@kernel.org>
+References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
+ <1709657858-8563-2-git-send-email-quic_sriramd@quicinc.com>
+ <86371fc0-ef49-4dc9-b98c-7c5131cd1227@linaro.org>
+ <986b49f5-6a4a-430d-ba6a-2f387f2a262a@quicinc.com>
+ <84618a4a-be20-4c59-badc-15fa65debf4c@linaro.org>
+ <e441e458-a90b-495f-abf1-448620c14c85@quicinc.com>
+From: Sriram Dash <quic_sriramd@quicinc.com>
+In-Reply-To: <e441e458-a90b-495f-abf1-448620c14c85@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: GYy6pibLFHOesiWJtM5ei5MgkmJmw7qf
+X-Proofpoint-ORIG-GUID: GYy6pibLFHOesiWJtM5ei5MgkmJmw7qf
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-06_10,2024-03-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 phishscore=0 adultscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 mlxlogscore=793 mlxscore=0 suspectscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2403060126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240306_071210_425025_3AF55104 
-X-CRM114-Status: GOOD (  30.33  )
+X-CRM114-CacheID: sfid-20240306_074957_241367_3AE82DE2 
+X-CRM114-Status: GOOD (  21.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,471 +111,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4962371630520887447=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============4962371630520887447==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="lgqwn3iwtrpezttc"
-Content-Disposition: inline
-
-
---lgqwn3iwtrpezttc
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Wed, Mar 06, 2024 at 11:16:21AM +0100, Alexander Stein wrote:
-> +static int cdns_mhdp8501_read_hpd(struct cdns_mhdp8501_device *mhdp)
-> +{
-> +	u8 status;
-> +	int ret;
-> +
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +
-> +	ret = cdns_mhdp_mailbox_send(&mhdp->base, MB_MODULE_ID_GENERAL,
-> +				     GENERAL_GET_HPD_STATE, 0, NULL);
-> +	if (ret)
-> +		goto err_get_hpd;
-> +
-> +	ret = cdns_mhdp_mailbox_recv_header(&mhdp->base, MB_MODULE_ID_GENERAL,
-> +					    GENERAL_GET_HPD_STATE,
-> +					    sizeof(status));
-> +	if (ret)
-> +		goto err_get_hpd;
-> +
-> +	ret = cdns_mhdp_mailbox_recv_data(&mhdp->base, &status, sizeof(status));
-> +	if (ret)
-> +		goto err_get_hpd;
-> +
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +
-> +	return status;
-> +
-> +err_get_hpd:
-> +	dev_err(mhdp->dev, "read hpd  failed: %d\n", ret);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +
-> +	return ret;
-> +}
-> +
-> +enum drm_connector_status cdns_mhdp8501_detect(struct cdns_mhdp8501_device *mhdp)
-> +{
-> +	u8 hpd = 0xf;
-> +
-> +	hpd = cdns_mhdp8501_read_hpd(mhdp);
-> +	if (hpd == 1)
-> +		return connector_status_connected;
-> +	else if (hpd == 0)
-> +		return connector_status_disconnected;
-> +
-> +	dev_warn(mhdp->dev, "Unknown cable status, hdp=%u\n", hpd);
-> +	return connector_status_unknown;
-> +}
-> +
-> +static void hotplug_work_func(struct work_struct *work)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = container_of(work,
-> +						     struct cdns_mhdp8501_device,
-> +						     hotplug_work.work);
-> +	enum drm_connector_status status = cdns_mhdp8501_detect(mhdp);
-> +
-> +	drm_bridge_hpd_notify(&mhdp->bridge, status);
-> +
-> +	if (status == connector_status_connected) {
-> +		/* Cable connected  */
-> +		DRM_INFO("HDMI/DP Cable Plug In\n");
-> +		enable_irq(mhdp->irq[IRQ_OUT]);
-> +	} else if (status == connector_status_disconnected) {
-> +		/* Cable Disconnected  */
-> +		DRM_INFO("HDMI/DP Cable Plug Out\n");
-> +		enable_irq(mhdp->irq[IRQ_IN]);
-> +	}
-> +}
-> +
-> +static irqreturn_t cdns_mhdp8501_irq_thread(int irq, void *data)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = data;
-> +
-> +	disable_irq_nosync(irq);
-> +
-> +	mod_delayed_work(system_wq, &mhdp->hotplug_work,
-> +			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
-> +
-> +	return IRQ_HANDLED;
-> +}
-
-AFAICT from the rest of the driver, you support HDMI modes with a
-character rate > 340Mchar/s, and thus you need to enable the scrambler.
-
-If you unplug/replug a monitor with the scrambler enabled though, and if
-there's no userspace component to react to the userspace event, the code
-you have here won't enable the scrambler again.
-
-You can test that by using modetest with a 4k@60Hz mode or something,
-and then disconnecting / reconnecting the monitor.
-
-We addressed it in vc4 in commit 6bed2ea3cb38 ("drm/vc4: hdmi: Reset
-link on hotplug").
-
-Arguably, the whole handling of the HDMI scrambling setup should be
-turned into a helper, and I wanted to extend the work I've been doing
-around the HDMI infra to support the scrambler setup once it landed.
-
-> +static int cdns_hdmi_mode_config(struct cdns_mhdp8501_device *mhdp,
-> +				 struct drm_display_mode *mode,
-> +				 struct video_info *video_info)
-> +{
-> +	int ret;
-> +	u32 val;
-> +	u32 vsync_lines = mode->vsync_end - mode->vsync_start;
-> +	u32 eof_lines = mode->vsync_start - mode->vdisplay;
-> +	u32 sof_lines = mode->vtotal - mode->vsync_end;
-> +	u32 hblank = mode->htotal - mode->hdisplay;
-> +	u32 hactive = mode->hdisplay;
-> +	u32 vblank = mode->vtotal - mode->vdisplay;
-> +	u32 vactive = mode->vdisplay;
-> +	u32 hfront = mode->hsync_start - mode->hdisplay;
-> +	u32 hback = mode->htotal - mode->hsync_end;
-> +	u32 vfront = eof_lines;
-> +	u32 hsync = hblank - hfront - hback;
-> +	u32 vsync = vsync_lines;
-> +	u32 vback = sof_lines;
-> +	u32 v_h_polarity = ((mode->flags & DRM_MODE_FLAG_NHSYNC) ? 0 : 1) +
-> +			((mode->flags & DRM_MODE_FLAG_NVSYNC) ? 0 : 2);
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, SCHEDULER_H_SIZE, (hactive << 16) + hblank);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, SCHEDULER_V_SIZE, (vactive << 16) + vblank);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, HDTX_SIGNAL_FRONT_WIDTH, (vfront << 16) + hfront);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, HDTX_SIGNAL_SYNC_WIDTH, (vsync << 16) + hsync);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, HDTX_SIGNAL_BACK_WIDTH, (vback << 16) + hback);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, HSYNC2VSYNC_POL_CTRL, v_h_polarity);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/* Reset Data Enable */
-> +	cdns_mhdp_reg_read(&mhdp->base, HDTX_CONTROLLER, &val);
-> +	val &= ~F_DATA_EN(1);
-> +	ret = cdns_mhdp_reg_write(&mhdp->base, HDTX_CONTROLLER, val);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/* Set bpc */
-> +	val &= ~F_VIF_DATA_WIDTH(3);
-> +	switch (video_info->bpc) {
-> +	case 10:
-> +		val |= F_VIF_DATA_WIDTH(1);
-> +		break;
-> +	case 12:
-> +		val |= F_VIF_DATA_WIDTH(2);
-> +		break;
-> +	case 16:
-> +		val |= F_VIF_DATA_WIDTH(3);
-> +		break;
-> +	case 8:
-> +	default:
-> +		val |= F_VIF_DATA_WIDTH(0);
-> +		break;
-> +	}
-> +
-> +	/* select color encoding */
-> +	val &= ~F_HDMI_ENCODING(3);
-> +	switch (video_info->color_fmt) {
-> +	case DRM_COLOR_FORMAT_YCBCR444:
-> +		val |= F_HDMI_ENCODING(2);
-> +		break;
-> +	case DRM_COLOR_FORMAT_YCBCR422:
-> +		val |= F_HDMI_ENCODING(1);
-> +		break;
-> +	case DRM_COLOR_FORMAT_YCBCR420:
-> +		val |= F_HDMI_ENCODING(3);
-> +		break;
-> +	case DRM_COLOR_FORMAT_RGB444:
-> +	default:
-> +		val |= F_HDMI_ENCODING(0);
-> +		break;
-> +	}
-
-It looks like you're only using RGB444?
-
-> +static int cdns_hdmi_avi_info_set(struct cdns_mhdp8501_device *mhdp,
-> +				  struct drm_display_mode *mode)
-> +{
-> +	struct hdmi_avi_infoframe frame;
-> +	struct drm_connector_state *conn_state = mhdp->curr_conn->state;
-> +	struct drm_display_mode *adj_mode;
-> +	enum hdmi_quantization_range qr;
-> +	u8 buf[32];
-> +	int ret;
-> +
-> +	/* Initialise info frame from DRM mode */
-> +	drm_hdmi_avi_infoframe_from_display_mode(&frame, mhdp->curr_conn, mode);
-> +
-> +	frame.colorspace = cdns_hdmi_colorspace(mhdp->video_info.color_fmt);
-> +
-> +	drm_hdmi_avi_infoframe_colorimetry(&frame, conn_state);
-> +
-> +	adj_mode = &mhdp->bridge.encoder->crtc->state->adjusted_mode;
-> +
-> +	qr = drm_default_rgb_quant_range(adj_mode);
-> +
-> +	drm_hdmi_avi_infoframe_quant_range(&frame, mhdp->curr_conn,
-> +					   adj_mode, qr);
-> +
-> +	ret = hdmi_avi_infoframe_pack(&frame, buf + 1, sizeof(buf) - 1);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "failed to pack AVI infoframe: %d\n", ret);
-> +		return -1;
-> +	}
-> +
-> +	buf[0] = 0;
-> +	cdns_hdmi_infoframe_set(mhdp, 0, sizeof(buf), buf, HDMI_INFOFRAME_TYPE_AVI);
-> +
-> +	return 0;
-> +}
-> +
-> +static void cdns_hdmi_vendor_info_set(struct cdns_mhdp8501_device *mhdp,
-> +				      struct drm_display_mode *mode)
-> +{
-> +	struct hdmi_vendor_infoframe frame;
-> +	u8 buf[32];
-> +	int ret;
-> +
-> +	/* Initialise vendor frame from DRM mode */
-> +	ret = drm_hdmi_vendor_infoframe_from_display_mode(&frame, mhdp->curr_conn, mode);
-> +	if (ret < 0) {
-> +		dev_info(mhdp->dev, "No vendor infoframe\n");
-> +		return;
-> +	}
-> +
-> +	ret = hdmi_vendor_infoframe_pack(&frame, buf + 1, sizeof(buf) - 1);
-> +	if (ret < 0) {
-> +		dev_warn(mhdp->dev, "Unable to pack vendor infoframe: %d\n", ret);
-> +		return;
-> +	}
-> +
-> +	buf[0] = 0;
-> +	cdns_hdmi_infoframe_set(mhdp, 3, sizeof(buf), buf, HDMI_INFOFRAME_TYPE_VENDOR);
-> +}
-> +
-> +static void cdns_hdmi_drm_info_set(struct cdns_mhdp8501_device *mhdp)
-> +{
-> +	struct drm_connector_state *conn_state;
-> +	struct hdmi_drm_infoframe frame;
-> +	u8 buf[32];
-> +	int ret;
-> +
-> +	conn_state = mhdp->curr_conn->state;
-> +
-> +	if (!conn_state->hdr_output_metadata)
-> +		return;
-> +
-> +	ret = drm_hdmi_infoframe_set_hdr_metadata(&frame, conn_state);
-> +	if (ret < 0) {
-> +		dev_dbg(mhdp->dev, "couldn't set HDR metadata in infoframe\n");
-> +		return;
-> +	}
-> +
-> +	ret = hdmi_drm_infoframe_pack(&frame, buf + 1, sizeof(buf) - 1);
-> +	if (ret < 0) {
-> +		dev_dbg(mhdp->dev, "couldn't pack HDR infoframe\n");
-> +		return;
-> +	}
-> +
-> +	buf[0] = 0;
-> +	cdns_hdmi_infoframe_set(mhdp, 3, sizeof(buf), buf, HDMI_INFOFRAME_TYPE_DRM);
-> +}
-
-This is another thing that was supposed to be handled by my current
-series here:
-https://lore.kernel.org/r/20240222-kms-hdmi-connector-state-v7-0-8f4af575fce2@kernel.org
-
-In particular, you're missing the SPD infoframes here.
-
-> +static void cdns_hdmi_mode_set(struct cdns_mhdp8501_device *mhdp)
-> +{
-
-You should use atomic_enable here
-
-> +	struct drm_display_mode *mode = &mhdp->mode;
-> +	union phy_configure_opts phy_cfg;
-> +	int ret;
-> +
-> +	/* video mode check */
-> +	if (mode->clock == 0 || mode->hdisplay == 0 || mode->vdisplay == 0)
-> +		return;
-> +
-> +	cdns_hdmi_lanes_config(mhdp);
-> +
-> +	phy_cfg.hdmi.pixel_clk_rate = mode->clock;
-> +	phy_cfg.hdmi.bpc = mhdp->video_info.bpc;
-> +	phy_cfg.hdmi.color_space = cdns_hdmi_colorspace(mhdp->video_info.color_fmt);
-> +
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_configure(mhdp->phy, &phy_cfg);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret) {
-> +		dev_err(mhdp->dev, "%s: phy_configure() failed: %d\n",
-> +			__func__, ret);
-> +		return;
-> +	}
-> +
-> +	cdns_hdmi_sink_config(mhdp);
-> +
-> +	ret = cdns_hdmi_ctrl_init(mhdp, mhdp->hdmi.hdmi_type);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "%s, ret = %d\n", __func__, ret);
-> +		return;
-> +	}
-> +
-> +	/* Config GCP */
-> +	if (mhdp->video_info.bpc == 8)
-> +		cdns_hdmi_disable_gcp(mhdp);
-> +	else
-> +		cdns_hdmi_enable_gcp(mhdp);
-> +
-> +	ret = cdns_hdmi_avi_info_set(mhdp, mode);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "%s ret = %d\n", __func__, ret);
-> +		return;
-> +	}
-> +
-> +	/* vendor info frame is enabled only for HDMI1.4 4K mode */
-> +	cdns_hdmi_vendor_info_set(mhdp, mode);
-> +
-> +	cdns_hdmi_drm_info_set(mhdp);
-> +
-> +	ret = cdns_hdmi_mode_config(mhdp, mode, &mhdp->video_info);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "CDN_API_HDMITX_SetVic_blocking ret = %d\n", ret);
-> +		return;
-> +	}
-> +}
-> +
-> +static int cdns_hdmi_bridge_attach(struct drm_bridge *bridge,
-> +				   enum drm_bridge_attach_flags flags)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +
-> +	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR)) {
-> +		dev_err(mhdp->dev, "do not support creating a drm_connector\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static enum drm_mode_status
-> +cdns_hdmi_bridge_mode_valid(struct drm_bridge *bridge,
-> +			    const struct drm_display_info *info,
-> +			    const struct drm_display_mode *mode)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +	enum drm_mode_status mode_status = MODE_OK;
-> +	union phy_configure_opts phy_cfg;
-> +	int ret;
-> +
-> +	/* We don't support double-clocked and Interlaced modes */
-> +	if (mode->flags & DRM_MODE_FLAG_DBLCLK ||
-> +	    mode->flags & DRM_MODE_FLAG_INTERLACE)
-> +		return MODE_BAD;
-> +
-> +	/* MAX support pixel clock rate 594MHz */
-> +	if (mode->clock > 594000)
-> +		return MODE_CLOCK_HIGH;
-> +
-> +	if (mode->hdisplay > 3840)
-> +		return MODE_BAD_HVALUE;
-> +
-> +	if (mode->vdisplay > 2160)
-> +		return MODE_BAD_VVALUE;
-> +
-> +	/* Check modes supported by PHY */
-> +	phy_cfg.hdmi.pixel_clk_rate = mode->clock;
-> +
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_validate(mhdp->phy, PHY_MODE_HDMI, 0, &phy_cfg);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret < 0)
-> +		return MODE_CLOCK_RANGE;
-> +
-> +	return mode_status;
-> +}
-
-mode_valid is only called when the userspace asks for the current modes
-available on a connector, but not when the userspace programs a mode.
-This is atomic_check's job, so you probably want to have a similar
-atomic_check here.
-
-> +static bool
-> +cdns_hdmi_bridge_mode_fixup(struct drm_bridge *bridge,
-> +			    const struct drm_display_mode *mode,
-> +			    struct drm_display_mode *adjusted_mode)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +	struct video_info *video = &mhdp->video_info;
-> +
-> +	/* The only currently supported format */
-> +	video->bpc = 8;
-> +	video->color_fmt = DRM_COLOR_FORMAT_RGB444;
-> +
-> +	return true;
-> +}
-
-mode_fixup is deprecated. I guess you wanted to use reset here.
-Generally speaking, the bpc and color_format should be part of your
-state anyway.
-
-I know Dmitry was interested in plugging my HDMI series into the bridge
-infrastructure. It would benefit your driver quite a lot I think, so you
-probably want to sync up with him.
-
-Maxime
-
---lgqwn3iwtrpezttc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZeiHwwAKCRDj7w1vZxhR
-xfDQAP98OUYzPDbd7t89OCitGUkIbsDS/ABj8YL94liZuqy66wD/Sou5Qp414MHB
-mohzojfgJUYyXYSlQDYCjFwCjyOb0gs=
-=ee0H
------END PGP SIGNATURE-----
-
---lgqwn3iwtrpezttc--
-
-
---===============4962371630520887447==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4962371630520887447==--
-
+T24gMy82LzIwMjQgMTowMyBQTSwgS3Jpc2huYSBLdXJhcGF0aSBQU1NOViB3cm90ZToKPiAKPiAK
+PiBPbiAzLzYvMjAyNCAxMjozMyBQTSwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPj4gT24g
+MDUvMDMvMjAyNCAxOTowMywgU3JpcmFtIERhc2ggd3JvdGU6Cj4+PiBPbiAzLzUvMjAyNCAxMDoz
+NyBQTSwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPj4+PiBPbiAwNS8wMy8yMDI0IDE3OjU3
+LCBTcmlyYW0gRGFzaCB3cm90ZToKPj4+Pj4gU29tZSB0YXJnZXQgc3lzdGVtcyBhbGxvdyBtdWx0
+aXBsZSByZXNvdXJjZXMgdG8gYmUgbWFuYWdlZCBieSAKPj4+Pj4gZmlybXdhcmUuCj4+Pj4+IE9u
+IHRoZXNlIHRhcmdldHMsIHRhc2tzIHJlbGF0ZWQgdG8gY2xvY2tzLCByZWd1bGF0b3JzLCByZXNl
+dHMsIGFuZAo+Pj4+PiBpbnRlcmNvbm5lY3RzIGNhbiBiZSBkZWxlZ2F0ZWQgdG8gdGhlIGZpcm13
+YXJlLCB3aGlsZSB0aGUgcmVtYWluaW5nCj4+Pj4+IHJlc3BvbnNpYmlsaXRpZXMgYXJlIGhhbmRs
+ZWQgYnkgTGludXguCj4+Pj4+Cj4+Pj4+IFRvIHN1cHBvcnQgdGhlIG1hbmFnZW1lbnQgb2YgcGFy
+dGlhbCByZXNvdXJjZXMgaW4gTGludXggYW5kIGxlYXZlIAo+Pj4+PiB0aGUgcmVzdAo+Pj4+PiB0
+byBmaXJtd2FyZSwgbXVsdGlwbGUgcG93ZXIgZG9tYWlucyBhcmUgaW50cm9kdWNlZC4gRWFjaCBw
+b3dlciAKPj4+Pj4gZG9tYWluIGNhbgo+Pj4+PiBtYW5hZ2Ugb25lIG9yIG1vcmUgcmVzb3VyY2Vz
+LCBkZXBlbmRpbmcgb24gdGhlIHNwZWNpZmljIHVzZSBjYXNlLgo+Pj4+Pgo+Pj4+PiBUaGVzZSBw
+b3dlciBkb21haW5zIGhhbmRsZSBTQ01JIGNhbGxzIHRvIHRoZSBmaXJtd2FyZSwgZW5hYmxpbmcg
+dGhlCj4+Pj4+IGFjdGl2YXRpb24gYW5kIGRlYWN0aXZhdGlvbiBvZiBmaXJtd2FyZS1tYW5hZ2Vk
+IHJlc291cmNlcy4KPj4+Pj4KPj4+Pj4gU2lnbmVkLW9mZi1ieTogU3JpcmFtIERhc2ggPHF1aWNf
+c3JpcmFtZEBxdWljaW5jLmNvbT4KPj4+Pj4gLS0tCj4+Pj4+IMKgwqAgLi4uL3BoeS9xY29tLHNj
+ODI4MHhwLXFtcC11c2IzLXVuaS1waHkueWFtbMKgwqDCoMKgwqDCoMKgIHwgNzQgCj4+Pj4+ICsr
+KysrKysrKysrKysrKystLS0tLS0KPj4+Pj4gwqDCoCAuLi4vYmluZGluZ3MvcGh5L3Fjb20sdXNi
+LXNucHMtZmVtdG8tdjIueWFtbMKgwqDCoMKgwqDCoCB8IDQ5IAo+Pj4+PiArKysrKysrKysrKyst
+LQo+Pj4+PiDCoMKgIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9xY29tLGR3YzMueWFtbMKg
+wqDCoMKgwqDCoMKgwqAgfCAzNyArKysrKysrKysrLQo+Pj4+PiDCoMKgIDMgZmlsZXMgY2hhbmdl
+ZCwgMTMwIGluc2VydGlvbnMoKyksIDMwIGRlbGV0aW9ucygtKQo+Pj4+Pgo+Pj4+PiBkaWZmIC0t
+Z2l0IAo+Pj4+PiBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSxz
+YzgyODB4cC1xbXAtdXNiMy11bmktcGh5LnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvcGh5L3Fjb20sc2M4MjgweHAtcW1wLXVzYjMtdW5pLXBoeS55YW1sCj4+Pj4+IGlu
+ZGV4IDFlMmQ0ZGQuLjUzYjliYTkgMTAwNjQ0Cj4+Pj4+IC0tLSAKPj4+Pj4gYS9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sc2M4MjgweHAtcW1wLXVzYjMtdW5pLXBo
+eS55YW1sCj4+Pj4+ICsrKyAKPj4+Pj4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvcGh5L3Fjb20sc2M4MjgweHAtcW1wLXVzYjMtdW5pLXBoeS55YW1sCj4+Pj4+IEBAIC00NCw3
+ICs0NCwzMiBAQCBwcm9wZXJ0aWVzOgo+Pj4+PiDCoMKgwqDCoMKgwqAgbWF4SXRlbXM6IDUKPj4+
+Pj4gwqDCoMKgwqAgcG93ZXItZG9tYWluczoKPj4+Pj4gLcKgwqDCoCBtYXhJdGVtczogMQo+Pj4+
+PiArwqDCoMKgIGRlc2NyaXB0aW9uOiBzcGVjaWZpZXMgYSBwaGFuZGxlIHRvIFBNIGRvbWFpbiBw
+cm92aWRlciBub2RlCj4+Pj4KPj4+PiBQbGVhc2UgZHJvcCBhbGwgcmVkdW5kYW50IGRlc2NyaXB0
+aW9ucy4gQWRkaW5nIHRoZW0gaXMgbm90IGV2ZW4gcmVsYXRlZAo+Pj4+IHRvIHRoaXMgcGF0Y2gu
+Cj4+Pj4KPj4+Cj4+PiBUaGFua3MgS3J6eXN6dG9mIGZvciB0aGUgc3VwZXIgcXVpY2sgcmVzcG9u
+c2UgIQo+Pj4gU3VyZS4gd2lsbCBkcm9wIHRoZSBkZXNjcmlwdGlvbiBmb3IgcG93ZXItZG9tYWlu
+Cj4+PiBhbmQgcG93ZXItZG9hbWluLW5hbWVzLgo+Pj4KPj4+Pj4gK8KgwqDCoCBtaW5JdGVtczog
+MQo+Pj4+PiArwqDCoMKgIG1heEl0ZW1zOiAyCj4+Pj4+ICsKPj4+Pj4gK8KgIHBvd2VyLWRvbWFp
+bi1uYW1lczoKPj4+Pj4gK8KgwqDCoCBkZXNjcmlwdGlvbjoKPj4+Pj4gK8KgwqDCoMKgwqAgQSBs
+aXN0IG9mIHBvd2VyIGRvbWFpbiBuYW1lIHN0cmluZ3Mgc29ydGVkIGluIHRoZSBzYW1lIG9yZGVy
+IAo+Pj4+PiBhcyB0aGUKPj4+Pj4gK8KgwqDCoMKgwqAgcG93ZXItZG9tYWlucyBwcm9wZXJ0eS4K
+Pj4+Pj4gKwo+Pj4+PiArwqDCoMKgwqDCoCBGb3IgcGxhdGZvcm1zIHdoZXJlIHNvbWUgcmVzb3Vy
+Y2UgYXJlIGZpcm13YXJlIG1hbmFnZWQsIHRoZSAKPj4+Pj4gbmFtZQo+Pj4+PiArwqDCoMKgwqDC
+oCBjb3JyZXNwb25kaW5nIHRvIHRoZSBpbmRleCBvZiBhbiBTQ01JIGRvbWFpbiBwcm92aWRlciBj
+YW4gYmUKPj4+Pj4gK8KgwqDCoMKgwqAgInVzYl9jb3JlIiBvciAidXNiX3RyYW5zZmVyIi4KPj4+
+Pj4gK8KgwqDCoCBpdGVtczoKPj4+Pj4gK8KgwqDCoMKgwqAgLSBjb25zdDogdXNiX2NvcmUKPj4+
+Pj4gK8KgwqDCoMKgwqAgLSBjb25zdDogdXNiX3RyYW5zZmVyCj4+Pj4KPj4+PiBIb3cgaXMgdGhp
+cyByZWxhdGVkIHRvIGZ3LW1hbmFnZWQ/IEkgZmFpbCB0byBzZWUgaXQuIERvbid0IG1peAo+Pj4+
+IGluZGVwZW5kZW50IHByb2JsZW1zIGluIG9uZSBwYXRjaC4KPj4+Pgo+Pj4KPj4+IFNvbWUgb2Yg
+dGhlIHRoZSByZXNvdXJjZXMgbGlrZSBjbG9ja3MsIHJlZ3VsYXRvcnMsIGV0YyB3aWxsIGJlCj4+
+PiBjb250cm9sbGVkIGJ5IHRoZSBmaXJtd2FyZSBpbnN0ZWFkIG9mIE9TLiBIb3dldmVyLCBzb21l
+IHJlc291cmNlcwo+Pj4gc3RpbGwgd2lsbCBiZSBjb250cm9sbGVkIGJ5IE9TIChpbnRlcnJ1cHRz
+IGZvciBleGFtcGxlKS4KPj4+Cj4+PiBTbywgdG8gc3VwcG9ydCB0aGUgbWFuYWdlbWVudCBvZiBw
+YXJ0aWFsIHJlc291cmNlcyBpbiBMaW51eCwgYW5kCj4+PiBvZmZsb2FkIHRoZSBvdGhlciByZXNv
+dXJjZSBtYW5hZ2VtZW50IHRvIGZpcm13YXJlLCBtdWx0aXBsZSBwb3dlcgo+Pj4gZG9tYWlucyBh
+cmUgaW50cm9kdWNlZC4gVGhleSB3aWxsIGJlIGNvcnJlc3BvbmRpbmcgdG8gZGlmZmVyZW50Cj4+
+PiBodyBibG9ja3MuCj4+Pgo+Pj4gRG8geW91IHN1Z2dlc3Qgc3BsaXR0aW5nIHRoZSBhZGRpdGlv
+biBvZiBwb3dlci1kb21haW4tbmFtZXMgYW5kCj4+PiBhZGRpdGlvbiBvZiBmdy1tYW5hZ2VkIHBy
+b3BlcnR5IGluIHNlcGFyYXRlIHBhdGNoZXMgZm9yIGJpbmRpbmdzIQo+Pj4KPj4+Pj4gKwo+Pj4+
+PiArwqAgcW1wLGZ3LW1hbmFnZWQ6Cj4+Pj4KPj4+PiBQbGVhc2UgZG8gbm90IHVwc3RyZWFtIHZl
+bmRvciBjb2RlIGRpcmVjdGx5LCBidXQgcGVyZm9ybSBiYXNpYwo+Pj4+IGFkanVzdG1lbnQgdG8g
+dXBzdHJlYW0gTGludXgga2VybmVsLiBUaGVyZSBpcyBubyBzdWNoIGNvbXBhbnkgYXMgZ21wLgo+
+Pj4+Cj4+Pj4gUnVuIHRoaXMgZmlyc3QgdGhyb3VnaCB5b3VyIGludGVybmFsIHJldmlldyBwcm9j
+ZXNzLgo+Pj4+Cj4+Pgo+Pj4gVGhpcyBwcm9wZXJ0eSBpcyBuZXdseSBpbnRyb2R1Y2VkIGZvciB0
+aGUgcW1wIHN1cGVyc3BlZWQgcGh5IGFuZAo+Pj4gc2ltaWxhciBkdCBwcm9wZXJ0aWVzIGFyZSBp
+bnRyb2R1Y2VkIGZvciBoc3BoeSBhbmQgZHdjMyBxY29tCj4+PiBjb250cm9sbGVyIGdsdWUgbGF5
+ZXIgZHJpdmVyLiBJdCB3aWxsIGdvdmVybiB0aGUgc3VzcGVuZC8gcmVzdW1lCj4+PiBvZiB0aGUg
+cmVzb3VyY2VzIChieSBmaXJtd2FyZSBvciBPUykgYXMgcmVxdWlyZWQuCj4+Cj4+IFNvIHRoYXQn
+cyB5b3VyIGFuc3dlciB0byAidGhlcmUgaXMgbm8gc3VjaCBjb21wYW55IGFzIGdtcCI/IEl0J3Mg
+bm90Cj4+IHJlbGV2YW50IGF0IGFsbC4KPj4KPj4gUGxlYXNlIHJ1biBpdCB0aHJvdWdoIGludGVy
+bmFsIHJldmlldyBmaXJzdC4KPj4KPj4KPiBIaSBTcmlyYW0sCj4gCj4gIMKgUU1QIGluZGljYXRl
+cyB0aGUgZHJpdmVyIG5hbWUgIlFNUCBQaHkiIChmb3Igc3VwZXIgc3BlZWQgbW9kZSBvZiAKPiBv
+cGVyYXRpb24pLCBub3QgdGhlIGNvbXBhbnkgbmFtZS4gSWYgdGhpcyBwcm9wZXJ0eSBpcyBmb3Ig
+aWRlbnRpZmljYXRpb24gCj4gb2YgZncgbWFuYWdlbWVudCB0byBiZSBkb25lIC8gKG9yIG5vdCB0
+byBiZSBkb25lKSBpbiBRTVAgUGh5LCB0aGVuIAo+IHBsZWFzZSByZW5hbWUgaXMgYXBwcm9wcmlh
+dGVseS4gQ2hlY2sgaG93IG90aGVyIHByb3BlcnRpZXMgYXJlIGRlZmluZWQgCj4gaW4gdGhlIFFN
+UCBiaW5kaW5ncyBhbmQgYWRkICJxY29tIiBhdCBiZWdpbm5pbmcgcHJlZmVyYWJseS4gRm9yIAo+
+IHJlZmVyZW5jZSBhcyB0byBob3cgcHJvcGVydGllcyB3ZXJlIGFkZGVkIHRvIGZlbXRvIHBoeSBk
+cml2ZXI6IFsxXS4KPiAKPiBbMV06IAo+IGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcHJv
+amVjdC9saW51eC1hcm0tbXNtL3BhdGNoLzE2NjI0ODA5MzMtMTIzMjYtMi1naXQtc2VuZC1lbWFp
+bC1xdWljX2tyaXNrdXJhQHF1aWNpbmMuY29tLwo+IAoKVGhhbmtzIGZvciB0aGUgcmVmZXJlbmNl
+cyBLcnp5c3p0b2YvS3Jpc2huYS4KSSBnb3Qgc3VnZ2VzdGlvbiBmcm9tIERtaXRyeSBvbiB0aGUg
+dXNlIG9mIHRoZQpwcm9wZXJ0eSB0b28uIEluZGVlZCB3ZSB3aWxsIGJlIHRoZSBzY21pIGJhc2Vk
+CmNsb2NrLyBQRCBtYW5hZ2VtZW50IG9uIFNBODc3NS4gU28sIHdlIHdpbGwKaW50cm9kdWNlIGEg
+bmV3IGNvbXBhdGlibGUgc3RyaW5nIGFuZCB0YWtlIHRoZQpkZWNpc2lvbiBpbiBkcml2ZXIgYWNj
+b3JkaW5nbHkuCgoKPiBSZWdhcmRzLAo+IEtyaXNobmEsCgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
