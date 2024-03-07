@@ -4,84 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C7CBC5475B
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Mar 2024 19:51:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA716C5475B
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Mar 2024 02:56:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KMcvgTPwdaIVslemwxII6cj7OXZAQAcw+tu0FmhqcFY=; b=uCedwmcVzYSLcW
-	gsnnh9vQ8g1F/nCZzTh9tnuAevbC+lEcL1BJtdyiOKnkwST/9LKx8JibId+vDMQY71M+Ms2kM9zMy
-	yeg+06IO/dejFpfeEUT3yI2KySphVYr5kg0aurbE5ABNDRDyWIacxCVDw7M8i6s6ct7A9e3KCHFW/
-	nHj1WkNAQhgUJhu9ExPHvpqWuGqpduB14t7GcnndCv37eSqv6w7zX5LgS6YLRxp8Aa/sINyZwIGhH
-	IY8fIWK4dtJUqRmWoGKj6Q52AkLEQ944KUBGtkHl89pqvW3BdXYR/0PI9ogg3cU0jpjWV0ad5N6Cs
-	qkulldJ6mgaSrJY8JAtg==;
+	List-Owner; bh=xOuLWQB9I3NbcPzYUQrky9uu6yueMo+SrJ637UoQUGM=; b=Ri8cMnOwPnmAO7
+	V9+LkdH712I3yPNvIGQQC3xoyUVK2y5Jq0wBaSicDxQdqv2sRfUzj22uU7JaCqTbmwsKErKfPSyJn
+	gTwJfOzPkv2FNMQ5cHHhQR6O8DQJLlLZcKwFfv4bTHgOXZ/XJg2jHP2594x30N1BlqUcbptWfKN4a
+	SWZAVg385Smsc7z1tVdfbELhp2d7atyOU7MKOxz9PgcxIEgAUsDCzw40HvF/WqMszmGMCuTI02zEU
+	kgC84CyXBUx8A1ltYNbm639XKbvprq6vMSFpkTXN6i9rKCwicNvd8hc5X7JhcrY1YF12YsQpcA/T9
+	r3TX3/m1JbB+hvOQG0pA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhxIv-00000001hIu-3rGL;
-	Wed, 06 Mar 2024 19:51:53 +0000
-Received: from mail-yb1-xb2a.google.com ([2607:f8b0:4864:20::b2a])
+	id 1ri3vO-00000002kDB-1gij;
+	Thu, 07 Mar 2024 02:56:02 +0000
+Received: from mail-dm6nam11on20600.outbound.protection.outlook.com ([2a01:111:f403:2415::600] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhxIs-00000001hG8-0DsJ
+	id 1ri3vL-00000002kAU-2NBB
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Mar 2024 19:51:51 +0000
-Received: by mail-yb1-xb2a.google.com with SMTP id 3f1490d57ef6-dcc6fc978ddso175630276.0
-        for <linux-phy@lists.infradead.org>; Wed, 06 Mar 2024 11:51:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1709754708; x=1710359508; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=csEvl+YiH8Y/jo/itPX56IxrecdL7iIEtegQQM4ZWU0=;
-        b=Kht4q79hD3R2pOVu26SYuuM9NUlLqzeQS5WXPDyLPsIqjj5ams1WclBQLWi/+U0SDO
-         hoz+0n2oF6XGOxw83PK4VXuuUbLZKHC0Y23411t5bkjFB6sE7T26FYoWxeslQ7B8GA6D
-         EpSuy36XV/5nxAc1GqRjMji4M61O94stwf3CxGJ2dxQuNxQYgUvVuBhy+0ytxyqk+5Yk
-         Rcm7dFQuhQVo/HR/J1rwTvuRbGV+CyafwEy8bkCYnLFtoNkLI32UkQbXhyqRF3IzcgBJ
-         9ovzrLQUJd3Y63UfJUs8R1jQ68Bk7z8ruaja403womB/BNWb1D64RxENRoKAPhg+LYG+
-         pJ9g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709754708; x=1710359508;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=csEvl+YiH8Y/jo/itPX56IxrecdL7iIEtegQQM4ZWU0=;
-        b=Yx4Wq+B0B9WG/K13ReeGsnXAVbHJWzif4pIsgOc7pZbrPzR9Nh+NeCJy/Cc0Ag5f+R
-         m+DEvhuK5eQvCQ6eybmUVWW7kXBt0meG77l2e3H7iaAg0ig1AW5dcjv3xHJ5ATGRPXBs
-         lGGOc0iXyRRCglVtQNlDur07YEhQAOMGJvfsNqKQHNFszHO8iWn/+6PTV4Rg+AXL2lW5
-         oLh3weIjrxW70kE4LW+yVFgcA8yorOEas9HU72AaDYVlHpndeG1ctc1jY950uez7bcVe
-         WB3lYh4UhJh7x/JAcG6BpKCLlmPKBh6NBeth3dPNh7sdMFrKEhNG9yBtu2/+4J4NHppl
-         9kYA==
-X-Forwarded-Encrypted: i=1; AJvYcCU1TSa8Fvvm6dYOAkZDMKMsevY+k5OdXAqJiES1HuIPMPpRfHDmeiKLVC4Q7NhXm1duzDTpBnEhnejlOcXXwqmbVcdHfOE5vjGVPu1UQA==
-X-Gm-Message-State: AOJu0YyW+v2daINJcp5Hc9jIi7H0q8NYiUBXQDfCWOpQ7W26aC4iEI3o
-	JDcpAqNcPOcVDlgp4UyZm3rQI+FczOcl6h4EUz+Fp7JEljzEIiX+EeLE4qLSqbQBnqDZGDK8GLn
-	VbKwh9gQkoQwyXpYq2WhJhEOf2fE4G8uOfT7gHw==
-X-Google-Smtp-Source: AGHT+IF/kGBb7idc3d2AEARbAxJnyUoIwtHxSDN0QDfLSSyf1XNAK8n+uv/CjDuD5p83nbhiV0hFcMEqsE4zIHZ8H1M=
-X-Received: by 2002:a25:9b05:0:b0:dc7:4645:83ab with SMTP id
- y5-20020a259b05000000b00dc7464583abmr838347ybn.0.1709754708627; Wed, 06 Mar
- 2024 11:51:48 -0800 (PST)
+	Thu, 07 Mar 2024 02:56:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZM7o0EmS1sGKO714LJPTmsiyLz1byNe69nvCZKFyye/IzYZsMu3v1y0+kZNNiASu2D28F+LRjx5Mbi/WUH+2lQMtJWTx4E7xoLUe6WY3crs2RBRAPuHhRactPYB4VdWyroSo5WRi0d+YVDiBS+WZTrCbrSx+LCAsNr4t5hLaIBmx7XzfxzSu7KtKe9D8q54oYlhyMWLnZK8BPhmG1JLHbJCeaiq8jQO4dve3r2JP5v3W/F0EEWvdiT1+7Jw962hsI9SHqlLKKn6DCxOmqEQsVtX0F4eJW4gsn7aR3q9uQqUJJ5HI/hF8g8C8JMYaAjZwyYN1D2kfnMl4KuyoP4oK1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Avw8MdXty/4Tzv38w/6wIBix6Y1Rqg9ln2iUn2LpapM=;
+ b=i5bBJLcmoVS3nD8mUQLf+5D11Ahl1Scp4+1kidMimp+8qW1IkkP7GrsokToa6vla7qu+2Sc3GofEuSgXVm5Q1aYg0/ScjK2LqwBXOQmO+YKz607AQ8Ok3yVu/Sm4EnmaRRC37Afp9f2X016b/YEJIepy7DS+CDoJFAqjXh+S4LgoPQb5EIEhs/OdsnRNKl9uJdM3oAqP5cOupnYsgMweFIcxeMui3VSyKr5S4pc8O3t0oZbkJs4eplAaGNVuODoLeIVzEedd9+EVw0W49+0Gnm1beyWEobsEiRJB7lmmBCX0vVCgPEfuMfP1nU/DcJ6KqGR9xiKC48cltNhKvEsvtQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Avw8MdXty/4Tzv38w/6wIBix6Y1Rqg9ln2iUn2LpapM=;
+ b=jUFe/ozRuRMbbXkBoVILOdnuEHtXnOlpPqEMCyPeCjX2XJFomB+QNWQZ4VIJlaiaAvTdP9bHaeZ6CkpudEBKqczC7TNtfNBYqcNzn/NzYAAHRtDy/I6L/Zs7tpXQg3bezvuXuTVQoCJokMO6V2dQdG+5nkV0vbHKRRPgOazabbYNZUFN/45GbZwJjBUc0BJHyWjtiwslw9J7TdQ3kA61MeBTSz38vKLNX+uDauHGICd8d67kWJBnrX8pczQ8Yv/93qGZmAsqWgvLEWPAS5Fn3ai8EJT9SnjoPmkKsyIZbbTH9VW1L6vwvQF695YkRf3liiHXIck1ilvGv8VjYKJsPw==
+Received: from PH0PR12MB5500.namprd12.prod.outlook.com (2603:10b6:510:ef::8)
+ by LV2PR12MB5799.namprd12.prod.outlook.com (2603:10b6:408:179::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.24; Thu, 7 Mar
+ 2024 02:55:42 +0000
+Received: from PH0PR12MB5500.namprd12.prod.outlook.com
+ ([fe80::fdc1:2c53:9144:4c8a]) by PH0PR12MB5500.namprd12.prod.outlook.com
+ ([fe80::fdc1:2c53:9144:4c8a%3]) with mapi id 15.20.7362.024; Thu, 7 Mar 2024
+ 02:55:42 +0000
+From: Wayne Chang <waynec@nvidia.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+CC: Jon Hunter <jonathanh@nvidia.com>, "thierry.reding@gmail.com"
+	<thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "kishon@kernel.org" <kishon@kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+	"stable@vger.kernel.org" <stable@vger.kernel.org>
+Subject: Re: [PATCH 2/2] usb: gadget: tegra-xudc: Fix USB3 PHY retrieval logic
+Thread-Topic: [PATCH 2/2] usb: gadget: tegra-xudc: Fix USB3 PHY retrieval
+ logic
+Thread-Index: AQHabxfVBwisghs8b0C9MpnByO5bbLEptY0AgAHiJIA=
+Date: Thu, 7 Mar 2024 02:55:42 +0000
+Message-ID: <cc0eef54-28a4-41a8-9768-70c89c1601a9@nvidia.com>
+References: <20240305161122.1254099-1-waynec@nvidia.com>
+ <20240305161122.1254099-3-waynec@nvidia.com>
+ <2024030542-broker-promptly-de99@gregkh>
+In-Reply-To: <2024030542-broker-promptly-de99@gregkh>
+Accept-Language: en-US, zh-TW
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla Thunderbird
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PH0PR12MB5500:EE_|LV2PR12MB5799:EE_
+x-ms-office365-filtering-correlation-id: 4a5a5ff9-0254-424f-3026-08dc3e521418
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: IFvG2xf6wUbTG5FksOPitwnYPVRr6ohiKsiJOVb79mai3nR5lqoeUzgGsZKxyGtaSkLjpB2j1uPpy176UhSdW3PR10Hr6wjpQQyLFOHuneMUjGyAcPZgS/t90ljOmQlz9dlTOKlwAbEfQBTVUEHVDe4n7l1PXcra/QQQuX1G7pIFbJRJCjEFE3NS+SwE5Cswalwk2UmArWRJkvA9yy7FSmgMavMu3So9BOsMr+q41UiPLvWeJ6SSLuF4oXnfgZcmlkDCl7b4pt2Jgvmexa2cJyQ/5EQnqYQevI612QG6dwhqK8lMlgw71CwdjIA8xxOend4AX/PQwSysmo+xMd45hcRIXEOMHSvRGefbw38LoSCW6g0+9YDq5IST1ssWbLRcNprfxk5cvyx+6mv+TReRdIfNo6IDgOjfu2cMWiZYcK+UrIdjadUS/yRxqv2kR4Ij7nAx8FEYkc7i8FDZ80awscwIB9F01nSSGWe2hI6vNJdRfhh9HtEWiN6TwIoTu8RCSFiq5lmxAb6S0ut+tBlq4RJX67VhSssBHdIHsI+ZQr9H9jBEBbFyk6sUiji5syvs8iMAr6FJaCfRQfkhVd7wDs4dhU5TiRjUtyrmld+p92uA6pbyvrFH3xDWp85Q2E2/n3gWxUWDHxdafnGqjgvKk+xNbnE13KKr5e4chc35VN3c1XRlbZa3RInwxpVu8YUTnkTm//6qZzb7uNSe55CtGA==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR12MB5500.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(38070700009);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?cnF0dUdKRVc2ZXRNdmwyM3pTZ2ppUDJrUWpmb2FKSThsUG0vbHIzdE9pSG11?=
+ =?utf-8?B?V2YxVFdobjBUVUt2amNQTGluck9vbmlzTU51b0VQZEQxZVZhRWtwMDhTRHNu?=
+ =?utf-8?B?ckFra081VDJEWWU2R1F0Z1Q1cmo2MEFoczJUZElMbk1IMDNtNUtReXBuV1JD?=
+ =?utf-8?B?a3BkSGFwNkZwakhtZlZsb3IvRzFKN3B2MVYvR3NUaWp5dFNkOVltVlgyVG1M?=
+ =?utf-8?B?dS85bTNsYjRDK2Z3ZUlYWnRmaEV6Q1I1VkNOTHNqLzl1MTRpK01lMXJKMnps?=
+ =?utf-8?B?cGs5eXBFMzY3dUpvRnJ6cWQzZHFlN01rdnFUdlBZTDdxdEFJb3Boa2gwZ2Jq?=
+ =?utf-8?B?d1BEWThnY25XUWtlSCtkYW1JeDZuaDJGVy8va1ZxMndLV0VaVVVLZWowUGY5?=
+ =?utf-8?B?N1VnR0NpcHJzRElaU2g4WnAvRlphVERwQlhDL2tqNVJQQ1Fqa2FjaUQvcHc1?=
+ =?utf-8?B?cFZtU0o2cXNmbitiQU9oWDlpQ0h5My9rdll3QkVEZTBGMVlYOUZ6T01jeHhs?=
+ =?utf-8?B?d2tiaVlWK2FhbmJXdmlQT2xnRkNGcmZoNzZ0YlE4V0hpVW5YNTJpUEFzdTJK?=
+ =?utf-8?B?RzZ3bEZpa1JCQ296Y2JjaTZjVHdpUmpTMy9NR3BnQU5vQnlnbW1zQ1gyOEF2?=
+ =?utf-8?B?KzNKMXQ2Q3Eyamxnc3A5aUpsM3BFczNldjRuRjhQSkNtdVpsOUJtY2lBYXgv?=
+ =?utf-8?B?YWVtd3BBYTlBS3hZZjB3bVZGMzZOYlQ0QnhsbUJWZ0lWM3pWLzNKeXJJRnF2?=
+ =?utf-8?B?T0VKQkJvWUJodkpLM0FNblZ2Z0V6UEhVY0R0R24wRWJHSXpveVBwcFE5Q05o?=
+ =?utf-8?B?U29BMjhneWV2dU9VcWYrb3NtcDYxN2tacmRERmE0QlRoTGhwZ2FFam1TenVp?=
+ =?utf-8?B?MHZ1cVhDQWlXVys1TVhxaG5sYUI1Ry9yUXB2ZzQ1b3Q0cmNIL2FsUVdtL3Q1?=
+ =?utf-8?B?N09ocks2VkdNdGdSTkZOT2NSTS8yUFJwN2d3aVRXa2VsZjNxdWQ0QmZDek5j?=
+ =?utf-8?B?MFlTRU00RGxYSFk0K0w4RzVFQnJ3T0V5cUJxWW1XSnh2eXJOTHo2MzRsYUhM?=
+ =?utf-8?B?ZWRiZ3AwY2JuYkJqcEQ2T1FXdUg2ZFBGRnYyQkpNczVhQUEyQXBtakVsTkhy?=
+ =?utf-8?B?RXFxRzhQRFZIVWI4M1gwSWZETFhhNStHMzUrMVlFSFQ2eWFPWWRhMi85dDZU?=
+ =?utf-8?B?ZHF6MVZ4dDBoblV5Z1hrNER3N1V4dTFVLzFsYjBCbVozWnovekZSeTBXbzhT?=
+ =?utf-8?B?STJzODllQnpCSWJ3ei9VdHlyK0NncUtTWXNzUlUrZ2QvMnp1SnlGb3lmbXQ0?=
+ =?utf-8?B?alBVZENEN09VdkQ3RnZLU1R2engvWG41MDBEc0pUV2JxcDI0Tzk1bllxd0xx?=
+ =?utf-8?B?d3VRTVR3SVFRaTBtaWxXWG5sY0xldkdWY2QzZXFJbldkVFJKS2Q3a3ppaDVJ?=
+ =?utf-8?B?alphbHU4ZGVVcmI4UHNsYTFHWnZQcFhyRGpRbDdpbDhtZVlUdUQ1YlVIL2VH?=
+ =?utf-8?B?U1E0b2dVaGQraDZldDBqLzE4OWNOMFUybktUaFAyMmtWdmJLRDFZUUVLbzdF?=
+ =?utf-8?B?amZJUEhhVDBFVTg2TzJKMXFWejBwdVV1V3VTOHkvK1RNcG9jVkxUbzFoQ2xM?=
+ =?utf-8?B?RE40WWt2MHJ4SzhDQXVveXJFQmdNbWpvOFkrK0xsbzJmVDMrbjlNRXFra3Zv?=
+ =?utf-8?B?RGJQcUgzM0l3cGVMc21JNVlDZ2VDakJ6dzEra21DZWhRdzlWbnV2aklJVkhK?=
+ =?utf-8?B?ZllGdTl1MzJXdjBIU3l1UUgyb25oTUZzejBwRzlCYVJTWTZUMHMyUnBuSXd3?=
+ =?utf-8?B?Sng4V3d0S0tLTGk1bnVEVHhIUFU0ZnR2SStHUE1uZG5XVVhCdHg2L01kTEVl?=
+ =?utf-8?B?TEhjdGpTZnYxRVNGUkprWm1VSndGa2EzaURpcFgwUTZCRG9SeC9rZ3Ivb3NQ?=
+ =?utf-8?B?bXBOQVJwN3cyWW92SFljTXllZXN3SU84VFIxd1ZSTE1LRENMbHYySTY1NndO?=
+ =?utf-8?B?M0Y0eHRIMXpYbDZJQTV6Vm9pVHZhQzh5ZkdsdW9HSFg5NzlGSWxkYXNXdG45?=
+ =?utf-8?B?VzhNL0llVnZzeCtQTHdEYTdsTXUzbDFFeDJIUDNaYTY3YUw3QjhXOTJHQWxK?=
+ =?utf-8?Q?1T1vHek1pFhjXHLhwo375YAeq?=
+Content-ID: <03EDE220984A484E8DCBD239AE0E0C2C@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-References: <1709657858-8563-1-git-send-email-quic_sriramd@quicinc.com>
- <1709657858-8563-2-git-send-email-quic_sriramd@quicinc.com>
- <CAA8EJpph+R2oJjABvNQYwp=pZLxQPzzs41Hhw4feOdQ3eU-6UA@mail.gmail.com> <4f1e4e66-e728-472e-92f4-17c295548a14@quicinc.com>
-In-Reply-To: <4f1e4e66-e728-472e-92f4-17c295548a14@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Wed, 6 Mar 2024 21:51:37 +0200
-Message-ID: <CAA8EJpoRToOH-SvOf=iMqsuXkcSO-J74HsVF9pWVDde-72oaHQ@mail.gmail.com>
-Subject: Re: [RFC 1/3] dt-bindings: usb: qcom,dwc3: Add support for multiple power-domains
-To: Sriram Dash <quic_sriramd@quicinc.com>
-Cc: andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
-	kishon@kernel.org, robh@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	conor+dt@kernel.org, gregkh@linuxfoundation.org, quic_wcheng@quicinc.com, 
-	Thinh.Nguyen@synopsys.com, p.zabel@pengutronix.de, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, quic_psodagud@quicinc.com, quic_nkela@quicinc.com, 
-	manivannan.sadhasivam@linaro.org, ulf.hansson@linaro.org, 
-	sudeep.holla@arm.com, quic_shazhuss@quicinc.com
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PH0PR12MB5500.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4a5a5ff9-0254-424f-3026-08dc3e521418
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Mar 2024 02:55:42.4650
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: YblgM2L+el8UBz3tgfci91peSm3Lbfw8pZNrptMzeuzqu8q2jFiu4X0Ul2bP/Og22Px7JlmCxSAAY6pEnKtn5w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV2PR12MB5799
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240306_115150_130639_8C4D7BFA 
-X-CRM114-Status: GOOD (  24.66  )
+X-CRM114-CacheID: sfid-20240306_185559_658468_8D8B4CBB 
+X-CRM114-Status: GOOD (  15.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,297 +155,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 6 Mar 2024 at 17:52, Sriram Dash <quic_sriramd@quicinc.com> wrote:
+Hi Greg,
+
+Thanks for the review.
+
+On 3/6/24 06:10, Greg KH wrote:
+> External email: Use caution opening links or attachments
 >
-> On 3/6/2024 12:33 AM, Dmitry Baryshkov wrote:
-> > On Tue, 5 Mar 2024 at 18:58, Sriram Dash <quic_sriramd@quicinc.com> wrote:
-> >>
-> >> Some target systems allow multiple resources to be managed by firmware.
-> >> On these targets, tasks related to clocks, regulators, resets, and
-> >> interconnects can be delegated to the firmware, while the remaining
-> >> responsibilities are handled by Linux.
-> >>
-> >> To support the management of partial resources in Linux and leave the rest
-> >> to firmware, multiple power domains are introduced. Each power domain can
-> >> manage one or more resources, depending on the specific use case.
-> >>
-> >> These power domains handle SCMI calls to the firmware, enabling the
-> >> activation and deactivation of firmware-managed resources.
-> >>
-> >> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-> >> ---
-> >>   .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 74 ++++++++++++++++------
-> >>   .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 49 ++++++++++++--
-> >>   .../devicetree/bindings/usb/qcom,dwc3.yaml         | 37 ++++++++++-
-> >>   3 files changed, 130 insertions(+), 30 deletions(-)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> >> index 1e2d4dd..53b9ba9 100644
-> >> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> >> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> >> @@ -44,7 +44,32 @@ properties:
-> >>       maxItems: 5
-> >>
-> >>     power-domains:
-> >> -    maxItems: 1
-> >> +    description: specifies a phandle to PM domain provider node
-> >> +    minItems: 1
-> >> +    maxItems: 2
-> >> +
-> >> +  power-domain-names:
-> >> +    description:
-> >> +      A list of power domain name strings sorted in the same order as the
-> >> +      power-domains property.
-> >> +
-> >> +      For platforms where some resource are firmware managed, the name
-> >> +      corresponding to the index of an SCMI domain provider can be
-> >> +      "usb_core" or "usb_transfer".
-> >> +    items:
-> >> +      - const: usb_core
-> >> +      - const: usb_transfer
-> >> +
-> >> +  qmp,fw-managed:
-> >> +    description:
-> >> +      Some targets allow multiple resources to be managed by firmware.
-> >> +      On these targets, tasks related to clocks, regulators, resets, and
-> >> +      interconnects can be delegated to the firmware, while the remaining
-> >> +      responsibilities are handled by Linux.
-> >> +
-> >> +      Decide if the target resources will be managed by firmware or High level
-> >> +      OS.
-> >> +    type: boolean
-> >>
-> >>     resets:
-> >>       maxItems: 2
-> >> @@ -70,14 +95,6 @@ properties:
-> >>   required:
-> >>     - compatible
-> >>     - reg
-> >> -  - clocks
-> >> -  - clock-names
-> >> -  - resets
-> >> -  - reset-names
-> >> -  - vdda-phy-supply
-> >> -  - vdda-pll-supply
-> >> -  - "#clock-cells"
-> >> -  - clock-output-names
-> >>     - "#phy-cells"
-> >>
-> >>   allOf:
-> >> @@ -86,6 +103,33 @@ allOf:
-> >>           compatible:
-> >>             contains:
-> >>               enum:
-> >> +              - qcom,sa8775p-qmp-usb3-uni-phy
-> >> +              - qcom,sc8280xp-qmp-usb3-uni-phy
-> >> +              - qcom,x1e80100-qmp-usb3-uni-phy
-> >> +    then:
-> >> +      required:
-> >> +        - power-domains
-> >> +
-> >> +  - if:
-> >> +      not:
-> >> +        required:
-> >> +          - qmp,fw-managed
-> >> +    then:
-> >> +      required:
-> >> +        - clocks
-> >> +        - clock-names
-> >> +        - resets
-> >> +        - reset-names
-> >> +        - vdda-phy-supply
-> >> +        - vdda-pll-supply
-> >> +        - clock-output-names
-> >> +        - "#clock-cells"
-> >> +
-> >> +  - if:
-> >> +      properties:
-> >> +        compatible:
-> >> +          contains:
-> >> +            enum:
-> >>                 - qcom,ipq6018-qmp-usb3-phy
-> >>                 - qcom,ipq8074-qmp-usb3-phy
-> >>                 - qcom,ipq9574-qmp-usb3-phy
-> >> @@ -144,18 +188,6 @@ allOf:
-> >>               - const: com_aux
-> >>               - const: pipe
-> >>
-> >> -  - if:
-> >> -      properties:
-> >> -        compatible:
-> >> -          contains:
-> >> -            enum:
-> >> -              - qcom,sa8775p-qmp-usb3-uni-phy
-> >> -              - qcom,sc8280xp-qmp-usb3-uni-phy
-> >> -              - qcom,x1e80100-qmp-usb3-uni-phy
-> >> -    then:
-> >> -      required:
-> >> -        - power-domains
-> >> -
-> >>   additionalProperties: false
-> >>
-> >>   examples:
-> >> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >> index 0f200e3..ad2f08f 100644
-> >> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >> @@ -49,6 +49,34 @@ properties:
-> >>       items:
-> >>         - const: ref
-> >>
-> >> +  power-domains:
-> >> +    description: specifies a phandle to PM domain provider node
-> >> +    minItems: 1
-> >> +    maxItems: 2
-> >> +
-> >> +  power-domain-names:
-> >> +    description:
-> >> +      A list of power domain name strings sorted in the same order as the
-> >> +      power-domains property.
-> >> +
-> >> +      For platforms where some resource are firmware managed, the name
-> >> +      corresponding to the index of an SCMI domain provider can be
-> >> +      "usb_core" or "usb_transfer".
-> >> +    items:
-> >> +      - const: usb_core
-> >> +      - const: usb_transfer
-> >> +
-> >> +  hsphy,fw-managed:
-> >> +    description:
-> >> +      Some targets allow multiple resources to be managed by firmware.
-> >> +      On these targets, tasks related to clocks, regulators, resets, and
-> >> +      interconnects can be delegated to the firmware, while the remaining
-> >> +      responsibilities are handled by Linux.
-> >> +
-> >> +      Decide if the target resources will be managed by firmware or High level
-> >> +      OS.
-> >> +    type: boolean
-> >> +
-> >>     resets:
-> >>       items:
-> >>         - description: PHY core reset
-> >> @@ -154,12 +182,21 @@ required:
-> >>     - compatible
-> >>     - reg
-> >>     - "#phy-cells"
-> >> -  - clocks
-> >> -  - clock-names
-> >> -  - resets
-> >> -  - vdda-pll-supply
-> >> -  - vdda18-supply
-> >> -  - vdda33-supply
-> >> +
-> >> +
-> >> +allOf:
-> >> +  - if:
-> >> +      not:
-> >> +        required:
-> >> +          - hsphy,fw-managed
-> >> +    then:
-> >> +      required:
-> >> +        - clocks
-> >> +        - clock-names
-> >> +        - resets
-> >> +        - vdda-pll-supply
-> >> +        - vdda18-supply
-> >> +        - vdda33-supply
-> >>
-> >>   additionalProperties: false
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> >> index 63d150b..5bf3a29 100644
-> >> --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> >> +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-> >> @@ -64,7 +64,31 @@ properties:
-> >>
-> >>     power-domains:
-> >>       description: specifies a phandle to PM domain provider node
-> >> -    maxItems: 1
-> >> +    minItems: 1
-> >> +    maxItems: 2
-> >> +
-> >> +  power-domain-names:
-> >> +    description:
-> >> +      A list of power domain name strings sorted in the same order as the
-> >> +      power-domains property.
-> >> +
-> >> +      For platforms where some resource are firmware managed, the name
-> >> +      corresponding to the index of an SCMI domain provider can be
-> >> +      "usb_core" or "usb_transfer".
-> >> +    items:
-> >> +      - const: usb_core
-> >> +      - const: usb_transfer
-> >> +
-> >> +  qcom,fw-managed:
-> >> +    description:
-> >> +      Some targets allow multiple resources to be managed by firmware.
-> >> +      On these targets, tasks related to clocks, regulators, resets, and
-> >> +      interconnects can be delegated to the firmware, while the remaining
-> >> +      responsibilities are handled by Linux.
-> >> +
-> >> +      Decide if the target resources will be managed by firmware or High level
-> >> +      OS.
-> >> +    type: boolean
-> >
-> > I think this is an overkill. You know that SA8775 is going to use
-> > SCMI-based clocks / PD management. Thus I'd suggest adding new
-> > bindings file targeting qcom,sa8775-dwc3. Also you can drop the
-> > qcom,fw-managed property at all, let the driver decide basing on the
-> > compat string.
-> >
-> >
 >
-> Thank you for the suggestion Dmitry. I will include
-> new compat string for SA8775 which will decide whether
-> to use scmi based clock/ PD.
+> On Wed, Mar 06, 2024 at 12:11:22AM +0800, Wayne Chang wrote:
+>> This commit resolves an issue in the tegra-xudc USB gadget driver that
+>> incorrectly fetched USB3 PHY instances. The problem stemmed from the
+>> assumption of a one-to-one correspondence between USB2 and USB3 PHY
+>> names and their association with physical USB ports in the device tree.
+>>
+>> Previously, the driver associated USB3 PHY names directly with the USB3
+>> instance number, leading to mismatches when mapping the physical USB
+>> ports. For instance, if using USB3-1 PHY, the driver expect the
+>> corresponding PHY name as 'usb3-1'. However, the physical USB ports in
+>> the device tree were designated as USB2-0 and USB3-0 as we only have
+>> one device controller, causing a misalignment.
+>>
+>> This commit rectifies the issue by adjusting the PHY naming logic.
+>> Now, the driver correctly correlates the USB2 and USB3 PHY instances,
+>> allowing the USB2-0 and USB3-1 PHYs to form a physical USB port pair
+>> while accurately reflecting their configuration in the device tree by
+>> naming them USB2-0 and USB3-0, respectively.
+>>
+>> The change ensures that the PHY and PHY names align appropriately,
+>> resolving the mismatch between physical USB ports and their associated
+>> names in the device tree.
+>>
+>> Fixes: b4e19931c98a ("usb: gadget: tegra-xudc: Support multiple device modes")
+>> Cc: stable@vger.kernel.org
+> You mark patch 2/2 for stable, but not patch 1/2?  That's not going to
+> work well, is it?  :(
 
-As a reminder:
-- same hardware = same compatible string
-- existing DT better to continue to work. Or ask for explicit
-permission from Bjorn to break the ABI.
+Yes, sorry about that. I'll update in the next patchset.
 
+> thanks,
 >
-> >>
-> >>     required-opps:
-> >>       maxItems: 1
-> >> @@ -148,13 +172,20 @@ required:
-> >>     - "#address-cells"
-> >>     - "#size-cells"
-> >>     - ranges
-> >> -  - clocks
-> >> -  - clock-names
-> >>     - interrupts
-> >>     - interrupt-names
-> >>
-> >>   allOf:
-> >>     - if:
-> >> +      not:
-> >> +        required:
-> >> +          - qcom,fw-managed
-> >> +    then:
-> >> +      required:
-> >> +        - clocks
-> >> +        - clock-names
-> >> +
-> >> +  - if:
-> >>         properties:
-> >>           compatible:
-> >>             contains:
-> >> --
-> >> 2.7.4
-> >>
-> >>
-> >
-> >
-> > --
-> > With best wishes
-> > Dmitry
+> greg k-h
+>
+thanks,
 
-
-
--- 
-With best wishes
-Dmitry
+Wayne.
 
 -- 
 linux-phy mailing list
