@@ -4,113 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5582C5475B
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Mar 2024 03:04:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71BDEC54E49
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Mar 2024 09:54:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3AvVtGW+VODccc7lZytOpNRg+RBIG+M+VO++p7AYfHE=; b=Oaaru1tFpoqYDH
-	a6PWIDLq2azWm7//rzXdYpwjYpIlgvWjsPYwCSRDbffy9gmEbBWO40VGZaz0VwSwx9O6kzFLIc5Sp
-	0oewR2trWo1gW+9zFTXWpwrwaVYG/Vt1b4ueoz2+Foi5/Idh3Gv+6wg5Fl/NArmd20KJBg/JzJ/ea
-	UXC+oZbtlBRScB3wlB1OI/WqxrqWv4tk98nqEbBpK7VE6PLEeSfotIWG6RtFYrO/ZtmB3AzgB6yqV
-	jiNTJcUCZ60fO8VDJZN2YIt/W8ZDUXOxl3ZzJfXtHRc31haUesS0cr8kKu9Bvn9YXVzabn1eEeToQ
-	XfqYWFBFw4dX6zllziNA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6SIcOXE9qNqga4K+AGtta3HONeHKl8eeMV6pTL1IiOQ=; b=ZpICg/CIttKomu
+	2XnR9R4HyncSn1TC8glhsBQT0fWQN/UZCZJjS71WkHUeheAw3FtLlWBZA8zi4uD3u+Uqz8zIGvCNU
+	kEAAXzGX3E+3yiJ1aZdvWfLFjNYVOY5n6fKyn/0xNhxafkWCr1jYEzOmZcQJ/BZmI6ocjbpMyd035
+	bkSqx1Vbi7RjOdSz/fLdX+sgY9Z0+eN3c0QhELWF/gmjXa2JGc/onFjG2VHV6Pd0a1aPx9yedFdvk
+	IJwA1sdSz/6eKsLHkZrASC/Ku6xQwcnZE6b+MsfT5kcSpXOKYrcG0J6q7Hbdil8v0CbDjgpMH+OEz
+	hgWtoGE/6wsIgTCPvAFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ri43A-00000002lVN-1K3B;
-	Thu, 07 Mar 2024 03:04:04 +0000
-Received: from mail-dm6nam10on2061e.outbound.protection.outlook.com ([2a01:111:f400:7e88::61e] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1riAS3-00000003wRH-3ijA;
+	Thu, 07 Mar 2024 09:54:11 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ri438-00000002lTR-0dTe
-	for linux-phy@lists.infradead.org;
-	Thu, 07 Mar 2024 03:04:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YrOAa9hLwL49lcTLMPCDm6H/uemy+rXlnL+UwgFL6sQ+f5swf6QRjr7IAcXo+ivM0uRuatu+qTifcxS3GgRcUIqMhS3XjGgk7YIDePyaqTu9UrMTjq3VsZsvmfMKoz9jh2TKQw3nEhTvApKMJVa8H5IPQZHTxDHdlszvUBN0ayhglRSSr73nGQBupqzq2BzRWWyQL5Xygqqo5/rcKVQeq7ylWMIagdDh5iGy/lmpLV5ZJISu8lje6/ZdP0tOjQW0UnHoCIS6SPqdosz+Vwh1XbCNZqMM53Fn5g2AaWV4FNsWORj/Ymlcrr5Nh3jAGEqDwwPUXJUSq+UFEbVb0BNfug==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=aD/K+1/pka0o2jzGIisI62E/wSox2b8Okd3jGKUSotg=;
- b=NNBwg5g+eEhTJPvagK1uGmmNNQ7v2u1ZS2eiE0Avab/qAhGsHN8I7wqQdgQEQREWPlyIZtp70pckEW4Z8pT4/dyybXhNZtcPk70RN0kG9Et26osISK7Za9xhO3RcrQZ8IxuULbNf80I9pZdh+UhJM78VQXszQj5ls8qvAIf0oCoL+gKpeeOjCq6fMohAZSFXqW074HoXhBOiAuKDBatrVCNz/bDScPDe8wovEW7oiGsjVP4+aaZ6/V24yDJoOWT25QG9nw1PG2TZW0sjQOhkVc4Lc4uaW2s0QwCBYM57Vj3ZiS/l1tq1NiceOGq5Emj1s3jr2B/Tg0A0sP6VareQng==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=gmail.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aD/K+1/pka0o2jzGIisI62E/wSox2b8Okd3jGKUSotg=;
- b=UTRkRI0s5eeV72Aw6e0Cn3R/7TJyZfVjReTU0r7uLbywSoyGG/6u5ZVZtv7a/znplii3AWYWgAouyAQolu8YaV71Q2CvOTdYr6bUFwA/wR+6EgkUOto0tPsNQ3Lxtp7jokM9zTAS9xa/BsqqmIV9Z2QdqPh4unFj2ylsD07d3JpscVhGMX6o9JtDX/3zgZiKrYN8ur42e53Kazlxd/fXEhEkRZNqmT0N7Lf3+LzhvmBLCsdj/2rTG35kgB3qJ1txZinO53aVkLNAIQjeDpISaZFUTE803vhccDgurWQ8KpKEqzaZR5SCwx9ZtUDXXIGtSvYletEc8mT/LiTpFbrtqA==
-Received: from BN9PR03CA0339.namprd03.prod.outlook.com (2603:10b6:408:f6::14)
- by DM4PR12MB5724.namprd12.prod.outlook.com (2603:10b6:8:5f::9) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.7339.39; Thu, 7 Mar 2024 03:03:51 +0000
-Received: from BN1PEPF00004687.namprd05.prod.outlook.com
- (2603:10b6:408:f6:cafe::f9) by BN9PR03CA0339.outlook.office365.com
- (2603:10b6:408:f6::14) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.24 via Frontend
- Transport; Thu, 7 Mar 2024 03:03:51 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- BN1PEPF00004687.mail.protection.outlook.com (10.167.243.132) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.7362.11 via Frontend Transport; Thu, 7 Mar 2024 03:03:51 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.41; Wed, 6 Mar 2024
- 19:03:35 -0800
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail201.nvidia.com
- (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1258.12; Wed, 6 Mar
- 2024 19:03:35 -0800
-Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
- mail.nvidia.com (10.129.68.9) with Microsoft SMTP Server id 15.2.1258.12 via
- Frontend Transport; Wed, 6 Mar 2024 19:03:33 -0800
-From: Wayne Chang <waynec@nvidia.com>
-To: <waynec@nvidia.com>, <jonathanh@nvidia.com>, <thierry.reding@gmail.com>,
-	<jckuo@nvidia.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-	<gregkh@linuxfoundation.org>
-CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-	<stable@vger.kernel.org>
-Subject: [PATCH v2 1/2] phy: tegra: xusb: Add API to retrieve the port number of phy
-Date: Thu, 7 Mar 2024 11:03:27 +0800
-Message-ID: <20240307030328.1487748-2-waynec@nvidia.com>
+	id 1riAS1-00000003wPm-02B0;
+	Thu, 07 Mar 2024 09:54:10 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-5645960cd56so902285a12.1;
+        Thu, 07 Mar 2024 01:54:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1709805247; x=1710410047; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=I3DIVgIQtbxBFgHYdrkm8qDZTG2wrsK4cDuPuZWRLf8=;
+        b=Ga5lVUaEHdAgujszLcm1GZO3ULExzg6V6O7sm5LtAJBYLqNKcHnLIUr+k34yEb2Sl/
+         8USg64qxd88vAyshy/HefKNAggAA6GjmBSpZNF21v3xdWu0cGoBrV/9rGLRwGvvrXONK
+         J0e2JmC5yCBjznYVex41oScapYs7A4XZ8iyoP+xfgWC6K5zH2cYzGJCDkOguPYN4y9jX
+         ZypmdaJFFfFfYAjabq/h7cI5O5Nf/sbCLN8ntE24/3qI9f9XH0WEaXDW0+Qmyjv6pbGD
+         nYHrGXmLgNii6M70t6F6CKA2cIj7+hdXiQYufHtMMXdG7v6Es/cOPhDcKSuXD1fzLoEH
+         1c4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709805247; x=1710410047;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=I3DIVgIQtbxBFgHYdrkm8qDZTG2wrsK4cDuPuZWRLf8=;
+        b=v+/TpdzfxpA9HXckQeALMgxvEOkZnl5VeU2PA87+LCwDLyua/2+Ihr+IKZ7JDN8zfS
+         5/rsHF73EnAoqBW3v8dM+us9q9Yc1R9zGaxJPn+4ozg8/ycEJlJ9TFzDbKaon48Mn0Hc
+         9Whh96Ip8P53qWqW72kyinbaBPqceYlaeuVQApJJnERXII+U7i+TKR+qJEG8DFP/NFTf
+         weAyWiVDVw+ylZtcJXtMdu7xzZNNt7/U56E3EXIaOdnQyI8K4eHq+9/LCTsDk3UPq3i5
+         yssiFK4MQ/HIIqYmeqxKj2uGHFT1iW0a8801uaTdqCciYdozPkdJ+LHlqqC7ulq/89Zb
+         FpdQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUi5bu4LvDZ9+RwicHHFTfn+03iJ20sRJAm+oHKeapQd4zLSfPiIiEfsky2WUudE+HTwg+nR9kP0EbbHR5i3IV2SBCUe6mPMa6DnqoBguZiAimIZ8B6Z8v+SvTt4z/rLolZeT4vb3Ep4rbZ2Pd87uXGh2AmJRIsDrZ8iknDJUSEQKgvmEx9EVTX0Nrz7vMSH3laEZDUESLL
+X-Gm-Message-State: AOJu0Yweo71kDYi4JShxO8Pl8YOuEi557XIGely7O0dlx0LM/MkR51FQ
+	DS+evFoFOrjLuHSLr/LyrTCWgKiWJH+Y+gqq2YjFLMHxa7qgNtlf
+X-Google-Smtp-Source: AGHT+IFDJOZS/zcttQ6vcsVUUH0Zmr5rEjPzF+lqN6Lwja3v7FlWo2VmnQhf4hz0lp0IoV7IsGnq4w==
+X-Received: by 2002:a05:6402:1d8f:b0:566:ac71:97c5 with SMTP id dk15-20020a0564021d8f00b00566ac7197c5mr10655634edb.18.1709805246915;
+        Thu, 07 Mar 2024 01:54:06 -0800 (PST)
+Received: from A13PC04R.einet.ad.eivd.ch ([193.134.219.72])
+        by smtp.googlemail.com with ESMTPSA id d17-20020a056402517100b005671100145dsm5686202ede.55.2024.03.07.01.54.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 07 Mar 2024 01:54:06 -0800 (PST)
+From: Rick Wertenbroek <rick.wertenbroek@gmail.com>
+To: rick.wertenbroek@heig-vd.ch
+Cc: Rick Wertenbroek <rick.wertenbroek@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: rockchip: Fix typo in function names
+Date: Thu,  7 Mar 2024 10:53:18 +0100
+Message-Id: <20240307095318.3651498-1-rick.wertenbroek@gmail.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20240307030328.1487748-1-waynec@nvidia.com>
-References: <20240307030328.1487748-1-waynec@nvidia.com>
 MIME-Version: 1.0
-X-NVConfidentiality: public
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN1PEPF00004687:EE_|DM4PR12MB5724:EE_
-X-MS-Office365-Filtering-Correlation-Id: 95deeabe-c664-4341-385a-08dc3e533783
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: JKJuypVDCQzn0CrGVl7fFrNGLh137jNUxouXuY44bZ+Ld/tWkxCKFIhQbQswf6KrW7aSg75mN0KAQfAD6sDx2U71C43JWh6+eoR8EIMKqq236b8N4KOOEvnIQ9GzjAjtQx0RtSjwAJpJXjGTFpWHASG2Br3nYh9o+af+AWnkVapgyAOlOd0IPTtWZ0ZVfoQLZcVepQZNxbSkwvVICM34FPkGHmde/sQR/a7rKJpICiZCQ/EA8s76herfbUZrX6glVcvr7W/2leq+I1hV0yix2w0jUi2z6VOpezJxViVPABxiA+D1pFOj7vuKTifS3u9eX/nQQYlgiJ4SsWYpXe+cT0J2sLHkBd5U17iB9E3BAuRxGIxEyv2ARoYq1BtCddxlqd/N0J+SqEsnGrIF/qQroyl6t63txqWq+DKQsEGQJK0NTv9Pq+VEI4dvUnVkFATZ3uR+OWjkBuaeq27TyaXeH8SDwip9ivuzfsoPj6VleAtdc8lLX7ccNi32qHSMNP2ETyUHuC7zTxaK2byyUnoP+LUgcovwF+zLvbcHu+mboDlLf79IAicuIsNZhaBJcG1U4gSW26qkt5f2B8Jjclao2SrH36huAvWzgagu20jK+B+jCGJP7WdFEseEJAGoiLUgfouKW1wV9Z1h5Uf+roJAu6iylMFd8RxSOLnhH3mMYFeddksm2M2P6/bpJuX2t34y7xmbZ9Lkmw1VL3rgLY/FcMZukmuUZXCihIMJZwsrTg8AdAFbJWEPHaP79Ynuf7q9
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230031)(376005)(82310400014)(36860700004);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Mar 2024 03:03:51.1978
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 95deeabe-c664-4341-385a-08dc3e533783
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN1PEPF00004687.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB5724
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240306_190402_217133_EA76ABCB 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20240307_015409_066328_1919933D 
+X-CRM114-Status: GOOD (  12.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,58 +95,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch introduces a new API, tegra_xusb_padctl_get_port_number,
-to the Tegra XUSB Pad Controller driver. This API is used to identify
-the USB port that is associated with a given PHY.
+Several functions had "rochchip" instead of "rockchip" in their name.
+Replace "rochchip" by "rockchip".
 
-The function takes a PHY pointer for either a USB2 PHY or USB3 PHY as input
-and returns the corresponding port number. If the PHY pointer is invalid,
-it returns -ENODEV.
-
-Cc: stable@vger.kernel.org
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Signed-off-By: Rick Wertenbroek <rick.wertenbroek@gmail.com>
 ---
-V1 -> V2:cc stable
- drivers/phy/tegra/xusb.c       | 13 +++++++++++++
- include/linux/phy/tegra/xusb.h |  1 +
- 2 files changed, 14 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c |  4 ++--
+ drivers/phy/rockchip/phy-rockchip-snps-pcie3.c     | 12 ++++++------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 142ebe0247cc..983a6e6173bd 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -1531,6 +1531,19 @@ int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index 76b9cf417591..35d5c18661a3 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -245,7 +245,7 @@ static int rockchip_combphy_exit(struct phy *phy)
+ 	return 0;
  }
- EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_usb3_companion);
  
-+int tegra_xusb_padctl_get_port_number(struct phy *phy)
-+{
-+	struct tegra_xusb_lane *lane;
-+
-+	if (!phy)
-+		return -ENODEV;
-+
-+	lane = phy_get_drvdata(phy);
-+
-+	return lane->index;
-+}
-+EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_port_number);
-+
- MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
- MODULE_DESCRIPTION("Tegra XUSB Pad Controller driver");
- MODULE_LICENSE("GPL v2");
-diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
-index 70998e6dd6fd..6ca51e0080ec 100644
---- a/include/linux/phy/tegra/xusb.h
-+++ b/include/linux/phy/tegra/xusb.h
-@@ -26,6 +26,7 @@ void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
- int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
- int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
- 					 unsigned int port);
-+int tegra_xusb_padctl_get_port_number(struct phy *phy);
- int tegra_xusb_padctl_enable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy,
- 					   enum usb_device_speed speed);
- int tegra_xusb_padctl_disable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy);
+-static const struct phy_ops rochchip_combphy_ops = {
++static const struct phy_ops rockchip_combphy_ops = {
+ 	.init = rockchip_combphy_init,
+ 	.exit = rockchip_combphy_exit,
+ 	.owner = THIS_MODULE,
+@@ -352,7 +352,7 @@ static int rockchip_combphy_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
+-	priv->phy = devm_phy_create(dev, NULL, &rochchip_combphy_ops);
++	priv->phy = devm_phy_create(dev, NULL, &rockchip_combphy_ops);
+ 	if (IS_ERR(priv->phy)) {
+ 		dev_err(dev, "failed to create combphy\n");
+ 		return PTR_ERR(priv->phy);
+diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+index 121e5961ce11..3cdc7625b308 100644
+--- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
++++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+@@ -187,7 +187,7 @@ static const struct rockchip_p3phy_ops rk3588_ops = {
+ 	.phy_init = rockchip_p3phy_rk3588_init,
+ };
+ 
+-static int rochchip_p3phy_init(struct phy *phy)
++static int rockchip_p3phy_init(struct phy *phy)
+ {
+ 	struct rockchip_p3phy_priv *priv = phy_get_drvdata(phy);
+ 	int ret;
+@@ -210,7 +210,7 @@ static int rochchip_p3phy_init(struct phy *phy)
+ 	return ret;
+ }
+ 
+-static int rochchip_p3phy_exit(struct phy *phy)
++static int rockchip_p3phy_exit(struct phy *phy)
+ {
+ 	struct rockchip_p3phy_priv *priv = phy_get_drvdata(phy);
+ 
+@@ -219,9 +219,9 @@ static int rochchip_p3phy_exit(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static const struct phy_ops rochchip_p3phy_ops = {
+-	.init = rochchip_p3phy_init,
+-	.exit = rochchip_p3phy_exit,
++static const struct phy_ops rockchip_p3phy_ops = {
++	.init = rockchip_p3phy_init,
++	.exit = rockchip_p3phy_exit,
+ 	.set_mode = rockchip_p3phy_set_mode,
+ 	.owner = THIS_MODULE,
+ };
+@@ -280,7 +280,7 @@ static int rockchip_p3phy_probe(struct platform_device *pdev)
+ 		return priv->num_lanes;
+ 	}
+ 
+-	priv->phy = devm_phy_create(dev, NULL, &rochchip_p3phy_ops);
++	priv->phy = devm_phy_create(dev, NULL, &rockchip_p3phy_ops);
+ 	if (IS_ERR(priv->phy)) {
+ 		dev_err(dev, "failed to create combphy\n");
+ 		return PTR_ERR(priv->phy);
 -- 
 2.25.1
 
