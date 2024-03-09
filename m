@@ -4,174 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7C6EC54E4A
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Mar 2024 09:01:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DD72C54E58
+	for <linux-phy@archiver.kernel.org>; Sat,  9 Mar 2024 02:30:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MrBl4+FUNY6oj0OI5AthnxEqpiSWqnk7d3nxNZew3Qg=; b=uGDcs/ViCvR/jAFu2gWIIdrUEW
-	/Rh2lkMC6lTFqKO1zox/1Fwr1Zx9J58+Ylw2eW2FWDU9erda1uLSg3BfOlFvafmB0HDIUJDrnGHq+
-	Wr61xay6YsiZQ07ah7TV4BNdabw6kmh+7F2aLhCcWWlPE5Pq/rI3lqdPPG1vTI2GqqHa9fAIoIv5z
-	s9i0rLNETGqV5GpWiOkQ+IDyqL7Dl3pgud/aWt4nN0Qe3EvSLbnijakHOZD7zlWzK+Q31nbLnopUa
-	toHf75uoVc7yvybdBAQOiuyqJ34+PqQbvcSJ4MJKUJmkeYNFFoE1FSWr+O/etPMD/OXaGjuhw4Bt8
-	WJZyDfeA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v9EXveOeHjZ/J1LoLW35FblsjfHWwem+PH32UAlhJM8=; b=XbS2ez8UuMKbwh
+	3ZNkac07nRgkdp4Mtgeeat272X740wD5XCxPEkZur3Lv5QoOx4Un3iPCXNy/oTsKmvxiwWNzJVXO+
+	ICtxYPkubdNlcSnsPwWtgjcfs0H0QtM/k3HuxizFPDP0r7HanWJmtOanFjj4+0h4eZ9TbaUkZ9Ruu
+	KZtKZJFxTIB1M8EKD+CKzTgBU80Tsdb0dvZFd4NyLFnSH0ByS9e0ZmXwResPFppDn2Ae2GV1gud8A
+	rb+lpIOGcaCiMBHbnXrW8wAIlJ3uYqcWl6ZUjN1Hk0AtVjn+VPjTFlcBbvTSvUBf3GAeQ/d+ActeE
+	BM8R8H6IRYTOOK7y6mWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1riW6r-00000008Tpt-0SOW;
-	Fri, 08 Mar 2024 09:01:45 +0000
-Received: from mail-bn8nam11on20600.outbound.protection.outlook.com ([2a01:111:f403:2414::600] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1rimU5-0000000C9yK-2Uup;
+	Sat, 09 Mar 2024 02:30:49 +0000
+Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1riW6n-00000008To2-19V7;
-	Fri, 08 Mar 2024 09:01:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GFVd/HzeR+/XHB+P4Ppt3drYSTKLs7/Gq/T+cHqH6CKSGwTY6XPCU6b+wnplWwlhLNs+tdrfT563U0W7N6eChKZmgezgOK3WMowkKr4nSfVNQbAtBu4reEQkKoVvN86b16tzokxiPq7N9n1z0Wey8GF3th/xsJDnFxiJ8AzmXe4LmQ7751bWqZ4GPFi3JxZcfd5C6QYMgLosqwZ5uiXPEOa0jgz8bCLpQMRYKbOc4mGRLOpNvG63qaUQ4x0Jj8pS6uWpGvTzMxyMZdlG3uVPlmTrH0duz49qZSkP+m4k1TI017KoMCJx51caN0Ij5EG0D4KtrwzjzH0fmV2ZhmgeQw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=OjW74Z3zLsbkMTuA+lXX8g9s6pKxxeu5qjvwCrJ0BOs=;
- b=Ufg1sXETqoTJaOW4wrPrJE4uUIiSzTyD8ku7emqPkg5fb/vhKir2VMvSAbgSEuDFdEVlj7WAlK6xscy6VhlZdmfOAVKdX9CAr9dzsDhQhyRfP+WG416Wk4YmrEscy4mG7Bj9RVqRbW/LtlwIMCAMhED1Bm9zR7GsAJMTNOolb39Mv94PhdsljatWP2PtG2E/sFMOzU506BZzs6b0YVAu27z1mhWm7qxumJZtJilaGNMM9tBcKBzGAVVwbsUFkmIzegF6OxcXA21ID2tckDosj8DJghs/V4LkBesU4XbQLn2k7NpS51SJlLFtc0UJUKu1zdoRgDx7XhI+cN2qG9FYTA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OjW74Z3zLsbkMTuA+lXX8g9s6pKxxeu5qjvwCrJ0BOs=;
- b=lIBNDMs57y6UIQbQUOJtM4Sj9e2yCDRiqEMJ9fGdfBHjwaSsUCPVm1VByyNvB9NnIGL24MyVsIe1+wvFHFJnqbiB64j1xVIq1azBRLQ9NtYiRNnGj3ymhYiCOL57hVE7msSUBaPDFV1lN0Ay7G5nCt2XiaGschZn4vQ/eruA5aE=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-Received: from SJ2PR12MB8109.namprd12.prod.outlook.com (2603:10b6:a03:4f5::8)
- by IA1PR12MB7614.namprd12.prod.outlook.com (2603:10b6:208:429::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.24; Fri, 8 Mar
- 2024 09:01:36 +0000
-Received: from SJ2PR12MB8109.namprd12.prod.outlook.com
- ([fe80::6622:ec76:9367:3907]) by SJ2PR12MB8109.namprd12.prod.outlook.com
- ([fe80::6622:ec76:9367:3907%2]) with mapi id 15.20.7362.024; Fri, 8 Mar 2024
- 09:01:36 +0000
-Message-ID: <efd45d3a-9f8d-4a37-af80-3ed2392cbc7d@amd.com>
-Date: Fri, 8 Mar 2024 10:01:23 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: xilinx: Convert to platform remove callback
- returning void
-Content-Language: en-US
-To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
-References: <57a3338a1cec683ac84d48e00dbf197e15ee5481.1709886922.git.u.kleine-koenig@pengutronix.de>
-From: Michal Simek <michal.simek@amd.com>
-Autocrypt: addr=michal.simek@amd.com; keydata=
- xsFNBFFuvDEBEAC9Amu3nk79+J+4xBOuM5XmDmljuukOc6mKB5bBYOa4SrWJZTjeGRf52VMc
- howHe8Y9nSbG92obZMqsdt+d/hmRu3fgwRYiiU97YJjUkCN5paHXyBb+3IdrLNGt8I7C9RMy
- svSoH4WcApYNqvB3rcMtJIna+HUhx8xOk+XCfyKJDnrSuKgx0Svj446qgM5fe7RyFOlGX/wF
- Ae63Hs0RkFo3I/+hLLJP6kwPnOEo3lkvzm3FMMy0D9VxT9e6Y3afe1UTQuhkg8PbABxhowzj
- SEnl0ICoqpBqqROV/w1fOlPrm4WSNlZJunYV4gTEustZf8j9FWncn3QzRhnQOSuzTPFbsbH5
- WVxwDvgHLRTmBuMw1sqvCc7CofjsD1XM9bP3HOBwCxKaTyOxbPJh3D4AdD1u+cF/lj9Fj255
- Es9aATHPvoDQmOzyyRNTQzupN8UtZ+/tB4mhgxWzorpbdItaSXWgdDPDtssJIC+d5+hskys8
- B3jbv86lyM+4jh2URpnL1gqOPwnaf1zm/7sqoN3r64cml94q68jfY4lNTwjA/SnaS1DE9XXa
- XQlkhHgjSLyRjjsMsz+2A4otRLrBbumEUtSMlPfhTi8xUsj9ZfPIUz3fji8vmxZG/Da6jx/c
- a0UQdFFCL4Ay/EMSoGbQouzhC69OQLWNH3rMQbBvrRbiMJbEZwARAQABzSlNaWNoYWwgU2lt
- ZWsgKEFNRCkgPG1pY2hhbC5zaW1la0BhbWQuY29tPsLBlAQTAQgAPgIbAwULCQgHAgYVCgkI
- CwIEFgIDAQIeAQIXgBYhBGc1DJv1zO6bU2Q1ajd8fyH+PR+RBQJkK9VOBQkWf4AXAAoJEDd8
- fyH+PR+ROzEP/1IFM7J4Y58SKuvdWDddIvc7JXcal5DpUtMdpuV+ZiHSOgBQRqvwH4CVBK7p
- ktDCWQAoWCg0KhdGyBjfyVVpm+Gw4DkZovcvMGUlvY5p5w8XxTE5Xx+cj/iDnj83+gy+0Oyz
- VFU9pew9rnT5YjSRFNOmL2dsorxoT1DWuasDUyitGy9iBegj7vtyAsvEObbGiFcKYSjvurkm
- MaJ/AwuJehZouKVfWPY/i4UNsDVbQP6iwO8jgPy3pwjt4ztZrl3qs1gV1F4Zrak1k6qoDP5h
- 19Q5XBVtq4VSS4uLKjofVxrw0J+sHHeTNa3Qgk9nXJEvH2s2JpX82an7U6ccJSdNLYbogQAS
- BW60bxq6hWEY/afbT+tepEsXepa0y04NjFccFsbECQ4DA3cdA34sFGupUy5h5la/eEf3/8Kd
- BYcDd+aoxWliMVmL3DudM0Fuj9Hqt7JJAaA0Kt3pwJYwzecl/noK7kFhWiKcJULXEbi3Yf/Y
- pwCf691kBfrbbP9uDmgm4ZbWIT5WUptt3ziYOWx9SSvaZP5MExlXF4z+/KfZAeJBpZ95Gwm+
- FD8WKYjJChMtTfd1VjC4oyFLDUMTvYq77ABkPeKB/WmiAoqMbGx+xQWxW113wZikDy+6WoCS
- MPXfgMPWpkIUnvTIpF+m1Nyerqf71fiA1W8l0oFmtCF5oTMkzsFNBFFuvDEBEACXqiX5h4IA
- 03fJOwh+82aQWeHVAEDpjDzK5hSSJZDE55KP8br1FZrgrjvQ9Ma7thSu1mbr+ydeIqoO1/iM
- fZA+DDPpvo6kscjep11bNhVa0JpHhwnMfHNTSHDMq9OXL9ZZpku/+OXtapISzIH336p4ZUUB
- 5asad8Ux70g4gmI92eLWBzFFdlyR4g1Vis511Nn481lsDO9LZhKyWelbif7FKKv4p3FRPSbB
- vEgh71V3NDCPlJJoiHiYaS8IN3uasV/S1+cxVbwz2WcUEZCpeHcY2qsQAEqp4GM7PF2G6gtz
- IOBUMk7fjku1mzlx4zP7uj87LGJTOAxQUJ1HHlx3Li+xu2oF9Vv101/fsCmptAAUMo7KiJgP
- Lu8TsP1migoOoSbGUMR0jQpUcKF2L2jaNVS6updvNjbRmFojK2y6A/Bc6WAKhtdv8/e0/Zby
- iVA7/EN5phZ1GugMJxOLHJ1eqw7DQ5CHcSQ5bOx0Yjmhg4PT6pbW3mB1w+ClAnxhAbyMsfBn
- XxvvcjWIPnBVlB2Z0YH/gizMDdM0Sa/HIz+q7JR7XkGL4MYeAM15m6O7hkCJcoFV7LMzkNKk
- OiCZ3E0JYDsMXvmh3S4EVWAG+buA+9beElCmXDcXPI4PinMPqpwmLNcEhPVMQfvAYRqQp2fg
- 1vTEyK58Ms+0a9L1k5MvvbFg9QARAQABwsF8BBgBCAAmAhsMFiEEZzUMm/XM7ptTZDVqN3x/
- If49H5EFAmQr1YsFCRZ/gFoACgkQN3x/If49H5H6BQ//TqDpfCh7Fa5v227mDISwU1VgOPFK
- eo/+4fF/KNtAtU/VYmBrwT/N6clBxjJYY1i60ekFfAEsCb+vAr1W9geYYpuA+lgR3/BOkHlJ
- eHf4Ez3D71GnqROIXsObFSFfZWGEgBtHBZ694hKwFmIVCg+lqeMV9nPQKlvfx2n+/lDkspGi
- epDwFUdfJLHOYxFZMQsFtKJX4fBiY85/U4X2xSp02DxQZj/N2lc9OFrKmFJHXJi9vQCkJdIj
- S6nuJlvWj/MZKud5QhlfZQsixT9wCeOa6Vgcd4vCzZuptx8gY9FDgb27RQxh/b1ZHalO1h3z
- kXyouA6Kf54Tv6ab7M/fhNqznnmSvWvQ4EWeh8gddpzHKk8ixw9INBWkGXzqSPOztlJbFiQ3
- YPi6o9Pw/IxdQJ9UZ8eCjvIMpXb4q9cZpRLT/BkD4ttpNxma1CUVljkF4DuGydxbQNvJFBK8
- ywyA0qgv+Mu+4r/Z2iQzoOgE1SymrNSDyC7u0RzmSnyqaQnZ3uj7OzRkq0fMmMbbrIvQYDS/
- y7RkYPOpmElF2pwWI/SXKOgMUgigedGCl1QRUio7iifBmXHkRrTgNT0PWQmeGsWTmfRit2+i
- l2dpB2lxha72cQ6MTEmL65HaoeANhtfO1se2R9dej57g+urO9V2v/UglZG1wsyaP/vOrgs+3
- 3i3l5DA=
-In-Reply-To: <57a3338a1cec683ac84d48e00dbf197e15ee5481.1709886922.git.u.kleine-koenig@pengutronix.de>
-X-ClientProxiedBy: VE1PR03CA0031.eurprd03.prod.outlook.com
- (2603:10a6:803:118::20) To SJ2PR12MB8109.namprd12.prod.outlook.com
- (2603:10b6:a03:4f5::8)
+	id 1rimU0-0000000C9xS-3Zim;
+	Sat, 09 Mar 2024 02:30:46 +0000
+Received: from local
+	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+	 (Exim 4.96.2)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1rimTk-00054A-1f;
+	Sat, 09 Mar 2024 02:30:28 +0000
+Date: Sat, 9 Mar 2024 02:30:25 +0000
+From: Daniel Golle <daniel@makrotopia.org>
+To: Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
+	Steven Liu <steven.liu@mediatek.com>,
+	John Crispin <john@phrozen.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	netdev@vger.kernel.org
+Subject: Re: [PATCH v3 2/2] phy: add driver for MediaTek XFI T-PHY
+Message-ID: <ZevJwSq-A43vqO6k@makrotopia.org>
+References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
+ <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ2PR12MB8109:EE_|IA1PR12MB7614:EE_
-X-MS-Office365-Filtering-Correlation-Id: c6b9531e-84b5-4bea-9dea-08dc3f4e5bcf
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 54ZKytzQDAjIs0H4dhgPQoyI7BiGfra1jAhdUgjzNbcCQCzytDhL1lUct/PvbmKRRFJcemvzm1BVPoGN15/RJQoe+1ALmPa/v+5Y07iTAaDO/4JXbywyD4AFDYOQ7LKzHiOV0+78tnk09esQJLtJtWHYOKHLDpQnmsCswNexX0R3QHyhtE4kWxEtJ8e+CqdFUQ0iwuSL3r69W/FrPVa7M/TlxXtfaTTRmqOv0QkQYs9DjAkzlQ/pMKbNQRfCT/zCAdHIGJEneBrdG6bxRMRn8MIlXA60w5SIa076w1gauwY0xiHlndtyHmBfLrVRm7ORLwCDRDrIRh/CKWZEEwDnV2yh3O/lD2NE5SqJPttmO9+quSf8tlM2/oDxm2iWwf8L+KUQhDDTkKRSHclnRhzZ5QmJY/CC+LM6iALfBtaPeUpz6Cokd3FOVKYmF3jHjGR4cjuy6WbFoDj5J2fqpmNHQOcBiI5vc82FStbVnJ+pRraI9UxM+VfzY6wrE8p16PdJN2lZuAe3Ttjb8oIIcCDDCEWvRtWNvkUjxQgZlcROrSfGwLSH1ohSlUvgx+JCdN8KZajyjAf5wBGnWYjxr69CMtoGieksSOZIgYy4PPz9mzprAS2TViM0aUznc9rtAAOKscHb57JVaU/Qjp75xADC25YLwONv9si9hjkE3bhJIMw=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(1800799015);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?WG5oeitYbVM1WU5FQkF1VUlIODg3eGxNN3l2NEx6NVIxUG1lb1lxdExCUmhn?=
- =?utf-8?B?Y3lLUlAvVyttL0pKNEtrQmtCSTlwMCtMWmR5ODBOT3VXMytEdHJuWXdBcVhs?=
- =?utf-8?B?RkU2TGFTQy96SXVsK2RaSmVEQVJUUDlkaWhQMzZDSG1DbjFIRCtSZ3JFQ3Bk?=
- =?utf-8?B?SStDaEN2TUI4ZWU3MXpMK2FwN2h5UWNhLzhDNzVLYjM2OTNCVkZSdkZKZmhK?=
- =?utf-8?B?cEVHMUtJRWVUZktFUU9LTFdmRitOVkxWSXFVWEdNMXFZSFYxNHdmTzY5ZnVT?=
- =?utf-8?B?T2NyUHZGQ0ZSa0tJN044QzlzK2x2M2RobVpPMzNoZWhjTEFCUnRhWXZqbXJ0?=
- =?utf-8?B?ZG1hb1ZBZjJvbGVaS0Q1dldSc3J0KzBnTjhiVzg1RTR2dnk5ellrTTZUNnRF?=
- =?utf-8?B?azRKaWhneFBlc2h5eGRrdmo1b3FXRXd1OE15Z0h6bVlUbzJwL1FRdWwweVlN?=
- =?utf-8?B?MjFnamZaN2I4UXRvT2d4bm5HTjQzbHZPM3c0OXExSUJLd1dsWVF5a0l3TkVu?=
- =?utf-8?B?SHUrdDl5UG9SR1hFaDdZUVNxdlFHVHEyRldRaCtJVTNkSXd6Y2NyRXlYSTUy?=
- =?utf-8?B?dzNGWXdlUmdpM3RGV2RSK3NyZ2lycGRtdjNSVGlSb1BxQXA5RUkwRFR0NGRo?=
- =?utf-8?B?S1ZCblh6ZkE0RisvS0xGdVl2YjljVDdEalFjRHU0QXRFQXRSdWFDeFBFa09N?=
- =?utf-8?B?NXVoZEVGL2hHT0NoTFBhTVFVaXZoaXZrQ0ZtTEtqbkErN3QxWVZLQkZDaDVT?=
- =?utf-8?B?WGV2cDY2ZUNMYTdka0FlRmZycjNhdlpTdW5GTTdLSDVibGZWclFYejhYL1p4?=
- =?utf-8?B?b1paMi9MSDhuS2VGN2t1V0hLcHB5Qk9jS2c5U0tpeEFiZitydFFSYmpBN0NU?=
- =?utf-8?B?KzZpQVFmRExoSjlqYXFMcmo0aWpJVXRnaW9mcWc4WXk3ZG43MklBU0VJc0lQ?=
- =?utf-8?B?MEdoSmZWYVNZNnJjYTZpSEo2WW9ORXdqWlIwTUNUaWZEM2k4RXRybGxMMTJm?=
- =?utf-8?B?M3VpZ2c5WG55UkQyWXdtckpvUFQrTHJ5OE9nQ1BEUitTKzZTbXp1OS9JcVpS?=
- =?utf-8?B?ajRObC9wVXRoRGdMSXBEbmhGYjAwNTFzSjNBUlNuMHpHRzBsM1FGMTBnNWli?=
- =?utf-8?B?cGFoaExZbEtXcDV1SWtBVTVwL01jWUxwamgvQUdwck00V0VCZGx4VkdPd2p4?=
- =?utf-8?B?Ti9VamNXM3RyWDlWWkVQMy9ZRFVqcmtaTWtDVk8zVEllMCtPcVl0Yzg5eU83?=
- =?utf-8?B?QkFpVm5TczFoelZtRFpZQndtalg2VG1lMGJjeU9jbGRxb3VJcTNXQUNoR1ha?=
- =?utf-8?B?OFAzWVF0SW5xY095NHd3RytaTnA2UllMWlUvTHNXaWtCNGFqbXVUWFJ6cGFE?=
- =?utf-8?B?eUhLb3JJM3B4eWJjVHhJcDlpb0JkT2FYTXFnMGxRdDNCalZtMXBWaHVHWVUx?=
- =?utf-8?B?S1lBSSt6bzZUaDFLODI3M0tjSURVUmxUYVlUUXJDQmlRaEdLV3RhUFZVOEJn?=
- =?utf-8?B?aFFLTTZOUWJXMis1RHFUOG5RQ0kwSXR5VVNhODFUZmtGTVl5Snh3V3FQdEx3?=
- =?utf-8?B?REQ4ZkdGa1puaHRMQWQ0d0VzR24rTXVqb3NyVHNzcStFKzJyQzcwU3dseVE1?=
- =?utf-8?B?TXlLcWRLdElGQUp3VGtGeTl5NUtRazNTWUtQNnpEL0c0WVRuV0ZLT3lkMGhF?=
- =?utf-8?B?THVSckVoRUZwais1RTdtbFoyNEUzRm9PY1hZOXg2UWRpWEw4L3ZxL3FkRUJH?=
- =?utf-8?B?Undud2t4T3hqaVUzZ0VVMXhSei9pV0hsYitzN09UNDEwQVQzOS81ZGdvSXVr?=
- =?utf-8?B?eU9pQTdSQ1d0UnVtTExlNjRqUi9TUHJQRFQxTkllelJRdWtJaFUyaEh6VGVk?=
- =?utf-8?B?SVljcmdBQjZjdXZQR0Q4WXVoaTQxZDAvVDJ2NWljSncwNjVnZGk3UXZrN1k0?=
- =?utf-8?B?VXNlbE9tMEdEclZkNHNJdmxVUWxCaFRzVTZkSmNYWksvMlk2d0M4bHhsczRW?=
- =?utf-8?B?MWhLa3BNWFRLOWhqTis3a2FIbXQzMlBSc1lmMHFraTg4Q3NBejA4WmswM0R4?=
- =?utf-8?B?SWEwM3B3eGV4bG52QUxlNTRnUHU4Z0dpcEhZZUV4VGtqMCs5QXNXZC9xcnBY?=
- =?utf-8?Q?3FTxm0bOBe/tKAusJ2yLQc36D?=
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c6b9531e-84b5-4bea-9dea-08dc3f4e5bcf
-X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Mar 2024 09:01:36.2746
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: gC4A5NGxiHAgb62k6FGb2Vafq7AfMN+h43G5Deb3US67UBcCJBPE2++U0v/pYTQH
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB7614
+Content-Disposition: inline
+In-Reply-To: <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240308_010141_384627_B84126E1 
-X-CRM114-Status: GOOD (  23.13  )
+X-CRM114-CacheID: sfid-20240308_183045_228615_12388D57 
+X-CRM114-Status: GOOD (  37.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -183,46 +73,483 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAzLzgvMjQgMDk6NTEsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOgo+IFRoZSAucmVtb3Zl
-KCkgY2FsbGJhY2sgZm9yIGEgcGxhdGZvcm0gZHJpdmVyIHJldHVybnMgYW4gaW50IHdoaWNoIG1h
-a2VzCj4gbWFueSBkcml2ZXIgYXV0aG9ycyB3cm9uZ2x5IGFzc3VtZSBpdCdzIHBvc3NpYmxlIHRv
-IGRvIGVycm9yIGhhbmRsaW5nIGJ5Cj4gcmV0dXJuaW5nIGFuIGVycm9yIGNvZGUuIEhvd2V2ZXIg
-dGhlIHZhbHVlIHJldHVybmVkIGlzIGlnbm9yZWQgKGFwYXJ0Cj4gZnJvbSBlbWl0dGluZyBhIHdh
-cm5pbmcpIGFuZCB0aGlzIHR5cGljYWxseSByZXN1bHRzIGluIHJlc291cmNlIGxlYWtzLgo+IAo+
-IFRvIGltcHJvdmUgaGVyZSB0aGVyZSBpcyBhIHF1ZXN0IHRvIG1ha2UgdGhlIHJlbW92ZSBjYWxs
-YmFjayByZXR1cm4KPiB2b2lkLiBJbiB0aGUgZmlyc3Qgc3RlcCBvZiB0aGlzIHF1ZXN0IGFsbCBk
-cml2ZXJzIGFyZSBjb252ZXJ0ZWQgdG8KPiAucmVtb3ZlX25ldygpLCB3aGljaCBhbHJlYWR5IHJl
-dHVybnMgdm9pZC4gRXZlbnR1YWxseSBhZnRlciBhbGwgZHJpdmVycwo+IGFyZSBjb252ZXJ0ZWQs
-IC5yZW1vdmVfbmV3KCkgd2lsbCBiZSByZW5hbWVkIHRvIC5yZW1vdmUoKS4KPiAKPiBUcml2aWFs
-bHkgY29udmVydCB0aGlzIGRyaXZlciBmcm9tIGFsd2F5cyByZXR1cm5pbmcgemVybyBpbiB0aGUg
-cmVtb3ZlCj4gY2FsbGJhY2sgdG8gdGhlIHZvaWQgcmV0dXJuaW5nIHZhcmlhbnQuCj4gCj4gU2ln
-bmVkLW9mZi1ieTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25p
-eC5kZT4KPiAtLS0KPiAgIGRyaXZlcnMvcGh5L3hpbGlueC9waHktenlucW1wLmMgfCA2ICsrLS0t
-LQo+ICAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPiAK
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkveGlsaW54L3BoeS16eW5xbXAuYyBiL2RyaXZlcnMv
-cGh5L3hpbGlueC9waHktenlucW1wLmMKPiBpbmRleCBmNzJjNTI1N2Q3MTIuLmRjODMxOWJkYTQz
-ZCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS94aWxpbngvcGh5LXp5bnFtcC5jCj4gKysrIGIv
-ZHJpdmVycy9waHkveGlsaW54L3BoeS16eW5xbXAuYwo+IEBAIC05OTUsMTUgKzk5NSwxMyBAQCBz
-dGF0aWMgaW50IHhwc2d0cl9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAg
-CXJldHVybiAwOwo+ICAgfQo+ICAgCj4gLXN0YXRpYyBpbnQgeHBzZ3RyX3JlbW92ZShzdHJ1Y3Qg
-cGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICtzdGF0aWMgdm9pZCB4cHNndHJfcmVtb3ZlKHN0cnVj
-dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gICB7Cj4gICAJc3RydWN0IHhwc2d0cl9kZXYgKmd0
-cl9kZXYgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsKPiAgIAo+ICAgCXBtX3J1bnRpbWVf
-ZGlzYWJsZShndHJfZGV2LT5kZXYpOwo+ICAgCXBtX3J1bnRpbWVfcHV0X25vaWRsZShndHJfZGV2
-LT5kZXYpOwo+ICAgCXBtX3J1bnRpbWVfc2V0X3N1c3BlbmRlZChndHJfZGV2LT5kZXYpOwo+IC0K
-PiAtCXJldHVybiAwOwo+ICAgfQo+ICAgCj4gICBzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2Rldmlj
-ZV9pZCB4cHNndHJfb2ZfbWF0Y2hbXSA9IHsKPiBAQCAtMTAxNSw3ICsxMDEzLDcgQEAgTU9EVUxF
-X0RFVklDRV9UQUJMRShvZiwgeHBzZ3RyX29mX21hdGNoKTsKPiAgIAo+ICAgc3RhdGljIHN0cnVj
-dCBwbGF0Zm9ybV9kcml2ZXIgeHBzZ3RyX2RyaXZlciA9IHsKPiAgIAkucHJvYmUgPSB4cHNndHJf
-cHJvYmUsCj4gLQkucmVtb3ZlCT0geHBzZ3RyX3JlbW92ZSwKPiArCS5yZW1vdmVfbmV3ID0geHBz
-Z3RyX3JlbW92ZSwKPiAgIAkuZHJpdmVyID0gewo+ICAgCQkubmFtZSA9ICJ4aWxpbngtcHNndHIi
-LAo+ICAgCQkub2ZfbWF0Y2hfdGFibGUJPSB4cHNndHJfb2ZfbWF0Y2gsCj4gCj4gYmFzZS1jb21t
-aXQ6IDhmZmM4YjFiYmQ1MDVlMjdlMmM4NDM5ZDMyNmI2MDU5YzkwNmM5ZGQKCkFja2VkLWJ5OiBN
-aWNoYWwgU2ltZWsgPG1pY2hhbC5zaW1la0BhbWQuY29tPgoKVGhhbmtzLApNaWNoYWwKCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Sat, Feb 10, 2024 at 02:10:24AM +0000, Daniel Golle wrote:
+> Add driver for MediaTek's XFI T-PHY which can be found in the MT7988
+> SoC. The XFI T-PHY is a 10 Gigabit/s Ethernet SerDes PHY with muxes on
+> the internal side to be used with either USXGMII PCS or LynxI PCS,
+> depending on the selected PHY interface mode.
+> 
+> The PHY can operates only in PHY_MODE_ETHERNET, the submode is one of
+> PHY_INTERFACE_MODE_* corresponding to the supported modes:
+> 
+>  * USXGMII                 \
+>  * 10GBase-R                }- USXGMII PCS - XGDM  \
+>  * 5GBase-R                /                        \
+>                                                      }- Ethernet MAC
+>  * 2500Base-X              \                        /
+>  * 1000Base-X               }- LynxI PCS - GDM     /
+>  * Cisco SGMII (MAC side)  /
+> 
+> In order to work-around a performance issue present on the first of
+> two XFI T-PHYs present in MT7988, special tuning is applied which can be
+> selected by adding the 'mediatek,usxgmii-performance-errata' property to
+> the device tree node.
+> 
+> There is no documentation for most registers used for the
+> analog/tuning part, however, most of the registers have been partially
+> reverse-engineered from MediaTek's SDK implementation (an opaque
+> sequence of 32-bit register writes) and descriptions for all relevant
+> digital registers and bits such as resets and muxes have been supplied
+> by MediaTek.
+> 
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
+It's been a month since this patch was posted. Maybe it has somehow
+slipped under the table (or even under the carpet)?
+
+> ---
+> v3: no changes
+> v2:
+>  * use IO helpers from mtk-io.h instead of rolling my own
+>  * use devm_clk_bulk_get()
+>  * yse devm_platform_ioremap_resource()
+>  * unify name and description everywhere
+>  * invert bool is_xgmii into bool use_lynxi_pcs and add comments
+>    describing the meaning of each of the stack variables
+>  * not much we can do about remaining magic values unless MTK provides
+>    definitions for them
+> 
+> 
+>  MAINTAINERS                             |   1 +
+>  drivers/phy/mediatek/Kconfig            |  12 +
+>  drivers/phy/mediatek/Makefile           |   1 +
+>  drivers/phy/mediatek/phy-mtk-xfi-tphy.c | 360 ++++++++++++++++++++++++
+>  4 files changed, 374 insertions(+)
+>  create mode 100644 drivers/phy/mediatek/phy-mtk-xfi-tphy.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 4be2fd097f261..616b86e3e62fd 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -13776,6 +13776,7 @@ L:	netdev@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/net/phy/mediatek-ge-soc.c
+>  F:	drivers/net/phy/mediatek-ge.c
+> +F:	drivers/phy/mediatek/phy-mtk-xfi-tphy.c
+>  
+>  MEDIATEK I2C CONTROLLER DRIVER
+>  M:	Qii Wang <qii.wang@mediatek.com>
+> diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+> index 3849b7c87d287..117d0e84c7360 100644
+> --- a/drivers/phy/mediatek/Kconfig
+> +++ b/drivers/phy/mediatek/Kconfig
+> @@ -13,6 +13,18 @@ config PHY_MTK_PCIE
+>  	  callback for PCIe GEN3 port, it supports software efuse
+>  	  initialization.
+>  
+> +config PHY_MTK_XFI_TPHY
+> +	tristate "MediaTek 10GE SerDes XFI T-PHY driver"
+> +	depends on ARCH_MEDIATEK || COMPILE_TEST
+> +	depends on OF && OF_ADDRESS
+> +	depends on HAS_IOMEM
+> +	select GENERIC_PHY
+> +	help
+> +	  Say 'Y' here to add support for MediaTek XFI T-PHY driver.
+> +	  The driver provides access to the Ethernet SerDes T-PHY supporting
+> +	  1GE and 2.5GE modes via the LynxI PCS, and 5GE and 10GE modes
+> +	  via the USXGMII PCS found in MediaTek SoCs with 10G Ethernet.
+> +
+>  config PHY_MTK_TPHY
+>  	tristate "MediaTek T-PHY Driver"
+>  	depends on ARCH_MEDIATEK || COMPILE_TEST
+> diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
+> index f6e24a47e0815..1b8088df71e84 100644
+> --- a/drivers/phy/mediatek/Makefile
+> +++ b/drivers/phy/mediatek/Makefile
+> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_MTK_PCIE)		+= phy-mtk-pcie.o
+>  obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
+>  obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
+>  obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
+> +obj-$(CONFIG_PHY_MTK_XFI_TPHY)		+= phy-mtk-xfi-tphy.o
+>  
+>  phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
+>  phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt2701.o
+> diff --git a/drivers/phy/mediatek/phy-mtk-xfi-tphy.c b/drivers/phy/mediatek/phy-mtk-xfi-tphy.c
+> new file mode 100644
+> index 0000000000000..551d6cee33f94
+> --- /dev/null
+> +++ b/drivers/phy/mediatek/phy-mtk-xfi-tphy.c
+> @@ -0,0 +1,360 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/* MediaTek 10GE SerDes XFI T-PHY driver
+> + *
+> + * Copyright (c) 2024 Daniel Golle <daniel@makrotopia.org>
+> + *                    Bc-bocun Chen <bc-bocun.chen@mediatek.com>
+> + * based on mtk_usxgmii.c and mtk_sgmii.c found in MediaTek's SDK (GPL-2.0)
+> + * Copyright (c) 2022 MediaTek Inc.
+> + * Author: Henry Yen <henry.yen@mediatek.com>
+> + */
+> +
+> +#include <linux/module.h>
+> +#include <linux/device.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/of.h>
+> +#include <linux/io.h>
+> +#include <linux/clk.h>
+> +#include <linux/reset.h>
+> +#include <linux/phy.h>
+> +#include <linux/phy/phy.h>
+> +
+> +#include "phy-mtk-io.h"
+> +
+> +#define MTK_XFI_TPHY_NUM_CLOCKS		2
+> +
+> +#define REG_DIG_GLB_70			0x0070
+> +#define  XTP_PCS_RX_EQ_IN_PROGRESS(x)	FIELD_PREP(GENMASK(25, 24), (x))
+> +#define  XTP_PCS_MODE_MASK		GENMASK(17, 16)
+> +#define  XTP_PCS_MODE(x)		FIELD_PREP(GENMASK(17, 16), (x))
+> +#define  XTP_PCS_RST_B			BIT(15)
+> +#define  XTP_FRC_PCS_RST_B		BIT(14)
+> +#define  XTP_PCS_PWD_SYNC_MASK		GENMASK(13, 12)
+> +#define  XTP_PCS_PWD_SYNC(x)		FIELD_PREP(XTP_PCS_PWD_SYNC_MASK, (x))
+> +#define  XTP_PCS_PWD_ASYNC_MASK		GENMASK(11, 10)
+> +#define  XTP_PCS_PWD_ASYNC(x)		FIELD_PREP(XTP_PCS_PWD_ASYNC_MASK, (x))
+> +#define  XTP_FRC_PCS_PWD_ASYNC		BIT(8)
+> +#define  XTP_PCS_UPDT			BIT(4)
+> +#define  XTP_PCS_IN_FR_RG		BIT(0)
+> +
+> +#define REG_DIG_GLB_F4			0x00f4
+> +#define  XFI_DPHY_PCS_SEL		BIT(0)
+> +#define   XFI_DPHY_PCS_SEL_SGMII	FIELD_PREP(XFI_DPHY_PCS_SEL, 1)
+> +#define   XFI_DPHY_PCS_SEL_USXGMII	FIELD_PREP(XFI_DPHY_PCS_SEL, 0)
+> +#define  XFI_DPHY_AD_SGDT_FRC_EN	BIT(5)
+> +
+> +#define REG_DIG_LN_TRX_40		0x3040
+> +#define  XTP_LN_FRC_TX_DATA_EN		BIT(29)
+> +#define  XTP_LN_TX_DATA_EN		BIT(28)
+> +
+> +#define REG_DIG_LN_TRX_B0		0x30b0
+> +#define  XTP_LN_FRC_TX_MACCK_EN		BIT(5)
+> +#define  XTP_LN_TX_MACCK_EN		BIT(4)
+> +
+> +#define REG_ANA_GLB_D0			0x90d0
+> +#define  XTP_GLB_USXGMII_SEL_MASK	GENMASK(3, 1)
+> +#define  XTP_GLB_USXGMII_SEL(x)		FIELD_PREP(GENMASK(3, 1), (x))
+> +#define  XTP_GLB_USXGMII_EN		BIT(0)
+> +
+> +struct mtk_xfi_tphy {
+> +	void __iomem		*base;
+> +	struct device		*dev;
+> +	struct reset_control	*reset;
+> +	struct clk_bulk_data	clocks[MTK_XFI_TPHY_NUM_CLOCKS];
+> +	bool			da_war;
+> +};
+> +
+> +static void mtk_xfi_tphy_setup(struct mtk_xfi_tphy *xfi_tphy,
+> +			       phy_interface_t interface)
+> +{
+> +	/* Override 10GBase-R tuning value if work-around is selected */
+> +	bool da_war = (xfi_tphy->da_war && (interface == PHY_INTERFACE_MODE_10GBASER));
+> +	/* Bools to make setting up values for specific PHY speeds easier */
+> +	bool is_2p5g = (interface == PHY_INTERFACE_MODE_2500BASEX);
+> +	bool is_1g = (interface == PHY_INTERFACE_MODE_1000BASEX ||
+> +		      interface == PHY_INTERFACE_MODE_SGMII);
+> +	bool is_10g = (interface == PHY_INTERFACE_MODE_10GBASER ||
+> +		       interface == PHY_INTERFACE_MODE_USXGMII);
+> +	bool is_5g = (interface == PHY_INTERFACE_MODE_5GBASER);
+> +	/* Bool to configure input mux to either
+> +	 *  - USXGMII PCS (64b/66b coding) for 5G/10G
+> +	 *  - LynxI PCS (8b/10b coding) for 1G/2.5G
+> +	 */
+> +	bool use_lynxi_pcs = (is_1g || is_2p5g);
+> +
+> +	dev_dbg(xfi_tphy->dev, "setting up for mode %s\n", phy_modes(interface));
+> +
+> +	/* Setup PLL setting */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x9024, 0x100000, is_10g ? 0x0 : 0x100000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x2020, 0x202000, is_5g ? 0x202000 : 0x0);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x2030, 0x500, is_1g ? 0x0 : 0x500);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x2034, 0xa00, is_1g ? 0x0 : 0xa00);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x2040, 0x340000, is_1g ? 0x200000 : 0x140000);
+> +
+> +	/* Setup RXFE BW setting */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50f0, 0xc10, is_1g ? 0x410 : is_5g ? 0x800 : 0x400);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50e0, 0x4000, is_5g ? 0x0 : 0x4000);
+> +
+> +	/* Setup RX CDR setting */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x506c, 0x30000, is_5g ? 0x0 : 0x30000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5070, 0x670000, is_5g ? 0x620000 : 0x50000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5074, 0x180000, is_5g ? 0x180000 : 0x0);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5078, 0xf000400, is_5g ? 0x8000000 :
+> +									0x7000400);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x507c, 0x5000500, is_5g ? 0x4000400 :
+> +									0x1000100);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5080, 0x1410, is_1g ? 0x400 : is_5g ? 0x1010 : 0x0);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5084, 0x30300, is_1g ? 0x30300 :
+> +							      is_5g ? 0x30100 :
+> +								      0x100);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x5088, 0x60200, is_1g ? 0x20200 :
+> +							      is_5g ? 0x40000 :
+> +								      0x20000);
+> +
+> +	/* Setting RXFE adaptation range setting */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50e4, 0xc0000, is_5g ? 0x0 : 0xc0000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50e8, 0x40000, is_5g ? 0x0 : 0x40000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50ec, 0xa00, is_1g ? 0x200 : 0x800);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x50a8, 0xee0000, is_5g ? 0x800000 :
+> +								       0x6e0000);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x6004, 0x190000, is_5g ? 0x0 : 0x190000);
+> +
+> +	if (is_10g)
+> +		writel(0x01423342, xfi_tphy->base + 0x00f8);
+> +	else if (is_5g)
+> +		writel(0x00a132a1, xfi_tphy->base + 0x00f8);
+> +	else if (is_2p5g)
+> +		writel(0x009c329c, xfi_tphy->base + 0x00f8);
+> +	else
+> +		writel(0x00fa32fa, xfi_tphy->base + 0x00f8);
+> +
+> +	/* Force SGDT_OUT off and select PCS */
+> +	mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_F4,
+> +			    XFI_DPHY_AD_SGDT_FRC_EN | XFI_DPHY_PCS_SEL,
+> +			    XFI_DPHY_AD_SGDT_FRC_EN |
+> +			    (use_lynxi_pcs ? XFI_DPHY_PCS_SEL_SGMII :
+> +					     XFI_DPHY_PCS_SEL_USXGMII));
+> +
+> +	/* Force GLB_CKDET_OUT */
+> +	mtk_phy_set_bits(xfi_tphy->base + 0x0030, 0xc00);
+> +
+> +	/* Force AEQ on */
+> +	writel(XTP_PCS_RX_EQ_IN_PROGRESS(2) | XTP_PCS_PWD_SYNC(2) | XTP_PCS_PWD_ASYNC(2),
+> +	       xfi_tphy->base + REG_DIG_GLB_70);
+> +
+> +	usleep_range(1, 5);
+> +
+> +	/* Setup TX DA default value */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x30b0, 0x30, 0x20);
+> +	writel(0x00008a01, xfi_tphy->base + 0x3028);
+> +	writel(0x0000a884, xfi_tphy->base + 0x302c);
+> +	writel(0x00083002, xfi_tphy->base + 0x3024);
+> +
+> +	/* Setup RG default value */
+> +	if (use_lynxi_pcs) {
+> +		writel(0x00011110, xfi_tphy->base + 0x3010);
+> +		writel(0x40704000, xfi_tphy->base + 0x3048);
+> +	} else {
+> +		writel(0x00022220, xfi_tphy->base + 0x3010);
+> +		writel(0x0f020a01, xfi_tphy->base + 0x5064);
+> +		writel(0x06100600, xfi_tphy->base + 0x50b4);
+> +		if (interface == PHY_INTERFACE_MODE_USXGMII)
+> +			writel(0x40704000, xfi_tphy->base + 0x3048);
+> +		else
+> +			writel(0x47684100, xfi_tphy->base + 0x3048);
+> +	}
+> +
+> +	if (is_1g)
+> +		writel(0x0000c000, xfi_tphy->base + 0x3064);
+> +
+> +	/* Setup RX EQ initial value */
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x3050, 0xa8000000,
+> +			    (interface != PHY_INTERFACE_MODE_10GBASER) ? 0xa8000000 : 0x0);
+> +	mtk_phy_update_bits(xfi_tphy->base + 0x3054, 0xaa,
+> +			    (interface != PHY_INTERFACE_MODE_10GBASER) ? 0xaa : 0x0);
+> +
+> +	if (!use_lynxi_pcs)
+> +		writel(0x00000f00, xfi_tphy->base + 0x306c);
+> +	else if (is_2p5g)
+> +		writel(0x22000f00, xfi_tphy->base + 0x306c);
+> +	else
+> +		writel(0x20200f00, xfi_tphy->base + 0x306c);
+> +
+> +	mtk_phy_update_bits(xfi_tphy->base + 0xa008, 0x10000, da_war ? 0x10000 : 0x0);
+> +
+> +	mtk_phy_update_bits(xfi_tphy->base + 0xa060, 0x50000, use_lynxi_pcs ? 0x50000 : 0x40000);
+> +
+> +	/* Setup PHYA speed */
+> +	mtk_phy_update_bits(xfi_tphy->base + REG_ANA_GLB_D0,
+> +			    XTP_GLB_USXGMII_SEL_MASK | XTP_GLB_USXGMII_EN,
+> +			    is_10g ?  XTP_GLB_USXGMII_SEL(0) :
+> +			    is_5g ?   XTP_GLB_USXGMII_SEL(1) :
+> +			    is_2p5g ? XTP_GLB_USXGMII_SEL(2) :
+> +				      XTP_GLB_USXGMII_SEL(3));
+> +	mtk_phy_set_bits(xfi_tphy->base + REG_ANA_GLB_D0, XTP_GLB_USXGMII_EN);
+> +
+> +	/* Release reset */
+> +	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_GLB_70,
+> +			 XTP_PCS_RST_B | XTP_FRC_PCS_RST_B);
+> +	usleep_range(150, 500);
+> +
+> +	/* Switch to P0 */
+> +	mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
+> +			    XTP_PCS_IN_FR_RG |
+> +			    XTP_FRC_PCS_PWD_ASYNC |
+> +			    XTP_PCS_PWD_ASYNC_MASK |
+> +			    XTP_PCS_PWD_SYNC_MASK |
+> +			    XTP_PCS_UPDT,
+> +			    XTP_PCS_IN_FR_RG |
+> +			    XTP_FRC_PCS_PWD_ASYNC |
+> +			    XTP_PCS_UPDT);
+> +	usleep_range(1, 5);
+> +
+> +	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_70, XTP_PCS_UPDT);
+> +	usleep_range(15, 50);
+> +
+> +	if (use_lynxi_pcs) {
+> +		/* Switch to Gen2 */
+> +		mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
+> +				    XTP_PCS_MODE_MASK | XTP_PCS_UPDT,
+> +				    XTP_PCS_MODE(1) | XTP_PCS_UPDT);
+> +	} else {
+> +		/* Switch to Gen3 */
+> +		mtk_phy_update_bits(xfi_tphy->base + REG_DIG_GLB_70,
+> +				    XTP_PCS_MODE_MASK | XTP_PCS_UPDT,
+> +				    XTP_PCS_MODE(2) | XTP_PCS_UPDT);
+> +	}
+> +	usleep_range(1, 5);
+> +
+> +	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_70, XTP_PCS_UPDT);
+> +
+> +	usleep_range(100, 500);
+> +
+> +	/* Enable MAC CK */
+> +	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_LN_TRX_B0, XTP_LN_TX_MACCK_EN);
+> +	mtk_phy_clear_bits(xfi_tphy->base + REG_DIG_GLB_F4, XFI_DPHY_AD_SGDT_FRC_EN);
+> +
+> +	/* Enable TX data */
+> +	mtk_phy_set_bits(xfi_tphy->base + REG_DIG_LN_TRX_40,
+> +			 XTP_LN_FRC_TX_DATA_EN | XTP_LN_TX_DATA_EN);
+> +	usleep_range(400, 1000);
+> +}
+> +
+> +static int mtk_xfi_tphy_set_mode(struct phy *phy, enum phy_mode mode, int
+> +				 submode)
+> +{
+> +	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
+> +
+> +	if (mode != PHY_MODE_ETHERNET)
+> +		return -EINVAL;
+> +
+> +	switch (submode) {
+> +	case PHY_INTERFACE_MODE_1000BASEX:
+> +	case PHY_INTERFACE_MODE_2500BASEX:
+> +	case PHY_INTERFACE_MODE_SGMII:
+> +	case PHY_INTERFACE_MODE_5GBASER:
+> +	case PHY_INTERFACE_MODE_10GBASER:
+> +	case PHY_INTERFACE_MODE_USXGMII:
+> +		mtk_xfi_tphy_setup(xfi_tphy, submode);
+> +		return 0;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +}
+> +
+> +static int mtk_xfi_tphy_reset(struct phy *phy)
+> +{
+> +	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
+> +
+> +	reset_control_assert(xfi_tphy->reset);
+> +	usleep_range(100, 500);
+> +	reset_control_deassert(xfi_tphy->reset);
+> +	usleep_range(1, 10);
+> +
+> +	return 0;
+> +}
+> +
+> +static int mtk_xfi_tphy_power_on(struct phy *phy)
+> +{
+> +	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
+> +
+> +	return clk_bulk_prepare_enable(MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
+> +}
+> +
+> +static int mtk_xfi_tphy_power_off(struct phy *phy)
+> +{
+> +	struct mtk_xfi_tphy *xfi_tphy = phy_get_drvdata(phy);
+> +
+> +	clk_bulk_disable_unprepare(MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops mtk_xfi_tphy_ops = {
+> +	.power_on	= mtk_xfi_tphy_power_on,
+> +	.power_off	= mtk_xfi_tphy_power_off,
+> +	.set_mode	= mtk_xfi_tphy_set_mode,
+> +	.reset		= mtk_xfi_tphy_reset,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static int mtk_xfi_tphy_probe(struct platform_device *pdev)
+> +{
+> +	struct device_node *np = pdev->dev.of_node;
+> +	struct phy_provider *phy_provider;
+> +	struct mtk_xfi_tphy *xfi_tphy;
+> +	struct phy *phy;
+> +	int ret;
+> +
+> +	if (!np)
+> +		return -ENODEV;
+> +
+> +	xfi_tphy = devm_kzalloc(&pdev->dev, sizeof(*xfi_tphy), GFP_KERNEL);
+> +	if (!xfi_tphy)
+> +		return -ENOMEM;
+> +
+> +	xfi_tphy->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(xfi_tphy->base))
+> +		return PTR_ERR(xfi_tphy->base);
+> +
+> +	xfi_tphy->dev = &pdev->dev;
+> +	xfi_tphy->clocks[0].id = "topxtal";
+> +	xfi_tphy->clocks[1].id = "xfipll";
+> +	ret = devm_clk_bulk_get(&pdev->dev, MTK_XFI_TPHY_NUM_CLOCKS, xfi_tphy->clocks);
+> +	if (ret)
+> +		return ret;
+> +
+> +	xfi_tphy->reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
+> +	if (IS_ERR(xfi_tphy->reset))
+> +		return PTR_ERR(xfi_tphy->reset);
+> +
+> +	xfi_tphy->da_war = of_property_read_bool(np, "mediatek,usxgmii-performance-errata");
+> +
+> +	phy = devm_phy_create(&pdev->dev, NULL, &mtk_xfi_tphy_ops);
+> +	if (IS_ERR(phy))
+> +		return PTR_ERR(phy);
+> +
+> +	phy_set_drvdata(phy, xfi_tphy);
+> +	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct of_device_id mtk_xfi_tphy_match[] = {
+> +	{ .compatible = "mediatek,mt7988-xfi-tphy", },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, mtk_xfi_tphy_match);
+> +
+> +static struct platform_driver mtk_xfi_tphy_driver = {
+> +	.probe = mtk_xfi_tphy_probe,
+> +	.driver = {
+> +		.name = "mtk-xfi-tphy",
+> +		.of_match_table = mtk_xfi_tphy_match,
+> +	},
+> +};
+> +module_platform_driver(mtk_xfi_tphy_driver);
+> +
+> +MODULE_DESCRIPTION("MediaTek 10GE SerDes XFI T-PHY driver");
+> +MODULE_AUTHOR("Daniel Golle <daniel@makrotopia.org>");
+> +MODULE_AUTHOR("Bc-bocun Chen <bc-bocun.chen@mediatek.com>");
+> +MODULE_LICENSE("GPL");
+> -- 
+> 2.43.0
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
