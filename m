@@ -4,67 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47EB1C54791
-	for <linux-phy@archiver.kernel.org>; Sun, 10 Mar 2024 13:29:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41CFCC54791
+	for <linux-phy@archiver.kernel.org>; Sun, 10 Mar 2024 16:47:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UxxfqZpuAW79JfDqeZJEZLfXRzih6aE27pjSwVCeSvA=; b=dpo6muNvK3aOaZ
-	jET4qSqacyLsWoCgUgD5yJm5uwl06pFY2KA2j4u21HL+Cd5s9fC7lJE+qZ4BvyFN6Hchs5YXTKrdR
-	FXx3DJAvJ7wnlFFKVi0cvoG0c+jbtL4RSqmK/gsLfTbe4lchCmX2RzAvF7O7CQTNVZP/Vot7KU5Br
-	GbjDv7FIz8V7gITqyJJ52sAu/ybN0bw2QGNHrym0fC21ZTiGOMFWn2VRDKKY10YVgPz0R4s5qjTNz
-	UeTyWjfOeXNOzKmlUYXx7yCHGxIe52EBBN0l9kCoEvcWvZ5qKyMUBA2KCGVSyzL5isL0wrm4g2GUc
-	Q6e2M8oIorOqS0BwhEjg==;
+	List-Owner; bh=jvGsMiAWuqpZ0mItMhTovoGftICLEMP94z74le8vWuc=; b=dFNKhAa5vLcSPL
+	o1PGU82LYzKXkwLZ4wZh6BfCeLbldBpX541cY2v0xN/nDMAwle8l5ByhkiIRbz4GjoreGWjR+3G5h
+	3p2oegppjJSWMsi9EC+VoAgybJLOxcheFOHlRBSW+tezAn0PiMfaX3fyxhC/iuqMf0QXC0OXnz9ch
+	+46DEvvS6IU9RAkalekxAK16s2Zdzq1PQwCRdWPV3S1rut7XIXCF8WjoWsBBNoAQxrEuG01wP3WMg
+	/7eH0ZIcVQQxLfKOtCn2vV2XWncd57oCC/72LHGG4qnUQ2shYpHfzMB8uk64+g+JpmCFykRXZV0we
+	1RZ1Z36fSUnoRQCaPcVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjJFB-0000000FqDV-1q9z;
-	Sun, 10 Mar 2024 13:29:37 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rjMKD-0000000GBl8-3HJK;
+	Sun, 10 Mar 2024 16:47:01 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjJF7-0000000FqCY-0s0l
-	for linux-phy@lists.infradead.org;
-	Sun, 10 Mar 2024 13:29:35 +0000
+	id 1rjMK9-0000000GBk3-3bfy;
+	Sun, 10 Mar 2024 16:46:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 0F0B0CE09CF;
-	Sun, 10 Mar 2024 13:29:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD694C433F1;
-	Sun, 10 Mar 2024 13:29:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id B841F60ABD;
+	Sun, 10 Mar 2024 16:46:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9E73EC433F1;
+	Sun, 10 Mar 2024 16:46:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710077368;
-	bh=gfkP8LYRyawwp9+kWHGhd2GZEQ3SoFQ4y8eKVamILuY=;
+	s=k20201202; t=1710089215;
+	bh=YgFDGTSx8szIGlu041E7mSyIbrWzlKkD9Qxq+wJrHsw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RqfW/h3S87jj7+W0+B9RcHkHeLPMG/GXlWRzgASmC2b8EWoY7lueJu1mlC+YIbp3H
-	 fdtydgo6WXrq37R2CEaQMUhqH/yH2E3zP8RbNWRVgYkybKx5d1ztSLMM6nr6pzYOPT
-	 +eCV80EPFkgM35jQ+KctNZ6YUI6GBHW6Rva3JsOmSaQGx4obn2rtHl4c54iT/b78CA
-	 n+UPO0swXukzZ2bmFJPHQqdDq8bfZyuD/f2v0dtDGFG7l7EKX9Uf+T3ito+2AADnKc
-	 Fx4o6ls2xSbKE6YG3b779HPh+rgb4L9Jl61IIB4VeY9L/D/eLdqUh9y3mtvuAq9Q8a
-	 Vz/xvIwAtBPRA==
-Date: Sun, 10 Mar 2024 18:59:15 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Praveenkumar I <quic_ipkumar@quicinc.com>
-Cc: agross@kernel.org, andersson@kernel.org, konrad.dybcio@linaro.org,
-	mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
-	vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
-	quic_nsekar@quicinc.com, quic_srichara@quicinc.com,
-	linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+	b=tynvjpkkXKbP+NabRGe/Qm/Fy0xX1j8cRv8jvMBTWWOZrQBm6baax/G14ONlRIHyA
+	 gG+ZHJpOXFNMLs+zYzOaqXKRH3T9GOBwDsNl1okjfYicgARxFg9xhBwlsTW3ui2+Ok
+	 ZaKtB0A426aHie0Vka49lmlYiXxaZYZsn/9kd8UMUUGuWo7RC7T8gmkL6rUqdZmYaR
+	 bYk7cvgzA0fLQI5Cwc/ZAaHCKqGu1np7HrzLG+wis5vJA0W1U2dwYm1eXHY3TIu12z
+	 jnluNgec2SEVDrxZM1IS/5sqd7ZnDKOFznwi8pXvSy00UoZykCXm4zRQE+UCHWjptu
+	 rAtmsEb14vyBg==
+Date: Sun, 10 Mar 2024 22:16:51 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Jakub Kicinski <kuba@kernel.org>
+Cc: Daniel Golle <daniel@makrotopia.org>,
+	Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
+	Steven Liu <steven.liu@mediatek.com>,
+	John Crispin <john@phrozen.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	quic_varada@quicinc.com, quic_devipriy@quicinc.com,
-	quic_kathirav@quicinc.com, quic_anusha@quicinc.com
-Subject: Re: [PATCH 00/10] Add PCIe support for Qualcomm IPQ5332
-Message-ID: <20240310132915.GE3390@thinkpad>
-References: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
+	netdev@vger.kernel.org
+Subject: Re: [PATCH v3 2/2] phy: add driver for MediaTek XFI T-PHY
+Message-ID: <Ze3j-7WzbTM52kAs@matsya>
+References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
+ <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
+ <ZevJwSq-A43vqO6k@makrotopia.org>
+ <20240308193632.158b3c42@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
+In-Reply-To: <20240308193632.158b3c42@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240310_062933_545829_6F4581EC 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20240310_094658_038116_DA0B1BCA 
+X-CRM114-Status: GOOD (  10.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,42 +85,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBEZWMgMTQsIDIwMjMgYXQgMTE6NTg6MzdBTSArMDUzMCwgUHJhdmVlbmt1bWFyIEkg
-d3JvdGU6Cj4gUGF0Y2ggc2VyaWVzIGFkZHMgc3VwcG9ydCBmb3IgZW5hYmxpbmcgdGhlIFBDSWUg
-Y29udHJvbGxlciBhbmQKPiBVTklQSFkgZm91bmQgb24gUXVhbGNvbW0gSVBRNTMzMiBwbGF0Zm9y
-bS4gUENJZTAgaXMgR2VuMyBYMSBhbmQKPiBQQ0llMSBpcyBHZW4zIFgyIGFyZSBhZGRlZC4KPiAK
-PiBVTklQSFkgY2hhbmdlcyBkZXBlbmRzIG9uCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxs
-LzIwMjMxMDAzMTIwODQ2LjI4NjI2LTEtcXVpY19uc2VrYXJAcXVpY2luYy5jb20vCj4gUENJZSBk
-cml2ZXIgY2hhbmdlIGRlcGVuZHMgb24KPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAy
-MzA1MTkwOTAyMTkuMTU5MjUtMS1xdWljX2Rldmlwcml5QHF1aWNpbmMuY29tLwo+IAoKQW55IHBs
-YW4gb24gdGhpcyBzZXJpZXMgYW5kIHRoZSBkZXBlbmRlbmNpZXM/CgotIE1hbmkKCj4gUHJhdmVl
-bmt1bWFyIEkgKDEwKToKPiAgIGR0LWJpbmRpbmdzOiBjbG9jazogQWRkIHNlcGFyYXRlIGNsb2Nr
-cyBmb3IgUENJZSBhbmQgVVNCIGZvciBDb21ibyBQSFkKPiAgIGNsazogcWNvbTogaXBxNTMzMjog
-QWRkIHNlcGFyYXRlIGNsb2NrcyBmb3IgUENJZSBhbmQgVVNCIGZvciBDb21ibyBQSFkKPiAgIGFy
-bTY0OiBkdHM6IHFjb206IGlwcTUzMzI6IEFkZCBzZXBhcmF0ZSBlbnRyeSBmb3IgVVNCIHBpcGUg
-Y2xvY2sKPiAgIHBoeTogcWNvbTogQWRkIHN1cHBvcnQgZm9yIFBpcGUgY2xvY2sgcmF0ZSBmcm9t
-IGRldmljZSBkYXRhCj4gICBkdC1iaW5kaW5nczogcGh5OiBxY29tLHVuaXBoeS1wY2llOiBBZGQg
-aXBxNTMzMiBiaW5kaW5ncwo+ICAgcGh5OiBxY29tOiBpcHE1MzMyOiBBZGQgc3VwcG9ydCBmb3Ig
-ZzN4MSBhbmQgZzN4MiBQQ0llIFBIWXMKPiAgIGR0LWJpbmRpbmdzOiBQQ0k6IHFjb206IEFkZCBJ
-UFE1MzMyIFNvQwo+ICAgcGNpOiBxY29tOiBBZGQgc3VwcG9ydCBmb3IgSVBRNTMzMgo+ICAgYXJt
-NjQ6IGR0czogcWNvbTogaXBxNTMzMjogQWRkIFBDSWUgcmVsYXRlZCBub2Rlcwo+ICAgYXJtNjQ6
-IGR0czogcWNvbTogaXBxNTMzMjogRW5hYmxlIFBDSWUgcGh5cyBhbmQgY29udHJvbGxlcnMKPiAK
-PiAgLi4uL2JpbmRpbmdzL2Nsb2NrL3Fjb20saXBxNTMzMi1nY2MueWFtbCAgICAgIHwgICA2ICst
-Cj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9xY29tLHBjaWUueWFtbCAgICB8ICAzNiAr
-KysrCj4gIC4uLi9iaW5kaW5ncy9waHkvcWNvbSx1bmlwaHktcGNpZS0yOGxwLnlhbWwgICB8ICA2
-NSArKysrKy0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUzMzItcmRwNDQxLmR0cyAg
-IHwgIDc0ICsrKysrKysKPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUzMzIuZHRzaSAg
-ICAgICAgIHwgMTg4ICsrKysrKysrKysrKysrKysrLQo+ICBkcml2ZXJzL2Nsay9xY29tL2djYy1p
-cHE1MzMyLmMgICAgICAgICAgICAgICAgfCAgIDcgKy0KPiAgZHJpdmVycy9wY2kvY29udHJvbGxl
-ci9kd2MvcGNpZS1xY29tLmMgICAgICAgIHwgICAxICsKPiAgLi4uL3BoeS9xdWFsY29tbS9waHkt
-cWNvbS11bmlwaHktcGNpZS0yOGxwLmMgIHwgIDQ5ICsrKystCj4gIDggZmlsZXMgY2hhbmdlZCwg
-NDEyIGluc2VydGlvbnMoKyksIDE0IGRlbGV0aW9ucygtKQo+IAo+IC0tIAo+IDIuMzQuMQo+IAo+
-IAoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
-r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On 08-03-24, 19:36, Jakub Kicinski wrote:
+> On Sat, 9 Mar 2024 02:30:25 +0000 Daniel Golle wrote:
+> > > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> > > Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>  
+> > 
+> > It's been a month since this patch was posted. Maybe it has somehow
+> > slipped under the table (or even under the carpet)?
+
+Nope, somehow I dont have this in inbox, i think i have some issues with
+gmail and list server,
+
+> Lots of people in To:, lets direct the question to Vinod? 
+> Most active generic PHY maintainer according to git, Vinod?
+
+thanks for letting me know...
+I will review it in next few days (pulled it from lore using b4)
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
