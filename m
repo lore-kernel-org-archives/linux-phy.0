@@ -4,95 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64563C54791
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Mar 2024 06:51:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58E52C54E58
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Mar 2024 17:35:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8b6Srh2+Gb95Wfm8wRQZag1NRQZK9BOS9iszQTODYgc=; b=CcA2/MEnRCEZqn
-	QT/txB74Z8jRxDFOUIMt/vnDKjty4WThdjGjxWPB6w1/Sf7Et7PG/3yGdapJZOVs1kffk0qkaCPFk
-	zJirSsaXm1wpyRlR6Cq+kjvO4UB0fEEcppgxOBOW/kQMhIByxC0CYTBXr0NhFgbRMhDmEtWas1U73
-	SpxKm2c3tuzqWVr8XuXXD2vTqpdLW0crHvKIH279rSVfMCS/ffUZ54XDplmg3NdkvvmJ6J0+LxmeB
-	C36XRky9sjDYAzT5Cm9EgqkwhF8BW+/WGcKLZJHpbWAtFqEcO/82hGYkgKCI+NOGg58L7VwQHtgXT
-	U8qqF1Z9lxk75TIohl7A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1EYuuUFD8rzWCObnUYkuAXDISuDwLKg39HeLXb8XqDA=; b=A0ihaA7+1IdUVZfVvgXeGWQYx/
+	P3CGkGAlxWIR3qFobIrL6hb2eOhjV6tUSi+OrbuVgzHnMZucP/J+IUQ93qNtJQhlwid9eISjES5Fq
+	drv6cgxhzOC80C8JTQTT5tFMc89r+h9K8H0uylPR9amImltL8Eg77waOBMq7RQxAhMHXPlcorK5EH
+	gnt4lZVd69cTCztESYX6pVXAJC3GOWeA0ODtBhj7BoumK1bfAOeA74If78YYy5oCfPgb+OfTOsqFS
+	NX/zmN85tVgVH035hwlOpTnxe39vq0YUKuiXIK1B3nzKVDMVGykQpmNtdPyoZsBc2aZn2eZsphlHx
+	DXGlGu/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkISj-0000000969h-0CJR;
-	Wed, 13 Mar 2024 06:51:41 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1rlBSk-000000011ym-0Hc0;
+	Fri, 15 Mar 2024 17:35:22 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkISf-0000000967w-344p;
-	Wed, 13 Mar 2024 06:51:39 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 42D6pBSN009136;
-	Wed, 13 Mar 2024 01:51:11 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1710312671;
-	bh=rzD+EzX/k7d5q06olV4JiQMj7NEc0ZLvW6rR4gLdO+Q=;
-	h=Date:From:To:CC:Subject:References:In-Reply-To;
-	b=km6Clk7qp/+sN3+TgPu6pY/9+6Y4NqK55vGuGGeuzCQE07yYflykG9/SNVsFWTjyK
-	 DHzTupyUxpiXmEFCei2+2g7Sg9HNbR+VcOrIuHFluhVAXESUuymUmH541bvrq171xZ
-	 ZmcuNa5Rvcr0NnqaOTr/IWF6QnHGy9odQ3zclXBQ=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 42D6pBXi064923
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 13 Mar 2024 01:51:11 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Wed, 13
- Mar 2024 01:51:10 -0500
-Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Wed, 13 Mar 2024 01:51:10 -0500
-Received: from localhost (uda0492258.dhcp.ti.com [172.24.227.9])
-	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 42D6pAAW097772;
-	Wed, 13 Mar 2024 01:51:10 -0500
-Date: Wed, 13 Mar 2024 12:21:09 +0530
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: Thomas Richard <thomas.richard@bootlin.com>
-CC: Linus Walleij <linus.walleij@linaro.org>,
-        Bartosz Golaszewski
-	<brgl@bgdev.pl>,
-        Andy Shevchenko <andy@kernel.org>, Tony Lindgren
-	<tony@atomide.com>,
-        Haojian Zhuang <haojian.zhuang@linaro.org>,
-        Vignesh R
-	<vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-        Janusz Krzysztofik
-	<jmkrzyszt@gmail.com>,
-        Andi Shyti <andi.shyti@kernel.org>, Peter Rosin
-	<peda@axentia.se>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I
-	<kishon@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Lorenzo
- Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?=
-	<kw@linux.com>,
-        Rob Herring <robh@kernel.org>, Bjorn Helgaas
-	<bhelgaas@google.com>,
-        <linux-gpio@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
-        <linux-i2c@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-pci@vger.kernel.org>, <gregory.clement@bootlin.com>,
-        <theo.lebrun@bootlin.com>, <thomas.petazzoni@bootlin.com>,
-        <u-kumar1@ti.com>, <s-vadapalli@ti.com>
-Subject: Re: [PATCH v4 18/18] PCI: j721e: Add suspend and resume support
-Message-ID: <e4fc0b47-6a7f-4cc5-bb69-77655f775486@ti.com>
-References: <20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com>
- <20240102-j7200-pcie-s2r-v4-18-6f1f53390c85@bootlin.com>
+	id 1rlBSi-000000011xy-0D1z
+	for linux-phy@lists.infradead.org;
+	Fri, 15 Mar 2024 17:35:21 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-513d212f818so2523252e87.2
+        for <linux-phy@lists.infradead.org>; Fri, 15 Mar 2024 10:35:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1710524118; x=1711128918; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=iQf/zU1IbIJWQAYBzJwgaR4fassboS7XZvHjBHUMNEU=;
+        b=JFXM6UXIlcxhXRTy7vMFQ5rY2PVI4qsjnh32cTD2fMerBmExcj9Kd9qvpSMYTn19v7
+         vRCRL8BeRbBZxCM1iSM1Ibxtnn7K3zUQOqR0xaTSawpFOdNveEvMoluEJn6UFcv4qeV7
+         HAN4Ey81zGjM+Ne+u5gjFZjYTIwJE/2HSmoYP9poMJ9ydKAIA09wry/0GGNlzsAWgTgE
+         L1AmkbYmNXQ1b0P6moZ2wjAlL1oD69gPuGreJGzXP3/zXWQy0WO3OrJc1nWCSSR/NIVs
+         mL3zAgwcyqzOW1/3wyyWO2KMLRCSLgXfylW4+GWHnr0hG5lMZjdHoxV/8PMEGITeglMZ
+         hg7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1710524118; x=1711128918;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :references:cc:to:content-language:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=iQf/zU1IbIJWQAYBzJwgaR4fassboS7XZvHjBHUMNEU=;
+        b=ZG9Hw8sz46ZOZWKRkBtHOOe/wyoHmTes3d+OAuGAFE5FXE+JLVDgVPMbq7kapSXGg/
+         aEN+yvi6TlY6tq6KeLx5MPJmuFHRzGCrqYsAz0Tz/7WtL+kGRULi1lI2/RyVoTlJWOel
+         FangOY3k/qNy+nVzvIwgNymewnCk+cncGTgNdAaKVaQ0y8yzaBnrsxJMtN8dCpzTtZlN
+         Hal/ety+Cbn+IHHCCRG9kyt9Geh6KjtfDxuxoK9hjouWGwJUf5KjfMdUDeT+GdEyiI/a
+         RZop3ZWYyjMCDX100gznVfUsCSZ5ArQhC+0Q0q19IdFD5SOxobycK3Hhrlkd1z04kCgK
+         b4Jg==
+X-Forwarded-Encrypted: i=1; AJvYcCXvATW347AHyIyUtMgvlyPihQIT23OF4ImWLuphB0Cpi5g0FV2oiuaweq3SHBRYu6q2RLXSNsLV7Q7TcavT1HiY7X/MVqSduaaiguetlA==
+X-Gm-Message-State: AOJu0YwkNU21O+a2EY/84UhSpm548Ue0/kfwsmGKG56xvDX7n1JrhXNY
+	1NzePsTJQtK2g6IUtuv2yn1sm1YjtJGI6aEphao58yxfS/iwqAjF5KTZlVz3Bc4=
+X-Google-Smtp-Source: AGHT+IGQMulSlRF7Dtm081lDWhL1YsbGIlVuJQPI/UbTHpu33qoEVYfb40RG2YVrbINNMNXXvzA+ww==
+X-Received: by 2002:ac2:498e:0:b0:513:ca99:5908 with SMTP id f14-20020ac2498e000000b00513ca995908mr3093475lfl.26.1710524117699;
+        Fri, 15 Mar 2024 10:35:17 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:982:cbb0:a633:992a:92cc:9c3? ([2a01:e0a:982:cbb0:a633:992a:92cc:9c3])
+        by smtp.gmail.com with ESMTPSA id t6-20020a05600c450600b004133365bbc6sm9590842wmo.19.2024.03.15.10.35.16
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 15 Mar 2024 10:35:17 -0700 (PDT)
+Message-ID: <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org>
+Date: Fri, 15 Mar 2024 18:35:15 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240102-j7200-pcie-s2r-v4-18-6f1f53390c85@bootlin.com>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+Content-Language: en-US, fr
+To: Luca Weiss <luca.weiss@fairphone.com>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Abhinav Kumar <quic_abhinavk@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
+ <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com>
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro Developer Services
+In-Reply-To: <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240312_235137_958462_7268947C 
-X-CRM114-Status: GOOD (  26.81  )
+X-CRM114-CacheID: sfid-20240315_103520_217964_AA2D3410 
+X-CRM114-Status: GOOD (  27.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,81 +123,185 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: neil.armstrong@linaro.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBNYXIgMDQsIDIwMjQgYXQgMDQ6MzY6MDFQTSArMDEwMCwgVGhvbWFzIFJpY2hhcmQg
-d3JvdGU6Cj4gRnJvbTogVGjDqW8gTGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4KPiAK
-PiBBZGQgc3VzcGVuZCBhbmQgcmVzdW1lIHN1cHBvcnQuIE9ubHkgdGhlIHJjIG1vZGUgaXMgc3Vw
-cG9ydGVkLgo+IAo+IER1cmluZyB0aGUgc3VzcGVuZCBzdGFnZSBQRVJTVCMgaXMgYXNzZXJ0ZWQs
-IHRoZW4gZGVhc3NlcnRlZCBkdXJpbmcgdGhlCj4gcmVzdW1lIHN0YWdlLgo+IAo+IFNpZ25lZC1v
-ZmYtYnk6IFRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+Cj4gU2lnbmVkLW9m
-Zi1ieTogVGhvbWFzIFJpY2hhcmQgPHRob21hcy5yaWNoYXJkQGJvb3RsaW4uY29tPgoKUmV2aWV3
-ZWQtYnk6IFNpZGRoYXJ0aCBWYWRhcGFsbGkgPHMtdmFkYXBhbGxpQHRpLmNvbT4KClJlZ2FyZHMs
-ClNpZGRoYXJ0aC4KCj4gLS0tCj4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvY2FkZW5jZS9wY2kt
-ajcyMWUuYyB8IDg2ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hh
-bmdlZCwgODYgaW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9jb250
-cm9sbGVyL2NhZGVuY2UvcGNpLWo3MjFlLmMgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVu
-Y2UvcGNpLWo3MjFlLmMKPiBpbmRleCA5YWY0ZmQ2NGMxZjkuLmExZjEyMzJlOGVlNSAxMDA2NDQK
-PiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2UvcGNpLWo3MjFlLmMKPiArKysg
-Yi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2UvcGNpLWo3MjFlLmMKPiBAQCAtNyw2ICs3
-LDggQEAKPiAgICovCj4gIAo+ICAjaW5jbHVkZSA8bGludXgvY2xrLmg+Cj4gKyNpbmNsdWRlIDxs
-aW51eC9jbGstcHJvdmlkZXIuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2NvbnRhaW5lcl9vZi5oPgo+
-ICAjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2dwaW8vY29uc3Vt
-ZXIuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lvLmg+Cj4gQEAgLTIyLDYgKzI0LDggQEAKPiAgI2lu
-Y2x1ZGUgIi4uLy4uL3BjaS5oIgo+ICAjaW5jbHVkZSAicGNpZS1jYWRlbmNlLmgiCj4gIAo+ICsj
-ZGVmaW5lIGNkbnNfcGNpZV90b19yYyhwKSBjb250YWluZXJfb2YocCwgc3RydWN0IGNkbnNfcGNp
-ZV9yYywgcGNpZSkKPiArCj4gICNkZWZpbmUgRU5BQkxFX1JFR19TWVNfMgkweDEwOAo+ICAjZGVm
-aW5lIFNUQVRVU19SRUdfU1lTXzIJMHg1MDgKPiAgI2RlZmluZSBTVEFUVVNfQ0xSX1JFR19TWVNf
-MgkweDcwOAo+IEBAIC01ODgsNiArNTkyLDg3IEBAIHN0YXRpYyB2b2lkIGo3MjFlX3BjaWVfcmVt
-b3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAlwbV9ydW50aW1lX2Rpc2FibGUo
-ZGV2KTsKPiAgfQo+ICAKPiArc3RhdGljIGludCBqNzIxZV9wY2llX3N1c3BlbmRfbm9pcnEoc3Ry
-dWN0IGRldmljZSAqZGV2KQo+ICt7Cj4gKwlzdHJ1Y3QgajcyMWVfcGNpZSAqcGNpZSA9IGRldl9n
-ZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArCWlmIChwY2llLT5tb2RlID09IFBDSV9NT0RFX1JDKSB7
-Cj4gKwkJZ3Bpb2Rfc2V0X3ZhbHVlX2NhbnNsZWVwKHBjaWUtPnJlc2V0X2dwaW8sIDApOwo+ICsJ
-CWNsa19kaXNhYmxlX3VucHJlcGFyZShwY2llLT5yZWZjbGspOwo+ICsJfQo+ICsKPiArCWNkbnNf
-cGNpZV9kaXNhYmxlX3BoeShwY2llLT5jZG5zX3BjaWUpOwo+ICsKPiArCXJldHVybiAwOwo+ICt9
-Cj4gKwo+ICtzdGF0aWMgaW50IGo3MjFlX3BjaWVfcmVzdW1lX25vaXJxKHN0cnVjdCBkZXZpY2Ug
-KmRldikKPiArewo+ICsJc3RydWN0IGo3MjFlX3BjaWUgKnBjaWUgPSBkZXZfZ2V0X2RydmRhdGEo
-ZGV2KTsKPiArCXN0cnVjdCBjZG5zX3BjaWUgKmNkbnNfcGNpZSA9IHBjaWUtPmNkbnNfcGNpZTsK
-PiArCWludCByZXQ7Cj4gKwo+ICsJcmV0ID0gajcyMWVfcGNpZV9jdHJsX2luaXQocGNpZSk7Cj4g
-KwlpZiAocmV0IDwgMCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiArCWo3MjFlX3BjaWVfY29uZmln
-X2xpbmtfaXJxKHBjaWUpOwo+ICsKPiArCS8qCj4gKwkgKiBUaGlzIGlzIG5vdCBjYWxsZWQgZXhw
-bGljaXRseSBpbiB0aGUgcHJvYmUsIGl0IGlzIGNhbGxlZCBieQo+ICsJICogY2Ruc19wY2llX2lu
-aXRfcGh5KCkuCj4gKwkgKi8KPiArCXJldCA9IGNkbnNfcGNpZV9lbmFibGVfcGh5KHBjaWUtPmNk
-bnNfcGNpZSk7Cj4gKwlpZiAocmV0IDwgMCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiArCWlmIChw
-Y2llLT5tb2RlID09IFBDSV9NT0RFX1JDKSB7Cj4gKwkJc3RydWN0IGNkbnNfcGNpZV9yYyAqcmMg
-PSBjZG5zX3BjaWVfdG9fcmMoY2Ruc19wY2llKTsKPiArCj4gKwkJcmV0ID0gY2xrX3ByZXBhcmVf
-ZW5hYmxlKHBjaWUtPnJlZmNsayk7Cj4gKwkJaWYgKHJldCA8IDApCj4gKwkJCXJldHVybiByZXQ7
-Cj4gKwo+ICsJCS8qCj4gKwkJICogIlBvd2VyIFNlcXVlbmNpbmcgYW5kIFJlc2V0IFNpZ25hbCBU
-aW1pbmdzIiB0YWJsZSBpbgo+ICsJCSAqIFBDSSBFWFBSRVNTIENBUkQgRUxFQ1RST01FQ0hBTklD
-QUwgU1BFQ0lGSUNBVElPTiwgUkVWLiAzLjAKPiArCQkgKiBpbmRpY2F0ZXMgUEVSU1QjIHNob3Vs
-ZCBiZSBkZWFzc2VydGVkIGFmdGVyIG1pbmltdW0gb2YgMTAwdXMKPiArCQkgKiBvbmNlIFJFRkNM
-SyBpcyBzdGFibGUuIFRoZSBSRUZDTEsgdG8gdGhlIGNvbm5lY3RvciBpbiBSQwo+ICsJCSAqIG1v
-ZGUgaXMgc2VsZWN0ZWQgd2hpbGUgZW5hYmxpbmcgdGhlIFBIWS4gU28gZGVhc3NlcnQgUEVSU1Qj
-Cj4gKwkJICogYWZ0ZXIgMTAwIHVzLgo+ICsJCSAqLwo+ICsJCWlmIChwY2llLT5yZXNldF9ncGlv
-KSB7Cj4gKwkJCWZzbGVlcCgxMDApOwo+ICsJCQlncGlvZF9zZXRfdmFsdWVfY2Fuc2xlZXAocGNp
-ZS0+cmVzZXRfZ3BpbywgMSk7Cj4gKwkJfQo+ICsKPiArCQlyZXQgPSBjZG5zX3BjaWVfaG9zdF9s
-aW5rX3NldHVwKHJjKTsKPiArCQlpZiAocmV0IDwgMCkgewo+ICsJCQljbGtfZGlzYWJsZV91bnBy
-ZXBhcmUocGNpZS0+cmVmY2xrKTsKPiArCQkJcmV0dXJuIHJldDsKPiArCQl9Cj4gKwo+ICsJCS8q
-Cj4gKwkJICogUmVzZXQgaW50ZXJuYWwgc3RhdHVzIG9mIEJBUnMgdG8gZm9yY2UgcmVpbml0aWFs
-aXphdGlvbiBpbgo+ICsJCSAqIGNkbnNfcGNpZV9ob3N0X2luaXQoKS4KPiArCQkgKi8KPiArCQlm
-b3IgKGVudW0gY2Ruc19wY2llX3JwX2JhciBiYXIgPSBSUF9CQVIwOyBiYXIgPD0gUlBfTk9fQkFS
-OyBiYXIrKykKPiArCQkJcmMtPmF2YWlsX2liX2JhcltiYXJdID0gdHJ1ZTsKPiArCj4gKwkJcmV0
-ID0gY2Ruc19wY2llX2hvc3RfaW5pdChyYyk7Cj4gKwkJaWYgKHJldCkgewo+ICsJCQljbGtfZGlz
-YWJsZV91bnByZXBhcmUocGNpZS0+cmVmY2xrKTsKPiArCQkJcmV0dXJuIHJldDsKPiArCQl9Cj4g
-Kwl9Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBERUZJTkVfTk9JUlFfREVW
-X1BNX09QUyhqNzIxZV9wY2llX3BtX29wcywKPiArCQkJICAgICAgIGo3MjFlX3BjaWVfc3VzcGVu
-ZF9ub2lycSwKPiArCQkJICAgICAgIGo3MjFlX3BjaWVfcmVzdW1lX25vaXJxKTsKPiArCj4gIHN0
-YXRpYyBzdHJ1Y3QgcGxhdGZvcm1fZHJpdmVyIGo3MjFlX3BjaWVfZHJpdmVyID0gewo+ICAJLnBy
-b2JlICA9IGo3MjFlX3BjaWVfcHJvYmUsCj4gIAkucmVtb3ZlX25ldyA9IGo3MjFlX3BjaWVfcmVt
-b3ZlLAo+IEBAIC01OTUsNiArNjgwLDcgQEAgc3RhdGljIHN0cnVjdCBwbGF0Zm9ybV9kcml2ZXIg
-ajcyMWVfcGNpZV9kcml2ZXIgPSB7Cj4gIAkJLm5hbWUJPSAiajcyMWUtcGNpZSIsCj4gIAkJLm9m
-X21hdGNoX3RhYmxlID0gb2ZfajcyMWVfcGNpZV9tYXRjaCwKPiAgCQkuc3VwcHJlc3NfYmluZF9h
-dHRycyA9IHRydWUsCj4gKwkJLnBtCT0gcG1fc2xlZXBfcHRyKCZqNzIxZV9wY2llX3BtX29wcyks
-Cj4gIAl9LAo+ICB9Owo+ICBidWlsdGluX3BsYXRmb3JtX2RyaXZlcihqNzIxZV9wY2llX2RyaXZl
-cik7Cj4gCj4gLS0gCj4gMi4zOS4yCj4gCj4gCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 15/03/2024 18:19, Luca Weiss wrote:
+> On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
+>> Register a typec mux in order to change the PHY mode on the Type-C
+>> mux events depending on the mode and the svid when in Altmode setup.
+>>
+>> The DisplayPort phy should be left enabled if is still powered on
+>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+>> PHY is not powered off.
+>>
+>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+>> will be set in between of USB-Only, Combo and DisplayPort Only so
+>> this will leave enough time to the DRM DisplayPort controller to
+>> turn of the DisplayPort PHY.
+>>
+>> The patchset also includes bindings changes and DT changes.
+>>
+>> This has been successfully tested on an SM8550 board, but the
+>> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+>> PD USB Hubs and PD Altmode Dongles to make sure the switch works
+>> as expected.
+>>
+>> The DisplayPort 4 lanes setup can be check with:
+>> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+>> 	name = msm_dp
+>> 	drm_dp_link
+>> 		rate = 540000
+>> 		num_lanes = 4
+> 
+> Hi Neil,
+> 
+> I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
+> haven't had any success so far.
+> 
+> On top of your patches I added the following for my device:
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dts b/arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dts
+> index f5bd51806819..e7be17844da1 100644
+> --- a/arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dts
+> +++ b/arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dts
+> @@ -712,7 +712,7 @@ &mdss_dp {
+>   };
+>   
+>   &mdss_dp_out {
+> -	data-lanes = <0 1>;
+> +	data-lanes = <0 1 2 3>;
+>   	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
+>   };
+>   
+> @@ -1344,6 +1344,7 @@ &usb_1_qmpphy {
+>   	vdda-phy-supply = <&vreg_l6b>;
+>   	vdda-pll-supply = <&vreg_l1b>;
+>   
+> +	mode-switch;
+>   	orientation-switch;
+>   
+>   	status = "okay";
+> 
+> 
+> The output of the dp_debug file shows it's trying to use 4 lanes:
+> 
+>          name = msm_dp
+>          drm_dp_link
+>                  rate = 540000
+>                  num_lanes = 4
+>                  capabilities = 1
+>          dp_panel_info:
+>                  active = 0x0
+>                  back_porch = 0x0
+>                  front_porch = 0x0
+>                  sync_width = 0x0
+>                  active_low = 0x0
+>                  h_skew = 0
+>                  refresh rate = 0
+>                  pixel clock khz = 0
+>                  bpp = 0
+>          dp_link:
+>                  test_requested = 128
+>                  num_lanes = 4
+>                  bw_code = 20
+>                  lclk = 540000000
+>                  v_level = 2
+>                  p_level = 0
+> 
+> But the monitor stays black and the following appears in dmesg:
+> (starts with plugging in a dongle, ends with unplugging it again)
+> 
+> [ 1773.538161] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+> [ 1773.538197] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 1
+> [ 1773.540215] xhci-hcd xhci-hcd.2.auto: hcc params 0x0230fe65 hci version 0x110 quirks 0x0000008000000010
+> [ 1773.540260] xhci-hcd xhci-hcd.2.auto: irq 185, io mem 0x0a600000
+> [ 1773.540372] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+> [ 1773.540384] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 2
+> [ 1773.540396] xhci-hcd xhci-hcd.2.auto: Host supports USB 3.0 SuperSpeed
+> [ 1773.540524] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.08
+> [ 1773.540534] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+> [ 1773.540541] usb usb1: Product: xHCI Host Controller
+> [ 1773.540547] usb usb1: Manufacturer: Linux 6.8.0-00058-g113103fa3b95 xhci-hcd
+> [ 1773.540554] usb usb1: SerialNumber: xhci-hcd.2.auto
+> [ 1773.540999] hub 1-0:1.0: USB hub found
+> [ 1773.541028] hub 1-0:1.0: 1 port detected
+> [ 1773.542010] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+> [ 1773.542146] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.08
+> [ 1773.542162] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+> [ 1773.542174] usb usb2: Product: xHCI Host Controller
+> [ 1773.542183] usb usb2: Manufacturer: Linux 6.8.0-00058-g113103fa3b95 xhci-hcd
+> [ 1773.542193] usb usb2: SerialNumber: xhci-hcd.2.auto
+> [ 1773.543241] hub 2-0:1.0: USB hub found
+> [ 1773.543282] hub 2-0:1.0: 1 port detected
+> [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+> [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+
+Interesting #1 means the 4 lanes are not physically connected to the other side,
+perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
+or some fixups in the init tables.
+
+Abhinav, any suggestions ?
+
+Neil
+
+> [ 1775.597965] [drm:dp_display_process_hpd_high] *ERROR* failed to complete DP link training
+> [ 1775.598149] [drm:dp_aux_isr] *ERROR* Unexpected DP AUX IRQ 0x01000000 when not busy
+> [ 1776.632081] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+> [ 1776.632145] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+> [ 1776.662978] [drm:dp_display_process_hpd_high] *ERROR* failed to complete DP link training
+> [ 1776.663039] [drm:dp_aux_isr] *ERROR* Unexpected DP AUX IRQ 0x01000000 when not busy
+> [ 1777.717501] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+> [ 1777.717524] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+> [ 1777.751427] [drm:dp_display_process_hpd_high] *ERROR* failed to complete DP link training
+> [ 1777.751518] [drm:dp_aux_isr] *ERROR* Unexpected DP AUX IRQ 0x01000000 when not busy
+> [ 1778.793550] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+> [ 1778.793617] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+> [ 1778.827260] [drm:dp_aux_isr] *ERROR* Unexpected DP AUX IRQ 0x01000000 when not busy
+> [ 1778.827334] [drm:dp_display_process_hpd_high] *ERROR* failed to complete DP link training
+> [ 1779.279889] xhci-hcd xhci-hcd.2.auto: remove, state 1
+> [ 1779.279942] usb usb2: USB disconnect, device number 1
+> [ 1779.311920] xhci-hcd xhci-hcd.2.auto: USB bus 2 deregistered
+> [ 1779.311987] xhci-hcd xhci-hcd.2.auto: remove, state 4
+> [ 1779.312019] usb usb1: USB disconnect, device number 1
+> [ 1779.317772] xhci-hcd xhci-hcd.2.auto: USB bus 1 deregistered
+> 
+> Regards
+> Luca
+> 
+> 
+>> ...
+>>
+>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>> ---
+>> Neil Armstrong (7):
+>>        dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add mode-switch
+>>        phy: qcom: qmp-combo: store DP phy power state
+>>        phy: qcom: qmp-combo: introduce QPHY_MODE
+>>        phy: qcom: qmp-combo: register a typec mux to change the QPHY_MODE
+>>        arm64: dts: qcom-sm8550: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
+>>        arm64: dts: qcom-sm8650: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
+>>        arm64: dts: qcom-mode-switch: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
+>>
+>>   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   5 +
+>>   .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
+>>   arch/arm64/boot/dts/qcom/sm8550-hdk.dts            |   3 +-
+>>   arch/arm64/boot/dts/qcom/sm8550-qrd.dts            |   3 +-
+>>   arch/arm64/boot/dts/qcom/sm8650-qrd.dts            |   3 +-
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 168 +++++++++++++++++++--
+>>   6 files changed, 173 insertions(+), 15 deletions(-)
+>> ---
+>> base-commit: b321c0e8ca754d8cd9f23ceba958e3ea93c6519e
+>> change-id: 20240229-topic-sm8x50-upstream-phy-combo-typec-mux-31b5252513c9
+>>
+>> Best regards,
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
