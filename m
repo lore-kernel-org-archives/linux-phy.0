@@ -4,65 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06127C54E5D
-	for <linux-phy@archiver.kernel.org>; Sat, 16 Mar 2024 16:01:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28395C54E5D
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Mar 2024 03:34:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qxot67yx+8Fi+YGIJv13LfndvuFjkqEkPY36z9pu89U=; b=xbdA+i4BYkm+Wc
-	9UAjhmCuBp8qCiSykJHOYuJVqiAqjgoweZe7CxSUD2y15zHbisLOleo6LtBpg3UqmDLlslB0Ehb1l
-	tyhoQCZ9cyz5h/M5pwIF3eItqyOCwsJEMK0QT5fPBMqQe0l5is+vYLaJ74QK8gSokLfYqYxCGgS2r
-	54TvC1gkiYBI64omuC6ARXw/85WqjmPHGkqjqJpyx2T464Jh+gbshLc+Roam47vhLxNmFU668wtED
-	+FQ6zxsk5oOeM7FchPvROor+uhFlFyJMo8SAwWYTtLVOkBf7Qxz9SkTxlXws2kFuQL6NcDxF+SUHH
-	Ng5/Kxz/3bIIkeQvfUyA==;
+	List-Owner; bh=kmidLD67o9mSJEsoocO5d7c5OL8JhrPDljjX/CRmKis=; b=B2OjdDn3MQa3B4
+	c2TUeaxgED8nHIQFkmbFSnm7c0pRTqcGNQ69cizpgL+6+aCX70Bpgdd2BkAywKT/OiQ86bSNAi5Q+
+	JTrZ+mSP1idXKN3sjQmjTrXj5KIf7PgGQFxkWkvz1m/7fRVx6u9IFGawfGjW8yQj9egOzObJsJLrx
+	+6N86amx8LgIkqMlWmJoVnSStbZxZCfTf4W5IiR+a4ema3KpfhpA5cwF5NYUQvDngR6tMM+2kfwwm
+	5a6thPsIWtfnGITKoqxzGaptF5qh0AmK4CTsHHLdSs1fYwLo1ly4IsF284pAcw/QONMhK/5ICKNB7
+	MIqV3GTED+fLYt8Cjo3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rlWTZ-00000003Ovs-2Wtk;
-	Sat, 16 Mar 2024 16:01:37 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rm3l9-000000079nn-2jsz;
+	Mon, 18 Mar 2024 03:33:59 +0000
+Received: from mail-sh0chn02on20718.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::718] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rlWTW-00000003OvB-0T8R
+	id 1rm3l6-000000079mA-2dlM
 	for linux-phy@lists.infradead.org;
-	Sat, 16 Mar 2024 16:01:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CE430602DC;
-	Sat, 16 Mar 2024 16:01:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C8A9C433C7;
-	Sat, 16 Mar 2024 16:01:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710604888;
-	bh=E8gpcSQ4g+qjnbdy6/BOeXM1PQg+hZZkOsNPJV1YA+Y=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=AxHeZiVmueWwHy/Tvld9s1FsYsofbgvjQqJ2wBze7H2Ldfmdu8z7WJLEENRkvB5yl
-	 +V+3+DpToZpyT4Udw0s11ZnxK5g8V64EfNBOR3yqSf93PzbuxpC0okzC9hLGbXXp9m
-	 +GbxG2BGQaXUPbqQMcvOt7/yfxuqZ5KDIQWKTQLUpPknoYGH5nK7HHlbXWqmBHk5EN
-	 +xNSK0vBWcRoaeVX7/s4/sN4NoZkg9qLcQeKmNBETBHt+UoLCulQ4SGT09pi2F6MGC
-	 wWXuQUfkk8uIFBv32otHrlN4K+L6xTWfO1aYXwMzSzq793luTaZ6+j+20V/3yj8x5H
-	 rQhSiewwWp4GQ==
-Date: Sat, 16 Mar 2024 11:01:25 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Luca Weiss <luca.weiss@fairphone.com>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-Message-ID: <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt>
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
- <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com>
- <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org>
+	Mon, 18 Mar 2024 03:33:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WPAVVsb4vJp6y4deapWFS7INgLgq3C7rjbvZ5GPsscmwzAtmEqEQaIkZGqmmiGroH/dSNW7AYMUvu9IgW2XL6NpS5q7GVvJHbXMLD2A0A5kOJN7BmxrRpjAiBHy9vSGbFRau9LeJok0fbIm9hce+pfS765O2qga/b8IqMse+w+M3FPao7qlxdGuiv43esjHzck1i2dDQsjaWHbVUMEyp3bANCCe670gL/fcyqzFCJTICEmVxe8SkxyQYnnNz2UP/DofDjePnUHxVo+T2/AidcvCzwH2EPGo+aRDb28tNnIpfV2XVdz55DQ3iCc3AFej6tZKsd6tzoY479/XUfafy0A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OSJP5u3Pk8qaIUlWf81Q3RCvSVxFICT0A0pykKckW9A=;
+ b=HlZFvhPsWO683S5gLyI2rWN8+XE65JDTrKj4F3GLI70NhyVxq9QUwMdEIYcKvjOAZyy/q+uu59inPcxTHggVfIK6GqDMtKnp9dir0sRy3bJjkuThFccOiHyKZRrMO94zDCaVnCHsl5NmsSKtAb69jNwfa1OtxuHyCJcZQB8Kex144t5K6vKxxqapZ83GHm0vfJOfiUeQujIkLl/Z5/ce8/zGoxzWDCNjtnCCyy7NZXYKhjaF/JFHyRD0Wc99j/RwH+S7RpQ8Gabosndxnarjb4jt/V4hAXDJbbQ5j/3WRdn5wSLS5gVFQR0DE7Aen6U1QLscLouG596ap6/Kjbikgg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c510:3::6) by NT0PR01MB0957.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c510:6::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.16; Mon, 18 Mar
+ 2024 03:33:49 +0000
+Received: from NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+ ([fe80::d810:3fdf:422c:75d2]) by
+ NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn ([fe80::d810:3fdf:422c:75d2%6])
+ with mapi id 15.20.7386.016; Mon, 18 Mar 2024 03:33:49 +0000
+From: Shengyang Chen <shengyang.chen@starfivetech.com>
+To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+CC: "vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+	<kishon@kernel.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>, Minda Chen <minda.chen@starfivetech.com>,
+	Changhuang Liang <changhuang.liang@starfivetech.com>, "rogerq@kernel.org"
+	<rogerq@kernel.org>, "geert+renesas@glider.be" <geert+renesas@glider.be>,
+	Keith Zhao <keith.zhao@starfivetech.com>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH v4 0/2] Add JH7110 MIPI DPHY TX support
+Thread-Topic: [PATCH v4 0/2] Add JH7110 MIPI DPHY TX support
+Thread-Index: AQHaa3cya8U9IZqdqEmG+IUhyVoY+LE87ZbA
+Date: Mon, 18 Mar 2024 03:33:49 +0000
+Message-ID: <NT0PR01MB10706AFC0649D479D26DDC35EF2DA@NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn>
+References: <20240301012406.92589-1-shengyang.chen@starfivetech.com>
+In-Reply-To: <20240301012406.92589-1-shengyang.chen@starfivetech.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: NT0PR01MB1070:EE_|NT0PR01MB0957:EE_
+x-ms-office365-filtering-correlation-id: 55781783-14c3-4b92-df0c-08dc46fc399f
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Npo2rkCh/HF31H5dUZfY43u3Onr9vinSKqUwvUnzdAX4MJKltO8G7wU0VIfFKRmYvo3PMJNIvveOVB36XZUkj77cUDZ6Wn+zwfybVjLx9S/OC3fdQUBj4rKrjkLxfX6/eGrPHhCFkXg1hBxX+IP1bJF8QW3fXiGK0MH3FUehz9yoLfmzNpbJYJeW7nCfhm80Du20+Cbe3SovclJqQnFirefVhmmqHE9YURQpr7yii5IH7EnLaF7QwVawWfwMF7GvsQM/al34wluP8RpAwmkRuBpQ5fwuX5zywFM35M6EvpNZrQGG18gGWi5FguHbGQW41+QAtlSld4ZxVxqnDs/hpnLKqphKP4f3BOhJjS17unsFf+UafQ/px/9yqzTqSQJHfXQqHY8ytYKuLLs9Y533oU+EjeDkCNQXjRCbU6XdtvoH3Wi4PItrcsQDSnO3lqjOVvsQlpOXpfT5pvPTYgl8/ocSpgn5sWVXyksAJDq363Pl2QeW+7U4PLuEqtaBhMrhbGCDv05uf4Q/I5IU58oNRj85UKZJY3zEZ9K/NrrHz2awHrkXKZ10r2Q4IQAKHgdYEYh4kEgiUds+0zmcQq5pTH2B1R2aJpRwRsI03vOuzaKxUBVY0tck+Au5YbdYWe3W
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(7416005)(41320700004)(366007)(38070700009);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?cbZvzdrixXupdChA0LN7qhRfBST49WgC3ZRcOpOQX96oDIxhyJD6C/nnE1c5?=
+ =?us-ascii?Q?/cHMt7A3RBolzzANNr71fWDHw/vJDkC3LXW7vEeGZ++mSqv/7i9w3UnHNOjy?=
+ =?us-ascii?Q?NoaTe4MLAzbOh3VSJuZKCLSPP7+sMGzaPOxgx3HYo8l7jit7TFLyEGHMGc0a?=
+ =?us-ascii?Q?tzD2lzRImzAagW2nBGXGcY762oZXOhGtUjDawIEf/n0CA/4koS+XiZJT9eJO?=
+ =?us-ascii?Q?iPpJxaCq2fimjQfl0NB9UEXiNRPqtUZ9r/BGWFFFuYNYRcu55wqw9Axc5Uok?=
+ =?us-ascii?Q?ZB8CDLJYzWzOONC8K9h+sCwW+3nl+lzaIEe/yG5s0LlNeyFIEB43CzKwbtDf?=
+ =?us-ascii?Q?4ZEVhDQvyRNIz1RVZOU8jWEizl54iL4B7b6WXBKMYgo7sNSS5T6j0avjGua+?=
+ =?us-ascii?Q?cVQ4PFv5yiXWRzJOTmLZCHd9NcSvGTFBK6LYlsArnrHfBUXO2KdhHBjyCec3?=
+ =?us-ascii?Q?RKqpEvETpt/+mnO8WmWIi7IKCHujSwHHG4jlcMQa09ATi3AytWOcpxUOy76y?=
+ =?us-ascii?Q?hDgTwA8a4Ovm8hANh4sh1ALibrXSad+JWDVDAS2EX5wOv2xu0VhZoqHrueLt?=
+ =?us-ascii?Q?W1ilgRHqkzEMvYYrFsjU6IJroJ3w63CEg3MXwBt2rKPtkwf+xNqDtZrFeMOy?=
+ =?us-ascii?Q?s+40H67lGQDglbfCE7QCihz63y0pRtdb5ZEjF3Hx8Q96wOTLFNYA/wo2FHN6?=
+ =?us-ascii?Q?TXYTx5jkNoSTWe26DbJpn/LY7ORFw6puu5U52vI+WNcfEEeShCSfGrWYbbfi?=
+ =?us-ascii?Q?h2Vukv1cCElqTiBIY4ujxPhZgh87d4/4HofIu20JwbtUnMqHI2rdSmdiwG5G?=
+ =?us-ascii?Q?HXq3PiTQz7aJvlXufLaIzUlsuyJztiJwngYoIMJ2HTBDvQLaIlKoznk0Htu9?=
+ =?us-ascii?Q?Ta2t8FO32GJjg93KWMx6qR+u4HG6ShShsJoVIhYmSx9X3NOlwmad+dB8MUiP?=
+ =?us-ascii?Q?F47kWFtHVDWF0W0jf5KnsqkCnOP1GmYYdrZusAVwn8vRRKX6B5Xa9WnbG75c?=
+ =?us-ascii?Q?pgmxgHfvXUAbg+oWaYXrTcL+T2wlbaXXuAsEQi7v/kpRJa16b12/2kLep91g?=
+ =?us-ascii?Q?WssGnFO2BIthc51CChYjH2uik2uobXc+dP5wq8tc3ssrCooCvk2FGRlEKrYA?=
+ =?us-ascii?Q?6lbtKdvzhNHXuQu8Ut0BUb3F6Ecny64iD2fdLDz+L2ISeyODrv4DabB8lqyn?=
+ =?us-ascii?Q?muXY/C8sQRmZaDLajsY+4U95TDu7KzuVj6EYlQ3+nEWz+L3gqxyOC19YT3HF?=
+ =?us-ascii?Q?pgQeJDALJFNoR2XR4nCQ0TYIKvDPHgHgHCA831NI+CsIPh6vyHP90R1A8jNh?=
+ =?us-ascii?Q?Ccgyll5eDv6NPh+z+qIFyc+5ALIbfbGm2rCywY8R18PDEckJBawz5w3Vea/J?=
+ =?us-ascii?Q?1QboxnY5FkiQ9x9nHF6oLC8QIJcc2wJ/hIVqysqkTp6XTa6roX1TNv15YjKl?=
+ =?us-ascii?Q?Z6E6LmD0/GVK0aQXyt2vVNmHBWMuJstL7oEfNEL3H2TskZgwHjVsnDvFreR4?=
+ =?us-ascii?Q?tkYc3UgDwnS9/AaFWwovyW7O3qLlCl6zYmcvdQj5k2ewQqQ5iVaq3yqOcvho?=
+ =?us-ascii?Q?ArB80gnqRL2g6i6rnas7OIyWQ5/hqB1TPovlcLE5E1Z9qJLwgykjBNQfUbB9?=
+ =?us-ascii?Q?6A=3D=3D?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org>
+X-OriginatorOrg: starfivetech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: NT0PR01MB1070.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: 55781783-14c3-4b92-df0c-08dc46fc399f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Mar 2024 03:33:49.2023
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: adAIFNQ88wXdhloLZcNXLMC5RjZuWwrqX9BEVS+LMpNqp9YpC8rr6tLQqCjCXYe19mcYKz0DAuVoQuO5vnboPnQDCykw+dDV9G2FKj7vP60=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: NT0PR01MB0957
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240316_090134_336650_01C1FC36 
-X-CRM114-Status: GOOD (  25.98  )
+X-CRM114-CacheID: sfid-20240317_203356_692635_72336A17 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,59 +139,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 15, 2024 at 06:35:15PM +0100, Neil Armstrong wrote:
-> On 15/03/2024 18:19, Luca Weiss wrote:
-> > On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
-> > > Register a typec mux in order to change the PHY mode on the Type-C
-> > > mux events depending on the mode and the svid when in Altmode setup.
-> > > 
-> > > The DisplayPort phy should be left enabled if is still powered on
-> > > by the DRM DisplayPort controller, so bail out until the DisplayPort
-> > > PHY is not powered off.
-> > > 
-> > > The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
-> > > will be set in between of USB-Only, Combo and DisplayPort Only so
-> > > this will leave enough time to the DRM DisplayPort controller to
-> > > turn of the DisplayPort PHY.
-> > > 
-> > > The patchset also includes bindings changes and DT changes.
-> > > 
-> > > This has been successfully tested on an SM8550 board, but the
-> > > Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
-> > > PD USB Hubs and PD Altmode Dongles to make sure the switch works
-> > > as expected.
-> > > 
-> > > The DisplayPort 4 lanes setup can be check with:
-> > > $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
-> > > 	name = msm_dp
-> > > 	drm_dp_link
-> > > 		rate = 540000
-> > > 		num_lanes = 4
-> > 
-> > Hi Neil,
-> > 
-> > I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
-> > haven't had any success so far.
-> > 
-[..]
-> > [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
-> > [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+> This patchset adds mipi dphy tx support for the StarFive JH7110 SoC.
+> It is used to transfer DSI data. The series has been tested on the VisionFive 2
+> board.
 > 
-> Interesting #1 means the 4 lanes are not physically connected to the other side,
-> perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
-> or some fixups in the init tables.
 > 
+Hi, Vinod and Kishon
 
-I tested the same on rb3gen2 (qcs6490) a couple of weeks ago, with the
-same outcome. Looking at the AUX reads, after switching to 4-lane the
-link training is failing on all 4 lanes, in contrast to succeeding only
-on the first 2 if you e.g. forget to mux the other two.
+Could you please help to review and give me some suggestions
+for this patch series? Thank you for your time.
 
-As such, my expectation is that there's something wrong in the QMP PHY
-(or possibly redriver) for this platform.
-
-Regards,
-Bjorn
+Best regards,
+Shengyang
 
 -- 
 linux-phy mailing list
