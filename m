@@ -4,98 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F2DAC54E5D
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Mar 2024 09:08:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D62E8C54E68
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Mar 2024 09:35:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PkArOCkrhPTTZdH+IXQ4oQuyXGKoRH+smOxDfTRadZM=; b=Aq4o0tX9unT66N
-	ACFogfE2lwaAtMiWF207aEoDQEtRQYIwdqF7JJPe7TR7vKsyEnVCJf/gnTYgRYxCyNhE/aegyTqXR
-	10t8MvjlrOCM0VTItFdQBfWiNLKN3EHLzE6D2rgq3clktyOVx5FoyH1kD+dq5CyFIdPp3cOPUY1hx
-	p+5uhyYdWZHl/fbV2qCJMKAYsf85Erm9dXDuZfFZwFBOyc3gUiZ3qJ6Lkel2ygTUPRNnRQ2QXJSJT
-	sgF5eDcstiv+BdGgS5eGX7NmX20NrRRq+Hj80069n8cpYrCVfWSDw1a+VTTKVkO3afwP1HpCotjP1
-	mJgpLqjT2iFIQjDUyx+Q==;
+	List-Owner; bh=64ZCVJeh7eY+lMNka3zKaafhoJbxf9O7VBKp5CCtxdA=; b=pAfCemyCAhTYp7
+	rFUC+OL4su4frQcfE79bh4+n9zC+c7HZAUwdnr3dvpZ/O2loSL/2+J90Yyy2UqMKuPBSe4lZD4GNe
+	A2apeCH1ptJ2dp+9lpYRnpL2C/tGoONrfyOBRZ07FxQqw86EVxCcQakDSdckRIrhJ3s08p8tp4TOt
+	REg/g/B7AYRM9LAhne86iCU5BBHt02j0W3RQgcDAsvOYbySpKNadf+dT7NPUuOymid+ylK79UbLeI
+	RQHAsJJtoeNOfsi1UzwwqZhYItr50gFIRWuwzSMqLYrm/mJPtE5/pBprUP3mHm66xTVypwUFE6HvZ
+	lwDYyYD23/8dIzM6q62Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmVSX-0000000C2cS-3ZHr;
-	Tue, 19 Mar 2024 09:08:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1rmVsj-0000000C6xw-49NJ;
+	Tue, 19 Mar 2024 09:35:41 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmVSL-0000000C2Xi-0GH6
+	id 1rmVsa-0000000C6qi-26Jc
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Mar 2024 09:08:26 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42J7tgHG027109;
-	Tue, 19 Mar 2024 09:08:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=gJnT77C2rrCeeoJd97zJA/MeNnNVwRNrRHMaYooTT9Q=; b=fk
-	UF3bEOR+E2HMOzHHZ1NFezhE926jjwiGHkQ3PE8FISPCUyUaOQrl0ZFDmDOlLehz
-	B2feS1i7KzPa9r5XUJKDLuG/ilBkyAW6J17e/dboGNig9YbDLRYkXq9Bc1pLiYKE
-	/MAbLwPhVwngMk12ztjQCKrC+DbmZhkcafJDoFt7kv7Q80K9S4Uyo4lhhXFExyMk
-	EysCdfdTihB0CQCm24ODQQtaXyS7085qINosQTup6RxUh48hEQ/mjHjQMbQk6+xO
-	HebBbdc6YJuIHFisiLSa8QB3NW5N0OuFZfEmr3goYBoVA3gkn9osKzgk/dyPZwou
-	9b4v2lU2GxUZI3GW+Afg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wy1j2gsan-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 19 Mar 2024 09:08:20 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42J98Kfw032149
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 19 Mar 2024 09:08:20 GMT
-Received: from hu-kbajaj-hyd.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 19 Mar 2024 02:08:14 -0700
-From: Komal Bajaj <quic_kbajaj@quicinc.com>
-To: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon Vijay
- Abraham I" <kishon@kernel.org>,
-        Rob Herring <robh+dt@kernel.org>,
-        "Krzysztof
- Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
-        Conor Dooley
-	<conor+dt@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, Komal Bajaj <quic_kbajaj@quicinc.com>,
-        "Amrit
- Anand" <quic_amrianan@quicinc.com>
-Subject: [PATCH 4/4] phy: qcpm-qmp-usb: Add support for QDU1000/QRU1000
-Date: Tue, 19 Mar 2024 14:37:28 +0530
-Message-ID: <20240319090729.14674-5-quic_kbajaj@quicinc.com>
-X-Mailer: git-send-email 2.42.0
-In-Reply-To: <20240319090729.14674-1-quic_kbajaj@quicinc.com>
-References: <20240319090729.14674-1-quic_kbajaj@quicinc.com>
+	Tue, 19 Mar 2024 09:35:34 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-609fc742044so57979977b3.1
+        for <linux-phy@lists.infradead.org>; Tue, 19 Mar 2024 02:35:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1710840929; x=1711445729; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=xR46scEd5OGiZdVCXg0rQe3a9fCq5Vz9qpEb1ZYc0XU=;
+        b=sFew1kRhh3J5Zm0+/994AKF+1nLes29e6kFHTIPxn1RMRc9YJMK3ZShAQDZsaxw6sU
+         quFa1KfqTL6yhDorLOQq8vGdVRwg63HxGFA8mYDCRiZsCKMyez3trwojWbtbgWZxHnWD
+         0/VfZwgjzD4Po6Fa941akifYYw0BMFk1RPb4tUGOvp+wxYoBSPkDcB8V0ZwHi8g3ATB0
+         LmYFFajRGAtUfw4Grld+epQlwEDZ2ggGYEkmopcSO9ARFVVMqt2AefgRlCKaBmMqxBQI
+         JqPOR5bIy65cHePC4PrX/ENwk5OIpcHdpRqTbwaHCqGGv58SnAaNn8WI0MEG8V+s9hOu
+         yeUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1710840929; x=1711445729;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xR46scEd5OGiZdVCXg0rQe3a9fCq5Vz9qpEb1ZYc0XU=;
+        b=CzbcQkS1ra8C4yqdKbMHC3CdbyJIzDVxRufs852muqSHdpuqkZ/dEszd38/nQ5WyU+
+         o2hI7n+AYy33CNrmRbP1jfAiVHG2oJI/HtmEtCSP3CL0x98yLxOze7JQX7BfboQHcpeG
+         lUUUoEXMyxC+RbHthu8fKj0aUfrEcWmTP9Aj1AE3A3XkFJuS/ueGpbvnEDKP+13fKhqx
+         I24pxC3ylTToFdx/zi3s1tfHPHZ1dcjIg/66wDqRH1A9YSiudxYxsMCUaM+3RAvj4TeB
+         7uwpFhtm/TXzRkhiqIcH+CmLQKfDSl1WYoErB/O3gzVYelANX67zvO636/Qoy2pG52P/
+         Vr6Q==
+X-Forwarded-Encrypted: i=1; AJvYcCWb8l7UOANnE72X+oMM7nZHpnajCtq6+dzvRzps4BBj4LncZYF7cXBXBgOsfxSEgU7+KHlS1DiH0Yi+F1SVVcKa8cqO80JAIuBlx5odzg==
+X-Gm-Message-State: AOJu0Yxr51Twjm9rKxFJa8GOKG8BYea0tbrtTkdmC0DDKLq4do5pwZ97
+	36oGIoyNc8owXcet4jXlJFH70iRxvHT+lUgcUBUQUCvc0MIFONGHOOTMyPebA45kP00MSzp+BNw
+	uLv0vtRHXby1ryZGjA+S4p0fYB+aWZvOv4FgL6g==
+X-Google-Smtp-Source: AGHT+IH99r/kvvmJRAw/ZWjt48XmIun30VNYQDPLxn70UqEVweorAxmCjp8Gd6tgaqNqP65M7MNy+IGg5wrYdgB82h4=
+X-Received: by 2002:a0d:f003:0:b0:60c:c986:5ea with SMTP id
+ z3-20020a0df003000000b0060cc98605eamr13991538ywe.42.1710840928785; Tue, 19
+ Mar 2024 02:35:28 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: NVLTAsmTmurCVmsEL886t1HzAKL4PQgK
-X-Proofpoint-ORIG-GUID: NVLTAsmTmurCVmsEL886t1HzAKL4PQgK
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-18_12,2024-03-18_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
- impostorscore=0 phishscore=0 mlxlogscore=999 spamscore=0 suspectscore=0
- malwarescore=0 priorityscore=1501 lowpriorityscore=0 clxscore=1015
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403140001 definitions=main-2403190069
+References: <20240319090729.14674-1-quic_kbajaj@quicinc.com>
+In-Reply-To: <20240319090729.14674-1-quic_kbajaj@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 19 Mar 2024 11:35:17 +0200
+Message-ID: <CAA8EJpojQg2BHvR5kZtRxyXWRKy6zV=88_bdcuMH+QE-n4k73A@mail.gmail.com>
+Subject: Re: [PATCH 0/4] Add USB Support on Qualcomm's QDU/QRU1000 Platform
+To: Komal Bajaj <quic_kbajaj@quicinc.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240319_020825_167918_180CC95F 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20240319_023532_690081_6E1B0837 
+X-CRM114-Status: GOOD (  12.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,92 +94,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add QDU1000/QRU1000 specific register layout and table configs.
+On Tue, 19 Mar 2024 at 11:08, Komal Bajaj <quic_kbajaj@quicinc.com> wrote:
+>
+> This series adds support of USB3 PHY support for Qualcomm's QDU/QRU1000 Platform.
+>
+> ---------
+> Changes in v2:
+> * Dropped extra lines
+> * Sorted the tables alphabetically
+> * Link to v1: https://lore.kernel.org/linux-arm-msm/20240311120215.16845-1-quic_kbajaj@quicinc.com/
 
-Co-developed-by: Amrit Anand <quic_amrianan@quicinc.com>
-Signed-off-by: Amrit Anand <quic_amrianan@quicinc.com>
-Signed-off-by: Komal Bajaj <quic_kbajaj@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 49 +++++++++++++++++++++++++
- 1 file changed, 49 insertions(+)
+So, this is v2, but you didn't mark patches as v2. Please use b4 for
+sending patches. It can handle patch revisions automatically.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 5c003988c35d..95428c053954 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1182,6 +1182,29 @@ static const struct qmp_phy_init_tbl qcm2290_usb3_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_RX_SIGDET_LVL, 0x88),
- };
+>
+> Komal Bajaj (4):
+>   dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings for QDU1000
+>   dt-bindings: phy: qcom,qmp-usb: Add QDU1000 USB3 PHY
+>   dt-bindings: usb: dwc3: Add QDU1000 compatible
+>   phy: qcpm-qmp-usb: Add support for QDU1000/QRU1000
+>
+>  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |  2 +
+>  .../bindings/phy/qcom,usb-snps-femto-v2.yaml  |  1 +
+>  .../devicetree/bindings/usb/qcom,dwc3.yaml    |  3 ++
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 49 +++++++++++++++++++
+>  4 files changed, 55 insertions(+)
 
-+static const struct qmp_phy_init_tbl qdu1000_usb3_uniphy_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG1, 0xc4),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG2, 0x89),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG3, 0x20),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG6, 0x13),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCS_TX_RX_CONFIG, 0x0c),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_CDR_RESET_TIME, 0x0a),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_ALIGN_DETECT_CONFIG1, 0x88),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_ALIGN_DETECT_CONFIG2, 0x13),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG1, 0x4b),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG5, 0x10),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x21),
-+};
-+
-+static const struct qmp_phy_init_tbl qdu1000_usb3_uniphy_pcs_usb_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_RXEQTRAINING_DFE_TIME_S2, 0x07),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_POWER_STATE_CONFIG1, 0x6f),
-+};
-+
- static const struct qmp_phy_init_tbl sc8280xp_usb3_uniphy_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SYSCLK_EN_SEL, 0x1a),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_BIN_VCOCAL_HSCLK_SEL, 0x11),
-@@ -1693,6 +1716,29 @@ static const struct qmp_phy_cfg msm8996_usb3phy_cfg = {
- 	.regs			= qmp_v2_usb3phy_regs_layout,
- };
 
-+static const struct qmp_phy_cfg qdu1000_usb3_uniphy_cfg = {
-+	.lanes			= 1,
-+
-+	.offsets		= &qmp_usb_offsets_v5,
-+
-+	.serdes_tbl		= sm8150_usb3_uniphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8150_usb3_uniphy_serdes_tbl),
-+	.tx_tbl			= sm8350_usb3_uniphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm8350_usb3_uniphy_tx_tbl),
-+	.rx_tbl			= sm8350_usb3_uniphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8350_usb3_uniphy_rx_tbl),
-+	.pcs_tbl		= qdu1000_usb3_uniphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(qdu1000_usb3_uniphy_pcs_tbl),
-+	.pcs_usb_tbl		= qdu1000_usb3_uniphy_pcs_usb_tbl,
-+	.pcs_usb_tbl_num	= ARRAY_SIZE(qdu1000_usb3_uniphy_pcs_usb_tbl),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= qmp_v4_usb3phy_regs_layout,
-+	.pcs_usb_offset		= 0x1000,
-+
-+	.has_pwrdn_delay	= true,
-+};
-+
- static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
- 	.lanes			= 1,
 
-@@ -2605,6 +2651,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,qcm2290-qmp-usb3-phy",
- 		.data = &qcm2290_usb3phy_cfg,
-+	}, {
-+		.compatible = "qcom,qdu1000-qmp-usb3-uni-phy",
-+		.data = &qdu1000_usb3_uniphy_cfg,
- 	}, {
- 		.compatible = "qcom,sa8775p-qmp-usb3-uni-phy",
- 		.data = &sa8775p_usb3_uniphy_cfg,
---
-2.42.0
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
