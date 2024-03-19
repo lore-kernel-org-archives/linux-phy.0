@@ -4,86 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A457CC54E58
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Mar 2024 10:46:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A19AC54E5D
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Mar 2024 08:32:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZA85IrA8OrIQ8YLlOkGq4IeQdd1RQERwLH1QILB3m8=; b=Af5Z7c7HUhUbuM
-	kX4di8pqc9zFO6+mrPCOAiTcOKjTfZPE9YyYdgLAq8S58pBwvosKsGDLWF7qEHBLT9xTd4X+zzkHg
-	ZA9yhontiWkbinR0HOsYOzRDZOfLR2UtpqYWj9QpW5T+EYr7KL5A/JLr1Rz2D8JsUaLhdYJEqZsv3
-	EGM06VKC8lKBonQ5NI+WqQ7pRoz+ryBwpf2qvJNYrSvBBM4lvvglEa8C2rDK+CoLKQufvj+5HjmPf
-	zjAxr4guahGwISSp6Gv2s2S4jDWvLhxeBBZ8b2Edq2TaQNRcvoShnxPAvp46HBXLTTM1OOM/klVCs
-	Rtonz+G3X4qxbI0fLX8Q==;
+	List-Owner; bh=P5awCbjTa2AI8MJorloIEV1FiR4RErIrqw1y/hP0DdM=; b=gQ2t5+ob8AEQaf
+	4HVeyt0dQUGKALcPbAEzKds5Ix7lh/zyfbff48ekdTNqHJPlAtEq+SJDwRSz8YlEo4dLdbMPgs990
+	FYCpiFWdBX6tXEQgfDX79Lz1YqkGUGNczj0Ch4ls3f/r7Wq9LUtBcByQg47ovKaVap4bLGgeXJU7f
+	FgPzZboB3+zc2cv+13ftFt9L4Ulh66pwGP8/ZSVIu6veFXMN95DG9UqYMHAURhMeN8Z/zAFgSbLjv
+	Z45+kDc47nC9CXGqHlexTvxISBb23XztEJCnQMKjctqITBR4kDGh0MIppbcpEXJkwbgZAXtk8auCU
+	ES/7oH6Klh4gQSZBYbJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmAVM-00000008Cka-0Obv;
-	Mon, 18 Mar 2024 10:46:08 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1rmUte-0000000BwOG-0LdU;
+	Tue, 19 Mar 2024 08:32:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmAVG-00000008CjQ-3Hwc
+	id 1rmUtb-0000000BwMj-2sQf
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Mar 2024 10:46:06 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-a2f22bfb4e6so572746066b.0
-        for <linux-phy@lists.infradead.org>; Mon, 18 Mar 2024 03:46:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1710758759; x=1711363559; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=QT8ZXpFVpdTpbU/Iue/RRtJuRFnBjnoJvr+qPsVlQ40=;
-        b=ZmdiWxYt1CB63YtFhU5sWAww7SmoJghgsa/wYvepxuT2AepLCzuxjtg8UbJ/coVryX
-         uEd9PpkJS7H2DB5Ai6UMYNmuwu3ENnN46mdyfOVL+YAxNwhg3yCAamoAGY8awrHxiWta
-         /65+cs76CZ60ndAWow6EtcpTR2yE8sgwIPIRm/LUxX5bG5toyBl/rbzaVaPMENwC0+Go
-         +AGWAx/bp8oczQat5EIPnBoLikjtb27iBVBWM/nIWEa2Xd/Abole39SppJlz1zTHkRQ6
-         kGFKtmQBMRKAt3TGWTPZcMsqaFW147tF/0iuptIYDocwiU0WpWYzE2pNBrVo1E9yCfLO
-         Uw8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1710758759; x=1711363559;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=QT8ZXpFVpdTpbU/Iue/RRtJuRFnBjnoJvr+qPsVlQ40=;
-        b=BAicV5ajdvOvnCZBBhOxRLw/WgxLSKFgIIzFTugaTVvq/tsrQK19MB96qos4B/Swwu
-         Z0kXwIPzclyxxoY6YU2D168lH9Wr57RlgURN5r/iX1zKdtLeuEMcS+BqiToSrpVxlOWq
-         A8yBAbnATsf2NlNT+E0fzJYs2XUYTPpTGPBn7js3IT7f+KNJggm/TnryoXxCE6DDWbfg
-         CQz5UMHAGuU4nPUyc+ZU7WyLN5cMQjLZJycyLRbO2d+D8wpLtWW4qPB6qFxeFtCCvmUJ
-         dV6mSmbICBQbkjFFMJNtgwPtlcgceaNfKKsAFaphffFxdkWuLozqVuxmz8ykEQ8qCfvM
-         eRPg==
-X-Forwarded-Encrypted: i=1; AJvYcCU73yQWcDyxZebBcuPQIfaNdW9d+LI7XE6Zf5brb2PbW8g1cFPYgPPJwBVMp65wiFGsraFQ5RII34GmU95hEVGJY4vVz/H8b3ztaigkLg==
-X-Gm-Message-State: AOJu0YzRgfY4/5rmcb8/gfdDtj0gHBtYy1roycvFSGm3N9XHyvl1Q9Nc
-	rOr+Uq+KdcnNt3ww7XxcC8Ws506QyMDQLeimc50HTC36GZgVsmBgZ2tFs0/XO0w=
-X-Google-Smtp-Source: AGHT+IFPJHgyGW8eWsjDqZVT5V0Yr6Jl+8ZG3GAIH6rvmehrSUpZJRzmZ6+jGP8apXMV0anVvWUU5w==
-X-Received: by 2002:a17:907:961a:b0:a46:3785:4adc with SMTP id gb26-20020a170907961a00b00a4637854adcmr9600678ejc.57.1710758759368;
-        Mon, 18 Mar 2024 03:45:59 -0700 (PDT)
-Received: from localhost (046125249120.public.t-mobile.at. [46.125.249.120])
-        by smtp.gmail.com with ESMTPSA id g14-20020a170906198e00b00a46d049ff63sm114217ejd.21.2024.03.18.03.45.58
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 18 Mar 2024 03:45:59 -0700 (PDT)
-Mime-Version: 1.0
-Date: Mon, 18 Mar 2024 11:45:57 +0100
-Message-Id: <CZWTD7P4CE12.1ZUNPF2WFTBHR@fairphone.com>
-Cc: "Konrad Dybcio" <konrad.dybcio@linaro.org>, "Vinod Koul"
- <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Rob
- Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
- <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley" <conor+dt@kernel.org>,
- "Abhinav Kumar" <quic_abhinavk@quicinc.com>,
- <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-From: "Luca Weiss" <luca.weiss@fairphone.com>
-To: "Bjorn Andersson" <andersson@kernel.org>, "Neil Armstrong"
- <neil.armstrong@linaro.org>
-X-Mailer: aerc 0.15.2
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org> <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com> <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org> <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt>
-In-Reply-To: <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt>
+	Tue, 19 Mar 2024 08:32:33 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42J65x5F008083;
+	Tue, 19 Mar 2024 08:32:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=iXtRita0/BgfzawOAnmeG3FaGNdHxP387PTjoetG0ME=; b=hm
+	kXb8YtwEzWZxXNYi04BY5U7bE1fjYaAW/IxlAjV4pGLa609TiUW1HygZchFdnYqA
+	YagVIhNqvgW37PbS6eSeaLX8VHRxFr7AqC3sc32tSJLamTmPugiW0NAeclZ+U0F6
+	CnrV47ECS1qWGuShJMh5wYvyKhrYh2SVGRPR//kJ+KHfC/66mdFMNu6TaMi73v5A
+	D0Aorp6yR4tVUU9X111uxABBLBPPDO4wVFPQ/MP5so2DgtnDJtaHnPH7uicfZVm4
+	G5UvrrOrsU+pkBnweepMaXEHBwNKy/fSWGzep+R+ctDrd+eZtCrmPPdlaPF2lBxE
+	1uSZRNM5kCZpzekuTN4A==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wy1j2gp4m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 19 Mar 2024 08:32:21 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42J8WKQ4031678
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 19 Mar 2024 08:32:20 GMT
+Received: from [10.214.67.128] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 19 Mar
+ 2024 01:32:15 -0700
+Message-ID: <3ca503a2-0d98-0555-a226-872dcedf6105@quicinc.com>
+Date: Tue, 19 Mar 2024 14:02:12 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.5.1
+Subject: Re: [PATCH 4/4] phy: qcpm-qmp-usb: Add support for QDU1000/QRU1000
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Rob Herring <robh+dt@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, Amrit Anand
+	<quic_amrianan@quicinc.com>
+References: <20240311120215.16845-1-quic_kbajaj@quicinc.com>
+ <20240311120215.16845-5-quic_kbajaj@quicinc.com>
+ <CAA8EJpo7Zd-QxAxKFuo5zaR-=N8eBefpL=LcLQ9j+akhFQYUrg@mail.gmail.com>
+From: Komal Bajaj <quic_kbajaj@quicinc.com>
+In-Reply-To: <CAA8EJpo7Zd-QxAxKFuo5zaR-=N8eBefpL=LcLQ9j+akhFQYUrg@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 31_2DjJxo57CTm8TeMVCjezSnCpMV5Bl
+X-Proofpoint-ORIG-GUID: 31_2DjJxo57CTm8TeMVCjezSnCpMV5Bl
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-18_12,2024-03-18_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
+ impostorscore=0 phishscore=0 mlxlogscore=999 spamscore=0 suspectscore=0
+ malwarescore=0 priorityscore=1501 lowpriorityscore=0 clxscore=1015
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403140001 definitions=main-2403190065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240318_034602_860158_E7216FCC 
-X-CRM114-Status: GOOD (  28.26  )
+X-CRM114-CacheID: sfid-20240319_013231_798866_26488E2A 
+X-CRM114-Status: GOOD (  16.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,79 +111,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat Mar 16, 2024 at 5:01 PM CET, Bjorn Andersson wrote:
-> On Fri, Mar 15, 2024 at 06:35:15PM +0100, Neil Armstrong wrote:
-> > On 15/03/2024 18:19, Luca Weiss wrote:
-> > > On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
-> > > > Register a typec mux in order to change the PHY mode on the Type-C
-> > > > mux events depending on the mode and the svid when in Altmode setup.
-> > > > 
-> > > > The DisplayPort phy should be left enabled if is still powered on
-> > > > by the DRM DisplayPort controller, so bail out until the DisplayPort
-> > > > PHY is not powered off.
-> > > > 
-> > > > The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
-> > > > will be set in between of USB-Only, Combo and DisplayPort Only so
-> > > > this will leave enough time to the DRM DisplayPort controller to
-> > > > turn of the DisplayPort PHY.
-> > > > 
-> > > > The patchset also includes bindings changes and DT changes.
-> > > > 
-> > > > This has been successfully tested on an SM8550 board, but the
-> > > > Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
-> > > > PD USB Hubs and PD Altmode Dongles to make sure the switch works
-> > > > as expected.
-> > > > 
-> > > > The DisplayPort 4 lanes setup can be check with:
-> > > > $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
-> > > > 	name = msm_dp
-> > > > 	drm_dp_link
-> > > > 		rate = 540000
-> > > > 		num_lanes = 4
-> > > 
-> > > Hi Neil,
-> > > 
-> > > I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
-> > > haven't had any success so far.
-> > > 
-> [..]
-> > > [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
-> > > [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
-> > 
-> > Interesting #1 means the 4 lanes are not physically connected to the other side,
-> > perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
-> > or some fixups in the init tables.
-> > 
->
-> I tested the same on rb3gen2 (qcs6490) a couple of weeks ago, with the
-> same outcome. Looking at the AUX reads, after switching to 4-lane the
-> link training is failing on all 4 lanes, in contrast to succeeding only
-> on the first 2 if you e.g. forget to mux the other two.
 
-Good to know it's not just my device then ;)
 
->
-> As such, my expectation is that there's something wrong in the QMP PHY
-> (or possibly redriver) for this platform.
+On 3/11/2024 5:41 PM, Dmitry Baryshkov wrote:
+> On Mon, 11 Mar 2024 at 14:05, Komal Bajaj <quic_kbajaj@quicinc.com> wrote:
+>>
+>> Add QDU1000/QRU1000 specific register layout and table configs.
+>>
+>> Co-developed-by: Amrit Anand <quic_amrianan@quicinc.com>
+>> Signed-off-by: Amrit Anand <quic_amrianan@quicinc.com>
+>> Signed-off-by: Komal Bajaj <quic_kbajaj@quicinc.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 52 +++++++++++++++++++++++++
+>>   1 file changed, 52 insertions(+)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> index 5c003988c35d..e067574bea7a 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>> @@ -1441,6 +1441,32 @@ static const struct qmp_phy_init_tbl x1e80100_usb3_uniphy_pcs_usb_tbl[] = {
+>>          QMP_PHY_INIT_CFG(QPHY_V7_PCS_USB3_RCVR_DTCT_DLY_U3_H, 0x00),
+>>   };
+>>
+>> +
+>> +static const struct qmp_phy_init_tbl qdu1000_usb3_uniphy_pcs_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG1, 0xc4),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG2, 0x89),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG3, 0x20),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_LOCK_DETECT_CONFIG6, 0x13),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCS_TX_RX_CONFIG, 0x0c),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_CDR_RESET_TIME, 0x0a),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_ALIGN_DETECT_CONFIG1, 0x88),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_ALIGN_DETECT_CONFIG2, 0x13),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG1, 0x4b),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG5, 0x10),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x21),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl qdu1000_usb3_uniphy_pcs_usb_tbl[] = {
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_RXEQTRAINING_DFE_TIME_S2, 0x07),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
+>> +       QMP_PHY_INIT_CFG(QPHY_V4_PCS_USB3_POWER_STATE_CONFIG1, 0x6f),
+>> +};
+>> +
+>> +
+>> +
+> 
+> Please drop extra empty lines.
 
-Since I imagine rb3gen2 uses a different redriver setup compared to FP5,
-I wouldn't say that's at fault for now? And at least my ptn36502 driver
-only has very little difference between 2-lane and 4-lane setup, only
-setting the mode to DP-only and 4-lane (vs USB+DP and 2-lane), nothing
-else.
+Sure, will remove the extra lines.
 
-Regards
-Luca
+> 
+> Also the tables are more or less sorted out. Please move this to a
+> correct place.
 
->
-> Regards,
-> Bjorn
+Will place the tables in sorted order.
 
+> 
+>>   struct qmp_usb_offsets {
+>>          u16 serdes;
+>>          u16 pcs;
+>> @@ -1693,6 +1719,29 @@ static const struct qmp_phy_cfg msm8996_usb3phy_cfg = {
+>>          .regs                   = qmp_v2_usb3phy_regs_layout,
+>>   };
+>>
+>> +static const struct qmp_phy_cfg qdu1000_usb3_uniphy_cfg = {
+>> +       .lanes                  = 1,
+>> +
+>> +       .offsets                = &qmp_usb_offsets_v5,
+>> +
+>> +       .serdes_tbl             = sm8150_usb3_uniphy_serdes_tbl,
+>> +       .serdes_tbl_num         = ARRAY_SIZE(sm8150_usb3_uniphy_serdes_tbl),
+>> +       .tx_tbl                 = sm8350_usb3_uniphy_tx_tbl,
+>> +       .tx_tbl_num             = ARRAY_SIZE(sm8350_usb3_uniphy_tx_tbl),
+>> +       .rx_tbl                 = sm8350_usb3_uniphy_rx_tbl,
+>> +       .rx_tbl_num             = ARRAY_SIZE(sm8350_usb3_uniphy_rx_tbl),
+>> +       .pcs_tbl                = qdu1000_usb3_uniphy_pcs_tbl,
+>> +       .pcs_tbl_num            = ARRAY_SIZE(qdu1000_usb3_uniphy_pcs_tbl),
+>> +       .pcs_usb_tbl            = qdu1000_usb3_uniphy_pcs_usb_tbl,
+>> +       .pcs_usb_tbl_num        = ARRAY_SIZE(qdu1000_usb3_uniphy_pcs_usb_tbl),
+>> +       .vreg_list              = qmp_phy_vreg_l,
+>> +       .num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
+>> +       .regs                   = qmp_v4_usb3phy_regs_layout,
+>> +       .pcs_usb_offset         = 0x1000,
+>> +
+>> +       .has_pwrdn_delay        = true,
+>> +};
+>> +
+>>   static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
+>>          .lanes                  = 1,
+>>
+>> @@ -2620,6 +2669,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
+>>          }, {
+>>                  .compatible = "qcom,sdx65-qmp-usb3-uni-phy",
+>>                  .data = &sdx65_usb3_uniphy_cfg,
+>> +       }, {
+>> +               .compatible = "qcom,qdu1000-qmp-usb3-uni-phy",
+>> +               .data = &qdu1000_usb3_uniphy_cfg,
+> 
+> Please keep the table sorted.
+
+Will sort the table.
+
+Thanks
+Komal
+
+> 
+>>          }, {
+>>                  .compatible = "qcom,sdx75-qmp-usb3-uni-phy",
+>>                  .data = &sdx75_usb3_uniphy_cfg,
+>> --
+>> 2.42.0
+>>
+>>
+> 
+> 
 
 -- 
 linux-phy mailing list
