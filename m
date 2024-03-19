@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EC00C54E5D
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Mar 2024 10:56:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D377C54E60
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Mar 2024 10:56:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymSwiq1l4WA0ZMjRUDU3nVID2BUI9cdKZCuQSibMAUQ=; b=byjCOTHbE9NXAC
-	k0wOU5sJuNRSqlvOb3RhDzfknSzMN49w3pnqx4k06EiMRNtprbN7wWahS1XwjXk99YU8zGYlx5hVu
-	Wv3wNl/kfhk/OfLJ0KPiWslSjV/bjpM9ZClJldMpKln7AXNQoO5fKGnFvt9eoBZViYeaxCc0puD76
-	z8ipzH38bZpHYSKUfftzKveeHjUwhPnKkWoBvvYoROR856B5xaDSeGv7/8QJxgFtnWVNeYD4z9+zn
-	Z+p8e0ChL55JuCAziPOpoLylMQ2nh+eQNF7qfxaSDwIlHg6kcdb5iNHf0TP6RfOTgzSiIn5Jb5CP8
-	Gn8N7X6OZeF4XnSB11iA==;
+	List-Owner; bh=/XHgupRG6pV2ZsnSre+7jDlPe9khUInjwy8uSbMPv1o=; b=PvIsQAm36e/MuS
+	z5w1O5cXxB92B2ea63sWHrFyHQFhTaWJTbJK6cUaMJS7ZQTQ2gza1hVwFV39J8q+O2K/GcKS77bH2
+	l3s26NLZnID3xlfQZjVo5eKjptJ4OhVkSFKCa8FekL2mG8meGEdYqU18REDgkQQzhPr2xuW11aFqp
+	VWv7gWdKZyFweO57dPxoiUS1hrAc6BCyhELLXI4GCjP2RJA689iOhXDv/s8vRmyxOalRETppw85z6
+	vs15UnMMKlmhqReiR6GBMUheaAef53uFbALo6jhkxvEwE3SKydChJfIZKpnFCVP6mG5q2X9cIRvI3
+	zxKnUNVVtYHuXl08tdwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmX8i-0000000CNxy-0zNV;
-	Tue, 19 Mar 2024 10:56:16 +0000
-Received: from mail-yw1-x112f.google.com ([2607:f8b0:4864:20::112f])
+	id 1rmX96-0000000CO6p-132N;
+	Tue, 19 Mar 2024 10:56:40 +0000
+Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmX8f-0000000CNw1-0WkF
+	id 1rmX93-0000000CO4m-28Oe
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Mar 2024 10:56:15 +0000
-Received: by mail-yw1-x112f.google.com with SMTP id 00721157ae682-609f359b7b1so63617787b3.1
-        for <linux-phy@lists.infradead.org>; Tue, 19 Mar 2024 03:56:11 -0700 (PDT)
+	Tue, 19 Mar 2024 10:56:38 +0000
+Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-60a104601dcso56866917b3.2
+        for <linux-phy@lists.infradead.org>; Tue, 19 Mar 2024 03:56:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1710845770; x=1711450570; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1710845794; x=1711450594; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=WHVb8syaGtNBn+LKrTDraLMPvcXg2wUKJP4+OyMiNcQ=;
-        b=MFp29gjIA8MijzthaQOJ85pQInFCwh1gbRdF0PgqmIdl30LtN4Fm/o70Kf6law+sce
-         o6Udl3hB0L1Fo8DPfTdPfFJLWPoCu7IXeoLYkri8TQM3XUcXQwWb0pDytaAXNIM5p667
-         s1RnAbi4FPc/vh6OePggQcA+R/ns9aXp3lJ3wZbzjyAtkSI4S+Uw3X9muKKVx4LIDKa0
-         /SBNSiXNTVP6W3+rjncnOF/CGCE53ZwMgjke/7qOJFXElbq0lhkQtxfgeLgbDN12ijOr
-         c7azRRQzzDtslLP4OCfjvzZwm6c+r/9sauTksNUXqczmCCFSM9+RdNyQKQXoyO3ikLMz
-         rrfA==
+        bh=zjyRBDM4rca1Hn1dUAPckcwaeF45z8MIXNEItXXFgrI=;
+        b=tFGjyeLHHM+tXCHqHoFFJN596mG+3yv5kJZ+wg3mm41/fZWX1oExBGmthUEOzQzP0C
+         P6VWiEHQJkkLh0NAb0nz2GH/KHFxxEyyK1YYd9OAq5NbZEL/aRfgRStlrQZI74sauDMv
+         vAKSiApEUecXM8/EmjBXEbFl3rHDKap/6PucE66+vxTbnmYub7bIsh5Je8OzQoSs+MjU
+         b4xP6/gH23v/BAHPoa9UyEl+scB4vus2WhbVt/Y55oGobow/Qphaj7OjJ4ek8JkQWwf1
+         d5w1JzIPITUqBTusEW6047M6nfrcp/PRsVgpiUUDmMgDHQgxSyH0ACS1ekyq3foK5veB
+         9p4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1710845770; x=1711450570;
+        d=1e100.net; s=20230601; t=1710845794; x=1711450594;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=WHVb8syaGtNBn+LKrTDraLMPvcXg2wUKJP4+OyMiNcQ=;
-        b=eST+HGx5pR4vTWMcjJbZxJFRHCxOu3ty3Vqsf9f+xGKdhlStD1/TCaJb1hlRHFmwih
-         M387vBKxOofJKDQEZysSOKUMncGDSXhs7Fb/u/MvG3OjTz++Ixyv7IhljvshQvYZ9Iff
-         UI0xmSeDETObbJC0wgd0+/ssim7QxegOgb3FXvsh9/s8skl47phAJoZmL0WfIuzWnlja
-         U15dmT454FRISBTHNV/nunLNgstKkOoKlX8HFqJ9snZepEPHf6xxZfZyQAlT2657dYkW
-         yX0aImrXPhtI3uyIMgoPMDl8zY0LcLwVdDXzSH4C0xcasaPwXwk1d9Xs1x7FEj0z4fl6
-         /hdg==
-X-Forwarded-Encrypted: i=1; AJvYcCUPlYg+Yi5XzbmIHGDW60KzuVMjNOVHBA3H3AuSqojajWTbyDb+hWC/LHKSqcP6XGWcfMfCGu6glEZkf3e9y8VZiaOdqDF0V0mD3smQow==
-X-Gm-Message-State: AOJu0Yxz+J1CZ/xFREl12DSXICwAI1bfTIjnDHKgWE8ID7kej3Wfza9/
-	6KdqBZuu68tIMpBIeBs8WHlz2u9iG0bOBYjC5fHXTbFR9t4AfrOqlw8nNZkgut69ecvvUlkzXm0
-	TdpEUCZTqwXJIxyiWcg/uRb/Ldvst+hSUMCnfCQ==
-X-Google-Smtp-Source: AGHT+IGEpAdekNoCA0IOiJWhAboleUYp0ur74P3WOj1ZFPMOtJEw3FcSNRu7tO+3SXdvsuHb5u48wzuwf2gWrLakSNM=
-X-Received: by 2002:a0d:fb87:0:b0:609:fdf7:b443 with SMTP id
- l129-20020a0dfb87000000b00609fdf7b443mr2105842ywf.52.1710845770674; Tue, 19
- Mar 2024 03:56:10 -0700 (PDT)
+        bh=zjyRBDM4rca1Hn1dUAPckcwaeF45z8MIXNEItXXFgrI=;
+        b=QTZR79tIRaWSuYRkryWFFaQ8QKFWKpAxnI2W44qScgR48i3rbYpZHqFMgz+ERjoRIi
+         17InkJGF5PFw2VrsL35h3TDX18RJmOi0n43NvD8cfp5K3vJ4bGweW2uzXK1dl1hIHoOg
+         7reETiA+A/V5WtVgm9Q2x3xj/Z999Mi10bHTWiPU2lqwmAhhz+I3B+UgaeiFMajqvxY+
+         kQxoJCPtMdKbEhXMaQ2zD926nhsrJiVFkJFJEnAeupOjQ4GeVJY2JQtW4u7GT3zo18vj
+         J+VLg9Y7lZPihT3TqAWDmjo0PWZwJdh0q/KAeyz2XAbf9WU/FZgUbj86jnigFl6kEBAx
+         DqUg==
+X-Forwarded-Encrypted: i=1; AJvYcCUUT/kQqhc3+7L4wKustP8Y4mi5Axah7U17hAiyVeBrzkZMAnfju1FW6726m7o675MkJnQ4ebW1ytOly1zJItWm89DN03YZPEkDsJsBEA==
+X-Gm-Message-State: AOJu0Yxuc/9DUUP/wd6Os0QNuArsyh6GNfvlzvXBjX4nAEUi5IGWQneZ
+	cy4AGqPVzuhml24+ZW/oLkQZ1d6pVUXUvq3tNMAICyVM4AaOewdUttOjuO4wQ75RRH5vlsvSr+J
+	cO7mkUbKGNbEFY42xjY3D2YigyhJzdEFRidi17Q==
+X-Google-Smtp-Source: AGHT+IGLAi/wNKvsr+sWkLaHawQcUlFEisvPkSzOVYcmxJ5wQ1Tc0+84fuygPF+bFom0zO8GoP0F6i9rRzr+wibkNF8=
+X-Received: by 2002:a5b:bc4:0:b0:dcb:fe58:a08b with SMTP id
+ c4-20020a5b0bc4000000b00dcbfe58a08bmr12096526ybr.15.1710845793910; Tue, 19
+ Mar 2024 03:56:33 -0700 (PDT)
 MIME-Version: 1.0
 References: <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-0-926d7a4ccd80@linaro.org>
- <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-5-926d7a4ccd80@linaro.org>
-In-Reply-To: <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-5-926d7a4ccd80@linaro.org>
+ <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-6-926d7a4ccd80@linaro.org>
+In-Reply-To: <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-6-926d7a4ccd80@linaro.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 19 Mar 2024 12:55:59 +0200
-Message-ID: <CAA8EJpqra0q+iBD+AbM-EZcyT6w0uco0w-cYtUL40f=udwRUPw@mail.gmail.com>
-Subject: Re: [PATCH 5/7] arm64: dts: qcom: sm8450: remove pcie-1-phy-aux-clk
+Date: Tue, 19 Mar 2024 12:56:22 +0200
+Message-ID: <CAA8EJproDAz92=4=c3r+8kJbEVXesZCbrtLsr8ZJWh6axzF9TA@mail.gmail.com>
+Subject: Re: [PATCH 6/7] arm64: dts: qcom: sm8550: remove pcie-1-phy-aux-clk
  and add pcie1_phy pcie1_phy_aux_clk
 To: Neil Armstrong <neil.armstrong@linaro.org>
 Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
@@ -76,8 +76,8 @@ Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240319_035613_181749_510F9E5F 
-X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-CacheID: sfid-20240319_035637_568007_CD261285 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,10 +102,14 @@ On Tue, 19 Mar 2024 at 12:46, Neil Armstrong <neil.armstrong@linaro.org> wrote:
 >
 > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 > ---
->  arch/arm64/boot/dts/qcom/sm8450.dtsi | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
+>  arch/arm64/boot/dts/qcom/sm8550-hdk.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8550-mtp.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8550-qrd.dts |  8 --------
+>  arch/arm64/boot/dts/qcom/sm8550.dtsi    | 13 ++++---------
+>  4 files changed, 4 insertions(+), 25 deletions(-)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
 
 -- 
 With best wishes
