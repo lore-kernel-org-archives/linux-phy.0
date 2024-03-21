@@ -4,64 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7952DC6FD1F
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Mar 2024 16:21:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AC03C54E68
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Mar 2024 15:44:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qzJ89GQfNuo/klyJw4jqF6s5DiQy5sCe7/vdUVawJkw=; b=0jdBhIcRxuKHrw74m/fkPQwq81
-	8fRqiO4fezILCO6vrAkHtqSn5RPgK1HYXB+KzKeRv4rNJKXpr3aNEGK/gabcBiXRjYMuWE4FXt+BK
-	Xao0qzk5KghsYQ6VDQZySIRaHPIOYE8vY41SF9LTzL/ADAehPeZurxA16s+3CaInbdTZqAFU7OHE0
-	/CVQM3fO3SeuaFuR73PlqmmrTJHq54tbrU5roJRZn3iceLqNzuoREq0Jp0Wza07MWW7YNQJ27oezR
-	+XzuQKJKTw3LT7fVZVhqDd80RXkDv65Et7PfD4A1ri8LfXy87MYxh2BnQZngfuzfUABbq/16DXOGE
-	eKBkcMoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LGOlpVXh2rI5TU8u1BTBr4jYEM/xzX29v81WvoJi+Mw=; b=l+klWr7pFnvy9I
+	fzRcH7JByDYPZzZzgjkHa4ChojHybp4x9yc19AxDkdmSolbVXeiQFpsNkbCFLcO4ptRc6C8MKbFbW
+	AN5UhYCzK/Q2I4AD1GTipOOaIgCFu1VPMPEX//hlcl7eKjVwmP6vXR6JoAm2iFU9go4IxLbZS0JaX
+	AadWCJU99JTB+iPEXXN8C0hjQoxOv7dM4fDKeOrQ4QV+GV3QuCZ/2WPkUO/mhFzgLOw4y3bnbHr4v
+	7hZAyHRlRoZ7jj+wmBTC0+03v3NccmZyfrytM/qM17mA/wIDM2gaNIXdi2IBBeF268Wzt5aPzo+Z7
+	FFUbYmA3yNvd0A/xyqXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmygc-00000000HBd-0VXU;
-	Wed, 20 Mar 2024 16:21:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rnKb2-00000003bGn-48so;
+	Thu, 21 Mar 2024 15:44:48 +0000
+Received: from pidgin.makrotopia.org ([185.142.180.65])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmygY-00000000HAa-2f1G
-	for linux-phy@lists.infradead.org;
-	Wed, 20 Mar 2024 16:21:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id EF2E760FF8;
-	Wed, 20 Mar 2024 16:21:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B4B7C433C7;
-	Wed, 20 Mar 2024 16:21:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710951661;
-	bh=2voymtzNKPgSxyypqQxc/DFgDi1DnnjPRI/z96JK+Fw=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
-	b=QM6tYwDaQHd9Iurd/HI8yyWkLo4TSp9KaujfDvMwsMu08q6LeM+qsCajsOV098RXD
-	 Ea65qVBhYfxiX8mlXxrKInXjLlSBnUg/T7QUBpsAU4D6jbVfTB6IByYQ5alXfQCvqD
-	 aaSLzV3Usb8xEL+4JH+/BcsfxgIVshnpEPLC9G7j5CTnnZMaR24vsoJfdmHFrRYOFD
-	 tXLU1igLOnTccV/HEm1p1CfC1O4AXhMIGYWUYyhbAv2oRsKw9HyQ4RZ9Mq5v1qh7gB
-	 3vSvdkfPvQ6fX7da+GCDw4fOR/MxNVXOVulEvY52M9kfIpvgI5G5+9s2DWhPojEidH
-	 yzcmLl95FJdxw==
-Date: Wed, 20 Mar 2024 11:21:00 -0500
+	id 1rnKaz-00000003bCK-0Rsa;
+	Thu, 21 Mar 2024 15:44:46 +0000
+Received: from local
+	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+	 (Exim 4.96.2)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1rnKai-0007eQ-2t;
+	Thu, 21 Mar 2024 15:44:29 +0000
+Date: Thu, 21 Mar 2024 15:44:25 +0000
+From: Daniel Golle <daniel@makrotopia.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Jakub Kicinski <kuba@kernel.org>,
+	Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
+	Steven Liu <steven.liu@mediatek.com>,
+	John Crispin <john@phrozen.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Qingfang Deng <dqfext@gmail.com>,
+	SkyLake Huang <SkyLake.Huang@mediatek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	netdev@vger.kernel.org
+Subject: Re: [PATCH v3 2/2] phy: add driver for MediaTek XFI T-PHY
+Message-ID: <ZfxV2c-JBCFrpSRV@makrotopia.org>
+References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
+ <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
+ <ZevJwSq-A43vqO6k@makrotopia.org>
+ <20240308193632.158b3c42@kernel.org>
+ <Ze3j-7WzbTM52kAs@matsya>
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-phy@lists.infradead.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
- Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, linux-kernel@vger.kernel.org, 
- Vinod Koul <vkoul@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Bjorn Andersson <andersson@kernel.org>
-In-Reply-To: <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-0-926d7a4ccd80@linaro.org>
-References: <20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-0-926d7a4ccd80@linaro.org>
-Message-Id: <171095148652.1943238.14315576766364498217.robh@kernel.org>
-Subject: Re: [PATCH 0/7] arm64: qcom-sm8[456]50: properly describe the PCIe
- Gen4x2 PHY AUX clock
+Content-Disposition: inline
+In-Reply-To: <Ze3j-7WzbTM52kAs@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240320_092102_786248_947F9DF9 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20240321_084445_172635_E0E06F31 
+X-CRM114-Status: GOOD (  15.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,80 +82,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Vinod,
 
-On Tue, 19 Mar 2024 11:44:26 +0100, Neil Armstrong wrote:
-> The PCIe Gen4x2 PHY found in the SM8[456]50 SoCs have a second clock named
-> "PHY_AUX_CLK" which is an input of the Global Clock Controller (GCC) which
-> is muxed & gated then returned to the PHY as an input.
+On Sun, Mar 10, 2024 at 10:16:51PM +0530, Vinod Koul wrote:
+> On 08-03-24, 19:36, Jakub Kicinski wrote:
+> > On Sat, 9 Mar 2024 02:30:25 +0000 Daniel Golle wrote:
+> > > > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> > > > Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>  
+> > > 
+> > > It's been a month since this patch was posted. Maybe it has somehow
+> > > slipped under the table (or even under the carpet)?
 > 
-> Document the clock IDs to select the PIPE clock or the AUX clock,
-> also enforce a second clock-output-names and a #clock-cells value of 1
-> for the PCIe Gen4x2 PHY found in the SM8[456]50 SoCs.
+> Nope, somehow I dont have this in inbox, i think i have some issues with
+> gmail and list server,
+
+The series can be found here, just in case:
+
+https://patchwork.kernel.org/project/linux-phy/list/?series=824861
+
 > 
-> The PHY driver needs a light refactoring to support a second clock,
-> and finally the DT is changed to connect the PHY second clock to the
-> corresponding GCC input then drop the dummy fixed rate clock.
+> > Lots of people in To:, lets direct the question to Vinod? 
+> > Most active generic PHY maintainer according to git, Vinod?
 > 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
-> Neil Armstrong (7):
->       dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: document PHY AUX clock on SM8[456]50 SoCs
->       phy: qcom: qmp-pcie: refactor clock register code
->       phy: qcom: qmp-pcie: register second optional PHY AUX clock
->       phy: qcom: qmp-pcie: register PHY AUX clock for SM8[456]50 4x2 PCIe PHY
->       arm64: dts: qcom: sm8450: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
->       arm64: dts: qcom: sm8550: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
->       arm64: dts: qcom: sm8650: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
-> 
->  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |  27 +++++-
->  arch/arm64/boot/dts/qcom/sm8450.dtsi               |   8 +-
->  arch/arm64/boot/dts/qcom/sm8550-hdk.dts            |   4 -
->  arch/arm64/boot/dts/qcom/sm8550-mtp.dts            |   4 -
->  arch/arm64/boot/dts/qcom/sm8550-qrd.dts            |   8 --
->  arch/arm64/boot/dts/qcom/sm8550.dtsi               |  13 +--
->  arch/arm64/boot/dts/qcom/sm8650-mtp.dts            |   4 -
->  arch/arm64/boot/dts/qcom/sm8650-qrd.dts            |   4 -
->  arch/arm64/boot/dts/qcom/sm8650.dtsi               |  13 +--
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 104 ++++++++++++++++++---
->  include/dt-bindings/phy/phy-qcom-qmp.h             |   4 +
->  11 files changed, 129 insertions(+), 64 deletions(-)
-> ---
-> base-commit: 2e93f143ca010a5013528e1cfdc895f024fe8c21
-> change-id: 20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-4b35169707dd
-> 
-> Best regards,
-> --
-> Neil Armstrong <neil.armstrong@linaro.org>
-> 
-> 
-> 
+> thanks for letting me know...
+> I will review it in next few days (pulled it from lore using b4)
 
+It'd be great if you can take a look and maybe merge this so
+we can proceed adding support for MT7988.
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-New warnings running 'make CHECK_DTBS=y qcom/sm8550-hdk.dtb qcom/sm8550-mtp.dtb qcom/sm8550-qrd.dtb qcom/sm8650-mtp.dtb qcom/sm8650-qrd.dtb' for 20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-0-926d7a4ccd80@linaro.org:
-
-arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: clock-controller@100000: clocks: [[41], [42], [43], [44, 0], [45, 0], [45, 1], [45, 2], [46, 0]] is too short
-	from schema $id: http://devicetree.org/schemas/clock/qcom,sm8550-gcc.yaml#
-arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: clock-controller@100000: Unevaluated properties are not allowed ('clocks' was unexpected)
-	from schema $id: http://devicetree.org/schemas/clock/qcom,sm8550-gcc.yaml#
-
-
-
-
-
+Thank you!
 
 -- 
 linux-phy mailing list
