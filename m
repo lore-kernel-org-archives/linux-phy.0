@@ -4,68 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AC03C54E68
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Mar 2024 15:44:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76033C6FD1F
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Mar 2024 16:48:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LGOlpVXh2rI5TU8u1BTBr4jYEM/xzX29v81WvoJi+Mw=; b=l+klWr7pFnvy9I
-	fzRcH7JByDYPZzZzgjkHa4ChojHybp4x9yc19AxDkdmSolbVXeiQFpsNkbCFLcO4ptRc6C8MKbFbW
-	AN5UhYCzK/Q2I4AD1GTipOOaIgCFu1VPMPEX//hlcl7eKjVwmP6vXR6JoAm2iFU9go4IxLbZS0JaX
-	AadWCJU99JTB+iPEXXN8C0hjQoxOv7dM4fDKeOrQ4QV+GV3QuCZ/2WPkUO/mhFzgLOw4y3bnbHr4v
-	7hZAyHRlRoZ7jj+wmBTC0+03v3NccmZyfrytM/qM17mA/wIDM2gaNIXdi2IBBeF268Wzt5aPzo+Z7
-	FFUbYmA3yNvd0A/xyqXA==;
+	List-Owner; bh=OlvGJXnf00GWk5RW++eX/0YoyJp8K/x9MTkhxIKx5xM=; b=GQA8bohLl+zXHp
+	7kFM99lt3MSanSNEE7IlcV44+ealVsY/0KQqxPrM/cirYKeHGIOV1IpyBxtCscZCzFwlj0p0+IY5y
+	Lrb86ssxOvmdaIOiQ9vCbO9uFxa+q+wzWCB+B80SAWPl0kxwgV/X2VDHuzD5kVf+yb1tdCku241SL
+	U5YAbocxq6bPdTsAzdBR4pum+9fYNm34xha/HwfsfimvG/gJ5lk1Jq+gxI+BmHpkph6wFE9CXbtA8
+	Si2xpElRKqP3CcTcjqG+YyXf8O7DJQFLRG97pBGBaoN+AnDYrMUbt5Tb+qqDdwTv6NSDkA4kGvyEi
+	BEFoAfjRS4yqdebKn3zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnKb2-00000003bGn-48so;
-	Thu, 21 Mar 2024 15:44:48 +0000
-Received: from pidgin.makrotopia.org ([185.142.180.65])
+	id 1rnLaH-00000003tTa-0huS;
+	Thu, 21 Mar 2024 16:48:05 +0000
+Received: from mail.ispras.ru ([83.149.199.84])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnKaz-00000003bCK-0Rsa;
-	Thu, 21 Mar 2024 15:44:46 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.96.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1rnKai-0007eQ-2t;
-	Thu, 21 Mar 2024 15:44:29 +0000
-Date: Thu, 21 Mar 2024 15:44:25 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Jakub Kicinski <kuba@kernel.org>,
-	Bc-bocun Chen <bc-bocun.chen@mediatek.com>,
-	Steven Liu <steven.liu@mediatek.com>,
-	John Crispin <john@phrozen.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	id 1rnLaD-00000003tIT-44Rj
+	for linux-phy@lists.infradead.org;
+	Thu, 21 Mar 2024 16:48:04 +0000
+Received: from tundra.lovozera (unknown [83.149.199.65])
+	by mail.ispras.ru (Postfix) with ESMTPSA id CB3A74076740;
+	Thu, 21 Mar 2024 16:47:35 +0000 (UTC)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.ispras.ru CB3A74076740
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ispras.ru;
+	s=default; t=1711039655;
+	bh=r2m1IFOo39rYh7Yqg1o38OZbzAZc486wtJtHt6GKQN8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=e/IoVVTmJcjYmoIvO2d8hMVtfnMzisXAIkALho404ABalv/p1MYVojBoqBYofIZCU
+	 6OsYZtHgKk26MxAe/VkoFI4rcAY0B0UlTSUPWs+cXZH6nAR7QgVRbtwhpxKZrB1rmh
+	 IVgkNjmcazOJjWGj9olJPuX826H8+xk551pjtIgE=
+From: Mikhail Kobuk <m.kobuk@ispras.ru>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Cc: Mikhail Kobuk <m.kobuk@ispras.ru>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Qingfang Deng <dqfext@gmail.com>,
-	SkyLake Huang <SkyLake.Huang@mediatek.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	netdev@vger.kernel.org
-Subject: Re: [PATCH v3 2/2] phy: add driver for MediaTek XFI T-PHY
-Message-ID: <ZfxV2c-JBCFrpSRV@makrotopia.org>
-References: <745f8b46f676e94c1a396df8c46aefe0e8b4771c.1707530671.git.daniel@makrotopia.org>
- <3bb95f1d795eede63284dbcb224e06ea6886b421.1707530671.git.daniel@makrotopia.org>
- <ZevJwSq-A43vqO6k@makrotopia.org>
- <20240308193632.158b3c42@kernel.org>
- <Ze3j-7WzbTM52kAs@matsya>
+	=?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>,
+	=?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	lvc-project@linuxtesting.org,
+	Alexey Khoroshilov <khoroshilov@ispras.ru>
+Subject: [PATCH 2/2] phy: marvell: a3700-comphy: Fix hardcoded array size
+Date: Thu, 21 Mar 2024 19:47:31 +0300
+Message-ID: <20240321164734.49273-2-m.kobuk@ispras.ru>
+X-Mailer: git-send-email 2.44.0
+In-Reply-To: <20240321164734.49273-1-m.kobuk@ispras.ru>
+References: <20240321164734.49273-1-m.kobuk@ispras.ru>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Ze3j-7WzbTM52kAs@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240321_084445_172635_E0E06F31 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20240321_094802_619488_86AF2243 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,35 +76,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Replace hardcoded 'gbe_phy_init' array size by explicit one.
 
-On Sun, Mar 10, 2024 at 10:16:51PM +0530, Vinod Koul wrote:
-> On 08-03-24, 19:36, Jakub Kicinski wrote:
-> > On Sat, 9 Mar 2024 02:30:25 +0000 Daniel Golle wrote:
-> > > > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> > > > Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>  
-> > > 
-> > > It's been a month since this patch was posted. Maybe it has somehow
-> > > slipped under the table (or even under the carpet)?
-> 
-> Nope, somehow I dont have this in inbox, i think i have some issues with
-> gmail and list server,
+Fixes: 934337080c6c ("phy: marvell: phy-mvebu-a3700-comphy: Add native kernel implementation")
+Signed-off-by: Mikhail Kobuk <m.kobuk@ispras.ru>
+---
+ drivers/phy/marvell/phy-mvebu-a3700-comphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-The series can be found here, just in case:
+diff --git a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+index 41162d7228c9..15bf10710de0 100644
+--- a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
++++ b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+@@ -603,7 +603,7 @@ static void comphy_gbe_phy_init(struct mvebu_a3700_comphy_lane *lane,
+ 	u16 val;
+ 
+ 	fix_idx = 0;
+-	for (addr = 0; addr < 512; addr++) {
++	for (addr = 0; addr < ARRAY_SIZE(gbe_phy_init); addr++) {
+ 		/*
+ 		 * All PHY register values are defined in full for 3.125Gbps
+ 		 * SERDES speed. The values required for 1.25 Gbps are almost
+-- 
+2.44.0
 
-https://patchwork.kernel.org/project/linux-phy/list/?series=824861
-
-> 
-> > Lots of people in To:, lets direct the question to Vinod? 
-> > Most active generic PHY maintainer according to git, Vinod?
-> 
-> thanks for letting me know...
-> I will review it in next few days (pulled it from lore using b4)
-
-It'd be great if you can take a look and maybe merge this so
-we can proceed adding support for MT7988.
-
-Thank you!
 
 -- 
 linux-phy mailing list
