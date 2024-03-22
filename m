@@ -4,42 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 254C8C47DD9
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 13:07:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32BD8C6FD1F
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 13:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PbE4zMOMTCodAFupMhfp8YPtjlxZIqMLOaNqIO8VIuo=; b=FUUcMyf21Y6T+S
-	oJDvVXhBA5p6iWnP68cJj5c1rLiT1xm8m7RiIbiGbRMv6QxJxV1e08K0W10ooEVXORXh9i/vAaCRP
-	nIIyE5z3+2v6Ve7v8bnCERolWQVv6R5bFmjnRIkYTsOlxmRoT6NqEa02G6uEkb3rR0DrK29+LA5wu
-	F3l88gdjh78Yv2XqdmgaVWsPihz70Kol0dtQRaQvLHbLnLaVSUEafpx0lrHMvrf4+uY6z8MkKaZCl
-	cYowXaPGoHXOQxK/GJpv4Nkam+Go6x+1GjGwrYfvwJcCrnCgp0ognpZxJViWDESuqJ7ufdiKfz8Z4
-	jlSRb4QYO3kyhql5hukg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ANR/qA4RY56t25F6GPxiVweN3xusDv1enVNO//rZZWs=; b=xGh1Tow/8ZTr1x
+	8Ym7oNhTFxmsY7+kddy2HKMoFi0yCsc4vnH0rkuPmflrX/pxcH1jKoz/NcVfYf+Gqw7XYcdkeMdci
+	imW8GdYZD9AB28z/8XECxoxK+Hbmxgd1JB+oF/wDIkbjGft7jPlzLKvpwUKerI0FT6yNld52esQSJ
+	IBwR46cOgcwvn440/CnpxszhLPi8aZrvB5LUjoVn/utLbXtFnxkGZ/wxz/h+JelkRzS9/mkEs8jbB
+	wE4Yvy+5wSiHw9ChU1jMsvC9k5/HiMFLnfZcYkNEPSnbjt9+g2k8d9gAuT9Gw1NQQO+cSA1TOC6OZ
+	JIf2XIIYEStTqx29/Hfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnecK-00000007Efa-33ZM;
-	Fri, 22 Mar 2024 13:07:28 +0000
+	id 1rnecM-00000007Eg0-1Jnz;
+	Fri, 22 Mar 2024 13:07:30 +0000
 Received: from mout.perfora.net ([74.208.4.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnecG-00000007Ee8-3Mie;
+	id 1rnecG-00000007Ee7-2iCP;
 	Fri, 22 Mar 2024 13:07:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziswiler.com;
-	s=s1-ionos; t=1711112821; x=1711717621; i=marcel@ziswiler.com;
-	bh=hS0EhU2hZB+am5BBjCPMGTJbdV4iRS3G7g7Pk6drSvE=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
-	b=qmK4ava4hnhBuzon1+mTEGXata5F3xg5mFC+FzSEotYyKRg+BKS2jLii/fzGi23M
-	 LfTcL/hoSt5kAWh9JPMiPXU/18+VX76GX5aaCmD4RTyCKwS/J+FXWKNObIlsN4xeA
-	 TjYlWwyyoNmdrmmdtpt0WRQuRlw9+6hNpnA+tkwIKcVdev1jVUECwAj+cpVErgdA1
-	 eeB5Kp4zC14//C6WZNsdt3reVa6kbXF8A+S5yG4asBjosUaBAwt5IwWvOwHTIzHC6
-	 UhNN02X0ExAydS8V9bKYu1+AyAMnBGmwsnwE2cJ/bZJ2/C6ayL/0hm3Qb32S4TrlA
-	 Q37UNDZ8SGoxQA5jjQ==
+	s=s1-ionos; t=1711112824; x=1711717624; i=marcel@ziswiler.com;
+	bh=eDcvJPYLU8aoGBtgte1WWvaJ3vzttS1IgG9REDM5l68=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:
+	 References;
+	b=0B3oBvcOCuJE7BwDBzLmKIwE5e5SWdtzroFvwJ1dutLNEGsAZ0NazGTKn40POTRP
+	 bCAC09Hjqbl4HK6jug5+pu4FxjluUphwmrFGcBQ9rPLhJUIUg4ryblHpofypCEERA
+	 ZkjrqJ5awbO14eKl4XdLTmPUbXhIrcWgWwIHylUv+5A8Evzl2QQMwAZSOMQZyT1xg
+	 PRQ1Z7BMv6O+nUBl3UrjUsJIhAxUeeveNosqN/U3OK/GT74XzKuTuHRNHr4DPyLeF
+	 9hw6e3xXVGYp5RsZN5PixFmIR1LaRECJNkg/pyBNjqMC3UlAdUh1tuQVP1UkcOJ42
+	 gPyqQoQBA5x0J7SMCA==
 X-UI-Sender-Class: 55c96926-9e95-11ee-ae09-1f7a4046a0f6
 Received: from localhost.localdomain ([84.227.227.254]) by mrelay.perfora.net
- (mreueus003 [74.208.5.2]) with ESMTPSA (Nemesis) id 0Levg9-1qy9tL3jfr-00qjkg;
- Fri, 22 Mar 2024 14:07:01 +0100
+ (mreueus003 [74.208.5.2]) with ESMTPSA (Nemesis) id 0Lpu1h-1r97C30djL-00flO6;
+ Fri, 22 Mar 2024 14:07:04 +0100
 From: Marcel Ziswiler <marcel@ziswiler.com>
 To: linux-phy@lists.infradead.org
 Cc: linux-imx@nxp.com,
@@ -60,30 +61,32 @@ Cc: linux-imx@nxp.com,
 	Vinod Koul <vkoul@kernel.org>,
 	Yang Li <yang.lee@linux.alibaba.com>,
 	imx@lists.linux.dev
-Subject: [PATCH v1 0/1] phy: freescale: imx8m-pcie: facing pcie link-up instability
-Date: Fri, 22 Mar 2024 14:06:31 +0100
-Message-ID: <20240322130646.1016630-1-marcel@ziswiler.com>
+Subject: [PATCH v1 1/1] phy: freescale: imx8m-pcie: fix pcie link-up instability
+Date: Fri, 22 Mar 2024 14:06:32 +0100
+Message-ID: <20240322130646.1016630-2-marcel@ziswiler.com>
 X-Mailer: git-send-email 2.44.0
+In-Reply-To: <20240322130646.1016630-1-marcel@ziswiler.com>
+References: <20240322130646.1016630-1-marcel@ziswiler.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:HbksDg0cngIhNhj/kmWLakIVtoaoqkjubx0k/GE+1UTtYoiJPYt
- mvNs7loxfRYXelWDuD4fsUK4rKwuy+r8Fw0tRSxLFQ1zb+LZJjPNssTjvNDybhIDz+I06/X
- 5lk5hcLwYe5akl53H65rKfhUjeivfYWV2x1z93gVZvP5rNUpDZxHeDJsm4ARxjyNJhsvAMG
- OZtD6NzwaPq3nD50jo/hQ==
-UI-OutboundReport: notjunk:1;M01:P0:USeePlatVWo=;8dzoQ6zbHtSzKKw72zgRGz/UoX7
- KyMe8LgKY9CB58q5ctWhUn84LFB61lsXEcxAgp8v4kDBZ35+kxO/OnxT3YrrDfIikC55X11kk
- Alt2zEdNzc42qUe/bmtjNAlhKv/p2PYXPPaAW+weeeiDgfRLw8BLPLWFsr4nzs3bsiRIgCwAN
- r266oO3ioBD+dpA25kuVB1SEW5zLTgpkbW9Mnhq/UoLLAmUf3gqNFWLHKxLiIQSv7085nsavS
- o6jzMkjQ6+2VVF2fT0ndvy0dn3SKuZtF13C1lm6Bv9YCBT5OAv8dBiT7s3BjRDgwKPWaoMZN3
- Rts5ahQ8z8DreSLEzXM5wz7mPPPJXa+QmWukoZ5TBb41Cbg8lp70w0HO6OSoN//b/gv3ADH3z
- RPVj6tCfIK8iGpTZRih3zH8wYg0TYnEAlCHVd7BP4EFekWTaWsa3D4bDq53+dz4hhx9XHaK3Q
- 4ZHY1UtHzug16NSrnhivp1vmrmvrskQLd2zZdEPX1VFWkG4Vc7ETr2jUwr8u90d8wZFMpnVVK
- vH8K9T6GWSkejDo30A+VqF5qmzXlfWn01OkrVOzVVZlKIxUWsnqKANBSB/ctLpeLOfpQ07zdc
- ybPqoYl0k2sqmrP4YkBg3SjBRIpQbdL4V9F/2IR2YiDRzFKTOj4HjT6FJQBAnw8JtFdevLblC
- +oh4oLihFA8AsTDEcO5M4vFJCDNFigOzIXWfNqeSFRBcmr4ej/oFX1/gw01uBNYBQuXSZTPHu
- hOmviWXHb4KD/Sw6aylGkp0Q5pHef4SRGYre5thB7AJzHMP5jQDOG0=
+X-Provags-ID: V03:K1:hSP/Rc8v7m9d5HZM7O8bF6SvRxTvUu72KJswzi+HlbsLFXLs2bK
+ eLpJzjfRHpiST6zEqcYF962ELDUUJBDUV3nm0y8mVIdvj6RWC9q7cGGmNmvOtuFB+lJzW1x
+ OdiQ7GnUNfjeWY6i7hd1m6fNwsTppZGQvSv9kifwA7IU0xfr8+xSBbQOKQrDD32PmM9wphB
+ RyQOYxk9uZRALvsWq78Mw==
+UI-OutboundReport: notjunk:1;M01:P0:uFAvp8cGkn8=;n2XRoOwfdafhanJs5GoSqZTa42j
+ NdJx0oaQGz8lcUw1mJ3/rJfnQvET/+eJ7BWAVTZFDoj1lY6oBqlotKIn8EQGNwHV/DaGMWkcC
+ O1HNr27u3Iz3LH41h4QQ83D+tYlmgIxkd6/9XGUARu5oUY7R+CqpYK+GIsVhBZniR9/w87nxS
+ 9E+OE2QfO5S/J5e5CQGWH8OvE6jXLG3sOnHnEKouTPbBbu3GYojX/lgjZI1U+tHlHag86LcCw
+ jw7itWArMx29QjSiQEr8tGM32CgBnCO0BuBj21qt0hdni46TgJaZttkOGYXvNJGvt0I7NaJid
+ zC0O3+zCWqQI1oEHi3e1CmaHqf/Ih3rsWeZTp8+OglMmqvGx9ZtNYAc6CPT/lmmjp7Jy60XSP
+ uuUT5MXg2XghrVvd5RhDOQlivlgzJ5TBQcEIpMINIiHscu1MAHGLxYvm8d56tR6Z6UnhOJBFE
+ BpP3v2iWfG+oK0R87824Cse/BV/VqVvi6VvBcgCc3H8j+8ByYSUjfLp/Ez9G1panhRmaspM31
+ lSq00ebEka1SDrXKFOZiZtH11iIqV4kG6ne9Z4EPot0ISpcGQvhBRxPpjIHwYAyUIBk2WHgmA
+ KcmDYYP570ysZ+4eCm+TMUaOhiChXAm60uovdSeKbzjn5osCUEzAwFBRIOkSTl2eXywwWzKnv
+ uLxpvmAOppAi/t/XOc6d9nXBtBOkDtcVrw13FuVGHilptcKtpZfe0JGJYmX5VxAegZQbuJRMw
+ Rt41w4zyyaKEXC9m4OahmA2/SHgw7GB1WzFwNNZawzlXzD+aM19azc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240322_060725_073490_F78FBB6D 
-X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-CacheID: sfid-20240322_060725_056406_6460E346 
+X-CRM114-Status: UNSURE (   7.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -103,34 +106,34 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
+Leaving AUX_PLL_REFCLK_SEL at its reset default of AUX_IN (PLL clock)
+proves to be more stable on the i.MX 8M Mini.
 
-In our automated testing setup, we use Delock Mini-PCIe SATA cards [1].
-While this setup has proven very stable overall we noticed upstream on
-the i.MX8M Mini fails quite regularly (about 50/50) to bring up the PCIe
-link while with NXP's downstream BSP 5.15.71_2.2.2 it always works. As
-that old downstream stuff was quite different, I first also tried NXP's
-latest downstream BSP 6.1.55_2.2.0 which from a PCIe point of view is
-fairly vanilla, however, also there the PCIe link-up was not stable.
-Comparing and debugging I noticed that upstream explicitly configures
-the AUX_PLL_REFCLK_SEL to I_PLL_REFCLK_FROM_SYSPLL while working
-downstream [2] leaving it at reset defaults of AUX_IN (PLL clock).
-Unfortunately, the TRM does not mention any further details about this
-register (both for the i.MX 8M Mini as well as the Plus). Maybe somebody
-from NXP could further comment on this?
+Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
 
-BTW: On the i.MX 8M Plus we have not seen any issues with PCIe with the
-exact same setup which is why I left it unchanged.
-
-[1] https://www.delock.com/produkt/95233/merkmale.html
-[2] https://github.com/nxp-imx/linux-imx/blob/lf-5.15.71-2.2.0/drivers/pci/controller/dwc/pci-imx6.c#L1548
-
-
-Marcel Ziswiler (1):
-  phy: freescale: imx8m-pcie: fix pcie link-up instability
+Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+---
 
  drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+index b700f52b7b67..11fcb1867118 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
++++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+@@ -110,8 +110,10 @@ static int imx8_pcie_phy_power_on(struct phy *phy)
+ 		/* Source clock from SoC internal PLL */
+ 		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
+ 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
+-		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
+-		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
++		if (imx8_phy->drvdata->variant != IMX8MM) {
++			writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
++			       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
++		}
+ 		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
+ 		writel(val | ANA_AUX_RX_TERM_GND_EN,
+ 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
 --
 2.44.0
 
