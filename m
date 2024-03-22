@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0012C54E71
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 09:42:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3187EC47DD9
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 09:42:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yJBxNBFc7UrcvBz7a6TOEuR6a/Cpc8exMdUgxSWyhC4=; b=rX5EaWsN0O21YD
-	JXPCeEfq5g8+qnDar+7otICicDgfvPBpVzsmFA1RTGYWPIxHt3ZMPB5RereXshh45Grko7bWKofUO
-	GkrGAPrNRPAaM/P3o/+DVPc8MERTM/U5Q9jJnLZi+dK0hnpbm8RwJgqVMxXNcXkbdxSf+HA26YxNU
-	PSRYn8oRWJq0zQm4gZgxXKByWIScOIsGUyPYAer1ZpfIHC3P/fPWYhaXWcobOqXPRsFEBS5g0A8MR
-	BjrRIJ/yM26CIvy90slHuUGpLl+bl8/KqY2k9wWr2e09vk1QWeZBjG4EbLMfnEW7V/h4eWEUUPJtO
-	vAK7KqeGL7/XvD2d2AUQ==;
+	List-Owner; bh=I+A2rkg65W738C+v1ftOmf5jF+cecrQ4sYBMjhbf8xQ=; b=nI8wupSwbavUXz
+	vNUqYvOdTUM+41riatRmu+N+ZvbtM6zTxZClVD/jsNNX/4A4ATH26qFrMVeqG1xnRmfScerL8ILN+
+	NlOaBQxTrG9Ztwwxkxy45rBD5kFI86EFM7VSPii0685dD39GkrsQgEk0H92pL7XGfruI0tprlPTwZ
+	GjnCAwNLxjjYg4aO9Z7HemhCuzYT685gN82dKRyPJgmYiusGuO24oIh2pQMRsZD07rwLHPxCS18oG
+	Lt4aJQL6GNZHFkztQryBUnGWT75XaNY0W/EDFTL8v62MqiWL0wuY/O+UjYDkIiNsU5pbcrcXsdiH5
+	Q2QVsUoHh+Q6VlawYJDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnbQQ-00000006dYT-2F0W;
+	id 1rnbQQ-00000006dYn-3Uqi;
 	Fri, 22 Mar 2024 09:42:58 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnbQL-00000006dV3-19OQ
+	id 1rnbQL-00000006dVO-3DhS
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Mar 2024 09:42:54 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-41477e77151so7543465e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 22 Mar 2024 02:42:51 -0700 (PDT)
+	Fri, 22 Mar 2024 09:42:55 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-41477211086so11807355e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 22 Mar 2024 02:42:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1711100570; x=1711705370; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1711100571; x=1711705371; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=hIrecpvZpvUh39wfgMpRJv2qYcilhCHDIPFfNLK1JPU=;
-        b=OflnVM88dYLpAFuj1IvEiJu9actqZsqdX0SbHOojjlO6+JT1EodfLsvyXTOdJLI5tE
-         P8BW4NeyfTqJ6S50DnfQGmJjTPoK/fNObG0PxRF2tfrz3ia6rvkdADccFOJpdJzB10Ij
-         QcPy7Lyxn1dAWWfcaA4CRZPMwmus4dYBQKTjHn7QDPOWHZLteFoIeQF5sfDl2rQsn9IW
-         2wpnAAVGa+6h8Mo5mtI83Z8BdPzhjSdZs1kgnaTAz+CJoYHZ1yV+eu/y2pRiSCLE2TEu
-         KyGKfCw7Mnbu1Dg3j1tu/Y7O+Hq+xxy9/dyLxJYDs4sZNw8fkMGloFmwYfmz+1L6fe28
-         Kgug==
+        bh=eUssMuF8ThH09UlJpbb9vyo3xzL9TqetFqxpN+Tr8Ns=;
+        b=li79Cui2X3KOR8jDXVGyzk/4MwVvcEraIRJuPCPsR0IR44Z+m86usGA4gQoxnAgR9P
+         lzkLe5XedOVpBlGP6pRXzkp3/xRJlgPvooyIo8A1EurgdEL1iZIwQCxOtKj9mCKujAVa
+         2C1ZbnHRhs2j7kOL0MiLacv2Fhvl3FdwJAQWqdBxN8ETFVX/FS1ucIo2kAx/RM4q/5lP
+         2isKhOJPjommtW+JD9ifbVSVhNRHiM/kgACATgs1RxaVsX6wmH4eBdb+anTAwy4Y0Uq1
+         QC665TUpsjepxg4xv6zp/DDCyKokR3RIG3y2uT53t4YhL6FrdKvNUoOm1BN+w7eUy06k
+         P7uw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711100570; x=1711705370;
+        d=1e100.net; s=20230601; t=1711100571; x=1711705371;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=hIrecpvZpvUh39wfgMpRJv2qYcilhCHDIPFfNLK1JPU=;
-        b=bkC8lEDxU0GxxduPtco7sS7y9Eqq2McjttmxzEIaVQLTM8A8k/yecijotr1SmLUaL2
-         RRFty3kYkCv8lwjyyKp5EHGYAwmIEOXYDdyx/0ABlMdJJFtKaXGTznmJwePdUu87zVdM
-         66udahu7/VDBis0AA8f9+gB9cFHoe5s3Tpz4M4SM1/Vqc6JwPh6VHs3itQDs7bqqwRa9
-         +7chPrGw4aWLzdOeDgI42UicGX59myeLmuLh27Kx70ykIQgBfRnszZg+oVqlc4PKE8lq
-         jgXsF/JfBi8Kty91XBoIspnwRzWPsAGJ20EnlBwULBME2h0FGPzTVjyO/doswQAypvJ2
-         ea6A==
-X-Forwarded-Encrypted: i=1; AJvYcCUojPpm0hjNIekudi4E8jCcMdVQO11vDW9w6fU4cMIPrMoBeEABxvjj7GWgIKK1UXJ2adSQRyKsqkhhLXhmSOU2zOvLqpYbZuQK5ycgDQ==
-X-Gm-Message-State: AOJu0YxWe/e74R0LMAXXQccG/r/cD2H4oKq3rTgAX2J712zW8Mn6iCue
-	GURHVPY66SoTXmendkAFqJrdGZPduKk4ej4E+uCHbUUmX6yb1IqU+EA+nWF9TIM=
-X-Google-Smtp-Source: AGHT+IH/YR4laTJY735GA4EYAew5kiy6VRPjETSq3xzM+ktpO0PWyYNXP/AclpTevxrLp9EqJhpLxQ==
-X-Received: by 2002:a05:600c:5246:b0:414:630:26be with SMTP id fc6-20020a05600c524600b00414063026bemr1249855wmb.31.1711100570233;
-        Fri, 22 Mar 2024 02:42:50 -0700 (PDT)
+        bh=eUssMuF8ThH09UlJpbb9vyo3xzL9TqetFqxpN+Tr8Ns=;
+        b=B9HHfR1WSJTKqHEBR7NmuuuCkoqgqB8aYyWVgm35aErXt81R6B9z10H/7DxY4IISNp
+         2djZ+gLM+BWdtDr/2WUlChmpWTvznm5amI3vFrY3bD3MC7hGKmmmyjbwJayB1MG6AaJD
+         YStyViR5pOZ9+NDef0FmOyKHYAfmdwez/4rL6LKQXNhgDefkWz2GvWS8dRyWHGE6vuun
+         MgbWikP3rj1306TlkqRu+idpOqLYFINz7gS5BjZ8r3IS4ERDQv11mYutrHPyWjdF7e9C
+         aBNmDxwvTSpH9azTnHhVqDGUyVEMcOMmztkIITrki1tgZD30mVaO/4v33V2+3Hd/TlDb
+         f5Lg==
+X-Forwarded-Encrypted: i=1; AJvYcCUR3+Hsa7vv4AzboxVad3tZvkFljHcPLLhVqqRuAoWVTz3V92ugWYPMdJhmZCOAcAUZH2PHgURHcCnwcas0zN8SIwzWpZ31MYtL4olcCA==
+X-Gm-Message-State: AOJu0YzVEszekpHSFLJi4vcPdzfThDEimaHicbKkBU1wzeT0vlKoUQU5
+	KZhAENySEFb8l62uo4xeYefgwFOkvO9jVaIbD/nHCGxnX8FWxfS7jl7eHaXnxWQ=
+X-Google-Smtp-Source: AGHT+IGn1TUPJe2KUoUFUP1ntI/uWf3G7ZEIHuB1MYn8zZfb3E723dM4eyZgLqav8ccuQa72KY1kKg==
+X-Received: by 2002:a05:600c:6b05:b0:414:69be:54a7 with SMTP id jn5-20020a05600c6b0500b0041469be54a7mr1646075wmb.41.1711100571136;
+        Fri, 22 Mar 2024 02:42:51 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id j9-20020a05600c190900b0041461a922c2sm2547845wmq.5.2024.03.22.02.42.49
+        by smtp.gmail.com with ESMTPSA id j9-20020a05600c190900b0041461a922c2sm2547845wmq.5.2024.03.22.02.42.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 22 Mar 2024 02:42:49 -0700 (PDT)
+        Fri, 22 Mar 2024 02:42:50 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Fri, 22 Mar 2024 10:42:43 +0100
-Subject: [PATCH v2 6/7] arm64: dts: qcom: sm8550: remove pcie-1-phy-aux-clk
+Date: Fri, 22 Mar 2024 10:42:44 +0100
+Subject: [PATCH v2 7/7] arm64: dts: qcom: sm8650: remove pcie-1-phy-aux-clk
  and add pcie1_phy pcie1_phy_aux_clk
 MIME-Version: 1.0
-Message-Id: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-6-3ec0a966d52f@linaro.org>
+Message-Id: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-7-3ec0a966d52f@linaro.org>
 References: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org>
 In-Reply-To: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -81,25 +81,26 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3193;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2454;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=0+RdmftpKdoFSVt08YhMwCSmXP/Cp4RuQbNR1jrvu/U=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBl/VKTzlkD0PvADy5t8aFhCAlr/2DypGHOPi9Hy/vi
- 4sPxym6JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZf1SkwAKCRB33NvayMhJ0XD1D/
- wKWWuMK5/SyPNJUv1YNYkCMVgwrGw3RmeftpRaA4+fZ10C8otoOgbhF+4Ab8bQXmadCsqDc8Mx/9tx
- DYQj/k4Us7lk36YIx3rGRfsQr5QKfef1XAjlbZJ2ZZrEg//0gczMp1TcmVMxj5t9frmV2dRB3nc4sn
- XFgf2CtpuHzVCem+kJ00lDfeCBl7SpCAn8ABE3t0b7feNrfjY23cGC196e4CRZnIVXu6L/DkXotBa1
- nF/5zQxl0jDTcrxbufll1p8lhssZiwy68Q2ZAUHQgIHWU64jjgHuDhgR6fRSdGB2NpszIDGdwJjmPn
- ltWO9qQbPABe4AQa5k8Cr3x+VqGGTe+Oj6bmPlCQhynr6W+aoxCczCq706reHKB1/ER/KIo80MCb9T
- hy+PDGBoRj3ryv+6xYChLKomRxcPJ8HgePWylTd69+NAToY3DRft4Y0UIcdMWOcbU/ls+6QT8yeODA
- e2lISlSqsoNFXS6hDo4JkhcbMAhNEisyQVs/MOrCQcuuqG7gGCYTYa+1sxuMSvMYsp4DZmdfTdQoZO
- +Pun9rcjzWxlWa4ZixSSVjPSnv4801X05yebt2yLZzs5DGe4GTTRapGaKpqC4EmL5i1/+Rp+q0ZJ1o
- 7LzcdMRkLbYGo+N90e0UnMytCt/yOJPqpGRdenDmr/Pvvnl5e7+bYviQr/og==
+ bh=fB7ha//rZ/f/HstsEjI3jngLBtEYcuG0WuaGH0Cr+Bo=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBl/VKTZ1JXeyzTLkNtjvqZxp7JUTH+dlXGNHCvhF0m
+ hqUydgyJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZf1SkwAKCRB33NvayMhJ0firEA
+ CHvG8bUPSmOwXe1zrRf6pqMs1BhQOgNZXNsU/OivN3SnRrkypSyvlE/eOvqtco5jvUkXH9C/Z3NJs7
+ jjaTDbimSIsSx9Srw7SnN1I8uz0cRPprsn8CoKePHNJcGPyZLetjxJcDwKCj2TrRTf8kGKUeh4MLIf
+ JVfBYTm2PpOmuR0WjLpGj2HqS0sPjPe+XT5YoKUsh8UezxIZTilxJ7R+c97ets7BwbKXKzX/0AoTjs
+ WKRV39jnL1JOr+Hal9Xiw5UtozzcHcBpUFOQqKLPmNItZ2ChqUl5Gf6Z3bXGIqAI9ZoQokOTG0Y6Rr
+ Lt/Mrh2htYkUx/y5X7DulLfENCdQKy6cqEVhQh4MCnP6HdA/uyroJCiF/SKlJrzT2eEnOzglJ0eK3d
+ Ui3BLbZrG1GtFdUsqefnny0RIEG0bWORCvS67uFnTm9fqAQq5R34aNorgPQKpol+q1Ixl69dYF8ZlD
+ Z1KWMoI8nUD9cKOvcDd4t9nWx3cjzDrnn8huS5dD/6i/RtuF8xzQ3NMRkDEuCZ73cQq/9+Y9JO/2dw
+ HMGG9ZIA2u9ZqI8WKk7f2idK9fxHzSIrxjZGjPRnTedH+Od8uNmFxVJOKLACPsh83xE5Hjg8/aGYwx
+ XuNNH1iI3NcvU3VpQ4LXvLDUYOvjbxjdtV6NXAitrhkPbN0jZO2skLBgsCeg==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240322_024253_359993_A4FBB6B9 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20240322_024253_860308_1B1AACF4 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,33 +123,17 @@ provided QMP_PCIE_PHY_AUX_CLK.
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8550-hdk.dts |  4 ----
- arch/arm64/boot/dts/qcom/sm8550-mtp.dts |  4 ----
- arch/arm64/boot/dts/qcom/sm8550-qrd.dts |  8 --------
- arch/arm64/boot/dts/qcom/sm8550.dtsi    | 13 ++++---------
- 4 files changed, 4 insertions(+), 25 deletions(-)
+ arch/arm64/boot/dts/qcom/sm8650-mtp.dts |  4 ----
+ arch/arm64/boot/dts/qcom/sm8650-qrd.dts |  4 ----
+ arch/arm64/boot/dts/qcom/sm8650.dtsi    | 13 ++++---------
+ 3 files changed, 4 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8550-hdk.dts b/arch/arm64/boot/dts/qcom/sm8550-hdk.dts
-index 12d60a0ee095..ccff744dcd14 100644
---- a/arch/arm64/boot/dts/qcom/sm8550-hdk.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8550-hdk.dts
-@@ -979,10 +979,6 @@ &pcie1_phy {
+diff --git a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
+index 4450273f9667..95d0c2baef2b 100644
+--- a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
++++ b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
+@@ -645,10 +645,6 @@ &mdss_mdp {
  	status = "okay";
- };
- 
--&pcie_1_phy_aux_clk {
--	clock-frequency = <1000>;
--};
--
- &pm8550_gpios {
- 	sdc2_card_det_n: sdc2-card-det-state {
- 		pins = "gpio12";
-diff --git a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-index 3d4ad5aac70f..1fa7c4492057 100644
---- a/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8550-mtp.dts
-@@ -739,10 +739,6 @@ &mdss_dp0_out {
- 	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
  };
  
 -&pcie_1_phy_aux_clk {
@@ -158,22 +143,11 @@ index 3d4ad5aac70f..1fa7c4492057 100644
  &pcie0 {
  	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
  	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm64/boot/dts/qcom/sm8550-qrd.dts b/arch/arm64/boot/dts/qcom/sm8550-qrd.dts
-index 92f015017418..da3cfa697969 100644
---- a/arch/arm64/boot/dts/qcom/sm8550-qrd.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8550-qrd.dts
-@@ -810,10 +810,6 @@ &mdss_dp0_out {
- 	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
- };
- 
--&pcie_1_phy_aux_clk {
--	status = "disabled";
--};
--
- &pcie0 {
- 	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
- 	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-@@ -907,10 +903,6 @@ &pon_resin {
+diff --git a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
+index b07cac2e5bc8..c6e907e40af1 100644
+--- a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
++++ b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
+@@ -831,10 +831,6 @@ &mdss_mdp {
  	status = "okay";
  };
  
@@ -181,14 +155,14 @@ index 92f015017418..da3cfa697969 100644
 -	clock-frequency = <1000>;
 -};
 -
- &qupv3_id_0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-index 3904348075f6..c74455dfd354 100644
---- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
-@@ -58,11 +58,6 @@ bi_tcxo_ao_div2: bi-tcxo-ao-div2-clk {
+ &pcie0 {
+ 	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
+ 	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
+diff --git a/arch/arm64/boot/dts/qcom/sm8650.dtsi b/arch/arm64/boot/dts/qcom/sm8650.dtsi
+index ba72d8f38420..6e4362bbcc3a 100644
+--- a/arch/arm64/boot/dts/qcom/sm8650.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8650.dtsi
+@@ -60,11 +60,6 @@ bi_tcxo_ao_div2: bi-tcxo-ao-div2-clk {
  			clock-mult = <1>;
  			clock-div = <2>;
  		};
@@ -200,9 +174,9 @@ index 3904348075f6..c74455dfd354 100644
  	};
  
  	cpus {
-@@ -776,8 +771,8 @@ gcc: clock-controller@100000 {
- 			#power-domain-cells = <1>;
- 			clocks = <&bi_tcxo_div2>, <&sleep_clk>,
+@@ -758,8 +753,8 @@ gcc: clock-controller@100000 {
+ 				 <&bi_tcxo_ao_div2>,
+ 				 <&sleep_clk>,
  				 <&pcie0_phy>,
 -				 <&pcie1_phy>,
 -				 <&pcie_1_phy_aux_clk>,
@@ -211,7 +185,7 @@ index 3904348075f6..c74455dfd354 100644
  				 <&ufs_mem_phy 0>,
  				 <&ufs_mem_phy 1>,
  				 <&ufs_mem_phy 2>,
-@@ -1906,8 +1901,8 @@ pcie1_phy: phy@1c0e000 {
+@@ -2449,8 +2444,8 @@ pcie1_phy: phy@1c0e000 {
  
  			power-domains = <&gcc PCIE_1_PHY_GDSC>;
  
