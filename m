@@ -4,81 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 596E9C47DD9
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 11:59:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 254C8C47DD9
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Mar 2024 13:07:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0hwCcghZ74dbXwilHMaL68sGFaPQa4cOjyl02n+h5B8=; b=raJydpu78PoLT2
-	lE7uFARr+9zkuT4J85TPibaE5x2dOqgPj0eAgeg2Id2AYS2vQgRc8nifHhRucNa0YfHzxKIqmtMS4
-	Ggl6/LynCRPVO5t+NRmasBD3Gu0kFC1CWJ4yNM9Kxa7pIAELwgEZP2bZvsRpye66YfyvPT73jBM5K
-	hnhJAqnsJZT5R45CkjQT2Q+/+BljO80WGXMEgE5CR/X2YFY1gr6ijD4TWO9hor+JExNyH5nInDHem
-	BVzcr2MMfVgR/B9+8vNjW/U/R4HOSb4jRUzrdY76bJoR4XWF83hocSoO1q2TGn9ZKCd7qe0ZYEC9m
-	WBm3DVlUelKqmUaDTSjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PbE4zMOMTCodAFupMhfp8YPtjlxZIqMLOaNqIO8VIuo=; b=FUUcMyf21Y6T+S
+	oJDvVXhBA5p6iWnP68cJj5c1rLiT1xm8m7RiIbiGbRMv6QxJxV1e08K0W10ooEVXORXh9i/vAaCRP
+	nIIyE5z3+2v6Ve7v8bnCERolWQVv6R5bFmjnRIkYTsOlxmRoT6NqEa02G6uEkb3rR0DrK29+LA5wu
+	F3l88gdjh78Yv2XqdmgaVWsPihz70Kol0dtQRaQvLHbLnLaVSUEafpx0lrHMvrf4+uY6z8MkKaZCl
+	cYowXaPGoHXOQxK/GJpv4Nkam+Go6x+1GjGwrYfvwJcCrnCgp0ognpZxJViWDESuqJ7ufdiKfz8Z4
+	jlSRb4QYO3kyhql5hukg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rndYL-000000072xf-3Ycq;
-	Fri, 22 Mar 2024 11:59:17 +0000
-Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
+	id 1rnecK-00000007Efa-33ZM;
+	Fri, 22 Mar 2024 13:07:28 +0000
+Received: from mout.perfora.net ([74.208.4.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rndYJ-000000072xG-0n8U
-	for linux-phy@lists.infradead.org;
-	Fri, 22 Mar 2024 11:59:16 +0000
-Received: by mail-yb1-xb2f.google.com with SMTP id 3f1490d57ef6-dcd7c526cc0so2114360276.1
-        for <linux-phy@lists.infradead.org>; Fri, 22 Mar 2024 04:59:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1711108753; x=1711713553; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=EJ4qxaRb0DnjjjwFv0BXf+jboY67mKdpnlHN78YiQb4=;
-        b=KA2z17PjMr+UyhA6kslJ7wWmUiGiIRXNxu13SS2Hnt08TKxYdCn+v1Pq1zlVkyaCPJ
-         TphkEE6UBuxSQ8c6eBOS1+ecwR9Cz1TH0ka0b2kvW9Fusbj7RMAI/ii/jO+56uhKG2n8
-         CJWl/YCTk5N8QOxccBiH+u2dvN6UaC3ErCswmgQxZBhuozfU+wo0saMMoGaHhADWfA80
-         RS0oNN5F6wIMUv9a1KiHr2IlcqKBfbEjP17TXyYIM2ou/0Ka8Rn6WXC81sgU4hNK64EG
-         bXlrmM6jG1cw6e41PT5iVXpy7+Q/7oyorH8pEGZcy5YE9v4w91jlrYBwnNQonCzcOfoZ
-         KUKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711108753; x=1711713553;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=EJ4qxaRb0DnjjjwFv0BXf+jboY67mKdpnlHN78YiQb4=;
-        b=IJ89SX56Ff29qAW5eDwF10OCmfwwOhFOK+bENQrORnpb+soKnwAt9IiXf8OQhQNLTj
-         dGckjZLDk8q82JBT95I1O4CqQf3Z3gsRVvgM4CSYAz8vp/cm8tNAwI1QvZWgOMVj8XbC
-         fkgQ93hLDTRZmAw1//B+to6MmXBJ88PJxxE2pPNcBDu9A5KO1Y5PD/xs5WndynltfBhK
-         wgY3cPu2SFkvFevLqdNkcKcexf/zYwldmEHnkjH3rQt9Rgi21nNQopNxZKoDsFuyDAdD
-         /07yFz+7isEF5Rp2yzoZ46bhIwK0/ETkIQe727Qpv3PDAUFwckRYHaexcKE9KbFHjov5
-         okHg==
-X-Forwarded-Encrypted: i=1; AJvYcCXkD1fK+gycxW+WUH09jzegv7kMLGoJOpPGVEgKs9isrDWDFQRHj3QbOK/c8i1BSssY1owS+dOyZF8hhFnM8saGxMIn07QxJ1AJ/u9SaA==
-X-Gm-Message-State: AOJu0YwpribLtLBPLHkqv1TKrI+TIWXFIJdvijQFmfa/Vj73K9xXgAN7
-	fV4AMwI5t+tzFNg99qjEBO2fbaHKDrdocVPPMPeFDIVQcCa6TUUXEtqBLQ24odkS8lNAdW1n+ut
-	FkJy1ix47NuYUvPA8M6rfwGZ5BR/w2RAum9PEEA==
-X-Google-Smtp-Source: AGHT+IG4PJW4EkXp9yDhjzJ9l54D0Nbyr3MBR5vOvVMeILc9lQZSEahak/8wu01jB44Tr5IqY8iB3AdtW6Nd5h+Z18E=
-X-Received: by 2002:a05:6902:50e:b0:dda:aa3e:73fc with SMTP id
- x14-20020a056902050e00b00ddaaa3e73fcmr1783046ybs.41.1711108753359; Fri, 22
- Mar 2024 04:59:13 -0700 (PDT)
+	id 1rnecG-00000007Ee8-3Mie;
+	Fri, 22 Mar 2024 13:07:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziswiler.com;
+	s=s1-ionos; t=1711112821; x=1711717621; i=marcel@ziswiler.com;
+	bh=hS0EhU2hZB+am5BBjCPMGTJbdV4iRS3G7g7Pk6drSvE=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+	b=qmK4ava4hnhBuzon1+mTEGXata5F3xg5mFC+FzSEotYyKRg+BKS2jLii/fzGi23M
+	 LfTcL/hoSt5kAWh9JPMiPXU/18+VX76GX5aaCmD4RTyCKwS/J+FXWKNObIlsN4xeA
+	 TjYlWwyyoNmdrmmdtpt0WRQuRlw9+6hNpnA+tkwIKcVdev1jVUECwAj+cpVErgdA1
+	 eeB5Kp4zC14//C6WZNsdt3reVa6kbXF8A+S5yG4asBjosUaBAwt5IwWvOwHTIzHC6
+	 UhNN02X0ExAydS8V9bKYu1+AyAMnBGmwsnwE2cJ/bZJ2/C6ayL/0hm3Qb32S4TrlA
+	 Q37UNDZ8SGoxQA5jjQ==
+X-UI-Sender-Class: 55c96926-9e95-11ee-ae09-1f7a4046a0f6
+Received: from localhost.localdomain ([84.227.227.254]) by mrelay.perfora.net
+ (mreueus003 [74.208.5.2]) with ESMTPSA (Nemesis) id 0Levg9-1qy9tL3jfr-00qjkg;
+ Fri, 22 Mar 2024 14:07:01 +0100
+From: Marcel Ziswiler <marcel@ziswiler.com>
+To: linux-phy@lists.infradead.org
+Cc: linux-imx@nxp.com,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org,
+	kernel@pengutronix.de,
+	Richard Zhu <hongxing.zhu@nxp.com>,
+	linux-kernel@vger.kernel.org,
+	Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+	Fabio Estevam <festevam@gmail.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Tim Harvey <tharvey@gateworks.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Yang Li <yang.lee@linux.alibaba.com>,
+	imx@lists.linux.dev
+Subject: [PATCH v1 0/1] phy: freescale: imx8m-pcie: facing pcie link-up instability
+Date: Fri, 22 Mar 2024 14:06:31 +0100
+Message-ID: <20240322130646.1016630-1-marcel@ziswiler.com>
+X-Mailer: git-send-email 2.44.0
 MIME-Version: 1.0
-References: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org>
- <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-3-3ec0a966d52f@linaro.org>
- <CAA8EJpoJWKZcZu3SY2P9dpYQ_KXkimRXNhAKfaOreCGZ1muYqw@mail.gmail.com> <1dc187c1-2005-486f-a9dd-6648cf52ab70@linaro.org>
-In-Reply-To: <1dc187c1-2005-486f-a9dd-6648cf52ab70@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 22 Mar 2024 13:59:02 +0200
-Message-ID: <CAA8EJprwAqCSpey0scgPHKEW7=DMKoh7EBmL2jtktKLwMM+rCQ@mail.gmail.com>
-Subject: Re: [PATCH v2 3/7] phy: qcom: qmp-pcie: register second optional PHY
- AUX clock
-To: neil.armstrong@linaro.org
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+X-Provags-ID: V03:K1:HbksDg0cngIhNhj/kmWLakIVtoaoqkjubx0k/GE+1UTtYoiJPYt
+ mvNs7loxfRYXelWDuD4fsUK4rKwuy+r8Fw0tRSxLFQ1zb+LZJjPNssTjvNDybhIDz+I06/X
+ 5lk5hcLwYe5akl53H65rKfhUjeivfYWV2x1z93gVZvP5rNUpDZxHeDJsm4ARxjyNJhsvAMG
+ OZtD6NzwaPq3nD50jo/hQ==
+UI-OutboundReport: notjunk:1;M01:P0:USeePlatVWo=;8dzoQ6zbHtSzKKw72zgRGz/UoX7
+ KyMe8LgKY9CB58q5ctWhUn84LFB61lsXEcxAgp8v4kDBZ35+kxO/OnxT3YrrDfIikC55X11kk
+ Alt2zEdNzc42qUe/bmtjNAlhKv/p2PYXPPaAW+weeeiDgfRLw8BLPLWFsr4nzs3bsiRIgCwAN
+ r266oO3ioBD+dpA25kuVB1SEW5zLTgpkbW9Mnhq/UoLLAmUf3gqNFWLHKxLiIQSv7085nsavS
+ o6jzMkjQ6+2VVF2fT0ndvy0dn3SKuZtF13C1lm6Bv9YCBT5OAv8dBiT7s3BjRDgwKPWaoMZN3
+ Rts5ahQ8z8DreSLEzXM5wz7mPPPJXa+QmWukoZ5TBb41Cbg8lp70w0HO6OSoN//b/gv3ADH3z
+ RPVj6tCfIK8iGpTZRih3zH8wYg0TYnEAlCHVd7BP4EFekWTaWsa3D4bDq53+dz4hhx9XHaK3Q
+ 4ZHY1UtHzug16NSrnhivp1vmrmvrskQLd2zZdEPX1VFWkG4Vc7ETr2jUwr8u90d8wZFMpnVVK
+ vH8K9T6GWSkejDo30A+VqF5qmzXlfWn01OkrVOzVVZlKIxUWsnqKANBSB/ctLpeLOfpQ07zdc
+ ybPqoYl0k2sqmrP4YkBg3SjBRIpQbdL4V9F/2IR2YiDRzFKTOj4HjT6FJQBAnw8JtFdevLblC
+ +oh4oLihFA8AsTDEcO5M4vFJCDNFigOzIXWfNqeSFRBcmr4ej/oFX1/gw01uBNYBQuXSZTPHu
+ hOmviWXHb4KD/Sw6aylGkp0Q5pHef4SRGYre5thB7AJzHMP5jQDOG0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240322_045915_254705_8FBB48DE 
-X-CRM114-Status: GOOD (  30.13  )
+X-CRM114-CacheID: sfid-20240322_060725_073490_F78FBB6D 
+X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,170 +101,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 22 Mar 2024 at 12:45, Neil Armstrong <neil.armstrong@linaro.org> wrote:
->
-> On 22/03/2024 11:41, Dmitry Baryshkov wrote:
-> > On Fri, 22 Mar 2024 at 11:43, Neil Armstrong <neil.armstrong@linaro.org> wrote:
-> >>
-> >> The PCIe Gen4x2 PHY found in the SM8[456]50 SoCs have a second clock,
-> >> add the code to register it for PHYs configs that sets a aux_clock_rate.
-> >>
-> >> In order to get the right clock, add qmp_pcie_clk_hw_get() which uses
-> >> the newly introduced QMP_PCIE_PIPE_CLK & QMP_PCIE_PHY_AUX_CLK clock
-> >> IDs and also supports the legacy bindings by returning the PIPE clock
-> >> when #clock-cells=0.
-> >>
-> >> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> >
-> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> >
-> > Small question below.
-> >
-> >> ---
-> >>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 78 ++++++++++++++++++++++++++++++--
-> >>   1 file changed, 75 insertions(+), 3 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> index e8da2e9146dc..6c9a95e62429 100644
-> >> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> @@ -22,6 +22,8 @@
-> >>   #include <linux/reset.h>
-> >>   #include <linux/slab.h>
-> >>
-> >> +#include <dt-bindings/phy/phy-qcom-qmp.h>
-> >> +
-> >>   #include "phy-qcom-qmp-common.h"
-> >>
-> >>   #include "phy-qcom-qmp.h"
-> >> @@ -2389,6 +2391,9 @@ struct qmp_phy_cfg {
-> >>
-> >>          /* QMP PHY pipe clock interface rate */
-> >>          unsigned long pipe_clock_rate;
-> >> +
-> >> +       /* QMP PHY AUX clock interface rate */
-> >> +       unsigned long aux_clock_rate;
-> >>   };
-> >>
-> >>   struct qmp_pcie {
-> >> @@ -2420,6 +2425,7 @@ struct qmp_pcie {
-> >>          int mode;
-> >>
-> >>          struct clk_fixed_rate pipe_clk_fixed;
-> >> +       struct clk_fixed_rate aux_clk_fixed;
-> >>   };
-> >>
-> >>   static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-> >> @@ -3686,6 +3692,62 @@ static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
-> >>          return devm_clk_hw_register(qmp->dev, &fixed->hw);
-> >>   }
-> >>
-> >> +/*
-> >> + * Register a fixed rate PHY aux clock.
-> >> + *
-> >> + * The <s>_phy_aux_clksrc generated by PHY goes to the GCC that gate
-> >> + * controls it. The <s>_phy_aux_clk coming out of the GCC is requested
-> >> + * by the PHY driver for its operations.
-> >> + * We register the <s>_phy_aux_clksrc here. The gcc driver takes care
-> >> + * of assigning this <s>_phy_aux_clksrc as parent to <s>_phy_aux_clk.
-> >> + * Below picture shows this relationship.
-> >> + *
-> >> + *         +---------------+
-> >> + *         |   PHY block   |<<---------------------------------------------+
-> >> + *         |               |                                               |
-> >> + *         |   +-------+   |                      +-----+                  |
-> >> + *   I/P---^-->|  PLL  |---^--->phy_aux_clksrc--->| GCC |--->phy_aux_clk---+
-> >> + *    clk  |   +-------+   |                      +-----+
-> >> + *         +---------------+
-> >> + */
-> >> +static int phy_aux_clk_register(struct qmp_pcie *qmp, struct device_node *np)
-> >> +{
-> >> +       struct clk_fixed_rate *fixed = &qmp->aux_clk_fixed;
-> >> +       struct clk_init_data init = { };
-> >> +       int ret;
-> >> +
-> >> +       ret = of_property_read_string_index(np, "clock-output-names", 1, &init.name);
-> >> +       if (ret) {
-> >> +               dev_err(qmp->dev, "%pOFn: No clock-output-names index 1\n", np);
-> >> +               return ret;
-> >> +       }
-> >> +
-> >> +       init.ops = &clk_fixed_rate_ops;
-> >> +
-> >> +       fixed->fixed_rate = qmp->cfg->aux_clock_rate;
-> >> +       fixed->hw.init = &init;
-> >> +
-> >> +       return devm_clk_hw_register(qmp->dev, &fixed->hw);
-> >> +}
-> >> +
-> >> +static struct clk_hw *qmp_pcie_clk_hw_get(struct of_phandle_args *clkspec, void *data)
-> >> +{
-> >> +       struct qmp_pcie *qmp = data;
-> >> +
-> >> +       /* Support legacy bindings */
-> >> +       if (!clkspec->args_count)
-> >> +               return &qmp->pipe_clk_fixed.hw;
-> >> +
-> >> +       switch (clkspec->args[0]) {
-> >> +       case QMP_PCIE_PIPE_CLK:
-> >> +               return &qmp->pipe_clk_fixed.hw;
-> >> +       case QMP_PCIE_PHY_AUX_CLK:
-> >> +               return &qmp->aux_clk_fixed.hw;
-> >
-> > Does the absence of the default case trigger a warning if compiled with W=1?
->
-> Nop it doesn't with GCC arm-gnu-toolchain-13.2.Rel1-x86_64-aarch64-none-linux-gnu + W=1 and with smatch and C=1
-
-Ok, great!
-
->
-> Neil
->
-> >
-> >> +       }
-> >> +
-> >> +       return ERR_PTR(-EINVAL);
-> >> +}
-> >> +
-> >>   static int qmp_pcie_register_clocks(struct qmp_pcie *qmp, struct device_node *np)
-> >>   {
-> >>          int ret;
-> >> @@ -3694,9 +3756,19 @@ static int qmp_pcie_register_clocks(struct qmp_pcie *qmp, struct device_node *np
-> >>          if (ret)
-> >>                  return ret;
-> >>
-> >> -       ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &qmp->pipe_clk_fixed.hw);
-> >> -       if (ret)
-> >> -               return ret;
-> >> +       if (qmp->cfg->aux_clock_rate) {
-> >> +               ret = phy_aux_clk_register(qmp, np);
-> >> +               if (ret)
-> >> +                       return ret;
-> >> +
-> >> +               ret = of_clk_add_hw_provider(np, qmp_pcie_clk_hw_get, qmp);
-> >> +               if (ret)
-> >> +                       return ret;
-> >> +       } else {
-> >> +               ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &qmp->pipe_clk_fixed.hw);
-> >> +               if (ret)
-> >> +                       return ret;
-> >> +       }
-> >>
-> >>          /*
-> >>           * Roll a devm action because the clock provider is the child node, but
-> >>
-> >> --
-> >> 2.34.1
-> >>
-> >>
-> >
-> >
->
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
 
--- 
-With best wishes
-Dmitry
+In our automated testing setup, we use Delock Mini-PCIe SATA cards [1].
+While this setup has proven very stable overall we noticed upstream on
+the i.MX8M Mini fails quite regularly (about 50/50) to bring up the PCIe
+link while with NXP's downstream BSP 5.15.71_2.2.2 it always works. As
+that old downstream stuff was quite different, I first also tried NXP's
+latest downstream BSP 6.1.55_2.2.0 which from a PCIe point of view is
+fairly vanilla, however, also there the PCIe link-up was not stable.
+Comparing and debugging I noticed that upstream explicitly configures
+the AUX_PLL_REFCLK_SEL to I_PLL_REFCLK_FROM_SYSPLL while working
+downstream [2] leaving it at reset defaults of AUX_IN (PLL clock).
+Unfortunately, the TRM does not mention any further details about this
+register (both for the i.MX 8M Mini as well as the Plus). Maybe somebody
+from NXP could further comment on this?
+
+BTW: On the i.MX 8M Plus we have not seen any issues with PCIe with the
+exact same setup which is why I left it unchanged.
+
+[1] https://www.delock.com/produkt/95233/merkmale.html
+[2] https://github.com/nxp-imx/linux-imx/blob/lf-5.15.71-2.2.0/drivers/pci/controller/dwc/pci-imx6.c#L1548
+
+
+Marcel Ziswiler (1):
+  phy: freescale: imx8m-pcie: fix pcie link-up instability
+
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+--
+2.44.0
+
 
 -- 
 linux-phy mailing list
