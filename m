@@ -4,85 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36F87C6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Mar 2024 18:57:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D49A1C54E67
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Mar 2024 19:35:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qa6s1b/QhUXZvKr0hwlayV2oqFiW8d8xby8QeD6dsDE=; b=efKqJ9VzR1KNw7
-	IFxGiTMY9WZIgsNS3XWqzCCbS2BBjc73RlJgMwx/nHZyilYMoDNVuTbc2AdswP6idS9S0/P4GHd95
-	bPeraFYjj3TemCbWbEMQvWSs9hbZZ4mlwzQODJmf0XdaJ7AscrNko1ZoDjIthqeR2qCXoya1iSW2J
-	tegSidos9uu18Y08bNTCbbtXgxCbjcLgbih4Spe5EA4fnPGm2XKukmKKRnEl/upQcDcqWh3zRcnvf
-	zEqMNbW7mDSBNDYiOxRPw6Pf/Bt6eJBOx2WBi6TkG6VXLGSR9IfqQUHl2I4MnGoIm9d3W7oYELFZL
-	xGjhC23rEV98PUjzdWHQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ukF7VFirSd5Aa+6cB5i/cvSUJXcj6ddj5HYQ/HNuj0I=; b=P5JS3+pclLR3/Pc3Dyg17mFZPa
+	Srf+SU5LytKoiaJK8CxJB8PzyizYtyDWXZRWVGp2QqY8lSBMLWdkYzVCZrJYl9Z2FWM2+2m1CeHZG
+	0Dyr33Vlml84TYu8Onol7ygH2AlF0x4FCAM+pjDYDUEdzVXhrMyjnV2K18YFYzMXGCehapoOnqDrS
+	PR6s+yHWp25IoJDpGeIdJHUFRLbz2arBjH/ehvJmNf41MaalPLU0igidt36a6CDFfS01vaEV6caFx
+	oulmngBUZxTaZs0PINKbsazr5M1Vieo3ceQbKCb3Xy5hX6fWsshJPBt2CDhxvJ1YUzUq6noc47HkH
+	Aw9VNE5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpBzg-000000062Dk-0YQB;
-	Tue, 26 Mar 2024 18:57:56 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1rpCZe-00000006B0C-2HQN;
+	Tue, 26 Mar 2024 19:35:06 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpBzE-000000061vb-3GBw;
-	Tue, 26 Mar 2024 18:57:30 +0000
+	id 1rpCZa-00000006Ayj-3zF9;
+	Tue, 26 Mar 2024 19:35:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 82CABCE23DB;
-	Tue, 26 Mar 2024 18:57:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E9F70C43330;
-	Tue, 26 Mar 2024 18:57:23 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id AA7D1CE2303;
+	Tue, 26 Mar 2024 19:35:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6C90AC433F1;
+	Tue, 26 Mar 2024 19:34:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1711479444;
-	bh=t92rMDfisU2O183WicZRvvThqnLcj0E2zhg0sRyx/uA=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=lxQWBkHE48NtOCNCYUMMn4GNtDMNqVx0YIxT9+GwVFAmFk2Jy32/hlFbq96lBba9b
-	 vuqJjKTu5OHyzHGWwylh05mfq+xheI8sSFEo0XpOG96PiYoMI6UnMvHidBtTMYj5ym
-	 ao1oMynsE/KpI4e78dA8NK0lWqep3aqTPbY6JxDouNhLSOvDB9/LfAPTnod7kCSRxX
-	 Nm5N4MYJYjnEZPWzsLHPddIE6dUnnydCU98EQ07dH3lpd1nXw4DhVey5JoVCpK9piB
-	 ZXrKBmVZRk5I4CrcDPkwQt9hcfu4CXpbND5w9/vvWTOohNr5X+8N3FWcDaOQf2+ehD
-	 XF7l6Q4b7gTnQ==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DEF2ECD1284;
-	Tue, 26 Mar 2024 18:57:23 +0000 (UTC)
-From: Folker Schwesinger via B4 Relay <devnull+dev.folker-schwesinger.de@kernel.org>
-Date: Tue, 26 Mar 2024 19:54:37 +0100
-Subject: [PATCH 3/3] arm64: dts: rockchip: Remove enable-strobe-pulldown
- for NanoPi4 boards
-MIME-Version: 1.0
-Message-Id: <20240326-rk-default-enable-strobe-pulldown-v1-3-f410c71605c0@folker-schwesinger.de>
+	s=k20201202; t=1711481699;
+	bh=dd88q1ZEU6vWFMFdtX0JYBknro/QldP57SoW9UmINfU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=d4yxmGjC0N+zEn19fH/1bM+s9IgFIlwD+J2ali8Up/WQDOgW2t8N6shOD8Dr2B2W0
+	 JoDYxTsIEhUlST2ScUZ1Gn7FDik/5JaR+YLrAwSIkmGDb4sfL6xXf6nj7NkAm/igc6
+	 TtxtqWpfUeiJsgTTGid0GDvzTxNBqWsjcRUW1to55B0RNTMzCM+4v18rR2BWivsiOX
+	 x1WcmLakDJOZiLSrqQPUG2QQBv8/+wLw5OvKfl1QjzzPBO5rg2vW8leX4b/77EwWQa
+	 IA1XOQ+7kIkeMy1hOpKn5lU9Fx07ky5ntFqTwYVfPdJyGGFFzlC3Prnimvhl4nAGrf
+	 MVaYQjC2SHQzQ==
+Date: Tue, 26 Mar 2024 19:34:54 +0000
+From: Conor Dooley <conor@kernel.org>
+To: dev@folker-schwesinger.de
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Christopher Obbard <chris.obbard@collabora.com>,
+	Alban Browaeys <alban.browaeys@gmail.com>,
+	Doug Anderson <dianders@chromium.org>,
+	Brian Norris <briannorris@chromium.org>,
+	Jensen Huang <jensenhuang@friendlyarm.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH 2/3] devicetree: phy: rockchip-emmc: Document changed
+ strobe-pulldown property
+Message-ID: <20240326-shortage-portly-a3ae475b2f78@spud>
 References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de>
-In-Reply-To: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Chris Ruehl <chris.ruehl@gtsys.com.hk>, 
- Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Christopher Obbard <chris.obbard@collabora.com>, 
- Alban Browaeys <alban.browaeys@gmail.com>, 
- Doug Anderson <dianders@chromium.org>, 
- Brian Norris <briannorris@chromium.org>, 
- Jensen Huang <jensenhuang@friendlyarm.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- Folker Schwesinger <dev@folker-schwesinger.de>
-X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=724;
- i=dev@folker-schwesinger.de; h=from:subject:message-id;
- bh=fmO1sP9nAwWwIfDKXcaV6YI0IH/hcl1UfJExvs0KGtI=;
- b=owGbwMvMwCXG5FBoZNu1u5bxtFoSQxqz1KSLdfclJe/cdDUz+/2kl+1vlNncrZtWMwXdsI2zz
- Obt51PvKGVhEONikBVTZGHNy9jCnFm+1Lrr52uYOaxMIEMYuDgFYCJlxowMUxteL/2zjlHg1162
- 50fY9v/3D+Q+G9j4zG9K5kYTttqjXowMV2buML48c6NI60+fT5tf/Q9o/dhVHZW/LE7hbpPWpuD
- v7AA=
-X-Developer-Key: i=dev@folker-schwesinger.de; a=openpgp;
- fpr=056E68B4036977A53B8AF9EB024071323D8ABB7D
-X-Endpoint-Received: by B4 Relay for dev@folker-schwesinger.de/default with
- auth_id=144
-X-Original-From: Folker Schwesinger <dev@folker-schwesinger.de>
+ <20240326-rk-default-enable-strobe-pulldown-v1-2-f410c71605c0@folker-schwesinger.de>
+MIME-Version: 1.0
+In-Reply-To: <20240326-rk-default-enable-strobe-pulldown-v1-2-f410c71605c0@folker-schwesinger.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240326_115729_607214_05E8E90A 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240326_123503_385366_C683E6D5 
+X-CRM114-Status: GOOD (  20.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,42 +80,100 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dev@folker-schwesinger.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3213495571054675638=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Folker Schwesinger <dev@folker-schwesinger.de>
 
-The Rockchip eMMC PHY driver enables the internal strobe pulldown by
-default. So, remove the enable-strobe-pulldown property from the
-NanoPi4 series boards DTS.
-
-Signed-off-by: Folker Schwesinger <dev@folker-schwesinger.de>
----
- arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-index b7f1e47978a6..38af91b9e756 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-@@ -168,7 +168,6 @@ &cpu_l3 {
- };
- 
- &emmc_phy {
--	rockchip,enable-strobe-pulldown;
- 	status = "okay";
- };
- 
-
--- 
-2.44.0
+--===============3213495571054675638==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="rZWP/rtpsRtp/vzL"
+Content-Disposition: inline
 
 
+--rZWP/rtpsRtp/vzL
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Mar 26, 2024 at 07:54:36PM +0100, Folker Schwesinger via B4 Relay w=
+rote:
+> From: Folker Schwesinger <dev@folker-schwesinger.de>
+
+The prefix is "dt-bindings" not "devicetree" FYI.
+
+>=20
+> Document the changes regarding the optional strobe-pulldown property.
+> These changes are necessary as the default behavior of the driver was
+> restored to the Rockchip kernel behavior of enabling the internal
+> pulldown by default.
+
+I don't think this is a valid justification, but it'll be easier for me
+to explain this on the driver patch.
+
+Thanks,
+Conor.
+
+>=20
+> Fixes: f34e43f12382 ("devicetree: phy: rockchip-emmc: pulldown property")
+> Signed-off-by: Folker Schwesinger <dev@folker-schwesinger.de>
+> ---
+>  Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt =
+b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> index 57d28c0d5696..10c05437f7ab 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> +++ b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> @@ -16,8 +16,8 @@ Optional properties:
+>   - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+>                          Possible values are 33, 40, 50, 66 and 100.
+>                          If not set, the default value of 50 will be appl=
+ied.
+> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the st=
+robe
+> -                                    line.  If not set, pull-down is not =
+used.
+> + - rockchip,disable-strobe-pulldown: Disable internal pull-down for the =
+strobe
+> +                                     line.  If not set, pull-down is use=
+d.
+>   - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec reg=
+ister.
+>                                      If not set, the register defaults to=
+ 0x4.
+>                                      Maximum value 0xf.
+>=20
+> --=20
+> 2.44.0
+>=20
+>=20
+
+--rZWP/rtpsRtp/vzL
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZgMjXgAKCRB4tDGHoIJi
+0gDXAQDsnJ2l1e9/GqPRLAJofwCMnAL+WPP/kMag/2lxXFb3sgD8DaHfe8Mk5FsS
+FcEt/njhjF1n6zYpqFuyWccUhJQdUwc=
+=f9q9
+-----END PGP SIGNATURE-----
+
+--rZWP/rtpsRtp/vzL--
+
+
+--===============3213495571054675638==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3213495571054675638==--
+
