@@ -4,101 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 923AEC54E67
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 07:20:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1289FCD11DD
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 12:22:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rrvm0g8tfTeKSv8BNufaIwYt/j0E6vpKaQwnha4t+Fw=; b=0CJWaDwZVIchfz
-	zwyMeuPVF552OZn5HzSbpPFkR13J2UTrUfpaqY4RrIuUkGaUjdZ4iHzouYKWDEvAD1v1v6Ek0uu2i
-	pu6ZiuAiF6j9HL6zIyhDQGbC/9MDDqPINMLC3PLteiLhvU6UTTMQ6eYwMUVvnttuhYfUpzWnRZQEI
-	k4+yMW8WBxycmdUqh3HjL8bAfQkUupXknTF9vL49rX+f544dR4pzXNw9xGgLJ1dTmTPd35z/v3H7v
-	7nRKqlxL/+ybeujIJLJTkjTx1szondZVdoXwJPBpOFkoWPeojLdTl6rjiMEhp5+00IHsG9FfN/y0z
-	A7kj5aQvdAze4R0nUCEg==;
+	List-Owner; bh=G5rv5UMY/8Rwoadf6XI3AVvI9ICpmCx3DxnQCU5pSRo=; b=D1YAUEToydPdlS
+	ZKYt/s73bO14SZjDcf5YrAES49v5M87mGdQ8m5cVcAgXc+s7KY50jXUvjSvvx8xTQBazPEhDrWA7R
+	XhQYgGPllmXqsoRWetjsOMSnHRz/1ZIcC1yULVyJSHYC266/YR/BuUsmJUqTj/vt8j/MWRCKkMHsJ
+	1UtEvsmSv8M3uLnvtbaSBddFdCjzp9gCQphrFsJQr6CrVbQBpTH3G04gn/+JMygmQwAPgkeTqBGqr
+	FoaLSIem3C92/QPCqd8nIsPDoGBmnAUf5yuBxWF+AyHOjWCRm3DReoKfpsEyRiACXCrFcZ8lzFON5
+	5eH4PryeUpY14cgcfxKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpNaM-00000007nec-0oD3;
-	Wed, 27 Mar 2024 07:20:34 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rpSI4-00000008oyM-31Sh;
+	Wed, 27 Mar 2024 12:22:00 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpNaK-00000007ne5-2GJn;
-	Wed, 27 Mar 2024 07:20:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=wnNVEOncldO1On7KO8fAvEAupvlzSNB7wVXjAeDRXl8=; b=eEeY0TovUIZWUtwQWRmk03KBcd
-	oBY9rL1IzCPwH8MHX4WzjQbEzo+atWA8L8l1624AnzugpPPiorq7vUDXlZQjk4mkzT234Sts3z/nh
-	ASseuLTvbvtzK9MiHiqnL5Qhz0GOa8dnCNUUzcclTTEomZIuVBMcNwGgq3uNBj93pThlF0jHyKTxv
-	0ya3heNVp4HH9BSvuCn9GfQF3KZjcexckYaxReAvNFqfi8boPpKWK9HFTHYTz+5dA9QhUwQzn5L6Q
-	j1le5Fmg1O1H51jGJLiISReAObf+f6V89HRClGQDf8KSSVbBJ0d+llvsCMkFsp3WcXZKKHty+Db70
-	8mKcMAHw==;
-Received: from mout.perfora.net ([74.208.4.194])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpNaG-000000005hS-1f6P;
-	Wed, 27 Mar 2024 07:20:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziswiler.com;
-	s=s1-ionos; t=1711524005; x=1712128805; i=marcel@ziswiler.com;
-	bh=wnNVEOncldO1On7KO8fAvEAupvlzSNB7wVXjAeDRXl8=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
-	b=B+dGVDVnTFoO4u/IWt9pIZKnBjwU3o/Sn78+04Q3wr3UDgNoZmLYJPzCaa31iYTF
-	 PvVYMcBVryIIPFI1dO7QbcHZuzdPG0RUGOI+T/c7CrrwvMsaYcLOVDKr45PSIDTnY
-	 7WI662hjcCHUbauBAHMBaaHdqcI9dpHqC3nSfhnSeWeqgjhhR/s31JFQrC2eXPeMn
-	 3JxvZiIWvTYy2t8tE792StegeSHOImTcJtKANLv+YFKY18Erp5tkvx3eRhy8IBn7I
-	 OvNgPjTGe1S/skQxK79vuFWsD0MDWfckTOj7Eq+99zQdpdSV2VznpwOFVvskoJdtV
-	 tY+od10URcnvELY6aw==
-X-UI-Sender-Class: 55c96926-9e95-11ee-ae09-1f7a4046a0f6
-Received: from localhost.localdomain ([213.55.224.253]) by mrelay.perfora.net
- (mreueus002 [74.208.5.2]) with ESMTPSA (Nemesis) id 0MVen3-1sMdNT3wFD-00OqWK;
- Wed, 27 Mar 2024 08:20:05 +0100
-From: Marcel Ziswiler <marcel@ziswiler.com>
-To: linux-phy@lists.infradead.org
-Cc: linux-imx@nxp.com,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	Richard Zhu <hongxing.zhu@nxp.com>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org,
-	stable@vger.kernel.org,
-	Marcel Ziswiler <marcel.ziswiler@toradex.com>,
-	Fabio Estevam <festevam@gmail.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Tim Harvey <tharvey@gateworks.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Yang Li <yang.lee@linux.alibaba.com>,
-	imx@lists.linux.dev
-Subject: [PATCH v2] phy: freescale: imx8m-pcie: fix pcie link-up instability
-Date: Wed, 27 Mar 2024 08:19:37 +0100
-Message-ID: <20240327071946.8869-1-marcel@ziswiler.com>
-X-Mailer: git-send-email 2.44.0
+	id 1rpSI1-00000008owN-0dFX
+	for linux-phy@lists.infradead.org;
+	Wed, 27 Mar 2024 12:21:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id E8DF4CE25AF;
+	Wed, 27 Mar 2024 12:21:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62613C43390;
+	Wed, 27 Mar 2024 12:21:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1711542114;
+	bh=jBv5ziu7G1EKG3yyoWDjuh6Cqon7VND+2PutxfHY9ng=;
+	h=From:To:Cc:Subject:Date:From;
+	b=FxKzOdoCFULlq3Ejr1L7k9iza0XHOD4fdPolx3El9AcEbL3Oy4Sp5ivwzkXDSSpF0
+	 5a39jhpOgQYpLkUB0kEnkhgOCMOqKQC7rr9+tQ5fWlYDSOKgZ8sL5twF+xPRVnLll0
+	 6s0w9X2lfWhoAE6fiBorPJjwU/DAB9499cKAqsehLIfnVfTvicu+gYdSHR414r78lK
+	 sr6CEmFKLmpshmYmRolu3hsObO5UBXkM5GPalGCWuwWPJhxEKimPzg0LUONTp8qFv3
+	 /1QtH3z22vSwkQKt+vTmNdnUPEdY99Kyixcv5APjbeJ2TUQD209S5ORahw37+QF6eH
+	 tyiqx7pQpYJRQ==
+From: Sasha Levin <sashal@kernel.org>
+To: stable@vger.kernel.org,
+	waynec@nvidia.com
+Cc: Jon Hunter <jonathanh@nvidia.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: FAILED: Patch "phy: tegra: xusb: Add API to retrieve the port number of phy" failed to apply to 5.4-stable tree
+Date: Wed, 27 Mar 2024 08:21:52 -0400
+Message-ID: <20240327122152.2837220-1-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:lbH4shU1mJFfwL/g76O9vJC4HBEY1pkPhgwYOBwWvJviKC6wYBk
- eSgVNuWN7mq68FVIVZu8Ignbe3vMNcizoCe9oBipJoJlfDe7Jctbka4ZbAcMVtjeDzkQDg8
- HZRospSzMu7DDOIz6yqf37LI/j1T5QUmEZQpvmr7fLyj128cxl6RnwoRuSkU5PIdMLG6ucU
- SY9JIMQnO60+H5A2M4pJw==
-UI-OutboundReport: notjunk:1;M01:P0:CIxx/7qf/R8=;cr8oAoSV4b4/HSUiSremUO3fQ1n
- GZac4UIL79J6yAl89goDCpau85ZNY6AprrHuSrxuBINAhNjtX9j+gQLbd0CReMXyvY8slULHt
- RnvU8jAd/OLNLUo5dzTNBqulw3FKD3pKS21x2e0HB3j3dHvuDSb57IpIpOCIBMdJORUIFGLUN
- viPumuf2NyBMt+keg41XiY826R+ycUSnT94TFZHhPSyTPYSY5ByJbsFA5jlK0C+bX3tDZBglK
- XsudkDcuQIsOw2Cnbt90nctrOe5Y0+PTvO3DbNA8ByKfdn4m4VTvYJM2ZOy9D7hVD36ui1pVQ
- wRRWgTyY02hb5QCYXr8yrmmCO0cuT8ogBxxNPjcX8zW36Gsr2KnmgIc7E0+xwAPNGZceN8cwT
- hWocNhGrijq46m/nE6qjY22woNc37GP5ucuPxS/eBsOMwh23dtzG7KQ6KzXZfGFNKhzl88C+r
- 6jPAvm84oDavTj7X/r7G7tMCaJgrcS1v2us0CzW1LbUpGiz/ibNLPxuy3KB6dfAQ0K7pK+zce
- DJ1qfM8Azr1iiwCwm1wCQQBnx0JBtFf7xbduYQZ+WQbohbOAc3jYLBnQdJm5+oksFAYjgyjCN
- qR8irzH/IQdhkaXIBg7RA/RztGUP9oNlCsRKsHo2QTiHFmD3IEOntuQQu/Zc6Zm8cQAAMm2eR
- pAUxJ7kzQLxQfvQVIADTRuGuUm0MGOmGN3rG070Hn3oO1o2WSpSLqhjkn1BiOfHq9mt2aWOHR
- Ujiu6Q+vXMtEZFAGVCQrTIKTi56sv8rrI7xqMw1JZUnAddE68YCgXY=
+X-Patchwork-Hint: ignore
+X-stable: review
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240327_072028_932061_518036A6 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20240327_052157_646495_BE581422 
+X-CRM114-Status: GOOD (  14.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,71 +76,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+The patch below does not apply to the 5.4-stable tree.
+If someone wants it applied there, or to any other stable or longterm
+tree, then please email the backport, including the original git commit
+id to <stable@vger.kernel.org>.
 
-On the i.MX 8M Mini, the AUX_PLL_REFCLK_SEL has to be left at its reset
-default of AUX_IN (PLL clock).
+Thanks,
+Sasha
 
-Background Information:
-In our automated testing setup, we use Delock Mini-PCIe SATA cards [1].
-While this setup has proven very stable overall we noticed upstream on
-the i.MX 8M Mini fails quite regularly (about 50/50) to bring up the
-PCIe link while with NXP's downstream BSP 5.15.71_2.2.2 it always works.
-As that old downstream stuff was quite different, I first also tried
-NXP's latest downstream BSP 6.1.55_2.2.0 which from a PCIe point of view
-is fairly vanilla, however, also there the PCIe link-up was not stable.
-Comparing and debugging I noticed that upstream explicitly configures
-the AUX_PLL_REFCLK_SEL to I_PLL_REFCLK_FROM_SYSPLL while working
-downstream [2] leaving it at reset defaults of AUX_IN (PLL clock).
-Unfortunately, the TRM does not mention any further details about this
-register (both for the i.MX 8M Mini as well as the Plus).
-NXP confirmed their validation codes for the i.MX8MM PCIe doesn't
-configure cmn_reg063 (offset: 0x18C).
-BTW: On the i.MX 8M Plus we have not seen any issues with PCIe with the
-exact same setup which is why I left it unchanged.
+------------------ original commit in Linus's tree ------------------
 
-[1] https://www.delock.com/produkt/95233/merkmale.html
-[2] https://github.com/nxp-imx/linux-imx/blob/lf-5.15.71-2.2.0/drivers/pci/controller/dwc/pci-imx6.c#L1548
+From d843f031d9e90462253015bc0bd9e3852d206bf2 Mon Sep 17 00:00:00 2001
+From: Wayne Chang <waynec@nvidia.com>
+Date: Thu, 7 Mar 2024 11:03:27 +0800
+Subject: [PATCH] phy: tegra: xusb: Add API to retrieve the port number of phy
 
-Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
+This patch introduces a new API, tegra_xusb_padctl_get_port_number,
+to the Tegra XUSB Pad Controller driver. This API is used to identify
+the USB port that is associated with a given PHY.
 
-Cc: stable@vger.kernel.org # 6.1.x: ca679c49: phy: freescale: imx8m-pcie: Refine i.MX8MM PCIe PHY driver
-Cc: stable@vger.kernel.org # 6.1.x
-Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-Reviewed-by: Richard Zhu <hongxing.zhu@nxp.com>
-Link: https://lore.kernel.org/all/AS8PR04MB867661386FEA07649771FBE18C362@AS8PR04MB8676.eurprd04.prod.outlook.com
+The function takes a PHY pointer for either a USB2 PHY or USB3 PHY as input
+and returns the corresponding port number. If the PHY pointer is invalid,
+it returns -ENODEV.
 
+Cc: stable@vger.kernel.org
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
+Tested-by: Jon Hunter <jonathanh@nvidia.com>
+Link: https://lore.kernel.org/r/20240307030328.1487748-2-waynec@nvidia.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
+ drivers/phy/tegra/xusb.c       | 13 +++++++++++++
+ include/linux/phy/tegra/xusb.h |  1 +
+ 2 files changed, 14 insertions(+)
 
-Changes in v2:
-- Reword the commmit message.
-- Meld the background information from the cover letter into the commit
-  message as suggested by Fabio. Thanks!
-- Document NXP's confirmation from their validation codes and add
-  Richard Zhu's reviewed-by. Thanks!
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 142ebe0247cc0..983a6e6173bd2 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1531,6 +1531,19 @@ int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
+ }
+ EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_usb3_companion);
+ 
++int tegra_xusb_padctl_get_port_number(struct phy *phy)
++{
++	struct tegra_xusb_lane *lane;
++
++	if (!phy)
++		return -ENODEV;
++
++	lane = phy_get_drvdata(phy);
++
++	return lane->index;
++}
++EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_port_number);
++
+ MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
+ MODULE_DESCRIPTION("Tegra XUSB Pad Controller driver");
+ MODULE_LICENSE("GPL v2");
+diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
+index 70998e6dd6fdc..6ca51e0080ec0 100644
+--- a/include/linux/phy/tegra/xusb.h
++++ b/include/linux/phy/tegra/xusb.h
+@@ -26,6 +26,7 @@ void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
+ int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
+ int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
+ 					 unsigned int port);
++int tegra_xusb_padctl_get_port_number(struct phy *phy);
+ int tegra_xusb_padctl_enable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy,
+ 					   enum usb_device_speed speed);
+ int tegra_xusb_padctl_disable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy);
+-- 
+2.43.0
 
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index b700f52b7b67..11fcb1867118 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -110,8 +110,10 @@ static int imx8_pcie_phy_power_on(struct phy *phy)
- 		/* Source clock from SoC internal PLL */
- 		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
- 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
--		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
-+		if (imx8_phy->drvdata->variant != IMX8MM) {
-+			writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
-+			       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
-+		}
- 		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
- 		writel(val | ANA_AUX_RX_TERM_GND_EN,
- 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
---
-2.44.0
+
 
 
 -- 
