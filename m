@@ -4,76 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC5C9C47DD9
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 19:18:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D480BC54E67
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 21:39:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ooe3KEpQ45jRAhSL5MC1mblrrUfVPME1w5e5Qds1Gv4=; b=0i9CGG5paa/ZLo
-	DI5sRn+zdERr9hUeWLBgNn9A5iZW+svfQlDx8JLt8+5s8SUh09kw9PnQcHXXBaxMzLgtxZKmTTc6o
-	LsT8ROdvfZUuPK6tAkShdTJhHchGx4B5lrM2M5GNHGEsn0YJNQfxxYIL30kjQJ3heZRRQhqKiof7f
-	2IBtX95OYicZKpqNLWgMXRKc4iI3BDw4E6KlJbGpzxY9UFlpheSfyBqYyOQ5gUvGnluKWDtDgKvXY
-	L8dmrb8RpuGcNt9djdesiIigwH5T1BcjYM5jeiQXZGaOCNdL5NHk8qi+h6aYMqXW0zZGWmbgAoViD
-	7P/ygTg84ibh0FuDPmVw==;
+	List-Owner; bh=MkTSMF/c1AH/9fHBMXQ/RBc0Fhsvuow4nt2UN+rB0P4=; b=HzLZN2tSYA257L
+	MifyG/EoAs4domLKiv0fLKYtCCqmhm0ZXYYRE0s/25U5KenSEz6hvxNfKItRXq863rR5difxq879z
+	FsyM6M1zKfZHEHaRjTnI89jI9J5RtzUbGLBF5ZBc9TbM/GrbTBaQpqZSB3dU02J1G2qQUEL8/7tQK
+	nN8KcZ6E9YoTQjEZNW1NoRcpL5TXB/sBRox25agzPz1t6O9ouICdK6plazCMH63PSz80gt82ENQPt
+	yF4eQ0vgV/6fi5Cat33G0qEWXBnEsnGwl0E9OkH1mtlnVSLIZiG3i6voAct0nWgW5HtMcOy7joFYD
+	PnfOw/7TpfS0K8mw28RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpYn0-0000000AkvB-2bSt;
-	Wed, 27 Mar 2024 19:18:22 +0000
-Received: from smtp51.i.mail.ru ([95.163.41.87])
+	id 1rpazE-0000000BG0O-2Ktw;
+	Wed, 27 Mar 2024 21:39:08 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpXfs-0000000AT1W-3cSL
+	id 1rpazC-0000000BFzd-1rK6
 	for linux-phy@lists.infradead.org;
-	Wed, 27 Mar 2024 18:06:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
-	; s=mailru; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:From:Sender:Reply-To:To:Cc:Content-Type:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive:
-	X-Cloud-Ids:Disposition-Notification-To;
-	bh=Ozbvpd50mMOhmROETRACJY+X584otF1sahtKcR6rIOE=; t=1711562809; x=1711652809; 
-	b=KDRGBv1Dz3Oq4MGO1f1c8rAkzUxLJWaETjZsFDe98Kbldcn82H116wdRNxmMsSSWTuLOongTFd6
-	Y60YeJdE1GMHi0Q5OXfzm+lXYJ0/5W3n1DxaUuMSqW4Bv1M0r9Em/zWkQeww857bYinBnyJ8O6K6p
-	UVYn6M60JfPEBtWT14g=;
-Received: by smtp51.i.mail.ru with esmtpa (envelope-from <danila@jiaxyga.com>)
-	id 1rpXfj-0000000E2q5-0ADH; Wed, 27 Mar 2024 21:06:47 +0300
-From: Danila Tikhonov <danila@jiaxyga.com>
-To: andersson@kernel.org,
-	konrad.dybcio@linaro.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Danila Tikhonov <danila@jiaxyga.com>
-Subject: [PATCH 1/2] dt-bindings: phy: Add QMP UFS PHY comptible for SM8475
-Date: Wed, 27 Mar 2024 21:06:41 +0300
-Message-ID: <20240327180642.20146-2-danila@jiaxyga.com>
-X-Mailer: git-send-email 2.44.0
-In-Reply-To: <20240327180642.20146-1-danila@jiaxyga.com>
-References: <20240327180642.20146-1-danila@jiaxyga.com>
+	Wed, 27 Mar 2024 21:39:08 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-513d3746950so268159e87.1
+        for <linux-phy@lists.infradead.org>; Wed, 27 Mar 2024 14:39:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1711575542; x=1712180342; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=QZUBkdVY61Xlb2cgTE2nmUubLiWvg04+qp2XWqnm/Mc=;
+        b=d92bColtDys17oWJeSiIoOqtfzo0q9MVsi6mI6vHfaTgHeOZs4JyEMlfflSsd88izK
+         1PACZw98CJuzWl0w2bFkEvYe/fI7oqFUA2zsM4w55SlPA5zDcxnmsC6QBLK126IPj18x
+         QcOmAql+V5H7JzZDitlZhyCdQce8UeqaFaa4ZB7CbPTqmvumzLxwWgSPqc1j3wulASut
+         INF7SCGMuyrMUX+e9PGiBICt048scK+sx6ImRJxXjHg1fzRCA/f6htMRXASHurI86bnY
+         siMNLM30cpD0w8tNw6iwfxvcME9UIHpMXV1bs8WVIedyIv2a4HHSZm1EA9jwp7Thrb1a
+         qO7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1711575542; x=1712180342;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QZUBkdVY61Xlb2cgTE2nmUubLiWvg04+qp2XWqnm/Mc=;
+        b=jgNLQAsQ7bJ/vQkuXuX3RuqBcCcFm+1oIJ7REWYEJboSp+kwFsJtwx2VsBSRfvAXrt
+         btpSBxafHC7hLPfj2CWzRIGVksLxnfuQybpzCIoriyV2SY3d5/QxJl1YqjqtgyCETums
+         U51rtSG741XZit7KcgJIjbKEC8dNp8+KEpMEKSnfr3bmZJ4I+re/kbY38AMtdhtI3nf9
+         0iN7P0ak/7VOga5axRAORj23sSSzN9jRlpOEIDHRb1XsqB5dOJWObetjqwYF+Wl7C91O
+         6BXdDkXQTyKRMuTXIFi9TlvjZc0ahuIEHzrCE3VGn2vSk1/Q++OXIPLSf20jCS2YksGp
+         bQVA==
+X-Forwarded-Encrypted: i=1; AJvYcCX1jjKDZAA1oLqietCFRkydk0jDm+ttwZ/63EqI3DJ1Ez+H16O0UYgOs8j98jYGnd8f4pxtpGEcjxBhSBRsTkHTOb6erg58cowOGCkmYg==
+X-Gm-Message-State: AOJu0YxdHTDhbzgTzzNv5WIZGmPQGEiOXtThz5saB17h+VyGXKM1sBaY
+	5IH6sLGZNGWIVF+yXhbiomoIaVw88OcZhckOyqIzLmiUMe3wCy/syHxlSk2w8+g=
+X-Google-Smtp-Source: AGHT+IHaoxkChZu/+Jt0Xrh4sJcV8X/QAzL8iuwzT7IqFsgZ0w8MskfrrQ4N0RuTGIQCbnsSSIbwnQ==
+X-Received: by 2002:a05:6512:535:b0:513:e934:8e34 with SMTP id o21-20020a056512053500b00513e9348e34mr491448lfc.56.1711575541912;
+        Wed, 27 Mar 2024 14:39:01 -0700 (PDT)
+Received: from [192.168.92.47] (078088045141.garwolin.vectranet.pl. [78.88.45.141])
+        by smtp.gmail.com with ESMTPSA id ci8-20020a170907266800b00a4e1aa345f6sm70245ejc.115.2024.03.27.14.39.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 27 Mar 2024 14:39:01 -0700 (PDT)
+Message-ID: <afcbb668-ab9e-4f97-9014-ecbd5170ab92@linaro.org>
+Date: Wed, 27 Mar 2024 22:38:58 +0100
 MIME-Version: 1.0
-Authentication-Results: smtp51.i.mail.ru; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
-X-Mailru-Src: smtp
-X-4EC0790: 10
-X-7564579A: B8F34718100C35BD
-X-77F55803: 4F1203BC0FB41BD9D135BF24EC7C3B84ED50F4FA0F0B672491A1E78CF0A7D1F0182A05F538085040EC60E88F3D52D51A03ED270C30F246C5B183B29E756A1548FEB17DC202E68E3028006A18B89A7667
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7548C33FFD72831AFEA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F79006374D30FA0D294D462C8638F802B75D45FF36EB9D2243A4F8B5A6FCA7DBDB1FC311F39EFFDF887939037866D6147AF826D8AB845910D741013387CFF83901193707A1D2B17E004D5259CC7F00164DA146DAFE8445B8C89999728AA50765F79006377C70927E34808485389733CBF5DBD5E9C8A9BA7A39EFB766F5D81C698A659EA7CC7F00164DA146DA9985D098DBDEAEC80CABCCA60F52D7EBF6B57BC7E6449061A352F6E88A58FB86F5D81C698A659EA73AA81AA40904B5D9A18204E546F3947CCEBC872EF0A1BB65BA3038C0950A5D36C8A9BA7A39EFB766D91E3A1F190DE8FDBA3038C0950A5D36D5E8D9A59859A8B603D88DA7F5FEDC253AA81AA40904B5D99C9F4D5AE37F343AD1F44FA8B9022EA23BBE47FD9DD3FB595F5C1EE8F4F765FC2EE5AD8F952D28FBE2021AF6380DFAD18AA50765F790063735872C767BF85DA227C277FBC8AE2E8B5D9D64F11F3A190A75ECD9A6C639B01B4E70A05D1297E1BBCB5012B2E24CD356
-X-C1DE0DAB: 0D63561A33F958A5560F7045A31B99455002B1117B3ED696580D1C975CBBE2BCC638DF663A625AFA823CB91A9FED034534781492E4B8EEAD6A17C1D737525568C79554A2A72441328621D336A7BC284946AD531847A6065A535571D14F44ED41
-X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF3FED46C3ACD6F73ED3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF8CECF1AE73E676C4D314B93E46C301BF4BCFA6A81ACE138C13EB575B325410748FF2D56E53A08728F212F37558E724669036F1ADCD25B506E5E1C781D7312E8B39F18895F3C73CAA42BF32D1DA1046D202C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
-X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu530nj6fImhcD4MUrOEAnl0W826KZ9Q+tr5ycPtXkTV4k65bRjmOUUP8cvGozZ33TWg5HZplvhhXbhDGzqmQDTd6OAevLeAnq3Ra9uf7zvY2zzsIhlcp/Y7m53TZgf2aB4JOg4gkr2biojRawEQSF5UttxZI0ZYcZ79A==
-X-Mailru-Sender: 9EB879F2C80682A09F26F806C7394981DE6AB1E6944A41F40841F56765D88C402307561DCE953FAD86697F630E165A9D2C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
-X-Mras: Ok
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: qcom-qmp-ufs: Add SM8475 support
+To: Danila Tikhonov <danila@jiaxyga.com>, andersson@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20240327180642.20146-1-danila@jiaxyga.com>
+ <20240327180642.20146-3-danila@jiaxyga.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
+ 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
+ izWDgYvmBE8=
+In-Reply-To: <20240327180642.20146-3-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240327_110657_305842_D33313D8 
-X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-CacheID: sfid-20240327_143906_521966_02858ED0 
+X-CRM114-Status: UNSURE (   6.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,36 +134,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the QMP UFS PHY compatible for SM8475.
+On 27.03.2024 7:06 PM, Danila Tikhonov wrote:
+> Add the tables and constants for init sequences for UFS QMP phy found in
+> SM8475 SoC.
+> 
+> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
+> ---
 
-Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
----
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml      | 2 ++
- 1 file changed, 2 insertions(+)
+Worth mentioning that SM8475 is a respin of SM8450 on a different
+process node, which probably forced some electrical changes.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-index 91a6cc38ff7f..1e8c3abb09a4 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-@@ -32,6 +32,7 @@ properties:
-       - qcom,sm8250-qmp-ufs-phy
-       - qcom,sm8350-qmp-ufs-phy
-       - qcom,sm8450-qmp-ufs-phy
-+      - qcom,sm8475-qmp-ufs-phy
-       - qcom,sm8550-qmp-ufs-phy
-       - qcom,sm8650-qmp-ufs-phy
- 
-@@ -98,6 +99,7 @@ allOf:
-               - qcom,sm8250-qmp-ufs-phy
-               - qcom,sm8350-qmp-ufs-phy
-               - qcom,sm8450-qmp-ufs-phy
-+              - qcom,sm8475-qmp-ufs-phy
-               - qcom,sm8550-qmp-ufs-phy
-               - qcom,sm8650-qmp-ufs-phy
-     then:
--- 
-2.44.0
-
+Konrad
 
 -- 
 linux-phy mailing list
