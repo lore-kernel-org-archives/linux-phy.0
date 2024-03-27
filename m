@@ -4,76 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C170C47DD9
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 16:22:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AA19C47DD9
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 17:21:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:To:From:Cc:Subject:Message-Id:Date:Mime-Version:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WVeQrBP6nI9B1XxYgFlXwm5ZZhb3Sqx300HBK6/5Cgw=; b=momTPeCbOmdzZ8cge6+VrhkVcn
-	vTO3YwValqCci2Ief1d267xldCvwiLCUGJEWV/A8r+R6BFIzS/pKBRVO83g3HG4WIdtPADis5XqDy
-	QfplZaIudZO4Xs9YPMJ6ZkPo5WUbasT1PXyvyBasYknkhu+kWUWtuvf1s41ffY6Qne6H1PIpYmt20
-	2BSsi3WnBPo14Q1c/84wTvgpT+jCa4uBTuG3fyhmi6c2ckTLJx/4QAvAM8mc5hEihV6ZBGR5l60VR
-	bFjvoLeZiLmGIOP69E9MBo1sFusmIp2PR5yLIudkVk35foYi53gmaNbQLurPvb2e4IZNXk0mDb2/G
-	ngFe/0/w==;
+	bh=MgRLFrWHRo0KVT+11d3PqbrGZOglW2mfLL63ljiBX5U=; b=46vzfprABCDsR7ibgI5MeyEi7f
+	/qAEH77lIMRUpcGOUn2szrAE5OdodsnNVtLN6q78iE87J2iGklbKkjsVI28MVYDV8285yp0w37DnH
+	eWIhHYpz/rOjkNz97DoHQAaTS4IXSs9AQ50mquiLTqBls0SfCT8aDBFnGMEv7JA1Y8qDY6ZZkTshL
+	52SCZ7OXVXsKhM/i9pGmGdS0uxbJuijwwWYQcxHib9k0BeUVbwr03875SB1JZS47qOD4+XhYFvz8d
+	uj1vUVdY+C4qYyyYDT+ozjtdZPDHnIRt2UgDnV5xIIyYgn6qwS/ES5eqltz5vXYqRE2ZDEI8C0EMx
+	FdDDTHnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpW2b-0000000A3fV-34aD;
-	Wed, 27 Mar 2024 16:22:17 +0000
-Received: from www522.your-server.de ([195.201.215.122])
+	id 1rpWyG-0000000AH7F-2V8l;
+	Wed, 27 Mar 2024 17:21:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpW2T-0000000A3XO-29q7;
-	Wed, 27 Mar 2024 16:22:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=folker-schwesinger.de; s=default2212; h=In-Reply-To:References:
-	Content-Transfer-Encoding:To:From:Cc:Subject:Message-Id:Date:Content-Type:
-	Mime-Version:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=jVmOJXz8MFZvDytCaXScOnp+CPymaJ0ZJNEjuWISf3k=; b=osjBcYNJq/cKgUy9AWTyY8hS6E
-	E5HLAhY7omewDvChR3tHPmlbqGq5T2YdOAGnaZ5M0cmn71ww8qXth6+OXvYfe1nl+O45vivL9zVmg
-	voHjd5t0NE0wivjq8NEIZKIy7Oz2MkS1388qo4lC0yPTuXHXwqdqU3eo8BjHLq9nnaMx0uGpTch5K
-	ImjEjU+yoH4m/nIVzGrgoiSGYA0A7puBQ7I5mCekHohziTKpaj7atNdUx/yd8nCgejZNEZjHzWS++
-	WrB9zPGqXne7gRdpFt2KxZu7tC4KoBnjhD2RjUDfQsDNASlXkWUhT546ddF5zLe8d+uoAc2gVqzFv
-	DX8I6/yA==;
-Received: from sslproxy07.your-server.de ([78.47.199.104])
-	by www522.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <dev@folker-schwesinger.de>)
-	id 1rpW2I-000Cfv-EQ; Wed, 27 Mar 2024 17:21:58 +0100
-Received: from [185.209.196.215] (helo=localhost)
-	by sslproxy07.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <dev@folker-schwesinger.de>)
-	id 1rpW26-000PGF-0o;
-	Wed, 27 Mar 2024 17:21:57 +0100
-Mime-Version: 1.0
-Date: Wed, 27 Mar 2024 16:21:45 +0000
-Message-Id: <D04O57YQHYI4.1QNGSVKVT44CS@folker-schwesinger.de>
-Subject: Re: [PATCH 1/3] phy: rockchip: emmc: Enable pulldown for strobe
- line
-Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, "Heiko Stuebner" <heiko@sntech.de>, "Chris Ruehl"
- <chris.ruehl@gtsys.com.hk>, "Rob Herring" <robh@kernel.org>, "Krzysztof
- Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley"
- <conor+dt@kernel.org>, "Christopher Obbard" <chris.obbard@collabora.com>,
- "Alban Browaeys" <alban.browaeys@gmail.com>, "Doug Anderson"
- <dianders@chromium.org>, "Brian Norris" <briannorris@chromium.org>, "Jensen
- Huang" <jensenhuang@friendlyarm.com>, <linux-phy@lists.infradead.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>
-From: "Folker Schwesinger" <dev@folker-schwesinger.de>
-To: "Dragan Simic" <dsimic@manjaro.org>, "Conor Dooley" <conor@kernel.org>
-X-Mailer: aerc 0.17.0-82-g6ffc0ed5991b
-References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de> <20240326-rk-default-enable-strobe-pulldown-v1-1-f410c71605c0@folker-schwesinger.de> <20240326-tactical-onlooker-3df8d2352dc2@spud> <436f78a981ecba441a0636912ddd1cf2@manjaro.org>
-In-Reply-To: <436f78a981ecba441a0636912ddd1cf2@manjaro.org>
-X-Authenticated-Sender: dev@folker-schwesinger.de
-X-Virus-Scanned: Clear (ClamAV 0.103.10/27227/Wed Mar 27 09:33:27 2024)
+	id 1rpWyB-0000000AH5Q-3lIu;
+	Wed, 27 Mar 2024 17:21:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1A1AF60C44;
+	Wed, 27 Mar 2024 17:21:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BB83C433F1;
+	Wed, 27 Mar 2024 17:21:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1711560106;
+	bh=xROqHGua4j6HcszJt7ZG/hqG8TaOs2PmwN195yXx6hI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=RkImE1FJHLz0Xv9jw+4vLwPD8Oq+E3m9s1Im/KSpkWfV5O3b3fs1Wx2oQmZ8jY7SM
+	 vOPzxfL5oLH4VnEC9nvuwnjMM/3vkesrI9CxY2eJkgSbsmwVcuBzwBV2gY0D0WNE4T
+	 9/AtNS0r+mJhHpMjMKxAqxBOplYBMo7+NcpOCZQbVCEXHB+lQZPCr7S5a31aB1bEVH
+	 Pb6sNCHY9W2OhkVIP5svVIa40CCJXyb+3KXjJi9WEzLQMv63gDNV36olH6RKwwkXvg
+	 fw79W+Ko4rNsLJ6hqCA/6agFzRl4EVzUiZJbkNxCVTBmGaSTV1RAxQ4CaezxEHa5J8
+	 fllbgdiEyUiAw==
+Date: Wed, 27 Mar 2024 17:21:40 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Folker Schwesinger <dev@folker-schwesinger.de>
+Cc: Dragan Simic <dsimic@manjaro.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Christopher Obbard <chris.obbard@collabora.com>,
+	Alban Browaeys <alban.browaeys@gmail.com>,
+	Doug Anderson <dianders@chromium.org>,
+	Brian Norris <briannorris@chromium.org>,
+	Jensen Huang <jensenhuang@friendlyarm.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH 1/3] phy: rockchip: emmc: Enable pulldown for strobe line
+Message-ID: <20240327-reopen-subsoil-4b8434cbb41e@spud>
+References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de>
+ <20240326-rk-default-enable-strobe-pulldown-v1-1-f410c71605c0@folker-schwesinger.de>
+ <20240326-tactical-onlooker-3df8d2352dc2@spud>
+ <436f78a981ecba441a0636912ddd1cf2@manjaro.org>
+ <D04O57YQHYI4.1QNGSVKVT44CS@folker-schwesinger.de>
+MIME-Version: 1.0
+In-Reply-To: <D04O57YQHYI4.1QNGSVKVT44CS@folker-schwesinger.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240327_092209_895846_3763F865 
-X-CRM114-Status: GOOD (  34.36  )
+X-CRM114-CacheID: sfid-20240327_102148_242008_9E863742 
+X-CRM114-Status: GOOD (  26.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,132 +82,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2000038379505196171=="
+Content-Type: multipart/mixed; boundary="===============8166827365945291039=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============2000038379505196171==
-Content-Type: multipart/signed;
- boundary=f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf;
- micalg=pgp-sha512; protocol="application/pgp-signature"
+
+--===============8166827365945291039==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="BktBpU3GHnzCWrgO"
+Content-Disposition: inline
+
+
+--BktBpU3GHnzCWrgO
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
---f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+On Wed, Mar 27, 2024 at 04:21:45PM +0000, Folker Schwesinger wrote:
+> Hi Conor and Dragan,
+>=20
+> thanks for your feedback!
+>=20
+> On Tue Mar 26, 2024 at 8:55 PM CET, Dragan Simic wrote:
+> > On 2024-03-26 20:46, Conor Dooley wrote:
+> > > On Tue, Mar 26, 2024 at 07:54:35PM +0100, Folker Schwesinger via B4
+> > > Relay wrote:
+> > >> From: Folker Schwesinger <dev@folker-schwesinger.de>
+> > >>
+> > >> Restore the behavior of the Rockchip kernel that undconditionally
+> > >> enables the internal strobe pulldown.
+> > >
+> > > What do you mean "restore the behaviour of the rockchip kernel"? Did
+> > > mainline behave the same as the rockchip kernel previously? If not,
+> > > using "restore" here is misleading. "Unconditionally" is also
+> > > incorrect,
+> > > because you have a property that disables it.
+>=20
+> Apologizes for the misleading commit message. Prior to 5.11 the Linux
+> kernel did not touch the pull-down registers. However, it seems the
+> register's (factory?) default was set to enable the pull-down. As it
+> was mentioned elsewhere that was the configuration recommended by
+> Rockchip. The 4.4 vendor (Rockchip) kernel reflects that by enabling the
+> pull-down in its kernel.
 
-Hi Conor and Dragan,
+Yeah, seems like a bit of a sticky situation. Probably the wrong
+polarity was chosen when the property was implemented and the property
+should have been the one you wanted to switch to given the default
+before it existed was the factory defaults.
 
-thanks for your feedback!
-
-On Tue Mar 26, 2024 at 8:55 PM CET, Dragan Simic wrote:
-> On 2024-03-26 20:46, Conor Dooley wrote:
-> > On Tue, Mar 26, 2024 at 07:54:35PM +0100, Folker Schwesinger via B4
-> > Relay wrote:
-> >> From: Folker Schwesinger <dev@folker-schwesinger.de>
-> >>
-> >> Restore the behavior of the Rockchip kernel that undconditionally
-> >> enables the internal strobe pulldown.
-> >
-> > What do you mean "restore the behaviour of the rockchip kernel"? Did
-> > mainline behave the same as the rockchip kernel previously? If not,
-> > using "restore" here is misleading. "Unconditionally" is also
-> > incorrect,
-> > because you have a property that disables it.
-
-Apologizes for the misleading commit message. Prior to 5.11 the Linux
-kernel did not touch the pull-down registers. However, it seems the
-register's (factory?) default was set to enable the pull-down. As it
-was mentioned elsewhere that was the configuration recommended by
-Rockchip. The 4.4 vendor (Rockchip) kernel reflects that by enabling the
-pull-down in its kernel.
-Of course, this has nothing to do with the Linux kernel, so "restore"
-was a bad choice here.
-
-I previously had split the driver patch into two separate patches, one
-for changing the default (unconditionally at that point), the other for
-adding the disable property. As both changes were minimal I decided to
-squash the commits. I updated the cover letter, but forgot to update the
-commit message. Sorry.
-
-> >> Fixes: 8b5c2b45b8f0 ("phy: rockchip: set pulldown for strobe line in
-> >> dts")
-> >> Signed-off-by: Folker Schwesinger <dev@folker-schwesinger.de>
-> >> ---
-> >>  drivers/phy/rockchip/phy-rockchip-emmc.c | 6 +++---
-> >>  1 file changed, 3 insertions(+), 3 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/rockchip/phy-rockchip-emmc.c
-> >> b/drivers/phy/rockchip/phy-rockchip-emmc.c
-> >> index 20023f6eb994..6e637f3e1b19 100644
-> >> --- a/drivers/phy/rockchip/phy-rockchip-emmc.c
-> >> +++ b/drivers/phy/rockchip/phy-rockchip-emmc.c
-> >> @@ -376,14 +376,14 @@ static int rockchip_emmc_phy_probe(struct
-> >> platform_device *pdev)
-> >>  	rk_phy->reg_offset = reg_offset;
-> >>  	rk_phy->reg_base = grf;
-> >>  	rk_phy->drive_impedance = PHYCTRL_DR_50OHM;
-> >> -	rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_DISABLE;
-> >> +	rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_ENABLE;
-> >>  	rk_phy->output_tapdelay_select = PHYCTRL_OTAPDLYSEL_DEFAULT;
-> >>
-> >>  	if (!of_property_read_u32(dev->of_node, "drive-impedance-ohm",
-> >> &val))
-> >>  		rk_phy->drive_impedance = convert_drive_impedance_ohm(pdev, val);
-> >>
-> >> -	if (of_property_read_bool(dev->of_node,
-> >> "rockchip,enable-strobe-pulldown"))
-> >> -		rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_ENABLE;
-> >> +	if (of_property_read_bool(dev->of_node,
-> >> "rockchip,disable-strobe-pulldown"))
-> >> +		rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_DISABLE;
-> >
-> > Unfortunately you cannot do this.
-> > Previously no property at all meant disabled and a property was
-> > required
-> > to enable it. With this change the absence of a property means that it
-> > will be enabled.
-> > An old devicetree is that wanted this to be disabled would have no
-> > property and will now end up with it enabled. This is an ABI break and
-> > is
-> > clearly not backwards compatible, that's a NAK unless it is
-> > demonstrable
-> > that noone actually wants to disable it at all.
-> >
+> Of course, this has nothing to do with the Linux kernel, so "restore"
+> was a bad choice here.
 >
-> Moreover, as I already explained some time ago, [1] some boards and
-> devices are unfortunately miswired, and we don't want to enable the
-> DATA STROBE pull-down on such boards.
->
-> [1]
-> https://lore.kernel.org/linux-rockchip/ca5b7cad01f645c7c559ab26a8db8085@manjaro.org/#t
->
-> > If this patch fixes a problem on a board that you have, I would suggest
-> > that you add the property to enable it, as the binding tells you to.
+> I previously had split the driver patch into two separate patches, one
+> for changing the default (unconditionally at that point), the other for
+> adding the disable property. As both changes were minimal I decided to
+> squash the commits. I updated the cover letter, but forgot to update the
+> commit message. Sorry.
 
-I agree, I'll post the patches later.
+No worries. Squashing them was probably the right thing to do anyway.
 
-Best regards
-
-Folker
-
-
---f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf
+--BktBpU3GHnzCWrgO
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iJAEABYKADgWIQQFbmi0A2l3pTuK+esCQHEyPYq7fQUCZgRHmhocZGV2QGZvbGtl
-ci1zY2h3ZXNpbmdlci5kZQAKCRACQHEyPYq7fRamAP9MGs6G0N7CCPyktEFGvWmc
-v++fFAIl9dcZbzwkg9Dj9wD+KrYIRbmeqWtdkS3AfQoBJgBfYClulmn68BrCShah
-EAY=
-=o+ot
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZgRVowAKCRB4tDGHoIJi
+0vZBAQCa7Y4ALYnndw09ojj/rscvv2/ascq71lwrZORFc7LgWwEA2fBPIlz+6yb+
+Su6b6pt5k4wywnxerLOAC3N/zmJbEwY=
+=lcb4
 -----END PGP SIGNATURE-----
 
---f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf--
+--BktBpU3GHnzCWrgO--
 
 
---===============2000038379505196171==
+--===============8166827365945291039==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -221,5 +166,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============2000038379505196171==--
+--===============8166827365945291039==--
 
