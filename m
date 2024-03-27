@@ -4,62 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F203BCD11DD
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 12:26:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C170C47DD9
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Mar 2024 16:22:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vtSuQp+AALOjBl3kNNZMKQHF9NaoqSTcdBFgw40rd/s=; b=QGqv0J979/2Fu9
-	sXPRHAXf7MnGMAXqyas5f8e8zgiKPoRqrMpCaHDidOE1KGe7h0dcJdKMnMf+3cVUVJ8rlqLnwf5oV
-	CwW60BvRSXCWKjZhg5IBvQlGAvwjUsHibPW4QAeEUrfDibdRyJOz3TJ9bq5NAyBCm6uamwSljevD/
-	97ClIyUMuyTD1fy8LtEReYh7oVSjDi7AgDmf/rRS8L0mkTvhutEUojN3nbpeLkrok7u2u2+qXg1IW
-	gX6SRNMNRr4dN/FV+yGlv//y2n5nx6klLgerslN3/F5L0f2dxenCNqjBwUtXy/KoTadFKZFsTkS7f
-	wrpx/NF8OCPz20IqgieA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:References:To:From:Cc:Subject:Message-Id:Date:Mime-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WVeQrBP6nI9B1XxYgFlXwm5ZZhb3Sqx300HBK6/5Cgw=; b=momTPeCbOmdzZ8cge6+VrhkVcn
+	vTO3YwValqCci2Ief1d267xldCvwiLCUGJEWV/A8r+R6BFIzS/pKBRVO83g3HG4WIdtPADis5XqDy
+	QfplZaIudZO4Xs9YPMJ6ZkPo5WUbasT1PXyvyBasYknkhu+kWUWtuvf1s41ffY6Qne6H1PIpYmt20
+	2BSsi3WnBPo14Q1c/84wTvgpT+jCa4uBTuG3fyhmi6c2ckTLJx/4QAvAM8mc5hEihV6ZBGR5l60VR
+	bFjvoLeZiLmGIOP69E9MBo1sFusmIp2PR5yLIudkVk35foYi53gmaNbQLurPvb2e4IZNXk0mDb2/G
+	ngFe/0/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpSLy-00000008qzt-0k75;
-	Wed, 27 Mar 2024 12:26:02 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rpW2b-0000000A3fV-34aD;
+	Wed, 27 Mar 2024 16:22:17 +0000
+Received: from www522.your-server.de ([195.201.215.122])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpSLo-00000008qtt-1LMy
-	for linux-phy@lists.infradead.org;
-	Wed, 27 Mar 2024 12:25:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 9F51FCE2615;
-	Wed, 27 Mar 2024 12:25:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 00893C433C7;
-	Wed, 27 Mar 2024 12:25:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1711542349;
-	bh=MT4vR3hNJ7n3FM3oLVR/swhbI/4PaOX2ngnGVtr8j/U=;
-	h=From:To:Cc:Subject:Date:From;
-	b=cJElV26U1cC5DFBOJ3EeWCtWh5kXCiPGJWANxZGVnjbiIMvZsYUxmPoac8oXkCBWK
-	 sJMy3ntP0SKjm9y4MoufIRJiwZWp4FV+ZkhnxyomHRoF7d8E5GyM065z5AguI5VTSo
-	 DERiKhon/8I4QQqYgG/SZqmup89Q3UfqGMZft5c6FhWCHAS6/iQLE4PoaTMYhYpPul
-	 1HStn4j5mao4h7tpZxO1wV6TpiYTADIe4Ywj+pQCioy4erZEIWr5/yQVAMTwB8kHgO
-	 tcPLTiIdjEi6PyzK5SdlaizH50QkIXf7HJNjeZQWPNSDUVNxQ+cHSFW21/4iRL2X1Z
-	 +i4WucH2Fef7g==
-From: Sasha Levin <sashal@kernel.org>
-To: stable@vger.kernel.org,
-	waynec@nvidia.com
-Cc: Jon Hunter <jonathanh@nvidia.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: FAILED: Patch "phy: tegra: xusb: Add API to retrieve the port number of phy" failed to apply to 4.19-stable tree
-Date: Wed, 27 Mar 2024 08:25:47 -0400
-Message-ID: <20240327122548.2840551-1-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-MIME-Version: 1.0
-X-Patchwork-Hint: ignore
-X-stable: review
+	id 1rpW2T-0000000A3XO-29q7;
+	Wed, 27 Mar 2024 16:22:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=folker-schwesinger.de; s=default2212; h=In-Reply-To:References:
+	Content-Transfer-Encoding:To:From:Cc:Subject:Message-Id:Date:Content-Type:
+	Mime-Version:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
+	bh=jVmOJXz8MFZvDytCaXScOnp+CPymaJ0ZJNEjuWISf3k=; b=osjBcYNJq/cKgUy9AWTyY8hS6E
+	E5HLAhY7omewDvChR3tHPmlbqGq5T2YdOAGnaZ5M0cmn71ww8qXth6+OXvYfe1nl+O45vivL9zVmg
+	voHjd5t0NE0wivjq8NEIZKIy7Oz2MkS1388qo4lC0yPTuXHXwqdqU3eo8BjHLq9nnaMx0uGpTch5K
+	ImjEjU+yoH4m/nIVzGrgoiSGYA0A7puBQ7I5mCekHohziTKpaj7atNdUx/yd8nCgejZNEZjHzWS++
+	WrB9zPGqXne7gRdpFt2KxZu7tC4KoBnjhD2RjUDfQsDNASlXkWUhT546ddF5zLe8d+uoAc2gVqzFv
+	DX8I6/yA==;
+Received: from sslproxy07.your-server.de ([78.47.199.104])
+	by www522.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <dev@folker-schwesinger.de>)
+	id 1rpW2I-000Cfv-EQ; Wed, 27 Mar 2024 17:21:58 +0100
+Received: from [185.209.196.215] (helo=localhost)
+	by sslproxy07.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <dev@folker-schwesinger.de>)
+	id 1rpW26-000PGF-0o;
+	Wed, 27 Mar 2024 17:21:57 +0100
+Mime-Version: 1.0
+Date: Wed, 27 Mar 2024 16:21:45 +0000
+Message-Id: <D04O57YQHYI4.1QNGSVKVT44CS@folker-schwesinger.de>
+Subject: Re: [PATCH 1/3] phy: rockchip: emmc: Enable pulldown for strobe
+ line
+Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
+ <kishon@kernel.org>, "Heiko Stuebner" <heiko@sntech.de>, "Chris Ruehl"
+ <chris.ruehl@gtsys.com.hk>, "Rob Herring" <robh@kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley"
+ <conor+dt@kernel.org>, "Christopher Obbard" <chris.obbard@collabora.com>,
+ "Alban Browaeys" <alban.browaeys@gmail.com>, "Doug Anderson"
+ <dianders@chromium.org>, "Brian Norris" <briannorris@chromium.org>, "Jensen
+ Huang" <jensenhuang@friendlyarm.com>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>
+From: "Folker Schwesinger" <dev@folker-schwesinger.de>
+To: "Dragan Simic" <dsimic@manjaro.org>, "Conor Dooley" <conor@kernel.org>
+X-Mailer: aerc 0.17.0-82-g6ffc0ed5991b
+References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de> <20240326-rk-default-enable-strobe-pulldown-v1-1-f410c71605c0@folker-schwesinger.de> <20240326-tactical-onlooker-3df8d2352dc2@spud> <436f78a981ecba441a0636912ddd1cf2@manjaro.org>
+In-Reply-To: <436f78a981ecba441a0636912ddd1cf2@manjaro.org>
+X-Authenticated-Sender: dev@folker-schwesinger.de
+X-Virus-Scanned: Clear (ClamAV 0.103.10/27227/Wed Mar 27 09:33:27 2024)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240327_052552_866786_669F259C 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20240327_092209_895846_3763F865 
+X-CRM114-Status: GOOD (  34.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,89 +85,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2000038379505196171=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The patch below does not apply to the 4.19-stable tree.
-If someone wants it applied there, or to any other stable or longterm
-tree, then please email the backport, including the original git commit
-id to <stable@vger.kernel.org>.
+--===============2000038379505196171==
+Content-Type: multipart/signed;
+ boundary=f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf;
+ micalg=pgp-sha512; protocol="application/pgp-signature"
+Content-Transfer-Encoding: quoted-printable
 
-Thanks,
-Sasha
+--f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
 
------------------- original commit in Linus's tree ------------------
+Hi Conor and Dragan,
 
-From d843f031d9e90462253015bc0bd9e3852d206bf2 Mon Sep 17 00:00:00 2001
-From: Wayne Chang <waynec@nvidia.com>
-Date: Thu, 7 Mar 2024 11:03:27 +0800
-Subject: [PATCH] phy: tegra: xusb: Add API to retrieve the port number of phy
+thanks for your feedback!
 
-This patch introduces a new API, tegra_xusb_padctl_get_port_number,
-to the Tegra XUSB Pad Controller driver. This API is used to identify
-the USB port that is associated with a given PHY.
+On Tue Mar 26, 2024 at 8:55 PM CET, Dragan Simic wrote:
+> On 2024-03-26 20:46, Conor Dooley wrote:
+> > On Tue, Mar 26, 2024 at 07:54:35PM +0100, Folker Schwesinger via B4
+> > Relay wrote:
+> >> From: Folker Schwesinger <dev@folker-schwesinger.de>
+> >>
+> >> Restore the behavior of the Rockchip kernel that undconditionally
+> >> enables the internal strobe pulldown.
+> >
+> > What do you mean "restore the behaviour of the rockchip kernel"? Did
+> > mainline behave the same as the rockchip kernel previously? If not,
+> > using "restore" here is misleading. "Unconditionally" is also
+> > incorrect,
+> > because you have a property that disables it.
 
-The function takes a PHY pointer for either a USB2 PHY or USB3 PHY as input
-and returns the corresponding port number. If the PHY pointer is invalid,
-it returns -ENODEV.
+Apologizes for the misleading commit message. Prior to 5.11 the Linux
+kernel did not touch the pull-down registers. However, it seems the
+register's (factory?) default was set to enable the pull-down. As it
+was mentioned elsewhere that was the configuration recommended by
+Rockchip. The 4.4 vendor (Rockchip) kernel reflects that by enabling the
+pull-down in its kernel.
+Of course, this has nothing to do with the Linux kernel, so "restore"
+was a bad choice here.
 
-Cc: stable@vger.kernel.org
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
-Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
-Tested-by: Jon Hunter <jonathanh@nvidia.com>
-Link: https://lore.kernel.org/r/20240307030328.1487748-2-waynec@nvidia.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- drivers/phy/tegra/xusb.c       | 13 +++++++++++++
- include/linux/phy/tegra/xusb.h |  1 +
- 2 files changed, 14 insertions(+)
+I previously had split the driver patch into two separate patches, one
+for changing the default (unconditionally at that point), the other for
+adding the disable property. As both changes were minimal I decided to
+squash the commits. I updated the cover letter, but forgot to update the
+commit message. Sorry.
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 142ebe0247cc0..983a6e6173bd2 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -1531,6 +1531,19 @@ int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
- }
- EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_usb3_companion);
- 
-+int tegra_xusb_padctl_get_port_number(struct phy *phy)
-+{
-+	struct tegra_xusb_lane *lane;
-+
-+	if (!phy)
-+		return -ENODEV;
-+
-+	lane = phy_get_drvdata(phy);
-+
-+	return lane->index;
-+}
-+EXPORT_SYMBOL_GPL(tegra_xusb_padctl_get_port_number);
-+
- MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
- MODULE_DESCRIPTION("Tegra XUSB Pad Controller driver");
- MODULE_LICENSE("GPL v2");
-diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
-index 70998e6dd6fdc..6ca51e0080ec0 100644
---- a/include/linux/phy/tegra/xusb.h
-+++ b/include/linux/phy/tegra/xusb.h
-@@ -26,6 +26,7 @@ void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
- int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
- int tegra_xusb_padctl_get_usb3_companion(struct tegra_xusb_padctl *padctl,
- 					 unsigned int port);
-+int tegra_xusb_padctl_get_port_number(struct phy *phy);
- int tegra_xusb_padctl_enable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy,
- 					   enum usb_device_speed speed);
- int tegra_xusb_padctl_disable_phy_sleepwalk(struct tegra_xusb_padctl *padctl, struct phy *phy);
--- 
-2.43.0
+> >> Fixes: 8b5c2b45b8f0 ("phy: rockchip: set pulldown for strobe line in
+> >> dts")
+> >> Signed-off-by: Folker Schwesinger <dev@folker-schwesinger.de>
+> >> ---
+> >>  drivers/phy/rockchip/phy-rockchip-emmc.c | 6 +++---
+> >>  1 file changed, 3 insertions(+), 3 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/rockchip/phy-rockchip-emmc.c
+> >> b/drivers/phy/rockchip/phy-rockchip-emmc.c
+> >> index 20023f6eb994..6e637f3e1b19 100644
+> >> --- a/drivers/phy/rockchip/phy-rockchip-emmc.c
+> >> +++ b/drivers/phy/rockchip/phy-rockchip-emmc.c
+> >> @@ -376,14 +376,14 @@ static int rockchip_emmc_phy_probe(struct
+> >> platform_device *pdev)
+> >>  	rk_phy->reg_offset = reg_offset;
+> >>  	rk_phy->reg_base = grf;
+> >>  	rk_phy->drive_impedance = PHYCTRL_DR_50OHM;
+> >> -	rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_DISABLE;
+> >> +	rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_ENABLE;
+> >>  	rk_phy->output_tapdelay_select = PHYCTRL_OTAPDLYSEL_DEFAULT;
+> >>
+> >>  	if (!of_property_read_u32(dev->of_node, "drive-impedance-ohm",
+> >> &val))
+> >>  		rk_phy->drive_impedance = convert_drive_impedance_ohm(pdev, val);
+> >>
+> >> -	if (of_property_read_bool(dev->of_node,
+> >> "rockchip,enable-strobe-pulldown"))
+> >> -		rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_ENABLE;
+> >> +	if (of_property_read_bool(dev->of_node,
+> >> "rockchip,disable-strobe-pulldown"))
+> >> +		rk_phy->enable_strobe_pulldown = PHYCTRL_REN_STRB_DISABLE;
+> >
+> > Unfortunately you cannot do this.
+> > Previously no property at all meant disabled and a property was
+> > required
+> > to enable it. With this change the absence of a property means that it
+> > will be enabled.
+> > An old devicetree is that wanted this to be disabled would have no
+> > property and will now end up with it enabled. This is an ABI break and
+> > is
+> > clearly not backwards compatible, that's a NAK unless it is
+> > demonstrable
+> > that noone actually wants to disable it at all.
+> >
+>
+> Moreover, as I already explained some time ago, [1] some boards and
+> devices are unfortunately miswired, and we don't want to enable the
+> DATA STROBE pull-down on such boards.
+>
+> [1]
+> https://lore.kernel.org/linux-rockchip/ca5b7cad01f645c7c559ab26a8db8085@manjaro.org/#t
+>
+> > If this patch fixes a problem on a board that you have, I would suggest
+> > that you add the property to enable it, as the binding tells you to.
+
+I agree, I'll post the patches later.
+
+Best regards
+
+Folker
 
 
+--f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iJAEABYKADgWIQQFbmi0A2l3pTuK+esCQHEyPYq7fQUCZgRHmhocZGV2QGZvbGtl
+ci1zY2h3ZXNpbmdlci5kZQAKCRACQHEyPYq7fRamAP9MGs6G0N7CCPyktEFGvWmc
+v++fFAIl9dcZbzwkg9Dj9wD+KrYIRbmeqWtdkS3AfQoBJgBfYClulmn68BrCShah
+EAY=
+=o+ot
+-----END PGP SIGNATURE-----
+
+--f7cdc72aa3c9a69fa8ec481bcf6809df63323df0173f7777bf3d43c54eaf--
 
 
+--===============2000038379505196171==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2000038379505196171==--
+
