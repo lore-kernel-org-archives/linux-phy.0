@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A400BCD11DD
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 19:19:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F89ACD11DF
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 19:19:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qZ6U+2K8EKRdtysg9iPv4cE7YMU4J1Tb/bfP3RghfDA=; b=ktByxCkFur1o5F
-	uoJVku4Wgfd36W6NKnFjJJm5vl+3uJNaPiPoknwcniJuczoq1PJvNspVdmAoi9EtFL/Rd7mH2e8C7
-	glP/eYQPCRgfyJEVxff/kpV+IRr38qMPq1ZooN/756iOYqBbjrucZcQwXbAWM/D29nw2EGSXFGZoJ
-	tyH+JnXODCnFvJdhkowXUB+x3sD7qijse9lMgd60hx6SmNq3baCQuBXqcfJudvgQUdgoGi55z0fjL
-	ccnOULg2jZIuNhrR0Ki9xOOW0dc3I7yWkakvZ5C/ZvedkwRFU8WXQUygaAdbahWjCV4XM/DA4H88I
-	ZzEa2bS39id8s1h1Sczw==;
+	List-Owner; bh=m3Y/TgXdSPUant8vjNIE+oCetoec3Wsm7PvYlBzFmhY=; b=OoH1J9swNnoXsG
+	6UUhAgkeDd7K7mfUuOqElmbpBt17TPlHwHLIlT+rQyZt7fAh9GHBeitwRQvGz/S7GYUoIRp9RGJGc
+	eQ26hWR0Nju1rfVkKOD57Ez3RpGpY5Go6Eg6RNDml10EbG2pnJWEtW+N5+zqnV9bESBOV9bVU0BK6
+	mm262F0Z4MVFntagtUh+KfGMHkDsMXguKo9nUL++B1szE/Q6q4vYeFDH5ZMfriYB0v0nnGVG3pvuo
+	jOHDE49PzoEQLJqpWdE7y32TwX2ROBNm0t1FsprNmdIq3la0VJa0RVza9IcbdIT1nYUH5GDoD4xd8
+	T9kB+aSwcwGr/YHTz/8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpvHU-0000000FLgK-0liU;
-	Thu, 28 Mar 2024 19:19:20 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rpvHW-0000000FLi4-3JJc;
+	Thu, 28 Mar 2024 19:19:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpvHP-0000000FLeU-1Fx0;
-	Thu, 28 Mar 2024 19:19:16 +0000
+	id 1rpvHU-0000000FLgJ-1KnG
+	for linux-phy@lists.infradead.org;
+	Thu, 28 Mar 2024 19:19:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 11DE561806;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0A52A61862;
+	Thu, 28 Mar 2024 19:19:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C905C433F1;
 	Thu, 28 Mar 2024 19:19:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C76F6C433C7;
-	Thu, 28 Mar 2024 19:19:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1711653553;
-	bh=iSmXMTfJak8gxA9ioiFk1xWqNqgnFX4tNdouyFOFKzU=;
+	s=k20201202; t=1711653558;
+	bh=DMJGH/uzvLHpdyQp8bAx813mggvP9W/91i5vYKleDCU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=TX/TPPK/XYJzzO1pwCUb26poWrm2a/lS7wwJ7llDMUc/EuBapf9fqGcDrhGHjCw9n
-	 plST4hgyhv4Zov7gosFoJG/QvYT871e/R9w5iNxREXpufEFN63qHMW9S/OBcaFmov/
-	 +RSPIX34qNS84ArOZw53H+LaycdJtiO3yEM2HcJ83zb/rmocUC4hmANtTTHZIPXK1y
-	 sgbV56KSpI5LhIl/TicLck10mIjAH0dyTgo//Zucn1mSxzAen9oXTcWW7Gr1aVysM1
-	 NeP4sZnb+KeI6Ex/EaLgd0X4L1885xGZGa/lvALogFoQIcPCbNZO9K1tdfu1efddeI
-	 KztvTwCdhlUNA==
+	b=Ho1w3mPsyO2jwlK8SvUXLnbn/aa5FWGFIkf9w2Ecygsn/DM+rM5OcNcR/+25W14z4
+	 D6+/dlshJ4jo1z8xhRUc4Vu+DRPHtjUOIPqpGTCxrEv31Z1Fkn1eBVLMOChTOGD5vP
+	 +P9hq0VPTPAZvedawyqyJHzp/Y1GdpBc4u7+7ZHjQYF+upna/IhAkg2w4p9wzYP/Xr
+	 7Bmz7qJMDTiMJQ5P0ag6ZhTvjBKlRd0+6xcKv89A2xTP+x/BCJwmmsCoQKKHCq1RGf
+	 Nr6FDQk6gELz0lQmv5er4eLoK277tyO3gptTtYMz+sEjs0PTBOjBlNwd89Ksf8tUtK
+	 bBMF2ByiaHrsw==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- Adam Ford <aford173@gmail.com>
-Cc: aford@beaconembedded.com, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, 
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, 
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
- Lucas Stach <l.stach@pengutronix.de>, devicetree@vger.kernel.org, 
- imx@lists.linux.dev, linux-kernel@vger.kernel.org
-In-Reply-To: <20240227220444.77566-1-aford173@gmail.com>
-References: <20240227220444.77566-1-aford173@gmail.com>
-Subject: Re: (subset) [PATCH V7 0/6] soc: imx8mp: Finish support for HDMI
-Message-Id: <171165354734.152390.12386757633951091803.b4-ty@kernel.org>
-Date: Fri, 29 Mar 2024 00:49:07 +0530
+ Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-0-213338ca1d5f@linaro.org>
+References: <20240220-phy-qualcomm-eusb2-repeater-smb2360-v2-0-213338ca1d5f@linaro.org>
+Subject: Re: [PATCH v2 0/2] phy: qcom: eusb2-repeater: Add support for
+ SMB2360
+Message-Id: <171165355397.152390.11176206543554297500.b4-ty@kernel.org>
+Date: Fri, 29 Mar 2024 00:49:13 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_121915_430559_F19466FB 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20240328_121920_766378_BE5E25B7 
+X-CRM114-Status: UNSURE (   5.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,27 +81,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 27 Feb 2024 16:04:34 -0600, Adam Ford wrote:
-> The i.MX8M Plus has an HDMI controller, which depends on several
-> other systems.  The Parallel Video Interface (PVI) and the
-> HDMI-TX are already in the Linux-Next staging area 20240209, but
-> the HDMI PHY driver and several device trees updates are still needed.
+On Tue, 20 Feb 2024 21:41:58 +0200, Abel Vesa wrote:
+> This patchset adds support for the eUSB2 repeater provided
+> by the SMB2360 PMICs.
 > 
-> This series is adapted from multiple series from Lucas Stach with
-> edits and suggestions from feedback from various attempts, but it
-> since it's difficult to use and test them independently,
-> I merged them into on unified series.  The version history is a
-> bit ambiguous since different components were submitted at different
-> times and had different amount of attempts.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: add binding for the i.MX8MP HDMI PHY
-      commit: d0f4b70eb9a9ed05a37d963655698906cd4dac9a
-[2/6] phy: freescale: add Samsung HDMI PHY
-      commit: 6ad082bee9025fa8e0ef8ee478c5a614b9db9e3d
+[1/2] dt-bindings: phy: qcom,snps-eusb2-repeater: Add compatible for SMB2360
+      commit: f8d27a7e0ae36c204bffe4992043b2bb42ca8580
+[2/2] phy: qualcomm: phy-qcom-eusb2-repeater: Add support for SMB2360
+      commit: 67076749e093ffb3c82ba6225d41c88f8c816472
 
 Best regards,
 -- 
