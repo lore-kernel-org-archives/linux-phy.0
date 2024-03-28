@@ -4,68 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 084C7CD11DF
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 19:10:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A702CD11DF
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 19:19:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xLFZ9ilPcNQBcHVZSWV2cgOYX9inMMFnjp5MYe1yqlo=; b=dGsHpr4n2PP0un
-	bMUo5dDGXZR5HxRx1KZwqfJemq+eUiAxTpQgsqi9wgn9dHnGb6AgySSz5eQHKrlvwNvryY+RXCqQJ
-	Sg3WBAwJiH6Kvey0t8jtouj7Ne5h/ch5dMvRJEKgNRsrj494HMBJTX8VS+mFlI1fCLcwbQnHY1L32
-	x3B0x+VxwrmWBcuq4UJZG/Vzm1L1NzccAHRgcJU8F+n1WVYdj/Q2+7ZqPABYJpasivECdvrb4eqMZ
-	9ysZ5O2pXUMsdw57mmHmTHquHkEdeohl/TiDT8KGAEilAuZHx9Tqjobg5JbYNZaQcR/bNDhisz67C
-	VAcyjpe5lfEd71XSs/7w==;
+	List-Owner; bh=30pEPBpGaH2SX+sFSGF9Jrz8voa/2Pov/oypk9vf1/k=; b=Djqfqrb3xg4vVV
+	/27f+p8wRnNx7CCbZRTpn6RLnyaWK4ESM7lSSn4WVk/J+c9bdMMRUsSM8SzXQsvYQbCcuVGAtypjJ
+	yifnsN5rr2cP9AdItpxgqWlQQuOKXUt9TLnDI/p4CtD1VQKoWZM60xfGmsABTac1yD5HD2z2PokG1
+	Q39Qc64jFS2BrQC0snw0CFNe+gmneEIi7tDwYAYRdYJItJ2VYImDtcCSucw2ivc3+zaqb1No/DnVK
+	w4GNwYbdRpb7Vr11/A0mk/8oTslxGCmda33qEUrC8KJ5L+qAmH6J0PKZwYOe14DznotWcgSatkuJD
+	ep24Xe0rnAIZeQA/ssIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpv8S-0000000FJfF-1zm7;
-	Thu, 28 Mar 2024 19:10:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rpvHC-0000000FLaF-3eBo;
+	Thu, 28 Mar 2024 19:19:02 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpv8O-0000000FJdI-3tEG
+	id 1rpvH8-0000000FLZ8-3vfc
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Mar 2024 19:09:58 +0000
+	Thu, 28 Mar 2024 19:19:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C8F296185C;
-	Thu, 28 Mar 2024 19:09:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68186C433C7;
-	Thu, 28 Mar 2024 19:09:49 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 0604ECE2C18;
+	Thu, 28 Mar 2024 19:18:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 031CBC433C7;
+	Thu, 28 Mar 2024 19:18:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1711652990;
-	bh=TMEu0+59Wnpc9lTJ7rgOQpvFhUV4iddHo0yol/6QleA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ZsfSL6SAEIvmGd/G6gIk+Ub44Yfp4ePHgsHWG1qsAu9ZbVG6Xmfjyk6U3c0EXV8FL
-	 7mSv7BrntwCF013gkD26eEd7ViKb1pH9fSBXskn6HuKUH6v0OIMMIvIXDb/zPhSJNP
-	 5eNRO0nVVY5VcsqSC0j8fB04JzzCUDgjZC6i/bmcENRjZEld3A5O/pIim/D+45e95j
-	 qNk0PoL6pNIZHGed1wtBNs5y51KGT44u+dnDE5Fo2LACwR8cZcWqDEfkZqn0h6eUUy
-	 z7Taib4nQOSLuFhFHfz3WF3zpqu/jQnbnPlVOPh0mD4xM8zJYuvL3fWXO3KVrlQjij
-	 5DlXvgc0MIzuA==
-Date: Fri, 29 Mar 2024 00:39:45 +0530
+	s=k20201202; t=1711653535;
+	bh=/2FwrcuxW2z/ha9sIbh7100tVXqzXgvk1gda2cIs5nE=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=jftcwO4rh+t+5iSEKiw4//3BPGSDqE225ZiJLIkwXVLno6+pnx8oayEnKYBp2VDKu
+	 W73Dws42e20irofCdvDtVM5PuDXBLb8j39L9gl3s5jXWXRuv2kJdCSp+gbQfT+79BM
+	 zNxc6bnX7oV3oEW6ab2IXbNc41KAWVdaZ2N9rNoWvfcLX0UC8CU3PDo1M0g5ihzq1b
+	 IyfKD06Wrz94YX+ODmpHaXVHObLIpByI2Umk/9D34gegd1FR8yzSb+fiYyexKu8CBK
+	 8thgdmZNGyyldMX8uUJfw6Zt4iMv+H4drImBnvw6eCZAHUwiZQlq1ThUyuVYwM4aKK
+	 n1J8ESUJsgGeg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Abel Vesa <abel.vesa@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, Johan Hovold <johan@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH RESEND v5 1/2] phy: Add Embedded DisplayPort and
- DisplayPort submodes
-Message-ID: <ZgXAec_utD_8yIs4@matsya>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Johan Hovold <johan@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org
+In-Reply-To: <20240324-x1e80100-phy-edp-compatible-refactor-v5-0-a0db5f3150bc@linaro.org>
 References: <20240324-x1e80100-phy-edp-compatible-refactor-v5-0-a0db5f3150bc@linaro.org>
- <20240324-x1e80100-phy-edp-compatible-refactor-v5-1-a0db5f3150bc@linaro.org>
- <CAA8EJprPgZJ7hZooJEs1ysn2Py=M_rJguuVdXFuBK757q86ZAQ@mail.gmail.com>
+Subject: Re: [PATCH RESEND v5 0/2] phy: qcom: edp: Allow eDP/DP configuring
+ via set_mode op
+Message-Id: <171165353052.152303.10328548451703763437.b4-ty@kernel.org>
+Date: Fri, 29 Mar 2024 00:48:50 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJprPgZJ7hZooJEs1ysn2Py=M_rJguuVdXFuBK757q86ZAQ@mail.gmail.com>
+X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_120957_093181_BA29B396 
-X-CRM114-Status: GOOD (  16.28  )
+X-CRM114-CacheID: sfid-20240328_121859_309309_A91B9AFF 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,52 +80,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-03-24, 23:26, Dmitry Baryshkov wrote:
-> On Sun, 24 Mar 2024 at 20:50, Abel Vesa <abel.vesa@linaro.org> wrote:
-> >
-> > In some cases, a DP PHY needs to be configured to work in eDP mode.
-> > So add submodes for both DP and eDP so they can be used by the
-> > controllers for specifying the mode the PHY should be configured in.
-> >
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  include/linux/phy/phy-dp.h | 3 +++
-> >  1 file changed, 3 insertions(+)
+
+On Sun, 24 Mar 2024 20:50:16 +0200, Abel Vesa wrote:
+> Until now, all platform that supported both eDP and DP had different
+> compatibles for each mode. Using different compatibles for basically
+> the same IP block but for a different configuration is bad way all
+> around. There is a new compute platform from Qualcomm that supports
+> both eDP and DP with the same PHY. So instead of following the old
+> method, we should allow the submode to be configured via set_mode from
+> the controller driver.
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> 
-> Vinod, we'd need an immutable branch or a tag for this patch, so that
-> we can merge DP changes during this cycle
+> [...]
 
-The following changes since commit 4cece764965020c22cff7665b18a012006359095:
+Applied, thanks!
 
-  Linux 6.9-rc1 (2024-03-24 14:10:05 -0700)
+[1/2] phy: Add Embedded DisplayPort and DisplayPort submodes
+      commit: 368d67dab4cc4a3ffd39fbd062b2f5796cdbb37b
+[2/2] phy: qcom: edp: Add set_mode op for configuring eDP/DP submode
+      commit: 6078b8ce070cad3f9a8ecfce65d0f6d595494f02
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy_dp_modes_6.10
-
-for you to fetch changes up to 6078b8ce070cad3f9a8ecfce65d0f6d595494f02:
-
-  phy: qcom: edp: Add set_mode op for configuring eDP/DP submode (2024-03-29 00:30:16 +0530)
-
-----------------------------------------------------------------
-phy_dp_modes_6.10
-
-This contains the dp submode definition and associated qcom driver change
-
-----------------------------------------------------------------
-Abel Vesa (2):
-      phy: Add Embedded DisplayPort and DisplayPort submodes
-      phy: qcom: edp: Add set_mode op for configuring eDP/DP submode
-
- drivers/phy/qualcomm/phy-qcom-edp.c | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------
- include/linux/phy/phy-dp.h          |  3 +++
- 2 files changed, 59 insertions(+), 20 deletions(-)
-
-
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
