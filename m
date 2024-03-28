@@ -4,80 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36C2EC54E64
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 08:43:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49A2CC54E64
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Mar 2024 09:37:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXYl4JglcjOGmDgdRdGF/9AbAdesYhedGj28bcoZ0mE=; b=V3LoiQG4dCQnrr
-	34HjtqVRrpM9AnNKaFZMUHl++mLZ9CY/6X47INXDX4JVKArKuJiiS5KJj5RQkJLaAvlJ1BwJV0zud
-	Gow9FgIn/Dqdw8WQiGFwFP7uQAtUNLazxMtnqroBWODqqGtCC535zmOYsjEcCxibIPyKEd/aljwmF
-	vrzcTDHeE9XMsh8L71ljBaZJd646whS7guKiPF74f5BNmfp3YGUnWAVJ7dOEnfxuU1y8K6GtLQbni
-	I+k6ngZsLJ2ibcOP/J45YJeu/cAY43qI4ppXiQvxYT3kzKUDlDFsz7AMBlUel9L+jKiXFnQ0S5vt4
-	/SjOKrCLozGaYMsFwY8Q==;
+	List-Owner; bh=XPAKtdREykK2kfLhciZP2zqXZOfYpUrNB/swXhlVZHo=; b=Bj6rpmJRWEyanm
+	kKbAE4A8rwSh+qq0NgM+Y47uCHW/tg6bbzjqWszFN6BGQXpQEahsdftr0+l9NQl5pF7Xt6K1l4UvQ
+	EJe+8UlwLpw8xhBvW5SiZzrx1bynQPpXXQ4+oSBiLXL8FG3Mi1r9Dp61mEQotZMWH5wTL28omDQWn
+	DzL51zmHu4eRPohvCQy7w9u0EgI3H+Dgd/KsjsSRRRWAiCrrafHcKFQ5tToLAbsNZVtZs4bjujSS0
+	drRcVFmp1aczCiEPuaMhgJRL/C+KfKRVU/PAMFHWBAmraC0Eo/bty02bce+/o0YPSQbEO0HU9mEJq
+	QmO0sWek7FH+u2U4c7zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rplLn-0000000D7rx-1Nrl;
-	Thu, 28 Mar 2024 08:43:07 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1rpmCP-0000000DNWE-3sdJ;
+	Thu, 28 Mar 2024 09:37:29 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rplLX-0000000D7nf-3vBu
+	id 1rpmCN-0000000DNUN-2ESe
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Mar 2024 08:43:05 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-341cf77b86bso413624f8f.2
-        for <linux-phy@lists.infradead.org>; Thu, 28 Mar 2024 01:42:50 -0700 (PDT)
+	Thu, 28 Mar 2024 09:37:28 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-414866f92beso5240425e9.3
+        for <linux-phy@lists.infradead.org>; Thu, 28 Mar 2024 02:37:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1711615369; x=1712220169; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1711618643; x=1712223443; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=IyzncL5cnTkcEyELjRoDnejJJaLdygqwKBsCziBuTRg=;
-        b=j9r39izxNeVnGCmHGXCW3raXtIX33c+gJUDaUbPiQjKSB1ehuK6MRtaDT5tQmdQhkk
-         w48M+3EI7FrW5PmmPrrqvUYfrX3YhIrkljE+b8DwOwRg+P7vcvtAmeK++qZyosuVjZ8r
-         L+UMLK6nJH3stJMNDdHuRcdAMiLMToZSV5td7Vo3drgPZD6AJP9Fo/K2YMcvJJtbfKSn
-         ZOuDf8cqsk8b730OaOaKk13OD9OaRie82Mt8WJ5pGYWHe9OgmKiFZEGmCIAzJA/T7yBt
-         Wrd59RfeZ6s54g1Lkbs+o53WfE3yxuMWypfBDzSDegTaD1W4HwrirY3B7Aanka2X7fRY
-         uoPQ==
+        bh=eKly607vWTdB5lp9kf/kHWzn2IFxC4Ylpr0pNRgNlvQ=;
+        b=Smmw8H+WVrfMyzGWu9mgkNmbZZdG4+jrP3fb8XLuN497CSNHnskFRlNpy2keTBG4mG
+         cpqYA3bHEa1IKp2DG+MEvOYZHL6msLlXpdz3gbKeCaMuLgcCiWtFf34rQssu+yb3khGY
+         td8xLMJwe61Fuqd4AtvTTh70gYuDoQYjqCFM+X5jRwxZWV4XCSythdbBlRdUxl1MTwxm
+         azMPr79bRW2ZS3CsN3EovUsZasm9Ua3aiv879uTEpPkks1/M+IdiHO1CfNMgHD9qvrTJ
+         MpS5PudBJx6aJ2Go9LYn1/j8wISvVoO+a+R2EPP+u0mo2ONlSXNnvtYRqBRpD6Ri2wlQ
+         UnLg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711615369; x=1712220169;
+        d=1e100.net; s=20230601; t=1711618643; x=1712223443;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=IyzncL5cnTkcEyELjRoDnejJJaLdygqwKBsCziBuTRg=;
-        b=nL96l1SXU+26VvH7/Z/76K2KEwv9X+tJbtOVt0Y/1lRGejMtBPBboe2kmq3XURhstx
-         BsfZRMblXnyf2T7TOoKB2CBW5QPO+PrggsSUQk+l1R3txEz1FD+DWVWJa0FxDQpD1dRG
-         Hlm4PiiCRMIJ+BufMKpAuJ+wdh519LI/LeaAmSMyQRY16xja5TbmKsJot//mvXATrZxq
-         M9XnABwvjnCyUnoeyX2K2dkM86qgizRW6qYDlyKPDgSt/edGpdJVvk/0L2EyCP5STDgY
-         J7IUG50T56sQz2NCEe1sms+pZAprrGDLs49VI3VX7KD6tAJyNeOO77ziVPcNgiNLiNw+
-         3MqQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVT8yDoGawPGzCQhKAAzAYP5yEluW/a9/AU4CHy6ls8CHdFOMj4DDI/lMPm6YfZ2pqIyARyeLdSsxHtyNFqIqiBmNis+Kgw5WH23yg50Q==
-X-Gm-Message-State: AOJu0YykLREDhtGORm04egmS0yAAlXhjMN/gxQZK+XMTOziNJImzy11E
-	5f7Raf/IX+0QD23vt0928+jhv9RZwgEp23pqXDq59TVDPdEgr9s7LeCOlgH0ZRNbeZPCiFoA6Nh
-	f
-X-Google-Smtp-Source: AGHT+IEwGjHhFX12BU0RvqzmnlnMkOcFAw/SThih3PygvPfWTifQMHd3oHG/g5aViPIyRnyQXxKuCQ==
-X-Received: by 2002:a5d:4883:0:b0:342:74c9:5be8 with SMTP id g3-20020a5d4883000000b0034274c95be8mr1448110wrq.24.1711615368737;
-        Thu, 28 Mar 2024 01:42:48 -0700 (PDT)
+        bh=eKly607vWTdB5lp9kf/kHWzn2IFxC4Ylpr0pNRgNlvQ=;
+        b=ZKrmHht0LMCy74/JglXu4Xcse6yxXxm4Qx/YEEmQaTeMk+6FWCMeQGVkLmbqn9U8kt
+         adWEhyeIOooHcTg3I6teG3wusJ3CkSM5oPynhY2WGBlUhuVwwyHe9GhirgGtQjLmVpGt
+         DYkKGnWtBAGCxA+sBRa2mMlxtmS80aGKT7oG5x4qQx8z0a1WuPg6twD9/hbt3nRSkodK
+         7Uzz1k1xyG5lYp8odfxgMzpv0iN6c5EW0R3j7Pmx+fqMS2z0QlzSextqSubzZHA11y/q
+         N4e9E1g40tlapSM+ctbWkFXycoOEdNjHrsMtZ0vYTDCEpbWeFxyctZPQpizu/UDxnL9y
+         F4Ug==
+X-Forwarded-Encrypted: i=1; AJvYcCVT6rbcN0kniXrJDlPh8NOcFzs1LAznyLQoT6Nqo9/r2Nq6Ms6k6I6X8lD0MO9zm+ybcm56WC9CSa3l2aXeW5e0GAhqbZJL9nsggSI+rw==
+X-Gm-Message-State: AOJu0YwOanFOxczf5Unpt3nh+9EOlMFt7hfACpJ3u6Z+DQ2fvbwiZ9q+
+	0PpDifCbXlNUvmtbkSKCt3PuAtcB8GlIi0gwYBChskFMpVGavjJ74VbuXy+t8L4=
+X-Google-Smtp-Source: AGHT+IGc1fXqz2t2yynQDY1SoF+N1vGNHGjtG4xag0UmpCTCQGTcyNmJvYxwttdqMYEkSvTDxnoDDw==
+X-Received: by 2002:a05:600c:a0b:b0:414:64de:160a with SMTP id z11-20020a05600c0a0b00b0041464de160amr2125627wmp.12.1711618643586;
+        Thu, 28 Mar 2024 02:37:23 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.219.148])
-        by smtp.gmail.com with ESMTPSA id i4-20020adfefc4000000b0033b6e26f0f9sm1141593wrp.42.2024.03.28.01.42.47
+        by smtp.gmail.com with ESMTPSA id l20-20020a05600c1d1400b004146a304863sm4874976wms.34.2024.03.28.02.37.21
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 28 Mar 2024 01:42:48 -0700 (PDT)
-Message-ID: <b73034c3-a512-46b6-a9e8-4d43fd3b39e6@linaro.org>
-Date: Thu, 28 Mar 2024 09:42:46 +0100
+        Thu, 28 Mar 2024 02:37:23 -0700 (PDT)
+Message-ID: <5b558086-f8a2-4798-b07f-2e0d71360dfc@linaro.org>
+Date: Thu, 28 Mar 2024 10:37:20 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add QMP UFS PHY comptible for
- SM8475
-To: Danila Tikhonov <danila@jiaxyga.com>, andersson@kernel.org,
- konrad.dybcio@linaro.org, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20240327180642.20146-1-danila@jiaxyga.com>
- <20240327180642.20146-2-danila@jiaxyga.com>
+Subject: Re: [PATCH 2/3] devicetree: phy: rockchip-emmc: Document changed
+ strobe-pulldown property
+To: dev@folker-schwesinger.de, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+ Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Christopher Obbard <chris.obbard@collabora.com>,
+ Alban Browaeys <alban.browaeys@gmail.com>,
+ Doug Anderson <dianders@chromium.org>,
+ Brian Norris <briannorris@chromium.org>,
+ Jensen Huang <jensenhuang@friendlyarm.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de>
+ <20240326-rk-default-enable-strobe-pulldown-v1-2-f410c71605c0@folker-schwesinger.de>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
@@ -124,10 +131,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20240327180642.20146-2-danila@jiaxyga.com>
+In-Reply-To: <20240326-rk-default-enable-strobe-pulldown-v1-2-f410c71605c0@folker-schwesinger.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_014303_922085_4D171FE3 
-X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-CacheID: sfid-20240328_023727_579999_98E4D41C 
+X-CRM114-Status: UNSURE (   8.66  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -145,18 +152,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/03/2024 19:06, Danila Tikhonov wrote:
-> Document the QMP UFS PHY compatible for SM8475.
+On 26/03/2024 19:54, Folker Schwesinger via B4 Relay wrote:
+> From: Folker Schwesinger <dev@folker-schwesinger.de>
 > 
-> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
-> ---
->  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml      | 2 ++
->  1 file changed, 2 insertions(+)
+> Document the changes regarding the optional strobe-pulldown property.
+> These changes are necessary as the default behavior of the driver was
+> restored to the Rockchip kernel behavior of enabling the internal
+> pulldown by default.
 > 
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Please use subject prefixes matching the subsystem. You can get them for
+example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
+your patch is touching.
 
-(not reviewed, please provide link to DTS)
+It's: dt-bindings: phy: rockchi.......
 
 Best regards,
 Krzysztof
