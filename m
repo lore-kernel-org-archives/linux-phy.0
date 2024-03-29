@@ -4,85 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E0A3C6FD1F
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Mar 2024 09:02:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6AADCD11DD
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Mar 2024 11:02:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:Cc:To:
-	From:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=peSR64fuiA7dt0/t4rnANXMPqlGNpOTk9abE5Qzm6AQ=; b=omKeVN7L3DGtQ0
-	CdQyDoZJWLZU9SwzTGWTs/jAKkaY1Z9CG4eMAEQvUoBzku6K1FiX21pqet8KD9DYLdg+3IDhwUbjH
-	MM07E9VSd+Wb+4MgSChYZN1bLdeCiTNvL4k4lUykok95AqcRcEvmHH1l6sFi9Ll7vkXY7+b6o5lzN
-	70031eouoagdoD03cC9vAoLl2zEYqnOka44LhdqLiK2HzE2wW6b9+sjp2dLfGMlZ+Zy9Y7WqoK2rB
-	BaAwzKXfZZbmhKuxxcFM5CDdl0LupdG2H6eSTTY4hlFQzUMix6LMKxlsUjFfr5i5mnvJ/UgDA7/Pr
-	KWtmuBz3MZ8lLAq1pGIA==;
+	List-Owner; bh=8SVA2qiuN4qxjDHhWk2XKHQYaXlso9Qb5juosNH8LCo=; b=gcmozAy0tbpsfU
+	qNE5JK1I4F9udjEy6ULNDI5ZRJd3pCoKbTH8uyVneMdH3vtUpoCWCTvECqjRlAx6qM1ZUumDqV5XB
+	eNY+YNpPhZHUoYg6nSpXuDbZE6RrCyEZNnDAHy1LBCPv+hePVOclzkYHj65YRkMDnzqP3l6ZbUeZq
+	NHR/1hd5fD/RQffxOcvhRFwOVNo1g7dugQPRLoAbVnl5Ahpu+xp95YdWyGM0UCKDSVLoPNdRLBeDE
+	VS5Xb1UvHZRSE5DIODYKiAU0tGIUcvp0c5xwUUa1SWhd7q9FTP2+luWG3qZ2Nk8Rg1gYH2O0WZnSJ
+	7yL1db7xhqbiwVPq+awQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rq88N-0000000HOpR-3Ibf;
-	Fri, 29 Mar 2024 09:02:47 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1rqA0T-000000008TI-1pqf;
+	Fri, 29 Mar 2024 11:02:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rq88K-0000000HOou-0ESq
+	id 1rqA0P-000000008Rk-3pkG
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Mar 2024 09:02:45 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-5688eaf1165so2394738a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 29 Mar 2024 02:02:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1711702960; x=1712307760; darn=lists.infradead.org;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/kJ07VpxBwuIm+C747GAvreUMoyvQyj4KBvI0bB+Uzs=;
-        b=hA7U2u/Va8urYrrMiL6FkhM7pmt+qteXLFgpNg1OAZc3nT1U9TE8U+TpIwmr3caBdd
-         QXjOEhJEELWmKZfQoHasyjTyExTdZRU4UlZFjzaBvr0wUhBn+zvAz1wf/CkHQM4N3mw9
-         Em8JRmPI9Vnu6KO+kcJwUygYmnN/vU3GjBRAqBO1tSTA2cE22qpMt4hTTxMVi6F8fL3d
-         ftACfu0CvQtEbqNCYY6X72KtR/J4dbtK/Hdq2U4eFI1Qg81ZEhnA1cJylikSNUOx04eN
-         EpGbzd771mKHz0ClCmb5x8CH2UeDbY0kEyGrD9ElGXBUVu0VqN0L/wloIcFPvG+PTI3z
-         nt5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711702960; x=1712307760;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=/kJ07VpxBwuIm+C747GAvreUMoyvQyj4KBvI0bB+Uzs=;
-        b=JEstq6MwRoHMI1R3+aCoMh42jRgrSexnCnOaUVdnPBE8JXrIJC0jHYfNkUkzmKqTIX
-         tJ9EuIjZPqcRrGEKbvLpsiXE7XhWw9sWsnQq1aR+3FxQ6UvyT0cPqSbIxhlfLjwZK7Qd
-         WvbZdpodlT32ljbOk7+PfetfJHgfTg/0jSJ0BpZe091S5qxxGlgZFS//h0E5ID+gDqub
-         hMDdIYyCNGI3/Am908CqD36Puway4OsxA3rx2aoQmjytfw0yReKjcvP21PaGe8C+i47u
-         SZQDISCXoZuvhIyS6Pwwe6bvawrD3saOf0+CAT6Y60FhGSvQZIQQl+UQLOdQ6P4yA88U
-         DMgw==
-X-Forwarded-Encrypted: i=1; AJvYcCVCdRPGCLYiFPGv1lP4hZj/UZdrYtLRXvW3GJcCHFUVwhMJYpmDqk2N/Ce/TsO6pH0mxpDx+upctpZsep9g4x/7yZPEa3oSicqLppmwsQ==
-X-Gm-Message-State: AOJu0YxQRG5QTy3ngTEv9j+nSD3LxstuNJTFKRbH+9L4cTu0jcq9dHv0
-	cCVH1kSChcSxXv0IXp3TOWjy66FSoB/bQyzhd9vsGeMOUnaEvFWuPQCVvfRiyXA=
-X-Google-Smtp-Source: AGHT+IEtXOU314+1cqrx8WlAN41P0sJaaz6HVv7Pvuse+LMvU2V1oey2adNfDS+zVoFYLe2kFcwhTw==
-X-Received: by 2002:a50:c351:0:b0:567:56a4:3940 with SMTP id q17-20020a50c351000000b0056756a43940mr1190062edb.19.1711702960448;
-        Fri, 29 Mar 2024 02:02:40 -0700 (PDT)
-Received: from localhost (144-178-202-138.static.ef-service.nl. [144.178.202.138])
-        by smtp.gmail.com with ESMTPSA id b20-20020aa7cd14000000b0056bf9b4ec32sm1816243edw.78.2024.03.29.02.02.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 29 Mar 2024 02:02:40 -0700 (PDT)
-Mime-Version: 1.0
-Date: Fri, 29 Mar 2024 10:02:39 +0100
-Message-Id: <D064242SMIVM.1GUC1I9GE9IGC@fairphone.com>
-From: "Luca Weiss" <luca.weiss@fairphone.com>
-To: "Konrad Dybcio" <konrad.dybcio@linaro.org>, "Bjorn Andersson"
- <andersson@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>
-Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
- <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley" <conor+dt@kernel.org>,
- "Abhinav Kumar" <quic_abhinavk@quicinc.com>,
- <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-X-Mailer: aerc 0.15.2
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org> <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com> <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org> <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt> <236a104c-fc16-4b3d-9a00-e16517c00e3a@linaro.org>
-In-Reply-To: <236a104c-fc16-4b3d-9a00-e16517c00e3a@linaro.org>
+	Fri, 29 Mar 2024 11:02:43 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42T9RgFN020121;
+	Fri, 29 Mar 2024 11:02:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=bJ3pIo5rQ0zAm0yJhgdX2lzFSSi5b0T18UtJsKBRNpY=; b=N2
+	PeXwpO6NMIct/ZFap856FZRbbM7LXiP5JG2j4pvxIac+mxWJfXbmAXDIs3fiihdw
+	pfVWOuLpWeQ0skjnqsHnthD45bjQYWzjRP+0glOoxx0wRMKvzd35/UWBuCCdr0eB
+	o4Fr3X1tEpbvETi4SS/W2L245gd1zHswzijVknNh0zNO1CgycnCWnkhEhAdoT3JF
+	AcqPppa3AP/GhHKs4dV8fmkKIsdjDxBqJZfk7AVBviS52XsaJUnMjO1oeFpkBvTL
+	CBKMs9jIL78Iy35p2X3G3UIJ/SymRi0yHFKmZclB0smceZ9yG5c2dRkbqhBED2iX
+	Oeg6HEt8EvH6+8ZeVADA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x5np29440-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Mar 2024 11:02:29 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42TB2SPp000309
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Mar 2024 11:02:28 GMT
+Received: from [10.214.67.128] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 29 Mar
+ 2024 04:02:23 -0700
+Message-ID: <a04f9185-af77-55c2-db52-bbb3bde50836@quicinc.com>
+Date: Fri, 29 Mar 2024 16:32:07 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.5.1
+Subject: Re: [PATCH 0/4] Add USB Support on Qualcomm's QDU/QRU1000 Platform
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Rob Herring <robh+dt@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>
+References: <20240319090729.14674-1-quic_kbajaj@quicinc.com>
+ <CAA8EJpojQg2BHvR5kZtRxyXWRKy6zV=88_bdcuMH+QE-n4k73A@mail.gmail.com>
+Content-Language: en-US
+From: Komal Bajaj <quic_kbajaj@quicinc.com>
+In-Reply-To: <CAA8EJpojQg2BHvR5kZtRxyXWRKy6zV=88_bdcuMH+QE-n4k73A@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: NbMObZ7yG2ZEikEosG1W_jCoZQAo9DzO
+X-Proofpoint-GUID: NbMObZ7yG2ZEikEosG1W_jCoZQAo9DzO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-29_11,2024-03-28_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 impostorscore=0 priorityscore=1501 spamscore=0
+ bulkscore=0 mlxscore=0 malwarescore=0 clxscore=1015 suspectscore=0
+ mlxlogscore=805 phishscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2403210001 definitions=main-2403290097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240329_020244_214087_78C007EA 
-X-CRM114-Status: GOOD (  26.61  )
+X-CRM114-CacheID: sfid-20240329_040241_998601_D1D4D77A 
+X-CRM114-Status: GOOD (  13.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,96 +109,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue Mar 26, 2024 at 10:02 PM CET, Konrad Dybcio wrote:
-> On 16.03.2024 5:01 PM, Bjorn Andersson wrote:
-> > On Fri, Mar 15, 2024 at 06:35:15PM +0100, Neil Armstrong wrote:
-> >> On 15/03/2024 18:19, Luca Weiss wrote:
-> >>> On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
-> >>>> Register a typec mux in order to change the PHY mode on the Type-C
-> >>>> mux events depending on the mode and the svid when in Altmode setup.
-> >>>>
-> >>>> The DisplayPort phy should be left enabled if is still powered on
-> >>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
-> >>>> PHY is not powered off.
-> >>>>
-> >>>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
-> >>>> will be set in between of USB-Only, Combo and DisplayPort Only so
-> >>>> this will leave enough time to the DRM DisplayPort controller to
-> >>>> turn of the DisplayPort PHY.
-> >>>>
-> >>>> The patchset also includes bindings changes and DT changes.
-> >>>>
-> >>>> This has been successfully tested on an SM8550 board, but the
-> >>>> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
-> >>>> PD USB Hubs and PD Altmode Dongles to make sure the switch works
-> >>>> as expected.
-> >>>>
-> >>>> The DisplayPort 4 lanes setup can be check with:
-> >>>> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
-> >>>> 	name = msm_dp
-> >>>> 	drm_dp_link
-> >>>> 		rate = 540000
-> >>>> 		num_lanes = 4
-> >>>
-> >>> Hi Neil,
-> >>>
-> >>> I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
-> >>> haven't had any success so far.
-> >>>
-> > [..]
-> >>> [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
-> >>> [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
-> >>
-> >> Interesting #1 means the 4 lanes are not physically connected to the other side,
-> >> perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
-> >> or some fixups in the init tables.
-> >>
-> > 
-> > I tested the same on rb3gen2 (qcs6490) a couple of weeks ago, with the
-> > same outcome. Looking at the AUX reads, after switching to 4-lane the
-> > link training is failing on all 4 lanes, in contrast to succeeding only
-> > on the first 2 if you e.g. forget to mux the other two.
-> > 
-> > As such, my expectation is that there's something wrong in the QMP PHY
-> > (or possibly redriver) for this platform.
->
-> Do we have any downstream tag where 4lane dp works? I'm willing to believe
-> the PHY story..
 
-Just tested on Fairphone 5 downstream and 4 lane appears to work there.
-This is with an USB-C to HDMI adapter that only does HDMI.
 
-FP5:/ # cat /sys/kernel/debug/drm_dp/dp_debug
-        state=0x20a5
-        link_rate=270000
-        num_lanes=4
-        resolution=2560x1440@60Hz
-        pclock=241500KHz
-        bpp=24
-        test_req=DP_LINK_STATUS_UPDATED
-        lane_count=4
-        bw_code=10
-        v_level=0
-        p_level=0
+On 3/19/2024 3:05 PM, Dmitry Baryshkov wrote:
+> On Tue, 19 Mar 2024 at 11:08, Komal Bajaj <quic_kbajaj@quicinc.com> wrote:
+>>
+>> This series adds support of USB3 PHY support for Qualcomm's QDU/QRU1000 Platform.
+>>
+>> ---------
+>> Changes in v2:
+>> * Dropped extra lines
+>> * Sorted the tables alphabetically
+>> * Link to v1: https://lore.kernel.org/linux-arm-msm/20240311120215.16845-1-quic_kbajaj@quicinc.com/
+> 
+> So, this is v2, but you didn't mark patches as v2. Please use b4 for
+> sending patches. It can handle patch revisions automatically.
 
-Sources are here:
-https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-5.4/+/refs/heads/odm/rc/target/13/fp5
-And probably more importantly techpack/display:
-https://gerrit-public.fairphone.software/plugins/gitiles/platform/vendor/opensource/display-drivers/+/refs/heads/odm/rc/target/13/fp5
-Dts if useful:
-https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-extra/devicetree/+/refs/heads/kernel/13/fp5
+Apologies for this, forgot to mark patches as v2.
+I will be careful next time.
 
-Regards
-Luca
-
->
-> Konrad
-
+> 
+>>
+>> Komal Bajaj (4):
+>>    dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings for QDU1000
+>>    dt-bindings: phy: qcom,qmp-usb: Add QDU1000 USB3 PHY
+>>    dt-bindings: usb: dwc3: Add QDU1000 compatible
+>>    phy: qcpm-qmp-usb: Add support for QDU1000/QRU1000
+>>
+>>   .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |  2 +
+>>   .../bindings/phy/qcom,usb-snps-femto-v2.yaml  |  1 +
+>>   .../devicetree/bindings/usb/qcom,dwc3.yaml    |  3 ++
+>>   drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 49 +++++++++++++++++++
+>>   4 files changed, 55 insertions(+)
+> 
+> 
+> 
 
 -- 
 linux-phy mailing list
