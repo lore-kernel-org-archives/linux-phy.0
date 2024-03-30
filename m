@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6967EC6FD1F
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Mar 2024 00:51:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC9CEC6FD1F
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Mar 2024 03:58:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tYVNFCqPa2V+k7F4Q9Cm2xEeaoqTFS0fGwDe4RKctg=; b=Qm3hEZMwjPp+8c
-	NEnHOqvrM5peTQc9TXE2tAg9NHch3eJWcQyM/Z3FT5NaRIOe3r0M4JNbkMYDwLohOWDwqAKF9nPS3
-	VNX4pcZ5pHvhWw4dVwKDLEffeQaS2TQ1bNEQC4Jsiir2T+wOsXBm2k89pVckriZ32o4grSSf318qj
-	wskvHztddN4Nxju/dbj9v5i77MzD53K8VeA58siPqK3cUAvKCumljz5lnHLnAHeiCHuVpTwbS22wU
-	G8LeRK9mcZu+m/++Z6imwmJxAKhxFuoCz+u5xlq9Uzfbeu8roXgPai7j4uU5TUWDhdlS9LiyZwmt4
-	AGg5SCe5s44cXXgIVDkg==;
+	List-Owner; bh=QZYzQphpkYkqD7568ol5FpOBcS+oPZfl8/tCmOB3MXI=; b=FNMBRIbLCY37O+
+	2yvSs5T4jBdzGuL9eeWsYaSyMa2vUxpZrLlZdt6WJXqU4Genb994P4YUzSWxfwitmrYaKBEQgulyT
+	LSFteO6Hpi1EKenZtZlPSDOee8IUYiUSfKDu3Om1jxeKSm5IvBLt/OtOB6g1OTYaUkxU7dV57upEv
+	4XwUUJ8+FzIdxYtAPJatkw9zLuYwBzLIyhYQfw8hwkiTW8sxt5NAI0BB3VJUzMJSrQai73u4iUBPl
+	aeerl1PnoOxnlbGhegKf4f7kMTtWVX21T72B8EH/g3wnPuYVn81+xaP8tJaE5cb0gdTBEnPVBnyzw
+	pFFyNnc2DrAqepLvl55w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rqMwO-00000002Raz-3zLi;
-	Sat, 30 Mar 2024 00:51:24 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1rqPrQ-00000002hXL-15lx;
+	Sat, 30 Mar 2024 03:58:28 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rqMwL-00000002RaU-1gsM;
-	Sat, 30 Mar 2024 00:51:22 +0000
+	id 1rqPrN-00000002hWs-2MvE;
+	Sat, 30 Mar 2024 03:58:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1711759882; x=1743295882;
+  t=1711771105; x=1743307105;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=ODnfLfkBj5ljw1xXMK6fJA76YDJnmnHivymq9LFP4Do=;
-  b=MlVy04awwg7/GsedQ8HOS1q81vVkHIHleKV/5KKccVj6w6DOkHGXD0rL
-   LQzfS+RzqI0V8E82uwOiDIBUCdRzLSu1zrL+0q+VzxCJILjySG/o4fAXv
-   W+FAtqhKl/cylbVv6ahkepmJToELgx8ynij/J/uJVYgblq5UkEzmDrJwh
-   thJuOhaJGIc7Us23qNW7pnPqmOdK2qqfGcmfzhkvArfp5ejKy1zBfuTWQ
-   ByK0kMnf8GIaacTLeXLCzdNNqPO/TTHnuGbsfxV6xjWTFeE84jS2FEIaF
-   VkeJ7uCSL8z2Y3gvCeQYNVVD1BlSguzUcrGoPC6jof+UxqgPuU8JAErpR
-   g==;
-X-CSE-ConnectionGUID: 56mziidnRNadErmltt5LMg==
-X-CSE-MsgGUID: NELJWee3RT++m0pcrLKVpA==
-X-IronPort-AV: E=McAfee;i="6600,9927,11028"; a="6893846"
+  bh=+1r0KuPuLBo2r548nWnxoAcgxrG2gmAGvuQwZou/czA=;
+  b=gTe3K77ST8XnYZbEUQlD7KSISpP4gZJ5fxYoRUt0frc+M1v3cE/ffWuF
+   AAReRBk0qVI26/2zwJHHyY5+XEjgdNBmYgBFtx/S5+NSwTAX/xAjYCn7X
+   ugaE37kG4KSPXU0IGYQXRwVqTqjYVJ57ypKj01ffOOoqoEjQmmTCvKCtG
+   8WuKpxp+6YvJe73sQbJlAOMTAU9wWv2dj/ba7G1tAYiFylu259PBDwfq4
+   goEht421UJT9XyVxoPJodVQUlLuf6YOEtkVHoXFQ4SYPIh61/LtNXAi+G
+   6g6WTgFS3jN4TM/TgEGHWApfdFqKZtBdtIRNv+X8h/BHT1rObKMxw5ine
+   w==;
+X-CSE-ConnectionGUID: Tc4j8jsaSu2nL6Cp9LNyIA==
+X-CSE-MsgGUID: 5wyIUcXNSVCr2r2X4yqQZw==
+X-IronPort-AV: E=McAfee;i="6600,9927,11028"; a="32370311"
 X-IronPort-AV: E=Sophos;i="6.07,166,1708416000"; 
-   d="scan'208";a="6893846"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Mar 2024 17:51:18 -0700
+   d="scan'208";a="32370311"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Mar 2024 20:58:21 -0700
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.07,166,1708416000"; 
-   d="scan'208";a="16950694"
+   d="scan'208";a="17213261"
 Received: from lkp-server01.sh.intel.com (HELO be39aa325d23) ([10.239.97.150])
-  by orviesa010.jf.intel.com with ESMTP; 29 Mar 2024 17:51:14 -0700
+  by fmviesa009.fm.intel.com with ESMTP; 29 Mar 2024 20:58:18 -0700
 Received: from kbuild by be39aa325d23 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1rqMwB-0003ny-14;
-	Sat, 30 Mar 2024 00:51:11 +0000
-Date: Sat, 30 Mar 2024 08:51:08 +0800
+	id 1rqPrD-0003vk-37;
+	Sat, 30 Mar 2024 03:58:15 +0000
+Date: Sat, 30 Mar 2024 11:57:34 +0800
 From: kernel test robot <lkp@intel.com>
 To: Richard Zhu <hongxing.zhu@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
 	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
@@ -66,14 +66,14 @@ Cc: oe-kbuild-all@lists.linux.dev, hongxing.zhu@nxp.com,
 	kernel@pengutronix.de, linux-imx@nxp.com
 Subject: Re: [PATCH v1 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY
  driver support
-Message-ID: <202403300825.mjcHpoRu-lkp@intel.com>
+Message-ID: <202403301157.mPlhQUdz-lkp@intel.com>
 References: <1711699790-16494-4-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <1711699790-16494-4-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240329_175121_562163_73998FCA 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20240329_205825_852457_9A064074 
+X-CRM114-Status: GOOD (  13.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,22 +104,28 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Richard-Zhu/dt-bindings-p
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
 patch link:    https://lore.kernel.org/r/1711699790-16494-4-git-send-email-hongxing.zhu%40nxp.com
 patch subject: [PATCH v1 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY driver support
-config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20240330/202403300825.mjcHpoRu-lkp@intel.com/config)
-compiler: m68k-linux-gcc (GCC) 13.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240330/202403300825.mjcHpoRu-lkp@intel.com/reproduce)
+config: powerpc64-randconfig-r062-20240330 (https://download.01.org/0day-ci/archive/20240330/202403301157.mPlhQUdz-lkp@intel.com/config)
+compiler: clang version 19.0.0git (https://github.com/llvm/llvm-project 79ba323bdd0843275019e16b6e9b35133677c514)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240330/202403301157.mPlhQUdz-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202403300825.mjcHpoRu-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202403301157.mPlhQUdz-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
-   drivers/phy/freescale/phy-fsl-imx8q-hsio.c: In function 'imx8q_hsio_set_mode':
->> drivers/phy/freescale/phy-fsl-imx8q-hsio.c:367:15: error: implicit declaration of function 'FIELD_PREP' [-Werror=implicit-function-declaration]
+   In file included from drivers/phy/freescale/phy-fsl-imx8q-hsio.c:8:
+   In file included from include/linux/io.h:13:
+   In file included from arch/powerpc/include/asm/io.h:24:
+   In file included from include/linux/mm.h:2208:
+   include/linux/vmstat.h:522:36: warning: arithmetic between different enumeration types ('enum node_stat_item' and 'enum lru_list') [-Wenum-enum-conversion]
+     522 |         return node_stat_name(NR_LRU_BASE + lru) + 3; // skip "nr_"
+         |                               ~~~~~~~~~~~ ^ ~~~
+>> drivers/phy/freescale/phy-fsl-imx8q-hsio.c:367:8: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
      367 |         val = FIELD_PREP(MODE_MASK, val);
-         |               ^~~~~~~~~~
-   cc1: some warnings being treated as errors
+         |               ^
+   1 warning and 1 error generated.
 
 
 vim +/FIELD_PREP +367 drivers/phy/freescale/phy-fsl-imx8q-hsio.c
