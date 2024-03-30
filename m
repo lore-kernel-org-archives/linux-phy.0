@@ -4,65 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24ABDC6FD1F
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Mar 2024 16:56:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6967EC6FD1F
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Mar 2024 00:51:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YkpGOIfC/eRLHkF8D3h64Iy2RSjlyZ06LHlV0a3DSu8=; b=D3sS/2H04jSujj
-	qW4ES6CMEv65KtZQ3093/TPcnAvVFS165P1ZiSGoA+xfwTUpPDwj1KcZZpqDyq6JuzFLMe53XSAi8
-	8UBdIC3aKAUAds+cMYVjzI5jrAO7EVheffGCoD7q/GAedr23g55Uyqirq0SuO6mAxxU2Z9EDz8/9q
-	ZW6UW5okNaBSgQxlSKXVFlLbx4gTlKxGL1//r+w8teYJtz7Q9d1trb1NIpbV4xtXE0WCZCP4YBcAm
-	ucR9vuRgyEABUZoQ1HHEFivdKJff36mf04r2MI/6K0UaOpqgmjkNKXG5W2NQEO++uPXtY6AilNRmN
-	yh7xV2Chhigyd+B70Exg==;
+	List-Owner; bh=3tYVNFCqPa2V+k7F4Q9Cm2xEeaoqTFS0fGwDe4RKctg=; b=Qm3hEZMwjPp+8c
+	NEnHOqvrM5peTQc9TXE2tAg9NHch3eJWcQyM/Z3FT5NaRIOe3r0M4JNbkMYDwLohOWDwqAKF9nPS3
+	VNX4pcZ5pHvhWw4dVwKDLEffeQaS2TQ1bNEQC4Jsiir2T+wOsXBm2k89pVckriZ32o4grSSf318qj
+	wskvHztddN4Nxju/dbj9v5i77MzD53K8VeA58siPqK3cUAvKCumljz5lnHLnAHeiCHuVpTwbS22wU
+	G8LeRK9mcZu+m/++Z6imwmJxAKhxFuoCz+u5xlq9Uzfbeu8roXgPai7j4uU5TUWDhdlS9LiyZwmt4
+	AGg5SCe5s44cXXgIVDkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rqFWY-00000001Nl9-3F16;
-	Fri, 29 Mar 2024 16:56:14 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rqMwO-00000002Raz-3zLi;
+	Sat, 30 Mar 2024 00:51:24 +0000
+Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rqFWU-00000001NjT-0aqA
-	for linux-phy@lists.infradead.org;
-	Fri, 29 Mar 2024 16:56:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 921AB61994;
-	Fri, 29 Mar 2024 16:56:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6422C433C7;
-	Fri, 29 Mar 2024 16:56:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1711731369;
-	bh=isBCBT3seLZHai1OgzPx3zwWr4nR668ZJ3SMftDDp6g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cJ5kh/eFxvCB7x0HP9o7GJ025aeWR+BDUKfpEeIIYigLiXrGXi/gyZYGwm1M0wIw5
-	 RZ7k6YyugQtGNOCHPSI/Q4LFhlBCbcdGgTklkcpMx2V6f1IKOTHs3ZB7QZp5eTIoi3
-	 u69yhID5We6VtYO8ucXLvNOvfoHL49CS+sepNyKzW/J+NZiNXTMRZZ5eCqZ31Td+68
-	 NorqtgqaNH6A+ShOFysLPth9FfYCFQRw+4Ee/lBwRRpg+k7tLDNIGmNb8Tw1HHP4OY
-	 JF+SGtwvPX0HWLRAzSBautwu9NJ3voJxFVUp7Q4aSyekrr0TY8y9HkKV0JlF4BXBmG
-	 VMUerY5p90Fgw==
-Date: Fri, 29 Mar 2024 22:26:05 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+	id 1rqMwL-00000002RaU-1gsM;
+	Sat, 30 Mar 2024 00:51:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1711759882; x=1743295882;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=ODnfLfkBj5ljw1xXMK6fJA76YDJnmnHivymq9LFP4Do=;
+  b=MlVy04awwg7/GsedQ8HOS1q81vVkHIHleKV/5KKccVj6w6DOkHGXD0rL
+   LQzfS+RzqI0V8E82uwOiDIBUCdRzLSu1zrL+0q+VzxCJILjySG/o4fAXv
+   W+FAtqhKl/cylbVv6ahkepmJToELgx8ynij/J/uJVYgblq5UkEzmDrJwh
+   thJuOhaJGIc7Us23qNW7pnPqmOdK2qqfGcmfzhkvArfp5ejKy1zBfuTWQ
+   ByK0kMnf8GIaacTLeXLCzdNNqPO/TTHnuGbsfxV6xjWTFeE84jS2FEIaF
+   VkeJ7uCSL8z2Y3gvCeQYNVVD1BlSguzUcrGoPC6jof+UxqgPuU8JAErpR
+   g==;
+X-CSE-ConnectionGUID: 56mziidnRNadErmltt5LMg==
+X-CSE-MsgGUID: NELJWee3RT++m0pcrLKVpA==
+X-IronPort-AV: E=McAfee;i="6600,9927,11028"; a="6893846"
+X-IronPort-AV: E=Sophos;i="6.07,166,1708416000"; 
+   d="scan'208";a="6893846"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Mar 2024 17:51:18 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.07,166,1708416000"; 
+   d="scan'208";a="16950694"
+Received: from lkp-server01.sh.intel.com (HELO be39aa325d23) ([10.239.97.150])
+  by orviesa010.jf.intel.com with ESMTP; 29 Mar 2024 17:51:14 -0700
+Received: from kbuild by be39aa325d23 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1rqMwB-0003ny-14;
+	Sat, 30 Mar 2024 00:51:11 +0000
+Date: Sat, 30 Mar 2024 08:51:08 +0800
+From: kernel test robot <lkp@intel.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, frank.li@nxp.com
+Cc: oe-kbuild-all@lists.linux.dev, hongxing.zhu@nxp.com,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT 3/7] phy: qcom: qmp-combo: introduce QPHY_MODE
-Message-ID: <ZgbypXhhTGep1r8-@matsya>
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
- <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-3-07e24a231840@linaro.org>
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH v1 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY
+ driver support
+Message-ID: <202403300825.mjcHpoRu-lkp@intel.com>
+References: <1711699790-16494-4-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-3-07e24a231840@linaro.org>
+In-Reply-To: <1711699790-16494-4-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240329_095610_287685_CF30B97B 
-X-CRM114-Status: GOOD (  18.91  )
+X-CRM114-CacheID: sfid-20240329_175121_562163_73998FCA 
+X-CRM114-Status: GOOD (  12.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,98 +90,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29-02-24, 14:07, Neil Armstrong wrote:
-> Introduce an enum for the QMP Combo PHY modes, use it in the
-> QMP commmon phy init function and default to COMBO mode.
-> 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 41 +++++++++++++++++++++++++++----
->  1 file changed, 36 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index 3721bbea9eae..ac5d528fd7a1 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> @@ -61,6 +61,12 @@
->  
->  #define PHY_INIT_COMPLETE_TIMEOUT		10000
->  
-> +enum qphy_mode {
-> +	QPHY_MODE_COMBO = 0,
-> +	QPHY_MODE_DP_ONLY,
-> +	QPHY_MODE_USB_ONLY,
-> +};
-> +
->  /* set of registers with offsets different per-PHY */
->  enum qphy_reg_layout {
->  	/* PCS registers */
-> @@ -1491,6 +1497,7 @@ struct qmp_combo {
->  
->  	struct mutex phy_mutex;
->  	int init_count;
-> +	enum qphy_mode init_mode;
->  
->  	struct phy *usb_phy;
->  	enum phy_mode mode;
-> @@ -2531,12 +2538,33 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
->  	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
->  		val |= SW_PORTSELECT_VAL;
->  	writel(val, com + QPHY_V3_DP_COM_TYPEC_CTRL);
-> -	writel(USB3_MODE | DP_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
->  
-> -	/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
-> -	qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-> -			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
-> -			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
-> +	switch (qmp->init_mode) {
-> +		case QPHY_MODE_COMBO:
+Hi Richard,
 
-Case should be at same indent as switch :-) coding style 101
+kernel test robot noticed the following build errors:
 
-> +			writel(USB3_MODE | DP_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
-> +
-> +			/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
-> +			qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-> +					SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
-> +					SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
-> +			break;
-> +
-> +		case QPHY_MODE_DP_ONLY:
-> +			writel(DP_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
-> +
-> +			/* bring QMP DP PHY PCS block out of reset */
-> +			qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-> +					SW_DPPHY_RESET_MUX | SW_DPPHY_RESET);
-> +			break;
-> +
-> +		case QPHY_MODE_USB_ONLY:
-> +			writel(USB3_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
-> +
-> +			/* bring QMP USB PHY PCS block out of reset */
-> +			qphy_clrbits(com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-> +					SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
-> +			break;
-> +	}
->  
->  	qphy_clrbits(com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
->  	qphy_clrbits(com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
-> @@ -3545,6 +3573,9 @@ static int qmp_combo_probe(struct platform_device *pdev)
->  	if (ret)
->  		goto err_node_put;
->  
-> +	/* Set PHY_MODE as combo by default */
-> +	qmp->init_mode = QPHY_MODE_COMBO;
-> +
->  	qmp->usb_phy = devm_phy_create(dev, usb_np, &qmp_combo_usb_phy_ops);
->  	if (IS_ERR(qmp->usb_phy)) {
->  		ret = PTR_ERR(qmp->usb_phy);
-> 
-> -- 
-> 2.34.1
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on linus/master v6.9-rc1 next-20240328]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Richard-Zhu/dt-bindings-phy-Add-i-MX8Q-HSIO-SerDes-PHY-binding/20240329-162937
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/1711699790-16494-4-git-send-email-hongxing.zhu%40nxp.com
+patch subject: [PATCH v1 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY driver support
+config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20240330/202403300825.mjcHpoRu-lkp@intel.com/config)
+compiler: m68k-linux-gcc (GCC) 13.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240330/202403300825.mjcHpoRu-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202403300825.mjcHpoRu-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   drivers/phy/freescale/phy-fsl-imx8q-hsio.c: In function 'imx8q_hsio_set_mode':
+>> drivers/phy/freescale/phy-fsl-imx8q-hsio.c:367:15: error: implicit declaration of function 'FIELD_PREP' [-Werror=implicit-function-declaration]
+     367 |         val = FIELD_PREP(MODE_MASK, val);
+         |               ^~~~~~~~~~
+   cc1: some warnings being treated as errors
+
+
+vim +/FIELD_PREP +367 drivers/phy/freescale/phy-fsl-imx8q-hsio.c
+
+   355	
+   356	static int imx8q_hsio_set_mode(struct phy *phy, enum phy_mode mode,
+   357					   int submode)
+   358	{
+   359		u32 val;
+   360		struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
+   361		struct imx8q_hsio_priv *priv = lane->priv;
+   362	
+   363		if (lane->lane_mode != mode)
+   364			return -EINVAL;
+   365	
+   366		val = (mode == PHY_MODE_PCIE) ? MODE_PCIE : MODE_SATA;
+ > 367		val = FIELD_PREP(MODE_MASK, val);
+   368		regmap_update_bits(priv->phy, lane->phy_off + CTRL0, MODE_MASK, val);
+   369	
+   370		switch (submode) {
+   371		case PHY_MODE_PCIE_RC:
+   372			val = FIELD_PREP(DEVICE_TYPE_MASK, PCI_EXP_TYPE_ROOT_PORT);
+   373			break;
+   374		case PHY_MODE_PCIE_EP:
+   375			val = FIELD_PREP(DEVICE_TYPE_MASK, PCI_EXP_TYPE_ENDPOINT);
+   376			break;
+   377		default: /* Support only PCIe EP and RC now. */
+   378			return 0;
+   379		}
+   380		if (submode)
+   381			regmap_update_bits(priv->ctrl, lane->ctrl_off + CTRL0,
+   382					   DEVICE_TYPE_MASK, val);
+   383	
+   384		return 0;
+   385	}
+   386	
 
 -- 
-~Vinod
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
