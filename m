@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1B3BC6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 17:21:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACC7CD1284
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 18:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N8JUuKNwqMuVyKX99zexOMZdLdiFtfyNWg/0DZa6G1s=; b=OneLi0izaxhwdt
-	kL/Byrj3L0Z2+cMe9Z+IE2+8xHlIrADqiY+32Vz3/MLjhgvQRISO94TcI5lpl3ew815O0bVxMM+ne
-	kCOuFEBhlc6Dwme1XNmknxQaqiiWAAyK/Tedg3DHquAu2wwZC4cj94k/gJuGdE7BfT+ZkCcl/2MSP
-	QKUk2SsJr7UKA4T4pn2eUOnsfMeRTOI42jy6BRUt5jtzoH6Bfdrh1n4oIzMSVkBDXQO7H/xEVzMxu
-	xpRJdDGZKz7TLOgcwntSkbRRA2vGnOelftDF/CrXsGaCJam6dbbCbkP4TsmChQ/OeXZV1TvJYycaw
-	A5LCDQtb8GIlDGVeOAFw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=mIQ2T1WyHyr3BSpmdvrpa/IiGnA6UbNptqSxaE9JabY=; b=pXoDodPa5bFICYXIDEWMYn9SVh
+	guEpB4i5cDD9Dr5OTJjXrBj6Osc8j8Ysfw9m9NHut450oxfHLYG0wmsY0NS8488ZlmzRnB7W7fINO
+	f1KIBPCe2AT6tc46ttITqeb0T4AYz6K3KIbvKV9+u3bi3lxqsbGoOmY6QKmnnWK/nRHN2adiXwXey
+	HvRu9+7D7qTLPl57fMKu4mqImk5oqn86ywUrqUSysogM0dU0vlKDLDqhdj5Ih/9zoo9d9ZhzKmg68
+	QB54PD7Ez5WbUk0KIiK5wsxcKBuFGbSQlhV4TAvPJiYWnVPS/We95I5jlpnfEF039foV6pzgVzO4T
+	MbdxxlEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrhpI-0000000CBdB-1ose;
-	Tue, 02 Apr 2024 17:21:36 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rrigl-0000000CKhP-3Nnl;
+	Tue, 02 Apr 2024 18:16:51 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrhpF-0000000CBbz-0fiq;
-	Tue, 02 Apr 2024 17:21:34 +0000
+	id 1rrigh-0000000CKg9-2f8y;
+	Tue, 02 Apr 2024 18:16:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2570A6102C;
-	Tue,  2 Apr 2024 17:21:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 879E7C433F1;
-	Tue,  2 Apr 2024 17:21:30 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 993C5CE0B72;
+	Tue,  2 Apr 2024 18:16:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35C1CC433F1;
+	Tue,  2 Apr 2024 18:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712078491;
-	bh=DnpOibWeEhhYJWAo5GJdkNBTBKaVlT4nCoBWBnjQiTg=;
+	s=k20201202; t=1712081804;
+	bh=8BiCVmFy63V+eTl/AVpgSOVQf6tyNbleMPcurdNocRY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kkR1LxWPiOyeNYU2wTg7krNhTXupOzH+yuLhG3Iv+H/QqOzbVHpk1rcdPtc/M1lRU
-	 tqr3GNmoceWktBQ8jqNGbwAy41Qtqbq10Li5hNplEEYfnXR0WlE6zkC18TmVn2XU+g
-	 SQLPNRsEPBV4N1gbp3O5uHPw2AyRVxQzusInycQmfyq0xWc4zDlSbpise0OugxksUJ
-	 HKvEnkkDyWpMQnBsUZmqp8dJCP3h9/OqsrbU9MxaPuHlZaQWW7mHsXs48GvN54zWeE
-	 p1NX0/yOEiYW/Fv57vWyBta9YswZqIDjwrkyK7wfEKMZBxHChHIZPu/G2Wj7YC1b5q
-	 slvAW9kE4DQSw==
-Date: Tue, 2 Apr 2024 12:21:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	frank.li@nxp.com, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de, imx@lists.linux.dev
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: phy-imx8-pcie: Add binding for
- i.MX8Q HSIO SerDes PHY
-Message-ID: <20240402172128.GA250151-robh@kernel.org>
+	b=SPQ+yVrhybRzaIex8t/Hk+wwzspXlSqzA3gd0X34712H/2JZzhn15PzeqYsvGC7q9
+	 XYJtskpCf6TBGD4zdCMhhZ80osvFEa5KkqhNqnc4cXh9/lfyxN2o9Vm/ifkPQDDdkb
+	 ygjWtSFH+QNheytGnh+8DO1jEtUnut1d8IBi5NOhd9UHu1Ud+AdwnNDAeut/jx0pAK
+	 Q/WG8A3IfIMjC8oFEpYZQk8IggcPvwhliTlvEBw4Ada/K0cqsp0ufYfYDfOsZqIbjO
+	 U7hEkR3btoXiXN3mdMOscNyNN8pBv0BOXEQjOLvRT6sTYotMkMvIEWsL3uI/jzB4aL
+	 Xt9YBatK9DXTg==
+Date: Tue, 2 Apr 2024 19:16:40 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Frank Li <Frank.li@nxp.com>
+Cc: Richard Zhu <hongxing.zhu@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+	imx@lists.linux.dev
+Subject: Re: [PATCH v2 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
+ binding
+Message-ID: <20240402-anemic-aerospace-bc428fff280c@spud>
 References: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
- <1712036704-21064-2-git-send-email-hongxing.zhu@nxp.com>
+ <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
+ <ZgwU8edE3VFYngWR@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1712036704-21064-2-git-send-email-hongxing.zhu@nxp.com>
+In-Reply-To: <ZgwU8edE3VFYngWR@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_102133_307579_7F1774D0 
-X-CRM114-Status: GOOD (  18.72  )
+X-CRM114-CacheID: sfid-20240402_111647_867003_79D71B97 
+X-CRM114-Status: GOOD (  17.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,78 +72,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3084446339681525788=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 02, 2024 at 01:45:02PM +0800, Richard Zhu wrote:
-> Add binding for controller ID and HSIO configuration setting of the
-> i.MX8Q HSIO SerDes PHY.
-> 
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> ---
->  include/dt-bindings/phy/phy-imx8-pcie.h | 29 +++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h b/include/dt-bindings/phy/phy-imx8-pcie.h
-> index 8bbe2d6538d8..3292c8be3354 100644
-> --- a/include/dt-bindings/phy/phy-imx8-pcie.h
-> +++ b/include/dt-bindings/phy/phy-imx8-pcie.h
-> @@ -11,4 +11,33 @@
->  #define IMX8_PCIE_REFCLK_PAD_INPUT	1
->  #define IMX8_PCIE_REFCLK_PAD_OUTPUT	2
->  
-> +/*
-> + * i.MX8QM HSIO subsystem has three lane PHYs and three controllers:
-> + * PCIEA(2 lanes capapble PCIe controller), PCIEB (only support one
 
-capable
+--===============3084446339681525788==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="uXgaz3Nbx29M47AI"
+Content-Disposition: inline
 
-> + * lane) and SATA.
-> + *
-> + * In the different use cases. PCIEA can be binded to PHY lane0, lane1
 
-s/binded/bound/
+--uXgaz3Nbx29M47AI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-And throughout your patches.
+On Tue, Apr 02, 2024 at 10:23:45AM -0400, Frank Li wrote:
+> On Tue, Apr 02, 2024 at 01:45:03PM +0800, Richard Zhu wrote:
+> > Add i.MX8QM and i.MX8QXP HSIO SerDes PHY binding.
+> > - Use the controller ID to specify which controller is binded to the
+> > PHY.
+> > - Introduce one HSIO configuration, mandatory required to set
+> > "PCIE_AB_SELECT" and "PHY_X1_EPCS_SEL" during the initialization.
+> >=20
+> > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+>=20
+> You missed all conor's comments.=20
+> Please double check v1's comments.
 
-> + * or Lane0 and lane1. PCIEB can be binded to lane1 or lane2 PHY. SATA
-> + * can only be binded to last lane2 PHY.
-> + *
-> + * Define i.MX8Q HSIO controller ID here to specify the controller
-> + * binded to the PHY.
-> + * Meanwhile, i.MX8QXP HSIO subsystem has one lane PHY and PCIEB(only
-> + * support one lane) controller.
-> + */
-> +#define IMX8Q_HSIO_PCIEA_ID	0
-> +#define IMX8Q_HSIO_PCIEB_ID	1
-> +#define IMX8Q_HSIO_SATA_ID	2
+> > +  fsl,refclk-pad-mode:
+> > +    description: |
+> > +      Specifies the mode of the refclk pad used. It can be UNUSED(PHY
+> > +      refclock is derived from SoC internal source), INPUT(PHY refclock
+> > +      is provided externally via the refclk pad) or OUTPUT(PHY refclock
+> > +      is derived from SoC internal source and provided on the refclk p=
+ad).
+> > +      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
+> > +      to be used.
+> > +    $ref: /schemas/types.yaml#/definitions/uint32
+> > +    enum: [ 0, 1, 2 ]
+>=20
+> I remember needn't enum because there are header file.
 
-Please use the standard phy mode defines.
+Yah, specifically my comments about this property were missed and were
+probably the most meaningful comments I left.
 
-> +
-> +/*
-> + * On i.MX8QM, PCIEA is mandatory required if the HSIO is enabled.
-> + * Define configurations beside PCIEA is enabled.
-> + *
-> + * On i.MX8QXP, HSIO module only has PCIEB and one lane PHY.
-> + * The "IMX8Q_HSIO_CFG_PCIEB" can be used on i.MX8QXP platforms.
-> + */
-> +#define IMX8Q_HSIO_CFG_SATA		1
-> +#define IMX8Q_HSIO_CFG_PCIEB		2
-> +#define IMX8Q_HSIO_CFG_PCIEBSATA	3
+Thanks for the reminder Frank.
 
-This seems somewhat redundant both as the 3rd define is just an OR of 
-the first 2 and all 3 overlap with the prior defines.
+--uXgaz3Nbx29M47AI
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Seems like with standard PHY modes, the only additional information you 
-might need is PCIEB vs. PCIEA.
+-----BEGIN PGP SIGNATURE-----
 
-Rob
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZgxLhwAKCRB4tDGHoIJi
+0pZcAQCTI+cY1udLcUNjtBNe7Lo4O6o7chZeO/Kb4VgRbXUqoQD+ML1p+97bAlvQ
+s82SO4faNQLQqwutH9R/sp+ZuAP4PQQ=
+=KOqW
+-----END PGP SIGNATURE-----
+
+--uXgaz3Nbx29M47AI--
+
+
+--===============3084446339681525788==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3084446339681525788==--
+
