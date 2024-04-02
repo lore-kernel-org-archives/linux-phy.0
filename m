@@ -4,61 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5112ECD1293
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 06:02:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8E4ECD1284
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 14:24:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R9/aWLuvp8Obd3gOYFrgxA/xN3jJqfCsmAgZRQUinLU=; b=Iw40JJAiJqbwaX
-	d9SZLZc2GEMJvPGdXx29l/gHOho6GJDgIwbBr1F0LtNxXvc9OHcbxONk5nRpuDB3idXcu76reRga9
-	3kN2SMEmQN5tGo/vwnt0CIo7XalbS90p9V53zQaIFI1Q7XifcpwV+p5w0aojbCIHcigGOyi9/Y4CH
-	LGgMLhRqi522zQjm7YHknDdVn9OwA23n9d7zgEKSym3CkAEbZbr+GaIrFRpNmgYUe+8xJ/qW/+IMW
-	Zi5lw3PSeuTa+C8XwgVcvns6sv4R0Y0x6SxHK/1u6qioIiTXlXvjhP9HbjluZ3hccxGWAeXqQQ7cE
-	+FpCYqBqsqz9sJm96D6A==;
+	List-Owner; bh=NfMW6x7aAz1dNvv6BtDhoKPLEIjFcS7UpFDll2vKSuc=; b=HBfustpJnXwFYX
+	jlTC79cMEM8lWVuwm0rJmp4ebxZatZPv7p9bFkrNdgJFQw7K/Dcj5sKU2kKZr1Iu+aPAH1rIDQmMO
+	6k08BDL0DwfoIgVgNO3SPr6ELVm7n83tD0pMwhk5pDLR/AKM4CXJEz8ZfsRtGjUXhQFxWgb5hGvie
+	ppDTbizzIOsfbDcJ5hGyXejPfR1P7JFUPMRe4VizEVGwNmiKJcHaRf8P0gtb9/gOTBEI8b9wMr9w7
+	U7pCAb3x+dpgH5qugemYhHiKibFrCulj+K1H/q9lBCP5gMTxoIPlYeelXE98fssB+VesHRZPFr/Ng
+	Fz7pZhD1xhYJPs9C084A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrXE7-00000009qaS-03Px;
-	Tue, 02 Apr 2024 06:02:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1rrf3a-0000000BYuJ-0thP;
+	Tue, 02 Apr 2024 14:24:10 +0000
+Received: from mail-vi1eur04on20700.outbound.protection.outlook.com ([2a01:111:f403:2611::700] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrXDy-00000009qTd-12oi;
-	Tue, 02 Apr 2024 06:02:25 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DC1521A04E5;
-	Tue,  2 Apr 2024 08:02:18 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5FC1E1A19BC;
-	Tue,  2 Apr 2024 08:02:18 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 0100A183ACAF;
-	Tue,  2 Apr 2024 14:02:16 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	frank.li@nxp.com,
-	conor+dt@kernel.org
-Cc: hongxing.zhu@nxp.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	imx@lists.linux.dev
-Subject: [PATCH v2 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY driver support
-Date: Tue,  2 Apr 2024 13:45:04 +0800
-Message-Id: <1712036704-21064-4-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
+	id 1rrf3W-0000000BYrQ-0tiU;
+	Tue, 02 Apr 2024 14:24:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FGI7e+xNlwj1qsvxwdrP/KWDFsOH5iFDXrkMPnjmPEzwZnYyZtP7WJ3k1Kuw9woHkZ4cWbXygli0qF3ocCPbEcQ5xFGUzWPDfzTI6NAaCpbZN6ndYokMgZI3CMhlIHABay/0k6D4IZaK0VhNt7WivMAnH26APxgqOq2nsjhg5/7WPUb88pHW5H1u3QyKvwFhR8GIXPTNueYnOgxHXW9WW2OjtiFmKEC1YFgbl3Gpj1QXFBMjfwzCCEcRdIWFXNeo/OezXAYqspY3sK+PIhrE6qxehTvKXnL6sfkI7IFvi9t36oKo67g/qCwiDArRaswXMyYKQll44jsowCisdLqhuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=D0X/tKKJMhY12GVY+5NF5MO/RLy2Lljf3RBiEJH3vPo=;
+ b=RP/AXOovvPrEh8KewZT58M7n8sX4X0XDdxrmhmzqlbhpgwOux5CLnsrPnOPd9b/JTcFaALqu9ZNQzLKnSn84Rh/IbHjDP0XT+FfhqnPWcsV5bOwKQ178oAMuhcYD8FEKQSwlO3Gq4rmNiNGd7U2rku63QxEBWod4t4QZ3eqb+Ewzz0a7aqIy2LcLg+X175QTLkIAFW2YT0JBQyvLR6m3b3ca2nlMMfMICX+TTngnUbMMtq8kqjXWfXKtrPWh9rMLuxkBU3XVR7LO73tERjDUV/7ShAeUpTwXLOv2dIKEAAD0ee9EhChxNiLNKw8GF9X766gQcMgAXX1hJdEQpKQYnw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=D0X/tKKJMhY12GVY+5NF5MO/RLy2Lljf3RBiEJH3vPo=;
+ b=W/tzlu1MCR4e024NPm1lpAYSYN5l/SrBocrgmQI02NwdQjtgGSTbQMGEvKAWURW+6v1QYvLeG8NXFlKVBKM/wcETWGi/mHf3DtbHJnA5LFX/ODjjWzQkaxoUMfJHfODBtpFLtT4FJi8+ny36KI1rz75X+E44oP2QyjzeBF+lzbg=
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by PAXPR04MB8910.eurprd04.prod.outlook.com (2603:10a6:102:20d::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.46; Tue, 2 Apr
+ 2024 14:23:54 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::3168:91:27c6:edf6]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::3168:91:27c6:edf6%3]) with mapi id 15.20.7409.042; Tue, 2 Apr 2024
+ 14:23:53 +0000
+Date: Tue, 2 Apr 2024 10:23:45 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	kernel@pengutronix.de, imx@lists.linux.dev
+Subject: Re: [PATCH v2 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
+ binding
+Message-ID: <ZgwU8edE3VFYngWR@lizhi-Precision-Tower-5810>
 References: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
+X-ClientProxiedBy: SJ0PR03CA0058.namprd03.prod.outlook.com
+ (2603:10b6:a03:33e::33) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PAXPR04MB8910:EE_
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: Lq95aTG75BgaOiEg9opI29D6GpU/4bmLtURHWw0LKX7anOB24rLEmlKFId63MqLuRdNQqL8jSzaLJ+HhTzXVy2jGBx6O35uquI97pfwqti6JzkqFQzCWWnUaY+UKTRy0bqAO4VH+INa7ytPelgBJx44ye+6haLuxgYO8Dycd4YMj+i/A4c8/iChhk2Cet1k4cNClVutgathK562bTBXbncbq/7R1l7f4CeUu0XIiaMAa4cz4uOBhRXJHYnOojSVMYoI8UweZSiLiNs5HM6oV2fL8L+cX63zkNve8WDMrOfhY/Zxd9z6y3+XKAU4p/12tLd2POiXYQvyGJAPYzjQE8o3Bbj5qZhg9tjD2hAokSWEn4013r+5bHiKrSsjCBj0dMMPwoP+Tz6ut7MdkoqI3wCMHQMQiaja/o38l5SaJofM1pL7S6n3HIdMQCGW5Z/8fFjq+dfkujenpBI1cHHrc+whJv6qDLnHOlkMDtDGCe1K4e3/nIGA73FNBwhBf4LKWMgamQeU9mZCseiS+jJVja2hYMB8U298hbgfHSkUfFAOXl6YvKFNCveTCxB6DtXveyW4gBdn4W4k545sNY1VjPVg9N4mph+mhTDSBG57sHVSlyEq0UqHwDZW6yU4kvkq7CmPJU9HjnV88Mxq0BI+L0r9bY5JKnOBRSXw4U351rPw=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(52116005)(7416005)(376005)(366007)(38350700005);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?hJxfEO4N9WU+aiwhKXp/NLRyolFzLILbCZM0JZASfcpqsr6dS1CYpLVUOhn/?=
+ =?us-ascii?Q?Nk8ckfdIvkWHS0sw6Qc4ckUBPQ3F4XEYwJhf9ipOhSQhjpBeaYCGFSQHwnWs?=
+ =?us-ascii?Q?dzyKccDYpm4Kqqo+atUo6Z/cQ/A9C2eqQv4pySzyZL0rQTHDlRsbDh259QFU?=
+ =?us-ascii?Q?HPUN7RwLtcX1pT7JWZ8E4Srx78SJW0r+JEa+eAP4KVpMB4tkPTJSi93wcAAM?=
+ =?us-ascii?Q?sC/xDSFDKL5bvxAeBeNF4/RkM+4+IhmJzLkFGhM9e2MYK0+WMacj3ibeumcf?=
+ =?us-ascii?Q?5nbRI3I6phSdZF1hUUprES4S1wOsmNChYIldpi/CsMb5tgiXgd3hmuM3JFai?=
+ =?us-ascii?Q?Gy8Fna1ioWplAywo5n2ixd6JHkfQPE/u9n7RbVQZnU8PQo8jzpUblF8WOBpR?=
+ =?us-ascii?Q?wNS9cy1pSyIVgF109JIdcuDjZBY6XFouaR7VzxBThm2BvV4KJrE3s0dBaQNC?=
+ =?us-ascii?Q?Pqd7V4qLzC2C2dtKMOTSoTv6suar+2AWLov0j3az0Pi8hOR0HvqMukMmnBgu?=
+ =?us-ascii?Q?o77W4PPYOsnPTYZT7xRnUFYpW1EWStPD6hKuEqgAbBWoOT89AZd+hPu9SDas?=
+ =?us-ascii?Q?iaaws+F0cUoNif68n6IJLAidaYU4WSFsP8e8aP6J747a1yOrc3jqac+rRaF3?=
+ =?us-ascii?Q?iP1p1ie/kCdrXkdBMVPVlmegQ/K8cvWWm+08A/2/2PxF0st8+iTQun28KfC0?=
+ =?us-ascii?Q?WBDvwEvlFXXhgr0YKVxxbRF9lpZtd6CIPM/JaCEXp8bHHDZhvYxQztAbc985?=
+ =?us-ascii?Q?rUfTW45NXq4IipGTtv/pbwTWTLbybZnEoTnxR/syYl+0icWN9Vso0UJ8zScj?=
+ =?us-ascii?Q?4vQRYATvVOpWu4nWNXoam09xp50t+Mp1mHdTzHiE+oI1ie+EKrxKqH1Ks2Mm?=
+ =?us-ascii?Q?fGbovFLp5gLl8pCVmQUgW2WpJBHBVmGSTYLJcqh4Akqgl4kC9vRx9eloR2s3?=
+ =?us-ascii?Q?SgZlKLgBhXxic0ImIWp8STvp805UpL66PM/jO4e8RqTyLRLKL03M2zFxUDkp?=
+ =?us-ascii?Q?b9uHmAM0WLmn2V8ZOLWtVaWu2ZurEPUJAqGah002XMZF/pCMFo0JM45XeqHi?=
+ =?us-ascii?Q?ASc7wh5P1BZt/5QsXoXHeTlj8Sm6PU15qLgBl9PUQxz/zSb0Oc8ooIeKssTp?=
+ =?us-ascii?Q?7uhRNfzlVGkujfHFhKFBsWrHt+hHrSPieWw80OQKwsSkaA2/1+zEppaeQv18?=
+ =?us-ascii?Q?u2PLGNtaKsMO/SJ9Via2A9tA4svL+0v4+p/R5wVBs9ROro3SLANcbrOcLGdY?=
+ =?us-ascii?Q?1vvEiworlNGKEENXm0T/6Smq7+uXkNPOFRErArQ2YFMomkgriP5JvqlLtn7A?=
+ =?us-ascii?Q?OUTstlrIw+2jEEs5a1wFQczV0cc1AQIPhFVoGXPRhYhMoUl49x+aKbgMoyWl?=
+ =?us-ascii?Q?24h9JW6GdqO+ZTsm+eFINBLtduQWBnAaSmbkdth66An82aA3RsZVA9pd+0tL?=
+ =?us-ascii?Q?CVtvjXVlqzFxvvLGUPyFnoTvcZL19GeEFcnUKXwX6J8pgyPvxv8Gi3fHSHPp?=
+ =?us-ascii?Q?uMUKNfLEosbSKt19/jLIN/AHi9RoQsa0E4Gp9E/GyPwr8gKOhHhDLSY9mwOC?=
+ =?us-ascii?Q?RIh8BpaPx8D4nLStZyA=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: be349250-44b6-40e0-cab9-08dc53208637
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Apr 2024 14:23:53.7699
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: hws+jl9jV1ofjAy4OpzjvenKfbaOxTuHnnepdFVGbOwGfA9lruKKpmVksve8FUAQv7wMIDU4q4HE4ejDTseieQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8910
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240401_230222_595830_70DCAFCC 
-X-CRM114-Status: GOOD (  28.38  )
+X-CRM114-CacheID: sfid-20240402_072406_300961_1E58F09D 
+X-CRM114-Status: GOOD (  22.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,580 +128,191 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8Q HSIO PHY driver support.
-- Add one HSIO configuration property, that used to select the
-"PCIE_AB_SELECT" and "PHY_X1_EPCS_SEL" during the initialization.
+On Tue, Apr 02, 2024 at 01:45:03PM +0800, Richard Zhu wrote:
+> Add i.MX8QM and i.MX8QXP HSIO SerDes PHY binding.
+> - Use the controller ID to specify which controller is binded to the
+> PHY.
+> - Introduce one HSIO configuration, mandatory required to set
+> "PCIE_AB_SELECT" and "PHY_X1_EPCS_SEL" during the initialization.
+> 
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
----
- drivers/phy/freescale/Kconfig              |   8 +
- drivers/phy/freescale/Makefile             |   1 +
- drivers/phy/freescale/phy-fsl-imx8q-hsio.c | 518 +++++++++++++++++++++
- 3 files changed, 527 insertions(+)
- create mode 100644 drivers/phy/freescale/phy-fsl-imx8q-hsio.c
+You missed all conor's comments. 
+Please double check v1's comments.
 
-diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-index 853958fb2c06..bcddddef1cbb 100644
---- a/drivers/phy/freescale/Kconfig
-+++ b/drivers/phy/freescale/Kconfig
-@@ -35,6 +35,14 @@ config PHY_FSL_IMX8M_PCIE
- 	  Enable this to add support for the PCIE PHY as found on
- 	  i.MX8M family of SOCs.
- 
-+config PHY_FSL_IMX8Q_HSIO
-+	tristate "Freescale i.MX8Q HSIO PHY"
-+	depends on OF && HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Enable this to add support for the HSIO PHY as found on
-+	  i.MX8Q family of SOCs.
-+
- endif
- 
- config PHY_FSL_LYNX_28G
-diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
-index cedb328bc4d2..db888c37fcf9 100644
---- a/drivers/phy/freescale/Makefile
-+++ b/drivers/phy/freescale/Makefile
-@@ -3,4 +3,5 @@ obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)	+= phy-fsl-imx8mq-usb.o
- obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
- obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
- obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
-+obj-$(CONFIG_PHY_FSL_IMX8Q_HSIO)	+= phy-fsl-imx8q-hsio.o
- obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
-diff --git a/drivers/phy/freescale/phy-fsl-imx8q-hsio.c b/drivers/phy/freescale/phy-fsl-imx8q-hsio.c
-new file mode 100644
-index 000000000000..14fc925c4f57
---- /dev/null
-+++ b/drivers/phy/freescale/phy-fsl-imx8q-hsio.c
-@@ -0,0 +1,518 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2024 NXP
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of_device.h>
-+#include <linux/pci_regs.h>
-+#include <linux/phy/phy.h>
-+#include <linux/phy/pcie.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#include <dt-bindings/phy/phy-imx8-pcie.h>
-+
-+#define MAX_NUM_LANES	3
-+#define LANE_NUM_CLKS	5
-+
-+/* Parameters for the waiting for PCIe PHY PLL to lock */
-+#define PHY_INIT_WAIT_USLEEP_MAX	10
-+#define PHY_INIT_WAIT_TIMEOUT		(1000 * PHY_INIT_WAIT_USLEEP_MAX)
-+
-+/* i.MX8Q HSIO registers */
-+#define CTRL0			0x0
-+#define APB_RSTN_0		BIT(0)
-+#define APB_RSTN_1		BIT(1)
-+#define PIPE_RSTN_0_MASK	GENMASK(25, 24)
-+#define PIPE_RSTN_1_MASK	GENMASK(27, 26)
-+#define MODE_MASK		GENMASK(20, 17)
-+#define MODE_PCIE		0x0
-+#define MODE_SATA		0x4
-+#define DEVICE_TYPE_MASK	GENMASK(27, 24)
-+#define EPCS_TXDEEMP		BIT(5)
-+#define EPCS_TXDEEMP_SEL	BIT(6)
-+#define EPCS_PHYRESET_N		BIT(7)
-+#define RESET_N			BIT(12)
-+
-+#define IOB_RXENA		BIT(0)
-+#define IOB_TXENA		BIT(1)
-+#define IOB_A_0_TXOE		BIT(2)
-+#define IOB_A_0_M1M0_2		BIT(4)
-+#define IOB_A_0_M1M0_MASK	GENMASK(4, 3)
-+#define PHYX1_EPCS_SEL		BIT(12)
-+#define PCIE_AB_SELECT		BIT(13)
-+#define CLKREQN_OUT_OVERRIDE	GENMASK(25, 24)
-+
-+#define PHY_STTS0		0x4
-+#define LANE0_TX_PLL_LOCK	BIT(4)
-+#define LANE1_TX_PLL_LOCK	BIT(12)
-+
-+#define CTRL2			0x8
-+#define LTSSM_ENABLE		BIT(4)
-+#define BUTTON_RST_N		BIT(21)
-+#define PERST_N			BIT(22)
-+#define POWER_UP_RST_N		BIT(23)
-+
-+#define PCIE_STTS0		0xc
-+#define PM_REQ_CORE_RST		BIT(19)
-+
-+#define REG48_PMA_STATUS	0x30
-+#define REG48_PMA_RDY		BIT(7)
-+
-+struct imx8q_hsio_drvdata {
-+	int num_lane;
-+};
-+
-+struct imx8q_hsio_lane {
-+	const char * const *clk_names;
-+	struct clk_bulk_data clks[LANE_NUM_CLKS];
-+	u32 clks_cnt;
-+	u32 ctrl_id;
-+	u32 ctrl_off;
-+	u32 idx;
-+	u32 phy_off;
-+	struct imx8q_hsio_priv *priv;
-+	struct phy *phy;
-+	enum phy_mode lane_mode;
-+};
-+
-+struct imx8q_hsio_priv {
-+	void __iomem *base;
-+	struct device *dev;
-+	u32 refclk_pad_mode;
-+	u32 hsio_cfg;
-+	struct regmap *phy;
-+	struct regmap *ctrl;
-+	struct regmap *misc;
-+	const struct imx8q_hsio_drvdata *drvdata;
-+	struct imx8q_hsio_lane lane[MAX_NUM_LANES];
-+};
-+
-+static const char * const imx8q_hsio_lan0_pcie_clks[] = {"apb_pclk0", "pclk0",
-+	"ctl0_crr", "phy0_crr", "misc_crr"};
-+static const char * const imx8q_hsio_lan1_pciea_clks[] = {"apb_pclk1", "pclk1",
-+	"ctl0_crr", "phy0_crr", "misc_crr"};
-+static const char * const imx8q_hsio_lan1_pcieb_clks[] = {"apb_pclk1", "pclk1",
-+	"ctl1_crr", "phy0_crr", "misc_crr"};
-+static const char * const imx8q_hsio_lan2_pcieb_clks[] = {"apb_pclk2", "pclk2",
-+	"ctl1_crr", "phy1_crr", "misc_crr"};
-+static const char * const imx8q_hsio_lane_sata_clks[] = {"pclk2", "epcs_tx",
-+	"epcs_rx", "phy1_crr", "misc_crr"};
-+
-+static const struct regmap_config regmap_config = {
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+};
-+
-+static int imx8q_hsio_init(struct phy *phy)
-+{
-+	int ret, i;
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+	struct device *dev = priv->dev;
-+
-+	/* Assign clocks refer to different modes */
-+	switch (lane->ctrl_id) {
-+	case IMX8Q_HSIO_PCIEA_ID:
-+		if (lane->idx > 1) {
-+			dev_err(dev, "invalid lane ID.");
-+			return -EINVAL;
-+		}
-+
-+		lane->lane_mode = PHY_MODE_PCIE;
-+		lane->ctrl_off = 0;
-+		lane->phy_off = 0;
-+
-+		for (i = 0; i < LANE_NUM_CLKS; i++) {
-+			if (lane->idx)
-+				lane->clks[i].id = imx8q_hsio_lan1_pciea_clks[i];
-+			else
-+				lane->clks[i].id = imx8q_hsio_lan0_pcie_clks[i];
-+		}
-+		break;
-+	case IMX8Q_HSIO_PCIEB_ID:
-+		if (lane->idx > 2) {
-+			dev_err(dev, "invalid lane ID.");
-+			return -EINVAL;
-+		}
-+
-+		lane->lane_mode = PHY_MODE_PCIE;
-+		if (lane->idx == 0) {
-+			/* i.MX8QXP */
-+			lane->ctrl_off = 0;
-+			lane->phy_off = 0;
-+		} else {
-+			/*
-+			 * On i.MX8QM, only second or third lane PHY can
-+			 * be binded to PCIEB.
-+			 */
-+			lane->ctrl_off = SZ_64K;
-+			if (lane->idx == 1)
-+				lane->phy_off = 0;
-+			else /* idx == 2, the third lane is binded to PCIEB */
-+				lane->phy_off = SZ_64K;
-+		}
-+
-+		for (i = 0; i < LANE_NUM_CLKS; i++) {
-+			if (lane->idx == 1)
-+				lane->clks[i].id = imx8q_hsio_lan1_pcieb_clks[i];
-+			else if (lane->idx == 2)
-+				lane->clks[i].id = imx8q_hsio_lan2_pcieb_clks[i];
-+			else /* i.MX8QXP only has PCIEB, it's idx == 0 */
-+				lane->clks[i].id = imx8q_hsio_lan0_pcie_clks[i];
-+
-+		}
-+		break;
-+	case IMX8Q_HSIO_SATA_ID:
-+		/* On i.MX8QM, only the third lane PHY can be binded to SATA */
-+		if (lane->idx != 2) {
-+			dev_err(dev, "invalid lane ID.");
-+			return -EINVAL;
-+		}
-+		lane->ctrl_off = SZ_128K;
-+		lane->lane_mode = PHY_MODE_SATA;
-+		lane->phy_off = SZ_64K;
-+
-+		for (i = 0; i < LANE_NUM_CLKS; i++)
-+			lane->clks[i].id = imx8q_hsio_lane_sata_clks[i];
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	/* Fetch clocks */
-+	ret = devm_clk_bulk_get(dev, LANE_NUM_CLKS, lane->clks);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_bulk_prepare_enable(LANE_NUM_CLKS, lane->clks);
-+	if (ret)
-+		return ret;
-+
-+	/* allow the clocks to stabilize */
-+	usleep_range(200, 500);
-+	return 0;
-+}
-+
-+static int imx8q_hsio_exit(struct phy *phy)
-+{
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+
-+	clk_bulk_disable_unprepare(LANE_NUM_CLKS, lane->clks);
-+
-+	return 0;
-+}
-+
-+static void imx8q_hsio_pcie_phy_resets(struct phy *phy)
-+{
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + CTRL2, BUTTON_RST_N);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + CTRL2, PERST_N);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + CTRL2, POWER_UP_RST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL2, BUTTON_RST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL2, PERST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL2, POWER_UP_RST_N);
-+
-+	if (lane->idx == 1) {
-+		/* The second lane */
-+		regmap_set_bits(priv->phy, lane->phy_off + CTRL0, APB_RSTN_1);
-+		regmap_set_bits(priv->phy, lane->phy_off + CTRL0, PIPE_RSTN_1_MASK);
-+	} else {
-+		regmap_set_bits(priv->phy, lane->phy_off + CTRL0, APB_RSTN_0);
-+		regmap_set_bits(priv->phy, lane->phy_off + CTRL0, PIPE_RSTN_0_MASK);
-+	}
-+}
-+
-+static void imx8q_hsio_sata_phy_resets(struct phy *phy)
-+{
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	/* clear PHY RST, then set it */
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + CTRL0, EPCS_PHYRESET_N);
-+
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL0, EPCS_PHYRESET_N);
-+
-+	/* CTRL RST: SET -> delay 1 us -> CLEAR -> SET */
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL0, RESET_N);
-+	udelay(1);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + CTRL0, RESET_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL0, RESET_N);
-+}
-+
-+static void imx8q_hsio_configure_clk_pad(struct phy *phy)
-+{
-+	bool pll = false;
-+	u32 pad_mode;
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	pad_mode = priv->refclk_pad_mode;
-+	if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
-+		pll = true;
-+		regmap_update_bits(priv->misc, CTRL0,
-+				   IOB_A_0_TXOE | IOB_A_0_M1M0_MASK,
-+				   IOB_A_0_TXOE | IOB_A_0_M1M0_2);
-+	}
-+
-+	regmap_update_bits(priv->misc, CTRL0, IOB_RXENA, pll ? 0 : IOB_RXENA);
-+	regmap_update_bits(priv->misc, CTRL0, IOB_TXENA, pll ? IOB_TXENA : 0);
-+}
-+
-+static int imx8q_hsio_power_on(struct phy *phy)
-+{
-+	int ret;
-+	u32 val, cond;
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	if (lane->lane_mode == PHY_MODE_PCIE)
-+		imx8q_hsio_pcie_phy_resets(phy);
-+	else
-+		/* SATA */
-+		regmap_set_bits(priv->phy, lane->phy_off + CTRL0, APB_RSTN_0);
-+
-+	if (priv->hsio_cfg & IMX8Q_HSIO_CFG_PCIEB)
-+		regmap_set_bits(priv->misc, CTRL0, PCIE_AB_SELECT);
-+	if (priv->hsio_cfg & IMX8Q_HSIO_CFG_SATA)
-+		regmap_set_bits(priv->misc, CTRL0, PHYX1_EPCS_SEL);
-+
-+	imx8q_hsio_configure_clk_pad(phy);
-+
-+	if (lane->lane_mode == PHY_MODE_SATA) {
-+		/*
-+		 * It is possible, for PCIe and SATA are sharing
-+		 * the same clock source, HPLL or external oscillator.
-+		 * When PCIe is in low power modes (L1.X or L2 etc),
-+		 * the clock source can be turned off. In this case,
-+		 * if this clock source is required to be toggling by
-+		 * SATA, then SATA functions will be abnormal.
-+		 * Set the override here to avoid it.
-+		 */
-+		regmap_set_bits(priv->misc, CTRL0, CLKREQN_OUT_OVERRIDE);
-+		regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL0, EPCS_TXDEEMP);
-+		regmap_set_bits(priv->ctrl, lane->ctrl_off + CTRL0, EPCS_TXDEEMP_SEL);
-+
-+		imx8q_hsio_sata_phy_resets(phy);
-+	} else {
-+		/* Toggle apb_pclk to make sure clear the PM_REQ_CORE_RST bit */
-+		clk_disable_unprepare(lane->clks[0].clk);
-+		mdelay(1);
-+		ret = clk_prepare_enable(lane->clks[0].clk);
-+		if (ret) {
-+			dev_err(priv->dev, "unable to enable phy apb_pclk\n");
-+			return ret;
-+		}
-+
-+		/* Bit19 PM_REQ_CORE_RST of pcie_stts0 should be cleared. */
-+		ret = regmap_read_poll_timeout(priv->ctrl,
-+				lane->ctrl_off + PCIE_STTS0,
-+				val, (val & PM_REQ_CORE_RST) == 0,
-+				PHY_INIT_WAIT_USLEEP_MAX,
-+				PHY_INIT_WAIT_TIMEOUT);
-+		if (ret) {
-+			dev_err(priv->dev, "PM_REQ_CORE_RST is set\n");
-+			return ret;
-+		}
-+	}
-+
-+	/* Polling to check the PHY is ready or not. */
-+	if (lane->idx == 1)
-+		cond = LANE1_TX_PLL_LOCK;
-+	else
-+		cond = LANE0_TX_PLL_LOCK;
-+
-+	ret = regmap_read_poll_timeout(priv->phy, lane->phy_off + PHY_STTS0,
-+			val, ((val & cond) == cond),
-+			PHY_INIT_WAIT_USLEEP_MAX, PHY_INIT_WAIT_TIMEOUT);
-+	if (ret)
-+		dev_err(priv->dev, "IMX8Q PHY%d PLL lock timeout\n", lane->idx);
-+	else
-+		dev_info(priv->dev, "IMX8Q PHY%d PLL is locked\n", lane->idx);
-+
-+	if (lane->lane_mode == PHY_MODE_SATA) {
-+		cond = REG48_PMA_RDY;
-+		ret = read_poll_timeout(readb, val, ((val & cond) == cond),
-+				PHY_INIT_WAIT_USLEEP_MAX, PHY_INIT_WAIT_TIMEOUT,
-+				false, priv->base + REG48_PMA_STATUS);
-+		if (ret)
-+			dev_err(priv->dev, "PHY calibration is timeout\n");
-+		else
-+			dev_info(priv->dev, "PHY calibration is done\n");
-+	}
-+
-+	return ret;
-+}
-+
-+static int imx8q_hsio_set_mode(struct phy *phy, enum phy_mode mode,
-+				   int submode)
-+{
-+	u32 val;
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	if (lane->lane_mode != mode)
-+		return -EINVAL;
-+
-+	val = (mode == PHY_MODE_PCIE) ? MODE_PCIE : MODE_SATA;
-+	val = FIELD_PREP(MODE_MASK, val);
-+	regmap_update_bits(priv->phy, lane->phy_off + CTRL0, MODE_MASK, val);
-+
-+	switch (submode) {
-+	case PHY_MODE_PCIE_RC:
-+		val = FIELD_PREP(DEVICE_TYPE_MASK, PCI_EXP_TYPE_ROOT_PORT);
-+		break;
-+	case PHY_MODE_PCIE_EP:
-+		val = FIELD_PREP(DEVICE_TYPE_MASK, PCI_EXP_TYPE_ENDPOINT);
-+		break;
-+	default: /* Support only PCIe EP and RC now. */
-+		return 0;
-+	}
-+	if (submode)
-+		regmap_update_bits(priv->ctrl, lane->ctrl_off + CTRL0,
-+				   DEVICE_TYPE_MASK, val);
-+
-+	return 0;
-+}
-+
-+static int imx8q_hsio_set_speed(struct phy *phy, int speed)
-+{
-+	struct imx8q_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx8q_hsio_priv *priv = lane->priv;
-+
-+	regmap_update_bits(priv->ctrl, lane->ctrl_off + CTRL2, LTSSM_ENABLE,
-+			   speed ? LTSSM_ENABLE : 0);
-+	return 0;
-+}
-+
-+static const struct phy_ops imx8q_hsio_ops = {
-+	.init = imx8q_hsio_init,
-+	.exit = imx8q_hsio_exit,
-+	.power_on = imx8q_hsio_power_on,
-+	.set_mode = imx8q_hsio_set_mode,
-+	.set_speed = imx8q_hsio_set_speed,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct imx8q_hsio_drvdata imx8qxp_serdes_drvdata = {
-+	.num_lane = 1,
-+};
-+
-+static const struct imx8q_hsio_drvdata imx8qm_serdes_drvdata = {
-+	.num_lane = 3,
-+};
-+
-+static const struct of_device_id imx8q_hsio_of_match[] = {
-+	{.compatible = "fsl,imx8qxp-serdes", .data = &imx8qxp_serdes_drvdata},
-+	{.compatible = "fsl,imx8qm-serdes", .data = &imx8qm_serdes_drvdata},
-+	{ },
-+};
-+
-+MODULE_DEVICE_TABLE(of, imx8q_hsio_of_match);
-+
-+static struct phy *imx8q_hsio_xlate(struct device *dev,
-+				    const struct of_phandle_args *args)
-+{
-+	struct imx8q_hsio_priv *priv = dev_get_drvdata(dev);
-+	int idx = args->args[0];
-+	int ctrl_id = args->args[1];
-+	int hsio_cfg = args->args[2];
-+
-+	if (idx >= priv->drvdata->num_lane)
-+		return ERR_PTR(-EINVAL);
-+	priv->lane[idx].idx = idx;
-+	priv->lane[idx].ctrl_id = ctrl_id;
-+	priv->hsio_cfg = hsio_cfg;
-+
-+	return priv->lane[idx].phy;
-+}
-+
-+static int imx8q_hsio_probe(struct platform_device *pdev)
-+{
-+	int i;
-+	void __iomem *off;
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	const struct of_device_id *of_id;
-+	struct imx8q_hsio_priv *priv;
-+	struct phy_provider *provider;
-+
-+	of_id = of_match_device(imx8q_hsio_of_match, dev);
-+	if (!of_id)
-+		return -EINVAL;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+	priv->dev = &pdev->dev;
-+	priv->drvdata = of_device_get_match_data(dev);
-+
-+	/* Get PHY refclk pad mode */
-+	of_property_read_u32(np, "fsl,refclk-pad-mode", &priv->refclk_pad_mode);
-+
-+	priv->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(priv->base))
-+		return PTR_ERR(priv->base);
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "phy");
-+	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->phy))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy),
-+				     "unable to find phy csr registers\n");
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
-+	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->ctrl))
-+		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
-+				     "unable to find ctrl csr registers\n");
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "misc");
-+	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->misc))
-+		return dev_err_probe(dev, PTR_ERR(priv->misc),
-+				     "unable to find misc csr registers\n");
-+
-+	for (i = 0; i < priv->drvdata->num_lane; i++) {
-+		struct imx8q_hsio_lane *lane = &priv->lane[i];
-+		struct phy *phy;
-+
-+		memset(lane, 0, sizeof(*lane));
-+
-+		phy = devm_phy_create(&pdev->dev, NULL, &imx8q_hsio_ops);
-+		if (IS_ERR(phy))
-+			return PTR_ERR(phy);
-+
-+		lane->priv = priv;
-+		lane->phy = phy;
-+		lane->idx = i;
-+		phy_set_drvdata(phy, lane);
-+	}
-+
-+	dev_set_drvdata(dev, priv);
-+	dev_set_drvdata(&pdev->dev, priv);
-+
-+	provider = devm_of_phy_provider_register(&pdev->dev, imx8q_hsio_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static struct platform_driver imx8q_hsio_driver = {
-+	.probe	= imx8q_hsio_probe,
-+	.driver = {
-+		.name	= "imx8q-hsio-phy",
-+		.of_match_table	= imx8q_hsio_of_match,
-+	}
-+};
-+module_platform_driver(imx8q_hsio_driver);
-+
-+MODULE_DESCRIPTION("FSL IMX8Q HSIO SERDES PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.37.1
+Frank
 
+> ---
+>  .../bindings/phy/fsl,imx8q-hsio.yaml          | 143 ++++++++++++++++++
+>  1 file changed, 143 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+> new file mode 100644
+> index 000000000000..506551d4d94a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+> @@ -0,0 +1,143 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,imx8q-hsio.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX8Q SoC series HSIO SERDES PHY
+> +
+> +maintainers:
+> +  - Richard Zhu <hongxing.zhu@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8qxp-serdes
+> +      - fsl,imx8qm-serdes
+> +  reg:
+> +    minItems: 4
+> +    maxItems: 4
+> +
+> +  "#phy-cells":
+> +    const: 3
+> +    description: |
+> +      The first number defines the ID of the PHY contained in the HSIO macro.
+> +      The second defines controller ID binded to the PHY. The third defines the
+> +      HSIO configuratons refer to the different use cases. They are defined in
+> +      dt-bindings/phy/phy-imx8-pcie.h
+> +
+> +  reg-names:
+> +    items:
+> +      - const: reg
+> +      - const: phy
+> +      - const: ctrl
+> +      - const: misc
+> +
+> +  clocks:
+> +    minItems: 5
+> +    maxItems: 14
+> +
+> +  clock-names:
+> +    minItems: 5
+> +    maxItems: 14
+> +
+> +  fsl,refclk-pad-mode:
+> +    description: |
+> +      Specifies the mode of the refclk pad used. It can be UNUSED(PHY
+> +      refclock is derived from SoC internal source), INPUT(PHY refclock
+> +      is provided externally via the refclk pad) or OUTPUT(PHY refclock
+> +      is derived from SoC internal source and provided on the refclk pad).
+> +      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
+> +      to be used.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    enum: [ 0, 1, 2 ]
+
+I remember needn't enum because there are header file.
+
+> +
+> +  power-domains:
+> +    description: |
+> +      i.MX8Q HSIO SerDes power domains. i.MX8QXP has one SerDes power domains.
+> +      And i.MX8QM has two.
+> +    minItems: 1
+> +    maxItems: 2
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - fsl,refclk-pad-mode
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qxp-serdes
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          items:
+> +            - const: apb_pclk0
+> +            - const: pclk0
+> +            - const: phy0_crr
+> +            - const: ctl0_crr
+> +            - const: misc_crr
+> +        power-domains:
+> +          minItems: 1
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qm-serdes
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          items:
+> +            - const: pclk0
+> +            - const: pclk1
+> +            - const: apb_pclk0
+> +            - const: apb_pclk1
+> +            - const: pclk2
+> +            - const: epcs_tx
+> +            - const: epcs_rx
+> +            - const: apb_pclk2
+> +            - const: phy0_crr
+> +            - const: phy1_crr
+> +            - const: ctl0_crr
+> +            - const: ctl1_crr
+> +            - const: ctl2_crr
+> +            - const: misc_crr
+> +        power-domains:
+> +          minItems: 2
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8-clock.h>
+> +    #include <dt-bindings/clock/imx8-lpcg.h>
+> +    #include <dt-bindings/firmware/imx/rsrc.h>
+> +    #include <dt-bindings/phy/phy-imx8-pcie.h>
+> +
+> +    serdes: phy@5f1a0000 {
+
+No "serdes".
+
+> +            compatible = "fsl,imx8qxp-serdes";
+> +            reg = <0x5f1a0000 0x10000>,
+> +                  <0x5f120000 0x10000>,
+> +                  <0x5f140000 0x10000>,
+> +                  <0x5f160000 0x10000>;
+> +            reg-names = "reg", "phy", "ctrl", "misc";
+> +            clocks = <&phyx1_lpcg IMX_LPCG_CLK_0>,
+> +                     <&phyx1_lpcg IMX_LPCG_CLK_4>,
+> +                     <&phyx1_crr1_lpcg IMX_LPCG_CLK_4>,
+> +                     <&pcieb_crr3_lpcg IMX_LPCG_CLK_4>,
+> +                     <&misc_crr5_lpcg IMX_LPCG_CLK_4>;
+> +            clock-names = "apb_pclk0", "pclk0", "phy0_crr", "ctl0_crr",
+> +                          "misc_crr";
+> +            power-domains = <&pd IMX_SC_R_SERDES_1>;
+> +            #phy-cells = <3>;
+> +            status = "disabled";
+
+needn't status = "disabled".
+
+> +    };
+> +...
+> -- 
+> 2.37.1
+> 
 
 -- 
 linux-phy mailing list
