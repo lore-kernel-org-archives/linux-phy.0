@@ -4,37 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 875AEC6FD1F
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 06:02:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B82D1C6FD1F
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 06:02:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oFwYJ9MttcJCu+VD2LYwOQMQ0mSGoUCMBWoTpby3Z9M=; b=Y+2Hrdjc2bzqXh
-	jeGcFMA8xwZzFmE+Sg1Pq2frpGJM23sH8Ck3YlhcdkiDPWPcjxiaPTqkyJYzAz0u8Qn/KK31asp5O
-	M5g5xe5gGo44JhsQA5W0+6B9J4CQY4W1fdoWF6B8x10R8pSMpFKcbXgks3R4iqQn3FtaKiW2h8n55
-	cawvxmiA9gm8Gm7Q1/vBbytVDUpmO6y1OkEcnW6lFKHkSo+RivVX2xEiyaV0BRSb2OattY3Tkagql
-	4udSCC8MSzWEoCBvq+A9rECHA3bb8yeCIFjpiYXEe4Hww+33mjY6bRUMrcFyW/DXbDuPwlbKB3mo0
-	EmghKb4qjgRYEKhlAoig==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sm5H3wrzzjp/Bnh/0W1w+kybABKLo94bCdH76AWwYdo=; b=XFsFm00AiASG3j
+	/MAQPMMvN9qBkxSnFtI+MgyUmMYbW6QpjeOwDxMaGNP5ZZ6+kaCBJi1KIm74+W6IhtUpYvwjjVdtQ
+	+1hU3BuRboD7zJM+Nb5jRxUX+W8Rms1QEZIZriJiQxMGLLgZGX4Vaq0JU4EegvPLLBS2w8I2Lo7nI
+	b+p2me5U1HrPnvx0hSkrz0D+id/5lmK6YLiDClBwoolzMvGEO+r2hdNVCWs1/TusrkhuqVbi3pVNb
+	AA8Ij+IPCCQ7BCkrWHsA5a6h2Z4oiD/V9HZW9c0oIM6MX+c9D8TZC+WgcF4hhxud5OwFwGZS8elf5
+	LbrEomb2aLWQedjmBmyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrXE3-00000009qXS-0LnI;
-	Tue, 02 Apr 2024 06:02:27 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1rrXE5-00000009qYp-0l76;
+	Tue, 02 Apr 2024 06:02:29 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrXDx-00000009qSq-3DqI;
-	Tue, 02 Apr 2024 06:02:23 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8EC861A04B1;
-	Tue,  2 Apr 2024 08:02:15 +0200 (CEST)
+	id 1rrXDy-00000009qTK-3oal;
+	Tue, 02 Apr 2024 06:02:24 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 408B12011F9;
+	Tue,  2 Apr 2024 08:02:18 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 451E11A19C2;
-	Tue,  2 Apr 2024 08:02:15 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AD38A201CA7;
+	Tue,  2 Apr 2024 08:02:17 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 54E401834890;
-	Tue,  2 Apr 2024 14:02:13 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id C69E5183AD14;
+	Tue,  2 Apr 2024 14:02:15 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: vkoul@kernel.org,
 	kishon@kernel.org,
@@ -49,15 +49,16 @@ Cc: hongxing.zhu@nxp.com,
 	linux-kernel@vger.kernel.org,
 	kernel@pengutronix.de,
 	imx@lists.linux.dev
-Subject: [PATCH v2 0/3] Add i.MX8Q HSIO PHY driver support
-Date: Tue,  2 Apr 2024 13:45:01 +0800
-Message-Id: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v2 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY binding
+Date: Tue,  2 Apr 2024 13:45:03 +0800
+Message-Id: <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240401_230221_967754_4931A5BD 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240401_230223_318370_2FE20279 
+X-CRM114-Status: GOOD (  12.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,27 +76,169 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-v2 changes:
-- Place the dt-bindings header file changes as the first one
-in the patch-set, make the annotation more clear, and add
-Frank's Reviewed-by tag into this patch.
+Add i.MX8QM and i.MX8QXP HSIO SerDes PHY binding.
+- Use the controller ID to specify which controller is binded to the
+PHY.
+- Introduce one HSIO configuration, mandatory required to set
+"PCIE_AB_SELECT" and "PHY_X1_EPCS_SEL" during the initialization.
 
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+---
+ .../bindings/phy/fsl,imx8q-hsio.yaml          | 143 ++++++++++++++++++
+ 1 file changed, 143 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
 
-i.MX8Q HSIO module has PHY and mix control regions.
-This patch-set adds i.MX8Q HSIO PHY driver support, and provides
-standard PHY phandles that can be used by i.MX8Q PCIe or SATA
-driver later.
-
-[PATCH v2 1/3] dt-bindings: phy: phy-imx8-pcie: Add binding for
-[PATCH v2 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY binding
-[PATCH v2 3/3] phy: freescale: imx8q-hsio: Add i.MX8Q HSIO PHY driver
-
-Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml | 143 ++++++++++++++++++++++++
-drivers/phy/freescale/Kconfig                             |   8 ++
-drivers/phy/freescale/Makefile                            |   1 +
-drivers/phy/freescale/phy-fsl-imx8q-hsio.c                | 518 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-include/dt-bindings/phy/phy-imx8-pcie.h                   |  29 +++++
-5 files changed, 699 insertions(+)
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+new file mode 100644
+index 000000000000..506551d4d94a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+@@ -0,0 +1,143 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/fsl,imx8q-hsio.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX8Q SoC series HSIO SERDES PHY
++
++maintainers:
++  - Richard Zhu <hongxing.zhu@nxp.com>
++
++properties:
++  compatible:
++    enum:
++      - fsl,imx8qxp-serdes
++      - fsl,imx8qm-serdes
++  reg:
++    minItems: 4
++    maxItems: 4
++
++  "#phy-cells":
++    const: 3
++    description: |
++      The first number defines the ID of the PHY contained in the HSIO macro.
++      The second defines controller ID binded to the PHY. The third defines the
++      HSIO configuratons refer to the different use cases. They are defined in
++      dt-bindings/phy/phy-imx8-pcie.h
++
++  reg-names:
++    items:
++      - const: reg
++      - const: phy
++      - const: ctrl
++      - const: misc
++
++  clocks:
++    minItems: 5
++    maxItems: 14
++
++  clock-names:
++    minItems: 5
++    maxItems: 14
++
++  fsl,refclk-pad-mode:
++    description: |
++      Specifies the mode of the refclk pad used. It can be UNUSED(PHY
++      refclock is derived from SoC internal source), INPUT(PHY refclock
++      is provided externally via the refclk pad) or OUTPUT(PHY refclock
++      is derived from SoC internal source and provided on the refclk pad).
++      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
++      to be used.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [ 0, 1, 2 ]
++
++  power-domains:
++    description: |
++      i.MX8Q HSIO SerDes power domains. i.MX8QXP has one SerDes power domains.
++      And i.MX8QM has two.
++    minItems: 1
++    maxItems: 2
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - clocks
++  - clock-names
++  - fsl,refclk-pad-mode
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - fsl,imx8qxp-serdes
++    then:
++      properties:
++        clock-names:
++          items:
++            - const: apb_pclk0
++            - const: pclk0
++            - const: phy0_crr
++            - const: ctl0_crr
++            - const: misc_crr
++        power-domains:
++          minItems: 1
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - fsl,imx8qm-serdes
++    then:
++      properties:
++        clock-names:
++          items:
++            - const: pclk0
++            - const: pclk1
++            - const: apb_pclk0
++            - const: apb_pclk1
++            - const: pclk2
++            - const: epcs_tx
++            - const: epcs_rx
++            - const: apb_pclk2
++            - const: phy0_crr
++            - const: phy1_crr
++            - const: ctl0_crr
++            - const: ctl1_crr
++            - const: ctl2_crr
++            - const: misc_crr
++        power-domains:
++          minItems: 2
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8-clock.h>
++    #include <dt-bindings/clock/imx8-lpcg.h>
++    #include <dt-bindings/firmware/imx/rsrc.h>
++    #include <dt-bindings/phy/phy-imx8-pcie.h>
++
++    serdes: phy@5f1a0000 {
++            compatible = "fsl,imx8qxp-serdes";
++            reg = <0x5f1a0000 0x10000>,
++                  <0x5f120000 0x10000>,
++                  <0x5f140000 0x10000>,
++                  <0x5f160000 0x10000>;
++            reg-names = "reg", "phy", "ctrl", "misc";
++            clocks = <&phyx1_lpcg IMX_LPCG_CLK_0>,
++                     <&phyx1_lpcg IMX_LPCG_CLK_4>,
++                     <&phyx1_crr1_lpcg IMX_LPCG_CLK_4>,
++                     <&pcieb_crr3_lpcg IMX_LPCG_CLK_4>,
++                     <&misc_crr5_lpcg IMX_LPCG_CLK_4>;
++            clock-names = "apb_pclk0", "pclk0", "phy0_crr", "ctl0_crr",
++                          "misc_crr";
++            power-domains = <&pd IMX_SC_R_SERDES_1>;
++            #phy-cells = <3>;
++            status = "disabled";
++    };
++...
+-- 
+2.37.1
 
 
 -- 
