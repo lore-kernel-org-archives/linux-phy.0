@@ -4,79 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1A1ECD1288
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Apr 2024 19:29:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38655CD1284
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 06:02:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zGOLDnjJgAjWJTi1R6VZrpLHpJKmYtNZCoqP6JC4EeU=; b=sBEtK35zuApr0v
-	D8HTypNgzh5jE3SuB91UrJH5hFWBJVfzzJabS8rkVv8YyecGpc2LY4n6SwTZjal7I7ZtckPGAbVk6
-	rM+Gzbly1z9CcZ2NCHfjenyQLCeyCnCPwf71jgys1wTk9+4JK8czn20ASbiVSLjSnRBQWR+CrDnzn
-	C3FCoBb74wC7lravzOGKrrokDCWnSD26z4foo1WUVHPAilxeobNvv7jwTpfTWXY7QjWTw3xcgG2oE
-	M1AkBgEvHZGKdcvec7ex98b9RJS9jhZ60zqOFRWGzNjfSxwhkP7C9CAxAvaKUYMmS5uagR4YAnUlK
-	5ooVrzI6IdkJU7DKqsbQ==;
+	List-Owner; bh=9qes/sWEPiwU0ocHags847wbjJNRxsgKS55N1pDJ1/Y=; b=UOwOres6HlLls2
+	amJZWw+JEYdi4eFg3+NBTOy2vzVGwMDqSgcLCoSyDC+WloQq/9bOaHUB8cpUkG+cIBLaYRzl7ZqTN
+	r3m72vMGiUpttlSxxh9zSpYoCPNrxp1qENklwBM9gUTlzuVEMK03UeUvskC/wu6WzmjFj8kpgVbyh
+	cdjrjN6ubpGAO+Ik5Zn9eEeendeRssqAju9Ueozc1YmgQQoqCT84EXM92jz54SjhzQbditRF1CCqw
+	5I4PSTpwIHFXps15XXwMtF5wpxAY+HZGcVyi9L+pNuo2Mn203wx739sQNd7huIRmwmmy+c4HCO4Yw
+	2ylTEZk4LhEGvMmT9OgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrNLF-00000008gF9-2Ro2;
-	Mon, 01 Apr 2024 19:29:13 +0000
-Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
+	id 1rrXE2-00000009qXK-3JD6;
+	Tue, 02 Apr 2024 06:02:26 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrNLD-00000008gBm-1ooM
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Apr 2024 19:29:12 +0000
-Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-6143c158b95so24877437b3.1
-        for <linux-phy@lists.infradead.org>; Mon, 01 Apr 2024 12:28:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1711999736; x=1712604536; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=xv+8f59G1ydE+wI15KfA8QF9QXVEjYWWFV8IUCQnbFc=;
-        b=M1K7TaxKrTpeJWiREIeEUThJ/rTTo4kMd0cvNx82kLZuT6o5YR9teEKyUj68g96Dhj
-         Uum2inUNCXqOst2IviMg0/7TAAcLZDFEZqMIC8JOO6AEGV5FNbU7QInxFISPzliSnxZ8
-         fGJ7D2orER8xvvmBp+i1Da1snMDBGT0hcdjpmhGPkhse7oCb1AwOsamdeUEkEHyjkN8V
-         BnXqKSdfgrZsub1jXILzqcvTTbJ9GivwCFZYs+9gAADCVTXmm0YTub6OYB7mw85IPI+6
-         kt98YuDxScQoeS/3BxRsuIJeSKBh7P2SLnYXVtTtkUjvvKH/T3x8+4VdBHWAn74T/7Q1
-         ez/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711999736; x=1712604536;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=xv+8f59G1ydE+wI15KfA8QF9QXVEjYWWFV8IUCQnbFc=;
-        b=GyB6jcgymzeJRKVrCYWAk9nEvWyD/N1wtdRu46R3mSuUY90VU/wnkladhwffdRCsjy
-         2zRvAu8LgrYOHQiuOfPetB8SzhI9wXo0BsKkvuSRY3cbxT86VPhO8yL1TnTD6tUrUqfG
-         13fJ9jOIr2PbBcwHAzfwZiY+c55FgI2OXXGOedXqP7lDMGV+7jXsQURndeuxG8fhmag3
-         vkTQ5cllP2ZHsM8TE7OAzo3KV+6SZm8G71Ni3zuKeY1U7M5K3ETvJc0aQuPcVRGRIP0h
-         jC7/QkPhvqlegMfRY3+iiYxJiiCJWJXrtYY6MInTqWKos760Q4qhUI6Z+ggjDrBDV3fB
-         mduw==
-X-Forwarded-Encrypted: i=1; AJvYcCWcrm0BGOtpK/K9bpyiTD80sO8FVSvIuHEigYlpLoLqqjQX6C6xuLHURkGxXeWxokwXI8GVum7+pn/L2Gs1H5yd8tX6jDBFHG3d3garmA==
-X-Gm-Message-State: AOJu0YzqZxG83QheuCKfS4LidRfoxvUNrjwlMAsMQ6THkemLr2uy3KU3
-	hK2Z9LQEoIVwgFljMyujlIqtylrMcLQbGtbuNrbWhSR8gdD71V70bXj7GpnbkQtTV5+wfNQ4xqp
-	k2pM+zmZqUvCKTKnVjPJRWyD4M2g7bFif5paZkw==
-X-Google-Smtp-Source: AGHT+IHWm5qMWsxo63k0eY6EYUiYPYuVMGXukv5t8HOOBs5noEUjCJ1wrRq1JKnYeS/rT1vhe03lP/9VxfD5xrb3lMs=
-X-Received: by 2002:a25:8a07:0:b0:dd1:3cc1:5352 with SMTP id
- g7-20020a258a07000000b00dd13cc15352mr7406533ybl.15.1711999735796; Mon, 01 Apr
- 2024 12:28:55 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240401182240.55282-1-danila@jiaxyga.com> <20240401182240.55282-3-danila@jiaxyga.com>
-In-Reply-To: <20240401182240.55282-3-danila@jiaxyga.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 1 Apr 2024 22:28:44 +0300
-Message-ID: <CAA8EJprM596sjqSt8DSqM5yn2s6uN98o1SixVaMnFg6mpfVhZw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: sc7180: Fix UFS PHY clocks
-To: Danila Tikhonov <danila@jiaxyga.com>
-Cc: andersson@kernel.org, konrad.dybcio@linaro.org, vkoul@kernel.org, 
-	kishon@kernel.org, robh@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
-	conor+dt@kernel.org, cros-qcom-dts-watchers@chromium.org, 
-	manivannan.sadhasivam@linaro.org, davidwronek@gmail.com, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	id 1rrXDx-00000009qTG-2sGK;
+	Tue, 02 Apr 2024 06:02:23 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C35441A19BB;
+	Tue,  2 Apr 2024 08:02:16 +0200 (CEST)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 798EA1A19B8;
+	Tue,  2 Apr 2024 08:02:16 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 92ABE180031D;
+	Tue,  2 Apr 2024 14:02:14 +0800 (+08)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	frank.li@nxp.com,
+	conor+dt@kernel.org
+Cc: hongxing.zhu@nxp.com,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	kernel@pengutronix.de,
+	imx@lists.linux.dev
+Subject: [PATCH v2 1/3] dt-bindings: phy: phy-imx8-pcie: Add binding for i.MX8Q HSIO SerDes PHY
+Date: Tue,  2 Apr 2024 13:45:02 +0800
+Message-Id: <1712036704-21064-2-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240401_122911_547701_1A30957D 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20240401_230221_912110_EDAF0ADB 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,33 +71,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 1 Apr 2024 at 21:23, Danila Tikhonov <danila@jiaxyga.com> wrote:
->
-> QMP PHY used in SC7180 requires 3 clocks:
->
-> * ref - 19.2MHz reference clock from RPMh
-> * ref_aux - Auxiliary reference clock from GCC
-> * qref - QREF clock from GCC
->
-> While at it, let's move 'clocks' property before 'clock-names' to match
-> the style used commonly.
->
-> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
-> ---
->  arch/arm64/boot/dts/qcom/sc7180.dtsi | 9 ++++++---
->  1 file changed, 6 insertions(+), 3 deletions(-)
+Add binding for controller ID and HSIO configuration setting of the
+i.MX8Q HSIO SerDes PHY.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+---
+ include/dt-bindings/phy/phy-imx8-pcie.h | 29 +++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
+diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h b/include/dt-bindings/phy/phy-imx8-pcie.h
+index 8bbe2d6538d8..3292c8be3354 100644
+--- a/include/dt-bindings/phy/phy-imx8-pcie.h
++++ b/include/dt-bindings/phy/phy-imx8-pcie.h
+@@ -11,4 +11,33 @@
+ #define IMX8_PCIE_REFCLK_PAD_INPUT	1
+ #define IMX8_PCIE_REFCLK_PAD_OUTPUT	2
+ 
++/*
++ * i.MX8QM HSIO subsystem has three lane PHYs and three controllers:
++ * PCIEA(2 lanes capapble PCIe controller), PCIEB (only support one
++ * lane) and SATA.
++ *
++ * In the different use cases. PCIEA can be binded to PHY lane0, lane1
++ * or Lane0 and lane1. PCIEB can be binded to lane1 or lane2 PHY. SATA
++ * can only be binded to last lane2 PHY.
++ *
++ * Define i.MX8Q HSIO controller ID here to specify the controller
++ * binded to the PHY.
++ * Meanwhile, i.MX8QXP HSIO subsystem has one lane PHY and PCIEB(only
++ * support one lane) controller.
++ */
++#define IMX8Q_HSIO_PCIEA_ID	0
++#define IMX8Q_HSIO_PCIEB_ID	1
++#define IMX8Q_HSIO_SATA_ID	2
++
++/*
++ * On i.MX8QM, PCIEA is mandatory required if the HSIO is enabled.
++ * Define configurations beside PCIEA is enabled.
++ *
++ * On i.MX8QXP, HSIO module only has PCIEB and one lane PHY.
++ * The "IMX8Q_HSIO_CFG_PCIEB" can be used on i.MX8QXP platforms.
++ */
++#define IMX8Q_HSIO_CFG_SATA		1
++#define IMX8Q_HSIO_CFG_PCIEB		2
++#define IMX8Q_HSIO_CFG_PCIEBSATA	3
++
+ #endif /* _DT_BINDINGS_IMX8_PCIE_H */
+-- 
+2.37.1
 
---
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
