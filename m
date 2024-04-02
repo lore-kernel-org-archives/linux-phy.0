@@ -4,119 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8E4ECD1284
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 14:24:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DF62CD1284
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Apr 2024 16:15:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NfMW6x7aAz1dNvv6BtDhoKPLEIjFcS7UpFDll2vKSuc=; b=HBfustpJnXwFYX
-	jlTC79cMEM8lWVuwm0rJmp4ebxZatZPv7p9bFkrNdgJFQw7K/Dcj5sKU2kKZr1Iu+aPAH1rIDQmMO
-	6k08BDL0DwfoIgVgNO3SPr6ELVm7n83tD0pMwhk5pDLR/AKM4CXJEz8ZfsRtGjUXhQFxWgb5hGvie
-	ppDTbizzIOsfbDcJ5hGyXejPfR1P7JFUPMRe4VizEVGwNmiKJcHaRf8P0gtb9/gOTBEI8b9wMr9w7
-	U7pCAb3x+dpgH5qugemYhHiKibFrCulj+K1H/q9lBCP5gMTxoIPlYeelXE98fssB+VesHRZPFr/Ng
-	Fz7pZhD1xhYJPs9C084A==;
+	List-Owner; bh=SSCaUuuKMw9diNu8v1bL1Y5SKN44bWntvhKVHNu8YAk=; b=W7pTvwC2uzvp/z
+	jVYgE0SdYrgYDy7uIBKyS8PBYxQdpLkQux2Yp1iWSHgFfhPJJL5fCDrtXCvon2r/Dp6F5v/plFRt7
+	5Zzu6KEicmrUwZejaWM4jPFjOzgLCvOckuD8DAArqgcow2syeLarXVRdOcUoV0g0evUNAWk4ei6lN
+	b5xBwz/dVrsfUQzlpKZYUfNYafbHgYPx/cMJhmJmAVnXrmig+qVx8+AYd7/Ll7LkwXp4Nf43SR0zU
+	DrnGcZfSFUGzQHHQhU2iQVK4hxyJOdTW4k69usMMBO3WTZgHISnnNhEGJLA1PsgUg0927Ltd8it4A
+	vS/py3AlNE1sYf5+kuRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrf3a-0000000BYuJ-0thP;
-	Tue, 02 Apr 2024 14:24:10 +0000
-Received: from mail-vi1eur04on20700.outbound.protection.outlook.com ([2a01:111:f403:2611::700] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1rrgnl-0000000C02P-1Olb;
+	Tue, 02 Apr 2024 16:15:57 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrf3W-0000000BYrQ-0tiU;
-	Tue, 02 Apr 2024 14:24:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FGI7e+xNlwj1qsvxwdrP/KWDFsOH5iFDXrkMPnjmPEzwZnYyZtP7WJ3k1Kuw9woHkZ4cWbXygli0qF3ocCPbEcQ5xFGUzWPDfzTI6NAaCpbZN6ndYokMgZI3CMhlIHABay/0k6D4IZaK0VhNt7WivMAnH26APxgqOq2nsjhg5/7WPUb88pHW5H1u3QyKvwFhR8GIXPTNueYnOgxHXW9WW2OjtiFmKEC1YFgbl3Gpj1QXFBMjfwzCCEcRdIWFXNeo/OezXAYqspY3sK+PIhrE6qxehTvKXnL6sfkI7IFvi9t36oKo67g/qCwiDArRaswXMyYKQll44jsowCisdLqhuA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=D0X/tKKJMhY12GVY+5NF5MO/RLy2Lljf3RBiEJH3vPo=;
- b=RP/AXOovvPrEh8KewZT58M7n8sX4X0XDdxrmhmzqlbhpgwOux5CLnsrPnOPd9b/JTcFaALqu9ZNQzLKnSn84Rh/IbHjDP0XT+FfhqnPWcsV5bOwKQ178oAMuhcYD8FEKQSwlO3Gq4rmNiNGd7U2rku63QxEBWod4t4QZ3eqb+Ewzz0a7aqIy2LcLg+X175QTLkIAFW2YT0JBQyvLR6m3b3ca2nlMMfMICX+TTngnUbMMtq8kqjXWfXKtrPWh9rMLuxkBU3XVR7LO73tERjDUV/7ShAeUpTwXLOv2dIKEAAD0ee9EhChxNiLNKw8GF9X766gQcMgAXX1hJdEQpKQYnw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=D0X/tKKJMhY12GVY+5NF5MO/RLy2Lljf3RBiEJH3vPo=;
- b=W/tzlu1MCR4e024NPm1lpAYSYN5l/SrBocrgmQI02NwdQjtgGSTbQMGEvKAWURW+6v1QYvLeG8NXFlKVBKM/wcETWGi/mHf3DtbHJnA5LFX/ODjjWzQkaxoUMfJHfODBtpFLtT4FJi8+ny36KI1rz75X+E44oP2QyjzeBF+lzbg=
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by PAXPR04MB8910.eurprd04.prod.outlook.com (2603:10a6:102:20d::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.46; Tue, 2 Apr
- 2024 14:23:54 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::3168:91:27c6:edf6]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::3168:91:27c6:edf6%3]) with mapi id 15.20.7409.042; Tue, 2 Apr 2024
- 14:23:53 +0000
-Date: Tue, 2 Apr 2024 10:23:45 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de, imx@lists.linux.dev
-Subject: Re: [PATCH v2 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
- binding
-Message-ID: <ZgwU8edE3VFYngWR@lizhi-Precision-Tower-5810>
-References: <1712036704-21064-1-git-send-email-hongxing.zhu@nxp.com>
- <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <1712036704-21064-3-git-send-email-hongxing.zhu@nxp.com>
-X-ClientProxiedBy: SJ0PR03CA0058.namprd03.prod.outlook.com
- (2603:10b6:a03:33e::33) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	id 1rrgni-0000000C01f-3Wzl
+	for linux-phy@lists.infradead.org;
+	Tue, 02 Apr 2024 16:15:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id C05C6CE1B76;
+	Tue,  2 Apr 2024 16:15:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B58D2C433F1;
+	Tue,  2 Apr 2024 16:15:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712074552;
+	bh=4NxXywfhlZNac9KSvHpb7hWlGWljpny7k88YW/fGUtc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=GYigrtOV+u4k7E1CeM0cd+q9lkmsaFscaPs1nNLOAqFwYz8G17Ph2vC+xr8IdutUL
+	 cFM4JMecXBBoB1YV7yahrKuuGu9A/6+zF03a1bDuF1HwYEjwwUfVzKsMNTijLC4gmO
+	 zESBiNaA7778fOaKb1l5Mkv7YA8ytOSZ3dk8MNz5VKzheg7nh6/ugVelxwpD1mkurB
+	 Gk2GZlhaodniLa3fanI7P/eaAuHnjjYFMnM/FjCSix5fHcLFaAh2qhfNS5iniYKc2i
+	 AA1LjoO0ZnbBmT7b7Itx6P4OSeSol10+lJ8WY4nP7rUeEpD/CnxRpXj0k4Mb1VpETV
+	 fWb+aCVYfKDRA==
+Date: Tue, 2 Apr 2024 11:15:49 -0500
+From: Rob Herring <robh@kernel.org>
+To: Danila Tikhonov <danila@jiaxyga.com>
+Cc: davidwronek@gmail.com, manivannan.sadhasivam@linaro.org,
+	krzysztof.kozlowski+dt@linaro.org, linux-arm-msm@vger.kernel.org,
+	konrad.dybcio@linaro.org, linux-phy@lists.infradead.org,
+	conor+dt@kernel.org, kishon@kernel.org, devicetree@vger.kernel.org,
+	andersson@kernel.org, vkoul@kernel.org,
+	linux-kernel@vger.kernel.org, cros-qcom-dts-watchers@chromium.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qmp-ufs: Fix PHY clocks for SC7180
+Message-ID: <171207454539.241562.7875961224491277526.robh@kernel.org>
+References: <20240401182240.55282-1-danila@jiaxyga.com>
+ <20240401182240.55282-2-danila@jiaxyga.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PAXPR04MB8910:EE_
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Lq95aTG75BgaOiEg9opI29D6GpU/4bmLtURHWw0LKX7anOB24rLEmlKFId63MqLuRdNQqL8jSzaLJ+HhTzXVy2jGBx6O35uquI97pfwqti6JzkqFQzCWWnUaY+UKTRy0bqAO4VH+INa7ytPelgBJx44ye+6haLuxgYO8Dycd4YMj+i/A4c8/iChhk2Cet1k4cNClVutgathK562bTBXbncbq/7R1l7f4CeUu0XIiaMAa4cz4uOBhRXJHYnOojSVMYoI8UweZSiLiNs5HM6oV2fL8L+cX63zkNve8WDMrOfhY/Zxd9z6y3+XKAU4p/12tLd2POiXYQvyGJAPYzjQE8o3Bbj5qZhg9tjD2hAokSWEn4013r+5bHiKrSsjCBj0dMMPwoP+Tz6ut7MdkoqI3wCMHQMQiaja/o38l5SaJofM1pL7S6n3HIdMQCGW5Z/8fFjq+dfkujenpBI1cHHrc+whJv6qDLnHOlkMDtDGCe1K4e3/nIGA73FNBwhBf4LKWMgamQeU9mZCseiS+jJVja2hYMB8U298hbgfHSkUfFAOXl6YvKFNCveTCxB6DtXveyW4gBdn4W4k545sNY1VjPVg9N4mph+mhTDSBG57sHVSlyEq0UqHwDZW6yU4kvkq7CmPJU9HjnV88Mxq0BI+L0r9bY5JKnOBRSXw4U351rPw=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(52116005)(7416005)(376005)(366007)(38350700005);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?hJxfEO4N9WU+aiwhKXp/NLRyolFzLILbCZM0JZASfcpqsr6dS1CYpLVUOhn/?=
- =?us-ascii?Q?Nk8ckfdIvkWHS0sw6Qc4ckUBPQ3F4XEYwJhf9ipOhSQhjpBeaYCGFSQHwnWs?=
- =?us-ascii?Q?dzyKccDYpm4Kqqo+atUo6Z/cQ/A9C2eqQv4pySzyZL0rQTHDlRsbDh259QFU?=
- =?us-ascii?Q?HPUN7RwLtcX1pT7JWZ8E4Srx78SJW0r+JEa+eAP4KVpMB4tkPTJSi93wcAAM?=
- =?us-ascii?Q?sC/xDSFDKL5bvxAeBeNF4/RkM+4+IhmJzLkFGhM9e2MYK0+WMacj3ibeumcf?=
- =?us-ascii?Q?5nbRI3I6phSdZF1hUUprES4S1wOsmNChYIldpi/CsMb5tgiXgd3hmuM3JFai?=
- =?us-ascii?Q?Gy8Fna1ioWplAywo5n2ixd6JHkfQPE/u9n7RbVQZnU8PQo8jzpUblF8WOBpR?=
- =?us-ascii?Q?wNS9cy1pSyIVgF109JIdcuDjZBY6XFouaR7VzxBThm2BvV4KJrE3s0dBaQNC?=
- =?us-ascii?Q?Pqd7V4qLzC2C2dtKMOTSoTv6suar+2AWLov0j3az0Pi8hOR0HvqMukMmnBgu?=
- =?us-ascii?Q?o77W4PPYOsnPTYZT7xRnUFYpW1EWStPD6hKuEqgAbBWoOT89AZd+hPu9SDas?=
- =?us-ascii?Q?iaaws+F0cUoNif68n6IJLAidaYU4WSFsP8e8aP6J747a1yOrc3jqac+rRaF3?=
- =?us-ascii?Q?iP1p1ie/kCdrXkdBMVPVlmegQ/K8cvWWm+08A/2/2PxF0st8+iTQun28KfC0?=
- =?us-ascii?Q?WBDvwEvlFXXhgr0YKVxxbRF9lpZtd6CIPM/JaCEXp8bHHDZhvYxQztAbc985?=
- =?us-ascii?Q?rUfTW45NXq4IipGTtv/pbwTWTLbybZnEoTnxR/syYl+0icWN9Vso0UJ8zScj?=
- =?us-ascii?Q?4vQRYATvVOpWu4nWNXoam09xp50t+Mp1mHdTzHiE+oI1ie+EKrxKqH1Ks2Mm?=
- =?us-ascii?Q?fGbovFLp5gLl8pCVmQUgW2WpJBHBVmGSTYLJcqh4Akqgl4kC9vRx9eloR2s3?=
- =?us-ascii?Q?SgZlKLgBhXxic0ImIWp8STvp805UpL66PM/jO4e8RqTyLRLKL03M2zFxUDkp?=
- =?us-ascii?Q?b9uHmAM0WLmn2V8ZOLWtVaWu2ZurEPUJAqGah002XMZF/pCMFo0JM45XeqHi?=
- =?us-ascii?Q?ASc7wh5P1BZt/5QsXoXHeTlj8Sm6PU15qLgBl9PUQxz/zSb0Oc8ooIeKssTp?=
- =?us-ascii?Q?7uhRNfzlVGkujfHFhKFBsWrHt+hHrSPieWw80OQKwsSkaA2/1+zEppaeQv18?=
- =?us-ascii?Q?u2PLGNtaKsMO/SJ9Via2A9tA4svL+0v4+p/R5wVBs9ROro3SLANcbrOcLGdY?=
- =?us-ascii?Q?1vvEiworlNGKEENXm0T/6Smq7+uXkNPOFRErArQ2YFMomkgriP5JvqlLtn7A?=
- =?us-ascii?Q?OUTstlrIw+2jEEs5a1wFQczV0cc1AQIPhFVoGXPRhYhMoUl49x+aKbgMoyWl?=
- =?us-ascii?Q?24h9JW6GdqO+ZTsm+eFINBLtduQWBnAaSmbkdth66An82aA3RsZVA9pd+0tL?=
- =?us-ascii?Q?CVtvjXVlqzFxvvLGUPyFnoTvcZL19GeEFcnUKXwX6J8pgyPvxv8Gi3fHSHPp?=
- =?us-ascii?Q?uMUKNfLEosbSKt19/jLIN/AHi9RoQsa0E4Gp9E/GyPwr8gKOhHhDLSY9mwOC?=
- =?us-ascii?Q?RIh8BpaPx8D4nLStZyA=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: be349250-44b6-40e0-cab9-08dc53208637
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Apr 2024 14:23:53.7699
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: hws+jl9jV1ofjAy4OpzjvenKfbaOxTuHnnepdFVGbOwGfA9lruKKpmVksve8FUAQv7wMIDU4q4HE4ejDTseieQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8910
+Content-Disposition: inline
+In-Reply-To: <20240401182240.55282-2-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_072406_300961_1E58F09D 
-X-CRM114-Status: GOOD (  22.13  )
+X-CRM114-CacheID: sfid-20240402_091555_264391_D14FC841 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,186 +78,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 02, 2024 at 01:45:03PM +0800, Richard Zhu wrote:
-> Add i.MX8QM and i.MX8QXP HSIO SerDes PHY binding.
-> - Use the controller ID to specify which controller is binded to the
-> PHY.
-> - Introduce one HSIO configuration, mandatory required to set
-> "PCIE_AB_SELECT" and "PHY_X1_EPCS_SEL" during the initialization.
+
+On Mon, 01 Apr 2024 21:22:39 +0300, Danila Tikhonov wrote:
+> QMP UFS PHY used in SC7180 requires 3 clocks:
 > 
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-
-You missed all conor's comments. 
-Please double check v1's comments.
-
-Frank
-
+> * ref - 19.2MHz reference clock from RPMh
+> * ref_aux - Auxiliary reference clock from GCC
+> * qref - QREF clock from GCC
+> 
+> This change obviously breaks the ABI, but it is inevitable since the
+> clock topology needs to be accurately described in the binding.
+> 
+> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 > ---
->  .../bindings/phy/fsl,imx8q-hsio.yaml          | 143 ++++++++++++++++++
->  1 file changed, 143 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
-> new file mode 100644
-> index 000000000000..506551d4d94a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8q-hsio.yaml
-> @@ -0,0 +1,143 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,imx8q-hsio.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX8Q SoC series HSIO SERDES PHY
-> +
-> +maintainers:
-> +  - Richard Zhu <hongxing.zhu@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8qxp-serdes
-> +      - fsl,imx8qm-serdes
-> +  reg:
-> +    minItems: 4
-> +    maxItems: 4
-> +
-> +  "#phy-cells":
-> +    const: 3
-> +    description: |
-> +      The first number defines the ID of the PHY contained in the HSIO macro.
-> +      The second defines controller ID binded to the PHY. The third defines the
-> +      HSIO configuratons refer to the different use cases. They are defined in
-> +      dt-bindings/phy/phy-imx8-pcie.h
-> +
-> +  reg-names:
-> +    items:
-> +      - const: reg
-> +      - const: phy
-> +      - const: ctrl
-> +      - const: misc
-> +
-> +  clocks:
-> +    minItems: 5
-> +    maxItems: 14
-> +
-> +  clock-names:
-> +    minItems: 5
-> +    maxItems: 14
-> +
-> +  fsl,refclk-pad-mode:
-> +    description: |
-> +      Specifies the mode of the refclk pad used. It can be UNUSED(PHY
-> +      refclock is derived from SoC internal source), INPUT(PHY refclock
-> +      is provided externally via the refclk pad) or OUTPUT(PHY refclock
-> +      is derived from SoC internal source and provided on the refclk pad).
-> +      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
-> +      to be used.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    enum: [ 0, 1, 2 ]
 
-I remember needn't enum because there are header file.
+Acked-by: Rob Herring <robh@kernel.org>
 
-> +
-> +  power-domains:
-> +    description: |
-> +      i.MX8Q HSIO SerDes power domains. i.MX8QXP has one SerDes power domains.
-> +      And i.MX8QM has two.
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +  - fsl,refclk-pad-mode
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,imx8qxp-serdes
-> +    then:
-> +      properties:
-> +        clock-names:
-> +          items:
-> +            - const: apb_pclk0
-> +            - const: pclk0
-> +            - const: phy0_crr
-> +            - const: ctl0_crr
-> +            - const: misc_crr
-> +        power-domains:
-> +          minItems: 1
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,imx8qm-serdes
-> +    then:
-> +      properties:
-> +        clock-names:
-> +          items:
-> +            - const: pclk0
-> +            - const: pclk1
-> +            - const: apb_pclk0
-> +            - const: apb_pclk1
-> +            - const: pclk2
-> +            - const: epcs_tx
-> +            - const: epcs_rx
-> +            - const: apb_pclk2
-> +            - const: phy0_crr
-> +            - const: phy1_crr
-> +            - const: ctl0_crr
-> +            - const: ctl1_crr
-> +            - const: ctl2_crr
-> +            - const: misc_crr
-> +        power-domains:
-> +          minItems: 2
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8-clock.h>
-> +    #include <dt-bindings/clock/imx8-lpcg.h>
-> +    #include <dt-bindings/firmware/imx/rsrc.h>
-> +    #include <dt-bindings/phy/phy-imx8-pcie.h>
-> +
-> +    serdes: phy@5f1a0000 {
-
-No "serdes".
-
-> +            compatible = "fsl,imx8qxp-serdes";
-> +            reg = <0x5f1a0000 0x10000>,
-> +                  <0x5f120000 0x10000>,
-> +                  <0x5f140000 0x10000>,
-> +                  <0x5f160000 0x10000>;
-> +            reg-names = "reg", "phy", "ctrl", "misc";
-> +            clocks = <&phyx1_lpcg IMX_LPCG_CLK_0>,
-> +                     <&phyx1_lpcg IMX_LPCG_CLK_4>,
-> +                     <&phyx1_crr1_lpcg IMX_LPCG_CLK_4>,
-> +                     <&pcieb_crr3_lpcg IMX_LPCG_CLK_4>,
-> +                     <&misc_crr5_lpcg IMX_LPCG_CLK_4>;
-> +            clock-names = "apb_pclk0", "pclk0", "phy0_crr", "ctl0_crr",
-> +                          "misc_crr";
-> +            power-domains = <&pd IMX_SC_R_SERDES_1>;
-> +            #phy-cells = <3>;
-> +            status = "disabled";
-
-needn't status = "disabled".
-
-> +    };
-> +...
-> -- 
-> 2.37.1
-> 
 
 -- 
 linux-phy mailing list
