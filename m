@@ -4,119 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 603E3CD1284
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 13:34:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85A1ECD1284
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 17:11:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n4JL8J6s9S6dHsWtX+FEOUK/9MseR+TGI1uMTICJFyE=; b=QLnG+v33Yf4/uG
-	68mmLuu4/4QG7SJrIp95P//lQ4hiyZHR+Fhop3LbE4LHdXrekMx3LS7+5oBKseulkuPH2+aYQbs3Y
-	R58A16EfH47KwlRRk8FOi+omY974dSvi1y35oLJ++UGG7+GrhoSLTxXfWt1Dstd5PX7XicqKEeNyY
-	IjnZpFNTS2+7Yu9k6oxkQ5Vfd88hoBE5IQ8G/ZFLgBLGSKJ1fXYL1/nsn9SpEJ1yo0lFTY2ihnJYH
-	C7J9JdpyrZ+hoJ2mhGuKhSCcLtsq5MWEEqgjhsvMTTsUiPiY12tQbjn7GT1D1a8KmD7BrarZU5X0L
-	gGe++q+We3Hm+9Ps4Hqg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tjOeNkQiyWx3weQv8UrmpRm6E25W4ii5DIEq9kHWBZ8=; b=mm96CD+X0LN0YI
+	LLi8dINI/QWKL73eNDaloSQ8olOKNl14giCwoeJiRq9jdJR61onUtA58UKGtDP8TjyspQBhe1GXxA
+	rcrtHlHuWAa2dkkieUBZZRSN8SYRRQ3Mf/vA6HPtvesODhGmI8lO7NckMYSBjqyEDD8lEY9sTEKnm
+	8R1/62BoJHnAqofxWHSiQxgTDHpLw3/vALQ9uctXIWY7stBjjmT5JeVMK5vsq2AzawemCdredizyx
+	embTlMMdEY84eKXQ32IYua6HOEgm05CfLU5PLmiAkndmytcUUKsA423k1v92oqEPCs5UGcB0aa7pi
+	yCI7MbRSdHwnsp1NaGHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsNEq-00000002pPj-0I8d;
-	Thu, 04 Apr 2024 13:34:44 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rsQcz-00000003cBX-0GGc;
+	Thu, 04 Apr 2024 17:11:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMCD-00000002bZo-3apC
-	for linux-phy@bombadil.infradead.org;
-	Thu, 04 Apr 2024 12:27:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=v2/Kxl6LpRi19aNU0GnPRsNjsIub/vSGQr1JFgUlFR8=; b=i5jaeME5EKUr8waXN15DkdldLq
-	ehRtECdugHaME0O+Dqfkg4p2yfhiQ3eVcGdez7vrx01Gf5pOPtQymeELeBEa4lyf2T6WF36/0FBWB
-	HU0hr9iwOk+OeouqU7TRZ5Etzj67U5ejY6X0qWbYUHmH6FFIDTq/tMiTlMKK8r7a1hT0+PVCbOJc+
-	rZ3d3/8/odRp8WqHSa6KI6Rs0Ke56lbDvByC5j69DCiu2kHSaXv5Ac/KE4Clq/oEJuZvzYX8kUdol
-	c7ToKvT6QtcGAQVqb++8PxC9bGOFDI1nMA00xCjTjUInkQ6nkO+HO1zacKhGEBP7virLynV1235zV
-	KmyNowzA==;
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMC7-000000052MQ-1JNv
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Apr 2024 12:27:56 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-34005b5927eso597756f8f.1
-        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 05:27:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712233670; x=1712838470; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=v2/Kxl6LpRi19aNU0GnPRsNjsIub/vSGQr1JFgUlFR8=;
-        b=nHaU3D6F5J1dCMK5RSFjJmv8cXSZOju2nkNuBKLcfZD+t5GePQ5Mm8CfylqqTMtU1P
-         noaugmq4HO0ydjelCpeGgs5xIFTHSithGpEqqkCw0GxXS8MksWo/mMNmhXZrXV8+umfx
-         5nN9EcGTyvcvG8MK+4eETO6VLvB0p6VQcTV6J5UQzsm+VJdfBLXACEDtQ1Fx7OxaMyDn
-         A3E0oJDLZiTqmzRht24WKGP/sbHxE+bTBRXDnGX3GpG9fOrtLqoCccfkEC9VjDDafVTE
-         /ZFrQo+DwtvpGrLtuC7qndykp96ZaD9B4TI2qPzu/zP0XT20dPNqNySklTQR3qqhJoib
-         iXMA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712233670; x=1712838470;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=v2/Kxl6LpRi19aNU0GnPRsNjsIub/vSGQr1JFgUlFR8=;
-        b=qwVbrszx7Dtsj/pBwg3D2aIv9TCtAUfiWzikjuyBEx9GwDWU2nkaKryf9EAr8SWoXl
-         gSor/ZxVLbtV1n1AKTusdUgFL8nZb+1gWgnLF3oeOTAMWzDCZUMqDU3ChAWM1jFwFCi7
-         uvxslIgKjgSltOwnthXne6KoyCKcbrdZiDF2J/uy0p/xberkdH8t2oqJhb2XYmAl/Abl
-         MueACYrmPBBH+4z4f6mDt/FQkDOVgDGF0PrEIGvNIANuLUCBY0lewUZH94H6POpdNTo6
-         DJIvOSCNb+sVXM3wr0KUYbGvPxvYdc64fzYMu0YdL1xLFcO28MNaG3GWS5HkXOQ3OP25
-         J/JA==
-X-Forwarded-Encrypted: i=1; AJvYcCV+4OHmPtsRMcdq9MRODZyF+cqANtOXQG49oLLeF379QWTDqsV+bYRkpPLObKLpiytT4wgKpOTUO9+Jk6fEva3w8qj+Da1oGRGd9VWf6w==
-X-Gm-Message-State: AOJu0Yx4GMbT/N5HLq7znfvtC6D60sVsxm/0KPaFCbvuJm8HRN2ptamO
-	7FavtJnyc4Go5XuHdAQASQiUs9GUhpMJMqVEcj+Cey6xaCpq4U81JhLbywOkiPU=
-X-Google-Smtp-Source: AGHT+IE4lWG03NrsYGIMb38leE/EL6KNHhTvu/DlJtCiu5w5jF8R4KkplAWIhngCJVQJeXTuDbWSsA==
-X-Received: by 2002:a5d:58e6:0:b0:343:419d:ba87 with SMTP id f6-20020a5d58e6000000b00343419dba87mr1780461wrd.13.1712233669746;
-        Thu, 04 Apr 2024 05:27:49 -0700 (PDT)
-Received: from gpeter-l.roam.corp.google.com ([148.252.128.204])
-        by smtp.gmail.com with ESMTPSA id bu14-20020a056000078e00b003434b41c83fsm12106303wrb.81.2024.04.04.05.27.45
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Apr 2024 05:27:49 -0700 (PDT)
-From: Peter Griffin <peter.griffin@linaro.org>
-To: mturquette@baylibre.com,
-	sboyd@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	alim.akhtar@samsung.com,
-	avri.altman@wdc.com,
-	bvanassche@acm.org,
-	s.nawrocki@samsung.com,
-	cw00.choi@samsung.com,
-	jejb@linux.ibm.com,
-	martin.petersen@oracle.com,
-	chanho61.park@samsung.com,
-	ebiggers@kernel.org
-Cc: linux-scsi@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-clk@vger.kernel.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	tudor.ambarus@linaro.org,
-	andre.draszik@linaro.org,
-	saravanak@google.com,
-	willmcvicker@google.com,
-	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 17/17] MAINTAINERS: Add phy-gs101-ufs file to Tensor GS101.
-Date: Thu,  4 Apr 2024 13:25:59 +0100
-Message-ID: <20240404122559.898930-18-peter.griffin@linaro.org>
-X-Mailer: git-send-email 2.44.0.478.gd926399ef9-goog
-In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
+	id 1rsQcv-00000003c9G-3Ztx;
+	Thu, 04 Apr 2024 17:11:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id AAB34616D9;
+	Thu,  4 Apr 2024 17:11:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2F892C43390;
+	Thu,  4 Apr 2024 17:11:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712250708;
+	bh=ZrgcSHpGCQoN5N8qPeV22f/8t4IZfslpGaFuTJpFcPs=;
+	h=From:Subject:Date:To:Cc:From;
+	b=uzEfgWlgw47Pq+WsM1VOxwvSuyt0pJTWNoqjrd4BhETKLVlcSN+huDAOmmty31nfE
+	 v+p21gVdWW7STTzbLJm863X0GzdbTeNcOOD5Va3B5FV17Qtwdcn2DZQbm4ioVp1pzr
+	 jzZfgV1e7j17UmrDtsUdk/GhGw906OPegsPFDHlIR7CpcZxcU4V0HkI/EE49+ANzyk
+	 EFbbEJzOwU+saG2TIYMJcJ/p7ZCWD2ArYw+HFBBDCEvuJhphiplk934/FQMAASHLqk
+	 WhFYMOCsVxZ6lavqHue8Jfwv7A5CJKeoDA87yf1L1RjDGX2rKV0gJwqdxTIPp1Invi
+	 fqBh+WE+JuaqQ==
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id F1B8A4800CD; Thu,  4 Apr 2024 19:11:45 +0200 (CEST)
+From: Sebastian Reichel <sre@kernel.org>
+Subject: [PATCH 0/3] RK3588 PCIe bifurcation fixes
+Date: Thu, 04 Apr 2024 19:11:25 +0200
+Message-Id: <20240404-rk3588-pcie-bifurcation-fixes-v1-0-9907136eeafd@kernel.org>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAD3fDmYC/x2MSwqDQBAFryK9tsHPmKhXERfj+EwaQaXHBEG8u
+ 428VfGoOilCBZHa5CTFX6Ksi0GeJhS+fvmAZTSmIitcZmOdy6queQsCHmT6afC7OTzJgcjunaN
+ 5DY0b4ckam+I5LNH113UDK9I+oG8AAAA=
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>
+Cc: Shawn Lin <shawn.lin@rock-chips.com>, Michal Tomek <mtdev79b@gmail.com>, 
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=929; i=sre@kernel.org;
+ h=from:subject:message-id; bh=ZrgcSHpGCQoN5N8qPeV22f/8t4IZfslpGaFuTJpFcPs=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGYO30sVW9U7eD3x3exYnO0IKAUJ4oUHm/4pp
+ 6N85UZ8gM4H44kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJmDt9LAAoJENju1/PI
+ O/qabL8QAIylHe4eCyMwjHtR4I6P2Ktf16wYoPbP/bWu1iODtubvwdPhGy4g1BZVpXRMiYAOnLC
+ ZdGk2Z9OEw5FDYCCAZ60Ab6y4Veib9dufSE/CSgIlGWdB0BVdAG7tvLtayt+o8yIsxzaZi0yues
+ 7CuIpoCTkYApBzpH8Fn+AlBZdFXsqMo37OImSXYeoKOXwOckOKh3WifsWaUOH0EBvexx5vZcG3j
+ fLMWKEn5nrKt6EqW031cxhpXFyleWDoT3L9gGBMkZj203KGoEVo7tobP68sYLKc9v2kAum57BS7
+ 0jRpdt+trxn9VguzfbBhhgyh3GWG2kVFIkaTiY21tuZ4XdGC67COjmt4rZlVqfqdUk+ZVCLEKey
+ jWTqvdObTtEzOwOTrPDSXr1tFCK8FjoKGN9evawN5cfUG+CsZ9MKEmTUN/V+2Mar0tL2UUkyGLS
+ lSMR6LdZUcSfaxo63l2q/sUV49t+fSRqGzzaOTX97piSXY+hgdvMpJUM5AiOYbIlkVgqLjmBiLu
+ dGdfTY67N6qksrrqfsjDpbKxE3uZpVn7GiKVt3W9Bl8QSSvC10aGPKxhu4oefi4vKbIQ9QYpLWB
+ RcEAO5YmZlXxA/B9pdL/4bQxrwxpq6wTpjz/kBGlR1ekWCww1bwdNZzEo6vJIJShDXomPvvzgKS
+ PH/kHjld61ob5QZWV4iw4IA==
+X-Developer-Key: i=sre@kernel.org; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240404_132753_830522_C49BF658 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20240404_101149_990842_A715C9D7 
+X-CRM114-Status: UNSURE (   6.00  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,27 +95,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the newly created ufs phy for GS101 to MAINTAINERS.
+So far the RK3588 boards supported upstream do not make use of
+bifurcation, so it went unnoticed that this feature is broken.
+Michal Tomek tried getting a CM3588 running and noticed some
+problems. These patches fix the bifurcation problems on CM3588
+and also work fine on Rock 5B and EVB1.
 
-Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 ---
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+Michal Tomek (1):
+      phy: rockchip-snps-pcie3: fix bifurcation on rk3588
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 491d48f7c2fa..48ac9bd64f22 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9256,6 +9256,7 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/clock/google,gs101-clock.yaml
- F:	arch/arm64/boot/dts/exynos/google/
- F:	drivers/clk/samsung/clk-gs101.c
-+F:	drivers/phy/samsung/phy-gs101-ufs.c
- F:	include/dt-bindings/clock/google,gs101.h
- K:	[gG]oogle.?[tT]ensor
- 
+Sebastian Reichel (2):
+      phy: rockchip-snps-pcie3: fix clearing PHP_GRF_PCIESEL_CON bits
+      phy: rockchip: naneng-combphy: Fix mux on rk3588
+
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 36 ++++++++++++++++++++--
+ drivers/phy/rockchip/phy-rockchip-snps-pcie3.c     | 31 ++++++++-----------
+ 2 files changed, 46 insertions(+), 21 deletions(-)
+---
+base-commit: 4cece764965020c22cff7665b18a012006359095
+change-id: 20240404-rk3588-pcie-bifurcation-fixes-471e96b94dea
+
+Best regards,
 -- 
-2.44.0.478.gd926399ef9-goog
+Sebastian Reichel <sre@kernel.org>
 
 
 -- 
