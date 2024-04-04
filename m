@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9598CD1284
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E62DCCD1299
 	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 13:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,72 +12,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xnOndBeeuZLgFzhV02qhQmHn7FU259FmuvL7lMhi8nM=; b=3Ib4OxRiumI3yN
-	QdSC8H0TUsa4qRbm6RU+P3Sr+3iVXnqkIEmtB+3+H/6NKe/eUbT69hGvsj2zmNrMb7btRQiZuctin
-	ZYFO146XSJlkpNKR5XPmJTve27cZ8rvYlU+MKFYsK51Y8T1yPk1FMpPHLeBtfj7252nqVseWNX204
-	4HEHk0xEW/lHmqzQsFPA9MmBKid0SwZ0EifJ3m76L8MxJLdwQhh1Xksl3Iwy2MNiMqbRjCyPNyqtj
-	z/oA+JJnbgzM0hPiNG9+QMpxQGtJWi7+6XYYl08prkzhGCw00Vx2wZFHG2j1m/6+6cUf42szhZaOh
-	iWxPVvhA2alOvh0lXXdQ==;
+	List-Owner; bh=H8lAfDhUKyn3rxHlpV9qdW282QdTzqrEgb4xEMB/eGo=; b=37VZkltpH8xFx8
+	VPJe6xZvB+fWXlMzfKK0m42Dr/saF/bbUm5E9n3eTm9I5Z1U/4YabnaVmmmwG5eWnFRc7sNHZywXc
+	RSbMVhAIUiYFVKEqsH5Eot80GL6GcRViSJf165ZrJaDX79iH/5O5lafUISYMrV4WLGt8zcBYjFbr4
+	N2TTYQg5Nyh13X0rt07jouN0o6FwhCIELpLdt1wrlF6iIi/XFJ+5Dd3aXk7nB1JR0TTnrM29QHU88
+	U3Ux0LXDIbNYDUHsOEW4x0lk0ur1GQcFL7nCbrI2J63dfPFs6cjMmcaVsP5YDNHHzlbNwBA2/bofi
+	45MEB6Pg5GWDDHlDtTgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsNEl-00000002pLR-3Sae;
-	Thu, 04 Apr 2024 13:34:39 +0000
+	id 1rsNEm-00000002pLt-0TOO;
+	Thu, 04 Apr 2024 13:34:40 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMBu-00000002bNF-1s3X
+	id 1rsMC2-00000002bTS-2nMP
 	for linux-phy@bombadil.infradead.org;
-	Thu, 04 Apr 2024 12:27:38 +0000
+	Thu, 04 Apr 2024 12:27:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=BekuFHDEQz3MItNlFSbu6RpX09gKsg0FByp3fiEppHo=; b=ngcilmyhHsgFkFFewoxC5DvkC0
-	68+p5HxvGeJqhDb40NXAzZuMCmgs8o3lLybXBCdnntABjFYiCYF2EV2rRbRyL13oWT0dSvUxDjZxX
-	UL7xMdmWPm61PZc3BLhSCHYlXHddfF1HLh6KZGNMrKDdFMq8Yz8cwUnbwXHxdNJP3In7BP7AGRAmR
-	zftE3oQmJWPyHt5yzA8zR72KdTym6uGmQShTwcp8xNyhoG1OJm3+VL97BTk2ZUiPLSk6Pz7uZYijn
-	KlRBESTQmDoWdI1G+SEeo+kojc9eZwR8+1NIdqNqcq10P1WzhlKH0wDbanj7gdLz06SGhKgiX3/zQ
-	En4AxRsg==;
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	bh=9BAojM4xoHm2Ccy99OQ74TIvmgE7hETV2sx3J0iKu4Q=; b=rT9xWtrb+53jSlhvzRheuMwEv8
+	gcl9iRbzfJvN1ozPQZF3sRV/Ikx+FiMizLt6RkZyXt1wjPJq+jPlypCEr2chs0jmR/qTT3wAbulqJ
+	fIPRhW5L8Gcj6UsRbed/S4XzRUiwUqZbB6fqmbSEXIlwobovrAhiAtOs7tEGlmmmun18C9DluPW8d
+	Y22U66Y18J3aTgvwM5EK5WBzI7RnnFdfbuqY6a2gBw5wh2Dbb254KZzoN5RgBuPrfZdf6K+AfKmds
+	idRMMhyyuviVtW3W+E1qn8W8TkIXeRKPtb2puB7hiSodooaQUkb9v5ztdStHaDG6WF5qO7ok1cpY6
+	eO3kiNoQ==;
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMBq-000000052K0-1c8S
+	id 1rsMBx-000000052Kx-1QRp
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Apr 2024 12:27:36 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-4162c11acf7so1654685e9.2
-        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 05:27:34 -0700 (PDT)
+	Thu, 04 Apr 2024 12:27:45 +0000
+Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-516d0162fa1so474959e87.3
+        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 05:27:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712233653; x=1712838453; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1712233659; x=1712838459; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=BekuFHDEQz3MItNlFSbu6RpX09gKsg0FByp3fiEppHo=;
-        b=WjERnYSnBKGjX61NbHYYtRzWze/YVDKSMn2wXHm7XBN0JAk3reht2ScMA1wAK2ijHL
-         4IhnFfIUU2+qNFCjEW/K0RtmLiUJrWLy9B/nqg6XnbhI2PSmgDL8OOk3vZ0tG44keTvj
-         LkJQ8N9im4Hikh0BPG2B4K0nwt+C2uRIewY8a20ws9HZI84Zty1fkN68/bL+DWKGgZ2x
-         F9aOAgylOUK37y/+61sHBMhrUadbuGFCZ4eo0HVGLnpbQZJ8hmTZXvKJLr+Yep5u98M5
-         O6zR6l6WHz1jynWowxzYQxF4Oqj7DJreDQYVH5AlUqzhyTmwrykM44OfxcsUbRvdcXUo
-         kAPg==
+        bh=9BAojM4xoHm2Ccy99OQ74TIvmgE7hETV2sx3J0iKu4Q=;
+        b=RH+bZCHbFxWZg5fBNc59LskkTk/3SeMgVGiUu3vyM9JyyZ/MlIBGLe+t6yP1ToM28T
+         HmG8AhNX7S5hJwBv4AoLPy7PXD6erlkbxJw6K4mn20v0Ci08dFpKje87bOLeKTPv3CRj
+         JRvDPx11HZx4WU58m6EeTb6n7XYy3XZwhypioA2AOqptXn48fJlqD1Jw9xKeV2AQpaRi
+         RqUpz2h+2TmQ1knLI5EG5+ieywhC6uQJhJXD0ccMsa/g3w4g1A9Uwj2cWL28UjWbiyo5
+         3b1XovyJ4FdR4ir5Yi2Fq6ASL6FYbI86Blk6nDXed63Zica0G/gxc8k9Yw4mEPztJs9j
+         EYmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712233653; x=1712838453;
+        d=1e100.net; s=20230601; t=1712233659; x=1712838459;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=BekuFHDEQz3MItNlFSbu6RpX09gKsg0FByp3fiEppHo=;
-        b=Bcy4gFoTdh9jRKeeXH08cWoG+uKjdvgPKsBrBXOG+xRZ3Jw12cvBiehMOFtNQtITJH
-         rEbTSvAjI1AyTdWFBYZmRHujSFvZLgQDSfk+dxlpf2941d0Qve45JHvMw8fp+H236Q/g
-         rwwMJxlNW3idTYNKkqQ3NQ/Gb/Hf0MASV2SHBPqrn/Lob+IcZ+SAx7XBWkgJMVblwQTy
-         KoU+fQzVo3f/u81+olutvtpYwKzzLGa3i48c7q2KN7/gLS3oepynaq4wKyfHSzdrpeOG
-         aVjVsFpssKKnj73KLqU+Daf5/A034dBUvMxqtgcN1TWjLd2povkxQk2BqKkm8+MnjuQf
-         GPUQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXynanqFN+/iuRmVdgwjZVrnDdFVKu1nxrbYtm2H+JgN0C8wD7jdxdtePfW1vPv+rvohJMyLIuGsfz89SfKf7qvdpoJHTqKD7VhxfLxsQ==
-X-Gm-Message-State: AOJu0YyZULzBmrKlQ5zw6r9tM14K77kxg8UBfbzrJkUXRQxbDpNUZ47i
-	fysq+57J3ATV1dC4dalELLKH1T35bqUJ6lTJT43asqyBVRYUCRLxS+uDNkqbWgk=
-X-Google-Smtp-Source: AGHT+IHo0UA4VkLq9YNMWVrdRmiVEAsMxBZeIPEoAivlBSwwv6+wNOZwB+W4FPP8qAuWikZ3EcwZ2Q==
-X-Received: by 2002:a05:600c:54ef:b0:415:533b:1071 with SMTP id jb15-20020a05600c54ef00b00415533b1071mr2319673wmb.19.1712233652986;
-        Thu, 04 Apr 2024 05:27:32 -0700 (PDT)
+        bh=9BAojM4xoHm2Ccy99OQ74TIvmgE7hETV2sx3J0iKu4Q=;
+        b=AuzXySEqXK/aVsIzbZVvvIAE/dsKPDem7GHVy3zjy0LsUcpTwrTFHG2TEXaSwjuEOL
+         +YOeVwt4Y5e6qD8rpsPKX7OifzNqUWWFjVOeBab6y+sxO/c0yLv4JovJQ7o15ApP+k59
+         rpiYNoJMD2lp2pOFNA955QmWQSZC7ceIKyX/Xw19Jazmv/WU1GZQwTicjzzx9il1Husj
+         V6mRtdqc+1jErxg0qiV5f9WhydTX66yhpvm05mhwoFW+XfOnWctgWp7QD09QmZxfrDea
+         wl65sgevXqRC+A5E6Sf2gK1Tc4KXSuUbG7XeBIfzSbN+wF9DPWK0Tpoqbtm0ZwMqXe5O
+         SaOA==
+X-Forwarded-Encrypted: i=1; AJvYcCXVpAc5tTs8E9m03YdLLBLpXxkNuVGcpBT/SYXXkR3AvCpjzoyJwA0WRenYEQrt0Hpuis8SZ/E3AptdwekP6gWyn1XpYYI7b4LVJM/xGg==
+X-Gm-Message-State: AOJu0YwyWvn8LU/kJMphQA7sIdCY0OLgvpj75kAYz9OjMGGiDxo/tGSX
+	1whMkHpmHoF0T+7DJhdkJ1n3A0HYuorn/K9p+KZW1cxDGdsnB85IWOGsXmiLRDY=
+X-Google-Smtp-Source: AGHT+IFWRg92YYObkcM0WI/QjuIq7kZXN3Mzv35q9+lvmiNw5458eaH5o7p1h5LYypdyPkvX2i3ypg==
+X-Received: by 2002:ac2:5233:0:b0:516:26cd:da71 with SMTP id i19-20020ac25233000000b0051626cdda71mr1865615lfl.3.1712233658831;
+        Thu, 04 Apr 2024 05:27:38 -0700 (PDT)
 Received: from gpeter-l.roam.corp.google.com ([148.252.128.204])
-        by smtp.gmail.com with ESMTPSA id bu14-20020a056000078e00b003434b41c83fsm12106303wrb.81.2024.04.04.05.27.28
+        by smtp.gmail.com with ESMTPSA id bu14-20020a056000078e00b003434b41c83fsm12106303wrb.81.2024.04.04.05.27.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Apr 2024 05:27:32 -0700 (PDT)
+        Thu, 04 Apr 2024 05:27:38 -0700 (PDT)
 From: Peter Griffin <peter.griffin@linaro.org>
 To: mturquette@baylibre.com,
 	sboyd@kernel.org,
@@ -107,16 +107,16 @@ Cc: linux-scsi@vger.kernel.org,
 	saravanak@google.com,
 	willmcvicker@google.com,
 	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 14/17] scsi: ufs: host: ufs-exynos: allow max frequencies up to 267Mhz
-Date: Thu,  4 Apr 2024 13:25:56 +0100
-Message-ID: <20240404122559.898930-15-peter.griffin@linaro.org>
+Subject: [PATCH 15/17] scsi: ufs: host: ufs-exynos: add some pa_dbg_ register offsets into drvdata
+Date: Thu,  4 Apr 2024 13:25:57 +0100
+Message-ID: <20240404122559.898930-16-peter.griffin@linaro.org>
 X-Mailer: git-send-email 2.44.0.478.gd926399ef9-goog
 In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240404_132734_822590_1B279FFA 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20240404_132743_415788_64713566 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,27 +133,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Platforms such as Tensor gs101 the pclk frequency is 267Mhz.
-Increase PCLK_AVAIL_MAX so we don't fail the frequency check.
+This allows these registers to be at different offsets or not
+exist at all on some SoCs variants.
 
 Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 ---
- drivers/ufs/host/ufs-exynos.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/ufs/host/ufs-exynos.c | 38 ++++++++++++++++++++++++-----------
+ drivers/ufs/host/ufs-exynos.h |  6 +++++-
+ 2 files changed, 31 insertions(+), 13 deletions(-)
 
+diff --git a/drivers/ufs/host/ufs-exynos.c b/drivers/ufs/host/ufs-exynos.c
+index 1bfda9c75703..065258203836 100644
+--- a/drivers/ufs/host/ufs-exynos.c
++++ b/drivers/ufs/host/ufs-exynos.c
+@@ -308,8 +308,9 @@ static int exynosauto_ufs_post_pwr_change(struct exynos_ufs *ufs,
+ 
+ static int exynos7_ufs_pre_link(struct exynos_ufs *ufs)
+ {
++	struct exynos_ufs_uic_attr *attr = ufs->drv_data->uic_attr;
++	u32 val = attr->pa_dbg_opt_suite1_val;
+ 	struct ufs_hba *hba = ufs->hba;
+-	u32 val = ufs->drv_data->uic_attr->pa_dbg_option_suite;
+ 	int i;
+ 
+ 	exynos_ufs_enable_ov_tm(hba);
+@@ -326,12 +327,13 @@ static int exynos7_ufs_pre_link(struct exynos_ufs *ufs)
+ 			UIC_ARG_MIB_SEL(TX_HIBERN8_CONTROL, i), 0x0);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_TXPHY_CFGUPDT), 0x1);
+ 	udelay(1);
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_OPTION_SUITE), val | (1 << 12));
++	ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_opt_suite1_off),
++					val | (1 << 12));
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_SKIP_RESET_PHY), 0x1);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_SKIP_LINE_RESET), 0x1);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_LINE_RESET_REQ), 0x1);
+ 	udelay(1600);
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_OPTION_SUITE), val);
++	ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_opt_suite1_off), val);
+ 
+ 	return 0;
+ }
+@@ -923,14 +925,19 @@ static int exynos_ufs_phy_init(struct exynos_ufs *ufs)
+ 
+ static void exynos_ufs_config_unipro(struct exynos_ufs *ufs)
+ {
++	struct exynos_ufs_uic_attr *attr = ufs->drv_data->uic_attr;
+ 	struct ufs_hba *hba = ufs->hba;
+ 
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_CLK_PERIOD),
+-		DIV_ROUND_UP(NSEC_PER_SEC, ufs->mclk_rate));
++	if (attr->pa_dbg_clk_period_off)
++		ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_clk_period_off),
++			       DIV_ROUND_UP(NSEC_PER_SEC, ufs->mclk_rate));
++
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TXTRAILINGCLOCKS),
+ 			ufs->drv_data->uic_attr->tx_trailingclks);
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_OPTION_SUITE),
+-			ufs->drv_data->uic_attr->pa_dbg_option_suite);
++
++	if (attr->pa_dbg_opt_suite1_off)
++		ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_opt_suite1_off),
++			       attr->pa_dbg_opt_suite1_val);
+ }
+ 
+ static void exynos_ufs_config_intr(struct exynos_ufs *ufs, u32 errs, u8 index)
+@@ -1486,10 +1493,11 @@ static int exynosauto_ufs_vh_init(struct ufs_hba *hba)
+ 
+ static int fsd_ufs_pre_link(struct exynos_ufs *ufs)
+ {
+-	int i;
++	struct exynos_ufs_uic_attr *attr = ufs->drv_data->uic_attr;
+ 	struct ufs_hba *hba = ufs->hba;
++	int i;
+ 
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_CLK_PERIOD),
++	ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_clk_period_off),
+ 		       DIV_ROUND_UP(NSEC_PER_SEC,  ufs->mclk_rate));
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(0x201), 0x12);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(0x200), 0x40);
+@@ -1513,7 +1521,9 @@ static int fsd_ufs_pre_link(struct exynos_ufs *ufs)
+ 
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(0x200), 0x0);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_AUTOMODE_THLD), 0x4E20);
+-	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_DBG_OPTION_SUITE), 0x2e820183);
++
++	ufshcd_dme_set(hba, UIC_ARG_MIB(attr->pa_dbg_opt_suite1_off),
++		       0x2e820183);
+ 	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_LOCAL_TX_LCC_ENABLE), 0x0);
+ 
+ 	exynos_ufs_establish_connt(ufs);
+@@ -1655,7 +1665,9 @@ static struct exynos_ufs_uic_attr exynos7_uic_attr = {
+ 	.rx_hs_g1_prep_sync_len_cap	= PREP_LEN(0xf),
+ 	.rx_hs_g2_prep_sync_len_cap	= PREP_LEN(0xf),
+ 	.rx_hs_g3_prep_sync_len_cap	= PREP_LEN(0xf),
+-	.pa_dbg_option_suite		= 0x30103,
++	.pa_dbg_clk_period_off		= PA_DBG_CLK_PERIOD,
++	.pa_dbg_opt_suite1_val		= 0x30103,
++	.pa_dbg_opt_suite1_off		= PA_DBG_OPTION_SUITE,
+ };
+ 
+ static const struct exynos_ufs_drv_data exynosauto_ufs_drvs = {
+@@ -1729,7 +1741,9 @@ static struct exynos_ufs_uic_attr fsd_uic_attr = {
+ 	.rx_hs_g1_prep_sync_len_cap	= PREP_LEN(0xf),
+ 	.rx_hs_g2_prep_sync_len_cap	= PREP_LEN(0xf),
+ 	.rx_hs_g3_prep_sync_len_cap	= PREP_LEN(0xf),
+-	.pa_dbg_option_suite		= 0x2E820183,
++	.pa_dbg_clk_period_off		= PA_DBG_CLK_PERIOD,
++	.pa_dbg_opt_suite1_val		= 0x2E820183,
++	.pa_dbg_opt_suite1_off		= PA_DBG_OPTION_SUITE,
+ };
+ 
+ static const struct exynos_ufs_drv_data fsd_ufs_drvs = {
 diff --git a/drivers/ufs/host/ufs-exynos.h b/drivers/ufs/host/ufs-exynos.h
-index acf07cc54684..7acc13914100 100644
+index 7acc13914100..f30423223474 100644
 --- a/drivers/ufs/host/ufs-exynos.h
 +++ b/drivers/ufs/host/ufs-exynos.h
-@@ -116,7 +116,7 @@ struct exynos_ufs;
- #define PA_HIBERN8TIME_VAL	0x20
- 
- #define PCLK_AVAIL_MIN	70000000
--#define PCLK_AVAIL_MAX	167000000
-+#define PCLK_AVAIL_MAX	267000000
- 
- struct exynos_ufs_uic_attr {
- 	/* TX Attributes */
+@@ -145,7 +145,11 @@ struct exynos_ufs_uic_attr {
+ 	/* Common Attributes */
+ 	unsigned int cmn_pwm_clk_ctrl;
+ 	/* Internal Attributes */
+-	unsigned int pa_dbg_option_suite;
++	unsigned int pa_dbg_clk_period_off;
++	unsigned int pa_dbg_opt_suite1_val;
++	unsigned int pa_dbg_opt_suite1_off;
++	unsigned int pa_dbg_opt_suite2_val;
++	unsigned int pa_dbg_opt_suite2_off;
+ 	/* Changeable Attributes */
+ 	unsigned int rx_adv_fine_gran_sup_en;
+ 	unsigned int rx_adv_fine_gran_step;
 -- 
 2.44.0.478.gd926399ef9-goog
 
