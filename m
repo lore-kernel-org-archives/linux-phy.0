@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75DC5CD1284
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 12:26:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6E5CCD1284
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 12:26:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lvcJho6iBv5U4ptDcdyZh58rhbMrY82Rk3cDLr7CS5A=; b=Mb0S0Gi5Oc9Q2y
-	c9MMPAkGh52CDTyWXNHZAqNeklmEcjKQRaUhv+/Trek/DYJY3RlSwSV9YTmtxaPyUlnw5ihnZvl8f
-	67Zi2LLffcJeGjZzs2Ulx4d+A/D6zepmpctkhooo883EW8l5nW6wLx0NaI2VGj0T+0U10MJmlc6Qf
-	4WvORSIL0ISlTdYKANXCI4z3GVHF4tzvmZlsZxJdEEhnHIBlwe8RKNoi1VxcXhwT9AYlGg5Fpr5Ex
-	/QlVjPpj5As2Ne0NraaRSg269ux+7F/Hk9rQ3mdQP6M4tG9NaUcp+hxp1XHR/xpyryzpw2nD1t6vs
-	bjsyMIHnXH0aZ34acTRQ==;
+	List-Owner; bh=6zBKrmQJ6UN8MDb5hZnxXE+HaHAJ4MWEwXTvZil4Re8=; b=esnPM2TgboN123
+	Xg6F4prDNKB8y/9K6i6JjDSUMK8uuCziivMnDmbRaenWpDlzyG7pno6Wh41ZNQKcprP00OyAmJ1Hf
+	LCCeBy6CPK5v6Mry0aJH43HNLL8rSVp/0CUuyQ4WWyHK6lFNEucCqoa1CZG4st3S35NCCkQH0ZKgq
+	kLsm0cnNh3+w/ucW18MX5DvJNmiTxq9S++++jQqfE5uM7ij0yY1shXS1Fc1HVMJjTdv61IuYgt1g8
+	2tkCb0hvceNTHJ65NvdTGjOFRmfqEOfmsgmMBFFMFiuaV/Pucoc/4SThdoxNXAgRewOMBBdu6V28Q
+	njJ/4EVLQR7m36mfE7jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMB8-00000002as4-1Xlt;
-	Thu, 04 Apr 2024 12:26:50 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1rsMBH-00000002axR-1bgI;
+	Thu, 04 Apr 2024 12:26:59 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsMB5-00000002aoA-0Q5q
+	id 1rsMB9-00000002ars-1wmR
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Apr 2024 12:26:48 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-3437efea211so834597f8f.2
-        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 05:26:44 -0700 (PDT)
+	Thu, 04 Apr 2024 12:26:53 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-2d6fd3cfaa6so12871671fa.2
+        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 05:26:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712233603; x=1712838403; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1712233609; x=1712838409; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=ds/JjfQ2TlKCtemWTNTPAMOOadxWRRjHRCXTNztqFqc=;
-        b=I2eAlByvJBDS2/fHRJ9GN9T1tWNSp6YI/u+ry+I6S44nhWzJ9lYGGbxx6EZRe0JER6
-         uKQhS51R/EmQhdJLvJ5vUVi3ydtMjtRAwNVgz8MBvVmzPBtvsn5bY+6KRLCINjmWs/nQ
-         e/t40iigt/5D2BVUp1yory9uSeQv7WxkWLtOIW4ypJa2ZT26QazBsH/pdCFPw2dqtb4H
-         +S3oLLBH31BhImTCI8yqe5S0ydiecwbbKpkiLWvryja9AB2lOv1V5Gwgb4uXeu67aUEv
-         3klyMfCGIMINeqzRP0u7N3HrWY2fmlAbYWIVZgSqOwmdeeLZAiK56eGS8qTKvVI45mlc
-         SQcQ==
+        bh=aKvvN74xOJwt4hMDICXFAAtS9sJu4IkWmxjimbRwKsc=;
+        b=l5HiQRHdTz7k4bT482UxOSWWmZsSYtE8DV4lwZKWhbRxIO5Bv6GDUrY4+01cWj8Kcs
+         kbwgBXiA0/pwyiHsM4Iy6ICQSdmfdleBk3ggLRMQIZVX1dEUL8YB5+oFcd2CWWmy1B5A
+         U+EKMd2ITcLsL/DVS8Zq12MgFMsRHcMOEEc/C689Tkdm0ZBKf8oeg+k6L+4UDOKCoD+E
+         0fmv/zFK+c1YLER3UYztSE2vtJuvMLEy7NTGBMaoa+DaNBwNsvvzPvEtKMvFqOQAxN3k
+         L7XlvzD2esrTCqA5KeZHOYovCpJUkuxxuzsyMtI9wiNiDqA23514fiahA2wOEqTgoY28
+         kDbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712233603; x=1712838403;
+        d=1e100.net; s=20230601; t=1712233609; x=1712838409;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=ds/JjfQ2TlKCtemWTNTPAMOOadxWRRjHRCXTNztqFqc=;
-        b=K1kc4NpBz224cbMAeVCOSucBMaSFdN3z4xYD17dzLSuQB1CFTOllRMI8MUHL+wM6uf
-         wigZlsTpGCJou/ySEaqGV/YhqmlEZY4XZ47db3XVeHq43mww3CwhwDgiBFeU5QGdKVO3
-         2KYgIq5pM18+aUUV89r3B9PmaZxbvee8mbZDONU/gKb55qSyzI//LwvQK7ToLleHjzC7
-         2YffNBpIXV3dG61+ijvCbDXgkLp6NJTFPCUvqFuTvYSR4PY5zJHFWt4gV14qUlTfqKV1
-         iOA7mA5V6ZysF9xBGJNNH3SiiFtOHjSxx76+pmK4Hl/9LgxbAWcfpfZJmzJTkUzL6mFy
-         84qQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXhjOCAWoD+k2jdnz+iOib2yEKPIYmhujGzW9DoqNscunyLart7VX7vvI6Dlfvb+GDBQw5EwC/AeFOZAjTMFUKpmpZyubfk25oG3DNSpg==
-X-Gm-Message-State: AOJu0YwHGPwk4TjfTSOebqiEUTs6MzJRzQfAoJ/ZmRi2oNlW0wDpp6jF
-	0k7Zsws3ebT0YMnalRhBqSkWyVa96bKJT3/AqeqiEIvpPw4VZ+qgkFtHhvzwYy0=
-X-Google-Smtp-Source: AGHT+IE1KcSWtq0AtIR6tJqtMgKw1sNq7p9OsCBJVxmziFYXd9baY73voLcHuEo5/99B79vRXGQPWg==
-X-Received: by 2002:a5d:4589:0:b0:33e:c528:c900 with SMTP id p9-20020a5d4589000000b0033ec528c900mr2144866wrq.55.1712233603079;
-        Thu, 04 Apr 2024 05:26:43 -0700 (PDT)
+        bh=aKvvN74xOJwt4hMDICXFAAtS9sJu4IkWmxjimbRwKsc=;
+        b=CT2sMG3/8+X/fgAS8cMeMR9PdzjBTGYNlfBQGtQ2WSfGfu0sHYa6eXLRLTOnvAPKo0
+         J1DkxoZSpQqeZOWH2gt2ug+J3fX4Whb2T+81tiTssyN31JZ/EO+37FScM3wG2o1lBBJp
+         fW/dhbvnVLmmyXsl/FoUuY7VW8uo6wXQ/WrQVeFzEMh63msjQs6E4bGY6e8ra2HFO1/o
+         S+OZgMG0CCB9cAPkQoIYwgBR9ElX1v1tKJGvM2dtI0unO7tlMri+ENDAcTEp8+vAkcLd
+         aCvccSc2Ea0+IFERB0Z2LKkXG9u1wjk2fzt91qotuAn2iLS3mtAvVPVJadGTTCVlMfVh
+         hlng==
+X-Forwarded-Encrypted: i=1; AJvYcCVJn+yjrOs/zpB2zNXijT4TLal48ZHru9OB7LnhXMiGOWYGIF0o9jFaPeV4P4/d7KeKozrCg6YQ23qA60R1X0Lkb0Gutxi2GBWuWwsP2Q==
+X-Gm-Message-State: AOJu0YySOnjsnEabdMy/PYGAJzh/1L/Y+Wpd19QKpfBZppg6hl8yGCDd
+	xUO9w4re/abQPs+4wzCbFbHzHSTCwcvazgJBt1rBaeGuQYQmt7wB8tOaM8hZ2Zk=
+X-Google-Smtp-Source: AGHT+IGXhK8kMBWmKF1bq1+yuzbm7UyP2S0ScsyuzRrvPgM0bVlL1iwbvXwfSAAP4OVpq6OKWPN1Ew==
+X-Received: by 2002:a05:651c:1a2c:b0:2d8:5726:4173 with SMTP id by44-20020a05651c1a2c00b002d857264173mr1548167ljb.43.1712233609033;
+        Thu, 04 Apr 2024 05:26:49 -0700 (PDT)
 Received: from gpeter-l.roam.corp.google.com ([148.252.128.204])
-        by smtp.gmail.com with ESMTPSA id bu14-20020a056000078e00b003434b41c83fsm12106303wrb.81.2024.04.04.05.26.37
+        by smtp.gmail.com with ESMTPSA id bu14-20020a056000078e00b003434b41c83fsm12106303wrb.81.2024.04.04.05.26.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Apr 2024 05:26:41 -0700 (PDT)
+        Thu, 04 Apr 2024 05:26:48 -0700 (PDT)
 From: Peter Griffin <peter.griffin@linaro.org>
 To: mturquette@baylibre.com,
 	sboyd@kernel.org,
@@ -92,16 +92,16 @@ Cc: linux-scsi@vger.kernel.org,
 	saravanak@google.com,
 	willmcvicker@google.com,
 	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 05/17] arm64: dts: exynos: gs101: enable cmu-hsi2 clock controller
-Date: Thu,  4 Apr 2024 13:25:47 +0100
-Message-ID: <20240404122559.898930-6-peter.griffin@linaro.org>
+Subject: [PATCH 06/17] arm64: dts: exynos: gs101: Add the hsi2 sysreg node
+Date: Thu,  4 Apr 2024 13:25:48 +0100
+Message-ID: <20240404122559.898930-7-peter.griffin@linaro.org>
 X-Mailer: git-send-email 2.44.0.478.gd926399ef9-goog
 In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240404_052647_284489_0FE2DD14 
-X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-CacheID: sfid-20240404_052651_669957_9C2FA89A 
+X-CRM114-Status: UNSURE (   7.54  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,32 +119,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the cmu_hsi2 clock management unit. It feeds some of
-the high speed interfaces such as PCIe and UFS.
+This has some configuration bits such as sharability that
+are required by UFS.
 
 Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 ---
- arch/arm64/boot/dts/exynos/google/gs101.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ arch/arm64/boot/dts/exynos/google/gs101.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/exynos/google/gs101.dtsi b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
-index eddb6b326fde..38ac4fb1397e 100644
+index 38ac4fb1397e..608369cec47b 100644
 --- a/arch/arm64/boot/dts/exynos/google/gs101.dtsi
 +++ b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
-@@ -1253,6 +1253,18 @@ pinctrl_hsi1: pinctrl@11840000 {
- 			interrupts = <GIC_SPI 471 IRQ_TYPE_LEVEL_HIGH 0>;
+@@ -1265,6 +1265,12 @@ cmu_hsi2: clock-controller@14400000 {
+ 			clock-names = "oscclk", "bus", "pcie", "ufs_embd", "mmc_card";
  		};
  
-+		cmu_hsi2: clock-controller@14400000 {
-+			compatible = "google,gs101-cmu-hsi2";
-+			reg = <0x14400000 0x4000>;
-+			#clock-cells = <1>;
-+			clocks = <&ext_24_5m>,
-+				 <&cmu_top CLK_DOUT_CMU_HSI2_BUS>,
-+				 <&cmu_top CLK_DOUT_CMU_HSI2_PCIE>,
-+				 <&cmu_top CLK_DOUT_CMU_HSI2_UFS_EMBD>,
-+				 <&cmu_top CLK_DOUT_CMU_HSI2_MMC_CARD>;
-+			clock-names = "oscclk", "bus", "pcie", "ufs_embd", "mmc_card";
++		sysreg_hsi2: syscon@14420000 {
++			compatible = "google,gs101-hsi2-sysreg", "syscon";
++			reg = <0x14420000 0x1000>;
++			clocks = <&cmu_hsi2 CLK_GOUT_HSI2_SYSREG_HSI2_PCLK>;
 +		};
 +
  		pinctrl_hsi2: pinctrl@14440000 {
