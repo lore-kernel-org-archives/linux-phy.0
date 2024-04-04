@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A93DCD1284
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 22:53:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FE56CD1292
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Apr 2024 23:43:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZCUqkZf/krrXXPDjLyTglAoMeJaqePDP02k9JLONs24=; b=vE3H1DeWkkmIYG
-	WBS+8oCJdKck18x8nnyZefvb6geRTOZLIEkYJkqMaZGrk61oD9VoXS16URTY4w+WiO3sPetPm3wVn
-	2ywnuo13trgf2xTe4xJRIdU5LQ4PSj6negsaqgquBYQOmrcAMAa+GA1pZ8Eutuj+P/2IrD6nWQEI9
-	t48IKfxh4EivjSHCoHK49TdpgxtuKVxwn9TXeSsSRFB66I7ZwUsQoliiHzPON69Gf0k6/U3C0gz/u
-	HEvbRuiA69PnGAj1HS0IBmhJLnu8kFz35TbA124+NdwQn5IktJIzmSH3kwftdlOe88/wHAFGzETfA
-	xg1pRtig5ZEGbfBqz2IQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bGlGeSaxaVwppQIU61iA+kCurUugCVIf790TBDkArpg=; b=GMWxfleFY2eluU
+	T5K5omVM/tw46e3Jg9p1ln7mKOz/ClDMRsuZfd4jyaF6deoOQGu+x1ODaaKMpz0H7H1/jSKD9txeb
+	6Za39A0iryvrqSEWaRHzHpHUDQWK3+LYZMblsTEO1M+w2UEiU/ljR+yGDsixbkcJigkUqT8u+IE/J
+	Q4g0E1PrvSVBSVCjwCWFCimTez4DoAdLYAo4LWj0Vy55Xu2CMFdDI9OlrLpfa9ZwWVodkwmg6cLB1
+	UhFFX7juxcO03uTXoOtB0UqdlGFZBpOXg380T7n6kLTv02gLPrLINYMmf16u9RPCME1F2oJaJrixt
+	sgJx9RuUL7dtDndk8YXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsVxU-00000004UeC-2xJ2;
-	Thu, 04 Apr 2024 22:53:24 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1rsWkL-00000004dbs-0eBD;
+	Thu, 04 Apr 2024 23:43:53 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsVxR-00000004Udk-3aGl;
-	Thu, 04 Apr 2024 22:53:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1712271202; x=1743807202;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=nHDeIZjgG/ABq+COPbhriixxj1CJ1aiFsFPnz9B5/Ew=;
-  b=jI6yA9Ein2vQr/xrpwN8Wdagm7yBeJxof7VWn5CEPxe/EsC71g1w9spL
-   Y+VSCINywYjsWn4HO8pgnux8klDq/AJ4LGrR0UIyHE2tduDWPEIrx6IRg
-   Fpe7WN5hDQpt/GaO7Fo0cb2yFBTxU1Tgjq+EeDtn6R1yEEP9CoggIE28E
-   XHyyct9M1XPrvh6lVz6z7eW5Plzsyl0MpUh/X76w5Fj0weCWVjYMHycQt
-   r7J+3KzNtqMPZFwbTN1M8Ux+1+g6Z6Bc1CNRqylefVbjnTnrZnySJjGI/
-   HaY73yb3c9C07Q99wWYCCrNFAcsH+Yd+Nh1d3IDcDISvD8zA4rCAm1a8S
-   w==;
-X-CSE-ConnectionGUID: q6GDp3RPQLOEVdMpd5r6pQ==
-X-CSE-MsgGUID: dIEHMXykSMy9VvqNlfp/jA==
-X-IronPort-AV: E=McAfee;i="6600,9927,11034"; a="7747181"
-X-IronPort-AV: E=Sophos;i="6.07,180,1708416000"; 
-   d="scan'208";a="7747181"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Apr 2024 15:53:21 -0700
-X-CSE-ConnectionGUID: DMVI8dVNQt+mFpCKldjuFw==
-X-CSE-MsgGUID: qHDgff3ISNujXJMguBDG9Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.07,180,1708416000"; 
-   d="scan'208";a="50191958"
-Received: from lkp-server01.sh.intel.com (HELO e61807b1d151) ([10.239.97.150])
-  by fmviesa001.fm.intel.com with ESMTP; 04 Apr 2024 15:53:14 -0700
-Received: from kbuild by e61807b1d151 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1rsVxH-0001b6-2d;
-	Thu, 04 Apr 2024 22:53:11 +0000
-Date: Fri, 5 Apr 2024 06:52:21 +0800
-From: kernel test robot <lkp@intel.com>
-To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
-	sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org,
-	s.nawrocki@samsung.com, cw00.choi@samsung.com, jejb@linux.ibm.com,
-	martin.petersen@oracle.com, chanho61.park@samsung.com,
-	ebiggers@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, linux-scsi@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	tudor.ambarus@linaro.org, andre.draszik@linaro.org,
-	saravanak@google.com, willmcvicker@google.com,
-	Peter Griffin <peter.griffin@linaro.org>
-Subject: Re: [PATCH 08/17] clk: samsung: gs101: add support for cmu_hsi2
-Message-ID: <202404050633.EZfOttFD-lkp@intel.com>
-References: <20240404122559.898930-9-peter.griffin@linaro.org>
+	id 1rsWkI-00000004daY-25a6
+	for linux-phy@lists.infradead.org;
+	Thu, 04 Apr 2024 23:43:52 +0000
+Received: by mail-pf1-x436.google.com with SMTP id d2e1a72fcca58-6ecf3f001c5so951924b3a.1
+        for <linux-phy@lists.infradead.org>; Thu, 04 Apr 2024 16:43:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google; t=1712274229; x=1712879029; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=RMI5yWOLAVIgIkbCc96VWxktkn/9P3095VY77NHNd1o=;
+        b=ivlAd6KxhxFtwkSnNriwBzhqokCq9yWe1iQ1qlc8p1Bqaiga7/1C+BFg2jTP5ldLNI
+         1LLmZUm+2DhCXZ4xlrzRCrEVc8tc4GVKb7hLacQ39HPsZitunwIsVxW/RnN8X5VDJvt0
+         z20NnpUvXxtGlTWrVVVrecOlPfsbwhBOblTJE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712274229; x=1712879029;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=RMI5yWOLAVIgIkbCc96VWxktkn/9P3095VY77NHNd1o=;
+        b=rU85kEcbQqnCRymVgJ6iU+W/qBE6fERu55AMMMwhHpDbXLwUdNQfjujDblvqp/6fr/
+         NbTYPLFy2tNRrZkSpUOArNZnBsOIKFI7lKjub1Scmi04LGsuggRbCIgIXNfGQzBSwAXS
+         mN68PreOMb8Dn27KkdiF7ggaojOUqTa/A9Eo0bcI3gshfRCfFML7+IUNDv4V9xD13nEb
+         2QrW+6Bt5AuOKnSRnEJuonBpMDQ7OnGU/NVJYYLhKILanhsf4dyU5oVbjy5A0fsonNXK
+         Zc439MmDyoy8eiEAT2QDAU+42uGOoskdIAfThfjXJ4ARuuIdKR5LNguK3eOsf/j+KNAY
+         qFag==
+X-Forwarded-Encrypted: i=1; AJvYcCUEnnA2RR+aM4XTxBbERwnYBelZsK87zHCNxeni/6m4bkJULUIWlCmCmdt5KuIfoe/LuoO+k2aYGEVp/g/CaG7gGnO65QRIiUINLGOe1g==
+X-Gm-Message-State: AOJu0YziiQnXl9J+eNIyhxPwq5GN98DCoNFwwGjWeyicfBvL62IK8P5G
+	QIaHMQFnLZ7DfdkwAl/YfmInUYiEbBStvAl79rcAO3Wwc7DiZtP96G7pGYLjoQ==
+X-Google-Smtp-Source: AGHT+IEXZdsBDxClfnWn4V8ckwcGELQZihfoKdxkgEQZf2dDcxavcBDgDIZ9TfrbOn0Q57NFbPr69Q==
+X-Received: by 2002:a05:6a20:1057:b0:1a3:6bb1:92fb with SMTP id gt23-20020a056a20105700b001a36bb192fbmr45166pzc.19.1712274228928;
+        Thu, 04 Apr 2024 16:43:48 -0700 (PDT)
+Received: from localhost (4.198.125.34.bc.googleusercontent.com. [34.125.198.4])
+        by smtp.gmail.com with UTF8SMTPSA id ga16-20020a17090b039000b002a2b06cbe46sm269450pjb.22.2024.04.04.16.43.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 04 Apr 2024 16:43:47 -0700 (PDT)
+From: Stephen Boyd <swboyd@chromium.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-kernel@vger.kernel.org,
+	patches@lists.linux.dev,
+	linux-arm-msm@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	freedreno@lists.freedesktop.org,
+	Douglas Anderson <dianders@chromium.org>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: [PATCH] phy: qcom: qmp-combo: Fix VCO div offset on v3
+Date: Thu,  4 Apr 2024 16:43:44 -0700
+Message-ID: <20240404234345.1446300-1-swboyd@chromium.org>
+X-Mailer: git-send-email 2.44.0.478.gd926399ef9-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240404122559.898930-9-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240404_155321_952605_890732CF 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20240404_164350_564495_313EAE08 
+X-CRM114-Status: GOOD (  15.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,80 +97,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Peter,
+Commit ec17373aebd0 ("phy: qcom: qmp-combo: extract common function to
+setup clocks") changed the offset that is used to write to
+DP_PHY_VCO_DIV from QSERDES_V3_DP_PHY_VCO_DIV to
+QSERDES_V4_DP_PHY_VCO_DIV. Unfortunately, this offset is different
+between v3 and v4 phys:
 
-kernel test robot noticed the following build warnings:
+ #define QSERDES_V3_DP_PHY_VCO_DIV                 0x064
+ #define QSERDES_V4_DP_PHY_VCO_DIV                 0x070
 
-[auto build test WARNING on krzk/for-next]
-[also build test WARNING on robh/for-next clk/clk-next linus/master v6.9-rc2 next-20240404]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+meaning that we write the wrong register on v3 phys now. Add another
+generic register to 'regs' and use it here instead of a version specific
+define to fix this.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Peter-Griffin/dt-bindings-clock-google-gs101-clock-add-HSI2-clock-management-unit/20240404-205113
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git for-next
-patch link:    https://lore.kernel.org/r/20240404122559.898930-9-peter.griffin%40linaro.org
-patch subject: [PATCH 08/17] clk: samsung: gs101: add support for cmu_hsi2
-config: arm64-defconfig (https://download.01.org/0day-ci/archive/20240405/202404050633.EZfOttFD-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 13.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240405/202404050633.EZfOttFD-lkp@intel.com/reproduce)
+This was discovered after Abhinav looked over register dumps with me
+from sc7180 Trogdor devices that started failing to light up the
+external display with v6.6 based kernels. It turns out that some
+monitors are very specific about their link clk frequency and if the
+default power on reset value is still there the monitor will show a
+blank screen or a garbled display. Other monitors are perfectly happy to
+get a bad clock signal.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202404050633.EZfOttFD-lkp@intel.com/
+Cc: Douglas Anderson <dianders@chromium.org>
+Cc: Abhinav Kumar <quic_abhinavk@quicinc.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Fixes: ec17373aebd0 ("phy: qcom: qmp-combo: extract common function to setup clocks")
+Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-All warnings (new ones prefixed by >>):
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 7d585a4bbbba..3b19d8ebf467 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -77,6 +77,7 @@ enum qphy_reg_layout {
+ 	QPHY_COM_BIAS_EN_CLKBUFLR_EN,
+ 
+ 	QPHY_DP_PHY_STATUS,
++	QPHY_DP_PHY_VCO_DIV,
+ 
+ 	QPHY_TX_TX_POL_INV,
+ 	QPHY_TX_TX_DRV_LVL,
+@@ -102,6 +103,7 @@ static const unsigned int qmp_v3_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN,
+ 
+ 	[QPHY_DP_PHY_STATUS]		= QSERDES_V3_DP_PHY_STATUS,
++	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V3_DP_PHY_VCO_DIV,
+ 
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V3_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V3_TX_TX_DRV_LVL,
+@@ -126,6 +128,7 @@ static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V4_COM_BIAS_EN_CLKBUFLR_EN,
+ 
+ 	[QPHY_DP_PHY_STATUS]		= QSERDES_V4_DP_PHY_STATUS,
++	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V4_DP_PHY_VCO_DIV,
+ 
+ 	[QPHY_TX_TX_POL_INV]		= QSERDES_V4_TX_TX_POL_INV,
+ 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V4_TX_TX_DRV_LVL,
+@@ -2162,6 +2165,7 @@ static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ 	u32 phy_vco_div;
+ 	unsigned long pixel_freq;
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 
+ 	switch (dp_opts->link_rate) {
+ 	case 1620:
+@@ -2184,7 +2188,7 @@ static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
+ 		/* Other link rates aren't supported */
+ 		return -EINVAL;
+ 	}
+-	writel(phy_vco_div, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_VCO_DIV);
++	writel(phy_vco_div, qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_VCO_DIV]);
+ 
+ 	clk_set_rate(qmp->dp_link_hw.clk, dp_opts->link_rate * 100000);
+ 	clk_set_rate(qmp->dp_pixel_hw.clk, pixel_freq);
 
-   In file included from drivers/clk/samsung/clk-gs101.c:16:
->> drivers/clk/samsung/clk-gs101.c:3640:7: warning: 'mout_hsi2_mmc_card_p' defined but not used [-Wunused-const-variable=]
-    3640 | PNAME(mout_hsi2_mmc_card_p)     = { "fout_shared2_pll", "fout_shared3_pll",
-         |       ^~~~~~~~~~~~~~~~~~~~
-   drivers/clk/samsung/clk.h:229:44: note: in definition of macro 'PNAME'
-     229 | #define PNAME(x) static const char * const x[] __initconst
-         |                                            ^
->> drivers/clk/samsung/clk-gs101.c:3633:7: warning: 'mout_hsi2_bus_p' defined but not used [-Wunused-const-variable=]
-    3633 | PNAME(mout_hsi2_bus_p)          = { "dout_cmu_shared0_div4",
-         |       ^~~~~~~~~~~~~~~
-   drivers/clk/samsung/clk.h:229:44: note: in definition of macro 'PNAME'
-     229 | #define PNAME(x) static const char * const x[] __initconst
-         |                                            ^
->> drivers/clk/samsung/clk-gs101.c:3631:7: warning: 'mout_hsi2_pcie_p' defined but not used [-Wunused-const-variable=]
-    3631 | PNAME(mout_hsi2_pcie_p)         = { "oscclk", "dout_cmu_shared2_div2" };
-         |       ^~~~~~~~~~~~~~~~
-   drivers/clk/samsung/clk.h:229:44: note: in definition of macro 'PNAME'
-     229 | #define PNAME(x) static const char * const x[] __initconst
-         |                                            ^
->> drivers/clk/samsung/clk-gs101.c:3628:7: warning: 'mout_hsi2_ufs_embd_p' defined but not used [-Wunused-const-variable=]
-    3628 | PNAME(mout_hsi2_ufs_embd_p)     = { "oscclk", "dout_cmu_shared0_div4",
-         |       ^~~~~~~~~~~~~~~~~~~~
-   drivers/clk/samsung/clk.h:229:44: note: in definition of macro 'PNAME'
-     229 | #define PNAME(x) static const char * const x[] __initconst
-         |                                            ^
-
-
-vim +/mout_hsi2_mmc_card_p +3640 drivers/clk/samsung/clk-gs101.c
-
-  3627	
-> 3628	PNAME(mout_hsi2_ufs_embd_p)	= { "oscclk", "dout_cmu_shared0_div4",
-  3629					    "dout_cmu_shared2_div2", "fout_spare_pll" };
-  3630	
-> 3631	PNAME(mout_hsi2_pcie_p)		= { "oscclk", "dout_cmu_shared2_div2" };
-  3632	
-> 3633	PNAME(mout_hsi2_bus_p)		= { "dout_cmu_shared0_div4",
-  3634					    "dout_cmu_shared1_div4",
-  3635					    "dout_cmu_shared2_div2",
-  3636					    "dout_cmu_shared3_div2",
-  3637					    "fout_spare_pll", "oscclk", "oscclk",
-  3638					    "oscclk" };
-  3639	
-> 3640	PNAME(mout_hsi2_mmc_card_p)	= { "fout_shared2_pll", "fout_shared3_pll",
-  3641					    "dout_cmu_shared0_div4", "fout_spare_pll" };
-  3642	
-
+base-commit: 4cece764965020c22cff7665b18a012006359095
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+https://chromeos.dev
+
 
 -- 
 linux-phy mailing list
