@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4937BC67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:57:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3BFCC67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:57:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pCQ2EljmiFG6QKSUKhEfNEghR/64eSN70tDXv74jyHQ=; b=aUQKJt3WT92Oqd
-	mJ3RSa356umb1YdLbLPKPt719ojXYp9q/YfDcKYGg2Lf6hiHlPeDmdkl2bgClz3DK3bENTv+PFEDn
-	TkMCyn1ceYXLBb/KbjkBu8MChNqPwlxxxrhfHwQXmJpHNpSEzwkyFu6Sroi3wOv8qK9vJATrfVLgw
-	lFerVxBKGgdJxE8pvmfHFPpQ+XjCEG9BE9FlmDhkIlTPd3aZPT+27lGGjiV53R3Ka1ZydFttkTdwJ
-	emNTPkUIKrqWGiol40uUNXwzaxLq8rWV68Uu5h9yQutzjISo1um32tEhiTc8bUvidWPrCyEWMy6Jw
-	7HxiLZ3yTdsuD0IUYH0w==;
+	List-Owner; bh=1nca1JgJV38UpAk54CQxO6AwaD6ZIo5NgxqRoRmt9ew=; b=yRhMjdto2uGlV9
+	fqqtr9QeAHBFBfdBnGbbVEXK3ffnycQ17cvrCVTsVXiLhD6/pYgWQFXtuY5EaKKP/4tu7GAVo5z5u
+	+JnkEL70mlmn/tSODUgujEF6XjvduL6W2IQmhCLcksZfZxuTSB4V8IZMeTnt7KGLrWO5l+j5CkTWi
+	a4UtevG5hXIstnmUQsK5XIqjUEkrg4OPhx6Vk/yMEbuQmYo2cPVtFr8lprj/CHoqU5sfSFX9TuBJ0
+	nvN9C51eY65s4kbsoMLJ9YmHh92iqGXuESUO/Qg+VCYBDBrIfBvekTggI1nUI+yB+Pt0Snvy7Uf5f
+	ycYtv5IHyLuF9dgvazFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseRh-00000005nSh-3NlG;
-	Fri, 05 Apr 2024 07:57:09 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rseS2-00000005ndl-0xLR;
+	Fri, 05 Apr 2024 07:57:30 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseRd-00000005nQ7-0EKD;
-	Fri, 05 Apr 2024 07:57:06 +0000
+	id 1rseRy-00000005nbG-1HMV;
+	Fri, 05 Apr 2024 07:57:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A3805616D7;
-	Fri,  5 Apr 2024 07:57:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E649C433C7;
-	Fri,  5 Apr 2024 07:56:53 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 67400CE3634;
+	Fri,  5 Apr 2024 07:57:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13C0DC433F1;
+	Fri,  5 Apr 2024 07:57:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303823;
-	bh=33wFx3NkD4cy+uyEswkMiyavXJ0x0BjDGcMLOKy8nGk=;
+	s=k20201202; t=1712303843;
+	bh=4E4/4HltPu4swIB6EYsvPn/zoIkzVjr84YGE4JNMn5k=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=YZnYtHhyVvxCy6lfsRe3qGaptJiDkHysPaiao2gil6amh7xrIv1XWvpfp36beZO0e
-	 2UGp5336jfJKbU15WyCxOo1IZXg6dUmuV+7K2xEw2MS54Kmnb18Ui1Gq7qjNjT0enw
-	 fjtOihOt86YiYaX7inPOS7Bpt12C3cM/JLbJnRhsZ58hSiqS0WEwpSxTOZexwYtOhz
-	 8mtc5eZ266MLmW/k5GUUxhpfCFsKcA4Vxk5Ba/9UYGjbbylBVPD2XyqynJD2KrWviu
-	 04YEkVKkTW8xID0e41B/oJHXhxXBWyq4WzddbmflilfRDsyY8xA9xIGYuPZtMtMYW1
-	 jYduPs+RN4WJQ==
-Message-ID: <9cc2e219-e720-48fd-9b27-69e99ddaa6b3@kernel.org>
-Date: Fri, 5 Apr 2024 09:56:50 +0200
+	b=E4Z9q/6223Juoz6w3lpxl+vrqW09e/K/Qqpvqrb+QQTvnngo5BrcGT2o6TKOVqgYD
+	 XjjsvVd/8OPQ9yVMqPAe3+eIyXSHr0Dhe31Gww07VY+8OD9S/O2z1s/ksSZJ9uOpBn
+	 xAVtpusuWpKMvhF0kbXtMl7gCI8u2vLZ9YJ2AhGUdCbCWh1vfUla+fLnyDB500v21C
+	 4RBw9Pvth6TiNePx/sHD7KP8JeJSzuBPp4PU1+ekZV44S4fp2ji3UFptvVE8KDFvkO
+	 loPuwACxrALUMguVoKVje8Bx4k46AAnrNbY1RdvzllswP9CSgarstgPQLq8Vy64k2C
+	 94BbpY36CRLnw==
+Message-ID: <dc2d8e34-6105-4029-bb46-c0d895315995@kernel.org>
+Date: Fri, 5 Apr 2024 09:57:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 10/17] phy: samsung-ufs: ufs: Add SoC callbacks for
- calibration and clk data recovery
+Subject: Re: [PATCH 11/17] phy: samsung-ufs: ufs: Add support for gs101 UFS
+ phy tuning
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-11-peter.griffin@linaro.org>
+ <20240404122559.898930-12-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-11-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-12-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005705_236750_34E4BB08 
-X-CRM114-Status: UNSURE (   5.68  )
+X-CRM114-CacheID: sfid-20240405_005726_804024_3439D4D5 
+X-CRM114-Status: UNSURE (   4.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,15 +127,11 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Some SoCs like gs101 don't fit in well with the existing pll lock and
-> clock data recovery (CDR) callback used by existing exynos platforms.
-> 
-> Allow SoCs to specifify and implement their own calibration and CDR
-> functions that can be called by the generic samsung phy code.
+> Add the m-phy tuning values for gs101 UFS phy and SoC callbacks
+> gs101_phy_wait_for_calibration() and gs101_phy_wait_for_cdr_lock().
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
-
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
