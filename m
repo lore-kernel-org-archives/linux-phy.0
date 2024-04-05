@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56682C67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:59:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8621DC67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:59:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v8gZ09lgODjoelUWHRekjDfxFwIDDo7Pc8W3btN6bYg=; b=Si5s1ypNY1+pEd
-	2r9c4swQkZjIcHtfQm53oDXj8HrhG1NFLkRH5L5eiOm9jXydl49szaDFgPG8H3rlsRaX948NABGVJ
-	MJejLFkngH1Su62eeLiy2f3VjpsKGclwkVnW79+R7ZZRgEl0sS1eSKf3y85PegziEmvNIeHciCwzA
-	H7B0TYJjIBQ7FJnzlVV1Nel8rGT4Yn6gEPURx+WNj7ERnbTsqe4RYlvsgs9a0HXbZBHUshAAhYCj1
-	7MOjS5Qf3g/7qpX80oV8m+rMRunUlFPZVEDC8THwDbQQ1aBZ3XUnORnmRw2mT6IcVjAgT2WPub3oY
-	001ZyP9IYtL+t+Wgb0xw==;
+	List-Owner; bh=U83E5sdItKWPQRTXdngUe0Jb43qxe39xBvop491RwUo=; b=ECR7DvA/GeqzPO
+	E1ff9QbydXWqiO9WIBDE61fl2j4iX6IeV9zUenKjcoI5EFqAiF7rXtv9oU7hJ0WgMnN3joTrM6hC5
+	uRJu7AaL5ikiy3tdhiWv04mktxGSKxVCGQyvrZPaBovD1ZpklyEBqWPT2H0RU6PP4IrZ8hz/MPUA3
+	ALXP2oRTRgFmXrnIIyqJ8RpjxgFFdIRJek4wkEe9RrfoC368I02Ixjm1RZqhLUkPxVfg1giv63pNL
+	nme381htwWgKjGQdj8iNt1/Vx3W5hZ7zFyNtDILkswo+wVRG+3STMWhmrySmi/3vxQhqUwm5p0ACi
+	eLpeYHyKA9vwWVMmRvqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseTq-00000005ocx-41BD;
-	Fri, 05 Apr 2024 07:59:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rseUJ-00000005oqg-0Ors;
+	Fri, 05 Apr 2024 07:59:51 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseTn-00000005ob1-0LMD;
-	Fri, 05 Apr 2024 07:59:21 +0000
+	id 1rseUF-00000005ooJ-0pwz;
+	Fri, 05 Apr 2024 07:59:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8BA2A61721;
-	Fri,  5 Apr 2024 07:59:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07279C433C7;
-	Fri,  5 Apr 2024 07:59:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AF2D361721;
+	Fri,  5 Apr 2024 07:59:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A4A9C433F1;
+	Fri,  5 Apr 2024 07:59:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303958;
-	bh=4g2Mf46Dl2BOgknuShGB4UlOEql/DaDSUBYNznk4Iic=;
+	s=k20201202; t=1712303986;
+	bh=ePzd0LSkACD8Q2qGi5ZvnhDdOvBVVEucTM70RJBuCAo=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dCNoxNR7ZOSyIfURT16nLfrha1FBiTFHIlrm9rXP1//HRKp2od7hVuH9cc8k3jtEH
-	 2l11Rd/ro7q8nEnV0/uvezTNmtIxyrHWamdvexetQ+UrlyqwM+t9Jb7lEvLaSCkZew
-	 aZVwk2IVpMwggHjgUrqMdfzliSLJiXj3OklDJXMZVKGgVcbupswJP8zdVVk+s15fj3
-	 wfwFMteLyKTEbBYGi8z0OlJgayDDezhn5b6DuyJ4GDhBBRGCfNFD+YoXQ/gpOaT/YW
-	 U/BnPEo87ra3NCn/HkpulijiQqZrB0aqEsuTlCHTlizyxat9x9CPuBxaCcOTpDqNXo
-	 Cn5chNqU13YCg==
-Message-ID: <ec93ba2d-4bb2-4528-a3fe-7ffd9be98428@kernel.org>
-Date: Fri, 5 Apr 2024 09:59:05 +0200
+	b=G2gUWf/s3vEsCIqJ2cdhWadkVGKdrYXh0c9nCfX+o4zCuZz3SnKTHvK3JNhtvWkG3
+	 LRN+ZCVUa0C4MeGnZg8xdEBbpw4S9U4LNpqIwkFxpNMoYkIXap6yuQCzDOqYQ6BDJa
+	 m5VN6/uvhO7Jf2Hh2p2hsTjU/1VeH927qY9skA6UVuX9Xzyy1TiG6Q36NEUHHlxGed
+	 X/sZDNLkzwynFa+b5eqk9rez2QH9g929/pKc/3czJdItd40c4jxxpkjuxZotzoTq0c
+	 lQomSVXv6JjfMbTCGfkax+xUIJYcd+hgFrUfUEWX5xX/feaDs91cwGt80WGXKkS+7N
+	 8iUe/9OcMembQ==
+Message-ID: <16d21771-dded-4c1d-90b0-f3ac03be0726@kernel.org>
+Date: Fri, 5 Apr 2024 09:59:34 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 15/17] scsi: ufs: host: ufs-exynos: add some pa_dbg_
- register offsets into drvdata
+Subject: Re: [PATCH 16/17] scsi: ufs: host: ufs-exynos: Add support for Tensor
+ gs101 SoC
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-16-peter.griffin@linaro.org>
+ <20240404122559.898930-17-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-16-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-17-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005919_277374_53375600 
-X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-CacheID: sfid-20240405_005947_397279_67DF8F22 
+X-CRM114-Status: UNSURE (   9.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,14 +127,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> This allows these registers to be at different offsets or not
-> exist at all on some SoCs variants.
+> Add a dedicated compatible and drv_data with associated
+> hooks for gs101 SoC found on Pixel 6.
+> 
+> Note we make use of the previously added EXYNOS_UFS_OPT_UFSPR_SECURE
+> option, to skip initialisation of UFSPR registers as these are only
+> accessible via SMC call.
+> 
+> EXYNOS_UFS_OPT_TIMER_TICK_SELECT option is also set to select tick
+> source. This has been done so as not to effect any existing platforms.
+> 
+> DBG_OPTION_SUITE on gs101 has different address offsets to other SoCs
+> so these register offsets now come from uic_attr struct.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
->  drivers/ufs/host/ufs-exynos.c | 38 ++++++++++++++++++++++++-----------
->  drivers/ufs/host/ufs-exynos.h |  6 +++++-
->  2 files changed, 31 insertions(+), 13 deletions(-)
+
 
 Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
