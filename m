@@ -4,109 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD05DCD11C2
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 09:49:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87B26C67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 10:19:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:Cc:To:
+	From:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uFrdB9QOQVW5UNhy7X8wh5RaFqCweCmbvVsauNIAy50=; b=GDS8V2gxhtQoXg
-	hz80QQAAyZXiQSgIH8WMiKoHXKlBR0tjvYO8qUz6x0FpNH4HV8sbsc2GCUfxYNBfEF4Ip7ZAFnEz2
-	bZ/K/vJZXsdbC6COfZCXfWsSMr05W1aHwvWowDv4IPj+f3Wt2+cI4dAySvxU01GAOs8/O+9Gqz8eL
-	bhY0rZhRKvVHGevK8rCdH0fOUrOU2D678BNXhqe1BpS8/HQCmwfGqc7s8vno7jLNAktwCzhwNyg6s
-	mZRWiEqwUT2+o3l2G/YX+ue70zvsbY0Did0aXxME/OdYNBDNvg1MAQMVVw8oWlMfHXBWIVYSjThGs
-	tgmC2L1V42QGrTTyOQEg==;
+	List-Owner; bh=Yq+N8Lr8ebiIT9ncX1NXGhtT27SQ2asbWmTE4lljLt8=; b=Vu4N9olC6rxXI5
+	1/4WQS5H72qbZ2LL3Egsz+M8O/I9hnV4qPPu4zvWUbVnXSO++LM/NBrvC6J9pu3DVIewCjSYkJI/C
+	HKNU6cBg7rlIYW6E751DVKBJ14XJXU62ha4oA0NkCnkYGyEx43yfNhKAhkul69pEUDHhv7Q5T+jBj
+	HxizRIOtHhLX84wke2s5Fuy61Vvc+mdtTZgcykMnVsefCWZF4SJFNiqHcB2qppeeodurfv1zEnI1M
+	UrAEI/qMFCHrhTi3fau5KK54f0nNxDNJS6cyxkq2wzrutcnSbllQFTcOePZXjF32fdKV4MWRfSret
+	d3/3OCOfIWT6hsuSEepw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsgCo-00000006GDv-2VKH;
-	Fri, 05 Apr 2024 09:49:54 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rsgfq-00000006PBZ-0sVh;
+	Fri, 05 Apr 2024 10:19:54 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseGr-00000005jrB-1dWO;
-	Fri, 05 Apr 2024 07:46:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 6E34E616DE;
-	Fri,  5 Apr 2024 07:45:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 919F4C433C7;
-	Fri,  5 Apr 2024 07:45:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303156;
-	bh=AQ5k1Ebe5Fm4EtDbJnnbbMyqhwHlWArxIYkQrss7lyM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=H6YfLLejAxrZxxFNmjJgj/DW4+tTj3G9EynkBu6+EjBdNBFsqwTa27hG1DyS9p/jW
-	 iUSEtKfvPy0ojzIrAdob/11+KUIZqo5biJn2I8RaDbPurUTY/TkmCs574+a/7fys66
-	 OOgdvcA3vefeoQ/EPg+cd+wVk55vxMSDoloZ3/mqQrGo5RNKKWPv0ctWGKLo+bb/X6
-	 5oHtkt5orCMp1He1kCoYbvuuljT17NKw8/Vwj04fTqA/quhN6i3HmRs/fi665HppaP
-	 fbwXfBrNmq9Uv9lBEpsW1IeLH0NepdDptBixolDwDP696lxgpRZPlKBV1pRo3kZX2B
-	 vKGsQ01pK3BKw==
-Message-ID: <948a70ed-e3de-41d6-ada8-b547aa004ef0@kernel.org>
-Date: Fri, 5 Apr 2024 09:45:46 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 00/17] HSI2, UFS & UFS phy support for Tensor GS101
-To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
- sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
- avri.altman@wdc.com, bvanassche@acm.org, s.nawrocki@samsung.com,
- cw00.choi@samsung.com, jejb@linux.ibm.com, martin.petersen@oracle.com,
- chanho61.park@samsung.com, ebiggers@kernel.org
-Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
- andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
+	id 1rsgfn-00000006PAX-1sUm
+	for linux-phy@lists.infradead.org;
+	Fri, 05 Apr 2024 10:19:52 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-a519eae91d1so98404966b.3
+        for <linux-phy@lists.infradead.org>; Fri, 05 Apr 2024 03:19:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fairphone.com; s=fair; t=1712312387; x=1712917187; darn=lists.infradead.org;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/7wBknhXnwsdUBBqfoshvbTdHyCPt+Ehzl1Q7shB3pk=;
+        b=BMDt8Tqqqk7r4/6S3d/Kr7+KcaGNiyZs2hRUFWandswjERn6rA964YP0Rqj5MdAwIX
+         k2uaHfIWfXfz1R5OVZtoyplfilwTWmwLuW1Za+NBRUG+nZ/eDBOZxJCTwoFzDpIZ5v67
+         hA3aqTeStHN/nwt4SWkpO26X410xeakV2Dkf9psbJqvT6nSO784t7XTQ5jsd2NdHash0
+         29aeq0j49v6HFsV+RIuQsCyPxFDvxT8C0dO/GwyCxZxf/9iBGsBR6Qbdwmx85Ai0vmSQ
+         PgTfXZZW0zrNN5e4UBiTqlIEuHPFbYMEHB4373sg71G0/GCXUp64fICcAbKkcd6cmlrN
+         i2sA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712312387; x=1712917187;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=/7wBknhXnwsdUBBqfoshvbTdHyCPt+Ehzl1Q7shB3pk=;
+        b=KrazqwkNGb3K8PKBsWdf9hatc8Z1mvhiMQAVc5d39oveUb3BSCDUCJkVUJ1P7uXq70
+         dFRFSsotrSd7jFAEhHr6ucp6uMTjpcTqwZFIXx3PVLf+9og7TkFFlpb3qBDtOSbwIkIQ
+         QbpK+KPL/+wK8kU/tWiCICjHQBBGr40/RNolLhsHDZg7coGUzh8c+rAaw+lEibyWr+2T
+         kx/LE4K3WsjHu8srbT5Ofe7pV3X1pdUnsq/UhurJMmdQZJD/fkicosHoAEaKbE8P7TF4
+         tMLvNi1VlY8Q0dkcl0o6UkG/t28IIzOTsC1Ulyt3xNovy4mdXjnURNQFwMakqrCVx/tR
+         Y5oQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVb5QAAibwZ6QOj36+VyrO/NoNOpbzHSPFN2Jl30ZGtlQIMtMKFwNxIptf1n1sHiQQP0ySWWihPmfooukH1fxH2XQQbRJACSAkhfuZ81g==
+X-Gm-Message-State: AOJu0YzOEodJczcdW5nkeovdhBClbSxWoij9QOgzSur7sBCjd1jBAeaZ
+	CMl4ApEFZjNiBXJxrXXKOdDqedgUw/hx+dyt9L6ZL/UBDH2d/jQTcbwXD1tYBrU=
+X-Google-Smtp-Source: AGHT+IEb6UquOirryxNCdTbMBwQSxXMSkSkdEgWggO43HlcRkq+10Oy8opxJEoC4UC+X+wGb7hJvGQ==
+X-Received: by 2002:a17:906:38f:b0:a47:2036:dbc4 with SMTP id b15-20020a170906038f00b00a472036dbc4mr541798eja.25.1712312387218;
+        Fri, 05 Apr 2024 03:19:47 -0700 (PDT)
+Received: from localhost (144-178-202-138.static.ef-service.nl. [144.178.202.138])
+        by smtp.gmail.com with ESMTPSA id gx26-20020a1709068a5a00b00a46b4c09670sm670330ejc.131.2024.04.05.03.19.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 05 Apr 2024 03:19:46 -0700 (PDT)
+Mime-Version: 1.0
+Date: Fri, 05 Apr 2024 12:19:46 +0200
+Message-Id: <D0C42YR1270X.23P9WCWWNB8XF@fairphone.com>
+From: "Luca Weiss" <luca.weiss@fairphone.com>
+To: <neil.armstrong@linaro.org>, "Konrad Dybcio" <konrad.dybcio@linaro.org>,
+ "Bjorn Andersson" <andersson@kernel.org>
+Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
+ <kishon@kernel.org>, "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
+ <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley" <conor+dt@kernel.org>,
+ "Abhinav Kumar" <quic_abhinavk@quicinc.com>,
+ <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+X-Mailer: aerc 0.15.2
+References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org> <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com> <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org> <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt> <236a104c-fc16-4b3d-9a00-e16517c00e3a@linaro.org> <D064242SMIVM.1GUC1I9GE9IGC@fairphone.com> <963b60e5-6ab7-4d9f-885a-ba744c2b7991@linaro.org>
+In-Reply-To: <963b60e5-6ab7-4d9f-885a-ba744c2b7991@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_004557_657008_B7DE91A9 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20240405_031951_599955_49C72CB0 
+X-CRM114-Status: GOOD (  30.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,33 +99,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/04/2024 14:25, Peter Griffin wrote:
-> Hi folks,
-> 
-> This series adds support for the High Speed Interface (HSI) 2 clock
-> management unit, UFS controller and UFS phy calibration/tuning for GS101.
-> 
-> With this series applied, UFS is now functional! The SKhynix HN8T05BZGKX015
-> can be enumerated, partitions mounted etc. This then allows us to move away
-> from the initramfs rootfs we have been using for development so far.
-> 
-> The intention is this series will be merged via Krzysztofs Samsung Exynos
-> tree(s). This series is rebased on next-20240404.
-> 
-> The series is broadly split into the following parts:
-> 1) dt-bindings documentation updates
-> 2) gs101 device tree updates
-> 3) Prepatory patches for samsung-ufs driver
-> 4) GS101 ufs-phy support
-> 5) Prepatory patches for ufs-exynos driver
-> 6) GS101 ufs-exynos support
+On Fri Apr 5, 2024 at 10:08 AM CEST, Neil Armstrong wrote:
+> Hi Luca,
+>
+> On 29/03/2024 10:02, Luca Weiss wrote:
+> > On Tue Mar 26, 2024 at 10:02 PM CET, Konrad Dybcio wrote:
+> >> On 16.03.2024 5:01 PM, Bjorn Andersson wrote:
+> >>> On Fri, Mar 15, 2024 at 06:35:15PM +0100, Neil Armstrong wrote:
+> >>>> On 15/03/2024 18:19, Luca Weiss wrote:
+> >>>>> On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
+> >>>>>> Register a typec mux in order to change the PHY mode on the Type-C
+> >>>>>> mux events depending on the mode and the svid when in Altmode setup.
+> >>>>>>
+> >>>>>> The DisplayPort phy should be left enabled if is still powered on
+> >>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+> >>>>>> PHY is not powered off.
+> >>>>>>
+> >>>>>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+> >>>>>> will be set in between of USB-Only, Combo and DisplayPort Only so
+> >>>>>> this will leave enough time to the DRM DisplayPort controller to
+> >>>>>> turn of the DisplayPort PHY.
+> >>>>>>
+> >>>>>> The patchset also includes bindings changes and DT changes.
+> >>>>>>
+> >>>>>> This has been successfully tested on an SM8550 board, but the
+> >>>>>> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+> >>>>>> PD USB Hubs and PD Altmode Dongles to make sure the switch works
+> >>>>>> as expected.
+> >>>>>>
+> >>>>>> The DisplayPort 4 lanes setup can be check with:
+> >>>>>> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+> >>>>>> 	name = msm_dp
+> >>>>>> 	drm_dp_link
+> >>>>>> 		rate = 540000
+> >>>>>> 		num_lanes = 4
+> >>>>>
+> >>>>> Hi Neil,
+> >>>>>
+> >>>>> I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
+> >>>>> haven't had any success so far.
+> >>>>>
+> >>> [..]
+> >>>>> [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+> >>>>> [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+> >>>>
+> >>>> Interesting #1 means the 4 lanes are not physically connected to the other side,
+> >>>> perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
+> >>>> or some fixups in the init tables.
+> >>>>
+> >>>
+> >>> I tested the same on rb3gen2 (qcs6490) a couple of weeks ago, with the
+> >>> same outcome. Looking at the AUX reads, after switching to 4-lane the
+> >>> link training is failing on all 4 lanes, in contrast to succeeding only
+> >>> on the first 2 if you e.g. forget to mux the other two.
+> >>>
+> >>> As such, my expectation is that there's something wrong in the QMP PHY
+> >>> (or possibly redriver) for this platform.
+> >>
+> >> Do we have any downstream tag where 4lane dp works? I'm willing to believe
+> >> the PHY story..
+> > 
+> > Just tested on Fairphone 5 downstream and 4 lane appears to work there.
+> > This is with an USB-C to HDMI adapter that only does HDMI.
+> > 
+> > FP5:/ # cat /sys/kernel/debug/drm_dp/dp_debug
+> >          state=0x20a5
+> >          link_rate=270000
+> >          num_lanes=4
+> >          resolution=2560x1440@60Hz
+> >          pclock=241500KHz
+> >          bpp=24
+> >          test_req=DP_LINK_STATUS_UPDATED
+> >          lane_count=4
+> >          bw_code=10
+> >          v_level=0
+> >          p_level=0
+> > 
+> > Sources are here:
+> > https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-5.4/+/refs/heads/odm/rc/target/13/fp5
+> > And probably more importantly techpack/display:
+> > https://gerrit-public.fairphone.software/plugins/gitiles/platform/vendor/opensource/display-drivers/+/refs/heads/odm/rc/target/13/fp5
+> > Dts if useful:
+> > https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-extra/devicetree/+/refs/heads/kernel/13/fp5
+>
+> Could you retry with this applied ?
+>
+> https://lore.kernel.org/all/20240405000111.1450598-1-swboyd@chromium.org/
 
-UFS phy and host should go through their trees. What is the
-reason/need/requirement to put it into this patchset and merge via
-Samsung SoC tree?
+Unfortunately I do not see any change with this on QCM6490 Fairphone 5
+and 4-lane DP.
 
-Best regards,
-Krzysztof
+Regards
+Luca
+
+>
+> Thanks,
+> Neil
+>
+> > 
+> > Regards
+> > Luca
+> > 
+> >>
+> >> Konrad
+> > 
 
 
 -- 
