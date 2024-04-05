@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E2A4CD11C2
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:58:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D75FEC67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:58:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=THyQs7P/eoUZqaXaxOeKaF38SgxtXGcomzeNndzeAvo=; b=e54MNDN7udM7RN
-	avAnOyP33w5OiVSS/M3GNissRUeBQ/doQ9+gGiJI8/DJ7Bik6x7a0BUgmlWQ3tr8JU77SHDR2pHJg
-	N0Plb4Xj/RCRGdJjk7bfBJzylv3GvFmZiVHm1SZPRWpSIlsAjRl4Io0M7TxLt9iivzr+JUYoAM21f
-	qJpoU+lHA5p7SaZTbh1EF0kNyPvIxOHQbSJU+jiqssT6TpmzF+TWOQFd/5yC8Ficr2mHs5xCprMe6
-	3PQGL8i1vBL9KfdKq/QMUUd+cikmSrJGGaMaYHil8+A0cd3niHgj5RVj7ciLintjixWJtHWqzKk9l
-	BknlyannBjVIdFbvR4kA==;
+	List-Owner; bh=RxHog2hVDfaiT83IZUW5dZjWwo+jyovzBLg0X3tqL8c=; b=zgbMk0rbp4+SIA
+	nPW598KkMz8nNTnxOeNi54qEBmishIBHr5u4z7XlCJwPdZ2iTu3wJaSQ0NnCMwndW4yqlTV3KICJ7
+	p+ZLocFisrV+ogOYEtsO9fYJn5dZBRalTCQKO9k1xc5TQMGIIP36LgtAAXFF3Cxqv2OOLkCEwNjh+
+	gS7lnzYDykoX4dl9Fl3uGs892HGK0pQDE6mrbjJVsuqJkV8kGBlkYU2HkftzdWpYQ48l3FPVXcVNI
+	Z/apMpernM+ThQNOj7j40yWmT8G+xj7UmxZuI6HwXdool89T1Tu/ecQVU0PQmfyCqZjjh0slO84Sb
+	ESHavj1Y72evnb56b7xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseSt-00000005o90-4AfQ;
-	Fri, 05 Apr 2024 07:58:24 +0000
+	id 1rseT5-00000005oGu-1yEC;
+	Fri, 05 Apr 2024 07:58:35 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseSp-00000005o6C-3JyK;
-	Fri, 05 Apr 2024 07:58:21 +0000
+	id 1rseSz-00000005oBz-1DXY;
+	Fri, 05 Apr 2024 07:58:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 43D546189D;
+	by dfw.source.kernel.org (Postfix) with ESMTP id B8727616D7;
+	Fri,  5 Apr 2024 07:58:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7883C433C7;
 	Fri,  5 Apr 2024 07:58:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44636C433F1;
-	Fri,  5 Apr 2024 07:58:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303899;
-	bh=ONtymIOkObhYMYvWNAyP+6x+F196OJJA4CRLyPZi+0s=;
+	s=k20201202; t=1712303908;
+	bh=gnuhmqk+yRoJmBLCbT2nA5MbkL1C5qwi/nuV4aNtmPw=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=hxjsLwb7QOiOEeXFVEDhfA6+8uxdBy+DLE6LfIQXyVDINePAp+ilLrvp+wB+jCX7/
-	 NHhZi+XNiZIObPPGBp5+3UDcxJhmfs7CJNbwPApUsckUbJAvltQBCfbwXinO3vZ2RC
-	 gVJ5EGZDCXkucetCrT3tdN1lKD04PqYJjCVdcH+IiN8zL88QVFEbozkdLga5Sjk1az
-	 JMByWLG9t+YPsEx9yU8Bgxxh/N+WfVJnTH0ka6YlTPIyG1bdDJQ5/DM7AIVW/T42NL
-	 LeXY7WlycQTYBQJkyK4XhUphyjUvMQJY4uNoDPm+Io9e1hW+tOOvycLUMdJ3lQwysP
-	 ECI/3MsbFesSw==
-Message-ID: <29ba6dd6-4983-40c1-ae0d-d21187f84e4c@kernel.org>
-Date: Fri, 5 Apr 2024 09:58:06 +0200
+	b=Zs7HW1QDGoOEqKHHwdD4AwwW3ZlV/TIxfUjbEknmrXjtIZZDUfdrS0sl3d3HuoM1V
+	 +i8HOppC1MZGSQ3tyX8e0fPfBTF+lWTJsFKiY+3ZS5zi3LTkG1V/OkRpzuF2CZ1j3l
+	 8cDGq+HXICQABZEWrH/D1RR0pGPjXyg23znOUryAoRqpqkrvOF6sKSZ/8VcEf/utcK
+	 x+zSCdrDvz4qezCb5mWZL9oKNHgS+1JxgXi8x5iVUxTK4NR2Xnu2fq7mPk6QdH6N5m
+	 Ny6YFylxUjMw86buVXgWweSxlfJ+N1gnwhDqBdqOtVqSh3RkaiAzBI2gVOviZyaFLZ
+	 KFDaEj0r/dQHQ==
+Message-ID: <8d4e1553-e0fe-4be6-952f-163a0d7a88fa@kernel.org>
+Date: Fri, 5 Apr 2024 09:58:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 13/17] scsi: ufs: host: ufs-exynos: add
- EXYNOS_UFS_OPT_TIMER_TICK_SELECT option
+Subject: Re: [PATCH 14/17] scsi: ufs: host: ufs-exynos: allow max frequencies
+ up to 267Mhz
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-14-peter.griffin@linaro.org>
+ <20240404122559.898930-15-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-14-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-15-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005819_977862_67930A07 
-X-CRM114-Status: UNSURE (   4.78  )
+X-CRM114-CacheID: sfid-20240405_005829_501567_20C0427E 
+X-CRM114-Status: UNSURE (   4.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,17 +127,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> This option is intended to be set for SoCs that have HCI_V2P1_CTRL
-> register and can select their tick source via IA_TICK_SEL bit.
-> 
-> Source clock selection for timer tick
-> 0x0 = Bus clock (aclk)
-> 0x1 = Function clock (mclk)
+> Platforms such as Tensor gs101 the pclk frequency is 267Mhz.
+> Increase PCLK_AVAIL_MAX so we don't fail the frequency check.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
 Best regards,
 Krzysztof
