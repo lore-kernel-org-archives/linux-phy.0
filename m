@@ -4,49 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E091C67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 09:04:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD05DCD11C2
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 09:49:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o4WxTaMUC7wd8fTs5w9BhapLk+oBrNDZ3sQLDKr9KZw=; b=CqvJWyWF/HQ1ZY
-	f6dP9VN0ITcaZPa7NJORnD3CLMeS271/pnKys1jLvW2UgI8E3bAsIlUqDf+3Fseoaq8pwO4WhMuJr
-	4ffSMymxmFLwUsGHJAOE+LjhMZD+lyQAkGZPmozwdDjB/5mcSNk2gOSBO94182pK+7lPa1gXTt0Xt
-	Cx2RkKFPStWmwhfF87AHsdYbmc63JyM7uTfsb6bGl5CKmSJRK/PGm12KHuBIjzlp8yM6yootJ6jhM
-	gkaIMWSUDP7wKzSf9kbt3siTE6dl5hTPL950ItY0oSWz2TN9dLtDJdLiLyvKozFpz74N8cfHRUyqJ
-	4FwZYYayOBSAmbc2wIKw==;
+	List-Owner; bh=uFrdB9QOQVW5UNhy7X8wh5RaFqCweCmbvVsauNIAy50=; b=GDS8V2gxhtQoXg
+	hz80QQAAyZXiQSgIH8WMiKoHXKlBR0tjvYO8qUz6x0FpNH4HV8sbsc2GCUfxYNBfEF4Ip7ZAFnEz2
+	bZ/K/vJZXsdbC6COfZCXfWsSMr05W1aHwvWowDv4IPj+f3Wt2+cI4dAySvxU01GAOs8/O+9Gqz8eL
+	bhY0rZhRKvVHGevK8rCdH0fOUrOU2D678BNXhqe1BpS8/HQCmwfGqc7s8vno7jLNAktwCzhwNyg6s
+	mZRWiEqwUT2+o3l2G/YX+ue70zvsbY0Did0aXxME/OdYNBDNvg1MAQMVVw8oWlMfHXBWIVYSjThGs
+	tgmC2L1V42QGrTTyOQEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsfVD-000000065sb-0dMC;
-	Fri, 05 Apr 2024 09:04:51 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rsgCo-00000006GDv-2VKH;
+	Fri, 05 Apr 2024 09:49:54 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseUp-00000005p5V-0ydZ;
-	Fri, 05 Apr 2024 08:00:25 +0000
+	id 1rseGr-00000005jrB-1dWO;
+	Fri, 05 Apr 2024 07:46:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 373C0CE22BF;
-	Fri,  5 Apr 2024 08:00:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E4FCC433C7;
-	Fri,  5 Apr 2024 08:00:09 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6E34E616DE;
+	Fri,  5 Apr 2024 07:45:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 919F4C433C7;
+	Fri,  5 Apr 2024 07:45:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712304019;
-	bh=IZRrX7XpE+4FP7wBYx2ZuBhTerHvqKeOEt7zeIB6fbk=;
+	s=k20201202; t=1712303156;
+	bh=AQ5k1Ebe5Fm4EtDbJnnbbMyqhwHlWArxIYkQrss7lyM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=u96lNQ9g7rzhJVO5YSuaTSLcO8l5TZxj9nriXwg/NHXCi2gc5Zqor0K2wLhWMgS+0
-	 KDodbIO9tf8r1jtwW0vhcC4qg5CcEgHNcmOP617kX2to7ha62nzjLUH5GMYf/AFxPz
-	 D9vNsUpCbelB/vauSI6/zcY0t4kCC3TbBM9KmWBrav0TdaC20aP+j8BczWSp6/LmCg
-	 J9OViP8NYXY0VnygybjrslNd6CV9QYVo5WXmTLZxbBOOFsohSSCOUDXtUPU/nawV+b
-	 zZE3gWV7gE/i7P8B3GIUyKp7QiV1rybvULLtaK2sfiGSajTa+lJhncklkQf7IpmEla
-	 6l0uSJRLKP/nw==
-Message-ID: <9f202f3a-fec8-4570-8c37-64927bdbb276@kernel.org>
-Date: Fri, 5 Apr 2024 10:00:07 +0200
+	b=H6YfLLejAxrZxxFNmjJgj/DW4+tTj3G9EynkBu6+EjBdNBFsqwTa27hG1DyS9p/jW
+	 iUSEtKfvPy0ojzIrAdob/11+KUIZqo5biJn2I8RaDbPurUTY/TkmCs574+a/7fys66
+	 OOgdvcA3vefeoQ/EPg+cd+wVk55vxMSDoloZ3/mqQrGo5RNKKWPv0ctWGKLo+bb/X6
+	 5oHtkt5orCMp1He1kCoYbvuuljT17NKw8/Vwj04fTqA/quhN6i3HmRs/fi665HppaP
+	 fbwXfBrNmq9Uv9lBEpsW1IeLH0NepdDptBixolDwDP696lxgpRZPlKBV1pRo3kZX2B
+	 vKGsQ01pK3BKw==
+Message-ID: <948a70ed-e3de-41d6-ada8-b547aa004ef0@kernel.org>
+Date: Fri, 5 Apr 2024 09:45:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 17/17] MAINTAINERS: Add phy-gs101-ufs file to Tensor
- GS101.
+Subject: Re: [PATCH 00/17] HSI2, UFS & UFS phy support for Tensor GS101
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +58,6 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-18-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +103,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-18-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_010023_991554_F8C8841F 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20240405_004557_657008_B7DE91A9 
+X-CRM114-Status: GOOD (  11.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,26 +124,29 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Add the newly created ufs phy for GS101 to MAINTAINERS.
+> Hi folks,
 > 
-> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
+> This series adds support for the High Speed Interface (HSI) 2 clock
+> management unit, UFS controller and UFS phy calibration/tuning for GS101.
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 491d48f7c2fa..48ac9bd64f22 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -9256,6 +9256,7 @@ S:	Maintained
->  F:	Documentation/devicetree/bindings/clock/google,gs101-clock.yaml
->  F:	arch/arm64/boot/dts/exynos/google/
->  F:	drivers/clk/samsung/clk-gs101.c
-> +F:	drivers/phy/samsung/phy-gs101-ufs.c
+> With this series applied, UFS is now functional! The SKhynix HN8T05BZGKX015
+> can be enumerated, partitions mounted etc. This then allows us to move away
+> from the initramfs rootfs we have been using for development so far.
+> 
+> The intention is this series will be merged via Krzysztofs Samsung Exynos
+> tree(s). This series is rebased on next-20240404.
+> 
+> The series is broadly split into the following parts:
+> 1) dt-bindings documentation updates
+> 2) gs101 device tree updates
+> 3) Prepatory patches for samsung-ufs driver
+> 4) GS101 ufs-phy support
+> 5) Prepatory patches for ufs-exynos driver
+> 6) GS101 ufs-exynos support
 
-This could go also via phy-tree:
-
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+UFS phy and host should go through their trees. What is the
+reason/need/requirement to put it into this patchset and merge via
+Samsung SoC tree?
 
 Best regards,
 Krzysztof
