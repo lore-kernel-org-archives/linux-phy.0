@@ -4,51 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C7A7C67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:46:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11344C67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:49:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IcZuYRUqni5ReBYBraaTDHm86eFpJiWOWqsjsnbRf1I=; b=LjiTkKQNI6rfQu
-	CIFsHli11EYYNb7+HkAyt6r9wlXo6EFxYzN3rluelHF8O4FN7/5GUS1iWKnHqdy/fTGxp4otfpdW6
-	iGkazn0dOUW95yEsJRQpWZ80Ab8gmRxnZoPyLSdz0eulGsOcMs+blNwXtdEwTKDYYRBXeD6DCUV/Z
-	abewIySzDinPmVxMTVz1oUYeq7PSKXXy8MsaaKdCcs3SUPw5AgU/OyVWE/bceLAUrHDmeFRYpETyz
-	/WL0ntAnhBWkivU2K6W+SSPtMU7v113ZlC5zCI3a1OxaRW+kazL+k4SsZiavx8XUVl0dIKBtT5RyN
-	mKtSTuZMduz5fpEGQkiQ==;
+	List-Owner; bh=Z/2Sr0K3mvDQG6aNetl6m+6P8ggIu2ipfvhkDleMyBo=; b=a7sh06EPtt8v7K
+	w71wh1ihLufdcQYG3DRe9ktSu3wex/3myAGjSd6tfizDUAcsMlGhWEVR7dx+6LFnigqQrl1Zcxcd6
+	kvegzHBN67aAeRoOBY+lZY5YloUNzEoxnLzOaKcM70ZCRDXqkZdQLMlyjevh5zrCT75z7H8mcOl13
+	ngKNyWYa3KJMAGkBdxNb3zzcSPrMG7geSdYCJasQ5S4HVSGCLYMpa2AbHIzFwqrnD0pH0OhdyJ20J
+	YDGoJpjOGQJ8o3DhUPtMTZ5Xnj3OWSEmVOYzH5eqw9ZhqQpAfn5hxpMWOVPAC1GyJNB/3nkOaDXdd
+	dPK2mWF5926RlkeSkj9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseHU-00000005kAw-3uSu;
-	Fri, 05 Apr 2024 07:46:36 +0000
+	id 1rseKL-00000005kwm-30XC;
+	Fri, 05 Apr 2024 07:49:33 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseHQ-00000005k8x-1oDG;
-	Fri, 05 Apr 2024 07:46:33 +0000
+	id 1rseKI-00000005kw4-0ulh;
+	Fri, 05 Apr 2024 07:49:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DC4BD616DE;
-	Fri,  5 Apr 2024 07:46:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8FE9EC433C7;
-	Fri,  5 Apr 2024 07:46:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 735306188F;
+	Fri,  5 Apr 2024 07:49:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C291C433F1;
+	Fri,  5 Apr 2024 07:49:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303191;
-	bh=19hgbaU3P8IPVBIhjWEumRz5j4TbX2VV6q6o2CVSkvM=;
+	s=k20201202; t=1712303369;
+	bh=ZJTGERD/YWH3ZHY5NVcihAMNX3eLH1+py0PDKgq8rm8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lZcNmWC+TCfv6qwk4WglYGPuJyGJRbLBcYD/z1wDkQUV5HMeZVQ0FGTxtd1yd94mf
-	 kT/R32qUkNvn++EHnRIKZtWVzOeNQTnh8t4LyUNLajF6S8NwCj+jHn30weB+U7OVEz
-	 AnDEfedoT/0FIjOdERSkE/xn111acd8qiJWt1xY2ku6gYyv2s6sqESmg0Mipin4nXh
-	 wx3phujkHPN6hc9iNk/Px0QP8kmJW5FjH6yt2fKh4d8ytVBAxbIqIoPOH9CCfdzpE7
-	 U0uc1aYrl6BZzCUrE+WFu1tYbleQzo7Ctrx5BqIcQGibp2QPUQnaoKYndGekbChhVC
-	 IkgMZqtlliY7g==
-Message-ID: <6457f778-e42a-4240-9a38-c1300ef23ddb@kernel.org>
-Date: Fri, 5 Apr 2024 09:46:22 +0200
+	b=S6o2xXn19pnsdKoRz+6MuQLhuHNuCzeN09JuKbE9X0JpzWwTf6dAbBauCD+ZhWtdf
+	 i3cdaESyPFQu21r85bXjtPmSODN8f445FEggyI5JOC+hhs1H936y142zwHyOFGoCME
+	 KRHbY5S+w3R2SJa1q7t7AgzIWPPQSyoj2QTxRa0DAD5uPMVAMnJoVrmPqBiHiaKUxN
+	 VSFEDymPbu5jM5p2j/hmO/Z9ixRxBrgewPQvpIn7CosQ7+45wR3efhFxb9YF3ZD2rB
+	 4fR5QYPvHoYX5ufga/dkepP4LH6ykpHTP2cfIFn1nfHx1LXbABFk4TCdgJF+1FbG6p
+	 6mW8MN94HS6TQ==
+Message-ID: <a82e9859-b74e-44e8-a256-317b8c3fe6b7@kernel.org>
+Date: Fri, 5 Apr 2024 09:49:18 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/17] dt-bindings: clock: google,gs101-clock: add HSI2
- clock management unit
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
- Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
+Subject: Re: [PATCH 03/17] dt-bindings: ufs: exynos-ufs: Add gs101 compatible
+To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
  avri.altman@wdc.com, bvanassche@acm.org, s.nawrocki@samsung.com,
@@ -58,10 +56,9 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
- saravanak@google.com, willmcvicker@google.com
+ andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-2-peter.griffin@linaro.org>
- <d1aaa3a350315b8eb60aaee416fad4382385ca3a.camel@linaro.org>
+ <20240404122559.898930-4-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,10 +104,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <d1aaa3a350315b8eb60aaee416fad4382385ca3a.camel@linaro.org>
+In-Reply-To: <20240404122559.898930-4-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_004632_628514_A636FB97 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20240405_004930_381765_88036D56 
+X-CRM114-Status: GOOD (  12.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,42 +119,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDUvMDQvMjAyNCAwOToxNSwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gSGkgUGV0ZSwKPiAK
-PiBPbiBUaHUsIDIwMjQtMDQtMDQgYXQgMTM6MjUgKzAxMDAsIFBldGVyIEdyaWZmaW4gd3JvdGU6
-Cj4+IEFkZCBkdCBzY2hlbWEgZG9jdW1lbnRhdGlvbiBhbmQgY2xvY2sgSURzIGZvciB0aGUgSGln
-aCBTcGVlZCBJbnRlcmZhY2UKPj4gMiAoSFNJMikgY2xvY2sgbWFuYWdlbWVudCB1bml0LiBUaGlz
-IENNVSBmZWVkcyBoaWdoIHNwZWVkIGludGVyZmFjZXMKPj4gc3VjaCBhcyBQQ0llIGFuZCBVRlMu
-Cj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFBldGVyIEdyaWZmaW4gPHBldGVyLmdyaWZmaW5AbGluYXJv
-Lm9yZz4KPj4gLS0tCj4+IMKgLi4uL2JpbmRpbmdzL2Nsb2NrL2dvb2dsZSxnczEwMS1jbG9jay55
-YW1swqDCoMKgIHwgMzAgKysrKysrKysrKysrKysrKystLQo+PiDCoDEgZmlsZSBjaGFuZ2VkLCAy
-OCBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL2dvb2dsZSxnczEwMS1jbG9jay55YW1s
-IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL2dvb2dsZSxnczEwMS0K
-Pj4gY2xvY2sueWFtbAo+PiBpbmRleCAxZDJiY2VhNDFjODUuLmEyMDJmZDVkMWVhZCAxMDA2NDQK
-Pj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL2dvb2dsZSxn
-czEwMS1jbG9jay55YW1sCj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9jbG9jay9nb29nbGUsZ3MxMDEtY2xvY2sueWFtbAo+PiBAQCAtMzIsMTQgKzMyLDE1IEBAIHBy
-b3BlcnRpZXM6Cj4+IMKgwqDCoMKgwqDCoCAtIGdvb2dsZSxnczEwMS1jbXUtbWlzYwo+PiDCoMKg
-wqDCoMKgwqAgLSBnb29nbGUsZ3MxMDEtY211LXBlcmljMAo+PiDCoMKgwqDCoMKgwqAgLSBnb29n
-bGUsZ3MxMDEtY211LXBlcmljMQo+PiArwqDCoMKgwqDCoCAtIGdvb2dsZSxnczEwMS1jbXUtaHNp
-Mgo+IAo+IENhbiB5b3Uga2VlcCB0aGlzIGFscGhhYmV0aWNhbCBhbmQgYWRkIGhzaSBiZWZvcmUg
-bWlzYyBwbGVhc2UuCj4+IMKgCj4+IMKgwqAgY2xvY2tzOgo+PiDCoMKgwqDCoCBtaW5JdGVtczog
-MQo+PiAtwqDCoMKgIG1heEl0ZW1zOiAzCj4+ICvCoMKgwqAgbWF4SXRlbXM6IDUKPj4gwqAKPj4g
-wqDCoCBjbG9jay1uYW1lczoKPj4gwqDCoMKgwqAgbWluSXRlbXM6IDEKPj4gLcKgwqDCoCBtYXhJ
-dGVtczogMwo+PiArwqDCoMKgIG1heEl0ZW1zOiA1Cj4+IMKgCj4+IMKgwqAgIiNjbG9jay1jZWxs
-cyI6Cj4+IMKgwqDCoMKgIGNvbnN0OiAxCj4+IEBAIC0xMTIsNiArMTEzLDMxIEBAIGFsbE9mOgo+
-PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLSBjb25zdDogYnVzCj4+IMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCAtIGNvbnN0OiBpcAo+PiDCoAo+PiArwqAgLSBpZjoKPj4gK8KgwqDCoMKgwqAg
-cHJvcGVydGllczoKPj4gK8KgwqDCoMKgwqDCoMKgIGNvbXBhdGlibGU6Cj4+ICvCoMKgwqDCoMKg
-wqDCoMKgwqAgY29udGFpbnM6Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGVudW06Cj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGdvb2dsZSxnczEwMS1jbXUtaHNpMgo+IAo+IHRo
-aXMgYmxvY2sgc2hvdWxkIGFsc28gY29tZSBiZWZvcmUgbWlzYyBwbGVhc2UuCj4gCj4gT25jZSBk
-b25lLCBmZWVsIGZyZWUgdG8gYWRkCgpZZXMsIHBsZWFzZSwgYWNrIGZvciBib3RoLgoKQmVzdCBy
-ZWdhcmRzLApLcnp5c3p0b2YKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+On 04/04/2024 14:25, Peter Griffin wrote:
+> Add dedicated google,gs101-ufs compatible for Google Tensor gs101
+> SoC.
+> 
+> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
+> ---
+>  .../bindings/ufs/samsung,exynos-ufs.yaml      | 51 +++++++++++++++----
+>  1 file changed, 42 insertions(+), 9 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
+> index b2b509b3944d..898da6c0e94f 100644
+> --- a/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
+> +++ b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
+> @@ -12,12 +12,10 @@ maintainers:
+>  description: |
+>    Each Samsung UFS host controller instance should have its own node.
+>  
+> -allOf:
+> -  - $ref: ufs-common.yaml
+> -
+>  properties:
+>    compatible:
+>      enum:
+> +      - google,gs101-ufs
+>        - samsung,exynos7-ufs
+>        - samsung,exynosautov9-ufs
+>        - samsung,exynosautov9-ufs-vh
+> @@ -38,14 +36,12 @@ properties:
+>        - const: ufsp
+>  
+>    clocks:
+> -    items:
+> -      - description: ufs link core clock
+> -      - description: unipro main clock
+> +    minItems: 2
+> +    maxItems: 5
+
+Keep here minItems and:
+
++            - description: ufs link core clock
++            - description: unipro main clock
++            - description: fmp clock
++            - description: ufs aclk clock
++            - description: ufs pclk clock
+
+>  
+>    clock-names:
+> -    items:
+> -      - const: core_clk
+> -      - const: sclk_unipro_main
+> +    minItems: 2
+> +    maxItems: 5
+
+Similarly here
+
+>  
+>    phys:
+>      maxItems: 1
+> @@ -72,6 +68,43 @@ required:
+>    - clocks
+>    - clock-names
+>  
+> +allOf:
+> +  - $ref: ufs-common.yaml
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: google,gs101-ufs
+> +
+> +    then:
+> +      properties:
+> +        clocks:
+
+Enough is:
+minItems: 5
+
+> +          items:
+
+and drop the items since they are defined in top-level.
+
+Your original code is correct, but with my approach we keep the list
+synced between variants, at least part of the list. If another variant
+appears, then maybe it will go back to your approach, but maybe we can
+still have the same clocks and their order.
+
+
+> +            - description: ufs link core clock
+> +            - description: unipro main clock
+> +            - description: fmp clock
+> +            - description: ufs aclk clock
+> +            - description: ufs pclk clock
+> +
+> +        clock-names:
+
+minItems: 5
+
+> +          items:
+> +            - const: core_clk
+> +            - const: sclk_unipro_main
+> +            - const: fmp
+> +            - const: ufs_aclk
+> +            - const: ufs_pclk
+> +    else:
+> +      properties:
+> +        clocks:
+
+maxItems: 2
+
+> +          items:
+> +            - description: ufs link core clock
+> +            - description: unipro main clock
+> +
+> +        clock-names:
+
+maxItems: 2
+
+> +          items:
+> +            - const: core_clk
+> +            - const: sclk_unipro_main
+> +
+>  unevaluatedProperties: false
+>  
+>  examples:
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
