@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F902CD1284
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:51:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33B94C67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:53:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n0o5W1hubEwk4clFghvmpRHoV9Cfekl9Rilf8KVzaK4=; b=dxd66WMyO8BgbM
-	uFMvrP4ROYg5Z2En4P9Vbk9odTQVDAhjsjZwLm2mTu/SUu4s5H3iYPnSz3FYFjNDZCRTDZhnELeYe
-	JKOMnY3/kJUu1u0kzb3X9ldXKMKjTYaZYXAvPPRfPxw7TTUxLJ03b4MFW2vySZEhglFQBK3PNUugu
-	qaF2gju2KCuD/O12eQshIR6AP4SBWdYRSILNeH4wzn0gHxbTEQN2NVHwQAgNjfEgc7hTaQiellzXn
-	o13pjOCo+NXyqpF0ANAwS739SHqFPgLV32YXfSWbIqncmg4Dg5Hxm7MSB8pOoT7XsXP4RxdmyW/nv
-	f7JIrd+k0TmllECtriiQ==;
+	List-Owner; bh=W+GjlN2MmReO6xlVCbqd3MSTStr4CaeBCaaEKlUyl4A=; b=PlhRfO6BZaQi0x
+	Pmbn19nLgKsOJNmMJSoSOhgtv4+gAKBCGJX28Ly5XDorv3HS+2HvhL3o0cW72dTA1izkjfCNd/jFu
+	l0eut1Ypded5b6nEnqTEEluoRJLHqS3Vh9Jwoqh9lzUxf0LU/74qZQl3NGUukK/y/aVR8Jpwb9LEb
+	ghQeeDRjFRcpYVt67Dk1J3tlG3zyzTYyK0X2bt3V0RjPzykBrLSroTAMMIF9jkF08WAItne3rfUBa
+	c0Pr48M+GTGj1azxwKp1RqCwuYbmhA6gow0G0Dq/sW4XhluwLLzkWi2x9z2DXAFf/gXfMzOxSfjvT
+	ucHHQbl4lrkKQWWW/4nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseMF-00000005ldF-22p4;
-	Fri, 05 Apr 2024 07:51:31 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rseOA-00000005mLX-3CxU;
+	Fri, 05 Apr 2024 07:53:30 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseMB-00000005lbF-1a9F;
-	Fri, 05 Apr 2024 07:51:28 +0000
+	id 1rseO5-00000005mIv-2GkJ;
+	Fri, 05 Apr 2024 07:53:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A31AF61796;
-	Fri,  5 Apr 2024 07:51:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D3C1C43390;
-	Fri,  5 Apr 2024 07:51:18 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id A2560CE1FC4;
+	Fri,  5 Apr 2024 07:53:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7ED91C433C7;
+	Fri,  5 Apr 2024 07:53:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303486;
-	bh=hy+66NGPDCuyO88jk9doLTSP/pAvwzzvwk2CzBCUp+c=;
+	s=k20201202; t=1712303602;
+	bh=O2yHsk3jOUiEXpOOLddsz32luavlff5y+lISpOYrfwk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UvNAG0sfPsbWqLkWaw8zngmWW2byGpvEER8XgGJwJjBYjfjX/hwM1egjarlBeIn8X
-	 hTjYeAgArTAqFRg0K36QeR2HpP0MDv8PNNyxnXQCvaEif+SS1AahPTXhOSLyHefXju
-	 iGAhnK5qFxtphr+GlO6+7bjQcGnJ5i4Rzaw3p5n/fvr1etwLHASLb5s81LByHvIt1V
-	 YP/nn2QEfhheC+f8XfxcIOSrtxVAVDZ8zuimAl5D7eHIXBuFNRvH77zY8QBQCyUHhJ
-	 rgrdLfxsvyNsMYqmL3ov4cT7pXKKE1xtxgg9h3LKEbTTNj6TWnzHKV7CuhWjSP5Q8A
-	 kmfGm6fCb//tw==
-Message-ID: <5fec5719-9714-49d6-ac1e-9cd75557daf3@kernel.org>
-Date: Fri, 5 Apr 2024 09:51:15 +0200
+	b=J89Yh1DAphsL/Nzxb9JeaVErFLQCLvspMZDuFUfAhvcUV1eqmCS4/FyNcjSHQE+YN
+	 B1xN28k1/udDkEILWSV2yl84P7QFOihgbvyqIgxO5ewzuikHWdBMccoLd0a0mbgGdJ
+	 aDIr8B0pBBzye86XutRf1f4XKlCZ5Tq0+dJLjxaojURQdsbUXLfOplDW4FcKIEFUjz
+	 EFzhNxOWz+VEWNx2wn8UlvHOQEwQ4EP5shZSNxoNiKrHwFSVeiMHeATxcc4Z6h3ApH
+	 DObzvSzltjf3CNTfpOFVA19yJuYiQqyAlIrJ1oRHfFQ2PRtNxJYCzlcv0EogkgMqFD
+	 wdf/roOIR+8FA==
+Message-ID: <4ed72378-672e-46d6-9f29-fa118f598739@kernel.org>
+Date: Fri, 5 Apr 2024 09:53:10 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/17] arm64: dts: exynos: gs101: enable cmu-hsi2 clock
- controller
+Subject: Re: [PATCH 07/17] arm64: dts: exynos: gs101: Add ufs, ufs-phy and ufs
+ regulator dt nodes
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-6-peter.griffin@linaro.org>
+ <20240404122559.898930-8-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,11 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-6-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-8-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005127_542207_7C4D168F 
-X-CRM114-Status: UNSURE (   6.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240405_005326_146470_4A51557E 
+X-CRM114-Status: GOOD (  13.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,17 +126,87 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Enable the cmu_hsi2 clock management unit. It feeds some of
-> the high speed interfaces such as PCIe and UFS.
+> Enable the ufs controller, ufs phy and ufs regulator in device tree.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
->  arch/arm64/boot/dts/exynos/google/gs101.dtsi | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+>  .../boot/dts/exynos/google/gs101-oriole.dts   | 17 +++++++++
+>  arch/arm64/boot/dts/exynos/google/gs101.dtsi  | 35 +++++++++++++++++++
+
+If you wish you can split DTSI and DTS into separate patches. Up to you.
+
+>  2 files changed, 52 insertions(+)
 > 
+> diff --git a/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts b/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
+> index 6be15e990b65..986eb5c9898a 100644
+> --- a/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
+> +++ b/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
+> @@ -53,6 +53,14 @@ button-power {
+>  			wakeup-source;
+>  		};
+>  	};
+> +
+> +	ufs_0_fixed_vcc_reg: regulator-0 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "ufs-vcc";
+> +		gpio = <&gpp0 1 0>;
 
+Use defines for GPIO flags, but more important: are you sure this is not
+coming from a PMIC? What's the voltage? It looks like a stub for missing
+PMIC, because UFS voltages are usually provided by PMIC.
 
-Was it really compiled?
+> +		regulator-boot-on;
+> +		enable-active-high;
+> +	};
+>  };
+>  
+>  &ext_24_5m {
+> @@ -106,6 +114,15 @@ &serial_0 {
+>  	status = "okay";
+>  };
+>  
+> +&ufs_0 {
+> +	status = "okay";
+> +	vcc-supply = <&ufs_0_fixed_vcc_reg>;
+> +};
+> +
+> +&ufs_0_phy {
+> +	status = "okay";
+> +};
+> +
+>  &usi_uart {
+>  	samsung,clkreq-on; /* needed for UART mode */
+>  	status = "okay";
+> diff --git a/arch/arm64/boot/dts/exynos/google/gs101.dtsi b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
+> index 608369cec47b..9c94829bf14c 100644
+> --- a/arch/arm64/boot/dts/exynos/google/gs101.dtsi
+> +++ b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
+> @@ -1277,6 +1277,41 @@ pinctrl_hsi2: pinctrl@14440000 {
+>  			interrupts = <GIC_SPI 503 IRQ_TYPE_LEVEL_HIGH 0>;
+>  		};
+>  
+> +		ufs_0_phy: phy@17e04000 {
+> +			compatible = "google,gs101-ufs-phy";
+> +			reg = <0x14704000 0x3000>;
+> +			reg-names = "phy-pma";
+> +			samsung,pmu-syscon = <&pmu_system_controller>;
+> +			#phy-cells = <0>;
+> +			clocks = <&ext_24_5m>;
+> +			clock-names = "ref_clk";
+> +			status = "disabled";
+> +		};
+> +
+> +		ufs_0: ufs@14700000 {
+> +			compatible = "google,gs101-ufs";
+> +
+
+Drop blank line.
+
+> +			reg = <0x14700000 0x200>,
+> +			      <0x14701100 0x200>,
+> +			      <0x14780000 0xa000>,
+> +			      <0x14600000 0x100>;
+
 
 Best regards,
 Krzysztof
