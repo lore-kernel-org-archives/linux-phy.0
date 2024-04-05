@@ -4,61 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 012D2CD11C2
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 17:09:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CD88CD1299
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 17:09:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ptS45iOqR0Uh0B8VwkTA1aiq/i7m7vuwV5ZT1+y5PGo=; b=JQeeV3KM4wnYel
-	MBFRXsxF4vnBw31uTuofsF/YTj/sXqcWFlFbm9FSmYiFI/5aab7X00xGzKbV+UUDn8CXlLUIufgFB
-	TBJxLvdGg+q6zgk43oEFvUFn+XEmS/Y55wizHezRRTXW5IPD2iID180PoXAeCfZL8fKR/U86fQHul
-	5amVuR3y+ffORw/QLmblnijtlOZqzsZqdUzsP+0JDym3BT6f4bO4SKE3aQx8Q6nBejGZZbmdlLc+j
-	BfggHlgtSlxmz0K2NOGdRkGvzNsKYRxMVLhuh3oAm9lxQX/HkNT5xSKe8IgoZO6FoP+XBPup6ONqs
-	yBLpbZVK32e8fFUL6+ug==;
+	List-Owner; bh=E8Q7kinCVZTX3D8KKzPeHEvC3Szp0lZ1HaSlNuZV5MA=; b=xbqIdYf2iwFe1T
+	5B8HPsImQA8UL7R8vqgNY1sRZXZKH/doMXalUQWCBNxUxgx0ZKzdgZVK64jml/VVrvPD0w4Jg71hd
+	6owVZCavmhsSrzrnZCFqfjyzCCzqHkm357slOTaP8Eebh/gXDTkPTc/xP0fnWMBg+/r2rw3zE1lqZ
+	QmWSwscNY7YBBl9hjhcUL20o6dkUmQPwjNzfAXfxrZFDI5FLq2fRCxCeB1w5L25es1+TzgZ4CSnRD
+	vsHIq5NSCkvAqIIWhZC1HW74EinIPnWN7h5wRtwPK34oveBdygIdnn3wKCebUKvRA+tSaxPLMBEjY
+	awFWyW5PCxQKjlDx6AxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsn43-000000089mc-2HqW;
-	Fri, 05 Apr 2024 17:09:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rsn45-000000089oC-0KHt;
+	Fri, 05 Apr 2024 17:09:21 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsn3x-000000089id-2eTj;
-	Fri, 05 Apr 2024 17:09:15 +0000
+	id 1rsn42-000000089ld-2RuI
+	for linux-phy@lists.infradead.org;
+	Fri, 05 Apr 2024 17:09:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 185706190F;
+	by dfw.source.kernel.org (Postfix) with ESMTP id F0DAC618E6;
+	Fri,  5 Apr 2024 17:09:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8CD8DC433C7;
 	Fri,  5 Apr 2024 17:09:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2BCAEC433C7;
-	Fri,  5 Apr 2024 17:09:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712336952;
-	bh=8t2H8FLs/1/uH2aIckaTpiaoX1z48XV57VOz781Bu7k=;
+	s=k20201202; t=1712336957;
+	bh=f1kvZGzRe2SXSRDmHY4ReUMQwtDg/dGy62MWDdLbfWk=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=niema7RpOjQRX0mF+8zXga2Ek+PXt1OT186fSnAwFgJXx5m56RbEDz2AQzOuFCPXO
-	 B1Rjhqxglpl/8njLO+brFP7Nm4bQ99DEryCK14l2WyKQOdChnNV/wlagvXHfBkzNKJ
-	 LcMNZyJpB1/F+tzpl2o/FXDar2XfD3pWio41vU1ut5/l87110O3pzTw65KScN7a3A9
-	 DinCApdIb4i4q5IVEOxIC+O/L03m7gx9QID9sHgFNv7+0zkA6AVevQHt22iOYkOIZ7
-	 Cbieh3HznQg4oxU2+8VT+LJamzPUGsrPTYVjwtsq0bJ8PFoTAc+70xKz/OpzegpfPk
-	 pIiNh8qqf4Sbg==
+	b=WYEEQr90KrTbu0rcJ2vk3kkx8nQl2+emnZrsljq8sA3FDapGTh+zx1Z2rrR49oiLV
+	 y7DwtCH4DIxhX6XGKABTF4LIyngi5fJWRd/01VPFpst8FRfRJiLoWMtUbrAJgqwa1j
+	 dVdFq8ieqGjTawNwtTgINJZCj3cGzWeLJFkjAelB/svo9PZekKomha8WAdIMP7z40A
+	 Y+MyuHI9N/mxJxye2hiYlKqxR9v8XYQDP+ZOV+Acs18iZ5HzlIQLKX+4LOSFV2bUi4
+	 sM7SbQ9Bb0BYzUfvz4DwUpJ6xIAWNuV2LfNNg6tqzguQ0QM5D3OhS1xC+QAHUKJPxz
+	 S7yT20yE2gl1Q==
 From: Vinod Koul <vkoul@kernel.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Michal Simek <michal.simek@amd.com>, 
- =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
-In-Reply-To: <57a3338a1cec683ac84d48e00dbf197e15ee5481.1709886922.git.u.kleine-koenig@pengutronix.de>
-References: <57a3338a1cec683ac84d48e00dbf197e15ee5481.1709886922.git.u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH] phy: xilinx: Convert to platform remove callback
- returning void
-Message-Id: <171233694977.304553.16769485052582751352.b4-ty@kernel.org>
-Date: Fri, 05 Apr 2024 22:39:09 +0530
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org>
+References: <20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org>
+Subject: Re: (subset) [PATCH v2 0/7] arm64: qcom-sm8[456]50: properly
+ describe the PCIe Gen4x2 PHY AUX clock
+Message-Id: <171233695315.304553.592159497575428525.b4-ty@kernel.org>
+Date: Fri, 05 Apr 2024 22:39:13 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.12.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_100913_780526_C194377C 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20240405_100918_818319_651EB5DD 
+X-CRM114-Status: UNSURE (   7.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,25 +76,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ck9uIEZyaSwgMDggTWFyIDIwMjQgMDk6NTE6MTMgKzAxMDAsIFV3ZSBLbGVpbmUtS8O2bmlnIHdy
-b3RlOgo+IFRoZSAucmVtb3ZlKCkgY2FsbGJhY2sgZm9yIGEgcGxhdGZvcm0gZHJpdmVyIHJldHVy
-bnMgYW4gaW50IHdoaWNoIG1ha2VzCj4gbWFueSBkcml2ZXIgYXV0aG9ycyB3cm9uZ2x5IGFzc3Vt
-ZSBpdCdzIHBvc3NpYmxlIHRvIGRvIGVycm9yIGhhbmRsaW5nIGJ5Cj4gcmV0dXJuaW5nIGFuIGVy
-cm9yIGNvZGUuIEhvd2V2ZXIgdGhlIHZhbHVlIHJldHVybmVkIGlzIGlnbm9yZWQgKGFwYXJ0Cj4g
-ZnJvbSBlbWl0dGluZyBhIHdhcm5pbmcpIGFuZCB0aGlzIHR5cGljYWxseSByZXN1bHRzIGluIHJl
-c291cmNlIGxlYWtzLgo+IAo+IFRvIGltcHJvdmUgaGVyZSB0aGVyZSBpcyBhIHF1ZXN0IHRvIG1h
-a2UgdGhlIHJlbW92ZSBjYWxsYmFjayByZXR1cm4KPiB2b2lkLiBJbiB0aGUgZmlyc3Qgc3RlcCBv
-ZiB0aGlzIHF1ZXN0IGFsbCBkcml2ZXJzIGFyZSBjb252ZXJ0ZWQgdG8KPiAucmVtb3ZlX25ldygp
-LCB3aGljaCBhbHJlYWR5IHJldHVybnMgdm9pZC4gRXZlbnR1YWxseSBhZnRlciBhbGwgZHJpdmVy
-cwo+IGFyZSBjb252ZXJ0ZWQsIC5yZW1vdmVfbmV3KCkgd2lsbCBiZSByZW5hbWVkIHRvIC5yZW1v
-dmUoKS4KPiAKPiBbLi4uXQoKQXBwbGllZCwgdGhhbmtzIQoKWzEvMV0gcGh5OiB4aWxpbng6IENv
-bnZlcnQgdG8gcGxhdGZvcm0gcmVtb3ZlIGNhbGxiYWNrIHJldHVybmluZyB2b2lkCiAgICAgIGNv
-bW1pdDogN2RjYjg2NjhhZWRjNTYwM2NiYTFmMjYyNWM2MDUxYmVmZjAzNzk3ZAoKQmVzdCByZWdh
-cmRzLAotLSAKflZpbm9kCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+
+On Fri, 22 Mar 2024 10:42:37 +0100, Neil Armstrong wrote:
+> The PCIe Gen4x2 PHY found in the SM8[456]50 SoCs have a second clock named
+> "PHY_AUX_CLK" which is an input of the Global Clock Controller (GCC) which
+> is muxed & gated then returned to the PHY as an input.
+> 
+> Document the clock IDs to select the PIPE clock or the AUX clock,
+> also enforce a second clock-output-names and a #clock-cells value of 1
+> for the PCIe Gen4x2 PHY found in the SM8[456]50 SoCs.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/7] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: document PHY AUX clock on SM8[456]50 SoCs
+      commit: 72bea132f3680ee51e7ed2cee62892b6f5121909
+[2/7] phy: qcom: qmp-pcie: refactor clock register code
+      commit: 677b45114b4430a43d2602296617efc4d3f2ab7a
+[3/7] phy: qcom: qmp-pcie: register second optional PHY AUX clock
+      commit: 583ca9ccfa806605ae1391aafa3f78a8a2cc0b48
+[4/7] phy: qcom: qmp-pcie: register PHY AUX clock for SM8[456]50 4x2 PCIe PHY
+      commit: 5cee04a8369049b92d52995e320abff18dfeda44
+
+Best regards,
+-- 
+~Vinod
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
