@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D75FEC67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:58:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56682C67861
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:59:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RxHog2hVDfaiT83IZUW5dZjWwo+jyovzBLg0X3tqL8c=; b=zgbMk0rbp4+SIA
-	nPW598KkMz8nNTnxOeNi54qEBmishIBHr5u4z7XlCJwPdZ2iTu3wJaSQ0NnCMwndW4yqlTV3KICJ7
-	p+ZLocFisrV+ogOYEtsO9fYJn5dZBRalTCQKO9k1xc5TQMGIIP36LgtAAXFF3Cxqv2OOLkCEwNjh+
-	gS7lnzYDykoX4dl9Fl3uGs892HGK0pQDE6mrbjJVsuqJkV8kGBlkYU2HkftzdWpYQ48l3FPVXcVNI
-	Z/apMpernM+ThQNOj7j40yWmT8G+xj7UmxZuI6HwXdool89T1Tu/ecQVU0PQmfyCqZjjh0slO84Sb
-	ESHavj1Y72evnb56b7xA==;
+	List-Owner; bh=v8gZ09lgODjoelUWHRekjDfxFwIDDo7Pc8W3btN6bYg=; b=Si5s1ypNY1+pEd
+	2r9c4swQkZjIcHtfQm53oDXj8HrhG1NFLkRH5L5eiOm9jXydl49szaDFgPG8H3rlsRaX948NABGVJ
+	MJejLFkngH1Su62eeLiy2f3VjpsKGclwkVnW79+R7ZZRgEl0sS1eSKf3y85PegziEmvNIeHciCwzA
+	H7B0TYJjIBQ7FJnzlVV1Nel8rGT4Yn6gEPURx+WNj7ERnbTsqe4RYlvsgs9a0HXbZBHUshAAhYCj1
+	7MOjS5Qf3g/7qpX80oV8m+rMRunUlFPZVEDC8THwDbQQ1aBZ3XUnORnmRw2mT6IcVjAgT2WPub3oY
+	001ZyP9IYtL+t+Wgb0xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseT5-00000005oGu-1yEC;
-	Fri, 05 Apr 2024 07:58:35 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rseTq-00000005ocx-41BD;
+	Fri, 05 Apr 2024 07:59:22 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseSz-00000005oBz-1DXY;
-	Fri, 05 Apr 2024 07:58:31 +0000
+	id 1rseTn-00000005ob1-0LMD;
+	Fri, 05 Apr 2024 07:59:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B8727616D7;
-	Fri,  5 Apr 2024 07:58:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7883C433C7;
-	Fri,  5 Apr 2024 07:58:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8BA2A61721;
+	Fri,  5 Apr 2024 07:59:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07279C433C7;
+	Fri,  5 Apr 2024 07:59:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303908;
-	bh=gnuhmqk+yRoJmBLCbT2nA5MbkL1C5qwi/nuV4aNtmPw=;
+	s=k20201202; t=1712303958;
+	bh=4g2Mf46Dl2BOgknuShGB4UlOEql/DaDSUBYNznk4Iic=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Zs7HW1QDGoOEqKHHwdD4AwwW3ZlV/TIxfUjbEknmrXjtIZZDUfdrS0sl3d3HuoM1V
-	 +i8HOppC1MZGSQ3tyX8e0fPfBTF+lWTJsFKiY+3ZS5zi3LTkG1V/OkRpzuF2CZ1j3l
-	 8cDGq+HXICQABZEWrH/D1RR0pGPjXyg23znOUryAoRqpqkrvOF6sKSZ/8VcEf/utcK
-	 x+zSCdrDvz4qezCb5mWZL9oKNHgS+1JxgXi8x5iVUxTK4NR2Xnu2fq7mPk6QdH6N5m
-	 Ny6YFylxUjMw86buVXgWweSxlfJ+N1gnwhDqBdqOtVqSh3RkaiAzBI2gVOviZyaFLZ
-	 KFDaEj0r/dQHQ==
-Message-ID: <8d4e1553-e0fe-4be6-952f-163a0d7a88fa@kernel.org>
-Date: Fri, 5 Apr 2024 09:58:17 +0200
+	b=dCNoxNR7ZOSyIfURT16nLfrha1FBiTFHIlrm9rXP1//HRKp2od7hVuH9cc8k3jtEH
+	 2l11Rd/ro7q8nEnV0/uvezTNmtIxyrHWamdvexetQ+UrlyqwM+t9Jb7lEvLaSCkZew
+	 aZVwk2IVpMwggHjgUrqMdfzliSLJiXj3OklDJXMZVKGgVcbupswJP8zdVVk+s15fj3
+	 wfwFMteLyKTEbBYGi8z0OlJgayDDezhn5b6DuyJ4GDhBBRGCfNFD+YoXQ/gpOaT/YW
+	 U/BnPEo87ra3NCn/HkpulijiQqZrB0aqEsuTlCHTlizyxat9x9CPuBxaCcOTpDqNXo
+	 Cn5chNqU13YCg==
+Message-ID: <ec93ba2d-4bb2-4528-a3fe-7ffd9be98428@kernel.org>
+Date: Fri, 5 Apr 2024 09:59:05 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 14/17] scsi: ufs: host: ufs-exynos: allow max frequencies
- up to 267Mhz
+Subject: Re: [PATCH 15/17] scsi: ufs: host: ufs-exynos: add some pa_dbg_
+ register offsets into drvdata
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-15-peter.griffin@linaro.org>
+ <20240404122559.898930-16-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-15-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-16-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005829_501567_20C0427E 
-X-CRM114-Status: UNSURE (   4.40  )
+X-CRM114-CacheID: sfid-20240405_005919_277374_53375600 
+X-CRM114-Status: UNSURE (   7.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,12 +127,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Platforms such as Tensor gs101 the pclk frequency is 267Mhz.
-> Increase PCLK_AVAIL_MAX so we don't fail the frequency check.
+> This allows these registers to be at different offsets or not
+> exist at all on some SoCs variants.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
-
+>  drivers/ufs/host/ufs-exynos.c | 38 ++++++++++++++++++++++++-----------
+>  drivers/ufs/host/ufs-exynos.h |  6 +++++-
+>  2 files changed, 31 insertions(+), 13 deletions(-)
 
 Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
