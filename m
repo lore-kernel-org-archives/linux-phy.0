@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3BFCC67861
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 108ADCD11C2
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:58:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1nca1JgJV38UpAk54CQxO6AwaD6ZIo5NgxqRoRmt9ew=; b=yRhMjdto2uGlV9
-	fqqtr9QeAHBFBfdBnGbbVEXK3ffnycQ17cvrCVTsVXiLhD6/pYgWQFXtuY5EaKKP/4tu7GAVo5z5u
-	+JnkEL70mlmn/tSODUgujEF6XjvduL6W2IQmhCLcksZfZxuTSB4V8IZMeTnt7KGLrWO5l+j5CkTWi
-	a4UtevG5hXIstnmUQsK5XIqjUEkrg4OPhx6Vk/yMEbuQmYo2cPVtFr8lprj/CHoqU5sfSFX9TuBJ0
-	nvN9C51eY65s4kbsoMLJ9YmHh92iqGXuESUO/Qg+VCYBDBrIfBvekTggI1nUI+yB+Pt0Snvy7Uf5f
-	ycYtv5IHyLuF9dgvazFA==;
+	List-Owner; bh=nYlFx1CLLiqZ9NHgh0Rto2fXwCf6sm9X1WdAOSoilZU=; b=KefSUGng9NhqYN
+	Ka75Eza8jFQvPg8v/Ol/k8onCnrBWw7EB5SpmHi7qXSdt2ucZ4nVxzxlHf9FuVAuA339Yyt3S3DKg
+	hHV4NvMxJZ/56OWPJoLMBIKkgGHEyqSfrNY53TcfwWZ08OcIHO7YUIwPDqotwtwBw4sS4W7Qi9yDR
+	qnLuDM0mFw/60WXBNa28lglvi88PUO/npJG/8K+Kx1zSGFFHvaalmNoZjsv1YuXGeG8em/ZJ0M2gf
+	UofuMwAshasezImexJzJM415gT0YPKBLklIVgFVX5P17pHDOSAUHx1zqXuYL7DgAU4Qy/QgjrLxUy
+	iy683QIqjUw71UXH4E4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseS2-00000005ndl-0xLR;
-	Fri, 05 Apr 2024 07:57:30 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rseSX-00000005nvr-1Md3;
+	Fri, 05 Apr 2024 07:58:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseRy-00000005nbG-1HMV;
-	Fri, 05 Apr 2024 07:57:28 +0000
+	id 1rseST-00000005nse-30gU;
+	Fri, 05 Apr 2024 07:57:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 67400CE3634;
-	Fri,  5 Apr 2024 07:57:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13C0DC433F1;
-	Fri,  5 Apr 2024 07:57:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 39F24616FE;
+	Fri,  5 Apr 2024 07:57:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58510C433F1;
+	Fri,  5 Apr 2024 07:57:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303843;
-	bh=4E4/4HltPu4swIB6EYsvPn/zoIkzVjr84YGE4JNMn5k=;
+	s=k20201202; t=1712303876;
+	bh=vMOow+9voS/gKWVwyoPoZCYnHy8tZBtjHgVaY+AQRi8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=E4Z9q/6223Juoz6w3lpxl+vrqW09e/K/Qqpvqrb+QQTvnngo5BrcGT2o6TKOVqgYD
-	 XjjsvVd/8OPQ9yVMqPAe3+eIyXSHr0Dhe31Gww07VY+8OD9S/O2z1s/ksSZJ9uOpBn
-	 xAVtpusuWpKMvhF0kbXtMl7gCI8u2vLZ9YJ2AhGUdCbCWh1vfUla+fLnyDB500v21C
-	 4RBw9Pvth6TiNePx/sHD7KP8JeJSzuBPp4PU1+ekZV44S4fp2ji3UFptvVE8KDFvkO
-	 loPuwACxrALUMguVoKVje8Bx4k46AAnrNbY1RdvzllswP9CSgarstgPQLq8Vy64k2C
-	 94BbpY36CRLnw==
-Message-ID: <dc2d8e34-6105-4029-bb46-c0d895315995@kernel.org>
-Date: Fri, 5 Apr 2024 09:57:12 +0200
+	b=LQ8xSJ/I66hUAfh/Ds2O1m0OrkYNboSbxL2llymE848D85eDFhEsxIS0YCFAdC96q
+	 VtZ2vG5WP7HxI141LERHupQ4mIis87W5mPmsY3LBBHpyTXKEBmiiFKCCCB5Tq/U5aK
+	 6BtKsI0Pg9Rhdgfyt3RbmjhZyP9r+Qu3cEKoFi8jIoQZWBKtPxZAJSpZi56jNBwykD
+	 vDvGQSWbIZJHgi0cMq6zZJJmuZGPf5wEsCx15ryBx3NWtxor4XCE8Ko8Nnhf/5yjXl
+	 IEyGHEyeaDPyLS2FaRwXnrrQO4rWY6FlQoUWbMfndeRK2fYk/Vz2FuCIM+LcOG9tuE
+	 gFgwRYYDIynhg==
+Message-ID: <26f153a1-0767-4041-b66c-9741e484a6b5@kernel.org>
+Date: Fri, 5 Apr 2024 09:57:45 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 11/17] phy: samsung-ufs: ufs: Add support for gs101 UFS
- phy tuning
+Subject: Re: [PATCH 12/17] scsi: ufs: host: ufs-exynos: Add
+ EXYNOS_UFS_OPT_UFSPR_SECURE option
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -59,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-12-peter.griffin@linaro.org>
+ <20240404122559.898930-13-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-12-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-13-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_005726_804024_3439D4D5 
-X-CRM114-Status: UNSURE (   4.46  )
+X-CRM114-CacheID: sfid-20240405_005757_951583_0CCFCA03 
+X-CRM114-Status: UNSURE (   4.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,11 +127,10 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Add the m-phy tuning values for gs101 UFS phy and SoC callbacks
-> gs101_phy_wait_for_calibration() and gs101_phy_wait_for_cdr_lock().
+> This option is intended to be set on platforms whose ufspr
+> registers are only accessible via smc call (such as gs101).
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> ---
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
