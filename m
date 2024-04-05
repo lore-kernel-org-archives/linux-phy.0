@@ -4,63 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A22D6CD11C2
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:51:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F902CD1284
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Apr 2024 07:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1FWd+qLt3PwMuqi2KvcxnrMAUafsTDp73shE4g2HsSM=; b=kzq2U7EdTAYpxS
-	KtjnHO6PeLqKu2tMlDvIAoiE2evVj9j5n2AIl320O7KdYDed4d2soh2X1eMHKv56MRAhmF1281yvb
-	Ln+niz+skE9LNbTJHrgEoDqRTN1EhYDHpekzgq5SzBNzYiguTsU0Vl512qdhC8rSFxxq2C+iAxyqf
-	wRRvVJiepnV2cFUUl80LcTtgIX7kLKB4wUdyKnBFvoiu9chz4XkABtH32Dta56hDlw9ekt5tWXwmS
-	UAxjifOL97HfY9mf8KTcAXWZdZ5yi9/angqGqK+9QkDpL3HlmDX4nXKHrx1jPF3USv9Ty4j9is+UT
-	Ja4osul+3sCgReMzKhxQ==;
+	List-Owner; bh=n0o5W1hubEwk4clFghvmpRHoV9Cfekl9Rilf8KVzaK4=; b=dxd66WMyO8BgbM
+	uFMvrP4ROYg5Z2En4P9Vbk9odTQVDAhjsjZwLm2mTu/SUu4s5H3iYPnSz3FYFjNDZCRTDZhnELeYe
+	JKOMnY3/kJUu1u0kzb3X9ldXKMKjTYaZYXAvPPRfPxw7TTUxLJ03b4MFW2vySZEhglFQBK3PNUugu
+	qaF2gju2KCuD/O12eQshIR6AP4SBWdYRSILNeH4wzn0gHxbTEQN2NVHwQAgNjfEgc7hTaQiellzXn
+	o13pjOCo+NXyqpF0ANAwS739SHqFPgLV32YXfSWbIqncmg4Dg5Hxm7MSB8pOoT7XsXP4RxdmyW/nv
+	f7JIrd+k0TmllECtriiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseM1-00000005lY9-1DtG;
-	Fri, 05 Apr 2024 07:51:17 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rseMF-00000005ldF-22p4;
+	Fri, 05 Apr 2024 07:51:31 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseLz-00000005lWT-08IJ;
-	Fri, 05 Apr 2024 07:51:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=flDKqTagJXSE9cGGlT36NYzaE3q2494N49nf0U6WSJQ=; b=PZnBlYz+vWiemV4VsiHWMH0vGQ
-	5qXqwLgACsQmS6D5f7Jx4NHVYxuOBnMGjUdIc1t9akqSmf7rRHW/L8VuoCxqu3u8mqakhMW9Ctr/B
-	DXPlknActgoBfFRqM/Acc0G5tQAayhn1j/GTxhW4l4/8zn4fUxDsPvJGx1WBFTXCsU2uDwZmEzPWd
-	FIuJxZIt74UKq2kfrrcamoOefP1EvhSLzVYrIhFOEw2rHB42ZUT88hN/JCoM8hlUSP/Yaf3IsFXUh
-	D/95OGcrBtC1gfFZA5+6VXbrUd9P+z6WwC2LeTxrjfzySplcSV9erNnm9VrW+jxgfKAZiFnRUwyJm
-	FpjZcgOQ==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rseLj-00000005U7N-1W0E;
-	Fri, 05 Apr 2024 07:51:10 +0000
+	id 1rseMB-00000005lbF-1a9F;
+	Fri, 05 Apr 2024 07:51:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id F0478616FE;
-	Fri,  5 Apr 2024 07:50:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D74F0C433C7;
-	Fri,  5 Apr 2024 07:50:46 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id A31AF61796;
+	Fri,  5 Apr 2024 07:51:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D3C1C43390;
+	Fri,  5 Apr 2024 07:51:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712303454;
-	bh=JyJ89rbzOtx8jRedKtrMiTIwWcw0hOGEynsIeFi/ofw=;
+	s=k20201202; t=1712303486;
+	bh=hy+66NGPDCuyO88jk9doLTSP/pAvwzzvwk2CzBCUp+c=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=s/n0mjoW+7lGRT7j0O+PZcEtfMqNNx3zZ3V0qMnTUEc6eDenQekL4X0hJeUirLwHK
-	 8AUPJtpBtK0FzpQm+8W4BzNAoIyIJpAXw+2J3AaaHyRkptMC7Uixh9nD5mmxzqFhOQ
-	 2XAfg2ra1/JW2WZp2/gIqEhF2O1GvGsiPrUdBGts4Nc0n3n/4IL+OVNCFUPZGmOuFl
-	 jnXA90hIbJxWwS3dHx68+FZy09iGkqfOcrkXPShlS5xld0NbLCyADMaMn7PmmR6UkC
-	 Si2VlqS/vnCL/yY70HWXGnVJuNRkNNEyDS0x3uREpaakyv0kz/QocnRsuTuWeG3sz0
-	 /4d5Xqj8q11Cg==
-Message-ID: <ce8275b0-efa8-47fe-a4a8-471fac9afa10@kernel.org>
-Date: Fri, 5 Apr 2024 09:50:43 +0200
+	b=UvNAG0sfPsbWqLkWaw8zngmWW2byGpvEER8XgGJwJjBYjfjX/hwM1egjarlBeIn8X
+	 hTjYeAgArTAqFRg0K36QeR2HpP0MDv8PNNyxnXQCvaEif+SS1AahPTXhOSLyHefXju
+	 iGAhnK5qFxtphr+GlO6+7bjQcGnJ5i4Rzaw3p5n/fvr1etwLHASLb5s81LByHvIt1V
+	 YP/nn2QEfhheC+f8XfxcIOSrtxVAVDZ8zuimAl5D7eHIXBuFNRvH77zY8QBQCyUHhJ
+	 rgrdLfxsvyNsMYqmL3ov4cT7pXKKE1xtxgg9h3LKEbTTNj6TWnzHKV7CuhWjSP5Q8A
+	 kmfGm6fCb//tw==
+Message-ID: <5fec5719-9714-49d6-ac1e-9cd75557daf3@kernel.org>
+Date: Fri, 5 Apr 2024 09:51:15 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/17] dt-bindings: phy: samsung,ufs-phy: Add dedicated
- gs101-ufs-phy compatible
+Subject: Re: [PATCH 05/17] arm64: dts: exynos: gs101: enable cmu-hsi2 clock
+ controller
 To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
  sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
@@ -73,7 +59,7 @@ Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
  andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-5-peter.griffin@linaro.org>
+ <20240404122559.898930-6-peter.griffin@linaro.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -119,10 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240404122559.898930-5-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-6-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_085102_270566_7C2F888B 
-X-CRM114-Status: UNSURE (   6.33  )
+X-CRM114-CacheID: sfid-20240405_005127_542207_7C4D168F 
+X-CRM114-Status: UNSURE (   6.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -141,20 +127,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024 14:25, Peter Griffin wrote:
-> Update dt schema to include the gs101 ufs phy compatible.
+> Enable the cmu_hsi2 clock management unit. It feeds some of
+> the high speed interfaces such as PCIe and UFS.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
->  Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
-
-This should go via phy tree. DTS should not depend on other subsystems.
-
-If, after resending as separate series, phy does not take patches for
-longer time, feel free to ping me, but first let's try to go via phy/UFS.
+>  arch/arm64/boot/dts/exynos/google/gs101.dtsi | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+> 
 
 
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+Was it really compiled?
 
 Best regards,
 Krzysztof
