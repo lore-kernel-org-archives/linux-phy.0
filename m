@@ -4,67 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39CB0C67861
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 09:20:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13224C67861
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 13:37:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GfCViIJP6vQvJGgPrPy22vfij5MQJxu09dFogk4HHxw=; b=dHFJFxdj+RI0fn
-	MC9ux3nXajzQ72Z+xckjlyRbCtOzIaX8bxvkodixDju1+d6DAVBYlEx4Rog2x0P7fyJGYZ6l5wB5m
-	ec6ZSSx4K4nnoktMNUsKKNpOk+FcvAlMpW+Jhqoiq6Viz8C5kZ8su6if0eeY6n2ywTDuYfLMegANF
-	9Kn9ce2c7vm6B/fzHylPF+s5d8GZbwzz6E01hooqf5hKIR7suO5zMzIbscKyOQGD1inIJZuPrSAHA
-	Q+STbMKwY3rmAPyUgY8gfricdRvAPw0eiMZyoO5Yi0/H+Z7Gim2w23WhrxNOu3VMtEgEa/6+INxzi
-	9baFb1tv/l1MCe1BGq3w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2TgNWdad2TI7PPoG+h/YCTWCgQ/Yuaid/LcswcKVX5Q=; b=zjfh1Lmr7Jh2rz
+	OUwddLoFjPRquAey5xSTz9aDtWDNSaZEUSwhvnnWA/I2IR4ontu7L54W0eCGsKkMxFACFUJHabZSe
+	HqbjlsXVsRXhtKbmGReaprUDFaKjSB0Mfsc85oWLKACYOLW4kR9a3o02Y1tMv36LfcMDAiL9cL9IR
+	4XzAhVTJec0k1QULibJ2UZ2lIuNE5oS14AV9IewqFEA1vKE32aL03akQX2zrdObiGRuxE+v1hoU2e
+	ZpR3zh+4ymmyRaQfS6HVWdS7pzmhIP/29NwPtWDUE2BkxZ0zFyBbxiLjnbhg1EU7fxHO1R3Qdjf/I
+	EjRhNb2Ee+OxNXtI1ZHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt2Dh-0000000A21n-0RFA;
-	Sat, 06 Apr 2024 09:20:17 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rt6Ed-0000000AMfZ-1Bky;
+	Sat, 06 Apr 2024 13:37:31 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt2DF-0000000A1ua-17az;
-	Sat, 06 Apr 2024 09:19:50 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0FBA560921;
-	Sat,  6 Apr 2024 09:19:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0387DC433C7;
-	Sat,  6 Apr 2024 09:19:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712395186;
-	bh=ZszyxTgj8EnYtTuGNwhBJNSzLvn+uASx2IZx41dSrN0=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=S/S//RIegxSFn0baXqS24IoG5k/cCwd0QHq6+/TG/px0q/G4vbzjQt3CS1rCI9Sfb
-	 79e71HDf79008J3/hSjstjqxKc6n6UKpooTPTMF9OqoyVP9DLWYcQjzN/Jx4WtP3Jm
-	 vHwmykKoniJ8lTkQFq1wYycXt8kwbXwBSMm54AhkEwAlAu0QOzo5pIts56x1c3W7Wm
-	 7Wqp3n5z4Y1hJU9f9rwQ5vrheMPSRstxdZ5cnr5rjVdKbsLo2j8vL8eOty+6Zcr0fZ
-	 HSnNDyT0K33hMUjL27D6bEwId/2CqR6jghbjIPMxDrUDoO5ocMKswmjMdYaqRI1vVq
-	 JYpnGTyGqRRog==
-From: Vinod Koul <vkoul@kernel.org>
-To: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, 
- krzk+dt@kernel.org, conor+dt@kernel.org, kishon@kernel.org, 
- alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org, 
- s.nawrocki@samsung.com, cw00.choi@samsung.com, jejb@linux.ibm.com, 
- martin.petersen@oracle.com, chanho61.park@samsung.com, ebiggers@kernel.org, 
- Peter Griffin <peter.griffin@linaro.org>
-Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-clk@vger.kernel.org, 
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org, 
- andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
-In-Reply-To: <20240404122559.898930-1-peter.griffin@linaro.org>
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
-Subject: Re: (subset) [PATCH 00/17] HSI2, UFS & UFS phy support for Tensor
- GS101
-Message-Id: <171239517860.352396.12091328444055090399.b4-ty@kernel.org>
-Date: Sat, 06 Apr 2024 14:49:38 +0530
+	id 1rt6EZ-0000000AMes-2UjX
+	for linux-phy@lists.infradead.org;
+	Sat, 06 Apr 2024 13:37:29 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-415523d9824so30840275e9.3
+        for <linux-phy@lists.infradead.org>; Sat, 06 Apr 2024 06:37:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1712410644; x=1713015444; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=+WLAnNCRu6P4N5RNkCdLMJV4Al/A3hve5ECn2W2mAK8=;
+        b=QdAoQQBlbYjDG00Rusy36+Ulx8745mNgju4xtucFTFVXqBzozH3PGcf8gwo+w3JeQ2
+         TpTSDDVW/fNNOZDcgaD9JQDiTd3Bq0zfe1/9gqEChHDuhgE2NwnW02l11+8/tEhQqkGi
+         pjf+xENUTuXWRLpRxerOM9LTQOZbT8dfVNmm2FfbwXA40fBIJIEPldoDfFuTGiBYBo/f
+         CezVme5nBv4BnzwvF8JitVosXCvG0LxqYGl1JIt7BuZboOxv+EvwqLikr+GYl9jn3tdQ
+         QNaGUuWIxt6bAh6ZEHU5znJM48q9ytjWTBvpQLqLZ5RkEhVHw/Od6+8BD4xmrMFYataF
+         KLKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712410644; x=1713015444;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+WLAnNCRu6P4N5RNkCdLMJV4Al/A3hve5ECn2W2mAK8=;
+        b=RcpZYP2aHiHUn3JI6aT+Z6RtSCMA8EvxTiMwPSZLgWR3v0OD2NvLC1YSbMDNcWMktV
+         OWZ4r0QjRJ6hvEY/PQQ9tgi1rR1lcfPtnkfinGOi+1P64BPtWwBODyT4BrNlAHoSs5Cc
+         TTSDPij8VN/quyjXnZCDwBlSQWJ8uL9BR8DCYpyfCW24XWhZyPJeFSZB2iP/pKaonToY
+         iPGXZnRsJANZizBA1cH/hcWht6X4CYnv1V4wXeTwTUxMsLN5y82K4FO4btXZaaBDxKCA
+         UqwHjfRg8yXdIXKG2Wo3OKu35v851OCw77HdjyNMXEP8hYdDpi/bscGprK0oxgjsYyLF
+         +IYQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWZgycNnKBAQlp7Peuq04s9MOU6+drcC0JZ4/y84xANIeu8nZAWw3BUFenmvayCUMxg1e3xggRkDDT5/uaNwd3guDc8dHTJDVDD7HD/0Q==
+X-Gm-Message-State: AOJu0YxD8EwADfx2zdBi1pPRCvnO+nA3Hz6/bDbMrnRyk7lPQmhFmTug
+	I4BDUYe92MXMrdWqnodMRm4nZtt3IGLoXwP4C1eEsCZRX9wHlWRi
+X-Google-Smtp-Source: AGHT+IGJuEOafaI7+tCV7vsTYfc7mKh6m8d0wpe81NoSi6m5Vkv9sw2ORNDcFFTz+9IabAg6YVanUA==
+X-Received: by 2002:a05:600c:3c88:b0:416:2f05:41d with SMTP id bg8-20020a05600c3c8800b004162f05041dmr4456038wmb.18.1712410644031;
+        Sat, 06 Apr 2024 06:37:24 -0700 (PDT)
+Received: from [192.168.20.102] (57657817.catv.pool.telekom.hu. [87.101.120.23])
+        by smtp.googlemail.com with ESMTPSA id z22-20020a7bc7d6000000b004162bd5ba59sm6510510wmk.39.2024.04.06.06.37.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 06 Apr 2024 06:37:23 -0700 (PDT)
+From: Gabor Juhos <j4g8y7@gmail.com>
+Date: Sat, 06 Apr 2024 15:37:09 +0200
+Subject: [PATCH v2] phy: qcom: m31: match requested regulator name with dt
+ schema
 MIME-Version: 1.0
-X-Mailer: b4 0.12.3
+Message-Id: <20240406-phy-qcom-m31-regulator-fix-v2-1-c8e9795bc071@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAARQEWYC/42NTQ6CMBBGr0Jm7Zi20BJceQ/DomBtJ+HPVhsJ4
+ e6OnMDle/nyvg2Si+QSXIoNosuUaJ4Y1KmAPtjJO6Q7MyihKqGUwCWs+OznEcdSYnT+PdjXHPF
+ BH2xqrbWtjBadBA4s0bE+4reWOVDi6Xp8Zfmzf2WzRIm1qXVX2Uaarrz60dJw5jW0+75/ASJjI
+ m/EAAAA
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Gabor Juhos <j4g8y7@gmail.com>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240406_021949_409806_F8367C2A 
-X-CRM114-Status: UNSURE (   6.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240406_063727_713213_D915E3E7 
+X-CRM114-Status: GOOD (  14.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,34 +99,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+According to the 'qcom,ipq5332-usb-hsphy.yaml' schema, the 5V
+supply regulator must be defined via the 'vdd-supply' property.
+The driver however requests for the 'vdda-phy' regulator which
+results in the following message when the driver is probed on
+a IPQ5018 based board with a device tree matching to the schema:
 
-On Thu, 04 Apr 2024 13:25:42 +0100, Peter Griffin wrote:
-> This series adds support for the High Speed Interface (HSI) 2 clock
-> management unit, UFS controller and UFS phy calibration/tuning for GS101.
-> 
-> With this series applied, UFS is now functional! The SKhynix HN8T05BZGKX015
-> can be enumerated, partitions mounted etc. This then allows us to move away
-> from the initramfs rootfs we have been using for development so far.
-> 
-> [...]
+  qcom-m31usb-phy 5b000.phy: supply vdda-phy not found, using dummy regulator
+  qcom-m31usb-phy 5b000.phy: Registered M31 USB phy
 
-Applied, thanks!
+This means that the regulator specified in the device tree never
+gets enabled.
 
-[04/17] dt-bindings: phy: samsung,ufs-phy: Add dedicated gs101-ufs-phy compatible
-        commit: 724e4fc053fe217d0ed477517ae68db11feab1f5
-[09/17] phy: samsung-ufs: use exynos_get_pmu_regmap_by_phandle() to obtain PMU regmap
-        commit: f2c6d0fa197a1558f4ef50162bb87e6644af232d
-[10/17] phy: samsung-ufs: ufs: Add SoC callbacks for calibration and clk data recovery
-        commit: a4de58a9096b471f9dc1c2bc6bfaa8aa48110c31
-[11/17] phy: samsung-ufs: ufs: Add support for gs101 UFS phy tuning
-        commit: c1cf725db1065153459f0deb69bd4d497a5fd183
-[17/17] MAINTAINERS: Add phy-gs101-ufs file to Tensor GS101.
-        commit: 0338e1d2f933a4ec7ae96ed1f40c39b899e357d7
+Change the driver to use the 'vdd' name for the regulator as per
+defined in the schema in order to ensure that the corresponding
+regulator gets enabled.
+
+Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
+Reviewed-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+Signed-off-by: Gabor Juhos <j4g8y7@gmail.com>
+---
+Changes in v2:
+- rebase on top of phy/fixes; ee13e1f3c72b ("phy: qcom: qmp-combo: Fix
+  register base for QSERDES_DP_PHY_MODE")
+- add Reviewed-by tag from Varadarajan Narayanan
+- Link to v1: https://lore.kernel.org/r/20240220-phy-qcom-m31-regulator-fix-v1-1-7675b4a916b3@gmail.com
+---
+ drivers/phy/qualcomm/phy-qcom-m31.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+index 03fb0d4b75d7..20d4c020a83c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-m31.c
++++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+@@ -297,7 +297,7 @@ static int m31usb_phy_probe(struct platform_device *pdev)
+ 		return dev_err_probe(dev, PTR_ERR(qphy->phy),
+ 				     "failed to create phy\n");
+ 
+-	qphy->vreg = devm_regulator_get(dev, "vdda-phy");
++	qphy->vreg = devm_regulator_get(dev, "vdd");
+ 	if (IS_ERR(qphy->vreg))
+ 		return dev_err_probe(dev, PTR_ERR(qphy->vreg),
+ 				     "failed to get vreg\n");
+
+---
+base-commit: ee13e1f3c72b9464a4d73017c060ab503eed653a
+change-id: 20240220-phy-qcom-m31-regulator-fix-97555a4650b1
 
 Best regards,
 -- 
-~Vinod
-
+Gabor Juhos <j4g8y7@gmail.com>
 
 
 -- 
