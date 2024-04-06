@@ -4,78 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 426C0CD1296
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 14:40:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4692BC67861
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 16:48:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1e7f3pMlG03JrBERQqnn/wKjKjTGgej7V+mZJSFJFqY=; b=a90bCMNdWI9vMw
-	Mls18HF0K4+1kPGo13BtDRJszjmW8jTZMc4kXAF+VUleEccXBCkS+tANpWV/UCHu+s+gQpQlnblmx
-	VPf4tD1cVFZp0iB6pQ3869O3GZ3x4YlBrR4SMdElsAJksaESjV2giBH8xgB3Req7nGcOGCqJrAk4g
-	otRCPlVmt1MYcZ4D5Eciabbk3a/KMYERLLZgSpJABmT+gxDv66VLGO8lsGQUrgFKsg2l1L9zqLJ2g
-	o/kxRA4Gmdb5tqNxu4Z6qrgrM/tUDOsJPmx2ex572BsVEG9Na62LMwPEosDaDKg8zdZZm9Dw5NU6C
-	wu4hkPTwB8J99PdGDylQ==;
+	List-Owner; bh=8O2kWpxil+YykaTw5Tdxm1IivcEEhjaMWA3uYEXatgw=; b=mM4fvUPX7aTDyV
+	IeO8kt1E0cppLFrJ/uKsYWCvnDnWKjPI3Js1IjzjfTGEzDXGCkjUjOZCI36D8XnzzKqZamoo65oy9
+	Rf3ZIf6WGf+5tFsPj5ghy8RYqRn/wfPmw/lwqdhj14abUWeFTiM4VRlGI+sraklqevapqjTiz0Tdt
+	uxJy9mVas2NXMQEqD6ZUmwJt8JV4HlkO8wj5zt3UmxXUpu3wyjZbgA4cTLNvpcCti/PEnPQ57hcKj
+	/blde9nfnvyKqQMZOzkN8DI7h40tXsR/tq+iF52p34CzRNkzMMev8AuiMurbpzRR1StVO+hEiejj2
+	jbst9qfm+yK8MqqxCkxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt7DO-0000000ARgK-3UmL;
-	Sat, 06 Apr 2024 14:40:18 +0000
-Received: from mail-yb1-xb2e.google.com ([2607:f8b0:4864:20::b2e])
+	id 1rt9Dp-0000000AffF-3KhV;
+	Sat, 06 Apr 2024 16:48:53 +0000
+Received: from mail-ot1-x330.google.com ([2607:f8b0:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt7DM-0000000ARfr-1GOJ
+	id 1rt9Dm-0000000AfeX-3g1G
 	for linux-phy@lists.infradead.org;
-	Sat, 06 Apr 2024 14:40:17 +0000
-Received: by mail-yb1-xb2e.google.com with SMTP id 3f1490d57ef6-db4364ecd6aso3287527276.2
-        for <linux-phy@lists.infradead.org>; Sat, 06 Apr 2024 07:40:14 -0700 (PDT)
+	Sat, 06 Apr 2024 16:48:52 +0000
+Received: by mail-ot1-x330.google.com with SMTP id 46e09a7af769-6e675181ceaso1948653a34.2
+        for <linux-phy@lists.infradead.org>; Sat, 06 Apr 2024 09:48:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712414414; x=1713019214; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=RJZ+wW1F0Udf2WYtlYShrGEiUXEZlJBVlEyGRMWnHC8=;
-        b=HRj5dBnZtXkwMlEORZGT7b0h6fnzD3tb+ZAuLg3bwA/CTuzmKm88dOwcbIM2RMo4Ze
-         1o9AkUWWZuEWlK5L6fzYuO2PmtsSMp93Tu9rBiZfTuvfZSspGtHw8MGeKWo3wJPgZdmb
-         pz+ivZQd+CbRgNhwP5KlQ7T6F0mgfrvL+PKEwWF+geDvBaVKIBYswnkWvFdzdI7Es5TF
-         vs6cFAZeEijQ17fkGoBPy0YSGRXB8U09MyvBVTAyc5yEVTVer3+I3dgK/fsw6crTPmw7
-         UH88dI2YgRsoOsT8nS/AeAi+qh1m5nKUIxE7iFYVEZauf7B3G+gQo/DmXu1KLPQopeQe
-         Ds0g==
+        d=gmail.com; s=20230601; t=1712422129; x=1713026929; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DKheQqCooEORfEAc4BfVHAN7JSAJma1nB9maY1cQRV4=;
+        b=edO50Jiq3pO1601P/3l4H8j+4nalDFQrDqtsIgdJQPhmxLhWFujuY15Kde84OPxE63
+         sPIHLU9mZo73TvS9xwEhJ01gbMRQGrZ8mqnJQPqljEZBcQYpx/VU885K14BzZCQGtiEc
+         3PwWtpaATdM1rNiyvG7cFQLZRsnjwrNdr1P7HYke7VguUam5C172/e7O4aK4aIjxtW0b
+         usvdwpyQzz6DPjAkFq7EUlQLwH8j+sG1TKkq6iUWAijnfHEdDGJUnnS+qR6Mfehx130v
+         adxe66T9QU36jmcG8ACpJJJIWt8LV553FLXqLCNMIRAJ+R84WnD6MXmhzC+g7pALgVhL
+         uvAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712414414; x=1713019214;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=RJZ+wW1F0Udf2WYtlYShrGEiUXEZlJBVlEyGRMWnHC8=;
-        b=AgDnGf/LtM3dt/fIod5SU/HWylInkVavKOqyEeVHECkBZrXJdHGon3+1C13Nd0dPkC
-         4jVn/BnU1pD6SPN0Z8CZ1Er/reKf58tIi5HfU5pqxSq+AnHY7r5Y8kZlfjkq+6DvT7P0
-         Hkn4VAvoBt0zeHWzvD5EVaQI/4GtX42kBZDE2h7AGD6ZzF6WI8Fgvg/9UfbuRY6Nt9e/
-         mj5YuBPj0GjujuKqjDIKKCf7sxtcDAElqfULiHpKbbEH/zHDKGUD+FeB0KlPq3V2hA6/
-         ecvTOKnht+39xTNx2db60+08b4pnO3ruS0Fx9SXsWvK6ZKosjL9LQmxUUTE8iyhoEPw8
-         iApw==
-X-Forwarded-Encrypted: i=1; AJvYcCUmLvDLXd5O4fLYorOpAZ6Nztjm7TQmcvQ1S7IiHjTeQwR7/eWq5PKauxzbFNf7UEaohhxPRdPzzGtBMpTeB9ZBRzf3H4C950NB7z6OQw==
-X-Gm-Message-State: AOJu0YyttnxO+xPpacTJFPOnCcAhUb4auoWWTuuAArT7z+MB88wAzqVQ
-	LSP7oiKySYrBIbaiN8LNYwdSW11VIwt6jYYaeccOaD1bwZ2U1tYUOg16KQ04nYrsuCh69V6lE4K
-	Bpezh49q4AS7Xa+I+JIeHJ+Z7yyh2eSPAUG1al4kbHWjYrLAm
-X-Google-Smtp-Source: AGHT+IHHKJBvpms8GyKJP3zvG/nih1HHOJPLUjfhe7C8wwi+ufj1fM/ahAT8qyaXumJtQ9xSI13siiwrE40dsyyY+ww=
-X-Received: by 2002:a25:ae5d:0:b0:dd9:2a6a:3bcc with SMTP id
- g29-20020a25ae5d000000b00dd92a6a3bccmr3754646ybe.28.1712414414202; Sat, 06
- Apr 2024 07:40:14 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1712422129; x=1713026929;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=DKheQqCooEORfEAc4BfVHAN7JSAJma1nB9maY1cQRV4=;
+        b=q5qn1cZJXQUpyZRPva67OZ7kt2V6XzqV+LQ6yNR6Xv4tjwQyfaaxeV1vdxyfrZ8/Am
+         v3fqLitKr7bKs6Lnr6DCGqTY9WwstQ53efhCwzagh5CcMS6TA9Pb+glblR38tAc+8xyl
+         C6wU1zfqujzpzAXbLAqWbd1z9u2wtQgy9hGTdHr8CdadKiXEzqfna3J8c5oQBHaCIgAT
+         PyPlfpHFAENti6dBMGBodJYWAqs9/iDOt9UGEea/hRBnU4URymLxq0vnZOdQBUTPb5/V
+         jHHTB81oWyzKis/jVPL+sgFiMm1YCigwwMzHsjafe4P7F+XrUCQ4OCyBACfLZuNT+5Kc
+         Ef7Q==
+X-Forwarded-Encrypted: i=1; AJvYcCV2aWzW4aF0m+sEnBH1pGC3XTmXLgx2Y9TGn3VdnI+GEFb7YPfbjEtYViRugO3bZs2GNU+x5Ti4oHRa31T7v0TWL57BXMeUU/wq9VOnNQ==
+X-Gm-Message-State: AOJu0YwFy7G10z3rCV1oja8movILZ2DKX4RbtJsOvYFsXD7DZ5Z03tQs
+	ETMRtL9bikUAOzLRgP/QPZj4yRoppJsiAeE6jOitNV/ii0yWOPss
+X-Google-Smtp-Source: AGHT+IHQhCgoz1D7z2Bflhbg39hCU1gZZwVTvOMMq3IkNcQxp3kf0snzpBO3qyliIQ0NwjSLyvPMJw==
+X-Received: by 2002:a05:6830:11c5:b0:6ea:f00:5c2c with SMTP id v5-20020a05683011c500b006ea0f005c2cmr701920otq.35.1712422128821;
+        Sat, 06 Apr 2024 09:48:48 -0700 (PDT)
+Received: from [192.168.7.110] (c-98-197-58-203.hsd1.tx.comcast.net. [98.197.58.203])
+        by smtp.gmail.com with ESMTPSA id i4-20020a4aab04000000b005a48e64c699sm821908oon.40.2024.04.06.09.48.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 06 Apr 2024 09:48:48 -0700 (PDT)
+Message-ID: <45e1a982-fd59-48de-ace4-d6b6e821189d@gmail.com>
+Date: Sat, 6 Apr 2024 11:48:45 -0500
 MIME-Version: 1.0
-References: <20240406-phy-qcom-m31-regulator-fix-v2-1-c8e9795bc071@gmail.com>
-In-Reply-To: <20240406-phy-qcom-m31-regulator-fix-v2-1-c8e9795bc071@gmail.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 6 Apr 2024 17:40:03 +0300
-Message-ID: <CAA8EJpoENH_4Rp38R8igf72fc3j=qAfVNOh5Qjr0y7_tmsyrAQ@mail.gmail.com>
-Subject: Re: [PATCH v2] phy: qcom: m31: match requested regulator name with dt schema
-To: Gabor Juhos <j4g8y7@gmail.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Sricharan Ramabadhran <quic_srichara@quicinc.com>, Varadarajan Narayanan <quic_varada@quicinc.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 6/7] phy: qcom-qmp-pcie: add support for ipq9574 gen3x2
+ PHY
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, ansuelsmth@gmail.com,
+ robimarko@gmail.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20240402192555.1955204-1-mr.nuke.me@gmail.com>
+ <20240402192555.1955204-6-mr.nuke.me@gmail.com> <ZhEMB0HP0g1YwPvE@matsya>
+ <CAA8EJpqYV537aCbkwTRUeZJzcn4wMXFqGxQHSdDFraGV_2zbQQ@mail.gmail.com>
+Content-Language: en-US
+From: "Alex G." <mr.nuke.me@gmail.com>
+In-Reply-To: <CAA8EJpqYV537aCbkwTRUeZJzcn4wMXFqGxQHSdDFraGV_2zbQQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240406_074016_370476_7590AB1D 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20240406_094851_031756_E5F913C0 
+X-CRM114-Status: GOOD (  15.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,39 +96,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 6 Apr 2024 at 16:37, Gabor Juhos <j4g8y7@gmail.com> wrote:
->
-> According to the 'qcom,ipq5332-usb-hsphy.yaml' schema, the 5V
-> supply regulator must be defined via the 'vdd-supply' property.
-> The driver however requests for the 'vdda-phy' regulator which
-> results in the following message when the driver is probed on
-> a IPQ5018 based board with a device tree matching to the schema:
->
->   qcom-m31usb-phy 5b000.phy: supply vdda-phy not found, using dummy regulator
->   qcom-m31usb-phy 5b000.phy: Registered M31 USB phy
->
-> This means that the regulator specified in the device tree never
-> gets enabled.
->
-> Change the driver to use the 'vdd' name for the regulator as per
-> defined in the schema in order to ensure that the corresponding
-> regulator gets enabled.
->
-> Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
-> Reviewed-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> Signed-off-by: Gabor Juhos <j4g8y7@gmail.com>
+On 4/6/24 09:37, Dmitry Baryshkov wrote:
+> On Sat, 6 Apr 2024 at 11:47, Vinod Koul <vkoul@kernel.org> wrote:
+>>
+>> On 02-04-24, 14:25, Alexandru Gagniuc wrote:
+>>> Add support for the gen3x2 PCIe PHY on IPQ9574, ported form downstream
+>>> 5.4 kernel. Only the serdes and pcs_misc tables are new, the others
+>>> being reused from IPQ8074 and IPQ6018 PHYs.
+>>>
+>>> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+>>> ---
+>>>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
+>>>   .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
+>>>   2 files changed, 149 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>>> index 8836bb1ff0cc..f07bd27e3b7a 100644
+>>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>>> @@ -487,6 +487,100 @@ static const struct qmp_phy_init_tbl ipq8074_pcie_gen3_pcs_misc_tbl[] = {
+>>>        QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
+>>>   };
+>>>
+>>> +static const struct qmp_phy_init_tbl ipq9574_gen3x2_pcie_serdes_tbl[] = {
+>>> +     QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CLKBUFLR_EN, 0x18),
+>>> +     QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CTRL_BY_PSM, 0x01),
+>>> +     QMP_PHY_INIT_CFG(QSERDES_PLL_CLK_SELECT, 0x31),
+>>> +     QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_IVCO, 0x0F),
+>>> +     QMP_PHY_INIT_CFG(QSERDES_PLL_BG_TRIM, 0x0F),
+>>
+>> Lower case here and everywhere please
+> 
+> For hex values
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+I will these updated in V2. Thanks!
+
+>>>   static const struct qmp_phy_init_tbl sdm845_qmp_pcie_serdes_tbl[] = {
+>>>        QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
+>>>        QMP_PHY_INIT_CFG(QSERDES_V3_COM_CLK_SELECT, 0x30),
+>>> @@ -2448,7 +2542,7 @@ static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
+>>>
+>>>   /* list of clocks required by phy */
+>>>   static const char * const qmp_pciephy_clk_l[] = {
+>>> -     "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
+>>> +     "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux", "anoc", "snoc"
+>>
+>> How about older platforms which dont have these clocks
+> 
+> The driver uses devm_clk_bulk_get_optional(), so it should be fine.
+> But the more important question should be why the platform needs
+> anoc/snoc clocks here.
+> 
+
+I got the info from the downstream 5.4 kernel. While I don't know why 
+these new clocks are required, they are needed. Omitting them will cause 
+the boot to hang.
+
+I could rename them to "snoc_lane" and "anoc_lane", if you think that 
+makes more sense.
 
 
--- 
-With best wishes
-Dmitry
+Alex
 
 -- 
 linux-phy mailing list
