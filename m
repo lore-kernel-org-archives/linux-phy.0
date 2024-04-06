@@ -4,85 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13224C67861
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 13:37:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F6FDCD1284
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 14:08:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2TgNWdad2TI7PPoG+h/YCTWCgQ/Yuaid/LcswcKVX5Q=; b=zjfh1Lmr7Jh2rz
-	OUwddLoFjPRquAey5xSTz9aDtWDNSaZEUSwhvnnWA/I2IR4ontu7L54W0eCGsKkMxFACFUJHabZSe
-	HqbjlsXVsRXhtKbmGReaprUDFaKjSB0Mfsc85oWLKACYOLW4kR9a3o02Y1tMv36LfcMDAiL9cL9IR
-	4XzAhVTJec0k1QULibJ2UZ2lIuNE5oS14AV9IewqFEA1vKE32aL03akQX2zrdObiGRuxE+v1hoU2e
-	ZpR3zh+4ymmyRaQfS6HVWdS7pzmhIP/29NwPtWDUE2BkxZ0zFyBbxiLjnbhg1EU7fxHO1R3Qdjf/I
-	EjRhNb2Ee+OxNXtI1ZHw==;
+	List-Owner; bh=dmFqsutNEWH0Azqcnkt+um9Buaez1WNfU2SO2LMEzGM=; b=G5h9Wi02CNkXji
+	fmJEWnsjatI/QNZFBQnvHJrVAkvnflN9WVD8DFj2qA/EKs5uWJwZzDZNtGfJWdoBKYFWJRpjxiQ+H
+	jjZfdJW5O7yuQMnLgazGWGrL8MlR5e1T1ZffC4g6r4H87ob6YbIukROMpUAbgnQEbJqQAyy9lHI8/
+	icCQkqBv/JALkTlMQnop9qH4by6fHJS6cUXdl3MpnAJFVUqtMslOZCRSz69usDEGInk1VRHyVOWJn
+	Q3kBb09pEst3f3+OA5qssT6REYJZZrfwvgwplYhX/69g5qsM2VkdIPzIJgeUCtVMheKZbAwU7/ccj
+	JyJzCavJcZHsdhUtrngw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt6Ed-0000000AMfZ-1Bky;
-	Sat, 06 Apr 2024 13:37:31 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1rt6in-0000000APCK-3TX6;
+	Sat, 06 Apr 2024 14:08:41 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt6EZ-0000000AMes-2UjX
+	id 1rt6ik-0000000APBr-3SSM
 	for linux-phy@lists.infradead.org;
-	Sat, 06 Apr 2024 13:37:29 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-415523d9824so30840275e9.3
-        for <linux-phy@lists.infradead.org>; Sat, 06 Apr 2024 06:37:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1712410644; x=1713015444; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=+WLAnNCRu6P4N5RNkCdLMJV4Al/A3hve5ECn2W2mAK8=;
-        b=QdAoQQBlbYjDG00Rusy36+Ulx8745mNgju4xtucFTFVXqBzozH3PGcf8gwo+w3JeQ2
-         TpTSDDVW/fNNOZDcgaD9JQDiTd3Bq0zfe1/9gqEChHDuhgE2NwnW02l11+8/tEhQqkGi
-         pjf+xENUTuXWRLpRxerOM9LTQOZbT8dfVNmm2FfbwXA40fBIJIEPldoDfFuTGiBYBo/f
-         CezVme5nBv4BnzwvF8JitVosXCvG0LxqYGl1JIt7BuZboOxv+EvwqLikr+GYl9jn3tdQ
-         QNaGUuWIxt6bAh6ZEHU5znJM48q9ytjWTBvpQLqLZ5RkEhVHw/Od6+8BD4xmrMFYataF
-         KLKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712410644; x=1713015444;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=+WLAnNCRu6P4N5RNkCdLMJV4Al/A3hve5ECn2W2mAK8=;
-        b=RcpZYP2aHiHUn3JI6aT+Z6RtSCMA8EvxTiMwPSZLgWR3v0OD2NvLC1YSbMDNcWMktV
-         OWZ4r0QjRJ6hvEY/PQQ9tgi1rR1lcfPtnkfinGOi+1P64BPtWwBODyT4BrNlAHoSs5Cc
-         TTSDPij8VN/quyjXnZCDwBlSQWJ8uL9BR8DCYpyfCW24XWhZyPJeFSZB2iP/pKaonToY
-         iPGXZnRsJANZizBA1cH/hcWht6X4CYnv1V4wXeTwTUxMsLN5y82K4FO4btXZaaBDxKCA
-         UqwHjfRg8yXdIXKG2Wo3OKu35v851OCw77HdjyNMXEP8hYdDpi/bscGprK0oxgjsYyLF
-         +IYQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWZgycNnKBAQlp7Peuq04s9MOU6+drcC0JZ4/y84xANIeu8nZAWw3BUFenmvayCUMxg1e3xggRkDDT5/uaNwd3guDc8dHTJDVDD7HD/0Q==
-X-Gm-Message-State: AOJu0YxD8EwADfx2zdBi1pPRCvnO+nA3Hz6/bDbMrnRyk7lPQmhFmTug
-	I4BDUYe92MXMrdWqnodMRm4nZtt3IGLoXwP4C1eEsCZRX9wHlWRi
-X-Google-Smtp-Source: AGHT+IGJuEOafaI7+tCV7vsTYfc7mKh6m8d0wpe81NoSi6m5Vkv9sw2ORNDcFFTz+9IabAg6YVanUA==
-X-Received: by 2002:a05:600c:3c88:b0:416:2f05:41d with SMTP id bg8-20020a05600c3c8800b004162f05041dmr4456038wmb.18.1712410644031;
-        Sat, 06 Apr 2024 06:37:24 -0700 (PDT)
-Received: from [192.168.20.102] (57657817.catv.pool.telekom.hu. [87.101.120.23])
-        by smtp.googlemail.com with ESMTPSA id z22-20020a7bc7d6000000b004162bd5ba59sm6510510wmk.39.2024.04.06.06.37.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 06 Apr 2024 06:37:23 -0700 (PDT)
-From: Gabor Juhos <j4g8y7@gmail.com>
-Date: Sat, 06 Apr 2024 15:37:09 +0200
-Subject: [PATCH v2] phy: qcom: m31: match requested regulator name with dt
- schema
+	Sat, 06 Apr 2024 14:08:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1712412516;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=5PiGHEnTid+FCUYT6D1TamrJVqGY2e5ZDoc7FwF/VFY=;
+	b=h//3XLLz2+0Es8w8ZZZk+81Z30/+3pvxUzkBTYD1DReZLfVH7Kdc0BYEdq4bqOJKfXp/qx
+	ZsnaHZpyye2+67ANRhkxCxQbvSdP/2Efg+4J73ttdEUOZUP4M0zk85+MiPw20++wAQMCcD
+	/8AsqjqH/oHofxVFAoNkVY1cKLnlohk=
+Received: from mimecast-mx02.redhat.com (mx-ext.redhat.com [66.187.233.73])
+ by relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-376-jDaRziJSMnOktQy-NATyBg-1; Sat,
+ 06 Apr 2024 10:08:34 -0400
+X-MC-Unique: jDaRziJSMnOktQy-NATyBg-1
+Received: from smtp.corp.redhat.com (int-mx09.intmail.prod.int.rdu2.redhat.com [10.11.54.9])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mimecast-mx02.redhat.com (Postfix) with ESMTPS id 6BC1D3800E83;
+	Sat,  6 Apr 2024 14:08:34 +0000 (UTC)
+Received: from localhost.localdomain (unknown [10.39.192.50])
+	by smtp.corp.redhat.com (Postfix) with ESMTP id C0DD9492BCB;
+	Sat,  6 Apr 2024 14:08:33 +0000 (UTC)
+From: Hans de Goede <hdegoede@redhat.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Hans de Goede <hdegoede@redhat.com>,
+	linux-phy@lists.infradead.org
+Subject: [PATCH] phy: ti: tusb1210: Resolve charger-det crash if charger psy is unregistered
+Date: Sat,  6 Apr 2024 16:08:21 +0200
+Message-ID: <20240406140821.18624-1-hdegoede@redhat.com>
 MIME-Version: 1.0
-Message-Id: <20240406-phy-qcom-m31-regulator-fix-v2-1-c8e9795bc071@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAARQEWYC/42NTQ6CMBBGr0Jm7Zi20BJceQ/DomBtJ+HPVhsJ4
- e6OnMDle/nyvg2Si+QSXIoNosuUaJ4Y1KmAPtjJO6Q7MyihKqGUwCWs+OznEcdSYnT+PdjXHPF
- BH2xqrbWtjBadBA4s0bE+4reWOVDi6Xp8Zfmzf2WzRIm1qXVX2Uaarrz60dJw5jW0+75/ASJjI
- m/EAAAA
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
- Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Gabor Juhos <j4g8y7@gmail.com>
-X-Mailer: b4 0.13.0
+X-Scanned-By: MIMEDefang 3.4.1 on 10.11.54.9
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240406_063727_713213_D915E3E7 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20240406_070839_092211_34BB213B 
+X-CRM114-Status: GOOD (  16.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,56 +81,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to the 'qcom,ipq5332-usb-hsphy.yaml' schema, the 5V
-supply regulator must be defined via the 'vdd-supply' property.
-The driver however requests for the 'vdda-phy' regulator which
-results in the following message when the driver is probed on
-a IPQ5018 based board with a device tree matching to the schema:
+The power_supply frame-work is not really designed for there to be
+long living in kernel references to power_supply devices.
 
-  qcom-m31usb-phy 5b000.phy: supply vdda-phy not found, using dummy regulator
-  qcom-m31usb-phy 5b000.phy: Registered M31 USB phy
+Specifically unregistering a power_supply while some other code has
+a reference to it triggers a WARN in power_supply_unregister():
 
-This means that the regulator specified in the device tree never
-gets enabled.
+	WARN_ON(atomic_dec_return(&psy->use_cnt));
 
-Change the driver to use the 'vdd' name for the regulator as per
-defined in the schema in order to ensure that the corresponding
-regulator gets enabled.
+Folllowed by the power_supply still getting removed and the
+backing data freed anyway, leaving the tusb1210 charger-detect code
+with a dangling reference, resulting in a crash the next time
+tusb1210_get_online() is called.
 
-Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
-Reviewed-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-Signed-off-by: Gabor Juhos <j4g8y7@gmail.com>
+Fix this by only holding the reference in tusb1210_get_online()
+freeing it at the end of the function. Note this still leaves
+a theoretical race window, but it avoids the issue when manually
+rmmod-ing the charger chip driver during development.
+
+Fixes: 48969a5623ed ("phy: ti: tusb1210: Add charger detection")
+Signed-off-by: Hans de Goede <hdegoede@redhat.com>
 ---
-Changes in v2:
-- rebase on top of phy/fixes; ee13e1f3c72b ("phy: qcom: qmp-combo: Fix
-  register base for QSERDES_DP_PHY_MODE")
-- add Reviewed-by tag from Varadarajan Narayanan
-- Link to v1: https://lore.kernel.org/r/20240220-phy-qcom-m31-regulator-fix-v1-1-7675b4a916b3@gmail.com
----
- drivers/phy/qualcomm/phy-qcom-m31.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/ti/phy-tusb1210.c | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-index 03fb0d4b75d7..20d4c020a83c 100644
---- a/drivers/phy/qualcomm/phy-qcom-m31.c
-+++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-@@ -297,7 +297,7 @@ static int m31usb_phy_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, PTR_ERR(qphy->phy),
- 				     "failed to create phy\n");
+diff --git a/drivers/phy/ti/phy-tusb1210.c b/drivers/phy/ti/phy-tusb1210.c
+index 13cd614e12a1..751fecd466e3 100644
+--- a/drivers/phy/ti/phy-tusb1210.c
++++ b/drivers/phy/ti/phy-tusb1210.c
+@@ -69,7 +69,6 @@ struct tusb1210 {
+ 	struct delayed_work chg_det_work;
+ 	struct notifier_block psy_nb;
+ 	struct power_supply *psy;
+-	struct power_supply *charger;
+ #endif
+ };
  
--	qphy->vreg = devm_regulator_get(dev, "vdda-phy");
-+	qphy->vreg = devm_regulator_get(dev, "vdd");
- 	if (IS_ERR(qphy->vreg))
- 		return dev_err_probe(dev, PTR_ERR(qphy->vreg),
- 				     "failed to get vreg\n");
-
----
-base-commit: ee13e1f3c72b9464a4d73017c060ab503eed653a
-change-id: 20240220-phy-qcom-m31-regulator-fix-97555a4650b1
-
-Best regards,
+@@ -236,19 +235,24 @@ static const char * const tusb1210_chargers[] = {
+ 
+ static bool tusb1210_get_online(struct tusb1210 *tusb)
+ {
++	struct power_supply *charger = NULL;
+ 	union power_supply_propval val;
+-	int i;
++	bool online = false;
++	int i, ret;
+ 
+-	for (i = 0; i < ARRAY_SIZE(tusb1210_chargers) && !tusb->charger; i++)
+-		tusb->charger = power_supply_get_by_name(tusb1210_chargers[i]);
++	for (i = 0; i < ARRAY_SIZE(tusb1210_chargers) && !charger; i++)
++		charger = power_supply_get_by_name(tusb1210_chargers[i]);
+ 
+-	if (!tusb->charger)
++	if (!charger)
+ 		return false;
+ 
+-	if (power_supply_get_property(tusb->charger, POWER_SUPPLY_PROP_ONLINE, &val))
+-		return false;
++	ret = power_supply_get_property(charger, POWER_SUPPLY_PROP_ONLINE, &val);
++	if (ret == 0)
++		online = val.intval;
+ 
+-	return val.intval;
++	power_supply_put(charger);
++
++	return online;
+ }
+ 
+ static void tusb1210_chg_det_work(struct work_struct *work)
+@@ -473,9 +477,6 @@ static void tusb1210_remove_charger_detect(struct tusb1210 *tusb)
+ 		cancel_delayed_work_sync(&tusb->chg_det_work);
+ 		power_supply_unregister(tusb->psy);
+ 	}
+-
+-	if (tusb->charger)
+-		power_supply_put(tusb->charger);
+ }
+ #else
+ static void tusb1210_probe_charger_detect(struct tusb1210 *tusb) { }
 -- 
-Gabor Juhos <j4g8y7@gmail.com>
+2.44.0
 
 
 -- 
