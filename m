@@ -4,64 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01855C67861
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 07:13:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9DC6C67861
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 07:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q8D1cxwYokvAI3kRCr2hQw/emg+G9Q7r5a/uTbOKH9Q=; b=xpRDzZQmTPLFXq
-	VLvsMjip5SBJvRDudgYuLrOhbZkGdewCci2QW5BaU0ugjyy6bmYROTMNB8zTphODd1WDSNxOl8mVq
-	2vltP3ZsN/jhjAShrFoF96wHIVwvKmJJF5yA1wCZPACiFAW9uMUQ95mavuinWZRvYdYnyNPk0UjcE
-	6Tew25aWH61Jx903/DW/NZF6TPrkYlTypLuYq/4oziKj2zcQkPksGVrIwWj/sF8dsE5PD8orb8kYz
-	xxaSaDwe2OFywiVlWA/krG71VR+rKXa34FCych1xteWc3OaA700n6UlOn4Q/uE1Yatw7XB7+aItOZ
-	OJ8zcMVQMP5IXpNZxeoQ==;
+	List-Owner; bh=nN43q7jE4j2zP0aAp942R65G+UJtmO01XI4wgTFKO8g=; b=2iMqSNV67pSSp/
+	Ek/YGXfnpHJeiMFWTGHwNy/RnV42XZ2+y1xgFWMOKcqPcYBxPH8YBp835ozQEfynE1JOJRZ/RU2Io
+	0mM4XUt2jk8R7MjYJi71OyfY49PVexi0QH1XHUlaefooHrSDn8Dh6RAk3uj4dJasVa8mmUi8AHTum
+	DenhoOv/KO3SuhjTuTnTSlRdu0QRUXTU5JkpK1xkpY+NmN/0hm4vtGUsv7zyzfrDMnOuxQmW9+3q5
+	1NAd6OiQ9d84CPjpY00BUSjZkUIes/gaiXLfIcNEyYqQ3RHhGQTdRidFONlKX/GRoMcXqyYVppXiJ
+	2xlE/XCDIjOJzO06CZAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt0FS-00000009rMn-2MBA;
-	Sat, 06 Apr 2024 07:13:58 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rt0Jf-00000009riL-0QIJ;
+	Sat, 06 Apr 2024 07:18:19 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rt0FP-00000009rLx-3Fs9
-	for linux-phy@lists.infradead.org;
-	Sat, 06 Apr 2024 07:13:57 +0000
+	id 1rt0Jb-00000009rhp-0PHU;
+	Sat, 06 Apr 2024 07:18:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id F26C8CE16E4;
-	Sat,  6 Apr 2024 07:13:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58C33C433C7;
-	Sat,  6 Apr 2024 07:13:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 13210603F1;
+	Sat,  6 Apr 2024 07:18:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9DA8C433C7;
+	Sat,  6 Apr 2024 07:18:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712387630;
-	bh=otn09rFwqivh/gePwrdoAAH8dH4n60Cf1yo60ZYoNTs=;
+	s=k20201202; t=1712387893;
+	bh=dS8bADZziQoLtHlnkHj0dQ2paJIGjWmIuNewalgbWUA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KpSeMMqtXekcsG94J/slBvoWUl+5dMp2RHKq+hKlf68y0ocrjpg96nnhebCFILdaw
-	 NrunEmaNoL0bpTtvBed9gXy11SlitDKfWN5bYC6S7jyADE0tCYKlKyCcrDkstZqhJ9
-	 yhC9kKf7axU51TcaRiEwaQxe3O+mAXR+YdZjt0V4xZ0WCeiAZSomYn0kQKpd5xLkvV
-	 idaz9bjqnGTz9DytmFiHvYBp1K6MtApeuTC8WUt9HLABYfhpxrqbnmP2VLz5QPyiNP
-	 ylQEd5mJKFp+wTmoxmX93BWo995aAmsvS+LzbZSPn8e2jV41+lNG7UYZbJOYX58snS
-	 Tb5bLFUvVT65w==
-Date: Sat, 6 Apr 2024 12:43:45 +0530
+	b=ea6S6N6KseF8FYU91uMYJN7GD6yzmV7gab0MK5qCOM9EoxQmArIK+Qf4SmrVk7wWd
+	 w4XXWVDPPOYHHZv3evO6BMbfX4VxnqR46iifX3EPm2YW1Dotyn0Z+UrRWpPLayVoIj
+	 WKMckBsbZZVR2Azg9mLn9kc6wee9HAP7/p7lvdSggO5kzf8s8yplkVQXxU6qyMQclo
+	 hSdF9W6liKlu+0CsLtUDcVuJqsrZxKyA6LHu7IsCpPTRaYEe8NzCHJhG7GB+S3w8Ye
+	 ptA0UggHfPqrixdz4A5ghcTFtERIWFgc6L2T1QHsXRcikxX+L11f46KBcCk7g+So27
+	 mCktSUaE1/xGQ==
+Date: Sat, 6 Apr 2024 12:48:09 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Mikhail Kobuk <m.kobuk@ispras.ru>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
+To: Marcel Ziswiler <marcel@ziswiler.com>
+Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com,
+	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+	Richard Zhu <hongxing.zhu@nxp.com>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+	Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+	Fabio Estevam <festevam@gmail.com>,
+	Heiko Stuebner <heiko@sntech.de>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>,
-	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	lvc-project@linuxtesting.org,
-	Alexey Khoroshilov <khoroshilov@ispras.ru>
-Subject: Re: [PATCH v2 0/2] phy: marvell: a3700-comphy: Minor fixes
-Message-ID: <ZhD2KTImtCMnglG_@matsya>
-References: <20240325201254.54445-1-m.kobuk@ispras.ru>
+	Rob Herring <robh@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+	Shawn Guo <shawnguo@kernel.org>, Tim Harvey <tharvey@gateworks.com>,
+	Yang Li <yang.lee@linux.alibaba.com>, imx@lists.linux.dev
+Subject: Re: [PATCH v2] phy: freescale: imx8m-pcie: fix pcie link-up
+ instability
+Message-ID: <ZhD3MfXe8rhkQ_3l@matsya>
+References: <20240327071946.8869-1-marcel@ziswiler.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240325201254.54445-1-m.kobuk@ispras.ru>
+In-Reply-To: <20240327071946.8869-1-marcel@ziswiler.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240406_001356_016498_1C132D45 
-X-CRM114-Status: UNSURE (   8.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240406_001815_223977_379B6A17 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,24 +84,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-03-24, 23:12, Mikhail Kobuk wrote:
-> Changes in v2:
-> - Replace hardcode and ARRAY_SIZE() with definition
-> - Link to v1: https://lore.kernel.org/linux-phy/20240321164734.49273-1-m.kobuk@ispras.ru/
+On 27-03-24, 08:19, Marcel Ziswiler wrote:
+> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> 
+> On the i.MX 8M Mini, the AUX_PLL_REFCLK_SEL has to be left at its reset
+> default of AUX_IN (PLL clock).
+> 
+> Background Information:
+> In our automated testing setup, we use Delock Mini-PCIe SATA cards [1].
+> While this setup has proven very stable overall we noticed upstream on
+> the i.MX 8M Mini fails quite regularly (about 50/50) to bring up the
+> PCIe link while with NXP's downstream BSP 5.15.71_2.2.2 it always works.
+> As that old downstream stuff was quite different, I first also tried
+> NXP's latest downstream BSP 6.1.55_2.2.0 which from a PCIe point of view
+> is fairly vanilla, however, also there the PCIe link-up was not stable.
+> Comparing and debugging I noticed that upstream explicitly configures
+> the AUX_PLL_REFCLK_SEL to I_PLL_REFCLK_FROM_SYSPLL while working
+> downstream [2] leaving it at reset defaults of AUX_IN (PLL clock).
+> Unfortunately, the TRM does not mention any further details about this
+> register (both for the i.MX 8M Mini as well as the Plus).
+> NXP confirmed their validation codes for the i.MX8MM PCIe doesn't
+> configure cmn_reg063 (offset: 0x18C).
+> BTW: On the i.MX 8M Plus we have not seen any issues with PCIe with the
+> exact same setup which is why I left it unchanged.
 
-This does not apply for me, pls rebase on phy/fixes
-
-> 
-> ---
-> Mikhail Kobuk (2):
->   phy: marvell: a3700-comphy: Fix out of bounds read
->   phy: marvell: a3700-comphy: Fix hardcoded array size
-> 
->  drivers/phy/marvell/phy-mvebu-a3700-comphy.c | 12 +++++++-----
->  1 file changed, 7 insertions(+), 5 deletions(-)
-> 
-> -- 
-> 2.44.0
+This does not apply on phy/fixes, pls rebase
 
 -- 
 ~Vinod
