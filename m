@@ -4,71 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D520BC67861
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 06:30:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D7B9C67861
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Apr 2024 07:06:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2+k+BU9hROI8OIoHSF+DjF4ldvGi3RkfQKWAtBwgF+c=; b=FuPhWkSewD0mYu
-	lIadjGerrSNNN0+VYBPt4P1AUJXCMiYKIDTF5pPtGF8sa34HdlkfEzoMEcReGkbKPX/TBTzHYJ0Se
-	1zXHQtXbCmA0s4x3XYlm23ZoLC3p9511xgMfdfbwqu8sE1QksS+f+114uPiu5FEQ4BTSfs6iff8mR
-	X0ade24eH+MZa2X+GrWo2PA+mMtrYcrx2NNzkfhRW5ifDvc2/5Z6RQP8TqdohIkpWDZArSwtgIOql
-	t+5QyXFkDcYk1NnBPkZZDwZbIUu4iZqnQR0muQBzfYvybz9vJ8VRwq/bQ3MgqK4xhgS5XrSLr+IuM
-	mE4as7OmBcdjKIodbGSw==;
+	List-Owner; bh=AzsL25GJQ1eya1a6ePpi+4HzWOwKaZjpCNYHPXtYIW8=; b=1GudkGchWJ9lSR
+	QnE/pwW4HzG0N3GAtJJCmhr3i1yWvrq0MdUR8k1YL2vGmKyxvE4vYxLEtMX+icBJUbqomokDKUsUL
+	5oLdEV7R0rqerNnPbeppnyTVlnB40nP74e1dPrkUP6wH9eChISUVF25oWlOFZRo7qnPxWjmoTnrWA
+	h/192k9UyynGh6zct1iYmLHX/AUJ1Pu2Y6dTUVmIwfMZaIji5pJzdXCYRJ4cCTb/FMjltfCgCRj39
+	T9s/XUsYZ+RCgLCDrbf76C2JfYZysDgLe3qVF5lxmZKd2+epjjWLzzegimC4nlKlME4bE88H1qxOi
+	xHHtZs3l4Nr2xuma/DSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rszZQ-00000009nu4-2JJn;
-	Sat, 06 Apr 2024 06:30:32 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rt08I-00000009qgy-0qkH;
+	Sat, 06 Apr 2024 07:06:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rszZM-00000009ntG-49X7;
-	Sat, 06 Apr 2024 06:30:30 +0000
+	id 1rt08E-00000009qfk-2mKw;
+	Sat, 06 Apr 2024 07:06:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AC2E260670;
-	Sat,  6 Apr 2024 06:30:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A15FC433C7;
-	Sat,  6 Apr 2024 06:30:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3E4BF60909;
+	Sat,  6 Apr 2024 07:06:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E995C43390;
+	Sat,  6 Apr 2024 07:06:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712385027;
-	bh=qXd+uB2LXhHrOLHpe3rXD95we40I4nRn9suxums/L40=;
+	s=k20201202; t=1712387186;
+	bh=MCFYeOmRurFOqa2pWXaognBvgbOHLrLLj1a7t+4t00g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=f6NbXAd0eDSiyGzNC0SQnx76z2jb3UKAC2ex3djEdml5hlklPAIV27dudpoFbtrV3
-	 JGiaBdGCXkA2286da4xuS7jQDCPpuNsrGw9JS0956hA56LTL9AIRaxib0WkPWYrsii
-	 +05v+h55yn3LT1dA9FQxKyq4KstE/U/ZyIOg/E6FXeO6sCvBEvbhneW4C54yvBWi0U
-	 zLql2asiuXjFPE1EvFxI0mzk0iKsNUITWmPXJVZigP0vGNKXM/QGcVxwqvhokLOQBX
-	 o0SZq/aLpgRuA595ZY+NRmzpkBDstRzekxxIR2v00l/C8TB5JyKbr2p+MIkOiiO/cv
-	 mT0HiVJTEKoYA==
-Date: Sat, 6 Apr 2024 12:00:23 +0530
+	b=Qo4eSOcjsN7orGimV+Ldl+ZnKKNN6IZnM6S/e3F+Yum2SMulDYOtIwqkAOE2LrAo0
+	 xfXzoOJ8cwkYKAZ5BzJl6NcsMlGZ6cX8WwH4rvKHfyeInnpLyyayx1a+sxM52MJaUu
+	 aiVR+2+AHRKPMGHzMp4MpuRKKAWw2FPdNdpRSu1LMOX2E7CrDQU0woSYzOptZXovMx
+	 NL8If4/Qh1IOYMPZWTbdyF0g/7XbVZW+Ji5imyF4tpmwGBu7FTwhsfqFPZPtigzl3H
+	 CXShIg1ek8MCpFHFu9wf6SekZVvhxRoDg5GUdW4aJeLZlQwdRJaHtVZh4m+9u7do1v
+	 pT4T6vNRucH6A==
+Date: Sat, 6 Apr 2024 12:36:22 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marcel Ziswiler <marcel@ziswiler.com>
-Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com,
-	Lucas Stach <l.stach@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
-	Richard Zhu <hongxing.zhu@nxp.com>, linux-kernel@vger.kernel.org,
-	Marcel Ziswiler <marcel.ziswiler@toradex.com>,
-	Fabio Estevam <festevam@gmail.com>,
-	Heiko Stuebner <heiko@sntech.de>,
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Heiko Stuebner <heiko@sntech.de>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Rob Herring <robh@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Shawn Guo <shawnguo@kernel.org>, Tim Harvey <tharvey@gateworks.com>,
-	Yang Li <yang.lee@linux.alibaba.com>, imx@lists.linux.dev
-Subject: Re: [PATCH v1 1/1] phy: freescale: imx8m-pcie: fix pcie link-up
- instability
-Message-ID: <ZhDr_yCBR_oAzD96@matsya>
-References: <20240322130646.1016630-1-marcel@ziswiler.com>
- <20240322130646.1016630-2-marcel@ziswiler.com>
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, kernel@collabora.com,
+	Zhang Yubing <yubing.zhang@rock-chips.com>
+Subject: Re: [PATCH v4 02/10] phy: rockchip: add usbdp combo phy driver
+Message-ID: <ZhD0bvZLh0POrljR@matsya>
+References: <20240325141653.84910-1-sebastian.reichel@collabora.com>
+ <20240325141653.84910-3-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240322130646.1016630-2-marcel@ziswiler.com>
+In-Reply-To: <20240325141653.84910-3-sebastian.reichel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240405_233029_096676_960EEF2F 
-X-CRM114-Status: UNSURE (   4.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240406_000630_961364_02E1D6B1 
+X-CRM114-Status: GOOD (  28.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,15 +80,178 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-03-24, 14:06, Marcel Ziswiler wrote:
-> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+On 25-03-24, 15:15, Sebastian Reichel wrote:
+> This adds a new USBDP combo PHY with Samsung IP block driver.
 > 
-> Leaving AUX_PLL_REFCLK_SEL at its reset default of AUX_IN (PLL clock)
-> proves to be more stable on the i.MX 8M Mini.
+> The driver get lane mux and mapping info in 2 ways, supporting
+> DisplayPort alternate mode or parsing from DT. When parsing from DT,
+> the property "rockchip,dp-lane-mux" provide the DP mux and mapping
+> info. This is needed when the PHY is not used with TypeC Alt-Mode.
+> For example if the USB3 interface of the PHY is connected to a USB
+> Type A connector and the DP interface is connected to a DisplayPort
+> connector.
+> 
+> When do DP link training, need to set lane number, link rate, swing,
+> and pre-emphasis via PHY configure interface.
+> 
+> Co-developed-by: Heiko Stuebner <heiko@sntech.de>
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+> Co-developed-by: Zhang Yubing <yubing.zhang@rock-chips.com>
+> Signed-off-by: Zhang Yubing <yubing.zhang@rock-chips.com>
+> Co-developed-by: Frank Wang <frank.wang@rock-chips.com>
+> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+> Tested-by: Heiko Stuebner <heiko@sntech.de>
+> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> ---
+>  drivers/phy/rockchip/Kconfig              |   12 +
+>  drivers/phy/rockchip/Makefile             |    1 +
+>  drivers/phy/rockchip/phy-rockchip-usbdp.c | 1612 +++++++++++++++++++++
+>  3 files changed, 1625 insertions(+)
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-usbdp.c
+> 
+> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+> index a34f67bb7e61..c3d62243b474 100644
+> --- a/drivers/phy/rockchip/Kconfig
+> +++ b/drivers/phy/rockchip/Kconfig
+> @@ -115,3 +115,15 @@ config PHY_ROCKCHIP_USB
+>  	select GENERIC_PHY
+>  	help
+>  	  Enable this to support the Rockchip USB 2.0 PHY.
+> +
+> +config PHY_ROCKCHIP_USBDP
+> +	tristate "Rockchip USBDP COMBO PHY Driver"
+> +	depends on ARCH_ROCKCHIP && OF
+> +	select GENERIC_PHY
+> +	select TYPEC
+> +	help
+> +	  Enable this to support the Rockchip USB3.0/DP combo PHY with
+> +	  Samsung IP block. This is required for USB3 support on RK3588.
+> +
+> +	  To compile this driver as a module, choose M here: the module
+> +	  will be called phy-rockchip-usbdp
+> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+> index 3d911304e654..010a824e32ce 100644
+> --- a/drivers/phy/rockchip/Makefile
+> +++ b/drivers/phy/rockchip/Makefile
+> @@ -12,3 +12,4 @@ obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
+> +obj-$(CONFIG_PHY_ROCKCHIP_USBDP)	+= phy-rockchip-usbdp.o
+> diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> new file mode 100644
+> index 000000000000..38dc96cfe403
+> --- /dev/null
+> +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> @@ -0,0 +1,1612 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * Rockchip USBDP Combo PHY with Samsung IP block driver
+> + *
+> + * Copyright (C) 2021 Rockchip Electronics Co., Ltd
 
-This doesn't apply on phy/fixes
+we are in 2024!
 
-Please rebase
+> + */
+> +
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/bits.h>
+> +#include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+
+Do you need both
+
+> +#include <linux/delay.h>
+> +#include <linux/gpio.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/property.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/usb/ch9.h>
+> +#include <linux/usb/typec_dp.h>
+> +#include <linux/usb/typec_mux.h>
+
+That seems a bit more of headers, do you need all of them?
+
+> +static int rk_udphy_setup(struct rk_udphy *udphy)
+> +{
+> +	int ret = 0;
+
+Superfluous init
+
+> +static int rk_udphy_parse_dt(struct rk_udphy *udphy)
+> +{
+> +	struct device *dev = udphy->dev;
+> +	struct device_node *np = dev_of_node(dev);
+> +	enum usb_device_speed maximum_speed;
+> +	int ret;
+> +
+> +	udphy->u2phygrf = syscon_regmap_lookup_by_phandle(np, "rockchip,u2phy-grf");
+> +	if (IS_ERR(udphy->u2phygrf))
+> +		return dev_err_probe(dev, PTR_ERR(udphy->u2phygrf), "failed to get u2phy-grf\n");
+> +
+> +	udphy->udphygrf = syscon_regmap_lookup_by_phandle(np, "rockchip,usbdpphy-grf");
+> +	if (IS_ERR(udphy->udphygrf))
+> +		return dev_err_probe(dev, PTR_ERR(udphy->udphygrf), "failed to get usbdpphy-grf\n");
+> +
+> +	udphy->usbgrf = syscon_regmap_lookup_by_phandle(np, "rockchip,usb-grf");
+> +	if (IS_ERR(udphy->usbgrf))
+> +		return dev_err_probe(dev, PTR_ERR(udphy->usbgrf), "failed to get usb-grf\n");
+> +
+> +	udphy->vogrf = syscon_regmap_lookup_by_phandle(np, "rockchip,vo-grf");
+> +	if (IS_ERR(udphy->vogrf))
+> +		return dev_err_probe(dev, PTR_ERR(udphy->vogrf), "failed to get vo-grf\n");
+> +
+> +	ret = rk_udphy_parse_lane_mux_data(udphy);
+> +	if (ret)
+> +		return ret;
+> +
+> +	udphy->sbu1_dc_gpio = devm_gpiod_get_optional(dev, "sbu1-dc", GPIOD_OUT_LOW);
+> +	if (IS_ERR(udphy->sbu1_dc_gpio))
+> +		return PTR_ERR(udphy->sbu1_dc_gpio);
+> +
+> +	udphy->sbu2_dc_gpio = devm_gpiod_get_optional(dev, "sbu2-dc", GPIOD_OUT_LOW);
+> +	if (IS_ERR(udphy->sbu2_dc_gpio))
+> +		return PTR_ERR(udphy->sbu2_dc_gpio);
+> +
+> +	if (device_property_present(dev, "maximum-speed")) {
+> +		maximum_speed = usb_get_maximum_speed(dev);
+> +		udphy->hs = maximum_speed <= USB_SPEED_HIGH ? true : false;
+> +	}
+> +
+> +	ret = rk_udphy_clk_init(udphy, dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = rk_udphy_reset_init(udphy, dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return 0;
+
+return rk_udphy_reset_init()
+
+> +static const struct phy_ops rk_udphy_dp_phy_ops = {
+> +	.init		= rk_udphy_dp_phy_init,
+> +	.exit		= rk_udphy_dp_phy_exit,
+> +	.power_on	= rk_udphy_dp_phy_power_on,
+> +	.power_off	= rk_udphy_dp_phy_power_off,
+> +	.configure	= rk_udphy_dp_phy_configure,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static int rk_udphy_usb3_phy_init(struct phy *phy)
+> +{
+> +	struct rk_udphy *udphy = phy_get_drvdata(phy);
+> +	int ret = 0;
+
+Superfluous init here too
 
 -- 
 ~Vinod
