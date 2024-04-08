@@ -4,79 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D58A8C67861
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 09:34:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81CD8CD128A
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 09:41:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6R/XSLKdceI5BCYrg8jez/YHyU3rx1Z74xjWQ+dt2d4=; b=kJRR170tm9lKgE
-	opNiKEbFbs+z+tfKwr8vnVnNkjjrYJfAr/z9UW29k0oq26CFwT31rT4gSDQIg4ZTgesif2Vu4H/2s
-	09ETBU6F25x+18hlDmZiqNzrALzivTo+FfHRnIN4LhmVOggesN4rmqC4Fgd3iaM0+EOBGO9Rb9PTq
-	kRv8JvwjWKzlW8ueQcL3ql/dHHRLvrlMSm+6LKLKS+O7QE9waCVnDOHdR30DjQNI/YHFImQdPtW0G
-	6ixp6MqI+6sStNUehNRBDjp1hfNduUyme9JMURHb2z23paNmIrziNR8xXM9Iq1DGdsL6KAA0Fk1jM
-	I5WDZL1h1mflqRW5eJ3g==;
+	List-Owner; bh=Px9RK4YZxkkI0bQiCeaTuBPWUTE7mA9/1bhGUanssd8=; b=AMO4xqvoUny0F0
+	nv/L92R2qfVxEGPOpJPVOL+FtC84CkcqYE7CO1G0UKX36Z2OHta2VFj/GoIM/srWTKyOvszslL1eq
+	4WDNwboNoQBID6pVAbHC2U5C9tkL8MlWmWs3iVTLMxUovnliEZBDeecxb9P23d1yGlQEFH8JVE2wR
+	m7XyFqMKGr0TyAulPNFTYLdpLrH0ZYeNDBEIOP/xU4Dl5kRAsuNDtLIVkm5Ep2IcD/8eDT9HprVCO
+	GDhsOY5CUYrhvy4bG1JFjRUuz7zU5TZqkzHzqXnomCIgAyOxyt/u5D9Sqy6jxgwxfRj3+2tI7Kw+0
+	JaBSnRyoq8t/BJZVm0ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtlOY-0000000F7AK-0HPD;
-	Mon, 08 Apr 2024 09:34:30 +0000
-Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
+	id 1rtlVd-0000000F8WB-3z49;
+	Mon, 08 Apr 2024 09:41:49 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtlOV-0000000F79Z-2YSB
+	id 1rtlVb-0000000F8Uw-2Q8G
 	for linux-phy@lists.infradead.org;
-	Mon, 08 Apr 2024 09:34:29 +0000
-Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-6181b9dc647so2465347b3.1
-        for <linux-phy@lists.infradead.org>; Mon, 08 Apr 2024 02:34:25 -0700 (PDT)
+	Mon, 08 Apr 2024 09:41:48 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-2d895138ce6so6991751fa.0
+        for <linux-phy@lists.infradead.org>; Mon, 08 Apr 2024 02:41:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712568865; x=1713173665; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=ccdZGemQtAOmH95htQ33GvCmGD7g1WiaWWMlzba2fiM=;
-        b=UXLIOSpfGGj/EUL2r16dWSPm4W6ZwxwakstIlL6jK8B9GpvuBYG22wEBFQ/GmpJZj1
-         C1SH6wuar7368rVtiXPujgwVJaL5IjWfOj5rrFUoeNGAaW4yi+uodfqvCLD/OiL75Up7
-         RWX8GL1dC4ulmcxNzTV+1T0TaDa5tcBkIle+B8qtuLAocGXsLxu+UY6WGY+J4GhcKR43
-         n83Ub74rR4aFeI2WxW/zz2uEBsRsNH6zr6DB/EzBvQZ7dhuBssbAZxdpxQ3EOCcYMwaI
-         FT0LXkex0XRzr8uB3UqTxjCLhnLN3nLigN3lRMUpY/dJFx4Vzcz6NQhtZ3hm+0//P0Rm
-         C14Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712568865; x=1713173665;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=chromium.org; s=google; t=1712569304; x=1713174104; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:user-agent:from:references
+         :in-reply-to:mime-version:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ccdZGemQtAOmH95htQ33GvCmGD7g1WiaWWMlzba2fiM=;
-        b=M+3JwJFmVZnr6hL+ukO7oP0u6FEx5YsgS+rUrMmn3JKCWfolG8KHDasnxeQVf5oSGP
-         tWkE3+qW54rcXwKXV4Z/KgvGE97fOKbQRT3Hwo1b0+6kshzgmxA27Gi3G7D+ZFqjuTC3
-         Z1ge8/B1w6e6mxMy0XcNvJCDEqHnw3K5G/fW5/A7erESszSGxumlOU1M3h79jDA2u743
-         cCiZ+Xom25BebfTdPhwNputUtTCZBdCdnou7INMXPyHF0ET6zGJ1rwCHKLkz38FLrNPE
-         l7F4gzVTxRulHW4AGfr9vXUvCEH6YZWI+6qOP+KCovS3OwMYlZFZL03Fv2vlel1IPxQJ
-         P2ww==
-X-Forwarded-Encrypted: i=1; AJvYcCVE4zUqBpQnzovzdotR6x8pHv+lba5rglJl5zH55ZYw0veNO9IheCFSMAbo0x7gGWQIa9Gw8Hjx5A5+DxMMVR+S5gRc4tU5axRqTIH1+w==
-X-Gm-Message-State: AOJu0YzZEHO4L0GSE8QVW65di/IVfVgVqDTbqSsT58MmXqFslDmUKz5o
-	1eAULzfdS8osEw4I3MfNNHHCX5sQSnSAClNwnFjMUDLnU33LUpWOYMRU9lLSzcXO01Cvsp4pXnD
-	xtSfjpsZyX7LG4n3mxH0ovF2TKfi19R7XkCxz0w==
-X-Google-Smtp-Source: AGHT+IEeD23qNLKI4LzgG0ATSfJAy0faf9nFICLsUBkFLtFuNSQXk1zU83q6cji04DCofUDq/+oONg6lZ40XGPwiIJg=
-X-Received: by 2002:a25:aea3:0:b0:dc6:d093:8622 with SMTP id
- b35-20020a25aea3000000b00dc6d0938622mr6172768ybj.15.1712568863856; Mon, 08
- Apr 2024 02:34:23 -0700 (PDT)
+        bh=P1sjyF9zPEl2TEamRL6KiFbzsyaAM9a2KSULoVj+d9A=;
+        b=Ll5/rnCJlKVRde1FyTPxkDPQNOBCi8Q/sePajwR/IWaPdTb5TbToNO/RovCkGwBsph
+         EY1BRrL8BeS4poCAA4ubMdAwb4mTj7X6WJCdkMu+jrckG6PmAaSQND48jkSGSsk0ncfI
+         uTjvqeKIchEdSR/AcDW94wBhg5zw/GxrkGE9o=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712569304; x=1713174104;
+        h=cc:to:subject:message-id:date:user-agent:from:references
+         :in-reply-to:mime-version:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=P1sjyF9zPEl2TEamRL6KiFbzsyaAM9a2KSULoVj+d9A=;
+        b=JrEA33MgeD7T1m4IsqwjP3Nkgv97qZasgXj53h0iP/3OW2msfBXgogPWrKmuWffK1G
+         mUbN9mpbhRIQuf/swhc3Mi8p9X4nMvT1uYyxWF4gYzAN8GNffRZnPYbDjNFgJ11rnHSa
+         LSQ5APyYKkHQk8Cdxl1jBJcDUhbEQ/gwWGsz5Fr6wNNUm7EQr0huOTzCCwR5rVDmtFkZ
+         DGrwX7KmEsfScJrBBgb62k5gbkmnnk0Fq/+GRFCgAu2Ql946OfvM0E60IHd0DDlr7S5k
+         8xC85GSLCUEnRahnmFpvIIQcu9zUmt+DUXt6++agxfb3hlRK4QPH/XQFWxkLyL95l4iI
+         5fJg==
+X-Forwarded-Encrypted: i=1; AJvYcCXKNatM4i2A3LUOv4HLAAxtuAEqf3XoJu1gwNYN3aF9E8O9pccXOw1NOfNIdvl90A83EjN7MpK5n02DyAXbYAfKX4MScOFLp35z7+Zfvg==
+X-Gm-Message-State: AOJu0YxSfd3w3nBaLkEp4cMu196NUr2qYNKRG2c7W9GGF8Z3P7riM1vI
+	qowmWKBQSec1yHk/9DyVKNHD8HhVNxONzGgNpFxmPbk4htt4aRoAPpikpR1QJzVZGi1Ir9V3WwF
+	/8rv1ZAuPh3+HRCFqIVOV+YLw/mdQMe02jchr
+X-Google-Smtp-Source: AGHT+IF9NjrwqKlld09cONkAoXbGH6b8es74pe1Um/RUmrsKTi3n/+lKueJeNAGkqsUBxbs47mKMH0KhlmofkKRnCCk=
+X-Received: by 2002:a05:651c:42:b0:2d4:77c0:d61c with SMTP id
+ d2-20020a05651c004200b002d477c0d61cmr4901918ljd.35.1712569303584; Mon, 08 Apr
+ 2024 02:41:43 -0700 (PDT)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Mon, 8 Apr 2024 02:41:42 -0700
 MIME-Version: 1.0
-References: <20240408093023.506-1-johan+linaro@kernel.org>
 In-Reply-To: <20240408093023.506-1-johan+linaro@kernel.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 8 Apr 2024 12:34:12 +0300
-Message-ID: <CAA8EJpob42m4p_REGyjpM2KrdE02x91pGgCLGVhpW_i1vXSScA@mail.gmail.com>
+References: <20240408093023.506-1-johan+linaro@kernel.org>
+From: Stephen Boyd <swboyd@chromium.org>
+User-Agent: alot/0.10
+Date: Mon, 8 Apr 2024 02:41:42 -0700
+Message-ID: <CAE-0n50cZ0MoT6M97NAXPNfejk46MkLxQgvBELxFVGgNRRaP9g@mail.gmail.com>
 Subject: Re: [PATCH] phy: qcom: qmp-combo: fix VCO div offset on v5_5nm and v6
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	stable@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
+	Abhinav Kumar <quic_abhinavk@quicinc.com>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240408_023427_684108_721FEE73 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20240408_024147_672605_DDAB3761 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,8 +94,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 8 Apr 2024 at 12:30, Johan Hovold <johan+linaro@kernel.org> wrote:
->
+Quoting Johan Hovold (2024-04-08 02:30:23)
 > Commit 5abed58a8bde ("phy: qcom: qmp-combo: Fix VCO div offset on v3")
 > fixed a regression introduced in 6.5 by making sure that the correct
 > offset is used for the DP_PHY_VCO_DIV register on v3 hardware.
@@ -111,16 +111,14 @@ On Mon, 8 Apr 2024 at 12:30, Johan Hovold <johan+linaro@kernel.org> wrote:
 > Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 2 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h | 1 +
->  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h | 1 +
->  3 files changed, 4 insertions(+)
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Thanks! I didn't know the qmp_v4_configure_dp_phy() function was used by
+v5 or v6, but upon further inspection that seems to be the case. Maybe
+that should be renamed to qmp_v456_configure_dp_phy() to match and then
+qmp_v456_configure_dp_phy() get inlined into qmp_v4_configure_dp_phy().
+Either way:
 
--- 
-With best wishes
-Dmitry
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
 
 -- 
 linux-phy mailing list
