@@ -4,70 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69F87CD128A
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 09:31:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D58A8C67861
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 09:34:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=E1+sgHLEBudHBJvL7iB/K0jBv6wFRSJ8C3gDrrG92Po=; b=twCleygQYuvJNb
-	4XsjJWcZEnWE1wlnVxiwsitY2vH9TO444dLJFb2HGp/QEvXh7y43lwVwZMscLfoqtSZTUIwR/QLN0
-	uPgjzPLsIsv2lZRyDYFUJjJKA/12xc8kwExT25lONXuZN3ge+UEBXTQ44STzW7cpTTu3fwXQBISFN
-	TtuKGFuEIA6RyUMu4lvjBDmC39KCItrSEwNHRg9Jhq6FCZZS6x1Ff0wHHHKDv+LoHG/gUEqGsf80M
-	hG2R3+9F8IkqUorS26ro9rXKESMe8ssWxgVTKer5qplO+Ac4X9gVxRlPhLFjXWqbVn/NV2mDzMZ9R
-	PXvV+tLi3mM3+DC1JLFA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6R/XSLKdceI5BCYrg8jez/YHyU3rx1Z74xjWQ+dt2d4=; b=kJRR170tm9lKgE
+	opNiKEbFbs+z+tfKwr8vnVnNkjjrYJfAr/z9UW29k0oq26CFwT31rT4gSDQIg4ZTgesif2Vu4H/2s
+	09ETBU6F25x+18hlDmZiqNzrALzivTo+FfHRnIN4LhmVOggesN4rmqC4Fgd3iaM0+EOBGO9Rb9PTq
+	kRv8JvwjWKzlW8ueQcL3ql/dHHRLvrlMSm+6LKLKS+O7QE9waCVnDOHdR30DjQNI/YHFImQdPtW0G
+	6ixp6MqI+6sStNUehNRBDjp1hfNduUyme9JMURHb2z23paNmIrziNR8xXM9Iq1DGdsL6KAA0Fk1jM
+	I5WDZL1h1mflqRW5eJ3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtlLC-0000000F6CE-04yS;
-	Mon, 08 Apr 2024 09:31:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rtlOY-0000000F7AK-0HPD;
+	Mon, 08 Apr 2024 09:34:30 +0000
+Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtlL8-0000000F6Ay-3nyO
+	id 1rtlOV-0000000F79Z-2YSB
 	for linux-phy@lists.infradead.org;
-	Mon, 08 Apr 2024 09:31:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 9F28A60F30;
-	Mon,  8 Apr 2024 09:30:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 456C5C433C7;
-	Mon,  8 Apr 2024 09:30:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712568657;
-	bh=YTvBQpF8N5UpnJKoybhSeGafUbBY3tM0aAczZzHt0T0=;
-	h=From:To:Cc:Subject:Date:From;
-	b=d70hueG3GTfMf47ltZrYYL8BlExMVT7ZwmEdVzCx2FYmieUEinUJX5DntW1FnKIcK
-	 NcoJNi6V1dJiKcVSvAkyQs7+JinfUlV7TOF0Llaj0wdUhgc2qNjKXXaIK5rYkwM/B2
-	 KTbMtGh3TvOUdU/w49EuE6JkqVvYuM3u3Pcg/yKJdYoGrlmThuJbTleWhE82zXoicg
-	 A/aSWfjpfkcPV3oLNGzvBZRMdYDYHuI4FmzorXirnniUga/BvkkgHcTU0Oilyz/9lE
-	 yPbEkdG8ECae4j5CMMwVaD6vJmq4CyPR6kkswHuRrLbH7edwGlaliZUUIhwLrhnx0v
-	 Vf0tD1LkWmLmg==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1rtlL0-0000000008u-2g79;
-	Mon, 08 Apr 2024 11:30:51 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	stable@vger.kernel.org,
-	Stephen Boyd <swboyd@chromium.org>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH] phy: qcom: qmp-combo: fix VCO div offset on v5_5nm and v6
-Date: Mon,  8 Apr 2024 11:30:23 +0200
-Message-ID: <20240408093023.506-1-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.43.2
+	Mon, 08 Apr 2024 09:34:29 +0000
+Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-6181b9dc647so2465347b3.1
+        for <linux-phy@lists.infradead.org>; Mon, 08 Apr 2024 02:34:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1712568865; x=1713173665; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=ccdZGemQtAOmH95htQ33GvCmGD7g1WiaWWMlzba2fiM=;
+        b=UXLIOSpfGGj/EUL2r16dWSPm4W6ZwxwakstIlL6jK8B9GpvuBYG22wEBFQ/GmpJZj1
+         C1SH6wuar7368rVtiXPujgwVJaL5IjWfOj5rrFUoeNGAaW4yi+uodfqvCLD/OiL75Up7
+         RWX8GL1dC4ulmcxNzTV+1T0TaDa5tcBkIle+B8qtuLAocGXsLxu+UY6WGY+J4GhcKR43
+         n83Ub74rR4aFeI2WxW/zz2uEBsRsNH6zr6DB/EzBvQZ7dhuBssbAZxdpxQ3EOCcYMwaI
+         FT0LXkex0XRzr8uB3UqTxjCLhnLN3nLigN3lRMUpY/dJFx4Vzcz6NQhtZ3hm+0//P0Rm
+         C14Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712568865; x=1713173665;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ccdZGemQtAOmH95htQ33GvCmGD7g1WiaWWMlzba2fiM=;
+        b=M+3JwJFmVZnr6hL+ukO7oP0u6FEx5YsgS+rUrMmn3JKCWfolG8KHDasnxeQVf5oSGP
+         tWkE3+qW54rcXwKXV4Z/KgvGE97fOKbQRT3Hwo1b0+6kshzgmxA27Gi3G7D+ZFqjuTC3
+         Z1ge8/B1w6e6mxMy0XcNvJCDEqHnw3K5G/fW5/A7erESszSGxumlOU1M3h79jDA2u743
+         cCiZ+Xom25BebfTdPhwNputUtTCZBdCdnou7INMXPyHF0ET6zGJ1rwCHKLkz38FLrNPE
+         l7F4gzVTxRulHW4AGfr9vXUvCEH6YZWI+6qOP+KCovS3OwMYlZFZL03Fv2vlel1IPxQJ
+         P2ww==
+X-Forwarded-Encrypted: i=1; AJvYcCVE4zUqBpQnzovzdotR6x8pHv+lba5rglJl5zH55ZYw0veNO9IheCFSMAbo0x7gGWQIa9Gw8Hjx5A5+DxMMVR+S5gRc4tU5axRqTIH1+w==
+X-Gm-Message-State: AOJu0YzZEHO4L0GSE8QVW65di/IVfVgVqDTbqSsT58MmXqFslDmUKz5o
+	1eAULzfdS8osEw4I3MfNNHHCX5sQSnSAClNwnFjMUDLnU33LUpWOYMRU9lLSzcXO01Cvsp4pXnD
+	xtSfjpsZyX7LG4n3mxH0ovF2TKfi19R7XkCxz0w==
+X-Google-Smtp-Source: AGHT+IEeD23qNLKI4LzgG0ATSfJAy0faf9nFICLsUBkFLtFuNSQXk1zU83q6cji04DCofUDq/+oONg6lZ40XGPwiIJg=
+X-Received: by 2002:a25:aea3:0:b0:dc6:d093:8622 with SMTP id
+ b35-20020a25aea3000000b00dc6d0938622mr6172768ybj.15.1712568863856; Mon, 08
+ Apr 2024 02:34:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20240408093023.506-1-johan+linaro@kernel.org>
+In-Reply-To: <20240408093023.506-1-johan+linaro@kernel.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 8 Apr 2024 12:34:12 +0300
+Message-ID: <CAA8EJpob42m4p_REGyjpM2KrdE02x91pGgCLGVhpW_i1vXSScA@mail.gmail.com>
+Subject: Re: [PATCH] phy: qcom: qmp-combo: fix VCO div offset on v5_5nm and v6
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	stable@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>, 
+	Abhinav Kumar <quic_abhinavk@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240408_023059_076676_F5FEA9B3 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20240408_023427_684108_721FEE73 
+X-CRM114-Status: GOOD (  11.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,74 +93,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit 5abed58a8bde ("phy: qcom: qmp-combo: Fix VCO div offset on v3")
-fixed a regression introduced in 6.5 by making sure that the correct
-offset is used for the DP_PHY_VCO_DIV register on v3 hardware.
+On Mon, 8 Apr 2024 at 12:30, Johan Hovold <johan+linaro@kernel.org> wrote:
+>
+> Commit 5abed58a8bde ("phy: qcom: qmp-combo: Fix VCO div offset on v3")
+> fixed a regression introduced in 6.5 by making sure that the correct
+> offset is used for the DP_PHY_VCO_DIV register on v3 hardware.
+>
+> Unfortunately, that fix instead broke DisplayPort on v5_5nm and v6
+> hardware as it failed to add the corresponding offsets also to those
+> register tables.
+>
+> Fixes: 815891eee668 ("phy: qcom-qmp-combo: Introduce orientation variable")
+> Fixes: 5abed58a8bde ("phy: qcom: qmp-combo: Fix VCO div offset on v3")
+> Cc: stable@vger.kernel.org      # 6.5: 5abed58a8bde
+> Cc: Stephen Boyd <swboyd@chromium.org>
+> Cc: Abhinav Kumar <quic_abhinavk@quicinc.com>
+> Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 2 ++
+>  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h | 1 +
+>  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h | 1 +
+>  3 files changed, 4 insertions(+)
 
-Unfortunately, that fix instead broke DisplayPort on v5_5nm and v6
-hardware as it failed to add the corresponding offsets also to those
-register tables.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Fixes: 815891eee668 ("phy: qcom-qmp-combo: Introduce orientation variable")
-Fixes: 5abed58a8bde ("phy: qcom: qmp-combo: Fix VCO div offset on v3")
-Cc: stable@vger.kernel.org	# 6.5: 5abed58a8bde
-Cc: Stephen Boyd <swboyd@chromium.org>
-Cc: Abhinav Kumar <quic_abhinavk@quicinc.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 2 ++
- drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h | 1 +
- drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h | 1 +
- 3 files changed, 4 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index a03b6f6881df..e48e87c3cb05 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -153,6 +153,7 @@ static const unsigned int qmp_v5_5nm_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V5_COM_BIAS_EN_CLKBUFLR_EN,
- 
- 	[QPHY_DP_PHY_STATUS]		= QSERDES_V5_DP_PHY_STATUS,
-+	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V5_DP_PHY_VCO_DIV,
- 
- 	[QPHY_TX_TX_POL_INV]		= QSERDES_V5_5NM_TX_TX_POL_INV,
- 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V5_5NM_TX_TX_DRV_LVL,
-@@ -177,6 +178,7 @@ static const unsigned int qmp_v6_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
- 
- 	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
-+	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V6_DP_PHY_VCO_DIV,
- 
- 	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_TX_TX_POL_INV,
- 	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_TX_TX_DRV_LVL,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h
-index f5cfacf9be96..181057421c11 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v5.h
-@@ -7,6 +7,7 @@
- #define QCOM_PHY_QMP_DP_PHY_V5_H_
- 
- /* Only for QMP V5 PHY - DP PHY registers */
-+#define QSERDES_V5_DP_PHY_VCO_DIV			0x070
- #define QSERDES_V5_DP_PHY_AUX_INTERRUPT_STATUS		0x0d8
- #define QSERDES_V5_DP_PHY_STATUS			0x0dc
- 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h
-index 01a20d3be4b8..fa967a1af058 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v6.h
-@@ -7,6 +7,7 @@
- #define QCOM_PHY_QMP_DP_PHY_V6_H_
- 
- /* Only for QMP V6 PHY - DP PHY registers */
-+#define QSERDES_V6_DP_PHY_VCO_DIV			0x070
- #define QSERDES_V6_DP_PHY_AUX_INTERRUPT_STATUS		0x0e0
- #define QSERDES_V6_DP_PHY_STATUS			0x0e4
- 
 -- 
-2.43.2
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
