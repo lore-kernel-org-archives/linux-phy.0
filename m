@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B060BCD129A
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 22:51:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E2C8CD1297
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Apr 2024 22:51:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R5+PwWvPHKhPWhZxVqfuKKag9/j5lzzRsQVMY8kWq4s=; b=nmd8AzC+jpp+4y
-	AuGbMHJD/+HDmxwb1QPEGmhzE3rZ5ZpNVjW91cYm43GqqqAh7cLKJ8/pA/ABn8gvfpG2jpsy6Juog
-	QIHsJBFaUKoVf1ZldpwPrlkFHRgvbyzDMmicoCVwFb0f08dDvxUwfxKHF4pWZrCRQh9UDs89iDeoz
-	8F+HRz0Bz5uGl45ADhEPG/jrFpg7q3SQBHyciO4E4HvqJ5QSAssm5OpzFv851w30cSCR/NqKLdGw2
-	4+Vx2XZBKJJ4Xp/1iLWVnr1QkGIpHHe0Rx/2rkJJqaGYgH1aGNQltUS5a6ef32ZdWJyZ30KzIjITy
-	nm/Mv8EK9fR5dKeag9Sw==;
+	List-Owner; bh=fxPhrAevsNtdXaYBb+Ad3gKY3/r1UpKodPHR1T/lgd0=; b=Ejkt6ohYKzAOOT
+	pvUCd/IH5g5CReBzSeF0ZCy/8nrEuWI63Twzzn8llBcCbVeNQ5VmMoFGaLBuohbvMCCyuzqkz/z0c
+	siTege9IuSVm/COvD241Q78rpPpxnhdguQVRTMe4p6qq98dPKqdgZIA3TrC0EbnOKrhCGLTX8+nK8
+	KjCSIKo17VxY7rVow3F9YHvCUn047UdbHyZVR/oAKIFCQVTZQJz/iAeZIsx3HMs3At2VQJkKGJGyd
+	GyIET1gCVf/U8vIE8rCo/MR7HCz4cBtveXY+vjqGCkbHNualPHgfBs5IblngEbgEh//Bdd0YbBszO
+	XC9kScXSVNpAc9GxuwcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtxpg-0000000H45u-12fG;
+	id 1rtxpg-0000000H46K-35K5;
 	Mon, 08 Apr 2024 22:51:20 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtxpZ-0000000H417-3BJi;
+	id 1rtxpa-0000000H418-2HCV;
 	Mon, 08 Apr 2024 22:51:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1712616670;
-	bh=DOQyBmJqMcgpGS+w7kqQ0AoLHI+zmLPm0WGY9FVt1ao=;
+	s=mail; t=1712616671;
+	bh=T9MvklJg6UVFRQrF868mATr8p8Rs4R1YsfG32amYaZw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=H4zl7AiHRZ7NMYdl/m7szepNLfoAtnnMjNiJH13JnLSGq1LGW0rTFeURfBvJ3lXCF
-	 zqmxCLpQ9iu6cV+xSiJBzN3+Od9d0RYLDdhsJTeQH5rUB1e5P/J31qWzXlxuEHQ49l
-	 Ly05X/F7P6nAQglkJDSol/wjfzUEofEc362EI0Achdw0U8zDzJsZBawsiJ5IMFY/7D
-	 bjCBL/k4Fyx1IzG5+HPZrgWVvDpppNghUG8qMcZVBUvgVsqTSDKnzceXLdwIZLOkVW
-	 pwYbTC7MDxkBWur6euQ4oBWH9JUGtJkreYsZz8OcQguZ5UlrgEnGYP+f0uIDv3qI0t
-	 JS5whFyo1Xgyw==
+	b=I2ejRLU13wcmnddPrg5UBm+VBx9/zQOCXH4x1NIlyiNcYvdYPpizilQvr4ETSqs4j
+	 3Zh13fJk84Kgms4ZDi4pJPWfrftmYJzp4Us04EVD6oF3nQ+98eP7/0IBRzjtZTBZXb
+	 PEmjWYTcVLfE8SMYod7VZeHbFkMc7efou2L/lg+Vkx7dKlcheGzAIshICUk4FECK/Y
+	 QgyyqMKPJ0WweIK6l/Z/+erE/nzdryscesam+s2h17Z+IdItAinFKQiOt3RzpNbf2L
+	 8v5B040uj+0ni1cihUidQaWEp11NjL392mMKOHVqy3VIlLyIV+mp44Q9tvFzEUzHzV
+	 6wu8PSEkxGzSQ==
 Received: from jupiter.universe (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id B6D4837820AD;
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id C03F137820CD;
 	Mon,  8 Apr 2024 22:51:10 +0000 (UTC)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 3FAC14800D0; Tue,  9 Apr 2024 00:51:10 +0200 (CEST)
+	id 41AC84800D1; Tue,  9 Apr 2024 00:51:10 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -60,17 +60,16 @@ Cc: Rob Herring <robh+dt@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	kernel@collabora.com
-Subject: [PATCH v5 03/10] arm64: defconfig: enable Rockchip Samsung USBDP PHY
-Date: Tue,  9 Apr 2024 00:50:30 +0200
-Message-ID: <20240408225109.128953-4-sebastian.reichel@collabora.com>
+Subject: [PATCH v5 04/10] arm64: dts: rockchip: fix usb2phy nodename for rk3588
+Date: Tue,  9 Apr 2024 00:50:31 +0200
+Message-ID: <20240408225109.128953-5-sebastian.reichel@collabora.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240408225109.128953-1-sebastian.reichel@collabora.com>
 References: <20240408225109.128953-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240408_155113_973761_A163DBB8 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240408_155114_730891_EBD818C7 
+X-CRM114-Status: GOOD (  10.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,27 +86,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USBDP Phy is used by RK3588 to handle the Dual-Role USB3
-controllers. The Phy also supports Displayport Alt-Mode, but
-the necessary DRM driver has not yet been merged.
+usb2-phy should be named usb2phy according to the DT binding,
+so let's fix it up accordingly.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/rockchip/rk3588s.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 2c30d617e180..364795edb94b 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -1517,6 +1517,7 @@ CONFIG_PHY_ROCKCHIP_PCIE=m
- CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX=m
- CONFIG_PHY_ROCKCHIP_SNPS_PCIE3=y
- CONFIG_PHY_ROCKCHIP_TYPEC=y
-+CONFIG_PHY_ROCKCHIP_USBDP=m
- CONFIG_PHY_SAMSUNG_UFS=y
- CONFIG_PHY_UNIPHIER_USB2=y
- CONFIG_PHY_UNIPHIER_USB3=y
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+index 87b83c87bd55..5ed0d8c95427 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
+@@ -543,7 +543,7 @@ usb2phy2_grf: syscon@fd5d8000 {
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+ 
+-		u2phy2: usb2-phy@8000 {
++		u2phy2: usb2phy@8000 {
+ 			compatible = "rockchip,rk3588-usb2phy";
+ 			reg = <0x8000 0x10>;
+ 			interrupts = <GIC_SPI 391 IRQ_TYPE_LEVEL_HIGH 0>;
+@@ -568,7 +568,7 @@ usb2phy3_grf: syscon@fd5dc000 {
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+ 
+-		u2phy3: usb2-phy@c000 {
++		u2phy3: usb2phy@c000 {
+ 			compatible = "rockchip,rk3588-usb2phy";
+ 			reg = <0xc000 0x10>;
+ 			interrupts = <GIC_SPI 392 IRQ_TYPE_LEVEL_HIGH 0>;
 -- 
 2.43.0
 
