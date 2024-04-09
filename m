@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB419CD128A
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Apr 2024 20:32:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3870C67861
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Apr 2024 20:35:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/TioB2RkewjkBOXPKiP6StLVqjAQhexXijxLPyJJmiU=; b=QqH+iu77RPrxMC
-	MFNgJaFx7WEjLveRUvPcZYHtx5LlNYU5CEzMnGkIv99dc0UNb+YQiq8Ygaj3664kT6431mmof6mZm
-	9qv8MqIu583ku3XRnPonSt8rqDNc/PW5kkNSOZqBxJjVg7WRnr2MoGxMEmS5jRpkpxIW/QR+7bXP5
-	+geN7o1yd4GxzX9w+YIeCXAdSENL8ToRp/YphAhwfhqErYxCPz92VcQ8tNfugo4qEVOnAuqEluSzc
-	rBAZd4UoLSNg06MEOSYxrmyyaqS9Lkejj4I2KHvwhB6YtZUy/mJ8Xx+epl0tq9jvPglSXR3jgp9J6
-	bHk0hN+6MxIzceCCSyiw==;
+	List-Owner; bh=1Hlz7PTCAxeVpPJ48Mzlc3HyXuk65pAGGeP5un22oBo=; b=qcloBFLE9Bae6v
+	gpNPNMlyrc9r83yOubK5sK/UQmZ5TukZN07ZrMmQKqe2rq1Y71YpaE3XAol7XB3blRKjBHAooroE1
+	+x8eQf4++FcCfaZfCX4HtR1Zsav0A5TBBh7Lur5bPbwgKD780j98+l616FjPTEct9ERw/Pe2jJUzG
+	xBQO/of4kyH/ozIE5zD7nSY81uFweIX/S8xKtUfLHFBbj0ulHUvVGH/tcv3ku2SIVSQ3UBQj6ilP2
+	GwQCwKB0QC1y7l5OTgccQ+eCPs1yndoVH3r4TXWf51999JqW6CULprULERLwpIHXr67ffoHaKoFc5
+	AhItCctnm+OyJf5wALPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruI8q-00000003jct-0viJ;
-	Tue, 09 Apr 2024 20:32:28 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	id 1ruIBl-00000003kIx-2Vqz;
+	Tue, 09 Apr 2024 20:35:29 +0000
+Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruI8m-00000003jbO-3MKS
+	id 1ruIBi-00000003kHw-0QhU
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Apr 2024 20:32:26 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-1e3c89f3d32so14545ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Apr 2024 13:32:24 -0700 (PDT)
+	Tue, 09 Apr 2024 20:35:27 +0000
+Received: by mail-pl1-x62c.google.com with SMTP id d9443c01a7336-1e062f3a47bso8065ad.1
+        for <linux-phy@lists.infradead.org>; Tue, 09 Apr 2024 13:35:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1712694744; x=1713299544; darn=lists.infradead.org;
+        d=google.com; s=20230601; t=1712694923; x=1713299723; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=12JndML8/JCJgkfhvekK/G81mXPrA5btch0gZl1J20Y=;
-        b=LnVPcNliiMEv73te/xFGTPESfTwkss+iPErqprKuJ6TGR6AOV0OQn0q564sadOXY6h
-         mtqkfrNlBE8gQFgl8gSeRuUqgv3s+RV9UYhge37qveVDpSa3C7d/CzBeBB/auawFYBOx
-         DEe5J3t9/9zWn4N4snrYAtkwRnIS6lNL93MyuJh3vpHu1CCmQK7G5g8y3ltYiuZK0Btr
-         HarDcjhb88IL61BCKk3jNWZexW2DMC3uMPd5D6DawHdSzyS+e+Mi/c0mdEC7uGd4HKTS
-         hAO2/qc090DYr9H49xoPiVic/Po1aOVpjIfRlCvlFLXsDACkZLAn6dezWODK6QWL6gxS
-         cCfw==
+        bh=sbzjIXGi8MY3xAo287kFRCnEJlxM2VAYg6QbjiGNyVw=;
+        b=P0JWAoDqtG2IH65wtzVcUaUAS98JaGiQn/auX8BbkmCKZDfLmR81++fd90CuFi+xEG
+         NHmokCCy+myrfeBmYw4qt2w96amvu0sZoixQaS05y3pVCPYz+KI5Yj7+CIrGGw2ZHu0F
+         1E0BW2m9necMfXY6gyXiueV3lSKqZ167U5n1zaB/XQV9ruPAw8csEEsRoERK6+Xrgx0s
+         zaHpOk+dajIoReJIo2Yl3814UVsVZqnhnN/e3hcB1JYXzuuH3e5Z29gNsLtKV0K82Fe3
+         4/J5ew0Uz6sUeEivDZyENy5kInuuG9XFluWPxF0jW2w71BCP8KNMfCIeJHt1xA60SIC9
+         Bdow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712694744; x=1713299544;
+        d=1e100.net; s=20230601; t=1712694923; x=1713299723;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=12JndML8/JCJgkfhvekK/G81mXPrA5btch0gZl1J20Y=;
-        b=qm3KZ5zbKwUsdIv/u+STCzR4Dd/dtG6Pli4xF+j5fDLEQ4pWCPaLHL8ZpzbmJOZyNv
-         yZaLsK+7MlO3hFYcg5OGo7kmqEzJLVbO3z/XPlSAH4YjjybRikSzImGi4NPGgl8cMhnS
-         gkdrXli+S8MLHtRemFnPqos9qJnYmxejrLpX6zdiT2b+JZclIyT6hbVv6iaW6tLo7rvz
-         pZZVdRPdqgTujS3sXl+ixBa0nbMvdAkCJeH20JnLT7+T8rd9TulFPfhLLAcv9Ry77Ulr
-         GIEW+1qXaTcdh54FtWfCBTX7ZlixGtdPkCd8hl4DEPtlfM1scw3b5AbDrnSkHZ0RL8O7
-         lRUA==
-X-Forwarded-Encrypted: i=1; AJvYcCW96H2NmHzlahGxMkNo8I/QJxNVDe6sy26scAi07t39SjuwvVq0QloBjgP1ivxJ+/QNf4ZB1FmdEg3GHNHpXgJl2nn+QA0CGXdF0soG6w==
-X-Gm-Message-State: AOJu0YzU0c2IveO/df3JglvnbDxXqe2uzMHYCzlw2y+IjTMURxwXy7jJ
-	170qbcIUhR0FW3xXsCOFwuvftEPNZnEvo9eg1+0K0pJfkLmCaCp5q0i3nHgNPg==
-X-Google-Smtp-Source: AGHT+IF6oY374Gn1bXDaQ8XjzUkuKAfKS8zqbkpsnbHTg5x0Nbbqftz5Mn2zC4LTwQ42ph5VlmKPrg==
-X-Received: by 2002:a17:903:2451:b0:1e0:294f:17c0 with SMTP id l17-20020a170903245100b001e0294f17c0mr58171pls.4.1712694743398;
-        Tue, 09 Apr 2024 13:32:23 -0700 (PDT)
+        bh=sbzjIXGi8MY3xAo287kFRCnEJlxM2VAYg6QbjiGNyVw=;
+        b=P335ifmJjpAckVi7KpjRDgwXkI6LpYBao770+nHLGIfP8qHATqrwHDgqRU32rTpCZp
+         dhK1B3roB7EpCuC4PDCvTJTjB8CvkIsEqiS/BNEI4gRxgKBxWHC/mJdxGpoNsYuimg0P
+         tzckOBC8vkvn5I6r+yuTsFQBaZPRotGt2JxA6yqQX7+67UARXAkWQtNbbNnEgWmGipHA
+         cBoRMBNgBMhk7CATmvdNDpfHvPWFHTPSf61CuwQjSe5XV021+EVJExyRGujvx9XGzizr
+         sWLW/85DV++8Z3XWSb+AIJEr8y+fVRyjVPrGCG8JDG4E1bm/WVdT5kaHp8hJcqJdxShq
+         vsLA==
+X-Forwarded-Encrypted: i=1; AJvYcCVANbb0tJP7mNb6W8r05xHlqY2WoQ8w06a5T2+npmcRMj0NG0MGJZ07K+YYomHPyK6BQ8gsU3xUBxEoPmrHII9hGKiOCTXCUbbdk0WHlA==
+X-Gm-Message-State: AOJu0YxbWf+Cw0tzkPHX55IIxOCYA88vcyEj9laQ4aya0vTVB5ZxVv83
+	D7Fx0II9q8t2sDaIY7hPu4s1xY9yf5csaPdTUw1j9uYns0jxcnT5W9xdAx0Ouw==
+X-Google-Smtp-Source: AGHT+IFbAgqRaIQQnQohL03A2IR6pwfXasIyq+0yEDQ6FgLyJnqBCuWghjNFqobOCKa2d0RR48njlA==
+X-Received: by 2002:a17:902:9a87:b0:1e4:32ec:7679 with SMTP id w7-20020a1709029a8700b001e432ec7679mr2786plp.19.1712694922933;
+        Tue, 09 Apr 2024 13:35:22 -0700 (PDT)
 Received: from google.com (201.215.168.34.bc.googleusercontent.com. [34.168.215.201])
-        by smtp.gmail.com with ESMTPSA id i18-20020a17090332d200b001e421f98ebdsm4644271plr.280.2024.04.09.13.32.22
+        by smtp.gmail.com with ESMTPSA id j5-20020a170902da8500b001e424ccf438sm4564732plx.97.2024.04.09.13.35.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Apr 2024 13:32:22 -0700 (PDT)
-Date: Tue, 9 Apr 2024 13:32:19 -0700
+        Tue, 09 Apr 2024 13:35:22 -0700 (PDT)
+Date: Tue, 9 Apr 2024 13:35:19 -0700
 From: William McVicker <willmcvicker@google.com>
 To: Peter Griffin <peter.griffin@linaro.org>
 Cc: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
@@ -76,17 +76,17 @@ Cc: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
 	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
 	andre.draszik@linaro.org, saravanak@google.com
-Subject: Re: [PATCH 14/17] scsi: ufs: host: ufs-exynos: allow max frequencies
- up to 267Mhz
-Message-ID: <ZhWl0_LSOIjdza9C@google.com>
+Subject: Re: [PATCH 15/17] scsi: ufs: host: ufs-exynos: add some pa_dbg_
+ register offsets into drvdata
+Message-ID: <ZhWmh1NUmj2h02Ua@google.com>
 References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-15-peter.griffin@linaro.org>
+ <20240404122559.898930-16-peter.griffin@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240404122559.898930-15-peter.griffin@linaro.org>
+In-Reply-To: <20240404122559.898930-16-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240409_133224_882553_D6126792 
-X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-CacheID: sfid-20240409_133526_205587_B1B93ABB 
+X-CRM114-Status: UNSURE (   9.31  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,11 +105,10 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/04/2024, Peter Griffin wrote:
-> Platforms such as Tensor gs101 the pclk frequency is 267Mhz.
-> Increase PCLK_AVAIL_MAX so we don't fail the frequency check.
+> This allows these registers to be at different offsets or not
+> exist at all on some SoCs variants.
 > 
 > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> ---
 
 Tested-by: Will McVicker <willmcvicker@google.com>
 
