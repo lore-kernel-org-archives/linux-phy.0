@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF7E9CD1296
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Apr 2024 06:59:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2466ACD1296
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Apr 2024 07:02:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+KpZYGFR1me8mScXku0NUioDxdvb4WNoudzgSvgZN/s=; b=03kbbMtv6ews0s
-	HII2X1SVk2Ii1jHp34mxEKljyqpgXdpW10JVLRVuns72MQnsG4BZc5ESqcvfdBNxdTXIE91CM6xYI
-	SH9dB3rOR0y30btwBXb0Y/3xuVufV/LEC1pC4V/JbBjfcFDy5QC7sNtZtphdCkB/VzKc3K/rO6YQi
-	2VTr9gsZ9fZNhYvazbWeFWoBJuEQg+5X0wDc8C9USnLRDYr0mXiKz38P8G3d8/ZK7mEOy66nZ9ec1
-	rj5CdUWB2/alzP36mBHNgwIWLl4H///YwxzD/vPLJjZzQNcEYvRoh4Z7Qep+d91GpXmTdqhPh3264
-	27pGJbuowdz7W47UZsdA==;
+	List-Owner; bh=1xgPdi6/ihZpRBdAKeoUSXT2HKeDJiqaiI67fSGiS+k=; b=zrZWH8bBlvnV/2
+	DFeC30rX4qaaH3dyi4GmudiVGTJBUMOmubHQzRCJN4UEyNAqQRHpbV6OJ1A4PDsyy/fVh+m5x95/Y
+	UHZE+/169U3MpsbXvfBEGeVcW/of9y034h4U1UEZaoI33St2MJBac7RWU9sIx65ndplJtOaNugv+K
+	eUI27aMcSTZcaD+CRLIhAtdWSJ4us6CgQgku/ic9cxNslW0o5Nx9MXJDRLQCO+Pkj7TGZceh9ltQd
+	33NREL5CEfj6ft5iraS1aeBczBeFEH1fpdNpwx62mg3dOackIBgk8oM96S4cte35PuLwcX3tPRViC
+	18MgztaLvq7iisOIDmaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruRvn-00000005VSI-1T3t;
-	Wed, 10 Apr 2024 06:59:39 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1ruRyu-00000005Vxa-3TLi;
+	Wed, 10 Apr 2024 07:02:52 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruRvk-00000005VQp-2zL7
+	id 1ruRys-00000005Vtp-30fP
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Apr 2024 06:59:38 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-516d727074eso5866867e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Apr 2024 23:59:35 -0700 (PDT)
+	Wed, 10 Apr 2024 07:02:52 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2d4886a1cb4so76351351fa.0
+        for <linux-phy@lists.infradead.org>; Wed, 10 Apr 2024 00:02:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1712732374; x=1713337174; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=irqlEKOEBz9zVTX5ET6ObBZ9mYMAyzmpT3TvBmoLetU=;
-        b=c4Expa9jnbgLMI3dhQCLsk8wDb0W0sOH08YjWpAwLBmFrSTPDpgXzdzcMkXJ040Pl9
-         AvOY4tHnXvejZ936pZSVwWNujyYIUI1Nc1YX+UktHOfKEk72Q5IzXELBfUCbwwMkzru7
-         OE7fScBZYSRpdOauBDLlJ5aG/J1B7WcLpOF6h7NVVwUszRUBjq3FSKoSoPlPThZKzgfp
-         uZ6uQUf57eAFF35E0WCqXaRLbJZ+o0n7VRKPnFXFIQ31TcFY6TgZikZLZz6FcAYYSR7x
-         5CFjFhjCfl+WBfV/e8ExUFoldRruOhPrtrSk86fJvp/mEf4uR+mPQEQR4NGq2AVdl8sn
-         9EBQ==
+        d=linaro.org; s=google; t=1712732558; x=1713337358; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=BR/M44OaqP8dIosbqNJgmiCcv852M5Z3sN+PJdg3q10=;
+        b=bLqnGfMDyDpvGcXAZpfM2BDDOG2PLv7gXFeKvb4XXj+epiZ8DEogOcDAu2octDlTKA
+         M6nAXniUSRw8yLjpV9WpeJq7zQK3giEGoxcS+Qs4lUtFs1gPITwNCPt/KSkoTAvYX7Ec
+         00R/51dvwIVi9q/rg5tIxPdO9U491BeRKa0ieknuIWoL0X1pVZUceBg2aD4tgvqg3B9G
+         dXnyPsY+ht960hKgPPFbHoK/rXSZAIqHXgG/n5sLiEmnMegUaO82IRrM1iEiwMujcQBj
+         9gGFxWjXZJxcvL60cVei7H7OKnsRtJwTi+Vm3rbAcPf4k28y7WA2SzogxeYRy+pCiHCk
+         E68Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712732374; x=1713337174;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=irqlEKOEBz9zVTX5ET6ObBZ9mYMAyzmpT3TvBmoLetU=;
-        b=IeVAn/y+lO3Axrzo1fLgWxP2+diznafhsCCTtpYIB0CeWHxCv+H0SIOAlZzGNFxzG3
-         bUhSCEbOVb2199AO/7iJjgtzfzCCIc9dr/H+2zGLuL8l9xfdHoeF8668NNQVD+tEZjOM
-         6pglF8tCLAE4LFFHK77jNukfZdn3STF8tHmqr71VC6vq1cbuFTYmheYbHcU3BAqwFKVB
-         XKcRsYkDIN+sHQJkHOiquIpv5WbXJMi+xUuRcW5WeTtJKYmPb9TgLTPlHJXOhFB326k/
-         vP0yRPaxRJkKbmmRbGXvd8UYiggBOa1bawB92NBUdFffFS4UlQeez8OENrahvgdOL/DP
-         nT1A==
-X-Forwarded-Encrypted: i=1; AJvYcCUnniTqqgI9B5/f+z+E09fsJn3ddWYU54/TCHbm1kEUSH52h0i3p+gt8tkkzHrKeNoPKE8M3zuf8fp06l6bUyiqOrXGR6TVWiM/Y5uTjQ==
-X-Gm-Message-State: AOJu0Yzx/SJh2kEyQl5OhQH4rqMyagE5UFcc9FMQTbIyF4LCZTly2Fb6
-	iRtURRqehvzuIXdsri+/Vb/r1hstoQq0RjwdVNosa6nv+BG1Hy3Ep3Sf3aRGSJ8=
-X-Google-Smtp-Source: AGHT+IGX1VybfQx4v0n2SjzPZaw4LLa2aaM+zIOhXNtj4FiZDVC5lT0TustbyCOt269jFUtelMiq0A==
-X-Received: by 2002:a2e:9bc6:0:b0:2d6:c0d5:b96e with SMTP id w6-20020a2e9bc6000000b002d6c0d5b96emr1208003ljj.24.1712732373780;
-        Tue, 09 Apr 2024 23:59:33 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1712732558; x=1713337358;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=BR/M44OaqP8dIosbqNJgmiCcv852M5Z3sN+PJdg3q10=;
+        b=aAAsxJ90qtu4ZP+WlJdTG/GH0gQlAR+aANia00KKVxhkDolOTIIczeVnZ99n1f79l9
+         qJXRdL+wKbz6qDeYxuiXSlCf07qD8B7NMZT7jmrq/udleWf4oUOVKsTRVimJQ8X6Zw5F
+         Mxzar+r8nMcNs+ZwBZxEpJUMMr/QC/vO+L4E0xZIAIeBLjqgaPzY+gO4DlhndvBajsve
+         KSkIsi+MfEjkCxqx5XjYi5uuRwNV8KG9N944hnnO/M/X3LCLdu7hEh+MPRv41uqG2QSp
+         LObcQvYrsM6aujaP1cjLu+wZGfPTFsyL4emXry3bO4zMqjMEZ7ggDhfrm/+7Iqyx0mpX
+         A6Uw==
+X-Forwarded-Encrypted: i=1; AJvYcCUz9+uLXMtQ+PkQY3MAG5I8UL2oLNRLwMP90Th6eBqocmDLXNyJ/5vgS5BHn3tAPdJXnCuqS4+bEyzeLFY4NflcyfmoEPfexeTfW8Ff/w==
+X-Gm-Message-State: AOJu0YxPuZ+StscxuDcA8m3lK1eLQ2g8KVtpEn5hSXchYe2s+01rXvJQ
+	rd3yv2D2NQYjraoCvtDGiTs1/ZpSwtKEnTDZbJkSiQFq4tusUmEY9BtOoLwr8pE=
+X-Google-Smtp-Source: AGHT+IHYzyvuSa+1YMuKaIM4oJaaBJR8tTyhayqVhnZB9LPV9T6D9JtPKR4Hxnjq7t1trwOJ5Y/mjg==
+X-Received: by 2002:a2e:b002:0:b0:2d6:dba1:6d37 with SMTP id y2-20020a2eb002000000b002d6dba16d37mr1487868ljk.11.1712732558348;
+        Wed, 10 Apr 2024 00:02:38 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.223.16])
-        by smtp.gmail.com with ESMTPSA id l23-20020a05600c1d1700b0041663c75ef1sm1323990wms.32.2024.04.09.23.59.32
+        by smtp.gmail.com with ESMTPSA id i7-20020a05600c354700b00416928e239csm1330850wmq.35.2024.04.10.00.02.34
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 09 Apr 2024 23:59:33 -0700 (PDT)
-Message-ID: <2379377e-ca1c-453f-bb74-186ab738ce39@linaro.org>
-Date: Wed, 10 Apr 2024 08:59:31 +0200
+        Wed, 10 Apr 2024 00:02:37 -0700 (PDT)
+Message-ID: <a23adb9c-6377-467b-ac3c-0ec51fc97253@linaro.org>
+Date: Wed, 10 Apr 2024 09:02:32 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 5/7] dt-bindings: phy: qcom,ipq8074-qmp-pcie: add
  ipq9574 gen3x2 PHY
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: mr.nuke.me@gmail.com, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -81,8 +82,8 @@ References: <20240409190833.3485824-1-mr.nuke.me@gmail.com>
  <20240409190833.3485824-6-mr.nuke.me@gmail.com>
  <019180df-67b9-438b-a10d-f92fd4ddec03@linaro.org>
  <33461c22-21a3-023b-4750-c69304471ea8@gmail.com>
+ <2379377e-ca1c-453f-bb74-186ab738ce39@linaro.org>
 Content-Language: en-US
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -127,11 +128,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <33461c22-21a3-023b-4750-c69304471ea8@gmail.com>
+In-Reply-To: <2379377e-ca1c-453f-bb74-186ab738ce39@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240409_235936_968467_8D1E978B 
-X-CRM114-Status: UNSURE (   7.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240410_000250_868045_5F8971CA 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,36 +148,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/04/2024 22:19, mr.nuke.me@gmail.com wrote:
+On 10/04/2024 08:59, Krzysztof Kozlowski wrote:
+> On 09/04/2024 22:19, mr.nuke.me@gmail.com wrote:
+>>>
+>>>
+>>>>   
+>>>>     clock-names:
+>>>>       items:
+>>>>         - const: aux
+>>>>         - const: cfg_ahb
+>>>>         - const: pipe
+>>>> +      - const: anoc
+>>>> +      - const: snoc
+>>>
+>>> OK, you did not test it. Neither this, nor DTS. I stop review, please
+>>> test first.
 >>
+>> I ran both `checkpatch.pl` and `make dt_binding_check`. What in this 
+>> patch makes you say I "did not test it", and what test or tests did I miss?
 >>
->>>   
->>>     clock-names:
->>>       items:
->>>         - const: aux
->>>         - const: cfg_ahb
->>>         - const: pipe
->>> +      - const: anoc
->>> +      - const: snoc
->>
->> OK, you did not test it. Neither this, nor DTS. I stop review, please
->> test first.
 > 
-> I ran both `checkpatch.pl` and `make dt_binding_check`. What in this 
-> patch makes you say I "did not test it", and what test or tests did I miss?
+> ... and no, you did not. If you tested, you would easily see error:
+> 	clock-names: ['aux', 'cfg_ahb', 'pipe'] is too short
 > 
+> When you receive comment from reviewer, please investigate thoroughly
+> what could get wrong. Don't answer just to get rid of reviewer. It's
+> fine to make mistakes, but if reviewer points to issue and you
+> immediately respond "no issue", that's waste of my time.
 
-... and no, you did not. If you tested, you would easily see error:
-	clock-names: ['aux', 'cfg_ahb', 'pipe'] is too short
-
-When you receive comment from reviewer, please investigate thoroughly
-what could get wrong. Don't answer just to get rid of reviewer. It's
-fine to make mistakes, but if reviewer points to issue and you
-immediately respond "no issue", that's waste of my time.
-
-Look at entire code of qcom,pcie how it is organized. Or:
-https://elixir.bootlin.com/linux/v6.8/source/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml#L132
-
+To clarify: "no issue" response is waste of my time. If you responded
+"oh, I see the error, but I don't know how to fix it", it would be ok, I
+can clarify and help in this.
 
 Best regards,
 Krzysztof
