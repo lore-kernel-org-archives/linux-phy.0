@@ -4,66 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3B02CD128A
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Apr 2024 13:02:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFE29C001CC
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Apr 2024 15:42:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kqREqueOexQct8J/WhT8hcfSZbSD96WKm243TERYTeE=; b=imGOaeLCZQ5HT2
-	FJ4ESrr+5pa963CgOd+1annxsoNb4VC9RpcZrKFix1ap+pjJaRJ2hzCr4LZr5taooqtMWpvea3iJC
-	WSWJZZULGa2sI+Vs5GsoRsVm1l+VR+h9PD37hPlni3dbqV28xhR/L3Jo773H4CPiaJIom8YLfclMo
-	LxGuEXxntGVRRyr+Dd0a1kFglByFlC4RvnnbctmfTU/NbPZyB2CAprPjjYzq3yjR+1THSHojgM/Xo
-	r5EPWHi9tnGkFweVN3f7PvbrR+1zrIGaLs0dPMovfcxmv42xjFULwUjzYNvWYPhufAHcXA6uinLvR
-	3nq9Bc0XVoJl0psXE4vw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0YBUYHBy3glnfsiBsmhnm6iO9ZYPvOquZExa47Xeee8=; b=qHy//qzEqEX4TFUE7XzozdrkzT
+	u6sNHJw3fAdxKTwAqXb2VEl58u2wPsAQiuvabpEHqxZNPsTHGlXC+QYyDl6srRTGqS1+o0mwfDnwm
+	0sZ9Qz8pZzWtcR+f4KRbrgX/HC28lYZZYNGlcg+aRA2a2cPouKCF8RcacoV51hmHIDEhicl8Lq/9w
+	4I3QAWtQYPU7lrXhM+Cr1FhhFTyoDAhJzomPKjZNrLxFTt1FSYLAfP/43ah32lrHabTNn7wls6eJo
+	wGO0gaVqqvfzaGJIxfTlgjpPOn221jHwJi8KUgWNVnHJNpoEtPknYco9eKrnWE59c365HbjknvtBv
+	ZApm9iYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruu4K-0000000C3xX-08uA;
-	Thu, 11 Apr 2024 13:02:20 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1ruwZP-0000000CoJ6-2Clk;
+	Thu, 11 Apr 2024 15:42:35 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruu47-0000000C3qI-1X0f;
-	Thu, 11 Apr 2024 13:02:09 +0000
+	id 1ruwZL-0000000CoGs-2MAL;
+	Thu, 11 Apr 2024 15:42:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id AA2FECE3081;
-	Thu, 11 Apr 2024 13:02:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44BD0C43394;
-	Thu, 11 Apr 2024 13:02:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E31B16209C;
+	Thu, 11 Apr 2024 15:42:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20728C072AA;
+	Thu, 11 Apr 2024 15:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712840524;
-	bh=PERXIyqtvzuRMlWj3fA9x52yulWXjRx921xLECr3yao=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Eh8Z/ER9BGdDdw14S9OLpYeeahIBpS42U+lZY++GBUTtjgDIXxzKh933pR4CHfMqH
-	 ysrnp3PGkhy+nrpZIu8ytkzblQdkYrMZmDQ1sqQC6d8O236yu8oY1PDArxuxnY/+NC
-	 7sqrFWmrUfy5CyCMGmZQOlWdvkJ/EjIyXDnAmT0699Mcf1Vw/WEkb9+kjHYHreUGyh
-	 8/Z6D4ds/4ZUIfCYolAstOoHr+AXMaxrKn3CysM65tOAx8WtRUScUPpw2XH+uXfiDJ
-	 3NiSUJzoii29YAOjytx2zdipXTVwRzNEfHD6PSBkNMszd+BajqKdRUZFHLfgZgg8C8
-	 gA9v11PEZQCOg==
-From: Niklas Cassel <cassel@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
+	s=k20201202; t=1712850150;
+	bh=+nZnGEmZrNB3s5CE4OLicwn7PuejwQracpvWJM0WbEA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=jzu3g4H8bnBM0ZLCtVvhes9KXW6ycau1nmlbhhYlXWT2j0ilPWJ/qM0/B/a3giiCh
+	 roAK28frU9Qv9qSJJRQOzNv1QB9xbjjrAoK3Ov1REgGCsEkfS6hg/yNltpusDo4GhM
+	 ZoHORWasJM9lg7DYIeXNzLCn1IEJIs7yu49wSTfNf5cPQNOQeLG0JVagQyanMueyCg
+	 G8JYW/aCJr3R6nm6kX+J1N3qHvaAK+Qk1KHpu6o4j6qwpt2wbDfPfA1OOJ7PfC5TUw
+	 TdodwJdFigXYmcZSSiJG13GWlBiyOqhhMaRO/6mgBqgwpEmVioA+tHKb1770XIOjuP
+	 u7TN4Lyvn8V8A==
+Date: Thu, 11 Apr 2024 16:42:24 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Alban Browaeys <alban.browaeys@gmail.com>
+Cc: dev@folker-schwesinger.de, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Cc: devicetree@vger.kernel.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Michal Tomek <mtdev79b@gmail.com>,
-	Damien Le Moal <dlemoal@kernel.org>,
-	Jon Lin <jon.lin@rock-chips.com>,
-	Niklas Cassel <cassel@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: [PATCH 2/2] phy: rockchip-snps-pcie3: add support for rockchip,rx-common-refclk-mode
-Date: Thu, 11 Apr 2024 15:01:48 +0200
-Message-ID: <20240411130150.128107-3-cassel@kernel.org>
-X-Mailer: git-send-email 2.44.0
-In-Reply-To: <20240411130150.128107-1-cassel@kernel.org>
-References: <20240411130150.128107-1-cassel@kernel.org>
+	Heiko Stuebner <heiko@sntech.de>,
+	Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Christopher Obbard <chris.obbard@collabora.com>,
+	Doug Anderson <dianders@chromium.org>,
+	Brian Norris <briannorris@chromium.org>,
+	Jensen Huang <jensenhuang@friendlyarm.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH 1/3] phy: rockchip: emmc: Enable pulldown for strobe line
+Message-ID: <20240411-mushily-pucker-732583c1d340@spud>
+References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de>
+ <20240326-rk-default-enable-strobe-pulldown-v1-1-f410c71605c0@folker-schwesinger.de>
+ <20240326-tactical-onlooker-3df8d2352dc2@spud>
+ <871f0b24a38208d9c5d6abc87d83b067162c103e.camel@gmail.com>
+ <20240328-unnatural-unsorted-e53a13f5e87e@spud>
+ <313d5a24b6cffa1a9160e624bb6855aa7f66589e.camel@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <313d5a24b6cffa1a9160e624bb6855aa7f66589e.camel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240411_060207_931581_9ACEE579 
-X-CRM114-Status: GOOD (  18.71  )
+X-CRM114-CacheID: sfid-20240411_084231_743153_A2C02ADF 
+X-CRM114-Status: GOOD (  76.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,116 +82,269 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1985816414742565694=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From the RK3588 Technical Reference Manual, Part1,
-section 6.19 PCIe3PHY_GRF Register Description:
-"rxX_cmn_refclk_mode"
-RX common reference clock mode for lane X. This mode should be enabled
-only when the far-end and near-end devices are running with a common
-reference clock.
 
-The hardware reset value for this field is 0x1 (enabled).
-Note that this register field is only available on RK3588, not on RK3568.
+--===============1985816414742565694==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="aLBybTFZShsDA3p/"
+Content-Disposition: inline
 
-The link training either fails or is highly unstable (link state will jump
-continuously between L0 and recovery) when this mode is enabled while
-using an endpoint running in Separate Reference Clock with No SSC (SRNS)
-mode or Separate Reference Clock with SSC (SRIS) mode.
-(Which is usually the case when using a real SoC as endpoint, e.g. the
-RK3588 PCIe controller can run in both Root Complex and Endpoint mode.)
 
-Add support for the device tree property rockchip,rx-common-refclk-mode,
-such that the PCIe PHY can be used in configurations where the Root
-Complex and Endpoint are not using a common reference clock.
+--aLBybTFZShsDA3p/
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Signed-off-by: Niklas Cassel <cassel@kernel.org>
----
- .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 37 +++++++++++++++++++
- 1 file changed, 37 insertions(+)
+On Wed, Apr 10, 2024 at 08:28:57PM +0200, Alban Browaeys wrote:
+> Le jeudi 28 mars 2024 =E0 18:01 +0000, Conor Dooley a =E9crit=A0:
+> > On Thu, Mar 28, 2024 at 06:00:03PM +0100, Alban Browaeys wrote:
+> > > Le mardi 26 mars 2024 =E0 19:46 +0000, Conor Dooley a =E9crit=A0:
+> > > > On Tue, Mar 26, 2024 at 07:54:35PM +0100, Folker Schwesinger via
+> > > > B4
+> > > > Relay wrote:
+> > > > > From: Folker Schwesinger <dev@folker-schwesinger.de>
+> > > > > -	if (of_property_read_bool(dev->of_node,
+> > > > > "rockchip,enable-
+> > > > > strobe-pulldown"))
+> > > > > -		rk_phy->enable_strobe_pulldown =3D
+> > > > > PHYCTRL_REN_STRB_ENABLE;
+> > > > > +	if (of_property_read_bool(dev->of_node,
+> > > > > "rockchip,disable-
+> > > > > strobe-pulldown"))
+> > > > > +		rk_phy->enable_strobe_pulldown =3D
+> > > > > PHYCTRL_REN_STRB_DISABLE;
+> > > >=20
+> > > > Unfortunately you cannot do this.
+> > > > Previously no property at all meant disabled and a property was
+> > > > required
+> > > > to enable it. With this change the absence of a property means
+> > > > that
+> > > > it
+> > > > will be enabled.
+> > > > An old devicetree is that wanted this to be disabled would have
+> > > > no
+> > > > property and will now end up with it enabled. This is an ABI
+> > > > break
+> > > > and is
+> > > > clearly not backwards compatible, that's a NAK unless it is
+> > > > demonstrable
+> > > > that noone actually wants to disable it at all.
+> > >=20
+> > >=20
+> > > But the patch that introduced the new default to disable the
+> > > pulldown
+> > > explicitely introduced a regression for at least 4 boards.
+> > > It took time to sort out that the default to disable pulldown was
+> > > the
+> > > culprit but still.
+> > > Will we carry this new behavor that breaks the default design for
+> > > rk3399 because since the regression was introduced new board
+> > > definition
+> > > might have expceted this new behavior.
+> > >=20
+> > > Could the best option be to revert to =E9not set a default
+> > > enable/disable
+> > > pulldown" (as before the commit that introduced the regression) and
+> > > allow one to force the pulldown via the enable/disable pulldown
+> > > property?
+> > > I mean the commit that introduced a default value for the pulldown
+> > > did
+> > > not seem to be about fixing anything. But it broke a lot. ANd it
+> > > was
+> > > really really hard to find the description of this commit to
+> > > understand
+> > > that one had to enable pulldown to restore hs400.
+> > >=20
+> > > In more than 3 years, only one board maintainer noticed that this
+> > > property was required to get back HS400=A0 and thanks to a user
+> > > telling
+> > > me that this board was working I found from this board that this
+> > > property was "missing" from most board definitions (while it was
+> > > not
+> > > required before).
+> > >=20
+> > >=20
+> > > I am all for not breaking ABI. But what about not reverting a patch
+> > > that already broke ABI because this patch introduced a new ABI that
+> > > we
+> > > don't want to break?
+> > > I mean shouldn't a new commit with a new ABI that regressed the
+> > > kernel
+> > > be reverted?
+> >=20
+> > I think I said it after OP replied to me yesterday, but this is a
+> > pretty
+> > shitty situation in that the original default picked for the property
+> > was actually incorrect. Given it's been like this for four years
+> > before
+> > anyone noticed, and others probably depend on the current behaviour,
+> > that's hard to justify.
+> >=20
+>=20
+> A lot of people noticed fast that HS400 was broken in the 5.10 branch
+> but due to another commit (more later, ie double regulator init that
+> messed up emmc) this second breakage was not detected. But mostly
+> downstream. And most if not all rk3399 boards in Armbian had HS400
+> disabled.
+>=20
+>=20
+> It took 3 years to detect that HS400 was broken on a few boards like
+> Rock Pi4 in the upstream kernel. Any might still be broken.
+> I would not count on the fact that keeping the current behavior equals
+> no more broken boards.
+>=20
+> From the previous exchanges the boards that requires the pulldown to be
+> disabled seems well known.
+>=20
+> Though I am fine with adding a property to set enable pulldown to any
+> board definition file where that is required.
+>=20
+> Only I do not believe keeping the statu quo equal everything works
+> because it has been 3 years.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-index 9857ee45b89e..3c532658da4c 100644
---- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-+++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-@@ -35,11 +35,17 @@
- #define RK3588_PCIE3PHY_GRF_CMN_CON0		0x0
- #define RK3588_PCIE3PHY_GRF_PHY0_STATUS1	0x904
- #define RK3588_PCIE3PHY_GRF_PHY1_STATUS1	0xa04
-+#define RK3588_PCIE3PHY_GRF_PHY0_LN0_CON1	0x1004
-+#define RK3588_PCIE3PHY_GRF_PHY0_LN1_CON1	0x1104
-+#define RK3588_PCIE3PHY_GRF_PHY1_LN0_CON1	0x2004
-+#define RK3588_PCIE3PHY_GRF_PHY1_LN1_CON1	0x2104
- #define RK3588_SRAM_INIT_DONE(reg)		(reg & BIT(0))
- 
- #define RK3588_BIFURCATION_LANE_0_1		BIT(0)
- #define RK3588_BIFURCATION_LANE_2_3		BIT(1)
- #define RK3588_LANE_AGGREGATION		BIT(2)
-+#define RK3588_RX_CMN_REFCLK_MODE_EN		((BIT(7) << 16) |  BIT(7))
-+#define RK3588_RX_CMN_REFCLK_MODE_DIS		(BIT(7) << 16)
- #define RK3588_PCIE1LN_SEL_EN			(GENMASK(1, 0) << 16)
- #define RK3588_PCIE30_PHY_MODE_EN		(GENMASK(2, 0) << 16)
- 
-@@ -60,6 +66,7 @@ struct rockchip_p3phy_priv {
- 	int num_clks;
- 	int num_lanes;
- 	u32 lanes[4];
-+	u32 rx_cmn_refclk_mode[4];
- };
- 
- struct rockchip_p3phy_ops {
-@@ -137,6 +144,19 @@ static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
- 	u8 mode = RK3588_LANE_AGGREGATION; /* default */
- 	int ret;
- 
-+	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY0_LN0_CON1,
-+		     priv->rx_cmn_refclk_mode[0] ? RK3588_RX_CMN_REFCLK_MODE_EN :
-+		     RK3588_RX_CMN_REFCLK_MODE_DIS);
-+	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY0_LN1_CON1,
-+		     priv->rx_cmn_refclk_mode[1] ? RK3588_RX_CMN_REFCLK_MODE_EN :
-+		     RK3588_RX_CMN_REFCLK_MODE_DIS);
-+	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY1_LN0_CON1,
-+		     priv->rx_cmn_refclk_mode[2] ? RK3588_RX_CMN_REFCLK_MODE_EN :
-+		     RK3588_RX_CMN_REFCLK_MODE_DIS);
-+	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY1_LN1_CON1,
-+		     priv->rx_cmn_refclk_mode[3] ? RK3588_RX_CMN_REFCLK_MODE_EN :
-+		     RK3588_RX_CMN_REFCLK_MODE_DIS);
-+
- 	/* Deassert PCIe PMA output clamp mode */
- 	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_CMN_CON0, BIT(8) | BIT(24));
- 
-@@ -275,6 +295,23 @@ static int rockchip_p3phy_probe(struct platform_device *pdev)
- 		return priv->num_lanes;
- 	}
- 
-+	ret = of_property_read_variable_u32_array(dev->of_node,
-+						  "rockchip,rx-common-refclk-mode",
-+						  priv->rx_cmn_refclk_mode, 1,
-+						  ARRAY_SIZE(priv->rx_cmn_refclk_mode));
-+	/*
-+	 * if no rockchip,rx-common-refclk-mode, assume enabled for all lanes in
-+	 * order to be DT backwards compatible. (Since HW reset val is enabled.)
-+	 */
-+	if (ret == -EINVAL) {
-+		for (int i = 0; i < ARRAY_SIZE(priv->rx_cmn_refclk_mode); i++)
-+			priv->rx_cmn_refclk_mode[i] = 1;
-+	} else if (ret < 0) {
-+		dev_err(dev, "failed to read rockchip,rx-common-refclk-mode property %d\n",
-+			ret);
-+		return ret;
-+	}
-+
- 	priv->phy = devm_phy_create(dev, NULL, &rochchip_p3phy_ops);
- 	if (IS_ERR(priv->phy)) {
- 		dev_err(dev, "failed to create combphy\n");
--- 
-2.44.0
+FWIW, I didn't say this. Clearly if that was the case, this patch would
+never have arrived.
 
+> In fact this commit reached the downstream kernels way later. Any
+> stayed with the 5.10 branch for years.
+>=20
+> But on the other side the disable pulldown by default is alraedy in
+> stable/linux-rolling-lts .
+>=20
+> > > Mind fixing the initial regression 8b5c2b45b8f0 "phy: rockchip: set
+> > > pulldown for strobe line in dts" does not necessarily mean changing
+> > > the
+> > > default to the opposite value but could also be reverting to not
+> > > setting a default.
+> >=20
+> > That's also problematic, as the only way to do this is make setting
+> > one of the enabled or disabled properties required, which is also an
+> > ABI
+> > break, since you'd then be rejecting probe if one is not present.
+>=20
+>=20
+> I don't understand.
+> How reverting to not set either pulldown enabled or disabled by default
+> force all board to set either enabled or disabled.
+> I was telling about making the pulldown set by kernel optional be it
+> enabled or disabled to revert to the previous behavior.=20
+>=20
+> I mean before the patch to set a default pulldown value (to disabled)
+> there were no forced value.
+
+Ah, maybe I misunderstood what the code originally did. Did the original
+code leave the bit however the bootloader or reset value had left it?
+In that case, probe wouldn't be rejected and you'd not have the sort of
+issue that I mentioned above.
+
+> > > Though I don't know if there are pros to setting a default.
+> >=20
+> > What you probably have to weigh up is the cons of each side. If what
+> > you
+> > lose is HS400 mode with what's in the kernel right now but switching
+> > to
+> > what's been proposed would entirely break some boards, I know which
+> > I think the lesser of two evils is.
+>=20
+> More boards (even if not the most wide spread it seems) are broken by
+> the current behavior.
+>=20
+> I agree that only HS400 is broken by keeping the status quo. But as far
+> as I understand only HS400 will be broken either way.
+> Be that by keeping the current disable pulldown which break the boards
+> based on the rockchip default design or the boards that are non-
+> standard or have a broken design.
+> Both case this lead to data corruption on boot to eMMC.
+>=20
+> The only pro of keeping the current value the default is that most
+> board broken by the new default introduced in 2020 "might" already be
+> fixed (but that is just a guess).
+>=20
+> > It's probably up to the platform maintainer to weigh in at this
+> > point.
+>=20
+> I am not knowledged into the delegation scope. You mean that from now
+> on it is up to the rockchip maintainer?
+> I am fine with it either way.
+
+Yes, I meant the rockchip maintainer. I'm only a lowly bindings
+maintainer, without any knowledge of rockchip specfics or the type of
+boards we're talking about being broken here. Someone has to make a
+judgement call about which "no property" behaviour is used going forward
+and I don't want that to be me!
+
+> I just wanted to point out that maybe we don't have to set a pulldown
+> value after all. And that then all boards will be fine as before
+> setting the pulldown explicitly was introduced.
+
+By "all boards will be fine" you mean "all boards that expected the
+kernel didn't touch this bit will be fine". The boards that need the
+kernel to set this bit because it {comes out of reset,is set by firmware}
+incorrectly are going to need a property added if we revert the default
+behaviour to not touching the bit.
+
+> In fact I am more eager to get this fixed be it by adding a enable-
+> pulldown property to the board definitions, than to change the current
+> behavior.
+> Just wanted to sort out if that was not the wrong way to fix this
+> issue. (ie if adding a setting on most boards was wrong).
+
+> During more than 2 years, I tried various patches and discussed on
+> forums about the HS400 breakage. I had bisected the regulator init
+> issue in the 5.10 branch. Sadly it took so much time for this issue to
+> be understood that when the force pulldown to disable commit was
+> introduced downstream before the first issue go fixed.
+> This only made the matter worse because when one fixed the double
+> regulator init issue HS400 was still broken, this time because the
+> pulldown was forced to disable. But nobody noticed this commit that
+> forced a default pulldown state (that was older than the regulator
+> commit from 5.13 backported to the 5.10 stable branch commit, but that
+> reached downstream later due to not having been backported to 5.10 from
+> 5.11).
+> Otherwise we would have emailed immeditaly.
+> Bisecting was only able to catch the first breakage (as it was only
+> fixed after the second breakage was introduced).
+>=20
+> Maybe the problem is that me and others did not complained to the
+> kernel upstream ML because we were using heavily patched downstream
+> kernels (like most if not all downstream ARM kernels). So sadly, the
+> forums from back then are filled with complaints but nothing seemed to
+> have reached the Linux ML.
+
+Aye, and all I can really say there is to buy boards from a vendor that
+doesn't use some horribly hacked downstream kernel, which I know is
+clearly an unsatisfactory suggestion. That said, we probably should have
+caught that the new default behaviour when the changes were made was not
+the default before. There was only one DT maintainer then though, and
+things just slip by :/
+
+--aLBybTFZShsDA3p/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZhgE4AAKCRB4tDGHoIJi
+0vZnAP0TIt845yAiy0oBXp77jO++qGtE1WNNLRxIX6CYf3M/3QEAgrVA1XfZbrbH
+qEbevdZeVvM96FmZexF+UTJAHmwC2wo=
+=AiwS
+-----END PGP SIGNATURE-----
+
+--aLBybTFZShsDA3p/--
+
+
+--===============1985816414742565694==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1985816414742565694==--
+
