@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CDC5C4345F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 12:42:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C9FCC4345F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 12:58:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BUaM7vM9Y+u0baf/EotTm01z57D06mZjmS0EiEx+i2Y=; b=x+/NWpPoCaCe77
-	uBO9V0Vnx/2VNLfpy/xOHBW1iEcBkDbfRmwfc7/M7hXA54NDlpaYAJ01SXliAnZKJqAZzxH4Cw2/M
-	28CxNfp6LoY5lz/N/j23+VLWqAl8jjnLDBCeJSUTc59xT+TH7q83xAYgYwRwLTH5Up8T9mOTuS11Q
-	j3uL3Dj13HBCRpjiEzBeSRZ0U7dR3cSmvtVEgpojFbHnrHa7qusOUeiGe6YF1QsgsZ302Oox/NDxF
-	oXj06jvzaldYucDR5qcN4wpOlaXnuXqkjFA15K/OuGOYxZcpEIwOZJdNyn8EqfgY5hGif59Y+ogV4
-	45DUhZm5Dq9Mgoh9gcvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0r1nf3kPvYKRIEZnKaZNB3fwghPRsrDII69bpT82IVU=; b=X0iDUyOSDZvRLs
+	2tE344Dlm2FmZBfS7PeGx6K1+H5Lm81sA1+8x8XMJBmOasdEPbBSpGPEOhEQFvNAJxb2EO8ZxcXQ8
+	bZf7/kY5xJf3LKtiO9svxHFirrvSJSs5HR2wTBMLlS9SoBJ0fETwVswMGhTw3Y6v0xQztSFhnamuQ
+	xNHjUaCd4bkoqiIa5gy4rI2alIMVT4qVEyWjTBw9N7oNmXPNEPh+NY6eE1tmmFMRM6WmUtp7UnttW
+	4zVmWyFFbiKoqvhhz5oh9rn+y0TrWSvEbfuw0zT6zDMrnpErswFeYV5DaIMyxhNEBm8wKBzTMkxUf
+	DlUpEPQc105qz/I7mBMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvGF3-0000000H9pT-39ZV;
-	Fri, 12 Apr 2024 12:42:53 +0000
+	id 1rvGUL-0000000HCJW-1eCH;
+	Fri, 12 Apr 2024 12:58:41 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvGF0-0000000H9o4-0ZYm;
-	Fri, 12 Apr 2024 12:42:51 +0000
+	id 1rvGUG-0000000HCHa-3AZ4;
+	Fri, 12 Apr 2024 12:58:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id E057ACE38AB;
-	Fri, 12 Apr 2024 12:42:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19F31C113CC;
-	Fri, 12 Apr 2024 12:42:43 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 241ABCE1044;
+	Fri, 12 Apr 2024 12:58:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7EF1C113CC;
+	Fri, 12 Apr 2024 12:58:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712925767;
-	bh=RFZZ+mGFrMvvzGP+Wwx3ZJjWKuRdZUpn09zEfdGc7P0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=f4nYe/em6FK0f+oAwuh0E1rMXQ1OyU4HGcc0d3wGEkQs8c01qL+qYZXK7o533Ysy4
-	 12FEaeYNYxLWiGTQZbgfQMmJRnPAIosXSS6Zww3JQkROF0SrSm9b1ggXg6zLAYYwKO
-	 odOnXedPol5+Z1ADVvnwDXI7aPmAXVzsYC7lgNGgKqiSH+rgcBS7HfOj6+CsmkRYZw
-	 DRCJo2Rlk4oN1rmCBnunXTTJfaA9Nl+2iXXwuyCohy8+z6igI07gVChSGzHOp3wIZa
-	 JaY092JRKQkFik2TB+OLe0WFl/4PQtSCz8HtXg7oFHfb6dT/JeAcwQkYR72H3Olyk3
-	 ns6WGTbpiZsiA==
-Date: Fri, 12 Apr 2024 14:42:41 +0200
+	s=k20201202; t=1712926712;
+	bh=6jKTFVNQuNQalKatg6CmqSXTnFJUallQY7OIfMkZQzs=;
+	h=From:To:Cc:Subject:Date:From;
+	b=m9nVlnWDXq6qsfaIw0d4f3EsFNcaM0VTh2o5jjXI5pE1tIk+hq0HLjHDPQgHYYHim
+	 Ts9R2WND6hUPzassL3Uv9BA41Zv6xVH9QJZy5nTsQqD701B+EeVcM3hFLyeIUFYj0f
+	 TUcL0vjfceCiWyeAlBbDEWiiL1G+X6SD9wuviAllBPl14jZF9qAhKY1gtXe/+yffQK
+	 WXgReZ9t1mHwmpzDXCcZren0/fVmxWketDJhifW88jcB9nHzcCV1O9oUB/jBvHTsrP
+	 oJpZgNY0/SyfKTwmvQyoV0VweNE8iTcFNkTJphFmrZIPPqz7C7O10es5H/tZvIAdAg
+	 PxDMn15PXMeuA==
 From: Niklas Cassel <cassel@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: devicetree@vger.kernel.org,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	Michal Tomek <mtdev79b@gmail.com>,
 	Damien Le Moal <dlemoal@kernel.org>,
-	Jon Lin <jon.lin@rock-chips.com>, linux-phy@lists.infradead.org,
+	Jon Lin <jon.lin@rock-chips.com>,
+	Niklas Cassel <cassel@kernel.org>,
+	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH 0/2] rockchip pcie3-phy separate refclk support
-Message-ID: <ZhksQc1kNDWHAfWw@ryzen>
-References: <20240411130150.128107-1-cassel@kernel.org>
- <ZhkAB6goB4TmcmWu@matsya>
+Subject: [PATCH v2 0/2] rockchip pcie3-phy separate refclk support
+Date: Fri, 12 Apr 2024 14:58:14 +0200
+Message-ID: <20240412125818.17052-1-cassel@kernel.org>
+X-Mailer: git-send-email 2.44.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZhkAB6goB4TmcmWu@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_054250_380450_47895976 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20240412_055837_088481_F602F8F0 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,32 +82,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 12, 2024 at 03:03:59PM +0530, Vinod Koul wrote:
-> Hi Niklas,
-> 
-> On 11-04-24, 15:01, Niklas Cassel wrote:
-> > This series is based on: linux-phy phy/fixes
-> > (Since there are other rockchip,pcie3-phy changes there that have not
-> > yet reached mainline and which would otherwise have caused conflicts.)
-> 
-> I merged the fixes into next and tried to apply this patch but second
-> one fails for me. I guess it needs to be rebased.
-> 
-> Always based these changes on phy/next or phy/fixes+next (which is what
-> I will end up with to resolve)
+This series is based on: linux-phy phy/next
 
-I based it on phy/fixes since there were commits for this driver in phy/fixes
-that were not in phy/next, so I did it for you to not get conflicts :)
+Hello all,
 
-Since this still gave you conflicts, there must have been other changes in
-phy/next for this driver. I must have missed that, sorry.
+The rockchip,pcie3-phy PHY in rk3588 is by default configured to run in
+"common reference clock" mode. (Which is a sensible default, as the most
+commonly used clock configuration is "common reference clock".)
 
-I see that you have now merged phy/fixes into phy/next, that will make things
-easier, thank you. I will send out a V2 based on phy/next shortly.
+However, PCIe also defines two other configurations where the Root Complex
+and Endpoint uses separate reference clocks: SRNS and SRIS.
+
+Having the Root Complex PHY configured in "common reference clock mode"
+while having an Endpoint connected which is supplying its own reference
+clock (i.e. SRNS or SRIS configuration), will either result in the link
+training failing, or a highly unstable link that continuously jumps
+between link states L0 and recovery.
+
+Add a rockchip specific device tree property that can be added to the
+rk3588 Root Complex device tree PHY node, if the connected Endpoint device
+is using a separate refererence clock. This way we will get a stable link
+when using an Endpoint configured in SRNS or SRIS mode.
 
 
 Kind regards,
 Niklas
+
+Changes since V1:
+-Picked up tags
+-Rebased on phy/next
+
+Niklas Cassel (2):
+  dt-bindings: phy: rockchip,pcie3-phy: add
+    rockchip,rx-common-refclk-mode
+  phy: rockchip-snps-pcie3: add support for
+    rockchip,rx-common-refclk-mode
+
+ .../bindings/phy/rockchip,pcie3-phy.yaml      | 10 +++++
+ .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 37 +++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+-- 
+2.44.0
+
 
 -- 
 linux-phy mailing list
