@@ -4,70 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 166CFC4345F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 14:04:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8936BC4345F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 14:46:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ddOs1bCabDhnshISCUqhVwFurAivQiYd+4ihxdyqEuw=; b=o2Kp0T76JUneg+
-	pKgost5UWRuce/qahRsTDzDQVOwNYV8gpuQZHXlL490b0fK2GEzkgO2Bvzn8Lepps+9Ih23EkMlRc
-	TYi9+QnyWXOGST58GWllAnXChmzpodwl0DpFKGvaluAVHMsu9pgC7i9rdjKKatvx7lnzKFwV9j3lU
-	N3xFyuF1YnNuRwUa5iyOjhOOaKtoPsKB3sLIMoDk7WUNUR+XWG9O9E350O3qmC1dhujFgLdmJXAhk
-	hR1x9KC/p66we++aAVgwnoq2LdyVwZVvoAKeQby8R5ji6keVnZ67j1VWRbomGm3UiBiCm8URe6dWn
-	FHJcnLPzWybk/9EitfMg==;
+	List-Owner; bh=cQXJglqixMnXw4915KMraBANK3gHPM05894piXCFUt0=; b=js1G4QmiPVwMfL
+	Kx6wv2cr/kipqIDZB4hF5xQgiXjqyA08iiIh8zAwuTqgfDQPrChxVZF+5dkLN3738o9DcZOgbuG7X
+	NwYiuL516+0I3iqqCFTZT34Hztf4rS0fw4yjOZd35KizPHMC57Cv8rCt82hsrkT2FixL5IO2INE+w
+	We2apBeDNuPrbyb58ahk3Vjmw/AKKeJJ/HoMZHMfK6k5Bgm7fYnfRnr9qJ2aZ9gagAE3jl5cNqA5h
+	AdbhmDLqPnn7V4QjsJTrMBMerHk0FY4lldXgImJZYRVGHDku/K327cLPr6U5u8IN+IsrcxisVdf5h
+	v/88ppxdpvg9fi8aEyYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvHVf-0000000HTMo-2ecr;
-	Fri, 12 Apr 2024 14:04:07 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1rvIB2-000000004VI-0n6I;
+	Fri, 12 Apr 2024 14:46:52 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvHVX-0000000HTJe-0Fik;
-	Fri, 12 Apr 2024 14:04:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8213A6192D;
-	Fri, 12 Apr 2024 14:03:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E72A0C113CC;
-	Fri, 12 Apr 2024 14:03:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712930634;
-	bh=Q/xDCfodTTDzCgOAtTjTkNdHm3g2Vt761sA8oFCgTzw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PrWb29HUbTPHZgpK8TNIrBLrmHY/lJshbsxKkn7fMnuN/CMsJecrzAsYVn2ey3s2o
-	 wCHnYBrORsGcECk52hWMNWr2Y8h89kBqswYZkGqZUuZbzj+pp3Q0FjeD2+XsiiJTQ8
-	 bS4YXNN4uuyV2oEy/T6qQKWfvN7oqHTHSUNlxLjh0A3vcwRo+7av7N72CDfmkszydh
-	 KU7XsyPnELKzFpdlVPHDXzYLOXY0fopneuPQVa19ZLhVU6AQBR+1TGFLUdRh6FKZ7+
-	 ChlnOOi3SrUXmjGMDqGzlobwBXObF9t2ELcUG85hxhCf7MVBw4uCoYAPM0BwxD0WnD
-	 s/JtuNmpeJfow==
-Date: Fri, 12 Apr 2024 16:03:48 +0200
-From: Niklas Cassel <cassel@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
+	id 1rvIAz-000000004SN-2PIv;
+	Fri, 12 Apr 2024 14:46:50 +0000
+Received: from i5e8616c3.versanet.de ([94.134.22.195] helo=phil.lan)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1rvIAu-00025n-Vl; Fri, 12 Apr 2024 16:46:45 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-rockchip@lists.infradead.org,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	linux-phy@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Kever Yang <kever.yang@rock-chips.com>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org,
-	Michal Tomek <mtdev79b@gmail.com>,
-	Damien Le Moal <dlemoal@kernel.org>,
-	Jon Lin <jon.lin@rock-chips.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip,pcie3-phy: add
- rockchip,rx-common-refclk-mode
-Message-ID: <Zhk_REt7nPpZT_yX@ryzen>
-References: <20240412125818.17052-1-cassel@kernel.org>
- <20240412125818.17052-2-cassel@kernel.org>
- <bwrnrbqgh3ch7kzy3iieybf34634goydiyk4z7aynizgqergx2@pq76ovyfvxsp>
+	kernel@collabora.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Subject: Re: (subset) [PATCH v5 00/10] RK3588 USBDP support
+Date: Fri, 12 Apr 2024 16:46:43 +0200
+Message-Id: <171293314494.1912962.2483494926339362221.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20240408225109.128953-1-sebastian.reichel@collabora.com>
+References: <20240408225109.128953-1-sebastian.reichel@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <bwrnrbqgh3ch7kzy3iieybf34634goydiyk4z7aynizgqergx2@pq76ovyfvxsp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_070359_317130_EC68CF22 
-X-CRM114-Status: GOOD (  28.66  )
+X-CRM114-CacheID: sfid-20240412_074649_635996_CDB3C3D1 
+X-CRM114-Status: GOOD (  12.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,98 +72,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 12, 2024 at 03:36:11PM +0200, Sebastian Reichel wrote:
-> Hi,
+On Tue, 9 Apr 2024 00:50:27 +0200, Sebastian Reichel wrote:
+> This adds Rockchip RK3588 USBDP PHY support, which is used for two of the three
+> USB3 controllers in the RK3588 (the third one uses a different PHY, which is
+> already supported). The USBDP PHY offers USB3 dual-role and DisplayPort. The
+> driver and bindings being upstreamed contains the DP parts, but only USB3 has
+> been tested by me (upstream does not yet have a DRM DP bridge driver for this
+> platform).
 > 
-> On Fri, Apr 12, 2024 at 02:58:15PM +0200, Niklas Cassel wrote:
-> > From the RK3588 Technical Reference Manual, Part1,
-> > section 6.19 PCIe3PHY_GRF Register Description:
-> > "rxX_cmn_refclk_mode"
-> > RX common reference clock mode for lane X. This mode should be enabled
-> > only when the far-end and near-end devices are running with a common
-> > reference clock.
-> > 
-> > The hardware reset value for this field is 0x1 (enabled).
-> > Note that this register field is only available on RK3588, not on RK3568.
-> > 
-> > The link training either fails or is highly unstable (link state will jump
-> > continuously between L0 and recovery) when this mode is enabled while
-> > using an endpoint running in Separate Reference Clock with No SSC (SRNS)
-> > mode or Separate Reference Clock with SSC (SRIS) mode.
-> > (Which is usually the case when using a real SoC as endpoint, e.g. the
-> > RK3588 PCIe controller can run in both Root Complex and Endpoint mode.)
-> > 
-> > Add a rockchip specific property to enable/disable the rxX_cmn_refclk_mode
-> > per lane. (Since this PHY supports bifurcation.)
-> > 
-> > Signed-off-by: Niklas Cassel <cassel@kernel.org>
-> > Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > ---
-> >  .../devicetree/bindings/phy/rockchip,pcie3-phy.yaml    | 10 ++++++++++
-> >  1 file changed, 10 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> > index c4fbffcde6e4..ba67dca5a446 100644
-> > --- a/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> > @@ -54,6 +54,16 @@ properties:
-> >      $ref: /schemas/types.yaml#/definitions/phandle
-> >      description: phandle to the syscon managing the pipe "general register files"
-> >  
-> > +  rockchip,rx-common-refclk-mode:
-> > +    description: which lanes (by position) should be configured to run in
-> > +      RX common reference clock mode. 0 means disabled, 1 means enabled.
-> > +    $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +    minItems: 1
-> > +    maxItems: 16
-> > +    items:
-> > +      minimum: 0
-> > +      maximum: 1
-> 
-> Why is this not simply using a single u32 with each bit standing for
-> one PCIe lane? I.e. like this:
+> [...]
 
-Hello Sebastian,
+Applied, thanks!
 
-The reason for the existing way to specify each lane in an int32-array
-is to be consistent with the existing property "data-lanes",
-which already uses this representation.
+[03/10] arm64: defconfig: enable Rockchip Samsung USBDP PHY
+        commit: 7cdf7efefc02189cf9a228d4c5c4253d273e9b1a
+[04/10] arm64: dts: rockchip: fix usb2phy nodename for rk3588
+        commit: 4e07a95f7402de092cd71b2cb96c69f85c98f251
+[05/10] arm64: dts: rockchip: reorder usb2phy properties for rk3588
+        commit: abe68e0ca71dddce0e5419e35507cb464d61870d
+[06/10] arm64: dts: rockchip: add USBDP phys on rk3588
+        commit: e18e5e8188f2671abf63abe7db5f21555705130f
+[07/10] arm64: dts: rockchip: add USB3 DRD controllers on rk3588
+        commit: 33f393a2a990e16f56931ca708295f31d2b44415
+[08/10] arm64: dts: rockchip: add USB3 to rk3588-evb1
+        commit: b37146b5a555dd871cb0805446826ab2fc8d285a
+[09/10] arm64: dts: rockchip: add upper USB3 port to rock-5a
+        commit: af7ec140ddc1815bc462109792d95bcad05cfbc4
+[10/10] arm64: dts: rockchip: add lower USB3 port to rock-5b
+        commit: 494532921aacb496529d544fedfdb3a7b43dfef0
 
-e.g.
-data-lanes = <1 1 2 2>;
-rockchip,rx-common-refclk-mode = <0 0 1 1>;
+I've rearranged some things in the evb1 patch:
+- vbus* before vcc*
+- some newlines between properties and subnodes around
+  the endpoints
 
-It would be very weird if this was instead:
-data-lanes = <1 1 2 2>;
-rockchip,rx-common-refclk-mode = 0xc;
-
-
-> 
-> rockchip,rx-common-refclk-mode:
->   description: bitmap describing which lanes should be configured to run
->     in RX common reference clock mode. Bit offset maps to PCIe lanes and
->     a bit set means enabled, unset bit means disabled.
->   $ref: /schemas/types.yaml#/definitions/uint32
->   minimum: 0
->   maximum: 0xffff
->   default: 0xffff
-> 
-> Apart from that the PHY only supports up to 4 lanes on all existing hardware,
-> so 0xf should be enough?
-
-Again, in order to be consistent with the existing "data-lanes" property in
-this binding, which defines:
-    minItems: 2
-    maxItems: 16
-which means that the binding already supports up to 16 lanes.
-(The reason why "data-lanes" specifies minItems:2 is because bifurcation
-doesn't make sense if you just have a single lane. The rx-common-refclk-mode
-property however makes sense even in the case where there is just a single
-lane.)
-
-
-Kind regards,
-Niklas
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
